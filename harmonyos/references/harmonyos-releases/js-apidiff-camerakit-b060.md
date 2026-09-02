@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-camerakit-b060
 title: Camera Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Developer Beta5引入的API > Camera Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Developer Beta5引入的API > Camera Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:36:26+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:42+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:b04193735dd5818632cc255061b0fe8e284c2f6d07ce137ad471517d950840df
 ---
 

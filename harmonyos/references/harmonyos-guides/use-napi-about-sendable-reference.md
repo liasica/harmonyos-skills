@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用扩展的Node-API接口创建对ArkTS对象的Sendable强引用
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景 > 使用扩展的Node-API接口创建对ArkTS对象的Sendable强引用
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:11+08:00
+scraped_at: 2026-09-02T14:50:46+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:d20e8e3894e4b07974e31441177ab194d21da1fbd31d360f80003d464b9f588a
+content_hash: sha256:9f72715e3a6188c51f3afd4ccd3344564a45cf624b2b9ef20523e5a21df2cf59
 ---
 
 HarmonyOS的API提供进程内跨ArkTS线程共享的强引用能力。相较于napi\_ref，napi\_sendable\_ref支持跨ArkTS线程操作，但同时也存在一些限制。
@@ -27,294 +27,294 @@ HarmonyOS的API提供进程内跨ArkTS线程共享的强引用能力。相较于
 * 模块注册
 
   ```
-  1. // napi_init.cpp
-  2. #include "napi/native_api.h"
-  3. #include <cstdlib>
-  4. #include <thread>
+  // napi_init.cpp
+  #include "napi/native_api.h"
+  #include <cstdlib>
+  #include <thread>
 
-  6. #define ASSERT_EQ(a, b) \
-  7. do {                    \
-  8. if (a != b) {        \
-  9. std::abort();     \
-  10. }                    \
-  11. } while(0)
+  #define ASSERT_EQ(a, b) \
+  do {                    \
+     if (a != b) {        \
+        std::abort();     \
+     }                    \
+  } while(0)
 
-  13. #define ASSERT_CHECK_CALL(a) ASSERT_EQ(a, napi_ok)
+  #define ASSERT_CHECK_CALL(a) ASSERT_EQ(a, napi_ok)
 
-  15. napi_sendable_ref sRef = nullptr;
-  16. static napi_value CreateSendableRef(napi_env env, napi_callback_info info)
-  17. {
-  18. size_t argc = 1;
-  19. napi_value args[1] = {nullptr};
+  napi_sendable_ref sRef = nullptr;
+  static napi_value CreateSendableRef(napi_env env, napi_callback_info info)
+  {
+     size_t argc = 1;
+     napi_value args[1] = {nullptr};
 
-  21. ASSERT_CHECK_CALL(napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
-  22. ASSERT_CHECK_CALL(napi_create_strong_sendable_reference(env, args[0], &sRef));
+     ASSERT_CHECK_CALL(napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
+     ASSERT_CHECK_CALL(napi_create_strong_sendable_reference(env, args[0], &sRef));
+     
+     napi_value str = nullptr;
+     ASSERT_CHECK_CALL(napi_create_string_utf8(env, "success", NAPI_AUTO_LENGTH, &str));
+     return str;
+  }
 
-  24. napi_value str = nullptr;
-  25. ASSERT_CHECK_CALL(napi_create_string_utf8(env, "success", NAPI_AUTO_LENGTH, &str));
-  26. return str;
-  27. }
+  static napi_value GetAndModifySendableRefValueInArkRuntime(napi_env env, napi_callback_info info)
+  {
+     // 此处省略调用者在主线程的业务逻辑
+     // ...
+     
+     // 此处模拟调用者在其他ArkTS线程上获取napi_sendable_ref内的共享对象操作
+     std::thread t1([]() {
+        napi_env newEnv = nullptr;
+        ASSERT_CHECK_CALL(napi_create_ark_runtime(&newEnv));
+        napi_handle_scope scope = nullptr;
+        ASSERT_CHECK_CALL(napi_open_handle_scope(newEnv, &scope));
+        if (!sRef) {
+           std::abort();
+        }
+        napi_value sObj = nullptr;
+        ASSERT_CHECK_CALL(napi_get_strong_sendable_reference_value(newEnv, sRef, &sObj));
+        
+        // 校验sObj内容
+        napi_value numValue = nullptr;
+        ASSERT_CHECK_CALL(napi_get_named_property(newEnv, sObj, "num", &numValue));
+        int32_t num = 0;
+        ASSERT_CHECK_CALL(napi_get_value_int32(newEnv, numValue, &num));
+        ASSERT_EQ(num, 1111);
+        
+        // 修改sObj内容
+        napi_value newNum = nullptr;
+        ASSERT_CHECK_CALL(napi_create_int32(newEnv, num * 2, &newNum));
+        ASSERT_CHECK_CALL(napi_set_named_property(newEnv, sObj, "num", newNum));
+        ASSERT_CHECK_CALL(napi_close_handle_scope(newEnv, scope));
+        ASSERT_CHECK_CALL(napi_destroy_ark_runtime(&newEnv));
+     });
+     t1.join();
 
-  29. static napi_value GetAndModifySendableRefValueInArkRuntime(napi_env env, napi_callback_info info)
-  30. {
-  31. // 此处省略调用者在主线程的业务逻辑
-  32. // ...
+     napi_value str = nullptr;
+     ASSERT_CHECK_CALL(napi_create_string_utf8(env, "success", NAPI_AUTO_LENGTH, &str));
+     return str;
+  }
 
-  34. // 此处模拟调用者在其他ArkTS线程上获取napi_sendable_ref内的共享对象操作
-  35. std::thread t1([]() {
-  36. napi_env newEnv = nullptr;
-  37. ASSERT_CHECK_CALL(napi_create_ark_runtime(&newEnv));
-  38. napi_handle_scope scope = nullptr;
-  39. ASSERT_CHECK_CALL(napi_open_handle_scope(newEnv, &scope));
-  40. if (!sRef) {
-  41. std::abort();
-  42. }
-  43. napi_value sObj = nullptr;
-  44. ASSERT_CHECK_CALL(napi_get_strong_sendable_reference_value(newEnv, sRef, &sObj));
+  static napi_value GetSendableRefValueInWorkerOrTaskpool(napi_env env, napi_callback_info info)
+  {
+     // 此处省略调用者在worker/taskpool线程的业务逻辑
+     // ...
 
-  46. // 校验sObj内容
-  47. napi_value numValue = nullptr;
-  48. ASSERT_CHECK_CALL(napi_get_named_property(newEnv, sObj, "num", &numValue));
-  49. int32_t num = 0;
-  50. ASSERT_CHECK_CALL(napi_get_value_int32(newEnv, numValue, &num));
-  51. ASSERT_EQ(num, 1111);
+     // 此处模拟调用者在其他Worker/Taskpool线程上获取napi_sendable_ref内的共享对象操作
+     if (!sRef) {
+        napi_value undefined = nullptr;
+        napi_get_undefined(env, &undefined);
+        return undefined;
+     }
+     napi_value sObj = nullptr;
+     ASSERT_CHECK_CALL(napi_get_strong_sendable_reference_value(env, sRef, &sObj));
 
-  53. // 修改sObj内容
-  54. napi_value newNum = nullptr;
-  55. ASSERT_CHECK_CALL(napi_create_int32(newEnv, num * 2, &newNum));
-  56. ASSERT_CHECK_CALL(napi_set_named_property(newEnv, sObj, "num", newNum));
-  57. ASSERT_CHECK_CALL(napi_close_handle_scope(newEnv, scope));
-  58. ASSERT_CHECK_CALL(napi_destroy_ark_runtime(&newEnv));
-  59. });
-  60. t1.join();
+     // 校验sObj内容
+     napi_value numValue = nullptr;
+     ASSERT_CHECK_CALL(napi_get_named_property(env, sObj, "num", &numValue));
+     int32_t num = 0;
+     ASSERT_CHECK_CALL(napi_get_value_int32(env, numValue, &num));
+     ASSERT_EQ(num, 1111);
 
-  62. napi_value str = nullptr;
-  63. ASSERT_CHECK_CALL(napi_create_string_utf8(env, "success", NAPI_AUTO_LENGTH, &str));
-  64. return str;
-  65. }
+     return sObj;
+  }
 
-  67. static napi_value GetSendableRefValueInWorkerOrTaskpool(napi_env env, napi_callback_info info)
-  68. {
-  69. // 此处省略调用者在worker/taskpool线程的业务逻辑
-  70. // ...
+  static napi_value CheckAndDeleteSendableRef(napi_env env, napi_callback_info info)
+  {
+     if (!sRef) {
+        napi_value undefined = nullptr;
+        ASSERT_CHECK_CALL(napi_get_undefined(env, &undefined));
+        return undefined;
+     }
 
-  72. // 此处模拟调用者在其他Worker/Taskpool线程上获取napi_sendable_ref内的共享对象操作
-  73. if (!sRef) {
-  74. napi_value undefined = nullptr;
-  75. napi_get_undefined(env, &undefined);
-  76. return undefined;
-  77. }
-  78. napi_value sObj = nullptr;
-  79. ASSERT_CHECK_CALL(napi_get_strong_sendable_reference_value(env, sRef, &sObj));
+     // 校验和删除ref的动作也可放在ArkTS线程中，此处示例为主线程
+     // 校验sObj内容
+     napi_value sObj = nullptr;
+     ASSERT_CHECK_CALL(napi_get_strong_sendable_reference_value(env, sRef, &sObj));
+     napi_value numValue = nullptr;
+     ASSERT_CHECK_CALL(napi_get_named_property(env, sObj, "num", &numValue));
+     int32_t num = 0;
+     ASSERT_CHECK_CALL(napi_get_value_int32(env, numValue, &num));
+     ASSERT_EQ(num, 2222);
 
-  81. // 校验sObj内容
-  82. napi_value numValue = nullptr;
-  83. ASSERT_CHECK_CALL(napi_get_named_property(env, sObj, "num", &numValue));
-  84. int32_t num = 0;
-  85. ASSERT_CHECK_CALL(napi_get_value_int32(env, numValue, &num));
-  86. ASSERT_EQ(num, 1111);
+     ASSERT_CHECK_CALL(napi_delete_strong_sendable_reference(env, sRef));
+     sRef = nullptr;
 
-  88. return sObj;
-  89. }
+     // 删除SendableRef
+     napi_value str = nullptr;
+     ASSERT_CHECK_CALL(napi_create_string_utf8(env, "success", NAPI_AUTO_LENGTH, &str));
+     return str;
+  }
 
-  91. static napi_value CheckAndDeleteSendableRef(napi_env env, napi_callback_info info)
-  92. {
-  93. if (!sRef) {
-  94. napi_value undefined = nullptr;
-  95. ASSERT_CHECK_CALL(napi_get_undefined(env, &undefined));
-  96. return undefined;
-  97. }
+  EXTERN_C_START
+  static napi_value Init(napi_env env, napi_value exports)
+  {
+     napi_property_descriptor desc[] = {
+        { "createSendableRef", nullptr, CreateSendableRef, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "getAndModifySendableRefValueInArkRuntime", nullptr, GetAndModifySendableRefValueInArkRuntime,
+              nullptr,nullptr, nullptr, napi_default, nullptr },
+        { "getSendableRefValueInWorkerOrTaskpool", nullptr, GetSendableRefValueInWorkerOrTaskpool,
+              nullptr,nullptr, nullptr, napi_default, nullptr },
+        { "checkAndDeleteSendableRef", nullptr, CheckAndDeleteSendableRef,
+              nullptr, nullptr, nullptr, napi_default, nullptr },
+     };
+     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+     return exports;
+  }
+  EXTERN_C_END
 
-  99. // 校验和删除ref的动作也可放在ArkTS线程中，此处示例为主线程
-  100. // 校验sObj内容
-  101. napi_value sObj = nullptr;
-  102. ASSERT_CHECK_CALL(napi_get_strong_sendable_reference_value(env, sRef, &sObj));
-  103. napi_value numValue = nullptr;
-  104. ASSERT_CHECK_CALL(napi_get_named_property(env, sObj, "num", &numValue));
-  105. int32_t num = 0;
-  106. ASSERT_CHECK_CALL(napi_get_value_int32(env, numValue, &num));
-  107. ASSERT_EQ(num, 2222);
+  static napi_module demoModule = {
+     .nm_version = 1,
+     .nm_flags = 0,
+     .nm_filename = nullptr,
+     .nm_register_func = Init,
+     .nm_modname = "entry",
+     .nm_priv = ((void*)0),
+     .reserved = { 0 },
+  };
 
-  109. ASSERT_CHECK_CALL(napi_delete_strong_sendable_reference(env, sRef));
-  110. sRef = nullptr;
-
-  112. // 删除SendableRef
-  113. napi_value str = nullptr;
-  114. ASSERT_CHECK_CALL(napi_create_string_utf8(env, "success", NAPI_AUTO_LENGTH, &str));
-  115. return str;
-  116. }
-
-  118. EXTERN_C_START
-  119. static napi_value Init(napi_env env, napi_value exports)
-  120. {
-  121. napi_property_descriptor desc[] = {
-  122. { "createSendableRef", nullptr, CreateSendableRef, nullptr, nullptr, nullptr, napi_default, nullptr },
-  123. { "getAndModifySendableRefValueInArkRuntime", nullptr, GetAndModifySendableRefValueInArkRuntime,
-  124. nullptr,nullptr, nullptr, napi_default, nullptr },
-  125. { "getSendableRefValueInWorkerOrTaskpool", nullptr, GetSendableRefValueInWorkerOrTaskpool,
-  126. nullptr,nullptr, nullptr, napi_default, nullptr },
-  127. { "checkAndDeleteSendableRef", nullptr, CheckAndDeleteSendableRef,
-  128. nullptr, nullptr, nullptr, napi_default, nullptr },
-  129. };
-  130. napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
-  131. return exports;
-  132. }
-  133. EXTERN_C_END
-
-  135. static napi_module demoModule = {
-  136. .nm_version = 1,
-  137. .nm_flags = 0,
-  138. .nm_filename = nullptr,
-  139. .nm_register_func = Init,
-  140. .nm_modname = "entry",
-  141. .nm_priv = ((void*)0),
-  142. .reserved = { 0 },
-  143. };
-
-  145. extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
-  146. {
-  147. napi_module_register(&demoModule);
-  148. }
+  extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
+  {
+     napi_module_register(&demoModule);
+  }
   ```
 * 接口声明
 
-  ```
-  1. // index.d.ts
-  2. export const createSendableRef: (a: object) => string;
-  3. export const getAndModifySendableRefValueInArkRuntime: () => string;
-  4. export const getSendableRefValueInWorkerOrTaskpool: () => object;
-  5. export const checkAndDeleteSendableRef: () => string;
+  ```ts
+  // index.d.ts
+  export const createSendableRef: (a: object) => string;
+  export const getAndModifySendableRefValueInArkRuntime: () => string;
+  export const getSendableRefValueInWorkerOrTaskpool: () => object;
+  export const checkAndDeleteSendableRef: () => string;
   ```
 * ArkTS代码示例
 
+  ```ts
+  // index.ets
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+  import testNapi from 'libentry.so';
+  import { MessageEvents, taskpool, worker} from '@kit.ArkTS'
+
+  const DOMAIN = 0x0000;
+
+  @Sendable
+  class SendableClass {
+     num: number = 1111;
+  }
+
+  @Concurrent
+  function TaskpoolFunc(data: string) {
+     console.info('testTag, ' + data);
+     let sObj = testNapi.getSendableRefValueInWorkerOrTaskpool() as SendableClass;
+     sObj.num = 2222;
+  }
+
+  async function concurrentFunc() {
+     let sObj = new SendableClass();
+     hilog.info(DOMAIN, 'testTag', 'Test CreateSendableRef result = %{public}s',
+        testNapi.createSendableRef(sObj));
+     const task: taskpool.Task = new taskpool.Task(TaskpoolFunc,
+        'Please check sendable ref value in taskpool thread');
+     await taskpool.execute(task);
+     let ret: string = testNapi.checkAndDeleteSendableRef();
+     return ret;
+  }
+
+  @Entry
+  @Component
+  struct Index {
+     @State TestMsg1: string = 'TestInArkRuntime';
+     @State TestMsg2: string = 'TestInWorker';
+     @State TestMsg3: string = 'TestInTaskpool';
+
+     build() {
+        Row() {
+           Column() {
+              Button(this.TestMsg1)
+                 .fontSize($r('app.float.page_text_font_size'))
+                 .fontWeight(FontWeight.Bold)
+                 .onClick(() => {
+                    let sObj = new SendableClass();
+                    hilog.info(DOMAIN, 'testTag', 'Test CreateSendableRef result = %{public}s',
+                       testNapi.createSendableRef(sObj));
+                    hilog.info(DOMAIN, 'testTag', 'Test GetAndModifySendableRefValue result = %{public}s',
+                       testNapi.getAndModifySendableRefValueInArkRuntime());
+                    this.TestMsg1 = testNapi.checkAndDeleteSendableRef();
+                 })
+              Button(this.TestMsg2)
+                 .fontSize($r('app.float.page_text_font_size'))
+                 .fontWeight(FontWeight.Bold)
+                 .onClick(() => {
+                    let sObj = new SendableClass();
+                    hilog.info(DOMAIN, 'testTag', 'Test CreateSendableRef result = %{public}s',
+                    testNapi.createSendableRef(sObj));
+                    const worker1: worker.ThreadWorker = new worker.ThreadWorker('entry/ets/workers/Worker.ets');
+                    worker1.onmessage = (e: MessageEvents) => {
+                       let data: string = e.data;
+                       hilog.info(DOMAIN, 'testTag', data);
+                       this.TestMsg2 = testNapi.checkAndDeleteSendableRef();
+                    }
+                    worker1.postMessage('Please check sendable ref value in worker thread');
+                 })
+              Button(this.TestMsg3)
+                 .fontSize($r('app.float.page_text_font_size'))
+                 .fontWeight(FontWeight.Bold)
+                 .onClick(() => {
+                    concurrentFunc().then((ret) => {
+                       this.TestMsg3 = ret;
+                    });
+                 })
+           }
+           .width('100%')
+        }
+        .height('100%')
+     }
+  }
   ```
-  1. // index.ets
-  2. import { hilog } from '@kit.PerformanceAnalysisKit';
-  3. import testNapi from 'libentry.so';
-  4. import { MessageEvents, taskpool, worker} from '@kit.ArkTS'
 
-  6. const DOMAIN = 0x0000;
+  ```ts
+  // Worker.ets
+  import { ErrorEvent, MessageEvents, ThreadWorkerGlobalScope, worker } from '@kit.ArkTS';
+  import testNapi from 'libentry.so';
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+  const DOMAIN = 0x0000;
 
-  8. @Sendable
-  9. class SendableClass {
-  10. num: number = 1111;
-  11. }
+  @Sendable
+  class SendableClass {
+     num: number = 1111;
+  }
 
-  13. @Concurrent
-  14. function TaskpoolFunc(data: string) {
-  15. console.info('testTag, ' + data);
-  16. let sObj = testNapi.getSendableRefValueInWorkerOrTaskpool() as SendableClass;
-  17. sObj.num = 2222;
-  18. }
+  const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
 
-  20. async function concurrentFunc() {
-  21. let sObj = new SendableClass();
-  22. hilog.info(DOMAIN, 'testTag', 'Test CreateSendableRef result = %{public}s',
-  23. testNapi.createSendableRef(sObj));
-  24. const task: taskpool.Task = new taskpool.Task(TaskpoolFunc,
-  25. 'Please check sendable ref value in taskpool thread');
-  26. await taskpool.execute(task);
-  27. let ret: string = testNapi.checkAndDeleteSendableRef();
-  28. return ret;
-  29. }
+  /**
+   * Defines the event handler to be called when the worker thread receives a message sent by the host thread.
+   * The event handler is executed in the worker thread.
+   *
+   * @param event message data
+   */
+  workerPort.onmessage = (event: MessageEvents) => {
+     let data: string = event.data;
+     hilog.info(DOMAIN, 'testTag', data);
+     let sObj = testNapi.getSendableRefValueInWorkerOrTaskpool() as SendableClass;
+     sObj.num = 2222;
+     workerPort.postMessage('Please check sendable ref value and delete ref');
+  };
 
-  31. @Entry
-  32. @Component
-  33. struct Index {
-  34. @State TestMsg1: string = 'TestInArkRuntime';
-  35. @State TestMsg2: string = 'TestInWorker';
-  36. @State TestMsg3: string = 'TestInTaskpool';
+  /**
+   * Defines the event handler to be called when the worker receives a message that cannot be deserialized.
+   * The event handler is executed in the worker thread.
+   *
+   * @param event message data
+   */
+  workerPort.onmessageerror = (event: MessageEvents) => {
+  };
 
-  38. build() {
-  39. Row() {
-  40. Column() {
-  41. Button(this.TestMsg1)
-  42. .fontSize($r('app.float.page_text_font_size'))
-  43. .fontWeight(FontWeight.Bold)
-  44. .onClick(() => {
-  45. let sObj = new SendableClass();
-  46. hilog.info(DOMAIN, 'testTag', 'Test CreateSendableRef result = %{public}s',
-  47. testNapi.createSendableRef(sObj));
-  48. hilog.info(DOMAIN, 'testTag', 'Test GetAndModifySendableRefValue result = %{public}s',
-  49. testNapi.getAndModifySendableRefValueInArkRuntime());
-  50. this.TestMsg1 = testNapi.checkAndDeleteSendableRef();
-  51. })
-  52. Button(this.TestMsg2)
-  53. .fontSize($r('app.float.page_text_font_size'))
-  54. .fontWeight(FontWeight.Bold)
-  55. .onClick(() => {
-  56. let sObj = new SendableClass();
-  57. hilog.info(DOMAIN, 'testTag', 'Test CreateSendableRef result = %{public}s',
-  58. testNapi.createSendableRef(sObj));
-  59. const worker1: worker.ThreadWorker = new worker.ThreadWorker('entry/ets/workers/Worker.ets');
-  60. worker1.onmessage = (e: MessageEvents) => {
-  61. let data: string = e.data;
-  62. hilog.info(DOMAIN, 'testTag', data);
-  63. this.TestMsg2 = testNapi.checkAndDeleteSendableRef();
-  64. }
-  65. worker1.postMessage('Please check sendable ref value in worker thread');
-  66. })
-  67. Button(this.TestMsg3)
-  68. .fontSize($r('app.float.page_text_font_size'))
-  69. .fontWeight(FontWeight.Bold)
-  70. .onClick(() => {
-  71. concurrentFunc().then((ret) => {
-  72. this.TestMsg3 = ret;
-  73. });
-  74. })
-  75. }
-  76. .width('100%')
-  77. }
-  78. .height('100%')
-  79. }
-  80. }
-  ```
-
-  ```
-  1. // Worker.ets
-  2. import { ErrorEvent, MessageEvents, ThreadWorkerGlobalScope, worker } from '@kit.ArkTS';
-  3. import testNapi from 'libentry.so';
-  4. import { hilog } from '@kit.PerformanceAnalysisKit';
-  5. const DOMAIN = 0x0000;
-
-  7. @Sendable
-  8. class SendableClass {
-  9. num: number = 1111;
-  10. }
-
-  12. const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
-
-  14. /**
-  15. * Defines the event handler to be called when the worker thread receives a message sent by the host thread.
-  16. * The event handler is executed in the worker thread.
-  17. *
-  18. * @param event message data
-  19. */
-  20. workerPort.onmessage = (event: MessageEvents) => {
-  21. let data: string = event.data;
-  22. hilog.info(DOMAIN, 'testTag', data);
-  23. let sObj = testNapi.getSendableRefValueInWorkerOrTaskpool() as SendableClass;
-  24. sObj.num = 2222;
-  25. workerPort.postMessage('Please check sendable ref value and delete ref');
-  26. };
-
-  28. /**
-  29. * Defines the event handler to be called when the worker receives a message that cannot be deserialized.
-  30. * The event handler is executed in the worker thread.
-  31. *
-  32. * @param event message data
-  33. */
-  34. workerPort.onmessageerror = (event: MessageEvents) => {
-  35. };
-
-  37. /**
-  38. * Defines the event handler to be called when an exception occurs during worker execution.
-  39. * The event handler is executed in the worker thread.
-  40. *
-  41. * @param event error message
-  42. */
-  43. workerPort.onerror = (event: ErrorEvent) => {
-  44. };
+  /**
+   * Defines the event handler to be called when an exception occurs during worker execution.
+   * The event handler is executed in the worker thread.
+   *
+   * @param event error message
+   */
+  workerPort.onerror = (event: ErrorEvent) => {
+  };
   ```
 
 ## 注意事项

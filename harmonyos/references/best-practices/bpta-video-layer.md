@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-video-laye
 title: 视频场景图层低功耗建议
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 > 前台资源合理使用 > 视频场景图层低功耗建议
 category: best-practices
-scraped_at: 2026-04-29T14:13:51+08:00
+scraped_at: 2026-09-02T14:53:45+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:09c25b3b06911e457f2169e460e72a60f51c24c13865efdd5c1c125ef03277db
+content_hash: sha256:9a3f40201c53c84604fb8fe50076dbf30f25adf2a50fe4f96e897f2c687bd011
 ---
 
 ## 建议
@@ -17,18 +17,16 @@ content_hash: sha256:09c25b3b06911e457f2169e460e72a60f51c24c13865efdd5c1c125ef03
 
 应用使用XComponent组件时，有Surface和Texture两种模式。Surface模式会由一个XComponent组件创建一个独立的Surface图层。根据不同的播放场景，XComponent组件的使用数量也有所不同。在视频/小视频场景中，无弹幕全屏视频播放时，要求一个界面内的Surface模式的XComponent组件数量≤2；而在弹幕全屏视频播放时，由于弹幕功能需要额外Surface图层渲染弹幕内容，该限制放宽至一个界面内的Surface模式的XComponent组件数量≤3。
 
+```typescript
+XComponent({ id: 'XComponentId', type: 'surface', libraryname: 'entry' })
+  .width(360)
+  .height(360)
 ```
-1. XComponent({ id: 'XComponentId', type: 'surface', libraryname: 'entry' })
-2. .width(360)
-3. .height(360)
-```
-
-[VideoSceneLayers.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/RationalUseOfFrontEndResources/entry/src/main/ets/pages/VideoSceneLayers.ets#L26-L28)
 
 ## 调测验证
 
 图层抓取命令为**hdc shell hidumper -s 10 -a allInfo。**图层的信息如下，通过查看LayerInfo中的Surface个数，可以得出图层个数。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/vpGvTA5LT7Soj0MOnoM43g/zh-cn_image_0000002229336393.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/0q4GhItBRsGGo8rphqBANw/zh-cn_image_0000002229336393.png "点击放大")
 
 上图所示为一个没有弹幕的视频场景，共有4个图层，其中系统的图层2个（RCDTopSurfaceNode和RCDBottomSurfaceNode），三方应用图层2个，符合三方应用图层个数要求。

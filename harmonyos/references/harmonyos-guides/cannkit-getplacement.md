@@ -3,29 +3,29 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getpl
 title: GetPlacement
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > TensorData > GetPlacement
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:aa9d1c15d08a7fa31a27c5b4fdc26c4d63225eb7f972e20fe0e898a316d4c16b
+scraped_at: 2026-09-02T14:50:40+08:00
+doc_updated_at: 2026-05-12
+content_hash: sha256:ed639398c7597f6622ebc5dff73dec1ae9cbc8857573bb82a62aae8e11b571b2
 ---
 
 ## 函数功能
 
 获取tensor的placement，tensor数据所在的设备位置。
 
-```
-1. // tensor数据所在的设备位置
-2. enum TensorPlacement {
-3. kOnDeviceHbm,  // < Tensor位于Device上的HBM内存
-4. kOnHost,       // < Tensor位于Host
-5. kFollowing,    // < Tensor位于Host，且数据紧跟在结构体后面
-6. kTensorPlacementEnd
-7. };
+```cpp
+// tensor数据所在的设备位置
+enum TensorPlacement {
+  kOnDeviceHbm, // < Tensor位于Device上的HBM内存
+  kOnHost, // < Tensor位于Host
+  kFollowing, // < Tensor位于Host，且数据紧跟在结构体后面
+  kTensorPlacementEnd
+};
 ```
 
 ## 函数原型
 
-```
-1. TensorPlacement GetPlacement() const
+```cpp
+TensorPlacement GetPlacement() const
 ```
 
 ## 参数说明
@@ -44,9 +44,9 @@ tensor的placement。
 
 ## 调用示例
 
-```
-1. std::vector<int> a = {10};
-2. auto addr = reinterpret_cast<void *>(a.data());
-3. TensorData td(addr, HostAddrManager, 100U, kOnHost);
-4. auto td_place = td.GetPlacement(); // kOnHost
+```cpp
+std::vector<int> a = {10};
+auto addr = reinterpret_cast<void *>(a.data());
+TensorData td(addr, HostAddrManager, 100U, kOnHost);
+auto td_place = td.GetPlacement(); // kOnHost
 ```

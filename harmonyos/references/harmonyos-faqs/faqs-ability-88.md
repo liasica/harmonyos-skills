@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-88
 title: app.json5文件与工程级build-profile.json5文件的区别
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > app.json5文件与工程级build-profile.json5文件的区别
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:50+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:16+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:75efab3f787c5d4eb71d7166e87143d96e1c364e8649f1b5f8a91423768531a1
 ---
 

@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: OhosImageRect
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 结构体 > OhosImageRect
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:30+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:fa5ae3979fcbd74ebbdc4bce195ee73536b78ca170ab0292b8d0c8111dacc430
+scraped_at: 2026-09-02T15:02:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1509841d816715fba227210f21f2e6269fa9792b0b843612b35c7fdea5e425a9
 ---
 
-```
-1. struct OhosImageRect {...}
+```c
+struct OhosImageRect {...}
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义图像矩形信息。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

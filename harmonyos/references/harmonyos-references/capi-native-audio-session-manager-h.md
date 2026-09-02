@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_audio_session_manager.h
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 头文件 > native_audio_session_manager.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:47+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b981608699825353521bada6a25488e2e5905dcd7382977361dce635ff66d800
+scraped_at: 2026-09-02T15:02:19+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4ed7c155b40faac6fdb8867dfd463226e86be765d758302803065e9fad3d49f4
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明音频会话管理相关的接口。
 
@@ -28,26 +26,18 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| [OH\_AudioSession\_Strategy](capi-ohaudio-oh-audiosession-strategy.md) | OH\_AudioSession\_Strategy | 音频会话策略。 |
 | [OH\_AudioSession\_DeactivatedEvent](capi-ohaudio-oh-audiosession-deactivatedevent.md) | OH\_AudioSession\_DeactivatedEvent | 音频会话已停用事件。 |
 | [OH\_AudioSession\_StateChangedEvent](capi-ohaudio-oh-audiosession-statechangedevent.md) | OH\_AudioSession\_StateChangedEvent | 音频会话状态变更事件。 |
 | [OH\_AudioSessionManager](capi-ohaudio-oh-audiosessionmanager.md) | OH\_AudioSessionManager | 声明音频会话管理器。用于管理音频会话相关功能。 |
 
 ### 枚举
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| [OH\_AudioSession\_ConcurrencyMode](capi-native-audio-session-manager-h.md#oh_audiosession_concurrencymode) | OH\_AudioSession\_ConcurrencyMode | 音频并发模式。 |
 | [OH\_AudioSession\_Scene](capi-native-audio-session-manager-h.md#oh_audiosession_scene) | OH\_AudioSession\_Scene | 音频会话场景。 |
 | [OH\_AudioSession\_StateChangeHint](capi-native-audio-session-manager-h.md#oh_audiosession_statechangehint) | OH\_AudioSession\_StateChangeHint | 音频会话状态变更的提示信息。 |
 | [OH\_AudioSession\_OutputDeviceChangeRecommendedAction](capi-native-audio-session-manager-h.md#oh_audiosession_outputdevicechangerecommendedaction) | OH\_AudioSession\_OutputDeviceChangeRecommendedAction | 输出设备变更后推荐的操作。 |
@@ -55,8 +45,6 @@ PhonePC/2in1TabletTVWearable
 | [OH\_AudioSession\_BluetoothAndNearlinkPreferredRecordCategory](capi-native-audio-session-manager-h.md#oh_audiosession_bluetoothandnearlinkpreferredrecordcategory) | OH\_AudioSession\_BluetoothAndNearlinkPreferredRecordCategory | 在使用蓝牙或星闪进行录音时，应用程序的设备偏好分类。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -90,39 +78,16 @@ PhonePC/2in1TabletTVWearable
 | [OH\_AudioCommon\_Result OH\_AudioSessionManager\_UnregisterCurrentInputDeviceChangeCallback(OH\_AudioSessionManager \*audioSessionManager, OH\_AudioSession\_CurrentInputDeviceChangedCallback callback)](capi-native-audio-session-manager-h.md#oh_audiosessionmanager_unregistercurrentinputdevicechangecallback) | - | 取消注册音频会话管理器的输入设备更改回调。 |
 | [OH\_AudioCommon\_Result OH\_AudioSessionManager\_ReleaseDevice(OH\_AudioSessionManager \*audioSessionManager, OH\_AudioDeviceDescriptor \*audioDeviceDescriptor)](capi-native-audio-session-manager-h.md#oh_audiosessionmanager_releasedevice) | - | 释放音频设备描述符对象。 |
 | [OH\_AudioCommon\_Result OH\_AudioSessionManager\_EnableMuteSuggestionWhenMixWithOthers(OH\_AudioSessionManager \*audioSessionManager, bool enable)](capi-native-audio-session-manager-h.md#oh_audiosessionmanager_enablemutesuggestionwhenmixwithothers) | - | 启用混音播放下接收静音播放建议通知功能。 |
+| [OH\_AudioCommon\_Result OH\_AudioSessionManager\_SetCaptureMuteHint(OH\_AudioSessionManager \*audioSessionManager, bool mute)](capi-native-audio-session-manager-h.md#oh_audiosessionmanager_setcapturemutehint) | - | 应用将当前音频会话内录音流的自身静音状态传递给系统音频模块。该接口用于向系统音频模块上报当前音频会话内录音流的静音状态，不会改变录音流的实际静音状态。当前仅在部分PC/2in1设备上，系统音频模块会基于设置的状态调整策略以降低功耗。该接口仅在当前音频会话存在运行中的录音流时允许调用，否则返回错误码AUDIOCOMMON\_RESULT\_ERROR\_ILLEGAL\_STATE。若某条录音流同时调用了流级接口和本接口，流级接口设置优先级更高，以流级接口设置值为准。 |
 | [bool OH\_AudioSessionManager\_IsOtherMediaPlaying(OH\_AudioSessionManager \*audioSessionManager)](capi-native-audio-session-manager-h.md#oh_audiosessionmanager_isothermediaplaying) | - | 检查是否有其他应用正在播放MUSIC、MOVIE、AUDIOBOOK、GAME四种媒体类型的音频，已激活媒体类型的音频会话也将会被检查。 |
+| [OH\_AudioCommon\_Result OH\_AudioSessionManager\_SetBehavior(OH\_AudioSessionManager \*audioSessionManager, uint32\_t behavior)](capi-native-audio-session-manager-h.md#oh_audiosessionmanager_setbehavior) | - | 设置音频会话行为参数（支持多种标志位的组合使用）。当音频会话在激活状态时调用此接口后，必须重新调用接口[OH\_AudioSessionManager\_ActivateAudioSession](capi-native-audio-session-manager-h.md#oh_audiosessionmanager_activateaudiosession)使其生效。 |
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
-### OH\_AudioSession\_ConcurrencyMode
-
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioSession_ConcurrencyMode
-```
-
-**描述**
-
-音频并发模式。
-
-**起始版本：** 12
-
-| 枚举项 | 描述 |
-| --- | --- |
-| CONCURRENCY\_DEFAULT = 0 | 默认使用系统策略。 |
-| CONCURRENCY\_MIX\_WITH\_OTHERS = 1 | 和其它正在播放应用进行混音。 |
-| CONCURRENCY\_DUCK\_OTHERS = 2 | 后来播放应用压低正在播放应用的音量。 |
-| CONCURRENCY\_PAUSE\_OTHERS = 3 | 后来播放应用暂停正在播放应用。 |
-
 ### OH\_AudioSession\_Scene
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioSession_Scene
+```c
+enum OH_AudioSession_Scene
 ```
 
 **描述**
@@ -139,10 +104,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSession\_StateChangeHint
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioSession_StateChangeHint
+```c
+enum OH_AudioSession_StateChangeHint
 ```
 
 **描述**
@@ -161,13 +124,13 @@ PhonePC/2in1TabletTVWearable
 | AUDIO\_SESSION\_STATE\_CHANGE\_HINT\_UNDUCK = 5 | 提示音频会话躲避结束，恢复音量播放。如果已启用[OH\_AudioSessionManager\_EnableMuteSuggestionWhenMixWithOthers](capi-native-audio-session-manager-h.md#oh_audiosessionmanager_enablemutesuggestionwhenmixwithothers)，此时可取消静音。 |
 | AUDIO\_SESSION\_STATE\_CHANGE\_HINT\_MUTE\_SUGGESTION = 6 | 静音播放建议。当其他应用程序开始播放不可混音的音频时，应用程序可以自行决定是否静音。  **起始版本：** 23 |
 | AUDIO\_SESSION\_STATE\_CHANGE\_HINT\_UNMUTE\_SUGGESTION = 7 | 取消静音播放建议。当其他应用程序不可混音的音频已结束，该应用程序可自行决定是否取消静音。  **起始版本：** 23 |
+| AUDIO\_SESSION\_STATE\_CHANGE\_HINT\_MUTE = 8 | 提示音频会话静音。该提示仅在以下条件满足后才会收到：通过接口[OH\_AudioSessionManager\_SetBehavior](capi-native-audio-session-manager-h.md#oh_audiosessionmanager_setbehavior)设置参数[OH\_AudioSession\_BehaviorFlags](capi-native-audio-session-base-h.md#oh_audiosession_behaviorflags).MUTE\_WHEN\_INTERRUPTED，并已调用[OH\_AudioSessionManager\_SetScene](capi-native-audio-session-manager-h.md#oh_audiosessionmanager_setscene)，且音频会话已激活。  **起始版本：** 24 |
+| AUDIO\_SESSION\_STATE\_CHANGE\_HINT\_UNMUTE = 9 | 提示音频会话解除静音。该提示仅在以下条件满足后才会收到：通过接口[OH\_AudioSessionManager\_SetBehavior](capi-native-audio-session-manager-h.md#oh_audiosessionmanager_setbehavior)设置参数[OH\_AudioSession\_BehaviorFlags](capi-native-audio-session-base-h.md#oh_audiosession_behaviorflags).MUTE\_WHEN\_INTERRUPTED，并已调用[OH\_AudioSessionManager\_SetScene](capi-native-audio-session-manager-h.md#oh_audiosessionmanager_setscene)，且音频会话已激活。  **起始版本：** 24 |
 
 ### OH\_AudioSession\_OutputDeviceChangeRecommendedAction
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioSession_OutputDeviceChangeRecommendedAction
+```c
+enum OH_AudioSession_OutputDeviceChangeRecommendedAction
 ```
 
 **描述**
@@ -180,15 +143,13 @@ PhonePC/2in1TabletTVWearable
 
 | 枚举项 | 描述 |
 | --- | --- |
-| DEVICE\_CHANGE\_RECOMMEND\_TO\_CONTINUE = 0 | 推荐继续播放（该事件作为播放维持提示，作用是告知应用本次设备变动音频无需停止播放，但‌不可将其作为启动音频播放的判断依据）。 |
+| DEVICE\_CHANGE\_RECOMMEND\_TO\_CONTINUE = 0 | 推荐继续播放（该事件作为播放维持提示，作用是告知应用本次设备变动音频无需停止播放，但不可将其作为启动音频播放的判断依据）。 |
 | DEVICE\_CHANGE\_RECOMMEND\_TO\_STOP = 1 | 推荐停止播放。 |
 
 ### OH\_AudioSession\_DeactivatedReason
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioSession_DeactivatedReason
+```c
+enum OH_AudioSession_DeactivatedReason
 ```
 
 **描述**
@@ -204,10 +165,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSession\_BluetoothAndNearlinkPreferredRecordCategory
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioSession_BluetoothAndNearlinkPreferredRecordCategory
+```c
+enum OH_AudioSession_BluetoothAndNearlinkPreferredRecordCategory
 ```
 
 **描述**
@@ -225,19 +184,15 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AudioSession\_StateChangedCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_AudioSession_StateChangedCallback)(OH_AudioSession_StateChangedEvent event)
+```c
+typedef void (*OH_AudioSession_StateChangedCallback)(OH_AudioSession_StateChangedEvent event)
 ```
 
 **描述**
 
-这个函数指针将指向用于监听音频会话状态变更事件的回调函数。
+该函数指针将指向用于监听音频会话状态变更事件的回调函数。
 
 **起始版本：** 20
 
@@ -249,10 +204,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSession\_AvailableDeviceChangedCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_AudioSession_AvailableDeviceChangedCallback)(OH_AudioDevice_ChangeType type, OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray)
+```c
+typedef void (*OH_AudioSession_AvailableDeviceChangedCallback)(OH_AudioDevice_ChangeType type, OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray)
 ```
 
 **描述**
@@ -270,10 +223,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSession\_CurrentInputDeviceChangedCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_AudioSession_CurrentInputDeviceChangedCallback)(OH_AudioDeviceDescriptorArray *devices, OH_AudioStream_DeviceChangeReason changeReason)
+```c
+typedef void (*OH_AudioSession_CurrentInputDeviceChangedCallback)(OH_AudioDeviceDescriptorArray *devices, OH_AudioStream_DeviceChangeReason changeReason)
 ```
 
 **描述**
@@ -291,10 +242,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSession\_CurrentOutputDeviceChangedCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_AudioSession_CurrentOutputDeviceChangedCallback)(OH_AudioDeviceDescriptorArray *devices, OH_AudioStream_DeviceChangeReason changeReason, OH_AudioSession_OutputDeviceChangeRecommendedAction recommendedAction)
+```c
+typedef void (*OH_AudioSession_CurrentOutputDeviceChangedCallback)(OH_AudioDeviceDescriptorArray *devices, OH_AudioStream_DeviceChangeReason changeReason, OH_AudioSession_OutputDeviceChangeRecommendedAction recommendedAction)
 ```
 
 **描述**
@@ -313,10 +262,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSession\_DeactivatedCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef int32_t (*OH_AudioSession_DeactivatedCallback)(OH_AudioSession_DeactivatedEvent event)
+```c
+typedef int32_t (*OH_AudioSession_DeactivatedCallback)(OH_AudioSession_DeactivatedEvent event)
 ```
 
 **描述**
@@ -333,10 +280,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioManager\_GetAudioSessionManager()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioManager_GetAudioSessionManager(OH_AudioSessionManager **audioSessionManager)
+```c
+OH_AudioCommon_Result OH_AudioManager_GetAudioSessionManager(OH_AudioSessionManager **audioSessionManager)
 ```
 
 **描述**
@@ -359,10 +304,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSessionManager\_ActivateAudioSession()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioSessionManager_ActivateAudioSession(OH_AudioSessionManager *audioSessionManager, const OH_AudioSession_Strategy *strategy)
+```c
+OH_AudioCommon_Result OH_AudioSessionManager_ActivateAudioSession(OH_AudioSessionManager *audioSessionManager, const OH_AudioSession_Strategy *strategy)
 ```
 
 **描述**
@@ -386,10 +329,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSessionManager\_DeactivateAudioSession()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioSessionManager_DeactivateAudioSession(OH_AudioSessionManager *audioSessionManager)
+```c
+OH_AudioCommon_Result OH_AudioSessionManager_DeactivateAudioSession(OH_AudioSessionManager *audioSessionManager)
 ```
 
 **描述**
@@ -412,10 +353,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSessionManager\_IsAudioSessionActivated()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. bool OH_AudioSessionManager_IsAudioSessionActivated(OH_AudioSessionManager *audioSessionManager)
+```c
+bool OH_AudioSessionManager_IsAudioSessionActivated(OH_AudioSessionManager *audioSessionManager)
 ```
 
 **描述**
@@ -438,10 +377,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSessionManager\_RegisterSessionDeactivatedCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioSessionManager_RegisterSessionDeactivatedCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_DeactivatedCallback callback)
+```c
+OH_AudioCommon_Result OH_AudioSessionManager_RegisterSessionDeactivatedCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_DeactivatedCallback callback)
 ```
 
 **描述**
@@ -465,10 +402,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSessionManager\_UnregisterSessionDeactivatedCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioSessionManager_UnregisterSessionDeactivatedCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_DeactivatedCallback callback)
+```c
+OH_AudioCommon_Result OH_AudioSessionManager_UnregisterSessionDeactivatedCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_DeactivatedCallback callback)
 ```
 
 **描述**
@@ -492,10 +427,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSessionManager\_SetScene()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioSessionManager_SetScene(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_Scene scene)
+```c
+OH_AudioCommon_Result OH_AudioSessionManager_SetScene(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_Scene scene)
 ```
 
 **描述**
@@ -519,10 +452,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSessionManager\_RegisterStateChangeCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioSessionManager_RegisterStateChangeCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_StateChangedCallback callback)
+```c
+OH_AudioCommon_Result OH_AudioSessionManager_RegisterStateChangeCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_StateChangedCallback callback)
 ```
 
 **描述**
@@ -546,10 +477,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSessionManager\_UnregisterStateChangeCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioSessionManager_UnregisterStateChangeCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_StateChangedCallback callback)
+```c
+OH_AudioCommon_Result OH_AudioSessionManager_UnregisterStateChangeCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_StateChangedCallback callback)
 ```
 
 **描述**
@@ -573,17 +502,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSessionManager\_SetDefaultOutputDevice()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioSessionManager_SetDefaultOutputDevice(OH_AudioSessionManager *audioSessionManager, OH_AudioDevice_Type deviceType)
+```c
+OH_AudioCommon_Result OH_AudioSessionManager_SetDefaultOutputDevice(OH_AudioSessionManager *audioSessionManager, OH_AudioDevice_Type deviceType)
 ```
 
 **描述**
 
 设置默认本机内置发声设备。
 
-说明
+**说明** 
 
 * 本接口适用范围如下：当设置的[OH\_AudioSession\_Scene](capi-native-audio-session-manager-h.md#oh_audiosession_scene)为VoIP场景时，激活AudioSession后立即生效；如果[OH\_AudioSession\_Scene](capi-native-audio-session-manager-h.md#oh_audiosession_scene)为非VoIP场景，激活AudioSession时不会生效，直到启动播放的[OH\_AudioStream\_Usage](capi-native-audiostream-base-h.md#oh_audiostream_usage)为语音消息、VoIP语音通话或VoIP视频通话时才生效。支持听筒、扬声器和系统默认设备。
 * 本接口允许在[OH\_AudioSessionManager](capi-ohaudio-oh-audiosessionmanager.md)创建后随时调用。系统记录应用设置的默认本机内置发声设备，但只有激活AudioSession后才能生效。应用启动播放时，若外接设备如蓝牙耳机或有线耳机已接入，系统优先从外接设备发声；否则，系统遵循应用设置的默认本机内置发声设备。
@@ -607,10 +534,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSessionManager\_GetDefaultOutputDevice()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioSessionManager_GetDefaultOutputDevice(OH_AudioSessionManager *audioSessionManager, OH_AudioDevice_Type *deviceType)
+```c
+OH_AudioCommon_Result OH_AudioSessionManager_GetDefaultOutputDevice(OH_AudioSessionManager *audioSessionManager, OH_AudioDevice_Type *deviceType)
 ```
 
 **描述**
@@ -634,10 +559,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSessionManager\_ReleaseDevices()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioSessionManager_ReleaseDevices(OH_AudioSessionManager *audioSessionManager, OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray)
+```c
+OH_AudioCommon_Result OH_AudioSessionManager_ReleaseDevices(OH_AudioSessionManager *audioSessionManager, OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray)
 ```
 
 **描述**
@@ -661,10 +584,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSessionManager\_RegisterCurrentOutputDeviceChangeCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioSessionManager_RegisterCurrentOutputDeviceChangeCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_CurrentOutputDeviceChangedCallback callback)
+```c
+OH_AudioCommon_Result OH_AudioSessionManager_RegisterCurrentOutputDeviceChangeCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_CurrentOutputDeviceChangedCallback callback)
 ```
 
 **描述**
@@ -688,10 +609,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSessionManager\_UnregisterCurrentOutputDeviceChangeCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioSessionManager_UnregisterCurrentOutputDeviceChangeCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_CurrentOutputDeviceChangedCallback callback)
+```c
+OH_AudioCommon_Result OH_AudioSessionManager_UnregisterCurrentOutputDeviceChangeCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_CurrentOutputDeviceChangedCallback callback)
 ```
 
 **描述**
@@ -715,10 +634,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSessionManager\_GetAvailableDevices()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioSessionManager_GetAvailableDevices(OH_AudioSessionManager *audioSessionManager, OH_AudioDevice_Usage deviceUsage, OH_AudioDeviceDescriptorArray **audioDeviceDescriptorArray)
+```c
+OH_AudioCommon_Result OH_AudioSessionManager_GetAvailableDevices(OH_AudioSessionManager *audioSessionManager, OH_AudioDevice_Usage deviceUsage, OH_AudioDeviceDescriptorArray **audioDeviceDescriptorArray)
 ```
 
 **描述**
@@ -739,14 +656,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AudioCommon\_Result](capi-native-audio-common-h.md#oh_audiocommon_result) | AUDIOCOMMON\_RESULT\_SUCCESS：函数执行成功。  AUDIOCOMMON\_RESULT\_ERROR\_INVALID\_PARAM：  1.参数audioSessionManager为nullptr；  2.参数deviceUsage无效;  3.参数audioDeviceDescriptorArray为nullptr。  AUDIOCOMMON\_RESULT\_ERROR\_SYSTEM：系统异常，例如系统服务异常退出等。 |
+| [OH\_AudioCommon\_Result](capi-native-audio-common-h.md#oh_audiocommon_result) | AUDIOCOMMON\_RESULT\_SUCCESS：函数执行成功。  AUDIOCOMMON\_RESULT\_ERROR\_INVALID\_PARAM：  1.参数audioSessionManager为nullptr；  2.参数deviceUsage无效；  3.参数audioDeviceDescriptorArray为nullptr。  AUDIOCOMMON\_RESULT\_ERROR\_SYSTEM：系统异常，例如系统服务异常退出等。 |
 
 ### OH\_AudioSessionManager\_RegisterAvailableDevicesChangeCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioSessionManager_RegisterAvailableDevicesChangeCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioDevice_Usage deviceUsage, OH_AudioSession_AvailableDeviceChangedCallback callback)
+```c
+OH_AudioCommon_Result OH_AudioSessionManager_RegisterAvailableDevicesChangeCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioDevice_Usage deviceUsage, OH_AudioSession_AvailableDeviceChangedCallback callback)
 ```
 
 **描述**
@@ -771,10 +686,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSessionManager\_UnregisterAvailableDevicesChangeCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioSessionManager_UnregisterAvailableDevicesChangeCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_AvailableDeviceChangedCallback callback)
+```c
+OH_AudioCommon_Result OH_AudioSessionManager_UnregisterAvailableDevicesChangeCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_AvailableDeviceChangedCallback callback)
 ```
 
 **描述**
@@ -798,10 +711,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSessionManager\_SelectMediaInputDevice()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioSessionManager_SelectMediaInputDevice(OH_AudioSessionManager *audioSessionManager, OH_AudioDeviceDescriptor *deviceDescriptor)
+```c
+OH_AudioCommon_Result OH_AudioSessionManager_SelectMediaInputDevice(OH_AudioSessionManager *audioSessionManager, OH_AudioDeviceDescriptor *deviceDescriptor)
 ```
 
 **描述**
@@ -829,10 +740,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSessionManager\_GetSelectedMediaInputDevice()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioSessionManager_GetSelectedMediaInputDevice(OH_AudioSessionManager *audioSessionManager, OH_AudioDeviceDescriptor **audioDeviceDescriptor)
+```c
+OH_AudioCommon_Result OH_AudioSessionManager_GetSelectedMediaInputDevice(OH_AudioSessionManager *audioSessionManager, OH_AudioDeviceDescriptor **audioDeviceDescriptor)
 ```
 
 **描述**
@@ -856,10 +765,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSessionManager\_SetBluetoothAndNearlinkPreferredRecordCategory()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioSessionManager_SetBluetoothAndNearlinkPreferredRecordCategory(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_BluetoothAndNearlinkPreferredRecordCategory category)
+```c
+OH_AudioCommon_Result OH_AudioSessionManager_SetBluetoothAndNearlinkPreferredRecordCategory(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_BluetoothAndNearlinkPreferredRecordCategory category)
 ```
 
 **描述**
@@ -887,10 +794,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSessionManager\_GetBluetoothAndNearlinkPreferredRecordCategory()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioSessionManager_GetBluetoothAndNearlinkPreferredRecordCategory(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_BluetoothAndNearlinkPreferredRecordCategory *category)
+```c
+OH_AudioCommon_Result OH_AudioSessionManager_GetBluetoothAndNearlinkPreferredRecordCategory(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_BluetoothAndNearlinkPreferredRecordCategory *category)
 ```
 
 **描述**
@@ -914,10 +819,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSessionManager\_RegisterCurrentInputDeviceChangeCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioSessionManager_RegisterCurrentInputDeviceChangeCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_CurrentInputDeviceChangedCallback callback)
+```c
+OH_AudioCommon_Result OH_AudioSessionManager_RegisterCurrentInputDeviceChangeCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_CurrentInputDeviceChangedCallback callback)
 ```
 
 **描述**
@@ -941,10 +844,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSessionManager\_UnregisterCurrentInputDeviceChangeCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioSessionManager_UnregisterCurrentInputDeviceChangeCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_CurrentInputDeviceChangedCallback callback)
+```c
+OH_AudioCommon_Result OH_AudioSessionManager_UnregisterCurrentInputDeviceChangeCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_CurrentInputDeviceChangedCallback callback)
 ```
 
 **描述**
@@ -968,10 +869,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSessionManager\_ReleaseDevice()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioSessionManager_ReleaseDevice(OH_AudioSessionManager *audioSessionManager, OH_AudioDeviceDescriptor *audioDeviceDescriptor)
+```c
+OH_AudioCommon_Result OH_AudioSessionManager_ReleaseDevice(OH_AudioSessionManager *audioSessionManager, OH_AudioDeviceDescriptor *audioDeviceDescriptor)
 ```
 
 **描述**
@@ -995,17 +894,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioSessionManager\_EnableMuteSuggestionWhenMixWithOthers()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioSessionManager_EnableMuteSuggestionWhenMixWithOthers(OH_AudioSessionManager *audioSessionManager, bool enable)
+```c
+OH_AudioCommon_Result OH_AudioSessionManager_EnableMuteSuggestionWhenMixWithOthers(OH_AudioSessionManager *audioSessionManager, bool enable)
 ```
 
 **描述**
 
-启用混音播放下接收静音播放建议通知功能。通常，当使用混音模式时，如果有其他应用的音频同时播放，此时两者会混合播放。部分场景下（如游戏或广播），应用可以通过启用静音建议通知，以给用户提供更好的体验。如果启用此功能，当订阅音频会话状态更改事件后静音建议和取消静音建议提示将通过[OH\_AudioSession\_StateChangedCallback](capi-native-audio-session-manager-h.md#oh_audiosession_statechangedcallback)回调发送，该回调由[OH\_AudioSessionManager\_RegisterStateChangeCallback](capi-native-audio-session-manager-h.md#oh_audiosessionmanager_registerstatechangecallback)注册。
+启用混音播放下接收静音播放建议通知功能。通常，当使用混音模式时，如果有其他应用的音频同时播放，此时两者会混合播放。部分场景下（如游戏或广播），应用可以通过启用静音建议通知，以为用户提供更好的体验。如果启用此功能，当订阅音频会话状态更改事件后静音建议和取消静音建议提示将通过[OH\_AudioSession\_StateChangedCallback](capi-native-audio-session-manager-h.md#oh_audiosession_statechangedcallback)回调发送，该回调由[OH\_AudioSessionManager\_RegisterStateChangeCallback](capi-native-audio-session-manager-h.md#oh_audiosessionmanager_registerstatechangecallback)注册。
 
-收到静音建议表示其他应用程序开始播放音频，且播放的音频和本应用的音频不能混音。此功能仅支持已设置[OH\_AudioSession\_Scene](capi-native-audio-session-manager-h.md#oh_audiosession_scene)并激活模式为[OH\_AudioSession\_ConcurrencyMode](capi-native-audio-session-manager-h.md#oh_audiosession_concurrencymode).CONCURRENCY\_MIX\_WITH\_OTHERS的音频会话使用。
+收到静音建议表示其他应用程序开始播放音频，且播放的音频和本应用的音频不能混音。此功能仅支持已设置[OH\_AudioSession\_Scene](capi-native-audio-session-manager-h.md#oh_audiosession_scene)并激活模式为[OH\_AudioSession\_ConcurrencyMode](capi-native-audio-session-base-h.md#oh_audiosession_concurrencymode).CONCURRENCY\_MIX\_WITH\_OTHERS的音频会话使用。
 
 并且仅在激活音频会话期间生效一次，每次激活音频会话前都必须重新启用。
 
@@ -1024,12 +921,35 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | [OH\_AudioCommon\_Result](capi-native-audio-common-h.md#oh_audiocommon_result) | AUDIOCOMMON\_RESULT\_SUCCESS：函数执行成功。  AUDIOCOMMON\_RESULT\_ERROR\_INVALID\_PARAM：参数audioSessionManager为nullptr。  AUDIOCOMMON\_RESULT\_ERROR\_ILLEGAL\_STATE：  1. 未设置音频会话场景。  2. 音频会话激活后调用此函数。  AUDIOCOMMON\_RESULT\_ERROR\_SYSTEM：系统异常，例如系统服务异常退出等。 |
 
+### OH\_AudioSessionManager\_SetCaptureMuteHint()
+
+```c
+OH_AudioCommon_Result OH_AudioSessionManager_SetCaptureMuteHint(OH_AudioSessionManager *audioSessionManager, bool mute)
+```
+
+**描述**
+
+应用将当前音频会话内录音流的自身静音状态传递给系统音频模块。该接口用于向系统音频模块上报当前音频会话内录音流的静音状态，不会改变录音流的实际静音状态。当前仅在部分PC/2in1设备上，系统音频模块会基于设置的状态调整策略以降低功耗。该接口仅在当前音频会话存在运行中的录音流时允许调用，否则返回错误码AUDIOCOMMON\_RESULT\_ERROR\_ILLEGAL\_STATE。若某条录音流同时调用了流级接口和本接口，流级接口设置优先级更高，以流级接口设置值为准。
+
+**起始版本：** 24
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_AudioSessionManager](capi-ohaudio-oh-audiosessionmanager.md) \*audioSessionManager | 指向[OH\_AudioManager\_GetAudioSessionManager](capi-native-audio-session-manager-h.md#oh_audiomanager_getaudiosessionmanager)返回的音频会话管理实例。 |
+| bool mute | 当应用自身已将录音流静音时，传入true，表示将当前应用下的录音流标记为静音。解除静音时，传入false。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| OH\_AudioCommon\_Result | AUDIOCOMMON\_RESULT\_SUCCESS：函数执行成功。  AUDIOCOMMON\_RESULT\_ERROR\_INVALID\_PARAM：参数audioSessionManager为nullptr。  AUDIOCOMMON\_RESULT\_ERROR\_ILLEGAL\_STATE：操作状态异常，当前进程不存在运行中的录音流。  AUDIOCOMMON\_RESULT\_ERROR\_SYSTEM：系统异常，例如系统服务异常退出等。 |
+
 ### OH\_AudioSessionManager\_IsOtherMediaPlaying()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. bool OH_AudioSessionManager_IsOtherMediaPlaying(OH_AudioSessionManager *audioSessionManager)
+```c
+bool OH_AudioSessionManager_IsOtherMediaPlaying(OH_AudioSessionManager *audioSessionManager)
 ```
 
 **描述**
@@ -1049,3 +969,28 @@ PhonePC/2in1TabletTVWearable
 | 类型 | 说明 |
 | --- | --- |
 | bool | 是否有其他应用正在播放媒体类型的音频。true表示有，false表示没有。 |
+
+### OH\_AudioSessionManager\_SetBehavior()
+
+```c
+OH_AudioCommon_Result OH_AudioSessionManager_SetBehavior(OH_AudioSessionManager *audioSessionManager, uint32_t behavior)
+```
+
+**描述**
+
+设置音频会话行为参数（支持多种标志位的组合使用）。当音频会话在激活状态时调用此接口后，必须重新调用接口[OH\_AudioSessionManager\_ActivateAudioSession](capi-native-audio-session-manager-h.md#oh_audiosessionmanager_activateaudiosession)使其生效。
+
+**起始版本：** 24
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_AudioSessionManager](capi-ohaudio-oh-audiosessionmanager.md) \*audioSessionManager | 指向[OH\_AudioManager\_GetAudioSessionManager](capi-native-audio-session-manager-h.md#oh_audiomanager_getaudiosessionmanager)创建的音频会话管理实例。 |
+| uint32\_t behavior | 音频会话行为标志，可以是单个标志，也可以是多个标志的按位OR组合。当前支持的音频会话行为详见[OH\_AudioSession\_BehaviorFlags](capi-native-audio-session-base-h.md#oh_audiosession_behaviorflags)。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [OH\_AudioCommon\_Result](capi-native-audio-common-h.md#oh_audiocommon_result) | AUDIOCOMMON\_RESULT\_SUCCESS：函数执行成功。  AUDIOCOMMON\_RESULT\_ERROR\_INVALID\_PARAM：参数为空指针或超出范围。  AUDIOCOMMON\_RESULT\_ERROR\_ILLEGAL\_STATE：非法状态。 |

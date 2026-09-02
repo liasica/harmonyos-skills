@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: OhosImageDecodingOps
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 结构体 > OhosImageDecodingOps
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:33+08:00
-doc_updated_at: 2026-03-19
-content_hash: sha256:bffd108ec47a345b571ef1cc710d0eb0ee22071f1a158a20e616c8d327bad1e6
+scraped_at: 2026-09-02T15:02:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:768a9e3995bd70c66a8b165f0b3f6018f8099e8de6f629ae4a3675a48c83f14d
 ---
 
-```
-1. struct OhosImageDecodingOps {...}
+```c
+struct OhosImageDecodingOps {...}
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义图像源解码选项。此选项给[OH\_ImageSource\_CreatePixelMap](capi-image-source-mdk-h.md#oh_imagesource_createpixelmap)和[OH\_ImageSource\_CreatePixelMapList](capi-image-source-mdk-h.md#oh_imagesource_createpixelmaplist)接口使用。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-shape
 title: ShapeInfo
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 数据类型定义 > ShapeInfo
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:21+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f37cf8d68143d1a2713a80804bf290005c46a9b3deb385f3590006d38247893a
+scraped_at: 2026-09-02T14:50:35+08:00
+doc_updated_at: 2026-05-18
+content_hash: sha256:867cf69a6f6544ae57007319c1fa1902e94c7764b71c9833eea52cb706553e7b
 ---
 
 ## 功能说明
@@ -16,25 +16,25 @@ ShapeInfo用来存放LocalTensor或GlobalTensor的shape信息。
 
 * ShapeInfo结构定义
 
-  ```
-  1. struct ShapeInfo {
-  2. public:
-  3. __aicore__ inline ShapeInfo();
-  4. __aicore__ inline ShapeInfo(const uint8_t inputShapeDim, const uint32_t inputShape[],
-  5. const uint8_t inputOriginalShapeDim, const uint32_t inputOriginalShape[], const DataFormat inputFormat);
-  6. __aicore__ inline ShapeInfo(const uint8_t inputShapeDim, const uint32_t inputShape[], const DataFormat inputFormat);
-  7. __aicore__ inline ShapeInfo(const uint8_t inputShapeDim, const uint32_t inputShape[]);
-  8. uint8_t shapeDim;
-  9. uint8_t originalShapeDim;
-  10. uint32_t shape[K_MAX_DIM];
-  11. uint32_t originalShape[K_MAX_DIM];
-  12. DataFormat dataFormat;
-  13. };
+  ```cpp
+  struct ShapeInfo {
+   public:
+       __aicore__ inline ShapeInfo();
+       __aicore__ inline ShapeInfo(const uint8_t inputShapeDim, const uint32_t inputShape[],
+           const uint8_t inputOriginalShapeDim, const uint32_t inputOriginalShape[], const DataFormat inputFormat);
+       __aicore__ inline ShapeInfo(const uint8_t inputShapeDim, const uint32_t inputShape[], const DataFormat inputFormat);
+       __aicore__ inline ShapeInfo(const uint8_t inputShapeDim, const uint32_t inputShape[]);
+       uint8_t shapeDim;
+       uint8_t originalShapeDim;
+       uint32_t shape[K_MAX_DIM];
+       uint32_t originalShape[K_MAX_DIM];
+       DataFormat dataFormat;
+   };
   ```
 * 获取Shape中所有dim的累乘结果
 
-  ```
-  1. __aicore__ inline int GetShapeSize(const ShapeInfo& shapeInfo)
+  ```cpp
+  __aicore__ inline int GetShapeSize(const ShapeInfo& shapeInfo)
   ```
 
 ## 函数说明
@@ -47,7 +47,7 @@ ShapeInfo用来存放LocalTensor或GlobalTensor的shape信息。
 | shape | uint32\_t | 现有的shape。 |
 | originalShapeDim | uint8\_t | 原始的shape维度。 |
 | originalShape | uint32\_t | 原始的shape。 |
-| dataFormat | DataFormat | 数据排布格式。NCHW 取值为 0，NHWC取值为1。  - NCHW：数据按NCHW排布。  - NHWC：数据按NHWC排布。 |
+| dataFormat | DataFormat | 数据排布格式。NCHW取值为0，NHWC取值为1。  - NCHW：数据按NCHW排布。  - NHWC：数据按NHWC排布。 |
 
 **表2** GetShapeSize参数说明
 

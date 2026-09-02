@@ -3,84 +3,60 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/natural-l
 title: textProcessing（文本处理）
 breadcrumb: API参考 > AI > Natural Language Kit（自然语言理解服务） > ArkTS API > textProcessing（文本处理）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:59+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:11d1ff17d1b48caca2eaa0ccb18dd52aa227c1ad52f80c76580d28d56143ca83
+scraped_at: 2026-09-02T15:03:11+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c2d8bec22aff1d1d535a177fa5c1bc9ee97660ab520a2d76b9306ea4f63f9049
 ---
 
-自然语言理解服务提供将输入的普通文本都标注为带词性的文本，标注每个词是名词、动词、形容词或其他词性。
+自然语言理解服务，该模块基于自然语言处理技术，能够将输入的普通文本进行分词并标注词性，标注每个词是名词、动词、形容词或其他词性。
 
-还提供实体抽取功能，通过对用户输入的文本进行实体识别。然后依据Kit中的实体类别来进行分类，其中用户可以根据实体类别列表中的类别来进行选择。输出结果中包含实体的类别、实体在原文本中的位置、实体的原文本以及实体解析后的其他字段。实体字段内容可参考[EntityType](natural-language-text-processing-api.md#entitytype)详情。
+还提供实体抽取功能，通过对用户输入的文本进行实体识别。然后依据Kit中的实体类别来进行分类，其中用户可以根据实体类别列表中的类别来进行选择。输出结果中包含实体的类别、实体在原文本中的位置、实体的原文本以及实体解析后的其他字段。实体字段内容可参考[EntityType](natural-language-entity-type-api.md)详情。适用于智能客服、内容分析、信息提取等需要对文本进行深度解析的业务场景。
 
 **起始版本：** 5.0.0(12)
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { textProcessing, EntityType } from '@kit.NaturalLanguageKit';
+```typescript
+import { textProcessing, EntityType } from '@kit.NaturalLanguageKit';
 ```
 
 ## WordSegment
-
-PhonePC/2in1Tablet
 
 分词的输出结果，包含词语和词性。
 
 **系统能力：** SystemCapability.AI.NaturalLanguage.TextProcessing
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **起始版本：** 5.0.0(12)
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| word | string | 否 | 否 | 词语。 |
-| wordTag | string | 否 | 否 | 词性。词性分类参考[wordTag](natural-language-word-tag-api.md)。 |
+| word | string | 否 | 否 | 词语。从getWordSegment方法中获取到的结果中的词语。 |
+| wordTag | string | 否 | 否 | 词性。从getWordSegment方法中获取到的结果中的词性，词性分类参考[wordTag](natural-language-word-tag-api.md)。 |
 
 ## EntityConfig
-
-PhonePC/2in1Tablet
 
 可选配置项，实体的类别。
 
 **系统能力：** SystemCapability.AI.NaturalLanguage.TextProcessing
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **起始版本：** 5.0.0(12)
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| entityTypes | [EntityType](natural-language-text-processing-api.md#entitytype)[] | 否 | 是 | 实体的类别。  默认全选。 |
-
-## EntityType
-
-PhonePC/2in1Tablet
-
-实体类别的枚举类。
-
-**系统能力：** SystemCapability.AI.NaturalLanguage.TextProcessing
-
-**起始版本：** 5.0.0(12)
-
-| 名称 | 值 | 说明 |
-| --- | --- | --- |
-| DATETIME | datetime | 时间实体 |
-| EMAIL | email | 邮箱实体 |
-| EXPRESS\_NO | expressNo | 快递单号实体 |
-| FLIGHT\_NO | flightNo | 航班号实体 |
-| LOCATION | location | 地点实体 |
-| NAME | name | 姓名实体 |
-| PHONE\_NO | phoneNo | 手机号实体 |
-| URL | url | url实体 |
-| VERIFICATION\_CODE | verificationCode | 验证码实体 |
-| ID\_NO | idNo | 身份证号实体 |
+| entityTypes | [EntityType](natural-language-entity-type-api.md)[] | 否 | 是 | 实体的类别。若未指定，则默认识别所有支持的实体类型。 |
+| timestamp | number | 否 | 是 | 参考时间戳，用于指定实体识别的时间上下文。取值为从1970年1月1日开始的毫秒数（整数）。若未指定，则使用当前系统时间。  **起始版本：** 26.0.0 |
 
 ## Entity
-
-PhonePC/2in1Tablet
 
 实体抽取的结果。
 
 **系统能力：** SystemCapability.AI.NaturalLanguage.TextProcessing
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -88,18 +64,18 @@ PhonePC/2in1Tablet
 | --- | --- | --- | --- | --- |
 | text | string | 否 | 否 | 实体原文本。 |
 | charOffset | number | 否 | 否 | 实体在原文本中的位置。所在位置以字符计算。 |
-| type | [EntityType](natural-language-text-processing-api.md#entitytype) | 否 | 否 | 实体类别。 |
-| jsonObject | string | 否 | 否 | 实体的其他字段。详情参考[jsonObject](natural-language-json-object-api.md)。 |
+| type | [EntityType](natural-language-entity-type-api.md) | 否 | 否 | 实体类别。 |
+| jsonObject | string | 否 | 否 | Entity返回参数说明。详情参考[jsonObject](natural-language-json-object-api.md)。 |
 
 ## textProcessing.getWordSegment
 
-PhonePC/2in1Tablet
-
 getWordSegment(text: string): Promise<Array<WordSegment>>
 
-创建分词实例，并初始化引擎。使用Promise异步回调。
+创建分词实例，并初始化引擎。使用Promise异步回调。适用于文本分词、关键词提取、文本相似度计算等场景。
 
 **系统能力：** SystemCapability.AI.NaturalLanguage.TextProcessing
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -117,7 +93,7 @@ getWordSegment(text: string): Promise<Array<WordSegment>>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Natural Language Kit错误码](natural-language-error-code.md)。
+以下错误码的详细介绍请参见[Natural Language Kit错误码](errorcode-natural-language.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -128,54 +104,59 @@ getWordSegment(text: string): Promise<Array<WordSegment>>
 
 **示例：**
 
-```
-1. import { textProcessing } from '@kit.NaturalLanguageKit'
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { textProcessing } from '@kit.NaturalLanguageKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. function testWordSegment(inputText: string) {
-5. textProcessing.getWordSegment(inputText)
-6. .then(result => {
-7. let outputText = formatWordSegmentResult(result);
-8. console.info('NLUDemo', `getWordSegment result:${outputText}`);
-9. })
-10. .catch((err: BusinessError) => {
-11. console.error('NLUDemo', `getWordSegment errorCode: ${err.code} errorMessage: ${err.message}`);
-12. });
-13. }
+// 分词结果格式化函数
+// 功能：对分词结果数组进行格式化，包含每个词的词语和词性
+function formatWordSegmentResult(segments: textProcessing.WordSegment[]): string {
+  let output = 'Word Segments:\n';
+  segments.forEach((segment, index) => {
+    output += `Word[${index}]: ${segment.word}, Tag: ${segment.wordTag}\n`;
+  });
+  return output;
+}
 
-15. function formatWordSegmentResult(segments: textProcessing.WordSegment[]): string {
-16. let output = 'Word Segments:\n';
-17. segments.forEach((segment, index) => {
-18. output += `Word[${index}]: ${segment.word}, Tag: ${segment.wordTag}\n`;
-19. });
-20. return output;
-21. }
+// 分词功能测试函数
+// 功能：对输入文本进行分词处理，识别文本中的词语及其词性
+function testWordSegment(inputText: string) {
+  textProcessing.getWordSegment(inputText)
+    .then(result => {
+      // 处理分词成功结果，格式化并输出
+      let outputText = formatWordSegmentResult(result);
+      console.info('NLUDemo', `getWordSegment result:${outputText}`);
+    })
+    .catch((err: BusinessError) => {
+      console.error('NLUDemo', `getWordSegment errorCode: ${err.code} errorMessage: ${err.message}`);
+    });
+}
 
-23. @Entry
-24. @Component
-25. struct Page {
+@Entry
+@Component
+struct Page {
 
-27. build() {
-28. Column(){
-29. Button('Start').onClick(() => {
-30. // 测试文本分词
-31. let inputText = 'test for nlp word segment';
-32. testWordSegment(inputText);
-33. })
-34. }
-35. }
-36. }
+  build() {
+    Column(){
+      Button('Start').onClick(() => {
+        // 输入待分词文本，调用分词功能
+        let inputText = 'test for nlp word segment';
+        testWordSegment(inputText);
+      })
+    }
+  }
+}
 ```
 
 ## textProcessing.getEntity
 
-PhonePC/2in1Tablet
-
 getEntity(text: string, entityConfig?: EntityConfig): Promise<Array<Entity>>
 
-创建实体抽取实例，并初始化引擎。使用Promise异步回调。
+创建实体抽取实例，并初始化引擎。使用Promise异步回调。适用于用户输入的敏感信息识别，内容审核等场景。
 
 **系统能力：** SystemCapability.AI.NaturalLanguage.TextProcessing
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -194,7 +175,7 @@ getEntity(text: string, entityConfig?: EntityConfig): Promise<Array<Entity>>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Natural Language Kit错误码](natural-language-error-code.md)。
+以下错误码的详细介绍请参见[Natural Language Kit错误码](errorcode-natural-language.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -205,63 +186,74 @@ getEntity(text: string, entityConfig?: EntityConfig): Promise<Array<Entity>>
 
 **示例：**
 
-```
-1. import { textProcessing, EntityType } from '@kit.NaturalLanguageKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { textProcessing, EntityType } from '@kit.NaturalLanguageKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. function testEntityRecognition(inputText: string) {
-5. textProcessing.getEntity(inputText, {
-6. entityTypes: [EntityType.NAME]
-7. }).then(result => {
-8. let outputText = formatEntityResult(result);
-9. console.info('NLUDemo', `getEntity result:${outputText}`);
-10. }).catch((err: BusinessError) => {
-11. console.error('NLUDemo', `getEntity errorCode: ${err.code} errorMessage: ${err.message}`);
-12. })
-13. }
+// 实体识别结果格式化函数
+// 功能：对实体识别结果数组进行格式化，包含实体的原文、位置、类型和详细参数
 
-15. function formatEntityResult(entities: textProcessing.Entity[]): string {
-16. if (!entities || !entities.length) {
-17. return 'No entities found.';
-18. }
+function formatEntityResult(entities: textProcessing.Entity[]): string {
+  if (!entities || !entities.length) {
+    return 'No entities found.';
+  }
 
-20. let output = 'Entities:\n';
-21. for (let i = 0; i < entities.length; i++) {
-22. let entity = entities[i];
-23. output += `Entity[${i}]:\n`;
-24. output += `  oriText: ${entity.text}\n`;
-25. output += `  charOffset: ${entity.charOffset}\n`;
-26. output += `  entityType: ${entity.type}\n`;
-27. output += `  jsonObject: ${entity.jsonObject}\n\n`;
-28. }
-29. return output;
-30. }
+  let output = 'Entities:\n';
+  for (let i = 0; i < entities.length; i++) {
+    let entity = entities[i];
+    output += `Entity[${i}]:\n`;
+    output += `  oriText: ${entity.text}\n`;         // 实体原文
+    output += `  charOffset: ${entity.charOffset}\n`; // 实体在原文中的字符偏移
+    output += `  entityType: ${entity.type}\n`;      // 实体类型
+    output += `  jsonObject: ${entity.jsonObject}\n\n`; // 实体的详细参数
+  }
+  return output;
+}
 
-32. @Entry
-33. @Component
-34. struct Page {
+// 实体识别功能测试函数
+// 功能：对输入文本进行实体识别，抽取文本中的特定类型实体
+function testEntityRecognition(inputText: string) {
+  // 指定只识别姓名实体类型，以提高处理效率和准确性
+  textProcessing.getEntity(inputText, {
+    entityTypes: [EntityType.NAME]
+  }).then(result => {
+    // 处理识别成功结果，格式化并输出
+    let outputText = formatEntityResult(result);
+    console.info('NLUDemo', `getEntity result:${outputText}`);
+  }).catch((err: BusinessError) => {
+    console.error('NLUDemo', `getEntity errorCode: ${err.code} errorMessage: ${err.message}`);
+  });
+}
 
-36. build() {
-37. Column(){
-38. Button('Start').onClick(() => {
-39. // 测试实体识别
-40. let inputText = 'test for nlp getEntity. Mary, Bob and Mike.';
-41. testEntityRecognition(inputText);
-42. })
-43. }
-44. }
-45. }
+@Entry
+@Component
+struct Page {
+
+  build() {
+    Column(){
+      Button('Start').onClick(() => {
+        // 输入待识别文本，调用实体识别功能（识别人名）
+        let inputText = 'test for nlp getEntity. Mary, Bob and Mike.';
+        testEntityRecognition(inputText);
+      })
+    }
+  }
+}
 ```
 
 ## textProcessing.init
-
-PhonePC/2in1Tablet
 
 init(): Promise<boolean>
 
 初始化自然语言处理的引擎。使用Promise异步回调。
 
+**说明** 
+
+当开发者需要提前初始化自然语言处理引擎，以减少首次调用文本处理能力（如分词、实体识别）的时延时，可以主动调用此方法。在实际使用中，如果对性能没有特殊要求，可以不调用此接口，系统会在首次使用时自动初始化。
+
 **系统能力：** SystemCapability.AI.NaturalLanguage.TextProcessing
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -271,13 +263,9 @@ init(): Promise<boolean>
 | --- | --- |
 | Promise<boolean> | Promise对象，true表示初始化成功，false表示初始化失败。 |
 
-说明
-
-此初始化接口非必须调用。在主动使用时，可以提前初始化该功能，减少首次调用文本处理能力的时延。
-
 **错误码：**
 
-以下错误码的详细介绍请参见[Natural Language Kit错误码](natural-language-error-code.md)。
+以下错误码的详细介绍请参见[Natural Language Kit错误码](errorcode-natural-language.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -287,37 +275,37 @@ init(): Promise<boolean>
 
 **示例：**
 
-```
-1. import { textProcessing } from '@kit.NaturalLanguageKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { textProcessing } from '@kit.NaturalLanguageKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct Page {
+@Entry
+@Component
+struct Page {
 
-8. build() {
-9. Column(){
-10. Button('init').onClick(() => {
-11. textProcessing.init().then(result => {
-12. console.info(`textProcess init result: ${result}`)
-13. }).catch((err: BusinessError) => {
-14. console.error(`textProcess init failed errorCode: ${err.code} errorMessage: ${err.message}`);
-15. })
-16. })
-17. }
-18. }
-19. }
+  build() {
+    Column(){
+      Button('init').onClick(() => {
+        textProcessing.init().then(result => {
+          console.info(`textProcess init result: ${result}`);
+        }).catch((err: BusinessError) => {
+          console.error(`textProcess init failed errorCode: ${err.code} errorMessage: ${err.message}`);
+        });
+      })
+    }
+  }
+}
 ```
 
 ## textProcessing.release
 
-PhonePC/2in1Tablet
-
 release(): Promise<boolean>
 
-释放引擎。使用Promise异步回调。
+释放引擎。使用Promise异步回调。当开发者不再需要使用自然语言处理功能时，应主动调用此方法释放引擎资源。建议在页面退出或不再需要文本处理能力时调用，以释放内存资源。调用 release() 后，再次调用getWordSegment 或 getEntity 会触发重新初始化引擎，可能会增加调用耗时。
 
 **系统能力：** SystemCapability.AI.NaturalLanguage.TextProcessing
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -329,7 +317,7 @@ release(): Promise<boolean>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Natural Language Kit错误码](natural-language-error-code.md)。
+以下错误码的详细介绍请参见[Natural Language Kit错误码](errorcode-natural-language.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -339,31 +327,33 @@ release(): Promise<boolean>
 
 **示例：**
 
-```
-1. import { textProcessing } from '@kit.NaturalLanguageKit';
+```typescript
+import { textProcessing } from '@kit.NaturalLanguageKit';
 
-3. async function runTextProcessing() {
-4. await textProcessing.init();
-5. console.info('Text processing initialized successfully');
+async function runTextProcessing() {
+  // 初始化引擎
+  await textProcessing.init();
+  console.info('Text processing initialized successfully');
 
-7. try {
-8. const result = await textProcessing.release();
-9. console.info(`textProcess release result: ${result}`);
-10. } catch (err) {
-11. console.error(`textProcess release failed errorCode: ${err.code} errorMessage: ${err.message}`);
-12. }
-13. }
+  // 使用完成后释放引擎资源
+  try {
+    const result = await textProcessing.release();
+    console.info(`textProcess release result: ${result}`);
+  } catch (err) {
+    console.error(`textProcess release failed errorCode: ${err.code} errorMessage: ${err.message}`);
+  }
+}
 
-15. @Entry
-16. @Component
-17. struct Page {
+@Entry
+@Component
+struct Page {
 
-19. build() {
-20. Column(){
-21. Button('Start').onClick(() => {
-22. void runTextProcessing()
-23. })
-24. }
-25. }
-26. }
+  build() {
+    Column(){
+      Button('Start').onClick(() => {
+        void runTextProcessing();
+      })
+    }
+  }
+}
 ```

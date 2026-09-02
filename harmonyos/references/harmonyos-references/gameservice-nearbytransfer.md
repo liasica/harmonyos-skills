@@ -1,29 +1,30 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservice-nearbytransfer
-title: gameNearbyTransfer(游戏近场快传)
+title: gameNearbyTransfer（游戏近场快传）
+breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > ArkTS API > gameNearbyTransfer（游戏近场快传）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b1b95eef836e2f783951249ce5086240ded6b5fbd38a3e61097f7133db28e4cb
+scraped_at: 2026-09-02T14:53:18+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c3b08cf0f7b3df298e1ebedc708621c61bd717c25ecb8c9a6aee273b1dcb004e
 ---
 
-本模块提供接入Game Service Kit的游戏近场快传能力。
+本模块提供接入Game Service Kit的游戏近场快传能力，包括游戏资源包传输和游戏安装包传输功能。游戏可以使用该能力实现游戏资源包和安装包在设备间的高速传输与共享。
+
+**模型约束：** 本模块接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.0(18)
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { gameNearbyTransfer } from '@kit.GameServiceKit';
+```typescript
+import { gameNearbyTransfer } from '@kit.GameServiceKit';
 ```
 
 ## CreateParameters
 
-PhonePC/2in1Tablet
-
 创建参数类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GameNearby
 
@@ -35,15 +36,15 @@ PhonePC/2in1Tablet
 | abilityName | string | 否 | 否 | Ability名称。字符长度范围：[1, 1024]。 |
 | needShowSystemUI | boolean | 否 | 是 | 是否展示系统UI。  - true：展示  - false：不展示  默认为false。 |
 | context | common.[UIAbilityContext](js-apis-inner-application-uiabilitycontext.md) | 否 | 是 | UIAbility上下文，当needShowSystemUI为true时，该参数必传。 |
-| mode | [Mode](gameservice-nearbytransfer.md#mode) | 否 | 是 | 接入模式。默认为API模式。  **起始版本：** 6.0.0(20)。 |
-| contentType | [ContentType](gameservice-nearbytransfer.md#contenttype) | 否 | 是 | 内容类型。  默认值为RESOURCE\_PACKAGE。  **模型约束：** 此接口仅可在Stage模型下使用。  **起始版本：** 6.1.0(23)。 |
-| gameLinking | string | 否 | 是 | 游戏链接，即App Linking或Deep Linking，仅当contentType为“INSTALLATION\_PACKAGE”类型时生效。如果接收端已安装该游戏，则将通过gameLinking启动该游戏。使用方式请参见使用[App Linking实现应用间跳转](../harmonyos-guides/app-linking-startup.md)和[使用Deep Linking实现应用间跳转](../harmonyos-guides/deep-linking-startup.md)。  字符长度范围：[0, 2048]。  **模型约束：** 此接口仅可在Stage模型下使用。  **起始版本：** 6.1.0(23)。 |
+| mode | [Mode](gameservice-nearbytransfer.md#mode) | 否 | 是 | 文件包传输模式。  默认值为1，即API模式。  **起始版本：** 6.0.0(20)。 |
+| contentType | [ContentType](gameservice-nearbytransfer.md#contenttype) | 否 | 是 | 内容类型。  默认值为RESOURCE\_PACKAGE。  **起始版本：** 6.1.0(23)。 |
+| gameLinking | string | 否 | 是 | 游戏链接，即App Linking或Deep Linking，仅当contentType为“INSTALLATION\_PACKAGE”类型并且接收端已安装该游戏时，该游戏将通过gameLinking启动。使用方式请参见使用[App Linking实现应用间跳转](../harmonyos-guides/app-linking-startup.md)和[使用Deep Linking实现应用间跳转](../harmonyos-guides/deep-linking-startup.md)。  字符长度范围：[0, 2048]。  **起始版本：** 6.1.0(23)。 |
 
 ## ConnectNotification
 
-PhonePC/2in1Tablet
-
 连接通知类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GameNearby
 
@@ -57,9 +58,9 @@ PhonePC/2in1Tablet
 
 ## BindParameters
 
-PhonePC/2in1Tablet
-
 绑定参数类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GameNearby
 
@@ -72,9 +73,9 @@ PhonePC/2in1Tablet
 
 ## NearbyGameDevice
 
-PhonePC/2in1Tablet
-
 近场快传设备类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GameNearby
 
@@ -88,9 +89,9 @@ PhonePC/2in1Tablet
 
 ## DiscoveryResult
 
-PhonePC/2in1Tablet
-
 发现结果类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GameNearby
 
@@ -102,9 +103,9 @@ PhonePC/2in1Tablet
 
 ## CreateResult
 
-PhonePC/2in1Tablet
-
 创建结果类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GameNearby
 
@@ -113,13 +114,13 @@ PhonePC/2in1Tablet
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | localDeviceName | string | 否 | 否 | 本端设备名。 |
-| linkingForInstallation | string | 否 | 是 | 安装包的传输链接，仅当传输类型为安装包传输时返回。字符长度范围：[0, 2048]。  **模型约束：** 此接口仅可在Stage模型下使用。  **起始版本：** 6.1.0(23)。 |
+| linkingForInstallation | string | 否 | 是 | 安装包的传输链接，仅当传输类型为安装包传输时返回。字符长度范围：[0, 2048]。  **起始版本：** 6.1.0(23)。 |
 
 ## TransferNotification
 
-PhonePC/2in1Tablet
-
 传输通知类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GameNearby
 
@@ -133,9 +134,9 @@ PhonePC/2in1Tablet
 
 ## FileInfo
 
-PhonePC/2in1Tablet
-
 文件信息类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GameNearby
 
@@ -148,9 +149,9 @@ PhonePC/2in1Tablet
 
 ## PackageInfo
 
-PhonePC/2in1Tablet
-
 包信息类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GameNearby
 
@@ -165,9 +166,9 @@ PhonePC/2in1Tablet
 
 ## PackageFile
 
-PhonePC/2in1Tablet
-
 传输包文件类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GameNearby
 
@@ -180,9 +181,9 @@ PhonePC/2in1Tablet
 
 ## PackageData
 
-PhonePC/2in1Tablet
-
 传输包数据类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GameNearby
 
@@ -196,9 +197,9 @@ PhonePC/2in1Tablet
 
 ## ReturnResult
 
-PhonePC/2in1Tablet
-
 返回结果类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GameNearby
 
@@ -211,9 +212,9 @@ PhonePC/2in1Tablet
 
 ## PackageInfoResult
 
-PhonePC/2in1Tablet
-
 包信息对比结果类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GameNearby
 
@@ -226,9 +227,9 @@ PhonePC/2in1Tablet
 
 ## TransferInfo
 
-PhonePC/2in1Tablet
-
 传输信息类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GameNearby
 
@@ -239,11 +240,9 @@ PhonePC/2in1Tablet
 | expectedTime | number | 否 | 否 | 传输剩余时间，单位：s。 |
 | transferredPackageSize | number | 否 | 否 | 已传输包大小，单位：Byte。 |
 | totalPackageSize | number | 否 | 否 | 整包总大小，单位：Byte。 |
-| rate | number | 否 | 否 | 传输速率，单位：Byte/s。 |
+| rate | number | 否 | 否 | 传输速率，单位：B/s。 |
 
 ## RemoteInstallationInfo
-
-PhonePC/2in1Tablet
 
 安装信息类。
 
@@ -259,9 +258,9 @@ PhonePC/2in1Tablet
 
 ## Mode
 
-PhonePC/2in1Tablet
+文件包传输模式枚举对象。
 
-接入模式枚举对象。
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GameNearby
 
@@ -269,15 +268,15 @@ PhonePC/2in1Tablet
 
 | **名称** | **值** | **说明** |
 | --- | --- | --- |
-| API | 1 | API模式，即使用游戏近场快传服务接口接入。 |
-| KNOCK | 2 | 碰一碰模式。详情请参考[碰一碰分享](../harmonyos-guides/knock-share-between-phones-overview.md)。 |
-| GESTURES | 3 | 隔空传送模式。详情请参考[隔空传送](../harmonyos-guides/gestures-share-overview.md)。  **模型约束：** 此接口仅可在Stage模型下使用。  **起始版本：** 6.1.0(23)。 |
+| API | 1 | API模式，即调用游戏近场快传API接口进行传输。 |
+| KNOCK | 2 | 碰一碰分享模式。详情请参考[碰一碰分享](../harmonyos-guides/knock-share-between-phones-overview.md)。 |
+| GESTURES | 3 | 隔空传送模式。详情请参考[隔空传送](../harmonyos-guides/gestures-share-overview.md)。  **起始版本：** 6.1.0(23)。 |
 
 ## ConnectState
 
-PhonePC/2in1Tablet
-
 连接状态枚举对象。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GameNearby
 
@@ -290,9 +289,9 @@ PhonePC/2in1Tablet
 
 ## TransferState
 
-PhonePC/2in1Tablet
-
 传输状态枚举对象。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GameNearby
 
@@ -311,9 +310,9 @@ PhonePC/2in1Tablet
 
 ## PackageInfoResultCode
 
-PhonePC/2in1Tablet
-
 包信息对比结果码值枚举对象。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GameNearby
 
@@ -326,8 +325,6 @@ PhonePC/2in1Tablet
 | PACKAGE\_UNAVAILABLE\_COMPARED | 1 | 对比后不可用。 |
 
 ## ContentType
-
-PhonePC/2in1Tablet
 
 传输的内容类型枚举对象。
 
@@ -344,15 +341,15 @@ PhonePC/2in1Tablet
 
 ## NearbyTransferErrorCode
 
-PhonePC/2in1Tablet
-
 错误码类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GameNearby
 
 **起始版本：** 5.1.0(18)
 
-错误码的详细介绍请参见[ArkTS API错误码](gameservice-error-code.md)。
+错误码的详细介绍请参见[ArkTS API错误码](errorcode-gameservice.md)。
 
 | **名称** | 值 | **说明** |
 | --- | --- | --- |
@@ -367,24 +364,24 @@ PhonePC/2in1Tablet
 
 ## gameNearbyTransfer.on('connectNotify')
 
-PhonePC/2in1Tablet
-
 on(type: 'connectNotify', callback: Callback<ConnectNotification>): void
 
 订阅连接通知事件。使用callback回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GameNearby
 
 **起始版本：** 5.1.0(18)
 
-**参数**：
+**参数：**
 
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，支持的事件为'connectNotify'，建链操作完成后触发该事件。 |
 | callback | Callback<[ConnectNotification](gameservice-nearbytransfer.md#connectnotification)> | 是 | 回调函数，返回连接通知对象。 |
 
-**错误码**：
+**错误码：**
 
 错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
 
@@ -392,48 +389,48 @@ on(type: 'connectNotify', callback: Callback<ConnectNotification>): void
 | --- | --- |
 | 401 | Parameter error. Possible causes: 3. Parameter verification failed. |
 
-**示例**：
+**示例：**
 
-```
-1. import { hilog } from "@kit.PerformanceAnalysisKit";
-2. import { gameNearbyTransfer } from "@kit.GameServiceKit";
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { gameNearbyTransfer } from '@kit.GameServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. try {
-6. // 订阅连接通知事件
-7. gameNearbyTransfer.on('connectNotify', connectNotifyCallBack);
-8. } catch (error) {
-9. // 订阅连接通知失败
-10. let err = error as BusinessError;
-11. hilog.error(0x0000, 'nearby', `Failed to subscribe connectNotify. Code: ${err.code}, message: ${err.message}`);
-12. }
+try {
+  // 订阅连接通知事件
+  gameNearbyTransfer.on('connectNotify', connectNotifyCallBack);
+} catch (error) {
+  // 订阅连接通知失败
+  let err = error as BusinessError;
+  hilog.error(0x0000, 'nearby', `Failed to subscribe connectNotify. Code: ${err.code}, message: ${err.message}`);
+}
 
-14. function connectNotifyCallBack(callback: gameNearbyTransfer.ConnectNotification) {
-15. // 获取连接状态
-16. hilog.info(0x0000, 'nearby', `connectNotify. State: ${callback.connectState}`);
-17. }
+function connectNotifyCallBack(callback: gameNearbyTransfer.ConnectNotification) {
+  // 获取连接状态
+  hilog.info(0x0000, 'nearby', `connectNotify. State: ${callback.connectState}`);
+}
 ```
 
 ## gameNearbyTransfer.off('connectNotify')
-
-PhonePC/2in1Tablet
 
 off(type: 'connectNotify', callback?: Callback<ConnectNotification>): void
 
 取消订阅连接通知事件。使用callback回调。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.GameService.GameNearby
 
 **起始版本：** 5.1.0(18)
 
-**参数**：
+**参数：**
 
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，支持的事件为'connectNotify'，建链操作完成后触发该事件。 |
 | callback | Callback<[ConnectNotification](gameservice-nearbytransfer.md#connectnotification)> | 否 | 回调函数，返回连接通知对象。  如果该参数不为空，则取消当前callback订阅。如果该参数为空，则取消'connectNotify'事件的所有callback订阅。 |
 
-**错误码**：
+**错误码：**
 
 错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
 
@@ -441,148 +438,152 @@ off(type: 'connectNotify', callback?: Callback<ConnectNotification>): void
 | --- | --- |
 | 401 | Parameter error. Possible causes: 3. Parameter verification failed. |
 
-**示例**：
+**示例：**
 
-```
-1. import { hilog } from "@kit.PerformanceAnalysisKit";
-2. import { gameNearbyTransfer } from "@kit.GameServiceKit";
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { gameNearbyTransfer } from '@kit.GameServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. try {
-6. // 取消订阅连接通知事件
-7. gameNearbyTransfer.off('connectNotify', connectNotifyCallBack);
-8. } catch (error) {
-9. // 取消订阅失败
-10. let err = error as BusinessError;
-11. hilog.error(0x0000, 'nearby', `Failed to unsubscribe connectNotify. Code: ${err.code}, message: ${err.message}`);
-12. }
+try {
+  // 取消订阅连接通知事件
+  gameNearbyTransfer.off('connectNotify', connectNotifyCallBack);
+} catch (error) {
+  // 取消订阅失败
+  let err = error as BusinessError;
+  hilog.error(0x0000, 'nearby', `Failed to unsubscribe connectNotify. Code: ${err.code}, message: ${err.message}`);
+}
 
-14. function connectNotifyCallBack(callback: gameNearbyTransfer.ConnectNotification) {
-15. // 获取连接状态
-16. hilog.info(0x0000, 'nearby', `connectNotify. State: ${callback.connectState}`);
-17. }
+function connectNotifyCallBack(callback: gameNearbyTransfer.ConnectNotification) {
+  // 获取连接状态
+  hilog.info(0x0000, 'nearby', `connectNotify. State: ${callback.connectState}`);
+}
 ```
 
 ## gameNearbyTransfer.on('discovery')
-
-PhonePC/2in1Tablet
 
 on(type: 'discovery', callback: Callback<DiscoveryResult>): void
 
 订阅发现结果事件。使用callback回调。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.GameService.GameNearby
 
 **起始版本：** 6.0.0(20)
 
-**参数**：
+**参数：**
 
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，支持的事件为'discovery'，发现设备操作完成后触发该事件。 |
 | callback | Callback<[DiscoveryResult](gameservice-nearbytransfer.md#discoveryresult)> | 是 | 回调函数，返回发现结果对象。 |
 
-**错误码**：
+**错误码：**
 
-错误码的详细介绍请参见[ArkTS API错误码](gameservice-error-code.md)。
+错误码的详细介绍请参见[ArkTS API错误码](errorcode-gameservice.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1018300008 | Invalid parameter. |
 
-**示例**：
+**示例：**
 
-```
-1. import { hilog } from "@kit.PerformanceAnalysisKit";
-2. import { gameNearbyTransfer } from "@kit.GameServiceKit";
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { gameNearbyTransfer } from '@kit.GameServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. try {
-6. // 订阅发现结果
-7. gameNearbyTransfer.on('discovery', discoveryCallBack);
-8. } catch (error) {
-9. // 订阅失败
-10. let err = error as BusinessError;
-11. hilog.error(0x0000, 'nearby', `Failed to subscribe discovery. Code: ${err.code}, message: ${err.message}`);
-12. }
+try {
+  // 订阅发现结果
+  gameNearbyTransfer.on('discovery', discoveryCallBack);
+} catch (error) {
+  // 订阅失败
+  let err = error as BusinessError;
+  hilog.error(0x0000, 'nearby', `Failed to subscribe discovery. Code: ${err.code}, message: ${err.message}`);
+}
 
-14. function discoveryCallBack(callback: gameNearbyTransfer.DiscoveryResult) {
-15. // 获取到发现的设备 展示设备列表
-16. callback.nearbyGameDevices.forEach((device: gameNearbyTransfer.NearbyGameDevice, index: number) => {
-17. });
-18. }
+function discoveryCallBack(callback: gameNearbyTransfer.DiscoveryResult) {
+  // 获取到发现的设备 展示设备列表
+  callback.nearbyGameDevices.forEach((device: gameNearbyTransfer.NearbyGameDevice, index: number) => {
+    hilog.info(0x0000, 'nearby', `device info. name: ${device.deviceName}, index: ${index}`);
+    // 开发者可在此处添加展示设备列表的逻辑
+  });
+}
 ```
 
 ## gameNearbyTransfer.off('discovery')
-
-PhonePC/2in1Tablet
 
 off(type: 'discovery', callback?: Callback<DiscoveryResult>): void
 
 取消订阅发现结果事件。使用callback回调。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.GameService.GameNearby
 
 **起始版本：** 6.0.0(20)
 
-**参数**：
+**参数：**
 
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，支持的事件为'discovery'，发现设备操作完成后触发该事件。 |
 | callback | Callback<[DiscoveryResult](gameservice-nearbytransfer.md#discoveryresult)> | 否 | 回调函数，返回发现结果对象。  如果该参数不为空，则取消当前callback订阅。如果该参数为空，则取消'discovery'事件的所有callback订阅。 |
 
-**错误码**：
+**错误码：**
 
-错误码的详细介绍请参见[ArkTS API错误码](gameservice-error-code.md)。
+错误码的详细介绍请参见[ArkTS API错误码](errorcode-gameservice.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1018300008 | Invalid parameter. |
 
-**示例**：
+**示例：**
 
-```
-1. import { hilog } from "@kit.PerformanceAnalysisKit";
-2. import { gameNearbyTransfer } from "@kit.GameServiceKit";
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { gameNearbyTransfer } from '@kit.GameServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. try {
-6. // 取消订阅
-7. gameNearbyTransfer.off('discovery', discoveryCallBack);
-8. } catch (error) {
-9. // 取消订阅失败
-10. let err = error as BusinessError;
-11. hilog.error(0x0000, 'nearby', `Failed to unsubscribe discovery. Code: ${err.code}, message: ${err.message}`);
-12. }
+try {
+  // 取消订阅
+  gameNearbyTransfer.off('discovery', discoveryCallBack);
+} catch (error) {
+  // 取消订阅失败
+  let err = error as BusinessError;
+  hilog.error(0x0000, 'nearby', `Failed to unsubscribe discovery. Code: ${err.code}, message: ${err.message}`);
+}
 
-14. function discoveryCallBack(callback: gameNearbyTransfer.DiscoveryResult) {
-15. // 获取到发现的设备 展示设备列表
-16. callback.nearbyGameDevices.forEach((device: gameNearbyTransfer.NearbyGameDevice, index: number) => {
-17. });
-18. }
+function discoveryCallBack(callback: gameNearbyTransfer.DiscoveryResult) {
+  // 获取到发现的设备 展示设备列表
+  callback.nearbyGameDevices.forEach((device: gameNearbyTransfer.NearbyGameDevice, index: number) => {
+    hilog.info(0x0000, 'nearby', `device info. name: ${device.deviceName}, index: ${index}`);
+    // 开发者可在此处添加展示设备列表的逻辑
+  });
+}
 ```
 
 ## gameNearbyTransfer.on('receivePackageInfo')
-
-PhonePC/2in1Tablet
 
 on(type: 'receivePackageInfo', callback: Callback<PackageInfo>): void
 
 订阅收到包信息事件。使用callback回调。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.GameService.GameNearby
 
 **起始版本：** 5.1.0(18)
 
-**参数**：
+**参数：**
 
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，支持的事件为'receivePackageInfo'，收到接收方发送的自身文件信息后触发该事件。 |
 | callback | Callback<[PackageInfo](gameservice-nearbytransfer.md#packageinfo)> | 是 | 回调函数，返回包信息对象。 |
 
-**错误码**：
+**错误码：**
 
 错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
 
@@ -590,47 +591,47 @@ on(type: 'receivePackageInfo', callback: Callback<PackageInfo>): void
 | --- | --- |
 | 401 | Parameter error. Possible causes: 3. Parameter verification failed. |
 
-**示例**：
+**示例：**
 
-```
-1. import { hilog } from "@kit.PerformanceAnalysisKit";
-2. import { gameNearbyTransfer } from "@kit.GameServiceKit";
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { gameNearbyTransfer } from '@kit.GameServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. try {
-6. // 订阅包信息事件
-7. gameNearbyTransfer.on('receivePackageInfo', receivePackageInfoCallBack);
-8. } catch (error) {
-9. // 订阅包信息事件失败
-10. let err = error as BusinessError;
-11. hilog.error(0x0000, 'nearby', `Failed to subscribe receivePackageInfo. Code: ${err.code}, message: ${err.message}`);
-12. }
-13. function receivePackageInfoCallBack(callback: gameNearbyTransfer.PackageInfo) {
-14. // 获取对端包信息&版本号
-15. hilog.info(0x0000, 'nearby', `get package info. version: ${callback.version}`);
-16. }
+try {
+  // 订阅包信息事件
+  gameNearbyTransfer.on('receivePackageInfo', receivePackageInfoCallBack);
+} catch (error) {
+  // 订阅包信息事件失败
+  let err = error as BusinessError;
+  hilog.error(0x0000, 'nearby', `Failed to subscribe receivePackageInfo. Code: ${err.code}, message: ${err.message}`);
+}
+function receivePackageInfoCallBack(callback: gameNearbyTransfer.PackageInfo) {
+  // 获取对端包信息&版本号
+  hilog.info(0x0000, 'nearby', `get package info. version: ${callback.version}`);
+}
 ```
 
 ## gameNearbyTransfer.off('receivePackageInfo')
-
-PhonePC/2in1Tablet
 
 off(type: 'receivePackageInfo', callback?: Callback<PackageInfo>): void
 
 取消订阅收到包信息事件。使用callback回调。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.GameService.GameNearby
 
 **起始版本：** 5.1.0(18)
 
-**参数**：
+**参数：**
 
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，支持的事件为'receivePackageInfo'，收到接收方发送的自身文件信息后触发该事件。 |
 | callback | Callback<[PackageInfo](gameservice-nearbytransfer.md#packageinfo)> | 否 | 回调函数，返回包信息对象。  如果该参数不为空，则取消当前callback订阅。如果该参数为空，则取消'receivePackageInfo'事件的所有callback订阅。 |
 
-**错误码**：
+**错误码：**
 
 错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
 
@@ -638,48 +639,48 @@ off(type: 'receivePackageInfo', callback?: Callback<PackageInfo>): void
 | --- | --- |
 | 401 | Parameter error. Possible causes: 3. Parameter verification failed. |
 
-**示例**：
+**示例：**
 
-```
-1. import { hilog } from "@kit.PerformanceAnalysisKit";
-2. import { gameNearbyTransfer } from "@kit.GameServiceKit";
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { gameNearbyTransfer } from '@kit.GameServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. try {
-6. // 取消订阅包信息事件
-7. gameNearbyTransfer.off('receivePackageInfo', receivePackageInfoCallBack);
-8. } catch (error) {
-9. // 取消订阅失败
-10. let err = error as BusinessError;
-11. hilog.error(0x0000, 'nearby', `Failed to unsubscribe receivePackageInfo. Code: ${err.code}, message: ${err.message}`);
-12. }
+try {
+  // 取消订阅包信息事件
+  gameNearbyTransfer.off('receivePackageInfo', receivePackageInfoCallBack);
+} catch (error) {
+  // 取消订阅失败
+  let err = error as BusinessError;
+  hilog.error(0x0000, 'nearby', `Failed to unsubscribe receivePackageInfo. Code: ${err.code}, message: ${err.message}`);
+}
 
-14. function receivePackageInfoCallBack(callback: gameNearbyTransfer.PackageInfo) {
-15. // 获取对端包信息&版本号
-16. hilog.info(0x0000, 'nearby', `get package info. version: ${callback.version}`);
-17. }
+function receivePackageInfoCallBack(callback: gameNearbyTransfer.PackageInfo) {
+  // 获取对端包信息&版本号
+  hilog.info(0x0000, 'nearby', `get package info. version: ${callback.version}`);
+}
 ```
 
 ## gameNearbyTransfer.on('transferNotify')
-
-PhonePC/2in1Tablet
 
 on(type: 'transferNotify', callback: Callback<TransferNotification>): void
 
 订阅传输通知事件。使用callback回调。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.GameService.GameNearby
 
 **起始版本：** 5.1.0(18)
 
-**参数**：
+**参数：**
 
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，支持的事件为'transferNotify'，文件传输过程中触发该事件。 |
 | callback | Callback<[TransferNotification](gameservice-nearbytransfer.md#transfernotification)> | 是 | 回调函数，返回传输通知对象。 |
 
-**错误码**：
+**错误码：**
 
 错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
 
@@ -687,48 +688,48 @@ on(type: 'transferNotify', callback: Callback<TransferNotification>): void
 | --- | --- |
 | 401 | Parameter error. Possible causes: 3. Parameter verification failed. |
 
-**示例**：
+**示例：**
 
-```
-1. import { hilog } from "@kit.PerformanceAnalysisKit";
-2. import { gameNearbyTransfer } from "@kit.GameServiceKit";
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { gameNearbyTransfer } from '@kit.GameServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. try {
-6. // 订阅传输通知事件
-7. gameNearbyTransfer.on('transferNotify', transferNotifyCallBack);
-8. } catch (error) {
-9. // 订阅传输通知失败
-10. let err = error as BusinessError;
-11. hilog.error(0x0000, 'nearby', `Failed to subscribe transferNotify. Code: ${err.code}, message: ${err.message}`);
-12. }
+try {
+  // 订阅传输通知事件
+  gameNearbyTransfer.on('transferNotify', transferNotifyCallBack);
+} catch (error) {
+  // 订阅传输通知失败
+  let err = error as BusinessError;
+  hilog.error(0x0000, 'nearby', `Failed to subscribe transferNotify. Code: ${err.code}, message: ${err.message}`);
+}
 
-14. function transferNotifyCallBack(callback: gameNearbyTransfer.TransferNotification) {
-15. // 获取传输状态
-16. hilog.info(0x0000, 'nearby', `transferNotify. transferState: ${callback.transferState}`);
-17. }
+function transferNotifyCallBack(callback: gameNearbyTransfer.TransferNotification) {
+  // 获取传输状态
+  hilog.info(0x0000, 'nearby', `transferNotify. transferState: ${callback.transferState}`);
+}
 ```
 
 ## gameNearbyTransfer.off('transferNotify')
-
-PhonePC/2in1Tablet
 
 off(type: 'transferNotify', callback?: Callback<TransferNotification>): void
 
 取消订阅传输通知事件。使用callback回调。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.GameService.GameNearby
 
 **起始版本：** 5.1.0(18)
 
-**参数**：
+**参数：**
 
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，支持的事件为'transferNotify'，文件传输过程中触发该事件。 |
 | callback | Callback<[TransferNotification](gameservice-nearbytransfer.md#transfernotification)> | 否 | 回调函数，返回传输通知对象。  如果该参数不为空，则取消当前callback订阅。如果该参数为空，则取消'transferNotify'事件的所有callback订阅。 |
 
-**错误码**：
+**错误码：**
 
 错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
 
@@ -736,48 +737,48 @@ off(type: 'transferNotify', callback?: Callback<TransferNotification>): void
 | --- | --- |
 | 401 | Parameter error. Possible causes: 3. Parameter verification failed. |
 
-**示例**：
+**示例：**
 
-```
-1. import { hilog } from "@kit.PerformanceAnalysisKit";
-2. import { gameNearbyTransfer } from "@kit.GameServiceKit";
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { gameNearbyTransfer } from '@kit.GameServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. try {
-6. // 取消订阅传输通知事件
-7. gameNearbyTransfer.off('transferNotify', transferNotifyCallBack);
-8. } catch (error) {
-9. // 取消订阅失败
-10. let err = error as BusinessError;
-11. hilog.error(0x0000, 'nearby', `Failed to unsubscribe transferNotify. Code: ${err.code}, message: ${err.message}`);
-12. }
+try {
+  // 取消订阅传输通知事件
+  gameNearbyTransfer.off('transferNotify', transferNotifyCallBack);
+} catch (error) {
+  // 取消订阅失败
+  let err = error as BusinessError;
+  hilog.error(0x0000, 'nearby', `Failed to unsubscribe transferNotify. Code: ${err.code}, message: ${err.message}`);
+}
 
-14. function transferNotifyCallBack(callback: gameNearbyTransfer.TransferNotification) {
-15. // 获取传输状态
-16. hilog.info(0x0000, 'nearby', `transferNotify. transferState: ${callback.transferState}`);
-17. }
+function transferNotifyCallBack(callback: gameNearbyTransfer.TransferNotification) {
+  // 获取传输状态
+  hilog.info(0x0000, 'nearby', `transferNotify. transferState: ${callback.transferState}`);
+}
 ```
 
 ## gameNearbyTransfer.on('error')
-
-PhonePC/2in1Tablet
 
 on(type: 'error', callback: Callback<ReturnResult>): void
 
 订阅错误事件。使用callback回调。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.GameService.GameNearby
 
 **起始版本：** 5.1.0(18)
 
-**参数**：
+**参数：**
 
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，支持的事件为'error'，内部错误时触发该事件。 |
 | callback | Callback<[ReturnResult](gameservice-nearbytransfer.md#returnresult)> | 是 | 回调函数，返回结果信息对象。 |
 
-**错误码**：
+**错误码：**
 
 错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
 
@@ -785,45 +786,47 @@ on(type: 'error', callback: Callback<ReturnResult>): void
 | --- | --- |
 | 401 | Parameter error. Possible causes: 3. Parameter verification failed. |
 
-**示例**：
+**示例：**
 
-```
-1. import { hilog } from "@kit.PerformanceAnalysisKit";
-2. import { gameNearbyTransfer } from "@kit.GameServiceKit";
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { gameNearbyTransfer } from '@kit.GameServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. try {
-6. // 订阅异常事件通知
-7. gameNearbyTransfer.on('error', errorCallBack);
-8. } catch (error) {
-9. // 订阅异常事件通知失败
-10. let err = error as BusinessError;
-11. hilog.error(0x0000, 'nearby', `Failed to subscribe error. Code: ${err.code}, message: ${err.message}`);
-12. }
+try {
+  // 订阅异常事件通知
+  gameNearbyTransfer.on('error', errorCallBack);
+} catch (error) {
+  // 订阅异常事件通知失败
+  let err = error as BusinessError;
+  hilog.error(0x0000, 'nearby', `Failed to subscribe error. Code: ${err.code}, message: ${err.message}`);
+}
 
-14. function errorCallBack(callback: gameNearbyTransfer.ReturnResult) {
-15. hilog.warn(0x0000, 'nearby', `Error info. Code: ${callback.code}, message: ${callback.message}`);
-16. }
+function errorCallBack(callback: gameNearbyTransfer.ReturnResult) {
+  hilog.error(0x0000, 'nearby', `Error info. Code: ${callback.code}, message: ${callback.message}`);
+}
 ```
 
 ## gameNearbyTransfer.off('error')
 
-PhonePC/2in1Tablet
-
 off(type: 'error', callback?: Callback<ReturnResult>): void
+
+取消订阅错误事件。使用callback回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GameNearby
 
 **起始版本：** 5.1.0(18)
 
-**参数**：
+**参数：**
 
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，支持的事件为'error'。 |
 | callback | Callback<[ReturnResult](gameservice-nearbytransfer.md#returnresult)> | 否 | 回调函数，返回结果信息对象。  如果该参数不为空，则取消当前callback订阅。如果该参数为空，则取消'error'事件的所有callback订阅。 |
 
-**错误码**：
+**错误码：**
 
 错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
 
@@ -831,30 +834,28 @@ off(type: 'error', callback?: Callback<ReturnResult>): void
 | --- | --- |
 | 401 | Parameter error. Possible causes: 3. Parameter verification failed. |
 
-**示例**：
+**示例：**
 
-```
-1. import { hilog } from "@kit.PerformanceAnalysisKit";
-2. import { gameNearbyTransfer } from "@kit.GameServiceKit";
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { gameNearbyTransfer } from '@kit.GameServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. try {
-6. // 取消订阅异常事件通知
-7. gameNearbyTransfer.off('error', errorCallBack);
-8. } catch (error) {
-9. // 取消订阅失败
-10. let err = error as BusinessError;
-11. hilog.error(0x0000, 'nearby', `Failed to unsubscribe errorCallBack. Code: ${err.code}, message: ${err.message}`);
-12. }
+try {
+  // 取消订阅异常事件通知
+  gameNearbyTransfer.off('error', errorCallBack);
+} catch (error) {
+  // 取消订阅失败
+  let err = error as BusinessError;
+  hilog.error(0x0000, 'nearby', `Failed to unsubscribe errorCallBack. Code: ${err.code}, message: ${err.message}`);
+}
 
-14. function errorCallBack(callback: gameNearbyTransfer.ReturnResult) {
-15. hilog.warn(0x0000, 'nearby', `Error info. Code: ${callback.code}, message: ${callback.message}`);
-16. }
+function errorCallBack(callback: gameNearbyTransfer.ReturnResult) {
+  hilog.error(0x0000, 'nearby', `Error info. Code: ${callback.code}, message: ${callback.message}`);
+}
 ```
 
 ## gameNearbyTransfer.onRemoteInstallationInfoNotify
-
-PhonePC/2in1Tablet
 
 onRemoteInstallationInfoNotify(callback: Callback<RemoteInstallationInfo>): void
 
@@ -866,43 +867,41 @@ onRemoteInstallationInfoNotify(callback: Callback<RemoteInstallationInfo>): void
 
 **起始版本：** 6.1.0(23)
 
-**参数**：
+**参数：**
 
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
 | callback | Callback<[RemoteInstallationInfo](gameservice-nearbytransfer.md#remoteinstallationinfo)> | 是 | 回调函数，返回远程安装包结果信息对象。 |
 
-**错误码**：
+**错误码：**
 
-错误码的详细介绍请参见[ArkTS API错误码](gameservice-error-code.md)。
+错误码的详细介绍请参见[ArkTS API错误码](errorcode-gameservice.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1018300008 | Invalid parameter. |
 
-**示例**：
+**示例：**
 
-```
-1. import { hilog } from "@kit.PerformanceAnalysisKit";
-2. import { gameNearbyTransfer } from "@kit.GameServiceKit";
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { gameNearbyTransfer } from '@kit.GameServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. try {
-6. gameNearbyTransfer.onRemoteInstallationInfoNotify(remoteCallBack);
-7. } catch (error) {
-8. let err = error as BusinessError;
-9. hilog.error(0x0000, 'nearby', `Failed to subscribe offRemoteInstallationInfoNotify error. Code: ${err.code}, message: ${err.message}`);
-10. }
+try {
+  gameNearbyTransfer.onRemoteInstallationInfoNotify(remoteCallBack);
+} catch (error) {
+  let err = error as BusinessError;
+  hilog.error(0x0000, 'nearby', `Failed to subscribe offRemoteInstallationInfoNotify error. Code: ${err.code}, message: ${err.message}`);
+}
 
-12. function remoteCallBack(callback: gameNearbyTransfer.RemoteInstallationInfo) {
-13. // 对端是否已安装
-14. hilog.info(0x0000, 'nearby', `remoteInstallationInfoNotify ${callback.installed}`);
-15. }
+function remoteCallBack(callback: gameNearbyTransfer.RemoteInstallationInfo) {
+  // 对端是否已安装
+  hilog.info(0x0000, 'nearby', `remoteInstallationInfoNotify ${callback.installed}`);
+}
 ```
 
 ## gameNearbyTransfer.offRemoteInstallationInfoNotify
-
-PhonePC/2in1Tablet
 
 offRemoteInstallationInfoNotify(callback?: Callback<RemoteInstallationInfo>): void
 
@@ -914,15 +913,15 @@ offRemoteInstallationInfoNotify(callback?: Callback<RemoteInstallationInfo>): vo
 
 **起始版本：** 6.1.0(23)
 
-**参数**：
+**参数：**
 
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
 | callback | Callback<[RemoteInstallationInfo](gameservice-nearbytransfer.md#remoteinstallationinfo)> | 否 | 回调函数，返回远程安装包结果信息对象。  如果该参数不为空，则取消当前callback订阅。如果该参数为空，则取消'offRemoteInstallationInfoNotify'事件的所有callback订阅。 |
 
-**错误码**：
+**错误码：**
 
-错误码的详细介绍请参见[ArkTS API错误码](gameservice-error-code.md)。
+错误码的详细介绍请参见[ArkTS API错误码](errorcode-gameservice.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -930,31 +929,31 @@ offRemoteInstallationInfoNotify(callback?: Callback<RemoteInstallationInfo>): vo
 
 **示例**：
 
-```
-1. import { hilog } from "@kit.PerformanceAnalysisKit";
-2. import { gameNearbyTransfer } from "@kit.GameServiceKit";
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { gameNearbyTransfer } from '@kit.GameServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. try {
-6. gameNearbyTransfer.offRemoteInstallationInfoNotify(remoteCallBack);
-7. } catch (error) {
-8. let err = error as BusinessError;
-9. hilog.error(0x0000, 'nearby', `Failed to unsubscribe offRemoteInstallationInfoNotify error. Code: ${err.code}, message: ${err.message}`);
-10. }
+try {
+  gameNearbyTransfer.offRemoteInstallationInfoNotify(remoteCallBack);
+} catch (error) {
+  let err = error as BusinessError;
+  hilog.error(0x0000, 'nearby', `Failed to unsubscribe offRemoteInstallationInfoNotify error. Code: ${err.code}, message: ${err.message}`);
+}
 
-12. function remoteCallBack(callback: gameNearbyTransfer.RemoteInstallationInfo) {
-13. // 对端是否已安装
-14. hilog.info(0x0000, 'nearby', `remoteInstallationInfoNotify ${callback.installed}`);
-15. }
+function remoteCallBack(callback: gameNearbyTransfer.RemoteInstallationInfo) {
+  // 对端是否已安装
+  hilog.info(0x0000, 'nearby', `remoteInstallationInfoNotify ${callback.installed}`);
+}
 ```
 
 ## gameNearbyTransfer.create
 
-PhonePC/2in1Tablet
-
 create(createParameters: CreateParameters): Promise<CreateResult>
 
 创建游戏近场快传服务。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GameNearby
 
@@ -974,7 +973,7 @@ create(createParameters: CreateParameters): Promise<CreateResult>
 
 **错误码：**
 
-错误码的详细介绍请参见[ArkTS API错误码](gameservice-error-code.md)和[通用错误码](errorcode-universal.md)。
+错误码的详细介绍请参见[ArkTS API错误码](errorcode-gameservice.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -982,84 +981,105 @@ create(createParameters: CreateParameters): Promise<CreateResult>
 | 1018300001 | System internal error. |
 | 1018300002 | Authentication failed. |
 
-**资源包传输示例**：
+**示例**：
 
+资源包传输示例：
+
+```typescript
+import { common } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { gameNearbyTransfer } from '@kit.GameServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+@Component
+struct Create {
+  create() {
+    let context = this.getUIContext()?.getHostContext() as common.UIAbilityContext;
+    let initParam: gameNearbyTransfer.CreateParameters = {
+      abilityName: context.abilityInfo.name,
+      context: context,
+      moduleName: context.abilityInfo.moduleName,
+      needShowSystemUI: false // 是否显示系统UI
+    };
+
+    try {
+      gameNearbyTransfer.create(initParam).then((createResult) => {
+        hilog.info(0x0000, 'nearby', `create success localDeviceName ${createResult.localDeviceName}`);
+      }).catch((err: BusinessError) => {
+        hilog.error(0x0000, 'nearby', `create failed. Code: ${err.code}, message: ${err.message}`);
+      });
+    } catch (error) {
+      let err = error as BusinessError;
+      hilog.error(0x0000, 'nearby', `create exception. Code: ${err.code}, message: ${err.message}`);
+    }
+  }
+
+  build() {
+    Row() {
+      Button('create')
+        .onClick(() => {
+          this.create();
+        })
+        .width('100%')
+    }
+    .margin(16)
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
-1. import { common } from '@kit.AbilityKit';
-2. import { hilog } from "@kit.PerformanceAnalysisKit";
-3. import { gameNearbyTransfer } from "@kit.GameServiceKit";
-4. import { BusinessError } from "@kit.BasicServicesKit";
 
-6. @Component
-7. struct Create {
-8. create() {
-9. // 创建资源包传输
-10. let context = this.getUIContext()?.getHostContext() as common.UIAbilityContext;
-11. let initParam: gameNearbyTransfer.CreateParameters = {
-12. abilityName: context.abilityInfo.name,
-13. context: context,
-14. moduleName: context.abilityInfo.moduleName,
-15. needShowSystemUI: false // 是否显示系统UI
-16. };
+安装包传输示例：
 
-18. try {
-19. gameNearbyTransfer.create(initParam).then((createResult) => {
-20. hilog.info(0x0000, 'nearby', `create success localDeviceName ${createResult.localDeviceName}`);
-21. }).catch((err: BusinessError) => {
-22. hilog.error(0x0000, 'nearby', `create failed. Code: ${err.code}, message: ${err.message}`);
-23. })
-24. } catch (error) {
-25. let err = error as BusinessError;
-26. hilog.error(0x0000, 'nearby', `create exception. Code: ${err.code}, message: ${err.message}`);
-27. }
-28. }
+```typescript
+import { common } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { gameNearbyTransfer } from '@kit.GameServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-30. build() {
-31. }
-32. }
-```
+@Component
+struct Create {
+  async create() {
+    // 创建安装包传输
+    let uiAbilityContext = this.getUIContext()?.getHostContext() as common.UIAbilityContext;
+    let initParam: gameNearbyTransfer.CreateParameters = {
+      abilityName: uiAbilityContext.abilityInfo.name,
+      moduleName: uiAbilityContext.abilityInfo.moduleName,
+      contentType: gameNearbyTransfer.ContentType.INSTALLATION_PACKAGE, // 指定传输类型为安装包
+      gameLinking: 'nearbytransfer://com.huawei.nearbytransferdemo?type=nearbyTransfer' // 安装包场景需要传入游戏Deeplink
+    };
 
-**安装包传输示例：**
+    try {
+      let createResult = await gameNearbyTransfer.create(initParam);
+      hilog.info(0x0000, '[nearby]', `create success linking: ${createResult.linkingForInstallation}`);
+    } catch (error) {
+      let err = error as BusinessError;
+      hilog.error(0x0000, 'nearby', `create failed. Code: ${err.code}, message: ${err.message}`);
+    }
+  }
 
-```
-1. import { common } from '@kit.AbilityKit';
-2. import { hilog } from "@kit.PerformanceAnalysisKit";
-3. import { gameNearbyTransfer } from "@kit.GameServiceKit";
-4. import { BusinessError } from "@kit.BasicServicesKit";
-
-6. @Component
-7. struct Create {
-8. async create() {
-9. // 创建安装包传输
-10. let uiAbilityContext = this.getUIContext()?.getHostContext() as common.UIAbilityContext;
-11. let initParam: gameNearbyTransfer.CreateParameters = {
-12. abilityName: uiAbilityContext.abilityInfo.name,
-13. moduleName: uiAbilityContext.abilityInfo.moduleName,
-14. contentType: gameNearbyTransfer.ContentType.INSTALLATION_PACKAGE, // 指定传输类型为安装包
-15. gameLinking: "nearbytransfer://com.huawei.nearbytransferdemo?type=nearbyTransfer" // 安装包场景需要传入游戏Deeplink
-16. };
-
-18. try {
-19. let createResult = await gameNearbyTransfer.create(initParam);
-20. hilog.info(0x0000, '[nearby]', `create success linking: ${createResult.linkingForInstallation}`);
-21. } catch (error) {
-22. let err = error as BusinessError;
-23. hilog.error(0x0000, 'nearby', `create failed. Code: ${err.code}, message: ${err.message}`);
-24. }
-25. }
-
-27. build() {
-28. }
-29. }
+  build() {
+    Row() {
+      Button('create')
+        .onClick(() => {
+          this.create();
+        })
+        .width('100%')
+    }
+    .margin(16)
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
 
 ## gameNearbyTransfer.publishNearbyGame
 
-PhonePC/2in1Tablet
-
 publishNearbyGame(): Promise<void>
 
 发布近场快传服务。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GameNearby
 
@@ -1073,7 +1093,7 @@ publishNearbyGame(): Promise<void>
 
 **错误码**：
 
-错误码的详细介绍请参见[ArkTS API错误码](gameservice-error-code.md)。
+错误码的详细介绍请参见[ArkTS API错误码](errorcode-gameservice.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1084,30 +1104,30 @@ publishNearbyGame(): Promise<void>
 
 **示例**：
 
-```
-1. import { hilog } from "@kit.PerformanceAnalysisKit";
-2. import { gameNearbyTransfer } from "@kit.GameServiceKit";
-3. import { BusinessError } from "@kit.BasicServicesKit";
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { gameNearbyTransfer } from '@kit.GameServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. try {
-6. gameNearbyTransfer.publishNearbyGame().then(() => {
-7. hilog.info(0x0000, 'nearby', `publishNearbyGame success`);
-8. }).catch((err: BusinessError) => {
-9. hilog.error(0x0000, 'nearby', `publishNearbyGame failed. Code: ${err.code}, message: ${err.message}`);
-10. })
-11. } catch (error) {
-12. let err = error as BusinessError;
-13. hilog.error(0x0000, 'nearby', `publishNearbyGame exception. Code: ${err.code}, message: ${err.message}`);
-14. }
+try {
+  gameNearbyTransfer.publishNearbyGame().then(() => {
+    hilog.info(0x0000, 'nearby', `publishNearbyGame success`);
+  }).catch((err: BusinessError) => {
+    hilog.error(0x0000, 'nearby', `publishNearbyGame failed. Code: ${err.code}, message: ${err.message}`);
+  });
+} catch (error) {
+  let err = error as BusinessError;
+  hilog.error(0x0000, 'nearby', `publishNearbyGame exception. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## gameNearbyTransfer.discoveryNearbyGame
 
-PhonePC/2in1Tablet
-
 discoveryNearbyGame(): Promise<void>
 
 发送端执行发现附近设备。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GameNearby
 
@@ -1121,7 +1141,7 @@ discoveryNearbyGame(): Promise<void>
 
 **错误码**：
 
-错误码的详细介绍请参见[ArkTS API错误码](gameservice-error-code.md)。
+错误码的详细介绍请参见[ArkTS API错误码](errorcode-gameservice.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1132,30 +1152,30 @@ discoveryNearbyGame(): Promise<void>
 
 **示例**：
 
-```
-1. import { hilog } from "@kit.PerformanceAnalysisKit";
-2. import { gameNearbyTransfer } from "@kit.GameServiceKit";
-3. import { BusinessError } from "@kit.BasicServicesKit";
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { gameNearbyTransfer } from '@kit.GameServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. try {
-6. gameNearbyTransfer.discoveryNearbyGame().then(() => {
-7. hilog.info(0x0000, 'nearby', `discoveryNearbyGame success.`);
-8. }).catch((err: BusinessError) => {
-9. hilog.error(0x0000, 'nearby', `discoveryNearbyGame failed. Code: ${err.code}, message: ${err.message}`);
-10. })
-11. } catch (error) {
-12. let err = error as BusinessError;
-13. hilog.error(0x0000, 'nearby', `discoveryNearbyGame exception. Code: ${err.code}, message: ${err.message}`);
-14. }
+try {
+  gameNearbyTransfer.discoveryNearbyGame().then(() => {
+    hilog.info(0x0000, 'nearby', `discoveryNearbyGame success.`);
+  }).catch((err: BusinessError) => {
+    hilog.error(0x0000, 'nearby', `discoveryNearbyGame failed. Code: ${err.code}, message: ${err.message}`);
+  });
+} catch (error) {
+  let err = error as BusinessError;
+  hilog.error(0x0000, 'nearby', `discoveryNearbyGame exception. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## gameNearbyTransfer.bindNearbyGame
 
-PhonePC/2in1Tablet
-
 bindNearbyGame(bindParameters: BindParameters): Promise<void>
 
 发送端绑定指定近场快传服务。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.DISTRIBUTED\_DATASYNC
 
@@ -1177,7 +1197,7 @@ bindNearbyGame(bindParameters: BindParameters): Promise<void>
 
 **错误码**：
 
-错误码的详细介绍请参见[ArkTS API错误码](gameservice-error-code.md)和[通用错误码](errorcode-universal.md)。
+错误码的详细介绍请参见[ArkTS API错误码](errorcode-gameservice.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1189,34 +1209,34 @@ bindNearbyGame(bindParameters: BindParameters): Promise<void>
 
 **示例**：
 
-```
-1. import { hilog } from "@kit.PerformanceAnalysisKit";
-2. import { gameNearbyTransfer } from "@kit.GameServiceKit";
-3. import { BusinessError } from "@kit.BasicServicesKit";
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { gameNearbyTransfer } from '@kit.GameServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let bindInfo: gameNearbyTransfer.BindParameters = {
-6. deviceId: 'deviceId',
-7. networkId: 'networkId'
-8. };
-9. try {
-10. gameNearbyTransfer.bindNearbyGame(bindInfo).then(() => {
-11. hilog.info(0x0000, 'nearby', `bindNearbyGame success`);
-12. }).catch((err: BusinessError) => {
-13. hilog.error(0x0000, 'nearby', `bindNearbyGame failed. Code: ${err.code}, message: ${err.message}`);
-14. })
-15. } catch (error) {
-16. let err = error as BusinessError;
-17. hilog.error(0x0000, 'nearby', `bindNearbyGame exception. Code: ${err.code}, message: ${err.message}`);
-18. }
+let bindInfo: gameNearbyTransfer.BindParameters = {
+  deviceId: 'deviceId',
+  networkId: 'networkId'
+};
+try {
+  gameNearbyTransfer.bindNearbyGame(bindInfo).then(() => {
+    hilog.info(0x0000, 'nearby', `bindNearbyGame success`);
+  }).catch((err: BusinessError) => {
+    hilog.error(0x0000, 'nearby', `bindNearbyGame failed. Code: ${err.code}, message: ${err.message}`);
+  });
+} catch (error) {
+  let err = error as BusinessError;
+  hilog.error(0x0000, 'nearby', `bindNearbyGame exception. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## gameNearbyTransfer.autoBindNearbyGame
 
-PhonePC/2in1Tablet
-
 autoBindNearbyGame(): Promise<void>
 
 自动绑定近场快传服务。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.DISTRIBUTED\_DATASYNC
 
@@ -1232,7 +1252,7 @@ autoBindNearbyGame(): Promise<void>
 
 **错误码**：
 
-错误码的详细介绍请参见[ArkTS API错误码](gameservice-error-code.md)和[通用错误码](errorcode-universal.md)。
+错误码的详细介绍请参见[ArkTS API错误码](errorcode-gameservice.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1243,31 +1263,31 @@ autoBindNearbyGame(): Promise<void>
 
 **示例**：
 
-```
-1. import { hilog } from "@kit.PerformanceAnalysisKit";
-2. import { gameNearbyTransfer } from "@kit.GameServiceKit";
-3. import { BusinessError } from "@kit.BasicServicesKit";
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { gameNearbyTransfer } from '@kit.GameServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. try {
-6. // 自动绑定近场快传服务
-7. gameNearbyTransfer.autoBindNearbyGame().then(() => {
-8. hilog.info(0x0000, 'nearby', `autoBindNearbyGame success`);
-9. }).catch((err: BusinessError) => {
-10. hilog.error(0x0000, 'nearby', `autoBindNearbyGame failed. Code: ${err.code}, message: ${err.message}`);
-11. })
-12. } catch (error) {
-13. let err = error as BusinessError;
-14. hilog.error(0x0000, 'nearby', `autoBindNearbyGame exception. Code: ${err.code}, message: ${err.message}`);
-15. }
+try {
+  // 自动绑定近场快传服务
+  gameNearbyTransfer.autoBindNearbyGame().then(() => {
+    hilog.info(0x0000, 'nearby', `autoBindNearbyGame success`);
+  }).catch((err: BusinessError) => {
+    hilog.error(0x0000, 'nearby', `autoBindNearbyGame failed. Code: ${err.code}, message: ${err.message}`);
+  });
+} catch (error) {
+  let err = error as BusinessError;
+  hilog.error(0x0000, 'nearby', `autoBindNearbyGame exception. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## gameNearbyTransfer.acceptCollaboration
 
-PhonePC/2in1Tablet
-
 acceptCollaboration(acceptParameters: Record<string, object>): Promise<void>
 
 接受协同。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.DISTRIBUTED\_DATASYNC
 
@@ -1289,7 +1309,7 @@ acceptCollaboration(acceptParameters: Record<string, object>): Promise<void>
 
 **错误码**：
 
-错误码的详细介绍请参见[ArkTS API错误码](gameservice-error-code.md)和[通用错误码](errorcode-universal.md)。
+错误码的详细介绍请参见[ArkTS API错误码](errorcode-gameservice.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1300,35 +1320,35 @@ acceptCollaboration(acceptParameters: Record<string, object>): Promise<void>
 
 **示例**：
 
-```
-1. import { gameNearbyTransfer } from "@kit.GameServiceKit";
-2. import { AbilityConstant, UIAbility } from "@kit.AbilityKit";
-3. import { hilog } from "@kit.PerformanceAnalysisKit";
+```typescript
+import { gameNearbyTransfer } from '@kit.GameServiceKit';
+import { AbilityConstant, UIAbility } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. export default class EntryAbility extends UIAbility {
-6. // 协同回调
-7. onCollaborate(wantParam: Record<string, Object>): AbilityConstant.CollaborateResult {
-8. try {
-9. // 接受协同
-10. gameNearbyTransfer.acceptCollaboration(wantParam).catch((err: BusinessError) => {
-11. hilog.error(0x0000, 'nearby', `acceptCollaboration failed. Code: ${err.code}, message: ${err.message}`);
-12. })
-13. } catch (error) {
-14. let err = error as BusinessError;
-15. hilog.error(0x0000, 'nearby', `acceptCollaboration exception. Code: ${err.code}, message: ${err.message}`);
-16. }
-17. return AbilityConstant.CollaborateResult.ACCEPT;
-18. }
-19. }
+export default class EntryAbility extends UIAbility {
+  // 协同回调
+  onCollaborate(wantParam: Record<string, Object>): AbilityConstant.CollaborateResult {
+    try {
+      // 接受协同
+      gameNearbyTransfer.acceptCollaboration(wantParam).catch((err: BusinessError) => {
+        hilog.error(0x0000, 'nearby', `acceptCollaboration failed. Code: ${err.code}, message: ${err.message}`);
+      });
+    } catch (error) {
+      let err = error as BusinessError;
+      hilog.error(0x0000, 'nearby', `acceptCollaboration exception. Code: ${err.code}, message: ${err.message}`);
+    }
+    return AbilityConstant.CollaborateResult.ACCEPT;
+  }
+}
 ```
 
 ## gameNearbyTransfer.sendPackageInfo
 
-PhonePC/2in1Tablet
-
 sendPackageInfo(packageInfo: PackageInfo): Promise<void>
 
 接收端发送自身文件信息。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.DISTRIBUTED\_DATASYNC
 
@@ -1350,7 +1370,7 @@ sendPackageInfo(packageInfo: PackageInfo): Promise<void>
 
 **错误码**：
 
-错误码的详细介绍请参见[ArkTS API错误码](gameservice-error-code.md)和[通用错误码](errorcode-universal.md)。
+错误码的详细介绍请参见[ArkTS API错误码](errorcode-gameservice.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1361,41 +1381,41 @@ sendPackageInfo(packageInfo: PackageInfo): Promise<void>
 
 **示例**：
 
-```
-1. import { hilog } from "@kit.PerformanceAnalysisKit";
-2. import { gameNearbyTransfer } from "@kit.GameServiceKit";
-3. import { BusinessError } from "@kit.BasicServicesKit";
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { gameNearbyTransfer } from '@kit.GameServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let packageInfo: gameNearbyTransfer.PackageInfo = {
-6. name: 'xxxx',
-7. files: [],
-8. version: '1.1.0', // 应用版本
-9. extraData: 'extraData' // 自定义信息
-10. };
-11. let fileInfo: gameNearbyTransfer.FileInfo = {
-12. path: "/xxx/xxxx/files/data.zip",
-13. hash: 'fileHash' // 可选
-14. };
-15. packageInfo.files?.push(fileInfo);
-16. try {
-17. gameNearbyTransfer.sendPackageInfo(packageInfo).then(() => {
-18. hilog.info(0x0000, 'nearby', `sendPackageInfo success`);
-19. }).catch((err: BusinessError) => {
-20. hilog.error(0x0000, 'nearby', `sendPackageInfo failed. Code: ${err.code}, message: ${err.message}`);
-21. })
-22. } catch (error) {
-23. let err = error as BusinessError;
-24. hilog.error(0x0000, 'nearby', `sendPackageInfo exception. Code: ${err.code}, message: ${err.message}`);
-25. }
+let packageInfo: gameNearbyTransfer.PackageInfo = {
+  name: 'xxxx',
+  files: [],
+  version: '1.1.0', // 应用版本
+  extraData: 'extraData' // 自定义信息
+};
+let fileInfo: gameNearbyTransfer.FileInfo = {
+  path: '/xxx/xxxx/files/data.zip',
+  hash: 'fileHash' // 可选
+};
+packageInfo.files?.push(fileInfo);
+try {
+  gameNearbyTransfer.sendPackageInfo(packageInfo).then(() => {
+    hilog.info(0x0000, 'nearby', `sendPackageInfo success`);
+  }).catch((err: BusinessError) => {
+    hilog.error(0x0000, 'nearby', `sendPackageInfo failed. Code: ${err.code}, message: ${err.message}`);
+  });
+} catch (error) {
+  let err = error as BusinessError;
+  hilog.error(0x0000, 'nearby', `sendPackageInfo exception. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## gameNearbyTransfer.replyPackageInfoResult
 
-PhonePC/2in1Tablet
-
 replyPackageInfoResult(packageInfoResult: PackageInfoResult): Promise<void>
 
 发送端向近场快传服务上报包信息对比结果。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.DISTRIBUTED\_DATASYNC
 
@@ -1417,7 +1437,7 @@ replyPackageInfoResult(packageInfoResult: PackageInfoResult): Promise<void>
 
 **错误码**：
 
-错误码的详细介绍请参见[ArkTS API错误码](gameservice-error-code.md)和[通用错误码](errorcode-universal.md)。
+错误码的详细介绍请参见[ArkTS API错误码](errorcode-gameservice.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1428,34 +1448,34 @@ replyPackageInfoResult(packageInfoResult: PackageInfoResult): Promise<void>
 
 **示例**：
 
-```
-1. import { hilog } from "@kit.PerformanceAnalysisKit";
-2. import { gameNearbyTransfer } from "@kit.GameServiceKit";
-3. import { BusinessError } from "@kit.BasicServicesKit";
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { gameNearbyTransfer } from '@kit.GameServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let packageInfoResult: gameNearbyTransfer.PackageInfoResult = {
-6. packageInfoResultCode: gameNearbyTransfer.PackageInfoResultCode.PACKAGE_AVAILABLE_COMPARED
-7. };
-8. try {
-9. // 上报包信息对比结果
-10. gameNearbyTransfer.replyPackageInfoResult(packageInfoResult).then(() => {
-11. hilog.info(0x0000, 'nearby', `replyPackageInfoResult success`);
-12. }).catch((err: BusinessError) => {
-13. hilog.error(0x0000, 'nearby', `replyPackageInfoResult failed. Code: ${err.code}, message: ${err.message}`);
-14. })
-15. } catch (error) {
-16. let err = error as BusinessError;
-17. hilog.error(0x0000, 'nearby', `replyPackageInfoResult exception. Code: ${err.code}, message: ${err.message}`);
-18. }
+let packageInfoResult: gameNearbyTransfer.PackageInfoResult = {
+  packageInfoResultCode: gameNearbyTransfer.PackageInfoResultCode.PACKAGE_AVAILABLE_COMPARED
+};
+try {
+  // 上报包信息对比结果
+  gameNearbyTransfer.replyPackageInfoResult(packageInfoResult).then(() => {
+    hilog.info(0x0000, 'nearby', `replyPackageInfoResult success`);
+  }).catch((err: BusinessError) => {
+    hilog.error(0x0000, 'nearby', `replyPackageInfoResult failed. Code: ${err.code}, message: ${err.message}`);
+  });
+} catch (error) {
+  let err = error as BusinessError;
+  hilog.error(0x0000, 'nearby', `replyPackageInfoResult exception. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## gameNearbyTransfer.transferPackageData
 
-PhonePC/2in1Tablet
-
 transferPackageData(packageData: PackageData): Promise<void>
 
 开始传输包数据。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.DISTRIBUTED\_DATASYNC
 
@@ -1477,7 +1497,7 @@ transferPackageData(packageData: PackageData): Promise<void>
 
 **错误码**：
 
-错误码的详细介绍请参见[ArkTS API错误码](gameservice-error-code.md)和[通用错误码](errorcode-universal.md)。
+错误码的详细介绍请参见[ArkTS API错误码](errorcode-gameservice.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1488,37 +1508,37 @@ transferPackageData(packageData: PackageData): Promise<void>
 
 **示例**：
 
-```
-1. import { hilog } from "@kit.PerformanceAnalysisKit";
-2. import { gameNearbyTransfer } from "@kit.GameServiceKit";
-3. import { BusinessError } from "@kit.BasicServicesKit";
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { gameNearbyTransfer } from '@kit.GameServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let packageData: gameNearbyTransfer.PackageData = {
-6. name: 'xxx',
-7. version: '1.0.1',
-8. files: []
-9. };
-10. packageData.files.push({ srcPath: "/xxx/xxxx/a.db", destPath: "xxxx/b.db" });
-11. try {
-12. // 开始传输包数据
-13. gameNearbyTransfer.transferPackageData(packageData).then(() => {
-14. hilog.info(0x0000, 'nearby', `transferPackageData success`);
-15. }).catch((err: BusinessError) => {
-16. hilog.error(0x0000, 'nearby', `transferPackageData failed. Code: ${err.code}, message: ${err.message}`);
-17. })
-18. } catch (error) {
-19. let err = error as BusinessError;
-20. hilog.error(0x0000, 'nearby', `transferPackageData exception. Code: ${err.code}, message: ${err.message}`);
-21. }
+let packageData: gameNearbyTransfer.PackageData = {
+  name: 'xxx',
+  version: '1.0.1',
+  files: []
+};
+packageData.files.push({ srcPath: '/xxx/xxxx/a.db', destPath: 'xxxx/b.db' });
+try {
+  // 开始传输包数据
+  gameNearbyTransfer.transferPackageData(packageData).then(() => {
+    hilog.info(0x0000, 'nearby', `transferPackageData success`);
+  }).catch((err: BusinessError) => {
+    hilog.error(0x0000, 'nearby', `transferPackageData failed. Code: ${err.code}, message: ${err.message}`);
+  });
+} catch (error) {
+  let err = error as BusinessError;
+  hilog.error(0x0000, 'nearby', `transferPackageData exception. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## gameNearbyTransfer.destroy
 
-PhonePC/2in1Tablet
-
 destroy(): Promise<void>
 
 不再使用时，销毁游戏近场快传服务。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GameNearby
 
@@ -1532,20 +1552,20 @@ destroy(): Promise<void>
 
 **示例**：
 
-```
-1. import { hilog } from "@kit.PerformanceAnalysisKit";
-2. import { gameNearbyTransfer } from "@kit.GameServiceKit";
-3. import { BusinessError } from "@kit.BasicServicesKit";
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { gameNearbyTransfer } from '@kit.GameServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. // 销毁服务
-6. try {
-7. gameNearbyTransfer.destroy().then(() => {
-8. hilog.info(0x0000, 'nearby', `destroy success`);
-9. }).catch((err: BusinessError) => {
-10. hilog.error(0x0000, 'nearby', `destroy failed. Code: ${err.code}, message: ${err.message}`);
-11. })
-12. } catch (error) {
-13. let err = error as BusinessError;
-14. hilog.error(0x0000, 'nearby', `destroy exception. Code: ${err.code}, message: ${err.message}`);
-15. }
+// 销毁服务
+try {
+  gameNearbyTransfer.destroy().then(() => {
+    hilog.info(0x0000, 'nearby', `destroy success`);
+  }).catch((err: BusinessError) => {
+    hilog.error(0x0000, 'nearby', `destroy failed. Code: ${err.code}, message: ${err.message}`);
+  });
+} catch (error) {
+  let err = error as BusinessError;
+  hilog.error(0x0000, 'nearby', `destroy exception. Code: ${err.code}, message: ${err.message}`);
+}
 ```

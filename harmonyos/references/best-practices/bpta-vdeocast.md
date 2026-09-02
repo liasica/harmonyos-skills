@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-vdeocast
 title: 视频投播
 breadcrumb: 最佳实践 > 自由流转 > 多端协同 > 视频投播
 category: best-practices
-scraped_at: 2026-04-29T14:12:46+08:00
-doc_updated_at: 2026-04-01
-content_hash: sha256:bf5316ab31bcb2a5bbe3bea55be721415eb5341bc0d9c3bd9255f0c3a3325bfe
+scraped_at: 2026-09-02T15:13:22+08:00
+doc_updated_at: 2026-08-10
+content_hash: sha256:ce0ae2a8b12f1a7bd359b64b9fa72597a259ba5a784897a65b00d5c954283285
 ---
 
 ## 概述
@@ -19,7 +19,7 @@ content_hash: sha256:bf5316ab31bcb2a5bbe3bea55be721415eb5341bc0d9c3bd9255f0c3a33
 * [远端视频状态回传本端](bpta-vdeocast.md#section13876193232918)：能够实时同步播放进度至手机端显示。
 * [视频资源切换](bpta-vdeocast.md#section1133113013013)和[设备切换](bpta-vdeocast.md#section6237193134112)：支持投播过程中集数的切换及投播设备的切换。
 
-说明
+**说明** 
 
 **设备限制：**
 
@@ -29,49 +29,7 @@ content_hash: sha256:bf5316ab31bcb2a5bbe3bea55be721415eb5341bc0d9c3bd9255f0c3a33
 
 **体验视频**
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/23/v3/GACQ4K7HRie0N7KJnirDKg/zh-cn_media_0000002311894292.mp4)
-
-Video Player is loading.
-
-Play Video
-
-Play
-
-Current Time 0:00
-
-Loaded: 1.45%
-
-0:00
-
-Duration 1:00
-
-Mute
-
-1x
-
-Playback Rate
-
-* 2x
-* 1.8x
-* 1.5x
-* 1.2x
-* 1x, selected
-
-Fullscreen
-
-This is a modal window.
-
-Beginning of dialog window. Escape will cancel and close the window.
-
-TextColorWhiteBlackRedGreenBlueYellowMagentaCyanOpacityOpaqueSemi-TransparentText BackgroundColorBlackWhiteRedGreenBlueYellowMagentaCyanOpacityOpaqueSemi-TransparentTransparentCaption Area BackgroundColorBlackWhiteRedGreenBlueYellowMagentaCyanOpacityTransparentSemi-TransparentOpaque
-
-Font Size50%75%100%125%150%175%200%300%400%Text Edge StyleNoneRaisedDepressedUniformDrop shadowFont FamilyProportional Sans-SerifMonospace Sans-SerifProportional SerifMonospace SerifCasualScriptSmall Caps
-
-Reset restore all settings to the default valuesDone
-
-Close Modal Dialog
-
-End of dialog window.
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/fa/v3/06CbY6VrSNSV0Hx8ng28pw/zh-cn_media_0000002311894292.mp4)
 
 **用户体验路径**
 
@@ -94,7 +52,7 @@ End of dialog window.
 
 投播功能通过AVSession建立设备连接，由AVCastController控制远端播放。详见[运作机制](../harmonyos-guides/distributed-playback-overview.md#运作机制)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/pQpD25_BSXyWHkAeW964vw/zh-cn_image_0000002345973089.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/IUGOfTKnQACtJFSe-3R8cQ/zh-cn_image_0000002345973089.png "点击放大")
 
 ## 模块设计
 
@@ -106,13 +64,13 @@ End of dialog window.
 
 完成投播功能，建议参考如下流程接入，其中本端视频显示和控制可参考[视频播放组件](../harmonyos-guides/arkts-common-components-video-player.md)、[使用AVPlayer播放视频(ArkTS)](../harmonyos-guides/video-playback.md)、[使用AVPlayer播放视频(C/C++)](../harmonyos-guides/using-ndk-avplayer-for-video-playback.md)等视频实现方案根据功能诉求自行实现，本文从接入播控中心进行介绍。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/o-S9NT9aSPGZ69PJTldS-w/zh-cn_image_0000002345853277.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/PBX9RoYDQgCkEOBlaexsdA/zh-cn_image_0000002345853277.png "点击放大")
 
 ## 接入播控中心
 
 投播功能依赖于播控中心，因此必须接入播控中心才能实现投播功能。播控中心不仅能够控制本端设备的播放，还能控制远端设备的播放。本章节将简要介绍应用接入播控中心的开发流程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/cuOiCQFNQ0e9n2BKoT4bzQ/zh-cn_image_0000002346524017.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/iTpS27u7R--vkNjhHX_Aeg/zh-cn_image_0000002346524017.gif "点击放大")
 
 ### 媒体会话初始化
 
@@ -121,45 +79,41 @@ End of dialog window.
 3. [videoSession.setLaunchAbility()](../harmonyos-references/arkts-apis-avsession-avsession.md#setlaunchability10)设置一个WantAgent用于拉起会话的Ability。
 4. [videoSession.activate()](../harmonyos-references/arkts-apis-avsession-avsession.md#activate10)激活videoSession。
 
+```typescript
+let videoSession = await avSession.createAVSession(context, 'VIDEO_SESSION', 'video');
+// Set up a background task.
+BackgroundTaskManager.startContinuousTask(context);
+const wantAgentInfo: wantAgent.WantAgentInfo = {
+  wants: [
+    {
+      bundleName: context.abilityInfo.bundleName,
+      abilityName: context.abilityInfo.name
+    }
+  ],
+  operationType: wantAgent.OperationType.START_ABILITIES,
+  requestCode: 0,
+  wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+};
+let agent = wantAgent.getWantAgent(wantAgentInfo);
+videoSession.setLaunchAbility(agent);
+videoSession.activate();
+return new VideoSessionController(videoSession);
 ```
-1. let videoSession = await avSession.createAVSession(context, 'VIDEO_SESSION', 'video');
-2. // Set up a background task.
-3. BackgroundTaskManager.startContinuousTask(context);
-4. const wantAgentInfo: wantAgent.WantAgentInfo = {
-5. wants: [
-6. {
-7. bundleName: context.abilityInfo.bundleName,
-8. abilityName: context.abilityInfo.name
-9. }
-10. ],
-11. operationType: wantAgent.OperationType.START_ABILITIES,
-12. requestCode: 0,
-13. wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
-14. };
-15. let agent = wantAgent.getWantAgent(wantAgentInfo);
-16. videoSession.setLaunchAbility(agent);
-17. videoSession.activate();
-18. return new VideoSessionController(videoSession);
-```
-
-[VideoSessionController.ets](https://gitcode.com/HarmonyOS_Samples/VideoCast/blob/master/entry/src/main/ets/controller/VideoSessionController.ets#L39-L56)
 
 ### 设置媒体会话元数据
 
 [videoSession.setAVMetadata()](../harmonyos-references/arkts-apis-avsession-avsession.md#setavmetadata10)上传元数据，从而在播控中心界面进行展示。如媒体ID（assetId）、标题（title）、播控中心显示的图片（mediaImage）、媒体时长（duration）。
 
+```typescript
+let metadata: avSession.AVMetadata = {
+  assetId: `${curSource.index}`,
+  title: curSource.name,
+  mediaImage: headPixel,
+  duration: duration,
+  filter: avSession.ProtocolType.TYPE_DLNA | avSession.ProtocolType.TYPE_CAST_PLUS_STREAM
+};
+await this.videoSession.setAVMetadata(metadata);
 ```
-1. let metadata: avSession.AVMetadata = {
-2. assetId: `${curSource.index}`,
-3. title: curSource.name,
-4. mediaImage: headPixel,
-5. duration: duration,
-6. filter: avSession.ProtocolType.TYPE_DLNA | avSession.ProtocolType.TYPE_CAST_PLUS_STREAM
-7. };
-8. await this.videoSession.setAVMetadata(metadata);
-```
-
-[VideoSessionController.ets](https://gitcode.com/HarmonyOS_Samples/VideoCast/blob/master/entry/src/main/ets/controller/VideoSessionController.ets#L68-L75)
 
 ### 本应用播放状态同步到播控中心
 
@@ -167,252 +121,181 @@ End of dialog window.
 
 以下是videoSession状态更新的示例代码，特别注意的是，在更新进度状态时，需要传入当前时间戳updateTime和视频播放的时间进度elapsedTime。
 
+```typescript
+await this.videoSession.setAVPlaybackState({
+  state: state === 'playing' ? avSession.PlaybackState.PLAYBACK_STATE_PLAY :
+  avSession.PlaybackState.PLAYBACK_STATE_PAUSE,
+});
 ```
-1. await this.videoSession.setAVPlaybackState({
-2. state: state === 'playing' ? avSession.PlaybackState.PLAYBACK_STATE_PLAY :
-3. avSession.PlaybackState.PLAYBACK_STATE_PAUSE,
-4. });
-```
-
-[VideoSessionController.ets](https://gitcode.com/HarmonyOS_Samples/VideoCast/blob/master/entry/src/main/ets/controller/VideoSessionController.ets#L103-L106)
 
 ### 播控中心控制应用播放
 
-当用户在播控中心进行操作（如播放、暂停、停止、进度跳转、快进、快退等）时，这些操作不会自动同步到应用端，开发者需要主动通过avCastController.on('controlCommand')监听这些事件，并在回调函数中主动更新应用播放器的状态以保持同步，例如在收到播放指令时调用本地播放器的play()方法，在收到跳转指令时调整播放进度等，确保播控中心与应用端的操作状态完全一致。
+当用户在播控中心进行操作（如播放、暂停、停止、进度跳转、快进、快退等）时，这些操作不会自动同步到应用端，开发者需要主动通过avSession.on()监听这些事件，并在回调函数中主动更新应用播放器的状态以保持同步，例如在收到播放指令时调用本地播放器的play()方法，在收到跳转指令时调整播放进度等，确保播控中心与应用端的操作状态完全一致。
 
+```typescript
+this.videoSession.on('play', () => avPlayerController.setAVPlayerPlaying());
+this.videoSession.on('pause', () => avPlayerController.setAVPlayerPause());
 ```
-1. this.videoSession.on('play', () => avPlayerController.setAVPlayerPlaying());
-2. this.videoSession.on('pause', () => avPlayerController.setAVPlayerPause());
-```
 
-[VideoSessionController.ets](https://gitcode.com/HarmonyOS_Samples/VideoCast/blob/master/entry/src/main/ets/controller/VideoSessionController.ets#L144-L145)
-
-说明
+**说明** 
 
 这里注册的交互监听所有on()事件建议在退出播放页时通过videoSession.off()事件销毁。
 
 ## 投播基础功能
 
-为确保投播功能正常使用，应用在发起投播前需要完成播控中心[初始化](bpta-vdeocast.md#section15774202314195)。如未完成此关键步骤，则导致投播功能不可用。
+为确保投播功能正常使用，应用在发起投播前需要完成播控中心[媒体会话初始化](bpta-vdeocast.md#section15774202314195)。如未完成此关键步骤，则导致投播功能不可用。
 
 ### 创建投播
 
 在完成创建投播后，远端设备即可正常播放视频，本端会停止播放并页面跳转。
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/30/v3/UGQQMvulTzu1k_UOGpThfw/zh-cn_media_0000002311894304.mp4)
-
-Video Player is loading.
-
-Play Video
-
-Play
-
-Current Time 0:00
-
-Loaded: 3.95%
-
-0:00
-
-Duration 0:13
-
-Mute
-
-1x
-
-Playback Rate
-
-* 2x
-* 1.8x
-* 1.5x
-* 1.2x
-* 1x, selected
-
-Fullscreen
-
-This is a modal window.
-
-Beginning of dialog window. Escape will cancel and close the window.
-
-TextColorWhiteBlackRedGreenBlueYellowMagentaCyanOpacityOpaqueSemi-TransparentText BackgroundColorBlackWhiteRedGreenBlueYellowMagentaCyanOpacityOpaqueSemi-TransparentTransparentCaption Area BackgroundColorBlackWhiteRedGreenBlueYellowMagentaCyanOpacityTransparentSemi-TransparentOpaque
-
-Font Size50%75%100%125%150%175%200%300%400%Text Edge StyleNoneRaisedDepressedUniformDrop shadowFont FamilyProportional Sans-SerifMonospace Sans-SerifProportional SerifMonospace SerifCasualScriptSmall Caps
-
-Reset restore all settings to the default valuesDone
-
-Close Modal Dialog
-
-End of dialog window.
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/c/v3/xUflIsnfTCKGONs1fapzGA/zh-cn_media_0000002311894304.mp4)
 
 创建投播时需要setExtras()告知系统可投播、绘制AVCastPicker、videosession监听设备改变事件，用户点击AVCastPicker组件后会弹出设备选择半模态，在选择设备后，应用需要设置投播媒体信息，调用prepare、start启动播放。时序图如下，具体实现见开发步骤：
 
 **时序图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/OD2ljnbBRoiyvITFSM4ufw/zh-cn_image_0000002345973101.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/VRk_8JtGTrqcfs-RmokIOw/zh-cn_image_0000002345973101.png "点击放大")
 
 **开发步骤**
 
 1. videosession创建后，创建投播前，声明当前应用支持投播。
 
+   ```typescript
+   await videoSession.setExtras({
+     'requireAbilityList': ['url-cast']
+   })
    ```
-   1. await videoSession.setExtras({
-   2. 'requireAbilityList': ['url-cast']
-   3. })
-   ```
-
-   [VideoPlayingView.ets](https://gitcode.com/HarmonyOS_Samples/VideoCast/blob/master/entry/src/main/ets/view/VideoPlayingView.ets#L150-L152)
 2. 绘制AVCastPicker，AVCastPicker是投播组件，点击后系统会弹出设备选择半模态。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/ZAHftCfXQyulHT8kyuozKQ/zh-cn_image_0000002473018785.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/28kxbGvzSOOM2TaxWw1_Tg/zh-cn_image_0000002473018785.jpg "点击放大")
 
+   ```typescript
+   AVCastPicker({
+     normalColor: Color.White,
+     pickerStyle: AVCastPickerStyle.STYLE_PANEL,
+     sessionType: 'video',
+     // ...
+   })
    ```
-   1. AVCastPicker({
-   2. normalColor: Color.White,
-   3. pickerStyle: AVCastPickerStyle.STYLE_PANEL,
-   4. sessionType: 'video',
-   5. // ...
-   6. })
-   ```
-
-   [VideoPlayingView.ets](https://gitcode.com/HarmonyOS_Samples/VideoCast/blob/master/entry/src/main/ets/view/VideoPlayingView.ets#L282-L298)
 3. 当用户选择设备并设备切换成功后触发[videoSession.on('outputDeviceChange')](../harmonyos-references/arkts-apis-avsession-avsession.md#onoutputdevicechange10)事件，应用可选择停止本地播放并跳转到遥控页面（或保持本端继续播放），此时播控中心会自动接管远端设备的播放控制，开发者无需额外设置。
 
+   ```screen
+   try {
+     videoSession.on('outputDeviceChange', async (connectState: avSession.ConnectionState,
+       device: avSession.OutputDeviceInfo) => {
+       hilog.info(0x0000, TAG, `device ${JSON.stringify(device)}`);
+       hilog.info(0x0000, TAG, `connectState ${JSON.stringify(connectState)}`);
+       if (this.avSessionController) {
+         this.avSessionController.connectionState = connectState;
+         this.avSessionController.deviceName = device.devices[0].deviceName;
+       }
+       this.connectionState = connectState;
+       this.deviceName = device.devices[0].deviceName;
+       // The linked device is a remote device.
+       if (device.devices[0].castCategory === avSession.AVCastCategory.CATEGORY_REMOTE &&
+         connectState === avSession.ConnectionState.STATE_CONNECTED) {
+         // Page jump
+         this.remoteControlPathStack.replacePath({ name: 'detail', param: this.currentTime });
+         this.castingList.push(this.videoType);
+         await this.releaseAVPlayer();
+         // The linked device is the local device.
+       } else if (device.devices[0].castCategory === avSession.AVCastCategory.CATEGORY_REMOTE &&
+         connectState === avSession.ConnectionState.STATE_DISCONNECTED) {
+         if (this.avCastController) {
+           await this.avCastController.releaseAVCast();
+           await this.avSessionController!.stopCasting();
+           this.avCastController = undefined;
+         }
+       }
+       else if (device.devices[0].castCategory === avSession.AVCastCategory.CATEGORY_LOCAL) {
+         this.remoteControlPathStack.clear();
+         let videoType = this.castingList[0];
+         this.castingList = [];
+         let videoPlayParam = new VideoPlayParam(videoType, 0, this.avplayerContinueIndex);
+         this.videoPlayPathStack.replacePath({ name: 'detail', param: videoPlayParam });
+         if (this.avCastController) {
+           await this.avCastController.releaseAVCast();
+           await this.avSessionController!.stopCasting();
+           this.avCastController = undefined;
+         }
+       }
+     })
+   } catch (error) {
+     let err = error as BusinessError
+     if (err.code) {
+       hilog.error(0x0000, TAG, 'testTag', 'init AVCast picker failed, cause: %{public}s', JSON.stringify(err));
+     }
+   }
    ```
-   1. videoSession.on('outputDeviceChange', async (connectState: avSession.ConnectionState,
-   2. device: avSession.OutputDeviceInfo) => {
-   3. hilog.info(0x0000, TAG, `device ${JSON.stringify(device)}`);
-   4. hilog.info(0x0000, TAG, `connectState ${JSON.stringify(connectState)}`);
-   5. // The linked device is a remote device.
-   6. if (device.devices[0].castCategory === avSession.AVCastCategory.CATEGORY_REMOTE &&
-   7. connectState === avSession.ConnectionState.STATE_CONNECTED) {
-   8. // Page jump
-   9. this.remoteControlPathStack.replacePath({ name: 'detail', param: this.currentTime });
-   10. this.castingList.push(this.videoType);
-   11. await this.releaseAVPlayer();
-   12. // The linked device is the local device.
-   13. } else if (device.devices[0].castCategory === avSession.AVCastCategory.CATEGORY_REMOTE &&
-   14. connectState === avSession.ConnectionState.STATE_DISCONNECTED) {
-   15. if (this.avCastController) {
-   16. await this.avCastController.releaseAVCast();
-   17. await this.avSessionController!.stopCasting();
-   18. this.avCastController = undefined;
-   19. }
-   20. }
-   21. else if (device.devices[0].castCategory === avSession.AVCastCategory.CATEGORY_LOCAL) {
-   22. this.remoteControlPathStack.clear();
-   23. let videoType = this.castingList[0];
-   24. this.castingList = [];
-   25. let videoPlayParam = new VideoPlayParam(videoType, 0, this.avplayerContinueIndex);
-   26. this.videoPlayPathStack.replacePath({ name: 'detail', param: videoPlayParam });
-   27. if (this.avCastController) {
-   28. await this.avCastController.releaseAVCast();
-   29. await this.avSessionController!.stopCasting();
-   30. this.avCastController = undefined;
-   31. }
-   32. }
-   33. })
-   ```
-
-   [VideoPlayingView.ets](https://gitcode.com/HarmonyOS_Samples/VideoCast/blob/master/entry/src/main/ets/view/VideoPlayingView.ets#L156-L191)
 4. 设置avCastController资源，完成以下三步后远端设备即可投播视频，以播放网络资源为例。
    1. 构建[avSession.AVQueueItem](../harmonyos-references/arkts-apis-avsession-i.md#avqueueitem10)。需要传入assetId（播放列表媒体ID，应用自定义）、title（媒体标题）、artist（媒体专辑作者）、mediaUri（媒体URI）、mediaType（媒体类型）、mediaImage（媒体图片像素数据）、duration（媒体播放时长）。
    2. [avCastController.prepare(playItem)](../harmonyos-references/arkts-apis-avsession-avcastcontroller.md#prepare10-1)准备播放媒体资源，即进行播放资源的加载和缓冲。
    3. [avCastController.start(playItem)](../harmonyos-references/arkts-apis-avsession-avcastcontroller.md#start10-1)启动播放媒体资源。
 
+      ```screen
+      let playItem: avSession.AVQueueItem = {
+        itemId: videoIndex,
+        description: {
+          assetId: 'VIDEO-' + JSON.stringify(videoIndex) + '-' + JSON.stringify(token),
+          title: this.videoDataArray[videoIndex].name,
+          subtitle: 'video',
+          mediaUri: this.videoDataArray[videoIndex].url as string,
+          mediaType: 'VIDEO',
+          mediaImage: imgPixel,
+          startPosition: startPosition,
+          duration: this.videoDataArray[videoIndex].duration
+        }
+      };
+      await this.avCastController.prepare(playItem).catch((err: BusinessError) => {
+        hilog.error(0x0000, TAG,
+          `avCastController prepare failed, errCode = ${err.code}, errMessage = ${err.message}.`);
+      });
+      // ...
+      await this.avCastController.start(playItem).catch((err: BusinessError) => {
+        hilog.error(0x0000, TAG,
+          `avCastController start failed, errCode = ${err.code}, errMessage = ${err.message}.`);
+      });
       ```
-      1. let playItem: avSession.AVQueueItem = {
-      2. itemId: videoIndex,
-      3. description: {
-      4. assetId: 'VIDEO-' + JSON.stringify(videoIndex),
-      5. title: this.videoDataArray[videoIndex].name,
-      6. subtitle: 'video',
-      7. mediaUri: this.videoDataArray[videoIndex].url as string,
-      8. mediaType: 'VIDEO',
-      9. mediaImage: imgPixel,
-      10. startPosition: startPosition,
-      11. duration: this.videoDataArray[videoIndex].duration
-      12. }
-      13. };
-      14. await this.avCastController.prepare(playItem);
-      15. await this.avCastController.start(playItem);
-      ```
-
-      [VideoCastController.ets](https://gitcode.com/HarmonyOS_Samples/VideoCast/blob/master/entry/src/main/ets/controller/VideoCastController.ets#L56-L70)
 
    若需要投播本地资源，需要打开沙箱文件，并在fdSrc中传入文件fd实现。
 
+   ```screen
+   let file = await fileIo.open(context.filesDir + '/' + this.videoDataArray[videoIndex].url);
+   let avFileDescriptor: media.AVFileDescriptor = { fd: file.fd };
+   let playItem: avSession.AVQueueItem = {
+     itemId: videoIndex,
+     description: {
+       assetId: 'VIDEO-' + JSON.stringify(videoIndex) + '-' + JSON.stringify(token),
+       title: this.videoDataArray[videoIndex].name,
+       subtitle: 'video',
+       mediaType: 'VIDEO',
+       mediaImage: imgPixel,
+       fdSrc: avFileDescriptor,
+       startPosition: startPosition,
+       duration: this.videoDataArray[videoIndex].duration
+     }
+   };
+   await this.avCastController.prepare(playItem).catch((err: BusinessError) => {
+     hilog.error(0x0000, TAG,
+       `avCastController prepare failed, errCode = ${err.code}, errMessage = ${err.message}.`);
+   });
+   // ...
+   await this.avCastController.start(playItem).catch((err: BusinessError) => {
+     hilog.error(0x0000, TAG,
+       `avCastController start failed, errCode = ${err.code}, errMessage = ${err.message}.`);
+   });
    ```
-   1. let file = await fileIo.open(context.filesDir + '/' + this.videoDataArray[videoIndex].url);
-   2. let avFileDescriptor: media.AVFileDescriptor = { fd: file.fd };
-   3. let playItem: avSession.AVQueueItem = {
-   4. itemId: videoIndex,
-   5. description: {
-   6. assetId: 'VIDEO-' + JSON.stringify(videoIndex),
-   7. title: this.videoDataArray[videoIndex].name,
-   8. subtitle: 'video',
-   9. mediaType: 'VIDEO',
-   10. mediaImage: imgPixel,
-   11. fdSrc: avFileDescriptor,
-   12. startPosition: startPosition,
-   13. duration: this.videoDataArray[videoIndex].duration
-   14. }
-   15. };
-   16. await this.avCastController.prepare(playItem);
-   17. await this.avCastController.start(playItem);
-   ```
-
-   [VideoCastController.ets](https://gitcode.com/HarmonyOS_Samples/VideoCast/blob/master/entry/src/main/ets/controller/VideoCastController.ets#L76-L92)
 
 ### 设备切换
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/1c/v3/q4KviacyR3CYd-ej6F8Bfg/zh-cn_media_0000002312054100.mp4)
-
-Video Player is loading.
-
-Play Video
-
-Play
-
-Current Time 0:00
-
-Loaded: 8.28%
-
-0:00
-
-Duration 0:09
-
-Mute
-
-1x
-
-Playback Rate
-
-* 2x
-* 1.8x
-* 1.5x
-* 1.2x
-* 1x, selected
-
-Fullscreen
-
-This is a modal window.
-
-Beginning of dialog window. Escape will cancel and close the window.
-
-TextColorWhiteBlackRedGreenBlueYellowMagentaCyanOpacityOpaqueSemi-TransparentText BackgroundColorBlackWhiteRedGreenBlueYellowMagentaCyanOpacityOpaqueSemi-TransparentTransparentCaption Area BackgroundColorBlackWhiteRedGreenBlueYellowMagentaCyanOpacityTransparentSemi-TransparentOpaque
-
-Font Size50%75%100%125%150%175%200%300%400%Text Edge StyleNoneRaisedDepressedUniformDrop shadowFont FamilyProportional Sans-SerifMonospace Sans-SerifProportional SerifMonospace SerifCasualScriptSmall Caps
-
-Reset restore all settings to the default valuesDone
-
-Close Modal Dialog
-
-End of dialog window.
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/9a/v3/sUvwiT1OTq-G2kmOjWClkQ/zh-cn_media_0000002312054100.mp4)
 
 设备切换依赖于videosession监听设备改变事件，可以通过stopCasting终止投播切换设备，也可以通过[avCastPicker.select()](../harmonyos-references/arkts-apis-avsession-avcastpickerhelper.md#select14)进行切换。均会触发[videoSession.on('outputDeviceChange')](../harmonyos-references/arkts-apis-avsession-avsession.md#onoutputdevicechange10)事件，当切换到远端设备播放，本端应该跳转到遥控器界面，当切换回本端设备播放，应当停止投播并跳转到视频播放页面。应用时序图如下，具体实现见开发步骤。
 
 **时序图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/BxaxvLSbSfKSqxcgobtUuA/zh-cn_image_0000002311894312.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/OrwsEnArQpyaiHLEOrOYpQ/zh-cn_image_0000002311894312.png "点击放大")
 
 **开发步骤**
 
@@ -420,209 +303,130 @@ End of dialog window.
 
 当设备切换时，[videoSession.on('outputDeviceChange')](../harmonyos-references/arkts-apis-avsession-avsessioncontroller.md#onoutputdevicechange10)事件将被触发，开发者可在回调中处理设备切换逻辑：若切换至远端设备则跳转至遥控页面，若切回本端设备则恢复本地播放，实现播放控制的无缝切换。
 
+```screen
+try {
+  videoSession.on('outputDeviceChange', async (connectState: avSession.ConnectionState,
+    device: avSession.OutputDeviceInfo) => {
+    hilog.info(0x0000, TAG, `device ${JSON.stringify(device)}`);
+    hilog.info(0x0000, TAG, `connectState ${JSON.stringify(connectState)}`);
+    if (this.avSessionController) {
+      this.avSessionController.connectionState = connectState;
+      this.avSessionController.deviceName = device.devices[0].deviceName;
+    }
+    this.connectionState = connectState;
+    this.deviceName = device.devices[0].deviceName;
+    // The linked device is a remote device.
+    if (device.devices[0].castCategory === avSession.AVCastCategory.CATEGORY_REMOTE &&
+      connectState === avSession.ConnectionState.STATE_CONNECTED) {
+      // Page jump
+      this.remoteControlPathStack.replacePath({ name: 'detail', param: this.currentTime });
+      this.castingList.push(this.videoType);
+      await this.releaseAVPlayer();
+      // The linked device is the local device.
+    } else if (device.devices[0].castCategory === avSession.AVCastCategory.CATEGORY_REMOTE &&
+      connectState === avSession.ConnectionState.STATE_DISCONNECTED) {
+      if (this.avCastController) {
+        await this.avCastController.releaseAVCast();
+        await this.avSessionController!.stopCasting();
+        this.avCastController = undefined;
+      }
+    }
+    else if (device.devices[0].castCategory === avSession.AVCastCategory.CATEGORY_LOCAL) {
+      this.remoteControlPathStack.clear();
+      let videoType = this.castingList[0];
+      this.castingList = [];
+      let videoPlayParam = new VideoPlayParam(videoType, 0, this.avplayerContinueIndex);
+      this.videoPlayPathStack.replacePath({ name: 'detail', param: videoPlayParam });
+      if (this.avCastController) {
+        await this.avCastController.releaseAVCast();
+        await this.avSessionController!.stopCasting();
+        this.avCastController = undefined;
+      }
+    }
+  })
+} catch (error) {
+  let err = error as BusinessError
+  if (err.code) {
+    hilog.error(0x0000, TAG, 'testTag', 'init AVCast picker failed, cause: %{public}s', JSON.stringify(err));
+  }
+}
 ```
-1. videoSession.on('outputDeviceChange', async (connectState: avSession.ConnectionState,
-2. device: avSession.OutputDeviceInfo) => {
-3. hilog.info(0x0000, TAG, `device ${JSON.stringify(device)}`);
-4. hilog.info(0x0000, TAG, `connectState ${JSON.stringify(connectState)}`);
-5. // The linked device is a remote device.
-6. if (device.devices[0].castCategory === avSession.AVCastCategory.CATEGORY_REMOTE &&
-7. connectState === avSession.ConnectionState.STATE_CONNECTED) {
-8. // Page jump
-9. this.remoteControlPathStack.replacePath({ name: 'detail', param: this.currentTime });
-10. this.castingList.push(this.videoType);
-11. await this.releaseAVPlayer();
-12. // The linked device is the local device.
-13. } else if (device.devices[0].castCategory === avSession.AVCastCategory.CATEGORY_REMOTE &&
-14. connectState === avSession.ConnectionState.STATE_DISCONNECTED) {
-15. if (this.avCastController) {
-16. await this.avCastController.releaseAVCast();
-17. await this.avSessionController!.stopCasting();
-18. this.avCastController = undefined;
-19. }
-20. }
-21. else if (device.devices[0].castCategory === avSession.AVCastCategory.CATEGORY_LOCAL) {
-22. this.remoteControlPathStack.clear();
-23. let videoType = this.castingList[0];
-24. this.castingList = [];
-25. let videoPlayParam = new VideoPlayParam(videoType, 0, this.avplayerContinueIndex);
-26. this.videoPlayPathStack.replacePath({ name: 'detail', param: videoPlayParam });
-27. if (this.avCastController) {
-28. await this.avCastController.releaseAVCast();
-29. await this.avSessionController!.stopCasting();
-30. this.avCastController = undefined;
-31. }
-32. }
-33. })
-```
-
-[VideoPlayingView.ets](https://gitcode.com/HarmonyOS_Samples/VideoCast/blob/master/entry/src/main/ets/view/VideoPlayingView.ets#L156-L191)
 
 ### 远端视频状态回传本端
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/62/v3/yblcHlK4QGuJfE4pqLH9Dg/zh-cn_media_0000002345973105.mp4)
-
-Video Player is loading.
-
-Play Video
-
-Play
-
-Current Time 0:00
-
-Loaded: 9.97%
-
-0:00
-
-Duration 0:09
-
-Mute
-
-1x
-
-Playback Rate
-
-* 2x
-* 1.8x
-* 1.5x
-* 1.2x
-* 1x, selected
-
-Fullscreen
-
-This is a modal window.
-
-Beginning of dialog window. Escape will cancel and close the window.
-
-TextColorWhiteBlackRedGreenBlueYellowMagentaCyanOpacityOpaqueSemi-TransparentText BackgroundColorBlackWhiteRedGreenBlueYellowMagentaCyanOpacityOpaqueSemi-TransparentTransparentCaption Area BackgroundColorBlackWhiteRedGreenBlueYellowMagentaCyanOpacityTransparentSemi-TransparentOpaque
-
-Font Size50%75%100%125%150%175%200%300%400%Text Edge StyleNoneRaisedDepressedUniformDrop shadowFont FamilyProportional Sans-SerifMonospace Sans-SerifProportional SerifMonospace SerifCasualScriptSmall Caps
-
-Reset restore all settings to the default valuesDone
-
-Close Modal Dialog
-
-End of dialog window.
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/db/v3/FdEuAdZVThqphnBasqCeQg/zh-cn_media_0000002345973105.mp4)
 
 当视频在远端设备播放时，为了控制远端视频的播放应用需要监听远端视频播放状态并同步显示本端，通过远端设备或本端播控中心控制，都会直接改变远端设备的播放状态，并触发[avCastController.on('playbackStateChange')](../harmonyos-references/arkts-apis-avsession-avcastcontroller.md#onplaybackstatechange10)。应用时序图如下，具体实现见开发步骤。
 
 **时序图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/KVRI0xt2QbCGu23kDzHPVA/zh-cn_image_0000002345853289.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/lZXC-TOJSKeDv73YWRR8AQ/zh-cn_image_0000002345853289.png "点击放大")
 
 **开发步骤**
 
 当需要在本地遥控界面同步显示远端视频的播放状态时，可通过[avCastController.on('playbackStateChange')](../harmonyos-references/arkts-apis-avsession-avcastcontroller.md#onplaybackstatechange10) 监听状态变化，并使用过滤器筛选目标状态。
 
-建议使用@Track修饰器标记这些经常改变的状态变量，以便页面自动响应数据更新。该机制可统一获取播放状态（如播放/暂停）、音量、总时长及倍速等信息，以下代码以获取已播放时长为例：
+建议使用@Track修饰器标记这些经常改变的状态变量，以便页面自动响应数据更新。该机制可统一获取播放状态（如播放/暂停）、音量、总时长及倍速等信息，以下代码以获取播放状态为例：
 
+```typescript
+@Observed
+export class VideoCastController {
+  @Track state: avSession.PlaybackState = avSession.PlaybackState.PLAYBACK_STATE_INITIAL;
+  // ...
+  /**
+   * Sets up AV cast playback state change callbacks.
+   * Handles playback completion, position updates, volume changes and errors.
+   */
+  setAVCastCallback() {
+    this.avCastController.on('playbackStateChange', ['state'], async (playbackState: avSession.AVPlaybackState) => {
+      if (playbackState.state) {
+        this.state = playbackState.state;
+      }
+    });
+    // ...
+  }
+
+  // ...
+}
 ```
-1. @Observed
-2. export class VideoCastController {
-3. @Track state: avSession.PlaybackState = avSession.PlaybackState.PLAYBACK_STATE_INITIAL;
-4. // ...
-5. /**
-6. * Sets up AV cast playback state change callbacks.
-7. * Handles playback completion, position updates, volume changes and errors.
-8. */
-9. setAVCastCallback() {
-10. this.avCastController.on('playbackStateChange', ['state'], async (playbackState: avSession.AVPlaybackState) => {
-11. if (playbackState.state) {
-12. this.state = playbackState.state;
-13. }
-14. });
-15. // ...
-16. }
-
-18. // ...
-19. }
-```
-
-[VideoCastController.ets](https://gitcode.com/HarmonyOS_Samples/VideoCast/blob/master/entry/src/main/ets/controller/VideoCastController.ets#L29-L232)
 
 ### 本端控制远端设备状态
 
-[](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/c2/v3/xOifsBxDR2SN9BW-erySOA/zh-cn_media_0000002312054104.mp4)
-
-Video Player is loading.
-
-Play Video
-
-Play
-
-Current Time 0:00
-
-Loaded: 11.94%
-
-0:00
-
-Duration 0:07
-
-Mute
-
-1x
-
-Playback Rate
-
-* 2x
-* 1.8x
-* 1.5x
-* 1.2x
-* 1x, selected
-
-Fullscreen
-
-This is a modal window.
-
-Beginning of dialog window. Escape will cancel and close the window.
-
-TextColorWhiteBlackRedGreenBlueYellowMagentaCyanOpacityOpaqueSemi-TransparentText BackgroundColorBlackWhiteRedGreenBlueYellowMagentaCyanOpacityOpaqueSemi-TransparentTransparentCaption Area BackgroundColorBlackWhiteRedGreenBlueYellowMagentaCyanOpacityTransparentSemi-TransparentOpaque
-
-Font Size50%75%100%125%150%175%200%300%400%Text Edge StyleNoneRaisedDepressedUniformDrop shadowFont FamilyProportional Sans-SerifMonospace Sans-SerifProportional SerifMonospace SerifCasualScriptSmall Caps
-
-Reset restore all settings to the default valuesDone
-
-Close Modal Dialog
-
-End of dialog window.
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/f1/v3/itaZgOLFR0mXs31ZK8JEfw/zh-cn_media_0000002312054104.mp4)
 
 **时序图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/FqtwPS5EQNi9s-Nx0IlgbQ/zh-cn_image_0000002311894316.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/sm7KsN6WT5KqcWeGnSIuzw/zh-cn_image_0000002311894316.png "点击放大")
 
 **开发步骤**
 
 控制远端设备状态可通过[avCastController.sendControlCommand()](../harmonyos-references/arkts-apis-avsession-avcastcontroller.md#sendcontrolcommand10)接口实现，支持多种播放控制命令，包括：暂停、停止、下一首、上一首、快进、快退、跳转、音量调节和倍速设置。只需修改command字段即可切换不同功能，具体命令与功能的对应关系请参考[AVCastControlCommandType](../harmonyos-references/arkts-apis-avsession-t.md#avcontrolcommandtype10)。
 
+```typescript
+public async setAVCastPlay() {
+  let avCommand: avSession.AVCastControlCommand = { command: 'play' };
+  await this.avCastController.sendControlCommand(avCommand);
+}
 ```
-1. public async setAVCastPlay() {
-2. let avCommand: avSession.AVCastControlCommand = { command: 'play' };
-3. await this.avCastController.sendControlCommand(avCommand);
-4. }
-```
-
-[VideoCastController.ets](https://gitcode.com/HarmonyOS_Samples/VideoCast/blob/master/entry/src/main/ets/controller/VideoCastController.ets#L175-L178)
 
 在控制跳转、音量调节和倍速设置时，需要传入时间（单位ms）、音量、倍速参数。
 
+```typescript
+public async setAVCastSeek(timeMS: number) {
+  let avCommand: avSession.AVCastControlCommand = { command: 'seek', parameter: timeMS };
+  await this.avCastController.sendControlCommand(avCommand);
+}
+
+public async setAVCastVolume(volume: number) {
+  let avCommand: avSession.AVCastControlCommand = { command: 'setVolume', parameter: volume };
+  await this.avCastController.sendControlCommand(avCommand);
+}
+
+public async setAVCastSpeed(speed: media.PlaybackSpeed) {
+  let avCommand: avSession.AVCastControlCommand = { command: 'setSpeed', parameter: speed };
+  await this.avCastController.sendControlCommand(avCommand);
+}
 ```
-1. public async setAVCastSeek(timeMS: number) {
-2. let avCommand: avSession.AVCastControlCommand = { command: 'seek', parameter: timeMS };
-3. await this.avCastController.sendControlCommand(avCommand);
-4. }
-
-6. public async setAVCastVolume(volume: number) {
-7. let avCommand: avSession.AVCastControlCommand = { command: 'setVolume', parameter: volume };
-8. await this.avCastController.sendControlCommand(avCommand);
-9. }
-
-11. public async setAVCastSpeed(speed: media.PlaybackSpeed) {
-12. let avCommand: avSession.AVCastControlCommand = { command: 'setSpeed', parameter: speed };
-13. await this.avCastController.sendControlCommand(avCommand);
-14. }
-```
-
-[VideoCastController.ets](https://gitcode.com/HarmonyOS_Samples/VideoCast/blob/master/entry/src/main/ets/controller/VideoCastController.ets#L205-L218)
 
 ### 资源切换
 
@@ -632,25 +436,23 @@ End of dialog window.
 2. [avCastController.prepare(playItem)](../harmonyos-references/arkts-apis-avsession-avcastcontroller.md#prepare10-1)。
 3. [avCastController.start(playItem)](../harmonyos-references/arkts-apis-avsession-avcastcontroller.md#start10-1)。
 
+   ```typescript
+   let playItem: avSession.AVQueueItem = {
+     itemId: videoIndex,
+     description: {
+       assetId: 'VIDEO-' + JSON.stringify(videoIndex),
+       title: this.videoDataArray[videoIndex].name,
+       subtitle: 'video',
+       mediaUri: this.videoDataArray[videoIndex].url as string,
+       mediaType: 'VIDEO',
+       mediaImage: imgPixel,
+       startPosition: startPosition,
+       duration: this.videoDataArray[videoIndex].duration
+     }
+   };
+   await this.avCastController.prepare(playItem);
+   await this.avCastController.start(playItem);
    ```
-   1. let playItem: avSession.AVQueueItem = {
-   2. itemId: videoIndex,
-   3. description: {
-   4. assetId: 'VIDEO-' + JSON.stringify(videoIndex),
-   5. title: this.videoDataArray[videoIndex].name,
-   6. subtitle: 'video',
-   7. mediaUri: this.videoDataArray[videoIndex].url as string,
-   8. mediaType: 'VIDEO',
-   9. mediaImage: imgPixel,
-   10. startPosition: startPosition,
-   11. duration: this.videoDataArray[videoIndex].duration
-   12. }
-   13. };
-   14. await this.avCastController.prepare(playItem);
-   15. await this.avCastController.start(playItem);
-   ```
-
-   [VideoCastController.ets](https://gitcode.com/HarmonyOS_Samples/VideoCast/blob/master/entry/src/main/ets/controller/VideoCastController.ets#L56-L70)
 
 ## 扩展功能
 
@@ -658,63 +460,57 @@ End of dialog window.
 
 建议应用集成悬浮球快捷控制功能，便于用户快速返回投播页面进行操作控制，实现效果如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/iT05TjVQQAqKMraZG_n1mg/zh-cn_image_0000002346644421.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/LNpmpSDOReCqR2aj6DWHMA/zh-cn_image_0000002346644421.gif "点击放大")
 
 可以通过为页面设置浮层实现。
 
-```
-1. .overlay(this.OverlayNode(), {
-2. align: Alignment.BottomEnd,
-3. offset: { x: -24,
-4. y: -136 }
-5. })
-```
-
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/VideoCast/blob/master/entry/src/main/ets/pages/Index.ets#L256-L260)
-
-```
-1. @Builder
-2. OverlayNode() {
-3. // ...
-4. }
+```typescript
+.overlay(this.OverlayNode(), {
+  align: Alignment.BottomEnd,
+  offset: { x: -24,
+    y: -136 }
+})
 ```
 
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/VideoCast/blob/master/entry/src/main/ets/pages/Index.ets#L52-L139)
+```typescript
+@Builder
+OverlayNode() {
+  // ...
+}
+```
 
 ### 手机物理音量键同步远端
 
 音量同步需要通过遥控器页面的焦点管理和按键监听实现，具体流程为：当遥控器页面获焦时，监听音量加减按键事件，在事件回调中调用音量调节函数并同步更新播控中心状态。典型实现示例如下：
 
+```typescript
+let upOptions: inputConsumer.KeyPressedConfig = {
+  key: KeyCode.KEYCODE_VOLUME_UP,
+  action: 1,
+  isRepeat: true,
+}
+inputConsumer.on('keyPressed', upOptions, async () => {
+  if (this.avCastPlayerController) {
+    console.log('currentVolume' + JSON.stringify(this.currentVolume));
+    let volume = this.currentVolume + 10;
+    await this.avCastPlayerController.setAVCastVolume(volume);
+  }
+})
+let downOptions: inputConsumer.KeyPressedConfig = {
+  key: KeyCode.KEYCODE_VOLUME_DOWN,
+  action: 1,
+  isRepeat: true,
+}
+inputConsumer.on('keyPressed', downOptions, async () => {
+  if (this.avCastPlayerController) {
+    let volume = this.currentVolume - 10;
+    if (volume < 0) {
+      await this.avCastPlayerController.setAVCastVolume(0);
+    }
+    await this.avCastPlayerController.setAVCastVolume(volume);
+  }
+})
 ```
-1. let upOptions: inputConsumer.KeyPressedConfig = {
-2. key: KeyCode.KEYCODE_VOLUME_UP,
-3. action: 1,
-4. isRepeat: true,
-5. }
-6. inputConsumer.on('keyPressed', upOptions, async () => {
-7. if (this.avCastPlayerController) {
-8. console.log('currentVolume' + JSON.stringify(this.currentVolume));
-9. let volume = this.currentVolume + 10;
-10. await this.avCastPlayerController.setAVCastVolume(volume);
-11. }
-12. })
-13. let downOptions: inputConsumer.KeyPressedConfig = {
-14. key: KeyCode.KEYCODE_VOLUME_DOWN,
-15. action: 1,
-16. isRepeat: true,
-17. }
-18. inputConsumer.on('keyPressed', downOptions, async () => {
-19. if (this.avCastPlayerController) {
-20. let volume = this.currentVolume - 10;
-21. if (volume < 0) {
-22. await this.avCastPlayerController.setAVCastVolume(0);
-23. }
-24. await this.avCastPlayerController.setAVCastVolume(volume);
-25. }
-26. })
-```
-
-[RemoteControlPage.ets](https://gitcode.com/HarmonyOS_Samples/VideoCast/blob/master/entry/src/main/ets/pages/RemoteControlPage.ets#L75-L100)
 
 ### 投屏转投播
 
@@ -752,13 +548,11 @@ End of dialog window.
 4. AVCastPicker显示期间AVSession没有销毁重建。
 5. AVSession接入后告知当前应用支持投播。
 
+   ```typescript
+   await videoSession.setExtras({
+     'requireAbilityList': ['url-cast']
+   })
    ```
-   1. await videoSession.setExtras({
-   2. 'requireAbilityList': ['url-cast']
-   3. })
-   ```
-
-   [VideoPlayingView.ets](https://gitcode.com/HarmonyOS_Samples/VideoCast/blob/master/entry/src/main/ets/view/VideoPlayingView.ets#L150-L152)
 6. 确认filter是否过滤掉设备。
 
 ### 投播后远端黑屏

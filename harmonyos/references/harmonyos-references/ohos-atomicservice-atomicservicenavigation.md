@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-atom
 title: AtomicServiceNavigation
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > AtomicService > AtomicServiceNavigation
 category: harmonyos-references
-scraped_at: 2026-04-29T13:52:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ef57538d2cc32a3291d018a74a236a0e82ba513b55166bd7cf6aea54670b6d07
+scraped_at: 2026-09-02T15:01:07+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e7dcb41efb5726cdb7a0f5a4756d048e6d7b1cb7af23ab9152422fc89512cfea
 ---
 
-作为Page页面的根容器使用，其内部默认包含了标题栏、内容区，其中内容区默认首页显示导航内容或非首页显示（[NavDestination](ts-basic-components-navdestination.md)的子组件），首页和非首页通过路由进行切换。
+作为Page页面的根容器使用，其内部默认包含了标题栏、内容区。其中，内容区在首页默认显示导航内容，在非首页显示[NavDestination](ts-basic-components-navdestination.md)的子组件，首页和非首页通过路由进行切换。
 
-说明
+**说明** 
 
-该组件从API version 12开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+该组件从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { AtomicServiceNavigation } from '@kit.ArkUI';
+```ts
+import { AtomicServiceNavigation } from '@kit.ArkUI';
 ```
 
 ## 子组件
-
-PhonePC/2in1TabletTVWearable
 
 可以包含子组件。
 
@@ -32,34 +28,32 @@ PhonePC/2in1TabletTVWearable
 
 ## AtomicServiceNavigation
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AtomicServiceNavigation({
-2. navPathStack?: NavPathStack,
-3. navigationContent: Callback<void>,
-4. title?: ResourceStr,
-5. titleOptions?: TitleOptions,
-6. gradientBackground?: GradientBackground,
-7. hideTitleBar?: boolean,
-8. navBarWidth?: Length,
-9. mode?: NavigationMode,
-10. navDestinationBuilder?: NavDestinationBuilder,
-11. navBarWidthRange?: [Dimension, Dimension],
-12. minContentWidth?: Dimension,
-13. sideBarOptions?: SideBarOptions,
-14. sideBarContent?: Callback<void>,
-15. menus?: CustomBuilder | Array<NavigationMenuItem>,
-16. stateChangeCallback?: Callback<boolean>,
-17. modeChangeCallback?: Callback<NavigationMode>
-18. })
+```ts
+AtomicServiceNavigation({
+    navPathStack?: NavPathStack,
+    navigationContent?: Callback<void>,
+    title?: ResourceStr,
+    titleOptions?: TitleOptions,
+    gradientBackground?: GradientBackground,
+    hideTitleBar?: boolean,
+    navBarWidth?: Length,
+    mode?: NavigationMode,
+    navDestinationBuilder?: NavDestinationBuilder,
+    navBarWidthRange?: [Dimension, Dimension],
+    minContentWidth?: Dimension,
+    sideBarOptions?: SideBarOptions,
+    sideBarContent?: Callback<void>,
+    menus?: CustomBuilder | Array<NavigationMenuItem>,
+    stateChangeCallback?: Callback<boolean>,
+    modeChangeCallback?: Callback<NavigationMode>
+})
 ```
 
 **装饰器类型：** @Component
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-**参数**：
+**参数：**
 
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -67,22 +61,20 @@ PhonePC/2in1TabletTVWearable
 | navigationContent | Callback<void> | 否 | @BuilderParam | Navigation容器内容。默认值为空，无内容展示。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | title | [ResourceStr](ts-types.md#resourcestr) | 否 | @Prop | 设置页面标题。默认值为空字符串。当titleOptions的titleBarType字段设置为[TitleBarType](ohos-atomicservice-atomicservicenavigation.md#titlebartype18).ROUND\_ICON或者[TitleBarType](ohos-atomicservice-atomicservicenavigation.md#titlebartype18).SQUARED\_ICON，且设置了titleIcon时，title标题内容将不会显示。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | titleOptions | [TitleOptions](ohos-atomicservice-atomicservicenavigation.md#titleoptions) | 否 | @Prop | 标题栏选项。默认值为{ isBlurEnabled: true }。当titleBarType字段设置为[TitleBarType](ohos-atomicservice-atomicservicenavigation.md#titlebartype18).ROUND\_ICON或者[TitleBarType](ohos-atomicservice-atomicservicenavigation.md#titlebartype18).SQUARED\_ICON，且设置了titleIcon时，title标题内容将不会显示。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| gradientBackground18+ | [GradientBackground](ohos-atomicservice-atomicservicenavigation.md#gradientbackground18) | 否 | @Prop | 背景色选项。默认值见[GradientBackground](ohos-atomicservice-atomicservicenavigation.md#gradientbackground18)。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| gradientBackground18+ | [GradientBackground](ohos-atomicservice-atomicservicenavigation.md#gradientbackground18) | 否 | @Prop | 渐变背景色选项。设置时各字段的默认值见[GradientBackground](ohos-atomicservice-atomicservicenavigation.md#gradientbackground18)。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | hideTitleBar | boolean | 否 | @Prop | 设置是否隐藏标题栏。默认为false。  false表示显示标题栏，true表示隐藏标题栏。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | navBarWidth | [Length](ts-types.md#length) | 否 | @Prop | 设置导航栏宽度。默认值为240vp。  仅在Navigation组件分栏时生效。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | mode | [NavigationMode](ts-basic-components-navigation.md#navigationmode9枚举说明) | 否 | @Prop | 设置导航栏的显示模式。默认值为Auto。  支持Stack、Split与Auto模式。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | navDestinationBuilder | [NavDestinationBuilder](ohos-atomicservice-atomicservicenavigation.md#navdestinationbuilder) | 否 | @BuilderParam | 创建[NavDestination](ts-basic-components-navdestination.md)组件所需要的Builder数据。默认值为空，即无内容展示。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| navBarWidthRange | [[Dimension](ts-types.md#dimension10), [Dimension](ts-types.md#dimension10)] | 否 | @Prop | 设置导航栏最小和最大宽度（双栏模式下生效）。默认值：最小默认值为240vp，最大默认值为组件宽度的40%，且不大于432vp，如果只设置一个值，则未设置的值按照默认值计算。单位：vp。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| navBarWidthRange | [[Dimension](ts-types.md#dimension10), [Dimension](ts-types.md#dimension10)] | 否 | @Prop | 设置导航栏最小和最大宽度（双栏模式下生效）。默认值：最小为240vp，最大为组件宽度的40%，且不大于432vp，如果只设置一个值，则未设置的值按照默认值计算。单位：vp。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | minContentWidth | [Dimension](ts-types.md#dimension10) | 否 | @Prop | 设置导航栏内容区最小宽度（双栏模式下生效）。默认值为360vp。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | sideBarOptions18+ | [SideBarOptions](ohos-atomicservice-atomicservicenavigation.md#sidebaroptions18) | 否 | @Prop | 侧边栏的功能选项。默认值为{ sideBarBackground: $r('sys.color.ohos\_id\_color\_sub\_background'), sideBarIcon: $r('sys.symbol.open\_sidebar') }。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | sideBarContent18+ | Callback<void> | 否 | @BuilderParam | 侧边栏的内容。默认值为空。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | menus18+ | [CustomBuilder](ts-types.md#custombuilder8) | Array<[NavigationMenuItem](ts-basic-components-navigation.md#navigationmenuitem)> | 否 | @BuilderParam | 宽屏场景下用户自定义插入的布局样式。默认值为空，不显示任何样式。屏幕宽度低于600vp为非宽屏场景，大于等于600vp为宽屏场景。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| stateChangeCallback | Callback<boolean> | 否 | - | 导航栏显示状态切换时触发该回调。true表示导航栏显示状态发生了切换。默认值为空。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| stateChangeCallback | Callback<boolean> | 否 | - | 导航栏显示状态切换时触发该回调。true表示导航栏显示，false表示导航栏隐藏。默认值为空。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | modeChangeCallback | Callback<[NavigationMode](ts-basic-components-navigation.md#navigationmode9枚举说明)> | 否 | - | 当Navigation首次显示或者单双栏状态发生变化时触发该回调。默认值为空。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 
 ## TitleOptions
-
-PhonePC/2in1TabletTVWearable
 
 标题栏选项。
 
@@ -91,16 +83,14 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | backgroundColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 标题栏背景颜色。默认值为系统默认颜色。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| isBlurEnabled | boolean | 否 | 是 | 标题栏是否模糊，默认值：true，表示标题栏模糊。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| barStyle | [BarStyle](ts-basic-components-navigation.md#barstyle12枚举说明) | 否 | 是 | 标题栏样式属性设置。默认值为BarStyle.STANDARD。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| titleBarType18+ | [TitleBarType](ohos-atomicservice-atomicservicenavigation.md#titlebartype18) | 否 | 是 | 设置标题栏类型。默认值为TitleBarType.ROUND\_ICON。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| titleIcon18+ | [Resource](ts-types.md#resource) | [SymbolGlyphModifier](ts-universal-attributes-attribute-modifier.md#自定义modifier) | 否 | 是 | 设置标题栏的图标。默认值为$r('sys.color.ohos\_id\_color\_titlebar\_icon')。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| isBlurEnabled | boolean | 否 | 是 | 标题栏是否模糊。true表示标题栏模糊，false表示标题栏不模糊。默认值：true。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| barStyle | [BarStyle](ts-basic-components-navigation.md#barstyle12枚举说明) | 否 | 是 | 设置标题栏样式。默认值为BarStyle.STANDARD。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| titleBarType18+ | [TitleBarType](ohos-atomicservice-atomicservicenavigation.md#titlebartype18) | 否 | 是 | 设置标题栏类型。默认值为TitleBarType.ROUND\_ICON。  当titleBarType字段设置为TitleBarType.ROUND\_ICON或者TitleBarType.SQUARED\_ICON，且设置了titleIcon时，title标题内容将不会显示。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| titleIcon18+ | [Resource](ts-types.md#resource) | [SymbolGlyphModifier](ts-universal-attributes-attribute-modifier.md#自定义modifier) | 否 | 是 | 设置标题栏的图标。默认值为$r('sys.media.ohos\_id\_color\_titlebar\_icon')。  当titleBarType字段设置为TitleBarType.ROUND\_ICON或者TitleBarType.SQUARED\_ICON时，设置此参数会导致title标题内容不显示。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 
 ## GradientBackground18+
 
-PhonePC/2in1TabletTVWearable
-
-供开发者设置品牌渐变色。
+品牌渐变色选项。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -108,19 +98,17 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| primaryColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 否 | 单色渐变色彩值和双色渐变第一色彩值。默认值为空，即无颜色设置。 |
+| primaryColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 否 | 单色渐变色彩值和双色渐变第一色彩值。 |
 | secondaryColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 双色渐变色第二色彩值。默认值为空，即无颜色设置。 |
 | backgroundTheme | [BackgroundTheme](ohos-atomicservice-atomicservicenavigation.md#backgroundtheme18) | 否 | 是 | 导航栏背景底色。默认值为DEFAULT。 |
-| mixMode | [MixMode](ohos-atomicservice-atomicservicenavigation.md#mixmode18) | 否 | 是 | 同时设置primaryColor和secondaryColor时此参数生效。代表双色渐变下两种颜色的融合方式。默认值为TOWARDS。 |
-| alpha | [GradientAlpha](ohos-atomicservice-atomicservicenavigation.md#gradientalpha18) | 否 | 是 | 设置渐变色显示区域的透明度。默认值为OPACITY\_20。 |
+| mixMode | [MixMode](ohos-atomicservice-atomicservicenavigation.md#mixmode18) | 否 | 是 | 同时设置primaryColor和secondaryColor时此参数生效。表示双色渐变下两种颜色的融合方式。默认值为TOWARDS。 |
+| alpha | [GradientAlpha](ohos-atomicservice-atomicservicenavigation.md#gradientalpha18) | 否 | 是 | 设置渐变色显示区域的不透明度。默认值为OPACITY\_20。 |
 
 ## NavDestinationBuilder
 
-PhonePC/2in1TabletTVWearable
-
 type NavDestinationBuilder = (name: string, param?: Object) => void
 
-NavDestination组件内容。
+用于创建NavDestination组件内容的构建器类型。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -135,9 +123,7 @@ NavDestination组件内容。
 
 ## MixMode18+
 
-PhonePC/2in1TabletTVWearable
-
-背景色颜色混合模式的可选项。
+背景色混合模式的可选项。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -150,8 +136,6 @@ PhonePC/2in1TabletTVWearable
 | TOWARDS | 3 | 一种颜色渐变为另一种颜色。 |
 
 ## TitleBarType18+
-
-PhonePC/2in1TabletTVWearable
 
 标题栏类型的可选项，默认值为ROUND\_ICON。
 
@@ -167,9 +151,7 @@ PhonePC/2in1TabletTVWearable
 
 ## GradientAlpha18+
 
-PhonePC/2in1TabletTVWearable
-
-导航栏背景底色的可选项。
+渐变色显示区域不透明度的可选项。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -184,9 +166,7 @@ PhonePC/2in1TabletTVWearable
 
 ## BackgroundTheme18+
 
-PhonePC/2in1TabletTVWearable
-
-导航栏背景色底色的可选项。
+导航栏背景底色的可选项。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -200,8 +180,6 @@ PhonePC/2in1TabletTVWearable
 
 ## SideBarOptions18+
 
-PhonePC/2in1TabletTVWearable
-
 侧边栏的功能选项。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
@@ -212,440 +190,424 @@ PhonePC/2in1TabletTVWearable
 | --- | --- | --- | --- | --- |
 | sideBarBackground | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 设置侧边栏的背景颜色。默认值为$r('sys.color.ohos\_id\_color\_sub\_background')。 |
 | onChange | Callback<boolean> | 否 | 是 | 侧边栏显示隐藏回调。true表示显示，false表示隐藏。默认值为空，即无事件。 |
-| sideBarIcon | [Resource](ts-types.md#resource) | [SymbolGlyphModifier](ts-universal-attributes-attribute-modifier.md#自定义modifier) | 否 | 是 | 侧边栏里的返回图标。默认值为$r('sys.symbol.open\_sidebar')。 |
+| sideBarIcon | [Resource](ts-types.md#resource) | [SymbolGlyphModifier](ts-universal-attributes-attribute-modifier.md#自定义modifier) | 否 | 是 | 侧边栏的展开图标。默认值为$r('sys.symbol.open\_sidebar')。 |
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 ### 示例1（AtomicServiceNavigation页面布局与渐变色背景）
 
-AtomicServiceNavigation的基础样式，并展示渐变色背景。
+展示AtomicServiceNavigation的基础样式与渐变色背景。
 
-```
-1. import { AtomicServiceNavigation, MixMode, GradientAlpha, BackgroundTheme } from '@kit.ArkUI';
-2. import { AtomicServiceTabs, TabBarOptions, TabBarPosition } from '@kit.ArkUI';
-3. @Entry
-4. @Component
-5. struct Index {
-6. @State message: string = '主题';
-7. childNavStack: NavPathStack = new NavPathStack();
-8. @Builder
-9. tabContent1() {
-10. Text('first page')
-11. .onClick(() => {
-12. this.childNavStack.pushPath({ name: 'page one' })
-13. })
-14. }
+```ts
+import { AtomicServiceNavigation, MixMode, GradientAlpha, BackgroundTheme } from '@kit.ArkUI';
+import { AtomicServiceTabs, TabBarOptions, TabBarPosition } from '@kit.ArkUI';
+@Entry
+@Component
+struct Index {
+  @State message: string = '主题';
+  childNavStack: NavPathStack = new NavPathStack();
+  @Builder
+  tabContent1() {
+    Text('first page')
+      .onClick(() => {
+        this.childNavStack.pushPath({ name: 'page one' });
+      })
+  }
 
-16. @Builder
-17. tabContent2() {
-18. Text('second page')
-19. }
+  @Builder
+  tabContent2() {
+    Text('second page')
+  }
 
-21. @Builder
-22. tabContent3() {
-23. Text('third page')
-24. }
+  @Builder
+  tabContent3() {
+    Text('third page')
+  }
 
-26. @Builder
-27. navigationContent() {
-28. AtomicServiceTabs({
-29. tabContents: [
-30. () => {
-31. this.tabContent1()
-32. },
-33. () => {
-34. this.tabContent2()
-35. },
-36. () => {
-37. this.tabContent3()
-38. }
-39. ],
-40. tabBarOptionsArray: [
-41. new TabBarOptions($r('sys.media.ohos_ic_public_phone'), '功能1'),
-42. new TabBarOptions($r('sys.media.ohos_ic_public_location'), '功能2', Color.Green, Color.Red),
-43. new TabBarOptions($r('sys.media.ohos_ic_public_more'), '功能3')
-44. ],
-45. tabBarPosition: TabBarPosition.BOTTOM,
-46. barBackgroundColor: $r('sys.color.ohos_id_color_bottom_tab_bg'),
-47. onTabBarClick: (index: Number) => {
-48. if (index == 0) {
-49. this.message = '功能1';
-50. } else if (index == 1) {
-51. this.message = '功能2';
-52. } else {
-53. this.message = '功能3';
-54. }
-55. }
-56. })
-57. }
+  @Builder
+  navigationContent() {
+    AtomicServiceTabs({
+      tabContents: [
+        () => {
+          this.tabContent1()
+        },
+        () => {
+          this.tabContent2()
+        },
+        () => {
+          this.tabContent3()
+        }
+      ],
+      tabBarOptionsArray: [
+        new TabBarOptions($r('sys.media.ohos_ic_public_phone'), '功能1'),
+        new TabBarOptions($r('sys.media.ohos_ic_public_location'), '功能2', Color.Green, Color.Red),
+        new TabBarOptions($r('sys.media.ohos_ic_public_more'), '功能3')
+      ],
+      tabBarPosition: TabBarPosition.BOTTOM,
+      barBackgroundColor: $r('sys.color.ohos_id_color_bottom_tab_bg'),
+      onTabBarClick: (index: number) => {
+        if (index == 0) {
+          this.message = '功能1';
+        } else if (index == 1) {
+          this.message = '功能2';
+        } else {
+          this.message = '功能3';
+        }
+      }
+    })
+  }
 
-59. @Builder
-60. pageMap(name: string) {
-61. if (name === 'page one') {
-62. PageOne()
-63. } else if (name === 'page two') {
-64. PageTwo()
-65. }
-66. }
+  @Builder
+  pageMap(name: string) {
+    if (name === 'page one') {
+      PageOne()
+    } else if (name === 'page two') {
+      PageTwo()
+    }
+  }
 
-68. build() {
-69. Row() {
-70. Column() {
-71. AtomicServiceNavigation({
-72. navigationContent: () => {
-73. this.navigationContent()
-74. },
-75. title: this.message,
-76. titleOptions: {
-77. isBlurEnabled: false
-78. },
-79. gradientBackground: {
-80. primaryColor: '#FF0000',
-81. secondaryColor: '#00FF00',
-82. backgroundTheme: BackgroundTheme.LIGHT,
-83. mixMode: MixMode.AVERAGE,
-84. alpha: GradientAlpha.OPACITY_100
-85. },
-86. navDestinationBuilder: this.pageMap,
-87. navPathStack: this.childNavStack,
-88. mode: NavigationMode.Stack
-89. })
-90. }
-91. .width('100%')
-92. }
-93. .height('100%')
-94. }
-95. }
+  build() {
+    Row() {
+      Column() {
+        AtomicServiceNavigation({
+          navigationContent: () => {
+            this.navigationContent()
+          },
+          title: this.message,
+          titleOptions: {
+            isBlurEnabled: false
+          },
+          gradientBackground: {
+            primaryColor: '#FF0000',
+            secondaryColor: '#00FF00',
+            backgroundTheme: BackgroundTheme.LIGHT,
+            mixMode: MixMode.AVERAGE,
+            alpha: GradientAlpha.OPACITY_100
+          },
+          navDestinationBuilder: this.pageMap,
+          navPathStack: this.childNavStack,
+          mode: NavigationMode.Stack
+        })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 
-97. @Component
-98. export struct PageOne {
-99. pageInfo: NavPathStack = new NavPathStack();
+@Component
+export struct PageOne {
+  pageInfo: NavPathStack = new NavPathStack();
 
-101. build() {
-102. NavDestination() {
-103. Button('Next')
-104. .onClick(() => {
-105. this.pageInfo.pushPath({ name: 'page two'})
-106. })
-107. }
-108. .title('PageOne')
-109. .onReady((context: NavDestinationContext) => {
-110. this.pageInfo = context.pathStack;
-111. })
-112. }
-113. }
+  build() {
+    NavDestination() {
+      Button('Next')
+        .onClick(() => {
+          this.pageInfo.pushPath({ name: 'page two'});
+        })
+    }
+    .title('PageOne')
+    .onReady((context: NavDestinationContext) => {
+      this.pageInfo = context.pathStack;
+    })
+  }
+}
 
-115. @Component
-116. export struct PageTwo {
-117. pageInfo: NavPathStack = new NavPathStack();
+@Component
+export struct PageTwo {
+  pageInfo: NavPathStack = new NavPathStack();
 
-119. build() {
-120. NavDestination() {
-121. Button('End')
-122. }
-123. .title('PageTwo')
-124. .onReady((context: NavDestinationContext) => {
-125. this.pageInfo = context.pathStack;
-126. })
-127. }
-128. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/JKq1iXAwSUi-IBMkGVo9XA/zh-cn_image_0000002558606944.jpg)
-
-### 示例2（抽屉模式，宽屏场景下插入自定义布局）
-
-设备宽屏场景（宽度大于600vp）下设置抽屉模式，用户在标题栏插入自定义布局。
-
-```
-1. import { AtomicServiceNavigation, TitleBarType } from '@kit.ArkUI';
-2. import { AtomicServiceTabs, TabBarOptions, TabBarPosition } from '@kit.ArkUI';
-
-4. @Entry
-5. @Component
-6. struct Index {
-7. @State message: string = 'Hello World';
-8. childNavStack: NavPathStack = new NavPathStack();
-
-10. @Builder
-11. tabContent1() {
-12. Text('first page')
-13. .onClick(() => {
-14. this.childNavStack.pushPath({ name: 'page one' })
-15. })
-16. }
-
-18. @Builder
-19. tabContent2() {
-20. Text('second page')
-21. }
-
-23. @Builder
-24. tabContent3() {
-25. Text('third page')
-26. }
-
-28. @Builder
-29. navigationContent() {
-30. AtomicServiceTabs({
-31. tabContents: [
-32. () => {
-33. this.tabContent1()
-34. },
-35. () => {
-36. this.tabContent2()
-37. },
-38. () => {
-39. this.tabContent3()
-40. }
-41. ],
-42. tabBarOptionsArray: [
-43. new TabBarOptions($r('sys.media.ohos_ic_public_phone'), '功能1'),
-44. new TabBarOptions($r('sys.media.ohos_ic_public_location'), '功能2', Color.Green, Color.Red),
-45. new TabBarOptions($r('sys.media.ohos_ic_public_more'), '功能3')
-46. ],
-47. tabBarPosition: TabBarPosition.BOTTOM,
-48. barBackgroundColor: $r('sys.color.ohos_id_color_bottom_tab_bg'),
-49. onTabBarClick: (index: Number) => {
-50. if (index == 0) {
-51. this.message = '功能1';
-52. } else if (index == 1) {
-53. this.message = '功能2';
-54. } else {
-55. this.message = '功能3';
-56. }
-57. }
-58. })
-59. }
-
-61. @Builder
-62. pageMap(name: string) {
-63. if (name === 'page one') {
-64. PageOne()
-65. } else if (name === 'page two') {
-66. PageTwo()
-67. }
-68. }
-
-70. @State showText: string = 'time: ';
-71. @State time: number = 0;
-
-73. @Builder
-74. insertComp() {
-75. Text('This is menus area')
-76. .fontColor(Color.Red)
-77. .width(200)
-78. .height('100%')
-79. }
-
-81. build() {
-82. Column() {
-83. AtomicServiceNavigation({
-84. navigationContent: () => {
-85. this.navigationContent()
-86. },
-87. navDestinationBuilder: this.pageMap,
-88. navPathStack: this.childNavStack,
-89. title: this.message,
-90. titleOptions: {
-91. titleIcon: $r('app.media.startIcon'),
-92. backgroundColor: 'rgb(61, 157, 180)',
-93. titleBarType: TitleBarType.DRAWER
-94. },
-95. menus: () => { this.insertComp() },
-96. mode: NavigationMode.Stack
-97. })
-98. }
-99. .width('100%')
-100. }
-101. }
-
-103. @Component
-104. export struct PageOne {
-105. pageInfo: NavPathStack = new NavPathStack();
-
-107. build() {
-108. NavDestination() {
-109. Button('Next')
-110. .onClick(() => {
-111. this.pageInfo.pushPath({ name: 'page two'})
-112. })
-113. }
-114. .title('PageOne')
-115. .onReady((context: NavDestinationContext) => {
-116. this.pageInfo = context.pathStack;
-117. })
-118. }
-119. }
-
-121. @Component
-122. export struct PageTwo {
-123. pageInfo: NavPathStack = new NavPathStack();
-
-125. build() {
-126. NavDestination() {
-127. Button('End')
-128. }
-129. .title('PageTwo')
-130. .onReady((context: NavDestinationContext) => {
-131. this.pageInfo = context.pathStack;
-132. })
-133. }
-134. }
+  build() {
+    NavDestination() {
+      Button('End')
+    }
+    .title('PageTwo')
+    .onReady((context: NavDestinationContext) => {
+      this.pageInfo = context.pathStack;
+    })
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/n2nguYySRyS002SeoDhxdA/zh-cn_image_0000002589326471.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/4thGuzpyT9G1yNCLHxpj1A/zh-cn_image_0000002706676312.jpg)
 
-### 示例3（边栏使用场景）
+### 示例2（抽屉样式，宽屏场景下插入自定义布局）
 
-设置边栏：背景色与内容样式。
+设备宽屏场景（宽度大于600vp）下设置抽屉模式，在标题栏插入自定义布局。
 
-```
-1. import { AtomicServiceNavigation, TitleBarType } from '@kit.ArkUI';
-2. import { AtomicServiceTabs, TabBarOptions, TabBarPosition } from '@kit.ArkUI';
+```ts
+import { AtomicServiceNavigation, TitleBarType } from '@kit.ArkUI';
+import { AtomicServiceTabs, TabBarOptions, TabBarPosition } from '@kit.ArkUI';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. @State message: string = 'Hello World';
-8. childNavStack: NavPathStack = new NavPathStack();
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
+  childNavStack: NavPathStack = new NavPathStack();
 
-10. @Builder
-11. tabContent1() {
-12. Text('first page')
-13. .onClick(() => {
-14. this.childNavStack.pushPath({ name: 'page one' })
-15. })
-16. }
+  @Builder
+  tabContent1() {
+    Text('first page')
+      .onClick(() => {
+        this.childNavStack.pushPath({ name: 'page one' });
+      })
+  }
 
-18. @Builder
-19. tabContent2() {
-20. Text('second page')
-21. }
+  @Builder
+  tabContent2() {
+    Text('second page')
+  }
 
-23. @Builder
-24. tabContent3() {
-25. Text('third page')
-26. }
+  @Builder
+  tabContent3() {
+    Text('third page')
+  }
 
-28. @Builder
-29. navigationContent() {
-30. AtomicServiceTabs({
-31. tabContents: [
-32. () => {
-33. this.tabContent1()
-34. },
-35. () => {
-36. this.tabContent2()
-37. },
-38. () => {
-39. this.tabContent3()
-40. }
-41. ],
-42. tabBarOptionsArray: [
-43. new TabBarOptions($r('sys.media.ohos_ic_public_phone'), '功能1'),
-44. new TabBarOptions($r('sys.media.ohos_ic_public_location'), '功能2', Color.Green, Color.Red),
-45. new TabBarOptions($r('sys.media.ohos_ic_public_more'), '功能3')
-46. ],
-47. tabBarPosition: TabBarPosition.BOTTOM,
-48. barBackgroundColor: $r('sys.color.ohos_id_color_bottom_tab_bg'),
-49. onTabBarClick: (index: Number) => {
-50. if (index == 0) {
-51. this.message = '功能1';
-52. } else if (index == 1) {
-53. this.message = '功能2';
-54. } else {
-55. this.message = '功能3';
-56. }
-57. }
-58. })
-59. }
+  @Builder
+  navigationContent() {
+    AtomicServiceTabs({
+      tabContents: [
+        () => {
+          this.tabContent1()
+        },
+        () => {
+          this.tabContent2()
+        },
+        () => {
+          this.tabContent3()
+        }
+      ],
+      tabBarOptionsArray: [
+        new TabBarOptions($r('sys.media.ohos_ic_public_phone'), '功能1'),
+        new TabBarOptions($r('sys.media.ohos_ic_public_location'), '功能2', Color.Green, Color.Red),
+        new TabBarOptions($r('sys.media.ohos_ic_public_more'), '功能3')
+      ],
+      tabBarPosition: TabBarPosition.BOTTOM,
+      barBackgroundColor: $r('sys.color.ohos_id_color_bottom_tab_bg'),
+      onTabBarClick: (index: number) => {
+        if (index == 0) {
+          this.message = '功能1';
+        } else if (index == 1) {
+          this.message = '功能2';
+        } else {
+          this.message = '功能3';
+        }
+      }
+    })
+  }
 
-61. @Builder
-62. pageMap(name: string) {
-63. if (name === 'page one') {
-64. PageOne()
-65. } else if (name === 'page two') {
-66. PageTwo()
-67. }
-68. }
+  @Builder
+  pageMap(name: string) {
+    if (name === 'page one') {
+      PageOne()
+    } else if (name === 'page two') {
+      PageTwo()
+    }
+  }
 
-70. @State showText: string = 'time: ';
-71. @State time: number = 0;
+  @Builder
+  insertComp() {
+    Text('This is menus area')
+      .fontColor(Color.Red)
+      .width(200)
+      .height('100%')
+  }
 
-73. @Builder
-74. insertComp() {
-75. Text('This is menus area')
-76. .fontColor(Color.Red)
-77. .width(200)
-78. .height('100%')
-79. }
+  build() {
+    Column() {
+      AtomicServiceNavigation({
+        navigationContent: () => {
+          this.navigationContent()
+        },
+        navDestinationBuilder: this.pageMap,
+        navPathStack: this.childNavStack,
+        title: this.message,
+        titleOptions: {
+          titleIcon: $r('app.media.startIcon'),
+          backgroundColor: 'rgb(61, 157, 180)',
+          titleBarType: TitleBarType.DRAWER
+        },
+        menus: () => { this.insertComp() },
+        mode: NavigationMode.Stack
+      })
+    }
+    .width('100%')
+  }
+}
 
-81. @Builder
-82. sideBarContentBuilder() {
-83. Text('This is sideBar content area')
-84. .fontSize(20)
-85. }
+@Component
+export struct PageOne {
+  pageInfo: NavPathStack = new NavPathStack();
 
-87. build() {
-88. Column() {
-89. AtomicServiceNavigation({
-90. navigationContent: () => {
-91. this.navigationContent()
-92. },
-93. navDestinationBuilder: this.pageMap,
-94. navPathStack: this.childNavStack,
-95. title: this.message,
-96. titleOptions: {
-97. titleIcon: $r('app.media.startIcon'),
-98. backgroundColor: 'rgb(61, 157, 180)',
-99. titleBarType: TitleBarType.DRAWER
-100. },
-101. sideBarOptions: {
-102. sideBarBackground: '#409EFF'
-103. },
-104. sideBarContent: () => { this.sideBarContentBuilder() },
-105. mode: NavigationMode.Stack
-106. })
-107. }
-108. .width('100%')
-109. }
-110. }
+  build() {
+    NavDestination() {
+      Button('Next')
+        .onClick(() => {
+          this.pageInfo.pushPath({ name: 'page two'});
+        })
+    }
+    .title('PageOne')
+    .onReady((context: NavDestinationContext) => {
+      this.pageInfo = context.pathStack;
+    })
+  }
+}
 
-112. @Component
-113. export struct PageOne {
-114. pageInfo: NavPathStack = new NavPathStack();
+@Component
+export struct PageTwo {
+  pageInfo: NavPathStack = new NavPathStack();
 
-116. build() {
-117. NavDestination() {
-118. Button('Next')
-119. .onClick(() => {
-120. this.pageInfo.pushPath({ name: 'page two'})
-121. })
-122. }
-123. .title('PageOne')
-124. .onReady((context: NavDestinationContext) => {
-125. this.pageInfo = context.pathStack;
-126. })
-127. }
-128. }
-
-130. @Component
-131. export struct PageTwo {
-132. pageInfo: NavPathStack = new NavPathStack();
-
-134. build() {
-135. NavDestination() {
-136. Button('End')
-137. }
-138. .title('PageTwo')
-139. .onReady((context: NavDestinationContext) => {
-140. this.pageInfo = context.pathStack;
-141. })
-142. }
-143. }
+  build() {
+    NavDestination() {
+      Button('End')
+    }
+    .title('PageTwo')
+    .onReady((context: NavDestinationContext) => {
+      this.pageInfo = context.pathStack;
+    })
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/ffEbuGqmSouh0RcxBylGLw/zh-cn_image_0000002589246413.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/NVDkw0EmTbaaJe1UXSahFg/zh-cn_image_0000002736435399.png)
+
+### 示例3（侧边栏使用场景）
+
+设置侧边栏：背景色与内容样式。
+
+```ts
+import { AtomicServiceNavigation, TitleBarType } from '@kit.ArkUI';
+import { AtomicServiceTabs, TabBarOptions, TabBarPosition } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
+  childNavStack: NavPathStack = new NavPathStack();
+
+  @Builder
+  tabContent1() {
+    Text('first page')
+      .onClick(() => {
+        this.childNavStack.pushPath({ name: 'page one' });
+      })
+  }
+
+  @Builder
+  tabContent2() {
+    Text('second page')
+  }
+
+  @Builder
+  tabContent3() {
+    Text('third page')
+  }
+
+  @Builder
+  navigationContent() {
+    AtomicServiceTabs({
+      tabContents: [
+        () => {
+          this.tabContent1()
+        },
+        () => {
+          this.tabContent2()
+        },
+        () => {
+          this.tabContent3()
+        }
+      ],
+      tabBarOptionsArray: [
+        new TabBarOptions($r('sys.media.ohos_ic_public_phone'), '功能1'),
+        new TabBarOptions($r('sys.media.ohos_ic_public_location'), '功能2', Color.Green, Color.Red),
+        new TabBarOptions($r('sys.media.ohos_ic_public_more'), '功能3')
+      ],
+      tabBarPosition: TabBarPosition.BOTTOM,
+      barBackgroundColor: $r('sys.color.ohos_id_color_bottom_tab_bg'),
+      onTabBarClick: (index: number) => {
+        if (index == 0) {
+          this.message = '功能1';
+        } else if (index == 1) {
+          this.message = '功能2';
+        } else {
+          this.message = '功能3';
+        }
+      }
+    })
+  }
+
+  @Builder
+  pageMap(name: string) {
+    if (name === 'page one') {
+      PageOne()
+    } else if (name === 'page two') {
+      PageTwo()
+    }
+  }
+
+  @Builder
+  sideBarContentBuilder() {
+    Text('This is sideBar content area')
+      .fontSize(20)
+  }
+
+  build() {
+    Column() {
+      AtomicServiceNavigation({
+        navigationContent: () => {
+          this.navigationContent()
+        },
+        navDestinationBuilder: this.pageMap,
+        navPathStack: this.childNavStack,
+        title: this.message,
+        titleOptions: {
+          titleIcon: $r('app.media.startIcon'),
+          backgroundColor: 'rgb(61, 157, 180)',
+          titleBarType: TitleBarType.DRAWER
+        },
+        sideBarOptions: {
+          sideBarBackground: '#409EFF'
+        },
+        sideBarContent: () => { this.sideBarContentBuilder() },
+        mode: NavigationMode.Stack
+      })
+    }
+    .width('100%')
+  }
+}
+
+@Component
+export struct PageOne {
+  pageInfo: NavPathStack = new NavPathStack();
+
+  build() {
+    NavDestination() {
+      Button('Next')
+        .onClick(() => {
+          this.pageInfo.pushPath({ name: 'page two'});
+        })
+    }
+    .title('PageOne')
+    .onReady((context: NavDestinationContext) => {
+      this.pageInfo = context.pathStack;
+    })
+  }
+}
+
+@Component
+export struct PageTwo {
+  pageInfo: NavPathStack = new NavPathStack();
+
+  build() {
+    NavDestination() {
+      Button('End')
+    }
+    .title('PageTwo')
+    .onReady((context: NavDestinationContext) => {
+      this.pageInfo = context.pathStack;
+    })
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/ngFZoI_VSgGuzlz_HtmYfQ/zh-cn_image_0000002706836248.png)

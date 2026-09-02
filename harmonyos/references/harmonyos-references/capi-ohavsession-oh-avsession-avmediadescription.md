@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohav
 title: OH_AVSession_AVMediaDescription
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > C API > 结构体 > OH_AVSession_AVMediaDescription
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:29+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:cc51b6d2dc46d976a563aea02e8d2caeea381373ae554d3fb8ed3b63478247e6
+scraped_at: 2026-09-02T14:52:50+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:bfc2d2fc61fa1d38d02e1d950dc7711e58c6c256c50824ecd9fba1114717b417
 ---
 
-```
-1. typedef struct OH_AVSession_AVMediaDescription OH_AVSession_AVMediaDescription
+```c
+typedef struct OH_AVSession_AVMediaDescription OH_AVSession_AVMediaDescription
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-AVMediaDescription的声明。应用为当前资源设置的音视频媒体描述实例。
+定义OH\_AVSession\_AVMediaDescription类型别名，用于表示应用为当前资源设置的音视频媒体描述信息。
 
 **起始版本：** 23
 

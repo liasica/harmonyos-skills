@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-dynam
 title: DynamicOutputRegister
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator > DynamicOutputRegister
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:49+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:041aaa2ea7b3ff72a3685563b1bd69d81d4b410076212bf5d30b7d1842b16256
+content_hash: sha256:8cc655f5cbf09e89ebcaf5338b117868a94d0502f3aff99976d29339baa4a4d1
 ---
 
 ## 函数功能
@@ -14,9 +14,9 @@ content_hash: sha256:041aaa2ea7b3ff72a3685563b1bd69d81d4b410076212bf5d30b7d1842b
 
 ## 函数原型
 
-```
-1. void DynamicOutputRegister(const char_t *name, const uint32_t num, bool is_push_back = true);
-2. void DynamicOutputRegister(const char_t *name, const uint32_t num, const char_t *datatype_symbol, bool is_push_back = true);
+```cpp
+void DynamicOutputRegister(const char_t *name, const uint32_t num, bool is_push_back = true);
+void DynamicOutputRegister(const char_t *name, const uint32_t num, const char_t *datatype_symbol, bool is_push_back = true);
 ```
 
 ## 参数说明

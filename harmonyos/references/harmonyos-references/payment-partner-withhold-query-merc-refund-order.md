@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-p
 title: 通过mercRefundOrderNo查询退款订单信息
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 平台类商户/服务商 > 签约代扣 > 查询退款订单 > 通过mercRefundOrderNo查询退款订单信息
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:07+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:57a1f7ffce9ff89486e3508753ff38d0a9f2972905c8293befbb2dc5ded7f065
+scraped_at: 2026-09-02T15:03:05+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d9081a90392ad0df74ba66bac554dc83d2e3deeffbe5a41b76afada74c9a0ead
 ---
 
 ## 功能介绍
 
 开发者可以调用该接口查询某笔退款订单详细信息。
 
-说明
+**说明** 
 
 resultCode返回“000000”表示查询退款订单成功，不代表退款成功，退款状态需根据refundOrderStatus字段判断。
 
@@ -48,16 +48,16 @@ resultCode返回“000000”表示查询退款订单成功，不代表退款成�
 
 **Request Path**
 
-| 参数 | 是否必填 | 参数类型 | 描述 |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
-| mercRefundOrderNo | 是 | String | 商户退款订单号。 |
+| mercRefundOrderNo | 是 | String | 商户退款订单号。最大长度64。 |
 
 ## 请求示例
 
-```
-1. GET /api/v1/partner/aggr/transactions/refunds/merc-orders/{mercRefundOrderNo} HTTP/1.1
-2. Content-Type: application/json;charset=UTF-8
-3. PayMercAuth: {"callerId":"10132120***","traceId":"202305151501065647518","time":1684134066769,"authId":"120291744647139***","headerSign":"Xk8v3RllpGjzfhfKW79Tqlf0HfwSCUAUb3adn********************CGiGv7pIvq22r1v6/Xi/fp9wn95kC59Rouun3cAAckpr62PSy2n6I32uJ9WjL8K4ZvwaE=","bodySign":"bo3c++ml4oNAeByL2K7dVZ0MUuvnb+TJ9jh3BhKQot9W47mVFdDEVO1G0********************k7Vpo1kMViLCvHQqYHsjoyuXGw="}
+```json
+GET /api/v1/partner/aggr/transactions/refunds/merc-orders/{mercRefundOrderNo} HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+PayMercAuth: {"callerId":"10132120***","traceId":"202305151501065647518","time":1684134066769,"authId":"120291744647139***","headerSign":"Xk8v3RllpGjzfhfKW79Tqlf0HfwSCUAUb3adn********************CGiGv7pIvq22r1v6/Xi/fp9wn95kC59Rouun3cAAckpr62PSy2n6I32uJ9WjL8K4ZvwaE=","bodySign":"bo3c++ml4oNAeByL2K7dVZ0MUuvnb+TJ9jh3BhKQot9W47mVFdDEVO1G0********************k7Vpo1kMViLCvHQqYHsjoyuXGw="}
 ```
 
 ## 响应参数
@@ -78,34 +78,34 @@ resultCode返回“000000”表示查询退款订单成功，不代表退款成�
 | subDesc | 否 | String | 业务错误描述信息。 |
 | sign | 是 | String | 签名值。用于开发者对响应报文进行防篡改验证。 |
 | sysRefundOrderNo | 否 | String | 华为支付退款订单号。 |
-| mercRefundOrderNo | 否 | String | 商户退款订单号。 |
+| mercRefundOrderNo | 否 | String | 商户退款订单号。最大长度64。 |
 | refundOrderStatus | 是 | String | 退款订单状态：  - REFUND\_CHL\_PROC：处理中  - REFUND\_SUCCESS：成功  - REFUND\_FAILED：失败 |
 | finishTime | 否 | String | 退款完成时间，UTC时间格式（yyyy-MM-dd'T'HH:mm:ss.SSSZ）。 |
 | promotionRefundAmount | 否 | Long | 营销退款金额，单位：分。 |
 | refundAmount | 否 | Long | 退款总金额。订单需要退款的金额，该金额不能大于订单金额，单位：分。  **说明：** 如果正向交易使用了营销，该退款金额包含营销金额，华为支付会按业务规则分配营销和买家自有资金分别退多少，默认按比例退款。如不填则默认payerRefundAmount。 |
-| mLong | 否 | Long | 退款给用户的金额，单位：分。 |
+| payerRefundAmount | 否 | Long | 退款给用户的金额，单位：分。 |
 | currency | 否 | String | 交易币种单位，最大长度为3。  CNY （默认，当前仅支持该币种单位） |
 | payload | 否 | String | 预留信息，如商户请求时传递该参数，此时会原样返回。 |
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json; charset=UTF-8
-3. {
-4. "resultCode": "000000",
-5. "resultDesc": "Success.",
-6. "sign": "MEUCID/OdfJbB9urDnW/********************WHJwtM7LZP6cDauVa75+6WlA=",
-7. "sysRefundOrderNo": "12407030900270084914518***",
-8. "mercRefundOrderNo": "czl0012024070914***",
-9. "refundOrderStatus": "REFUND_SUCCESS",
-10. "finishTime": "2023-05-15T14:42:09.000+0800",
-11. "promotionRefundAmount": 0,
-12. "refundAmount": 2,
-13. "payerRefundAmount": 2,
-14. "currency": "CNY",
-15. "payload": "example-payload"
-16. }
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+{
+  "resultCode": "000000",
+  "resultDesc": "Success.",
+  "sign": "MEUCID/OdfJbB9urDnW/********************WHJwtM7LZP6cDauVa75+6WlA=",
+  "sysRefundOrderNo": "12407030900270084914518***",
+  "mercRefundOrderNo": "czl0012024070914***",
+  "refundOrderStatus": "REFUND_SUCCESS",
+  "finishTime": "2023-05-15T14:42:09.000+0800",
+  "promotionRefundAmount": 0,
+  "refundAmount": 2,
+  "payerRefundAmount": 2,
+  "currency": "CNY",
+  "payload": "example-payload"
+}
 ```
 
 ## 错误码

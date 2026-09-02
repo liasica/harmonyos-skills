@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.bundleState (设备使用信息统计)"
 breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > ArkTS API > 已停止维护的接口 > @ohos.bundleState (设备使用信息统计)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:36+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:33841f3d34afc9463ac771701fe9515201aa3394d82252071d7ed827d409ce9d
+scraped_at: 2026-09-02T15:01:30+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ee727a14c01c1f7659d9c07085487d98b785eabd9a6f2e488f31ec08bcb79629
 ---
 
 本模块提供设备使用信息统计能力。
 
-说明
+**说明** 
 
 从API version9开始，该接口不再维护，替代接口仅向系统应用开放。
 
@@ -18,15 +18,11 @@ content_hash: sha256:33841f3d34afc9463ac771701fe9515201aa3394d82252071d7ed827d40
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import bundleState from '@ohos.bundleState'
+```js
+import bundleState from '@ohos.bundleState'
 ```
 
 ## bundleState.isIdleState(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isIdleState(bundleName: string, callback: AsyncCallback<boolean>): void
 
@@ -45,21 +41,20 @@ isIdleState(bundleName: string, callback: AsyncCallback<boolean>): void
 
 **示例**：
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. // 三方应用使用示例代码时，注意将bundleName更换为自己应用的bundleName
-3. bundleState.isIdleState("com.ohos.camera", (err: BusinessError, res: boolean) => {
-4. if (err) {
-5. console.error('BUNDLE_ACTIVE isIdleState callback failed, because: ' + err.code);
-6. } else {
-7. console.info('BUNDLE_ACTIVE isIdleState callback succeeded, result: ' + JSON.stringify(res));
-8. }
-9. });
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { bundleState } from '@kit.BackgroundTasksKit';
+// 三方应用使用示例代码时，注意将bundleName更换为自己应用的bundleName
+bundleState.isIdleState("com.ohos.camera", (err: BusinessError, res: boolean) => {
+  if (err) {
+    console.error('BUNDLE_ACTIVE isIdleState callback failed, because: ' + err.code);
+  } else {
+    console.info('BUNDLE_ACTIVE isIdleState callback succeeded, result: ' + JSON.stringify(res));
+  }
+});
 ```
 
 ## bundleState.isIdleState(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isIdleState(bundleName: string): Promise<boolean>
 
@@ -83,12 +78,13 @@ isIdleState(bundleName: string): Promise<boolean>
 
 **示例**：
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. // 三方应用使用示例代码时，注意将bundleName更换为自己应用的bundleName
-3. bundleState.isIdleState("com.ohos.camera").then((res: boolean) => {
-4. console.info('BUNDLE_ACTIVE isIdleState promise succeeded, result: ' + JSON.stringify(res));
-5. }).catch((err: BusinessError) => {
-6. console.error('BUNDLE_ACTIVE isIdleState promise failed, because: ' + err.code);
-7. });
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { bundleState } from '@kit.BackgroundTasksKit';
+// 三方应用使用示例代码时，注意将bundleName更换为自己应用的bundleName
+bundleState.isIdleState("com.ohos.camera").then((res: boolean) => {
+  console.info('BUNDLE_ACTIVE isIdleState promise succeeded, result: ' + JSON.stringify(res));
+}).catch((err: BusinessError) => {
+  console.error('BUNDLE_ACTIVE isIdleState promise failed, because: ' + err.code);
+});
 ```

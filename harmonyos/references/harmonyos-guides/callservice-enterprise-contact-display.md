@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/callservice-e
 title: 企业联系人信息来去电页面显示
 breadcrumb: 指南 > 应用服务 > Call Service Kit（通话服务） > 企业联系人信息来去电页面显示
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:37:38+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:038abfbfbe5ddc6866fa6d524a35f98e59e1d21f179eaa809c10bf09bd41bf50
+scraped_at: 2026-09-02T14:59:54+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:db38b8fb073d3dca07e7f58d01fdca48bf0595975d8e277c39aef9a647246420
 ---
 
 本功能仅供企业应用开发者接入。
@@ -14,7 +14,7 @@ content_hash: sha256:038abfbfbe5ddc6866fa6d524a35f98e59e1d21f179eaa809c10bf09bd4
 
 来去电时，页面显示已安装企业应用的联系人信息，方便用户识别来去电人信息，快速回应，增强企业内部沟通效率。
 
-说明
+**说明** 
 
 来去电页面或横幅仅展示一个联系人信息，对于多个应用里存在相同联系人的情况，按照应用包名的字典序排序，展示首个查询结果。
 
@@ -36,11 +36,11 @@ content_hash: sha256:038abfbfbe5ddc6866fa6d524a35f98e59e1d21f179eaa809c10bf09bd4
 
 3.进入“项目设置 > 开放能力管理”页面，点击“企业来电显示”对应的“申请”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/2yjz1pDyTOudFMWPs8_GIw/zh-cn_image_0000002558765336.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/d0narVQjQ7Cvuw7turALmA/zh-cn_image_0000002706834852.png)
 
 4.请根据实际业务需求在弹框中填写对应信息，完成后，点击右上角“提交”，提交后将在3个工作日内回复。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/kUx8_yQ8QqK-sehOZXxhZA/zh-cn_image_0000002558605680.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/aouk9IVvQcuToEoWHoy7Hw/zh-cn_image_0000002736313959.png)
 
 ## 替换调试Profile
 
@@ -56,93 +56,47 @@ content_hash: sha256:038abfbfbe5ddc6866fa6d524a35f98e59e1d21f179eaa809c10bf09bd4
 
    代码示例：
 
-   ```
-   1. import { CallerInfoQueryExtensionAbility, CallerInfo } from '@kit.CallServiceKit';
+   ```typescript
+   import { CallerInfoQueryExtensionAbility, CallerInfo } from '@kit.CallServiceKit';
 
-   3. export default class EntryCallerInfoQueryExtAbility extends CallerInfoQueryExtensionAbility {
-   4. // 来去电时由系统通话应用主动调用该接口查询企业联系人信息
-   5. onQueryCallerInfo(phoneNumber: string): Promise<CallerInfo> {
-   6. return new Promise<CallerInfo>((resolve, reject) => {
-   7. let isSuccess = true;
-   8. // 在此处实现根据号码查询企业联系人的业务逻辑
-   9. if (isSuccess) {
-   10. // 查询成功，返回结果
-   11. resolve({
-   12. contactName:"xxxx",
-   13. employeeId:"xxxx",
-   14. department:"xxxx",
-   15. position:"xxxx"
-   16. });
-   17. } else {
-   18. // 查询失败，返回错误原因
-   19. reject("error reason");
-   20. }
-   21. });
-   22. }
-   23. }
+   export default class EntryCallerInfoQueryExtAbility extends CallerInfoQueryExtensionAbility {
+    // 来去电时由系统通话应用主动调用该接口查询企业联系人信息
+     async onQueryCallerInfo(phoneNumber: string): Promise<CallerInfo> {
+       return new Promise<CallerInfo>((resolve, reject) => {
+         let isSuccess = true;
+         // 在此处实现根据号码查询企业联系人的业务逻辑
+         if (isSuccess) {
+           // 查询成功，返回结果
+           resolve({
+             contactName:'xxxx',
+             employeeId:'xxxx',
+             department:'xxxx',
+             position:'xxxx'
+           });
+         } else {
+           // 查询失败，返回错误原因
+           reject('error reason');
+         }
+       });
+     }
+   }
    ```
 2. 在应用配置文件module.json5中注册extensionAbilities，具体详见[module.json5配置](module-configuration-file.md)。
 
    配置文件示例：
 
-   ```
-   1. {
-   2. "extensionAbilities": [
-   3. {
-   4. "name": "EntryCallerInfoQueryExtAbility",
-   5. "srcEntry": "./ets/callerinfoquery/EntryCallerInfoQueryExtAbility.ets",
-   6. "type": "callerInfoQuery"
-   7. }
-   8. ]
-   9. }
+   ```json
+   {
+       "extensionAbilities": [
+         {
+           "name": "EntryCallerInfoQueryExtAbility",
+           "srcEntry": "./ets/callerinfoquery/EntryCallerInfoQueryExtAbility.ets",
+           "type": "callerInfoQuery"
+         }
+       ]
+   }
    ```
 
    * type标签需设为"callerInfoQuery"，表示该拓展类型为CallerInfoQueryExtensionAbility。
    * srcEntry标签表示上述ExtensionAbility组件所对应的代码路径。
-3. 在调试设备上，前往“电话”，点击右上角的“更多”图标，前往“设置”>“陌生号码和信息识别”，打开对应企业应用的号码识别功能开关，进行调试。
-
-## 应用跳转陌生号码和信息识别页面
-
-从6.1.0(23)版本开始，新增支持从应用直接跳转到“电话 > 更多 > 设置 > 陌生号码和信息识别”。
-
-通过[Deep Linking](deep-linking-startup.md)方式应用可以直接跳转“陌生号码和信息识别”页面。
-
-以使用openLink实现应用跳转举例，在openLink接口的link字段中传入目标应用的URL信息，并将options字段中的appLinkingOnly配置为false、跳转的URL固定为"callsetting://number\_identity"。
-
-其他跳转方式参考使用Deep Linking实现应用间跳转[拉起方应用实现应用跳转](deep-linking-startup.md#拉起方应用实现应用跳转)章节。
-
-示例代码：
-
-```
-1. import { common, OpenLinkOptions } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-5. @Entry
-6. @Component
-7. struct Index {
-8. build() {
-9. Button('start link', { type: ButtonType.Capsule, stateEffect: true })
-10. .width('87%')
-11. .height('5%')
-12. .margin({ bottom: '12vp' })
-13. .onClick(() => {
-14. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-15. let link: string = "callsetting://number_identity";
-16. let openLinkOptions: OpenLinkOptions = {
-17. appLinkingOnly: false
-18. };
-19. try {
-20. context.openLink(link, openLinkOptions)
-21. .then(() => {
-22. hilog.info(0, 'TAG', 'Successed in opening link.');
-23. }).catch((err: BusinessError) => {
-24. hilog.error(0, 'TAG',`Failed to open link. Code is ${err.code}, message is ${err.message}`);
-25. });
-26. } catch (paramError) {
-27. hilog.error(0, 'TAG',`Failed to start link. Code is ${paramError.code}, message is ${paramError.message}`);
-28. }
-29. })
-30. }
-31. }
-```
+3. 在调试设备上，前往“电话”，点击右上角的“更多”图标，前往“设置”>“陌生号码和信息识别”，或者通过[应用跳转陌生号码和信息识别页面](callservice-enterprise-app-redirection.md)，打开对应企业应用的号码识别功能开关，进行调试。

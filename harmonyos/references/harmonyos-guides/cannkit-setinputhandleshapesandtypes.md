@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-setin
 title: SetInputHandleShapesAndTypes
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > InferenceContext > SetInputHandleShapesAndTypes
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:30+08:00
+scraped_at: 2026-09-02T14:50:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c67b66869b185dc4d0283735a21736c769503eb22687071f4a0c3c2b0cdd00b4
+content_hash: sha256:45b4ccdee1aeb30880b5aa6bb5999dc73c17759262da24526211b3339d537e93
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:c67b66869b185dc4d0283735a21736c769503eb22687071f4a0c3c2b0cd
 
 ## 函数原型
 
-```
-1. void SetInputHandleShapesAndTypes(std::vector<std::vector<ShapeAndType>> &&shapes_and_types)
+```cpp
+void SetInputHandleShapesAndTypes(std::vector<std::vector<ShapeAndType>> &&shapes_and_types)
 ```
 
 ## 参数说明

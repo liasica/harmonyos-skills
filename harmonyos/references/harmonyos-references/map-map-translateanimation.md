@@ -1,24 +1,20 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-translateanimation
-title: TranslateAnimation
-breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > TranslateAnimation
+title: Class (TranslateAnimation)
+breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Class (TranslateAnimation)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:15+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:df7194bb23e87b43733766b2d25ace6d938de7924ac2bd7fb198360e0ee64044
+scraped_at: 2026-09-02T15:02:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:cdf84057d930d538cf5836f491cc3be735b8e917372e229fe70e01598b32f9bd
 ---
 
 ## 导入模块
 
-PhonePC/2in1TabletWearable
-
-```
-1. import { map, mapCommon } from '@kit.MapKit';
+```typescript
+import { map, mapCommon } from '@kit.MapKit';
 ```
 
 ## TranslateAnimation
-
-PhonePC/2in1TabletWearable
 
 控制移动的动画类，继承[Animation](map-map-animation.md)。
 
@@ -31,8 +27,6 @@ PhonePC/2in1TabletWearable
 **起始版本：** 4.1.0(11)
 
 ### constructor
-
-PhonePC/2in1TabletWearable
 
 constructor(target: mapCommon.LatLng)
 
@@ -54,10 +48,10 @@ constructor(target: mapCommon.LatLng)
 
 **示例：**
 
-```
-1. let target: mapCommon.LatLng = {
-2. latitude: 31,
-3. longitude: 118
-4. };
-5. let animation: map.TranslateAnimation = new map.TranslateAnimation(target);
+```typescript
+let target: mapCommon.LatLng = {
+  latitude: 31,
+  longitude: 118
+};
+let animation: map.TranslateAnimation = new map.TranslateAnimation(target);
 ```

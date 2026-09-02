@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 一个HSP模块如何快速切换成HAR模块
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 一个HSP模块如何快速切换成HAR模块
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:35+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:d76aec44f2a64ef43071f72545e61d157984b12831d695106f0571a79c62ca95
+scraped_at: 2026-09-02T15:03:29+08:00
+doc_updated_at: 2026-07-15
+content_hash: sha256:f8acde1503b7273765c6764309a32c025ef3f3be0850a97bcca82bd259048a8d
 ---
 
 **解决方案**
@@ -21,3 +21,7 @@ content_hash: sha256:d76aec44f2a64ef43071f72545e61d157984b12831d695106f0571a79c6
 5.最后编译该模块即可。
 
 编译过程中遇到其他错误时，根据提示找到对应位置并进行修改。
+
+**说明** 
+
+部分组件和模块在HAP、HSP、HAR中集成使用时存在差异，例如[加载HAR中Worker线程文件相比HSP存在单独的使用约束](../harmonyos-guides/worker-introduction.md#文件路径注意事项)，因此按照以上步骤完成HSP转HAR后，请关注对应组件和模块介绍并进行适配。

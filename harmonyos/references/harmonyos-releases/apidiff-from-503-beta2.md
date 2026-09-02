@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/apidiff-from-503-beta2
 title: HarmonyOS 5.0.3(15) Beta2引入的API
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.3(15) > OS平台能力 > API变更清单 > HarmonyOS 5.0.3(15) Beta2引入的API
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.3(15) > OS平台能力 > API变更清单 > HarmonyOS 5.0.3(15) Beta2引入的API
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:32+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:37+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:e6ab0dc22f6cd5cf5e81d3d83b86484701a2799a80c4bdd35d5914123f64379f
 ---
 

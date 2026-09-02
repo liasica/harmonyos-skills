@@ -3,18 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-wearab
 title: 读取锻炼记录
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > Wearable应用开发 > 管理运动健康数据 > 读取锻炼记录
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:14+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:bb0acd917d5aa3eee34fb63280579a53cf35cf1fd4a1a734a8436541d72ce2fb
+scraped_at: 2026-09-02T14:59:56+08:00
+doc_updated_at: 2026-08-03
+content_hash: sha256:721a3c3a09a98fa4cf74e919fa748a79f4d76b8268696a978a22c11025e31bfc
 ---
 
 ## 场景介绍
 
-读取最新一条锻炼记录。
-
-## 约束与限制
-
-从5.1.1(19) Release版本开始支持。
+从5.1.1(19) Release版本开始，支持读取最新一条锻炼记录。
 
 ## 接口说明
 
@@ -22,7 +18,7 @@ content_hash: sha256:bb0acd917d5aa3eee34fb63280579a53cf35cf1fd4a1a734a8436541d72
 | --- | --- |
 | [readData](../harmonyos-references/health-api-healthstore.md#healthstorereaddata-1)<T extends [ExerciseSequence](../harmonyos-references/health-api-healthstore.md#exercisesequence)>(request: [ExerciseSequenceReadRequest](../harmonyos-references/health-api-healthstore.md#exercisesequencereadrequest)): Promise<T[]> | 查询最新一条锻炼记录。 |
 
-说明
+**说明** 
 
 当前ExerciseSequenceReadRequest里的时间参数暂不生效，仅支持返回手表侧最新一条数据。
 
@@ -37,41 +33,44 @@ content_hash: sha256:bb0acd917d5aa3eee34fb63280579a53cf35cf1fd4a1a734a8436541d72
 
 1. 导入运动健康服务功能模块及相关公共模块。
 
-   ```
-   1. import { healthStore } from '@kit.HealthServiceKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { healthStore } from '@kit.HealthServiceKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 创建查询请求。
 
-   ```
-   1. // 查询跑步记录
-   2. const sequenceReadRequest: healthStore.ExerciseSequenceReadRequest<healthStore.exerciseSequenceHelper.running.DetailFields> = {
-   3. startTime: 1698040800000,
-   4. endTime: 1698042600000,
-   5. exerciseType: healthStore.exerciseSequenceHelper.running.EXERCISE_TYPE,
-   6. count: 1,
-   7. sortOrder: 1,
-   8. readOptions: {
-   9. withPartialDetails: ['exerciseHeartRate', 'altitude']
-   10. }
-   11. };
+   ```typescript
+   // 查询跑步记录
+   const sequenceReadRequest:
+     healthStore.ExerciseSequenceReadRequest<healthStore.exerciseSequenceHelper.running.DetailFields> = {
+     startTime: 1698040800000,
+     endTime: 1698042600000,
+     exerciseType: healthStore.exerciseSequenceHelper.running.EXERCISE_TYPE,
+     count: 1,
+     sortOrder: 1,
+     readOptions: {
+       withPartialDetails: ['exerciseHeartRate', 'altitude']
+    }
+   };
    ```
 3. 调用[readData](../harmonyos-references/health-api-healthstore.md#healthstorereaddata-1)方法执行查询请求，并处理返回结果。
 
-   ```
-   1. try {
-   2. const runningSequences = await healthStore.readData<healthStore.exerciseSequenceHelper.running.Model>(sequenceReadRequest);
-   3. hilog.info(0x0000, 'testTag', 'Succeeded in reading data.');
-   4. runningSequences.forEach((runningSequence) => {
-   5. hilog.info(0x0000, 'testTag', `the start time is ${runningSequence.startTime}.`);
-   6. hilog.info(0x0000, 'testTag', `the end time is ${runningSequence.endTime}.`);
-   7. Object.keys(runningSequence.summaries).forEach((key) => {
-   8. Object.keys(runningSequence.summaries[key]).forEach((fieldName) => {
-   9. hilog.info(0x0000, 'testTag', `the summaries of ${key} field ${fieldName} is ${runningSequence.summaries[key][fieldName]}.`);
-   10. });
-   11. });
-   12. });
-   13. } catch (err) {
-   14. hilog.error(0x0000, 'testTag', `Failed to read data. Code: ${err.code}, message: ${err.message}`);
-   15. }
+   ```typescript
+   try {
+     const runningSequences =
+       await healthStore.readData<healthStore.exerciseSequenceHelper.running.Model>(sequenceReadRequest);
+     hilog.info(0x0000, 'testTag', 'Succeeded in reading data.');
+     runningSequences.forEach((runningSequence) => {
+       hilog.info(0x0000, 'testTag', `the start time is ${runningSequence.startTime}.`);
+       hilog.info(0x0000, 'testTag', `the end time is ${runningSequence.endTime}.`);
+       Object.keys(runningSequence.summaries).forEach((key) => {
+         Object.keys(runningSequence.summaries[key]).forEach((fieldName) => {
+           hilog.info(0x0000, 'testTag',
+             `the summaries of ${key} field ${fieldName} is ${runningSequence.summaries[key][fieldName]}.`);
+         });
+       });
+     });
+   } catch (err) {
+     hilog.error(0x0000, 'testTag', `Failed to read data. Code: ${err.code}, message: ${err.message}`);
+   }
    ```

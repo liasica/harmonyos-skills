@@ -3,32 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.notification (Notification模块)"
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > ArkTS API > 已停止维护的接口 > @ohos.notification (Notification模块)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:37+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:1ed1341d65ede8c07f7d141d3b782ccf654e764d1c3a30cada6581c37782a0ea
+scraped_at: 2026-09-02T15:03:02+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:04f227e9d906b13e1bdb2390422d8ea1b93432c099b3a76ad04f45ad9ed2dfb6
 ---
 
 本模块提供通知管理的能力，包括发布、取消发布通知，创建、获取、移除通知通道，订阅、取消订阅通知，获取通知的使能状态、角标使能状态，获取通知的相关信息等。
 
-说明
+**说明** 
 
 从API version 9开始，该模块不再维护，建议使用[@ohos.notificationManager](js-apis-notificationmanager.md)替代。
 
 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
-通知订阅和取消订阅仅对系统应用开放。
+[通知订阅](../harmonyos-guides/notification-glossary.md#notification-subscription通知订阅)和取消订阅仅对系统应用开放。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import Notification from '@ohos.notification';
+```ts
+import Notification from '@ohos.notification';
 ```
 
 ## Notification.publish
-
-PhonePC/2in1TabletTVWearable
 
 publish(request: NotificationRequest, callback: AsyncCallback<void>): void
 
@@ -45,36 +41,34 @@ publish(request: NotificationRequest, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import NotificationManager from '@ohos.notificationManager';
-2. import Base from '@ohos.base';
+```ts
+import NotificationManager from '@ohos.notificationManager';
+import Base from '@ohos.base';
 
-4. // publish回调
-5. let publishCallback = (err: Base.BusinessError) => {
-6. if (err) {
-7. console.error(`publish failed, code is ${err}`);
-8. } else {
-9. console.info("publish success");
-10. }
-11. }
-12. // 通知Request对象
-13. let notificationRequest: NotificationManager.NotificationRequest = {
-14. id: 1,
-15. content: {
-16. contentType: Notification.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
-17. normal: {
-18. title: "test_title",
-19. text: "test_text",
-20. additionalText: "test_additionalText"
-21. }
-22. }
-23. };
-24. Notification.publish(notificationRequest, publishCallback);
+// publish回调
+let publishCallback = (err: Base.BusinessError) => {
+  if (err) {
+    console.error(`publish failed, code is ${err}`);
+  } else {
+    console.info("publish success");
+  }
+}
+// 通知Request对象
+let notificationRequest: NotificationManager.NotificationRequest = {
+  id: 1,
+  content: {
+    contentType: Notification.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
+    normal: {
+      title: "test_title",
+      text: "test_text",
+      additionalText: "test_additionalText"
+    }
+  }
+};
+Notification.publish(notificationRequest, publishCallback);
 ```
 
 ## Notification.publish
-
-PhonePC/2in1TabletTVWearable
 
 publish(request: NotificationRequest): Promise<void>
 
@@ -96,32 +90,30 @@ publish(request: NotificationRequest): Promise<void>
 
 **示例：**
 
-```
-1. import NotificationManager from '@ohos.notificationManager';
-2. import Base from '@ohos.base';
+```ts
+import NotificationManager from '@ohos.notificationManager';
+import Base from '@ohos.base';
 
-4. // 通知Request对象
-5. let notificationRequest: NotificationManager.NotificationRequest = {
-6. id: 1,
-7. content: {
-8. contentType: Notification.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
-9. normal: {
-10. title: "test_title",
-11. text: "test_text",
-12. additionalText: "test_additionalText"
-13. }
-14. }
-15. };
-16. Notification.publish(notificationRequest).then(() => {
-17. console.info("publish success");
-18. }).catch((err: Base.BusinessError) => {
-19. console.error(`publish failed, code is ${err}`);
-20. });
+// 通知Request对象
+let notificationRequest: NotificationManager.NotificationRequest = {
+  id: 1,
+  content: {
+    contentType: Notification.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
+    normal: {
+      title: "test_title",
+      text: "test_text",
+      additionalText: "test_additionalText"
+    }
+  }
+};
+Notification.publish(notificationRequest).then(() => {
+  console.info("publish success");
+}).catch((err: Base.BusinessError) => {
+  console.error(`publish failed, code is ${err}`);
+});
 ```
 
 ## Notification.cancel
-
-PhonePC/2in1TabletTVWearable
 
 cancel(id: number, label: string, callback: AsyncCallback<void>): void
 
@@ -139,23 +131,21 @@ cancel(id: number, label: string, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import Base from '@ohos.base';
+```ts
+import Base from '@ohos.base';
 
-3. // cancel回调
-4. let cancelCallback = (err: Base.BusinessError) => {
-5. if (err) {
-6. console.error("cancel failed " + JSON.stringify(err));
-7. } else {
-8. console.info("cancel success");
-9. }
-10. }
-11. Notification.cancel(0, "label", cancelCallback);
+// cancel回调
+let cancelCallback = (err: Base.BusinessError) => {
+  if (err) {
+    console.error("cancel failed " + JSON.stringify(err));
+  } else {
+    console.info("cancel success");
+  }
+}
+Notification.cancel(0, "label", cancelCallback);
 ```
 
 ## Notification.cancel
-
-PhonePC/2in1TabletTVWearable
 
 cancel(id: number, label?: string): Promise<void>
 
@@ -178,19 +168,17 @@ cancel(id: number, label?: string): Promise<void>
 
 **示例：**
 
-```
-1. import Base from '@ohos.base';
+```ts
+import Base from '@ohos.base';
 
-3. Notification.cancel(0).then(() => {
-4. console.info("cancel success");
-5. }).catch((err: Base.BusinessError) => {
-6. console.error(`cancel failed, code is ${err}`);
-7. });
+Notification.cancel(0).then(() => {
+  console.info("cancel success");
+}).catch((err: Base.BusinessError) => {
+  console.error(`cancel failed, code is ${err}`);
+});
 ```
 
 ## Notification.cancel
-
-PhonePC/2in1TabletTVWearable
 
 cancel(id: number, callback: AsyncCallback<void>): void
 
@@ -207,23 +195,21 @@ cancel(id: number, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import Base from '@ohos.base';
+```ts
+import Base from '@ohos.base';
 
-3. // cancel回调
-4. let cancelCallback = (err: Base.BusinessError) => {
-5. if (err) {
-6. console.error("cancel failed " + JSON.stringify(err));
-7. } else {
-8. console.info("cancel success");
-9. }
-10. }
-11. Notification.cancel(0, cancelCallback);
+// cancel回调
+let cancelCallback = (err: Base.BusinessError) => {
+  if (err) {
+    console.error("cancel failed " + JSON.stringify(err));
+  } else {
+    console.info("cancel success");
+  }
+}
+Notification.cancel(0, cancelCallback);
 ```
 
 ## Notification.cancelAll
-
-PhonePC/2in1TabletTVWearable
 
 cancelAll(callback: AsyncCallback<void>): void
 
@@ -239,23 +225,21 @@ cancelAll(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import Base from '@ohos.base';
+```ts
+import Base from '@ohos.base';
 
-3. // cancel回调
-4. let cancelAllCallback = (err: Base.BusinessError) => {
-5. if (err) {
-6. console.error("cancelAll failed " + JSON.stringify(err));
-7. } else {
-8. console.info("cancelAll success");
-9. }
-10. }
-11. Notification.cancelAll(cancelAllCallback);
+// cancel回调
+let cancelAllCallback = (err: Base.BusinessError) => {
+  if (err) {
+    console.error("cancelAll failed " + JSON.stringify(err));
+  } else {
+    console.info("cancelAll success");
+  }
+}
+Notification.cancelAll(cancelAllCallback);
 ```
 
 ## Notification.cancelAll
-
-PhonePC/2in1TabletTVWearable
 
 cancelAll(): Promise<void>
 
@@ -271,19 +255,17 @@ cancelAll(): Promise<void>
 
 **示例：**
 
-```
-1. import Base from '@ohos.base';
+```ts
+import Base from '@ohos.base';
 
-3. Notification.cancelAll().then(() => {
-4. console.info("cancelAll success");
-5. }).catch((err: Base.BusinessError) => {
-6. console.error(`cancelAll failed, code is ${err}`);
-7. });
+Notification.cancelAll().then(() => {
+  console.info("cancelAll success");
+}).catch((err: Base.BusinessError) => {
+  console.error(`cancelAll failed, code is ${err}`);
+});
 ```
 
 ## Notification.addSlot
-
-PhonePC/2in1TabletTVWearable
 
 addSlot(type: SlotType, callback: AsyncCallback<void>): void
 
@@ -300,23 +282,21 @@ addSlot(type: SlotType, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import Base from '@ohos.base';
+```ts
+import Base from '@ohos.base';
 
-3. // addslot回调
-4. let addSlotCallBack = (err: Base.BusinessError) => {
-5. if (err) {
-6. console.error("addSlot failed " + JSON.stringify(err));
-7. } else {
-8. console.info("addSlot success");
-9. }
-10. }
-11. Notification.addSlot(Notification.SlotType.SOCIAL_COMMUNICATION, addSlotCallBack);
+// addslot回调
+let addSlotCallBack = (err: Base.BusinessError) => {
+  if (err) {
+    console.error("addSlot failed " + JSON.stringify(err));
+  } else {
+    console.info("addSlot success");
+  }
+}
+Notification.addSlot(Notification.SlotType.SOCIAL_COMMUNICATION, addSlotCallBack);
 ```
 
 ## Notification.addSlot
-
-PhonePC/2in1TabletTVWearable
 
 addSlot(type: SlotType): Promise<void>
 
@@ -338,19 +318,17 @@ addSlot(type: SlotType): Promise<void>
 
 **示例：**
 
-```
-1. import Base from '@ohos.base';
+```ts
+import Base from '@ohos.base';
 
-3. Notification.addSlot(Notification.SlotType.SOCIAL_COMMUNICATION).then(() => {
-4. console.info("addSlot success");
-5. }).catch((err: Base.BusinessError) => {
-6. console.error(`addSlot failed, code is ${err}`);
-7. });
+Notification.addSlot(Notification.SlotType.SOCIAL_COMMUNICATION).then(() => {
+  console.info("addSlot success");
+}).catch((err: Base.BusinessError) => {
+  console.error(`addSlot failed, code is ${err}`);
+});
 ```
 
 ## Notification.getSlot
-
-PhonePC/2in1TabletTVWearable
 
 getSlot(slotType: SlotType, callback: AsyncCallback<NotificationSlot>): void
 
@@ -362,29 +340,27 @@ getSlot(slotType: SlotType, callback: AsyncCallback<NotificationSlot>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| slotType | [SlotType](js-apis-notification.md#slottype) | 是 | 通知渠道类型，目前分为社交通信、服务提醒、内容咨询和其他类型。 |
+| slotType | [SlotType](js-apis-notification.md#slottype) | 是 | [通知渠道](../harmonyos-guides/notification-glossary.md#notification-slot通知渠道)类型，目前分为社交通信、服务提醒、内容咨询和其他类型。 |
 | callback | AsyncCallback<[NotificationSlot](js-apis-notification.md#notificationslot)> | 是 | 表示被指定的回调方法。 |
 
 **示例：**
 
-```
-1. import Base from '@ohos.base';
+```ts
+import Base from '@ohos.base';
 
-3. // getSlot回调
-4. let getSlotCallback = (err: Base.BusinessError) => {
-5. if (err) {
-6. console.error("getSlot failed " + JSON.stringify(err));
-7. } else {
-8. console.info("getSlot success");
-9. }
-10. }
-11. let slotType: Notification.SlotType = Notification.SlotType.SOCIAL_COMMUNICATION;
-12. Notification.getSlot(slotType, getSlotCallback);
+// getSlot回调
+let getSlotCallback = (err: Base.BusinessError) => {
+  if (err) {
+    console.error("getSlot failed " + JSON.stringify(err));
+  } else {
+    console.info("getSlot success");
+  }
+}
+let slotType: Notification.SlotType = Notification.SlotType.SOCIAL_COMMUNICATION;
+Notification.getSlot(slotType, getSlotCallback);
 ```
 
 ## Notification.getSlot
-
-PhonePC/2in1TabletTVWearable
 
 getSlot(slotType: SlotType): Promise<NotificationSlot>
 
@@ -396,7 +372,7 @@ getSlot(slotType: SlotType): Promise<NotificationSlot>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| slotType | [SlotType](js-apis-notification.md#slottype) | 是 | 通知渠道类型，目前分为社交通信、服务提醒、内容咨询和其他类型。 |
+| slotType | [SlotType](js-apis-notification.md#slottype) | 是 | [通知渠道](../harmonyos-guides/notification-glossary.md#notification-slot通知渠道)类型，目前分为社交通信、服务提醒、内容咨询和其他类型。 |
 
 **返回值：**
 
@@ -406,20 +382,18 @@ getSlot(slotType: SlotType): Promise<NotificationSlot>
 
 **示例：**
 
-```
-1. import Base from '@ohos.base';
+```ts
+import Base from '@ohos.base';
 
-3. let slotType: Notification.SlotType = Notification.SlotType.SOCIAL_COMMUNICATION;
-4. Notification.getSlot(slotType).then((data) => {
-5. console.info("getSlot success, data: " + JSON.stringify(data));
-6. }).catch((err: Base.BusinessError) => {
-7. console.error(`getSlot failed, code is ${err}`);
-8. });
+let slotType: Notification.SlotType = Notification.SlotType.SOCIAL_COMMUNICATION;
+Notification.getSlot(slotType).then((data) => {
+  console.info("getSlot success, data: " + JSON.stringify(data));
+}).catch((err: Base.BusinessError) => {
+  console.error(`getSlot failed, code is ${err}`);
+});
 ```
 
 ## Notification.getSlots
-
-PhonePC/2in1TabletTVWearable
 
 getSlots(callback: AsyncCallback<Array<NotificationSlot>>): void
 
@@ -435,23 +409,21 @@ getSlots(callback: AsyncCallback<Array<NotificationSlot>>): void
 
 **示例：**
 
-```
-1. import Base from '@ohos.base';
+```ts
+import Base from '@ohos.base';
 
-3. // getSlots回调
-4. function getSlotsCallback(err: Base.BusinessError) {
-5. if (err) {
-6. console.error("getSlots failed " + JSON.stringify(err));
-7. } else {
-8. console.info("getSlots success");
-9. }
-10. }
-11. Notification.getSlots(getSlotsCallback);
+// getSlots回调
+function getSlotsCallback(err: Base.BusinessError) {
+  if (err) {
+    console.error("getSlots failed " + JSON.stringify(err));
+  } else {
+    console.info("getSlots success");
+  }
+}
+Notification.getSlots(getSlotsCallback);
 ```
 
 ## Notification.getSlots
-
-PhonePC/2in1TabletTVWearable
 
 getSlots(): Promise<Array<NotificationSlot>>
 
@@ -467,19 +439,17 @@ getSlots(): Promise<Array<NotificationSlot>>
 
 **示例：**
 
-```
-1. import Base from '@ohos.base';
+```ts
+import Base from '@ohos.base';
 
-3. Notification.getSlots().then((data) => {
-4. console.info("getSlots success, data: " + JSON.stringify(data));
-5. }).catch((err: Base.BusinessError) => {
-6. console.error(`getSlots failed, code is ${err}`);
-7. });
+Notification.getSlots().then((data) => {
+  console.info("getSlots success, data: " + JSON.stringify(data));
+}).catch((err: Base.BusinessError) => {
+  console.error(`getSlots failed, code is ${err}`);
+});
 ```
 
 ## Notification.removeSlot
-
-PhonePC/2in1TabletTVWearable
 
 removeSlot(slotType: SlotType, callback: AsyncCallback<void>): void
 
@@ -491,29 +461,27 @@ removeSlot(slotType: SlotType, callback: AsyncCallback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| slotType | [SlotType](js-apis-notification.md#slottype) | 是 | 通知渠道类型,目前分为社交通信、服务提醒、内容咨询和其他类型。 |
+| slotType | [SlotType](js-apis-notification.md#slottype) | 是 | [通知渠道](../harmonyos-guides/notification-glossary.md#notification-slot通知渠道)类型,目前分为社交通信、服务提醒、内容咨询和其他类型。 |
 | callback | AsyncCallback<void> | 是 | 表示被指定的回调方法。 |
 
 **示例：**
 
-```
-1. import Base from '@ohos.base';
+```ts
+import Base from '@ohos.base';
 
-3. // removeSlot回调
-4. let removeSlotCallback = (err: Base.BusinessError) => {
-5. if (err) {
-6. console.error("removeSlot failed " + JSON.stringify(err));
-7. } else {
-8. console.info("removeSlot success");
-9. }
-10. }
-11. let slotType: Notification.SlotType = Notification.SlotType.SOCIAL_COMMUNICATION;
-12. Notification.removeSlot(slotType, removeSlotCallback);
+// removeSlot回调
+let removeSlotCallback = (err: Base.BusinessError) => {
+  if (err) {
+    console.error("removeSlot failed " + JSON.stringify(err));
+  } else {
+    console.info("removeSlot success");
+  }
+}
+let slotType: Notification.SlotType = Notification.SlotType.SOCIAL_COMMUNICATION;
+Notification.removeSlot(slotType, removeSlotCallback);
 ```
 
 ## Notification.removeSlot
-
-PhonePC/2in1TabletTVWearable
 
 removeSlot(slotType: SlotType): Promise<void>
 
@@ -525,7 +493,7 @@ removeSlot(slotType: SlotType): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| slotType | [SlotType](js-apis-notification.md#slottype) | 是 | 通知渠道类型,目前分为社交通信、服务提醒、内容咨询和其他类型。 |
+| slotType | [SlotType](js-apis-notification.md#slottype) | 是 | [通知渠道](../harmonyos-guides/notification-glossary.md#notification-slot通知渠道)类型,目前分为社交通信、服务提醒、内容咨询和其他类型。 |
 
 **返回值：**
 
@@ -535,20 +503,18 @@ removeSlot(slotType: SlotType): Promise<void>
 
 **示例：**
 
-```
-1. import Base from '@ohos.base';
+```ts
+import Base from '@ohos.base';
 
-3. let slotType: Notification.SlotType = Notification.SlotType.SOCIAL_COMMUNICATION;
-4. Notification.removeSlot(slotType).then(() => {
-5. console.info("removeSlot success");
-6. }).catch((err: Base.BusinessError) => {
-7. console.error(`removeSlot failed, code is ${err}`);
-8. });
+let slotType: Notification.SlotType = Notification.SlotType.SOCIAL_COMMUNICATION;
+Notification.removeSlot(slotType).then(() => {
+  console.info("removeSlot success");
+}).catch((err: Base.BusinessError) => {
+  console.error(`removeSlot failed, code is ${err}`);
+});
 ```
 
 ## Notification.removeAllSlots
-
-PhonePC/2in1TabletTVWearable
 
 removeAllSlots(callback: AsyncCallback<void>): void
 
@@ -564,22 +530,20 @@ removeAllSlots(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import Base from '@ohos.base';
+```ts
+import Base from '@ohos.base';
 
-3. let removeAllCallBack = (err: Base.BusinessError) => {
-4. if (err) {
-5. console.error("removeAllSlots failed " + JSON.stringify(err));
-6. } else {
-7. console.info("removeAllSlots success");
-8. }
-9. }
-10. Notification.removeAllSlots(removeAllCallBack);
+let removeAllCallBack = (err: Base.BusinessError) => {
+  if (err) {
+    console.error("removeAllSlots failed " + JSON.stringify(err));
+  } else {
+    console.info("removeAllSlots success");
+  }
+}
+Notification.removeAllSlots(removeAllCallBack);
 ```
 
 ## Notification.removeAllSlots
-
-PhonePC/2in1TabletTVWearable
 
 removeAllSlots(): Promise<void>
 
@@ -595,19 +559,17 @@ removeAllSlots(): Promise<void>
 
 **示例：**
 
-```
-1. import Base from '@ohos.base';
+```ts
+import Base from '@ohos.base';
 
-3. Notification.removeAllSlots().then(() => {
-4. console.info("removeAllSlots success");
-5. }).catch((err: Base.BusinessError) => {
-6. console.error(`removeAllSlots failed, code is ${err}`);
-7. });
+Notification.removeAllSlots().then(() => {
+  console.info("removeAllSlots success");
+}).catch((err: Base.BusinessError) => {
+  console.error(`removeAllSlots failed, code is ${err}`);
+});
 ```
 
 ## Notification.getActiveNotificationCount
-
-PhonePC/2in1TabletTVWearable
 
 getActiveNotificationCount(callback: AsyncCallback<number>): void
 
@@ -623,23 +585,21 @@ getActiveNotificationCount(callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import Base from '@ohos.base';
+```ts
+import Base from '@ohos.base';
 
-3. let getActiveNotificationCountCallback = (err: Base.BusinessError, data: number) => {
-4. if (err) {
-5. console.error("getActiveNotificationCount failed " + JSON.stringify(err));
-6. } else {
-7. console.info("getActiveNotificationCount success");
-8. }
-9. }
+let getActiveNotificationCountCallback = (err: Base.BusinessError, data: number) => {
+  if (err) {
+    console.error("getActiveNotificationCount failed " + JSON.stringify(err));
+  } else {
+    console.info("getActiveNotificationCount success");
+  }
+}
 
-11. Notification.getActiveNotificationCount(getActiveNotificationCountCallback);
+Notification.getActiveNotificationCount(getActiveNotificationCountCallback);
 ```
 
 ## Notification.getActiveNotificationCount
-
-PhonePC/2in1TabletTVWearable
 
 getActiveNotificationCount(): Promise<number>
 
@@ -655,19 +615,17 @@ getActiveNotificationCount(): Promise<number>
 
 **示例：**
 
-```
-1. import Base from '@ohos.base';
+```ts
+import Base from '@ohos.base';
 
-3. Notification.getActiveNotificationCount().then((data: number) => {
-4. console.info("getActiveNotificationCount success, data: " + JSON.stringify(data));
-5. }).catch((err: Base.BusinessError) => {
-6. console.error(`getActiveNotificationCount failed, code is ${err}`);
-7. });
+Notification.getActiveNotificationCount().then((data: number) => {
+  console.info("getActiveNotificationCount success, data: " + JSON.stringify(data));
+}).catch((err: Base.BusinessError) => {
+  console.error(`getActiveNotificationCount failed, code is ${err}`);
+});
 ```
 
 ## Notification.getActiveNotifications
-
-PhonePC/2in1TabletTVWearable
 
 getActiveNotifications(callback: AsyncCallback<Array<NotificationRequest>>): void
 
@@ -683,24 +641,22 @@ getActiveNotifications(callback: AsyncCallback<Array<NotificationRequest>>): voi
 
 **示例：**
 
-```
-1. import Base from '@ohos.base';
-2. import NotificationManager from '@ohos.notificationManager';
+```ts
+import Base from '@ohos.base';
+import NotificationManager from '@ohos.notificationManager';
 
-4. let getActiveNotificationsCallback = (err: Base.BusinessError, data: NotificationManager.NotificationRequest[]) => {
-5. if (err) {
-6. console.error("getActiveNotifications failed " + JSON.stringify(err));
-7. } else {
-8. console.info("getActiveNotifications success");
-9. }
-10. }
+let getActiveNotificationsCallback = (err: Base.BusinessError, data: NotificationManager.NotificationRequest[]) => {
+  if (err) {
+    console.error("getActiveNotifications failed " + JSON.stringify(err));
+  } else {
+    console.info("getActiveNotifications success");
+  }
+}
 
-12. Notification.getActiveNotifications(getActiveNotificationsCallback);
+Notification.getActiveNotifications(getActiveNotificationsCallback);
 ```
 
 ## Notification.getActiveNotifications
-
-PhonePC/2in1TabletTVWearable
 
 getActiveNotifications(): Promise<Array<[NotificationRequest](js-apis-notification.md#notificationrequest)>>
 
@@ -716,20 +672,18 @@ getActiveNotifications(): Promise<Array<[NotificationRequest](js-apis-notificati
 
 **示例：**
 
-```
-1. import Base from '@ohos.base';
-2. import NotificationManager from '@ohos.notificationManager';
+```ts
+import Base from '@ohos.base';
+import NotificationManager from '@ohos.notificationManager';
 
-4. Notification.getActiveNotifications().then((data: NotificationManager.NotificationRequest[]) => {
-5. console.info("getActiveNotifications success, data: " + JSON.stringify(data));
-6. }).catch((err: Base.BusinessError) => {
-7. console.error(`getActiveNotifications failed, code is ${err}`);
-8. });
+Notification.getActiveNotifications().then((data: NotificationManager.NotificationRequest[]) => {
+  console.info("getActiveNotifications success, data: " + JSON.stringify(data));
+}).catch((err: Base.BusinessError) => {
+  console.error(`getActiveNotifications failed, code is ${err}`);
+});
 ```
 
 ## Notification.cancelGroup8+
-
-PhonePC/2in1TabletTVWearable
 
 cancelGroup(groupName: string, callback: AsyncCallback<void>): void
 
@@ -746,25 +700,23 @@ cancelGroup(groupName: string, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import Base from '@ohos.base';
+```ts
+import Base from '@ohos.base';
 
-3. let cancelGroupCallback = (err: Base.BusinessError) => {
-4. if (err) {
-5. console.error("cancelGroup failed " + JSON.stringify(err));
-6. } else {
-7. console.info("cancelGroup success");
-8. }
-9. }
+let cancelGroupCallback = (err: Base.BusinessError) => {
+  if (err) {
+    console.error("cancelGroup failed " + JSON.stringify(err));
+  } else {
+    console.info("cancelGroup success");
+  }
+}
 
-11. let groupName: string = "GroupName";
+let groupName: string = "GroupName";
 
-13. Notification.cancelGroup(groupName, cancelGroupCallback);
+Notification.cancelGroup(groupName, cancelGroupCallback);
 ```
 
 ## Notification.cancelGroup8+
-
-PhonePC/2in1TabletTVWearable
 
 cancelGroup(groupName: string): Promise<void>
 
@@ -786,24 +738,22 @@ cancelGroup(groupName: string): Promise<void>
 
 **示例：**
 
-```
-1. import Base from '@ohos.base';
+```ts
+import Base from '@ohos.base';
 
-3. let groupName: string = "GroupName";
-4. Notification.cancelGroup(groupName).then(() => {
-5. console.info("cancelGroup success");
-6. }).catch((err: Base.BusinessError) => {
-7. console.error(`cancelGroup failed, code is ${err}`);
-8. });
+let groupName: string = "GroupName";
+Notification.cancelGroup(groupName).then(() => {
+  console.info("cancelGroup success");
+}).catch((err: Base.BusinessError) => {
+  console.error(`cancelGroup failed, code is ${err}`);
+});
 ```
 
 ## Notification.isSupportTemplate8+
 
-PhonePC/2in1TabletTVWearable
-
 isSupportTemplate(templateName: string, callback: AsyncCallback<boolean>): void
 
-查询模板是否存在（Callback形式）。
+在使用通知模板[NotificationTemplate](js-apis-inner-notification-notificationtemplate.md)发布通知前，可以通过该接口查询是否支持对应的通知模板。使用callback异步回调。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -811,33 +761,31 @@ isSupportTemplate(templateName: string, callback: AsyncCallback<boolean>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| templateName | string | 是 | 模板名称。 |
+| templateName | string | 是 | 模板名称。当前仅支持'downloadTemplate'。 |
 | callback | AsyncCallback<boolean> | 是 | 查询模板是否存在的回调函数。 |
 
 **示例：**
 
-```
-1. import Base from '@ohos.base';
+```ts
+import Base from '@ohos.base';
 
-3. let templateName: string = 'process';
-4. function isSupportTemplateCallback(err: Base.BusinessError, data: boolean) {
-5. if (err) {
-6. console.error("isSupportTemplate failed " + JSON.stringify(err));
-7. } else {
-8. console.info("isSupportTemplate success");
-9. }
-10. }
+let templateName: string = 'process';
+function isSupportTemplateCallback(err: Base.BusinessError, data: boolean) {
+  if (err) {
+    console.error("isSupportTemplate failed " + JSON.stringify(err));
+  } else {
+    console.info("isSupportTemplate success");
+  }
+}
 
-12. Notification.isSupportTemplate(templateName, isSupportTemplateCallback);
+Notification.isSupportTemplate(templateName, isSupportTemplateCallback);
 ```
 
 ## Notification.isSupportTemplate8+
 
-PhonePC/2in1TabletTVWearable
-
 isSupportTemplate(templateName: string): Promise<boolean>
 
-查询模板是否存在（Promise形式）。
+在使用通知模板[NotificationTemplate](js-apis-inner-notification-notificationtemplate.md)发布通知前，可以通过该接口查询是否支持对应的通知模板。使用callback异步回调。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -845,7 +793,7 @@ isSupportTemplate(templateName: string): Promise<boolean>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| templateName | string | 是 | 模板名称。 |
+| templateName | string | 是 | 模板名称。当前仅支持'downloadTemplate'。 |
 
 **返回值：**
 
@@ -855,20 +803,18 @@ isSupportTemplate(templateName: string): Promise<boolean>
 
 **示例：**
 
-```
-1. import Base from '@ohos.base';
+```ts
+import Base from '@ohos.base';
 
-3. let templateName: string = 'process';
-4. Notification.isSupportTemplate(templateName).then((data: boolean) => {
-5. console.info("isSupportTemplate success, data: " + JSON.stringify(data));
-6. }).catch((err: Base.BusinessError) => {
-7. console.error(`isSupportTemplate failed, code is ${err}`);
-8. });
+let templateName: string = 'process';
+Notification.isSupportTemplate(templateName).then((data: boolean) => {
+  console.info("isSupportTemplate success, data: " + JSON.stringify(data));
+}).catch((err: Base.BusinessError) => {
+  console.error(`isSupportTemplate failed, code is ${err}`);
+});
 ```
 
 ## Notification.requestEnableNotification8+
-
-PhonePC/2in1TabletTVWearable
 
 requestEnableNotification(callback: AsyncCallback<void>): void
 
@@ -884,23 +830,21 @@ requestEnableNotification(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import Base from '@ohos.base';
+```ts
+import Base from '@ohos.base';
 
-3. let requestEnableNotificationCallback = (err: Base.BusinessError) => {
-4. if (err) {
-5. console.error("requestEnableNotification failed " + JSON.stringify(err));
-6. } else {
-7. console.info("requestEnableNotification success");
-8. }
-9. };
+let requestEnableNotificationCallback = (err: Base.BusinessError) => {
+  if (err) {
+    console.error("requestEnableNotification failed " + JSON.stringify(err));
+  } else {
+    console.info("requestEnableNotification success");
+  }
+};
 
-11. Notification.requestEnableNotification(requestEnableNotificationCallback);
+Notification.requestEnableNotification(requestEnableNotificationCallback);
 ```
 
 ## Notification.requestEnableNotification8+
-
-PhonePC/2in1TabletTVWearable
 
 requestEnableNotification(): Promise<void>
 
@@ -916,23 +860,21 @@ requestEnableNotification(): Promise<void>
 
 **示例：**
 
-```
-1. import Base from '@ohos.base';
+```ts
+import Base from '@ohos.base';
 
-3. Notification.requestEnableNotification().then(() => {
-4. console.info("requestEnableNotification success");
-5. }).catch((err: Base.BusinessError) => {
-6. console.error(`requestEnableNotification failed, code is ${err}`);
-7. });
+Notification.requestEnableNotification().then(() => {
+  console.info("requestEnableNotification success");
+}).catch((err: Base.BusinessError) => {
+  console.error(`requestEnableNotification failed, code is ${err}`);
+});
 ```
 
 ## Notification.isDistributedEnabled8+
 
-PhonePC/2in1TabletTVWearable
-
 isDistributedEnabled(callback: AsyncCallback<boolean>): void
 
-查询设备是否支持分布式通知（Callback形式）。
+查询设备是否支持[分布式通知](../harmonyos-guides/notification-glossary.md#distributed-notification分布式通知)（Callback形式）。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -944,27 +886,25 @@ isDistributedEnabled(callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import Base from '@ohos.base';
+```ts
+import Base from '@ohos.base';
 
-3. let isDistributedEnabledCallback = (err: Base.BusinessError, data: boolean) => {
-4. if (err) {
-5. console.error("isDistributedEnabled failed " + JSON.stringify(err));
-6. } else {
-7. console.info("isDistributedEnabled success " + JSON.stringify(data));
-8. }
-9. };
+let isDistributedEnabledCallback = (err: Base.BusinessError, data: boolean) => {
+  if (err) {
+    console.error("isDistributedEnabled failed " + JSON.stringify(err));
+  } else {
+    console.info("isDistributedEnabled success " + JSON.stringify(data));
+  }
+};
 
-11. Notification.isDistributedEnabled(isDistributedEnabledCallback);
+Notification.isDistributedEnabled(isDistributedEnabledCallback);
 ```
 
 ## Notification.isDistributedEnabled8+
 
-PhonePC/2in1TabletTVWearable
-
 isDistributedEnabled(): Promise<boolean>
 
-查询设备是否支持分布式通知（Promise形式）。
+查询设备是否支持[分布式通知](../harmonyos-guides/notification-glossary.md#distributed-notification分布式通知)（Promise形式）。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -976,19 +916,17 @@ isDistributedEnabled(): Promise<boolean>
 
 **示例：**
 
-```
-1. import Base from '@ohos.base';
+```ts
+import Base from '@ohos.base';
 
-3. Notification.isDistributedEnabled().then((data: boolean) => {
-4. console.info("isDistributedEnabled success, data: " + JSON.stringify(data));
-5. }).catch((err: Base.BusinessError) => {
-6. console.error(`isDistributedEnabled failed, code is ${err}`);
-7. });
+Notification.isDistributedEnabled().then((data: boolean) => {
+    console.info("isDistributedEnabled success, data: " + JSON.stringify(data));
+}).catch((err: Base.BusinessError) => {
+  console.error(`isDistributedEnabled failed, code is ${err}`);
+});
 ```
 
 ## ContentType
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -1002,8 +940,6 @@ PhonePC/2in1TabletTVWearable
 
 ## SlotLevel
 
-PhonePC/2in1TabletTVWearable
-
 **系统能力**：SystemCapability.Notification.Notification
 
 | 名称 | 值 | 说明 |
@@ -1016,11 +952,9 @@ PhonePC/2in1TabletTVWearable
 
 ## BundleOptiondeprecated
 
-PhonePC/2in1TabletTVWearable
-
 **系统能力**：SystemCapability.Notification.Notification
 
-说明
+**说明** 
 
 从 API version 7开始支持，从API version 9开始废弃。建议使用[notificationManager.BundleOption](js-apis-inner-notification-notificationcommondef.md#bundleoption)替代。
 
@@ -1031,11 +965,9 @@ PhonePC/2in1TabletTVWearable
 
 ## NotificationKeydeprecated
 
-PhonePC/2in1TabletTVWearable
-
 **系统能力**：SystemCapability.Notification.Notification
 
-说明
+**说明** 
 
 从 API version 7开始支持，从API version 9开始废弃。
 
@@ -1045,8 +977,6 @@ PhonePC/2in1TabletTVWearable
 | label | string | 是 | 是 | 通知标签。 |
 
 ## SlotType
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -1059,8 +989,6 @@ PhonePC/2in1TabletTVWearable
 | OTHER\_TYPES | 0xFFFF | 其他类型。 |
 
 ## NotificationActionButton
-
-PhonePC/2in1TabletTVWearable
 
 描述通知中显示的操作按钮。
 
@@ -1075,8 +1003,6 @@ PhonePC/2in1TabletTVWearable
 
 ## NotificationBasicContent
 
-PhonePC/2in1TabletTVWearable
-
 描述普通文本通知。
 
 **系统能力**：SystemCapability.Notification.Notification
@@ -1084,12 +1010,10 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |
 | title | string | 是 | 是 | 通知标题。 |
-| text | string | 是 | 是 | 通知内容。 |
+| text | string | 是 | 是 | [通知内容](../harmonyos-guides/notification-glossary.md#notification-content通知内容)。 |
 | additionalText | string | 是 | 是 | 通知附加内容，是对通知内容的补充。 |
 
 ## NotificationLongTextContent
-
-PhonePC/2in1TabletTVWearable
 
 描述长文本通知。
 
@@ -1098,15 +1022,13 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |
 | title | string | 是 | 是 | 通知标题。 |
-| text | string | 是 | 是 | 通知内容。 |
+| text | string | 是 | 是 | [通知内容](../harmonyos-guides/notification-glossary.md#notification-content通知内容)。 |
 | additionalText | string | 是 | 是 | 通知附加内容，是对通知内容的补充。 |
 | longText | string | 是 | 是 | 通知的长文本。 |
 | briefText | string | 是 | 是 | 通知概要内容，是对通知内容的总结。 |
 | expandedTitle | string | 是 | 是 | 通知展开时的标题。 |
 
 ## NotificationMultiLineContent
-
-PhonePC/2in1TabletTVWearable
 
 描述多行文本通知。
 
@@ -1115,15 +1037,13 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |
 | title | string | 是 | 是 | 通知标题。 |
-| text | string | 是 | 是 | 通知内容。 |
+| text | string | 是 | 是 | [通知内容](../harmonyos-guides/notification-glossary.md#notification-content通知内容)。 |
 | additionalText | string | 是 | 是 | 通知附加内容，是对通知内容的补充。 |
 | briefText | string | 是 | 是 | 通知概要内容，是对通知内容的总结。 |
 | longTitle | string | 是 | 是 | 通知展开时的标题。 |
 | lines | Array<string> | 是 | 是 | 通知的多行文本。 |
 
 ## NotificationPictureContent
-
-PhonePC/2in1TabletTVWearable
 
 描述附有图片的通知。
 
@@ -1132,7 +1052,7 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |
 | title | string | 是 | 是 | 通知标题。 |
-| text | string | 是 | 是 | 通知内容。 |
+| text | string | 是 | 是 | [通知内容](../harmonyos-guides/notification-glossary.md#notification-content通知内容)。 |
 | additionalText | string | 是 | 是 | 通知附加内容，是对通知内容的补充。 |
 | briefText | string | 是 | 是 | 通知概要内容，是对通知内容的总结。 |
 | expandedTitle | string | 是 | 是 | 通知展开时的标题。 |
@@ -1140,23 +1060,19 @@ PhonePC/2in1TabletTVWearable
 
 ## NotificationContent
 
-PhonePC/2in1TabletTVWearable
-
 描述通知类型。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |
-| contentType | [notification.ContentType](js-apis-notification.md#contenttype) | 是 | 是 | 通知内容类型。 |
-| normal | [NotificationBasicContent](js-apis-notification.md#notificationbasiccontent) | 是 | 是 | 基本类型通知内容。 |
+| contentType | [notification.ContentType](js-apis-notification.md#contenttype) | 是 | 是 | [通知内容类型](../harmonyos-guides/notification-glossary.md#content-type通知内容类型)。 |
+| normal | [NotificationBasicContent](js-apis-notification.md#notificationbasiccontent) | 是 | 是 | 基本类型[通知内容](../harmonyos-guides/notification-glossary.md#notification-content通知内容)。 |
 | longText | [NotificationLongTextContent](js-apis-notification.md#notificationlongtextcontent) | 是 | 是 | 长文本类型通知内容。 |
 | multiLine | [NotificationMultiLineContent](js-apis-notification.md#notificationmultilinecontent) | 是 | 是 | 多行类型通知内容。 |
 | picture | [NotificationPictureContent](js-apis-notification.md#notificationpicturecontent) | 是 | 是 | 图片类型通知内容。 |
 
 ## NotificationRequest
-
-PhonePC/2in1TabletTVWearable
 
 描述通知的请求。
 
@@ -1164,7 +1080,7 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |
-| content | [NotificationContent](js-apis-notification.md#notificationcontent) | 是 | 是 | 通知内容。 |
+| content | [NotificationContent](js-apis-notification.md#notificationcontent) | 是 | 是 | [通知内容](../harmonyos-guides/notification-glossary.md#notification-content通知内容)。 |
 | id | number | 是 | 是 | 通知ID。 |
 | slotType | [notification.SlotType](js-apis-notification.md#slottype) | 是 | 是 | 通道类型。 |
 | isOngoing | boolean | 是 | 是 | 是否进行时通知。 |
@@ -1181,9 +1097,9 @@ PhonePC/2in1TabletTVWearable
 | isCountDown | boolean | 是 | 是 | 是否显示倒计时时间。 |
 | isFloatingIcon | boolean | 是 | 是 | 是否显示状态栏图标。 |
 | label | string | 是 | 是 | 通知标签。 |
-| badgeIconStyle | number | 是 | 是 | 通知角标类型。 |
+| badgeIconStyle | number | 是 | 是 | [通知角标](../harmonyos-guides/notification-glossary.md#notification-badge通知角标)类型。 |
 | showDeliveryTime | boolean | 是 | 是 | 是否显示分发时间。 |
-| actionButtons | Array<[NotificationActionButton](js-apis-notification.md#notificationactionbutton)> | 是 | 是 | 通知按钮，最多两个按钮。 |
+| actionButtons | Array<[NotificationActionButton](js-apis-notification.md#notificationactionbutton)> | 是 | 是 | [通知按钮](../harmonyos-guides/notification-glossary.md#notification-button通知按钮)，最多两个按钮。 |
 | smallIcon | [image.PixelMap](arkts-apis-image-pixelmap.md) | 是 | 是 | 通知小图标。可选字段，大小不超过30KB。 |
 | largeIcon | [image.PixelMap](arkts-apis-image-pixelmap.md) | 是 | 是 | 通知大图标。可选字段，大小不超过30KB。 |
 | creatorBundleName | string | 是 | 否 | 创建通知的包名。 |
@@ -1191,16 +1107,14 @@ PhonePC/2in1TabletTVWearable
 | creatorPid | number | 是 | 否 | 创建通知的PID。 |
 | creatorUserId8+ | number | 是 | 否 | 创建通知的UserId。 |
 | hashCode | string | 是 | 否 | 通知唯一标识。 |
-| groupName8+ | string | 是 | 是 | 组通知名称。 |
+| groupName8+ | string | 是 | 是 | [组通知](../harmonyos-guides/notification-glossary.md#group-notification组通知)名称。 |
 | template8+ | [NotificationTemplate](js-apis-notification.md#notificationtemplate8) | 是 | 是 | 通知模板。 |
-| distributedOption8+ | [DistributedOptions](js-apis-notification.md#distributedoptions8) | 是 | 是 | 分布式通知的选项。 |
+| distributedOption8+ | [DistributedOptions](js-apis-notification.md#distributedoptions8) | 是 | 是 | [分布式通知](../harmonyos-guides/notification-glossary.md#distributed-notification分布式通知)的选项。 |
 | notificationFlags8+ | [NotificationFlags](js-apis-inner-notification-notificationflags.md) | 是 | 否 | 获取NotificationFlags。 |
 | removalWantAgent9+ | [WantAgent](js-apis-wantagent.md) | 是 | 是 | 当移除通知时，通知将被重定向到的WantAgent实例。 |
 | badgeNumber9+ | number | 是 | 是 | 应用程序图标上显示的通知数。 |
 
 ## DistributedOptions8+
-
-PhonePC/2in1TabletTVWearable
 
 描述分布式选项。
 
@@ -1208,13 +1122,11 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |
-| isDistributed | boolean | 是 | 是 | 是否为分布式通知。 |
+| isDistributed | boolean | 是 | 是 | 是否为[分布式通知](../harmonyos-guides/notification-glossary.md#distributed-notification分布式通知)。 |
 | supportDisplayDevices | Array<string> | 是 | 是 | 可以同步通知到的设备列表。 |
 | supportOperateDevices | Array<string> | 是 | 是 | 可以打开通知的设备列表。 |
 
 ## NotificationSlot
-
-PhonePC/2in1TabletTVWearable
 
 描述通知槽
 
@@ -1223,10 +1135,10 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | [notification.SlotType](js-apis-notification.md#slottype) | 是 | 是 | 通道类型。 |
-| level | [notification.SlotLevel](js-apis-notification.md#slotlevel) | 是 | 是 | 通知级别，不设置则根据通知渠道类型有默认值。 |
+| level | [notification.SlotLevel](js-apis-notification.md#slotlevel) | 是 | 是 | 通知级别，不设置则根据[通知渠道](../harmonyos-guides/notification-glossary.md#notification-slot通知渠道)类型有默认值。 |
 | desc | string | 是 | 是 | 通知渠道描述信息。 |
 | badgeFlag | boolean | 是 | 是 | 是否显示角标。 |
-| bypassDnd | boolean | 是 | 是 | 设置是否在系统中绕过免打扰模式。 |
+| bypassDnd | boolean | 是 | 是 | 设置是否在系统中绕过[免打扰模式](../harmonyos-guides/notification-glossary.md#do-not-disturb-mode免打扰模式)。 |
 | lockscreenVisibility | number | 是 | 是 | 在锁定屏幕上显示通知的模式。 |
 | vibrationEnabled | boolean | 是 | 是 | 是否可振动。 |
 | sound | string | 是 | 是 | 通知提示音。 |
@@ -1236,8 +1148,6 @@ PhonePC/2in1TabletTVWearable
 | enabled9+ | boolean | 是 | 否 | 此通知插槽中的启停状态。 |
 
 ## NotificationTemplate8+
-
-PhonePC/2in1TabletTVWearable
 
 通知模板。
 
@@ -1249,8 +1159,6 @@ PhonePC/2in1TabletTVWearable
 | data | Record<string, Object> | 是 | 是 | 模板数据。 |
 
 ## NotificationUserInput8+
-
-PhonePC/2in1TabletTVWearable
 
 保存用户输入的通知消息。
 

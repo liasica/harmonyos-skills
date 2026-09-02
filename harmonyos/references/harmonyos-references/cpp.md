@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cpp
 title: c++标准库
 breadcrumb: API参考 > 标准库 > c++标准库
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:30+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:1e525a5e279f622d98410201a73b730b8ffe7cede841a81bc1f98f29738dcbc8
+scraped_at: 2026-09-02T14:53:37+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:66aad5d57cf712703065f2ad306cbeccbb156ee773341bab41e33081d394c1dd
 ---
 
 HarmonyOS使用llvm开源项目的C++标准库[libc++](https://libcxx.llvm.org/)作为C++运行时库。
@@ -33,9 +33,9 @@ C++11、C++14标准已完全支持，C++17和C++20标准的部分特性已支持
 
 在HarmonyOS系统中，系统库与应用原生库都在使用C++标准库，两部分升级节奏不一样，依赖C++运行时版本也可能不一样。系统库依赖的C++标准库随镜像版本升级，而应用原生库依赖的C++标准库随编译使用的SDK版本升级，两部分依赖的C++基础库会跨多个大版本，产生ABI兼容性问题。为了解决此问题，HarmonyOS上把两部分依赖的C++标准库进行了区分。
 
-```
-1. * 系统库：使用libc++.so， 随系统镜像发布。
-2. * 应用Native库：使用libc++_shared.so，随应用发布。
+```screen
+* 系统库：使用libc++.so， 随系统镜像发布。
+* 应用Native库：使用libc++_shared.so，随应用发布。
 ```
 
 两个库使用的C++命名空间不一样，libc++\_shared.so使用\_\_n1作为C++符号的命名空间，libc++.so使用\_\_h作为C++符号的命名空间。

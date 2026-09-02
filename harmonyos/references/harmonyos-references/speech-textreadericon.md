@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/speech-te
 title: TextReaderIcon（朗读听筒图标）
 breadcrumb: API参考 > AI > Speech Kit（场景化语音服务） > ArkTS组件 > TextReaderIcon（朗读听筒图标）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:68158f7aee87089c6fc92c99dd0a8e44c14d6e0417e391e81b49393824567f16
+scraped_at: 2026-09-02T15:03:12+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:ed2d41392a6589d8814f18e10aa8921c7ce6f421a60aba7a9c6b53fbd6adda3d
 ---
 
 朗读听筒图标，可以作为动态组件加载，并配置成为播放面板的主入口。
@@ -14,15 +14,11 @@ content_hash: sha256:68158f7aee87089c6fc92c99dd0a8e44c14d6e0417e391e81b493938245
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { TextReaderIcon } from '@kit.SpeechKit';
+```typescript
+import { TextReaderIcon } from '@kit.SpeechKit';
 ```
 
 ## TextReaderIcon
-
-PhonePC/2in1Tablet
 
 朗读听筒图标，可以作为动态组件加载。设置onClick回调，在用户点击听筒图标时启动朗读控件。
 
@@ -32,17 +28,17 @@ PhonePC/2in1Tablet
 
 **系统能力：** SystemCapability.AI.Component.TextReader
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **起始版本：** 5.0.0(12)
 
 **参数：**
 
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
-| readState | [ReadStateCode](speech-readstatecode.md) | 是 | @Link | 播报状态。  **说明：**  ReadState使用[@Link装饰器：父子双向同步](../harmonyos-guides/arkts-link.md)。 |
+| readState | [ReadStateCode](speech-readstatecode.md) | 是 | @Link | 播报状态。  **说明：**  readState使用[@Link装饰器：父子双向同步](../harmonyos-guides/arkts-link.md)。 |
 
 ### build
-
-PhonePC/2in1Tablet
 
 build(): void
 
@@ -52,112 +48,126 @@ build(): void
 
 **系统能力：** SystemCapability.AI.Component.TextReader
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **起始版本：** 5.0.0(12)
 
 **示例：**
 
+```typescript
+import { TextReader, TextReaderIcon, ReadStateCode } from '@kit.SpeechKit';
+
+@Entry
+@Component
+struct Index {
+
+  /**
+   * 待加载的文章
+   */
+  @State readInfoList: TextReader.ReadInfo[] = [];
+  @State selectedReadInfo: TextReader.ReadInfo = this.readInfoList[0];
+
+  /**
+   * 播放状态
+   */
+  @State readState: ReadStateCode = ReadStateCode.WAITING;
+
+  /**
+   * 初始化状态
+   */
+  @State isInit: boolean = false;
+
+  async aboutToAppear(){
+    /**
+     * 加载数据
+     */
+    let readInfoList: TextReader.ReadInfo[] = [{
+      id: '001',
+      title: {
+        text:'水调歌头.明月几时有',
+        isClickable:true
+      },
+      author:{
+        text:'宋.苏轼',
+        isClickable:true
+      },
+      date: {
+        text:'2024/01/01',
+        isClickable:false
+      },
+      bodyInfo: '明月几时有？把酒问青天。'
+    }];
+    this.readInfoList = readInfoList;
+    this.selectedReadInfo = this.readInfoList[0];
+    await this.init();
+  }
+
+  /**
+   * 初始化
+   */
+  async init() {
+    const readerParam: TextReader.ReaderParam = {
+      isVoiceBrandVisible: true,
+      businessBrandInfo: {
+        panelName: '小艺朗读',
+        panelIcon: $r('app.media.startIcon')
+      }
+    };
+    try {
+      let context: Context | undefined = this.getUIContext().getHostContext();
+      if (context) {
+        await TextReader.init(context, readerParam);
+        this.isInit = true;
+      }
+    } catch (err) {
+      console.error(`TextReader failed to init. Code: ${err.code}, message: ${err.message}`);
+    }
+  }
+
+  // 设置操作监听
+  setActionListener() {
+    TextReader.on('stateChange', (state: TextReader.ReadState) => {
+      this.onStateChanged(state);
+    });
+      TextReader.on('requestMore', () => {
+      TextReader.loadMore([], true);
+    });
+  }
+
+  onStateChanged = (state: TextReader.ReadState) => {
+    if (this.selectedReadInfo?.id === state.id) {
+      this.readState = state.state;
+    } else {
+      this.readState = ReadStateCode.WAITING;
+    }
+  };
+
+  build() {
+    Column() {
+      TextReaderIcon({ readState: this.readState })
+        .margin({ right: 20 })
+        .width(32)
+        .height(32)
+        .onClick(async () => {
+          try {
+            this.setActionListener();
+            await TextReader.start(this.readInfoList, this.selectedReadInfo?.id);
+          } catch (err) {
+            console.error(`TextReader failed to start. Code: ${err.code}, message: ${err.message}`);
+          }
+        })
+    }
+    .height('100%')
+  }
+}
 ```
-1. import { TextReader, TextReaderIcon, ReadStateCode } from '@kit.SpeechKit';
 
-3. @Entry
-4. @Component
-5. struct Index {
+组件如下图：
 
-7. /**
-8. * 待加载的文章
-9. */
-10. @State readInfoList: TextReader.ReadInfo[] = [];
-11. @State selectedReadInfo: TextReader.ReadInfo = this.readInfoList[0];
+静止状态
 
-13. /**
-14. * 播放状态
-15. */
-16. @State readState: ReadStateCode = ReadStateCode.WAITING;
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/JMtYK7ycTQq6AP9xqnePOA/zh-cn_image_0000002736436279.png)
 
-18. /**
-19. * 用于显示当前页的按钮状态
-20. */
-21. @State isInit: boolean = false;
+播放状态
 
-23. async aboutToAppear(){
-24. /**
-25. * 加载数据
-26. */
-27. let readInfoList: TextReader.ReadInfo[] = [{
-28. id: '001',
-29. title: {
-30. text:'水调歌头.明月几时有',
-31. isClickable:true
-32. },
-33. author:{
-34. text:'宋.苏轼',
-35. isClickable:true
-36. },
-37. date: {
-38. text:'2024/01/01',
-39. isClickable:false
-40. },
-41. bodyInfo: '明月几时有？把酒问青天。'
-42. }];
-43. this.readInfoList = readInfoList;
-44. this.selectedReadInfo = this.readInfoList[0];
-45. this.init();
-46. }
-
-48. /**
-49. * 初始化
-50. */
-51. async init() {
-52. const readerParam: TextReader.ReaderParam = {
-53. isVoiceBrandVisible: true,
-54. businessBrandInfo: {
-55. panelName: '小艺朗读',
-56. panelIcon: $r('app.media.startIcon')
-57. }
-58. }
-59. try {
-60. let context: Context | undefined = this.getUIContext().getHostContext()
-61. if (context) {
-62. await TextReader.init(context, readerParam);
-63. this.isInit = true;
-64. }
-65. } catch (err) {
-66. console.error(`TextReader failed to init. Code: ${err.code}, message: ${err.message}`);
-67. }
-68. }
-
-70. // 设置操作监听
-71. setActionListener() {
-72. TextReader.on('stateChange', (state: TextReader.ReadState) => {
-73. this.onStateChanged(state)
-74. });
-75. TextReader.on('requestMore', () => this.onStateChanged);
-76. }
-
-78. onStateChanged = (state: TextReader.ReadState) => {
-79. if (this.selectedReadInfo?.id === state.id) {
-80. this.readState = state.state;
-81. } else {
-82. this.readState = ReadStateCode.WAITING;
-83. }
-84. }
-
-86. build() {
-87. Column() {
-88. TextReaderIcon({ readState: this.readState })
-89. .margin({ right: 20 })
-90. .width(32)
-91. .height(32)
-92. .onClick(async () => {
-93. try {
-94. this.setActionListener();
-95. await TextReader.start(this.readInfoList, this.selectedReadInfo?.id);
-96. } catch (err) {
-97. console.error(`TextReader failed to start. Code: ${err.code}, message: ${err.message}`);
-98. }
-99. })
-100. }
-101. .height('100%')
-102. }
-103. }
-```
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/4pb_IK0FTB2Ra7GQ38EYFw/zh-cn_image_0000002706837128.png)

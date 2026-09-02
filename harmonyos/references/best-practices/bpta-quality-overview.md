@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-quality-ov
 title: 应用质量概览
 breadcrumb: 最佳实践 > 应用质量概览 > 应用质量概览
 category: best-practices
-scraped_at: 2026-04-28T08:22:18+08:00
-doc_updated_at: 2026-03-27
-content_hash: sha256:eb4f6f22d3de3a671120ffaea844a6d361118d9039cda3fb13fa9c738ab48652
+scraped_at: 2026-09-02T14:53:44+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:d7c4c54e5a51e797b69417a365c65ab6aa615809a30967db05486e405cdddb0b
 ---
 
 DFX（Design For eXcellence）是指产品的非功能性设计的总称，其中X代表产品的某个特性或产品生命周期的某个阶段。HarmonyOS DFX子系统提供了一系列DFX功能，帮助开发者创建高质量的应用和游戏。这些功能包括：
@@ -51,7 +51,7 @@ DFX（Design For eXcellence）是指产品的非功能性设计的总称，其�
 | --- | --- | --- | --- | --- | --- |
 | 稳定性 | 地址越界 | * [地址越界检测工具原理](bpta-stability-address-sanitizer-principle.md) * [使用ASan检测内存错误](bpta-stability-asan-detection.md) * [使用HWASan检测内存错误](bpta-stability-hwasan-detection.md) * [使用GWP-ASan检测内存错误](bpta-stability-gwpasan-detection.md) | * [地址越界类问题检测方法](bpta-stability-runtime-address-sanitizer-detection.md) | * [地址越界类问题分析方法](bpta-stability-address-illegal-way.md) * [地址越界问题类型](bpta-stability-address-sanitizer-catagory.md) | * [地址越界类问题案例](bpta-scenario-stability-address-sanitizer.md) |
 | 资源泄漏 | * [开发态资源泄漏类问题检测](bpta-stability-leak-detection.md) | * [运行态资源泄漏类问题检测方法](bpta-stability-runtime-leak-detection.md) | * [内存泄漏分析方法](bpta-stability-leak-way.md#section728319329442) * [句柄泄漏分析方法](bpta-stability-leak-way.md#section9594173320417) * [线程泄漏分析方法](bpta-stability-leak-way.md#section282262074411) | * [native内存泄漏类问题案例](bpta-scenario-stability-leak.md#section10929163884819) * [PixelMap泄漏导致ashmem内存泄漏案例](bpta-scenario-stability-leak.md#section189600384502) * [句柄泄漏类问题案例](bpta-scenario-stability-leak.md#section5313162915382) * [线程泄漏类问题案例](bpta-scenario-stability-leak.md#section107128486383) * [更多…](bpta-scenario-stability-leak.md) |
-| 应用冻屏 | - | * [THREAD\_BLOCK\_6S 应用主线程卡死超时检测](../harmonyos-guides/appfreeze-guidelines.md#thread_block_6s-应用主线程卡死超时) * [APP\_INPUT\_BLOCK 用户输入响应超时检测](../harmonyos-guides/appfreeze-guidelines.md#app_input_block-用户输入响应超时) | * [应用冻屏分析方法](bpta-stability-app-freeze.md) | * [应用冻屏类问题案例](bpta-scenario-stability-app-freeze.md) |
+| 应用冻屏 | - | * [THREAD\_BLOCK\_6S 应用主线程卡死超时检测](../harmonyos-guides/appfreeze-guidelines.md#thread_block_6s-应用主线程卡死超时) * [APP\_INPUT\_BLOCK 用户输入响应超时检测](../harmonyos-guides/appfreeze-guidelines.md#app_input_block-用户输入响应超时) | * [应用冻屏类问题分析](bpta-analysis-of-app-freeze-in-develop.md) | * [应用冻屏类问题案例](bpta-scenario-stability-app-freeze.md) |
 | 应用异常退出 | * [使用TSan检测线程问题](bpta-stability-tsan-detection.md) * [使用UBSan检测未定义行为](bpta-stability-ubsan-detection.md) | * [JS Crash（进程崩溃）检测](../harmonyos-guides/jscrash-guidelines.md) * [Cpp Crash（进程崩溃）检测](../harmonyos-guides/cppcrash-guidelines.md) * [应用被查杀问题检测](bpta-stability-runtime-appkilled-detection.md) | * [JS Crash类问题分析方法](bpta-stability-app-crash-js-way.md) * [CppCrash类问题分析方法](bpta-stability-app-crash-cpp-way.md) * [应用被查杀类问题分析方法](bpta-stability-app-killed-way.md) | * [应用异常退出类问题案例](bpta-scenario-stability-exception-exit.md) |
 | 性能 | 应用启动慢 | * [CodeLinter静态扫描工具](bpta-performance-detection.md#section145453441571) * [AppAnalyzer动态检测应用性能问题](bpta-performance-detection.md#section135451444171) | * [启动耗时类问题检测方法](bpta-performance-startup-time-detection.md) * [主线程超时类问题检测方法](bpta-performance-mainthread-consumption-detection.md) | - | - |
 | 应用卡顿、丢帧 | * [滑动丢帧类问题检测方法](bpta-performance-sliding-frame-drop-detection.md) | * [点击响应时延分析](bpta-click-to-click-response-optimization.md) * [点击完成时延分析](bpta-click-to-complete-delay-analysis.md) * [Web页面内点击响应时延分析](bpta-web-click-response-delay-analysis.md) * [Web加载流程及完成时延分析](bpta-web-completion-delay-analysis.md) * [跨线程序列化耗时问题分析](bpta-threads-serialization-timeout-analysis.md) * [丢帧问题分析](bpta-zhenlv.md) * [内存基础知识及优化思路](bpta-memory-basic-knowledge.md) | * [优化Web场景下的加载性能问题](bpta-web-develop-optimization.md) * [优化应用冷启动时延问题](bpta-application-cold-start-optimization.md) * [优化长列表加载慢丢帧问题](bpta-best-practices-long-list.md) * [优化瀑布流加载慢丢帧问题](bpta-waterflow-performance-optimization.md) * [更多...](bpta-scenario-performance-optimization.md) |

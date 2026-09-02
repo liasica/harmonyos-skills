@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: image_mdk_common.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > image_mdk_common.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:19+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:89d7957193fafffe083aeb0676830c2bb4ddc004d802882006378f45fc16db13
+scraped_at: 2026-09-02T15:02:32+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d02438ecbe9f4dadd5c8c6752452a97f440b8acb9028fe1f902f2bc9763b6abb
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明图像常用的枚举值和结构体。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 宏定义
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -38,15 +32,11 @@ PhonePC/2in1TabletTVWearable
 
 ### 结构体
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [OhosImageSize](capi-image-ohosimagesize.md) | - | 定义图像大小。是[OhosImageDecodingOps](capi-image-ohosimagedecodingops.md)的成员变量。 |
 
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -54,14 +44,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### IRNdkErrCode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum IRNdkErrCode
+```c
+enum IRNdkErrCode
 ```
 
 **描述**
@@ -159,8 +145,8 @@ PhonePC/2in1TabletTVWearable
 | IMAGE\_RESULT\_CREATE\_SURFACE\_FAILED = IMAGE\_RESULT\_BASE + 156 | 创建surface失败。 |
 | IMAGE\_RESULT\_SURFACE\_GET\_PARAMETER\_FAILED = IMAGE\_RESULT\_BASE + 157 | 从surface获取参数失败。 |
 | IMAGE\_RESULT\_GET\_SURFACE\_FAILED = IMAGE\_RESULT\_BASE + 158 | 获取surface失败。 |
-| IMAGE\_RESULT\_SURFACE\_ACQUIRE\_BUFFER\_FAILED = IMAGE\_RESULT\_BASE + 159 | 申请内存失败。 |
-| IMAGE\_RESULT\_SURFACE\_REQUEST\_BUFFER\_FAILED = IMAGE\_RESULT\_BASE + 160 | 申请内存失败。 |
+| IMAGE\_RESULT\_SURFACE\_ACQUIRE\_BUFFER\_FAILED = IMAGE\_RESULT\_BASE + 159 | 消费者申请内存失败。 |
+| IMAGE\_RESULT\_SURFACE\_REQUEST\_BUFFER\_FAILED = IMAGE\_RESULT\_BASE + 160 | 生产者申请内存失败。 |
 | IMAGE\_RESULT\_REGISTER\_LISTENER\_FAILED = IMAGE\_RESULT\_BASE + 161 | 注册监听失败。 |
 | IMAGE\_RESULT\_REGISTER\_BUFFER\_FAILED = IMAGE\_RESULT\_BASE + 162 | 注册内存失败。 |
 | IMAGE\_RESULT\_FREAD\_FAILED = IMAGE\_RESULT\_BASE + 163 | 读取文件失败。 |

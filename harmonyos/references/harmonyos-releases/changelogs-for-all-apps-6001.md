@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-for-all-apps-6001
 title: OS平台API行为的变更
-breadcrumb: 版本说明 > HarmonyOS 6.0.0(20) > OS平台能力 > OS平台行为变更说明 > 6.0.0(20) Beta1引入的行为变更 > OS平台API行为的变更
+breadcrumb: 版本说明 > 更多版本 > 6.0.0(20) > OS平台能力 > OS平台行为变更说明 > 6.0.0(20) Beta1引入的行为变更 > OS平台API行为的变更
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:07+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:c7dee32fa81a66b469e45c56123cdbf2dbee30138044c8e633db2839f429487a
+scraped_at: 2026-09-02T14:58:40+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:3fb5451707b70d507a1425663a634414104c100b60d8c2681dd38d00983646a7
 ---
 
 ## Ability Kit
@@ -20,7 +20,7 @@ AbilityDelegator.startAbility()返回的所有错误码与API描述不一致。
 
 此变更不涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于6.0.0(20)时生效。
 
@@ -67,7 +67,7 @@ AbilityDelegator提供的startAbility()接口参见[startAbility API参考](../h
 
 **变更影响**
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于6.0.0(20)时生效。
 
@@ -151,29 +151,29 @@ AbilityDelegator提供的startAbility()接口参见[startAbility API参考](../h
 
 例如：
 
-```
-1. for (let i = 0; i < 2; i++) {
-2. let arr = [0, 0]
-3. console.log(JSON.stringify(arr));
-4. delete arr[0];
-5. }
+```typescript
+for (let i = 0; i < 2; i++) {
+    let arr = [0, 0]
+    console.log(JSON.stringify(arr));
+    delete arr[0];
+}
 ```
 
 未变更前该用例输出为：
 
-```
-1. [0,0]
-2. [null,0]
+```screen
+[0,0]
+[null,0]
 ```
 
 变更后该用例输出为:
 
-```
-1. [0,0]
-2. [0,0]
+```screen
+[0,0]
+[0,0]
 ```
 
-说明
+**说明** 
 
 在ets文件中[不支持使用delete](../harmonyos-guides/typescript-to-arkts-migration-guide.md#不支持delete运算符)，但可在三方库中或者js文件中使用。
 
@@ -191,7 +191,7 @@ AbilityDelegator提供的startAbility()接口参见[startAbility API参考](../h
 
 该变更不涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于6.0.0(20)时生效。
 
@@ -213,57 +213,57 @@ GridRow组件、GridCol组件。
 
 默认行为变更，无需适配，但应注意变更后的默认效果是否符合开发者预期，可手动配置所有不同宽度设备下GridRow组件的栅格列数和GridCol组件所占列数，避免使用默认值或默认补全的布局效果不符合预期。
 
-```
-1. @Entry
-2. @Component
-3. struct Example {
-4. @State bgColors: ResourceColor[] =
-5. ['rgb(213,213,213)', 'rgb(150,150,150)', 'rgb(0,74,175)', 'rgb(39,135,217)', 'rgb(61,157,180)', 'rgb(23,169,141)',
-6. 'rgb(255,192,0)', 'rgb(170,10,33)'];
-7. @State currentBp: string = "unknown"
+```ts
+@Entry
+@Component
+struct Example {
+  @State bgColors: ResourceColor[] =
+    ['rgb(213,213,213)', 'rgb(150,150,150)', 'rgb(0,74,175)', 'rgb(39,135,217)', 'rgb(61,157,180)', 'rgb(23,169,141)',
+      'rgb(255,192,0)', 'rgb(170,10,33)'];
+  @State currentBp: string = "unknown"
 
-9. build() {
-10. Column() {
-11. Column() {
-12. Text(this.currentBp)
-13. GridRow({
-14. columns: {
-15. xs: 2, // 窗口宽度落入xs断点上，栅格栅格容器每一行分为2列。
-16. sm: 4, // 窗口宽度落入sm断点上，栅格栅格容器每一行分为4列。
-17. md: 8, // 窗口宽度落入md断点上，栅格栅格容器每一行分为8列。
-18. lg: 12, // 窗口宽度落入lg断点上，栅格栅格容器每一行分为12列。
-19. xl: 12, // 窗口宽度落入xl断点上，栅格栅格容器每一行分为12列。
-20. xxl: 12 // 窗口宽度落入xxl断点上，栅格栅格容器每一行分为12列。
-21. },
-22. breakpoints: {
-23. value: ['320vp', '600vp', '840vp', '1440vp', '1600vp'],
-24. reference: BreakpointsReference.WindowSize
-25. }
-26. }) {
-27. ForEach(this.bgColors, (color: ResourceColor, index?: number | undefined) => {
-28. GridCol({
-29. span: {
-30. xs: 1, // 窗口宽度落入xs断点上，栅格子容器宽度占1列。
-31. sm: 2, // 窗口宽度落入sm断点上，栅格子容器宽度占2列。
-32. md: 4, // 窗口宽度落入md断点上，栅格子容器宽度占4列。
-33. lg: 6, // 窗口宽度落入lg断点上，栅格子容器宽度占6列。
-34. xl: 6, // 窗口宽度落入xl断点上，栅格子容器宽度占6列。
-35. xxl: 6 // 窗口宽度落入xxl断点上，栅格子容器宽度占6列。
-36. }
-37. }) {
-38. Row() {
-39. Text(`${index}`)
-40. }.width("100%").height('50vp')
-41. }.backgroundColor(color)
-42. })
-43. }
-44. .onBreakpointChange((breakpoint) => {
-45. this.currentBp = breakpoint
-46. })
-47. }.width('90%')
-48. }.width('100%')
-49. }
-50. }
+  build() {
+    Column() {
+      Column() {
+        Text(this.currentBp)
+        GridRow({
+          columns: {
+            xs: 2, // 窗口宽度落入xs断点上，栅格容器每一行分为2列。
+            sm: 4, // 窗口宽度落入sm断点上，栅格容器每一行分为4列。
+            md: 8, // 窗口宽度落入md断点上，栅格容器每一行分为8列。
+            lg: 12, // 窗口宽度落入lg断点上，栅格容器每一行分为12列。
+            xl: 12, // 窗口宽度落入xl断点上，栅格容器每一行分为12列。
+            xxl: 12 // 窗口宽度落入xxl断点上，栅格容器每一行分为12列。
+          },
+          breakpoints: {
+            value: ['320vp', '600vp', '840vp', '1440vp', '1600vp'],
+            reference: BreakpointsReference.WindowSize
+          }
+        }) {
+          ForEach(this.bgColors, (color: ResourceColor, index?: number | undefined) => {
+            GridCol({
+              span: {
+                xs: 1, // 窗口宽度落入xs断点上，栅格子容器宽度占1列。
+                sm: 2, // 窗口宽度落入sm断点上，栅格子容器宽度占2列。
+                md: 4, // 窗口宽度落入md断点上，栅格子容器宽度占4列。
+                lg: 6, // 窗口宽度落入lg断点上，栅格子容器宽度占6列。
+                xl: 6, // 窗口宽度落入xl断点上，栅格子容器宽度占6列。
+                xxl: 6 // 窗口宽度落入xxl断点上，栅格子容器宽度占6列。
+              }
+            }) {
+              Row() {
+                Text(`${index}`)
+              }.width("100%").height('50vp')
+            }.backgroundColor(color)
+          })
+        }
+        .onBreakpointChange((breakpoint) => {
+          this.currentBp = breakpoint
+        })
+      }.width('90%')
+    }.width('100%')
+  }
+}
 ```
 
 ### width和height支持的matchParent接口规格变更
@@ -274,7 +274,7 @@ GridRow组件、GridCol组件。
 
 **变更影响**
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于6.0.0(20)时生效。
 
@@ -284,16 +284,16 @@ GridRow组件、GridCol组件。
 
 例如：运行以下示例，进入页面后，观察matchParent的最终结果。
 
-```
-1. @Entry
-2. @Component
-3. struct Demo {
-4. build() {
-5. Column(){
-6. Row().width(LayoutPolicy.matchParent).height(LayoutPolicy.matchParent).backgroundColor('rgb(0, 74, 175)')
-7. }.width(200).height(200).padding(20).backgroundColor('rgb(39, 135, 217)')
-8. }
-9. }
+```ts
+@Entry
+@Component
+struct Demo {
+  build() {
+    Column(){
+      Row().width(LayoutPolicy.matchParent).height(LayoutPolicy.matchParent).backgroundColor('rgb(0, 74, 175)')
+    }.width(200).height(200).padding(20).backgroundColor('rgb(39, 135, 217)')
+  }
+}
 ```
 
 变更前后效果如下:
@@ -400,7 +400,7 @@ height(heightValue: Length | LayoutPolicy): T
 
 此变更不涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于6.0.0(20)时生效。
 
@@ -434,8 +434,8 @@ int32\_t OH\_ArkUI\_UIInputEvent\_GetDeviceId(const ArkUI\_UIInputEvent\* event)
 
 在类CustomDialogController中新增接口getState()获取对应弹窗的状态。当原先使用字面量的方式初始化CustomDialogController实例时，会编译报错。字面量的初始化方式是指采用"{}"直接初始化类的实例，例如：
 
-```
-1. let controller: CustomDialogController = { open() {}, close() {} }
+```typescript
+let controller: CustomDialogController = { open() {}, close() {} }
 ```
 
 **变更影响**
@@ -444,8 +444,8 @@ int32\_t OH\_ArkUI\_UIInputEvent\_GetDeviceId(const ArkUI\_UIInputEvent\* event)
 
 变更前：开发者可以通过字面量的方式初始化CustomDialogController，如：
 
-```
-1. let controller: CustomDialogController = { open() {}, close() {} }
+```typescript
+let controller: CustomDialogController = { open() {}, close() {} }
 ```
 
 变更后：由于在CustomDialogController中新增了getState()方法，变更前的上述写法未初始化新增的getState()方法，会编译报错。
@@ -462,8 +462,8 @@ int32\_t OH\_ArkUI\_UIInputEvent\_GetDeviceId(const ArkUI\_UIInputEvent\* event)
 
 开发者应修改为使用new的方式创建类的实例，如：
 
-```
-1. let controller: CustomDialogController = new CustomDialogController()
+```typescript
+let controller: CustomDialogController = new CustomDialogController()
 ```
 
 ## ArkWeb
@@ -502,7 +502,7 @@ ArkWeb
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于6.0.0(20)时生效。
 
@@ -548,32 +548,32 @@ ArkWeb
 
 以广播报文数据超过最大长度限制导致开启BLE广播失败为例：
 
-```
-1. let advSettings: ble.AdvertiseSetting = {
-2. "interval": 160,
-3. "connectable": true,
-4. };
-5. // 1）开发者构造的广播报文数据长度超过最大长度限制
-6. let serviceUuidsArray: Array<string> = new Array();
-7. serviceUuidsArray.push("00001111-1111-1000-8000-00805f9b34fb");
-8. serviceUuidsArray.push("00001111-2222-1000-8000-00805f9b34fb");
-9. serviceUuidsArray.push("00001111-3333-1000-8000-00805f9b34fb");
-10. let advData: ble.AdvertiseData = {
-11. "serviceUuids": serviceUuidsArray,
-12. "manufactureData": new Array(),
-13. "serviceData": new Array(),
-14. "includeDeviceName": true,
-15. };
+```ts
+let advSettings: ble.AdvertiseSetting = {
+  "interval": 160,
+  "connectable": true,
+};
+// 1）开发者构造的广播报文数据长度超过最大长度限制
+let serviceUuidsArray: Array<string> = new Array();
+serviceUuidsArray.push("00001111-1111-1000-8000-00805f9b34fb");
+serviceUuidsArray.push("00001111-2222-1000-8000-00805f9b34fb");
+serviceUuidsArray.push("00001111-3333-1000-8000-00805f9b34fb");
+let advData: ble.AdvertiseData = {
+  "serviceUuids": serviceUuidsArray,
+  "manufactureData": new Array(),
+  "serviceData": new Array(),
+  "includeDeviceName": true,
+};
 
-17. try {
-18. ble.startAdvertising(advSettings, advData);
-19. } catch (err) {
-20. // 2）通过日志打印发现接口调用报错2902054，即表示广播报文数据长度超过最大长度限制
-21. console.error("errCode: " + err.code + ", errMessage: " + err.message);
-22. }
-23. // 3）开发者根据错误码确定广播报文构造方式的合理性。建议：
-24. //  - 是否有必要携带本机蓝牙设备名
-25. //  - 是否将部分广播报文构造成入参advResponse
+try {
+  ble.startAdvertising(advSettings, advData);
+} catch (err) {
+  // 2）通过日志打印发现接口调用报错2902054，即表示广播报文数据长度超过最大长度限制
+  console.error("errCode: " + err.code + ", errMessage: " + err.message);
+}
+// 3）开发者根据错误码确定广播报文构造方式的合理性。建议：
+//  - 是否有必要携带本机蓝牙设备名
+//  - 是否将部分广播报文构造成入参advResponse
 ```
 
 ## Core File Kit
@@ -588,7 +588,7 @@ ArkWeb
 
 此变更不涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于6.0.0(20)时生效。
 
@@ -620,7 +620,7 @@ ArkWeb
 
 此变更不涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于6.0.0(20)时生效。
 
@@ -643,96 +643,96 @@ drivers/external\_device\_manager: OH\_Usb\_SendPipeRequest、OH\_Usb\_SendPipeR
 
 OH\_Usb\_SendPipeRequest和OH\_Usb\_SendPipeRequestWithAshmem接口开发适配指导：
 
-```
-1. ...
-2. static uint8_t g_configIndex = 0;
-3. static uint64_t g_interfaceHandle = 0;
-4. static std::tuple<bool, uint8_t, uint8_t, uint16_t> FindForEachInterface(const UsbDdkInterface &interface)
-5. {
-6. struct UsbDdkInterfaceDescriptor *intDesc = interface.altsetting;
-7. uint32_t numSetting = interface.numAltsetting;
-8. for (uint32_t setIdx = PARAM_0; setIdx < numSetting; ++setIdx) {
-9. uint32_t numEp = intDesc[setIdx].interfaceDescriptor.bNumEndpoints;
-10. struct UsbDdkEndpointDescriptor *epDesc = intDesc[setIdx].endPoint;
-11. for (uint32_t epIdx = PARAM_0; epIdx < numEp; ++epIdx) {
-12. if (!IsInterruptInEndpoint(epDesc[epIdx].endpointDescriptor)) {
-13. continue;
-14. }
-15. return { true, intDesc[setIdx].interfaceDescriptor.bInterfaceNumber,
-16. epDesc[epIdx].endpointDescriptor.bEndpointAddress, epDesc[epIdx].endpointDescriptor.wMaxPacketSize };
-17. }
-18. }
-19. return { false, {}, {}, {} };
-20. }
+```c
+    ...
+    static uint8_t g_configIndex = 0;
+    static uint64_t g_interfaceHandle = 0;
+    static std::tuple<bool, uint8_t, uint8_t, uint16_t> FindForEachInterface(const UsbDdkInterface &interface)
+    {
+        struct UsbDdkInterfaceDescriptor *intDesc = interface.altsetting;
+        uint32_t numSetting = interface.numAltsetting;
+        for (uint32_t setIdx = PARAM_0; setIdx < numSetting; ++setIdx) {
+            uint32_t numEp = intDesc[setIdx].interfaceDescriptor.bNumEndpoints;
+            struct UsbDdkEndpointDescriptor *epDesc = intDesc[setIdx].endPoint;
+            for (uint32_t epIdx = PARAM_0; epIdx < numEp; ++epIdx) {
+                if (!IsInterruptInEndpoint(epDesc[epIdx].endpointDescriptor)) {
+                    continue;
+                }
+                return { true, intDesc[setIdx].interfaceDescriptor.bInterfaceNumber,
+                    epDesc[epIdx].endpointDescriptor.bEndpointAddress, epDesc[epIdx].endpointDescriptor.wMaxPacketSize };
+            }
+        }
+        return { false, {}, {}, {} };
+    }
 
-22. static std::tuple<bool, uint8_t, uint8_t, uint16_t> GetEndpointInfo(const struct UsbDdkConfigDescriptor *config)
-23. {
-24. for (uint32_t intIdx = PARAM_0; intIdx < config->configDescriptor.bNumInterfaces; ++intIdx) {
-25. auto result = FindForEachInterface(config->interface[intIdx]);
-26. if (std::get<0>(result)) {
-27. return result;
-28. }
-29. }
-30. return { false, {}, {}, {} };
-31. }
+    static std::tuple<bool, uint8_t, uint8_t, uint16_t> GetEndpointInfo(const struct UsbDdkConfigDescriptor *config)
+    {
+        for (uint32_t intIdx = PARAM_0; intIdx < config->configDescriptor.bNumInterfaces; ++intIdx) {
+            auto result = FindForEachInterface(config->interface[intIdx]);
+            if (std::get<0>(result)) {
+                return result;
+            }
+        }
+        return { false, {}, {}, {} };
+    }
 
-33. struct UsbDdkConfigDescriptor *config = nullptr;
-34. // deviceId通过ts接口queryDevice获取
-35. int32_t ret = OH_Usb_GetConfigDescriptor(deviceId, g_configIndex, &config);
-36. if (ret != USB_DDK_SUCCESS) {
-37. // 打印错误信息，调用OH_Usb_GetConfigDescriptor失败
-38. return;
-39. }
+    struct UsbDdkConfigDescriptor *config = nullptr;
+    // deviceId通过ts接口queryDevice获取
+    int32_t ret = OH_Usb_GetConfigDescriptor(deviceId, g_configIndex, &config);
+    if (ret != USB_DDK_SUCCESS) {
+        // 打印错误信息，调用OH_Usb_GetConfigDescriptor失败
+        return;
+    }
 
-41. // 通过解析config可以获取设备的maxPktSize
-42. auto [result, interface, endpoint, maxPktSize] = GetEndpointInfo(config);
-43. if (!result) {
-44. // 打印错误信息，调用GetEndpointInfo失败
-45. return;
-46. }
+    // 通过解析config可以获取设备的maxPktSize
+    auto [result, interface, endpoint, maxPktSize] = GetEndpointInfo(config);
+    if (!result) {
+        // 打印错误信息，调用GetEndpointInfo失败
+        return;
+    }
 
-48. ret = OH_Usb_ClaimInterface(deviceId, interface, &g_interfaceHandle);
-49. if (ret != USB_DDK_SUCCESS) {
-50. // 打印错误信息，调用OH_Usb_ClaimInterface失败
-51. return;
-52. }
+    ret = OH_Usb_ClaimInterface(deviceId, interface, &g_interfaceHandle);
+    if (ret != USB_DDK_SUCCESS) {
+        // 打印错误信息，调用OH_Usb_ClaimInterface失败
+        return;
+    }
 
-54. // 调用OH_Usb_SendPipeRequest
-55. struct UsbDeviceMemMap *devMemMap = nullptr;
-56. size_t bufferLen = maxPktSize;
-57. ret = OH_Usb_CreateDeviceMemMap(deviceId, bufferLen, &devMemMap);
-58. if (ret != USB_DDK_SUCCESS) {
-59. // 打印错误信息，调用OH_Usb_CreateDeviceMemMap失败
-60. return;
-61. }
-62. struct UsbRequestPipe pipe;
-63. pipe.interfaceHandle = g_interfaceHandle;
-64. pipe.endpoint = endpoint;
-65. pipe.timeout = UINT32_MAX;
-66. ret = OH_Usb_SendPipeRequest(&pipe, devMemMap);
-67. ...
+    // 调用OH_Usb_SendPipeRequest
+    struct UsbDeviceMemMap *devMemMap = nullptr;
+    size_t bufferLen = maxPktSize;
+    ret = OH_Usb_CreateDeviceMemMap(deviceId, bufferLen, &devMemMap);
+    if (ret != USB_DDK_SUCCESS) {
+        // 打印错误信息，调用OH_Usb_CreateDeviceMemMap失败
+        return;
+    }
+    struct UsbRequestPipe pipe;
+    pipe.interfaceHandle = g_interfaceHandle;
+    pipe.endpoint = endpoint;
+    pipe.timeout = UINT32_MAX;
+    ret = OH_Usb_SendPipeRequest(&pipe, devMemMap);
+    ...
 
-69. // 调用OH_Usb_SendPipeRequestWithAshmem
-70. size_t bufferLen = maxPktSize;
-71. const uint8_t name[100] = "TestAshmem";
-72. DDK_Ashmem *ashmem = nullptr;
-73. int32_t result = OH_DDK_CreateAshmem(name, bufferLen, &ashmem);
-74. if (result != USB_DDK_SUCCESS) {
-75. // 打印错误信息，调用OH_DDK_CreateAshmem失败
-76. return;
-77. }
-78. const uint8_t ashmemMapType = 0x03;
-79. result = OH_DDK_MapAshmem(ashmem, ashmemMapType);
-80. if (result != USB_DDK_SUCCESS) {
-81. // 打印错误信息，调用OH_DDK_MapAshmem失败
-82. return;
-83. }
-84. struct UsbRequestPipe pipe;
-85. pipe.interfaceHandle = g_interfaceHandle;
-86. pipe.endpoint = endpoint;
-87. pipe.timeout = UINT32_MAX;
-88. int32_t returnValue = OH_Usb_SendPipeRequestWithAshmem(&pipe, ashmem);
-89. ...
+    // 调用OH_Usb_SendPipeRequestWithAshmem
+    size_t bufferLen = maxPktSize;
+    const uint8_t name[100] = "TestAshmem";
+    DDK_Ashmem *ashmem = nullptr;
+    int32_t result = OH_DDK_CreateAshmem(name, bufferLen, &ashmem);
+    if (result != USB_DDK_SUCCESS) {
+        // 打印错误信息，调用OH_DDK_CreateAshmem失败
+        return;
+    }
+    const uint8_t ashmemMapType = 0x03;
+    result = OH_DDK_MapAshmem(ashmem, ashmemMapType);
+    if (result != USB_DDK_SUCCESS) {
+        // 打印错误信息，调用OH_DDK_MapAshmem失败
+        return;
+    }
+    struct UsbRequestPipe pipe;
+    pipe.interfaceHandle = g_interfaceHandle;
+    pipe.endpoint = endpoint;
+    pipe.timeout = UINT32_MAX;
+    int32_t returnValue = OH_Usb_SendPipeRequestWithAshmem(&pipe, ashmem);
+    ...
 ```
 
 ## Image Kit
@@ -750,7 +750,7 @@ OH\_Usb\_SendPipeRequest和OH\_Usb\_SendPipeRequestWithAshmem接口开发适配�
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于6.0.0(20)时生效。
 
@@ -781,25 +781,25 @@ ImageInfo对象mimeType返回值变更。
 
 图片信息查询接口返回值变更，调用方式无需改变。
 
-```
-1. import { image } from '@kit.ImageKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. function getImageMimeType(context: Context) {
-4. //此处'test.dng'仅作示例，请开发者自行替换。否则imageSource会创建失败，导致后续无法正常执行。
-5. const path: string = context.filesDir + "/test.dng";
-6. const imageSourceApi: image.ImageSource = image.createImageSource(path);
-7. if (imageSourceApi != undefined) {
-8. imageSourceApi.getImageInfo().then((imageInfo: image.ImageInfo) => {
-9. console.info("Succeeded in obtaining the image mimeType information.");
-10. // 调用方式无需修改，返回值修改后因支持识别实际raw格式，需要将此处判断更新。
-11. if (imageInfo.mimeType == "image/x-adobe-dng") {
-12. console.info("Image mimeType is image/x-adobe-dng.");
-13. }
-14. }).catch((error: BusinessError) => {
-15. console.error(`Failed to obtain the image information. code is ${error.code}, message is ${error.message}`);
-16. })
-17. }
-18. }
+```screen
+import { image } from '@kit.ImageKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+function getImageMimeType(context: Context) {
+  //此处'test.dng'仅作示例，请开发者自行替换。否则imageSource会创建失败，导致后续无法正常执行。
+  const path: string = context.filesDir + "/test.dng";
+  const imageSourceApi: image.ImageSource = image.createImageSource(path);
+  if (imageSourceApi != undefined) {
+    imageSourceApi.getImageInfo().then((imageInfo: image.ImageInfo) => {
+      console.info("Succeeded in obtaining the image mimeType information.");
+      // 调用方式无需修改，返回值修改后因支持识别实际raw格式，需要将此处判断更新。
+      if (imageInfo.mimeType == "image/x-adobe-dng") {
+        console.info("Image mimeType is image/x-adobe-dng.");
+      }
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to obtain the image information. code is ${error.code}, message is ${error.message}`);
+    })
+  }
+}
 ```
 
 ## Media Kit
@@ -812,7 +812,7 @@ ImageInfo对象mimeType返回值变更。
 
 **变更影响**
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于6.0.0(20)时生效。
 
@@ -862,20 +862,20 @@ start(): void;
 
 变更前：
 
-```
-1. * @permission ohos.permission.ACCESS_BIOMETRIC
-2. * @throws { BusinessError } 201 - Permission verification failed.
-3. start(): void;
+```ts
+ * @permission ohos.permission.ACCESS_BIOMETRIC
+     * @throws { BusinessError } 201 - Permission verification failed.
+    start(): void;
 ```
 
 变更后：
 
-```
-1. * @permission ohos.permission.ACCESS_BIOMETRIC or ohos.permission.USER_AUTH_FROM_BACKGROUND
-2. * @throws { BusinessError } 201 - Permission verification failed. Possible causes:
-3. * <br>1. No permission to access biometric.
-4. * <br>2. No permission to start authentication from background.
-5. start(): void;
+```ts
+ * @permission ohos.permission.ACCESS_BIOMETRIC or ohos.permission.USER_AUTH_FROM_BACKGROUND
+     * @throws { BusinessError } 201 - Permission verification failed. Possible causes:
+     * <br>1. No permission to access biometric.
+     * <br>2. No permission to start authentication from background.
+    start(): void;
 ```
 
 **适配指导**
@@ -944,39 +944,39 @@ mincore
 2. 确认调用request前线程是否已被ptrace停住。
 3. 若线程未被停住，则应先通过向被调试线程发送信号来打断被调试线程。
 
-```
-1. /* 错误用法: 对未进入 PTRACE_STOP 的线程调用 PTRACE_DETACH */
-2. ret = ptrace(PTRACE_CONT, pid, NULL, NULL);
-3. if (ret < 0) {
-4. perror("PTRACE_CONT");
-5. return -1;
-6. }
+```c
+/* 错误用法: 对未进入 PTRACE_STOP 的线程调用 PTRACE_DETACH */
+ret = ptrace(PTRACE_CONT, pid, NULL, NULL);
+if (ret < 0) {
+perror("PTRACE_CONT");
+return -1;
+}
 
-8. ret = ptrace(PTRACE_DETACH, pid, NULL, NULL);
-9. if (ret < 0) {
-10. perror("PTRACE_DETACH");
-11. return -1;
-12. }
+ret = ptrace(PTRACE_DETACH, pid, NULL, NULL);
+if (ret < 0) {
+perror("PTRACE_DETACH");
+return -1;
+}
 
-14. /* 正确用法: 先调用 kill 发送 SIGSTOP 使线程进入 PTRACE_STOP，再对其调用 PTRACE_DETACH */
-15. ret = ptrace(PTRACE_CONT, pid, NULL, NULL);
-16. if (ret < 0) {
-17. perror("PTRACE_CONT");
-18. return -1;
-19. }
+/* 正确用法: 先调用 kill 发送 SIGSTOP 使线程进入 PTRACE_STOP，再对其调用 PTRACE_DETACH */
+ret = ptrace(PTRACE_CONT, pid, NULL, NULL);
+if (ret < 0) {
+perror("PTRACE_CONT");
+return -1;
+}
 
-21. kill(pid, SIGSTOP);
-22. ret = waitpid(pid, &status, 0);
-23. if (ret < 0) {
-24. perror("waitpid");
-25. return -1;
-26. }
+kill(pid, SIGSTOP);
+ret = waitpid(pid, &status, 0);
+if (ret < 0) {
+perror("waitpid");
+return -1;
+}
 
-28. ret = ptrace(PTRACE_DETACH, pid, NULL, NULL);
-29. if (ret < 0) {
-30. perror("PTRACE_DETACH");
-31. return -1;
-32. }
+ret = ptrace(PTRACE_DETACH, pid, NULL, NULL);
+if (ret < 0) {
+perror("PTRACE_DETACH");
+return -1;
+}
 ```
 
 ### 限制ptrace接口仅可在开发者调试模式下使用

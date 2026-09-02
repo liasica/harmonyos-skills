@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-n
 title: OH_NativeBuffer_Config
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 结构体 > OH_NativeBuffer_Config
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:09+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:834e09edf3d2ef8b747520a1ac71ebe54d8335ee701795801fbdae6b470eb4ed
+scraped_at: 2026-09-02T15:02:45+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:501c499d56b316d8e644ddddb872621b4b89d33eaaa0ed684b46eddc4439a905
 ---
 
-```
-1. typedef struct {...} OH_NativeBuffer_Config
+```c
+typedef struct {...} OH_NativeBuffer_Config
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 OH\_NativeBuffer的属性配置，用于申请新的OH\_NativeBuffer实例或查询现有实例的相关属性。
 
@@ -26,11 +24,7 @@ OH\_NativeBuffer的属性配置，用于申请新的OH\_NativeBuffer实例或查
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

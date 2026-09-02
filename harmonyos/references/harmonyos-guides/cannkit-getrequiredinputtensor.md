@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getre
 title: GetRequiredInputTensor
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > TilingContext > GetRequiredInputTensor
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:17+08:00
+scraped_at: 2026-09-02T14:50:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d9319213ed9a1636aedd373442f1a0f28f908b777c77dc36d3d5f8d02028ed5f
+content_hash: sha256:4f32716cdb01c10a341566a1a73e88268e8dd3724ea37309964c38b605bb6570
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:d9319213ed9a1636aedd373442f1a0f28f908b777c77dc36d3d5f8d0202
 
 ## 函数原型
 
-```
-1. const Tensor *GetRequiredInputTensor(const size_t ir_index) const;
+```cpp
+const Tensor *GetRequiredInputTensor(const size_t ir_index) const;
 ```
 
 ## 参数说明
@@ -36,9 +36,9 @@ content_hash: sha256:d9319213ed9a1636aedd373442f1a0f28f908b777c77dc36d3d5f8d0202
 
 ## 调用示例
 
-```
-1. ge::graphStatus InferShape4ConcatD(TilingContext* context) {
-2. auto in_tensor = context->GetRequiredInputTensor(0U);
-3. // ...
-4. }
+```cpp
+ge::graphStatus InferShape4ConcatD(TilingContext* context) {
+  auto in_tensor = context->GetRequiredInputTensor(0U);
+  // ...
+}
 ```

@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkgraphi
 title: 结构体
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:07+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c23a97f9340af18ff0bd922e3f3cc4f2d569fa6df76a19f5283fce888dd0cb7b
+scraped_at: 2026-09-02T14:53:09+08:00
+doc_updated_at: 2026-06-03
+content_hash: sha256:c0c651740cc15870023d801007f6e7a2da89e8af4db5a54e20800040d97a4f61
 ---
 
 * **[OH\_NativeBuffer\_ColorXY](capi-oh-nativebuffer-oh-nativebuffer-colorxy.md)**
 * **[OH\_NativeBuffer\_Smpte2086](capi-oh-nativebuffer-oh-nativebuffer-smpte2086.md)**
 * **[OH\_NativeBuffer\_Cta861](capi-oh-nativebuffer-oh-nativebuffer-cta861.md)**
-* **[OH\_NativeBuffer\_StaticMetadata](api-oh-nativebuffer-oh-nativebuffer-staticmetadata.md)**
+* **[OH\_NativeBuffer\_StaticMetadata](capi-oh-nativebuffer-oh-nativebuffer-staticmetadata.md)**
 * **[OH\_NativeBuffer\_Config](capi-oh-nativebuffer-oh-nativebuffer-config.md)**
 * **[OH\_NativeBuffer\_Plane](capi-oh-nativebuffer-oh-nativebuffer-plane.md)**
 * **[OH\_NativeBuffer\_Planes](capi-oh-nativebuffer-oh-nativebuffer-planes.md)**
 * **[OH\_NativeBuffer](capi-oh-nativebuffer-oh-nativebuffer.md)**
 * **[ColorSpacePrimaries](capi-nativecolorspacemanager-colorspaceprimaries.md)**
 * **[WhitePointArray](capi-nativecolorspacemanager-whitepointarray.md)**
-* **[DisplaySoloist\_ExpectedRateRange](ivedisplaysoloist-displaysoloist-expectedraterange.md)**
+* **[DisplaySoloist\_ExpectedRateRange](capi-nativedisplaysoloist-displaysoloist-expectedraterange.md)**
 * **[OH\_Drawing\_BitmapFormat](capi-drawing-oh-drawing-bitmapformat.md)**
 * **[OH\_Drawing\_Font\_Metrics](capi-drawing-oh-drawing-font-metrics.md)**
 * **[OH\_Drawing\_GpuContextOptions](capi-drawing-oh-drawing-gpucontextoptions.md)**
@@ -35,6 +35,7 @@ content_hash: sha256:c23a97f9340af18ff0bd922e3f3cc4f2d569fa6df76a19f5283fce888dd
 * **[OH\_Drawing\_FontStyleStruct](capi-drawing-oh-drawing-fontstylestruct.md)**
 * **[OH\_Drawing\_FontFeature](capi-drawing-oh-drawing-fontfeature.md)**
 * **[OH\_Drawing\_StrutStyle](capi-drawing-oh-drawing-strutstyle.md)**
+* **[OH\_Drawing\_RectSize](capi-drawing-oh-drawing-rectsize.md)**
 * **[OH\_Drawing\_Point2D](capi-drawing-oh-drawing-point2d.md)**
 * **[OH\_Drawing\_Point3D](capi-drawing-oh-drawing-point3d.md)**
 * **[OH\_Drawing\_Image\_Info](capi-drawing-oh-drawing-image-info.md)**
@@ -48,7 +49,7 @@ content_hash: sha256:c23a97f9340af18ff0bd922e3f3cc4f2d569fa6df76a19f5283fce888dd
 * **[Rect](capi-nativewindow-rect.md)**
 * **[OHHDRMetaData](capi-nativewindow-ohhdrmetadata.md)**
 * **[OHExtDataHandle](capi-nativewindow-ohextdatahandle.md)**
-* **[OH\_NativeColorSpaceManager](nativecolorspacemanager-oh-nativecolorspacemanager.md)**
+* **[OH\_NativeColorSpaceManager](capi-nativecolorspacemanager-oh-nativecolorspacemanager.md)**
 * **[OH\_DisplaySoloist](capi-nativedisplaysoloist-oh-displaysoloist.md)**
 * **[NativePixelMap\_](capi-drawing-nativepixelmap-.md)**
 * **[OH\_PixelmapNative](capi-drawing-oh-pixelmapnative.md)**
@@ -67,6 +68,9 @@ content_hash: sha256:c23a97f9340af18ff0bd922e3f3cc4f2d569fa6df76a19f5283fce888dd
 * **[OH\_Drawing\_TextLine](capi-drawing-oh-drawing-textline.md)**
 * **[OH\_Drawing\_Run](capi-drawing-oh-drawing-run.md)**
 * **[OH\_Drawing\_FontFullDescriptor](capi-drawing-oh-drawing-fontfulldescriptor.md)**
+* **[OH\_Drawing\_FontVariationAxis](capi-drawing-oh-drawing-fontvariationaxis.md)**
+* **[OH\_Drawing\_FontVariationInstance](capi-drawing-oh-drawing-fontvariationinstance.md)**
+* **[OH\_Drawing\_FontVariationInstanceCoordinate](capi-drawing-oh-drawing-fontvariationinstancecoordinate.md)**
 * **[OH\_Drawing\_Canvas](capi-drawing-oh-drawing-canvas.md)**
 * **[OH\_Drawing\_Pen](capi-drawing-oh-drawing-pen.md)**
 * **[OH\_Drawing\_Region](capi-drawing-oh-drawing-region.md)**

@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bytecode-obfu
 title: ArkGuard字节码混淆开启指南
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard字节码混淆工具 > ArkGuard字节码混淆开启指南
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:26:59+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d929e8afb17f80667982f8b58434dc27e3e978d54c0d1074ea2753b977bfb3fe
+scraped_at: 2026-09-02T14:59:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:31a6907868635185a2e2c38e481363a861f56e38c1fcdef2f10d791d60551a37
 ---
 
-注意
+**注意** 
 
 为了避免后续修改代码影响现网问题分析定位，建议开发者在版本发布时，本地备份build/default/cache/default/default@XXXCompileArkTS/esmodule/release/obfuscation 路径下的全部内容； 有条件的可以直接备份release目录。
 
@@ -26,26 +26,26 @@ content_hash: sha256:d929e8afb17f80667982f8b58434dc27e3e978d54c0d1074ea2753b977b
 
   在本模块build-profile.json5配置文件中的arkOptions.obfuscation.ruleOptions字段中，通过enable字段配置是否开启混淆。
 
-  ```
-  1. "arkOptions": {
-  2. "obfuscation": {
-  3. "ruleOptions": {
-  4. "enable": true, // 开启混淆开关。
-  5. "files": ["./obfuscation-rules.txt"] // 指定配置混淆规则文件, 在编译本模块时生效。
-  6. },
-  7. // ...
-  8. }
-  9. },
+  ```json5
+  "arkOptions": {
+    "obfuscation": {
+      "ruleOptions": {
+        "enable": true, // 开启混淆开关。
+        "files": ["./obfuscation-rules.txt"] // 指定配置混淆规则文件, 在编译本模块时生效。
+      },
+      // ...
+    }
+  },
   ```
 
   在files字段对应的混淆配置文件obfuscation-rules.txt中进行选项配置，需要手动修改，启用以下混淆项：
 
-  ```
-  1. -enable-bytecode-obfuscation  #开启后，字节码混淆才生效。
-  2. -enable-bytecode-obfuscation-debugging  #控制是否输出调试信息，开启后会生成混淆日志，默认不开启。
+  ```txt
+  -enable-bytecode-obfuscation  #开启后，字节码混淆才生效。
+  -enable-bytecode-obfuscation-debugging  #控制是否输出调试信息，开启后会生成混淆日志，默认不开启。
   ```
 
-  注意
+  **注意** 
 
   为保证声明与字节码中的实现一致，在使用方模块开启混淆时，ArkGuard**不会对HAR包内的abc再次执行名称混淆**；字节码混淆仅在**构建该HAR模块**时执行一次。应用代码中对HAR接口的引用仍可能按使用方规则参与处理，需结合导出名收集、consumer-rules等保证正确性，详见[HAP包混淆建议](bytecode-obfuscation-practice.md#hap包混淆建议)。
 * 配置混淆规则
@@ -54,34 +54,34 @@ content_hash: sha256:d929e8afb17f80667982f8b58434dc27e3e978d54c0d1074ea2753b977b
 
   以DevEco Studio 5.0.3.600及更高版本为例，混淆配置文件如下所示，该配置内容表示开启属性名称混淆、顶层作用域名称混淆、文件名混淆及导入导出名称混淆功能：
 
-  ```
-  1. -enable-property-obfuscation
-  2. -enable-toplevel-obfuscation
-  3. -enable-filename-obfuscation
-  4. -enable-export-obfuscation
+  ```txt
+  -enable-property-obfuscation
+  -enable-toplevel-obfuscation
+  -enable-filename-obfuscation
+  -enable-export-obfuscation
   ```
 
   开发者还可以使用#在混淆规则文件中进行注释，每行以#开头的文本会被当做是注释。使用方法如下，#后为注释内容：
 
-  ```
-  1. # options:
-  2. -enable-property-obfuscation
-  3. -enable-toplevel-obfuscation
-  4. -enable-filename-obfuscation
-  5. # -enable-export-obfuscation
-  6. -keep-property-name # white list for dynamic property names
+  ```txt
+  # options:
+  -enable-property-obfuscation
+  -enable-toplevel-obfuscation
+  -enable-filename-obfuscation
+  # -enable-export-obfuscation
+  -keep-property-name # white list for dynamic property names
   ```
 
   混淆选项的配置推荐参考[混淆选项配置指导](bytecode-obfuscation-guide.md#混淆选项配置指导)，混淆过程中涉及的所有配置文件的详情介绍请参考[三种混淆配置文件](bytecode-obfuscation-guide.md#三种混淆配置文件)。
 
-  说明
+  **说明** 
 
   新建工程默认关闭混淆功能。如果开发者希望开启混淆，需要将模块的build-profile.json5文件中的ruleOptions.enable字段的值设置为true。同时需要将混淆规则配置文件obfuscation-rules.txt的-enable-bytecode-obfuscation、-enable-bytecode-obfuscation-debugging选项按需启用；此外，混淆规则配置文件中默认开启了四项推荐的混淆选项：-enable-property-obfuscation、-enable-toplevel-obfuscation、-enable-filename-obfuscation和-enable-export-obfuscation，开发者可以根据需要进一步修改混淆配置。
 * 指定release编译
 
   字节码混淆当前仅支持release编译，不支持debug编译。即开启混淆开关后，若为release编译则会进行混淆，若为debug编译则不会进行混淆。开发者可参考[指定构建模式](ide-hvigor-compilation-options-customizing-guide.md#section192461528194916)查看和修改构建模式。
 
-  注意
+  **注意** 
 
   release编译与debug编译的区别并不只包含混淆，若需要明确应用行为差异是否由于混淆，应该通过开启或关闭混淆开关排查，而不是仅通过切换release或debug编译来区分。
 
@@ -94,22 +94,22 @@ content_hash: sha256:d929e8afb17f80667982f8b58434dc27e3e978d54c0d1074ea2753b977b
 
   对于HAR和HSP模块，在build-profile.json5中包含arkOptions.obfuscation.consumerFiles字段，**用于指定当本包被依赖时，期望在其他模块生效的混淆规则**，新建HAR或HSP模块时会创建默认文件consumer-rules.txt。它与obfuscation-rules.txt字段的区别是：**obfuscation-rules.txt在编译本模块时生效，consumer-rules.txt在编译依赖本模块的其他模块时生效**。
 
-  ```
-  1. "arkOptions": {
-  2. "obfuscation": {
-  3. "ruleOptions": {
-  4. "enable": true, // 开启混淆开关。
-  5. "files": ["./obfuscation-rules.txt"] // 指定配置混淆规则文件, 在编译本模块时生效。
-  6. },
-  7. "consumerFiles": ["./consumer-rules.txt"] // 指定配置混淆规则文件, 在编译依赖本模块的其他模块时生效。
-  8. }
-  9. },
+  ```json5
+  "arkOptions": {
+    "obfuscation": {
+      "ruleOptions": {
+        "enable": true, // 开启混淆开关。
+        "files": ["./obfuscation-rules.txt"] // 指定配置混淆规则文件, 在编译本模块时生效。
+      },
+      "consumerFiles": ["./consumer-rules.txt"] // 指定配置混淆规则文件, 在编译依赖本模块的其他模块时生效。
+    }
+  },
   ```
 * obfuscation.txt
 
   不同于以上两种开发者可自行修改的配置文件，obfuscation.txt是在编译构建HAR或HSP时根据consumer-rules.txt和依赖模块的混淆规则文件自动生成的文件，它作为一种编译产物存在于发布的HAR或HSP包中，用于在其他应用使用该发布包时应用相应的混淆规则。obfuscation.txt内容的生成逻辑请参考[混淆规则合并策略](bytecode-obfuscation.md#混淆规则合并策略)。
 
-  说明
+  **说明** 
 
   针对三方库中obfuscation.txt文件，只有在模块的oh-package.json5文件中依赖三方库时，三方库中的obfuscation.txt文件才会生效；如果在工程的oh-package.json5文件中进行依赖，则三方库的obfuscation.txt文件不会生效。
 
@@ -128,27 +128,27 @@ content_hash: sha256:d929e8afb17f80667982f8b58434dc27e3e978d54c0d1074ea2753b977b
 
    1. 若代码中存在静态定义、动态访问的情况或者动态定义、静态访问的情况，需要使用-keep-property-name保留属性名称。示例：
 
-      ```
-      1. // file.ts
-      2. // 静态定义，动态访问：属性名在对象定义时是静态的，但访问时通过动态构建属性名（通常使用字符串拼接）来访问。
-      3. const obj001 = {
-      4. staticName: 5  // 静态定义属性。
-      5. };
-      6. const fieldName = 'static' + 'Name';  // 动态构建属性名。
-      7. console.info(obj001[fieldName]);  // 使用方括号语法动态访问属性。
+      ```typescript
+      // file.ts
+      // 静态定义，动态访问：属性名在对象定义时是静态的，但访问时通过动态构建属性名（通常使用字符串拼接）来访问
+      const obj001 = {
+        staticName: 5  // 静态定义属性
+      };
+      const fieldName = 'static' + 'Name';  // 动态构建属性名
+      console.info(obj001[fieldName]);  // 使用方括号语法动态访问属性
       ```
 
-      ```
-      1. // file.ts
-      2. // 动态定义，静态访问：属性名通过动态表达式在对象定义时确定，但访问时直接使用点语法（假设你知道属性名的结果）。
-      3. const obj002 = {
-      4. ['dynamic' + 'Name']: 5  // 动态定义属性。
-      5. };
-      6. console.info(obj002.dynamicName + '');// 使用点语法静态访问属性。
+      ```typescript
+      // file.ts
+      // 动态定义，静态访问：属性名通过动态表达式在对象定义时确定，但访问时直接使用点语法（假设开发者知道属性名的结果）
+      const obj002 = {
+        ['dynamic' + 'Name']: 5  // 动态定义属性
+      };
+      console.info(obj002.dynamicName + ''); // 使用点语法静态访问属性
       ```
    2. 若代码中使用点语法访问未在ArkTS/TS/JS代码中定义的字段，比如访问native实现的so库，字段固定的json文件与数据库等场景：
 
-      1. 若在代码中引用so库的api，如import testNapi from 'library.so'; testNapi.foo();需要使用-keep-property-name，foo保留属性名称。
+      1. 若在代码中引用so库的API，如import testNapi from 'library.so'; testNapi.foo()；需要使用-keep-property-name foo来保留属性名称foo。
       2. 若在代码中使用json文件中的字段，需要使用-keep-property-name保留json文件中的字段名称。
       3. 若在代码中使用数据库相关的字段，需要使用-keep-property-name保留数据库中的字段名称。
    3. 若构建HAR模块并发布给其他模块使用的情况，要在HAR模块中的consumer-rules.txt文件中将不能被二次混淆的属性使用-keep-property-name保留。consumer-rules.txt文件在构建HAR时会生成obfuscation.txt文件。此HAR被其它模块依赖时，DevEco Studio会解析obfuscation.txt文件，读取文件中的白名单。
@@ -157,7 +157,7 @@ content_hash: sha256:d929e8afb17f80667982f8b58434dc27e3e978d54c0d1074ea2753b977b
 
    1. 若构建HSP模块，它会提供接口及其属性给其它模块调用，因此需要将对外接口使用-keep-global-name来保留、将对外暴露的class/interface等语法中的属性使用-keep-property-name保留。
    2. 若构建HAR模块并发布给其他模块使用的场景，要在HAR模块中的obfuscation-rules.txt文件中将对外接口使用-keep-global-name来保留、将对外暴露的class/interface等语法中的属性使用-keep-property-name保留。
-   3. 若在代码中引用so库的api，如import { napiA } from 'library.so'；需要使用-keep-global-name napiA保留so接口名称。
+   3. 若在代码中引用so库的API，如import { napiA } from 'library.so'；需要使用-keep-global-name napiA来保留so接口名称napiA。
    4. 验证应用功能以及模块被依赖时的接口调用功能，排查遗漏的场景。若应用出现功能异常，可依据混淆后的报错栈，在模块的 **build/default/[...]/release/obfuscation/** 目录下查阅 **nameCache.json**（名称映射表）、**config.json**（混淆项与白名单）等产物，按[查看混淆效果](bytecode-obfuscation-guide.md#查看混淆效果)对照定位源码行；并按需使用-keep-global-name、-keep-property-name等进行保留。
 4. 待上述选项应用适配成功后，开启-enable-filename-obfuscation选项。此选项开启后以下场景需要适配：
 
@@ -181,7 +181,7 @@ content_hash: sha256:d929e8afb17f80667982f8b58434dc27e3e978d54c0d1074ea2753b977b
 * origin目录：混淆前的modules.abc文件。
 * 配置信息文件：config.json，该文件记录了混淆的配置项和白名单列表。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/g1E1NTg_RUy7AjZY4NFi0g/zh-cn_image_0000002558604382.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/UxTsSCSXS8unwSoPeHq93w/zh-cn_image_0000002706673164.png)
 
 ## 报错栈还原
 
@@ -189,4 +189,4 @@ content_hash: sha256:d929e8afb17f80667982f8b58434dc27e3e978d54c0d1074ea2753b977b
 
 反混淆工具需要使用应用编译过程中生成的sourceMaps.json文件以及混淆名称映射文件nameCache.json文件，因此请本地备份它们；为方便问题定位，建议备份release目录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/fOnj2X7WTRKgUK0zcrrv_g/zh-cn_image_0000002589323907.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/xnbRxl3pTz6hF74CM8fCGg/zh-cn_image_0000002736432255.png)

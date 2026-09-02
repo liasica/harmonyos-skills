@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-vulk
 title: VkMemoryGetNativeBufferInfoOHOS
 breadcrumb: API参考 > 标准库 > Vulkan > Vulkan扩展能力 > VkMemoryGetNativeBufferInfoOHOS
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:37+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:673d51f234f071180c64c3e03117fa59e80c028cbf299bd9f292b46757931064
+scraped_at: 2026-09-02T15:03:15+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e74022a9738b91711e7df4960cd4354a32c68d9ba56bcdaca4f622987719ab2d
 ---
 
-```
-1. typedef struct VkMemoryGetNativeBufferInfoOHOS {...} VkMemoryGetNativeBufferInfoOHOS
+```c
+typedef struct VkMemoryGetNativeBufferInfoOHOS {...} VkMemoryGetNativeBufferInfoOHOS
 ```
 
 ## 概述

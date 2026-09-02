@@ -1,15 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-buffer-common-h
 title: buffer_common.h
+breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > buffer_common.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:49+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fad233e78e5128fedf61257cb162ee0809c74ed7b9233a7ea1d3d0fa62e6cc4b
+scraped_at: 2026-09-02T15:02:42+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:74669b4000931ebed5249968243910fb31c4ff1dab8353a3ba7f227a6c099d02
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供NativeBuffer模块的公共类型定义。
 
@@ -25,22 +24,16 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [OH\_NativeBuffer\_ColorXY](capi-oh-nativebuffer-oh-nativebuffer-colorxy.md) | OH\_NativeBuffer\_ColorXY | 表示基色的X和Y坐标。 |
-| [OH\_NativeBuffer\_Smpte2086](capi-oh-nativebuffer-oh-nativebuffer-smpte2086.md) | OH\_NativeBuffer\_Smpte2086 | 表示smpte2086静态元数据。 |
+| [OH\_NativeBuffer\_Smpte2086](capi-oh-nativebuffer-oh-nativebuffer-smpte2086.md) | OH\_NativeBuffer\_Smpte2086 | 表示SMPTE 2086静态元数据。 |
 | [OH\_NativeBuffer\_Cta861](capi-oh-nativebuffer-oh-nativebuffer-cta861.md) | OH\_NativeBuffer\_Cta861 | 表示CTA-861.3静态元数据。 |
-| [OH\_NativeBuffer\_StaticMetadata](api-oh-nativebuffer-oh-nativebuffer-staticmetadata.md) | OH\_NativeBuffer\_StaticMetadata | 表示HDR静态元数据。 |
+| [OH\_NativeBuffer\_StaticMetadata](capi-oh-nativebuffer-oh-nativebuffer-staticmetadata.md) | OH\_NativeBuffer\_StaticMetadata | 表示HDR静态元数据。 |
 
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -49,17 +42,15 @@ PhonePC/2in1TabletTVWearable
 | [OH\_NativeBuffer\_MetadataKey](capi-buffer-common-h.md#oh_nativebuffer_metadatakey) | OH\_NativeBuffer\_MetadataKey | 表示OH\_NativeBuffer的描述信息的键值，如HDR元数据，ROI元数据等。 |
 | [OH\_NativeBuffer\_Format](capi-buffer-common-h.md#oh_nativebuffer_format) | OH\_NativeBuffer\_Format | OH\_NativeBuffer格式的枚举。 |
 | [OH\_NativeBuffer\_TransformType](capi-buffer-common-h.md#oh_nativebuffer_transformtype) | OH\_NativeBuffer\_TransformType | OH\_NativeBuffer转换类型的枚举。 |
+| [OH\_NativeBuffer\_VideoDimensionType](capi-buffer-common-h.md#oh_nativebuffer_videodimensiontype) | OH\_NativeBuffer\_VideoDimensionType | 视频维度类型枚举。 |
+| [OH\_NativeBuffer\_3D\_MetadataKey](capi-buffer-common-h.md#oh_nativebuffer_3d_metadatakey) | OH\_NativeBuffer\_3D\_MetadataKey | NativeBuffer的3D元数据属性枚举。 |
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_NativeBuffer\_ColorSpace
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_NativeBuffer_ColorSpace
+```c
+enum OH_NativeBuffer_ColorSpace
 ```
 
 **描述**
@@ -108,13 +99,13 @@ API version 12之前，使用该枚举请引用native\_buffer.h头文件；从AP
 | OH\_COLORSPACE\_DISPLAY\_BT2020\_SRGB | 色域范围为BT2020，传递函数为SRGB，转换矩阵为BT2020，数据范围为RANGE\_FULL。 |
 | OH\_COLORSPACE\_DISPLAY\_BT2020\_HLG | 等同于 OH\_COLORSPACE\_BT2020\_HLG\_FULL。 |
 | OH\_COLORSPACE\_DISPLAY\_BT2020\_PQ | 等同于OH\_COLORSPACE\_BT2020\_PQ\_FULL。 |
+| OH\_COLORSPACE\_BT2020\_LOG\_FULL | 色域范围为BT2020，传递函数为PRIV\_LOG，转换矩阵为BT2020，数据范围为RANGE\_FULL。  **起始版本：** 26.0.0 |
+| OH\_COLORSPACE\_BT2020\_LOG\_LIMIT | 色域范围为BT2020，传递函数为PRIV\_LOG，转换矩阵为BT2020，数据范围为RANGE\_LIMITED。  **起始版本：** 26.0.0 |
 
 ### OH\_NativeBuffer\_MetadataType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_NativeBuffer_MetadataType
+```c
+enum OH_NativeBuffer_MetadataType
 ```
 
 **描述**
@@ -138,10 +129,8 @@ OH\_NativeBuffer的图像标准。
 
 ### OH\_NativeBuffer\_MetadataKey
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_NativeBuffer_MetadataKey
+```c
+enum OH_NativeBuffer_MetadataKey
 ```
 
 **描述**
@@ -155,16 +144,14 @@ PhonePC/2in1TabletTVWearable
 | 枚举项 | 描述 |
 | --- | --- |
 | OH\_HDR\_METADATA\_TYPE | 元数据类型，其值见[OH\_NativeBuffer\_MetadataType](capi-buffer-common-h.md#oh_nativebuffer_metadatatype)，size为OH\_NativeBuffer\_MetadataType大小。 |
-| OH\_HDR\_STATIC\_METADATA | 静态元数据，其值见[OH\_NativeBuffer\_StaticMetadata](api-oh-nativebuffer-oh-nativebuffer-staticmetadata.md)，size为OH\_NativeBuffer\_StaticMetadata大小。 |
+| OH\_HDR\_STATIC\_METADATA | 静态元数据，其值见[OH\_NativeBuffer\_StaticMetadata](capi-oh-nativebuffer-oh-nativebuffer-staticmetadata.md)，size为OH\_NativeBuffer\_StaticMetadata大小。 |
 | OH\_HDR\_DYNAMIC\_METADATA | 动态元数据，其值见视频流中SEI的字节流，size的取值范围为1-3000。 |
-| OH\_REGION\_OF\_INTEREST\_METADATA | 视频编解码感兴趣区域（ROI）元数据，配置格式示例：“Top1,Left1-Bottom1,Right1=QpOffset1;Top2,Left2-Bottom2,Right2=QpOffset2;”。  每个ROI框由位置信息（Top,Left-Bottom,Right），编码质量偏移信息（QpOffset）组成，到分号结束。  ROI框的编码质量偏移信息可以缺省，缺省值为-3，缺省时配置示例：“Top1,Left1-Bottom1,Right1;Top2,Left2-Bottom2,Right2;”。  每组ROI元数据最多支持同时配置6个ROI，且其累计面积不超过全图的1/5。  该枚举值仅支持通过[OH\_NativeBuffer\_SetMetadataValue()](capi-native-buffer-h.md#oh_nativebuffer_setmetadatavalue)接口调用。  **起始版本：** 22 |
+| OH\_REGION\_OF\_INTEREST\_METADATA | 感兴趣区域（ROI）元数据，用于配置视频编码的ROI特性，也包含从相机预览中获取相机系统识别的ROI信息。值类型为字符串，格式为"Top1,Left1-Bottom1,Right1[=Params1];Top2,Left2-Bottom2,Right2[=Params2];"。  每个"Top,Left-Bottom,Right"代表一个ROI的坐标信息。  "[=Params]"是可选的。 "[=Params]"的格式随版本变化：  - 在API版本26.0.0之前：仅支持单个代表量化参数偏移量的int32\_t值（例如"=QpOffset"）。  - 从API版本26.0.0开始：额外支持并推荐使用键值对（Key-Value）格式。  参数使用逗号分隔键值对（例如，"=dqp:-6,slb:1"）。支持的键包括：  - "dqp"：量化参数偏移量。  - "slb"：语义标签。该值必须与[OH\_VideoMetadataRoiSemanticLabel](capi-native-avcodec-videobase-h.md#oh_videometadataroisemanticlabel)对应。  如果完全省略"=Params"，例如"Top1,Left1-Bottom1,Right1;Top2,Left2-Bottom2,Right2=dqp:-6;"，编码器对第一个ROI使用默认参数进行编码，对第二个ROI使用指定参数进行编码。  请注意，可同时应用的ROI数量不得超过6个，且总面积不得超过图像面积的1/5，详情请参考ROI视频编码的[参数要求说明](../harmonyos-guides/video-encoding-roi.md#参数要求说明)。  **起始版本：** 22  **说明：** 从API版本26.0.0开始，推荐使用[OH\_VideoMetadata\_AppendRoiString](capi-native-avcodec-videobase-h.md#oh_videometadata_appendroistring)来安全地转化和追加ROI配置，而不是手动拼接字符串。 |
 
 ### OH\_NativeBuffer\_Format
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_NativeBuffer_Format
+```c
+enum OH_NativeBuffer_Format
 ```
 
 **描述**
@@ -228,10 +215,8 @@ API version 22之前，使用该枚举请引用native\_buffer.h头文件；从AP
 
 ### OH\_NativeBuffer\_TransformType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_NativeBuffer_TransformType
+```c
+enum OH_NativeBuffer_TransformType
 ```
 
 **描述**
@@ -260,3 +245,42 @@ API version 22之前，使用该枚举请引用native\_buffer.h头文件；从AP
 | NATIVEBUFFER\_FLIP\_V\_ROT180 | 垂直翻转并旋转180度。 |
 | NATIVEBUFFER\_FLIP\_H\_ROT270 | 水平翻转并旋转270度。 |
 | NATIVEBUFFER\_FLIP\_V\_ROT270 | 垂直翻转并旋转270度。 |
+
+### OH\_NativeBuffer\_VideoDimensionType
+
+```c
+enum OH_NativeBuffer_VideoDimensionType
+```
+
+**描述**
+
+视频维度类型枚举。
+
+**系统能力：** SystemCapability.Graphic.Graphic2D.NativeBuffer
+
+**起始版本：** 26.0.0
+
+| 枚举项 | 描述 |
+| --- | --- |
+| OH\_VIDEO\_DIM\_TYPE\_2D = 0 | 二维视频。 |
+| OH\_VIDEO\_DIM\_TYPE\_3D\_SBS | 三维视频，格式：左右排列。 |
+| OH\_VIDEO\_DIM\_TYPE\_3D\_TAB | 三维视频，格式：上下排列。 |
+| OH\_VIDEO\_DIM\_TYPE\_BUTT | 无效视频维度类型。 |
+
+### OH\_NativeBuffer\_3D\_MetadataKey
+
+```c
+enum OH_NativeBuffer_3D_MetadataKey
+```
+
+**描述**
+
+NativeBuffer的3D元数据属性枚举。
+
+**系统能力：** SystemCapability.Graphic.Graphic2D.NativeBuffer
+
+**起始版本：** 26.0.0
+
+| 枚举项 | 描述 |
+| --- | --- |
+| OH\_VIDEO\_DIM\_TYPE | NativeBuffer视频维度类型，具体取值范围可见[OH\_NativeBuffer\_VideoDimensionType](capi-buffer-common-h.md#oh_nativebuffer_videodimensiontype)。 |

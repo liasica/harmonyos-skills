@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-memory-opt
 title: 应用内存占用优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 资源与存储优化 > 应用内存占用优化
 category: best-practices
-scraped_at: 2026-04-29T14:13:37+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:c9d645e9d0db25206f695e5c6141e3dc09adf4c999c2c8a6558cd25dbf8a59f9
+scraped_at: 2026-09-02T15:03:22+08:00
+doc_updated_at: 2026-05-18
+content_hash: sha256:d571637710ca7e9c5615f67cfaae30acd9595ab2dad65680688f33bf1fade21c
 ---
 
 ## 概述
@@ -41,7 +41,7 @@ MemoryLevel分为 MEMORY\_LEVEL\_MODERATE、MEMORY\_LEVEL\_LOW 和 MEMORY\_LEVEL
 | MEMORY\_LEVEL\_LOW | 1 | 系统内存不足。此时应释放不必要的资源以提升系统性能。 |
 | MEMORY\_LEVEL\_CRITICAL | 2 | 系统内存不足。此时应立即释放所有不必要的资源，因为系统可能会终止所有缓存中的进程，并且开始终止应当保持运行的进程，例如后台服务。 |
 
-说明
+**说明** 
 
 后台已冻结的应用，AbilityStage、UIAbility和EnvironmentCallback的onMemoryLevel()不可回调。
 
@@ -56,7 +56,7 @@ LRUCache`是 ArkTS 中常用的缓存工具，基于 LRU 算法实现。它主�
 LRUCache通过LinkedHashMap来实现LRU。LinkedHashMap继承于HashMap，HashMap用于快速查找数据，LinkedHashMap双向链表用于记录数据的顺序关系。因此，对于get()、put()、remove()等操作，LinkedHashMap除了包含HashMap的功能，还需要实现调整Entry顺序链表的工作。其数据结构如下图所示：
 
 **图1** LRUCache的LinkedHashMap数据结构图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/RJ8ihJMcS_OU-PafawN2pA/zh-cn_image_0000002193852104.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/NcF9AmW5SZ2XSpXFObiiUg/zh-cn_image_0000002193852104.png "点击放大")
 
 LruCache中将LinkedHashMap的顺序设置为LRU顺序，链表头部的对象为近期最少用到的对象。常用的方法及其说明如下所示：
 
@@ -69,150 +69,144 @@ LruCache中将LinkedHashMap的顺序设置为LRU顺序，链表头部的对象�
 
 设计缓存工具类，包含LRUCache单例及操作LRUCache的方法，如添加、获取、删除数据。通过静态方法获取LRUCache实例，确保全局唯一。缓存工具类支持各组件间共享缓存数据，避免重复创建实例和数据冗余，提高系统性能和效率，减少内存占用，提升数据访问速度。
 
+```typescript
+import { util } from '@kit.ArkTS';
+
+export class LRUCacheUtil {
+  private static instance: LRUCacheUtil;
+  private lruCache: util.LRUCache<string, Object>;
+
+  private constructor() {
+    this.lruCache = new util.LRUCache(64);
+  }
+
+  // Get the singleton of LRUCacheUtil
+  public static getInstance(): LRUCacheUtil {
+    if (!LRUCacheUtil.instance) {
+      LRUCacheUtil.instance = new LRUCacheUtil();
+    }
+    return LRUCacheUtil.instance;
+  }
+
+  // Determine whether the lruCache cache is empty
+  public isEmpty(): boolean {
+    return this.lruCache.isEmpty();
+  }
+
+  // Get the capacity of lruCache
+  public getCapacity(): number {
+    return this.lruCache.getCapacity();
+  }
+
+  // Reset the capacity of lruCache
+  public updateCapacity(newCapacity: number): void {
+    this.lruCache.updateCapacity(newCapacity);
+  }
+
+  // Add cache to lruCache
+  public putCache(key: string, value: Object): void {
+    this.lruCache.put(key, value);
+  }
+
+  // Delete the cache corresponding to the key
+  public remove(key: string): void {
+    this.lruCache.remove(key);
+  }
+
+  // Get the cache corresponding to the key
+  public getCache(key: string): Object | undefined {
+    return this.lruCache.get(key);
+  }
+
+  // Determine whether the cache corresponding to the key is included.
+  public contains(key: string): boolean {
+    return this.lruCache.contains(key);
+  }
+
+  // Clear the cached data and reset the size of lruCache
+  public clearCache(): void {
+    this.lruCache.clear();
+    this.lruCache.updateCapacity(64);
+  }
+}
 ```
-1. import { util } from '@kit.ArkTS';
-
-3. export class LRUCacheUtil {
-4. private static instance: LRUCacheUtil;
-5. private lruCache: util.LRUCache<string, Object>;
-
-7. private constructor() {
-8. this.lruCache = new util.LRUCache(64);
-9. }
-
-11. // Get the singleton of LRUCacheUtil
-12. public static getInstance(): LRUCacheUtil {
-13. if (!LRUCacheUtil.instance) {
-14. LRUCacheUtil.instance = new LRUCacheUtil();
-15. }
-16. return LRUCacheUtil.instance;
-17. }
-
-19. // Determine whether the lruCache cache is empty
-20. public isEmpty(): boolean {
-21. return this.lruCache.isEmpty();
-22. }
-
-24. // Get the capacity of lruCache
-25. public getCapacity(): number {
-26. return this.lruCache.getCapacity();
-27. }
-
-29. // Reset the capacity of lruCache
-30. public updateCapacity(newCapacity: number): void {
-31. this.lruCache.updateCapacity(newCapacity);
-32. }
-
-34. // Add cache to lruCache
-35. public putCache(key: string, value: Object): void {
-36. this.lruCache.put(key, value);
-37. }
-
-39. // Delete the cache corresponding to the key
-40. public remove(key: string): void {
-41. this.lruCache.remove(key);
-42. }
-
-44. // Get the cache corresponding to the key
-45. public getCache(key: string): Object | undefined {
-46. return this.lruCache.get(key);
-47. }
-
-49. // Determine whether the cache corresponding to the key is included.
-50. public contains(key: string): boolean {
-51. return this.lruCache.contains(key);
-52. }
-
-54. // Clear the cached data and reset the size of lruCache
-55. public clearCache(): void {
-56. this.lruCache.clear();
-57. this.lruCache.updateCapacity(64);
-58. }
-59. }
-```
-
-[LRUCacheUtil.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/OptimizationAppMemoryUsage/entry/src/main/ets/utils/LRUCacheUtil.ets#L2-L60)
 
 在对应的组件中设置缓存，示例代码如下所示：
 
+```typescript
+import { LRUCacheUtil } from '../utils/LRUCacheUtil';
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
+
+  aboutToAppear(): void {
+    const lruCache: LRUCacheUtil = LRUCacheUtil.getInstance();
+    // Add a <key, value> to lrucache
+    lruCache.putCache('nation',10);
+    // Add another <key, value> to lrucache
+    lruCache.putCache('menu',8);
+    // Query value through key
+    const result0: number = lruCache.getCache('2') as number;
+    console.log('result0:' + result0);
+    // Delete the specified key and its associated values from the current buffer
+    lruCache.remove('2');
+    // Check whether the current buffer contains the specified object
+    const result2: boolean = lruCache.contains('1');
+    console.log('result2:' + result2);
+    // Set a new capacity size
+    lruCache.updateCapacity(110);
+  }
+
+  build() {
+    Row() {
+      Column() {
+        Text(this.message)
+          .fontSize(50)
+          .fontWeight(FontWeight.Bold)
+        Column() {
+          Image($r('app.media.image'))
+            .width("500px")
+            .height("500px")
+        }
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-1. import { LRUCacheUtil } from '../utils/LRUCacheUtil';
-
-3. @Entry
-4. @Component
-5. struct Index {
-6. @State message: string = 'Hello World';
-
-8. aboutToAppear(): void {
-9. const lruCache: LRUCacheUtil = LRUCacheUtil.getInstance();
-10. // Add a <key, value> to lrucache
-11. lruCache.putCache('nation',10);
-12. // Add another <key, value> to lrucache
-13. lruCache.putCache('menu',8);
-14. // Query value through key
-15. const result0: number = lruCache.getCache('2') as number;
-16. console.log('result0:' + result0);
-17. // Delete the specified key and its associated values from the current buffer
-18. lruCache.remove('2');
-19. // Check whether the current buffer contains the specified object
-20. const result2: boolean = lruCache.contains('1');
-21. console.log('result2:' + result2);
-22. // Set a new capacity size
-23. lruCache.updateCapacity(110);
-24. }
-
-27. build() {
-28. Row() {
-29. Column() {
-30. Text(this.message)
-31. .fontSize(50)
-32. .fontWeight(FontWeight.Bold)
-33. Column() {
-34. Image($r('app.media.image'))
-35. .width("500px")
-36. .height("500px")
-37. }
-38. }
-39. .width('100%')
-40. }
-41. .height('100%')
-42. }
-43. }
-```
-
-[Demo.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/OptimizationAppMemoryUsage/entry/src/main/ets/pages/Demo.ets#L2-L46)
 
 可以通过onMemoryLevel()监听内存变化，设置对应清理缓存的机制。示例代码如下：
 
+```typescript
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { window } from '@kit.ArkUI';
+import { LRUCacheUtil } from '../utils/LRUCacheUtil';
+
+export default class EntryAbility extends UIAbility {
+  // Monitor the changes in memory
+  onMemoryLevel(level: AbilityConstant.MemoryLevel): void {
+    // Execute memory management policies according to changes in memory
+    if (level === AbilityConstant.MemoryLevel.MEMORY_LEVEL_CRITICAL) {
+      console.log('The memory of device is critical, release memory.');
+      if (!LRUCacheUtil.getInstance().isEmpty()) {
+        LRUCacheUtil.getInstance().clearCache();
+      }
+    }
+  }
+
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+  }
+
+  onDestroy(): void {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
+  }
+};
 ```
-1. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { window } from '@kit.ArkUI';
-4. import { LRUCacheUtil } from '../utils/LRUCacheUtil';
-
-6. export default class EntryAbility extends UIAbility {
-7. // Monitor the changes in memory
-8. onMemoryLevel(level: AbilityConstant.MemoryLevel): void {
-9. // Execute memory management policies according to changes in memory
-10. if (level === AbilityConstant.MemoryLevel.MEMORY_LEVEL_CRITICAL) {
-11. console.log('The memory of device is critical, release memory.');
-12. if (!LRUCacheUtil.getInstance().isEmpty()) {
-13. LRUCacheUtil.getInstance().clearCache();
-14. }
-15. }
-16. }
-
-18. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-19. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-20. }
-
-22. onDestroy(): void {
-23. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
-24. }
-25. };
-```
-
-[EntryAbility.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/OptimizationAppMemoryUsage/entry/src/main/ets/entryability/EntryAbility.ets#L2-L26)
 
 ## 使用生命周期管理优化ArkTS内存
 
@@ -231,163 +225,161 @@ LruCache中将LinkedHashMap的顺序设置为LRU顺序，链表头部的对象�
 
 aboutToDisappear函数会在组件销毁前执行。如下示例所示，在完成网络管理的网络连接模块使用后，取消订阅默认网络状态变化的通知。
 
+```screen
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { Logger } from '../utils/Logger';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@Component
+struct Index {
+  @State networkId: string = '123';
+  @State netMessage: string = '初始化网络成功';
+  @State connectionMessage: string = '链接成功';
+  @State netStateMessage: string = '';
+  @State hostName: string = '';
+  @State ip: string = '';
+  private netCon: connection.NetConnection | null = null;
+  scroller: Scroller = new Scroller();
+
+  aboutToDisappear(): void {
+    // unregister NetConnection
+    this.unUseNetworkRegister();
+  }
+
+  build() {
+    Column() {
+      Text('Hello Word')
+        .fontSize(20)
+        .fontWeight(FontWeight.Bold)
+        .textAlign(TextAlign.Start)
+        .margin({ left: 10 })
+        .width(100)
+
+      Column() {
+        Row() {
+          Text('Title')
+            .fontSize(16)
+            .margin(20)
+            .fontWeight(FontWeight.Medium)
+          Blank()
+          Toggle({ type: ToggleType.Switch, isOn: false })
+            .selectedColor(Color.Blue)
+            .margin({ right: 20 })
+            .width(20)
+            .height(100)
+            .onChange((isOn) => {
+              if (isOn) {
+                this.useNetworkRegister();
+              } else {
+                this.unUseNetworkRegister();
+              }
+            })
+        }
+        .height(100)
+        .borderRadius(10)
+        .margin({ left: 10, right: 10 })
+        .width(200)
+        .backgroundColor(Color.Black)
+
+        TextArea({ text: this.netStateMessage })
+          .fontSize(16)
+          .width(200)
+          .height(100)
+          .margin(10)
+          .borderRadius(10)
+          .textAlign(TextAlign.Start)
+          .focusOnTouch(false)
+
+        Button('Clear')
+          .fontSize(18)
+          .width(200)
+          .height(40)
+          .margin({
+            left: 10,
+            right: 10,
+            bottom: 10
+          })
+          .onClick(() => {
+            this.netStateMessage = '';
+          })
+        Blank()
+      }
+      .height(100)
+      .justifyContent(FlexAlign.Start)
+    }
+    .width(200)
+  }
+
+  getConnectionProperties(): void {
+    connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+      connection.getConnectionProperties(netHandle, (error: BusinessError, connectionProperties: connection.ConnectionProperties) => {
+        if (error) {
+          this.connectionMessage = '连接错误';
+          Logger.error('getConnectionProperties error:' + error.code + error.message);
+          return;
+        }
+        this.connectionMessage = '连接' + connectionProperties.interfaceName
+          + 'developer.huawei.com' + connectionProperties.domains
+          + '/cn' + JSON.stringify(connectionProperties.linkAddresses)
+          + '/doc' + JSON.stringify(connectionProperties.routes)
+          + '/best-practices' + JSON.stringify(connectionProperties.dnses)
+          + 'btpa-memory-optimization' + connectionProperties.mtu + '\n';
+      })
+    }).catch((error: BusinessError) => {
+      hilog.info(0xFF00, 'testTag', '%{public}s', 'getConnectionProperties fail');
+    });
+  }
+
+  useNetworkRegister(): void {
+    this.netCon = connection.createNetConnection();
+    this.netStateMessage += '连接';
+    this.netCon.register((error) => {
+      if (error) {
+        Logger.error('register error:' + error.message);
+        return;
+      }
+      this.getUIContext().getPromptAction().showToast({
+        message: '连接成功',
+        duration: 1000
+      });
+    })
+    this.netCon.on('netAvailable', (netHandle) => {
+      this.netStateMessage += '连接' + netHandle.netId + '\n';
+    })
+    this.netCon.on('netBlockStatusChange', (data) => {
+      this.netStateMessage += '更换' + data.netHandle.netId + '\n';
+    })
+    this.netCon.on('netCapabilitiesChange', (data) => {
+      this.netStateMessage += 'id' + data.netHandle.netId
+        + 'cap' + JSON.stringify(data.netCap) + '\n';
+    })
+    this.netCon.on('netConnectionPropertiesChange', (data) => {
+      this.netStateMessage += 'id' + data.netHandle.netId
+        + 'propertis' + JSON.stringify(data.connectionProperties) + '\n';
+    })
+  }
+
+  unUseNetworkRegister(): void {
+    if (this.netCon) {
+      this.netCon.unregister((error: BusinessError) => {
+        if (error) {
+          Logger.error('unregister error:' + error.message);
+          return;
+        }
+        this.getUIContext().getPromptAction().showToast({
+          message: 'message',
+          duration: 1000
+        });
+        this.netStateMessage += 'listener';
+      })
+    } else {
+      this.netStateMessage += 'listener_fail';
+    }
+  }
+}
 ```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { Logger } from '../utils/Logger';
-4. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-6. @Entry
-7. @Component
-8. struct Index {
-9. @State networkId: string = '123';
-10. @State netMessage: string = '初始化网络成功';
-11. @State connectionMessage: string = '链接成功';
-12. @State netStateMessage: string = '';
-13. @State hostName: string = '';
-14. @State ip: string = '';
-15. private netCon: connection.NetConnection | null = null;
-16. scroller: Scroller = new Scroller();
-
-18. aboutToDisappear(): void {
-19. // unregister NetConnection
-20. this.unUseNetworkRegister;
-21. }
-
-23. build() {
-24. Column() {
-25. Text('Hello Word')
-26. .fontSize(20)
-27. .fontWeight(FontWeight.Bold)
-28. .textAlign(TextAlign.Start)
-29. .margin({ left: 10 })
-30. .width(100)
-
-32. Column() {
-33. Row() {
-34. Text('Title')
-35. .fontSize(16)
-36. .margin(20)
-37. .fontWeight(FontWeight.Medium)
-38. Blank()
-39. Toggle({ type: ToggleType.Switch, isOn: false })
-40. .selectedColor(Color.Blue)
-41. .margin({ right: 20 })
-42. .width(20)
-43. .height(100)
-44. .onChange((isOn) => {
-45. if (isOn) {
-46. this.useNetworkRegister();
-47. } else {
-48. this.unUseNetworkRegister();
-49. }
-50. })
-51. }
-52. .height(100)
-53. .borderRadius(10)
-54. .margin({ left: 10, right: 10 })
-55. .width(200)
-56. .backgroundColor(Color.Black)
-
-58. TextArea({ text: this.netStateMessage })
-59. .fontSize(16)
-60. .width(200)
-61. .height(100)
-62. .margin(10)
-63. .borderRadius(10)
-64. .textAlign(TextAlign.Start)
-65. .focusOnTouch(false)
-
-67. Button('Clear')
-68. .fontSize(18)
-69. .width(200)
-70. .height(40)
-71. .margin({
-72. left: 10,
-73. right: 10,
-74. bottom: 10
-75. })
-76. .onClick(() => {
-77. this.netStateMessage = '';
-78. })
-79. Blank()
-80. }
-81. .height(100)
-82. .justifyContent(FlexAlign.Start)
-83. }
-84. .width(200)
-85. }
-
-87. getConnectionProperties(): void {
-88. connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
-89. connection.getConnectionProperties(netHandle, (error: BusinessError, connectionProperties: connection.ConnectionProperties) => {
-90. if (error) {
-91. this.connectionMessage = '连接错误';
-92. Logger.error('getConnectionProperties error:' + error.code + error.message);
-93. return;
-94. }
-95. this.connectionMessage = '连接' + connectionProperties.interfaceName
-96. + 'developer.huawei.com' + connectionProperties.domains
-97. + '/cn' + JSON.stringify(connectionProperties.linkAddresses)
-98. + '/doc' + JSON.stringify(connectionProperties.routes)
-99. + '/best-practices' + JSON.stringify(connectionProperties.dnses)
-100. + 'btpa-memory-optimization' + connectionProperties.mtu + '\n';
-101. })
-102. }).catch((error: BusinessError) => {
-103. hilog.info(0xFF00, 'testTag', '%{public}s', 'getConnectionProperties fail');
-104. });
-105. }
-
-107. useNetworkRegister(): void {
-108. this.netCon = connection.createNetConnection();
-109. this.netStateMessage += '连接';
-110. this.netCon.register((error) => {
-111. if (error) {
-112. Logger.error('register error:' + error.message);
-113. return;
-114. }
-115. this.getUIContext().getPromptAction().showToast({
-116. message: '连接成功',
-117. duration: 1000
-118. });
-119. })
-120. this.netCon.on('netAvailable', (netHandle) => {
-121. this.netStateMessage += '连接' + netHandle.netId + '\n';
-122. })
-123. this.netCon.on('netBlockStatusChange', (data) => {
-124. this.netStateMessage += '更换' + data.netHandle.netId + '\n';
-125. })
-126. this.netCon.on('netCapabilitiesChange', (data) => {
-127. this.netStateMessage += 'id' + data.netHandle.netId
-128. + 'cap' + JSON.stringify(data.netCap) + '\n';
-129. })
-130. this.netCon.on('netConnectionPropertiesChange', (data) => {
-131. this.netStateMessage += 'id' + data.netHandle.netId
-132. + 'propertis' + JSON.stringify(data.connectionProperties) + '\n';
-133. })
-134. }
-
-136. unUseNetworkRegister(): void {
-137. if (this.netCon) {
-138. this.netCon.unregister((error: BusinessError) => {
-139. if (error) {
-140. Logger.error('unregister error:' + error.message);
-141. return;
-142. }
-143. this.getUIContext().getPromptAction().showToast({
-144. message: 'message',
-145. duration: 1000
-146. });
-147. this.netStateMessage += 'listener';
-148. })
-149. } else {
-150. this.netStateMessage += 'listener_fail';
-151. }
-152. }
-153. }
-```
-
-[Index.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/OptimizationAppMemoryUsage/entry/src/main/ets/pages/Index.ets#L2-L154)
 
 ## 使用purgeable优化C++内存
 
@@ -398,33 +390,31 @@ aboutToDisappear函数会在组件销毁前执行。如下示例所示，在完�
 访问Purgeable内存的流程如下图所示。首先，判断Purgeable内存的数据是否已被回收。如果已回收，需重建数据。访问Purgeable内存时，其引用计数refcnt加1；访问结束后，refcnt减1。当refcnt为0时，Purgeable内存可被系统回收。
 
 **图2** Purgeable内存访问流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/xaj2uNTxRJOpWel9YudbmQ/zh-cn_image_0000002229451973.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/FrNLUbheSwKbzXCRDj9LuA/zh-cn_image_0000002229451973.png)
 
 Purgeable内存回收流程图如下所示。当引用计数为0时，丢弃Purgeable内存中的数据，并标记为已回收。
 
 **图3** Purgeable内存回收流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/148aUqtTRs2VnmpgbNFRTQ/zh-cn_image_0000002194011688.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/ffCYPUzTRu2jOx47Cnm7yw/zh-cn_image_0000002194011688.png)
 
 ### 参考案例
 
 在CMakeLists.txt文件中引入Purgeable对应的动态链接库libpurgeable\_memory\_ndk.z.so，具体如下所示：
 
+```screen
+# the minimum version of CMake.
+cmake_minimum_required(VERSION 3.4.1)
+project(MyNativeApplication)
+set(NATIVERENDER_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR})
+if(DEFINED PACKAGE_FIND_FILE)
+    include(${PACKAGE_FIND_FILE})
+endif()
+include_directories(${NATIVERENDER_ROOT_PATH}
+                    ${NATIVERENDER_ROOT_PATH}/include)
+add_library(entry SHARED napi_init.cpp)
+# Introduce libpurgeable_memory_ndk.z.so dynamic link library.
+target_link_libraries(entry PUBLIC libace_napi.z.so libpurgeable_memory_ndk.z.so)
 ```
-1. # the minimum version of CMake.
-2. cmake_minimum_required(VERSION 3.4.1)
-3. project(MyNativeApplication)
-4. set(NATIVERENDER_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR})
-5. if(DEFINED PACKAGE_FIND_FILE)
-6. include(${PACKAGE_FIND_FILE})
-7. endif()
-8. include_directories(${NATIVERENDER_ROOT_PATH}
-9. ${NATIVERENDER_ROOT_PATH}/include)
-10. add_library(entry SHARED napi_init.cpp)
-11. # Introduce libpurgeable_memory_ndk.z.so dynamic link library.
-12. target_link_libraries(entry PUBLIC libace_napi.z.so libpurgeable_memory_ndk.z.so)
-```
-
-[CMakeLists.txt](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/OptimizationAppMemoryUsage/entry/src/main/ets/cpps/CMakeLists.txt#L2-L13)
 
 引入purgeable\_memory头文件，声明ModifyFunc函数，调用OH\_PurgeableMemory\_Create创建PurgeableMemory对象。
 
@@ -432,84 +422,82 @@ Purgeable内存回收流程图如下所示。当引用计数为0时，丢弃Purg
 
 在修改PurgeableMemory对象的内容时，需要调用OH\_PurgeableMemory\_BeginWrite，修改完成后，需要调用OH\_PurgeableMemory\_EndWrite。其中，OH\_PurgeableMemory\_AppendModify可以更新PurgeableMemory对象重建规则。
 
+```cpp
+#include "napi/native_api.h"
+#define DATASIZE (4 * 1024 * 1024)
+#include "purgeable_memory/purgeable_memory.h"
+
+bool ModifyFunc(void *data, size_t size, void *param) {
+    data = param;
+    return true;
+}
+// Business definition object type
+class ReqObj;
+static napi_value Add(napi_env env, napi_callback_info info)
+{
+    size_t requireArgc = 2;
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args , nullptr, nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+    napi_valuetype valuetype1;
+    napi_typeof(env, args[1], &valuetype1);
+    double value0;
+    napi_get_value_double(env, args[0], &value0);
+    double value1;
+    napi_get_value_double(env, args[1], &value1);
+    double result = value0 + value1;
+    // Create a PurgeableMemory object
+    OH_PurgeableMemory *pPurgmem = OH_PurgeableMemory_Create(DATASIZE, ModifyFunc, &result);
+    // Read the object
+    OH_PurgeableMemory_BeginRead(pPurgmem);
+    // Get the size of PurgeableMemory object
+    size_t size = OH_PurgeableMemory_ContentSize(pPurgmem);
+    // Get the content of the PurgeableMemory object
+    ReqObj *pReqObj = (ReqObj *)OH_PurgeableMemory_GetContent(pPurgmem);
+    // Read the end of the PurgeableMemory object
+    OH_PurgeableMemory_EndRead(pPurgmem);
+    
+    // Modify the PurgeableMemory object
+    OH_PurgeableMemory_BeginWrite(pPurgmem);
+    // Declare the parameters of the extended creation function
+    double newResult = value0 + value0;
+    // Update PurgeableMemory object reconstruction rules
+    OH_PurgeableMemory_AppendModify(pPurgmem, ModifyFunc, &newResult);
+    // End of modifying the PurgeableMemory object
+    OH_PurgeableMemory_EndWrite(pPurgmem);
+    // Destroyed object
+    OH_PurgeableMemory_Destroy(pPurgmem);
+    napi_value sum;
+    napi_create_double(env, result, &sum);
+    return sum;
+}
+EXTERN_C_START
+static napi_value Init(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {
+        { "add", nullptr, Add, nullptr, nullptr, nullptr, napi_default, nullptr }
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    return exports;
+}
+EXTERN_C_END
+
+static napi_module demoModule = {
+    .nm_version = 1,
+    .nm_flags = 0,
+    .nm_filename = nullptr,
+    .nm_register_func = Init,
+    .nm_modname = "entry",
+    .nm_priv = ((void*)0),
+    .reserved = { 0 },
+};
+extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
+{
+    napi_module_register(&demoModule);
+}
 ```
-1. #include "napi/native_api.h"
-2. #define DATASIZE (4 * 1024 * 1024)
-3. #include "purgeable_memory/purgeable_memory.h"
-
-5. bool ModifyFunc(void *data, size_t size, void *param) {
-6. data = param;
-7. return true;
-8. }
-9. // Business definition object type
-10. class ReqObj;
-11. static napi_value Add(napi_env env, napi_callback_info info)
-12. {
-13. size_t requireArgc = 2;
-14. size_t argc = 2;
-15. napi_value args[2] = {nullptr};
-16. napi_get_cb_info(env, info, &argc, args , nullptr, nullptr);
-17. napi_valuetype valuetype0;
-18. napi_typeof(env, args[0], &valuetype0);
-19. napi_valuetype valuetype1;
-20. napi_typeof(env, args[1], &valuetype1);
-21. double value0;
-22. napi_get_value_double(env, args[0], &value0);
-23. double value1;
-24. napi_get_value_double(env, args[1], &value1);
-25. double result = value0 + value1;
-26. // Create a PurgeableMemory object
-27. OH_PurgeableMemory *pPurgmem = OH_PurgeableMemory_Create(DATASIZE, ModifyFunc, &result);
-28. // Read the object
-29. OH_PurgeableMemory_BeginRead(pPurgmem);
-30. // Get the size of PurgeableMemory object
-31. size_t size = OH_PurgeableMemory_ContentSize(pPurgmem);
-32. // Get the content of the PurgeableMemory object
-33. ReqObj *pReqObj = (ReqObj *)OH_PurgeableMemory_GetContent(pPurgmem);
-34. // Read the end of the PurgeableMemory object
-35. OH_PurgeableMemory_EndRead(pPurgmem);
-
-37. // Modify the PurgeableMemory object
-38. OH_PurgeableMemory_BeginWrite(pPurgmem);
-39. // Declare the parameters of the extended creation function
-40. double newResult = value0 + value0;
-41. // Update PurgeableMemory object reconstruction rules
-42. OH_PurgeableMemory_AppendModify(pPurgmem, ModifyFunc, &newResult);
-43. // End of modifying the PurgeableMemory object
-44. OH_PurgeableMemory_EndWrite(pPurgmem);
-45. // Destroyed object
-46. OH_PurgeableMemory_Destroy(pPurgmem);
-47. napi_value sum;
-48. napi_create_double(env, result, &sum);
-49. return sum;
-50. }
-51. EXTERN_C_START
-52. static napi_value Init(napi_env env, napi_value exports)
-53. {
-54. napi_property_descriptor desc[] = {
-55. { "add", nullptr, Add, nullptr, nullptr, nullptr, napi_default, nullptr }
-56. };
-57. napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
-58. return exports;
-59. }
-60. EXTERN_C_END
-
-62. static napi_module demoModule = {
-63. .nm_version = 1,
-64. .nm_flags = 0,
-65. .nm_filename = nullptr,
-66. .nm_register_func = Init,
-67. .nm_modname = "entry",
-68. .nm_priv = ((void*)0),
-69. .reserved = { 0 },
-70. };
-71. extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
-72. {
-73. napi_module_register(&demoModule);
-74. }
-```
-
-[AddCpp.cpp](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/OptimizationAppMemoryUsage/entry/src/main/ets/cpps/AddCpp.cpp#L2-L75)
 
 ## 使用合理尺寸的图片优化应用内存
 
@@ -519,7 +507,7 @@ Purgeable内存回收流程图如下所示。当引用计数为0时，丢弃Purg
 
 一张全屏的图片，不同分辨率的内存占用大小如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/OttRW19VRXe-XuK8TgHLkQ/zh-cn_image_0000002193852108.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/dhpmorSRTsS1qCz8lQX6bg/zh-cn_image_0000002193852108.png "点击放大")
 
 由上图可以看出，对于页面多、图片多、效果丰富的资源密集型应用，内存容易达到较高水平。当应用的内存占用超过系统设定的阈值（例如4GB，不同系统的阈值可能不同）时，系统可能会认为应用存在严重的内存问题，并可能强制终止该应用进程，以保证设备系统的稳定性和性能。为了避免应用被系统终止，开发者可以考虑以下两点：
 
@@ -530,15 +518,13 @@ Purgeable内存回收流程图如下所示。当引用计数为0时，丢弃Purg
 
 ### 避免加载超过显示尺寸的图片
 
+```screen
+Column() {
+  Image($r('app.media.image'))
+    .width("500px")
+    .height("500px")
+}
 ```
-1. Column() {
-2. Image($r('app.media.image'))
-3. .width("500px")
-4. .height("500px")
-5. }
-```
-
-[Demo.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/OptimizationAppMemoryUsage/entry/src/main/ets/pages/Demo.ets#L35-L39)
 
 使用500×500尺寸的Image组件加载一张4032×3024的RGBA格式图片时，图片申请了约46.5 MB的内存。这是因为图片原始尺寸较大，加载到Image组件中时需要缩放到500×500尺寸，这个过程会占用一定的内存。
 
@@ -546,7 +532,7 @@ Purgeable内存回收流程图如下所示。当引用计数为0时，丢弃Purg
 
 组件实际需要的尺寸为500\*500，所需内存约为1M。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/sbAnLLDcSnmvemCYT_vCIQ/zh-cn_image_0000002194011684.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/Ru7OHUU6S3mzlqPqVEnLGQ/zh-cn_image_0000002194011684.png "点击放大")
 
 当图片尺寸超过控件显示区域时，图片会被裁剪或缩放。频繁的裁剪和缩放不仅会降低视图效果，还会浪费内存，增加功耗。为了节省内存，开发者可以手动调整源文件的尺寸，使其与组件大小一致。这样可以避免不必要的内存浪费，并提高应用程序的性能和效率。开发者可以使用图像处理工具来调整图像尺寸，进一步节省内存空间。
 

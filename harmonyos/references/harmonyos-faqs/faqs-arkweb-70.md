@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-70
 title: Web组件加载发生错误对应错误码如何获取
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web组件加载发生错误对应错误码如何获取
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:45+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:53+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:4d0bc77b315eecdb71b9e112fae26770538dbc8a4bad6d14b5e77f038e656a61
 ---
 

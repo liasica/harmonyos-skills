@@ -3,20 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm
 title: JSVM_CompileOptions
 breadcrumb: API参考 > 公共基础能力 > C API > 结构体 > JSVM_CompileOptions
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:25+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:84b4f68504a199d5ecd6b1d7bd859341955a64790a61ffb650cf76142d3a554e
+scraped_at: 2026-09-02T15:03:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6f78e4ce599ba7a9e9035736ceab30751914476709fb5179c92491ce323b35d1
 ---
 
-```
-1. typedef struct {...} JSVM_CompileOptions
+```c
+typedef struct {...} JSVM_CompileOptions
 ```
 
 ## 概述
 
-PhonePC/2in1TabletWearable
-
 配合[OH\_JSVM\_CompileScriptWithOptions](capi-jsvm-h.md#oh_jsvm_compilescriptwithoptions)接口使用，是其参数中options数组的元素类型。
+
+**使用场景：** 当需要对JS脚本进行自定义编译配置时使用，例如设置编译优化级别、启用调试信息、配置模块解析策略等场景。
+
+**系统能力：** SystemCapability.ArkCompiler.JSVM
 
 **起始版本：** 12
 
@@ -26,11 +28,7 @@ PhonePC/2in1TabletWearable
 
 ## 汇总
 
-PhonePC/2in1TabletWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletWearable
 
 | 名称 | 描述 |
 | --- | --- |

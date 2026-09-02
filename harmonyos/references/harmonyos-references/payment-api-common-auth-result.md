@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-a
 title: 实名信息授权结果查询
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 通用接口 > 实名信息验证与授权 > 实名信息授权结果查询
 category: harmonyos-references
-scraped_at: 2026-04-29T14:08:53+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:ac82e75b19de0b0265122f06fcccda25f0fbbdcd459d72131a7a57a96a0e65e7
+scraped_at: 2026-09-02T14:53:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c94e52dc47e4057a2cb8e84cde2ed145b716ce3a21751af442c9f7dd445e63d5
 ---
 
 ## 功能介绍
@@ -45,15 +45,15 @@ content_hash: sha256:ac82e75b19de0b0265122f06fcccda25f0fbbdcd459d72131a7a57a96a0
 
 ## 请求示例
 
-```
-1. POST /api/v1/realname/auth/result HTTP/1.1
-2. Content-Type: application/json;charset=UTF-8
-3. PayDevAuth: {"clientId":"10132120***","accessToken":"DQEBALZh0tlSKKiNDJ9lYYg0Du0EB3E6PvcGlFsyB*******************XR+k2EX8ry1IGdDUZG1PjfcWQ94xnK7w3ag==","traceId":"202305151026422776499","time":1684117602555, "developerSignKeyId":"76e5ee072756417a829201fa********************f9a292d23ca949202c3dac548120", "petalpaySignKeyId":"DEVELOPER_SIGN_EB48251AC36***", "headerSign":"u+H3F14Oe3fS34d32S9mGCES89XA7tSjp8+********************lOGS7eADFfw2E45WJu52vY5Ku4KGcSCnSeE6DiKs=", "bodySign":"y3DFDtDLXDBqDoItDgHmFJ343H57LKH6U5G7F/*******************asPj10iDUIFeHaszDFHpiHRT23LGHaxvHJKta6J5UxIUmApL+wGdV/juGEvQ="}
-4. Accept: application/json
-5. {
-6. "realNameAuthId": "453423423***",
-7. "openId": "88e9eae22447d7a138357cbf0af2d9a3a84819ec18419631c*******************2b9cc4e33ad29e2048318b47ec98be41cecdd4e153e6216a6bd60851"
-8. }
+```json
+POST /api/v1/realname/auth/result HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+PayDevAuth: {"clientId":"10132120***","accessToken":"DQEBALZh0tlSKKiNDJ9lYYg0Du0EB3E6PvcGlFsyB*******************XR+k2EX8ry1IGdDUZG1PjfcWQ94xnK7w3ag==","traceId":"202305151026422776499","time":1684117602555, "developerSignKeyId":"76e5ee072756417a829201fa********************f9a292d23ca949202c3dac548120", "petalpaySignKeyId":"DEVELOPER_SIGN_EB48251AC36***", "headerSign":"u+H3F14Oe3fS34d32S9mGCES89XA7tSjp8+********************lOGS7eADFfw2E45WJu52vY5Ku4KGcSCnSeE6DiKs=", "bodySign":"y3DFDtDLXDBqDoItDgHmFJ343H57LKH6U5G7F/*******************asPj10iDUIFeHaszDFHpiHRT23LGHaxvHJKta6J5UxIUmApL+wGdV/juGEvQ="}
+Accept: application/json
+{
+  "realNameAuthId": "453423423***",
+  "openId": "88e9eae22447d7a138357cbf0af2d9a3a84819ec18419631c*******************2b9cc4e33ad29e2048318b47ec98be41cecdd4e153e6216a6bd60851"
+}
 ```
 
 ## 响应参数
@@ -79,17 +79,17 @@ content_hash: sha256:ac82e75b19de0b0265122f06fcccda25f0fbbdcd459d72131a7a57a96a0
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json; charset=UTF-8
-3. {
-4. "resultCode": "000000",
-5. "resultDesc": "Success.",
-6. "sign": "MEQCIEIWzdpziRyTi8vhwWHFu********************0YAMabeCgTDG77e+2XJItvq/ZkIcCN5/B20pQ==",
-7. "credentialType": "01",
-8. "credentialIdNo": "a27aad63294be3fbb164e3d3d4634956cc6dc7427860*******************87798851b9fcd0f828ba78cfd99bf3d64bfa83815659e989f50d537",
-9. "realName": "a24374f8658456db7a20cb73001f28f886c31232097bda8*******************ecbb12eb7db7edb57c507ebefdea4ab66f8f2f6acc835355fbef7299c5c48806a"
-10. }
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+{
+  "resultCode": "000000",
+  "resultDesc": "Success.",
+  "sign": "MEQCIEIWzdpziRyTi8vhwWHFu********************0YAMabeCgTDG77e+2XJItvq/ZkIcCN5/B20pQ==",
+  "credentialType": "01",
+  "credentialIdNo": "a27aad63294be3fbb164e3d3d4634956cc6dc7427860*******************87798851b9fcd0f828ba78cfd99bf3d64bfa83815659e989f50d537",
+  "realName": "a24374f8658456db7a20cb73001f28f886c31232097bda8*******************ecbb12eb7db7edb57c507ebefdea4ab66f8f2f6acc835355fbef7299c5c48806a"
+}
 ```
 
 ## 错误码

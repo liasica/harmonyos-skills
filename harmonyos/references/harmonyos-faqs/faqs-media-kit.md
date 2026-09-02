@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-kit
 title: 媒体（Media ）
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 媒体（Media ）
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:39+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:4eefe3cad6136f8aff7570b372882fed57263b92c04d41ad322b313612009163
+scraped_at: 2026-09-02T14:54:44+08:00
+doc_updated_at: 2026-08-19
+content_hash: sha256:26f5900aa958c0af848a8b59c6b64ea2a7e2e02ddfd1addc8c19bc9b6474d2c9
 ---
 
 * **[使用AVPlayer播放器概率性报错5400104、5400103要怎么处理](faqs-media-1.md)**
@@ -16,3 +16,44 @@ content_hash: sha256:4eefe3cad6136f8aff7570b372882fed57263b92c04d41ad322b3136120
 * **[在使用Video组件时，为Video添加本地视频播放源后，立刻播放，为什么会播放失败](faqs-media-6.md)**
 * **[如何获取视频首帧画面](faqs-media-7.md)**
 * **[录屏帧率是否有限制，如何设置最大帧率](faqs-media-8.md)**
+* **[点击音频播放按钮，音频未播放](faqs-media-9.md)**
+* **[视频无法进行倍速播放](faqs-media-10.md)**
+* **[AVPlayer视频列表反复滑动播放失败问题](faqs-media-11.md)**
+* **[Tab页切换视频未暂停播放](faqs-media-12.md)**
+* **[PC设备视频暂停后恢复播放报错](faqs-media-13.md)**
+* **[切换音频后快速点击播放按钮，播放的是切换前的音频](faqs-media-14.md)**
+* **[子页面播放音频返回首页后，仍会短暂听到音频声音](faqs-media-15.md)**
+* **[播放音频，进度条无法拖动](faqs-media-16.md)**
+* **[应用中播放多个视频后有多个音频同时播放](faqs-media-17.md)**
+* **[音频切出页面重新进入无法播放](faqs-media-18.md)**
+* **[应用下发音频数据不及时导致音频卡顿或有杂音](faqs-media-19.md)**
+* **[音频被收藏操作打断](faqs-media-20.md)**
+* **[媒体文件存在多个格式后缀](faqs-media-21.md)**
+* **[节拍器节拍不均](faqs-media-22.md)**
+* **[视频播放时无法通过手势调节音量和亮度](faqs-media-23.md)**
+* **[SoundPool音频播放不完整不流畅](faqs-media-24.md)**
+* **[使用AVTranscoder进行视频转码失败](faqs-media-25.md)**
+* **[AVScreenCapture录屏获取到的视频数据无法正常显示](faqs-media-26.md)**
+* **[如何解决屏幕停止录制后，无法开始第二次录制的问题](faqs-media-27.md)**
+* **[如何解决AVPlayer在List组件中无法实现全屏播放问题](faqs-media-28.md)**
+* **[应用前后台切换时，如何解决Video组件播放发生中断的问题](faqs-media-29.md)**
+* **[关于从视频中提取特定帧图片的常见方法及问题](faqs-media-30.md)**
+* **[如何下载并播放字符串格式的语音数据](faqs-media-31.md)**
+* **[SoundPool快速播放音频有破音](faqs-media-32.md)**
+* **[录制过程中音视频帧数据的转换](faqs-media-33.md)**
+* **[AVPlayer播放网络视频流的相关问题](faqs-media-34.md)**
+* **[AVRecorder如何获取录制音频的Uint8Array数据](faqs-media-35.md)**
+* **[AVPlayer播放4KHDR视频时与周围UI样式不协调](faqs-media-36.md)**
+* **[Video组件是否可以设置User-Agent](faqs-media-37.md)**
+* **[AVPlayer播放直播流报错，错误码801，不支持loop](faqs-media-38.md)**
+* **[系统录屏授权时允许和禁止的回调怎么调用](faqs-media-39.md)**
+* **[如何获得音频比特率](faqs-media-40.md)**
+* **[AVPlayer如何播放smb、ftp协议的视频](faqs-media-41.md)**
+* **[屏幕录制如何实时获取原始视频数据与编码视频码流数据](faqs-media-42.md)**
+* **[AVRecorder录制WAV封装格式的音频文件并识别为文字](faqs-media-43.md)**
+* **[如何同时录制设备内部音频和麦克风音频，并合成两路音频](faqs-media-44.md)**
+* **[AVPlayer播放音视频报错5400106](faqs-media-45.md)**
+* **[如何将录屏码流数据从Native侧传递到ArkTS侧](faqs-media-46.md)**
+* **[媒体服务报错5400102问题定位](faqs-media-47.md)**
+* **[AVPlayer运行实例数量限制](faqs-media-48.md)**
+* **[setDefaultOutputDevice切换听筒扬声器耗时较长](faqs-media-49.md)**

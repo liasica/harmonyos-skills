@@ -3,39 +3,63 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-carkey
 title: 概述
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 数字车钥匙 > 概述
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:40:44+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:731da92ce934d6634d7ea7135ff6f98d190ae6a0c5858e719dd2c032ce2664e1
+scraped_at: 2026-09-02T15:00:03+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:3b21f72d8a0ad9d5822a419ccda3b09229ed45aca2b707cc161c230e297bf3b4
 ---
 
-华为数字车钥匙依托华为钱包数字车钥匙业务集成方案，基于华为手机“芯-端-云”一体化的安全能力，且满足ICCE标准，可快速实现手机模拟车钥匙的功能。
+华为数字车钥匙基于华为钱包"芯-端-云"一体化安全能力，集成SE、TEE等安全芯片能力，满足ICCE标准，支持NFC、蓝牙、星闪等多种连接方式，可将车钥匙功能数字化集成至移动终端，无需实体钥匙即可实现车辆开门、启动、无感解闭锁等功能。
 
-相较于传统的车钥匙，华为数字车钥匙无需借助车钥匙实体，仅将车钥匙功能集成在移动智能终端设备中，基于SE、TEE等安全功能，使用蓝牙、NFC技术连接手机和车，即可实现车辆的开门、启动等功能。
+## 系统架构
 
-说明
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/1Y0aFWRyTuOlbcLb4CR76A/zh-cn_image_0000002706675286.png)
 
-此方式当前仅支持中国境内（不包含中国香港、中国澳门、中国台湾）。
-
-## 整体架构
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/ioqhu-mcQOuLLjG-_mSd0Q/zh-cn_image_0000002589245507.png)
-
-### 按照参与各方的角色说明
-
-| 角色 | 角色描述 |
+| 角色 | 说明 |
 | --- | --- |
-| DK（Digital Key） | 数字钥匙 |
-| 车钥匙Applet | 华为提供安全通道供车厂将密钥以及车厂独有的数据写入Applet实例。 |
-| BLE | 低功耗蓝牙 |
-| NFC | 近场通信 |
+| 开发者服务器 | 负责车辆管理和车主身份认证的云侧实现。 |
+| Wallet Kit服务器 | 提供服务器接口，用于开发者进行云云对接，推送车钥匙数据。 |
+| 车云钥匙管理平台 | 负责车钥匙的管理和发卡。 |
+| 车主App | 负责车辆管理和车主身份认证的端侧实现。 |
+| 钱包App | 实现车钥匙业务能力，提供刷卡、车控、无感解闭锁等功能。 |
+| Wallet Kit框架 | 提供Wallet Kit对外接口。 |
+| ICCE Applet | 安全存储车钥匙数据，支持nfc刷卡和无感钥匙认证。 |
+| 车辆 | 负责车钥匙系统的车端实现。 |
 
-### 典型的交互流程
+## UI设计
 
-用户持手机在车主APP申请开通车钥匙：
+### 车钥匙开通
 
-DK业务管理服务将钥匙卡片信息通过钱包云服务器传递给华为钱包，同时写入到手机安全芯片的车钥匙Applet实例。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/DEWNcfbkREuStX5NstZZ2g/zh-cn_image_0000002736434373.png)
 
-车辆和移动终端的通信方式：
+### 车钥匙展示
 
-* 车辆NFC模块（通常位于主驾后视镜，主驾B柱），使用NFC通道和终端设备安全芯片通信。
-* 车辆BLE模块，通过蓝牙通道，使用终端设备上的华为钱包和终端设备的安全芯片通信。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/BMPDu-CbRyyuqsx8OgkOpg/zh-cn_image_0000002706835224.png)
+
+## 典型交互场景
+
+**用户持手机在车主App申请开通车钥匙：**
+
+DK服务器将钥匙卡片信息通过钱包服务器传递给华为钱包，同时写入到手机安全芯片的车钥匙 Applet实例。
+
+**车辆和移动终端的通信方式：**
+
+* 车辆NFC模块（通常位于主驾后视镜，主驾B柱）使用NFC通道和终端设备安全芯片通信。
+* 车辆BLE模块通过蓝牙通道与终端设备的安全芯片通信。
+* 车辆SLE模块通过星闪通道与终端设备的安全芯片通信。
+
+## 接入流程
+
+开发者可以参考以下接入流程，完成数字车钥匙业务相关准备及场景化能力开发。
+
+| 序号 | 步骤 | 说明 |
+| --- | --- | --- |
+| 1 | 应用开发准备 | 请先参考[应用开发准备](application-dev-overview.md)完成**企业应用**基本准备工作和指纹配置，再继续以下开发活动。 |
+| 2 | 准备信息 | 参考[开发准备](wallet-carkey-prepare.md)，准备相关图片素材及配置信息。 |
+| 3 | 创建Wallet Kit服务 | 在AGC上[创建Wallet Kit服务](wallet-carkey-prepare.md#创建wallet-kit服务)。 |
+| 4 | 开通车钥匙 | [开通](wallet-carkey-scene-open.md)数字车钥匙，包括添加前检查、申请车钥匙、激活车钥匙等。 |
+| 5 | 查看车钥匙 | [查看](wallet-carkey-scene-view.md)本设备开通的数字车钥匙。 |
+| 6 | 更新车钥匙 | [更新](wallet-carkey-scene-update.md)数字车钥匙实例。 |
+| 7 | 使用车钥匙 | [使用](wallet-carkey-scene-control.md)数字车钥匙，包括查询连接状态、配对连接、发送车控指令等。 |
+| 8 | 迁移车钥匙 | 数字车钥匙从旧设备[迁移](wallet-carkey-scene-migration.md)至新设备。 |
+| 9 | 删除车钥匙 | [删除](wallet-carkey-scene-delete.md)本设备开通的数字车钥匙。 |
+| 10 | 上传车端数据到DK服务器 | 通过钱包提供的通道[上传车端数据](wallet-carkey-scene-cloud.md)，实现车端与DK服务器之间的通信能力。 |

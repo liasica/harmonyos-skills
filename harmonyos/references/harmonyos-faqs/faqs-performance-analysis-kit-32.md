@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performance-analysis-kit-32
-title: 真机设备连接后，执行“hdc list targets”命令结果为“[Empty]”
-breadcrumb: FAQ > DevEco Studio > 应用调试 > 真机设备连接后，执行“hdc list targets”命令结果为“[Empty]”
+title: 真机设备链接后，执行“hdc list targets”命令结果为“[Empty]”
+breadcrumb: FAQ > DevEco Studio > 应用调试 > 真机设备链接后，执行“hdc list targets”命令结果为“[Empty]”
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:21:22+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:a29b355720f64a6cdfec4fd05ce8ef27fb44655c3ac97cd1a451f72941232876
+scraped_at: 2026-09-02T14:54:56+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:f286279707ffab0f2779762086be5d741484ea02dc321d863207f0ce79da9d41
 ---
 
 **问题现象**
@@ -46,7 +46,7 @@ content_hash: sha256:a29b355720f64a6cdfec4fd05ce8ef27fb44655c3ac97cd1a451f729412
 
    打开zadig（[zadig官网](https://zadig.akeo.ie/))/（[zadig仓库下载](https://github.com/pbatard/libwdi/releases)），插入设备，Options里面打开List All Devices，下拉框找到HDC Device，然后点击Reinstall Driver。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/YU0g-ZI3Qvm3KkzDnz0DMQ/zh-cn_image_0000002229758201.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/9WMFOn_kRUqr7I3i3N8NlA/zh-cn_image_0000002654798143.png "点击放大")
 2. Linux环境。
 
    在命令行执行“lsusb”，查看是否存在HDC Device或HDC Interface。如果没有该命令，通过“apt-get install usbutils”安装usbutils。
@@ -72,9 +72,9 @@ content_hash: sha256:a29b355720f64a6cdfec4fd05ce8ef27fb44655c3ac97cd1a451f729412
 1. 打开本地注册表（regedit），导航至：计算机\HKEY\_LOCAL\_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{88bae032-5a81-49f0-bc3d-a4ff138216d6}。
 2. 在右侧列表中找到【UpperFilters】键，右键点击并选择修改，清空所有字符数据（建议在清空前备份数据）。最后，刷新或插拔设备，或重启PC，即可正常显示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/C7ytEu1tQTuGRyqxAB0lBQ/zh-cn_image_0000002194158332.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/5bgokUagR8SLUlI3Bgz1pg/zh-cn_image_0000002624638686.png "点击放大")
 
-三、将设备的连接方式从TCP连接模式切换回USB模式。
+三、进入【设置>系统>开发人员选项>usb调试】重新关闭、打开USB调试；
 
 四、若连接设备时出现“\[Fail\] Failed to communicate with daemon”。
 

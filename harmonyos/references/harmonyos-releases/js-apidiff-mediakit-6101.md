@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-mediakit-6101
 title: Media Kit
-breadcrumb: 版本说明 > HarmonyOS 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta1引入的变更 > Media Kit
+breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta1引入的变更 > Media Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:34+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:16:22+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:2e3b6634313ef1cc12440434494da15f4f02f9a2728ebef7179a20476a974f46
 ---
 

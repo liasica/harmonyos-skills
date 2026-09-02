@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getre
 title: GetRequiredInputDesc
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > ExtendedKernelContext > GetRequiredInputDesc
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:58+08:00
+scraped_at: 2026-09-02T14:50:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ea590705f149c7057e5d2db51f7c129b415711a9fb820d485f83b28c129248ec
+content_hash: sha256:e1c4fdb6bca727662d55eb0da521d06d86a8e6a30f72180788d039e3068558a2
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:ea590705f149c7057e5d2db51f7c129b415711a9fb820d485f83b28c129
 
 ## 函数原型
 
-```
-1. const CompileTimeTensorDesc *GetRequiredInputDesc(const size_t ir_index) const
+```cpp
+const CompileTimeTensorDesc *GetRequiredInputDesc(const size_t ir_index) const
 ```
 
 ## 参数说明
@@ -36,9 +36,9 @@ CompileTimeTensorDesc指针，index非法时，返回空指针。
 
 ## 调用示例
 
-```
-1. // 假设已存在KernelContext *context
-2. auto extend_context = reinterpret_cast<ExtendedKernelContext *>(context);
-3. // 假设某个算子的IR原型的第0个输入是普通输入，且实际有1个输入
-4. auto optional_input_td = extend_context->GetRequiredInputDesc(0); // 拿到第0个输入的tensor描述
+```cpp
+// 假设已存在KernelContext *context
+auto extend_context = reinterpret_cast<ExtendedKernelContext *>(context);
+// 假设某个算子的IR原型的第0个输入是普通输入，且实际有1个输入
+auto optional_input_td = extend_context->GetRequiredInputDesc(0); // 拿到第0个输入的tensor描述
 ```

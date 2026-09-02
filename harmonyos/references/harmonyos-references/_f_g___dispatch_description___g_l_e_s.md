@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_g___di
 title: FG_DispatchDescription_GLES
 breadcrumb: API参考 > 图形 > Graphics Accelerate Kit（图形加速服务） > C API > 头文件和结构体 > 结构体 > FG_DispatchDescription_GLES
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:45+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:280ca6b5406a6687a2c9bb5bc1411eb66cf6f40bf921a917138d7ed2891b635c
+scraped_at: 2026-09-02T15:02:48+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:628f19ca3f8047f452a6b29c55bfb5e31ffca24e784f79b7a69622d2d5cef127
 ---
 
 ## 概述
-
-PhoneTabletTV
 
 此结构体描述下发帧生成命令[HMS\_FG\_Dispatch\_GLES](_graphics_accelerate.md#hms_fg_dispatch_gles)需要的参数信息，每一帧都需要进行更新。该接口仅适配OpenGL ES图形API平台。
 
@@ -22,11 +20,7 @@ PhoneTabletTV
 
 ## 汇总
 
-PhoneTabletTV
-
 ### 成员变量
-
-PhoneTabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -38,14 +32,10 @@ PhoneTabletTV
 
 ## 结构体成员变量说明
 
-PhoneTabletTV
-
 ### inputColor
 
-PhoneTabletTV
-
-```
-1. uint32_t FG_DispatchDescription_GLES::inputColor
+```c
+uint32_t FG_DispatchDescription_GLES::inputColor
 ```
 
 **描述**
@@ -54,10 +44,8 @@ PhoneTabletTV
 
 ### inputDepthStencil
 
-PhoneTabletTV
-
-```
-1. uint32_t FG_DispatchDescription_GLES::inputDepthStencil
+```c
+uint32_t FG_DispatchDescription_GLES::inputDepthStencil
 ```
 
 **描述**
@@ -66,10 +54,8 @@ PhoneTabletTV
 
 ### invViewProj
 
-PhoneTabletTV
-
-```
-1. FG_Mat4x4 FG_DispatchDescription_GLES::invViewProj
+```c
+FG_Mat4x4 FG_DispatchDescription_GLES::invViewProj
 ```
 
 **描述**
@@ -78,10 +64,8 @@ PhoneTabletTV
 
 ### outputColor
 
-PhoneTabletTV
-
-```
-1. uint32_t FG_DispatchDescription_GLES::outputColor
+```c
+uint32_t FG_DispatchDescription_GLES::outputColor
 ```
 
 **描述**
@@ -90,10 +74,8 @@ PhoneTabletTV
 
 ### viewProj
 
-PhoneTabletTV
-
-```
-1. FG_Mat4x4 FG_DispatchDescription_GLES::viewProj
+```c
+FG_Mat4x4 FG_DispatchDescription_GLES::viewProj
 ```
 
 **描述**

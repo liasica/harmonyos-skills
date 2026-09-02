@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 系统资源错误码
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > 错误码 > UI界面 > 系统资源错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:51+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:bb8ae3792a6fa5de1dd2c838f6f21118b59210da6d371e74c3709ad19edfb5c7
+scraped_at: 2026-09-02T15:01:25+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c53c4fed2091c5606313b859813f4ec43835d3b6753589f64fb9f7bb5388aa0f
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
@@ -16,7 +16,7 @@ content_hash: sha256:bb8ae3792a6fa5de1dd2c838f6f21118b59210da6d371e74c3709ad19ed
 
 **错误信息**
 
-System resources does not exist.
+System resource does not exist.
 
 **错误描述**
 
@@ -49,8 +49,6 @@ The type of system resources is incorrect.
 step1.请检查输入的参数
 
 ## 180003 颜色资源获取失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 

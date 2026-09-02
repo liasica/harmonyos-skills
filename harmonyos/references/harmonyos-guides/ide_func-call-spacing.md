@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_func-call
 title: "@typescript-eslint/func-call-spacing"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/func-call-spacing
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:27+08:00
+scraped_at: 2026-09-02T14:50:51+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:034a618ed9166088865cf2a9358a817b2d8b12f7858735d554239d7b437ce4f8
+content_hash: sha256:93eb716e4bc082c7ab0d9db8afc9a9892119882da7c660c9e0a0097b2b4f014c
 ---
 
 禁止或者要求函数名与函数名后面的括号之间加空格。
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@typescript-eslint/func-call-spacing": "error"
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@typescript-eslint/func-call-spacing": "error"
+  }
+}
 ```
 
 ## 选项
@@ -27,33 +27,33 @@ content_hash: sha256:034a618ed9166088865cf2a9358a817b2d8b12f7858735d554239d7b437
 
 ## 正例
 
-```
-1. function fn() {
-2. console.log('hello');
-3. }
+```screen
+function fn() {
+  console.log('hello');
+}
 
-5. // 默认不允许函数名称和左括号之间有空格。
-6. fn();
+// 默认不允许函数名称和左括号之间有空格。
+fn();
 ```
 
 ## 反例
 
-```
-1. function fn() {
-2. console.log('hello');
-3. }
+```screen
+function fn() {
+  console.log('hello');
+}
 
-5. // 默认不允许函数名称和左括号之间有空格。
-6. fn ();
+// 默认不允许函数名称和左括号之间有空格。
+fn ();
 
-8. fn
-9. ();
+fn
+();
 ```
 
 ## 规则集
 
-```
-1. plugin:@typescript-eslint/all
+```screen
+plugin:@typescript-eslint/all
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

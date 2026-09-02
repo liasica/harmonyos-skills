@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/faqs-permissions-debug
 title: 抓包/调试权限常见问题
-breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 抓包/调试权限常见问题
+breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 程序访问控制常见问题 > 抓包/调试权限常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:04+08:00
-doc_updated_at: 2026-04-13
-content_hash: sha256:7e7add062b11efb7035eb2b6594d1dd43f8d5a28f6bb71b09cba182f94fb13d3
+scraped_at: 2026-09-02T14:49:59+08:00
+doc_updated_at: 2026-06-05
+content_hash: sha256:00a809fcfec50a94c2aeca1a1326c81f0bbd17bd4449ae2a299b10bab3c13358
 ---
 
 ## ohos.permission.kernel.NET\_RAW权限使用说明
@@ -19,14 +19,14 @@ content_hash: sha256:7e7add062b11efb7035eb2b6594d1dd43f8d5a28f6bb71b09cba182f94f
 
 以[tcpdump工具](https://gitcode.host/OpenHarmonyToolkitsPlaza/tcpdump)为例，使用[二进制签名工具](binary-sign-tool.md)签名时在module.json文件中配置ohos.permission.kernel.NET\_RAW权限。
 
-```
-1. {
-2. "requestPermissions": [
-3. {
-4. "name": "ohos.permission.kernel.NET_RAW"
-5. }
-6. ]
-7. }
+```json
+{
+    "requestPermissions": [
+        {
+            "name": "ohos.permission.kernel.NET_RAW"
+        }
+    ]
+}
 ```
 
 在hishell终端中使用sudo提权执行携带ohos.permission.kernel.NET\_RAW权限的tcpdump，认证成功后可以进行下述操作：
@@ -34,9 +34,9 @@ content_hash: sha256:7e7add062b11efb7035eb2b6594d1dd43f8d5a28f6bb71b09cba182f94f
 * 支持通过PF\_PACKET协议族创建PACKET类型套接字，在数据链路层直接捕获原始网络帧。
 * 支持通过NETLINK\_ROUTE和NETLINK\_GENERIC类型的netlink套接字与内核通信，可以查询和管理网络接口。
 
-```
-1. # 示例
-2. sudo ./tcpdump
+```shell
+# 示例
+sudo ./tcpdump
 ```
 
 ## ohos.permission.kernel.DEBUGGER权限使用说明
@@ -55,28 +55,28 @@ content_hash: sha256:7e7add062b11efb7035eb2b6594d1dd43f8d5a28f6bb71b09cba182f94f
 
 以[lldb高性能调试器](debug-lldb.md)为例，使用[二进制签名工具](binary-sign-tool.md)签名时在module.json文件中配置ohos.permission.kernel.DEBUGGER权限。
 
-```
-1. {
-2. "requestPermissions": [
-3. {
-4. "name": "ohos.permission.kernel.DEBUGGER"
-5. }
-6. ]
-7. }
+```json
+{
+    "requestPermissions": [
+        {
+            "name": "ohos.permission.kernel.DEBUGGER"
+        }
+    ]
+}
 ```
 
 在hishell终端中，使用携带ohos.permission.kernel.DEBUGGER权限的lldb工具，以ATTACH模式附加到调试证书签名的debug\_bin进行调试。
 
-```
-1. # 示例：
-2. # 确认UID一致
-3. UID            PID  PPID C STIME TTY          TIME CMD
-4. 20020109     50262 32365 0 17:29:41 ?     00:00:00 lldb
-5. 20020109     52219 50262 0 17:31:15 ?     00:00:00 lldb-server
-6. 20020109     57631 13564 0 17:31:15 ?     00:00:00 debug_bin
+```shell
+# 示例：
+# 确认UID一致
+UID            PID  PPID C STIME TTY          TIME CMD
+20020109     50262 32365 0 17:29:41 ?     00:00:00 lldb
+20020109     52219 50262 0 17:31:15 ?     00:00:00 lldb-server
+20020109     57631 13564 0 17:31:15 ?     00:00:00 debug_bin
 
-8. # 附加到目标进程
-9. (lldb) process attach --name debug_bin
+# 附加到目标进程
+(lldb) process attach --name debug_bin
 ```
 
 ## ohos.permission.kernel.ALLOW\_DEBUG使用说明
@@ -92,14 +92,14 @@ content_hash: sha256:7e7add062b11efb7035eb2b6594d1dd43f8d5a28f6bb71b09cba182f94f
 
 以DevEco Studio真机设备调试PC应用为例，在应用的module.json5文件中配置ohos.permission.kernel.ALLOW\_DEBUG权限。
 
-```
-1. {
-2. "requestPermissions": [
-3. {
-4. "name": "ohos.permission.kernel.ALLOW_DEBUG"
-5. }
-6. ]
-7. }
+```json5
+{
+    "requestPermissions": [
+        {
+            "name": "ohos.permission.kernel.ALLOW_DEBUG"
+        }
+    ]
+}
 ```
 
 在DecEco Studio调试器的进程列表中可以查看到携带ohos.permission.kernel.ALLOW\_DEBUG权限的发布应用进程，选择目标进程后即可进行附加并调试，具体可参考[应用调试](ide-debug-app.md)。

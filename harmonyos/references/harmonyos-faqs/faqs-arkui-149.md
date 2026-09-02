@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-149
 title: Navigation如何隐藏导航栏
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > Navigation如何隐藏导航栏
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Navigation如何隐藏导航栏
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:25:39+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:21+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:b1f2b516704646d051a5bf91dc57a34c75313898816962070074910b9ed8b97e
 ---
 

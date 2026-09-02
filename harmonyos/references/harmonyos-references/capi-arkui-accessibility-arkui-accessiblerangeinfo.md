@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_AccessibleRangeInfo
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_AccessibleRangeInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:11+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:1a0622040fdd75158add29f3578ab12f04940f45a21ef2fab5bef04cd5371a0d
+scraped_at: 2026-09-02T15:01:23+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:763a51d79ce3cbda72926c465be4d637088dd1a4ad0d7fbb0b48bf52ecda1025
 ---
 
-```
-1. typedef struct {...} ArkUI_AccessibleRangeInfo
+```c
+typedef struct {...} ArkUI_AccessibleRangeInfo
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-用于为特定组件（如[Slider](ts-basic-components-slider.md)、[Rating](ts-basic-components-rating.md)、[Progress](ts-basic-components-progress.md)组件）设置和获取其当前值、最大值和最小值。
+用于表示特定组件（如[Slider](ts-basic-components-slider.md)、[Rating](ts-basic-components-rating.md)、[Progress](ts-basic-components-progress.md)）的范围值信息，包含当前值、最大值和最小值，供无障碍服务读取并向障碍用户播报。
 
 **起始版本：** 13
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-pac
 title: pac.json5隐私清单文件
 breadcrumb: 指南 > 编写与调试应用 > 附录 > pac.json5隐私清单文件
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:47:07+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e950f2ce64ff426880eb1102654ede2cc229f7b9de8bdc44aec1bafa1a54f939
+scraped_at: 2026-09-02T15:00:26+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:bf17f84e6e224fc0c5ad84a798fdf3140c54b471b3fc9ed6b7358a2f798283fb
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:e950f2ce64ff426880eb1102654ede2cc229f7b9de8bdc44aec1bafa1a5
 
 若您开发HSP或HAR，为了下游集成使用软件的开发者快速、准确地了解HSP或HAR处理个人数据的情况，建议您在项目工程中创建pac.json5配置文件，在文件中声明处理的个人数据类型、使用目的等信息。文件在编译构建时会合入软件包，隐私保护信息将随软件包同步传递给下游的开发者。
 
-说明
+**说明** 
 
 支持版本：DevEco Studio 6.0.0 Beta2及以上版本。
 
@@ -22,27 +22,27 @@ content_hash: sha256:e950f2ce64ff426880eb1102654ede2cc229f7b9de8bdc44aec1bafa1a5
 
 * 开发App情况下，选中AppScope目录新建pac.json5文件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/OCpnjSCQT--SFcpxy3iQpg/zh-cn_image_0000002530912976.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/h-gbjhEHRdC9LH6ii4Wr9w/zh-cn_image_0000002701663112.png)
 
 * 开发HSP或HAR情况下，选中HSP或HAR模块目录新建pac.json5文件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/fJ_Llc3mTWmkWiVp4PhcYQ/zh-cn_image_0000002530752982.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/xGcZubxaQaen9JieqLlznA/zh-cn_image_0000002731542307.png)
 
 ## 配置文件结构
 
 pac.json5隐私清单文件整体的结构如下。
 
-```
-1. dataProcess
-2. └── dataType
-3. └── dataLabels
-4. └── label
-5. └── purposes
-6. └── userLinked
-7. └── tracking
-8. specialAPIs
-9. └── apiType
-10. └── reasons
+```screen
+dataProcess
+└── dataType
+└── dataLabels
+    └── label
+    └── purposes
+    └── userLinked
+    └── tracking
+specialAPIs
+└── apiType
+└── reasons
 ```
 
 ## 配置文件字段说明
@@ -56,7 +56,7 @@ pac.json5隐私清单配置文件包括以下字段。
 | [dataProcess](agc-pac.md#section82051543115414) | 可选 | 数组 | 声明应用收集的个人数据。 |
 | [specialAPIs](agc-pac.md#section26881432131216) | 可选 | 数组 | 声明应用调用的可用于生成设备指纹的API信息。 |
 
-说明
+**说明** 
 
 dataProcess和specialAPIs不能同时为空。
 
@@ -142,7 +142,7 @@ dataLabels是声明应用收集的个人数据项和目的。
 | Package delivery information | 快递信息 |
 | Other transaction information | 其他交易信息 |
 | Contact list | 联系人列表 | Contact information |
-| Social media accounts | 社交帐号 |
+| Social media accounts | 社交账号 |
 | Other contact information | 其他联系人信息 |
 | Facial recognition features | 面部识别特征 | Special category data |
 | Voiceprint information | 声纹 |
@@ -251,26 +251,26 @@ specialAPIs是声明应用调用的可用于生成设备指纹的API信息，包
 
 ## pac.json5文件示例
 
-```
-1. {
-2. "dataProcess": [
-3. {
-4. "dataType": "Identifiers",
-5. "dataLabels": [
-6. {
-7. "label": "MAC",
-8. "purposes": ["App functionality"],
-9. "userLinked": true,
-10. "tracking": true
-11. }
-12. ]
-13. }
-14. ],
-15. "specialAPIs": [
-16. {
-17. "apiType": "File timestamp APIs",
-18. "reasons": ["Display to user on-device","Access file metadata in-app"]
-19. }
-20. ]
-21. }
+```screen
+{
+  "dataProcess": [
+    {
+      "dataType": "Identifiers",
+      "dataLabels": [
+        {
+          "label": "MAC",
+          "purposes": ["App functionality"],
+          "userLinked": true,
+          "tracking": true
+        }
+      ]
+    }
+  ],
+  "specialAPIs": [
+    {
+      "apiType": "File timestamp APIs",
+      "reasons": ["Display to user on-device","Access file metadata in-app"]
+    }
+  ]
+}
 ```

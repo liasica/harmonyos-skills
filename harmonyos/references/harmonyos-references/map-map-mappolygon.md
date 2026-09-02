@@ -1,24 +1,20 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-mappolygon
-title: MapPolygon
-breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > MapPolygon
+title: Interface (MapPolygon)
+breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (MapPolygon)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:12+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:5701748b7cfd1a4e8d76a5b28aa81dde94c689e6b875932927d14ab694391943
+scraped_at: 2026-09-02T15:02:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:de5076aeddeb6b9f828cd0acfbc838b644d457d496c25ac348f7b11cdd496d2c
 ---
 
 ## 导入模块
 
-PhonePC/2in1TabletWearable
-
-```
-1. import { map, mapCommon } from '@kit.MapKit';
+```typescript
+import { map, mapCommon } from '@kit.MapKit';
 ```
 
 ## MapPolygon
-
-PhonePC/2in1TabletWearable
 
 多边形，继承[BaseOverlay](map-map-baseoverlay.md)。多边形可以是凸面或凹面，它可以跨越180子午线并且可以具有未填充的孔。在调用map.[MapComponentController](map-map-mapcomponentcontroller.md)类的[addPolygon](map-map-mapcomponentcontroller.md#addpolygon)方法时会返回该类型的实例。
 
@@ -32,22 +28,23 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. let polygonOptions: mapCommon.MapPolygonOptions = {
-2. points: [
-3. { latitude: 31.9844102, longitude: 118.7662 },
-4. { latitude: 31.9844102, longitude: 123.7662 },
-5. { latitude: 36.9844102, longitude: 123.7662 },
-6. { latitude: 36.9844102, longitude: 118.7662 }
-7. ],
-8. fillColor: 0xffff4500
-9. };
-10. let mapPolygon = await this.mapController.addPolygon(polygonOptions);
+```typescript
+let polygonOptions: mapCommon.MapPolygonOptions = {
+  // 定义多边形的四个顶点坐标
+  points: [
+    { latitude: 31.9844102, longitude: 118.7662 },
+    { latitude: 31.9844102, longitude: 123.7662 },
+    { latitude: 36.9844102, longitude: 123.7662 },
+    { latitude: 36.9844102, longitude: 118.7662 }
+  ],
+  // 设置多边形填充颜色为红色
+  fillColor: 0xffff4500
+};
+// 地图添加多边形
+let mapPolygon = await this.mapController.addPolygon(polygonOptions);
 ```
 
 ### getFillColor
-
-PhonePC/2in1TabletWearable
 
 getFillColor(): number
 
@@ -69,17 +66,19 @@ getFillColor(): number
 
 **示例：**
 
-```
-1. let fillColor: number = mapPolygon.getFillColor();
+```typescript
+let fillColor: number = mapPolygon.getFillColor();
 ```
 
 ### getHoles
 
-PhonePC/2in1TabletWearable
-
 getHoles(): Array<Array<mapCommon.LatLng>>
 
 获取多边形的空心洞。
+
+**说明** 
+
+多边形的空心洞：多边形可能包含一个或多个内部空洞，形成“空心”效果。这些区域不被填充，使得多边形的内部结构更加复杂和多样化。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -97,13 +96,11 @@ getHoles(): Array<Array<mapCommon.LatLng>>
 
 **示例：**
 
-```
-1. let holes: Array<Array<mapCommon.LatLng>> = mapPolygon.getHoles();
+```typescript
+let holes: Array<Array<mapCommon.LatLng>> = mapPolygon.getHoles();
 ```
 
 ### getPoints
-
-PhonePC/2in1TabletWearable
 
 getPoints(): Array<mapCommon.LatLng>
 
@@ -125,13 +122,11 @@ getPoints(): Array<mapCommon.LatLng>
 
 **示例：**
 
-```
-1. let points: Array<mapCommon.LatLng> = mapPolygon.getPoints();
+```typescript
+let points: Array<mapCommon.LatLng> = mapPolygon.getPoints();
 ```
 
 ### getStrokeColor
-
-PhonePC/2in1TabletWearable
 
 getStrokeColor(): number
 
@@ -153,13 +148,11 @@ getStrokeColor(): number
 
 **示例：**
 
-```
-1. let strokeColor: number = mapPolygon.getStrokeColor();
+```typescript
+let strokeColor: number = mapPolygon.getStrokeColor();
 ```
 
 ### getJointType
-
-PhonePC/2in1TabletWearable
 
 getJointType(): mapCommon.JointType
 
@@ -181,13 +174,11 @@ getJointType(): mapCommon.JointType
 
 **示例：**
 
-```
-1. let jointType: mapCommon.JointType = mapPolygon.getJointType();
+```typescript
+let jointType: mapCommon.JointType = mapPolygon.getJointType();
 ```
 
 ### getPatterns
-
-PhonePC/2in1TabletWearable
 
 getPatterns(): Array<mapCommon.PatternItem>
 
@@ -209,13 +200,11 @@ getPatterns(): Array<mapCommon.PatternItem>
 
 **示例：**
 
-```
-1. let patterns: Array<mapCommon.PatternItem> = mapPolygon.getPatterns();
+```typescript
+let patterns: Array<mapCommon.PatternItem> = mapPolygon.getPatterns();
 ```
 
 ### getStrokeWidth
-
-PhonePC/2in1TabletWearable
 
 getStrokeWidth(): number
 
@@ -237,13 +226,11 @@ getStrokeWidth(): number
 
 **示例：**
 
-```
-1. let strokeWidth: number = mapPolygon.getStrokeWidth();
+```typescript
+let strokeWidth: number = mapPolygon.getStrokeWidth();
 ```
 
 ### isClickable
-
-PhonePC/2in1TabletWearable
 
 isClickable(): boolean
 
@@ -265,13 +252,11 @@ isClickable(): boolean
 
 **示例：**
 
-```
-1. let clickable: boolean = mapPolygon.isClickable();
+```typescript
+let clickable: boolean = mapPolygon.isClickable();
 ```
 
 ### isGeodesic
-
-PhonePC/2in1TabletWearable
 
 isGeodesic(): boolean
 
@@ -293,13 +278,11 @@ isGeodesic(): boolean
 
 **示例：**
 
-```
-1. let geodesic: boolean = mapPolygon.isGeodesic();
+```typescript
+let geodesic: boolean = mapPolygon.isGeodesic();
 ```
 
 ### setClickable
-
-PhonePC/2in1TabletWearable
 
 setClickable(clickable: boolean): void
 
@@ -321,13 +304,11 @@ setClickable(clickable: boolean): void
 
 **示例：**
 
-```
-1. mapPolygon.setClickable(true);
+```typescript
+mapPolygon.setClickable(true);
 ```
 
 ### setFillColor
-
-PhonePC/2in1TabletWearable
 
 setFillColor(color: number): void
 
@@ -349,13 +330,11 @@ setFillColor(color: number): void
 
 **示例：**
 
-```
-1. mapPolygon.setFillColor(0xff000FFF);
+```typescript
+mapPolygon.setFillColor(0xff000FFF);
 ```
 
 ### setGeodesic
-
-PhonePC/2in1TabletWearable
 
 setGeodesic(geodesic: boolean): void
 
@@ -377,17 +356,19 @@ setGeodesic(geodesic: boolean): void
 
 **示例：**
 
-```
-1. mapPolygon.setGeodesic(true);
+```typescript
+mapPolygon.setGeodesic(true);
 ```
 
 ### setHoles
 
-PhonePC/2in1TabletWearable
-
 setHoles(holes: Array<Array<mapCommon.LatLng>>): void
 
 设置多边形的空心洞。
+
+**说明** 
+
+多边形的空心洞：多边形可能包含一个或多个内部空洞，形成“空心”效果。这些区域不被填充，使得多边形的内部结构更加复杂和多样化。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -405,37 +386,35 @@ setHoles(holes: Array<Array<mapCommon.LatLng>>): void
 
 **示例：**
 
-```
-1. let holes: Array<Array<mapCommon.LatLng>> = [
-2. [
-3. {
-4. latitude: 32.98,
-5. longitude: 121.76
-6. },
-7. {
-8. latitude: 32.98,
-9. longitude: 119.76
-10. },
-11. {
-12. latitude: 35.98,
-13. longitude: 119.76
-14. },
-15. {
-16. latitude: 35.98,
-17. longitude: 121.76
-18. }
-19. ]
-20. ];
-21. mapPolygon.setHoles(holes);
+```typescript
+let holes: Array<Array<mapCommon.LatLng>> = [
+  [
+    {
+      latitude: 32.98,
+      longitude: 121.76
+    },
+    {
+      latitude: 32.98,
+      longitude: 119.76
+    },
+    {
+      latitude: 35.98,
+      longitude: 119.76
+    },
+    {
+      latitude: 35.98,
+      longitude: 121.76
+    }
+  ]
+];
+mapPolygon.setHoles(holes);
 ```
 
-说明
+**说明** 
 
 当空心洞的坐标贴合多边形边缘时，会导致渲染出现异常，渲染多余的空心区域。
 
 ### setPoints
-
-PhonePC/2in1TabletWearable
 
 setPoints(points: Array<mapCommon.LatLng>): void
 
@@ -457,31 +436,29 @@ setPoints(points: Array<mapCommon.LatLng>): void
 
 **示例：**
 
-```
-1. let points: Array<mapCommon.LatLng> = [
-2. {
-3. latitude: 31.98,
-4. longitude: 115.76
-5. },
-6. {
-7. latitude: 31.98,
-8. longitude: 118.76
-9. },
-10. {
-11. latitude: 35.98,
-12. longitude: 118.76
-13. },
-14. {
-15. latitude: 35.98,
-16. longitude: 118.76
-17. }
-18. ];
-19. mapPolygon.setPoints(points);
+```typescript
+let points: Array<mapCommon.LatLng> = [
+  {
+    latitude: 31.98,
+    longitude: 115.76
+  },
+  {
+    latitude: 31.98,
+    longitude: 118.76
+  },
+  {
+    latitude: 35.98,
+    longitude: 118.76
+  },
+  {
+    latitude: 35.98,
+    longitude: 118.76
+  }
+];
+mapPolygon.setPoints(points);
 ```
 
 ### setStrokeColor
-
-PhonePC/2in1TabletWearable
 
 setStrokeColor(color: number): void
 
@@ -503,13 +480,11 @@ setStrokeColor(color: number): void
 
 **示例：**
 
-```
-1. mapPolygon.setStrokeColor(0xff00DB93);
+```typescript
+mapPolygon.setStrokeColor(0xff00DB93);
 ```
 
 ### setJointType
-
-PhonePC/2in1TabletWearable
 
 setJointType(jointType: mapCommon.JointType): void
 
@@ -531,13 +506,11 @@ setJointType(jointType: mapCommon.JointType): void
 
 **示例：**
 
-```
-1. mapPolygon.setJointType(mapCommon.JointType.ROUND);
+```typescript
+mapPolygon.setJointType(mapCommon.JointType.ROUND);
 ```
 
 ### setPatterns
-
-PhonePC/2in1TabletWearable
 
 setPatterns(patterns: Array<mapCommon.PatternItem>): void
 
@@ -559,27 +532,25 @@ setPatterns(patterns: Array<mapCommon.PatternItem>): void
 
 **示例：**
 
-```
-1. let linePatterns: Array<mapCommon.PatternItem> = [
-2. {
-3. type: mapCommon.PatternItemType.DASH,
-4. length: 100
-5. },
-6. {
-7. type: mapCommon.PatternItemType.DOT,
-8. length: 100
-9. },
-10. {
-11. type: mapCommon.PatternItemType.GAP,
-12. length: 100
-13. }
-14. ];
-15. mapPolygon.setPatterns(linePatterns);
+```typescript
+let linePatterns: Array<mapCommon.PatternItem> = [
+  {
+    type: mapCommon.PatternItemType.DASH,
+    length: 100
+  },
+  {
+    type: mapCommon.PatternItemType.DOT,
+    length: 100
+  },
+  {
+    type: mapCommon.PatternItemType.GAP,
+    length: 100
+  }
+];
+mapPolygon.setPatterns(linePatterns);
 ```
 
 ### setStrokeWidth
-
-PhonePC/2in1TabletWearable
 
 setStrokeWidth(width: number): void
 
@@ -601,6 +572,6 @@ setStrokeWidth(width: number): void
 
 **示例：**
 
-```
-1. mapPolygon.setStrokeWidth(30);
+```typescript
+mapPolygon.setStrokeWidth(30);
 ```

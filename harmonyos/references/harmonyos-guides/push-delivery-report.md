@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-delivery
 title: （可选）推送报告
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 端云调试 > （可选）推送报告
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:58+08:00
+scraped_at: 2026-09-02T15:00:01+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a6e0c4a52bdba3ee356718714b97246abd74847d26abed017a8597c5383870dd
+content_hash: sha256:07df5df565aa8ba0c78e2f67d078a1acbf8875e868315f18566f379a941358b6
 ---
 
 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，点击“开发与服务”，在项目列表中找到您的项目，通过“增长 > 推送服务 > 推送报告”，您可以在“推送报告”中查看推送消息详情和推送用户详情。
 
-说明
+**说明** 
 
 推送报告数据不是实时数据，当天生成的数据在控制台次日才能查看到。
 
@@ -18,13 +18,13 @@ content_hash: sha256:a6e0c4a52bdba3ee356718714b97246abd74847d26abed017a8597c5383
 
 您可以查看推送消息的详情，场景化消息的统计图和对应表格，同时可以按照通道维度进行查看，有“通过AGC控制台”、“通过API方式”和“全部通道”；也可以按照消息类型维度进行查看。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/71emHUjRQ4aqjyKu79xVuQ/zh-cn_image_0000002589325509.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/_FLFBmxzT6eX7rXfc_P1WQ/zh-cn_image_0000002706675224.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/pIwHpQVSR-K09atOT0FogQ/zh-cn_image_0000002589245447.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/NzAttzQgSRCN8h26NvA9Kw/zh-cn_image_0000002736434313.png)
 
-点击自定义后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/Rbb6dgYoS9Gr3X3vgYcXpw/zh-cn_image_0000002558765640.png)，可自定义推送消息报表展示的表格列，默认展示的表格列有：日期、消息类型、请求量、发送量、到达量、显示量、点击量、到达率（%）、点击率（%）、沉默设备丢弃、应用被卸载、无效TOKEN、通知关闭。全选可展示全部表格列，重置则恢复默认表格列。
+点击自定义后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/r8Kkz7zRQC287EDlj5iC8w/zh-cn_image_0000002706835162.png)，可自定义推送消息报表展示的表格列，默认展示的表格列有：日期、消息类型、请求量、发送量、到达量、显示量、点击量、到达率（%）、点击率（%）、沉默设备丢弃、应用被卸载、无效TOKEN、通知关闭。全选可展示全部表格列，重置则恢复默认表格列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/RGymbLB1RwyB8DHT5qOEpg/zh-cn_image_0000002558605984.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/LL98Wm_RSFaFkCAB4Jijkw/zh-cn_image_0000002736314269.png)
 
 报表数据条目说明：
 
@@ -46,7 +46,7 @@ content_hash: sha256:a6e0c4a52bdba3ee356718714b97246abd74847d26abed017a8597c5383
 * 缓存量：目标设备离线，消息仍在有效期内的数量。
 * 未触达量：消息未到达终端设备的数量。
 
-说明
+**说明** 
 
 不符合下发条件的消息数量包括：沉默设备丢弃、频控丢弃量、应用被卸载、无效TOKEN、通知关闭、消息覆盖、其他原因、过期量、缓存量。
 
@@ -54,7 +54,7 @@ content_hash: sha256:a6e0c4a52bdba3ee356718714b97246abd74847d26abed017a8597c5383
 
 您可以查看推送用户的详情，根据时间维度查看活跃用户、新增用户和总用户的统计数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/b_mAmJJERnecTSXkqOud3w/zh-cn_image_0000002589325511.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/nuHJRHSWSjyNBX_ywm2bEQ/zh-cn_image_0000002706675226.png)
 
 报表数据条目说明：
 

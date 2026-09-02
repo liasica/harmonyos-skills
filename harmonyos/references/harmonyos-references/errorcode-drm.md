@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: DRM错误码
 breadcrumb: API参考 > 媒体 > DRM Kit（数字版权保护服务） > 错误码 > DRM错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:06+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:9c071f3ab9a3a3bfcce91409b6c86bf808fccedf6fdb205f6ae1ada67df2c932
+scraped_at: 2026-09-02T15:02:29+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a363b97d915f98da4128c72c553839fc6cb2b6d048dcce05d15e8ded55d2dccc
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 24700101 未知错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -34,8 +32,6 @@ Unknown error.
 
 ## 24700103 MediaKeySystem数量达到极限
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Too many MediaKeySystem instances.
@@ -54,8 +50,6 @@ MediaKeySystem实例数量超过上限（64个）。
 
 ## 24700104 MediaKeySession数量达到极限
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Too many MediaKeySession instances.
@@ -73,8 +67,6 @@ MediaKeySession实例数量超过上限（64个）。
 释放其他不再使用的MediaKeySession资源。
 
 ## 24700201 服务异常
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 

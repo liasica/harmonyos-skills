@@ -3,22 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: Native_Bundle
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > C API > 模块 > Native_Bundle
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:58+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:c3317c9113075a84922bfc20fae8dfc7755ef092779c889ac12f9f037d01ae43
+scraped_at: 2026-09-02T14:51:06+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c220bc0ea80cdb5879bad39437501285c4a90e2d96ad9c8f9815599d4ac7f648
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供查询应用包信息的功能，包括应用包名、应用指纹、应用appId等。
 
 **起始版本：** 9
 
 ## 文件汇总
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

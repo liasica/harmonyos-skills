@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/config-file-stage
-title: Stage模型应用配置文件
-breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > Stage模型应用配置文件
+title: 应用配置文件
+breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用配置文件
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:53+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-02T15:16:56+08:00
+doc_updated_at: 2026-06-12
 content_hash: sha256:82dfc95fa68e65c43adcee2f000660d5cf30f5a38b32e9b54539d23ad6b7ca82
 ---
 

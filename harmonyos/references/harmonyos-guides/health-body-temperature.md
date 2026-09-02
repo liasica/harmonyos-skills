@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-body-t
 title: 体温
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 数据类型 > 采样数据 > 体温
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:16+08:00
+scraped_at: 2026-09-02T14:59:56+08:00
 doc_updated_at: 2026-04-20
 content_hash: sha256:08c84f99e52baa296860a1848340369ad74671205fd1fca2ffa0a02cb6da9439
 ---

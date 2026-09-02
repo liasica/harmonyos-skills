@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-white-scr
 title: 定位与解决Web白屏问题
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > Web调试维测 > 定位与解决Web白屏问题
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:32+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:abc2ead098f7a01dd5111f724a4820890e35c85f7ec4b1c7008961164cab0f8e
+scraped_at: 2026-09-02T14:49:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9e2401580c5fe0b7552c43109f14ac8bde9220d9e03beb4b73ade13727403617
 ---
 
 Web页面出现白屏的原因众多，本文列举了若干常见白屏问题的排查步骤，供开发者快速定位。
@@ -16,6 +16,7 @@ Web页面出现白屏的原因众多，本文列举了若干常见白屏问题�
 4. 处理H5代码兼容性问题。
 5. 从日志中排查生命周期和网络加载相关关键字。
 6. 检查是否开启[坚盾守护模式](web-secure-shield-mode.md)，坚盾守护模式开启后相关限制见：[ArkWeb限制的HTML5特性](web-secure-shield-mode.md#arkweb限制的html5特性)。
+7. 排查WebView缓存协商不一致导致的白屏，详见[webview默认缓存模式下缓存协商与服务端资源更新不一致导致的白屏](web-white-screen.md#webview默认缓存模式下缓存协商与服务端资源更新不一致导致的白屏)。
 
 ## 检查权限和网络状态
 
@@ -24,77 +25,71 @@ Web页面出现白屏的原因众多，本文列举了若干常见白屏问题�
 * 验证设备的网络状态，包括是否已连接网络，设备自带的浏览器能否正常访问网页等（在线页面场景）。
 * 确保应用已添加网络权限：ohos.permission.INTERNET（在线页面必需）。
 
+  ```json5
+  "requestPermissions":[
+    {
+      "name" : "ohos.permission.INTERNET"
+    }
+  ],
   ```
-  1. "requestPermissions":[
-  2. {
-  3. "name" : "ohos.permission.INTERNET"
-  4. }
-  5. ],
-  ```
-
-  [module.json5](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/WebWriteScreenIssue/entry/src/main/module.json5#L17-L23)
 * 开启相关权限：
 
   | 名称 | 说明 |
   | --- | --- |
-  | [domStorageAccess](../harmonyos-references/arkts-basic-components-web-attributes.md#domstorageaccess) | DOM Storage API权限，若不开启，无法使用localStorage存储数据，任何调用localStorage的代码都将失效，依赖本地存储的功能会异常。 |
-  | [fileAccess](../harmonyos-references/arkts-basic-components-web-attributes.md#fileaccess) | ‌若不开启，文件读写功能完全被阻断，依赖文件的模块会崩溃。 |
+  | [domStorageAccess](../harmonyos-references/arkts-basic-components-web-attributes.md#domstorageaccess) | 设置是否开启文档对象模型存储接口（DOM Storage API）权限。若不开启，无法使用localStorage存储数据，任何调用localStorage的代码都将失效，依赖本地存储的功能会异常。 |
+  | [fileAccess](../harmonyos-references/arkts-basic-components-web-attributes.md#fileaccess) | 设置是否开启应用中文件系统的访问。‌若不开启，文件读写功能完全被阻断，依赖文件的模块会崩溃。 |
   | [imageAccess](../harmonyos-references/arkts-basic-components-web-attributes.md#imageaccess) | 设置是否允许自动加载图片资源。 |
   | [onlineImageAccess](../harmonyos-references/arkts-basic-components-web-attributes.md#onlineimageaccess) | 设置是否允许从网络加载图片资源（通过HTTP和HTTPS访问的资源）。 |
   | [javaScriptAccess](../harmonyos-references/arkts-basic-components-web-attributes.md#javascriptaccess) | 设置是否允许执行JavaScript脚本。 |
 
+  ```typescript
+  import { webview } from '@kit.ArkWeb';
+
+  @Entry
+  @Component
+  struct WebComponent {
+    controller: webview.WebviewController = new webview.WebviewController();
+
+    build() {
+      Column() {
+        Web({ src: 'www.example.com', controller: this.controller })
+          .domStorageAccess(true)
+          .fileAccess(true)
+          .imageAccess(true)
+          .onlineImageAccess(true)
+          .javaScriptAccess(true)
+      }
+    }
+  }
   ```
-  1. import { webview } from '@kit.ArkWeb';
-
-  3. @Entry
-  4. @Component
-  5. struct WebComponent {
-  6. controller: webview.WebviewController = new webview.WebviewController();
-
-  8. build() {
-  9. Column() {
-  10. Web({ src: 'www.example.com', controller: this.controller })
-  11. .domStorageAccess(true)
-  12. .fileAccess(true)
-  13. .imageAccess(true)
-  14. .onlineImageAccess(true)
-  15. .javaScriptAccess(true)
-  16. }
-  17. }
-  18. }
-  ```
-
-  [OpenPermissions.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/WebWriteScreenIssue/entry/src/main/ets/pages/OpenPermissions.ets#L15-L34)
 * 修改[UserAgent](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#setcustomuseragent10)后再观察页面是否恢复正常。
 
+  ```typescript
+  import { webview } from '@kit.ArkWeb';
+  import { BusinessError } from '@kit.BasicServicesKit';
+
+  @Entry
+  @Component
+  struct WebComponent {
+    controller: webview.WebviewController = new webview.WebviewController();
+    @State customUserAgent: string = ' DemoApp';
+
+    build() {
+      Column() {
+        Web({ src: 'www.example.com', controller: this.controller })
+          .onControllerAttached(() => {
+            console.info('onControllerAttached');
+            try {
+              let userAgent = this.controller.getUserAgent() + this.customUserAgent;
+              this.controller.setCustomUserAgent(userAgent);
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+          })
+      }
+    }
+  }
   ```
-  1. import { webview } from '@kit.ArkWeb';
-  2. import { BusinessError } from '@kit.BasicServicesKit';
-
-  4. @Entry
-  5. @Component
-  6. struct WebComponent {
-  7. controller: webview.WebviewController = new webview.WebviewController();
-  8. @State customUserAgent: string = ' DemoApp';
-
-  10. build() {
-  11. Column() {
-  12. Web({ src: 'www.example.com', controller: this.controller })
-  13. .onControllerAttached(() => {
-  14. console.info('onControllerAttached');
-  15. try {
-  16. let userAgent = this.controller.getUserAgent() + this.customUserAgent;
-  17. this.controller.setCustomUserAgent(userAgent);
-  18. } catch (error) {
-  19. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-  20. }
-  21. })
-  22. }
-  23. }
-  24. }
-  ```
-
-  [ChangeUserAgent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/WebWriteScreenIssue/entry/src/main/ets/pages/ChangeUserAgent.ets#L15-L40)
 
 ## 使用DevTools工具进行页面内容验证
 
@@ -108,11 +103,11 @@ Web页面出现白屏的原因众多，本文列举了若干常见白屏问题�
 
    （3）网络里面是否有资源加载时间特别长等。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/mpMn_H0yTimuc6i0Vfsv4A/zh-cn_image_0000002558764748.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/R2IpCmenTXCHsDu4Az4oXg/zh-cn_image_0000002736313213.png)
 2. 检查控制台，确认是否存在因MixedContent策略或CORS策略导致的异常，或JS错误等。可参考[解决Web组件本地资源跨域问题](web-cross-origin.md)。为了提高安全性，ArkWeb内核禁止file协议和resource协议访问跨域请求。因此，在使用Web组件加载本地离线资源的时候，Web组件会拦截file协议和resource协议的跨域访问。Web组件无法访问本地跨域资源时，DevTools控制台会显示报错信息：
 
-   ```
-   1. Access to script at 'xxx' from origin 'xxx' has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes:   http, arkweb, data, chrome-extension, chrome, https, chrome-untrusted.
+   ```txt
+   Access to script at 'xxx' from origin 'xxx' has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes:   http, arkweb, data, chrome-extension, chrome, https, chrome-untrusted.
    ```
 
    有如下两种解决方法：
@@ -123,87 +118,87 @@ Web页面出现白屏的原因众多，本文列举了若干常见白屏问题�
 
    以下结合示例说明如何使用HTTP或HTTPS等协议解决本地资源跨域访问失败的问题。其中，index.html和js/script.js文件置于工程的rawfile目录下。当使用resource协议访问index.html时，js/script.js文件因跨域而被拦截，无法加载。在示例中，使用https://www.example.com/域名替换了原有的resource协议，同时利用onInterceptRequest接口替换资源，确保js/script.js文件可以成功加载，从而解决跨域拦截问题。
 
-   ```
-   1. // main/ets/pages/Index.ets
-   2. import { webview } from '@kit.ArkWeb';
+   ```ts
+   // main/ets/pages/Index.ets
+   import { webview } from '@kit.ArkWeb';
 
-   4. @Entry
-   5. @Component
-   6. struct Index {
-   7. @State message: string = 'Hello World';
-   8. webviewController: webview.WebviewController = new webview.WebviewController();
-   9. // 构造域名和本地文件的映射表
-   10. schemeMap = new Map([
-   11. ["https://www.example.com/index.html", "index.html"],
-   12. ["https://www.example.com/js/script.js", "js/script.js"],
-   13. ])
-   14. // 构造本地文件和构造返回的格式mimeType
-   15. mimeTypeMap = new Map([
-   16. ["index.html", 'text/html'],
-   17. ["js/script.js", "text/javascript"]
-   18. ])
+   @Entry
+   @Component
+   struct Index {
+     @State message: string = 'Hello World';
+     webviewController: webview.WebviewController = new webview.WebviewController();
+     // 构造域名和本地文件的映射表
+     schemeMap = new Map([
+       ["https://www.example.com/index.html", "index.html"],
+       ["https://www.example.com/js/script.js", "js/script.js"],
+     ])
+     // 构造本地文件和构造返回的格式mimeType
+     mimeTypeMap = new Map([
+       ["index.html", 'text/html'],
+       ["js/script.js", "text/javascript"]
+     ])
 
-   20. build() {
-   21. Row() {
-   22. Column() {
-   23. // 针对本地index.html,使用HTTP或HTTPS协议代替file协议或者resource协议，并且构造一个属于自己的域名。
-   24. // 本例中构造www.example.com为例。
-   25. Web({ src: "https://www.example.com/index.html", controller: this.webviewController })
-   26. .javaScriptAccess(true)
-   27. .fileAccess(true)
-   28. .domStorageAccess(true)
-   29. .geolocationAccess(true)
-   30. .width("100%")
-   31. .height("100%")
-   32. .onInterceptRequest((event) => {
-   33. if (!event) {
-   34. return;
-   35. }
-   36. // 此处匹配自己想要加载的本地离线资源，进行资源拦截替换，绕过跨域
-   37. if (this.schemeMap.has(event.request.getRequestUrl())) {
-   38. let rawfileName: string = this.schemeMap.get(event.request.getRequestUrl())!;
-   39. let mimeType = this.mimeTypeMap.get(rawfileName);
-   40. if (typeof mimeType === 'string') {
-   41. let response = new WebResourceResponse();
-   42. // 构造响应数据，如果本地文件在rawfile下，可以通过如下方式设置
-   43. response.setResponseData($rawfile(rawfileName));
-   44. response.setResponseEncoding('utf-8');
-   45. response.setResponseMimeType(mimeType);
-   46. response.setResponseCode(200);
-   47. response.setReasonMessage('OK');
-   48. response.setResponseIsReady(true);
-   49. return response;
-   50. }
-   51. }
-   52. return null;
-   53. })
-   54. }
-   55. .width('100%')
-   56. }
-   57. .height('100%')
-   58. }
-   59. }
-   ```
-
-   ```
-   1. <!-- main/resources/rawfile/index.html -->
-   2. <!DOCTYPE html>
-   3. <html>
-   4. <head>
-   5. <meta name="viewport" content="width=device-width,initial-scale=1">
-   6. </head>
-   7. <body>
-   8. <script crossorigin src="./js/script.js"></script>
-   9. </body>
-   10. </html>
+     build() {
+       Row() {
+         Column() {
+           // 针对本地index.html,使用HTTP或HTTPS协议代替file协议或者resource协议，并且构造一个属于自己的域名。
+           // 本例中构造www.example.com为例。
+           Web({ src: "https://www.example.com/index.html", controller: this.webviewController })
+             .javaScriptAccess(true)
+             .fileAccess(true)
+             .domStorageAccess(true)
+             .geolocationAccess(true)
+             .width("100%")
+             .height("100%")
+             .onInterceptRequest((event) => {
+               if (!event) {
+                 return;
+               }
+               // 此处匹配自己想要加载的本地离线资源，进行资源拦截替换，绕过跨域
+               if (this.schemeMap.has(event.request.getRequestUrl())) {
+                 let rawfileName: string = this.schemeMap.get(event.request.getRequestUrl())!;
+                 let mimeType = this.mimeTypeMap.get(rawfileName);
+                 if (typeof mimeType === 'string') {
+                   let response = new WebResourceResponse();
+                   // 构造响应数据，如果本地文件在rawfile下，可以通过如下方式设置
+                   response.setResponseData($rawfile(rawfileName));
+                   response.setResponseEncoding('utf-8');
+                   response.setResponseMimeType(mimeType);
+                   response.setResponseCode(200);
+                   response.setReasonMessage('OK');
+                   response.setResponseIsReady(true);
+                   return response;
+                 }
+               }
+               return null;
+             })
+         }
+         .width('100%')
+       }
+       .height('100%')
+     }
+   }
    ```
 
+   ```html
+   <!-- main/resources/rawfile/index.html -->
+   <!DOCTYPE html>
+   <html>
+   <head>
+     <meta name="viewport" content="width=device-width,initial-scale=1">
+   </head>
+   <body>
+     <script crossorigin src="./js/script.js"></script>
+   </body>
+   </html>
    ```
-   1. // main/resources/rawfile/js/script.js
-   2. const body = document.body;
-   3. const element = document.createElement('div');
-   4. element.textContent = 'success';
-   5. body.appendChild(element);
+
+   ```js
+   // main/resources/rawfile/js/script.js
+   const body = document.body;
+   const element = document.createElement('div');
+   element.textContent = 'success';
+   body.appendChild(element);
    ```
 
    方法二：
@@ -232,94 +227,92 @@ Web页面出现白屏的原因众多，本文列举了若干常见白屏问题�
 
    当路径列表中的任一路径不满足上述条件时，系统将抛出异常码401，并判定路径列表设置失败。如果路径列表设置为空，file协议的可访问范围将遵循[fileAccess](../harmonyos-references/arkts-basic-components-web-attributes.md#fileaccess)规则，具体示例如下。
 
+   ```typescript
+   import { webview } from '@kit.ArkWeb';
+   import { BusinessError } from '@kit.BasicServicesKit';
+
+   @Entry
+   @Component
+   struct WebComponent {
+     controller: WebviewController = new webview.WebviewController();
+     uiContext: UIContext = this.getUIContext();
+
+     build() {
+       Row() {
+         Web({ src: '', controller: this.controller })
+           .onControllerAttached(() => {
+             try {
+               // 设置允许可以跨域访问的路径列表
+               this.controller.setPathAllowingUniversalAccess([
+                 this.uiContext.getHostContext()!.resourceDir,
+                 this.uiContext.getHostContext()!.filesDir + '/example'
+               ])
+               this.controller.loadUrl('file://' + this.uiContext.getHostContext()!.resourceDir + '/index.html')
+             } catch (error) {
+               console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
+             }
+           })
+           .javaScriptAccess(true)
+           .fileAccess(true)
+           .domStorageAccess(true)
+       }
+     }
+   }
    ```
-   1. import { webview } from '@kit.ArkWeb';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
-
-   4. @Entry
-   5. @Component
-   6. struct WebComponent {
-   7. controller: WebviewController = new webview.WebviewController();
-   8. uiContext: UIContext = this.getUIContext();
-
-   10. build() {
-   11. Row() {
-   12. Web({ src: '', controller: this.controller })
-   13. .onControllerAttached(() => {
-   14. try {
-   15. // 设置允许可以跨域访问的路径列表
-   16. this.controller.setPathAllowingUniversalAccess([
-   17. this.uiContext.getHostContext()!.resourceDir,
-   18. this.uiContext.getHostContext()!.filesDir + '/example'
-   19. ])
-   20. this.controller.loadUrl('file://' + this.uiContext.getHostContext()!.resourceDir + '/index.html')
-   21. } catch (error) {
-   22. console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-   23. }
-   24. })
-   25. .javaScriptAccess(true)
-   26. .fileAccess(true)
-   27. .domStorageAccess(true)
-   28. }
-   29. }
-   30. }
-   ```
-
-   [SetPath.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/WebWriteScreenIssue/entry2/src/main/ets/pages/SetPath.ets#L15-L46)
 
    HTML示例代码：
 
+   ```html
+   <!-- main/resources/resfile/index.html -->
+   <!DOCTYPE html>
+   <html lang="en">
+
+   <head>
+       <meta charset="utf-8">
+       <title>Demo</title>
+       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover">
+       <script>
+           function getFile() {
+             var file = "file:///data/storage/el1/bundle/entry/resources/resfile/js/script.js";
+             // 使用file协议通过XMLHttpRequest跨域访问本地js文件。
+             var xmlHttpReq = new XMLHttpRequest();
+             xmlHttpReq.onreadystatechange = function(){
+             console.info("readyState:" + xmlHttpReq.readyState);
+             console.info("status:" + xmlHttpReq.status);
+             if(xmlHttpReq.readyState == 4){
+               if (xmlHttpReq.status == 200) {
+                  // 如果ets侧正确设置路径列表，则此处能正常获取资源
+                 const element = document.getElementById('text');
+                 element.textContent = "load " + file + " success";
+               } else {
+                   // 如果ets侧不设置路径列表，则此处会触发CORS跨域检查错误
+                   const element = document.getElementById('text');
+                   element.textContent = "load " + file + " failed";
+                 }
+             }
+           }
+           xmlHttpReq.open("GET", file);
+           xmlHttpReq.send(null);
+         }
+       </script>
+   </head>
+
+   <body>
+     <div class="page">
+         <button id="example" onclick="getFile()">loadFile</button>
+     </div>
+   <div id="text"></div>
+   </body>
+
+   </html>
    ```
-   1. <!-- main/resources/resfile/index.html -->
-   2. <!DOCTYPE html>
-   3. <html lang="en">
 
-   5. <head>
-   6. <meta charset="utf-8">
-   7. <title>Demo</title>
-   8. <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover">
-   9. <script>
-   10. function getFile() {
-   11. var file = "file:///data/storage/el1/bundle/entry/resources/resfile/js/script.js";
-   12. // 使用file协议通过XMLHttpRequest跨域访问本地js文件。
-   13. var xmlHttpReq = new XMLHttpRequest();
-   14. xmlHttpReq.onreadystatechange = function(){
-   15. console.info("readyState:" + xmlHttpReq.readyState);
-   16. console.info("status:" + xmlHttpReq.status);
-   17. if(xmlHttpReq.readyState == 4){
-   18. if (xmlHttpReq.status == 200) {
-   19. // 如果ets侧正确设置路径列表，则此处能正常获取资源
-   20. const element = document.getElementById('text');
-   21. element.textContent = "load " + file + " success";
-   22. } else {
-   23. // 如果ets侧不设置路径列表，则此处会触发CORS跨域检查错误
-   24. const element = document.getElementById('text');
-   25. element.textContent = "load " + file + " failed";
-   26. }
-   27. }
-   28. }
-   29. xmlHttpReq.open("GET", file);
-   30. xmlHttpReq.send(null);
-   31. }
-   32. </script>
-   33. </head>
-
-   35. <body>
-   36. <div class="page">
-   37. <button id="example" onclick="getFile()">loadFile</button>
-   38. </div>
-   39. <div id="text"></div>
-   40. </body>
-
-   42. </html>
-   ```
-
-   ```
-   1. // main/resources/resfile/js/script.js
-   2. const body = document.body;
-   3. const element = document.createElement('div');
-   4. element.textContent = 'success';
-   5. body.appendChild(element);
+   ```javascript
+   // main/resources/resfile/js/script.js
+   const body = document.body;
+   const element = document.createElement('div');
+   element.textContent = 'success';
+   body.appendChild(element);
    ```
 3. 查看onErrorReceive、onHttpErrorReceive、onSslErrorEvent、onHttpAuthRequest、onClientAuthenticationRequest等错误上报接口是否有被调用。请根据返回的错误码，对照[网络协议栈错误列表](../harmonyos-references/arkts-apis-neterrorlist.md)进行排查。
 
@@ -345,38 +338,38 @@ Web组件提供了自适应页面布局的能力，详情见 [Web组件大小自
 * 关闭滚动效果：webSetting({overScrollMode: OverScrollMode.NEVER})。
 * 此模式下不支持动态调整组件高度，确保页面高度固定。
 * 避免在FIT\_CONTENT模式下启用键盘避让属性RESIZE\_CONTENT，以免导致布局失效。
-* css样式height：<number> vh和Web组件大小自适应页面布局存在计算冲突，请检查height：<number> vh是否是由body节点而内的第一个高度css样式。如以下结构，id为2的dom节点高度将为0，导致白屏。
+* css样式height: <number> vh和Web组件大小自适应页面布局存在计算冲突，请检查height: <number> vh是否是由body节点以内的第一个高度css样式。如以下结构，id为2的dom节点高度将为0，导致白屏。
 
-  ```
-  1. <body>
-  2. <div id = "1">
-  3. <div id = "2" style = "height: 100vh">子dom</div>
-  4. <div id = "3" style = "height: 20px">子dom</div>
-  5. </div>
-  6. </body>
+  ```html
+  <body>
+    <div id = "1">
+      <div id = "2" style = "height: 100vh">子dom</div>
+      <div id = "3" style = "height: 20px">子dom</div>
+    </div>
+  </body>
   ```
 
   解决此白屏问题的参考方案如下：
 
   + 子dom使用具体高度样式撑开父元素。
 
-    ```
-    1. <body>
-    2. <div id = "1">
-    3. <div id = "2"><div style = "height: 20px"><div/></div>
-    4. <div id = "3" style = "height: 20px">子dom</div>
-    5. </div>
-    6. </body>
+    ```html
+    <body>
+      <div id = "1">
+        <div id = "2"><div style = "height: 20px"><div/></div>
+        <div id = "3" style = "height: 20px">子dom</div>
+      </div>
+    </body>
     ```
   + 父元素使用实际高度样式。
 
-    ```
-    1. <body>
-    2. <div id = "1">
-    3. <div id = "2" style = "height: 20px">子dom</div>
-    4. <div id = "3" style = "height: 20px">子dom</div>
-    5. </div>
-    6. </body>
+    ```html
+    <body>
+      <div id = "1">
+        <div id = "2" style = "height: 20px">子dom</div>
+        <div id = "3" style = "height: 20px">子dom</div>
+      </div>
+    </body>
     ```
 
 ## 处理H5代码兼容性
@@ -386,20 +379,22 @@ Web组件提供了自适应页面布局的能力，详情见 [Web组件大小自
 * 特殊协议拦截。
 * 若H5页面调用tel:、mailto:等协议导致白屏，需通过onInterceptRequest拦截并调用系统拨号能力：
 
-  ```
-  1. .onInterceptRequest((event) => {
-  2. if (event.request.url.startsWith('tel:')) {
-  3. // 调用系统拨号能力
-  4. call.makeCall({ phoneNumber: '123456' });
-  5. return { responseCode: 404 }; // 阻止默认行为
-  6. }
-  7. return null;
-  8. })
+  ```ts
+  .onInterceptRequest((event) => {
+      if (event.request.getRequestUrl().startsWith('tel:')) {
+          // 调用系统拨号能力
+          call.makeCall('123456');
+          let response = new WebResourceResponse();
+          response.setResponseCode(404);
+          return response; // 阻止默认行为
+      }
+      return null;
+  })
   ```
 
 ## 监控内存与生命周期
 
-内存达到阈值会导致渲染进程被终止，从而引发白屏现象；同样，渲染进程创建失败或非正常销毁也会导致白屏。可从日志中排查原因。检查Web组件是否与WebController正确绑定，或是否因WebController提前释放导致白屏。关注日志中与Render进程相关的信息：是否存在内存泄漏使渲染内存不足。关键字“MEMORY\_PRESSURE\_LEVEL\_CRITICAL”表明内存已达到阈值，此情形下Web可能遭遇黑屏、花屏或闪屏等异常状况，需排查是否存在内存泄漏问题。Render进程是否成功启动或异常退出。
+内存达到阈值会导致渲染进程被终止，从而引发白屏现象；同样，渲染进程创建失败或非正常销毁也会导致白屏。可从日志中排查原因。检查Web组件是否与WebviewController正确绑定，或是否因WebviewController提前释放导致白屏。关注日志中与Render进程相关的信息：是否存在内存泄漏使渲染内存不足。关键字“MEMORY\_PRESSURE\_LEVEL\_CRITICAL”表明内存已达到阈值，此情形下Web可能遭遇黑屏、花屏或闪屏等异常状况，需排查是否存在内存泄漏问题。Render进程是否成功启动或异常退出。
 
 下面列举一些日志中的关键字和对应的情况说明：
 
@@ -415,7 +410,7 @@ Web组件提供了自适应页面布局的能力，详情见 [Web组件大小自
 
 下面说明一下Web组件网络加载过程中的关键日志，正常情况下一个Web组件的加载过程应该包含这些关键节点：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/7UbEyRX6SQePFS6gVG1gjA/zh-cn_image_0000002558605092.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/N1kdlXqqRnCaBtMSowHBrw/zh-cn_image_0000002706674170.png)
 
 | 日志关键字 | 说明 |
 | --- | --- |
@@ -434,18 +429,32 @@ Web组件提供了自适应页面布局的能力，详情见 [Web组件大小自
 
 ## 设备的WebView默认加载进程不一致导致加载H5页面白屏
 
-**问题：**
+**问题现象：**
 
-用WebView加载H5在Phone上表现正常，但是在Table/PC/2in1上白屏。
+用WebView加载H5在Phone上表现正常，但是在Tablet/PC/2in1上白屏。
 
-**原因：**
+**可能原因：**
 
-Table/PC/2in1的WebView默认采用多进程加载，iframe默认使用子进程加载。主进程加载完成后，若子进程尚未加载完成，会导致白屏现象。
+Tablet/PC/2in1的WebView默认采用多进程加载，iframe默认使用子进程加载。主进程加载完成后，若子进程尚未加载完成，会导致白屏现象。
 
-**解决方案：**
+**解决措施：**
 
 通过[setRenderProcessMode](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#setrenderprocessmode12)设置WebView渲染模式为单进程加载。
 
+```ts
+webview.WebviewController.setRenderProcessMode(webview.RenderProcessMode.SINGLE);
 ```
-1. webview.WebviewController.setRenderProcessMode(webview.RenderProcessMode.SINGLE);
-```
+
+## WebView默认缓存模式下缓存协商与服务端资源更新不一致导致的白屏
+
+**问题现象：**
+
+网页在系统自带浏览器访问正常，但是在应用的WebView中加载出现页面白屏。
+
+**可能原因：**
+
+WebView默认的缓存模式CacheMode.Default行为是优先使用缓存。当缓存中存在资源时，WebView会在后续请求中自动附加基于缓存内容的条件请求头If-None-Match（携带缓存的ETag值），向服务端做协商缓存校验。当服务端资源更新导致ETag变化时，条件匹配失败，服务端返回412。WebView收到412后不会自动降级重试，直接判定主资源加载失败，页面白屏。
+
+**解决措施：**
+
+在Web组件上设置[cacheMode](../harmonyos-references/arkts-basic-components-web-attributes.md#cachemode)属性为CacheMode.Online（即.cacheMode(CacheMode.Online)）。该模式下，WebView会向服务端发起无条件请求，不携带基于旧缓存的条件头（如If-None-Match），强制从网络获取最新资源、不使用任何缓存，从而绕过缓存协商校验环节，避免主资源因协商失败而加载失败导致白屏。

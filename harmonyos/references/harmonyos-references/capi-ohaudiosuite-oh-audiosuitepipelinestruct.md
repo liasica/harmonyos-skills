@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohau
 title: OH_AudioSuitePipelineStruct
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 结构体 > OH_AudioSuitePipelineStruct
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:56+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:b2255fb3f16438e9acf12f8b9cc2ffd377610530dafb6b43e02b07b838ac5179
+scraped_at: 2026-09-02T14:52:46+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ac8b0963c1b4273abf587a341238075d802dab7e5ac7c03386e4035912c6efb9
 ---
 
-```
-1. typedef struct OH_AudioSuitePipelineStruct OH_AudioSuitePipeline
+```c
+typedef struct OH_AudioSuitePipelineStruct OH_AudioSuitePipeline
 ```
 
 ## 概述
-
-PhonePC/2in1Tablet
 
 声明音频编创管线，用来管理音频编创节点。
 

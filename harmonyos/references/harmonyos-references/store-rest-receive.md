@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/store-rest-receive
 title: 归因结果回传
+breadcrumb: API参考 > 应用服务 > AppGallery Kit（应用市场服务） > REST API > 归因结果回传
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:26+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7e140db10902e3cb1c06fc199302d4ffb45cf09d0ccf6bad384ec5dd655d5173
+scraped_at: 2026-09-02T15:02:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a5f0b81dc4395a6c7512b5ef0458d1f878d250cfe316890fa617ace6cb7b1131
 ---
 
 ## 功能介绍
@@ -28,7 +29,7 @@ content_hash: sha256:7e140db10902e3cb1c06fc199302d4ffb45cf09d0ccf6bad384ec5dd655
 
 | 参数 | 参数类型 | 是否必选 | 是否参与签名 | 描述 |
 | --- | --- | --- | --- | --- |
-| ad\_tech\_id | String | 否 | 是 | 归因成功的分发平台id，分发平台向应用归因云侧注册角色时，由应用归因服务分配，长度固定为8个字符如果接收方为分发平台，该id即分发平台自身的id。  如果接收方为归因监测平台/开发者，该id为归因监测平台/开发者注册转化时指定分发平台列表中归因成功的分发平台id。 |
+| ad\_tech\_id | String | 否 | 是 | 归因成功的分发平台id，分发平台向应用归因云侧注册角色时，由应用归因服务分配，长度固定为8个字符。  如果接收方为分发平台，该id即分发平台自身的id。  如果接收方为归因监测平台/开发者，该id为归因监测平台/开发者注册转化时指定分发平台列表中归因成功的分发平台id。 |
 | campaign\_id | String | 否 | 是 | 本次转化归因到的营销任务id，仅当满足回传条件时携带。 |
 | source\_id | String | 否 | 是 | 媒体应用id，长度不超过64个字符，仅当满足回传条件时携带。 |
 | destination\_id | String | 否 | 是 | 开发者应用id，长度不超过64个字符 。  **说明：** 您的应用ID参考[查看应用基本信息](../app/agc-help-appinfo-0000001100014694.md)获取。 |
@@ -44,20 +45,19 @@ content_hash: sha256:7e140db10902e3cb1c06fc199302d4ffb45cf09d0ccf6bad384ec5dd655
 
 ## 请求示例
 
-```
-1. POST https://xxxxxxxx/attribution/report-attribution
-2. Content-Type: application/json
-3. {
-4. "ad_tech_id":"12345678",
-5. "campaign_id":"50",
-6. "source_id":"108****321",
-7. "destination_id":"101****678",
-8. "trigger_data":12,
-9. "nonce":"17aa292c****4516****25150****195",
-10. "timestamp":167****380,
-11. "signature":"MEQCIEQlmZ****zKBSE8QnhLTIHZZZ****ZpRqRxHss65Ko****JgJKjdrWdkL****juEx2RmFS7da****ZRVZ8RyMyUXg==",
-12. "transaction_id":"aa****aaaa"
-13. }
+```json
+Content-Type: application/json
+{
+    "ad_tech_id":"12345678",
+    "campaign_id":"50",
+    "source_id":"108****321",
+    "destination_id":"101****678",
+    "trigger_data":12,
+    "nonce":"17aa292c****4516****25150****195",
+    "timestamp":167****380,
+    "signature":"MEQCIEQlmZ****zKBSE8QnhLTIHZZZ****ZpRqRxHss65Ko****JgJKjdrWdkL****juEx2RmFS7da****ZRVZ8RyMyUXg==",
+    "transaction_id":"aa****aaaa"
+}
 ```
 
 ## 响应参数
@@ -77,94 +77,94 @@ content_hash: sha256:7e140db10902e3cb1c06fc199302d4ffb45cf09d0ccf6bad384ec5dd655
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json; charset=UTF-8
-3. {
-4. "resultCode": "0",
-5. "resultDesc": "Success."
-6. }
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+{
+  "resultCode": "0",
+  "resultDesc": "Success."
+}
 ```
 
 ## 回传结果验签方法
 
 1. 您需要在pom.xml文件中引入最新版本的开源密码算法包[Bouncy Castle](https://www.bouncycastle.org/download/bouncy-castle-java/)。
 
-   ```
-   1. <dependency>
-   2. <groupId>org.bouncycastle</groupId>
-   3. <artifactId>bcprov-jdk18on</artifactId>
-   4. <version>${last_version}</version>
-   5. </dependency>
-   6. <dependency>
-   7. <groupId>commons-codec</groupId>
-   8. <artifactId>commons-codec</artifactId>
-   9. <version>${last_version}</version>
-   10. </dependency>
+   ```java
+   <dependency>
+     <groupId>org.bouncycastle</groupId>
+     <artifactId>bcprov-jdk18on</artifactId>
+     <version>${last_version}</version>
+   </dependency>
+   <dependency>
+     <groupId>commons-codec</groupId>
+     <artifactId>commons-codec</artifactId>
+     <version>${last_version}</version>
+   </dependency>
    ```
 2. 您可以使用以下代码对回传请求中签名值进行验签。
 
+   ```java
+   import org.apache.commons.codec.binary.Base64;
+   import org.bouncycastle.jce.provider.BouncyCastleProvider;
+   import java.nio.charset.StandardCharsets;
+   import java.security.InvalidKeyException;
+   import java.security.KeyFactory;
+   import java.security.NoSuchAlgorithmException;
+   import java.security.PublicKey;
+   import java.security.Security;
+   import java.security.Signature;
+   import java.security.SignatureException;
+   import java.security.spec.InvalidKeySpecException;
+   import java.security.spec.X509EncodedKeySpec;
+
+   /**
+    * 回传结果验签工具类
+    *
+    * @author ******
+    * @since ****-**-**
+    */
+   public class PostbackResultVerifyUtil {
+       private static String publicKey = "MIIBoj*****AAE=";
+       private static final String RSA_ALGORITHM = "RSA";
+       private static final String SHA256WithRSA_PSS_ALGORITHM = "SHA256WithRSA/PSS";
+
+       /**
+        * 回传结果验签调用方法
+        *
+        * @param content 签名内容拼接字段
+        * @param signature 回传请求中的签名值
+        * @return 验签结果
+        * @throws NoSuchAlgorithmException NoSuchAlgorithmException
+        * @throws InvalidKeySpecException InvalidKeySpecException
+        * @throws InvalidKeyException InvalidKeyException
+        * @throws SignatureException SignatureException
+        */
+       public boolean verify(String content,String signature)
+           throws NoSuchAlgorithmException, InvalidKeySpecException, InvalidKeyException, SignatureException {
+           byte[] plainContent = content.getBytes(StandardCharsets.UTF_8);
+           byte[] signContent = decodeBase64(signature);
+           Security.addProvider(new BouncyCastleProvider());
+           PublicKey pubKey = getPublicKey(publicKey);
+           Signature rsaSignature = Signature.getInstance(SHA256WithRSA_PSS_ALGORITHM);
+           rsaSignature.initVerify(pubKey);
+           rsaSignature.update(plainContent);
+           return rsaSignature.verify(signContent);
+       }
+
+       private PublicKey getPublicKey(String key) throws NoSuchAlgorithmException, InvalidKeySpecException {
+           X509EncodedKeySpec keySpec = new X509EncodedKeySpec(decodeBase64(key));
+           KeyFactory keyFactory = KeyFactory.getInstance(RSA_ALGORITHM);
+           return keyFactory.generatePublic(keySpec);
+       }
+
+       private byte[] decodeBase64(String base64Str) {
+           return Base64.decodeBase64(base64Str.getBytes(StandardCharsets.UTF_8));
+       }
+   }
    ```
-   1. import org.apache.commons.codec.binary.Base64;
-   2. import org.bouncycastle.jce.provider.BouncyCastleProvider;
-   3. import java.nio.charset.StandardCharsets;
-   4. import java.security.InvalidKeyException;
-   5. import java.security.KeyFactory;
-   6. import java.security.NoSuchAlgorithmException;
-   7. import java.security.PublicKey;
-   8. import java.security.Security;
-   9. import java.security.Signature;
-   10. import java.security.SignatureException;
-   11. import java.security.spec.InvalidKeySpecException;
-   12. import java.security.spec.X509EncodedKeySpec;
 
-   14. /**
-   15. * 回传结果验签工具类
-   16. *
-   17. * @author ******
-   18. * @since ****-**-**
-   19. */
-   20. public class PostbackResultVerifyUtil {
-   21. private static String publicKey = "MIIBoj*****AAE=";
-   22. private static final String RSA_ALGORITHM = "RSA";
-   23. private static final String SHA256WithRSA_PSS_ALGORITHM = "SHA256WithRSA/PSS";
-
-   25. /**
-   26. * 回传结果验签调用方法
-   27. *
-   28. * @param content 签名内容拼接字段
-   29. * @param signature 回传请求中的签名值
-   30. * @return 验签结果
-   31. * @throws NoSuchAlgorithmException NoSuchAlgorithmException
-   32. * @throws InvalidKeySpecException InvalidKeySpecException
-   33. * @throws InvalidKeyException InvalidKeyException
-   34. * @throws SignatureException SignatureException
-   35. */
-   36. public boolean verify(String content,String signature)
-   37. throws NoSuchAlgorithmException, InvalidKeySpecException, InvalidKeyException, SignatureException {
-   38. byte[] plainContent = content.getBytes(StandardCharsets.UTF_8);
-   39. byte[] signContent = decodeBase64(signature);
-   40. Security.addProvider(new BouncyCastleProvider());
-   41. PublicKey pubKey = getPublicKey(publicKey);
-   42. Signature rsaSignature = Signature.getInstance(SHA256WithRSA_PSS_ALGORITHM);
-   43. rsaSignature.initVerify(pubKey);
-   44. rsaSignature.update(plainContent);
-   45. return rsaSignature.verify(signContent);
-   46. }
-
-   48. private PublicKey getPublicKey(String key) throws NoSuchAlgorithmException, InvalidKeySpecException {
-   49. X509EncodedKeySpec keySpec = new X509EncodedKeySpec(decodeBase64(key));
-   50. KeyFactory keyFactory = KeyFactory.getInstance(RSA_ALGORITHM);
-   51. return keyFactory.generatePublic(keySpec);
-   52. }
-
-   54. private byte[] decodeBase64(String base64Str) {
-   55. return Base64.decodeBase64(base64Str.getBytes(StandardCharsets.UTF_8));
-   56. }
-   57. }
-   ```
-
-   说明
+   **说明** 
 
    回传结果验签调用方法verify(String content,String signature)中：
 

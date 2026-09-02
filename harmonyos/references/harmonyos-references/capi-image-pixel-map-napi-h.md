@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: image_pixel_map_napi.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > image_pixel_map_napi.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:19+08:00
-doc_updated_at: 2026-03-19
-content_hash: sha256:8fb51fde20cab447b3093357e710867adb05fa5ba75217de4cc3828224682591
+scraped_at: 2026-09-02T15:02:31+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5cf4ebc732c1554ef259fcccdaa8b49fd7d4a07196a56e4302a3326c77b6c685
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明可以锁定并访问pixelmap数据的方法，声明解锁的方法。
 
@@ -26,19 +24,13 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [OhosPixelMapInfo](capi-image-ohospixelmapinfo.md) | - | 用于定义PixelMap的相关信息。 |
 
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -48,8 +40,6 @@ PhonePC/2in1TabletTVWearable
 
 ### 函数
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 描述 |
 | --- | --- |
 | [int32\_t OH\_GetImageInfo(napi\_env env, napi\_value value, OhosPixelMapInfo \*info)](capi-image-pixel-map-napi-h.md#oh_getimageinfo) | 获取PixelMap的信息，并记录信息到[OhosPixelMapInfo](capi-image-ohospixelmapinfo.md)结构体中。 |
@@ -58,14 +48,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### 方法返回的错误码
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum anonymous enum
+```c
+enum anonymous enum
 ```
 
 **描述**
@@ -83,10 +69,8 @@ PhonePC/2in1TabletTVWearable
 
 ### 像素格式
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum anonymous enum
+```c
+enum anonymous enum
 ```
 
 **描述**
@@ -105,10 +89,8 @@ PhonePC/2in1TabletTVWearable
 
 ### PixelMap缩放类型
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum anonymous enum
+```c
+enum anonymous enum
 ```
 
 **描述**
@@ -124,14 +106,10 @@ PixelMap缩放类型的枚举。
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_GetImageInfo()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_GetImageInfo(napi_env env, napi_value value, OhosPixelMapInfo *info)
+```c
+int32_t OH_GetImageInfo(napi_env env, napi_value value, OhosPixelMapInfo *info)
 ```
 
 **描述**
@@ -158,10 +136,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AccessPixels()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_AccessPixels(napi_env env, napi_value value, void** addrPtr)
+```c
+int32_t OH_AccessPixels(napi_env env, napi_value value, void** addrPtr)
 ```
 
 **描述**
@@ -190,10 +166,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_UnAccessPixels()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_UnAccessPixels(napi_env env, napi_value value)
+```c
+int32_t OH_UnAccessPixels(napi_env env, napi_value value)
 ```
 
 **描述**

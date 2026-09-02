@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-195
 title: 调用window实例的setWindowSystemBarProperties接口设置窗口状态栏和导航栏的高亮属性时不生效
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 调用window实例的setWindowSystemBarProperties接口设置窗口状态栏和导航栏的高亮属性时不生效
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 调用window实例的setWindowSystemBarProperties接口设置窗口状态栏和导航栏的高亮属性时不生效
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:25:52+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:36+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:61c41be9d924e2d45e5b5ffa5386737af4cc303cfab5a93745f2382b33a89760
 ---
 

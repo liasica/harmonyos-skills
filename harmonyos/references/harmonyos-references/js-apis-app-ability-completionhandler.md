@@ -3,21 +3,19 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.CompletionHandler (拉起应用结果的操作类)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.CompletionHandler (拉起应用结果的操作类)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:17+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:53fbe00416a481f44c90a3873a7973f19cb090a079d3b6635fd4c30c99d45e2d
+scraped_at: 2026-09-02T15:00:32+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5d8d71014b7c5c0219ed87fb36ef0b2e877404348d6a4355600a00f5f505c8df
 ---
 
 CompletionHandler作为[StartOptions](js-apis-app-ability-startoptions.md#startoptions)和[OpenLinkOptions](js-apis-app-ability-openlinkoptions.md#openlinkoptions)的可选参数，用于处理拉起应用请求的结果。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 20 开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本模块接口仅可在Stage模型下使用。
 
 ## 约束限制
-
-PhonePC/2in1TabletTVWearable
 
 当前支持使用该模块的接口包括：
 
@@ -27,25 +25,19 @@ PhonePC/2in1TabletTVWearable
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { CompletionHandler } from '@kit.AbilityKit';
+```ts
+import { CompletionHandler } from '@kit.AbilityKit';
 ```
 
 ## CompletionHandler
 
-PhonePC/2in1TabletTVWearable
-
-CompletionHandler提供了[onRequestSuccess](js-apis-app-ability-completionhandler.md#onrequestsuccess)和[onRequestFailure](js-apis-app-ability-completionhandler.md#onrequestfailure)两个回调函数，分别用来处理拉起应用成功和失败时的结果。
+CompletionHandler提供了[onRequestSuccess](js-apis-app-ability-completionhandler.md#onrequestsuccess)和[onRequestFailure](js-apis-app-ability-completionhandler.md#onrequestfailure)两个回调函数，分别处理拉起应用成功和失败时的结果。
 
 ### onRequestSuccess
 
-PhonePC/2in1TabletTVWearable
-
 onRequestSuccess(elementName: ElementName, message: string): void
 
-拉起应用成功时的回调函数。
+拉起应用成功时的回调函数，用于接收并处理拉起应用成功后的结果信息。
 
 **元服务API**：从API version 20开始，该接口支持在元服务中使用。
 
@@ -64,11 +56,9 @@ onRequestSuccess(elementName: ElementName, message: string): void
 
 ### onRequestFailure
 
-PhonePC/2in1TabletTVWearable
-
 onRequestFailure(elementName: ElementName, message: string): void
 
-拉起应用失败时的回调函数。
+拉起应用失败时的回调函数，用于接收并处理拉起应用失败后的错误信息。
 
 **元服务API**：从API version 20开始，该接口支持在元服务中使用。
 
@@ -87,47 +77,47 @@ onRequestFailure(elementName: ElementName, message: string): void
 
 ### CompletionHandler使用
 
-```
-1. import { UIAbility, Want, StartOptions, CompletionHandler, bundleManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility, Want, StartOptions, CompletionHandler, bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onForeground() {
-6. let want: Want = {
-7. deviceId: '',
-8. bundleName: 'com.example.myapplication',
-9. abilityName: 'EntryAbility'
-10. };
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    let want: Want = {
+      deviceId: '',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility'
+    };
 
-12. let completionHandler: CompletionHandler = {
-13. onRequestSuccess: (elementName: bundleManager.ElementName, message: string): void => {
-14. console.info(`${elementName.bundleName}-${elementName.moduleName}-${elementName.abilityName} start succeeded: ${message}`);
-15. },
-16. onRequestFailure: (elementName: bundleManager.ElementName, message: string): void => {
-17. console.error(`${elementName.bundleName}-${elementName.moduleName}-${elementName.abilityName} start failed: ${message}`);
-18. }
-19. };
+    let completionHandler: CompletionHandler = {
+      onRequestSuccess: (elementName: bundleManager.ElementName, message: string): void => {
+        console.info(`${elementName.bundleName}-${elementName.moduleName}-${elementName.abilityName} start succeeded: ${message}`);
+      },
+      onRequestFailure: (elementName: bundleManager.ElementName, message: string): void => {
+        console.error(`${elementName.bundleName}-${elementName.moduleName}-${elementName.abilityName} start failed: ${message}`);
+      }
+    };
 
-21. let options: StartOptions = {
-22. completionHandler: completionHandler
-23. };
+    let options: StartOptions = {
+      completionHandler: completionHandler
+    };
 
-25. try {
-26. this.context.startAbility(want, options, (err: BusinessError) => {
-27. if (err.code) {
-28. // 处理业务逻辑错误
-29. console.error(`startAbility failed, code is ${err.code}, message is ${err.message}`);
-30. return;
-31. }
-32. // 执行正常业务
-33. console.info('startAbility succeed');
-34. });
-35. } catch (err) {
-36. // 处理入参错误异常
-37. let code = (err as BusinessError).code;
-38. let message = (err as BusinessError).message;
-39. console.error(`startAbility failed, code is ${code}, message is ${message}`);
-40. }
-41. }
-42. }
+    try {
+      this.context.startAbility(want, options, (err: BusinessError) => {
+        if (err.code) {
+          // 处理业务逻辑错误
+          console.error(`startAbility failed, code is ${err.code}, message is ${err.message}`);
+          return;
+        }
+        // 执行正常业务
+        console.info('startAbility succeed');
+      });
+    } catch (err) {
+      // 处理入参错误异常
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`startAbility failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```

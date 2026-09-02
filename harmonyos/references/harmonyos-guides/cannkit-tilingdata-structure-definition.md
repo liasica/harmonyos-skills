@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tilin
 title: TilingData结构定义
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > Host API > Tiling数据结构注册 > TilingData结构定义
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:46+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:750f006c6a95ccc85a0062d9bfa7916f5fba8cef23abd2809615916d33475af6
+scraped_at: 2026-09-02T14:50:38+08:00
+doc_updated_at: 2026-05-12
+content_hash: sha256:d8daa43846b486e3f30871b441ca2efaf80cd07ddbecffabf9b6fa3e9826b48b
 ---
 
 ## 函数功能
@@ -20,28 +20,28 @@ content_hash: sha256:750f006c6a95ccc85a0062d9bfa7916f5fba8cef23abd2809615916d334
 
 * 定义一个TilingData类
 
-  ```
-  1. BEGIN_TILING_DATA_DEF(class_name)
+  ```cpp
+  BEGIN_TILING_DATA_DEF(class_name)
   ```
 * 添加通用数据类型的TilingData字段
 
-  ```
-  1. TILING_DATA_FIELD_DEF(data_type, field_name)
+  ```cpp
+  TILING_DATA_FIELD_DEF(data_type, field_name)
   ```
 * 添加数组类型的TilingData字段，数组的元素数据类型为通用数据类型
 
-  ```
-  1. TILING_DATA_FIELD_DEF_ARR(arr_type, arr_size, field_name)
+  ```cpp
+  TILING_DATA_FIELD_DEF_ARR(arr_type, arr_size, field_name)
   ```
 * 添加结构体类型的TilingData字段
 
-  ```
-  1. TILING_DATA_FIELD_DEF_STRUCT(struct_type, field_name)
+  ```cpp
+  TILING_DATA_FIELD_DEF_STRUCT(struct_type, field_name)
   ```
 * 定义结束
 
-  ```
-  1. END_TILING_DATA_DEF
+  ```cpp
+  END_TILING_DATA_DEF
   ```
 
 ## 参数说明
@@ -86,43 +86,43 @@ content_hash: sha256:750f006c6a95ccc85a0062d9bfa7916f5fba8cef23abd2809615916d334
 
 ## 调用示例
 
-```
-1. #include "register/tilingdata_base.h"
-
-3. // 定义tilingdata类
-4. namespace optiling {
-5. BEGIN_TILING_DATA_DEF(Matmul)
-6. TILING_DATA_FIELD_DEF(uint16_t, mmVar);
-7. TILING_DATA_FIELD_DEF_ARR(uint16_t, 3, mmArr);
-8. END_TILING_DATA_DEF;
-9. // 注册中间结构体，第一个参数固定为struct_name#Op，第二个参数即struct_name, 如struct_name为Matmul，第一参数为MatmulOp，第二个参数为Matmul
-10. REGISTER_TILING_DATA_CLASS(MatmulOp, Matmul)      // 注册中间结构体
-
-12. BEGIN_TILING_DATA_DEF(AddCustomTilingData)        // 注册一个tiling类，以tiling的名字作为入参
-13. TILING_DATA_FIELD_DEF(uint32_t, blkDim);        // 添加tiling变量类型字段，参与计算核数
-14. TILING_DATA_FIELD_DEF(uint32_t, totalSize);     // 添加tiling变量类型字段，总计算数据量
-15. TILING_DATA_FIELD_DEF(uint32_t, splitTile);     // 添加tiling变量类型字段，每个core处理的数据分块计算
-16. TILING_DATA_FIELD_DEF_ARR(uint16_t, 3, arrSample);    // 添加tiling数组类型字段
-17. TILING_DATA_FIELD_DEF_STRUCT(Matmul, mm);             // 添加tiling结构体类型字段
-18. END_TILING_DATA_DEF;                                    // 定义结束
-19. // 注册算子tilingdata类到对应的AddCustom算子
-20. REGISTER_TILING_DATA_CLASS(AddCustom, AddCustomTilingData)
-21. }
-
-23. // host侧设置参数值和使用tiling参数
-24. static void TilingAddInit(AddCustomTilingData *tiling, uint32_t blockDim)
-25. {
-26. // 设置参数值
-27. tiling->set_blkDim(blockDim);                  // 置值通用数据类型变量blockDim
-28. uint16_t arr[] = {10,2,8,2,3,4,5,2,1,2,4,4,5,};
-29. tiling->set_arrSample(arr);                    // 置值通用数据类型数组变量arrSample，仅会复制arr数据的前三个数据，与TILING_DATA_FIELD_DEF_ARR中arr_size一致
-30. tiling->mm.set_mmVar(1);                       // 置值嵌套结构体通用数据类型变量mmVar
-31. tiling->mm.set_mmArr(arr);                     // 置值嵌套结构体通用数据类型数组mmArr
-
-33. // 使用参数值
-34. uint32_t useBlockDim = tiling->get_blkDim();    // 获取通用数据类型变量blockDim
-35. uint32_t* arrPoint = tiling->get_arrSample();   // 获取通用数据类型数组变量arrSample
-36. useBlockDim = tiling->mm.get_mmVar();           // 获取嵌套结构体通用数据类型变量mmVar
-37. arrPoint = tiling->mm.get_mmArr();              // 获取嵌套结构体通用数据类型数组mmArr
-38. }
+```cpp
+#include "register/tilingdata_base.h"
+ 
+// 定义tilingdata类
+namespace optiling {
+BEGIN_TILING_DATA_DEF(Matmul)
+  TILING_DATA_FIELD_DEF(uint16_t, mmVar);
+  TILING_DATA_FIELD_DEF_ARR(uint16_t, 3, mmArr);
+END_TILING_DATA_DEF;
+// 注册中间结构体，第一个参数固定为struct_name#Op，第二个参数即struct_name, 如struct_name为Matmul，第一参数为MatmulOp，第二个参数为Matmul
+REGISTER_TILING_DATA_CLASS(MatmulOp, Matmul) // 注册中间结构体
+ 
+BEGIN_TILING_DATA_DEF(AddCustomTilingData) // 注册一个tiling类，以tiling的名字作为入参
+  TILING_DATA_FIELD_DEF(uint32_t, blkDim); // 添加tiling变量类型字段，参与计算核数
+  TILING_DATA_FIELD_DEF(uint32_t, totalSize); // 添加tiling变量类型字段，总计算数据量
+  TILING_DATA_FIELD_DEF(uint32_t, splitTile); // 添加tiling变量类型字段，每个core处理的数据分块计算
+  TILING_DATA_FIELD_DEF_ARR(uint16_t, 3, arrSample); // 添加tiling数组类型字段
+  TILING_DATA_FIELD_DEF_STRUCT(Matmul, mm); // 添加tiling结构体类型字段
+END_TILING_DATA_DEF; // 定义结束
+// 注册算子tilingdata类到对应的AddCustom算子
+REGISTER_TILING_DATA_CLASS(AddCustom, AddCustomTilingData)
+}
+ 
+// host侧设置参数值和使用tiling参数
+static void TilingAddInit(AddCustomTilingData *tiling, uint32_t blockDim)
+{
+  // 设置参数值
+  tiling->set_blkDim(blockDim); // 置值通用数据类型变量blockDim
+  uint16_t arr[] = {10,2,8,2,3,4,5,2,1,2,4,4,5,};
+  tiling->set_arrSample(arr); // 置值通用数据类型数组变量arrSample，仅会复制arr数据的前三个数据，与TILING_DATA_FIELD_DEF_ARR中arr_size一致
+  tiling->mm.set_mmVar(1); // 置值嵌套结构体通用数据类型变量mmVar
+  tiling->mm.set_mmArr(arr); // 置值嵌套结构体通用数据类型数组mmArr
+   
+  // 使用参数值
+  uint32_t useBlockDim = tiling->get_blkDim(); // 获取通用数据类型变量blockDim
+  uint32_t* arrPoint = tiling->get_arrSample(); // 获取通用数据类型数组变量arrSample
+  useBlockDim = tiling->mm.get_mmVar(); // 获取嵌套结构体通用数据类型变量mmVar
+  arrPoint = tiling->mm.get_mmArr(); // 获取嵌套结构体通用数据类型数组mmArr
+}
 ```

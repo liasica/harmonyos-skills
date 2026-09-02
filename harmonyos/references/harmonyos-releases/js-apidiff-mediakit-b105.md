@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-mediakit-b105
 title: Media Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.1(13) > OS平台能力 > API变更清单 > HarmonyOS 5.0.1(13) Beta3引入的API > Media Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.1(13) > OS平台能力 > API变更清单 > HarmonyOS 5.0.1(13) Beta3引入的API > Media Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:36:04+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:39+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:eba13ff55e91ca141e5185d9bed6ced3163d08c27c96f7485f5afecfc9f8c80f
 ---
 

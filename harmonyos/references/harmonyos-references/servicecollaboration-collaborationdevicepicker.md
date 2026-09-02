@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/servicecollaboration-collaborationdevicepicker
 title: CollaborationDevicePicker (流转控件)
-breadcrumb: API参考 > 系统 > 网络 > Service Collaboration Kit（协同服务） > ArkTS 组件 > CollaborationDevicePicker (流转控件)
+breadcrumb: API参考 > 系统 > 网络 > Service Collaboration Kit（协同服务） > ArkTS组件 > CollaborationDevicePicker (流转控件)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4329b48a01532a45f16e3a86fe8bbe050c7e513bbdbc1a01a7ebbd5e105f4959
+scraped_at: 2026-09-02T15:01:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1ac917fef99ecc4e049fe18bc92b08c4a183495bb94c8260de7cd01ba92a5c18
 ---
 
 该模块提供流转入口组件，点击流转入口组件后，会拉起设备选择面板。
@@ -16,15 +16,15 @@ content_hash: sha256:4329b48a01532a45f16e3a86fe8bbe050c7e513bbdbc1a01a7ebbd5e105
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { CollaborationDevicePicker } from '@kit.ServiceCollaborationKit'
+```typescript
+import { CollaborationDevicePicker } from '@kit.ServiceCollaborationKit';
 ```
 
 ## CollaborationDevicePicker
 
-PhonePC/2in1TabletTV
+流转控件对象，用于创建控件对象实例。
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
 
 **装饰器类型：** @Component
 
@@ -39,11 +39,11 @@ PhonePC/2in1TabletTV
 
 ### build
 
-PhonePC/2in1TabletTV
-
 build(): void
 
 struct的默认构造函数，开发者无法直接调用此方法。
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Collaboration.DevicePicker
 
@@ -51,28 +51,28 @@ struct的默认构造函数，开发者无法直接调用此方法。
 
 **示例：**
 
-```
-1. import { devicePicker, CollaborationDevicePicker } from '@kit.ServiceCollaborationKit'
+```typescript
+import { devicePicker, CollaborationDevicePicker } from '@kit.ServiceCollaborationKit';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. controller: devicePicker.DevicePickerController = devicePicker.createDevicePickerController()
+@Entry
+@Component
+struct Index {
+  controller: devicePicker.DevicePickerController = devicePicker.createDevicePickerController();
 
-8. build() {
-9. Column() {
-10. // 流转控件，应用流转的入口
-11. CollaborationDevicePicker({
-12. controller: this.controller, attribute: {
-13. abilityName: '流转测试',
-14. abilityDesc: '这是一个流转测试的控件',
-15. abilityIcon: $r('sys.media.ohos_app_icon'),
-16. businessDesc: '流转到'
-17. }
-18. })
-19. }.width('100%').alignItems(HorizontalAlign.Center)
-20. }
-21. }
+  build() {
+    Column() {
+      // 流转控件，应用流转的入口
+      CollaborationDevicePicker({
+        controller: this.controller, attribute: {
+          abilityName: '流转测试',
+          abilityDesc: '这是一个流转测试的控件',
+          abilityIcon: $r('sys.media.ohos_app_icon'),
+          businessDesc: '流转到'
+        }
+      })
+    }.width('100%').alignItems(HorizontalAlign.Center)
+  }
+}
 ```
 
 | **图1** 设备选择界面的应用描述信息效果图 | **图2** 点击流转入口组件后，拉起设备选择面板效果图 | **图3** 设备流转成功后效果图 | **图4** 流转失败效果图 |

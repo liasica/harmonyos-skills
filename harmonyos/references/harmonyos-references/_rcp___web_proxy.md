@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___we
 title: Rcp_WebProxy
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > C API > 结构体 > Rcp_WebProxy
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:11+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fd7bc545bc107ee1b66bb89a19b01a06e6470b6a7903ba49d87de1286c30dc60
+scraped_at: 2026-09-02T15:01:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:fc1b8bf80249e2636648620fcfc2438e68ed5e29f658d8523d04537d120b9d7c
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 自定义代理配置。
 
@@ -22,29 +20,21 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
 | const char \* [url](_rcp___web_proxy.md#url) | 代理服务器的URL。如果您没有明确设置端口，则端口将为1080。 |
-| [Rcp\_ProxyTunnelMode](remote-communication-overview.md#rcp_proxytunnelmode)[createTunnel](_rcp___web_proxy.md#createtunnel) | 用于控制何时创建代理隧道。 |
-| [Rcp\_Exclusions](_rcp___exclusions.md)[exclusions](_rcp___web_proxy.md#exclusions) | 如果[Rcp\_Request.url](_rcp___request.md#url)匹配[Rcp\_Exclusions](_rcp___exclusions.md)规则，则[Rcp\_Request](_rcp___request.md)将不使用代理。 |
-| [Rcp\_SecurityConfiguration](_rcp___security_configuration.md)[securityConfiguration](_rcp___web_proxy.md#securityconfiguration) | 代理中的[Rcp\_SecurityConfiguration](_rcp___security_configuration.md)。 |
+| [Rcp\_ProxyTunnelMode](remote-communication-overview.md#rcp_proxytunnelmode) [createTunnel](_rcp___web_proxy.md#createtunnel) | 用于控制何时创建代理隧道。 |
+| [Rcp\_Exclusions](_rcp___exclusions.md) [exclusions](_rcp___web_proxy.md#exclusions) | 如果[Rcp\_Request.url](_rcp___request.md#url)匹配[Rcp\_Exclusions](_rcp___exclusions.md)规则，则[Rcp\_Request](_rcp___request.md)将不使用代理。 |
+| [Rcp\_SecurityConfiguration](_rcp___security_configuration.md) [securityConfiguration](_rcp___web_proxy.md#securityconfiguration) | 代理中的[Rcp\_SecurityConfiguration](_rcp___security_configuration.md)。 |
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTVWearable
-
 ### createTunnel
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Rcp_ProxyTunnelMode Rcp_WebProxy::createTunnel
+```cpp
+Rcp_ProxyTunnelMode Rcp_WebProxy::createTunnel
 ```
 
 **描述**
@@ -53,10 +43,8 @@ PhonePC/2in1TabletTVWearable
 
 ### exclusions
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Rcp_Exclusions Rcp_WebProxy::exclusions
+```cpp
+Rcp_Exclusions Rcp_WebProxy::exclusions
 ```
 
 **描述**
@@ -65,10 +53,8 @@ PhonePC/2in1TabletTVWearable
 
 ### securityConfiguration
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Rcp_SecurityConfiguration Rcp_WebProxy::securityConfiguration
+```cpp
+Rcp_SecurityConfiguration Rcp_WebProxy::securityConfiguration
 ```
 
 **描述**
@@ -77,10 +63,8 @@ PhonePC/2in1TabletTVWearable
 
 ### url
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char* Rcp_WebProxy::url
+```cpp
+const char* Rcp_WebProxy::url
 ```
 
 **描述**

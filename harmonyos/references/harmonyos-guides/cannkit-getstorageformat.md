@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getst
 title: GetStorageFormat
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > StorageFormat > GetStorageFormat
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:10+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b43e2ca2b708a2e808881ccd3e3eb1608c6be5b7f1037b3fc8fb83093e6d0207
+scraped_at: 2026-09-02T14:50:40+08:00
+doc_updated_at: 2026-05-12
+content_hash: sha256:a2433fd34720286f149d3c06afa80a115a572f512546996b0bbd2d3e537a15e8
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:b43e2ca2b708a2e808881ccd3e3eb1608c6be5b7f1037b3fc8fb83093e6
 
 ## 函数原型
 
-```
-1. ge::Format GetStorageFormat() const
+```cpp
+ge::Format GetStorageFormat() const
 ```
 
 ## 参数说明
@@ -32,8 +32,8 @@ content_hash: sha256:b43e2ca2b708a2e808881ccd3e3eb1608c6be5b7f1037b3fc8fb83093e6
 
 ## 调用示例
 
-```
-1. ExpandDimsType dim_type("1100");
-2. StorageFormat format(ge::Format::FORMAT_NCHW, ge::Format::FORMAT_C1HWNC0, dim_type);
-3. auto storage_format = format.GetStorageFormat();  // Format::FORMAT_C1HWNC0
+```cpp
+ExpandDimsType dim_type("1100");
+StorageFormat format(ge::Format::FORMAT_NCHW, ge::Format::FORMAT_C1HWNC0, dim_type);
+auto storage_format = format.GetStorageFormat(); // Format::FORMAT_C1HWNC0
 ```

@@ -1,24 +1,20 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-mvtoverlay
-title: MvtOverlay
-breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > MvtOverlay
+title: Interface (MvtOverlay)
+breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (MvtOverlay)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:20+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:de48da4369c446e7e8a07022336aa4880806eb0c95de9e602a6c322820f1889c
+scraped_at: 2026-09-02T15:03:00+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c2de099f9e73c2ddaf335b2e2b3a337d0bab2f6995bfc071d11f0f40c289d3a7
 ---
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { map, mapCommon } from '@kit.MapKit';
+```typescript
+import { map, mapCommon } from '@kit.MapKit';
 ```
 
 ## MvtOverlay
-
-PhonePC/2in1Tablet
 
 矢量图层的管理对象。在调用map.[MapComponentController](map-map-mapcomponentcontroller.md)类的[addMvtOverlay](map-map-mapcomponentcontroller.md#addmvtoverlay)方法时会返回该类型的实例，继承[BaseOverlay](map-map-baseoverlay.md)。
 
@@ -32,37 +28,35 @@ PhonePC/2in1Tablet
 
 **示例：**
 
-```
-1. let params: mapCommon.MvtOverlayParams = {
-2. source: {
-3. // 设置矢量图层的地址,必须是以http或者https开头的URL且包含占位符{x}、{y}和{z}
-4. tileUrl: 'http://xxx/tiles/{z}/{x}/{y}.pbf',
-5. minZoom: 2,
-6. maxZoom: 15
-7. },
-8. layers: [{
-9. id: 'layer-map',
-10. type: mapCommon.MvtLayerType.FILL,
-11. // 对应矢量图层数据中图层的name字段
-12. sourceLayer: 'XX',
-13. paint: {
-14. fillColor: {
-15. operator: mapCommon.Operator.GET,
-16. args: 'fill'
-17. },
-18. fillOpacity: {
-19. operator: mapCommon.Operator.GET,
-20. args: 'fill-opacity'
-21. }
-22. }
-23. }]
-24. };
-25. let mvtOverlay = this.mapController?.addMvtOverlay(params);
+```typescript
+let params: mapCommon.MvtOverlayParams = {
+  source: {
+    // 设置矢量图层的地址,必须是以http或者https开头的URL且包含占位符{x}、{y}和{z}
+    tileUrl: 'http://xxx/tiles/{z}/{x}/{y}.pbf',
+    minZoom: 2,
+    maxZoom: 15
+  },
+  layers: [{
+    id: 'layer-map',
+    type: mapCommon.MvtLayerType.FILL,
+    // 对应矢量图层数据中图层的name字段
+    sourceLayer: 'XX',
+    paint: {
+      fillColor: {
+        operator: mapCommon.Operator.GET,
+        args: 'fill'
+      },
+      fillOpacity: {
+        operator: mapCommon.Operator.GET,
+        args: 'fill-opacity'
+      }
+    }
+  }]
+};
+let mvtOverlay = this.mapController?.addMvtOverlay(params);
 ```
 
 ### addLayers
-
-PhonePC/2in1Tablet
 
 addLayers(layers: mapCommon.MvtLayer[]): void
 
@@ -84,34 +78,33 @@ addLayers(layers: mapCommon.MvtLayer[]): void
 
 **示例：**
 
-```
-1. let renderLayers: Array<mapCommon.MvtLayer> = []
-2. let staticLayerIds = [-12, -8, -4, 0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44];
-3. for (let index = 0; index < staticLayerIds.length; index++) {
-4. let layer: mapCommon.MvtLayer = {
-5. id: index.toString(),
-6. type: mapCommon.MvtLayerType.FILL,
-7. sourceLayer: staticLayerIds[index].toString(),
-8. paint: {
-9. fillColor: {
-10. operator: mapCommon.Operator.GET,
-11. args: 'fill'
-12. },
-13. fillOpacity: {
-14. operator: mapCommon.Operator.GET,
-15. args: 'fill-opacity'
-16. }
-17. }
-18. }
-19. renderLayers.push(layer)
-20. };
+```typescript
+let renderLayers: Array<mapCommon.MvtLayer> = []
+let staticLayerIds = [-12, -8, -4, 0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44];
+// 构建一组具有不同 sourceLayer ID的图层，用于动态渲染
+for (let index = 0; index < staticLayerIds.length; index++) {
+  let layer: mapCommon.MvtLayer = {
+    id: index.toString(),
+    type: mapCommon.MvtLayerType.FILL,
+    sourceLayer: staticLayerIds[index].toString(),
+    paint: {
+      fillColor: {
+        operator: mapCommon.Operator.GET,
+        args: 'fill'
+      },
+      fillOpacity: {
+        operator: mapCommon.Operator.GET,
+        args: 'fill-opacity'
+      }
+    }
+  }
+  renderLayers.push(layer)
+};
 
-22. mvtOverlay.addLayers(renderLayers);
+mvtOverlay.addLayers(renderLayers);
 ```
 
 ### removeLayers
-
-PhonePC/2in1Tablet
 
 removeLayers(layerIds: string[]): void
 
@@ -133,14 +126,12 @@ removeLayers(layerIds: string[]): void
 
 **示例：**
 
-```
-1. let layerIds = ['111'];
-2. mvtOverlay.removeLayers(layerIds);
+```typescript
+let layerIds = ['111'];
+mvtOverlay.removeLayers(layerIds);
 ```
 
 ### changeLayers
-
-PhonePC/2in1Tablet
 
 changeLayers(addedLayers: mapCommon.MvtLayer[], removedLayerIds: string[]): void
 
@@ -163,35 +154,33 @@ changeLayers(addedLayers: mapCommon.MvtLayer[], removedLayerIds: string[]): void
 
 **示例：**
 
-```
-1. let renderLayers: Array<mapCommon.MvtLayer> = [];
-2. let staticLayerIds = [-12, -8, -4, 0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44];
-3. for (let index = 0; index < staticLayerIds.length; index++) {
-4. let layer: mapCommon.MvtLayer = {
-5. id: index.toString(),
-6. type: mapCommon.MvtLayerType.FILL,
-7. sourceLayer: staticLayerIds[index].toString(),
-8. paint: {
-9. fillColor: {
-10. operator: mapCommon.Operator.GET,
-11. args: 'fill'
-12. },
-13. fillOpacity: {
-14. operator: mapCommon.Operator.GET,
-15. args: 'fill-opacity'
-16. }
-17. }
-18. }
-19. renderLayers.push(layer)
-20. }
-21. let layerIds = ['111'];
-
-23. mvtOverlay.changeLayers(renderLayers, layerIds);
+```typescript
+let renderLayers: Array<mapCommon.MvtLayer> = [];
+let staticLayerIds = [-12, -8, -4, 0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44];
+for (let index = 0; index < staticLayerIds.length; index++) {
+  let layer: mapCommon.MvtLayer = {
+    id: index.toString(),
+    type: mapCommon.MvtLayerType.FILL,
+    sourceLayer: staticLayerIds[index].toString(),
+    paint: {
+      fillColor: {
+        operator: mapCommon.Operator.GET,
+        args: 'fill'
+      },
+      fillOpacity: {
+        operator: mapCommon.Operator.GET,
+        args: 'fill-opacity'
+      }
+    }
+  }
+  renderLayers.push(layer)
+}
+let layerIds = ['111'];
+// 创建新的图层列表并更新图层
+mvtOverlay.changeLayers(renderLayers, layerIds);
 ```
 
 ### setBlur
-
-PhonePC/2in1Tablet
 
 setBlur(blurIntensity: number | Record<number, number>): void
 
@@ -213,13 +202,11 @@ setBlur(blurIntensity: number | Record<number, number>): void
 
 **示例：**
 
-```
-1. mvtOverlay.setBlur(8);
+```typescript
+mvtOverlay.setBlur(8);
 ```
 
 ### getBlur
-
-PhonePC/2in1Tablet
 
 getBlur(): number | Record<number, number>
 
@@ -241,6 +228,6 @@ getBlur(): number | Record<number, number>
 
 **示例：**
 
-```
-1. let blur: number | Record<number, number> = mvtOverlay.getBlur()
+```typescript
+let blur: number | Record<number, number> = mvtOverlay.getBlur()
 ```

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-audio-9
 title: 静音播放音频时，如何做到不抢音频焦点
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音频（Audio） > 静音播放音频时，如何做到不抢音频焦点
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:36+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:04+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:b3404031cca533cbe3b63a944ecb946ce1ea34ba82a63685dd979f2dd3c88710
 ---
 

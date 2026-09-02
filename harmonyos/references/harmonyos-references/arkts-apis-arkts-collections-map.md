@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Map)
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @arkts.collections (ArkTS容器集) > Class (Map)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:51+08:00
-doc_updated_at: 2026-04-10
-content_hash: sha256:7726dd3fea2ade1498ca9cb60988fec43035dee7e6947738ecc7b20c6490fcf9
+scraped_at: 2026-09-02T15:00:44+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:429e97179136d71051bb712aac0b6d55ee1f75718ebe7eb65eda97df65966cf8
 ---
 
-一种基于键值对存储的非线性数据结构。能够高效地通过唯一键来存取对应的值。
+一种基于键值对存储的非线性数据结构，能够高效地通过唯一键来存取对应的值。
 
-说明
+**说明** 
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 此模块仅支持在ArkTS文件（文件后缀为.ets）中导入使用。
 
-文档中存在泛型的使用，涉及以下泛型标记符：
+文档中存在泛型的使用，涉及以下泛型类型参数：
 
 * K：Key，键
 * V：Value，值
@@ -27,17 +27,13 @@ K和V类型都需为[Sendable支持的数据类型](../harmonyos-guides/arkts-se
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { collections } from '@kit.ArkTS';
+```ts
+import { collections } from '@kit.ArkTS';
 ```
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
-**元服务API**：从API version 12 开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -47,13 +43,11 @@ PhonePC/2in1TabletTVWearable
 
 ## constructor
 
-PhonePC/2in1TabletTVWearable
-
 constructor(entries?: readonly (readonly [K, V])[] | null)
 
 构造函数，用于创建ArkTS Map对象。
 
-**元服务API**：从API version 12 开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -61,56 +55,55 @@ constructor(entries?: readonly (readonly [K, V])[] | null)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| entries | readonly (readonly [K, V])[] | null | 否 | 键值对数组或其它可迭代对象。默认值为null，创建一个空Map对象。 |
+| entries | readonly (readonly [K, V])[] | null | 否 | 键值对数组或null。默认值为null，创建一个空Map对象。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200012 | The ArkTS Map's constructor cannot be directly invoked. |
 
 **示例：**
 
-```
-1. // 正例1：
-2. const myMap = new collections.Map<number, number>();
-```
-
-```
-1. // 正例2：
-2. const myMap = new collections.Map<number, string>([
-3. [1, "one"],
-4. [2, "two"],
-5. [3, "three"]
-6. ]);
+```ts
+// 正例1：
+// 创建空的ArkTS Map对象
+const myMap = new collections.Map<number, number>();
 ```
 
+```ts
+// 正例2：
+// 通过键值对数组创建含初始元素的ArkTS Map对象
+const myMap = new collections.Map<number, string>([
+  [1, "one"],
+  [2, "two"],
+  [3, "three"]
+]);
 ```
-1. // 反例：
-2. @Sendable
-3. class SharedClass {
-4. constructor() {
-5. }
-6. }
-7. let sObj = new SharedClass();
-8. const myMap1: collections.Map<number, SharedClass> = new collections.Map<number, SharedClass>([[1, sObj]]);
-9. // Type arguments of generic "Sendable" type must be a "Sendable" data type (arkts-sendable-generic-types)
-10. let obj = new Object();
-11. const myMap2: collections.Map<number, Object> = new collections.Map<number, Object>([[1, obj]]);
+
+```ts
+// 反例：
+@Sendable
+class SharedClass {
+  constructor() {
+  }
+}
+let sObj = new SharedClass();
+const myMap1: collections.Map<number, SharedClass> = new collections.Map<number, SharedClass>([[1, sObj]]);
+// Type arguments of generic "Sendable" type must be a "Sendable" data type (arkts-sendable-generic-types)
+let obj = new Object();
+const myMap2: collections.Map<number, Object> = new collections.Map<number, Object>([[1, obj]]);
 ```
 
 ## constructor
 
-PhonePC/2in1TabletTVWearable
-
 constructor(iterable: Iterable<readonly [K, V]>)
 
-创建ArkTS Map对象的构造函数。
+构造函数，用于通过可迭代对象创建ArkTS Map对象。
 
-**元服务API**：从API version 12 开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -118,38 +111,37 @@ constructor(iterable: Iterable<readonly [K, V]>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| iterable | Iterable<readonly [K, V]> | 是 | 用于构造ArkTS Map的对象。 |
+| iterable | Iterable<readonly [K, V]> | 是 | 用于构造ArkTS Map的可迭代对象。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200012 | The ArkTS Map's constructor cannot be directly invoked. |
 
 **示例：**
 
-```
-1. const mapper = new Map([
-2. ['1', 'a'],
-3. ['2', 'b'],
-4. ]);
-5. let newMap = new collections.Map<string, string>(mapper.entries());
-6. console.info(newMap.get('1')); // 预期输出： a
-7. console.info(newMap.get('2')); // 预期输出： b
+```ts
+// 创建标准Map对象
+const mapper = new Map([
+  ["1", "a"],
+  ["2", "b"]
+]);
+// 通过标准Map的entries()方法获取迭代器，构造ArkTS Map对象
+let newMap = new collections.Map<string, string>(mapper.entries());
+console.info(newMap.get("1")); // Expected output: a
+console.info(newMap.get("2")); // Expected output: b
 ```
 
 ## entries
-
-PhonePC/2in1TabletTVWearable
 
 entries(): IterableIterator<[K, V]>
 
 返回一个Map迭代器对象，该对象包含了此Map中的每个元素的[key, value]对。
 
-**元服务API**：从API version 12 开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -170,49 +162,49 @@ entries(): IterableIterator<[K, V]>
 
 **示例：**
 
+```ts
+// 例1：
+// 创建Map对象
+const myMap = new collections.Map<number, string>([
+  [0, "foo"],
+  [1, "bar"]
+]);
+// 调用entries()方法，返回包含Map中每个元素[key, value]对的迭代器
+const iterator = myMap.entries();
+// Expected output: 0, foo
+console.info(iterator.next().value);
+// Expected output: 1, bar
+console.info(iterator.next().value);
 ```
-1. // 例1：
-2. const myMap = new collections.Map<number, string>([
-3. [0, "foo"],
-4. [1, "bar"]
-5. ]);
 
-7. const iterator = myMap.entries();
-8. // Expected output: 0, foo
-9. console.info(iterator.next().value);
-10. // Expected output: 1, bar
-11. console.info(iterator.next().value);
-```
-
-```
-1. // 例2：
-2. const myMap: collections.Map<number, string> = new collections.Map<number, string>([
-3. [0, "one"],
-4. [1, "two"],
-5. [2, "three"],
-6. [3, "four"]
-7. ]);
-8. // 返回一个myMap迭代器对象，该对象包含了此myMap中的每个元素的[number, string]键值对。
-9. const entriesIter: IterableIterator<[number, string]> = myMap.entries();
-10. // 遍历entriesIter迭代器对象。
-11. for (const entry of entriesIter) {
-12. if (entry[1].startsWith('t')) {
-13. myMap.delete(entry[0]);
-14. }
-15. }
-16. // Expected output: 2
-17. console.info("size:" + myMap.size);
+```ts
+// 例2：
+// 创建Map对象
+const myMap: collections.Map<number, string> = new collections.Map<number, string>([
+  [0, "one"],
+  [1, "two"],
+  [2, "three"],
+  [3, "four"]
+]);
+// 返回一个myMap迭代器对象，该对象包含了此myMap中的每个元素的[number, string]键值对。
+const entriesIter: IterableIterator<[number, string]> = myMap.entries();
+// 遍历entriesIter迭代器对象。
+for (const entry of entriesIter) {
+  if (entry[1].startsWith("t")) {
+    myMap.delete(entry[0]);
+  }
+}
+// Expected output: 2
+console.info("size:" + myMap.size);
 ```
 
 ## keys
-
-PhonePC/2in1TabletTVWearable
 
 keys(): IterableIterator<K>
 
 返回一个Map迭代器对象，该对象包含了此Map中每个元素的键。
 
-**元服务API**：从API version 12 开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -233,28 +225,27 @@ keys(): IterableIterator<K>
 
 **示例：**
 
-```
-1. const myMap = new collections.Map<number, string>([
-2. [0, "foo"],
-3. [1, "bar"]
-4. ]);
-
-6. const iterator = myMap.keys();
-7. // Expected output: 0
-8. console.info(iterator.next().value);
-9. // Expected output: 1
-10. console.info(iterator.next().value);
+```ts
+// 创建Map对象
+const myMap = new collections.Map<number, string>([
+  [0, "foo"],
+  [1, "bar"]
+]);
+// 调用keys()方法，返回包含Map中所有键的迭代器
+const iterator = myMap.keys();
+// Expected output: 0
+console.info(iterator.next().value);
+// Expected output: 1
+console.info(iterator.next().value);
 ```
 
 ## values
 
-PhonePC/2in1TabletTVWearable
-
 values(): IterableIterator<V>
 
-返回一个Map迭代器对象，该对象包含此Map中每个元素的值。
+返回一个Map迭代器对象，该对象包含了此Map中每个元素的值。
 
-**元服务API**：从API version 12 开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -275,28 +266,27 @@ values(): IterableIterator<V>
 
 **示例：**
 
-```
-1. const myMap = new collections.Map<number, string>([
-2. [0, "foo"],
-3. [1, "bar"]
-4. ]);
-
-6. const iterator = myMap.values();
-7. // Expected output: "foo"
-8. console.info(iterator.next().value);
-9. // Expected output: "bar"
-10. console.info(iterator.next().value);
+```ts
+// 创建Map对象
+const myMap = new collections.Map<number, string>([
+  [0, "foo"],
+  [1, "bar"]
+]);
+// 调用values()方法，返回包含Map中所有值的迭代器
+const iterator = myMap.values();
+// Expected output: "foo"
+console.info(iterator.next().value);
+// Expected output: "bar"
+console.info(iterator.next().value);
 ```
 
 ## clear
-
-PhonePC/2in1TabletTVWearable
 
 clear(): void
 
 删除该Map中的所有元素。
 
-**元服务API**：从API version 12 开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -311,27 +301,27 @@ clear(): void
 
 **示例：**
 
-```
-1. const myMap = new collections.Map<number, string>([
-2. [0, "foo"],
-3. [1, "bar"]
-4. ]);
-5. // Expected output: 2
-6. console.info("size:" + myMap.size);
-7. myMap.clear();
-8. // Expected output: 0
-9. console.info("size:" + myMap.size);
+```ts
+// 创建Map对象
+const myMap = new collections.Map<number, string>([
+  [0, "foo"],
+  [1, "bar"]
+]);
+// Expected output: 2
+console.info("size:" + myMap.size);
+// 调用clear()方法，删除Map中的所有元素
+myMap.clear();
+// Expected output: 0
+console.info("size:" + myMap.size);
 ```
 
 ## delete
 
-PhonePC/2in1TabletTVWearable
-
 delete(key: K): boolean
 
-删除该Map中指定元素。
+删除该Map中指定键对应的元素。
 
-**元服务API**：从API version 12 开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -349,37 +339,38 @@ delete(key: K): boolean
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The delete method cannot be bound with non-sendable. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. const myMap = new collections.Map<string, string>([
-2. ["hello", "world"],
-3. ]);
-4. // Expected result: true
-5. console.info("result:" + myMap.delete("hello"));
-6. // Expected result: false
-7. console.info("result:" + myMap.has("hello"));
-8. // Expected result: false
-9. console.info("result:" + myMap.delete("hello"));
+```ts
+// 创建Map对象
+const myMap = new collections.Map<string, string>([
+  ["hello", "world"]
+]);
+// 删除Map中的指定键
+// Expected result: true
+console.info("result:" + myMap.delete("hello"));
+// 判断键是否仍存在
+// Expected result: false
+console.info("result:" + myMap.has("hello"));
+// 再次删除已删除的键
+// Expected result: false
+console.info("result:" + myMap.delete("hello"));
 ```
 
 ## forEach
 
-PhonePC/2in1TabletTVWearable
-
 forEach(callbackFn: (value: V, key: K, map: Map<K, V>) => void): void
 
-按插入顺序对该Map中的每个键/值对执行一次回调函数。
+按插入顺序对该Map中的每个键值对执行一次回调函数。
 
-**元服务API**：从API version 12 开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -387,7 +378,7 @@ forEach(callbackFn: (value: V, key: K, map: Map<K, V>) => void): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callbackFn | (value: V, key: K, map: Map<K, V>) => void | 是 | 回调函数。 |
+| callbackFn | (value: V, key: K, map: Map<K, V>) => void | 是 | 回调函数。回调执行期间不能修改当前Map对象，否则会触发并发修改错误。 |
 
 callbackFn的参数说明：
 
@@ -395,52 +386,50 @@ callbackFn的参数说明：
 | --- | --- | --- | --- |
 | value | V | 否 | 当前遍历到的元素键值对的值。 |
 | key | K | 否 | 当前遍历到的元素键值对的键。 |
-| map | Map<K, V> | 否 | 当前map实例对象。 |
+| map | Map<K, V> | 否 | 当前Map实例对象。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The forEach method cannot be bound with non-sendable. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. // 正例：
-2. new collections.Map<string, number>([
-3. ['foo', 0],
-4. ['bar', 1],
-5. ['baz', 2],
-6. ]).forEach((value, key, map) => {
-7. console.info(`m[${key}] = ${value}`);
-8. });
+```ts
+// 正例：
+// 遍历Map中每个元素
+new collections.Map<string, number>([
+  ["foo", 0],
+  ["bar", 1],
+  ["baz", 2],
+]).forEach((value, key, map) => {
+  console.info(`m[${key}] = ${value}`);
+});
 ```
 
-```
-1. // 反例：
-2. new collections.Map<string, number>([
-3. ['foo', 0],
-4. ['bar', 1],
-5. ['baz', 2],
-6. ]).forEach((value, key, map) => {
-7. // Throw exception `Concurrent modification error.`
-8. map.delete(key);
-9. });
+```ts
+// 反例：
+new collections.Map<string, number>([
+  ["foo", 0],
+  ["bar", 1],
+  ["baz", 2],
+]).forEach((value, key, map) => {
+  // Throw exception `Concurrent modification error.`
+  map.delete(key);
+});
 ```
 
 ## get
 
-PhonePC/2in1TabletTVWearable
-
 get(key: K): V | undefined
 
-返回该Map中的指定元素。
+返回该Map中指定键对应的元素。
 
-**元服务API**：从API version 12 开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -448,7 +437,7 @@ get(key: K): V | undefined
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| key | K | 是 | 指定key。 |
+| key | K | 是 | 要获取值的键。 |
 
 **返回值：**
 
@@ -458,35 +447,32 @@ get(key: K): V | undefined
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The get method cannot be bound with non-sendable. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. const myMap = new collections.Map<string, string>([
-2. ["hello", "world"],
-3. ]);
-4. // Expected output: "world"
-5. console.info(myMap.get("hello"));
-6. // Expected output: undefined
-7. console.info(myMap.get("hel"));
+```ts
+const myMap = new collections.Map<string, string>([
+  ["hello", "world"],
+]);
+// Expected output: "world"
+console.info(myMap.get("hello"));
+// Expected output: undefined
+console.info(myMap.get("hel"));
 ```
 
 ## has
 
-PhonePC/2in1TabletTVWearable
-
 has(key: K): boolean
 
-判断该Map中是否存在指定元素。
+判断该Map中是否存在指定键。
 
-**元服务API**：从API version 12 开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -494,45 +480,44 @@ has(key: K): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| key | K | 是 | 待查找元素的值。 |
+| key | K | 是 | 待查找元素的键。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 如果存在指定元素，则返回true，否则返回false。 |
+| boolean | 如果Map中存在指定键，则返回true，否则返回false。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The has method cannot be bound with non-sendable. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. const myMap = new collections.Map<string, string>([
-2. ["hello", "world"],
-3. ]);
-4. // Expected output: true
-5. console.info("result:" + myMap.has("hello"));
-6. // Expected output: false
-7. console.info("result:" + myMap.has("world"));
+```ts
+// 创建Map对象
+const myMap = new collections.Map<string, string>([
+  ["hello", "world"],
+]);
+// 判断Map中是否存在指定键
+// Expected output: true
+console.info("result:" + myMap.has("hello"));
+// Expected output: false
+console.info("result:" + myMap.has("world"));
 ```
 
 ## set
-
-PhonePC/2in1TabletTVWearable
 
 set(key: K, value: V): Map<K, V>
 
 向该Map添加或更新一个指定的键值对。
 
-**元服务API**：从API version 12 开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -540,50 +525,48 @@ set(key: K, value: V): Map<K, V>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| key | K | 是 | 添加或更新指定元素的键。 |
-| value | V | 是 | 添加或更新指定元素的值。 |
+| key | K | 是 | 要添加或更新的键。 |
+| value | V | 是 | 要添加或更新的值。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Map<K, V> | Map对象 |
+| Map<K, V> | 添加或更新键值对操作后的Map对象本身。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The set method cannot be bound with non-sendable. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. // 正例：
-2. const myMap = new collections.Map<string, string>();
-3. myMap.set("foo", "bar");
+```ts
+// 正例：
+const myMap = new collections.Map<string, string>();
+// 调用set()方法，向Map中添加键"foo"对应值"bar"
+myMap.set("foo", "bar");
 ```
 
-```
-1. // 反例：
-2. let obj = new Object();
-3. const myMap: collections.Map<string, Object> = new collections.Map<string, Object>();
-4. // Type arguments of generic "Sendable" type must be a "Sendable" data type (arkts-sendable-generic-types)
-5. myMap.set("foo", obj);
+```ts
+// 反例：
+let obj = new Object();
+const myMap: collections.Map<string, Object> = new collections.Map<string, Object>();
+// Type arguments of generic "Sendable" type must be a "Sendable" data type (arkts-sendable-generic-types)
+myMap.set("foo", obj);
 ```
 
 ## [Symbol.iterator]
 
-PhonePC/2in1TabletTVWearable
-
 [Symbol.iterator](): IterableIterator<[K, V]>
 
-返回一个迭代器，迭代器的每一项都是一个JavaScript对象，并返回该对象。
+返回一个迭代器，迭代器包含Map中每个元素的键值对。
 
-说明
+**说明** 
 
 本接口不支持在.ets文件中使用。
 
@@ -595,7 +578,7 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| IterableIterator<[K, V]> | 返回一个迭代器。 |
+| IterableIterator<[K, V]> | 包含Map中每个元素键值对的迭代器。 |
 
 **错误码：**
 
@@ -607,17 +590,18 @@ PhonePC/2in1TabletTVWearable
 
 **示例：**
 
-```
-1. let map = new collections.Map<number, string>([
-2. [0, "one"],
-3. [1, "two"],
-4. [2, "three"],
-5. [3, "four"]
-6. ]);
-
-8. let keys = Array.from(map.keys());
-9. for (let key of keys) {
-10. console.info("key:" + key);
-11. console.info("value:" + map.get(key));
-12. }
+```ts
+let myMap = new collections.Map<number, string>([
+    [0, "one"],
+    [1, "two"],
+    [2, "three"],
+    [3, "four"]
+]);
+// 通过Array.from和keys()获取所有键的数组
+let keys = Array.from(myMap.keys());
+// 遍历每个键，通过get()方法获取对应的值
+for (let key of keys) {
+  console.info("key:" + key);
+  console.info("value:" + myMap.get(key));
+}
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: armeabi-v7a是否支持Neon指令扩展
 breadcrumb: FAQ > DevEco Studio > 编译构建 > armeabi-v7a是否支持Neon指令扩展
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:27+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:48527a5f73ffbd9dcb99de4fc6cb7336e31e288b63e844e9711813c283e035aa
+scraped_at: 2026-09-02T14:54:54+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:433eb1ff8c50a9a2aee8ad73caeb44616af16335ecd114dc479986c468a13efa
 ---
 
 **问题描述**
@@ -20,20 +20,18 @@ D:/DeveloperTools/Huawei/SDK/default/base/native/llvm/lib/clang/15.0.4/include/a
 
 在entry目录的build-profile.json5文件中，externalNativeOptions节点添加配置项：
 
+```json
+"externalNativeOptions": {
+  "path": "./src/main/cpp/CMakeLists.txt",
+  "arguments": "",
+  "abiFilters": [
+    "x86_64",
+    "arm64-v8a"
+  ],
+  // This is a configuration item to be added
+  "cppFlags": "-mfloat-abi=hard",
+  // This is a configuration item to be added
+},
 ```
-1. "externalNativeOptions": {
-2. "path": "./src/main/cpp/CMakeLists.txt",
-3. "arguments": "",
-4. "abiFilters": [
-5. "x86_64",
-6. "arm64-v8a"
-7. ],
-8. // This is a configuration item to be added
-9. "cppFlags": "-mfloat-abi=hard",
-10. // This is a configuration item to be added
-11. },
-```
-
-[build-profile.json5](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/CompilingAndBuilding/library/build-profile.json5#L7-L17)
 
 引入头文件#include <arm\_neon.h>

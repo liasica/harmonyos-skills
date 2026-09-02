@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 边框设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 布局与边框 > 边框设置
 category: harmonyos-references
-scraped_at: 2026-04-29T13:51:17+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0b544a3eb92509957d27e9a18b2cb69b3cb73811ef361a48aaea0b1ab61eb054
+scraped_at: 2026-09-02T15:00:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7b1725417bfebc0e21bdeaefa414e1f418f00795e66494d015ab8168faf42f3f
 ---
 
 设置组件边框样式。
 
-说明
+**说明** 
 
-从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## border
-
-PhonePC/2in1TabletTVWearable
 
 border(value: BorderOptions): T
 
@@ -32,21 +30,19 @@ border(value: BorderOptions): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [BorderOptions](ts-types.md#borderoptions) | 是 | 统一边框样式设置接口。  **说明：**  边框宽度默认值为0，即不显示边框。  从API version 9开始，父节点的border显示在子节点内容之上。 |
+| value | [BorderOptions](ts-types.md#borderoptions) | 是 | 统一边框样式设置接口。  **说明：**  边框宽度默认值为0，即不显示边框。边框圆角半径默认值为0，即不显示圆角。边框颜色默认值为Color.Black。  从API version 9开始，父节点的border显示在子节点内容之上。  color、radius缺省时，为了保证[borderColor](ts-universal-attributes-border.md#bordercolor)、[borderRadius](ts-universal-attributes-border.md#borderradius)生效，需要将[borderColor](ts-universal-attributes-border.md#bordercolor)、[borderRadius](ts-universal-attributes-border.md#borderradius)设置在[border](ts-universal-attributes-border.md#border)后。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
-说明
+**说明** 
 
 color、radius缺省时，为了保证[borderColor](ts-universal-attributes-border.md#bordercolor)、[borderRadius](ts-universal-attributes-border.md#borderradius)生效，需要将[borderColor](ts-universal-attributes-border.md#bordercolor)、[borderRadius](ts-universal-attributes-border.md#borderradius)设置在[border](ts-universal-attributes-border.md#border)后。
 
 ## borderStyle
-
-PhonePC/2in1TabletTVWearable
 
 borderStyle(value: BorderStyle | EdgeStyles): T
 
@@ -68,11 +64,9 @@ borderStyle(value: BorderStyle | EdgeStyles): T
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## borderWidth
-
-PhonePC/2in1TabletTVWearable
 
 borderWidth(value: Length | EdgeWidths | LocalizedEdgeWidths): T
 
@@ -88,22 +82,24 @@ borderWidth(value: Length | EdgeWidths | LocalizedEdgeWidths): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Length](ts-types.md#length) | [EdgeWidths](ts-types.md#edgewidths9)9+ | [LocalizedEdgeWidths](ts-types.md#localizededgewidths12)12+ | 是 | 设置元素的边框宽度，不支持百分比。 |
+| value | [Length](ts-types.md#length) | [EdgeWidths](ts-types.md#edgewidths9)9+ | [LocalizedEdgeWidths](ts-types.md#localizededgewidths12)12+ | 是 | 设置元素的边框宽度，不支持百分比。默认单位：vp。  默认值：0。  **说明：** 使用LocalizedEdgeWidths类型时，在不同语言方向下边框宽度设置会有差异，具体参见示例2。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## borderColor
-
-PhonePC/2in1TabletTVWearable
 
 borderColor(value: ResourceColor | EdgeColors | LocalizedEdgeColors): T
 
 设置边框的颜色。
 
+**说明** 
+
+当使用border统一设置边框且color参数缺省时，需将borderColor设置在border之后调用才能生效。
+
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -114,22 +110,24 @@ borderColor(value: ResourceColor | EdgeColors | LocalizedEdgeColors): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [ResourceColor](ts-types.md#resourcecolor) | [EdgeColors](ts-types.md#edgecolors9)9+ | [LocalizedEdgeColors](ts-types.md#localizededgecolors12)12+ | 是 | 设置元素的边框颜色。  默认值：Color.Black |
+| value | [ResourceColor](ts-types.md#resourcecolor) | [EdgeColors](ts-types.md#edgecolors9)9+ | [LocalizedEdgeColors](ts-types.md#localizededgecolors12)12+ | 是 | 设置元素的边框颜色，设置后边框显示为相应颜色。  默认值：Color.Black  **说明：**  使用LocalizedEdgeColors类型时，在不同语言方向下边框颜色设置会有差异，具体参见示例2。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## borderRadius
-
-PhonePC/2in1TabletTVWearable
 
 borderRadius(value: Length | BorderRadiuses | LocalizedBorderRadiuses): T
 
 设置边框的圆角半径。
 
+**说明** 
+
+当使用border统一设置边框且radius参数缺省时，需将borderRadius设置在border之后调用才能生效。
+
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -140,25 +138,29 @@ borderRadius(value: Length | BorderRadiuses | LocalizedBorderRadiuses): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Length](ts-types.md#length) | [BorderRadiuses](ts-types.md#borderradiuses9)9+ | [LocalizedBorderRadiuses](ts-types.md#localizedborderradiuses12)12+ | 是 | 设置元素的边框圆角半径，支持百分比，百分比依据组件宽度。设置圆角后，可搭配[clip](ts-universal-attributes-sharp-clipping.md#clip12)属性进行裁剪，避免子组件超出组件自身。  设置四个不同圆角值，若某个圆角值超过高度或者宽度最小值一半时，按值的比例绘制异形圆角。 |
+| value | [Length](ts-types.md#length) | [BorderRadiuses](ts-types.md#borderradiuses9)9+ | [LocalizedBorderRadiuses](ts-types.md#localizedborderradiuses12)12+ | 是 | 设置元素的边框圆角半径，支持百分比，百分比依据组件宽度，默认单位：vp。  默认值：0。设置圆角后，可搭配[clip](ts-universal-attributes-sharp-clipping.md#clip12)属性进行裁剪，避免子组件超出组件自身。  **说明：**  使用LocalizedBorderRadiuses类型时，在不同语言方向下边框圆角半径设置会有差异，具体参见示例2。  设置四个不同圆角值，若某个圆角值超过高度和宽度中的最小值的一半时，按值的比例绘制异形圆角，效果参见示例4。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## borderRadius22+
-
-PhonePC/2in1TabletTVWearable
 
 borderRadius(value: Length | BorderRadiuses | LocalizedBorderRadiuses, type?: RenderStrategy): T
 
 设置边框的圆角半径和绘制圆角的模式。
 
+**说明** 
+
+当使用border统一设置边框且radius参数缺省时，需将borderRadius设置在border之后调用才能生效。
+
 **卡片能力：** 从API version 22开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -166,283 +168,286 @@ borderRadius(value: Length | BorderRadiuses | LocalizedBorderRadiuses, type?: Re
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Length](ts-types.md#length) | [BorderRadiuses](ts-types.md#borderradiuses9) | [LocalizedBorderRadiuses](ts-types.md#localizedborderradiuses12) | 是 | 设置元素的边框圆角半径，支持百分比，百分比依据组件宽度。设置圆角后，可搭配[clip](ts-universal-attributes-sharp-clipping.md#clip12)属性进行裁剪，避免子组件超出组件自身。 |
-| type | [RenderStrategy](ts-appendix-enums.md#renderstrategy22) | 否 | 设置组件绘制圆角的模式。  默认值：RenderStrategy.FAST |
+| value | [Length](ts-types.md#length) | [BorderRadiuses](ts-types.md#borderradiuses9) | [LocalizedBorderRadiuses](ts-types.md#localizedborderradiuses12) | 是 | 设置元素的边框圆角半径，支持百分比，百分比依据组件宽度，默认单位：vp。  默认值：0。设置圆角后，可搭配[clip](ts-universal-attributes-sharp-clipping.md#clip12)属性进行裁剪，避免子组件超出组件自身。  **说明：**  使用LocalizedBorderRadiuses类型时，在不同语言方向下边框圆角半径设置会有差异，具体参见示例2。  设置四个不同圆角值，若某个圆角值超过高度和宽度中的最小值的一半时，按值的比例绘制异形圆角，效果参见示例4。 |
+| type | [RenderStrategy](ts-appendix-enums.md#renderstrategy22) | 否 | 设置组件绘制圆角的模式。  默认值：RenderStrategy.FAST。  可选值：  - RenderStrategy.FAST：快速绘制模式，适用于常规圆角场景，性能更优。若组件包含模糊等复杂视觉效果，使用该模式可能导致圆角裁剪异常。  - RenderStrategy.OFFSCREEN：离屏绘制模式，适用于包含模糊等复杂视觉效果的圆角场景，可正确渲染圆角但性能开销较大。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## 示例
-
-PhonePC/2in1TabletTVWearable
 
 ### 示例1（基本样式用法）
 
 设置边框的宽度、颜色、圆角半径以及点、线样式。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct BorderExample {
-5. build() {
-6. Column() {
-7. Flex({ justifyContent: FlexAlign.SpaceAround, alignItems: ItemAlign.Center }) {
-8. // 线段
-9. Text('dashed')
-10. .borderStyle(BorderStyle.Dashed)
-11. .borderWidth(5)
-12. .borderColor(0xAFEEEE)
-13. .borderRadius(10)
-14. .width(120)
-15. .height(120)
-16. .textAlign(TextAlign.Center)
-17. .fontSize(16)
-18. // 点线
-19. Text('dotted')
-20. .border({
-21. width: 5,
-22. color: 0x317AF7,
-23. radius: 10,
-24. style: BorderStyle.Dotted
-25. })
-26. .width(120)
-27. .height(120)
-28. .textAlign(TextAlign.Center)
-29. .fontSize(16)
-30. }.width('100%').height(150)
+```ts
+// xxx.ets
+@Entry
+@Component
+struct BorderExample {
+  build() {
+    Column() {
+      Flex({ justifyContent: FlexAlign.SpaceAround, alignItems: ItemAlign.Center }) {
+        // 虚线
+        Text('dashed')
+          .borderStyle(BorderStyle.Dashed)
+          .borderWidth(5)
+          .borderColor(0xAFEEEE)
+          .borderRadius(10)
+          .width(120)
+          .height(120)
+          .textAlign(TextAlign.Center)
+          .fontSize(16)
+        // 点线
+        Text('dotted')
+          .border({
+            width: 5,
+            color: 0x317AF7,
+            radius: 10,
+            style: BorderStyle.Dotted
+          })
+          .width(120)
+          .height(120)
+          .textAlign(TextAlign.Center)
+          .fontSize(16)
+      }.width('100%').height(150)
 
-32. Text('.border')
-33. .fontSize(50)
-34. .width(300)
-35. .height(300)
-36. .border({
-37. width: {
-38. left: 3,
-39. right: 6,
-40. top: 10,
-41. bottom: 15
-42. },
-43. color: {
-44. left: '#e3bbbb',
-45. right: Color.Blue,
-46. top: Color.Red,
-47. bottom: Color.Green
-48. },
-49. radius: {
-50. topLeft: 10,
-51. topRight: 20,
-52. bottomLeft: 40,
-53. bottomRight: 80
-54. },
-55. style: {
-56. left: BorderStyle.Dotted,
-57. right: BorderStyle.Dotted,
-58. top: BorderStyle.Solid,
-59. bottom: BorderStyle.Dashed
-60. }
-61. })
-62. .textAlign(TextAlign.Center)
-63. }
-64. }
-65. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/H6-WeMKGQTm1XNoyvH89XA/zh-cn_image_0000002558766024.gif)
-
-### 示例2（边框宽度类型和边框颜色）
-
-border属性的width、radius、color属性值使用LocalizedEdgeWidths类型和LocalizedEdgeColors类型。
-
-```
-1. // xxx.ets
-2. import { LengthMetrics } from '@kit.ArkUI';
-
-4. @Entry
-5. @Component
-6. struct BorderExample {
-7. build() {
-8. Column() {
-9. Flex({ justifyContent: FlexAlign.SpaceAround, alignItems: ItemAlign.Center }) {
-10. // 线段
-11. Text('dashed')
-12. .borderStyle(BorderStyle.Dashed)
-13. .borderWidth(5)
-14. .borderColor(0xAFEEEE)
-15. .borderRadius(10)
-16. .width(120)
-17. .height(120)
-18. .textAlign(TextAlign.Center)
-19. .fontSize(16)
-20. // 点线
-21. Text('dotted')
-22. .border({
-23. width: 5,
-24. color: 0x317AF7,
-25. radius: 10,
-26. style: BorderStyle.Dotted
-27. })
-28. .width(120)
-29. .height(120)
-30. .textAlign(TextAlign.Center)
-31. .fontSize(16)
-32. }.width('100%').height(150)
-
-34. Text('.border')
-35. .fontSize(50)
-36. .width(300)
-37. .height(300)
-38. .border({
-39. width: {
-40. start: LengthMetrics.vp(3),
-41. end: LengthMetrics.vp(6),
-42. top: LengthMetrics.vp(10),
-43. bottom: LengthMetrics.vp(15)
-44. },
-45. color: {
-46. start: '#e3bbbb',
-47. end: Color.Blue,
-48. top: Color.Red,
-49. bottom: Color.Green
-50. },
-51. radius: {
-52. topStart: LengthMetrics.vp(10),
-53. topEnd: LengthMetrics.vp(20),
-54. bottomStart: LengthMetrics.vp(40),
-55. bottomEnd: LengthMetrics.vp(80)
-56. },
-57. style: {
-58. left: BorderStyle.Dotted,
-59. right: BorderStyle.Dotted,
-60. top: BorderStyle.Solid,
-61. bottom: BorderStyle.Dashed
-62. }
-63. })
-64. .textAlign(TextAlign.Center)
-65. }
-66. }
-67. }
+      Text('.border')
+        .fontSize(50)
+        .width(300)
+        .height(300)
+        // 使用border属性分别设置左、右、上、下四边的宽度、颜色、圆角和样式
+        .border({
+          width: {
+            left: 3,
+            right: 6,
+            top: 10,
+            bottom: 15
+          },
+          color: {
+            left: '#e3bbbb',
+            right: Color.Blue,
+            top: Color.Red,
+            bottom: Color.Green
+          },
+          radius: {
+            topLeft: 10,
+            topRight: 20,
+            bottomLeft: 40,
+            bottomRight: 80
+          },
+          style: {
+            left: BorderStyle.Dotted,
+            right: BorderStyle.Dotted,
+            top: BorderStyle.Solid,
+            bottom: BorderStyle.Dashed
+          }
+        })
+        .textAlign(TextAlign.Center)
+    }
+  }
+}
 ```
 
-从左至右显示语言示例图
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/WOklu1rURDi3yvl94eB_FA/zh-cn_image_0000002706835636.gif)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/XK6leMFKT-Sc0WazE-uR3Q/zh-cn_image_0000002558606366.png)
+### 示例2（边框宽度、圆角半径和颜色类型）
 
-从右至左显示语言示例图
+border属性的width、radius、color属性值分别使用LocalizedEdgeWidths类型、LocalizedBorderRadiuses类型和LocalizedEdgeColors类型。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/msrq0SYQRWqGd7-XwbY9lQ/zh-cn_image_0000002589325893.png)
+```ts
+// xxx.ets
+import { LengthMetrics } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct BorderExample {
+  build() {
+    Column() {
+      Flex({ justifyContent: FlexAlign.SpaceAround, alignItems: ItemAlign.Center }) {
+        // 虚线
+        Text('dashed')
+          .borderStyle(BorderStyle.Dashed)
+          .borderWidth(5)
+          .borderColor(0xAFEEEE)
+          .borderRadius(10)
+          .width(120)
+          .height(120)
+          .textAlign(TextAlign.Center)
+          .fontSize(16)
+        // 点线
+        Text('dotted')
+          .border({
+            width: 5,
+            color: 0x317AF7,
+            radius: 10,
+            style: BorderStyle.Dotted
+          })
+          .width(120)
+          .height(120)
+          .textAlign(TextAlign.Center)
+          .fontSize(16)
+      }.width('100%').height(150)
+
+      Text('.border')
+        .fontSize(50)
+        .width(300)
+        .height(300)
+        // 使用LocalizedEdgeWidths和LocalizedBorderRadiuses类型，start/end方向适配RTL/LTR布局
+        .border({
+          width: {
+            start: LengthMetrics.vp(3),
+            end: LengthMetrics.vp(6),
+            top: LengthMetrics.vp(10),
+            bottom: LengthMetrics.vp(15)
+          },
+          color: {
+            start: '#e3bbbb',
+            end: Color.Blue,
+            top: Color.Red,
+            bottom: Color.Green
+          },
+          radius: {
+            topStart: LengthMetrics.vp(10),
+            topEnd: LengthMetrics.vp(20),
+            bottomStart: LengthMetrics.vp(40),
+            bottomEnd: LengthMetrics.vp(80)
+          },
+          style: {
+            left: BorderStyle.Dotted,
+            right: BorderStyle.Dotted,
+            top: BorderStyle.Solid,
+            bottom: BorderStyle.Dashed
+          }
+        })
+        .textAlign(TextAlign.Center)
+    }
+  }
+}
+```
+
+从左至右（LTR）显示语言示例图
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/P8b_I4l4SDeUsFLgQ2SjWQ/zh-cn_image_0000002736314741.png)
+
+从右至左（RTL）显示语言示例图
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/f0c3gGOXSrmOIHekTb_Eog/zh-cn_image_0000002706675698.png)
 
 ### 示例3（设置离屏圆角）
 
 从API version 22开始，该示例支持设置组件绘制圆角的模式。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct RenderStrategyExample {
+  build() {
+    NavDestination() {
+      Column({ space: 20 }) {
+        // 快速绘制模式：适用于常规圆角场景，性能更优
+        Stack() {
+          Column()
+            .width(320)
+            .height(320)
+            .backgroundColor(Color.Black)
+
+          Stack() {
+            Stack() {
+              Scroll(new Scroller()) {
+                Image($r('app.media.startIcon'))
+                  .width('100%')
+                  .height('200%')
+              }
+
+              Column()
+                .blur(50) // 设置模糊效果
+                .width(300)
+                .height(100)
+                .position({ x: 0, y: 0 })
+            }
+          }
+          .width(300)
+          .height(300)
+          .backgroundColor(Color.Pink)
+          .borderRadius(50, RenderStrategy.FAST) // 设置快速绘制模式圆角
+          .clip(true)
+        }
+
+        // 离屏绘制模式：适用于包含模糊效果的圆角场景，可避免裁剪异常
+        Stack() {
+          Column()
+            .width(320)
+            .height(320)
+            .backgroundColor(Color.Black)
+
+          Stack() {
+            Stack() {
+              Scroll(new Scroller()) {
+                Image($r('app.media.startIcon'))
+                  .width('100%')
+                  .height('200%')
+              }
+
+              Column()
+                .blur(50) // 设置模糊效果
+                .width(300)
+                .height(100)
+                .position({ x: 0, y: 0 })
+            }
+          }
+          .width(300)
+          .height(300)
+          .backgroundColor(Color.Pink)
+          .borderRadius(50, RenderStrategy.OFFSCREEN) // 设置离屏绘制模式圆角
+          .clip(true)
+        }
+      }
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct RenderStrategyExample {
-5. build() {
-6. NavDestination() {
-7. Column({ space: 20 }) {
-8. Stack() {
-9. Column()
-10. .width(320)
-11. .height(320)
-12. .backgroundColor(Color.Black)
 
-14. Stack() {
-15. Stack() {
-16. Scroll(new Scroller()) {
-17. Image($r('app.media.startIcon'))
-18. .width('100%')
-19. .height('200%')
-20. }
+快速绘制模式（RenderStrategy.FAST）通过GPU硬件加速进行实时绘制，适用于普通圆角场景；离屏绘制模式（RenderStrategy.OFFSCREEN）将组件先绘制到离屏缓冲区再合成，适用于包含模糊、滚动等复杂内容的圆角场景，可避免圆角裁剪异常。设置在线绘制模式（上方）以及离屏绘制模式（下方）的示例图如下：
 
-22. Column()
-23. .blur(50)
-24. .width(300)
-25. .height(100)
-26. .position({ x: 0, y: 0 })
-27. }
-28. }
-29. .width(300)
-30. .height(300)
-31. .backgroundColor(Color.Pink)
-32. .borderRadius(50, RenderStrategy.FAST)
-33. .clip(true)
-34. }
-
-36. Stack() {
-37. Column()
-38. .width(320)
-39. .height(320)
-40. .backgroundColor(Color.Black)
-
-42. Stack() {
-43. Stack() {
-44. Scroll(new Scroller()) {
-45. Image($r('app.media.startIcon'))
-46. .width('100%')
-47. .height('200%')
-48. }
-
-50. Column()
-51. .blur(50)
-52. .width(300)
-53. .height(100)
-54. .position({ x: 0, y: 0 })
-55. }
-56. }
-57. .width(300)
-58. .height(300)
-59. .backgroundColor(Color.Pink)
-60. .borderRadius(50, RenderStrategy.OFFSCREEN)
-61. .clip(true)
-62. }
-63. }
-64. }
-65. .width('100%')
-66. .height('100%')
-67. }
-68. }
-```
-
-设置在线绘制模式（上方）以及离屏绘制模式（下方）的示例图如下：
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/4LLh1eVmQTWFo3BH9GQ11A/zh-cn_image_0000002589245835.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/bT_lXmUHTTqzd5WZe4OmLg/zh-cn_image_0000002736434785.jpg)
 
 ### 示例4（设置异形圆角）
 
 该示例通过[borderRadius](ts-universal-attributes-border.md#borderradius)设置四个不同圆角值。当其中一个圆角值超过高度或宽度最小值的一半时，按值的比例绘制异形圆角。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct BorderExample {
-5. build() {
-6. Column() {
-7. Flex({ justifyContent: FlexAlign.SpaceAround, alignItems: ItemAlign.Center }) {
-8. Text('Text')
-9. .borderWidth(5)
-10. .borderColor(0xAFEEEE)
-11. .borderRadius({
-12. topLeft: 2000,
-13. topRight: 10,
-14. bottomLeft: 30,
-15. bottomRight: 50
-16. })
-17. .width(100)
-18. .height(100)
-19. .textAlign(TextAlign.Center)
-20. .fontSize(16)
-21. }
-22. }
-23. }
-24. }
+```ts
+// xxx.ets
+@Entry
+@Component
+struct BorderExample {
+  build() {
+    Column() {
+      Flex({ justifyContent: FlexAlign.SpaceAround, alignItems: ItemAlign.Center }) {
+        Text('Text')
+          .borderWidth(5)
+          .borderColor(0xAFEEEE)
+          // topLeft: 2000超过最小值(100)的一半，按值的比例绘制异形圆角
+          .borderRadius({
+            topLeft: 2000,
+            topRight: 10,
+            bottomLeft: 30,
+            bottomRight: 50
+          })
+          .width(100)
+          .height(100)
+          .textAlign(TextAlign.Center)
+          .fontSize(16)
+      }
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/jsYyE0UIQSOhR0LNlJBFnA/zh-cn_image_0000002558766026.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/4w18bxm1TyCJILd3_f5dmQ/zh-cn_image_0000002706835638.png)

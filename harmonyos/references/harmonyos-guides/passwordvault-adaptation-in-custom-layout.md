@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/passwordvault
 title: 自定义布局下的适配建议
 breadcrumb: 指南 > 系统 > 安全 > 密码自动填充服务 > 应用接入密码保险箱 > 自定义布局下的适配建议
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:08+08:00
+scraped_at: 2026-09-02T14:49:59+08:00
 doc_updated_at: 2026-03-20
-content_hash: sha256:a31dec57562e6cb75188a0ee050639f8bf6fc242f428390102150a67bdd7d3d5
+content_hash: sha256:52b2d867b41b628afc0fc57c929d681c48917959d9377a853a984b15fe2a6acd
 ---
 
 ## 登录
@@ -26,102 +26,102 @@ content_hash: sha256:a31dec57562e6cb75188a0ee050639f8bf6fc242f428390102150a67bdd
 
 示例代码如下：
 
-```
-1. @Entry
-2. @Component
-3. struct LoginExample {
-4. pathInfos: NavPathStack = new NavPathStack();
-5. @State ReserveAccount: string = '';
-6. @State ReservePassword: string = '';
-7. // 保存填充功能初始值：true
-8. @State enableAutoFill: boolean = true;
+```ts
+@Entry
+@Component
+struct LoginExample {
+  pathInfos: NavPathStack = new NavPathStack();
+  @State ReserveAccount: string = '';
+  @State ReservePassword: string = '';
+  // 保存填充功能初始值：true
+  @State enableAutoFill: boolean = true;
 
-10. onBackPress() {
-11. // 当非成功登录、返回等页面跳转时，将enableAutoFill设置为false，密码保险箱将不启用自动填充功能
-12. this.enableAutoFill = false;
-13. return false;
-14. }
+  onBackPress() {
+    // 当非成功登录、返回等页面跳转时，将enableAutoFill设置为false，密码保险箱将不启用自动填充功能
+    this.enableAutoFill = false;
+    return false;
+  }
 
-16. @Builder
-17. PageMap(name: string) {
-18. if (name === 'home_page') {
-19. HomePage()
-20. }
-21. }
+  @Builder
+  PageMap(name: string) {
+    if (name === 'home_page') {
+      HomePage()
+    }
+  }
 
-23. build() {
-24. Navigation(this.pathInfos) {
-25. Column({ space: 16 }) {
-26. Text("账户登录")
-27. .commonTitleStyles()
+  build() {
+    Navigation(this.pathInfos) {
+      Column({ space: 16 }) {
+        Text("账户登录")
+          .commonTitleStyles()
 
-29. TextInput({ placeholder: '账号' })
-30. .commonInputStyles()
-31. .type(InputType.USER_NAME)// 账号框使用USER_NAME属性
-32. .enableAutoFill(this.enableAutoFill)// 保存填充功能属性
-33. .onChange((value: string) => {
-34. this.ReserveAccount = value;
-35. })
+        TextInput({ placeholder: '账号' })
+          .commonInputStyles()
+          .type(InputType.USER_NAME)// 账号框使用USER_NAME属性
+          .enableAutoFill(this.enableAutoFill)// 保存填充功能属性
+          .onChange((value: string) => {
+            this.ReserveAccount = value;
+          })
 
-37. TextInput({ placeholder: '密码' })
-38. .commonInputStyles()
-39. .showPasswordIcon(true)
-40. .type(InputType.Password)// 密码框使用Password属性
-41. .enableAutoFill(this.enableAutoFill)// 保存填充功能属性
-42. .onChange((value: string) => {
-43. this.ReservePassword = value;
-44. })
+        TextInput({ placeholder: '密码' })
+          .commonInputStyles()
+          .showPasswordIcon(true)
+          .type(InputType.Password)// 密码框使用Password属性
+          .enableAutoFill(this.enableAutoFill)// 保存填充功能属性
+          .onChange((value: string) => {
+            this.ReservePassword = value;
+          })
 
-46. Button('登录', { type: ButtonType.Capsule, stateEffect: false })
-47. .borderRadius(20)
-48. .width('100%')
-49. .height(40)
-50. .enabled((this.ReserveAccount !== '') && (this.ReservePassword !== ''))
-51. .onClick(() => {
-52. // 成功登录时页面跳转将enableAutoFill设置为true，密码保险箱使能
-53. this.enableAutoFill = true;
-54. this.pathInfos.pushPathByName('home_page', null)
-55. })
-56. }
-57. .padding(16)
-58. }
-59. .navDestination(this.PageMap)
-60. .height('100%')
-61. .width('100%')
-62. }
-63. }
+        Button('登录', { type: ButtonType.Capsule, stateEffect: false })
+          .borderRadius(20)
+          .width('100%')
+          .height(40)
+          .enabled((this.ReserveAccount !== '') && (this.ReservePassword !== ''))
+          .onClick(() => {
+            // 成功登录时页面跳转将enableAutoFill设置为true，密码保险箱使能
+            this.enableAutoFill = true;
+            this.pathInfos.pushPathByName('home_page', null)
+          })
+      }
+      .padding(16)
+    }
+    .navDestination(this.PageMap)
+    .height('100%')
+    .width('100%')
+  }
+}
 
-65. @Component
-66. struct HomePage {
-67. pathInfos: NavPathStack = new NavPathStack();
+@Component
+struct HomePage {
+  pathInfos: NavPathStack = new NavPathStack();
 
-69. build() {
-70. NavDestination() {
-71. Column() {
-72. Text("Home Page").commonTitleStyles()
-73. }.width('100%').height('100%')
-74. }.title("Home Page")
-75. .onReady((context: NavDestinationContext) => {
-76. this.pathInfos = context.pathStack;
-77. })
-78. }
-79. }
+  build() {
+    NavDestination() {
+      Column() {
+        Text("Home Page").commonTitleStyles()
+      }.width('100%').height('100%')
+    }.title("Home Page")
+    .onReady((context: NavDestinationContext) => {
+      this.pathInfos = context.pathStack;
+    })
+  }
+}
 
-81. @Extend(Text)
-82. function commonTitleStyles() {
-83. .fontSize(24)
-84. .fontColor('#000000')
-85. .fontWeight(FontWeight.Medium)
-86. .margin({ top: 18 })
-87. }
+@Extend(Text)
+function commonTitleStyles() {
+  .fontSize(24)
+  .fontColor('#000000')
+  .fontWeight(FontWeight.Medium)
+  .margin({ top: 18 })
+}
 
-89. @Extend(TextInput)
-90. function commonInputStyles() {
-91. .placeholderColor(0x182431)
-92. .width('100%')
-93. .opacity(0.6)
-94. .placeholderFont({ size: 16, weight: FontWeight.Regular })
-95. }
+@Extend(TextInput)
+function commonInputStyles() {
+  .placeholderColor(0x182431)
+  .width('100%')
+  .opacity(0.6)
+  .placeholderFont({ size: 16, weight: FontWeight.Regular })
+}
 ```
 
 ## 将导致功能受限的布局

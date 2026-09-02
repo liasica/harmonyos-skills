@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-bytecod
 title: 方舟字节码文件格式
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > 方舟字节码 > 方舟字节码文件格式
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:47+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:c3d3e45461f5f304a2d10d11ef39f144c82a48aff7a35711425ce493a6e2d522
+scraped_at: 2026-09-02T14:59:14+08:00
+doc_updated_at: 2026-08-03
+content_hash: sha256:87462b374d49f9e3cf7c4b949396156c5fb2bbcb8d2cb58ab149a025c60870f1
 ---
 
 本文详细介绍了方舟字节码文件的格式，旨在帮助开发者深入理解字节码文件的组成结构，以指导字节码的分析和修改。
@@ -36,7 +36,11 @@ content_hash: sha256:c3d3e45461f5f304a2d10d11ef39f144c82a48aff7a35711425ce493a6e
 | **名称** | **格式** | **说明** |
 | --- | --- | --- |
 | utf16\_length | uleb128 | 值为len << 1 | is\_ascii，其中len是字符串在UTF-16编码中的大小，is\_ascii标记该字符串是否仅包含ASCII字符。 |
-| data | uint8\_t[] | 以'\0'结尾的MUTF-8编码字符序列。 |
+| data | uint8\_t[] | 以'\0'结尾的MUTF-8（Modified UTF-8）编码字符序列。 |
+
+**说明** 
+
+MUTF-8是标准UTF-8的变体，主要差异为：使用双字节序列编码U+0000空字符，以及使用代理对编码大于U+FFFF的补充字符。
 
 ### TaggedValue
 
@@ -56,7 +60,7 @@ TypeDescriptor是类（[Class](arkts-bytecode-file-format.md#class)）名称的�
 
 字节码文件起始于[Header](arkts-bytecode-file-format.md#header)结构。文件中的所有结构均可以从Header出发，直接或间接地访问到。字节码文件中结构的引用方式包括偏移量和索引。偏移量是一个32位长度的值，表示当前结构的起始位置在字节码文件中相对于文件头的字节偏移量，从0开始计算。索引是一个16位长度的值，表示当前结构在索引区域中的位置，此机制将在[IndexSection](arkts-bytecode-file-format.md#indexsection)章节描述。
 
-字节码文件中所有多字节数值类型（如u16、u32和i32等）均采用小端字节序（Little-endian）存储。
+字节码文件中所有多字节数值类型（如uint16\_t、uint32\_t等）均采用小端字节序（Little-endian）存储。
 
 ### Header
 
@@ -115,7 +119,7 @@ TypeDescriptor是类（[Class](arkts-bytecode-file-format.md#class)）名称的�
 | name\_off | uint32\_t | 一个偏移量，指向[字符串](arkts-bytecode-file-format.md#字符串)，表示方法名称。 |
 | index\_data | uleb128 | 方法的[MethodIndexData](arkts-bytecode-file-format.md#methodindexdata)数据。 |
 
-注意
+**注意** 
 
 通过ForeignMethod的偏移量，可以找到偏移量所在的IndexHeader以解析class\_idx。
 
@@ -166,7 +170,7 @@ ClassIndex结构能通过名称快速定位到Class的定义。
 | SOURCE\_LANG | 0x02 | 0-1 | uint8\_t | 拥有此标记的[TaggedValue](arkts-bytecode-file-format.md#taggedvalue)的data的值为0时，表示源码语言是ArkTS/TS/JS。 |
 | SOURCE\_FILE | 0x07 | 0-1 | uint32\_t | 拥有此标记的[TaggedValue](arkts-bytecode-file-format.md#taggedvalue)的data是一个偏移量，指向[字符串](arkts-bytecode-file-format.md#字符串)，表示源文件的名称。 |
 
-注意
+**注意** 
 
 ClassTag是class\_data中元素（[TaggedValue](arkts-bytecode-file-format.md#taggedvalue)）所具备的标记，表头中的“数量”指的是在某一个[Class](arkts-bytecode-file-format.md#class)的class\_data中拥有此标记的元素出现的次数。
 
@@ -185,7 +189,7 @@ ClassTag是class\_data中元素（[TaggedValue](arkts-bytecode-file-format.md#ta
 | reserved | uleb128 | 方舟字节码文件内部使用的保留字段。 |
 | field\_data | TaggedValue[] | 不定长度的数组，数组中每个元素都是[TaggedValue](arkts-bytecode-file-format.md#taggedvalue)类型，元素的标记是[FieldTag](arkts-bytecode-file-format.md#fieldtag)类型，数组中的元素按照标记递增排序（0x00标记除外）。 |
 
-注意
+**注意** 
 
 通过Field的偏移量，可以找到偏移量所在的IndexHeader以解析class\_idx和type\_idx。
 
@@ -200,7 +204,7 @@ ClassTag是class\_data中元素（[TaggedValue](arkts-bytecode-file-format.md#ta
 | INT\_VALUE | 0x01 | 0-1 | sleb128 | 拥有此标记的[TaggedValue](arkts-bytecode-file-format.md#taggedvalue)的data的类型为boolean、byte、char、short 或 int。 |
 | VALUE | 0x02 | 0-1 | uint32\_t | 拥有此标记的[TaggedValue](arkts-bytecode-file-format.md#taggedvalue)的data的类型为[Value formats](arkts-bytecode-file-format.md#value-formats)中的FLOAT或ID。 |
 
-注意
+**注意** 
 
 FieldTag是field\_data中元素（[TaggedValue](arkts-bytecode-file-format.md#taggedvalue)）的标记。表头中的“数量”表示在某个[Field](arkts-bytecode-file-format.md#field)的field\_data中拥有此标记的元素出现的次数。
 
@@ -219,7 +223,7 @@ FieldTag是field\_data中元素（[TaggedValue](arkts-bytecode-file-format.md#ta
 | index\_data | uleb128 | 方法的[MethodIndexData](arkts-bytecode-file-format.md#methodindexdata)数据。 |
 | method\_data | TaggedValue[] | 不定长度的数组，数组中每个元素都是[TaggedValue](arkts-bytecode-file-format.md#taggedvalue)类型，元素的标记是[MethodTag](arkts-bytecode-file-format.md#methodtag)类型，数组中的元素按照标记递增排序（0x00标记除外）。 |
 
-注意
+**注意** 
 
 通过Method的偏移量，可以找到偏移量所在的IndexHeader以解析class\_idx。
 
@@ -255,7 +259,7 @@ MethodIndexData是一个无符号32位整数，划分为3个部分。
 | DEBUG\_INFO | 0x05 | 0-1 | uint32\_t | 拥有此标记的[TaggedValue](arkts-bytecode-file-format.md#taggedvalue)的data是一个偏移量，指向[DebugInfo](arkts-bytecode-file-format.md#debuginfo)，表示方法的调试信息。 |
 | ANNOTATION | 0x06 | >=0 | uint32\_t | 拥有此标记的[TaggedValue](arkts-bytecode-file-format.md#taggedvalue)的data是一个偏移量，指向[Annotation](arkts-bytecode-file-format.md#annotation)， 表示方法的注解。 |
 
-注意
+**注意** 
 
 MethodTag是method\_data中元素（[TaggedValue](arkts-bytecode-file-format.md#taggedvalue)）的标记。表头中的“数量”表示在某个[Method](arkts-bytecode-file-format.md#method)的method\_data中，具有此标记的元素出现的次数。
 
@@ -285,6 +289,10 @@ MethodTag是method\_data中元素（[TaggedValue](arkts-bytecode-file-format.md#
 | num\_catches | uleb128 | 与TryBlock关联的[CatchBlock](arkts-bytecode-file-format.md#catchblock)的数量，值为1。 |
 | catch\_blocks | CatchBlock[] | 与TryBlock关联的CatchBlock的数组，数组中有且仅有一个可以捕获所有类型的异常的CatchBlock。 |
 
+**说明** 
+
+num\_catches固定为1的原因是：ArkTS/TS/JS语言的异常处理机制中，try-catch语句仅支持单个catch块捕获所有类型的异常，不支持按异常类型分别捕获，因此每个TryBlock仅需关联一个CatchBlock。
+
 ### CatchBlock
 
 * 对齐方式：单字节对齐。
@@ -310,7 +318,7 @@ MethodTag是method\_data中元素（[TaggedValue](arkts-bytecode-file-format.md#
 | elements | AnnotationElement[] | 一个数组，数组的每个元素都是[AnnotationElement](arkts-bytecode-file-format.md#annotationelement)类型。 |
 | element\_types | uint8\_t[] | 一个数组，数组的每个元素都是[AnnotationElementTag](arkts-bytecode-file-format.md#annotationelementtag)类型，用于描述一个AnnotationElement。每个元素在element\_types数组中的位置和其对应的AnnotationElement在elements数组中的位置一致。 |
 
-注意
+**注意** 
 
 通过Annotation的偏移量，可以找到偏移量所在的IndexHeader以解析class\_idx。
 
@@ -427,7 +435,7 @@ MethodTag是method\_data中元素（[TaggedValue](arkts-bytecode-file-format.md#
 | 3 | line += LINE\_BASE + (adjusted\_opcode % LINE\_RANGE) | 增加line寄存器中的值。LINE\_BASE的值是-4，是最小的行号增量值；最大的行号增量值是LINE\_BASE + LINE\_RANGE - 1。 |
 | 4 | - | 生成一个新的位置条目。 |
 
-注意
+**注意** 
 
 特殊操作码计算方式：(line\_increment - LINE\_BASE) + (address\_increment \* LINE\_RANGE) + OPCODE\_BASE。
 

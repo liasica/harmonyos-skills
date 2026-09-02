@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-syst
 title: 系统平台要求
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 系统平台要求
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:39+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:f58ec638ee829183aa32190b68f899a874555a9bd835c878188355cd5fe2f763
+scraped_at: 2026-09-02T14:50:58+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:b2071febce92e07579cbbcc042c5c39e9e8b5b70f42d810488281028c1f629ac
 ---
 
 ohpm支持在Windows、macOS、Linux操作系统下使用。
@@ -14,7 +14,7 @@ ohpm通过软链接或符号链接的方式构建依赖关系。不同操作系�
 
 **Windows：**
 
-* 工程代码文件所在文件系统类型需为NTFS（Windows系统下默认为NTFS）；
+* 工程代码文件所在文件系统类型需为NTFS（Windows系统下默认为NTFS）。
 * 使用源码依赖时，依赖的源码模块与被依赖的源码模块需要在同一个盘符下，不允许配置跨盘符依赖。
 
 **macOS**：

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_audio_channel_layout.h
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 头文件 > native_audio_channel_layout.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:03+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:a1747fb52b0564269a050727e0d21decf62534da65e4a919cb0d0d0c25e64738
+scraped_at: 2026-09-02T15:02:22+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1e059e34131f0f574e0b1649305af4419bfca31fa400addc0a80b21095ee7213
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 在录制和播放时的扬声器布局。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -40,14 +34,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AudioChannelSet
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioChannelSet
+```c
+enum OH_AudioChannelSet
 ```
 
 **描述**
@@ -95,10 +85,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AmbAttributeSet
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AmbAttributeSet
+```c
+enum OH_AmbAttributeSet
 ```
 
 **描述**
@@ -124,10 +112,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioChannelLayout
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioChannelLayout
+```c
+enum OH_AudioChannelLayout
 ```
 
 **描述**

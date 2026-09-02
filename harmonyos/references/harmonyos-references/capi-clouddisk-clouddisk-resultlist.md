@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-clou
 title: CloudDisk_ResultList
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > C API > 结构体 > CloudDisk_ResultList
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:54+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:c62feafde58e502027e2cd64335f6fac7d59deec562922a9edf68d8d250fab92
+scraped_at: 2026-09-02T15:01:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c87b00fbd58940a39f6a0054efe2d78eaa16005008743fc6847581fae6c86704
 ---
 
-```
-1. typedef struct CloudDisk_ResultList {...} CloudDisk_ResultList
+```c
+typedef struct CloudDisk_ResultList {...} CloudDisk_ResultList
 ```
 
 ## 概述
-
-PC/2in1Tablet
 
 表示一个文件同步操作的结果。该结构体包含文件的绝对路径、同步结果，以及同步状态或失败原因。
 
@@ -26,11 +24,7 @@ PC/2in1Tablet
 
 ## 汇总
 
-PC/2in1Tablet
-
 ### 成员变量
-
-PC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |

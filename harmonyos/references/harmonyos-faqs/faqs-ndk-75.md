@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-75
 title: Native侧的napi_env是否支持延迟调用或者异步调用
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > 任务并发调度（Function Flow Runtime） > Native侧的napi_env是否支持延迟调用或者异步调用
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:56+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:cb5e748305c08236b1a3fc3618a86ba940d4736a1348cbfff9044a8cbc609e8f
 ---
 

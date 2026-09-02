@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-framework-
 title: js标签配置
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 框架说明 > js标签配置
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:38+08:00
+scraped_at: 2026-09-02T14:59:20+08:00
 doc_updated_at: 2026-04-17
-content_hash: sha256:46c8b9045900a5cf4a73ccc8ffc534f155675b189cc0d6a762bdf4cea4e4b50d
+content_hash: sha256:0580ff45b7aba9c1b11907a614bf620eb1cff36f7f375bedfe81251b3a1196fe
 ---
 
 js标签用于配置实例名称、页面路由和窗口样式信息。
@@ -16,7 +16,7 @@ js标签用于配置实例名称、页面路由和窗口样式信息。
 | pages | Array | - | 是 | 路由信息，详见“**[pages](js-framework-js-tag.md#pages)**”。 |
 | window | Object | - | 否 | 窗口信息，详见“**[Window](js-framework-js-tag.md#window)**”。 |
 
-说明
+**说明** 
 
 name、pages和window等标签配置需在配置文件（config.json）中的“js”标签中完成设置。
 
@@ -24,18 +24,18 @@ name、pages和window等标签配置需在配置文件（config.json）中的“
 
 定义每个页面的路由信息，每个页面由页面路径和页面名组成，页面的文件名即为页面名，例如：
 
-```
-1. {
-2. // ...
-3. "pages": [
-4. "pages/index/index",
-5. "pages/detail/detail"
-6. ]
-7. // ...
-8. }
+```json5
+{
+    // ...
+    "pages": [
+        "pages/index/index",
+        "pages/detail/detail"
+    ]
+    // ...
+}
 ```
 
-说明
+**说明** 
 
 * pages列表中第一个页面是应用的首页，即entry入口。
 * 页面文件名不能使用组件名称，比如：text.hml、button.hml等。
@@ -47,7 +47,7 @@ window用于定义与显示窗口相关的配置。屏幕适配问题可通过�
 * 指定designWidth（屏幕逻辑宽度），所有与大小相关的样式（例如width、font-size）均以designWidth和实际屏幕宽度的比例进行缩放，例如在designWidth为720时，如果设置width为100px时，在实际宽度为1440物理像素的屏幕上，width实际渲染像素为200物理像素。
 * 设置autoDesignWidth为true，此时designWidth字段将会被忽略，渲染组件和布局时按屏幕密度进行缩放。屏幕逻辑宽度由设备宽度和屏幕密度自动计算得出，在不同设备上可能不同，请使用相对布局来适配多种设备。例如：在466\*466分辨率，320dpi的设备上，屏幕密度为2（以160dpi为基准），1px等于渲染出的2物理像素。
 
-  说明
+  **说明** 
 
   1. 组件样式中<length>类型的默认值，基于屏幕密度进行计算和绘制。例如：在屏幕密度为2（以160dpi为基准）的设备上，默认<length>为1px时，设备上实际渲染出2物理像素。
   2. autoDesignWidth、designWidth的设置不影响默认值计算方式和绘制结果。
@@ -59,49 +59,49 @@ window用于定义与显示窗口相关的配置。屏幕适配问题可通过�
 
 示例如下：
 
-```
-1. {
-2. // ...
-3. "window": {
-4. "designWidth": 720,
-5. "autoDesignWidth": false
-6. }
-7. // ...
-8. }
+```json5
+{
+    // ...
+    "window": {
+        "designWidth": 720,
+        "autoDesignWidth": false
+    }
+    // ...
+}
 ```
 
 ## 示例
 
-```
-1. {
-2. "app": {
-3. "bundleName": "com.example.player",
-4. "version": {
-5. "code": 1,
-6. "name": "1.0"
-7. },
-8. "vendor": "example"
-9. },
-10. "module": {
-11. // ...
-12. "js": [
-13. {
-14. "name": "default",
-15. "pages": [
-16. "pages/index/index",
-17. "pages/detail/detail"
-18. ],
-19. "window": {
-20. "designWidth": 720,
-21. "autoDesignWidth": false
-22. }
-23. }
-24. ],
-25. "abilities": [
-26. {
-27. // ...
-28. }
-29. ]
-30. }
-31. }
+```json5
+{
+  "app": {
+    "bundleName": "com.example.player",
+    "version": {
+        "code": 1,
+        "name": "1.0"
+    },
+    "vendor": "example"
+  },
+  "module": {
+      // ...
+      "js": [
+      {
+          "name": "default",
+          "pages": [
+              "pages/index/index",
+              "pages/detail/detail"
+          ],
+          "window": {
+              "designWidth": 720,
+              "autoDesignWidth": false
+          }
+      }
+      ],
+      "abilities": [
+      {
+          // ...
+      }
+    ]
+  }
+}
 ```

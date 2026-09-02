@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 程序包结构
 breadcrumb: FAQ > 应用框架开发 > 程序包结构
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:26+08:00
-doc_updated_at: 2026-04-08
-content_hash: sha256:34b91d11a2b196e91e78e67d79bfca30f0d36d693801aacddef4d0e5fa78781d
+scraped_at: 2026-09-02T14:53:52+08:00
+doc_updated_at: 2026-07-30
+content_hash: sha256:8a981656897e4c01422e0bf8e44553c5941367ba4d863d82b6cc2d6a1feef4a8
 ---
 
 * **[HSP打包后，为什么会生成HAR包，它是否会导致App包大小膨胀](faqs-package-structure-2.md)**
@@ -15,13 +15,11 @@ content_hash: sha256:34b91d11a2b196e91e78e67d79bfca30f0d36d693801aacddef4d0e5fa7
 * **[SharedLibrary能否在配置文件中声明abilities、extensionAbilities标签](faqs-package-structure-7.md)**
 * **[HAR包中使用window作为Toast时无法引入页面组件](faqs-package-structure-8.md)**
 * **[业务模块HAR如何获取宿主HAP的数据](faqs-package-structure-9.md)**
-* **[如何安装打包出来的App包（通过什么命令安装）](faqs-package-structure-13.md)**
 * **[如何判断应用可被卸载](faqs-package-structure-14.md)**
 * **[HAR、HSP不能支持Ability、Page声明，限制的理由是什么？后续是否会支持](faqs-package-structure-15.md)**
 * **[是否允许HAR的循环依赖](faqs-package-structure-16.md)**
 * **[HAP依赖HAR A，HAR A依赖HAR B。HAP能否调用HAR B提供的接口？如果不支持间接依赖HAR，设计的原因是什么](faqs-package-structure-17.md)**
 * **[通过resourceManager.getStringResource接口获取HSP资源文件报“Resource id invalid”错误](faqs-package-structure-18.md)**
-* **[HAP/HAR/HSP的关系是什么？是否都可以声明注册Ability和Page？三种类型分别推荐哪些的使用场景？选择原则是什么](faqs-package-structure-19.md)**
 * **[如何正确引用HAR/HSP包模块](faqs-package-structure-21.md)**
 * **[从HAP的拆包中，如何区分是HAR和HSP](faqs-package-structure-23.md)**
 * **[在HAP中调用createModuleContext方法获取的Context是什么层级](faqs-package-structure-25.md)**
@@ -48,7 +46,7 @@ content_hash: sha256:34b91d11a2b196e91e78e67d79bfca30f0d36d693801aacddef4d0e5fa7
 * **[一个HSP模块如何快速切换成HAR模块](faqs-package-structure-49.md)**
 * **[是否推荐使用BM QuickFix制造修复包](faqs-package-structure-50.md)**
 * **[使用hdc命令安装release HAP包到设备时上报“INSTALL\_FAILED\_APP\_SOURCE\_NOT\_TRUSTED”错误](faqs-package-structure-51.md)**
-* **[如何查询应用包的名称、供应商、版本号、版本文本、安装时间、更新时间等信息](faqs-package-structure-52.md)**
+* **[如何查询应用包的名称、供应商、版本号、版本文本、安装时间、更新时间描述信息](faqs-package-structure-52.md)**
 * **[如何安装打包出来的App包（通过什么命令安装）](faqs-package-structure-54.md)**
 * **[应用免安装的限制、字段解释以及如何自测](faqs-package-structure-56.md)**
 * **[安装HAP包报“failed to install bundle. install debug type not same”错误](faqs-package-structure-57.md)**
@@ -56,7 +54,7 @@ content_hash: sha256:34b91d11a2b196e91e78e67d79bfca30f0d36d693801aacddef4d0e5fa7
 * **[如何判断当前应用程序是Debug包还是Release包](faqs-package-structure-61.md)**
 * **[如何判断应用程序是否安装](faqs-package-structure-62.md)**
 * **[如何跨HSP包调用rawfile目录下的文件](faqs-package-structure-63.md)**
-* **[如何获取应用包的签名指纹信息，即.p12文件信息](faqs-package-structure-64.md)**
+* **[如何获取应用包的签名指纹信息，即“.p12文件”信息](faqs-package-structure-64.md)**
 * **[使用发布证书进行调试时出现安装错误: Install Failed: error: failed to install bundle.](faqs-package-structure-65.md)**
 * **[使用HSP的多包场景下，直接崩溃并产生cppcrash异常日志，错误信息为resolveBufferCallback get buffer failed](faqs-package-structure-66.md)**
 * **[HAP包中的“--BEGIN CERTIFICATE--”是什么格式的数据](faqs-package-structure-67.md)**
@@ -64,3 +62,13 @@ content_hash: sha256:34b91d11a2b196e91e78e67d79bfca30f0d36d693801aacddef4d0e5fa7
 * **[如何在应用内共享HSP](faqs-package-structure-69.md)**
 * **[如何通过代码获取Hap包的打包时间](faqs-package-structure-70.md)**
 * **[应用静态快捷方式如何接入X键](faqs-package-structure-71.md)**
+* **[HAR包使用的常见问题](faqs-package-structure-72.md)**
+* **[HAR、HSP、HAP三者的区别和使用场景](faqs-package-structure-73.md)**
+* **[多个HAP包集成同一个HSP的规则](faqs-package-structure-74.md)**
+* **[如何解决HAR包资源被覆盖问题](faqs-package-structure-75.md)**
+* **[跨HAP包页面跳转方案](faqs-package-structure-76.md)**
+* **[跨工程引用模块报错](faqs-package-structure-77.md)**
+* **[编译HAR包报错无权限创建软链接](faqs-package-structure-78.md)**
+* **[如何让HAR包的label名称跟随宿主HAP](faqs-package-structure-79.md)**
+* **[如何通过定制多目标构建产物实现渠道打包及运行时读取渠道号](faqs-package-structure-80.md)**
+* **[应用预装及上架全量包与取包逻辑说明](faqs-package-structure-new-00001.md)**

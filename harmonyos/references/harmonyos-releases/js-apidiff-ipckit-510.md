@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-ipckit-510
 title: IPC Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.1.0(18) > OS平台能力 > API变更清单 > IPC Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.0(18) > OS平台能力 > API变更清单 > IPC Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:11+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:35+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:d6bb9086b6f5eb973787bd9713e949ba1d4af60f8f292654170a583b7f0808ea
 ---
 

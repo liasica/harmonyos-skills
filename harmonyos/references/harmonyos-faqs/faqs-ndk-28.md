@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-28
 title: ArkTS的对象数据与Native的对象数据如何绑定，相互持有对象数据时内存如何管理
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > ArkTS的对象数据与Native的对象数据如何绑定，相互持有对象数据时内存如何管理
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:35+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:18+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:99616870679da847af3889ea079ce7d42102cad76c8917081dd6df57a99eab9a
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-11
 title: HarmonyOS提供了两种页面加载方式，两者有何区别，怎么选择
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > HarmonyOS提供了两种页面加载方式，两者有何区别，怎么选择
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:52+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:17+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:e8cbe317b530be372123bcd2dc84b83c8e555547affe8c0c6f31fa0daea34e8c
 ---
 

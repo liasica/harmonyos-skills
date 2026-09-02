@@ -3,19 +3,25 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/system-pr
 title: 系统预置UI组件库
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:35+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:1a8fc56c6a113ce32e3f12b81c7c69a4857290218faacd41abf9337d850e2854
+scraped_at: 2026-09-02T14:51:36+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:df2c35810fef6fb8fcc5ec0deeef3ae0b9acb2ae7c5dbf0a25497fd980393e18
 ---
 
 * **[Chip](ohos-arkui-advanced-chip.md)**
+* **[ChipV2](ohos-arkui-advanced-chipv2.md)**
 * **[ChipGroup](ohos-arkui-advanced-chipgroup.md)**
+* **[ChipGroupV2](ohos-arkui-advanced-chipgroupv2.md)**
 * **[ComposeListItem](ohos-arkui-advanced-composelistitem.md)**
+* **[ComposeListItemV2](ohos-arkui-advanced-composelistitemv2.md)**
 * **[ComposeTitleBar](ohos-arkui-advanced-composetitlebar.md)**
+* **[ComposeTitleBarV2](ohos-arkui-advanced-composetitlebarv2.md)**
 * **[DownloadFileButton](ohos-arkui-advanced-downloadfilebutton.md)**
 * **[DialogV2](ohos-arkui-advanced-dialogv2.md)**
 * **[EditableTitleBar](ohos-arkui-advanced-editabletitlebar.md)**
+* **[EditableTitleBarV2](ohos-arkui-advanced-editabletitlebarv2.md)**
 * **[ExceptionPrompt](ohos-arkui-advanced-exceptionprompt.md)**
+* **[ExceptionPromptV2](ohos-arkui-advanced-exceptionpromptv2.md)**
 * **[Filter](ohos-arkui-advanced-filter.md)**
 * **[FolderStack](ts-container-folderstack.md)**
 * **[FoldSplitContainer](ohos-arkui-advanced-foldsplitcontainer.md)**
@@ -23,6 +29,7 @@ content_hash: sha256:1a8fc56c6a113ce32e3f12b81c7c69a4857290218faacd41abf9337d850
 * **[FullScreenLaunchComponent](ohos-arkui-advanced-fullscreenlaunchcomponent.md)**
 * **[GridObjectSortComponent](ohos-arkui-advanced-gridobjectsortcomponent.md)**
 * **[Popup](ohos-arkui-advanced-popup.md)**
+* **[PopupV2](ohos-arkui-advanced-popupv2.md)**
 * **[ProgressButton](ohos-arkui-advanced-progressbutton.md)**
 * **[ProgressButtonV2](ohos-arkui-advanced-progressbuttonv2.md)**
 * **[SegmentButton](ohos-arkui-advanced-segmentbutton.md)**
@@ -33,8 +40,12 @@ content_hash: sha256:1a8fc56c6a113ce32e3f12b81c7c69a4857290218faacd41abf9337d850
 * **[SubHeader](ohos-arkui-advanced-subheader.md)**
 * **[SubHeaderV2](ohos-arkui-advanced-subheaderv2.md)**
 * **[SwipeRefresher](ohos-arkui-advanced-swiperefresher.md)**
+* **[SwipeRefresherV2](ohos-arkui-advanced-swiperefresherv2.md)**
 * **[TabTitleBar](ohos-arkui-advanced-tabtitlebar.md)**
 * **[ToolBar](ohos-arkui-advanced-toolbar.md)**
 * **[ToolBarV2](ohos-arkui-advanced-toolbarv2.md)**
 * **[TreeView](ohos-arkui-advanced-treeview.md)**
+* **[TreeViewV2](ohos-arkui-advanced-treeviewv2.md)**
 * **[advanced.Counter](ohos-arkui-advanced-counter.md)**
+* **[CounterV2](ohos-arkui-advanced-counterv2.md)**
+* **[DatePickerComponent](ohos-arkui-advanced-datepickercomponent.md)**

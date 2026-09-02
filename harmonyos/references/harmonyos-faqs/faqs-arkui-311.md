@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-311
 title: 绑定类型的组件和ForEach的正确连用方式
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 绑定类型的组件和ForEach的正确连用方式
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 绑定类型的组件和ForEach的正确连用方式
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:19+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:0d131d73949b1cf803d51b90f9c4e8f3409db69224ed0c6e92ecf4afc63bca88
+scraped_at: 2026-09-02T14:53:59+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:9ecad62a43e378564f8848c425997d2a4974af69ff15f5ce6f847769689b2e9a
 ---
 
 **问题现象**
@@ -18,54 +18,52 @@ bindSheet和ForEach合用的问题，$$this.isShow会弹出两次半模态，如
 
 参考代码如下：
 
+```ts
+@Entry
+@Component
+export struct BindSheetAndForEach {
+  @State isShow: boolean = false;
+  @State arr: number[] = [1, 2, 3, 4];
+  @State isSheetVisible: Array<boolean> = new Array<boolean>(this.arr.length).fill(false);
+
+  @Builder
+  myBuilder() {
+    Column() {
+      Button('content1')
+        .margin(10)
+        .fontSize(20)
+    }
+    .width('100%')
+  }
+
+  // Each array item corresponds to an independent pop-up window displaying the status, which is index bound
+  build() {
+    Column() {
+      ForEach(this.arr, (item: number, idx: number) => {
+        Row() {
+          Text('item')
+          Button('Bullet Frame')
+            .onClick(() => {
+              this.isSheetVisible[idx] = true;
+            })
+            .fontSize(15)
+            .margin(10)
+            .bindSheet(this.isSheetVisible[idx], this.myBuilder(), {
+              backgroundColor: Color.Gray,
+              height: SheetSize.MEDIUM,
+              showClose: true,
+              onWillDisappear: () => {
+                this.isSheetVisible[idx] = false;
+              }
+            })
+          Checkbox()
+        }
+        .border({ width: 1, radius: 5 })
+      })
+    }
+    .justifyContent(FlexAlign.Start)
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. export struct BindSheetAndForEach {
-4. @State isShow: boolean = false;
-5. @State arr: number[] = [1, 2, 3, 4];
-6. @State isSheetVisible: Array<boolean> = new Array<boolean>(this.arr.length).fill(false);
-
-10. @Builder
-11. myBuilder() {
-12. Column() {
-13. Button('content1')
-14. .margin(10)
-15. .fontSize(20)
-16. }
-17. .width('100%')
-18. }
-
-20. // Each array item corresponds to an independent pop-up window displaying the status, which is index bound
-21. build() {
-22. Column() {
-23. ForEach(this.arr, (item: number, idx: number) => {
-24. Row() {
-25. Text('item')
-26. Button('Bullet Frame')
-27. .onClick(() => {
-28. this.isSheetVisible[idx] = true;
-29. })
-30. .fontSize(15)
-31. .margin(10)
-32. .bindSheet(this.isSheetVisible[idx], this.myBuilder(), {
-33. backgroundColor: Color.Gray,
-34. height: SheetSize.MEDIUM,
-35. showClose: true,
-36. onWillDisappear: () => {
-37. this.isSheetVisible[idx] = false;
-38. }
-39. })
-40. Checkbox()
-41. }
-42. .border({ width: 1, radius: 5 })
-43. })
-44. }
-45. .justifyContent(FlexAlign.Start)
-46. .width('100%')
-47. .height('100%')
-48. }
-49. }
-```
-
-[CorrectWayToUseForEach.ets](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkUI/entry/src/main/ets/pages/CorrectWayToUseForEach.ets#L21-L70)

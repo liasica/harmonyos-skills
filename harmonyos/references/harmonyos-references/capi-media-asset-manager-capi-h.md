@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-medi
 title: media_asset_manager_capi.h
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > C API > 头文件 > media_asset_manager_capi.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:21+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6176fbec0a642620d354aeb58c15208f946118799d600603037722016f59bdbb
+scraped_at: 2026-09-02T15:02:38+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a1cab010c8ad95c0d739e24c566ad9ca77a91314fe2fa79706c46be45698ba9f
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 定义媒体资产管理器的接口。使用由媒体资产管理器提供的C API来请求媒体库资源。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 函数
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -45,14 +39,10 @@ PhonePC/2in1TabletTV
 
 ## 函数说明
 
-PhonePC/2in1TabletTV
-
 ### OH\_MediaAssetManager\_Create()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_MediaAssetManager* OH_MediaAssetManager_Create(void)
+```c
+OH_MediaAssetManager* OH_MediaAssetManager_Create(void)
 ```
 
 **描述**
@@ -65,14 +55,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_MediaAssetManager](capi-mediaassetmanager-oh-mediaassetmanager.md)\* | 返回一个指向OH\_MediaAssetManager实例的指针。 |
+| [OH\_MediaAssetManager](capi-mediaassetmanager-oh-mediaassetmanager.md)\* | 返回一个指向OH\_MediaAssetManager实例的指针，用于请求和管理媒体库资源。 |
 
 ### OH\_MediaAssetManager\_RequestImageForPath()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_RequestId OH_MediaAssetManager_RequestImageForPath(OH_MediaAssetManager* manager, const char* uri,MediaLibrary_RequestOptions requestOptions, const char* destPath, OH_MediaLibrary_OnDataPrepared callback)
+```c
+MediaLibrary_RequestId OH_MediaAssetManager_RequestImageForPath(OH_MediaAssetManager* manager, const char* uri,MediaLibrary_RequestOptions requestOptions, const char* destPath, OH_MediaLibrary_OnDataPrepared callback)
 ```
 
 **描述**
@@ -89,7 +77,7 @@ PhonePC/2in1TabletTV
 | --- | --- |
 | [OH\_MediaAssetManager](capi-mediaassetmanager-oh-mediaassetmanager.md)\* manager | 指向OH\_MediaAssetManager实例的指针。 |
 | const char\* uri | 请求的图像资源的uri。 |
-| [MediaLibrary\_RequestOptions](capi-mediaassetmanager-medialibrary-requestoptions.md) requestOptions | 请求策略模式配置项。 |
+| [MediaLibrary\_RequestOptions](capi-mediaassetmanager-medialibrary-requestoptions.md) requestOptions | 请求策略模式配置项。用于指定资源请求的具体策略，如缓存策略、网络加载策略等。 |
 | const char\* destPath | 请求资源的目标地址。 |
 | [OH\_MediaLibrary\_OnDataPrepared](capi-media-asset-base-capi-h.md#oh_medialibrary_ondataprepared) callback | 媒体资源处理器，当所请求的媒体资源准备完成时会触发回调。 |
 
@@ -97,14 +85,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| [MediaLibrary\_RequestId](capi-mediaassetmanager-medialibrary-requestid.md) | 返回请求Id。 |
+| [MediaLibrary\_RequestId](capi-mediaassetmanager-medialibrary-requestid.md) | 返回请求ID，用于标识该图像资源请求，可用于后续取消请求操作。 |
 
 ### OH\_MediaAssetManager\_RequestVideoForPath()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_RequestId OH_MediaAssetManager_RequestVideoForPath(OH_MediaAssetManager* manager, const char* uri,MediaLibrary_RequestOptions requestOptions, const char* destPath, OH_MediaLibrary_OnDataPrepared callback)
+```c
+MediaLibrary_RequestId OH_MediaAssetManager_RequestVideoForPath(OH_MediaAssetManager* manager, const char* uri,MediaLibrary_RequestOptions requestOptions, const char* destPath, OH_MediaLibrary_OnDataPrepared callback)
 ```
 
 **描述**
@@ -121,7 +107,7 @@ PhonePC/2in1TabletTV
 | --- | --- |
 | [OH\_MediaAssetManager](capi-mediaassetmanager-oh-mediaassetmanager.md)\* manager | 指向OH\_MediaAssetManager实例的指针。 |
 | const char\* uri | 请求的视频资源的uri。 |
-| [MediaLibrary\_RequestOptions](capi-mediaassetmanager-medialibrary-requestoptions.md) requestOptions | 请求策略模式配置项。 |
+| [MediaLibrary\_RequestOptions](capi-mediaassetmanager-medialibrary-requestoptions.md) requestOptions | 请求策略模式配置项。用于指定资源请求的具体策略，如缓存策略、网络加载策略等。 |
 | const char\* destPath | 请求资源的目标地址。 |
 | [OH\_MediaLibrary\_OnDataPrepared](capi-media-asset-base-capi-h.md#oh_medialibrary_ondataprepared) callback | 媒体资源处理器，当所请求的媒体资源准备完成时会触发回调。 |
 
@@ -129,14 +115,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| [MediaLibrary\_RequestId](capi-mediaassetmanager-medialibrary-requestid.md) | 返回请求Id。 |
+| [MediaLibrary\_RequestId](capi-mediaassetmanager-medialibrary-requestid.md) | 返回请求ID，用于标识该视频资源请求，可用于后续取消请求操作。 |
 
 ### OH\_MediaAssetManager\_CancelRequest()
 
-PhonePC/2in1TabletTV
-
-```
-1. bool OH_MediaAssetManager_CancelRequest(OH_MediaAssetManager* manager, const MediaLibrary_RequestId requestId)
+```c
+bool OH_MediaAssetManager_CancelRequest(OH_MediaAssetManager* manager, const MediaLibrary_RequestId requestId)
 ```
 
 **描述**
@@ -152,7 +136,7 @@ PhonePC/2in1TabletTV
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_MediaAssetManager](capi-mediaassetmanager-oh-mediaassetmanager.md)\* manager | 指向OH\_MediaAssetManager实例的指针。 |
-| const [MediaLibrary\_RequestId](capi-mediaassetmanager-medialibrary-requestid.md) requestId | 待取消的请求Id。 |
+| const [MediaLibrary\_RequestId](capi-mediaassetmanager-medialibrary-requestid.md) requestId | 待取消的请求ID。 |
 
 **返回：**
 
@@ -162,10 +146,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaAssetManager\_RequestMovingPhoto()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAssetManager_RequestMovingPhoto(OH_MediaAssetManager* manager,OH_MediaAsset* mediaAsset, MediaLibrary_RequestOptions requestOptions, MediaLibrary_RequestId* requestId,OH_MediaLibrary_OnMovingPhotoDataPrepared callback)
+```c
+MediaLibrary_ErrorCode OH_MediaAssetManager_RequestMovingPhoto(OH_MediaAssetManager* manager,OH_MediaAsset* mediaAsset, MediaLibrary_RequestOptions requestOptions, MediaLibrary_RequestId* requestId,OH_MediaLibrary_OnMovingPhotoDataPrepared callback)
 ```
 
 **描述**
@@ -180,11 +162,11 @@ PhonePC/2in1TabletTV
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_MediaAssetManager](capi-mediaassetmanager-oh-mediaassetmanager.md)\* manager | [OH\_MediaAssetManager](capi-mediaassetmanager-oh-mediaassetmanager.md)实例指针。 |
+| [OH\_MediaAssetManager](capi-mediaassetmanager-oh-mediaassetmanager.md)\* manager | 指向[OH\_MediaAssetManager](capi-mediaassetmanager-oh-mediaassetmanager.md)实例的指针。 |
 | [OH\_MediaAsset](capi-mediaassetmanager-oh-mediaasset.md)\* mediaAsset | 要请求的媒体文件对象的[OH\_MediaAsset](capi-mediaassetmanager-oh-mediaasset.md)实例。 |
 | [MediaLibrary\_RequestOptions](capi-mediaassetmanager-medialibrary-requestoptions.md) requestOptions | 用于图像请求策略模式的[MediaLibrary\_RequestOptions](capi-mediaassetmanager-medialibrary-requestoptions.md)。 |
-| [MediaLibrary\_RequestId](capi-mediaassetmanager-medialibrary-requestid.md)\* requestId | 请求的[MediaLibrary\_RequestId](capi-mediaassetmanager-medialibrary-requestid.md)，出参。 |
-| [OH\_MediaLibrary\_OnMovingPhotoDataPrepared](capi-media-asset-base-capi-h.md#oh_medialibrary_onmovingphotodataprepared) callback | 当请求的动态照片准备就绪时调用[OH\_MediaLibrary\_OnMovingPhotoDataPrepared](capi-media-asset-base-capi-h.md#oh_medialibrary_onmovingphotodataprepared)。 |
+| [MediaLibrary\_RequestId](capi-mediaassetmanager-medialibrary-requestid.md)\* requestId | 输出参数，本次请求的[MediaLibrary\_RequestId](capi-mediaassetmanager-medialibrary-requestid.md)。该ID可用于取消请求或跟踪请求状态。 |
+| [OH\_MediaLibrary\_OnMovingPhotoDataPrepared](capi-media-asset-base-capi-h.md#oh_medialibrary_onmovingphotodataprepared) callback | 当请求的动态照片准备就绪时调用。 |
 
 **返回：**
 
@@ -194,10 +176,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaAssetManager\_RequestImage()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAssetManager_RequestImage(OH_MediaAssetManager* manager, OH_MediaAsset* mediaAsset,MediaLibrary_RequestOptions requestOptions, MediaLibrary_RequestId* requestId,OH_MediaLibrary_OnImageDataPrepared callback)
+```c
+MediaLibrary_ErrorCode OH_MediaAssetManager_RequestImage(OH_MediaAssetManager* manager, OH_MediaAsset* mediaAsset,MediaLibrary_RequestOptions requestOptions, MediaLibrary_RequestId* requestId,OH_MediaLibrary_OnImageDataPrepared callback)
 ```
 
 **描述**
@@ -212,11 +192,11 @@ PhonePC/2in1TabletTV
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_MediaAssetManager](capi-mediaassetmanager-oh-mediaassetmanager.md)\* manager | [OH\_MediaAssetManager](capi-mediaassetmanager-oh-mediaassetmanager.md)实例指针。 |
+| [OH\_MediaAssetManager](capi-mediaassetmanager-oh-mediaassetmanager.md)\* manager | 指向[OH\_MediaAssetManager](capi-mediaassetmanager-oh-mediaassetmanager.md)实例的指针。 |
 | [OH\_MediaAsset](capi-mediaassetmanager-oh-mediaasset.md)\* mediaAsset | 要请求的媒体文件对象的[OH\_MediaAsset](capi-mediaassetmanager-oh-mediaasset.md)实例。 |
 | [MediaLibrary\_RequestOptions](capi-mediaassetmanager-medialibrary-requestoptions.md) requestOptions | 用于图像请求策略模式的[MediaLibrary\_RequestOptions](capi-mediaassetmanager-medialibrary-requestoptions.md)。 |
-| [MediaLibrary\_RequestId](capi-mediaassetmanager-medialibrary-requestid.md)\* requestId | 请求的[MediaLibrary\_RequestId](capi-mediaassetmanager-medialibrary-requestid.md)，出参。 |
-| [OH\_MediaLibrary\_OnImageDataPrepared](capi-media-asset-base-capi-h.md#oh_medialibrary_onimagedataprepared) callback | 当请求的图像源准备就绪时调用[OH\_MediaLibrary\_OnImageDataPrepared](capi-media-asset-base-capi-h.md#oh_medialibrary_onimagedataprepared)。 |
+| [MediaLibrary\_RequestId](capi-mediaassetmanager-medialibrary-requestid.md)\* requestId | 输出参数，请求的[MediaLibrary\_RequestId](capi-mediaassetmanager-medialibrary-requestid.md)。该ID可用于取消请求或跟踪请求状态。 |
+| [OH\_MediaLibrary\_OnImageDataPrepared](capi-media-asset-base-capi-h.md#oh_medialibrary_onimagedataprepared) callback | 当请求的图像源准备就绪时调用。 |
 
 **返回：**
 
@@ -226,10 +206,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaAssetManager\_Release()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAssetManager_Release(OH_MediaAssetManager* manager)
+```c
+MediaLibrary_ErrorCode OH_MediaAssetManager_Release(OH_MediaAssetManager* manager)
 ```
 
 **描述**
@@ -252,10 +230,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaAssetManager\_QuickRequestImage()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAssetManager_QuickRequestImage(OH_MediaAssetManager* manager, OH_MediaAsset* mediaAsset, MediaLibrary_RequestOptions requestOptions, MediaLibrary_RequestId* requestId, OH_MediaLibrary_OnQuickImageDataPrepared callback)
+```c
+MediaLibrary_ErrorCode OH_MediaAssetManager_QuickRequestImage(OH_MediaAssetManager* manager, OH_MediaAsset* mediaAsset, MediaLibrary_RequestOptions requestOptions, MediaLibrary_RequestId* requestId, OH_MediaLibrary_OnQuickImageDataPrepared callback)
 ```
 
 **描述**
@@ -272,9 +248,9 @@ PhonePC/2in1TabletTV
 | --- | --- |
 | [OH\_MediaAssetManager](capi-mediaassetmanager-oh-mediaassetmanager.md)\* manager | OH\_MediaAssetManager的实例指针。 |
 | [OH\_MediaAsset](capi-mediaassetmanager-oh-mediaasset.md)\* mediaAsset | 要请求的媒体文件对象的OH\_MediaAsset实例。 |
-| [MediaLibrary\_RequestOptions](capi-mediaassetmanager-medialibrary-requestoptions.md) requestOptions | 用于图像请求策略模式的MediaLibrary\_RequestOptions。 |
+| [MediaLibrary\_RequestOptions](capi-mediaassetmanager-medialibrary-requestoptions.md) requestOptions | 图像请求策略模式的配置项。 |
 | [MediaLibrary\_RequestId](capi-mediaassetmanager-medialibrary-requestid.md)\* requestId | 请求的MediaLibrary\_RequestId，该参数为输出参数。 |
-| [OH\_MediaLibrary\_OnQuickImageDataPrepared](capi-media-asset-base-capi-h.md#oh_medialibrary_onquickimagedataprepared) callback | 当请求的源数据准备就绪时，将会调用OH\_MediaLibrary\_OnQuickImageDataPrepared方法。 |
+| [OH\_MediaLibrary\_OnQuickImageDataPrepared](capi-media-asset-base-capi-h.md#oh_medialibrary_onquickimagedataprepared) callback | 当请求的图像源数据准备就绪时调用。 |
 
 **返回：**
 

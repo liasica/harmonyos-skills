@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-241
 title: 如何让Grid组件在高度不确定的情况下，实现自适应高度
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 如何让Grid组件在高度不确定的情况下，实现自适应高度
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何让Grid组件在高度不确定的情况下，实现自适应高度
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:02+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:193a1c55ffed4f1f806d67ebc71a31db78c688e5e39e4fefe0e48042b57ec903
+scraped_at: 2026-09-02T14:53:59+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:aa9a36d20ca2188c63bcbbffaa3d8be60c5f4ec336c9908b77cf75efb8a1eacc
 ---
 
 **问题现象**
@@ -32,62 +32,60 @@ Grid不会自适应子节点的高度，不设置高度就是和父组件一样�
 
 参考代码如下：
 
+```ts
+interface Item {
+  text: string
+  img: Resource
+}
+
+@Entry
+@Component
+struct Index {
+  data: Item[] = [
+    { text: 'aaa', img: $r('app.media.app_icon') },
+    { text: 'bbb', img: $r('app.media.app_icon') },
+    { text: 'ccc', img: $r('app.media.app_icon') },
+    { text: 'ddd', img: $r('app.media.app_icon') },
+    { text: 'eee', img: $r('app.media.app_icon') },
+    { text: 'fff', img: $r('app.media.app_icon') },
+    { text: 'ggg', img: $r('app.media.app_icon') },
+    { text: 'hhh', img: $r('app.media.app_icon') },
+    { text: 'jjj', img: $r('app.media.app_icon') },
+    { text: 'kkk', img: $r('app.media.app_icon') }]
+  // Calculate the number of rows in the grid
+  getCategoryRowCount() {
+    return Math.ceil(this.data.length / 4);
+  }
+  // Calculate the height of the grid based on the height of the item
+  getCategoryViewHeight() {
+    return `${68.33 * this.getCategoryRowCount()}vp`;
+  }
+
+  build() {
+    Column() {
+      Grid() {
+        ForEach(this.data, (item: Item) => {
+          GridItem() {
+            Column() {
+              Image(item.img)
+                .width(40)
+                .height(40)
+              Text(item.text)
+                .margin({ top: 2 })
+                .fontSize(14)
+                .textAlign(TextAlign.Center)
+            }
+          }
+        }, (item: Item) => item.text)
+      }
+      .height(this.getCategoryViewHeight())
+      .columnsTemplate('1fr 1fr 1fr 1fr')
+      .columnsGap(10)
+      .rowsGap(10)
+      .margin({ top: 10 })
+    }
+    .padding(10)
+    .width('100%')
+  }
+}
 ```
-1. interface Item {
-2. text: string
-3. img: Resource
-4. }
-
-6. @Entry
-7. @Component
-8. struct Index {
-9. data: Item[] = [
-10. { text: 'aaa', img: $r('app.media.app_icon') },
-11. { text: 'bbb', img: $r('app.media.app_icon') },
-12. { text: 'ccc', img: $r('app.media.app_icon') },
-13. { text: 'ddd', img: $r('app.media.app_icon') },
-14. { text: 'eee', img: $r('app.media.app_icon') },
-15. { text: 'fff', img: $r('app.media.app_icon') },
-16. { text: 'ggg', img: $r('app.media.app_icon') },
-17. { text: 'hhh', img: $r('app.media.app_icon') },
-18. { text: 'jjj', img: $r('app.media.app_icon') },
-19. { text: 'kkk', img: $r('app.media.app_icon') }]
-20. // Calculate the number of rows in the grid
-21. getCategoryRowCount() {
-22. return Math.ceil(this.data.length / 4);
-23. }
-24. // Calculate the height of the grid based on the height of the item
-25. getCategoryViewHeight() {
-26. return `${68.33 * this.getCategoryRowCount()}vp`;
-27. }
-
-29. build() {
-30. Column() {
-31. Grid() {
-32. ForEach(this.data, (item: Item) => {
-33. GridItem() {
-34. Column() {
-35. Image(item.img)
-36. .width(40)
-37. .height(40)
-38. Text(item.text)
-39. .margin({ top: 2 })
-40. .fontSize(14)
-41. .textAlign(TextAlign.Center)
-42. }
-43. }
-44. }, (item: Item) => item.text)
-45. }
-46. .height(this.getCategoryViewHeight())
-47. .columnsTemplate('1fr 1fr 1fr 1fr')
-48. .columnsGap(10)
-49. .rowsGap(10)
-50. .margin({ top: 10 })
-51. }
-52. .padding(10)
-53. .width('100%')
-54. }
-55. }
-```
-
-[RealizeAdaptiveHeight.ets](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkUI/entry/src/main/ets/pages/RealizeAdaptiveHeight.ets#L21-L75)

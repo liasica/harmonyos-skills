@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-infer
 title: GetInputShape
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > InferShapeContext > GetInputShape
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:00+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5996616c8f7ff22eac570d54dca12e2c776ddc4cbc02047a96787b365fe9775e
+scraped_at: 2026-09-02T14:50:39+08:00
+doc_updated_at: 2026-05-12
+content_hash: sha256:eb4779250ef95cf78b7bcf12837a61d18ae25cb6cc122c8988c96ba50906ef6f
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:5996616c8f7ff22eac570d54dca12e2c776ddc4cbc02047a96787b365fe
 
 ## 函数原型
 
-```
-1. const Shape *GetInputShape(const size_t index) const;
+```cpp
+const Shape *GetInputShape(const size_t index) const;
 ```
 
 ## 参数说明
@@ -36,15 +36,15 @@ content_hash: sha256:5996616c8f7ff22eac570d54dca12e2c776ddc4cbc02047a96787b365fe
 
 ## 调用示例
 
-```
-1. ge::graphStatus InferShapeForReshape(InferShapeContext *context) {
-2. const gert::Shape *x_shape = context->GetInputShape(0);        // 获取第0个输入的shape
-3. const gert::Tensor *shape_tensor = context->GetInputTensor(1); // 获取第1个输入的tensor  数据依赖
-4. gert::Shape *output_shape = context->GetOutputShape(0);
-5. if (x_shape == nullptr || shape_tensor == nullptr || output_shape == nullptr) {
-6. // 防御式编程，不应该出现的场景，打印错误并返回失败
-7. return ge::GRAPH_FAILED;
-8. }
-9. // ...
-10. }
+```cpp
+ge::graphStatus InferShapeForReshape(InferShapeContext *context) {
+  const gert::Shape *x_shape = context->GetInputShape(0); // 获取第0个输入的shape
+  const gert::Tensor *shape_tensor = context->GetInputTensor(1); // 获取第1个输入的tensor  数据依赖
+  gert::Shape *output_shape = context->GetOutputShape(0);
+  if (x_shape == nullptr || shape_tensor == nullptr || output_shape == nullptr) {
+    // 防御式编程，不应该出现的场景，打印错误并返回失败
+    return ge::GRAPH_FAILED;
+  }
+  // ...
+}
 ```

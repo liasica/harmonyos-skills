@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-stora
 title: 构造函数
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > StorageFormat > 构造函数
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:10+08:00
+scraped_at: 2026-09-02T14:50:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4bb9643cad3e55022d9930243fb88b99f80bb291b2bfbde9d3ea432eaa4f385a
+content_hash: sha256:72eb02adc010d5593bc347e266da358d021f23a9a0706010295641b1c0891d44
 ---
 
 ## 函数功能
@@ -14,9 +14,9 @@ content_hash: sha256:4bb9643cad3e55022d9930243fb88b99f80bb291b2bfbde9d3ea432eaa4
 
 ## 函数原型
 
-```
-1. StorageFormat()
-2. StorageFormat(const ge::Format origin_format, const ge::Format storage_format, const ExpandDimsType &expand_dims_type)
+```cpp
+StorageFormat()
+StorageFormat(const ge::Format origin_format, const ge::Format storage_format, const ExpandDimsType &expand_dims_type)
 ```
 
 ## 参数说明
@@ -37,7 +37,7 @@ content_hash: sha256:4bb9643cad3e55022d9930243fb88b99f80bb291b2bfbde9d3ea432eaa4
 
 ## 调用示例
 
-```
-1. ExpandDimsType dim_type("1100");
-2. StorageFormat format(ge::Format::FORMAT_NCHW, ge::Format::FORMAT_C1HWNC0, dim_type);
+```cpp
+ExpandDimsType dim_type("1100");
+StorageFormat format(ge::Format::FORMAT_NCHW, ge::Format::FORMAT_C1HWNC0, dim_type);
 ```

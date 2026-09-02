@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fileguard-upd
 title: 更新安全管控策略
 breadcrumb: 指南 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > 文件分级管控 > 更新安全管控策略
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:07+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:64031f9d9df48bca9b3ef11f353dc2fc621eee4c2aa18e874aff48486e348042
+scraped_at: 2026-09-02T14:50:02+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:7a3504e9e2aecf91ee4c4b4e8cc0da4d5be62dce0fc56a1b86cbd616a067993c
 ---
 
 ## 场景介绍
@@ -20,96 +20,307 @@ Enterprise Data Guard Kit为应用提供下发管控策略的能力，相关策�
 | --- | --- |
 | [updatePolicy](../harmonyos-references/dataguard-fileguard.md#updatepolicy)(policy: string, callback: AsyncCallback<void>): void | 使用Callback方式更新安全管控策略。 |
 | [updatePolicy](../harmonyos-references/dataguard-fileguard.md#updatepolicy-1)(policy: string): Promise<void> | 使用Promise方式更新安全管控策略。 |
+| [getPolicy](../harmonyos-references/dataguard-fileguard.md#getpolicy)(): Promise<string | null> | 使用Promise方式获取当前设备生效的管控策略内容。 |
 
 ## 开发步骤
 
 1. 导入模块。
 
+   ```typescript
+   import { bundleManager } from '@kit.AbilityKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { fileGuard } from '@kit.EnterpriseDataGuardKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
-   1. import { fileGuard } from '@kit.EnterpriseDataGuardKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
-   ```
-2. 初始化[FileGuard](../harmonyos-references/dataguard-fileguard.md#fileguard)对象guard，调用接口updatePolicy，更新安全管控策略。
+2. 初始化[FileGuard](../harmonyos-references/dataguard-fileguard.md#fileguard)对象guard，调用接口[updatePolicy](../harmonyos-references/dataguard-fileguard.md#updatepolicy)，更新安全管控策略。
 
    * 通过回调函数方式，更新安全管控策略。
 
-     ```
-     1. function updatePolicyCallback() {
-     2. let guard: fileGuard.FileGuard = new fileGuard.FileGuard();
-     3. let policy: string = '{' +
-     4. '"net_intercept_toggle":1,' +
-     5. '"default_policy":1,' +
-     6. '"net_reject_cache_time":30,' +
-     7. '"boundary":["10.0.0.0-10.255.255.255","172.16.0.0-172.31.255.255"],' +
-     8. '"netsegment_trustlist":["10.0.0.0-10.255.255.255"],' +
-     9. '"netsegment_blocklist":["172.16.0.0-172.31.255.255","192.168.0.0-192.168.255.255"],' +
-     10. '"netsegment_update_type": 0,' +
-     11. '"usb_intercept_toggle":1,' +
-     12. '"smb_client_intercept_toggle":1,' +
-     13. '"smb_server_intercept_toggle":1,' +
-     14. '"new_file_audit_toggle":1,' +
-     15. '"kia_variant_toggle":1,' +
-     16. '"audit_filter_toggle":1,' +
-     17. '"bluetooth_intercept_toggle":["bt_socket","bt_ble","bt_opp"],' +
-     18. '"bluetooth_intercept_time":30,' +
-     19. '"nearlink_intercept_toggle":["nearlink_ssap","nearlink_dataTransfer"],' +
-     20. '"nearlink_intercept_time":30,' +
-     21. '"trust_app_list":["ohos.app.hap.myapplication_BPch04bPYBrkJX8RAsmiGDbHFaG+BYvhkg4TK4fHQzJOL4VnoBCZU3boBBXGVEB+M/j0X2nnd7KVeyWuEORVxI2g="],' +
-     22. '"Tag1":{' +
-     23. '   "tag":"sensitive",' +
-     24. '   "usb_intercept_toggle":1,' +
-     25. '   "net_intercept_toggle":1,' +
-     26. '   "boundary":["10.0.0.0-10.255.255.255"],' +
-     27. '   "netsegment_trustlist":["10.0.0.0-10.255.255.255"],' +
-     28. '   "netsegment_blocklist":["192.168.0.0-192.168.255.255"]' +
-     29. '  }' +
-     30. '}';
-     31. guard.updatePolicy(policy, (err: BusinessError) => {
-     32. if (err) {
-     33. console.error(`Failed to update policy. Code: ${err.code}, message: ${err.message}.`);
-     34. } else {
-     35. console.info(`Succeeded in updating policy.`);
-     36. }
-     37. });
-     38. }
+     ```typescript
+     const TAG: string = 'FileGuard_Policy';
+     const DOMAIN: number = 0x0000;
+
+     /**
+      * 更新安全管控策略。使用callback异步回调。
+      * @param accountId: 用户ID
+      */
+     async function updatePolicyCallback(accountId: number) {
+       let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION |
+         bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_SIGNATURE_INFO;
+       let bundleInfo: bundleManager.BundleInfo = await bundleManager.getBundleInfoForSelf(bundleFlags);
+       let appId: string = bundleInfo.signatureInfo.appId;
+       let guard: fileGuard.FileGuard = new fileGuard.FileGuard();
+       let policy: string = '{' +
+         // 网络策略
+         '"net_intercept_toggle":1,' +
+         '"default_policy":1,' +
+         '"boundary":["10.0.0.0-10.255.255.255","172.16.0.0-172.31.255.255"],' +
+         '"netsegment_trustlist":["10.0.0.0-10.255.255.255","192.168.0.0-192.168.255.255"],' +
+         '"netsegment_blocklist":["172.16.0.0-172.31.255.255"],' +
+         '"netsegment_update_type": 0,' +
+         '"net_reject_cache_time":30,' +
+         // 文件策略
+         '"usb_intercept_toggle":1,' +
+         '"smb_client_intercept_toggle":1,' +
+         '"smb_server_intercept_toggle":1,' +
+         '"new_file_audit_toggle":1,' +
+         '"kia_variant_toggle":1,' +
+         '"audit_filter_toggle":1,' +
+         '"print_intercept_toggle":0,' +
+         // 蓝牙策略
+         '"bluetooth_intercept_toggle":["bt_socket","bt_ble","bt_opp"],' +
+         '"bluetooth_intercept_time":30,' +
+         // 星闪策略
+         '"nearlink_intercept_toggle":["nearlink_ssap","nearlink_dataTransfer"],' +
+         '"nearlink_intercept_time":30,' +
+         // 多用户策略
+         `"user_id":${accountId},` +
+         // 可信任应用列表
+         `"trust_app_list":["${appId}"],` +
+         '"kia_file_access_toggle":0,' +
+         // 五种自定义标签
+         '"Tag1":{' +
+         '   "tag":"sensitive",' +
+         '   "usb_intercept_toggle":1,' +
+         '   "net_intercept_toggle":1,' +
+         '   "boundary":["10.0.0.0-10.255.255.255"],' +
+         '   "netsegment_trustlist":["10.0.0.0-10.255.255.255"],' +
+         '   "netsegment_blocklist":["172.16.0.0-172.31.255.255"],' +
+         '   "smb_client_intercept_toggle":1,' +
+         '   "smb_server_intercept_toggle":1,' +
+         '   "print_intercept_toggle":1,' +
+         '   "bluetooth_intercept_toggle":["bt_socket","bt_ble","bt_opp"],' +
+         '   "bluetooth_intercept_time":30,' +
+         '   "nearlink_intercept_toggle":["nearlink_ssap","nearlink_dataTransfer"],' +
+         '   "nearlink_intercept_time":30' +
+         '  },' +
+         '"Tag2":{' +
+         '   "tag":"confidential",' +
+         '   "usb_intercept_toggle":1,' +
+         '   "net_intercept_toggle":1,' +
+         '   "boundary":["10.0.0.0-10.255.255.255"],' +
+         '   "netsegment_trustlist":["10.0.0.0-10.255.255.255"],' +
+         '   "netsegment_blocklist":["172.16.0.0-172.31.255.255"],' +
+         '   "smb_client_intercept_toggle":1,' +
+         '   "smb_server_intercept_toggle":1,' +
+         '   "print_intercept_toggle":1,' +
+         '   "bluetooth_intercept_toggle":["bt_socket","bt_ble","bt_opp"],' +
+         '   "bluetooth_intercept_time":30,' +
+         '   "nearlink_intercept_toggle":["nearlink_ssap","nearlink_dataTransfer"],' +
+         '   "nearlink_intercept_time":30' +
+         '  },' +
+         '"Tag3":{' +
+         '   "tag":"public",' +
+         '   "usb_intercept_toggle":0,' +
+         '   "net_intercept_toggle":0,' +
+         '   "boundary":["10.0.0.0-10.255.255.255"],' +
+         '   "netsegment_trustlist":["10.0.0.0-10.255.255.255"],' +
+         '   "netsegment_blocklist":["172.16.0.0-172.31.255.255"],' +
+         '   "smb_client_intercept_toggle":1,' +
+         '   "smb_server_intercept_toggle":1,' +
+         '   "print_intercept_toggle":1,' +
+         '   "bluetooth_intercept_toggle":["bt_socket","bt_ble","bt_opp"],' +
+         '   "bluetooth_intercept_time":30,' +
+         '   "nearlink_intercept_toggle":["nearlink_ssap","nearlink_dataTransfer"],' +
+         '   "nearlink_intercept_time":30' +
+         '  },' +
+         '"Tag4":{' +
+         '   "tag":"general",' +
+         '   "usb_intercept_toggle":1,' +
+         '   "net_intercept_toggle":0,' +
+         '   "boundary":["10.0.0.0-10.255.255.255"],' +
+         '   "netsegment_trustlist":["10.0.0.0-10.255.255.255"],' +
+         '   "netsegment_blocklist":["172.16.0.0-172.31.255.255"],' +
+         '   "smb_client_intercept_toggle":1,' +
+         '   "smb_server_intercept_toggle":1,' +
+         '   "print_intercept_toggle":1,' +
+         '   "bluetooth_intercept_toggle":["bt_socket","bt_ble","bt_opp"],' +
+         '   "bluetooth_intercept_time":30,' +
+         '   "nearlink_intercept_toggle":["nearlink_ssap","nearlink_dataTransfer"],' +
+         '   "nearlink_intercept_time":30' +
+         '  },' +
+         '"Tag5":{' +
+         '   "tag":"special",' +
+         '   "usb_intercept_toggle":1,' +
+         '   "net_intercept_toggle":1,' +
+         '   "boundary":["10.0.0.0-10.255.255.255"],' +
+         '   "netsegment_trustlist":["10.0.0.0-10.255.255.255"],' +
+         '   "netsegment_blocklist":["172.16.0.0-172.31.255.255"],' +
+         '   "smb_client_intercept_toggle":1,' +
+         '   "smb_server_intercept_toggle":1,' +
+         '   "print_intercept_toggle":1,' +
+         '   "bluetooth_intercept_toggle":["bt_socket","bt_ble","bt_opp"],' +
+         '   "bluetooth_intercept_time":30,' +
+         '   "nearlink_intercept_toggle":["nearlink_ssap","nearlink_dataTransfer"],' +
+         '   "nearlink_intercept_time":30' +
+         '  }' +
+         '}';
+       guard.updatePolicy(policy, (err: BusinessError) => {
+         if (err) {
+           hilog.error(DOMAIN, TAG, `Failed to update policy. Code: ${err.code}, message: ${err.message}.`);
+         } else {
+           hilog.info(DOMAIN, TAG, `Succeeded in updating policy.`);
+         }
+       });
+     }
      ```
    * 通过Promise方式，更新安全管控策略。
 
+     ```typescript
+     const TAG: string = 'FileGuard_Policy';
+     const DOMAIN: number = 0x0000;
+
+     // ...
+     /**
+      * 更新安全管控策略。使用Promise异步回调。
+      * @param accountId: 用户ID
+      */
+     async function updatePolicyPromise(accountId: number) {
+       let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION |
+         bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_SIGNATURE_INFO;
+       let bundleInfo: bundleManager.BundleInfo = await bundleManager.getBundleInfoForSelf(bundleFlags);
+       let appId: string = bundleInfo.signatureInfo.appId;
+       let guard: fileGuard.FileGuard = new fileGuard.FileGuard();
+       let policy: string = '{' +
+         // 网络策略
+         '"net_intercept_toggle":1,' +
+         '"default_policy":1,' +
+         '"boundary":["10.0.0.0-10.255.255.255","172.16.0.0-172.31.255.255"],' +
+         '"netsegment_trustlist":["10.0.0.0-10.255.255.255","192.168.0.0-192.168.255.255"],' +
+         '"netsegment_blocklist":["172.16.0.0-172.31.255.255"],' +
+         '"netsegment_update_type": 0,' +
+         '"net_reject_cache_time":30,' +
+         // 文件策略
+         '"usb_intercept_toggle":1,' +
+         '"smb_client_intercept_toggle":1,' +
+         '"smb_server_intercept_toggle":1,' +
+         '"new_file_audit_toggle":1,' +
+         '"kia_variant_toggle":1,' +
+         '"audit_filter_toggle":1,' +
+         '"print_intercept_toggle":0,' +
+         // 蓝牙策略
+         '"bluetooth_intercept_toggle":["bt_socket","bt_ble","bt_opp"],' +
+         '"bluetooth_intercept_time":30,' +
+         // 星闪策略
+         '"nearlink_intercept_toggle":["nearlink_ssap","nearlink_dataTransfer"],' +
+         '"nearlink_intercept_time":30,' +
+         // 多用户策略
+         `"user_id":${accountId},` +
+         // 可信任应用列表
+         `"trust_app_list":["${appId}"],` +
+         '"kia_file_access_toggle":0,' +
+         // 五种自定义标签
+         '"Tag1":{' +
+         '   "tag":"sensitive",' +
+         '   "usb_intercept_toggle":1,' +
+         '   "net_intercept_toggle":1,' +
+         '   "boundary":["10.0.0.0-10.255.255.255"],' +
+         '   "netsegment_trustlist":["10.0.0.0-10.255.255.255"],' +
+         '   "netsegment_blocklist":["172.16.0.0-172.31.255.255"],' +
+         '   "smb_client_intercept_toggle":1,' +
+         '   "smb_server_intercept_toggle":1,' +
+         '   "print_intercept_toggle":1,' +
+         '   "bluetooth_intercept_toggle":["bt_socket","bt_ble","bt_opp"],' +
+         '   "bluetooth_intercept_time":30,' +
+         '   "nearlink_intercept_toggle":["nearlink_ssap","nearlink_dataTransfer"],' +
+         '   "nearlink_intercept_time":30' +
+         '  },' +
+         '"Tag2":{' +
+         '   "tag":"confidential",' +
+         '   "usb_intercept_toggle":1,' +
+         '   "net_intercept_toggle":1,' +
+         '   "boundary":["10.0.0.0-10.255.255.255"],' +
+         '   "netsegment_trustlist":["10.0.0.0-10.255.255.255"],' +
+         '   "netsegment_blocklist":["172.16.0.0-172.31.255.255"],' +
+         '   "smb_client_intercept_toggle":1,' +
+         '   "smb_server_intercept_toggle":1,' +
+         '   "print_intercept_toggle":1,' +
+         '   "bluetooth_intercept_toggle":["bt_socket","bt_ble","bt_opp"],' +
+         '   "bluetooth_intercept_time":30,' +
+         '   "nearlink_intercept_toggle":["nearlink_ssap","nearlink_dataTransfer"],' +
+         '   "nearlink_intercept_time":30' +
+         '  },' +
+         '"Tag3":{' +
+         '   "tag":"public",' +
+         '   "usb_intercept_toggle":0,' +
+         '   "net_intercept_toggle":0,' +
+         '   "boundary":["10.0.0.0-10.255.255.255"],' +
+         '   "netsegment_trustlist":["10.0.0.0-10.255.255.255"],' +
+         '   "netsegment_blocklist":["172.16.0.0-172.31.255.255"],' +
+         '   "smb_client_intercept_toggle":1,' +
+         '   "smb_server_intercept_toggle":1,' +
+         '   "print_intercept_toggle":1,' +
+         '   "bluetooth_intercept_toggle":["bt_socket","bt_ble","bt_opp"],' +
+         '   "bluetooth_intercept_time":30,' +
+         '   "nearlink_intercept_toggle":["nearlink_ssap","nearlink_dataTransfer"],' +
+         '   "nearlink_intercept_time":30' +
+         '  },' +
+         '"Tag4":{' +
+         '   "tag":"general",' +
+         '   "usb_intercept_toggle":1,' +
+         '   "net_intercept_toggle":0,' +
+         '   "boundary":["10.0.0.0-10.255.255.255"],' +
+         '   "netsegment_trustlist":["10.0.0.0-10.255.255.255"],' +
+         '   "netsegment_blocklist":["172.16.0.0-172.31.255.255"],' +
+         '   "smb_client_intercept_toggle":1,' +
+         '   "smb_server_intercept_toggle":1,' +
+         '   "print_intercept_toggle":1,' +
+         '   "bluetooth_intercept_toggle":["bt_socket","bt_ble","bt_opp"],' +
+         '   "bluetooth_intercept_time":30,' +
+         '   "nearlink_intercept_toggle":["nearlink_ssap","nearlink_dataTransfer"],' +
+         '   "nearlink_intercept_time":30' +
+         '  },' +
+         '"Tag5":{' +
+         '   "tag":"special",' +
+         '   "usb_intercept_toggle":1,' +
+         '   "net_intercept_toggle":1,' +
+         '   "boundary":["10.0.0.0-10.255.255.255"],' +
+         '   "netsegment_trustlist":["10.0.0.0-10.255.255.255"],' +
+         '   "netsegment_blocklist":["172.16.0.0-172.31.255.255"],' +
+         '   "smb_client_intercept_toggle":1,' +
+         '   "smb_server_intercept_toggle":1,' +
+         '   "print_intercept_toggle":1,' +
+         '   "bluetooth_intercept_toggle":["bt_socket","bt_ble","bt_opp"],' +
+         '   "bluetooth_intercept_time":30,' +
+         '   "nearlink_intercept_toggle":["nearlink_ssap","nearlink_dataTransfer"],' +
+         '   "nearlink_intercept_time":30' +
+         '  }' +
+         '}';
+       guard.updatePolicy(policy).then(() => {
+         hilog.info(DOMAIN, TAG, `Succeeded in updating policy.`);
+       }).catch((err: BusinessError) => {
+         hilog.error(DOMAIN, TAG, `Failed to update policy. Code: ${err.code}, message: ${err.message}.`);
+       });
+     }
      ```
-     1. function updatePolicyPromise() {
-     2. let guard: fileGuard.FileGuard = new fileGuard.FileGuard();
-     3. let policy: string = '{' +
-     4. '"net_intercept_toggle":1,' +
-     5. '"default_policy":1,' +
-     6. '"net_reject_cache_time":30,' +
-     7. '"boundary":["10.0.0.0-10.255.255.255","172.16.0.0-172.31.255.255"],' +
-     8. '"netsegment_trustlist":["10.0.0.0-10.255.255.255"],' +
-     9. '"netsegment_blocklist":["172.16.0.0-172.31.255.255","192.168.0.0-192.168.255.255"],' +
-     10. '"netsegment_update_type": 0,' +
-     11. '"usb_intercept_toggle":1,' +
-     12. '"smb_client_intercept_toggle":1,' +
-     13. '"smb_server_intercept_toggle":1,' +
-     14. '"new_file_audit_toggle":1,' +
-     15. '"kia_variant_toggle":1,' +
-     16. '"audit_filter_toggle":1,' +
-     17. '"bluetooth_intercept_toggle":["bt_socket","bt_ble","bt_opp"],' +
-     18. '"bluetooth_intercept_time":30,' +
-     19. '"nearlink_intercept_toggle":["nearlink_ssap","nearlink_dataTransfer"],' +
-     20. '"nearlink_intercept_time":30,' +
-     21. '"trust_app_list":["ohos.app.hap.myapplication_BPch04bPYBrkJX8RAsmiGDbHFaG+BYvhkg4TK4fHQzJOL4VnoBCZU3boBBXGVEB+M/j0X2nnd7KVeyWuEORVxI2g="],' +
-     22. '"Tag1":{' +
-     23. '   "tag":"sensitive",' +
-     24. '   "usb_intercept_toggle":1,' +
-     25. '   "net_intercept_toggle":1,' +
-     26. '   "boundary":["10.0.0.0-10.255.255.255"],' +
-     27. '   "netsegment_trustlist":["10.0.0.0-10.255.255.255"],' +
-     28. '   "netsegment_blocklist":["192.168.0.0-192.168.255.255"]' +
-     29. '  }' +
-     30. '}';
-     31. guard.updatePolicy(policy).then(() => {
-     32. console.info(`Succeeded in updating policy.`);
-     33. }).catch((err: BusinessError) => {
-     34. console.error(`Failed to update policy. Code: ${err.code}, message: ${err.message}.`);
-     35. });
-     36. }
-     ```
+3. 初始化[FileGuard](../harmonyos-references/dataguard-fileguard.md#fileguard)对象guard，调用接口[getPolicy](../harmonyos-references/dataguard-fileguard.md#getpolicy)，获取当前设备生效的管控策略内容。
+
+   ```typescript
+   const TAG: string = 'FileGuard_Policy';
+   const DOMAIN: number = 0x0000;
+
+   // ...
+   /**
+    * 获取当前设备生效的管控策略内容
+    */
+   function getPolicyPromise() {
+     let guard: fileGuard.FileGuard = new fileGuard.FileGuard();
+     guard.getPolicy().then((policy: string | null) => {
+       if (policy === null) {
+         hilog.info(DOMAIN, TAG, `The obtained policy is null.`);
+         return;
+       }
+       hilog.info(DOMAIN, TAG, `Succeeded in getting policy. policy length: ${policy.length}`);
+       // 返回字符串较长，分次打印
+       let len: number = 2000; // 每次打印 2000 字符
+       let totalLen: number = policy.length;
+       for (let i: number = 0; i < totalLen; i += len) {
+         let end: number = Math.min(i + len, totalLen);
+         let item: string = policy.substring(i, end);
+         hilog.info(DOMAIN, TAG, `policy: ${item}`);
+       }
+     }).catch((err: BusinessError) => {
+       hilog.error(DOMAIN, TAG, `Failed to get policy. Code: ${err.code}, message: ${err.message}.`);
+     });
+   }
+   ```

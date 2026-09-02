@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (ShaderEffect)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (ShaderEffect)
 category: harmonyos-references
-scraped_at: 2026-04-29T14:05:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:83c2219fefdc5cc4511b5d2eb8e8db004fb29625d029b4252f662a2efcf92847
+scraped_at: 2026-09-02T15:02:41+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a8428e56d5db13836a225d03864e64b2fbf220001cc7b803aafc8bc7df2c1fa7
 ---
 
 着色器。画刷和画笔设置着色器后，会使用着色器效果而不是颜色属性去绘制，但此时画笔和画刷的透明度属性仍然生效。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Class首批接口从API version 12开始支持。
@@ -19,15 +19,11 @@ content_hash: sha256:83c2219fefdc5cc4511b5d2eb8e8db004fb29625d029b4252f662a2efcf
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 ```
 
 ## createComposeShader20+
-
-PhonePC/2in1TabletTVWearable
 
 static createComposeShader(dstShaderEffect: ShaderEffect, srcShaderEffect: ShaderEffect, blendMode: BlendMode): ShaderEffect
 
@@ -59,17 +55,15 @@ static createComposeShader(dstShaderEffect: ShaderEffect, srcShaderEffect: Shade
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let dstShader = drawing.ShaderEffect.createColorShader(0xFF0000FF);
-4. let srcShader = drawing.ShaderEffect.createColorShader(0xFFFF0000);
-5. let shader = drawing.ShaderEffect.createComposeShader(dstShader, srcShader, drawing.BlendMode.SRC);
+let dstShader = drawing.ShaderEffect.createColorShader(0xFF0000FF);
+let srcShader = drawing.ShaderEffect.createColorShader(0xFFFF0000);
+let shader = drawing.ShaderEffect.createComposeShader(dstShader, srcShader, drawing.BlendMode.SRC);
 ```
 
 ## createImageShader20+
-
-PhonePC/2in1TabletTVWearable
 
 static createImageShader(pixelmap: image.PixelMap, tileX: TileMode, tileY: TileMode, samplingOptions: SamplingOptions, matrix?: Matrix | null): ShaderEffect
 
@@ -103,47 +97,45 @@ static createImageShader(pixelmap: image.PixelMap, tileX: TileMode, tileY: TileM
 
 **示例：**
 
-```
-1. import { RenderNode } from '@kit.ArkUI';
-2. import { image } from '@kit.ImageKit';
-3. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { RenderNode } from '@kit.ArkUI';
+import { image } from '@kit.ImageKit';
+import { drawing } from '@kit.ArkGraphics2D';
 
-5. class DrawingRenderNode extends RenderNode {
-6. draw(context: DrawContext) {
-7. const width = 1000;
-8. const height = 1000;
-9. const bufferSize = width * height * 4;
-10. const color: ArrayBuffer = new ArrayBuffer(bufferSize);
+class DrawingRenderNode extends RenderNode {
+  draw(context: DrawContext) {
+    const width = 1000;
+    const height = 1000;
+    const bufferSize = width * height * 4;
+    const color: ArrayBuffer = new ArrayBuffer(bufferSize);
 
-12. const colorData = new Uint8Array(color);
-13. for (let i = 0; i < colorData.length; i += 4) {
-14. colorData[i] = 255;
-15. colorData[i+1] = 156;
-16. colorData[i+2] = 0;
-17. colorData[i+3] = 255;
-18. }
+    const colorData = new Uint8Array(color);
+    for (let i = 0; i < colorData.length; i += 4) {
+      colorData[i] = 255;
+      colorData[i+1] = 156;
+      colorData[i+2] = 0;
+      colorData[i+3] = 255;
+    }
 
-20. let opts: image.InitializationOptions = {
-21. editable: true,
-22. pixelFormat: 3,
-23. size: { height, width }
-24. }
+    let opts: image.InitializationOptions = {
+      editable: true,
+      pixelFormat: 3,
+      size: { height, width }
+    }
 
-26. let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
-27. let matrix = new drawing.Matrix();
-28. let options = new drawing.SamplingOptions(drawing.FilterMode.FILTER_MODE_NEAREST);
-29. if (pixelMap != null) {
-30. let imageShader =
-31. drawing.ShaderEffect.createImageShader(pixelMap, drawing.TileMode.REPEAT, drawing.TileMode.MIRROR, options,
-32. matrix);
-33. }
-34. }
-35. }
+    let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
+    let matrix = new drawing.Matrix();
+    let options = new drawing.SamplingOptions(drawing.FilterMode.FILTER_MODE_NEAREST);
+    if (pixelMap != null) {
+      let imageShader =
+        drawing.ShaderEffect.createImageShader(pixelMap, drawing.TileMode.REPEAT, drawing.TileMode.MIRROR, options,
+          matrix);
+    }
+  }
+}
 ```
 
 ## createColorShader12+
-
-PhonePC/2in1TabletTVWearable
 
 static createColorShader(color: number): ShaderEffect
 
@@ -173,15 +165,13 @@ static createColorShader(color: number): ShaderEffect
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let shaderEffect = drawing.ShaderEffect.createColorShader(0xFFFF0000);
+let shaderEffect = drawing.ShaderEffect.createColorShader(0xFFFF0000);
 ```
 
 ## createLinearGradient12+
-
-PhonePC/2in1TabletTVWearable
 
 static createLinearGradient(startPt: common2D.Point, endPt: common2D.Point, colors: Array<number>, mode: TileMode, pos?: Array<number> | null, matrix?: Matrix | null): ShaderEffect
 
@@ -200,7 +190,7 @@ static createLinearGradient(startPt: common2D.Point, endPt: common2D.Point, colo
 | pos | Array<number> |null | 否 | 表示每种对应颜色在颜色数组中的相对位置。数组长度需和colors保持一致，数组的首个元素应当是0.0，末尾元素应当是1.0，中间的元素应当在0与1之间并且逐下标递增，表示colors中每个对应颜色的相对位置。默认为null，表示颜色均匀分布在起点和终点之间。 |
 | matrix | [Matrix](arkts-apis-graphics-drawing-matrix.md) | null | 否 | 矩阵对象，用于对着色器做矩阵变换。默认为null，表示单位矩阵。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/bGKCg1c-ROSssLnLs4FLpw/zh-cn_image_0000002589247199.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/E4uzPM8pSHKrIExYgviR8A/zh-cn_image_0000002706837068.png)
 
 如上图所示，设置颜色数组为红绿蓝，位置数组为0.0、0.75和1.0后的显示效果。三角下标表示对应颜色的起始点和终点之间的相对位置，颜色之间使用渐变填充。
 
@@ -220,17 +210,15 @@ static createLinearGradient(startPt: common2D.Point, endPt: common2D.Point, colo
 
 **示例：**
 
-```
-1. import { common2D,drawing } from '@kit.ArkGraphics2D';
+```ts
+import { common2D,drawing } from '@kit.ArkGraphics2D';
 
-3. let startPt: common2D.Point = { x: 100, y: 100 };
-4. let endPt: common2D.Point = { x: 300, y: 300 };
-5. let shaderEffect = drawing.ShaderEffect.createLinearGradient(startPt, endPt, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT);
+let startPt: common2D.Point = { x: 100, y: 100 };
+let endPt: common2D.Point = { x: 300, y: 300 };
+let shaderEffect = drawing.ShaderEffect.createLinearGradient(startPt, endPt, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT);
 ```
 
 ## createRadialGradient12+
-
-PhonePC/2in1TabletTVWearable
 
 static createRadialGradient(centerPt: common2D.Point, radius: number, colors: Array<number>, mode: TileMode, pos?: Array<number> | null, matrix?: Matrix | null): ShaderEffect
 
@@ -243,13 +231,13 @@ static createRadialGradient(centerPt: common2D.Point, radius: number, colors: Ar
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | centerPt | [common2D.Point](js-apis-graphics-common2d.md#point12) | 是 | 表示渐变的圆心。 |
-| radius | number | 是 | 表示渐变的半径，小于等于0时无效，该参数为浮点数。 |
+| radius | number | 是 | 表示渐变的半径，小于等于0时无效，该参数为浮点数。单位为物理像素px。 |
 | colors | Array<number> | 是 | 表示在圆心和圆边界之间分布的颜色数组，数组中的值为32位（ARGB）无符号整数。 |
 | mode | [TileMode](arkts-apis-graphics-drawing-e.md#tilemode12) | 是 | 着色器效果平铺模式。 |
 | pos | Array<number> | null | 否 | 表示每种对应颜色在颜色数组中的相对位置。数组长度需和colors保持一致，数组的首个元素应当是0.0，末尾元素应当是1.0，中间的元素应当在0与1之间并且逐下标递增，表示colors中每个对应颜色的相对位置。默认为null，表示颜色均匀分布在圆心和圆边界之间。 |
 | matrix | [Matrix](arkts-apis-graphics-drawing-matrix.md) | null | 否 | 矩阵对象，用于对着色器做矩阵变换。默认为null，表示单位矩阵。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/cE4PvmlcTUqrzTSt1VUESg/zh-cn_image_0000002558767392.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/GnQ3cOp4QzaEVRcGX5XNnA/zh-cn_image_0000002736316175.png)
 
 如上图所示，设置颜色数组为红绿蓝，位置数组为0.0、0.75和1.0后的显示效果。三角下标表示对应颜色所在圆心和圆边界之间的相对位置，颜色之间使用渐变填充。
 
@@ -269,16 +257,14 @@ static createRadialGradient(centerPt: common2D.Point, radius: number, colors: Ar
 
 **示例：**
 
-```
-1. import { common2D,drawing } from '@kit.ArkGraphics2D';
+```ts
+import { common2D,drawing } from '@kit.ArkGraphics2D';
 
-3. let centerPt: common2D.Point = { x: 100, y: 100 };
-4. let shaderEffect = drawing.ShaderEffect.createRadialGradient(centerPt, 100, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT);
+let centerPt: common2D.Point = { x: 100, y: 100 };
+let shaderEffect = drawing.ShaderEffect.createRadialGradient(centerPt, 100, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT);
 ```
 
 ## createSweepGradient12+
-
-PhonePC/2in1TabletTVWearable
 
 static createSweepGradient(centerPt: common2D.Point, colors: Array<number>, mode: TileMode, startAngle: number, endAngle: number, pos?: Array<number> | null, matrix?: Matrix | null): ShaderEffect
 
@@ -298,7 +284,7 @@ static createSweepGradient(centerPt: common2D.Point, colors: Array<number>, mode
 | pos | Array<number> | null | 否 | 表示每种对应颜色在颜色数组中的相对位置。数组长度需和colors保持一致，数组的首个元素应当是0.0，末尾元素应当是1.0，中间的元素应当在0与1之间并且逐下标递增，表示colors中每个对应颜色的相对位置。默认为null，表示颜色均匀分布在起始角度和结束角度之间。 |
 | matrix | [Matrix](arkts-apis-graphics-drawing-matrix.md) | null | 否 | 矩阵对象，用于对着色器做矩阵变换。默认为null，表示单位矩阵。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/eoVsnpNrShq2CxI-jqOM7A/zh-cn_image_0000002558607734.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/t2IoJBgERUuP9lCdAFekZQ/zh-cn_image_0000002706677132.png)
 
 如上图所示，设置颜色数组为红绿蓝，位置数组为0.0、0.75和1.0，起始角度设置为0度，结束角度设置为180度后的显示效果。0.0对应0度的位置，0.75对应135度的位置，1.0对应180度的位置，颜色之间使用渐变填充。
 
@@ -318,16 +304,14 @@ static createSweepGradient(centerPt: common2D.Point, colors: Array<number>, mode
 
 **示例：**
 
-```
-1. import { common2D,drawing } from '@kit.ArkGraphics2D';
+```ts
+import { common2D,drawing } from '@kit.ArkGraphics2D';
 
-3. let centerPt: common2D.Point = { x: 100, y: 100 };
-4. let shaderEffect = drawing.ShaderEffect.createSweepGradient(centerPt, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT, 100, 200);
+let centerPt: common2D.Point = { x: 100, y: 100 };
+let shaderEffect = drawing.ShaderEffect.createSweepGradient(centerPt, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT, 100, 200);
 ```
 
 ## createConicalGradient12+
-
-PhonePC/2in1TabletTVWearable
 
 static createConicalGradient(startPt: common2D.Point, startRadius: number, endPt: common2D.Point, endRadius: number, colors: Array<number>, mode: TileMode, pos?: Array<number> | null, matrix?: Matrix | null): ShaderEffect
 
@@ -340,15 +324,15 @@ static createConicalGradient(startPt: common2D.Point, startRadius: number, endPt
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | startPt | [common2D.Point](js-apis-graphics-common2d.md#point12) | 是 | 表示渐变的起始圆的圆心。 |
-| startRadius | number | 是 | 表示渐变的起始圆的半径，小于0时无效。该参数为浮点数。 |
+| startRadius | number | 是 | 表示渐变的起始圆的半径，小于0时无效。该参数为浮点数。单位为物理像素px。 |
 | endPt | [common2D.Point](js-apis-graphics-common2d.md#point12) | 是 | 表示渐变的结束圆的圆心。 |
-| endRadius | number | 是 | 表示渐变的结束圆的半径，小于0时无效。该参数为浮点数。 |
+| endRadius | number | 是 | 表示渐变的结束圆的半径，小于0时无效。该参数为浮点数。单位为物理像素px。 |
 | colors | Array<number> | 是 | 表示在起始圆和结束圆之间分布的颜色数组，数组中的值为32位（ARGB）无符号整数。 |
 | mode | [TileMode](arkts-apis-graphics-drawing-e.md#tilemode12) | 是 | 着色器效果平铺模式。 |
 | pos | Array<number> | null | 否 | 表示每种对应颜色在颜色数组中的相对位置。数组长度需和colors保持一致，数组的首个元素应当是0.0，末尾元素应当是1.0，中间的元素应当在0与1之间并且逐下标递增，表示colors中每个对应颜色的相对位置。默认为null，表示颜色均匀分布在起始圆和结束圆之间。 |
 | matrix | [Matrix](arkts-apis-graphics-drawing-matrix.md) | null | 否 | 矩阵对象，用于对着色器做矩阵变换。默认为null，表示单位矩阵。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/Vd7gp6tbR-OK4QCxXYqjXQ/zh-cn_image_0000002589327261.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/WmjA2KWsQTCgipM7b8A3vw/zh-cn_image_0000002736436221.png)
 
 如上图所示，设置颜色数组为红绿蓝，位置数组为0.0、0.5和1.0的绘制结果。左侧为起始圆不在结束圆内的绘制结果，右侧为起始圆在结束圆内的绘制结果。
 
@@ -368,10 +352,10 @@ static createConicalGradient(startPt: common2D.Point, startRadius: number, endPt
 
 **示例：**
 
-```
-1. import { common2D,drawing } from '@kit.ArkGraphics2D';
+```ts
+import { common2D,drawing } from '@kit.ArkGraphics2D';
 
-3. let startPt: common2D.Point = { x: 100, y: 100 };
-4. let endPt: common2D.Point = {x: 200, y: 200};
-5. let shaderEffect = drawing.ShaderEffect.createConicalGradient(startPt, 100, endPt, 50, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT);
+let startPt: common2D.Point = { x: 100, y: 100 };
+let endPt: common2D.Point = {x: 200, y: 200};
+let shaderEffect = drawing.ShaderEffect.createConicalGradient(startPt, 100, endPt, 50, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT);
 ```

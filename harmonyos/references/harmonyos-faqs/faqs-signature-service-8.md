@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-signature-
 title: 多人协作时DevEco Studio如何引用一份签名文件
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 多人协作时DevEco Studio如何引用一份签名文件
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:54+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:16+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:0a6dc62248018a2e76d079c9128704bf3d063fc1bc51245c9ed379b10b3ec899
 ---
 

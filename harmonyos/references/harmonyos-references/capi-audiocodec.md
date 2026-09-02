@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-audi
 title: AudioCodec
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 模块 > AudioCodec
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:59+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:7bc07537606d49bb497b696c62271809a655478b1d751f0020f39444cff0c336
+scraped_at: 2026-09-02T14:52:46+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7e9b0046549163b2da35b17c2a2d945d87d5b36df22718e7f361c03e41d553a9
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 AudioCodec模块提供用于音频编解码功能的函数。
 
@@ -24,8 +22,6 @@ AudioCodec模块提供用于音频编解码功能的函数。
 **起始版本：** 11
 
 ## 文件汇总
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

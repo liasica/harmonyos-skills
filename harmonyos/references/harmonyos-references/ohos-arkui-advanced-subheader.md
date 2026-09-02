@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SubHeader
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SubHeader
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:05+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d5d2db4e55bf2dfd6a87b7e31a664616d2eb01aa73bf0b1a9d333b0ed3d4e07c
+scraped_at: 2026-09-02T15:01:09+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:dc69d6c499e90dc5eb30921be70acb7a9e762fb83964b6ed981dfa384ddbdaa3
 ---
 
 子标题，用于列表项或内容项顶部，将该列表或内容划分为一个区块，子标题名称用来概括该区块内容。
 
-说明
+**说明** 
 
 * 该组件从API version 10开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 该组件仅可在Stage模型下使用。
@@ -18,27 +18,21 @@ content_hash: sha256:d5d2db4e55bf2dfd6a87b7e31a664616d2eb01aa73bf0b1a9d333b0ed3d
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { SubHeader } from '@kit.ArkUI';
+```ts
+import { SubHeader } from '@kit.ArkUI';
 ```
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 无
 
-说明
+**说明** 
 
 不支持设置文本相关。
 
 ## SubHeader
 
-PhonePC/2in1TabletTVWearable
-
-SubHeader({icon?: ResourceStr, iconSymbolOptions?: SymbolOptions, primaryTitle?: ResourceStr, secondaryTitle?: ResourceStr, select?: SelectOptions, operationType?: OperationType, operationItem?: Array<OperationOption>, operationSymbolOptions?: Array<SymbolOptions>, primaryTitleModifier?: TextModifier, secondaryTitleModifier?: TextModifier, titleBuilder?: () => void, contentMargin?: LocalizedMargin, contentPadding?: LocalizedPadding})
+SubHeader({icon?: ResourceStr, iconSymbolOptions?: SymbolOptions, primaryTitle?: ResourceStr, secondaryTitle?: ResourceStr, select?: SelectOptions, operationType?: OperationType, operationItem?: Array<OperationOption>, operationSymbolOptions?: Array<SymbolOptions>, primaryTitleModifier?: TextModifier, secondaryTitleModifier?: TextModifier, titleBuilder?: () => void, contentMargin?: LocalizedMargin, contentPadding?: LocalizedPadding, titleId?: string })
 
 **装饰器类型：**@Component
 
@@ -61,11 +55,10 @@ SubHeader({icon?: ResourceStr, iconSymbolOptions?: SymbolOptions, primaryTitle?:
 | titleBuilder12+ | () => void | 否 | @BuilderParam | 自定义标题区内容  默认值：undefined，表示不采用自定义标题定义标题。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | contentMargin12+ | [LocalizedMargin](ts-types.md#localizedmargin12) | 否 | @Prop | 子标题外边距，不支持设置负数。  默认值：  {start: LengthMetrics.resource(  $r('sys.float.margin\_left')),  end: LengthMetrics.resource(  $r('sys.float.margin\_right'))}  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | contentPadding12+ | [LocalizedPadding](ts-types.md#localizedpadding12) | 否 | @Prop | 子标题内边距。  默认值：  左侧为副标题或副标题加图标时：  {start: LengthMetrics.vp(12), end: LengthMetrics.vp(12)}。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| titleAccessibilityText23+ | [ResourceStr](ts-types.md#resourcestr) | 否 | @Prop | 设置标题自定义朗读内容。  默认值：undefined  值为undefined时，默认朗读组件显示的标题内容。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
+| titleAccessibilityText23+ | [ResourceStr](ts-types.md#resourcestr) | 否 | @Prop | 设置标题自定义朗读内容。  默认值：undefined  值为undefined时，默认朗读组件显示的标题内容。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
+| titleId24+ | string | 否 | @Prop | 标题id。需要为标题设置id的时候设置此参数，缺省时不设置此参数。  默认值：undefined，表示不设置标题id。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
 
 ## OperationType
-
-PhonePC/2in1TabletTVWearable
 
 定义子标题操作区的元素样式。
 
@@ -84,8 +77,6 @@ PhonePC/2in1TabletTVWearable
 
 ## SelectOptions
 
-PhonePC/2in1TabletTVWearable
-
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
@@ -97,10 +88,9 @@ PhonePC/2in1TabletTVWearable
 | value | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 设置下拉按钮本身的文本内容。  默认值：空字符串。  **说明**：如果文本大于列宽时，文本被截断。从API version 20开始，支持Resource类型。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | onSelect | (index: number, value?: string) => void | 否 | 是 | 下拉菜单选中某一项的回调。  - index：选中项的索引。  - value：选中项的值。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | defaultFocus18+ | boolean | 否 | 是 | 下拉按钮是否为默认焦点。  true：下拉按钮是默认焦点。  false：下拉按钮不是默认焦点。  默认值：false  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| id24+ | string | 否 | 是 | 下拉按钮id。需要为下拉按钮设置id的时候设置此参数，缺省时不设置此参数。  默认值：undefined，表示不设置下拉按钮id。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
 
 ## OperationOption
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -114,10 +104,9 @@ PhonePC/2in1TabletTVWearable
 | accessibilityText18+ | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 子标题右侧按钮的无障碍文本属性。当组件不包含文本属性时，屏幕朗读选中此组件时不播报，使用者无法清楚地知道当前选中了什么组件。为了解决此场景，开发人员可为不包含文字信息的组件设置无障碍文本，当屏幕朗读选中此组件时播报无障碍文本的内容，帮助屏幕朗读的使用者清楚地知道自己选中了什么组件。  默认值：类型为TEXT\_ARROW和BUTTON时默认值为当前项value属性内容，其他类型默认值为“ ”。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | accessibilityDescription18+ | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 子标题右侧按钮的无障碍描述。此描述用于向用户详细解释当前组件，开发人员应为组件的这一属性提供较为详尽的文本说明，以协助用户理解即将执行的操作及其可能产生的后果。特别是当这些后果无法仅从组件的属性和无障碍文本中直接获知时。如果组件同时具备文本属性和无障碍说明属性，当组件被选中时，系统将首先播报组件的文本属性，随后播报无障碍说明属性的内容。  默认值：类型为LOADING时，默认值为“正在加载”，其他类型默认值为“单指双击即可执行”。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | defaultFocus18+ | boolean | 否 | 是 | 子标题右侧按钮是否为默认焦点。  true：子标题右侧按钮是默认焦点。  false：子标题右侧按钮不是默认焦点。  默认值：false  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| id24+ | string | 否 | 是 | 子标题右侧按钮id。需要为子标题右侧按钮设置id的时候设置此参数，缺省时不设置此参数。  默认值：undefined，表示不设置子标题右侧按钮id。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
 
 ## SymbolOptions12+
-
-PhonePC/2in1TabletTVWearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -135,368 +124,364 @@ PhonePC/2in1TabletTVWearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 不支持[通用事件](ts-component-general-events.md)。
 
 ## 示例
-
-PhonePC/2in1TabletTVWearable
 
 ### 示例1（效率型子标题）
 
 该示例主要演示子标题左侧为icon、secondaryTitle，右侧operationType为按钮类型。
 
-```
-1. import { Prompt, OperationType, SubHeader } from '@kit.ArkUI';
+```ts
+import { Prompt, OperationType, SubHeader } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct SubHeaderExample {
-6. build() {
-7. Column() {
-8. SubHeader({
-9. icon: $r('sys.media.ohos_ic_public_email'),
-10. secondaryTitle: '二级标题',
-11. operationType: OperationType.BUTTON,
-12. operationItem: [{
-13. value: '操作',
-14. action: () => {
-15. Prompt.showToast({ message: 'demo' });
-16. }
-17. }]
-18. })
-19. }
-20. }
-21. }
+@Entry
+@Component
+struct SubHeaderExample {
+  build() {
+    Column() {
+      SubHeader({
+        icon: $r('sys.media.ohos_ic_public_email'),
+        secondaryTitle: '二级标题',
+        operationType: OperationType.BUTTON,
+        operationItem: [{
+          value: '操作',
+          action: () => {
+            Prompt.showToast({ message: 'demo' });
+          }
+        }]
+      })
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/GnbvgwKZTt62uJ0KXBL4ww/zh-cn_image_0000002589326523.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/cPK9xsQxRMabzLvMgYorsQ/zh-cn_image_0000002706676382.png)
 
 ### 示例2（双行文本内容型子标题）
 
 该示例主要演示子标题左侧为primaryTitle、secondaryTitle，右侧operationType类型为TEXT\_ARROW。
 
-```
-1. import { Prompt, OperationType, SubHeader } from '@kit.ArkUI';
+```ts
+import { Prompt, OperationType, SubHeader } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct SubHeaderExample {
-6. build() {
-7. Column() {
-8. SubHeader({
-9. primaryTitle: '一级标题',
-10. secondaryTitle: '二级标题',
-11. operationType: OperationType.TEXT_ARROW,
-12. operationItem: [{
-13. value: '更多',
-14. action: () => {
-15. Prompt.showToast({ message: 'demo' });
-16. }
-17. }]
-18. })
-19. }
-20. }
-21. }
+@Entry
+@Component
+struct SubHeaderExample {
+  build() {
+    Column() {
+      SubHeader({
+        primaryTitle: '一级标题',
+        secondaryTitle: '二级标题',
+        operationType: OperationType.TEXT_ARROW,
+        operationItem: [{
+          value: '更多',
+          action: () => {
+            Prompt.showToast({ message: 'demo' });
+          }
+        }]
+      })
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/8vGJwMFJTF-O0D4kgUpIHg/zh-cn_image_0000002589246465.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/bv9xH_-2QZ-smp5VLVW_Kw/zh-cn_image_0000002736435469.png)
 
 ### 示例3（spinner型内容型子标题）
 
 该示例主要演示子标题左侧为select，右侧operationType类型为ICON\_GROUP。
 
-```
-1. import { Prompt, OperationType, SubHeader } from '@kit.ArkUI';
+```ts
+import { Prompt, OperationType, SubHeader } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct SubHeaderExample {
-6. build() {
-7. Column() {
-8. SubHeader({
-9. // 左侧为select选择器
-10. select: {
-11. options: [{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }],
-12. value: 'selectDemo',
-13. selected: 2,
-14. onSelect: () => {
-15. Prompt.showToast({ message: 'demo' });
-16. }
-17. },
-18. operationType: OperationType.ICON_GROUP,
-19. // 右侧为三个icon图标
-20. operationItem: [{
-21. value: $r('sys.media.ohos_ic_public_email'),
-22. action: () => {
-23. Prompt.showToast({ message: 'demo' })
-24. }
-25. }, {
-26. value: $r('sys.media.ohos_ic_public_email'),
-27. action: () => {
-28. Prompt.showToast({ message: 'demo' });
-29. }
-30. }, {
-31. value: $r('sys.media.ohos_ic_public_email'),
-32. action: () => {
-33. Prompt.showToast({ message: 'demo' });
-34. }
-35. }]
-36. })
-37. }
-38. }
-39. }
+@Entry
+@Component
+struct SubHeaderExample {
+  build() {
+    Column() {
+      SubHeader({
+        // 左侧为select选择器
+        select: {
+          options: [{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }],
+          value: 'selectDemo',
+          selected: 2,
+          onSelect: () => {
+            Prompt.showToast({ message: 'demo' });
+          }
+        },
+        operationType: OperationType.ICON_GROUP,
+        // 右侧为三个icon图标
+        operationItem: [{
+          value: $r('sys.media.ohos_ic_public_email'),
+          action: () => {
+            Prompt.showToast({ message: 'demo' })
+          }
+        }, {
+          value: $r('sys.media.ohos_ic_public_email'),
+          action: () => {
+            Prompt.showToast({ message: 'demo' });
+          }
+        }, {
+          value: $r('sys.media.ohos_ic_public_email'),
+          action: () => {
+            Prompt.showToast({ message: 'demo' });
+          }
+        }]
+      })
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/Yyh4ZAYVThOHnTiBRgXxmg/zh-cn_image_0000002558766658.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/235JzK02RJWRzjJovDVVOQ/zh-cn_image_0000002706836318.png)
 
 ### 示例4（设置左侧symbol图标）
 
 该示例主要演示子标题左侧icon设置symbol图标。
 
-```
-1. import { Prompt, OperationType, SubHeader } from '@kit.ArkUI';
+```ts
+import { Prompt, OperationType, SubHeader } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct SubHeaderExample {
-6. build() {
-7. Column() {
-8. SubHeader({
-9. // 设置icon为symbol图标
-10. icon: $r('sys.symbol.ohos_wifi'),
-11. iconSymbolOptions: {
-12. effectStrategy: SymbolEffectStrategy.HIERARCHICAL,
-13. },
-14. secondaryTitle: '标题',
-15. operationType: OperationType.BUTTON,
-16. operationItem: [{
-17. value: '操作',
-18. action: () => {
-19. Prompt.showToast({ message: 'demo' });
-20. }
-21. }]
-22. })
-23. }
-24. }
-25. }
+@Entry
+@Component
+struct SubHeaderExample {
+  build() {
+    Column() {
+      SubHeader({
+        // 设置icon为symbol图标
+        icon: $r('sys.symbol.ohos_wifi'),
+        iconSymbolOptions: {
+          effectStrategy: SymbolEffectStrategy.HIERARCHICAL,
+        },
+        secondaryTitle: '标题',
+        operationType: OperationType.BUTTON,
+        operationItem: [{
+          value: '操作',
+          action: () => {
+            Prompt.showToast({ message: 'demo' });
+          }
+        }]
+      })
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/RoGL5PlbT8mKsMJ8BQWnKA/zh-cn_image_0000002558606998.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/S_scIjUKSGeVNjuZPobF3Q/zh-cn_image_0000002736315423.gif)
 
 ### 示例5（设置右侧symbol图标）
 
 该示例主要演示子标题operationType设置为OperationType.ICON\_GROUP，operationItem的value设置为symbol图标。
 
-```
-1. import { Prompt, OperationType, SubHeader } from '@kit.ArkUI';
+```ts
+import { Prompt, OperationType, SubHeader } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct SubHeaderExample {
-6. build() {
-7. Column() {
-8. SubHeader({
-9. // 设置左侧select
-10. select: {
-11. options: [{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }],
-12. value: 'selectDemo',
-13. selected: 2,
-14. onSelect: () => {
-15. Prompt.showToast({ message: 'demo' });
-16. }
-17. },
-18. operationType: OperationType.ICON_GROUP,
-19. // 设置右侧icon
-20. operationItem: [{
-21. value: $r('sys.symbol.ohos_lungs'),
-22. action: () => {
-23. Prompt.showToast({ message: 'icon1' });
-24. }
-25. }, {
-26. value: $r('sys.symbol.ohos_lungs'),
-27. action: () => {
-28. Prompt.showToast({ message: 'icon2' });
-29. }
-30. }, {
-31. value: $r('sys.symbol.ohos_lungs'),
-32. action: () => {
-33. Prompt.showToast({ message: 'icon3' });
-34. }
-35. }],
-36. // 设置右侧icon图标symbol样式
-37. operationSymbolOptions: [{
-38. fontWeight: FontWeight.Lighter,
-39. }, {
-40. renderingStrategy: SymbolRenderingStrategy.MULTIPLE_COLOR,
-41. fontColor: [Color.Blue, Color.Grey, Color.Green],
-42. }, {
-43. renderingStrategy: SymbolRenderingStrategy.MULTIPLE_OPACITY,
-44. fontColor: [Color.Blue, Color.Grey, Color.Green],
-45. }]
-46. })
-47. }
-48. }
-49. }
+@Entry
+@Component
+struct SubHeaderExample {
+  build() {
+    Column() {
+      SubHeader({
+        // 设置左侧select
+        select: {
+          options: [{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }],
+          value: 'selectDemo',
+          selected: 2,
+          onSelect: () => {
+            Prompt.showToast({ message: 'demo' });
+          }
+        },
+        operationType: OperationType.ICON_GROUP,
+        // 设置右侧icon
+        operationItem: [{
+          value: $r('sys.symbol.ohos_lungs'),
+          action: () => {
+            Prompt.showToast({ message: 'icon1' });
+          }
+        }, {
+          value: $r('sys.symbol.ohos_lungs'),
+          action: () => {
+            Prompt.showToast({ message: 'icon2' });
+          }
+        }, {
+          value: $r('sys.symbol.ohos_lungs'),
+          action: () => {
+            Prompt.showToast({ message: 'icon3' });
+          }
+        }],
+        // 设置右侧icon图标symbol样式
+        operationSymbolOptions: [{
+          fontWeight: FontWeight.Lighter,
+        }, {
+          renderingStrategy: SymbolRenderingStrategy.MULTIPLE_COLOR,
+          fontColor: [Color.Blue, Color.Grey, Color.Green],
+        }, {
+          renderingStrategy: SymbolRenderingStrategy.MULTIPLE_OPACITY,
+          fontColor: [Color.Blue, Color.Grey, Color.Green],
+        }]
+      })
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/bm_hYnqMSEGNu-QbAZ-lXg/zh-cn_image_0000002589326525.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/8_8V0LiwRVqTQX50atIg1g/zh-cn_image_0000002706676384.png)
 
 ### 示例6（自定义标题内容）
 
 该示例主要演示SubHeader设置titleBuilder自定义标题内容的效果。
 
+```ts
+import { Prompt, OperationType, SubHeader } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct SubHeaderExample {
+  // 自定义左侧标题
+  @Builder
+  TitleBuilder(): void {
+    Text('自定义标题')
+      .fontSize(24)
+      .fontColor(Color.Blue)
+      .fontWeight(FontWeight.Bold)
+  }
+
+  build() {
+    Column() {
+      SubHeader({
+        // 调用TitleBuilder
+        titleBuilder: () => {
+          this.TitleBuilder();
+        },
+        primaryTitle: '一级标题',
+        secondaryTitle: '二级标题',
+        icon: $r('sys.symbol.ohos_star'),
+        operationType: OperationType.TEXT_ARROW,
+        operationItem: [{
+          value: '更多信息',
+          action: () => {
+            Prompt.showToast({ message: 'demo' });
+          }
+        }]
+      })
+    }
+  }
+}
 ```
-1. import { Prompt, OperationType, SubHeader } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct SubHeaderExample {
-6. // 自定义左侧标题
-7. @Builder
-8. TitleBuilder(): void {
-9. Text('自定义标题')
-10. .fontSize(24)
-11. .fontColor(Color.Blue)
-12. .fontWeight(FontWeight.Bold)
-13. }
-
-15. build() {
-16. Column() {
-17. SubHeader({
-18. // 调用TitleBuilder
-19. titleBuilder: () => {
-20. this.TitleBuilder();
-21. },
-22. primaryTitle: '一级标题',
-23. secondaryTitle: '二级标题',
-24. icon: $r('sys.symbol.ohos_star'),
-25. operationType: OperationType.TEXT_ARROW,
-26. operationItem: [{
-27. value: '更多信息',
-28. action: () => {
-29. Prompt.showToast({ message: 'demo' });
-30. }
-31. }]
-32. })
-33. }
-34. }
-35. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/qy1Ui4FKT7iV8ARNA-M_Iw/zh-cn_image_0000002589246467.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/kaXzG2inRPifdFrSt_bDOA/zh-cn_image_0000002736435471.png)
 
 ### 示例7（自定义标题样式）
 
 该示例主要演示SubHeader设置标题和副标题字体样式以及标题内外边距的效果。
 
+```ts
+import { Prompt, OperationType, SubHeader, LengthMetrics, TextModifier } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct SubHeaderExample {
+  // 设置主副标题文本颜色
+  @State primaryModifier: TextModifier = new TextModifier().fontColor(Color.Blue);
+  @State secondaryModifier: TextModifier = new TextModifier().fontColor(Color.Blue);
+
+  build() {
+    Column() {
+      SubHeader({
+        primaryTitle: 'primaryTitle',
+        secondaryTitle: 'secondaryTitle',
+        primaryTitleModifier: this.primaryModifier,
+        secondaryTitleModifier: this.secondaryModifier,
+        operationType: OperationType.TEXT_ARROW,
+        operationItem: [{
+          value: '更多信息',
+          action: () => {
+            Prompt.showToast({ message: 'demo' });
+          }
+        }],
+        // 标题内外间距
+        contentMargin: { start: LengthMetrics.vp(20), end: LengthMetrics.vp(20) },
+        contentPadding: { start: LengthMetrics.vp(20), end: LengthMetrics.vp(20) }
+      })
+    }
+  }
+}
 ```
-1. import { Prompt, OperationType, SubHeader, LengthMetrics, TextModifier } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct SubHeaderExample {
-6. // 设置主副标题文本颜色
-7. @State primaryModifier: TextModifier = new TextModifier().fontColor(Color.Blue);
-8. @State secondaryModifier: TextModifier = new TextModifier().fontColor(Color.Blue);
-
-10. build() {
-11. Column() {
-12. SubHeader({
-13. primaryTitle: 'primaryTitle',
-14. secondaryTitle: 'secondaryTitle',
-15. primaryTitleModifier: this.primaryModifier,
-16. secondaryTitleModifier: this.secondaryModifier,
-17. operationType: OperationType.TEXT_ARROW,
-18. operationItem: [{
-19. value: '更多信息',
-20. action: () => {
-21. Prompt.showToast({ message: 'demo' });
-22. }
-23. }],
-24. // 标题内外间距
-25. contentMargin: { start: LengthMetrics.vp(20), end: LengthMetrics.vp(20) },
-26. contentPadding: { start: LengthMetrics.vp(20), end: LengthMetrics.vp(20) }
-27. })
-28. }
-29. }
-30. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/Zg0qUjalSlCNwlaDIpswLA/zh-cn_image_0000002558766660.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/KY0Al-vEQxWGbfWMlu0YPQ/zh-cn_image_0000002706836320.png)
 
 ### 示例8（右侧按钮自定义播报）
 
 从API version 18开始，该示例通过设置SubHeader的右侧按钮属性accessibilityText、accessibilityDescription、accessibilityLevel自定义屏幕朗读播报文本。
 
-```
-1. import { Prompt, OperationType, SubHeader } from '@kit.ArkUI';
+```ts
+import { Prompt, OperationType, SubHeader } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct SubHeaderExample {
-6. build() {
-7. Column() {
-8. Divider().color('grey').width('100%').height('2vp')
-9. SubHeader({
-10. // 图标+二级标题, 右侧button
-11. icon: $r('sys.media.ohos_ic_public_email'),
-12. secondaryTitle: '二级标题',
-13. operationType: OperationType.BUTTON,
-14. operationItem: [{
-15. value: '操作',
-16. action: () => {
-17. Prompt.showToast({ message: 'demo' })
-18. }
-19. }]
-20. })
-21. Divider().color('grey').width('100%').height('2vp')
-22. SubHeader({
-23. // 右侧text_arrow
-24. primaryTitle: '一级标题',
-25. secondaryTitle: '二级标题',
-26. operationType: OperationType.TEXT_ARROW,
-27. operationItem: [{
-28. value: '更多',
-29. action: () => {
-30. Prompt.showToast({ message: 'demo' })
-31. }
-32. }]
-33. })
-34. Divider().color('grey').width('100%').height('2vp')
-35. SubHeader({
-36. // 左侧select 右侧是icon_(依次获焦)
-37. select: {
-38. options: [{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }],
-39. value: 'selectDemo',
-40. selected: 0,
-41. onSelect: (index: number, value?: string) => {
-42. console.info(`SubHeader onSelect index : ${index}, value: ${value}`);
-43. }
-44. },
-45. operationType: OperationType.ICON_GROUP,
-46. operationItem: [{
-47. value: $r('sys.media.ohos_ic_public_email'),
-48. accessibilityText: '图标1',
-49. accessibilityLevel: 'yes',
-50. }, {
-51. value: $r('sys.media.ohos_ic_public_email'),
-52. accessibilityText: '图标2',
-53. accessibilityLevel: 'no',
-54. }, {
-55. value: $r('sys.media.ohos_ic_public_email'),
-56. accessibilityText: '图标3',
-57. accessibilityDescription: '点击操作图标3',
-58. }]
-59. })
-60. Divider().color('grey').width('100%').height('2vp')
-61. }
-62. }
-63. }
+@Entry
+@Component
+struct SubHeaderExample {
+  build() {
+    Column() {
+      Divider().color('grey').width('100%').height('2vp')
+      SubHeader({
+        // 图标+二级标题, 右侧button
+        icon: $r('sys.media.ohos_ic_public_email'),
+        secondaryTitle: '二级标题',
+        operationType: OperationType.BUTTON,
+        operationItem: [{
+          value: '操作',
+          action: () => {
+            Prompt.showToast({ message: 'demo' })
+          }
+        }]
+      })
+      Divider().color('grey').width('100%').height('2vp')
+      SubHeader({
+        // 右侧text_arrow
+        primaryTitle: '一级标题',
+        secondaryTitle: '二级标题',
+        operationType: OperationType.TEXT_ARROW,
+        operationItem: [{
+          value: '更多',
+          action: () => {
+            Prompt.showToast({ message: 'demo' })
+          }
+        }]
+      })
+      Divider().color('grey').width('100%').height('2vp')
+      SubHeader({
+        // 左侧select 右侧是icon_(依次获焦)
+        select: {
+          options: [{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }],
+          value: 'selectDemo',
+          selected: 0,
+          onSelect: (index: number, value?: string) => {
+            console.info(`SubHeader onSelect index : ${index}, value: ${value}`);
+          }
+        },
+        operationType: OperationType.ICON_GROUP,
+        operationItem: [{
+          value: $r('sys.media.ohos_ic_public_email'),
+          accessibilityText: '图标1',
+          accessibilityLevel: 'yes',
+        }, {
+          value: $r('sys.media.ohos_ic_public_email'),
+          accessibilityText: '图标2',
+          accessibilityLevel: 'no',
+        }, {
+          value: $r('sys.media.ohos_ic_public_email'),
+          accessibilityText: '图标3',
+          accessibilityDescription: '点击操作图标3',
+        }]
+      })
+      Divider().color('grey').width('100%').height('2vp')
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/mNlXWZs_T-20kU0juBV95w/zh-cn_image_0000002558607000.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/wSrmTsGARX6UzhgBrTvcEA/zh-cn_image_0000002736315425.png)
 
 ### 示例9（右侧按钮设置默认获焦）
 
@@ -504,30 +489,30 @@ PhonePC/2in1TabletTVWearable
 
 从API version 18开始，在[OperationOption](ohos-arkui-advanced-subheader.md#operationoption)中新增defaultFocus接口。
 
-```
-1. import { Prompt, OperationType, SubHeader } from '@kit.ArkUI';
+```ts
+import { Prompt, OperationType, SubHeader } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct SubHeaderExample {
-6. build() {
-7. Column() {
-8. SubHeader({
-9. // 图标+二级标题, 右侧button
-10. icon: $r('sys.media.ohos_ic_public_email'),
-11. secondaryTitle: '二级标题',
-12. operationType: OperationType.BUTTON,
-13. operationItem: [{
-14. value: '操作',
-15. defaultFocus: true,
-16. action: () => {
-17. Prompt.showToast({ message: 'demo' })
-18. }
-19. }]
-20. })
-21. }
-22. }
-23. }
+@Entry
+@Component
+struct SubHeaderExample {
+  build() {
+    Column() {
+      SubHeader({
+        // 图标+二级标题, 右侧button
+        icon: $r('sys.media.ohos_ic_public_email'),
+        secondaryTitle: '二级标题',
+        operationType: OperationType.BUTTON,
+        operationItem: [{
+          value: '操作',
+          defaultFocus: true,
+          action: () => {
+            Prompt.showToast({ message: 'demo' })
+          }
+        }]
+      })
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/0HwwGdGsTESvpWUK0-BWlw/zh-cn_image_0000002589326527.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/HW7IXll6QYaVVRmVe67qyg/zh-cn_image_0000002706676386.png)

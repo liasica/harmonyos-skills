@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 网络安全校验错误码
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 错误码 > 网络安全校验错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:47+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:30a5b31f7898be526eb63530a902546384ceda46a17b9e06357205a376e64fb2
+scraped_at: 2026-09-02T15:01:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f34bf928f5dc7ef5fbf9319e9dd52f21aa5acf4d654d80ad6ad6f159d2df1125
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码](errorcode-universal.md)说明文档。
 
 ## 2305001 未定义的错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -34,8 +32,6 @@ SSL发生未知错误。
 
 ## 2305002 获取证书颁发者失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Unable to get issuer certificate.
@@ -54,8 +50,6 @@ Unable to get issuer certificate.
 
 ## 2305003 获取证书吊销列表失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Unable to get certificate revocation list (CRL).
@@ -70,11 +64,9 @@ Unable to get certificate revocation list (CRL).
 
 **处理步骤**
 
-检查网络、确认CRL URI正确、更新CRL文件或使用在线证书状态协议 (OCSP) 进行证书状态检查。
+检查网络、确认CRL URI正确、更新CRL文件或使用在线证书状态协议（OCSP）进行证书状态检查。
 
 ## 2305004 无法解密证书签名
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -94,8 +86,6 @@ Unable to decrypt certificate signature.
 
 ## 2305005 无法解密证书吊销列表签名
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Unable to decrypt CRL signature.
@@ -114,8 +104,6 @@ CRL的加密算法不被客户端支持，或者用于加密CRL签名的密钥�
 
 ## 2305006 无法解码颁发者公钥
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Unable to decode issuer public key.
@@ -133,8 +121,6 @@ Unable to decode issuer public key.
 检查证书格式、检查公钥数据、重新生成证书。
 
 ## 2305007 证书签名失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -155,8 +141,6 @@ Certificate signature failure.
 
 ## 2305008 证书吊销列表签名失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 CRL signature failure.
@@ -174,8 +158,6 @@ CRL的签名计算错误，或者CRL使用的数字签名算法不被客户端�
 检查CRL的签名算法、检查CRL的签名密钥、重新生成CRL、更新CRL。
 
 ## 2305009 证书尚未生效
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -195,8 +177,6 @@ Certificate is not yet valid.
 
 ## 2305010 证书已过期
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Certificate has expired.
@@ -214,8 +194,6 @@ Certificate has expired.
 检查证书的开始和结束日期，更新或重新生成证书。
 
 ## 2305011 CRL尚未生效
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -236,8 +214,6 @@ CRL的开始日期在当前日期之后。
 
 ## 2305012 CRL已过期
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 CRL has expired.
@@ -255,8 +231,6 @@ CRL的结束日期在当前日期之前。
 更新CRL以获取最新的CRL文件，使用OCSP。
 
 ## 2305018 自签名证书
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -297,8 +271,6 @@ Unable to get local issuer certificate.
 
 ## 2305023 证书已被吊销
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Certificate has been revoked.
@@ -316,8 +288,6 @@ Certificate has been revoked.
 检查证书状态，是否被吊销；如果证书被吊销，更新为未被吊销的证书。
 
 ## 2305024 无效的证书颁发机构（CA）
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -337,8 +307,6 @@ Invalid certificate authority (CA).
 
 ## 2305027 证书不可信
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Certificate is untrusted.
@@ -357,9 +325,27 @@ Certificate is untrusted.
 2. 确保证书的签名密钥与客户端的预期密钥匹配。
 3. 如果证书由不可信的CA颁发，需要更新为由可信的CA颁发的证书。
 
-## 2305069 无效的证书验证上下文
+## 2305062 主机名验证失败
 
-PhonePC/2in1TabletTVWearable
+**错误信息**
+
+Invalid hostname.
+
+**错误描述**
+
+证书中的主机名与传入的主机名不匹配。
+
+**可能原因**
+
+证书的主题备用名称（SAN）或通用名称（CN）字段与传入的主机名不匹配。
+
+**处理步骤**
+
+1. 检查证书的SAN或CN字段是否包含正确的主机名。
+2. 确保传入的主机名参数与服务器的主机名一致。
+3. 如果证书由第三方颁发，联系证书颁发机构更正证书中的主机名信息。
+
+## 2305069 无效的证书验证上下文
 
 **错误信息**
 

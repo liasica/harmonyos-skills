@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-368
 title: 在display.on('change')监听回调中，无法使用Window实例获取更新后的窗口大小
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 在display.on('change')监听回调中，无法使用Window实例获取更新后的窗口大小
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 在display.on('change')监听回调中，无法使用Window实例获取更新后的窗口大小
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:34+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:6cd379dca47a258d6645d6fe2310637d2d1d9a58eade3536be61033bf9e0962e
+scraped_at: 2026-09-02T14:54:15+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:3153eec7f062a9ad8a24a9f89345ac18455e8d9a9a7dd99a88cc99ed85082f86
 ---
 
 **解决措施**
@@ -14,38 +14,36 @@ content_hash: sha256:6cd379dca47a258d6645d6fe2310637d2d1d9a58eade3536be61033bf9e
 
 **错误示例**
 
-```
-1. // The display is updated first
-2. display.on('change', async (data) => {
-3. let newDisplay: display.Display = display.getDefaultDisplaySync();
-4. console.info('Orientation: ' + newDisplay.orientation);
-5. let windowClass: window.Window = await window.getLastWindow(this.context);
-6. // After updating the window, the retrieved width and height are still the original ones.
-7. let windowProperties = windowClass.getWindowProperties();
-8. console.info('Width: ' + windowProperties.windowRect.width +
-9. ', height: ' + windowProperties.windowRect.height);
-10. // Please ensure that you have obtained the relevant Window instance, that is windowClass.
-11. try {
-12. windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_CUTOUT);
-13. } catch (err) {
-14. hilog.error(DOMAIN, 'testTag', 'Failed. Cause: %{public}s', JSON.stringify(err));
-15. }
-16. });
+```ts
+// The display is updated first
+display.on('change', async (data) => {
+  let newDisplay: display.Display = display.getDefaultDisplaySync();
+  console.info('Orientation: ' + newDisplay.orientation);
+  let windowClass: window.Window = await window.getLastWindow(this.context);
+  // After updating the window, the retrieved width and height are still the original ones.
+  let windowProperties = windowClass.getWindowProperties();
+  console.info('Width: ' + windowProperties.windowRect.width +
+    ', height: ' + windowProperties.windowRect.height);
+  // Please ensure that you have obtained the relevant Window instance, that is windowClass.
+ try {
+   windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_CUTOUT);
+  } catch (err) {
+   hilog.error(DOMAIN, 'testTag', 'Failed. Cause: %{public}s', JSON.stringify(err));
+  }
+});
 ```
 
 **正确示例**
 
+```typescript
+display.on('change', (data) => {
+  console.info('Succeeded in enabling the listener for display changes. Data: ' +
+  JSON.stringify(data));
+  let newDisplay: display.Display = display.getDefaultDisplaySync();
+  console.info('Orientation: ' + newDisplay.orientation + 'width: ' +
+  newDisplay.width + ', height: ' + newDisplay.height);
+});
 ```
-1. display.on('change', (data) => {
-2. console.info('Succeeded in enabling the listener for display changes. Data: ' +
-3. JSON.stringify(data));
-4. let newDisplay: display.Display = display.getDefaultDisplaySync();
-5. console.info('Orientation: ' + newDisplay.orientation + 'width: ' +
-6. newDisplay.width + ', height: ' + newDisplay.height);
-7. });
-```
-
-[EntryAbilityOnDisplay2.ets](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkUI/entry/src/main/ets/entryability/EntryAbilityOnDisplay2.ets#L50-L56)
 
 **参考链接**
 

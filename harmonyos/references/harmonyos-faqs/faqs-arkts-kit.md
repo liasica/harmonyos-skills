@@ -3,25 +3,25 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-kit
 title: 方舟编程语言（ArkTS）
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS）
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:57+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:03bdafe0940211f55ab6d2ae0590dbfe2b40ab2f35af63056113ce037d95b2ad
+scraped_at: 2026-09-02T14:53:52+08:00
+doc_updated_at: 2026-08-27
+content_hash: sha256:9f3a67c54cef5add8b5dd4398ed5f52f4b22a7bfe736972d66384ddf5cd79fe0
 ---
 
 * **[ArkTS语言与ArkUI框架、HarmonyOS SDK/API的关系](faqs-arkts-143.md)**
 * **[将rawfile中json格式的字符串转换成对应的object对象后，调用实例方法后程序崩溃](faqs-arkts-1.md)**
 * **[如何使用正则表达式](faqs-arkts-3.md)**
 * **[如何生成随机的uuid](faqs-arkts-14.md)**
-* **[ArkTS中有类似Java中的System.arraycopy数组复制的方法吗](faqs-arkts-15.md)**
+* **[ArkTS中有类似java中的System.arraycopy数组复制的方法吗](faqs-arkts-15.md)**
 * **[ArkTS文件后缀是否需要全部改成.ets](faqs-arkts-16.md)**
-* **[编译后生成的.abc文件存放路径在哪里](faqs-arkts-17.md)**
+* **[编译后生成的.abc文件存放路径在哪](faqs-arkts-17.md)**
 * **[ArkTS文件和TS文件的区别](faqs-arkts-18.md)**
 * **[如何实现字符串编解码](faqs-arkts-19.md)**
 * **[如何生成UUID的字符串](faqs-arkts-20.md)**
 * **[使用NAPI扩展TS接口时，常用属性和实现接口的基本用法](faqs-arkts-21.md)**
 * **[pthread创建的线程中如何读取rawfile](faqs-arkts-23.md)**
 * **[ArkTS的SendableClass对象内存共享的原理和限制是什么](faqs-arkts-38.md)**
-* **[synchronized在Java中可以修饰方法，从而简单地实现方法的同步调用。在系统ets开发中，如何简单实现该功能](faqs-arkts-44.md)**
+* **[synchronized在java中可以修饰方法，从而简单地实现函数的同步调用。在系统ets开发中，如何简单实现该功能](faqs-arkts-44.md)**
 * **[ArkTS类的方法是否支持重载](faqs-arkts-45.md)**
 * **[如何将类Java语言的线程模型（内存共享）的实现方式转换成在ArkTS的线程模型下（内存隔离）的实现方式](faqs-arkts-46.md)**
 * **[以libstd为例，C++的标准库放在哪里了，有没有打到hap包中](faqs-arkts-48.md)**
@@ -52,7 +52,7 @@ content_hash: sha256:03bdafe0940211f55ab6d2ae0590dbfe2b40ab2f35af63056113ce037d9
 * **[如何将ArrayBuffer转成string](faqs-arkts-90.md)**
 * **[Uint8Array类型和String以及hex如何互相转换](faqs-arkts-91.md)**
 * **[如何进行base64编码](faqs-arkts-92.md)**
-* **[赋值和深拷贝与浅拷贝的区别](faqs-arkts-93.md)**
+* **[赋值和深/浅拷贝的区别](faqs-arkts-93.md)**
 * **[ArkTS是否支持多继承](faqs-arkts-95.md)**
 * **[ArkTS是否支持交叉类型](faqs-arkts-96.md)**
 * **[ArkTS是否支持匿名内部类](faqs-arkts-97.md)**
@@ -76,20 +76,20 @@ content_hash: sha256:03bdafe0940211f55ab6d2ae0590dbfe2b40ab2f35af63056113ce037d9
 * **[如何在ArkTS中使用闭包](faqs-arkts-117.md)**
 * **[是否支持通过动态import反射调用类的静态成员函数和实例成员函数](faqs-arkts-118.md)**
 * **[如何获取环境变量信息](faqs-arkts-125.md)**
-* **[如何获取应用进程的CPU使用时间](faqs-arkts-127.md)**
+* **[如何获取应用进程执行时间](faqs-arkts-127.md)**
 * **[如何指定对象某些属性参与序列化](faqs-arkts-128.md)**
 * **[对象反序列化时number类型丢失精度如何解决](faqs-arkts-129.md)**
 * **[Array的长度上限是多少](faqs-arkts-131.md)**
 * **[当前ArkTS是否采用类Node.js的异步I/O机制](faqs-arkts-132.md)**
 * **[对于网络请求这类I/O密集型任务是否需要使用多线程进行处理](faqs-arkts-133.md)**
-* **[对于@ohos.net.http模块是否需要使用TaskPool处理](faqs-arkts-134.md)**
+* **[对于@ohos.net.http网络框架是否需要使用TaskPool处理](faqs-arkts-134.md)**
 * **[模块间循环依赖导致运行时未初始化异常问题定位](faqs-arkts-135.md)**
 * **[编译异常，无具体错误日志，难以定位问题](faqs-arkts-136.md)**
 * **[gbk字符串TextEncoder编码结果属性buffer长度为何比编码结果长度略大](faqs-arkts-137.md)**
 * **[ArkTS如何定义callback函数](faqs-arkts-138.md)**
 * **[对象中函数的this如何指向外层](faqs-arkts-139.md)**
 * **[如何实现匿名内部类](faqs-arkts-140.md)**
-* **[如何定义一个具有任意键的对象](faqs-arkts-141.md)**
+* **[如何定义一个未知类型的对象](faqs-arkts-141.md)**
 * **[如何在调用处实现接口中的方法](faqs-arkts-142.md)**
 * **[ArkTS类型转换方法，除了使用as是否有其他方法](faqs-arkts-144.md)**
 * **[如何在Index.ets中导出默认导出的对象](faqs-arkts-145.md)**
@@ -98,3 +98,38 @@ content_hash: sha256:03bdafe0940211f55ab6d2ae0590dbfe2b40ab2f35af63056113ce037d9
 * **[应用通过对象字面量初始化class实例导致编译失败的原因和修改方案](faqs-arkts-148.md)**
 * **[如何在URL编码时处理特殊字符](faqs-arkts-150.md)**
 * **[ArkTS自定义注解使用场景](faqs-arkts-151.md)**
+* **[文本内容显示乱码](faqs-arkts-152.md)**
+* **[应用启动超时问题](faqs-arkts-153.md)**
+* **[验证码后台计时不准确](faqs-arkts-154.md)**
+* **[页面上展示的日期与实际时间不符](faqs-arkts-155.md)**
+* **[音视频文件转换Base64字符串](faqs-arkts-156.md)**
+* **[ArkTS中随机数生成](faqs-arkts-157.md)**
+* **[编译时class-transformer中-Type报错该如何解决](faqs-arkts-158.md)**
+* **[如何解析URL信息](faqs-arkts-159.md)**
+* **[异步接口如何以同步的方式进行调用](faqs-arkts-160.md)**
+* **[emitter中接收ArrayBuffer使用console.log打印异常](faqs-arkts-161.md)**
+* **[组件如何拦截多次快速点击事件](faqs-arkts-162.md)**
+* **[混淆编译keep配置使用通配符\*不生效](faqs-arkts-163.md)**
+* **[如何解决网络传输中字节流解码为UTF-8时出现的乱码问题](faqs-arkts-164.md)**
+* **[离开页面时如何销毁所有的setTimeout](faqs-arkts-165.md)**
+* **[Release模式下对象无法使用Object.attribute方式获取属性](faqs-arkts-166.md)**
+* **[如何将多个JSON字符串合并](faqs-arkts-167.md)**
+* **[编译构建library模块时报错："Property 'xxxxx' of exported class expression may not be private or protected"](faqs-arkts-168.md)**
+* **[如何自定义日期时间格式](faqs-arkts-169.md)**
+* **[如何判断对象是Record类型](faqs-arkts-170.md)**
+* **[如何使用泛型定义接口数据](faqs-arkts-171.md)**
+* **[HarmonyOS系统实现异步锁的trylock](faqs-arkts-172.md)**
+* **[ArkTS如何解析GeoJSON](faqs-arkts-173.md)**
+* **[ArkTS是否支持Partial类型](faqs-arkts-174.md)**
+* **[常见数据格式与ArrayBuffer的互相转换](faqs-arkts-175.md)**
+* **[ArkTS重写自定义类方法未生效](faqs-arkts-176.md)**
+* **[如何解决ArkUI.Lite开发穿戴应用时异步任务不生效问题](faqs-arkts-177.md)**
+* **[Buffer如何追加数据](faqs-arkts-178.md)**
+* **[ASON.parse生成的Sendable对象和@Sendable注解类的实例对象的差异](faqs-arkts-179.md)**
+* **[String的静态方法详解](faqs-arkts-180.md)**
+* **[在catch中调用未定义的方法编译运行无法捕获报错](faqs-arkts-181.md)**
+* **[ArkTS中as类型断言及JSON反序列化常见场景与注意事项](faqs-arkts-182.md)**
+* **[如何给泛型实例化](faqs-arkts-183.md)**
+* **[基于动态时间补偿实现自定义定时器](faqs-arkts-184.md)**
+* **[Web组件中URL参数+号与空格的正确处理](faqs-arkts-185.md)**
+* **[API 17及后续版本ArkTS基于的TypeScript版本说明](faqs-arkts-kit-new-00001.md)**

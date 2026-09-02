@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/i18n-phone-nu
 title: 电话号码格式化
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用国际化 > 电话号码格式化
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:44+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:01fe9e9b1f5da79baf2aafc62330d516f17f18413739465ff553e2b44309ece4
+scraped_at: 2026-09-02T14:49:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b62c92a3471bcad80b4f33cb3b656c80a94ae07338b3148ab72341b8bd5d52ba
 ---
 
 ## 功能介绍
@@ -36,36 +36,32 @@ content_hash: sha256:01fe9e9b1f5da79baf2aafc62330d516f17f18413739465ff553e2b4430
 
 1. 导入模块。
 
+   ```typescript
+   import { i18n } from '@kit.LocalizationKit';
    ```
-   1. import { i18n } from '@kit.LocalizationKit';
-   ```
-
-   [PhoneNumberFormatting.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/International/Internationalization/entry/src/main/ets/i18napplication/PhoneNumberFormatting.ets#L18-L20)
 2. 处理号码。
 
+   ```typescript
+   // 格式化电话号码
+   let phoneNumberFormat: i18n.PhoneNumberFormat = new i18n.PhoneNumberFormat('CN');
+   let formattedPhoneNumber = phoneNumberFormat.format('158****2312'); // formattedPhoneNumber = '158 **** 2312'
+
+   // RFC3966类型的电话号码
+   let rfcFormat: i18n.PhoneNumberFormat = new i18n.PhoneNumberFormat('CN', { type: 'RFC3966' });
+   let formattedRFCPhoneNumber = rfcFormat.format('158****2312'); // formattedRFCPhoneNumber = 'tel:+86-158-****-2312'
+
+   // 判断电话号码是否有效
+   let isValid = phoneNumberFormat.isValidNumber('158****2312'); // isValid = true
+
+   // 以某种语言显示号码归属地
+   let locationName = phoneNumberFormat.getLocationName('158****2312', 'en-GB'); // locationName = 'XiAn, Shanxi'
+
+   // 拨号中的电话号码格式化
+   let typingFormat: i18n.PhoneNumberFormat = new i18n.PhoneNumberFormat('CN', { type: 'TYPING' });
+   let phoneNumber = '0755453';
+   let formatResult = ''; // 通过如下方式对拨号中的号码格式化后，formatResult = '0755 453'
+   for (let i = 0; i < phoneNumber.length; i++) {
+     formatResult += phoneNumber.charAt(i);
+     formatResult = typingFormat.format(formatResult);
+   }
    ```
-   1. // 格式化电话号码
-   2. let phoneNumberFormat: i18n.PhoneNumberFormat = new i18n.PhoneNumberFormat('CN');
-   3. let formattedPhoneNumber = phoneNumberFormat.format('158****2312'); // formattedPhoneNumber = '158 **** 2312'
-
-   5. // RFC3966类型的电话号码
-   6. let rfcFormat: i18n.PhoneNumberFormat = new i18n.PhoneNumberFormat('CN', { type: 'RFC3966' });
-   7. let formattedRFCPhoneNumber = rfcFormat.format('158****2312'); // formattedRFCPhoneNumber = 'tel:+86-158-****-2312'
-
-   9. // 判断电话号码是否有效
-   10. let isValid = phoneNumberFormat.isValidNumber('158****2312'); // isValid = true
-
-   12. // 以某种语言显示号码归属地
-   13. let locationName = phoneNumberFormat.getLocationName('158****2312', 'en-GB'); // locationName = 'XiAn, Shanxi'
-
-   15. // 拨号中的电话号码格式化
-   16. let typingFormat: i18n.PhoneNumberFormat = new i18n.PhoneNumberFormat('CN', { type: 'TYPING' });
-   17. let phoneNumber = '0755453';
-   18. let formatResult = ''; // 通过如下方式对拨号中的号码格式化后，formatResult = '0755 453'
-   19. for (let i = 0; i < phoneNumber.length; i++) {
-   20. formatResult += phoneNumber.charAt(i);
-   21. formatResult = typingFormat.format(formatResult);
-   22. }
-   ```
-
-   [PhoneNumberFormatting.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/International/Internationalization/entry/src/main/ets/i18napplication/PhoneNumberFormatting.ets#L35-L58)

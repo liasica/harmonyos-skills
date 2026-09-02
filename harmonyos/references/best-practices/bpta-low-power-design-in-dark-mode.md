@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-low-power-
 title: 省电和深色模式下低功耗设计
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 > 省电和深色模式下低功耗设计
 category: best-practices
-scraped_at: 2026-04-29T14:13:49+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:77f4140d523cb3df60664015f3eb097578a6f98c23e77e6cd0aa56534caaf881
+scraped_at: 2026-09-02T15:03:22+08:00
+doc_updated_at: 2026-05-30
+content_hash: sha256:e3a93b0ab5f4423a9a3a01431bdc8ac25a015f1ac54bb4f176c9003c49e5d040
 ---
 
 ## 概述
@@ -32,8 +32,8 @@ content_hash: sha256:77f4140d523cb3df60664015f3eb097578a6f98c23e77e6cd0aa56534ca
 
 通过设置省电模式、深色模式、调节屏幕亮度、停止冗余动画，最终测量的总耗电量对比如下图所示：
 
-**图1** 总耗电量对比  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/0V6UZ24NTTqQbp8_ZXlamw/zh-cn_image_0000002194011364.png "点击放大")
+**图1** 总耗电量对比（相对于正常模式）  
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/RInlwEmrR_G5eDrkKAz1sQ/zh-cn_image_0000002194011364.png "点击放大")
 
 ## 功耗测量工具
 
@@ -53,9 +53,9 @@ DevEco Profiler 应用调优工具（以下简称 Profiler）已内置在 DevEco
 Profiler耗电量示意图如下所示，详细信息及使用可参考[实时监控](../harmonyos-guides/realtime-monitor.md)。
 
 **图2** ProfilerEnergy模块示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/0niXJHu0Qb6AoGeUGHv7NA/zh-cn_image_0000002193851784.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/xywbb96cTNa-rU3FDvtSvg/zh-cn_image_0000002193851784.png "点击放大")
 
-说明
+**说明** 
 
 * 上图区域展示时间窗内CPU、Memory、FPS、GPU、Energy资源的实时使用情况，将鼠标悬浮于统计图中任意位置，打开时间标线，左右移动鼠标并结合时间轴可查看不同时间点上的实时信息。
 * Energy以3秒为周期进行刷新，体现统计周期内总功耗以及各耗能部件（包括CPU、Display、GPU、Location、Other）的功耗占用情况。
@@ -89,7 +89,7 @@ HarmonyOS默认提供了电源模式的特性，主要分为以下三类：
 * 系统亮度：可以设置0~255的取值。主要涉及模块为显示。
 * 震动开关：可以设置开启或关闭震动功能，主要涉及模块为马达。
 
-说明
+**说明** 
 
 在电源管理方面，HarmonyOS采用了自动切换配置，通过更改不同的配置项来实现不同的电源模式。例如，在正常模式下，系统会自动调节屏幕旋转，以保证用户在横屏和竖屏模式下都能够获得最佳的视觉效果；而在省电模式下，系统会关闭自动调节屏幕旋转功能，以降低屏幕旋转带来的能耗。
 
@@ -104,67 +104,65 @@ HarmonyOS默认提供了电源模式的特性，主要分为以下三类：
 
 省电模式下，获取当前系统电源模式的代码如下：
 
+```typescript
+// Introduction of power module
+import { power } from '@kit.BasicServicesKit';
+import { LearningResource } from '../model/LearningResource';
+import { ActionButtonView } from './ActionButtonView';
+import { ArticleCardButtonView } from './ArticleCardButtonView';
+
+@Component
+export struct ArticleCardView {
+  @Prop isLiked: boolean = false;
+  @Prop isCollected: boolean = false;
+  @ObjectLink articleItem: LearningResource;
+  onCollected?: () => void;
+  onLiked?: () => void;
+
+  build() {
+    Row({ space: 16 }) {
+      Column() {
+        Row() {
+          ActionButtonView({
+            imgResource: $r('app.media.ic_eye_open'),
+            count: this.articleItem.viewsCount,
+            textWidth: $r('app.float.view_count_icon_width')
+          })
+          // Use getPowerMode to get the power mode of the current system and determine whether it is currently a power-saving mode.
+          if (power.getPowerMode() == power.DevicePowerMode.MODE_POWER_SAVE) {
+            ActionButtonView({
+              imgResource: this.isLiked ? $r('app.media.btn_good_on') : $r('app.media.btn_good_normal'),
+              count: this.articleItem.likesCount,
+              textWidth: $r('app.float.like_icon_width')
+            })
+              .onClick(() => {
+                this.onLiked?.();
+              })
+          } else {
+            ArticleCardButtonView({
+              clickAnimationPath: 'common/lottie/liked_lottie.json',
+              cancelAnimationPath: 'common/lottie/cancel_liked_lottie.json',
+              isClicked: this.isLiked,
+              count: this.articleItem.likesCount,
+              articleId: this.articleItem.id,
+              textWidth: $r('app.float.like_icon_width'),
+              type: 'like',
+              onClicked: this.onLiked,
+              normalImage: $r('app.media.btn_like_normal'),
+              onImage: $r('app.media.btn_like_on')
+            })
+          }
+        }
+        .width('100%')
+        .justifyContent(FlexAlign.SpaceBetween)
+      }
+      .layoutWeight(1)
+      .height('100%')
+      .justifyContent(FlexAlign.SpaceAround)
+    }
+  }
+}
 ```
-1. // Introduction of power module
-2. import { power } from '@kit.BasicServicesKit';
-3. import { LearningResource } from '../model/LearningResource';
-4. import { ActionButtonView } from './ActionButtonView';
-5. import { ArticleCardButtonView } from './ArticleCardButtonView';
-
-7. @Component
-8. export struct ArticleCardView {
-9. @Prop isLiked: boolean = false;
-10. @Prop isCollected: boolean = false;
-11. @ObjectLink articleItem: LearningResource;
-12. onCollected?: () => void;
-13. onLiked?: () => void;
-
-15. build() {
-16. Row({ space: 16 }) {
-17. Column() {
-18. Row() {
-19. ActionButtonView({
-20. imgResource: $r('app.media.ic_eye_open'),
-21. count: this.articleItem.viewsCount,
-22. textWidth: $r('app.float.view_count_icon_width')
-23. })
-24. // Use getPowerMode to get the power mode of the current system and determine whether it is currently a power-saving mode.
-25. if (power.getPowerMode() == power.DevicePowerMode.MODE_POWER_SAVE) {
-26. ActionButtonView({
-27. imgResource: this.isLiked ? $r('app.media.btn_good_on') : $r('app.media.btn_good_normal'),
-28. count: this.articleItem.likesCount,
-29. textWidth: $r('app.float.like_icon_width')
-30. })
-31. .onClick(() => {
-32. this.onLiked?.();
-33. })
-34. } else {
-35. ArticleCardButtonView({
-36. clickAnimationPath: 'common/lottie/liked_lottie.json',
-37. cancelAnimationPath: 'common/lottie/cancel_liked_lottie.json',
-38. isClicked: this.isLiked,
-39. count: this.articleItem.likesCount,
-40. articleId: this.articleItem.id,
-41. textWidth: $r('app.float.like_icon_width'),
-42. type: 'like',
-43. onClicked: this.onLiked,
-44. normalImage: $r('app.media.btn_like_normal'),
-45. onImage: $r('app.media.btn_like_on')
-46. })
-47. }
-48. }
-49. .width('100%')
-50. .justifyContent(FlexAlign.SpaceBetween)
-51. }
-52. .layoutWeight(1)
-53. .height('100%')
-54. .justifyContent(FlexAlign.SpaceAround)
-55. }
-56. }
-57. }
-```
-
-[ArticleCardView.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LowPowerOfForegroundTask/entry/src/main/ets/pages/ArticleCardView.ets#L2-L59)
 
 ### 功耗分析
 
@@ -172,7 +170,7 @@ HarmonyOS默认提供了电源模式的特性，主要分为以下三类：
 
 **图3** 使用省电模式前后耗电量对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/G-MjFfnmQpiacIbMCdPW3w/zh-cn_image_0000002194011352.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/tQVf9EWnTNiI2-eEqoRHNA/zh-cn_image_0000002194011352.png "点击放大")
 
 从测试数据可以看出：
 
@@ -198,7 +196,7 @@ HarmonyOS默认提供了电源模式的特性，主要分为以下三类：
 1. 创建深色模式资源文件夹：在项目的resources文件下，创建深色模式的Dark资源文件夹，如下图1所示。
 
    **图4** 创建深色模式资源文件夹  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/P3zuwodaTseI0KwkoBwmpQ/zh-cn_image_0000002229337161.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/m-HL8q2QQzat1mt9wg_e5w/zh-cn_image_0000002229337161.png "点击放大")
 2. 资源文件适配：为深色模式下的界面设计相应的颜色和图标资源文件。
 3. 在主题中设置深色模式样式：在应用的主题中定义深色模式的样式，包括背景色、文本颜色、图标颜色等。
 4. 动态切换模式：在应用中实现动态切换深色模式和浅色模式的功能，使用户可以根据自己的喜好随时切换应用的界面模式。
@@ -206,7 +204,7 @@ HarmonyOS默认提供了电源模式的特性，主要分为以下三类：
 
 **图5** 深色模式示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/VEl6LhMzRD6kOzk45Iuvwg/zh-cn_image_0000002229451645.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/fdWraq9OSO6sxQh8CUZP7w/zh-cn_image_0000002229451645.png "点击放大")
 
 ### 功耗分析
 
@@ -214,13 +212,13 @@ HarmonyOS默认提供了电源模式的特性，主要分为以下三类：
 
 **图6** 使用深色模式前后耗电量对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/W1P9l0YNSLSk9Ax6d6IXYQ/zh-cn_image_0000002194011372.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/YuxkTjqtQGehQL_tcf0icA/zh-cn_image_0000002615254841.png "点击放大")
 
 根据测试数据分析，得出以下结论：
 
 1. CPU和GPU模块耗电量保持稳定。这表明在当前测试条件下，CPU和GPU的能耗未受到深色模式的影响。
-2. 显示模块的耗电量大幅下降，降幅达到了28.6%。
-3. 综合考虑以上数据，总耗电量有小幅度下降，降幅达到了14.2%。
+2. 显示模块的耗电量大幅下降，降幅达到了21.9%。
+3. 综合考虑以上数据，总耗电量有小幅度下降，降幅达到了12.5%。
 
 这一结果表明深色模式的使用对设备的整体能耗具有积极的影响，可以有效降低设备的能耗水平。深色模式通过减少需要点亮的像素点数量，从而有效降低了显示模块的功耗。
 
@@ -251,34 +249,32 @@ HarmonyOS默认提供了电源模式的特性，主要分为以下三类：
 
 在深色模式下增加主动降低应用亮度，具体代码实现如下：
 
-```
-1. export default class EntryAbility extends UIAbility {
-2. // ...
-3. onWindowStageCreate(windowStage: window.WindowStage): void {
-4. // ...
-5. // Determine whether it is currently in dark mode.
-6. if (this.context?.config?.colorMode == ConfigurationConstant.ColorMode.COLOR_MODE_DARK) {
-7. try {
-8. let windowClass = windowStage.getMainWindowSync();
-9. // Set the brightness of the current application window
-10. windowClass.setWindowBrightness(0.2, (err) => {
-11. if (err.code) {
-12. console.error('Failed to set the brightness. Cause: ' + JSON.stringify(err));
-13. return;
-14. }
-15. console.info('Succeeded in setting the brightness.');
-16. });
-17. } catch (exception) {
-18. console.error('Failed to set the brightness. Cause: ' + JSON.stringify(exception));
-19. }
-20. }
-21. }
+```typescript
+export default class EntryAbility extends UIAbility {
+  // ...
+  onWindowStageCreate(windowStage: window.WindowStage): void {
+    // ...
+    // Determine whether it is currently in dark mode.
+    if (this.context?.config?.colorMode == ConfigurationConstant.ColorMode.COLOR_MODE_DARK) {
+      try {
+        let windowClass = windowStage.getMainWindowSync();
+        // Set the brightness of the current application window
+        windowClass.setWindowBrightness(0.2, (err) => {
+          if (err.code) {
+            console.error('Failed to set the brightness. Cause: ' + JSON.stringify(err));
+            return;
+          }
+          console.info('Succeeded in setting the brightness.');
+        });
+      } catch (exception) {
+        console.error('Failed to set the brightness. Cause: ' + JSON.stringify(exception));
+      }
+    }
+  }
 
-23. // ...
-24. }
+  // ...
+}
 ```
-
-[EntryAbility.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LowPowerOfForegroundTask/entry/src/main/ets/entryability/EntryAbility.ets#L8-L69)
 
 * 停止一些冗余动效
 
@@ -289,111 +285,110 @@ HarmonyOS默认提供了电源模式的特性，主要分为以下三类：
 3. 根据实际场景，停止或者替换冗余的动效。
 
 **图7** 省电和深色模式下停止冗余动效  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/m05HwtXQQ0WoIYnyCfxIlw/zh-cn_image_0000002193851772.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/tHH68w4uR72dVnp7P3X7XQ/zh-cn_image_0000002193851772.gif "点击放大")
 
 在省电模式下，停止点赞和收藏动画，具体代码实现如下：
 
+```typescript
+import { power } from '@kit.BasicServicesKit';
+import { ArticleCardButtonView } from './ArticleCardButtonView';
+import { ActionButtonView } from './ActionButtonView';
+import { LearningResource } from '../model/LearningResource';
+
+@Component
+export struct ArticleCardView {
+  @Prop isLiked: boolean = false;
+  @Prop isCollected: boolean = false;
+  @ObjectLink articleItem: LearningResource;
+  onCollected?: () => void;
+  onLiked?: () => void;
+
+  build() {
+    Row({ space: 16 }) {
+      Column() {
+        Row() {
+          ActionButtonView({
+            imgResource: $r('app.media.ic_eye_open'),
+            count: this.articleItem.viewsCount,
+            textWidth: $r('app.float.view_count_icon_width')
+          })
+          // Determine whether it is a power-saving mode
+          if (power.getPowerMode() == power.DevicePowerMode.MODE_EXTREME_POWER_SAVE) {
+            // Set up likes and favorite pictures
+            ActionButtonView({
+              imgResource: this.isLiked ? $r('app.media.btn_good_on') : $r('app.media.btn_good_normal'),
+              count: this.articleItem.likesCount,
+              textWidth: $r('app.float.like_icon_width')
+            })
+              .onClick(() => {
+                this.onLiked?.();
+              })
+
+            ActionButtonView({
+              imgResource: this.isCollected ? $r('app.media.btn_favorites_on') : $r('app.media.btn_favorites_normal'),
+              count: this.articleItem.collectionCount,
+              textWidth: $r('app.float.star_icon_width')
+            })
+              .onClick(() => {
+                this.onCollected?.()
+              })
+          } else {
+            // Set the lottie animation of likes and collections
+            ArticleCardButtonView({
+              clickAnimationPath: 'common/lottie/liked_lottie.json',
+              cancelAnimationPath: 'common/lottie/cancel_liked_lottie.json',
+              isClicked: this.isLiked,
+              count: this.articleItem.likesCount,
+              articleId: this.articleItem.id,
+              textWidth: $r('app.float.like_icon_width'),
+              type: 'like',
+              onClicked: this.onLiked,
+              normalImage: $r('app.media.btn_like_normal'),
+              onImage: $r('app.media.btn_like_on')
+            })
+
+            ArticleCardButtonView({
+              clickAnimationPath: 'common/lottie/collected_lottie.json',
+              cancelAnimationPath: 'common/lottie/cancel_collect_lottie.json',
+              isClicked: this.isCollected,
+              count: this.articleItem.collectionCount,
+              articleId: this.articleItem.id,
+              textWidth: $r('app.float.star_icon_width'),
+              type: 'collect',
+              onClicked: this.onCollected,
+              normalImage: $r('app.media.btn_collect_normal'),
+              onImage: $r('app.media.btn_collect_on')
+            })
+          }
+        }
+        .width('100%')
+        .justifyContent(FlexAlign.SpaceBetween)
+      }
+      .layoutWeight(1)
+      .height('100%')
+      .justifyContent(FlexAlign.SpaceAround)
+    }
+  }
+}
 ```
-1. import { power } from '@kit.BasicServicesKit';
-2. import { ArticleCardButtonView } from './ArticleCardButtonView';
-3. import { ActionButtonView } from './ActionButtonView';
-4. import { LearningResource } from '../model/LearningResource';
-
-6. @Component
-7. export struct ArticleCardView {
-8. @Prop isLiked: boolean = false;
-9. @Prop isCollected: boolean = false;
-10. @ObjectLink articleItem: LearningResource;
-11. onCollected?: () => void;
-12. onLiked?: () => void;
-
-14. build() {
-15. Row({ space: 16 }) {
-16. Column() {
-17. Row() {
-18. ActionButtonView({
-19. imgResource: $r('app.media.ic_eye_open'),
-20. count: this.articleItem.viewsCount,
-21. textWidth: $r('app.float.view_count_icon_width')
-22. })
-23. // Determine whether it is a power-saving mode
-24. if (power.getPowerMode() == power.DevicePowerMode.MODE_EXTREME_POWER_SAVE) {
-25. // Set up likes and favorite pictures
-26. ActionButtonView({
-27. imgResource: this.isLiked ? $r('app.media.btn_good_on') : $r('app.media.btn_good_normal'),
-28. count: this.articleItem.likesCount,
-29. textWidth: $r('app.float.like_icon_width')
-30. })
-31. .onClick(() => {
-32. this.onLiked?.();
-33. })
-
-35. ActionButtonView({
-36. imgResource: this.isCollected ? $r('app.media.btn_favorites_on') : $r('app.media.btn_favorites_normal'),
-37. count: this.articleItem.collectionCount,
-38. textWidth: $r('app.float.star_icon_width')
-39. })
-40. .onClick(() => {
-41. this.onCollected?.()
-42. })
-43. } else {
-44. // Set the lottie animation of likes and collections
-45. ArticleCardButtonView({
-46. clickAnimationPath: 'common/lottie/liked_lottie.json',
-47. cancelAnimationPath: 'common/lottie/cancel_liked_lottie.json',
-48. isClicked: this.isLiked,
-49. count: this.articleItem.likesCount,
-50. articleId: this.articleItem.id,
-51. textWidth: $r('app.float.like_icon_width'),
-52. type: 'like',
-53. onClicked: this.onLiked,
-54. normalImage: $r('app.media.btn_like_normal'),
-55. onImage: $r('app.media.btn_like_on')
-56. })
-
-58. ArticleCardButtonView({
-59. clickAnimationPath: 'common/lottie/collected_lottie.json',
-60. cancelAnimationPath: 'common/lottie/cancel_collect_lottie.json',
-61. isClicked: this.isCollected,
-62. count: this.articleItem.collectionCount,
-63. articleId: this.articleItem.id,
-64. textWidth: $r('app.float.star_icon_width'),
-65. type: 'collect',
-66. onClicked: this.onCollected,
-67. normalImage: $r('app.media.btn_collect_normal'),
-68. onImage: $r('app.media.btn_collect_on')
-69. })
-70. }
-71. }
-72. .width('100%')
-73. .justifyContent(FlexAlign.SpaceBetween)
-74. }
-75. .layoutWeight(1)
-76. .height('100%')
-77. .justifyContent(FlexAlign.SpaceAround)
-78. }
-79. }
-80. }
-```
-
-[ArticleCardViewNew.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LowPowerOfForegroundTask/entry/src/main/ets/pages/ArticleCardViewNew.ets#L2-L81)
 
 ### 功耗分析
 
 同一界面下，设置省电模式和深色模式，测试主动减少应用亮度前后、去掉冗余动画前后CPU、GPU、显示模块的耗电量和总耗电量。使用DevEco Studio的Profiler工具检测得到数据如下：
 
-**图8** 主动降低应用亮度前后耗电量对比  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/B_nFDzIgQuyvInnms8BgCg/zh-cn_image_0000002229451657.png)
+**图8** 主动降低应用亮度前后耗电量对比
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/PQaLQMZXTSWfBl5TVbnJOQ/zh-cn_image_0000002614971219.png "点击放大")
 
 **图9** 去掉冗余动画前后耗电量对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/D6f3yHmYSs6Vme0-69kCkw/zh-cn_image_0000002229451665.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/FX-IQy1nSpSTtDrlbZuwQw/zh-cn_image_0000002615186285.png "点击放大")
 
 测试数据显示：
 
-1. 主动降低应用亮度的主要效用体现在显示模块，降幅约为23.7%。
+1. 主动降低应用亮度的主要效用体现在显示模块，降幅约为15.4%。
 2. 停止冗余动画的效用体现在GPU模块，降幅约为17.7%。
-3. 主动降低应用亮度后，总耗电量减少约16.4%。停止点赞、收藏动画后，总耗电量减少约5.3%。
+3. 主动降低应用亮度后，总耗电量减少约12.4%。停止点赞、收藏动画后，总耗电量减少约3.3%。
 
 ## 总结
 
@@ -401,10 +396,12 @@ HarmonyOS默认提供了电源模式的特性，主要分为以下三类：
 
 **表1** 显示模块功耗优化
 
-| 性能指标 | 开启省电模式 | 开启深色模式 | 主动降低应用亮度 |
+| 性能指标 | 开启省电模式 | 开启深色模式（开启省电模式的基础上） | 主动降低应用亮度（开启省电模式和深色模式的基础上） |
 | --- | --- | --- | --- |
 | 显示耗电量下降率 | 13.2% | 21.9% | 15.4% |
 | 总耗电量下降率 | 12.0% | 12.5% | 12.4% |
+
+在开启省电模式和深色模式，主动降低应用亮度的基础上，去掉冗余动画的对比指标数据如下所示：
 
 **表2** GPU模块功耗优化
 

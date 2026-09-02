@@ -1,8 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-faqs-1
 title: 判断模型能否在手机上运行？
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > CANN Kit常见问题 > 判断模型能否在手机上运行？
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:24+08:00
+scraped_at: 2026-09-02T15:17:59+08:00
 doc_updated_at: 2026-04-20
 content_hash: sha256:d559cc4fe265fc0eb76800f21c819167d5480916135653cd9cfd1c583cc874df
 ---

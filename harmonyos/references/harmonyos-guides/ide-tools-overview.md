@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-tools-ove
 title: 工具概述
 breadcrumb: 指南 > 开发环境搭建 > 工具概述
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:44:32+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:55d68a53b620d4baad16ee59740d99badf50909f057ca13ff3430251b9589b1d
+scraped_at: 2026-09-02T15:00:18+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:14706d07bc52419364beed398a985b48c83ad51f04529f70bf0f1497eb7fb62a
 ---
 
 ## HarmonyOS应用/元服务开发
@@ -28,7 +28,7 @@ HUAWEI DevEco Studio（获取工具请单击[链接下载](https://developer.hua
 
 开发一个应用/元服务流程如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/M5TBJ0w3Sq2CLGat-Iv_YA/zh-cn_image_0000002561753617.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/4JcZLxCoQLusrEnjUu8-bg/zh-cn_image_0000002731543105.png)
 
 **一、开发准备**
 
@@ -52,7 +52,7 @@ HarmonyOS应用/元服务开发完成后，在发布到应用/元服务市场前
 
 **四、发布应用/元服务**
 
-HarmonyOS应用/元服务开发、测试完成后，需要[将应用/元服务发布至应用市场](ide-publish-app.md#section6406135115814)，以便应用市场对应用/元服务进行分发，普通消费者可以通过应用市场获取到对应的HarmonyOS应用/元服务。需要注意的是，发布到华为应用市场的HarmonyOS应用/元服务，必须使用应用市场颁发的发布证书进行签名。
+HarmonyOS应用/元服务开发、测试完成后，需要[将应用/元服务发布至应用市场](ide-publish-app.md)，以便应用市场对应用/元服务进行分发，普通消费者可以通过应用市场获取到对应的HarmonyOS应用/元服务。需要注意的是，发布到华为应用市场的HarmonyOS应用/元服务，必须使用应用市场颁发的发布证书进行签名。
 
 ## 命令行开发
 
@@ -69,14 +69,14 @@ HarmonyOS应用/元服务开发、测试完成后，需要[将应用/元服务�
 
 1. Partner SDK功能
 2. Template Market模板市场
-3. Sample导入功能
-4. 端云一体化工程创建及开发
-5. 软件包及符号表上传功能
-6. Collect Logs and Diagnostic Data日志回传功能
-7. Operation Analyzer运维服务
-8. AppAnalyzer应用与元服务体检
-9. AI辅助编程工具DevEco CodeGenie
-10. OHPM Index OpenHarmony开源中心仓
+3. 端云一体化工程创建及开发
+4. 软件包及符号表上传功能
+5. Collect Logs and Diagnostic Data日志回传功能
+6. Operation Analyzer运维服务
+7. AppAnalyzer应用与元服务体检
+8. AI辅助编程工具DevEco CodeGenie
+9. OHPM Index OpenHarmony开源中心仓
+10. API变更查询
 
 ## 文档声明
 

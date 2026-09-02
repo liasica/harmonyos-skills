@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (BitVector)
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @arkts.collections (ArkTS容器集) > Class (BitVector)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:56+08:00
-doc_updated_at: 2026-04-10
-content_hash: sha256:1e5fa448341787235797680d9d8efe3aeff8a3c74439cf55c9ea002cda646c5b
+scraped_at: 2026-09-02T15:00:45+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d1124b6fd139871444fb1b4eb2605a9bd063294871a3aaabf2817792ea20d812
 ---
 
 BitVector是一种线性数据结构，底层基于数组实现。BitVector中存储元素为bit值，能存储和处理bit级别的操作。
 
-说明
+**说明** 
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -20,15 +20,11 @@ BitVector是一种线性数据结构，底层基于数组实现。BitVector中�
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { collections } from '@kit.ArkTS';
+```ts
+import { collections } from '@kit.ArkTS';
 ```
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -39,8 +35,6 @@ PhonePC/2in1TabletTVWearable
 | length | number | 是 | 否 | BitVector的元素个数。 |
 
 ## constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(length: number)
 
@@ -58,15 +52,13 @@ BitVector的构造函数。
 
 **示例：**
 
-```
-1. let bitVector: collections.BitVector = new collections.BitVector(0); // 初始化BitVector的长度为0
+```ts
+let bitVector: collections.BitVector = new collections.BitVector(0); // 初始化BitVector的长度为0
 ```
 
 ## push
 
-PhonePC/2in1TabletTVWearable
-
-push(element:number): boolean
+push(element: number): boolean
 
 在BitVector尾部插入元素。
 
@@ -88,28 +80,25 @@ push(element:number): boolean
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 | 10200011 | The push method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let bitVector: collections.BitVector = new collections.BitVector(0);
-2. bitVector.push(0);
-3. bitVector.push(1);
-4. bitVector.push(0);
-5. bitVector.push(1);
-6. bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
+```ts
+let bitVector: collections.BitVector = new collections.BitVector(0);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
 ```
 
 ## pop
-
-PhonePC/2in1TabletTVWearable
 
 pop(): number
 
@@ -136,20 +125,18 @@ pop(): number
 
 **示例：**
 
-```
-1. let bitVector: collections.BitVector = new collections.BitVector(0);
-2. bitVector.push(0);
-3. bitVector.push(1);
-4. bitVector.push(0);
-5. bitVector.push(1);
-6. bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
-7. let res = bitVector.pop(); // bitVector: [0, 1, 0, 1]
-8. console.info("bitVector pop:", res); // 0
+```ts
+let bitVector: collections.BitVector = new collections.BitVector(0);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
+let res = bitVector.pop(); // bitVector: [0, 1, 0, 1]
+console.info(`bitVector pop: ${res}`); // 0
 ```
 
 ## has
-
-PhonePC/2in1TabletTVWearable
 
 has(element: number, fromIndex: number, toIndex: number): boolean
 
@@ -165,7 +152,7 @@ has(element: number, fromIndex: number, toIndex: number): boolean
 | --- | --- | --- | --- |
 | element | number | 是 | 待判断的bit值，0表示0，其余值表示1。 |
 | fromIndex | number | 是 | 范围起始索引，包含本索引值。fromIndex < 0或者fromIndex >= toIndex时，则会抛出错误。 |
-| toIndex | number | 是 | 范围终止索引，包含本索引值。toIndex < 0或者toIndex > length时，则会抛出错误。 |
+| toIndex | number | 是 | 范围终止索引，不包含本索引值。toIndex < 0或者toIndex >= length时，则会抛出错误。 |
 
 **返回值：**
 
@@ -185,20 +172,18 @@ has(element: number, fromIndex: number, toIndex: number): boolean
 
 **示例：**
 
-```
-1. let bitVector: collections.BitVector = new collections.BitVector(0);
-2. bitVector.push(0);
-3. bitVector.push(1);
-4. bitVector.push(0);
-5. bitVector.push(1);
-6. bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
-7. let res0: boolean = bitVector.has(0, 1, 4);
-8. console.info("bitVector has 0:", res0); // true
+```ts
+let bitVector: collections.BitVector = new collections.BitVector(0);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
+let res0: boolean = bitVector.has(0, 1, 4);
+console.info(`bitVector has 0: ${res0}`); // true
 ```
 
 ## setBitsByRange
-
-PhonePC/2in1TabletTVWearable
 
 setBitsByRange(element: number, fromIndex: number, toIndex: number): void
 
@@ -212,36 +197,33 @@ setBitsByRange(element: number, fromIndex: number, toIndex: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| element | number | 是 | 待设置的bit值，0表示0，其余表示1。 |
+| element | number | 是 | 待设置的bit值，0表示0，其余值表示1。 |
 | fromIndex | number | 是 | 范围起始索引，包含本索引值。fromIndex < 0或者fromIndex >= toIndex时，则会抛出错误。 |
-| toIndex | number | 是 | 范围终止索引，不包含本索引值。toIndex < 0或者toIndex > length时，则会抛出错误。 |
+| toIndex | number | 是 | 范围终止索引，不包含本索引值。toIndex < 0或者toIndex >= length时，则会抛出错误。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 | 10200001 | The value of fromIndex or toIndex is out of range. |
 | 10200011 | The setBitsByRange method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let bitVector: collections.BitVector = new collections.BitVector(0);
-2. bitVector.push(0);
-3. bitVector.push(1);
-4. bitVector.push(0);
-5. bitVector.push(1);
-6. bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
-7. bitVector.setBitsByRange(1, 1, 3); // bitVector: [0, 1, 1, 1, 0]
+```ts
+let bitVector: collections.BitVector = new collections.BitVector(0);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
+bitVector.setBitsByRange(1, 1, 3); // bitVector: [0, 1, 1, 1, 0]
 ```
 
 ## setAllBits
-
-PhonePC/2in1TabletTVWearable
 
 setAllBits(element: number): void
 
@@ -259,29 +241,26 @@ setAllBits(element: number): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 | 10200011 | The setAllBits method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let bitVector: collections.BitVector = new collections.BitVector(0);
-2. bitVector.push(0);
-3. bitVector.push(1);
-4. bitVector.push(0);
-5. bitVector.push(1);
-6. bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
-7. bitVector.setAllBits(1); // bitVector: [1, 1, 1, 1, 1]
+```ts
+let bitVector: collections.BitVector = new collections.BitVector(0);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
+bitVector.setAllBits(1); // bitVector: [1, 1, 1, 1, 1]
 ```
 
 ## getBitsByRange
-
-PhonePC/2in1TabletTVWearable
 
 getBitsByRange(fromIndex: number, toIndex: number): BitVector
 
@@ -296,7 +275,7 @@ getBitsByRange(fromIndex: number, toIndex: number): BitVector
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fromIndex | number | 是 | 范围起始索引，包含本索引值。fromIndex < 0或者fromIndex >= toIndex时，则会抛出错误。 |
-| toIndex | number | 是 | 范围终止索引，不包含本索引值。toIndex < 0或者toIndex > length时，则会抛出错误。 |
+| toIndex | number | 是 | 范围终止索引，不包含本索引值。toIndex < 0或者toIndex >= length时，则会抛出错误。 |
 
 **返回值：**
 
@@ -306,31 +285,28 @@ getBitsByRange(fromIndex: number, toIndex: number): BitVector
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 | 10200001 | The value of fromIndex or toIndex is out of range. |
 | 10200011 | The getBitsByRange method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let bitVector: collections.BitVector = new collections.BitVector(0);
-2. bitVector.push(0);
-3. bitVector.push(1);
-4. bitVector.push(0);
-5. bitVector.push(1);
-6. bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
-7. let bitVector2 = bitVector.getBitsByRange(1, 3); // bitVector2: [1, 0]
-8. console.info("bitVector2 length:", bitVector2.length); // 2
+```ts
+let bitVector: collections.BitVector = new collections.BitVector(0);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
+let bitVector2 = bitVector.getBitsByRange(1, 3); // bitVector2: [1, 0]
+console.info(`bitVector2 length: ${bitVector2.length}`); // 2
 ```
 
 ## resize
-
-PhonePC/2in1TabletTVWearable
 
 resize(size: number): void
 
@@ -352,36 +328,33 @@ resize(size: number): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 | 10200011 | The resize method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let bitVector: collections.BitVector = new collections.BitVector(0);
-2. bitVector.push(0);
-3. bitVector.push(1);
-4. bitVector.push(0);
-5. bitVector.push(1);
-6. bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
-7. bitVector.resize(10); // bitVector: [0, 1, 0, 1, 0, 0, 0, 0, 0, 0]
-8. console.info("bitVector get bit vector's length:", bitVector.length); // 10
-9. bitVector.resize(3); // bitVector: [0, 1, 0]
-10. console.info("bitVector get bit vector's length:", bitVector.length); // 3
+```ts
+let bitVector: collections.BitVector = new collections.BitVector(0);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
+bitVector.resize(10); // bitVector: [0, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+console.info(`bitVector get bit vector's length: ${bitVector.length}`); // 10
+bitVector.resize(3); // bitVector: [0, 1, 0]
+console.info(`bitVector get bit vector's length: ${bitVector.length}`); // 3
 ```
 
 ## getBitCountByRange
 
-PhonePC/2in1TabletTVWearable
-
 getBitCountByRange(element: number, fromIndex: number, toIndex: number): number
 
-统计指定范围内获取指定bit值的数量。
+统计指定范围内指定bit值的数量。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -393,7 +366,7 @@ getBitCountByRange(element: number, fromIndex: number, toIndex: number): number
 | --- | --- | --- | --- |
 | element | number | 是 | 待统计的bit值，0表示0，其余值表示1。 |
 | fromIndex | number | 是 | 范围起始索引，包含本索引值。fromIndex < 0或者fromIndex >= toIndex时，则会抛出错误。 |
-| toIndex | number | 是 | 范围终止索引，不包含本索引值。toIndex < 0或者toIndex > length时，则会抛出错误。 |
+| toIndex | number | 是 | 范围终止索引，不包含本索引值。toIndex < 0或者toIndex >= length时，则会抛出错误。 |
 
 **返回值：**
 
@@ -403,31 +376,28 @@ getBitCountByRange(element: number, fromIndex: number, toIndex: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 | 10200001 | The value of fromIndex or toIndex is out of range. |
 | 10200011 | The getBitCountByRange method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let bitVector: collections.BitVector = new collections.BitVector(0);
-2. bitVector.push(0);
-3. bitVector.push(1);
-4. bitVector.push(0);
-5. bitVector.push(1);
-6. bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
-7. let res: number = bitVector.getBitCountByRange(1, 1, 4);
-8. console.info("bitVector getBitCountByRange:", res); // 2
+```ts
+let bitVector: collections.BitVector = new collections.BitVector(0);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
+let res: number = bitVector.getBitCountByRange(1, 1, 4);
+console.info(`bitVector getBitCountByRange: ${res}`); // 2
 ```
 
 ## getIndexOf
-
-PhonePC/2in1TabletTVWearable
 
 getIndexOf(element: number, fromIndex: number, toIndex: number): number
 
@@ -441,47 +411,44 @@ getIndexOf(element: number, fromIndex: number, toIndex: number): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| element | number | 是 | 待统计的bit值，0表示0，其余值表示1。 |
+| element | number | 是 | 待查找的bit值，0表示0，其余值表示1。 |
 | fromIndex | number | 是 | 范围起始索引，包含本索引值。fromIndex < 0或者fromIndex >= toIndex时，则会抛出错误。 |
-| toIndex | number | 是 | 范围终止索引，不包含本索引值。toIndex < 0或者toIndex > length时，则会抛出错误。 |
+| toIndex | number | 是 | 范围终止索引，不包含本索引值。toIndex < 0或者toIndex >= length时，则会抛出错误。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 返回指定bit值首次出现时的下标值，查找失败返回-1。 |
+| number | 返回指定bit值首次出现时的索引值，查找失败返回-1。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 | 10200001 | The value of fromIndex or toIndex is out of range. |
 | 10200011 | The getIndexOf method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let bitVector: collections.BitVector = new collections.BitVector(0);
-2. bitVector.push(0);
-3. bitVector.push(1);
-4. bitVector.push(0);
-5. bitVector.push(1);
-6. bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
-7. let res: number = bitVector.getIndexOf(0, 1, 4);
-8. console.info("bitVector getIndexOf:", res); // 2
+```ts
+let bitVector: collections.BitVector = new collections.BitVector(0);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
+let res: number = bitVector.getIndexOf(0, 1, 4);
+console.info(`bitVector getIndexOf: ${res}`); // 2
 ```
 
 ## getLastIndexOf
 
-PhonePC/2in1TabletTVWearable
-
 getLastIndexOf(element: number, fromIndex: number, toIndex: number): number
 
-返回指定bit值最后一次出现时的下标值，查找失败返回-1。
+返回指定bit值最后一次出现时的索引值，查找失败返回-1。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -491,43 +458,40 @@ getLastIndexOf(element: number, fromIndex: number, toIndex: number): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| element | number | 是 | 待统计的bit值，0表示0，其余值表示1。 |
+| element | number | 是 | 待查找的bit值，0表示0，其余值表示1。 |
 | fromIndex | number | 是 | 范围起始索引，包含本索引值。fromIndex < 0或者fromIndex >= toIndex时，则会抛出错误。 |
-| toIndex | number | 是 | 范围终止索引，不包含本索引值。toIndex < 0或者toIndex > length时，则会抛出错误。 |
+| toIndex | number | 是 | 范围终止索引，不包含本索引值。toIndex < 0或者toIndex >= length时，则会抛出错误。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 返回指定bit值最后一次出现时的下标值，查找失败返回-1。 |
+| number | 返回指定bit值最后一次出现时的索引值，查找失败返回-1。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 | 10200001 | The value of fromIndex or toIndex is out of range. |
 | 10200011 | The getLastIndexOf method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let bitVector: collections.BitVector = new collections.BitVector(0);
-2. bitVector.push(0);
-3. bitVector.push(1);
-4. bitVector.push(0);
-5. bitVector.push(1);
-6. bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
-7. let res: number = bitVector.getLastIndexOf(0, 1, 4);
-8. console.info("bitVector getLastIndexOf:", res); // 2
+```ts
+let bitVector: collections.BitVector = new collections.BitVector(0);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
+let res: number = bitVector.getLastIndexOf(0, 1, 4);
+console.info(`bitVector getLastIndexOf: ${res}`); // 2
 ```
 
 ## flipBitByIndex
-
-PhonePC/2in1TabletTVWearable
 
 flipBitByIndex(index: number): void
 
@@ -545,30 +509,27 @@ flipBitByIndex(index: number): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 | 10200001 | The value of index is out of range. |
 | 10200011 | The flipBitByIndex method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let bitVector: collections.BitVector = new collections.BitVector(0);
-2. bitVector.push(0);
-3. bitVector.push(1);
-4. bitVector.push(0);
-5. bitVector.push(1);
-6. bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
-7. bitVector.flipBitByIndex(3); // bitVector: [0, 1, 0, 0, 0]
+```ts
+let bitVector: collections.BitVector = new collections.BitVector(0);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
+bitVector.flipBitByIndex(3); // bitVector: [0, 1, 0, 0, 0]
 ```
 
 ## flipBitsByRange
-
-PhonePC/2in1TabletTVWearable
 
 flipBitsByRange(fromIndex: number, toIndex: number): void
 
@@ -583,34 +544,31 @@ flipBitsByRange(fromIndex: number, toIndex: number): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fromIndex | number | 是 | 范围起始索引，包含本索引值。fromIndex < 0或者fromIndex >= toIndex时，则会抛出错误。 |
-| toIndex | number | 是 | 范围终止索引，不包含本索引值。toIndex < 0或者toIndex > length时，则会抛出错误。 |
+| toIndex | number | 是 | 范围终止索引，不包含本索引值。toIndex < 0或者toIndex >= length时，则会抛出错误。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 | 10200001 | The value of fromIndex or toIndex is out of range. |
 | 10200011 | The flipBitsByRange method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let bitVector: collections.BitVector = new collections.BitVector(0);
-2. bitVector.push(0);
-3. bitVector.push(1);
-4. bitVector.push(0);
-5. bitVector.push(1);
-6. bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
-7. bitVector.flipBitsByRange(1, 4); // bitVector: [0, 0, 1, 0, 0]
+```ts
+let bitVector: collections.BitVector = new collections.BitVector(0);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
+bitVector.flipBitsByRange(1, 4); // bitVector: [0, 0, 1, 0, 0]
 ```
 
 ## values
-
-PhonePC/2in1TabletTVWearable
 
 values(): IterableIterator<number>
 
@@ -637,34 +595,32 @@ values(): IterableIterator<number>
 
 **示例：**
 
-```
-1. let bitVector: collections.BitVector = new collections.BitVector(0);
-2. bitVector.push(0);
-3. bitVector.push(1);
-4. bitVector.push(0);
-5. bitVector.push(1);
-6. bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
-7. let iter: IterableIterator<number> = bitVector.values();
-8. let temp: IteratorResult<number> = iter.next();
-9. while (!temp.done) {
-10. console.info(JSON.stringify(temp.value));
-11. temp = iter.next();
-12. } // 依次输出 0,1,0,1,0
+```ts
+let bitVector: collections.BitVector = new collections.BitVector(0);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
+let iter: IterableIterator<number> = bitVector.values();
+let temp: IteratorResult<number> = iter.next();
+while (!temp.done) {
+  console.info(JSON.stringify(temp.value));
+  temp = iter.next();
+} // 依次输出 0,1,0,1,0
 ```
 
 ## [Symbol.iterator]
-
-PhonePC/2in1TabletTVWearable
 
 [Symbol.iterator](): IterableIterator<number>
 
 返回一个迭代器，迭代器的每一项都是一个 JavaScript 对象，并返回该对象。
 
-说明
+**说明** 
 
 本接口不支持在.ets文件中使用。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API**： 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -684,28 +640,26 @@ PhonePC/2in1TabletTVWearable
 
 **示例：**
 
-```
-1. let bitVector: collections.BitVector = new collections.BitVector(0);
-2. bitVector.push(0);
-3. bitVector.push(1);
-4. bitVector.push(0);
-5. bitVector.push(1);
-6. bitVector.push(0);
+```ts
+let bitVector: collections.BitVector = new collections.BitVector(0);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0);
 
-8. for (let item of bitVector) {
-9. console.info("value: " + item);
-10. }
+for (let item of bitVector) {
+  console.info(`value: ${item}`);
+}
 ```
 
 ## [index: number]
-
-PhonePC/2in1TabletTVWearable
 
 [index: number]: number
 
 返回BitVector指定索引位置的元素。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API**： 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -713,7 +667,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| index | number | 是 | 所需代码单元的从零开始的索引。 |
+| index | number | 是 | 所需代码单元的从零开始的索引。当index < 0或者index >= length，则会抛出错误 |
 
 **返回值：**
 
@@ -723,12 +677,12 @@ PhonePC/2in1TabletTVWearable
 
 **示例：**
 
-```
-1. let bitVector: collections.BitVector = new collections.BitVector(0);
-2. bitVector.push(0);
-3. bitVector.push(1);
-4. bitVector.push(0);
-5. bitVector.push(1);
-6. bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
-7. console.info("BitVector Element Index at 1: " + bitVector[1]);
+```ts
+let bitVector: collections.BitVector = new collections.BitVector(0);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0);
+bitVector.push(1);
+bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
+console.info(`BitVector Element Index at 1: ${bitVector[1]}`); // bitVector 1
 ```

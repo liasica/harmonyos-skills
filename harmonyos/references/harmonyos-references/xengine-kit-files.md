@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-k
 title: 头文件
 breadcrumb: API参考 > 图形 > XEngine Kit（GPU加速引擎服务） > C API > 头文件和结构体 > 头文件
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:54+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:856676b1d2e2944b8f9d6e399b0bc7c39b69e707946ce5490a4b3e9257986771
+scraped_at: 2026-09-02T14:53:12+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:16a9ba41be3ff584c4ec483f49f2df3b2fc2d95df01fd565f0b3f08774fda3bf
 ---
 
 * **[xeg\_extension\_defs.h](xengine-kit-xeg-extension-defs-8h.md)**
@@ -23,3 +23,5 @@ content_hash: sha256:856676b1d2e2944b8f9d6e399b0bc7c39b69e707946ce5490a4b3e92579
 * **[xeg\_vulkan\_rtgi.h](xengine-kit-xeg-vulkan-rtgi-8h.md)**
 * **[xeg\_vulkan\_spatial\_upscale.h](xengine-kit-xeg-vulkan-spatial-upscale-8h.md)**
 * **[xeg\_vulkan\_temporal\_upscale.h](xengine-kit-xeg-vulkan-temporal-upscale-8h.md)**
+* **[xeg\_vulkan\_neural\_upscale.h](xengine-kit-xeg-vulkan-neural-upscale-8h.md)**
+* **[xeg\_control\_display\_separation.h](xengine-kit-xeg-control-display-separation.md)**

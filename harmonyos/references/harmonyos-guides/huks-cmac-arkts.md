@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-cmac-ark
 title: CMAC(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥使用 > CMAC > CMAC(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:23+08:00
+scraped_at: 2026-09-02T14:59:32+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ea9ce5acd49fcbf296b7b5aad036dd2ce03af27800fb4170137f16925284865d
+content_hash: sha256:1dfaca06ed9db735c1c8d866147ff14a51d8b1b8905ca64061a2680b7b2c11ff
 ---
 
 CMAC是基于对称密钥分组加密算法的消息认证码（Cipher-based Message Authentication Code），目前支持3DES加密算法的消息认证方法。
 
-说明
+**说明** 
 
 仅支持在智能穿戴设备（Wearable）使用。
 
@@ -29,124 +29,124 @@ CMAC是基于对称密钥分组加密算法的消息认证码（Cipher-based Mes
 2. 调用[initSession](../harmonyos-references/js-apis-huks.md#huksinitsession9)初始化密钥会话，并获取会话的句柄handle。
 3. 调用[finishSession](../harmonyos-references/js-apis-huks.md#huksfinishsession9)结束密钥会话，获取MAC数据。
 
-```
-1. /*
-2. * 以下以CMAC密钥的Promise操作使用为例。
-3. */
-4. import { huks } from '@kit.UniversalKeystoreKit';
-5. import { BusinessError } from "@kit.BasicServicesKit";
-6. import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+```ts
+/*
+ * 以下以CMAC密钥的Promise操作使用为例。
+ */
+import { huks } from '@kit.UniversalKeystoreKit';
+import { BusinessError } from "@kit.BasicServicesKit";
+import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
-8. let keyAlias = 'test_cmac';
-9. let handle: number;
-10. let plainText = '123456';
-11. let IV = cryptoFramework.createRandom().generateRandomSync(8).data;
-12. let macData: Uint8Array;
+let keyAlias = 'test_cmac';
+let handle: number;
+let plainText = '123456';
+let IV = cryptoFramework.createRandom().generateRandomSync(8).data;
+let macData: Uint8Array;
 
-14. function StringToUint8Array(str: String) {
-15. let arr: number[] = new Array();
-16. for (let i = 0, j = str.length; i < j; ++i) {
-17. arr.push(str.charCodeAt(i));
-18. }
-19. return new Uint8Array(arr);
-20. }
+function StringToUint8Array(str: String) {
+  let arr: number[] = new Array();
+  for (let i = 0, j = str.length; i < j; ++i) {
+    arr.push(str.charCodeAt(i));
+  }
+  return new Uint8Array(arr);
+}
 
-22. function Uint8ArrayToString(fileData: Uint8Array) {
-23. let dataString = '';
-24. for (let i = 0; i < fileData.length; i++) {
-25. dataString += String.fromCharCode(fileData[i]);
-26. }
-27. return dataString;
-28. }
+function Uint8ArrayToString(fileData: Uint8Array) {
+  let dataString = '';
+  for (let i = 0; i < fileData.length; i++) {
+    dataString += String.fromCharCode(fileData[i]);
+  }
+  return dataString;
+}
 
-30. function GenerateKeyProperties() {
-31. const properties: Array<huks.HuksParam> = [{
-32. tag: huks.HuksTag.HUKS_TAG_ALGORITHM,
-33. value: huks.HuksKeyAlg.HUKS_ALG_3DES
-34. }, {
-35. tag: huks.HuksTag.HUKS_TAG_KEY_SIZE,
-36. value: huks.HuksKeySize.HUKS_3DES_KEY_SIZE_128
-37. }, {
-38. tag: huks.HuksTag.HUKS_TAG_PURPOSE,
-39. value: huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_MAC
-40. }];
-41. return properties;
-42. }
+function GenerateKeyProperties() {
+  const properties: Array<huks.HuksParam> = [{
+    tag: huks.HuksTag.HUKS_TAG_ALGORITHM,
+    value: huks.HuksKeyAlg.HUKS_ALG_3DES
+  }, {
+    tag: huks.HuksTag.HUKS_TAG_KEY_SIZE,
+    value: huks.HuksKeySize.HUKS_3DES_KEY_SIZE_128
+  }, {
+    tag: huks.HuksTag.HUKS_TAG_PURPOSE,
+    value: huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_MAC
+  }];
+  return properties;
+}
 
-44. function GetCmacProperties() {
-45. const properties: Array<huks.HuksParam> = [{
-46. tag: huks.HuksTag.HUKS_TAG_ALGORITHM,
-47. value: huks.HuksKeyAlg.HUKS_ALG_CMAC
-48. }, {
-49. tag: huks.HuksTag.HUKS_TAG_KEY_SIZE,
-50. value: huks.HuksKeySize.HUKS_3DES_KEY_SIZE_128
-51. }, {
-52. tag: huks.HuksTag.HUKS_TAG_PURPOSE,
-53. value: huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_MAC
-54. }, {
-55. tag: huks.HuksTag.HUKS_TAG_BLOCK_MODE,
-56. value: huks.HuksCipherMode.HUKS_MODE_CBC
-57. }, {
-58. tag: huks.HuksTag.HUKS_TAG_PADDING,
-59. value: huks.HuksKeyPadding.HUKS_PADDING_ISO_IEC_9797_1
-60. }, {
-61. tag: huks.HuksTag.HUKS_TAG_IV,
-62. value: IV
-63. }];
-64. return properties;
-65. }
+function GetCmacProperties() {
+  const properties: Array<huks.HuksParam> = [{
+    tag: huks.HuksTag.HUKS_TAG_ALGORITHM,
+    value: huks.HuksKeyAlg.HUKS_ALG_CMAC
+  }, {
+    tag: huks.HuksTag.HUKS_TAG_KEY_SIZE,
+    value: huks.HuksKeySize.HUKS_3DES_KEY_SIZE_128
+  }, {
+    tag: huks.HuksTag.HUKS_TAG_PURPOSE,
+    value: huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_MAC
+  }, {
+    tag: huks.HuksTag.HUKS_TAG_BLOCK_MODE,
+    value: huks.HuksCipherMode.HUKS_MODE_CBC
+  }, {
+    tag: huks.HuksTag.HUKS_TAG_PADDING,
+    value: huks.HuksKeyPadding.HUKS_PADDING_ISO_IEC_9797_1
+  }, {
+    tag: huks.HuksTag.HUKS_TAG_IV,
+    value: IV
+  }];
+  return properties;
+}
 
-67. async function GenerateCmacKey() {
-68. /*
-69. * 1.1 获取生成密钥算法参数配置
-70. */
-71. let genProperties = GenerateKeyProperties();
-72. let options: huks.HuksOptions = {
-73. properties: genProperties
-74. }
-75. /*
-76. * 1.2 调用generateKeyItem
-77. */
-78. await huks.generateKeyItem(keyAlias, options)
-79. .then(() => {
-80. console.info(`promise: generate cmac key success`);
-81. }).catch((error: BusinessError) => {
-82. console.error(`promise: generate cmac key failed, errCode : ${error.code}, errMsg : ${error.message}`);
-83. })
-84. }
+async function GenerateCmacKey() {
+  /*
+   * 1.1 获取生成密钥算法参数配置
+   */
+  let genProperties = GenerateKeyProperties();
+  let options: huks.HuksOptions = {
+    properties: genProperties
+  }
+  /*
+   * 1.2 调用generateKeyItem
+   */
+  await huks.generateKeyItem(keyAlias, options)
+    .then(() => {
+      console.info(`promise: generate cmac key success`);
+    }).catch((error: BusinessError) => {
+      console.error(`promise: generate cmac key failed, errCode : ${error.code}, errMsg : ${error.message}`);
+    })
+}
 
-86. async function CmacData() {
-87. /*
-88. * 2.1 获取CMAC算法参数配置
-89. */
-90. let cmacProperties = GetCmacProperties();
-91. let options: huks.HuksOptions = {
-92. properties: cmacProperties,
-93. inData: StringToUint8Array(plainText)
-94. }
-95. /*
-96. * 2.2 调用initSession获取handle
-97. */
-98. await huks.initSession(keyAlias, options)
-99. .then((data) => {
-100. handle = data.handle;
-101. }).catch((error: BusinessError) => {
-102. console.error(`promise: init EncryptData failed, errCode : ${error.code}, errMsg : ${error.message}`);
-103. })
-104. /*
-105. * 2.3 调用finishSession获取CMAC的结果
-106. */
-107. await huks.finishSession(handle, options)
-108. .then((data) => {
-109. macData = data.outData as Uint8Array;
-110. console.info(`promise: cmac data success, data is ${Uint8ArrayToString(macData)}`);
-111. }).catch((error: BusinessError) => {
-112. console.error(`promise: cmac data failed, errCode : ${error.code}, errMsg : ${error.message}`);
-113. })
-114. }
+async function CmacData() {
+  /*
+   * 2.1 获取CMAC算法参数配置
+   */
+  let cmacProperties = GetCmacProperties();
+  let options: huks.HuksOptions = {
+    properties: cmacProperties,
+    inData: StringToUint8Array(plainText)
+  }
+  /*
+   * 2.2 调用initSession获取handle
+   */
+  await huks.initSession(keyAlias, options)
+    .then((data) => {
+      handle = data.handle;
+    }).catch((error: BusinessError) => {
+      console.error(`promise: init EncryptData failed, errCode : ${error.code}, errMsg : ${error.message}`);
+    })
+  /*
+   * 2.3 调用finishSession获取CMAC的结果
+   */
+  await huks.finishSession(handle, options)
+    .then((data) => {
+      macData = data.outData as Uint8Array;
+      console.info(`promise: cmac data success, data is ${Uint8ArrayToString(macData)}`);
+    }).catch((error: BusinessError) => {
+      console.error(`promise: cmac data failed, errCode : ${error.code}, errMsg : ${error.message}`);
+    })
+}
 
-116. async function testCMAC() {
-117. await GenerateCmacKey();
-118. await CmacData();
-119. }
+async function testCMAC() {
+  await GenerateCmacKey();
+  await CmacData();
+}
 ```

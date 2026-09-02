@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: SecurityAntivirus_Antivirus
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > C API > 结构体 > SecurityAntivirus_Antivirus
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:19+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:242b56042c105e386f0d9d891a7b9fac8c9ab5beda21c8ce8c34c3d797a1c10f
+scraped_at: 2026-09-02T15:01:43+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:28fcf32dc482106cc74f92806364b6937133eff0abfd638830fdc347cf314c70
 ---
 
 ## 概述
-
-PC/2in1
 
 定义防病毒应用信息。
 
@@ -22,11 +20,7 @@ PC/2in1
 
 ## 汇总
 
-PC/2in1
-
 ### 成员变量
-
-PC/2in1
 
 | 名称 | 描述 |
 | --- | --- |
@@ -35,14 +29,10 @@ PC/2in1
 
 ## 结构体成员变量说明
 
-PC/2in1
-
 ### bundleName
 
-PC/2in1
-
-```
-1. const char *SecurityAntivirus_Antivirus::bundleName
+```c
+const char *SecurityAntivirus_Antivirus::bundleName
 ```
 
 **描述**
@@ -51,21 +41,19 @@ PC/2in1
 
 ### metadata
 
-PC/2in1
-
-```
-1. const char *SecurityAntivirus_Antivirus::metadata
+```c
+const char *SecurityAntivirus_Antivirus::metadata
 ```
 
 **描述**
 
 防病毒应用信息（包含当前版本号、上次更新时间、病毒防护状态、用户ID的json字符串），其中版本号字段要求请参见[链接](../harmonyos-guides/app-configuration-file.md)，上次更新时间为10位秒级或13位毫秒级时间戳，病毒防护状态仅限on或off，user\_id为用户ID。示例格式如下：
 
-```
-1. {
-2. "version": "1.0.0.0",
-3. "last_update_time": "1751877696",
-4. "protection_status": "on/off",
-5. "user_id": "100"
-6. }
+```json
+{
+"version": "1.0.0.0",
+"last_update_time": "1751877696",
+"protection_status": "on/off",
+"user_id": "100"
+}
 ```

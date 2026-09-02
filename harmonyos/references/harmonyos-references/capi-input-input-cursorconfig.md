@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-inpu
 title: Input_CursorConfig
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > C API > 结构体 > Input_CursorConfig
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:21+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:0e16e7c969ec2cbb8846982cad721852cb36fc51470b09de08cef640e06569a9
+scraped_at: 2026-09-02T14:52:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:404b8e793af9827e478cf5c0b8c3d5163dd3960ef606018d38def98d7090a475
 ---
 
-```
-1. typedef struct Input_CursorConfig Input_CursorConfig
+```c
+typedef struct Input_CursorConfig Input_CursorConfig
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-自定义鼠标光标配置。
+自定义鼠标光标配置，用于定义和管理应用程序中鼠标光标的显示样式和交互行为。支持设置不同类型的光标样式（如默认、手形、文本输入等），为用户提供更直观的操作反馈，提升用户体验。
 
 **起始版本：** 22
 

@@ -3,25 +3,23 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Navigation
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 导航与切换 > Navigation
 category: harmonyos-references
-scraped_at: 2026-04-29T13:51:57+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:553a813009287789d79154af96d7cf5b5383739ced7f6514472054482537cd0c
+scraped_at: 2026-09-02T15:01:00+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:735c6127a46a4512fbf4ec346cd5488754596a851c8e7d1e277b111cf5560222
 ---
 
 Navigation组件是路由导航的根视图容器，一般作为Page页面的根容器使用，其内部默认包含了标题栏、内容区和工具栏，其中内容区默认首页显示导航内容（Navigation的子组件）或非首页显示（[NavDestination](ts-basic-components-navdestination.md)的子组件），首页和非首页通过路由进行切换。
 
-说明
+**说明** 
 
 * 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 该组件从API version 11开始默认支持安全区避让特性(默认值为：expandSafeArea([SafeAreaType.SYSTEM, SafeAreaType.KEYBOARD, SafeAreaType.CUTOUT], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM]))，开发者可以重写该属性覆盖默认行为，API version 11之前的版本需配合[expandSafeArea](ts-universal-attributes-expand-safe-area.md#expandsafearea)属性实现安全区避让。
-* [NavBar](ts-basic-components-navigation.md#navbar12)嵌套使用Navigation时，内层NavDestination的生命周期不和外层NavDestination以及[全模态](ts-universal-attributes-modal-transition.md)的生命周期进行联动。
-* Navigation未设置主副标题（[title](ts-basic-components-navigation.md#title)或[subTitle](ts-basic-components-navigation.md#subtitledeprecated)）且[hideBackButton](ts-basic-components-navigation.md#hidebackbutton)属性设置为true时，不显示标题栏。
+* [NavBar](ts-basic-components-navigation.md#navbar12)嵌套使用Navigation时，内层NavDestination的生命周期不和外层NavDestination以及全模态[bindContentCover](ts-universal-attributes-modal-transition.md#bindcontentcover)的生命周期进行联动。
+* Navigation未设置标题（[title](ts-basic-components-navigation.md#title)）且[hideBackButton](ts-basic-components-navigation.md#hidebackbutton)属性设置为true时，不显示标题栏。
 * Navigation的子页面切换时，新页面会主动请求焦点。
 * 不建议在[aboutToAppear](ts-custom-component-lifecycle.md#abouttoappear)中使用栈操作，此时的页面还未构建完成，会导致白屏或跳转失败等问题。
 
 ## 子组件
-
-PhonePC/2in1TabletTVWearable
 
 可以包含子组件。
 
@@ -31,11 +29,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 接口
 
-PhonePC/2in1TabletTVWearable
-
 ### Navigation
-
-PhonePC/2in1TabletTVWearable
 
 Navigation()
 
@@ -47,13 +41,13 @@ Navigation()
 
 ### Navigation10+
 
-PhonePC/2in1TabletTVWearable
-
 Navigation(pathInfos: NavPathStack)
 
 绑定导航控制器到Navigation组件，适用于使用[NavPathStack](ts-basic-components-navigation.md#navpathstack10)配合[navDestination](ts-basic-components-navigation.md#navdestination10)属性进行页面路由。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -65,13 +59,13 @@ Navigation(pathInfos: NavPathStack)
 
 ### Navigation20+
 
-PhonePC/2in1TabletTVWearable
-
 Navigation(pathInfos: NavPathStack, homeDestination: HomePathInfo)
 
 绑定路由栈到Navigation组件，并且指定一个NavDestination作为Navigation的导航页（主页），适用于使用[NavPathStack](ts-basic-components-navigation.md#navpathstack10)配合[navDestination](ts-basic-components-navigation.md#navdestination10)属性或者系统路由表进行页面路由。使用示例参考[示例16（Navigation使用NavDestination作为导航页）](ts-basic-components-navigation.md#示例16navigation使用navdestination作为导航页)。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -82,7 +76,7 @@ Navigation(pathInfos: NavPathStack, homeDestination: HomePathInfo)
 | pathInfos | [NavPathStack](ts-basic-components-navigation.md#navpathstack10) | 是 | 路由栈信息。 |
 | homeDestination | [HomePathInfo](ts-basic-components-navigation.md#homepathinfo20) | 是 | 主页NavDestination信息。 |
 
-说明
+**说明** 
 
 如果使用了主页NavDestination，则Navigation有如下变化：
 
@@ -91,19 +85,15 @@ Navigation(pathInfos: NavPathStack, homeDestination: HomePathInfo)
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用属性](ts-component-general-attributes.md)外，还支持以下属性：
 
 ### title
-
-PhonePC/2in1TabletTVWearable
 
 title(value: ResourceStr | CustomBuilder | NavigationCommonTitle | NavigationCustomTitle, options?: NavigationTitleOptions)
 
 设置页面标题。
 
-说明
+**说明** 
 
 从API version 12开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
@@ -116,19 +106,13 @@ title(value: ResourceStr | CustomBuilder | NavigationCommonTitle | NavigationCus
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [ResourceStr](ts-types.md#resourcestr)10+ | [CustomBuilder](ts-types.md#custombuilder8) | [NavigationCommonTitle](ts-basic-components-navigation.md#navigationcommontitle9)9+ | [NavigationCustomTitle](ts-basic-components-navigation.md#navigationcustomtitle9)9+ | 是 | 页面标题，使用NavigationCustomTitle类型设置height高度时，[titleMode](ts-basic-components-navigation.md#titlemode)属性不会生效。  字符串超长时，如果不设置副标题，先缩小再换行（2行）最后截断。如果设置副标题，先缩小最后截断。 |
-| options11+ | [NavigationTitleOptions](ts-basic-components-navigation.md#navigationtitleoptions11) | 否 | 标题栏选项。 包含标题栏背景颜色、标题栏背景模糊样式及模糊选项、标题栏背景属性、标题栏布局方式、标题栏起始端内间距、标题栏结束端内间距、主标题属性修改器、子标题属性修改器、是否响应悬停态。 |
+| options11+ | [NavigationTitleOptions](ts-basic-components-navigation.md#navigationtitleoptions11) | 否 | 标题栏选项。包含标题栏背景颜色、标题栏背景模糊样式及模糊选项、标题栏背景属性、标题栏布局方式、标题栏滚动模糊效果选项、标题栏起始端内间距、标题栏结束端内间距、主标题属性修改器、子标题属性修改器、是否响应悬停态。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ### menus
-
-PhonePC/2in1TabletTVWearable
 
 menus(value: Array<NavigationMenuItem> | CustomBuilder)
 
 设置页面右上角菜单。不设置时不显示菜单项。使用Array<[NavigationMenuItem](ts-basic-components-navigation.md#navigationmenuitem)> 写法时，竖屏最多支持显示3个图标，横屏最多支持显示5个图标，多余的图标会被放入自动生成的更多图标。
-
-说明
-
-不支持通过SymbolGlyphModifier对象的fontSize属性修改图标大小、effectStrategy属性修改动效、symbolEffect属性修改动效类型。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -142,19 +126,17 @@ menus(value: Array<NavigationMenuItem> | CustomBuilder)
 
 ### menus19+
 
-PhonePC/2in1TabletTVWearable
-
 menus(items: Array<NavigationMenuItem> | CustomBuilder, options?: NavigationMenuOptions)
 
 设置页面右上角菜单。不设置时不显示菜单项。与[menus](ts-basic-components-navigation.md#menus)相比，新增菜单选项。使用Array<[NavigationMenuItem](ts-basic-components-navigation.md#navigationmenuitem)> 写法时，竖屏最多支持显示3个图标，横屏最多支持显示5个图标，多余的图标会被放入自动生成的更多图标。
 
-说明
+**说明** 
 
 该接口不支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
-不支持通过SymbolGlyphModifier对象的fontSize属性修改图标大小、effectStrategy属性修改动效、symbolEffect属性修改动效类型。
-
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -166,8 +148,6 @@ menus(items: Array<NavigationMenuItem> | CustomBuilder, options?: NavigationMenu
 | options | [NavigationMenuOptions](ts-basic-components-navigation.md#navigationmenuoptions19) | 否 | 页面右上角菜单选项。 |
 
 ### titleMode
-
-PhonePC/2in1TabletTVWearable
 
 titleMode(value: NavigationTitleMode)
 
@@ -185,19 +165,17 @@ titleMode(value: NavigationTitleMode)
 
 ### toolbarConfiguration10+
 
-PhonePC/2in1TabletTVWearable
-
 toolbarConfiguration(value: Array<ToolbarItem> | CustomBuilder, options?: NavigationToolbarOptions)
 
 设置工具栏内容。不设置时不显示工具栏。
 
-说明
+**说明** 
 
 从API version 20开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
-不支持通过SymbolGlyphModifier对象的fontSize属性修改图标大小、effectStrategy属性修改动效、symbolEffect属性修改动效类型。
-
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -209,8 +187,6 @@ toolbarConfiguration(value: Array<ToolbarItem> | CustomBuilder, options?: Naviga
 | options11+ | [NavigationToolbarOptions](ts-basic-components-navigation.md#navigationtoolbaroptions11) | 否 | 工具栏选项。 包含工具栏背景颜色、工具栏背景模糊样式及模糊选项、工具栏背景属性、工具栏布局方式、是否隐藏工具栏的文本、工具栏更多图标的菜单选项。 |
 
 ### hideToolBar
-
-PhonePC/2in1TabletTVWearable
 
 hideToolBar(value: boolean)
 
@@ -224,11 +200,9 @@ hideToolBar(value: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | boolean | 是 | 是否隐藏工具栏。  true：隐藏工具栏；false：显示工具栏。  传入参数非法时，按false处理。 |
+| value | boolean | 是 | 是否隐藏工具栏。  默认值：false  true：隐藏工具栏；false：显示工具栏。  传入参数非法时，按false处理。 |
 
 ### hideToolBar13+
-
-PhonePC/2in1TabletTVWearable
 
 hideToolBar(hide: boolean, animated: boolean)
 
@@ -236,18 +210,18 @@ hideToolBar(hide: boolean, animated: boolean)
 
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| hide | boolean | 是 | 是否隐藏工具栏。  true：隐藏工具栏；false：显示工具栏。  传入参数非法时，按false处理。 |
-| animated | boolean | 是 | 设置是否使用动画显隐工具栏。  true：使用动画显示隐藏工具栏；false：不使用动画显示隐藏工具栏。  传入参数非法时，按false处理。 |
+| hide | boolean | 是 | 是否隐藏工具栏。  默认值：false  true：隐藏工具栏；false：显示工具栏。  传入参数非法时，按false处理。 |
+| animated | boolean | 是 | 设置是否使用动画显隐工具栏。  默认值：false  true：使用动画显示隐藏工具栏；false：不使用动画显示隐藏工具栏。  传入参数非法时，按false处理。 |
 
 ### hideTitleBar
-
-PhonePC/2in1TabletTVWearable
 
 hideTitleBar(value: boolean)
 
@@ -261,11 +235,9 @@ hideTitleBar(value: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | boolean | 是 | 是否隐藏标题栏。  true：隐藏标题栏；false：显示标题栏。  传入参数非法时，按false处理。 |
+| value | boolean | 是 | 是否隐藏标题栏。  默认值：false  true：隐藏标题栏；false：显示标题栏。  传入参数非法时，按false处理。 |
 
 ### hideTitleBar13+
-
-PhonePC/2in1TabletTVWearable
 
 hideTitleBar(hide: boolean, animated: boolean)
 
@@ -273,18 +245,18 @@ hideTitleBar(hide: boolean, animated: boolean)
 
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| hide | boolean | 是 | 是否隐藏标题栏。  true：隐藏标题栏；false：显示标题栏。  传入参数非法时，按false处理。 |
-| animated | boolean | 是 | 设置是否使用动画显隐标题栏。  true：使用动画显示隐藏标题栏；false：不使用动画显示隐藏标题栏。  传入参数非法时，按false处理。 |
+| hide | boolean | 是 | 是否隐藏标题栏。  默认值：false  true：隐藏标题栏；false：显示标题栏。  传入参数非法时，按false处理。 |
+| animated | boolean | 是 | 设置是否使用动画显隐标题栏。  默认值：false  true：使用动画显示隐藏标题栏；false：不使用动画显示隐藏标题栏。  传入参数非法时，按false处理。 |
 
 ### hideBackButton
-
-PhonePC/2in1TabletTVWearable
 
 hideBackButton(value: boolean)
 
@@ -301,8 +273,6 @@ hideBackButton(value: boolean)
 | value | boolean | 是 | 是否隐藏标题栏中的返回键。  true：隐藏返回键。  false：显示返回键。  传入参数非法时，按false处理。 |
 
 ### navBarWidth9+
-
-PhonePC/2in1TabletTVWearable
 
 navBarWidth(value: Length)
 
@@ -322,8 +292,6 @@ navBarWidth(value: Length)
 
 ### navBarPosition9+
 
-PhonePC/2in1TabletTVWearable
-
 navBarPosition(value: NavBarPosition)
 
 设置导航页位置。仅在[mode](ts-basic-components-navigation.md#mode9)设置为NavigationMode.Auto或NavigationMode.Split时生效。
@@ -340,11 +308,9 @@ navBarPosition(value: NavBarPosition)
 
 ### mode9+
 
-PhonePC/2in1TabletTVWearable
-
 mode(value: NavigationMode)
 
-设置导航页的显示模式，支持单栏（Stack）、分栏（Split）和自适应（Auto）。
+设置导航页的显示模式，支持单栏（Stack）、分栏（Split）、自适应（Auto）和自适应宽高比(AUTO\_WITH\_ASPECT\_RATIO)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -358,15 +324,13 @@ mode(value: NavigationMode)
 
 ### backButtonIcon9+
 
-PhonePC/2in1TabletTVWearable
-
 backButtonIcon(value: string | PixelMap | Resource | SymbolGlyphModifier)
 
 设置标题栏中返回键图标。
 
-说明
+**说明** 
 
-不支持通过SymbolGlyphModifier对象的fontSize属性修改图标大小、effectStrategy属性修改动效、symbolEffect属性修改动效类型。
+不支持通过[SymbolGlyphModifier](ts-universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier)对象的[fontSize](ts-basic-components-symbolglyph.md#fontsize)属性修改图标大小、[effectStrategy](ts-basic-components-symbolglyph.md#effectstrategy)属性修改动效、[symbolEffect](ts-basic-components-symbolglyph.md#symboleffect12)属性修改动效类型。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -376,23 +340,23 @@ backButtonIcon(value: string | PixelMap | Resource | SymbolGlyphModifier)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | string | [PixelMap](arkts-apis-image-pixelmap.md) | [Resource](ts-types.md#resource) | [SymbolGlyphModifier12+](universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | 是 | 标题栏中返回键图标。 |
+| value | string | [PixelMap](arkts-apis-image-pixelmap.md) | [Resource](ts-types.md#resource) | [SymbolGlyphModifier12+](ts-universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | 是 | 标题栏中返回键图标。 |
 
 ### backButtonIcon19+
-
-PhonePC/2in1TabletTVWearable
 
 backButtonIcon(icon: string | PixelMap | Resource | SymbolGlyphModifier, accessibilityText?: ResourceStr)
 
 设置标题栏中返回键图标和无障碍播报内容。
 
-说明
+**说明** 
 
 该接口不支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
-不支持通过SymbolGlyphModifier对象的fontSize属性修改图标大小、effectStrategy属性修改动效、symbolEffect属性修改动效类型。
+不支持通过[SymbolGlyphModifier](ts-universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier)对象的[fontSize](ts-basic-components-symbolglyph.md#fontsize)属性修改图标大小、[effectStrategy](ts-basic-components-symbolglyph.md#effectstrategy)属性修改动效、[symbolEffect](ts-basic-components-symbolglyph.md#symboleffect12)属性修改动效类型。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -400,12 +364,10 @@ backButtonIcon(icon: string | PixelMap | Resource | SymbolGlyphModifier, accessi
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| icon | string | [PixelMap](arkts-apis-image-pixelmap.md) | [Resource](ts-types.md#resource) | [SymbolGlyphModifier](universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | 是 | 标题栏中返回键图标。 |
+| icon | string | [PixelMap](arkts-apis-image-pixelmap.md) | [Resource](ts-types.md#resource) | [SymbolGlyphModifier](ts-universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | 是 | 标题栏中返回键图标。 |
 | accessibilityText | [ResourceStr](ts-types.md#resourcestr) | 否 | 返回键无障碍播报内容。  默认值：系统语言是中文时为“返回”，系统语言是英文时为“back”。 |
 
 ### hideNavBar9+
-
-PhonePC/2in1TabletTVWearable
 
 hideNavBar(value: boolean)
 
@@ -421,17 +383,17 @@ hideNavBar(value: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | boolean | 是 | 是否隐藏导航页。  true：隐藏导航页；false：显示导航页。  传入参数非法时，按false处理。 |
+| value | boolean | 是 | 是否隐藏导航页。  默认值：false  true：隐藏导航页；false：显示导航页。  传入参数非法时，按false处理。 |
 
 ### navDestination10+
-
-PhonePC/2in1TabletTVWearable
 
 navDestination(builder: (name: string, param: unknown) => void)
 
 创建NavDestination组件。使用builder函数，基于name和param构造NavDestination组件。builder下只能有一个根节点。builder中允许在NavDestination组件外包含一层自定义组件， 但自定义组件不允许设置属性和事件，否则仅显示空白。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -442,8 +404,6 @@ navDestination(builder: (name: string, param: unknown) => void)
 | builder | (name: string, param: unknown) => void | 是 | 创建NavDestination组件。name：NavDestination页面名称。param：开发者设置的NavDestination页面详细参数，unknown可以是用户自定义的类型。 |
 
 ### navBarWidthRange10+
-
-PhonePC/2in1TabletTVWearable
 
 navBarWidthRange(value: [Dimension, Dimension])
 
@@ -461,6 +421,8 @@ navBarWidthRange(value: [Dimension, Dimension])
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -471,13 +433,13 @@ navBarWidthRange(value: [Dimension, Dimension])
 
 ### minContentWidth10+
 
-PhonePC/2in1TabletTVWearable
-
 minContentWidth(value: Dimension)
 
 设置导航页内容区最小宽度（双栏模式下生效）。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -489,13 +451,11 @@ minContentWidth(value: Dimension)
 
 ### ignoreLayoutSafeArea12+
 
-PhonePC/2in1TabletTVWearable
-
 ignoreLayoutSafeArea(types?: Array<LayoutSafeAreaType>, edges?: Array<LayoutSafeAreaEdge>)
 
 控制组件的布局，使其扩展到非安全区域。
 
-说明
+**说明** 
 
 * 组件设置ignoreLayoutSafeArea之后生效的条件为：
 
@@ -504,6 +464,8 @@ ignoreLayoutSafeArea(types?: Array<LayoutSafeAreaType>, edges?: Array<LayoutSafe
 * 组件想要扩展到非安全区域内，需隐藏或者设置标题栏和工具栏为[STACK](ts-basic-components-navigation.md#barstyle12枚举说明)模式。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -516,13 +478,11 @@ ignoreLayoutSafeArea(types?: Array<LayoutSafeAreaType>, edges?: Array<LayoutSafe
 
 ### systemBarStyle12+
 
-PhonePC/2in1TabletTVWearable
-
 systemBarStyle(style: Optional<SystemBarStyle>)
 
 当Navigation中显示Navigation首页时，设置对应系统状态栏的样式。
 
-说明
+**说明** 
 
 1. 不建议混合使用systemBarStyle属性和window设置状态栏样式的相关接口，例如：[setWindowSystemBarProperties](arkts-apis-window-window.md#setwindowsystembarproperties9)。
 2. 初次设置Navigation/NavDestination的systemBarStyle属性时，会备份当前状态栏样式用于后续的恢复场景。
@@ -538,6 +498,8 @@ systemBarStyle(style: Optional<SystemBarStyle>)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -548,18 +510,18 @@ systemBarStyle(style: Optional<SystemBarStyle>)
 
 ### recoverable14+
 
-PhonePC/2in1TabletTVWearable
-
 recoverable(recoverable: Optional<boolean>)
 
 配置Navigation是否可恢复。如配置为可恢复，当应用进程异常退出并重新冷启动时，可自动创建该Navigation，并恢复至异常退出时的路由栈。
 
-说明
+**说明** 
 
 1. 使用该接口需要先设置Navigation的通用属性[id](ts-universal-attributes-component-id.md#id)，否则该接口无效。
 2. 该接口需要配合NavDestination的[recoverable](ts-basic-components-navdestination.md#recoverable14)接口使用。
 3. 恢复的过程中不可序列化的信息，例如不可序列化的参数与用户设置的onPop等，会被丢弃，无法恢复。
 4. 当应用退到后台，因系统资源不足等原因被系统终止后，如果某页面已配置为可恢复，当应用再次被唤醒至前台时，系统将自动恢复该页面。详细说明请参考[UIAbility备份恢复](../harmonyos-guides/ability-recover-guideline.md)，详细使用请参考[示例18](ts-basic-components-navigation.md#示例18设置navigation可恢复)。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -571,13 +533,13 @@ recoverable(recoverable: Optional<boolean>)
 
 ### enableDragBar14+
 
-PhonePC/2in1TabletTVWearable
-
 enableDragBar(isEnabled: Optional<boolean>)
 
 控制分栏场景下是否显示拖拽条。该属性在PC/2in1设备上不生效。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -589,13 +551,13 @@ enableDragBar(isEnabled: Optional<boolean>)
 
 ### enableModeChangeAnimation15+
 
-PhonePC/2in1TabletTVWearable
-
 enableModeChangeAnimation(isEnabled: Optional<boolean>)
 
 控制是否开启单双栏切换时的动效。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -607,13 +569,13 @@ enableModeChangeAnimation(isEnabled: Optional<boolean>)
 
 ### enableToolBarAdaptation19+
 
-PhonePC/2in1TabletTVWearable
-
 enableToolBarAdaptation(enable: Optional<boolean>)
 
-设置是否启用Navigation和NavDestination的工具栏[toolbarConfiguration](ts-basic-components-navigation.md#toolbarconfiguration10)自适应能力。关闭此能力后，底部工具栏[toolbarConfiguration](ts-basic-components-navigation.md#toolbarconfiguration10)将不会再移动至页面右上角的菜单中。该接口不适配于自定义菜单，使用该接口需采用[NavigationMenuItem](ts-basic-components-navigation.md#navigationmenuitem)接口来定义[菜单](ts-basic-components-navigation.md#menus)。
+设置是否启用Navigation和NavDestination的工具栏[toolbarConfiguration](ts-basic-components-navigation.md#toolbarconfiguration10)自适应能力。关闭此能力后，底部工具栏[toolbarConfiguration](ts-basic-components-navigation.md#toolbarconfiguration10)将不会再移动至页面右上角的菜单中。该接口不适配于自定义菜单，使用该接口需采用[NavigationMenuItem](ts-basic-components-navigation.md#navigationmenuitem)接口来定义[menus](ts-basic-components-navigation.md#menus)。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -625,13 +587,13 @@ enableToolBarAdaptation(enable: Optional<boolean>)
 
 ### splitPlaceholder20+
 
-PhonePC/2in1TabletTVWearable
-
 splitPlaceholder(placeholder: ComponentContent)
 
 Navigation双栏模式下，支持设置右侧页面显示默认占位页，占位页仅作为UI展示页，不可获焦和响应事件。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -643,17 +605,15 @@ Navigation双栏模式下，支持设置右侧页面显示默认占位页，占�
 
 ### divider23+
 
-PhonePC/2in1TabletTVWearable
-
 divider(style: NavigationDividerStyle | null)
 
 设置Navigation双栏模式下的分割线样式。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 **模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
@@ -663,17 +623,17 @@ divider(style: NavigationDividerStyle | null)
 
 ### enableVisibilityLifecycleWithContentCover21+
 
-PhonePC/2in1TabletTVWearable
-
 enableVisibilityLifecycleWithContentCover(isEnabled: Optional<boolean>)
 
 设置是否启用[NavDestination](ts-basic-components-navdestination.md)页面[onHidden](ts-basic-components-navdestination.md#onhidden10)、[onShown](ts-basic-components-navdestination.md#onshown10)生命周期与全模态的联动触发。
 
-说明
+**说明** 
 
 从API version 23开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
 **元服务API：** 从API version 21开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -683,15 +643,33 @@ enableVisibilityLifecycleWithContentCover(isEnabled: Optional<boolean>)
 | --- | --- | --- | --- |
 | isEnabled | Optional<boolean> | 是 | 是否启用NavDestination页面onShown、onHidden生命周期与全模态的联动触发。  默认值：true  true：全模态拉起时，会触发当前NavDestination页面的onHidden生命周期；全模态关闭时会触发当前NavDestination页面的onShown生命周期  false：NavDestination页面onHidden、onShown生命周期不会因为全模态的拉起、关闭而触发。 |
 
-### subTitle(deprecated)
+### configuration
 
-PhonePC/2in1TabletTVWearable
+configuration(config: NavigationConfiguration)
+
+设置Navigation配置项，包括路由栈大小限制。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| config | [NavigationConfiguration](ts-basic-components-navigation.md#navigationconfiguration) | 是 | Navigation配置项。 |
+
+### subTitle(deprecated)
 
 subTitle(value: string)
 
 设置页面副标题。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[title](ts-basic-components-navigation.md#title)替代。
 
@@ -705,13 +683,11 @@ subTitle(value: string)
 
 ### toolBar(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 toolBar(value: object | CustomBuilder)
 
 设置工具栏内容。不设置时不显示工具栏。items均分底部工具栏，在每个均分内容区布局文本和图标，文本超长时，逐级缩小，缩小之后换行，最后截断。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 10开始废弃，建议使用[toolbarConfiguration](ts-basic-components-navigation.md#toolbarconfiguration10)替代。
 
@@ -733,11 +709,7 @@ toolBar(value: object | CustomBuilder)
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 ### onTitleModeChange
-
-PhonePC/2in1TabletTVWearable
 
 onTitleModeChange(callback: (titleMode: NavigationTitleMode) => void)
 
@@ -755,8 +727,6 @@ onTitleModeChange(callback: (titleMode: NavigationTitleMode) => void)
 
 ### onNavBarStateChange9+
 
-PhonePC/2in1TabletTVWearable
-
 onNavBarStateChange(callback: (isVisible: boolean) => void)
 
 导航页显示状态切换时触发该回调。
@@ -773,13 +743,13 @@ onNavBarStateChange(callback: (isVisible: boolean) => void)
 
 ### onNavigationModeChange11+
 
-PhonePC/2in1TabletTVWearable
-
 onNavigationModeChange(callback: (mode: NavigationMode) => void)
 
 当Navigation首次显示或者单双栏状态发生变化时触发该回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -791,17 +761,17 @@ onNavigationModeChange(callback: (mode: NavigationMode) => void)
 
 ### customNavContentTransition11+
 
-PhonePC/2in1TabletTVWearable
-
 customNavContentTransition(delegate:(from: NavContentInfo, to: NavContentInfo, operation: NavigationOperation) => NavigationAnimatedTransition | undefined)
 
 自定义转场动画回调。
 
-说明
+**说明** 
 
 从API version 20开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -821,29 +791,27 @@ customNavContentTransition(delegate:(from: NavContentInfo, to: NavContentInfo, o
 
 ## NavPathStack10+
 
-PhonePC/2in1TabletTVWearable
-
 Navigation导航控制器，以栈的数据结构管理Navigation中所有的子页面，并提供栈操作的方法用于控制Navigation中子页面的切换。
 
 从API version 12开始，NavPathStack允许被继承，派生类对象可以替代基类NavPathStack对象使用。使用示例参见[示例10](ts-basic-components-navigation.md#示例10定义导航控制器派生类)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-说明
+**说明** 
 
 1.连续调用多个导航控制器操作方法时，中间过程会被忽略，显示最终的栈操作结果。
 
-例如：在Page1页面先pop再push一个Page1，系统会认为操作前和操作后的结果一致而不进行任何操作，如果需要强行push一个Page1实例，可以使用NEW\_INSTANCE模式。
+例如：在Page1页面先pop再push一个Page1，系统会认为操作前和操作后的结果一致而不进行任何操作，如果需要强行push一个Page1实例，可以设置[NavigationOption](ts-basic-components-navigation.md#navigationoptions12)中的launchMode属性值为LaunchMode.NEW\_INSTANCE模式。
 
-2.不建议开发者通过监听生命周期的方式管理自己的导航控制器。
+2.不建议开发者通过监听页面生命周期的方式管理自己的导航控制器。
 
 3.在应用处于后台状态下，调用NavPathStack的栈操作方法，会在应用再次回到前台状态时触发刷新。
 
-### constructor
-
-PhonePC/2in1TabletTVWearable
+### constructor10+
 
 constructor()
 
@@ -851,17 +819,19 @@ constructor()
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ### pushPath10+
-
-PhonePC/2in1TabletTVWearable
 
 pushPath(info: NavPathInfo, animated?: boolean): void
 
 将info指定的NavDestination页面信息入栈。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -874,13 +844,13 @@ pushPath(info: NavPathInfo, animated?: boolean): void
 
 ### pushPath12+
 
-PhonePC/2in1TabletTVWearable
-
 pushPath(info: NavPathInfo, options?: NavigationOptions): void
 
 将info指定的NavDestination页面信息入栈，具体根据options中指定不同的[LaunchMode](ts-basic-components-navigation.md#launchmode12枚举说明)，来实现不同的行为。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -893,13 +863,13 @@ pushPath(info: NavPathInfo, options?: NavigationOptions): void
 
 ### pushPathByName10+
 
-PhonePC/2in1TabletTVWearable
-
 pushPathByName(name: string, param: unknown, animated?: boolean): void
 
 将name指定的NavDestination页面信息入栈，传递的数据为param。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -913,13 +883,13 @@ pushPathByName(name: string, param: unknown, animated?: boolean): void
 
 ### pushPathByName11+
 
-PhonePC/2in1TabletTVWearable
-
-pushPathByName(name: string, param: Object, onPop: Callback<PopInfo>, animated?: boolean): void
+pushPathByName(name: string, param: Object, onPop: import('../api/@ohos.base').Callback<PopInfo>, animated?: boolean): void
 
 将name指定的NavDestination页面信息入栈，传递的数据为param，添加onPop回调接收入栈页面出栈时的返回结果，并进行处理。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -929,22 +899,22 @@ pushPathByName(name: string, param: Object, onPop: Callback<PopInfo>, animated?:
 | --- | --- | --- | --- |
 | name | string | 是 | NavDestination页面名称。 |
 | param | Object | 是 | 开发者设置的NavDestination页面详细参数。 |
-| onPop | Callback<[PopInfo](ts-basic-components-navigation.md#popinfo11)> | 是 | Callback回调，用于页面出栈时触发该回调处理返回结果。仅[pop](ts-basic-components-navigation.md#pop11)、[popToName](ts-basic-components-navigation.md#poptoname11)、[popToIndex](ts-basic-components-navigation.md#poptoindex11)中设置result参数后触发。 |
+| onPop | import('../api/@ohos.base').Callback<[PopInfo](ts-basic-components-navigation.md#popinfo11)> | 是 | Callback回调，用于页面出栈时触发该回调处理返回结果。仅[pop](ts-basic-components-navigation.md#pop11)、[popToName](ts-basic-components-navigation.md#poptoname11)、[popToIndex](ts-basic-components-navigation.md#poptoindex11)中设置result参数后触发。 |
 | animated | boolean | 否 | 是否支持转场动画。  true：支持转场动画；false：不支持转场动画。  默认值：true |
 
 ### pushDestination11+
-
-PhonePC/2in1TabletTVWearable
 
 pushDestination(info: NavPathInfo, animated?: boolean): Promise<void>
 
 将info指定的NavDestination页面信息入栈，使用Promise异步回调返回接口调用结果。
 
-说明
+**说明** 
 
 不建议在[aboutToAppear](ts-custom-component-lifecycle.md#abouttoappear)中使用栈操作，此时的页面还未构建完成，会导致白屏或跳转失败等问题。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -959,7 +929,7 @@ pushDestination(info: NavPathInfo, animated?: boolean): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 异步返回结果。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -974,17 +944,17 @@ pushDestination(info: NavPathInfo, animated?: boolean): Promise<void>
 
 ### pushDestination12+
 
-PhonePC/2in1TabletTVWearable
-
 pushDestination(info: NavPathInfo, options?: NavigationOptions): Promise<void>
 
 将info指定的NavDestination页面信息入栈，使用Promise异步回调返回接口调用结果，具体根据options中指定不同的[LaunchMode](ts-basic-components-navigation.md#launchmode12枚举说明)，来实现不同的行为。
 
-说明
+**说明** 
 
 不建议在[aboutToAppear](ts-custom-component-lifecycle.md#abouttoappear)中使用栈操作，此时的页面还未构建完成，会导致白屏或跳转失败等问题。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -999,7 +969,7 @@ pushDestination(info: NavPathInfo, options?: NavigationOptions): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 异常返回结果。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -1013,18 +983,18 @@ pushDestination(info: NavPathInfo, options?: NavigationOptions): Promise<void>
 | 100006 | NavDestination not found. |
 
 ### pushDestinationByName11+
-
-PhonePC/2in1TabletTVWearable
 
 pushDestinationByName(name: string, param: Object, animated?: boolean): Promise<void>
 
 将name指定的NavDestination页面信息入栈，传递的数据为param，使用Promise异步回调返回接口调用结果。
 
-说明
+**说明** 
 
 不建议在[aboutToAppear](ts-custom-component-lifecycle.md#abouttoappear)中使用栈操作，此时的页面还未构建完成，会导致白屏或跳转失败等问题。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1040,7 +1010,7 @@ pushDestinationByName(name: string, param: Object, animated?: boolean): Promise<
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 异常返回结果。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -1055,17 +1025,17 @@ pushDestinationByName(name: string, param: Object, animated?: boolean): Promise<
 
 ### pushDestinationByName11+
 
-PhonePC/2in1TabletTVWearable
-
-pushDestinationByName(name: string, param: Object, onPop: Callback<PopInfo>, animated?: boolean): Promise<void>
+pushDestinationByName(name: string, param: Object, onPop: import('../api/@ohos.base').Callback<PopInfo>, animated?: boolean): Promise<void>
 
 将name指定的NavDestination页面信息入栈，传递的数据为param，并且添加用于页面出栈时处理返回结果的onPop回调，使用Promise异步回调返回接口调用结果。
 
-说明
+**说明** 
 
 不建议在[aboutToAppear](ts-custom-component-lifecycle.md#abouttoappear)中使用栈操作，此时的页面还未构建完成，会导致白屏或跳转失败等问题。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1075,14 +1045,14 @@ pushDestinationByName(name: string, param: Object, onPop: Callback<PopInfo>, ani
 | --- | --- | --- | --- |
 | name | string | 是 | NavDestination页面名称。 |
 | param | Object | 是 | 开发者设置的NavDestination页面详细参数。 |
-| onPop | Callback<[PopInfo](ts-basic-components-navigation.md#popinfo11)> | 是 | Callback回调，用于页面出栈时处理返回结果。仅[pop](ts-basic-components-navigation.md#pop11)、[popToName](ts-basic-components-navigation.md#poptoname11)、[popToIndex](ts-basic-components-navigation.md#poptoindex11)中设置result参数后触发。 |
+| onPop | import('../api/@ohos.base').Callback<[PopInfo](ts-basic-components-navigation.md#popinfo11)> | 是 | Callback回调，用于页面出栈时处理返回结果。仅[pop](ts-basic-components-navigation.md#pop11)、[popToName](ts-basic-components-navigation.md#poptoname11)、[popToIndex](ts-basic-components-navigation.md#poptoindex11)中设置result参数后触发。 |
 | animated | boolean | 否 | 是否支持转场动画。  true：支持转场动画；false：不支持转场动画。  默认值：true |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 异常返回结果。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -1097,13 +1067,13 @@ pushDestinationByName(name: string, param: Object, onPop: Callback<PopInfo>, ani
 
 ### replacePath11+
 
-PhonePC/2in1TabletTVWearable
-
 replacePath(info: NavPathInfo, animated?: boolean): void
 
 将当前路由栈栈顶退出，将info指定的NavDestination页面信息入栈。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1116,13 +1086,13 @@ replacePath(info: NavPathInfo, animated?: boolean): void
 
 ### replacePath12+
 
-PhonePC/2in1TabletTVWearable
-
 replacePath(info: NavPathInfo, options?: NavigationOptions): void
 
 替换路由栈操作，具体根据options中指定不同的[LaunchMode](ts-basic-components-navigation.md#launchmode12枚举说明)，来实现不同的行为。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1135,13 +1105,13 @@ replacePath(info: NavPathInfo, options?: NavigationOptions): void
 
 ### replacePathByName11+
 
-PhonePC/2in1TabletTVWearable
-
 replacePathByName(name: string, param: Object, animated?: boolean): void
 
 将当前路由栈栈顶退出，将name指定的页面入栈。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1155,13 +1125,13 @@ replacePathByName(name: string, param: Object, animated?: boolean): void
 
 ### replaceDestination18+
 
-PhonePC/2in1TabletTVWearable
-
 replaceDestination(info: NavPathInfo, options?: NavigationOptions): Promise<void>
 
 替换路由栈操作。使用Promise异步回调返回接口调用结果，具体根据options中指定不同的[LaunchMode](ts-basic-components-navigation.md#launchmode12枚举说明)，来实现不同的行为。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1176,7 +1146,7 @@ replaceDestination(info: NavPathInfo, options?: NavigationOptions): Promise<void
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 异常返回结果。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -1191,13 +1161,13 @@ replaceDestination(info: NavPathInfo, options?: NavigationOptions): Promise<void
 
 ### removeByIndexes11+
 
-PhonePC/2in1TabletTVWearable
-
 removeByIndexes(indexes: Array<number>): number
 
 将路由栈内索引值在indexes中的NavDestination页面删除。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1215,13 +1185,13 @@ removeByIndexes(indexes: Array<number>): number
 
 ### removeByName11+
 
-PhonePC/2in1TabletTVWearable
-
 removeByName(name: string): number
 
 将路由栈内指定name的NavDestination页面删除。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1239,13 +1209,13 @@ removeByName(name: string): number
 
 ### removeByNavDestinationId12+
 
-PhonePC/2in1TabletTVWearable
-
 removeByNavDestinationId(navDestinationId: string): boolean
 
 将路由栈内指定navDestinationId的NavDestination页面删除。navDestinationId可以在NavDestination的[onReady](ts-basic-components-navdestination.md#onready11)回调中获取，也可以在[NavDestinationInfo](js-apis-arkui-observer.md#navdestinationinfo)中获取。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1263,13 +1233,11 @@ removeByNavDestinationId(navDestinationId: string): boolean
 
 ### pop10+
 
-PhonePC/2in1TabletTVWearable
-
 pop(animated?: boolean): NavPathInfo | undefined
 
 弹出路由栈栈顶元素。
 
-说明
+**说明** 
 
 连续调用多个导航控制器方法时，中间被pop的页面会被缓存，后续push同名页面时会优先复用该页面，不会走新的页面创建流程。
 
@@ -1291,6 +1259,8 @@ pathStack.pushPath(B)
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -1307,13 +1277,11 @@ pathStack.pushPath(B)
 
 ### pop11+
 
-PhonePC/2in1TabletTVWearable
-
 pop(result: Object, animated?: boolean): NavPathInfo | undefined
 
 弹出路由栈栈顶元素，并触发onPop回调传入页面处理结果。
 
-说明
+**说明** 
 
 连续调用多个导航控制器方法时，中间被pop的页面会被缓存，后续push同名页面时会优先复用该页面，不会走新的页面创建流程。
 
@@ -1334,6 +1302,8 @@ pathStack.pushPath(B)
 此时A页面会被复用，不会走新的创建流程。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1352,13 +1322,13 @@ pathStack.pushPath(B)
 
 ### popToName10+
 
-PhonePC/2in1TabletTVWearable
-
 popToName(name: string, animated?: boolean): number
 
 回退路由栈到由栈底开始第一个名为name的NavDestination页面。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1377,13 +1347,13 @@ popToName(name: string, animated?: boolean): number
 
 ### popToName11+
 
-PhonePC/2in1TabletTVWearable
-
 popToName(name: string, result: Object, animated?: boolean): number
 
 回退路由栈到由栈底开始第一个名为name的NavDestination页面，并触发onPop回调传入页面处理结果。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1403,13 +1373,13 @@ popToName(name: string, result: Object, animated?: boolean): number
 
 ### popToIndex10+
 
-PhonePC/2in1TabletTVWearable
-
 popToIndex(index: number, animated?: boolean): void
 
 回退路由栈到index指定的NavDestination页面。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1422,13 +1392,13 @@ popToIndex(index: number, animated?: boolean): void
 
 ### popToIndex11+
 
-PhonePC/2in1TabletTVWearable
-
 popToIndex(index: number, result: Object, animated?: boolean): void
 
 回退路由栈到index指定的NavDestination页面，并触发onPop回调传入页面处理结果。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1442,13 +1412,13 @@ popToIndex(index: number, result: Object, animated?: boolean): void
 
 ### moveToTop10+
 
-PhonePC/2in1TabletTVWearable
-
 moveToTop(name: string, animated?: boolean): number
 
 将由栈底开始第一个名为name的NavDestination页面移到栈顶。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1467,13 +1437,13 @@ moveToTop(name: string, animated?: boolean): number
 
 ### moveIndexToTop10+
 
-PhonePC/2in1TabletTVWearable
-
 moveIndexToTop(index: number, animated?: boolean): void
 
 将index指定的NavDestination页面移到栈顶。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1486,13 +1456,13 @@ moveIndexToTop(index: number, animated?: boolean): void
 
 ### clear10+
 
-PhonePC/2in1TabletTVWearable
-
 clear(animated?: boolean): void
 
 清除栈中所有页面。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1504,13 +1474,13 @@ clear(animated?: boolean): void
 
 ### getAllPathName10+
 
-PhonePC/2in1TabletTVWearable
-
 getAllPathName(): Array<string>
 
 获取栈中所有NavDestination页面的名称。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1522,13 +1492,13 @@ getAllPathName(): Array<string>
 
 ### getParamByIndex10+
 
-PhonePC/2in1TabletTVWearable
-
 getParamByIndex(index: number): unknown | undefined
 
 获取index指定的NavDestination页面的参数信息。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1546,13 +1516,13 @@ getParamByIndex(index: number): unknown | undefined
 
 ### getParamByName10+
 
-PhonePC/2in1TabletTVWearable
-
 getParamByName(name: string): Array<unknown>
 
 获取所有名为name的NavDestination页面的参数信息，按页面索引从小到大排序。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1570,13 +1540,13 @@ getParamByName(name: string): Array<unknown>
 
 ### getIndexByName10+
 
-PhonePC/2in1TabletTVWearable
-
 getIndexByName(name: string): Array<number>
 
 获取全部名为name的NavDestination页面的位置索引。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1594,13 +1564,13 @@ getIndexByName(name: string): Array<number>
 
 ### size10+
 
-PhonePC/2in1TabletTVWearable
-
 size(): number
 
 获取栈大小。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1612,13 +1582,13 @@ size(): number
 
 ### disableAnimation11+
 
-PhonePC/2in1TabletTVWearable
-
 disableAnimation(value: boolean): void
 
 关闭（true）或打开（false）当前Navigation中所有转场动画。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1626,11 +1596,9 @@ disableAnimation(value: boolean): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | boolean | 是 | 是否关闭转场动画，  默认值：false  true：关闭转场动画。  false：不关闭转场动画。 |
+| value | boolean | 是 | 是否关闭转场动画，  默认值：false  true：关闭转场动画。  false：显示转场动画。 |
 
 ### getParent11+
-
-PhonePC/2in1TabletTVWearable
 
 getParent(): NavPathStack | null
 
@@ -1639,6 +1607,8 @@ getParent(): NavPathStack | null
 当出现Navigation嵌套Navigation的情况时（可以是直接嵌套，也可以是间接嵌套），内部Navigation的NavPathStack能够获取到外层Navigation的NavPathStack。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1650,13 +1620,13 @@ getParent(): NavPathStack | null
 
 ### setInterception12+
 
-PhonePC/2in1TabletTVWearable
-
 setInterception(interception: NavigationInterception): void
 
 设置Navigation页面跳转拦截回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1668,13 +1638,13 @@ setInterception(interception: NavigationInterception): void
 
 ### getPathStack19+
 
-PhonePC/2in1TabletTVWearable
-
 getPathStack(): Array<NavPathInfo>
 
 获取当前路由栈中的路由页面信息数组。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1686,19 +1656,19 @@ getPathStack(): Array<NavPathInfo>
 
 ### setPathStack19+
 
-PhonePC/2in1TabletTVWearable
-
 setPathStack(pathStack: Array<NavPathInfo>, animated?: boolean): void
 
 将当前路由栈中的路由页面信息数组更新为指定内容，并实现路由转场。
 
-说明
+**说明** 
 
 1. 开发者可以在原有栈的基础上批量添加或删除页面。批量入栈的页面中，只有可见的页面会触发创建，其他页面虽已入栈但不会立即创建，当这些页面变为可见时，才会触发创建。
 2. 通过批量入栈功能更新的路由栈，各页面的生命周期事件触发顺序为从栈顶到底部依次触发，这与其它入栈接口从栈底到顶部的触发顺序不同。
 3. 开发者可以通过[NavPathInfo](ts-basic-components-navigation.md#navpathinfo10)中的页面唯一标识符navDestinationId来操作已有页面，该id由系统默认生成且全局唯一（可以通过[getPathStack](ts-basic-components-navigation.md#getpathstack19)接口获取，不可主动赋新值）。若该id在当前路由栈中不存在，则表示新增页面，若在当前路由栈中存在，同时对应的name相同，则表示复用已有页面。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1711,19 +1681,17 @@ setPathStack(pathStack: Array<NavPathInfo>, animated?: boolean): void
 
 ## NavPathInfo10+
 
-PhonePC/2in1TabletTVWearable
-
 路由页面信息。
 
-### constructor
+### constructor10+
 
-PhonePC/2in1TabletTVWearable
-
-constructor(name: string, param: unknown, onPop?: Callback<PopInfo>, isEntry?: boolean)
+constructor(name: string, param: unknown, onPop?: import('../api/@ohos.base').Callback<PopInfo>, isEntry?: boolean)
 
 创建NavPathInfo对象。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1733,14 +1701,14 @@ constructor(name: string, param: unknown, onPop?: Callback<PopInfo>, isEntry?: b
 | --- | --- | --- | --- |
 | name | string | 是 | NavDestination页面名称。该名称匹配开发者设置的路由表中的name，包括以下两种：  1. 自定义路由表，开发者通过[navDestination](ts-basic-components-navigation.md#navdestination10)方法传递。  2. 系统路由表，通过routerMap中的name设置，可参考[示例2](ts-basic-components-navigation.md#示例2使用导航控制器方法)。 |
 | param | unknown | 是 | 开发者设置的NavDestination页面详细参数，unknown可以是用户自定义的类型。 |
-| onPop11+ | Callback<[PopInfo](ts-basic-components-navigation.md#popinfo11)> | 否 | NavDestination页面触发[pop](ts-basic-components-navigation.md#pop11)、[popToName](ts-basic-components-navigation.md#poptoname11)、[popToIndex](ts-basic-components-navigation.md#poptoindex11)时返回的回调。仅[pop](ts-basic-components-navigation.md#pop11)、[popToName](ts-basic-components-navigation.md#poptoname11)、[popToIndex](ts-basic-components-navigation.md#poptoindex11)中设置result参数后触发。 |
+| onPop11+ | import('../api/@ohos.base').Callback<[PopInfo](ts-basic-components-navigation.md#popinfo11)> | 否 | NavDestination页面触发[pop](ts-basic-components-navigation.md#pop11)、[popToName](ts-basic-components-navigation.md#poptoname11)、[popToIndex](ts-basic-components-navigation.md#poptoindex11)时返回的回调。仅[pop](ts-basic-components-navigation.md#pop11)、[popToName](ts-basic-components-navigation.md#poptoname11)、[popToIndex](ts-basic-components-navigation.md#poptoindex11)中设置result参数后触发。 |
 | isEntry12+ | boolean | 否 | 标记NavDestination是否为入口页面。  true：NavDestination是入口页面；false：NavDestination不是入口页面。  默认值：false  标记清理时机：1. 在当前navDestination页面触发一次全局返回事件。2. 应用退至后台。  **说明：**  入口NavDestination不响应应用内的全局back事件，直接触发应用间的全局back事件。 |
 
 ### 属性
 
-PhonePC/2in1TabletTVWearable
-
 NavPathInfo参数信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1754,11 +1722,11 @@ NavPathInfo参数信息。
 
 ## PopInfo11+
 
-PhonePC/2in1TabletTVWearable
-
 下一个页面返回的回调信息载体。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1769,11 +1737,11 @@ PhonePC/2in1TabletTVWearable
 
 ## NavContentInfo11+
 
-PhonePC/2in1TabletTVWearable
-
 跳转Destination信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1787,11 +1755,11 @@ PhonePC/2in1TabletTVWearable
 
 ## NavigationAnimatedTransition11+
 
-PhonePC/2in1TabletTVWearable
-
 自定义转场动画协议，开发者需实现该协议来定义Navigation路由跳转的跳转动画。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1804,19 +1772,17 @@ PhonePC/2in1TabletTVWearable
 
 ## NavigationTransitionProxy 11+
 
-PhonePC/2in1TabletTVWearable
-
 自定义转场动画代理对象。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ### 属性
 
-PhonePC/2in1TabletTVWearable
-
 NavigationTransitionProxy参数信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1828,19 +1794,17 @@ NavigationTransitionProxy参数信息。
 
 ### finishTransition
 
-PhonePC/2in1TabletTVWearable
-
 finishTransition(): void;
 
 结束本次自定义转场动画，开发者需要主动触发该方法来结束本次转场，否则系统会在timeout的时间后结束本次转场。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ### cancelTransition12+
-
-PhonePC/2in1TabletTVWearable
 
 cancelTransition?(): void;
 
@@ -1848,21 +1812,23 @@ cancelTransition?(): void;
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ### updateTransition12+
-
-PhonePC/2in1TabletTVWearable
 
 updateTransition?(progress: number): void;
 
 更新交互转场动画进度(不可交互动画不支持动画进度设置)。
 
-说明
+**说明** 
 
 不建议在[aboutToAppear](ts-custom-component-lifecycle.md#abouttoappear)中使用栈操作，此时的页面还未构建完成，会导致白屏或跳转失败等问题。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1874,9 +1840,9 @@ updateTransition?(progress: number): void;
 
 ## NavigationInterception12+
 
-PhonePC/2in1TabletTVWearable
-
 Navigation跳转拦截对象。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1889,13 +1855,13 @@ Navigation跳转拦截对象。
 
 ### InterceptionShowCallback12+
 
-PhonePC/2in1TabletTVWearable
-
 type InterceptionShowCallback = (from: NavDestinationContext | NavBar, to: NavDestinationContext | NavBar, operation: NavigationOperation, isAnimated: boolean) => void
 
 Navigation页面跳转前和页面跳转后的拦截回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1910,13 +1876,13 @@ Navigation页面跳转前和页面跳转后的拦截回调。
 
 ### InterceptionModeCallback12+
 
-PhonePC/2in1TabletTVWearable
-
 type InterceptionModeCallback = (mode: NavigationMode) => void
 
 Navigation单双栏显示状态发生变更时的拦截回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1928,13 +1894,13 @@ Navigation单双栏显示状态发生变更时的拦截回调。
 
 ### InterceptionCallback22+
 
-PhonePC/2in1TabletTVWearable
-
 type InterceptionCallback = (from: NavPathInfo | NavBar, to: NavPathInfo | NavBar, pathStack: NavPathStack, operation: NavigationOperation, isAnimated: boolean) => void
 
 Navigation页面跳转前的拦截回调。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1950,13 +1916,13 @@ Navigation页面跳转前的拦截回调。
 
 ## NavBar12+
 
-PhonePC/2in1TabletTVWearable
-
 type NavBar = 'navBar'
 
 Navigation首页名字。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1966,8 +1932,6 @@ Navigation首页名字。
 
 ## NavigationMenuItem
 
-PhonePC/2in1TabletTVWearable
-
 导航菜单项，包括菜单图标和菜单信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
@@ -1975,36 +1939,36 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | value | string | [Resource14+](ts-types.md#resource) | 否 | 否 | API version 9：显示菜单栏单个选项的文本。  从API version 10开始，不显示菜单栏单个选项的文本。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| icon | string | [Resource14+](ts-types.md#resource) | 否 | 是 | 菜单栏单个选项的图标资源路径。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| isEnabled12+ | boolean | 否 | 是 | 使能状态，默认使能（false未使能，true使能）。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| icon | string | [Resource14+](ts-types.md#resource) | 否 | 是 | 菜单栏单个选项的图标资源路径。  **说明：**  当图标为SVG格式时，系统会默认设置fill颜色，覆盖SVG文件中自定义的fill属性，可能导致图标显示异常。建议在SVG文件中通过style样式设置fill来覆盖系统默认值，示例如下：  原始写法（fill属性会被系统默认值覆盖）：<rect fill="rgb(255,0,0)" .../>，建议修改为：<rect style="fill: rgb(255,0,0)" .../>。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| isEnabled12+ | boolean | 否 | 是 | 是否使能菜单项。  true：使能菜单项；false：未使能菜单项。默认值：true。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | action | () => void | 否 | 是 | 当前选项被选中的事件回调。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| symbolIcon12+ | [SymbolGlyphModifier](universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | 否 | 是 | 菜单栏单个选项的symbol资源（优先级高于icon）。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| symbolIcon12+ | [SymbolGlyphModifier](ts-universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | 否 | 是 | 菜单栏单个选项的symbol资源（优先级高于icon）。  **说明：**  不支持通过[SymbolGlyphModifier](ts-universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier)对象的[fontSize](ts-basic-components-symbolglyph.md#fontsize)属性修改图标大小、[effectStrategy](ts-basic-components-symbolglyph.md#effectstrategy)属性修改动效、[symbolEffect](ts-basic-components-symbolglyph.md#symboleffect12)属性修改动效类型。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## ToolbarItem10+
 
-PhonePC/2in1TabletTVWearable
-
 工具栏可配置参数。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | value | ResourceStr | 否 | 否 | 工具栏单个选项的显示文本。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| icon | ResourceStr | 否 | 是 | 工具栏单个选项的图标资源路径。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| icon | ResourceStr | 否 | 是 | 工具栏单个选项的图标资源路径。  **说明：**  当图标为SVG格式时，系统会默认设置fill颜色，覆盖SVG文件中自定义的fill属性，可能导致图标显示异常。建议在SVG文件中通过style样式设置fill来覆盖系统默认值，示例如下：  原始写法（fill属性会被系统默认值覆盖）：<rect fill="rgb(255,0,0)" .../>，建议修改为：<rect style="fill: rgb(255,0,0)" .../>。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | action | () => void | 否 | 是 | 当前选项被选中的事件回调。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | status | [ToolbarItemStatus](ts-basic-components-navigation.md#toolbaritemstatus10枚举说明) | 否 | 是 | 工具栏单个选项的状态。  默认值：ToolbarItemStatus.NORMAL  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | activeIcon | ResourceStr | 否 | 是 | 工具栏单个选项处于ACTIVE态时的图标资源路径。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| symbolIcon12+ | [SymbolGlyphModifier](universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | 否 | 是 | 工具栏单个选项的symbol资源（优先级高于icon）。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| activeSymbolIcon12+ | [SymbolGlyphModifier](universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | 否 | 是 | 工具栏单个选项处于ACTIVE态时的symbol资源（优先级高于activeIcon）。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| symbolIcon12+ | [SymbolGlyphModifier](ts-universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | 否 | 是 | 工具栏单个选项的symbol资源（优先级高于icon）。  **说明：**  不支持通过[SymbolGlyphModifier](ts-universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier)对象的[fontSize](ts-basic-components-symbolglyph.md#fontsize)属性修改图标大小、[effectStrategy](ts-basic-components-symbolglyph.md#effectstrategy)属性修改动效、[symbolEffect](ts-basic-components-symbolglyph.md#symboleffect12)属性修改动效类型。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| activeSymbolIcon12+ | [SymbolGlyphModifier](ts-universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | 否 | 是 | 工具栏单个选项处于ACTIVE态时的symbol资源（优先级高于activeIcon）。  **说明：**  不支持通过[SymbolGlyphModifier](ts-universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier)对象的[fontSize](ts-basic-components-symbolglyph.md#fontsize)属性修改图标大小、[effectStrategy](ts-basic-components-symbolglyph.md#effectstrategy)属性修改动效、[symbolEffect](ts-basic-components-symbolglyph.md#symboleffect12)属性修改动效类型。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 
 ## ToolbarItemStatus10+枚举说明
-
-PhonePC/2in1TabletTVWearable
 
 工具栏单个选项的状态。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2015,8 +1979,6 @@ PhonePC/2in1TabletTVWearable
 | ACTIVE | 2 | 设置工具栏单个选项为ACTIVE态， 该选项通过点击事件可以将icon图标更新为activeIcon对应的图片资源。 |
 
 ## NavigationTitleMode枚举说明
-
-PhonePC/2in1TabletTVWearable
 
 标题栏显示模式。
 
@@ -2032,8 +1994,6 @@ PhonePC/2in1TabletTVWearable
 
 ## NavigationCommonTitle9+
 
-PhonePC/2in1TabletTVWearable
-
 Navigation通用标题。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -2047,8 +2007,6 @@ Navigation通用标题。
 
 ## NavigationCustomTitle9+
 
-PhonePC/2in1TabletTVWearable
-
 Navigation自定义标题。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -2058,27 +2016,25 @@ Navigation自定义标题。
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | builder | [CustomBuilder](ts-types.md#custombuilder8) | 否 | 否 | 设置标题栏内容。 |
-| height | [TitleHeight](ts-appendix-enums.md#titleheight9) | [Length](ts-types.md#length) | 否 | 否 | 设置标题栏高度。 |
+| height | [TitleHeight](ts-appendix-enums.md#titleheight9) | [Length](ts-types.md#length) | 否 | 否 | 设置标题栏高度。  取值范围：[0, +∞)  单位参考[Length](ts-types.md#length)类型的说明。 |
 
 ## NavigationDividerStyle23+
-
-PhonePC/2in1TabletTVWearable
 
 Navigation分割线颜色及上下边距。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | color | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 分割线的颜色。  默认值：#33000000，灰色。 |
-| startMargin | [Length](ts-types.md#length) | 否 | 是 | 分割线与侧边栏顶端的距离。  默认值：0  单位：vp  取值范围：[0, +∞) |
-| endMargin | [Length](ts-types.md#length) | 否 | 是 | 分割线与侧边栏底端的距离。  默认值：0  单位：vp  取值范围：[0, +∞) |
+| startMargin | [Length](ts-types.md#length) | 否 | 是 | 分割线与侧边栏顶端的距离。  默认值：0  单位参考[Length](ts-types.md#length)类型的说明。  取值范围：[0, +∞) |
+| endMargin | [Length](ts-types.md#length) | 否 | 是 | 分割线与侧边栏底端的距离。  默认值：0  单位参考[Length](ts-types.md#length)类型的说明。  取值范围：[0, +∞) |
 
 ## NavBarPosition9+枚举说明
-
-PhonePC/2in1TabletTVWearable
 
 导航页位置。
 
@@ -2086,26 +2042,23 @@ PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-| 名称 | 说明 |
-| --- | --- |
-| Start | 双栏显示时，主列在主轴方向首部。 |
-| End | 双栏显示时，主列在主轴方向尾部。 |
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| Start | 0 | 双栏显示时，主列在主轴方向首部。 |
+| End | 1 | 双栏显示时，主列在主轴方向尾部。 |
 
 ## NavigationMode9+枚举说明
 
-PhonePC/2in1TabletTVWearable
-
 导航页显示模式。Navigation处于分栏显示状态时，导航页和内容区之间会显示分割线。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| Stack | 0 | 导航页与内容区独立显示，相当于两个页面。 |
-| Split | 1 | 导航页与内容区分两栏显示。  **1.** navBarWidth最终取值与开发者设置值的关系参见表1。  **2.** 缩小组件尺寸时，先缩小内容区的尺寸至minContentWidth，然后再缩小导航页的尺寸至minNavBarWidth。若继续缩小，先缩小内容区，内容区消失后再缩小导航页。  **3.** 设置导航页为固定尺寸时，若持续缩小组件尺寸，导航页最后压缩显示。  **4.** 若只设置了navBarWidth属性，则导航页宽度为navBarWidth，且分割线不可拖动。  **5.** 分割线的热区左右各2vp，建议避让4vp以上。  **6.** Split模式下，内容区若只存在一个页面，则页面左上角不会显示返回按钮。 |
-| Auto | 2 | API version 9之前：窗口宽度>=520vp时，采用Split模式显示；窗口宽度<520vp时，采用Stack模式显示。  API version 10及以上：窗口宽度>=600vp时，采用Split模式显示；窗口宽度<600vp时，采用Stack模式显示，600vp等于minNavBarWidth(240vp) + minContentWidth (360vp)。 |
+| Stack | 0 | 导航页与内容区独立显示，相当于两个页面。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| Split | 1 | 导航页与内容区分两栏显示。  **1.** navBarWidth最终取值与开发者设置值的关系参见表1。  **2.** 缩小组件尺寸时，先缩小内容区的尺寸至minContentWidth，然后再缩小导航页的尺寸至minNavBarWidth。若继续缩小，先缩小内容区，内容区消失后再缩小导航页。  **3.** 设置导航页为固定尺寸时，若持续缩小组件尺寸，导航页最后压缩显示。  **4.** 若只设置了navBarWidth属性，则导航页宽度为navBarWidth，且分割线不可拖动。  **5.** 分割线的热区左右各2vp，建议避让4vp以上。  **6.** Split模式下，内容区若只存在一个页面，则页面左上角不会显示返回按钮。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| Auto | 2 | API version 9及之前版本，Navigation宽度>=520vp时，采用Split模式显示；Navigation宽度<520vp时，采用Stack模式显示。  从API version 10开始：Navigation宽度>=600vp时，采用Split模式显示；Navigation宽度<600vp时，采用Stack模式显示，600vp等于minNavBarWidth(240vp) + minContentWidth (360vp)。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| AUTO\_WITH\_ASPECT\_RATIO24+ | 3 | Navigation宽度>=600vp且高宽比小于等于1.2时，采用Split模式显示；否则采用Stack模式显示。600vp等于minNavBarWidth(240vp) + minContentWidth (360vp)。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 **表1** navBarWidth最终取值与开发者设置值的关系表
 
@@ -2119,17 +2072,17 @@ PhonePC/2in1TabletTVWearable
 | minNavBarWidth ≤ navBarWidth ≤ maxNavBarWidth | minNavBarWidth < calcNavBarWidth <= navBarWidth | calcNavBarWidth |
 | minNavBarWidth ≤ navBarWidth ≤ maxNavBarWidth | calcNavBarWidth > navBarWidth | navBarWidth |
 
-说明
+**说明** 
 
 为了简化表示，可以将组件宽度 - minContentWidth - 分割线宽度 (1px)称为calcNavBarWidth。
 
 ## NavigationOperation11+枚举说明
 
-PhonePC/2in1TabletTVWearable
-
 页面跳转类型。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2141,9 +2094,9 @@ PhonePC/2in1TabletTVWearable
 
 ## BarStyle12+枚举说明
 
-PhonePC/2in1TabletTVWearable
-
 标题栏或工具栏的布局样式。NavDestination的工具栏不支持设置该属性。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2151,13 +2104,52 @@ PhonePC/2in1TabletTVWearable
 | --- | --- | --- |
 | STANDARD | 0 | 指定该模式的标题栏或工具栏与内容区采用上下布局。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | STACK | 1 | 指定该模式的标题栏或工具栏与内容区采用层叠布局，标题栏或工具栏布局在内容区上层。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| SAFE\_AREA\_PADDING14+ | 2 | 将指定该模式的标题栏或工具栏设置为[组件级安全区](ts-universal-attributes-size.md#safeareapadding14)。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
+| SAFE\_AREA\_PADDING14+ | 2 | 将指定该模式的标题栏或工具栏设置为[safeAreaPadding](ts-universal-attributes-size.md#safeareapadding14)。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
+
+## ScrollEffectType
+
+标题栏滚动模糊效果类型。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| COMMON\_BLUR | 0 | 普通模糊样式，对背景做均匀模糊，模糊背景随透明渐变显隐。 |
+| GRADUAL\_BLUR | 1 | 渐进模糊样式，对标题背景做均匀模糊且边界清晰，标题栏内容颜色或状态在滚动前后切换，并在滚动过程中随手势线性变化。 |
+
+## ScrollEffectOptions
+
+标题栏滚动模糊效果选项。
+
+**说明** 
+
+* 如果同时设置了[NavigationTitleOptions](ts-basic-components-navigation.md#navigationtitleoptions11)中的backgroundColor，则滚动模糊效果会被标题栏背景色覆盖。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| scrollEffectType | [ScrollEffectType](ts-basic-components-navigation.md#scrolleffecttype) | 否 | 是 | 标题栏滚动模糊效果类型。  默认值：ScrollEffectType.COMMON\_BLUR |
+| blurEffectiveStartOffset | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 启用标题栏滚动模糊效果的最小滑动距离。  不支持使用[LengthMetrics.percent](js-apis-arkui-graphics.md#percent12)设置最小滑动距离。  默认值：0vp |
+| blurEffectiveEndOffset | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 达到标题栏最终模糊样式的最大滑动距离。  不支持使用[LengthMetrics.percent](js-apis-arkui-graphics.md#percent12)设置最大滑动距离。  默认值：8vp |
 
 ## NavigationTitleOptions11+
 
-PhonePC/2in1TabletTVWearable
-
 标题栏选项。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2168,17 +2160,27 @@ PhonePC/2in1TabletTVWearable
 | backgroundBlurStyleOptions19+ | [BackgroundBlurStyleOptions](ts-universal-attributes-background.md#backgroundblurstyleoptions10对象说明) | 否 | 是 | 标题栏背景模糊选项。  **说明：**  只在设置了backgroundBlurStyle时生效。  不建议与backgroundEffect同时使用。  **元服务API：** 从API version 19开始，该接口支持在元服务中使用。 |
 | backgroundEffect19+ | [BackgroundEffectOptions](ts-universal-attributes-background.md#backgroundeffectoptions11) | 否 | 是 | 设置标题栏背景属性包括：模糊半径，亮度，饱和度，颜色等。  **说明：**  不建议与backgroundBlurStyleOptions同时使用。  **元服务API：** 从API version 19开始，该接口支持在元服务中使用。 |
 | barStyle12+ | [BarStyle](ts-basic-components-navigation.md#barstyle12枚举说明) | 否 | 是 | 设置标题栏布局方式。  默认值：BarStyle.STANDARD  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| paddingStart12+ | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 标题栏起始端内间距。  仅支持以下任一场景：  1. 显示返回图标，即[hideBackButton](ts-basic-components-navigation.md#hidebackbutton)为false；  2. 使用非自定义标题，即[标题value](ts-basic-components-navigation.md#title)类型为ResourceStr或NavigationCommonTitle。  默认值：  LengthMetrics.resource($r('sys.float.margin\_left'))。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| paddingEnd12+ | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 标题栏结束端内间距。  仅支持以下任一场景：  1. 使用非自定义菜单，即[菜单value](ts-basic-components-navigation.md#menus)为Array<NavigationMenuItem>；  2. 没有右上角菜单，且使用非自定义标题，即[标题value](ts-basic-components-navigation.md#title)类型为ResourceStr或NavigationCommonTitle。  默认值：  LengthMetrics.resource($r('sys.float.margin\_right'))  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| paddingStart12+ | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 标题栏起始端内间距。  仅支持以下任一场景：  1. 显示返回图标，即[hideBackButton](ts-basic-components-navigation.md#hidebackbutton)为false；  2. 使用非自定义标题，即[title](ts-basic-components-navigation.md#title)类型为ResourceStr或NavigationCommonTitle。  默认值：  LengthMetrics.resource($r('sys.float.margin\_left'))。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| paddingEnd12+ | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 标题栏结束端内间距。  仅支持以下任一场景：  1. 使用非自定义菜单，即[menus](ts-basic-components-navigation.md#menus)为Array<NavigationMenuItem>；  2. 没有右上角菜单，且使用非自定义标题，即[title](ts-basic-components-navigation.md#title)类型为ResourceStr或NavigationCommonTitle。  默认值：  LengthMetrics.resource($r('sys.float.margin\_right'))  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | mainTitleModifier13+ | [TextModifier](ts-universal-attributes-attribute-modifier.md#自定义modifier) | 否 | 是 | 主标题属性修改器。  1. 通过Modifier设置的属性会覆盖系统默认的属性（如果Modifier设置了fontSize，maxFontSize，minFontSize任一属性，则系统设置的大小相关属性不生效，以开发者的设置为准）；  2. 不设该属性或者设置了异常值，则恢复系统默认设置；  3. [Free](ts-basic-components-navigation.md#navigationtitlemode枚举说明)模式下设置字体大小时，原有滑动改变标题大小的效果失效。  **元服务API：** 从API version 13开始，该接口支持在元服务中使用。 |
 | subTitleModifier13+ | [TextModifier](ts-universal-attributes-attribute-modifier.md#自定义modifier) | 否 | 是 | 子标题属性修改器。  1. 通过Modifier设置的属性会覆盖系统默认的属性（如果Modifier设置了fontSize，maxFontSize，minFontSize任一属性，则系统设置的大小相关属性不生效，以开发者的设置为准）；  2. 不设该属性或者设置了异常值，则恢复系统默认设置。  **元服务API：** 从API version 13开始，该接口支持在元服务中使用。 |
 | enableHoverMode13+ | boolean | 否 | 是 | 是否响应悬停态。  使用规则：  1. 需满足Navigation为全屏大小；  2. 标题栏显示模式为[Free](ts-basic-components-navigation.md#navigationtitlemode枚举说明)时或者标题栏布局方式为[STANDARD](ts-basic-components-navigation.md#barstyle12枚举说明)时，此接口设置无效。  true：响应悬停态；false：不响应悬停态。  默认值：false  **元服务API：** 从API version 13开始，该接口支持在元服务中使用。 |
+| scrollEffectOptions | [ScrollEffectOptions](ts-basic-components-navigation.md#scrolleffectoptions) | 否 | 是 | 标题栏滚动模糊效果选项。默认值undefined，不启用标题栏的滚动模糊。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| systemMaterial | [Material](ts-basic-components-navigation.md#material) | 否 | 是 | 标题栏系统材质。默认值为undefined。系统材质效果取决于设备算力，详见[系统材质](arkts-apis-uimaterial.md)。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+
+**说明** 
+
+标题栏材质生效的范围是：返回键背板，menu按钮背板，menu的更多弹窗的背板。当应用级系统材质开关配置为disable时，无论systemMaterial设置为何值，标题栏材质效果都不生效，应用级系统材质开关请参考[MaterialState](arkts-apis-uimaterial.md#materialstate)。标题栏系统材质设置不同值的效果：
+
+* undefined（默认值），应用级系统材质开关配置为default时，标题栏无材质效果；应用级系统材质开关配置为enable时，标题栏生效系统默认的沉浸式材质效果。
+* [Material.empty](arkts-apis-uimaterial.md#empty)，标题栏无材质效果。
+* [Material](arkts-apis-uimaterial.md#material)，应用级系统材质开关配置为default或者enable时，生效指定的材质效果。
 
 ## NavigationToolbarOptions11+
 
-PhonePC/2in1TabletTVWearable
-
 工具栏选项。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2194,11 +2196,11 @@ PhonePC/2in1TabletTVWearable
 
 ## NavigationMenuOptions19+
 
-PhonePC/2in1TabletTVWearable
-
 页面右上角菜单选项。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2208,11 +2210,11 @@ PhonePC/2in1TabletTVWearable
 
 ## LaunchMode12+枚举说明
 
-PhonePC/2in1TabletTVWearable
-
 路由栈操作模式。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2225,11 +2227,11 @@ PhonePC/2in1TabletTVWearable
 
 ## NavigationOptions12+
 
-PhonePC/2in1TabletTVWearable
-
 路由栈操作选项。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2238,13 +2240,29 @@ PhonePC/2in1TabletTVWearable
 | launchMode | [LaunchMode](ts-basic-components-navigation.md#launchmode12枚举说明) | 否 | 是 | 路由栈的操作模式。  默认值：LaunchMode.STANDARD |
 | animated | boolean | 否 | 是 | 是否支持转场动画。  true：支持转场动画；false：不支持转场动画。  默认值：true |
 
-## MoreButtonOptions19+
+## NavigationConfiguration
 
-PhonePC/2in1TabletTVWearable
+Navigation配置项。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| stackSizeLimit | number | 否 | 是 | Navigation路由栈的活跃页面节点数量限制。  默认值：0，表示不限制路由栈大小。  取值小于等于0时，不限制路由栈大小。  取值大于0时，将活跃页面节点数量限制为指定值；超过限制后，系统会按照先入先出顺序自动销毁较早入栈的页面节点，页面的NavPathInfo完整保留在路由栈中，支持后续重新创建页面。 |
+
+## MoreButtonOptions19+
 
 更多图标的菜单选项。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2256,27 +2274,45 @@ PhonePC/2in1TabletTVWearable
 
 ## SystemBarStyle12+
 
-PhonePC/2in1TabletTVWearable
-
-type SystemBarStyle = SystemBarStyle
+type SystemBarStyle = import('../api/@ohos.window').default.SystemBarStyle
 
 状态栏的属性。在设置页面级状态栏属性时使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 类型 | 说明 |
 | --- | --- |
-| [SystemBarStyle](arkts-apis-window-i.md#systembarstyle12) | 状态栏文字颜色。  默认值：'#0xE5FFFFFF' |
+| import('../api/@ohos.window').default.[SystemBarStyle](arkts-apis-window-i.md#systembarstyle12) | 状态栏文字颜色。  默认值：'#0xE5FFFFFF' |
+
+## Material
+
+type Material = import('../api/@ohos.arkui.uiMaterial').default.Material
+
+系统材质。在设置标题栏系统材质属性时使用。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+| 类型 | 说明 |
+| --- | --- |
+| import('../api/@ohos.arkui.uiMaterial').default.[Material](arkts-apis-uimaterial.md#material) | 系统材质。 |
 
 ## HomePathInfo20+
-
-PhonePC/2in1TabletTVWearable
 
 主页NavDestination的信息。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2287,1524 +2323,1522 @@ PhonePC/2in1TabletTVWearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 示例效果请以真机为准，系统路由表不支持预览器以及模拟器。
 
 ### 示例1（Navigation页面布局）
 
 该示例主要演示Navigation页面的布局包括标题栏[title](ts-basic-components-navigation.md#title)，菜单栏[menus](ts-basic-components-navigation.md#menus)，内容区和工具栏[toolbarConfiguration](ts-basic-components-navigation.md#toolbarconfiguration10)。
 
+```ts
+// xxx.ets
+
+@Entry
+@Component
+struct NavigationExample {
+  private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  @Builder
+  NavigationTitle() {
+    Column() {
+      Text('Title')
+        .fontColor('#182431')
+        .fontSize(30)
+        .lineHeight(41)
+        .fontWeight(700)
+      Text('subtitle')
+        .fontColor('#182431')
+        .fontSize(14)
+        .lineHeight(19)
+        .opacity(0.4)
+        .margin({ top: 2, bottom: 20 })
+    }.alignItems(HorizontalAlign.Start)
+  }
+
+  @Builder
+  NavigationMenus() {
+    Row() {
+      // 'resources/base/media/ic_public_add.svg'需要替换为开发者所需的资源文件
+      Image('resources/base/media/ic_public_add.svg')
+        .width(24)
+        .height(24)
+      // 'resources/base/media/ic_public_add.svg'需要替换为开发者所需的资源文件
+      Image('resources/base/media/ic_public_add.svg')
+        .width(24)
+        .height(24)
+        .margin({ left: 24 })
+      // 'resources/base/media/ic_public_more.svg'需要替换为开发者所需的资源文件
+      Image('resources/base/media/ic_public_more.svg')
+        .width(24)
+        .height(24)
+        .margin({ left: 24 })
+    }
+  }
+
+  build() {
+    Column() {
+      Navigation() {
+        TextInput({ placeholder: 'search...' })
+          .width('90%')
+          .height(40)
+          .backgroundColor('#FFFFFF')
+          .margin({ top: 8 })
+
+        List({ space: 12, initialIndex: 0 }) {
+          ForEach(this.arr, (item: number) => {
+            ListItem() {
+              Text('' + item)
+                .width('90%')
+                .height(72)
+                .backgroundColor('#FFFFFF')
+                .borderRadius(24)
+                .fontSize(16)
+                .fontWeight(500)
+                .textAlign(TextAlign.Center)
+            }
+          }, (item: number) => item.toString())
+        }
+        .height(324)
+        .width('100%')
+        .margin({ top: 12, left: '10%' })
+      }
+      .title(this.NavigationTitle)
+      .menus(this.NavigationMenus)
+      .titleMode(NavigationTitleMode.Full)
+      .toolbarConfiguration([
+        {
+          // $r('app.string.navigation_toolbar_add')和$r('app.media.ic_public_highlights_ed')需要替换为开发者所需的资源文件
+          value: $r('app.string.navigation_toolbar_add'),
+          icon: $r('app.media.ic_public_highlights_ed')
+        },
+        {
+          // $r('app.string.navigation_toolbar_app')和$r('app.media.ic_public_highlights')需要替换为开发者所需的资源文件
+          value: $r('app.string.navigation_toolbar_app'),
+          icon: $r('app.media.ic_public_highlights')
+        },
+        {
+          // $r('app.string.navigation_toolbar_collect')和$r('app.media.ic_public_highlights')需要替换为开发者所需的资源文件
+          value: $r('app.string.navigation_toolbar_collect'),
+          icon: $r('app.media.ic_public_highlights')
+        }
+      ])
+      .hideTitleBar(false)
+      .hideToolBar(false)
+      .onTitleModeChange((titleModel: NavigationTitleMode) => {
+        console.info('titleMode' + titleModel)
+      })
+    }.width('100%').height('100%').backgroundColor('#F1F3F5')
+  }
+}
 ```
-1. // xxx.ets
 
-3. @Entry
-4. @Component
-5. struct NavigationExample {
-6. private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-8. @Builder
-9. NavigationTitle() {
-10. Column() {
-11. Text('Title')
-12. .fontColor('#182431')
-13. .fontSize(30)
-14. .lineHeight(41)
-15. .fontWeight(700)
-16. Text('subtitle')
-17. .fontColor('#182431')
-18. .fontSize(14)
-19. .lineHeight(19)
-20. .opacity(0.4)
-21. .margin({ top: 2, bottom: 20 })
-22. }.alignItems(HorizontalAlign.Start)
-23. }
-
-25. @Builder
-26. NavigationMenus() {
-27. Row() {
-28. // 'resources/base/media/ic_public_add.svg'需要替换为开发者所需的资源文件
-29. Image('resources/base/media/ic_public_add.svg')
-30. .width(24)
-31. .height(24)
-32. // 'resources/base/media/ic_public_add.svg'需要替换为开发者所需的资源文件
-33. Image('resources/base/media/ic_public_add.svg')
-34. .width(24)
-35. .height(24)
-36. .margin({ left: 24 })
-37. // 'resources/base/media/ic_public_more.svg'需要替换为开发者所需的资源文件
-38. Image('resources/base/media/ic_public_more.svg')
-39. .width(24)
-40. .height(24)
-41. .margin({ left: 24 })
-42. }
-43. }
-
-45. build() {
-46. Column() {
-47. Navigation() {
-48. TextInput({ placeholder: 'search...' })
-49. .width('90%')
-50. .height(40)
-51. .backgroundColor('#FFFFFF')
-52. .margin({ top: 8 })
-
-54. List({ space: 12, initialIndex: 0 }) {
-55. ForEach(this.arr, (item: number) => {
-56. ListItem() {
-57. Text('' + item)
-58. .width('90%')
-59. .height(72)
-60. .backgroundColor('#FFFFFF')
-61. .borderRadius(24)
-62. .fontSize(16)
-63. .fontWeight(500)
-64. .textAlign(TextAlign.Center)
-65. }
-66. }, (item: number) => item.toString())
-67. }
-68. .height(324)
-69. .width('100%')
-70. .margin({ top: 12, left: '10%' })
-71. }
-72. .title(this.NavigationTitle)
-73. .menus(this.NavigationMenus)
-74. .titleMode(NavigationTitleMode.Full)
-75. .toolbarConfiguration([
-76. {
-77. // $r("app.string.navigation_toolbar_add")和$r("app.media.ic_public_highlights_ed")需要替换为开发者所需的资源文件
-78. value: $r("app.string.navigation_toolbar_add"),
-79. icon: $r("app.media.ic_public_highlights_ed")
-80. },
-81. {
-82. // $r("app.string.navigation_toolbar_app")和$r("app.media.ic_public_highlights")需要替换为开发者所需的资源文件
-83. value: $r("app.string.navigation_toolbar_app"),
-84. icon: $r("app.media.ic_public_highlights")
-85. },
-86. {
-87. // $r("app.string.navigation_toolbar_collect")和$r("app.media.ic_public_highlights")需要替换为开发者所需的资源文件
-88. value: $r("app.string.navigation_toolbar_collect"),
-89. icon: $r("app.media.ic_public_highlights")
-90. }
-91. ])
-92. .hideTitleBar(false)
-93. .hideToolBar(false)
-94. .onTitleModeChange((titleModel: NavigationTitleMode) => {
-95. console.info('titleMode' + titleModel)
-96. })
-97. }.width('100%').height('100%').backgroundColor('#F1F3F5')
-98. }
-99. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/D5Qk5OkNStCQtSgOWZLkPQ/zh-cn_image_0000002589245993.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/oHJdHi19TRC1Ye8JSB8PYw/zh-cn_image_0000002736434965.png)
 
 ### 示例2（使用导航控制器方法）
 
 该示例主要演示[NavPathStack](ts-basic-components-navigation.md#navpathstack10)中方法的使用及路由拦截。
 
-```
-1. // Index.ets
-2. @Entry
-3. @Component
-4. struct NavigationExample {
-5. pageInfos: NavPathStack = new NavPathStack();
-6. isUseInterception: boolean = false;
+```ts
+// Index.ets
+@Entry
+@Component
+struct NavigationExample {
+  pageInfos: NavPathStack = new NavPathStack();
+  isUseInterception: boolean = false;
 
-8. registerInterception() {
-9. this.pageInfos.setInterception({
-10. // 页面跳转前拦截，允许操作栈，在当前跳转中生效。
-11. willShow: (from: NavDestinationContext | "navBar", to: NavDestinationContext | "navBar",
-12. operation: NavigationOperation, animated: boolean) => {
-13. if (!this.isUseInterception) {
-14. return;
-15. }
-16. if (typeof to === "string") {
-17. console.info("target page is navigation home");
-18. return;
-19. }
-20. // 重定向目标页面，更改为pageTwo页面到pageOne页面。
-21. let target: NavDestinationContext = to as NavDestinationContext;
-22. if (target.pathInfo.name === 'pageTwo') {
-23. target.pathStack.pop();
-24. target.pathStack.pushPathByName('pageOne', null);
-25. }
-26. },
-27. // 页面跳转后回调，在该回调中操作栈在下一次跳转中刷新。
-28. didShow: (from: NavDestinationContext | "navBar", to: NavDestinationContext | "navBar",
-29. operation: NavigationOperation, isAnimated: boolean) => {
-30. if (!this.isUseInterception) {
-31. return;
-32. }
-33. if (typeof from === "string") {
-34. console.info("current transition is from navigation home");
-35. } else {
-36. console.info(`current transition is from  ${(from as NavDestinationContext).pathInfo.name}`);
-37. }
-38. if (typeof to === "string") {
-39. console.info("current transition to is navBar");
-40. } else {
-41. console.info(`current transition is to ${(to as NavDestinationContext).pathInfo.name}`);
-42. }
-43. },
-44. // Navigation单双栏显示状态发生变更时触发该回调。
-45. modeChange: (mode: NavigationMode) => {
-46. if (!this.isUseInterception) {
-47. return;
-48. }
-49. console.info(`current navigation mode is ${mode}`);
-50. }
-51. })
-52. }
+  registerInterception() {
+    this.pageInfos.setInterception({
+      // 页面跳转前拦截，允许操作栈，在当前跳转中生效。
+      willShow: (from: NavDestinationContext | 'navBar', to: NavDestinationContext | 'navBar',
+        operation: NavigationOperation, animated: boolean) => {
+        if (!this.isUseInterception) {
+          return;
+        }
+        if (typeof to === 'string') {
+          console.info('target page is navigation home');
+          return;
+        }
+        // 重定向目标页面，更改为pageTwo页面到pageOne页面。
+        let target: NavDestinationContext = to as NavDestinationContext;
+        if (target.pathInfo.name === 'pageTwo') {
+          target.pathStack.pop();
+          target.pathStack.pushPathByName('pageOne', null);
+        }
+      },
+      // 页面跳转后回调，在该回调中操作栈在下一次跳转中刷新。
+      didShow: (from: NavDestinationContext | 'navBar', to: NavDestinationContext | 'navBar',
+        operation: NavigationOperation, isAnimated: boolean) => {
+        if (!this.isUseInterception) {
+          return;
+        }
+        if (typeof from === 'string') {
+          console.info('current transition is from navigation home');
+        } else {
+          console.info(`current transition is from  ${(from as NavDestinationContext).pathInfo.name}`);
+        }
+        if (typeof to === 'string') {
+          console.info('current transition to is navBar');
+        } else {
+          console.info(`current transition is to ${(to as NavDestinationContext).pathInfo.name}`);
+        }
+      },
+      // Navigation单双栏显示状态发生变更时触发该回调。
+      modeChange: (mode: NavigationMode) => {
+        if (!this.isUseInterception) {
+          return;
+        }
+        console.info(`current navigation mode is ${mode}`);
+      }
+    })
+  }
 
-54. build() {
-55. Navigation(this.pageInfos) {
-56. Column() {
-57. Button('pushPath', { stateEffect: true, type: ButtonType.Capsule })
-58. .width('80%')
-59. .height(40)
-60. .margin(20)
-61. .onClick(() => {
-62. this.pageInfos.pushPath({ name: 'pageOne' }); // 将name指定的NavDestination页面信息入栈
-63. })
-64. Button('use interception', { stateEffect: true, type: ButtonType.Capsule })
-65. .width('80%')
-66. .height(40)
-67. .margin(20)
-68. .onClick(() => {
-69. this.isUseInterception = !this.isUseInterception;
-70. if (this.isUseInterception) {
-71. this.registerInterception();
-72. } else {
-73. this.pageInfos.setInterception(undefined);
-74. }
-75. })
-76. }
-77. }.title('NavIndex')
-78. }
-79. }
-```
-
-```
-1. // PageOne.ets
-2. class TmpClass {
-3. count: number = 10;
-4. }
-
-6. @Builder
-7. export function PageOneBuilder(name: string, param: Object) {
-8. PageOne()
-9. }
-
-11. @Component
-12. export struct PageOne {
-13. pageInfos: NavPathStack = new NavPathStack();
-
-15. build() {
-16. NavDestination() {
-17. Column() {
-18. Button('pushPathByName', { stateEffect: true, type: ButtonType.Capsule })
-19. .width('80%')
-20. .height(40)
-21. .margin(20)
-22. .onClick(() => {
-23. let tmp = new TmpClass();
-24. this.pageInfos.pushPathByName('pageTwo', tmp); // 将name指定的NavDestination页面信息入栈，传递的数据为param
-25. })
-26. Button('singletonLaunchMode', { stateEffect: true, type: ButtonType.Capsule })
-27. .width('80%')
-28. .height(40)
-29. .margin(20)
-30. .onClick(() => {
-31. this.pageInfos.pushPath({ name: 'pageOne' },
-32. { launchMode: LaunchMode.MOVE_TO_TOP_SINGLETON }); // 从栈底向栈顶查找，如果指定的名称已经存在，则将对应的NavDestination页面移到栈顶
-33. })
-34. Button('popToname', { stateEffect: true, type: ButtonType.Capsule })
-35. .width('80%')
-36. .height(40)
-37. .margin(20)
-38. .onClick(() => {
-39. this.pageInfos.popToName('pageTwo'); // 回退路由栈到第一个名为name的NavDestination页面
-40. console.info(`popToName ${JSON.stringify(this.pageInfos)}，` +
-41. `返回值 ${JSON.stringify(this.pageInfos.popToName('pageTwo'))}`);
-42. })
-43. Button('popToIndex', { stateEffect: true, type: ButtonType.Capsule })
-44. .width('80%')
-45. .height(40)
-46. .margin(20)
-47. .onClick(() => {
-48. this.pageInfos.popToIndex(1); // 回退路由栈到index指定的NavDestination页面
-49. console.info(`popToIndex ${JSON.stringify(this.pageInfos)}`);
-50. })
-51. Button('moveToTop', { stateEffect: true, type: ButtonType.Capsule })
-52. .width('80%')
-53. .height(40)
-54. .margin(20)
-55. .onClick(() => {
-56. this.pageInfos.moveToTop('pageTwo'); // 将第一个名为name的NavDestination页面移到栈顶
-57. console.info(`moveToTop ${JSON.stringify(this.pageInfos)}，` +
-58. `返回值 ${JSON.stringify(this.pageInfos.popToName('pageTwo'))}`);
-59. })
-60. Button('moveIndexToTop', { stateEffect: true, type: ButtonType.Capsule })
-61. .width('80%')
-62. .height(40)
-63. .margin(20)
-64. .onClick(() => {
-65. this.pageInfos.moveIndexToTop(1); // 将index指定的NavDestination页面移到栈顶
-66. console.info(`moveIndexToTop ${JSON.stringify(this.pageInfos)}`);
-67. })
-68. Button('clear', { stateEffect: true, type: ButtonType.Capsule })
-69. .width('80%')
-70. .height(40)
-71. .margin(20)
-72. .onClick(() => {
-73. this.pageInfos.clear(); // 清除栈中所有页面
-74. })
-75. Button('get', { stateEffect: true, type: ButtonType.Capsule })
-76. .width('80%')
-77. .height(40)
-78. .margin(20)
-79. .onClick(() => {
-80. console.info('-------------------');
-81. console.info(`获取栈中所有NavDestination页面的名称 ${JSON.stringify(this.pageInfos.getAllPathName())}`);
-82. console.info(`获取index指定的NavDestination页面的参数信息 ${JSON.stringify(this.pageInfos.getParamByIndex(1))}`);
-83. console.info(`获取全部名为name的NavDestination页面的参数信息 ${JSON.stringify(this.pageInfos.getParamByName('pageTwo'))}`);
-84. console.info(`获取全部名为name的NavDestination页面的位置索引 ${JSON.stringify(this.pageInfos.getIndexByName('pageOne'))}`);
-85. console.info(`获取栈大小 ${JSON.stringify(this.pageInfos.size())}`);
-86. })
-87. }.width('100%').height('100%')
-88. }.title('pageOne')
-89. .onBackPressed(() => {
-90. const popDestinationInfo = this.pageInfos.pop(); // 弹出路由栈栈顶元素
-91. console.info(`pop 返回值 ${JSON.stringify(popDestinationInfo)}`);
-92. return true;
-93. }).onReady((context: NavDestinationContext) => {
-94. this.pageInfos = context.pathStack;
-95. })
-96. }
-97. }
+  build() {
+    Navigation(this.pageInfos) {
+      Column() {
+        Button('pushPath', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.pageInfos.pushPath({ name: 'pageOne' }); // 将name指定的NavDestination页面信息入栈
+          })
+        Button('use interception', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.isUseInterception = !this.isUseInterception;
+            if (this.isUseInterception) {
+              this.registerInterception();
+            } else {
+              this.pageInfos.setInterception(undefined);
+            }
+          })
+      }
+    }.title('NavIndex')
+  }
+}
 ```
 
+```ts
+// PageOne.ets
+class PageParam {
+  count: number = 10;
+}
+
+@Builder
+export function PageOneBuilder(name: string, param: Object) {
+  PageOne()
+}
+
+@Component
+export struct PageOne {
+  pageInfos: NavPathStack = new NavPathStack();
+
+  build() {
+    NavDestination() {
+      Column() {
+        Button('pushPathByName', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            let pageParam = new PageParam();
+            this.pageInfos.pushPathByName('pageTwo', pageParam); // 将name指定的NavDestination页面信息入栈，传递的数据为param
+          })
+        Button('singletonLaunchMode', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.pageInfos.pushPath({ name: 'pageOne' },
+              { launchMode: LaunchMode.MOVE_TO_TOP_SINGLETON }); // 从栈底向栈顶查找，如果指定的名称已经存在，则将对应的NavDestination页面移到栈顶
+          })
+        Button('popToname', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.pageInfos.popToName('pageTwo'); // 回退路由栈到第一个名为name的NavDestination页面
+            console.info(`popToName ${JSON.stringify(this.pageInfos)}，` +
+              `返回值 ${JSON.stringify(this.pageInfos.popToName('pageTwo'))}`);
+          })
+        Button('popToIndex', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.pageInfos.popToIndex(1); // 回退路由栈到index指定的NavDestination页面
+            console.info(`popToIndex ${JSON.stringify(this.pageInfos)}`);
+          })
+        Button('moveToTop', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.pageInfos.moveToTop('pageTwo'); // 将第一个名为name的NavDestination页面移到栈顶
+            console.info(`moveToTop ${JSON.stringify(this.pageInfos)}，` +
+              `返回值 ${JSON.stringify(this.pageInfos.popToName('pageTwo'))}`);
+          })
+        Button('moveIndexToTop', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.pageInfos.moveIndexToTop(1); // 将index指定的NavDestination页面移到栈顶
+            console.info(`moveIndexToTop ${JSON.stringify(this.pageInfos)}`);
+          })
+        Button('clear', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.pageInfos.clear(); // 清除栈中所有页面
+          })
+        Button('get', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            console.info('-------------------');
+            console.info(`获取栈中所有NavDestination页面的名称 ${JSON.stringify(this.pageInfos.getAllPathName())}`);
+            console.info(`获取index指定的NavDestination页面的参数信息 ${JSON.stringify(this.pageInfos.getParamByIndex(1))}`);
+            console.info(`获取全部名为name的NavDestination页面的参数信息 ${JSON.stringify(this.pageInfos.getParamByName('pageTwo'))}`);
+            console.info(`获取全部名为name的NavDestination页面的位置索引 ${JSON.stringify(this.pageInfos.getIndexByName('pageOne'))}`);
+            console.info(`获取栈大小 ${JSON.stringify(this.pageInfos.size())}`);
+          })
+      }.width('100%').height('100%')
+    }.title('pageOne')
+    .onBackPressed(() => {
+      const popDestinationInfo = this.pageInfos.pop(); // 弹出路由栈栈顶元素
+      console.info(`pop 返回值 ${JSON.stringify(popDestinationInfo)}`);
+      return true;
+    }).onReady((context: NavDestinationContext) => {
+      this.pageInfos = context.pathStack;
+    })
+  }
+}
 ```
-1. // PageTwo.ets
-2. @Builder
-3. export function PageTwoBuilder(name: string, param: Object) {
-4. PageTwo()
-5. }
 
-7. @Component
-8. export struct PageTwo {
-9. pathStack: NavPathStack = new NavPathStack();
-10. private menuItems: Array<NavigationMenuItem> = [
-11. {
-12. // 'resources/base/media/undo.svg'需要替换为开发者所需的资源文件
-13. value: "1",
-14. icon: 'resources/base/media/undo.svg',
-15. },
-16. {
-17. // 'resources/base/media/redo.svg'需要替换为开发者所需的资源文件
-18. value: "2",
-19. icon: 'resources/base/media/redo.svg',
-20. isEnabled: false,
-21. },
-22. {
-23. // 'resources/base/media/ic_public_ok.svg'需要替换为开发者所需的资源文件
-24. value: "3",
-25. icon: 'resources/base/media/ic_public_ok.svg',
-26. isEnabled: true,
-27. }
-28. ];
+```ts
+// PageTwo.ets
+@Builder
+export function PageTwoBuilder(name: string, param: Object) {
+  PageTwo()
+}
 
-30. build() {
-31. NavDestination() {
-32. Column() {
-33. Button('pushPathByName', { stateEffect: true, type: ButtonType.Capsule })
-34. .width('80%')
-35. .height(40)
-36. .margin(20)
-37. .onClick(() => {
-38. this.pathStack.pushPathByName('pageOne', null);
-39. })
-40. }.width('100%').height('100%')
-41. }.title('pageTwo')
-42. .menus(this.menuItems)
-43. .onBackPressed(() => {
-44. this.pathStack.pop();
-45. return true;
-46. })
-47. .onReady((context: NavDestinationContext) => {
-48. this.pathStack = context.pathStack;
-49. console.info(`current page config info is ${JSON.stringify(context.getConfigInRouteMap())}`);
-50. })
-51. }
-52. }
+@Component
+export struct PageTwo {
+  pathStack: NavPathStack = new NavPathStack();
+  private menuItems: Array<NavigationMenuItem> = [
+    {
+      // 'resources/base/media/undo.svg'需要替换为开发者所需的资源文件
+      value: '1',
+      icon: 'resources/base/media/undo.svg',
+    },
+    {
+      // 'resources/base/media/redo.svg'需要替换为开发者所需的资源文件
+      value: '2',
+      icon: 'resources/base/media/redo.svg',
+      isEnabled: false,
+    },
+    {
+      // 'resources/base/media/ic_public_ok.svg'需要替换为开发者所需的资源文件
+      value: '3',
+      icon: 'resources/base/media/ic_public_ok.svg',
+      isEnabled: true,
+    }
+  ];
+
+  build() {
+    NavDestination() {
+      Column() {
+        Button('pushPathByName', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.pathStack.pushPathByName('pageOne', null);
+          })
+      }.width('100%').height('100%')
+    }.title('pageTwo')
+    .menus(this.menuItems)
+    .onBackPressed(() => {
+      this.pathStack.pop();
+      return true;
+    })
+    .onReady((context: NavDestinationContext) => {
+      this.pathStack = context.pathStack;
+      console.info(`current page config info is ${JSON.stringify(context.getConfigInRouteMap())}`);
+    })
+  }
+}
 ```
 
 在src/main目录下的[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中的module字段里配置"routerMap": "$profile:router\_map"，并在src/main/resources/base/profile目录下新增router\_map.json。router\_map.json示例如下。
 
-```
-1. {
-2. "routerMap": [
-3. {
-4. "name": "pageOne",
-5. "pageSourceFile": "src/main/ets/pages/PageOne.ets",
-6. "buildFunction": "PageOneBuilder",
-7. "data": {
-8. "description": "this is pageOne"
-9. }
-10. },
-11. {
-12. "name": "pageTwo",
-13. "pageSourceFile": "src/main/ets/pages/PageTwo.ets",
-14. "buildFunction": "PageTwoBuilder"
-15. }
-16. ]
-17. }
+```json
+{
+  "routerMap": [
+    {
+      "name": "pageOne",
+      "pageSourceFile": "src/main/ets/pages/PageOne.ets",
+      "buildFunction": "PageOneBuilder",
+      "data": {
+        "description": "this is pageOne"
+      }
+    },
+    {
+      "name": "pageTwo",
+      "pageSourceFile": "src/main/ets/pages/PageTwo.ets",
+      "buildFunction": "PageTwoBuilder"
+    }
+  ]
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/BM4Aq8gnREK_jeHJiZSakg/zh-cn_image_0000002558766184.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/xTAkq5NHS9u-qogWrMSCRQ/zh-cn_image_0000002706835818.gif)
 
 ### 示例3（设置可交互转场动画）
 
 该示例主要演示设置每个[NavDestination](ts-basic-components-navdestination.md)子页面的自定义转场动画及可交互转场动画。
 
-```
-1. // Index.ets
-2. import { CustomTransition, AnimateCallback } from './CustomNavigationUtils'
+```ts
+// Index.ets
+import { CustomTransition, AnimateCallback } from './CustomNavigationUtils'
 
-4. @Entry
-5. @Component
-6. struct NavigationExample {
-7. pageInfos: NavPathStack = new NavPathStack();
+@Entry
+@Component
+struct NavigationExample {
+  pageInfos: NavPathStack = new NavPathStack();
 
-9. aboutToAppear() {
-10. if (this.pageInfos === undefined) {
-11. this.pageInfos = new NavPathStack();
-12. }
-13. this.pageInfos.pushPath({ name: 'pageOne', param: CustomTransition.getInstance().getAnimationId() });
-14. }
+  aboutToAppear() {
+    if (this.pageInfos === undefined) {
+      this.pageInfos = new NavPathStack();
+    }
+    this.pageInfos.pushPath({ name: 'pageOne', param: CustomTransition.getInstance().getAnimationId() });
+  }
 
-16. build() {
-17. Navigation(this.pageInfos) {
-18. }
-19. .title('NavIndex')
-20. .hideNavBar(true)
-21. .customNavContentTransition((from: NavContentInfo, to: NavContentInfo, operation: NavigationOperation) => {
-22. if (from.mode == NavDestinationMode.DIALOG || to.mode == NavDestinationMode.DIALOG) {
-23. return undefined;
-24. }
+  build() {
+    Navigation(this.pageInfos) {
+    }
+    .title('NavIndex')
+    .hideNavBar(true)
+    .customNavContentTransition((from: NavContentInfo, to: NavContentInfo, operation: NavigationOperation) => {
+      if (from.mode == NavDestinationMode.DIALOG || to.mode == NavDestinationMode.DIALOG) {
+        return undefined;
+      }
 
-26. // 首页不进行自定义动画
-27. if (from.index === -1 || to.index === -1) {
-28. return undefined;
-29. }
+      // 首页不进行自定义动画
+      if (from.index === -1 || to.index === -1) {
+        return undefined;
+      }
 
-31. CustomTransition.getInstance().operation = operation;
-32. if (CustomTransition.getInstance().interactive) {
-33. let customAnimation: NavigationAnimatedTransition = {
-34. onTransitionEnd: (isSuccess: boolean) => {
-35. console.info("===== current transition is " + isSuccess);
-36. CustomTransition.getInstance().recoverState();
-37. CustomTransition.getInstance().proxy = undefined;
-38. },
-39. transition: (transitionProxy: NavigationTransitionProxy) => {
-40. CustomTransition.getInstance().proxy = transitionProxy;
-41. let targetIndex: string | undefined = operation == NavigationOperation.PUSH ?
-42. (to.navDestinationId) : (from.navDestinationId);
-43. if (targetIndex) {
-44. CustomTransition.getInstance().fireInteractiveAnimation(targetIndex, operation);
-45. }
-46. },
-47. isInteractive: CustomTransition.getInstance().interactive
-48. }
-49. return customAnimation;
-50. }
-51. let customAnimation: NavigationAnimatedTransition = {
-52. onTransitionEnd: (isSuccess: boolean) => {
-53. console.info(`current transition result is ${isSuccess}`);
-54. },
-55. timeout: 7000,
-56. // 转场开始时系统调用该方法，并传入转场上下文代理对象
-57. transition: (transitionProxy: NavigationTransitionProxy) => {
-58. if (!from.navDestinationId || !to.navDestinationId) {
-59. return;
-60. }
-61. // 从封装类CustomTransition中根据子页面的序列获取对应的转场动画回调
-62. let fromParam: AnimateCallback = CustomTransition.getInstance().getAnimateParam(from.navDestinationId);
-63. let toParam: AnimateCallback = CustomTransition.getInstance().getAnimateParam(to.navDestinationId);
-64. if (operation == NavigationOperation.PUSH) {
-65. if (toParam.start) {
-66. toParam.start(true, false);
-67. }
-68. this.getUIContext()?.animateTo({
-69. duration: 500, onFinish: () => {
-70. transitionProxy.finishTransition();
-71. }
-72. }, () => {
-73. if (toParam.finish) {
-74. toParam.finish(true, false);
-75. }
-76. })
-77. } else {
-78. if (fromParam.start) {
-79. fromParam.start(true, true);
-80. }
-81. this.getUIContext()?.animateTo({
-82. duration: 500, onFinish: () => {
-83. transitionProxy.finishTransition();
-84. }
-85. }, () => {
-86. if (fromParam.finish) {
-87. fromParam.finish(true, true);
-88. }
-89. })
-90. }
-91. }
-92. };
-93. return customAnimation;
-94. })
-95. }
-96. }
-```
-
-```
-1. // PageOne.ets
-2. import { CustomTransition } from './CustomNavigationUtils';
-
-4. @Builder
-5. export function PageOneBuilder(name: string, param: Object) {
-6. PageOne()
-7. }
-
-9. @Component
-10. export struct PageOne {
-11. pageInfos: NavPathStack = new NavPathStack();
-12. @State translateX: string = '0';
-13. pageId: string = '';
-14. rectWidth: number = 0;
-15. interactive: boolean = false;
-
-17. registerCallback() {
-18. CustomTransition.getInstance().registerNavParam(this.pageId, (isPush: boolean, isExit: boolean) => {
-19. if (isPush) {
-20. this.translateX = '100%';
-21. } else {
-22. this.translateX = '0';
-23. }
-24. }, (isPush: boolean, isExit: boolean) => {
-25. if (isPush) {
-26. this.translateX = '0';
-27. } else {
-28. this.translateX = '100%';
-29. }
-30. }, (isPush: boolean, isExit: boolean) => {
-31. this.translateX = '0';
-32. }, (operation: NavigationOperation) => {
-33. if (operation == NavigationOperation.PUSH) {
-34. this.translateX = '100%';
-35. this.getUIContext()?.animateTo({
-36. duration: 1000,
-37. onFinish: () => {
-38. this.translateX = '0';
-39. }
-40. }, () => {
-41. this.translateX = '0';
-42. })
-43. } else {
-44. this.translateX = '0';
-45. this.getUIContext()?.animateTo({
-46. duration: 1000,
-47. onFinish: () => {
-48. this.translateX = '0';
-49. }
-50. }, () => {
-51. this.translateX = '100%';
-52. })
-53. }
-54. }, 200);
-55. }
-
-57. build() {
-58. NavDestination() {
-59. Column() {
-60. Button(`setInteractive`)
-61. .onClick(() => {
-62. CustomTransition.getInstance().interactive = !CustomTransition.getInstance().interactive;
-63. this.interactive = CustomTransition.getInstance().interactive;
-64. })
-
-66. Button('pushPathByName', { stateEffect: true, type: ButtonType.Capsule })
-67. .width('80%')
-68. .height(40)
-69. .margin(20)
-70. .onClick(() => {
-71. // 将name指定的NavDestination页面信息入栈，传递的数据为param
-72. this.pageInfos.pushDestinationByName('pageTwo', CustomTransition.getInstance().getAnimationId());
-73. })
-74. }
-75. .size({ width: '100%', height: '100%' })
-76. }
-77. .title('pageOne')
-78. .onDisAppear(() => {
-79. CustomTransition.getInstance().unRegisterNavParam(this.pageId);
-80. })
-81. .onReady((context: NavDestinationContext) => {
-82. this.pageInfos = context.pathStack;
-83. if (context.navDestinationId) {
-84. this.pageId = context.navDestinationId;
-85. this.registerCallback();
-86. }
-87. })
-88. .translate({ x: this.translateX })
-89. .backgroundColor('#F1F3F5')
-90. .gesture(PanGesture()
-91. .onActionStart((event: GestureEvent) => {
-92. this.rectWidth = event.target.area.width as number;
-93. if (event.offsetX < 0) {
-94. this.pageInfos.pushPath({ name: 'pageTwo', param: CustomTransition.getInstance().getAnimationId() });
-95. } else {
-96. this.pageInfos.pop();
-97. }
-98. })
-99. .onActionUpdate((event: GestureEvent) => {
-100. let rate = event.fingerList[0].localX / this.rectWidth;
-101. CustomTransition.getInstance().updateProgress(rate);
-102. })
-103. .onActionEnd((event: GestureEvent) => {
-104. let rate: number = event.fingerList[0].localX / this.rectWidth;
-105. CustomTransition.getInstance().finishInteractiveAnimation(rate);
-106. }))
-107. }
-108. }
+      CustomTransition.getInstance().operation = operation;
+      if (CustomTransition.getInstance().interactive) {
+        let customAnimation: NavigationAnimatedTransition = {
+          onTransitionEnd: (isSuccess: boolean) => {
+            console.info(`===== current transition is ${isSuccess}`);
+            CustomTransition.getInstance().recoverState();
+            CustomTransition.getInstance().proxy = undefined;
+          },
+          transition: (transitionProxy: NavigationTransitionProxy) => {
+            CustomTransition.getInstance().proxy = transitionProxy;
+            let targetIndex: string | undefined = operation == NavigationOperation.PUSH ?
+              (to.navDestinationId) : (from.navDestinationId);
+            if (targetIndex) {
+              CustomTransition.getInstance().fireInteractiveAnimation(targetIndex, operation);
+            }
+          },
+          isInteractive: CustomTransition.getInstance().interactive
+        }
+        return customAnimation;
+      }
+      let customAnimation: NavigationAnimatedTransition = {
+        onTransitionEnd: (isSuccess: boolean) => {
+          console.info(`current transition result is ${isSuccess}`);
+        },
+        timeout: 7000,
+        // 转场开始时系统调用该方法，并传入转场上下文代理对象
+        transition: (transitionProxy: NavigationTransitionProxy) => {
+          if (!from.navDestinationId || !to.navDestinationId) {
+            return;
+          }
+          // 从封装类CustomTransition中根据子页面的序列获取对应的转场动画回调
+          let fromParam: AnimateCallback = CustomTransition.getInstance().getAnimateParam(from.navDestinationId);
+          let toParam: AnimateCallback = CustomTransition.getInstance().getAnimateParam(to.navDestinationId);
+          if (operation == NavigationOperation.PUSH) {
+            if (toParam.start) {
+              toParam.start(true, false);
+            }
+            this.getUIContext()?.animateTo({
+              duration: 500, onFinish: () => {
+                transitionProxy.finishTransition();
+              }
+            }, () => {
+              if (toParam.finish) {
+                toParam.finish(true, false);
+              }
+            })
+          } else {
+            if (fromParam.start) {
+              fromParam.start(true, true);
+            }
+            this.getUIContext()?.animateTo({
+              duration: 500, onFinish: () => {
+                transitionProxy.finishTransition();
+              }
+            }, () => {
+              if (fromParam.finish) {
+                fromParam.finish(true, true);
+              }
+            })
+          }
+        }
+      };
+      return customAnimation;
+    })
+  }
+}
 ```
 
+```ts
+// PageOne.ets
+import { CustomTransition } from './CustomNavigationUtils';
+
+@Builder
+export function PageOneBuilder(name: string, param: Object) {
+  PageOne()
+}
+
+@Component
+export struct PageOne {
+  pageInfos: NavPathStack = new NavPathStack();
+  @State translateX: string = '0';
+  pageId: string = '';
+  rectWidth: number = 0;
+  interactive: boolean = false;
+
+  registerCallback() {
+    CustomTransition.getInstance().registerNavParam(this.pageId, (isPush: boolean, isExit: boolean) => {
+      if (isPush) {
+        this.translateX = '100%';
+      } else {
+        this.translateX = '0';
+      }
+    }, (isPush: boolean, isExit: boolean) => {
+      if (isPush) {
+        this.translateX = '0';
+      } else {
+        this.translateX = '100%';
+      }
+    }, (isPush: boolean, isExit: boolean) => {
+      this.translateX = '0';
+    }, (operation: NavigationOperation) => {
+      if (operation == NavigationOperation.PUSH) {
+        this.translateX = '100%';
+        this.getUIContext()?.animateTo({
+          duration: 1000,
+          onFinish: () => {
+            this.translateX = '0';
+          }
+        }, () => {
+          this.translateX = '0';
+        })
+      } else {
+        this.translateX = '0';
+        this.getUIContext()?.animateTo({
+          duration: 1000,
+          onFinish: () => {
+            this.translateX = '0';
+          }
+        }, () => {
+          this.translateX = '100%';
+        })
+      }
+    }, 200);
+  }
+
+  build() {
+    NavDestination() {
+      Column() {
+        Button(`setInteractive`)
+          .onClick(() => {
+            CustomTransition.getInstance().interactive = !CustomTransition.getInstance().interactive;
+            this.interactive = CustomTransition.getInstance().interactive;
+          })
+
+        Button('pushPathByName', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            // 将name指定的NavDestination页面信息入栈，传递的数据为param
+            this.pageInfos.pushDestinationByName('pageTwo', CustomTransition.getInstance().getAnimationId());
+          })
+      }
+      .size({ width: '100%', height: '100%' })
+    }
+    .title('pageOne')
+    .onDisAppear(() => {
+      CustomTransition.getInstance().unRegisterNavParam(this.pageId);
+    })
+    .onReady((context: NavDestinationContext) => {
+      this.pageInfos = context.pathStack;
+      if (context.navDestinationId) {
+        this.pageId = context.navDestinationId;
+        this.registerCallback();
+      }
+    })
+    .translate({ x: this.translateX })
+    .backgroundColor('#F1F3F5')
+    .gesture(PanGesture()
+      .onActionStart((event: GestureEvent) => {
+        this.rectWidth = event.target.area.width as number;
+        if (event.offsetX < 0) {
+          this.pageInfos.pushPath({ name: 'pageTwo', param: CustomTransition.getInstance().getAnimationId() });
+        } else {
+          this.pageInfos.pop();
+        }
+      })
+      .onActionUpdate((event: GestureEvent) => {
+        let rate = event.fingerList[0].localX / this.rectWidth;
+        CustomTransition.getInstance().updateProgress(rate);
+      })
+      .onActionEnd((event: GestureEvent) => {
+        let rate: number = event.fingerList[0].localX / this.rectWidth;
+        CustomTransition.getInstance().finishInteractiveAnimation(rate);
+      }))
+  }
+}
 ```
-1. // PageTwo.ets
-2. import { CustomTransition } from './CustomNavigationUtils'
 
-4. @Builder
-5. export function PageTwoBuilder(name: string, param: Object) {
-6. PageTwo({ param: param as number })
-7. }
+```ts
+// PageTwo.ets
+import { CustomTransition } from './CustomNavigationUtils'
 
-9. @Component
-10. export struct PageTwo {
-11. pageInfos: NavPathStack = new NavPathStack();
-12. @State translateX: string = '0';
-13. pageId: string = '';
-14. rectWidth: number = 0;
-15. param: number = 0;
+@Builder
+export function PageTwoBuilder(name: string, param: Object) {
+  PageTwo({ param: param as number })
+}
 
-17. registerCallback() {
-18. CustomTransition.getInstance().registerNavParam(this.pageId, (isPush: boolean, isExit: boolean) => {
-19. if (isPush) {
-20. this.translateX = '100%'
-21. } else {
-22. this.translateX = '0';
-23. }
-24. }, (isPush: boolean, isExit: boolean) => {
-25. if (isPush) {
-26. this.translateX = '0';
-27. } else {
-28. this.translateX = '100%';
-29. }
-30. }, (isPush: boolean, isExit: boolean) => {
-31. this.translateX = '0';
-32. }, (operation: NavigationOperation) => {
-33. if (operation == NavigationOperation.PUSH) {
-34. this.translateX = '100%';
-35. this.getUIContext()?.animateTo({
-36. duration: 500, onFinish: () => {
-37. this.translateX = '0';
-38. }
-39. }, () => {
-40. this.translateX = '0';
-41. })
-42. } else {
-43. this.translateX = '0';
-44. this.getUIContext()?.animateTo({
-45. duration: 500, onFinish: () => {
-46. this.translateX = "0";
-47. }
-48. }, () => {
-49. this.translateX = '100%';
-50. })
-51. }
-52. }, 2000)
-53. }
+@Component
+export struct PageTwo {
+  pageInfos: NavPathStack = new NavPathStack();
+  @State translateX: string = '0';
+  pageId: string = '';
+  rectWidth: number = 0;
+  param: number = 0;
 
-55. build() {
-56. NavDestination() {
-57. Column() {
-58. Button('pushPathByName', { stateEffect: true, type: ButtonType.Capsule })
-59. .width('80%')
-60. .height(40)
-61. .margin(20)
-62. .onClick(() => {
-63. // 将name指定的NavDestination页面信息入栈，传递的数据为param
-64. this.pageInfos.pushPath({ name: 'pageOne', param: CustomTransition.getInstance().getAnimationId() });
-65. })
-66. }
-67. .size({ width: '100%', height: '100%' })
-68. }
-69. .title('pageTwo')
-70. .gesture(PanGesture()
-71. .onActionStart((event: GestureEvent) => {
-72. this.rectWidth = event.target.area.width as number;
-73. if (event.offsetX < 0) {
-74. this.pageInfos.pushPath({ name: 'pageOne', param: CustomTransition.getInstance().getAnimationId() });
-75. } else {
-76. this.pageInfos.pop();
-77. }
-78. })
-79. .onActionUpdate((event: GestureEvent) => {
-80. let rate = event.fingerList[0].localX / this.rectWidth;
-81. CustomTransition.getInstance().updateProgress(rate);
-82. })
-83. .onActionEnd((event: GestureEvent) => {
-84. let rate = event.fingerList[0].localX / this.rectWidth;
-85. CustomTransition.getInstance().finishInteractiveAnimation(rate);
-86. }))
-87. .onAppear(() => {
-88. this.registerCallback();
-89. })
-90. .onDisAppear(() => {
-91. CustomTransition.getInstance().unRegisterNavParam(this.pageId);
-92. })
-93. .onReady((context: NavDestinationContext) => {
-94. this.pageInfos = context.pathStack;
-95. if (context.navDestinationId) {
-96. this.pageId = context.navDestinationId;
-97. this.registerCallback();
-98. }
-99. })
-100. .translate({ x: this.translateX })
-101. .backgroundColor(Color.Yellow)
-102. }
-103. }
+  registerCallback() {
+    CustomTransition.getInstance().registerNavParam(this.pageId, (isPush: boolean, isExit: boolean) => {
+      if (isPush) {
+        this.translateX = '100%'
+      } else {
+        this.translateX = '0';
+      }
+    }, (isPush: boolean, isExit: boolean) => {
+      if (isPush) {
+        this.translateX = '0';
+      } else {
+        this.translateX = '100%';
+      }
+    }, (isPush: boolean, isExit: boolean) => {
+      this.translateX = '0';
+    }, (operation: NavigationOperation) => {
+      if (operation == NavigationOperation.PUSH) {
+        this.translateX = '100%';
+        this.getUIContext()?.animateTo({
+          duration: 500, onFinish: () => {
+            this.translateX = '0';
+          }
+        }, () => {
+          this.translateX = '0';
+        })
+      } else {
+        this.translateX = '0';
+        this.getUIContext()?.animateTo({
+          duration: 500, onFinish: () => {
+            this.translateX = '0';
+          }
+        }, () => {
+          this.translateX = '100%';
+        })
+      }
+    }, 2000)
+  }
+
+  build() {
+    NavDestination() {
+      Column() {
+        Button('pushPathByName', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            // 将name指定的NavDestination页面信息入栈，传递的数据为param
+            this.pageInfos.pushPath({ name: 'pageOne', param: CustomTransition.getInstance().getAnimationId() });
+          })
+      }
+      .size({ width: '100%', height: '100%' })
+    }
+    .title('pageTwo')
+    .gesture(PanGesture()
+      .onActionStart((event: GestureEvent) => {
+        this.rectWidth = event.target.area.width as number;
+        if (event.offsetX < 0) {
+          this.pageInfos.pushPath({ name: 'pageOne', param: CustomTransition.getInstance().getAnimationId() });
+        } else {
+          this.pageInfos.pop();
+        }
+      })
+      .onActionUpdate((event: GestureEvent) => {
+        let rate = event.fingerList[0].localX / this.rectWidth;
+        CustomTransition.getInstance().updateProgress(rate);
+      })
+      .onActionEnd((event: GestureEvent) => {
+        let rate = event.fingerList[0].localX / this.rectWidth;
+        CustomTransition.getInstance().finishInteractiveAnimation(rate);
+      }))
+    .onAppear(() => {
+      this.registerCallback();
+    })
+    .onDisAppear(() => {
+      CustomTransition.getInstance().unRegisterNavParam(this.pageId);
+    })
+    .onReady((context: NavDestinationContext) => {
+      this.pageInfos = context.pathStack;
+      if (context.navDestinationId) {
+        this.pageId = context.navDestinationId;
+        this.registerCallback();
+      }
+    })
+    .translate({ x: this.translateX })
+    .backgroundColor(Color.Yellow)
+  }
+}
 ```
 
-```
-1. // src/main/pages/CustomNavigationUtils.ets
-2. // 自定义接口，用来保存某个页面相关的转场动画回调和参数
+```ts
+// src/main/pages/CustomNavigationUtils.ets
+// 自定义接口，用来保存某个页面相关的转场动画回调和参数
 
-4. export interface AnimateCallback {
-5. finish: ((isPush: boolean, isExit: boolean) => void | undefined) | undefined;
-6. start: ((isPush: boolean, isExit: boolean) => void | undefined) | undefined;
-7. onFinish: ((isPush: boolean, isExit: boolean) => void | undefined) | undefined;
-8. interactive: ((operation: NavigationOperation) => void | undefined) | undefined;
-9. timeout: (number | undefined) | undefined;
-10. }
+export interface AnimateCallback {
+  finish: ((isPush: boolean, isExit: boolean) => void | undefined) | undefined;
+  start: ((isPush: boolean, isExit: boolean) => void | undefined) | undefined;
+  onFinish: ((isPush: boolean, isExit: boolean) => void | undefined) | undefined;
+  interactive: ((operation: NavigationOperation) => void | undefined) | undefined;
+  timeout: (number | undefined) | undefined;
+}
 
-12. const customTransitionMap: Map<string, AnimateCallback> = new Map();
+const customTransitionMap: Map<string, AnimateCallback> = new Map();
 
-14. export class CustomTransition {
-15. static delegate = new CustomTransition();
-16. interactive: boolean = false;
-17. proxy: NavigationTransitionProxy | undefined = undefined;
-18. private animationId: number = 0;
-19. operation: NavigationOperation = NavigationOperation.PUSH;
+export class CustomTransition {
+  static delegate = new CustomTransition();
+  interactive: boolean = false;
+  proxy: NavigationTransitionProxy | undefined = undefined;
+  private animationId: number = 0;
+  operation: NavigationOperation = NavigationOperation.PUSH;
 
-21. static getInstance() {
-22. return CustomTransition.delegate;
-23. }
+  static getInstance() {
+    return CustomTransition.delegate;
+  }
 
-25. /* 注册某个页面的动画回调
-26. * name: 注册页面的唯一id
-27. * startCallback：用来设置动画开始时页面的状态
-28. * endCallback：用来设置动画结束时页面的状态
-29. * onFinish：用来执行动画结束后页面的其他操作
-30. * interactiveCallback: 注册的可交互转场的动效
-31. * timeout：转场结束的超时时间
-32. */
-33. registerNavParam(name: string, startCallback: (operation: boolean, isExit: boolean) => void,
-34. endCallback: (operation: boolean, isExit: boolean) => void,
-35. onFinish: (operation: boolean, isExit: boolean) => void,
-36. interactiveCallback: (operation: NavigationOperation) => void,
-37. timeout: number): void {
-38. if (customTransitionMap.has(name)) {
-39. let param = customTransitionMap.get(name);
-40. if (param != undefined) {
-41. param.start = startCallback;
-42. param.finish = endCallback;
-43. param.timeout = timeout;
-44. param.onFinish = onFinish;
-45. param.interactive = interactiveCallback;
-46. return;
-47. }
-48. }
-49. let params: AnimateCallback = {
-50. timeout: timeout,
-51. start: startCallback,
-52. finish: endCallback,
-53. onFinish: onFinish,
-54. interactive: interactiveCallback
-55. };
-56. customTransitionMap.set(name, params);
-57. }
+  /* 注册某个页面的动画回调
+   * name: 注册页面的唯一id
+   * startCallback：用来设置动画开始时页面的状态
+   * endCallback：用来设置动画结束时页面的状态
+   * onFinish：用来执行动画结束后页面的其他操作
+   * interactiveCallback: 注册的可交互转场的动效
+   * timeout：转场结束的超时时间
+   */
+  registerNavParam(name: string, startCallback: (operation: boolean, isExit: boolean) => void,
+    endCallback: (operation: boolean, isExit: boolean) => void,
+    onFinish: (operation: boolean, isExit: boolean) => void,
+    interactiveCallback: (operation: NavigationOperation) => void,
+    timeout: number): void {
+    if (customTransitionMap.has(name)) {
+      let param = customTransitionMap.get(name);
+      if (param != undefined) {
+        param.start = startCallback;
+        param.finish = endCallback;
+        param.timeout = timeout;
+        param.onFinish = onFinish;
+        param.interactive = interactiveCallback;
+        return;
+      }
+    }
+    let params: AnimateCallback = {
+      timeout: timeout,
+      start: startCallback,
+      finish: endCallback,
+      onFinish: onFinish,
+      interactive: interactiveCallback
+    };
+    customTransitionMap.set(name, params);
+  }
 
-59. getAnimationId() {
-60. return Date.now();
-61. }
+  getAnimationId() {
+    return Date.now();
+  }
 
-63. unRegisterNavParam(name: string): void {
-64. customTransitionMap.delete(name);
-65. }
+  unRegisterNavParam(name: string): void {
+    customTransitionMap.delete(name);
+  }
 
-67. fireInteractiveAnimation(id: string, operation: NavigationOperation) {
-68. let animation = customTransitionMap.get(id)?.interactive;
-69. if (!animation) {
-70. return;
-71. }
-72. animation(operation);
-73. }
+  fireInteractiveAnimation(id: string, operation: NavigationOperation) {
+    let animation = customTransitionMap.get(id)?.interactive;
+    if (!animation) {
+      return;
+    }
+    animation(operation);
+  }
 
-75. updateProgress(progress: number) {
-76. if (!this.proxy?.updateTransition) {
-77. return;
-78. }
-79. progress = this.operation == NavigationOperation.PUSH ? 1 - progress : progress;
-80. this.proxy?.updateTransition(progress);
-81. }
+  updateProgress(progress: number) {
+    if (!this.proxy?.updateTransition) {
+      return;
+    }
+    progress = this.operation == NavigationOperation.PUSH ? 1 - progress : progress;
+    this.proxy?.updateTransition(progress);
+  }
 
-83. cancelTransition() {
-84. if (this.proxy?.cancelTransition) {
-85. this.proxy.cancelTransition();
-86. }
-87. }
+  cancelTransition() {
+    if (this.proxy?.cancelTransition) {
+      this.proxy.cancelTransition();
+    }
+  }
 
-89. recoverState() {
-90. if (!this.proxy?.from.navDestinationId || !this.proxy?.to.navDestinationId) {
-91. return;
-92. }
-93. let fromParam = customTransitionMap.get(this.proxy.from.navDestinationId);
-94. if (fromParam?.onFinish) {
-95. fromParam.onFinish(false, false);
-96. }
-97. let toParam = customTransitionMap.get(this.proxy?.to.navDestinationId);
-98. if (toParam?.onFinish) {
-99. toParam.onFinish(true, true);
-100. }
-101. }
+  recoverState() {
+    if (!this.proxy?.from.navDestinationId || !this.proxy?.to.navDestinationId) {
+      return;
+    }
+    let fromParam = customTransitionMap.get(this.proxy.from.navDestinationId);
+    if (fromParam?.onFinish) {
+      fromParam.onFinish(false, false);
+    }
+    let toParam = customTransitionMap.get(this.proxy?.to.navDestinationId);
+    if (toParam?.onFinish) {
+      toParam.onFinish(true, true);
+    }
+  }
 
-103. finishTransition() {
-104. this.proxy?.finishTransition();
-105. }
+  finishTransition() {
+    this.proxy?.finishTransition();
+  }
 
-107. finishInteractiveAnimation(rate: number) {
-108. if (this.operation == NavigationOperation.PUSH) {
-109. if (rate > 0.5) {
-110. if (this.proxy?.cancelTransition) {
-111. this.proxy.cancelTransition();
-112. }
-113. } else {
-114. this.proxy?.finishTransition();
-115. }
-116. } else {
-117. if (rate > 0.5) {
-118. this.proxy?.finishTransition();
-119. } else {
-120. if (this.proxy?.cancelTransition) {
-121. this.proxy.cancelTransition();
-122. }
-123. }
-124. }
-125. }
+  finishInteractiveAnimation(rate: number) {
+    if (this.operation == NavigationOperation.PUSH) {
+      if (rate > 0.5) {
+        if (this.proxy?.cancelTransition) {
+          this.proxy.cancelTransition();
+        }
+      } else {
+        this.proxy?.finishTransition();
+      }
+    } else {
+      if (rate > 0.5) {
+        this.proxy?.finishTransition();
+      } else {
+        if (this.proxy?.cancelTransition) {
+          this.proxy.cancelTransition();
+        }
+      }
+    }
+  }
 
-127. getAnimateParam(name: string): AnimateCallback {
-128. let result: AnimateCallback = {
-129. start: customTransitionMap.get(name)?.start,
-130. finish: customTransitionMap.get(name)?.finish,
-131. timeout: customTransitionMap.get(name)?.timeout,
-132. onFinish: customTransitionMap.get(name)?.onFinish,
-133. interactive: customTransitionMap.get(name)?.interactive,
-134. };
-135. return result;
-136. }
-137. }
+  getAnimateParam(name: string): AnimateCallback {
+    let result: AnimateCallback = {
+      start: customTransitionMap.get(name)?.start,
+      finish: customTransitionMap.get(name)?.finish,
+      timeout: customTransitionMap.get(name)?.timeout,
+      onFinish: customTransitionMap.get(name)?.onFinish,
+      interactive: customTransitionMap.get(name)?.interactive,
+    };
+    return result;
+  }
+}
 ```
 
 在src/main目录下的[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中的module字段里配置"routerMap": "$profile:router\_map"，并在src/main/resources/base/profile目录下新增router\_map.json。router\_map.json示例如下。
 
-```
-1. {
-2. "routerMap": [
-3. {
-4. "name": "pageOne",
-5. "pageSourceFile": "src/main/ets/pages/PageOne.ets",
-6. "buildFunction": "PageOneBuilder",
-7. "data": {
-8. "description": "this is pageOne"
-9. }
-10. },
-11. {
-12. "name": "pageTwo",
-13. "pageSourceFile": "src/main/ets/pages/PageTwo.ets",
-14. "buildFunction": "PageTwoBuilder"
-15. }
-16. ]
-17. }
+```json
+{
+  "routerMap": [
+    {
+      "name": "pageOne",
+      "pageSourceFile": "src/main/ets/pages/PageOne.ets",
+      "buildFunction": "PageOneBuilder",
+      "data": {
+        "description": "this is pageOne"
+      }
+    },
+    {
+      "name": "pageTwo",
+      "pageSourceFile": "src/main/ets/pages/PageTwo.ets",
+      "buildFunction": "PageTwoBuilder"
+    }
+  ]
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/E2k-1v-ESv6dC08Iqnfixg/zh-cn_image_0000002558606526.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/fViBdYXoQJO4Wj-tNUjRzA/zh-cn_image_0000002736314923.gif)
 
 ### 示例4（Navigation带参返回）
 
 该示例主要演示Navigation通过[NavPathStack](ts-basic-components-navigation.md#navpathstack10)提供的接口来实现将设置的参数传给上一级页面。
 
-```
-1. // Index.ets
-2. @Entry
-3. @Component
-4. struct NavigationExample {
-5. pageInfo: NavPathStack = new NavPathStack();
+```ts
+// Index.ets
+@Entry
+@Component
+struct NavigationExample {
+  pageInfo: NavPathStack = new NavPathStack();
 
-7. build() {
-8. Navigation(this.pageInfo) {
-9. Column() {
-10. Button('StartTest', { stateEffect: true, type: ButtonType.Capsule })
-11. .width('80%')
-12. .height(40)
-13. .margin(20)
-14. .onClick(() => {
-15. this.pageInfo.pushPath({ name: 'pageOne' }); // 将name指定的NavDestination页面信息入栈。
-16. })
-17. }
-18. }.title('NavIndex')
-19. }
-20. }
-```
-
-```
-1. // PageOne.ets
-2. import { BusinessError } from '@kit.BasicServicesKit';
-
-4. class TmpClass {
-5. count: number = 10;
-6. }
-
-8. class ParamWithOp {
-9. operation: number = 1;
-10. count: number = 10;
-11. }
-
-13. @Builder
-14. export function PageOneBuilder(name: string, param: Object) {
-15. PageOne()
-16. }
-
-18. @Component
-19. export struct PageOne {
-20. pageInfo: NavPathStack = new NavPathStack();
-21. @State message: string = 'Hello World';
-
-23. build() {
-24. NavDestination() {
-25. Column() {
-26. Text(this.message)
-27. .width('80%')
-28. .height(50)
-29. .margin(10)
-
-31. Button('pushPath', { stateEffect: true, type: ButtonType.Capsule })
-32. .width('80%')
-33. .height(40)
-34. .margin(10)
-35. .onClick(() => {
-36. this.pageInfo.pushPath({
-37. name: 'pageTwo', param: new ParamWithOp(), onPop: (popInfo: PopInfo) => {
-38. this.message =
-39. `[pushPath]last page is: ${popInfo.info.name},result: ${JSON.stringify(popInfo.result)}`;
-40. }
-41. }); // 将name指定的NavDestination页面信息入栈，传递的数据为param，添加接收处理结果的onPop回调。
-42. })
-
-44. Button('pushPathByName', { stateEffect: true, type: ButtonType.Capsule })
-45. .width('80%')
-46. .height(40)
-47. .margin(10)
-48. .onClick(() => {
-49. let tmp = new TmpClass();
-50. this.pageInfo.pushPathByName('pageTwo', tmp, (popInfo) => {
-51. this.message =
-52. `[pushPathByName]last page is: ${popInfo.info.name}, result: ${JSON.stringify(popInfo.result)}`;
-53. }); // 将name指定的NavDestination页面信息入栈，传递的数据为param，添加接收处理结果的onPop回调。
-54. })
-
-56. Button('pushDestination', { stateEffect: true, type: ButtonType.Capsule })
-57. .width('80%')
-58. .height(40)
-59. .margin(10)
-60. .onClick(() => {
-61. let tmp = new TmpClass();
-62. // 将name指定的NavDestination页面信息入栈，传递的数据为param，添加接收处理结果的onPop回调。
-63. this.pageInfo.pushDestination({
-64. name: 'pageTwo', param: new ParamWithOp(), onPop: (popInfo: PopInfo) => {
-65. this.message =
-66. `[pushDestination]last page is: ${popInfo.info.name}, result: ${JSON.stringify(popInfo.result)}`;
-67. }
-68. }).catch((error: BusinessError) => {
-69. console.error(`[pushDestination]failed, error code = ${error.code}, error.message = ${error.message}.`);
-70. }).then(() => {
-71. console.error('[pushDestination]success.');
-72. });
-73. })
-
-75. Button('pushDestinationByName', { stateEffect: true, type: ButtonType.Capsule })
-76. .width('80%')
-77. .height(40)
-78. .margin(10)
-79. .onClick(() => {
-80. let tmp = new TmpClass();
-81. // 将name指定的NavDestination页面信息入栈，传递的数据为param，添加接收处理结果的onPop回调。
-82. this.pageInfo.pushDestinationByName('pageTwo', tmp, (popInfo) => {
-83. this.message =
-84. `[pushDestinationByName]last page is: ${popInfo.info.name}, result: ${JSON.stringify(popInfo.result)}`;
-85. }).catch((error: BusinessError) => {
-86. console.error(`[pushDestinationByName]failed, error code = ${error.code}, error.message = ${error.message}.`);
-87. }).then(() => {
-88. console.error('[pushDestinationByName]success.');
-89. });
-90. })
-
-92. Button('pushPathWithoutOnPop', { stateEffect: true, type: ButtonType.Capsule })
-93. .width('80%')
-94. .height(40)
-95. .margin(10)
-96. .onClick(() => {
-97. this.pageInfo.pushPath({ name: 'pageTwo', param: new ParamWithOp() }); // 将name指定的NavDestination页面信息入栈。
-98. })
-
-100. Button('pushPathByNameWithoutOnPop', { stateEffect: true, type: ButtonType.Capsule })
-101. .width('80%')
-102. .height(40)
-103. .margin(10)
-104. .onClick(() => {
-105. let tmp = new TmpClass();
-106. this.pageInfo.pushPathByName('pageTwo', tmp); // 将name指定的NavDestination页面信息入栈，传递的数据为param。
-107. })
-
-109. Button('pushDestinationWithoutOnPop', { stateEffect: true, type: ButtonType.Capsule })
-110. .width('80%')
-111. .height(40)
-112. .margin(10)
-113. .onClick(() => {
-114. let tmp = new TmpClass();
-115. // 将name指定的NavDestination页面信息入栈，传递的数据为param，添加接收处理结果的onPop回调。
-116. this.pageInfo.pushDestination({ name: 'pageTwo', param: new ParamWithOp() })
-117. .catch((error: BusinessError) => {
-118. console.error(`[pushDestinationWithoutOnPop]failed, error code = ${error.code}, error.message = ${error.message}.`);
-119. }).then(() => {
-120. console.error('[pushDestinationWithoutOnPop]success.');
-121. });
-122. })
-
-124. Button('pushDestinationByNameWithoutOnPop', { stateEffect: true, type: ButtonType.Capsule })
-125. .width('80%')
-126. .height(40)
-127. .margin(10)
-128. .onClick(() => {
-129. let tmp = new TmpClass();
-130. // 将name指定的NavDestination页面信息入栈，传递的数据为param。
-131. this.pageInfo.pushDestinationByName('pageTwo', tmp)
-132. .catch((error: BusinessError) => {
-133. console.error(`[pushDestinationByNameWithoutOnPop]failed, error code = ${error.code}, error.message = ${error.message}.`);
-134. }).then(() => {
-135. console.error('[pushDestinationByNameWithoutOnPop]success.');
-136. });
-137. })
-
-139. Button('clear', { stateEffect: true, type: ButtonType.Capsule })
-140. .width('80%')
-141. .height(40)
-142. .margin(10)
-143. .onClick(() => {
-144. this.pageInfo.clear(); // 清除栈中所有页面。
-145. })
-146. }.width('100%').height('100%')
-147. }.title('pageOne')
-148. .onBackPressed(() => {
-149. this.pageInfo.pop({ number: 1 }); // 弹出路由栈栈顶元素。
-150. return true;
-151. }).onReady((context: NavDestinationContext) => {
-152. this.pageInfo = context.pathStack;
-153. })
-154. }
-155. }
+  build() {
+    Navigation(this.pageInfo) {
+      Column() {
+        Button('StartTest', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.pageInfo.pushPath({ name: 'pageOne' }); // 将name指定的NavDestination页面信息入栈。
+          })
+      }
+    }.title('NavIndex')
+  }
+}
 ```
 
+```ts
+// PageOne.ets
+import { BusinessError } from '@kit.BasicServicesKit';
+
+class PageParam {
+  count: number = 10;
+}
+
+class ParamWithOp {
+  operation: number = 1;
+  count: number = 10;
+}
+
+@Builder
+export function PageOneBuilder(name: string, param: Object) {
+  PageOne()
+}
+
+@Component
+export struct PageOne {
+  pageInfo: NavPathStack = new NavPathStack();
+  @State message: string = 'Hello World';
+
+  build() {
+    NavDestination() {
+      Column() {
+        Text(this.message)
+          .width('80%')
+          .height(50)
+          .margin(10)
+
+        Button('pushPath', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(10)
+          .onClick(() => {
+            this.pageInfo.pushPath({
+              name: 'pageTwo', param: new ParamWithOp(), onPop: (popInfo: PopInfo) => {
+                this.message =
+                  `[pushPath]last page is: ${popInfo.info.name},result: ${JSON.stringify(popInfo.result)}`;
+              }
+            }); // 将name指定的NavDestination页面信息入栈，传递的数据为param，添加接收处理结果的onPop回调。
+          })
+
+        Button('pushPathByName', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(10)
+          .onClick(() => {
+            let pageParam = new PageParam();
+            this.pageInfo.pushPathByName('pageTwo', pageParam, (popInfo) => {
+              this.message =
+                `[pushPathByName]last page is: ${popInfo.info.name}, result: ${JSON.stringify(popInfo.result)}`;
+            }); // 将name指定的NavDestination页面信息入栈，传递的数据为param，添加接收处理结果的onPop回调。
+          })
+
+        Button('pushDestination', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(10)
+          .onClick(() => {
+            let pageParam = new PageParam();
+            // 将name指定的NavDestination页面信息入栈，传递的数据为param，添加接收处理结果的onPop回调。
+            this.pageInfo.pushDestination({
+              name: 'pageTwo', param: new ParamWithOp(), onPop: (popInfo: PopInfo) => {
+                this.message =
+                  `[pushDestination]last page is: ${popInfo.info.name}, result: ${JSON.stringify(popInfo.result)}`;
+              }
+            }).catch((error: BusinessError) => {
+              console.error(`[pushDestination]failed, error code = ${error.code}, error.message = ${error.message}.`);
+            }).then(() => {
+              console.error('[pushDestination]success.');
+            });
+          })
+
+        Button('pushDestinationByName', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(10)
+          .onClick(() => {
+            let pageParam = new pageParam();
+            // 将name指定的NavDestination页面信息入栈，传递的数据为param，添加接收处理结果的onPop回调。
+            this.pageInfo.pushDestinationByName('pageTwo', pageParam, (popInfo) => {
+              this.message =
+                `[pushDestinationByName]last page is: ${popInfo.info.name}, result: ${JSON.stringify(popInfo.result)}`;
+            }).catch((error: BusinessError) => {
+              console.error(`[pushDestinationByName]failed, error code = ${error.code}, error.message = ${error.message}.`);
+            }).then(() => {
+              console.error('[pushDestinationByName]success.');
+            });
+          })
+
+        Button('pushPathWithoutOnPop', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(10)
+          .onClick(() => {
+            this.pageInfo.pushPath({ name: 'pageTwo', param: new ParamWithOp() }); // 将name指定的NavDestination页面信息入栈。
+          })
+
+        Button('pushPathByNameWithoutOnPop', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(10)
+          .onClick(() => {
+            let pageParam = new PageParam();
+            this.pageInfo.pushPathByName('pageTwo', pageParam); // 将name指定的NavDestination页面信息入栈，传递的数据为param。
+          })
+
+        Button('pushDestinationWithoutOnPop', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(10)
+          .onClick(() => {
+            let pageParam = new PageParam();
+            // 将name指定的NavDestination页面信息入栈，传递的数据为param。
+            this.pageInfo.pushDestination({ name: 'pageTwo', param: new ParamWithOp() })
+              .catch((error: BusinessError) => {
+                console.error(`[pushDestinationWithoutOnPop]failed, error code = ${error.code}, error.message = ${error.message}.`);
+              }).then(() => {
+              console.error('[pushDestinationWithoutOnPop]success.');
+            });
+          })
+
+        Button('pushDestinationByNameWithoutOnPop', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(10)
+          .onClick(() => {
+            let pageParam = new PageParam();
+            // 将name指定的NavDestination页面信息入栈，传递的数据为param。
+            this.pageInfo.pushDestinationByName('pageTwo', pageParam)
+              .catch((error: BusinessError) => {
+                console.error(`[pushDestinationByNameWithoutOnPop]failed, error code = ${error.code}, error.message = ${error.message}.`);
+              }).then(() => {
+              console.error('[pushDestinationByNameWithoutOnPop]success.');
+            });
+          })
+
+        Button('clear', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(10)
+          .onClick(() => {
+            this.pageInfo.clear(); // 清除栈中所有页面。
+          })
+      }.width('100%').height('100%')
+    }.title('pageOne')
+    .onBackPressed(() => {
+      this.pageInfo.pop({ number: 1 }); // 弹出路由栈栈顶元素。
+      return true;
+    }).onReady((context: NavDestinationContext) => {
+      this.pageInfo = context.pathStack;
+    })
+  }
+}
 ```
-1. // PageTwo.ets
-2. class resultClass {
-3. constructor(count: number) {
-4. this.count = count;
-5. }
 
-7. count: number = 10;
-8. }
+```ts
+// PageTwo.ets
+class resultClass {
+  constructor(count: number) {
+    this.count = count;
+  }
 
-10. @Builder
-11. export function PageTwoBuilder() {
-12. PageTwo();
-13. }
+  count: number = 10;
+}
 
-15. @Component
-16. export struct PageTwo {
-17. pathStack: NavPathStack = new NavPathStack();
+@Builder
+export function PageTwoBuilder() {
+  PageTwo();
+}
 
-19. build() {
-20. NavDestination() {
-21. Column() {
-22. Button('pop', { stateEffect: true, type: ButtonType.Capsule })
-23. .width('80%')
-24. .height(40)
-25. .margin(20)
-26. .onClick(() => {
-27. this.pathStack.pop(new resultClass(1)); // 回退到上一个页面，将处理结果传入push的onPop回调中。
-28. })
+@Component
+export struct PageTwo {
+  pathStack: NavPathStack = new NavPathStack();
 
-30. Button('popToName', { stateEffect: true, type: ButtonType.Capsule })
-31. .width('80%')
-32. .height(40)
-33. .margin(20)
-34. .onClick(() => {
-35. this.pathStack.popToName('pageOne',
-36. new resultClass(11)); // 将第一个名为name的NavDestination页面移到栈顶，将处理结果传入push的onPop回调中。
-37. })
+  build() {
+    NavDestination() {
+      Column() {
+        Button('pop', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.pathStack.pop(new resultClass(1)); // 回退到上一个页面，将处理结果传入push的onPop回调中。
+          })
 
-39. Button('popToIndex', { stateEffect: true, type: ButtonType.Capsule })
-40. .width('80%')
-41. .height(40)
-42. .margin(20)
-43. .onClick(() => {
-44. this.pathStack.popToIndex(0, new resultClass(111)); // 将index指定的NavDestination页面移到栈顶，将处理结果传入push的onPop回调中。
-45. })
+        Button('popToName', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.pathStack.popToName('pageOne',
+              new resultClass(11)); // 回退路由栈到第一个名为name的NavDestination页面，将处理结果传入push的onPop回调中。
+          })
 
-47. Button('popWithoutResult', { stateEffect: true, type: ButtonType.Capsule })
-48. .width('80%')
-49. .height(40)
-50. .margin(20)
-51. .onClick(() => {
-52. this.pathStack.pop();
-53. })
+        Button('popToIndex', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.pathStack.popToIndex(0, new resultClass(111)); // 回退路由栈到index指定的NavDestination页面，将处理结果传入push的onPop回调中。
+          })
 
-55. Button('popToNameWithoutResult', { stateEffect: true, type: ButtonType.Capsule })
-56. .width('80%')
-57. .height(40)
-58. .margin(20)
-59. .onClick(() => {
-60. this.pathStack.popToName('pageOne');
-61. })
+        Button('popWithoutResult', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.pathStack.pop();
+          })
 
-63. Button('popToIndexWithoutResult', { stateEffect: true, type: ButtonType.Capsule })
-64. .width('80%')
-65. .height(40)
-66. .margin(20)
-67. .onClick(() => {
-68. this.pathStack.popToIndex(0);
-69. })
-70. }.width('100%').height('100%')
-71. }.title('pageTwo')
-72. .onBackPressed(() => {
-73. this.pathStack.pop(new resultClass(0)); // 回退到上一个页面，将处理结果传入push的onPop回调。
-74. return true;
-75. }).onReady((context: NavDestinationContext) => {
-76. this.pathStack = context.pathStack;
-77. })
-78. }
-79. }
+        Button('popToNameWithoutResult', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.pathStack.popToName('pageOne');
+          })
+
+        Button('popToIndexWithoutResult', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.pathStack.popToIndex(0);
+          })
+      }.width('100%').height('100%')
+    }.title('pageTwo')
+    .onBackPressed(() => {
+      this.pathStack.pop(new resultClass(0)); // 回退到上一个页面，将处理结果传入push的onPop回调。
+      return true;
+    }).onReady((context: NavDestinationContext) => {
+      this.pathStack = context.pathStack;
+    })
+  }
+}
 ```
 
 在src/main目录下的[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中的module字段里配置"routerMap": "$profile:router\_map"，并在src/main/resources/base/profile目录下新增router\_map.json。router\_map.json示例如下。
 
-```
-1. {
-2. "routerMap": [
-3. {
-4. "name": "pageOne",
-5. "pageSourceFile": "src/main/ets/pages/PageOne.ets",
-6. "buildFunction": "PageOneBuilder",
-7. "data": {
-8. "description": "this is pageOne"
-9. }
-10. },
-11. {
-12. "name": "pageTwo",
-13. "pageSourceFile": "src/main/ets/pages/PageTwo.ets",
-14. "buildFunction": "PageTwoBuilder"
-15. }
-16. ]
-17. }
+```json
+{
+  "routerMap": [
+    {
+      "name": "pageOne",
+      "pageSourceFile": "src/main/ets/pages/PageOne.ets",
+      "buildFunction": "PageOneBuilder",
+      "data": {
+        "description": "this is pageOne"
+      }
+    },
+    {
+      "name": "pageTwo",
+      "pageSourceFile": "src/main/ets/pages/PageTwo.ets",
+      "buildFunction": "PageTwoBuilder"
+    }
+  ]
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/dmgHEKi7SICr8VoxcJZEiw/zh-cn_image_0000002589326053.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/qu6iA8TwSFa38CsoKm1SdA/zh-cn_image_0000002706675880.gif)
 
 ### 示例5（设置背景颜色和模糊效果）
 
 该示例主要演示设置Navigation主页的标题栏、工具栏和[NavDestination](ts-basic-components-navdestination.md)页面的标题栏的背景颜色和背景模糊效果。
 
-```
-1. // Index
-2. import {
-3. COLOR1,
-4. COLOR2,
-5. BLUR_STYLE_1,
-6. BLUR_STYLE_2,
-7. BLUR_STYLE_OPTION_1,
-8. BLUR_STYLE_OPTION_2,
-9. } from './Utils';
+```ts
+// Index
+import {
+  COLOR1,
+  COLOR2,
+  BLUR_STYLE_1,
+  BLUR_STYLE_2,
+  BLUR_STYLE_OPTION_1,
+  BLUR_STYLE_OPTION_2,
+} from './Utils';
 
-11. @Entry
-12. @Component
-13. struct Index {
-14. @Provide('navPathStack') navPathStack: NavPathStack = new NavPathStack();
-15. @State useColor1: boolean = true;
-16. @State useBlur1: boolean = true;
-17. @State useBlurOption1: boolean = true;
+@Entry
+@Component
+struct Index {
+  @Provide('navPathStack') navPathStack: NavPathStack = new NavPathStack();
+  @State useColor1: boolean = true;
+  @State useBlur1: boolean = true;
+  @State useBlurOption1: boolean = true;
 
-19. build() {
-20. Navigation(this.navPathStack) {
-21. Stack({ alignContent: Alignment.Center }) {
-22. BackComponent()
-23. .width('100%')
-24. .height('100%')
-25. Column() {
-26. Stack({ alignContent: Alignment.Center }) {
-27. Button("switch color")
-28. .onClick(() => {
-29. this.useColor1 = !this.useColor1;
-30. })
-31. }
-32. .width('100%')
-33. .layoutWeight(1)
+  build() {
+    Navigation(this.navPathStack) {
+      Stack({ alignContent: Alignment.Center }) {
+        BackComponent()
+          .width('100%')
+          .height('100%')
+        Column() {
+          Stack({ alignContent: Alignment.Center }) {
+            Button('switch color')
+              .onClick(() => {
+                this.useColor1 = !this.useColor1;
+              })
+          }
+          .width('100%')
+          .layoutWeight(1)
 
-35. Stack({ alignContent: Alignment.Center }) {
-36. Button("switch blur")
-37. .onClick(() => {
-38. this.useBlur1 = !this.useBlur1;
-39. })
-40. }
-41. .width('100%')
-42. .layoutWeight(1)
+          Stack({ alignContent: Alignment.Center }) {
+            Button('switch blur')
+              .onClick(() => {
+                this.useBlur1 = !this.useBlur1;
+              })
+          }
+          .width('100%')
+          .layoutWeight(1)
 
-44. Stack({ alignContent: Alignment.Center }) {
-45. Button("switch blurOption")
-46. .onClick(() => {
-47. this.useBlurOption1 = !this.useBlurOption1;
-48. })
-49. }
-50. .width('100%')
-51. .layoutWeight(1)
+          Stack({ alignContent: Alignment.Center }) {
+            Button('switch blurOption')
+              .onClick(() => {
+                this.useBlurOption1 = !this.useBlurOption1;
+              })
+          }
+          .width('100%')
+          .layoutWeight(1)
 
-53. Stack({ alignContent: Alignment.Center }) {
-54. Button("push page")
-55. .onClick(() => {
-56. this.navPathStack.pushPathByName('NavigationMenu', null);
-57. })
-58. }
-59. .width('100%')
-60. .layoutWeight(1)
-61. }
-62. .width('100%')
-63. .height('80%')
-64. }.width('100%')
-65. .height('100%')
-66. }
-67. .width('100%')
-68. .height('100%')
-69. // 开发者可以设置标题栏的背景颜色和背景模糊效果
-70. .title("NavTitle", {
-71. backgroundColor: this.useColor1 ? COLOR1 : COLOR2,
-72. backgroundBlurStyle: this.useBlur1 ? BLUR_STYLE_1 : BLUR_STYLE_2,
-73. barStyle: BarStyle.STACK,
-74. backgroundBlurStyleOptions: this.useBlurOption1 ? BLUR_STYLE_OPTION_1 : BLUR_STYLE_OPTION_2,
-75. })
-76. // 开发者可以设置菜单的背景颜色和背景模糊效果
-77. .menus([
-78. { value: "A" },
-79. { value: "B" },
-80. { value: "C" },
-81. { value: "D" },
-82. ], {
-83. moreButtonOptions: {
-84. backgroundBlurStyle: this.useBlur1 ? BLUR_STYLE_1 : BLUR_STYLE_2,
-85. backgroundBlurStyleOptions: this.useBlurOption1 ? BLUR_STYLE_OPTION_1 : BLUR_STYLE_OPTION_2,
-86. }
-87. })
-88. // 开发者可以设置工具栏的背景颜色和背景模糊效果
-89. .toolbarConfiguration([
-90. { value: "A" },
-91. { value: "B" },
-92. { value: "C" },
-93. { value: "D" },
-94. { value: "E" },
-95. { value: "F" }
-96. ], {
-97. backgroundColor: this.useColor1 ? COLOR1 : COLOR2,
-98. backgroundBlurStyle: this.useBlur1 ? BLUR_STYLE_1 : BLUR_STYLE_2,
-99. // 开发者可以设置工具栏的菜单的背景颜色和背景模糊效果
-100. moreButtonOptions: {
-101. backgroundBlurStyle: this.useBlur1 ? BLUR_STYLE_1 : BLUR_STYLE_2,
-102. backgroundBlurStyleOptions: this.useBlurOption1 ? BLUR_STYLE_OPTION_1 : BLUR_STYLE_OPTION_2,
-103. }
-104. })
-105. }
-106. }
+          Stack({ alignContent: Alignment.Center }) {
+            Button('push page')
+              .onClick(() => {
+                this.navPathStack.pushPathByName('NavigationMenu', null);
+              })
+          }
+          .width('100%')
+          .layoutWeight(1)
+        }
+        .width('100%')
+        .height('80%')
+      }.width('100%')
+      .height('100%')
+    }
+    .width('100%')
+    .height('100%')
+    // 开发者可以设置标题栏的背景颜色和背景模糊效果
+    .title('NavTitle', {
+      backgroundColor: this.useColor1 ? COLOR1 : COLOR2,
+      backgroundBlurStyle: this.useBlur1 ? BLUR_STYLE_1 : BLUR_STYLE_2,
+      barStyle: BarStyle.STACK,
+      backgroundBlurStyleOptions: this.useBlurOption1 ? BLUR_STYLE_OPTION_1 : BLUR_STYLE_OPTION_2,
+    })
+    // 开发者可以设置菜单的背景颜色和背景模糊效果
+    .menus([
+      { value: 'A' },
+      { value: 'B' },
+      { value: 'C' },
+      { value: 'D' },
+    ], {
+      moreButtonOptions: {
+        backgroundBlurStyle: this.useBlur1 ? BLUR_STYLE_1 : BLUR_STYLE_2,
+        backgroundBlurStyleOptions: this.useBlurOption1 ? BLUR_STYLE_OPTION_1 : BLUR_STYLE_OPTION_2,
+      }
+    })
+    // 开发者可以设置工具栏的背景颜色和背景模糊效果
+    .toolbarConfiguration([
+      { value: 'A' },
+      { value: 'B' },
+      { value: 'C' },
+      { value: 'D' },
+      { value: 'E' },
+      { value: 'F' }
+    ], {
+      backgroundColor: this.useColor1 ? COLOR1 : COLOR2,
+      backgroundBlurStyle: this.useBlur1 ? BLUR_STYLE_1 : BLUR_STYLE_2,
+      // 开发者可以设置工具栏的菜单的背景颜色和背景模糊效果
+      moreButtonOptions: {
+        backgroundBlurStyle: this.useBlur1 ? BLUR_STYLE_1 : BLUR_STYLE_2,
+        backgroundBlurStyleOptions: this.useBlurOption1 ? BLUR_STYLE_OPTION_1 : BLUR_STYLE_OPTION_2,
+      }
+    })
+  }
+}
 
-108. @Component
-109. export struct BackComponent {
-110. build() {
-111. Row() {
-112. Column() {
-113. }
-114. .height('100%')
-115. .backgroundColor("#3D9DB4")
-116. .layoutWeight(9)
+@Component
+export struct BackComponent {
+  build() {
+    Row() {
+      Column() {
+      }
+      .height('100%')
+      .backgroundColor('#3D9DB4')
+      .layoutWeight(9)
 
-118. Column() {
-119. }
-120. .height('100%')
-121. .backgroundColor("#17A98D")
-122. .layoutWeight(9)
+      Column() {
+      }
+      .height('100%')
+      .backgroundColor('#17A98D')
+      .layoutWeight(9)
 
-124. Column() {
-125. }
-126. .height('100%')
-127. .backgroundColor("#FFC000")
-128. .layoutWeight(9)
-129. }
-130. .height('100%')
-131. .width('100%')
-132. }
-133. }
-```
-
-```
-1. // PageOne.ets
-2. import {
-3. COLOR1,
-4. COLOR2,
-5. BLUR_STYLE_1,
-6. BLUR_STYLE_2,
-7. EFFECT_OPTION_1,
-8. EFFECT_OPTION_2
-9. } from './Utils';
-10. import { BackComponent } from './Index';
-
-12. @Builder
-13. export function PageBuilder(name: string, param?: Object) {
-14. ColorAndBlur();
-15. }
-
-17. @Component
-18. struct ColorAndBlur {
-19. @State useColor1: boolean = true;
-20. @State useBlur1: boolean = true;
-21. @State useEffect1: boolean = true;
-
-23. build() {
-24. NavDestination() {
-25. Stack({ alignContent: Alignment.Center }) {
-26. BackComponent()
-27. .width('100%')
-28. .height('100%')
-29. Column() {
-30. Stack({ alignContent: Alignment.Center }) {
-31. Button("switch color")
-32. .onClick(() => {
-33. this.useColor1 = !this.useColor1;
-34. })
-35. }
-36. .width('100%')
-37. .layoutWeight(1)
-
-39. Stack({ alignContent: Alignment.Center }) {
-40. Button("switch blur")
-41. .onClick(() => {
-42. this.useBlur1 = !this.useBlur1;
-43. })
-44. }
-45. .width('100%')
-46. .layoutWeight(1)
-
-48. Stack({ alignContent: Alignment.Center }) {
-49. Button("switch effect")
-50. .onClick(() => {
-51. this.useEffect1 = !this.useEffect1;
-52. })
-53. }
-54. .width('100%')
-55. .layoutWeight(1)
-56. }
-57. .width('100%')
-58. .height('100%')
-59. }.width('100%')
-60. .height('100%')
-61. }
-62. .width('100%')
-63. .height('100%')
-64. // 开发者可以设置标题栏的背景颜色和背景模糊效果
-65. .title("Destination Title", {
-66. backgroundColor: this.useColor1 ? COLOR1 : COLOR2,
-67. backgroundBlurStyle: this.useBlur1 ? BLUR_STYLE_1 : BLUR_STYLE_2,
-68. barStyle: BarStyle.STACK,
-69. backgroundEffect: this.useEffect1 ? EFFECT_OPTION_1 : EFFECT_OPTION_2,
-70. })
-71. // 开发者可以设置菜单的背景颜色和背景模糊效果
-72. .menus([
-73. { value: "A" },
-74. { value: "B" },
-75. { value: "C" },
-76. { value: "D" },
-77. ], {
-78. moreButtonOptions: {
-79. backgroundEffect: this.useEffect1 ? EFFECT_OPTION_1 : EFFECT_OPTION_2,
-80. }
-81. })
-82. // 开发者可以设置工具栏的背景颜色和背景模糊效果
-83. .toolbarConfiguration([
-84. { value: "A" },
-85. { value: "B" },
-86. { value: "C" },
-87. { value: "D" },
-88. { value: "E" },
-89. { value: "F" }
-90. ], {
-91. backgroundEffect: this.useEffect1 ? EFFECT_OPTION_1 : EFFECT_OPTION_2,
-92. // 开发者可以设置工具栏的菜单的背景颜色和背景模糊效果
-93. moreButtonOptions: {
-94. backgroundEffect: this.useEffect1 ? EFFECT_OPTION_1 : EFFECT_OPTION_2,
-95. }
-96. })
-97. }
-98. }
+      Column() {
+      }
+      .height('100%')
+      .backgroundColor('#FFC000')
+      .layoutWeight(9)
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
+```ts
+// PageOne.ets
+import {
+  COLOR1,
+  COLOR2,
+  BLUR_STYLE_1,
+  BLUR_STYLE_2,
+  EFFECT_OPTION_1,
+  EFFECT_OPTION_2
+} from './Utils';
+import { BackComponent } from './Index';
+
+@Builder
+export function PageBuilder(name: string, param?: Object) {
+  ColorAndBlur();
+}
+
+@Component
+struct ColorAndBlur {
+  @State useColor1: boolean = true;
+  @State useBlur1: boolean = true;
+  @State useEffect1: boolean = true;
+
+  build() {
+    NavDestination() {
+      Stack({ alignContent: Alignment.Center }) {
+        BackComponent()
+          .width('100%')
+          .height('100%')
+        Column() {
+          Stack({ alignContent: Alignment.Center }) {
+            Button('switch color')
+              .onClick(() => {
+                this.useColor1 = !this.useColor1;
+              })
+          }
+          .width('100%')
+          .layoutWeight(1)
+
+          Stack({ alignContent: Alignment.Center }) {
+            Button('switch blur')
+              .onClick(() => {
+                this.useBlur1 = !this.useBlur1;
+              })
+          }
+          .width('100%')
+          .layoutWeight(1)
+
+          Stack({ alignContent: Alignment.Center }) {
+            Button('switch effect')
+              .onClick(() => {
+                this.useEffect1 = !this.useEffect1;
+              })
+          }
+          .width('100%')
+          .layoutWeight(1)
+        }
+        .width('100%')
+        .height('100%')
+      }.width('100%')
+      .height('100%')
+    }
+    .width('100%')
+    .height('100%')
+    // 开发者可以设置标题栏的背景颜色和背景模糊效果
+    .title('Destination Title', {
+      backgroundColor: this.useColor1 ? COLOR1 : COLOR2,
+      backgroundBlurStyle: this.useBlur1 ? BLUR_STYLE_1 : BLUR_STYLE_2,
+      barStyle: BarStyle.STACK,
+      backgroundEffect: this.useEffect1 ? EFFECT_OPTION_1 : EFFECT_OPTION_2,
+    })
+    // 开发者可以设置菜单的背景颜色和背景模糊效果
+    .menus([
+      { value: 'A' },
+      { value: 'B' },
+      { value: 'C' },
+      { value: 'D' },
+    ], {
+      moreButtonOptions: {
+        backgroundEffect: this.useEffect1 ? EFFECT_OPTION_1 : EFFECT_OPTION_2,
+      }
+    })
+    // 开发者可以设置工具栏的背景颜色和背景模糊效果
+    .toolbarConfiguration([
+      { value: 'A' },
+      { value: 'B' },
+      { value: 'C' },
+      { value: 'D' },
+      { value: 'E' },
+      { value: 'F' }
+    ], {
+      backgroundEffect: this.useEffect1 ? EFFECT_OPTION_1 : EFFECT_OPTION_2,
+      // 开发者可以设置工具栏的菜单的背景颜色和背景模糊效果
+      moreButtonOptions: {
+        backgroundEffect: this.useEffect1 ? EFFECT_OPTION_1 : EFFECT_OPTION_2,
+      }
+    })
+  }
+}
 ```
-1. // Utils.ets
-2. export const COLOR1: string = "#80004AAF";
-3. export const COLOR2: string = "#802787D9";
-4. export const BLUR_STYLE_1: BlurStyle = BlurStyle.BACKGROUND_THIN;
-5. export const BLUR_STYLE_2: BlurStyle = BlurStyle.BACKGROUND_THICK;
-6. export const BLUR_STYLE_OPTION_1: BackgroundBlurStyleOptions = {
-7. colorMode: ThemeColorMode.DARK,
-8. adaptiveColor: AdaptiveColor.DEFAULT,
-9. blurOptions: { grayscale: [20, 20] },
-10. scale: 1
-11. };
-12. export const BLUR_STYLE_OPTION_2: BackgroundBlurStyleOptions = {
-13. colorMode: ThemeColorMode.LIGHT,
-14. adaptiveColor: AdaptiveColor.AVERAGE,
-15. blurOptions: { grayscale: [20, 20] },
-16. scale: 1
-17. };
-18. export const EFFECT_OPTION_1: BackgroundEffectOptions = {
-19. radius: 20,
-20. saturation: 10,
-21. brightness: 0,
-22. color: '#66FFFFFF',
-23. adaptiveColor: AdaptiveColor.DEFAULT,
-24. blurOptions: { grayscale: [0, 0] },
-25. };
-26. export const EFFECT_OPTION_2: BackgroundEffectOptions = {
-27. radius: 60,
-28. saturation: 40,
-29. brightness: 1,
-30. color: '#661A1A1A',
-31. adaptiveColor: AdaptiveColor.AVERAGE,
-32. blurOptions: { grayscale: [20, 20] },
-33. };
+
+```ts
+// Utils.ets
+export const COLOR1: string = '#80004AAF';
+export const COLOR2: string = '#802787D9';
+export const BLUR_STYLE_1: BlurStyle = BlurStyle.BACKGROUND_THIN;
+export const BLUR_STYLE_2: BlurStyle = BlurStyle.BACKGROUND_THICK;
+export const BLUR_STYLE_OPTION_1: BackgroundBlurStyleOptions = {
+  colorMode: ThemeColorMode.DARK,
+  adaptiveColor: AdaptiveColor.DEFAULT,
+  blurOptions: { grayscale: [20, 20] },
+  scale: 1
+};
+export const BLUR_STYLE_OPTION_2: BackgroundBlurStyleOptions = {
+  colorMode: ThemeColorMode.LIGHT,
+  adaptiveColor: AdaptiveColor.AVERAGE,
+  blurOptions: { grayscale: [20, 20] },
+  scale: 1
+};
+export const EFFECT_OPTION_1: BackgroundEffectOptions = {
+  radius: 20,
+  saturation: 10,
+  brightness: 0,
+  color: '#66FFFFFF',
+  adaptiveColor: AdaptiveColor.DEFAULT,
+  blurOptions: { grayscale: [0, 0] },
+};
+export const EFFECT_OPTION_2: BackgroundEffectOptions = {
+  radius: 60,
+  saturation: 40,
+  brightness: 1,
+  color: '#661A1A1A',
+  adaptiveColor: AdaptiveColor.AVERAGE,
+  blurOptions: { grayscale: [20, 20] },
+};
 ```
 
 在src/main目录下的[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中的module字段里配置"routerMap": "$profile:router\_map"，并在src/main/resources/base/profile目录下新增router\_map.json。router\_map.json示例如下。
 
-```
-1. {
-2. "routerMap": [
-3. {
-4. "name": "NavigationMenu",
-5. "pageSourceFile": "src/main/ets/pages/PageOne.ets",
-6. "buildFunction": "PageBuilder",
-7. "data": {
-8. "description": "this is pageOne"
-9. }
-10. }
-11. ]
-12. }
+```json
+{
+  "routerMap": [
+    {
+      "name": "NavigationMenu",
+      "pageSourceFile": "src/main/ets/pages/PageOne.ets",
+      "buildFunction": "PageBuilder",
+      "data": {
+        "description": "this is pageOne"
+      }
+    }
+  ]
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/qQxclIPTT9qTeG8QOwo-9Q/zh-cn_image_0000002589245995.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/sYSfHXIrRmydzsYJS6ccOg/zh-cn_image_0000002736434967.gif)
 
 ### 示例6（嵌套场景下获取外层栈）
 
 该示例主要演示在嵌套Navigation场景下，如何获取父[NavPathStack](ts-basic-components-navigation.md#navpathstack10)。
 
-```
-1. @Entry
-2. @Component
-3. struct NavigationExample1 {
-4. @State childNavStack: NavPathStack = new NavPathStack();
+```ts
+@Entry
+@Component
+struct NavigationExample1 {
+  @State childNavStack: NavPathStack = new NavPathStack();
 
-6. build() {
-7. Navigation() {
-8. Stack({ alignContent: Alignment.Center }) {
-9. Navigation(this.childNavStack) {
-10. Button('push Path to parent Navigation', { stateEffect: true, type: ButtonType.Capsule })
-11. .width('80%')
-12. .height(40)
-13. .margin(20)
-14. .onClick(() => {
-15. // 可以获取父NavPathStack
-16. let parentStack = this.childNavStack.getParent();
-17. parentStack?.pushPath({ name: "pageOne" });
-18. })
-19. }
-20. .clip(true)
-21. .backgroundColor(Color.Orange)
-22. .width('80%')
-23. .height('80%')
-24. .title('ChildNavigation')
-25. }
-26. .width('100%')
-27. .height('100%')
-28. }
-29. .backgroundColor(Color.Green)
-30. .width('100%')
-31. .height('100%')
-32. .title('ParentNavigation')
-33. }
-34. }
+  build() {
+    Navigation() {
+      Stack({ alignContent: Alignment.Center }) {
+        Navigation(this.childNavStack) {
+          Button('push Path to parent Navigation', { stateEffect: true, type: ButtonType.Capsule })
+            .width('80%')
+            .height(40)
+            .margin(20)
+            .onClick(() => {
+              // 可以获取父NavPathStack
+              let parentStack = this.childNavStack.getParent();
+              parentStack?.pushPath({ name: 'pageOne' });
+            })
+        }
+        .clip(true)
+        .backgroundColor(Color.Orange)
+        .width('80%')
+        .height('80%')
+        .title('ChildNavigation')
+      }
+      .width('100%')
+      .height('100%')
+    }
+    .backgroundColor(Color.Green)
+    .width('100%')
+    .height('100%')
+    .title('ParentNavigation')
+  }
+}
 ```
 
-```
-1. // PageOne.ets
-2. @Builder
-3. export function PageOneBuilder(name: string) {
-4. NavDestination() {
-5. Text("this is " + name)
-6. }
-7. .title(name)
-8. }
+```ts
+// PageOne.ets
+@Builder
+export function PageOneBuilder(name: string) {
+  NavDestination() {
+    Text(`this is ${name}`)
+  }
+  .title(name)
+}
 ```
 
 在src/main目录下的[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中的module字段里配置"routerMap": "$profile:router\_map"，并在src/main/resources/base/profile目录下新增router\_map.json。router\_map.json示例如下。
 
-```
-1. {
-2. "routerMap": [
-3. {
-4. "name": "pageOne",
-5. "pageSourceFile": "src/main/ets/pages/PageOne.ets",
-6. "buildFunction": "PageOneBuilder",
-7. "data": {
-8. "description": "this is pageOne"
-9. }
-10. }
-11. ]
-12. }
+```json
+{
+  "routerMap": [
+    {
+      "name": "pageOne",
+      "pageSourceFile": "src/main/ets/pages/PageOne.ets",
+      "buildFunction": "PageOneBuilder",
+      "data": {
+        "description": "this is pageOne"
+      }
+    }
+  ]
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/MgSjSht6TX2GlNs291yGKA/zh-cn_image_0000002558766186.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/VHtObQy5RbS1OefaoNkAqw/zh-cn_image_0000002706835820.gif)
 
 ### 示例7（通过onReady获取栈）
 
@@ -3813,1100 +3847,1100 @@ PhonePC/2in1TabletTVWearable
 1. [NavPathStack](ts-basic-components-navigation.md#navpathstack10)无需声明为状态变量，也可以实现路由栈操作功能。
 2. [NavDestination](ts-basic-components-navdestination.md)通过[onReady](ts-basic-components-navdestination.md#onready11)事件能够拿到对应的[NavPathInfo](ts-basic-components-navigation.md#navpathinfo10)和所属的[NavPathStack](ts-basic-components-navigation.md#navpathstack10)。
 
-```
-1. class PageParam {
-2. constructor(num_: number) {
-3. this.num = num_;
-4. }
+```ts
+class PageParam {
+  constructor(num_: number) {
+    this.num = num_;
+  }
 
-6. num: number = 0;
-7. }
+  num: number = 0;
+}
 
-9. @Builder
-10. export function PageOneBuilder(name: string, param: Object) {
-11. PageOne();
-12. }
+@Builder
+export function PageOneBuilder(name: string, param: Object) {
+  PageOne();
+}
 
-14. @Component
-15. struct PageOne {
-16. private stack: NavPathStack | null = null;
-17. private name: string = "";
-18. private paramNum: number = 0;
+@Component
+struct PageOne {
+  private stack: NavPathStack | null = null;
+  private name: string = '';
+  private paramNum: number = 0;
 
-20. build() {
-21. NavDestination() {
-22. Column() {
-23. Text("NavPathInfo: name: " + this.name + ", paramNum: " + this.paramNum)
-24. Button('pushPath', { stateEffect: true, type: ButtonType.Capsule })
-25. .width('80%')
-26. .height(40)
-27. .margin(20)
-28. .onClick(() => {
-29. if (this.stack) {
-30. let p = new PageParam(this.paramNum + 1);
-31. this.stack.pushPath({ name: "pageOne", param: p });
-32. }
-33. })
-34. Button('pop', { stateEffect: true, type: ButtonType.Capsule })
-35. .width('80%')
-36. .height(40)
-37. .margin(20)
-38. .onClick(() => {
-39. this.stack?.pop();
-40. })
-41. }
-42. .width('100%')
-43. .height('100%')
-44. }
-45. .title('pageOne')
-46. .onReady((ctx: NavDestinationContext) => {
-47. // 在NavDestination中能够拿到传来的NavPathInfo和当前所处的NavPathStack
-48. try {
-49. this.name = ctx?.pathInfo?.name;
-50. this.paramNum = (ctx?.pathInfo?.param as PageParam)?.num;
-51. this.stack = ctx.pathStack;
-52. } catch (e) {
-53. console.error(`testTag onReady catch exception: ${JSON.stringify(e)}`);
-54. }
-55. })
-56. }
-57. }
+  build() {
+    NavDestination() {
+      Column() {
+        Text('NavPathInfo: name: ' + this.name + ', paramNum: ' + this.paramNum)
+        Button('pushPath', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            if (this.stack) {
+              let pageParam = new PageParam(this.paramNum + 1);
+              this.stack.pushPath({ name: 'pageOne', param: pageParam });
+            }
+          })
+        Button('pop', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.stack?.pop();
+          })
+      }
+      .width('100%')
+      .height('100%')
+    }
+    .title('pageOne')
+    .onReady((ctx: NavDestinationContext) => {
+      // 在NavDestination中能够拿到传来的NavPathInfo和当前所处的NavPathStack
+      try {
+        this.name = ctx?.pathInfo?.name;
+        this.paramNum = (ctx?.pathInfo?.param as PageParam)?.num;
+        this.stack = ctx.pathStack;
+      } catch (err) {
+        console.error(`testTag onReady catch exception.Code:${err.Code}, message: ${err.message}`);
+      }
+    })
+  }
+}
 
-59. @Entry
-60. @Component
-61. struct NavigationExample2 {
-62. private stack: NavPathStack = new NavPathStack();
+@Entry
+@Component
+struct NavigationExample2 {
+  private stack: NavPathStack = new NavPathStack();
 
-64. build() {
-65. Navigation(this.stack) {
-66. Stack({ alignContent: Alignment.Center }) {
-67. Button('pushPath', { stateEffect: true, type: ButtonType.Capsule })
-68. .width('80%')
-69. .height(40)
-70. .margin(20)
-71. .onClick(() => {
-72. let p = new PageParam(1);
-73. this.stack.pushPath({ name: "pageOne", param: p });
-74. })
-75. }
-76. .width('100%')
-77. .height('100%')
-78. }
-79. .width('100%')
-80. .height('100%')
-81. .title('Navigation')
-82. }
-83. }
+  build() {
+    Navigation(this.stack) {
+      Stack({ alignContent: Alignment.Center }) {
+        Button('pushPath', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            let pageParam = new PageParam(1);
+            this.stack.pushPath({ name: 'pageOne', param: pageParam });
+          })
+      }
+      .width('100%')
+      .height('100%')
+    }
+    .width('100%')
+    .height('100%')
+    .title('Navigation')
+  }
+}
 ```
 
 在src/main目录下的[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中的module字段里配置"routerMap": "$profile:router\_map"，并在src/main/resources/base/profile目录下新增router\_map.json。router\_map.json示例如下。
 
-```
-1. {
-2. "routerMap": [
-3. {
-4. "name": "pageOne",
-5. "pageSourceFile": "src/main/ets/pages/Index.ets",
-6. "buildFunction": "PageOneBuilder",
-7. "data": {
-8. "description": "this is pageOne"
-9. }
-10. }
-11. ]
-12. }
+```json
+{
+  "routerMap": [
+    {
+      "name": "pageOne",
+      "pageSourceFile": "src/main/ets/pages/Index.ets",
+      "buildFunction": "PageOneBuilder",
+      "data": {
+        "description": "this is pageOne"
+      }
+    }
+  ]
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/cnOQKXJ1RUe-GvTSMDXAhQ/zh-cn_image_0000002558606528.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/Xc8YbTdiTwGViHhIgvfuZQ/zh-cn_image_0000002736314925.gif)
 
 ### 示例8（NavDestination生命周期时序）
 
 该示例演示[NavDestination](ts-basic-components-navdestination.md)的[onAppear](ts-universal-events-show-hide.md#onappear)，[onDisAppear](ts-universal-events-show-hide.md#ondisappear)，[onShown](ts-basic-components-navdestination.md#onshown10)，[onHidden](ts-basic-components-navdestination.md#onhidden10)，[onWillAppear](ts-basic-components-navdestination.md#onwillappear12)，[onWillDisappear](ts-basic-components-navdestination.md#onwilldisappear12)，[onWillShow](ts-basic-components-navdestination.md#onwillshow12)，[onWillHide](ts-basic-components-navdestination.md#onwillhide12)接口的生命周期时序。
 
-```
-1. @Builder
-2. export function PageOneBuilder(name: string, param: Object) {
-3. PageOneComponent();
-4. }
+```ts
+@Builder
+export function PageOneBuilder(name: string, param: Object) {
+  PageOneComponent();
+}
 
-6. @Component
-7. struct PageOneComponent {
-8. private stack: NavPathStack | null = null;
-9. @State eventStr: string = "";
+@Component
+struct PageOneComponent {
+  private stack: NavPathStack | null = null;
+  @State eventStr: string = '';
 
-11. build() {
-12. NavDestination() {
-13. Column() {
-14. Text("event: " + this.eventStr)
-15. Button('pushPath', { stateEffect: true, type: ButtonType.Capsule })
-16. .width('80%')
-17. .height(40)
-18. .margin(20)
-19. .onClick(() => {
-20. if (this.stack) {
-21. this.stack.pushPath({ name: "pageOne" });
-22. }
-23. })
-24. Button('pop', { stateEffect: true, type: ButtonType.Capsule })
-25. .width('80%')
-26. .height(40)
-27. .margin(20)
-28. .onClick(() => {
-29. this.stack?.pop();
-30. })
-31. }
-32. .width('100%')
-33. .height('100%')
-34. }
-35. .title('pageOne')
-36. .onAppear(() => {
-37. this.eventStr += "<onAppear>";
-38. })
-39. .onDisAppear(() => {
-40. this.eventStr += "<onDisAppear>";
-41. })
-42. .onShown(() => {
-43. this.eventStr += "<onShown>";
-44. })
-45. .onHidden(() => {
-46. this.eventStr += "<onHidden>";
-47. })
-48. .onWillAppear(() => {
-49. this.eventStr += "<onWillAppear>";
-50. })
-51. .onWillDisappear(() => {
-52. this.eventStr += "<onWillDisappear>";
-53. })
-54. .onWillShow(() => {
-55. this.eventStr += "<onWillShow>";
-56. })
-57. .onWillHide(() => {
-58. this.eventStr += "<onWillHide>";
-59. })
-60. // onReady会在onAppear之前调用
-61. .onReady((ctx: NavDestinationContext) => {
-62. try {
-63. this.eventStr += "<onReady>";
-64. this.stack = ctx.pathStack;
-65. } catch (e) {
-66. console.error(`testTag onReady catch exception: ${JSON.stringify(e)}`);
-67. }
-68. })
-69. }
-70. }
+  build() {
+    NavDestination() {
+      Column() {
+        Text('event: ' + this.eventStr)
+        Button('pushPath', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            if (this.stack) {
+              this.stack.pushPath({ name: 'pageOne' });
+            }
+          })
+        Button('pop', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.stack?.pop();
+          })
+      }
+      .width('100%')
+      .height('100%')
+    }
+    .title('pageOne')
+    .onAppear(() => {
+      this.eventStr += '<onAppear>';
+    })
+    .onDisAppear(() => {
+      this.eventStr += '<onDisAppear>';
+    })
+    .onShown(() => {
+      this.eventStr += '<onShown>';
+    })
+    .onHidden(() => {
+      this.eventStr += '<onHidden>';
+    })
+    .onWillAppear(() => {
+      this.eventStr += '<onWillAppear>';
+    })
+    .onWillDisappear(() => {
+      this.eventStr += '<onWillDisappear>';
+    })
+    .onWillShow(() => {
+      this.eventStr += '<onWillShow>';
+    })
+    .onWillHide(() => {
+      this.eventStr += '<onWillHide>';
+    })
+    // onReady会在onAppear之前调用
+    .onReady((ctx: NavDestinationContext) => {
+      try {
+        this.eventStr += '<onReady>';
+        this.stack = ctx.pathStack;
+      } catch (err) {
+        console.error(`testTag onReady catch exception.Code:${err.code}, message:${err.message}`);
+      }
+    })
+  }
+}
 
-72. @Entry
-73. @Component
-74. struct NavigationExample3 {
-75. private stack: NavPathStack = new NavPathStack();
+@Entry
+@Component
+struct NavigationExample3 {
+  private stack: NavPathStack = new NavPathStack();
 
-77. build() {
-78. Navigation(this.stack) {
-79. Stack({ alignContent: Alignment.Center }) {
-80. Button('pushPath', { stateEffect: true, type: ButtonType.Capsule })
-81. .width('80%')
-82. .height(40)
-83. .margin(20)
-84. .onClick(() => {
-85. this.stack.pushPath({ name: "pageOne" });
-86. })
-87. }
-88. .width('100%')
-89. .height('100%')
-90. }
-91. .width('100%')
-92. .height('100%')
-93. .title('Navigation')
-94. }
-95. }
+  build() {
+    Navigation(this.stack) {
+      Stack({ alignContent: Alignment.Center }) {
+        Button('pushPath', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.stack.pushPath({ name: 'pageOne' });
+          })
+      }
+      .width('100%')
+      .height('100%')
+    }
+    .width('100%')
+    .height('100%')
+    .title('Navigation')
+  }
+}
 ```
 
 在src/main目录下的[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中的module字段里配置"routerMap": "$profile:router\_map"，并在src/main/resources/base/profile目录下新增router\_map.json。router\_map.json示例如下。
 
-```
-1. {
-2. "routerMap": [
-3. {
-4. "name": "pageOne",
-5. "pageSourceFile": "src/main/ets/pages/Index.ets",
-6. "buildFunction": "PageOneBuilder",
-7. "data": {
-8. "description": "this is pageOne"
-9. }
-10. }
-11. ]
-12. }
+```json
+{
+  "routerMap": [
+    {
+      "name": "pageOne",
+      "pageSourceFile": "src/main/ets/pages/Index.ets",
+      "buildFunction": "PageOneBuilder",
+      "data": {
+        "description": "this is pageOne"
+      }
+    }
+  ]
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/PhSLDrWmQ5ajBLCOrwc3Aw/zh-cn_image_0000002589326055.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/nJW73WPgRKO2y2h9tuLqPQ/zh-cn_image_0000002706675882.gif)
 
 ### 示例9（标题栏布局效果）
 
 该示例演示Navigation标题栏STACK布局效果。
 
+```ts
+@Entry
+@Component
+struct NavigationExample {
+  private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+  private scrollerForScroll: Scroller = new Scroller();
+  @State barStyle: BarStyle = BarStyle.STANDARD;
+
+  build() {
+    Column() {
+      Navigation() {
+        Column() {
+          Scroll(this.scrollerForScroll) {
+            Column() {
+              // $r('app.media.image_1')需要替换为开发者所需的资源文件
+              Image($r('app.media.image_1'))// 设置与标题栏高度一致，以便观察STACK效果
+                .height(138)
+                .width('100%')
+              Button('BarStyle.STANDARD')
+                .height('50vp')
+                .onClick(() => {
+                  this.barStyle = BarStyle.STANDARD;
+                })
+              Button('BarStyle.STACK')
+                .height('50vp')
+                .margin({ top: 12 })
+                .onClick(() => {
+                  this.barStyle = BarStyle.STACK;
+                })
+
+              ForEach(this.arr, (item: number) => {
+                ListItem() {
+                  Text('' + item)
+                    .width('100%')
+                    .height(100)
+                    .fontSize(16)
+                    .textAlign(TextAlign.Center)
+                    .borderRadius(10)
+                    .backgroundColor(Color.Orange)
+                    .margin({ top: 12 })
+                }
+              }, (item: number) => item.toString())
+            }
+          }
+        }
+        .width('100%')
+        .height('100%')
+        .backgroundColor(0xDCDCDC)
+      }
+      .title(
+        {
+          main: 'NavTitle',
+          sub: 'subtitle'
+        },
+        {
+          backgroundBlurStyle: BlurStyle.COMPONENT_THICK,
+          barStyle: this.barStyle,
+        }
+      )
+      .titleMode(NavigationTitleMode.Free)
+      .hideTitleBar(false)
+    }.width('100%').height('100%').backgroundColor('#F1F3F5')
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct NavigationExample {
-4. private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-5. private scrollerForScroll: Scroller = new Scroller();
-6. @State barStyle: BarStyle = BarStyle.STANDARD;
 
-8. build() {
-9. Column() {
-10. Navigation() {
-11. Column() {
-12. Scroll(this.scrollerForScroll) {
-13. Column() {
-14. // $r('app.media.image_1')需要替换为开发者所需的资源文件
-15. Image($r('app.media.image_1'))// 设置与标题栏高度一致，以便观察STACK效果
-16. .height(138)
-17. .width('100%')
-18. Button('BarStyle.STANDARD')
-19. .height('50vp')
-20. .onClick(() => {
-21. this.barStyle = BarStyle.STANDARD;
-22. })
-23. Button('BarStyle.STACK')
-24. .height('50vp')
-25. .margin({ top: 12 })
-26. .onClick(() => {
-27. this.barStyle = BarStyle.STACK;
-28. })
-
-30. ForEach(this.arr, (item: number) => {
-31. ListItem() {
-32. Text('' + item)
-33. .width('100%')
-34. .height(100)
-35. .fontSize(16)
-36. .textAlign(TextAlign.Center)
-37. .borderRadius(10)
-38. .backgroundColor(Color.Orange)
-39. .margin({ top: 12 })
-40. }
-41. }, (item: number) => item.toString())
-42. }
-43. }
-44. }
-45. .width('100%')
-46. .height('100%')
-47. .backgroundColor(0xDCDCDC)
-48. }
-49. .title(
-50. {
-51. main: 'NavTitle',
-52. sub: 'subtitle'
-53. },
-54. {
-55. backgroundBlurStyle: BlurStyle.COMPONENT_THICK,
-56. barStyle: this.barStyle,
-57. }
-58. )
-59. .titleMode(NavigationTitleMode.Free)
-60. .hideTitleBar(false)
-61. }.width('100%').height('100%').backgroundColor('#F1F3F5')
-62. }
-63. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/wz95snWsRLy427tLF7LTnQ/zh-cn_image_0000002589245997.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/57RhoAGGTN22CimzPNY2nA/zh-cn_image_0000002736434969.gif)
 
 ### 示例10（定义导航控制器派生类）
 
 该示例主要演示如何定义[NavPathStack](ts-basic-components-navigation.md#navpathstack10)的派生类和派生类在Navigation中的基本用法。
 
-```
-1. // Index.ets
-2. import { DerivedNavPathStack, NewParam } from './Utils';
+```ts
+// Index.ets
+import { DerivedNavPathStack, NewParam } from './Utils';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. derivedStack: DerivedNavPathStack = new DerivedNavPathStack();
+@Entry
+@Component
+struct Index {
+  derivedStack: DerivedNavPathStack = new DerivedNavPathStack();
 
-9. aboutToAppear(): void {
-10. this.derivedStack.setId('origin stack');
-11. }
-
-13. build() {
-14. Navigation(this.derivedStack) {
-15. Button('to Page One').margin(20).onClick(() => {
-16. this.derivedStack.pushPath({
-17. name: 'pageOne',
-18. param: new NewParam('push pageOne in homePage when stack size: ' + this.derivedStack.size())
-19. });
-20. })
-21. }
-22. .title('Home Page')
-23. }
-24. }
-```
-
-```
-1. // PageOne.ets
-2. import { DerivedNavPathStack, NewParam } from './Utils';
-
-4. @Builder
-5. export function pageMap(name: string) {
-6. PageOne();
-7. }
-
-9. @Component
-10. struct PageOne {
-11. derivedStack: DerivedNavPathStack = new DerivedNavPathStack();
-12. curStringifyParam: string = "NA";
-
-14. build() {
-15. NavDestination() {
-16. Column() {
-17. Text(this.derivedStack.getInfo())
-18. .margin(10)
-19. .fontSize(25)
-20. .fontWeight(FontWeight.Bold)
-21. .textAlign(TextAlign.Start)
-22. Text('current page param info:')
-23. .margin(10)
-24. .fontSize(25)
-25. .fontWeight(FontWeight.Bold)
-26. .textAlign(TextAlign.Start)
-27. Text(this.curStringifyParam)
-28. .margin(20)
-29. .fontSize(20)
-30. .textAlign(TextAlign.Start)
-31. }.backgroundColor(Color.Pink)
-
-33. Button('to Page One').margin(20).onClick(() => {
-34. this.derivedStack.pushPath({
-35. name: 'pageOne',
-36. param: new NewParam('push pageOne in pageOne when stack size: ' + this.derivedStack.size())
-37. });
-38. })
-39. }.title('Page One')
-40. .onReady((context: NavDestinationContext) => {
-41. console.info('[derive-test] reached PageOne\'s onReady');
-42. // 从navdestinationContext获取派生堆栈
-43. this.derivedStack = context.pathStack as DerivedNavPathStack;
-44. console.info('[derive-test] -- got derivedStack: ' + this.derivedStack.id);
-45. this.curStringifyParam = JSON.stringify(context.pathInfo.param);
-46. console.info('[derive-test] -- got param: ' + this.curStringifyParam);
-47. })
-48. }
-49. }
+  aboutToAppear(): void {
+    this.derivedStack.setId('origin stack');
+  }
+  
+  build() {
+    Navigation(this.derivedStack) {
+      Button('to Page One').margin(20).onClick(() => {
+        this.derivedStack.pushPath({
+          name: 'pageOne',
+          param: new NewParam('push pageOne in homePage when stack size: ' + this.derivedStack.size())
+        });
+      })
+    }
+    .title('Home Page')
+  }
+}
 ```
 
+```ts
+// PageOne.ets
+import { DerivedNavPathStack, NewParam } from './Utils';
+
+@Builder
+export function pageMap(name: string) {
+  PageOne();
+}
+
+@Component
+struct PageOne {
+  derivedStack: DerivedNavPathStack = new DerivedNavPathStack();
+  curStringifyParam: string = 'NA';
+
+  build() {
+    NavDestination() {
+      Column() {
+        Text(this.derivedStack.getInfo())
+          .margin(10)
+          .fontSize(25)
+          .fontWeight(FontWeight.Bold)
+          .textAlign(TextAlign.Start)
+        Text('current page param info:')
+          .margin(10)
+          .fontSize(25)
+          .fontWeight(FontWeight.Bold)
+          .textAlign(TextAlign.Start)
+        Text(this.curStringifyParam)
+          .margin(20)
+          .fontSize(20)
+          .textAlign(TextAlign.Start)
+      }.backgroundColor(Color.Pink)
+
+      Button('to Page One').margin(20).onClick(() => {
+        this.derivedStack.pushPath({
+          name: 'pageOne',
+          param: new NewParam('push pageOne in pageOne when stack size: ' + this.derivedStack.size())
+        });
+      })
+    }.title('Page One')
+    .onReady((context: NavDestinationContext) => {
+      console.info('[derive-test] reached PageOne\'s onReady');
+      // 从navdestinationContext获取派生堆栈
+      this.derivedStack = context.pathStack as DerivedNavPathStack;
+      console.info('[derive-test] -- got derivedStack: ' + this.derivedStack.id);
+      this.curStringifyParam = JSON.stringify(context.pathInfo.param);
+      console.info('[derive-test] -- got param: ' + this.curStringifyParam);
+    })
+  }
+}
 ```
-1. // Utils.ets
-2. export class DerivedNavPathStack extends NavPathStack {
-3. // 用户定义的属性'id'
-4. id: string = "__default__";
 
-6. // 派生类中的新功能
-7. setId(id: string) {
-8. this.id = id;
-9. }
+```ts
+// Utils.ets
+export class DerivedNavPathStack extends NavPathStack {
+  // 用户定义的属性'id'
+  id: string = '__default__';
 
-11. // 派生类中的新功能
-12. getInfo(): string {
-13. return "this page used Derived NavPathStack, id: " + this.id;
-14. }
+  // 派生类中的新功能
+  setId(id: string) {
+    this.id = id;
+  }
 
-16. // 重载NavPathStack的功能
-17. pushPath(info: NavPathInfo, animated?: boolean): void
-18. pushPath(info: NavPathInfo, options?: NavigationOptions): void
-19. pushPath(info: NavPathInfo, secArg?: boolean | NavigationOptions): void {
-20. console.info('[derive-test] reached DerivedNavPathStack\'s pushPath');
-21. if (typeof secArg === 'boolean') {
-22. super.pushPath(info, secArg);
-23. } else {
-24. super.pushPath(info, secArg);
-25. }
-26. }
+  // 派生类中的新功能
+  getInfo(): string {
+    return `this page used Derived NavPathStack, id: ${this.id}`;
+  }
 
-28. // 重写和重载NavPathStack的函数
-29. pop(animated?: boolean | undefined): NavPathInfo | undefined
-30. pop(result: Object, animated?: boolean | undefined): NavPathInfo | undefined
-31. pop(result?: Object, animated?: boolean | undefined): NavPathInfo | undefined {
-32. console.info('[derive-test] reached DerivedNavPathStack\'s pop');
-33. return super.pop(result, animated);
-34. }
+  // 重载NavPathStack的功能
+  pushPath(info: NavPathInfo, animated?: boolean): void
+  pushPath(info: NavPathInfo, options?: NavigationOptions): void
+  pushPath(info: NavPathInfo, secArg?: boolean | NavigationOptions): void {
+    console.info('[derive-test] reached DerivedNavPathStack\'s pushPath');
+    if (typeof secArg === 'boolean') {
+      super.pushPath(info, secArg);
+    } else {
+      super.pushPath(info, secArg);
+    }
+  }
 
-36. // 基类的其他功能...
-37. }
+  // 重写和重载NavPathStack的函数
+  pop(animated?: boolean | undefined): NavPathInfo | undefined
+  pop(result: Object, animated?: boolean | undefined): NavPathInfo | undefined
+  pop(result?: Object, animated?: boolean | undefined): NavPathInfo | undefined {
+    console.info('[derive-test] reached DerivedNavPathStack\'s pop');
+    return super.pop(result, animated);
+  }
 
-39. export class NewParam {
-40. info: string = "__default_param__";
+  // 基类的其他功能...
+}
 
-42. constructor(info: string) {
-43. this.info = info;
-44. }
-45. }
+export class NewParam {
+  info: string = '__default_param__';
+
+  constructor(info: string) {
+    this.info = info;
+  }
+}
 ```
 
 在src/main目录下的[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中的module字段里配置"routerMap": "$profile:router\_map"，并在src/main/resources/base/profile目录下新增router\_map.json。router\_map.json示例如下。
 
-```
-1. {
-2. "routerMap": [
-3. {
-4. "name": "pageOne",
-5. "pageSourceFile": "src/main/ets/pages/PageOne.ets",
-6. "buildFunction": "pageMap",
-7. "data": {
-8. "description": "this is pageOne"
-9. }
-10. }
-11. ]
-12. }
+```json
+{
+  "routerMap": [
+    {
+      "name": "pageOne",
+      "pageSourceFile": "src/main/ets/pages/PageOne.ets",
+      "buildFunction": "pageMap",
+      "data": {
+        "description": "this is pageOne"
+      }
+    }
+  ]
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/crvtnki5Rl-AmYaWvsp1sA/zh-cn_image_0000002558766188.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/ty8zwa-JRx6DFBSDew5pEg/zh-cn_image_0000002706835822.gif)
 
 ### 示例11（使用Symbol组件）
 
 该示例主要演示Navigation和[NavDestination](ts-basic-components-navdestination.md)如何使用Symbol组件。
 
+```ts
+// Index.ets
+import { SymbolGlyphModifier } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct NavigationExample {
+  @Provide('navPathStack') navPathStack: NavPathStack = new NavPathStack();
+  @State menuItems: Array<NavigationMenuItem> = [
+    {
+      // 'resources/base/media/ic_public_ok.svg'需要替换为开发者所需的资源文件
+      value: 'menuItem1',
+      icon: 'resources/base/media/ic_public_ok.svg' // 图标资源路径
+    },
+    {
+      // resources/base/media/ic_public_ok.svg'需要替换为开发者所需的资源文件
+      value: 'menuItem2',
+      icon: 'resources/base/media/ic_public_ok.svg', // 图标资源路径
+      symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus')).fontColor([Color.Red, Color.Green])
+        .renderingStrategy(SymbolRenderingStrategy.MULTIPLE_COLOR),
+    },
+    {
+      value: 'menuItem3',
+      symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_lungs')),
+    },
+  ];
+  @State toolItems: Array<ToolbarItem> = [
+    {
+      // 'resources/base/media/ic_public_ok.svg'需要替换为开发者所需的资源文件
+      value: 'toolItem1',
+      icon: 'resources/base/media/ic_public_ok.svg', // 图标资源路径
+      symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_lungs')),
+      status: ToolbarItemStatus.ACTIVE,
+      activeSymbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus')).fontColor([Color.Red,
+        Color.Green]).renderingStrategy(SymbolRenderingStrategy.MULTIPLE_COLOR),
+      action: () => {
+      }
+    },
+    {
+      // 'resources/base/media/ic_public_more.svg'需要替换为开发者所需的资源文件
+      value: 'toolItem2',
+      symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_star')),
+      status: ToolbarItemStatus.ACTIVE,
+      activeIcon: 'resources/base/media/ic_public_more.svg', // 图标资源路径
+      action: () => {
+      }
+    },
+    {
+      value: 'toolItem3',
+      symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_star')),
+      status: ToolbarItemStatus.ACTIVE,
+      activeSymbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_lungs')),
+      action: () => {
+      }
+    }
+  ];
+
+  build() {
+    Navigation(this.navPathStack) {
+      Column() {
+        Button('跳转').onClick(() => {
+          this.navPathStack.pushPathByName('NavigationMenu', null);
+        })
+      }
+    }
+    .backButtonIcon(new SymbolGlyphModifier($r('sys.symbol.ohos_wifi')))
+    .titleMode(NavigationTitleMode.Mini)
+    .menus(this.menuItems)
+    .toolbarConfiguration(this.toolItems)
+    .title('一级页面')
+  }
+}
 ```
-1. // Index.ets
-2. import { SymbolGlyphModifier } from '@kit.ArkUI';
 
-4. @Entry
-5. @Component
-6. struct NavigationExample {
-7. @Provide('navPathStack') navPathStack: NavPathStack = new NavPathStack();
-8. @State menuItems: Array<NavigationMenuItem> = [
-9. {
-10. // 'resources/base/media/ic_public_ok.svg'需要替换为开发者所需的资源文件
-11. value: 'menuItem1',
-12. icon: 'resources/base/media/ic_public_ok.svg' // 图标资源路径
-13. },
-14. {
-15. // resources/base/media/ic_public_ok.svg'需要替换为开发者所需的资源文件
-16. value: 'menuItem2',
-17. icon: 'resources/base/media/ic_public_ok.svg', // 图标资源路径
-18. symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus')).fontColor([Color.Red, Color.Green])
-19. .renderingStrategy(SymbolRenderingStrategy.MULTIPLE_COLOR),
-20. },
-21. {
-22. value: 'menuItem3',
-23. symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_lungs')),
-24. },
-25. ];
-26. @State toolItems: Array<ToolbarItem> = [
-27. {
-28. // 'resources/base/media/ic_public_ok.svg'需要替换为开发者所需的资源文件
-29. value: 'toolItem1',
-30. icon: 'resources/base/media/ic_public_ok.svg', // 图标资源路径
-31. symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_lungs')),
-32. status: ToolbarItemStatus.ACTIVE,
-33. activeSymbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus')).fontColor([Color.Red,
-34. Color.Green]).renderingStrategy(SymbolRenderingStrategy.MULTIPLE_COLOR),
-35. action: () => {
-36. }
-37. },
-38. {
-39. // 'resources/base/media/ic_public_more.svg'需要替换为开发者所需的资源文件
-40. value: 'toolItem2',
-41. symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_star')),
-42. status: ToolbarItemStatus.ACTIVE,
-43. activeIcon: 'resources/base/media/ic_public_more.svg', // 图标资源路径
-44. action: () => {
-45. }
-46. },
-47. {
-48. value: 'toolItem3',
-49. symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_star')),
-50. status: ToolbarItemStatus.ACTIVE,
-51. activeSymbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_lungs')),
-52. action: () => {
-53. }
-54. }
-55. ];
+```ts
+// PageOne.ets
+import { SymbolGlyphModifier } from '@kit.ArkUI';
 
-57. build() {
-58. Navigation(this.navPathStack) {
-59. Column() {
-60. Button('跳转').onClick(() => {
-61. this.navPathStack.pushPathByName('NavigationMenu', null);
-62. })
-63. }
-64. }
-65. .backButtonIcon(new SymbolGlyphModifier($r('sys.symbol.ohos_wifi')))
-66. .titleMode(NavigationTitleMode.Mini)
-67. .menus(this.menuItems)
-68. .toolbarConfiguration(this.toolItems)
-69. .title('一级页面')
-70. }
-71. }
-```
+@Builder
+export function myRouter(name: string, param?: Object) {
+  NavigationMenu();
+}
 
-```
-1. // PageOne.ets
-2. import { SymbolGlyphModifier } from '@kit.ArkUI';
+@Component
+export struct NavigationMenu {
+  @Consume('navPathStack') navPathStack: NavPathStack;
+  @State menuItems: Array<NavigationMenuItem> = [
+    {
+      // 'resources/base/media/ic_public_ok.svg'需要替换为开发者所需的资源文件
+      value: 'menuItem1',
+      icon: 'resources/base/media/ic_public_ok.svg', // 图标资源路径
+      action: () => {
+      }
+    },
+    {
+      value: 'menuItem2',
+      symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus')).fontColor([Color.Red, Color.Green])
+        .renderingStrategy(SymbolRenderingStrategy.MULTIPLE_COLOR),
+      action: () => {
+      }
+    },
+    {
+      value: 'menuItem3',
+      symbolIcon: new SymbolGlyphModifier($r('sys.symbol.repeat_1')),
+      action: () => {
+      }
+    },
+  ];
 
-4. @Builder
-5. export function myRouter(name: string, param?: Object) {
-6. NavigationMenu();
-7. }
-
-9. @Component
-10. export struct NavigationMenu {
-11. @Consume('navPathStack') navPathStack: NavPathStack;
-12. @State menuItems: Array<NavigationMenuItem> = [
-13. {
-14. // 'resources/base/media/ic_public_ok.svg'需要替换为开发者所需的资源文件
-15. value: 'menuItem1',
-16. icon: 'resources/base/media/ic_public_ok.svg', // 图标资源路径
-17. action: () => {
-18. }
-19. },
-20. {
-21. value: 'menuItem2',
-22. symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus')).fontColor([Color.Red, Color.Green])
-23. .renderingStrategy(SymbolRenderingStrategy.MULTIPLE_COLOR),
-24. action: () => {
-25. }
-26. },
-27. {
-28. value: 'menuItem3',
-29. symbolIcon: new SymbolGlyphModifier($r('sys.symbol.repeat_1')),
-30. action: () => {
-31. }
-32. },
-33. ];
-
-35. build() {
-36. NavDestination() {
-37. Row() {
-38. Column() {
-39. }
-40. .width('100%')
-41. }
-42. .height('100%')
-43. }
-44. .hideTitleBar(false)
-45. .title('NavDestination title')
-46. .backgroundColor($r('sys.color.ohos_id_color_titlebar_sub_bg'))
-47. .backButtonIcon(new SymbolGlyphModifier($r('sys.symbol.ohos_star'))
-48. .fontColor([Color.Blue]))
-49. .menus(this.menuItems)
-50. }
-51. }
+  build() {
+    NavDestination() {
+      Row() {
+        Column() {
+        }
+        .width('100%')
+      }
+      .height('100%')
+    }
+    .hideTitleBar(false)
+    .title('NavDestination title')
+    .backgroundColor($r('sys.color.ohos_id_color_titlebar_sub_bg'))
+    .backButtonIcon(new SymbolGlyphModifier($r('sys.symbol.ohos_star'))
+      .fontColor([Color.Blue]))
+    .menus(this.menuItems)
+  }
+}
 ```
 
 在src/main目录下的[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中的module字段里配置"routerMap": "$profile:router\_map"，并在src/main/resources/base/profile目录下新增router\_map.json。router\_map.json示例如下。
 
-```
-1. {
-2. "routerMap": [
-3. {
-4. "name": "NavigationMenu",
-5. "pageSourceFile": "src/main/ets/pages/PageOne.ets",
-6. "buildFunction": "myRouter",
-7. "data": {
-8. "description": "this is pageOne"
-9. }
-10. }
-11. ]
-12. }
+```json
+{
+  "routerMap": [
+    {
+      "name": "NavigationMenu",
+      "pageSourceFile": "src/main/ets/pages/PageOne.ets",
+      "buildFunction": "myRouter",
+      "data": {
+        "description": "this is pageOne"
+      }
+    }
+  ]
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/UVyS3VLnRaGfyXsdx841yw/zh-cn_image_0000002558606530.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/u5iLmfxASmeD-AWhVchxJA/zh-cn_image_0000002736314927.gif)
 
 ### 示例12（设置自定义标题栏边距）
 
 该示例主要演示Navigation和[NavDestination](ts-basic-components-navdestination.md)如何设置自定义标题栏边距，如何通过TextModifier修改主副标题文本样式。
 
-```
-1. // Index.ets
-2. import { LengthMetrics } from '@kit.ArkUI';
-3. import { MainTitleTextModifier, SubTitleTextModifier } from './Utils';
+```ts
+// Index.ets
+import { LengthMetrics } from '@kit.ArkUI';
+import { MainTitleTextModifier, SubTitleTextModifier } from './Utils';
 
-5. @Entry
-6. @Component
-7. struct NavigationExample {
-8. private navPathStack: NavPathStack = new NavPathStack();
-9. // 初始化标题栏起始端内间距
-10. @State paddingStart: LengthMetrics = LengthMetrics.vp(0);
-11. // 初始化标题栏结束端内间距
-12. @State paddingEnd: LengthMetrics = LengthMetrics.vp(0);
-13. // 主标题样式修改器
-14. @State mainTitleModifier: MainTitleTextModifier = new MainTitleTextModifier();
-15. // 副标题样式修改器
-16. @State subTitleModifier: SubTitleTextModifier = new SubTitleTextModifier();
-17. @State applyModifier: boolean = false;
-18. @State useStyle1: boolean = true;
+@Entry
+@Component
+struct NavigationExample {
+  private navPathStack: NavPathStack = new NavPathStack();
+  // 初始化标题栏起始端内间距
+  @State paddingStart: LengthMetrics = LengthMetrics.vp(0);
+  // 初始化标题栏结束端内间距
+  @State paddingEnd: LengthMetrics = LengthMetrics.vp(0);
+  // 主标题样式修改器
+  @State mainTitleModifier: MainTitleTextModifier = new MainTitleTextModifier();
+  // 副标题样式修改器
+  @State subTitleModifier: SubTitleTextModifier = new SubTitleTextModifier();
+  @State applyModifier: boolean = false;
+  @State useStyle1: boolean = true;
 
-20. build() {
-21. Navigation(this.navPathStack) {
-22. Column() {
-23. // 标题栏内间距切换
-24. Button('apply padding 32vp')
-25. .onClick(() => {
-26. this.paddingStart = LengthMetrics.vp(32);
-27. this.paddingEnd = LengthMetrics.vp(32);
-28. })
-29. .margin({ top: 70 })
-30. .width(180)
-31. Button('apply padding 20vp')
-32. .onClick(() => {
-33. this.paddingStart = LengthMetrics.vp(20);
-34. this.paddingEnd = LengthMetrics.vp(20);
-35. })
-36. .margin({ top: 40 })
-37. .width(180)
-38. Button('pushPage')
-39. .onClick(() => {
-40. this.navPathStack.pushPath({ name: 'NavDestinationExample' });
-41. })
-42. .margin({ top: 40 })
-43. .width(180)
-44. Row() {
-45. Text(`apply Modifier`)
-46. Toggle({ isOn: this.applyModifier, type: ToggleType.Switch }).onChange((isOn: boolean) => {
-47. this.applyModifier = isOn;
-48. })
-49. }
-50. .padding({ top: 95, left: 5, right: 5 })
-51. .width(180)
-52. .justifyContent(FlexAlign.SpaceBetween)
+  build() {
+    Navigation(this.navPathStack) {
+      Column() {
+        // 标题栏内间距切换
+        Button('apply padding 32vp')
+          .onClick(() => {
+            this.paddingStart = LengthMetrics.vp(32);
+            this.paddingEnd = LengthMetrics.vp(32);
+          })
+          .margin({ top: 70 })
+          .width(180)
+        Button('apply padding 20vp')
+          .onClick(() => {
+            this.paddingStart = LengthMetrics.vp(20);
+            this.paddingEnd = LengthMetrics.vp(20);
+          })
+          .margin({ top: 40 })
+          .width(180)
+        Button('pushPage')
+          .onClick(() => {
+            this.navPathStack.pushPath({ name: 'NavDestinationExample' });
+          })
+          .margin({ top: 40 })
+          .width(180)
+        Row() {
+          Text(`apply Modifier`)
+          Toggle({ isOn: this.applyModifier, type: ToggleType.Switch }).onChange((isOn: boolean) => {
+            this.applyModifier = isOn;
+          })
+        }
+        .padding({ top: 95, left: 5, right: 5 })
+        .width(180)
+        .justifyContent(FlexAlign.SpaceBetween)
 
-54. Row() {
-55. Text(`use Style1`)
-56. Toggle({ isOn: this.useStyle1, type: ToggleType.Switch }).onChange((isOn: boolean) => {
-57. this.mainTitleModifier.useStyle1 = isOn;
-58. this.subTitleModifier.useStyle1 = isOn;
-59. this.useStyle1 = isOn;
-60. })
-61. }
-62. .padding({ top: 40, left: 5, right: 5 })
-63. .width(180)
-64. .justifyContent(FlexAlign.SpaceBetween)
-65. }
-66. .width('100%')
-67. .height('100%')
-68. }
-69. .titleMode(NavigationTitleMode.Full)
-70. .title(
-71. { main: "Title", sub: "subTitle" },
-72. this.applyModifier ?
-73. {
-74. paddingStart: this.paddingStart,
-75. paddingEnd: this.paddingEnd,
-76. mainTitleModifier: this.mainTitleModifier,
-77. subTitleModifier: this.subTitleModifier,
-78. } : {
-79. paddingStart: this.paddingStart,
-80. paddingEnd: this.paddingEnd
-81. })
-82. }
-83. }
-```
-
-```
-1. // PageOne.ets
-2. import { LengthMetrics } from '@kit.ArkUI';
-3. import { MainTitleTextModifier, SubTitleTextModifier } from './Utils';
-
-5. @Builder
-6. export function myRouter(name: string, param?: Object) {
-7. NavDestinationExample();
-8. }
-9. @Component
-10. export struct NavDestinationExample {
-11. @State menuItems: Array<NavigationMenuItem> = [
-12. {
-13. // 'resources/base/media/ic_public_ok.svg'需要替换为开发者所需的资源文件
-14. value: 'menuItem1',
-15. icon: 'resources/base/media/ic_public_ok.svg', // 图标资源路径
-16. action: () => {
-17. }
-18. }
-19. ];
-20. @State paddingStart: LengthMetrics = LengthMetrics.vp(0);
-21. @State paddingEnd: LengthMetrics = LengthMetrics.vp(0);
-22. // 主标题样式修改器
-23. @State mainTitleModifier: MainTitleTextModifier = new MainTitleTextModifier();
-24. // 副标题样式修改器
-25. @State subTitleModifier: SubTitleTextModifier = new SubTitleTextModifier();
-26. @State applyModifier: boolean = false;
-27. @State useStyle1: boolean = true;
-
-29. build() {
-30. NavDestination() {
-31. Column() {
-32. // 标题栏内间距切换
-33. Button('apply padding 32vp')
-34. .onClick(() => {
-35. this.paddingStart = LengthMetrics.vp(32);
-36. this.paddingEnd = LengthMetrics.vp(32);
-37. })
-38. .margin({ top: 150 })
-39. .width(180)
-40. Button('apply padding 20vp')
-41. .onClick(() => {
-42. this.paddingStart = LengthMetrics.vp(20);
-43. this.paddingEnd = LengthMetrics.vp(20);
-44. })
-45. .margin({ top: 40 })
-46. .width(180)
-47. Row() {
-48. Text(`apply Modifier`)
-49. Toggle({ isOn: this.applyModifier, type: ToggleType.Switch }).onChange((isOn: boolean) => {
-50. this.applyModifier = isOn;
-51. })
-52. }
-53. .padding({ top: 95, left: 5, right: 5 })
-54. .width(180)
-55. .justifyContent(FlexAlign.SpaceBetween)
-
-57. Row() {
-58. Text(`use Style1`)
-59. Toggle({ isOn: this.useStyle1, type: ToggleType.Switch }).onChange((isOn: boolean) => {
-60. this.mainTitleModifier.useStyle1 = isOn;
-61. this.subTitleModifier.useStyle1 = isOn;
-62. this.useStyle1 = isOn;
-63. })
-64. }
-65. .padding({ top: 40, left: 5, right: 5 })
-66. .width(180)
-67. .justifyContent(FlexAlign.SpaceBetween)
-68. }
-69. .width('100%')
-70. .height('90%')
-71. }
-72. .hideTitleBar(false)
-73. .title(
-74. { main: "Title", sub: "subTitle" },
-75. this.applyModifier ?
-76. {
-77. paddingStart: this.paddingStart,
-78. paddingEnd: this.paddingEnd,
-79. mainTitleModifier: this.mainTitleModifier,
-80. subTitleModifier: this.subTitleModifier,
-81. } : {
-82. paddingStart: this.paddingStart,
-83. paddingEnd: this.paddingEnd
-84. })
-85. .menus(this.menuItems)
-86. }
-87. }
+        Row() {
+          Text(`use Style1`)
+          Toggle({ isOn: this.useStyle1, type: ToggleType.Switch }).onChange((isOn: boolean) => {
+            this.mainTitleModifier.useStyle1 = isOn;
+            this.subTitleModifier.useStyle1 = isOn;
+            this.useStyle1 = isOn;
+          })
+        }
+        .padding({ top: 40, left: 5, right: 5 })
+        .width(180)
+        .justifyContent(FlexAlign.SpaceBetween)
+      }
+      .width('100%')
+      .height('100%')
+    }
+    .titleMode(NavigationTitleMode.Full)
+    .title(
+      { main: 'Title', sub: 'subTitle' },
+      this.applyModifier ?
+        {
+          paddingStart: this.paddingStart,
+          paddingEnd: this.paddingEnd,
+          mainTitleModifier: this.mainTitleModifier,
+          subTitleModifier: this.subTitleModifier,
+        } : {
+        paddingStart: this.paddingStart,
+        paddingEnd: this.paddingEnd
+      })
+  }
+}
 ```
 
+```ts
+// PageOne.ets
+import { LengthMetrics } from '@kit.ArkUI';
+import { MainTitleTextModifier, SubTitleTextModifier } from './Utils';
+
+@Builder
+export function myRouter(name: string, param?: Object) {
+  NavDestinationExample();
+}
+@Component
+export struct NavDestinationExample {
+  @State menuItems: Array<NavigationMenuItem> = [
+    {
+      // 'resources/base/media/ic_public_ok.svg'需要替换为开发者所需的资源文件
+      value: 'menuItem1',
+      icon: 'resources/base/media/ic_public_ok.svg', // 图标资源路径
+      action: () => {
+      }
+    }
+  ];
+  @State paddingStart: LengthMetrics = LengthMetrics.vp(0);
+  @State paddingEnd: LengthMetrics = LengthMetrics.vp(0);
+  // 主标题样式修改器
+  @State mainTitleModifier: MainTitleTextModifier = new MainTitleTextModifier();
+  // 副标题样式修改器
+  @State subTitleModifier: SubTitleTextModifier = new SubTitleTextModifier();
+  @State applyModifier: boolean = false;
+  @State useStyle1: boolean = true;
+
+  build() {
+    NavDestination() {
+      Column() {
+        // 标题栏内间距切换
+        Button('apply padding 32vp')
+          .onClick(() => {
+            this.paddingStart = LengthMetrics.vp(32);
+            this.paddingEnd = LengthMetrics.vp(32);
+          })
+          .margin({ top: 150 })
+          .width(180)
+        Button('apply padding 20vp')
+          .onClick(() => {
+            this.paddingStart = LengthMetrics.vp(20);
+            this.paddingEnd = LengthMetrics.vp(20);
+          })
+          .margin({ top: 40 })
+          .width(180)
+        Row() {
+          Text(`apply Modifier`)
+          Toggle({ isOn: this.applyModifier, type: ToggleType.Switch }).onChange((isOn: boolean) => {
+            this.applyModifier = isOn;
+          })
+        }
+        .padding({ top: 95, left: 5, right: 5 })
+        .width(180)
+        .justifyContent(FlexAlign.SpaceBetween)
+
+        Row() {
+          Text(`use Style1`)
+          Toggle({ isOn: this.useStyle1, type: ToggleType.Switch }).onChange((isOn: boolean) => {
+            this.mainTitleModifier.useStyle1 = isOn;
+            this.subTitleModifier.useStyle1 = isOn;
+            this.useStyle1 = isOn;
+          })
+        }
+        .padding({ top: 40, left: 5, right: 5 })
+        .width(180)
+        .justifyContent(FlexAlign.SpaceBetween)
+      }
+      .width('100%')
+      .height('90%')
+    }
+    .hideTitleBar(false)
+    .title(
+      { main: 'Title', sub: 'subTitle' },
+      this.applyModifier ?
+        {
+          paddingStart: this.paddingStart,
+          paddingEnd: this.paddingEnd,
+          mainTitleModifier: this.mainTitleModifier,
+          subTitleModifier: this.subTitleModifier,
+        } : {
+        paddingStart: this.paddingStart,
+        paddingEnd: this.paddingEnd
+      })
+    .menus(this.menuItems)
+  }
+}
 ```
-1. // Utils.ets
-2. import { TextModifier } from '@kit.ArkUI';
 
-4. export class MainTitleTextModifier extends TextModifier {
-5. useStyle1: boolean = true;
+```ts
+// Utils.ets
+import { TextModifier } from '@kit.ArkUI';
 
-7. applyNormalAttribute(instance: TextModifier): void {
-8. if (this.useStyle1) {
-9. console.info(`testTag mainTitle use style1`);
-10. instance.fontColor('#FFFFC000');
-11. instance.fontSize(35);
-12. instance.fontWeight(FontWeight.Bolder);
-13. instance.fontStyle(FontStyle.Normal);
-14. instance.textShadow({ radius: 5, offsetX: 9 });
-15. } else {
-16. console.info(`testTag mainTitle use style2`);
-17. instance.fontColor('#FF23A98D');
-18. instance.fontSize(20);
-19. instance.heightAdaptivePolicy(TextHeightAdaptivePolicy.MIN_FONT_SIZE_FIRST);
-20. instance.fontWeight(FontWeight.Lighter);
-21. instance.fontStyle(FontStyle.Italic);
-22. instance.textShadow({ radius: 3, offsetX: 3 });
-23. }
-24. }
-25. }
+export class MainTitleTextModifier extends TextModifier {
+  useStyle1: boolean = true;
 
-27. export class SubTitleTextModifier extends TextModifier {
-28. useStyle1: boolean = true;
+  applyNormalAttribute(instance: TextModifier): void {
+    if (this.useStyle1) {
+      console.info(`testTag mainTitle use style1`);
+      instance.fontColor('#FFFFC000');
+      instance.fontSize(35);
+      instance.fontWeight(FontWeight.Bolder);
+      instance.fontStyle(FontStyle.Normal);
+      instance.textShadow({ radius: 5, offsetX: 9 });
+    } else {
+      console.info(`testTag mainTitle use style2`);
+      instance.fontColor('#FF23A98D');
+      instance.fontSize(20);
+      instance.heightAdaptivePolicy(TextHeightAdaptivePolicy.MIN_FONT_SIZE_FIRST);
+      instance.fontWeight(FontWeight.Lighter);
+      instance.fontStyle(FontStyle.Italic);
+      instance.textShadow({ radius: 3, offsetX: 3 });
+    }
+  }
+}
 
-30. applyNormalAttribute(instance: TextModifier): void {
-31. if (this.useStyle1) {
-32. console.info(`testTag subTitle use style1`);
-33. instance.fontColor('#FFFFC000');
-34. instance.fontSize(15);
-35. instance.fontWeight(FontWeight.Bolder);
-36. instance.fontStyle(FontStyle.Normal);
-37. instance.textShadow({ radius: 5, offsetX: 9 });
-38. } else {
-39. console.info(`testTag subTitle use style2`);
-40. instance.fontColor('#FF23A98D');
-41. instance.fontSize(10);
-42. instance.fontWeight(FontWeight.Lighter);
-43. instance.fontStyle(FontStyle.Italic);
-44. instance.textShadow({ radius: 3, offsetX: 3 });
-45. }
-46. }
-47. }
+export class SubTitleTextModifier extends TextModifier {
+  useStyle1: boolean = true;
+
+  applyNormalAttribute(instance: TextModifier): void {
+    if (this.useStyle1) {
+      console.info(`testTag subTitle use style1`);
+      instance.fontColor('#FFFFC000');
+      instance.fontSize(15);
+      instance.fontWeight(FontWeight.Bolder);
+      instance.fontStyle(FontStyle.Normal);
+      instance.textShadow({ radius: 5, offsetX: 9 });
+    } else {
+      console.info(`testTag subTitle use style2`);
+      instance.fontColor('#FF23A98D');
+      instance.fontSize(10);
+      instance.fontWeight(FontWeight.Lighter);
+      instance.fontStyle(FontStyle.Italic);
+      instance.textShadow({ radius: 3, offsetX: 3 });
+    }
+  }
+}
 ```
 
 在src/main目录下的[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中的module字段里配置"routerMap": "$profile:router\_map"，并在src/main/resources/base/profile目录下新增router\_map.json。router\_map.json示例如下。
 
-```
-1. {
-2. "routerMap": [
-3. {
-4. "name": "NavDestinationExample",
-5. "pageSourceFile": "src/main/ets/pages/PageOne.ets",
-6. "buildFunction": "myRouter",
-7. "data": {
-8. "description": "this is pageOne"
-9. }
-10. }
-11. ]
-12. }
+```json
+{
+  "routerMap": [
+    {
+      "name": "NavDestinationExample",
+      "pageSourceFile": "src/main/ets/pages/PageOne.ets",
+      "buildFunction": "myRouter",
+      "data": {
+        "description": "this is pageOne"
+      }
+    }
+  ]
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/qKp74ZH8SzyvGh8CtdF5WA/zh-cn_image_0000002589326057.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/qxxaCJkGSZagTwfbJ8q2Zw/zh-cn_image_0000002706675884.gif)
 
 ### 示例13（自定义转场动画）
 
 该示例主要实现Navigation简单的自定义转场动画。
 
+```ts
+// Index.ets
+import { AnimateCallback, CustomTransition } from './CustomTransitionUtils'
+
+@Entry
+@Component
+struct NavigationCustomTransitionExample {
+  pageInfos: NavPathStack = new NavPathStack();
+
+  aboutToAppear() {
+    this.pageInfos.pushPath({ name: 'PageOne' }, false);
+  }
+
+  build() {
+    Navigation(this.pageInfos) {
+    }
+    .hideNavBar(true)
+    .customNavContentTransition((from: NavContentInfo, to: NavContentInfo, operation: NavigationOperation) => {
+      // 首页不进行自定义动画
+      if (from.index === -1 || to.index === -1) {
+        return undefined;
+      }
+
+      let customAnimation: NavigationAnimatedTransition = {
+        timeout: 2000,
+        // 转场开始时系统调用该方法，并传入转场上下文代理对象
+        transition: (transitionProxy: NavigationTransitionProxy) => {
+          if (!from.navDestinationId || !to.navDestinationId) {
+            return;
+          }
+          // 从封装类CustomTransition中根据子页面的序列获取对应的转场动画回调
+          let fromParam: AnimateCallback = CustomTransition.getInstance().getAnimateParam(from.navDestinationId);
+          let toParam: AnimateCallback = CustomTransition.getInstance().getAnimateParam(to.navDestinationId);
+          // Push动画
+          if (operation == NavigationOperation.PUSH) {
+            if (fromParam.start && toParam.start) {
+              // 设置Push转场的两个页面的动画起点
+              fromParam.start(true, true);
+              toParam.start(true, false);
+            }
+            this.getUIContext()?.animateTo({
+              duration: 500, curve: Curve.Friction, onFinish: () => {
+                // 动画结束后需要手动调用finishTransition，否则在timeout时间后由系统调用
+                transitionProxy.finishTransition();
+              }
+            }, () => {
+              if (fromParam.finish && toParam.finish) {
+                // 设置Push转场的两个页面的动画终点
+                fromParam.finish(true, true);
+                toParam.finish(true, false);
+              }
+
+            })
+          } else if (operation == NavigationOperation.POP) {
+            // Pop动画
+            if (fromParam.start && toParam.start) {
+              // 设置Pop转场的两个页面的动画起点
+              fromParam.start(false, true);
+              toParam.start(false, false);
+            }
+            this.getUIContext()?.animateTo({
+              duration: 500, curve: Curve.Friction, onFinish: () => {
+                // 动画结束后需要手动调用finishTransition，否则在timeout时间后由系统调用
+                transitionProxy.finishTransition();
+              }
+            }, () => {
+              if (fromParam.finish && toParam.finish) {
+                // 设置Pop转场的两个页面的动画终点
+                fromParam.finish(false, true);
+                toParam.finish(false, false);
+              }
+            })
+          } else {
+            // Replace不做动画
+          }
+        }
+      };
+      return customAnimation;
+    })
+  }
+}
+
+// PageOne
+@Builder
+export function PageOneBuilder() {
+  PageContainer({ title: 'PageOne' });
+}
+
+// PageTwo
+@Builder
+export function PageTwoBuilder() {
+  PageContainer({ title: 'PageTwo' });
+}
+
+@Component
+export struct PageContainer {
+  pageInfos: NavPathStack = new NavPathStack();
+  @State translateY: string = '0';
+  pageId: string = '';
+  title: string = ''
+
+  registerCallback() {
+    CustomTransition.getInstance().registerNavParam(this.pageId,
+      // 设置转场动画起点，根据不同的转场类型分别设置
+      (isPush: boolean, isExit: boolean) => {
+        if (isPush) {
+          if (isExit) {
+            this.translateY = '0';
+          } else {
+            this.translateY = '100%';
+          }
+        } else {
+          if (isExit) {
+            this.translateY = '0';
+          } else {
+            this.translateY = '0';
+          }
+        }
+      },
+      // 设置转场动画终点，根据不同的转场类型分别设置
+      (isPush: boolean, isExit: boolean) => {
+        if (isPush) {
+          if (isExit) {
+            this.translateY = '0';
+          } else {
+            this.translateY = '0';
+          }
+        } else {
+          if (isExit) {
+            this.translateY = '100%';
+          } else {
+            this.translateY = '0';
+          }
+        }
+      });
+  }
+
+  build() {
+    NavDestination() {
+      Column() {
+        Button('push next page', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.pageInfos.pushPath({ name: this.title == 'PageOne' ? 'PageTwo' : 'PageOne' });
+          })
+      }
+      .size({ width: '100%', height: '100%' })
+    }
+    .title(this.title)
+    .onDisAppear(() => {
+      // 页面销毁时解注册自定义转场动画参数
+      CustomTransition.getInstance().unRegisterNavParam(this.pageId);
+    })
+    .onReady((context: NavDestinationContext) => {
+      this.pageInfos = context.pathStack;
+      if (context.navDestinationId) {
+        this.pageId = context.navDestinationId;
+        // 页面创建时注册自定义转场动画参数
+        this.registerCallback();
+      }
+    })
+    .translate({ y: this.translateY })
+    .backgroundColor(this.title == 'PageOne' ? '#F1F3F5' : '#ff11dee5')
+  }
+}
 ```
-1. // Index.ets
-2. import { AnimateCallback, CustomTransition } from './CustomTransitionUtils'
 
-4. @Entry
-5. @Component
-6. struct NavigationCustomTransitionExample {
-7. pageInfos: NavPathStack = new NavPathStack();
+```ts
+// src/main/pages/CustomTransitionUtils.ts 工具类，用来管理所有页面的自定义动画参数注册和获取等
+// 自定义接口，用来保存某个页面相关的转场动画回调和参数
+export interface AnimateCallback {
+  start: ((isPush: boolean, isExit: boolean) => void | undefined) | undefined;
+  finish: ((isPush: boolean, isExit: boolean) => void | undefined) | undefined;
+}
 
-9. aboutToAppear() {
-10. this.pageInfos.pushPath({ name: 'PageOne' }, false);
-11. }
+const customTransitionMap: Map<string, AnimateCallback> = new Map();
 
-13. build() {
-14. Navigation(this.pageInfos) {
-15. }
-16. .hideNavBar(true)
-17. .customNavContentTransition((from: NavContentInfo, to: NavContentInfo, operation: NavigationOperation) => {
-18. // 首页不进行自定义动画
-19. if (from.index === -1 || to.index === -1) {
-20. return undefined;
-21. }
+export class CustomTransition {
+  static delegate = new CustomTransition();
 
-23. let customAnimation: NavigationAnimatedTransition = {
-24. timeout: 2000,
-25. // 转场开始时系统调用该方法，并传入转场上下文代理对象
-26. transition: (transitionProxy: NavigationTransitionProxy) => {
-27. if (!from.navDestinationId || !to.navDestinationId) {
-28. return;
-29. }
-30. // 从封装类CustomTransition中根据子页面的序列获取对应的转场动画回调
-31. let fromParam: AnimateCallback = CustomTransition.getInstance().getAnimateParam(from.navDestinationId);
-32. let toParam: AnimateCallback = CustomTransition.getInstance().getAnimateParam(to.navDestinationId);
-33. // Push动画
-34. if (operation == NavigationOperation.PUSH) {
-35. if (fromParam.start && toParam.start) {
-36. // 设置Push转场的两个页面的动画起点
-37. fromParam.start(true, true);
-38. toParam.start(true, false);
-39. }
-40. this.getUIContext()?.animateTo({
-41. duration: 500, curve: Curve.Friction, onFinish: () => {
-42. // 动画结束后需要手动调用finishTransition，否则在timeout时间后由系统调用
-43. transitionProxy.finishTransition();
-44. }
-45. }, () => {
-46. if (fromParam.finish && toParam.finish) {
-47. // 设置Push转场的两个页面的动画终点
-48. fromParam.finish(true, true);
-49. toParam.finish(true, false);
-50. }
+  static getInstance() {
+    return CustomTransition.delegate;
+  }
 
-52. })
-53. } else if (operation == NavigationOperation.POP) {
-54. // Pop动画
-55. if (fromParam.start && toParam.start) {
-56. // 设置Pop转场的两个页面的动画起点
-57. fromParam.start(false, true);
-58. toParam.start(false, false);
-59. }
-60. this.getUIContext()?.animateTo({
-61. duration: 500, curve: Curve.Friction, onFinish: () => {
-62. // 动画结束后需要手动调用finishTransition，否则在timeout时间后由系统调用
-63. transitionProxy.finishTransition();
-64. }
-65. }, () => {
-66. if (fromParam.finish && toParam.finish) {
-67. // 设置Pop转场的两个页面的动画终点
-68. fromParam.finish(false, true);
-69. toParam.finish(false, false);
-70. }
-71. })
-72. } else {
-73. // Replace不做动画
-74. }
-75. }
-76. };
-77. return customAnimation;
-78. })
-79. }
-80. }
+  /* 注册某个页面的动画回调
+   * name: 注册页面的唯一id
+   * startCallback：用来设置动画开始时页面的状态
+   * endCallback：用来设置动画结束时页面的状态
+   */
+  registerNavParam(name: string, startCallback: (isPush: boolean, isExit: boolean) => void,
+    endCallback: (isPush: boolean, isExit: boolean) => void): void {
+    if (customTransitionMap.has(name)) {
+      let param = customTransitionMap.get(name);
+      if (param != undefined) {
+        param.start = startCallback;
+        param.finish = endCallback;
+        return;
+      }
+    }
+    let params: AnimateCallback = { start: startCallback, finish: endCallback };
+    customTransitionMap.set(name, params);
+  }
 
-83. // PageOne
-84. @Builder
-85. export function PageOneBuilder() {
-86. PageContainer({ title: "PageOne" });
-87. }
+  unRegisterNavParam(name: string): void {
+    customTransitionMap.delete(name);
+  }
 
-89. // PageTwo
-90. @Builder
-91. export function PageTwoBuilder() {
-92. PageContainer({ title: "PageTwo" });
-93. }
-
-95. @Component
-96. export struct PageContainer {
-97. pageInfos: NavPathStack = new NavPathStack();
-98. @State translateY: string = '0';
-99. pageId: string = '';
-100. title: string = ''
-
-102. registerCallback() {
-103. CustomTransition.getInstance().registerNavParam(this.pageId,
-104. // 设置转场动画起点，根据不同的转场类型分别设置
-105. (isPush: boolean, isExit: boolean) => {
-106. if (isPush) {
-107. if (isExit) {
-108. this.translateY = '0';
-109. } else {
-110. this.translateY = '100%';
-111. }
-112. } else {
-113. if (isExit) {
-114. this.translateY = '0';
-115. } else {
-116. this.translateY = '0';
-117. }
-118. }
-119. },
-120. // 设置转场动画终点，根据不同的转场类型分别设置
-121. (isPush: boolean, isExit: boolean) => {
-122. if (isPush) {
-123. if (isExit) {
-124. this.translateY = '0';
-125. } else {
-126. this.translateY = '0';
-127. }
-128. } else {
-129. if (isExit) {
-130. this.translateY = '100%';
-131. } else {
-132. this.translateY = '0';
-133. }
-134. }
-135. });
-136. }
-
-138. build() {
-139. NavDestination() {
-140. Column() {
-141. Button('push next page', { stateEffect: true, type: ButtonType.Capsule })
-142. .width('80%')
-143. .height(40)
-144. .margin(20)
-145. .onClick(() => {
-146. this.pageInfos.pushPath({ name: this.title == 'PageOne' ? "PageTwo" : "PageOne" });
-147. })
-148. }
-149. .size({ width: '100%', height: '100%' })
-150. }
-151. .title(this.title)
-152. .onDisAppear(() => {
-153. // 页面销毁时解注册自定义转场动画参数
-154. CustomTransition.getInstance().unRegisterNavParam(this.pageId);
-155. })
-156. .onReady((context: NavDestinationContext) => {
-157. this.pageInfos = context.pathStack;
-158. if (context.navDestinationId) {
-159. this.pageId = context.navDestinationId;
-160. // 页面创建时注册自定义转场动画参数
-161. this.registerCallback();
-162. }
-163. })
-164. .translate({ y: this.translateY })
-165. .backgroundColor(this.title == 'PageOne' ? '#F1F3F5' : '#ff11dee5')
-166. }
-167. }
-```
-
-```
-1. // src/main/pages/CustomTransitionUtils.ts 工具类，用来管理所有页面的自定义动画参数注册和获取等
-2. // 自定义接口，用来保存某个页面相关的转场动画回调和参数
-3. export interface AnimateCallback {
-4. start: ((isPush: boolean, isExit: boolean) => void | undefined) | undefined;
-5. finish: ((isPush: boolean, isExit: boolean) => void | undefined) | undefined;
-6. }
-
-8. const customTransitionMap: Map<string, AnimateCallback> = new Map();
-
-10. export class CustomTransition {
-11. static delegate = new CustomTransition();
-
-13. static getInstance() {
-14. return CustomTransition.delegate;
-15. }
-
-17. /* 注册某个页面的动画回调
-18. * name: 注册页面的唯一id
-19. * startCallback：用来设置动画开始时页面的状态
-20. * endCallback：用来设置动画结束时页面的状态
-21. */
-22. registerNavParam(name: string, startCallback: (isPush: boolean, isExit: boolean) => void,
-23. endCallback: (isPush: boolean, isExit: boolean) => void): void {
-24. if (customTransitionMap.has(name)) {
-25. let param = customTransitionMap.get(name);
-26. if (param != undefined) {
-27. param.start = startCallback;
-28. param.finish = endCallback;
-29. return;
-30. }
-31. }
-32. let params: AnimateCallback = { start: startCallback, finish: endCallback };
-33. customTransitionMap.set(name, params);
-34. }
-
-36. unRegisterNavParam(name: string): void {
-37. customTransitionMap.delete(name);
-38. }
-
-40. getAnimateParam(name: string): AnimateCallback {
-41. let result: AnimateCallback = {
-42. start: customTransitionMap.get(name)?.start,
-43. finish: customTransitionMap.get(name)?.finish
-44. };
-45. return result;
-46. }
-47. }
+  getAnimateParam(name: string): AnimateCallback {
+    let result: AnimateCallback = {
+      start: customTransitionMap.get(name)?.start,
+      finish: customTransitionMap.get(name)?.finish
+    };
+    return result;
+  }
+}
 ```
 
 在src/main目录下的[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中的module字段里配置"routerMap": "$profile:router\_map"，并在src/main/resources/base/profile目录下新增router\_map.json。router\_map.json示例如下。
 
-```
-1. {
-2. "routerMap": [
-3. {
-4. "name": "PageOne",
-5. "pageSourceFile": "src/main/ets/pages/Index.ets",
-6. "buildFunction": "PageOneBuilder",
-7. "data": {
-8. "description": "this is pageOne"
-9. }
-10. },
-11. {
-12. "name": "PageTwo",
-13. "pageSourceFile": "src/main/ets/pages/Index.ets",
-14. "buildFunction": "PageTwoBuilder"
-15. }
-16. ]
-17. }
+```json
+{
+  "routerMap": [
+    {
+      "name": "PageOne",
+      "pageSourceFile": "src/main/ets/pages/Index.ets",
+      "buildFunction": "PageOneBuilder",
+      "data": {
+        "description": "this is pageOne"
+      }
+    },
+    {
+      "name": "PageTwo",
+      "pageSourceFile": "src/main/ets/pages/Index.ets",
+      "buildFunction": "PageTwoBuilder"
+    }
+  ]
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/etQeDXaDQ92rcdXTuc5uUQ/zh-cn_image_0000002589245999.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/wX2HApM9SgKtQ-B6LsoCzw/zh-cn_image_0000002736434971.gif)
 
 ### 示例14（设置Navigation双栏模式）
 
@@ -4916,133 +4950,133 @@ PhonePC/2in1TabletTVWearable
 
 此示例在运行前需要在工程配置文件[module.json5](../harmonyos-guides/module-configuration-file.md)中的abilities字段里配置"orientation": "auto\_rotation"。
 
+```ts
+import { ComponentContent } from '@kit.ArkUI';
+
+@Builder function PlaceholderPage() {
+  Column() {
+    Text('分栏模式占位页')
+      .fontSize(28)
+      .fontWeight(700)
+      .margin({ top: 200 })
+  }.width('100%')
+  .height('100%')
+}
+
+@Entry
+@Component
+struct NavigationExample {
+  @State minNavBarWidth: Dimension | undefined = undefined;
+  @State maxNavBarWidth: Dimension | undefined = undefined;
+  @State minContentWidth: Dimension|undefined = undefined;
+  private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  @State currentIndex: number = 0;
+  placeholder = new ComponentContent(this.getUIContext(), wrapBuilder(PlaceholderPage))
+
+  @Builder
+  NavigationTitle() {
+    Column() {
+      Text('Title')
+        .fontColor('#182431')
+        .fontSize(30)
+        .lineHeight(41)
+        .fontWeight(700)
+      Text('subtitle')
+        .fontColor('#182431')
+        .fontSize(14)
+        .lineHeight(19)
+        .opacity(0.4)
+        .margin({ top: 2, bottom: 20 })
+    }.alignItems(HorizontalAlign.Start)
+  }
+
+  @Builder
+  NavigationMenus() {
+    Row() {
+      // $r('sys.media.ohos_ic_public_add')需要替换为开发者所需的资源文件
+      Image($r('sys.media.ohos_ic_public_add'))
+        .width(24)
+        .height(24)
+      // $r('sys.media.ohos_ic_public_add')需要替换为开发者所需的资源文件
+      Image($r('sys.media.ohos_ic_public_add'))
+        .width(24)
+        .height(24)
+        .margin({ left: 24 })
+      // $r('sys.media.ohos_ic_public_more')需要替换为开发者所需的资源文件
+      Image($r('sys.media.ohos_ic_public_more'))
+        .width(24)
+        .height(24)
+        .margin({ left: 24 })
+    }.margin({ top: 30 })
+  }
+
+  build() {
+    Column() {
+      Navigation() {
+        TextInput({ placeholder: 'search...' })
+          .width('90%')
+          .height(40)
+          .backgroundColor('#FFFFFF')
+          .margin({ top: 8 })
+
+        List({ space: 12, initialIndex: 0 }) {
+          ForEach(this.arr, (item: number) => {
+            ListItem() {
+              Text('' + item)
+                .width('90%')
+                .height(72)
+                .backgroundColor('#FFFFFF')
+                .borderRadius(24)
+                .fontSize(16)
+                .fontWeight(500)
+                .textAlign(TextAlign.Center)
+            }
+          }, (item: number) => item.toString())
+        }
+        .height(324)
+        .width('100%')
+        .margin({ top: 12, left: '10%' })
+      }
+      .title(this.NavigationTitle)
+      .padding({ left: 12 })
+      .menus(this.NavigationMenus)
+      .titleMode(NavigationTitleMode.Full)
+      .toolbarConfiguration([
+        {
+          // $r('app.string.navigation_toolbar_add')和$r('app.media.startIcon')需要替换为开发者所需的图像资源文件
+          value: $r('app.string.navigation_toolbar_add'),
+          icon: $r('app.media.startIcon')
+        },
+        {
+          // $r('app.string.navigation_toolbar_app')和$r('app.media.startIcon')需要替换为开发者所需的图像资源文件
+          value: $r('app.string.navigation_toolbar_app'),
+          icon: $r('app.media.startIcon')
+        },
+        {
+          // $r('app.string.navigation_toolbar_collect')和$r('app.media.startIcon')需要替换为开发者所需的图像资源文件
+          value: $r('app.string.navigation_toolbar_collect'),
+          icon: $r('app.media.startIcon')
+        }
+      ])
+      .mode(NavigationMode.Split) // 设置Navigation模式为Split
+      .navBarWidthRange([this.minNavBarWidth, this.maxNavBarWidth]) // 设置导航页宽度范围：[最小宽度, 最大宽度]
+      .minContentWidth(this.minContentWidth)
+      .hideTitleBar(false)
+      .hideToolBar(false)
+      .onTitleModeChange((titleModel: NavigationTitleMode) => {
+        console.info('titleMode' + titleModel)
+      })
+      .splitPlaceholder(this.placeholder)
+      .divider({ startMargin: 20, endMargin: 20, color: Color.Red}) // 从API version 23开始，新增divider属性。
+    }
+    .width('100%')
+    .height('100%')
+    .backgroundColor('#F1F3F5')
+  }
+}
 ```
-1. import { ComponentContent } from '@kit.ArkUI';
 
-3. @Builder function PlaceholderPage() {
-4. Column() {
-5. Text("分栏模式占位页")
-6. .fontSize(28)
-7. .fontWeight(700)
-8. .margin({ top: 200 })
-9. }.width("100%")
-10. .height("100%")
-11. }
-
-13. @Entry
-14. @Component
-15. struct NavigationExample {
-16. @State minNavBarWidth: Dimension | undefined = undefined;
-17. @State maxNavBarWidth: Dimension | undefined = undefined;
-18. @State minContentWidth: Dimension|undefined = undefined;
-19. private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-20. @State currentIndex: number = 0;
-21. placeholder = new ComponentContent(this.getUIContext(), wrapBuilder(PlaceholderPage))
-
-23. @Builder
-24. NavigationTitle() {
-25. Column() {
-26. Text('Title')
-27. .fontColor('#182431')
-28. .fontSize(30)
-29. .lineHeight(41)
-30. .fontWeight(700)
-31. Text('subtitle')
-32. .fontColor('#182431')
-33. .fontSize(14)
-34. .lineHeight(19)
-35. .opacity(0.4)
-36. .margin({ top: 2, bottom: 20 })
-37. }.alignItems(HorizontalAlign.Start)
-38. }
-
-40. @Builder
-41. NavigationMenus() {
-42. Row() {
-43. // $r('sys.media.ohos_ic_public_add')需要替换为开发者所需的资源文件
-44. Image($r('sys.media.ohos_ic_public_add'))
-45. .width(24)
-46. .height(24)
-47. // $r('sys.media.ohos_ic_public_add')需要替换为开发者所需的资源文件
-48. Image($r('sys.media.ohos_ic_public_add'))
-49. .width(24)
-50. .height(24)
-51. .margin({ left: 24 })
-52. // $r('sys.media.ohos_ic_public_more')需要替换为开发者所需的资源文件
-53. Image($r('sys.media.ohos_ic_public_more'))
-54. .width(24)
-55. .height(24)
-56. .margin({ left: 24 })
-57. }.margin({ top: 30 })
-58. }
-
-60. build() {
-61. Column() {
-62. Navigation() {
-63. TextInput({ placeholder: 'search...' })
-64. .width('90%')
-65. .height(40)
-66. .backgroundColor('#FFFFFF')
-67. .margin({ top: 8 })
-
-69. List({ space: 12, initialIndex: 0 }) {
-70. ForEach(this.arr, (item: number) => {
-71. ListItem() {
-72. Text('' + item)
-73. .width('90%')
-74. .height(72)
-75. .backgroundColor('#FFFFFF')
-76. .borderRadius(24)
-77. .fontSize(16)
-78. .fontWeight(500)
-79. .textAlign(TextAlign.Center)
-80. }
-81. }, (item: number) => item.toString())
-82. }
-83. .height(324)
-84. .width('100%')
-85. .margin({ top: 12, left: '10%' })
-86. }
-87. .title(this.NavigationTitle)
-88. .padding({ left: 12 })
-89. .menus(this.NavigationMenus)
-90. .titleMode(NavigationTitleMode.Full)
-91. .toolbarConfiguration([
-92. {
-93. // $r("app.string.navigation_toolbar_add")和$r("app.media.startIcon")需要替换为开发者所需的图像资源文件
-94. value: $r("app.string.navigation_toolbar_add"),
-95. icon: $r("app.media.startIcon")
-96. },
-97. {
-98. // $r("app.string.navigation_toolbar_app")和$r("app.media.startIcon")需要替换为开发者所需的图像资源文件
-99. value: $r("app.string.navigation_toolbar_app"),
-100. icon: $r("app.media.startIcon")
-101. },
-102. {
-103. // $r("app.string.navigation_toolbar_collect")和$r("app.media.startIcon")需要替换为开发者所需的图像资源文件
-104. value: $r("app.string.navigation_toolbar_collect"),
-105. icon: $r("app.media.startIcon")
-106. }
-107. ])
-108. .mode(NavigationMode.Split) // 设置Navigation模式为Split
-109. .navBarWidthRange([this.minNavBarWidth, this.maxNavBarWidth]) // 设置导航页宽度范围：[最小宽度, 最大宽度]
-110. .minContentWidth(this.minContentWidth)
-111. .hideTitleBar(false)
-112. .hideToolBar(false)
-113. .onTitleModeChange((titleModel: NavigationTitleMode) => {
-114. console.info('titleMode' + titleModel)
-115. })
-116. .splitPlaceholder(this.placeholder)
-117. .divider({ startMargin: 20, endMargin: 20, color: Color.Red}) // 从API version 23开始，新增divider属性。
-118. }
-119. .width('100%')
-120. .height('100%')
-121. .backgroundColor('#F1F3F5')
-122. }
-123. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/a-EgCtT-SiCvoE3sxhVL6A/zh-cn_image_0000002558766190.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/oNubwy2aQoCvO0UnY1YInQ/zh-cn_image_0000002706835824.gif)
 
 ### 示例15（Navigation工具栏自适应）
 
@@ -5052,68 +5086,68 @@ PhonePC/2in1TabletTVWearable
 
 在工程配置文件[module.json5](../harmonyos-guides/module-configuration-file.md)中的abilities字段里配置"orientation": "landscape"（该工程配置仅方便演示在横屏模式下的Navigation工具栏自适应能力，实际配置可自行设置为"auto\_rotation"）。
 
+```ts
+import { SymbolGlyphModifier } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct NavigationExample {
+  @Provide('navPathStack') navPathStack:NavPathStack = new NavPathStack();
+  @State enable: boolean = false
+  @State menuItems:Array<NavigationMenuItem> = [
+    {
+      value:'menuItem1',
+      symbolIcon: new SymbolGlyphModifier($r('sys.symbol.card_writer')),
+    },
+    {
+      value:'menuItem2',
+      symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus'))
+    },
+    {
+      value:'menuItem3',
+      symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_lungs')),
+    },
+  ]
+
+  @State toolItems:Array<ToolbarItem> = [
+    {
+      value:'toolItem1',
+      symbolIcon:new SymbolGlyphModifier($r('sys.symbol.ohos_lungs')),
+      action:()=>{}
+    },
+    {
+      value:'toolItem2',
+      symbolIcon:new SymbolGlyphModifier($r('sys.symbol.card_migration')),
+      action:()=>{}
+    },
+    {
+      value:'toolItem3',
+      symbolIcon:new SymbolGlyphModifier($r('sys.symbol.ohos_star')),
+      action:()=>{}
+    }
+  ]
+
+  build() {
+    Navigation(this.navPathStack) {
+      Column() {
+        Button('启用/关闭自适应').onClick(()=> {
+          this.enable = !this.enable;
+        })
+        Text(`启用自适应能力：${this.enable}`)
+      }
+    }
+    .mode(NavigationMode.Stack)
+    .enableToolBarAdaptation(this.enable) // 是否启用工具栏自适应能力
+    .backButtonIcon(new SymbolGlyphModifier($r('sys.symbol.ohos_wifi')))
+    .titleMode(NavigationTitleMode.Mini)
+    .menus(this.menuItems)
+    .toolbarConfiguration(this.toolItems)
+    .title('一级页面')
+  }
+}
 ```
-1. import { SymbolGlyphModifier } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct NavigationExample {
-6. @Provide('navPathStack') navPathStack:NavPathStack = new NavPathStack();
-7. @State enable: boolean = false
-8. @State menuItems:Array<NavigationMenuItem> = [
-9. {
-10. value:'menuItem1',
-11. symbolIcon: new SymbolGlyphModifier($r('sys.symbol.card_writer')),
-12. },
-13. {
-14. value:'menuItem2',
-15. symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus'))
-16. },
-17. {
-18. value:'menuItem3',
-19. symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_lungs')),
-20. },
-21. ]
-
-23. @State toolItems:Array<ToolbarItem> = [
-24. {
-25. value:'toolItem1',
-26. symbolIcon:new SymbolGlyphModifier($r('sys.symbol.ohos_lungs')),
-27. action:()=>{}
-28. },
-29. {
-30. value:'toolItem2',
-31. symbolIcon:new SymbolGlyphModifier($r('sys.symbol.card_migration')),
-32. action:()=>{}
-33. },
-34. {
-35. value:'toolItem3',
-36. symbolIcon:new SymbolGlyphModifier($r('sys.symbol.ohos_star')),
-37. action:()=>{}
-38. }
-39. ]
-
-41. build() {
-42. Navigation(this.navPathStack) {
-43. Column() {
-44. Button('启用/关闭自适应').onClick(()=> {
-45. this.enable = !this.enable;
-46. })
-47. Text("启用自适应能力：" + this.enable)
-48. }
-49. }
-50. .mode(NavigationMode.Stack)
-51. .enableToolBarAdaptation(this.enable) // 是否启用工具栏自适应能力
-52. .backButtonIcon(new SymbolGlyphModifier($r('sys.symbol.ohos_wifi')))
-53. .titleMode(NavigationTitleMode.Mini)
-54. .menus(this.menuItems)
-55. .toolbarConfiguration(this.toolItems)
-56. .title('一级页面')
-57. }
-58. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/nAfkN031Sk6vsjf7YmvUHA/zh-cn_image_0000002558606532.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/Ut8TRnXtS8-9-bV0-0aJ4w/zh-cn_image_0000002736314929.gif)
 
 ### 示例16（Navigation使用NavDestination作为导航页）
 
@@ -5121,86 +5155,86 @@ PhonePC/2in1TabletTVWearable
 
 从API version 20开始，新增创建Navigation组件的方式。
 
-```
-1. @Component
-2. struct PageHome {
-3. private stack: NavPathStack | undefined = undefined;
+```ts
+@Component
+struct PageHome {
+  private stack: NavPathStack | undefined = undefined;
 
-5. build() {
-6. NavDestination() {
-7. Stack({alignContent: Alignment.Center}) {
-8. Button('push PageOne').onClick(() => {
-9. this.stack?.pushPath({name: 'PageOne'});
-10. })
-11. }.width('100%').height('100%')
-12. }.title('PageHome')
-13. .onReady((ctx: NavDestinationContext) => {
-14. this.stack = ctx.pathStack;
-15. })
-16. }
-17. }
+  build() {
+    NavDestination() {
+      Stack({alignContent: Alignment.Center}) {
+        Button('push PageOne').onClick(() => {
+          this.stack?.pushPath({name: 'PageOne'});
+        })
+      }.width('100%').height('100%')
+    }.title('PageHome')
+    .onReady((ctx: NavDestinationContext) => {
+      this.stack = ctx.pathStack;
+    })
+  }
+}
 
-19. @Builder
-20. function PageHomeBuilder() {
-21. PageHome()
-22. }
+@Builder
+function PageHomeBuilder() {
+  PageHome()
+}
 
-24. @Component
-25. struct PageOne {
-26. build() {
-27. NavDestination() {
-28. Stack({alignContent: Alignment.Center}) {
-29. Text('PageOne')
-30. }.width('100%').height('100%')
-31. }.title('PageOne')
-32. }
-33. }
+@Component
+struct PageOne {
+  build() {
+    NavDestination() {
+      Stack({alignContent: Alignment.Center}) {
+        Text('PageOne')
+      }.width('100%').height('100%')
+    }.title('PageOne')
+  }
+}
 
-35. @Builder
-36. function PageOneBuilder() {
-37. PageOne()
-38. }
+@Builder
+function PageOneBuilder() {
+  PageOne()
+}
 
-40. @Entry
-41. @Component
-42. struct Index {
-43. private stack: NavPathStack = new NavPathStack();
+@Entry
+@Component
+struct Index {
+  private stack: NavPathStack = new NavPathStack();
 
-45. build() {
-46. // 在这里配置主页NavDestination信息
-47. Navigation(this.stack, { name: 'PageHome' }) {
-48. }
-49. .width('100%').height('100%')
-50. }
-51. }
+  build() {
+    // 在这里配置主页NavDestination信息
+    Navigation(this.stack, { name: 'PageHome' }) {
+    }
+    .width('100%').height('100%')
+  }
+}
 ```
 
 在src/main目录下的[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中的module字段里配置"routerMap": "$profile:router\_map"，并在src/main/resources/base/profile目录下新增router\_map.json。router\_map.json示例如下。
 
-```
-1. {
-2. "routerMap": [
-3. {
-4. "name": "PageHome",
-5. "pageSourceFile": "src/main/ets/pages/Index.ets",
-6. "buildFunction": "PageHomeBuilder",
-7. "data": {
-8. "description": "this is PageHome"
-9. }
-10. },
-11. {
-12. "name": "PageOne",
-13. "pageSourceFile": "src/main/ets/pages/Index.ets",
-14. "buildFunction": "PageOneBuilder",
-15. "data": {
-16. "description": "this is PageOne"
-17. }
-18. }
-19. ]
-20. }
+```json
+{
+  "routerMap": [
+    {
+      "name": "PageHome",
+      "pageSourceFile": "src/main/ets/pages/Index.ets",
+      "buildFunction": "PageHomeBuilder",
+      "data": {
+        "description": "this is PageHome"
+      }
+    },
+    {
+      "name": "PageOne",
+      "pageSourceFile": "src/main/ets/pages/Index.ets",
+      "buildFunction": "PageOneBuilder",
+      "data": {
+        "description": "this is PageOne"
+      }
+    }
+  ]
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/4hJZw85rQGamekkUMaEh9A/zh-cn_image_0000002589326059.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/tNnZxgyuSGi-vFLGXtPkYQ/zh-cn_image_0000002706675886.gif)
 
 ### 示例17（使用新增导航控制器方法）
 
@@ -5208,269 +5242,269 @@ PhonePC/2in1TabletTVWearable
 
 从API version 22开始，在setInterception的参数类型[NavigationInterception](ts-basic-components-navigation.md#navigationinterception12)中新增了interception接口。
 
-```
-1. // Index.ets
-2. @Entry
-3. @Component
-4. struct NavigationExample {
-5. pageInfos: NavPathStack = new NavPathStack();
-6. isUseInterception: boolean = false;
+```ts
+// Index.ets
+@Entry
+@Component
+struct NavigationExample {
+  pageInfos: NavPathStack = new NavPathStack();
+  isUseInterception: boolean = false;
 
-8. registerInterception() {
-9. this.pageInfos.setInterception({
-10. // 页面创建前拦截，允许操作栈，在当前跳转中生效。
-11. interception: (from: NavPathInfo | "navBar", to: NavPathInfo | NavBar, navStack: NavPathStack,
-12. operation: NavigationOperation, animated: boolean) => {
-13. if (!this.isUseInterception) {
-14. return;
-15. }
-16. if (typeof to === "string") {
-17. return;
-18. }
-19. // 重定向目标页面，更改为pageTwo页面到pageOne页面。
-20. let target: NavPathInfo = to as NavPathInfo;
-21. let navStacktarget: NavPathStack = navStack as NavPathStack;
-22. if (target.name === 'pageTwo') {
-23. navStacktarget.pop();
-24. navStacktarget.pushPathByName('pageOne', null);
-25. }
-26. },
-27. // 页面跳转后回调，在该回调中操作栈在下一次跳转中刷新。
-28. didShow: (from: NavDestinationContext | "navBar", to: NavDestinationContext | "navBar",
-29. operation: NavigationOperation, isAnimated: boolean) => {
-30. if (!this.isUseInterception) {
-31. return;
-32. }
-33. if (typeof from === "string") {
-34. console.info("current transition is from navigation home");
-35. } else {
-36. console.info(`current transition is from  ${(from as NavDestinationContext).pathInfo.name}`);
-37. console.info(`current transition mode is to ${(to as NavDestinationContext).mode?.toString()}`);
-38. }
-39. if (typeof to === "string") {
-40. console.info("current transition to is navBar");
-41. } else {
-42. console.info(`current transition is to ${(to as NavDestinationContext).pathInfo.name}`);
-43. console.info(`current transition mode is to ${(to as NavDestinationContext).mode?.toString()}`);
-44. }
-45. },
-46. // Navigation单双栏显示状态发生变更时触发该回调。
-47. modeChange: (mode: NavigationMode) => {
-48. if (!this.isUseInterception) {
-49. return;
-50. }
-51. console.info(`current navigation mode is ${mode}`);
-52. }
-53. })
-54. }
+  registerInterception() {
+    this.pageInfos.setInterception({
+      // 页面创建前拦截，允许操作栈，在当前跳转中生效。
+      interception: (from: NavPathInfo | 'navBar', to: NavPathInfo | NavBar, navStack: NavPathStack,
+        operation: NavigationOperation, animated: boolean) => {
+        if (!this.isUseInterception) {
+          return;
+        }
+        if (typeof to === 'string') {
+          return;
+        }
+        // 重定向目标页面，更改为pageTwo页面到pageOne页面。
+        let target: NavPathInfo = to as NavPathInfo;
+        let navStacktarget: NavPathStack = navStack as NavPathStack;
+        if (target.name === 'pageTwo') {
+          navStacktarget.pop();
+          navStacktarget.pushPathByName('pageOne', null);
+        }
+      },
+      // 页面跳转后回调，在该回调中操作栈在下一次跳转中刷新。
+      didShow: (from: NavDestinationContext | 'navBar', to: NavDestinationContext | 'navBar',
+        operation: NavigationOperation, isAnimated: boolean) => {
+        if (!this.isUseInterception) {
+          return;
+        }
+        if (typeof from === 'string') {
+          console.info('current transition is from navigation home');
+        } else {
+          console.info(`current transition is from  ${(from as NavDestinationContext).pathInfo.name}`);
+          console.info(`current transition mode is to ${(to as NavDestinationContext).mode?.toString()}`);
+        }
+        if (typeof to === 'string') {
+          console.info('current transition to is navBar');
+        } else {
+          console.info(`current transition is to ${(to as NavDestinationContext).pathInfo.name}`);
+          console.info(`current transition mode is to ${(to as NavDestinationContext).mode?.toString()}`);
+        }
+      },
+      // Navigation单双栏显示状态发生变更时触发该回调。
+      modeChange: (mode: NavigationMode) => {
+        if (!this.isUseInterception) {
+          return;
+        }
+        console.info(`current navigation mode is ${mode}`);
+      }
+    })
+  }
 
-56. build() {
-57. Navigation(this.pageInfos) {
-58. Column() {
-59. Button('pushPath', { stateEffect: true, type: ButtonType.Capsule })
-60. .width('80%')
-61. .height(40)
-62. .margin(20)
-63. .onClick(() => {
-64. this.pageInfos.pushPath({ name: 'pageOne' }); // 将name指定的NavDestination页面信息入栈。
-65. })
-66. Button('use interception', { stateEffect: true, type: ButtonType.Capsule })
-67. .width('80%')
-68. .height(40)
-69. .margin(20)
-70. .onClick(() => {
-71. this.isUseInterception = !this.isUseInterception;
-72. if (this.isUseInterception) {
-73. this.registerInterception();
-74. } else {
-75. this.pageInfos.setInterception(undefined);
-76. }
-77. })
-78. }
-79. }.title('NavIndex')
-80. }
-81. }
-```
-
-```
-1. // PageOne.ets
-2. class TmpClass {
-3. count: number = 10;
-4. }
-
-6. @Builder
-7. export function PageOneBuilder(name: string, param: Object) {
-8. PageOne()
-9. }
-
-11. @Component
-12. export struct PageOne {
-13. pageInfos: NavPathStack = new NavPathStack();
-
-15. build() {
-16. NavDestination() {
-17. Column() {
-18. Button('pushPathByName', { stateEffect: true, type: ButtonType.Capsule })
-19. .width('80%')
-20. .height(40)
-21. .margin(20)
-22. .onClick(() => {
-23. let tmp = new TmpClass();
-24. this.pageInfos.pushPathByName('pageTwo', tmp); // 将name指定的NavDestination页面信息入栈，传递的数据为param。
-25. })
-26. Button('singletonLaunchMode', { stateEffect: true, type: ButtonType.Capsule })
-27. .width('80%')
-28. .height(40)
-29. .margin(20)
-30. .onClick(() => {
-31. this.pageInfos.pushPath({ name: 'pageOne' },
-32. { launchMode: LaunchMode.MOVE_TO_TOP_SINGLETON }); // 从栈底向栈顶查找，如果指定的名称已经存在，则将对应的NavDestination页面移到栈顶。
-33. })
-34. Button('popToname', { stateEffect: true, type: ButtonType.Capsule })
-35. .width('80%')
-36. .height(40)
-37. .margin(20)
-38. .onClick(() => {
-39. this.pageInfos.popToName('pageTwo'); // 回退路由栈到第一个名为name的NavDestination页面。
-40. console.info('popToName' + JSON.stringify(this.pageInfos),
-41. '返回值' + JSON.stringify(this.pageInfos.popToName('pageTwo')));
-42. })
-43. Button('popToIndex', { stateEffect: true, type: ButtonType.Capsule })
-44. .width('80%')
-45. .height(40)
-46. .margin(20)
-47. .onClick(() => {
-48. this.pageInfos.popToIndex(1); // 回退路由栈到index指定的NavDestination页面。
-49. console.info('popToIndex' + JSON.stringify(this.pageInfos));
-50. })
-51. Button('moveToTop', { stateEffect: true, type: ButtonType.Capsule })
-52. .width('80%')
-53. .height(40)
-54. .margin(20)
-55. .onClick(() => {
-56. this.pageInfos.moveToTop('pageTwo'); // 将第一个名为name的NavDestination页面移到栈顶。
-57. console.info('moveToTop' + JSON.stringify(this.pageInfos),
-58. '返回值' + JSON.stringify(this.pageInfos.moveToTop('pageTwo')));
-59. })
-60. Button('moveIndexToTop', { stateEffect: true, type: ButtonType.Capsule })
-61. .width('80%')
-62. .height(40)
-63. .margin(20)
-64. .onClick(() => {
-65. this.pageInfos.moveIndexToTop(1); // 将index指定的NavDestination页面移到栈顶。
-66. console.info('moveIndexToTop' + JSON.stringify(this.pageInfos));
-67. })
-68. Button('clear', { stateEffect: true, type: ButtonType.Capsule })
-69. .width('80%')
-70. .height(40)
-71. .margin(20)
-72. .onClick(() => {
-73. this.pageInfos.clear(); // 清除栈中所有页面。
-74. })
-75. Button('get', { stateEffect: true, type: ButtonType.Capsule })
-76. .width('80%')
-77. .height(40)
-78. .margin(20)
-79. .onClick(() => {
-80. console.info('-------------------');
-81. console.info('获取栈中所有NavDestination页面的名称', JSON.stringify(this.pageInfos.getAllPathName()));
-82. console.info('获取index指定的NavDestination页面的参数信息',
-83. JSON.stringify(this.pageInfos.getParamByIndex(1)));
-84. console.info('获取全部名为name的NavDestination页面的参数信息',
-85. JSON.stringify(this.pageInfos.getParamByName('pageTwo')));
-86. console.info('获取全部名为name的NavDestination页面的位置索引',
-87. JSON.stringify(this.pageInfos.getIndexByName('pageOne')));
-88. console.info('获取栈大小', JSON.stringify(this.pageInfos.size()));
-89. })
-90. }.width('100%').height('100%')
-91. }.title('pageOne')
-92. .onBackPressed(() => {
-93. const popDestinationInfo = this.pageInfos.pop(); // 弹出路由栈栈顶元素。
-94. console.info('pop' + '返回值' + JSON.stringify(popDestinationInfo));
-95. return true;
-96. }).onReady((context: NavDestinationContext) => {
-97. this.pageInfos = context.pathStack;
-98. })
-99. }
-100. }
+  build() {
+    Navigation(this.pageInfos) {
+      Column() {
+        Button('pushPath', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.pageInfos.pushPath({ name: 'pageOne' }); // 将name指定的NavDestination页面信息入栈。
+          })
+        Button('use interception', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.isUseInterception = !this.isUseInterception;
+            if (this.isUseInterception) {
+              this.registerInterception();
+            } else {
+              this.pageInfos.setInterception(undefined);
+            }
+          })
+      }
+    }.title('NavIndex')
+  }
+}
 ```
 
+```ts
+// PageOne.ets
+class PageParam {
+  count: number = 10;
+}
+
+@Builder
+export function PageOneBuilder(name: string, param: Object) {
+  PageOne()
+}
+
+@Component
+export struct PageOne {
+  pageInfos: NavPathStack = new NavPathStack();
+
+  build() {
+    NavDestination() {
+      Column() {
+        Button('pushPathByName', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            let pageParam = new PageParam();
+            this.pageInfos.pushPathByName('pageTwo', pageParam); // 将name指定的NavDestination页面信息入栈，传递的数据为param。
+          })
+        Button('singletonLaunchMode', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.pageInfos.pushPath({ name: 'pageOne' },
+              { launchMode: LaunchMode.MOVE_TO_TOP_SINGLETON }); // 从栈底向栈顶查找，如果指定的名称已经存在，则将对应的NavDestination页面移到栈顶。
+          })
+        Button('popToname', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.pageInfos.popToName('pageTwo'); // 回退路由栈到第一个名为name的NavDestination页面。
+            console.info('popToName' + JSON.stringify(this.pageInfos),
+              '返回值' + JSON.stringify(this.pageInfos.popToName('pageTwo')));
+          })
+        Button('popToIndex', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.pageInfos.popToIndex(1); // 回退路由栈到index指定的NavDestination页面。
+            console.info('popToIndex' + JSON.stringify(this.pageInfos));
+          })
+        Button('moveToTop', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.pageInfos.moveToTop('pageTwo'); // 将第一个名为name的NavDestination页面移到栈顶。
+            console.info('moveToTop' + JSON.stringify(this.pageInfos),
+              '返回值' + JSON.stringify(this.pageInfos.moveToTop('pageTwo')));
+          })
+        Button('moveIndexToTop', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.pageInfos.moveIndexToTop(1); // 将index指定的NavDestination页面移到栈顶。
+            console.info('moveIndexToTop' + JSON.stringify(this.pageInfos));
+          })
+        Button('clear', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.pageInfos.clear(); // 清除栈中所有页面。
+          })
+        Button('get', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            console.info('-------------------');
+            console.info('获取栈中所有NavDestination页面的名称', JSON.stringify(this.pageInfos.getAllPathName()));
+            console.info('获取index指定的NavDestination页面的参数信息',
+              JSON.stringify(this.pageInfos.getParamByIndex(1)));
+            console.info('获取全部名为name的NavDestination页面的参数信息',
+              JSON.stringify(this.pageInfos.getParamByName('pageTwo')));
+            console.info('获取全部名为name的NavDestination页面的位置索引',
+              JSON.stringify(this.pageInfos.getIndexByName('pageOne')));
+            console.info('获取栈大小', JSON.stringify(this.pageInfos.size()));
+          })
+      }.width('100%').height('100%')
+    }.title('pageOne')
+    .onBackPressed(() => {
+      const popDestinationInfo = this.pageInfos.pop(); // 弹出路由栈栈顶元素。
+      console.info('pop' + '返回值' + JSON.stringify(popDestinationInfo));
+      return true;
+    }).onReady((context: NavDestinationContext) => {
+      this.pageInfos = context.pathStack;
+    })
+  }
+}
 ```
-1. // PageTwo.ets
-2. @Builder
-3. export function PageTwoBuilder(name: string, param: Object) {
-4. PageTwo()
-5. }
 
-7. @Component
-8. export struct PageTwo {
-9. pathStack: NavPathStack = new NavPathStack();
-10. private menuItems: Array<NavigationMenuItem> = [
-11. {
-12. value: "1",
-13. icon: 'resources/base/media/undo.svg',
-14. },
-15. {
-16. value: "2",
-17. icon: 'resources/base/media/redo.svg',
-18. isEnabled: false,
-19. },
-20. {
-21. value: "3",
-22. icon: 'resources/base/media/ic_public_ok.svg',
-23. isEnabled: true,
-24. }
-25. ];
+```ts
+// PageTwo.ets
+@Builder
+export function PageTwoBuilder(name: string, param: Object) {
+  PageTwo()
+}
 
-27. build() {
-28. NavDestination() {
-29. Column() {
-30. Button('pushPathByName', { stateEffect: true, type: ButtonType.Capsule })
-31. .width('80%')
-32. .height(40)
-33. .margin(20)
-34. .onClick(() => {
-35. this.pathStack.pushPathByName('pageOne', null);
-36. })
-37. }.width('100%').height('100%')
-38. }.title('pageTwo')
-39. .menus(this.menuItems)
-40. .onBackPressed(() => {
-41. this.pathStack.pop();
-42. return true;
-43. })
-44. .onReady((context: NavDestinationContext) => {
-45. this.pathStack = context.pathStack;
-46. console.info("current page config info is " + JSON.stringify(context.getConfigInRouteMap()));
-47. })
-48. }
-49. }
+@Component
+export struct PageTwo {
+  pathStack: NavPathStack = new NavPathStack();
+  private menuItems: Array<NavigationMenuItem> = [
+    {
+      value: '1',
+      icon: 'resources/base/media/undo.svg',
+    },
+    {
+      value: '2',
+      icon: 'resources/base/media/redo.svg',
+      isEnabled: false,
+    },
+    {
+      value: '3',
+      icon: 'resources/base/media/ic_public_ok.svg',
+      isEnabled: true,
+    }
+  ];
+
+  build() {
+    NavDestination() {
+      Column() {
+        Button('pushPathByName', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.pathStack.pushPathByName('pageOne', null);
+          })
+      }.width('100%').height('100%')
+    }.title('pageTwo')
+    .menus(this.menuItems)
+    .onBackPressed(() => {
+      this.pathStack.pop();
+      return true;
+    })
+    .onReady((context: NavDestinationContext) => {
+      this.pathStack = context.pathStack;
+      console.info('current page config info is ' + JSON.stringify(context.getConfigInRouteMap()));
+    })
+  }
+}
 ```
 
 在src/main目录下的工程配置文件[module.json5](../harmonyos-guides/module-configuration-file.md)中的module字段里配置"routerMap": "$profile:router\_map"。
 
-```
-1. // src/main/resources/base/profile/router_map.json
-2. {
-3. "routerMap": [
-4. {
-5. "name": "pageOne",
-6. "pageSourceFile": "src/main/ets/pages/PageOne.ets",
-7. "buildFunction": "PageOneBuilder",
-8. "data": {
-9. "description": "this is pageOne"
-10. }
-11. },
-12. {
-13. "name": "pageTwo",
-14. "pageSourceFile": "src/main/ets/pages/PageTwo.ets",
-15. "buildFunction": "PageTwoBuilder"
-16. }
-17. ]
-18. }
+```json5
+// src/main/resources/base/profile/router_map.json
+{
+  "routerMap": [
+    {
+      "name": "pageOne",
+      "pageSourceFile": "src/main/ets/pages/PageOne.ets",
+      "buildFunction": "PageOneBuilder",
+      "data": {
+        "description": "this is pageOne"
+      }
+    },
+    {
+      "name": "pageTwo",
+      "pageSourceFile": "src/main/ets/pages/PageTwo.ets",
+      "buildFunction": "PageTwoBuilder"
+    }
+  ]
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/57gqJUgFRImjlpHCNs2Fsw/zh-cn_image_0000002589246001.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/3BVLSlJ0RLGVHLwTQJpUHA/zh-cn_image_0000002736434973.gif)
 
 ### 示例18（设置Navigation可恢复）
 
@@ -5478,165 +5512,373 @@ PhonePC/2in1TabletTVWearable
 
 从API version 14开始，新增recoverable接口。
 
+```ts
+// Index.ets
+import { SymbolGlyphModifier } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct NavigationExample {
+  navPathStack: NavPathStack = new NavPathStack();
+  @State menuItems: Array<NavigationMenuItem> = [
+    {
+      // 'resources/base/media/startIcon.png'需要替换为开发者所需的资源文件
+      value: 'menuItem1',
+      icon: 'resources/base/media/startIcon.png' // 图标资源路径
+    },
+    {
+      // resources/base/media/ic_public_ok.svg'需要替换为开发者所需的资源文件
+      value: 'menuItem2',
+      icon: 'resources/base/media/ic_public_ok.svg', // 图标资源路径
+      symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus')).fontColor([Color.Red, Color.Green])
+        .renderingStrategy(SymbolRenderingStrategy.MULTIPLE_COLOR),
+    },
+    {
+      value: 'menuItem3',
+      symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_lungs')),
+    },
+  ];
+  @State toolItems: Array<ToolbarItem> = [
+    {
+      // 'resources/base/media/ic_public_ok.svg'需要替换为开发者所需的资源文件
+      value: 'toolItem1',
+      icon: 'resources/base/media/ic_public_ok.svg', // 图标资源路径
+      symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_lungs')),
+      status: ToolbarItemStatus.ACTIVE,
+      activeSymbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus')).fontColor([Color.Red,
+        Color.Green]).renderingStrategy(SymbolRenderingStrategy.MULTIPLE_COLOR),
+      action: () => {
+      }
+    },
+    {
+      // 'resources/base/media/startIcon.png'需要替换为开发者所需的资源文件
+      value: 'toolItem2',
+      symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_star')),
+      status: ToolbarItemStatus.ACTIVE,
+      activeIcon: 'resources/base/media/startIcon.png', // 图标资源路径
+      action: () => {
+      }
+    },
+    {
+      value: 'toolItem3',
+      symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_star')),
+      status: ToolbarItemStatus.ACTIVE,
+      activeSymbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_lungs')),
+      action: () => {
+      }
+    }
+  ];
+
+  build() {
+    Navigation(this.navPathStack) {
+      Column() {
+        Button('跳转').onClick(() => {
+          this.navPathStack.pushPathByName('NavigationMenu', null);
+        })
+      }
+    }
+    .backButtonIcon(new SymbolGlyphModifier($r('sys.symbol.ohos_wifi')))
+    .titleMode(NavigationTitleMode.Mini)
+    .menus(this.menuItems)
+    .toolbarConfiguration(this.toolItems)
+    .title('一级页面')
+    .id('test')
+    .recoverable(true)
+  }
+}
 ```
-1. // Index.ets
-2. import { SymbolGlyphModifier } from '@kit.ArkUI';
 
-4. @Entry
-5. @Component
-6. struct NavigationExample {
-7. navPathStack: NavPathStack = new NavPathStack();
-8. @State menuItems: Array<NavigationMenuItem> = [
-9. {
-10. // 'resources/base/media/startIcon.png'需要替换为开发者所需的资源文件
-11. value: 'menuItem1',
-12. icon: 'resources/base/media/startIcon.png' // 图标资源路径
-13. },
-14. {
-15. // resources/base/media/ic_public_ok.svg'需要替换为开发者所需的资源文件
-16. value: 'menuItem2',
-17. icon: 'resources/base/media/ic_public_ok.svg', // 图标资源路径
-18. symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus')).fontColor([Color.Red, Color.Green])
-19. .renderingStrategy(SymbolRenderingStrategy.MULTIPLE_COLOR),
-20. },
-21. {
-22. value: 'menuItem3',
-23. symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_lungs')),
-24. },
-25. ];
-26. @State toolItems: Array<ToolbarItem> = [
-27. {
-28. // 'resources/base/media/ic_public_ok.svg'需要替换为开发者所需的资源文件
-29. value: 'toolItem1',
-30. icon: 'resources/base/media/ic_public_ok.svg', // 图标资源路径
-31. symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_lungs')),
-32. status: ToolbarItemStatus.ACTIVE,
-33. activeSymbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus')).fontColor([Color.Red,
-34. Color.Green]).renderingStrategy(SymbolRenderingStrategy.MULTIPLE_COLOR),
-35. action: () => {
-36. }
-37. },
-38. {
-39. // 'resources/base/media/startIcon.png'需要替换为开发者所需的资源文件
-40. value: 'toolItem2',
-41. symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_star')),
-42. status: ToolbarItemStatus.ACTIVE,
-43. activeIcon: 'resources/base/media/startIcon.png', // 图标资源路径
-44. action: () => {
-45. }
-46. },
-47. {
-48. value: 'toolItem3',
-49. symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_star')),
-50. status: ToolbarItemStatus.ACTIVE,
-51. activeSymbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_lungs')),
-52. action: () => {
-53. }
-54. }
-55. ];
+```ts
+// PageOne.ets
+import { SymbolGlyphModifier } from '@kit.ArkUI';
 
-57. build() {
-58. Navigation(this.navPathStack) {
-59. Column() {
-60. Button('跳转').onClick(() => {
-61. this.navPathStack.pushPathByName('NavigationMenu', null);
-62. })
-63. }
-64. }
-65. .backButtonIcon(new SymbolGlyphModifier($r('sys.symbol.ohos_wifi')))
-66. .titleMode(NavigationTitleMode.Mini)
-67. .menus(this.menuItems)
-68. .toolbarConfiguration(this.toolItems)
-69. .title('一级页面')
-70. .id('test')
-71. .recoverable(true)
-72. }
-73. }
-```
+@Builder
+export function myRouter(name: string, param?: Object) {
+  NavigationMenu();
+}
 
-```
-1. // PageOne.ets
-2. import { SymbolGlyphModifier } from '@kit.ArkUI';
+@Component
+export struct NavigationMenu {
+  navPathStack: NavPathStack = new NavPathStack();
+  @State menuItems: Array<NavigationMenuItem> = [
+    {
+      // 'resources/base/media/startIcon.png'需要替换为开发者所需的资源文件
+      value: 'menuItem1',
+      icon: 'resources/base/media/startIcon.png', // 图标资源路径
+      action: () => {
+      }
+    },
+    {
+      value: 'menuItem2',
+      symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus')).fontColor([Color.Red, Color.Green])
+        .renderingStrategy(SymbolRenderingStrategy.MULTIPLE_COLOR),
+      action: () => {
+      }
+    },
+    {
+      value: 'menuItem3',
+      symbolIcon: new SymbolGlyphModifier($r('sys.symbol.repeat_1')),
+      action: () => {
+      }
+    },
+  ];
 
-4. @Builder
-5. export function myRouter(name: string, param?: Object) {
-6. NavigationMenu();
-7. }
-
-9. @Component
-10. export struct NavigationMenu {
-11. navPathStack: NavPathStack = new NavPathStack();
-12. @State menuItems: Array<NavigationMenuItem> = [
-13. {
-14. // 'resources/base/media/startIcon.png'需要替换为开发者所需的资源文件
-15. value: 'menuItem1',
-16. icon: 'resources/base/media/startIcon.png', // 图标资源路径
-17. action: () => {
-18. }
-19. },
-20. {
-21. value: 'menuItem2',
-22. symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus')).fontColor([Color.Red, Color.Green])
-23. .renderingStrategy(SymbolRenderingStrategy.MULTIPLE_COLOR),
-24. action: () => {
-25. }
-26. },
-27. {
-28. value: 'menuItem3',
-29. symbolIcon: new SymbolGlyphModifier($r('sys.symbol.repeat_1')),
-30. action: () => {
-31. }
-32. },
-33. ];
-
-35. build() {
-36. NavDestination() {
-37. Row() {
-38. Column() {
-39. }
-40. .width('100%')
-41. }
-42. .height('100%')
-43. }
-44. .onReady((context: NavDestinationContext) => {
-45. this.navPathStack = context.pathStack;
-46. })
-47. .hideTitleBar(false)
-48. .title('NavDestination title')
-49. .backgroundColor($r('sys.color.ohos_id_color_titlebar_sub_bg'))
-50. .backButtonIcon(new SymbolGlyphModifier($r('sys.symbol.ohos_star'))
-51. .fontColor([Color.Blue]))
-52. .menus(this.menuItems)
-53. .recoverable(true)
-54. }
-55. }
+  build() {
+    NavDestination() {
+      Row() {
+        Column() {
+        }
+        .width('100%')
+      }
+      .height('100%')
+    }
+    .onReady((context: NavDestinationContext) => {
+      this.navPathStack = context.pathStack;
+    })
+    .hideTitleBar(false)
+    .title('NavDestination title')
+    .backgroundColor($r('sys.color.ohos_id_color_titlebar_sub_bg'))
+    .backButtonIcon(new SymbolGlyphModifier($r('sys.symbol.ohos_star'))
+    .fontColor([Color.Blue]))
+    .menus(this.menuItems)
+    .recoverable(true)
+  }
+}
 ```
 
 在src/main目录下[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中的module字段里配置"routerMap": "$profile:router\_map"，并在src/main/resources/base/profile目录下新增router\_map.json文件。示例如下：
 
-```
-1. {
-2. "routerMap": [
-3. {
-4. "name": "NavigationMenu",
-5. "pageSourceFile": "src/main/ets/pages/PageOne.ets",
-6. "buildFunction": "myRouter",
-7. "data": {
-8. "description": "this is pageOne"
-9. }
-10. }
-11. ]
-12. }
+```json
+{
+  "routerMap": [
+    {
+      "name": "NavigationMenu",
+      "pageSourceFile": "src/main/ets/pages/PageOne.ets",
+      "buildFunction": "myRouter",
+      "data": {
+        "description": "this is pageOne"
+      }
+    }
+  ]
+}
 ```
 
-说明
+**说明** 
 
 为模拟进程异常退出并重新冷启动，可执行以下步骤：
 
 1. 工程运行成功后点击跳转按钮。
-2. 应用上划回退到后台，开启命令行窗口。
+2. 应用上滑回退到后台，开启命令行窗口。
 3. 输入"hdc shell"，回车后输入"pidof 工程包名"，查询pid值。
 4. 输入"aa force-stop 工程包名 -p pid值 -r RESOURCE\_CONTROL"进行回车，模拟资源使用不当导致的应用退出。
 5. 点击应用重新进入，可发现页面依然是点击跳转按钮后的页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/XAsfovjqT3WIrFQxUZrvDQ/zh-cn_image_0000002558766192.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/ButqPERyTWS1FfHGaveEdA/zh-cn_image_0000002706835826.gif)
+
+### 示例19（设置ScrollEffectOptions开启标题栏滚动模糊）
+
+该示例演示如何使用[scrollEffectOptions](ts-basic-components-navigation.md#scrolleffectoptions)配置项，开启标题栏滚动模糊效果。
+
+从API版本26.0.0开始，[title](ts-basic-components-navigation.md#title)接口的参数options，新增了[scrollEffectOptions](ts-basic-components-navigation.md#scrolleffectoptions)属性。
+
+```ts
+// xxx.ets
+import { LengthMetrics } from '@kit.ArkUI'
+
+@Entry
+@Component
+struct NavigationExample {
+  private arr: number[] = [];
+
+  aboutToAppear(): void {
+    for (let i = 0; i < 50; i++) {
+      this.arr.push(i)
+    }
+  }
+
+  build() {
+    Column() {
+      Navigation() {
+        Column() {
+          List({ space: 12, initialIndex: 0 }) {
+            ListItem() {
+              Column() {
+                Blank()
+                  .width('100%')
+                  .height(128)
+              }
+            }
+            ForEach(this.arr, (item: number) => {
+              ListItem() {
+                Text('' + item)
+                  .width('90%')
+                  .height(72)
+                  .backgroundColor($r('sys.color.brand'))
+                  .borderRadius(24)
+                  .fontSize(16)
+                  .fontWeight(500)
+                  .textAlign(TextAlign.Center)
+              }
+            }, (item: number) => item.toString())
+          }
+          .height('100%')
+          .width('100%')
+        }
+        .width('100%')
+        .height('100%')
+      }
+      .title({ main: 'Main Title', sub: 'Sub Title' }, {
+        barStyle: BarStyle.STACK,
+        scrollEffectOptions: {
+          scrollEffectType: ScrollEffectType.COMMON_BLUR,
+          blurEffectiveStartOffset: LengthMetrics.vp(8),
+          blurEffectiveEndOffset: LengthMetrics.vp(56)
+        }
+      })
+      .titleMode(NavigationTitleMode.Full)
+      .hideTitleBar(false)
+      .hideToolBar(false)
+    }.width('100%').height('100%').backgroundColor('#F1F3F5')
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/rWCNk97KSHeXRY6NN82lrg/zh-cn_image_0000002736314931.gif)
+
+### 示例20（设置systemMaterial开启标题栏材质效果）
+
+该示例演示如何通过systemMaterial属性设置组件的系统材质，开启标题栏沉浸光感效果。
+
+从API版本26.0.0开始，[NavigationTitleOptions](ts-basic-components-navigation.md#navigationtitleoptions11)新增了systemMaterial属性。
+
+```ts
+// xxx.ets
+import { SymbolGlyphModifier, uiMaterial } from '@kit.ArkUI';
+
+function BuildMenu(): Array<NavigationMenuItem> {
+  return [
+    {
+      value: 'menu1',
+      symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_circle'))
+    },
+    {
+      value: 'menu2',
+      symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_star'))
+    },
+    {
+      value: 'menu3',
+      symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus'))
+    },
+    {
+      value: 'menu4',
+      symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_lock'))
+    }
+  ]
+}
+
+@Component
+struct TestComponent {
+  private arr: number[] = new Array<number>();
+
+  aboutToAppear(): void {
+    for (let i = 0; i < 20; i++) {
+      this.arr.push(i);
+    }
+  }
+
+  build() {
+    Scroll() {
+      Column() {
+        ForEach(this.arr, (item: number) => {
+          Stack() {
+            Text(item.toString())
+              .fontSize(20)
+              .fontWeight(FontWeight.Bold)
+              .fontColor((item % 2) == 1 ? '#fff5e4e4' : '#ff302a2a')
+          }.width('100%')
+          .height(180)
+          .backgroundColor((item % 2) == 0 ? '#fff5e4e4' : '#ff302a2a')
+        }, (item: number) => item.toString())
+      }
+    }
+  }
+}
+
+@Component
+struct MyDest {
+  build() {
+    NavDestination() {
+      TestComponent().width('100%').height('100%')
+    }.width('100%').height('100%')
+    .title('', {
+      systemMaterial: new uiMaterial.ImmersiveMaterial({
+        style: uiMaterial.ImmersiveStyle.ULTRA_THIN,
+        colorInvert: true,
+        interactive: true,
+        lightEffect: {}
+      }),
+      // systemMaterial和barStyle没有关联性，但是同时设置barStyle为STACK样式可获得最佳沉浸效果
+      barStyle: BarStyle.STACK
+    })
+    .menus(BuildMenu())
+  }
+}
+
+@Entry
+@Component
+struct NavigationTitleMaterialDemo {
+  private stack: NavPathStack = new NavPathStack();
+
+  @Builder
+  MyMap(name: string) {
+    MyDest()
+  }
+
+  build() {
+    RelativeContainer() {
+      Navigation(this.stack) {
+        Column() {
+          TestComponent()
+            .width('100%')
+        }.width('100%').height('100%')
+      }
+      .width('100%')
+      .height('100%')
+      .mode(NavigationMode.Stack)
+      .navDestination(this.MyMap)
+      .title('', {
+        systemMaterial: new uiMaterial.ImmersiveMaterial({
+          style: uiMaterial.ImmersiveStyle.ULTRA_THIN,
+          colorInvert: true,
+          interactive: true,
+          lightEffect: {}
+        }),
+        // systemMaterial和barStyle没有关联性，但是同时设置barStyle为STACK样式可获得最佳沉浸效果
+        barStyle: BarStyle.STACK
+      })
+      .menus(BuildMenu())
+      Column() {
+        Stack({alignContent: Alignment.Center}) {
+          Text('push page').fontSize(25)
+        }
+        .width(150)
+        .height(50)
+        .borderRadius(22)
+        .backgroundColor(Color.Orange)
+        .margin({left: 50, bottom: 100})
+        .onClick(() => {
+          this.stack.pushPath({name: 'one'})
+        })
+      }
+      .alignRules({
+        bottom: {anchor: '__container__', align: VerticalAlign.Bottom},
+        left: {anchor: '__container__', align: HorizontalAlign.Start},
+      })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/K-zoMg9BS2eE2BcRMAUXYA/zh-cn_image_0000002706675888.gif)

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 如何解决混淆之后的静态引用异常问题
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 如何解决混淆之后的静态引用异常问题
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:27+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:15+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:3b9f5ca7904931e368d5436443a8df0a4f802f970999619edeb06dff5c06ef26
 ---
 

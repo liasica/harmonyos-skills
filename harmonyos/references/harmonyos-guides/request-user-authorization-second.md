@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/request-user-
 title: 再次向用户申请授权
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 申请应用权限 > 再次向用户申请授权
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:30:35+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b2806851279041ed27becee63588486f7901953853472f96a29e40f441bf843d
+scraped_at: 2026-09-02T14:49:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:60c40547b62aea898ac32e4e081fff2b843a368924124e09435a50a7d7ad8552
 ---
 
 当应用通过[requestPermissionsFromUser()](../harmonyos-references/js-apis-abilityaccessctrl.md#requestpermissionsfromuser9)拉起弹框[请求用户授权](request-user-authorization.md)时，如果用户拒绝授权，应用将无法再次通过requestPermissionsFromUser()拉起弹框。用户需要在系统设置中手动授权。
@@ -19,22 +19,20 @@ content_hash: sha256:b2806851279041ed27becee63588486f7901953853472f96a29e40f441b
 
 效果展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/nhTkeNwAR7ego7BQhG-HGQ/zh-cn_image_0000002558764854.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/iIL7d2rVRqWN7KWhAm-l3g/zh-cn_image_0000002706674314.png)
 
 以下示例代码展示了如何再次拉起弹框申请ohos.permission.APPROXIMATELY\_LOCATION权限。
 
-```
-1. import { abilityAccessCtrl, Context, common } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { abilityAccessCtrl, Context, common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // ···
-5. let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
-6. let context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. atManager.requestPermissionOnSetting(context, ['ohos.permission.APPROXIMATELY_LOCATION']).then((data: Array<abilityAccessCtrl.GrantStatus>) => {
-8. console.info(`requestPermissionOnSetting success, result: ${data}`);
-9. }).catch((err: BusinessError) => {
-10. console.error(`requestPermissionOnSetting fail, code: ${err.code}, message: ${err.message}`);
-11. });
+// ···
+          let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+          let context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+          atManager.requestPermissionOnSetting(context, ['ohos.permission.APPROXIMATELY_LOCATION']).then((data: Array<abilityAccessCtrl.GrantStatus>) => {
+            console.info(`requestPermissionOnSetting success, result: ${data}`);
+          }).catch((err: BusinessError) => {
+            console.error(`requestPermissionOnSetting fail, code: ${err.code}, message: ${err.message}`);
+          });
 ```
-
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Security/RequestUserAuthorization/entry/src/main/ets/secondpages/Index.ets#L18-L39)

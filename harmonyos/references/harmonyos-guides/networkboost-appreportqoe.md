@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-
 title: 应用传输体验反馈
 breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务） > 网络质量 > 应用传输体验反馈
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:55+08:00
+scraped_at: 2026-09-02T14:50:06+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:103f3d0292298e739eba398da66f62fc2d926112d27f2e9a1ff70018a8c9e83e
+content_hash: sha256:3a70920e9e13b9a36e7c8e415d67d938187b367f82f8d90eaf79e75d4891755d
 ---
 
 ## 场景介绍
@@ -26,22 +26,22 @@ content_hash: sha256:103f3d0292298e739eba398da66f62fc2d926112d27f2e9a1ff70018a8c
 
 1. 导入Network Boost Kit模块。
 
-   ```
-   1. import { netQuality } from '@kit.NetworkBoostKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { netQuality } from '@kit.NetworkBoostKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 调用reportQoe接口将应用传输体验信息通知给系统。
 
-   ```
-   1. try{
-   2. let serviceType: netQuality.ServiceType = 'shortVideo';
-   3. let qoeType: netQuality.BadQoeCause = 'serverErr';
-   4. let appQoE: netQuality.AppQoe = {
-   5. serviceType,
-   6. qoeType
-   7. };
-   8. netQuality.reportQoe(appQoE);
-   9. } catch (err) {
-   10. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-   11. }
+   ```typescript
+   try{
+     let serviceType: netQuality.ServiceType = 'shortVideo';
+     let qoeType: netQuality.BadQoeCause = 'serverErr';
+     let appQoE: netQuality.AppQoe = {
+       serviceType,
+       qoeType
+     };
+     netQuality.reportQoe(appQoE);
+   } catch (err) {
+     console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+   }
    ```

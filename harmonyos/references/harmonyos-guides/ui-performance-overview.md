@@ -3,15 +3,15 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-performanc
 title: UI高性能开发
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI高性能开发
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:38+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:30870e7b50e5fdc2d8063f0f96aaba66b1761c9c868f3880ff93f75e61a17cdc
+scraped_at: 2026-09-02T14:59:21+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:76063819deeceb1b9afd29c0174531db17cad77f58876df7a699023340fac9f9
 ---
 
 优化应用的性能对于提升用户体验至关重要。当发现性能问题后，一般可按照以下步骤进行分析：
 
 1. 复现问题：根据用户的反馈复现性能问题是分析的第一步，开发者可通过回访用户或在应用中增加自己的性能监测埋点来获得性能问题的发生场景和复现步骤。
-2. 利用工具找到性能瓶颈点：问题复现后可使用DevEco Studio中提供的CPU Profiler工具获取问题发生过程中的Trace，可以方便的找到Trace中的耗时点。
+2. 利用工具找到性能瓶颈点：问题复现后可使用DevEco Studio中提供的CPU Profiler工具获取问题发生过程中的Trace，可以方便地找到Trace中的耗时点。
 3. 确定解决方案：找到耗时点后可以根据Trace中的ArkTS CallStack信息或Review流程相关业务代码来找到瓶颈点相关的实现，根据下面的核心优化思路对问题代码进行优化。
 4. 验证解决效果：优化代码修改后，应重新复现问题场景体验效果，并使用CPU Profiler工具抓取Trace，确认修改符合预期，问题解决。
 
@@ -19,12 +19,12 @@ content_hash: sha256:30870e7b50e5fdc2d8063f0f96aaba66b1761c9c868f3880ff93f75e61a
 
 ### 工具驱动优化
 
-性能优化的过程中使用数据而非直觉指导优化方向是提升优化效率的关键。当前DevEco Studio中提供了两个性能分析工具，可以进行UI的性能分析，帮助我们高效的进行性能问题定位：
+性能优化的过程中使用数据而非直觉指导优化方向是提升优化效率的关键。当前DevEco Studio中提供了两个性能分析工具，可以进行UI的性能分析，帮助我们高效地进行性能问题定位：
 
 1. CPU Profiler：用于在运行过程中抓取trace和调用栈对耗时点进行分析，使用方法可以参考[CPU Profiler的使用指导](../best-practices/bpta-optimization-overview.md)分析的思路可以参考[常用Trace的含义](../best-practices/bpta-optimization-overview.md#section085643405116)。
 2. ArkUI Inspector：用于可视化的展示UI组件树，分析UI的布局层次和参数，使用方法可以参考[ArkUI Inspector使用说明](ide-arkui-inspector.md)。
 
-   在分析性能问题的过程中，应当先通过CPU Profiler工具发现实际的性能瓶颈点，再针对性的进行优化。
+   在分析性能问题的过程中，应当先通过CPU Profiler工具发现实际的性能瓶颈点，再针对性地进行优化。
 
 ### 惰性加载优先
 
@@ -36,7 +36,7 @@ content_hash: sha256:30870e7b50e5fdc2d8063f0f96aaba66b1761c9c868f3880ff93f75e61a
 
 ### 更新代替重建
 
-对于会反复使用的组件，可将其缓存起来，用更新代替重建来提升性能。例如，在滚动容器的滑动过程中，一边的组件划出可视范围被释放，另一边的组件划入可视范围需要创建，反复的释放和创建相同的ListItem显然是冗余的。针对这一需要对特定组件进行缓存、复用的场景，ArkUI提供了[组件复用能力](arkts-reusable.md)，可以对自定义组件进行标记，在被标记的自定义组件释放时将其放入缓存池，在下次需要创建时从缓存池中拿出，用刷新代替创建。使用场景可以参考[组件复用的基本原理和使用技巧](../best-practices/bpta-component-reuse.md)。
+对于会反复使用的组件，可将其缓存起来，用更新代替重建来提升性能。例如，在滚动容器的滑动过程中，一边的组件划出可视范围被释放，另一边的组件划入可视范围需要创建，反复地释放和创建相同的ListItem显然是冗余的。针对这一需要对特定组件进行缓存、复用的场景，ArkUI提供了[组件复用能力](arkts-reusable.md)，可以对自定义组件进行标记，在被标记的自定义组件释放时将其放入缓存池，在下次需要创建时从缓存池中拿出，用更新代替创建。使用场景可以参考[组件复用的基本原理和使用技巧](../best-practices/bpta-component-reuse.md)。
 
 ### 状态精确控制
 

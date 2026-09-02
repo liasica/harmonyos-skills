@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-command-li
 title: "ohpm ERROR: JSON5: invalid end of input at 1:1"
 breadcrumb: "FAQ > DevEco Studio > 命令行工具 > ohpm ERROR: JSON5: invalid end of input at 1:1"
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:22+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:18+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:d4a86a225babc436a0f97ecd7e728c055e36afb433d96674663d965b0e8593d8
 ---
 

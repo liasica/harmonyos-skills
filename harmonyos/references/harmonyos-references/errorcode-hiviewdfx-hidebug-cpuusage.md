@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: HiDebug CpuUsage错误码
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 错误码 > HiDebug CpuUsage错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:30+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:01a79021b68adb09d23226f2d5d2e947711395a9b39a807c198b3b887cbf77ae
+scraped_at: 2026-09-02T15:02:17+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6d472f667b8c8b9d31ddd53b5bf46c6c57476904c79cc9c188f5d065f882a78d
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 11400104 CpuUsage统计异常
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 

@@ -3,24 +3,23 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 前景属性设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 前景属性设置
 category: harmonyos-references
-scraped_at: 2026-04-29T13:51:20+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:2014c8d7d726bd8ecc7eadc5bbc0848f2813e7d8f5b61cf9003da991a80a4fb0
+scraped_at: 2026-09-02T15:00:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9d816904e4a76f1f4d74d7e9653b104323b5427b113a0fa798ee1ee847b4c89d
 ---
 
-设置组件的前景属性。
+设置组件的前景属性，通过模糊半径参数对组件前景内容应用模糊效果。
 
-说明
+**说明** 
 
-从API version 12开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 从API version 12开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 本模块接口仅可在Stage模型下使用。
 
 ## foregroundEffect
 
-PhonePC/2in1TabletTVWearable
-
 foregroundEffect(options: ForegroundEffectOptions): T
 
-设置组件的前景属性。
+设置组件的前景模糊效果。仅在组件范围内生效，与backgroundEffect、blur等接口连用时超出组件范围的效果无法生效。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -30,19 +29,17 @@ foregroundEffect(options: ForegroundEffectOptions): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [ForegroundEffectOptions](ts-universal-attributes-foreground-effect.md#foregroundeffectoptions12) | 是 | 设置组件前景属性包括：模糊半径。 |
+| options | [ForegroundEffectOptions](ts-universal-attributes-foreground-effect.md#foregroundeffectoptions) | 是 | 设置组件前景效果，包括：模糊半径。效果仅在组件范围内生效，与backgroundEffect、blur等接口连用时超出组件范围的效果无法生效。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
-## ForegroundEffectOptions12+
+## ForegroundEffectOptions
 
-PhonePC/2in1TabletTVWearable
-
-前景效果参数。
+前景效果参数，用于配置组件前景的模糊半径，控制前景内容的模糊程度。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -50,36 +47,35 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| radius | number | 否 | 否 | 模糊半径，取值范围：[0, +∞)。  仅在组件范围内生效，与其他接口连用时超出组件范围的效果无法生效。 |
+| radius | number | 否 | 否 | 模糊半径，设置后组件前景呈现模糊效果，数值越大模糊程度越高。取值范围：[0, +∞)，0表示不产生模糊效果。传入负数时自动修正为0。仅在组件范围内生效，与backgroundBlur等效果类接口连用时超出组件范围的效果无法生效。 |
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
+该示例演示通过foregroundEffect接口设置前景属性。
 
-该示例主要演示通过foregroundEffect接口设置前景属性。
-
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct Index {
-5. build() {
-6. Row() {
-7. // $r("app.media.icon")需要替换为开发者所需的图像资源文件。
-8. Image($r('app.media.icon'))
-9. .width(100)
-10. .height(100)
-11. .foregroundEffect({ radius: 20 })
-12. }
-13. .width('100%')
-14. .height('100%')
-15. .justifyContent(FlexAlign.Center)
-16. }
-17. }
+```ts
+// xxx.ets
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      // $r('app.media.icon')需要替换为开发者所需的图像资源文件。
+      Image($r('app.media.icon'))
+          .width(100)
+          .height(100)
+          // 设置前景模糊效果，模糊半径为20
+          .foregroundEffect({ radius: 20 })
+    }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
 
 效果图如下：
 
 radius表示模糊半径，数值越大，效果越模糊。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/CNTfN37rSZGwggphEgf9UA/zh-cn_image_0000002558606384.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/k7lX9U9IQj66F2GOff-wmA/zh-cn_image_0000002706675716.jpg)

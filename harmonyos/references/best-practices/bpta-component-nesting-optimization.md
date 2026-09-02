@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-component-
 title: 组件嵌套优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > 组件嵌套优化
 category: best-practices
-scraped_at: 2026-04-29T14:13:29+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:9f2a255b615df9d54ac57162d848b7c563037166803384fc5c2e64aff28fab9e
+scraped_at: 2026-09-02T15:03:21+08:00
+doc_updated_at: 2026-08-10
+content_hash: sha256:16e4bb654e36b6e0986cdd7811dbaa2995c0724561c190a72cdd361d80150d78
 ---
 
 本文通过原理概念、优化场景和实践数据对比三个角度，详细介绍了组件嵌套的优化，着重从优化场景角度为开发者阐明组件嵌套的优化场景以及优化策略。
@@ -16,7 +16,7 @@ content_hash: sha256:9f2a255b615df9d54ac57162d848b7c563037166803384fc5c2e64aff28
 
 ### ArkUI框架执行流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/E4ZlOXJ0QVyDIbkWFrCIaQ/zh-cn_image_0000002427576872.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/AF696EMDRsaGnbwKg0ntrA/zh-cn_image_0000002427576872.png "点击放大")
 
 如上图所示，可以看到ArkUI框架的执行顺序：
 
@@ -26,7 +26,7 @@ content_hash: sha256:9f2a255b615df9d54ac57162d848b7c563037166803384fc5c2e64aff28
 
 ### 自定义组件的生命周期
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/BVH4NDKCSBSmCDXIQl0hjg/zh-cn_image_0000002229451945.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/9NRU2UZ6RPa5Mx1v29YPGw/zh-cn_image_0000002229451945.png "点击放大")
 
 如上图所示，自定义组件创建完成之后，在build函数执行之前，将先执行aboutToAppear()生命周期回调函数。执行完build函数后，还会有一些事件监听函数，例如可以使用onPageShow监听页面显示事件，onPageHide函数可以监听页面隐藏事件。最终在自定义组件析构销毁前执行aboutToDisappear函数。
 
@@ -40,7 +40,7 @@ content_hash: sha256:9f2a255b615df9d54ac57162d848b7c563037166803384fc5c2e64aff28
 
 从自定义组件的生命周期的角度上分析，如果自定义组件过度嵌套，则会有大量的生命周期函数需要执行，消耗性能。
 
-详细的组件嵌套性能数据分析可参考[《精简节点数》](bpta-improve-layout-performance.md#section9293918175210)。
+详细的组件嵌套性能数据分析可参考[《精简节点数》](../harmonyos-guides/arkts-layout-optimization-guidance.md#精简节点数)。
 
 ## 优化场景
 
@@ -70,33 +70,29 @@ content_hash: sha256:9f2a255b615df9d54ac57162d848b7c563037166803384fc5c2e64aff28
 
 自定义组件示例代码：
 
+```typescript
+@Component
+export struct example {
+  build() {
+    Column(){
+      Text('Custom Component Sample Code')
+      // ...
+    }
+  }
+}
 ```
-1. @Component
-2. export struct example {
-3. build() {
-4. Column(){
-5. Text('Custom Component Sample Code')
-6. // ...
-7. }
-8. }
-9. }
-```
-
-[segment1.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkUI/Component_Nesting_Optimization/entry/src/main/ets/segment/segment1.ets#L2-L10)
 
 自定义构建函数示例代码：
 
+```typescript
+@Builder
+export function example1(){
+  Column(){
+    Text('Sample code for customizing the constructor')
+    // ...
+  }
+}
 ```
-1. @Builder
-2. export function example1(){
-3. Column(){
-4. Text('Sample code for customizing the constructor')
-5. // ...
-6. }
-7. }
-```
-
-[segment1.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkUI/Component_Nesting_Optimization/entry/src/main/ets/segment/segment1.ets#L14-L20)
 
 具体可以参考[优先使用@Builder方法代替自定义组件](bpta-ui-component-performance-optimization.md#section18773182614502)。
 
@@ -107,7 +103,7 @@ content_hash: sha256:9f2a255b615df9d54ac57162d848b7c563037166803384fc5c2e64aff28
 通过DevEco Studio内置ArkUI Inspector工具，查看组件树结构可以看到，相比使用@Builder方法，组件树多一个自定义组件节点，所以[优先使用@Builder方法代替自定义组件](bpta-component-nesting-optimization.md#section1012953161217)减少了自定义组件节点数量。而给自定义组件添加属性，会在自定义组件外部会创建一个“\_\_Common\_\_”类型的节点，如下图所示。为了避免这类“\_\_Common\_\_”节点的创建，可以将自定义组件的属性移至内部，或者动态设置自定义组件的属性。减少自定义组件产生多余节点，可以使总节点数量降低，从而提升性能。
 
 **图1** 自定义组件树变化示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/whD4P4LoRUCdpYQVY3pzLA/zh-cn_image_0000002229337457.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/3ej-fWeTTZen7GO7ZE7FPg/zh-cn_image_0000002229337457.png "点击放大")
 
 **将自定义组件的属性移至内部**
 
@@ -115,90 +111,84 @@ content_hash: sha256:9f2a255b615df9d54ac57162d848b7c563037166803384fc5c2e64aff28
 
 反例：
 
+```typescript
+@Component
+export struct Example {
+  build() {
+    Column() {
+      // Custom Components
+      FlowListStruct(
+        // Custom Component Passing Parameters
+        // ...
+      ).backgroundColor('#FFFFFF')
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
-1. @Component
-2. export struct Example {
-3. build() {
-4. Column() {
-5. // Custom Components
-6. FlowListStruct(
-7. // Custom Component Passing Parameters
-8. // ...
-9. ).backgroundColor('#FFFFFF')
-10. }
-11. .width('100%')
-12. .height('100%')
-13. }
-14. }
-```
-
-[segment2.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkUI/Component_Nesting_Optimization/entry/src/main/ets/segment/segment2.ets#L8-L22)
 
 正例：
 
+```typescript
+@Component
+export struct FlowListStruct2 {
+  build() {
+    Column() {
+      // ...
+    }
+    .backgroundColor('#FFFFFF')
+  }
+}
 ```
-1. @Component
-2. export struct FlowListStruct2 {
-3. build() {
-4. Column() {
-5. // ...
-6. }
-7. .backgroundColor('#FFFFFF')
-8. }
-9. }
-```
-
-[segment2.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkUI/Component_Nesting_Optimization/entry/src/main/ets/segment/segment2.ets#L26-L35)
 
 **动态设置自定义组件的属性**
 
 ArkUI提供了[动态属性设置](../harmonyos-references/ts-universal-attributes-attribute-modifier.md)的接口，支持使用自定义AttributeModifier构建组件并配置属性。当需要给自定义组件设置较多属性时，如果将所有的属性设置都内移，会出现传递参数过多的问题，同时也会创建更多状态变量，增加参数的传递耗时。虽然减少了节点数量，但是性能没有得到有效提升。推荐使用自定义AttributeModifier的方式来动态设置自定义组件的属性，减少节点数量的同时，也避免了参数过多导致耗时的问题，具体优化示例如下所示。
 
+```typescript
+@Entry
+@Component
+struct CustomComponentModifier {
+  modifier: ColumnModifier = new ColumnModifier();
+
+  aboutToAppear(): void {
+    this.modifier.width = 100;
+    this.modifier.height = 100;
+    this.modifier.backgroundColor = Color.Red;
+  }
+
+  build() {
+    Column() {
+      ModifierCustom({ modifier: this.modifier })
+    }
+  }
+}
+
+@Component
+struct ModifierCustom {
+  @Require @Prop modifier: AttributeModifier<ColumnAttribute>;
+
+  build() {
+    Column() {
+      Text('Hello World')
+    }.attributeModifier(this.modifier)
+  }
+}
+
+// When using dynamic attribute setting, you need to inherit AttributeModifier, implement a Modifier by yourself, and then set it to the required component.
+class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+  width: number = 0;
+  height: number = 0;
+  backgroundColor: ResourceColor | undefined = undefined;
+
+  applyNormalAttribute(instance: ColumnAttribute): void {
+    instance.width(this.width);
+    instance.height(this.height);
+    instance.backgroundColor(this.backgroundColor);
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct CustomComponentModifier {
-4. modifier: ColumnModifier = new ColumnModifier();
-
-6. aboutToAppear(): void {
-7. this.modifier.width = 100;
-8. this.modifier.height = 100;
-9. this.modifier.backgroundColor = Color.Red;
-10. }
-
-12. build() {
-13. Column() {
-14. ModifierCustom({ modifier: this.modifier })
-15. }
-16. }
-17. }
-
-20. @Component
-21. struct ModifierCustom {
-22. @Require @Prop modifier: AttributeModifier<ColumnAttribute>;
-
-24. build() {
-25. Column() {
-26. Text('Hello World')
-27. }.attributeModifier(this.modifier)
-28. }
-29. }
-
-31. // When using dynamic attribute setting, you need to inherit AttributeModifier, implement a Modifier by yourself, and then set it to the required component.
-32. class ColumnModifier implements AttributeModifier<ColumnAttribute> {
-33. width: number = 0;
-34. height: number = 0;
-35. backgroundColor: ResourceColor | undefined = undefined;
-
-37. applyNormalAttribute(instance: ColumnAttribute): void {
-38. instance.width(this.width);
-39. instance.height(this.height);
-40. instance.backgroundColor(this.backgroundColor);
-41. }
-42. }
-```
-
-[segment2.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkUI/Component_Nesting_Optimization/entry/src/main/ets/segment/segment2.ets#L39-L81)
 
 ### 选择合适的布局组件
 
@@ -210,7 +200,7 @@ ArkUI提供了[动态属性设置](../harmonyos-references/ts-universal-attribut
 * 在能够通过其他布局大幅优化节点数的情况下，可以使用高级组件替代，如使用RelativeContainer替代Row、Column实现扁平化布局，此时其收益大于布局组件本身的性能差距。
 * 仅在必要的场景下使用高耗时的布局组件，如使用Flex实现折行布局、使用Grid实现二维网格布局等。
 
-具体可以参考[合理使用布局组件](bpta-improve-layout-performance.md#section12745188175420)
+具体可以参考[合理使用布局组件](../harmonyos-guides/arkts-layout-optimization-guidance.md#合理使用布局组件)。
 
 ### 删除无用的Stack/Column/Row嵌套，移除冗余节点
 
@@ -220,55 +210,51 @@ ArkUI提供了[动态属性设置](../harmonyos-references/ts-universal-attribut
 
 反例：
 
+```typescript
+@Component
+export struct example {
+  build() {
+    Column() {
+      Row() {
+        // Custom Components
+        FlowListStruct(
+          // Custom Component Passing Parameters
+          // ...
+        )
+      }
+      .width('100%')
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
-1. @Component
-2. export struct example {
-3. build() {
-4. Column() {
-5. Row() {
-6. // Custom Components
-7. FlowListStruct(
-8. // Custom Component Passing Parameters
-9. // ...
-10. )
-11. }
-12. .width('100%')
-13. }
-14. .width('100%')
-15. .height('100%')
-16. }
-17. }
-```
-
-[segment3.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkUI/Component_Nesting_Optimization/entry/src/main/ets/segment/segment3.ets#L8-L25)
 
 正例：
 
+```typescript
+@Component
+export struct example2 {
+  build() {
+    Column() {
+      // Custom Components
+      FlowListStruct(
+        // Custom Component Passing Parameters
+        // ...
+      )
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
-1. @Component
-2. export struct example2 {
-3. build() {
-4. Column() {
-5. // Custom Components
-6. FlowListStruct(
-7. // Custom Component Passing Parameters
-8. // ...
-9. )
-10. }
-11. .width('100%')
-12. .height('100%')
-13. }
-14. }
-```
-
-[segment3.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkUI/Component_Nesting_Optimization/entry/src/main/ets/segment/segment3.ets#L28-L42)
 
 ### 优先使用组件属性代替嵌套组件
 
 在实现文本浮层、按压遮罩或颜色叠加等场景时，通常会采用Stack布局嵌套组件的方式。实际上有些场景直接使用组件属性或借助系统API的能力就能实现，例如使用[overlay](../harmonyos-references/ts-universal-attributes-overlay.md#overlay)属性可以实现浮层场景，使用[ColorMetrics](../harmonyos-references/js-apis-arkui-graphics.md#colormetrics12)可以实现颜色叠加效果。直接使用组件属性的方式可以减少Stack布局嵌套组件的使用，从而减少嵌套组件带来的节点数。以文本浮层场景为例，如下图所示，使用overlay属性实现文本浮层比Stack组件嵌套方式少了一层Stack节点。开发这一类场景时，推荐优先使用组件属性代替嵌套组件。
 
 **图2** 使用组件属性代替嵌套组件示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/UPq0ipapSKWuftM8WghsXw/zh-cn_image_0000002194011652.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/1Fzrpo6JRx2kvwBJgdRb9A/zh-cn_image_0000002194011652.png "点击放大")
 
 **使用overlay属性实现浮层**
 
@@ -276,50 +262,46 @@ ArkUI提供了[动态属性设置](../harmonyos-references/ts-universal-attribut
 
 反例：
 
+```typescript
+@Entry
+@Component
+struct StackNesting {
+  build() {
+    Column() {
+      Stack() {
+        Image($r('app.media.startIcon'))
+          .objectFit(ImageFit.Contain)
+        Text('fragmentary text')
+          .fontSize(20)
+          .fontColor(Color.Black)
+      }
+    }
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct StackNesting {
-4. build() {
-5. Column() {
-6. Stack() {
-7. Image($r('app.media.startIcon'))
-8. .objectFit(ImageFit.Contain)
-9. Text('fragmentary text')
-10. .fontSize(20)
-11. .fontColor(Color.Black)
-12. }
-13. }
-14. }
-15. }
-```
-
-[segment3.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkUI/Component_Nesting_Optimization/entry/src/main/ets/segment/segment3.ets#L46-L61)
 
 正例：
 
-```
-1. @Entry
-2. @Component
-3. struct OverlayExample {
-4. @Builder
-5. OverlayNode() {
-6. Text('fragmentary text')
-7. .fontSize(20)
-8. .fontColor(Color.Black)
-9. }
+```typescript
+@Entry
+@Component
+struct OverlayExample {
+  @Builder
+  OverlayNode() {
+    Text('fragmentary text')
+      .fontSize(20)
+      .fontColor(Color.Black)
+  }
 
-11. build() {
-12. Column() {
-13. Image($r('app.media.startIcon'))
-14. .overlay(this.OverlayNode(), { align: Alignment.Center })
-15. .objectFit(ImageFit.Contain)
-16. }
-17. }
-18. }
+  build() {
+    Column() {
+      Image($r('app.media.startIcon'))
+        .overlay(this.OverlayNode(), { align: Alignment.Center })
+        .objectFit(ImageFit.Contain)
+    }
+  }
+}
 ```
-
-[segment4.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkUI/Component_Nesting_Optimization/entry/src/main/ets/segment/segment4.ets#L2-L20)
 
 **使用****ColorMetrics****实现****颜色叠加**
 
@@ -327,116 +309,112 @@ ArkUI提供了[动态属性设置](../harmonyos-references/ts-universal-attribut
 
 反例：
 
+```typescript
+@Component
+struct ColorNormal {
+  @Prop isSelected: boolean = false;
+
+  build() {
+    Stack() {
+      Column()
+        .width('100%')
+        .height(100)
+        .backgroundColor(this.isSelected ? Color.Blue : Color.Grey)
+        .borderRadius(12)
+        .alignItems(HorizontalAlign.Center)
+        .justifyContent(FlexAlign.Center)
+      Column()
+        .width('100%')
+        .height(100)
+        .backgroundColor(this.isSelected ? "#99000000" : Color.Grey)
+        .borderRadius(12)
+        .alignItems(HorizontalAlign.Center)
+        .justifyContent(FlexAlign.Center)
+    }
+  }
+}
+
+@Entry
+@Component
+struct ColorOverlayStackExample {
+  @State isSelected: boolean = false;
+
+  build() {
+    Scroll() {
+      Column() {
+        ColorNormal({ isSelected: this.isSelected })
+          .onClick(() => {
+            this.isSelected = !this.isSelected;
+          })
+      }
+    }
+  }
+}
 ```
-1. @Component
-2. struct ColorNormal {
-3. @Prop isSelected: boolean = false;
-
-5. build() {
-6. Stack() {
-7. Column()
-8. .width('100%')
-9. .height(100)
-10. .backgroundColor(this.isSelected ? Color.Blue : Color.Grey)
-11. .borderRadius(12)
-12. .alignItems(HorizontalAlign.Center)
-13. .justifyContent(FlexAlign.Center)
-14. Column()
-15. .width('100%')
-16. .height(100)
-17. .backgroundColor(this.isSelected ? "#99000000" : Color.Grey)
-18. .borderRadius(12)
-19. .alignItems(HorizontalAlign.Center)
-20. .justifyContent(FlexAlign.Center)
-21. }
-22. }
-23. }
-
-25. @Entry
-26. @Component
-27. struct ColorOverlayStackExample {
-28. @State isSelected: boolean = false;
-
-30. build() {
-31. Scroll() {
-32. Column() {
-33. ColorNormal({ isSelected: this.isSelected })
-34. .onClick(() => {
-35. this.isSelected = !this.isSelected;
-36. })
-37. }
-38. }
-39. }
-40. }
-```
-
-[segment5.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkUI/Component_Nesting_Optimization/entry/src/main/ets/segment/segment5.ets#L2-L41)
 
 正例：
 
+```typescript
+import { ColorMetrics } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Component
+struct ColorMeasure {
+  @Prop isSelected: boolean = false;
+
+  build() {
+    Column()
+      .width('100%')
+      .height(100)
+      .backgroundColor(this.isSelected ? this.getBlendColor(Color.Blue, "#99000000").color : Color.Grey)
+      .borderRadius(12)
+      .alignItems(HorizontalAlign.Center)
+      .justifyContent(FlexAlign.Center)
+  }
+
+  getBlendColor(baseColor: ResourceColor, addColor: ResourceColor): ColorMetrics {
+    if (!baseColor || !addColor) {
+      try {
+        return ColorMetrics.resourceColor(Color.Black);
+      } catch (error) {
+        let err = error as BusinessError;
+        hilog.warn(0x000, 'testTag', `showToast failed, code=${err.code}, message=${err.message}`);
+      }
+    }
+    let sourceColor: ColorMetrics;
+    try {
+      sourceColor = ColorMetrics.resourceColor(baseColor).blendColor(ColorMetrics.resourceColor(addColor));
+    } catch (err) {
+      let error = err as BusinessError;
+      console.error(`Failed to blend color, code = ${error.code}, message =${error.message}`);
+      sourceColor = ColorMetrics.resourceColor(addColor);
+    }
+    return sourceColor;
+  }
+}
+
+@Entry
+@Component
+struct ColorMetricsExample {
+  @State isSelected: boolean = false;
+
+  build() {
+    Scroll() {
+      Column() {
+        ColorMeasure({ isSelected: this.isSelected })
+          .onClick(() => {
+            this.isSelected = !this.isSelected;
+          })
+      }
+    }
+  }
+}
 ```
-1. import { ColorMetrics } from '@kit.ArkUI';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-5. @Component
-6. struct ColorMeasure {
-7. @Prop isSelected: boolean = false;
-
-9. build() {
-10. Column()
-11. .width('100%')
-12. .height(100)
-13. .backgroundColor(this.isSelected ? this.getBlendColor(Color.Blue, "#99000000").color : Color.Grey)
-14. .borderRadius(12)
-15. .alignItems(HorizontalAlign.Center)
-16. .justifyContent(FlexAlign.Center)
-17. }
-
-19. getBlendColor(baseColor: ResourceColor, addColor: ResourceColor): ColorMetrics {
-20. if (!baseColor || !addColor) {
-21. try {
-22. return ColorMetrics.resourceColor(Color.Black);
-23. } catch (error) {
-24. let err = error as BusinessError;
-25. hilog.warn(0x000, 'testTag', `showToast failed, code=${err.code}, message=${err.message}`);
-26. }
-27. }
-28. let sourceColor: ColorMetrics;
-29. try {
-30. sourceColor = ColorMetrics.resourceColor(baseColor).blendColor(ColorMetrics.resourceColor(addColor));
-31. } catch (err) {
-32. let error = err as BusinessError;
-33. console.error(`Failed to blend color, code = ${error.code}, message =${error.message}`);
-34. sourceColor = ColorMetrics.resourceColor(addColor);
-35. }
-36. return sourceColor;
-37. }
-38. }
-
-40. @Entry
-41. @Component
-42. struct ColorMetricsExample {
-43. @State isSelected: boolean = false;
-
-45. build() {
-46. Scroll() {
-47. Column() {
-48. ColorMeasure({ isSelected: this.isSelected })
-49. .onClick(() => {
-50. this.isSelected = !this.isSelected;
-51. })
-52. }
-53. }
-54. }
-55. }
-```
-
-[segment6.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkUI/Component_Nesting_Optimization/entry/src/main/ets/segment/segment6.ets#L2-L57)
 
 ## 实践数据对比
 
-关于实践数据对比部分，具体可以参考[布局优化指导](bpta-improve-layout-performance.md)和[UI组件性能优化](bpta-ui-component-performance-optimization.md)的数据对比部分。
+关于实践数据对比部分，具体可以参考[布局优化指导](../harmonyos-guides/arkts-layout-optimization-guidance.md)和[UI组件性能优化](bpta-ui-component-performance-optimization.md)的数据对比部分。
 
 ## 示例代码
 

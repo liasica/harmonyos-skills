@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cert
 title: OH_CM_UkeyInfo
 breadcrumb: API参考 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > C API > 结构体 > OH_CM_UkeyInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:42+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:78fc4a0ebba77aaf1e551176192bb3702198cdfc63b60d8609a18fcf74eb7ca3
+scraped_at: 2026-09-02T15:01:46+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:87cd569d111655e6af05030237321827ee83023cc0a9d03169d973abebea6125
 ---
 
-```
-1. typedef struct {...} OH_CM_UkeyInfo
+```c
+typedef struct {...} OH_CM_UkeyInfo
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义USB证书凭据信息的结构体类型。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

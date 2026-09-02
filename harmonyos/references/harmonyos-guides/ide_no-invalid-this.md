@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-invali
 title: "@typescript-eslint/no-invalid-this"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-invalid-this
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:35+08:00
+scraped_at: 2026-09-02T14:50:51+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:880c923317f8e664eb76d370e65bdc6cb51eb6bc6e85ecdfb530b430b5b4dd97
+content_hash: sha256:b9c99adc3d43e104ac8ce30f86802f4e1b11a9b24f0dca0fb67a74f689033285
 ---
 
 禁止在this值为undefined的上下文中使用this。
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@typescript-eslint/no-invalid-this": "error"
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@typescript-eslint/no-invalid-this": "error"
+  }
+}
 ```
 
 ## 选项
@@ -27,45 +27,45 @@ content_hash: sha256:880c923317f8e664eb76d370e65bdc6cb51eb6bc6e85ecdfb530b430b5b
 
 ## 正例
 
-```
-1. // ts代码文件中需要添加"use strict"
-2. function baz(arg0: () => object) {
-3. return arg0;
-4. }
+```screen
+// ts代码文件中需要添加"use strict"
+function baz(arg0: () => object) {
+  return arg0;
+}
 
-6. export class Bar {
-7. public a: number;
+export class Bar {
+  public a: number;
 
-9. public constructor() {
-10. this.a = 0;
-11. baz(() => this);
-12. }
-13. }
+  public constructor() {
+    this.a = 0;
+    baz(() => this);
+  }
+}
 ```
 
 ## 反例
 
-```
-1. // ts代码文件中需要添加"use strict"
-2. function baz(arg0: () => object) {
-3. return arg0;
-4. }
+```screen
+// ts代码文件中需要添加"use strict"
+function baz(arg0: () => object) {
+  return arg0;
+}
 
-6. export function foo1() {
-7. this.a = 0;
-8. baz(() => this);
-9. }
+export function foo1() {
+  this.a = 0;
+  baz(() => this);
+}
 
-11. export const foo2 = () => {
-12. this.a = 0;
-13. baz(() => this);
-14. };
+export const foo2 = () => {
+  this.a = 0;
+  baz(() => this);
+};
 ```
 
 ## 规则集
 
-```
-1. plugin:@typescript-eslint/all
+```screen
+plugin:@typescript-eslint/all
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

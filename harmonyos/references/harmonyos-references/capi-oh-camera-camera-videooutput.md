@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: Camera_VideoOutput
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 结构体 > Camera_VideoOutput
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:56+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:06f3ca8151fa551bfd98d2e86f67e981fce8c3c90e76ebd69546f5f84c7a4aec
+scraped_at: 2026-09-02T14:52:53+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b39e5ec77cb7de9f35caf46a92917992a95b00556689ebe00768e8768212cf4e
 ---
 
-```
-1. typedef struct Camera_VideoOutput Camera_VideoOutput
+```c
+typedef struct Camera_VideoOutput Camera_VideoOutput
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 录像输出对象。
 

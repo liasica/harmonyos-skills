@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multimodalawa
 title: Multimodal Awareness Kit简介
 breadcrumb: 指南 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > Multimodal Awareness Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:40+08:00
-doc_updated_at: 2026-03-23
-content_hash: sha256:9562f08baf277488ff15c2caf619ac8908f48fd3ad0327c622168368c8b48c61
+scraped_at: 2026-09-02T14:59:37+08:00
+doc_updated_at: 2026-08-21
+content_hash: sha256:4f67e92f0ae19e8c67a83e2ad3fc796cd4ea6028960fb2ff47ed724ffc85b92b
 ---
 
 多模态融合感知是利用设备上的多种传感器数据，如加速度计和陀螺仪等，来识别活动、状态和姿态等信息，例如，判断设备是否处于静止状态。
@@ -17,3 +17,7 @@ content_hash: sha256:9562f08baf277488ff15c2caf619ac8908f48fd3ad0327c622168368c8b
 ## 约束与限制
 
 使用多模态融合感知，需要用户进行相关权限的申请。设备需要支持对应能力所需的传感器。
+
+### 模拟器支持情况
+
+本Kit不支持模拟器。

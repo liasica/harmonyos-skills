@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-get-r
 title: 通过华为账号一键登录获取用户风险等级
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 获取华为账号用户信息 > 获取风险等级 > 通过华为账号一键登录获取用户风险等级
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:36:54+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:2c4ddb586345d1757293188e0530ade532ed0c3e3c1d1571e5756f4761abab11
+scraped_at: 2026-09-02T14:59:51+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:8dc065f19734bd998543875510f86b3bebf93c648e9a9459a2ef4d718f0d8d20
 ---
 
 ## 场景介绍
@@ -20,21 +20,21 @@ content_hash: sha256:2c4ddb586345d1757293188e0530ade532ed0c3e3c1d1571e5756f4761a
 
 **图1** 华为账号一键登录（用户首次登录应用）获取华为账号风险等级流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/gKE3GWZUTzCE_F5uGSVp0Q/zh-cn_image_0000002589245063.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/LdtSufcKSAOeZgEFBtd03Q/zh-cn_image_0000002706674834.png)
 
 1. 参考[华为账号一键登录业务流程](account-phone-unionid-login.md#业务流程)，确保系统账号已登录，匿名手机号获取成功，且用户首次使用华为账号登录应用。（如用户非首次使用华为账号登录，可通过[华为账号其他方式登录获取用户风险等级](account-get-risklevel-on-demand-acquisition.md)来查询华为账号的风险等级）
-2. 调用[LoginWithHuaweiIDButton](../harmonyos-references/account-api-huawei-id-button.md)组件，在[LoginWithHuaweiIDButtonParams](../harmonyos-references/account-api-component-manager.md#loginwithhuaweiidbuttonparams)参数中设置风险等级字段标识riskLevel，拉起应用登录页。
+2. 调用[LoginWithHuaweiIDButton](../harmonyos-references/account-api-huawei-id-button.md#loginwithhuaweiidbutton)组件，在[LoginWithHuaweiIDButtonParams](../harmonyos-references/account-api-component-manager.md#loginwithhuaweiidbuttonparams)参数中设置风险等级字段标识riskLevel，拉起应用登录页。
 3. 用户同意协议后，点击华为账号一键登录按钮，应用可以通过[HuaweiIDCredential](../harmonyos-references/account-api-component-manager.md#huaweiidcredential)获取到Authorization Code等数据。
 4. 将获取的Authorization Code数据传给应用服务端，应用服务端通过调用[获取用户风险等级](../harmonyos-references/account-api-getuserrisklevel.md)接口查询当前登录用户的华为账号风险等级。
 5. 应用基于用户风险等级判断继续登录流程或者返回对应风控措施。
 
 ## 接口说明
 
-一键登录接口遵循[华为账号一键登录接口说明](account-phone-unionid-login.md#接口说明)，当应用需要获取用户风险等级时，在[LoginWithHuaweiIDButton](../harmonyos-references/account-api-huawei-id-button.md)组件参数[LoginWithHuaweiIDButtonParams](../harmonyos-references/account-api-component-manager.md#loginwithhuaweiidbuttonparams)中传入riskLevel字段，通过一键登录返回Authorization Code查询用户的风险等级。
+一键登录接口遵循[华为账号一键登录接口说明](account-phone-unionid-login.md#接口说明)，当应用需要获取用户风险等级时，在[LoginWithHuaweiIDButton](../harmonyos-references/account-api-huawei-id-button.md#loginwithhuaweiidbutton)组件参数[LoginWithHuaweiIDButtonParams](../harmonyos-references/account-api-component-manager.md#loginwithhuaweiidbuttonparams)中传入riskLevel字段，通过一键登录返回Authorization Code查询用户的风险等级。
 
 | 接口名 | 描述 |
 | --- | --- |
-| [LoginWithHuaweiIDButtonParams](../harmonyos-references/account-api-component-manager.md#loginwithhuaweiidbuttonparams) | [LoginWithHuaweiIDButton](../harmonyos-references/account-api-huawei-id-button.md)组件参数，支持传入riskLevel字段（可选），标识一键登录后可查询用户风险等级。 |
+| [LoginWithHuaweiIDButtonParams](../harmonyos-references/account-api-component-manager.md#loginwithhuaweiidbuttonparams) | [LoginWithHuaweiIDButton](../harmonyos-references/account-api-huawei-id-button.md#loginwithhuaweiidbutton)组件参数，支持传入riskLevel字段（可选），标识一键登录后可查询用户风险等级。 |
 
 ## 开发前提
 
@@ -59,41 +59,41 @@ content_hash: sha256:2c4ddb586345d1757293188e0530ade532ed0c3e3c1d1571e5756f4761a
 
    **Client ID**：1\*\*\*\*14
 
-   **背景介绍：** （请提供应用简单介绍，便于快速了解）
+   **背景介绍**：（请提供应用简单介绍，便于快速了解）
 
    **使用场景**：（请提供相关使用场景的文字描述、交互流程图或参考交互视频等，可提供类似应用的使用场景进行说明）
 
-   **使用该权限的必要性：** （请提供应用需要该权限和信息的必要性）
+   **使用该权限的必要性**：（请提供应用需要该权限和信息的必要性）
 
 ## 客户端开发
 
 1. 一键登录前置流程（获取系统账号登录状态，获取系统账号匿名手机号）请参考[一键登录开发流程](account-phone-unionid-login.md#用户首次登录应用-1)中的导入模块及获取匿名手机号，确保系统账号已登录，匿名手机号获取成功，且用户首次通过华为账号登录该应用。
-2. 参考[一键登录开发流程](account-phone-unionid-login.md#用户首次登录应用-1)中展示一键登录页面并获取Authorization Code的示例代码，在[LoginWithHuaweiIDButton](../harmonyos-references/account-api-huawei-id-button.md)组件参数params中设置riskLevel标识为true，其余示例代码保持不变，拉起应用登录页。
+2. 参考[一键登录开发流程](account-phone-unionid-login.md#用户首次登录应用-1)中展示一键登录页面并获取Authorization Code的示例代码，在[LoginWithHuaweiIDButton](../harmonyos-references/account-api-huawei-id-button.md#loginwithhuaweiidbutton)组件参数params中设置riskLevel标识为true，其余示例代码保持不变，拉起应用登录页。
 
-   ```
-   1. LoginWithHuaweiIDButton({
-   2. params: {
-   3. // LoginWithHuaweiIDButton支持的样式
-   4. style: loginComponentManager.Style.BUTTON_RED,
-   5. // 账号登录按钮在登录过程中展示加载态
-   6. extraStyle: {
-   7. buttonStyle: new loginComponentManager.ButtonStyle().loadingStyle({
-   8. show: true
-   9. })
-   10. },
-   11. // LoginWithHuaweiIDButton的边框圆角半径
-   12. borderRadius: 24,
-   13. // LoginWithHuaweiIDButton支持的登录类型
-   14. loginType: loginComponentManager.LoginType.QUICK_LOGIN,
-   15. // LoginWithHuaweiIDButton支持按钮的样式跟随系统深浅色模式切换
-   16. supportDarkMode: true,
-   17. // verifyPhoneNumber：如果华为账号用户在过去90天内未进行短信验证，是否拉起Account Kit提供的短信验证码页面
-   18. verifyPhoneNumber: true,
-   19. // riskLevel：标识应用期望在登录后获取华为账号的风险等级
-   20. riskLevel: true,
-   21. },
-   22. controller: this.controller
-   23. })
+   ```typescript
+   LoginWithHuaweiIDButton({
+     params: {
+       // LoginWithHuaweiIDButton支持的样式
+       style: loginComponentManager.Style.BUTTON_RED,
+       // 账号登录按钮在登录过程中展示加载态
+       extraStyle: {
+         buttonStyle: new loginComponentManager.ButtonStyle().loadingStyle({
+           show: true
+         })
+       },
+       // LoginWithHuaweiIDButton的边框圆角半径
+       borderRadius: 24,
+       // LoginWithHuaweiIDButton支持的登录类型
+       loginType: loginComponentManager.LoginType.QUICK_LOGIN,
+       // LoginWithHuaweiIDButton支持按钮的样式跟随系统深浅色模式切换
+       supportDarkMode: true,
+       // verifyPhoneNumber：如果华为账号用户在过去90天内未进行短信验证，是否拉起Account Kit提供的短信验证码页面
+       verifyPhoneNumber: true,
+       // riskLevel：标识应用期望在登录后获取华为账号的风险等级
+       riskLevel: true,
+     },
+     controller: this.controller
+   })
    ```
 3. 用户同意协议并点击一键登录按钮后，可获取到Authorization Code，将该值传给应用服务端用于获取用户风险等级。
 
@@ -106,7 +106,7 @@ content_hash: sha256:2c4ddb586345d1757293188e0530ade532ed0c3e3c1d1571e5756f4761a
 
    由于Access Token的有效期仅为60分钟，当Access Token失效或者即将失效时（可通过[REST API错误码](../harmonyos-references/account-api-getuserrisklevel.md#错误码)判断），可以使用Refresh Token（有效期180天）通过[刷新用户级凭证接口](../harmonyos-references/account-api-obtain-refresh-token.md#接口原型)向华为账号服务器请求获取新的Access Token。
 
-   说明
+   **说明** 
 
    1. 当Access Token失效时，若应用不使用Refresh Token向华为账号服务器请求获取新的Access Token，账号的授权信息将会失效，导致使用Access Token的功能都会失败。
    2. 当Access Token非正常失效（如修改密码、退出账号、删除设备）时，应用可重新登录授权获取Authorization Code，向华为账号服务器请求获取新的Access Token。

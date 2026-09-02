@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hidd
 title: Hid_MscEventArray
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 结构体 > Hid_MscEventArray
 category: harmonyos-references
-scraped_at: 2026-04-29T14:01:27+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:111c1ee6d3bfe92ffacca7f34fa9c6791a8e2cc758a86365208857c1d3c12c4d
+scraped_at: 2026-09-02T15:02:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0bf8a1bb207c025591c21ac5aca984900f529eef73ef31dd4bf30f99923c8c15
 ---
 
-```
-1. typedef struct Hid_MscEventArray {...} Hid_MscEventArray
+```c
+typedef struct Hid_MscEventArray {...} Hid_MscEventArray
 ```
 
 ## 概述
 
-PC/2in1
-
-其他特殊事件属性数组。
+其他特殊事件属性数组，用于存储HID设备支持的特殊事件信息。
 
 **起始版本：** 11
 
@@ -26,13 +24,9 @@ PC/2in1
 
 ## 汇总
 
-PC/2in1
-
 ### 成员变量
-
-PC/2in1
 
 | 名称 | 描述 |
 | --- | --- |
-| [Hid\_MscEvent](capi-hid-ddk-types-h.md#hid_mscevent)\* hidMscEvent | 其他特殊事件属性编码 |
-| uint16\_t length | 数组的有效长度 |
+| [Hid\_MscEvent](capi-hid-ddk-types-h.md#hid_mscevent)\* hidMscEvent | 其他特殊事件属性编码数组的指针，指向调用方预先分配的数组（不允许为空指针），数组大小不小于length。 |
+| uint16\_t length | 数组的有效长度，不超过hidMscEvent数组的实际长度。 |

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-deveco-tes
 title: 是否支持DevEco Emulator模拟器
 breadcrumb: FAQ > DevEco Testing > 常见问题 > 是否支持DevEco Emulator模拟器
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:25+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:88b57c6e6be07fa91b1bb81fc2f2df0848c710238afedc6b8b7771309dc7e0e0
 ---
 

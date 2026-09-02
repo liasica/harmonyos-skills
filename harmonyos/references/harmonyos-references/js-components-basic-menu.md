@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: menu
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > menu
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:24+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:13529d579a1d64da087090b9c6c0ba4f2db29d8b420a6acadf1a77ca3a0e6855
+scraped_at: 2026-09-02T15:01:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:fca9ac1efd1eaf17e8b4cbe58685d3e66043b925954d89d80c7b2ba1e90558ec
 ---
 
-说明
+**说明** 
 
 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -16,19 +16,13 @@ content_hash: sha256:13529d579a1d64da087090b9c6c0ba4f2db29d8b420a6acadf1a77ca3a0
 
 ## 权限列表
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 <[option](js-components-basic-option.md)>子组件。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-components-common-attributes.md)外，还支持如下属性：
 
@@ -38,13 +32,11 @@ PhonePC/2in1TabletTVWearable
 | type | string | click | 否 | 目标元素触发弹窗的方式，可选值有：  - click：点击弹窗。  - longpress：长按弹窗。 |
 | title | string | - | 否 | 菜单标题内容。 |
 
-说明
+**说明** 
 
 不支持focusable、disabled属性。
 
 ## 样式
-
-PhonePC/2in1TabletTVWearable
 
 仅支持如下样式：
 
@@ -60,8 +52,6 @@ PhonePC/2in1TabletTVWearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 仅支持如下事件：
 
 | 名称 | 参数 | 描述 |
@@ -71,8 +61,6 @@ PhonePC/2in1TabletTVWearable
 
 ## 方法
 
-PhonePC/2in1TabletTVWearable
-
 仅支持如下方法。
 
 | 名称 | 参数 | 描述 |
@@ -81,39 +69,37 @@ PhonePC/2in1TabletTVWearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <text onclick="onTextClick" class="title-text">Show popup menu.</text>
-4. <menu id="apiMenu">
-5. <option value="Item 1">Item 1</option>
-6. <option value="Item 2">Item 2</option>
-7. <option value="Item 3">Item 3</option>
-8. </menu>
-9. </div>
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <text onclick="onTextClick" class="title-text">Show popup menu.</text>
+  <menu id="apiMenu">
+    <option value="Item 1">Item 1</option>
+    <option value="Item 2">Item 2</option>
+    <option value="Item 3">Item 3</option>
+  </menu>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .container {
-3. flex-direction: column;
-4. align-items: flex-start;
-5. justify-content: center;
-6. }
-7. .title-text {
-8. margin: 20px;
-9. }
-```
-
-```
-1. // xxx.js
-2. export default {
-3. onTextClick() {
-4. this.$element("apiMenu").show({ x: 175, y: 50 });
-5. }
-6. }
+```css
+/* xxx.css */
+.container {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.title-text {
+  margin: 20px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/nGYfaKkMS6GO_8K7gL66hw/zh-cn_image_0000002558766720.png)
+```js
+// xxx.js
+export default {
+    onTextClick() {
+        this.$element("apiMenu").show({ x: 175, y: 50 });
+    }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/v_Kh-Le5SHKpdPFMAJ3kZg/zh-cn_image_0000002736315489.png)

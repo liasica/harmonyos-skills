@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-broad
 title: BROADCAST_INFER
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > BROADCAST_INFER
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:16+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:24f6703dbb650dcaeb76f1931a64be80c9d8944d75e3d7fc5f6400145102668a
+scraped_at: 2026-09-02T14:50:43+08:00
+doc_updated_at: 2026-06-05
+content_hash: sha256:835962e322906e8e45d528b305e2c9e60ead20161bddbd16a69fff2d72f31125
 ---
 
 ## 函数功能
@@ -19,16 +19,16 @@ content_hash: sha256:24f6703dbb650dcaeb76f1931a64be80c9d8944d75e3d7fc5f640014510
 
 ## 函数原型
 
-```
-1. BROADCAST_INFER(in1_name, in2_name, out_name)
+```cpp
+BROADCAST_INFER(in1_name, in2_name, out_name)
 ```
 
 该函数会自动调用如下函数：
 
-```
-1. graphStatus BroadCastInfer(const function<vector<int64_t>()> &get_in1_shape,
-2. const function<vector<int64_t>()> &get_in2_shape,
-3. const function<void(const std::vector<int64_t> &y_shape)> &set_out_shape);
+```cpp
+graphStatus BroadCastInfer(const function<vector<int64_t>()> &get_in1_shape,
+                           const function<vector<int64_t>()> &get_in2_shape,
+                           const function<void(const std::vector<int64_t> &y_shape)> &set_out_shape);
 ```
 
 ## 约束说明
@@ -41,7 +41,7 @@ content_hash: sha256:24f6703dbb650dcaeb76f1931a64be80c9d8944d75e3d7fc5f640014510
 | --- | --- | --- |
 | in1\_name | 输入 | 算子第一个输入。 |
 | in2\_name | 输入 | 算子第二个输入。 |
-| out\_name | 输入 | 算子输出。 |
+| out\_name | 输出 | 算子输出。 |
 
 ## 返回值
 
@@ -49,10 +49,10 @@ content_hash: sha256:24f6703dbb650dcaeb76f1931a64be80c9d8944d75e3d7fc5f640014510
 
 ## 调用示例
 
-```
-1. IMPLEMT_INFERFUNC(RightShift, RightShiftInfer) {
-2. DataType type = op.GetInputDesc("x").GetDataType();
-3. SET_OUTPUT_TYPE(op, "z", type);
-4. return BROADCAST_INFER("x", "y", "z")(op);
-5. }
+```cpp
+IMPLEMT_INFERFUNC(RightShift, RightShiftInfer) {
+  DataType type = op.GetInputDesc("x").GetDataType();
+  SET_OUTPUT_TYPE(op, "z", type);
+  return BROADCAST_INFER("x", "y", "z")(op);
+}
 ```

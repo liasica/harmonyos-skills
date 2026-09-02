@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (PathIterator)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (PathIterator)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:41+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0563ae7ef016fcb2115e77ef6de05fe609f0c31c9eb68bd60b58a575aefd9752
+scraped_at: 2026-09-02T15:02:41+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:252133efa5e1d3f0ee969a44ce02f30072531314ed6e1869a39a8f0f9b26b913
 ---
 
-表示路径操作迭代器，可通过遍历迭代器读取path的操作指令。
+表示路径操作迭代器，可通过遍历迭代器逐段读取路径的操作指令。迭代器按顺序遍历路径中的操作指令，便于实现对路径的细粒度分析与自定义处理。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Class首批接口从API version 18开始支持。
@@ -19,15 +19,11 @@ content_hash: sha256:0563ae7ef016fcb2115e77ef6de05fe609f0c31c9eb68bd60b58a575aef
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 ```
 
 ## constructor18+
-
-PhonePC/2in1TabletTVWearable
 
 constructor(path: Path)
 
@@ -39,24 +35,23 @@ constructor(path: Path)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | [Path](arkts-apis-graphics-drawing-path.md) | 是 | 迭代器绑定的路径对象。 |
+| path | [Path](arkts-apis-graphics-drawing-path.md) | 是 | 迭代器绑定的路径对象，绑定后迭代器将遍历该路径中的操作指令，可通过next、peek、hasNext等方法读取路径的操作类型和坐标数据。 |
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let path: drawing.Path = new drawing.Path();
-4. let iter: drawing.PathIterator = new drawing.PathIterator(path);
+let path: drawing.Path = new drawing.Path();
+let iter: drawing.PathIterator = new drawing.PathIterator(path);
+console.info('PathIterator created successfully');
 ```
 
 ## next18+
 
-PhonePC/2in1TabletTVWearable
-
 next(points: Array<common2D.Point>, offset?: number): PathIteratorVerb
 
-返回当前路径的下一个操作，并将迭代器置于该操作。
+返回当前路径的下一个操作，并将迭代器推进至该操作，同时将路径坐标点数据按操作类型写入传入的points数组。若仅需预览下一个操作而不改变迭代器状态，请使用[peek](arkts-apis-graphics-drawing-pathiterator.md#peek18)。通常与[hasNext](arkts-apis-graphics-drawing-pathiterator.md#hasnext18)方法配合使用实现路径遍历。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
@@ -71,7 +66,7 @@ next(points: Array<common2D.Point>, offset?: number): PathIteratorVerb
 
 | 类型 | 说明 |
 | --- | --- |
-| [PathIteratorVerb](arkts-apis-graphics-drawing-e.md#pathiteratorverb18) | 迭代器包含的路径操作类型。 |
+| [PathIteratorVerb](arkts-apis-graphics-drawing-e.md#pathiteratorverb18) | 当前路径段的操作类型。 |
 
 **错误码：**
 
@@ -83,32 +78,30 @@ next(points: Array<common2D.Point>, offset?: number): PathIteratorVerb
 
 **示例：**
 
-```
-1. import { common2D, drawing } from '@kit.ArkGraphics2D';
+```ts
+import { common2D, drawing } from '@kit.ArkGraphics2D';
 
-3. let path: drawing.Path = new drawing.Path();
-4. path.moveTo(10, 20);
-5. let iter: drawing.PathIterator = new drawing.PathIterator(path);
-6. let verbStr: Array<string> = ["MOVE", "LINE", "QUAD", "CONIC", "CUBIC", "CLOSE", "DONE"];
-7. let pointCount: Array<number> = [1,2,3,4,4,0,0];
-8. let points: Array<common2D.Point> = [{x: 0, y: 0}, {x: 0, y: 0}, {x: 0, y: 0}, {x: 0, y: 0}];
-9. let offset = 0;
-10. let verb = iter.next(points, offset);
-11. let outputMessage: string = "pathIteratorNext: ";
-12. outputMessage += "verb =" + verbStr[verb] + "; has " + pointCount[verb] + " pairs: ";
-13. for (let j = 0; j < pointCount[verb] + offset; j++) {
-14. outputMessage += "[" + points[j].x + ", " + points[j].y + "]";
-15. }
-16. console.info(outputMessage);
+let path: drawing.Path = new drawing.Path();
+path.moveTo(10, 20);
+let iter: drawing.PathIterator = new drawing.PathIterator(path);
+let verbStr: Array<string> = ['MOVE', 'LINE', 'QUAD', 'CONIC', 'CUBIC', 'CLOSE', 'DONE'];
+let pointCount: Array<number> = [1, 2, 3, 4, 4, 0, 0];
+let points: Array<common2D.Point> = [{x: 0, y: 0}, {x: 0, y: 0}, {x: 0, y: 0}, {x: 0, y: 0}];
+let offset = 0;
+let verb = iter.next(points, offset);
+let outputMessage: string = 'pathIteratorNext: ';
+outputMessage += 'verb =' + verbStr[verb] + '; has ' + pointCount[verb] + ' pairs: ';
+for (let j = 0; j < pointCount[verb] + offset; j++) {
+  outputMessage += '[' + points[j].x + ', ' + points[j].y + ']';
+}
+console.info(outputMessage);
 ```
 
 ## peek18+
 
-PhonePC/2in1TabletTVWearable
-
 peek(): PathIteratorVerb
 
-返回当前路径的下一个操作，迭代器保持在原操作。
+返回当前路径的下一个操作，迭代器保持在原操作。与next不同，peek不会推进迭代器位置。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
@@ -116,25 +109,23 @@ peek(): PathIteratorVerb
 
 | 类型 | 说明 |
 | --- | --- |
-| [PathIteratorVerb](arkts-apis-graphics-drawing-e.md#pathiteratorverb18) | 迭代器包含的路径操作类型。 |
+| [PathIteratorVerb](arkts-apis-graphics-drawing-e.md#pathiteratorverb18) | 当前路径段的操作类型。 |
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let path: drawing.Path = new drawing.Path();
-4. let iter: drawing.PathIterator = new drawing.PathIterator(path);
-5. let res = iter.peek();
+let path: drawing.Path = new drawing.Path();
+let iter: drawing.PathIterator = new drawing.PathIterator(path);
+let res = iter.peek();
 ```
 
 ## hasNext18+
 
-PhonePC/2in1TabletTVWearable
-
 hasNext(): boolean
 
-判断路径操作迭代器中是否还有下一个操作。
+判断迭代器中是否还有下一个操作。通常与next()或peek()方法配合使用实现路径遍历。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
@@ -142,14 +133,14 @@ hasNext(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 判断路径操作迭代器中是否还有下一个操作。true表示有，false表示没有。 |
+| boolean | 迭代器是否还有下一个操作可遍历。true表示还有后续路径操作可读取，false表示已遍历至路径末尾，无更多操作。 |
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let path: drawing.Path = new drawing.Path();
-4. let iter: drawing.PathIterator = new drawing.PathIterator(path);
-5. let res = iter.hasNext();
+let path: drawing.Path = new drawing.Path();
+let iter: drawing.PathIterator = new drawing.PathIterator(path);
+let res = iter.hasNext();
 ```

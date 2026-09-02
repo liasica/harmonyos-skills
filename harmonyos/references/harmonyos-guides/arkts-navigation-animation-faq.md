@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigat
 title: Navigation动画常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI开发常见问题 > Navigation动画常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:59+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fb2488d2f9a4fee2cacd16b25279a9be133924de6cf4021d843edfd41f139be9
+scraped_at: 2026-09-02T14:49:53+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5698ca0d0f4e5f29d577e08bdae0e2ea621f82658940b006e7b5ea0968916be2
 ---
 
 ## Dialog类型NavDestination蒙层动画不流畅
@@ -16,10 +16,10 @@ content_hash: sha256:fb2488d2f9a4fee2cacd16b25279a9be133924de6cf4021d843edfd41f1
 
 * 将蒙层背景色设置在页面上：pop页面的时候蒙层没有马上消失，而是等内容下滑退出后才消失。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/xW9g8TFMTI2LsKSiUC5fhw/zh-cn_image_0000002589244461.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/MdKBgAPWTgGn2kFoLPs1Jg/zh-cn_image_0000002736313101.gif)
 * 将蒙层背景色设置在内容区域：蒙层一起从上向下退出。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/JN-ZMW7XS8CLQ_WhxflPKg/zh-cn_image_0000002558764654.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/3GyxY2YZQ6KbiZUfwqjJHg/zh-cn_image_0000002706674058.gif)
 
 期望退出时蒙层渐隐，同时内容区域向下退出。
 
@@ -27,49 +27,47 @@ content_hash: sha256:fb2488d2f9a4fee2cacd16b25279a9be133924de6cf4021d843edfd41f1
 
 在[onWillAppear](../harmonyos-references/ts-basic-components-navdestination.md#onwillappear12)、[onWillDisappear](../harmonyos-references/ts-basic-components-navdestination.md#onwilldisappear12)生命周期执行背景色动画，示例如下：
 
+```typescript
+@Builder
+export function DialogNavDestinationBuilder() {
+  DialogNavDestination();
+}
+
+@Component
+export struct DialogNavDestination {
+  stack: NavPathStack = AppStorage.get<NavPathStack>('basicNavigationStack')!;
+  @State backColor: ResourceColor = '#00000000';
+
+  build() {
+    NavDestination() {
+      Stack() {
+        Text('Dialog')
+          .fontSize(44)
+          .backgroundColor(Color.White)
+      }
+      .width('100%')
+      .height('100%')
+    }
+    .hideTitleBar(true)
+    .backgroundColor(this.backColor)
+    .mode(NavDestinationMode.DIALOG)
+    .onWillAppear(() => {
+      // 启动时蒙层渐现
+      this.getUIContext().animateTo({ duration:450 }, () => {
+        this.backColor = '#66000000';
+      });
+    })
+    .onWillDisappear(() => {
+      // 消失时蒙层渐隐
+      this.getUIContext().animateTo({ duration: 450 }, () => {
+        this.backColor = '#00000000';
+      });
+    })
+  }
+}
 ```
-1. @Builder
-2. export function DialogNavDestinationBuilder() {
-3. DialogNavDestination();
-4. }
 
-6. @Component
-7. export struct DialogNavDestination {
-8. stack: NavPathStack = AppStorage.get<NavPathStack>('basicNavigationStack')!;
-9. @State backColor: ResourceColor = '#0000000';
-
-11. build() {
-12. NavDestination() {
-13. Stack() {
-14. Text('Dialog')
-15. .fontSize(44)
-16. .backgroundColor(Color.White)
-17. }
-18. .width('100%')
-19. .height('100%')
-20. }
-21. .hideTitleBar(true)
-22. .backgroundColor(this.backColor)
-23. .mode(NavDestinationMode.DIALOG)
-24. .onWillAppear(() => {
-25. //启动时候蒙层渐现
-26. this.getUIContext().animateTo({ duration:450 }, () => {
-27. this.backColor = '#66000000';
-28. });
-29. })
-30. .onWillDisappear(() => {
-31. // 消失时候蒙层渐隐
-32. this.getUIContext().animateTo({ duration: 450 }, () => {
-33. this.backColor = '#00000000';
-34. });
-35. })
-36. }
-37. }
-```
-
-[DialogNavDestination.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NavigationSample/entry/src/main/ets/pages/navigation/animation/DialogNavDestination.ets#L16-L54)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/E4XMJdLVRc2IQAq83GgULQ/zh-cn_image_0000002558604998.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/x3vIf-aXQX6zxvYDF0obnA/zh-cn_image_0000002736433149.gif)
 
 ## router、navigation动画冲突
 
@@ -81,26 +79,24 @@ router跳到navigation页面，navigation在aboutToAppear回调里马上push一�
 
 关闭aboutToAppear中push的动画：
 
+```typescript
+@Entry
+@Component
+struct NavigationPage {
+  navStack: NavPathStack = new NavPathStack();
+
+  aboutToAppear(): void {
+    AppStorage.setOrCreate<NavPathStack>('basicNavigationStack', this.navStack);
+    this.navStack.pushPath({ name: 'animation-BasicNavDestination' }, false); // 关闭本次push动画即可
+  }
+
+  build() {
+    Navigation(this.navStack) {
+      // ...
+    }
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct NavigationPage {
-4. navStack: NavPathStack = new NavPathStack();
-
-6. aboutToAppear(): void {
-7. AppStorage.setOrCreate<NavPathStack>('basicNavigationStack', this.navStack);
-8. this.navStack.pushPath({ name: 'animation-BasicNavDestination' }, false); // 关闭本次push动画即可
-9. }
-
-11. build() {
-12. Navigation(this.navStack) {
-13. // ...
-14. }
-15. }
-16. }
-```
-
-[NavigationPage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NavigationSample/entry/src/main/ets/pages/navigation/animation/NavigationPage.ets#L16-L48)
 
 ## pop、push同时进行却执行pop动画
 
@@ -108,12 +104,10 @@ router跳到navigation页面，navigation在aboutToAppear回调里马上push一�
 
 先pop栈顶页面，再马上push一个页面，动画效果是栈顶页面pop的动画，并不是PageOne的push动画。
 
+```typescript
+this.stack.pop();
+this.stack.pushPath({ name: 'animation-BasicNavDestination' });
 ```
-1. this.stack.pop();
-2. this.stack.pushPath({ name: 'animation-BasicNavDestination' });
-```
-
-[PageTwoNavDes.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NavigationSample/entry/src/main/ets/pages/navigation/animation/PageTwoNavDes.ets#L30-L33)
 
 **解决措施**
 
@@ -125,12 +119,10 @@ router跳到navigation页面，navigation在aboutToAppear回调里马上push一�
 
 如果想移除页面的同时push另一个页面并且执行push动画，可以将push的页面设置为NEW\_INSTANCE，默认执行push动画：
 
+```typescript
+this.stack.pop();
+this.stack.pushPath({ name: 'animation-BasicNavDestination' }, { launchMode: LaunchMode.NEW_INSTANCE });
 ```
-1. this.stack.pop();
-2. this.stack.pushPath({ name: 'animation-BasicNavDestination' }, { launchMode: LaunchMode.NEW_INSTANCE });
-```
-
-[PageTwoNavDes.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NavigationSample/entry/src/main/ets/pages/navigation/animation/PageTwoNavDes.ets#L38-L41)
 
 ## 跳转动画是否有结束回调
 

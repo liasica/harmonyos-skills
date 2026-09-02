@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: Node.js
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 云函数 > 开发云函数 > 开发函数 > Node.js
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:37:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:aff6b873befcf8a666f960a0f728c79c428e306e533225aa0282f61b96244aee
+scraped_at: 2026-09-02T14:59:54+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:9cbd08ac35a6e4aa78ef965681bd819e0b01702e566c5fe5dff5824b1a338053
 ---
 
 ## 约束与限制
@@ -16,8 +16,8 @@ content_hash: sha256:aff6b873befcf8a666f960a0f728c79c428e306e533225aa0282f61b962
 
 入口方法定义如下：
 
-```
-1. module.exports.myHandler = function(event, context, callback, logger)
+```typescript
+module.exports.myHandler = function(event, context, callback, logger)
 ```
 
 * myHandler：入口方法名称。
@@ -43,110 +43,103 @@ content_hash: sha256:aff6b873befcf8a666f960a0f728c79c428e306e533225aa0282f61b962
 
 开发者可在代码中使用context.env.key访问环境变量，获取环境变量env1示例如下：
 
-```
-1. let env1 = context.env.env1;
+```typescript
+let env1 = context.env.env1;
 ```
 
 若环境变量未配置，则会返回环境变量为undefined。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/VG4Ha1YDTWK3VJ2Iid0O8Q/zh-cn_image_0000002589325213.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/UYzdXNG7TEqdgRX6ck9gEg/zh-cn_image_0000002706834860.png)
 
 ## 异常处理
 
 开发者可以在函数代码中捕获异常，封装成error对象返回给调用方。对于函数执行期间被平台捕获的异常，平台同样以error对象形式返回给调用方。error对象定义如下。
 
-```
-1. let error = {
-2. code: xxxxxx,
-3. message: "xxxxxxxx"
-4. };
+```typescript
+let error = {
+    code: xxxxxx,
+    message: "xxxxxxxx"
+};
 ```
 
 其中code为错误码，message为错误码的描述信息。
 
 示例代码如下：
 
-```
-1. try {
-2. logger.info(JSON.stringify(event));
-3. let result = { message: "success" };
-4. callback(result);
-5. } catch (err) {
-6. let error = {
-7. code: 400,
-8. message: err.message
-9. };
-10. callback(error);
-11. }
+```typescript
+try {
+    logger.info(JSON.stringify(event));
+    let result = { message: "success" };
+    callback(result);
+} catch (err) {
+    let error = {
+        code: 400,
+        message: err.message
+    };
+    callback(error);
+}
 ```
 
 ## 函数示例
 
 示例函数如下：
 
-说明
+**说明** 
 
 示例代码中入口方法myHandler()的返回值类型仅供参考，开发者可以根据实际需要定义。
 
-```
-1. /**
-2. * Describe the basic method of Cloud Functions
-3. */
+```javascript
+let myHandler = function (event, context, callback, logger) {
 
-5. let myHandler = function (event, context, callback, logger) {
-6. // example of display environment variables
-7. let env1 = context.env.env1;
+    let env1 = context.env.env1;
+    logger.info("Test info log");
+    logger.warn("Test warn log");
+    logger.debug("Test debug log");
+    logger.error("Test error log");
 
-9. // example of display logs
-10. logger.info("Test info log");
-11. logger.warn("Test warn log");
-12. logger.debug("Test debug log");
-13. logger.error("Test error log");
+    logger.info("--------Start-------");
+    try {
+        let startTime = new Date().getTime();
+        let endTime = startTime;
+        let interval = 0;
+        startTime = process.uptime() * 1000;
 
-15. logger.info("--------Start-------");
-16. try {
-17. let startTime = new Date().getTime();
-18. let endTime = startTime;
-19. let interval = 0;
-20. startTime = process.uptime() * 1000;
+        logger.info("request: " + JSON.stringify(event.request));
+        logger.info("env1: " + env1);
 
-22. // print input parameters and environment variables
-23. logger.info("request: " + JSON.stringify(event.request));
-24. logger.info("env1: " + env1);
+        endTime = process.uptime() * 1000;
+        interval = endTime - startTime;
+        logger.info("intervalTime: " + interval);
+        logger.info("--------Finished-------");
 
-26. endTime = process.uptime() * 1000;
-27. interval = endTime - startTime;
-28. logger.info("intervalTime: " + interval);
-29. logger.info("--------Finished-------");
+        let res = new context.HTTPResponse(context.env, {
+            "res-type": "context.env",
+            "faas-content-type": "json"
+        }, "application/json", "200");
+        res.body = { "intervalTime": interval };
+        callback(res);
+    } catch (error) {
+        logger.error("--------Error-------");
+        logger.error("error: " + error);
+        callback(error);
+    }
+};
 
-31. let res = new context.HTTPResponse(context.env, {
-32. "res-type": "context.env",
-33. "faas-content-type": "json"
-34. }, "application/json", "200");
-35. res.body = { "intervalTime": interval };
-36. callback(res);
-37. } catch (error) {
-38. logger.error("--------Error-------");
-39. logger.error("error: " + error);
-40. callback(error);
-41. }
-42. };
-
-44. module.exports.myHandler = myHandler;
+module.exports.myHandler = myHandler;
 ```
 
 ## 准备函数部署包
 
 上传的Node.js函数部署包须使用如下结构，处理程序所在代码文件，例如示例中的handler.js，必须在zip包根目录下，依赖项放到node\_modules目录下。
 
-```
-1. my-function.zip
-2. |---- handler.js
-3. |---- node_modules
-4. |----async
-5. |----async-listener
+```txt
+my-function.zip
+  |---- handler.js
+  |---- node_modules
+    |----async
+    |----async-listener
 ```
 
 可通过npm工具的相关命令，安装与管理依赖。例如npm install xxx命令（执行路径无限制）可将依赖xxx自动安装到根目录的node\_modules文件夹下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/kG6yelJNRVedhazDdOf41A/zh-cn_image_0000002589245149.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/GWgf33MeR46tcXiknu00rQ/zh-cn_image_0000002736313967.png)

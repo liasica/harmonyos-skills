@@ -1,24 +1,20 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-masspointoverlay
-title: MassPointOverlay
-breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > MassPointOverlay
+title: Interface (MassPointOverlay)
+breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (MassPointOverlay)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:20+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:58aa1378ef0ab831b43f2f67c7d7a59a7151e0156842c7e65287924b08772cb6
+scraped_at: 2026-09-02T15:02:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:93538ea403e42a88a345e57737eaebde03d3d27010092e9d862a2dc2d5cb6380
 ---
 
 ## 导入模块
 
-PhonePC/2in1TabletWearable
-
-```
-1. import { map, mapCommon } from '@kit.MapKit';
+```typescript
+import { map, mapCommon } from '@kit.MapKit';
 ```
 
 ## MassPointOverlay
-
-PhonePC/2in1TabletWearable
 
 海量点的管理对象。在调用map.[MapComponentController](map-map-mapcomponentcontroller.md)类的[addMassPointOverlay](map-map-mapcomponentcontroller.md#addmasspointoverlay)方法时会返回该类型的实例。
 
@@ -32,32 +28,32 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. let items: mapCommon.MassPointItem[] = [];
-2. for (let i = 0; i < 1000; i++) {
-3. // 将海量点存入items
-4. items.push({
-5. itemId: 'test' + i,
-6. position: {
-7. longitude: 118.11111 + Math.random() * 1 - 0.5,
-8. latitude: 32.11111 + Math.random() * 1 - 0.5
-9. },
-10. snippet: 'test' + i,
-11. title: 'test' + i
-12. })
-13. }
-14. let params: mapCommon.MassPointOverlayParams = {
-15. id: 'test',
-16. items: items,
-17. // 图标存放在resources/rawfile，icon参数传入rawfile文件夹下的相对路径
-18. icon: 'icon/maps_blue_dot.png'
-19. }
-20. let massPointOverlay = await this.mapController?.addMassPointOverlay(params);
+```typescript
+let items: mapCommon.MassPointItem[] = [];
+for (let i = 0; i < 1000; i++) {
+  // 将海量点存入items
+  items.push({
+    // itemId为开发者自定义标识符
+    itemId: 'test' + i,
+    // 经纬度坐标
+    position: {
+      longitude: 118.11111 + Math.random() * 1 - 0.5,
+      latitude: 32.11111 + Math.random() * 1 - 0.5
+    },
+    snippet: 'test' + i,
+    title: 'test' + i
+  })
+}
+let params: mapCommon.MassPointOverlayParams = {
+  id: 'test',
+  items: items,
+  // 图标存放在resources/rawfile，icon参数传入rawfile文件夹下的相对路径
+  icon: 'icon/maps_blue_dot.png'
+}
+let massPointOverlay = await this.mapController?.addMassPointOverlay(params);
 ```
 
 ### getId
-
-PhonePC/2in1TabletWearable
 
 getId(): string
 
@@ -79,13 +75,11 @@ getId(): string
 
 **示例：**
 
-```
-1. let Id = massPointOverlay.getId();
+```typescript
+let Id = massPointOverlay.getId();
 ```
 
 ### setItems
-
-PhonePC/2in1TabletWearable
 
 setItems(items: mapCommon.MassPointItem[]): void
 
@@ -107,23 +101,21 @@ setItems(items: mapCommon.MassPointItem[]): void
 
 **示例：**
 
-```
-1. let items: mapCommon.MassPointItem[] = [
-2. {
-3. itemId: '1',
-4. position: { latitude: 32.11111, longitude: 118.11111 }
-5. },
-6. {
-7. itemId: '2',
-8. position: { latitude: 32.22222, longitude: 118.22222 }
-9. }
-10. ];
-11. massPointOverlay.setItems(items);
+```typescript
+let items: mapCommon.MassPointItem[] = [
+  {
+    itemId: '1',
+    position: { latitude: 32.11111, longitude: 118.11111 }
+  },
+  {
+    itemId: '2',
+    position: { latitude: 32.22222, longitude: 118.22222 }
+  }
+];
+massPointOverlay.setItems(items);
 ```
 
 ### getItems
-
-PhonePC/2in1TabletWearable
 
 getItems(): mapCommon.MassPointItem[]
 
@@ -145,13 +137,11 @@ getItems(): mapCommon.MassPointItem[]
 
 **示例：**
 
-```
-1. let MassPointItem: mapCommon.MassPointItem[] = this.massPointOverlay.getItems();
+```typescript
+let MassPointItem: mapCommon.MassPointItem[] = this.massPointOverlay.getItems();
 ```
 
 ### setAnchorU
-
-PhonePC/2in1TabletWearable
 
 setAnchorU(anchorU: number): void
 
@@ -173,13 +163,11 @@ setAnchorU(anchorU: number): void
 
 **示例：**
 
-```
-1. massPointOverlay.setAnchorU(0.6);
+```typescript
+massPointOverlay.setAnchorU(0.6);
 ```
 
 ### getAnchorU
-
-PhonePC/2in1TabletWearable
 
 getAnchorU(): number
 
@@ -201,13 +189,11 @@ getAnchorU(): number
 
 **示例：**
 
-```
-1. let AnchorU: number = this.massPointOverlay.getAnchorU();
+```typescript
+let AnchorU: number = this.massPointOverlay.getAnchorU();
 ```
 
 ### setAnchorV
-
-PhonePC/2in1TabletWearable
 
 setAnchorV(anchorV: number): void
 
@@ -229,13 +215,11 @@ setAnchorV(anchorV: number): void
 
 **示例：**
 
-```
-1. massPointOverlay.setAnchorV(0.6);
+```typescript
+massPointOverlay.setAnchorV(0.6);
 ```
 
 ### getAnchorV
-
-PhonePC/2in1TabletWearable
 
 getAnchorV(): number
 
@@ -257,13 +241,11 @@ getAnchorV(): number
 
 **示例：**
 
-```
-1. let AnchorV: number = this.massPointOverlay.getAnchorV();
+```typescript
+let AnchorV: number = this.massPointOverlay.getAnchorV();
 ```
 
 ### setVisible
-
-PhonePC/2in1TabletWearable
 
 setVisible(visible: boolean): void
 
@@ -285,13 +267,11 @@ setVisible(visible: boolean): void
 
 **示例：**
 
-```
-1. massPointOverlay.setVisible(true);
+```typescript
+massPointOverlay.setVisible(true);
 ```
 
 ### isVisible
-
-PhonePC/2in1TabletWearable
 
 isVisible(): boolean
 
@@ -313,13 +293,11 @@ isVisible(): boolean
 
 **示例：**
 
-```
-1. let isVisible: boolean = massPointOverlay.isVisible();
+```typescript
+let isVisible: boolean = massPointOverlay.isVisible();
 ```
 
 ### remove
-
-PhonePC/2in1TabletWearable
 
 remove(): void
 
@@ -335,6 +313,6 @@ remove(): void
 
 **示例：**
 
-```
-1. massPointOverlay.remove();
+```typescript
+massPointOverlay.remove();
 ```

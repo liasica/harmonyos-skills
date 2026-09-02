@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-69
 title: 是否支持开发者自行管理线程数量
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 是否支持开发者自行管理线程数量
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:03+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:14+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:2cc22a03aabb7729c744a5ed8e173b88a1fa3b1c4eeca2886359bbb2ed6a9746
 ---
 

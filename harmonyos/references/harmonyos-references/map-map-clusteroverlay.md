@@ -1,26 +1,22 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-clusteroverlay
-title: ClusterOverlay
-breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > ClusterOverlay
+title: Interface (ClusterOverlay)
+breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (ClusterOverlay)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:17+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:2f1efdf57a85729d2aedff19fd6e80b5424a8ce4a40e507908bdd04caa161386
+scraped_at: 2026-09-02T15:02:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d5f267e1e9fd59291b025c5ac643d0ae89614143721c0bf5395cd628ac6a0866
 ---
 
 ## 导入模块
 
-PhonePC/2in1TabletWearable
-
-```
-1. import { map, mapCommon } from '@kit.MapKit';
+```typescript
+import { map, mapCommon } from '@kit.MapKit';
 ```
 
 ## ClusterOverlay
 
-PhonePC/2in1TabletWearable
-
-聚合图层类。
+聚合图层类。ClusterOverlay用于在地图上展示聚合后的标记点，以优化大量标记点显示时的性能和用户体验。它将地理位置相近的多个标记点合并为一个聚合点，并支持点击聚合点展开查看具体标记点。适用于展示大量POI数据、避免地图过于拥挤的情况。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -32,33 +28,31 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. let clusterItem1: mapCommon.ClusterItem = {
-2. position: {
-3. latitude: 31.984,
-4. longitude: 118.766
-5. }
-6. };
-7. let clusterItem2: mapCommon.ClusterItem = {
-8. position: {
-9. latitude: 31.974,
-10. longitude:118.75
-11. }
-12. };
-13. let array: Array<mapCommon.ClusterItem> = [
-14. clusterItem1,
-15. clusterItem2
-16. ];
-17. let clusterOverlayParams: mapCommon.ClusterOverlayParams = {
-18. distance: 40,
-19. clusterItems: array
-20. };
-21. let clusterOverlay: map.ClusterOverlay = await this.mapController.addClusterOverlay(clusterOverlayParams);
+```typescript
+let clusterItem1: mapCommon.ClusterItem = {
+  position: {
+    latitude: 31.984,
+    longitude: 118.766
+  }
+};
+let clusterItem2: mapCommon.ClusterItem = {
+  position: {
+    latitude: 31.974,
+    longitude:118.75
+  }
+};
+let array: Array<mapCommon.ClusterItem> = [
+  clusterItem1,
+  clusterItem2
+];
+let clusterOverlayParams: mapCommon.ClusterOverlayParams = {
+  distance: 40,
+  clusterItems: array
+};
+let clusterOverlay: map.ClusterOverlay = await this.mapController.addClusterOverlay(clusterOverlayParams);
 ```
 
 ### on('clusterClick')
-
-PhonePC/2in1TabletWearable
 
 on(type: 'clusterClick', callback: Callback<Array<mapCommon.ClusterItem>>): void
 
@@ -83,15 +77,13 @@ on(type: 'clusterClick', callback: Callback<Array<mapCommon.ClusterItem>>): void
 
 **示例：**
 
-```
-1. clusterOverlay.on("clusterClick", (clusterItems) => {
-2. console.info(`callback: ${clusterItems.length}`);
-3. });
+```typescript
+clusterOverlay.on("clusterClick", (clusterItems) => {
+  console.info(`callback: ${clusterItems.length}`);
+});
 ```
 
 ### off('clusterClick')
-
-PhonePC/2in1TabletWearable
 
 off(type: 'clusterClick', callback?: Callback<void>): void
 
@@ -112,19 +104,17 @@ off(type: 'clusterClick', callback?: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'clusterClick'：聚合图层的聚合点点击监听事件。 |
-| callback | Callback<void> | 否 | 回调函数。无返回结果的回调函数。 |
+| callback | Callback<void> | 否 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. clusterOverlay.off("clusterClick", () => {
-2. console.info("callback off");
-3. });
+```typescript
+clusterOverlay.off("clusterClick", () => {
+  console.info("callback off");
+});
 ```
 
 ### on('click')
-
-PhonePC/2in1TabletWearable
 
 on(type: 'click', callback: Callback<Array<mapCommon.ClusterItem>>): void
 
@@ -147,24 +137,22 @@ on(type: 'click', callback: Callback<Array<mapCommon.ClusterItem>>): void
 
 **示例：**
 
-```
-1. let callback1 = (clusterItem: Array<mapCommon.ClusterItem>) => {
-2. console.info("click", `callback1 clusterItem length: ${clusterItem.length}`);
-3. };
-4. let callback2 = (clusterItem: Array<mapCommon.ClusterItem>) => {
-5. console.info("click", `callback2 clusterItem length: ${clusterItem.length}`);
-6. };
-7. let callback3 = (clusterItem: Array<mapCommon.ClusterItem>) => {
-8. console.info("click", `callback3 clusterItem length: ${clusterItem.length}`);
-9. };
-10. clusterOverlay.on("click", callback1);
-11. clusterOverlay.on("click", callback2);
-12. clusterOverlay.on("click", callback3);
+```typescript
+let callback1 = (clusterItem: Array<mapCommon.ClusterItem>) => {
+  console.info("click", `callback1 clusterItem length: ${clusterItem.length}`);
+};
+let callback2 = (clusterItem: Array<mapCommon.ClusterItem>) => {
+  console.info("click", `callback2 clusterItem length: ${clusterItem.length}`);
+};
+let callback3 = (clusterItem: Array<mapCommon.ClusterItem>) => {
+  console.info("click", `callback3 clusterItem length: ${clusterItem.length}`);
+};
+clusterOverlay.on("click", callback1);
+clusterOverlay.on("click", callback2);
+clusterOverlay.on("click", callback3);
 ```
 
 ### off('click')
-
-PhonePC/2in1TabletWearable
 
 off(type: 'click', callback?: Callback<Array<mapCommon.ClusterItem>>): void
 
@@ -187,29 +175,27 @@ off(type: 'click', callback?: Callback<Array<mapCommon.ClusterItem>>): void
 
 **示例：**
 
-```
-1. let callback1 = (clusterItem: Array<mapCommon.ClusterItem>) => {
-2. console.info("click", `callback1 clusterItem`);
-3. };
-4. let callback2 = (clusterItem: Array<mapCommon.ClusterItem>) => {
-5. console.info("click", `callback2 clusterItem`);
-6. };
-7. let callback3 = (clusterItem: Array<mapCommon.ClusterItem>) => {
-8. console.info("click", `callback3 clusterItem`);
-9. };
-10. clusterOverlay.on("click", callback1);
-11. clusterOverlay.on("click", callback2);
-12. clusterOverlay.on("click", callback3);
+```typescript
+let callback1 = (clusterItem: Array<mapCommon.ClusterItem>) => {
+  console.info("click", `callback1 clusterItem`);
+};
+let callback2 = (clusterItem: Array<mapCommon.ClusterItem>) => {
+  console.info("click", `callback2 clusterItem`);
+};
+let callback3 = (clusterItem: Array<mapCommon.ClusterItem>) => {
+  console.info("click", `callback3 clusterItem`);
+};
+clusterOverlay.on("click", callback1);
+clusterOverlay.on("click", callback2);
+clusterOverlay.on("click", callback3);
 
-14. // 只取消callback1对象的事件响应，当click事件发生时，callback2和callback3会正常被调用
-15. clusterOverlay.off('click', callback1);
-16. // 取消全部click事件响应
-17. clusterOverlay.off('click');
+// 只取消callback1对象的事件响应，当click事件发生时，callback2和callback3会正常被调用
+clusterOverlay.off('click', callback1);
+// 取消全部click事件响应
+clusterOverlay.off('click');
 ```
 
 ### on('markerClusterClick')
-
-PhonePC/2in1TabletWearable
 
 on(type: 'markerClusterClick', callback: Callback<MarkerClusterInfo>): void
 
@@ -232,24 +218,22 @@ on(type: 'markerClusterClick', callback: Callback<MarkerClusterInfo>): void
 
 **示例：**
 
-```
-1. let callback1 = (markerClusterInfo: map.MarkerClusterInfo) => {
-2. console.info("markerClusterClick", `callback1 markerClusterInfo`);
-3. };
-4. let callback2 = (markerClusterInfo: map.MarkerClusterInfo) => {
-5. console.info("markerClusterClick", `callback2 markerClusterInfo`);
-6. };
-7. let callback3 = (markerClusterInfo: map.MarkerClusterInfo) => {
-8. console.info("markerClusterClick", `callback3 markerClusterInfo`);
-9. };
-10. clusterOverlay.on("markerClusterClick", callback1);
-11. clusterOverlay.on("markerClusterClick", callback2);
-12. clusterOverlay.on("markerClusterClick", callback3);
+```typescript
+let callback1 = (markerClusterInfo: map.MarkerClusterInfo) => {
+  console.info("markerClusterClick", `callback1 markerClusterInfo`);
+};
+let callback2 = (markerClusterInfo: map.MarkerClusterInfo) => {
+  console.info("markerClusterClick", `callback2 markerClusterInfo`);
+};
+let callback3 = (markerClusterInfo: map.MarkerClusterInfo) => {
+  console.info("markerClusterClick", `callback3 markerClusterInfo`);
+};
+clusterOverlay.on("markerClusterClick", callback1);
+clusterOverlay.on("markerClusterClick", callback2);
+clusterOverlay.on("markerClusterClick", callback3);
 ```
 
 ### off('markerClusterClick')
-
-PhonePC/2in1TabletWearable
 
 off(type: 'markerClusterClick', callback?: Callback<MarkerClusterInfo>): void
 
@@ -272,28 +256,26 @@ off(type: 'markerClusterClick', callback?: Callback<MarkerClusterInfo>): void
 
 **示例：**
 
-```
-1. let callback1 = (markerClusterInfo: map.MarkerClusterInfo) => {
-2. console.info("markerClusterClick", `callback1 markerClusterInfo`);
-3. };
-4. let callback2 = (markerClusterInfo: map.MarkerClusterInfo) => {
-5. console.info("markerClusterClick", `callback2 markerClusterInfo`);
-6. };
-7. let callback3 = (markerClusterInfo: map.MarkerClusterInfo) => {
-8. console.info("markerClusterClick", `callback3 markerClusterInfo`);
-9. };
-10. clusterOverlay.on("markerClusterClick", callback1);
-11. clusterOverlay.on("markerClusterClick", callback2);
-12. clusterOverlay.on("markerClusterClick", callback3);
-13. // 只取消callback1对象的事件响应，当markerClusterClick事件发生时，callback2和callback3会正常被调用
-14. clusterOverlay.off('markerClusterClick', callback1);
-15. // 取消全部markerClusterClick事件响应
-16. clusterOverlay.off('markerClusterClick');
+```typescript
+let callback1 = (markerClusterInfo: map.MarkerClusterInfo) => {
+  console.info("markerClusterClick", `callback1 markerClusterInfo`);
+};
+let callback2 = (markerClusterInfo: map.MarkerClusterInfo) => {
+  console.info("markerClusterClick", `callback2 markerClusterInfo`);
+};
+let callback3 = (markerClusterInfo: map.MarkerClusterInfo) => {
+  console.info("markerClusterClick", `callback3 markerClusterInfo`);
+};
+clusterOverlay.on("markerClusterClick", callback1);
+clusterOverlay.on("markerClusterClick", callback2);
+clusterOverlay.on("markerClusterClick", callback3);
+// 只取消callback1对象的事件响应，当markerClusterClick事件发生时，callback2和callback3会正常被调用
+clusterOverlay.off('markerClusterClick', callback1);
+// 取消全部markerClusterClick事件响应
+clusterOverlay.off('markerClusterClick');
 ```
 
 ### addItem
-
-PhonePC/2in1TabletWearable
 
 addItem(item: mapCommon.ClusterItem): Promise<void>
 
@@ -321,19 +303,17 @@ addItem(item: mapCommon.ClusterItem): Promise<void>
 
 **示例：**
 
-```
-1. let clusterItem: mapCommon.ClusterItem = {
-2. position: {
-3. latitude: 31.98,
-4. longitude: 118.766
-5. }
-6. };
-7. await clusterOverlay.addItem(clusterItem);
+```typescript
+let clusterItem: mapCommon.ClusterItem = {
+  position: {
+    latitude: 31.98,
+    longitude: 118.766
+  }
+};
+await clusterOverlay.addItem(clusterItem);
 ```
 
 ### remove
-
-PhonePC/2in1TabletWearable
 
 remove(): Promise<void>
 
@@ -355,6 +335,6 @@ remove(): Promise<void>
 
 **示例：**
 
-```
-1. await clusterOverlay.remove();
+```typescript
+await clusterOverlay.remove();
 ```

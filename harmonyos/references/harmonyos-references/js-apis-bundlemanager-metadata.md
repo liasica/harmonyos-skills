@@ -3,34 +3,30 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: Metadata
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > bundleManager > Metadata
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:47+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:ad5bdd97e74afc7ca3940a9713f7c27ab9b468080736b740c52b63783004975a
+scraped_at: 2026-09-02T15:00:35+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1dca217d93d33cd2f073466b48b1813c5668a58479b6570a50f0bd7892908bc6
 ---
 
 元数据对象，可以通过[bundleManager.getBundleInfoForSelf](js-apis-bundlemanager.md#bundlemanagergetbundleinfoforself)获取，其中参数bundleFlags至少包含GET\_BUNDLE\_INFO\_WITH\_METADATA。此对象在[ApplicationInfo](js-apis-bundlemanager-applicationinfo.md)、[HapModuleInfo](js-apis-bundlemanager-hapmoduleinfo.md)、[AbilityInfo](js-apis-bundlemanager-abilityinfo.md)、[ExtensionAbilityInfo](js-apis-bundlemanager-extensionabilityinfo.md)中均包含。
 
-说明
+**说明** 
 
-本模块首批接口从API version 9 开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 描述的module、uiAbility、extensionAbility配置信息，标签值为数组类型，该标签下的配置只对当前module、uiAbility或者extensionAbility生效。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { bundleManager } from '@kit.AbilityKit';
+```ts
+import { bundleManager } from '@kit.AbilityKit';
 ```
 
 ## Metadata
 
-PhonePC/2in1TabletTVWearable
-
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
-**系统能力**: SystemCapability.BundleManager.BundleFramework.Core
+**系统能力**：SystemCapability.BundleManager.BundleFramework.Core
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

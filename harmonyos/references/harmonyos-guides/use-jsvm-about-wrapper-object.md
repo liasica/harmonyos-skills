@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-abou
 title: 使用JSVM-API接口进行Wrapper object相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口进行Wrapper object相关开发
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:24+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:f8c1f9043439df148ae33cc2ac2577b90143a70f1a1e6517b63e78f0a5e4a3b4
+scraped_at: 2026-09-02T15:00:17+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a3478f54849e782dc29af132c32b7827d7fd65907e80fa813420e35abf076658
 ---
 
 ## 简介
 
-JSVM-API中，装箱类型(Wrapper object)判断相关接口支持通过不同API快速判断object的装箱类型。
+JSVM-API中，装箱类型（Wrapper object）判断相关接口支持通过不同API快速判断object的装箱类型。
 
 ## 基本概念
 
@@ -34,48 +34,48 @@ JSVM-API接口开发流程参考[使用JSVM-API实现JS与C/C++语言交互开�
 
 cpp部分代码：
 
-```
-1. #include <string>
+```cpp
+#include <string>
 
-3. static JSVM_Value WrapperObject(JSVM_Env env, JSVM_CallbackInfo info) {
-4. JSVM_VM vm;
-5. OH_JSVM_GetVM(env, &vm);
+static JSVM_Value WrapperObject(JSVM_Env env, JSVM_CallbackInfo info) {
+    JSVM_VM vm;
+    OH_JSVM_GetVM(env, &vm);
 
-7. JSVM_HandleScope handleScope;
-8. OH_JSVM_OpenHandleScope(env, &handleScope);
-9. std::string src = R"JS(new Number(42))JS";
-10. JSVM_Value jsSrc;
-11. JSVM_Script script;
-12. JSVM_Value result;
+    JSVM_HandleScope handleScope;
+    OH_JSVM_OpenHandleScope(env, &handleScope);
+    std::string src = R"JS(new Number(42))JS";
+    JSVM_Value jsSrc;
+    JSVM_Script script;
+    JSVM_Value result;
 
-14. OH_JSVM_CreateStringUtf8(env, src.c_str(), JSVM_AUTO_LENGTH, &jsSrc);
-15. OH_JSVM_CompileScript(env, jsSrc, nullptr, 0, true, nullptr, &script);
-16. OH_JSVM_RunScript(env, script, &result);
-17. bool isNumberObject = false;
-18. OH_JSVM_IsNumberObject(env, result, &isNumberObject);
-19. OH_LOG_INFO(LOG_APP, "JSVM OH_JSVM_IsNumberObject: %{public}d\n", isNumberObject);
-20. OH_JSVM_CloseHandleScope(env, handleScope);
+    OH_JSVM_CreateStringUtf8(env, src.c_str(), JSVM_AUTO_LENGTH, &jsSrc);
+    OH_JSVM_CompileScript(env, jsSrc, nullptr, 0, true, nullptr, &script);
+    OH_JSVM_RunScript(env, script, &result);
+    bool isNumberObject = false;
+    OH_JSVM_IsNumberObject(env, result, &isNumberObject);
+    OH_LOG_INFO(LOG_APP, "JSVM OH_JSVM_IsNumberObject: %{public}d\n", isNumberObject);
+    OH_JSVM_CloseHandleScope(env, handleScope);
 
-22. return nullptr;
-23. }
+    return nullptr;
+}
 
-25. static JSVM_CallbackStruct param[] = {
-26. {.data = nullptr, .callback = WrapperObject},
-27. };
+static JSVM_CallbackStruct param[] = {
+    {.data = nullptr, .callback = WrapperObject},
+};
 
-29. static JSVM_CallbackStruct *method = param;
+static JSVM_CallbackStruct *method = param;
 
-31. // wrapperObject方法别名，供JS调用
-32. static JSVM_PropertyDescriptor descriptor[] = {
-33. {"wrapperObject", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
-34. };
+// wrapperObject方法别名，供JS调用
+static JSVM_PropertyDescriptor descriptor[] = {
+    {"wrapperObject", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
+};
 
-36. // 样例测试JS
-37. const char *srcCallNative = R"JS(wrapperObject();)JS";
+// 样例测试JS
+const char *srcCallNative = R"JS(wrapperObject();)JS";
 ```
 
 预期输出：
 
-```
-1. JSVM OH_JSVM_IsNumberObject: 1
+```txt
+JSVM OH_JSVM_IsNumberObject: 1
 ```

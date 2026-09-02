@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/insight-intent-config-development
 title: 使用配置文件开发意图
-breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > 意图框架开发指导 > 开发意图 > 使用配置文件开发意图
+breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 方舟智能开发框架开发指导 > 意图框架开发指导 > 开发意图 > 使用配置文件开发意图
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:54+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6c6b6b4495c55a29b1992cf871ca460227fa9746e0ef5db984fbd1451612d739
+scraped_at: 2026-09-02T14:59:10+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2ae0a7203b0fe96fc1b0351576c2cf19dbf1196aab7be25131b8e6a614b22833
 ---
 
 ## 简介
@@ -39,60 +39,58 @@ content_hash: sha256:6c6b6b4495c55a29b1992cf871ca460227fa9746e0ef5db984fbd145161
 
    此时将在module目录 > src > main > resources > base > profile中，生成insight\_intent.json文件，可在该文件查看当前意图框架配置的相关信息。
 
-   ```
-   1. {
-   2. "insightIntents": [
-   3. {
-   4. "domain": "MusicDomain",
-   5. "intentName": "PlayMusic",
-   6. "intentVersion": "1.0.1",
-   7. "srcEntry": "./ets/insightintents/PlayMusicExecutor.ets",
-   8. "uiAbility": {
-   9. "ability": "MusicPlayerAbility",
-   10. "executeMode": [
-   11. "foreground",
-   12. "background"
-   13. ]
-   14. }
-   15. }
-   16. ]
-   17. }
+   ```json
+   {
+     "insightIntents": [
+       {
+         "domain": "MusicDomain",
+         "intentName": "PlayMusic",
+         "intentVersion": "1.0.1",
+         "srcEntry": "./ets/insightintents/PlayMusicExecutor.ets",
+         "uiAbility": {
+           "ability": "MusicPlayerAbility",
+           "executeMode": [
+             "foreground",
+             "background"
+           ]
+         }
+       }
+     ]
+   }
    ```
 4. 在module目录 > src > main > ets > insightintents目录下生成入口代码文件。开发者在意图执行函数中实现意图的功能代码。
 
+   ```typescript
+   // 本示例对应意图配置中的'srcEntry'字段对应的文件
+   import { InsightIntentExecutor, insightIntent } from '@kit.AbilityKit';
+   import { window } from '@kit.ArkUI';
+   // ···
+
+   export default class PlayMusicExecutor extends InsightIntentExecutor {
+     // 由于意图配置中'executeMode'配置了'foreground'前台模式执行，故需要实现该接口
+     async onExecuteInUIAbilityForegroundMode(intentName: string, params: Record<string, Object>,
+       windowStage: window.WindowStage): Promise<insightIntent.ExecuteResult> {
+       // 实现播放逻辑
+       // ···
+       const result: insightIntent.ExecuteResult = {
+         code: 0
+       };
+       return Promise.resolve(result);
+     }
+
+     // 由于意图配置中'executeMode'配置了'background'后台模式执行，故需要实现该接口
+     async onExecuteInUIAbilityBackgroundMode(intentName: string,
+       params: Record<string, Object>): Promise<insightIntent.ExecuteResult> {
+       // 后台控制逻辑
+       const result: insightIntent.ExecuteResult = {
+         code: 0
+       };
+       return Promise.resolve(result);
+     }
+   }
    ```
-   1. // 本示例对应意图配置中的'srcEntry'字段对应的文件
-   2. import { InsightIntentExecutor, insightIntent } from '@kit.AbilityKit';
-   3. import { window } from '@kit.ArkUI';
-   4. // ···
 
-   6. export default class PlayMusicExecutor extends InsightIntentExecutor {
-   7. // 由于意图配置中'executeMode'配置了'foreground'前台模式执行，故需要实现该接口
-   8. async onExecuteInUIAbilityForegroundMode(intentName: string, params: Record<string, Object>,
-   9. windowStage: window.WindowStage): Promise<insightIntent.ExecuteResult> {
-   10. // 实现播放逻辑
-   11. // ···
-   12. const result: insightIntent.ExecuteResult = {
-   13. code: 0
-   14. };
-   15. return Promise.resolve(result);
-   16. }
-
-   18. // 由于意图配置中'executeMode'配置了'background'后台模式执行，故需要实现该接口
-   19. async onExecuteInUIAbilityBackgroundMode(intentName: string,
-   20. params: Record<string, Object>): Promise<insightIntent.ExecuteResult> {
-   21. // 后台控制逻辑
-   22. const result: insightIntent.ExecuteResult = {
-   23. code: 0
-   24. };
-   25. return Promise.resolve(result);
-   26. }
-   27. }
-   ```
-
-   [PlayMusicExecutor.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/InsightIntentConfigDevelopment/entry/src/main/ets/insightintents/PlayMusicExecutor.ets#L15-L50)
-
-说明
+**说明** 
 
 配置文件范式仅提供基础执行能力，参数格式需开发者与系统入口协商。
 
@@ -109,40 +107,38 @@ content_hash: sha256:6c6b6b4495c55a29b1992cf871ca460227fa9746e0ef5db984fbd145161
 
 意图配置示例：
 
-```
-1. {
-2. "insightIntents": [
-3. {
-4. "domain": "MusicDomain",
-5. "intentName": "PlayMusic",
-6. "intentVersion": "1.0.1",
-7. "srcEntry": "./ets/insightintents/ExtensionExecutor.ets",
-8. "uiExtension": {
-9. "ability": "MusicExtensionAbility"
-10. }
-11. }
-12. ]
-13. }
+```json
+{
+  "insightIntents": [
+    {
+      "domain": "MusicDomain",
+      "intentName": "PlayMusic",
+      "intentVersion": "1.0.1",
+      "srcEntry": "./ets/insightintents/ExtensionExecutor.ets",
+      "uiExtension": {
+        "ability": "MusicExtensionAbility"
+      }
+    }
+  ]
+}
 ```
 
 意图执行器实现：
 
-```
-1. import { InsightIntentExecutor, insightIntent, UIExtensionContentSession } from '@kit.AbilityKit';
+```typescript
+import { InsightIntentExecutor, insightIntent, UIExtensionContentSession } from '@kit.AbilityKit';
 
-3. export default class ExtensionExecutor extends InsightIntentExecutor {
-4. // 由于意图配置了uiExtension，故需要实现该接口
-5. async onExecuteInUIExtensionAbility(name: string, param: Record<string, Object>,
-6. pageLoader: UIExtensionContentSession): Promise<insightIntent.ExecuteResult> {
-7. const result: insightIntent.ExecuteResult = {
-8. code: 0
-9. };
-10. return Promise.resolve(result);
-11. }
-12. }
+export default class ExtensionExecutor extends InsightIntentExecutor {
+  // 由于意图配置了uiExtension，故需要实现该接口
+  async onExecuteInUIExtensionAbility(name: string, param: Record<string, Object>,
+    pageLoader: UIExtensionContentSession): Promise<insightIntent.ExecuteResult> {
+    const result: insightIntent.ExecuteResult = {
+      code: 0
+    };
+    return Promise.resolve(result);
+  }
+}
 ```
-
-[ExtensionExecutor.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/InsightIntentConfigDevelopment/entry/src/main/ets/insightintents/ExtensionExecutor.ets#L15-L28)
 
 系统入口通过UIExtensionComponent组件执行该意图。
 
@@ -152,21 +148,21 @@ content_hash: sha256:6c6b6b4495c55a29b1992cf871ca460227fa9746e0ef5db984fbd145161
 
 意图配置示例：
 
-```
-1. {
-2. "insightIntents": [
-3. {
-4. "domain": "MusicDomain",
-5. "intentName": "PlayMusic",
-6. "intentVersion": "1.0.1",
-7. "srcEntry": "./ets/insightintents/WidgetExecutor.ets",
-8. "form": {
-9. "ability": "PlayerWidgetAbility",
-10. "formName": "mini_player"
-11. }
-12. }
-13. ]
-14. }
+```json
+{
+  "insightIntents": [
+    {
+      "domain": "MusicDomain",
+      "intentName": "PlayMusic",
+      "intentVersion": "1.0.1",
+      "srcEntry": "./ets/insightintents/WidgetExecutor.ets",
+      "form": {
+        "ability": "PlayerWidgetAbility",
+        "formName": "mini_player"
+      }
+    }
+  ]
+}
 ```
 
 系统入口通过FormComponent组件展示卡片内容。

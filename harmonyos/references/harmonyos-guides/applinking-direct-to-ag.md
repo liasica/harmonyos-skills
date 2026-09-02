@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/applinking-di
 title: 通过直达应用市场能力跳转至应用市场下载详情页
 breadcrumb: 指南 > 应用服务 > App Linking Kit（应用链接服务） > 通过直达应用市场能力跳转至应用市场下载详情页
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:37:32+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:60ecc2e4a9703580e7428dc4c24b5e60060564f92c2881f0915483c38a17dea9
+scraped_at: 2026-09-02T14:59:53+08:00
+doc_updated_at: 2026-08-03
+content_hash: sha256:d9a8f730cf62e0dae71f1d1fefc63901652dde64e907c61d597bfd007aea88d4
 ---
 
 ## 场景介绍
@@ -41,14 +41,14 @@ content_hash: sha256:60ecc2e4a9703580e7428dc4c24b5e60060564f92c2881f0915483c38a1
    2. 在项目列表中点击目标方应用所在的项目。
    3. 在左侧导航栏中选择“增长 > App Linking > 应用链接”，点击“操作”列的“直达应用市场”。
 
-      说明
+      **说明** 
 
       只有[在AGC创建关联的网址域名](app-linking-startupapp.md#在agc为应用创建关联的网址域名)状态为“成功”时，才支持配置直达应用市场链接。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/nQsdFmcrQaO6ZYosYeWZHg/zh-cn_image_0000002558605648.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/hhfzNy2hRDK8w6eWJtHuUA/zh-cn_image_0000002736313927.png)
    4. 在配置页面，下拉选择与该域名关联的在架应用，为应用配置直达应用市场链接。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/aPDW5AxNRs6KnR1hUFbVSQ/zh-cn_image_0000002589325175.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/NGb35nnuR6quhK6wV7lnRg/zh-cn_image_0000002706674884.png)
 
       * 可以点击“添加应用”为多个应用配置直达链接，当该域名下关联的在架应用全部配置后，无法再添加应用。
       * 可以根据以下规则配置直达链接。
@@ -75,11 +75,11 @@ content_hash: sha256:60ecc2e4a9703580e7428dc4c24b5e60060564f92c2881f0915483c38a1
 
       如下图，“是否配置直达应用市场”显示“是”，表示链接配置成功。
 
-      说明
+      **说明** 
 
       链接配置成功后，一般需要24~48小时才能生效，请耐心等待。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/aMH8GUgeRXC7Zke2qqsEjA/zh-cn_image_0000002589245111.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/0KNHbBmQRkCEvQYwQNCvkg/zh-cn_image_0000002736433971.png)
 2. 验证应用被拉起效果。
 
    * 方式一：将直达应用市场链接地址存入备忘录中，并点击验证该链接是否可以拉起应用。
@@ -89,50 +89,57 @@ content_hash: sha256:60ecc2e4a9703580e7428dc4c24b5e60060564f92c2881f0915483c38a1
 
         1. 在“entry/src/main/ets/common”目录下添加GlobalContext.ets文件，开发初始化和获取应用上下文的接口。
 
-           ```
-           1. import { common } from '@kit.AbilityKit';
+           ```typescript
+           import { common } from '@kit.AbilityKit';
 
-           3. export class GlobalContext {
-           4. private static context: common.UIAbilityContext;
+           export class GlobalContext {
+             private static context: common.UIAbilityContext;
 
-           6. public static initContext(context: common.UIAbilityContext): void {
-           7. GlobalContext.context = context;
-           8. }
+             public static initContext(context: common.UIAbilityContext): void {
+               GlobalContext.context = context;
+             }
 
-           10. public static getContext(): common.UIAbilityContext {
-           11. return GlobalContext.context;
-           12. }
-           13. }
+             public static getContext(): common.UIAbilityContext {
+               return GlobalContext.context;
+             }
+           }
            ```
         2. 在“entry/src/main/ets/entryability/EntryAbility.ets”文件中导入GlobalContext，在onCreate方法中使用GlobalContext.initContext(this.context)初始化全局应用上下文。
         3. 在“entry/src/main/ets/pages/Index.ets”文件中，使用[UIAbilityContext.openLink()](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#openlink12)接口配置跳转链接。
 
-           ```
-           1. import { hilog } from '@kit.PerformanceAnalysisKit';
-           2. import { BusinessError } from '@kit.BasicServicesKit';
-           3. import { GlobalContext } from '../common/GlobalContext';
+           ```typescript
+           import { BusinessError } from '@kit.BasicServicesKit';
+           import { hilog } from '@kit.PerformanceAnalysisKit';
+           import { GlobalContext } from '../common/GlobalContext';
+           // ...
 
-           5. @Entry
-           6. @Component
-           7. struct Index {
-           8. build() {
-           9. Button('start link', { type: ButtonType.Capsule, stateEffect: true })
-           10. .width('87%')
-           11. .height('5%')
-           12. .margin({ bottom: '12vp' })
-           13. .onClick(() => {
-           14. let context = GlobalContext.getContext();
-           15. let link: string = "https://www.example.com/product?pageName=productDetail";
-           16. context.openLink(link, { appLinkingOnly: false })
-           17. .then(() => {
-           18. hilog.info(0x0000, 'testTag', `Succeeded in opening link.`);
-           19. })
-           20. .catch((error: BusinessError) => {
-           21. hilog.error(0x0000, 'testTag', `Failed to open link, code: ${error.code}, message: ${error.message}`);
-           22. })
-           23. })
-           24. }
-           25. }
+           @Entry
+           @Component
+           struct Index {
+             // ...
+
+             build() {
+               // ...
+                 Button('start link market', { type: ButtonType.Capsule, stateEffect: true })
+                   .width('100%')
+                   .height(40)
+                   .margin({ top: '20vp' })
+                   .onClick(() => {
+                     let context = GlobalContext.getContext();
+                     let link: string = 'https://www.example.com/product?pageName=productDetail';
+                     context.openLink(link, { appLinkingOnly: false })
+                       .then(() => {
+                         hilog.info(0x0000, 'testTag', `Succeeded in opening link.`);
+                       })
+                       .catch((error: BusinessError) => {
+                         hilog.error(0x0000, 'testTag', `Failed to open link, code: ${error.code}, message: ${error.message}`);
+                       })
+                   })
+                 // ...
+             }
+
+             // ...
+           }
            ```
      2. 安装拉起方应用，点击拉起方应用中的跳转按钮。
 
@@ -143,7 +150,7 @@ content_hash: sha256:60ecc2e4a9703580e7428dc4c24b5e60060564f92c2881f0915483c38a1
 
 ### 使用ArkWeb拉起目标应用，当目标应用未安装时，会直接跳转到应用市场下载详情页面吗？
 
-当开发者通过系统浏览器或ArkWeb拉起目标应用时，如果目标应用未安装，不会直接跳转应用市场，需要开发者根据自身业务自行实现跳转应用市场的能力。详细可参见“Web和应用的跳转与拉起”开发实践中的《[ArkWeb页面指定应用跳转](../best-practices/bpta-web-app-jump-and-pull-up.md#section37419543116)》章节。
+当开发者通过系统浏览器或ArkWeb拉起目标应用时，如果目标应用未安装，不会直接跳转应用市场，需要开发者根据自身业务自行实现跳转应用市场的能力。详细可参见“Web和应用的跳转与拉起”开发实践中的“[ArkWeb页面指定应用跳转](navigating-between-web-and-apps.md#arkweb页面指定应用跳转)”章节。
 
 ### 哪些服务支持接入App Linking Kit的直达应用市场能力？
 

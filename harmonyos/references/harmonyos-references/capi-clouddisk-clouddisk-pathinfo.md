@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-clou
 title: CloudDisk_PathInfo
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > C API > 结构体 > CloudDisk_PathInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:54+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:4c58ae924411ba4d499f2817b9243a1da8f73986254db9f8eda9bf6fe4203ebe
+scraped_at: 2026-09-02T15:01:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8c43a3ae7396ee999e8ed5d1c9c3c3e9ee06aeaecaf15ff088341e94733bc17f
 ---
 
-```
-1. typedef struct CloudDisk_PathInfo {...} CloudDisk_PathInfo
-2. typedef struct CloudDisk_PathInfo CloudDisk_FieldInfo
-3. typedef struct CloudDisk_PathInfo CloudDisk_SyncFolderPath
+```c
+typedef struct CloudDisk_PathInfo {...} CloudDisk_PathInfo
+typedef struct CloudDisk_PathInfo CloudDisk_FieldInfo
+typedef struct CloudDisk_PathInfo CloudDisk_SyncFolderPath
 ```
 
 ## 概述
-
-PC/2in1Tablet
 
 文件路径信息。
 
@@ -28,11 +26,7 @@ PC/2in1Tablet
 
 ## 汇总
 
-PC/2in1Tablet
-
 ### 成员变量
-
-PC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |

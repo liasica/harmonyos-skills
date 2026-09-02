@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getdy
 title: GetDynamicSubgraphBuilder
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator > GetDynamicSubgraphBuilder
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:41+08:00
+scraped_at: 2026-09-02T15:00:12+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:50b58d5ea41324a8fb386e51ae3b5af26f682008448a7d8cfc8a899ec3c3b092
+content_hash: sha256:f514dc889606409b0ead3cfbf4d413ca3c9d20cb79e9f8cd207dd21732648ba5
 ---
 
 ## 函数功能
@@ -14,13 +14,13 @@ content_hash: sha256:50b58d5ea41324a8fb386e51ae3b5af26f682008448a7d8cfc8a899ec3c
 
 ## 函数原型
 
-说明
+**说明** 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 
-```
-1. SubgraphBuilder GetDynamicSubgraphBuilder(const std::string &name, uint32_t index) const;
-2. SubgraphBuilder GetDynamicSubgraphBuilder(const char_t *name, uint32_t index) const;
+```cpp
+SubgraphBuilder GetDynamicSubgraphBuilder(const std::string &name, uint32_t index) const;
+SubgraphBuilder GetDynamicSubgraphBuilder(const char_t *name, uint32_t index) const;
 ```
 
 ## 参数说明

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-259
 title: 为什么vp2px、px2vp返回的结果不正确
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 为什么vp2px、px2vp返回的结果不正确
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 为什么vp2px、px2vp返回的结果不正确
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:05+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:21+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:ac7dbceb53be73d6600bae15b4f32894d82a9ef4d4836bbcea65e13d49b065d7
 ---
 

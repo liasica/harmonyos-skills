@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: SecurityAntivirus
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > C API > 模块 > SecurityAntivirus
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:17+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:d6cbd8176c04cb7df18c38188872ed5dec8db53910d3da2c37e4b4a04add7ae8
+scraped_at: 2026-09-02T15:01:43+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7b5a4fec7b4c537a3bc0fecb9ce433e1017a5d5d1c13cccdb1894c4344f7aae2
 ---
 
 ## 概述
-
-PC/2in1
 
 SecurityAntivirus模块用于管理三方病毒防护服务应用。
 
@@ -20,11 +18,7 @@ SecurityAntivirus模块用于管理三方病毒防护服务应用。
 
 ## 汇总
 
-PC/2in1
-
 ### 文件
-
-PC/2in1
 
 | 名称 | 描述 |
 | --- | --- |
@@ -32,23 +26,17 @@ PC/2in1
 
 ### 结构体
 
-PC/2in1
-
 | 名称 | 描述 |
 | --- | --- |
 | struct [SecurityAntivirus\_Antivirus](devicesecurity-capi-structs-securityantivirus.md) | 定义病毒防护服务应用信息，包含包名、当前版本号、上次更新时间、病毒防护开关状态、用户ID。 |
 
 ### 枚举
 
-PC/2in1
-
 | 名称 | 描述 |
 | --- | --- |
 | [SecurityAntivirus\_ErrCode](devicesecurity-capi-securityantivirus.md#securityantivirus_errcode){  SECURITY\_ANTIVIRUS\_SUCCESS = 0,  SECURITY\_ANTIVIRUS\_PERMISSION\_NOT\_GRANTED = 201,  SECURITY\_ANTIVIRUS\_PARAM\_INVALID = 1019900001,  SECURITY\_ANTIVIRUS\_NO\_REGISTER = 1019900002,  SECURITY\_ANTIVIRUS\_INNER\_ERROR = 1019900003  } | 定义病毒防护服务管理错误码。 |
 
 ### 函数
-
-PC/2in1
 
 | 名称 | 描述 |
 | --- | --- |
@@ -64,14 +52,10 @@ PC/2in1
 
 ## 枚举类型说明
 
-PC/2in1
-
 ### SecurityAntivirus\_ErrCode
 
-PC/2in1
-
-```
-1. enum SecurityAntivirus_ErrCode
+```c
+enum SecurityAntivirus_ErrCode
 ```
 
 **描述**
@@ -94,14 +78,10 @@ PC/2in1
 
 ## 函数说明
 
-PC/2in1
-
 ### HMS\_SecurityAntivirus\_RegisterAntivirus()
 
-PC/2in1
-
-```
-1. SecurityAntivirus_ErrCode HMS_SecurityAntivirus_RegisterAntivirus(const char* bundleName)
+```c
+SecurityAntivirus_ErrCode HMS_SecurityAntivirus_RegisterAntivirus(const char* bundleName)
 ```
 
 **描述**
@@ -126,10 +106,8 @@ ohos.permission.REGISTER\_ANTIVIRUS
 
 ### HMS\_SecurityAntivirus\_UnregisterAntivirus()
 
-PC/2in1
-
-```
-1. SecurityAntivirus_ErrCode HMS_SecurityAntivirus_UnregisterAntivirus(const char* bundleName)
+```c
+SecurityAntivirus_ErrCode HMS_SecurityAntivirus_UnregisterAntivirus(const char* bundleName)
 ```
 
 **描述**
@@ -154,10 +132,8 @@ ohos.permission.REGISTER\_ANTIVIRUS
 
 ### HMS\_SecurityAntivirus\_UpdateAntivirus()
 
-PC/2in1
-
-```
-1. SecurityAntivirus_ErrCode HMS_SecurityAntivirus_UpdateAntivirus(const SecurityAntivirus_Antivirus* antivirus)
+```c
+SecurityAntivirus_ErrCode HMS_SecurityAntivirus_UpdateAntivirus(const SecurityAntivirus_Antivirus* antivirus)
 ```
 
 **描述**
@@ -182,10 +158,8 @@ ohos.permission.REGISTER\_ANTIVIRUS
 
 ### HMS\_SecurityAntivirus\_QueryAntivirus()
 
-PC/2in1
-
-```
-1. SecurityAntivirus_ErrCode HMS_SecurityAntivirus_QueryAntivirus(SecurityAntivirus_Antivirus** list, uint32_t* length)
+```c
+SecurityAntivirus_ErrCode HMS_SecurityAntivirus_QueryAntivirus(SecurityAntivirus_Antivirus** list, uint32_t* length)
 ```
 
 **描述**
@@ -211,10 +185,8 @@ ohos.permission.MANAGE\_ANTIVIRUS
 
 ### HMS\_SecurityAntivirus\_QueryPreinstalledAntivirus()
 
-PC/2in1
-
-```
-1. SecurityAntivirus_ErrCode HMS_SecurityAntivirus_QueryPreinstalledAntivirus(SecurityAntivirus_Antivirus** list, uint32_t* length)
+```c
+SecurityAntivirus_ErrCode HMS_SecurityAntivirus_QueryPreinstalledAntivirus(SecurityAntivirus_Antivirus** list, uint32_t* length)
 ```
 
 **描述**
@@ -240,10 +212,8 @@ ohos.permission.MANAGE\_PREINSTALLED\_ANTIVIRUS
 
 ### HMS\_SecurityAntivirus\_EnablePreinstalledAntivirus()
 
-PC/2in1
-
-```
-1. SecurityAntivirus_ErrCode HMS_SecurityAntivirus_EnablePreinstalledAntivirus(void)
+```c
+SecurityAntivirus_ErrCode HMS_SecurityAntivirus_EnablePreinstalledAntivirus(void)
 ```
 
 **描述**
@@ -262,10 +232,8 @@ ohos.permission.MANAGE\_PREINSTALLED\_ANTIVIRUS
 
 ### HMS\_SecurityAntivirus\_DisablePreinstalledAntivirus()
 
-PC/2in1
-
-```
-1. SecurityAntivirus_ErrCode HMS_SecurityAntivirus_DisablePreinstalledAntivirus(void)
+```c
+SecurityAntivirus_ErrCode HMS_SecurityAntivirus_DisablePreinstalledAntivirus(void)
 ```
 
 **描述**
@@ -284,10 +252,8 @@ ohos.permission.MANAGE\_PREINSTALLED\_ANTIVIRUS
 
 ### HMS\_SecurityAntivirus\_EnablePreinstalledAntivirusByAccount()
 
-PC/2in1
-
-```
-1. SecurityAntivirus_ErrCode HMS_SecurityAntivirus_EnablePreinstalledAntivirusByAccount(int32_t accountId)
+```c
+SecurityAntivirus_ErrCode HMS_SecurityAntivirus_EnablePreinstalledAntivirusByAccount(int32_t accountId)
 ```
 
 **描述**
@@ -312,10 +278,8 @@ ohos.permission.MANAGE\_PREINSTALLED\_ANTIVIRUS
 
 ### HMS\_SecurityAntivirus\_DisablePreinstalledAntivirusByAccount()
 
-PC/2in1
-
-```
-1. SecurityAntivirus_ErrCode HMS_SecurityAntivirus_DisablePreinstalledAntivirusByAccount(int32_t accountId)
+```c
+SecurityAntivirus_ErrCode HMS_SecurityAntivirus_DisablePreinstalledAntivirusByAccount(int32_t accountId)
 ```
 
 **描述**

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-interna
 title: UI国际化
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI国际化
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:24+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:b875d38e4249aa9413aaa2d15e61cd6bd724a89bd6812fd490d25e0b6716865e
+scraped_at: 2026-09-02T14:59:19+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0b29d5413989a224036a202c17c0ed03c3a38dfc2af6e971b14f6143e5247f06
 ---
 
 本文介绍如何实现应用程序UI界面的国际化，包含资源配置和镜像布局，关于应用适配国际化的详细参考，请参考[Localization Kit（本地化开发服务）](i18n-l10n.md)。
@@ -61,32 +61,30 @@ ArkUI 如下能力已默认适配镜像：
 
 以position为例，需要把绝对方向x、y描述改为新入参类型start、end的描述，其他属性类似。
 
+```typescript
+import { LengthMetrics } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct InterfaceLayoutBorderSettings {
+  build() {
+    Stack({ alignContent: Alignment.TopStart }) {
+      Stack({ alignContent: Alignment.TopStart }) {
+        Column()
+          .width(100)
+          .height(100)
+          .backgroundColor(Color.Red)
+          .position({
+            start: LengthMetrics.px(200),
+            top: LengthMetrics.px(200)
+          }) // 需要同时支持LTR和RTL时使用API12新增的LocalizedEdges入参类型,
+        // 仅支持LTR时等同于.position({ x: '200px', y: '200px' })
+
+      }.backgroundColor(Color.Blue)
+    }.width('100%').height('100%').border({ color: '#880606' })
+  }
+}
 ```
-1. import { LengthMetrics } from '@kit.ArkUI';
-
-3. @Entry
-4. @Component
-5. struct InterfaceLayoutBorderSettings {
-6. build() {
-7. Stack({ alignContent: Alignment.TopStart }) {
-8. Stack({ alignContent: Alignment.TopStart }) {
-9. Column()
-10. .width(100)
-11. .height(100)
-12. .backgroundColor(Color.Red)
-13. .position({
-14. start: LengthMetrics.px(200),
-15. top: LengthMetrics.px(200)
-16. }) // 需要同时支持LTR和RTL时使用API12新增的LocalizedEdges入参类型,
-17. // 仅支持LTR时等同于.position({ x: '200px', y: '200px' })
-
-19. }.backgroundColor(Color.Blue)
-20. }.width('100%').height('100%').border({ color: '#880606' })
-21. }
-22. }
-```
-
-[InterfaceLayoutBorderSettings.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/internationalization/entry/src/main/ets/homePage/InterfaceLayoutBorderSettings.ets#L15-L38)
 
 ### 自定义绘制Canvas组件
 
@@ -98,69 +96,67 @@ Canvas组件的绘制内容和坐标均不支持镜像能力。已绘制到Canva
 2. Canvas组件本身不会自动跟随系统语言切换镜像效果，需要应用监听到系统语言切换后自行重新绘制。
 3. CanvasRenderingContext2D绘制文本时，只有符号等文本会对绘制方向生效，英文字母和数字不响应绘制方向的变化。
 
+```typescript
+import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
+
+@Entry
+@Component
+struct CustomizeCanvasComponentDrawing {
+  @State message: string = 'Hello world';
+  private settings: RenderingContextSettings = new RenderingContextSettings(true)
+  private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings)
+
+  aboutToAppear(): void {
+    // 监听系统语言切换
+    let subscriber: commonEventManager.CommonEventSubscriber | null = null;
+    let subscribeInfo2: commonEventManager.CommonEventSubscribeInfo = {
+      events: ['usual.event.LOCALE_CHANGED'],
+    }
+    commonEventManager.createSubscriber(subscribeInfo2,
+      (err: BusinessError, data: commonEventManager.CommonEventSubscriber) => {
+        if (err) {
+          console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
+          return;
+        }
+
+        subscriber = data;
+        if (subscriber !== null) {
+          commonEventManager.subscribe(subscriber, (err: BusinessError, data: commonEventManager.CommonEventData) => {
+            if (err) {
+              return;
+            }
+            // 监听到语言切换后，需要重新绘制Canvas内容
+            this.drawText();
+          })
+        } else {
+            console.error(`Need create subscriber`);
+        }
+      })
+  }
+
+  drawText(): void {
+    console.error('drawText')
+    this.context.reset()
+    this.context.direction = 'inherit'
+    this.context.font = '30px sans-serif'
+    this.context.fillText('ab%123&*@', 50, 50)
+  }
+
+  build() {
+    Row() {
+      Canvas(this.context)
+        .direction(Direction.Auto)
+        .width('100%')
+        .height('100%')
+        .onReady(() =>{
+          this.drawText()
+        })
+    }
+    .height('100%')
+  }
+
+}
 ```
-1. import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
-
-3. @Entry
-4. @Component
-5. struct CustomizeCanvasComponentDrawing {
-6. @State message: string = 'Hello world';
-7. private settings: RenderingContextSettings = new RenderingContextSettings(true)
-8. private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings)
-
-10. aboutToAppear(): void {
-11. // 监听系统语言切换
-12. let subscriber: commonEventManager.CommonEventSubscriber | null = null;
-13. let subscribeInfo2: commonEventManager.CommonEventSubscribeInfo = {
-14. events: ['usual.event.LOCALE_CHANGED'],
-15. }
-16. commonEventManager.createSubscriber(subscribeInfo2,
-17. (err: BusinessError, data: commonEventManager.CommonEventSubscriber) => {
-18. if (err) {
-19. console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
-20. return;
-21. }
-
-23. subscriber = data;
-24. if (subscriber !== null) {
-25. commonEventManager.subscribe(subscriber, (err: BusinessError, data: commonEventManager.CommonEventData) => {
-26. if (err) {
-27. return;
-28. }
-29. // 监听到语言切换后，需要重新绘制Canvas内容
-30. this.drawText();
-31. })
-32. } else {
-33. console.error(`MayTest Need create subscriber`);
-34. }
-35. })
-36. }
-
-38. drawText(): void {
-39. console.error('MayTest drawText')
-40. this.context.reset()
-41. this.context.direction = 'inherit'
-42. this.context.font = '30px sans-serif'
-43. this.context.fillText('ab%123&*@', 50, 50)
-44. }
-
-46. build() {
-47. Row() {
-48. Canvas(this.context)
-49. .direction(Direction.Auto)
-50. .width('100%')
-51. .height('100%')
-52. .onReady(() =>{
-53. this.drawText()
-54. })
-55. }
-56. .height('100%')
-57. }
-
-59. }
-```
-
-[CustomizeCanvasComponentDrawing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/internationalization/entry/src/main/ets/homePage/CustomizeCanvasComponentDrawing.ets#L15-L76)
 
 | 镜像前 | 镜像后 |
 | --- | --- |
@@ -174,7 +170,7 @@ Canvas组件的绘制内容和坐标均不支持镜像能力。已绘制到Canva
 
 在LTR与RTL文本混排时，如一个英文句子中包含阿拉伯语的单词或短语，显示顺序将变得复杂。下图为数字和维吾尔语混合时对应的字符逻辑顺序。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/BcSpLOvVSL219wE8SVCumQ/zh-cn_image_0000002589244331.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/p0tQL-V4RyqTB3uRty5Kkg/zh-cn_image_0000002736312963.png)
 
 此时，文本渲染引擎会采用名为“双向算法”或“Unicode双向算法”（Unicode Bidirectional Algorithm）的方法来确定字符的显示顺序。下图展示了LTR与RTL文本混合时对应的字符显示顺序，确定字符方向的基本原则如下：
 
@@ -182,4 +178,4 @@ Canvas组件的绘制内容和坐标均不支持镜像能力。已绘制到Canva
 2. 弱字符的方向性：弱字符不具备明确的方向性，这些字符不会影响其周围中性字符的方向。
 3. 中性字符的方向性：中性字符无固定方向性，它们会继承其最近的强字符的方向；若附近无强字符，则采用全局方向。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/DgPqJx36RgWk7oWkayfrmg/zh-cn_image_0000002558764524.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/aoCyMJHmTN-i4HuX60Mxrg/zh-cn_image_0000002706673922.png)

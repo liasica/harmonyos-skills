@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-targeting-api12-b065
 title: 针对API 12应用的变更
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Beta引入的接口行为变更 > 针对API 12应用的变更
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Beta引入的接口行为变更 > 针对API 12应用的变更
 category: harmonyos-releases
-scraped_at: 2026-04-29T13:24:09+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:3ef86d7a8f0e8bd18bbaa13536c65fbb7f32dcde54f52cbe65221dea2e26b44f
+scraped_at: 2026-09-02T14:58:53+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:839cc6e15b25821129bbb8a8b975f77a15cc6992dfefb5207ab34408390a31a6
 ---
 
 ## Ability
@@ -16,7 +16,7 @@ content_hash: sha256:3ef86d7a8f0e8bd18bbaa13536c65fbb7f32dcde54f52cbe65221dea2e2
 
 BackupExtensionAbility进程用于数据迁移服务，进行数据迁移时，应用还未启动，此时拉起启动框架会影响数据迁移的正常执行。
 
-说明
+**说明** 
 
 该变更在9月21日发布的patch版本引入，对应开发工具DevEco Studio版本为5.0.3.810。
 
@@ -76,28 +76,28 @@ end(chunk?: string | Uint8Array): string;
 
 变更描述：Uint8Array中存在元素0的情况，无需适配，属于问题修复。
 
-```
-1. import { util } from '@kit.ArkTS';
+```ts
+import { util } from '@kit.ArkTS';
 
-3. let decoder = new util.StringDecoder('utf-8');
-4. // 0xE4, 0xBD, 0xA0 解码结果：你
-5. // 0                解码结果：\u0000(不可见字符，占一个长度)
-6. // 0xE5, 0xA5, 0xBD 解码结果：好
-7. let input = new Uint8Array([0xE4, 0xBD, 0xA0, 0, 0xE5, 0xA5, 0xBD]);
-8. const decoded = decoder.write(input);
-9. const decodedend = decoder.end(input);
+let decoder = new util.StringDecoder('utf-8');
+// 0xE4, 0xBD, 0xA0 解码结果：你
+// 0                解码结果：\u0000(不可见字符，占一个长度)
+// 0xE5, 0xA5, 0xBD 解码结果：好
+let input = new Uint8Array([0xE4, 0xBD, 0xA0, 0, 0xE5, 0xA5, 0xBD]);
+const decoded = decoder.write(input);
+const decodedend = decoder.end(input);
 
-11. // 变更前:
-12. // console.info("decoded:", decoded);// 你
-13. // console.info("decoded.length:", decoded.length);// 1
-14. // console.info("decodedend:", decodedend);// 你
-15. // console.info("decodedend.length:", decodedend.length);// 1
+// 变更前:
+// console.info("decoded:", decoded);// 你
+// console.info("decoded.length:", decoded.length);// 1
+// console.info("decodedend:", decodedend);// 你
+// console.info("decodedend.length:", decodedend.length);// 1
 
-17. // 变更后：
-18. console.info("decoded:", decoded);// 你好
-19. console.info("decoded.length:", decoded.length);// 3
-20. console.info("decodedend:", decodedend);// 你好
-21. console.info("decodedend.length:", decodedend.length);// 3
+// 变更后：
+console.info("decoded:", decoded);// 你好
+console.info("decoded.length:", decoded.length);// 3
+console.info("decodedend:", decodedend);// 你好
+console.info("decodedend.length:", decodedend.length);// 3
 ```
 
 ## ArkUI
@@ -128,25 +128,25 @@ V2组件内的@Local,@Param,@Event,@Provider,@Consumer,@BuilderParam装饰器不
 
 在V2组件内，每一个被@Local,@Param,@Event,@Provider,@Consumer,@BuilderParam修饰的变量加上类型声明。
 
-```
-1. @Builder
-2. function testBuilder() {
+```ts
+@Builder
+function testBuilder() {
+  
+}
 
-4. }
+@Entry
+@ComponentV2
+struct V2ComponentMember {
+  @Local localValue: string = 'localValue';
+  @BuilderParam builderParamValue: () => void = testBuilder;
+  @Param paramValue: string = 'paramValue';
+  @Event eventValue: string = 'eventValue';
+  @Provider() providerValue: string = 'providerValue';
+  @Consumer() consumerValue: string = 'consumerValue';
+  build() {
 
-6. @Entry
-7. @ComponentV2
-8. struct V2ComponentMember {
-9. @Local localValue: string = 'localValue';
-10. @BuilderParam builderParamValue: () => void = testBuilder;
-11. @Param paramValue: string = 'paramValue';
-12. @Event eventValue: string = 'eventValue';
-13. @Provider() providerValue: string = 'providerValue';
-14. @Consumer() consumerValue: string = 'consumerValue';
-15. build() {
-
-17. }
-18. }
+  }
+}
 ```
 
 ### 修复C-API场景下NODE\_TIME\_PICKER\_DISAPPEAR\_TEXT\_STYLE的get接口的错误行为
@@ -199,9 +199,9 @@ nodeApi->getAttribute(node, NODE\_TIME\_PICKER\_TEXT\_STYLE)
 
 当用户存在指定数据类型赋值场景时，会出现上述情况; 例如：
 
-```
-1. const params1: SceneResourceParameters = { name: "name1", uri: $rawfile("default_path") }
-2. const test_uri: Resource | undefined = params1.uri;
+```ts
+const params1: SceneResourceParameters = { name: "name1", uri: $rawfile("default_path") }
+const test_uri: Resource | undefined = params1.uri;
 ```
 
 **起始API Level**
@@ -222,55 +222,55 @@ nodeApi->getAttribute(node, NODE\_TIME\_PICKER\_TEXT\_STYLE)
 
 **适配指导**
 
-```
-1. import { Scene, Image, SceneResourceParameters, SceneResourceFactory } from '@kit.ArkGraphics3D'
+```ts
+import { Scene, Image, SceneResourceParameters, SceneResourceFactory } from '@kit.ArkGraphics3D'
 
-3. const params1: SceneResourceParameters = { name: "name1", uri: $rawfile("default_path") }
-4. // 变更前
-5. // const test_uri: Resource | undefined = params1.uri;
-6. // 变更后适配为
-7. const test_uri: ResourceStr | undefined = params1.uri;
+const params1: SceneResourceParameters = { name: "name1", uri: $rawfile("default_path") }
+// 变更前
+// const test_uri: Resource | undefined = params1.uri;
+// 变更后适配为
+const test_uri: ResourceStr | undefined = params1.uri;
 
-9. @Entry
-10. @Component
-11. struct node_geometry {
-12. scene: Scene | null = null;
-13. @State sceneOpt: SceneOptions | null = null;
-14. envImg: Image | null = null;
+@Entry
+@Component
+struct node_geometry {
+    scene: Scene | null = null;
+    @State sceneOpt: SceneOptions | null = null; 
+    envImg: Image | null = null;
 
-16. onPageShow(): void {
-17. this.Init();
-18. }
+    onPageShow(): void {
+        this.Init();
+    }
 
-20. onPageHide(): void {
-21. if (this.scene) {
-22. this.scene.destroy();
-23. }
-24. }
+    onPageHide(): void {
+        if (this.scene) {
+            this.scene.destroy();
+        }
+    }
 
-26. Init(): void {
-27. if (this.scene == null) {
-28. Scene.load($rawfile("default_path"))
-29. .then(async (result: Scene) => {
-30. this.scene = result;
-31. this.sceneOpt = { scene: this.scene, modelType: ModelType.SURFACE } as SceneOptions;
-32. let rf: SceneResourceFactory = this.scene.getResourceFactory();
+    Init(): void {
+        if (this.scene == null) {
+            Scene.load($rawfile("default_path"))
+            .then(async (result: Scene) => {
+                this.scene = result;
+                this.sceneOpt = { scene: this.scene, modelType: ModelType.SURFACE } as SceneOptions;
+                let rf: SceneResourceFactory = this.scene.getResourceFactory();
 
-34. this.envImg = await rf.createImage({ name: "image1", uri: test_uri });
-35. });
-36. }
-37. }
+                this.envImg = await rf.createImage({ name: "image1", uri: test_uri });
+            });
+        }
+    }
 
-39. build() {
-40. Column() {
-41. Component3D(this.sceneOpt)
-42. .renderWidth('100%')
-43. .renderHeight('100%')
-44. .width('100%')
-45. .height('100%')
-46. }
-47. }
-48. }
+    build() {
+        Column() {
+            Component3D(this.sceneOpt)
+                .renderWidth('100%')
+                .renderHeight('100%')
+                .width('100%')
+                .height('100%')
+        }
+    }
+}
 ```
 
 ## ArkWeb
@@ -315,7 +315,7 @@ CustomDialog内嵌Web组件软键盘避让场景。
 
 通用密钥库为了满足未来mini平台算法能力扩展诉求，将加解密算法相关TAG的SystemCapability由SystemCapability.Security.Huks.Extension调整为SystemCapability.Security.Huks.Core。且由于mini平台算法能力较弱，部分算法当前返回不支持，待后续扩展。
 
-说明
+**说明** 
 
 该变更在9月12日发布的patch版本引入，对应开发工具DevEco Studio版本为5.0.3.806。
 
@@ -403,7 +403,7 @@ SystemCapability.Security.Huks.Core为必选基础能力，SystemCapability.Secu
 
 加解密算法库框架为了灵活适配不同平台，按照算法类型对接口重新划分SysCap。
 
-说明
+**说明** 
 
 该变更在9月12日发布的patch版本引入，对应开发工具DevEco Studio版本为5.0.3.806。
 
@@ -482,7 +482,7 @@ SystemCapability.Security.Huks.Core为必选基础能力，SystemCapability.Secu
 1. 输入法Extension进程使用独立沙箱，与应用的主入口进程不可互相访问对方独立沙箱。
 2. 新增输入法Extension与应用的主入口的共享沙箱，基础访问模式下输入法Extension对共享沙箱只读，完整访问模式下可读可写；应用的主入口对共享沙箱保持可读可写。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/Si1lYA2lRH6RcP4NNKMS4w/zh-cn_image_0000002117367217.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/-sB6v70KSU2OeQNJ145y3A/zh-cn_image_0000002117367217.png)
 3. 基础访问模式下，输入法应用Extension进程无法拉起其他Extension应用进程以及其他UIAbility。
 4. 基础访问模式下，输入法Extension进程会受到系统管控，不能使用涉及访问或泄漏用户个人数据的各种接口，同时无法将数据传递出进程。管控功能包括但不限于：网络、短信、电话、麦克风、定位、相机、蓝牙、壁纸、支付、日历、游戏、扬声器、Wi-Fi、剪切板、多媒体、联系人、公共事件、系统账号、健康数据、地图服务、推送服务、融合搜索、共享内存、分布式特性、广告设备标识等。
 5. 基础访问模式下，输入法Extension可以使用基础输入功能相关的必要系统能力，例如，IME Kit、ArkUI、窗口、图形、屏幕管理等。

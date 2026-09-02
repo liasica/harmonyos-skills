@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/hms-ai-te
 title: textToSpeech（文本转语音）
 breadcrumb: API参考 > AI > Core Speech Kit（基础语音服务） > ArkTS API > textToSpeech（文本转语音）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:53+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3bf48ad265a6a12af33ed4f3e2ace3b84187e6ff494f56334f241dcec9fc5ee9
+scraped_at: 2026-09-02T15:03:10+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f8ec2bd51b5774584eee59648c9cedb2c0bcd2f44cf03ad15887ecd7c2e9a5a1
 ---
 
 文本转语音服务提供将文本信息转换为语音并进行播报的能力，便于用户与设备进行互动，实现实时语音交互，文本播报。
@@ -16,21 +16,21 @@ content_hash: sha256:3bf48ad265a6a12af33ed4f3e2ace3b84187e6ff494f56334f241dcec9f
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { textToSpeech } from '@kit.CoreSpeechKit';
+```typescript
+import { textToSpeech } from '@kit.CoreSpeechKit';
 ```
 
 ## textToSpeech.createEngine
 
-PhonePC/2in1Tablet
-
 createEngine(createEngineParams: CreateEngineParams, callback: AsyncCallback<TextToSpeechEngine>): void
 
-创建[TextToSpeechEngine](hms-ai-texttospeech.md#texttospeechengine)实例，并初始化引擎。使用callback异步回调。
+初始化文本转语音引擎并返回一个[TextToSpeechEngine](hms-ai-texttospeech.md#texttospeechengine)实例，如果引擎已初始化，将通过回调返回引擎实例。否则，将通过回调返回错误码和错误描述。使用callback异步回调。
+
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
 
@@ -43,7 +43,7 @@ createEngine(createEngineParams: CreateEngineParams, callback: AsyncCallback<Tex
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Core Speech Kit错误码](errorcode-corespeech.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[Core Speech Kit错误码](errorcode-corespeech.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -54,49 +54,51 @@ createEngine(createEngineParams: CreateEngineParams, callback: AsyncCallback<Tex
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { textToSpeech } from '@kit.CoreSpeechKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { textToSpeech } from '@kit.CoreSpeechKit';
 
-4. // 创建引擎实例相关参数
-5. let ttsEngine: textToSpeech.TextToSpeechEngine;
-6. let extraParam: Record<string, Object> = {"style": 'interaction-broadcast', "locate": 'CN', "name": 'EngineName'};
-7. let initParamsInfo: textToSpeech.CreateEngineParams = {
-8. language: 'zh-CN',
-9. person: 0,
-10. online: 1,
-11. extraParams: extraParam
-12. };
-13. // 调用创建引擎实例接口
-14. textToSpeech.createEngine(initParamsInfo, (err: BusinessError, textToSpeechEngine: textToSpeech.TextToSpeechEngine) => {
-15. if (!err) {
-16. console.info('Succeeded in creating engine.');
-17. // 获得引擎实例
-18. ttsEngine = textToSpeechEngine;
-19. } else {
-20. console.error(`Failed to create engine. Code: ${err.code}, message: ${err.message}.`);
-21. }
-22. });
+// 创建引擎实例相关参数
+let ttsEngine: textToSpeech.TextToSpeechEngine;
+let extraParam: Record<string, Object> = {'style': 'interaction-broadcast', 'locate': 'CN', 'name': 'EngineName'};
+let initParamsInfo: textToSpeech.CreateEngineParams = {
+  language: 'zh-CN',
+  person: 0,
+  online: 1,
+  extraParams: extraParam
+};
+// 调用创建引擎实例接口
+textToSpeech.createEngine(initParamsInfo, (err: BusinessError, textToSpeechEngine: textToSpeech.TextToSpeechEngine) => {
+  if (!err) {
+    console.info('Succeeded in creating engine.');
+    // 获得引擎实例
+    ttsEngine = textToSpeechEngine;
+  } else {
+    console.error(`Failed to create engine. Code: ${err.code}, message: ${err.message}.`);
+  }
+});
 
-24. @Entry
-25. @Component
-26. struct Page {
+@Entry
+@Component
+struct Page {
 
-28. build() {
-29. // ...
-30. }
-31. }
+  build() {
+    // ...
+  }
+}
 ```
 
 ## textToSpeech.createEngine
-
-PhonePC/2in1Tablet
 
 createEngine(createEngineParams: CreateEngineParams): Promise<TextToSpeechEngine>
 
 创建[TextToSpeechEngine](hms-ai-texttospeech.md#texttospeechengine)实例，并初始化引擎。使用Promise异步回调。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
 
@@ -114,7 +116,7 @@ createEngine(createEngineParams: CreateEngineParams): Promise<TextToSpeechEngine
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Core Speech Kit错误码](errorcode-corespeech.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[Core Speech Kit错误码](errorcode-corespeech.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -125,48 +127,50 @@ createEngine(createEngineParams: CreateEngineParams): Promise<TextToSpeechEngine
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { textToSpeech } from '@kit.CoreSpeechKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { textToSpeech } from '@kit.CoreSpeechKit';
 
-4. let ttsEngine: textToSpeech.TextToSpeechEngine;
-5. // 创建引擎实例相关参数
-6. let extraParam: Record<string, Object> = {"style": 'interaction-broadcast', "locate": 'CN', "name": 'EngineName'};
-7. let initParamsInfo: textToSpeech.CreateEngineParams = {
-8. language: 'zh-CN',
-9. person: 0,
-10. online: 1,
-11. extraParams: extraParam
-12. };
+let ttsEngine: textToSpeech.TextToSpeechEngine;
+// 创建引擎实例相关参数
+let extraParam: Record<string, Object> = {'style': 'interaction-broadcast', 'locate': 'CN', 'name': 'EngineName'};
+let initParamsInfo: textToSpeech.CreateEngineParams = {
+  language: 'zh-CN',
+  person: 0,
+  online: 1,
+  extraParams: extraParam
+};
 
-14. // 调用createEngine方法
-15. textToSpeech.createEngine(initParamsInfo).then((res: textToSpeech.TextToSpeechEngine) => {
-16. // 获得引擎实例
-17. ttsEngine = res;
-18. console.info(`Succeeded in creating engine.`);
-19. }).catch((err: BusinessError) =>{
-20. console.error(`Failed to create engine. Code: ${err.code}, message: ${err.message}.`);
-21. });
+// 调用createEngine方法
+textToSpeech.createEngine(initParamsInfo).then((res: textToSpeech.TextToSpeechEngine) => {
+  // 获得引擎实例
+  ttsEngine = res;
+  console.info(`Succeeded in creating engine.`);
+}).catch((err: BusinessError) =>{
+  console.error(`Failed to create engine. Code: ${err.code}, message: ${err.message}.`);
+});
 
-23. @Entry
-24. @Component
-25. struct Page {
+@Entry
+@Component
+struct Page {
 
-27. build() {
-28. // ...
-29. }
-30. }
+  build() {
+    // ...
+  }
+}
 ```
 
 ## textToSpeech.listVoices
-
-PhonePC/2in1Tablet
 
 listVoices(queryParams: VoiceQuery): Promise<VoiceInfo[]>
 
 查询支持的语种音色信息，使用Promise异步回调。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.1(19)
 
@@ -184,7 +188,7 @@ listVoices(queryParams: VoiceQuery): Promise<VoiceInfo[]>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Core Speech Kit错误码](errorcode-corespeech.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -192,46 +196,48 @@ listVoices(queryParams: VoiceQuery): Promise<VoiceInfo[]>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { textToSpeech } from '@kit.CoreSpeechKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { textToSpeech } from '@kit.CoreSpeechKit';
 
-4. // 设置查询相关的参数
-5. let voicesQuery: textToSpeech.VoiceQuery = {
-6. requestId: '123456', // requestId在同一实例内仅能用一次，请勿重复设置
-7. online: 1
-8. }
+// 设置查询相关的参数
+let voicesQuery: textToSpeech.VoiceQuery = {
+  requestId: '123456', // requestId在同一实例内仅能用一次，请勿重复设置
+  online: 1
+};
 
-10. @Entry
-11. @Component
-12. struct Page {
-13. build() {
-14. Button()
-15. .id('Button')
-16. .onClick( () => {
-17. // 调用listVoices方法
-18. textToSpeech.listVoices(voicesQuery).then((res: textToSpeech.VoiceInfo[]) => {
-19. // 获得目前支持的语种音色等信息
-20. console.info(`Succeeded in listing voices, result: ${JSON.stringify(res)}.`);
-21. }).catch((err: BusinessError) =>{
-22. console.error(`Failed to list voices. Code: ${err.code}, message: ${err.message}.`);
-23. });
-24. })
-25. }
-26. }
+@Entry
+@Component
+struct Page {
+  build() {
+    Button()
+      .id('Button')
+      .onClick( () => {
+        // 调用listVoices方法
+        textToSpeech.listVoices(voicesQuery).then((res: textToSpeech.VoiceInfo[]) => {
+          // 获得目前支持的语种音色等信息
+          console.info(`Succeeded in listing voices, result: ${JSON.stringify(res)}.`);
+        }).catch((err: BusinessError) =>{
+          console.error(`Failed to list voices. Code: ${err.code}, message: ${err.message}.`);
+        });
+      })
+  }
+}
 ```
 
 ## textToSpeech.downloadVoice
-
-PhonePC/2in1Tablet
 
 downloadVoice(downloadParams: VoiceDownload, callback: AsyncCallback<DownloadResponse>): void
 
 下载支持的语种音色。使用callback异步回调。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
 
 **设备行为差异：** 该接口在Phone、Tablet、2in1设备中可正常调用，在其他设备中调起下载弹窗后点击下载返回1002300008错误码。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.1(19)
 
@@ -254,113 +260,117 @@ downloadVoice(downloadParams: VoiceDownload, callback: AsyncCallback<DownloadRes
 
 **示例：**
 
-```
-1. import { BusinessError, Callback, ErrorCallback } from '@kit.BasicServicesKit';
-2. import { textToSpeech } from '@kit.CoreSpeechKit';
+```typescript
+import { BusinessError, Callback, ErrorCallback } from '@kit.BasicServicesKit';
+import { textToSpeech } from '@kit.CoreSpeechKit';
 
-4. // 设置下载音色相关参数
-5. let voicesDownload: textToSpeech.VoiceDownload = {
-6. requestId: '12345678-b', // 请求ID，ID不可重复
-7. language: 'en-US',
-8. person: 8,
-9. style: 'interaction-broadcast'
-10. };
+// 设置下载音色相关参数
+let voicesDownload: textToSpeech.VoiceDownload = {
+  requestId: '12345678-b', // 请求ID，ID不可重复
+  language: 'en-US',
+  person: 8,
+  style: 'interaction-broadcast'
+};
 
-12. @Entry
-13. @Component
-14. struct Page {
-15. build() {
-16. Button()
-17. .id('Button')
-18. .onClick(() => {
-19. // 调用downloadVoice方法
-20. textToSpeech.downloadVoice(voicesDownload,
-21. (error: BusinessError, downloadResponse: textToSpeech.DownloadResponse) => {
-22. if (error) {
-23. console.error(`Failed to download voice. code: ${error.code}, message: ${error.message}`);
-24. return;
-25. }
-26. if (!downloadResponse) {
-27. console.error(`Failed to download voice. downloadResponse is null`);
-28. return
-29. }
-30. let requestId: string = downloadResponse.requestId;
+@Entry
+@Component
+struct Page {
+  build() {
+    Button()
+      .id('Button')
+      .onClick(() => {
+        // 调用downloadVoice方法
+        textToSpeech.downloadVoice(voicesDownload,
+          (error: BusinessError, downloadResponse: textToSpeech.DownloadResponse) => {
+            if (error) {
+              console.error(`Failed to download voice. code: ${error.code}, message: ${error.message}`);
+              return;
+            }
+            if (!downloadResponse) {
+              console.error(`Failed to download voice. downloadResponse is null`);
+              return
+            }
+            let requestId: string = downloadResponse.requestId;
 
-32. // 定义函数
-33. let startCallback: Callback<string> = (info: string) => {
-34. // 下载开始回调
-35. console.info(`download voice start, requestId: ${requestId}, info:${info}}`);
-36. }
+            // 定义函数
+            let startCallback: Callback<string> = (info: string) => {
+              // 下载开始回调
+              console.info(`download voice start, requestId: ${requestId}, info:${info}`);
+            };
 
-38. // 定义函数
-39. let progressCallback: Callback<string> = (schedule: string) => {
-40. // 下载进度回调
-41. console.info(`download voice schedule, requestId: ${requestId} scheduleInfo: ${schedule}`);
-42. }
+            // 定义函数
+            let progressCallback: Callback<string> = (schedule: string) => {
+              // 下载进度回调
+              console.info(`download voice schedule, requestId: ${requestId} scheduleInfo: ${schedule}`);
+            };
 
-44. // 定义函数
-45. let completeCallback: Callback<textToSpeech.VoiceInfo> = (voiceInfo: textToSpeech.VoiceInfo) => {
-46. // 下载完成回调
-47. console.info(`download voice complete, requestId: ${requestId} voiceInfo: ${JSON.stringify(voiceInfo)}`);
-48. // 取消下载开始事件回调注册
-49. downloadResponse.off('start', startCallback);
-50. // 取消下载进度事件回调注册
-51. downloadResponse.off('progress',progressCallback);
-52. // 取消下载完成事件回调注册
-53. downloadResponse.off('complete',completeCallback);
-54. // 取消下载取消事件回调注册
-55. downloadResponse.off('cancel',cancelCallback);
-56. // 取消下载过程错误事件回调注册
-57. downloadResponse.off('error',errorCallback);
-58. }
+            // 定义函数
+            let completeCallback: Callback<textToSpeech.VoiceInfo> = (voiceInfo: textToSpeech.VoiceInfo) => {
+              // 下载完成回调
+              console.info(`download voice complete, requestId: ${requestId} voiceInfo: ${JSON.stringify(voiceInfo)}`);
+              // 取消下载开始事件回调注册
+              downloadResponse.off('start', startCallback);
+              // 取消下载进度事件回调注册
+              downloadResponse.off('progress', progressCallback);
+              // 取消下载完成事件回调注册
+              downloadResponse.off('complete', completeCallback);
+              // 取消下载取消事件回调注册
+              downloadResponse.off('cancel', cancelCallback);
+              // 取消下载过程错误事件回调注册
+              downloadResponse.off('error', errorCallback);
+            };
 
-60. // 定义函数
-61. let cancelCallback: Callback<string> = (cancelInfo: string) => {
-62. // 用户取消下载回调
-63. console.error(`download voice cancel, requestId: ${requestId} cancelInfo: ${cancelInfo}`);
-64. }
+            // 定义函数
+            let cancelCallback: Callback<string> = (cancelInfo: string) => {
+              // 用户取消下载回调
+              console.error(`download voice cancel, requestId: ${requestId} cancelInfo: ${cancelInfo}`);
+            };
 
-66. // 定义函数
-67. let errorCallback: ErrorCallback<BusinessError> = (err: BusinessError) => {
-68. // 下载过程错误回调
-69. console.error(`download voice error, requestId: ${requestId} errorCode: ${err.code} errorMessage: ${err.message}`);
-70. }
+            // 定义函数
+            let errorCallback: ErrorCallback<BusinessError> = (err: BusinessError) => {
+              // 下载过程错误回调
+              console.error(`download voice error, requestId: ${requestId} errorCode: ${err.code} errorMessage: ${err.message}`);
+            };
 
-72. // 注册下载开始事件回调
-73. downloadResponse.on('start', startCallback);
-74. // 注册下载进度事件回调
-75. downloadResponse.on('progress', progressCallback);
-76. // 注册下载完成事件回调
-77. downloadResponse.on('complete', completeCallback);
-78. // 注册下载取消事件回调
-79. downloadResponse.on('cancel', cancelCallback);
-80. // 注册下载过程错误事件回调
-81. downloadResponse.on('error', errorCallback);
-82. })
-83. })
-84. }
-85. }
+            // 注册下载开始事件回调
+            downloadResponse.on('start', startCallback);
+            // 注册下载进度事件回调
+            downloadResponse.on('progress', progressCallback);
+            // 注册下载完成事件回调
+            downloadResponse.on('complete', completeCallback);
+            // 注册下载取消事件回调
+            downloadResponse.on('cancel', cancelCallback);
+            // 注册下载过程错误事件回调
+            downloadResponse.on('error', errorCallback);
+          })
+      })
+  }
+}
 ```
 
 ## TextToSpeechEngine
 
-PhonePC/2in1Tablet
+文本转语音类实例，在调用TextToSpeechEngine的方法前，需要先通过[createEngine](hms-ai-texttospeech.md#texttospeechcreateengine)方法创建一个[TextToSpeechEngine](hms-ai-texttospeech.md#texttospeechengine)实例。
 
-文本转语音类，用于执行文本转语音过程中的相关操作。在调用TextToSpeechEngine的方法前，需要先通过[createEngine](hms-ai-texttospeech.md#texttospeechcreateengine)方法创建一个[TextToSpeechEngine](hms-ai-texttospeech.md#texttospeechengine)实例。
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
 
 ### listVoices
 
-PhonePC/2in1Tablet
-
 listVoices(params: VoiceQuery, callback: AsyncCallback<Array<VoiceInfo>>): void
 
 查询支持的语种音色。使用callback异步回调。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
 
@@ -373,7 +383,7 @@ listVoices(params: VoiceQuery, callback: AsyncCallback<Array<VoiceInfo>>): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Core Speech Kit错误码](errorcode-corespeech.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -381,47 +391,49 @@ listVoices(params: VoiceQuery, callback: AsyncCallback<Array<VoiceInfo>>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { textToSpeech } from '@kit.CoreSpeechKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { textToSpeech } from '@kit.CoreSpeechKit';
 
-4. let ttsEngine: textToSpeech.TextToSpeechEngine;
-5. // 设置查询相关参数
-6. let voicesQuery: textToSpeech.VoiceQuery = {
-7. requestId: '123456', // requestId在同一实例内仅能用一次，请勿重复设置
-8. online: 1
-9. }
+let ttsEngine: textToSpeech.TextToSpeechEngine;
+// 设置查询相关参数
+let voicesQuery: textToSpeech.VoiceQuery = {
+  requestId: '123456', // requestId在同一实例内仅能用一次，请勿重复设置
+  online: 1
+};
 
-11. @Entry
-12. @Component
-13. struct Page {
-14. build() {
-15. Button()
-16. .id('Button')
-17. .onClick( () => {
-18. // 调用listVoices方法，以callback返回
-19. ttsEngine.listVoices(voicesQuery, (err: BusinessError, voiceInfo: textToSpeech.VoiceInfo[]) => {
-20. if (!err) {
-21. // 接收目前支持的语种音色等信息
-22. console.info(`Succeeded in listing voices, voiceInfo is ${JSON.stringify(voiceInfo)}.`);
-23. } else {
-24. console.error(`Failed to list voices. Code: ${err.code}, message: ${err.message}.`);
-25. }
-26. });
-27. })
-28. }
-29. }
+@Entry
+@Component
+struct Page {
+  build() {
+    Button()
+      .id('Button')
+      .onClick( () => {
+        // 调用listVoices方法，以callback返回
+        ttsEngine.listVoices(voicesQuery, (err: BusinessError, voiceInfo: textToSpeech.VoiceInfo[]) => {
+          if (!err) {
+            // 接收目前支持的语种音色等信息
+            console.info(`Succeeded in listing voices, voiceInfo is ${JSON.stringify(voiceInfo)}.`);
+          } else {
+            console.error(`Failed to list voices. Code: ${err.code}, message: ${err.message}.`);
+          }
+        });
+      })
+  }
+}
 ```
 
 ### listVoices
-
-PhonePC/2in1Tablet
 
 listVoices(params: VoiceQuery): Promise<Array<VoiceInfo>>
 
 查询支持的语种音色。使用Promise异步回调。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
 
@@ -439,7 +451,7 @@ listVoices(params: VoiceQuery): Promise<Array<VoiceInfo>>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Core Speech Kit错误码](errorcode-corespeech.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -447,45 +459,47 @@ listVoices(params: VoiceQuery): Promise<Array<VoiceInfo>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { textToSpeech } from '@kit.CoreSpeechKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { textToSpeech } from '@kit.CoreSpeechKit';
 
-4. let ttsEngine: textToSpeech.TextToSpeechEngine;
-5. // 设置查询相关的参数
-6. let voicesQuery: textToSpeech.VoiceQuery = {
-7. requestId: '123456', // requestId在同一实例内仅能用一次，请勿重复设置
-8. online: 1
-9. }
+let ttsEngine: textToSpeech.TextToSpeechEngine;
+// 设置查询相关的参数
+let voicesQuery: textToSpeech.VoiceQuery = {
+  requestId: '123456', // requestId在同一实例内仅能用一次，请勿重复设置
+  online: 1
+};
 
-11. @Entry
-12. @Component
-13. struct Page {
-14. build() {
-15. Button()
-16. .id('Button')
-17. .onClick( () => {
-18. // 调用listVoices方法
-19. ttsEngine.listVoices(voicesQuery).then((res: textToSpeech.VoiceInfo[]) => {
-20. // 获得目前支持的语种音色等信息
-21. console.info(`Succeeded in listing voices, result: ${JSON.stringify(res)}.`);
-22. }).catch((err: BusinessError) =>{
-23. console.error(`Failed to list voices. Code: ${err.code}, message: ${err.message}.`);
-24. });
-25. })
-26. }
-27. }
+@Entry
+@Component
+struct Page {
+  build() {
+    Button()
+      .id('Button')
+      .onClick( () => {
+        // 调用listVoices方法
+        ttsEngine.listVoices(voicesQuery).then((res: textToSpeech.VoiceInfo[]) => {
+          // 获得目前支持的语种音色等信息
+          console.info(`Succeeded in listing voices, result: ${JSON.stringify(res)}.`);
+        }).catch((err: BusinessError) =>{
+          console.error(`Failed to list voices. Code: ${err.code}, message: ${err.message}.`);
+        });
+      })
+  }
+}
 ```
 
 ### setListener
 
-PhonePC/2in1Tablet
-
 setListener(listener: SpeakListener): void
 
-设置合成播报回调。
+设置文本转语音的回调函数，该回调函数将接收所有关于文本转语音的信息。
+
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
 
@@ -497,57 +511,59 @@ setListener(listener: SpeakListener): void
 
 **示例：**
 
-```
-1. import { textToSpeech } from '@kit.CoreSpeechKit';
+```typescript
+import { textToSpeech } from '@kit.CoreSpeechKit';
 
-3. let ttsEngine: textToSpeech.TextToSpeechEngine;
-4. // 设置speak的回调信息
-5. let speakListener: textToSpeech.SpeakListener = {
-6. // 开始播报回调
-7. onStart(requestId: string, response: textToSpeech.StartResponse) {
-8. console.info(`onStart, requestId: ${requestId} response: ${JSON.stringify(response)}`);
-9. },
-10. // 合成完成及播报完成回调
-11. onComplete(requestId: string, response: textToSpeech.CompleteResponse) {
-12. console.info(`onComplete, requestId: ${requestId} response: ${JSON.stringify(response)}`);
-13. },
-14. // 停止播报回调
-15. onStop(requestId: string, response: textToSpeech.StopResponse) {
-16. console.info(`onStop, requestId: ${requestId} response: ${JSON.stringify(response)}`);
-17. },
-18. // 返回音频流
-19. onData(requestId: string, audio: ArrayBuffer, response: textToSpeech.SynthesisResponse) {
-20. console.info(`onData, requestId: ${requestId} sequence: ${JSON.stringify(response)} audio: ${JSON.stringify(audio)}`);
-21. },
-22. // 错误回调
-23. onError(requestId: string, errorCode: number, errorMessage: string) {
-24. console.error(`onError, requestId: ${requestId} errorCode: ${errorCode} errorMessage: ${errorMessage}`);
-25. }
-26. };
+let ttsEngine: textToSpeech.TextToSpeechEngine;
+// 设置speak的回调信息
+let speakListener: textToSpeech.SpeakListener = {
+  // 开始播报回调
+  onStart(requestId: string, response: textToSpeech.StartResponse) {
+    console.info(`onStart, requestId: ${requestId} response: ${JSON.stringify(response)}`);
+  },
+  // 合成完成及播报完成回调
+  onComplete(requestId: string, response: textToSpeech.CompleteResponse) {
+    console.info(`onComplete, requestId: ${requestId} response: ${JSON.stringify(response)}`);
+  },
+  // 停止播报回调
+  onStop(requestId: string, response: textToSpeech.StopResponse) {
+    console.info(`onStop, requestId: ${requestId} response: ${JSON.stringify(response)}`);
+  },
+  // 返回音频流
+  onData(requestId: string, audio: ArrayBuffer, response: textToSpeech.SynthesisResponse) {
+    console.info(`onData, requestId: ${requestId} sequence: ${JSON.stringify(response)} audio: ${JSON.stringify(audio)}`);
+  },
+  // 错误回调
+  onError(requestId: string, errorCode: number, errorMessage: string) {
+    console.error(`onError, requestId: ${requestId} errorCode: ${errorCode} errorMessage: ${errorMessage}`);
+  }
+};
 
-28. @Entry
-29. @Component
-30. struct Page {
-31. build() {
-32. Button()
-33. .id('Button')
-34. .onClick( () => {
-35. // 设置回调
-36. ttsEngine.setListener(speakListener);
-37. })
-38. }
-39. }
+@Entry
+@Component
+struct Page {
+  build() {
+    Button()
+      .id('Button')
+      .onClick( () => {
+        // 设置回调
+        ttsEngine.setListener(speakListener);
+      })
+  }
+}
 ```
 
 ### speak
-
-PhonePC/2in1Tablet
 
 speak(text: string, speakParams: SpeakParams): void
 
 合成播报文本。请先调用[setListener](hms-ai-texttospeech.md#setlistener)方法，否则，无法接收语音的回调。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
 
@@ -555,12 +571,12 @@ speak(text: string, speakParams: SpeakParams): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| text | string | 是 | 待播报的文本。根据不同场景的实际需求，可主动设置单词发音方式、数字播报策略、指定汉字发音以及在播报时插入静音停顿。具体方式请参考[设置播报策略](../harmonyos-guides/texttospeech-guide.md#设置播报策略)。  文本长度不得超过10000字符数（不包括文本开头与结尾的空格）。 |
+| text | string | 是 | 待播报的文本。根据不同场景的实际需求，可主动设置单词发音方式、数字播报策略、指定汉字发音以及在播报时插入静音停顿。具体方式请参考[设置播报策略](../harmonyos-guides/texttospeech-guide.md#设置播报策略)。  文本长度不得超过10000字符数（不包括文本开头与结尾的空格）。否则会返回1002300001错误码 |
 | speakParams | [SpeakParams](hms-ai-texttospeech.md#speakparams) | 是 | 合成播报音频的相关参数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Core Speech Kit错误码](errorcode-corespeech.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[Core Speech Kit错误码](errorcode-corespeech.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -569,96 +585,111 @@ speak(text: string, speakParams: SpeakParams): void
 
 **示例：**
 
-```
-1. import { textToSpeech } from '@kit.CoreSpeechKit';
+```typescript
+import { textToSpeech } from '@kit.CoreSpeechKit';
 
-3. let ttsEngine: textToSpeech.TextToSpeechEngine;
-4. // 设置播报内容
-5. let originalText: string = "\n\t\t古人学问无遗力，少壮工夫老始成；\n\t\t" +
-6. "纸上得来终觉浅，绝知此事要躬行。\n\t\t";
+let ttsEngine: textToSpeech.TextToSpeechEngine;
+// 设置播报内容
+let originalText: string = '\n\t\t古人学问无遗力，少壮工夫老始成；\n\t\t' +
+  '纸上得来终觉浅，绝知此事要躬行。\n\t\t';
 
-8. // 合成及播报相关的参数
-9. let extraParam: Record<string, Object> = {"speed": 1, "volume": 2, "pitch": 1, "languageContext": 'zh-CN', "audioType": "pcm"}
-10. let speakParams: textToSpeech.SpeakParams = {
-11. requestId: '123456', // requestId在同一实例内仅能用一次，请勿重复设置
-12. extraParams: extraParam
-13. }
+// 合成及播报相关的参数
+let extraParam: Record<string, Object> = {
+  'speed': 1,
+  'volume': 2,
+  'pitch': 1,
+  'languageContext': 'zh-CN',
+  'audioType': 'pcm'
+};
+let speakParams: textToSpeech.SpeakParams = {
+  requestId: '123456', // requestId在同一实例内仅能用一次，请勿重复设置
+  extraParams: extraParam
+};
 
-15. @Entry
-16. @Component
-17. struct Page {
-18. build() {
-19. Button()
-20. .id('Button')
-21. .onClick( () => {
-22. // 传入文本originalText，调用speak接口
-23. ttsEngine.speak(originalText, speakParams);
-24. })
-25. }
-26. }
+@Entry
+@Component
+struct Page {
+  build() {
+    Button()
+      .id('Button')
+      .onClick( () => {
+        // 传入文本originalText，调用speak接口
+        ttsEngine.speak(originalText, speakParams);
+      })
+  }
+}
 ```
 
 ### stop
-
-PhonePC/2in1Tablet
 
 stop(): void
 
 同时停止合成及播报，请先调用[setListener](hms-ai-texttospeech.md#setlistener)方法，否则无法接收stop的回调。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
 
 **示例：**
 
-```
-1. import { textToSpeech } from '@kit.CoreSpeechKit';
+```typescript
+import { textToSpeech } from '@kit.CoreSpeechKit';
 
-3. let ttsEngine: textToSpeech.TextToSpeechEngine;
-4. // 设置播报内容
-5. let originalText: string = "\n\t\t古人学问无遗力，少壮工夫老始成；\n\t\t" +
-6. "纸上得来终觉浅，绝知此事要躬行。\n\t\t";
+let ttsEngine: textToSpeech.TextToSpeechEngine;
+// 设置播报内容
+let originalText: string = '\n\t\t古人学问无遗力，少壮工夫老始成；\n\t\t' +
+  '纸上得来终觉浅，绝知此事要躬行。\n\t\t';
 
-8. // 合成及播报相关的参数
-9. let extraParam: Record<string, Object> = {"speed": 1, "volume": 2, "pitch": 1, "languageContext": 'zh-CN', "audioType": "pcm"}
-10. let speakParams: textToSpeech.SpeakParams = {
-11. requestId: '123456', // requestId在同一实例内仅能用一次，请勿重复设置
-12. extraParams: extraParam
-13. }
+// 合成及播报相关的参数
+let extraParam: Record<string, Object> = {
+  'speed': 1,
+  'volume': 2,
+  'pitch': 1, 'languageContext': 'zh-CN',
+  'audioType': 'pcm'
+};
+let speakParams: textToSpeech.SpeakParams = {
+  requestId: '123456', // requestId在同一实例内仅能用一次，请勿重复设置
+  extraParams: extraParam
+};
 
-15. @Entry
-16. @Component
-17. struct Page {
-18. build() {
-19. Column(){
-20. Button()
-21. .id('Button')
-22. .onClick( () => {
-23. // 传入文本originalText，调用speak接口
-24. ttsEngine.speak(originalText, speakParams);
-25. })
+@Entry
+@Component
+struct Page {
+  build() {
+    Column(){
+      Button()
+        .id('Button')
+        .onClick( () => {
+          // 传入文本originalText，调用speak接口
+          ttsEngine.speak(originalText, speakParams);
+        })
 
-27. Button()
-28. .id('Stop')
-29. .onClick( () => {
-30. // 调用stop接口
-31. ttsEngine.stop();
-32. })
-33. }
-34. }
-35. }
+      Button()
+        .id('Stop')
+        .onClick( () => {
+          // 调用stop接口
+          ttsEngine.stop();
+        })
+    }
+  }
+}
 ```
 
 ### isBusy
-
-PhonePC/2in1Tablet
 
 isBusy(): boolean
 
 判断引擎当前是否处于合成或播报中。请先调用[setListener](hms-ai-texttospeech.md#setlistener)方法，否则无法接收isBusy()错误相关的回调。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
 
@@ -670,116 +701,132 @@ isBusy(): boolean
 
 **示例：**
 
-```
-1. import { textToSpeech } from '@kit.CoreSpeechKit';
+```typescript
+import { textToSpeech } from '@kit.CoreSpeechKit';
 
-3. let ttsEngine: textToSpeech.TextToSpeechEngine;
-4. // 设置播报内容
-5. let originalText: string = "\n\t\t古人学问无遗力，少壮工夫老始成；\n\t\t" +
-6. "纸上得来终觉浅，绝知此事要躬行。\n\t\t";
+let ttsEngine: textToSpeech.TextToSpeechEngine;
+// 设置播报内容
+let originalText: string = '\n\t\t古人学问无遗力，少壮工夫老始成；\n\t\t' +
+  '纸上得来终觉浅，绝知此事要躬行。\n\t\t';
 
-8. // 合成及播报相关的参数
-9. let extraParam: Record<string, Object> = {"speed": 1, "volume": 2, "pitch": 1, "languageContext": 'zh-CN', "audioType": "pcm"}
-10. let speakParams: textToSpeech.SpeakParams = {
-11. requestId: '123456', // requestId在同一实例内仅能用一次，请勿重复设置
-12. extraParams: extraParam
-13. }
+// 合成及播报相关的参数
+let extraParam: Record<string, Object> = {
+  'speed': 1,
+  'volume': 2,
+  'pitch': 1, 'languageContext': 'zh-CN',
+  'audioType': 'pcm'
+};
+let speakParams: textToSpeech.SpeakParams = {
+  requestId: '123456', // requestId在同一实例内仅能用一次，请勿重复设置
+  extraParams: extraParam
+};
 
-15. @Entry
-16. @Component
-17. struct Page {
-18. build() {
-19. Column(){
-20. Button()
-21. .id('Button')
-22. .onClick( () => {
-23. // 传入文本originalText，调用speak接口
-24. ttsEngine.speak(originalText, speakParams);
-25. })
+@Entry
+@Component
+struct Page {
+  build() {
+    Column(){
+      Button()
+        .id('Button')
+        .onClick( () => {
+          // 传入文本originalText，调用speak接口
+          ttsEngine.speak(originalText, speakParams);
+        })
 
-27. Button()
-28. .id('isBusy')
-29. .onClick( () => {
-30. // 调用isBusy接口
-31. let isBusy = ttsEngine.isBusy();
-32. console.info(`isBusy: ${isBusy}`);
-33. })
-34. }
-35. }
-36. }
+      Button()
+        .id('isBusy')
+        .onClick( () => {
+          // 调用isBusy接口
+          let isBusy = ttsEngine.isBusy();
+          console.info(`isBusy: ${isBusy}`);
+        })
+    }
+  }
+}
 ```
 
 ### shutdown
-
-PhonePC/2in1Tablet
 
 shutdown(): void
 
 关闭引擎，释放引擎资源。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
 
 **示例：**
 
-```
-1. import { textToSpeech } from '@kit.CoreSpeechKit';
+```typescript
+import { textToSpeech } from '@kit.CoreSpeechKit';
 
-3. let ttsEngine: textToSpeech.TextToSpeechEngine;
-4. // 设置播报内容
-5. let originalText: string = "\n\t\t古人学问无遗力，少壮工夫老始成；\n\t\t" +
-6. "纸上得来终觉浅，绝知此事要躬行。\n\t\t";
+let ttsEngine: textToSpeech.TextToSpeechEngine;
+// 设置播报内容
+let originalText: string = '\n\t\t古人学问无遗力，少壮工夫老始成；\n\t\t' +
+  '纸上得来终觉浅，绝知此事要躬行。\n\t\t';
 
-8. // 合成及播报相关的参数
-9. let extraParam: Record<string, Object> = {"speed": 1, "volume": 2, "pitch": 1, "languageContext": 'zh-CN', "audioType": "pcm"}
-10. let speakParams: textToSpeech.SpeakParams = {
-11. requestId: '123456', // requestId在同一实例内仅能用一次，请勿重复设置
-12. extraParams: extraParam
-13. }
+// 合成及播报相关的参数
+let extraParam: Record<string, Object> = {
+  'speed': 1,
+  'volume': 2,
+  'pitch': 1, 'languageContext': 'zh-CN',
+  'audioType': 'pcm'
+};
+let speakParams: textToSpeech.SpeakParams = {
+  requestId: '123456', // requestId在同一实例内仅能用一次，请勿重复设置
+  extraParams: extraParam
+};
 
-15. @Entry
-16. @Component
-17. struct Page {
-18. build() {
-19. Column(){
-20. Button()
-21. .id('Button')
-22. .onClick( () => {
-23. // 传入文本originalText，调用speak接口
-24. ttsEngine.speak(originalText, speakParams);
-25. })
+@Entry
+@Component
+struct Page {
+  build() {
+    Column(){
+      Button()
+        .id('Button')
+        .onClick( () => {
+          // 传入文本originalText，调用speak接口
+          ttsEngine.speak(originalText, speakParams);
+        })
 
-27. Button()
-28. .id('shutdown')
-29. .onClick( () => {
-30. // 调用shutdown接口
-31. ttsEngine.shutdown();
-32. })
-33. }
-34. }
-35. }
+      Button()
+        .id('shutdown')
+        .onClick( () => {
+          // 调用shutdown接口
+          ttsEngine.shutdown();
+        })
+    }
+  }
+}
 ```
 
 ## SpeakListener
 
-PhonePC/2in1Tablet
-
 合成及播报的回调对象，通过此对象可返回合成及播报过程的相关状态，例如开始合成及播报、合成完成、播报完成、停止播报完成等。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
 
 ### onStart
 
-PhonePC/2in1Tablet
-
 onStart(requestId: string, response: StartResponse): void
 
 播报开始时，回调此接口，返回请求ID、播报相关参数，例如通道数、采样率、采样位数信息。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
 
@@ -792,57 +839,59 @@ onStart(requestId: string, response: StartResponse): void
 
 **示例：**
 
-```
-1. import { textToSpeech } from '@kit.CoreSpeechKit';
+```typescript
+import { textToSpeech } from '@kit.CoreSpeechKit';
 
-3. let ttsEngine: textToSpeech.TextToSpeechEngine;
-4. // 设置speak的回调信息
-5. let speakListener: textToSpeech.SpeakListener = {
-6. // 开始播报回调
-7. onStart(requestId: string, response: textToSpeech.StartResponse) {
-8. console.info(`onStart, requestId: ${requestId} response: ${JSON.stringify(response)}`);
-9. },
-10. // 合成完成及播报完成回调
-11. onComplete(requestId: string, response: textToSpeech.CompleteResponse) {
-12. console.info(`onComplete, requestId: ${requestId} response: ${JSON.stringify(response)}`);
-13. },
-14. // 停止播报回调
-15. onStop(requestId: string, response: textToSpeech.StopResponse) {
-16. console.info(`onStop, requestId: ${requestId} response: ${JSON.stringify(response)}`);
-17. },
-18. // 返回音频流
-19. onData(requestId: string, audio: ArrayBuffer, response: textToSpeech.SynthesisResponse) {
-20. console.info(`onData, requestId: ${requestId} sequence: ${JSON.stringify(response)} audio: ${JSON.stringify(audio)}`);
-21. },
-22. // 错误回调
-23. onError(requestId: string, errorCode: number, errorMessage: string) {
-24. console.error(`onError, requestId: ${requestId} errorCode: ${errorCode} errorMessage: ${errorMessage}`);
-25. }
-26. };
+let ttsEngine: textToSpeech.TextToSpeechEngine;
+// 设置speak的回调信息
+let speakListener: textToSpeech.SpeakListener = {
+  // 开始播报回调
+  onStart(requestId: string, response: textToSpeech.StartResponse) {
+    console.info(`onStart, requestId: ${requestId} response: ${JSON.stringify(response)}`);
+  },
+  // 合成完成及播报完成回调
+  onComplete(requestId: string, response: textToSpeech.CompleteResponse) {
+    console.info(`onComplete, requestId: ${requestId} response: ${JSON.stringify(response)}`);
+  },
+  // 停止播报回调
+  onStop(requestId: string, response: textToSpeech.StopResponse) {
+    console.info(`onStop, requestId: ${requestId} response: ${JSON.stringify(response)}`);
+  },
+  // 返回音频流
+  onData(requestId: string, audio: ArrayBuffer, response: textToSpeech.SynthesisResponse) {
+    console.info(`onData, requestId: ${requestId} sequence: ${JSON.stringify(response)} audio: ${JSON.stringify(audio)}`);
+  },
+  // 错误回调
+  onError(requestId: string, errorCode: number, errorMessage: string) {
+    console.error(`onError, requestId: ${requestId} errorCode: ${errorCode} errorMessage: ${errorMessage}`);
+  }
+};
 
-28. @Entry
-29. @Component
-30. struct Page {
-31. build() {
-32. Button()
-33. .id('Button')
-34. .onClick( () => {
-35. // 设置回调
-36. ttsEngine.setListener(speakListener);
-37. })
-38. }
-39. }
+@Entry
+@Component
+struct Page {
+  build() {
+    Button()
+      .id('Button')
+      .onClick( () => {
+        // 设置回调
+        ttsEngine.setListener(speakListener);
+      })
+  }
+}
 ```
 
 ### onStop
-
-PhonePC/2in1Tablet
 
 onStop(requestId: string, response: StopResponse): void
 
 调用stop()方法时，回调此接口，表示stop已完成。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
 
@@ -855,57 +904,59 @@ onStop(requestId: string, response: StopResponse): void
 
 **示例：**
 
-```
-1. import { textToSpeech } from '@kit.CoreSpeechKit';
+```typescript
+import { textToSpeech } from '@kit.CoreSpeechKit';
 
-3. let ttsEngine: textToSpeech.TextToSpeechEngine;
-4. // 设置speak的回调信息
-5. let speakListener: textToSpeech.SpeakListener = {
-6. // 开始播报回调
-7. onStart(requestId: string, response: textToSpeech.StartResponse) {
-8. console.info(`onStart, requestId: ${requestId} response: ${JSON.stringify(response)}`);
-9. },
-10. // 合成完成及播报完成回调
-11. onComplete(requestId: string, response: textToSpeech.CompleteResponse) {
-12. console.info(`onComplete, requestId: ${requestId} response: ${JSON.stringify(response)}`);
-13. },
-14. // 停止播报回调
-15. onStop(requestId: string, response: textToSpeech.StopResponse) {
-16. console.info(`onStop, requestId: ${requestId} response: ${JSON.stringify(response)}`);
-17. },
-18. // 返回音频流
-19. onData(requestId: string, audio: ArrayBuffer, response: textToSpeech.SynthesisResponse) {
-20. console.info(`onData, requestId: ${requestId} sequence: ${JSON.stringify(response)} audio: ${JSON.stringify(audio)}`);
-21. },
-22. // 错误回调
-23. onError(requestId: string, errorCode: number, errorMessage: string) {
-24. console.error(`onError, requestId: ${requestId} errorCode: ${errorCode} errorMessage: ${errorMessage}`);
-25. }
-26. };
+let ttsEngine: textToSpeech.TextToSpeechEngine;
+// 设置speak的回调信息
+let speakListener: textToSpeech.SpeakListener = {
+  // 开始播报回调
+  onStart(requestId: string, response: textToSpeech.StartResponse) {
+    console.info(`onStart, requestId: ${requestId} response: ${JSON.stringify(response)}`);
+  },
+  // 合成完成及播报完成回调
+  onComplete(requestId: string, response: textToSpeech.CompleteResponse) {
+    console.info(`onComplete, requestId: ${requestId} response: ${JSON.stringify(response)}`);
+  },
+  // 停止播报回调
+  onStop(requestId: string, response: textToSpeech.StopResponse) {
+    console.info(`onStop, requestId: ${requestId} response: ${JSON.stringify(response)}`);
+  },
+  // 返回音频流
+  onData(requestId: string, audio: ArrayBuffer, response: textToSpeech.SynthesisResponse) {
+    console.info(`onData, requestId: ${requestId} sequence: ${JSON.stringify(response)} audio: ${JSON.stringify(audio)}`);
+  },
+  // 错误回调
+  onError(requestId: string, errorCode: number, errorMessage: string) {
+    console.error(`onError, requestId: ${requestId} errorCode: ${errorCode} errorMessage: ${errorMessage}`);
+  }
+};
 
-28. @Entry
-29. @Component
-30. struct Page {
-31. build() {
-32. Button()
-33. .id('Button')
-34. .onClick( () => {
-35. // 设置回调
-36. ttsEngine.setListener(speakListener);
-37. })
-38. }
-39. }
+@Entry
+@Component
+struct Page {
+  build() {
+    Button()
+      .id('Button')
+      .onClick( () => {
+        // 设置回调
+        ttsEngine.setListener(speakListener);
+      })
+  }
+}
 ```
 
 ### onComplete
-
-PhonePC/2in1Tablet
 
 onComplete(requestId: string, response: CompleteResponse): void
 
 合成或播报结束后分别回调此接口，返回请求ID，完成播报相关信息。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
 
@@ -916,67 +967,69 @@ onComplete(requestId: string, response: CompleteResponse): void
 | requestId | string | 是 | 请求ID。唯一标识一条请求。  支持英文字符，数字和中文，长度不限制。 |
 | response | [CompleteResponse](hms-ai-texttospeech.md#completeresponse) | 是 | 完成播报相关信息。 |
 
-说明
+**说明** 
 
-onData 可能并未返回完毕，请继续接收 onData 回调。
+onData 可能存在数据过大的情况，无法一次性返回全部数据，请继续接收 onData 回调。
 
 **示例：**
 
-```
-1. import { textToSpeech } from '@kit.CoreSpeechKit';
+```typescript
+import { textToSpeech } from '@kit.CoreSpeechKit';
 
-3. let ttsEngine: textToSpeech.TextToSpeechEngine;
-4. // 设置speak的回调信息
-5. let speakListener: textToSpeech.SpeakListener = {
-6. // 开始播报回调
-7. onStart(requestId: string, response: textToSpeech.StartResponse) {
-8. console.info(`onStart, requestId: ${requestId} response: ${JSON.stringify(response)}`);
-9. },
-10. // 合成完成及播报完成回调
-11. onComplete(requestId: string, response: textToSpeech.CompleteResponse) {
-12. console.info(`onComplete, requestId: ${requestId} response: ${JSON.stringify(response)}`);
-13. },
-14. // 停止播报回调
-15. onStop(requestId: string, response: textToSpeech.StopResponse) {
-16. console.info(`onStop, requestId: ${requestId} response: ${JSON.stringify(response)}`);
-17. },
-18. // 返回音频流
-19. onData(requestId: string, audio: ArrayBuffer, response: textToSpeech.SynthesisResponse) {
-20. console.info(`onData, requestId: ${requestId} sequence: ${JSON.stringify(response)} audio: ${JSON.stringify(audio)}`);
-21. },
-22. // 错误回调
-23. onError(requestId: string, errorCode: number, errorMessage: string) {
-24. console.error(`onError, requestId: ${requestId} errorCode: ${errorCode} errorMessage: ${errorMessage}`);
-25. }
-26. };
+let ttsEngine: textToSpeech.TextToSpeechEngine;
+// 设置speak的回调信息
+let speakListener: textToSpeech.SpeakListener = {
+  // 开始播报回调
+  onStart(requestId: string, response: textToSpeech.StartResponse) {
+    console.info(`onStart, requestId: ${requestId} response: ${JSON.stringify(response)}`);
+  },
+  // 合成完成及播报完成回调
+  onComplete(requestId: string, response: textToSpeech.CompleteResponse) {
+    console.info(`onComplete, requestId: ${requestId} response: ${JSON.stringify(response)}`);
+  },
+  // 停止播报回调
+  onStop(requestId: string, response: textToSpeech.StopResponse) {
+    console.info(`onStop, requestId: ${requestId} response: ${JSON.stringify(response)}`);
+  },
+  // 返回音频流
+  onData(requestId: string, audio: ArrayBuffer, response: textToSpeech.SynthesisResponse) {
+    console.info(`onData, requestId: ${requestId} sequence: ${JSON.stringify(response)} audio: ${JSON.stringify(audio)}`);
+  },
+  // 错误回调
+  onError(requestId: string, errorCode: number, errorMessage: string) {
+    console.error(`onError, requestId: ${requestId} errorCode: ${errorCode} errorMessage: ${errorMessage}`);
+  }
+};
 
-28. @Entry
-29. @Component
-30. struct Page {
-31. build() {
-32. Button()
-33. .id('Button')
-34. .onClick( () => {
-35. // 设置回调
-36. ttsEngine.setListener(speakListener);
-37. })
-38. }
-39. }
+@Entry
+@Component
+struct Page {
+  build() {
+    Button()
+      .id('Button')
+      .onClick( () => {
+        // 设置回调
+        ttsEngine.setListener(speakListener);
+      })
+  }
+}
 ```
 
 ### onData
-
-PhonePC/2in1Tablet
 
 onData?: OnDataCallback
 
 合成播报过程中回调此接口，返回请求ID，音频流信息，音频附加信息如格式、时长等。若需要返回音频流信息，请实现此接口。
 
-说明
+**说明** 
 
-因为异步ipc会导致onData音频流顺序小规模错乱，需要调用方在播放前对音频流按照sequence排序。
+调用方在播放音频前需要按照[sequence](hms-ai-texttospeech.md#synthesisresponse)对音频流进行排序, 避免播放时音频流顺序错乱。
+
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
 
@@ -988,57 +1041,59 @@ onData?: OnDataCallback
 
 **示例：**
 
-```
-1. import { textToSpeech } from '@kit.CoreSpeechKit';
+```typescript
+import { textToSpeech } from '@kit.CoreSpeechKit';
 
-3. let ttsEngine: textToSpeech.TextToSpeechEngine;
-4. // 设置speak的回调信息
-5. let speakListener: textToSpeech.SpeakListener = {
-6. // 开始播报回调
-7. onStart(requestId: string, response: textToSpeech.StartResponse) {
-8. console.info(`onStart, requestId: ${requestId} response: ${JSON.stringify(response)}`);
-9. },
-10. // 合成完成及播报完成回调
-11. onComplete(requestId: string, response: textToSpeech.CompleteResponse) {
-12. console.info(`onComplete, requestId: ${requestId} response: ${JSON.stringify(response)}`);
-13. },
-14. // 停止播报回调
-15. onStop(requestId: string, response: textToSpeech.StopResponse) {
-16. console.info(`onStop, requestId: ${requestId} response: ${JSON.stringify(response)}`);
-17. },
-18. // 返回音频流
-19. onData(requestId: string, audio: ArrayBuffer, response: textToSpeech.SynthesisResponse) {
-20. console.info(`onData, requestId: ${requestId} sequence: ${JSON.stringify(response)} audio: ${JSON.stringify(audio)}`);
-21. },
-22. // 错误回调
-23. onError(requestId: string, errorCode: number, errorMessage: string) {
-24. console.error(`onError, requestId: ${requestId} errorCode: ${errorCode} errorMessage: ${errorMessage}`);
-25. }
-26. };
+let ttsEngine: textToSpeech.TextToSpeechEngine;
+// 设置speak的回调信息
+let speakListener: textToSpeech.SpeakListener = {
+  // 开始播报回调
+  onStart(requestId: string, response: textToSpeech.StartResponse) {
+    console.info(`onStart, requestId: ${requestId} response: ${JSON.stringify(response)}`);
+  },
+  // 合成完成及播报完成回调
+  onComplete(requestId: string, response: textToSpeech.CompleteResponse) {
+    console.info(`onComplete, requestId: ${requestId} response: ${JSON.stringify(response)}`);
+  },
+  // 停止播报回调
+  onStop(requestId: string, response: textToSpeech.StopResponse) {
+    console.info(`onStop, requestId: ${requestId} response: ${JSON.stringify(response)}`);
+  },
+  // 返回音频流
+  onData(requestId: string, audio: ArrayBuffer, response: textToSpeech.SynthesisResponse) {
+    console.info(`onData, requestId: ${requestId} sequence: ${JSON.stringify(response)} audio: ${JSON.stringify(audio)}`);
+  },
+  // 错误回调
+  onError(requestId: string, errorCode: number, errorMessage: string) {
+    console.error(`onError, requestId: ${requestId} errorCode: ${errorCode} errorMessage: ${errorMessage}`);
+  }
+};
 
-28. @Entry
-29. @Component
-30. struct Page {
-31. build() {
-32. Button()
-33. .id('Button')
-34. .onClick( () => {
-35. // 设置回调
-36. ttsEngine.setListener(speakListener);
-37. })
-38. }
-39. }
+@Entry
+@Component
+struct Page {
+  build() {
+    Button()
+      .id('Button')
+      .onClick( () => {
+        // 设置回调
+        ttsEngine.setListener(speakListener);
+      })
+  }
+}
 ```
 
 ### onError
-
-PhonePC/2in1Tablet
 
 onError(requestId: string, errorCode: number, errorMessage: string): void
 
 合成播报过程中，出现错误时回调，返回请求ID、错误码及错误描述。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
 
@@ -1052,57 +1107,59 @@ onError(requestId: string, errorCode: number, errorMessage: string): void
 
 **示例：**
 
-```
-1. import { textToSpeech } from '@kit.CoreSpeechKit';
+```typescript
+import { textToSpeech } from '@kit.CoreSpeechKit';
 
-3. let ttsEngine: textToSpeech.TextToSpeechEngine;
-4. // 设置speak的回调信息
-5. let speakListener: textToSpeech.SpeakListener = {
-6. // 开始播报回调
-7. onStart(requestId: string, response: textToSpeech.StartResponse) {
-8. console.info(`onStart, requestId: ${requestId} response: ${JSON.stringify(response)}`);
-9. },
-10. // 合成完成及播报完成回调
-11. onComplete(requestId: string, response: textToSpeech.CompleteResponse) {
-12. console.info(`onComplete, requestId: ${requestId} response: ${JSON.stringify(response)}`);
-13. },
-14. // 停止播报回调
-15. onStop(requestId: string, response: textToSpeech.StopResponse) {
-16. console.info(`onStop, requestId: ${requestId} response: ${JSON.stringify(response)}`);
-17. },
-18. // 返回音频流
-19. onData(requestId: string, audio: ArrayBuffer, response: textToSpeech.SynthesisResponse) {
-20. console.info(`onData, requestId: ${requestId} sequence: ${JSON.stringify(response)} audio: ${JSON.stringify(audio)}`);
-21. },
-22. // 错误回调
-23. onError(requestId: string, errorCode: number, errorMessage: string) {
-24. console.error(`onError, requestId: ${requestId} errorCode: ${errorCode} errorMessage: ${errorMessage}`);
-25. }
-26. };
+let ttsEngine: textToSpeech.TextToSpeechEngine;
+// 设置speak的回调信息
+let speakListener: textToSpeech.SpeakListener = {
+  // 开始播报回调
+  onStart(requestId: string, response: textToSpeech.StartResponse) {
+    console.info(`onStart, requestId: ${requestId} response: ${JSON.stringify(response)}`);
+  },
+  // 合成完成及播报完成回调
+  onComplete(requestId: string, response: textToSpeech.CompleteResponse) {
+    console.info(`onComplete, requestId: ${requestId} response: ${JSON.stringify(response)}`);
+  },
+  // 停止播报回调
+  onStop(requestId: string, response: textToSpeech.StopResponse) {
+    console.info(`onStop, requestId: ${requestId} response: ${JSON.stringify(response)}`);
+  },
+  // 返回音频流
+  onData(requestId: string, audio: ArrayBuffer, response: textToSpeech.SynthesisResponse) {
+    console.info(`onData, requestId: ${requestId} sequence: ${JSON.stringify(response)} audio: ${JSON.stringify(audio)}`);
+  },
+  // 错误回调
+  onError(requestId: string, errorCode: number, errorMessage: string) {
+    console.error(`onError, requestId: ${requestId} errorCode: ${errorCode} errorMessage: ${errorMessage}`);
+  }
+};
 
-28. @Entry
-29. @Component
-30. struct Page {
-31. build() {
-32. Button()
-33. .id('Button')
-34. .onClick( () => {
-35. // 设置回调
-36. ttsEngine.setListener(speakListener);
-37. })
-38. }
-39. }
+@Entry
+@Component
+struct Page {
+  build() {
+    Button()
+      .id('Button')
+      .onClick( () => {
+        // 设置回调
+        ttsEngine.setListener(speakListener);
+      })
+  }
+}
 ```
 
 ## OnDataCallback
-
-PhonePC/2in1Tablet
 
 type OnDataCallback = (requestId: string, audio: ArrayBuffer, response: SynthesisResponse) => void
 
 合成的回调，通过音频的参数返回音频数据。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.1(19)
 
@@ -1116,11 +1173,13 @@ type OnDataCallback = (requestId: string, audio: ArrayBuffer, response: Synthesi
 
 ## CreateEngineParams
 
-PhonePC/2in1Tablet
-
 创建引擎实例的相关参数，用于配置语种、模式、音色和风格等。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
 
@@ -1133,35 +1192,37 @@ PhonePC/2in1Tablet
 
 **示例：**
 
-```
-1. import { textToSpeech } from '@kit.CoreSpeechKit';
+```typescript
+import { textToSpeech } from '@kit.CoreSpeechKit';
 
-3. // 设置创建引擎参数
-4. let extraParam: Record<string, Object> = {"style": 'interaction-broadcast', "locate": 'CN', "name": 'EngineName','isBackStage': true};
-5. let initParamsInfo: textToSpeech.CreateEngineParams = {
-6. language: 'zh-CN',
-7. person: 0,
-8. online: 1,
-9. extraParams: extraParam
-10. };
+// 设置创建引擎参数
+let extraParam: Record<string, Object> = {'style': 'interaction-broadcast', 'locate': 'CN', 'name': 'EngineName', 'isBackStage': true};
+let initParamsInfo: textToSpeech.CreateEngineParams = {
+  language: 'zh-CN',
+  person: 0,
+  online: 1,
+  extraParams: extraParam
+};
 
-12. @Entry
-13. @Component
-14. struct Page {
+@Entry
+@Component
+struct Page {
 
-16. build() {
-17. // ...
-18. }
-19. }
+  build() {
+    // ...
+  }
+}
 ```
 
 ## VoiceQuery
 
-PhonePC/2in1Tablet
-
 查询音色语种信息的相关参数。例如查询离线模式、中文语种所支持的音色信息，需将online参数设置为1，language参数设置为“zh-CN”。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
 
@@ -1173,34 +1234,36 @@ PhonePC/2in1Tablet
 
 **示例：**
 
-```
-1. import { textToSpeech } from '@kit.CoreSpeechKit';
+```typescript
+import { textToSpeech } from '@kit.CoreSpeechKit';
 
-3. // 设置创建引擎参数
-4. let extraParam: Record<string, Object> = {"language": 'zh-CN', "person": 0};
-5. let voiceQuery: textToSpeech.VoiceQuery= {
-6. requestId: '12345678', // requestId在同一实例内仅能用一次，请勿重复设置
-7. online: 1,
-8. extraParams: extraParam
-9. };
+// 设置创建引擎参数
+let extraParam: Record<string, Object> = {'language': 'zh-CN', 'person': 0};
+let voiceQuery: textToSpeech.VoiceQuery = {
+  requestId: '12345678', // requestId在同一实例内仅能用一次，请勿重复设置
+  online: 1,
+  extraParams: extraParam
+};
 
-11. @Entry
-12. @Component
-13. struct Page {
+@Entry
+@Component
+struct Page {
 
-15. build() {
-16. // ...
-17. }
-18. }
+  build() {
+    // ...
+  }
+}
 ```
 
 ## VoiceDownload
 
-PhonePC/2in1Tablet
-
 下载音色时的相关参数，所有参数通过listVoices接口获取。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.1(19)
 
@@ -1213,25 +1276,27 @@ PhonePC/2in1Tablet
 
 **示例：**
 
-```
-1. import { textToSpeech } from '@kit.CoreSpeechKit';
+```typescript
+import { textToSpeech } from '@kit.CoreSpeechKit';
 
-3. // 设置下载音色相关参数
-4. let voicesDownload: textToSpeech.VoiceDownload = {
-5. requestId: '12345678-b', // 请求ID，ID不可重复
-6. language: 'en-US',
-7. person: 8,
-8. style: 'interaction-broadcast'
-9. };
+// 设置下载音色相关参数
+let voicesDownload: textToSpeech.VoiceDownload = {
+  requestId: '12345678-b', // 请求ID，ID不可重复
+  language: 'en-US',
+  person: 8,
+  style: 'interaction-broadcast'
+};
 ```
 
 ## DownloadResponse
 
-PhonePC/2in1Tablet
-
 下载音色语种时的回调对象。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.1(19)
 
@@ -1243,13 +1308,15 @@ PhonePC/2in1Tablet
 
 ### on('start')
 
-PhonePC/2in1Tablet
-
 on(type: 'start', callback: Callback<string>): void
 
 音色下载开始时，触发此接口，接收下载开始信息。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.1(19)
 
@@ -1262,28 +1329,30 @@ on(type: 'start', callback: Callback<string>): void
 
 **示例：**
 
-```
-1. // 定义函数
-2. let startCallback: Callback<string> = (info: string) => {
-3. // 开始下载回调
-4. console.info(`download voice start, info:${info}}`);
-5. }
-6. // downloadResponse由接口textToSpeech.downloadVoice中获取
-7. // 注册下载开始事件回调
-8. downloadResponse.on('start', startCallback);
-9. // 取消下载开始事件回调注册
-10. downloadResponse.off('start', startCallback);
+```typescript
+// 定义函数
+let startCallback: Callback<string> = (info: string) => {
+  // 开始下载回调
+  console.info(`download voice start, info:${info}`);
+};
+// downloadResponse由接口textToSpeech.downloadVoice中获取
+// 注册下载开始事件回调
+downloadResponse.on('start', startCallback);
+// 取消下载开始事件回调注册
+downloadResponse.off('start', startCallback);
 ```
 
 ### on('progress')
-
-PhonePC/2in1Tablet
 
 on(type: 'progress', callback: Callback<string>): void
 
 音色下载过程中，触发此接口，接收下载进度信息。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.1(19)
 
@@ -1296,28 +1365,30 @@ on(type: 'progress', callback: Callback<string>): void
 
 **示例：**
 
-```
-1. // 定义函数
-2. let progressCallback: Callback<string> = (schedule: string) => {
-3. // 下载进度回调
-4. console.info(`download voice schedule, scheduleInfo: ${schedule}`);
-5. }
-6. // downloadResponse由接口textToSpeech.downloadVoice中获取
-7. // 注册下载进度事件回调
-8. downloadResponse.on('progress', progressCallback);
-9. // 取消下载进度事件回调注册
-10. downloadResponse.off('progress',progressCallback);
+```typescript
+// 定义函数
+let progressCallback: Callback<string> = (schedule: string) => {
+  // 下载进度回调
+  console.info(`download voice schedule, scheduleInfo: ${schedule}`);
+};
+// downloadResponse由接口textToSpeech.downloadVoice中获取
+// 注册下载进度事件回调
+downloadResponse.on('progress', progressCallback);
+// 取消下载进度事件回调注册
+downloadResponse.off('progress', progressCallback);
 ```
 
 ### on('complete')
-
-PhonePC/2in1Tablet
 
 on(type: 'complete', callback: Callback<VoiceInfo>): void
 
 音色下载完成时，触发此接口，接收下载完成音色信息。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.1(19)
 
@@ -1330,29 +1401,31 @@ on(type: 'complete', callback: Callback<VoiceInfo>): void
 
 **示例：**
 
-```
-1. import { textToSpeech } from '@kit.CoreSpeechKit';
-2. // 定义函数
-3. let completeCallback: Callback<textToSpeech.VoiceInfo> = (voiceInfo: textToSpeech.VoiceInfo) => {
-4. // 下载完成回调
-5. console.info(`download voice complete, voiceInfo: ${JSON.stringify(voiceInfo)}`);
-6. }
-7. // downloadResponse由接口textToSpeech.downloadVoice中获取
-8. // 注册下载完成事件回调
-9. downloadResponse.on('complete', completeCallback);
-10. // 取消下载完成事件回调注册
-11. downloadResponse.off('complete',completeCallback);
+```typescript
+import { textToSpeech } from '@kit.CoreSpeechKit';
+// 定义函数
+let completeCallback: Callback<textToSpeech.VoiceInfo> = (voiceInfo: textToSpeech.VoiceInfo) => {
+  // 下载完成回调
+  console.info(`download voice complete, voiceInfo: ${JSON.stringify(voiceInfo)}`);
+};
+// downloadResponse由接口textToSpeech.downloadVoice中获取
+// 注册下载完成事件回调
+downloadResponse.on('complete', completeCallback);
+// 取消下载完成事件回调注册
+downloadResponse.off('complete', completeCallback);
 ```
 
 ### on('cancel')
-
-PhonePC/2in1Tablet
 
 on(type: 'cancel', callback: Callback<string>): void
 
 用户点击进度框上关闭按钮，取消下载时，触发此接口，接收取消下载信息。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.1(19)
 
@@ -1363,34 +1436,36 @@ on(type: 'cancel', callback: Callback<string>): void
 | type | string | 是 | 固定字符串“cancel”。监听用户取消音色下载事件。 |
 | callback | [Callback](js-apis-base.md#callback)<string> | 是 | callback回调，接收用户取消下载信息。 |
 
-说明
+**说明** 
 
 点击下载同意弹窗上的“取消”按钮不会触发此回调。
 
 **示例：**
 
-```
-1. // 定义函数
-2. let cancelCallback: Callback<string> = (cancelInfo: string) => {
-3. // 用户取消下载回调
-4. console.info(`download voice cancel, cancelInfo: ${cancelInfo}`);
-5. }
-6. // downloadResponse由接口textToSpeech.downloadVoice中获取
-7. // 注册下载取消事件回调
-8. downloadResponse.on('cancel', cancelCallback);
-9. // 取消下载取消事件回调注册
-10. downloadResponse.off('cancel',cancelCallback);
+```typescript
+// 定义函数
+let cancelCallback: Callback<string> = (cancelInfo: string) => {
+  // 用户取消下载回调
+  console.info(`download voice cancel, cancelInfo: ${cancelInfo}`);
+};
+// downloadResponse由接口textToSpeech.downloadVoice中获取
+// 注册下载取消事件回调
+downloadResponse.on('cancel', cancelCallback);
+// 取消下载取消事件回调注册
+downloadResponse.off('cancel', cancelCallback);
 ```
 
 ### on('error')
-
-PhonePC/2in1Tablet
 
 on(type: 'error', callback: ErrorCallback<BusinessError>): void
 
 音色下载错误时，触发此接口，接收下载错误信息。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.1(19)
 
@@ -1403,29 +1478,31 @@ on(type: 'error', callback: ErrorCallback<BusinessError>): void
 
 **示例：**
 
-```
-1. import { BusinessError, ErrorCallback } from '@kit.BasicServicesKit';
-2. // 定义函数
-3. let errorCallback: ErrorCallback<BusinessError> = (err: BusinessError) => {
-4. // 下载过程错误回调
-5. console.error(`download voice error, errorCode: ${err.code} errorMessage: ${err.message}`);
-6. }
-7. // downloadResponse由接口textToSpeech.downloadVoice中获取
-8. // 注册下载过程出错事件回调
-9. downloadResponse.on('error', errorCallback);
-10. // 取消下载过程出错事件回调注册
-11. downloadResponse.off('error',errorCallback);
+```typescript
+import { BusinessError, ErrorCallback } from '@kit.BasicServicesKit';
+// 定义函数
+let errorCallback: ErrorCallback<BusinessError> = (err: BusinessError) => {
+  // 下载过程错误回调
+  console.error(`download voice error, errorCode: ${err.code} errorMessage: ${err.message}`);
+};
+// downloadResponse由接口textToSpeech.downloadVoice中获取
+// 注册下载过程出错事件回调
+downloadResponse.on('error', errorCallback);
+// 取消下载过程出错事件回调注册
+downloadResponse.off('error', errorCallback);
 ```
 
 ### off('start')
-
-PhonePC/2in1Tablet
 
 off(type: 'start', callback?: Callback<string>): void
 
 取消监听音色下载开始事件。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.1(19)
 
@@ -1438,28 +1515,30 @@ off(type: 'start', callback?: Callback<string>): void
 
 **示例：**
 
-```
-1. // 定义函数
-2. let startCallback: Callback<string> = (info: string) => {
-3. // 开始下载回调
-4. console.info(`download voice start, info:${info}}`);
-5. }
-6. // downloadResponse由接口textToSpeech.downloadVoice中获取
-7. // 注册下载开始事件回调
-8. downloadResponse.on('start', startCallback);
-9. // 取消下载开始事件回调注册
-10. downloadResponse.off('start', startCallback);
+```typescript
+// 定义函数
+let startCallback: Callback<string> = (info: string) => {
+  // 开始下载回调
+  console.info(`download voice start, info:${info}`);
+};
+// downloadResponse由接口textToSpeech.downloadVoice中获取
+// 注册下载开始事件回调
+downloadResponse.on('start', startCallback);
+// 取消下载开始事件回调注册
+downloadResponse.off('start', startCallback);
 ```
 
 ### off('progress')
-
-PhonePC/2in1Tablet
 
 off(type: 'progress', callback?: Callback<string>): void
 
 取消监听音色下载过程事件。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.1(19)
 
@@ -1472,28 +1551,30 @@ off(type: 'progress', callback?: Callback<string>): void
 
 **示例：**
 
-```
-1. // 定义函数
-2. let progressCallback: Callback<string> = (schedule: string) => {
-3. // 下载进度回调
-4. console.info(`download voice schedule, scheduleInfo: ${schedule}`);
-5. }
-6. // downloadResponse由接口textToSpeech.downloadVoice中获取
-7. // 注册下载进度事件回调
-8. downloadResponse.on('progress', progressCallback);
-9. // 取消下载进度事件回调注册
-10. downloadResponse.off('progress',progressCallback);
+```typescript
+// 定义函数
+let progressCallback: Callback<string> = (schedule: string) => {
+  // 下载进度回调
+  console.info(`download voice schedule, scheduleInfo: ${schedule}`);
+};
+// downloadResponse由接口textToSpeech.downloadVoice中获取
+// 注册下载进度事件回调
+downloadResponse.on('progress', progressCallback);
+// 取消下载进度事件回调注册
+downloadResponse.off('progress', progressCallback);
 ```
 
 ### off('complete')
-
-PhonePC/2in1Tablet
 
 off(type: 'complete', callback?: Callback<VoiceInfo>): void
 
 取消监听音色下载完成事件。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.1(19)
 
@@ -1506,29 +1587,31 @@ off(type: 'complete', callback?: Callback<VoiceInfo>): void
 
 **示例：**
 
-```
-1. import { textToSpeech } from '@kit.CoreSpeechKit';
-2. // 定义函数
-3. let completeCallback: Callback<textToSpeech.VoiceInfo> = (voiceInfo: textToSpeech.VoiceInfo) => {
-4. // 下载完成回调
-5. console.info(`download voice complete, voiceInfo: ${JSON.stringify(voiceInfo)}`);
-6. }
-7. // downloadResponse由接口textToSpeech.downloadVoice中获取
-8. // 注册下载完成事件回调
-9. downloadResponse.on('complete', completeCallback);
-10. // 取消下载完成事件回调注册
-11. downloadResponse.off('complete',completeCallback);
+```typescript
+import { textToSpeech } from '@kit.CoreSpeechKit';
+// 定义函数
+let completeCallback: Callback<textToSpeech.VoiceInfo> = (voiceInfo: textToSpeech.VoiceInfo) => {
+  // 下载完成回调
+  console.info(`download voice complete, voiceInfo: ${JSON.stringify(voiceInfo)}`);
+};
+// downloadResponse由接口textToSpeech.downloadVoice中获取
+// 注册下载完成事件回调
+downloadResponse.on('complete', completeCallback);
+// 取消下载完成事件回调注册
+downloadResponse.off('complete', completeCallback);
 ```
 
 ### off('cancel')
-
-PhonePC/2in1Tablet
 
 off(type: 'cancel', callback?: Callback<string>): void
 
 取消监听音色下载取消事件。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.1(19)
 
@@ -1541,28 +1624,30 @@ off(type: 'cancel', callback?: Callback<string>): void
 
 **示例：**
 
-```
-1. // 定义函数
-2. let cancelCallback: Callback<string> = (cancelInfo: string) => {
-3. // 用户取消下载回调
-4. console.info(`download voice cancel, cancelInfo: ${cancelInfo}`);
-5. }
-6. // downloadResponse由接口textToSpeech.downloadVoice中获取
-7. // 注册下载取消事件回调
-8. downloadResponse.on('cancel', cancelCallback);
-9. // 取消下载取消事件回调注册
-10. downloadResponse.off('cancel',cancelCallback);
+```typescript
+// 定义函数
+let cancelCallback: Callback<string> = (cancelInfo: string) => {
+  // 用户取消下载回调
+  console.info(`download voice cancel, cancelInfo: ${cancelInfo}`);
+};
+// downloadResponse由接口textToSpeech.downloadVoice中获取
+// 注册下载取消事件回调
+downloadResponse.on('cancel', cancelCallback);
+// 取消下载取消事件回调注册
+downloadResponse.off('cancel', cancelCallback);
 ```
 
 ### off('error')
-
-PhonePC/2in1Tablet
 
 off(type: 'error', callback?: ErrorCallback<BusinessError>): void
 
 取消监听音色下载错误事件。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.1(19)
 
@@ -1575,27 +1660,29 @@ off(type: 'error', callback?: ErrorCallback<BusinessError>): void
 
 **示例：**
 
-```
-1. import { BusinessError, ErrorCallback } from '@kit.BasicServicesKit';
-2. // 定义函数
-3. let errorCallback: ErrorCallback<BusinessError> = (err: BusinessError) => {
-4. // 下载过程错误回调
-5. console.error(`download voice error, errorCode: ${err.code} errorMessage: ${err.message}`);
-6. }
-7. // downloadResponse由接口textToSpeech.downloadVoice中获取
-8. // 注册下载过程出错事件回调
-9. downloadResponse.on('error', errorCallback);
-10. // 取消下载过程出错事件回调注册
-11. downloadResponse.off('error',errorCallback);
+```typescript
+import { BusinessError, ErrorCallback } from '@kit.BasicServicesKit';
+// 定义函数
+let errorCallback: ErrorCallback<BusinessError> = (err: BusinessError) => {
+  // 下载过程错误回调
+  console.error(`download voice error, errorCode: ${err.code} errorMessage: ${err.message}`);
+};
+// downloadResponse由接口textToSpeech.downloadVoice中获取
+// 注册下载过程出错事件回调
+downloadResponse.on('error', errorCallback);
+// 取消下载过程出错事件回调注册
+downloadResponse.off('error', errorCallback);
 ```
 
 ## SpeakParams
 
-PhonePC/2in1Tablet
-
 合成播报音频流的相关参数，用于配置语速、音量、音调、合成类型等。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
 
@@ -1606,33 +1693,44 @@ PhonePC/2in1Tablet
 
 **示例：**
 
-```
-1. import { textToSpeech } from '@kit.CoreSpeechKit';
+```typescript
+import { textToSpeech } from '@kit.CoreSpeechKit';
 
-3. // 设置播报相关参数
-4. let extraParam: Record<string, Object> = {"queueMode": 0, "speed": 1, "volume": 2, "pitch": 1, "languageContext": 'zh-CN', "audioType": "pcm", "soundChannel": 3, "playType":1};
-5. let speakParams: textToSpeech.SpeakParams = {
-6. requestId: '123456', // requestId在同一实例内仅能用一次，请勿重复设置
-7. extraParams: extraParam
-8. }
+// 设置播报相关参数
+let extraParam: Record<string, Object> = {
+  'queueMode': 0,
+  'speed': 1,
+  'volume': 2,
+  'pitch': 1,
+  'languageContext': 'zh-CN',
+  'audioType': 'pcm',
+  'soundChannel': 3,
+  'playType':1
+};
+let speakParams: textToSpeech.SpeakParams = {
+  requestId: '123456', // requestId在同一实例内仅能用一次，请勿重复设置
+  extraParams: extraParam
+};
 
-10. @Entry
-11. @Component
-12. struct Page {
+@Entry
+@Component
+struct Page {
 
-14. build() {
-15. // ...
-16. }
-17. }
+  build() {
+    // ...
+  }
+}
 ```
 
 ## VoiceInfo
 
-PhonePC/2in1Tablet
-
 返回查询的相关参数。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
 
@@ -1647,11 +1745,13 @@ PhonePC/2in1Tablet
 
 ## StartResponse
 
-PhonePC/2in1Tablet
-
 返回播放的相关参数。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
 
@@ -1665,11 +1765,13 @@ PhonePC/2in1Tablet
 
 ## StopResponse
 
-PhonePC/2in1Tablet
-
 返回停止播报时的相关参数。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
 
@@ -1680,11 +1782,13 @@ PhonePC/2in1Tablet
 
 ## CompleteResponse
 
-PhonePC/2in1Tablet
-
 返回完成播报时的相关参数。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
 
@@ -1695,11 +1799,13 @@ PhonePC/2in1Tablet
 
 ## SynthesisResponse
 
-PhonePC/2in1Tablet
-
 返回的音频流相关信息。
 
+**元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
 

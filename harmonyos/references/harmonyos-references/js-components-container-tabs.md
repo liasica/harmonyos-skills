@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: tabs
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 容器组件 > tabs
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:22+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:e7a300dab78f55c8f818ed6149f5ea87385e6dfc3f8d68c137e6eaa85d389caa
+scraped_at: 2026-09-02T15:01:11+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:efe284097dba1bcf0a8d22aabc3eb4da6cf4c951404d914e8afa71903acaac56
 ---
 
-说明
+**说明** 
 
 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -16,19 +16,13 @@ tab页签容器。
 
 ## 权限列表
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 仅支持<[tab-bar](js-components-container-tab-bar.md)>和<[tab-content](js-components-container-tab-content.md)>。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-components-common-attributes.md)外，还支持如下属性：
 
@@ -39,13 +33,9 @@ PhonePC/2in1TabletTVWearable
 
 ## 样式
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用样式](js-components-common-styles.md)。
 
 ## 事件
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用事件](js-components-common-events.md)外，还支持如下事件：
 
@@ -55,73 +45,71 @@ PhonePC/2in1TabletTVWearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <tabs class = "tabs" index="0" vertical="false" onchange="change">
-4. <tab-bar class="tab-bar" mode="fixed">
-5. <text class="tab-text">Home</text>
-6. <text class="tab-text">Index</text>
-7. <text class="tab-text">Detail</text>
-8. </tab-bar>
-9. <tab-content class="tabcontent" scrollable="true">
-10. <div class="item-content" >
-11. <text class="item-title">First screen</text>
-12. </div>
-13. <div class="item-content" >
-14. <text class="item-title">Second screen</text>
-15. </div>
-16. <div class="item-content" >
-17. <text class="item-title">Third screen</text>
-18. </div>
-19. </tab-content>
-20. </tabs>
-21. </div>
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <tabs class = "tabs" index="0" vertical="false" onchange="change">
+    <tab-bar class="tab-bar" mode="fixed">
+      <text class="tab-text">Home</text>
+      <text class="tab-text">Index</text>
+      <text class="tab-text">Detail</text>
+    </tab-bar>
+    <tab-content class="tabcontent" scrollable="true">
+      <div class="item-content" >
+        <text class="item-title">First screen</text>
+      </div>
+      <div class="item-content" >
+        <text class="item-title">Second screen</text>
+      </div>
+      <div class="item-content" >
+        <text class="item-title">Third screen</text>
+      </div>
+    </tab-content>
+  </tabs>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .container {
-3. flex-direction: column;
-4. justify-content: flex-start;
-5. align-items: center;
-6. }
-7. .tabs {
-8. width: 100%;
-9. }
-10. .tabcontent {
-11. width: 100%;
-12. height: 80%;
-13. justify-content: center;
-14. }
-15. .item-content {
-16. height: 100%;
-17. justify-content: center;
-18. }
-19. .item-title {
-20. font-size: 60px;
-21. }
-22. .tab-bar {
-23. margin: 10px;
-24. height: 60px;
-25. border-color: #007dff;
-26. border-width: 1px;
-27. }
-28. .tab-text {
-29. width: 300px;
-30. text-align: center;
-31. }
-```
-
-```
-1. // xxx.js
-2. export default {
-3. change: function(e) {
-4. console.info("Tab index: " + e.index);
-5. },
-6. }
+```css
+/* xxx.css */
+.container {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.tabs {
+  width: 100%;
+}
+.tabcontent {
+  width: 100%;
+  height: 80%;
+  justify-content: center;
+}
+.item-content {
+  height: 100%;
+  justify-content: center;
+}
+.item-title {
+  font-size: 60px;
+}
+.tab-bar {
+  margin: 10px;
+  height: 60px;
+  border-color: #007dff;
+  border-width: 1px;
+}
+.tab-text {
+  width: 300px;
+  text-align: center;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/dOSDD_1LQGagWdK4rhODaw/zh-cn_image_0000002558607052.gif)
+```js
+// xxx.js
+export default {
+  change: function(e) {
+    console.info("Tab index: " + e.index);
+  },
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/__2K_J6pQIS85CZT1itpFQ/zh-cn_image_0000002706676442.gif)

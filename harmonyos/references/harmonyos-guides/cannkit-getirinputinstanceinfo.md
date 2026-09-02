@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getir
 title: GetIrInputInstanceInfo
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > ExtendedKernelContext > GetIrInputInstanceInfo
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:58+08:00
+scraped_at: 2026-09-02T14:50:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:aaa7fb988b0f361a6ee3f1942d6ea087723a2cb38a6b4d2236e5cdfc6073175a
+content_hash: sha256:bbcfcabf1d191ae7988856a592b89f6d8c71f89fc273aa2f49810b74c1dba362
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:aaa7fb988b0f361a6ee3f1942d6ea087723a2cb38a6b4d2236e5cdfc607
 
 ## 函数原型
 
-```
-1. const AnchorInstanceInfo * GetIrInputInstanceInfo (const size_t ir_index) const
+```cpp
+const AnchorInstanceInfo * GetIrInputInstanceInfo (const size_t ir_index) const
 ```
 
 ## 参数说明
@@ -36,11 +36,11 @@ content_hash: sha256:aaa7fb988b0f361a6ee3f1942d6ea087723a2cb38a6b4d2236e5cdfc607
 
 ## 调用示例
 
-```
-1. // 假设已存在KernelContext *context
-2. auto extend_context = reinterpret_cast<ExtendedKernelContext *>(context);
-3. for (size_t idx = 0; idx < extend_context->GetComputeNodeInfo()->GetIrInputsNum(); ++idx) {
-4. auto input_td = extend_context->GetIrInputInstanceInfo(idx);
-5. // ...
-6. }
+```cpp
+// 假设已存在KernelContext *context
+auto extend_context = reinterpret_cast<ExtendedKernelContext *>(context);
+for (size_t idx = 0; idx < extend_context->GetComputeNodeInfo()->GetIrInputsNum(); ++idx) {
+  auto input_td = extend_context->GetIrInputInstanceInfo(idx);
+  // ...
+}
 ```

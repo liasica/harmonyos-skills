@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/apidiff-from-next-beta
 title: HarmonyOS NEXT Beta引入的API
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Beta引入的API
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Beta引入的API
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:36:14+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:40+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:276a615c9da29050ffb261e1b54714679b37269e1dbead87789f5c9e0bf3d3ad
 ---
 

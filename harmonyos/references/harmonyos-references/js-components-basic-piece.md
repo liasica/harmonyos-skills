@@ -3,26 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: piece
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > piece
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:25+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:6b036c11e84399611ccdc8e290322ce0d8d1f0c640c25fd9e5afce3f37bb73d6
+scraped_at: 2026-09-02T15:01:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0457df5e3401e318d0edc15dc8f5f80039d659424712bc67d5f529fd991906fc
 ---
 
 一种块状的入口，可包含图片和文本，常用于展示收件人。例如，邮件收件人或信息收件人。
 
-说明
+**说明** 
 
 从API version 5开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-components-common-attributes.md)外，还支持如下属性：
 
@@ -34,17 +30,13 @@ PhonePC/2in1TabletTVWearable
 
 ## 样式
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用样式](js-components-common-styles.md)。
 
-说明
+**说明** 
 
 文本和图片默认在整个piece组件中居中。
 
 ## 事件
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用事件](js-components-common-events.md)外，还支持如下事件：
 
@@ -54,43 +46,39 @@ PhonePC/2in1TabletTVWearable
 
 ## 方法
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用方法](js-components-common-methods.md)。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml-->
-2. <div class="container" >
-3. <piece if="{{first}}" content="example"></piece>
-4. <piece if="{{second}}" content="example" closable="true" onclose="closeSecond"></piece>
-5. </div>
+```html
+<!-- xxx.hml-->
+<div class="container" >
+  <piece if="{{first}}" content="example"></piece>
+  <piece if="{{second}}" content="example" closable="true" onclose="closeSecond"></piece>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .container {
-3. width: 100%;
-4. height: 100%;
-5. align-items: center;
-6. justify-content: center;
-7. }
-```
-
-```
-1. // xxx.js
-2. export default {
-3. data: {
-4. first: true,
-5. second: true
-6. },
-7. closeSecond(e) {
-8. this.second = false;
-9. }
-10. }
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/7liC6qOeSuOmHMpp72C9Vw/zh-cn_image_0000002589246531.gif)
+```js
+// xxx.js
+export default {
+  data: {
+    first: true,
+    second: true
+  },
+  closeSecond(e) {
+    this.second = false;
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/PeSRD9dwTEe-jKiWpZQzsA/zh-cn_image_0000002706836388.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multi-thread-
 title: 多线程并发概述
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 多线程并发 > 多线程并发概述
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:26:32+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:086501f31c48149d5f839084988d7411f0dd51a72f5f6549b91c4fad34900845
+scraped_at: 2026-09-02T14:59:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:cddd288db9de2196c3d69ef038e0807a2080c40f9efe6f8733ab5c0d079e6540
 ---
 
 多线程并发是指在单个程序中同时运行多个线程，通过并行或交替执行任务来提升性能和资源利用率的编程模型。在ArkTS应用开发中，多线程并发适用于多种业务场景，常见的业务场景主要分为以下三类，更详细的使用请参考**应用多线程开发实践案例**。
@@ -38,261 +38,210 @@ Actor并发模型中，不同Actor之间不共享内存，需通过消息传递�
 
 以下示例伪代码和示意图展示了如何使用内存共享模型解决生产者消费者问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/g775zwCRRwSUNFCkMteMpg/zh-cn_image_0000002589243827.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/kQlYmuvoTC6kD-gJzPK1cQ/zh-cn_image_0000002706833066.png)
 
 为了避免不同生产者或消费者同时访问同一块共享内存容器时产生脏读、脏写现象，同一时间只能有一个生产者或消费者访问该容器。即不同生产者和消费者需争夺使用容器的锁。当一个角色获取锁后，其他角色需等待该角色释放锁，才能重新尝试获取锁以访问该容器。
 
-```
-1. // 此段示例为伪代码仅作为逻辑示意，便于开发者理解使用内存共享模型和Actor模型的区别
-2. class Queue {
-3. // ...
-4. push(value: number) {
-5. // ...
-6. }
+```typescript
+// 此段示例为伪代码仅作为逻辑示意，便于开发者理解使用内存共享模型和Actor模型的区别
+class Queue {
+  // ...
+  push(value: number) {
+    // ...
+  }
 
-8. empty(): boolean {
-9. // ...
-10. return true;
-11. }
+  empty(): boolean {
+    // ...
+    return true;
+  }
 
-13. pop(value: number): number {
-14. // ...
-15. return value;
-16. }
-17. // ...
-18. }
+  pop(value: number): number {
+    // ...
+    return value;
+  }
+  // ...
+}
 
-20. class Mutex {
-21. // ...
-22. lock(): boolean {
-23. // ...
-24. return true;
-25. }
+class Mutex {
+  // ...
+  lock(): boolean {
+    // ...
+    return true;
+  }
 
-27. unlock() {
-28. // ...
-29. }
-30. // ...
-31. }
+  unlock() {
+    // ...
+  }
+  // ...
+}
 
-33. class BufferQueue {
-34. queue: Queue = new Queue();
-35. mutex: Mutex = new Mutex();
+class BufferQueue {
+  public queue: Queue = new Queue();
+  public mutex: Mutex = new Mutex();
 
-37. add(value: number) {
-38. // 尝试获取锁
-39. if (this.mutex.lock()) {
-40. this.queue.push(value);
-41. this.mutex.unlock();
-42. }
-43. }
+  add(value: number) {
+    // 尝试获取锁
+    if (this.mutex.lock()) {
+      this.queue.push(value);
+      this.mutex.unlock();
+    }
+  }
 
-45. take(value: number): number {
-46. let res: number = 0;
-47. // 尝试获取锁
-48. if (this.mutex.lock()) {
-49. if (this.queue.empty()) {
-50. this.mutex.unlock();
-51. res = 1;
-52. return res;
-53. }
-54. let num: number = this.queue.pop(value);
-55. this.mutex.unlock();
-56. res = num;
-57. }
-58. return res;
-59. }
-60. }
+  take(value: number): number {
+    let res: number = 0;
+    // 尝试获取锁
+    if (this.mutex.lock()) {
+      if (this.queue.empty()) {
+        this.mutex.unlock();
+        res = 1;
+        return res;
+      }
+      let num: number = this.queue.pop(value);
+      this.mutex.unlock();
+      res = num;
+    }
+    return res;
+  }
+}
 
-62. // 构造一段全局共享的内存
-63. let g_bufferQueue = new BufferQueue();
+// 构造一段全局共享的内存
+let gBufferQueue = new BufferQueue();
 
-65. class Producer {
-66. constructor() {
-67. }
+class Producer {
+  constructor() {
+  }
 
-69. run() {
-70. let value = Math.random();
-71. // 跨线程访问bufferQueue对象
-72. g_bufferQueue.add(value);
-73. }
-74. }
+  run() {
+    let value = Math.random();
+    // 跨线程访问bufferQueue对象
+    gBufferQueue.add(value);
+  }
+}
 
-76. class ConsumerTest {
-77. constructor() {
-78. }
+class ConsumerTest {
+  constructor() {
+  }
 
-80. run() {
-81. // 跨线程访问bufferQueue对象
-82. let num = 123;
-83. let res = g_bufferQueue.take(num);
-84. if (res != null) {
-85. // 添加消费逻辑
-86. }
-87. }
-88. }
+  run() {
+    // 跨线程访问bufferQueue对象
+    let num = 123;
+    let res = gBufferQueue.take(num);
+    if (res != null) {
+      // 添加消费逻辑
+      console.info('Add logic');
+    }
+  }
+}
 
-90. function Main(): void {
-91. let consumer: ConsumerTest = new ConsumerTest();
-92. let producer: Producer = new Producer();
-93. let threadNum: number = 10;
-94. for (let i = 0; i < threadNum; i++) {
-95. // 如下伪代码模拟启动多线程执行生产任务
-96. // let thread = new Thread();
-97. // thread.run(producer.run());
-98. // consumer.run();
-99. }
-100. }
+export function main(): void {
+  let consumer: ConsumerTest = new ConsumerTest();
+  let producer: Producer = new Producer();
+  let threadNum: number = 10;
+  for (let i = 0; i < threadNum; i++) {
+    // 如下伪代码模拟启动多线程执行生产任务
+    // let thread = new Thread();
+    // thread.run(producer.run());
+    // consumer.run();
+  }
+}
 ```
 
 ### Actor模型
 
 以下示例简单展示了如何使用基于Actor模型的TaskPool并发能力来解决生产者消费者问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/oWAisduOSBeb2yH8ef4-Jw/zh-cn_image_0000002558764020.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/IM9tckwOSkWBnxicKyQEGw/zh-cn_image_0000002736312175.png)
 
 Actor模型中，不同角色之间并不共享内存，生产者线程和UI线程都有自己的虚拟机实例，两个虚拟机实例之间拥有独占的内存，相互隔离。生产者生产出结果后，通过序列化通信将结果发送给UI线程。UI线程消费结果后，再发送新的生产任务给生产者线程。
 
-```
-1. import { taskpool } from '@kit.ArkTS';
-2. import { Main } from './Cale'
-
-4. // 跨线程并发任务
-5. @Concurrent
-6. async function produce(): Promise<number> {
-7. // 添加生产相关逻辑
-8. console.info('producing...');
-9. return Math.random();
-10. }
-
-12. class Consumer {
-13. public consume(value: Object) {
-14. // 添加消费相关逻辑
-15. console.info('consuming value: ' + value);
-16. }
-17. }
-
-19. @Entry
-20. @Component
-21. struct Index {
-22. @State message: string = 'Hello World';
-
-24. build() {
-25. Row() {
-26. Column() {
-27. Text(this.message)
-28. .fontSize(50)
-29. .fontWeight(FontWeight.Bold)
-30. Button() {
-31. Text('Actor start')
-32. }.onClick(() => {
-33. let produceTask: taskpool.Task = new taskpool.Task(produce);
-34. let consumer: Consumer = new Consumer();
-35. for (let index: number = 0; index < 10; index++) {
-36. // 执行生产异步并发任务
-37. taskpool.execute(produceTask).then((res: Object) => {
-38. consumer.consume(res);
-39. }).catch((e: Error) => {
-40. console.error(e.message);
-41. })
-42. }
-43. this.message = 'success';
-44. })
-45. .id('button')
-46. .width('20%')
-47. .height('20%')
-
-49. Button() {
-50. Text('Actor start2')
-51. }.onClick(async () => {
-52. let dataArray: number[] = [];
-53. let produceTask: taskpool.Task = new taskpool.Task(produce);
-54. let consumer: Consumer = new Consumer();
-55. for (let index: number = 0; index < 10; index++) {
-56. // 执行生产异步并发任务
-57. let result = await taskpool.execute(produceTask) as number;
-58. dataArray.push(result);
-59. }
-60. for (let index: number = 0; index < dataArray.length; index++) {
-61. consumer.consume(dataArray[index]);
-62. }
-63. this.message = 'success2';
-64. })
-65. .id('button2')
-66. .width('20%')
-67. .height('20%')
-
-69. Button() {
-70. Text('cale start')
-71. }.onClick(async () => {
-72. Main();
-73. this.message = 'cale success';
-74. })
-75. .id('button3')
-76. .width('20%')
-77. .height('20%')
-78. }
-79. .width('100%')
-80. }
-81. .height('100%')
-82. }
-83. }
-```
-
 也可以等待生产者完成所有任务，通过序列化通信将结果发送给UI线程。UI线程接收后，由消费者统一消费结果。
 
-```
-1. import { taskpool } from '@kit.ArkTS';
+```typescript
+import { taskpool } from '@kit.ArkTS';
+import { main } from './Cale'
 
-3. // 跨线程并发任务
-4. @Concurrent
-5. async function produce(): Promise<number> {
-6. // 添加生产相关逻辑
-7. console.info('producing...');
-8. return Math.random();
-9. }
+// 跨线程并发任务
+@Concurrent
+async function produce(): Promise<number> {
+  // 添加生产相关逻辑
+  console.info('producing...');
+  return Math.random();
+}
 
-11. class Consumer {
-12. public consume(value: number) {
-13. // 添加消费相关逻辑
-14. console.info('consuming value: ' + value);
-15. }
-16. }
+class Consumer {
+  public consume(value: number) {
+    // 添加消费相关逻辑
+    console.info(`consuming value: ${value}`);
+  }
+}
 
-18. @Entry
-19. @Component
-20. struct Index {
-21. @State message: string = 'Hello World'
+@Entry
+@Component
+struct ActorModel {
+  @State message: string = 'Hello World';
 
-23. build() {
-24. Row() {
-25. Column() {
-26. Text(this.message)
-27. .fontSize(50)
-28. .fontWeight(FontWeight.Bold)
-29. Button() {
-30. Text('start')
-31. }.onClick(async () => {
-32. let dataArray = new Array<number>();
-33. let produceTask: taskpool.Task = new taskpool.Task(produce);
-34. let consumer: Consumer = new Consumer();
-35. for (let index: number = 0; index < 10; index++) {
-36. // 执行生产异步并发任务
-37. let result = await taskpool.execute(produceTask) as number;
-38. dataArray.push(result);
-39. }
-40. for (let index: number = 0; index < dataArray.length; index++) {
-41. consumer.consume(dataArray[index]);
-42. }
-43. })
-44. .width('20%')
-45. .height('20%')
-46. }
-47. .width('100%')
-48. }
-49. .height('100%')
-50. }
-51. }
+  build() {
+    Row() {
+      Column() {
+        Text(this.message)
+          .fontSize(50)
+          .fontWeight(FontWeight.Bold)
+        Button() {
+          Text('Actor start')
+        }.onClick(() => {
+          let produceTask: taskpool.Task = new taskpool.Task(produce);
+          let consumer: Consumer = new Consumer();
+          for (let index: number = 0; index < 10; index++) {
+            // 执行生产异步并发任务
+            taskpool.execute(produceTask).then((res: Object) => {
+              consumer.consume(res as number);
+              this.message = 'success';
+            }).catch((e: Error) => {
+              console.error(`produceTask is failed: ${e.message}`);
+              this.message = 'failed';
+            })
+          }
+        })
+        .id('button')
+        .width('20%')
+        .height('20%')
+
+        Button() {
+          Text('Actor start2')
+        }.onClick(async () => {
+          let dataArray: number[] = [];
+          let produceTask: taskpool.Task = new taskpool.Task(produce);
+          let consumer: Consumer = new Consumer();
+          for (let index: number = 0; index < 10; index++) {
+            // 批量执行生产异步并发任务并收集结果
+            let result = await taskpool.execute(produceTask) as number;
+            dataArray.push(result);
+          }
+          for (let index: number = 0; index < dataArray.length; index++) {
+            consumer.consume(dataArray[index]);
+          }
+          this.message = 'success2';
+        })
+        .id('button2')
+        .width('20%')
+        .height('20%')
+
+        // 点击按钮调用Cale模块的main函数，演示内存共享模型与Actor模型的区别
+        Button() {
+          Text('cale start')
+        }.onClick(() => {
+          main();
+          this.message = 'cale success';
+        })
+        .id('button3')
+        .width('20%')
+        .height('20%')
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 ## TaskPool和Worker
@@ -306,7 +255,7 @@ ArkTS提供了TaskPool和Worker两种并发能力供开发者选择，各自的�
   UI操作必须在主线程中执行。并发线程中操作UI可能导致界面异常或崩溃。
 * 数据传递需支持序列化/反序列化
 
-  并发任务间传递数据时，对象必须是可序列化的（如基本类型、普通对象等），不可传递函数、循环引用、特殊对象（如Promise、Error）等。已完成（fulfilled或rejected）状态的 Promise可以被传递，因为其结果是可序列化的。
+  并发任务间传递数据时，对象必须是可序列化的（如基本类型、普通对象等），或者可共享的（sendable对象），不可传递函数、循环引用、特殊对象（如Promise、Error）等。已完成（fulfilled或rejected）状态的 Promise可以被传递，因为其结果是可序列化的。
 * 合理控制并发粒度
 
   频繁创建和销毁并发任务（如Worker、Task）会带来额外性能开销，建议复用或使用任务池机制。

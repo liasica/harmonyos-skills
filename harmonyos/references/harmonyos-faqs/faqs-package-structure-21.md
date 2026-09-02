@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 如何正确引用HAR/HSP包模块
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 如何正确引用HAR/HSP包模块
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:29+08:00
-doc_updated_at: 2026-03-17
+scraped_at: 2026-09-02T15:21:13+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:9d0202ae49e8ffdb0b3b39e02671acd837d550451e0517e5508bf02166adc13c
 ---
 

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-medialibrarykit-hdc
 title: Media Library Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Developer Beta1引入的API > Media Library Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Developer Beta1引入的API > Media Library Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:37:09+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:53+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:1e2db77a1ad1c97554c7905ec2ac4d7486dc3e4c7e2d9901cdb5ba3f5878004b
 ---
 

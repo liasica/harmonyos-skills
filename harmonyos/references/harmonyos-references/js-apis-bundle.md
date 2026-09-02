@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bundle (Bundle模块)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 已停止维护的接口 > @ohos.bundle (Bundle模块)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:51+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:96e5a40f59099b53e9043a6a0df2e6815f30c87d25b1f9f9b2d49f794f101eca
+scraped_at: 2026-09-02T15:00:36+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b9c207eaab23382f26226f91e09875d0b371328bc836b44622613b605f96f717
 ---
 
-本模块提供应用信息查询能力，支持[包信息](js-apis-bundle-bundleinfo.md)、[应用信息](js-apis-bundle-applicationinfo.md)、[Ability组件信息](js-apis-bundle-abilityinfo.md)等信息的查询，以及应用禁用状态的查询、设置等。
+本模块提供应用信息查询能力，支持[BundleInfo](js-apis-bundle-bundleinfo.md)、[ApplicationInfo](js-apis-bundle-applicationinfo.md)、[AbilityInfo](js-apis-bundle-abilityinfo.md)等信息的查询，以及应用禁用状态的查询、设置等。
 
-说明
+**说明** 
 
 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -18,15 +18,11 @@ content_hash: sha256:96e5a40f59099b53e9043a6a0df2e6815f30c87d25b1f9f9b2d49f794f1
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import bundle from '@ohos.bundle';
+```ts
+import bundle from '@ohos.bundle';
 ```
 
 ## 权限列表
-
-PhonePC/2in1TabletTVWearable
 
 | 权限 | 权限等级 | 描述 |
 | --- | --- | --- |
@@ -37,17 +33,15 @@ PhonePC/2in1TabletTVWearable
 
 ## bundle.getApplicationInfodeprecated
 
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
-
 getApplicationInfo(bundleName: string, bundleFlags: number, userId?: number): Promise<ApplicationInfo>
 
 根据给定的Bundle名称获取ApplicationInfo。使用Promise异步回调。
 
 获取调用方自己的信息时不需要权限。
+
+**说明** 
+
+从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
 
 **需要权限：**
 
@@ -62,7 +56,7 @@ SystemCapability.BundleManager.BundleFramework
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 要查询的应用Bundle名称。 |
-| bundleFlags | number | 是 | 用于指定返回的应用信息对象中包含信息的标记。取值范围请参考[BundleFlag说明](js-apis-bundle.md#bundleflagdeprecated)中应用信息相关flag。 |
+| bundleFlags | number | 是 | 用于指定返回的应用信息对象中包含信息的标记。取值范围请参考[BundleFlag](js-apis-bundle.md#bundleflagdeprecated)说明中应用信息相关flag。 |
 | userId | number | 否 | 用户ID。默认值：调用方所在用户，取值范围：大于等于0。 |
 
 **返回值：**
@@ -73,29 +67,23 @@ SystemCapability.BundleManager.BundleFramework
 
 **示例：**
 
-```
-1. import bundle from '@ohos.bundle';
-2. import { BusinessError } from '@ohos.base';
+```ts
+import bundle from '@ohos.bundle';
+import { BusinessError } from '@ohos.base';
 
-4. let bundleName: string = "com.example.myapplication";
-5. let bundleFlags: number = 0;
-6. let userId: number = 100;
+let bundleName: string = "com.example.myapplication";
+let bundleFlags: number = 0;
+let userId: number = 100;
 
-8. bundle.getApplicationInfo(bundleName, bundleFlags, userId)
-9. .then((data) => {
-10. console.info('Operation successful. Data: ' + JSON.stringify(data));
-11. }).catch((error: BusinessError) => {
-12. console.error('Operation failed. Cause: ' + JSON.stringify(error));
-13. })
+bundle.getApplicationInfo(bundleName, bundleFlags, userId)
+  .then((data) => {
+    console.info('Operation successful. Data: ' + JSON.stringify(data));
+  }).catch((error: BusinessError) => {
+    console.error('Operation failed. Cause: ' + JSON.stringify(error));
+  })
 ```
 
 ## bundle.getApplicationInfodeprecated
-
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
 
 getApplicationInfo(bundleName: string, bundleFlags: number, userId: number, callback: AsyncCallback<ApplicationInfo>): void
 
@@ -103,6 +91,10 @@ getApplicationInfo(bundleName: string, bundleFlags: number, userId: number, call
 
 获取调用方自己的信息时不需要权限。
 
+**说明** 
+
+从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
+
 **需要权限：**
 
 ohos.permission.GET\_BUNDLE\_INFO\_PRIVILEGED 或 ohos.permission.GET\_BUNDLE\_INFO
@@ -116,35 +108,29 @@ SystemCapability.BundleManager.BundleFramework
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 要查询的应用Bundle名称。 |
-| bundleFlags | number | 是 | 用于指定返回的应用信息对象中包含信息的标记。取值范围：参考[BundleFlag说明](js-apis-bundle.md#bundleflagdeprecated)中应用信息相关flag。 |
+| bundleFlags | number | 是 | 用于指定返回的应用信息对象中包含信息的标记。取值范围：参考[BundleFlag](js-apis-bundle.md#bundleflagdeprecated)说明中应用信息相关flag。 |
 | userId | number | 是 | 用户ID。取值范围：大于等于0。 |
 | callback | AsyncCallback<[ApplicationInfo](js-apis-bundle-applicationinfo.md)> | 是 | 程序启动作为入参的回调函数，返回应用程序信息。 |
 
 **示例：**
 
-```
-1. import bundle from '@ohos.bundle';
+```ts
+import bundle from '@ohos.bundle';
 
-3. let bundleName: string = "com.example.myapplication";
-4. let bundleFlags: number = 0;
-5. let userId: number = 100;
+let bundleName: string = "com.example.myapplication";
+let bundleFlags: number = 0;
+let userId: number = 100;
 
-7. bundle.getApplicationInfo(bundleName, bundleFlags, userId, (err, data) => {
-8. if (err) {
-9. console.error('Operation failed. Cause: ' + JSON.stringify(err));
-10. return;
-11. }
-12. console.info('Operation successful. Data:' + JSON.stringify(data));
-13. })
+bundle.getApplicationInfo(bundleName, bundleFlags, userId, (err, data) => {
+  if (err) {
+    console.error('Operation failed. Cause: ' + JSON.stringify(err));
+    return;
+  }
+  console.info('Operation successful. Data:' + JSON.stringify(data));
+})
 ```
 
 ## bundle.getApplicationInfodeprecated
-
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
 
 getApplicationInfo(bundleName: string, bundleFlags: number, callback: AsyncCallback<ApplicationInfo>): void
 
@@ -152,6 +138,10 @@ getApplicationInfo(bundleName: string, bundleFlags: number, callback: AsyncCallb
 
 获取调用方自己的信息时不需要权限。
 
+**说明** 
+
+从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
+
 **需要权限：**
 
 ohos.permission.GET\_BUNDLE\_INFO\_PRIVILEGED 或 ohos.permission.GET\_BUNDLE\_INFO
@@ -165,37 +155,35 @@ SystemCapability.BundleManager.BundleFramework
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 要查询的应用Bundle名称。 |
-| bundleFlags | number | 是 | 用于指定返回的应用信息对象中包含信息的标记。取值范围：参考[BundleFlag说明](js-apis-bundle.md#bundleflagdeprecated)中应用信息相关flag。 |
+| bundleFlags | number | 是 | 用于指定返回的应用信息对象中包含信息的标记。取值范围：参考[BundleFlag](js-apis-bundle.md#bundleflagdeprecated)说明中应用信息相关flag。 |
 | callback | AsyncCallback<[ApplicationInfo](js-apis-bundle-applicationinfo.md)> | 是 | 程序启动作为入参的回调函数，返回应用程序信息。 |
 
 **示例：**
 
-```
-1. import bundle from '@ohos.bundle';
+```ts
+import bundle from '@ohos.bundle';
 
-3. let bundleName: string = "com.example.myapplication";
-4. let bundleFlags: number = 0;
+let bundleName: string = "com.example.myapplication";
+let bundleFlags: number = 0;
 
-6. bundle.getApplicationInfo(bundleName, bundleFlags, (err, data) => {
-7. if (err) {
-8. console.error('Operation failed. Cause: ' + JSON.stringify(err));
-9. return;
-10. }
-11. console.info('Operation successful. Data:' + JSON.stringify(data));
-12. })
+bundle.getApplicationInfo(bundleName, bundleFlags, (err, data) => {
+  if (err) {
+    console.error('Operation failed. Cause: ' + JSON.stringify(err));
+    return;
+  }
+  console.info('Operation successful. Data:' + JSON.stringify(data));
+})
 ```
 
 ## bundle.getAllBundleInfodeprecated
 
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
-
 getAllBundleInfo(bundleFlag: BundleFlag, userId?: number): Promise<Array<BundleInfo>>
 
 获取指定用户所有的BundleInfo，使用Promise形式异步回调。
+
+**说明** 
+
+从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
 
 **需要权限：**
 
@@ -209,7 +197,7 @@ SystemCapability.BundleManager.BundleFramework
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| bundleFlag | BundleFlag | 是 | 用于指定返回的包信息对象中包含信息的标记。取值范围：参考[BundleFlag说明](js-apis-bundle.md#bundleflagdeprecated)中包信息相关flag。 |
+| bundleFlag | BundleFlag | 是 | 用于指定返回的包信息对象中包含信息的标记。取值范围：参考[BundleFlag](js-apis-bundle.md#bundleflagdeprecated)说明中包信息相关flag。 |
 | userId | number | 否 | 用户ID。默认值：调用方所在用户，取值范围：大于等于0。 |
 
 **返回值：**
@@ -220,33 +208,31 @@ SystemCapability.BundleManager.BundleFramework
 
 **示例：**
 
-```
-1. import bundle from '@ohos.bundle';
-2. import { BusinessError } from '@ohos.base';
+```ts
+import bundle from '@ohos.bundle';
+import { BusinessError } from '@ohos.base';
 
-4. let bundleFlag: number = 0;
-5. let userId: number = 100;
+let bundleFlag: number = 0;
+let userId: number = 100;
 
-7. bundle.getAllBundleInfo(bundleFlag, userId)
-8. .then((data) => {
-9. console.info('Operation successful. Data: ' + JSON.stringify(data));
-10. }).catch((error: BusinessError) => {
-11. console.error('Operation failed. Cause: ' + JSON.stringify(error));
-12. })
+bundle.getAllBundleInfo(bundleFlag, userId)
+  .then((data) => {
+    console.info('Operation successful. Data: ' + JSON.stringify(data));
+  }).catch((error: BusinessError) => {
+    console.error('Operation failed. Cause: ' + JSON.stringify(error));
+  })
 ```
 
 ## bundle.getAllBundleInfodeprecated
-
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
 
 getAllBundleInfo(bundleFlag: BundleFlag, callback: AsyncCallback<Array<BundleInfo>>): void
 
 获取当前用户所有的BundleInfo，使用callback异步回调。
 
+**说明** 
+
+从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
+
 **需要权限：**
 
 ohos.permission.GET\_BUNDLE\_INFO\_PRIVILEGED
@@ -259,37 +245,35 @@ SystemCapability.BundleManager.BundleFramework
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| bundleFlag | BundleFlag | 是 | 用于指定返回的应用信息对象中包含信息的标记。取值范围：参考[BundleFlag说明](js-apis-bundle.md#bundleflagdeprecated)中包信息相关flag。 |
+| bundleFlag | BundleFlag | 是 | 用于指定返回的应用信息对象中包含信息的标记。取值范围：参考[BundleFlag](js-apis-bundle.md#bundleflagdeprecated)说明中包信息相关flag。 |
 | callback | AsyncCallback<Array<[BundleInfo](js-apis-bundle-bundleinfo.md)>> | 是 | 程序启动作为入参的回调函数，返回所有可用的BundleInfo。 |
 
 **示例：**
 
-```
-1. import bundle from '@ohos.bundle';
+```ts
+import bundle from '@ohos.bundle';
 
-3. let bundleFlag: number = 0;
+let bundleFlag: number = 0;
 
-5. bundle.getAllBundleInfo(bundleFlag, (err, data) => {
-6. if (err) {
-7. console.error('Operation failed. Cause: ' + JSON.stringify(err));
-8. return;
-9. }
-10. console.info('Operation successful. Data:' + JSON.stringify(data));
-11. })
+bundle.getAllBundleInfo(bundleFlag, (err, data) => {
+  if (err) {
+    console.error('Operation failed. Cause: ' + JSON.stringify(err));
+    return;
+  }
+  console.info('Operation successful. Data:' + JSON.stringify(data));
+})
 ```
 
 ## bundle.getAllBundleInfodeprecated
-
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
 
 getAllBundleInfo(bundleFlag: BundleFlag, userId: number, callback: AsyncCallback<Array<BundleInfo>>): void
 
 获取系统中指定用户下所有的BundleInfo，使用callback异步回调。
 
+**说明** 
+
+从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
+
 **需要权限：**
 
 ohos.permission.GET\_BUNDLE\_INFO\_PRIVILEGED
@@ -302,40 +286,38 @@ SystemCapability.BundleManager.BundleFramework
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| bundleFlag | BundleFlag | 是 | 用于指定返回的应用信息对象中包含信息的标记。取值范围：参考[BundleFlag说明](js-apis-bundle.md#bundleflagdeprecated)中包信息相关flag。 |
+| bundleFlag | BundleFlag | 是 | 用于指定返回的应用信息对象中包含信息的标记。取值范围：参考[BundleFlag](js-apis-bundle.md#bundleflagdeprecated)说明中包信息相关flag。 |
 | userId | number | 是 | 用户ID。默认值：调用方所在用户，取值范围：大于等于0。 |
 | callback | AsyncCallback<Array<[BundleInfo](js-apis-bundle-bundleinfo.md)>> | 是 | 程序启动作为入参的回调函数，返回指定用户下所有包的BundleInfo。 |
 
 **示例：**
 
-```
-1. import bundle from '@ohos.bundle';
+```ts
+import bundle from '@ohos.bundle';
 
-3. let bundleFlag: number = 0;
-4. let userId: number = 100;
+let bundleFlag: number = 0;
+let userId: number = 100;
 
-6. bundle.getAllBundleInfo(bundleFlag, userId, (err, data) => {
-7. if (err) {
-8. console.error('Operation failed. Cause: ' + JSON.stringify(err));
-9. return;
-10. }
-11. console.info('Operation successful. Data:' + JSON.stringify(data));
-12. })
+bundle.getAllBundleInfo(bundleFlag, userId, (err, data) => {
+  if (err) {
+    console.error('Operation failed. Cause: ' + JSON.stringify(err));
+    return;
+  }
+  console.info('Operation successful. Data:' + JSON.stringify(data));
+})
 ```
 
 ## bundle.getBundleInfodeprecated
-
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 7开始支持，从API version 9开始废弃，建议使用[getBundleInfo](js-apis-bundlemanager.md#bundlemanagergetbundleinfo14-2)替代。
 
 getBundleInfo(bundleName: string, bundleFlags: number, options?: BundleOptions): Promise<BundleInfo>
 
 根据给定的Bundle名称获取BundleInfo，使用Promise异步回调。
 
 获取调用方自己的信息时不需要权限。
+
+**说明** 
+
+从API version 7开始支持，从API version 9开始废弃，建议使用[getBundleInfo](js-apis-bundlemanager.md#bundlemanagergetbundleinfo14-2)替代。
 
 **需要权限：**
 
@@ -350,8 +332,8 @@ SystemCapability.BundleManager.BundleFramework
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 要查询的应用Bundle名称。 |
-| bundleFlags | number | 是 | 用于指定返回的应用信息对象中包含信息的标记。取值范围：参考[BundleFlag说明](js-apis-bundle.md#bundleflagdeprecated)中包信息相关flag。 |
-| options | [BundleOptions](js-apis-bundle.md#bundleoptionsdeprecated) | 否 | 包含userid的查询选项。 |
+| bundleFlags | number | 是 | 用于指定返回的应用信息对象中包含信息的标记。取值范围：参考[BundleFlag](js-apis-bundle.md#bundleflagdeprecated)说明中包信息相关flag。 |
+| options | [BundleOptions](js-apis-bundle.md#bundleoptionsdeprecated) | 否 | 包含userId的查询选项。 |
 
 **返回值：**
 
@@ -361,37 +343,35 @@ SystemCapability.BundleManager.BundleFramework
 
 **示例：**
 
-```
-1. import bundle from '@ohos.bundle';
-2. import { BusinessError } from '@ohos.base';
+```ts
+import bundle from '@ohos.bundle';
+import { BusinessError } from '@ohos.base';
 
-4. let bundleName: string = "com.example.myapplication";
-5. let bundleFlags: number = 1;
-6. let options: bundle.BundleOptions = {
-7. "userId": 100
-8. };
+let bundleName: string = "com.example.myapplication";
+let bundleFlags: number = 1;
+let options: bundle.BundleOptions = {
+  "userId": 100
+};
 
-10. bundle.getBundleInfo(bundleName, bundleFlags, options)
-11. .then((data) => {
-12. console.info('Operation successful. Data: ' + JSON.stringify(data));
-13. }).catch((error: BusinessError) => {
-14. console.error('Operation failed. Cause: ' + JSON.stringify(error));
-15. })
+bundle.getBundleInfo(bundleName, bundleFlags, options)
+  .then((data) => {
+    console.info('Operation successful. Data: ' + JSON.stringify(data));
+  }).catch((error: BusinessError) => {
+    console.error('Operation failed. Cause: ' + JSON.stringify(error));
+  })
 ```
 
 ## bundle.getBundleInfodeprecated
-
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 7开始支持，从API version 9开始废弃，建议使用[getBundleInfo](js-apis-bundlemanager.md#bundlemanagergetbundleinfo14-1)替代。
 
 getBundleInfo(bundleName: string, bundleFlags: number, callback: AsyncCallback<BundleInfo>): void
 
 根据给定的Bundle名称获取BundleInfo，使用callback异步回调。
 
 获取调用方自己的信息时不需要权限。
+
+**说明** 
+
+从API version 7开始支持，从API version 9开始废弃，建议使用[getBundleInfo](js-apis-bundlemanager.md#bundlemanagergetbundleinfo14-1)替代。
 
 **需要权限：**
 
@@ -406,39 +386,37 @@ SystemCapability.BundleManager.BundleFramework
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 需要查询的应用Bundle名称。 |
-| bundleFlags | number | 是 | 用于指定返回的应用信息对象中包含信息的标记。取值范围：参考[BundleFlag说明](js-apis-bundle.md#bundleflagdeprecated)中包信息相关flag。 |
+| bundleFlags | number | 是 | 用于指定返回的应用信息对象中包含信息的标记。取值范围：参考[BundleFlag](js-apis-bundle.md#bundleflagdeprecated)说明中包信息相关flag。 |
 | callback | AsyncCallback<[BundleInfo](js-apis-bundle-bundleinfo.md)> | 是 | 程序启动作为入参的回调函数，返回包信息。 |
 
 **示例：**
 
-```
-1. import bundle from '@ohos.bundle';
+```ts
+import bundle from '@ohos.bundle';
 
-3. let bundleName: string = "com.example.myapplication";
-4. let bundleFlags: number = 1;
+let bundleName: string = "com.example.myapplication";
+let bundleFlags: number = 1;
 
-6. bundle.getBundleInfo(bundleName, bundleFlags, (err, data) => {
-7. if (err) {
-8. console.error('Operation failed. Cause: ' + JSON.stringify(err));
-9. return;
-10. }
-11. console.info('Operation successful. Data:' + JSON.stringify(data));
-12. })
+bundle.getBundleInfo(bundleName, bundleFlags, (err, data) => {
+  if (err) {
+    console.error('Operation failed. Cause: ' + JSON.stringify(err));
+    return;
+  }
+  console.info('Operation successful. Data:' + JSON.stringify(data));
+})
 ```
 
 ## bundle.getBundleInfodeprecated
-
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 7开始支持，从API version 9开始废弃，建议使用[getBundleInfo](js-apis-bundlemanager.md#bundlemanagergetbundleinfo14)替代。
 
 getBundleInfo(bundleName: string, bundleFlags: number, options: BundleOptions, callback: AsyncCallback<BundleInfo>): void
 
 根据给定的Bundle名称获取BundleInfo，使用callback异步回调。
 
 获取调用方自己的信息时不需要权限。
+
+**说明** 
+
+从API version 7开始支持，从API version 9开始废弃，建议使用[getBundleInfo](js-apis-bundlemanager.md#bundlemanagergetbundleinfo14)替代。
 
 **需要权限：**
 
@@ -453,41 +431,39 @@ SystemCapability.BundleManager.BundleFramework
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 要查询的应用Bundle名称。 |
-| bundleFlags | number | 是 | 用于指定返回的应用信息对象中包含信息的标记。取值范围：参考[BundleFlag说明](js-apis-bundle.md#bundleflagdeprecated)中包信息相关flag。 |
-| options | [BundleOptions](js-apis-bundle.md#bundleoptionsdeprecated) | 是 | 包含userid。 |
+| bundleFlags | number | 是 | 用于指定返回的应用信息对象中包含信息的标记。取值范围：参考[BundleFlag](js-apis-bundle.md#bundleflagdeprecated)说明中包信息相关flag。 |
+| options | [BundleOptions](js-apis-bundle.md#bundleoptionsdeprecated) | 是 | 包含userId。 |
 | callback | AsyncCallback<[BundleInfo](js-apis-bundle-bundleinfo.md)> | 是 | 程序启动作为入参的回调函数，返回包信息。 |
 
 **示例：**
 
-```
-1. import bundle from '@ohos.bundle';
+```ts
+import bundle from '@ohos.bundle';
 
-3. let bundleName: string = "com.example.myapplication";
-4. let bundleFlags: number = 1;
-5. let options: bundle.BundleOptions = {
-6. "userId": 100
-7. };
+let bundleName: string = "com.example.myapplication";
+let bundleFlags: number = 1;
+let options: bundle.BundleOptions = {
+  "userId": 100
+};
 
-9. bundle.getBundleInfo(bundleName, bundleFlags, options, (err, data) => {
-10. if (err) {
-11. console.error('Operation failed. Cause: ' + JSON.stringify(err));
-12. return;
-13. }
-14. console.info('Operation successful. Data:' + JSON.stringify(data));
-15. })
+bundle.getBundleInfo(bundleName, bundleFlags, options, (err, data) => {
+  if (err) {
+    console.error('Operation failed. Cause: ' + JSON.stringify(err));
+    return;
+  }
+  console.info('Operation successful. Data:' + JSON.stringify(data));
+})
 ```
 
 ## bundle.getAllApplicationInfodeprecated
 
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
-
 getAllApplicationInfo(bundleFlags: number, userId?: number): Promise<Array<ApplicationInfo>>
 
-获取指定用户下所有已安装的应用信息，使用promise异步回调。
+获取指定用户下所有已安装的应用信息，使用Promise异步回调。
+
+**说明** 
+
+从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
 
 **需要权限：**
 
@@ -501,7 +477,7 @@ SystemCapability.BundleManager.BundleFramework
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| bundleFlags | number | 是 | 用于指定返回的应用信息对象中包含信息的标记。取值范围：参考[BundleFlag说明](js-apis-bundle.md#bundleflagdeprecated)中应用信息相关flag。 |
+| bundleFlags | number | 是 | 用于指定返回的应用信息对象中包含信息的标记。取值范围：参考[BundleFlag](js-apis-bundle.md#bundleflagdeprecated)说明中应用信息相关flag。 |
 | userId | number | 否 | 用户ID。默认值：调用方所在用户，取值范围：大于等于0。 |
 
 **返回值：**
@@ -512,33 +488,31 @@ SystemCapability.BundleManager.BundleFramework
 
 **示例：**
 
-```
-1. import bundle from '@ohos.bundle';
-2. import { BusinessError } from '@ohos.base';
+```ts
+import bundle from '@ohos.bundle';
+import { BusinessError } from '@ohos.base';
 
-4. let bundleFlags: number = 8;
-5. let userId: number = 100;
+let bundleFlags: number = 8;
+let userId: number = 100;
 
-7. bundle.getAllApplicationInfo(bundleFlags, userId)
-8. .then((data) => {
-9. console.info('Operation successful. Data: ' + JSON.stringify(data));
-10. }).catch((error: BusinessError) => {
-11. console.error('Operation failed. Cause: ' + JSON.stringify(error));
-12. })
+bundle.getAllApplicationInfo(bundleFlags, userId)
+  .then((data) => {
+    console.info('Operation successful. Data: ' + JSON.stringify(data));
+  }).catch((error: BusinessError) => {
+    console.error('Operation failed. Cause: ' + JSON.stringify(error));
+  })
 ```
 
 ## bundle.getAllApplicationInfodeprecated
-
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
 
 getAllApplicationInfo(bundleFlags: number, userId: number, callback: AsyncCallback<Array<ApplicationInfo>>): void
 
 获取指定用户下所有已安装的应用信息，使用callback异步回调。
 
+**说明** 
+
+从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
+
 **需要权限：**
 
 ohos.permission.GET\_BUNDLE\_INFO\_PRIVILEGED
@@ -551,38 +525,36 @@ SystemCapability.BundleManager.BundleFramework
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| bundleFlags | number | 是 | 用于指定返回的应用信息对象中包含信息的标记。取值范围：参考[BundleFlag说明](js-apis-bundle.md#bundleflagdeprecated)中应用信息相关flag。 |
+| bundleFlags | number | 是 | 用于指定返回的应用信息对象中包含信息的标记。取值范围：参考[BundleFlag](js-apis-bundle.md#bundleflagdeprecated)说明中应用信息相关flag。 |
 | userId | number | 是 | 用户ID。默认值：调用方所在用户，取值范围：大于等于0。 |
 | callback | AsyncCallback<Array<[ApplicationInfo](js-apis-bundle-applicationinfo.md)>> | 是 | 程序启动作为入参的回调函数，返回应用信息列表。 |
 
 **示例：**
 
-```
-1. import bundle from '@ohos.bundle';
+```ts
+import bundle from '@ohos.bundle';
 
-3. let bundleFlags: number = bundle.BundleFlag.GET_APPLICATION_INFO_WITH_PERMISSION;
-4. let userId: number = 100;
+let bundleFlags: number = bundle.BundleFlag.GET_APPLICATION_INFO_WITH_PERMISSION;
+let userId: number = 100;
 
-6. bundle.getAllApplicationInfo(bundleFlags, userId, (err, data) => {
-7. if (err) {
-8. console.error('Operation failed. Cause: ' + JSON.stringify(err));
-9. return;
-10. }
-11. console.info('Operation successful. Data:' + JSON.stringify(data));
-12. })
+bundle.getAllApplicationInfo(bundleFlags, userId, (err, data) => {
+  if (err) {
+    console.error('Operation failed. Cause: ' + JSON.stringify(err));
+    return;
+  }
+  console.info('Operation successful. Data:' + JSON.stringify(data));
+})
 ```
 
 ## bundle.getAllApplicationInfodeprecated
 
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
-
 getAllApplicationInfo(bundleFlags: number, callback: AsyncCallback<Array<ApplicationInfo>>): void
 
 获取调用方所在用户下已安装的应用信息，使用callback异步回调。
+
+**说明** 
+
+从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
 
 **需要权限：**
 
@@ -596,36 +568,34 @@ SystemCapability.BundleManager.BundleFramework
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| bundleFlags | number | 是 | 用于指定返回的应用信息对象中包含信息的标记。取值范围：参考[BundleFlag说明](js-apis-bundle.md#bundleflagdeprecated)中应用信息相关flag。 |
+| bundleFlags | number | 是 | 用于指定返回的应用信息对象中包含信息的标记。取值范围：参考[BundleFlag](js-apis-bundle.md#bundleflagdeprecated)说明中应用信息相关flag。 |
 | callback | AsyncCallback<Array<[ApplicationInfo](js-apis-bundle-applicationinfo.md)>> | 是 | 程序启动作为入参的回调函数，返回应用信息列表。 |
 
 **示例：**
 
-```
-1. import bundle from '@ohos.bundle';
+```ts
+import bundle from '@ohos.bundle';
 
-3. let bundleFlags: number = bundle.BundleFlag.GET_APPLICATION_INFO_WITH_PERMISSION;
+let bundleFlags: number = bundle.BundleFlag.GET_APPLICATION_INFO_WITH_PERMISSION;
 
-5. bundle.getAllApplicationInfo(bundleFlags, (err, data) => {
-6. if (err) {
-7. console.error('Operation failed. Cause: ' + JSON.stringify(err));
-8. return;
-9. }
-10. console.info('Operation successful. Data:' + JSON.stringify(data));
-11. })
+bundle.getAllApplicationInfo(bundleFlags, (err, data) => {
+  if (err) {
+    console.error('Operation failed. Cause: ' + JSON.stringify(err));
+    return;
+  }
+  console.info('Operation successful. Data:' + JSON.stringify(data));
+})
 ```
 
 ## bundle.getBundleArchiveInfodeprecated
 
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
-
 getBundleArchiveInfo(hapFilePath: string, bundleFlags: number) : Promise<BundleInfo>
 
 获取有关HAP中包含的应用程序包的信息，使用Promise异步回调。
+
+**说明** 
+
+从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
 
 **系统能力：**
 
@@ -636,7 +606,7 @@ SystemCapability.BundleManager.BundleFramework
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | hapFilePath | string | 是 | HAP存放路径。支持当前应用程序的绝对路径和数据目录沙箱路径。 |
-| bundleFlags | number | 是 | 用于指定要返回的BundleInfo对象中包含信息的标记。取值范围：参考[BundleFlag说明](js-apis-bundle.md#bundleflagdeprecated)中包信息相关flag。 |
+| bundleFlags | number | 是 | 用于指定要返回的BundleInfo对象中包含信息的标记。取值范围：参考[BundleFlag](js-apis-bundle.md#bundleflagdeprecated)说明中包信息相关flag。 |
 
 **返回值：**
 
@@ -646,32 +616,30 @@ SystemCapability.BundleManager.BundleFramework
 
 **示例：**
 
-```
-1. import bundle from '@ohos.bundle';
-2. import { BusinessError } from '@ohos.base';
+```ts
+import bundle from '@ohos.bundle';
+import { BusinessError } from '@ohos.base';
 
-4. let hapFilePath: string = "/data/storage/el2/base/test.hap";
-5. let bundleFlags: number = 0;
+let hapFilePath: string = "/data/storage/el2/base/test.hap";
+let bundleFlags: number = 0;
 
-7. bundle.getBundleArchiveInfo(hapFilePath, bundleFlags)
-8. .then((data) => {
-9. console.info('Operation successful. Data: ' + JSON.stringify(data));
-10. }).catch((error: BusinessError) => {
-11. console.error('Operation failed. Cause: ' + JSON.stringify(error));
-12. })
+bundle.getBundleArchiveInfo(hapFilePath, bundleFlags)
+  .then((data) => {
+    console.info('Operation successful. Data: ' + JSON.stringify(data));
+  }).catch((error: BusinessError) => {
+    console.error('Operation failed. Cause: ' + JSON.stringify(error));
+  })
 ```
 
 ## bundle.getBundleArchiveInfodeprecated
 
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
-
 getBundleArchiveInfo(hapFilePath: string, bundleFlags: number, callback: AsyncCallback<BundleInfo>) : void
 
 获取有关HAP中包含的应用程序包的信息，使用callback异步回调。
+
+**说明** 
+
+从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
 
 **系统能力：**
 
@@ -682,39 +650,37 @@ SystemCapability.BundleManager.BundleFramework
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | hapFilePath | string | 是 | HAP存放路径，支持当前应用程序的绝对路径和数据目录沙箱路径。 |
-| bundleFlags | number | 是 | 用于指定要返回的BundleInfo对象中包含信息的标记。取值范围：参考[BundleFlag说明](js-apis-bundle.md#bundleflagdeprecated)中包信息相关flag。 |
+| bundleFlags | number | 是 | 用于指定要返回的BundleInfo对象中包含信息的标记。取值范围：参考[BundleFlag](js-apis-bundle.md#bundleflagdeprecated)说明中包信息相关flag。 |
 | callback | AsyncCallback<[BundleInfo](js-apis-bundle-bundleinfo.md)> | 是 | 程序启动作为入参的回调函数，返回HAP中包含的应用程序包的信息。 |
 
 **示例：**
 
-```
-1. import bundle from '@ohos.bundle';
+```ts
+import bundle from '@ohos.bundle';
 
-3. let hapFilePath: string = "/data/storage/el2/base/test.hap";
-4. let bundleFlags: number = 0;
+let hapFilePath: string = "/data/storage/el2/base/test.hap";
+let bundleFlags: number = 0;
 
-6. bundle.getBundleArchiveInfo(hapFilePath, bundleFlags, (err, data) => {
-7. if (err) {
-8. console.error('Operation failed. Cause: ' + JSON.stringify(err));
-9. return;
-10. }
-11. console.info('Operation successful. Data:' + JSON.stringify(data));
-12. })
+bundle.getBundleArchiveInfo(hapFilePath, bundleFlags, (err, data) => {
+  if (err) {
+    console.error('Operation failed. Cause: ' + JSON.stringify(err));
+    return;
+  }
+  console.info('Operation successful. Data:' + JSON.stringify(data));
+})
 ```
 
 ## bundle.getAbilityInfodeprecated
-
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
 
 getAbilityInfo(bundleName: string, abilityName: string): Promise<AbilityInfo>
 
 通过Bundle名称和组件名获取Ability组件信息，使用Promise形式异步回调。
 
 获取调用方自己的信息时不需要权限。
+
+**说明** 
+
+从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
 
 **需要权限：**
 
@@ -739,34 +705,32 @@ SystemCapability.BundleManager.BundleFramework
 
 **示例：**
 
-```
-1. import bundle from '@ohos.bundle';
-2. import { BusinessError } from '@ohos.base';
+```ts
+import bundle from '@ohos.bundle';
+import { BusinessError } from '@ohos.base';
 
-4. let bundleName: string = "com.example.myapplication";
-5. let abilityName: string = "EntryAbility";
+let bundleName: string = "com.example.myapplication";
+let abilityName: string = "EntryAbility";
 
-7. bundle.getAbilityInfo(bundleName, abilityName)
-8. .then((data) => {
-9. console.info('Operation successful. Data: ' + JSON.stringify(data));
-10. }).catch((error: BusinessError) => {
-11. console.error('Operation failed. Cause: ' + JSON.stringify(error));
-12. })
+bundle.getAbilityInfo(bundleName, abilityName)
+  .then((data) => {
+    console.info('Operation successful. Data: ' + JSON.stringify(data));
+  }).catch((error: BusinessError) => {
+    console.error('Operation failed. Cause: ' + JSON.stringify(error));
+  })
 ```
 
 ## bundle.getAbilityInfodeprecated
-
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
 
 getAbilityInfo(bundleName: string, abilityName: string, callback: AsyncCallback<AbilityInfo>): void
 
 通过Bundle名称和组件名获取Ability组件信息，使用callback异步回调。
 
 获取调用方自己的信息时不需要权限。
+
+**说明** 
+
+从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
 
 **需要权限：**
 
@@ -786,34 +750,32 @@ SystemCapability.BundleManager.BundleFramework
 
 **示例：**
 
+```ts
+import bundle from '@ohos.bundle';
+
+let bundleName: string = "com.example.myapplication";
+let abilityName: string = "EntryAbility";
+
+bundle.getAbilityInfo(bundleName, abilityName, (err, data) => {
+  if (err) {
+    console.error('Operation failed. Cause: ' + JSON.stringify(err));
+    return;
+  }
+  console.info('Operation successful. Data:' + JSON.stringify(data));
+})
 ```
-1. import bundle from '@ohos.bundle';
 
-3. let bundleName: string = "com.example.myapplication";
-4. let abilityName: string = "EntryAbility";
-
-6. bundle.getAbilityInfo(bundleName, abilityName, (err, data) => {
-7. if (err) {
-8. console.error('Operation failed. Cause: ' + JSON.stringify(err));
-9. return;
-10. }
-11. console.info('Operation successful. Data:' + JSON.stringify(data));
-12. })
-```
-
-## bundle.getAbilityLabel8+ deprecated
-
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 8开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
+## bundle.getAbilityLabeldeprecated
 
 getAbilityLabel(bundleName: string, abilityName: string): Promise<string>
 
 通过Bundle名称和ability名称获取应用名称，使用Promise异步回调。
 
 获取调用方自己的信息时不需要权限。
+
+**说明** 
+
+从API version 8开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
 
 **需要权限：**
 
@@ -838,34 +800,32 @@ SystemCapability.BundleManager.BundleFramework
 
 **示例：**
 
+```ts
+import bundle from '@ohos.bundle';
+import { BusinessError } from '@ohos.base';
+
+let bundleName: string = "com.example.myapplication";
+let abilityName: string = "EntryAbility";
+
+bundle.getAbilityLabel(bundleName, abilityName)
+  .then((data) => {
+    console.info('Operation successful. Data: ' + JSON.stringify(data));
+  }).catch((error: BusinessError) => {
+    console.error('Operation failed. Cause: ' + JSON.stringify(error));
+  })
 ```
-1. import bundle from '@ohos.bundle';
-2. import { BusinessError } from '@ohos.base';
 
-4. let bundleName: string = "com.example.myapplication";
-5. let abilityName: string = "EntryAbility";
-
-7. bundle.getAbilityLabel(bundleName, abilityName)
-8. .then((data) => {
-9. console.info('Operation successful. Data: ' + JSON.stringify(data));
-10. }).catch((error: BusinessError) => {
-11. console.error('Operation failed. Cause: ' + JSON.stringify(error));
-12. })
-```
-
-## bundle.getAbilityLabel8+ deprecated
-
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 8开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
+## bundle.getAbilityLabeldeprecated
 
 getAbilityLabel(bundleName: string, abilityName: string, callback : AsyncCallback<string>): void
 
 通过Bundle名称和Ability组件名获取应用名称，使用callback异步回调。
 
 获取调用方自己的信息时不需要权限。
+
+**说明** 
+
+从API version 8开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
 
 **需要权限：**
 
@@ -885,33 +845,31 @@ SystemCapability.BundleManager.BundleFramework
 
 **示例：**
 
+```ts
+import bundle from '@ohos.bundle';
+
+let bundleName: string = "com.example.myapplication";
+let abilityName: string = "EntryAbility";
+
+bundle.getAbilityLabel(bundleName, abilityName, (err, data) => {
+  if (err) {
+    console.error('Operation failed. Cause: ' + JSON.stringify(err));
+    return;
+  }
+  console.info('Operation successful. Data:' + JSON.stringify(data));
+})
 ```
-1. import bundle from '@ohos.bundle';
 
-3. let bundleName: string = "com.example.myapplication";
-4. let abilityName: string = "EntryAbility";
-
-6. bundle.getAbilityLabel(bundleName, abilityName, (err, data) => {
-7. if (err) {
-8. console.error('Operation failed. Cause: ' + JSON.stringify(err));
-9. return;
-10. }
-11. console.info('Operation successful. Data:' + JSON.stringify(data));
-12. })
-```
-
-## bundle.isAbilityEnabled8+ deprecated
-
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 8开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
+## bundle.isAbilityEnableddeprecated
 
 isAbilityEnabled(info: AbilityInfo): Promise<boolean>
 
 根据给定的AbilityInfo查询ability是否已经启用，使用Promise异步回调。
 
+**说明** 
+
+从API version 8开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
+
 **系统能力：**
 
 SystemCapability.BundleManager.BundleFramework
@@ -930,34 +888,32 @@ SystemCapability.BundleManager.BundleFramework
 
 **示例：**
 
+```ts
+import bundle from '@ohos.bundle';
+import { BusinessError } from '@ohos.base';
+
+let bundleName: string = "com.example.myapplication";
+let abilityName: string = "EntryAbility";
+
+bundle.getAbilityInfo(bundleName, abilityName).then((abilityInfo) => {
+  bundle.isAbilityEnabled(abilityInfo).then((data) => {
+    console.info('Operation successful. Data: ' + JSON.stringify(data));
+  }).catch((error: BusinessError) => {
+    console.error('Operation failed. Cause: ' + JSON.stringify(error));
+  })
+})
 ```
-1. import bundle from '@ohos.bundle';
-2. import { BusinessError } from '@ohos.base';
 
-4. let bundleName: string = "com.example.myapplication";
-5. let abilityName: string = "EntryAbility";
-
-7. bundle.getAbilityInfo(bundleName, abilityName).then((abilityInfo) => {
-8. bundle.isAbilityEnabled(abilityInfo).then((data) => {
-9. console.info('Operation successful. Data: ' + JSON.stringify(data));
-10. }).catch((error: BusinessError) => {
-11. console.error('Operation failed. Cause: ' + JSON.stringify(error));
-12. })
-13. })
-```
-
-## bundle.isAbilityEnabled8+ deprecated
-
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 8开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
+## bundle.isAbilityEnableddeprecated
 
 isAbilityEnabled(info : AbilityInfo, callback : AsyncCallback<boolean>): void
 
 根据给定的AbilityInfo查询ability是否已经启用，使用callback异步回调。
 
+**说明** 
+
+从API version 8开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
+
 **系统能力：**
 
 SystemCapability.BundleManager.BundleFramework
@@ -971,34 +927,32 @@ SystemCapability.BundleManager.BundleFramework
 
 **示例：**
 
+```ts
+import bundle from '@ohos.bundle';
+
+let bundleName: string = "com.example.myapplication";
+let abilityName: string = "EntryAbility";
+
+bundle.getAbilityInfo(bundleName, abilityName).then((abilityInfo) => {
+  bundle.isAbilityEnabled(abilityInfo, (err, data) => {
+    if (err) {
+      console.error('Operation failed. Cause: ' + JSON.stringify(err));
+      return;
+    }
+    console.info('Operation successful. Data:' + JSON.stringify(data));
+  })
+})
 ```
-1. import bundle from '@ohos.bundle';
 
-3. let bundleName: string = "com.example.myapplication";
-4. let abilityName: string = "EntryAbility";
-
-6. bundle.getAbilityInfo(bundleName, abilityName).then((abilityInfo) => {
-7. bundle.isAbilityEnabled(abilityInfo, (err, data) => {
-8. if (err) {
-9. console.error('Operation failed. Cause: ' + JSON.stringify(err));
-10. return;
-11. }
-12. console.info('Operation successful. Data:' + JSON.stringify(data));
-13. })
-14. })
-```
-
-## bundle.isApplicationEnabled8+ deprecated
-
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 8开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
+## bundle.isApplicationEnableddeprecated
 
 isApplicationEnabled(bundleName: string): Promise<boolean>
 
 根据给定的bundleName查询指定应用程序是否已经启用，使用Promise异步回调。
+
+**说明** 
+
+从API version 8开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
 
 **系统能力：**
 
@@ -1018,31 +972,29 @@ SystemCapability.BundleManager.BundleFramework
 
 **示例：**
 
+```ts
+import bundle from '@ohos.bundle';
+import { BusinessError } from '@ohos.base';
+
+let bundleName: string = "com.example.myapplication";
+
+bundle.isApplicationEnabled(bundleName)
+  .then((data) => {
+    console.info('Operation successful. Data: ' + JSON.stringify(data));
+  }).catch((error: BusinessError) => {
+    console.error('Operation failed. Cause: ' + JSON.stringify(error));
+  })
 ```
-1. import bundle from '@ohos.bundle';
-2. import { BusinessError } from '@ohos.base';
 
-4. let bundleName: string = "com.example.myapplication";
-
-6. bundle.isApplicationEnabled(bundleName)
-7. .then((data) => {
-8. console.info('Operation successful. Data: ' + JSON.stringify(data));
-9. }).catch((error: BusinessError) => {
-10. console.error('Operation failed. Cause: ' + JSON.stringify(error));
-11. })
-```
-
-## bundle.isApplicationEnabled8+ deprecated
-
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 8开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
+## bundle.isApplicationEnableddeprecated
 
 isApplicationEnabled(bundleName: string, callback : AsyncCallback<boolean>): void
 
 根据给定的bundleName查询指定应用程序是否已经启用，使用callback异步回调。
+
+**说明** 
+
+从API version 8开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
 
 **系统能力：**
 
@@ -1057,33 +1009,31 @@ SystemCapability.BundleManager.BundleFramework
 
 **示例：**
 
-```
-1. import bundle from '@ohos.bundle';
+```ts
+import bundle from '@ohos.bundle';
 
-3. let bundleName: string = "com.example.myapplication";
+let bundleName: string = "com.example.myapplication";
 
-5. bundle.isApplicationEnabled(bundleName, (err, data) => {
-6. if (err) {
-7. console.error('Operation failed. Cause: ' + JSON.stringify(err));
-8. return;
-9. }
-10. console.info('Operation successful. Data:' + JSON.stringify(data));
-11. })
+bundle.isApplicationEnabled(bundleName, (err, data) => {
+  if (err) {
+    console.error('Operation failed. Cause: ' + JSON.stringify(err));
+    return;
+  }
+  console.info('Operation successful. Data:' + JSON.stringify(data));
+})
 ```
 
 ## bundle.queryAbilityByWantdeprecated
-
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
 
 queryAbilityByWant(want: Want, bundleFlags: number, userId?: number): Promise<Array<AbilityInfo>>
 
 根据给定的意图获取Ability组件信息，使用Promise异步回调。
 
 获取调用方自己的信息时不需要权限。
+
+**说明** 
+
+从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
 
 **需要权限：**
 
@@ -1098,7 +1048,7 @@ SystemCapability.BundleManager.BundleFramework
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | [Want](js-apis-application-want.md) | 是 | 包含要查询的应用Bundle名称的意图。 |
-| bundleFlags | number | 是 | 用于指定返回abilityInfo信息。取值范围：参考[BundleFlag说明](js-apis-bundle.md#bundleflagdeprecated)中Ability信息相关flag。 |
+| bundleFlags | number | 是 | 用于指定返回AbilityInfo信息。取值范围：参考[BundleFlag](js-apis-bundle.md#bundleflagdeprecated)说明中Ability信息相关flag。 |
 | userId | number | 否 | 用户ID。默认值：调用方所在用户，取值范围：大于等于0。 |
 
 **返回值：**
@@ -1109,33 +1059,27 @@ SystemCapability.BundleManager.BundleFramework
 
 **示例：**
 
-```
-1. import bundle from '@ohos.bundle';
-2. import { BusinessError } from '@ohos.base';
-3. import Want from '@ohos.app.ability.Want';
+```ts
+import bundle from '@ohos.bundle';
+import { BusinessError } from '@ohos.base';
+import Want from '@ohos.app.ability.Want';
 
-5. let bundleFlags: number = 0;
-6. let userId: number = 100;
-7. let want: Want = {
-8. bundleName: "com.example.myapplication",
-9. abilityName: "EntryAbility"
-10. };
+let bundleFlags: number = 0;
+let userId: number = 100;
+let want: Want = {
+  bundleName: "com.example.myapplication",
+  abilityName: "EntryAbility"
+};
 
-12. bundle.queryAbilityByWant(want, bundleFlags, userId)
-13. .then((data) => {
-14. console.info('Operation successful. Data: ' + JSON.stringify(data));
-15. }).catch((error: BusinessError) => {
-16. console.error('Operation failed. Cause: ' + JSON.stringify(error));
-17. })
+bundle.queryAbilityByWant(want, bundleFlags, userId)
+  .then((data) => {
+    console.info('Operation successful. Data: ' + JSON.stringify(data));
+  }).catch((error: BusinessError) => {
+    console.error('Operation failed. Cause: ' + JSON.stringify(error));
+  })
 ```
 
 ## bundle.queryAbilityByWantdeprecated
-
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
 
 queryAbilityByWant(want: Want, bundleFlags: number, userId: number, callback: AsyncCallback<Array<AbilityInfo>>): void
 
@@ -1143,6 +1087,10 @@ queryAbilityByWant(want: Want, bundleFlags: number, userId: number, callback: As
 
 获取调用方自己的信息时不需要权限。
 
+**说明** 
+
+从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
+
 **需要权限：**
 
 ohos.permission.GET\_BUNDLE\_INFO\_PRIVILEGED 或 ohos.permission.GET\_BUNDLE\_INFO
@@ -1156,39 +1104,33 @@ SystemCapability.BundleManager.BundleFramework
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | [Want](js-apis-application-want.md) | 是 | 指示包含要查询的应用Bundle名称的意图。 |
-| bundleFlags | number | 是 | 用于指定返回abilityInfo信息。取值范围：参考[BundleFlag说明](js-apis-bundle.md#bundleflagdeprecated)中Ability信息相关flag。 |
+| bundleFlags | number | 是 | 用于指定返回AbilityInfo信息。取值范围：参考[BundleFlag](js-apis-bundle.md#bundleflagdeprecated)说明中Ability信息相关flag。 |
 | userId | number | 是 | 用户ID。取值范围：大于等于0。 |
 | callback | AsyncCallback<Array<[AbilityInfo](js-apis-bundle-abilityinfo.md)>> | 是 | 程序启动作为入参的回调函数，返回Ability信息。 |
 
 **示例：**
 
-```
-1. import bundle from '@ohos.bundle';
-2. import Want from '@ohos.app.ability.Want';
+```ts
+import bundle from '@ohos.bundle';
+import Want from '@ohos.app.ability.Want';
 
-4. let bundleFlags: number = 0;
-5. let userId: number = 100;
-6. let want: Want = {
-7. bundleName: "com.example.myapplication",
-8. abilityName: "EntryAbility"
-9. };
+let bundleFlags: number = 0;
+let userId: number = 100;
+let want: Want = {
+  bundleName: "com.example.myapplication",
+  abilityName: "EntryAbility"
+};
 
-11. bundle.queryAbilityByWant(want, bundleFlags, userId, (err, data) => {
-12. if (err) {
-13. console.error('Operation failed. Cause: ' + JSON.stringify(err));
-14. return;
-15. }
-16. console.info('Operation successful. Data:' + JSON.stringify(data));
-17. })
+bundle.queryAbilityByWant(want, bundleFlags, userId, (err, data) => {
+  if (err) {
+    console.error('Operation failed. Cause: ' + JSON.stringify(err));
+    return;
+  }
+  console.info('Operation successful. Data:' + JSON.stringify(data));
+})
 ```
 
 ## bundle.queryAbilityByWantdeprecated
-
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
 
 queryAbilityByWant(want: Want, bundleFlags: number, callback: AsyncCallback<Array<AbilityInfo>>): void
 
@@ -1196,6 +1138,10 @@ queryAbilityByWant(want: Want, bundleFlags: number, callback: AsyncCallback<Arra
 
 获取调用方自己的信息时不需要权限。
 
+**说明** 
+
+从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
+
 **需要权限：**
 
 ohos.permission.GET\_BUNDLE\_INFO\_PRIVILEGED 或 ohos.permission.GET\_BUNDLE\_INFO
@@ -1209,41 +1155,39 @@ SystemCapability.BundleManager.BundleFramework
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | [Want](js-apis-application-want.md) | 是 | 指示包含要查询的应用Bundle名称的意图。 |
-| bundleFlags | number | 是 | 用于指定返回abilityInfo信息。取值范围：参考[BundleFlag说明](js-apis-bundle.md#bundleflagdeprecated)中Ability信息相关flag。 |
+| bundleFlags | number | 是 | 用于指定返回AbilityInfo信息。取值范围：参考[BundleFlag](js-apis-bundle.md#bundleflagdeprecated)说明中Ability信息相关flag。 |
 | callback | AsyncCallback<Array<[AbilityInfo](js-apis-bundle-abilityinfo.md)>> | 是 | 程序启动作为入参的回调函数，返回Ability信息。 |
 
 **示例：**
 
-```
-1. import bundle from '@ohos.bundle';
-2. import Want from '@ohos.app.ability.Want';
+```ts
+import bundle from '@ohos.bundle';
+import Want from '@ohos.app.ability.Want';
 
-4. let bundleFlags: number = 0;
-5. let want: Want = {
-6. bundleName: "com.example.myapplication",
-7. abilityName: "EntryAbility"
-8. };
+let bundleFlags: number = 0;
+let want: Want = {
+  bundleName: "com.example.myapplication",
+  abilityName: "EntryAbility"
+};
 
-10. bundle.queryAbilityByWant(want, bundleFlags, (err, data) => {
-11. if (err) {
-12. console.error('Operation failed. Cause: ' + JSON.stringify(err));
-13. return;
-14. }
-15. console.info('Operation successful. Data:' + JSON.stringify(data));
-16. })
+bundle.queryAbilityByWant(want, bundleFlags, (err, data) => {
+  if (err) {
+    console.error('Operation failed. Cause: ' + JSON.stringify(err));
+    return;
+  }
+  console.info('Operation successful. Data:' + JSON.stringify(data));
+})
 ```
 
 ## bundle.getLaunchWantForBundledeprecated
 
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
-
 getLaunchWantForBundle(bundleName: string): Promise<Want>
 
 查询拉起指定应用的want对象，使用Promise异步回调。
+
+**说明** 
+
+从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
 
 **需要权限：**
 
@@ -1267,31 +1211,29 @@ SystemCapability.BundleManager.BundleFramework
 
 **示例：**
 
-```
-1. import bundle from '@ohos.bundle';
-2. import { BusinessError } from '@ohos.base';
+```ts
+import bundle from '@ohos.bundle';
+import { BusinessError } from '@ohos.base';
 
-4. let bundleName: string = "com.example.myapplication";
+let bundleName: string = "com.example.myapplication";
 
-6. bundle.getLaunchWantForBundle(bundleName)
-7. .then((data) => {
-8. console.info('Operation successful. Data: ' + JSON.stringify(data));
-9. }).catch((error: BusinessError) => {
-10. console.error('Operation failed. Cause: ' + JSON.stringify(error));
-11. })
+bundle.getLaunchWantForBundle(bundleName)
+  .then((data) => {
+    console.info('Operation successful. Data: ' + JSON.stringify(data));
+  }).catch((error: BusinessError) => {
+    console.error('Operation failed. Cause: ' + JSON.stringify(error));
+  })
 ```
 
 ## bundle.getLaunchWantForBundledeprecated
 
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
-
 getLaunchWantForBundle(bundleName: string, callback: AsyncCallback<Want>): void
 
 查询拉起指定应用的want对象，使用callback异步回调。
+
+**说明** 
+
+从API version 7开始支持，从API version 9开始废弃，替代接口仅向系统应用开放。
 
 **需要权限：**
 
@@ -1310,31 +1252,29 @@ SystemCapability.BundleManager.BundleFramework
 
 **示例：**
 
+```ts
+import bundle from '@ohos.bundle';
+
+let bundleName: string = "com.example.myapplication";
+
+bundle.getLaunchWantForBundle(bundleName, (err, data) => {
+  if (err) {
+    console.error('Operation failed. Cause: ' + JSON.stringify(err));
+    return;
+  }
+  console.info('Operation successful. Data:' + JSON.stringify(data));
+})
 ```
-1. import bundle from '@ohos.bundle';
 
-3. let bundleName: string = "com.example.myapplication";
-
-5. bundle.getLaunchWantForBundle(bundleName, (err, data) => {
-6. if (err) {
-7. console.error('Operation failed. Cause: ' + JSON.stringify(err));
-8. return;
-9. }
-10. console.info('Operation successful. Data:' + JSON.stringify(data));
-11. })
-```
-
-## bundle.getNameForUid8+ deprecated
-
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 8开始支持，从API version 9开始废弃，建议使用[getBundleNameByUid](js-apis-bundlemanager.md#bundlemanagergetbundlenamebyuid14-1)替代。
+## bundle.getNameForUiddeprecated
 
 getNameForUid(uid: number): Promise<string>
 
 通过uid获取对应的Bundle名称，使用Promise异步回调。
+
+**说明** 
+
+从API version 8开始支持，从API version 9开始废弃，建议使用[getBundleNameByUid](js-apis-bundlemanager.md#bundlemanagergetbundlenamebyuid14-1)替代。
 
 **系统能力：**
 
@@ -1354,31 +1294,29 @@ SystemCapability.BundleManager.BundleFramework
 
 **示例：**
 
+```ts
+import bundle from '@ohos.bundle';
+import { BusinessError } from '@ohos.base';
+
+let uid: number = 20010005;
+
+bundle.getNameForUid(uid)
+  .then((data) => {
+    console.info('Operation successful. Data: ' + JSON.stringify(data));
+  }).catch((error: BusinessError) => {
+    console.error('Operation failed. Cause: ' + JSON.stringify(error));
+  })
 ```
-1. import bundle from '@ohos.bundle';
-2. import { BusinessError } from '@ohos.base';
 
-4. let uid: number = 20010005;
-
-6. bundle.getNameForUid(uid)
-7. .then((data) => {
-8. console.info('Operation successful. Data: ' + JSON.stringify(data));
-9. }).catch((error: BusinessError) => {
-10. console.error('Operation failed. Cause: ' + JSON.stringify(error));
-11. })
-```
-
-## bundle.8+ deprecated
-
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 8开始支持，从API version 9开始废弃，建议使用[getBundleNameByUid](js-apis-bundlemanager.md#bundlemanagergetbundlenamebyuid14)替代。
+## bundle.getNameForUiddeprecated
 
 getNameForUid(uid: number, callback: AsyncCallback<string>) : void
 
 通过uid获取对应的Bundle名称，使用callback异步回调。
+
+**说明** 
+
+从API version 8开始支持，从API version 9开始废弃，建议使用[getBundleNameByUid](js-apis-bundlemanager.md#bundlemanagergetbundlenamebyuid14)替代。
 
 **系统能力：**
 
@@ -1393,33 +1331,31 @@ SystemCapability.BundleManager.BundleFramework
 
 **示例：**
 
+```ts
+import bundle from '@ohos.bundle';
+
+let uid: number = 20010005;
+
+bundle.getNameForUid(uid, (err, data) => {
+  if (err) {
+    console.error('Operation failed. Cause: ' + JSON.stringify(err));
+    return;
+  }
+  console.info('Operation successful. Data:' + JSON.stringify(data));
+})
 ```
-1. import bundle from '@ohos.bundle';
 
-3. let uid: number = 20010005;
-
-5. bundle.getNameForUid(uid, (err, data) => {
-6. if (err) {
-7. console.error('Operation failed. Cause: ' + JSON.stringify(err));
-8. return;
-9. }
-10. console.info('Operation successful. Data:' + JSON.stringify(data));
-11. })
-```
-
-## bundle.getAbilityIcon8+ deprecated
-
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 8开始支持，从API version 9开始废弃，建议使用[resourceManager.getMediaContent](js-apis-resource-manager.md#getmediacontent9)替代。
+## bundle.getAbilityIcondeprecated
 
 getAbilityIcon(bundleName: string, abilityName: string): Promise<image.PixelMap>
 
 通过bundleName和abilityName获取对应Icon的[PixelMap](arkts-apis-image-pixelmap.md)，使用Promise异步回调。
 
 获取调用方自己的信息时不需要权限。
+
+**说明** 
+
+从API version 8开始支持，从API version 9开始废弃，建议使用[resourceManager.getMediaContent](js-apis-resource-manager.md#getmediacontent9)替代。
 
 **需要权限：**
 
@@ -1444,34 +1380,32 @@ SystemCapability.BundleManager.BundleFramework
 
 **示例：**
 
+```ts
+import bundle from '@ohos.bundle';
+import { BusinessError } from '@ohos.base';
+
+let bundleName: string = "com.example.myapplication";
+let abilityName: string = "EntryAbility";
+
+bundle.getAbilityIcon(bundleName, abilityName)
+  .then((data) => {
+    console.info('Operation successful. Data: ' + JSON.stringify(data));
+  }).catch((error: BusinessError) => {
+    console.error('Operation failed. Cause: ' + JSON.stringify(error));
+  })
 ```
-1. import bundle from '@ohos.bundle';
-2. import { BusinessError } from '@ohos.base';
 
-4. let bundleName: string = "com.example.myapplication";
-5. let abilityName: string = "EntryAbility";
-
-7. bundle.getAbilityIcon(bundleName, abilityName)
-8. .then((data) => {
-9. console.info('Operation successful. Data: ' + JSON.stringify(data));
-10. }).catch((error: BusinessError) => {
-11. console.error('Operation failed. Cause: ' + JSON.stringify(error));
-12. })
-```
-
-## bundle.getAbilityIcon8+ deprecated
-
-PhonePC/2in1TabletTVWearable
-
-说明
-
-从API version 8开始支持，从API version 9开始废弃，建议使用[resourceManager.getMediaContent](js-apis-resource-manager.md#getmediacontent9)替代。
+## bundle.getAbilityIcon deprecated
 
 getAbilityIcon(bundleName: string, abilityName: string, callback: AsyncCallback<image.PixelMap>): void
 
 通过bundleName和abilityName获取对应Icon的[PixelMap](arkts-apis-image-pixelmap.md)，使用callback异步回调。
 
 获取调用方自己的信息时不需要权限。
+
+**说明** 
+
+从API version 8开始支持，从API version 9开始废弃，建议使用[resourceManager.getMediaContent](js-apis-resource-manager.md#getmediacontent9)替代。
 
 **需要权限：**
 
@@ -1491,26 +1425,24 @@ SystemCapability.BundleManager.BundleFramework
 
 **示例：**
 
-```
-1. import bundle from '@ohos.bundle';
+```ts
+import bundle from '@ohos.bundle';
 
-3. let bundleName: string = "com.example.myapplication";
-4. let abilityName: string = "EntryAbility";
+let bundleName: string = "com.example.myapplication";
+let abilityName: string = "EntryAbility";
 
-6. bundle.getAbilityIcon(bundleName, abilityName, (err, data) => {
-7. if (err) {
-8. console.error('Operation failed. Cause: ' + JSON.stringify(err));
-9. return;
-10. }
-11. console.info('Operation successful. Data:' + JSON.stringify(data));
-12. })
+bundle.getAbilityIcon(bundleName, abilityName, (err, data) => {
+  if (err) {
+    console.error('Operation failed. Cause: ' + JSON.stringify(err));
+    return;
+  }
+  console.info('Operation successful. Data:' + JSON.stringify(data));
+})
 ```
 
 ## InstallErrorCodedeprecated
 
-PhonePC/2in1TabletTVWearable
-
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[包管理子系统通用错误码](errorcode-bundle.md)替代。
 
@@ -1541,9 +1473,7 @@ PhonePC/2in1TabletTVWearable
 
 ## BundleFlagdeprecated
 
-PhonePC/2in1TabletTVWearable
-
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[bundleManager.BundleFlag](js-apis-bundlemanager.md#bundleflag)替代。
 
@@ -1572,9 +1502,7 @@ PhonePC/2in1TabletTVWearable
 
 ## BundleOptionsdeprecated
 
-PhonePC/2in1TabletTVWearable
-
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，暂无替代接口。
 
@@ -1588,9 +1516,7 @@ PhonePC/2in1TabletTVWearable
 
 ## AbilityTypedeprecated
 
-PhonePC/2in1TabletTVWearable
-
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[bundleManager.AbilityType](js-apis-bundlemanager.md#abilitytype)替代。
 
@@ -1607,9 +1533,7 @@ Ability组件类型。
 
 ## DisplayOrientationdeprecated
 
-PhonePC/2in1TabletTVWearable
-
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[bundleManager.DisplayOrientation](js-apis-bundlemanager.md#displayorientation)替代。
 
@@ -1626,9 +1550,7 @@ PhonePC/2in1TabletTVWearable
 
 ## LaunchModedeprecated
 
-PhonePC/2in1TabletTVWearable
-
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[bundleManager.LaunchType](js-apis-bundlemanager.md#launchtype)替代。
 
@@ -1643,9 +1565,7 @@ Ability组件的启动模式。
 
 ## AbilitySubTypedeprecated
 
-PhonePC/2in1TabletTVWearable
-
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，暂无替代接口。
 
@@ -1660,9 +1580,7 @@ Ability组件的子类型。
 
 ## ColorModedeprecated
 
-PhonePC/2in1TabletTVWearable
-
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，暂无替代接口。
 
@@ -1678,9 +1596,7 @@ PhonePC/2in1TabletTVWearable
 
 ## GrantStatusdeprecated
 
-PhonePC/2in1TabletTVWearable
-
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[bundleManager.PermissionGrantState](js-apis-bundlemanager.md#permissiongrantstate)替代。
 

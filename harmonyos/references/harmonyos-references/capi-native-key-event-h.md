@@ -3,16 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_key_event.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_key_event.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:51+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:789c87501700e2389385f88bd62a18bdd31d202e5864c9a2e723c1c84de8922b
+scraped_at: 2026-09-02T15:01:15+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7e6c48bfec650e19cd4cceb65d609e6c10d72f3ef85a5308208fe6b7dd90ada3
 ---
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-提供NativeKeyEvent相关接口定义。
+提供NativeKeyEvent相关接口定义，用于获取按键事件的类型、键码、键值、输入设备类型、按键意图和Unicode码值，支持控制按键事件冒泡或消费、分发按键事件，以及查询NumLock、CapsLock、ScrollLock状态，适用于原生侧处理按键输入事件的场景。
 
 **引用文件：** <arkui/native\_key\_event.h>
 
@@ -28,11 +26,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -43,17 +37,15 @@ PhonePC/2in1TabletTVWearable
 
 ### 函数
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 描述 |
 | --- | --- |
 | [ArkUI\_KeyEventType OH\_ArkUI\_KeyEvent\_GetType(const ArkUI\_UIInputEvent\* event)](capi-native-key-event-h.md#oh_arkui_keyevent_gettype) | 获取按键的类型。 |
 | [int32\_t OH\_ArkUI\_KeyEvent\_GetKeyCode(const ArkUI\_UIInputEvent\* event)](capi-native-key-event-h.md#oh_arkui_keyevent_getkeycode) | 获取按键的键码。 |
-| [const char OH\_ArkUI\_KeyEvent\_GetKeyText(const ArkUI\_UIInputEvent event)](capi-native-key-event-h.md#oh_arkui_keyevent_getkeytext) | 获取按键的键值。 |
+| [const char \*OH\_ArkUI\_KeyEvent\_GetKeyText(const ArkUI\_UIInputEvent\* event)](capi-native-key-event-h.md#oh_arkui_keyevent_getkeytext) | 获取按键的键值。 |
 | [ArkUI\_KeySourceType OH\_ArkUI\_KeyEvent\_GetKeySource(const ArkUI\_UIInputEvent\* event)](capi-native-key-event-h.md#oh_arkui_keyevent_getkeysource) | 获取当前按键的输入设备类型。 |
-| [void OH\_ArkUI\_KeyEvent\_StopPropagation(const ArkUI\_UIInputEvent\* event, bool stopPropagation)](capi-native-key-event-h.md#oh_arkui_keyevent_stoppropagation) | 阻塞事件冒泡传递。 |
+| [void OH\_ArkUI\_KeyEvent\_StopPropagation(const ArkUI\_UIInputEvent\* event, bool stopPropagation)](capi-native-key-event-h.md#oh_arkui_keyevent_stoppropagation) | 阻止事件冒泡传递。与OH\_ArkUI\_KeyEvent\_SetConsumed不同，该接口用于控制事件是否继续冒泡传递；OH\_ArkUI\_KeyEvent\_SetConsumed用于设置事件是否被当前回调消费，建议根据是否需要阻止冒泡或标记消费选择对应接口。 |
 | [ArkUI\_KeyIntension OH\_ArkUI\_KeyEvent\_GetKeyIntensionCode(const ArkUI\_UIInputEvent\* event)](capi-native-key-event-h.md#oh_arkui_keyevent_getkeyintensioncode) | 获取按键对应的意图。 |
-| [uint32\_t OH\_ArkUI\_KeyEvent\_GetUnicode(const ArkUI\_UIInputEvent\* event)](capi-native-key-event-h.md#oh_arkui_keyevent_getunicode) | 获取按键的Unicode码值。支持范围为非空格的基本拉丁字符：0x0021-0x007E，不支持字符为0。组合键场景下，返回当前keyEvent对应按键的Unicode码值。 |
+| [uint32\_t OH\_ArkUI\_KeyEvent\_GetUnicode(const ArkUI\_UIInputEvent\* event)](capi-native-key-event-h.md#oh_arkui_keyevent_getunicode) | 获取按键的Unicode码值。支持范围为非空格的基本拉丁字符：0x0021-0x007E，不支持字符为0。组合键场景下，返回当前按键事件对应按键的Unicode码值。 |
 | [void OH\_ArkUI\_KeyEvent\_SetConsumed(const ArkUI\_UIInputEvent\* event, bool isConsumed)](capi-native-key-event-h.md#oh_arkui_keyevent_setconsumed) | 在按键事件回调中，设置事件是否被该回调消费。 |
 | [void OH\_ArkUI\_KeyEvent\_Dispatch(ArkUI\_NodeHandle node, const ArkUI\_UIInputEvent\* event)](capi-native-key-event-h.md#oh_arkui_keyevent_dispatch) | 将按键事件分发到特定组件节点。 |
 | [ArkUI\_ErrorCode OH\_ArkUI\_KeyEvent\_IsNumLockOn(const ArkUI\_UIInputEvent\* event, bool\* state)](capi-native-key-event-h.md#oh_arkui_keyevent_isnumlockon) | 获取按键事件发生时NumLock的状态。 |
@@ -62,14 +54,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### ArkUI\_KeyCode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum ArkUI_KeyCode
+```c
+enum ArkUI_KeyCode
 ```
 
 **描述：**
@@ -153,7 +141,7 @@ PhonePC/2in1TabletTVWearable
 | ARKUI\_KEYCODE\_RIGHT\_BRACKET = 2060 | 按键']'。 |
 | ARKUI\_KEYCODE\_BACKSLASH = 2061 | 按键'\'。 |
 | ARKUI\_KEYCODE\_SEMICOLON = 2062 | 按键';'。 |
-| ARKUI\_KEYCODE\_APOSTROPHE = 2063 | 按键''' (单引号)。 |
+| ARKUI\_KEYCODE\_APOSTROPHE = 2063 | 按键'''（单引号）。 |
 | ARKUI\_KEYCODE\_SLASH = 2064 | 按键'/'。 |
 | ARKUI\_KEYCODE\_AT = 2065 | 按键'@'。 |
 | ARKUI\_KEYCODE\_PLUS = 2066 | 按键'+'。 |
@@ -229,10 +217,8 @@ PhonePC/2in1TabletTVWearable
 
 ### ArkUI\_KeyEventType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum ArkUI_KeyEventType
+```c
+enum ArkUI_KeyEventType
 ```
 
 **描述：**
@@ -251,10 +237,8 @@ PhonePC/2in1TabletTVWearable
 
 ### ArkUI\_KeySourceType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum ArkUI_KeySourceType
+```c
+enum ArkUI_KeySourceType
 ```
 
 **描述：**
@@ -272,10 +256,8 @@ PhonePC/2in1TabletTVWearable
 
 ### ArkUI\_KeyIntension
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum ArkUI_KeyIntension
+```c
+enum ArkUI_KeyIntension
 ```
 
 **描述：**
@@ -301,7 +283,7 @@ PhonePC/2in1TabletTVWearable
 | ARKUI\_KEY\_INTENSION\_PAGE\_DOWN = 12 | 下一页。 |
 | ARKUI\_KEY\_INTENSION\_ZOOM\_OUT = 13 | 缩小。 |
 | ARKUI\_KEY\_INTENSION\_ZOOM\_IN = 14 | 放大。 |
-| ARKUI\_KEY\_INTENTION\_MEDIA\_PLAY\_PAUSE = 100 | 播放。 |
+| ARKUI\_KEY\_INTENTION\_MEDIA\_PLAY\_PAUSE = 100 | 播放/暂停。 |
 | ARKUI\_KEY\_INTENTION\_MEDIA\_FAST\_FORWARD = 101 | 快进。 |
 | ARKUI\_KEY\_INTENTION\_MEDIA\_FAST\_PLAYBACK = 103 | 快速播放。 |
 | ARKUI\_KEY\_INTENTION\_MEDIA\_NEXT = 104 | 下一首。 |
@@ -314,14 +296,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_ArkUI\_KeyEvent\_GetType()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. ArkUI_KeyEventType OH_ArkUI_KeyEvent_GetType(const ArkUI_UIInputEvent* event)
+```c
+ArkUI_KeyEventType OH_ArkUI_KeyEvent_GetType(const ArkUI_UIInputEvent* event)
 ```
 
 **描述：**
@@ -334,20 +312,18 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [const ArkUI\_UIInputEvent](capi-arkui-eventmodule-arkui-uiinputevent.md)\* event | ArkUI\_UIInputEvent事件指针。 |
+| [const ArkUI\_UIInputEvent](capi-arkui-eventmodule-arkui-uiinputevent.md)\* event | 输入事件指针，用于获取该事件对应的按键事件类型。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [ArkUI\_KeyEventType](capi-native-key-event-h.md#arkui_keyeventtype) | ArkUI\_KeyEventType 按键的类型。 |
+| [ArkUI\_KeyEventType](capi-native-key-event-h.md#arkui_keyeventtype) | 按键的类型。 |
 
 ### OH\_ArkUI\_KeyEvent\_GetKeyCode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ArkUI_KeyEvent_GetKeyCode(const ArkUI_UIInputEvent* event)
+```c
+int32_t OH_ArkUI_KeyEvent_GetKeyCode(const ArkUI_UIInputEvent* event)
 ```
 
 **描述：**
@@ -360,7 +336,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [const ArkUI\_UIInputEvent](capi-arkui-eventmodule-arkui-uiinputevent.md)\* event | ArkUI\_UIInputEvent事件指针。 |
+| [const ArkUI\_UIInputEvent](capi-arkui-eventmodule-arkui-uiinputevent.md)\* event | 输入事件指针，用于获取该事件对应按键的键码。 |
 
 **返回：**
 
@@ -370,10 +346,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ArkUI\_KeyEvent\_GetKeyText()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char *OH_ArkUI_KeyEvent_GetKeyText(const ArkUI_UIInputEvent* event)
+```c
+const char *OH_ArkUI_KeyEvent_GetKeyText(const ArkUI_UIInputEvent* event)
 ```
 
 **描述：**
@@ -386,7 +360,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [const ArkUI\_UIInputEvent](capi-arkui-eventmodule-arkui-uiinputevent.md)\* event | ArkUI\_UIInputEvent事件指针。 |
+| [const ArkUI\_UIInputEvent](capi-arkui-eventmodule-arkui-uiinputevent.md)\* event | 输入事件指针，用于获取该事件对应按键的键值文本。 |
 
 **返回：**
 
@@ -396,10 +370,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ArkUI\_KeyEvent\_GetKeySource()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. ArkUI_KeySourceType OH_ArkUI_KeyEvent_GetKeySource(const ArkUI_UIInputEvent* event)
+```c
+ArkUI_KeySourceType OH_ArkUI_KeyEvent_GetKeySource(const ArkUI_UIInputEvent* event)
 ```
 
 **描述：**
@@ -412,25 +384,23 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [const ArkUI\_UIInputEvent](capi-arkui-eventmodule-arkui-uiinputevent.md)\* event | ArkUI\_UIInputEvent事件指针。 |
+| [const ArkUI\_UIInputEvent](capi-arkui-eventmodule-arkui-uiinputevent.md)\* event | 输入事件指针，用于获取触发该按键事件的输入设备类型。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [ArkUI\_KeySourceType](capi-native-key-event-h.md#arkui_keysourcetype) | ArkUI\_KeySourceType 当前按键的输入设备类型。 |
+| [ArkUI\_KeySourceType](capi-native-key-event-h.md#arkui_keysourcetype) | 当前按键的输入设备类型。 |
 
 ### OH\_ArkUI\_KeyEvent\_StopPropagation()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_ArkUI_KeyEvent_StopPropagation(const ArkUI_UIInputEvent* event, bool stopPropagation)
+```c
+void OH_ArkUI_KeyEvent_StopPropagation(const ArkUI_UIInputEvent* event, bool stopPropagation)
 ```
 
 **描述：**
 
-阻塞事件冒泡传递。
+阻止事件冒泡传递。与OH\_ArkUI\_KeyEvent\_SetConsumed不同，该接口用于控制事件是否继续冒泡传递；OH\_ArkUI\_KeyEvent\_SetConsumed用于设置事件是否被当前回调消费，建议根据是否需要阻止冒泡或标记消费选择对应接口。
 
 **起始版本：** 14
 
@@ -438,15 +408,13 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [const ArkUI\_UIInputEvent](capi-arkui-eventmodule-arkui-uiinputevent.md)\* event | ArkUI\_UIInputEvent事件指针。 |
-| bool stopPropagation | 表示是否阻止事件冒泡。true表示阻止事件冒泡，false表示不阻止事件冒泡。 |
+| [const ArkUI\_UIInputEvent](capi-arkui-eventmodule-arkui-uiinputevent.md)\* event | 按键输入事件指针，表示需要设置冒泡传递行为的按键事件。 |
+| bool stopPropagation | 表示是否阻止事件冒泡传递。true表示阻止事件冒泡传递，false表示不阻止事件冒泡传递。 |
 
 ### OH\_ArkUI\_KeyEvent\_GetKeyIntensionCode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. ArkUI_KeyIntension OH_ArkUI_KeyEvent_GetKeyIntensionCode(const ArkUI_UIInputEvent* event)
+```c
+ArkUI_KeyIntension OH_ArkUI_KeyEvent_GetKeyIntensionCode(const ArkUI_UIInputEvent* event)
 ```
 
 **描述：**
@@ -459,25 +427,23 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [const ArkUI\_UIInputEvent](capi-arkui-eventmodule-arkui-uiinputevent.md)\* event | ArkUI\_UIInputEvent事件指针。 |
+| [const ArkUI\_UIInputEvent](capi-arkui-eventmodule-arkui-uiinputevent.md)\* event | 输入事件指针，用于获取该事件对应按键的意图。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [ArkUI\_KeyIntension](capi-native-key-event-h.md#arkui_keyintension) | ArkUI\_KeyIntension 按键对应的意图。 |
+| [ArkUI\_KeyIntension](capi-native-key-event-h.md#arkui_keyintension) | 按键对应的意图。 |
 
 ### OH\_ArkUI\_KeyEvent\_GetUnicode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. uint32_t OH_ArkUI_KeyEvent_GetUnicode(const ArkUI_UIInputEvent* event)
+```c
+uint32_t OH_ArkUI_KeyEvent_GetUnicode(const ArkUI_UIInputEvent* event)
 ```
 
 **描述：**
 
-获取按键的Unicode码值。支持范围为非空格的基本拉丁字符：0x0021-0x007E，不支持字符为0。组合键场景下，返回当前keyEvent对应按键的Unicode码值。
+获取按键的Unicode码值。支持范围为非空格的基本拉丁字符：0x0021-0x007E，不支持字符为0。组合键场景下，返回当前按键事件对应按键的Unicode码值。
 
 **起始版本：** 14
 
@@ -485,7 +451,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [const ArkUI\_UIInputEvent](capi-arkui-eventmodule-arkui-uiinputevent.md)\* event | ArkUI\_UIInputEvent事件指针。 |
+| [const ArkUI\_UIInputEvent](capi-arkui-eventmodule-arkui-uiinputevent.md)\* event | 输入事件指针，用于获取该事件对应按键的Unicode码值。 |
 
 **返回：**
 
@@ -495,15 +461,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ArkUI\_KeyEvent\_SetConsumed()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_ArkUI_KeyEvent_SetConsumed(const ArkUI_UIInputEvent* event, bool isConsumed)
+```c
+void OH_ArkUI_KeyEvent_SetConsumed(const ArkUI_UIInputEvent* event, bool isConsumed)
 ```
 
 **描述：**
 
-在按键事件回调中，设置事件是否被该回调消费。
+在按键事件回调中，设置事件是否被该回调消费，适用于快捷键处理、组件自定义按键响应等需要标记事件已处理并避免重复处理的场景。
 
 **起始版本：** 14
 
@@ -511,15 +475,13 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [const ArkUI\_UIInputEvent](capi-arkui-eventmodule-arkui-uiinputevent.md)\* event | ArkUI\_UIInputEvent事件指针。 |
-| bool isConsumed | 事件是否被该回调消费。true表示事件被消费，false表示事件未被消费。 |
+| [const ArkUI\_UIInputEvent](capi-arkui-eventmodule-arkui-uiinputevent.md)\* event | 输入事件指针，表示需要设置是否被当前回调消费的按键事件。 |
+| bool isConsumed | 表示事件是否被该回调消费。true表示事件被消费，false表示事件未被消费。 |
 
 ### OH\_ArkUI\_KeyEvent\_Dispatch()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_ArkUI_KeyEvent_Dispatch(ArkUI_NodeHandle node, const ArkUI_UIInputEvent* event)
+```c
+void OH_ArkUI_KeyEvent_Dispatch(ArkUI_NodeHandle node, const ArkUI_UIInputEvent* event)
 ```
 
 **描述：**
@@ -532,15 +494,13 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [ArkUI\_NodeHandle](capi-arkui-nativemodule-arkui-node8h.md) node | 指定的节点。 |
-| [const ArkUI\_UIInputEvent](capi-arkui-eventmodule-arkui-uiinputevent.md)\* event | ArkUI\_UIInputEvent事件指针。 |
+| [ArkUI\_NodeHandle](capi-arkui-nativemodule-arkui-node8h.md) node | 目标组件节点，用于接收分发的按键事件。 |
+| [const ArkUI\_UIInputEvent](capi-arkui-eventmodule-arkui-uiinputevent.md)\* event | 输入事件指针，表示需要分发到目标组件节点的按键事件。 |
 
 ### OH\_ArkUI\_KeyEvent\_IsNumLockOn()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. ArkUI_ErrorCode OH_ArkUI_KeyEvent_IsNumLockOn(const ArkUI_UIInputEvent* event, bool* state)
+```c
+ArkUI_ErrorCode OH_ArkUI_KeyEvent_IsNumLockOn(const ArkUI_UIInputEvent* event, bool* state)
 ```
 
 **描述：**
@@ -553,21 +513,19 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [const ArkUI\_UIInputEvent](capi-arkui-eventmodule-arkui-uiinputevent.md)\* event | ArkUI\_UIInputEvent事件指针。 |
+| [const ArkUI\_UIInputEvent](capi-arkui-eventmodule-arkui-uiinputevent.md)\* event | 输入事件指针。 |
 | bool\* state | 输出参数，返回NumLock的状态。true表示处于激活状态，false表示处于未激活状态。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [ArkUI\_ErrorCode](capi-native-type-h.md#arkui_errorcode) | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 函数参数异常。 |
+| [ArkUI\_ErrorCode](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 函数参数异常。 |
 
 ### OH\_ArkUI\_KeyEvent\_IsCapsLockOn()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. ArkUI_ErrorCode OH_ArkUI_KeyEvent_IsCapsLockOn(const ArkUI_UIInputEvent* event, bool* state)
+```c
+ArkUI_ErrorCode OH_ArkUI_KeyEvent_IsCapsLockOn(const ArkUI_UIInputEvent* event, bool* state)
 ```
 
 **描述：**
@@ -580,21 +538,19 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [const ArkUI\_UIInputEvent](capi-arkui-eventmodule-arkui-uiinputevent.md)\* event | ArkUI\_UIInputEvent事件指针。 |
+| [const ArkUI\_UIInputEvent](capi-arkui-eventmodule-arkui-uiinputevent.md)\* event | 输入事件指针，用于获取按键事件发生时CapsLock的状态。 |
 | bool\* state | 输出参数，返回CapsLock的状态。true表示处于激活状态，false表示处于未激活状态。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [ArkUI\_ErrorCode](capi-native-type-h.md#arkui_errorcode) | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 函数参数异常。 |
+| [ArkUI\_ErrorCode](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 函数参数异常。 |
 
 ### OH\_ArkUI\_KeyEvent\_IsScrollLockOn()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. ArkUI_ErrorCode OH_ArkUI_KeyEvent_IsScrollLockOn(const ArkUI_UIInputEvent* event, bool* state)
+```c
+ArkUI_ErrorCode OH_ArkUI_KeyEvent_IsScrollLockOn(const ArkUI_UIInputEvent* event, bool* state)
 ```
 
 **描述：**
@@ -614,4 +570,4 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [ArkUI\_ErrorCode](capi-native-type-h.md#arkui_errorcode) | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 函数参数异常。 |
+| [ArkUI\_ErrorCode](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 函数参数异常。 |

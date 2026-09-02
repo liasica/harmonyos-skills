@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/passwordvault-custom-strong-password-rules
 title: 为应用添加自动生成高强度密码的建议
+breadcrumb: 指南 > 系统 > 安全 > 密码自动填充服务 > 应用接入密码保险箱 > 自动填充 > 为应用添加自动生成高强度密码的建议
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:08+08:00
+scraped_at: 2026-09-02T14:59:27+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:77f8fb31dfa5f9cda4d3070b5a1c28b8a1c42fb011df19cc3b74608f74a5444b
+content_hash: sha256:cf4a62b4813ee432c5ee3876ab8fb349fcb182f480804aa46822d9ab628f6a1e
 ---
 
 在本文档中介绍的强密码特指，在密码保险箱强密码填充场景中，推荐用户使用的较强密码。强密码中一定包含大写字母、小写字母、数字三种字符。且强密码的复杂度高，破解难度大。
@@ -29,7 +30,7 @@ content_hash: sha256:77f8fb31dfa5f9cda4d3070b5a1c28b8a1c42fb011df19cc3b74608f74a
 
 3个属性可以任意选择，书写时顺序不做限制，属性之间以英文“,”进行分隔，每个属性只能出现一次。
 
-说明
+**说明** 
 
 各属性段请严格参照介绍进行书写，否则将导致指定规则不生效。
 
@@ -46,8 +47,8 @@ content_hash: sha256:77f8fb31dfa5f9cda4d3070b5a1c28b8a1c42fb011df19cc3b74608f74a
 
   格式举例：
 
-  ```
-  1. begin:[upper]
+  ```ts
+  begin:[upper]
   ```
 * **"special"**
 
@@ -59,8 +60,8 @@ content_hash: sha256:77f8fb31dfa5f9cda4d3070b5a1c28b8a1c42fb011df19cc3b74608f74a
 
   格式举例：
 
-  ```
-  1. special:[yes]
+  ```ts
+  special:[yes]
   ```
 * **"len"**
 
@@ -78,23 +79,23 @@ content_hash: sha256:77f8fb31dfa5f9cda4d3070b5a1c28b8a1c42fb011df19cc3b74608f74a
 
   1. 仅设置固定长度fixedlen，此时强密码长度为fixedlen设置值。
 
-     ```
-     1. len:[fixedlen:16]
+     ```ts
+     len:[fixedlen:16]
      ```
   2. 仅设置最小长度minlen，此时强密码长度随机，最小长度为minlen设置值，最大为默认值32位。
 
-     ```
-     1. len:[minlen:15]
+     ```ts
+     len:[minlen:15]
      ```
   3. 仅设置最大长度maxlen，此时强密码长度随机，最小长度为默认值12位，最大为maxlen设置值。
 
-     ```
-     1. len:[maxlen:28]
+     ```ts
+     len:[maxlen:28]
      ```
   4. 同时设置最大长度maxlen和最小长度minlen。设置时，minlen的值必须小于maxlen的值。此时强密码长度随机，最小长度为minlen设置值，最大为maxlen设置值。
 
-     ```
-     1. len:[minlen:13,maxlen:18]
+     ```ts
+     len:[minlen:13,maxlen:18]
      ```
   5. 若不指定len属性，强密码长度默认为16位。
 
@@ -126,15 +127,15 @@ content_hash: sha256:77f8fb31dfa5f9cda4d3070b5a1c28b8a1c42fb011df19cc3b74608f74a
 
 ### 示例
 
-```
-1. TextInput({ placeholder: '新密码' })
-2. .enableAutoFill(true)
-3. .type(InputType.NEW_PASSWORD)
-4. .passwordRules('begin:[lower],special:[yes],len:[maxlen:32,minlen:12]')
-5. .placeholderColor(0x182431)
-6. .width('100%')
-7. .opacity(0.6)
-8. .showPasswordIcon(true)
-9. .placeholderFont({ size: 16, weight: FontWeight.Regular })
-10. .margin({ bottom: 36 })
+```ts
+TextInput({ placeholder: '新密码' })
+  .enableAutoFill(true)
+  .type(InputType.NEW_PASSWORD)
+  .passwordRules('begin:[lower],special:[yes],len:[maxlen:32,minlen:12]')
+  .placeholderColor(0x182431)
+  .width('100%')
+  .opacity(0.6)
+  .showPasswordIcon(true)
+  .placeholderFont({ size: 16, weight: FontWeight.Regular })
+  .margin({ bottom: 36 })
 ```

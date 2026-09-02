@@ -1,26 +1,22 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-indoormapinfo
-title: IndoorMapInfo
-breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > IndoorMapInfo
+title: Interface (IndoorMapInfo)
+breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (IndoorMapInfo)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:20+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:625d6778205f074496118435e1868af16a7cafccfafc1fabede40bb866ee2ccf
+scraped_at: 2026-09-02T14:53:23+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ae0bcb01108fe180afe588de0626ceb67043ccf8c31ceb1d1d4dabc6be8b0e75
 ---
 
 ## 导入模块
 
-PhonePC/2in1TabletWearable
-
-```
-1. import { map } from '@kit.MapKit';
+```typescript
+import { map } from '@kit.MapKit';
 ```
 
 ## IndoorMapInfo
 
-PhonePC/2in1TabletWearable
-
-室内图信息。使用[on](map-map-mapeventmanager.md#onindoormapenter)(type: 'indoorMapEnter', callback: Callback<[IndoorMapInfo](map-map-indoormapinfo.md)>)方法会在进入室内图时触发回调，并返回[IndoorMapInfo](map-map-indoormapinfo.md)类型的实例。
+室内图信息。当进入室内图时，会通过[on](map-map-mapeventmanager.md#onindoormapenter)方法触发回调，并返回[IndoorMapInfo](map-map-indoormapinfo.md)类型的实例，从而实现室内导航、楼层切换等功能。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -28,7 +24,7 @@ PhonePC/2in1TabletWearable
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 在API19及之后版本该接口在phone、tablet、2in1均可正常使用，在其他设备中返回801错误。
+**设备行为差异：** 在5.1.1(19)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 5.1.1(19)
 
@@ -41,8 +37,8 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. mapEventManager.on('indoorMapEnter', (indoorMapInfo: map.IndoorMapInfo)=>{
-2. console.info('indoorMapinfo: ' , indoorMapInfo);
-3. })
+```typescript
+mapEventManager.on('indoorMapEnter', (indoorMapInfo: map.IndoorMapInfo)=>{
+  console.info('indoorMapinfo: ' , indoorMapInfo);
+})
 ```

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/car-listener-
 title: 监听HiCar的连接状态
 breadcrumb: 指南 > 系统 > 硬件 > Car Kit（车服务） > 获取HiCar连接状态 > 监听HiCar的连接状态
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:33:30+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d98e4389a0a0ffe189d500f49aebda82df8a28cf79c402465627ee0ca0e2f759
+scraped_at: 2026-09-02T14:50:09+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:dcbf1d7200e5046799e9597e5e2d332d7659ac5de71acb00d488a951ab822921
 ---
 
 ## 场景介绍
 
 生态应用可以通过监听智慧出行连接状态接口获取连接信息，适配HiCar业务（如：应用流转）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/HsfUwFsAQo6YWAr_uwd_Cw/zh-cn_image_0000002558605314.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/uq1ZSsNXToOm_BDdQDL3Ug/zh-cn_image_0000002706834404.png)
 
 ## 接口说明
 
@@ -25,59 +25,61 @@ content_hash: sha256:d98e4389a0a0ffe189d500f49aebda82df8a28cf79c402465627ee0ca0e
 
 ## 开发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/FxuaMyL8Rvu4pLKfEkqIBw/zh-cn_image_0000002589324839.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/5Hf2nCWDSaOGDHMspASwRw/zh-cn_image_0000002736313511.png)
 
 ## 开发步骤
 
 1. 导入相关模块。
 
-   ```
-   1. import { smartMobilityCommon } from '@kit.CarKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { smartMobilityCommon } from '@kit.CarKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 监听HiCar连接状态。
 
    应用在适配HiCar时，需要注册智慧出行连接状态的监听，用于对应的业务逻辑处理。
 
-   ```
-   1. try {
-   2. // 获取SmartMobilityAwareness实例
-   3. let awareness: smartMobilityCommon.SmartMobilityAwareness = smartMobilityCommon.getSmartMobilityAwareness();
+   ```typescript
+   try {
+     // 获取SmartMobilityAwareness实例
+     let awareness: smartMobilityCommon.SmartMobilityAwareness = smartMobilityCommon.getSmartMobilityAwareness();
 
-   5. // 业务类型
-   6. let types: smartMobilityCommon.SmartMobilityType[] = [smartMobilityCommon.SmartMobilityType.HICAR];
+     // 业务类型
+     let types: smartMobilityCommon.SmartMobilityType[] = [smartMobilityCommon.SmartMobilityType.HICAR];
 
-   8. // 智慧出行连接状态回调函数
-   9. const callBack = (info: smartMobilityCommon.SmartMobilityInfo) => {
-   10. hilog.info(0x0000, 'testTag', 'Received smart mobility info: ', JSON.stringify(info));
-   11. if (info.status === smartMobilityCommon.SmartMobilityStatus.RUNNING) {
-   12. // 连接成功通知
-   13. } else if (info.status === smartMobilityCommon.SmartMobilityStatus.IDLE) {
-   14. // 断开连接通知
-   15. }
-   16. };
-
-   18. // 注册智慧出行连接状态的监听
-   19. awareness.on('smartMobilityStatus', types, callBack);
-   20. } catch (e) {
-   21. // 捕获接口调用异常时的错误码并做相应处理
-   22. hilog.error(0x0000, 'testTag', `on smart mobility status listener error, error code: ${e?.code}`);
-   23. }
+     // 智慧出行连接状态回调函数
+     const callBack = (info: smartMobilityCommon.SmartMobilityInfo) => {
+       hilog.info(0x0000, 'testTag', 'Received smart mobility info: ', JSON.stringify(info));
+       // ...
+       if (info.status === smartMobilityCommon.SmartMobilityStatus.RUNNING) {
+         // 连接成功通知
+       } else if (info.status === smartMobilityCommon.SmartMobilityStatus.IDLE) {
+         // 断开连接通知
+       }
+     };
+     // 注册智慧出行连接状态的监听
+     awareness.on('smartMobilityStatus', types, callBack);
+     // ...
+   } catch (e) {
+     // 捕获接口调用异常时的错误码并做相应处理
+     hilog.error(0x0000, 'testTag', `on smart mobility status listener error, error code: ${e?.code}`);
+   }
    ```
 3. 取消监听。
 
    在应用退出时，需要取消之前注册的监听，减少系统不必要的资源消耗。
 
-   ```
-   1. try {
-   2. // 获取SmartMobilityAwareness实例
-   3. let awareness: smartMobilityCommon.SmartMobilityAwareness = smartMobilityCommon.getSmartMobilityAwareness();
-   4. // 业务类型
-   5. let types: smartMobilityCommon.SmartMobilityType[] = [smartMobilityCommon.SmartMobilityType.HICAR];
-   6. // 取消注册智慧出行连接状态的监听
-   7. awareness.off('smartMobilityStatus', types);
-   8. } catch (e) {
-   9. // 捕获接口调用异常时的错误码并做相应处理
-   10. hilog.error(0x0000, 'testTag', `off smart mobility status listener error, error code: ${e?.code}`);
-   11. }
+   ```typescript
+   try {
+     // 获取SmartMobilityAwareness实例
+     let awareness: smartMobilityCommon.SmartMobilityAwareness = smartMobilityCommon.getSmartMobilityAwareness();
+     // 业务类型
+     let types: smartMobilityCommon.SmartMobilityType[] = [smartMobilityCommon.SmartMobilityType.HICAR];
+     // 取消注册智慧出行连接状态的监听
+     awareness.off('smartMobilityStatus', types);
+     // ...
+   } catch (e) {
+     // 捕获接口调用异常时的错误码并做相应处理
+     hilog.error(0x0000, 'testTag', `off smart mobility status listener error, error code: ${e?.code}`);
+   }
    ```

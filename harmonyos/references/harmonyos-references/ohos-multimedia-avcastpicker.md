@@ -3,46 +3,41 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-mult
 title: "@ohos.multimedia.avCastPicker (投播组件)"
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > ArkTS组件 > @ohos.multimedia.avCastPicker (投播组件)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:22+08:00
-doc_updated_at: 2026-03-19
-content_hash: sha256:8d2bc730114af2a7bee5fad34505540cccabcb1ef930d2c2b738369f0f862854
+scraped_at: 2026-09-02T15:02:24+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0320c984aca9e78179d308201761842ef93b20f88bac68ca2fc57a1a7c0bef13
 ---
 
-本模块提供创建投播组件AVCastPicker的功能，提供设备发现连接的统一入口。
+本模块提供投播组件AVCastPicker，该组件提供设备发现连接的统一入口。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 示例效果请以真机为准，当前DevEco Studio预览器无实际投播功能。
+* 本模块从API版本26.0.0开始支持Wearable设备。
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { AVCastPicker } from '@kit.AVSessionKit';
+```js
+import { AVCastPicker } from '@kit.AVSessionKit';
 ```
 
 ## 属性
-
-PhonePC/2in1TabletTV
 
 支持[通用属性](ts-component-general-attributes.md)。
 
 ## AVCastPicker
 
-PhonePC/2in1TabletTV
-
-```
-1. AVCastPicker({
-2. normalColor?: Color | number | string;
-3. activeColor?: Color | number | string;
-4. pickerStyle?: AVCastPickerStyle;
-5. colorMode?: AVCastPickerColorMode;
-6. sessionType?: string;
-7. customPicker?: CustomBuilder;
-8. onStateChange?: (state: AVCastPickerState) => void;
-9. })
+```ts
+AVCastPicker({
+  normalColor?: Color | number | string;
+  activeColor?: Color | number | string;
+  pickerStyle?: AVCastPickerStyle;
+  colorMode?: AVCastPickerColorMode;
+  sessionType?: string;
+  customPicker?: CustomBuilder;
+  onStateChange?: (state: AVCastPickerState) => void;
+})
 ```
 
 投播组件，可用于将音视频资源投放到其它设备播放。
@@ -57,66 +52,62 @@ PhonePC/2in1TabletTV
 
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
-| normalColor11+ | Color | number | string | 否 | @Prop | 指正常状态下投播组件的颜色。  未设置将采用colorMode下的颜色设置。 |
-| activeColor11+ | Color | number | string | 否 | @Prop | 指设备切换成功状态下投播组件的颜色。未设置系统将优先根据normalColor的颜色匹配；如果normalColor也未设置，将采用colorMode下的颜色设置。 |
-| pickerStyle12+ | [AVCastPickerStyle](js-apis-avcastpickerparam.md#avcastpickerstyle12) | 否 | @Prop | 投播样式。  - 当sessionType是audio或者video时，默认值为STYLE\_PANEL。  - 当sessionType是voice\_call或者video\_call时，默认值为STYLE\_MENU，且不可修改为STYLE\_PANEL。 |
+| normalColor11+ | Color | number | string | 否 | @Prop | 正常状态下投播组件的颜色。  未设置时，将采用colorMode下的颜色设置。 |
+| activeColor11+ | Color | number | string | 否 | @Prop | 设备连接成功状态下投播组件的颜色。  未设置activeColor时，如果normalColor已设置，则使用normalColor的颜色；如果normalColor也未设置，将采用colorMode下的颜色设置。 |
+| pickerStyle12+ | [AVCastPickerStyle](js-apis-avcastpickerparam.md#avcastpickerstyle12) | 否 | @Prop | 投播样式。  - STYLE\_PANEL：显示面板样式的投播组件。  - STYLE\_MENU：显示菜单样式的投播组件。  - 当sessionType是audio或者video时，默认值为STYLE\_PANEL。  - 当sessionType是voice\_call或者video\_call时，默认值为STYLE\_MENU，且不可修改为STYLE\_PANEL。 |
 | colorMode12+ | [AVCastPickerColorMode](js-apis-avcastpickerparam.md#avcastpickercolormode12) | 否 | @Prop | 显示模式。默认值为AUTO。  - 当colorMode设置为AUTO时，跟随系统的深浅色模式的默认色值。  - 当colorMode设置为DARK、LIGHT时，使用对应模式的系统预设色值。 |
-| sessionType12+ | string | 否 | @Prop | 会话类型，可参考[AVSessionType](arkts-apis-avsession-t.md#avsessiontype10)。默认值为当前应用创建的AVSessionType。 |
-| customPicker12+ | [CustomBuilder](ts-types.md#custombuilder8) | 否 | @Prop | 自定义样式。建议应用自定义组件样式，可有效提升组件显示速度。 |
-| onStateChange11+ | (state: [AVCastPickerState](js-apis-avcastpickerparam.md#avcastpickerstate)) => void | 否 | - | 投播状态更改回调。 |
+| sessionType12+ | string | 否 | @Prop | 会话类型，有效值参考[AVSessionType](arkts-apis-avsession-t.md#avsessiontype10)。默认值为当前应用创建的AVSessionType。 |
+| customPicker12+ | [CustomBuilder](ts-types.md#custombuilder8) | 否 | @Prop | 自定义样式。建议使用自定义组件样式，可有效提升组件显示速度。 |
+| onStateChange11+ | (state: [AVCastPickerState](js-apis-avcastpickerparam.md#avcastpickerstate)) => void | 否 | - | 投播状态更改回调。投播组件状态变化时触发，state为STATE\_APPEARING表示组件开始显示，STATE\_DISAPPEARING表示组件结束显示。 |
 
 ## 事件
-
-PhonePC/2in1TabletTV
 
 支持[通用事件](ts-component-general-events.md)。
 
 ## 示例
 
-PhonePC/2in1TabletTV
-
 投播功能的示例说明参考如下。
 
 体验完整功能请具体参考[播放类开发指南](../harmonyos-guides/distributed-playback-guide.md)和[通话类开发指南](../harmonyos-guides/using-switch-call-devices.md)。
 
-```
-1. import { AVCastPickerState, AVCastPicker } from '@kit.AVSessionKit';
+```ts
+import { AVCastPickerState, AVCastPicker } from '@kit.AVSessionKit';
 
-3. @Entry
-4. @Component
-5. struct Index {
+@Entry
+@Component
+struct Index {
 
-7. @State pickerImage: ResourceStr = $r('app.media.castPicker'); // 自定义资源。
+  @State pickerImage: ResourceStr = $r('app.media.castPicker'); // 自定义资源。
 
-9. private onStateChange(state: AVCastPickerState) {
-10. if (state == AVCastPickerState.STATE_APPEARING) {
-11. console.info('The picker starts showing.');
-12. } else if (state == AVCastPickerState.STATE_DISAPPEARING) {
-13. console.info('The picker finishes presenting.');
-14. }
-15. }
+  private onStateChange(state: AVCastPickerState) {
+    if (state == AVCastPickerState.STATE_APPEARING) {
+      console.info('The picker starts showing.');
+    } else if (state == AVCastPickerState.STATE_DISAPPEARING) {
+      console.info('The picker finishes presenting.');
+    }
+  }
 
-17. @Builder
-18. customPickerBuilder() {
-19. Image(this.pickerImage)
-20. .width('100%')
-21. .height('100%')
-22. .fillColor(Color.Black)
-23. }
+  @Builder
+  customPickerBuilder() {
+    Image(this.pickerImage)
+      .width('100%')
+      .height('100%')
+      .fillColor(Color.Black)
+  }
 
-25. build() {
-26. Row() {
-27. Column() {
-28. AVCastPicker({
-29. normalColor: Color.Red,
-30. customPicker: () => this.customPickerBuilder(),
-31. onStateChange: this.onStateChange
-32. })
-33. .width('40vp')
-34. .height('40vp')
-35. .border({ width: 1, color: Color.Red })
-36. }.height('50%')
-37. }.width('50%')
-38. }
-39. }
+  build() {
+    Row() {
+      Column() {
+        AVCastPicker({
+          normalColor: Color.Red,
+          customPicker: () => this.customPickerBuilder(),
+          onStateChange: this.onStateChange
+        })
+          .width('40vp')
+          .height('40vp')
+          .border({ width: 1, color: Color.Red })
+      }.height('50%')
+    }.width('50%')
+  }
+}
 ```

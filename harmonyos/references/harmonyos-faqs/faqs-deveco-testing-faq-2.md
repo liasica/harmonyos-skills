@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-deveco-tes
 title: 设备已连接，为什么设备列表中未显示该设备
 breadcrumb: FAQ > DevEco Testing > 常见问题 > 设备已连接，为什么设备列表中未显示该设备
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:24+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:f30dc290745b0398de32fe9ac33d13960e085deee93ab2fc395bd7a6108d9cb0
 ---
 

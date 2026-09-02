@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/connectivity-
 title: Connectivity Kit（短距通信服务）
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:40+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:51c2f51ef36ae3482c67a1f6404d85a9e8fef00727ecf331d07ed0cd52df7712
+scraped_at: 2026-09-02T14:50:05+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:bed96e26884c28ad04eb429415279ab10c3f5d34eb2112c526bef3cfbc476985
 ---
 
 * **[Connectivity Kit简介](connectivity-kit-intro.md)**
@@ -13,4 +13,3 @@ content_hash: sha256:51c2f51ef36ae3482c67a1f6404d85a9e8fef00727ecf331d07ed0cd52d
 * **[NFC](nfc.md)**
 * **[WLAN](wlan.md)**
 * **[融合短距](fusion-connectivity.md)**
-* **[Connectivity Kit术语](terminology.md)**

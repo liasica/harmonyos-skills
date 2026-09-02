@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 如何将数据库数据内置到App
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 如何将数据库数据内置到App
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:20+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:51+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:37996fd4f48ec32cb1a8ecd7cee102601e3cd784d791d277f9374fc5cc163685
 ---
 

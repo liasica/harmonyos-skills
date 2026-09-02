@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-arkdata-6003
 title: ArkData
-breadcrumb: 版本说明 > HarmonyOS 6.0.0(20) > OS平台能力 > API变更清单 > 6.0.0(20) Beta3引入的API > ArkData
+breadcrumb: 版本说明 > 更多版本 > 6.0.0(20) > OS平台能力 > API变更清单 > 6.0.0(20) Beta3引入的API > ArkData
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:12+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:27+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:d76bdbfb8eb87d0e777c0f1187aa047ad1a676c395afe44a47c323bd0f4a5a4b
 ---
 

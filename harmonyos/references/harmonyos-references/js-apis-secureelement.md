@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.secureElement (安全单元的通道管理)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.secureElement (安全单元的通道管理)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:02+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:7b92449cc1410a3c38fd8200afe8fa27104c5e21565907e719e81b445727138f
+scraped_at: 2026-09-02T15:01:49+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:24ba95337b2ca6d49a8390ce00f6d263a2472cecc0edb5f8af1db8a5f38f36a0
 ---
 
 本模块主要用于操作及管理安全单元（SecureElement，简称SE），电子设备上可能存在的安全单元有eSE（Embedded SE）和SIM卡。文档中出现的SE服务为SEService实例，参见[createService](js-apis-secureelement.md#omapicreateservice12)。
@@ -18,21 +18,17 @@ content_hash: sha256:7b92449cc1410a3c38fd8200afe8fa27104c5e21565907e719e81b44572
 | Session | 此类的实例表示在某个SE Reader实例上创建连接会话。 |
 | Channel | 此类的实例表示在某个Session实例上创建通道，可能为基础通道或逻辑通道。 |
 
-说明
+**说明** 
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## **导入模块**
 
-PhoneWearable
-
-```
-1. import { omapi } from '@kit.ConnectivityKit';
+```js
+import { omapi } from '@kit.ConnectivityKit';
 ```
 
 ## ServiceState
-
-PhoneWearable
 
 定义不同的SE服务状态值。
 
@@ -45,15 +41,13 @@ PhoneWearable
 
 ## omapi.newSEService(deprecated)
 
-PhoneWearable
-
 newSEService(type: 'serviceState', callback: Callback<ServiceState>): SEService
 
-建立一个可用于连接到系统中所有可用SE的新连接（服务）。连接过程较为耗时，所以此方法仅提供异步方式进行的。使用callback异步回调。
+建立一个可用于连接到系统中所有可用SE的新连接（服务）。连接过程较为耗时，所以此方法仅提供异步方式。使用callback异步回调。
 
-仅当指定的回调或者当[isConnected](js-apis-secureelement.md#seserviceisconnected)方法返回true时，该返回SEService对象是可用的。
+仅当指定的回调或者当[isConnected](js-apis-secureelement.md#seserviceisconnected)方法返回true时，返回的SEService对象是可用的。
 
-说明
+**说明** 
 
 从 API version 10 开始支持，从 API version 12 开始废弃，建议使用[createService](js-apis-secureelement.md#omapicreateservice12)替代。
 
@@ -83,37 +77,35 @@ newSEService(type: 'serviceState', callback: Callback<ServiceState>): SEService
 
 **示例：**
 
-```
-1. import { omapi } from '@kit.ConnectivityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```js
+import { omapi } from '@kit.ConnectivityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. let seService : omapi.SEService;
+let seService : omapi.SEService;
 
-6. function secureElementDemo() {
-7. // 获取 service
-8. try {
-9. seService = omapi.newSEService("serviceState", (state) => {
-10. hilog.info(0x0000, 'testTag', 'se service state = %{public}s', JSON.stringify(state));
-11. });
-12. } catch (error) {
-13. hilog.error(0x0000, 'testTag', 'newSEService error %{public}s', JSON.stringify(error));
-14. }
-15. if (seService == undefined || !seService.isConnected()) {
-16. hilog.error(0x0000, 'testTag', 'secure element service disconnected.');
-17. return;
-18. }
-19. }
+function secureElementDemo() {
+    // 获取 service
+    try {
+        seService = omapi.newSEService("serviceState", (state) => {
+            hilog.info(0x0000, 'testTag', 'se service state = %{public}s', JSON.stringify(state));
+        });
+    } catch (error) {
+        hilog.error(0x0000, 'testTag', 'newSEService error %{public}s', JSON.stringify(error));
+    }
+    if (seService == undefined || !seService.isConnected()) {
+        hilog.error(0x0000, 'testTag', 'secure element service disconnected.');
+        return;
+    }
+}
 ```
 
 ## omapi.createService12+
 
-PhoneWearable
-
-createService(): Promise<SEService>;
+createService(): Promise<SEService>
 
 建立一个可用于连接到系统中所有可用SE的新连接（服务）。连接过程较为耗时，所以此方法仅提供异步方式。使用Promise异步回调。
 
-仅当[isConnected](js-apis-secureelement.md#seserviceisconnected)方法返回true时，该返回SEService对象是可用的。
+仅当[isConnected](js-apis-secureelement.md#seserviceisconnected)方法返回true时，返回的SEService对象是可用的。
 
 **系统能力：** SystemCapability.Communication.SecureElement
 
@@ -133,32 +125,30 @@ createService(): Promise<SEService>;
 
 **示例：**
 
+```js
+import { omapi } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+let seService : omapi.SEService;
+
+function secureElementDemo() {
+    omapi.createService().then((data) => {
+        seService = data;
+        if (seService == undefined || !seService.isConnected()) {
+            hilog.error(0x0000, 'testTag', 'seservice state disconnected');
+            return;
+        }
+        hilog.info(0x0000, 'testTag', 'seservice state connected');
+    }).catch((error : BusinessError) => {
+        hilog.error(0x0000, 'testTag', 'createService error %{public}s', JSON.stringify(error));
+    });
+}
 ```
-1. import { omapi } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let seService : omapi.SEService;
+## omapi.on('stateChanged')18+
 
-7. function secureElementDemo() {
-8. omapi.createService().then((data) => {
-9. seService = data;
-10. if (seService == undefined || !seService.isConnected()) {
-11. hilog.error(0x0000, 'testTag', 'seservice state disconnected');
-12. return;
-13. }
-14. hilog.info(0x0000, 'testTag', 'seservice state connected');
-15. }).catch((error : BusinessError)=> {
-16. hilog.error(0x0000, 'testTag', 'createService error %{public}s', JSON.stringify(error));
-17. });
-18. }
-```
-
-## omapi.on18+
-
-PhoneWearable
-
-on(type: 'stateChanged', callback: Callback<ServiceState>): void;
+on(type: 'stateChanged', callback: Callback<ServiceState>): void
 
 注册监听服务状态变化事件。
 
@@ -183,11 +173,9 @@ on(type: 'stateChanged', callback: Callback<ServiceState>): void;
 
 **示例：**
 
-示例请参见[off](js-apis-secureelement.md#omapioff18)接口的示例。
+示例请参见[omapi.off](js-apis-secureelement.md#omapioffstatechanged18)接口的示例。
 
-## omapi.off18+
-
-PhoneWearable
+## omapi.off('stateChanged')18+
 
 off(type: 'stateChanged', callback?: Callback<ServiceState>): void;
 
@@ -200,7 +188,7 @@ off(type: 'stateChanged', callback?: Callback<ServiceState>): void;
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消订阅监听的事件类型，固定填'stateChanged' 。 |
-| callback | Callback<[ServiceState](js-apis-secureelement.md#servicestate)> | 否 | 返回SE服务状态的回调 。 |
+| callback | Callback<[ServiceState](js-apis-secureelement.md#servicestate)> | 否 | 返回SE服务状态的回调。不填则取消订阅该type对应的所有回调。 |
 
 **错误码：**
 
@@ -212,58 +200,54 @@ off(type: 'stateChanged', callback?: Callback<ServiceState>): void;
 
 **示例：**
 
-```
-1. import { omapi } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```js
+import { omapi } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let seService: omapi.SEService;
-6. function seStateOnCb(data: omapi.ServiceState) {
-7. hilog.info(0x0000, 'testTag', 'omapi.on ServiceState: %{public}s', JSON.stringify(data));
-8. }
+let seService: omapi.SEService;
+function seStateOnCb(data: omapi.ServiceState) {
+    hilog.info(0x0000, 'testTag', 'omapi.on ServiceState: %{public}s', JSON.stringify(data));
+}
 
-10. function seStateOffCb(data: omapi.ServiceState) {
-11. hilog.info(0x0000, 'testTag', 'omapi.off ServiceState: %{public}s', JSON.stringify(data));
+function seStateOffCb(data: omapi.ServiceState) {
+    hilog.info(0x0000, 'testTag', 'omapi.off ServiceState: %{public}s', JSON.stringify(data));
 
-13. }
+}
 
-15. function secureElementDemo() {
-16. try{
-17. omapi.createService().then((data) => {
-18. seService = data;
-19. if (seService == undefined || !seService.isConnected()) {
-20. hilog.error(0x0000, 'testTag', 'seservice state disconnected');
-21. return;
-22. }
-23. hilog.info(0x0000, 'testTag', 'seservice state connected');
-24. }).catch((error : BusinessError)=> {
-25. hilog.error(0x0000, 'testTag', 'createService error %{public}s', JSON.stringify(error));
-26. });
-27. omapi.on('stateChanged', seStateOnCb);
-28. } catch (error) {
-29. if (error as BusinessError) {
-30. hilog.error(0x0000, 'testTag', 'omapi on error %{public}s', JSON.stringify(error));
-31. }
-32. }
-33. try{
-34. omapi.off('stateChanged', seStateOffCb);
-35. } catch (error) {
-36. if (error as BusinessError) {
-37. hilog.error(0x0000, 'testTag', 'omapi off error %{public}s', JSON.stringify(error));
-38. }
-39. }
-40. }
+function secureElementDemo() {
+    try {
+        omapi.createService().then((data) => {
+            seService = data;
+            if (seService == undefined || !seService.isConnected()) {
+                hilog.error(0x0000, 'testTag', 'seservice state disconnected');
+                return;
+            }
+            hilog.info(0x0000, 'testTag', 'seservice state connected');
+        }).catch((error : BusinessError) => {
+            hilog.error(0x0000, 'testTag', 'createService error %{public}s', JSON.stringify(error));
+        });
+        omapi.on('stateChanged', seStateOnCb);
+    } catch (error) {
+        if (error as BusinessError) {
+            hilog.error(0x0000, 'testTag', 'omapi on error %{public}s', JSON.stringify(error));
+        }
+    }
+    try {
+        omapi.off('stateChanged', seStateOffCb);
+    } catch (error) {
+        if (error as BusinessError) {
+            hilog.error(0x0000, 'testTag', 'omapi off error %{public}s', JSON.stringify(error));
+        }
+    }
+}
 ```
 
 ## SEService
 
-PhoneWearable
-
 SEService表示可用于连接到系统中所有可用SE的连接（服务），通过[createService](js-apis-secureelement.md#omapicreateservice12)获取SEService实例。
 
 ### SEService.getReaders
-
-PhoneWearable
 
 getReaders(): Reader[]
 
@@ -287,33 +271,31 @@ getReaders(): Reader[]
 
 **示例：**
 
-```
-1. import { omapi } from '@kit.ConnectivityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```js
+import { omapi } from '@kit.ConnectivityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. let seService : omapi.SEService;
-5. let seReaders : omapi.Reader[];
+let seService : omapi.SEService;
+let seReaders : omapi.Reader[];
 
-7. // 在使用seService之前，需要对seService进行初始化
-8. function secureElementDemo() {
-9. // 获取readers
-10. try {
-11. seReaders = seService.getReaders();
-12. } catch (error) {
-13. hilog.error(0x0000, 'testTag', 'getReaders error %{public}s', JSON.stringify(error));
-14. }
-15. if (seReaders == undefined || seReaders.length == 0) {
-16. hilog.error(0x0000, 'testTag', 'no valid reader found.');
-17. // 释放SeService资源
-18. seService.shutdown();
-19. return;
-20. }
-21. }
+// 在使用seService之前，需要对seService进行初始化
+function secureElementDemo() {
+    // 获取readers
+    try {
+        seReaders = seService.getReaders();
+    } catch (error) {
+        hilog.error(0x0000, 'testTag', 'getReaders error %{public}s', JSON.stringify(error));
+    }
+    if (seReaders == undefined || seReaders.length == 0) {
+        hilog.error(0x0000, 'testTag', 'no valid reader found.');
+        // 释放SeService资源
+        seService.shutdown();
+        return;
+    }
+}
 ```
 
 ### SEService.isConnected
-
-PhoneWearable
 
 isConnected(): boolean
 
@@ -337,30 +319,28 @@ isConnected(): boolean
 
 **示例：**
 
-```
-1. import { omapi } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```js
+import { omapi } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let seService : omapi.SEService;
+let seService : omapi.SEService;
 
-7. function secureElementDemo() {
-8. omapi.createService().then((data) => {
-9. seService = data;
-10. if (seService == undefined || !seService.isConnected()) {
-11. hilog.error(0x0000, 'testTag', 'seservice state disconnected');
-12. return;
-13. }
-14. hilog.info(0x0000, 'testTag', 'seservice state connected');
-15. }).catch((error : BusinessError)=> {
-16. hilog.error(0x0000, 'testTag', 'createService error %{public}s', JSON.stringify(error));
-17. });
-18. }
+function secureElementDemo() {
+    omapi.createService().then((data) => {
+        seService = data;
+        if (seService == undefined || !seService.isConnected()) {
+            hilog.error(0x0000, 'testTag', 'seservice state disconnected');
+            return;
+        }
+        hilog.info(0x0000, 'testTag', 'seservice state connected');
+    }).catch((error : BusinessError) => {
+        hilog.error(0x0000, 'testTag', 'createService error %{public}s', JSON.stringify(error));
+    });
+}
 ```
 
 ### SEService.shutdown
-
-PhoneWearable
 
 shutdown(): void
 
@@ -378,25 +358,23 @@ shutdown(): void
 
 **示例：**
 
-```
-1. import { omapi } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```js
+import { omapi } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let seService : omapi.SEService;
+let seService : omapi.SEService;
 
-7. // 在使用seService之前，需要对seService进行初始化
+// 在使用seService之前，需要对seService进行初始化
 
-9. try {
-10. seService.shutdown();
-11. } catch (error) {
-12. hilog.error(0x0000, 'testTag', 'shutdown error %{public}s', JSON.stringify(error));
-13. }
+try {
+    seService.shutdown();
+} catch (error) {
+    hilog.error(0x0000, 'testTag', 'shutdown error %{public}s', JSON.stringify(error));
+}
 ```
 
 ### SEService.getVersion
-
-PhoneWearable
 
 getVersion(): string
 
@@ -420,32 +398,28 @@ getVersion(): string
 
 **示例：**
 
-```
-1. import { omapi } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```js
+import { omapi } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let seService : omapi.SEService;
+let seService : omapi.SEService;
 
-7. // 在使用seService之前，需要对seService进行初始化
+// 在使用seService之前，需要对seService进行初始化
 
-9. try {
-10. let version = seService.getVersion();
-11. hilog.error(0x0000, 'testTag', 'version %{public}s', JSON.stringify(version));
-12. } catch (error) {
-13. hilog.error(0x0000, 'testTag', 'getVersion error %{public}s', JSON.stringify(error));
-14. }
+try {
+    let version = seService.getVersion();
+    hilog.error(0x0000, 'testTag', 'version %{public}s', JSON.stringify(version));
+} catch (error) {
+    hilog.error(0x0000, 'testTag', 'getVersion error %{public}s', JSON.stringify(error));
+}
 ```
 
 ## Reader
 
-PhoneWearable
-
 Reader的实例表示该设备支持的SE，如果支持eSE、SIM和SIM2，则返回3个实例，其中SIM2从API version 22开始支持。通过[SEService.getReaders](js-apis-secureelement.md#seservicegetreaders)获取Reader实例。
 
 ### Reader.getName
-
-PhoneWearable
 
 getName(): string
 
@@ -469,30 +443,28 @@ getName(): string
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { omapi } from '@kit.ConnectivityKit';
+```js
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { omapi } from '@kit.ConnectivityKit';
 
-4. let seReaders : omapi.Reader[];
+let seReaders : omapi.Reader[];
 
-6. // 在使用seReaders之前，需要对seReaders进行初始化
+// 在使用seReaders之前，需要对seReaders进行初始化
 
-8. try {
-9. let reader = seReaders[0]; // 将其更改为所选的reader：eSE、SIM、SIM2
-10. let name = reader.getName();
-11. hilog.info(0x0000, 'testTag', 'name %{public}s', JSON.stringify(name));
-12. } catch (error) {
-13. hilog.error(0x0000, 'testTag', 'getName error %{public}s', JSON.stringify(error));
-14. }
+try {
+    let reader = seReaders[0]; // 将其更改为所选的reader：eSE、SIM、SIM2
+    let name = reader.getName();
+    hilog.info(0x0000, 'testTag', 'name %{public}s', JSON.stringify(name));
+} catch (error) {
+    hilog.error(0x0000, 'testTag', 'getName error %{public}s', JSON.stringify(error));
+}
 ```
 
 ### Reader.isSecureElementPresent
 
-PhoneWearable
-
 isSecureElementPresent(): boolean
 
-检查当前Reader所对应的安全单元是否可用。
+检查当前Reader对应的安全单元是否可用。
 
 **系统能力：** SystemCapability.Communication.SecureElement
 
@@ -513,26 +485,24 @@ isSecureElementPresent(): boolean
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { omapi } from '@kit.ConnectivityKit';
+```js
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { omapi } from '@kit.ConnectivityKit';
 
-4. let seReaders : omapi.Reader[];
+let seReaders : omapi.Reader[];
 
-6. // 在使用seReaders之前，需要对seReaders进行初始化
+// 在使用seReaders之前，需要对seReaders进行初始化
 
-8. try {
-9. let reader = seReaders[0]; // 将其更改为所选的reader：eSE、SIM、SIM2
-10. let isPresent = reader.isSecureElementPresent();
-11. hilog.info(0x0000, 'testTag', 'isPresent %{public}s', JSON.stringify(isPresent));
-12. } catch (error) {
-13. hilog.error(0x0000, 'testTag', 'isSecureElementPresent error %{public}s', JSON.stringify(error));
-14. }
+try {
+    let reader = seReaders[0]; // 将其更改为所选的reader：eSE、SIM、SIM2
+    let isPresent = reader.isSecureElementPresent();
+    hilog.info(0x0000, 'testTag', 'isPresent %{public}s', JSON.stringify(isPresent));
+} catch (error) {
+    hilog.error(0x0000, 'testTag', 'isSecureElementPresent error %{public}s', JSON.stringify(error));
+}
 ```
 
 ### Reader.openSession
-
-PhoneWearable
 
 openSession(): Session
 
@@ -558,31 +528,29 @@ openSession(): Session
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { omapi } from '@kit.ConnectivityKit';
+```js
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { omapi } from '@kit.ConnectivityKit';
 
-4. let seReaders : omapi.Reader[];
-5. let seSession : omapi.Session;
+let seReaders : omapi.Reader[];
+let seSession : omapi.Session;
 
-7. // 在使用seReaders之前，需要对seReaders进行初始化
-8. function secureElementDemo() {
-9. try {
-10. let reader = seReaders[0]; // 将其更改为所选的reader：eSE、SIM、SIM2
-11. seSession = reader.openSession();
-12. } catch (error) {
-13. hilog.error(0x0000, 'testTag', 'openSession error %{public}s', JSON.stringify(error));
-14. }
-15. if (seSession == undefined) {
-16. hilog.error(0x0000, 'testTag', 'seSession invalid.');
-17. return;
-18. }
-19. }
+// 在使用seReaders之前，需要对seReaders进行初始化
+function secureElementDemo() {
+    try {
+        let reader = seReaders[0]; // 将其更改为所选的reader：eSE、SIM、SIM2
+        seSession = reader.openSession();
+    } catch (error) {
+        hilog.error(0x0000, 'testTag', 'openSession error %{public}s', JSON.stringify(error));
+    }
+    if (seSession == undefined) {
+        hilog.error(0x0000, 'testTag', 'seSession invalid.');
+        return;
+    }
+}
 ```
 
 ### Reader.closeSessions
-
-PhoneWearable
 
 closeSessions(): void
 
@@ -601,45 +569,41 @@ closeSessions(): void
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { omapi } from '@kit.ConnectivityKit';
+```js
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { omapi } from '@kit.ConnectivityKit';
 
-4. let seReaders : omapi.Reader[];
-5. let seSession : omapi.Session;
-6. let reader : omapi.Reader;
+let seReaders : omapi.Reader[];
+let seSession : omapi.Session;
+let reader : omapi.Reader;
 
-8. // 在使用seReaders之前，需要对seReaders进行初始化
-9. function secureElementDemo() {
-10. try {
-11. reader = seReaders[0]; // 将其更改为所选的reader：eSE、SIM、SIM2
-12. seSession = reader.openSession();
-13. } catch (error) {
-14. hilog.error(0x0000, 'testTag', 'openSession error %{public}s', JSON.stringify(error));
-15. }
-16. if (seSession == undefined) {
-17. hilog.error(0x0000, 'testTag', 'seSession invalid.');
-18. // 释放SeService资源
-19. seService.shutdown();
-20. return;
-21. }
-22. try {
-23. reader.closeSessions();
-24. } catch (error) {
-25. hilog.error(0x0000, 'testTag', 'closeSessions error %{public}s', JSON.stringify(error));
-26. }
-27. }
+// 在使用seReaders之前，需要对seReaders进行初始化
+function secureElementDemo() {
+    try {
+        reader = seReaders[0]; // 将其更改为所选的reader：eSE、SIM、SIM2
+        seSession = reader.openSession();
+    } catch (error) {
+        hilog.error(0x0000, 'testTag', 'openSession error %{public}s', JSON.stringify(error));
+    }
+    if (seSession == undefined) {
+        hilog.error(0x0000, 'testTag', 'seSession invalid.');
+        // 释放SeService资源
+        seService.shutdown();
+        return;
+    }
+    try {
+        reader.closeSessions();
+    } catch (error) {
+        hilog.error(0x0000, 'testTag', 'closeSessions error %{public}s', JSON.stringify(error));
+    }
+}
 ```
 
 ## Session
 
-PhoneWearable
-
 Session的实例表示在某个SE Reader实例上创建连接会话。通过[Reader.openSession](js-apis-secureelement.md#readeropensession)获取Session实例。
 
 ### Session.getReader
-
-PhoneWearable
 
 getReader(): Reader
 
@@ -663,37 +627,35 @@ getReader(): Reader
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { omapi } from '@kit.ConnectivityKit';
+```js
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { omapi } from '@kit.ConnectivityKit';
 
-4. let seReaders : omapi.Reader[];
-5. let seSession : omapi.Session;
-6. let reader : omapi.Reader;
+let seReaders : omapi.Reader[];
+let seSession : omapi.Session;
+let reader : omapi.Reader;
 
-8. // 在使用seReaders之前，需要对seReaders进行初始化
-9. function secureElementDemo() {
-10. try {
-11. reader = seReaders[0]; // 将其更改为所选的reader：eSE、SIM、SIM2
-12. seSession = reader.openSession();
-13. } catch (error) {
-14. hilog.error(0x0000, 'testTag', 'openSession error %{public}s', JSON.stringify(error));
-15. }
-16. if (seSession == undefined) {
-17. hilog.error(0x0000, 'testTag', 'seSession invalid.');
-18. return;
-19. }
-20. try {
-21. let sessionReader = seSession.getReader();
-22. } catch (error) {
-23. hilog.error(0x0000, 'testTag', 'getReader error %{public}s', JSON.stringify(error));
-24. }
-25. }
+// 在使用seReaders之前，需要对seReaders进行初始化
+function secureElementDemo() {
+    try {
+        reader = seReaders[0]; // 将其更改为所选的reader：eSE、SIM、SIM2
+        seSession = reader.openSession();
+    } catch (error) {
+        hilog.error(0x0000, 'testTag', 'openSession error %{public}s', JSON.stringify(error));
+    }
+    if (seSession == undefined) {
+        hilog.error(0x0000, 'testTag', 'seSession invalid.');
+        return;
+    }
+    try {
+        let sessionReader = seSession.getReader();
+    } catch (error) {
+        hilog.error(0x0000, 'testTag', 'getReader error %{public}s', JSON.stringify(error));
+    }
+}
 ```
 
 ### Session.getATR
-
-PhoneWearable
 
 getATR(): number[]
 
@@ -718,25 +680,23 @@ getATR(): number[]
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { omapi } from '@kit.ConnectivityKit';
+```js
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { omapi } from '@kit.ConnectivityKit';
 
-4. let seSession : omapi.Session;
+let seSession : omapi.Session;
 
-6. // 在使用seSession之前，需要对seSession进行初始化
+// 在使用seSession之前，需要对seSession进行初始化
 
-8. try {
-9. let atr = seSession.getATR();
-10. hilog.info(0x0000, 'testTag', 'atr %{public}s', JSON.stringify(atr));
-11. } catch (error) {
-12. hilog.error(0x0000, 'testTag', 'getATR error %{public}s', JSON.stringify(error));
-13. }
+try {
+    let atr = seSession.getATR();
+    hilog.info(0x0000, 'testTag', 'atr %{public}s', JSON.stringify(atr));
+} catch (error) {
+    hilog.error(0x0000, 'testTag', 'getATR error %{public}s', JSON.stringify(error));
+}
 ```
 
 ### Session.close
-
-PhoneWearable
 
 close(): void
 
@@ -755,24 +715,22 @@ close(): void
 
 **示例：**
 
+```js
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { omapi } from '@kit.ConnectivityKit';
+
+let seSession : omapi.Session;
+
+// 在使用seSession之前，需要对seSession进行初始化
+
+try {
+    seSession.close();
+} catch (error) {
+    hilog.error(0x0000, 'testTag', 'close error %{public}s', JSON.stringify(error));
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { omapi } from '@kit.ConnectivityKit';
 
-4. let seSession : omapi.Session;
-
-6. // 在使用seSession之前，需要对seSession进行初始化
-
-8. try {
-9. seSession.close();
-10. } catch (error) {
-11. hilog.error(0x0000, 'testTag', 'close error %{public}s', JSON.stringify(error));
-12. }
-```
-
-### Session. isClosed
-
-PhoneWearable
+### Session.isClosed
 
 isClosed(): boolean
 
@@ -796,25 +754,23 @@ isClosed(): boolean
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { omapi } from '@kit.ConnectivityKit';
+```js
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { omapi } from '@kit.ConnectivityKit';
 
-4. let seSession : omapi.Session;
+let seSession : omapi.Session;
 
-6. // 在使用seSession之前，需要对seSession进行初始化
+// 在使用seSession之前，需要对seSession进行初始化
 
-8. try {
-9. let isClosed = seSession.isClosed();
-10. hilog.info(0x0000, 'testTag', 'isClosed %{public}s', JSON.stringify(isClosed));
-11. } catch (error) {
-12. hilog.error(0x0000, 'testTag', 'isClosed error %{public}s', JSON.stringify(error));
-13. }
+try {
+    let isClosed = seSession.isClosed();
+    hilog.info(0x0000, 'testTag', 'isClosed %{public}s', JSON.stringify(isClosed));
+} catch (error) {
+    hilog.error(0x0000, 'testTag', 'isClosed error %{public}s', JSON.stringify(error));
+}
 ```
 
 ### Session.closeChannels
-
-PhoneWearable
 
 closeChannels(): void
 
@@ -833,24 +789,22 @@ closeChannels(): void
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { omapi } from '@kit.ConnectivityKit';
+```js
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { omapi } from '@kit.ConnectivityKit';
 
-4. let seSession : omapi.Session;
+let seSession : omapi.Session;
 
-6. // 在使用seSession之前，需要对seSession进行初始化
+// 在使用seSession之前，需要对seSession进行初始化
 
-8. try {
-9. seSession.closeChannels();
-10. } catch (error) {
-11. hilog.error(0x0000, 'testTag', 'closeChannels error %{public}s', JSON.stringify(error));
-12. }
+try {
+    seSession.closeChannels();
+} catch (error) {
+    hilog.error(0x0000, 'testTag', 'closeChannels error %{public}s', JSON.stringify(error));
+}
 ```
 
 ### Session.openBasicChannel
-
-PhoneWearable
 
 openBasicChannel(aid: number[]): Promise<Channel>
 
@@ -885,36 +839,34 @@ openBasicChannel(aid: number[]): Promise<Channel>
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { omapi } from '@kit.ConnectivityKit';
+```js
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { omapi } from '@kit.ConnectivityKit';
 
-4. let seSession : omapi.Session;
-5. let seChannel : omapi.Channel;
-6. let aidArray : number[] = [0xA0, 0x00, 0x00, 0x00, 0x03, 0x10, 0x10];
+let seSession : omapi.Session;
+let seChannel : omapi.Channel;
+let aidArray : number[] = [0xA0, 0x00, 0x00, 0x00, 0x03, 0x10, 0x10];
 
-8. // 在使用seSession之前，需要对seSession进行初始化
-9. function secureElementDemo() {
-10. try {
-11. // 改为在此channel上选择的App的aid
-12. seSession.openBasicChannel(aidArray).then((data) => {
-13. seChannel = data;
-14. }).catch((error : BusinessError)=> {
-15. hilog.error(0x0000, 'testTag', 'openBasicChannel error %{public}s', JSON.stringify(error));
-16. });
-17. } catch (exception) {
-18. hilog.error(0x0000, 'testTag', 'openBasicChannel exception %{public}s', JSON.stringify(exception));
-19. }
-20. if (seChannel == undefined) {
-21. hilog.error(0x0000, 'testTag', 'seChannel invalid.');
-22. return;
-23. }
-24. }
+// 在使用seSession之前，需要对seSession进行初始化
+function secureElementDemo() {
+    try {
+        // 改为在此channel上选择的App的aid
+        seSession.openBasicChannel(aidArray).then((data) => {
+            seChannel = data;
+        }).catch((error : BusinessError) => {
+            hilog.error(0x0000, 'testTag', 'openBasicChannel error %{public}s', JSON.stringify(error));
+        });
+    } catch (exception) {
+        hilog.error(0x0000, 'testTag', 'openBasicChannel exception %{public}s', JSON.stringify(exception));
+    }
+    if (seChannel == undefined) {
+        hilog.error(0x0000, 'testTag', 'seChannel invalid.');
+        return;
+    }
+}
 ```
 
 ### Session.openBasicChannel
-
-PhoneWearable
 
 openBasicChannel(aid: number[], callback: AsyncCallback<Channel>): void
 
@@ -944,38 +896,36 @@ openBasicChannel(aid: number[], callback: AsyncCallback<Channel>): void
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { omapi } from '@kit.ConnectivityKit';
+```js
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { omapi } from '@kit.ConnectivityKit';
 
-4. let seSession : omapi.Session;
-5. let seChannel : omapi.Channel;
-6. let aidArray : number[] = [0xA0, 0x00, 0x00, 0x00, 0x03, 0x10, 0x10];
+let seSession : omapi.Session;
+let seChannel : omapi.Channel;
+let aidArray : number[] = [0xA0, 0x00, 0x00, 0x00, 0x03, 0x10, 0x10];
 
-8. // 在使用seSession之前，需要对seSession进行初始化
-9. function secureElementDemo() {
-10. try {
-11. // 改为在此channel上选择的App的aid
-12. seSession.openBasicChannel(aidArray, (error, data) => {
-13. if (error) {
-14. hilog.error(0x0000, 'testTag', 'openBasicChannel error %{public}s', JSON.stringify(error));
-15. } else {
-16. seChannel = data;
-17. }
-18. });
-19. } catch (exception) {
-20. hilog.error(0x0000, 'testTag', 'openBasicChannel exception %{public}s', JSON.stringify(exception));
-21. }
-22. if (seChannel == undefined) {
-23. hilog.error(0x0000, 'testTag', 'seChannel invalid.');
-24. return;
-25. }
-26. }
+// 在使用seSession之前，需要对seSession进行初始化
+function secureElementDemo() {
+    try {
+        // 改为在此channel上选择的App的aid
+        seSession.openBasicChannel(aidArray, (error, data) => {
+            if (error) {
+                hilog.error(0x0000, 'testTag', 'openBasicChannel error %{public}s', JSON.stringify(error));
+            } else {
+                seChannel = data;
+            }
+        });
+    } catch (exception) {
+        hilog.error(0x0000, 'testTag', 'openBasicChannel exception %{public}s', JSON.stringify(exception));
+    }
+    if (seChannel == undefined) {
+        hilog.error(0x0000, 'testTag', 'seChannel invalid.');
+        return;
+    }
+}
 ```
 
 ### Session.openBasicChannel
-
-PhoneWearable
 
 openBasicChannel(aid: number[], p2: number): Promise<Channel>
 
@@ -1011,37 +961,35 @@ openBasicChannel(aid: number[], p2: number): Promise<Channel>
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { omapi } from '@kit.ConnectivityKit';
+```js
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { omapi } from '@kit.ConnectivityKit';
 
-4. let seSession : omapi.Session;
-5. let seChannel : omapi.Channel;
-6. let aidArray : number[] = [0xA0, 0x00, 0x00, 0x00, 0x03, 0x10, 0x10];
-7. let p2 : number = 0x00;
+let seSession : omapi.Session;
+let seChannel : omapi.Channel;
+let aidArray : number[] = [0xA0, 0x00, 0x00, 0x00, 0x03, 0x10, 0x10];
+let p2 : number = 0x00;
 
-9. // 在使用seSession之前，需要对seSession进行初始化
-10. function secureElementDemo() {
-11. try {
-12. // 改为在此channel上选择的App的aid
-13. seSession.openBasicChannel(aidArray, p2).then((data) => {
-14. seChannel = data;
-15. }).catch((error : BusinessError)=> {
-16. hilog.error(0x0000, 'testTag', 'openBasicChannel error %{public}s', JSON.stringify(error));
-17. });
-18. } catch (exception) {
-19. hilog.error(0x0000, 'testTag', 'openBasicChannel exception %{public}s', JSON.stringify(exception));
-20. }
-21. if (seChannel == undefined) {
-22. hilog.error(0x0000, 'testTag', 'seChannel invalid.');
-23. return;
-24. }
-25. }
+// 在使用seSession之前，需要对seSession进行初始化
+function secureElementDemo() {
+    try {
+        // 改为在此channel上选择的App的aid
+        seSession.openBasicChannel(aidArray, p2).then((data) => {
+            seChannel = data;
+        }).catch((error : BusinessError) => {
+            hilog.error(0x0000, 'testTag', 'openBasicChannel error %{public}s', JSON.stringify(error));
+        });
+    } catch (exception) {
+        hilog.error(0x0000, 'testTag', 'openBasicChannel exception %{public}s', JSON.stringify(exception));
+    }
+    if (seChannel == undefined) {
+        hilog.error(0x0000, 'testTag', 'seChannel invalid.');
+        return;
+    }
+}
 ```
 
 ### Session.openBasicChannel
-
-PhoneWearable
 
 openBasicChannel(aid: number[], p2:number, callback: AsyncCallback<Channel>): void
 
@@ -1072,39 +1020,37 @@ openBasicChannel(aid: number[], p2:number, callback: AsyncCallback<Channel>): vo
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { omapi } from '@kit.ConnectivityKit';
+```js
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { omapi } from '@kit.ConnectivityKit';
 
-4. let seSession : omapi.Session;
-5. let seChannel : omapi.Channel;
-6. let aidArray : number[] = [0xA0, 0x00, 0x00, 0x00, 0x03, 0x10, 0x10];
-7. let p2 : number = 0x00;
+let seSession : omapi.Session;
+let seChannel : omapi.Channel;
+let aidArray : number[] = [0xA0, 0x00, 0x00, 0x00, 0x03, 0x10, 0x10];
+let p2 : number = 0x00;
 
-9. // 在使用seSession之前，需要对seSession进行初始化
-10. function secureElementDemo() {
-11. try {
-12. // 改为在此channel上选择的App的aid
-13. seSession.openBasicChannel(aidArray, p2, (error, data) => {
-14. if (error) {
-15. hilog.error(0x0000, 'testTag', 'openBasicChannel error %{public}s', JSON.stringify(error));
-16. } else {
-17. seChannel = data;
-18. }
-19. });
-20. } catch (exception) {
-21. hilog.error(0x0000, 'testTag', 'openBasicChannel exception %{public}s', JSON.stringify(exception));
-22. }
-23. if (seChannel == undefined) {
-24. hilog.error(0x0000, 'testTag', 'seChannel invalid.');
-25. return;
-26. }
-27. }
+// 在使用seSession之前，需要对seSession进行初始化
+function secureElementDemo() {
+    try {
+        // 改为在此channel上选择的App的aid
+        seSession.openBasicChannel(aidArray, p2, (error, data) => {
+            if (error) {
+                hilog.error(0x0000, 'testTag', 'openBasicChannel error %{public}s', JSON.stringify(error));
+            } else {
+                seChannel = data;
+            }
+        });
+    } catch (exception) {
+        hilog.error(0x0000, 'testTag', 'openBasicChannel exception %{public}s', JSON.stringify(exception));
+    }
+    if (seChannel == undefined) {
+        hilog.error(0x0000, 'testTag', 'seChannel invalid.');
+        return;
+    }
+}
 ```
 
 ### Session.openLogicalChannel
-
-PhoneWearable
 
 openLogicalChannel(aid: number[]): Promise<Channel>
 
@@ -1139,36 +1085,34 @@ openLogicalChannel(aid: number[]): Promise<Channel>
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { omapi } from '@kit.ConnectivityKit';
+```js
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { omapi } from '@kit.ConnectivityKit';
 
-4. let seSession : omapi.Session;
-5. let seChannel : omapi.Channel;
-6. let aidArray : number[] = [0xA0, 0x00, 0x00, 0x00, 0x03, 0x10, 0x10];
+let seSession : omapi.Session;
+let seChannel : omapi.Channel;
+let aidArray : number[] = [0xA0, 0x00, 0x00, 0x00, 0x03, 0x10, 0x10];
 
-8. // 在使用seSession之前，需要对seSession进行初始化
-9. function secureElementDemo() {
-10. try {
-11. // 改为在此channel上选择的App的aid
-12. seSession.openLogicalChannel(aidArray).then((data) => {
-13. seChannel = data;
-14. }).catch((error : BusinessError)=> {
-15. hilog.error(0x0000, 'testTag', 'openLogicalChannel error %{public}s', JSON.stringify(error));
-16. });
-17. } catch (exception) {
-18. hilog.error(0x0000, 'testTag', 'openLogicalChannel exception %{public}s', JSON.stringify(exception));
-19. }
-20. if (seChannel == undefined) {
-21. hilog.error(0x0000, 'testTag', 'seChannel invalid.');
-22. return;
-23. }
-24. }
+// 在使用seSession之前，需要对seSession进行初始化
+function secureElementDemo() {
+    try {
+        // 改为在此channel上选择的App的aid
+        seSession.openLogicalChannel(aidArray).then((data) => {
+            seChannel = data;
+        }).catch((error : BusinessError) => {
+            hilog.error(0x0000, 'testTag', 'openLogicalChannel error %{public}s', JSON.stringify(error));
+        });
+    } catch (exception) {
+        hilog.error(0x0000, 'testTag', 'openLogicalChannel exception %{public}s', JSON.stringify(exception));
+    }
+    if (seChannel == undefined) {
+        hilog.error(0x0000, 'testTag', 'seChannel invalid.');
+        return;
+    }
+}
 ```
 
 ### Session.openLogicalChannel
-
-PhoneWearable
 
 openLogicalChannel(aid: number[], callback: AsyncCallback<Channel>): void
 
@@ -1198,38 +1142,36 @@ openLogicalChannel(aid: number[], callback: AsyncCallback<Channel>): void
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { omapi } from '@kit.ConnectivityKit';
+```js
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { omapi } from '@kit.ConnectivityKit';
 
-4. let seSession : omapi.Session;
-5. let seChannel : omapi.Channel;
-6. let aidArray : number[] = [0xA0, 0x00, 0x00, 0x00, 0x03, 0x10, 0x10];
+let seSession : omapi.Session;
+let seChannel : omapi.Channel;
+let aidArray : number[] = [0xA0, 0x00, 0x00, 0x00, 0x03, 0x10, 0x10];
 
-8. // 在使用seSession之前，需要对seSession进行初始化
-9. function secureElementDemo() {
-10. try {
-11. // 改为在此channel上选择的App的aid
-12. seSession.openLogicalChannel(aidArray, (error, data) => {
-13. if (error) {
-14. hilog.error(0x0000, 'testTag', 'openLogicalChannel error %{public}s', JSON.stringify(error));
-15. } else {
-16. seChannel = data;
-17. }
-18. });
-19. } catch (exception) {
-20. hilog.error(0x0000, 'testTag', 'openLogicalChannel exception %{public}s', JSON.stringify(exception));
-21. }
-22. if (seChannel == undefined) {
-23. hilog.error(0x0000, 'testTag', 'seChannel invalid.');
-24. return;
-25. }
-26. }
+// 在使用seSession之前，需要对seSession进行初始化
+function secureElementDemo() {
+    try {
+        // 改为在此channel上选择的App的aid
+        seSession.openLogicalChannel(aidArray, (error, data) => {
+            if (error) {
+                hilog.error(0x0000, 'testTag', 'openLogicalChannel error %{public}s', JSON.stringify(error));
+            } else {
+                seChannel = data;
+            }
+        });
+    } catch (exception) {
+        hilog.error(0x0000, 'testTag', 'openLogicalChannel exception %{public}s', JSON.stringify(exception));
+    }
+    if (seChannel == undefined) {
+        hilog.error(0x0000, 'testTag', 'seChannel invalid.');
+        return;
+    }
+}
 ```
 
 ### Session.openLogicalChannel
-
-PhoneWearable
 
 openLogicalChannel(aid: number[], p2: number): Promise<Channel>
 
@@ -1265,37 +1207,35 @@ openLogicalChannel(aid: number[], p2: number): Promise<Channel>
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { omapi } from '@kit.ConnectivityKit';
+```js
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { omapi } from '@kit.ConnectivityKit';
 
-4. let seSession : omapi.Session;
-5. let seChannel : omapi.Channel;
-6. let aidArray : number[] = [0xA0, 0x00, 0x00, 0x00, 0x03, 0x10, 0x10];
-7. let p2 : number = 0x00;
+let seSession : omapi.Session;
+let seChannel : omapi.Channel;
+let aidArray : number[] = [0xA0, 0x00, 0x00, 0x00, 0x03, 0x10, 0x10];
+let p2 : number = 0x00;
 
-9. // 在使用seSession之前，需要对seSession进行初始化
-10. function secureElementDemo() {
-11. try {
-12. // 改为在此channel上选择的App的aid
-13. seSession.openLogicalChannel(aidArray, p2).then((data) => {
-14. seChannel = data;
-15. }).catch((error : BusinessError)=> {
-16. hilog.error(0x0000, 'testTag', 'openLogicalChannel error %{public}s', JSON.stringify(error));
-17. });
-18. } catch (exception) {
-19. hilog.error(0x0000, 'testTag', 'openLogicalChannel exception %{public}s', JSON.stringify(exception));
-20. }
-21. if (seChannel == undefined) {
-22. hilog.error(0x0000, 'testTag', 'seChannel invalid.');
-23. return;
-24. }
-25. }
+// 在使用seSession之前，需要对seSession进行初始化
+function secureElementDemo() {
+    try {
+        // 改为在此channel上选择的App的aid
+        seSession.openLogicalChannel(aidArray, p2).then((data) => {
+            seChannel = data;
+        }).catch((error : BusinessError) => {
+            hilog.error(0x0000, 'testTag', 'openLogicalChannel error %{public}s', JSON.stringify(error));
+        });
+    } catch (exception) {
+        hilog.error(0x0000, 'testTag', 'openLogicalChannel exception %{public}s', JSON.stringify(exception));
+    }
+    if (seChannel == undefined) {
+        hilog.error(0x0000, 'testTag', 'seChannel invalid.');
+        return;
+    }
+}
 ```
 
 ### Session.openLogicalChannel
-
-PhoneWearable
 
 openLogicalChannel(aid: number[], p2: number, callback: AsyncCallback<Channel>):void
 
@@ -1326,45 +1266,41 @@ openLogicalChannel(aid: number[], p2: number, callback: AsyncCallback<Channel>):
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { omapi } from '@kit.ConnectivityKit';
+```js
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { omapi } from '@kit.ConnectivityKit';
 
-4. let seSession : omapi.Session;
-5. let seChannel : omapi.Channel;
-6. let aidArray : number[] = [0xA0, 0x00, 0x00, 0x00, 0x03, 0x10, 0x10];
-7. let p2 : number = 0x00;
+let seSession : omapi.Session;
+let seChannel : omapi.Channel;
+let aidArray : number[] = [0xA0, 0x00, 0x00, 0x00, 0x03, 0x10, 0x10];
+let p2 : number = 0x00;
 
-9. // 在使用seSession之前，需要对seSession进行初始化
-10. function secureElementDemo() {
-11. try {
-12. // 改为在此channel上选择的App的aid
-13. seSession.openLogicalChannel(aidArray, p2, (error, data) => {
-14. if (error) {
-15. hilog.error(0x0000, 'testTag', 'openLogicalChannel error %{public}s', JSON.stringify(error));
-16. } else {
-17. seChannel = data;
-18. }
-19. });
-20. } catch (exception) {
-21. hilog.error(0x0000, 'testTag', 'openLogicalChannel exception %{public}s', JSON.stringify(exception));
-22. }
-23. if (seChannel == undefined) {
-24. hilog.error(0x0000, 'testTag', 'seChannel invalid.');
-25. return;
-26. }
-27. }
+// 在使用seSession之前，需要对seSession进行初始化
+function secureElementDemo() {
+    try {
+        // 改为在此channel上选择的App的aid
+        seSession.openLogicalChannel(aidArray, p2, (error, data) => {
+            if (error) {
+                hilog.error(0x0000, 'testTag', 'openLogicalChannel error %{public}s', JSON.stringify(error));
+            } else {
+                seChannel = data;
+            }
+        });
+    } catch (exception) {
+        hilog.error(0x0000, 'testTag', 'openLogicalChannel exception %{public}s', JSON.stringify(exception));
+    }
+    if (seChannel == undefined) {
+        hilog.error(0x0000, 'testTag', 'seChannel invalid.');
+        return;
+    }
+}
 ```
 
 ## Channel
 
-PhoneWearable
-
 Channel的实例表示在某个Session实例上创建通道，可能为基础通道或逻辑通道。通过[Session.openBasicChannel](js-apis-secureelement.md#sessionopenbasicchannel)或[Session.openLogicalChannel](js-apis-secureelement.md#sessionopenlogicalchannel)获取Channel实例。
 
 ### Channel.getSession
-
-PhoneWearable
 
 getSession(): Session
 
@@ -1388,25 +1324,23 @@ getSession(): Session
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { omapi } from '@kit.ConnectivityKit';
+```js
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { omapi } from '@kit.ConnectivityKit';
 
-4. let seSession : omapi.Session;
-5. let seChannel : omapi.Channel;
+let seSession : omapi.Session;
+let seChannel : omapi.Channel;
 
-7. // 在使用seChannel之前，需要对seChannel进行初始化
+// 在使用seChannel之前，需要对seChannel进行初始化
 
-9. try {
-10. seSession = seChannel.getSession();
-11. } catch (exception) {
-12. hilog.error(0x0000, 'testTag', 'getSession exception %{public}s', JSON.stringify(exception));
-13. }
+try {
+    seSession = seChannel.getSession();
+} catch (exception) {
+    hilog.error(0x0000, 'testTag', 'getSession exception %{public}s', JSON.stringify(exception));
+}
 ```
 
 ### Channel.close
-
-PhoneWearable
 
 close(): void
 
@@ -1424,23 +1358,21 @@ close(): void
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { omapi } from '@kit.ConnectivityKit';
+```js
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { omapi } from '@kit.ConnectivityKit';
 
-4. let seChannel : omapi.Channel;
+let seChannel : omapi.Channel;
 
-6. // 在使用seChannel之前，需要对seChannel进行初始化
-7. try {
-8. seChannel.close();
-9. } catch (exception) {
-10. hilog.error(0x0000, 'testTag', 'close exception %{public}s', JSON.stringify(exception));
-11. }
+// 在使用seChannel之前，需要对seChannel进行初始化
+try {
+    seChannel.close();
+} catch (exception) {
+    hilog.error(0x0000, 'testTag', 'close exception %{public}s', JSON.stringify(exception));
+}
 ```
 
 ### Channel.isBasicChannel
-
-PhoneWearable
 
 isBasicChannel(): boolean
 
@@ -1452,7 +1384,7 @@ isBasicChannel(): boolean
 
 | **类型** | **说明** |
 | --- | --- |
-| boolean | true: 该Channel是基础Channel, false：该Channel逻辑Channel 。 |
+| boolean | 检查该Channel是否为基础Channel。true：该Channel是基础Channel，false：该Channel是逻辑Channel。 |
 
 **错误码：**
 
@@ -1464,24 +1396,22 @@ isBasicChannel(): boolean
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { omapi } from '@kit.ConnectivityKit';
+```js
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { omapi } from '@kit.ConnectivityKit';
 
-4. let seChannel : omapi.Channel;
+let seChannel : omapi.Channel;
 
-6. // 在使用seChannel之前，需要对seChannel进行初始化
-7. try {
-8. let isBasic = seChannel.isBasicChannel();
-9. hilog.info(0x0000, 'testTag', 'isBasic = %{public}s', JSON.stringify(isBasic));
-10. } catch (exception) {
-11. hilog.error(0x0000, 'testTag', 'isBasicChannel exception %{public}s', JSON.stringify(exception));
-12. }
+// 在使用seChannel之前，需要对seChannel进行初始化
+try {
+    let isBasic = seChannel.isBasicChannel();
+    hilog.info(0x0000, 'testTag', 'isBasic = %{public}s', JSON.stringify(isBasic));
+} catch (exception) {
+    hilog.error(0x0000, 'testTag', 'isBasicChannel exception %{public}s', JSON.stringify(exception));
+}
 ```
 
 ### Channel.isClosed
-
-PhoneWearable
 
 isClosed(): boolean
 
@@ -1505,24 +1435,22 @@ isClosed(): boolean
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { omapi } from '@kit.ConnectivityKit';
+```js
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { omapi } from '@kit.ConnectivityKit';
 
-4. let seChannel : omapi.Channel;
+let seChannel : omapi.Channel;
 
-6. // 在使用seChannel之前，需要对seChannel进行初始化
-7. try {
-8. let isClosed = seChannel.isClosed();
-9. hilog.info(0x0000, 'testTag', 'isClosed = %{public}s', JSON.stringify(isClosed));
-10. } catch (exception) {
-11. hilog.error(0x0000, 'testTag', 'isClosed exception %{public}s', JSON.stringify(exception));
-12. }
+// 在使用seChannel之前，需要对seChannel进行初始化
+try {
+    let isClosed = seChannel.isClosed();
+    hilog.info(0x0000, 'testTag', 'isClosed = %{public}s', JSON.stringify(isClosed));
+} catch (exception) {
+    hilog.error(0x0000, 'testTag', 'isClosed exception %{public}s', JSON.stringify(exception));
+}
 ```
 
 ### Channel.getSelectResponse
-
-PhoneWearable
 
 getSelectResponse(): number[]
 
@@ -1546,24 +1474,22 @@ getSelectResponse(): number[]
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { omapi } from '@kit.ConnectivityKit';
+```js
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { omapi } from '@kit.ConnectivityKit';
 
-4. let seChannel : omapi.Channel;
+let seChannel : omapi.Channel;
 
-6. // 在使用seChannel之前，需要对seChannel进行初始化
-7. try {
-8. let response = seChannel.getSelectResponse();
-9. hilog.info(0x0000, 'testTag', 'response = %{public}s', JSON.stringify(response));
-10. } catch (exception) {
-11. hilog.error(0x0000, 'testTag', 'getSelectResponse exception %{public}s', JSON.stringify(exception));
-12. }
+// 在使用seChannel之前，需要对seChannel进行初始化
+try {
+    let response = seChannel.getSelectResponse();
+    hilog.info(0x0000, 'testTag', 'response = %{public}s', JSON.stringify(response));
+} catch (exception) {
+    hilog.error(0x0000, 'testTag', 'getSelectResponse exception %{public}s', JSON.stringify(exception));
+}
 ```
 
 ### Channel.transmit
-
-PhoneWearable
 
 transmit(command: number[]): Promise<number[]>
 
@@ -1581,7 +1507,7 @@ transmit(command: number[]): Promise<number[]>
 
 | **类型** | **说明** |
 | --- | --- |
-| Promise<number[]> | 以Promise形式异步返回接收到的响应APDU数据，number数组。若芯片捕获未知异常则返回全0。 |
+| Promise<number[]> | 以Promise形式异步返回接收到的响应APDU数据，number数组。若芯片捕获异常则返回全0。 |
 
 **错误码：**
 
@@ -1597,29 +1523,27 @@ transmit(command: number[]): Promise<number[]>
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { omapi } from '@kit.ConnectivityKit';
+```js
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { omapi } from '@kit.ConnectivityKit';
 
-4. let seChannel : omapi.Channel;
+let seChannel : omapi.Channel;
 
-6. // 在使用seChannel之前，需要对seChannel进行初始化
-7. let cmdData = [0x01, 0x02, 0x03, 0x04]; // 请更改为正确的data
-8. try {
-9. seChannel.transmit(cmdData).then((response) => {
-10. // 若芯片捕获未知异常则response返回全0
-11. hilog.info(0x0000, 'testTag', 'transmit response = %{public}s.', JSON.stringify(response));
-12. }).catch((error : BusinessError) => {
-13. hilog.error(0x0000, 'testTag', 'transmit error = %{public}s.', JSON.stringify(error));
-14. });
-15. } catch (exception) {
-16. hilog.error(0x0000, 'testTag', 'transmit exception = %{public}s.', JSON.stringify(exception));
-17. }
+// 在使用seChannel之前，需要对seChannel进行初始化
+let cmdData = [0x01, 0x02, 0x03, 0x04]; // 请更改为正确的data
+try {
+    seChannel.transmit(cmdData).then((response) => {
+        // 若芯片捕获异常则response返回全0
+        hilog.info(0x0000, 'testTag', 'transmit response = %{public}s.', JSON.stringify(response));
+    }).catch((error : BusinessError) => {
+        hilog.error(0x0000, 'testTag', 'transmit error = %{public}s.', JSON.stringify(error));
+    });
+} catch (exception) {
+    hilog.error(0x0000, 'testTag', 'transmit exception = %{public}s.', JSON.stringify(exception));
+}
 ```
 
 ### Channel.transmit
-
-PhoneWearable
 
 transmit(command: number[], callback: AsyncCallback<number[]>): void
 
@@ -1632,7 +1556,7 @@ transmit(command: number[], callback: AsyncCallback<number[]>): void
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
 | command | number[] | 是 | 需要发送到SE的APDU数据。 |
-| callback | AsyncCallback<number[]> | 是 | 返回接收到的响应APDU数据，number数组。若芯片捕获未知异常则返回全0。 |
+| callback | AsyncCallback<number[]> | 是 | 返回接收到的响应APDU数据，number数组。若芯片捕获异常则返回全0。 |
 
 **错误码：**
 
@@ -1648,24 +1572,24 @@ transmit(command: number[], callback: AsyncCallback<number[]>): void
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { omapi } from '@kit.ConnectivityKit';
+```js
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { omapi } from '@kit.ConnectivityKit';
 
-4. let seChannel : omapi.Channel;
+let seChannel : omapi.Channel;
 
-6. // 在使用seChannel之前，需要对seChannel进行初始化
-7. let cmdData = [0x01, 0x02, 0x03, 0x04]; // 请更改为正确的data
-8. try {
-9. seChannel.transmit(cmdData, (error, response) => {
-10. if (error) {
-11. hilog.error(0x0000, 'testTag', 'transmit error %{public}s', JSON.stringify(error));
-12. } else {
-13. // 若芯片捕获未知异常则response返回全0
-14. hilog.info(0x0000, 'testTag', 'transmit response = %{public}s.', JSON.stringify(response));
-15. }
-16. });
-17. } catch (exception) {
-18. hilog.error(0x0000, 'testTag', 'transmit exception %{public}s', JSON.stringify(exception));
-19. }
+// 在使用seChannel之前，需要对seChannel进行初始化
+let cmdData = [0x01, 0x02, 0x03, 0x04]; // 请更改为正确的data
+try {
+    seChannel.transmit(cmdData, (error, response) => {
+        if (error) {
+            hilog.error(0x0000, 'testTag', 'transmit error %{public}s', JSON.stringify(error));
+        } else {
+            // 若芯片捕获异常则response返回全0
+            hilog.info(0x0000, 'testTag', 'transmit response = %{public}s.', JSON.stringify(response));
+        }
+    });
+} catch (exception) {
+    hilog.error(0x0000, 'testTag', 'transmit exception %{public}s', JSON.stringify(exception));
+}
 ```

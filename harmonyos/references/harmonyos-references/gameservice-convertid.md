@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservice-convertid
-title: 转换ID
-breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > REST API > 转换ID
+title: 通过gamePlayerId获取playerId/openId/unionId
+breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > REST API > 通过gamePlayerId获取playerId/openId/unionId
 category: harmonyos-references
-scraped_at: 2026-04-29T14:07:31+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:15c822ac12783f21ae6860bf39df298c6acc8127c48f5d9b95d8b7084a196154
+scraped_at: 2026-09-02T15:02:54+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7b739a4c7b01d3454576af124bc0cc1e834e01494bc7373c662e41181b6a7706
 ---
 
 ## 功能介绍
@@ -20,9 +20,9 @@ content_hash: sha256:15c822ac12783f21ae6860bf39df298c6acc8127c48f5d9b95d8b7084a1
 
 * **承载协议**：HTTPS POST
 * **接口方向**：开发者服务器->华为游戏服务器
-* **接口URL**：<https://jos-open-api.cloud.huawei.com/gameservice/api/gbClientApi>
+* **接口URL**：https://jos-open-api.cloud.huawei.com/gameservice/api/gbClientApi
 
-  说明
+  **说明** 
 
   请使用TLS 1.2协议或以上版本。
 * **数据格式**：
@@ -41,17 +41,16 @@ content_hash: sha256:15c822ac12783f21ae6860bf39df298c6acc8127c48f5d9b95d8b7084a1
 
 ## 请求示例
 
-```
-1. POST /gameservice/api/gbClientApi HTTP/1.1
-2. Content-Type: application/x-www-form-urlencoded
-3. User-Agent: PostmanRuntime/7.24.0
-4. Accept: */*
-5. Host: jos-open-api.cloud.huawei.com
-6. Accept-Encoding: gzip, deflate, br
-7. Connection: keep-alive
-8. Content-Length: 717
-9. // 所有请求参数值均需要urlencode编码后再进行拼接
-10. method=external.hms.gs.player.transfer.convertId&accessToken=******&appId=xxxxxxx&gamePlayerId=xxxxxxx
+```java
+POST /gameservice/api/gbClientApi HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+User-Agent: PostmanRuntime/7.24.0
+Host: jos-open-api.cloud.huawei.com
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 717
+// 所有请求参数值均需要urlencode编码后再进行拼接
+method=external.hms.gs.player.transfer.convertId&accessToken=******&appId=xxxxxxx&gamePlayerId=xxxxxxx
 ```
 
 ## 响应参数
@@ -66,204 +65,204 @@ content_hash: sha256:15c822ac12783f21ae6860bf39df298c6acc8127c48f5d9b95d8b7084a1
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Date: Tue, 19 May 2023 06:28:02 GMT
-3. Content-Type: application/json; charset=utf-8
-4. Transfer-Encoding: chunked
-5. Connection: keep-alive
-6. Content-Encoding: gzip
-7. Server: elb
-8. {
-9. "playerId": "13423***9864303",
-10. "openId": "43JIOdok743***980sd9453",
-11. "unionId": "MDFiaNicx***JHIicHAlnRD",
-12. "rtnCode": 0
-13. }
+```java
+HTTP/1.1 200 OK
+Date: Tue, 19 May 2023 06:28:02 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Content-Encoding: gzip
+Server: elb
+{
+    "playerId": "13423***9864303",
+    "openId": "43JIOdok743***980sd9453",
+    "unionId": "MDFiaNicx***JHIicHAlnRD",
+    "rtnCode": 0
+}
 ```
 
 ## 调用示例
 
-```
-1. Java
-2. package okhttp.com.post;
-3. import com.alibaba.fastjson.JSONObject;
-4. import okhttp3.*;
-5. import java.io.IOException;
+```java
+Java
+package okhttp.com.post;
+import com.alibaba.fastjson.JSONObject;
+import okhttp3.*;
+import java.io.IOException;
 
-7. public class ConvertIdTest {
-8. private static Integer RETURN_CODE_SUCCEED = 0;
+public class ConvertIdTest {
+    private static Integer RETURN_CODE_SUCCEED = 0;
 
-10. /**
-11. * 接口本地调测时使用
-12. */
-13. public static void main(String[] args) {
-14. String method = "external.hms.gs.player.transfer.convertId"; // 固定传入“external.hms.gs.player.transfer.convertId”
-15. String accessToken = "xxxxx"; // 请使用客户端Player对象中的Access Token
-16. String appId = "xxxx"; // HarmonyOS 5.0及以上游戏的APP ID
-17. String gamePlayerId = "xxxxx"; // 通过Access Token到华为服务器上获取到的玩家gamePlayerId
-18. convertIdService(method, accessToken,appId, gamePlayerId);
-19. }
+    /**
+     * 接口本地调测时使用
+     */
+    public static void main(String[] args) {
+        String method = "external.hms.gs.player.transfer.convertId"; // 固定传入“external.hms.gs.player.transfer.convertId”
+        String accessToken = "xxxxx"; // 请使用客户端Player对象中的Access Token
+        String appId = "xxxx"; // HarmonyOS 5.0及以上游戏的APP ID
+        String gamePlayerId = "xxxxx"; // 通过Access Token到华为服务器上获取到的玩家gamePlayerId
+        convertIdService(method, accessToken,appId, gamePlayerId);
+    }
 
-21. private static void convertIdService(String method, String accessToken, String appId, String gamePlayerId) {
-22. OkHttpClient client = new OkHttpClient().newBuilder().build();
-23. RequestBody mFormBody = new FormBody.Builder().add("method", method)
-24. .add("accessToken", accessToken)
-25. .add("appId", appId)
-26. .add("gamePlayerId", gamePlayerId)
-27. .build();
-28. Request request = new Request.Builder().url("https://jos-open-api.cloud.huawei.com/gameservice/api/gbClientApi")
-29. .post(mFormBody)
-30. .build();
-31. try {
-32. Response response = client.newCall(request).execute();
-33. if (response.isSuccessful()) {
-34. JSONObject object = JSONObject.parseObject(response.body().string());
-35. if (RETURN_CODE_SUCCEED.equals(object.get("rtnCode"))) {
-36. System.out.println("playerId: " + object.get("playerId"));
-37. System.out.println("openId: " + object.get("openId"));
-38. System.out.println("unionId: " + object.get("unionId"));
-39. } else {
-40. System.out.println("rtnCode: " + object.get("rtnCode"));
-41. System.out.println("rtnMsg: " + object.get("errMsg"));
-42. }
-43. }
-44. } catch (IOException e) {
-45. e.printStackTrace();
-46. }
-47. }
-48. }
-```
-
-```
-1. C#
-2. using System;
-3. using System.IO;
-4. using System.Net;
-5. using System.Text;
-6. using System.Web;
-7. namespace cXdemo
-8. {
-9. class Program
-10. {
-11. static void Main(string[] args)
-12. {
-13. // 固定传入“external.hms.gs.player.transfer.convertId”
-14. string method = "external.hms.gs.player.transfer.convertId";
-15. // 请使用客户端Player对象中的Access Token
-16. string accessToken = "xxxxx";
-17. // HarmonyOS 5.0及以上游戏的APP ID
-18. string appId = "xxxx";
-19. // 通过Access Token到华为服务器上获取到的玩家gamePlayerId
-20. string gamePlayerId = "xxxxx";
-21. // 请求接口
-22. requestgameInfo(method, accessToken, appId, gamePlayerId);
-23. }
-24. static void requestgameInfo(string method, string accessToken, string appId, string gamePlayerId)
-25. {
-26. var requestUrl = "https://jos-open-api.cloud.huawei.com/gameservice/api/gbClientApi";
-27. HttpWebRequest request = WebRequest.Create(requestUrl) as HttpWebRequest;
-28. request.Method = "post";
-29. request.ContentType = "application/x-www-form-urlencoded";
-30. StringBuilder data = new StringBuilder();
-31. data.Append("method=" + HttpUtility.UrlEncode(method));
-32. data.Append("&accessToken=" + HttpUtility.UrlEncode(accessToken));
-33. data.Append("&appId=" + HttpUtility.UrlEncode(appId));
-34. data.Append("&gamePlayerId=" + HttpUtility.UrlEncode(gamePlayerId));
-35. byte[] byteData = Encoding.UTF8.GetBytes(data.ToString());
-36. request.ContentLength = byteData.Length;
-37. Stream postStream = request.GetRequestStream();
-38. postStream.Write(byteData, 0, byteData.Length);
-39. postStream.Close();
-40. WebResponse response = request.GetResponse();
-41. StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8);
-42. string strJson = reader.ReadToEnd();
-43. Console.WriteLine(strJson);
-44. reader.Close();
-45. response.Close();
-46. }
-47. }
-48. }
+    private static void convertIdService(String method, String accessToken, String appId, String gamePlayerId) {
+        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        RequestBody mFormBody = new FormBody.Builder().add("method", method)
+            .add("accessToken", accessToken)
+            .add("appId", appId)
+            .add("gamePlayerId", gamePlayerId)
+            .build();
+        Request request = new Request.Builder().url("https://jos-open-api.cloud.huawei.com/gameservice/api/gbClientApi")
+            .post(mFormBody)
+            .build();
+        try {
+            Response response = client.newCall(request).execute();
+            if (response.isSuccessful()) {
+                JSONObject object = JSONObject.parseObject(response.body().string());
+                if (RETURN_CODE_SUCCEED.equals(object.get("rtnCode"))) {
+                    System.out.println("playerId: " + object.get("playerId"));
+                    System.out.println("openId: " + object.get("openId"));
+                    System.out.println("unionId: " + object.get("unionId"));
+                } else {
+                    System.out.println("rtnCode: " + object.get("rtnCode"));
+                    System.out.println("rtnMsg: " + object.get("errMsg"));
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
 ```
 
-```
-1. PHP
-2. class convert_id
-3. {
-4. /**
-5. * 根据AccessToken获取玩家信息
-6. *
-7. * @param string $method 固定传入“external.hms.gs.player.transfer.convertId”
-8. * @param string $accessToken 请使用客户端Player对象中的Access Token
-9. * @param string $appId HarmonyOS 5.0及以上游戏的APP ID
-10. * @param string $gamePlayerId 通过Access Token到华为服务器上获取到的玩家gamePlayerId
-11. */
-12. public function call_https(string $method, string $accessToken, string $appId, string $gamePlayerId): void
-13. {
-14. $data = array("method" => $method, "accessToken" => $accessToken, "appId" => $appId, "gamePlayerId" => $gamePlayerId);
-15. $curl = curl_init();
-16. curl_setopt_array($curl, array(
-17. CURLOPT_URL => 'https://jos-open-api.cloud.huawei.com/gameservice/api/gbClientApi',
-18. CURLOPT_RETURNTRANSFER => true,
-19. CURLOPT_ENCODING => '',
-20. CURLOPT_MAXREDIRS => 10,
-21. CURLOPT_TIMEOUT => 0,
-22. CURLOPT_FOLLOWLOCATION => true,
-23. CURLOPT_CUSTOMREQUEST => 'POST',
-24. CURLOPT_SSL_VERIFYHOST => false,
-25. CURLOPT_SSL_VERIFYPEER => false,
-26. CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-27. CURLOPT_POSTFIELDS => http_build_query($data),
-28. CURLOPT_HTTPHEADER => array(
-29. 'Content-Type: application/x-www-form-urlencoded'
-30. ),
-31. ));
-32. $response = curl_exec($curl);
-33. if (curl_error($curl)) {
-34. throw new Exception(curl_error($curl));
-35. }
-36. curl_close($curl);
-37. $result = json_decode($response, true);
-38. var_dump($result);
-39. }
-40. }
-41. $convert_id = new convert_id();
-42. $method = "external.hms.gs.player.transfer.convertId"; // 固定传入“external.hms.gs.player.transfer.convertId”
-43. $accessToken = "xxxxx"; // 请使用客户端Player对象中的Access Token
-44. $appId = "xxxxx"; // HarmonyOS 5.0及以上游戏的APP ID
-45. $gamePlayerId = "xxxxx"; // 通过Access Token到华为服务器上获取到的玩家gamePlayerId
-46. $convert_id->call_https($method, $accessToken, $appId, $gamePlayerId);
+```csharp
+C#
+using System;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Web;
+namespace cXdemo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // 固定传入“external.hms.gs.player.transfer.convertId”
+            string method = "external.hms.gs.player.transfer.convertId";
+            // 请使用客户端Player对象中的Access Token
+            string accessToken = "xxxxx";
+        // HarmonyOS 5.0及以上游戏的APP ID
+        string appId = "xxxx";
+        // 通过Access Token到华为服务器上获取到的玩家gamePlayerId
+        string gamePlayerId = "xxxxx";
+            // 请求接口
+            requestgameInfo(method, accessToken, appId, gamePlayerId);
+        }
+        static void requestgameInfo(string method, string accessToken, string appId, string gamePlayerId)
+        {
+            var requestUrl = "https://jos-open-api.cloud.huawei.com/gameservice/api/gbClientApi";
+            HttpWebRequest request = WebRequest.Create(requestUrl) as HttpWebRequest;
+            request.Method = "post";
+            request.ContentType = "application/x-www-form-urlencoded";
+            StringBuilder data = new StringBuilder();
+            data.Append("method=" + HttpUtility.UrlEncode(method));
+            data.Append("&accessToken=" + HttpUtility.UrlEncode(accessToken));
+            data.Append("&appId=" + HttpUtility.UrlEncode(appId));
+            data.Append("&gamePlayerId=" + HttpUtility.UrlEncode(gamePlayerId));
+            byte[] byteData = Encoding.UTF8.GetBytes(data.ToString());
+            request.ContentLength = byteData.Length;
+            Stream postStream = request.GetRequestStream();
+            postStream.Write(byteData, 0, byteData.Length);
+            postStream.Close();
+            WebResponse response = request.GetResponse();
+            StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8);
+            string strJson = reader.ReadToEnd();
+            Console.WriteLine(strJson);
+            reader.Close();
+            response.Close();
+        }
+    }
+}
 ```
 
+```php
+PHP
+class convert_id
+{
+    /**
+     * 根据AccessToken获取玩家信息
+     *
+     * @param string $method 固定传入“external.hms.gs.player.transfer.convertId”
+     * @param string $accessToken 请使用客户端Player对象中的Access Token
+     * @param string $appId HarmonyOS 5.0及以上游戏的APP ID
+     * @param string $gamePlayerId 通过Access Token到华为服务器上获取到的玩家gamePlayerId
+     */
+    public function call_https(string $method, string $accessToken, string $appId, string $gamePlayerId): void
+    {
+        $data = array("method" => $method, "accessToken" => $accessToken, "appId" => $appId, "gamePlayerId" => $gamePlayerId);
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://jos-open-api.cloud.huawei.com/gameservice/api/gbClientApi',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_SSL_VERIFYHOST => false,
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_POSTFIELDS => http_build_query($data),
+            CURLOPT_HTTPHEADER => array(
+                'Content-Type: application/x-www-form-urlencoded'
+            ),
+        ));
+        $response = curl_exec($curl);
+        if (curl_error($curl)) {
+            throw new Exception(curl_error($curl));
+        }
+        curl_close($curl);
+        $result = json_decode($response, true);
+        var_dump($result);
+    }
+}
+$convert_id = new convert_id();
+$method = "external.hms.gs.player.transfer.convertId"; // 固定传入“external.hms.gs.player.transfer.convertId”
+$accessToken = "xxxxx"; // 请使用客户端Player对象中的Access Token
+$appId = "xxxxx"; // HarmonyOS 5.0及以上游戏的APP ID
+$gamePlayerId = "xxxxx"; // 通过Access Token到华为服务器上获取到的玩家gamePlayerId
+$convert_id->call_https($method, $accessToken, $appId, $gamePlayerId);
 ```
-1. Python
-2. from typing import Any
-3. import requests
-4. import urllib.parse
-5. class ConvertIdSolution:
-6. def convert_id(self, method, accessToken, appId, gamePlayerId):
-7. url = "https://jos-open-api.cloud.huawei.com/gameservice/api/gbClientApi"
-8. params: dict[str, Any] = {
-9. 'method': method,
-10. 'accessToken': accessToken,
-11. 'appId': appId,
-12. 'gamePlayerId': gamePlayerId
-13. }
-14. encodedParams = urllib.parse.urlencode(params)
-15. headers = {
-16. 'Content-Type': 'application/x-www-form-urlencoded'
-17. }
-18. response = requests.post(url, headers=headers, data=encodedParams)
-19. print(response.text)
-20. if __name__ == "__main__":
-21. # 固定传入“external.hms.gs.player.transfer.convertId”
-22. input_method = 'external.hms.gs.player.transfer.convertId'
-23. # 请使用客户端Player对象中的Access Token
-24. input_accessToken = 'xxx'
-25. # HarmonyOS 5.0及以上游戏的APP ID
-26. input_appId = 'xxx'
-27. # 通过Access Token到华为服务器上获取到的玩家gamePlayerId
-28. input_gamePlayerId = 'xxx'
-29. function = ConvertIdSolution()
-30. function.convert_id(input_method, input_accessToken, input_appId, input_gamePlayerId)
+
+```python
+Python
+from typing import Any
+import requests
+import urllib.parse
+class ConvertIdSolution:
+    def convert_id(self, method, accessToken, appId, gamePlayerId):
+        url = "https://jos-open-api.cloud.huawei.com/gameservice/api/gbClientApi"
+        params: dict[str, Any] = {
+            'method': method,
+            'accessToken': accessToken,
+            'appId': appId,
+            'gamePlayerId': gamePlayerId
+        }
+        encodedParams = urllib.parse.urlencode(params)
+        headers = {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+        response = requests.post(url, headers=headers, data=encodedParams)
+        print(response.text)
+if __name__ == "__main__":
+    # 固定传入“external.hms.gs.player.transfer.convertId”
+    input_method = 'external.hms.gs.player.transfer.convertId'
+    # 请使用客户端Player对象中的Access Token
+    input_accessToken = 'xxx'
+    # HarmonyOS 5.0及以上游戏的APP ID
+    input_appId = 'xxx'
+    # 通过Access Token到华为服务器上获取到的玩家gamePlayerId
+    input_gamePlayerId = 'xxx'
+    function = ConvertIdSolution()
+    function.convert_id(input_method, input_accessToken, input_appId, input_gamePlayerId)
 ```

@@ -3,38 +3,42 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/napi
 title: Node-API
 breadcrumb: API参考 > 标准库 > Node-API
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:31+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:663299d84c045a7f5814ad0d486a3908aa377cbadfeb3d01af1d7b12bf94f8bc
+scraped_at: 2026-09-02T15:03:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:41ca6907ee7174256aebf45ef3eb958d5a244162a89239185b6e1a5d627e037d
 ---
 
 ## 简介
 
 Node-API是用于封装JavaScript能力为Native插件的API，独立于底层JavaScript，并作为Node.js的一部分。
 
-## 支持的能力
-
-Node-API可以去除底层的JavaScript引擎的差异，提供一套稳定的接口。
-
-HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对接了ArkJS等引擎。当前支持Node-API标准库中的部分接口。
-
 ## 引入Node-API能力
 
 如果开发者需要使用Node-API相关功能，首先请添加头文件：
 
-```
-1. #include <napi/native_api.h>
+```cpp
+#include <napi/native_api.h>
 ```
 
 其次在CMakeLists.txt中添加以下动态链接库：
 
+```screen
+libace_napi.z.so
 ```
-1. libace_napi.z.so
-```
+
+## 支持的能力
+
+Node-API可以去除底层的JavaScript引擎的差异，提供一套稳定的接口。
+
+HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对接了ArkJS等引擎。当前支持Node-API标准库中的部分接口，并进行了能力扩展，具体请参考[Node-API组件扩展的接口](napi.md#node-api组件扩展的接口)。
 
 ## 已从Node-API组件标准库中导出的符号列表
 
-从Node-API标准库导出的接口，其使用方法及行为基于[Node.js](https://nodejs.org/docs/latest-v12.x/api/n-api.html)，并进行了部分[能力拓展](napi.md#node-api组件扩展的符号列表)。
+从Node-API标准库导出的接口，其使用方法及行为基于[Node.js](https://nodejs.org/docs/latest-v18.x/api/n-api.html)。部分接口存在差异，请参考[已导出符号列表与标准库对应符号的差异](napi.md#已导出符号列表与标准库对应符号的差异)。
+
+**注意** 
+
+使用 NAPI 接口时，应确保环境、对象和值有效且符合规格；无效或跨生命周期使用可能导致失败、崩溃或未定义行为。开发过程常见问题可参考[Node-API常见问题](../harmonyos-guides/use-napi-faqs.md)。
 
 | 符号类型 | 符号名 | 说明 | 起始支持API版本 |
 | --- | --- | --- | --- |
@@ -68,7 +72,7 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 | FUNC | napi\_create\_external\_arraybuffer | 分配一个附加有外部数据的js ArrayBuffer。 | 10 |
 | FUNC | napi\_create\_object | 创建一个默认的js Object。 | 10 |
 | FUNC | napi\_create\_symbol | 创建一个js Symbol。 | 10 |
-| FUNC | napi\_create\_typedarray | 通过现有的ArrayBuffer创建一个js TypeArray。 | 10 |
+| FUNC | napi\_create\_typedarray | 通过现有的ArrayBuffer创建一个js TypedArray。 | 10 |
 | FUNC | napi\_create\_dataview | 通过现有的ArrayBuffer创建一个js DataView。 | 10 |
 | FUNC | napi\_create\_int32 | 通过一个C的int32\_t数据创建js Number。 | 10 |
 | FUNC | napi\_create\_uint32 | 通过一个C的uint32\_t数据创建js Number。 | 10 |
@@ -137,7 +141,7 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 | FUNC | napi\_queue\_async\_work | 将异步工作对象加到队列，由底层去调度执行。 | 10 |
 | FUNC | napi\_cancel\_async\_work | 取消入队的异步任务。 | 10 |
 | FUNC | napi\_async\_init | 创建一个异步资源上下文环境（不支持与async\_hook相关能力）。 | 11 |
-| FUNC | napi\_make\_callback | 在异步资源上下文环境中回调JS函数(不支持与async\_hook相关能力)。 | 11 |
+| FUNC | napi\_make\_callback | 在异步资源上下文环境中回调JS函数（不支持与async\_hook相关能力）。 | 11 |
 | FUNC | napi\_async\_destroy | 销毁先前创建的异步资源上下文环境（不支持与async\_hook相关能力）。 | 11 |
 | FUNC | napi\_open\_callback\_scope | 创建一个回调作用域（不支持与async\_hook相关能力）。 | 11 |
 | FUNC | napi\_close\_callback\_scope | 关闭先前创建的回调作用域（不支持与async\_hook相关能力）。 | 11 |
@@ -173,7 +177,7 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 | FUNC | napi\_get\_all\_property\_names | 获取一个数组，其中包含此对象过滤后的属性名称。 | 10 |
 | FUNC | napi\_detach\_arraybuffer | 分离给定ArrayBuffer的底层数据。 | 10 |
 | FUNC | napi\_is\_detached\_arraybuffer | 判断给定的ArrayBuffer是否已被分离过。 | 10 |
-| FUNC | napi\_run\_script | 将给定对象作为js代码运行。当前接口实际为空实现，可使用系统拓展接口napi\_run\_script\_path接口，提升安全性。 | 10 |
+| FUNC | napi\_run\_script | 将给定对象作为js代码运行。当前接口实际为空实现，可使用系统扩展接口napi\_run\_script\_path接口，提升安全性。 | 10 |
 | FUNC | napi\_set\_instance\_data | 绑定与当前运行的环境相关联的数据项。 | 11 |
 | FUNC | napi\_get\_instance\_data | 检索与当前运行的环境相关联的数据项。 | 11 |
 | FUNC | napi\_add\_env\_cleanup\_hook | 注册环境清理钩子函数。 | 11 |
@@ -222,7 +226,7 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 **参数：**
 
-* code: HarmonyOS中支持String或Number类型,但标准库接口的code类型仅支持String类型。
+* code: HarmonyOS中支持String或Number类型，但标准库接口的code类型仅支持String类型。
 
 **返回：**
 
@@ -234,7 +238,7 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 **参数：**
 
-* code: HarmonyOS中支持String或Number类型,但标准库接口的code类型仅支持String类型。
+* code: HarmonyOS中支持String或Number类型，但标准库接口的code类型仅支持String类型。
 
 **返回：**
 
@@ -451,7 +455,7 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 **参数：**
 
 * 该导出接口暂时不支持async\_hooks资源管理机制。
-* 该导出接口不会校验入参async\_resource\_name是否为String类型对象，入参async\_resource\_name推荐传入String对象，用于描述创建的异步工作对象。入参async\_resource\_name为String时，trace信息将包含该描述，反之传入非String对象，trace信息将不包含该描述。
+* 该导出接口不校验async\_resource\_name参数类型，建议传入String对象描述异步工作对象。String类型参数会在trace信息中显示，null或undefined则不会显示，其他类型将导致崩溃。
 * 由于当前暂不支持async\_hooks资源管理机制，入参async\_resource暂时也不做处理。
 
 ### napi\_delete\_async\_work
@@ -654,52 +658,7 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 | --- | --- | --- |
 | FUNC | napi\_adjust\_external\_memory | 调整js Object持有的外部内存。 |
 
-## Node-API组件扩展的符号列表
-
-| 符号类型 | 符号名 | 说明 | 起始支持API版本 |
-| --- | --- | --- | --- |
-| FUNC | napi\_queue\_async\_work\_with\_qos | 将异步工作对象加到队列，由底层根据传入的qos优先级去调度执行。 | 10 |
-| FUNC | napi\_run\_script\_path | 运行abc文件。 | 10 |
-| FUNC | napi\_load\_module | 将abc文件作为模块加载，返回模块的命名空间。 | 11 |
-| FUNC | napi\_create\_object\_with\_properties | 使用给定的napi\_property\_descriptor创建js Object。descriptor的键名必须为 string，且不可转为number。 | 11 |
-| FUNC | napi\_create\_object\_with\_named\_properties | 使用给定的napi\_value和键名创建js Object。键名必须为 string，且不可转为number。 | 11 |
-| FUNC | napi\_coerce\_to\_native\_binding\_object | 强制将js Object和Native对象绑定。 | 11 |
-| FUNC | napi\_create\_ark\_runtime | 创建基础运行时环境。 | 12 |
-| FUNC | napi\_destroy\_ark\_runtime | 销毁基础运行时环境。 | 12 |
-| FUNC | napi\_run\_event\_loop | 触发底层的事件循环。 | 12 |
-| FUNC | napi\_stop\_event\_loop | 停止底层的事件循环。 | 12 |
-| FUNC | napi\_load\_module\_with\_info | 将abc文件作为模块加载，返回模块的命名空间。可在新创建的ArkTS基础运行时环境中使用。 | 12 |
-| FUNC | napi\_serialize | 将ArkTS对象转换为native数据。 | 12 |
-| FUNC | napi\_deserialize | 将native数据转为ArkTS对象。 | 12 |
-| FUNC | napi\_delete\_serialization\_data | 删除序列化数据。 | 12 |
-| FUNC | napi\_call\_threadsafe\_function\_with\_priority | 将指定优先级和入队方式的任务投递到ArkTS主线程。 | 12 |
-| FUNC | napi\_is\_sendable | 判断给定JS value是否是Sendable的。 | 12 |
-| FUNC | napi\_define\_sendable\_class | 创建一个Sendable类。 | 12 |
-| FUNC | napi\_create\_sendable\_object\_with\_properties | 使用给定的napi\_property\_descriptor创建一个Sendable对象。 | 12 |
-| FUNC | napi\_create\_sendable\_array | 创建一个Sendable数组。 | 12 |
-| FUNC | napi\_create\_sendable\_array\_with\_length | 创建一个指定长度的Sendable数组。 | 12 |
-| FUNC | napi\_create\_sendable\_arraybuffer | 创建一个Sendable ArrayBuffer。 | 12 |
-| FUNC | napi\_create\_sendable\_typedarray | 创建一个Sendable TypedArray。 | 12 |
-| FUNC | napi\_wrap\_sendable | 封装一个native实例到ArkTS对象中。 | 12 |
-| FUNC | napi\_wrap\_sendable\_with\_size | 封装一个native实例到ArkTS对象中并指定大小。 | 12 |
-| FUNC | napi\_unwrap\_sendable | 获取ArkTS对象包裹的native实例。 | 12 |
-| FUNC | napi\_remove\_wrap\_sendable | 移除并获取ArkTS对象包裹的native实例，移除后回调将不再触发，需手动delete释放内存。 | 12 |
-| FUNC | napi\_wrap\_enhance | 在ArkTS对象上绑定一个native对象实例并指定实例大小，运行时会统计传入的实例大小并将其累加，当累计大小达到GC触发阈值时，运行时会启动垃圾回收流程。开发者可以指定绑定的回调函数是否异步执行，如果是异步执行，回调函数必须保证是线程安全的。 | 18 |
-| FUNC | napi\_create\_ark\_context | 创建一个新的运行时上下文环境。 | 20 |
-| FUNC | napi\_switch\_ark\_context | 切换到指定的运行时上下文环境。 | 20 |
-| FUNC | napi\_destroy\_ark\_context | 销毁通过接口napi\_create\_ark\_context创建的一个上下文环境。 | 20 |
-| FUNC | napi\_open\_critical\_scope | 打开临界区作用域。 | 21 |
-| FUNC | napi\_close\_critical\_scope | 关闭临界区作用域。 | 21 |
-| FUNC | napi\_get\_buffer\_string\_utf16\_in\_critical\_scope | 获取ArkTS String的UTF-16编码内存缓冲区数据。 | 21 |
-| FUNC | napi\_create\_strong\_reference | 创建指向ArkTS对象的强引用。 | 21 |
-| FUNC | napi\_delete\_strong\_reference | 删除强引用。 | 21 |
-| FUNC | napi\_get\_strong\_reference\_value | 根据强引用获取其关联的ArkTS对象值。 | 21 |
-| FUNC | napi\_create\_external\_string\_utf16 | 需要通过外部UTF-16编码的字符串缓冲区创建ArkTS字符串值且避免内存拷贝时使用此函数。 | 22 |
-| FUNC | napi\_create\_external\_string\_ascii | 需要通过外部ASCII编码的字符串缓冲区创建ArkTS字符串值且避免内存拷贝时使用此函数。 | 22 |
-| FUNC | napi\_create\_strong\_sendable\_reference | 创建指向Sendable ArkTS对象的Sendable强引用。 | 22 |
-| FUNC | napi\_delete\_strong\_sendable\_reference | 删除Sendable强引用。 | 22 |
-| FUNC | napi\_get\_strong\_sendable\_reference\_value | 根据Sendable强引用获取其关联的ArkTS对象值。 | 22 |
-| FUNC | napi\_throw\_business\_error | 抛出一个带文本信息的ArkTS Error, 其错误对象的code属性类型为number类型。 | 23 |
+## Node-API组件扩展的接口
 
 说明：
 
@@ -707,43 +666,49 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_qos\_t
 
-```
-1. typedef enum {
-2. napi_qos_background = 0,      // 低等级，用户不可见任务，例如数据同步、备份。
-3. napi_qos_utility = 1,         // 中低等级，不需要立即看到响应效果的任务，例如下载或导入数据。
-4. napi_qos_default = 2,         // 默认
-5. napi_qos_user_initiated = 3,  // 高等级，用户触发并且可见进展，例如打开文档。
-6. } napi_qos_t;
+```cpp
+typedef enum {
+    napi_qos_background = 0,      // 低等级，用户不可见任务，例如数据同步、备份。
+    napi_qos_utility = 1,         // 中低等级，不需要立即看到响应效果的任务，例如下载或导入数据。
+    napi_qos_default = 2,         // 默认
+    napi_qos_user_initiated = 3,  // 高等级，用户触发并且可见进展，例如打开文档。
+} napi_qos_t;
 ```
 
 **描述：**
 
 表示QoS的枚举值，QoS决定了线程调度的优先级。
 
+**起始版本：** 10
+
 ### napi\_event\_mode
 
-```
-1. typedef enum {
-2. napi_event_mode_default = 0,  // 阻塞式的运行底层事件循环，直到循环中没有任何任务时退出事件循环。
-3. napi_event_mode_nowait = 1,   // 非阻塞式的运行底层事件循环，尝试去处理一个任务，处理完之后退出事件循环；如果事件循环中没有任务，立刻退出事件循环。
-4. } napi_event_mode;
+```cpp
+typedef enum {
+    napi_event_mode_default = 0,  // 阻塞式的运行底层事件循环，直到循环中没有任何任务时退出事件循环。
+    napi_event_mode_nowait = 1,   // 非阻塞式的运行底层事件循环，尝试去处理一个任务，处理完之后退出事件循环；如果事件循环中没有任务，立刻退出事件循环。
+} napi_event_mode;
 ```
 
 **描述：**
 
 用于运行事件循环的事件模式。
 
+**起始版本：** 12
+
 ### napi\_queue\_async\_work\_with\_qos
 
-```
-1. napi_status napi_queue_async_work_with_qos(napi_env env,
-2. napi_async_work work,
-3. napi_qos_t qos);
+```cpp
+napi_status napi_queue_async_work_with_qos(napi_env env,
+                                           napi_async_work work,
+                                           napi_qos_t qos);
 ```
 
 **描述：**
 
 将异步工作对象加到队列，由底层根据传入的qos优先级去调度执行。
+
+**起始版本：** 10
 
 **参数：**
 
@@ -757,15 +722,17 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_run\_script\_path
 
-```
-1. napi_status napi_run_script_path(napi_env env,
-2. const char* abcPath,
-3. napi_value* result);
+```cpp
+napi_status napi_run_script_path(napi_env env,
+                                 const char* abcPath,
+                                 napi_value* result);
 ```
 
 **描述：**
 
 运行指定abc文件。
+
+**起始版本：** 10
 
 **参数：**
 
@@ -779,15 +746,17 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_load\_module
 
-```
-1. napi_status napi_load_module(napi_env env,
-2. const char* path,
-3. napi_value* result);
+```cpp
+napi_status napi_load_module(napi_env env,
+                             const char* path,
+                             napi_value* result);
 ```
 
 **描述：**
 
 加载系统模块或开发者自定义的模块，返回模块的命名空间。
+
+**起始版本：** 11
 
 **参数：**
 
@@ -801,11 +770,11 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_create\_object\_with\_properties
 
-```
-1. napi_status napi_create_object_with_properties(napi_env env,
-2. napi_value* result,
-3. size_t property_count,
-4. const napi_property_descriptor* properties);
+```cpp
+napi_status napi_create_object_with_properties(napi_env env,
+                                               napi_value* result,
+                                               size_t property_count,
+                                               const napi_property_descriptor* properties);
 ```
 
 **描述：**
@@ -813,6 +782,8 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 属性描述符napi\_property\_descriptor用于描述一个属性，它包括属性的名称获取和设置方法、属性特性等信息。通过传入这些描述符，可以在创建对象时就定义属性。
 
 使用给定的napi\_property\_descriptor创建js Object。descriptor的键名必须为string，且不可转为number。
+
+**起始版本：** 11
 
 **参数：**
 
@@ -827,17 +798,19 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_create\_object\_with\_named\_properties
 
-```
-1. napi_status napi_create_object_with_named_properties(napi_env env,
-2. napi_value* result,
-3. size_t property_count,
-4. const char** keys,
-5. const napi_value* values);
+```cpp
+napi_status napi_create_object_with_named_properties(napi_env env,
+                                                     napi_value* result,
+                                                     size_t property_count,
+                                                     const char** keys,
+                                                     const napi_value* values);
 ```
 
 **描述：**
 
 使用给定的napi\_value和键名创建js Object。键名必须为string，且不可转为number。
+
+**起始版本：** 11
 
 **参数：**
 
@@ -853,25 +826,27 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_coerce\_to\_native\_binding\_object
 
-```
-1. napi_status napi_coerce_to_native_binding_object(napi_env env,
-2. napi_value js_object,
-3. napi_native_binding_detach_callback detach_cb,
-4. napi_native_binding_attach_callback attach_cb,
-5. void* native_object,
-6. void* hint);
+```cpp
+napi_status napi_coerce_to_native_binding_object(napi_env env,
+                                                 napi_value js_object,
+                                                 napi_native_binding_detach_callback detach_cb,
+                                                 napi_native_binding_attach_callback attach_cb,
+                                                 void* native_object,
+                                                 void* hint);
 ```
 
 **描述：**
 
 用于给JS Object绑定回调和回调所需的参数，转成携带Native信息的JS Object。
 
+**起始版本：** 11
+
 **参数：**
 
 * [in] env: Node-API的环境对象，表示当前的执行环境。
 * [in] js\_object: 要转换的JavaScript对象。
 * [in] detach\_cb: 解绑回调，一般在序列化时调用，可在对象解绑时执行一些清理操作。
-* [in] attach\_cb: 绑定回调，一般在序列化时调用。
+* [in] attach\_cb: 绑定回调，一般在反序列化时调用。
 * [in] native\_object: 需要传递给回调的参数，不能为空。
 * [in] hint: 一个指针，可以用于传递附加的信息给回调函数。
 
@@ -881,13 +856,15 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_create\_ark\_runtime
 
-```
-1. napi_status napi_create_ark_runtime(napi_env *env)
+```cpp
+napi_status napi_create_ark_runtime(napi_env *env)
 ```
 
 **描述：**
 
 创建基础运行时环境，一个进程最多创建64个，并满足与[Worker](../harmonyos-guides/worker-introduction.md)创建的子线程总数不超过80个。
+
+**起始版本：** 12
 
 **参数：**
 
@@ -899,13 +876,15 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_destroy\_ark\_runtime
 
-```
-1. napi_status napi_destroy_ark_runtime(napi_env *env)
+```cpp
+napi_status napi_destroy_ark_runtime(napi_env *env)
 ```
 
 **描述：**
 
 销毁基础运行时环境。
+
+**起始版本：** 12
 
 **参数：**
 
@@ -917,13 +896,15 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_run\_event\_loop
 
-```
-1. napi_status napi_run_event_loop(napi_env env, napi_event_mode mode)
+```cpp
+napi_status napi_run_event_loop(napi_env env, napi_event_mode mode)
 ```
 
 **描述：**
 
 触发底层的事件循环。
+
+**起始版本：** 12
 
 **参数：**
 
@@ -936,13 +917,15 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_stop\_event\_loop
 
-```
-1. napi_status napi_stop_event_loop(napi_env env)
+```cpp
+napi_status napi_stop_event_loop(napi_env env)
 ```
 
 **描述：**
 
 停止底层的事件循环。
+
+**起始版本：** 12
 
 **参数：**
 
@@ -954,16 +937,18 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_load\_module\_with\_info
 
-```
-1. napi_status napi_load_module_with_info(napi_env env,
-2. const char* path,
-3. const char* module_info,
-4. napi_value* result)
+```cpp
+napi_status napi_load_module_with_info(napi_env env,
+                                       const char* path,
+                                       const char* module_info,
+                                       napi_value* result)
 ```
 
 **描述：**
 
 将abc文件作为模块加载，返回模块的命名空间。可在新创建的ArkTS基础运行时环境中使用。
+
+**起始版本：** 12
 
 **参数：**
 
@@ -978,17 +963,19 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_serialize
 
-```
-1. napi_status napi_serialize(napi_env env,
-2. napi_value object,
-3. napi_value transfer_list,
-4. napi_value clone_list,
-5. void** result)
+```cpp
+napi_status napi_serialize(napi_env env,
+                           napi_value object,
+                           napi_value transfer_list,
+                           napi_value clone_list,
+                           void** result)
 ```
 
 **描述：**
 
 将ArkTS对象转换为native数据。
+
+**起始版本：** 12
 
 **参数：**
 
@@ -1004,13 +991,15 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_deserialize
 
-```
-1. napi_status napi_deserialize(napi_env env, void* buffer, napi_value* object)
+```cpp
+napi_status napi_deserialize(napi_env env, void* buffer, napi_value* object)
 ```
 
 **描述：**
 
 将native数据转为ArkTS对象。
+
+**起始版本：** 12
 
 **参数：**
 
@@ -1024,13 +1013,15 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_delete\_serialization\_data
 
-```
-1. napi_status napi_delete_serialization_data(napi_env env, void* buffer)
+```cpp
+napi_status napi_delete_serialization_data(napi_env env, void* buffer)
 ```
 
 **描述：**
 
 删除序列化数据。
+
+**起始版本：** 12
 
 **参数：**
 
@@ -1043,16 +1034,18 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_call\_threadsafe\_function\_with\_priority
 
-```
-1. napi_status napi_call_threadsafe_function_with_priority(napi_threadsafe_function func,
-2. void *data,
-3. napi_task_priority priority,
-4. bool isTail)
+```cpp
+napi_status napi_call_threadsafe_function_with_priority(napi_threadsafe_function func,
+                                                        void *data,
+                                                        napi_task_priority priority,
+                                                        bool isTail)
 ```
 
 **描述：**
 
 将指定优先级和入队方式的任务投递到ArkTS主线程。
+
+**起始版本：** 12
 
 **参数：**
 
@@ -1067,13 +1060,15 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_is\_sendable
 
-```
-1. napi_status napi_is_sendable(napi_env env, napi_value value, bool* result)
+```cpp
+napi_status napi_is_sendable(napi_env env, napi_value value, bool* result)
 ```
 
 **描述：**
 
 判断给定JS value是否是Sendable的。
+
+**起始版本：** 12
 
 **参数：**
 
@@ -1087,21 +1082,23 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_define\_sendable\_class
 
-```
-1. napi_status napi_define_sendable_class(napi_env env,
-2. const char* utf8name,
-3. size_t length,
-4. napi_callback constructor,
-5. void* data,
-6. size_t property_count,
-7. const napi_property_descriptor* properties,
-8. napi_value parent,
-9. napi_value* result)
+```cpp
+napi_status napi_define_sendable_class(napi_env env,
+                                       const char* utf8name,
+                                       size_t length,
+                                       napi_callback constructor,
+                                       void* data,
+                                       size_t property_count,
+                                       const napi_property_descriptor* properties,
+                                       napi_value parent,
+                                       napi_value* result)
 ```
 
 **描述：**
 
 创建一个Sendable类。
+
+**起始版本：** 12
 
 **参数：**
 
@@ -1121,16 +1118,18 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_create\_sendable\_object\_with\_properties
 
-```
-1. napi_status napi_create_sendable_object_with_properties(napi_env env,
-2. size_t property_count,
-3. const napi_property_descriptor* properties,
-4. napi_value* result)
+```cpp
+napi_status napi_create_sendable_object_with_properties(napi_env env,
+                                                        size_t property_count,
+                                                        const napi_property_descriptor* properties,
+                                                        napi_value* result)
 ```
 
 **描述：**
 
 使用给定的napi\_property\_descriptor创建一个Sendable对象。
+
+**起始版本：** 12
 
 **参数：**
 
@@ -1145,13 +1144,15 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_create\_sendable\_array
 
-```
-1. napi_status napi_create_sendable_array(napi_env env, napi_value* result)
+```cpp
+napi_status napi_create_sendable_array(napi_env env, napi_value* result)
 ```
 
 **描述：**
 
 创建一个Sendable数组。
+
+**起始版本：** 12
 
 **参数：**
 
@@ -1164,13 +1165,15 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_create\_sendable\_array\_with\_length
 
-```
-1. napi_status napi_create_sendable_array_with_length(napi_env env, size_t length, napi_value* result)
+```cpp
+napi_status napi_create_sendable_array_with_length(napi_env env, size_t length, napi_value* result)
 ```
 
 **描述：**
 
 创建一个指定长度的Sendable数组。
+
+**起始版本：** 12
 
 **参数：**
 
@@ -1184,13 +1187,15 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_create\_sendable\_arraybuffer
 
-```
-1. napi_status napi_create_sendable_arraybuffer(napi_env env, size_t byte_length, void** data, napi_value* result)
+```cpp
+napi_status napi_create_sendable_arraybuffer(napi_env env, size_t byte_length, void** data, napi_value* result)
 ```
 
 **描述：**
 
 创建一个Sendable ArrayBuffer。
+
+**起始版本：** 12
 
 **参数：**
 
@@ -1205,18 +1210,20 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_create\_sendable\_typedarray
 
-```
-1. napi_status napi_create_sendable_typedarray(napi_env env,
-2. napi_typedarray_type type,
-3. size_t length,
-4. napi_value arraybuffer,
-5. size_t byte_offset,
-6. napi_value* result);
+```cpp
+napi_status napi_create_sendable_typedarray(napi_env env,
+                                            napi_typedarray_type type,
+                                            size_t length,
+                                            napi_value arraybuffer,
+                                            size_t byte_offset,
+                                            napi_value* result);
 ```
 
 **描述：**
 
 创建一个Sendable TypedArray。
+
+**起始版本：** 12
 
 **参数：**
 
@@ -1233,17 +1240,19 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_wrap\_sendable
 
-```
-1. napi_status napi_wrap_sendable(napi_env env,
-2. napi_value js_object,
-3. void* native_object,
-4. napi_finalize finalize_cb,
-5. void* finalize_hint);
+```cpp
+napi_status napi_wrap_sendable(napi_env env,
+                               napi_value js_object,
+                               void* native_object,
+                               napi_finalize finalize_cb,
+                               void* finalize_hint);
 ```
 
 **描述：**
 
 封装一个native实例到ArkTS对象中。
+
+**起始版本：** 12
 
 **参数：**
 
@@ -1259,18 +1268,20 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_wrap\_sendable\_with\_size
 
-```
-1. napi_status napi_wrap_sendable_with_size(napi_env env,
-2. napi_value js_object,
-3. void* native_object,
-4. napi_finalize finalize_cb,
-5. void* finalize_hint,
-6. size_t native_binding_size);
+```cpp
+napi_status napi_wrap_sendable_with_size(napi_env env,
+                                         napi_value js_object,
+                                         void* native_object,
+                                         napi_finalize finalize_cb,
+                                         void* finalize_hint,
+                                         size_t native_binding_size);
 ```
 
 **描述：**
 
 封装一个native实例到ArkTS对象中并指定大小。
+
+**起始版本：** 12
 
 **参数：**
 
@@ -1287,13 +1298,15 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_unwrap\_sendable
 
-```
-1. napi_status napi_unwrap_sendable(napi_env env, napi_value js_object, void** result)
+```cpp
+napi_status napi_unwrap_sendable(napi_env env, napi_value js_object, void** result)
 ```
 
 **描述：**
 
 获取ArkTS对象封装的native实例。
+
+**起始版本：** 12
 
 **参数：**
 
@@ -1307,13 +1320,15 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_remove\_wrap\_sendable
 
-```
-1. napi_status napi_remove_wrap_sendable(napi_env env, napi_value js_object, void** result)
+```cpp
+napi_status napi_remove_wrap_sendable(napi_env env, napi_value js_object, void** result)
 ```
 
 **描述：**
 
-移除并获取ArkTS对象封装的native实例，移除后回调将不再触发，需手动delete释放内存。
+移除并获取ArkTS对象包裹的native实例，移除后回调后续会被自动触发，需注意避免出现重复释放问题。
+
+**起始版本：** 12
 
 **参数：**
 
@@ -1327,20 +1342,22 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_wrap\_enhance
 
-```
-1. napi_status napi_wrap_enhance(napi_env env,
-2. napi_value js_object,
-3. void* native_object,
-4. napi_finalize finalize_cb,
-5. bool async_finalizer,
-6. void* finalize_hint,
-7. size_t native_binding_size,
-8. napi_ref* result);
+```cpp
+napi_status napi_wrap_enhance(napi_env env,
+                              napi_value js_object,
+                              void* native_object,
+                              napi_finalize finalize_cb,
+                              bool async_finalizer,
+                              void* finalize_hint,
+                              size_t native_binding_size,
+                              napi_ref* result);
 ```
 
 **描述：**
 
 在ArkTS对象上绑定一个native对象实例并指定实例大小，运行时会统计传入的实例大小并将其累加，当累计大小达到GC触发阈值时，运行时会启动垃圾回收流程。开发者可以指定绑定的回调函数是否异步执行，如果是异步执行，回调函数必须保证是线程安全的。
+
+**起始版本：** 18
 
 **参数：**
 
@@ -1362,8 +1379,8 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_create\_ark\_context
 
-```
-1. napi_status napi_create_ark_context(napi_env env, napi_env* newEnv);
+```cpp
+napi_status napi_create_ark_context(napi_env env, napi_env* newEnv);
 ```
 
 **描述：**
@@ -1379,6 +1396,8 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 5. 多上下文运行时环境不支持sendable特性。
 6. 通过napi\_create\_ark\_context接口创建的运行时上下文环境暂时不支持console、timer等模块能力。
 
+**起始版本：** 20
+
 **参数：**
 
 * [in] env：Node-API的环境对象，表示当前的执行环境。
@@ -1390,8 +1409,8 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_switch\_ark\_context
 
-```
-1. napi_status napi_switch_ark_context(napi_env env)
+```cpp
+napi_status napi_switch_ark_context(napi_env env)
 ```
 
 **描述：**
@@ -1400,6 +1419,8 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 1. 当前该接口不支持在非主线程的ArkTS线程中调用。
 2. 调用该接口前，调用者需要保证当前上下文环境不存在异常，否则会导致该接口调用失败。
+
+**起始版本：** 20
 
 **参数：**
 
@@ -1411,8 +1432,8 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_destroy\_ark\_context
 
-```
-1. napi_status napi_destroy_ark_context(napi_env env)
+```cpp
+napi_status napi_destroy_ark_context(napi_env env)
 ```
 
 **描述：**
@@ -1422,6 +1443,8 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 1. 当前该接口不支持在非主线程的ArkTS线程中调用。
 2. 该接口只能销毁通过napi\_create\_ark\_context接口创建的运行时上下文环境。
 3. 不能通过该接口去销毁正在运行的上下文环境。
+
+**起始版本：** 20
 
 **参数：**
 
@@ -1433,8 +1456,8 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_open\_critical\_scope
 
-```
-1. napi_status napi_open_critical_scope(napi_env env, napi_critical_scope* scope);
+```cpp
+napi_status napi_open_critical_scope(napi_env env, napi_critical_scope* scope);
 ```
 
 **描述：**
@@ -1443,6 +1466,8 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 1. 不能重复打开临界区作用域，必须在关闭当前作用域后才能再次打开。
 2. 在临界区作用域内，不能调用非临界区接口。
+
+**起始版本：** 21
 
 **参数：**
 
@@ -1455,8 +1480,8 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_close\_critical\_scope
 
-```
-1. napi_status napi_close_critical_scope(napi_env env, napi_critical_scope scope);
+```cpp
+napi_status napi_close_critical_scope(napi_env env, napi_critical_scope scope);
 ```
 
 **描述：**
@@ -1465,6 +1490,8 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 1. 不能重复关闭临界区作用域，必须确保作用域已经打开且未被关闭。
 2. 关闭临界区作用域后，请勿使用临界接口及其返回结果，否则可能导致程序崩溃或数据损坏。
+
+**起始版本：** 21
 
 **参数：**
 
@@ -1477,11 +1504,11 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_get\_buffer\_string\_utf16\_in\_critical\_scope
 
-```
-1. napi_status napi_get_buffer_string_utf16_in_critical_scope(napi_env env,
-2. napi_value value,
-3. const char16_t** buffer,
-4. size_t* length);
+```cpp
+napi_status napi_get_buffer_string_utf16_in_critical_scope(napi_env env,
+                                                           napi_value value,
+                                                           const char16_t** buffer,
+                                                           size_t* length);
 ```
 
 **描述：**
@@ -1489,6 +1516,8 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 获取ArkTS String的UTF-16编码内存缓冲区数据。使用该接口需要注意以下几点：
 
 1. 当ArkTS String以UTF-16编码存储时，napi\_get\_buffer\_string\_utf16\_in\_critical\_scope才能正确获取其内存缓冲区，否则该函数返回错误。
+
+**起始版本：** 21
 
 **参数：**
 
@@ -1503,13 +1532,15 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_create\_strong\_reference
 
-```
-1. napi_status napi_create_strong_reference(napi_env env, napi_value value, napi_strong_ref* result);
+```cpp
+napi_status napi_create_strong_reference(napi_env env, napi_value value, napi_strong_ref* result);
 ```
 
 **描述：**
 
 创建指向ArkTS对象的强引用。
+
+**起始版本：** 21
 
 **参数：**
 
@@ -1523,8 +1554,8 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_delete\_strong\_reference
 
-```
-1. napi_status napi_delete_strong_reference(napi_env env, napi_value value, napi_strong_ref ref);
+```cpp
+napi_status napi_delete_strong_reference(napi_env env, napi_value value, napi_strong_ref ref);
 ```
 
 **描述：**
@@ -1532,6 +1563,8 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 删除强引用。使用该接口需要注意以下几点：
 
 1. 不能重复删除同一个强引用。
+
+**起始版本：** 21
 
 **参数：**
 
@@ -1545,8 +1578,8 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_get\_strong\_reference\_value
 
-```
-1. napi_status napi_get_strong_reference_value(napi_env env, napi_strong_ref ref, napi_value* result)
+```c
+napi_status napi_get_strong_reference_value(napi_env env, napi_strong_ref ref, napi_value* result)
 ```
 
 **描述：**
@@ -1554,6 +1587,8 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 根据强引用获取其关联的ArkTS对象值。使用该接口需要注意以下几点：
 
 1. 不能使用已删除的强引用去获取ArkTS对象值，否则可能预期外的错误。
+
+**起始版本：** 21
 
 **参数：**
 
@@ -1567,10 +1602,10 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_finalize回调函数说明
 
-```
-1. typedef void (*napi_finalize)(napi_env env,
-2. void* finalize_data,
-3. void* finalize_hint);
+```cpp
+typedef void (*napi_finalize)(napi_env env,
+                              void* finalize_data,
+                              void* finalize_hint);
 ```
 
 **描述：**
@@ -1589,14 +1624,16 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_finalize\_callback回调函数说明
 
-```
-1. typedef void (*napi_finalize_callback)(void* finalize_data,
-2. void* finalize_hint);
+```cpp
+typedef void (*napi_finalize_callback)(void* finalize_data,
+                                       void* finalize_hint);
 ```
 
 **描述：**
 
 用于定义通过接口napi\_create\_external\_string\_utf16和napi\_create\_external\_string\_ascii创建出的ArkTS string对象生命周期结束时触发的回调函数。
+
+**起始版本：** 22
 
 **参数：**
 
@@ -1609,13 +1646,13 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_create\_external\_string\_utf16
 
-```
-1. napi_status napi_create_external_string_utf16(napi_env env,
-2. const char16_t* str,
-3. size_t length,
-4. napi_finalize_callback finalize_callback,
-5. void* finalize_hint,
-6. napi_value* result);
+```cpp
+napi_status napi_create_external_string_utf16(napi_env env,
+                                              const char16_t* str,
+                                              size_t length,
+                                              napi_finalize_callback finalize_callback,
+                                              void* finalize_hint,
+                                              napi_value* result);
 ```
 
 **描述：**
@@ -1626,6 +1663,8 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 2. 传入的字符串数据在ArkTS字符串对象生命周期内必须保持有效，否则可能导致不可预期的行为。
 3. 如果提供了finalize\_callback回调函数，当ArkTS字符串对象被销毁时，该回调函数将被调用。finalize\_hint参数可以用于传递上下文信息给回调函数。
 4. 如果传入的length参数为NAPI\_AUTO\_LENGTH，接口内部自动查找到'\0'处计算字符串实际长度。
+
+**起始版本：** 22
 
 **参数：**
 
@@ -1642,13 +1681,13 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_create\_external\_string\_ascii
 
-```
-1. napi_status napi_create_external_string_ascii(napi_env env,
-2. const char* str,
-3. size_t length,
-4. napi_finalize_callback finalize_callback,
-5. void* finalize_hint,
-6. napi_value* result);
+```cpp
+napi_status napi_create_external_string_ascii(napi_env env,
+                                              const char* str,
+                                              size_t length,
+                                              napi_finalize_callback finalize_callback,
+                                              void* finalize_hint,
+                                              napi_value* result);
 ```
 
 **描述：**
@@ -1660,6 +1699,8 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 3. 如果提供了finalize\_callback回调函数，当ArkTS字符串对象被销毁时，该回调函数将被调用。finalize\_hint参数可以用于传递上下文信息给回调函数。
 4. 如果传入的length参数为NAPI\_AUTO\_LENGTH，接口内部自动查找到'\0'处计算字符串实际长度。
 5. 传入的字符串在指定的length长度范围内不得包含'\0'字符，否则可能导致异常行为。
+
+**起始版本：** 22
 
 **参数：**
 
@@ -1676,10 +1717,10 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_create\_strong\_sendable\_reference
 
-```
-1. napi_status napi_create_strong_sendable_reference(napi_env env,
-2. napi_value value,
-3. napi_sendable_ref* result);
+```cpp
+napi_status napi_create_strong_sendable_reference(napi_env env,
+                                                  napi_value value,
+                                                  napi_sendable_ref* result);
 ```
 
 **描述：**
@@ -1690,6 +1731,8 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 2. napi\_sendable\_ref可跨ArkTS线程使用，在多线程操作时，调用者需自己保证释放时机，防止出现释放后使用的问题。
 3. 同一进程内，同时存活的napi\_sendable\_ref最大数量为51200个。
 4. 调用者需要保证传入的env参数是当前调用接口的ArkTS线程环境对象，避免将其他ArkTS线程的env作为参数传入导致出现[多线程安全问题](../best-practices/bpta-stability-ark-runtime-detection.md#section19357830121120)。
+
+**起始版本：** 22
 
 **参数：**
 
@@ -1703,8 +1746,8 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_delete\_strong\_sendable\_reference
 
-```
-1. napi_status napi_delete_strong_sendable_reference(napi_env env, napi_sendable_ref ref);
+```cpp
+napi_status napi_delete_strong_sendable_reference(napi_env env, napi_sendable_ref ref);
 ```
 
 **描述：**
@@ -1713,6 +1756,8 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 1. 不可将napi\_ref、napi\_strong\_ref等其他引用强转成napi\_sendable\_ref作为本接口入参。napi\_delete\_strong\_sendable\_reference接口仅允许接收由napi\_create\_strong\_sendable\_reference创建的napi\_sendable\_ref。
 2. 调用者需要保证传入的env参数是当前调用接口的ArkTS线程环境对象，避免将其他ArkTS线程的env作为参数传入导致出现[多线程安全问题](../best-practices/bpta-stability-ark-runtime-detection.md#section19357830121120)。
+
+**起始版本：** 22
 
 **参数：**
 
@@ -1725,10 +1770,10 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_get\_strong\_sendable\_reference\_value
 
-```
-1. napi_status napi_get_strong_sendable_reference_value(napi_env env,
-2. napi_sendable_ref ref,
-3. napi_value* result);
+```cpp
+napi_status napi_get_strong_sendable_reference_value(napi_env env,
+                                                     napi_sendable_ref ref,
+                                                     napi_value* result);
 ```
 
 **描述：**
@@ -1737,6 +1782,8 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 1. 不可将napi\_ref、napi\_strong\_ref等其他引用强转成napi\_sendable\_ref作为本接口入参。napi\_get\_strong\_sendable\_reference\_value接口仅允许接收由napi\_create\_strong\_sendable\_reference创建的napi\_sendable\_ref。
 2. 调用者需要保证传入的env参数是当前调用接口的ArkTS线程环境对象，避免将其他ArkTS线程的env作为参数传入导致出现[多线程安全问题](../best-practices/bpta-stability-ark-runtime-detection.md#section19357830121120)。
+
+**起始版本：** 22
 
 **参数：**
 
@@ -1750,24 +1797,128 @@ HarmonyOS的Node-API组件对Node-API的接口进行了重新实现，底层对�
 
 ### napi\_throw\_business\_error
 
-```
-1. napi_status napi_throw_business_error(napi_env env,
-2. int32_t errorCode,
-3. const char* msg);
+```cpp
+napi_status napi_throw_business_error(napi_env env,
+                                      int32_t errorCode,
+                                      const char* msg);
 ```
 
 **描述：**
 
-抛出一个带文本信息的ArkTS Error, 指定错误码为int32\_t类型，错误信息为字符串类型。使用该接口需要注意以下几点：
+抛出一个带文本信息的ArkTS Error，指定错误码为int32\_t类型，错误信息为字符串类型。使用该接口需要注意以下几点：
 
 1. 入参env和msg不可以为nullptr，否则会返回napi\_invalid\_arg。
 2. 当前上下文中存在ArkTS Error的时候，调用接口会返回napi\_pending\_exception。
+
+**起始版本：** 23
 
 **参数：**
 
 * [in] env：Node-API的环境对象，表示当前的执行环境。
 * [in] errorCode：int32\_t类型的错误码，用于设置在错误对象上。
 * [in] msg：表示要与错误关联的文本的C字符串。
+
+**返回：**
+
+如果API成功，则返回napi\_ok。
+
+### napi\_create\_callsite\_info
+
+```cpp
+napi_status napi_create_callsite_info(napi_env env, napi_callsite_info* result);
+```
+
+**描述：**
+
+创建调用点信息句柄，用于缓存属性访问信息。每个不同的调用点应创建独立的句柄，同一句柄可跨多次调用复用，但不可跨线程使用。当不再需要时，必须调用napi\_delete\_callsite\_info释放。
+
+**起始版本：** 24
+
+**参数：**
+
+* [in] env：Node-API的环境对象，表示当前的执行环境。
+* [out] result：指向napi\_callsite\_info的指针，用于接收创建的调用点信息句柄。
+
+**返回：**
+
+如果API成功，则返回napi\_ok。
+
+### napi\_delete\_callsite\_info
+
+```cpp
+napi_status napi_delete_callsite_info(napi_env env, napi_callsite_info info);
+```
+
+**描述：**
+
+删除调用点信息句柄，释放关联的缓存资源。
+
+**起始版本：** 24
+
+**参数：**
+
+* [in] env：Node-API的环境对象，表示当前的执行环境。
+* [in] info：要删除的调用点信息句柄。
+
+**返回：**
+
+如果API成功，则返回napi\_ok。
+
+### napi\_get\_property\_with\_callsite\_info
+
+```cpp
+napi_status napi_get_property_with_callsite_info(napi_env env,
+                                                 napi_value object,
+                                                 napi_value key,
+                                                 napi_callsite_info info,
+                                                 napi_value* result,
+                                                 bool* hit);
+```
+
+**描述：**
+
+使用调用点信息快速获取对象属性值。info参数可以传入NULL，此时行为等同于napi\_get\_property。
+
+**起始版本：** 24
+
+**参数：**
+
+* [in] env：Node-API的环境对象，表示当前的执行环境。
+* [in] object：要获取属性的对象。
+* [in] key：要获取的属性的键名。
+* [in] info：调用点信息句柄。可以为NULL。
+* [out] result：指向napi\_value的指针，用于接收属性值。
+* [out] hit：写入缓存是否命中：true表示命中（快速路径），false表示未命中。可以传入nullptr。
+
+**返回：**
+
+如果API成功，则返回napi\_ok。
+
+### napi\_set\_property\_with\_callsite\_info
+
+```cpp
+napi_status napi_set_property_with_callsite_info(napi_env env,
+                                                 napi_value object,
+                                                 napi_value key,
+                                                 napi_value value,
+                                                 napi_callsite_info info,
+                                                 bool* hit);
+```
+
+**描述：**
+
+使用调用点信息快速设置对象属性值。info参数可以传入NULL，此时行为等同于napi\_set\_property。
+
+**起始版本：** 24
+
+**参数：**
+
+* [in] env：Node-API的环境对象，表示当前的执行环境。
+* [in] object：要设置属性的对象。
+* [in] key：要设置的属性的键名。
+* [in] value：要设置的属性值。
+* [in] info：调用点信息句柄。可以为NULL。
+* [out] hit：写入缓存是否命中：true表示命中（快速路径），false表示未命中。可以传入nullptr。
 
 **返回：**
 

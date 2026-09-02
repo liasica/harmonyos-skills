@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-page-brigh
 title: 页面亮度设置
 breadcrumb: 最佳实践 > 主题与样式 > 页面亮度设置
 category: best-practices
-scraped_at: 2026-04-29T14:10:44+08:00
+scraped_at: 2026-09-02T15:03:16+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:d458db2fc2e3ba1d3b9a0743b9165d359eeaf139c0a0366fbb2210a3f496b585
+content_hash: sha256:4efa6debf1bca2b525435380947ce70d01d75497b45f365d3258f1982c05bd57
 ---
 
 ## 概述
@@ -40,115 +40,107 @@ content_hash: sha256:d458db2fc2e3ba1d3b9a0743b9165d359eeaf139c0a0366fbb2210a3f49
 
 1. 维护页面与亮度的映射关系。
 
+   ```screen
+   private static brightnessMap: Map<string, number> =
+     new Map([[Constants.NAV_DESTINATION_DEFAULT, this.DEFAULT_BRIGHTNESS],
+       [Constants.NAV_DESTINATION_ITEM_PAY_CODE, this.MAX_BRIGHTNESS]]);
    ```
-   1. private static brightnessMap: Map<string, number> =
-   2. new Map([[Constants.NAV_DESTINATION_DEFAULT, this.DEFAULT_BRIGHTNESS],
-   3. [Constants.NAV_DESTINATION_ITEM_PAY_CODE, this.MAX_BRIGHTNESS]]);
-   ```
-
-   [BrightnessUtil.ets](https://gitcode.com/HarmonyOS_Samples/AdjustBrightness/blob/e708f559086adb44a288ebe485ca1c96c1f7a92f/entry/src/main/ets/util/BrightnessUtil.ets#L28-L30)
 2. 在视频播放器组件上添加滑动组件Slider。
 
+   ```screen
+   build() {
+     Stack({ alignContent: Alignment.Start }) {
+       Video({
+         src: $rawfile('video1.mp4'),
+         previewUri: $r('app.media.img_preview'),
+       })
+         .loop(true)
+         .width(Constants.FULL_PERCENT)
+         .height(Constants.FULL_PERCENT)
+         .onStart(() => {
+           this.brightnessViewModel.setWindowKeepScreenState(true);
+         })
+         .onPause(() => {
+           this.brightnessViewModel.setWindowKeepScreenState(false);
+         })
+       Slider({
+         value: this.currentBrightness,
+         min: 0,
+         max: 1,
+         step: 0.01,
+         style: SliderStyle.InSet,
+         direction: Axis.Vertical,
+         reverse: true
+       })
+         .trackColor('#66A0A0A4')
+         .blockColor(Color.Transparent)
+         .selectedColor(Color.White)
+         .height('80%')
+         .margin({ left: 24, bottom: 24 })
+         .onChange((value: number, mode: SliderChangeMode) => { // Slider onChange callback
+           if (mode === SliderChangeMode.Moving) {
+             this.sliderOpacity = 1;
+             this.brightnessViewModel.updateVideoBrightness(value);
+           } else if (mode === SliderChangeMode.End) {
+             this.sliderOpacity = 0;
+           }
+         })
+         .opacity(this.sliderOpacity)
+         .animation({
+           duration: 300
+         })
+     }
+     .width(Constants.FULL_PERCENT)
+     .height(184)
+   }
    ```
-   1. build() {
-   2. Stack({ alignContent: Alignment.Start }) {
-   3. Video({
-   4. src: $rawfile('video1.mp4'),
-   5. previewUri: $r('app.media.img_preview'),
-   6. })
-   7. .loop(true)
-   8. .width(Constants.FULL_PERCENT)
-   9. .height(Constants.FULL_PERCENT)
-   10. .onStart(() => {
-   11. this.brightnessViewModel.setWindowKeepScreenState(true);
-   12. })
-   13. .onPause(() => {
-   14. this.brightnessViewModel.setWindowKeepScreenState(false);
-   15. })
-   16. Slider({
-   17. value: this.currentBrightness,
-   18. min: 0,
-   19. max: 1,
-   20. step: 0.01,
-   21. style: SliderStyle.InSet,
-   22. direction: Axis.Vertical,
-   23. reverse: true
-   24. })
-   25. .trackColor('#66A0A0A4')
-   26. .blockColor(Color.Transparent)
-   27. .selectedColor(Color.White)
-   28. .height('80%')
-   29. .margin({ left: 24, bottom: 24 })
-   30. .onChange((value: number, mode: SliderChangeMode) => { // Slider onChange callback
-   31. if (mode === SliderChangeMode.Moving) {
-   32. this.sliderOpacity = 1;
-   33. this.brightnessViewModel.updateVideoBrightness(value);
-   34. } else if (mode === SliderChangeMode.End) {
-   35. this.sliderOpacity = 0;
-   36. }
-   37. })
-   38. .opacity(this.sliderOpacity)
-   39. .animation({
-   40. duration: 300
-   41. })
-   42. }
-   43. .width(Constants.FULL_PERCENT)
-   44. .height(184)
-   45. }
-   ```
-
-   [VideoView.ets](https://gitcode.com/HarmonyOS_Samples/AdjustBrightness/blob/e708f559086adb44a288ebe485ca1c96c1f7a92f/entry/src/main/ets/view/VideoView.ets#L25-L71)
 3. 通过滑动组件调节屏幕亮度，并将调节的亮度值缓存。
 
+   ```screen
+   /**
+    * Video playback page brightness adjustment execution function
+    *
+    * @param brightness Brightness value
+    */
+   public static updateVideoBrightness(brightness: number): void {
+     BrightnessUtil.setBrightness(brightness, Constants.SET_BRIGHTNESS_SLIDE);
+     BrightnessUtil.brightnessMap.set(Constants.NAV_DESTINATION_ITEM_VIDEO, brightness);
+   }
    ```
-   1. /**
-   2. * Video playback page brightness adjustment execution function
-   3. *
-   4. * @param brightness Brightness value
-   5. */
-   6. public static updateVideoBrightness(brightness: number): void {
-   7. BrightnessUtil.setBrightness(brightness, Constants.SET_BRIGHTNESS_SLIDE);
-   8. BrightnessUtil.brightnessMap.set(Constants.NAV_DESTINATION_ITEM_VIDEO, brightness);
-   9. }
-   ```
-
-   [BrightnessUtil.ets](https://gitcode.com/HarmonyOS_Samples/AdjustBrightness/blob/e708f559086adb44a288ebe485ca1c96c1f7a92f/entry/src/main/ets/util/BrightnessUtil.ets#L43-L51)
 4. 返回首页，恢复屏幕默认亮度，重新进入视频播放页，恢复最后一次在视频播放页设置的亮度。
 
+   ```screen
+   // Switch and listen to the routing page, and set the brightness of the cached page.
+   private navDestinationUpdateCallBack: Callback<NavDestinationInfo> = (info: NavDestinationInfo): void => {
+     switch (info.state) {
+       case uiObserver.NavDestinationState.ON_SHOWN:
+         BrightnessUtil.setBrightness(info.name as string, Constants.SET_BRIGHTNESS_CLICK);
+         BrightnessUtil.setStateBarContentColor(info.name as string, '#FFFFFF');
+         break;
+       case uiObserver.NavDestinationState.ON_HIDDEN:
+       case uiObserver.NavDestinationState.ON_BACKPRESS:
+         BrightnessUtil.setBrightness(Constants.NAV_DESTINATION_DEFAULT, Constants.SET_BRIGHTNESS_CLICK);
+         BrightnessUtil.setStateBarContentColor(info.name as string, '#000000');
+         break;
+       default:
+         break;
+     }
+   };
+
+   public registerNavigationListener(): void {
+     uiObserver.on('navDestinationUpdate', this.navDestinationUpdateCallBack);
+   }
+
+   public unRegisterNavigationListener(): void {
+     uiObserver.off('navDestinationUpdate', this.navDestinationUpdateCallBack);
+   }
    ```
-   1. // Switch and listen to the routing page, and set the brightness of the cached page.
-   2. private navDestinationUpdateCallBack: Callback<NavDestinationInfo> = (info: NavDestinationInfo): void => {
-   3. switch (info.state) {
-   4. case uiObserver.NavDestinationState.ON_SHOWN:
-   5. BrightnessUtil.setBrightness(info.name as string, Constants.SET_BRIGHTNESS_CLICK);
-   6. BrightnessUtil.setStateBarContentColor(info.name as string, '#FFFFFF');
-   7. break;
-   8. case uiObserver.NavDestinationState.ON_HIDDEN:
-   9. case uiObserver.NavDestinationState.ON_BACKPRESS:
-   10. BrightnessUtil.setBrightness(Constants.NAV_DESTINATION_DEFAULT, Constants.SET_BRIGHTNESS_CLICK);
-   11. BrightnessUtil.setStateBarContentColor(info.name as string, '#000000');
-   12. break;
-   13. default:
-   14. break;
-   15. }
-   16. };
-
-   18. public registerNavigationListener(): void {
-   19. uiObserver.on('navDestinationUpdate', this.navDestinationUpdateCallBack);
-   20. }
-
-   22. public unRegisterNavigationListener(): void {
-   23. uiObserver.off('navDestinationUpdate', this.navDestinationUpdateCallBack);
-   24. }
-   ```
-
-   [BrightnessViewModel.ets](https://gitcode.com/HarmonyOS_Samples/AdjustBrightness/blob/e708f559086adb44a288ebe485ca1c96c1f7a92f/entry/src/main/ets/viewmodel/BrightnessViewModel.ets#L23-L46)
 
 ### 实现效果
 
 **图1** 视频播放页面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/ZXW2IYNCTu2Dk9RBvM_44A/zh-cn_image_0000002229451573.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/wRICltsBQR-OMCv9-VJtMw/zh-cn_image_0000002229451573.gif "点击放大")
 
 注：录屏无法录制亮度变化，以真机为准。
 
@@ -162,48 +154,44 @@ content_hash: sha256:d458db2fc2e3ba1d3b9a0743b9165d359eeaf139c0a0366fbb2210a3f49
 
 1. 视频播放时保持屏幕常亮，暂停或退出页面，取消屏幕常亮。
 
+   ```screen
+   Video({
+     src: $rawfile('video1.mp4'),
+     previewUri: $r('app.media.img_preview'),
+   })
+     .loop(true)
+     .width(Constants.FULL_PERCENT)
+     .height(Constants.FULL_PERCENT)
+     .onStart(() => {
+       this.brightnessViewModel.setWindowKeepScreenState(true);
+     })
+     .onPause(() => {
+       this.brightnessViewModel.setWindowKeepScreenState(false);
+     })
    ```
-   1. Video({
-   2. src: $rawfile('video1.mp4'),
-   3. previewUri: $r('app.media.img_preview'),
-   4. })
-   5. .loop(true)
-   6. .width(Constants.FULL_PERCENT)
-   7. .height(Constants.FULL_PERCENT)
-   8. .onStart(() => {
-   9. this.brightnessViewModel.setWindowKeepScreenState(true);
-   10. })
-   11. .onPause(() => {
-   12. this.brightnessViewModel.setWindowKeepScreenState(false);
-   13. })
-   ```
-
-   [VideoView.ets](https://gitcode.com/HarmonyOS_Samples/AdjustBrightness/blob/e708f559086adb44a288ebe485ca1c96c1f7a92f/entry/src/main/ets/view/VideoView.ets#L28-L40)
 2. 设置屏幕常亮接口。
 
+   ```screen
+   /**
+    * Keep screen brightness
+    *
+    * @param isKeepOn true：keep；false:cancel keep
+    */
+   public static setWindowKeepScreenState(isKeepOn: boolean): void {
+     try {
+       BrightnessUtil.windowClass?.setWindowKeepScreenOn(isKeepOn, (err: BusinessError) => {
+         const errCode: number = err.code;
+         if (errCode) {
+           hilog.error(0x0000, TAG, `Failed set window keep screen state, errorCode: ${err.code}`);
+           return;
+         }
+         hilog.info(0x0000, TAG, `Success set window keep screen state`);
+       });
+     } catch (err) {
+       hilog.error(0x0000, TAG, `Failed set window keep screen state, errorCode: ${err.code}`);
+     }
+   }
    ```
-   1. /**
-   2. * Keep screen brightness
-   3. *
-   4. * @param isKeepOn true：keep；false:cancel keep
-   5. */
-   6. public static setWindowKeepScreenState(isKeepOn: boolean): void {
-   7. try {
-   8. BrightnessUtil.windowClass?.setWindowKeepScreenOn(isKeepOn, (err: BusinessError) => {
-   9. const errCode: number = err.code;
-   10. if (errCode) {
-   11. hilog.error(0x0000, TAG, `Failed set window keep screen state, errorCode: ${err.code}`);
-   12. return;
-   13. }
-   14. hilog.info(0x0000, TAG, `Success set window keep screen state`);
-   15. });
-   16. } catch (err) {
-   17. hilog.error(0x0000, TAG, `Failed set window keep screen state, errorCode: ${err.code}`);
-   18. }
-   19. }
-   ```
-
-   [BrightnessUtil.ets](https://gitcode.com/HarmonyOS_Samples/AdjustBrightness/blob/e708f559086adb44a288ebe485ca1c96c1f7a92f/entry/src/main/ets/util/BrightnessUtil.ets#L75-L93)
 
 ### 实现效果
 
@@ -221,49 +209,45 @@ content_hash: sha256:d458db2fc2e3ba1d3b9a0743b9165d359eeaf139c0a0366fbb2210a3f49
 
 1. 内存中维护一个页面与亮度的映射关系。
 
+   ```screen
+   private static brightnessMap: Map<string, number> =
+     new Map([[Constants.NAV_DESTINATION_DEFAULT, this.DEFAULT_BRIGHTNESS],
+       [Constants.NAV_DESTINATION_ITEM_PAY_CODE, this.MAX_BRIGHTNESS]]);
    ```
-   1. private static brightnessMap: Map<string, number> =
-   2. new Map([[Constants.NAV_DESTINATION_DEFAULT, this.DEFAULT_BRIGHTNESS],
-   3. [Constants.NAV_DESTINATION_ITEM_PAY_CODE, this.MAX_BRIGHTNESS]]);
-   ```
-
-   [BrightnessUtil.ets](https://gitcode.com/HarmonyOS_Samples/AdjustBrightness/blob/e708f559086adb44a288ebe485ca1c96c1f7a92f/entry/src/main/ets/util/BrightnessUtil.ets#L28-L30)
 2. 监听页面切换事件，进入付款码页面，设置高亮，返回首页，恢复屏幕默认亮度。
 
+   ```screen
+   // Switch and listen to the routing page, and set the brightness of the cached page.
+   private navDestinationUpdateCallBack: Callback<NavDestinationInfo> = (info: NavDestinationInfo): void => {
+     switch (info.state) {
+       case uiObserver.NavDestinationState.ON_SHOWN:
+         BrightnessUtil.setBrightness(info.name as string, Constants.SET_BRIGHTNESS_CLICK);
+         BrightnessUtil.setStateBarContentColor(info.name as string, '#FFFFFF');
+         break;
+       case uiObserver.NavDestinationState.ON_HIDDEN:
+       case uiObserver.NavDestinationState.ON_BACKPRESS:
+         BrightnessUtil.setBrightness(Constants.NAV_DESTINATION_DEFAULT, Constants.SET_BRIGHTNESS_CLICK);
+         BrightnessUtil.setStateBarContentColor(info.name as string, '#000000');
+         break;
+       default:
+         break;
+     }
+   };
+
+   public registerNavigationListener(): void {
+     uiObserver.on('navDestinationUpdate', this.navDestinationUpdateCallBack);
+   }
+
+   public unRegisterNavigationListener(): void {
+     uiObserver.off('navDestinationUpdate', this.navDestinationUpdateCallBack);
+   }
    ```
-   1. // Switch and listen to the routing page, and set the brightness of the cached page.
-   2. private navDestinationUpdateCallBack: Callback<NavDestinationInfo> = (info: NavDestinationInfo): void => {
-   3. switch (info.state) {
-   4. case uiObserver.NavDestinationState.ON_SHOWN:
-   5. BrightnessUtil.setBrightness(info.name as string, Constants.SET_BRIGHTNESS_CLICK);
-   6. BrightnessUtil.setStateBarContentColor(info.name as string, '#FFFFFF');
-   7. break;
-   8. case uiObserver.NavDestinationState.ON_HIDDEN:
-   9. case uiObserver.NavDestinationState.ON_BACKPRESS:
-   10. BrightnessUtil.setBrightness(Constants.NAV_DESTINATION_DEFAULT, Constants.SET_BRIGHTNESS_CLICK);
-   11. BrightnessUtil.setStateBarContentColor(info.name as string, '#000000');
-   12. break;
-   13. default:
-   14. break;
-   15. }
-   16. };
-
-   18. public registerNavigationListener(): void {
-   19. uiObserver.on('navDestinationUpdate', this.navDestinationUpdateCallBack);
-   20. }
-
-   22. public unRegisterNavigationListener(): void {
-   23. uiObserver.off('navDestinationUpdate', this.navDestinationUpdateCallBack);
-   24. }
-   ```
-
-   [BrightnessViewModel.ets](https://gitcode.com/HarmonyOS_Samples/AdjustBrightness/blob/e708f559086adb44a288ebe485ca1c96c1f7a92f/entry/src/main/ets/viewmodel/BrightnessViewModel.ets#L23-L46)
 
 ### 实现效果
 
 **图2** 付款码页面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/oLyhR7LdSjOLR7vQWUfeOw/zh-cn_image_0000002193851700.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/lSjct-9wRQKp0hecW8ycjA/zh-cn_image_0000002193851700.gif "点击放大")
 
 注：录屏无法录制亮度变化，以真机为准。
 

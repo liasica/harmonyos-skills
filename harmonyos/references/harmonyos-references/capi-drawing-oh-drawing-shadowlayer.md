@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: OH_Drawing_ShadowLayer
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 结构体 > OH_Drawing_ShadowLayer
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:27+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:d7f60fc7b0d7570845d0ad42d538bf15838ae638356c6a65a8bc670da7803cb2
+scraped_at: 2026-09-02T14:53:10+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:19c4d9e70b4de8f54d70315fe2d82ce6b7129d262ab6ff62f81017078c0360dc
 ---
 
-```
-1. typedef struct OH_Drawing_ShadowLayer OH_Drawing_ShadowLayer
+```c
+typedef struct OH_Drawing_ShadowLayer OH_Drawing_ShadowLayer
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-定义一个阴影层，用于描述绘制内容的阴影层。
+定义一个阴影层，用于描述绘制内容的阴影效果。
 
 **起始版本：** 12
 

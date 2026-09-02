@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: NavRouter
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 已停止维护的组件与接口 > NavRouter
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:12+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:846f715bb540a80c4641e56734b7d4880fc39f0b97c542615526b190929eed3c
+scraped_at: 2026-09-02T15:01:11+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0f480c1e610651bd36b1e4a803ed9c5a12c0bf5d885b7eaa81d7fbd436d676f3
 ---
 
 导航组件，默认提供点击响应处理，不需要开发者自定义点击事件逻辑。
 
-说明
+**说明** 
 
 从API version 13开始，该组件不再维护，推荐使用[NavPathStack](ts-basic-components-navigation.md#navpathstack10)配合navDestination属性进行页面路由。
 
@@ -18,11 +18,9 @@ content_hash: sha256:846f715bb540a80c4641e56734b7d4880fc39f0b97c542615526b190929
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 必须包含两个子组件，其中第二个子组件必须为[NavDestination](ts-basic-components-navdestination.md)。
 
-说明
+**说明** 
 
 子组件个数异常时：
 
@@ -33,15 +31,11 @@ PhonePC/2in1TabletTVWearable
 
 ## 接口
 
-PhonePC/2in1TabletTVWearable
-
 ### NavRouter(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 NavRouter()
 
-说明
+**说明** 
 
 从API version 9开始支持，从API version 13开始废弃，建议使用[NavPathStack](ts-basic-components-navigation.md#navpathstack10)和[navDestination](ts-basic-components-navigation.md#navdestination10)替代。
 
@@ -51,17 +45,17 @@ NavRouter()
 
 ### NavRouter(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 NavRouter(value: RouteInfo)
 
 提供路由信息，指定点击NavRouter时，要跳转的NavDestination页面。
 
-说明
+**说明** 
 
 从API version 10开始支持，从API version 13开始废弃，建议使用[NavPathStack](ts-basic-components-navigation.md#navpathstack10)和[navDestination](ts-basic-components-navigation.md#navdestination10)替代。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -73,23 +67,21 @@ NavRouter(value: RouteInfo)
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用属性](ts-component-general-attributes.md)外，还支持以下属性：
 
 ### mode(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 mode(mode: NavRouteMode)
 
 设置指定点击NavRouter跳转到NavDestination页面时，使用的路由模式。
 
-说明
+**说明** 
 
 从API version 10开始支持，从API version 13开始废弃，建议使用[LaunchMode](ts-basic-components-navigation.md#launchmode12枚举说明)替代。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -101,11 +93,11 @@ mode(mode: NavRouteMode)
 
 ## RouteInfo(deprecated)对象说明
 
-PhonePC/2in1TabletTVWearable
-
 路由信息。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -116,15 +108,15 @@ PhonePC/2in1TabletTVWearable
 
 ## NavRouteMode(deprecated)枚举说明
 
-PhonePC/2in1TabletTVWearable
-
 路由模式。
 
-说明
+**说明** 
 
 从API version 10开始支持，从API version 13开始废弃，建议使用[NavPathStack](ts-basic-components-navigation.md#navpathstack10)和[navDestination](ts-basic-components-navigation.md#navdestination10)替代。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -136,17 +128,13 @@ PhonePC/2in1TabletTVWearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 ### onStateChange(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 onStateChange(callback: (isActivated: boolean) => void)
 
 组件激活状态切换时触发该回调。开发者点击激活NavRouter，加载对应的NavDestination子组件时，回调onStateChange(true)。NavRouter对应的NavDestination子组件不再显示时，回调onStateChange(false)。
 
-说明
+**说明** 
 
 从API version 9开始支持，从API version 13开始废弃，建议使用[onShown](ts-basic-components-navdestination.md#onshown10)和[onHidden](ts-basic-components-navdestination.md#onhidden10)替代。
 
@@ -162,86 +150,84 @@ onStateChange(callback: (isActivated: boolean) => void)
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
+```ts
+// xxx.ets
+@Entry
+@Component
+struct NavRouterExample {
+  @State isActiveWLAN: boolean = false
+  @State isActiveBluetooth: boolean = false
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct NavRouterExample {
-5. @State isActiveWLAN: boolean = false
-6. @State isActiveBluetooth: boolean = false
+  build() {
+    Navigation() {
+      NavRouter() {
+        Row() {
+          Row()
+            .width(30)
+            .height(30)
+            .borderRadius(30)
+            .margin({ left: 3, right: 10 })
+            .backgroundColor(Color.Pink)
+          Text(`WLAN`)
+            .fontSize(22)
+            .fontWeight(500)
+            .textAlign(TextAlign.Center)
+        }
+        .width('90%')
+        .height(60)
 
-8. build() {
-9. Navigation() {
-10. NavRouter() {
-11. Row() {
-12. Row()
-13. .width(30)
-14. .height(30)
-15. .borderRadius(30)
-16. .margin({ left: 3, right: 10 })
-17. .backgroundColor(Color.Pink)
-18. Text(`WLAN`)
-19. .fontSize(22)
-20. .fontWeight(500)
-21. .textAlign(TextAlign.Center)
-22. }
-23. .width('90%')
-24. .height(60)
+        NavDestination() {
+          Flex({ direction: FlexDirection.Row }) {
+            Text('未找到可用WLAN').fontSize(30).padding({ left: 15 })
+          }
+        }.title("WLAN")
+      }
+      .margin({ top: 10, bottom: 10 })
+      .backgroundColor(this.isActiveWLAN ? '#ccc' : '#fff')
+      .borderRadius(20)
+      .mode(NavRouteMode.PUSH_WITH_RECREATE)
+      .onStateChange((isActivated: boolean) => {
+        this.isActiveWLAN = isActivated
+      })
 
-26. NavDestination() {
-27. Flex({ direction: FlexDirection.Row }) {
-28. Text('未找到可用WLAN').fontSize(30).padding({ left: 15 })
-29. }
-30. }.title("WLAN")
-31. }
-32. .margin({ top: 10, bottom: 10 })
-33. .backgroundColor(this.isActiveWLAN ? '#ccc' : '#fff')
-34. .borderRadius(20)
-35. .mode(NavRouteMode.PUSH_WITH_RECREATE)
-36. .onStateChange((isActivated: boolean) => {
-37. this.isActiveWLAN = isActivated
-38. })
+      NavRouter() {
+        Row() {
+          Row()
+            .width(30)
+            .height(30)
+            .borderRadius(30)
+            .margin({ left: 3, right: 10 })
+            .backgroundColor(Color.Pink)
+          Text(`蓝牙`)
+            .fontSize(22)
+            .fontWeight(500)
+            .textAlign(TextAlign.Center)
+        }
+        .width('90%')
+        .height(60)
 
-40. NavRouter() {
-41. Row() {
-42. Row()
-43. .width(30)
-44. .height(30)
-45. .borderRadius(30)
-46. .margin({ left: 3, right: 10 })
-47. .backgroundColor(Color.Pink)
-48. Text(`蓝牙`)
-49. .fontSize(22)
-50. .fontWeight(500)
-51. .textAlign(TextAlign.Center)
-52. }
-53. .width('90%')
-54. .height(60)
-
-56. NavDestination() {
-57. Flex({ direction: FlexDirection.Row }) {
-58. Text('未找到可用蓝牙').fontSize(30).padding({ left: 15 })
-59. }
-60. }.title("蓝牙")
-61. }
-62. .margin({ top: 10, bottom: 10 })
-63. .backgroundColor(this.isActiveBluetooth ? '#ccc' : '#fff')
-64. .borderRadius(20)
-65. .mode(NavRouteMode.REPLACE)
-66. .onStateChange((isActivated: boolean) => {
-67. this.isActiveBluetooth = isActivated
-68. })
-69. }
-70. .height('100%')
-71. .width('100%')
-72. .title('设置')
-73. .backgroundColor("#F2F3F5")
-74. .titleMode(NavigationTitleMode.Free)
-75. .mode(NavigationMode.Auto)
-76. }
-77. }
+        NavDestination() {
+          Flex({ direction: FlexDirection.Row }) {
+            Text('未找到可用蓝牙').fontSize(30).padding({ left: 15 })
+          }
+        }.title("蓝牙")
+      }
+      .margin({ top: 10, bottom: 10 })
+      .backgroundColor(this.isActiveBluetooth ? '#ccc' : '#fff')
+      .borderRadius(20)
+      .mode(NavRouteMode.REPLACE)
+      .onStateChange((isActivated: boolean) => {
+        this.isActiveBluetooth = isActivated
+      })
+    }
+    .height('100%')
+    .width('100%')
+    .title('设置')
+    .backgroundColor("#F2F3F5")
+    .titleMode(NavigationTitleMode.Free)
+    .mode(NavigationMode.Auto)
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/PV3WdTjHSCCcn2h9tXrNxg/zh-cn_image_0000002589246499.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/adbH2H6ETrKzgVed4UJTag/zh-cn_image_0000002706836356.gif)

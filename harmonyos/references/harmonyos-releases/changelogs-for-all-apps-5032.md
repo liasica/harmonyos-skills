@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-for-all-apps-5032
 title: OS平台API行为的变更
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.3(15) > OS平台能力 > OS平台行为变更说明 > HarmonyOS 5.0.3(15) Beta2引入的行为变更 > OS平台API行为的变更
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.3(15) > OS平台能力 > OS平台行为变更说明 > HarmonyOS 5.0.3(15) Beta2引入的行为变更 > OS平台API行为的变更
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:30+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:dc3a9b79d56683c831cc5748fc9562c422e4a44395cb510c9bfd0f7db0835c35
+scraped_at: 2026-09-02T14:58:49+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:70199ec3e012ff18d6a679e68121a2951eb46bab19278f584395ef621e1818bc
 ---
 
 ## ArkUI
@@ -23,7 +23,7 @@ Image、Text和ListItem组件存在设置onDragStart接口DragItemInfo返回值�
 * 变更前：onDragStart接口设置返回值中的builder属性后，无法解析pixelMap和extraInfo属性。同时设置了builder和pixelMap时，拖拽显示的是builder的预览图。onDrop回调中无法获取extraParams参数的值（对应extraInfo）。
 * 变更后：onDragStart接口设置返回值中的builder属性后，能够解析pixelMap和extraInfo属性。同时设置了builder和pixelMap时，拖拽显示的是pixelMap的预览图。onDrop回调中能够获取extraParams参数的值（对应extraInfo）。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.3(15)时生效。
 
@@ -41,25 +41,25 @@ Image、Text和ListItem组件存在设置onDragStart接口DragItemInfo返回值�
 
 onDragStart接口的返回值用于指定拖拽过程中显示的图片(pixelMap，builder)以及拖拽过程中组件携带的额外信息(extraInfo)。变更后，pixelMap属性能够正常解析。由于pixelMap的优先级高于builder，如果同时设置了pixelMap和builder，应移除返回值中的pixelMap属性。同样，若不打算传递extraInfo，也应删除该属性。具体实现代码如下：
 
-```
-1. @Entry
-2. @Component
-3. struct SlideExample {
-4. build() {
-5. Row() {
-6. Image()
-7. .onDragStart((event) => {
-8. return {
-9. builder: () => { this.pixelMapBuilder() },
-10. // 若需要拖拽显示builder，需要移除掉pixelMap属性的赋值。
-11. // pixelMap:this.pixelMap,
-12. // 若设置了builder并且不需要传递extraInfo，需要移除掉extraInfo属性的赋值。
-13. // extraInfo: "test"
-14. }
-15. })
-16. }.height('100%')
-17. }
-18. }
+```screen
+@Entry
+@Component
+struct SlideExample {
+  build() {
+    Row() {
+      Image()
+      .onDragStart((event) => {
+        return {
+          builder: () => { this.pixelMapBuilder() },
+          // 若需要拖拽显示builder，需要移除掉pixelMap属性的赋值。
+          // pixelMap:this.pixelMap,
+          // 若设置了builder并且不需要传递extraInfo，需要移除掉extraInfo属性的赋值。
+          // extraInfo: "test"
+        }
+      })
+    }.height('100%')
+  }
+}
 ```
 
 ### 轴事件支持BEGIN、END及CANCEL类型回调触发
@@ -76,7 +76,7 @@ onDragStart接口的返回值用于指定拖拽过程中显示的图片(pixelMap
 
 变更后：开发者通过OH\_NativeXComponent\_RegisterUIInputEventCallback接口监听轴事件回调，可以收到BEGIN、END、CANCEL类型的事件回调。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.3(15)时生效。
 
@@ -105,7 +105,7 @@ OH\_NativeXComponent\_RegisterUIInputEventCallback接口。
 * 变更前：开发者调用TextController的setStyledString接口设置属性字符串时，如果调用时TextController还未绑定对应的Text，则此次设置无效。
 * 变更后：开发者调用TextController的setStyledString接口时，调用的TextController会保存设置的属性字符串。当TextController和Text绑定时，如果TextController中已经存储之前调用setStyledString接口保存的属性字符串，则Text会自动设置保存的属性字符串，显示出对应的属性字符串。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.3(15)时生效。
 
@@ -117,24 +117,24 @@ OH\_NativeXComponent\_RegisterUIInputEventCallback接口。
 
 变更后对setStyledString的接口的调用可以更加灵活，Text能够正确地显示出属性字符串。
 
-```
-1. @Entry
-2. @Component
-3. struct StyledStringExample {
-4. controller: TextController = new TextController()
+```ts
+@Entry
+@Component
+struct StyledStringExample {
+  controller: TextController = new TextController()
 
-6. aboutToAppear(): void {
-7. this.controller.setStyledString(new StyledString("123456")) // 变更前，由于此时controller还未和Text绑定，此次设置不生效。变更后，属性字符串可以正确的显示
-8. }
+  aboutToAppear(): void {
+    this.controller.setStyledString(new StyledString("123456")) // 变更前，由于此时controller还未和Text绑定，此次设置不生效。变更后，属性字符串可以正确的显示
+  }
 
-10. build() {
-11. Row() {
-12. Column() {
-13. Text(undefined, {controller: this.controller})
-14. }.width('100%')
-15. }.height('100%')
-16. }
-17. }
+  build() {
+    Row() {
+      Column() {
+        Text(undefined, {controller: this.controller})
+      }.width('100%')
+    }.height('100%')
+  }
+}
 ```
 
 ### PC/2in1设备上，悬浮窗层级由低于dock栏调整为高于dock栏
@@ -176,7 +176,7 @@ OH\_NativeXComponent\_RegisterUIInputEventCallback接口。
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.3(15)时生效。
 

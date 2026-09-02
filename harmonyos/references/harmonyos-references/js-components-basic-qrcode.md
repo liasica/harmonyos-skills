@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: qrcode
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > qrcode
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:26+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:fbab91733253d029805c4428224352840a7bf568b54344f11ef90f589f5181c8
+scraped_at: 2026-09-02T15:01:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2572267956dbc9d0e6b55d5c567fd269d1e20f8dffb0e0d3146263639a0c8f53
 ---
 
-说明
+**说明** 
 
 从API version 5开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -16,19 +16,13 @@ content_hash: sha256:fbab91733253d029805c4428224352840a7bf568b54344f11ef90f589f5
 
 ## 权限列表
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 不支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-components-common-attributes.md)外，还支持如下属性：
 
@@ -39,8 +33,6 @@ PhonePC/2in1TabletTVWearable
 
 ## 样式
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用样式](js-components-common-styles.md)外，还支持如下样式：
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
@@ -48,7 +40,7 @@ PhonePC/2in1TabletTVWearable
 | color | <color> | #000000 | 否 | 二维码颜色。 |
 | background-color | <color> | #ffffff | 否 | 二维码背景颜色。 |
 
-说明
+**说明** 
 
 * width和height不一致时，取二者较小值作为二维码的边长。且最终生成的二维码居中显示。
 * width和height只设置一个时，取设置的值作为二维码的边长。都不设置时，使用200px作为默认边长。
@@ -56,82 +48,76 @@ PhonePC/2in1TabletTVWearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用事件](js-components-common-events.md)。
 
 ## 方法
-
-PhonePC/2in1TabletTVWearable
 
 支持[通用方法](js-components-common-methods.md)。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <qrcode value="{{qr_value}}" type="{{qr_type}}"
-4. style="color: {{qr_col}};background-color: {{qr_bcol}};width: {{qr_size}};height: {{qr_size}};margin-bottom: 70px;"></qrcode>
-5. <text class="txt">Type</text>
-6. <switch showtext="true" checked="true" texton="rect" textoff="circle" onchange="setType"></switch>
-7. <text class="txt">Color</text>
-8. <select onchange="setCol">
-9. <option for="{{col_list}}" value="{{$item}}">{{$item}}</option>
-10. </select>
-11. <text class="txt">Background Color</text>
-12. <select onchange="setBCol">
-13. <option for="{{bcol_list}}" value="{{$item}}">{{$item}}</option>
-14. </select>
-15. </div>
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <qrcode value="Hello World" type="{{qr_type}}"
+  style="color: {{qr_col}};background-color: {{qr_bcol}};width: {{qr_size}};height: {{qr_size}};margin-bottom: 70px;"></qrcode>
+  <text class="txt">Type</text>
+  <switch showtext="true" checked="true" texton="rect" textoff="circle" onchange="setType"></switch>
+  <text class="txt">Color</text>
+  <select onchange="setCol">
+    <option for="{{col_list}}" value="{{$item}}">{{$item}}</option>
+  </select>
+  <text class="txt">Background Color</text>
+  <select onchange="setBCol">
+    <option for="{{bcol_list}}" value="{{$item}}">{{$item}}</option>
+  </select>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .container {
-3. width: 100%;
-4. height: 100%;
-5. flex-direction: column;
-6. justify-content: center;
-7. align-items: center;
-8. }
-9. .txt {
-10. margin: 30px;
-11. color: orangered;
-12. }
-13. select{
-14. margin-top: 40px;
-15. margin-bottom: 40px;
-16. }
-```
-
-```
-1. /* index.js */
-2. export default {
-3. data: {
-4. qr_type: 'rect',
-5. qr_size: '300px',
-6. qr_col: '#87ceeb',
-7. col_list: ['#87ceeb','#fa8072','#da70d6','#80ff00ff','#00ff00ff'],
-8. qr_bcol: '#f0ffff',
-9. bcol_list: ['#f0ffff','#ffffe0','#d8bfd8']
-10. },
-11. setType(e) {
-12. if (e.checked) {
-13. this.qr_type = 'rect'
-14. } else {
-15. this.qr_type = 'circle'
-16. }
-17. },
-18. setCol(e) {
-19. this.qr_col = e.newValue
-20. },
-21. setBCol(e) {
-22. this.qr_bcol = e.newValue
-23. }
-24. }
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.txt {
+  margin: 30px;
+  color: orangered;
+}
+select{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/j9lX1sJcRsSgAGZCdTzztw/zh-cn_image_0000002558607064.gif)
+```js
+/* index.js */
+export default {
+  data: {
+    qr_type: 'rect',
+    qr_size: '300px',
+    qr_col: '#87ceeb',
+    col_list: ['#87ceeb','#fa8072','#da70d6','#80ff00ff','#00ff00ff'],
+    qr_bcol: '#f0ffff',
+    bcol_list: ['#f0ffff','#ffffe0','#d8bfd8']
+  },
+  setType(e) {
+    if (e.checked) {
+      this.qr_type = 'rect'
+    } else {
+      this.qr_type = 'circle'
+    }
+  },
+  setCol(e) {
+    this.qr_col = e.newValue
+  },
+  setBCol(e) {
+    this.qr_bcol = e.newValue
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/ByiGmaOvRiKN8waZkwMeBA/zh-cn_image_0000002706676454.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permissio
 title: 应用权限组列表
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 应用权限组列表
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:04+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:ff8461c1ba49c7332eb54cef2846981842b86c0dde75fd679137c0795fb113c3
+scraped_at: 2026-09-02T14:59:27+08:00
+doc_updated_at: 2026-08-07
+content_hash: sha256:60bdb8c343ca9d158845db6ab1d23d32533360fe8582fdddb03397bbe2746982
 ---
 
 ## 使用须知
@@ -48,7 +48,7 @@ content_hash: sha256:ff8461c1ba49c7332eb54cef2846981842b86c0dde75fd679137c0795fb
 
 ## 运动数据
 
-说明
+**说明** 
 
 由于2in1设备无相关传感器，此权限不支持在2in1设备上申请。
 
@@ -56,7 +56,7 @@ content_hash: sha256:ff8461c1ba49c7332eb54cef2846981842b86c0dde75fd679137c0795fb
 
 ## 身体传感器
 
-说明
+**说明** 
 
 仅穿戴设备可申请。
 
@@ -68,7 +68,7 @@ content_hash: sha256:ff8461c1ba49c7332eb54cef2846981842b86c0dde75fd679137c0795fb
 * [ohos.permission.READ\_IMAGEVIDEO](restricted-permissions.md#ohospermissionread_imagevideo)
 * [ohos.permission.MEDIA\_LOCATION](permissions-for-all-user.md#ohospermissionmedia_location)
 
-说明
+**说明** 
 
 由于权限ohos.permission.READ\_IMAGEVIDEO和ohos.permission.MEDIA\_LOCATION均用于读取图片的场景，当同时申请两者时，系统（包括权限申请弹框和权限设置界面）将只展示READ\_IMAGEVIDEO的申请理由（reason字段）。
 
@@ -81,7 +81,7 @@ content_hash: sha256:ff8461c1ba49c7332eb54cef2846981842b86c0dde75fd679137c0795fb
 
 ## 跨应用关联
 
-注意
+**注意** 
 
 在申请此权限时，是否弹窗向用户请求授权，取决于“要求应用请求关联”的开关状态。
 
@@ -94,7 +94,7 @@ content_hash: sha256:ff8461c1ba49c7332eb54cef2846981842b86c0dde75fd679137c0795fb
 
 ## 设备发现和连接
 
-说明
+**说明** 
 
 从API 13开始，原有的“蓝牙”、“星闪”、“多设备协同”权限组不再使用，相关权限将通过“设备发现和连接”权限组统一授权和操作。
 
@@ -102,7 +102,7 @@ content_hash: sha256:ff8461c1ba49c7332eb54cef2846981842b86c0dde75fd679137c0795fb
 * [ohos.permission.ACCESS\_NEARLINK](permissions-for-all-user.md#ohospermissionaccess_nearlink)
 * [ohos.permission.DISTRIBUTED\_DATASYNC](permissions-for-all-user.md#ohospermissiondistributed_datasync)
 
-## 剪切板
+## 剪贴板
 
 * [ohos.permission.READ\_PASTEBOARD](restricted-permissions.md#ohospermissionread_pasteboard)
 
@@ -112,7 +112,7 @@ content_hash: sha256:ff8461c1ba49c7332eb54cef2846981842b86c0dde75fd679137c0795fb
 
 ## 文件夹
 
-说明
+**说明** 
 
 仅2in1设备可申请。
 
@@ -122,7 +122,7 @@ content_hash: sha256:ff8461c1ba49c7332eb54cef2846981842b86c0dde75fd679137c0795fb
 
 ## 文件(deprecated)
 
-说明
+**说明** 
 
 从API 9开始，支持使用替代方案。
 

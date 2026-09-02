@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-for-all-apps-6004
 title: OS平台API行为的变更
-breadcrumb: 版本说明 > HarmonyOS 6.0.0(20) > OS平台能力 > OS平台行为变更说明 > 6.0.0(20) Beta5引入的行为变更 > OS平台API行为的变更
+breadcrumb: 版本说明 > 更多版本 > 6.0.0(20) > OS平台能力 > OS平台行为变更说明 > 6.0.0(20) Beta5引入的行为变更 > OS平台API行为的变更
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:05+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:c40abd7b89d69c38247d4b57d6786d375e94bddefc661cd8fbad4ddbd7803b1d
+scraped_at: 2026-09-02T14:58:39+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:f1bb54f7f80814391fb8d59b31a45d277e2d3f6e5cfefa03cba7abcc45ad83f6
 ---
 
 ## ArkTS
@@ -26,16 +26,16 @@ content_hash: sha256:c40abd7b89d69c38247d4b57d6786d375e94bddefc661cd8fbad4ddbd78
 
 如下代码在JS形态的HAR包中编译时不会报错。
 
-```
-1. // test.ets
-2. @interface ClassAuthor {
-3. authorName: string
-4. }
+```ts
+// test.ets
+@interface ClassAuthor {
+  authorName: string
+}
 
-6. @ClassAuthor({authorName: "Bob"})
-7. class MyClass {
-8. /* body */
-9. }
+@ClassAuthor({authorName: "Bob"})
+class MyClass {
+  /* body */
+}
 ```
 
 变更后：构建JS HAR时，若代码中存在注解，编译会报错。

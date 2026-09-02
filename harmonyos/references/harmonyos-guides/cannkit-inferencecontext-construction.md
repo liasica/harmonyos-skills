@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-infer
 title: 构造函数和析构函数
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > InferenceContext > 构造函数和析构函数
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:29+08:00
+scraped_at: 2026-09-02T14:50:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2e8baf07fbd35c53a90610239c5a854451df46e358e48d3c4472f1bfd2a935e1
+content_hash: sha256:1ec3329583122f27b75888f1be4021a8c908c1376c171f49d481657385373faa
 ---
 
 ## 函数功能
@@ -14,12 +14,12 @@ InferenceContext对象的构造函数和析构函数。
 
 ## 函数原型
 
-```
-1. ~InferenceContext() = default;
-2. InferenceContext(const InferenceContext &context) = delete;
-3. InferenceContext(const InferenceContext &&context) = delete;
-4. InferenceContext &operator=(const InferenceContext &context) = delete;
-5. InferenceContext &operator=(const InferenceContext &&context) = delete;
+```cpp
+~InferenceContext() = default;
+InferenceContext(const InferenceContext &context) = delete;
+InferenceContext(const InferenceContext &&context) = delete;
+InferenceContext &operator=(const InferenceContext &context) = delete;
+InferenceContext &operator=(const InferenceContext &&context) = delete;
 ```
 
 ## 参数说明

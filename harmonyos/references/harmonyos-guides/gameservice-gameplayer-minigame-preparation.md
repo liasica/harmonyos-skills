@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 开发准备
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 基础游戏服务（必选） > 小游戏 > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:38:09+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:bd5228f8abb3625f3a88d23f7346cb757612192e92ad10dd22290c7647f65742
+scraped_at: 2026-09-02T14:59:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e65da71861547a0fa8e7dd1bd93c6905a2198c0b56eab40b1ce2dd636c82dd5c
 ---
 
 ## 创建小游戏
@@ -15,7 +15,7 @@ content_hash: sha256:bd5228f8abb3625f3a88d23f7346cb757612192e92ad10dd22290c7647f
 * “应用类型”：选择“元服务”。
 * “应用分类”：选择“小游戏”。
 
-说明
+**说明** 
 
 用于正式上架的游戏包名建议不要包含test、dev等信息。
 
@@ -25,7 +25,7 @@ content_hash: sha256:bd5228f8abb3625f3a88d23f7346cb757612192e92ad10dd22290c7647f
 
 ## 申请备案
 
-请参考[APP备案FAQ](../App/50130.md)、[快游戏备案指南](../quickApp-Guides/quickgame-filing-guide-0000001806139508.md)和[国产游戏小程序备案准备](../games-guides/quickgame-filing-chinese-preparation-0000001979934858.md)完成小游戏备案，并保存好备案信息。
+请参考[APP核准（APP备案）指引](../App/50130.md)、[快游戏核准（备案）指南](../quickApp-Guides/quickgame-filing-guide-0000001806139508.md)和[国产游戏小程序核准（备案）准备](../games-guides/quickgame-filing-chinese-preparation-0000001979934858.md)完成小游戏备案，并保存好备案信息。
 
 ## 申请JSVM权限和存储空间管理开放能力
 
@@ -35,14 +35,14 @@ content_hash: sha256:bd5228f8abb3625f3a88d23f7346cb757612192e92ad10dd22290c7647f
 
 数字证书和Profile文件等签名信息可以确保小游戏的完整性：
 
-* 调试阶段：[手动签名](ide-signing.md#section297715173233)、[申请调试证书](../app/agc-help-debug-cert-0000002283256797.md)、[申请调试Profile](../app/agc-help-debug-profile-0000002248181278.md)。
-* 发布阶段：[手动签名](ide-signing.md#section297715173233)、[申请发布证书](../app/agc-help-release-cert-0000002283336729.md)、[申请发布Profile](../app/agc-help-release-profile-0000002248341090.md)。
+* 调试阶段：[手动签名](ide-signing-manual.md)、[申请调试证书](../app/agc-help-debug-cert-0000002283256797.md)、[申请调试Profile](../app/agc-help-debug-profile-0000002248181278.md)。
+* 发布阶段：[手动签名](ide-signing-manual.md)、[申请发布证书](../app/agc-help-release-cert-0000002283336729.md)、[申请发布Profile](../app/agc-help-release-profile-0000002248341090.md)。
 
 ## 配置签名证书指纹
 
 AppGallery Connect会自动生成证书对应的公钥信息，并计算出对应的SHA256指纹。开发者前往AppGallery Connect获取并配置SHA256指纹，且每个游戏至多添加4个签名证书指纹，配置签名证书指纹的具体操作请参见[配置公钥指纹](../app/agc-help-cert-fingerprint-0000002278002933.md)。
 
-说明
+**说明** 
 
 请在调试阶段添加调试证书对应的指纹，在发布阶段添加发布证书对应的指纹。
 
@@ -50,51 +50,51 @@ AppGallery Connect会自动生成证书对应的公钥信息，并计算出对�
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，在“开发与服务”下选择项目及项目下的小游戏，获取“应用”下的APP ID和Client ID。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/w9qfNt_NQAGac6nZn_H0UQ/zh-cn_image_0000002558605738.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/7f2PuUamT1O7WL-foCVSZw/zh-cn_image_0000002736434065.png)
 2. 在工程的entry模块module.json5文件中，新增metadata并配置client\_id和app\_id，同时新增requestPermissions以配置ACL权限和开放能力。如下所示：
 
-   ```
-   1. "module": {
-   2. "name": "entry",
-   3. "type": "xxx",
-   4. "description": "xxxx",
-   5. "mainElement": "xxxx",
-   6. "deviceTypes": [],
-   7. "pages": "xxxx",
-   8. "abilities": [],
-   9. "metadata": [ // 配置如下信息
-   10. {
-   11. "name": "client_id",
-   12. "value": "xxxxxx" // 配置为前面步骤中获取的Client ID
-   13. },
-   14. {
-   15. "name": "app_id",
-   16. "value": "xxxxxx" // 配置为前面步骤中获取的APP ID
-   17. }
-   18. ],
-   19. "requestPermissions": [ // 配置JSVM权限和存储空间管理开放能力
-   20. {
-   21. "name": "ohos.permission.kernel.ALLOW_EXECUTABLE_FORT_MEMORY"
-   22. },
-   23. {
-   24. "name": "ohos.permission.atomicService.MANAGE_STORAGE"
-   25. }
-   26. ]
-   27. }
+   ```typescript
+   "module": {
+     "name": "entry",
+     "type": "xxx",
+     "description": "xxxx",
+     "mainElement": "xxxx",
+     "deviceTypes": [],
+     "pages": "xxxx",
+     "abilities": [],
+     "metadata": [ // 配置如下信息
+       {
+         "name": "client_id",
+         "value": "xxxxxx" // 配置为前面步骤中获取的Client ID
+       },
+       {
+         "name": "app_id",
+         "value": "xxxxxx" // 配置为前面步骤中获取的APP ID
+       }
+     ],
+     "requestPermissions": [ // 配置JSVM权限和存储空间管理开放能力
+       {
+         "name": "ohos.permission.kernel.ALLOW_EXECUTABLE_FORT_MEMORY"
+       },
+       {
+         "name": "ohos.permission.atomicService.MANAGE_STORAGE"
+       }
+     ]
+   }
    ```
 
 ## 配置APP ID映射关系
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，在“开发与服务”下选择项目及项目下的小游戏，左侧菜单选择“构建 > 游戏服务”，在右侧点击“新增配置”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/SVaVQ0BcRgaEkfk0stoaDg/zh-cn_image_0000002589325265.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/OzGe68bSTkizOGRTSnoBDA/zh-cn_image_0000002706834914.png)
 2. 在弹出的“新增配置信息”窗口中填写信息，完成后点击“下一步”。
 
-   说明
+   **说明** 
 
    请正确配置HAP小游戏与RPK快游戏的映射关系。若开发者配置错误类型的游戏，将会提示重新选择游戏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/dlu_A7zCQEij-vqpiE2Cug/zh-cn_image_0000002589245201.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/Vvhz6WRwSY-tLj86IJLTOg/zh-cn_image_0000002736314021.png)
 
    | 信息项 | 说明 |
    | --- | --- |
@@ -102,14 +102,14 @@ AppGallery Connect会自动生成证书对应的公钥信息，并计算出对�
    | HarmonyOS 4及以下游戏 | 请选择已上架或草稿态的RPK快游戏。 |
 3. （可选）填写开发者服务器的回调地址，完成后点击“确定”提交APP ID映射关系的审批申请。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/5GefoeMrQtuXWWOqgXOcag/zh-cn_image_0000002558765396.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/KsfK6CDURLKYwUQnZS--Gw/zh-cn_image_0000002706674978.png)
 4. 若出现异常情况（例如在架状态不符合要求），将在提示框以红字提醒，建议点击“取消”并重新配置映射关系。若忽略异常情况点击“确定”继续提交申请，可能会造成映射关系审批不通过。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/tpy3cb7mSJi_HDogmWq7Yw/zh-cn_image_0000002558605740.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/70t_0ZyGSb-zmQ11ANiZtg/zh-cn_image_0000002736434067.png)
 5. 提交申请后，华为工作人员完成审核需要1-3个工作日，请耐心等待。APP ID映射关系生效后如需重新配置，请先提交映射关系的删除申请。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/GYLFGTLITOS43HnXR36f_g/zh-cn_image_0000002589325267.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/QsiMAkc8QcqniyrG3vOP-g/zh-cn_image_0000002706834916.png)
 
    配置/删除APP ID映射关系的审核结果将通过互动中心或邮件进行通知。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/SfXQBvY-SRK0a6SOW1fw9Q/zh-cn_image_0000002589245203.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/11wUMcL3Tuip9LCc0kikaQ/zh-cn_image_0000002736314023.png)

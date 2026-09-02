@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: EditableTitleBar
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > EditableTitleBar
 category: harmonyos-references
-scraped_at: 2026-04-29T13:52:59+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:3405c7551adba77edffcdf6d8beb86ab5c9152eb8ec77a027b0ce137e83e0445
+scraped_at: 2026-09-02T15:01:08+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:550b4240a796a44d3a7cbc722805b9ea093b72819be9b67fdd3d9b24d0d8c835
 ---
 
 编辑型标题栏，适用于多选界面或者内容的编辑界面，一般采取左叉右勾的形式。
 
-说明
+**说明** 
 
 * 该组件从API version 10开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 该组件仅可在Stage模型下使用。
@@ -18,21 +18,15 @@ content_hash: sha256:3405c7551adba77edffcdf6d8beb86ab5c9152eb8ec77a027b0ce137e83
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { EditableTitleBar } from '@kit.ArkUI';
+```ts
+import { EditableTitleBar } from '@kit.ArkUI';
 ```
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## EditableTitleBar
-
-PhonePC/2in1TabletTVWearable
 
 EditableTitleBar({leftIconStyle: EditableLeftIconType, imageItem?: EditableTitleBarItem, title: ResourceStr, subtitle?: ResourceStr, menuItems?: Array<EditableTitleBarMenuItem>, isSaveIconRequired: boolean, onSave?: () => void, onCancel?: () =>void, options: EditableTitleBarOptions, contentMargin?: LocalizedMargin, leftIconDefaultFocus?: boolean, saveIconDefaultFocus?: boolean})
 
@@ -57,15 +51,13 @@ EditableTitleBar({leftIconStyle: EditableLeftIconType, imageItem?: EditableTitle
 | leftIconDefaultFocus18+ | boolean | 否 | - | 左侧图标是否为默认焦点。  默认值：false，表示不是默认焦点。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | saveIconDefaultFocus18+ | boolean | 否 | - | 保存图标是否为默认焦点。  默认值：false，表示不是默认焦点。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 
-说明
+**说明** 
 
 入参对象不可为undefined，即EditableTitleBar(undefined)。
 
 若同时有多个可操作区域设置值默认焦点，则设置过默认焦点的可操作区域中显示顺序的第一个为默认焦点。
 
 ## EditableLeftIconType
-
-PhonePC/2in1TabletTVWearable
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -80,8 +72,6 @@ PhonePC/2in1TabletTVWearable
 
 ## EditableTitleBarMenuItem
 
-PhonePC/2in1TabletTVWearable
-
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
@@ -89,7 +79,7 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | value | [ResourceStr](ts-types.md#resourcestr) | 否 | 否 | 图标资源。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| symbolStyle18+ | [SymbolGlyphModifier](universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | 否 | 是 | Symbol图标资源，优先级大于value。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| symbolStyle18+ | [SymbolGlyphModifier](ts-universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | 否 | 是 | Symbol图标资源，优先级大于value。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | label12+ | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 图标标签描述。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | isEnabled | boolean | 否 | 是 | 是否启用，默认启用。  isEnabled为true时，表示为启用。  isEnabled为false时，表示为禁用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | action | () => void | 否 | 是 | 标题栏右侧自定义按钮点击事件。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
@@ -99,8 +89,6 @@ PhonePC/2in1TabletTVWearable
 | defaultFocus18+ | boolean | 否 | 是 | 是否设置为默认获焦。  true: 获焦  false: 不获焦  默认值：false  使用defaultFocus属性时，需提前将isEnabled属性设置为true，否则defaultFocus值会被识别为false。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 
 ## EditableTitleBarItem12+
-
-PhonePC/2in1TabletTVWearable
 
 type EditableTitleBarItem = EditableTitleBarMenuItem
 
@@ -115,8 +103,6 @@ type EditableTitleBarItem = EditableTitleBarMenuItem
 | [EditableTitleBarMenuItem](ohos-arkui-advanced-editabletitlebar.md#editabletitlebarmenuitem) | 左侧头像的单个菜单类型。 |
 
 ## EditableTitleBarOptions12+
-
-PhonePC/2in1TabletTVWearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -133,234 +119,230 @@ PhonePC/2in1TabletTVWearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 不支持[通用事件](ts-component-general-events.md)。
 
 ## 示例
-
-PhonePC/2in1TabletTVWearable
 
 ### 示例1（右侧图标自定义标题栏）
 
 该示例主要演示EditableTitleBar设置左侧图标、主标题及自定义右侧图标区的效果。
 
-```
-1. import { EditableLeftIconType, EditableTitleBar, Prompt } from '@kit.ArkUI';
+```ts
+import { EditableLeftIconType, EditableTitleBar, Prompt } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. build() {
-7. Row() {
-8. Column() {
-9. Divider().height(2).color(0xCCCCCC)
-10. // 左侧取消按钮，右侧保存按钮。
-11. EditableTitleBar({
-12. leftIconStyle: EditableLeftIconType.Cancel,
-13. title: '编辑页面',
-14. menuItems: [],
-15. onCancel: () => {
-16. Prompt.showToast({ message: 'on cancel' });
-17. },
-18. onSave: () => {
-19. Prompt.showToast({ message: 'on save' });
-20. }
-21. })
-22. Divider().height(2).color(0xCCCCCC)
-23. // 左侧返回按钮，右侧自定义取消按钮（disabled）、保存按钮。
-24. EditableTitleBar({
-25. leftIconStyle: EditableLeftIconType.Back,
-26. title: '编辑页面',
-27. menuItems: [
-28. {
-29. value: $r('sys.media.ohos_ic_public_cancel'),
-30. isEnabled: false,
-31. action: () => {
-32. Prompt.showToast({ message: 'show toast index 2' });
-33. }
-34. }
-35. ],
-36. onSave: () => {
-37. Prompt.showToast({ message: 'on save' })
-38. }
-39. })
-40. Divider().height(2).color(0xCCCCCC)
-41. }.width('100%')
-42. }.height('100%')
-43. }
-44. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column() {
+        Divider().height(2).color(0xCCCCCC)
+        // 左侧取消按钮，右侧保存按钮。
+        EditableTitleBar({
+          leftIconStyle: EditableLeftIconType.Cancel,
+          title: '编辑页面',
+          menuItems: [],
+          onCancel: () => {
+            Prompt.showToast({ message: 'on cancel' });
+          },
+          onSave: () => {
+            Prompt.showToast({ message: 'on save' });
+          }
+        })
+        Divider().height(2).color(0xCCCCCC)
+        // 左侧返回按钮，右侧自定义取消按钮（disabled）、保存按钮。
+        EditableTitleBar({
+          leftIconStyle: EditableLeftIconType.Back,
+          title: '编辑页面',
+          menuItems: [
+            {
+              value: $r('sys.media.ohos_ic_public_cancel'),
+              isEnabled: false,
+              action: () => {
+                Prompt.showToast({ message: 'show toast index 2' });
+              }
+            }
+          ],
+          onSave: () => {
+            Prompt.showToast({ message: 'on save' })
+          }
+        })
+        Divider().height(2).color(0xCCCCCC)
+      }.width('100%')
+    }.height('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/DKMMfpnBT8qL3LI4iWkTVA/zh-cn_image_0000002558766630.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/BLNVFlt4Q5uIYrwe686UFg/zh-cn_image_0000002706676346.png)
 
 ### 示例2（头像与背景模糊标题栏）
 
 该示例主要演示EditableTitleBar设置背景模糊、头像；取消右侧保存图标及自定义标题栏外边距的效果。
 
+```ts
+import { EditableLeftIconType, EditableTitleBar, LengthMetrics, Prompt } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct Index {
+  @State titleBarMargin: LocalizedMargin = {
+    start: LengthMetrics.vp(35),
+    end: LengthMetrics.vp(35),
+  };
+
+  build() {
+    Row() {
+      Column() {
+        EditableTitleBar({
+          leftIconStyle: EditableLeftIconType.Cancel,
+          title: '主标题',
+          subtitle: '副标题',
+          // 设置背景模糊效果
+          options: {
+            backgroundBlurStyle: BlurStyle.COMPONENT_THICK,
+          },
+          onSave: () => {
+            Prompt.showToast({ message: "on save" });
+          },
+        })
+        Divider().height(2).color(0xCCCCCC);
+        EditableTitleBar({
+          leftIconStyle: EditableLeftIconType.Cancel,
+          title: '主标题',
+          subtitle: '副标题',
+          // 取消右侧保存按钮
+          isSaveIconRequired: false,
+        })
+        Divider().height(2).color(0xCCCCCC);
+        EditableTitleBar({
+          leftIconStyle: EditableLeftIconType.Back,
+          title: '主标题',
+          subtitle: '副标题',
+          isSaveIconRequired: false,
+          onCancel: () => {
+            this.getUIContext()?.getRouter()?.back();
+          },
+        })
+        Divider().height(2).color(0xCCCCCC);
+        EditableTitleBar({
+          leftIconStyle: EditableLeftIconType.Back,
+          title: '主标题',
+          subtitle: '副标题',
+          menuItems: [
+            {
+              value: $r('sys.media.ohos_ic_public_remove'),
+              isEnabled: true,
+              action: () => {
+                Prompt.showToast({ message: "show toast index 1" });
+              }
+            }
+          ],
+          isSaveIconRequired: false,
+          // 点击左侧Back图标，触发的动作。
+          onCancel: () => {
+            this.getUIContext()?.getRouter()?.back();
+          },
+        })
+        Divider().height(2).color(0xCCCCCC);
+        EditableTitleBar({
+          leftIconStyle: EditableLeftIconType.Back,
+          title: '主标题',
+          subtitle: '副标题',
+          // 设置可点击头像
+          imageItem: {
+            value: $r('sys.media.ohos_ic_normal_white_grid_image'),
+            isEnabled: true,
+            action: () => {
+              Prompt.showToast({ message: "show toast index 2" });
+            }
+          },
+          // 设置标题栏外边距
+          contentMargin: this.titleBarMargin,
+          // 右侧图标配置
+          menuItems: [
+            {
+              value: $r('sys.media.ohos_ic_public_remove'),
+              isEnabled: true,
+              action: () => {
+                Prompt.showToast({ message: "show toast index 3" });
+              }
+            }
+          ],
+          onCancel: () => {
+            this.getUIContext()?.getRouter()?.back();
+          },
+        })
+      }
+    }
+  }
+}
 ```
-1. import { EditableLeftIconType, EditableTitleBar, LengthMetrics, Prompt } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. @State titleBarMargin: LocalizedMargin = {
-7. start: LengthMetrics.vp(35),
-8. end: LengthMetrics.vp(35),
-9. };
-
-11. build() {
-12. Row() {
-13. Column() {
-14. EditableTitleBar({
-15. leftIconStyle: EditableLeftIconType.Cancel,
-16. title: '主标题',
-17. subtitle: '副标题',
-18. // 设置背景模糊效果
-19. options: {
-20. backgroundBlurStyle: BlurStyle.COMPONENT_THICK,
-21. },
-22. onSave: () => {
-23. Prompt.showToast({ message: "on save" });
-24. },
-25. })
-26. Divider().height(2).color(0xCCCCCC);
-27. EditableTitleBar({
-28. leftIconStyle: EditableLeftIconType.Cancel,
-29. title: '主标题',
-30. subtitle: '副标题',
-31. // 取消右侧保存按钮
-32. isSaveIconRequired: false,
-33. })
-34. Divider().height(2).color(0xCCCCCC);
-35. EditableTitleBar({
-36. leftIconStyle: EditableLeftIconType.Back,
-37. title: '主标题',
-38. subtitle: '副标题',
-39. isSaveIconRequired: false,
-40. onCancel: () => {
-41. this.getUIContext()?.getRouter()?.back();
-42. },
-43. })
-44. Divider().height(2).color(0xCCCCCC);
-45. EditableTitleBar({
-46. leftIconStyle: EditableLeftIconType.Back,
-47. title: '主标题',
-48. subtitle: '副标题',
-49. menuItems: [
-50. {
-51. value: $r('sys.media.ohos_ic_public_remove'),
-52. isEnabled: true,
-53. action: () => {
-54. Prompt.showToast({ message: "show toast index 1" });
-55. }
-56. }
-57. ],
-58. isSaveIconRequired: false,
-59. // 点击左侧Back图标，触发的动作。
-60. onCancel: () => {
-61. this.getUIContext()?.getRouter()?.back();
-62. },
-63. })
-64. Divider().height(2).color(0xCCCCCC);
-65. EditableTitleBar({
-66. leftIconStyle: EditableLeftIconType.Back,
-67. title: '主标题',
-68. subtitle: '副标题',
-69. // 设置可点击头像
-70. imageItem: {
-71. value: $r('sys.media.ohos_ic_normal_white_grid_image'),
-72. isEnabled: true,
-73. action: () => {
-74. Prompt.showToast({ message: "show toast index 2" });
-75. }
-76. },
-77. // 设置标题栏外边距
-78. contentMargin: this.titleBarMargin,
-79. // 右侧图标配置
-80. menuItems: [
-81. {
-82. value: $r('sys.media.ohos_ic_public_remove'),
-83. isEnabled: true,
-84. action: () => {
-85. Prompt.showToast({ message: "show toast index 3" });
-86. }
-87. }
-88. ],
-89. onCancel: () => {
-90. this.getUIContext()?.getRouter()?.back();
-91. },
-92. })
-93. }
-94. }
-95. }
-96. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/17-AHOSQRsyig7wxMmx8rw/zh-cn_image_0000002558606970.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/mCF_RBziTYmflrs0KZl3Bg/zh-cn_image_0000002736435433.png)
 
 ### 示例3（右侧自定义按钮播报）
 
 从API version 18开始，该示例通过设置标题栏的右侧自定义按钮属性accessibilityText、accessibilityDescription、accessibilityLevel自定义屏幕朗读播报文本。
 
-```
-1. import { Prompt, EditableLeftIconType, EditableTitleBar } from '@kit.ArkUI';
+```ts
+import { Prompt, EditableLeftIconType, EditableTitleBar } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Index1 {
-6. build() {
-7. Row() {
-8. Column() {
-9. Divider().height(2).color(0xCCCCCC)
-10. EditableTitleBar({
-11. leftIconStyle: EditableLeftIconType.Cancel,
-12. title: '编辑页面',
-13. menuItems: [],
-14. onCancel: () => {
-15. Prompt.showToast({ message: 'on cancel' });
-16. },
-17. onSave: () => {
-18. Prompt.showToast({ message: 'on save' });
-19. }
-20. })
-21. Divider().height(2).color(0xCCCCCC)
-22. EditableTitleBar({
-23. // 头像、自定义按钮不可用
-24. leftIconStyle: EditableLeftIconType.Back,
-25. title: '主标题',
-26. subtitle: '副标题',
-27. imageItem: {
-28. value: $r('sys.media.ohos_ic_normal_white_grid_image'),
-29. isEnabled: true,
-30. action: () => {
-31. Prompt.showToast({ message: "show toast index 1" });
-32. }
-33. },
-34. menuItems: [
-35. {
-36. value: $r('sys.media.ohos_ic_public_remove'),
-37. label: '取消',
-38. isEnabled: false,
-39. accessibilityText: '删除',
-40. accessibilityDescription: '点击即可删除',
-41. action: () => {
-42. Prompt.showToast({ message: "show toast index 2" });
-43. }
-44. }
-45. ],
-46. onCancel: () => {
-47. this.getUIContext()?.getRouter()?.back();
-48. },
-49. })
-50. Divider().height(2).color(0xCCCCCC)
-51. }
-52. }
-53. }
-54. }
+@Entry
+@Component
+struct Index1 {
+  build() {
+    Row() {
+      Column() {
+        Divider().height(2).color(0xCCCCCC)
+        EditableTitleBar({
+          leftIconStyle: EditableLeftIconType.Cancel,
+          title: '编辑页面',
+          menuItems: [],
+          onCancel: () => {
+            Prompt.showToast({ message: 'on cancel' });
+          },
+          onSave: () => {
+            Prompt.showToast({ message: 'on save' });
+          }
+        })
+        Divider().height(2).color(0xCCCCCC)
+        EditableTitleBar({
+          // 头像、自定义按钮不可用
+          leftIconStyle: EditableLeftIconType.Back,
+          title: '主标题',
+          subtitle: '副标题',
+          imageItem: {
+            value: $r('sys.media.ohos_ic_normal_white_grid_image'),
+            isEnabled: true,
+            action: () => {
+              Prompt.showToast({ message: "show toast index 1" });
+            }
+          },
+          menuItems: [
+            {
+              value: $r('sys.media.ohos_ic_public_remove'),
+              label: '取消',
+              isEnabled: false,
+              accessibilityText: '删除',
+              accessibilityDescription: '点击即可删除',
+              action: () => {
+                Prompt.showToast({ message: "show toast index 2" });
+              }
+            }
+          ],
+          onCancel: () => {
+            this.getUIContext()?.getRouter()?.back();
+          },
+        })
+        Divider().height(2).color(0xCCCCCC)
+      }
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/dw96U08OQHCvcmTmPxtDpw/zh-cn_image_0000002589326497.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/Zx0i4m5cQkGkhoNoWwT7bA/zh-cn_image_0000002706836282.png)
 
 ### 示例4（左侧图标设置为默认焦点）
 
@@ -368,144 +350,146 @@ PhonePC/2in1TabletTVWearable
 
 从API version 18开始，在[EditableTitleBar](ohos-arkui-advanced-editabletitlebar.md#editabletitlebar-1)中新增leftIconDefaultFocus接口。
 
-```
-1. import { Prompt, EditableLeftIconType, EditableTitleBar } from '@kit.ArkUI';
+```ts
+import { Prompt, EditableLeftIconType, EditableTitleBar } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. build() {
-7. Column() {
-8. EditableTitleBar({
-9. leftIconStyle: EditableLeftIconType.Back,
-10. leftIconDefaultFocus: true, // 设置左侧图标默认获焦。
-11. title: '编辑页面',
-12. menuItems: [],
-13. onSave: () => {
-14. Prompt.showToast({ message: 'on save' });
-15. }
-16. })
-17. }
-18. .height('100%')
-19. .width('100%')
-20. }
-21. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      EditableTitleBar({
+        leftIconStyle: EditableLeftIconType.Back,
+        leftIconDefaultFocus: true, // 设置左侧图标默认获焦。
+        title: '编辑页面',
+        menuItems: [],
+        onSave: () => {
+          Prompt.showToast({ message: 'on save' });
+        }
+      })
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/CZCDzZwYQW-8-dIAgkcOGA/zh-cn_image_0000002589246439.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/W9k75vJnRce877Q7gzlnVg/zh-cn_image_0000002736315387.png)
 
 ### 示例5（右侧自定义图标设置为默认焦点）
 
-从API version 18开始，该示例通过设置标题栏右侧图标属性defaultFocus使右侧图标默认获焦。
+在获焦状态下，该示例通过设置标题栏右侧图标属性defaultFocus使右侧图标默认获焦。
 
+从API version 18开始，在[EditableTitleBarMenuItem](ohos-arkui-advanced-editabletitlebar.md#editabletitlebarmenuitem)中新增defaultFocus接口。
+
+```ts
+import { Prompt, EditableLeftIconType, EditableTitleBar } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      EditableTitleBar({
+        leftIconStyle: EditableLeftIconType.Back,
+        title: '主标题',
+        subtitle: '副标题',
+        // 右侧图标配置
+        menuItems: [
+          {
+            value: $r('sys.media.ohos_ic_public_remove'),
+            isEnabled: true,
+            action: () => {
+              Prompt.showToast({ message: "show toast index 1" });
+            }
+          },
+          {
+            value: $r('sys.media.ohos_ic_public_remove'),
+            isEnabled: true,
+            defaultFocus: true,
+            action: () => {
+              Prompt.showToast({ message: "show toast index 2" });
+            }
+          }
+        ],
+        onCancel: () => {
+          this.getUIContext()?.getRouter()?.back();
+        },
+      })
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
-1. import { Prompt, EditableLeftIconType, EditableTitleBar } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. build() {
-7. Column() {
-8. EditableTitleBar({
-9. leftIconStyle: EditableLeftIconType.Back,
-10. title: '主标题',
-11. subtitle: '副标题',
-12. // 右侧图标配置
-13. menuItems: [
-14. {
-15. value: $r('sys.media.ohos_ic_public_remove'),
-16. isEnabled: true,
-17. action: () => {
-18. Prompt.showToast({ message: "show toast index 1" });
-19. }
-20. },
-21. {
-22. value: $r('sys.media.ohos_ic_public_remove'),
-23. isEnabled: true,
-24. defaultFocus: true,
-25. action: () => {
-26. Prompt.showToast({ message: "show toast index 2" });
-27. }
-28. }
-29. ],
-30. onCancel: () => {
-31. this.getUIContext()?.getRouter()?.back();
-32. },
-33. })
-34. }
-35. .height('100%')
-36. .width('100%')
-37. }
-38. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/h6UsLhMcToi63CJXpuyodQ/zh-cn_image_0000002558766632.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/CSq15y9bTm2T9esE6D4mUQ/zh-cn_image_0000002706676348.png)
 
 ### 示例6（设置Symbol类型图标）
 
 从API version 18开始，该示例通过设置EditableTitleBarMenuItem的属性symbolStyle，展示了自定义Symbol类型图标。
 
-```
-1. import { EditableLeftIconType, EditableTitleBar, Prompt, SymbolGlyphModifier } from '@kit.ArkUI';
+```ts
+import { EditableLeftIconType, EditableTitleBar, Prompt, SymbolGlyphModifier } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. build() {
-7. Row() {
-8. Column() {
-9. Divider().height(2).color(0xCCCCCC)
-10. EditableTitleBar({
-11. leftIconStyle: EditableLeftIconType.Cancel,
-12. title: '主标题',
-13. subtitle: '副标题',
-14. menuItems: [
-15. {
-16. value: $r('sys.symbol.house'),
-17. isEnabled: true,
-18. action: () => {
-19. Prompt.showToast({ message: 'show toast index 2' });
-20. }
-21. },
-22. {
-23. value: $r('sys.symbol.car'),
-24. isEnabled: false,
-25. }
-26. ],
-27. })
-28. Divider().height(2).color(0xCCCCCC)
-29. EditableTitleBar({
-30. leftIconStyle: EditableLeftIconType.Back,
-31. title: '主标题',
-32. subtitle: '副标题',
-33. imageItem: {
-34. value: $r('sys.media.ohos_app_icon'),
-35. isEnabled: true,
-36. action: () => {
-37. Prompt.showToast({ message: "show toast index 1" });
-38. }
-39. },
-40. menuItems: [
-41. {
-42. value: $r('sys.symbol.house'),
-43. symbolStyle: new SymbolGlyphModifier($r('sys.symbol.bell')).fontColor([Color.Red]),
-44. isEnabled: true,
-45. action: () => {
-46. Prompt.showToast({ message: 'show toast index 2' });
-47. }
-48. },
-49. {
-50. value: $r('sys.symbol.car'),
-51. symbolStyle: new SymbolGlyphModifier($r('sys.symbol.heart')).fontColor([Color.Blue]),
-52. isEnabled: false,
-53. }
-54. ],
-55. })
-56. Divider().height(2).color(0xCCCCCC)
-57. }.width('100%')
-58. }.height('100%')
-59. }
-60. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column() {
+        Divider().height(2).color(0xCCCCCC)
+        EditableTitleBar({
+          leftIconStyle: EditableLeftIconType.Cancel,
+          title: '主标题',
+          subtitle: '副标题',
+          menuItems: [
+            {
+              value: $r('sys.symbol.house'),
+              isEnabled: true,
+              action: () => {
+                Prompt.showToast({ message: 'show toast index 2' });
+              }
+            },
+            {
+              value: $r('sys.symbol.car'),
+              isEnabled: false,
+            }
+          ],
+        })
+        Divider().height(2).color(0xCCCCCC)
+        EditableTitleBar({
+          leftIconStyle: EditableLeftIconType.Back,
+          title: '主标题',
+          subtitle: '副标题',
+          imageItem: {
+            value: $r('sys.media.ohos_app_icon'),
+            isEnabled: true,
+            action: () => {
+              Prompt.showToast({ message: "show toast index 1" });
+            }
+          },
+          menuItems: [
+            {
+              value: $r('sys.symbol.house'),
+              symbolStyle: new SymbolGlyphModifier($r('sys.symbol.bell')).fontColor([Color.Red]),
+              isEnabled: true,
+              action: () => {
+                Prompt.showToast({ message: 'show toast index 2' });
+              }
+            },
+            {
+              value: $r('sys.symbol.car'),
+              symbolStyle: new SymbolGlyphModifier($r('sys.symbol.heart')).fontColor([Color.Blue]),
+              isEnabled: false,
+            }
+          ],
+        })
+        Divider().height(2).color(0xCCCCCC)
+      }.width('100%')
+    }.height('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/8X3elEqjQcWU03HYDCcs6Q/zh-cn_image_0000002558606972.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/vb5xYMh0SWerUVMFX8x6Vw/zh-cn_image_0000002736435435.png)

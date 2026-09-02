@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-m
 title: 状态管理原理介绍
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理原理介绍
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:09+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:8c80c17b826735f66fdc0499aa73c81ff9f682f2465b17e11fc82c91f3d299fb
+scraped_at: 2026-09-02T14:59:15+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0b03b599d005b847425a59b996dbbfa45b085aa2ff9d2f752f0a3cb41b53ccd8
 ---
 
 本文将介绍状态管理的基本原理。状态管理的核心逻辑是处理状态变量、自定义组件和系统组件之间的绑定关系。其工作流程可以概括为两个核心阶段：收集依赖和触发更新。
@@ -14,29 +14,29 @@ content_hash: sha256:8c80c17b826735f66fdc0499aa73c81ff9f682f2465b17e11fc82c91f3d
 
 收集依赖是指建立状态变量与组件之间的数据绑定关系。在UI渲染时，状态管理框架会“观察”哪些状态变量被读取了，并记录下这个“依赖关系”。一个UI界面上可能使用了多个状态变量，在修改状态变量时，仅与该状态变量相关的组件进行UI刷新，其他不相关的组件不会刷新。因此，UI刷新时需要明确哪些组件使用了被修改的状态变量，以能够实现这些组件的精准刷新。
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. @State name: string = 'Jack';
-5. @State age: number = 10;
-6. @State grade: number = 5;
+```typescript
+@Entry
+@Component
+struct Index {
+  @State name: string = 'Jack';
+  @State age: number = 10;
+  @State grade: number = 5;
 
-8. build() {
-9. Column() {
-10. Text(`${this.name}'s age is ${this.age}`) // Text1
-11. Text(`${this.name}'s grade is ${this.grade}`) // Text2
-12. Button('change age') // Button1
-13. .onClick(() => {
-14. this.age++;
-15. })
-16. Button('change grade') // Button2
-17. .onClick(() => {
-18. this.grade++;
-19. })
-20. }
-21. }
-22. }
+  build() {
+    Column() {
+      Text(`${this.name}'s age is ${this.age}`) // Text1
+      Text(`${this.name}'s grade is ${this.grade}`) // Text2
+      Button('change age') // Button1
+        .onClick(() => {
+          this.age++;
+        })
+      Button('change grade') // Button2
+        .onClick(() => {
+          this.grade++;
+        })
+    }
+  }
+}
 ```
 
 上述示例代码中，自定义组件Index中定义了三个状态变量name，age和grade，在build函数中创建了两个Text系统组件和两个Button系统组件。收集依赖的具体步骤为：
@@ -56,7 +56,7 @@ content_hash: sha256:8c80c17b826735f66fdc0499aa73c81ff9f682f2465b17e11fc82c91f3d
 * 修改状态变量的值，并将与其绑定的组件标脏。
 * 刷新所有的脏节点，更新UI的同时重新收集依赖。
 
-说明
+**说明** 
 
 更新是以自定义组件为单位的。
 
@@ -75,7 +75,7 @@ content_hash: sha256:8c80c17b826735f66fdc0499aa73c81ff9f682f2465b17e11fc82c91f3d
 
 UI渲染的流程主要有以下几个步骤：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/Vf2tab52T-uPL06eYk-i7g/zh-cn_image_0000002558604424.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/GfSv5VLmRCiDJwNLG-7Dmw/zh-cn_image_0000002736312287.png)
 
 1. 事件触发状态变量发生改变，执行状态变量的set方法，将自定义组件和系统组件标脏，并请求一个刷新信号。
 2. 刷新脏节点：刷新标脏的自定义组件和系统组件。
@@ -83,7 +83,7 @@ UI渲染的流程主要有以下几个步骤：
 
 同样以上述示例代码为例，使用DevEco Studio的[Profiler工具](ui-inspector-profiler.md#状态管理profiler调优能力)，点击Button1，抓取状态变量的变化打点，trace如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/1lmNRuxtSGaUmtNa1Ufh4w/zh-cn_image_0000002589323949.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/OrkVhM5BR4ed1qOJcC2vqg/zh-cn_image_0000002706673244.png)
 
 对上图中的标记点进行逐一介绍：
 
@@ -97,7 +97,7 @@ UI渲染的流程主要有以下几个步骤：
 
 其中，状态管理的基本流程如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/8oARJ4DFTkaoE3d_N_WZ7A/zh-cn_image_0000002589243889.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/Gm8JpqcnSP2sTGtMLQZJlg/zh-cn_image_0000002736432335.png)
 
 状态管理循环执行两大步骤：收集依赖和触发更新。收集状态变量与组件之间的依赖关系。当状态变量发生变化时，执行标脏，刷新对应的UI，同时更新依赖关系。
 

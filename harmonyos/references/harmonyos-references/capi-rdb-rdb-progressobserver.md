@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-rdb-
 title: Rdb_ProgressObserver
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 结构体 > Rdb_ProgressObserver
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:39+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:ab99c3f74199130ec927ace0df668b0200dae2c5f77bd12e852f06ebfa2524b2
+scraped_at: 2026-09-02T15:00:44+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:68f3d095cdbe2bdbd0d5a9fc600cc506e2dccc1f9bf2d6ef095cbc58c9dbfce7
 ---
 
-```
-1. typedef struct Rdb_ProgressObserver {...} Rdb_ProgressObserver
+```c
+typedef struct Rdb_ProgressObserver {...} Rdb_ProgressObserver
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 端云同步进度观察者。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

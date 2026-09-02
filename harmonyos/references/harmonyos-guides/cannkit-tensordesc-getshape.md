@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tenso
 title: GetShape
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > TensorDesc > GetShape
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:57+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:edc1fe721ae063d726d576a6866dbecc48b91cafbaa34b3d374731c6a59acd55
+content_hash: sha256:b6a5142e13b04f905ec29d955e0eea35df252d418752eddab799de0e81c2514a
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:edc1fe721ae063d726d576a6866dbecc48b91cafbaa34b3d374731c6a59
 
 ## 函数原型
 
-```
-1. Shape GetShape() const;
+```cpp
+Shape GetShape() const;
 ```
 
 ## 参数说明

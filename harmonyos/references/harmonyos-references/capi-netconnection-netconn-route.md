@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-netc
 title: NetConn_Route
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 结构体 > NetConn_Route
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:35+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:924f66548aa0a68d0aff2bd3b840354ab914d5a3a05853dcb7ca6e01b0642a78
+scraped_at: 2026-09-02T15:01:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f1123a977604d2cf79e8f0cd5e7b6aa8bd80f1c4eea7fc0db8310797fb0cf256
 ---
 
-```
-1. typedef struct NetConn_Route {...} NetConn_Route
+```c
+typedef struct NetConn_Route {...} NetConn_Route
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 路由配置信息。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

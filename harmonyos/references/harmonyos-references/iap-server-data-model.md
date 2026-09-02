@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-serve
 title: 数据类型说明
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API > 数据类型说明
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:01+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1c9591b044df826b7e2c8f476eea7a61c83cd5085300203264ccbba6c812d438
+scraped_at: 2026-09-02T14:53:20+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:059f9185a234a0450a5b1089ce45faf3d1cf6a74a85b429888e076a1f5eb3aa9
 ---
 
 ## PurchaseOrderPayload
@@ -20,13 +20,13 @@ content_hash: sha256:1c9591b044df826b7e2c8f476eea7a61c83cd5085300203264ccbba6c81
 | applicationId | 是 | String | 应用ID，获取方式参见[配置应用身份信息](../harmonyos-guides/iap-config-app-identity-info.md)。 |
 | productId | 是 | String | 商品ID。 |
 | productType | 是 | String | 商品类型。具体取值如下：  0：消耗型商品  1：非消耗型商品  2：自动续期订阅商品  3：非续期订阅商品 |
-| quantity | 否 | Long | 购买的商品数量。仅适用于消耗型商品和非续期订阅型商品的批量购买场景。  **说明：** 如果开发者使用了quantity参数以支持商品的批量购买，则需要在发货时校验下单的商品数量和最终发货商品数量是否一致，避免造成漏发、多发的情况。  **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。  **起始版本：** 5.0.3(15) |
+| quantity | 否 | Long | 购买的商品数量。仅适用于消耗型商品和非续期订阅型商品的批量购买场景。  一次请求数量不超过10个。  **说明：** 如果开发者使用了quantity参数以支持商品的批量购买，则需要在发货时校验下单的商品数量和最终发货商品数量是否一致，避免造成漏发、多发的情况。  **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。  **起始版本：** 5.0.3(15) |
 | purchaseTime | 是 | Long | 购买时间，UTC时间戳，以毫秒为单位。  如果没有完成购买，则没有值。 |
 | finishStatus | 否 | String | 发货状态。具体取值如下：  1：已发货  2：未发货 |
 | needFinish | 否 | Boolean | 是否需要确认发货，完成购买。具体取值如下：  - true：必须确认发货，完成购买  - false：可选确认发货，完成购买 |
 | price | 是 | Long | 价格，单位：分。 |
 | currency | 是 | String | 币种，请参见[ISO 4217](https://www.iso.org/iso-4217-currency-codes.html)标准。例如CNY、USD、MYR。 |
-| developerPayload | 否 | String | 商户侧保留信息，由应用在调用支付接口时传入。 |
+| developerPayload | 否 | String | 商户侧保留信息，由开发者在调用[支付接口](iap-iap.md#iapcreatepurchase)时传入。 |
 | purchaseOrderRevocationReasonCode | 否 | String | 购买订单撤销原因。  0：其他  1：用户遇到问题退款 |
 | revocationTime | 否 | Long | 购买订单撤销时间，UTC时间戳，以毫秒为单位。 |
 | offerTypeCode | 否 | String | 优惠类型。  消耗型/非消耗型/非续期订阅商品:  1：优惠促销  自动续期订阅商品：  1：推介促销  2：优惠促销  4：挽留促销 |
@@ -41,7 +41,7 @@ content_hash: sha256:1c9591b044df826b7e2c8f476eea7a61c83cd5085300203264ccbba6c81
 | subGroupGenerationId | 是 | String | 订阅组的代ID。  - 用户切换订阅商品时，此ID不会改变。  - 订阅失效且超出[保留期](../harmonyos-guides/iap-subscription-functions.md#保留期)后，用户重新购买商品时，此ID会改变。 |
 | subscriptionId | 是 | String | 商品的订阅ID。以下场景，此ID会发生改变：  - 用户切换订阅商品时。  - 订阅失效且超出[保留期](../harmonyos-guides/iap-subscription-functions.md#保留期)后，用户重新购买商品时。 |
 | subGroupId | 是 | String | 订阅型商品所属的商品组ID。 |
-| duration | 是 | String | 此次购买的有效周期，采用ISO 8601格式。例如：P1W表示一周，P1M表示一个月。 |
+| duration | 是 | String | 此次购买的有效周期，采用[ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)格式。例如：P1W表示一周，P1M表示一个月。 |
 | durationTypeCode | 是 | String | 订阅周期段类型。  0：正常周期段  1：延期段 |
 
 ## PurchaseReservedInfo
@@ -59,7 +59,7 @@ content_hash: sha256:1c9591b044df826b7e2c8f476eea7a61c83cd5085300203264ccbba6c81
 
 | 参数 | 是否必选 | 类型 | 说明 |
 | --- | --- | --- | --- |
-| applicationId | 是 | String | APP ID，获取方式参见[配置应用身份信息](../harmonyos-guides/iap-config-app-identity-info.md)。 |
+| applicationId | 是 | String | 应用ID，获取方式参见[配置应用身份信息](../harmonyos-guides/iap-config-app-identity-info.md)。 |
 | productId | 是 | String | 商品ID。 |
 
 ## OfferInfo

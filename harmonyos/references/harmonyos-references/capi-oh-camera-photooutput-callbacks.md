@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: PhotoOutput_Callbacks
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 结构体 > PhotoOutput_Callbacks
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:55+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:da402433d683f9979c8ea9f4b26d2b647dc7636f5a3fcff413e2f1eb51f6c109
+scraped_at: 2026-09-02T15:02:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:297adce8e2b7dedf623f74a076db121dadf647b3dd1d102fe1af85f37e9d29d4
 ---
 
-```
-1. typedef struct PhotoOutput_Callbacks {...} PhotoOutput_Callbacks
+```c
+typedef struct PhotoOutput_Callbacks {...} PhotoOutput_Callbacks
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 拍照输出的回调。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

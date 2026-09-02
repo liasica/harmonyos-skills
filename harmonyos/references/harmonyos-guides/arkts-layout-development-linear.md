@@ -3,26 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 线性布局 (Row/Column)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 组件布局 > 构建布局 > 线性布局 (Row/Column)
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:39+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:70b9f0986f7deb8243a32bf7be0e94bf498193335165aa1fd3eacd4ba19878c9
+scraped_at: 2026-09-02T14:59:17+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:17308c0b4bf12c28a756e0913d6f114f054ae8000308dd6c1868c627e8cb0f9c
 ---
 
 ## 概述
 
 线性布局（LinearLayout）是开发中最常用的布局，通过线性容器[Row](../harmonyos-references/ts-container-row.md)和[Column](../harmonyos-references/ts-container-column.md)构建。线性布局是其他布局的基础，其子元素在线性方向上（水平方向和垂直方向）依次排列。线性布局的排列方向由所选容器组件决定，Row容器内子元素按照水平方向排列，Column容器内子元素按照垂直方向排列。根据不同的排列方向，开发者可选择使用Row或Column容器创建线性布局。
 
-说明
+**说明** 
 
-在复杂界面中使用多组件嵌套时，若布局组件的嵌套层数过深或嵌套的组件数量过多，将会产生额外开销。建议通过移除冗余节点、利用布局边界减少布局计算、合理采用渲染控制语法及布局组件方法来优化性能。最佳实践请参考[布局优化指导](../best-practices/bpta-improve-layout-performance.md)。
+在复杂界面中使用多组件嵌套时，若布局组件的嵌套层数过深或嵌套的组件数量过多，将会产生额外开销。建议通过移除冗余节点、利用布局边界减少布局计算、合理采用渲染控制语法及布局组件方法来优化性能。最佳实践请参考[布局优化指导](arkts-layout-optimization-guidance.md)。
 
 **图1** Column容器内子元素排列示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/BPHu9Zq6T4yVVW8VULosmw/zh-cn_image_0000002558604528.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/fBT706BYTEarFaCoOzbpsg/zh-cn_image_0000002736432549.png)
 
 **图2** Row容器内子元素排列示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/U8lpIzQpTHK3psR-UZWEaw/zh-cn_image_0000002589324053.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/zRVsrIw6QvK4AWQ0pT2vZQ/zh-cn_image_0000002706833396.png)
 
 ## 基本概念
 
@@ -40,39 +40,35 @@ content_hash: sha256:70b9f0986f7deb8243a32bf7be0e94bf498193335165aa1fd3eacd4ba19
 
 **图3** Column容器内排列方向的间距图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/-zttnzJXQBmtVFn96Pt-Kw/zh-cn_image_0000002589243993.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/6fKz66ZPS124EVDYaBIUGg/zh-cn_image_0000002736312505.png)
 
+```typescript
+Column({ space: 20 }) {
+  Text('space: 20').fontSize(15).fontColor(Color.Gray).width('90%')
+  Row().width('90%').height(50).backgroundColor(0xF5DEB3)
+  Row().width('90%').height(50).backgroundColor(0xD2B48C)
+  Row().width('90%').height(50).backgroundColor(0xF5DEB3)
+}.width('100%')
 ```
-1. Column({ space: 20 }) {
-2. Text('space: 20').fontSize(15).fontColor(Color.Gray).width('90%')
-3. Row().width('90%').height(50).backgroundColor(0xF5DEB3)
-4. Row().width('90%').height(50).backgroundColor(0xD2B48C)
-5. Row().width('90%').height(50).backgroundColor(0xF5DEB3)
-6. }.width('100%')
-```
 
-[ColumnLayoutExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/ColumnLayoutExample.ets#L20-L27)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/UT6hJMKQSeCw6_Q0YJva6g/zh-cn_image_0000002558764186.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/wbA4rLl5SGyyMwKxTUNlqw/zh-cn_image_0000002706673462.png)
 
 ### Row容器内排列方向上的间距
 
 **图4** Row容器内排列方向的间距图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/gaQ-9NE7SHqZK5B_SvwbpQ/zh-cn_image_0000002558604530.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/V2rn3-O0R1qJjF-GMxmGiQ/zh-cn_image_0000002736432551.png)
 
+```typescript
+Row({ space: 35 }) {
+  Text('space: 35').fontSize(15).fontColor(Color.Gray)
+  Row().width('10%').height(150).backgroundColor(0xF5DEB3)
+  Row().width('10%').height(150).backgroundColor(0xD2B48C)
+  Row().width('10%').height(150).backgroundColor(0xF5DEB3)
+}.width('90%')
 ```
-1. Row({ space: 35 }) {
-2. Text('space: 35').fontSize(15).fontColor(Color.Gray)
-3. Row().width('10%').height(150).backgroundColor(0xF5DEB3)
-4. Row().width('10%').height(150).backgroundColor(0xD2B48C)
-5. Row().width('10%').height(150).backgroundColor(0xF5DEB3)
-6. }.width('90%')
-```
 
-[RowLayoutExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/RowLayoutExample.ets#L20-L27)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/8CWXlhnzQWOsgHvKqspskw/zh-cn_image_0000002589324055.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/-U9tyU_wTnSHSSjEztZVqA/zh-cn_image_0000002706833398.png)
 
 ## 布局子元素在主轴上的排列方式
 
@@ -82,231 +78,207 @@ content_hash: sha256:70b9f0986f7deb8243a32bf7be0e94bf498193335165aa1fd3eacd4ba19
 
 **图5** Column容器内子元素在垂直方向上的排列图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/ikbHKaahSreXmS0kU29N_w/zh-cn_image_0000002589243995.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/jJuP38wlT826Q8fSnhoKnw/zh-cn_image_0000002736312507.png)
 
 * justifyContent(FlexAlign.Start，默认值)：元素在垂直方向首端对齐，第一个元素与行首对齐，同时后续的元素与前一个对齐。
 
+  ```typescript
+  Column({}) {
+    Column() {
+    }.width('80%').height(50).backgroundColor(0xF5DEB3)
+
+    Column() {
+    }.width('80%').height(50).backgroundColor(0xD2B48C)
+
+    Column() {
+    }.width('80%').height(50).backgroundColor(0xF5DEB3)
+  }.width('100%').height(300).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.Start)
   ```
-  1. Column({}) {
-  2. Column() {
-  3. }.width('80%').height(50).backgroundColor(0xF5DEB3)
 
-  5. Column() {
-  6. }.width('80%').height(50).backgroundColor(0xD2B48C)
-
-  8. Column() {
-  9. }.width('80%').height(50).backgroundColor(0xF5DEB3)
-  10. }.width('100%').height(300).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.Start)
-  ```
-
-  [ColumnLayoutJustifyContentStart.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/ColumnLayoutJustifyContentStart.ets#L20-L164)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/UnEbcs19Sp6f4JtDgRJBNg/zh-cn_image_0000002558764188.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/J1LNrPNeRvGqSsv9-XHuvA/zh-cn_image_0000002706673464.png)
 * justifyContent(FlexAlign.Center)：元素在垂直方向中心对齐，第一个元素与行首的距离与最后一个元素与行尾距离相同。
 
+  ```typescript
+  Column({}) {
+    Column() {
+    }.width('80%').height(50).backgroundColor(0xF5DEB3)
+
+    Column() {
+    }.width('80%').height(50).backgroundColor(0xD2B48C)
+
+    Column() {
+    }.width('80%').height(50).backgroundColor(0xF5DEB3)
+  }.width('100%').height(300).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.Center)
   ```
-  1. Column({}) {
-  2. Column() {
-  3. }.width('80%').height(50).backgroundColor(0xF5DEB3)
 
-  5. Column() {
-  6. }.width('80%').height(50).backgroundColor(0xD2B48C)
-
-  8. Column() {
-  9. }.width('80%').height(50).backgroundColor(0xF5DEB3)
-  10. }.width('100%').height(300).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.Center)
-  ```
-
-  [ColumnLayoutJustifyContentCenter.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/ColumnLayoutJustifyContentCenter.ets#L20-L31)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/NvzojBLsR4ypnmBehmxWdQ/zh-cn_image_0000002558604532.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/e-pcJ62kRHGciYx4TMzGdg/zh-cn_image_0000002736432553.png)
 * justifyContent(FlexAlign.End)：元素在垂直方向尾部对齐，最后一个元素与行尾对齐，其他元素与后一个对齐。
 
+  ```typescript
+  Column({}) {
+    Column() {
+    }.width('80%').height(50).backgroundColor(0xF5DEB3)
+
+    Column() {
+    }.width('80%').height(50).backgroundColor(0xD2B48C)
+
+    Column() {
+    }.width('80%').height(50).backgroundColor(0xF5DEB3)
+  }.width('100%').height(300).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.End)
   ```
-  1. Column({}) {
-  2. Column() {
-  3. }.width('80%').height(50).backgroundColor(0xF5DEB3)
 
-  5. Column() {
-  6. }.width('80%').height(50).backgroundColor(0xD2B48C)
-
-  8. Column() {
-  9. }.width('80%').height(50).backgroundColor(0xF5DEB3)
-  10. }.width('100%').height(300).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.End)
-  ```
-
-  [ColumnLayoutJustifyContentEnd.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/ColumnLayoutJustifyContentEnd.ets#L20-L31)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/BvMz2mOQRgC_NwcramVHjQ/zh-cn_image_0000002589324057.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/ZE4uy6TJQMiJosFbxRDhCg/zh-cn_image_0000002706833400.png)
 * justifyContent(FlexAlign.SpaceBetween)：垂直方向均匀分配元素，相邻元素之间距离相同。第一个元素与行首对齐，最后一个元素与行尾对齐。
 
+  ```typescript
+  Column({}) {
+    Column() {
+    }.width('80%').height(50).backgroundColor(0xF5DEB3)
+
+    Column() {
+    }.width('80%').height(50).backgroundColor(0xD2B48C)
+
+    Column() {
+    }.width('80%').height(50).backgroundColor(0xF5DEB3)
+  }.width('100%').height(300).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.SpaceBetween)
   ```
-  1. Column({}) {
-  2. Column() {
-  3. }.width('80%').height(50).backgroundColor(0xF5DEB3)
 
-  5. Column() {
-  6. }.width('80%').height(50).backgroundColor(0xD2B48C)
-
-  8. Column() {
-  9. }.width('80%').height(50).backgroundColor(0xF5DEB3)
-  10. }.width('100%').height(300).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.SpaceBetween)
-  ```
-
-  [ColumnLayoutJustifyContentSpaceBetween.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/ColumnLayoutJustifyContentSpaceBetween.ets#L20-L31)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/B__YjFwuQG-uy0eHR8XOSg/zh-cn_image_0000002589243997.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/J3k0grkMT6WEszZvaUv6nw/zh-cn_image_0000002736312509.png)
 * justifyContent(FlexAlign.SpaceAround)：垂直方向均匀分配元素，相邻元素之间距离相同。第一个元素到行首的距离和最后一个元素到行尾的距离是相邻元素之间距离的一半。
 
+  ```typescript
+  Column({}) {
+    Column() {
+    }.width('80%').height(50).backgroundColor(0xF5DEB3)
+
+    Column() {
+    }.width('80%').height(50).backgroundColor(0xD2B48C)
+
+    Column() {
+    }.width('80%').height(50).backgroundColor(0xF5DEB3)
+  }.width('100%').height(300).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.SpaceAround)
   ```
-  1. Column({}) {
-  2. Column() {
-  3. }.width('80%').height(50).backgroundColor(0xF5DEB3)
 
-  5. Column() {
-  6. }.width('80%').height(50).backgroundColor(0xD2B48C)
-
-  8. Column() {
-  9. }.width('80%').height(50).backgroundColor(0xF5DEB3)
-  10. }.width('100%').height(300).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.SpaceAround)
-  ```
-
-  [ColumnLayoutJustifyContentSpaceAround.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/ColumnLayoutJustifyContentSpaceAround.ets#L20-L31)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/NRjt-iizSM2jbauZj3NRHA/zh-cn_image_0000002558764190.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/-l4MzaCBRDqUb_zeO0UXFQ/zh-cn_image_0000002706673466.png)
 * justifyContent(FlexAlign.SpaceEvenly)：垂直方向均匀分配元素，相邻元素之间的距离、第一个元素与行首的间距、最后一个元素到行尾的间距都完全一样。
 
+  ```typescript
+  Column({}) {
+    Column() {
+    }.width('80%').height(50).backgroundColor(0xF5DEB3)
+
+    Column() {
+    }.width('80%').height(50).backgroundColor(0xD2B48C)
+
+    Column() {
+    }.width('80%').height(50).backgroundColor(0xF5DEB3)
+  }.width('100%').height(300).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.SpaceEvenly)
   ```
-  1. Column({}) {
-  2. Column() {
-  3. }.width('80%').height(50).backgroundColor(0xF5DEB3)
 
-  5. Column() {
-  6. }.width('80%').height(50).backgroundColor(0xD2B48C)
-
-  8. Column() {
-  9. }.width('80%').height(50).backgroundColor(0xF5DEB3)
-  10. }.width('100%').height(300).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.SpaceEvenly)
-  ```
-
-  [ColumnLayoutJustifyContentSpaceEvenly.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/ColumnLayoutJustifyContentSpaceEvenly.ets#L20-L31)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/Lc_9OezgTlaHAC7pNLJEjQ/zh-cn_image_0000002558604534.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/PVXAwpSETuav0O-Zy3cj8w/zh-cn_image_0000002736432555.png)
 
 ### Row容器内子元素在水平方向上的排列
 
 **图6** Row容器内子元素在水平方向上的排列图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/iuJhoctNQt2iWx1_cYiKjA/zh-cn_image_0000002589324059.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/6th3155uRz2CB1DSmfo7Mw/zh-cn_image_0000002706833402.png)
 
 * justifyContent(FlexAlign.Start，默认值)：元素在水平方向首端对齐，第一个元素与行首对齐，同时后续的元素与前一个对齐。
 
+  ```typescript
+  Row({}) {
+    Column() {
+    }.width('20%').height(30).backgroundColor(0xF5DEB3)
+
+    Column() {
+    }.width('20%').height(30).backgroundColor(0xD2B48C)
+
+    Column() {
+    }.width('20%').height(30).backgroundColor(0xF5DEB3)
+  }.width('100%').height(200).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.Start)
   ```
-  1. Row({}) {
-  2. Column() {
-  3. }.width('20%').height(30).backgroundColor(0xF5DEB3)
 
-  5. Column() {
-  6. }.width('20%').height(30).backgroundColor(0xD2B48C)
-
-  8. Column() {
-  9. }.width('20%').height(30).backgroundColor(0xF5DEB3)
-  10. }.width('100%').height(200).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.Start)
-  ```
-
-  [RowLayoutJustifyContentStart.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/RowLayoutJustifyContentStart.ets#L20-L146)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/LqRpnAHRS9Se5osgdNGC3Q/zh-cn_image_0000002589243999.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/_7vodfn8THuxbLoi5hqbLg/zh-cn_image_0000002736312511.png)
 * justifyContent(FlexAlign.Center)：元素在水平方向中心对齐，第一个元素与行首的距离与最后一个元素与行尾距离相同。
 
+  ```typescript
+  Row({}) {
+    Column() {
+    }.width('20%').height(30).backgroundColor(0xF5DEB3)
+
+    Column() {
+    }.width('20%').height(30).backgroundColor(0xD2B48C)
+
+    Column() {
+    }.width('20%').height(30).backgroundColor(0xF5DEB3)
+  }.width('100%').height(200).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.Center)
   ```
-  1. Row({}) {
-  2. Column() {
-  3. }.width('20%').height(30).backgroundColor(0xF5DEB3)
 
-  5. Column() {
-  6. }.width('20%').height(30).backgroundColor(0xD2B48C)
-
-  8. Column() {
-  9. }.width('20%').height(30).backgroundColor(0xF5DEB3)
-  10. }.width('100%').height(200).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.Center)
-  ```
-
-  [RowLayoutJustifyContentCenter.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/RowLayoutJustifyContentCenter.ets#L20-L31)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/iQtDnyHmTMitrW17PVKqMw/zh-cn_image_0000002558764192.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/turkP1kkTuSjmGT61otwrg/zh-cn_image_0000002706673468.png)
 * justifyContent(FlexAlign.End)：元素在水平方向尾部对齐，最后一个元素与行尾对齐，其他元素与后一个对齐。
 
+  ```typescript
+  Row({}) {
+    Column() {
+    }.width('20%').height(30).backgroundColor(0xF5DEB3)
+
+    Column() {
+    }.width('20%').height(30).backgroundColor(0xD2B48C)
+
+    Column() {
+    }.width('20%').height(30).backgroundColor(0xF5DEB3)
+  }.width('100%').height(200).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.End)
   ```
-  1. Row({}) {
-  2. Column() {
-  3. }.width('20%').height(30).backgroundColor(0xF5DEB3)
 
-  5. Column() {
-  6. }.width('20%').height(30).backgroundColor(0xD2B48C)
-
-  8. Column() {
-  9. }.width('20%').height(30).backgroundColor(0xF5DEB3)
-  10. }.width('100%').height(200).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.End)
-  ```
-
-  [RowLayoutJustifyContentEnd.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/RowLayoutJustifyContentEnd.ets#L20-L31)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/jghS6_S2QgeRG_QMZhOgog/zh-cn_image_0000002558604536.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/ndNTrunAQWiDcbP1JEDuzQ/zh-cn_image_0000002736432557.png)
 * justifyContent(FlexAlign.SpaceBetween)：水平方向均匀分配元素，相邻元素之间距离相同。第一个元素与行首对齐，最后一个元素与行尾对齐。
 
+  ```typescript
+  Row({}) {
+    Column() {
+    }.width('20%').height(30).backgroundColor(0xF5DEB3)
+
+    Column() {
+    }.width('20%').height(30).backgroundColor(0xD2B48C)
+
+    Column() {
+    }.width('20%').height(30).backgroundColor(0xF5DEB3)
+  }.width('100%').height(200).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.SpaceBetween)
   ```
-  1. Row({}) {
-  2. Column() {
-  3. }.width('20%').height(30).backgroundColor(0xF5DEB3)
 
-  5. Column() {
-  6. }.width('20%').height(30).backgroundColor(0xD2B48C)
-
-  8. Column() {
-  9. }.width('20%').height(30).backgroundColor(0xF5DEB3)
-  10. }.width('100%').height(200).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.SpaceBetween)
-  ```
-
-  [RowLayoutJustifyContentSpaceBetween.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/RowLayoutJustifyContentSpaceBetween.ets#L20-L31)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/TVMYlm5MRI6xGNWk9TCd4g/zh-cn_image_0000002589324061.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/9ULT-pxHT-efpGJZIKV_Ew/zh-cn_image_0000002706833404.png)
 * justifyContent(FlexAlign.SpaceAround)：水平方向均匀分配元素，相邻元素之间距离相同。第一个元素到行首的距离和最后一个元素到行尾的距离是相邻元素之间距离的一半。
 
+  ```typescript
+  Row({}) {
+    Column() {
+    }.width('20%').height(30).backgroundColor(0xF5DEB3)
+
+    Column() {
+    }.width('20%').height(30).backgroundColor(0xD2B48C)
+
+    Column() {
+    }.width('20%').height(30).backgroundColor(0xF5DEB3)
+  }.width('100%').height(200).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.SpaceAround)
   ```
-  1. Row({}) {
-  2. Column() {
-  3. }.width('20%').height(30).backgroundColor(0xF5DEB3)
 
-  5. Column() {
-  6. }.width('20%').height(30).backgroundColor(0xD2B48C)
-
-  8. Column() {
-  9. }.width('20%').height(30).backgroundColor(0xF5DEB3)
-  10. }.width('100%').height(200).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.SpaceAround)
-  ```
-
-  [RowLayoutJustifyContentSpaceAround.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/RowLayoutJustifyContentSpaceAround.ets#L20-L31)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/540PHJozR3Ksq12oHMsOjA/zh-cn_image_0000002589244001.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/Egef2RDbQP6RIaKDpUWnWw/zh-cn_image_0000002736312513.png)
 * justifyContent(FlexAlign.SpaceEvenly)：水平方向均匀分配元素，相邻元素之间的距离、第一个元素与行首的间距、最后一个元素到行尾的间距都完全一样。
 
+  ```typescript
+  Row({}) {
+    Column() {
+    }.width('20%').height(30).backgroundColor(0xF5DEB3)
+
+    Column() {
+    }.width('20%').height(30).backgroundColor(0xD2B48C)
+
+    Column() {
+    }.width('20%').height(30).backgroundColor(0xF5DEB3)
+  }.width('100%').height(200).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.SpaceEvenly)
   ```
-  1. Row({}) {
-  2. Column() {
-  3. }.width('20%').height(30).backgroundColor(0xF5DEB3)
 
-  5. Column() {
-  6. }.width('20%').height(30).backgroundColor(0xD2B48C)
-
-  8. Column() {
-  9. }.width('20%').height(30).backgroundColor(0xF5DEB3)
-  10. }.width('100%').height(200).backgroundColor('rgb(242,242,242)').justifyContent(FlexAlign.SpaceEvenly)
-  ```
-
-  [RowLayoutJustifyContentSpaceEvenly.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/RowLayoutJustifyContentSpaceEvenly.ets#L20-L31)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/OXS89gkHStOd5NrsSaDeBA/zh-cn_image_0000002558764194.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/RDJ-qKssRdC-zWNiTI1uRw/zh-cn_image_0000002706673470.png)
 
 ## 布局子元素在交叉轴上的对齐方式
 
@@ -318,153 +290,139 @@ content_hash: sha256:70b9f0986f7deb8243a32bf7be0e94bf498193335165aa1fd3eacd4ba19
 
 **图7** Column容器内子元素在水平方向上的排列图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/Hg8WFGOWRLWvYUM95dnd3Q/zh-cn_image_0000002558604538.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/Sj_ZcemRQNOKV8jLRwMASg/zh-cn_image_0000002736432559.png)
 
 * HorizontalAlign.Start：子元素在水平方向左对齐。
 
+  ```typescript
+  Column({}) {
+    Column() {
+    }.width('80%').height(50).backgroundColor(0xF5DEB3)
+
+    Column() {
+    }.width('80%').height(50).backgroundColor(0xD2B48C)
+
+    Column() {
+    }.width('80%').height(50).backgroundColor(0xF5DEB3)
+  }.width('100%').alignItems(HorizontalAlign.Start).backgroundColor('rgb(242,242,242)')
   ```
-  1. Column({}) {
-  2. Column() {
-  3. }.width('80%').height(50).backgroundColor(0xF5DEB3)
 
-  5. Column() {
-  6. }.width('80%').height(50).backgroundColor(0xD2B48C)
-
-  8. Column() {
-  9. }.width('80%').height(50).backgroundColor(0xF5DEB3)
-  10. }.width('100%').alignItems(HorizontalAlign.Start).backgroundColor('rgb(242,242,242)')
-  ```
-
-  [RowLayoutHorizontalAlignStart.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/RowLayoutHorizontalAlignStart.ets#L20-L74)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/6U7-mzgsSxirQhYogfrxKA/zh-cn_image_0000002589324063.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/QDbinkt_TEyqTvRYEql4sA/zh-cn_image_0000002706833406.png)
 * HorizontalAlign.Center（默认值）：子元素在水平方向居中对齐。
 
+  ```typescript
+  Column({}) {
+    Column() {
+    }.width('80%').height(50).backgroundColor(0xF5DEB3)
+
+    Column() {
+    }.width('80%').height(50).backgroundColor(0xD2B48C)
+
+    Column() {
+    }.width('80%').height(50).backgroundColor(0xF5DEB3)
+  }.width('100%').alignItems(HorizontalAlign.Center).backgroundColor('rgb(242,242,242)')
   ```
-  1. Column({}) {
-  2. Column() {
-  3. }.width('80%').height(50).backgroundColor(0xF5DEB3)
 
-  5. Column() {
-  6. }.width('80%').height(50).backgroundColor(0xD2B48C)
-
-  8. Column() {
-  9. }.width('80%').height(50).backgroundColor(0xF5DEB3)
-  10. }.width('100%').alignItems(HorizontalAlign.Center).backgroundColor('rgb(242,242,242)')
-  ```
-
-  [RowLayoutHorizontalAlignCenter.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/RowLayoutHorizontalAlignCenter.ets#L20-L31)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/Vv3djp_3T9eMyEyELp4rUg/zh-cn_image_0000002589244003.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/kBFKzVsySYCymTjIdUkCjw/zh-cn_image_0000002736312515.png)
 * HorizontalAlign.End：子元素在水平方向右对齐。
 
+  ```typescript
+  Column({}) {
+    Column() {
+    }.width('80%').height(50).backgroundColor(0xF5DEB3)
+
+    Column() {
+    }.width('80%').height(50).backgroundColor(0xD2B48C)
+
+    Column() {
+    }.width('80%').height(50).backgroundColor(0xF5DEB3)
+  }.width('100%').alignItems(HorizontalAlign.End).backgroundColor('rgb(242,242,242)')
   ```
-  1. Column({}) {
-  2. Column() {
-  3. }.width('80%').height(50).backgroundColor(0xF5DEB3)
 
-  5. Column() {
-  6. }.width('80%').height(50).backgroundColor(0xD2B48C)
-
-  8. Column() {
-  9. }.width('80%').height(50).backgroundColor(0xF5DEB3)
-  10. }.width('100%').alignItems(HorizontalAlign.End).backgroundColor('rgb(242,242,242)')
-  ```
-
-  [RowLayoutHorizontalAlignEnd.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/RowLayoutHorizontalAlignEnd.ets#L20-L31)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/ZgEHoh_bTzWGVgvxOH9whA/zh-cn_image_0000002558764196.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/7DDrH-39SoW-JIZgjb3Tew/zh-cn_image_0000002706673472.png)
 
 ### Row容器内子元素在垂直方向上的排列
 
 **图8** Row容器内子元素在垂直方向上的排列图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/1Ixx_nNARi-wsCLLJLuUSw/zh-cn_image_0000002558604540.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/FFCgNdHvTCGqbprWvGHeCw/zh-cn_image_0000002736432561.png)
 
 * VerticalAlign.Top：子元素在垂直方向顶部对齐。
 
+  ```typescript
+  Row({}) {
+    Column() {
+    }.width('20%').height(30).backgroundColor(0xF5DEB3)
+
+    Column() {
+    }.width('20%').height(30).backgroundColor(0xD2B48C)
+
+    Column() {
+    }.width('20%').height(30).backgroundColor(0xF5DEB3)
+  }.width('100%').height(200).alignItems(VerticalAlign.Top).backgroundColor('rgb(242,242,242)')
   ```
-  1. Row({}) {
-  2. Column() {
-  3. }.width('20%').height(30).backgroundColor(0xF5DEB3)
 
-  5. Column() {
-  6. }.width('20%').height(30).backgroundColor(0xD2B48C)
-
-  8. Column() {
-  9. }.width('20%').height(30).backgroundColor(0xF5DEB3)
-  10. }.width('100%').height(200).alignItems(VerticalAlign.Top).backgroundColor('rgb(242,242,242)')
-  ```
-
-  [RowLayoutVerticalAlignTop.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/RowLayoutVerticalAlignTop.ets#L20-L31)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/m0l4-PKuSZqTbbnpKbl34w/zh-cn_image_0000002589324065.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/rBginb5PS9qabW0Ji1Gyfg/zh-cn_image_0000002706833408.png)
 * VerticalAlign.Center（默认值）：子元素在垂直方向居中对齐。
 
+  ```typescript
+  Row({}) {
+    Column() {
+    }.width('20%').height(30).backgroundColor(0xF5DEB3)
+
+    Column() {
+    }.width('20%').height(30).backgroundColor(0xD2B48C)
+
+    Column() {
+    }.width('20%').height(30).backgroundColor(0xF5DEB3)
+  }.width('100%').height(200).alignItems(VerticalAlign.Center).backgroundColor('rgb(242,242,242)')
   ```
-  1. Row({}) {
-  2. Column() {
-  3. }.width('20%').height(30).backgroundColor(0xF5DEB3)
 
-  5. Column() {
-  6. }.width('20%').height(30).backgroundColor(0xD2B48C)
-
-  8. Column() {
-  9. }.width('20%').height(30).backgroundColor(0xF5DEB3)
-  10. }.width('100%').height(200).alignItems(VerticalAlign.Center).backgroundColor('rgb(242,242,242)')
-  ```
-
-  [RowLayoutVerticalAlignCenter.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/RowLayoutVerticalAlignCenter.ets#L20-L31)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/MBj3ZtonRsyFnsneOQzmlg/zh-cn_image_0000002589244005.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/MfvvtJCpTlihcrBMg9ALgQ/zh-cn_image_0000002736312517.png)
 * VerticalAlign.Bottom：子元素在垂直方向底部对齐。
 
+  ```typescript
+  Row({}) {
+    Column() {
+    }.width('20%').height(30).backgroundColor(0xF5DEB3)
+
+    Column() {
+    }.width('20%').height(30).backgroundColor(0xD2B48C)
+
+    Column() {
+    }.width('20%').height(30).backgroundColor(0xF5DEB3)
+  }.width('100%').height(200).alignItems(VerticalAlign.Bottom).backgroundColor('rgb(242,242,242)')
   ```
-  1. Row({}) {
-  2. Column() {
-  3. }.width('20%').height(30).backgroundColor(0xF5DEB3)
 
-  5. Column() {
-  6. }.width('20%').height(30).backgroundColor(0xD2B48C)
-
-  8. Column() {
-  9. }.width('20%').height(30).backgroundColor(0xF5DEB3)
-  10. }.width('100%').height(200).alignItems(VerticalAlign.Bottom).backgroundColor('rgb(242,242,242)')
-  ```
-
-  [RowLayoutVerticalAlignBottom.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/RowLayoutVerticalAlignBottom.ets#L20-L31)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/jrkh6syRQuOCv3AIze5Ghg/zh-cn_image_0000002558764198.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/1dgyLqbZRDSXdolDzuczrg/zh-cn_image_0000002706673474.png)
 
 ## 自适应拉伸
 
 在线性布局下，常用空白填充组件[Blank](../harmonyos-references/ts-basic-components-blank.md)，在容器主轴方向自动填充空白空间，达到自适应拉伸效果。Row和Column作为容器，只需要添加宽高为百分比，当屏幕宽高发生变化时，会产生自适应效果。
 
+```typescript
+@Entry
+@Component
+struct BlankExample {
+  build() {
+    Column() {
+      Row() {
+        Text('Bluetooth').fontSize(18)
+        Blank()
+        Toggle({ type: ToggleType.Switch, isOn: true })
+      }.backgroundColor(0xFFFFFF).borderRadius(15).padding({ left: 12 }).width('100%')
+    }.backgroundColor(0xEFEFEF).padding(20).width('100%')
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct BlankExample {
-4. build() {
-5. Column() {
-6. Row() {
-7. Text('Bluetooth').fontSize(18)
-8. Blank()
-9. Toggle({ type: ToggleType.Switch, isOn: true })
-10. }.backgroundColor(0xFFFFFF).borderRadius(15).padding({ left: 12 }).width('100%')
-11. }.backgroundColor(0xEFEFEF).padding(20).width('100%')
-12. }
-13. }
-```
-
-[BlankExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/BlankExample.ets#L15-L29)
 
 **图9** 竖屏（自适应屏幕窄边）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/AkmEB-wHQuGwxcg3zTz_YQ/zh-cn_image_0000002558604542.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/K1C_yCXSSN-NzMjj-ZvIgg/zh-cn_image_0000002736432563.png)
 
 **图10** 横屏（自适应屏幕宽边）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/5lg6WXuhT8CP4KlTOwkrtg/zh-cn_image_0000002589324067.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/uUCr5CPRQIKXWLGarUhCXw/zh-cn_image_0000002706833410.png "点击放大")
 
 ## 自适应缩放
 
@@ -472,100 +430,96 @@ content_hash: sha256:70b9f0986f7deb8243a32bf7be0e94bf498193335165aa1fd3eacd4ba19
 
 * 父容器尺寸确定时，使用[layoutWeight](../harmonyos-references/ts-universal-attributes-size.md#layoutweight)属性设置子元素和兄弟元素在主轴上的权重，忽略元素本身尺寸设置，使它们在任意尺寸的设备下自适应占满剩余空间。
 
+  ```typescript
+  @Entry
+  @Component
+  struct LayoutWeightExample {
+    build() {
+      Column() {
+        Text('1:2:3').width('100%')
+        Row() {
+          Column() {
+            Text('layoutWeight(1)')
+              .textAlign(TextAlign.Center)
+          }.layoutWeight(1).backgroundColor(0xF5DEB3).height('100%')
+
+          Column() {
+            Text('layoutWeight(2)')
+              .textAlign(TextAlign.Center)
+          }.layoutWeight(2).backgroundColor(0xD2B48C).height('100%')
+
+          Column() {
+            Text('layoutWeight(3)')
+              .textAlign(TextAlign.Center)
+          }.layoutWeight(3).backgroundColor(0xF5DEB3).height('100%')
+
+        }.backgroundColor(0xffd306).height('30%')
+
+        Text('2:5:3').width('100%')
+        Row() {
+          Column() {
+            Text('layoutWeight(2)')
+              .textAlign(TextAlign.Center)
+          }.layoutWeight(2).backgroundColor(0xF5DEB3).height('100%')
+
+          Column() {
+            Text('layoutWeight(5)')
+              .textAlign(TextAlign.Center)
+          }.layoutWeight(5).backgroundColor(0xD2B48C).height('100%')
+
+          Column() {
+            Text('layoutWeight(3)')
+              .textAlign(TextAlign.Center)
+          }.layoutWeight(3).backgroundColor(0xF5DEB3).height('100%')
+        }.backgroundColor(0xffd306).height('30%')
+      }
+    }
+  }
   ```
-  1. @Entry
-  2. @Component
-  3. struct LayoutWeightExample {
-  4. build() {
-  5. Column() {
-  6. Text('1:2:3').width('100%')
-  7. Row() {
-  8. Column() {
-  9. Text('layoutWeight(1)')
-  10. .textAlign(TextAlign.Center)
-  11. }.layoutWeight(1).backgroundColor(0xF5DEB3).height('100%')
-
-  13. Column() {
-  14. Text('layoutWeight(2)')
-  15. .textAlign(TextAlign.Center)
-  16. }.layoutWeight(2).backgroundColor(0xD2B48C).height('100%')
-
-  18. Column() {
-  19. Text('layoutWeight(3)')
-  20. .textAlign(TextAlign.Center)
-  21. }.layoutWeight(3).backgroundColor(0xF5DEB3).height('100%')
-
-  23. }.backgroundColor(0xffd306).height('30%')
-
-  25. Text('2:5:3').width('100%')
-  26. Row() {
-  27. Column() {
-  28. Text('layoutWeight(2)')
-  29. .textAlign(TextAlign.Center)
-  30. }.layoutWeight(2).backgroundColor(0xF5DEB3).height('100%')
-
-  32. Column() {
-  33. Text('layoutWeight(5)')
-  34. .textAlign(TextAlign.Center)
-  35. }.layoutWeight(5).backgroundColor(0xD2B48C).height('100%')
-
-  37. Column() {
-  38. Text('layoutWeight(3)')
-  39. .textAlign(TextAlign.Center)
-  40. }.layoutWeight(3).backgroundColor(0xF5DEB3).height('100%')
-  41. }.backgroundColor(0xffd306).height('30%')
-  42. }
-  43. }
-  44. }
-  ```
-
-  [LayoutWeightExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/LayoutWeightExample.ets#L15-L60)
 
   **图11** 横屏
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/8r1WSO6WTvyd45L5KipifQ/zh-cn_image_0000002589244007.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/WJDCb082SOu-TeNwCZvayg/zh-cn_image_0000002736312519.png)
 
   **图12** 竖屏
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/Kt3rB8U-TVKChm5mIr9Ruw/zh-cn_image_0000002558764200.png)
-* 父容器尺寸确定时，使用百分比设置子元素和兄弟元素的宽度，使他们在任意尺寸的设备下保持固定的自适应占比。
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/0cK11vx9Tr6SYmQvyjH0HQ/zh-cn_image_0000002706673476.png "点击放大")
+* 父容器尺寸确定时，使用百分比设置子元素和兄弟元素的宽度，使它们在任意尺寸的设备下保持固定的自适应占比。
 
+  ```typescript
+  @Entry
+  @Component
+  struct WidthExample {
+    build() {
+      Column() {
+        Row() {
+          Column() {
+            Text('left width 20%')
+              .textAlign(TextAlign.Center)
+          }.width('20%').backgroundColor(0xF5DEB3).height('100%')
+
+          Column() {
+            Text('center width 50%')
+              .textAlign(TextAlign.Center)
+          }.width('50%').backgroundColor(0xD2B48C).height('100%')
+
+          Column() {
+            Text('right width 30%')
+              .textAlign(TextAlign.Center)
+          }.width('30%').backgroundColor(0xF5DEB3).height('100%')
+        }.backgroundColor(0xffd306).height('30%')
+      }
+    }
+  }
   ```
-  1. @Entry
-  2. @Component
-  3. struct WidthExample {
-  4. build() {
-  5. Column() {
-  6. Row() {
-  7. Column() {
-  8. Text('left width 20%')
-  9. .textAlign(TextAlign.Center)
-  10. }.width('20%').backgroundColor(0xF5DEB3).height('100%')
-
-  12. Column() {
-  13. Text('center width 50%')
-  14. .textAlign(TextAlign.Center)
-  15. }.width('50%').backgroundColor(0xD2B48C).height('100%')
-
-  17. Column() {
-  18. Text('right width 30%')
-  19. .textAlign(TextAlign.Center)
-  20. }.width('30%').backgroundColor(0xF5DEB3).height('100%')
-  21. }.backgroundColor(0xffd306).height('30%')
-  22. }
-  23. }
-  24. }
-  ```
-
-  [WidthExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/WidthExample.ets#L15-L40)
 
   **图13** 横屏
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/g1cOH6F2Qwq71i4QTzZHwQ/zh-cn_image_0000002558604544.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/pDAbDw3BRyOHMF33VqGg9Q/zh-cn_image_0000002736432565.png "点击放大")
 
   **图14** 竖屏
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/3-O8suVvSWuNv8FNBPqv1w/zh-cn_image_0000002589324069.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/sFKTtf8-QqaJLpCqx6ssTA/zh-cn_image_0000002706833412.png)
 
 ## 自适应延伸
 
@@ -576,80 +530,76 @@ content_hash: sha256:70b9f0986f7deb8243a32bf7be0e94bf498193335165aa1fd3eacd4ba19
 
   垂直方向布局中使用Scroll组件：
 
+  ```typescript
+  @Entry
+  @Component
+  struct ScrollVerticalExample {
+    scroller: Scroller = new Scroller();
+    private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+    build() {
+      Scroll(this.scroller) {
+        Column() {
+          ForEach(this.arr, (item?:number|undefined) => {
+            if(item != undefined){
+              Text(item.toString())
+                .width('90%')
+                .height(150)
+                .backgroundColor(0xFFFFFF)
+                .borderRadius(15)
+                .fontSize(16)
+                .textAlign(TextAlign.Center)
+                .margin({ top: 10 })
+            }
+          }, (item:number) => item.toString())
+        }.width('100%')
+      }
+      .backgroundColor(0xDCDCDC)
+      .scrollable(ScrollDirection.Vertical) // 滚动方向为垂直方向
+      .scrollBar(BarState.On) // 滚动条常驻显示
+      .scrollBarColor(Color.Gray) // 滚动条颜色
+      .scrollBarWidth(10) // 滚动条宽度
+      .edgeEffect(EdgeEffect.Spring) // 滚动到边沿后回弹
+    }
+  }
   ```
-  1. @Entry
-  2. @Component
-  3. struct ScrollVerticalExample {
-  4. scroller: Scroller = new Scroller();
-  5. private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-  7. build() {
-  8. Scroll(this.scroller) {
-  9. Column() {
-  10. ForEach(this.arr, (item?:number|undefined) => {
-  11. if(item != undefined){
-  12. Text(item.toString())
-  13. .width('90%')
-  14. .height(150)
-  15. .backgroundColor(0xFFFFFF)
-  16. .borderRadius(15)
-  17. .fontSize(16)
-  18. .textAlign(TextAlign.Center)
-  19. .margin({ top: 10 })
-  20. }
-  21. }, (item:number) => item.toString())
-  22. }.width('100%')
-  23. }
-  24. .backgroundColor(0xDCDCDC)
-  25. .scrollable(ScrollDirection.Vertical) // 滚动方向为垂直方向
-  26. .scrollBar(BarState.On) // 滚动条常驻显示
-  27. .scrollBarColor(Color.Gray) // 滚动条颜色
-  28. .scrollBarWidth(10) // 滚动条宽度
-  29. .edgeEffect(EdgeEffect.Spring) // 滚动到边沿后回弹
-  30. }
-  31. }
-  ```
-
-  [ScrollVerticalExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/ScrollVerticalExample.ets#L15-L47)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/7viPQkgERbudLlnOviud1A/zh-cn_image_0000002589244009.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/sZzqeAi4Tx6SOfoLLYetxA/zh-cn_image_0000002736312521.gif)
 
   水平方向布局中使用Scroll组件：
 
+  ```typescript
+  @Entry
+  @Component
+  struct ScrollHorizontalExample {
+    scroller: Scroller = new Scroller();
+    private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+    build() {
+      Scroll(this.scroller) {
+        Row() {
+          ForEach(this.arr, (item?:number|undefined) => {
+            if(item != undefined){
+              Text(item.toString())
+                .height('90%')
+                .width(150)
+                .backgroundColor(0xFFFFFF)
+                .borderRadius(15)
+                .fontSize(16)
+                .textAlign(TextAlign.Center)
+                .margin({ left: 10 })
+            }
+          })
+        }.height('100%')
+      }
+      .backgroundColor(0xDCDCDC)
+      .scrollable(ScrollDirection.Horizontal) // 滚动方向为水平方向
+      .scrollBar(BarState.On) // 滚动条常驻显示
+      .scrollBarColor(Color.Gray) // 滚动条颜色
+      .scrollBarWidth(10) // 滚动条宽度
+      .edgeEffect(EdgeEffect.Spring) // 滚动到边沿后回弹
+    }
+  }
   ```
-  1. @Entry
-  2. @Component
-  3. struct ScrollHorizontalExample {
-  4. scroller: Scroller = new Scroller();
-  5. private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-  7. build() {
-  8. Scroll(this.scroller) {
-  9. Row() {
-  10. ForEach(this.arr, (item?:number|undefined) => {
-  11. if(item != undefined){
-  12. Text(item.toString())
-  13. .height('90%')
-  14. .width(150)
-  15. .backgroundColor(0xFFFFFF)
-  16. .borderRadius(15)
-  17. .fontSize(16)
-  18. .textAlign(TextAlign.Center)
-  19. .margin({ left: 10 })
-  20. }
-  21. })
-  22. }.height('100%')
-  23. }
-  24. .backgroundColor(0xDCDCDC)
-  25. .scrollable(ScrollDirection.Horizontal) // 滚动方向为水平方向
-  26. .scrollBar(BarState.On) // 滚动条常驻显示
-  27. .scrollBarColor(Color.Gray) // 滚动条颜色
-  28. .scrollBarWidth(10) // 滚动条宽度
-  29. .edgeEffect(EdgeEffect.Spring) // 滚动到边沿后回弹
-  30. }
-  31. }
-  ```
-
-  [ScrollHorizontalExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/linearlayout/ScrollHorizontalExample.ets#L15-L47)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/6YCmaJU_SrK5bMwVwCmgEQ/zh-cn_image_0000002558764202.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/eT-PuoAbRue_IjQRI4aiWg/zh-cn_image_0000002706673478.gif)

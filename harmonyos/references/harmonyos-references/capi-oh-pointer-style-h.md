@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-p
 title: oh_pointer_style.h
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > C API > 头文件 > oh_pointer_style.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:17+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ca0cd34ed19b92b96ef2a9c0c85cda9b8e5cbdfb3e27804ee11c4ba4aaaa25dd
+scraped_at: 2026-09-02T15:02:09+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:073b620764fd421c4b0f13216b9dd0e74ae49aac53ae8817e9066fcee6be1ecf
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 鼠标光标的样式。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,14 +32,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### Input\_PointerStyle
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Input_PointerStyle
+```c
+enum Input_PointerStyle
 ```
 
 **描述**
@@ -56,7 +46,7 @@ PhonePC/2in1TabletTVWearable
 
 | 枚举项 | 描述 | 图示 |
 | --- | --- | --- |
-| DEFAULT = 0 | 默认 |  |
+| DEFAULT = 0 | 应用未设置时显示的光标样式。 |  |
 | EAST = 1 | 向东箭头 |  |
 | WEST = 2 | 向西箭头 |  |
 | SOUTH = 3 | 向南箭头 |  |
@@ -70,7 +60,7 @@ PhonePC/2in1TabletTVWearable
 | NORTH\_EAST\_SOUTH\_WEST = 11 | 东北西南调整 |  |
 | NORTH\_WEST\_SOUTH\_EAST = 12 | 西北东南调整 |  |
 | CROSS = 13 | 准确选择 |  |
-| CURSOR\_COPY = 14 | 拷贝 |  |
+| CURSOR\_COPY = 14 | 复制 |  |
 | CURSOR\_FORBID = 15 | 不可用 |  |
 | COLOR\_SUCKER = 16 | 取色器 |  |
 | HAND\_GRABBING = 17 | 并拢的手 |  |
@@ -95,7 +85,7 @@ PhonePC/2in1TabletTVWearable
 | MIDDLE\_BTN\_SOUTH\_EAST = 36 | 向东南滚动 |  |
 | MIDDLE\_BTN\_SOUTH\_WEST = 37 | 向西南滚动 |  |
 | MIDDLE\_BTN\_NORTH\_SOUTH\_WEST\_EAST = 38 | 四向锥形移动 |  |
-| HORIZONTAL\_TEXT\_CURSOR = 39 | 垂直文本选择 |  |
+| HORIZONTAL\_TEXT\_CURSOR = 39 | 水平文本选择 |  |
 | CURSOR\_CROSS = 40 | 十字光标 |  |
 | CURSOR\_CIRCLE = 41 | 圆形光标 |  |
 | LOADING = 42 | 正在载入动画光标 |  |
@@ -105,7 +95,7 @@ PhonePC/2in1TabletTVWearable
 | RUNNING\_RIGHT = 46 | 后台运行中动画光标(拓展2) |  |
 | AECH\_DEVELOPER\_DEFINED\_ICON = 47 | 圆形自定义光标 |  |
 | SCREENRECORDER\_CURSOR = 48 | 录屏光标 |  |
-| LASER\_CURSOR = 49 | 悬浮光标。手写笔进入空鼠模式时使用该光标，无法直接使用 。  空鼠模式支持通过手写笔在空中转动来控制屏幕上虚拟光标的移动，并借助笔身按键实现上下翻页功能，用于演示PPT、隔空操作等场景。 |  |
-| LASER\_CURSOR\_DOT = 50 | 点击光标。手写笔进入空鼠模式时使用该光标，无法直接使用 。  空鼠模式支持通过手写笔在空中转动来控制屏幕上虚拟光标的移动，并借助笔身按键实现上下翻页功能，用于演示PPT、隔空操作等场景。 |  |
-| LASER\_CURSOR\_DOT\_RED = 51 | 激光笔光标。手写笔进入空鼠模式时使用该光标，无法直接使用 。  空鼠模式支持通过手写笔在空中转动来控制屏幕上虚拟光标的移动，并借助笔身按键实现上下翻页功能，用于演示PPT、隔空操作等场景。 |  |
+| LASER\_CURSOR = 49 | 悬浮光标。手写笔进入空鼠模式时使用该光标，无法直接设置。  空鼠模式支持通过手写笔在空中转动来控制屏幕上虚拟光标的移动，并借助笔身按键实现上下翻页功能，用于演示PPT、隔空操作等场景。 |  |
+| LASER\_CURSOR\_DOT = 50 | 点击光标。手写笔进入空鼠模式时使用该光标，无法直接设置。  空鼠模式支持通过手写笔在空中转动来控制屏幕上虚拟光标的移动，并借助笔身按键实现上下翻页功能，用于演示PPT、隔空操作等场景。 |  |
+| LASER\_CURSOR\_DOT\_RED = 51 | 激光笔光标。手写笔进入空鼠模式时使用该光标，无法直接设置。  空鼠模式支持通过手写笔在空中转动来控制屏幕上虚拟光标的移动，并借助笔身按键实现上下翻页功能，用于演示PPT、隔空操作等场景。 |  |
 | DEVELOPER\_DEFINED\_ICON = -100 | 自定义光标，开发者可使用[OH\_Input\_SetCustomCursor](capi-oh-input-manager-h.md#oh_input_setcustomcursor)设置自定义光标，不支持使用[OH\_Input\_SetPointerStyle](capi-oh-input-manager-h.md#oh_input_setpointerstyle)直接设置。 | 自定义光标样式，通过接口设置。 |

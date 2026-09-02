@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-faq-4
 title: 设置地图Logo始终显示
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > Map Kit常见问题 > 设置地图Logo始终显示
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:21+08:00
+scraped_at: 2026-09-02T14:50:29+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:29da7b75a3a6285f47cbb622a1d8dd2afcd54812ebd45777a471bff1dda24ded
+content_hash: sha256:c4dfaca677bbb65049fcfe40e2435f62b349e00c9c01e1798a21573cfa98a5ea
 ---
 
 **现象描述**
 
 Map Kit地图Logo不可见。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/LCPL3o4KRUKO-OFQnQiRmA/zh-cn_image_0000002558765558.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/p_7oqwnGTdSHU9NA2dm59w/zh-cn_image_0000002706835080.jpg "点击放大")
 
 **可能原因**
 
@@ -22,129 +22,129 @@ Map Kit地图Logo不可见。
 
 Map Kit无法隐藏地图Logo，用户可通过调整地图组件的边距或布局，确保地图Logo不被其他控件遮挡。解决方案参考如下代码：
 
-```
-1. import { MapComponent, mapCommon, map } from '@kit.MapKit';
-2. import { AsyncCallback } from '@kit.BasicServicesKit';
+```typescript
+import { MapComponent, mapCommon, map } from '@kit.MapKit';
+import { AsyncCallback } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct MapKitAppDemo {
-7. private mapOptions?: mapCommon.MapOptions;
-8. private callback?: AsyncCallback<map.MapComponentController>;
-9. private mapController?: map.MapComponentController;
-10. private mapEventManager?: map.MapEventManager;
-11. private TAG = 'MapKitAppDemo';
-12. @State isShowSheet: boolean = true;
+@Entry
+@Component
+struct MapKitAppDemo {
+  private mapOptions?: mapCommon.MapOptions;
+  private callback?: AsyncCallback<map.MapComponentController>;
+  private mapController?: map.MapComponentController;
+  private mapEventManager?: map.MapEventManager;
+  private TAG = 'MapKitAppDemo';
+  @State isShowSheet: boolean = true;
 
-14. @Builder
-15. Panel() {
-16. Column() {
-17. Row() {
-18. Text() {
-19. SymbolSpan($r('sys.symbol.magnifyingglass'))
-20. .fontSize(24)
-21. .fontColor([Color.Gray])
-22. }
+  @Builder
+  Panel() {
+    Column() {
+      Row() {
+        Text() {
+          SymbolSpan($r('sys.symbol.magnifyingglass'))
+            .fontSize(24)
+            .fontColor([Color.Gray])
+        }
 
-24. TextInput()
-25. .layoutWeight(1)
-26. .backgroundColor('#33b1afaf')
-27. .borderRadius(24)
-28. .margin({ left: 8, right: 8 })
-29. }
-30. .backgroundColor(Color.White)
-31. .width('100%')
-32. }
-33. .borderRadius(10)
-34. .padding({
-35. top: 8,
-36. left: 8,
-37. right: 8,
-38. bottom: 4
-39. })
-40. .width('100%')
-41. }
+        TextInput()
+          .layoutWeight(1)
+          .backgroundColor('#33b1afaf')
+          .borderRadius(24)
+          .margin({ left: 8, right: 8 })
+      }
+      .backgroundColor(Color.White)
+      .width('100%')
+    }
+    .borderRadius(10)
+    .padding({
+      top: 8,
+      left: 8,
+      right: 8,
+      bottom: 4
+    })
+    .width('100%')
+  }
 
-43. aboutToAppear() {
-44. // 地图初始化参数，设置地图中心点坐标及层级
-45. this.mapOptions = {
-46. position: {
-47. target: {
-48. latitude: 31.979227,
-49. longitude: 118.762245
-50. },
-51. zoom: 17
-52. }
-53. };
+  aboutToAppear() {
+    // 地图初始化参数，设置地图中心点坐标及层级
+    this.mapOptions = {
+      position: {
+        target: {
+          latitude: 31.979227,
+          longitude: 118.762245
+        },
+        zoom: 17
+      }
+    };
 
-55. // 地图初始化的回调
-56. this.callback = async (err, mapController) => {
-57. if (!err) {
-58. // 获取地图的控制器类，用来操作地图
-59. this.mapController = mapController;
-60. // 返回地图组件的监听事件管理接口
-61. this.mapEventManager = this.mapController.getEventManager();
-62. let callback = () => {
-63. console.info(this.TAG, `on-mapLoad`);
-64. }
-65. // 监听地图加载事件
-66. this.mapEventManager?.on('mapLoad', callback);
-67. } else {
-68. console.error(`Failed to initialize the map, code is：${err.code}, message is ${err.message}`);
-69. }
-70. }
-71. }
+    // 地图初始化的回调
+    this.callback = async (err, mapController) => {
+      if (!err) {
+        // 获取地图的控制器类，用来操作地图
+        this.mapController = mapController;
+        // 返回地图组件的监听事件管理接口
+        this.mapEventManager = this.mapController.getEventManager();
+        let callback = () => {
+          console.info(this.TAG, `on-mapLoad`);
+        }
+        // 监听地图加载事件
+        this.mapEventManager?.on('mapLoad', callback);
+      } else {
+        console.error(`Failed to initialize the map, code is：${err.code}, message is ${err.message}`);
+      }
+    }
+  }
 
-73. aboutToDisappear(): void {
-74. this.mapEventManager?.off('mapLoad');
-75. this.mapController?.clear();
-76. }
+  aboutToDisappear(): void {
+    this.mapEventManager?.off('mapLoad');
+    this.mapController?.clear();
+  }
 
-78. private bindSheetOptions() {
-79. let bindSheetOptions = {
-80. // 半模态框三个状态的高度
-81. detents: [100, 300, 500],
-82. // 半模态所在页面允许交互
-83. enableOutsideInteractive: true,
-84. maskColor: Color.Transparent,
-85. backgroundColor: Color.White,
-86. blurStyle: BlurStyle.Thick,
-87. showClose: false,
-88. preferType: SheetType.CENTER,
-89. onAppear: () => {
-90. this.mapController?.setPadding({
-91. bottom: 358
-92. })
-93. },
-94. onHeightDidChange: (height: number) => {
-95. // 动态设置地图底部边距，避免遮挡logo
-96. this.mapController?.setPadding({
-97. bottom: height + 8
-98. })
-99. }
-100. } as BindOptions
-101. return bindSheetOptions;
-102. }
+  private bindSheetOptions() {
+    let bindSheetOptions = {
+      // 半模态框三个状态的高度
+      detents: [100, 300, 500],
+      // 半模态所在页面允许交互
+      enableOutsideInteractive: true,
+      maskColor: Color.Transparent,
+      backgroundColor: Color.White,
+      blurStyle: BlurStyle.Thick,
+      showClose: false,
+      preferType: SheetType.CENTER,
+      onAppear: () => {
+        this.mapController?.setPadding({
+          bottom: 358
+        })
+      },
+      onHeightDidChange: (height: number) => {
+        // 动态设置地图底部边距，避免遮挡logo
+        this.mapController?.setPadding({
+          bottom: height + 8
+        })
+      }
+    } as BindOptions
+    return bindSheetOptions;
+  }
 
-104. build() {
-105. Stack() {
-106. Column() {
-107. // 调用MapComponent组件初始化地图
-108. MapComponent({ mapOptions: this.mapOptions, mapCallback: this.callback })
-109. .width('100%')
-110. .height('100%')
-111. Column()
-112. .bindSheet(this.isShowSheet, this.Panel(), this.bindSheetOptions())
-113. .visibility(this.isShowSheet ? Visibility.Visible : Visibility.None)
-114. .justifyContent(FlexAlign.Start)
-115. }
-116. }
-117. .height('100%')
-118. .width('100%')
-119. }
-120. }
+  build() {
+    Stack() {
+      Column() {
+        // 调用MapComponent组件初始化地图
+        MapComponent({ mapOptions: this.mapOptions, mapCallback: this.callback })
+          .width('100%')
+          .height('100%')
+        Column()
+          .bindSheet(this.isShowSheet, this.Panel(), this.bindSheetOptions())
+          .visibility(this.isShowSheet ? Visibility.Visible : Visibility.None)
+          .justifyContent(FlexAlign.Start)
+      }
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 展示效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/0LEwYHxiREqhf-6Jm-kFyw/zh-cn_image_0000002558605902.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/xKi9w00uQD6SGf51Fl6WvA/zh-cn_image_0000002736314187.gif "点击放大")

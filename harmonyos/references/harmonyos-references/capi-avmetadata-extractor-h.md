@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avme
 title: avmetadata_extractor.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > avmetadata_extractor.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:52+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:cfb700fcf12336393d359411fd631c129affec3503f0cf2d6c0831acd1fe6b2f
+scraped_at: 2026-09-02T15:02:35+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9c5d5b3f04827827fbe53a62a70792abfed8f2a8ccea3a623c352d20fe43a25c
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义AVMetadataExtractor接口。使用其Native API从媒体资源中获取元数据。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,19 +32,17 @@ PhonePC/2in1TabletTVWearable
 
 ### 函数
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 描述 |
 | --- | --- |
 | [OH\_AVMetadataExtractor\_OutputParam\* OH\_AVMetadataExtractor\_OutputParam\_Create()](capi-avmetadata-extractor-h.md#oh_avmetadataextractor_outputparam_create) | 创建OH\_AVMetadataExtractor\_OutputParam实例。 |
 | [void OH\_AVMetadataExtractor\_OutputParam\_Destroy(OH\_AVMetadataExtractor\_OutputParam\* outputParam)](capi-avmetadata-extractor-h.md#oh_avmetadataextractor_outputparam_destroy) | 释放OH\_AVMetadataExtractor\_OutputParam实例。 |
 | [bool OH\_AVMetadataExtractor\_OutputParam\_SetSize(OH\_AVMetadataExtractor\_OutputParam\* outputParam, int32\_t width, int32\_t height)](capi-avmetadata-extractor-h.md#oh_avmetadataextractor_outputparam_setsize) | 设置OH\_AVMetadataExtractor\_OutputParam实例的期望输出尺寸。若width或height小于0，则使用原始宽度或高度。若width或height等于0，则保持宽高比按比例缩放。若width和height均大于0，则使用输入的width和height参数缩放图像。 |
-| [OH\_AVErrCode OH\_AVMetadataExtractor\_FetchFrameByTime(OH\_AVMetadataExtractor extractor, int64\_t timeUs, OH\_AVMedia\_SeekMode seekMode, const OH\_AVMetadataExtractor\_OutputParam outputParam, OH\_PixelmapNative\*\* pixelMap)](capi-avmetadata-extractor-h.md#oh_avmetadataextractor_fetchframebytime) | 从视频源中提取指定时间点的图像。该函数必须在设置资源之后使用。 |
-| [typedef void (\*OH\_AVMetadataExtractor\_OnFrameFetched)(OH\_AVMetadataExtractor extractor, const OH\_AVMetadataExtractor\_FrameInfo frameInfo, OH\_AVErrCode code, void\* userData)](capi-avmetadata-extractor-h.md#oh_avmetadataextractor_onframefetched) | 定义用于获取AVMetadataExtractor捕获帧的回调函数。注意：frameInfo会在回调后自动释放，但用户需要使用[OH\_PixelmapNative\_Destroy](capi-pixelmap-native-h.md#oh_pixelmapnative_destroy)手动释放frameInfo.image，避免内存泄漏。 |
-| [OH\_AVErrCode OH\_AVMetadataExtractor\_FetchFramesByTimes(OH\_AVMetadataExtractor extractor, int64\_t timeUs[], uint16\_t timesUsSize, OH\_AVMedia\_SeekMode seekMode, const OH\_AVMetadataExtractor\_OutputParam outputParam, OH\_AVMetadataExtractor\_OnFrameFetched onFrameInfoCallback, void\* userData)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avmetadata-extractor-h#oh_avmetadataextractor_fetchframesbytimes) | 从视频源中异步提取多个指定时间点的图像。该函数必须在设置资源之后使用。 |
-| [void OH\_AVMetadataExtractor\_CancelAllFetchFrames(OH\_AVMetadataExtractor \*extractor)](capi-avmetadata-extractor-h.md#oh_avmetadataextractor_cancelallfetchframes) | 取消所有由[OH\_AVMetadataExtractor\_FetchFramesByTimes](capi-avmetadata-extractor-h.md#oh_avmetadataextractor_fetchframesbytimes)发起的批量获取图像操作。在[OH\_AVMetadataExtractor\_OnFrameFetched](capi-avmetadata-extractor-h.md#oh_avmetadataextractor_onframefetched)回调中，挂起的获取操作被取消，并标记结果为已取消。 |
-| [OH\_AVFormat \*OH\_AVMetadataExtractor\_GetTrackDescription(OH\_AVMetadataExtractor \*extractor, uint32\_t index)](capi-avmetadata-extractor-h.md#oh_avmetadataextractor_gettrackdescription) | 从媒体源中获取指定索引的轨道描述信息。该函数必须在设置资源之后使用。 |
-| [OH\_AVFormat \*OH\_AVMetadataExtractor\_GetCustomInfo(OH\_AVMetadataExtractor \*extractor)](capi-avmetadata-extractor-h.md#oh_avmetadataextractor_getcustominfo) | 从媒体源中获取自定义元数据信息。该函数必须在设置资源之后使用。 |
+| [OH\_AVErrCode OH\_AVMetadataExtractor\_FetchFrameByTime(OH\_AVMetadataExtractor \*extractor, int64\_t timeUs, OH\_AVMedia\_SeekMode seekMode, const OH\_AVMetadataExtractor\_OutputParam\* outputParam, OH\_PixelmapNative\*\* pixelMap)](capi-avmetadata-extractor-h.md#oh_avmetadataextractor_fetchframebytime) | 从视频源中提取指定时间点的图像。该函数必须在设置资源之后使用。 |
+| [typedef void (\*OH\_AVMetadataExtractor\_OnFrameFetched)(OH\_AVMetadataExtractor \*extractor, const OH\_AVMetadataExtractor\_FrameInfo\* frameInfo, OH\_AVErrCode code, void\* userData)](capi-avmetadata-extractor-h.md#oh_avmetadataextractor_onframefetched) | 定义用于获取AVMetadataExtractor捕获帧的回调函数。注意：frameInfo会在回调后自动释放，但用户需要使用[OH\_PixelmapNative\_Destroy](capi-pixelmap-native-h.md#oh_pixelmapnative_destroy)手动释放frameInfo.image，避免内存泄漏。 |
+| [OH\_AVErrCode OH\_AVMetadataExtractor\_FetchFramesByTimes(OH\_AVMetadataExtractor \*extractor, int64\_t timesUs[], uint16\_t timesUsSize, OH\_AVMedia\_SeekMode seekMode, const OH\_AVMetadataExtractor\_OutputParam\* outputParam, OH\_AVMetadataExtractor\_OnFrameFetched onFrameInfoCallback, void\* userData)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avmetadata-extractor-h#oh_avmetadataextractor_fetchframesbytimes) | 从视频源中异步提取多个指定时间点的图像。该函数必须在设置资源之后使用。 |
+| [void OH\_AVMetadataExtractor\_CancelAllFetchFrames(OH\_AVMetadataExtractor \*extractor)](capi-avmetadata-extractor-h.md#oh_avmetadataextractor_cancelallfetchframes) | 取消所有由[OH\_AVMetadataExtractor\_FetchFramesByTimes](capi-avmetadata-extractor-h.md#oh_avmetadataextractor_fetchframesbytimes)发起的批量获取图像操作。在[OH\_AVMetadataExtractor\_OnFrameFetched](capi-avmetadata-extractor-h.md#oh_avmetadataextractor_onframefetched)回调中，挂起的获取操作被取消，回调函数的code参数将返回表示取消的错误码。 |
+| [OH\_AVFormat \*OH\_AVMetadataExtractor\_GetTrackDescription(OH\_AVMetadataExtractor \*extractor, uint32\_t index)](capi-avmetadata-extractor-h.md#oh_avmetadataextractor_gettrackdescription) | 从媒体资源中获取指定索引的轨道描述信息。该函数必须在设置资源之后使用。 |
+| [OH\_AVFormat \*OH\_AVMetadataExtractor\_GetCustomInfo(OH\_AVMetadataExtractor \*extractor)](capi-avmetadata-extractor-h.md#oh_avmetadataextractor_getcustominfo) | 从媒体资源中获取自定义元数据信息。该函数必须在设置资源之后使用。 |
 | [OH\_AVErrCode OH\_AVMetadataExtractor\_SetMediaSource(OH\_AVMetadataExtractor \*extractor, OH\_AVMediaSource \*source)](capi-avmetadata-extractor-h.md#oh_avmetadataextractor_setmediasource) | 为提取器设置媒体源。 |
 | [OH\_AVMetadataExtractor\* OH\_AVMetadataExtractor\_Create(void)](capi-avmetadata-extractor-h.md#oh_avmetadataextractor_create) | 创建OH\_AVMetadataExtractor实例。 |
 | [OH\_AVErrCode OH\_AVMetadataExtractor\_SetFDSource(OH\_AVMetadataExtractor\* extractor, int32\_t fd, int64\_t offset, int64\_t size)](capi-avmetadata-extractor-h.md#oh_avmetadataextractor_setfdsource) | 通过媒体文件描述符设置数据源。 |
@@ -60,14 +52,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AVMetadataExtractor\_OutputParam\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVMetadataExtractor_OutputParam* OH_AVMetadataExtractor_OutputParam_Create()
+```c
+OH_AVMetadataExtractor_OutputParam* OH_AVMetadataExtractor_OutputParam_Create()
 ```
 
 **描述**
@@ -80,14 +68,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AVMetadataExtractor\_OutputParam](tadataextractor-oh-avmetadataextractor-outputparam.md) \* | 返回指向OH\_AVMetadataExtractor\_OutputParam实例的指针。 |
+| [OH\_AVMetadataExtractor\_OutputParam](capi-avmetadataextractor-oh-avmetadataextractor-outputparam.md) \* | 返回指向OH\_AVMetadataExtractor\_OutputParam实例的指针。 |
 
 ### OH\_AVMetadataExtractor\_OutputParam\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_AVMetadataExtractor_OutputParam_Destroy(OH_AVMetadataExtractor_OutputParam* outputParam)
+```c
+void OH_AVMetadataExtractor_OutputParam_Destroy(OH_AVMetadataExtractor_OutputParam* outputParam)
 ```
 
 **描述**
@@ -100,14 +86,12 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AVMetadataExtractor\_OutputParam](tadataextractor-oh-avmetadataextractor-outputparam.md)\* outputParam | 指向OH\_AVMetadataExtractor\_OutputParam实例的指针。 |
+| [OH\_AVMetadataExtractor\_OutputParam](capi-avmetadataextractor-oh-avmetadataextractor-outputparam.md)\* outputParam | 指向OH\_AVMetadataExtractor\_OutputParam实例的指针。 |
 
 ### OH\_AVMetadataExtractor\_OutputParam\_SetSize()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. bool OH_AVMetadataExtractor_OutputParam_SetSize(OH_AVMetadataExtractor_OutputParam* outputParam, int32_t width, int32_t height)
+```c
+bool OH_AVMetadataExtractor_OutputParam_SetSize(OH_AVMetadataExtractor_OutputParam* outputParam, int32_t width, int32_t height)
 ```
 
 **描述**
@@ -120,7 +104,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AVMetadataExtractor\_OutputParam](tadataextractor-oh-avmetadataextractor-outputparam.md)\* outputParam | 指向OH\_AVMetadataExtractor\_OutputParam实例的指针。 |
+| [OH\_AVMetadataExtractor\_OutputParam](capi-avmetadataextractor-oh-avmetadataextractor-outputparam.md)\* outputParam | 指向OH\_AVMetadataExtractor\_OutputParam实例的指针。 |
 | int32\_t width | 输出图像的期望宽度，如有必要可进行缩放。 |
 | int32\_t height | 输出图像的期望高度，如有必要可进行缩放。 |
 
@@ -128,14 +112,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| bool | 成功返回true，失败返回false。  可能失败的原因：outputParam为空指针。 |
+| bool | 成功返回true，失败返回false。  可能失败的原因：输入的outputParam为空指针。 |
 
 ### OH\_AVMetadataExtractor\_FetchFrameByTime()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVMetadataExtractor_FetchFrameByTime(OH_AVMetadataExtractor *extractor, int64_t timeUs, OH_AVMedia_SeekMode seekMode, const OH_AVMetadataExtractor_OutputParam* outputParam, OH_PixelmapNative** pixelMap)
+```c
+OH_AVErrCode OH_AVMetadataExtractor_FetchFrameByTime(OH_AVMetadataExtractor *extractor, int64_t timeUs, OH_AVMedia_SeekMode seekMode, const OH_AVMetadataExtractor_OutputParam* outputParam, OH_PixelmapNative** pixelMap)
 ```
 
 **描述**
@@ -149,9 +131,9 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AVMetadataExtractor](capi-avmetadataextractor-oh-avmetadataextractor.md) \*extractor | 指向OH\_AVMetadataExtractor实例的指针。 |
-| int64\_t timeUs | 要从视频资源中提取图像的时间位置（单位：微秒）。 |
+| int64\_t timeUs | 要从视频源中提取图像的时间位置，单位为微秒（μs）。 |
 | [OH\_AVMedia\_SeekMode](capi-avmedia-base-h.md#oh_avmedia_seekmode) seekMode | 定义指定时间与关键帧之间关系的跳转模式。详见[OH\_AVMedia\_SeekMode](capi-avmedia-base-h.md#oh_avmedia_seekmode)。 |
-| [const OH\_AVMetadataExtractor\_OutputParam](tadataextractor-oh-avmetadataextractor-outputparam.md)\* outputParam | 图像的输出参数，例如图像的高度或者宽度。详见[OH\_AVMetadataExtractor\_OutputParam](tadataextractor-oh-avmetadataextractor-outputparam.md)。若为空指针，使用视频的原始尺寸。注意：用户需要使用[OH\_PixelmapNative\_Destroy](capi-pixelmap-native-h.md#oh_pixelmapnative_destroy)在使用pixelMap后将其释放。 |
+| [const OH\_AVMetadataExtractor\_OutputParam](capi-avmetadataextractor-oh-avmetadataextractor-outputparam.md)\* outputParam | 图像的输出参数，例如图像的高度或者宽度。详见[OH\_AVMetadataExtractor\_OutputParam](capi-avmetadataextractor-oh-avmetadataextractor-outputparam.md)。若为空指针，使用视频的原始尺寸。注意：用户需要使用[OH\_PixelmapNative\_Destroy](capi-pixelmap-native-h.md#oh_pixelmapnative_destroy)在使用pixelMap后将其释放。 |
 | [OH\_PixelmapNative](capi-image-nativemodule-oh-pixelmapnative.md)\*\* pixelMap | 用于接收从视频源提取的图像，详见[OH\_PixelmapNative](capi-image-nativemodule-oh-pixelmapnative.md)。 |
 
 **返回：**
@@ -162,10 +144,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMetadataExtractor\_OnFrameFetched()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_AVMetadataExtractor_OnFrameFetched)(OH_AVMetadataExtractor *extractor, const OH_AVMetadataExtractor_FrameInfo* frameInfo, OH_AVErrCode code, void* userData)
+```c
+typedef void (*OH_AVMetadataExtractor_OnFrameFetched)(OH_AVMetadataExtractor *extractor, const OH_AVMetadataExtractor_FrameInfo* frameInfo, OH_AVErrCode code, void* userData)
 ```
 
 **描述**
@@ -176,10 +156,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMetadataExtractor\_FetchFramesByTimes()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVMetadataExtractor_FetchFramesByTimes(OH_AVMetadataExtractor *extractor, int64_t timeUs[], uint16_t timesUsSize, OH_AVMedia_SeekMode seekMode, const OH_AVMetadataExtractor_OutputParam* outputParam, OH_AVMetadataExtractor_OnFrameFetched onFrameInfoCallback, void* userData)
+```c
+OH_AVErrCode OH_AVMetadataExtractor_FetchFramesByTimes(OH_AVMetadataExtractor *extractor, int64_t timesUs[], uint16_t timesUsSize, OH_AVMedia_SeekMode seekMode, const OH_AVMetadataExtractor_OutputParam* outputParam, OH_AVMetadataExtractor_OnFrameFetched onFrameInfoCallback, void* userData)
 ```
 
 **描述**
@@ -193,10 +171,10 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AVMetadataExtractor](capi-avmetadataextractor-oh-avmetadataextractor.md) \*extractor | 指向OH\_AVMetadataExtractor实例的指针。 |
-| int64\_t timeUs[] | 从视频源提取图像时的时间点数组（单位：微秒）。 |
+| int64\_t timesUs[] | 从视频源提取图像时的时间点数组（单位：微秒）。 |
 | uint16\_t timesUsSize | 输入时间点数组的长度。 |
 | [OH\_AVMedia\_SeekMode](capi-avmedia-base-h.md#oh_avmedia_seekmode) seekMode | 定义每个给定时间与关键帧之间关系的跳转选项，详见[OH\_AVMedia\_SeekMode](capi-avmedia-base-h.md#oh_avmedia_seekmode)。 |
-| [const OH\_AVMetadataExtractor\_OutputParam](tadataextractor-oh-avmetadataextractor-outputparam.md)\* outputParam | 图像的输出参数，例如图像的高度或者宽度。详见[OH\_AVMetadataExtractor\_OutputParam](tadataextractor-oh-avmetadataextractor-outputparam.md)。若该参数为空指针，则获取的帧使用视频原始尺寸。 |
+| [const OH\_AVMetadataExtractor\_OutputParam](capi-avmetadataextractor-oh-avmetadataextractor-outputparam.md)\* outputParam | 图像的输出参数，例如图像的高度或者宽度。详见[OH\_AVMetadataExtractor\_OutputParam](capi-avmetadataextractor-oh-avmetadataextractor-outputparam.md)。若该参数为空指针，则获取的帧使用视频原始尺寸。 |
 | [OH\_AVMetadataExtractor\_OnFrameFetched](capi-avmetadata-extractor-h.md#oh_avmetadataextractor_onframefetched) onFrameInfoCallback | 每帧提取完成或提取失败后调用的回调函数。 |
 | void\* userData | 传递给回调函数的用户自定义数据指针。 |
 
@@ -208,15 +186,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMetadataExtractor\_CancelAllFetchFrames()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_AVMetadataExtractor_CancelAllFetchFrames(OH_AVMetadataExtractor *extractor)
+```c
+void OH_AVMetadataExtractor_CancelAllFetchFrames(OH_AVMetadataExtractor *extractor)
 ```
 
 **描述**
 
-取消所有由[OH\_AVMetadataExtractor\_FetchFramesByTimes](capi-avmetadata-extractor-h.md#oh_avmetadataextractor_fetchframesbytimes)发起的批量获取图像操作。在[OH\_AVMetadataExtractor\_OnFrameFetched](capi-avmetadata-extractor-h.md#oh_avmetadataextractor_onframefetched)回调中，挂起的获取操作被取消，并标记结果为已取消。
+取消所有由[OH\_AVMetadataExtractor\_FetchFramesByTimes](capi-avmetadata-extractor-h.md#oh_avmetadataextractor_fetchframesbytimes)发起的批量获取图像操作。在[OH\_AVMetadataExtractor\_OnFrameFetched](capi-avmetadata-extractor-h.md#oh_avmetadataextractor_onframefetched)回调中，挂起的获取操作被取消，回调函数的code参数将返回表示取消的错误码。
 
 **起始版本：** 23
 
@@ -228,15 +204,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMetadataExtractor\_GetTrackDescription()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVFormat *OH_AVMetadataExtractor_GetTrackDescription(OH_AVMetadataExtractor *extractor, uint32_t index)
+```c
+OH_AVFormat *OH_AVMetadataExtractor_GetTrackDescription(OH_AVMetadataExtractor *extractor, uint32_t index)
 ```
 
 **描述**
 
-从媒体源中获取指定索引的轨道描述信息。该函数必须在设置资源之后使用。
+从媒体资源中获取指定索引的轨道描述信息。该函数必须在设置资源之后使用。
 
 **起始版本：** 23
 
@@ -255,15 +229,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMetadataExtractor\_GetCustomInfo()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVFormat *OH_AVMetadataExtractor_GetCustomInfo(OH_AVMetadataExtractor *extractor)
+```c
+OH_AVFormat *OH_AVMetadataExtractor_GetCustomInfo(OH_AVMetadataExtractor *extractor)
 ```
 
 **描述**
 
-从媒体源中获取自定义元数据信息。该函数必须在设置资源之后使用。
+从媒体资源中获取自定义元数据信息。该函数必须在设置资源之后使用。
 
 **起始版本：** 23
 
@@ -281,10 +253,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMetadataExtractor\_SetMediaSource()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVMetadataExtractor_SetMediaSource(OH_AVMetadataExtractor *extractor, OH_AVMediaSource *source)
+```c
+OH_AVErrCode OH_AVMetadataExtractor_SetMediaSource(OH_AVMetadataExtractor *extractor, OH_AVMediaSource *source)
 ```
 
 **描述**
@@ -308,10 +278,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMetadataExtractor\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVMetadataExtractor* OH_AVMetadataExtractor_Create(void)
+```c
+OH_AVMetadataExtractor* OH_AVMetadataExtractor_Create(void)
 ```
 
 **描述**
@@ -330,10 +298,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMetadataExtractor\_SetFDSource()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVMetadataExtractor_SetFDSource(OH_AVMetadataExtractor* extractor, int32_t fd, int64_t offset, int64_t size)
+```c
+OH_AVErrCode OH_AVMetadataExtractor_SetFDSource(OH_AVMetadataExtractor* extractor, int32_t fd, int64_t offset, int64_t size)
 ```
 
 **描述**
@@ -361,10 +327,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMetadataExtractor\_FetchMetadata()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVMetadataExtractor_FetchMetadata(OH_AVMetadataExtractor* extractor, OH_AVFormat* avMetadata)
+```c
+OH_AVErrCode OH_AVMetadataExtractor_FetchMetadata(OH_AVMetadataExtractor* extractor, OH_AVFormat* avMetadata)
 ```
 
 **描述**
@@ -392,10 +356,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMetadataExtractor\_FetchAlbumCover()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVMetadataExtractor_FetchAlbumCover(OH_AVMetadataExtractor* extractor, OH_PixelmapNative** pixelMap)
+```c
+OH_AVErrCode OH_AVMetadataExtractor_FetchAlbumCover(OH_AVMetadataExtractor* extractor, OH_PixelmapNative** pixelMap)
 ```
 
 **描述**
@@ -423,10 +385,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMetadataExtractor\_Release()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVMetadataExtractor_Release(OH_AVMetadataExtractor* extractor)
+```c
+OH_AVErrCode OH_AVMetadataExtractor_Release(OH_AVMetadataExtractor* extractor)
 ```
 
 **描述**
@@ -441,7 +401,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AVMetadataExtractor](capi-avmetadataextractor-oh-avmetadataextractor.md)\* extractor | 指向OH\_AVMetadataExtractor实例指针。 |
+| [OH\_AVMetadataExtractor](capi-avmetadataextractor-oh-avmetadataextractor.md)\* extractor | 指向OH\_AVMetadataExtractor实例的指针。 |
 
 **返回：**
 

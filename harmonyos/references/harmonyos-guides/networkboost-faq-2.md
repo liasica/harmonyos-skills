@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-
 title: 如果使用多网并发能力超过剩余配额限制，会发生什么
 breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务） > Network Boost Kit常见问题 > 如果使用多网并发能力超过剩余配额限制，会发生什么
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:02+08:00
-doc_updated_at: 2026-04-24
+scraped_at: 2026-09-02T15:17:21+08:00
+doc_updated_at: 2026-05-07
 content_hash: sha256:a6f75407a11654f7176ddbf7712612791ddd6877c24050ec2829648c5d9df1ea
 ---
 

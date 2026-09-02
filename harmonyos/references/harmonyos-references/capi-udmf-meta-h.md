@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-udmf
 title: udmf_meta.h
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 头文件 > udmf_meta.h
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:34+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:af8740daa81a4e121d9ba2006db3bc7bb2cd4b18144c5863699e2721ccbea9e8
+scraped_at: 2026-09-02T15:00:43+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c476b15171e8dadad64b5cfe3d1efcc12923c592fafb867a275d50d813488ea6
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 声明统一类型数据信息。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 宏定义
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -111,7 +105,7 @@ PhonePC/2in1TabletTV
 | UDMF\_META\_TAR\_ARCHIVE "general.tar-archive" | TAR存档文件类型，归属类型为ARCHIVE。  **起始版本：** 12 |
 | UDMF\_META\_ZIP\_ARCHIVE "general.zip-archive" | ZIP存档文件类型，归属类型为ARCHIVE。  **起始版本：** 12 |
 | UDMF\_META\_JAVA\_ARCHIVE "com.sun.java-archive" | JAVA存档文件类型，归属类型为ARCHIVE和EXECUTABLE。  **起始版本：** 12 |
-| UDMF\_META\_GNU\_TAR\_ARCHIVE "org.gnu.gnu-tar-archive" | GUN存档文件类型，归属类型为ARCHIVE。  **起始版本：** 12 |
+| UDMF\_META\_GNU\_TAR\_ARCHIVE "org.gnu.gnu-tar-archive" | GNU存档文件类型，归属类型为ARCHIVE。  **起始版本：** 12 |
 | UDMF\_META\_GNU\_ZIP\_ARCHIVE "org.gnu.gnu-zip-archive" | GZIP存档文件类型，归属类型为ARCHIVE。  **起始版本：** 12 |
 | UDMF\_META\_GNU\_ZIP\_TAR\_ARCHIVE "org.gnu.gnu-zip-tar-archive" | GZIP TAR存档文件类型，归属类型为ARCHIVE。  **起始版本：** 12 |
 | UDMF\_META\_CALENDAR "general.calendar" | 所有日程类数据的基类型，归属类型为OBJECT。  **起始版本：** 12 |

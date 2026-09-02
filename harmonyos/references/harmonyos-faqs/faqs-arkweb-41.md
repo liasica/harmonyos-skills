@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-41
 title: 在Web组件的H5页面中，如何使用a标签实现打开各种页面
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 在Web组件的H5页面中，如何使用a标签实现打开各种页面
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:41+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:c2b2cf842a401ec07656f0fb4df2e8903e02ceea22f8473bda0bb9782fed45b9
+scraped_at: 2026-09-02T14:54:32+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:0638271045b8250c773a2a4dee4aafab8068e647ff76b24f8e29cc68d28001a1
 ---
 
 情况一：跳转本应用的ArkTS页面
@@ -16,76 +16,70 @@ content_hash: sha256:c2b2cf842a401ec07656f0fb4df2e8903e02ceea22f8473bda0bb9782fe
 
 ArkTS页面一：
 
-```
-1. import { webview } from '@kit.ArkWeb';
+```ts
+import { webview } from '@kit.ArkWeb';
 
-3. @Entry
-4. @Component
-5. struct WebComponent {
-6. controller: webview.WebviewController = new webview.WebviewController();
-7. build() {
-8. Column() {
-9. Column() {
-10. Web({ src: $rawfile('hello.html'), controller: this.controller })
-11. .onLoadIntercept((event) => {
-12. if(event){
-13. let url = event.data.getRequestUrl();
-14. console.log(url);
-15. if(url.indexOf('native://') === 0){
-16. this.getUIContext().getRouter().pushUrl({ url : url.substring(9)})
-17. return true;
-18. }
-19. }
-20. return false;
-21. })
-22. .width('100%')
-23. .height('100%')
-24. }
-25. .layoutWeight(1)
-26. }
-27. }
-28. }
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  build() {
+    Column() {
+      Column() {
+        Web({ src: $rawfile('hello.html'), controller: this.controller })
+          .onLoadIntercept((event) => {
+            if(event){
+              let url = event.data.getRequestUrl();
+              console.log(url);
+              if(url.indexOf('native://') === 0){
+                this.getUIContext().getRouter().pushUrl({ url : url.substring(9)})
+                return true;
+              }
+            }
+            return false;
+          })
+          .width('100%')
+          .height('100%')
+      }
+      .layoutWeight(1)
+    }
+  }
+}
 ```
-
-[UseLabelAOpenPages\_One.ets](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkWebKit/entry/src/main/ets/pages/UseLabelAOpenPages_One.ets#L21-L48)
 
 ArkTS页面二：
 
+```ts
+@Entry
+@Component
+struct Second {
+  build() {
+    Column() {
+      Text('This is the second page of this application')
+    }
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct Second {
-4. build() {
-5. Column() {
-6. Text('This is the second page of this application')
-7. }
-8. }
-9. }
-```
-
-[UseLabelAOpenPages\_Two.ets](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkWebKit/entry/src/main/ets/pages/UseLabelAOpenPages_Two.ets#L21-L29)
 
 H5侧
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+<div id="bg">
+    hello world!<br>
+    <a href="native://pages/Second">Jump to the second ads page of this application</a>
+</div>
+</body>
+</html>
 ```
-1. <!DOCTYPE html>
-2. <html lang="en">
-3. <head>
-4. <meta charset="UTF-8" />
-5. <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-6. <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-7. <title>Document</title>
-8. </head>
-9. <body>
-10. <div id="bg">
-11. hello world!<br>
-12. <a href="native://pages/Second">Jump to the second ads page of this application</a>
-13. </div>
-14. </body>
-15. </html>
-```
-
-[UseLabelAOpenPages\_Fragment\_One.html](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkWebKit/entry/src/main/resources/rawfile/UseLabelAOpenPages_Fragment_One.html#L21-L35)
 
 情况二：跳转本应用的H5页面
 
@@ -93,49 +87,45 @@ H5侧
 
 H5侧页面一：
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+<div id="bg">
+    hello world!<br>
+    <a href="Second.html">Jump to the second H5 page of this application</a>
+</div>
+</body>
+</html>
 ```
-1. <!DOCTYPE html>
-2. <html lang="en">
-3. <head>
-4. <meta charset="UTF-8" />
-5. <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-6. <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-7. <title>Document</title>
-8. </head>
-9. <body>
-10. <div id="bg">
-11. hello world!<br>
-12. <a href="Second.html">Jump to the second H5 page of this application</a>
-13. </div>
-14. </body>
-15. </html>
-```
-
-[UseLabelAOpenPages\_Fragment\_Two.html](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkWebKit/entry/src/main/resources/rawfile/UseLabelAOpenPages_Fragment_Two.html#L21-L35)
 
 H5侧页面二：
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+<div id="bg">
+    hello world
+    <br>
+    <br>
+    I am the second H5 page of this application
+</div>
+</body>
+</html>
 ```
-1. <!DOCTYPE html>
-2. <html lang="en">
-3. <head>
-4. <meta charset="UTF-8" />
-5. <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-6. <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-7. <title>Document</title>
-8. </head>
-9. <body>
-10. <div id="bg">
-11. hello world
-12. <br>
-13. <br>
-14. I am the second H5 page of this application
-15. </div>
-16. </body>
-17. </html>
-```
-
-[UseLabelAOpenPages\_Fragment\_Three.html](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkWebKit/entry/src/main/resources/rawfile/UseLabelAOpenPages_Fragment_Three.html#L21-L37)
 
 情况三：跳转至系统应用页面
 
@@ -143,79 +133,75 @@ H5侧页面二：
 
 ArkTS页面：
 
-```
-1. import { webview } from '@kit.ArkWeb'
-2. import { common } from '@kit.AbilityKit';
-3. import { Want } from '@kit.AbilityKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { webview } from '@kit.ArkWeb'
+import { common } from '@kit.AbilityKit';
+import { Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. function startSettingsInfo(context: common.UIAbilityContext,uri : string): void {
-7. let want: Want = {
-8. bundleName: 'com.huawei.hmos.settings',
-9. abilityName: 'com.huawei.hmos.settings.MainAbility',
-10. uri: uri
-11. };
-12. context.startAbility(want)
-13. .then(() => {
-14. // ...
-15. })
-16. .catch((err: BusinessError) => {
-17. console.error(`Failed to startAbility. Code: ${err.code}, message: ${err.message}`);
-18. });
-19. }
-20. @Entry
-21. @Component
-22. struct WebComponent {
-23. context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-24. controller: webview.WebviewController = new webview.WebviewController();
-25. build() {
-26. Column() {
-27. Column() {
-28. Web({ src: $rawfile('hello.html'), controller: this.controller })
-29. .onLoadIntercept((event) => {
-30. if(event){
-31. let url = event.data.getRequestUrl();
-32. console.log(url);
-33. if(url.indexOf('hmos://') === 0){
-34. startSettingsInfo(this.context,url.substring(7))
-35. return true;
-36. }
-37. }
-38. return false;
-39. })
-40. .width('100%')
-41. .height('100%')
-42. }
-43. .layoutWeight(1)
-44. }
-45. }
-46. }
+function startSettingsInfo(context: common.UIAbilityContext,uri : string): void {
+  let want: Want = {
+    bundleName: 'com.huawei.hmos.settings',
+    abilityName: 'com.huawei.hmos.settings.MainAbility',
+    uri: uri
+  };
+  context.startAbility(want)
+    .then(() => {
+      // ...
+    })
+    .catch((err: BusinessError) => {
+      console.error(`Failed to startAbility. Code: ${err.code}, message: ${err.message}`);
+    });
+}
+@Entry
+@Component
+struct WebComponent {
+  context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  controller: webview.WebviewController = new webview.WebviewController();
+  build() {
+    Column() {
+      Column() {
+        Web({ src: $rawfile('hello.html'), controller: this.controller })
+          .onLoadIntercept((event) => {
+            if(event){
+              let url = event.data.getRequestUrl();
+              console.log(url);
+              if(url.indexOf('hmos://') === 0){
+                startSettingsInfo(this.context,url.substring(7))
+                return true;
+              }
+            }
+            return false;
+          })
+          .width('100%')
+          .height('100%')
+      }
+      .layoutWeight(1)
+    }
+  }
+}
 ```
-
-[UseLabelAOpenPages\_Three.ets](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkWebKit/entry/src/main/ets/pages/UseLabelAOpenPages_Three.ets#L21-L66)
 
 H5侧：
 
-```
-1. <!DOCTYPE html>
-2. <html lang="en">
-3. <head>
-4. <meta charset="UTF-8" />
-5. <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-6. <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-7. <title>Document</title>
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
 
-9. </head>
-10. <body>
-11. <div id="bg">
-12. hello world!<br>
-13. <a href="hmos://volume_settings">Jump to system application (taking sound and vibration as examples)</a>
-14. </div>
-15. </body>
-16. </html>
+</head>
+<body>
+<div id="bg">
+    hello world!<br>
+    <a href="hmos://volume_settings">Jump to system application (taking sound and vibration as examples)</a>
+</div>
+</body>
+</html>
 ```
-
-[UseLabelAOpenPages\_Fragment\_Four.html](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkWebKit/entry/src/main/resources/rawfile/UseLabelAOpenPages_Fragment_Four.html#L21-L36)
 
 情况四：跳转至三方应用页面
 
@@ -223,65 +209,61 @@ H5侧：
 
 ArkTS页面
 
+```ts
+import { webview } from '@kit.ArkWeb'
+import { common } from '@kit.AbilityKit';
+import { Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  build() {
+    Column() {
+      Column() {
+        Web({ src: $rawfile('hello.html'), controller: this.controller })
+          .onLoadIntercept((event) => {
+            let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext; // UIAbilityContext
+            let want: Want = {
+              deviceId: '', // An empty DeviceId indicates that this device
+              bundleName: '***', // BundleName of the third-party application you want to jump to
+              moduleName: 'entry', // ModuleName is not mandatory
+              abilityName: 'EntryAbility',
+              parameters: {
+                // Customize parameters to transmit page information
+                router: 'index'
+              }
+            }
+            context.startAbility(want).then(() => {
+              console.log('success')
+            }).catch((err: BusinessError) => {
+              console.log('error:' + JSON.stringify(err))
+            });
+            return false;
+          })
+      }
+      .layoutWeight(1)
+    }
+
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb'
-2. import { common } from '@kit.AbilityKit';
-3. import { Want } from '@kit.AbilityKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
-
-6. @Entry
-7. @Component
-8. struct WebComponent {
-9. controller: webview.WebviewController = new webview.WebviewController();
-10. build() {
-11. Column() {
-12. Column() {
-13. Web({ src: $rawfile('hello.html'), controller: this.controller })
-14. .onLoadIntercept((event) => {
-15. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext; // UIAbilityContext
-16. let want: Want = {
-17. deviceId: '', // An empty DeviceId indicates that this device
-18. bundleName: '***', // BundleName of the third-party application you want to jump to
-19. moduleName: 'entry', // ModuleName is not mandatory
-20. abilityName: 'EntryAbility',
-21. parameters: {
-22. // Customize parameters to transmit page information
-23. router: 'index'
-24. }
-25. }
-26. context.startAbility(want).then(() => {
-27. console.log('success')
-28. }).catch((err: BusinessError) => {
-29. console.log('error:' + JSON.stringify(err))
-30. });
-31. return false;
-32. })
-33. }
-34. .layoutWeight(1)
-35. }
-
-37. }
-38. }
-```
-
-[UseLabelAOpenPages\_Four.ets](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkWebKit/entry/src/main/ets/pages/UseLabelAOpenPages_Four.ets#L21-L58)
 
 H5侧：
 
+```html
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<a  href="">Jump to third-party applications</a>
+</body>
+</html>
 ```
-1. <!doctype html>
-2. <html lang="en">
-3. <head>
-4. <meta charset="UTF-8">
-5. <meta name="viewport"
-6. content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-7. <meta http-equiv="X-UA-Compatible" content="ie=edge">
-8. <title>Document</title>
-9. </head>
-10. <body>
-11. <a  href="">Jump to third-party applications</a>
-12. </body>
-13. </html>
-```
-
-[UseLabelAOpenPages\_Fragment\_Five.html](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkWebKit/entry/src/main/resources/rawfile/UseLabelAOpenPages_Fragment_Five.html#L21-L33)

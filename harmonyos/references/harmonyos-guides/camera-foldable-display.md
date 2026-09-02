@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-foldab
 title: 适配不同折叠状态的摄像头变更(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 适配不同折叠状态的摄像头变更(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:58+08:00
-doc_updated_at: 2026-03-23
-content_hash: sha256:1632ce1224163d54815a7c875918636fe89211c83a5a571e258a06ef447a7fa4
+scraped_at: 2026-09-02T14:59:44+08:00
+doc_updated_at: 2026-08-03
+content_hash: sha256:3277dc5bb3ae3b34e157e699952d4ce9640798de6882b92a2bc646a81dd084b6
 ---
 
 折叠设备形态各异，在相机应用的开发过程中需要统一的摄像头切换方案，以确保用户在拍照、录像过程中获得更好的体验。
@@ -26,48 +26,48 @@ Context获取方式请参考：[获取UIAbility的上下文信息](uiability-usa
 
 使用两个[XComponent](../harmonyos-references/ts-basic-components-xcomponent.md)分别展示折叠态和展开态，防止切换折叠屏状态亮屏的时候上一个相机还未关闭，残留上一个相机的画面。
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. @State reloadXComponentFlag: boolean = false;
-5. @StorageLink('foldStatus') @Watch('reloadXComponent') foldStatus: number = 0;
-6. private mXComponentController: XComponentController = new XComponentController();
-7. private mXComponentOptions: XComponentOptions = {
-8. type: XComponentType.SURFACE,
-9. controller: this.mXComponentController
-10. }
+```ts
+ @Entry
+ @Component
+ struct Index {
+   @State reloadXComponentFlag: boolean = false;
+   @StorageLink('foldStatus') @Watch('reloadXComponent') foldStatus: number = 0;
+   private mXComponentController: XComponentController = new XComponentController();
+   private mXComponentOptions: XComponentOptions = {
+     type: XComponentType.SURFACE,
+     controller: this.mXComponentController
+   }
 
-12. reloadXComponent() {
-13. this.reloadXComponentFlag = !this.reloadXComponentFlag;
-14. }
+   reloadXComponent() {
+     this.reloadXComponentFlag = !this.reloadXComponentFlag;
+   }
 
-16. async loadXComponent() {
-17. // 初始化XComponent。
-18. }
+   async loadXComponent() {
+     // 初始化XComponent。
+   }
 
-20. build() {
-21. Stack() {
-22. if (this.reloadXComponentFlag) {
-23. XComponent(this.mXComponentOptions)
-24. .onLoad(async () => {
-25. await this.loadXComponent();
-26. })
-27. .width(this.getUIContext().px2vp(1080))
-28. .height(this.getUIContext().px2vp(1920))
-29. } else {
-30. XComponent(this.mXComponentOptions)
-31. .onLoad(async () => {
-32. await this.loadXComponent();
-33. })
-34. .width(this.getUIContext().px2vp(1080))
-35. .height(this.getUIContext().px2vp(1920))
-36. }
-37. }
-38. .size({ width: '100%', height: '100%' })
-39. .backgroundColor(Color.Black)
-40. }
-41. }
+   build() {
+     Stack() {
+       if (this.reloadXComponentFlag) {
+         XComponent(this.mXComponentOptions)
+           .onLoad(async () => {
+             await this.loadXComponent();
+           })
+           .width(this.getUIContext().px2vp(1080))
+           .height(this.getUIContext().px2vp(1920))
+       } else {
+         XComponent(this.mXComponentOptions)
+           .onLoad(async () => {
+             await this.loadXComponent();
+           })
+           .width(this.getUIContext().px2vp(1080))
+           .height(this.getUIContext().px2vp(1920))
+       }
+     }
+     .size({ width: '100%', height: '100%' })
+     .backgroundColor(Color.Black)
+   }
+ }
 ```
 
 ## 获取设备折叠状态
@@ -76,77 +76,77 @@ Context获取方式请参考：[获取UIAbility的上下文信息](uiability-usa
 
 * **方案一：使用相机框架提供的[CameraManager.on('foldStatusChange')](../harmonyos-references/arkts-apis-camera-cameramanager.md#onfoldstatuschange12)监听设备折叠态变化。**
 
-  ```
-  1. import { camera } from '@kit.CameraKit';
-  2. import { BusinessError } from '@kit.BasicServicesKit';
+  ```ts
+  import { camera } from '@kit.CameraKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
 
-  4. function registerFoldStatusChanged(err: BusinessError, foldStatusInfo: camera.FoldStatusInfo) {
-  5. // foldStatus 变量用来控制显示XComponent组件。
-  6. AppStorage.setOrCreate<number>('foldStatus', foldStatusInfo.foldStatus);
-  7. }
+  function registerFoldStatusChanged(err: BusinessError, foldStatusInfo: camera.FoldStatusInfo) {
+    // foldStatus 变量用来控制显示XComponent组件。
+    AppStorage.setOrCreate<number>('foldStatus', foldStatusInfo.foldStatus);
+  }
 
-  9. function onFoldStatusChange(cameraManager: camera.CameraManager) {
-  10. cameraManager.on('foldStatusChange', registerFoldStatusChanged);
-  11. }
+  function onFoldStatusChange(cameraManager: camera.CameraManager) {
+    cameraManager.on('foldStatusChange', registerFoldStatusChanged);
+  }
 
-  13. function offFoldStatusChange(cameraManager: camera.CameraManager) {
-  14. cameraManager.off('foldStatusChange', registerFoldStatusChanged);
-  15. }
+  function offFoldStatusChange(cameraManager: camera.CameraManager) {
+    cameraManager.off('foldStatusChange', registerFoldStatusChanged);
+  }
   ```
 * **方案二：使用图形图像的[display.on('foldStatusChange')](../harmonyos-references/js-apis-display.md#displayonfoldstatuschange10)监听设备折叠态变化。**
 
-  ```
-  1. import { display } from '@kit.ArkUI';
+  ```ts
+  import { display } from '@kit.ArkUI';
 
-  3. function getFoldStatus(): display.FoldStatus {
-  4. let curFoldStatus: display.FoldStatus = display.FoldStatus.FOLD_STATUS_UNKNOWN;
-  5. try {
-  6. curFoldStatus = display.getFoldStatus();
-  7. } catch (error) {
-  8. console.error('getFoldStatus call failed');
-  9. }
-  10. return curFoldStatus;
-  11. }
+  function getFoldStatus(): display.FoldStatus {
+    let curFoldStatus: display.FoldStatus = display.FoldStatus.FOLD_STATUS_UNKNOWN;
+    try {
+      curFoldStatus = display.getFoldStatus();
+    } catch (error) {
+      console.error('getFoldStatus call failed');
+    }
+    return curFoldStatus;
+  }
 
-  13. let preFoldStatus: display.FoldStatus = getFoldStatus();
-  14. display.on('foldStatusChange', (foldStatus: display.FoldStatus) => {
-  15. // 从半折叠态（FOLD_STATUS_HALF_FOLDED）到展开态（FOLD_STATUS_EXPANDED），相机框架返回所支持的相机是一致的，所以从半折叠态到展开态不需要重新配流，从展开态到半折叠态也是一样的。
-  16. if ((preFoldStatus === display.FoldStatus.FOLD_STATUS_HALF_FOLDED &&
-  17. foldStatus === display.FoldStatus.FOLD_STATUS_EXPANDED) ||
-  18. (preFoldStatus === display.FoldStatus.FOLD_STATUS_EXPANDED &&
-  19. foldStatus === display.FoldStatus.FOLD_STATUS_HALF_FOLDED)) {
-  20. preFoldStatus = foldStatus;
-  21. return;
-  22. }
-  23. preFoldStatus = foldStatus;
-  24. // foldStatus 变量用来控制显示XComponent组件。
-  25. AppStorage.setOrCreate<number>('foldStatus', foldStatus);
-  26. })
+  let preFoldStatus: display.FoldStatus = getFoldStatus();
+  display.on('foldStatusChange', (foldStatus: display.FoldStatus) => {
+    // 从半折叠态（FOLD_STATUS_HALF_FOLDED）到展开态（FOLD_STATUS_EXPANDED），相机框架返回所支持的相机是一致的，所以从半折叠态到展开态不需要重新配流，从展开态到半折叠态也是一样的。
+    if ((preFoldStatus === display.FoldStatus.FOLD_STATUS_HALF_FOLDED &&
+      foldStatus === display.FoldStatus.FOLD_STATUS_EXPANDED) ||
+      (preFoldStatus === display.FoldStatus.FOLD_STATUS_EXPANDED &&
+        foldStatus === display.FoldStatus.FOLD_STATUS_HALF_FOLDED)) {
+      preFoldStatus = foldStatus;
+      return;
+    }
+    preFoldStatus = foldStatus;
+    // foldStatus 变量用来控制显示XComponent组件。
+    AppStorage.setOrCreate<number>('foldStatus', foldStatus);
+  })
   ```
 
 ## 判断是否存在对应位置摄像头
 
 通过[CameraManager.getSupportedCameras](../harmonyos-references/arkts-apis-camera-cameramanager.md#getsupportedcameras)接口可获取到当前设备折叠状态下支持的所有镜头，遍历获取到的结果，通过[CameraPosition](../harmonyos-references/arkts-apis-camera-e.md#cameraposition)判断镜头是否存在。
 
-```
-1. import { camera } from '@kit.CameraKit';
+```ts
+import { camera } from '@kit.CameraKit';
 
-3. // connectionType默认为camera.ConnectionType.CAMERA_CONNECTION_BUILT_IN，表示设备的内置镜头。
-4. function hasCameraAt(cameraManager: camera.CameraManager, cameraPosition: camera.CameraPosition,
-5. connectionType: camera.ConnectionType = camera.ConnectionType.CAMERA_CONNECTION_BUILT_IN): boolean {
-6. let cameraArray: Array<camera.CameraDevice> = cameraManager.getSupportedCameras();
-7. if (cameraArray.length <= 0) {
-8. console.error('cameraManager.getSupportedCameras error');
-9. return false;
-10. }
-11. for (let index = 0; index < cameraArray.length; index++) {
-12. if (cameraArray[index].cameraPosition === cameraPosition &&
-13. cameraArray[index].connectionType === connectionType) {
-14. return true;
-15. }
-16. }
-17. return false;
-18. }
+// connectionType默认为camera.ConnectionType.CAMERA_CONNECTION_BUILT_IN，表示设备的内置镜头。
+function hasCameraAt(cameraManager: camera.CameraManager, cameraPosition: camera.CameraPosition,
+  connectionType: camera.ConnectionType = camera.ConnectionType.CAMERA_CONNECTION_BUILT_IN): boolean {
+  let cameraArray: Array<camera.CameraDevice> = cameraManager.getSupportedCameras();
+  if (cameraArray.length <= 0) {
+    console.error('cameraManager.getSupportedCameras error');
+    return false;
+  }
+  for (let index = 0; index < cameraArray.length; index++) {
+    if (cameraArray[index].cameraPosition === cameraPosition &&
+      cameraArray[index].connectionType === connectionType) {
+      return true;
+    }
+  }
+  return false;
+}
 ```
 
 ## 摄像头切换逻辑
@@ -155,398 +155,406 @@ Context获取方式请参考：[获取UIAbility的上下文信息](uiability-usa
 
 ## 完整示例
 
+```ts
+import { camera } from '@kit.CameraKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { abilityAccessCtrl } from '@kit.AbilityKit';
+import { display } from '@kit.ArkUI';
+
+const TAG = 'FoldScreenCameraAdaptationDemo ';
+
+@Entry
+@Component
+struct Index {
+  @State isShow: boolean = false;
+  @State reloadXComponentFlag: boolean = false;
+  @StorageLink('foldStatus') @Watch('reloadXComponent') foldStatus: number = 0;
+  private mXComponentController: XComponentController = new XComponentController();
+  private mXComponentOptions: XComponentOptions = {
+    type: XComponentType.SURFACE,
+    controller: this.mXComponentController
+  }
+  private mSurfaceId: string = '';
+  private mCameraPosition: camera.CameraPosition = camera.CameraPosition.CAMERA_POSITION_BACK;
+  private mCameraManager: camera.CameraManager | undefined = undefined;
+  // surface宽高根据需要自行选择。
+  private surfaceRect: SurfaceRect = {
+    surfaceWidth: 1080,
+    surfaceHeight: 1920
+  };
+  private curCameraDevice: camera.CameraDevice | undefined = undefined;
+  private mCameraInput: camera.CameraInput | undefined = undefined;
+  private mPreviewOutput: camera.PreviewOutput | undefined = undefined;
+  private mPhotoSession: camera.PhotoSession | undefined = undefined;
+  // 请根据实际业务诉求选择符合需求场景的预览流Profile，此处以分辨率1080P，CameraFormat：1003为例。
+  private previewProfileObj: camera.Profile = {
+    format: 1003,
+    size: {
+      width: 1920,
+      height: 1080
+    }
+  };
+  private mContext: Context | undefined = undefined;
+
+  private preFoldStatus: display.FoldStatus = this.getFoldStatus();
+  // 监听折叠屏状态，可以使用cameraManager.on(type: 'foldStatusChange', callback: AsyncCallback<FoldStatusInfo>): void;
+  // 也可以使用display.on(type: 'foldStatusChange', callback: Callback<FoldStatus>): void;
+  private foldStatusCallback =
+    (err: BusinessError, info: camera.FoldStatusInfo): void => this.registerFoldStatusChanged(err, info);
+  private displayFoldStatusCallback =
+    (foldStatus: display.FoldStatus): void => this.onDisplayFoldStatusChange(foldStatus);
+
+  getFoldStatus(): display.FoldStatus {
+    let curFoldStatus: display.FoldStatus = display.FoldStatus.FOLD_STATUS_UNKNOWN;
+    try {
+      curFoldStatus = display.getFoldStatus();
+    } catch (error) {
+      console.info(`${TAG} getFoldStatus call failed, error: ${error.code}`);
+    }
+    return curFoldStatus;
+  }
+
+  registerFoldStatusChanged(err: BusinessError, foldStatusInfo: camera.FoldStatusInfo) {
+    if (err !== undefined && err.code !== 0) {
+      console.info(`${TAG} registerFoldStatusChanged call failed, error: ${err.code}`);
+      return;
+    }
+    console.info(TAG + 'foldStatusChanged foldStatus: ' + foldStatusInfo.foldStatus);
+    for (let i = 0; i < foldStatusInfo.supportedCameras.length; i++) {
+      console.info(TAG +
+        `foldStatusChanged camera[${i}]: ${foldStatusInfo.supportedCameras[i].cameraId},cameraPosition: ${foldStatusInfo.supportedCameras[i].cameraPosition}`);
+    }
+    AppStorage.setOrCreate<number>('foldStatus', foldStatusInfo.foldStatus);
+  }
+
+  onDisplayFoldStatusChange(foldStatus: display.FoldStatus): void {
+    console.info(TAG + `onDisplayFoldStatusChange foldStatus: ${foldStatus}`);
+    if ((this.preFoldStatus === display.FoldStatus.FOLD_STATUS_HALF_FOLDED &&
+      foldStatus === display.FoldStatus.FOLD_STATUS_EXPANDED) ||
+      (this.preFoldStatus === display.FoldStatus.FOLD_STATUS_EXPANDED &&
+        foldStatus === display.FoldStatus.FOLD_STATUS_HALF_FOLDED)) {
+      this.preFoldStatus = foldStatus;
+      return;
+    }
+    this.preFoldStatus = foldStatus;
+    if (!this.curCameraDevice) {
+      return;
+    }
+    // foldStatus 变量用来控制显示XComponent组件。
+    AppStorage.setOrCreate<number>('foldStatus', foldStatus);
+  }
+
+  requestPermissionsFn(): void {
+    let atManager = abilityAccessCtrl.createAtManager();
+    atManager.requestPermissionsFromUser(this.mContext, [
+      'ohos.permission.CAMERA'
+    ]).then((): void => {
+      this.isShow = true;
+    }).catch((error: BusinessError): void => {
+      console.error(`${TAG} requestPermissionsFromUser call failed, error: ${error.code}`);
+    });
+  }
+
+  initContext(): void {
+    let uiContext = this.getUIContext();
+    this.mContext = uiContext.getHostContext();
+  }
+
+  initCameraManager(): void {
+    try {
+      this.mCameraManager = camera.getCameraManager(this.mContext);
+    } catch (error) {
+      console.error(`${TAG} getCameraManager call failed, error: ${error.code}`);
+    }
+  }
+
+  aboutToAppear(): void {
+    console.info(TAG + 'aboutToAppear is called');
+    this.initContext();
+    this.initCameraManager();
+    this.requestPermissionsFn();
+    this.onFoldStatusChange();
+  }
+
+  async aboutToDisappear(): Promise<void> {
+    await this.releaseCamera();
+    // 解注册。
+    this.offFoldStatusChange();
+  }
+
+  async onPageShow(): Promise<void> {
+    await this.initCamera(this.mSurfaceId, this.mCameraPosition);
+  }
+
+  async releaseCamera(): Promise<void> {
+    // 停止当前会话。
+    try {
+      await this.mPhotoSession?.stop();
+    } catch (error) {
+      let err = error as BusinessError;
+      console.error(TAG + 'Failed to stop session, errorCode = ' + err.code);
+    }
+
+    // 释放相机输入流。
+    try {
+      await this.mCameraInput?.close();
+    } catch (error) {
+      let err = error as BusinessError;
+      console.error(TAG + 'Failed to close device, errorCode = ' + err.code);
+    }
+
+    // 释放预览输出流。
+    try {
+      await this.mPreviewOutput?.release();
+    } catch (error) {
+      let err = error as BusinessError;
+      console.error(TAG + 'Failed to release previewOutput, errorCode = ' + err.code);
+    }
+
+    this.mPreviewOutput = undefined;
+
+    // 释放会话。
+    try {
+      await this.mPhotoSession?.release();
+    } catch (error) {
+      let err = error as BusinessError;
+      console.error(TAG + 'Failed to release photoSession, errorCode = ' + err.code);
+    }
+
+    // 会话置空。
+    this.mPhotoSession = undefined;
+  }
+
+  onFoldStatusChange(): void {
+    this.mCameraManager?.on('foldStatusChange', this.foldStatusCallback);
+    // display.on('foldStatusChange', this.displayFoldStatusCallback);
+  }
+
+  offFoldStatusChange(): void {
+    this.mCameraManager?.off('foldStatusChange', this.foldStatusCallback);
+    // display.off('foldStatusChange', this.displayFoldStatusCallback);
+  }
+
+  reloadXComponent(): void {
+    this.reloadXComponentFlag = !this.reloadXComponentFlag;
+  }
+
+  async loadXComponent(): Promise<void> {
+    if (!this.mXComponentController) {
+      console.error(TAG + 'mXComponentController is null');
+      return;
+    }
+    this.mSurfaceId = this.mXComponentController.getXComponentSurfaceId();
+    this.mXComponentController.setXComponentSurfaceRect(this.surfaceRect);
+    console.info(TAG + `mCameraPosition: ${this.mCameraPosition}`)
+    await this.initCamera(this.mSurfaceId, this.mCameraPosition);
+  }
+
+  getPreviewProfile(cameraOutputCapability: camera.CameraOutputCapability): camera.Profile | undefined {
+    let previewProfiles = cameraOutputCapability.previewProfiles;
+    if (previewProfiles.length < 1) {
+      return undefined;
+    }
+    let index = previewProfiles.findIndex((previewProfile: camera.Profile) => {
+      return previewProfile.size.width === this.previewProfileObj.size.width &&
+        previewProfile.size.height === this.previewProfileObj.size.height &&
+        previewProfile.format === this.previewProfileObj.format;
+    })
+    if (index === -1) {
+      return undefined;
+    }
+    return previewProfiles[index];
+  }
+
+  async initCamera(surfaceId: string, cameraPosition: camera.CameraPosition,
+    connectionType: camera.ConnectionType = camera.ConnectionType.CAMERA_CONNECTION_BUILT_IN): Promise<void> {
+    await this.releaseCamera();
+    // 创建CameraManager对象。
+    if (!this.mCameraManager) {
+      console.error(TAG + 'camera.getCameraManager error');
+      return;
+    }
+
+    // 获取相机列表。
+    let cameraArray: Array<camera.CameraDevice> = this.mCameraManager.getSupportedCameras();
+    if (!cameraArray || cameraArray.length == 0) {
+      console.error(TAG + 'cameraManager.getSupportedCameras error');
+      return;
+    }
+
+    for (let index = 0; index < cameraArray.length; index++) {
+      console.info(TAG + 'cameraId : ' + cameraArray[index].cameraId); // 获取相机ID。
+      console.info(TAG + 'cameraPosition : ' + cameraArray[index].cameraPosition); // 获取相机位置。
+      console.info(TAG + 'cameraType : ' + cameraArray[index].cameraType); // 获取相机类型。
+      console.info(TAG + 'connectionType : ' + cameraArray[index].connectionType); // 获取相机连接类型。
+    }
+
+    let deviceIndex = cameraArray.findIndex((cameraDevice: camera.CameraDevice) => {
+      return cameraDevice.cameraPosition === cameraPosition && cameraDevice.connectionType === connectionType;
+    })
+    // 没有找到对应位置的摄像头，可选择其他摄像头，具体场景具体对待。
+    if (deviceIndex === -1) {
+      deviceIndex = 0;
+      console.error(TAG + 'not found camera');
+    }
+    this.curCameraDevice = cameraArray[deviceIndex];
+
+    // 创建相机输入流。
+    try {
+      this.mCameraInput = this.mCameraManager.createCameraInput(this.curCameraDevice);
+    } catch (error) {
+      let err = error as BusinessError;
+      console.error(TAG + 'Failed to createCameraInput errorCode = ' + err.code);
+    }
+    if (this.mCameraInput === undefined) {
+      return;
+    }
+
+    // 打开相机。
+    try {
+      await this.mCameraInput.open();
+    } catch (error) {
+      let err = error as BusinessError;
+      console.error(TAG + 'Failed to open device, errorCode = ' + err.code);
+    }
+
+    // 获取支持的模式类型。
+    let sceneModes: Array<camera.SceneMode> = this.mCameraManager.getSupportedSceneModes(this.curCameraDevice);
+    let isSupportPhotoMode: boolean = sceneModes.indexOf(camera.SceneMode.NORMAL_PHOTO) >= 0;
+    if (!isSupportPhotoMode) {
+      console.error(TAG + 'photo mode not support');
+      await this.releaseCamera();
+      return;
+    }
+
+    // 获取相机设备支持的输出流能力。
+    let cameraOutputCapability: camera.CameraOutputCapability =
+      this.mCameraManager.getSupportedOutputCapability(this.curCameraDevice, camera.SceneMode.NORMAL_PHOTO);
+    if (!cameraOutputCapability) {
+      console.error(TAG + 'cameraManager.getSupportedOutputCapability error');
+      return;
+    }
+    console.info(TAG + 'outputCapability: ' + JSON.stringify(cameraOutputCapability));
+    let previewProfile = this.getPreviewProfile(cameraOutputCapability);
+    if (!previewProfile) {
+      console.error(TAG + 'The resolution of the current preview stream is not supported.');
+      await this.releaseCamera();
+      return;
+    }
+    this.previewProfileObj = previewProfile;
+
+    // 创建预览输出流,其中参数 surfaceId 参考上文 XComponent 组件，预览流为XComponent组件提供的surface。
+    try {
+      this.mPreviewOutput = this.mCameraManager.createPreviewOutput(this.previewProfileObj, surfaceId);
+    } catch (error) {
+      let err = error as BusinessError;
+      console.error(TAG + `Failed to create the PreviewOutput instance. error code: ${err.code}`);
+    }
+    if (!this.mPreviewOutput) {
+      await this.releaseCamera();
+      return;
+    }
+
+    // 创建会话。
+    try {
+      let session = this.mCameraManager.createSession(camera.SceneMode.NORMAL_PHOTO);
+      if (!session) {
+        await this.releaseCamera();
+        return;
+      }
+      this.mPhotoSession = session as camera.PhotoSession;
+    } catch (error) {
+      let err = error as BusinessError;
+      console.error(TAG + 'Failed to create the session instance. errorCode = ' + err.code);
+    }
+
+    if (!this.mPhotoSession) {
+      await this.releaseCamera();
+      return;
+    }
+
+    // 开始配置会话。
+    try {
+      this.mPhotoSession.beginConfig();
+    } catch (error) {
+      let err = error as BusinessError;
+      console.error(TAG + 'Failed to beginConfig. errorCode = ' + err.code);
+    }
+
+    // 向会话中添加相机输入流。
+    try {
+      this.mPhotoSession.addInput(this.mCameraInput);
+    } catch (error) {
+      let err = error as BusinessError;
+      console.error(TAG + 'Failed to addInput. errorCode = ' + err.code);
+    }
+
+    // 向会话中添加预览输出流。
+    try {
+      this.mPhotoSession.addOutput(this.mPreviewOutput);
+    } catch (error) {
+      let err = error as BusinessError;
+      console.error(TAG + 'Failed to addOutput(previewOutput). errorCode = ' + err.code);
+    }
+
+    // 提交会话配置。
+    try {
+      await this.mPhotoSession.commitConfig();
+    } catch (error) {
+      let err = error as BusinessError;
+      console.error(TAG + 'Failed to commit session configuration, errorCode = ' + err.code);
+    }
+
+    // 启动会话。
+    try {
+      await this.mPhotoSession.start()
+    } catch (error) {
+      let err = error as BusinessError;
+      console.error(TAG + 'Failed to start session. errorCode = ' + err.code);
+    }
+  }
+
+  build() {
+    if (this.isShow) {
+      Stack() {
+        if (this.reloadXComponentFlag) {
+          XComponent(this.mXComponentOptions)
+            .onLoad(async () => {
+              await this.loadXComponent();
+            })
+            .width(this.getUIContext().px2vp(1080))
+            .height(this.getUIContext().px2vp(1920))
+        } else {
+          XComponent(this.mXComponentOptions)
+            .onLoad(async () => {
+              await this.loadXComponent();
+            })
+            .width(this.getUIContext().px2vp(1080))
+            .height(this.getUIContext().px2vp(1920))
+        }
+        Text('切换相机')
+          .size({ width: 80, height: 48 })
+          .position({ x: 1, y: 1 })
+          .backgroundColor(Color.White)
+          .textAlign(TextAlign.Center)
+          .borderRadius(24)
+          .onClick(async () => {
+            this.mCameraPosition = this.mCameraPosition === camera.CameraPosition.CAMERA_POSITION_BACK ?
+              camera.CameraPosition.CAMERA_POSITION_FRONT : camera.CameraPosition.CAMERA_POSITION_BACK;
+            this.reloadXComponentFlag = !this.reloadXComponentFlag;
+          })
+      }
+      .size({ width: '100%', height: '100%' })
+      .backgroundColor(Color.Black)
+    }
+  }
+}
 ```
-1. import { camera } from '@kit.CameraKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { abilityAccessCtrl } from '@kit.AbilityKit';
-4. import { display } from '@kit.ArkUI';
 
-6. const TAG = 'FoldScreenCameraAdaptationDemo ';
+## 常见问题
 
-8. @Entry
-9. @Component
-10. struct Index {
-11. @State isShow: boolean = false;
-12. @State reloadXComponentFlag: boolean = false;
-13. @StorageLink('foldStatus') @Watch('reloadXComponent') foldStatus: number = 0;
-14. private mXComponentController: XComponentController = new XComponentController();
-15. private mXComponentOptions: XComponentOptions = {
-16. type: XComponentType.SURFACE,
-17. controller: this.mXComponentController
-18. }
-19. private mSurfaceId: string = '';
-20. private mCameraPosition: camera.CameraPosition = camera.CameraPosition.CAMERA_POSITION_BACK;
-21. private mCameraManager: camera.CameraManager | undefined = undefined;
-22. // surface宽高根据需要自行选择。
-23. private surfaceRect: SurfaceRect = {
-24. surfaceWidth: 1080,
-25. surfaceHeight: 1920
-26. };
-27. private curCameraDevice: camera.CameraDevice | undefined = undefined;
-28. private mCameraInput: camera.CameraInput | undefined = undefined;
-29. private mPreviewOutput: camera.PreviewOutput | undefined = undefined;
-30. private mPhotoSession: camera.PhotoSession | undefined = undefined;
-31. // 请根据实际业务诉求选择符合需求场景的预览流Profile，此处以分辨率1080P，CameraFormat：1003为例。
-32. private previewProfileObj: camera.Profile = {
-33. format: 1003,
-34. size: {
-35. width: 1920,
-36. height: 1080
-37. }
-38. };
-39. private mContext: Context | undefined = undefined;
+### 折叠状态改变时，如何处理相机画面可能出现的拉伸变形问题
 
-41. private preFoldStatus: display.FoldStatus = this.getFoldStatus();
-42. // 监听折叠屏状态，可以使用cameraManager.on(type: 'foldStatusChange', callback: AsyncCallback<FoldStatusInfo>): void;
-43. // 也可以使用display.on(type: 'foldStatusChange', callback: Callback<FoldStatus>): void;
-44. private foldStatusCallback =
-45. (err: BusinessError, info: camera.FoldStatusInfo): void => this.registerFoldStatusChanged(err, info);
-46. private displayFoldStatusCallback =
-47. (foldStatus: display.FoldStatus): void => this.onDisplayFoldStatusChange(foldStatus);
+折叠状态发生变化导致镜头切换后，可能出现图像分辨率与XComponent的宽高比不匹配的情况。应用可通过[Window.on('windowSizeChange')](../harmonyos-references/arkts-apis-window-window.md#onwindowsizechange7)监听窗口的变化，根据屏幕旋转角度（[Display](../harmonyos-references/js-apis-display.md#display).rotation）与相机镜头角度（[CameraDevice](../harmonyos-references/arkts-apis-camera-i.md#cameradevice).cameraOrientation）之间的关系来确定布局的宽高比，以确保XComponent的宽高比能跟随窗口实时调整。
 
-49. getFoldStatus(): display.FoldStatus {
-50. let curFoldStatus: display.FoldStatus = display.FoldStatus.FOLD_STATUS_UNKNOWN;
-51. try {
-52. curFoldStatus = display.getFoldStatus();
-53. } catch (error) {
-54. console.info(`${TAG} getFoldStatus call failed, error: ${error.code}`);
-55. }
-56. return curFoldStatus;
-57. }
-
-59. registerFoldStatusChanged(err: BusinessError, foldStatusInfo: camera.FoldStatusInfo) {
-60. if (err !== undefined && err.code !== 0) {
-61. console.info(`${TAG} registerFoldStatusChanged call failed, error: ${err.code}`);
-62. return;
-63. }
-64. console.info(TAG + 'foldStatusChanged foldStatus: ' + foldStatusInfo.foldStatus);
-65. for (let i = 0; i < foldStatusInfo.supportedCameras.length; i++) {
-66. console.info(TAG +
-67. `foldStatusChanged camera[${i}]: ${foldStatusInfo.supportedCameras[i].cameraId},cameraPosition: ${foldStatusInfo.supportedCameras[i].cameraPosition}`);
-68. }
-69. AppStorage.setOrCreate<number>('foldStatus', foldStatusInfo.foldStatus);
-70. }
-
-72. onDisplayFoldStatusChange(foldStatus: display.FoldStatus): void {
-73. console.info(TAG + `onDisplayFoldStatusChange foldStatus: ${foldStatus}`);
-74. if ((this.preFoldStatus === display.FoldStatus.FOLD_STATUS_HALF_FOLDED &&
-75. foldStatus === display.FoldStatus.FOLD_STATUS_EXPANDED) ||
-76. (this.preFoldStatus === display.FoldStatus.FOLD_STATUS_EXPANDED &&
-77. foldStatus === display.FoldStatus.FOLD_STATUS_HALF_FOLDED)) {
-78. this.preFoldStatus = foldStatus;
-79. return;
-80. }
-81. this.preFoldStatus = foldStatus;
-82. if (!this.curCameraDevice) {
-83. return;
-84. }
-85. // foldStatus 变量用来控制显示XComponent组件。
-86. AppStorage.setOrCreate<number>('foldStatus', foldStatus);
-87. }
-
-89. requestPermissionsFn(): void {
-90. let atManager = abilityAccessCtrl.createAtManager();
-91. atManager.requestPermissionsFromUser(this.mContext, [
-92. 'ohos.permission.CAMERA'
-93. ]).then((): void => {
-94. this.isShow = true;
-95. }).catch((error: BusinessError): void => {
-96. console.error(`${TAG} requestPermissionsFromUser call failed, error: ${error.code}`);
-97. });
-98. }
-
-100. initContext(): void {
-101. let uiContext = this.getUIContext();
-102. this.mContext = uiContext.getHostContext();
-103. }
-
-105. initCameraManager(): void {
-106. try {
-107. this.mCameraManager = camera.getCameraManager(this.mContext);
-108. } catch (error) {
-109. console.error(`${TAG} getCameraManager call failed, error: ${error.code}`);
-110. }
-111. }
-
-113. aboutToAppear(): void {
-114. console.info(TAG + 'aboutToAppear is called');
-115. this.initContext();
-116. this.initCameraManager();
-117. this.requestPermissionsFn();
-118. this.onFoldStatusChange();
-119. }
-
-121. async aboutToDisappear(): Promise<void> {
-122. await this.releaseCamera();
-123. // 解注册。
-124. this.offFoldStatusChange();
-125. }
-
-127. async onPageShow(): Promise<void> {
-128. await this.initCamera(this.mSurfaceId, this.mCameraPosition);
-129. }
-
-131. async releaseCamera(): Promise<void> {
-132. // 停止当前会话。
-133. try {
-134. await this.mPhotoSession?.stop();
-135. } catch (error) {
-136. let err = error as BusinessError;
-137. console.error(TAG + 'Failed to stop session, errorCode = ' + err.code);
-138. }
-
-140. // 释放相机输入流。
-141. try {
-142. await this.mCameraInput?.close();
-143. } catch (error) {
-144. let err = error as BusinessError;
-145. console.error(TAG + 'Failed to close device, errorCode = ' + err.code);
-146. }
-
-148. // 释放预览输出流。
-149. try {
-150. await this.mPreviewOutput?.release();
-151. } catch (error) {
-152. let err = error as BusinessError;
-153. console.error(TAG + 'Failed to release previewOutput, errorCode = ' + err.code);
-154. }
-
-156. this.mPreviewOutput = undefined;
-
-158. // 释放会话。
-159. try {
-160. await this.mPhotoSession?.release();
-161. } catch (error) {
-162. let err = error as BusinessError;
-163. console.error(TAG + 'Failed to release photoSession, errorCode = ' + err.code);
-164. }
-
-166. // 会话置空。
-167. this.mPhotoSession = undefined;
-168. }
-
-170. onFoldStatusChange(): void {
-171. this.mCameraManager?.on('foldStatusChange', this.foldStatusCallback);
-172. // display.on('foldStatusChange', this.displayFoldStatusCallback);
-173. }
-
-175. offFoldStatusChange(): void {
-176. this.mCameraManager?.off('foldStatusChange', this.foldStatusCallback);
-177. // display.off('foldStatusChange', this.displayFoldStatusCallback);
-178. }
-
-180. reloadXComponent(): void {
-181. this.reloadXComponentFlag = !this.reloadXComponentFlag;
-182. }
-
-184. async loadXComponent(): Promise<void> {
-185. if (!this.mXComponentController) {
-186. console.error(TAG + 'mXComponentController is null');
-187. return;
-188. }
-189. this.mSurfaceId = this.mXComponentController.getXComponentSurfaceId();
-190. this.mXComponentController.setXComponentSurfaceRect(this.surfaceRect);
-191. console.info(TAG + `mCameraPosition: ${this.mCameraPosition}`)
-192. await this.initCamera(this.mSurfaceId, this.mCameraPosition);
-193. }
-
-195. getPreviewProfile(cameraOutputCapability: camera.CameraOutputCapability): camera.Profile | undefined {
-196. let previewProfiles = cameraOutputCapability.previewProfiles;
-197. if (previewProfiles.length < 1) {
-198. return undefined;
-199. }
-200. let index = previewProfiles.findIndex((previewProfile: camera.Profile) => {
-201. return previewProfile.size.width === this.previewProfileObj.size.width &&
-202. previewProfile.size.height === this.previewProfileObj.size.height &&
-203. previewProfile.format === this.previewProfileObj.format;
-204. })
-205. if (index === -1) {
-206. return undefined;
-207. }
-208. return previewProfiles[index];
-209. }
-
-211. async initCamera(surfaceId: string, cameraPosition: camera.CameraPosition,
-212. connectionType: camera.ConnectionType = camera.ConnectionType.CAMERA_CONNECTION_BUILT_IN): Promise<void> {
-213. await this.releaseCamera();
-214. // 创建CameraManager对象。
-215. if (!this.mCameraManager) {
-216. console.error(TAG + 'camera.getCameraManager error');
-217. return;
-218. }
-
-220. // 获取相机列表。
-221. let cameraArray: Array<camera.CameraDevice> = this.mCameraManager.getSupportedCameras();
-222. if (!cameraArray || cameraArray.length == 0) {
-223. console.error(TAG + 'cameraManager.getSupportedCameras error');
-224. return;
-225. }
-
-227. for (let index = 0; index < cameraArray.length; index++) {
-228. console.info(TAG + 'cameraId : ' + cameraArray[index].cameraId); // 获取相机ID。
-229. console.info(TAG + 'cameraPosition : ' + cameraArray[index].cameraPosition); // 获取相机位置。
-230. console.info(TAG + 'cameraType : ' + cameraArray[index].cameraType); // 获取相机类型。
-231. console.info(TAG + 'connectionType : ' + cameraArray[index].connectionType); // 获取相机连接类型。
-232. }
-
-234. let deviceIndex = cameraArray.findIndex((cameraDevice: camera.CameraDevice) => {
-235. return cameraDevice.cameraPosition === cameraPosition && cameraDevice.connectionType === connectionType;
-236. })
-237. // 没有找到对应位置的摄像头，可选择其他摄像头，具体场景具体对待。
-238. if (deviceIndex === -1) {
-239. deviceIndex = 0;
-240. console.error(TAG + 'not found camera');
-241. }
-242. this.curCameraDevice = cameraArray[deviceIndex];
-
-244. // 创建相机输入流。
-245. try {
-246. this.mCameraInput = this.mCameraManager.createCameraInput(this.curCameraDevice);
-247. } catch (error) {
-248. let err = error as BusinessError;
-249. console.error(TAG + 'Failed to createCameraInput errorCode = ' + err.code);
-250. }
-251. if (this.mCameraInput === undefined) {
-252. return;
-253. }
-
-255. // 打开相机。
-256. try {
-257. await this.mCameraInput.open();
-258. } catch (error) {
-259. let err = error as BusinessError;
-260. console.error(TAG + 'Failed to open device, errorCode = ' + err.code);
-261. }
-
-263. // 获取支持的模式类型。
-264. let sceneModes: Array<camera.SceneMode> = this.mCameraManager.getSupportedSceneModes(this.curCameraDevice);
-265. let isSupportPhotoMode: boolean = sceneModes.indexOf(camera.SceneMode.NORMAL_PHOTO) >= 0;
-266. if (!isSupportPhotoMode) {
-267. console.error(TAG + 'photo mode not support');
-268. await this.releaseCamera();
-269. return;
-270. }
-
-272. // 获取相机设备支持的输出流能力。
-273. let cameraOutputCapability: camera.CameraOutputCapability =
-274. this.mCameraManager.getSupportedOutputCapability(this.curCameraDevice, camera.SceneMode.NORMAL_PHOTO);
-275. if (!cameraOutputCapability) {
-276. console.error(TAG + 'cameraManager.getSupportedOutputCapability error');
-277. return;
-278. }
-279. console.info(TAG + 'outputCapability: ' + JSON.stringify(cameraOutputCapability));
-280. let previewProfile = this.getPreviewProfile(cameraOutputCapability);
-281. if (!previewProfile) {
-282. console.error(TAG + 'The resolution of the current preview stream is not supported.');
-283. await this.releaseCamera();
-284. return;
-285. }
-286. this.previewProfileObj = previewProfile;
-
-288. // 创建预览输出流,其中参数 surfaceId 参考上文 XComponent 组件，预览流为XComponent组件提供的surface。
-289. try {
-290. this.mPreviewOutput = this.mCameraManager.createPreviewOutput(this.previewProfileObj, surfaceId);
-291. } catch (error) {
-292. let err = error as BusinessError;
-293. console.error(TAG + `Failed to create the PreviewOutput instance. error code: ${err.code}`);
-294. }
-295. if (!this.mPreviewOutput) {
-296. await this.releaseCamera();
-297. return;
-298. }
-
-300. // 创建会话。
-301. try {
-302. let session = this.mCameraManager.createSession(camera.SceneMode.NORMAL_PHOTO);
-303. if (!session) {
-304. await this.releaseCamera();
-305. return;
-306. }
-307. this.mPhotoSession = session as camera.PhotoSession;
-308. } catch (error) {
-309. let err = error as BusinessError;
-310. console.error(TAG + 'Failed to create the session instance. errorCode = ' + err.code);
-311. }
-
-313. if (!this.mPhotoSession) {
-314. await this.releaseCamera();
-315. return;
-316. }
-
-318. // 开始配置会话。
-319. try {
-320. this.mPhotoSession.beginConfig();
-321. } catch (error) {
-322. let err = error as BusinessError;
-323. console.error(TAG + 'Failed to beginConfig. errorCode = ' + err.code);
-324. }
-
-326. // 向会话中添加相机输入流。
-327. try {
-328. this.mPhotoSession.addInput(this.mCameraInput);
-329. } catch (error) {
-330. let err = error as BusinessError;
-331. console.error(TAG + 'Failed to addInput. errorCode = ' + err.code);
-332. }
-
-334. // 向会话中添加预览输出流。
-335. try {
-336. this.mPhotoSession.addOutput(this.mPreviewOutput);
-337. } catch (error) {
-338. let err = error as BusinessError;
-339. console.error(TAG + 'Failed to addOutput(previewOutput). errorCode = ' + err.code);
-340. }
-
-342. // 提交会话配置。
-343. try {
-344. await this.mPhotoSession.commitConfig();
-345. } catch (error) {
-346. let err = error as BusinessError;
-347. console.error(TAG + 'Failed to commit session configuration, errorCode = ' + err.code);
-348. }
-
-350. // 启动会话。
-351. try {
-352. await this.mPhotoSession.start()
-353. } catch (error) {
-354. let err = error as BusinessError;
-355. console.error(TAG + 'Failed to start session. errorCode = ' + err.code);
-356. }
-357. }
-
-359. build() {
-360. if (this.isShow) {
-361. Stack() {
-362. if (this.reloadXComponentFlag) {
-363. XComponent(this.mXComponentOptions)
-364. .onLoad(async () => {
-365. await this.loadXComponent();
-366. })
-367. .width(this.getUIContext().px2vp(1080))
-368. .height(this.getUIContext().px2vp(1920))
-369. } else {
-370. XComponent(this.mXComponentOptions)
-371. .onLoad(async () => {
-372. await this.loadXComponent();
-373. })
-374. .width(this.getUIContext().px2vp(1080))
-375. .height(this.getUIContext().px2vp(1920))
-376. }
-377. Text('切换相机')
-378. .size({ width: 80, height: 48 })
-379. .position({ x: 1, y: 1 })
-380. .backgroundColor(Color.White)
-381. .textAlign(TextAlign.Center)
-382. .borderRadius(24)
-383. .onClick(async () => {
-384. this.mCameraPosition = this.mCameraPosition === camera.CameraPosition.CAMERA_POSITION_BACK ?
-385. camera.CameraPosition.CAMERA_POSITION_FRONT : camera.CameraPosition.CAMERA_POSITION_BACK;
-386. this.reloadXComponentFlag = !this.reloadXComponentFlag;
-387. })
-388. }
-389. .size({ width: '100%', height: '100%' })
-390. .backgroundColor(Color.Black)
-391. }
-392. }
-393. }
-```
+详细代码可参考：[指定XComponent的大小，防止旋转后图像拉伸变形](camera-rotation-angle-adaptation.md#指定xcomponent的大小防止旋转后图像拉伸变形)。

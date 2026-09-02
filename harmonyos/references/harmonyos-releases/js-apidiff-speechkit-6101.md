@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-speechkit-6101
 title: Speech Kit
-breadcrumb: 版本说明 > HarmonyOS 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta1引入的变更 > Speech Kit
+breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta1引入的变更 > Speech Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:37+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:16:23+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:297b62e90359347ccb5396a10d86e29a131a23a6e8eebb2622fff5a5ad9668e2
 ---
 

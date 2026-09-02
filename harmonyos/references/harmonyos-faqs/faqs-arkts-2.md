@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-2
 title: 有哪些创建线程的方式
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > ArkTS线程模型和并发 > 有哪些创建线程的方式
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:20+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:15+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:a54c0ca552f1524f571224818df52123b0d1062fd3c49b253a026455d8b7257b
 ---
 

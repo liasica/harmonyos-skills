@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-asse
 title: Asset_ResultSet
 breadcrumb: API参考 > 系统 > 安全 > Asset Store Kit（关键资产存储服务） > C API > 结构体 > Asset_ResultSet
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:48+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:8f5564d748fd1bd76739372c64c477c39dd63fc7cd0524098f782fcb5c59a26d
+scraped_at: 2026-09-02T15:01:40+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4d643a0092be7e0dd54c80fb28eda207305fdf057e1b39d859121aa8e57d10b5
 ---
 
-```
-1. typedef struct {...} Asset_ResultSet
+```c
+typedef struct {...} Asset_ResultSet
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-关键资产查询结果集合，用于定义多条关键资产。
+多条关键资产的查询结果。
 
 **起始版本：** 11
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

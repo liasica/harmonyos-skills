@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 执行sync过程中修改Hvigor及plugin版本导致build init
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 执行sync过程中修改Hvigor及plugin版本导致build init
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:20:28+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:989e2986fbb6c7f8d6ad6adcc8b935dc46576760e283095068c121a749939669
+scraped_at: 2026-09-02T14:54:54+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:b3d5fb13b3a06889eca2b68a0862a574868d740fadff92ccafe8601932a7cecf
 ---
 
 **问题现象**
 
 在配置Hvigor和hvigor-ohos-plugin的版本号后，点击Sync。如果之后再次修改了版本号，会导致重复下载引发版本冲突，表现为build init报错及日志刷屏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/aj3lPDNER_abIxKLdqLeyQ/zh-cn_image_0000002194158832.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/cK5oe1bOTvGB5WT16_zFSw/zh-cn_image_0000002654797863.png)
 
 **解决措施**
 

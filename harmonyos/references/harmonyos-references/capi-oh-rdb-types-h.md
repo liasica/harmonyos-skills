@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-r
 title: oh_rdb_types.h
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 头文件 > oh_rdb_types.h
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:30+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6eeba2499b1fc2c0ea05c73f4fd505e62a39ac5223c6800733b7f683af1f40aa
+scraped_at: 2026-09-02T15:00:42+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7564592e6776a2e2920abd1224987346e867d3afbe286432b9505461247eb6ec
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供与数据值相关的类型定义。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,15 +32,11 @@ PhonePC/2in1TabletTVWearable
 
 ### 枚举
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [Rdb\_ConflictResolution](capi-oh-rdb-types-h.md#rdb_conflictresolution) | Rdb\_ConflictResolution | 表示冲突解决策略的枚举。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -54,19 +44,15 @@ PhonePC/2in1TabletTVWearable
 | [void OH\_RDB\_DestroyReturningContext(OH\_RDB\_ReturningContext \*context)](capi-oh-rdb-types-h.md#oh_rdb_destroyreturningcontext) | 销毁[OH\_RDB\_ReturningContext](capi-rdb-oh-rdb-returningcontext.md)实例对象。 |
 | [int OH\_RDB\_SetReturningFields(OH\_RDB\_ReturningContext \*context, const char \*const fields[], int32\_t len)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-rdb-types-h#oh_rdb_setreturningfields) | 设置结果集中返回的字段。 |
 | [int OH\_RDB\_SetMaxReturningCount(OH\_RDB\_ReturningContext \*context, int32\_t count)](capi-oh-rdb-types-h.md#oh_rdb_setmaxreturningcount) | 设置返回结果集的最大行数量。 |
-| [OH\_Cursor \*OH\_RDB\_GetReturningValues(OH\_RDB\_ReturningContext \*context)](capi-oh-rdb-types-h.md#oh_rdb_getreturningvalues) | 获取数据变化的游标，默认包含1024条。 |
+| [OH\_Cursor \*OH\_RDB\_GetReturningValues(OH\_RDB\_ReturningContext \*context)](capi-oh-rdb-types-h.md#oh_rdb_getreturningvalues) | 获取数据变化的游标，默认包含1024行。 |
 | [int64\_t OH\_RDB\_GetChangedCount(OH\_RDB\_ReturningContext \*context)](capi-oh-rdb-types-h.md#oh_rdb_getchangedcount) | 获取受此操作影响的数据行的数量。 |
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### Rdb\_ConflictResolution
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Rdb_ConflictResolution
+```c
+enum Rdb_ConflictResolution
 ```
 
 **描述**
@@ -78,22 +64,18 @@ PhonePC/2in1TabletTVWearable
 | 枚举项 | 描述 |
 | --- | --- |
 | RDB\_CONFLICT\_NONE = 1 | 发生冲突时不执行任何操作。 |
-| RDB\_CONFLICT\_ROLLBACK | 发生冲突时抛错误码，同时回滚本次事务。 |
-| RDB\_CONFLICT\_ABORT | 发生冲突时抛错误码，同时回滚本次修改。 |
-| RDB\_CONFLICT\_FAIL | 发生冲突时抛错误码，不回滚冲突前的修改同时终止本次修改。 |
+| RDB\_CONFLICT\_ROLLBACK | 发生冲突时抛出错误码，同时回滚本次事务。 |
+| RDB\_CONFLICT\_ABORT | 发生冲突时抛出错误码，同时回滚本次修改。 |
+| RDB\_CONFLICT\_FAIL | 发生冲突时抛出错误码，不回滚冲突前的修改同时终止本次修改。 |
 | RDB\_CONFLICT\_IGNORE | 发生冲突时忽略冲突的数据，继续执行后续修改。 |
 | RDB\_CONFLICT\_REPLACE | 发生冲突时，尝试删除后插入，如果还是冲突则等同于RDB\_CONFLICT\_ABORT。 |
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_RDB\_CreateReturningContext()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_RDB_ReturningContext *OH_RDB_CreateReturningContext(void)
+```c
+OH_RDB_ReturningContext *OH_RDB_CreateReturningContext(void)
 ```
 
 **描述**
@@ -106,14 +88,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_RDB\_ReturningContext \*](capi-rdb-oh-rdb-returningcontext.md) | 执行成功时返回指向[OH\_RDB\_ReturningContext](capi-rdb-oh-rdb-returningcontext.md)实例的指针。  否则返回nullptr。使用完成后必须通过[OH\_RDB\_DestroyReturningContext](capi-oh-rdb-types-h.md#oh_rdb_destroyreturningcontext)接口释放内存。 |
+| [OH\_RDB\_ReturningContext](capi-rdb-oh-rdb-returningcontext.md) \* | 执行成功时返回指向[OH\_RDB\_ReturningContext](capi-rdb-oh-rdb-returningcontext.md)实例的指针。  否则返回nullptr。使用完成后必须通过[OH\_RDB\_DestroyReturningContext](capi-oh-rdb-types-h.md#oh_rdb_destroyreturningcontext)接口释放内存。 |
 
 ### OH\_RDB\_DestroyReturningContext()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_RDB_DestroyReturningContext(OH_RDB_ReturningContext *context)
+```c
+void OH_RDB_DestroyReturningContext(OH_RDB_ReturningContext *context)
 ```
 
 **描述**
@@ -130,10 +110,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_RDB\_SetReturningFields()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_RDB_SetReturningFields(OH_RDB_ReturningContext *context, const char *const fields[], int32_t len)
+```c
+int OH_RDB_SetReturningFields(OH_RDB_ReturningContext *context, const char *const fields[], int32_t len)
 ```
 
 **描述**
@@ -147,8 +125,8 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_RDB\_ReturningContext](capi-rdb-oh-rdb-returningcontext.md) \*context | 指向[OH\_RDB\_ReturningContext](capi-rdb-oh-rdb-returningcontext.md)实例的指针。 |
-| const char \*const fields[] | 要返回的列名。 |
-| int32\_t len | 字段长度。 |
+| const char \*const fields[] | 要返回的字段名。 |
+| int32\_t len | 字段数量。 |
 
 **返回：**
 
@@ -158,10 +136,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_RDB\_SetMaxReturningCount()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_RDB_SetMaxReturningCount(OH_RDB_ReturningContext *context, int32_t count)
+```c
+int OH_RDB_SetMaxReturningCount(OH_RDB_ReturningContext *context, int32_t count)
 ```
 
 **描述**
@@ -175,7 +151,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_RDB\_ReturningContext](capi-rdb-oh-rdb-returningcontext.md) \*context | 指向[OH\_RDB\_ReturningContext](capi-rdb-oh-rdb-returningcontext.md)实例的指针。 |
-| int32\_t count | 表示返回结果集的最大条目数。 |
+| int32\_t count | 表示返回结果集的最大行数量。 |
 
 **返回：**
 
@@ -185,15 +161,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_RDB\_GetReturningValues()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Cursor *OH_RDB_GetReturningValues(OH_RDB_ReturningContext *context)
+```c
+OH_Cursor *OH_RDB_GetReturningValues(OH_RDB_ReturningContext *context)
 ```
 
 **描述**
 
-获取数据变化的游标，默认包含1024条。
+获取数据变化的游标，默认包含1024行。
 
 **起始版本：** 23
 
@@ -211,10 +185,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_RDB\_GetChangedCount()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int64_t OH_RDB_GetChangedCount(OH_RDB_ReturningContext *context)
+```c
+int64_t OH_RDB_GetChangedCount(OH_RDB_ReturningContext *context)
 ```
 
 **描述**

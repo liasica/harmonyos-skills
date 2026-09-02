@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_member-or
 title: "@typescript-eslint/member-ordering"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/member-ordering
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:28+08:00
+scraped_at: 2026-09-02T14:50:51+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:dc1fe86a7811ea913fab6f9b91b305f100806da81f0e4aabd6e6a50867ca1597
+content_hash: sha256:49b54159e8268426ecd5acda8e9bb99a1719f22ce05dd640d9ce759b280306fa
 ---
 
 要求类、接口和类型字面量中成员的排序方式保持一致的风格。
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@typescript-eslint/member-ordering": "error"
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@typescript-eslint/member-ordering": "error"
+  }
+}
 ```
 
 ## 选项
@@ -27,64 +27,64 @@ content_hash: sha256:dc1fe86a7811ea913fab6f9b91b305f100806da81f0e4aabd6e6a50867c
 
 ## 正例
 
-```
-1. // 默认排序规则：field-constructor-method
-2. export class Foo2 {
-3. // -> field
-4. protected static e: string = '';
+```screen
+// 默认排序规则：field-constructor-method
+export class Foo2 {
+  // -> field
+  protected static e: string = '';
 
-6. public d: string = '';
+  public d: string = '';
 
-8. private readonly c: string = '';
+  private readonly c: string = '';
 
-10. // -> constructor
-11. public constructor() {
-12. console.info('constructor');
-13. }
+  // -> constructor
+  public constructor() {
+    console.info('constructor');
+  }
 
-15. // -> method
-16. public static a(): void {
-17. console.info('static method');
-18. }
+  // -> method
+  public static a(): void {
+    console.info('static method');
+  }
 
-20. public b(): void {
-21. console.info(this.c);
-22. }
-23. }
+  public b(): void {
+    console.info(this.c);
+  }
+}
 ```
 
 ## 反例
 
-```
-1. // 默认排序规则：field-constructor-method
-2. export class Foo2 {
-3. // -> method
-4. public static a(): void {
-5. console.info('static method');
-6. }
+```screen
+// 默认排序规则：field-constructor-method
+export class Foo2 {
+  // -> method
+  public static a(): void {
+    console.info('static method');
+  }
 
-8. public b(): void {
-9. console.info(this.c);
-10. }
+  public b(): void {
+    console.info(this.c);
+  }
 
-12. // -> field
-13. protected static e: string = '';
+  // -> field
+  protected static e: string = '';
 
-15. private readonly c: string = '';
+  private readonly c: string = '';
 
-17. public d: string = '';
+  public d: string = '';
 
-19. // -> constructor
-20. public constructor() {
-21. console.info('constructor');
-22. }
-23. }
+  // -> constructor
+  public constructor() {
+    console.info('constructor');
+  }
+}
 ```
 
 ## 规则集
 
-```
-1. plugin:@typescript-eslint/all
+```screen
+plugin:@typescript-eslint/all
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

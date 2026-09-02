@@ -1,17 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-track
 title: "@Track装饰器：class对象属性级更新"
+breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理数据对象的状态 > @Track装饰器：class对象属性级更新
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:05+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e40b0b6e20cf5f2058629d4f04f242073124491d5c340434b8dd06403ef9f4d4
+scraped_at: 2026-09-02T14:59:15+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6472dbdfd00f3bdff9c592b384c0969cae8afe4b9e198c47319612a6342cb0de
 ---
 
-@Track应用于class对象的属性级更新。@Track装饰的属性变化时，只会触发该属性关联的UI更新。
+[@Track](../harmonyos-references/ts-state-management-track.md#track)应用于class对象的属性级更新。@Track装饰的属性变化时，只会触发该属性关联的UI更新。
 
 在阅读本文档之前，建议开发者对状态管理基本观察能力有基本的了解。建议提前阅读：[@State](arkts-state.md)。
 
-说明
+**说明** 
 
 从API version 11开始，该装饰器支持在ArkTS卡片中使用。
 
@@ -25,76 +26,84 @@ content_hash: sha256:e40b0b6e20cf5f2058629d4f04f242073124491d5c340434b8dd06403ef
 
 状态管理V1中@State等装饰器默认支持观察第一层属性的变化，第一层属性的变化虽然可以触发更新，但无法做到类属性级的观察，下面的例子就展示了这一限制：
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+const DOMAIN_NUMBER: number = 0XFF00;
+const TAG: string = '[Sample_StateTrack]';
+class Info {
+  public name: string = 'Jack';
+  public age: number = 12;
+}
+
+@Entry
+@Component
+struct Index {
+  @State info: Info = new Info();
+
+  // 借助getFontSize的日志打印，可以分辨哪个组件触发了渲染
+  getFontSize(id: number): number {
+    hilog.info(DOMAIN_NUMBER, TAG, `Component ${id} render`);
+    return 30;
+  }
+
+  build() {
+    Column() {
+      Text(`name: ${this.info.name}`)
+        .fontSize(this.getFontSize(1))
+        .margin(10)
+      Text(`age: ${this.info.age}`)
+        .fontSize(this.getFontSize(2))
+        .margin(10)
+
+      // 点击当前Button，可以发现当前虽然仅改变了name属性
+      // 但是依旧会触发两个Text的刷新
+      // Text(`age: ${this.info.age}`)是冗余刷新
+      Button('change name')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.info.name = 'Jane';
+        })
+
+      // 点击当前Button，可以发现当前虽然仅改变了age属性
+      // 但是依旧会触发两个Text的刷新
+      // Text(`name: ${this.info.name}`)是冗余刷新
+      Button('change age')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.info.age++;
+        })
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. const DOMAIN_NUMBER: number = 0XFF00;
-3. const TAG: string = '[Sample_StateTrack]';
-4. class Info {
-5. public name: string = 'Jack';
-6. public age: number = 12;
-7. }
 
-9. @Entry
-10. @Component
-11. struct Index {
-12. @State info: Info = new Info();
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/XdPwvXw0QAi9fgwMtexiDw/zh-cn_image_0000002706673282.gif)
 
-14. // 借助getFontSize的日志打印，可以分辨哪个组件触发了渲染
-15. getFontSize(id: number): number {
-16. hilog.info(DOMAIN_NUMBER, TAG, `Component ${id} render`);
-17. return 30;
-18. }
-
-20. build() {
-21. Column() {
-22. Text(`name: ${this.info.name}`)
-23. .fontSize(this.getFontSize(1))
-24. Text(`age: ${this.info.age}`)
-25. .fontSize(this.getFontSize(2))
-
-27. // 点击当前Button，可以发现当前虽然仅改变了name属性
-28. // 但是依旧会触发两个Text的刷新
-29. // Text(`age: ${this.info.age}`)是冗余刷新
-30. Button('change name').onClick(() => {
-31. this.info.name = 'Jane';
-32. })
-
-34. // 点击当前Button，可以发现当前虽然仅改变了age属性
-35. // 但是依旧会触发两个Text的刷新
-36. // Text(`name: ${this.info.name}`)是冗余刷新
-37. Button('change age').onClick(() => {
-38. this.info.age++;
-39. })
-40. }
-41. .height('100%')
-42. .width('100%')
-43. }
-44. }
-```
-
-[StateTrackClass.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateTrack/entry/src/main/ets/pages/stateTrack/StateTrackClass.ets#L15-L60)
-
-说明
+**说明** 
 
 当UI刷新时，会执行组件的属性设置方法，利用这一机制可以通过观察getFontSize方法是否被调用来判断当前组件是否刷新。
 
 * UI首次渲染完成，观察到输出如下日志：
 
-  ```
-  1. Component 1 render
-  2. Component 2 render
+  ```text
+  Component 1 render
+  Component 2 render
   ```
 * 当点击Button('change name')时，即使只修改了info.name，观察日志发现两个Text组件仍会重新渲染。组件Text(`age: ${this.info.age}`)并未使用name属性，但仍因为info.name的改变而刷新，因此这次刷新是冗余的。日志输出如下：
 
-  ```
-  1. Component 1 render
-  2. Component 2 render
+  ```text
+  Component 1 render
+  Component 2 render
   ```
 * 同理，点击Button('change age')，也会触发Text(`name: ${this.info.name}`)的刷新。日志输出如下：
 
-  ```
-  1. Component 1 render
-  2. Component 2 render
+  ```text
+  Component 1 render
+  Component 2 render
   ```
 
 造成上述冗余刷新的根本原因是：状态管理V1中@State等装饰器无法精准观察类属性的访问与变更。为了实现类对象属性的精准观察，引入@Track装饰器。
@@ -110,95 +119,103 @@ content_hash: sha256:e40b0b6e20cf5f2058629d4f04f242073124491d5c340434b8dd06403ef
 
 当一个class对象是状态变量时，@Track装饰的属性发生变化，该属性关联的UI触发更新。
 
-说明
+**说明** 
 
 当class对象中没有一个属性被标记@Track，行为与原先保持不变。@Track没有深度观测的功能。
 
 使用@Track装饰器可以避免冗余刷新。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+const DOMAIN_NUMBER: number = 0XFF00;
+const TAG: string = '[Sample_StateTrack]';
+
+class LogTrack {
+  @Track public str1: string;
+  @Track public str2: string;
+
+  constructor(str1: string) {
+    this.str1 = str1;
+    this.str2 = 'World';
+  }
+}
+
+class LogNotTrack {
+  public str1: string;
+  public str2: string;
+
+  constructor(str1: string) {
+    this.str1 = str1;
+    this.str2 = 'World';
+  }
+}
+
+@Entry
+@Component
+struct AddLog {
+  @State logTrack: LogTrack = new LogTrack('Hello');
+  @State logNotTrack: LogNotTrack = new LogNotTrack('Hello');
+
+  isRender(index: number): number {
+    hilog.info(DOMAIN_NUMBER, TAG, `Text ${index} is rendered`);
+    return 50;
+  }
+
+  build() {
+    Row() {
+      Column() {
+        Text(this.logTrack.str1) // Text1
+          .id('str1')
+          .fontSize(this.isRender(1))
+          .fontWeight(FontWeight.Bold)
+          .margin(10)
+        Text(this.logTrack.str2) // Text2
+          .fontSize(this.isRender(2))
+          .fontWeight(FontWeight.Bold)
+          .margin(10)
+        Button('change logTrack.str1')
+          .id('str2')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.logTrack.str1 = 'Bye';
+          })
+        Text(this.logNotTrack.str1) // Text3
+          .fontSize(this.isRender(3))
+          .fontWeight(FontWeight.Bold)
+          .margin(10)
+        Text(this.logNotTrack.str2) // Text4
+          .fontSize(this.isRender(4))
+          .fontWeight(FontWeight.Bold)
+          .margin(10)
+        Button('change logNotTrack.str1')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.logNotTrack.str1 = 'Bye';
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. const DOMAIN_NUMBER: number = 0XFF00;
-3. const TAG: string = '[Sample_StateTrack]';
 
-5. class LogTrack {
-6. @Track public str1: string;
-7. @Track public str2: string;
-
-9. constructor(str1: string) {
-10. this.str1 = str1;
-11. this.str2 = 'World';
-12. }
-13. }
-
-15. class LogNotTrack {
-16. public str1: string;
-17. public str2: string;
-
-19. constructor(str1: string) {
-20. this.str1 = str1;
-21. this.str2 = 'World';
-22. }
-23. }
-
-25. @Entry
-26. @Component
-27. struct AddLog {
-28. @State logTrack: LogTrack = new LogTrack('Hello');
-29. @State logNotTrack: LogNotTrack = new LogNotTrack('Hello');
-
-31. isRender(index: number) {
-32. hilog.info(DOMAIN_NUMBER, TAG, `Text ${index} is rendered`);
-33. return 50;
-34. }
-
-36. build() {
-37. Row() {
-38. Column() {
-39. Text(this.logTrack.str1) // Text1
-40. .id('str1')
-41. .fontSize(this.isRender(1))
-42. .fontWeight(FontWeight.Bold)
-43. Text(this.logTrack.str2) // Text2
-44. .fontSize(this.isRender(2))
-45. .fontWeight(FontWeight.Bold)
-46. Button('change logTrack.str1')
-47. .id('str2')
-48. .onClick(() => {
-49. this.logTrack.str1 = 'Bye';
-50. })
-51. Text(this.logNotTrack.str1) // Text3
-52. .fontSize(this.isRender(3))
-53. .fontWeight(FontWeight.Bold)
-54. Text(this.logNotTrack.str2) // Text4
-55. .fontSize(this.isRender(4))
-56. .fontWeight(FontWeight.Bold)
-57. Button('change logNotTrack.str1')
-58. .onClick(() => {
-59. this.logNotTrack.str1 = 'Bye';
-60. })
-61. }
-62. .width('100%')
-63. }
-64. .height('100%')
-65. }
-66. }
-```
-
-[StateTrackClass2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateTrack/entry/src/main/ets/pages/stateTrack/StateTrackClass2.ets#L15-L82)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/95y4FrEdTYGHq11oZtP0-A/zh-cn_image_0000002736432371.gif)
 
 在上面的示例中：
 
 1. 类LogTrack中的属性均被@Track装饰器装饰，点击按钮"change logTrack.str1"，此时Text1刷新，Text2不刷新，只有一条日志输出，避免了冗余刷新。
 
+   ```ts
+   Text 1 is rendered
    ```
-   1. Text 1 is rendered
-   ```
-2. 类logNotTrack中的属性均未被@Track装饰器装饰，点击按钮"change logNotTrack.str1"，此时Text3、Text4均会刷新，有两条日志输出，存在冗余刷新。
+2. 类LogNotTrack中的属性均未被@Track装饰器装饰，点击按钮"change logNotTrack.str1"，此时Text3、Text4均会刷新，有两条日志输出，存在冗余刷新。
 
-   ```
-   1. Text 3 is rendered
-   2. Text 4 is rendered
+   ```ts
+   Text 3 is rendered
+   Text 4 is rendered
    ```
 
 ## 限制条件
@@ -213,59 +230,59 @@ content_hash: sha256:e40b0b6e20cf5f2058629d4f04f242073124491d5c340434b8dd06403ef
 
 以下示例展示组件更新和@Track的处理步骤。对象log是@State装饰的状态变量，logInfo是@Track装饰的成员属性，其余成员属性都是非@Track装饰的，而且也不准备在UI中更新它们的值。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+const DOMAIN_NUMBER: number = 0XFF00;
+const TAG: string = '[Sample_StateTrack]';
+class Log {
+  @Track public logInfo: string;
+  public owner: string;
+  public id: number;
+  public time: Date;
+  public location: string;
+  public reason: string;
+
+  constructor(logInfo: string) {
+    this.logInfo = logInfo;
+    this.owner = 'OH';
+    this.id = 0;
+    this.time = new Date();
+    this.location = 'CN';
+    this.reason = 'NULL';
+  }
+}
+
+@Entry
+@Component
+struct AddLog {
+  @State log: Log = new Log('origin info.');
+
+  build() {
+    Row() {
+      Column() {
+        Text(this.log.logInfo)
+          .fontSize(50)
+          .fontWeight(FontWeight.Bold)
+          .onClick(() => {
+            // 没有被@Track装饰的属性可以在点击事件中使用。
+            hilog.info(DOMAIN_NUMBER, TAG, 'owner: ' + this.log.owner +
+              ' id: ' + this.log.id +
+              ' time: ' + this.log.time +
+              ' location: ' + this.log.location +
+              ' reason: ' + this.log.reason);
+            this.log.time = new Date();
+            this.log.id++;
+            this.log.logInfo += ' info.';
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. const DOMAIN_NUMBER: number = 0XFF00;
-3. const TAG: string = '[Sample_StateTrack]';
-4. class Log {
-5. @Track public logInfo: string;
-6. public owner: string;
-7. public id: number;
-8. public time: Date;
-9. public location: string;
-10. public reason: string;
 
-12. constructor(logInfo: string) {
-13. this.logInfo = logInfo;
-14. this.owner = 'OH';
-15. this.id = 0;
-16. this.time = new Date();
-17. this.location = 'CN';
-18. this.reason = 'NULL';
-19. }
-20. }
-
-22. @Entry
-23. @Component
-24. struct AddLog {
-25. @State log: Log = new Log('origin info.');
-
-27. build() {
-28. Row() {
-29. Column() {
-30. Text(this.log.logInfo)
-31. .fontSize(50)
-32. .fontWeight(FontWeight.Bold)
-33. .onClick(() => {
-34. // 没有被@Track装饰的属性可以在点击事件中使用。
-35. hilog.info(DOMAIN_NUMBER, TAG, 'owner: ' + this.log.owner +
-36. ' id: ' + this.log.id +
-37. ' time: ' + this.log.time +
-38. ' location: ' + this.log.location +
-39. ' reason: ' + this.log.reason);
-40. this.log.time = new Date();
-41. this.log.id++;
-42. this.log.logInfo += ' info.';
-43. })
-44. }
-45. .width('100%')
-46. }
-47. .height('100%')
-48. }
-49. }
-```
-
-[StateTrackClass3.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateTrack/entry/src/main/ets/pages/stateTrack/StateTrackClass3.ets#L15-L65)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/eDGeHqobRsOrjP5ijf4Ovg/zh-cn_image_0000002706833218.gif)
 
 处理步骤：
 
@@ -278,27 +295,29 @@ content_hash: sha256:e40b0b6e20cf5f2058629d4f04f242073124491d5c340434b8dd06403ef
 
 在UI中使用非@Track装饰的属性，运行时会报错，从API version 23开始，将返回错误码140110。需要给age也添加@Track装饰器。
 
-```
-1. class Person {
-2. // id被@Track装饰
-3. @Track id: number;
-4. // age未被@Track装饰
-5. age: number;
+```ts
+class Person {
+  // id被@Track装饰
+  @Track id: number;
+  // age未被@Track装饰
+  age: number;
 
-7. constructor(id: number, age: number) {
-8. this.id = id;
-9. this.age = age;
-10. }
-11. }
+  constructor(id: number, age: number) {
+    this.id = id;
+    this.age = age;
+  }
+}
 
-13. @Entry
-14. @Component
-15. struct Parent {
-16. @State parent: Person = new Person(2, 30);
+@Entry
+@Component
+struct Parent {
+  @State parent: Person = new Person(2, 30);
 
-18. build() {
-19. // 没有被@Track装饰的属性不可以在UI中使用，运行时会报错
-20. Text(`Parent id is: ${this.parent.id} and Parent age is: ${this.parent.age}`)
-21. }
-22. }
+  build() {
+    // 没有被@Track装饰的属性不可以在UI中使用，运行时会报错
+    Text(`Parent id is: ${this.parent.id} and Parent age is: ${this.parent.age}`)
+      .fontSize(20)
+      .margin(10)
+  }
+}
 ```

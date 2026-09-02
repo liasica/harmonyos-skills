@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-d
 title: 应用开发准备
 breadcrumb: 指南 > 应用开发准备 > 应用开发准备
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:38+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7e752ce5e269d877684cadf5feba39db70ee77433531a6032773bdd6ffbf3b75
+scraped_at: 2026-09-02T14:59:09+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:76e2177315b48efc09623e4350e546d4a53ea0919db69ed8692c680733052342
 ---
 
 在开始应用开发前，需要先完成以下准备工作。
@@ -32,8 +32,8 @@ content_hash: sha256:7e752ce5e269d877684cadf5feba39db70ee77433531a6032773bdd6ffb
 
 目前提供了两种签名方式，请根据实际情况选择：
 
-* [自动签名](ide-signing.md#section18815157237)：如果您只需要使用一台调试设备，建议使用DevEco Studio提供的自动签名。
-* 手动签名：如果您使用多台调试设备或者会在断网情况下调试，您需要在AGC中[申请调试证书](../app/agc-help-debug-cert-0000002283256797.md)、[注册调试设备](../app/agc-help-add-device-0000002283189937.md)、[申请调试Profile](../app/agc-help-debug-profile-0000002248181278.md)后，再[手动配置签名信息](ide-signing.md#section1240072619462)。
+* [自动签名](ide-signing-auto.md)：如果您只需要使用一台调试设备，建议使用DevEco Studio提供的自动签名。
+* 手动签名：如果您使用多台调试设备或者会在断网情况下调试，您需要在AGC中[申请调试证书](../app/agc-help-debug-cert-0000002283256797.md)、[注册调试设备](../app/agc-help-add-device-0000002283189937.md)、[申请调试Profile](../app/agc-help-debug-profile-0000002248181278.md)后，再[手动配置签名信息](ide-signing-manual.md#section15586174616)。
 
 ## （条件必选）添加公钥指纹
 
@@ -47,7 +47,7 @@ content_hash: sha256:7e752ce5e269d877684cadf5feba39db70ee77433531a6032773bdd6ffb
 * Wallet Kit（钱包服务）
 * Wear Engine Kit（穿戴服务）
 
-说明
+**说明** 
 
 发布应用前，需要将调试应用的指纹更新为发布指纹。
 

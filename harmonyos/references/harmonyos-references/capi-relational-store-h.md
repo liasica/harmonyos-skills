@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-rela
 title: relational_store.h
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 头文件 > relational_store.h
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:33+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7772dba7a03e3a4e52ead43cd7597a4293717e0ab1bac3f40e1eaf00361b2a72
+scraped_at: 2026-09-02T15:00:43+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:01d3f92ebcc623386095f6ede40ba8948d1d0d5eeebc4274fcf90e7a819d0536
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供管理关系数据库（RDB）方法的接口，未标注支持向量数据库的接口仅支持关系型数据库。
 
@@ -26,16 +24,12 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [OH\_Rdb\_Config](capi-rdb-oh-rdb-config.md) | OH\_Rdb\_Config | 管理关系数据库配置。 |
-| [OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md) | OH\_Rdb\_Store | 表示数据库类型。 |
+| [OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md) | OH\_Rdb\_Store | 表示数据库实例。 |
 | [Rdb\_DistributedConfig](capi-rdb-rdb-distributedconfig.md) | Rdb\_DistributedConfig | 记录表的分布式配置信息。 |
 | [Rdb\_KeyInfo](capi-rdb-rdb-keyinfo.md) | Rdb\_KeyInfo | 描述发生变化的行的主键或者行号。 |
 | [Rdb\_KeyData](capi-rdb-rdb-keydata.md) | - | 存放变化的具体数据。 |
@@ -50,8 +44,6 @@ PhonePC/2in1TabletTVWearable
 
 ### 枚举
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [OH\_Rdb\_SecurityLevel](capi-relational-store-h.md#oh_rdb_securitylevel) | OH\_Rdb\_SecurityLevel | 数据库的安全级别枚举。 |
@@ -61,13 +53,11 @@ PhonePC/2in1TabletTVWearable
 | [Rdb\_DistributedType](capi-relational-store-h.md#rdb_distributedtype) | Rdb\_DistributedType | 描述表的分布式类型的枚举。 |
 | [Rdb\_ChangeType](capi-relational-store-h.md#rdb_changetype) | Rdb\_ChangeType | 描述数据变更类型。 |
 | [Rdb\_SubscribeType](capi-relational-store-h.md#rdb_subscribetype) | Rdb\_SubscribeType | 描述订阅类型。 |
-| [Rdb\_SyncMode](capi-relational-store-h.md#rdb_syncmode) | Rdb\_SyncMode | 表示数据库的同步模式 |
+| [Rdb\_SyncMode](capi-relational-store-h.md#rdb_syncmode) | Rdb\_SyncMode | 表示数据库的同步模式。 |
 | [Rdb\_Progress](capi-relational-store-h.md#rdb_progress) | Rdb\_Progress | 描述端云同步过程。 |
 | [Rdb\_ProgressCode](capi-relational-store-h.md#rdb_progresscode) | Rdb\_ProgressCode | 表示端云同步过程的状态。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -103,18 +93,18 @@ PhonePC/2in1TabletTVWearable
 | [int OH\_Rdb\_Update(OH\_Rdb\_Store \*store, OH\_VBucket \*valuesBucket, OH\_Predicates \*predicates)](capi-relational-store-h.md#oh_rdb_update) | - | 根据指定的条件更新数据库中的数据。 |
 | [int OH\_Rdb\_UpdateWithConflictResolution(OH\_Rdb\_Store \*store, OH\_VBucket \*row, OH\_Predicates \*predicates,Rdb\_ConflictResolution resolution, int64\_t \*changes)](capi-relational-store-h.md#oh_rdb_updatewithconflictresolution) | - | 根据指定条件更新数据库中的数据，并支持冲突解决。 |
 | [int OH\_Rdb\_Delete(OH\_Rdb\_Store \*store, OH\_Predicates \*predicates)](capi-relational-store-h.md#oh_rdb_delete) | - | 根据指定的条件删除数据库中的数据。 |
-| [OH\_Cursor \*OH\_Rdb\_Query(OH\_Rdb\_Store \*store, OH\_Predicates \*predicates, const char \*const \*columnNames, int length)](capi-relational-store-h.md#oh_rdb_query) | - | 根据指定条件查询数据库中的数据 |
+| [OH\_Cursor \*OH\_Rdb\_Query(OH\_Rdb\_Store \*store, OH\_Predicates \*predicates, const char \*const \*columnNames, int length)](capi-relational-store-h.md#oh_rdb_query) | - | 根据指定条件查询数据库中的数据。 |
 | [int OH\_Rdb\_Execute(OH\_Rdb\_Store \*store, const char \*sql)](capi-relational-store-h.md#oh_rdb_execute) | - | 执行无返回值的SQL语句。 |
 | [int OH\_Rdb\_ExecuteV2(OH\_Rdb\_Store \*store, const char \*sql, const OH\_Data\_Values \*args, OH\_Data\_Value \*\*result)](capi-relational-store-h.md#oh_rdb_executev2) | - | 执行有返回值的SQL语句，支持向量数据库。 |
 | [int OH\_Rdb\_ExecuteByTrxId(OH\_Rdb\_Store \*store, int64\_t trxId, const char \*sql)](capi-relational-store-h.md#oh_rdb_executebytrxid) | - | 使用指定的事务ID执行无返回值的SQL语句，仅支持向量数据库。 |
 | [OH\_Cursor \*OH\_Rdb\_ExecuteQuery(OH\_Rdb\_Store \*store, const char \*sql)](capi-relational-store-h.md#oh_rdb_executequery) | - | 根据指定SQL语句查询数据库中的数据，支持向量数据库。 |
-| [OH\_Cursor \*OH\_Rdb\_ExecuteQueryV2(OH\_Rdb\_Store \*store, const char \*sql, const OH\_Data\_Values \*args)](capi-relational-store-h.md#oh_rdb_executequeryv2) | - | 根据指定SQL语句查询数据库中的数据，支持向量数据库。 |
+| [OH\_Cursor \*OH\_Rdb\_ExecuteQueryV2(OH\_Rdb\_Store \*store, const char \*sql, const OH\_Data\_Values \*args)](capi-relational-store-h.md#oh_rdb_executequeryv2) | - | 根据指定SQL语句查询数据库中的数据，支持SQL参数绑定，支持向量数据库。 |
 | [int OH\_Rdb\_BeginTransaction(OH\_Rdb\_Store \*store)](capi-relational-store-h.md#oh_rdb_begintransaction) | - | 在开始执行SQL语句之前，开始事务。 |
-| [int OH\_Rdb\_RollBack(OH\_Rdb\_Store \*store)](capi-relational-store-h.md#oh_rdb_rollback) | - | 回滚已经执行的SQL语句。 |
-| [int OH\_Rdb\_Commit(OH\_Rdb\_Store \*store)](capi-relational-store-h.md#oh_rdb_commit) | - | 提交已执行的SQL语句 |
+| [int OH\_Rdb\_RollBack(OH\_Rdb\_Store \*store)](capi-relational-store-h.md#oh_rdb_rollback) | - | 回滚已经执行的SQL语句。使用前需先调用[OH\_Rdb\_BeginTransaction](capi-relational-store-h.md#oh_rdb_begintransaction)开始事务。 |
+| [int OH\_Rdb\_Commit(OH\_Rdb\_Store \*store)](capi-relational-store-h.md#oh_rdb_commit) | - | 提交已执行的SQL语句。使用前需先调用[OH\_Rdb\_BeginTransaction](capi-relational-store-h.md#oh_rdb_begintransaction)开始事务。 |
 | [int OH\_Rdb\_BeginTransWithTrxId(OH\_Rdb\_Store \*store, int64\_t \*trxId)](capi-relational-store-h.md#oh_rdb_begintranswithtrxid) | - | 在开始执行SQL语句之前，开始事务，并获得该事务的ID，仅支持向量数据库。 |
-| [int OH\_Rdb\_RollBackByTrxId(OH\_Rdb\_Store \*store, int64\_t trxId)](capi-relational-store-h.md#oh_rdb_rollbackbytrxid) | - | 使用指定的事务ID, 回滚已经执行的SQL语句，仅支持向量数据库。 |
-| [int OH\_Rdb\_CommitByTrxId(OH\_Rdb\_Store \*store, int64\_t trxId)](capi-relational-store-h.md#oh_rdb_commitbytrxid) | - | 使用指定的事务ID, 提交已经执行的SQL语句，仅支持向量数据库。 |
+| [int OH\_Rdb\_RollBackByTrxId(OH\_Rdb\_Store \*store, int64\_t trxId)](capi-relational-store-h.md#oh_rdb_rollbackbytrxid) | - | 使用指定的事务ID，回滚已经执行的SQL语句，仅支持向量数据库。 |
+| [int OH\_Rdb\_CommitByTrxId(OH\_Rdb\_Store \*store, int64\_t trxId)](capi-relational-store-h.md#oh_rdb_commitbytrxid) | - | 使用指定的事务ID，提交已经执行的SQL语句，仅支持向量数据库。 |
 | [int OH\_Rdb\_Backup(OH\_Rdb\_Store \*store, const char \*databasePath)](capi-relational-store-h.md#oh_rdb_backup) | - | 以指定路径备份数据库，支持向量数据库。 |
 | [int OH\_Rdb\_Restore(OH\_Rdb\_Store \*store, const char \*databasePath)](capi-relational-store-h.md#oh_rdb_restore) | - | 从指定的数据库备份文件恢复数据库，支持向量数据库。 |
 | [int OH\_Rdb\_GetVersion(OH\_Rdb\_Store \*store, int \*version)](capi-relational-store-h.md#oh_rdb_getversion) | - | 获取数据库版本。 |
@@ -132,7 +122,7 @@ PhonePC/2in1TabletTVWearable
 | [int OH\_Rdb\_SubscribeAutoSyncProgress(OH\_Rdb\_Store \*store, const Rdb\_ProgressObserver \*observer)](capi-relational-store-h.md#oh_rdb_subscribeautosyncprogress) | - | 订阅RDB存储的自动同步进度。  当收到自动同步进度的通知时，将调用回调。 |
 | [int OH\_Rdb\_UnsubscribeAutoSyncProgress(OH\_Rdb\_Store \*store, const Rdb\_ProgressObserver \*observer)](capi-relational-store-h.md#oh_rdb_unsubscribeautosyncprogress) | - | 取消订阅RDB存储的自动同步进程。 |
 | [int OH\_Rdb\_LockRow(OH\_Rdb\_Store \*store, OH\_Predicates \*predicates)](capi-relational-store-h.md#oh_rdb_lockrow) | - | 根据指定的条件锁定数据库中的数据，锁定数据不执行端云同步。 |
-| [int OH\_Rdb\_UnlockRow(OH\_Rdb\_Store \*store, OH\_Predicates \*predicates)](capi-relational-store-h.md#oh_rdb_unlockrow) | - | 根据指定的条件锁解锁数据库中的数据。 |
+| [int OH\_Rdb\_UnlockRow(OH\_Rdb\_Store \*store, OH\_Predicates \*predicates)](capi-relational-store-h.md#oh_rdb_unlockrow) | - | 根据指定的条件解锁数据库中的数据。 |
 | [OH\_Cursor \*OH\_Rdb\_QueryLockedRow(OH\_Rdb\_Store \*store, OH\_Predicates \*predicates, const char \*const \*columnNames, int length)](capi-relational-store-h.md#oh_rdb_querylockedrow) | - | 根据指定条件查询数据库中锁定的数据。 |
 | [int OH\_Rdb\_CreateTransaction(OH\_Rdb\_Store \*store, const OH\_RDB\_TransOptions \*options, OH\_Rdb\_Transaction \*\*trans)](capi-relational-store-h.md#oh_rdb_createtransaction) | - | 创建一个事务对象。 |
 | [int OH\_Rdb\_Attach(OH\_Rdb\_Store \*store, const OH\_Rdb\_ConfigV2 \*config, const char \*attachName, int64\_t waitTime,size\_t \*attachedNumber)](capi-relational-store-h.md#oh_rdb_attach) | - | 将数据库文件附加到当前连接的数据库。 |
@@ -142,7 +132,7 @@ PhonePC/2in1TabletTVWearable
 | [int OH\_Rdb\_RekeyEx(OH\_Rdb\_Store \*store, OH\_Rdb\_CryptoParam \*param)](capi-relational-store-h.md#oh_rdb_rekeyex) | - | 更改加密数据库密钥。  不支持对非WAL模式的数据库进行密钥更新。  手动更新时需要独占访问数据库，此时若存在任何未释放的结果集、事务或其他进程打开的数据库均会导致更新失败。  支持加密数据库的参数更新，以及加密数据库与非加密数据库之间的相互转换。  数据库越大，执行更新所需的时间越长。  加密参数变更需谨慎，调用OH\_Rdb\_CreateOrOpen时需要传入正确的加密参数，否则可能打开数据库失败。 |
 | [typedef void (\*Rdb\_CorruptedHandler)(void \*context, OH\_Rdb\_ConfigV2 \*config, OH\_Rdb\_Store \*store)](capi-relational-store-h.md#rdb_corruptedhandler) | Rdb\_CorruptedHandler | 数据库异常处理的回调函数。 |
 | [int OH\_Rdb\_RegisterCorruptedHandler(const OH\_Rdb\_ConfigV2 \*config, void \*context, const Rdb\_CorruptedHandler handler)](capi-relational-store-h.md#oh_rdb_registercorruptedhandler) | - | 注册数据库异常处理。当数据库发生异常时，将调用异常处理的回调函数。  异常处理逻辑为用户自定义，回调时触发的业务需要用户自行保障。  每个路径只允许注册一次。 |
-| [int OH\_Rdb\_UnregisterCorruptedHandler(const OH\_Rdb\_ConfigV2 \*config, void \*context, const Rdb\_CorruptedHandler handler)](capi-relational-store-h.md#oh_rdb_unregistercorruptedhandler) | - | 取消注册的数据库异常处理的回调函数。  handler和context必须要和订阅时保持一致，否则取消失败。 |
+| [int OH\_Rdb\_UnregisterCorruptedHandler(const OH\_Rdb\_ConfigV2 \*config, void \*context, const Rdb\_CorruptedHandler handler)](capi-relational-store-h.md#oh_rdb_unregistercorruptedhandler) | - | 取消注册的数据库异常处理的回调函数。  handler和context必须要和注册时保持一致，否则取消失败。 |
 | [OH\_Cursor \*OH\_Rdb\_QueryWithoutRowCount(OH\_Rdb\_Store \*store, OH\_Predicates \*predicates, const char \* const columns[], int length)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-relational-store-h#oh_rdb_querywithoutrowcount) | - | 根据指定条件查询数据库中的数据，不计算行数。 |
 | [OH\_Cursor \*OH\_Rdb\_QuerySqlWithoutRowCount(OH\_Rdb\_Store \*store, const char \*sql, const OH\_Data\_Values \*args)](capi-relational-store-h.md#oh_rdb_querysqlwithoutrowcount) | - | 执行有返回值的SQL语句，不计算行数，支持向量数据库。 |
 | [int OH\_Rdb\_BatchInsertWithReturning(OH\_Rdb\_Store \*store, const char \*table, const OH\_Data\_VBuckets \*rows, Rdb\_ConflictResolution resolution, OH\_RDB\_ReturningContext \*context)](capi-relational-store-h.md#oh_rdb_batchinsertwithreturning) | - | 将批量数据插入目标表，并将变更信息输出到上下文中。 |
@@ -150,8 +140,6 @@ PhonePC/2in1TabletTVWearable
 | [int OH\_Rdb\_DeleteWithReturning(OH\_Rdb\_Store \*store, OH\_Predicates \*predicates, OH\_RDB\_ReturningContext \*context)](capi-relational-store-h.md#oh_rdb_deletewithreturning) | - | 根据指定条件从数据库中删除数据并输出更改信息到上下文。 |
 
 ### 宏定义
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -161,14 +149,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Rdb\_SecurityLevel
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_Rdb_SecurityLevel
+```c
+enum OH_Rdb_SecurityLevel
 ```
 
 **描述**
@@ -186,10 +170,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Rdb\_SecurityArea
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Rdb_SecurityArea
+```c
+enum Rdb_SecurityArea
 ```
 
 **描述**
@@ -208,10 +190,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Rdb\_DBType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Rdb_DBType
+```c
+enum Rdb_DBType
 ```
 
 **描述**
@@ -228,10 +208,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Rdb\_Tokenizer
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Rdb_Tokenizer
+```c
+enum Rdb_Tokenizer
 ```
 
 **描述**
@@ -248,10 +226,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Rdb\_DistributedType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Rdb_DistributedType
+```c
+enum Rdb_DistributedType
 ```
 
 **描述**
@@ -266,10 +242,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Rdb\_ChangeType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Rdb_ChangeType
+```c
+enum Rdb_ChangeType
 ```
 
 **描述**
@@ -285,10 +259,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Rdb\_SubscribeType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Rdb_SubscribeType
+```c
+enum Rdb_SubscribeType
 ```
 
 **描述**
@@ -305,10 +277,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Rdb\_SyncMode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Rdb_SyncMode
+```c
+enum Rdb_SyncMode
 ```
 
 **描述**
@@ -325,10 +295,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Rdb\_Progress
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Rdb_Progress
+```c
+enum Rdb_Progress
 ```
 
 **描述**
@@ -345,10 +313,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Rdb\_ProgressCode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Rdb_ProgressCode
+```c
+enum Rdb_ProgressCode
 ```
 
 **描述**
@@ -369,14 +335,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Rdb\_SetSemanticIndex()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_SetSemanticIndex(OH_Rdb_ConfigV2 *config, bool enableSemanticIndex)
+```c
+int OH_Rdb_SetSemanticIndex(OH_Rdb_ConfigV2 *config, bool enableSemanticIndex)
 ```
 
 **描述**
@@ -396,14 +358,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。错误码定义详见[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。  若返回RDB\_OK，指向成功。  若返回RDB\_E\_INVALID\_ARGS，表示传入了无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_CreateConfig()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Rdb_ConfigV2 *OH_Rdb_CreateConfig()
+```c
+OH_Rdb_ConfigV2 *OH_Rdb_CreateConfig()
 ```
 
 **描述**
@@ -416,7 +376,7 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_Rdb\_ConfigV2](capi-rdb-oh-rdb-configv2.md) | 返回一个指向[OH\_Rdb\_ConfigV2](capi-rdb-oh-rdb-configv2.md)实例的指针。  使用完成后，必须通过[OH\_Rdb\_DestroyConfig](capi-relational-store-h.md#oh_rdb_destroyconfig)接口释放内存。 |
+| [OH\_Rdb\_ConfigV2](capi-rdb-oh-rdb-configv2.md) \* | 返回一个指向[OH\_Rdb\_ConfigV2](capi-rdb-oh-rdb-configv2.md)实例的指针。  使用完成后，必须通过[OH\_Rdb\_DestroyConfig](capi-relational-store-h.md#oh_rdb_destroyconfig)接口释放内存。 |
 
 **参考：**
 
@@ -424,10 +384,8 @@ OH\_Rdb\_ConfigV2
 
 ### OH\_Rdb\_DestroyConfig()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_DestroyConfig(OH_Rdb_ConfigV2 *config)
+```c
+int OH_Rdb_DestroyConfig(OH_Rdb_ConfigV2 *config)
 ```
 
 **描述**
@@ -446,14 +404,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_SetDatabaseDir()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_SetDatabaseDir(OH_Rdb_ConfigV2 *config, const char *databaseDir)
+```c
+int OH_Rdb_SetDatabaseDir(OH_Rdb_ConfigV2 *config, const char *databaseDir)
 ```
 
 **描述**
@@ -467,20 +423,18 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_Rdb\_ConfigV2](capi-rdb-oh-rdb-configv2.md) \*config | 指向[OH\_Rdb\_ConfigV2](capi-rdb-oh-rdb-configv2.md)对象的指针，即与此RDB存储相关的数据库配置。 |
-| const char \*dataBaseDir | 表示数据库文件路径。包含数据库名称在内的全路径长度不超过1024个字符。 |
+| const char \*databaseDir | 表示数据库文件路径，不能为空，包含数据库名称在内的全路径长度不超过1024个字符。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_SetStoreName()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_SetStoreName(OH_Rdb_ConfigV2 *config, const char *storeName)
+```c
+int OH_Rdb_SetStoreName(OH_Rdb_ConfigV2 *config, const char *storeName)
 ```
 
 **描述**
@@ -494,20 +448,18 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_Rdb\_ConfigV2](capi-rdb-oh-rdb-configv2.md) \*config | 指向[OH\_Rdb\_ConfigV2](capi-rdb-oh-rdb-configv2.md)对象的指针，即与此RDB存储相关的数据库配置。 |
-| const char \*storeName | 表示数据库名称。 |
+| const char \*storeName | 表示数据库名称，不能为空且不能包含路径分隔符/。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_SetBundleName()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_SetBundleName(OH_Rdb_ConfigV2 *config, const char *bundleName)
+```c
+int OH_Rdb_SetBundleName(OH_Rdb_ConfigV2 *config, const char *bundleName)
 ```
 
 **描述**
@@ -521,20 +473,18 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_Rdb\_ConfigV2](capi-rdb-oh-rdb-configv2.md) \*config | 指向[OH\_Rdb\_ConfigV2](capi-rdb-oh-rdb-configv2.md)对象的指针，即与此RDB存储相关的数据库配置。 |
-| const char \*bundleName | 表示数据库应用包名。 |
+| const char \*bundleName | 表示数据库应用包名，不能为空。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_SetModuleName()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_SetModuleName(OH_Rdb_ConfigV2 *config, const char *moduleName)
+```c
+int OH_Rdb_SetModuleName(OH_Rdb_ConfigV2 *config, const char *moduleName)
 ```
 
 **描述**
@@ -548,20 +498,18 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_Rdb\_ConfigV2](capi-rdb-oh-rdb-configv2.md) \*config | 指向[OH\_Rdb\_ConfigV2](capi-rdb-oh-rdb-configv2.md)对象的指针，即与此RDB存储相关的数据库配置。 |
-| const char \*moduleName | 表示数据库应用模块名。 |
+| const char \*moduleName | 表示数据库应用模块名，不能为空。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_SetEncrypted()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_SetEncrypted(OH_Rdb_ConfigV2 *config, bool isEncrypted)
+```c
+int OH_Rdb_SetEncrypted(OH_Rdb_ConfigV2 *config, bool isEncrypted)
 ```
 
 **描述**
@@ -581,14 +529,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_SetSecurityLevel()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_SetSecurityLevel(OH_Rdb_ConfigV2 *config, int securityLevel)
+```c
+int OH_Rdb_SetSecurityLevel(OH_Rdb_ConfigV2 *config, int securityLevel)
 ```
 
 **描述**
@@ -610,14 +556,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_SetArea()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_SetArea(OH_Rdb_ConfigV2 *config, int area)
+```c
+int OH_Rdb_SetArea(OH_Rdb_ConfigV2 *config, int area)
 ```
 
 **描述**
@@ -639,14 +583,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_SetDbType()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_SetDbType(OH_Rdb_ConfigV2 *config, int dbType)
+```c
+int OH_Rdb_SetDbType(OH_Rdb_ConfigV2 *config, int dbType)
 ```
 
 **描述**
@@ -660,20 +602,18 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_Rdb\_ConfigV2](capi-rdb-oh-rdb-configv2.md) \*config | 指向[OH\_Rdb\_ConfigV2](capi-rdb-oh-rdb-configv2.md)对象的指针，即与此RDB存储相关的数据库配置。 |
-| int dbType | 表示数据库的数据库类型[Rdb\_DBType](capi-relational-store-h.md#rdb_dbtype)。 |
+| int dbType | 表示数据库的内核类型[Rdb\_DBType](capi-relational-store-h.md#rdb_dbtype)。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。  RDB\_E\_NOT\_SUPPORTED表示不支持当前操作。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。  RDB\_E\_NOT\_SUPPORTED 表示不支持当前操作。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_SetCustomDir()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_SetCustomDir(OH_Rdb_ConfigV2 *config, const char *customDir)
+```c
+int OH_Rdb_SetCustomDir(OH_Rdb_ConfigV2 *config, const char *customDir)
 ```
 
 **描述**
@@ -693,14 +633,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行结果。  返回RDB\_OK表示执行成功。  返回RDB\_E\_INVALID\_ARGS表示输入参数无效。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_SetReadOnly()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_SetReadOnly(OH_Rdb_ConfigV2 *config, bool readOnly)
+```c
+int OH_Rdb_SetReadOnly(OH_Rdb_ConfigV2 *config, bool readOnly)
 ```
 
 **描述**
@@ -720,14 +658,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行结果。  返回RDB\_OK表示执行成功。  返回RDB\_E\_INVALID\_ARGS表示输入参数无效。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_SetPlugins()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_SetPlugins(OH_Rdb_ConfigV2 *config, const char **plugins, int32_t length)
+```c
+int OH_Rdb_SetPlugins(OH_Rdb_ConfigV2 *config, const char **plugins, int32_t length)
 ```
 
 **描述**
@@ -748,14 +684,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行结果。  返回RDB\_OK表示执行成功。  返回RDB\_E\_INVALID\_ARGS表示输入参数无效。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_SetCryptoParam()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_SetCryptoParam(OH_Rdb_ConfigV2 *config, const OH_Rdb_CryptoParam *cryptoParam)
+```c
+int OH_Rdb_SetCryptoParam(OH_Rdb_ConfigV2 *config, const OH_Rdb_CryptoParam *cryptoParam)
 ```
 
 **描述**
@@ -775,14 +709,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行结果。  返回RDB\_OK表示执行成功。  返回RDB\_E\_INVALID\_ARGS表示输入参数无效。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_IsTokenizerSupported()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_IsTokenizerSupported(Rdb_Tokenizer tokenizer, bool *isSupported)
+```c
+int OH_Rdb_IsTokenizerSupported(Rdb_Tokenizer tokenizer, bool *isSupported)
 ```
 
 **描述**
@@ -802,14 +734,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回接口操作执行的状态码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_SetTokenizer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_SetTokenizer(OH_Rdb_ConfigV2 *config, Rdb_Tokenizer tokenizer)
+```c
+int OH_Rdb_SetTokenizer(OH_Rdb_ConfigV2 *config, Rdb_Tokenizer tokenizer)
 ```
 
 **描述**
@@ -829,14 +759,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回接口操作执行的状态码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。  RDB\_E\_NOT\_SUPPORTED表示不支持当前操作。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。  RDB\_E\_NOT\_SUPPORTED 表示不支持当前操作。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_SetPersistent()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_SetPersistent(OH_Rdb_ConfigV2 *config, bool isPersistent)
+```c
+int OH_Rdb_SetPersistent(OH_Rdb_ConfigV2 *config, bool isPersistent)
 ```
 
 **描述**
@@ -850,20 +778,18 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_Rdb\_ConfigV2](capi-rdb-oh-rdb-configv2.md) \*config | 指向[OH\_Rdb\_ConfigV2](capi-rdb-oh-rdb-configv2.md)实例的指针。  指示与此RDB存储相关的数据库的配置。 |
-| bool isPersistent | 指示数据库是否需要持久性。 |
+| bool isPersistent | 指示数据库是否需要持久化。true表示需要持久化，false表示不需要持久化，即内存数据库。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的状态代码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_GetSupportedDbType()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const int *OH_Rdb_GetSupportedDbType(int *typeCount)
+```c
+const int *OH_Rdb_GetSupportedDbType(int *typeCount)
 ```
 
 **描述**
@@ -876,20 +802,18 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| int \*typeCount | 表示支持的数据库类型的数组的长度, 作为出参使用。 |
+| int \*typeCount | 表示支持的数据库类型的数组的长度，作为出参使用。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| const int \* | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| const int \* | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_CreateValueObject()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_VObject *OH_Rdb_CreateValueObject()
+```c
+OH_VObject *OH_Rdb_CreateValueObject()
 ```
 
 **描述**
@@ -902,7 +826,7 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_VObject](capi-rdb-oh-vobject.md) | 创建成功则返回一个指向[OH\_VObject](capi-rdb-oh-vobject.md)结构体实例的指针，否则返回NULL。 |
+| [OH\_VObject](capi-rdb-oh-vobject.md) \* | 创建成功则返回一个指向[OH\_VObject](capi-rdb-oh-vobject.md)结构体实例的指针，否则返回NULL。 |
 
 **参考：**
 
@@ -910,10 +834,8 @@ OH\_VObject
 
 ### OH\_Rdb\_CreateValuesBucket()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_VBucket *OH_Rdb_CreateValuesBucket()
+```c
+OH_VBucket *OH_Rdb_CreateValuesBucket()
 ```
 
 **描述**
@@ -926,7 +848,7 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_VBucket](capi-rdb-oh-vbucket.md) | 创建成功则返回一个指向[OH\_VBucket](capi-rdb-oh-vbucket.md)结构体实例的指针，否则返回NULL。 |
+| [OH\_VBucket](capi-rdb-oh-vbucket.md) \* | 创建成功则返回一个指向[OH\_VBucket](capi-rdb-oh-vbucket.md)结构体实例的指针，否则返回NULL。 |
 
 **参考：**
 
@@ -934,10 +856,8 @@ OH\_VBucket
 
 ### OH\_Rdb\_CreatePredicates()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Predicates *OH_Rdb_CreatePredicates(const char *table)
+```c
+OH_Predicates *OH_Rdb_CreatePredicates(const char *table)
 ```
 
 **描述**
@@ -956,7 +876,7 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_Predicates](capi-rdb-oh-predicates.md) | 创建成功则返回一个指向[OH\_Predicates](capi-rdb-oh-predicates.md)结构体实例的指针，否则返回NULL。 |
+| [OH\_Predicates](capi-rdb-oh-predicates.md) \* | 创建成功则返回一个指向[OH\_Predicates](capi-rdb-oh-predicates.md)结构体实例的指针，否则返回NULL。 |
 
 **参考：**
 
@@ -964,10 +884,8 @@ OH\_Predicates
 
 ### OH\_Rdb\_GetOrOpen()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Rdb_Store *OH_Rdb_GetOrOpen(const OH_Rdb_Config *config, int *errCode)
+```c
+OH_Rdb_Store *OH_Rdb_GetOrOpen(const OH_Rdb_Config *config, int *errCode)
 ```
 
 **描述**
@@ -981,20 +899,18 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | const [OH\_Rdb\_Config](capi-rdb-oh-rdb-config.md) \*config | 指向[OH\_Rdb\_Config](capi-rdb-oh-rdb-config.md)实例的指针，与此RDB存储相关的数据库配置。 |
-| int \*errCode | 表示函数执行状态, 作为出参使用。 |
+| int \*errCode | 表示函数执行状态，作为出参使用。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md) | 创建成功则返回一个指向[OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md)结构体实例的指针，否则返回NULL。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| [OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md) \* | 创建成功则返回一个指向[OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md)结构体实例的指针，否则返回NULL。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
 
 ### OH\_Rdb\_CreateOrOpen()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Rdb_Store *OH_Rdb_CreateOrOpen(const OH_Rdb_ConfigV2 *config, int *errCode)
+```c
+OH_Rdb_Store *OH_Rdb_CreateOrOpen(const OH_Rdb_ConfigV2 *config, int *errCode)
 ```
 
 **描述**
@@ -1014,14 +930,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md) | 创建成功则返回一个指向[OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md)结构体实例的指针，否则返回NULL。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| [OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md) \* | 创建成功则返回一个指向[OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md)结构体实例的指针，否则返回NULL。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
 
 ### OH\_Rdb\_CloseStore()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_CloseStore(OH_Rdb_Store *store)
+```c
+int OH_Rdb_CloseStore(OH_Rdb_Store *store)
 ```
 
 **描述**
@@ -1040,14 +954,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_DeleteStore()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_DeleteStore(const OH_Rdb_Config *config)
+```c
+int OH_Rdb_DeleteStore(const OH_Rdb_Config *config)
 ```
 
 **描述**
@@ -1066,14 +978,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_DeleteStoreV2()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_DeleteStoreV2(const OH_Rdb_ConfigV2 *config)
+```c
+int OH_Rdb_DeleteStoreV2(const OH_Rdb_ConfigV2 *config)
 ```
 
 **描述**
@@ -1094,14 +1004,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_Insert()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_Insert(OH_Rdb_Store *store, const char *table, OH_VBucket *valuesBucket)
+```c
+int OH_Rdb_Insert(OH_Rdb_Store *store, const char *table, OH_VBucket *valuesBucket)
 ```
 
 **描述**
@@ -1126,10 +1034,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Rdb\_InsertWithConflictResolution()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_InsertWithConflictResolution(OH_Rdb_Store *store, const char *table, OH_VBucket *row,Rdb_ConflictResolution resolution, int64_t *rowId)
+```c
+int OH_Rdb_InsertWithConflictResolution(OH_Rdb_Store *store, const char *table, OH_VBucket *row,Rdb_ConflictResolution resolution, int64_t *rowId)
 ```
 
 **描述**
@@ -1156,10 +1062,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Rdb\_BatchInsert()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_BatchInsert(OH_Rdb_Store *store, const char *table,const OH_Data_VBuckets *rows, Rdb_ConflictResolution resolution, int64_t *changes)
+```c
+int OH_Rdb_BatchInsert(OH_Rdb_Store *store, const char *table, const OH_Data_VBuckets *rows, Rdb_ConflictResolution resolution, int64_t *changes)
 ```
 
 **描述**
@@ -1179,8 +1083,8 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md) \*store | 指向[OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md)实例的指针。 |
-| const char \*tables | 要设置的分布式数据库表表名。 |
-| const [OH\_Data\_VBuckets \*rows](capi-rdb-oh-data-vbuckets.md) | 表示要插入到表中的一组数据。 |
+| const char \*table | 表示要插入数据的目标表名。 |
+| const [OH\_Data\_VBuckets](capi-rdb-oh-data-vbuckets.md) \*rows | 表示要插入到表中的一组数据。 |
 | [Rdb\_ConflictResolution](capi-oh-rdb-types-h.md#rdb_conflictresolution) resolution | 表示发生冲突时的解决策略。 |
 | int64\_t \*changes | 输出参数，表示插入成功的次数。 |
 
@@ -1192,10 +1096,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Rdb\_Update()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_Update(OH_Rdb_Store *store, OH_VBucket *valuesBucket, OH_Predicates *predicates)
+```c
+int OH_Rdb_Update(OH_Rdb_Store *store, OH_VBucket *valuesBucket, OH_Predicates *predicates)
 ```
 
 **描述**
@@ -1220,10 +1122,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Rdb\_UpdateWithConflictResolution()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_UpdateWithConflictResolution(OH_Rdb_Store *store, OH_VBucket *row, OH_Predicates *predicates,Rdb_ConflictResolution resolution, int64_t *changes)
+```c
+int OH_Rdb_UpdateWithConflictResolution(OH_Rdb_Store *store, OH_VBucket *row, OH_Predicates *predicates,Rdb_ConflictResolution resolution, int64_t *changes)
 ```
 
 **描述**
@@ -1250,10 +1150,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Rdb\_Delete()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_Delete(OH_Rdb_Store *store, OH_Predicates *predicates)
+```c
+int OH_Rdb_Delete(OH_Rdb_Store *store, OH_Predicates *predicates)
 ```
 
 **描述**
@@ -1277,15 +1175,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Rdb\_Query()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Cursor *OH_Rdb_Query(OH_Rdb_Store *store, OH_Predicates *predicates, const char *const *columnNames, int length)
+```c
+OH_Cursor *OH_Rdb_Query(OH_Rdb_Store *store, OH_Predicates *predicates, const char *const *columnNames, int length)
 ```
 
 **描述**
 
-根据指定条件查询数据库中的数据
+根据指定条件查询数据库中的数据。
 
 **起始版本：** 10
 
@@ -1306,10 +1202,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Rdb\_Execute()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_Execute(OH_Rdb_Store *store, const char *sql)
+```c
+int OH_Rdb_Execute(OH_Rdb_Store *store, const char *sql)
 ```
 
 **描述**
@@ -1329,7 +1223,7 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 **参考：**
 
@@ -1337,10 +1231,8 @@ OH\_Rdb\_Store
 
 ### OH\_Rdb\_ExecuteV2()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_ExecuteV2(OH_Rdb_Store *store, const char *sql, const OH_Data_Values *args, OH_Data_Value **result)
+```c
+int OH_Rdb_ExecuteV2(OH_Rdb_Store *store, const char *sql, const OH_Data_Values *args, OH_Data_Value **result)
 ```
 
 **描述**
@@ -1357,7 +1249,7 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | [OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md) \*store | 指向[OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md)实例的指针。 |
 | const char \*sql | 指定要执行的SQL语句。 |
-| const [OH\_Data\_Values](capi-rdb-oh-data-values.md) \*args | 可选参数，指向[OH\_Data\_Values](capi-rdb-oh-data-values.md)实例的指针。 |
+| const [OH\_Data\_Values](capi-rdb-oh-data-values.md) \*args | 表示SQL语句中参数的值，指向OH\_Data\_Values实例的指针。SQL语句完整时，args可填写为nullptr。 |
 | [OH\_Data\_Value](capi-rdb-oh-data-value.md) \*\*result | 执行成功时指向[OH\_Data\_Value](capi-rdb-oh-data-value.md)实例的指针，作为出参使用。使用完成后，必须通过[OH\_Value\_Destroy](capi-oh-data-value-h.md#oh_value_destroy)接口释放内存。 |
 
 **返回：**
@@ -1372,10 +1264,8 @@ OH\_Value\_Destroy
 
 ### OH\_Rdb\_ExecuteByTrxId()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_ExecuteByTrxId(OH_Rdb_Store *store, int64_t trxId, const char *sql)
+```c
+int OH_Rdb_ExecuteByTrxId(OH_Rdb_Store *store, int64_t trxId, const char *sql)
 ```
 
 **描述**
@@ -1406,10 +1296,8 @@ OH\_Rdb\_Store
 
 ### OH\_Rdb\_ExecuteQuery()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Cursor *OH_Rdb_ExecuteQuery(OH_Rdb_Store *store, const char *sql)
+```c
+OH_Cursor *OH_Rdb_ExecuteQuery(OH_Rdb_Store *store, const char *sql)
 ```
 
 **描述**
@@ -1429,7 +1317,7 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_Cursor](capi-rdb-oh-cursor.md) | 如果查询成功则返回一个指向[OH\_Cursor](capi-rdb-oh-cursor.md)结构体实例的指针，否则返回NULL。 |
+| [OH\_Cursor](capi-rdb-oh-cursor.md) \* | 如果查询成功则返回一个指向[OH\_Cursor](capi-rdb-oh-cursor.md)结构体实例的指针，否则返回NULL。 |
 
 **参考：**
 
@@ -1437,15 +1325,13 @@ OH\_Rdb\_Store
 
 ### OH\_Rdb\_ExecuteQueryV2()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Cursor *OH_Rdb_ExecuteQueryV2(OH_Rdb_Store *store, const char *sql, const OH_Data_Values *args)
+```c
+OH_Cursor *OH_Rdb_ExecuteQueryV2(OH_Rdb_Store *store, const char *sql, const OH_Data_Values *args)
 ```
 
 **描述**
 
-根据指定SQL语句查询数据库中的数据，支持向量数据库。
+根据指定SQL语句查询数据库中的数据，支持SQL参数绑定，支持向量数据库。
 
 **起始版本：** 18
 
@@ -1455,7 +1341,7 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | [OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md) \*store | 指向[OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md)实例的指针。 |
 | const char \*sql | 指定要执行的SQL语句。 |
-| const OH\_Data\_Values \*args | 可选参数，指向[OH\_Data\_Values](capi-rdb-oh-data-values.md)实例的指针。 |
+| const [OH\_Data\_Values](capi-rdb-oh-data-values.md) \*args | 表示SQL语句中参数的值，指向OH\_Data\_Values实例的指针。SQL语句完整时，args可填写为nullptr。 |
 
 **返回：**
 
@@ -1469,10 +1355,8 @@ OH\_Rdb\_Store
 
 ### OH\_Rdb\_BeginTransaction()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_BeginTransaction(OH_Rdb_Store *store)
+```c
+int OH_Rdb_BeginTransaction(OH_Rdb_Store *store)
 ```
 
 **描述**
@@ -1491,14 +1375,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_RollBack()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_RollBack(OH_Rdb_Store *store)
+```c
+int OH_Rdb_RollBack(OH_Rdb_Store *store)
 ```
 
 **描述**
@@ -1517,19 +1399,17 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_Commit()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_Commit(OH_Rdb_Store *store)
+```c
+int OH_Rdb_Commit(OH_Rdb_Store *store)
 ```
 
 **描述**
 
-提交已执行的SQL语句
+提交已执行的SQL语句。
 
 **起始版本：** 10
 
@@ -1543,14 +1423,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_BeginTransWithTrxId()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_BeginTransWithTrxId(OH_Rdb_Store *store, int64_t *trxId)
+```c
+int OH_Rdb_BeginTransWithTrxId(OH_Rdb_Store *store, int64_t *trxId)
 ```
 
 **描述**
@@ -1570,19 +1448,17 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。  RDB\_E\_NOT\_SUPPORTED表示不支持当前操作。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。  RDB\_E\_NOT\_SUPPORTED 表示不支持当前操作。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_RollBackByTrxId()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_RollBackByTrxId(OH_Rdb_Store *store, int64_t trxId)
+```c
+int OH_Rdb_RollBackByTrxId(OH_Rdb_Store *store, int64_t trxId)
 ```
 
 **描述**
 
-使用指定的事务ID, 回滚已经执行的SQL语句，仅支持向量数据库。
+使用指定的事务ID，回滚已经执行的SQL语句，仅支持向量数据库。
 
 **起始版本：** 14
 
@@ -1597,14 +1473,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数, 可能情况如下：  传入参数为空指针。  当前事务ID不是调用[OH\_Rdb\_BeginTransWithTrxId](capi-relational-store-h.md#oh_rdb_begintranswithtrxid)获得的。  当前事务ID已经调用[OH\_Rdb\_CommitByTrxId](capi-relational-store-h.md#oh_rdb_commitbytrxid)提交。  当前事务ID已经调用[OH\_Rdb\_RollBackByTrxId](capi-relational-store-h.md#oh_rdb_rollbackbytrxid)回滚。  RDB\_E\_NOT\_SUPPORTED表示不支持当前操作。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数，可能情况如下：  传入参数为空指针。  当前事务ID不是调用[OH\_Rdb\_BeginTransWithTrxId](capi-relational-store-h.md#oh_rdb_begintranswithtrxid)获得的。  当前事务ID已经调用[OH\_Rdb\_CommitByTrxId](capi-relational-store-h.md#oh_rdb_commitbytrxid)提交。  当前事务ID已经调用[OH\_Rdb\_RollBackByTrxId](capi-relational-store-h.md#oh_rdb_rollbackbytrxid)回滚。  RDB\_E\_NOT\_SUPPORTED表示不支持当前操作。 |
 
 ### OH\_Rdb\_CommitByTrxId()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_CommitByTrxId(OH_Rdb_Store *store, int64_t trxId)
+```c
+int OH_Rdb_CommitByTrxId(OH_Rdb_Store *store, int64_t trxId)
 ```
 
 **描述**
@@ -1624,7 +1498,7 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功.  RDB\_E\_INVALID\_ARGS表示无效参数，可能情况如下：  传入参数为空指针。  当前事务ID不是调用[OH\_Rdb\_BeginTransWithTrxId](capi-relational-store-h.md#oh_rdb_begintranswithtrxid)获得的。  当前事务ID已经调用[OH\_Rdb\_CommitByTrxId](capi-relational-store-h.md#oh_rdb_commitbytrxid)提交。  当前事务ID已经调用[OH\_Rdb\_RollBackByTrxId](capi-relational-store-h.md#oh_rdb_rollbackbytrxid)回滚。  RDB\_E\_NOT\_SUPPORTED表示不支持当前操作。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数，可能情况如下：  传入参数为空指针。  当前事务ID不是调用[OH\_Rdb\_BeginTransWithTrxId](capi-relational-store-h.md#oh_rdb_begintranswithtrxid)获得的。  当前事务ID已经调用[OH\_Rdb\_CommitByTrxId](capi-relational-store-h.md#oh_rdb_commitbytrxid)提交。  当前事务ID已经调用[OH\_Rdb\_RollBackByTrxId](capi-relational-store-h.md#oh_rdb_rollbackbytrxid)回滚。  RDB\_E\_NOT\_SUPPORTED表示不支持当前操作。 |
 
 **参考：**
 
@@ -1632,10 +1506,8 @@ OH\_Rdb\_Store
 
 ### OH\_Rdb\_Backup()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_Backup(OH_Rdb_Store *store, const char *databasePath)
+```c
+int OH_Rdb_Backup(OH_Rdb_Store *store, const char *databasePath)
 ```
 
 **描述**
@@ -1655,7 +1527,7 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 **参考：**
 
@@ -1663,10 +1535,8 @@ OH\_Rdb\_Store
 
 ### OH\_Rdb\_Restore()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_Restore(OH_Rdb_Store *store, const char *databasePath)
+```c
+int OH_Rdb_Restore(OH_Rdb_Store *store, const char *databasePath)
 ```
 
 **描述**
@@ -1686,14 +1556,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_GetVersion()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_GetVersion(OH_Rdb_Store *store, int *version)
+```c
+int OH_Rdb_GetVersion(OH_Rdb_Store *store, int *version)
 ```
 
 **描述**
@@ -1713,14 +1581,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_SetVersion()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_SetVersion(OH_Rdb_Store *store, int version)
+```c
+int OH_Rdb_SetVersion(OH_Rdb_Store *store, int version)
 ```
 
 **描述**
@@ -1740,7 +1606,7 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 **参考：**
 
@@ -1748,10 +1614,8 @@ OH\_Rdb\_Store
 
 ### OH\_Rdb\_SetDistributedTables()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_SetDistributedTables(OH_Rdb_Store *store, const char *tables[], uint32_t count, Rdb_DistributedType type,const Rdb_DistributedConfig *config)
+```c
+int OH_Rdb_SetDistributedTables(OH_Rdb_Store *store, const char *tables[], uint32_t count, Rdb_DistributedType type,const Rdb_DistributedConfig *config)
 ```
 
 **描述**
@@ -1765,7 +1629,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md) \*store | 指向[OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md)实例的指针。 |
-| const char \*tables[] | 要设置的分布式数据库表表名。 |
+| const char \*tables[] | 表示要插入数据的目标表名。 |
 | uint32\_t count | 要设置的分布式数据库表的数量。 |
 | [Rdb\_DistributedType](capi-relational-store-h.md#rdb_distributedtype) type | 表的分布式类型[Rdb\_DistributedType](capi-relational-store-h.md#rdb_distributedtype)。 |
 | const [Rdb\_DistributedConfig](capi-rdb-rdb-distributedconfig.md) \*config | 表的分布式配置信息[Rdb\_DistributedConfig](capi-rdb-rdb-distributedconfig.md)。 |
@@ -1774,7 +1638,7 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 **参考：**
 
@@ -1782,10 +1646,8 @@ OH\_Rdb\_Store
 
 ### OH\_Rdb\_FindModifyTime()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Cursor *OH_Rdb_FindModifyTime(OH_Rdb_Store *store, const char *tableName, const char *columnName,OH_VObject *values)
+```c
+OH_Cursor *OH_Rdb_FindModifyTime(OH_Rdb_Store *store, const char *tableName, const char *columnName,OH_VObject *values)
 ```
 
 **描述**
@@ -1807,14 +1669,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_Cursor](capi-rdb-oh-cursor.md) | 如果操作成功则返回一个指向[OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md)结构体实例的指针，否则返回NULL。 |
+| [OH\_Cursor](capi-rdb-oh-cursor.md) \* | 如果操作成功则返回一个指向[OH\_Cursor](capi-rdb-oh-cursor.md)结构体实例的指针，否则返回NULL。 |
 
 ### Rdb\_BriefObserver()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*Rdb_BriefObserver)(void *context, const char *values[], uint32_t count)
+```c
+typedef void (*Rdb_BriefObserver)(void *context, const char *values[], uint32_t count)
 ```
 
 **描述**
@@ -1828,15 +1688,13 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | void \*context | 表示数据观察者的上下文。 |
-| const char \*values[] | 表示更改的端云帐户。 |
-| uint32\_t count | 表示更改的端云帐户数量。 |
+| const char \*values[] | 表示更改的端云账户。 |
+| uint32\_t count | 表示更改的端云账户数量。 |
 
 ### Rdb\_DetailsObserver()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*Rdb_DetailsObserver)(void *context, const Rdb_ChangeInfo **changeInfo, uint32_t count)
+```c
+typedef void (*Rdb_DetailsObserver)(void *context, const Rdb_ChangeInfo **changeInfo, uint32_t count)
 ```
 
 **描述**
@@ -1855,10 +1713,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Rdb\_Subscribe()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_Subscribe(OH_Rdb_Store *store, Rdb_SubscribeType type, const Rdb_DataObserver *observer)
+```c
+int OH_Rdb_Subscribe(OH_Rdb_Store *store, Rdb_SubscribeType type, const Rdb_DataObserver *observer)
 ```
 
 **描述**
@@ -1879,14 +1735,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_Unsubscribe()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_Unsubscribe(OH_Rdb_Store *store, Rdb_SubscribeType type, const Rdb_DataObserver *observer)
+```c
+int OH_Rdb_Unsubscribe(OH_Rdb_Store *store, Rdb_SubscribeType type, const Rdb_DataObserver *observer)
 ```
 
 **描述**
@@ -1899,7 +1753,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md) \*store | 指向[OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md)实例的指针 |
+| [OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md) \*store | 指向[OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md)实例的指针。 |
 | [Rdb\_SubscribeType](capi-relational-store-h.md#rdb_subscribetype) type | 表示在[Rdb\_SubscribeType](capi-relational-store-h.md#rdb_subscribetype)中定义的订阅类型。 |
 | const [Rdb\_DataObserver](capi-rdb-rdb-dataobserver.md) \*observer | 数据库中更改事件的观察者[Rdb\_DataObserver](capi-rdb-rdb-dataobserver.md)。如果这是nullptr，表示删除该类型的所有观察者。 |
 
@@ -1907,14 +1761,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_GetTableDetails()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Rdb_TableDetails *OH_Rdb_GetTableDetails(Rdb_ProgressDetails *progress, int32_t version)
+```c
+Rdb_TableDetails *OH_Rdb_GetTableDetails(Rdb_ProgressDetails *progress, int32_t version)
 ```
 
 **描述**
@@ -1942,10 +1794,8 @@ Rdb\_TableDetails
 
 ### Rdb\_ProgressCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*Rdb_ProgressCallback)(void *context, Rdb_ProgressDetails *progressDetails)
+```c
+typedef void (*Rdb_ProgressCallback)(void *context, Rdb_ProgressDetails *progressDetails)
 ```
 
 **描述**
@@ -1963,10 +1813,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Rdb\_SyncCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*Rdb_SyncCallback)(Rdb_ProgressDetails *progressDetails)
+```c
+typedef void (*Rdb_SyncCallback)(Rdb_ProgressDetails *progressDetails)
 ```
 
 **描述**
@@ -1983,10 +1831,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Rdb\_CloudSync()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_CloudSync(OH_Rdb_Store *store, Rdb_SyncMode mode, const char *tables[], uint32_t count,const Rdb_ProgressObserver *observer)
+```c
+int OH_Rdb_CloudSync(OH_Rdb_Store *store, Rdb_SyncMode mode, const char *tables[], uint32_t count,const Rdb_ProgressObserver *observer)
 ```
 
 **描述**
@@ -2000,7 +1846,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md) \*store | 指向[OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md)实例的指针。 |
-| [Rdb\_SyncMode](capi-relational-store-h.md#rdb_syncmode) mode | 表示同步过程的类型[Rdb\_SyncMode](capi-relational-store-h.md#rdb_syncmode). |
+| [Rdb\_SyncMode](capi-relational-store-h.md#rdb_syncmode) mode | 表示同步过程的类型[Rdb\_SyncMode](capi-relational-store-h.md#rdb_syncmode)。 |
 | const char \*tables[] | 表示需要同步的表名。 |
 | uint32\_t count | 同步的表的数量，如果传入的值为0，同步数据库的所有表。 |
 | const [Rdb\_ProgressObserver](capi-rdb-rdb-progressobserver.md) \*observer | 端云同步进度的观察者[Rdb\_ProgressObserver](capi-rdb-rdb-progressobserver.md)。 |
@@ -2009,14 +1855,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_SubscribeAutoSyncProgress()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_SubscribeAutoSyncProgress(OH_Rdb_Store *store, const Rdb_ProgressObserver *observer)
+```c
+int OH_Rdb_SubscribeAutoSyncProgress(OH_Rdb_Store *store, const Rdb_ProgressObserver *observer)
 ```
 
 **描述**
@@ -2038,14 +1882,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_UnsubscribeAutoSyncProgress()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_UnsubscribeAutoSyncProgress(OH_Rdb_Store *store, const Rdb_ProgressObserver *observer)
+```c
+int OH_Rdb_UnsubscribeAutoSyncProgress(OH_Rdb_Store *store, const Rdb_ProgressObserver *observer)
 ```
 
 **描述**
@@ -2065,14 +1907,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_LockRow()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_LockRow(OH_Rdb_Store *store, OH_Predicates *predicates)
+```c
+int OH_Rdb_LockRow(OH_Rdb_Store *store, OH_Predicates *predicates)
 ```
 
 **描述**
@@ -2092,19 +1932,17 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回锁定结果。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_UnlockRow()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_UnlockRow(OH_Rdb_Store *store, OH_Predicates *predicates)
+```c
+int OH_Rdb_UnlockRow(OH_Rdb_Store *store, OH_Predicates *predicates)
 ```
 
 **描述**
 
-根据指定的条件锁解锁数据库中的数据。
+根据指定的条件解锁数据库中的数据。
 
 **起始版本：** 12
 
@@ -2119,14 +1957,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回解锁结果。  RDB\_OK表示成功。  RDB\_E\_INVALID\_ARGS表示无效参数。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_QueryLockedRow()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Cursor *OH_Rdb_QueryLockedRow(OH_Rdb_Store *store, OH_Predicates *predicates, const char *const *columnNames, int length)
+```c
+OH_Cursor *OH_Rdb_QueryLockedRow(OH_Rdb_Store *store, OH_Predicates *predicates, const char *const *columnNames, int length)
 ```
 
 **描述**
@@ -2148,14 +1984,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_Cursor](capi-rdb-oh-cursor.md) | 如果查询成功则返回一个指向[OH\_Cursor](capi-rdb-oh-cursor.md)结构体实例的指针，否则返回NULL。 |
+| [OH\_Cursor](capi-rdb-oh-cursor.md) \* | 如果查询成功则返回一个指向[OH\_Cursor](capi-rdb-oh-cursor.md)结构体实例的指针，否则返回NULL。 |
 
 ### OH\_Rdb\_CreateTransaction()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_CreateTransaction(OH_Rdb_Store *store, const OH_RDB_TransOptions *options, OH_Rdb_Transaction **trans)
+```c
+int OH_Rdb_CreateTransaction(OH_Rdb_Store *store, const OH_RDB_TransOptions *options, OH_Rdb_Transaction **trans)
 ```
 
 **描述**
@@ -2180,10 +2014,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Rdb\_Attach()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_Attach(OH_Rdb_Store *store, const OH_Rdb_ConfigV2 *config, const char *attachName, int64_t waitTime,size_t *attachedNumber)
+```c
+int OH_Rdb_Attach(OH_Rdb_Store *store, const OH_Rdb_ConfigV2 *config, const char *attachName, int64_t waitTime,size_t *attachedNumber)
 ```
 
 **描述**
@@ -2210,10 +2042,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Rdb\_Detach()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_Detach(OH_Rdb_Store *store, const char *attachName, int64_t waitTime, size_t *attachedNumber)
+```c
+int OH_Rdb_Detach(OH_Rdb_Store *store, const char *attachName, int64_t waitTime, size_t *attachedNumber)
 ```
 
 **描述**
@@ -2239,10 +2069,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Rdb\_SetLocale()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_SetLocale(OH_Rdb_Store *store, const char *locale)
+```c
+int OH_Rdb_SetLocale(OH_Rdb_Store *store, const char *locale)
 ```
 
 **描述**
@@ -2266,10 +2094,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Rdb\_RekeyEx()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_RekeyEx(OH_Rdb_Store *store, OH_Rdb_CryptoParam *param)
+```c
+int OH_Rdb_RekeyEx(OH_Rdb_Store *store, OH_Rdb_CryptoParam *param)
 ```
 
 **描述**
@@ -2303,10 +2129,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Rdb\_CorruptedHandler()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*Rdb_CorruptedHandler)(void *context, OH_Rdb_ConfigV2 *config, OH_Rdb_Store *store)
+```c
+typedef void (*Rdb_CorruptedHandler)(void *context, OH_Rdb_ConfigV2 *config, OH_Rdb_Store *store)
 ```
 
 **描述**
@@ -2325,10 +2149,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Rdb\_RegisterCorruptedHandler()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_RegisterCorruptedHandler(const OH_Rdb_ConfigV2 *config, void *context, const Rdb_CorruptedHandler handler)
+```c
+int OH_Rdb_RegisterCorruptedHandler(const OH_Rdb_ConfigV2 *config, void *context, const Rdb_CorruptedHandler handler)
 ```
 
 **描述**
@@ -2347,27 +2169,25 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | [const OH\_Rdb\_ConfigV2](capi-rdb-oh-rdb-configv2.md) \*config | 指向[OH\_Rdb\_ConfigV2](capi-rdb-oh-rdb-configv2.md)对象的指针，即与此RDB存储相关的数据库配置。 |
 | void \*context | 表示数据异常处理的上下文。 |
-| [const Rdb\_CorruptedHandler](capi-relational-store-h.md#rdb_corruptedhandler) handler | 数据库异常处理的回调函数。 |
+| const [Rdb\_CorruptedHandler](capi-relational-store-h.md#rdb_corruptedhandler) handler | 数据库异常处理的回调函数。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行结果。  返回RDB\_OK表示执行成功。  返回RDB\_E\_INVALID\_ARGS表示输入参数无效。  返回RDB\_E\_SUB\_LIMIT\_REACHED表示注册数量超过限制。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。  返回RDB\_E\_SUB\_LIMIT\_REACHED表示注册数量超过限制。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_UnregisterCorruptedHandler()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_UnregisterCorruptedHandler(const OH_Rdb_ConfigV2 *config, void *context, const Rdb_CorruptedHandler handler)
+```c
+int OH_Rdb_UnregisterCorruptedHandler(const OH_Rdb_ConfigV2 *config, void *context, const Rdb_CorruptedHandler handler)
 ```
 
 **描述**
 
 取消注册的数据库异常处理的回调函数。
 
-handler和context必须要和订阅时保持一致，否则取消失败。
+handler和context必须要和注册时保持一致，否则取消失败。
 
 **起始版本：** 22
 
@@ -2377,20 +2197,18 @@ handler和context必须要和订阅时保持一致，否则取消失败。
 | --- | --- |
 | [const OH\_Rdb\_ConfigV2](capi-rdb-oh-rdb-configv2.md) \*config | 指向[OH\_Rdb\_ConfigV2](capi-rdb-oh-rdb-configv2.md)对象的指针，即与此RDB存储相关的数据库配置。 |
 | void \*context | 表示数据异常处理的上下文。 |
-| [const Rdb\_CorruptedHandler](capi-relational-store-h.md#rdb_corruptedhandler) handler | 数据库异常处理的回调函数。 |
+| const [Rdb\_CorruptedHandler](capi-relational-store-h.md#rdb_corruptedhandler) handler | 数据库异常处理的回调函数。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行结果。  返回RDB\_OK表示执行成功。  返回RDB\_E\_INVALID\_ARGS表示输入参数无效。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_QueryWithoutRowCount()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Cursor *OH_Rdb_QueryWithoutRowCount(OH_Rdb_Store *store, OH_Predicates *predicates, const char * const columns[], int length)
+```c
+OH_Cursor *OH_Rdb_QueryWithoutRowCount(OH_Rdb_Store *store, OH_Predicates *predicates, const char * const columns[], int length)
 ```
 
 **描述**
@@ -2412,14 +2230,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_Cursor \*](capi-rdb-oh-cursor.md) | 如果查询成功则返回一个指向[OH\_Cursor](capi-rdb-oh-cursor.md)结构体实例的指针。如果获取store失败或结果集为空，则返回nullptr。 |
+| [OH\_Cursor](capi-rdb-oh-cursor.md) \* | 如果查询成功则返回一个指向[OH\_Cursor](capi-rdb-oh-cursor.md)结构体实例的指针。如果获取store失败或结果集为空，则返回nullptr。 |
 
 ### OH\_Rdb\_QuerySqlWithoutRowCount()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Cursor *OH_Rdb_QuerySqlWithoutRowCount(OH_Rdb_Store *store, const char *sql, const OH_Data_Values *args)
+```c
+OH_Cursor *OH_Rdb_QuerySqlWithoutRowCount(OH_Rdb_Store *store, const char *sql, const OH_Data_Values *args)
 ```
 
 **描述**
@@ -2434,20 +2250,18 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | [OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md) \*store | 指向[OH\_Rdb\_Store](capi-rdb-oh-rdb-store.md)实例的指针。 |
 | const char \*sql | 要执行的SQL语句。 |
-| [const OH\_Data\_Values](capi-rdb-oh-data-values.md) \*args | 指向[OH\_Data\_Values](capi-rdb-oh-data-values.md)实例的指针。SQL语句完整时，args可填写为nullptr。 |
+| const [OH\_Data\_Values](capi-rdb-oh-data-values.md) \*args | 表示SQL语句中参数的值，指向OH\_Data\_Values实例的指针。SQL语句完整时，args可填写为nullptr。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_Cursor \*](capi-rdb-oh-cursor.md) | 如果查询成功则返回一个指向[OH\_Cursor](capi-rdb-oh-cursor.md)结构体实例的指针。如果SQL语句无效或内存分配失败，则返回nullptr。 |
+| [OH\_Cursor \*](capi-rdb-oh-cursor.md) \* | 如果查询成功则返回一个指向[OH\_Cursor](capi-rdb-oh-cursor.md)结构体实例的指针。如果SQL语句无效或内存分配失败，则返回nullptr。 |
 
 ### OH\_Rdb\_BatchInsertWithReturning()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_BatchInsertWithReturning(OH_Rdb_Store *store, const char *table, const OH_Data_VBuckets *rows, Rdb_ConflictResolution resolution, OH_RDB_ReturningContext *context)
+```c
+int OH_Rdb_BatchInsertWithReturning(OH_Rdb_Store *store, const char *table, const OH_Data_VBuckets *rows, Rdb_ConflictResolution resolution, OH_RDB_ReturningContext *context)
 ```
 
 **描述**
@@ -2478,14 +2292,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行结果。  返回RDB\_OK表示执行成功。  返回RDB\_E\_INVALID\_ARGS表示输入参数无效。  返回RDB\_E\_WAL\_SIZE\_OVER\_LIMIT表示WAL文件大小超过默认限制。  返回RDB\_E\_NOT\_SUPPORTED表示不支持的操作。  返回RDB\_E\_DATABASE\_BUSY表示数据库忙。  返回RDB\_E\_SQLITE\_FULL表示SQLite错误：数据库已满。  返回RDB\_E\_SQLITE\_CORRUPT表示数据库损坏。  返回RDB\_E\_SQLITE\_BUSY表示SQLite错误：数据库文件被锁定。  返回RDB\_E\_SQLITE\_LOCKED表示SQLite错误：数据库中的表被锁定。  返回RDB\_E\_SQLITE\_READONLY表示SQLite错误：尝试写入只读数据库。  返回RDB\_E\_SQLITE\_IOERR表示SQLite错误：发生某种磁盘I/O错误。  返回RDB\_E\_SQLITE\_TOO\_BIG表示SQLite错误：TEXT或BLOB超出大小限制。  返回RDB\_E\_SQLITE\_MISMATCH表示SQLite错误：数据类型不匹配。  返回RDB\_E\_SQLITE\_CONSTRAINT表示SQLite错误：由于违反约束而中止。  返回RDB\_E\_SQLITE\_ERROR表示SQLite错误。可能原因：语法错误，例如表或列不存在。  具体错误码可参考[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。  返回RDB\_E\_WAL\_SIZE\_OVER\_LIMIT表示WAL文件大小超过默认限制。  返回RDB\_E\_NOT\_SUPPORTED表示不支持的操作。  返回RDB\_E\_DATABASE\_BUSY表示数据库忙。  返回RDB\_E\_SQLITE\_FULL表示SQLite错误：数据库已满。  返回RDB\_E\_SQLITE\_CORRUPT表示数据库损坏。  返回RDB\_E\_SQLITE\_BUSY表示SQLite错误：数据库文件被锁定。  返回RDB\_E\_SQLITE\_LOCKED表示SQLite错误：数据库中的表被锁定。  返回RDB\_E\_SQLITE\_READONLY表示SQLite错误：尝试写入只读数据库。  返回RDB\_E\_SQLITE\_IOERR表示SQLite错误：发生某种磁盘I/O错误。  返回RDB\_E\_SQLITE\_TOO\_BIG表示SQLite错误：TEXT或BLOB超出大小限制。  返回RDB\_E\_SQLITE\_MISMATCH表示SQLite错误：数据类型不匹配。  返回RDB\_E\_SQLITE\_CONSTRAINT表示SQLite错误：由于违反约束而中止。  返回RDB\_E\_SQLITE\_ERROR表示SQLite错误。可能原因：语法错误，例如表或列不存在。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_UpdateWithReturning()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_UpdateWithReturning(OH_Rdb_Store *store, OH_VBucket *row, OH_Predicates *predicates, Rdb_ConflictResolution resolution, OH_RDB_ReturningContext *context)
+```c
+int OH_Rdb_UpdateWithReturning(OH_Rdb_Store *store, OH_VBucket *row, OH_Predicates *predicates, Rdb_ConflictResolution resolution, OH_RDB_ReturningContext *context)
 ```
 
 **描述**
@@ -2508,14 +2320,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行结果。  返回RDB\_OK表示执行成功。  返回RDB\_E\_INVALID\_ARGS表示输入参数无效。  返回RDB\_E\_WAL\_SIZE\_OVER\_LIMIT表示WAL文件大小超过默认限制。  返回RDB\_E\_NOT\_SUPPORTED表示不支持的操作。  返回RDB\_E\_EMPTY\_VALUES\_BUCKET表示值桶为空。  返回RDB\_E\_DATABASE\_BUSY表示数据库忙。  返回RDB\_E\_SQLITE\_FULL表示SQLite错误：数据库已满。  返回RDB\_E\_SQLITE\_CORRUPT表示数据库损坏。  返回RDB\_E\_SQLITE\_BUSY表示SQLite错误：数据库文件被锁定。  返回RDB\_E\_SQLITE\_LOCKED表示SQLite错误：数据库中的表被锁定。  返回RDB\_E\_SQLITE\_READONLY表示SQLite错误：尝试写入只读数据库。  返回RDB\_E\_SQLITE\_IOERR表示SQLite错误：发生某种磁盘I/O错误。  返回RDB\_E\_SQLITE\_TOO\_BIG表示SQLite错误：TEXT或BLOB超出大小限制。  返回RDB\_E\_SQLITE\_MISMATCH表示SQLite错误：数据类型不匹配。  返回RDB\_E\_SQLITE\_CONSTRAINT表示SQLite错误：由于违反约束而中止。  返回RDB\_E\_SQLITE\_ERROR表示SQLite错误。可能原因：语法错误，例如表或列不存在。  具体错误码可参考[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。  返回RDB\_E\_WAL\_SIZE\_OVER\_LIMIT表示WAL文件大小超过默认限制。  返回RDB\_E\_NOT\_SUPPORTED表示不支持的操作。  返回RDB\_E\_EMPTY\_VALUES\_BUCKET表示值桶为空。  返回RDB\_E\_DATABASE\_BUSY表示数据库忙。  返回RDB\_E\_SQLITE\_FULL表示SQLite错误：数据库已满。  返回RDB\_E\_SQLITE\_CORRUPT表示数据库损坏。  返回RDB\_E\_SQLITE\_BUSY表示SQLite错误：数据库文件被锁定。  返回RDB\_E\_SQLITE\_LOCKED表示SQLite错误：数据库中的表被锁定。  返回RDB\_E\_SQLITE\_READONLY表示SQLite错误：尝试写入只读数据库。  返回RDB\_E\_SQLITE\_IOERR表示SQLite错误：发生某种磁盘I/O错误。  返回RDB\_E\_SQLITE\_TOO\_BIG表示SQLite错误：TEXT或BLOB超出大小限制。  返回RDB\_E\_SQLITE\_MISMATCH表示SQLite错误：数据类型不匹配。  返回RDB\_E\_SQLITE\_CONSTRAINT表示SQLite错误：由于违反约束而中止。  返回RDB\_E\_SQLITE\_ERROR表示SQLite错误。可能原因：语法错误，例如表或列不存在。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
 
 ### OH\_Rdb\_DeleteWithReturning()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Rdb_DeleteWithReturning(OH_Rdb_Store *store, OH_Predicates *predicates, OH_RDB_ReturningContext *context)
+```c
+int OH_Rdb_DeleteWithReturning(OH_Rdb_Store *store, OH_Predicates *predicates, OH_RDB_ReturningContext *context)
 ```
 
 **描述**
@@ -2536,4 +2346,4 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行结果。  返回RDB\_OK表示执行成功。  返回RDB\_E\_INVALID\_ARGS表示输入参数无效。  返回RDB\_E\_WAL\_SIZE\_OVER\_LIMIT表示WAL文件大小超过默认限制。  返回RDB\_E\_NOT\_SUPPORTED表示不支持的操作。  返回RDB\_E\_DATABASE\_BUSY表示数据库忙。  返回RDB\_E\_SQLITE\_FULL表示SQLite错误：数据库已满。  返回RDB\_E\_SQLITE\_CORRUPT表示数据库损坏。  返回RDB\_E\_SQLITE\_BUSY表示SQLite错误：数据库文件被锁定。  返回RDB\_E\_SQLITE\_LOCKED表示SQLite错误：数据库中的表被锁定。  返回RDB\_E\_SQLITE\_READONLY表示SQLite错误：尝试写入只读数据库。  返回RDB\_E\_SQLITE\_IOERR表示SQLite错误：发生某种磁盘I/O错误。  返回RDB\_E\_SQLITE\_TOO\_BIG表示SQLite错误：TEXT或BLOB超出大小限制。  返回RDB\_E\_SQLITE\_MISMATCH表示SQLite错误：数据类型不匹配。  返回RDB\_E\_SQLITE\_ERROR表示SQLite错误。可能原因：语法错误，例如表或列不存在。  具体错误码可参考[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。  RDB\_OK 表示成功。  RDB\_E\_INVALID\_ARGS 表示无效参数。  返回RDB\_E\_WAL\_SIZE\_OVER\_LIMIT表示WAL文件大小超过默认限制。  返回RDB\_E\_NOT\_SUPPORTED表示不支持的操作。  返回RDB\_E\_DATABASE\_BUSY表示数据库忙。  返回RDB\_E\_SQLITE\_FULL表示SQLite错误：数据库已满。  返回RDB\_E\_SQLITE\_CORRUPT表示数据库损坏。  返回RDB\_E\_SQLITE\_BUSY表示SQLite错误：数据库文件被锁定。  返回RDB\_E\_SQLITE\_LOCKED表示SQLite错误：数据库中的表被锁定。  返回RDB\_E\_SQLITE\_READONLY表示SQLite错误：尝试写入只读数据库。  返回RDB\_E\_SQLITE\_IOERR表示SQLite错误：发生某种磁盘I/O错误。  返回RDB\_E\_SQLITE\_TOO\_BIG表示SQLite错误：TEXT或BLOB超出大小限制。  返回RDB\_E\_SQLITE\_MISMATCH表示SQLite错误：数据类型不匹配。  返回RDB\_E\_SQLITE\_ERROR表示SQLite错误。可能原因：语法错误，例如表或列不存在。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |

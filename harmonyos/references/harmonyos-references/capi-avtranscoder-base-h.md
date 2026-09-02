@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avtr
 title: avtranscoder_base.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > avtranscoder_base.h
 category: harmonyos-references
-scraped_at: 2026-04-29T14:04:31+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:8d8ede14c3695412c6bd021a1b277cf403eabde9aecc33585b15c157a01872ff
+scraped_at: 2026-09-02T15:02:35+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2d1f69ba81926a764189f75b6d27a0a502e77d69d76314213d9dd8ac316a763f
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 定义了媒体AVTranscoder的结构体和枚举。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 结构体
-
-PhonePC/2in1TabletTV
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -39,15 +33,11 @@ PhonePC/2in1TabletTV
 
 ### 枚举
 
-PhonePC/2in1TabletTV
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [OH\_AVTranscoder\_State](capi-avtranscoder-base-h.md#oh_avtranscoder_state) | OH\_AVTranscoder\_State | 转码状态。 |
 
 ### 函数
-
-PhonePC/2in1TabletTV
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -57,14 +47,10 @@ PhonePC/2in1TabletTV
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTV
-
 ### OH\_AVTranscoder\_State
 
-PhonePC/2in1TabletTV
-
-```
-1. enum OH_AVTranscoder_State
+```c
+enum OH_AVTranscoder_State
 ```
 
 **描述**
@@ -85,14 +71,10 @@ PhonePC/2in1TabletTV
 
 ## 函数说明
 
-PhonePC/2in1TabletTV
-
 ### OH\_AVTranscoder\_OnStateChange()
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void (*OH_AVTranscoder_OnStateChange)(OH_AVTranscoder *transcoder, OH_AVTranscoder_State state, void *userData)
+```c
+typedef void (*OH_AVTranscoder_OnStateChange)(OH_AVTranscoder *transcoder, OH_AVTranscoder_State state, void *userData)
 ```
 
 **描述**
@@ -113,10 +95,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_AVTranscoder\_OnError()
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void (*OH_AVTranscoder_OnError)(OH_AVTranscoder *transcoder, int32_t errorCode, const char *errorMsg,void *userData)
+```c
+typedef void (*OH_AVTranscoder_OnError)(OH_AVTranscoder *transcoder, int32_t errorCode, const char *errorMsg,void *userData)
 ```
 
 **描述**
@@ -138,10 +118,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_AVTranscoder\_OnProgressUpdate()
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void (*OH_AVTranscoder_OnProgressUpdate)(OH_AVTranscoder *transcoder, int32_t progress, void *userData)
+```c
+typedef void (*OH_AVTranscoder_OnProgressUpdate)(OH_AVTranscoder *transcoder, int32_t progress, void *userData)
 ```
 
 **描述**

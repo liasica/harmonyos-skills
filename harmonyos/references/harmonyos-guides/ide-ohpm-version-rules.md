@@ -3,17 +3,17 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-vers
 title: OHPM版本号规则
 breadcrumb: 指南 > 编写与调试应用 > 附录 > OHPM版本号规则
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:10+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:35716fb9d56786a2053b5e0ce5db2fd69f2618f054a5f944f6fd03615286e070
+scraped_at: 2026-09-02T15:00:26+08:00
+doc_updated_at: 2026-07-15
+content_hash: sha256:6735fe26af0b75e44fb3c95c7e8041418471bee8f3bab7e121be203592035b15
 ---
 
 ohpm管理的三方包的版本号遵循[语义化版本控制](https://semver.org/lang/zh-CN/)（SemVer 2.0.0）规则。
 
 ## 版本号格式
 
-```
-1. 版本号格式：主版本号.次版本号.修订号[-先行版本号][+构建信息]， 正例：1.0.0-PRERELEASE+BUILD
+```screen
+版本号格式：主版本号.次版本号.修订号[-先行版本号][+构建信息]， 正例：1.0.0-PRERELEASE+BUILD
 ```
 
 * 主版本号（MAJOR）：非负整数，当开发者做了不能向下兼容的代码修改时，必须递增主版本号，同时MINOR和PATCH须归零。
@@ -58,98 +58,98 @@ ohpm管理的三方包的版本号遵循[语义化版本控制](https://semver.o
   + 当仓库仅存在先行版本时，配置依赖为标准范围版本如：>=1.0.0 ，此时安装的版本会从先行版本中获取，即安装>=1.0.0的最新先行版本，可参考示例2。
   + 当仓库仅存在先行版本时，配置依赖为先行范围版本如：>=1.0.0-snapshot ，此时安装的版本会从先行版本中获取，即安装>=1.0.0-snapshot的最新先行版本，可参考示例6。
 
-```
-1. // 示例1
-2. > 依赖`liba`在仓库存在的版本有：['1.0.0-snapshot.1', '1.0.0-snapshot.2', '1.0.0', '2.0.0-snapshot.1', '2.0.0-snapshot.2', '2.0.0', '3.0.0-snapshot.1', '3.0.0-snapshot.2']
-3. > entry模块依赖`liba`，entry的oh-package.json5配置：{
-4. "name": "entry",
-5. "version": "1.0.0",
-6. "description": "Please describe the basic information.",
-7. "main": "Index.ets",
-8. "license": "Apache-2.0",
-9. "dependencies": {
-10. "liba": ">=1.0.0"
-11. }
-12. }
-13. > ohpm install后安装的`liba`版本为：`2.0.0`
+```screen
+// 示例1
+> 依赖`liba`在仓库存在的版本有：['1.0.0-snapshot.1', '1.0.0-snapshot.2', '1.0.0', '2.0.0-snapshot.1', '2.0.0-snapshot.2', '2.0.0', '3.0.0-snapshot.1', '3.0.0-snapshot.2']
+> entry模块依赖`liba`，entry的oh-package.json5配置：{
+  "name": "entry",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "Index.ets",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "liba": ">=1.0.0"
+  }
+}
+> ohpm install后安装的`liba`版本为：`2.0.0`
 
-15. // 示例2
-16. > 依赖`liba`在仓库存在的版本有：['1.0.0-snapshot.1', '1.0.0-snapshot.2', '2.0.0-snapshot.1', '2.0.0-snapshot.2']
-17. > entry模块依赖`liba`，entry的oh-package.json5配置：{
-18. "name": "entry",
-19. "version": "1.0.0",
-20. "description": "Please describe the basic information.",
-21. "main": "Index.ets",
-22. "license": "Apache-2.0",
-23. "dependencies": {
-24. "liba": ">=1.0.0"
-25. }
-26. }
-27. > ohpm install后安装的`liba`版本为：`2.0.0-snapshot.2`
+// 示例2
+> 依赖`liba`在仓库存在的版本有：['1.0.0-snapshot.1', '1.0.0-snapshot.2', '2.0.0-snapshot.1', '2.0.0-snapshot.2']
+> entry模块依赖`liba`，entry的oh-package.json5配置：{
+  "name": "entry",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "Index.ets",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "liba": ">=1.0.0"
+  }
+}
+> ohpm install后安装的`liba`版本为：`2.0.0-snapshot.2`
 
-29. // 示例3
-30. > 依赖`liba`在仓库存在的版本有：['1.0.0', '1.0.2-snapshot', '2.0.0-snapshot.1', '2.0.0-snapshot.2']
-31. > entry模块依赖`liba`，entry的oh-package.json5配置：{
-32. "name": "entry",
-33. "version": "1.0.0",
-34. "description": "Please describe the basic information.",
-35. "main": "Index.ets",
-36. "license": "Apache-2.0",
-37. "dependencies": {
-38. "liba": "^1.0.0"
-39. }
-40. }
-41. > 工程级配置依赖`liba`，工程级的
-42. oh-package.json5配置：{
-43. "modelVersion": "x.0.0",
-44. "description": "Please describe the basic information.",
-45. "dependencies": {
-46. "liba": "1.0.2-snapshot"
-47. }
-48. }
-49. > ohpm install后安装的`liba`版本为：`1.0.2-snapshot`
+// 示例3
+> 依赖`liba`在仓库存在的版本有：['1.0.0', '1.0.2-snapshot', '2.0.0-snapshot.1', '2.0.0-snapshot.2']
+> entry模块依赖`liba`，entry的oh-package.json5配置：{
+  "name": "entry",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "Index.ets",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "liba": "^1.0.0"
+  }
+}
+> 工程级配置依赖`liba`，工程级的
+oh-package.json5配置：{
+  "modelVersion": "x.0.0",
+  "description": "Please describe the basic information.",
+  "dependencies": {
+    "liba": "1.0.2-snapshot"
+  }
+}
+> ohpm install后安装的`liba`版本为：`1.0.2-snapshot`
 
-51. // 示例4
-52. > 依赖`liba`在仓库存在的版本有：['1.0.0-snapshot', '1.0.0']
-53. > entry模块依赖`liba`，entry的oh-package.json5配置：{
-54. "name": "entry",
-55. "version": "1.0.0",
-56. "description": "Please describe the basic information.",
-57. "main": "Index.ets",
-58. "license": "Apache-2.0",
-59. "dependencies": {
-60. "liba": ">=1.0.0-snapshot"
-61. }
-62. }
-63. > ohpm install后安装的`liba`版本为：`1.0.0`
+// 示例4
+> 依赖`liba`在仓库存在的版本有：['1.0.0-snapshot', '1.0.0']
+> entry模块依赖`liba`，entry的oh-package.json5配置：{
+  "name": "entry",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "Index.ets",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "liba": ">=1.0.0-snapshot"
+  }
+}
+> ohpm install后安装的`liba`版本为：`1.0.0`
 
-65. // 示例5
-66. > 依赖`liba`在仓库存在的版本有：['0.0.1','1.0.0-snapshot', '1.0.1-snapshot']
-67. > entry模块依赖`liba`，entry的oh-package.json5配置：{
-68. "name": "entry",
-69. "version": "1.0.0",
-70. "description": "Please describe the basic information.",
-71. "main": "Index.ets",
-72. "license": "Apache-2.0",
-73. "dependencies": {
-74. "liba": ">=1.0.0-snapshot"
-75. }
-76. }
-77. > ohpm install后安装的`liba`版本为：`1.0.1-snapshot`
+// 示例5
+> 依赖`liba`在仓库存在的版本有：['0.0.1','1.0.0-snapshot', '1.0.1-snapshot']
+> entry模块依赖`liba`，entry的oh-package.json5配置：{
+  "name": "entry",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "Index.ets",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "liba": ">=1.0.0-snapshot"
+  }
+}
+> ohpm install后安装的`liba`版本为：`1.0.1-snapshot`
 
-79. // 示例6
-80. > 依赖`liba`在仓库存在的版本有：['1.0.0-snapshot.1', '1.0.0-snapshot.2', '2.0.0-snapshot.1', '2.0.0-snapshot.2']
-81. > entry模块依赖`liba`，entry的oh-package.json5配置：{
-82. "name": "entry",
-83. "version": "1.0.0",
-84. "description": "Please describe the basic information.",
-85. "main": "Index.ets",
-86. "license": "Apache-2.0",
-87. "dependencies": {
-88. "liba": ">=1.0.0-snapshot"
-89. }
-90. }
-91. > ohpm install后安装的`liba`版本为：`2.0.0-snapshot.2`
+// 示例6
+> 依赖`liba`在仓库存在的版本有：['1.0.0-snapshot.1', '1.0.0-snapshot.2', '2.0.0-snapshot.1', '2.0.0-snapshot.2']
+> entry模块依赖`liba`，entry的oh-package.json5配置：{
+  "name": "entry",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "Index.ets",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "liba": ">=1.0.0-snapshot"
+  }
+}
+> ohpm install后安装的`liba`版本为：`2.0.0-snapshot.2`
 ```
 
 ### 先行版本间比较规则
@@ -178,49 +178,49 @@ ohpm管理的三方包的版本号遵循[语义化版本控制](https://semver.o
 
 使用^（插入符）会将要安装或升级的版本的主版本号固定，最高允许升级到主版本下的最新版本。当主版本号为0时，将固定从左往右的第一位非零版本；适用场景：希望自动获取当前主版本下的最新版本。
 
-```
-1. // ^使用示例
-2. ^1.2.301 等价于：1.2.301 <= 版本 < 2.0.0。 // 固定主版本号：1不变
-3. ^0.2.301 等价于：0.2.301 <= 版本 < 0.3.0。 // 固定从左往右的第一位非零版本，即次版本号：2不变
-4. ^0.0.301 等价于：0.0.301 <= 版本 < 0.0.302。// 固定从左往右的第一位非零版本，即修订号：301不变
+```screen
+// ^使用示例
+^1.2.301 等价于：1.2.301 <= 版本 < 2.0.0。 // 固定主版本号：1不变
+^0.2.301 等价于：0.2.301 <= 版本 < 0.3.0。 // 固定从左往右的第一位非零版本，即次版本号：2不变
+^0.0.301 等价于：0.0.301 <= 版本 < 0.0.302。// 固定从左往右的第一位非零版本，即修订号：301不变
 ```
 
 从OHPM v5.0.11即DevEco Studio 5.0.7.210开始，^（插入符）的含义始终为固定主版本，不再固定从左往右的第一位非零版本。
 
-```
-1. // ^语义统一后示例
-2. ^1.2.301 等价于：1.2.301 <= 版本 < 2.0.0 // 固定主版本号：1不变
-3. ^0.2.301 等价于：0.2.301 <= 版本 < 1.0.0 // 固定主版本号：0不变
-4. ^0.0.301 等价于：0.0.301 <= 版本 < 1.0.0 // 固定主版本号：0不变
+```screen
+// ^语义统一后示例
+^1.2.301 等价于：1.2.301 <= 版本 < 2.0.0 // 固定主版本号：1不变
+^0.2.301 等价于：0.2.301 <= 版本 < 1.0.0 // 固定主版本号：0不变
+^0.0.301 等价于：0.0.301 <= 版本 < 1.0.0 // 固定主版本号：0不变
 ```
 
 ### ~（波浪号）
 
 使用~（波浪符）会将要安装或升级的版本的主版本号、次版本号固定，最高允许升级到主版本号.次版本号下的最新版本；适用场景：希望只接受修订号更新，不自动升级主版本号和次版本号。
 
-```
-1. // ~使用示例
-2. ~1.2.301 等价于：1.2.301 <= 版本 < 1.3.0 // 固定主版本号.次版本号：1.2不变
-3. ~1.2 等价于： ~1.2.0` 等价于：1.2.0 <= 版本 < 1.3.0 // 固定主版本号.次版本号：1.2不变
-4. ~1 等价于： ~1.x` 等价于：1.0.0 <= 版本 < 2.0.0-0 // 固定主版本号：1不变（特殊）
-5. ~0.10.100 等价于：0.10.100 <= 版本 < 0.11.0 // 固定主版本号.次版本号：0.10不变
-6. ~0.0 等价于：0.0.0 <= 版本 < 0.1.0 // 固定主版本号.次版本号：0.0不变
-7. ~0 等价于：0.x 等价于：0.0.0 <= 版本 < 1.0.0-0 // 固定主版本号：0不变（特殊）
+```screen
+// ~使用示例
+~1.2.301 等价于：1.2.301 <= 版本 < 1.3.0 // 固定主版本号.次版本号：1.2不变
+~1.2 等价于： ~1.2.0` 等价于：1.2.0 <= 版本 < 1.3.0 // 固定主版本号.次版本号：1.2不变
+~1 等价于： ~1.x` 等价于：1.0.0 <= 版本 < 2.0.0-0 // 固定主版本号：1不变（特殊）
+~0.10.100 等价于：0.10.100 <= 版本 < 0.11.0 // 固定主版本号.次版本号：0.10不变
+~0.0 等价于：0.0.0 <= 版本 < 0.1.0 // 固定主版本号.次版本号：0.0不变
+~0 等价于：0.x 等价于：0.0.0 <= 版本 < 1.0.0-0 // 固定主版本号：0不变（特殊）
 ```
 
 ### -（连字符）/...（省略符）
 
 用于明确声明一个连续的版本区间，包含起始和结束版本（前后需要有空格）；"-"在跨工具链支持上更全面，应优先选用；适用场景：希望定义闭区间并简化表达式。
 
-```
-1. // 使用示例
-2. 1.0.1 - 2.1.1 等价于：1.0.1 <= 版本 <= 2.1.1
-3. 1.0.1 ... 2.1.1 等价于：1.0.1 <= 版本 <= 2.1.1
-4. // 左侧版本存在版本缺省时示例
-5. 1.1 - 2.1.0 等价于 1.1.0 <= 版本 <= 2.1.0
-6. // 右侧版本存在版本缺省时示例
-7. 1.1.0 - 2.1 等价于 1.1.0 <= 版本 < 2.2.0-0
-8. 1.1.0 - 2 等价于 1.1.0 <= 版本 < 3.0.0-0
+```screen
+// 使用示例
+1.0.1 - 2.1.1 等价于：1.0.1 <= 版本 <= 2.1.1
+1.0.1 ... 2.1.1 等价于：1.0.1 <= 版本 <= 2.1.1
+// 左侧版本存在版本缺省时示例
+1.1 - 2.1.0 等价于 1.1.0 <= 版本 <= 2.1.0
+// 右侧版本存在版本缺省时示例
+1.1.0 - 2.1 等价于 1.1.0 <= 版本 < 2.2.0-0 
+1.1.0 - 2 等价于 1.1.0 <= 版本 < 3.0.0-0
 ```
 
 ### 大小关系比较（>、<、>=、<=、=）
@@ -233,26 +233,26 @@ ohpm管理的三方包的版本号遵循[语义化版本控制](https://semver.o
 
 匹配任意值，通常用于省略字段， 简化范围定义。
 
-```
-1. // 通配符使用示例
-2. 1.x 等价于：1.0.0 <= 版本 < 2.0.0 等价于：^1.0.0
-3. 1.1.x 等价于：1.1.0 <= 版本 < 1.2.0 等价于：~1.1.0
+```screen
+// 通配符使用示例
+1.x 等价于：1.0.0 <= 版本 < 2.0.0 等价于：^1.0.0
+1.1.x 等价于：1.1.0 <= 版本 < 1.2.0 等价于：~1.1.0
 ```
 
 ### 空格分割（逻辑与）
 
 多个范围条件使用空格分割时，默认以逻辑与（&&）连接，需同时满足所有条件。
 
-```
-1. // 空格使用示例
-2. >=1.0.101 <2.0.100 等价于：1.0.101 <= 版本 < 2.0.100
+```screen
+// 空格使用示例
+>=1.0.101 <2.0.100 等价于：1.0.101 <= 版本 < 2.0.100
 ```
 
 ### ||（逻辑或）
 
 组合多个范围版本，满足任意一个即可。
 
-```
-1. // 逻辑或使用示例
-2. ^1.0.101 || ^2.0.100 等价于：1.0.101 <= 版本 < 2.0.0 或 2.0.100 <= 版本 < 3.0.0
+```screen
+// 逻辑或使用示例
+^1.0.101 || ^2.0.100 等价于：1.0.101 <= 版本 < 2.0.0 或 2.0.100 <= 版本 < 3.0.0
 ```

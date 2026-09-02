@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: hdc list targets回显慢
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > hdc list targets回显慢
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:26+08:00
-doc_updated_at: 2026-03-17
+scraped_at: 2026-09-02T15:21:13+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:f674d0db45232bf1863dfdfeef0ef8451ceb04523eebc07bfabf074c50c5cd6e
 ---
 

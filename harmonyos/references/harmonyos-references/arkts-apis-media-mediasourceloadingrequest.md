@@ -3,29 +3,25 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (MediaSourceLoadingRequest)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Interface (MediaSourceLoadingRequest)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:44+08:00
-doc_updated_at: 2026-04-03
-content_hash: sha256:f727c4c85cc75d36549941ad45d55934d45b610a8e260c2c0f27e8c1babf8c78
+scraped_at: 2026-09-02T15:02:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:60ba1752b74b5644aa2f3db1d279d41118dd30c471a48e38142d46d83553590e
 ---
 
 用于定义加载请求的对象。应用程序通过该对象来获取请求的资源位置，通过该对象和播放器进行数据交互。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Interface首批接口从API version 18开始支持。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { media } from '@kit.MediaKit';
+```ts
+import { media } from '@kit.MediaKit';
 ```
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -37,8 +33,6 @@ PhonePC/2in1TabletTVWearable
 | header | Record<string, string> | 否 | 是 | 网络请求标头，如果存在，需要应用在下载数据时将头信息设置到HTTP请求中。 |
 
 ## respondData18+
-
-PhonePC/2in1TabletTVWearable
 
 respondData(uuid: number, offset: number, buffer: ArrayBuffer): number
 
@@ -64,20 +58,18 @@ respondData(uuid: number, offset: number, buffer: ArrayBuffer): number
 
 **示例：**
 
-```
-1. import { HashMap } from '@kit.ArkTS';
-2. let requests: HashMap<number, media.MediaSourceLoadingRequest> = new HashMap();
-3. let uuid = 1;
+```ts
+import { HashMap } from '@kit.ArkTS';
+let requests: HashMap<number, media.MediaSourceLoadingRequest> = new HashMap();
+let uuid = 1;
 
-5. let request = requests.get(uuid);
-6. let offset = 0; // 当前媒体数据相对于资源起始位置的偏移量
-7. let buf = new ArrayBuffer(0); // 由应用定义，推送给播放器的数据
-8. let num = request?.respondData(uuid, offset, buf);
+let request = requests.get(uuid);
+let offset = 0; // 当前媒体数据相对于资源起始位置的偏移量
+let buf = new ArrayBuffer(0); // 由应用定义，推送给播放器的数据
+let num = request?.respondData(uuid, offset, buf);
 ```
 
 ## respondHeader18+
-
-PhonePC/2in1TabletTVWearable
 
 respondHeader(uuid: number, header?: Record<string, string>, redirectUrl?: string): void
 
@@ -97,28 +89,26 @@ respondHeader(uuid: number, header?: Record<string, string>, redirectUrl?: strin
 
 **示例：**
 
-```
-1. import { HashMap } from '@kit.ArkTS';
-2. let requests: HashMap<number, media.MediaSourceLoadingRequest> = new HashMap();
-3. let uuid = 1;
+```ts
+import { HashMap } from '@kit.ArkTS';
+let requests: HashMap<number, media.MediaSourceLoadingRequest> = new HashMap();
+let uuid = 1;
 
-5. // 应用根据情况填充。
-6. let header:Record<string, string> = {
-7. 'Transfer-Encoding':'xxx',
-8. 'Location' : 'xxx',
-9. 'Content-Type' : 'xxx',
-10. 'Content-Range' : 'xxx',
-11. 'Content-Encode' : 'xxx',
-12. 'Accept-Ranges' : 'xxx',
-13. 'content-length' : 'xxx'
-14. };
-15. let request = requests.get(uuid);
-16. request?.respondHeader(uuid, header);
+// 应用根据情况填充。
+let header:Record<string, string> = {
+  'Transfer-Encoding':'xxx',
+  'Location' : 'xxx',
+  'Content-Type' : 'xxx',
+  'Content-Range' : 'xxx',
+  'Content-Encode' : 'xxx',
+  'Accept-Ranges' : 'xxx',
+  'content-length' : 'xxx'
+};
+let request = requests.get(uuid);
+request?.respondHeader(uuid, header);
 ```
 
 ## finishLoading18+
-
-PhonePC/2in1TabletTVWearable
 
 finishLoading(uuid: number, state: LoadingRequestError): void
 
@@ -137,13 +127,13 @@ finishLoading(uuid: number, state: LoadingRequestError): void
 
 **示例：**
 
-```
-1. import { HashMap } from '@kit.ArkTS';
+```ts
+import { HashMap } from '@kit.ArkTS';
 
-3. let requests: HashMap<number, media.MediaSourceLoadingRequest> = new HashMap();
-4. let uuid = 1;
+let requests: HashMap<number, media.MediaSourceLoadingRequest> = new HashMap();
+let uuid = 1;
 
-6. let request = requests.get(uuid);
-7. let loadingError = media.LoadingRequestError.LOADING_ERROR_SUCCESS;
-8. request?.finishLoading(uuid, loadingError);
+let request = requests.get(uuid);
+let loadingError = media.LoadingRequestError.LOADING_ERROR_SUCCESS;
+request?.finishLoading(uuid, loadingError);
 ```

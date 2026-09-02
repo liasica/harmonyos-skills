@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohau
 title: OH_AudioVolumeManager
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 结构体 > OH_AudioVolumeManager
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:52+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:bf432021e267ea67a477b478c9eace8510b086fd86d4f87450bb92bb03e2fa82
+scraped_at: 2026-09-02T14:52:45+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:11d21852fd5b84abda17ac9619f38f42ffc5ccb58eccd338ee27934d36175ec3
 ---
 
-```
-1. typedef struct OH_AudioVolumeManager OH_AudioVolumeManager
+```c
+typedef struct OH_AudioVolumeManager OH_AudioVolumeManager
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-声明音频音量管理器。音频音量管理器提供多种函数，供开发人员获取系统音量信息。
+声明音频音量管理器。该结构体提供相关接口，供开发者获取系统音量信息。
 
 **起始版本：** 20
 

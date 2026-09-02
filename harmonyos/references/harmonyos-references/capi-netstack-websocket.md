@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nets
 title: WebSocket
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 结构体 > WebSocket
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:38+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:992bc357bb2b35bec5005ff910989c4c153d549db8c20afb4e48ebb8c584fa9b
+scraped_at: 2026-09-02T15:01:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c7fd3e908a2a0a91004927eb87482a20dc5b8b837c2fb6677c07d50d99b7891e
 ---
 
-```
-1. struct WebSocket {...}
+```c
+struct WebSocket {...}
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 WebSocket客户端结构体。
 
@@ -26,11 +24,7 @@ WebSocket客户端结构体。
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

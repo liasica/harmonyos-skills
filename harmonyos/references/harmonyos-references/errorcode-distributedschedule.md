@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: DistributedSchedule错误码
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > 错误码 > DistributedSchedule错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:04+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:69c451ef5ca503afb32862b67cab24339f20aca338f4a96123329180991565a9
+scraped_at: 2026-09-02T15:00:38+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:10725e01ae1b75a463c1991a7fa74bdcf24228b2c2b5669ae0af296848f1ab66
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 16600001 系统服务工作异常
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -38,8 +36,6 @@ The system ability works abnormally.
 
 ## 16600002 指定的token或callback未注册
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 The specified token or callback is not registered.
@@ -57,8 +53,6 @@ The specified token or callback is not registered.
 请先注册token或callback。
 
 ## 16600003 应用注册token已达到最大次数限制
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -78,8 +72,6 @@ The number of token registration times has reached the upper limit.
 
 ## 16600004 指定的callback已注册
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 The specified callback has been registered.
@@ -97,8 +89,6 @@ The specified callback has been registered.
 请勿使用相同的callback重复注册。
 
 ## 16300501 系统服务工作异常
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -283,7 +273,7 @@ The callback has been registered.
 
 **可能原因**
 
-该错误码能原因是指定的callback已经注册过。
+该错误码可能原因是指定的callback已经注册过。
 
 **处理步骤**
 

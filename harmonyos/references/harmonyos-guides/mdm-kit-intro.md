@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-intro
 title: MDM Kit简介
 breadcrumb: 指南 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > MDM Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:33:26+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:29abab825fd8dd5c8d5f001e8b3c70acc66396ca2eba86514e546b27380fb36e
+scraped_at: 2026-09-02T14:50:08+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:ea94d15b6bfa34e8924a7255852cb298d2a0d7ce3c1dc07e3e661d86418679c9
 ---
 
 ## 业务介绍
 
-MDM Kit（企业设备管理服务）为企业MDM（Mobile Device Management）应用提供设备管理API，用于管理并保护公司设备上的数据和应用程序。[MDM应用](mdm-kit-term.md#mdm应用设备管理应用)可以通过集中管理、远程配置和监控来保障设备和数据的安全性和稳定性。它广泛应用于企业和政府机构，以确保员工和客户使用的设备和数据受到保护，实现企业高效管理、安全使用设备。
+MDM Kit（企业设备管理服务）为企业MDM（Mobile Device Management）应用提供设备管理API，用于管理并保护公司设备上的数据和应用程序。[MDM应用](mdm-kit-term.md#mdm应用)可以通过集中管理、远程配置和监控来保障设备和数据的安全性和稳定性。它广泛应用于企业和政府机构，以确保员工和客户使用的设备和数据受到保护，实现企业高效管理、安全使用设备。
 
 ## 场景介绍
 
@@ -21,7 +21,7 @@ MDM Kit（企业设备管理服务）为企业MDM（Mobile Device Management）�
 
 框架层和服务层提供了enterprise\_device\_management部件和enterprise\_device\_management\_ext部件，enterprise\_device\_management部件提供了设备管理应用程序框架和基本设备管理能力，enterprise\_device\_management\_ext部件为HarmonyOS NEXT设备提供扩展的企业设备管理能力。设备管理应用通过[EnterpriseAdminExtensionAbility](mdm-kit-admin.md)来调用MDM Kit中的接口，实现管理设备的意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/zPJ62dKmTPi6iWdRyDBeMg/zh-cn_image_0000002558764960.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/A-QWhUU3QZyiDcxugNKoiQ/zh-cn_image_0000002736313497.png)
 
 ## 约束与限制
 

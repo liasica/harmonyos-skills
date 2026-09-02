@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/net-mgmt-over
 title: Network Kit简介
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > Network Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:50+08:00
-doc_updated_at: 2026-03-19
-content_hash: sha256:52bb8387bdbc791f6d05a6d57d3e78561ec7cccbc4abe8a766912387c30cf31d
+scraped_at: 2026-09-02T14:50:05+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:01065546b560f057f3640cfef4644967302b17546022012874f560d50f2d8821
 ---
 
 Network Kit（网络服务）主要提供以下功能：
@@ -13,7 +13,7 @@ Network Kit（网络服务）主要提供以下功能：
 * [HTTP数据请求](http-request.md)：通过HTTP发起一个数据请求。
 * [WebSocket连接](websocket-connection.md)：使用WebSocket建立服务器与客户端的双向连接。
 * [Socket连接](socket-connection.md)：通过Socket进行数据传输。
-* [网络连接管理](net-connection-manager.md)：网络连接管理提供管理网络一些基础能力，包括WiFi/蜂窝/Ethernet等多网络连接优先级管理、网络质量评估、订阅默认/指定网络连接状态变化、查询网络连接信息、DNS解析等功能。
+* [网络连接管理](net-connection-manager.md)：网络连接管理提供管理网络一些基础能力，包括Wi-Fi/蜂窝/Ethernet等多网络连接优先级管理、网络质量评估、订阅默认/指定网络连接状态变化、查询网络连接信息、DNS解析等功能。
 * [MDNS管理](net-mdns.md)：MDNS即多播DNS（Multicast DNS），提供局域网内的本地服务添加、删除、发现、解析等能力。
 
 ## 模拟器支持情况

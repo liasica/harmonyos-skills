@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/preview-intro
 title: Preview Kit简介
 breadcrumb: 指南 > 应用服务 > Preview Kit（文件预览服务） > Preview Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:49+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8634593d3e85af70f8f0172691cef3c7d4573f79b01831ddceb9db6b29f190a0
+scraped_at: 2026-09-02T15:00:00+08:00
+doc_updated_at: 2026-08-07
+content_hash: sha256:2bc919f6449de8c1ad8fc3be9c8a1f2d6d2851c19475a77a7367fecb2fc600e4
 ---
 
 Preview Kit（文件预览服务）为应用提供便捷的文件快速预览和文件打开加速能力。
@@ -25,7 +25,7 @@ Preview Kit能够对图片、视频、音频、文本、html进行预览查看�
 * 预览展示：呈现文件的基本内容，如文本、图片等，支持选中多文件，在预览列表切换显示。
 * 文件分享：将文件以分享的形式传给另一个软件。
 * 使用其他软件打开：使用预览打开时，会获取到该文件类型的默认打开软件，然后点击“使用其他应用打开”进行跳转。
-* 图片翻转放大：在非2in1设备时，预览能够对图片进行旋转放大等处理。
+* 图片翻转放大：在非PC/2in1设备时，预览能够对图片进行旋转放大等处理。
 
 ## 文件打开加速场景介绍
 
@@ -43,7 +43,7 @@ Preview Kit能够对图片、视频、音频、文本、html进行预览查看�
 
 ### 支持的设备
 
-文件预览功能支持华为Phone、Tablet和2in1，文件打开加速功能仅支持2in1设备。
+文件预览功能支持华为Phone、Tablet、PC/2in1，文件打开加速功能仅支持PC/2in1设备。
 
 ## 模拟器支持的情况
 
@@ -74,7 +74,7 @@ Preview Kit支持图片、视频、音频、文本、html进行查看，表中�
 
 ## 文件预览基本概念
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/oIdzREMvQQWigUG-k6Ik1g/zh-cn_image_0000002589325477.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/x1binHTVRJKAfFiSsP4i9g/zh-cn_image_0000002706675192.png)
 
 * 模态窗：和父窗口绑定，模态窗存在时父窗口不可移动，不可操作，模态窗永远置于父窗口前面。
 * 应用窗：应用窗口，可以通过AMS启动。

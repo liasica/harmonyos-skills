@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-accountkit-6101
 title: Account Kit
-breadcrumb: 版本说明 > HarmonyOS 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta1引入的变更 > Account Kit
+breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta1引入的变更 > Account Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:22+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:16:21+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:3e01942a9ec81cd40785b7e9d225c09fdaf80675b24cbe0501a8d9a56ed8a089
 ---
 

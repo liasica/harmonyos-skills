@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/common-ba
 title: 结构体
 breadcrumb: API参考 > 公共基础能力 > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:20+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:d8883dbedb18d3f5c432682a04f46ca111a7b91f821707ffd9e929ad34f29d2c
+scraped_at: 2026-09-02T14:53:36+08:00
+doc_updated_at: 2026-06-03
+content_hash: sha256:0429cf0ddea87f13eedcb9a1faa3f4898dc76d1056567ad784c8e621a49cc999
 ---
 
 * **[JSVM\_CallbackStruct](capi-jsvm-jsvm-callbackstruct.md)**
@@ -36,6 +36,7 @@ content_hash: sha256:d8883dbedb18d3f5c432682a04f46ca111a7b91f821707ffd9e929ad34f
 * **[JSVM\_CallbackInfo\_\_\*](capi-jsvm-jsvm-callbackinfo--8h.md)**
 * **[JSVM\_Deferred\_\_\*](capi-jsvm-jsvm-deferred--8h.md)**
 * **[JSVM\_CallbackStruct\*](capi-jsvm-jsvm-callbackstruct8h.md)**
-* **[JSVM\_PropertyHandlerConfigurationStruct\*](api-jsvm-jsvm-propertyhandlerconfigurationstruct8h.md)**
+* **[JSVM\_PropertyHandlerConfigurationStruct\*](capi-jsvm-jsvm-propertyhandlerconfigurationstruct8h.md)**
 * **[JSVM\_CompileProfile](capi-jsvm-jsvm-compileprofile.md)**
 * **[PurgMem](capi-memory-purgmem.md)**
+* **[JSVM\_DeserializeResult](capi-jsvm-jsvm-deserializeresult.md)**

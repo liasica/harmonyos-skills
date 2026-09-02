@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 构建报错"Cannot read properties of undefined(reading 'XXX')"
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 构建报错"Cannot read properties of undefined(reading 'XXX')"
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:20:43+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:f0d876cd95c8a9d071cc536fce57891c044dc412f84587d835b3c078a242cf07
+scraped_at: 2026-09-02T14:54:54+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:c13ac73ede9df38c037a10fbec3d08fdf74b9e1aa9640963e60863da20103f44
 ---
 
 请先根据XXX的值从以下场景排查，没解决问题再参考最终方案。
@@ -20,15 +20,15 @@ content_hash: sha256:f0d876cd95c8a9d071cc536fce57891c044dc412f84587d835b3c078a24
 
   hvigorfile.ts里有如下代码：
 
-  ```
-  1. import { hvigor, getHvigorNode } from "@ohos/hvigor"
-  2. import { hapTasks} from '@ohos/hvigor-ohos-plugin';
-  3. // Problem Code
-  4. getHvigorNode(__filename).getTaskByName('XXX').setEnabled(false)；
-  5. export default {
-  6. system: hapTasks, /* Built-in plugin of Hvigor. It cannot be modified. */
-  7. plugins: []         /* Custom plugin to extend the functionality of Hvigor. */
-  8. }
+  ```typescript
+  import { hvigor, getHvigorNode } from "@ohos/hvigor"
+  import { hapTasks} from '@ohos/hvigor-ohos-plugin';
+  // Problem Code
+  getHvigorNode(__filename).getTaskByName('XXX').setEnabled(false);
+  export default {
+      system: hapTasks, /* Built-in plugin of Hvigor. It cannot be modified. */
+      plugins: []         /* Custom plugin to extend the functionality of Hvigor. */
+  }
   ```
 
   **解决措施**
@@ -37,7 +37,7 @@ content_hash: sha256:f0d876cd95c8a9d071cc536fce57891c044dc412f84587d835b3c078a24
 
      假设是entry模块的hvigorfile.ts中的代码导致的问题 ，XXX的有效值就是下图中的“default@SignHap”、“default@CollectDebugSymbol”、“assembleHap”等值。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/m6sJrRo5Rq218RfAESIcwA/zh-cn_image_0000002289418625.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/wckxJMwOQae12MRNd99sKg/zh-cn_image_0000002624478544.png)
   2. 确保getTaskByName的使用位置是在Hvigor的配置阶段及之后的生命周期里，包括beforeNodeEvaluate、afterNodeEvaluate、nodesEvaluated、taskGraphResolved、buildFinished。
 
   **参考链接**
@@ -62,16 +62,14 @@ content_hash: sha256:f0d876cd95c8a9d071cc536fce57891c044dc412f84587d835b3c078a24
 
   确保hvigorfile.ts里export default的对象中的字段system的值是appTasks/hapTasks/hspTasks/harTasks之一。
 
-  ```
-  1. import { harTasks } from '@ohos/hvigor-ohos-plugin';
+  ```typescript
+  import { harTasks } from '@ohos/hvigor-ohos-plugin';
 
-  3. export default {
-  4. system: harTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-  5. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-  6. }
+  export default {
+      system: harTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+      plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+  }
   ```
-
-  [hvigorfile.ts](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/CompilingAndBuilding/library2/hvigorfile.ts#L3-L8)
 * **场景四：**
 
   **问题现象**
@@ -118,27 +116,25 @@ content_hash: sha256:f0d876cd95c8a9d071cc536fce57891c044dc412f84587d835b3c078a24
 
   检查ArkTS代码是否有如下写法：
 
-  ```
-  1. // Incorrect writing: empty array
-  2. class w {
-  3. public a: [][] = []
-  4. test() {
-  5. console.log("1", this.a[0])
-  6. }
-  7. }
-  ```
-
-  ```
-  1. // Correct writing
-  2. class w {
-  3. public a: string[][] = []
-  4. test() {
-  5. console.log("1", this.a[0])
-  6. }
-  7. }
+  ```typescript
+  // Incorrect writing: empty array 
+  class w {
+    public a: [][] = []
+    test() {
+      console.log("1", this.a[0])
+    }
+  }
   ```
 
-  [w.ets](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/CompilingAndBuilding/library3/src/main/ets/components/w.ets#L3-L9)
+  ```typescript
+  // Correct writing
+  class w {
+    public a: string[][] = []
+    test() {
+      console.log("1", this.a[0])
+    }
+  }
+  ```
 * **场景八：**
 
   **问题现象**
@@ -158,31 +154,29 @@ content_hash: sha256:f0d876cd95c8a9d071cc536fce57891c044dc412f84587d835b3c078a24
 
   在工程根目录hvigor/hvigor-config.json5文件中配置如下内容打开堆栈。
 
+  ```json
+  {
+    "debugging": {
+      "stacktrace": true
+      /* Disable stacktrace compilation. Value: [ true | false ]. Default: false */
+    },
+  }
   ```
-  1. {
-  2. "debugging": {
-  3. "stacktrace": true
-  4. /* Disable stacktrace compilation. Value: [ true | false ]. Default: false */
-  5. },
-  6. }
-  ```
-
-  [hvigor-config\_xx.json5](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/CompilingAndBuilding/hvigor/hvigor-config_xx.json5#L3-L8)
 
   确认堆栈内容是否如下。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/RBOT8QvTR02PjXDFaNSaAw/zh-cn_image_0000002289305561.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/_ftigbfIThObSVK_6gRNYQ/zh-cn_image_0000002654797903.png)
 
   **解决措施**
 
   确认DevEco Studio是否有使用安全加固等三方插件。如果有，可以先禁用三方插件，看是否会复现问题，还能复现就参考下面的最终方案。
-* **场景十**
+* **场景十：**
 
   **问题现象**
 
   执行hap覆盖率测试时，出现报错：“Error Message: Cannot read properties of undefined (reading 'module')”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/aXa4N4eNRbWIBML7RttzDA/zh-cn_image_0000002523012117.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/TcK9KkzmT36yEMtzs-XwWg/zh-cn_image_0000002624638448.png)
 
   **可能原因**
 
@@ -192,23 +186,21 @@ content_hash: sha256:f0d876cd95c8a9d071cc536fce57891c044dc412f84587d835b3c078a24
 
   检查工程所有模块，如果build-profile.json5下targets里配置了ohosTest，模块内确保有src/ohosTest目录及目录对应结构；如不需要ohosTest，则在targets内删除ohosTest。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/KGWwij54T1u98UUtnW6xhA/zh-cn_image_0000002490972342.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/M98ChxMMT6aOw-6Yp19HnQ/zh-cn_image_0000002654837857.png)
 * **最终方案：**
 
   如果以上场景都不符合，打开堆栈后，根据堆栈信息排查代码。
 
   堆栈打开方法：工程根目录hvigor/hvigor-config.json5文件中配置如下内容。
 
+  ```json
+  {
+    "debugging": {
+      "stacktrace": true
+      /* Disable stacktrace compilation. Value: [ true | false ]. Default: false */
+    },
+  }
   ```
-  1. {
-  2. "debugging": {
-  3. "stacktrace": true
-  4. /* Disable stacktrace compilation. Value: [ true | false ]. Default: false */
-  5. },
-  6. }
-  ```
-
-  [hvigor-config\_xx.json5](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/CompilingAndBuilding/hvigor/hvigor-config_xx.json5#L3-L8)
 
   优先排查hvigorconfig.ts文件和hvigorfile.ts文件，其他代码次之。
 
@@ -216,4 +208,4 @@ content_hash: sha256:f0d876cd95c8a9d071cc536fce57891c044dc412f84587d835b3c078a24
 
   请按照如下步骤进行操作：[提单链接](https://developer.huawei.com/consumer/cn/support/)，在线提单 -> 问题分类选择"HarmonyOS NEXT / 开发工具 / DevEco Studio"。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/1YKcbaGQSsKjAQ53S_C6mw/zh-cn_image_0000002254825302.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/wCXLxQLvTqWo22PUnRN-sg/zh-cn_image_0000002624478546.png)

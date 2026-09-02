@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-memo
 title: PurgMem
 breadcrumb: API参考 > 公共基础能力 > C API > 结构体 > PurgMem
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:29+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:06be70f4d0fb19ac177ea856e495c0f781337ddff5a81264e2afa588de1b6be5
+scraped_at: 2026-09-02T14:53:37+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:729389d749544a3d975411b73ae373304aa8e9fd98d5bee41bcc4fd9caa72717
 ---
 
-```
-1. typedef struct PurgMem OH_PurgeableMemory
+```c
+typedef struct PurgMem OH_PurgeableMemory
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 可清除的内存结构。
 

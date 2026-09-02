@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-w
 title: oh_window_pip.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > oh_window_pip.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:58+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:5f3e661267815351515a14f5a7855e33743d99b82dcb42d262c70d1077e181e8
+scraped_at: 2026-09-02T15:01:22+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2fb7ec1f61ad35b2201c286cb4d1a96a1bbc73941e9c6b529787c573923e6cf9
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义画中画功能的相关接口，包含创建、删除画中画控制器，以及启动、停止画中画等。主要用于视频播放、直播、视频通话或视频会议场景下，以小窗（画中画）模式呈现内容。
 
@@ -26,19 +24,13 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
 | [PictureInPicture\_PipConfig](capi-pictureinpicture-pipconfig.md) | 画中画参数配置器。 |
 
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -50,8 +42,6 @@ PhonePC/2in1TabletTVWearable
 
 ### 函数
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [typedef void (\*WebPipStartPipCallback)(uint32\_t controllerId, uint8\_t requestId, uint64\_t surfaceId)](capi-oh-window-pip-h.md#webpipstartpipcallback) | WebPipStartPipCallback | 定义画中画窗口创建完成的回调函数。 |
@@ -60,7 +50,7 @@ PhonePC/2in1TabletTVWearable
 | [typedef void (\*WebPipResizeCallback)(uint32\_t controllerId, uint32\_t width, uint32\_t height, double scale)](capi-oh-window-pip-h.md#webpipresizecallback) | WebPipResizeCallback | 定义画中画窗口的尺寸变化回调函数。 |
 | [int32\_t OH\_PictureInPicture\_CreatePipConfig(PictureInPicture\_PipConfig\* pipConfig)](capi-oh-window-pip-h.md#oh_pictureinpicture_createpipconfig) | - | 创建画中画参数配置器。 |
 | [int32\_t OH\_PictureInPicture\_DestroyPipConfig(PictureInPicture\_PipConfig\* pipConfig)](capi-oh-window-pip-h.md#oh_pictureinpicture_destroypipconfig) | - | 销毁画中画参数配置器。 |
-| [int32\_t OH\_PictureInPicture\_SetPipMainWindowId(PictureInPicture\_PipConfig pipConfig, uint32\_t mainWindowId)](capi-oh-window-pip-h.md#oh_pictureinpicture_setpipmainwindowid) | - | 设置拉起画中画的主窗口Id。 |
+| [int32\_t OH\_PictureInPicture\_SetPipMainWindowId(PictureInPicture\_PipConfig pipConfig, uint32\_t mainWindowId)](capi-oh-window-pip-h.md#oh_pictureinpicture_setpipmainwindowid) | - | 设置拉起画中画的主窗口ID。 |
 | [int32\_t OH\_PictureInPicture\_SetPipTemplateType(PictureInPicture\_PipConfig pipConfig,PictureInPicture\_PipTemplateType pipTemplateType)](capi-oh-window-pip-h.md#oh_pictureinpicture_setpiptemplatetype) | - | 设置画中画模板类型，默认为视频播放。 |
 | [int32\_t OH\_PictureInPicture\_SetPipRect(PictureInPicture\_PipConfig pipConfig, uint32\_t width, uint32\_t height)](capi-oh-window-pip-h.md#oh_pictureinpicture_setpiprect) | - | 设置画中画窗口大小，用于计算尺寸比例。 |
 | [int32\_t OH\_PictureInPicture\_SetPipControlGroup(PictureInPicture\_PipConfig pipConfig,PictureInPicture\_PipControlGroup\* controlGroup, uint8\_t controlGroupLength)](capi-oh-window-pip-h.md#oh_pictureinpicture_setpipcontrolgroup) | - | 设置画中画控件组，需保证控件组与模板类型匹配。 |
@@ -87,17 +77,14 @@ PhonePC/2in1TabletTVWearable
 | [int32\_t OH\_PictureInPicture\_SetPipInitialSurfaceRect(uint32\_t controllerId, int32\_t positionX, int32\_t positionY,uint32\_t width, uint32\_t height)](capi-oh-window-pip-h.md#oh_pictureinpicture_setpipinitialsurfacerect) | - | 设置画中画拉起动效开始时的位置和大小，可用于实现一镜到底效果。 |
 | [int32\_t OH\_PictureInPicture\_UnsetPipInitialSurfaceRect(uint32\_t controllerId)](capi-oh-window-pip-h.md#oh_pictureinpicture_unsetpipinitialsurfacerect) | - | 取消已设置的画中画拉起动效的起始位置和大小。 |
 | [int32\_t OH\_PictureInPicture\_SetParentWindowId(uint32\_t controllerId, uint32\_t windowId)](capi-oh-window-pip-h.md#oh_pictureinpicture_setparentwindowid) | - | 设置画中画主窗口ID。 |
+| [int32\_t OH\_PictureInPicture\_SetAutoStartEnabled(uint32\_t controllerId, bool enabled)](capi-oh-window-pip-h.md#oh_pictureinpicture_setautostartenabled) | - | 设置在拉起画中画的应用主窗退后台时是否自动启动画中画，默认不自动拉起。在开启自动拉起的情况下，当应用主窗为[智慧多窗悬浮窗](../harmonyos-guides/multi-window-intro.md#悬浮窗)状态且被收入侧边栏时，应用主窗虽退后台，但不会自动拉起画中画。 |
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### PictureInPicture\_PipTemplateType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum PictureInPicture_PipTemplateType
+```c
+enum PictureInPicture_PipTemplateType
 ```
 
 **描述**
@@ -115,10 +102,8 @@ PhonePC/2in1TabletTVWearable
 
 ### PictureInPicture\_PipControlGroup
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum PictureInPicture_PipControlGroup
+```c
+enum PictureInPicture_PipControlGroup
 ```
 
 **描述**
@@ -144,10 +129,8 @@ PhonePC/2in1TabletTVWearable
 
 ### PictureInPicture\_PipControlType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum PictureInPicture_PipControlType
+```c
+enum PictureInPicture_PipControlType
 ```
 
 **描述**
@@ -170,10 +153,8 @@ PhonePC/2in1TabletTVWearable
 
 ### PictureInPicture\_PipControlStatus
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum PictureInPicture_PipControlStatus
+```c
+enum PictureInPicture_PipControlStatus
 ```
 
 **描述**
@@ -191,10 +172,8 @@ PhonePC/2in1TabletTVWearable
 
 ### PictureInPicture\_PipState
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum PictureInPicture_PipState
+```c
+enum PictureInPicture_PipState
 ```
 
 **描述**
@@ -214,14 +193,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### WebPipStartPipCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*WebPipStartPipCallback)(uint32_t controllerId, uint8_t requestId, uint64_t surfaceId)
+```c
+typedef void (*WebPipStartPipCallback)(uint32_t controllerId, uint8_t requestId, uint64_t surfaceId)
 ```
 
 **描述**
@@ -234,16 +209,14 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| uint32\_t controllerId | 画中画控制器Id，为非负整数。 |
-| uint8\_t requestId | 请求Id，表示当前请求拉起画中画窗口的次数。 |
-| uint64\_t surfaceId | 画中画内部Xcomponent组件的surfaceId，用于应用自行渲染。 |
+| uint32\_t controllerId | 画中画控制器ID，为非负整数。 |
+| uint8\_t requestId | 请求ID，表示当前请求拉起画中画窗口的次数。 |
+| uint64\_t surfaceId | 画中画内部XComponent组件的surfaceId，用于应用自行渲染。 |
 
 ### WebPipLifecycleCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*WebPipLifecycleCallback)(uint32_t controllerId, PictureInPicture_PipState state, int32_t errcode)
+```c
+typedef void (*WebPipLifecycleCallback)(uint32_t controllerId, PictureInPicture_PipState state, int32_t errcode)
 ```
 
 **描述**
@@ -256,16 +229,14 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| uint32\_t controllerId | 画中画控制器Id，为非负整数。 |
+| uint32\_t controllerId | 画中画控制器ID，为非负整数。 |
 | PictureInPicture\_PipState state | 当前画中画生命周期状态。 |
 | int32\_t errcode | 画中画接口的通用状态码。具体可见[WindowManager\_ErrorCode](capi-oh-window-comm-h.md#windowmanager_errorcode)。 |
 
 ### WebPipControlEventCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*WebPipControlEventCallback)(uint32_t controllerId, PictureInPicture_PipControlType controlType, PictureInPicture_PipControlStatus status)
+```c
+typedef void (*WebPipControlEventCallback)(uint32_t controllerId, PictureInPicture_PipControlType controlType, PictureInPicture_PipControlStatus status)
 ```
 
 **描述**
@@ -278,16 +249,14 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| uint32\_t controllerId | 画中画控制器Id，为非负整数。 |
+| uint32\_t controllerId | 画中画控制器ID，为非负整数。 |
 | PictureInPicture\_PipControlType controlType | 画中画控制面板的控件类型。 |
 | [PictureInPicture\_PipControlStatus](capi-oh-window-pip-h.md#pictureinpicture_pipcontrolstatus) status | 画中画控制面板的控件状态。 |
 
 ### WebPipResizeCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*WebPipResizeCallback)(uint32_t controllerId, uint32_t width, uint32_t height, double scale)
+```c
+typedef void (*WebPipResizeCallback)(uint32_t controllerId, uint32_t width, uint32_t height, double scale)
 ```
 
 **描述**
@@ -300,17 +269,15 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| uint32\_t controllerId | 画中画控制器Id，为非负整数。 |
+| uint32\_t controllerId | 画中画控制器ID，为非负整数。 |
 | uint32\_t width | 画中画窗口宽度，单位为px，该参数为正整数，不大于屏幕宽。 |
 | uint32\_t height | 画中画窗口高度，单位为px，该参数为正整数，不大于屏幕高。 |
 | double scale | 画中画窗口缩放比，显示大小相对于width和height的缩放比，该参数为浮点数，取值范围大于0.0，小于等于1.0。等于1表示画中画窗口的实际显示宽高值与width和height一样大。 |
 
 ### OH\_PictureInPicture\_CreatePipConfig()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_CreatePipConfig(PictureInPicture_PipConfig* pipConfig)
+```c
+int32_t OH_PictureInPicture_CreatePipConfig(PictureInPicture_PipConfig* pipConfig)
 ```
 
 **描述**
@@ -323,7 +290,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [PictureInPicture\_PipConfig](capi-pictureinpicture-pipconfig.md)\* pipConfig | 用于接受创建的画中画参数配置器。 |
+| [PictureInPicture\_PipConfig](capi-pictureinpicture-pipconfig.md)\* pipConfig | 用于接收创建的画中画参数配置器。 |
 
 **返回：**
 
@@ -333,10 +300,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_DestroyPipConfig()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_DestroyPipConfig(PictureInPicture_PipConfig* pipConfig)
+```c
+int32_t OH_PictureInPicture_DestroyPipConfig(PictureInPicture_PipConfig* pipConfig)
 ```
 
 **描述**
@@ -359,15 +324,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_SetPipMainWindowId()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_SetPipMainWindowId(PictureInPicture_PipConfig pipConfig, uint32_t mainWindowId)
+```c
+int32_t OH_PictureInPicture_SetPipMainWindowId(PictureInPicture_PipConfig pipConfig, uint32_t mainWindowId)
 ```
 
 **描述**
 
-设置拉起画中画的主窗口Id。
+设置拉起画中画的主窗口ID。
 
 **起始版本：** 20
 
@@ -376,7 +339,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [PictureInPicture\_PipConfig](capi-pictureinpicture-pipconfig.md) pipConfig | 画中画参数配置器。 |
-| uint32\_t mainWindowId | 拉起画中画的主窗口Id。 |
+| uint32\_t mainWindowId | 拉起画中画的主窗口ID。 |
 
 **返回：**
 
@@ -386,10 +349,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_SetPipTemplateType()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_SetPipTemplateType(PictureInPicture_PipConfig pipConfig, PictureInPicture_PipTemplateType pipTemplateType)
+```c
+int32_t OH_PictureInPicture_SetPipTemplateType(PictureInPicture_PipConfig pipConfig, PictureInPicture_PipTemplateType pipTemplateType)
 ```
 
 **描述**
@@ -413,10 +374,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_SetPipRect()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_SetPipRect(PictureInPicture_PipConfig pipConfig, uint32_t width, uint32_t height)
+```c
+int32_t OH_PictureInPicture_SetPipRect(PictureInPicture_PipConfig pipConfig, uint32_t width, uint32_t height)
 ```
 
 **描述**
@@ -441,10 +400,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_SetPipControlGroup()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_SetPipControlGroup(PictureInPicture_PipConfig pipConfig, PictureInPicture_PipControlGroup* controlGroup, uint8_t controlGroupLength)
+```c
+int32_t OH_PictureInPicture_SetPipControlGroup(PictureInPicture_PipConfig pipConfig, PictureInPicture_PipControlGroup* controlGroup, uint8_t controlGroupLength)
 ```
 
 **描述**
@@ -469,10 +426,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_SetPipNapiEnv()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_SetPipNapiEnv(PictureInPicture_PipConfig pipConfig, void* env)
+```c
+int32_t OH_PictureInPicture_SetPipNapiEnv(PictureInPicture_PipConfig pipConfig, void* env)
 ```
 
 **描述**
@@ -496,10 +451,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_CreatePip()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_CreatePip(PictureInPicture_PipConfig pipConfig, uint32_t* controllerId)
+```c
+int32_t OH_PictureInPicture_CreatePip(PictureInPicture_PipConfig pipConfig, uint32_t* controllerId)
 ```
 
 **描述**
@@ -513,7 +466,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [PictureInPicture\_PipConfig](capi-pictureinpicture-pipconfig.md) pipConfig | 画中画参数配置器。 |
-| uint32\_t\* controllerId | 用于接收创建画中画控制器的id。 |
+| uint32\_t\* controllerId | 用于接收创建画中画控制器的ID。 |
 
 **返回：**
 
@@ -523,10 +476,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_DeletePip()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_DeletePip(uint32_t controllerId)
+```c
+int32_t OH_PictureInPicture_DeletePip(uint32_t controllerId)
 ```
 
 **描述**
@@ -539,7 +490,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| uint32\_t controllerId | 画中画控制器Id，为非负整数。 |
+| uint32\_t controllerId | 画中画控制器ID，为非负整数。 |
 
 **返回：**
 
@@ -549,10 +500,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_StartPip()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_StartPip(uint32_t controllerId)
+```c
+int32_t OH_PictureInPicture_StartPip(uint32_t controllerId)
 ```
 
 **描述**
@@ -565,7 +514,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| uint32\_t controllerId | 画中画控制器Id，为非负整数。 |
+| uint32\_t controllerId | 画中画控制器ID，为非负整数。 |
 
 **返回：**
 
@@ -575,10 +524,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_StopPip()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_StopPip(uint32_t controllerId)
+```c
+int32_t OH_PictureInPicture_StopPip(uint32_t controllerId)
 ```
 
 **描述**
@@ -591,7 +538,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| uint32\_t controllerId | 画中画控制器Id，为非负整数。 |
+| uint32\_t controllerId | 画中画控制器ID，为非负整数。 |
 
 **返回：**
 
@@ -601,10 +548,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_UpdatePipContentSize()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_UpdatePipContentSize(uint32_t controllerId, uint32_t width, uint32_t height)
+```c
+int32_t OH_PictureInPicture_UpdatePipContentSize(uint32_t controllerId, uint32_t width, uint32_t height)
 ```
 
 **描述**
@@ -613,11 +558,13 @@ PhonePC/2in1TabletTVWearable
 
 **起始版本：** 20
 
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV设备中可正常调用，在其他设备中不报错也不生效。
+
 **参数：**
 
 | 参数项 | 描述 |
 | --- | --- |
-| uint32\_t controllerId | 画中画控制器Id，为非负整数。 |
+| uint32\_t controllerId | 画中画控制器ID，为非负整数。 |
 | uint32\_t width | 表示媒体内容宽度，单位为px，该参数应为正整数。用于更新画中画窗口比例。 |
 | uint32\_t height | 表示媒体内容高度，单位为px，该参数应为正整数。用于更新画中画窗口比例。 |
 
@@ -629,10 +576,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_UpdatePipControlStatus()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_UpdatePipControlStatus(uint32_t controllerId, PictureInPicture_PipControlType controlType, PictureInPicture_PipControlStatus status)
+```c
+int32_t OH_PictureInPicture_UpdatePipControlStatus(uint32_t controllerId, PictureInPicture_PipControlType controlType, PictureInPicture_PipControlStatus status)
 ```
 
 **描述**
@@ -645,7 +590,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| uint32\_t controllerId | 画中画控制器Id，为非负整数。 |
+| uint32\_t controllerId | 画中画控制器ID，为非负整数。 |
 | [PictureInPicture\_PipControlType](capi-oh-window-pip-h.md#pictureinpicture_pipcontroltype) controlType | 表示画中画控制面板控件类型。目前仅支持VIDEO\_PLAY\_PAUSE、MICROPHONE\_SWITCH、CAMERA\_SWITCH和MUTE\_SWITCH这几种控件类型，传入其他控件类型无效。 |
 | [PictureInPicture\_PipControlStatus](capi-oh-window-pip-h.md#pictureinpicture_pipcontrolstatus) status | 表示画中画控制面板控件状态。 |
 
@@ -657,10 +602,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_SetPipControlEnabled()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_SetPipControlEnabled(uint32_t controllerId, PictureInPicture_PipControlType controlType, bool enabled)
+```c
+int32_t OH_PictureInPicture_SetPipControlEnabled(uint32_t controllerId, PictureInPicture_PipControlType controlType, bool enabled)
 ```
 
 **描述**
@@ -673,7 +616,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| uint32\_t controllerId | 画中画控制器Id，为非负整数。 |
+| uint32\_t controllerId | 画中画控制器ID，为非负整数。 |
 | [PictureInPicture\_PipControlType](capi-oh-window-pip-h.md#pictureinpicture_pipcontroltype) controlType | 表示画中画控制面板控件类型。 |
 | bool enabled | 表示画中画控制面板控件使能状态。true表示控件为可使用状态，false则为禁用状态。 |
 
@@ -685,10 +628,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_RegisterStartPipCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_RegisterStartPipCallback(uint32_t controllerId, WebPipStartPipCallback callback)
+```c
+int32_t OH_PictureInPicture_RegisterStartPipCallback(uint32_t controllerId, WebPipStartPipCallback callback)
 ```
 
 **描述**
@@ -701,7 +642,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| uint32\_t controllerId | 画中画控制器Id，为非负整数。 |
+| uint32\_t controllerId | 画中画控制器ID，为非负整数。 |
 | [WebPipStartPipCallback](capi-oh-window-pip-h.md#webpipstartpipcallback) callback | 画中画窗口创建完成的回调函数。 |
 
 **返回：**
@@ -712,10 +653,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_UnregisterStartPipCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_UnregisterStartPipCallback(uint32_t controllerId, WebPipStartPipCallback callback)
+```c
+int32_t OH_PictureInPicture_UnregisterStartPipCallback(uint32_t controllerId, WebPipStartPipCallback callback)
 ```
 
 **描述**
@@ -728,7 +667,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| uint32\_t controllerId | 画中画控制器Id，为非负整数。 |
+| uint32\_t controllerId | 画中画控制器ID，为非负整数。 |
 | [WebPipStartPipCallback](capi-oh-window-pip-h.md#webpipstartpipcallback) callback | 画中画窗口创建完成的回调函数。 |
 
 **返回：**
@@ -739,10 +678,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_UnregisterAllStartPipCallbacks()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_UnregisterAllStartPipCallbacks(uint32_t controllerId)
+```c
+int32_t OH_PictureInPicture_UnregisterAllStartPipCallbacks(uint32_t controllerId)
 ```
 
 **描述**
@@ -755,7 +692,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| uint32\_t controllerId | 画中画控制器Id，为非负整数。 |
+| uint32\_t controllerId | 画中画控制器ID，为非负整数。 |
 
 **返回：**
 
@@ -765,10 +702,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_RegisterLifecycleListener()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_RegisterLifecycleListener(uint32_t controllerId, WebPipLifecycleCallback callback)
+```c
+int32_t OH_PictureInPicture_RegisterLifecycleListener(uint32_t controllerId, WebPipLifecycleCallback callback)
 ```
 
 **描述**
@@ -781,7 +716,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| uint32\_t controllerId | 画中画控制器Id，为非负整数。 |
+| uint32\_t controllerId | 画中画控制器ID，为非负整数。 |
 | [WebPipLifecycleCallback](capi-oh-window-pip-h.md#webpiplifecyclecallback) callback | 画中画窗口的生命周期回调函数。 |
 
 **返回：**
@@ -792,10 +727,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_UnregisterLifecycleListener()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_UnregisterLifecycleListener(uint32_t controllerId, WebPipLifecycleCallback callback)
+```c
+int32_t OH_PictureInPicture_UnregisterLifecycleListener(uint32_t controllerId, WebPipLifecycleCallback callback)
 ```
 
 **描述**
@@ -808,7 +741,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| uint32\_t controllerId | 画中画控制器Id，为非负整数。 |
+| uint32\_t controllerId | 画中画控制器ID，为非负整数。 |
 | [WebPipLifecycleCallback](capi-oh-window-pip-h.md#webpiplifecyclecallback) callback | 画中画窗口的生命周期回调函数。 |
 
 **返回：**
@@ -819,10 +752,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_UnregisterAllLifecycleListeners()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_UnregisterAllLifecycleListeners(uint32_t controllerId)
+```c
+int32_t OH_PictureInPicture_UnregisterAllLifecycleListeners(uint32_t controllerId)
 ```
 
 **描述**
@@ -835,7 +766,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| uint32\_t controllerId | 画中画控制器Id，为非负整数。 |
+| uint32\_t controllerId | 画中画控制器ID，为非负整数。 |
 
 **返回：**
 
@@ -845,10 +776,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_RegisterControlEventListener()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_RegisterControlEventListener(uint32_t controllerId, WebPipControlEventCallback callback)
+```c
+int32_t OH_PictureInPicture_RegisterControlEventListener(uint32_t controllerId, WebPipControlEventCallback callback)
 ```
 
 **描述**
@@ -861,7 +790,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| uint32\_t controllerId | 画中画控制器Id，为非负整数。 |
+| uint32\_t controllerId | 画中画控制器ID，为非负整数。 |
 | [WebPipControlEventCallback](capi-oh-window-pip-h.md#webpipcontroleventcallback) callback | 画中画窗口的控件点击事件回调函数。 |
 
 **返回：**
@@ -872,10 +801,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_UnregisterControlEventListener()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_UnregisterControlEventListener(uint32_t controllerId, WebPipControlEventCallback callback)
+```c
+int32_t OH_PictureInPicture_UnregisterControlEventListener(uint32_t controllerId, WebPipControlEventCallback callback)
 ```
 
 **描述**
@@ -888,7 +815,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| uint32\_t controllerId | 画中画控制器Id，为非负整数。 |
+| uint32\_t controllerId | 画中画控制器ID，为非负整数。 |
 | [WebPipControlEventCallback](capi-oh-window-pip-h.md#webpipcontroleventcallback) callback | 画中画窗口的控件点击事件回调函数。 |
 
 **返回：**
@@ -899,10 +826,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_UnregisterAllControlEventListeners()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_UnregisterAllControlEventListeners(uint32_t controllerId)
+```c
+int32_t OH_PictureInPicture_UnregisterAllControlEventListeners(uint32_t controllerId)
 ```
 
 **描述**
@@ -915,7 +840,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| uint32\_t controllerId | 画中画控制器Id，为非负整数。 |
+| uint32\_t controllerId | 画中画控制器ID，为非负整数。 |
 
 **返回：**
 
@@ -925,10 +850,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_RegisterResizeListener()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_RegisterResizeListener(uint32_t controllerId, WebPipResizeCallback callback)
+```c
+int32_t OH_PictureInPicture_RegisterResizeListener(uint32_t controllerId, WebPipResizeCallback callback)
 ```
 
 **描述**
@@ -941,7 +864,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| uint32\_t controllerId | 画中画控制器Id，为非负整数。 |
+| uint32\_t controllerId | 画中画控制器ID，为非负整数。 |
 | [WebPipResizeCallback](capi-oh-window-pip-h.md#webpipresizecallback) callback | 画中画窗口尺寸变化的回调函数。 |
 
 **返回：**
@@ -952,10 +875,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_UnregisterResizeListener()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_UnregisterResizeListener(uint32_t controllerId, WebPipResizeCallback callback)
+```c
+int32_t OH_PictureInPicture_UnregisterResizeListener(uint32_t controllerId, WebPipResizeCallback callback)
 ```
 
 **描述**
@@ -968,7 +889,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| uint32\_t controllerId | 画中画控制器Id，为非负整数。 |
+| uint32\_t controllerId | 画中画控制器ID，为非负整数。 |
 | [WebPipResizeCallback](capi-oh-window-pip-h.md#webpipresizecallback) callback | 画中画窗口尺寸变化的回调函数。 |
 
 **返回：**
@@ -979,10 +900,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_UnregisterAllResizeListeners()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_UnregisterAllResizeListeners(uint32_t controllerId)
+```c
+int32_t OH_PictureInPicture_UnregisterAllResizeListeners(uint32_t controllerId)
 ```
 
 **描述**
@@ -995,7 +914,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| uint32\_t controllerId | 画中画控制器Id，为非负整数。 |
+| uint32\_t controllerId | 画中画控制器ID，为非负整数。 |
 
 **返回：**
 
@@ -1005,10 +924,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_SetPipInitialSurfaceRect()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_SetPipInitialSurfaceRect(uint32_t controllerId, int32_t positionX, int32_t positionY,uint32_t width, uint32_t height)
+```c
+int32_t OH_PictureInPicture_SetPipInitialSurfaceRect(uint32_t controllerId, int32_t positionX, int32_t positionY,uint32_t width, uint32_t height)
 ```
 
 **描述**
@@ -1021,7 +938,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| uint32\_t controllerId | 画中画控制器Id，为非负整数。 |
+| uint32\_t controllerId | 画中画控制器ID，为非负整数。 |
 | int32\_t positionX | 拉起时画中画窗口相对页面左上角的X坐标，单位为px。 |
 | int32\_t positionY | 拉起时画中画窗口相对页面左上角的Y坐标，单位为px。 |
 | uint32\_t width | 拉起时画中画窗口的宽度，该参数值大于0，单位为px。 |
@@ -1035,10 +952,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_UnsetPipInitialSurfaceRect()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_UnsetPipInitialSurfaceRect(uint32_t controllerId)
+```c
+int32_t OH_PictureInPicture_UnsetPipInitialSurfaceRect(uint32_t controllerId)
 ```
 
 **描述**
@@ -1051,7 +966,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| uint32\_t controllerId | 画中画控制器Id，为非负整数。 |
+| uint32\_t controllerId | 画中画控制器ID，为非负整数。 |
 
 **返回：**
 
@@ -1061,10 +976,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureInPicture\_SetParentWindowId()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PictureInPicture_SetParentWindowId(uint32_t controllerId, uint32_t windowId)
+```c
+int32_t OH_PictureInPicture_SetParentWindowId(uint32_t controllerId, uint32_t windowId)
 ```
 
 **描述**
@@ -1075,7 +988,7 @@ PhonePC/2in1TabletTVWearable
 
 当画中画的主窗口改变时（如浏览器多个页签在同一个窗口的场景下，在此窗口的A页签下拉起画中画后，将A页签拖出形成一个新的窗口时），需调用该接口设置画中画主窗口ID为新窗口ID，以保证画中画可还原至正确的主窗口（即拉起画中画的主窗口）。
 
-**设备行为差异：** 该接口在2in1设备中可正常调用，在其他设备中返回801错误码。
+**设备行为差异：** 该接口在PC/2in1设备中可正常调用，在其他设备中返回801错误码。
 
 **起始版本：** 22
 
@@ -1083,11 +996,38 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| uint32\_t controllerId | 画中画控制器Id，为非负整数。 |
-| uint32\_t windowId | 表示画中画父窗口Id，为非负整数。 |
+| uint32\_t controllerId | 画中画控制器ID，为非负整数。 |
+| uint32\_t windowId | 表示画中画父窗口ID，为非负整数。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
 | int32\_t | 返回结果代码。  返回OK，表示函数调用成功。  返回WINDOW\_MANAGER\_ERRORCODE\_INCORRECT\_PARAM，表示参数错误。  返回WINDOW\_MANAGER\_ERRORCODE\_DEVICE\_NOT\_SUPPORTED，表示设备不支持画中画。  返回WINDOW\_MANAGER\_ERRORCODE\_PIP\_INTERNAL\_ERROR，表示画中画内部错误。 |
+
+### OH\_PictureInPicture\_SetAutoStartEnabled()
+
+```c
+int32_t OH_PictureInPicture_SetAutoStartEnabled(uint32_t controllerId, bool enabled)
+```
+
+**描述**
+
+设置在拉起画中画的应用主窗退后台时是否自动启动画中画，默认不自动拉起。
+
+在开启自动拉起的情况下，当应用主窗为[智慧多窗悬浮窗](../harmonyos-guides/multi-window-intro.md#悬浮窗)状态且被收入侧边栏时，应用主窗虽退后台，但不会自动拉起画中画。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| uint32\_t controllerId | 画中画控制器ID。取值为非负整数。 |
+| bool enabled | 如应用主窗退后台时需自动启动画中画，则该参数配置为true，否则为false。若设置-系统-智慧多窗-自动启动画中画开关为关闭状态，就算该参数配置为true，应用主窗退后台时也不会自动启动画中画窗口。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| int32\_t | 返回结果码。  返回OK，表示函数调用成功。  返回WINDOW\_MANAGER\_ERRORCODE\_INCORRECT\_PARAM，表示参数错误。可能原因：找不到controllerId对应的画中画控制器。  返回WINDOW\_MANAGER\_ERRORCODE\_PIP\_INTERNAL\_ERROR，表示画中画内部错误。可能原因：画中画控制器已被销毁。 |

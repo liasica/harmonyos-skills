@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nets
 title: NetStack_CertificatePinning
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 结构体 > NetStack_CertificatePinning
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:37+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:18cc49f16db6771b06cdd860f21b915ffb52a2b0937fb458696a19e5f09b48c4
+scraped_at: 2026-09-02T15:01:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2353d9171c521807f41840325c1a2a42dac141e52b60eb0cf53a6cb49b0c8ac4
 ---
 
-```
-1. typedef struct NetStack_CertificatePinning {...} NetStack_CertificatePinning
+```c
+typedef struct NetStack_CertificatePinning {...} NetStack_CertificatePinning
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义证书锁定信息。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

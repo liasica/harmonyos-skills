@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performance-analysis-kit-63
-title: hilog日志导致应用性能异常如何定位优化
-breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > hilog日志导致应用性能异常如何定位优化
+title: hilog日志导致应用性能异常怎么定位优化
+breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > hilog日志导致应用性能异常怎么定位优化
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:23+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:9d102abcfeb975ee26a22332284aeae62cf038fd0f5b1ae2531cf74bad785682
+scraped_at: 2026-09-02T14:53:52+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:d2f3c07bedeb2afe5e3bda6c2dee26f7fa26e7b180e127a8f6b382f10c991dec
 ---
 
 如果发现hilog导致应用性能异常，一般有三个原因：
@@ -28,10 +28,10 @@ content_hash: sha256:9d102abcfeb975ee26a22332284aeae62cf038fd0f5b1ae2531cf74bad7
 
 如果确认日志打印中参数初始化为耗时函数，可以在日志打印前先使用hilog.isLoggable判断当前打印是否符合日志级别要求，例如：
 
-```
-1. if (hilog.isLoggable(0xd010, 'testTag', hilog.LogLevel.DEBUG)) {
-2. hilog.debug(0xd010, 'testTag', 'map info: %{public}s', mapToJson(this.paramsMap))
-3. }
+```typescript
+if (hilog.isLoggable(0xd010, 'testTag', hilog.LogLevel.DEBUG)) {
+  hilog.debug(0xd010, 'testTag', 'map info: %{public}s', mapToJson(this.paramsMap))
+}
 ```
 
 **原因三**

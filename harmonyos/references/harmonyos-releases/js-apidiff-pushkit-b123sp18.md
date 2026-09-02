@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-pushkit-b123sp18
 title: Push Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.2(14) > OS平台能力 > API变更清单 > Push Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.2(14) > OS平台能力 > API变更清单 > Push Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:53+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:39+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:695dd33ee692c746e6e569607a83a31e31131015761a2e1e0a1837c2f865c407
 ---
 

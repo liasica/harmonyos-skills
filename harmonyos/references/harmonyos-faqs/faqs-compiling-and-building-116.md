@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: CPP编译报错“A 'undefined symbol' error has occurred”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > CPP编译报错“A 'undefined symbol' error has occurred”
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:32+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:098c9701738a514f942e53eeb61cdaaa7780b5298951bfc6f4a3e6e0bd7bee7e
+scraped_at: 2026-09-02T14:54:54+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:22e3d2e85c2a3225bcd502ca490b90166aa34378858caf328f63f88a7ef32366
 ---
 
 **问题现象**
@@ -22,17 +22,15 @@ content_hash: sha256:098c9701738a514f942e53eeb61cdaaa7780b5298951bfc6f4a3e6e0bd7
 
 **示例 CMakeLists.txt**
 
+```text
+cmake_minimum_required(VERSION 3.10)
+project(MyProject)
+set(CMAKE_CXX_STANDARD 17)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}
+                    ${CMAKE_CURRENT_SOURCE_DIR}/include)
+# Add all source files
+add_library(myProgram SHARED main.cpp myLibrary.cpp)
 ```
-1. cmake_minimum_required(VERSION 3.10)
-2. project(MyProject)
-3. set(CMAKE_CXX_STANDARD 17)
-4. include_directories(${CMAKE_CURRENT_SOURCE_DIR}
-5. ${CMAKE_CURRENT_SOURCE_DIR}/include)
-6. # Add all source files
-7. add_library(myProgram SHARED main.cpp myLibrary.cpp)
-```
-
-[CMakeLists.txt](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/Ndk/Ndk2/UndefinedSymbol/src/main/cpp/CMakeLists.txt#L3-L9)
 
 2. 确认源文件的符号定义。
 
@@ -40,25 +38,21 @@ content_hash: sha256:098c9701738a514f942e53eeb61cdaaa7780b5298951bfc6f4a3e6e0bd7
 
 **myLibrary.cpp**
 
+```cpp
+#include "myLibrary.h" 
+void myFunction() {     
+// Function implementation
+}
 ```
-1. #include "myLibrary.h"
-2. void myFunction() {
-3. // Function implementation
-4. }
-```
-
-[myLibrary.cpp](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/Ndk/Ndk2/UndefinedSymbol/src/main/cpp/myLibrary.cpp#L3-L6)
 
 **myLibrary.h**
 
+```cpp
+#ifndef MY_LIBRARY_H
+#define MY_LIBRARY_H 
+void myFunction();  
+#endif
 ```
-1. #ifndef MY_LIBRARY_H
-2. #define MY_LIBRARY_H
-3. void myFunction();
-4. #endif
-```
-
-[myLibrary.h](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/Ndk/Ndk2/UndefinedSymbol/src/main/cpp/myLibrary.h#L3-L6)
 
 3. 检查编译和链接顺序。
 
@@ -68,8 +62,8 @@ content_hash: sha256:098c9701738a514f942e53eeb61cdaaa7780b5298951bfc6f4a3e6e0bd7
 
 有时，构建文件可能会损坏或丢失符号定义。尝试清理构建目录并重新生成构建文件：
 
-```
-1. hvigorw clean 1
+```powershell
+hvigorw clean 1
 ```
 
 或手动删除模块下.cxx目录。
@@ -78,37 +72,33 @@ content_hash: sha256:098c9701738a514f942e53eeb61cdaaa7780b5298951bfc6f4a3e6e0bd7
 
 如果使用三方库，确保 CMakeLists.txt中正确配置了库路径和链接器标志。例如：
 
+```text
+cmake_minimum_required(VERSION 3.10)
+project(MyProject)
+set(CMAKE_CXX_STANDARD 17)
+# Ensure the addition of the header file for the third-party library
+include_directories(${PATH_TO_EXTERNAL_LIBRARY}
+                    ${PATH_TO_EXTERNAL_LIBRARY}/include)
+# Add source files
+add_library(myProgram SHARED main.cpp myLibrary.cpp)
+# Link to third-party libraries
+target_link_libraries(myProgram PUBLIC /path/to/external/library)
 ```
-1. cmake_minimum_required(VERSION 3.10)
-2. project(MyProject)
-3. set(CMAKE_CXX_STANDARD 17)
-4. # Ensure the addition of the header file for the third-party library
-5. include_directories(${PATH_TO_EXTERNAL_LIBRARY}
-6. ${PATH_TO_EXTERNAL_LIBRARY}/include)
-7. # Add source files
-8. add_library(myProgram SHARED main.cpp myLibrary.cpp)
-9. # Link to third-party libraries
-10. target_link_libraries(myProgram PUBLIC /path/to/external/library)
-```
-
-[CMakeLists1.txt](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/Ndk/Ndk2/UndefinedSymbol/src/main/cpp/CMakeLists1.txt#L3-L12)
 
 6. 启用详细编译和链接输出。
 
 为了解详细的编译和链接过程，可以启用更详细的输出。在 CMakeLists.txt 中添加以下内容：
 
+```text
+set(CMAKE_VERBOSE_MAKEFILE ON)
 ```
-1. set(CMAKE_VERBOSE_MAKEFILE ON)
-```
-
-[CMakeLists1.txt](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/Ndk/Ndk2/UndefinedSymbol/src/main/cpp/CMakeLists1.txt#L16-L16)
 
 7. 检查 Ninja 输出日志。
 
 Ninja 默认生成 .ninja\_log 文件，其中包含构建过程的详细信息。您可以检查这个日志文件以了解构建过程中的问题。
 
-```
-1. cat {module}/.cxx/default/default/arm64-v8a/.ninja_log
+```powershell
+cat {module}/.cxx/default/default/arm64-v8a/.ninja_log
 ```
 
 检查编译日志中是否存在符号所在的源文件或头文件。
@@ -121,14 +111,14 @@ Ninja 默认生成 .ninja\_log 文件，其中包含构建过程的详细信息�
 
 **检查目标文件**
 
-```
-1. nm myLibrary.o | grep myFunction
+```powershell
+nm myLibrary.o | grep myFunction
 ```
 
 **检查三方库文件**
 
-```
-1. nm /path/to/external/library | grep myFunction
+```powershell
+nm /path/to/external/library | grep myFunction
 ```
 
 **结论**

@@ -3,29 +3,133 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (OverlayManager)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (OverlayManager)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:50:36+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:10695433110ab50bd0d7f1928a835753fde975bce3c0270c7516bab0c7ff59b6
+scraped_at: 2026-09-02T15:00:49+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:09b98eace57e9bc5f6ef1d76da80d8b26158e283a36ef7a9943474cef61ce0a6
 ---
 
-提供绘制浮层的能力。
+提供绘制浮层的能力。OverlayManager支持通过配置浮层层级、显示顺序、显示模式等方式管理浮层节点，适用于需要在Page页面之上但Dialog、Popup、Menu等之下的长时间显示的浮层场景，为开发者提供灵活的浮层管理能力。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Class首批接口从API version 12开始支持。
+* 本模块接口仅可在Stage模型下使用。
 * 以下API需先使用UIContext中的[getOverlayManager()](arkts-apis-uicontext-uicontext.md#getoverlaymanager12)方法获取到OverlayManager对象，再通过该对象调用对应方法。
 * OverlayManager上节点的层级在Page页面层级之上，在Dialog、Popup、Menu、BindSheet、BindContentCover和Toast等之下。
 * OverlayManager上节点安全区域内外的绘制方式与Page一致，键盘避让方式与Page一致。
 * 与OverlayManager相关的属性推荐采用AppStorage来进行应用全局存储，以免切换页面后属性值发生变化从而导致业务错误。
 
-## addComponentContent12+
+## openOrderOverlay
 
-PhonePC/2in1TabletTVWearable
+openOrderOverlay(content: ComponentContent, options?: OrderOverlayOptions): Promise<void>
+
+在OverlayManager上打开一个支持层级配置的浮层，浮层内容由content参数决定。使用Promise异步回调。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| content | [ComponentContent](js-apis-arkui-componentcontent.md#componentcontent-1) | 是 | 浮层的显示内容，在OverlayManager的新节点上添加此内容节点。  **说明：**  新增的节点默认处于页面居中位置，按层级堆叠。 |
+| options | [OrderOverlayOptions](arkts-apis-uicontext-overlaymanager.md#orderoverlayoptions) | 否 | 浮层的层级配置选项。不传入时使用默认配置。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。成功时无返回结果；失败时抛出错误，错误码参见错误码部分。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[弹窗错误码](errorcode-promptaction.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 103307 | The overlay cannot be opened due to the system pop-up window. |
+
+**示例：**
+
+```ts
+import { ComponentContent, OverlayManager, LevelOrder, LevelMode } from '@kit.ArkUI';
+
+class Params {
+  text: string = '';
+  offset: Position;
+
+  constructor(text: string, offset: Position) {
+    this.text = text;
+    this.offset = offset;
+  }
+}
+
+@Builder
+function builderText(params: Params) {
+  Column() {
+    Text(params.text)
+      .fontSize(30)
+      .fontWeight(FontWeight.Bold)
+  }.offset(params.offset)
+}
+
+@Entry
+@Component
+struct OverlayExample {
+  @State message: string = 'ComponentContent';
+  private uiContext: UIContext = this.getUIContext();
+  private overlayNode: OverlayManager = this.uiContext.getOverlayManager();
+
+  build() {
+    Column({ space: 5 }) {
+      Button('打开浮层').onClick(() => {
+        let componentContent = new ComponentContent(
+          this.uiContext, wrapBuilder<[Params]>(builderText),
+          new Params(this.message, { x: 0, y: 110 })
+        );
+        this.overlayNode.openOrderOverlay(componentContent, {
+          levelOrder: LevelOrder.clamp(100),
+          levelMode: LevelMode.OVERLAY
+        });
+      })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
+```
+
+## OrderOverlayOptions
+
+浮层的层级配置选项。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| levelOrder | [LevelOrder](js-apis-promptaction.md#levelorder18) | 否 | 是 | 浮层的显示顺序。  **说明：**  - 默认值：LevelOrder.clamp(0) |
+| levelMode | [LevelMode](js-apis-promptaction.md#levelmode15) | 否 | 是 | 浮层的显示模式。  **说明：**  - 默认值：LevelMode.OVERLAY |
+| levelUniqueId | number | 否 | 是 | 浮层需要显示的层级下的节点uniqueId，uniqueId可通过[getUniqueId](js-apis-arkui-framenode.md#getuniqueid12)接口获取。取值范围为大于等于0的数字，当且仅当levelMode设置为LevelMode.EMBEDDED时生效。 |
+
+## addComponentContent12+
 
 addComponentContent(content: ComponentContent, index?: number): void
 
-在OverlayManager上新增指定节点。
+在OverlayManager上新增指定节点，可通过index参数控制新增节点的层级位置。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -35,114 +139,112 @@ addComponentContent(content: ComponentContent, index?: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| content | [ComponentContent](js-apis-arkui-componentcontent.md) | 是 | 在OverlayManager的指定节点上添加此content。  **说明：**  新增的节点默认处于页面居中，按层级堆叠。 |
-| index | number | 否 | 新增节点在OverlayManager上的层级位置。  **说明：**  当index ≥ 0时，越大，ComponentContent的层级越高；若多个ComponentContent的index相同，ComponentContent添加的时间越晚层级越高。  当index < 0、index = null或index = undefined时，ComponentContent默认添加至最高层。  当同一个ComponentContent被添加多次时，只保留最后一次添加的ComponentContent。 |
+| content | [ComponentContent](js-apis-arkui-componentcontent.md) | 是 | 在OverlayManager上新增此content节点。  **说明：**  新增的节点默认处于页面居中，按层级堆叠。 |
+| index | number | 否 | 新增节点在OverlayManager上的层级位置。  **说明：**  当index ≥ 0时，index值越大，ComponentContent的层级越高；若多个ComponentContent的index相同，ComponentContent添加的时间越晚层级越高。  当index < 0、index = null或index = undefined时，ComponentContent默认添加至最高层。  当同一个ComponentContent被添加多次时，只保留最后一次添加的ComponentContent。 |
 
 **示例：**
 
+```ts
+import { ComponentContent, OverlayManager } from '@kit.ArkUI';
+
+class Params {
+  text: string = '';
+  offset: Position;
+
+  constructor(text: string, offset: Position) {
+    this.text = text;
+    this.offset = offset;
+  }
+}
+
+@Builder
+function builderText(params: Params) {
+  Column() {
+    Text(params.text)
+      .fontSize(30)
+      .fontWeight(FontWeight.Bold)
+  }.offset(params.offset)
+}
+
+@Entry
+@Component
+struct OverlayExample {
+  @State message: string = 'ComponentContent';
+  private uiContext: UIContext = this.getUIContext();
+  private overlayNode: OverlayManager = this.uiContext.getOverlayManager();
+  @StorageLink('contentArray') contentArray: ComponentContent<Params>[] = [];
+  @StorageLink('componentContentIndex') componentContentIndex: number = 0;
+  @StorageLink('arrayIndex') arrayIndex: number = 0;
+  @StorageLink('componentOffset') componentOffset: Position = { x: 0, y: 110 };
+
+  build() {
+    Column({ space: 5 }) {
+      Button('++componentContentIndex: ' + this.componentContentIndex).onClick(() => {
+        ++this.componentContentIndex;
+      })
+      Button('--componentContentIndex: ' + this.componentContentIndex).onClick(() => {
+        --this.componentContentIndex;
+      })
+      Button('增加ComponentContent' + this.contentArray.length).onClick(() => {
+        let componentContent = new ComponentContent(
+          this.uiContext, wrapBuilder<[Params]>(builderText),
+          new Params(this.message + (this.contentArray.length), this.componentOffset)
+        );
+        this.contentArray.push(componentContent);
+        this.overlayNode.addComponentContent(componentContent, this.componentContentIndex);
+      })
+      Button('++arrayIndex: ' + this.arrayIndex).onClick(() => {
+        ++this.arrayIndex;
+      })
+      Button('--arrayIndex: ' + this.arrayIndex).onClick(() => {
+        --this.arrayIndex;
+      })
+      Button('删除ComponentContent' + this.arrayIndex).onClick(() => {
+        if (this.arrayIndex >= 0 && this.arrayIndex < this.contentArray.length) {
+          let componentContent = this.contentArray.splice(this.arrayIndex, 1);
+          this.overlayNode.removeComponentContent(componentContent.pop());
+        } else {
+          console.info('arrayIndex有误');
+        }
+      })
+      Button('显示ComponentContent' + this.arrayIndex).onClick(() => {
+        if (this.arrayIndex >= 0 && this.arrayIndex < this.contentArray.length) {
+          let componentContent = this.contentArray[this.arrayIndex];
+          this.overlayNode.showComponentContent(componentContent);
+        } else {
+          console.info('arrayIndex有误');
+        }
+      })
+      Button('隐藏ComponentContent' + this.arrayIndex).onClick(() => {
+        if (this.arrayIndex >= 0 && this.arrayIndex < this.contentArray.length) {
+          let componentContent = this.contentArray[this.arrayIndex];
+          this.overlayNode.hideComponentContent(componentContent);
+        } else {
+          console.info('arrayIndex有误');
+        }
+      })
+      Button('显示所有ComponentContent').onClick(() => {
+        this.overlayNode.showAllComponentContents();
+      })
+      Button('隐藏所有ComponentContent').onClick(() => {
+        this.overlayNode.hideAllComponentContents();
+      })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
-1. import { ComponentContent, OverlayManager } from '@kit.ArkUI';
 
-3. class Params {
-4. text: string = "";
-5. offset: Position;
-
-7. constructor(text: string, offset: Position) {
-8. this.text = text;
-9. this.offset = offset;
-10. }
-11. }
-
-13. @Builder
-14. function builderText(params: Params) {
-15. Column() {
-16. Text(params.text)
-17. .fontSize(30)
-18. .fontWeight(FontWeight.Bold)
-19. }.offset(params.offset)
-20. }
-
-22. @Entry
-23. @Component
-24. struct OverlayExample {
-25. @State message: string = 'ComponentContent';
-26. private uiContext: UIContext = this.getUIContext();
-27. private overlayNode: OverlayManager = this.uiContext.getOverlayManager();
-28. @StorageLink('contentArray') contentArray: ComponentContent<Params>[] = [];
-29. @StorageLink('componentContentIndex') componentContentIndex: number = 0;
-30. @StorageLink('arrayIndex') arrayIndex: number = 0;
-31. @StorageLink("componentOffset") componentOffset: Position = { x: 0, y: 110 };
-
-33. build() {
-34. Column({ space: 5 }) {
-35. Button("++componentContentIndex: " + this.componentContentIndex).onClick(() => {
-36. ++this.componentContentIndex;
-37. })
-38. Button("--componentContentIndex: " + this.componentContentIndex).onClick(() => {
-39. --this.componentContentIndex;
-40. })
-41. Button("增加ComponentContent" + this.contentArray.length).onClick(() => {
-42. let componentContent = new ComponentContent(
-43. this.uiContext, wrapBuilder<[Params]>(builderText),
-44. new Params(this.message + (this.contentArray.length), this.componentOffset)
-45. );
-46. this.contentArray.push(componentContent);
-47. this.overlayNode.addComponentContent(componentContent, this.componentContentIndex);
-48. })
-49. Button("++arrayIndex: " + this.arrayIndex).onClick(() => {
-50. ++this.arrayIndex;
-51. })
-52. Button("--arrayIndex: " + this.arrayIndex).onClick(() => {
-53. --this.arrayIndex;
-54. })
-55. Button("删除ComponentContent" + this.arrayIndex).onClick(() => {
-56. if (this.arrayIndex >= 0 && this.arrayIndex < this.contentArray.length) {
-57. let componentContent = this.contentArray.splice(this.arrayIndex, 1);
-58. this.overlayNode.removeComponentContent(componentContent.pop());
-59. } else {
-60. console.info("arrayIndex有误");
-61. }
-62. })
-63. Button("显示ComponentContent" + this.arrayIndex).onClick(() => {
-64. if (this.arrayIndex >= 0 && this.arrayIndex < this.contentArray.length) {
-65. let componentContent = this.contentArray[this.arrayIndex];
-66. this.overlayNode.showComponentContent(componentContent);
-67. } else {
-68. console.info("arrayIndex有误");
-69. }
-70. })
-71. Button("隐藏ComponentContent" + this.arrayIndex).onClick(() => {
-72. if (this.arrayIndex >= 0 && this.arrayIndex < this.contentArray.length) {
-73. let componentContent = this.contentArray[this.arrayIndex];
-74. this.overlayNode.hideComponentContent(componentContent);
-75. } else {
-76. console.info("arrayIndex有误");
-77. }
-78. })
-79. Button("显示所有ComponentContent").onClick(() => {
-80. this.overlayNode.showAllComponentContents();
-81. })
-82. Button("隐藏所有ComponentContent").onClick(() => {
-83. this.overlayNode.hideAllComponentContents();
-84. })
-85. }
-86. .width('100%')
-87. .height('100%')
-88. }
-89. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/4aa1hRS8RL-ZC9LRVAlsXA/zh-cn_image_0000002589245743.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/0tuvN7UWQ3GxynpQx9GIlQ/zh-cn_image_0000002736434675.gif)
 
 ## addComponentContentWithOrder18+
 
-PhonePC/2in1TabletTVWearable
-
 addComponentContentWithOrder(content: ComponentContent, levelOrder?: LevelOrder): void
 
-创建浮层节点时，指定显示顺序。
+创建浮层节点时，指定显示顺序。支持在浮层节点创建时指定显示的顺序。
 
-支持在浮层节点创建时指定显示的顺序。
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -152,99 +254,99 @@ addComponentContentWithOrder(content: ComponentContent, levelOrder?: LevelOrder)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| content | [ComponentContent](js-apis-arkui-componentcontent.md) | 是 | 在OverlayManager的指定节点上添加此content。  **说明：**  新增的节点默认处于页面居中位置，按层级堆叠。 |
+| content | [ComponentContent](js-apis-arkui-componentcontent.md) | 是 | 在OverlayManager上新增此content节点。  **说明：**  新增的节点默认处于页面居中，按层级堆叠。 |
 | levelOrder | [LevelOrder](js-apis-promptaction.md#levelorder18) | 否 | 新增浮层节点的显示顺序。  **说明：**  - 默认值：LevelOrder.clamp(0) |
 
 **示例：**
 
-该示例通过调用addComponentContentWithOrder接口，实现了按照指定显示顺序创建浮层节点的功能。
+本示例展示如何调用addComponentContentWithOrder接口创建浮层节点并指定显示顺序。
 
+```ts
+import { ComponentContent, PromptAction, LevelOrder, UIContext, OverlayManager } from '@kit.ArkUI';
+
+class Params {
+  text: string = '';
+  offset: Position;
+  constructor(text: string, offset: Position) {
+    this.text = text;
+    this.offset = offset;
+  }
+}
+@Builder
+function builderText(params: Params) {
+  Column() {
+    Text(params.text)
+      .fontSize(30)
+      .fontWeight(FontWeight.Bold)
+  }.offset(params.offset)
+}
+
+@Entry
+@Component
+struct Index {
+  @State message: string = '弹窗';
+  private ctx: UIContext = this.getUIContext();
+  private promptAction: PromptAction = this.ctx.getPromptAction();
+  private overlayNode: OverlayManager = this.ctx.getOverlayManager();
+  @StorageLink('contentArray') contentArray: ComponentContent<Params>[] = [];
+  @StorageLink('componentContentIndex') componentContentIndex: number = 0;
+  @StorageLink('arrayIndex') arrayIndex: number = 0;
+  @StorageLink('componentOffset') componentOffset: Position = { x: 0, y: 80 };
+
+  build() {
+    Row() {
+      Column({ space: 10 }) {
+        Button('OverlayManager下面弹窗')
+          .fontSize(20)
+          .onClick(() => {
+            let componentContent = new ComponentContent(
+              this.ctx, wrapBuilder<[Params]>(builderText),
+              new Params(this.message + (this.contentArray.length), this.componentOffset)
+            );
+            this.contentArray.push(componentContent);
+            this.overlayNode.addComponentContentWithOrder(componentContent, LevelOrder.clamp(100.1));
+            let topOrder: LevelOrder = this.promptAction.getTopOrder();
+            if (topOrder !== undefined) {
+              console.info('topOrder: ' + topOrder.getOrder());
+            }
+            let bottomOrder: LevelOrder = this.promptAction.getBottomOrder();
+            if (bottomOrder !== undefined) {
+              console.info('bottomOrder: ' + bottomOrder.getOrder());
+            }
+          })
+        Button('OverlayManager上面弹窗')
+          .fontSize(20)
+          .onClick(() => {
+            let componentContent = new ComponentContent(
+              this.ctx, wrapBuilder<[Params]>(builderText),
+              new Params(this.message + (this.contentArray.length), this.componentOffset)
+            );
+            this.contentArray.push(componentContent);
+            this.overlayNode.addComponentContentWithOrder(componentContent, LevelOrder.clamp(100.2));
+            let topOrder: LevelOrder = this.promptAction.getTopOrder();
+            if (topOrder !== undefined) {
+              console.info('topOrder: ' + topOrder.getOrder());
+            }
+            let bottomOrder: LevelOrder = this.promptAction.getBottomOrder();
+            if (bottomOrder !== undefined) {
+              console.info('bottomOrder: ' + bottomOrder.getOrder());
+            }
+          })
+      }.width('100%')
+    }.height('100%')
+  }
+}
 ```
-1. import { ComponentContent, PromptAction, LevelOrder, UIContext, OverlayManager } from '@kit.ArkUI';
 
-3. class Params {
-4. text: string = "";
-5. offset: Position;
-6. constructor(text: string, offset: Position) {
-7. this.text = text;
-8. this.offset = offset;
-9. }
-10. }
-11. @Builder
-12. function builderText(params: Params) {
-13. Column() {
-14. Text(params.text)
-15. .fontSize(30)
-16. .fontWeight(FontWeight.Bold)
-17. }.offset(params.offset)
-18. }
-
-20. @Entry
-21. @Component
-22. struct Index {
-23. @State message: string = '弹窗';
-24. private ctx: UIContext = this.getUIContext();
-25. private promptAction: PromptAction = this.ctx.getPromptAction();
-26. private overlayNode: OverlayManager = this.ctx.getOverlayManager();
-27. @StorageLink('contentArray') contentArray: ComponentContent<Params>[] = [];
-28. @StorageLink('componentContentIndex') componentContentIndex: number = 0;
-29. @StorageLink('arrayIndex') arrayIndex: number = 0;
-30. @StorageLink("componentOffset") componentOffset: Position = { x: 0, y: 80 };
-
-32. build() {
-33. Row() {
-34. Column({ space: 10 }) {
-35. Button('OverlayManager下面弹窗')
-36. .fontSize(20)
-37. .onClick(() => {
-38. let componentContent = new ComponentContent(
-39. this.ctx, wrapBuilder<[Params]>(builderText),
-40. new Params(this.message + (this.contentArray.length), this.componentOffset)
-41. );
-42. this.contentArray.push(componentContent);
-43. this.overlayNode.addComponentContentWithOrder(componentContent, LevelOrder.clamp(100.1));
-44. let topOrder: LevelOrder = this.promptAction.getTopOrder();
-45. if (topOrder !== undefined) {
-46. console.error('topOrder: ' + topOrder.getOrder());
-47. }
-48. let bottomOrder: LevelOrder = this.promptAction.getBottomOrder();
-49. if (bottomOrder !== undefined) {
-50. console.error('bottomOrder: ' + bottomOrder.getOrder());
-51. }
-52. })
-53. Button('OverlayManager上面弹窗')
-54. .fontSize(20)
-55. .onClick(() => {
-56. let componentContent = new ComponentContent(
-57. this.ctx, wrapBuilder<[Params]>(builderText),
-58. new Params(this.message + (this.contentArray.length), this.componentOffset)
-59. );
-60. this.contentArray.push(componentContent);
-61. this.overlayNode.addComponentContentWithOrder(componentContent, LevelOrder.clamp(100.2));
-62. let topOrder: LevelOrder = this.promptAction.getTopOrder();
-63. if (topOrder !== undefined) {
-64. console.error('topOrder: ' + topOrder.getOrder());
-65. }
-66. let bottomOrder: LevelOrder = this.promptAction.getBottomOrder();
-67. if (bottomOrder !== undefined) {
-68. console.error('bottomOrder: ' + bottomOrder.getOrder());
-69. }
-70. })
-71. }.width('100%')
-72. }.height('100%')
-73. }
-74. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/wXtHStiCQUCcANQBHwsi5w/zh-cn_image_0000002558765932.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/Sdyf-S9qSzC5F7wNu7wnXw/zh-cn_image_0000002706835528.gif)
 
 ## removeComponentContent12+
 
-PhonePC/2in1TabletTVWearable
-
 removeComponentContent(content: ComponentContent): void
 
-删除overlay上的指定节点。
+删除OverlayManager上的指定节点。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -258,15 +360,15 @@ removeComponentContent(content: ComponentContent): void
 
 **示例：**
 
-请参考[addComponentContent示例](arkts-apis-uicontext-overlaymanager.md#addcomponentcontent12)。
+请参考[addComponentContent](arkts-apis-uicontext-overlaymanager.md#addcomponentcontent12)示例。
 
 ## showComponentContent12+
-
-PhonePC/2in1TabletTVWearable
 
 showComponentContent(content: ComponentContent): void
 
 在OverlayManager上显示指定节点。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -280,15 +382,15 @@ showComponentContent(content: ComponentContent): void
 
 **示例：**
 
-请参考[addComponentContent示例](arkts-apis-uicontext-overlaymanager.md#addcomponentcontent12)。
+请参考[addComponentContent](arkts-apis-uicontext-overlaymanager.md#addcomponentcontent12)示例。
 
 ## hideComponentContent12+
-
-PhonePC/2in1TabletTVWearable
 
 hideComponentContent(content: ComponentContent): void
 
 隐藏OverlayManager上的指定节点。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -302,36 +404,36 @@ hideComponentContent(content: ComponentContent): void
 
 **示例：**
 
-请参考[addComponentContent示例](arkts-apis-uicontext-overlaymanager.md#addcomponentcontent12)。
+请参考[addComponentContent](arkts-apis-uicontext-overlaymanager.md#addcomponentcontent12)示例。
 
 ## showAllComponentContents12+
-
-PhonePC/2in1TabletTVWearable
 
 showAllComponentContents(): void
 
 显示OverlayManager上所有的ComponentContent。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **示例：**
 
-请参考[addComponentContent示例](arkts-apis-uicontext-overlaymanager.md#addcomponentcontent12)。
+请参考[addComponentContent](arkts-apis-uicontext-overlaymanager.md#addcomponentcontent12)示例。
 
 ## hideAllComponentContents12+
-
-PhonePC/2in1TabletTVWearable
 
 hideAllComponentContents(): void
 
 隐藏OverlayManager上的所有ComponentContent。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **示例：**
 
-请参考[addComponentContent示例](arkts-apis-uicontext-overlaymanager.md#addcomponentcontent12)。
+请参考[addComponentContent](arkts-apis-uicontext-overlaymanager.md#addcomponentcontent12)示例。

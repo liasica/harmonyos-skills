@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: OH_Drawing_FontConfigInfo
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 结构体 > OH_Drawing_FontConfigInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:457b5e19c45f2a248c399003df3d375e578dd94d06f7e4d122318f4ec42843c4
+scraped_at: 2026-09-02T15:02:46+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:96e6b2ea7b9a82c3201dbde66ca39780f596c23f43163ae8cdbe00873c0c8bf9
 ---
 
-```
-1. typedef struct OH_Drawing_FontConfigInfo {...} OH_Drawing_FontConfigInfo
+```c
+typedef struct OH_Drawing_FontConfigInfo {...} OH_Drawing_FontConfigInfo
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 系统字体配置信息结构体。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

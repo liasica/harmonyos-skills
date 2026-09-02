@@ -1,9 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-appgallerykit-6003
 title: AppGallery Kit
+breadcrumb: 版本说明 > 更多版本 > 6.0.0(20) > OS平台能力 > API变更清单 > 6.0.0(20) Beta3引入的API > AppGallery Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:11+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:27+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:189dc5808876b71494078486eb334952032c3b193a9810a9d1cf5760e6b14b48
 ---
 

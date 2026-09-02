@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-faq
 title: ArkData常见问题
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > ArkData常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:24+08:00
-doc_updated_at: 2026-03-06
-content_hash: sha256:fe9d30ed9a741914c19c8c450141ae49b0413b819720d5b058a533ed47501869
+scraped_at: 2026-09-02T14:49:45+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:3fa5c532f60fef6822339ff71dfe3eabcf87500b7f49d106761c2ca96de402c6
 ---
 
 ## 如何查看关系型数据库详细的SQL执行异常信息
@@ -24,7 +24,7 @@ content_hash: sha256:fe9d30ed9a741914c19c8c450141ae49b0413b819720d5b058a533ed475
 
 ## 关系型数据库不同文件说明
 
-当使用关系型数据时，可能会生成不同的文件产物，不同的文件对应作用具体可见下表。
+当使用关系型数据库时，可能会生成不同的文件产物，不同的文件对应作用具体可见下表。
 
 | **文件类型** | **说明** |
 | --- | --- |
@@ -35,3 +35,18 @@ content_hash: sha256:fe9d30ed9a741914c19c8c450141ae49b0413b819720d5b058a533ed475
 | .pub\_key | 用于保存数据库密钥信息。  该文件仅在配置了数据库加密且未配置自定义加密参数时（即通过[StoreConfig](../harmonyos-references/arkts-apis-data-relationalstore-i.md#storeconfig)配置encrypt为true且未配置cryptoParam）存在。 |
 | .db-dwr | 用于保存文件头信息。 |
 | .db-compare | 用于保存所有DDL语句。 |
+
+## 调用getRdbStore接口使用原始密钥打开加密关系型数据库时，入参encryptionKey如何配置
+
+在关系型数据库中，调用[getRdbStore](../harmonyos-references/arkts-apis-data-relationalstore-f.md#relationalstoregetrdbstore)接口使用原始密钥打开加密库时，入参[CryptoParam.encryptionKey](../harmonyos-references/arkts-apis-data-relationalstore-i.md#cryptoparam14)需要按照如下操作配置：
+
+```ts
+import { relationalStore } from '@kit.ArkData'
+
+let password: string = "x'3605d7de19311edba4d3c88143c61cdd79dd5a58bc829c8b1234567891234567'"; // 需替换为实际的数据库口令密码
+let key = new Uint8Array(buffer.from(password, 'utf8').buffer); // 返回的是Uint8Array
+// 配置加密参数
+const cryptoParam: relationalStore.CryptoParam = {
+  encryptionKey: key, // 必填，指定密钥
+};
+```

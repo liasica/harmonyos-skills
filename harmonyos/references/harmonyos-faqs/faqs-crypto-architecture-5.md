@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-crypto-arc
 title: ECC算法是否支持secp256r1
 breadcrumb: FAQ > 系统开发 > 安全 > 加解密算法（Crypto Architecture） > ECC算法是否支持secp256r1
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:56+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:56+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:e770061c824d69018885a1f71041ec3d061a372864c214bedacc2ac57a188aea
 ---
 

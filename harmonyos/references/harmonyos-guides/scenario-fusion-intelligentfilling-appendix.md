@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: ContentType使用场景说明
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 智能填充服务 > ContentType使用场景说明
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:47+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:58369086c6d9be3828fc5cb9235c050aa20dc0e55ac0a40aa63fd8210691492f
+scraped_at: 2026-09-02T15:00:01+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7a1267f1be2127f93cf18bec438ce883df90b2d0a1ba3affe3bf21b9ffa22314
 ---
 
 华为账号昵称
@@ -22,7 +22,7 @@ content_hash: sha256:58369086c6d9be3828fc5cb9235c050aa20dc0e55ac0a40aa63fd821069
 | PERSON\_LAST\_NAME | 姓氏，如“张”。 |
 | PERSON\_FIRST\_NAME | 名字，如“三”。 |
 
-说明
+**说明** 
 
 * PERSON\_FULL\_NAME和（PERSON\_LAST\_NAME，PERSON\_FIRST\_NAME）不能同时在同一个表单中使用（在护照信息场景中可以同时使用）。
 * 请在收集使用用户敏感个人信息的表单界面告知目的以及必要性。
@@ -31,7 +31,7 @@ content_hash: sha256:58369086c6d9be3828fc5cb9235c050aa20dc0e55ac0a40aa63fd821069
 
 | 名称 | 说明 |
 | --- | --- |
-| PHONE\_NUMBER | 手机号，如“188\*\*\*\*\*\*88”。 |
+| PHONE\_NUMBER | 手机号，如“188\*\*\*\*\*\*\*\*”。 |
 | EMAIL\_ADDRESS | 邮箱地址，如“a\*\*\*\*t@huawei.com”。 |
 
 身份信息
@@ -40,7 +40,7 @@ content_hash: sha256:58369086c6d9be3828fc5cb9235c050aa20dc0e55ac0a40aa63fd821069
 | --- | --- |
 | ID\_CARD\_NUMBER | 身份证号，如“3201\*\*\*\*\*\*\*\*\*\*\*123”。 |
 
-说明
+**说明** 
 
 * ID\_CARD\_NUMBER目前只支持身份证号的推荐、填充，不支持其他类型的证件，可参考[动态修改ContentType值](scenario-fusion-intelligentfilling-amend.md)动态配置输入框的ContentType。
 * 请在收集使用用户敏感个人信息的表单界面告知目的以及必要性。
@@ -54,7 +54,7 @@ content_hash: sha256:58369086c6d9be3828fc5cb9235c050aa20dc0e55ac0a40aa63fd821069
 | VALIDITY | 有效期至，如“2025-1-1”。 |
 | ISSUE\_AT | 签发地，如“广东”。 |
 
-说明
+**说明** 
 
 请在收集使用用户敏感个人信息的表单界面告知目的以及必要性。
 

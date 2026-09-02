@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hitracemeter-
 title: 使用HiTraceMeter跟踪性能（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 性能跟踪 > 使用HiTraceMeter跟踪性能（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:15+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:41c7048e92e539727cf50f9f039575d65a2a0f73dad2e19a62d2ad4f93d8a9ed
+scraped_at: 2026-09-02T14:59:40+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:fcb2d4904afe2d621e2c3e05190ca899dc28ef9aeb76d3a610a3d07b032a79b8
 ---
 
 ## 简介
@@ -27,7 +27,7 @@ HiTraceMeter提供系统性能打点接口。开发者在关键代码位置调�
 | hiTraceMeter.registerTraceListener(callback: TraceEventListener): number | 注册应用trace捕获开关通知回调，使用callback异步回调。  注册成功后，立即执行一次回调函数，后续回调函数由应用trace捕获开关状态变化触发执行。  **说明**：从API version 22开始，支持该接口。 |
 | hiTraceMeter.unregisterTraceListener(index: number): number | 注销应用trace捕获开关通知回调。  **说明**：从API version 22开始，支持该接口。 |
 
-注意
+**注意** 
 
 [用户态trace格式](hitracemeter-view.md#用户态trace格式说明)使用竖线 | 作为分隔符，所以通过HiTraceMeter接口传递的字符串类型参数应避免包含该字符，防止trace解析异常。
 
@@ -66,7 +66,7 @@ HiTraceMeter打点接口分为三类：同步时间片跟踪、异步时间片�
 | callback | (boolean) => void | 是 | 注册的回调函数。 |
 | index | number | 是 | registerTraceListener()返回的回调索引。 |
 
-说明
+**说明** 
 
 [用户态trace](hitracemeter-view.md#用户态trace格式说明)总长度限制为512个字符，超过部分将会被截断。建议name、customCategory和customArgs三个字段的总长度不超过420字符，以避免trace被截断。
 
@@ -76,119 +76,108 @@ HiTraceMeter打点接口分为三类：同步时间片跟踪、异步时间片�
 
 ### 步骤一：创建项目
 
-1. 在DevEco Studio中新建工程，选择“Empty Ability”，工程的目录结构如下。
+1. 在DevEco Studio中新建工程，选择“Empty Ability”，工程的目录结构如下：
 
+   ```txt
+   ├── entry
+   │   ├── src
+   │       ├── main
+   │       │   ├── ets
+   │       │   │   ├── entryability
+   │       │   │   │   └── EntryAbility.ets
+   │       │   │   └── pages
+   │       │   │       └── Index.ets
    ```
-   1. ├── entry
-   2. │   ├── src
-   3. │       ├── main
-   4. │       │   ├── ets
-   5. │       │   │   ├── entryability
-   6. │       │   │   │   └── EntryAbility.ets
-   7. │       │   │   ├── entrybackupability
-   8. │       │   │   │   └── EntryBackupAbility.ets
-   9. │       │   │   └── pages
-   10. │       │   │       └── Index.ets
-   ```
-2. 编辑“entry > src > main > ets > pages > Index.ets”文件，在文本点击事件处理业务中使用HiTraceMeter性能跟踪打点接口，完整的示例代码如下。
+2. 编辑工程中的“entry > src > main > ets > pages > Index.ets”：
 
-   ```
-   1. import { hiTraceMeter, hilog } from '@kit.PerformanceAnalysisKit';
+   导入所需依赖：
 
-   3. @Entry
-   4. @Component
-   5. struct Index {
-   6. @State message: string = 'Hello World';
-
-   8. build() {
-   9. Row() {
-   10. Column() {
-   11. Text(this.message)
-   12. .fontSize(50)
-   13. .fontWeight(FontWeight.Bold)
-   14. .onClick(() => {
-   15. this.message = (this.message == 'Hello HiTrace') ? 'Hello World' : 'Hello HiTrace';
-   16. const COMMERCIAL = hiTraceMeter.HiTraceOutputLevel.COMMERCIAL;
-
-   18. let traceCount = 0;
-   19. // 第一个异步跟踪任务开始
-   20. hiTraceMeter.startAsyncTrace(COMMERCIAL, 'myTestAsyncTrace', 1001, 'categoryTest', 'key=value');
-   21. // 开始计数任务
-   22. traceCount++;
-   23. hiTraceMeter.traceByValue(COMMERCIAL, 'myTestCountTrace', traceCount);
-   24. // 业务流程
-   25. hilog.info(0x0000, 'testTrace', 'myTraceTest running, taskId: 1001');
-
-   27. // 第二个异步跟踪任务开始，同时第一个跟踪的同名任务还没结束，出现了并行执行，对应接口的taskId需要不同
-   28. hiTraceMeter.startAsyncTrace(COMMERCIAL, 'myTestAsyncTrace', 1002, 'categoryTest', 'key=value');
-   29. // 开始计数任务
-   30. traceCount++;
-   31. hiTraceMeter.traceByValue(COMMERCIAL, 'myTestCountTrace', traceCount);
-   32. // 业务流程
-   33. hilog.info(0x0000, 'testTrace', 'myTraceTest running, taskId: 1002');
-
-   35. // 结束taskId为1001的异步跟踪任务
-   36. hiTraceMeter.finishAsyncTrace(COMMERCIAL, 'myTestAsyncTrace', 1001);
-   37. // 结束taskId为1002的异步跟踪任务
-   38. hiTraceMeter.finishAsyncTrace(COMMERCIAL, 'myTestAsyncTrace', 1002);
-
-   40. // 开始同步跟踪任务
-   41. hiTraceMeter.startSyncTrace(COMMERCIAL, 'myTestSyncTrace', 'key=value');
-   42. // 业务流程
-   43. hilog.info(0x0000, 'testTrace', 'myTraceTest running, synchronizing trace');
-   44. // 结束同步跟踪任务
-   45. hiTraceMeter.finishSyncTrace(COMMERCIAL);
-
-   47. // 若通过HiTraceMeter性能打点接口传递的参数的生成过程比较复杂，此时可以通过isTraceEnabled判断当前是否开启应用trace捕获，
-   48. // 在未开启应用trace捕获时，避免该部分性能损耗
-   49. if (hiTraceMeter.isTraceEnabled()) {
-   50. let customArgs = 'key0=value0';
-   51. for (let index = 1; index < 10; index++) {
-   52. customArgs += `,key${index}=value${index}`
-   53. }
-   54. hiTraceMeter.startAsyncTrace(COMMERCIAL, 'myTestAsyncTrace', 1003, 'categoryTest', customArgs);
-   55. hilog.info(0x0000, 'testTrace', 'myTraceTest running, taskId: 1003');
-   56. hiTraceMeter.finishAsyncTrace(COMMERCIAL, 'myTestAsyncTrace', 1003);
-   57. } else {
-   58. hilog.info(0x0000, 'testTrace', 'myTraceTest running, trace is not enabled');
-   59. }
-   60. })
-   61. }
-   62. .width('100%')
-   63. }
-   64. .height('100%')
-   65. }
-   66. }
+   ```typescript
+   import { hiTraceMeter, hilog} from '@kit.PerformanceAnalysisKit';
    ```
 
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/PerformanceAnalysisKit/HiTrace/HitraceMeter_ArkTS/entry/src/main/ets/pages/Index.ets#L16-L83)
+   定义测试方法：
+
+   ```typescript
+   function testHiTraceMeterASync() {
+     const COMMERCIAL = hiTraceMeter.HiTraceOutputLevel.COMMERCIAL;
+     hiTraceMeter.startAsyncTrace(COMMERCIAL, 'myTestAsyncTrace', 1001, 'categoryTest', 'key=value');
+     hiTraceMeter.startAsyncTrace(COMMERCIAL, 'myTestAsyncTrace', 1002, 'categoryTest', 'key=value');
+
+     setTimeout(() => {
+       // 结束taskId为1001的异步跟踪任务
+       hiTraceMeter.finishAsyncTrace(COMMERCIAL, 'myTestAsyncTrace', 1001);
+     }, 2000);
+
+     setTimeout(() => {
+       // 结束taskId为1002的异步跟踪任务
+       hiTraceMeter.finishAsyncTrace(COMMERCIAL, 'myTestAsyncTrace', 1002);
+     }, 1000);
+   }
+
+   function testHiTraceMeterSync() {
+     const COMMERCIAL = hiTraceMeter.HiTraceOutputLevel.COMMERCIAL;
+     // 开始同步跟踪任务
+     hiTraceMeter.startSyncTrace(COMMERCIAL, 'myTestSyncTrace', 'key=value');
+     // 业务流程
+     hilog.info(0x0000, 'testTrace', 'myTraceTest running, synchronizing trace');
+     // 结束同步跟踪任务
+     hiTraceMeter.finishSyncTrace(COMMERCIAL);
+   }
+
+   function testHiTraceMeterValue() {
+     const COMMERCIAL = hiTraceMeter.HiTraceOutputLevel.COMMERCIAL;
+     let traceCount = 0;
+     // trace计数初始值
+     hiTraceMeter.traceByValue(COMMERCIAL, 'myTestCountTrace', traceCount);
+     traceCount++;
+     // trace打点变化后的值
+     hiTraceMeter.traceByValue(COMMERCIAL, 'myTestCountTrace', traceCount);
+   }
+
+   function testHiTraceMeter() {
+     // 在未开启应用trace捕获时，避免该部分性能损耗
+     if (hiTraceMeter.isTraceEnabled()) {
+       testHiTraceMeterASync();
+       testHiTraceMeterSync();
+       testHiTraceMeterValue();
+     } else {
+       hilog.info(0x0000, 'testTrace', 'myTraceTest running, trace is not enabled');
+     }
+   }
+   ```
+
+   添加按钮以触发接口调用：
+
+   ```typescript
+   Button("testHiTraceMeter").backgroundColor('#FFFF00FF')
+     .onClick(testHiTraceMeter)
+   ```
 
 ### 步骤二：采集trace信息并查看
 
 1. 在DevEco Studio Terminal窗口中执行以下命令，开启应用的trace捕获。
 
+   ```shell
+   PS D:\xxx\xxx> hdc shell
+   $ hitrace --trace_begin app
    ```
-   1. PS D:\xxx\xxx> hdc shell
-   2. $ hitrace --trace_begin app
-   ```
-2. 单击DevEco Studio界面上的运行按钮，启动应用。点击应用界面的“Hello World”文本，执行包含HiTraceMeter打点的业务逻辑。然后执行如下命令抓取trace数据，并使用“myTest”关键字过滤trace数据（示例打点接口传递的name字段前缀均为“myTest”）。
+2. 单击DevEco Studio界面上的运行按钮，启动应用。点击应用界面的“testHiTraceMeter”按钮，执行包含HiTraceMeter打点的业务逻辑。然后执行如下命令抓取trace数据，并使用“myTest”关键字过滤trace数据（示例打点接口传递的name字段前缀均为“myTest”）。
 
-   ```
-   1. $ hitrace --trace_dump | grep myTest
+   ```shell
+   $ hitrace --trace_dump | grep myTest
    ```
 
    成功抓取的trace数据如下所示：
 
-   ```
-   1. e.myapplication-39945   (  39945) [010] .... 347921.342267: tracing_mark_write: S|39945|H:myTestAsyncTrace|1001|M62|categoryTest|key=value
-   2. e.myapplication-39945   (  39945) [010] .... 347921.342280: tracing_mark_write: C|39945|H:myTestCountTrace|1|M62
-   3. e.myapplication-39945   (  39945) [010] .... 347921.342327: tracing_mark_write: S|39945|H:myTestAsyncTrace|1002|M62|categoryTest|key=value
-   4. e.myapplication-39945   (  39945) [010] .... 347921.342333: tracing_mark_write: C|39945|H:myTestCountTrace|2|M62
-   5. e.myapplication-39945   (  39945) [010] .... 347921.342358: tracing_mark_write: F|39945|H:myTestAsyncTrace|1001|M62
-   6. e.myapplication-39945   (  39945) [010] .... 347921.342365: tracing_mark_write: F|39945|H:myTestAsyncTrace|1002|M62
-   7. e.myapplication-39945   (  39945) [010] .... 347921.342387: tracing_mark_write: B|39945|H:myTestSyncTrace|M62|key=value
-   8. e.myapplication-39945   (  39945) [010] .... 347921.342586: tracing_mark_write: S|39945|H:myTestAsyncTrace|1003|M62|categoryTest|key0=value0,key1=value1,key2=value2,key3=value3,key4=value4,key5=value5,key6=value6,key7=value7,key8=value8,key9=value9
-   9. e.myapplication-39945   (  39945) [010] .... 347921.342615: tracing_mark_write: F|39945|H:myTestAsyncTrace|1003|M62
+   ```text
+   <...>-30265   (-------) [003] ..... 223860.709694: tracing_mark_write: S|30265|H:myTestAsyncTrace|1001|M62|categoryTest|key=value
+   <...>-30265   (-------) [003] ..... 223860.709735: tracing_mark_write: S|30265|H:myTestAsyncTrace|1002|M62|categoryTest|key=value
+   <...>-30265   (-------) [003] ..... 223860.710081: tracing_mark_write: B|30265|H:myTestSyncTrace|M62|key=value
+   <...>-30265   (-------) [003] ..... 223860.710305: tracing_mark_write: C|30265|H:myTestCountTrace|0|M62
+   <...>-30265   (-------) [003] ..... 223860.710332: tracing_mark_write: C|30265|H:myTestCountTrace|1|M62
+   <...>-30265   (-------) [003] ..... 223861.711284: tracing_mark_write: F|30265|H:myTestAsyncTrace|1002|M62
+   <...>-30265   (-------) [003] ..... 223862.709901: tracing_mark_write: F|30265|H:myTestAsyncTrace|1001|M62
    ```
 
    每一行trace数据中，tracing\_mark\_write为打点事件类型，应用程序中调用HiTraceMeter接口打点使用的均为此事件。打点事件类型前面的数据分别为线程名-线程ID、进程ID、CPU和打点时间（从开机到当前的时间，单位为秒）；打点事件类型后面的数据可查看[用户态trace格式](hitracemeter-view.md#用户态trace格式说明)。
@@ -197,15 +186,15 @@ HiTraceMeter打点接口分为三类：同步时间片跟踪、异步时间片�
 
 1. 执行以下命令，停止应用的trace捕获。
 
+   ```shell
+   $ hitrace --trace_finish
    ```
-   1. $ hitrace --trace_finish
-   ```
-2. 再次点击应用界面的“Hello World”文本，此时应用trace捕获已关闭，isTraceEnabled()接口返回false。在DevEco Studio Log窗口使用关键字“not enabled”进行过滤，会打印如下日志。
+2. 再次点击应用界面的“testHiTraceMeter”按钮，此时应用trace捕获已关闭，isTraceEnabled()接口返回false。在DevEco Studio Log窗口使用关键字“not enabled”进行过滤，会打印如下日志。
 
-   ```
-   1. myTraceTest running, trace is not enabled
+   ```text
+   myTraceTest running, trace is not enabled
    ```
 
-   说明
+   **说明** 
 
    log版本在使用hitrace --trace\_finish命令停止采集后会自动拉起快照模式，打开trace捕获，此时isTraceEnabled()接口返回true，不会打印上述日志。

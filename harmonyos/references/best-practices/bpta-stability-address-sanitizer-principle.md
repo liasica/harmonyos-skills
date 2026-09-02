@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 地址越界检测工具原理
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 地址越界类问题检测 > 地址越界检测工具原理
 category: best-practices
-scraped_at: 2026-04-29T14:14:00+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:b4ebb2470e64b206ddfe72008980f39daf8df2512ae7645e7427df559475311f
+scraped_at: 2026-09-02T15:03:22+08:00
+doc_updated_at: 2026-06-23
+content_hash: sha256:d7c6e7e1a2f38728193e0f8188485b365997ca83975965b1155dcbe03f1adb3e
 ---
 
 ## ASan检测原理
@@ -32,30 +32,30 @@ ASan工具主要由插桩模块和动态运行库模块构成。
 
 ASan利用在运行时通过影子内存（shadow memory）来标记内存的状态，从而检测出非法的内存操作。默认8个字节内存对应1字节的shadow，也就是当malloc(13)时，ASan会将其按8字节对齐分配16字节有效内存，并在前后插入8字节的红区，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/AJfUA-aDRMSh7ixtGVf7dg/zh-cn_image_0000002468818137.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/xeZ97IXtTKan_CRl_y_C0g/zh-cn_image_0000002468818137.png "点击放大")
 
 日志中会给出Shadow byte legend，这部分解释了每个shadow byte的含义，每个shadow byte代表8个字节。这些字节被用来表示内存状态，以帮助诊断内存错误。
 
-```
-1. Shadow byte legend (one shadow byte represents 8 application bytes):
-2. Addressable:           00
-3. Partially addressable: 01 02 03 04 05 06 07
-4. Heap left redzone:       fa
-5. Freed heap region:       fd
-6. Stack left redzone:      f1
-7. Stack mid redzone:       f2
-8. Stack right redzone:     f3
-9. Stack after return:      f5
-10. Stack use after scope:   f8
-11. Global redzone:          f9
-12. Global init order:       f6
-13. Poisoned by user:        f7
-14. Container overflow:      fc
-15. Array cookie:            ac
-16. Intra object redzone:    bb
-17. ASan internal:           fe
-18. Left alloca redzone:     ca
-19. Right alloca redzone:    cb
+```screen
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
 ```
 
 | 值 | 名称 | 说明 |
@@ -83,7 +83,7 @@ ASan利用在运行时通过影子内存（shadow memory）来标记内存的状
 
 ASan对于UAF的检测依赖于隔离区。free()函数会将整个内存区域置成不可使用并将其放入隔离区，这样该区域就不会马上被malloc分配给应用程序。目前，隔离区是使用一个FIFO队列实现的，默认大小为256，可通过在asan.option中配置quarantine\_size\_mb来修改其大小。
 
-注意
+**注意** 
 
 * 隔离区并不能永久保留已释放对象，当其容量quarantine\_size\_mb达到上限时（默认256），会被重新分配给其他人。当它被重新分配给其他人后，原先的持有者再次访问此块区域将不会报错。因为这一块区域的shadow memory不再是0xfd。所以这算是ASan漏检的一种情况。
 * 若程序频繁分配和释放内存，建议合理设置quarantine\_size\_mb，在保证性能的同时提高检测精度。
@@ -102,7 +102,7 @@ HWASan是Hardware-Assisted Address Sanitizer的简称，它是Clang LLVM提供�
 3. 编译器在每个内存地址的load/store之前都会插入检查指令，用于确认操作地址的最高8位保存的tag与其映射的shadow memory中的tag值是否一致；
 4. 对象回收后也会重新分配一个随机值，保存到其映射的shadow memory中，当出现内存越界行为时，就会检测到tag值不一致的异常；
 
-注意
+**注意** 
 
 当分配的对象小于16字节时，多余的内存不会再分配给其它对象，此时shadow memory中保存的是对象所占内存的实际字节数，而tag值则保存在16字节的最后一个字节里面。
 
@@ -130,7 +130,7 @@ HWASan的tag机制是其核心部分，利用处理器TopBitIgnore特性，它�
 * 指针的tag同步：指向该内存对象的指针也会被赋予相同的tag值。这样，当程序访问该内存对象时，指针的tag值与内存对象的tag值需要一致，否则会触发错误，上报hwasan日志。
 * shadow memory的tag存储：除了在指针中存储tag值，HWASan还会在shadow memory中为每个内存对象存储一个对应的tag值。shadow memory是HWASan用来记录内存对象tag值的辅助存储区域，通常每16字节的内存对应1字节的shadow memory。若分配的内存小于16字节（短颗粒内存（short granules）），shadow会做特殊处理。Shadow Memory存储实际有效长度，而Tag保存内存在该16字节区域的末字节。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/MlZKzIwJSuW70huc6cbl5Q/zh-cn_image_0000002370565416.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/3H_OmtLATP6GcsgJY1dMfQ/zh-cn_image_0000002370565416.png "点击放大")
 
 更详细的内容可参考LLVM [Hardware-assisted AddressSanitizer官方文档](https://clang.llvm.org/docs/HardwareAssistedAddressSanitizerDesign.html)。
 
@@ -138,7 +138,7 @@ HWASan的tag机制是其核心部分，利用处理器TopBitIgnore特性，它�
 
 ### 原理概述
 
-Memory\_debug检测原理基于隔离区加投毒填充的机制，同时复用了HWASan的tag机制对一部分问题进行检测，主要应用于检测未进行HWASan插桩的库文件等代码的堆内存问题，同时不影响已进行插桩的代码模块。主要检测逻辑是通过隔离区将释放后的内存保存起来防止立即被再次分配出去，并在其中填充特殊值，放入隔离区中的内存理论上不允许读写，当隔离区满或线程退出时，将隔离区中部分或全部内存释放出隔离区返还给分配器并对其中填充值进行校验，若填充值被修改，则说明发生use-after-free问题。
+MemoryDebug检测原理基于隔离区加投毒填充的机制，同时复用了HWASan的tag机制对一部分问题进行检测，主要应用于检测未进行HWASan插桩的库文件等代码的堆内存问题，同时不影响已进行插桩的代码模块。主要检测逻辑是通过隔离区将释放后的内存保存起来防止立即被再次分配出去，并在其中填充特殊值，放入隔离区中的内存理论上不允许读写，当隔离区满或线程退出时，将隔离区中部分或全部内存释放出隔离区返还给分配器并对其中填充值进行校验，若填充值被修改，则说明发生use-after-free问题。
 
 1. double-free检测逻辑
 
@@ -148,7 +148,7 @@ Memory\_debug检测原理基于隔离区加投毒填充的机制，同时复用�
    同样是基于投毒和隔离区机制，内存在释放时会被填充上特殊值（0x55）并放入隔离区防止再次被分配，当写操作修改了内存中的内容时不会立即报错，当该内存从离开隔离区真正被释放返还给分配器时会检查内存填充的内容，如果内存中内容不是指定填充值说明在释放后被修改发生了UAF（write）错误。但只能激发错误且不能在发生错误时立即检测到，所以不能提供触发问题时的现场调用栈信息。
 3. heap-buffer-overflow
 
-   overflow无法通过memory\_debug直接检测，当写越界行为发生时，可能会修改相邻chunk中的值，如果被修改chunk已被释放填充且还保留在隔离区中，则在chunk离开隔离区被返还给allocator时会被检测到，但不能检测到现场。另外，基于HWASan检测机制，当分配的chunk包含tail时，下越界写会破坏填充的tail\_magic，此时可以在free到隔离区时检测到下越界写错误，该机制同样无法检测到越界写发生的现场。
+   overflow无法通过MemoryDebug直接检测，当写越界行为发生时，可能会修改相邻chunk中的值，如果被修改chunk已被释放填充且还保留在隔离区中，则在chunk离开隔离区被返还给allocator时会被检测到，但不能检测到现场。另外，基于HWASan检测机制，当分配的chunk包含tail时，下越界写会破坏填充的tail\_magic，此时可以在free到隔离区时检测到下越界写错误，该机制同样无法检测到越界写发生的现场。
 
 ## GWP-ASan检测原理
 
@@ -156,7 +156,7 @@ Memory\_debug检测原理基于隔离区加投毒填充的机制，同时复用�
 
 ### 原理概述
 
-GWP-ASan具有一种内存分配器功能，可帮助查找释放后使用和堆缓冲区溢出bug，启用后，GWP-ASan会拦截随机选择的堆分配子集，并将其放入特殊区域，以便捕获难以检测到的堆内存损坏错误。只要用户足够多，即使在低采样率的情况下，也可以发现常规测试未能发现的堆内存安全错误。常见的GWP-ASan异常检测类型有：double free，user\_after\_free，invalid free left等，详见[GWP-ASan异常检测类型](bpta-stability-gwpasan-detection.md#section73731529454)部分。
+GWP-ASan具有一种内存分配器功能，可帮助查找释放后使用和堆缓冲区溢出bug，启用后，GWP-ASan会拦截随机选择的堆分配子集，并将其放入特殊区域，以便捕获难以检测到的堆内存损坏错误。只要用户足够多，即使在低采样率的情况下，也可以发现常规测试未能发现的堆内存安全错误。常见的GWP-ASan异常检测类型有：double-free，user-after-free，invalid-free-left等，详见[使用GWP-ASan检测内存错误](bpta-stability-gwpasan-detection.md)部分。
 
 GWP-ASan通过修改内存分配器来工作。它使用概率性采样，随机选择一部分内存分配进行保护。这种设计在性能和内存错误检测之间取得平衡。
 
@@ -168,11 +168,11 @@ GWP-ASan通过在内存分配路径（如 malloc、calloc、realloc）上设置�
 
 在初始化过程中，GWP-ASan会根据slots数量参数提前分配一个下图所示保护区；每个Guard Page页都被设置为不可读写权限，用于检测堆内存上下溢出。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/8d6CH-leQqKK1RIjlq-CJg/zh-cn_image_0000002404125081.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/Lok7qkrDQrqab_tSeBQxlw/zh-cn_image_0000002404125081.png "点击放大")
 
 之后，hook应用堆内存分配行为，每次分配堆内存时，随机决定目标内存是走GWP-ASan分配，还是走系统原生分配。如果走GWP-ASan分配，那么目标内存会被随机左对齐/右对齐分配在一个空闲的Slot上，同时记录分配内存的堆栈信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/h9PxhGGsS_mfpjZsFnPiXA/zh-cn_image_0000002370405536.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/TvG42SzBRU-nsCxtsY1NKA/zh-cn_image_0000002370405536.png "点击放大")
 
 当释放内存时，会先判断目标内存是否在GWP-ASan受保护内存池上，如果是，那么释放这块内存和其所在的Slot，该Slot页设置为不可读写权限，同时记录释放内存的堆栈。Slot空闲后，可以重新被用于分配。堆栈信息记录在metadata中。
 

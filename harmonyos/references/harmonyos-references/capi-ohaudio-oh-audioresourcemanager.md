@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohau
 title: OH_AudioResourceManager
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 结构体 > OH_AudioResourceManager
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:53+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:20726baf9c62968ba2e846a3809e82ee4e83f8ddc81f8aaf8b41d88dfcdf0be9
+scraped_at: 2026-09-02T14:52:46+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:bd424a08e4515e224881c0185b5209514b8273d4821f081444278546a26971d3
 ---
 
-```
-1. typedef struct OH_AudioResourceManager OH_AudioResourceManager
+```c
+typedef struct OH_AudioResourceManager OH_AudioResourceManager
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明音频资源管理器。用于管理音频资源相关功能。
 

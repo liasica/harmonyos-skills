@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/complex-text-
 title: 复杂文本绘制与显示（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 文本绘制与显示 > 复杂文本绘制与显示（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:36:16+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0f9e74273e4782c120b369bd272224c876ff613af48332f275f31f38897e504b
+scraped_at: 2026-09-02T14:59:50+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e449b6374e57938fcef5dbee8bbb0d8fa4b36e03710c4e017af0bedcb0b599bb
 ---
 
 在进行文本绘制时，可以通过选择合适的字体、大小和颜色完成简单文本的绘制与显示；此外，还支持通过设置其他丰富的样式、语言、段落等进行复杂文本的绘制。
@@ -26,66 +26,56 @@ content_hash: sha256:0f9e74273e4782c120b369bd272224c876ff613af48332f275f31f38897
 
 1. 通过context获取到Canvas画布对象。
 
+   ```typescript
+   // 绘制代码逻辑写在这里
+   let canvas = context.canvas;
    ```
-   1. // 绘制代码逻辑写在这里
-   2. let canvas = context.canvas;
-   ```
-
-   [MultilanguageText.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/ComplexTextDrawing/entry/src/main/ets/pages/multilanguage/MultilanguageText.ets#L23-L26)
 2. 初始化文本样式。
 
+   ```typescript
+   let myTextStyle: text.TextStyle = {
+     color: {
+       alpha: 255,
+       red: 255,
+       green: 0,
+       blue: 0
+     },
+     fontSize: 50,
+     // 设置语言偏好为简体中文
+     locale: 'zh-Hans'
+   };
    ```
-   1. let myTextStyle: text.TextStyle = {
-   2. color: {
-   3. alpha: 255,
-   4. red: 255,
-   5. green: 0,
-   6. blue: 0
-   7. },
-   8. fontSize: 50,
-   9. // 设置语言偏好为简体中文
-   10. locale: 'zh-Hans'
-   11. };
-   ```
-
-   [MultilanguageText.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/ComplexTextDrawing/entry/src/main/ets/pages/multilanguage/MultilanguageText.ets#L28-L40)
 3. 初始化段落样式。
 
+   ```typescript
+   let myParagraphStyle: text.ParagraphStyle = {
+     textStyle: myTextStyle,
+   };
    ```
-   1. let myParagraphStyle: text.ParagraphStyle = {
-   2. textStyle: myTextStyle,
-   3. };
-   ```
-
-   [MultilanguageText.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/ComplexTextDrawing/entry/src/main/ets/pages/multilanguage/MultilanguageText.ets#L42-L46)
 4. 初始化段落对象，并添加文本。
 
+   ```typescript
+   let fontCollection = text.FontCollection.getGlobalInstance();
+   let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+   // 更新文本样式
+   paragraphBuilder.pushStyle(myTextStyle);
+   // 添加文本
+   paragraphBuilder.addText('你好，世界');
    ```
-   1. let fontCollection = text.FontCollection.getGlobalInstance();
-   2. let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
-   3. // 更新文本样式
-   4. paragraphBuilder.pushStyle(myTextStyle);
-   5. // 添加文本
-   6. paragraphBuilder.addText('你好，世界');
-   ```
-
-   [MultilanguageText.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/ComplexTextDrawing/entry/src/main/ets/pages/multilanguage/MultilanguageText.ets#L47-L54)
 5. 排版段落并进行文本绘制。
 
+   ```typescript
+   // 生成段落
+   let paragraph = paragraphBuilder.build();
+   // 布局
+   paragraph.layoutSync(1250);
+   // 绘制文本
+   paragraph.paint(canvas, 10, 0);
    ```
-   1. // 生成段落
-   2. let paragraph = paragraphBuilder.build();
-   3. // 布局
-   4. paragraph.layoutSync(1250);
-   5. // 绘制文本
-   6. paragraph.paint(canvas, 10, 0);
-   ```
-
-   [MultilanguageText.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/ComplexTextDrawing/entry/src/main/ets/pages/multilanguage/MultilanguageText.ets#L55-L62)
 
 ### 效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/vBTxiqF6QZKsKji1USieZA/zh-cn_image_0000002589244981.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/tB09LCx-SCCXS837X4ixyw/zh-cn_image_0000002706674734.png)
 
 ## 多行文本绘制与显示
 
@@ -99,70 +89,60 @@ content_hash: sha256:0f9e74273e4782c120b369bd272224c876ff613af48332f275f31f38897
 
 1. 通过context获取到Canvas画布对象。
 
+   ```typescript
+   // 绘制代码逻辑写在这里
+   let canvas = context.canvas;
    ```
-   1. // 绘制代码逻辑写在这里
-   2. let canvas = context.canvas;
-   ```
-
-   [MultilineText.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/ComplexTextDrawing/entry/src/main/ets/pages/multiline/MultilineText.ets#L23-L26)
 2. 初始化文本样式。
 
+   ```typescript
+   let myTextStyle: text.TextStyle = {
+     color: {
+       alpha: 255,
+       red: 255,
+       green: 0,
+       blue: 0
+     },
+     fontSize: 50,
+     // 当wordBreak为text.WordBreak.BREAK_HYPHEN时，需要为段落设置语言偏好，段落会在不同语言偏好下呈现不同的文本断词效果
+     locale: 'en-gb'
+   };
    ```
-   1. let myTextStyle: text.TextStyle = {
-   2. color: {
-   3. alpha: 255,
-   4. red: 255,
-   5. green: 0,
-   6. blue: 0
-   7. },
-   8. fontSize: 50,
-   9. // 当wordBreak为text.WordBreak.BREAK_HYPHEN时，需要为段落设置语言偏好，段落会在不同语言偏好下呈现不同的文本断词效果
-   10. locale: 'en-gb'
-   11. };
-   ```
-
-   [MultilineText.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/ComplexTextDrawing/entry/src/main/ets/pages/multiline/MultilineText.ets#L28-L40)
 3. 初始化段落样式。
 
+   ```typescript
+   let myParagraphStyle: text.ParagraphStyle = {
+     textStyle: myTextStyle,
+     // 文本对齐方式
+     align: text.TextAlign.LEFT,
+     // 最大行数
+     maxLines: 3,
+     // 断词策略
+     wordBreak: text.WordBreak.BREAK_WORD
+   };
    ```
-   1. let myParagraphStyle: text.ParagraphStyle = {
-   2. textStyle: myTextStyle,
-   3. // 文本对齐方式
-   4. align: text.TextAlign.LEFT,
-   5. // 最大行数
-   6. maxLines: 3,
-   7. // 断词策略
-   8. wordBreak: text.WordBreak.BREAK_WORD
-   9. };
-   ```
+4. 初始化段落对象，并添加文本。
 
-   [MultilineText.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/ComplexTextDrawing/entry/src/main/ets/pages/multiline/MultilineText.ets#L42-L52)
-4. 初始化段落对象，并添加占位符和文本。
-
+   ```typescript
+   let fontCollection = text.FontCollection.getGlobalInstance();
+   let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+   // 更新文本样式
+   paragraphBuilder.pushStyle(myTextStyle);
+   // 添加文本
+   paragraphBuilder.addText('Hello World Hello World Hello World Hello World Hello World Hello World ' +
+     'Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World ' +
+     'Hello World Hello World Hello World Hello World Hello World ');
    ```
-   1. let fontCollection = text.FontCollection.getGlobalInstance();
-   2. let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
-   3. // 更新文本样式
-   4. paragraphBuilder.pushStyle(myTextStyle);
-   5. // 添加文本
-   6. paragraphBuilder.addText('Hello World Hello World Hello World Hello World Hello World Hello World ' +
-   7. 'Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World ' +
-   8. 'Hello World Hello World Hello World Hello World Hello World ');
-   ```
-
-   [MultilineText.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/ComplexTextDrawing/entry/src/main/ets/pages/multiline/MultilineText.ets#L53-L62)
 5. 排版段落并进行文本绘制。
 
+   ```typescript
+   // 生成段落
+   let paragraph = paragraphBuilder.build();
+   // 布局
+   paragraph.layoutSync(1250);
+   // 绘制文本
+   paragraph.paint(canvas, 10, 0);
    ```
-   1. // 生成段落
-   2. let paragraph = paragraphBuilder.build();
-   3. // 布局
-   4. paragraph.layoutSync(1250);
-   5. // 绘制文本
-   6. paragraph.paint(canvas, 10, 0);
-   ```
-
-   [MultilineText.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/ComplexTextDrawing/entry/src/main/ets/pages/multiline/MultilineText.ets#L70-L77)
 
 ### 效果展示
 
@@ -194,6 +174,9 @@ content_hash: sha256:0f9e74273e4782c120b369bd272224c876ff613af48332f275f31f38897
 * **高对比度文字绘制：** 主要通过将深色文字变黑、浅色文字变白，增强文本的对比效果。
 * **行高调整：** 调整行高可改变文本行的垂直间距，使行间距更松散或更紧凑，显著改善文本垂直截断问题，提高可读性。
 * **行间距调整：** 通过调整行间距的方式可以实现行高调整一样的效果，优化阅读体验。
+* **省略号样式设置：** 在文本内容超出显示区域时，可以使用省略号截断文本，支持头部、中部、尾部以及多行省略模式。
+* **文字换行方式设置：** 文本排版时支持不同的断行策略，可根据场景选择合适的换行方式。
+* **行首标点压缩：** 在排版中，通过开启行首标点压缩功能，将行首标点符号进行挤压处理，避免标点占用行首空间，提升排版紧凑度。
 
 ### 装饰线
 
@@ -207,7 +190,7 @@ content_hash: sha256:0f9e74273e4782c120b369bd272224c876ff613af48332f275f31f38897
 
 ### 字体特征
 
-**字体特征**（[FontFeature](../harmonyos-references/js-apis-graphics-text.md#fontfeature)）绘制专注于在文本渲染过程中对字体特性（如粗体、斜体、字体变种等）的处理，允许字体在不同的排版场景下表现出不同的效果，可用于增强文本的表现力，使其更符合设计和阅读需求。
+**字体特征**（[FontFeature](../harmonyos-references/js-apis-graphics-text.md#fontfeature)）绘制专注于在文本渲染过程中对字体特性（如粗体、斜体、字体变体等）的处理，允许字体在不同的排版场景下表现出不同的效果，可用于增强文本的表现力，使其更符合设计和阅读需求。
 
 常见的**FontFeature**包含有liga、frac、case等，需要对应的ttf文件支持才能正常使能。
 
@@ -245,20 +228,20 @@ content_hash: sha256:0f9e74273e4782c120b369bd272224c876ff613af48332f275f31f38897
 
 关键示例如下：
 
-```
-1. let myParagraphStyle: text.ParagraphStyle = {
-2. autoSpace: true
-3. };
+```ts
+let myParagraphStyle: text.ParagraphStyle = {
+  autoSpace: true
+};
 ```
 
 ### 垂直对齐
 
 垂直对齐用于调整文本在一行中垂直方向的排版位置。开启行高缩放或行内存在不同字号文本混排时使能垂直对齐，可以让文本实现顶部对齐、居中对齐、底部对齐或基线对齐（默认）。关键代码如下：
 
-```
-1. let myParagraphStyle: text.ParagraphStyle = {
-2. verticalAlign: text.TextVerticalAlign.CENTER
-3. };
+```ts
+let myParagraphStyle: text.ParagraphStyle = {
+  verticalAlign: text.TextVerticalAlign.CENTER
+};
 ```
 
 具体使用效果可参见下文[示例三](complex-text-arkts.md#示例三垂直对齐)。
@@ -267,10 +250,10 @@ content_hash: sha256:0f9e74273e4782c120b369bd272224c876ff613af48332f275f31f38897
 
 使能上下标，能将文本作为上标或下标参与排版。一般用于数学公式、化学式等场景。关键代码如下：
 
-```
-1. let superScriptStyle: text.TextStyle = {
-2. badgeType: text.TextBadgeType.TEXT_SUPERSCRIPT
-3. };
+```ts
+let superScriptStyle: text.TextStyle = {
+    badgeType: text.TextBadgeType.TEXT_SUPERSCRIPT
+};
 ```
 
 具体使用效果可参见下文[示例四](complex-text-arkts.md#示例四上下标文本)。
@@ -291,13 +274,13 @@ content_hash: sha256:0f9e74273e4782c120b369bd272224c876ff613af48332f275f31f38897
 
 从API version 21开始，支持通过设置行高上限和下限调整行高，关键代码如下：
 
-```
-1. let myTextStyle: text.TextStyle = {
-2. // 设置行高上限
-3. lineHeightMaximum: 65,
-4. // 设置行高下限
-5. lineHeightMinimum: 65
-6. };
+```ts
+let myTextStyle: text.TextStyle = {
+    // 设置行高上限
+    lineHeightMaximum: 65,
+    // 设置行高下限
+    lineHeightMinimum: 65
+};
 ```
 
 使用效果参考下文[示例六](complex-text-arkts.md#示例六行高调整方式一)。
@@ -306,15 +289,15 @@ content_hash: sha256:0f9e74273e4782c120b369bd272224c876ff613af48332f275f31f38897
 
 通过设置行高缩放系数调整行高，关键代码如下：
 
-```
-1. let myTextStyle: text.TextStyle = {
-2. // 开启行高缩放开关
-3. heightOnly: true,
-4. // 设置行高缩放系数
-5. heightScale: 1.5,
-6. // 设置行高缩放风格
-7. lineHeightStyle: text.LineHeightStyle.FONT_HEIGHT
-8. };
+```ts
+let myTextStyle: text.TextStyle = {
+    // 开启行高缩放开关
+    heightOnly: true,
+    // 设置行高缩放系数
+    heightScale: 1.5,
+    // 设置行高缩放风格
+    lineHeightStyle: text.LineHeightStyle.FONT_HEIGHT
+};
 ```
 
 使用效果参考下文[示例七](complex-text-arkts.md#示例七行高调整方式二)。
@@ -323,168 +306,190 @@ content_hash: sha256:0f9e74273e4782c120b369bd272224c876ff613af48332f275f31f38897
 
 从API version 21开始，支持设置行间距改善文本行之间的距离，提高阅读体验，关键代码如下：
 
-```
-1. let myParagraphStyle: text.ParagraphStyle = {
-2. // 设置行间距
-3. lineSpacing: 100,
-4. // 关闭段落上升部和下降部
-5. textHeightBehavior: text.TextHeightBehavior.DISABLE_ALL,
-6. };
+```ts
+let myParagraphStyle: text.ParagraphStyle = {
+  // 设置行间距
+  lineSpacing: 100,
+  // 关闭段落上升部和下降部
+  textHeightBehavior: text.TextHeightBehavior.DISABLE_ALL,
+};
 ```
 
 具体使用效果可参见下文[示例八](complex-text-arkts.md#示例八行间距调整)。
 
+### 省略号样式设置
+
+从API version 22开始，支持设置省略号样式，在文本内容超出显示区域时截断文本。从API version 24开始，支持多行省略模式。
+
+通过[ParagraphStyle](../harmonyos-references/js-apis-graphics-text.md#paragraphstyle)中的textStyle属性设置省略号模式，可选的省略号模式可见[EllipsisMode](../harmonyos-references/js-apis-graphics-text.md#ellipsismode)。
+
+需要注意，省略号相关属性需要在ParagraphStyle的textStyle中设置才生效，通过pushStyle设置的省略号属性不会生效。
+
+具体使用效果可参见下文[示例九](complex-text-arkts.md#示例九省略号样式)。
+
+### 文字换行方式设置
+
+从API version 22开始，支持在文本排版时设置断行策略，断行策略决定了文本如何在行尾进行换行处理。
+
+通过设置[ParagraphStyle](../harmonyos-references/js-apis-graphics-text.md#paragraphstyle)中的breakStrategy属性可以控制断行策略，可选的断行策略可见[BreakStrategy](../harmonyos-references/js-apis-graphics-text.md#breakstrategy)。
+
+具体使用效果可参见下文[示例十](complex-text-arkts.md#示例十文字换行方式)。
+
+### 行首标点压缩
+
+从API version 23开始，在文本排版中支持行首标点压缩功能。通过启用行首标点压缩功能，可以将行首标点符号进行挤压处理，提升排版紧凑度。
+
+通过设置[ParagraphStyle](../harmonyos-references/js-apis-graphics-text.md#paragraphstyle)中的compressHeadPunctuation属性设置是否启用行首标点压缩。
+
+具体使用效果可参见下文[示例十一](complex-text-arkts.md#示例十一行首标点压缩)。
+
 ### 示例一（装饰线、字体特征）
 
-这里以文本样式中的装饰线和字体特征为例，呈现多样式文本的绘制与显示。
+```typescript
+import { NodeController, FrameNode, RenderNode, DrawContext } from '@kit.ArkUI'
+import { UIContext } from '@kit.ArkUI'
+import { text } from '@kit.ArkGraphics2D'
 
+// 创建一个MyRenderNode类，并绘制文本。
+class MyRenderNode extends RenderNode {
+  async draw(context: DrawContext) {
+    let canvas = context.canvas;
+
+    // 初始化装饰线对象
+    let decorations: text.Decoration =
+      {
+        // 装饰线类型，支持上划线、下划线、删除线
+        textDecoration: text.TextDecorationType.UNDERLINE,
+        // 装饰线颜色
+        color: {
+          alpha: 255,
+          red: 255,
+          green: 0,
+          blue: 0
+        },
+        // 装饰线样式，支持波浪，虚线，直线等
+        decorationStyle:text.TextDecorationStyle.SOLID,
+        // 装饰线粗细缩放比例
+        decorationThicknessScale: 1
+      };
+
+    let myTextStyle: text.TextStyle = {
+      color: {
+        alpha: 255,
+        red: 255,
+        green: 0,
+        blue: 0
+      },
+      fontSize: 200,
+      // 设置装饰线
+      decoration: decorations,
+      // 开启字体特征
+      fontFeatures: [{name: 'frac', value: 1}]
+    };
+
+    let myParagraphStyle: text.ParagraphStyle = {
+      textStyle: myTextStyle,
+    };
+
+    let fontCollection = text.FontCollection.getGlobalInstance();
+    let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+
+    // 更新文本样式
+    paragraphBuilder.pushStyle(myTextStyle);
+    // 添加文本
+    paragraphBuilder.addText('1/2 1/3 1/4 ');
+
+    // 生成段落
+    let paragraph = paragraphBuilder.build();
+    // 布局
+    paragraph.layoutSync(1250);
+    // 绘制文本
+    paragraph.paint(canvas, 0, 0);
+  }
+}
+
+// 创建一个MyRenderNode对象
+const textNode = new MyRenderNode();
+// 定义newNode的像素格式
+textNode.frame = {
+  x: 0,
+  y: 0,
+  width: 400,
+  height: 600
+};
+textNode.pivot = { x: 0.2, y: 0.8 };
+textNode.scale = { x: 1, y: 1 };
+
+class MyNodeController extends NodeController {
+  private rootNode: FrameNode | null = null;
+
+  makeNode(uiContext: UIContext): FrameNode {
+    this.rootNode = new FrameNode(uiContext);
+    if (this.rootNode == null) {
+      return this.rootNode;
+    }
+    const renderNode = this.rootNode.getRenderNode();
+    if (renderNode != null) {
+      renderNode.frame = {
+        x: 0,
+        y: 0,
+        width: 10,
+        height: 500
+      }
+    }
+    return this.rootNode;
+  }
+
+  addNode(node: RenderNode): void {
+    if (this.rootNode == null) {
+      return;
+    }
+    const renderNode = this.rootNode.getRenderNode();
+    if (renderNode != null) {
+      renderNode.appendChild(node);
+    }
+  }
+
+  clearNodes(): void {
+    if (this.rootNode == null) {
+      return;
+    }
+    const renderNode = this.rootNode.getRenderNode();
+    if (renderNode != null) {
+      renderNode.clearChildren();
+    }
+  }
+}
+
+let myNodeController: MyNodeController = new MyNodeController();
+
+async function performTask() {
+  myNodeController.clearNodes();
+  myNodeController.addNode(textNode);
+}
+
+@Entry
+@Component
+struct Font08 {
+  @State src: Resource = $r('app.media.startIcon');
+  build() {
+    Column() {
+      Row() {
+        NodeContainer(myNodeController)
+          .height('100%')
+          .width('100%')
+        Image(this.src)
+          .width('0%').height('0%')
+          .onComplete(
+            () => {
+              performTask();
+            })
+      }
+      .width('100%')
+    }
+  }
+}
 ```
-1. import { NodeController, FrameNode, RenderNode, DrawContext } from '@kit.ArkUI'
-2. import { UIContext } from '@kit.ArkUI'
-3. import { text } from '@kit.ArkGraphics2D'
-
-5. // 创建一个MyRenderNode类，并绘制文本。
-6. class MyRenderNode extends RenderNode {
-7. async draw(context: DrawContext) {
-8. let canvas = context.canvas;
-
-10. // 初始化装饰线对象
-11. let decorations: text.Decoration =
-12. {
-13. // 装饰线类型，支持上划线、下划线、删除线
-14. textDecoration: text.TextDecorationType.UNDERLINE,
-15. // 装饰线颜色
-16. color: {
-17. alpha: 255,
-18. red: 255,
-19. green: 0,
-20. blue: 0
-21. },
-22. // 装饰线样式，支持波浪，虚线，直线等
-23. decorationStyle:text.TextDecorationStyle.SOLID,
-24. // 装饰线的高度
-25. decorationThicknessScale: 1
-26. };
-
-28. let myTextStyle: text.TextStyle = {
-29. color: {
-30. alpha: 255,
-31. red: 255,
-32. green: 0,
-33. blue: 0
-34. },
-35. fontSize: 200,
-36. // 设置装饰线
-37. decoration: decorations,
-38. // 开启字体特征
-39. fontFeatures: [{name: 'frac', value: 1}]
-40. };
-
-42. let myParagraphStyle: text.ParagraphStyle = {
-43. textStyle: myTextStyle,
-44. };
-
-46. let fontCollection = text.FontCollection.getGlobalInstance();
-47. let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
-
-49. // 更新文本样式
-50. paragraphBuilder.pushStyle(myTextStyle);
-51. // 添加文本
-52. paragraphBuilder.addText('1/2 1/3 1/4 ');
-
-54. // 生成段落
-55. let paragraph = paragraphBuilder.build();
-56. // 布局
-57. paragraph.layoutSync(1250);
-58. // 绘制文本
-59. paragraph.paint(canvas, 0, 0);
-60. }
-61. }
-
-63. // 创建一个MyRenderNode对象
-64. const textNode = new MyRenderNode();
-65. // 定义newNode的像素格式
-66. textNode.frame = {
-67. x: 0,
-68. y: 0,
-69. width: 400,
-70. height: 600
-71. };
-72. textNode.pivot = { x: 0.2, y: 0.8 };
-73. textNode.scale = { x: 1, y: 1 };
-
-75. class MyNodeController extends NodeController {
-76. private rootNode: FrameNode | null = null;
-
-78. makeNode(uiContext: UIContext): FrameNode {
-79. this.rootNode = new FrameNode(uiContext);
-80. if (this.rootNode == null) {
-81. return this.rootNode;
-82. }
-83. const renderNode = this.rootNode.getRenderNode();
-84. if (renderNode != null) {
-85. renderNode.frame = {
-86. x: 0,
-87. y: 0,
-88. width: 10,
-89. height: 500
-90. }
-91. }
-92. return this.rootNode;
-93. }
-
-95. addNode(node: RenderNode): void {
-96. if (this.rootNode == null) {
-97. return;
-98. }
-99. const renderNode = this.rootNode.getRenderNode();
-100. if (renderNode != null) {
-101. renderNode.appendChild(node);
-102. }
-103. }
-
-105. clearNodes(): void {
-106. if (this.rootNode == null) {
-107. return;
-108. }
-109. const renderNode = this.rootNode.getRenderNode();
-110. if (renderNode != null) {
-111. renderNode.clearChildren();
-112. }
-113. }
-114. }
-
-116. let myNodeController: MyNodeController = new MyNodeController();
-
-118. async function performTask() {
-119. myNodeController.clearNodes();
-120. myNodeController.addNode(textNode);
-121. }
-
-123. @Entry
-124. @Component
-125. struct Font08 {
-126. @State src: Resource = $r('app.media.startIcon');
-127. build() {
-128. Column() {
-129. Row() {
-130. NodeContainer(myNodeController)
-131. .height('100%')
-132. .width('100%')
-133. Image(this.src)
-134. .width('0%').height('0%')
-135. .onComplete(
-136. () => {
-137. performTask();
-138. })
-139. }
-140. .width('100%')
-141. }
-142. }
-143. }
-```
-
-[ComplexStyleExample1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/ComplexTextDrawing/entry/src/main/ets/pages/complexStyle/ComplexStyleExample1.ets#L16-L160)
 
 具体示意效果如下所示：
 
@@ -497,170 +502,168 @@ content_hash: sha256:0f9e74273e4782c120b369bd272224c876ff613af48332f275f31f38897
 
 这里以可变字体、文本阴影、占位符三个特性为例，呈现多样式文本的绘制与显示。
 
+```typescript
+import { NodeController, FrameNode, RenderNode, DrawContext } from '@kit.ArkUI'
+import { UIContext } from '@kit.ArkUI'
+import { drawing } from '@kit.ArkGraphics2D'
+import { text } from '@kit.ArkGraphics2D'
+import { common2D } from '@kit.ArkGraphics2D'
+
+// 创建一个MyRenderNode类，并绘制文本。
+class MyRenderNode extends RenderNode {
+  async draw(context: DrawContext) {
+    let canvas = context.canvas;
+
+    let myTextStyle: text.TextStyle = {
+      color: {
+        alpha: 255,
+        red: 255,
+        green: 0,
+        blue: 0
+      },
+      fontSize: 120,
+      // 可变字体
+      fontVariations: [{axis: 'wght', value: 555}],
+      // 文本阴影
+      textShadows: [{color: { alpha: 0xFF, red: 0xFF, green: 0x00, blue: 0x00 }, point: {x:10,y:10}, blurRadius: 10}],
+    };
+
+    let myParagraphStyle: text.ParagraphStyle = {
+      textStyle: myTextStyle,
+    };
+
+    let fontCollection = text.FontCollection.getGlobalInstance();
+    let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+
+    // 初始化占位符对象
+    let myPlaceholderSpan: text.PlaceholderSpan = {
+      // 宽度
+      width: 300,
+      // 高度
+      height: 300,
+      // 基线对齐策略
+      align: text.PlaceholderAlignment.BOTTOM_OF_ROW_BOX,
+      // 使用的文本基线类型
+      baseline: text.TextBaseline.ALPHABETIC,
+      // 相比基线的偏移量。只有对齐策略是OFFSET_AT_BASELINE时生效
+      baselineOffset: 100
+    };
+    // 添加占位符
+    paragraphBuilder.addPlaceholder(myPlaceholderSpan);
+
+    // 更新文本样式
+    paragraphBuilder.pushStyle(myTextStyle);
+    // 添加文本
+    paragraphBuilder.addText('Hello Test');
+
+    // 生成段落
+    let paragraph = paragraphBuilder.build();
+    // 布局
+    paragraph.layoutSync(1250);
+    // 绘制文本
+    paragraph.paint(canvas, 0, 0);
+
+    // 获取全部占位符的数组
+    let placeholderRects = paragraph.getRectsForPlaceholders();
+    // 获取第一个占位符的左边界
+    let left = placeholderRects[0].rect.left;
+    // 获取第一个占位符的上边界
+    let top = placeholderRects[0].rect.top;
+    // 获取第一个占位符的右边界
+    let right = placeholderRects[0].rect.right;
+    // 获取第一个占位符的下边界
+    let bottom = placeholderRects[0].rect.bottom;
+    let pen: drawing.Pen =  new drawing.Pen();
+    let penColor : common2D.Color = { alpha: 0xFF, red: 0xFF, green: 0x00, blue: 0x00 };
+    pen.setColor(penColor);
+    canvas.attachPen(pen);
+    // 使用draw方法绘制占位符矩形框
+    canvas.drawRect(left,top,right,bottom);
+  }
+}
+
+// 创建一个MyRenderNode对象
+const textNode = new MyRenderNode();
+// 定义newNode的像素格式
+textNode.frame = {
+  x: 0,
+  y: 0,
+  width: 400,
+  height: 600,
+};
+textNode.pivot = { x: 0.2, y: 0.8 };
+textNode.scale = { x: 1, y: 1 };
+
+class MyNodeController extends NodeController {
+  private rootNode: FrameNode | null = null;
+
+  makeNode(uiContext: UIContext): FrameNode {
+    this.rootNode = new FrameNode(uiContext);
+    if (this.rootNode == null) {
+      return this.rootNode;
+    }
+    const renderNode = this.rootNode.getRenderNode();
+    if (renderNode != null) {
+      renderNode.frame = {
+        x: 0,
+        y: 0,
+        width: 10,
+        height: 500
+      };
+    }
+    return this.rootNode;
+  }
+
+  addNode(node: RenderNode): void {
+    if (this.rootNode == null) {
+      return;
+    }
+    const renderNode = this.rootNode.getRenderNode();
+    if (renderNode != null) {
+      renderNode.appendChild(node);
+    }
+  }
+
+  clearNodes(): void {
+    if (this.rootNode == null) {
+      return;
+    }
+    const renderNode = this.rootNode.getRenderNode();
+    if (renderNode != null) {
+      renderNode.clearChildren();
+    }
+  }
+}
+
+let myNodeController: MyNodeController = new MyNodeController();
+
+async function performTask() {
+  myNodeController.clearNodes();
+  myNodeController.addNode(textNode);
+}
+
+@Entry
+@Component
+struct Font08 {
+  @State src: Resource = $r('app.media.startIcon');
+  build() {
+    Column() {
+      Row() {
+        NodeContainer(myNodeController)
+          .height('100%')
+          .width('100%')
+        Image(this.src)
+          .width('0%').height('0%')
+          .onComplete(
+            () => {
+              performTask();
+            })
+      }
+      .width('100%')
+    }
+  }
+}
 ```
-1. import { NodeController, FrameNode, RenderNode, DrawContext } from '@kit.ArkUI'
-2. import { UIContext } from '@kit.ArkUI'
-3. import { drawing } from '@kit.ArkGraphics2D'
-4. import { text } from '@kit.ArkGraphics2D'
-5. import { common2D } from '@kit.ArkGraphics2D'
-
-7. // 创建一个MyRenderNode类，并绘制文本。
-8. class MyRenderNode extends RenderNode {
-9. async draw(context: DrawContext) {
-10. let canvas = context.canvas;
-
-12. let myTextStyle: text.TextStyle = {
-13. color: {
-14. alpha: 255,
-15. red: 255,
-16. green: 0,
-17. blue: 0
-18. },
-19. fontSize: 120,
-20. // 可变字体
-21. fontVariations: [{axis: 'wght', value: 555}],
-22. // 文本阴影
-23. textShadows: [{color: { alpha: 0xFF, red: 0xFF, green: 0x00, blue: 0x00 }, point: {x:10,y:10}, blurRadius: 10}],
-24. };
-
-26. let myParagraphStyle: text.ParagraphStyle = {
-27. textStyle: myTextStyle,
-28. };
-
-30. let fontCollection = text.FontCollection.getGlobalInstance();
-31. let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
-
-33. // 初始化占位符对象
-34. let myPlaceholderSpan: text.PlaceholderSpan = {
-35. // 宽度
-36. width: 300,
-37. // 高度
-38. height: 300,
-39. // 基线对齐策略
-40. align: text.PlaceholderAlignment.BOTTOM_OF_ROW_BOX,
-41. // 使用的文本基线类型
-42. baseline: text.TextBaseline.ALPHABETIC,
-43. // 相比基线的偏移量。只有对齐策略是OFFSET_AT_BASELINE时生效
-44. baselineOffset: 100
-45. };
-46. // 添加占位符
-47. paragraphBuilder.addPlaceholder(myPlaceholderSpan);
-
-49. // 更新文本样式
-50. paragraphBuilder.pushStyle(myTextStyle);
-51. // 添加文本
-52. paragraphBuilder.addText('Hello Test');
-
-54. // 生成段落
-55. let paragraph = paragraphBuilder.build();
-56. // 布局
-57. paragraph.layoutSync(1250);
-58. // 绘制文本
-59. paragraph.paint(canvas, 0, 0);
-
-61. //获取全部占位符的数组
-62. let placeholderRects = paragraph.getRectsForPlaceholders();
-63. // 获取第一个占位符的左边界
-64. let left = placeholderRects[0].rect.left;
-65. // 获取第一个占位符的上边界
-66. let top = placeholderRects[0].rect.top;
-67. // 获取第一个占位符的右边界
-68. let right = placeholderRects[0].rect.right;
-69. // 获取第一个占位符的下边界
-70. let bottom = placeholderRects[0].rect.bottom;
-71. let pen: drawing.Pen =  new drawing.Pen();
-72. let penColor : common2D.Color = { alpha: 0xFF, red: 0xFF, green: 0x00, blue: 0x00 };
-73. pen.setColor(penColor);
-74. canvas.attachPen(pen);
-75. // 使用draw方法绘制占位符矩形框
-76. canvas.drawRect(left,top,right,bottom);
-77. }
-78. }
-
-80. // 创建一个MyRenderNode对象
-81. const textNode = new MyRenderNode();
-82. // 定义newNode的像素格式
-83. textNode.frame = {
-84. x: 0,
-85. y: 0,
-86. width: 400,
-87. height: 600,
-88. };
-89. textNode.pivot = { x: 0.2, y: 0.8 };
-90. textNode.scale = { x: 1, y: 1 };
-
-92. class MyNodeController extends NodeController {
-93. private rootNode: FrameNode | null = null;
-
-95. makeNode(uiContext: UIContext): FrameNode {
-96. this.rootNode = new FrameNode(uiContext);
-97. if (this.rootNode == null) {
-98. return this.rootNode;
-99. }
-100. const renderNode = this.rootNode.getRenderNode();
-101. if (renderNode != null) {
-102. renderNode.frame = {
-103. x: 0,
-104. y: 0,
-105. width: 10,
-106. height: 500
-107. };
-108. }
-109. return this.rootNode;
-110. }
-
-112. addNode(node: RenderNode): void {
-113. if (this.rootNode == null) {
-114. return;
-115. }
-116. const renderNode = this.rootNode.getRenderNode();
-117. if (renderNode != null) {
-118. renderNode.appendChild(node);
-119. }
-120. }
-
-122. clearNodes(): void {
-123. if (this.rootNode == null) {
-124. return;
-125. }
-126. const renderNode = this.rootNode.getRenderNode();
-127. if (renderNode != null) {
-128. renderNode.clearChildren();
-129. }
-130. }
-131. }
-
-133. let myNodeController: MyNodeController = new MyNodeController();
-
-135. async function performTask() {
-136. myNodeController.clearNodes();
-137. myNodeController.addNode(textNode);
-138. }
-
-140. @Entry
-141. @Component
-142. struct Font08 {
-143. @State src: Resource = $r('app.media.startIcon');
-144. build() {
-145. Column() {
-146. Row() {
-147. NodeContainer(myNodeController)
-148. .height('100%')
-149. .width('100%')
-150. Image(this.src)
-151. .width('0%').height('0%')
-152. .onComplete(
-153. () => {
-154. performTask();
-155. })
-156. }
-157. .width('100%')
-158. }
-159. }
-160. }
-```
-
-[ComplexStyleExample2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/ComplexTextDrawing/entry/src/main/ets/pages/complexStyle/ComplexStyleExample2.ets#L16-L177)
 
 具体示意效果如下所示：
 
@@ -673,135 +676,133 @@ content_hash: sha256:0f9e74273e4782c120b369bd272224c876ff613af48332f275f31f38897
 
 这里以垂直对齐-居中对齐特性为例，呈现文本垂直方向排版的特性。
 
+```typescript
+import { NodeController, FrameNode, RenderNode, DrawContext, UIContext } from '@kit.ArkUI'
+import { text } from '@kit.ArkGraphics2D'
+
+// 创建一个MyRenderNode类，并绘制文本。
+class MyRenderNode extends RenderNode {
+  async draw(context: DrawContext) {
+    let canvas = context.canvas;
+
+    let myTextStyle: text.TextStyle = {
+      color: {
+        alpha: 255,
+        red: 255,
+        green: 0,
+        blue: 0
+      },
+      fontSize: 30,
+      // 开启行高缩放
+      heightOnly: true,
+      // 行高缩放系数为字号的2倍
+      heightScale: 2
+    };
+
+    let myParagraphStyle: text.ParagraphStyle = {
+      textStyle: myTextStyle,
+      // 设置垂直对齐-居中对齐模式
+      verticalAlign: text.TextVerticalAlign.CENTER,
+    };
+
+    let fontCollection = text.FontCollection.getGlobalInstance();
+    let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+
+    // 设置待排版文本要应用的样式
+    paragraphBuilder.pushStyle(myTextStyle);
+    // 添加文本
+    paragraphBuilder.addText('VerticalAlignment-center');
+
+    // 生成段落
+    let paragraph = paragraphBuilder.build();
+    // 布局
+    paragraph.layoutSync(1000);
+    // 绘制文本
+    paragraph.paint(canvas, 0, 0);
+  }
+}
+
+// 创建一个MyRenderNode对象
+const textNode = new MyRenderNode();
+// 定义newNode的像素格式
+textNode.frame = {
+  x: 0,
+  y: 0,
+  width: 400,
+  height: 600
+};
+textNode.pivot = { x: 0.2, y: 0.8 };
+textNode.scale = { x: 1, y: 1 };
+
+class MyNodeController extends NodeController {
+  private rootNode: FrameNode | null = null;
+
+  makeNode(uiContext: UIContext): FrameNode {
+    this.rootNode = new FrameNode(uiContext);
+    if (this.rootNode == null) {
+      return this.rootNode;
+    }
+    const renderNode = this.rootNode.getRenderNode();
+    if (renderNode != null) {
+      renderNode.frame = {
+        x: 0,
+        y: 0,
+        width: 10,
+        height: 500
+      }
+      renderNode.pivot = { x: 50, y: 50 };
+    }
+    return this.rootNode;
+  }
+
+  addNode(node: RenderNode): void {
+    if (this.rootNode == null) {
+      return;
+    }
+    const renderNode = this.rootNode.getRenderNode();
+    if (renderNode != null) {
+      renderNode.appendChild(node);
+    }
+  }
+
+  clearNodes(): void {
+    if (this.rootNode == null) {
+      return;
+    }
+    const renderNode = this.rootNode.getRenderNode();
+    if (renderNode != null) {
+      renderNode.clearChildren();
+    }
+  }
+}
+
+let myNodeController: MyNodeController = new MyNodeController();
+
+async function performTask() {
+  myNodeController.clearNodes();
+  myNodeController.addNode(textNode);
+}
+
+@Entry
+@Component
+struct Font08 {
+  @State src: Resource = $r('app.media.startIcon');
+  build() {
+    Column() {
+      Row() {
+        NodeContainer(myNodeController)
+          .height('100%')
+          .width('100%')
+        Text('Test for vertical alignment')
+          .onAppear(() => {
+            performTask();
+          })
+      }
+      .width('100%')
+    }
+  }
+}
 ```
-1. import { NodeController, FrameNode, RenderNode, DrawContext, UIContext } from '@kit.ArkUI'
-2. import { text } from '@kit.ArkGraphics2D'
-
-4. // 创建一个MyRenderNode类，并绘制文本。
-5. class MyRenderNode extends RenderNode {
-6. async draw(context: DrawContext) {
-7. let canvas = context.canvas;
-
-9. let myTextStyle: text.TextStyle = {
-10. color: {
-11. alpha: 255,
-12. red: 255,
-13. green: 0,
-14. blue: 0
-15. },
-16. fontSize: 30,
-17. // 开启行高缩放
-18. heightOnly: true,
-19. // 行高缩放系数为字号的2倍
-20. heightScale: 2
-21. };
-
-23. let myParagraphStyle: text.ParagraphStyle = {
-24. textStyle: myTextStyle,
-25. // 设置垂直对齐-居中对齐模式
-26. verticalAlign: text.TextVerticalAlign.CENTER,
-27. };
-
-29. let fontCollection = text.FontCollection.getGlobalInstance();
-30. let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
-
-32. // 设置待排版文本要应用的样式
-33. paragraphBuilder.pushStyle(myTextStyle);
-34. // 添加文本
-35. paragraphBuilder.addText('VerticalAlignment-center');
-
-37. // 生成段落
-38. let paragraph = paragraphBuilder.build();
-39. // 布局
-40. paragraph.layoutSync(1000);
-41. // 绘制文本
-42. paragraph.paint(canvas, 0, 0);
-43. }
-44. }
-
-46. // 创建一个MyRenderNode对象
-47. const textNode = new MyRenderNode();
-48. // 定义newNode的像素格式
-49. textNode.frame = {
-50. x: 0,
-51. y: 0,
-52. width: 400,
-53. height: 600
-54. };
-55. textNode.pivot = { x: 0.2, y: 0.8 };
-56. textNode.scale = { x: 1, y: 1 };
-
-58. class MyNodeController extends NodeController {
-59. private rootNode: FrameNode | null = null;
-
-61. makeNode(uiContext: UIContext): FrameNode {
-62. this.rootNode = new FrameNode(uiContext);
-63. if (this.rootNode == null) {
-64. return this.rootNode;
-65. }
-66. const renderNode = this.rootNode.getRenderNode();
-67. if (renderNode != null) {
-68. renderNode.frame = {
-69. x: 0,
-70. y: 0,
-71. width: 10,
-72. height: 500
-73. }
-74. renderNode.pivot = { x: 50, y: 50 };
-75. }
-76. return this.rootNode;
-77. }
-
-79. addNode(node: RenderNode): void {
-80. if (this.rootNode == null) {
-81. return;
-82. }
-83. const renderNode = this.rootNode.getRenderNode();
-84. if (renderNode != null) {
-85. renderNode.appendChild(node);
-86. }
-87. }
-
-89. clearNodes(): void {
-90. if (this.rootNode == null) {
-91. return;
-92. }
-93. const renderNode = this.rootNode.getRenderNode();
-94. if (renderNode != null) {
-95. renderNode.clearChildren();
-96. }
-97. }
-98. }
-
-100. let myNodeController: MyNodeController = new MyNodeController();
-
-102. async function performTask() {
-103. myNodeController.clearNodes();
-104. myNodeController.addNode(textNode);
-105. }
-
-107. @Entry
-108. @Component
-109. struct Font08 {
-110. @State src: Resource = $r('app.media.startIcon');
-111. build() {
-112. Column() {
-113. Row() {
-114. NodeContainer(myNodeController)
-115. .height('100%')
-116. .width('100%')
-117. Text('Test for vertical alignment')
-118. .onAppear(() => {
-119. performTask();
-120. })
-121. }
-122. .width('100%')
-123. }
-124. }
-125. }
-```
-
-[ComplexStyleExample3.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/ComplexTextDrawing/entry/src/main/ets/pages/complexStyle/ComplexStyleExample3.ets#L16-L142)
 
 具体示意效果如下所示：
 
@@ -816,145 +817,143 @@ content_hash: sha256:0f9e74273e4782c120b369bd272224c876ff613af48332f275f31f38897
 
 这里以下标样式为例，呈现上下标文本排版特性。
 
+```typescript
+import { NodeController, FrameNode, RenderNode, DrawContext, UIContext } from '@kit.ArkUI'
+import { text } from '@kit.ArkGraphics2D'
+
+// 创建一个MyRenderNode类，并绘制文本。
+class MyRenderNode extends RenderNode {
+  async draw(context: DrawContext) {
+    let canvas = context.canvas;
+
+    let myTextStyle: text.TextStyle = {
+      color: {
+        alpha: 255,
+        red: 255,
+        green: 0,
+        blue: 0
+      },
+      fontSize: 30,
+    };
+
+    let subScriptStyle: text.TextStyle = {
+      color: {
+        alpha: 255,
+        red: 255,
+        green: 0,
+        blue: 0
+      },
+      fontSize: 30,
+      // 设置下标样式
+      badgeType: text.TextBadgeType.TEXT_SUBSCRIPT
+    };
+
+    let myParagraphStyle: text.ParagraphStyle = {
+      textStyle: myTextStyle,
+    };
+
+    let fontCollection = text.FontCollection.getGlobalInstance();
+    let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+
+    // 设置待排版文本要应用的样式
+    paragraphBuilder.pushStyle(myTextStyle);
+    // 添加文本
+    paragraphBuilder.addText('The chemical formula for water: H');
+    paragraphBuilder.pushStyle(subScriptStyle);
+    paragraphBuilder.addText('2');
+    paragraphBuilder.pushStyle(myTextStyle);
+    paragraphBuilder.addText('o');
+
+    // 生成段落
+    let paragraph = paragraphBuilder.build();
+    // 布局
+    paragraph.layoutSync(1000);
+    // 绘制文本
+    paragraph.paint(canvas, 0, 0);
+  }
+}
+
+// 创建一个MyRenderNode对象
+const textNode = new MyRenderNode();
+// 定义newNode的像素格式
+textNode.frame = {
+  x: 0,
+  y: 0,
+  width: 400,
+  height: 600
+};
+textNode.pivot = { x: 0.2, y: 0.8 };
+textNode.scale = { x: 1, y: 1 };
+
+class MyNodeController extends NodeController {
+  private rootNode: FrameNode | null = null;
+
+  makeNode(uiContext: UIContext): FrameNode {
+    this.rootNode = new FrameNode(uiContext);
+    if (this.rootNode == null) {
+      return this.rootNode;
+    }
+    const renderNode = this.rootNode.getRenderNode();
+    if (renderNode != null) {
+      renderNode.frame = {
+        x: 0,
+        y: 0,
+        width: 10,
+        height: 500
+      }
+      renderNode.pivot = { x: 50, y: 50 };
+    }
+    return this.rootNode;
+  }
+
+  addNode(node: RenderNode): void {
+    if (this.rootNode == null) {
+      return;
+    }
+    const renderNode = this.rootNode.getRenderNode();
+    if (renderNode != null) {
+      renderNode.appendChild(node);
+    }
+  }
+
+  clearNodes(): void {
+    if (this.rootNode == null) {
+      return;
+    }
+    const renderNode = this.rootNode.getRenderNode();
+    if (renderNode != null) {
+      renderNode.clearChildren();
+    }
+  }
+}
+
+let myNodeController: MyNodeController = new MyNodeController();
+
+async function performTask() {
+  myNodeController.clearNodes();
+  myNodeController.addNode(textNode);
+}
+
+@Entry
+@Component
+struct Font08 {
+  @State src: Resource = $r('app.media.startIcon');
+  build() {
+    Column() {
+      Row() {
+        NodeContainer(myNodeController)
+          .height('100%')
+          .width('100%')
+        Text('Test for superscript and subscript')
+          .onAppear(() => {
+            performTask();
+          })
+      }
+    }
+    .width('100%')
+  }
+}
 ```
-1. import { NodeController, FrameNode, RenderNode, DrawContext, UIContext } from '@kit.ArkUI'
-2. import { text } from '@kit.ArkGraphics2D'
-
-4. // 创建一个MyRenderNode类，并绘制文本。
-5. class MyRenderNode extends RenderNode {
-6. async draw(context: DrawContext) {
-7. let canvas = context.canvas;
-
-9. let myTextStyle: text.TextStyle = {
-10. color: {
-11. alpha: 255,
-12. red: 255,
-13. green: 0,
-14. blue: 0
-15. },
-16. fontSize: 30,
-17. };
-
-19. let subScriptStyle: text.TextStyle = {
-20. color: {
-21. alpha: 255,
-22. red: 255,
-23. green: 0,
-24. blue: 0
-25. },
-26. fontSize: 30,
-27. // 设置下标样式
-28. badgeType: text.TextBadgeType.TEXT_SUBSCRIPT
-29. };
-
-31. let myParagraphStyle: text.ParagraphStyle = {
-32. textStyle: myTextStyle,
-33. };
-
-35. let fontCollection = text.FontCollection.getGlobalInstance();
-36. let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
-
-38. // 设置待排版文本要应用的样式
-39. paragraphBuilder.pushStyle(myTextStyle);
-40. // 添加文本
-41. paragraphBuilder.addText('The chemical formula for water: H');
-42. paragraphBuilder.pushStyle(subScriptStyle);
-43. paragraphBuilder.addText('2');
-44. paragraphBuilder.pushStyle(myTextStyle);
-45. paragraphBuilder.addText('o');
-
-47. // 生成段落
-48. let paragraph = paragraphBuilder.build();
-49. // 布局
-50. paragraph.layoutSync(1000);
-51. // 绘制文本
-52. paragraph.paint(canvas, 0, 0);
-53. }
-54. }
-
-56. // 创建一个MyRenderNode对象
-57. const textNode = new MyRenderNode();
-58. // 定义newNode的像素格式
-59. textNode.frame = {
-60. x: 0,
-61. y: 0,
-62. width: 400,
-63. height: 600
-64. };
-65. textNode.pivot = { x: 0.2, y: 0.8 };
-66. textNode.scale = { x: 1, y: 1 };
-
-68. class MyNodeController extends NodeController {
-69. private rootNode: FrameNode | null = null;
-
-71. makeNode(uiContext: UIContext): FrameNode {
-72. this.rootNode = new FrameNode(uiContext);
-73. if (this.rootNode == null) {
-74. return this.rootNode;
-75. }
-76. const renderNode = this.rootNode.getRenderNode();
-77. if (renderNode != null) {
-78. renderNode.frame = {
-79. x: 0,
-80. y: 0,
-81. width: 10,
-82. height: 500
-83. }
-84. renderNode.pivot = { x: 50, y: 50 };
-85. }
-86. return this.rootNode;
-87. }
-
-89. addNode(node: RenderNode): void {
-90. if (this.rootNode == null) {
-91. return;
-92. }
-93. const renderNode = this.rootNode.getRenderNode();
-94. if (renderNode != null) {
-95. renderNode.appendChild(node);
-96. }
-97. }
-
-99. clearNodes(): void {
-100. if (this.rootNode == null) {
-101. return;
-102. }
-103. const renderNode = this.rootNode.getRenderNode();
-104. if (renderNode != null) {
-105. renderNode.clearChildren();
-106. }
-107. }
-108. }
-
-110. let myNodeController: MyNodeController = new MyNodeController();
-
-112. async function performTask() {
-113. myNodeController.clearNodes();
-114. myNodeController.addNode(textNode);
-115. }
-
-117. @Entry
-118. @Component
-119. struct Font08 {
-120. @State src: Resource = $r('app.media.startIcon');
-121. build() {
-122. Column() {
-123. Row() {
-124. NodeContainer(myNodeController)
-125. .height('100%')
-126. .width('100%')
-127. Text('Test for superscript and subscript')
-128. .onAppear(() => {
-129. performTask();
-130. })
-131. }
-132. }
-133. .width('100%')
-134. }
-135. }
-```
-
-[ComplexStyleExample4.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/ComplexTextDrawing/entry/src/main/ets/pages/complexStyle/ComplexStyleExample4.ets#L16-L152)
 
 具体示意效果如下所示：
 
@@ -967,131 +966,129 @@ content_hash: sha256:0f9e74273e4782c120b369bd272224c876ff613af48332f275f31f38897
 
 这里以高对比度为例，呈现高对比度文字的绘制与显示。
 
+```typescript
+import { NodeController, FrameNode, RenderNode, DrawContext, UIContext} from '@kit.ArkUI'
+import { text } from '@kit.ArkGraphics2D'
+
+// 创建一个MyRenderNode类，并绘制文本。
+class MyRenderNode extends RenderNode {
+  async draw(context: DrawContext) {
+    let canvas = context.canvas;
+
+    // 开启APP的文字渲染高对比度配置
+    text.setTextHighContrast(text.TextHighContrast.TEXT_APP_ENABLE_HIGH_CONTRAST);
+
+    let myTextStyle: text.TextStyle = {
+      color: {
+        alpha: 255,
+        red: 111,
+        green: 255,
+        blue: 255
+      },
+      fontSize: 100,
+    };
+
+    let myParagraphStyle: text.ParagraphStyle = {
+      textStyle: myTextStyle,
+    };
+
+    let fontCollection = text.FontCollection.getGlobalInstance();
+    let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+
+    // 更新文本样式
+    paragraphBuilder.pushStyle(myTextStyle);
+    // 添加文本
+    paragraphBuilder.addText('Hello World');
+
+    // 生成段落
+    let paragraph = paragraphBuilder.build();
+    // 布局
+    paragraph.layoutSync(1250);
+    // 绘制文本
+    paragraph.paint(canvas, 10, 800);
+  }
+}
+
+// 创建一个MyRenderNode对象
+const textNode = new MyRenderNode();
+// 定义newNode的像素格式
+textNode.frame = {
+  x: 0,
+  y: 0,
+  width: 400,
+  height: 600
+};
+textNode.pivot = { x: 0.2, y: 0.8 };
+textNode.scale = { x: 1, y: 1 };
+
+class MyNodeController extends NodeController {
+  private rootNode: FrameNode | null = null;
+
+  makeNode(uiContext: UIContext): FrameNode {
+    this.rootNode = new FrameNode(uiContext);
+    if (this.rootNode == null) {
+      return this.rootNode;
+    }
+    const renderNode = this.rootNode.getRenderNode();
+    if (renderNode != null) {
+      renderNode.frame = {
+        x: 0,
+        y: 0,
+        width: 10,
+        height: 500
+      };
+      renderNode.pivot = { x: 0.2, y: 0.8 };
+    }
+    return this.rootNode;
+  }
+
+  addNode(node: RenderNode): void {
+    if (this.rootNode == null) {
+      return;
+    }
+    const renderNode = this.rootNode.getRenderNode();
+    if (renderNode != null) {
+      renderNode.appendChild(node);
+    }
+  }
+
+  clearNodes(): void {
+    if (this.rootNode == null) {
+      return;
+    }
+    const renderNode = this.rootNode.getRenderNode();
+    if (renderNode != null) {
+      renderNode.clearChildren();
+    }
+  }
+}
+
+let myNodeController: MyNodeController = new MyNodeController();
+
+async function performTask() {
+  myNodeController.clearNodes();
+  myNodeController.addNode(textNode);
+}
+
+@Entry
+@Component
+struct Font08 {
+  build() {
+    Column() {
+      Row() {
+        NodeContainer(myNodeController)
+          .height('100%')
+          .width('100%')
+        Text('Test high contrast')
+          .onAppear(() => {
+            performTask();
+          })
+      }
+      .width('100%')
+    }
+  }
+}
 ```
-1. import { NodeController, FrameNode, RenderNode, DrawContext, UIContext} from '@kit.ArkUI'
-2. import { text } from '@kit.ArkGraphics2D'
-
-4. // 创建一个MyRenderNode类，并绘制文本。
-5. class MyRenderNode extends RenderNode {
-6. async draw(context: DrawContext) {
-7. let canvas = context.canvas;
-
-9. // 开启APP的文字渲染高对比度配置
-10. text.setTextHighContrast(text.TextHighContrast.TEXT_APP_ENABLE_HIGH_CONTRAST);
-
-12. let myTextStyle: text.TextStyle = {
-13. color: {
-14. alpha: 255,
-15. red: 111,
-16. green: 255,
-17. blue: 255
-18. },
-19. fontSize: 100,
-20. };
-
-22. let myParagraphStyle: text.ParagraphStyle = {
-23. textStyle: myTextStyle,
-24. };
-
-26. let fontCollection = text.FontCollection.getGlobalInstance();
-27. let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
-
-29. // 更新文本样式
-30. paragraphBuilder.pushStyle(myTextStyle);
-31. // 添加文本
-32. paragraphBuilder.addText('Hello World');
-
-34. // 生成段落
-35. let paragraph = paragraphBuilder.build();
-36. // 布局
-37. paragraph.layoutSync(1250);
-38. // 绘制文本
-39. paragraph.paint(canvas, 10, 800);
-40. }
-41. }
-
-43. // 创建一个MyRenderNode对象
-44. const textNode = new MyRenderNode();
-45. // 定义newNode的像素格式
-46. textNode.frame = {
-47. x: 0,
-48. y: 0,
-49. width: 400,
-50. height: 600
-51. };
-52. textNode.pivot = { x: 0.2, y: 0.8 };
-53. textNode.scale = { x: 1, y: 1 };
-
-55. class MyNodeController extends NodeController {
-56. private rootNode: FrameNode | null = null;
-
-58. makeNode(uiContext: UIContext): FrameNode {
-59. this.rootNode = new FrameNode(uiContext);
-60. if (this.rootNode == null) {
-61. return this.rootNode;
-62. }
-63. const renderNode = this.rootNode.getRenderNode();
-64. if (renderNode != null) {
-65. renderNode.frame = {
-66. x: 0,
-67. y: 0,
-68. width: 10,
-69. height: 500
-70. };
-71. renderNode.pivot = { x: 0.2, y: 0.8 };
-72. }
-73. return this.rootNode;
-74. }
-
-76. addNode(node: RenderNode): void {
-77. if (this.rootNode == null) {
-78. return;
-79. }
-80. const renderNode = this.rootNode.getRenderNode();
-81. if (renderNode != null) {
-82. renderNode.appendChild(node);
-83. }
-84. }
-
-86. clearNodes(): void {
-87. if (this.rootNode == null) {
-88. return;
-89. }
-90. const renderNode = this.rootNode.getRenderNode();
-91. if (renderNode != null) {
-92. renderNode.clearChildren();
-93. }
-94. }
-95. }
-
-97. let myNodeController: MyNodeController = new MyNodeController();
-
-99. async function performTask() {
-100. myNodeController.clearNodes();
-101. myNodeController.addNode(textNode);
-102. }
-
-104. @Entry
-105. @Component
-106. struct Font08 {
-107. build() {
-108. Column() {
-109. Row() {
-110. NodeContainer(myNodeController)
-111. .height('100%')
-112. .width('100%')
-113. Text('Test high contrast')
-114. .onAppear(() => {
-115. performTask();
-116. })
-117. }
-118. .width('100%')
-119. }
-120. }
-121. }
-```
-
-[ComplexStyleExample5.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/ComplexTextDrawing/entry/src/main/ets/pages/complexStyle/ComplexStyleExample5.ets#L16-L138)
 
 具体示意效果如下所示：
 
@@ -1104,133 +1101,131 @@ content_hash: sha256:0f9e74273e4782c120b369bd272224c876ff613af48332f275f31f38897
 
 这里以行高上限与行高下限设置相同值为例，呈现固定行高时的绘制表现。
 
+```typescript
+import { NodeController, FrameNode, RenderNode, DrawContext, UIContext } from '@kit.ArkUI'
+import { text } from '@kit.ArkGraphics2D'
+
+// 创建一个MyRenderNode类，并绘制文本。
+class MyRenderNode extends RenderNode {
+  async draw(context: DrawContext) {
+    let canvas = context.canvas;
+
+    let myTextStyle: text.TextStyle = {
+      color: {
+        alpha: 255,
+        red: 255,
+        green: 0,
+        blue: 0
+      },
+      fontSize: 50,
+      // 设置行高上限
+      lineHeightMaximum: 65,
+      // 设置行高下限
+      lineHeightMinimum: 65,
+    };
+
+    let myParagraphStyle: text.ParagraphStyle = {
+      textStyle: myTextStyle,
+    };
+
+    let fontCollection = text.FontCollection.getGlobalInstance();
+    let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+
+    // 设置待排版文本要应用的样式
+    paragraphBuilder.pushStyle(myTextStyle);
+    // 添加文本
+    paragraphBuilder.addText('Hello World!');
+
+    // 生成段落
+    let paragraph = paragraphBuilder.build();
+    // 布局
+    paragraph.layoutSync(1000);
+    // 绘制文本
+    paragraph.paint(canvas, 0, 0);
+  }
+}
+
+// 创建一个MyRenderNode对象
+const textNode = new MyRenderNode()
+// 定义newNode的像素格式
+textNode.frame = {
+  x: 0,
+  y: 0,
+  width: 400,
+  height: 600
+}
+textNode.pivot = { x: 0.2, y: 0.8 };
+textNode.scale = { x: 1, y: 1 };
+
+class MyNodeController extends NodeController {
+  private rootNode: FrameNode | null = null;
+
+  makeNode(uiContext: UIContext): FrameNode {
+    this.rootNode = new FrameNode(uiContext)
+    if (this.rootNode == null) {
+      return this.rootNode;
+    }
+    const renderNode = this.rootNode.getRenderNode();
+    if (renderNode != null) {
+      renderNode.frame = {
+        x: 0,
+        y: 0,
+        width: 10,
+        height: 500
+      }
+      renderNode.pivot = { x: 50, y: 50 };
+    }
+    return this.rootNode;
+  }
+
+  addNode(node: RenderNode): void {
+    if (this.rootNode == null) {
+      return;
+    }
+    const renderNode = this.rootNode.getRenderNode();
+    if (renderNode != null) {
+      renderNode.appendChild(node);
+    }
+  }
+
+  clearNodes(): void {
+    if (this.rootNode == null) {
+      return;
+    }
+    const renderNode = this.rootNode.getRenderNode()
+    if (renderNode != null) {
+      renderNode.clearChildren();
+    }
+  }
+}
+
+let myNodeController: MyNodeController = new MyNodeController();
+
+async function performTask() {
+  myNodeController.clearNodes();
+  myNodeController.addNode(textNode);
+}
+
+@Entry
+@Component
+struct Font08 {
+  @State src: Resource = $r('app.media.startIcon')
+  build() {
+    Column() {
+      Row() {
+        NodeContainer(myNodeController)
+          .height('100%')
+          .width('100%')
+        Text('Test for line height limit')
+          .onAppear(() => {
+            performTask();
+          })
+      }
+    }
+    .width('100%')
+  }
+}
 ```
-1. import { NodeController, FrameNode, RenderNode, DrawContext, UIContext } from '@kit.ArkUI'
-2. import { text } from '@kit.ArkGraphics2D'
-
-4. // 创建一个MyRenderNode类，并绘制文本。
-5. class MyRenderNode extends RenderNode {
-6. async draw(context: DrawContext) {
-7. let canvas = context.canvas;
-
-9. let myTextStyle: text.TextStyle = {
-10. color: {
-11. alpha: 255,
-12. red: 255,
-13. green: 0,
-14. blue: 0
-15. },
-16. fontSize: 50,
-17. // 设置行高上限
-18. lineHeightMaximum: 65,
-19. // 设置行高下限
-20. lineHeightMinimum: 65,
-21. };
-
-23. let myParagraphStyle: text.ParagraphStyle = {
-24. textStyle: myTextStyle,
-25. };
-
-27. let fontCollection = text.FontCollection.getGlobalInstance();
-28. let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
-
-30. // 设置待排版文本要应用的样式
-31. paragraphBuilder.pushStyle(myTextStyle);
-32. // 添加文本
-33. paragraphBuilder.addText('Hello World!');
-
-35. // 生成段落
-36. let paragraph = paragraphBuilder.build();
-37. // 布局
-38. paragraph.layoutSync(1000);
-39. // 绘制文本
-40. paragraph.paint(canvas, 0, 0);
-41. }
-42. }
-
-44. // 创建一个MyRenderNode对象
-45. const textNode = new MyRenderNode()
-46. // 定义newNode的像素格式
-47. textNode.frame = {
-48. x: 0,
-49. y: 0,
-50. width: 400,
-51. height: 600
-52. }
-53. textNode.pivot = { x: 0.2, y: 0.8 };
-54. textNode.scale = { x: 1, y: 1 };
-
-56. class MyNodeController extends NodeController {
-57. private rootNode: FrameNode | null = null;
-
-59. makeNode(uiContext: UIContext): FrameNode {
-60. this.rootNode = new FrameNode(uiContext)
-61. if (this.rootNode == null) {
-62. return this.rootNode;
-63. }
-64. const renderNode = this.rootNode.getRenderNode();
-65. if (renderNode != null) {
-66. renderNode.frame = {
-67. x: 0,
-68. y: 0,
-69. width: 10,
-70. height: 500
-71. }
-72. renderNode.pivot = { x: 50, y: 50 };
-73. }
-74. return this.rootNode;
-75. }
-
-77. addNode(node: RenderNode): void {
-78. if (this.rootNode == null) {
-79. return;
-80. }
-81. const renderNode = this.rootNode.getRenderNode();
-82. if (renderNode != null) {
-83. renderNode.appendChild(node);
-84. }
-85. }
-
-87. clearNodes(): void {
-88. if (this.rootNode == null) {
-89. return;
-90. }
-91. const renderNode = this.rootNode.getRenderNode()
-92. if (renderNode != null) {
-93. renderNode.clearChildren();
-94. }
-95. }
-96. }
-
-98. let myNodeController: MyNodeController = new MyNodeController();
-
-100. async function performTask() {
-101. myNodeController.clearNodes();
-102. myNodeController.addNode(textNode);
-103. }
-
-105. @Entry
-106. @Component
-107. struct Font08 {
-108. @State src: Resource = $r('app.media.startIcon')
-109. build() {
-110. Column() {
-111. Row() {
-112. NodeContainer(myNodeController)
-113. .height('100%')
-114. .width('100%')
-115. Text('Test for line height limit')
-116. .onAppear(() => {
-117. performTask();
-118. })
-119. }
-120. }
-121. .width('100%')
-122. }
-123. }
-```
-
-[ComplexStyleExample6.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/ComplexTextDrawing/entry/src/main/ets/pages/complexStyle/ComplexStyleExample6.ets#L16-L140)
 
 具体效果如下所示：
 
@@ -1243,135 +1238,133 @@ content_hash: sha256:0f9e74273e4782c120b369bd272224c876ff613af48332f275f31f38897
 
 这里以行高缩放且行高缩放样式FontHeight为例，呈现行高调整后文字的绘制与显示。
 
+```typescript
+import { NodeController, FrameNode, RenderNode, DrawContext, UIContext } from '@kit.ArkUI'
+import { text } from '@kit.ArkGraphics2D'
+
+// 创建一个MyRenderNode类，并绘制文本。
+class MyRenderNode extends RenderNode {
+  async draw(context: DrawContext) {
+    let canvas = context.canvas;
+
+    let myTextStyle: text.TextStyle = {
+      color: {
+        alpha: 255,
+        red: 255,
+        green: 0,
+        blue: 0
+      },
+      fontSize: 50,
+      // 开启行高缩放开关
+      heightOnly: true,
+      // 设置行高缩放系数
+      heightScale: 1.5,
+      // 设置行高缩放风格
+      lineHeightStyle: text.LineHeightStyle.FONT_HEIGHT,
+    };
+
+    let myParagraphStyle: text.ParagraphStyle = {
+      textStyle: myTextStyle,
+    };
+
+    let fontCollection = text.FontCollection.getGlobalInstance();
+    let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+
+    // 设置待排版文本要应用的样式
+    paragraphBuilder.pushStyle(myTextStyle);
+    // 添加文本
+    paragraphBuilder.addText('Hello World!');
+
+    // 生成段落
+    let paragraph = paragraphBuilder.build();
+    // 布局
+    paragraph.layoutSync(1000);
+    // 绘制文本
+    paragraph.paint(canvas, 0, 0);
+  }
+}
+
+// 创建一个MyRenderNode对象
+const textNode = new MyRenderNode();
+// 定义newNode的像素格式
+textNode.frame = {
+  x: 0,
+  y: 0,
+  width: 400,
+  height: 600
+}
+textNode.pivot = { x: 0.2, y: 0.8 };
+textNode.scale = { x: 1, y: 1 };
+
+class MyNodeController extends NodeController {
+  private rootNode: FrameNode | null = null;
+
+  makeNode(uiContext: UIContext): FrameNode {
+    this.rootNode = new FrameNode(uiContext)
+    if (this.rootNode == null) {
+      return this.rootNode;
+    }
+    const renderNode = this.rootNode.getRenderNode();
+    if (renderNode != null) {
+      renderNode.frame = {
+        x: 0,
+        y: 0,
+        width: 10,
+        height: 500
+      };
+      renderNode.pivot = { x: 50, y: 50 };
+    }
+    return this.rootNode;
+  }
+
+  addNode(node: RenderNode): void {
+    if (this.rootNode == null) {
+      return
+    }
+    const renderNode = this.rootNode.getRenderNode();
+    if (renderNode != null) {
+      renderNode.appendChild(node);
+    }
+  }
+
+  clearNodes(): void {
+    if (this.rootNode == null) {
+      return;
+    }
+    const renderNode = this.rootNode.getRenderNode()
+    if (renderNode != null) {
+      renderNode.clearChildren();
+    }
+  }
+}
+
+let myNodeController: MyNodeController = new MyNodeController();
+
+async function performTask() {
+  myNodeController.clearNodes();
+  myNodeController.addNode(textNode);
+}
+
+@Entry
+@Component
+struct Font08 {
+  @State src: Resource = $r('app.media.startIcon')
+  build() {
+    Column() {
+      Row() {
+        NodeContainer(myNodeController)
+          .height('100%')
+          .width('100%')
+        Text('Test for line height limit')
+          .onAppear(() => {
+            performTask();
+          })
+      }
+    }
+    .width('100%')
+  }
+}
 ```
-1. import { NodeController, FrameNode, RenderNode, DrawContext, UIContext } from '@kit.ArkUI'
-2. import { text } from '@kit.ArkGraphics2D'
-
-4. // 创建一个MyRenderNode类，并绘制文本。
-5. class MyRenderNode extends RenderNode {
-6. async draw(context: DrawContext) {
-7. let canvas = context.canvas;
-
-9. let myTextStyle: text.TextStyle = {
-10. color: {
-11. alpha: 255,
-12. red: 255,
-13. green: 0,
-14. blue: 0
-15. },
-16. fontSize: 50,
-17. // 开启行高缩放开关
-18. heightOnly: true,
-19. // 设置行高缩放系数
-20. heightScale: 1.5,
-21. // 设置行高缩放风格
-22. lineHeightStyle: text.LineHeightStyle.FONT_HEIGHT,
-23. };
-
-25. let myParagraphStyle: text.ParagraphStyle = {
-26. textStyle: myTextStyle,
-27. };
-
-29. let fontCollection = text.FontCollection.getGlobalInstance();
-30. let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
-
-32. // 设置待排版文本要应用的样式
-33. paragraphBuilder.pushStyle(myTextStyle);
-34. // 添加文本
-35. paragraphBuilder.addText('Hello World!');
-
-37. // 生成段落
-38. let paragraph = paragraphBuilder.build();
-39. // 布局
-40. paragraph.layoutSync(1000);
-41. // 绘制文本
-42. paragraph.paint(canvas, 0, 0);
-43. }
-44. }
-
-46. // 创建一个MyRenderNode对象
-47. const textNode = new MyRenderNode();
-48. // 定义newNode的像素格式
-49. textNode.frame = {
-50. x: 0,
-51. y: 0,
-52. width: 400,
-53. height: 600
-54. }
-55. textNode.pivot = { x: 0.2, y: 0.8 };
-56. textNode.scale = { x: 1, y: 1 };
-
-58. class MyNodeController extends NodeController {
-59. private rootNode: FrameNode | null = null;
-
-61. makeNode(uiContext: UIContext): FrameNode {
-62. this.rootNode = new FrameNode(uiContext)
-63. if (this.rootNode == null) {
-64. return this.rootNode;
-65. }
-66. const renderNode = this.rootNode.getRenderNode();
-67. if (renderNode != null) {
-68. renderNode.frame = {
-69. x: 0,
-70. y: 0,
-71. width: 10,
-72. height: 500
-73. };
-74. renderNode.pivot = { x: 50, y: 50 };
-75. }
-76. return this.rootNode;
-77. }
-
-79. addNode(node: RenderNode): void {
-80. if (this.rootNode == null) {
-81. return
-82. }
-83. const renderNode = this.rootNode.getRenderNode();
-84. if (renderNode != null) {
-85. renderNode.appendChild(node);
-86. }
-87. }
-
-89. clearNodes(): void {
-90. if (this.rootNode == null) {
-91. return;
-92. }
-93. const renderNode = this.rootNode.getRenderNode()
-94. if (renderNode != null) {
-95. renderNode.clearChildren();
-96. }
-97. }
-98. }
-
-100. let myNodeController: MyNodeController = new MyNodeController();
-
-102. async function performTask() {
-103. myNodeController.clearNodes();
-104. myNodeController.addNode(textNode);
-105. }
-
-107. @Entry
-108. @Component
-109. struct Font08 {
-110. @State src: Resource = $r('app.media.startIcon')
-111. build() {
-112. Column() {
-113. Row() {
-114. NodeContainer(myNodeController)
-115. .height('100%')
-116. .width('100%')
-117. Text('Test for line height limit')
-118. .onAppear(() => {
-119. performTask();
-120. })
-121. }
-122. }
-123. .width('100%')
-124. }
-125. }
-```
-
-[ComplexStyleExample7.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/ComplexTextDrawing/entry/src/main/ets/pages/complexStyle/ComplexStyleExample7.ets#L16-L142)
 
 具体效果如下所示：
 
@@ -1384,133 +1377,131 @@ content_hash: sha256:0f9e74273e4782c120b369bd272224c876ff613af48332f275f31f38897
 
 这里以关闭段落上升部下降部并设置行间距为例，呈现行间距增加后的文本绘制与显示。
 
+```typescript
+import { NodeController, FrameNode, RenderNode, DrawContext, UIContext } from '@kit.ArkUI'
+import { text } from '@kit.ArkGraphics2D'
+
+// 创建一个MyRenderNode类，并绘制文本。
+class MyRenderNode extends RenderNode {
+  async draw(context: DrawContext) {
+    let canvas = context.canvas;
+
+    let myTextStyle: text.TextStyle = {
+      color: {
+        alpha: 255,
+        red: 255,
+        green: 0,
+        blue: 0
+      },
+      fontSize: 50,
+    };
+
+    let myParagraphStyle: text.ParagraphStyle = {
+      textStyle: myTextStyle,
+      // 设置行间距
+      lineSpacing: 100,
+      // 关闭段落上升部和下降部
+      textHeightBehavior: text.TextHeightBehavior.DISABLE_ALL,
+    };
+
+    let fontCollection = text.FontCollection.getGlobalInstance();
+    let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+
+    // 设置待排版文本要应用的样式
+    paragraphBuilder.pushStyle(myTextStyle);
+    // 添加文本
+    paragraphBuilder.addText('Hello World!');
+
+    // 生成段落
+    let paragraph = paragraphBuilder.build();
+    // 布局
+    paragraph.layoutSync(200);
+    // 绘制文本
+    paragraph.paint(canvas, 0, 0);
+  }
+}
+
+// 创建一个MyRenderNode对象
+const textNode = new MyRenderNode();
+// 定义newNode的像素格式
+textNode.frame = {
+  x: 0,
+  y: 0,
+  width: 400,
+  height: 600
+}
+textNode.pivot = { x: 0.2, y: 0.8 };
+textNode.scale = { x: 1, y: 1 };
+
+class MyNodeController extends NodeController {
+  private rootNode: FrameNode | null = null;
+
+  makeNode(uiContext: UIContext): FrameNode {
+    this.rootNode = new FrameNode(uiContext);
+    if (this.rootNode == null) {
+      return this.rootNode
+    }
+    const renderNode = this.rootNode.getRenderNode();
+    if (renderNode != null) {
+      renderNode.frame = {
+        x: 0,
+        y: 0,
+        width: 10,
+        height: 500
+      }
+      renderNode.pivot = { x: 50, y: 50 };
+    }
+    return this.rootNode;
+  }
+
+  addNode(node: RenderNode): void {
+    if (this.rootNode == null) {
+      return;
+    }
+    const renderNode = this.rootNode.getRenderNode();
+    if (renderNode != null) {
+      renderNode.appendChild(node);
+    }
+  }
+
+  clearNodes(): void {
+    if (this.rootNode == null) {
+      return;
+    }
+    const renderNode = this.rootNode.getRenderNode();
+    if (renderNode != null) {
+      renderNode.clearChildren();
+    }
+  }
+}
+
+let myNodeController: MyNodeController = new MyNodeController();
+
+async function performTask() {
+  myNodeController.clearNodes();
+  myNodeController.addNode(textNode);
+}
+
+@Entry
+@Component
+struct Font08 {
+  @State src: Resource = $r('app.media.startIcon')
+  build() {
+    Column() {
+      Row() {
+        NodeContainer(myNodeController)
+          .height('100%')
+          .width('100%')
+        Text('Test for lineSpacing and height behavior')
+          .onAppear(() => {
+            performTask();
+          })
+      }
+    }
+    .width('100%')
+  }
+}
 ```
-1. import { NodeController, FrameNode, RenderNode, DrawContext, UIContext } from '@kit.ArkUI'
-2. import { text } from '@kit.ArkGraphics2D'
-
-4. // 创建一个MyRenderNode类，并绘制文本。
-5. class MyRenderNode extends RenderNode {
-6. async draw(context: DrawContext) {
-7. let canvas = context.canvas;
-
-9. let myTextStyle: text.TextStyle = {
-10. color: {
-11. alpha: 255,
-12. red: 255,
-13. green: 0,
-14. blue: 0
-15. },
-16. fontSize: 50,
-17. };
-
-19. let myParagraphStyle: text.ParagraphStyle = {
-20. textStyle: myTextStyle,
-21. // 设置行间距
-22. lineSpacing: 100,
-23. // 关闭段落上升部和下降部
-24. textHeightBehavior: text.TextHeightBehavior.DISABLE_ALL,
-25. };
-
-27. let fontCollection = text.FontCollection.getGlobalInstance();
-28. let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
-
-30. // 设置待排版文本要应用的样式
-31. paragraphBuilder.pushStyle(myTextStyle);
-32. // 添加文本
-33. paragraphBuilder.addText('Hello World!');
-
-35. // 生成段落
-36. let paragraph = paragraphBuilder.build();
-37. // 布局
-38. paragraph.layoutSync(200);
-39. // 绘制文本
-40. paragraph.paint(canvas, 0, 0);
-41. }
-42. }
-
-44. // 创建一个MyRenderNode对象
-45. const textNode = new MyRenderNode();
-46. // 定义newNode的像素格式
-47. textNode.frame = {
-48. x: 0,
-49. y: 0,
-50. width: 400,
-51. height: 600
-52. }
-53. textNode.pivot = { x: 0.2, y: 0.8 };
-54. textNode.scale = { x: 1, y: 1 };
-
-56. class MyNodeController extends NodeController {
-57. private rootNode: FrameNode | null = null;
-
-59. makeNode(uiContext: UIContext): FrameNode {
-60. this.rootNode = new FrameNode(uiContext);
-61. if (this.rootNode == null) {
-62. return this.rootNode
-63. }
-64. const renderNode = this.rootNode.getRenderNode();
-65. if (renderNode != null) {
-66. renderNode.frame = {
-67. x: 0,
-68. y: 0,
-69. width: 10,
-70. height: 500
-71. }
-72. renderNode.pivot = { x: 50, y: 50 };
-73. }
-74. return this.rootNode;
-75. }
-
-77. addNode(node: RenderNode): void {
-78. if (this.rootNode == null) {
-79. return;
-80. }
-81. const renderNode = this.rootNode.getRenderNode();
-82. if (renderNode != null) {
-83. renderNode.appendChild(node);
-84. }
-85. }
-
-87. clearNodes(): void {
-88. if (this.rootNode == null) {
-89. return;
-90. }
-91. const renderNode = this.rootNode.getRenderNode();
-92. if (renderNode != null) {
-93. renderNode.clearChildren();
-94. }
-95. }
-96. }
-
-98. let myNodeController: MyNodeController = new MyNodeController();
-
-100. async function performTask() {
-101. myNodeController.clearNodes();
-102. myNodeController.addNode(textNode);
-103. }
-
-105. @Entry
-106. @Component
-107. struct Font08 {
-108. @State src: Resource = $r('app.media.startIcon')
-109. build() {
-110. Column() {
-111. Row() {
-112. NodeContainer(myNodeController)
-113. .height('100%')
-114. .width('100%')
-115. Text('Test for lineSpacing and height behavior')
-116. .onAppear(() => {
-117. performTask();
-118. })
-119. }
-120. }
-121. .width('100%')
-122. }
-123. }
-```
-
-[ComplexStyleExample8.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/ComplexTextDrawing/entry/src/main/ets/pages/complexStyle/ComplexStyleExample8.ets#L16-L140)
 
 具体效果如下所示：
 
@@ -1518,3 +1509,81 @@ content_hash: sha256:0f9e74273e4782c120b369bd272224c876ff613af48332f275f31f38897
 | --- | --- |
 | DISABLE\_ALL |  |
 | ALL |  |
+
+### 示例九（省略号样式）
+
+以下示例展示了开启尾部省略号模式的文本截断效果。
+
+```typescript
+// 设置文本样式，包含省略号字符串和省略号模式
+let myTextStyle: text.TextStyle = {
+  color: {
+    alpha: 255,
+    red: 0,
+    green: 0,
+    blue: 0
+  },
+  fontSize: 40,
+  // 设置省略号字符串
+  ellipsis: '...',
+  // 设置省略号模式为尾部省略
+  ellipsisMode: text.EllipsisMode.END
+};
+// 设置段落样式，包含最大行数
+let myParagraphStyle: text.ParagraphStyle = {
+  textStyle: myTextStyle,
+  // 设置最大显示行数为2
+  maxLines: 2
+};
+```
+
+具体效果如下所示：
+
+| 省略号模式 | 示意效果 |
+| --- | --- |
+| 不开启省略号 |  |
+| 开启头部省略号 |  |
+| 开启中部省略号 |  |
+| 开启尾部省略号 |  |
+| 开启多行头部省略号 |  |
+| 开启多行中部省略号 |  |
+
+### 示例十（文字换行方式）
+
+以下示例展示了BALANCED断行策略对文本排版的影响。
+
+```typescript
+// 设置断行策略为均衡策略（BALANCED）
+let myParagraphStyle: text.ParagraphStyle = {
+  textStyle: myTextStyle,
+  // 设置断行策略为均衡策略，各行宽度尽量均衡
+  breakStrategy: text.BreakStrategy.BALANCED
+};
+```
+
+具体效果如下所示：
+
+| 断行策略 | 示意效果 |
+| --- | --- |
+| GREEDY |  |
+| BALANCED |  |
+| HIGH\_QUALITY |  |
+
+### 示例十一（行首标点压缩）
+
+以下示例展示了开启行首标点压缩的排版对比效果。
+
+```typescript
+// 开启行首标点压缩
+let myParagraphStyle: text.ParagraphStyle = {
+  textStyle: myTextStyle,
+  compressHeadPunctuation: true
+};
+```
+
+具体效果如下所示：
+
+| 标点压缩设置 | 示意效果 |
+| --- | --- |
+| 未开启标点压缩 |  |
+| 开启标点压缩 |  |

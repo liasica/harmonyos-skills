@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Divider
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 空白与分隔 > Divider
 category: harmonyos-references
-scraped_at: 2026-04-29T13:52:23+08:00
-doc_updated_at: 2026-04-02
-content_hash: sha256:81773ae8a0f8dcc600c02c58e75ad1f434ba179824df100387980e7f2f741075
+scraped_at: 2026-09-02T15:01:05+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4638b28cf1371c2e789c4712d8e813e3e1db0939a0714838d21f36f06381710b
 ---
 
 提供分割线组件，分割不同内容块/内容元素。
 
-说明
+**说明** 
 
 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -18,13 +18,9 @@ content_hash: sha256:81773ae8a0f8dcc600c02c58e75ad1f434ba179824df100387980e7f2f7
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## 接口
-
-PhonePC/2in1TabletTVWearable
 
 Divider()
 
@@ -38,13 +34,9 @@ Divider()
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用属性](ts-component-general-attributes.md)外，还支持以下属性：
 
 ### vertical
-
-PhonePC/2in1TabletTVWearable
 
 vertical(value: boolean)
 
@@ -64,8 +56,6 @@ vertical(value: boolean)
 
 ### color
 
-PhonePC/2in1TabletTVWearable
-
 color(value: ResourceColor)
 
 设置分割线的颜色，支持[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)动态设置属性方法。
@@ -84,13 +74,11 @@ color(value: ResourceColor)
 
 ### strokeWidth
 
-PhonePC/2in1TabletTVWearable
-
 strokeWidth(value: number | string)
 
 设置分割线的宽度，支持[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)动态设置属性方法。
 
-说明
+**说明** 
 
 * 分割线的宽度不支持百分比设置。
 * 使用水平分割线时，strokeWidth控制高度，优先级低于通用属性[height](ts-universal-attributes-size.md#height)；使用垂直分割线时，strokeWidth控制宽度，优先级低于通用属性[width](ts-universal-attributes-size.md#width)。
@@ -111,8 +99,6 @@ strokeWidth(value: number | string)
 
 ### lineCap
 
-PhonePC/2in1TabletTVWearable
-
 lineCap(value: LineCapStyle)
 
 设置分割线的端点样式，支持[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)动态设置属性方法。
@@ -131,125 +117,121 @@ lineCap(value: LineCapStyle)
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用事件](ts-component-general-events.md)。
 
 ## 示例
-
-PhonePC/2in1TabletTVWearable
 
 ### 示例1（定义Divider方向、颜色及宽度）
 
 该示例定义了Divider的样式，如方向、颜色及宽度。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct DividerExample {
+  build() {
+    Column() {
+      // 使用横向分割线场景
+      Text('Horizontal divider').fontSize(9).fontColor(0xCCCCCC)
+      List() {
+        ForEach([1, 2, 3], (item: number) => {
+          ListItem() {
+            Text('list' + item).width('100%').fontSize(14).fontColor('#182431').textAlign(TextAlign.Start)
+          }.width(244).height(48)
+        }, (item: number) => item.toString())
+      }.padding({ left: 24, bottom: 8 })
+
+      Divider().strokeWidth(8).color('#F1F3F5')
+      List() {
+        ForEach([4, 5], (item: number) => {
+          ListItem() {
+            Text('list' + item).width('100%').fontSize(14).fontColor('#182431').textAlign(TextAlign.Start)
+          }.width(244).height(48)
+        }, (item: number) => item.toString())
+      }.padding({ left: 24, top: 8 })
+
+      // 使用纵向分割线场景
+      Text('Vertical divider').fontSize(9).fontColor(0xCCCCCC)
+      Column() {
+        Column() {
+          Row().width(288).height(64).backgroundColor('#30C9F0').opacity(0.3)
+          Row() {
+            Button('Button')
+              .width(136)
+              .height(22)
+              .fontSize(16)
+              .fontColor('#007DFF')
+              .fontWeight(500)
+              .backgroundColor(Color.Transparent)
+            Divider()
+              .vertical(true)
+              .height(22)
+              .color('#182431')
+              .opacity(0.6)
+              .margin({ left: 8, right: 8 })
+            Button('Button')
+              .width(136)
+              .height(22)
+              .fontSize(16)
+              .fontColor('#007DFF')
+              .fontWeight(500)
+              .backgroundColor(Color.Transparent)
+          }.margin({ top: 17 })
+        }
+        .width(336)
+        .height(152)
+        .backgroundColor('#FFFFFF')
+        .borderRadius(24)
+        .padding(24)
+      }
+      .width('100%')
+      .height(168)
+      .backgroundColor('#F1F3F5')
+      .justifyContent(FlexAlign.Center)
+      .margin({ top: 8 })
+    }.width('100%').padding({ top: 24 })
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct DividerExample {
-5. build() {
-6. Column() {
-7. // 使用横向分割线场景
-8. Text('Horizontal divider').fontSize(9).fontColor(0xCCCCCC)
-9. List() {
-10. ForEach([1, 2, 3], (item: number) => {
-11. ListItem() {
-12. Text('list' + item).width('100%').fontSize(14).fontColor('#182431').textAlign(TextAlign.Start)
-13. }.width(244).height(48)
-14. }, (item: number) => item.toString())
-15. }.padding({ left: 24, bottom: 8 })
 
-17. Divider().strokeWidth(8).color('#F1F3F5')
-18. List() {
-19. ForEach([4, 5], (item: number) => {
-20. ListItem() {
-21. Text('list' + item).width('100%').fontSize(14).fontColor('#182431').textAlign(TextAlign.Start)
-22. }.width(244).height(48)
-23. }, (item: number) => item.toString())
-24. }.padding({ left: 24, top: 8 })
-
-26. // 使用纵向分割线场景
-27. Text('Vertical divider').fontSize(9).fontColor(0xCCCCCC)
-28. Column() {
-29. Column() {
-30. Row().width(288).height(64).backgroundColor('#30C9F0').opacity(0.3)
-31. Row() {
-32. Button('Button')
-33. .width(136)
-34. .height(22)
-35. .fontSize(16)
-36. .fontColor('#007DFF')
-37. .fontWeight(500)
-38. .backgroundColor(Color.Transparent)
-39. Divider()
-40. .vertical(true)
-41. .height(22)
-42. .color('#182431')
-43. .opacity(0.6)
-44. .margin({ left: 8, right: 8 })
-45. Button('Button')
-46. .width(136)
-47. .height(22)
-48. .fontSize(16)
-49. .fontColor('#007DFF')
-50. .fontWeight(500)
-51. .backgroundColor(Color.Transparent)
-52. }.margin({ top: 17 })
-53. }
-54. .width(336)
-55. .height(152)
-56. .backgroundColor('#FFFFFF')
-57. .borderRadius(24)
-58. .padding(24)
-59. }
-60. .width('100%')
-61. .height(168)
-62. .backgroundColor('#F1F3F5')
-63. .justifyContent(FlexAlign.Center)
-64. .margin({ top: 8 })
-65. }.width('100%').padding({ top: 24 })
-66. }
-67. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/bpEQjcs-Tm6ttCr-6u2Tgg/zh-cn_image_0000002558606790.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/1h7iGGWJR92jThkFOpwf6g/zh-cn_image_0000002706676168.png)
 
 ### 示例2（定义Divider的lineCap样式）
 
 该示例定义了Divider的lineCap样式。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct DividerExample {
+  build() {
+    Column({space:30}) {
+      Text("LineCap:Butt")
+      Divider()
+        .strokeWidth(20)
+        .width("90%")
+        .color('#F1F3F5')
+        .lineCap(LineCapStyle.Butt)
+
+      Text("LineCap:Round")
+      Divider()
+        .strokeWidth(20)
+        .width("90%")
+        .color('#F1F3F5')
+        .lineCap(LineCapStyle.Round)
+
+      Text("LineCap:Square")
+      Divider()
+        .strokeWidth(20)
+        .width("90%")
+        .color('#F1F3F5')
+        .lineCap(LineCapStyle.Square)
+
+    }.width('100%').padding({ top: 24 })
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct DividerExample {
-5. build() {
-6. Column({space:30}) {
-7. Text("LineCap:Butt")
-8. Divider()
-9. .strokeWidth(20)
-10. .width("90%")
-11. .color('#F1F3F5')
-12. .lineCap(LineCapStyle.Butt)
 
-14. Text("LineCap:Round")
-15. Divider()
-16. .strokeWidth(20)
-17. .width("90%")
-18. .color('#F1F3F5')
-19. .lineCap(LineCapStyle.Round)
-
-21. Text("LineCap:Square")
-22. Divider()
-23. .strokeWidth(20)
-24. .width("90%")
-25. .color('#F1F3F5')
-26. .lineCap(LineCapStyle.Square)
-
-28. }.width('100%').padding({ top: 24 })
-29. }
-30. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/rR2CnZHnQhui00jY_vNLfQ/zh-cn_image_0000002589326317.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/w-IJjNWTTRyMZdBbF6m45A/zh-cn_image_0000002736435255.png)

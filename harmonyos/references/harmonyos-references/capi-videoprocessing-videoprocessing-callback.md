@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-vide
 title: VideoProcessing_Callback
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 结构体 > VideoProcessing_Callback
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:08+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:01a2e3eb6116cd375c104b5635dc36bc107bada3ca05b14b819a2241c6582447
+scraped_at: 2026-09-02T14:53:01+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:75735d8351b07971a5c9e34bfd1aff4957e403e9112c8f652615770eded61548
 ---
 
-```
-1. typedef struct VideoProcessing_Callback VideoProcessing_Callback
+```c
+typedef struct VideoProcessing_Callback VideoProcessing_Callback
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 视频处理回调对象类型。
 

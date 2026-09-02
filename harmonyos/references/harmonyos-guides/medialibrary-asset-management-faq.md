@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/medialibrary-
 title: 如何正确管理媒体资源
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > Media Library Kit常见问题 > 如何正确管理媒体资源
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:39+08:00
+scraped_at: 2026-09-02T14:59:47+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4c0c2ccff372e9803e52988a636620c6da0e5af4af5444b1c4889a032de44a7e
+content_hash: sha256:28edc725ae3329ef2cdcc0e1d489391b46217b697e05c2e84b9fda338498ae40
 ---
 
 [Media Library Kit](photoaccesshelper-overview.md)（媒体文件管理服务）提供了媒体资源的管理能力，开发者可以访问和修改相册中的媒体信息。
 
-注意
+**注意** 
 
 Media Library Kit仅提供图片和视频的管理能力，不涉及音频文件的管理。
 

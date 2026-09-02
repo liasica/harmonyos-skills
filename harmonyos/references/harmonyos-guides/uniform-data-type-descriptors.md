@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uniform-data-
 title: 标准化数据类型 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 标准化数据定义 > 标准化数据类型 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:26:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:be466f41b29c1970714cb0481324b206d8664c6221d5a4d6787d58d08bcc9fd4
+scraped_at: 2026-09-02T14:59:11+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1113482bb71d97822168f15fc848c57a3e49eb91ea215baba98d531e87625a98
 ---
 
 ## 场景介绍
@@ -35,15 +35,15 @@ UTD中定义的标准化数据类型在设计原则上按物理和逻辑分为�
 
 按照此分类原则，可以从两个维度对数据类型进行描述。如描述图片时，可以是一个图片对象，同时也可以是一个文件。
 
-并非所有的格式都具有两个维度，如general.calendar，更多的注重calendar对象的功能性描述。
+并非所有的格式都具有两个维度，如general.calendar，更注重calendar对象的功能性描述。
 
 **图1** 物理标准化数据类型示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/HBMTMmTZR12yHswIa1SgSQ/zh-cn_image_0000002558764012.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/bwk561YiR4ur5-Yn-u194g/zh-cn_image_0000002736312167.png)
 
 **图2** 逻辑标准化数据类型示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/YtybRfxfRouDiyrsbxHE3A/zh-cn_image_0000002558604356.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/afia6wXXQFifBfIslUFGZA/zh-cn_image_0000002706673124.png)
 
 ## 标准化数据类型的定义
 
@@ -84,7 +84,7 @@ utd.json5文件需要在类型为entry的HAP中配置。
 * **TypeId：** 定义标准化数据类型的ID，该ID具有唯一性，由应用bundleName + 具体类型名组成，不可缺省，允许包含数字、大小写字母、-和.。
 * **BelongingToTypes：** 定义标准化数据类型的归属关系，即该标准化数据类型归属于哪个更高层级的类型，所属类型可以为多个，但是必须为已存在的数据类型（标准化数据类型预置类型或其他新增自定义数据类型），不能为应用自定义类型本身，不能为空，且与现有标准化数据类型、其他新增自定义数据类型不能形成环形依赖结构。
 * **FilenameExtensions：** 应用自定义标准化数据类型所关联的文件后缀。可以缺省；可以为多个，每个后缀为以.开头且长度不超过127的字符串。
-* **MIMETypes：** 应用自定义标准化数据类型所关联的web消息数据类型。可以缺省；可以为多个，每个类型为长度不超过127的字符串。
+* **MIMETypes：** 应用自定义标准化数据类型所关联的多用途互联网邮件扩展类型。可以缺省；可以为多个，每个类型为长度不超过127的字符串。
 * **Description：** 应用自定义标准化数据类型的简要说明。可以缺省；填写时，长度为不超过255的字符串。
 * **ReferenceURL：** 应用自定义标准化数据类型的参考链接URL，用于描述类型的详细信息。可以缺省；填写时，长度为不超过255的字符串。
 
@@ -95,69 +95,69 @@ utd.json5文件需要在类型为entry的HAP中配置。
 1. 当前应用在entry\src\main\resources\rawfile\arkdata\utd\目录下新增utd.json5文件。
 2. 在当前应用的utd.json5配置文件内新增所需的自定义数据类型。
 
-   ```
-   1. {
-   2. "UniformDataTypeDeclarations": [
-   3. {
-   4. "TypeId": "com.example.myFirstHap.image",
-   5. "BelongingToTypes": ["general.image"],
-   6. "FilenameExtensions": [".myImage", ".khImage"],
-   7. "MIMETypes": ["application/myImage", "application/khImage"],
-   8. "Description": "My Image.",
-   9. "ReferenceURL": ""
-   10. },
-   11. {
-   12. "TypeId": "com.example.myFirstHap.audio",
-   13. "BelongingToTypes": ["general.audio"],
-   14. "FilenameExtensions": [".myAudio", ".khAudio"],
-   15. "MIMETypes": ["application/myAudio", "application/khAudio"],
-   16. "Description": "My audio.",
-   17. "ReferenceURL": ""
-   18. },
-   19. {
-   20. "TypeId": "com.example.myFirstHap.video",
-   21. "BelongingToTypes": ["general.video"],
-   22. "FilenameExtensions": [".myVideo", ".khVideo"],
-   23. "MIMETypes": ["application/myVideo", "application/khVideo"],
-   24. "Description": "My video.",
-   25. "ReferenceURL": ""
-   26. }
-   27. ]
-   28. }
+   ```json
+   {
+        "UniformDataTypeDeclarations": [
+            {
+                "TypeId": "com.example.myFirstHap.image",
+                "BelongingToTypes": ["general.image"],
+                "FilenameExtensions": [".myImage", ".khImage"],
+                "MIMETypes": ["application/myImage", "application/khImage"],
+                "Description": "My Image.",
+                "ReferenceURL": ""
+            },
+            {
+                "TypeId": "com.example.myFirstHap.audio",
+                "BelongingToTypes": ["general.audio"],
+                "FilenameExtensions": [".myAudio", ".khAudio"],
+                "MIMETypes": ["application/myAudio", "application/khAudio"],
+                "Description": "My audio.",
+                "ReferenceURL": ""
+            },
+            {
+                "TypeId": "com.example.myFirstHap.video",
+                "BelongingToTypes": ["general.video"],
+                "FilenameExtensions": [".myVideo", ".khVideo"],
+                "MIMETypes": ["application/myVideo", "application/khVideo"],
+                "Description": "My video.",
+                "ReferenceURL": ""
+            }
+        ]
+   }
    ```
 3. 如果其他应用要直接使用当前应用内的自定义数据类型，需要在其应用的entry\src\main\resources\rawfile\arkdata\utd\目录下新增utd.json5文件。
 
    然后在utd.json5配置文件中进行以下声明：
 
-   ```
-   1. {
-   2. "ReferenceUniformDataTypeDeclarations": [
-   3. {
-   4. "TypeId": "com.example.myFirstHap.image",
-   5. "BelongingToTypes": ["general.image"],
-   6. "FilenameExtensions": [".myImage", ".khImage"],
-   7. "MIMETypes": ["application/myImage", "application/khImage"],
-   8. "Description": "My Image.",
-   9. "ReferenceURL": ""
-   10. }
-   11. ]
-   12. }
+   ```json
+   {
+       "ReferenceUniformDataTypeDeclarations": [
+            {
+                "TypeId": "com.example.myFirstHap.image",
+                "BelongingToTypes": ["general.image"],
+                "FilenameExtensions": [".myImage", ".khImage"],
+                "MIMETypes": ["application/myImage", "application/khImage"],
+                "Description": "My Image.",
+                "ReferenceURL": ""
+            }
+       ]
+   }
    ```
 4. 其他应用也可以在DevEco Studio中创建utd.json5模板，在模板中引用当前应用内的自定义数据类型之后，基于已引用的自定义数据类型进行自定义。同时，DevEco Studio还会对配置文件中的字段进行格式校验，utd.json5配置文件示例如下：
 
-   ```
-   1. {
-   2. "UniformDataTypeDeclarations": [
-   3. {
-   4. "TypeId": "com.example.mySecondHap.image",
-   5. "BelongingToTypes": ["com.example.myFirstHap.image"],
-   6. "FilenameExtensions": [".myImageEx", ".khImageEx"],
-   7. "MIMETypes": ["application/my-ImageEx", "application/khImageEx"],
-   8. "Description": "My Image extension.",
-   9. "ReferenceURL": ""
-   10. }
-   11. ]
-   12. }
+   ```json
+   {
+       "UniformDataTypeDeclarations": [
+           {
+               "TypeId": "com.example.mySecondHap.image",
+               "BelongingToTypes": ["com.example.myFirstHap.image"],
+               "FilenameExtensions": [".myImageEx", ".khImageEx"],
+               "MIMETypes": ["application/my-ImageEx", "application/khImageEx"],
+               "Description": "My Image extension.",
+               "ReferenceURL": ""
+           }
+       ]
+   }
    ```
 
 ## 接口说明
@@ -179,69 +179,65 @@ utd.json5文件需要在类型为entry的HAP中配置。
 
 1. 导入uniformTypeDescriptor模块。
 
+   ```typescript
+   // 1.导入模块
+   import { uniformTypeDescriptor } from '@kit.ArkData';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
-   1. // 1.导入模块
-   2. import { uniformTypeDescriptor } from '@kit.ArkData';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/Udmf/UniformDataTypeDescriptors/entry/src/main/ets/pages/Index.ets#L16-L20)
 2. 针对“.mp3”文件扩展名，使用getUniformDataTypesByFilenameExtension()方法获取对应UTD数据类型，并打印对应UTD数据类型的具体属性。
 3. 针对“audio/mp3”MIMEType，使用getUniformDataTypesByMIMEType()查询对应UTD数据类型，并打印对应UTD数据类型的具体属性。
 4. 比较上述步骤查询的数据类型，确认类型是否相等。
 5. 根据上述步骤中查询到的标准数据类型“general.mp3”与表示音频数据的已知标准数据类型“general.audio”做比较查询，确认是否存在归属关系。
 
+   ```typescript
+   function uniformTypeDescriptorTest() {
+     try {
+       // 2.可根据 “.mp3” 文件后缀查询对应UTD数据类型，并查询对应UTD数据类型的具体属性
+       let fileExtension = '.mp3';
+       let typeIds1 = uniformTypeDescriptor.getUniformDataTypesByFilenameExtension(fileExtension);
+       if (typeIds1.length == 0) {
+         return;
+       }
+       let typeObj1 = uniformTypeDescriptor.getTypeDescriptor(typeIds1[0]);
+       hilog.info(0xFF00, '[Sample_Udmf]', `typeId: ${typeObj1.typeId}`);
+       hilog.info(0xFF00, '[Sample_Udmf]', `belongingToTypes: ${typeObj1.belongingToTypes}`);
+       hilog.info(0xFF00, '[Sample_Udmf]', `description: ${typeObj1.description}`);
+       hilog.info(0xFF00, '[Sample_Udmf]', `filenameExtensions: ${typeObj1.filenameExtensions}`);
+       hilog.info(0xFF00, '[Sample_Udmf]', `mimeTypes: ${typeObj1.mimeTypes}`);
+
+       // 3.可根据 “audio/mp3” MIMEType查询对应UTD数据类型，并查询对应UTD数据类型的具体属性。
+       let mimeType = 'audio/mp3';
+       let typeIds2 = uniformTypeDescriptor.getUniformDataTypesByMIMEType(mimeType);
+       if (typeIds2.length == 0) {
+         return;
+       }
+       let typeObj2 = uniformTypeDescriptor.getTypeDescriptor(typeIds2[0]);
+       hilog.info(0xFF00, '[Sample_Udmf]', `typeId: ${typeObj2.typeId}`);
+       hilog.info(0xFF00, '[Sample_Udmf]', `belongingToTypes: ${typeObj2.belongingToTypes}`);
+       hilog.info(0xFF00, '[Sample_Udmf]', `description: ${typeObj2.description}`);
+       hilog.info(0xFF00, '[Sample_Udmf]', `filenameExtensions: ${typeObj2.filenameExtensions}`);
+       hilog.info(0xFF00, '[Sample_Udmf]', `mimeTypes: ${typeObj2.mimeTypes}`);
+
+       // 4.将数据类型进行比较，确认是否同一种数据类型
+       if (typeObj1 != null && typeObj2 != null) {
+         let ret = typeObj1.equals(typeObj2);
+         hilog.info(0xFF00, '[Sample_Udmf]', `typeObj1 equals typeObj2, ret: ${ret}`);
+       }
+
+       // 5.将查询到的标准数据类型“general.mp3”与表示音频数据的已知标准数据类型“general.audio”做比较查询，确认是否存在归属关系。
+       if (typeObj1 != null) {
+         let ret = typeObj1.belongsTo('general.audio');
+         hilog.info(0xFF00, '[Sample_Udmf]', `belongsTo, ret: ${ret}`);
+         let mediaTypeObj = uniformTypeDescriptor.getTypeDescriptor('general.media');
+         // 确认是否存在归属关系
+         ret = mediaTypeObj.isHigherLevelType('general.audio');
+         hilog.info(0xFF00, '[Sample_Udmf]', `isHigherLevelType, ret: ${ret}`);
+       }
+     } catch (err) {
+       hilog.error(0xFF00, '[Sample_Udmf]', `err message: ${err.message}, err code: ${err.code}`);
+     }
+   }
    ```
-   1. function uniformTypeDescriptorTest() {
-   2. try {
-   3. // 2.可根据 “.mp3” 文件后缀查询对应UTD数据类型，并查询对应UTD数据类型的具体属性
-   4. let fileExtension = '.mp3';
-   5. let typeIds1 = uniformTypeDescriptor.getUniformDataTypesByFilenameExtension(fileExtension);
-   6. if (typeIds1.length == 0) {
-   7. return;
-   8. }
-   9. let typeObj1 = uniformTypeDescriptor.getTypeDescriptor(typeIds1[0]);
-   10. hilog.info(0xFF00, '[Sample_Udmf]', `typeId: ${typeObj1.typeId}`);
-   11. hilog.info(0xFF00, '[Sample_Udmf]', `belongingToTypes: ${typeObj1.belongingToTypes}`);
-   12. hilog.info(0xFF00, '[Sample_Udmf]', `description: ${typeObj1.description}`);
-   13. hilog.info(0xFF00, '[Sample_Udmf]', `filenameExtensions: ${typeObj1.filenameExtensions}`);
-   14. hilog.info(0xFF00, '[Sample_Udmf]', `mimeTypes: ${typeObj1.mimeTypes}`);
-
-   16. // 3.可根据 “audio/mp3” MIMEType查询对应UTD数据类型，并查询对应UTD数据类型的具体属性。
-   17. let mimeType = 'audio/mp3';
-   18. let typeIds2 = uniformTypeDescriptor.getUniformDataTypesByMIMEType(mimeType);
-   19. if (typeIds2.length == 0) {
-   20. return;
-   21. }
-   22. let typeObj2 = uniformTypeDescriptor.getTypeDescriptor(typeIds2[0]);
-   23. hilog.info(0xFF00, '[Sample_Udmf]', `typeId: ${typeObj2.typeId}`);
-   24. hilog.info(0xFF00, '[Sample_Udmf]', `belongingToTypes: ${typeObj2.belongingToTypes}`);
-   25. hilog.info(0xFF00, '[Sample_Udmf]', `description: ${typeObj2.description}`);
-   26. hilog.info(0xFF00, '[Sample_Udmf]', `filenameExtensions: ${typeObj2.filenameExtensions}`);
-   27. hilog.info(0xFF00, '[Sample_Udmf]', `mimeTypes: ${typeObj2.mimeTypes}`);
-
-   29. // 4.将数据类型进行比较，确认是否同一种数据类型
-   30. if (typeObj1 != null && typeObj2 != null) {
-   31. let ret = typeObj1.equals(typeObj2);
-   32. hilog.info(0xFF00, '[Sample_Udmf]', `typeObj1 equals typeObj2, ret: ${ret}`);
-   33. }
-
-   35. // 5.将查询到的标准数据类型“general.mp3”与表示音频数据的已知标准数据类型“general.audio”做比较查询，确认是否存在归属关系。
-   36. if (typeObj1 != null) {
-   37. let ret = typeObj1.belongsTo('general.audio');
-   38. hilog.info(0xFF00, '[Sample_Udmf]', `belongsTo, ret: + ${ret}`);
-   39. let mediaTypeObj = uniformTypeDescriptor.getTypeDescriptor('general.media');
-   40. // 确认是否存在归属关系
-   41. ret = mediaTypeObj.isHigherLevelType('general.audio');
-   42. hilog.info(0xFF00, '[Sample_Udmf]', `isHigherLevelType, ret: + ${ret}`);
-   43. }
-   44. } catch (err) {
-   45. hilog.error(0xFF00, '[Sample_Udmf]', `err message: ${err.message}, err code: ${err.code}`);
-   46. }
-   47. }
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/Udmf/UniformDataTypeDescriptors/entry/src/main/ets/pages/Index.ets#L22-L70)
 
 ## 如何通过文件后缀获取对应的MIMEType列表
 
@@ -249,33 +245,29 @@ utd.json5文件需要在类型为entry的HAP中配置。
 
 1. 导入uniformTypeDescriptor模块。
 
+   ```typescript
+   // 1.导入模块
+   import { uniformTypeDescriptor } from '@kit.ArkData';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
-   1. // 1.导入模块
-   2. import { uniformTypeDescriptor } from '@kit.ArkData';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/Udmf/UniformDataTypeDescriptors/entry/src/main/ets/pages/Index.ets#L16-L20)
 2. 针对“.ts”文件后缀，使用getUniformDataTypesByFilenameExtension()方法获取对应UTD数据类型。
 3. 针对UTD数据类型，使用getTypeDescriptor()方法查询对应的MIMEType列表。
 
+   ```typescript
+   try {
+     // 2.可根据 “.ts” 文件后缀查询对应UTD数据类型。
+     let fileExtension = '.ts';
+     let typeIds = uniformTypeDescriptor.getUniformDataTypesByFilenameExtension(fileExtension);
+     for (let typeId of typeIds) {
+       // 3.根据UTD数据类型查询对应的MIMEType列表。
+       let typeObj = uniformTypeDescriptor.getTypeDescriptor(typeId);
+       let mimeTypes = typeObj.mimeTypes;
+       hilog.info(0xFF00, '[Sample_Udmf]', `mimeTypes: ${mimeTypes}`);
+     }
+   } catch (err) {
+     hilog.error(0xFF00, '[Sample_Udmf]', `err message: ${err.message}, err code: ${err.code}`);
+   }
    ```
-   1. try {
-   2. // 2.可根据 “.ts” 文件后缀查询对应UTD数据类型。
-   3. let fileExtension = '.ts';
-   4. let typeIds = uniformTypeDescriptor.getUniformDataTypesByFilenameExtension(fileExtension);
-   5. for (let typeId of typeIds) {
-   6. // 3.根据UTD数据类型查询对应的MIMEType列表。
-   7. let typeObj = uniformTypeDescriptor.getTypeDescriptor(typeId);
-   8. let mimeTypes = typeObj.mimeTypes;
-   9. hilog.info(0xFF00, '[Sample_Udmf]', `mimeTypes: ${mimeTypes}`);
-   10. }
-   11. } catch (err) {
-   12. hilog.error(0xFF00, '[Sample_Udmf]', `err message: ${err.message}, err code: ${err.code}`);
-   13. }
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/Udmf/UniformDataTypeDescriptors/entry/src/main/ets/pages/Index.ets#L73-L87)
 
 ## 如何通过MIMEType获取对应的后缀列表
 
@@ -283,30 +275,26 @@ utd.json5文件需要在类型为entry的HAP中配置。
 
 1. 导入uniformTypeDescriptor模块。
 
+   ```typescript
+   // 1.导入模块
+   import { uniformTypeDescriptor } from '@kit.ArkData';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
-   1. // 1.导入模块
-   2. import { uniformTypeDescriptor } from '@kit.ArkData';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/Udmf/UniformDataTypeDescriptors/entry/src/main/ets/pages/Index.ets#L16-L20)
 2. 针对“text/plain”MIMEType，使用getUniformDataTypesByMIMEType()方法获取对应UTD数据类型。
-3. 针对UTD数据类型，使用getTypeDescriptor()方法查询对应的MIMEType列表。
+3. 根据UTD数据类型，使用getTypeDescriptor()方法查询对应的文件后缀列表。
 
+   ```typescript
+   try {
+     // 2.可根据 “text/plain” MIMEType查询对应UTD数据类型。
+     let mimeType = 'text/plain';
+     let typeIds = uniformTypeDescriptor.getUniformDataTypesByMIMEType(mimeType);
+     for (let typeId of typeIds) {
+       // 3. 根据UTD数据类型查询对应的文件后缀列表
+       let typeObj = uniformTypeDescriptor.getTypeDescriptor(typeId);
+       let filenameExtensions = typeObj.filenameExtensions;
+       hilog.info(0xFF00, '[Sample_Udmf]', `filenameExtensions: ${filenameExtensions}`);
+     }
+   } catch (err) {
+     hilog.error(0xFF00, '[Sample_Udmf]', `err message: ${err.message}, err code: ${err.code}`);
+   }
    ```
-   1. try {
-   2. // 2.可根据 “text/plain” MIMEType查询对应UTD数据类型。
-   3. let mimeType = 'text/plain';
-   4. let typeIds = uniformTypeDescriptor.getUniformDataTypesByMIMEType(mimeType);
-   5. for (let typeId of typeIds) {
-   6. // 3. 根据UTD数据类型查询对应的文件后缀列表
-   7. let typeObj = uniformTypeDescriptor.getTypeDescriptor(typeId);
-   8. let filenameExtensions = typeObj.filenameExtensions;
-   9. hilog.info(0xFF00, '[Sample_Udmf]', `filenameExtensions: ${filenameExtensions}`);
-   10. }
-   11. } catch (err) {
-   12. hilog.error(0xFF00, '[Sample_Udmf]', `err message: ${err.message}, err code: ${err.code}`);
-   13. }
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/Udmf/UniformDataTypeDescriptors/entry/src/main/ets/pages/Index.ets#L91-L105)

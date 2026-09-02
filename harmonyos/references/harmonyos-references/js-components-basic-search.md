@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: search
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > search
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:26+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:bc402bc63a4960da00209adf425fdcaaf4d852ef889eda4821275c0e2a2df7be
+scraped_at: 2026-09-02T15:01:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:720a3ab8721df97c7d33575391fd5dc63e51bdcbcef9e2a405108b36450dad26
 ---
 
-说明
+**说明** 
 
 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -16,13 +16,9 @@ content_hash: sha256:bc402bc63a4960da00209adf425fdcaaf4d852ef889eda4821275c0e2a2
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 不支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-components-common-attributes.md)外，还支持如下属性：
 
@@ -43,8 +39,6 @@ PhonePC/2in1TabletTVWearable
 
 ## 样式
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用样式](js-components-common-styles.md)外，还支持如下样式：
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
@@ -59,8 +53,6 @@ PhonePC/2in1TabletTVWearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用事件](js-components-common-events.md)外，还支持如下事件：
 
 | 名称 | 参数 | 描述 |
@@ -74,29 +66,25 @@ PhonePC/2in1TabletTVWearable
 
 ## 方法
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用方法](js-components-common-methods.md)。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <search hint="请输入搜索内容" searchbutton="搜索" @search="search">
-4. </search>
-5. </div>
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <search hint="请输入搜索内容" searchbutton="搜索" @search="search">
+  </search>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .container {
-3. display: flex;
-4. justify-content: center;
-5. align-items: center;
-6. }
+```css
+/* xxx.css */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/5ekT11RwTLuI4MGP-AgFKQ/zh-cn_image_0000002589246533.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/ZpwoXIa3TXSvmfWg_UcN4A/zh-cn_image_0000002706836390.png)

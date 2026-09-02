@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-updat
 title: Update
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > TensorDesc > Update
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:01+08:00
+scraped_at: 2026-09-02T14:50:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:080d3ce297cb74ed8af0834e81af0763dae5a7a080b89f48a0ddb651f256ab12
+content_hash: sha256:4a2bff07a88303df10766e8f8b5d267befe9de445b6033e6006ecca8fbc2301e
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:080d3ce297cb74ed8af0834e81af0763dae5a7a080b89f48a0ddb651f25
 
 ## 函数原型
 
-```
-1. void Update(const Shape &shape, Format format = FORMAT_ND, DataType dt = DT_FLOAT);
+```cpp
+void Update(const Shape &shape, Format format = FORMAT_ND, DataType dt = DT_FLOAT);
 ```
 
 ## 参数说明

@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nets
 title: Http_Response
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 结构体 > Http_Response
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:41+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:a7e1af43e77a0803db039794a4552951c5097c6a1ec643ce007b1f3045b8c2c3
+scraped_at: 2026-09-02T15:01:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b5d416e14df7d8a8982b438e4a7d90435047217a57dcc6df5b584e3291d7af9d
 ---
 
-```
-1. typedef struct Http_Response {...} Http_Response
+```c
+typedef struct Http_Response {...} Http_Response
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义HTTP响应的结构体。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -42,22 +36,16 @@ PhonePC/2in1TabletTVWearable
 
 ### 成员函数
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 描述 |
 | --- | --- |
 | [void (\*destroyResponse)(struct Http\_Response \*\*response)](capi-netstack-http-response.md#destroyresponse) | 销毁HTTP响应的回调函数 |
 
 ## 成员函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### destroyResponse()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void (*destroyResponse)(struct Http_Response **response)
+```c
+void (*destroyResponse)(struct Http_Response **response)
 ```
 
 **描述**

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigat
 title: Navigation基础架构介绍
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 设置组件导航和页面路由 > 组件导航(Navigation) (推荐) > Navigation基础架构介绍
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:36+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:461f4872acfd476e222fa4820bd6e6ff3b490072f96feddad3abcd7c9117ce3e
+scraped_at: 2026-09-02T14:59:16+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1f05ba963e862c0d724d1f7989ea4001216ed82268da12123fae6c4c7709ee54
 ---
 
 导航组件（[Navigation](../harmonyos-references/ts-basic-components-navigation.md)）主要用于实现[NavDestination](../harmonyos-references/ts-basic-components-navdestination.md)页面间的跳转，支持在不同NavDestination间传递参数，提供灵活的跳转栈操作，从而更便捷地实现对不同页面的访问和复用。
@@ -29,7 +29,7 @@ Navigation组件结构较为复杂，包含几个关键概念：
 
 **图1** Navigation总体架构图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/ekGcOUBBTLarl8sYmj2HEw/zh-cn_image_0000002558764168.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/72nw0p--SmqyFwz7iFLImQ/zh-cn_image_0000002736312487.png)
 
 此外Navigation提供两种布局模式：单栏模式、分栏模式，不同模式下的结构如下。
 
@@ -39,18 +39,18 @@ Navigation组件结构较为复杂，包含几个关键概念：
 
   **图2** 单栏布局示意图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/KxxZhbHuRKKGhI-uJsNiKg/zh-cn_image_0000002558604512.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/O_30pbYSQzm_OXTUef4DpQ/zh-cn_image_0000002706673444.png)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/_9_BibSASiGg5XrJ-PdEFQ/zh-cn_image_0000002589324037.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/_Vix5u2JQiyxPAj83G5goQ/zh-cn_image_0000002736432533.jpg)
 * 分栏模式：
 
   当Navigation容器宽度大于等于600vp时，建议使用分栏模式。此模式下Navigation分为左右两部分，左侧为导航栏（NavBar），右侧为子页面（NavDestination）。发生路由跳转时，只有右边子页会被替换。
 
   **图3** 分栏布局示意图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/xd1CbSNNQbCIGISVybipmg/zh-cn_image_0000002589243977.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/vK18lYsLRKmLM5z_xBw7lw/zh-cn_image_0000002706833380.png)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/MQAQ_W1ZQxqwE8o6hdwd1g/zh-cn_image_0000002558764170.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/BoboME_rRKe63AYslIPqkA/zh-cn_image_0000002736312489.jpg)
 
 ## Navigation（导航容器）
 
@@ -58,7 +58,7 @@ Navigation是路由导航的根视图容器，通常作为页面（@Entry修饰�
 
 Navigation组件本身可不作为显示容器，只用于承载路由的相关功能，如绑定导航控制器对象、路由切换、分栏显示、自定义转场动画控制等。
 
-Navigation组件主要包含导航栏（NavBar）和子页（NavDestination），子页通过栈结构管理，存在NavPathStack中。导航栏又称Navbar，作为Navigation的子组件，直接挂载到Navigation上，可以通过[hideNavBar](../harmonyos-references/ts-basic-components-navigation.md#hidenavbar9)属性进行隐藏（单栏应用推荐隐藏导航页），导航栏不存在页面栈中。
+Navigation组件主要包含导航栏（NavBar）和子页（NavDestination），子页通过栈结构管理，存在NavPathStack中。导航栏又称NavBar，作为Navigation的子组件，直接挂载到Navigation上，可以通过[hideNavBar](../harmonyos-references/ts-basic-components-navigation.md#hidenavbar9)属性进行隐藏（单栏应用推荐隐藏导航页），导航栏不存在页面栈中。
 
 子页面是一个以NavDestination为根节点的子树，通过[@Builder](arkts-builder.md)构造出来，再通过NavPathStack提供的栈操作方法挂载到Navigation上显示，详见[Navigation子页面](arkts-navigation-navdestination.md)。
 
@@ -66,107 +66,105 @@ Navigation组件主要包含导航栏（NavBar）和子页（NavDestination）�
 
 Navigation子页面的根容器，每个子页面都需要包裹在一个NavDestination中，通过NavPathStack提供的栈操作方法（push、pop等）将子页面挂载到Navigation上显示或删除。
 
-NavDestination作为页面根容器，除了支持普通组件的通用属性外，还支持页面相关的属性，如：[页面的生命周期](../harmonyos-references/ts-basic-components-navdestination.md#事件)，页面[工具栏](../harmonyos-references/ts-basic-components-navdestination.md#toolbarconfiguration13)、[标题栏](../harmonyos-references/ts-basic-components-navdestination.md#title)与[菜单栏](../harmonyos-references/ts-basic-components-navdestination.md#menus12)，[自定义页面转场动画](../harmonyos-references/ts-basic-components-navdestination.md#customtransition15)，页面级窗口属性控制（横竖屏、系统状态栏、系统导航条）等能力。
+NavDestination作为页面根容器，除了支持普通组件的通用属性外，还支持页面相关的属性，如：页面的生命周期[事件](../harmonyos-references/ts-basic-components-navdestination.md#事件)，页面工具栏[toolbarConfiguration](../harmonyos-references/ts-basic-components-navdestination.md#toolbarconfiguration13)、标题栏[title](../harmonyos-references/ts-basic-components-navdestination.md#title)与菜单栏[menus](../harmonyos-references/ts-basic-components-navdestination.md#menus12)，自定义页面转场动画[customTransition](../harmonyos-references/ts-basic-components-navdestination.md#customtransition15)，页面级窗口属性控制（横竖屏、系统状态栏、系统导航条）等能力。
 
 ## NavBar（导航栏）
 
 Navigation中直接加载的孩子节点称为导航栏（NavBar），单栏显示时它是整个导航的首页，分栏显示时它是固定的导航栏。分栏显示时默认显示在左边，也可以通过[navBarPosition](../harmonyos-references/ts-basic-components-navigation.md#navbarposition9)属性控制。
 
-开发者可以通过[hideNavBar](../harmonyos-references/ts-basic-components-navigation.md#hidenavbar9)控制导航栏的显隐，也可以通过[navBarWidth](../harmonyos-references/ts-basic-components-navigation.md#navbarwidth9)属性控制双栏显示下的Navbar宽度，NavBar本身不属于页面栈中的页面，不具备页面的生命周期等，不能通过NavPathStack的方法控制。 开发者可以通过[onNavBarStateChange](../harmonyos-references/ts-basic-components-navigation.md#onnavbarstatechange9)去感知导航栏的显隐，通过[mode](../harmonyos-references/ts-basic-components-navigation.md#mode9)属性控制单双栏切换，也可以通过[onNavigationModeChange](../harmonyos-references/ts-basic-components-navigation.md#onnavigationmodechange11)去感知单双栏的切换。
+开发者可以通过[hideNavBar](../harmonyos-references/ts-basic-components-navigation.md#hidenavbar9)控制导航栏的显隐，也可以通过[navBarWidth](../harmonyos-references/ts-basic-components-navigation.md#navbarwidth9)属性控制双栏显示下的NavBar宽度，NavBar本身不属于页面栈中的页面，不具备页面的生命周期等，不能通过NavPathStack的方法控制。 开发者可以通过[onNavBarStateChange](../harmonyos-references/ts-basic-components-navigation.md#onnavbarstatechange9)去感知导航栏的显隐，通过[mode](../harmonyos-references/ts-basic-components-navigation.md#mode9)属性控制单双栏切换，也可以通过[onNavigationModeChange](../harmonyos-references/ts-basic-components-navigation.md#onnavigationmodechange11)去感知单双栏的切换。
 
 NavBar的内容区可以通过两种方式指定：
 
 * 方式一：直接指定Navigation的子节点。
 
+```typescript
+@Entry
+@Component
+struct NavigationDemo {
+  @Provide('navPathStack') navPathStack: NavPathStack = new NavPathStack();
+  private listArray: Array<string> = ['WLAN', 'Bluetooth', 'Personal Hotspot', 'Connect & Share'];
+  context = this.getUIContext().getHostContext();
+  build() {
+    Column() {
+      Navigation(this.navPathStack) {
+        // 请将$r('app.string.enterKeyWordsToSearch')替换为实际资源文件，在本示例中该资源文件的value值为"输入关键字搜索"
+        TextInput({ placeholder: $r('app.string.enterKeyWordsToSearch') })
+          .width('90%')
+          .height(40)
+          .margin({ bottom: 10 })
+
+        // 通过List定义导航的一级界面
+        List({ space: 12, initialIndex: 0 }) {
+          ForEach(this.listArray, (item: string) => {
+            ListItem() {
+              Row() {
+                Row() {
+                  Text(`${item.slice(0, 1)}`)
+                    .fontColor(Color.White)
+                    .fontSize(14)
+                    .fontWeight(FontWeight.Bold)
+                }
+                .width(30)
+                .height(30)
+                .backgroundColor('#a8a8a8')
+                .margin({ right: 20 })
+                .borderRadius(20)
+                .justifyContent(FlexAlign.Center)
+
+                Column() {
+                  Text(item)
+                    .fontSize(16)
+                    .margin({ bottom: 5 })
+                }
+                .alignItems(HorizontalAlign.Start)
+
+                Blank()
+
+                Row()
+                  .width(12)
+                  .height(12)
+                  .margin({ right: 15 })
+                  .border({
+                    width: { top: 2, right: 2 },
+                    color: 0xcccccc
+                  })
+                  .rotate({ angle: 45 })
+              }
+              .borderRadius(15)
+              .shadow({ radius: 100, color: '#ededed' })
+              .width('90%')
+              .alignItems(VerticalAlign.Center)
+              .padding({ left: 15, top: 15, bottom: 15 })
+              .backgroundColor(Color.White)
+            }
+            .width('100%')
+            .onClick(() => {
+              // $r('app.string.detailsPageParameters')需要替换为开发者所需的字符串资源文件，资源文件中的value值为“详情页面参数”
+              this.navPathStack.pushPathByName(`${item}`,
+                // 将name指定的NavDestination页面信息入栈，传递的参数为param
+                this.context!.resourceManager.getStringSync($r('app.string.detailsPageParameters').id));
+            })
+          }, (item: string): string => item)
+        }
+        .listDirection(Axis.Vertical)
+        .edgeEffect(EdgeEffect.Spring)
+        .sticky(StickyStyle.Header)
+        .chainAnimation(false)
+        .width('100%')
+      }
+      .width('100%')
+      .mode(NavigationMode.Auto)
+      // $r('app.string.settings')需要替换为开发者所需的字符串资源文件，资源文件中的value值为“设置”
+      .title($r('app.string.settings')) // 设置标题文字
+    }
+    .size({ width: '100%', height: '100%' })
+    .backgroundColor(0xf4f4f5)
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct NavigationDemo {
-4. @Provide('navPathStack') navPathStack: NavPathStack = new NavPathStack();
-5. private listArray: Array<string> = ['WLAN', 'Bluetooth', 'Personal Hotspot', 'Connect & Share'];
-6. context = this.getUIContext().getHostContext();
-7. build() {
-8. Column() {
-9. Navigation(this.navPathStack) {
-10. // 请将$r('app.string.enterKeyWordsToSearch')替换为实际资源文件，在本示例中该资源文件的value值为"输入关键字搜索"
-11. TextInput({ placeholder: $r('app.string.enterKeyWordsToSearch') })
-12. .width('90%')
-13. .height(40)
-14. .margin({ bottom: 10 })
 
-16. // 通过List定义导航的一级界面
-17. List({ space: 12, initialIndex: 0 }) {
-18. ForEach(this.listArray, (item: string) => {
-19. ListItem() {
-20. Row() {
-21. Row() {
-22. Text(`${item.slice(0, 1)}`)
-23. .fontColor(Color.White)
-24. .fontSize(14)
-25. .fontWeight(FontWeight.Bold)
-26. }
-27. .width(30)
-28. .height(30)
-29. .backgroundColor('#a8a8a8')
-30. .margin({ right: 20 })
-31. .borderRadius(20)
-32. .justifyContent(FlexAlign.Center)
-
-34. Column() {
-35. Text(item)
-36. .fontSize(16)
-37. .margin({ bottom: 5 })
-38. }
-39. .alignItems(HorizontalAlign.Start)
-
-41. Blank()
-
-43. Row()
-44. .width(12)
-45. .height(12)
-46. .margin({ right: 15 })
-47. .border({
-48. width: { top: 2, right: 2 },
-49. color: 0xcccccc
-50. })
-51. .rotate({ angle: 45 })
-52. }
-53. .borderRadius(15)
-54. .shadow({ radius: 100, color: '#ededed' })
-55. .width('90%')
-56. .alignItems(VerticalAlign.Center)
-57. .padding({ left: 15, top: 15, bottom: 15 })
-58. .backgroundColor(Color.White)
-59. }
-60. .width('100%')
-61. .onClick(() => {
-62. // $r('app.string.detailsPageParameters')需要替换为开发者所需的字符串资源文件,资源文件中的value值为“详情页面参数”
-63. this.navPathStack.pushPathByName(`${item}`,
-64. // 将name指定的NaviDestination页面信息入栈,传递的参数为param
-65. this.context!.resourceManager.getStringSync($r('app.string.detailsPageParameters').id));
-66. })
-67. }, (item: string): string => item)
-68. }
-69. .listDirection(Axis.Vertical)
-70. .edgeEffect(EdgeEffect.Spring)
-71. .sticky(StickyStyle.Header)
-72. .chainAnimation(false)
-73. .width('100%')
-74. }
-75. .width('100%')
-76. .mode(NavigationMode.Auto)
-77. // $r('app.string.settings')需要替换为开发者所需的字符串资源文件,资源文件中的value值为“设置”
-78. .title($r('app.string.settings')) // 设置标题文字
-79. }
-80. .size({ width: '100%', height: '100%' })
-81. .backgroundColor(0xf4f4f5)
-82. }
-83. }
-```
-
-[NavigationExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NavigationSample/entry/src/main/ets/pages/navigation/template1/NavigationExample.ets#L15-L99)
-
-* 方式二：从API version 20开始，使用[主页类型NavDestination](../harmonyos-references/ts-basic-components-navigation.md#navigation20)将某个NavDestination直接指定为导航栏内容，此方法需要配置路由表，配置方式请参考[路由表](arkts-navigation-cross-package.md#路由表能力对比)。
+* 方式二：从API version 20开始，使用[Navigation](../harmonyos-references/ts-basic-components-navigation.md#navigation20)将某个NavDestination直接指定为导航栏内容，此方法需要配置路由表，配置方式请参考[路由表](arkts-navigation-cross-package.md#路由表能力对比)。
 
 ## NavPathStack（导航控制器）
 
@@ -178,7 +176,7 @@ NavPathStack也支持开发者继承并复写相关路由操作方法。NavPathS
 
 标题栏在界面顶部，用于呈现界面名称和操作入口，Navigation组件通过[title](../harmonyos-references/ts-basic-components-navigation.md#title)属性设置标题内容，通过[titleMode](../harmonyos-references/ts-basic-components-navigation.md#titlemode)属性设置标题栏模式。NavDestination同样支持[title](../harmonyos-references/ts-basic-components-navdestination.md#title)属性用于设置标题内容。
 
-说明
+**说明** 
 
 Navigation未设置[title](../harmonyos-references/ts-basic-components-navigation.md#title)、[titleMode](../harmonyos-references/ts-basic-components-navigation.md#titlemode)、[menus](../harmonyos-references/ts-basic-components-navigation.md#menus)等与标题、菜单栏相关的属性时，即使将[hideBackButton](../harmonyos-references/ts-basic-components-navigation.md#hidebackbutton)设置为false，返回按钮也不会展示。
 
@@ -188,32 +186,28 @@ Navigation未设置[title](../harmonyos-references/ts-basic-components-navigatio
 
   **图4** Mini模式标题栏
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/jDv3fi2QTFq9bndor7Pfzw/zh-cn_image_0000002558604514.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/XYafy1QCSoquzhWaMNOsWQ/zh-cn_image_0000002706673446.jpg)
 
+  ```typescript
+  Navigation() {
+    // ...
+  }
+  .titleMode(NavigationTitleMode.Mini)
   ```
-  1. Navigation() {
-  2. // ...
-  3. }
-  4. .titleMode(NavigationTitleMode.Mini)
-  ```
-
-  [TitleModeMini.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NavigationSample/entry/src/main/ets/pages/navigation/template1/TitleModeMini.ets#L54-L64)
 * Full模式：
 
   强调型标题栏，用于一级页面需要突出标题的场景。
 
   **图5** Full模式标题栏
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/__T27bRyTpGqWZCYD2DOaQ/zh-cn_image_0000002589324039.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/8RMQZTX7R3ajCjGdyZXCQA/zh-cn_image_0000002736432535.jpg)
 
+  ```typescript
+  Navigation() {
+    // ...
+  }
+  .titleMode(NavigationTitleMode.Full)
   ```
-  1. Navigation() {
-  2. // ...
-  3. }
-  4. .titleMode(NavigationTitleMode.Full)
-  ```
-
-  [TitleModeFull.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NavigationSample/entry/src/main/ets/pages/navigation/template1/TitleModeFull.ets#L54-L64)
 
 ## 菜单栏
 
@@ -221,61 +215,55 @@ Navigation未设置[title](../harmonyos-references/ts-basic-components-navigatio
 
 **图6** 设置了3个图标的菜单栏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/XwFoIPqmTreqCCjqBLi3ow/zh-cn_image_0000002589243979.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/Y1qoXlneQX22pV8j_IJVsA/zh-cn_image_0000002706833382.jpg)
 
+```typescript
+let menuItem: NavigationMenuItem  = {
+  'value': 'func',
+  'icon': 'ets/pages/navigation/template1/image/ic_public_add.svg',
+  'action': () => {}
+};
+// ...
+      Navigation(this.navPathStack) {
+        // ...
+      }
+      .menus([menuItem, menuItem, menuItem])
 ```
-1. let menuItem: NavigationMenuItem  = {
-2. 'value': 'func',
-3. 'icon': 'ets/pages/navigation/template1/image/ic_public_add.svg',
-4. 'action': () => {}
-5. };
-6. // ...
-7. Navigation(this.navPathStack) {
-8. // ...
-9. }
-10. .menus([menuItem, menuItem, menuItem])
-```
-
-[MenusThreeImage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NavigationSample/entry/src/main/ets/pages/navigation/template1/MenusThreeImage.ets#L16-L72)
 
 图片也可以引用resources中的资源。
 
+```typescript
+let menuItem: NavigationMenuItem  = {
+  'value': 'func',
+  'icon': 'resources/base/media/ic_public_add.svg',
+  'action': () => {}
+};
+// ...
+      Navigation(this.navPathStack) {
+        // ...
+      }
+      .menus([menuItem, menuItem, menuItem])
 ```
-1. let menuItem: NavigationMenuItem  = {
-2. 'value': 'func',
-3. 'icon': 'resources/base/media/ic_public_add.svg',
-4. 'action': () => {}
-5. };
-6. // ...
-7. Navigation(this.navPathStack) {
-8. // ...
-9. }
-10. .menus([menuItem, menuItem, menuItem])
-```
-
-[MenusThreeResource.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NavigationSample/entry/src/main/ets/pages/navigation/template1/MenusThreeResource.ets#L16-L72)
 
 **图7** 设置了4个图标的菜单栏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/PXkm4wcuQw67_O9a2WFJ5g/zh-cn_image_0000002558764172.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/SIwgqlLNTLiomXoiVmROJw/zh-cn_image_0000002736312491.jpg)
 
 竖屏状态下菜单栏，最多支持显示3个按钮，当按钮超过3个时，多余的按钮会被折叠。
 
+```typescript
+let menuItem: NavigationMenuItem  = {
+  'value': 'func',
+  'icon': 'ets/pages/navigation/template1/image/ic_public_add.svg',
+  'action': () => {}
+};
+// ...
+      Navigation(this.navPathStack) {
+        // ...
+      }
+      // 竖屏最多支持显示3个图标，多余的图标会被放入自动生成的更多图标
+      .menus([menuItem, menuItem, menuItem, menuItem])
 ```
-1. let menuItem: NavigationMenuItem  = {
-2. 'value': 'func',
-3. 'icon': 'ets/pages/navigation/template1/image/ic_public_add.svg',
-4. 'action': () => {}
-5. };
-6. // ...
-7. Navigation(this.navPathStack) {
-8. // ...
-9. }
-10. // 竖屏最多支持显示3个图标，多余的图标会被放入自动生成的更多图标
-11. .menus([menuItem, menuItem, menuItem, menuItem])
-```
-
-[MenusFour.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NavigationSample/entry/src/main/ets/pages/navigation/template1/MenusFour.ets#L16-L73)
 
 ## 工具栏
 
@@ -283,20 +271,18 @@ Navigation未设置[title](../harmonyos-references/ts-basic-components-navigatio
 
 **图8** 工具栏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/4O4hyji-R7-V9H4g3PfjNg/zh-cn_image_0000002558604516.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/L-E6TaexS8CwEM39VsM0sQ/zh-cn_image_0000002706673448.jpg)
 
+```typescript
+let toolTmp: ToolbarItem = {
+  'value': 'func',
+  'icon': 'ets/pages/navigation/template1/image/ic_public_highlights.svg',
+  'action': () => {}
+};
+let toolBar: ToolbarItem[] = [toolTmp,toolTmp,toolTmp];
+// ...
+      Navigation(this.navPathStack) {
+        // ...
+      }
+      .toolbarConfiguration(toolBar)
 ```
-1. let toolTmp: ToolbarItem = {
-2. 'value': 'func',
-3. 'icon': 'ets/pages/navigation/template1/image/ic_public_highlights.svg',
-4. 'action': () => {}
-5. };
-6. let toolBar: ToolbarItem[] = [toolTmp,toolTmp,toolTmp];
-7. // ...
-8. Navigation(this.navPathStack) {
-9. // ...
-10. }
-11. .toolbarConfiguration(toolBar)
-```
-
-[ToolBar.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NavigationSample/entry/src/main/ets/pages/navigation/template1/ToolBar.ets#L16-L78)

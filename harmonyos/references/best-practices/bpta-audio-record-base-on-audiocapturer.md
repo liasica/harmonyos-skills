@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 基于AudioCapturer录制PCM音频（ArkTS）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践 > 基于AudioCapturer录制PCM音频（ArkTS）
 category: best-practices
-scraped_at: 2026-04-29T14:11:28+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:7541d10467b13d3e9dde79f0ee738331063a4f2afcb40059f31abc0d833c5012
+scraped_at: 2026-09-02T15:03:17+08:00
+doc_updated_at: 2026-05-22
+content_hash: sha256:8dafc91bbe4c67a16350335c81bef8942b8740a172b0ab1fbb780c3cfdbefe2b
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ AudioCapturer是用于音频录制的ArkTS API，仅支持录制PCM格式，可�
 
 基于AudioCapturer录制PCM音频（ArkTS）实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/UlDyp8Q5TKixpxvKRY409Q/zh-cn_image_0000002524061072.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/mZh4NkRmSeO8wNrf6f_Ewg/zh-cn_image_0000002524061072.gif "点击放大")
 
 本文的主要内容如下：
 
@@ -28,7 +28,7 @@ AudioCapturer可以录制PCM（Pulse Code Modulation）音频数据，能够快�
 
 **图1** AudioCapturer状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/i11zL9JzT368OISEwfV9Xw/zh-cn_image_0000002555220981.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/vZoSh8A9Svy_ihTLHBX-xQ/zh-cn_image_0000002555220981.jpg "点击放大")
 
 ### 开发步骤
 
@@ -38,131 +38,129 @@ AudioCapturer可以录制PCM（Pulse Code Modulation）音频数据，能够快�
 * 将配置好的参数audioCapturerOptions传入createAudioCapturer接口中，以创建音频采集器实例。
 * 设置readData回调函数。该回调用于系统向PCM文件中写入采集到的音频数据。其中，Options用来标记每次写入的数据在文件中偏移量和大小。
 
-```
-1. async initCapturer(): Promise<void> {
-2. try {
-3. // Config AudioStreamInfo
-4. let audioStreamInfo: audio.AudioStreamInfo = {
-5. channels: audio.AudioChannel.CHANNEL_1, // Set channel
-6. samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,  // Set samplingRate
-7. sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,  // Set sampleFormat
-8. encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW,  // Set encodingType
-9. };
-10. // Config AudioCapturerInfo
-11. let audioCapturerInfo: audio.AudioCapturerInfo = {
-12. capturerFlags: 0,
-13. source: audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION,
-14. };
-15. // Config AudioCapturerOptions
-16. let audioCapturerOptions: audio.AudioCapturerOptions = {
-17. streamInfo: audioStreamInfo,
-18. capturerInfo: audioCapturerInfo,
-19. };
+```screen
+async initCapturer(): Promise<void> {
+  try {
+    // Config AudioStreamInfo
+    const audioStreamInfo: audio.AudioStreamInfo = {
+      channels: audio.AudioChannel.CHANNEL_1, // Set channel
+      samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,  // Set samplingRate
+      sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,  // Set sampleFormat
+      encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW,  // Set encodingType
+    };
+    // Config AudioCapturerInfo
+    const audioCapturerInfo: audio.AudioCapturerInfo = {
+      capturerFlags: 0,
+      source: audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION,
+    };
+    // Config AudioCapturerOptions
+    const audioCapturerOptions: audio.AudioCapturerOptions = {
+      streamInfo: audioStreamInfo,
+      capturerInfo: audioCapturerInfo,
+    };
 
-21. this.capturer = await audio.createAudioCapturer(audioCapturerOptions);
-22. // Set if capturer want to be muted
-23. this.capturer.setWillMuteWhenInterrupted(true).catch((error: BusinessError) => {
-24. Logger.error(TAG, `setWillMuteWhenInterrupted error. message:${error.message}`);
-25. });
-26. // Set stateChange callback
-27. this.capturer.on('stateChange', (state: audio.AudioState) => {
-28. Logger.info(TAG, `Audio capturer state changed: ${state}`);
-29. });
-30. // Set readData callback
-31. this.capturer.on('readData', (buffer: ArrayBuffer) => {
-32. let options: WriteOptions = { offset: this.writeOffset, length: buffer.byteLength };
-33. fileIo.writeSync(this.recordFile?.fd, buffer, options);
-34. this.writeOffset += buffer.byteLength;
-35. });
-36. } catch (error) {
-37. Logger.error(TAG, `initCapturer error. message:${(error as BusinessError).message}`);
-38. }
-39. }
+    this.capturer = await audio.createAudioCapturer(audioCapturerOptions);
+    // Set if capturer want to be muted
+    this.capturer.setWillMuteWhenInterrupted(true).catch((error: BusinessError) => {
+      Logger.error(TAG, `setWillMuteWhenInterrupted error. message:${error.message}`);
+    });
+    // Set stateChange callback
+    this.capturer.on('stateChange', (state: audio.AudioState) => {
+      Logger.info(TAG, `Audio capturer state changed: ${state}`);
+    });
+    // Set readData callback
+    this.capturer.on('readData', (buffer: ArrayBuffer) => {
+      if (!this.recordFile) {
+        return;
+      }
+      let options: WriteOptions = { offset: this.writeOffset, length: buffer.byteLength };
+      fileIo.writeSync(this.recordFile.fd, buffer, options);
+      this.writeOffset += buffer.byteLength;
+    });
+  } catch (error) {
+    Logger.error(TAG, `initCapturer error. message:${(error as BusinessError).message}`);
+  }
+}
 ```
-
-[AudioCapturerController.ets](https://gitcode.com/HarmonyOS_Samples/audio-capturer-record-pcm/blob/master/entry/src/main/ets/controller/AudioCapturerController.ets#L39-L79)
 
 2.开始音频录制。
 
+```screen
+async startCapturer(): Promise<void> {
+  try {
+    if (this.capturer === undefined) {
+      throw new Error(`Release AudioCapturer at undefined state`);
+    }
+    let state = this.capturer.state;
+    if (state === audio.AudioState.STATE_INVALID) {
+      this.capturer = undefined;
+      throw new Error(`AudioCapturer at invalid state.`);
+    }
+    if (state !== audio.AudioState.STATE_PREPARED && state !== audio.AudioState.STATE_STOPPED) {
+      throw new Error(`Release AudioCapturer at wrong state, ${state}`);
+    }
+    if (!this.context) {
+      throw new Error(`Context is undefined.`);
+    }
+    this.tmpPath = this.context?.filesDir + '/example.pcm';
+    let openMode = fileIo.OpenMode.WRITE_ONLY | fileIo.OpenMode.CREATE | fileIo.OpenMode.TRUNC;
+    this.recordFile = fileIo.openSync(this.tmpPath, openMode);
+    this.writeOffset = 0;
+    await this.capturer.start();
+  } catch (error) {
+    Logger.error(TAG, `startCapturer error. message:${(error as BusinessError).message}`);
+  }
+}
 ```
-1. async startCapturer(): Promise<void> {
-2. if (this.capturer === undefined) {
-3. throw new Error(`Release AudioCapturer at undefined state`);
-4. }
-5. let state = this.capturer.state;
-6. if (state === audio.AudioState.STATE_INVALID) {
-7. this.capturer = undefined;
-8. throw new Error(`AudioCapturer at invalid state.`);
-9. }
-10. if (state !== audio.AudioState.STATE_PREPARED && state !== audio.AudioState.STATE_STOPPED) {
-11. throw new Error(`Release AudioCapturer at wrong state, ${state}`);
-12. }
-13. try {
-14. this.tmpPath = this.context?.filesDir + '/example.pcm';
-15. let openMode = fileIo.OpenMode.WRITE_ONLY | fileIo.OpenMode.CREATE | fileIo.OpenMode.TRUNC;
-16. this.recordFile = fileIo.openSync(this.tmpPath, openMode);
-17. this.writeOffset = 0;
-18. await this.capturer.start();
-19. } catch (error) {
-20. Logger.error(TAG, `startCapturer error. message:${(error as BusinessError).message}`);
-21. }
-22. }
-```
-
-[AudioCapturerController.ets](https://gitcode.com/HarmonyOS_Samples/audio-capturer-record-pcm/blob/master/entry/src/main/ets/controller/AudioCapturerController.ets#L87-L108)
 
 3.停止音频录制。
 
+```screen
+async stopCapturer(): Promise<void> {
+  try {
+    if (this.capturer === undefined) {
+      throw new Error(`Release AudioCapturer at undefined state`);
+    }
+    let state = this.capturer.state;
+    if (state === audio.AudioState.STATE_INVALID) {
+      this.capturer = undefined;
+      throw new Error(`AudioCapturer at invalid state.`);
+    }
+    if (state !== audio.AudioState.STATE_RUNNING) {
+      return;
+    }
+    await this.capturer.stop();
+    fileIo.closeSync(this.recordFile?.fd);
+  } catch (error) {
+    Logger.error(TAG, `stopCapturer error. message:${(error as BusinessError).message}`);
+  }
+}
 ```
-1. async stopCapturer(): Promise<void> {
-2. if (this.capturer === undefined) {
-3. throw new Error(`Release AudioCapturer at undefined state`);
-4. }
-5. let state = this.capturer.state;
-6. if (state === audio.AudioState.STATE_INVALID) {
-7. this.capturer = undefined;
-8. throw new Error(`AudioCapturer at invalid state.`);
-9. }
-10. if (state !== audio.AudioState.STATE_RUNNING) {
-11. return;
-12. }
-13. try {
-14. await this.capturer.stop();
-15. fileIo.closeSync(this.recordFile?.fd);
-16. } catch (error) {
-17. Logger.error(TAG, `stopCapturer error. message:${(error as BusinessError).message}`);
-18. }
-19. }
-```
-
-[AudioCapturerController.ets](https://gitcode.com/HarmonyOS_Samples/audio-capturer-record-pcm/blob/master/entry/src/main/ets/controller/AudioCapturerController.ets#L116-L134)
 
 4.取消监听事件，并释放资源。
 
+```screen
+async releaseCapturer(): Promise<void> {
+  try {
+    if (this.capturer === undefined) {
+      throw new Error(`Release AudioCapturer at undefined state`);
+    }
+    let state = this.capturer.state;
+    if (state === audio.AudioState.STATE_INVALID) {
+      this.capturer = undefined;
+      throw new Error(`AudioCapturer at invalid state.`);
+    }
+    if (state !== audio.AudioState.STATE_PREPARED && state !== audio.AudioState.STATE_STOPPED) {
+      throw new Error(`Release AudioCapturer at wrong state, ${state}`);
+    }
+    this.capturer.off('readData');
+    await this.capturer.release();
+    this.capturer = undefined;
+  } catch (error) {
+    Logger.error(TAG, `releaseCapturer error. message:${(error as BusinessError).message}`);
+  }
+}
 ```
-1. async releaseCapturer(): Promise<void> {
-2. if (this.capturer === undefined) {
-3. throw new Error(`Release AudioCapturer at undefined state`);
-4. }
-5. let state = this.capturer.state;
-6. if (state === audio.AudioState.STATE_INVALID) {
-7. this.capturer = undefined;
-8. throw new Error(`AudioCapturer at invalid state.`);
-9. }
-10. if (state !== audio.AudioState.STATE_PREPARED && state !== audio.AudioState.STATE_STOPPED) {
-11. throw new Error(`Release AudioCapturer at wrong state, ${state}`);
-12. }
-13. try {
-14. this.capturer.off('readData');
-15. await this.capturer.release();
-16. this.capturer = undefined;
-17. } catch (error) {
-18. Logger.error(TAG, `releaseCapturer error. message:${(error as BusinessError).message}`);
-19. }
-20. }
-```
-
-[AudioCapturerController.ets](https://gitcode.com/HarmonyOS_Samples/audio-capturer-record-pcm/blob/master/entry/src/main/ets/controller/AudioCapturerController.ets#L142-L161)
 
 ## 常见问题
 
@@ -170,14 +168,12 @@ AudioCapturer可以录制PCM（Pulse Code Modulation）音频数据，能够快�
 
 开发者在创建AudioCapturer实例时，调用[setWillMuteWhenInterrupted()](../harmonyos-references/arkts-apis-audio-audiocapturer.md#setwillmutewheninterrupted20)接口设置当前录制音频流是否启用静音打断模式。
 
+```screen
+// Set if capturer want to be muted
+this.capturer.setWillMuteWhenInterrupted(true).catch((error: BusinessError) => {
+  Logger.error(TAG, `setWillMuteWhenInterrupted error. message:${error.message}`);
+});
 ```
-1. // Set if capturer want to be muted
-2. this.capturer.setWillMuteWhenInterrupted(true).catch((error: BusinessError) => {
-3. Logger.error(TAG, `setWillMuteWhenInterrupted error. message:${error.message}`);
-4. });
-```
-
-[AudioCapturerController.ets](https://gitcode.com/HarmonyOS_Samples/audio-capturer-record-pcm/blob/master/entry/src/main/ets/controller/AudioCapturerController.ets#L61-L64)
 
 ### 设置回声消除
 

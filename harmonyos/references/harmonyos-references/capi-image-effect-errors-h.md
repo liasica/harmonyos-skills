@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: image_effect_errors.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > image_effect_errors.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:24+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:6dd18bee7784ac93d45fb172783d115a9ab62ebc17f5b085ec40f67da9f42f07
+scraped_at: 2026-09-02T15:02:32+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8ba25f6019fb353e5522dba0054e9fd24969c029515fd88851a0da44cb988142
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 声明图片效果器错误码。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 枚举
-
-PhonePC/2in1TabletTV
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,14 +32,10 @@ PhonePC/2in1TabletTV
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTV
-
 ### ImageEffect\_ErrorCode
 
-PhonePC/2in1TabletTV
-
-```
-1. enum ImageEffect_ErrorCode
+```c
+enum ImageEffect_ErrorCode
 ```
 
 **描述**

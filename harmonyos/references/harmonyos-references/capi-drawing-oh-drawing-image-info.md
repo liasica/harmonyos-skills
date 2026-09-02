@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: OH_Drawing_Image_Info
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 结构体 > OH_Drawing_Image_Info
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:15+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:51af75124fde9ad474e64c2ef5a48ad092ff5e291896293923e2d23ac4d5fe17
+scraped_at: 2026-09-02T15:02:46+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:010fe556e1ba789be17c0e5ac43b849c5a299af4b62f9ee16f5fe96d604e560e
 ---
 
-```
-1. typedef struct {...} OH_Drawing_Image_Info
+```c
+typedef struct {...} OH_Drawing_Image_Info
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义图片信息结构体。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

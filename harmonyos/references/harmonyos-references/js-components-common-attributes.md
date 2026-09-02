@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 通用属性
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 通用属性
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:14+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:ee558034ea3fd64291b3e333ea8b5735fee14562e31dbb18bf1f637f71e72dba
+scraped_at: 2026-09-02T15:01:11+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8f125210e93209d21793890cc450368733577b187fa9ec6d3cb277d778dfde96
 ---
 
-说明
+**说明** 
 
 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 常规属性
-
-PhonePC/2in1TabletTVWearable
 
 常规属性是指组件普遍支持的用来设置组件基本标识和外观显示特征的属性。
 
@@ -32,8 +30,6 @@ PhonePC/2in1TabletTVWearable
 
 ## 渲染属性
 
-PhonePC/2in1TabletTVWearable
-
 渲染属性是指组件普遍支持的用来设置组件是否渲染的属性。
 
 | 名称 | 类型 | 默认值 | 描述 |
@@ -42,120 +38,114 @@ PhonePC/2in1TabletTVWearable
 | if | boolean | - | 根据设置的boolean值，添加或移除当前元素。true表示添加当前元素，false表示移除当前元素。 |
 | show | boolean | - | 根据设置的boolean值，显示或隐藏当前元素。true表示显示当前元素，false表示隐藏当前元素。 |
 
-说明
+**说明** 
 
 属性和样式不能混用，不能在属性字段中进行样式设置。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 ### 示例1
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div id="container">
-3. <button class="btn" type="capsule" value="toggleDisplay" onclick="toggleDisplay"></button>
-4. <list class="list">
-5. <list-item for="{{ array }}" class="listItem">
-6. <text class="text" onclick="toggleShow" show="{{ visible }}"
-7. if="{{ display }}">{{ $item.value }}</text>
-8. </list-item>
-9. </list>
-10. </div>
+```html
+<!-- xxx.hml -->
+<div id="container">
+    <button class="btn" type="capsule" value="toggleDisplay" onclick="toggleDisplay"></button>
+    <list class="list">
+        <list-item for="{{ array }}" class="listItem">
+            <text class="text" onclick="toggleShow" show="{{ visible }}"
+                  if="{{ display }}">{{ $item.value }}</text>
+        </list-item>
+    </list>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. #container {
-3. flex-direction: column;
-4. width: 100%;
-5. margin-top: 10px;
-6. }
-7. .text {
-8. font-size: 50px;
-9. font-weight: 500;
-10. margin-left: 12px;
-11. }
-12. .listItem {
-13. width: 100%;
-14. height: 100px;
-15. line-height: 60px;
-16. border-bottom: 1px solid #DEDEDE;
-17. font-size: 20px;
-18. }
-19. .btn{
-20. width: 280px;
-21. font-size: 26px;
-22. margin: 10px 0;
-23. }
-```
-
-```
-1. // xxx.js
-2. export default {
-3. data: {
-4. visible: true,
-5. display: true,
-6. title: "",
-7. i: 4,
-8. array: [
-9. {"value": "列表文本0"},
-10. {"value": "列表文本1"},
-11. {"value": "列表文本2"},
-12. {"value": "列表文本3"},
-13. ],
-14. },
-15. toggleShow: function() {
-16. this.array.push({"value": "列表文本" + this.i })
-17. this.i++
-18. },
-19. toggleDisplay: function() {
-20. this.display = !this.display
-21. },
-22. }
+```css
+/* xxx.css */
+#container {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+}
+.text {
+    font-size: 50px;
+    font-weight: 500;
+    margin-left: 12px;
+}
+.listItem {
+    width: 100%;
+    height: 100px;
+    line-height: 60px;
+    border-bottom: 1px solid #DEDEDE;
+    font-size: 20px;
+}
+.btn{
+    width: 280px;
+    font-size: 26px;
+    margin: 10px 0;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/zpAL-JToRmGrXG5JH0wkgQ/zh-cn_image_0000002589246503.gif)
+```js
+// xxx.js
+export default {
+    data: {
+        visible: true,
+        display: true,
+        title: "",
+        i: 4,
+        array: [
+            {"value": "列表文本0"},
+            {"value": "列表文本1"},
+            {"value": "列表文本2"},
+            {"value": "列表文本3"},
+        ],
+    },
+    toggleShow: function() {
+        this.array.push({"value": "列表文本" + this.i })
+        this.i++
+    },
+    toggleDisplay: function() {
+        this.display = !this.display
+    },
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/DXjYoVbPSs-drL-DjcrrMg/zh-cn_image_0000002706836360.gif)
 
 ### 示例2
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <div>
-4. <text class="text1" dir='rtl' >hello world</text>
-5. </div>
-6. <div>
-7. <text class="text2" dir='ltr' >hello world</text>
-8. </div>
-9. </div>
+```html
+<!-- xxx.hml -->
+<div class="container">
+    <div>
+        <text class="text1" dir='rtl' >hello world</text>
+    </div>
+    <div>
+        <text class="text2" dir='ltr' >hello world</text>
+    </div>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .container {
-3. display: flex;
-4. flex-direction: column;
-5. justify-content: center;
-6. align-items: center;
-7. width: 100%;
-8. height: 100%;
-9. }
-10. .text1{
-11. width: 90%;
-12. height: 100px;
-13. background-color: aqua;
-14. }
-15. .text2{
-16. width: 90%;
-17. height: 100px;
-18. background-color: blue;
-19. }
+```css
+/* xxx.css */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.text1{
+    width: 90%;
+    height: 100px;
+    background-color: aqua;
+}
+.text2{
+    width: 90%;
+    height: 100px;
+    background-color: blue;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/_MIjeZ46T0maOe58WUndAw/zh-cn_image_0000002558766696.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/rcAZauGdQKqlRygq6DZicA/zh-cn_image_0000002736315465.png)

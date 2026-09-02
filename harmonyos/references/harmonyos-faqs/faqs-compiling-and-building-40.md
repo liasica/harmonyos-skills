@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“In the form_config.json file, if the value of the updateEnabled field is true, the updateDuration and scheduleUpdateTime fields cannot be both empty”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“In the form_config.json file, if the value of the updateEnabled field is true, the updateDuration and scheduleUpdateTime fields cannot be both empty”
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:20:29+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:4cb2bd9eeb4b55abe950f59b634da5a07abb8e3e94fa8976203bfc09eaec25f8
+scraped_at: 2026-09-02T14:54:54+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:7868421295b35e17d8c13b6f11eddfef5a3a5a66730d9758371e1d5fe96dac2d
 ---
 
 **问题现象**
 
 在form\_config.json文件中，如果updateEnabled字段的值为true，则updateDuration和scheduleUpdateTime字段不能同时为空。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/2ByqwFnTR2uosRU2nTcEdg/zh-cn_image_0000002229758573.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/KUkK15hjTEiND8bMCou4Jw/zh-cn_image_0000002654837819.png "点击放大")
 
 **问题原因**
 

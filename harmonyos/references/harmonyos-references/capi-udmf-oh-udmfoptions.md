@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-udmf
 title: OH_UdmfOptions
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 结构体 > OH_UdmfOptions
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:43+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:e4c2fa7263fcddb3c87a285cb5dd5cd95692f0f8e066fd64afdfc9d9f00ba543
+scraped_at: 2026-09-02T14:51:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:fcc15e843f7a6a1974b07f5b9ee0c18717f639cb3bf464d2bb0b93b22c837bc7
 ---
 
-```
-1. typedef struct OH_UdmfOptions OH_UdmfOptions
+```c
+typedef struct OH_UdmfOptions OH_UdmfOptions
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 数据操作选项，定义数据操作的可选参数。
 

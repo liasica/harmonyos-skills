@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-502
 title: 新增和增强特性
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.2(14) > OS平台能力 > 新增和增强特性
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.2(14) > OS平台能力 > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:44+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:be44e8afec783f189748a063a8caa4922c0cc3fde1f1e67358e169944e66baaa
+scraped_at: 2026-09-02T14:49:24+08:00
+doc_updated_at: 2026-08-04
+content_hash: sha256:9977085fe7733ae0b5e52907855d0bcc082b69893eaec28c6222c8158b99d14b
 ---
 
 ## Ability Kit
@@ -159,10 +159,10 @@ content_hash: sha256:be44e8afec783f189748a063a8caa4922c0cc3fde1f1e67358e169944e6
 
 ## MDM Kit
 
-* 企业应用禁用设备功能的能力新增支持禁用设备相机能力。（[API参考](../harmonyos-references/js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicy)）
-* 企业应用安装事件新增一类回调，该回调返回的信息包括安装包名和账号ID。（[API参考](../harmonyos-references/js-apis-enterpriseadminextensionability.md#enterpriseadminextensionabilityonbundleadded14)）
+* 企业应用禁用设备功能的能力新增支持禁用设备相机能力。（[API参考](../harmonyos-references/js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicydeprecated)）
+* 企业应用安装事件新增一类回调，该回调返回的信息包括安装包名和账号ID。（[API参考](../harmonyos-references/js-apis-enterpriseadminextensionability.md#onbundleadded14)）
 * 企业应用新增支持委托其他应用来设置设备的管控策略。（[API参考](../harmonyos-references/js-apis-enterprise-adminmanager.md#adminmanagersetdelegatedpolicies14)）
-* 企业应用新增支持设置禁用/启用设备指纹功能，该能力目前仅限PC/2in1设备使用。（[API参考](../harmonyos-references/js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicyforaccount14)）
+* 企业应用新增支持设置禁用/启用设备指纹功能，该能力目前仅限PC/2in1设备使用。（[API参考](../harmonyos-references/js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicyforaccountdeprecated)）
 * 企业应用新增支持设置禁用屏幕快照（即截屏）功能，该能力目前仅限PC/2in1设备使用。（[API参考](../harmonyos-references/js-apis-enterprise-restrictions.md#restrictionsadddisallowedlistforaccount14)）
 * 企业应用新增支持对应用设置水印的能力，该能力目前仅限PC/2in1设备使用。（[API参考](../harmonyos-references/js-apis-enterprise-securitymanager.md#securitymanagersetwatermarkimage14)）
 * 企业应用新增支持“设备管理”应用添加保活的应用，该能力目前仅限PC/2in1设备使用。（[API参考](../harmonyos-references/js-apis-enterprise-applicationmanager.md#applicationmanageraddkeepaliveapps14)）
@@ -202,7 +202,7 @@ content_hash: sha256:be44e8afec783f189748a063a8caa4922c0cc3fde1f1e67358e169944e6
 
 ## Store Kit
 
-* 支持应用市场推荐场景下，应用内快捷方式加桌。（[指南](../harmonyos-guides/store-productview.md#通过app-linking拉起写评论页-1)）
+* 支持应用市场推荐场景下，应用内快捷方式加桌。（[指南](../harmonyos-guides/appgallery-productview-addshortcut.md)）
 * 应用详情页展示和元服务卡片加桌场景下，支持成功打开和关闭回调函数。（[API参考](../harmonyos-references/store-productviewmanager.md#productviewcallback)）
 * 应用详情页展示场景下，支持设置登记归因来源的广告曝光数据属性参数。（[API参考](../harmonyos-references/store-productviewmanager.md#skexposure)）
 * 产品特性按需分发新增C接口，支持用户按需动态下载所需的增强特性。（[API参考](../harmonyos-references/store-c.md)）

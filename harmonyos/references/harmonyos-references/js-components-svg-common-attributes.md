@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 通用属性
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > 通用属性
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:15+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:ffe452c4cfd156d991c623e2e6a2309d8711745910f6eb907647bcfeb11bbc12
+scraped_at: 2026-09-02T15:01:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:431d460d6ec4a7bdcd175bf5e52bd7f4b6ae8e90fa858fcd45c1f95c2bd2932b
 ---
 
-说明
+**说明** 
 
 从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
-| fill | <color> | black | 否 | 使用简写属性设置元素的填充色。支持属性动画。 |
+| fill | <color> | black | 否 | 设置元素的填充色。支持属性动画。 |
 | fill-opacity | number | 1 | 否 | 填充色的透明度，取值范围为0到1，1表示为不透明，0表示为完全透明。支持属性动画。 |
 | fill-rule | nonzero | evenodd | nonzero | 否 | nonzero：非零规则； evenodd：奇偶规则。 |
 | opacity | number | 1 | 否 | 元素的透明度，取值范围为0到1，1表示为不透明，0表示为完全透明。支持属性动画。 |

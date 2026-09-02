@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkui-overvie
 title: ArkUI简介
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > ArkUI简介
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:26:59+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:06ff393ebc9279c6afc67ae8dfcdd87b377eb097542aa38052f28a0926b7542e
+scraped_at: 2026-09-02T14:49:47+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0a0c564556f8b4e2015442fbb18181004d82c433f05f274093495197d978a0d4
 ---
 
 ArkUI（方舟UI框架）为应用的UI开发提供了完整的基础设施，包括简洁的UI语法、丰富的UI功能（组件、布局、动画以及交互事件），以及实时界面预览工具等，可以支持开发者进行可视化界面开发。
@@ -30,11 +30,11 @@ ArkUI（方舟UI框架）为应用的UI开发提供了完整的基础设施，�
 
   **图1** 方舟UI框架示意图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/wxJUvEI0QvKeAUsb3uClgg/zh-cn_image_0000002589243849.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/1mxKjzKVSkywzfLLGg1FVg/zh-cn_image_0000002706833104.png)
 
 ## 不同应用类型支持的开发范式
 
-根据所选用[应用模型](application-models.md)（Stage模型、FA模型）和页面形态（应用或服务的普通页面、卡片）的不同，对应支持的UI开发范式也有所差异，详见下表。
+根据所选用[应用模型](stage-model-development-overview.md)（Stage模型、FA模型）和页面形态（应用或服务的普通页面、卡片）的不同，对应支持的UI开发范式也有所差异，详见下表。
 
 **表1** 支持的UI开发范式
 
@@ -56,3 +56,27 @@ ArkUI（方舟UI框架）为应用的UI开发提供了完整的基础设施，�
 * **NDK开发**：ArkUI开发框架提供了一系列NDK接口，能够在应用中使用C和C++代码构建UI界面，包括UI组件创建、UI树操作、属性设置和事件监听等。详细使用方式可参考[NDK接口概述](ndk-build-ui-overview.md)。
 
   **适用场景**：需要精细化创建和挂载UI组件、对性能有高要求的场景、业务已存在C或C++库可使用NDK能力进行对接。
+
+## 模拟器支持情况
+
+本Kit支持模拟器，但与真机存在部分能力差异，具体差异如下。
+
+* 通用差异，请参见[模拟器与真机的差异](ide-emulator-specification.md#section1227613205203)。
+* 其他差异，不支持模拟器的功能以及组件如下：
+
+  | 组件名 | 不支持情况 |
+  | --- | --- |
+  | [Image](../harmonyos-references/ts-basic-components-image.md) | 不支持enableAnalyzer |
+  | [图像类型定义](../harmonyos-references/ts-image-common.md) | 不支持图像AI分析，例如ImageAnalyzerController |
+  | [@ohos.arkui.drawableDescriptor](../harmonyos-references/js-apis-arkui-drawabledescriptor.md) | HDR特性不支持，例如setHdrComposition |
+  | [OH\_ArkUI\_TextDataDetectorConfig](../harmonyos-references/capi-arkui-nativemodule-oh-arkui-textdatadetectorconfig.md) | 不支持 |
+  | [EmbeddedComponent](../harmonyos-references/ts-container-embedded-component.md) | 不支持 |
+  | [@ohos.pluginComponent](../harmonyos-references/js-apis-plugincomponent.md) | 不支持 |
+  | [toolbar](../harmonyos-references/ts-universal-attributes-toolbar.md#toolbar) | 不支持 |
+  | [@Preview装饰器](../harmonyos-references/ts-universal-component-previewer.md#preview装饰器) | 不支持 |
+  | [AbilityBase\_Want](../harmonyos-references/capi-arkui-nativemodule-abilitybase-want.md) | 不支持 |
+  | [ArkUI\_EmbeddedComponentOption](../harmonyos-references/capi-arkui-nativemodule-arkui-embeddedcomponentoption.md) | 不支持 |
+  | [ArkUI\_SelectedDragPreviewStyle](../harmonyos-references/capi-arkui-nativemodule-arkui-textselecteddragpreviewstyle.md) | 不支持 |
+  | [embedded\_component.h](../harmonyos-references/capi-embedded-component-h.md) | 不支持 |
+  | [ArkUI\_NodeAttributeType（EmbeddedComponent组件相关属性）](../harmonyos-references/capi-native-node-h-nodeattributetype-embeddedcomponent.md) | 不支持 |
+  | [restoreId](../harmonyos-references/ts-universal-attributes-restoreid.md#restoreid) | 不支持 |

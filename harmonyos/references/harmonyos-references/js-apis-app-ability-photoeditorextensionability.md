@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.PhotoEditorExtensionAbility (支持图片编辑能力的ExtensionAbility组件)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.PhotoEditorExtensionAbility (支持图片编辑能力的ExtensionAbility组件)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:48:32+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:43e3716eaaa0a1e4fd5271f1f2ca283f87d576bf3821c78bf4f6701625d3638b
+scraped_at: 2026-09-02T15:00:32+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3eca35bfc29f33c169328d6eeaf63be0c48867b33dc4a06e56aa0dd92bbfe061
 ---
 
 PhotoEditorExtensionAbility继承自[ExtensionAbility](js-apis-app-ability-extensionability.md)，开发者可通过PhotoEditorExtensionAbility实现图片编辑扩展页面。应用通过[startAbilityByType](js-apis-inner-application-uiabilitycontext.md#startability)拉起图片编辑类应用扩展面板后，由用户在面板上选择实现了PhotoEditorExtensionAbility的图片编辑扩展页面并拉起该页面。
 
-说明
+**说明** 
 
 本模块首批接口从API version 12 开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -18,27 +18,19 @@ PhotoEditorExtensionAbility继承自[ExtensionAbility](js-apis-app-ability-exten
 
 ## 实现效果
 
-PhonePC/2in1TabletTVWearable
-
 下图为通过PhotoEditorExtensionAbility实现的图片编辑扩展页面示意图，页面的布局与功能可以根据实际需要开发。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/m-YUgawLRXylK_SYzRinMw/zh-cn_image_0000002558765914.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/OctgZwBfTyStYHPmrmrNDg/zh-cn_image_0000002736314611.png)
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { PhotoEditorExtensionAbility } from '@kit.AbilityKit';
+```ts
+import { PhotoEditorExtensionAbility } from '@kit.AbilityKit';
 ```
 
 ## PhotoEditorExtensionAbility
 
-PhonePC/2in1TabletTVWearable
-
 ### 属性
-
-PhonePC/2in1TabletTV
 
 **系统能力：** SystemCapability.Ability.AppExtension.PhotoEditorExtension
 
@@ -47,8 +39,6 @@ PhonePC/2in1TabletTV
 | context | [PhotoEditorExtensionContext](js-apis-app-ability-photoeditorextensioncontext.md) | 否 | 否 | PhotoEditorExtensionAbility的上下文，提供保存图片能力。 |
 
 ### onCreate
-
-PhonePC/2in1TabletTV
 
 onCreate(): void
 
@@ -60,21 +50,19 @@ onCreate(): void
 
 **示例：**
 
-```
-1. import { PhotoEditorExtensionAbility } from '@kit.AbilityKit';
+```ts
+import { PhotoEditorExtensionAbility } from '@kit.AbilityKit';
 
-3. const TAG: string = '[testTag] ExamplePhotoEditorAbility';
+const TAG: string = '[testTag] ExamplePhotoEditorAbility';
 
-5. export default class ExamplePhotoEditorAbility extends PhotoEditorExtensionAbility {
-6. onCreate() {
-7. console.info(TAG, `onCreate`);
-8. }
-9. }
+export default class ExamplePhotoEditorAbility extends PhotoEditorExtensionAbility {
+  onCreate() {
+    console.info(TAG, `onCreate`);
+  }
+}
 ```
 
 ### onStartContentEditing
-
-PhonePC/2in1TabletTV
 
 onStartContentEditing(uri: string, want: Want, session: UIExtensionContentSession): void
 
@@ -94,21 +82,19 @@ onStartContentEditing(uri: string, want: Want, session: UIExtensionContentSessio
 
 **示例：**
 
-```
-1. import { PhotoEditorExtensionAbility, Want, UIExtensionContentSession } from '@kit.AbilityKit';
+```ts
+import { PhotoEditorExtensionAbility, Want, UIExtensionContentSession } from '@kit.AbilityKit';
 
-3. const TAG: string = '[testTag] ExamplePhotoEditorAbility';
+const TAG: string = '[testTag] ExamplePhotoEditorAbility';
 
-5. export default class ExamplePhotoEditorAbility extends PhotoEditorExtensionAbility {
-6. onStartContentEditing(uri: string, want: Want, session: UIExtensionContentSession) {
-7. console.info(TAG, `onStartContentEditing want: ${JSON.stringify(want)}, uri: ${uri}`);
-8. }
-9. }
+export default class ExamplePhotoEditorAbility extends PhotoEditorExtensionAbility {
+  onStartContentEditing(uri: string, want: Want, session: UIExtensionContentSession) {
+    console.info(TAG, `onStartContentEditing want: ${JSON.stringify(want)}, uri: ${uri}`);
+  }
+}
 ```
 
 ### onForeground
-
-PhonePC/2in1TabletTVWearable
 
 onForeground(): void
 
@@ -120,21 +106,19 @@ onForeground(): void
 
 **示例：**
 
-```
-1. import { PhotoEditorExtensionAbility } from '@kit.AbilityKit';
+```ts
+import { PhotoEditorExtensionAbility } from '@kit.AbilityKit';
 
-3. const TAG: string = '[testTag] ExamplePhotoEditorAbility';
+const TAG: string = '[testTag] ExamplePhotoEditorAbility';
 
-5. export default class ExamplePhotoEditorAbility extends PhotoEditorExtensionAbility {
-6. onForeground() {
-7. console.info(TAG, `onForeground`);
-8. }
-9. }
+export default class ExamplePhotoEditorAbility extends PhotoEditorExtensionAbility {
+  onForeground() {
+    console.info(TAG, `onForeground`);
+  }
+}
 ```
 
 ### onBackground
-
-PhonePC/2in1TabletTVWearable
 
 onBackground(): void
 
@@ -146,21 +130,19 @@ onBackground(): void
 
 **示例：**
 
-```
-1. import { PhotoEditorExtensionAbility } from '@kit.AbilityKit';
+```ts
+import { PhotoEditorExtensionAbility } from '@kit.AbilityKit';
 
-3. const TAG: string = '[testTag] ExamplePhotoEditorAbility';
+const TAG: string = '[testTag] ExamplePhotoEditorAbility';
 
-5. export default class ExamplePhotoEditorAbility extends PhotoEditorExtensionAbility {
-6. onBackground() {
-7. console.info(TAG, `onBackground`);
-8. }
-9. }
+export default class ExamplePhotoEditorAbility extends PhotoEditorExtensionAbility {
+  onBackground() {
+    console.info(TAG, `onBackground`);
+  }
+}
 ```
 
 ### onDestroy
-
-PhonePC/2in1TabletTV
 
 onDestroy(): void | Promise<void>
 
@@ -180,29 +162,29 @@ onDestroy(): void | Promise<void>
 
 * 同步回调示例如下：
 
-  ```
-  1. import { PhotoEditorExtensionAbility } from '@kit.AbilityKit';
+  ```ts
+  import { PhotoEditorExtensionAbility } from '@kit.AbilityKit';
 
-  3. const TAG: string = '[testTag] ExamplePhotoEditorAbility';
+  const TAG: string = '[testTag] ExamplePhotoEditorAbility';
 
-  5. export default class ExamplePhotoEditorAbility extends PhotoEditorExtensionAbility {
-  6. onDestroy() {
-  7. console.info(TAG, `onDestroy`);
-  8. // 调用同步函数...
-  9. }
-  10. }
+  export default class ExamplePhotoEditorAbility extends PhotoEditorExtensionAbility {
+    onDestroy() {
+      console.info(TAG, `onDestroy`);
+      // 调用同步函数...
+    }
+  }
   ```
 * Promise异步回调示例如下：
 
-  ```
-  1. import { PhotoEditorExtensionAbility } from '@kit.AbilityKit';
+  ```ts
+  import { PhotoEditorExtensionAbility } from '@kit.AbilityKit';
 
-  3. const TAG: string = '[testTag] ExamplePhotoEditorAbility';
+  const TAG: string = '[testTag] ExamplePhotoEditorAbility';
 
-  5. export default class ExamplePhotoEditorAbility extends PhotoEditorExtensionAbility {
-  6. async onDestroy() {
-  7. console.info(TAG, `onDestroy`);
-  8. // 调用异步函数...
-  9. }
-  10. }
+  export default class ExamplePhotoEditorAbility extends PhotoEditorExtensionAbility {
+    async onDestroy() {
+      console.info(TAG, `onDestroy`);
+      // 调用异步函数...
+    }
+  }
   ```

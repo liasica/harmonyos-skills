@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: 自定义缓存拦截器
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 提升HTTP传输性能 > 使用HTTP缓存功能提升资源获取性能 > 自定义缓存拦截器
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:09+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8e1437f49ac2af1ef5efd6794ba567857cd33e6f87c37338ec0e0645e8e435e5
+scraped_at: 2026-09-02T14:50:06+08:00
+doc_updated_at: 2026-08-07
+content_hash: sha256:a41dfcc3fcaa9c71b2f94c5ffb1726f25d28534ac1f35b0586a6080bbfbdf199
 ---
 
 从6.0.0(20)开始，支持自定义缓存拦截器。
@@ -20,60 +20,64 @@ Remote Communication Kit模块提供了[拦截器](remote-communication-intercep
 
 1. 导入模块。
 
-   ```
-   1. import { rcp } from '@kit.RemoteCommunicationKit';
+   ```typescript
+   import { rcp } from '@kit.RemoteCommunicationKit';
    ```
 2. 实现自定义缓存拦截器。
 
+   ```typescript
+   class BlindCacheInterceptor implements rcp.Interceptor {
+     private readonly cache: rcp.ResponseCache;
+     constructor(cache: rcp.ResponseCache) {
+       this.cache = cache;
+     }
+     async intercept(context: rcp.RequestContext, next: rcp.RequestHandler): Promise<rcp.Response> {
+       const key: rcp.ResponseCacheKey = {
+         url: context.request.url,
+         method: context.request.method,
+       };
+       const responseInCache = await this.cache.get(key);
+       if (responseInCache) {
+         return rcp.createResponse(context.request, responseInCache.response, new Date());
+       }
+       const networkResponse = await next.handle(context);
+       await this.cache.set(key, rcp.createCachedResponse(networkResponse));
+       return networkResponse;
+     }
+   }
    ```
-   1. class BlindCacheInterceptor implements rcp.Interceptor {
-   2. private readonly cache: rcp.ResponseCache;
-   3. constructor(cache: rcp.ResponseCache) {
-   4. this.cache = cache;
-   5. }
-   6. async intercept(context: rcp.RequestContext, next: rcp.RequestHandler): Promise<rcp.Response> {
-   7. const key: rcp.ResponseCacheKey = {
-   8. url: context.request.url,
-   9. method: context.request.method,
-   10. };
-   11. const responseInCache = await this.cache.get(key);
-   12. if (responseInCache) {
-   13. return rcp.createResponse(context.request, responseInCache.response, new Date());
-   14. }
-   15. const networkResponse = await next.handle(context);
-   16. await this.cache.set(key, rcp.createCachedResponse(networkResponse));
-   17. return networkResponse;
-   18. }
-   19. }
-   ```
-3. 创建ResponseCache实例。其中，pathToFolder即HTTP缓存响应记录文件路径，”/path/dir”请根据实际情况替换为想要存储HTTP缓存的沙箱路径。
+3. 创建ResponseCache实例。其中，pathToFolder即HTTP缓存响应记录文件路径，'/path/dir'请根据实际情况替换为想要存储HTTP缓存的沙箱路径。
 
-   ```
-   1. const responseCache = new rcp.ResponseCache({
-   2. persistent: {
-   3. kind: 'file-system',
-   4. pathToFolder: "/path/dir" // 请根据自身业务选择合适的路径
-   5. }
-   6. });
+   ```typescript
+   const responseCache = new rcp.ResponseCache({
+     persistent: {
+       kind: 'file-system',
+       pathToFolder: '/data/storage/el2/base/entry/temp/CustomCache' // 请根据自身业务选择合适的路径
+     }
+   });
    ```
 4. 创建会话。在创建Session时，添加[Interceptors](../harmonyos-references/remote-communication-rcp.md#interceptor)参数。
 
+   ```typescript
+   const session: rcp.Session = rcp.createSession({
+     interceptors : [new BlindCacheInterceptor(responseCache)]
+   });
    ```
-   1. const session: rcp.Session = rcp.createSession({ interceptors: [new BlindCacheInterceptor(responseCache)] });
-   ```
-5. 发起第一次请求。“https://www.example.com”请根据实际情况替换为支持HTTP缓存协议的URL。本次请求将会从网络服务器获取数据，此时可查看缓存状态信息，此时缓存条数应当为1。
+5. 发起第一次请求。'https://www.example.com'请根据实际情况替换为支持HTTP缓存协议的URL。本次请求将会从网络服务器获取数据，此时可查看缓存状态信息，此时缓存条数应当为1。
 
+   ```typescript
+   // 请求的网址是示例网址，请根据实际需求更改
+   const responseA = await session.put('https://www.example.com');
+   console.info(`Request succeeded, message is ${JSON.stringify(responseA)}`);
+   let cacheState = await responseCache.getState();
+   console.info(`The current number of cache entries is: ${cacheState.count}`);
    ```
-   1. const responseA = await session.put('https://www.example.com');
-   2. console.info(`Request succeeded, message is ${JSON.stringify(responseA)}`);
-   3. let cacheState = await responseCache.getState();
-   4. console.info(`The current number of cache entries is: ${cacheState.count}`);
-   ```
-6. 发起第二次请求。“https://www.example.com”请根据实际情况替换为支持HTTP缓存协议的URL。本次请求将会按照自定义缓存拦截器逻辑从缓存中获取响应，此时可查看缓存状态信息，此时缓存命中数应当为1。
+6. 发起第二次请求。'https://www.example.com'请根据实际情况替换为支持HTTP缓存协议的URL。本次请求将会按照自定义缓存拦截器逻辑从缓存中获取响应，此时可查看缓存状态信息，此时缓存命中数应当为1。
 
-   ```
-   1. const responseB = await session.put('https://www.example.com');
-   2. console.info(`Request succeeded, message is ${JSON.stringify(responseB)}`);
-   3. cacheState = await responseCache.getState();
-   4. console.info(`The current cache hit count is: ${cacheState.hitCount}`);
+   ```typescript
+   // 请求的网址是示例网址，请根据实际需求更改
+   const responseB = await session.put('https://www.example.com');
+   console.info(`Request succeeded, message is ${JSON.stringify(responseB)}`);
+   cacheState = await responseCache.getState();
+   console.info(`The current cache hit count is: ${cacheState.hitCount}`);
    ```

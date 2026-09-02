@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-284
 title: struct和class的区别是什么
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > struct和class的区别是什么
+breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > struct和class的区别是什么
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:14+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:50+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:f3b9fd973d5952baa930b4f8cd83b4ff2b4e2b9d801702a5cc595a25b15136f8
 ---
 

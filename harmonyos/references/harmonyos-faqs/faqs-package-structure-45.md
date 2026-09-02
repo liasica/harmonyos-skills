@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 如何让两个HSP不相互依赖，使用对方的组件
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 如何让两个HSP不相互依赖，使用对方的组件
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:35+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:14+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:a0f6dab7e9a4a0dbbc2d22b532927575a1385b9b8dc0e894d6499445795b9a9f
 ---
 

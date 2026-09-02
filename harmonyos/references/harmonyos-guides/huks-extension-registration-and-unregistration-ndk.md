@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-extensio
 title: 注册/注销Provider(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 外部密钥管理扩展 > Provider管理 > 注册/注销Provider(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:31+08:00
+scraped_at: 2026-09-02T14:59:32+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:8de65018ab3760117c422e222669521f225c06a80b11a1ca2978ab376e70c804
+content_hash: sha256:0581640fc10d71ca54067c7688c1c075bbe1c0afc3acbe87d2b9eece57bdd07e
 ---
 
 从API 22开始，huksExternalCrypto提供Provider注册和注销功能接口。
@@ -14,8 +14,8 @@ content_hash: sha256:8de65018ab3760117c422e222669521f225c06a80b11a1ca2978ab376e7
 
 ### 在CMake脚本中链接相关动态库
 
-```
-1. target_link_libraries(entry PUBLIC libhuks_ndk.z.so libhuks_external_crypto.z.so)
+```txt
+target_link_libraries(entry PUBLIC libhuks_ndk.z.so libhuks_external_crypto.z.so)
 ```
 
 ### 开发步骤
@@ -26,81 +26,81 @@ content_hash: sha256:8de65018ab3760117c422e222669521f225c06a80b11a1ca2978ab376e7
 ## 开发案例
 
 ```
-1. #include "napi/native_api.h"
-2. #include "huks/native_huks_api.h"
-3. #include "huks/native_huks_type.h"
-4. #include "huks/native_huks_param.h"
-5. #include "huks/native_huks_external_crypto_api.h"
-6. #include <cstring>
+#include "napi/native_api.h"
+#include "huks/native_huks_api.h"
+#include "huks/native_huks_type.h"
+#include "huks/native_huks_param.h"
+#include "huks/native_huks_external_crypto_api.h"
+#include <cstring>
 
-8. OH_Huks_Result InitParamSet(
-9. struct OH_Huks_ExternalCryptoParamSet **paramSet,
-10. const struct OH_Huks_ExternalCryptoParam *params,
-11. uint32_t paramCount)
-12. {
-13. OH_Huks_Result ret = OH_Huks_InitExternalCryptoParamSet(paramSet);
-14. if (ret.errorCode != OH_HUKS_SUCCESS) {
-15. return ret;
-16. }
-17. ret = OH_Huks_AddExternalCryptoParams(*paramSet, params, paramCount);
-18. if (ret.errorCode != OH_HUKS_SUCCESS) {
-19. OH_Huks_FreeExternalCryptoParamSet(paramSet);
-20. return ret;
-21. }
-22. ret = OH_Huks_BuildExternalCryptoParamSet(paramSet);
-23. if (ret.errorCode != OH_HUKS_SUCCESS) {
-24. OH_Huks_FreeExternalCryptoParamSet(paramSet);
-25. return ret;
-26. }
-27. return ret;
-28. }
+OH_Huks_Result InitParamSet(
+    struct OH_Huks_ExternalCryptoParamSet **paramSet,
+    const struct OH_Huks_ExternalCryptoParam *params,
+    uint32_t paramCount)
+{
+    OH_Huks_Result ret = OH_Huks_InitExternalCryptoParamSet(paramSet);
+    if (ret.errorCode != OH_HUKS_SUCCESS) {
+        return ret;
+    }
+    ret = OH_Huks_AddExternalCryptoParams(*paramSet, params, paramCount);
+    if (ret.errorCode != OH_HUKS_SUCCESS) {
+        OH_Huks_FreeExternalCryptoParamSet(paramSet);
+        return ret;
+    }
+    ret = OH_Huks_BuildExternalCryptoParamSet(paramSet);
+    if (ret.errorCode != OH_HUKS_SUCCESS) {
+        OH_Huks_FreeExternalCryptoParamSet(paramSet);
+        return ret;
+    }
+    return ret;
+}
 
-30. static struct OH_Huks_Blob g_abilityName = {
-31. (uint32_t)strlen("testAbility"),
-32. (uint8_t *)"testAbility"
-33. };
+static struct OH_Huks_Blob g_abilityName = {
+    (uint32_t)strlen("testAbility"),
+    (uint8_t *)"testAbility"
+};
 
-35. struct OH_Huks_Blob g_providerName = {
-36. (uint32_t)strlen("testProviderName"),
-37. (uint8_t *)"testProviderName"
-38. };
+struct OH_Huks_Blob g_providerName = {
+    (uint32_t)strlen("testProviderName"),
+    (uint8_t *)"testProviderName"
+};
 
-40. static struct OH_Huks_ExternalCryptoParam g_abilityParams[] = {
-41. {
-42. .tag = OH_HUKS_EXT_CRYPTO_TAG_ABILITY_NAME,
-43. .blob = g_abilityName
-44. },
-45. };
+static struct OH_Huks_ExternalCryptoParam g_abilityParams[] = {
+    {
+        .tag = OH_HUKS_EXT_CRYPTO_TAG_ABILITY_NAME,
+        .blob = g_abilityName
+    },
+};
 
-47. static napi_value registerProvider(napi_env env, napi_callback_info info)
-48. {
-49. struct OH_Huks_ExternalCryptoParamSet *providerParamSet = nullptr;
-50. OH_Huks_Result ohResult;
-51. do {
-52. ohResult = InitParamSet(&providerParamSet, g_abilityParams,
-53. sizeof(g_abilityParams) / sizeof(OH_Huks_ExternalCryptoParam));
-54. if (ohResult.errorCode != OH_HUKS_SUCCESS) {
-55. break;
-56. }
-57. ohResult = OH_Huks_RegisterProvider(&g_providerName, providerParamSet);
-58. if (ohResult.errorCode != OH_HUKS_SUCCESS) {
-59. break;
-60. }
-61. } while (0);
-62. OH_Huks_FreeExternalCryptoParamSet(&providerParamSet);
+static napi_value registerProvider(napi_env env, napi_callback_info info)
+{
+    struct OH_Huks_ExternalCryptoParamSet *providerParamSet = nullptr;
+    OH_Huks_Result ohResult;
+    do {
+        ohResult = InitParamSet(&providerParamSet, g_abilityParams,
+            sizeof(g_abilityParams) / sizeof(OH_Huks_ExternalCryptoParam));
+        if (ohResult.errorCode != OH_HUKS_SUCCESS) {
+            break;
+        }
+        ohResult = OH_Huks_RegisterProvider(&g_providerName, providerParamSet);
+        if (ohResult.errorCode != OH_HUKS_SUCCESS) {
+            break;
+        }
+    } while (0);
+    OH_Huks_FreeExternalCryptoParamSet(&providerParamSet);
 
-64. napi_value ret;
-65. napi_create_int32(env, ohResult.errorCode, &ret);
-66. return ret;
-67. }
+    napi_value ret;
+    napi_create_int32(env, ohResult.errorCode, &ret);
+    return ret;
+}
 ```
 
 ## 注销Provider
 
 ### 在CMake脚本中链接相关动态库
 
-```
-1. target_link_libraries(entry PUBLIC libhuks_ndk.z.so libhuks_external_crypto.z.so)
+```txt
+target_link_libraries(entry PUBLIC libhuks_ndk.z.so libhuks_external_crypto.z.so)
 ```
 
 ### 开发步骤
@@ -111,133 +111,133 @@ content_hash: sha256:8de65018ab3760117c422e222669521f225c06a80b11a1ca2978ab376e7
 **注销单个ability**
 
 ```
-1. #include "napi/native_api.h"
-2. #include "huks/native_huks_api.h"
-3. #include "huks/native_huks_type.h"
-4. #include "huks/native_huks_param.h"
-5. #include "huks/native_huks_external_crypto_api.h"
-6. #include <cstring>
+#include "napi/native_api.h"
+#include "huks/native_huks_api.h"
+#include "huks/native_huks_type.h"
+#include "huks/native_huks_param.h"
+#include "huks/native_huks_external_crypto_api.h"
+#include <cstring>
 
-8. OH_Huks_Result InitParamSet(
-9. struct OH_Huks_ExternalCryptoParamSet **paramSet,
-10. const struct OH_Huks_ExternalCryptoParam *params,
-11. uint32_t paramCount)
-12. {
-13. OH_Huks_Result ret = OH_Huks_InitExternalCryptoParamSet(paramSet);
-14. if (ret.errorCode != OH_HUKS_SUCCESS) {
-15. return ret;
-16. }
-17. ret = OH_Huks_AddExternalCryptoParams(*paramSet, params, paramCount);
-18. if (ret.errorCode != OH_HUKS_SUCCESS) {
-19. OH_Huks_FreeExternalCryptoParamSet(paramSet);
-20. return ret;
-21. }
-22. ret = OH_Huks_BuildExternalCryptoParamSet(paramSet);
-23. if (ret.errorCode != OH_HUKS_SUCCESS) {
-24. OH_Huks_FreeExternalCryptoParamSet(paramSet);
-25. return ret;
-26. }
-27. return ret;
-28. }
+OH_Huks_Result InitParamSet(
+    struct OH_Huks_ExternalCryptoParamSet **paramSet,
+    const struct OH_Huks_ExternalCryptoParam *params,
+    uint32_t paramCount)
+{
+    OH_Huks_Result ret = OH_Huks_InitExternalCryptoParamSet(paramSet);
+    if (ret.errorCode != OH_HUKS_SUCCESS) {
+        return ret;
+    }
+    ret = OH_Huks_AddExternalCryptoParams(*paramSet, params, paramCount);
+    if (ret.errorCode != OH_HUKS_SUCCESS) {
+        OH_Huks_FreeExternalCryptoParamSet(paramSet);
+        return ret;
+    }
+    ret = OH_Huks_BuildExternalCryptoParamSet(paramSet);
+    if (ret.errorCode != OH_HUKS_SUCCESS) {
+        OH_Huks_FreeExternalCryptoParamSet(paramSet);
+        return ret;
+    }
+    return ret;
+}
 
-30. static struct OH_Huks_Blob g_abilityName = {
-31. (uint32_t)strlen("testAbility"),
-32. (uint8_t *)"testAbility"
-33. };
+static struct OH_Huks_Blob g_abilityName = {
+    (uint32_t)strlen("testAbility"),
+    (uint8_t *)"testAbility"
+};
 
-35. struct OH_Huks_Blob g_providerName = {
-36. (uint32_t)strlen("testProviderName"),
-37. (uint8_t *)"testProviderName"
-38. };
+struct OH_Huks_Blob g_providerName = {
+    (uint32_t)strlen("testProviderName"),
+    (uint8_t *)"testProviderName"
+};
 
-40. static struct OH_Huks_ExternalCryptoParam g_abilityParams[] = {
-41. {
-42. .tag = OH_HUKS_EXT_CRYPTO_TAG_ABILITY_NAME,
-43. .blob = g_abilityName
-44. },
-45. };
+static struct OH_Huks_ExternalCryptoParam g_abilityParams[] = {
+    {
+        .tag = OH_HUKS_EXT_CRYPTO_TAG_ABILITY_NAME,
+        .blob = g_abilityName
+    },
+};
 
-47. static napi_value unregisterProvider(napi_env env, napi_callback_info info)
-48. {
-49. struct OH_Huks_ExternalCryptoParamSet *providerParamSet = nullptr;
-50. OH_Huks_Result ohResult;
-51. do {
-52. ohResult = InitParamSet(&providerParamSet, g_abilityParams,
-53. sizeof(g_abilityParams) / sizeof(OH_Huks_ExternalCryptoParam));
-54. if (ohResult.errorCode != OH_HUKS_SUCCESS) {
-55. break;
-56. }
-57. ohResult = OH_Huks_UnregisterProvider(&g_providerName, providerParamSet);
-58. if (ohResult.errorCode != OH_HUKS_SUCCESS) {
-59. break;
-60. }
-61. } while (0);
-62. OH_Huks_FreeExternalCryptoParamSet(&providerParamSet);
+static napi_value unregisterProvider(napi_env env, napi_callback_info info)
+{
+    struct OH_Huks_ExternalCryptoParamSet *providerParamSet = nullptr;
+    OH_Huks_Result ohResult;
+    do {
+        ohResult = InitParamSet(&providerParamSet, g_abilityParams,
+            sizeof(g_abilityParams) / sizeof(OH_Huks_ExternalCryptoParam));
+        if (ohResult.errorCode != OH_HUKS_SUCCESS) {
+            break;
+        }
+        ohResult = OH_Huks_UnregisterProvider(&g_providerName, providerParamSet);
+        if (ohResult.errorCode != OH_HUKS_SUCCESS) {
+            break;
+        }
+    } while (0);
+    OH_Huks_FreeExternalCryptoParamSet(&providerParamSet);
 
-64. napi_value ret;
-65. napi_create_int32(env, ohResult.errorCode, &ret);
-66. return ret;
-67. }
+    napi_value ret;
+    napi_create_int32(env, ohResult.errorCode, &ret);
+    return ret;
+}
 ```
 
 **批量注销**
 
 ```
-1. #include "napi/native_api.h"
-2. #include "huks/native_huks_api.h"
-3. #include "huks/native_huks_type.h"
-4. #include "huks/native_huks_param.h"
-5. #include "huks/native_huks_external_crypto_api.h"
-6. #include <cstring>
+#include "napi/native_api.h"
+#include "huks/native_huks_api.h"
+#include "huks/native_huks_type.h"
+#include "huks/native_huks_param.h"
+#include "huks/native_huks_external_crypto_api.h"
+#include <cstring>
 
-8. OH_Huks_Result InitParamSet(
-9. struct OH_Huks_ExternalCryptoParamSet **paramSet,
-10. const struct OH_Huks_ExternalCryptoParam *params,
-11. uint32_t paramCount)
-12. {
-13. OH_Huks_Result ret = OH_Huks_InitExternalCryptoParamSet(paramSet);
-14. if (ret.errorCode != OH_HUKS_SUCCESS) {
-15. return ret;
-16. }
-17. ret = OH_Huks_AddExternalCryptoParams(*paramSet, params, paramCount);
-18. if (ret.errorCode != OH_HUKS_SUCCESS) {
-19. OH_Huks_FreeExternalCryptoParamSet(paramSet);
-20. return ret;
-21. }
-22. ret = OH_Huks_BuildExternalCryptoParamSet(paramSet);
-23. if (ret.errorCode != OH_HUKS_SUCCESS) {
-24. OH_Huks_FreeExternalCryptoParamSet(paramSet);
-25. return ret;
-26. }
-27. return ret;
-28. }
+OH_Huks_Result InitParamSet(
+    struct OH_Huks_ExternalCryptoParamSet **paramSet,
+    const struct OH_Huks_ExternalCryptoParam *params,
+    uint32_t paramCount)
+{
+    OH_Huks_Result ret = OH_Huks_InitExternalCryptoParamSet(paramSet);
+    if (ret.errorCode != OH_HUKS_SUCCESS) {
+        return ret;
+    }
+    ret = OH_Huks_AddExternalCryptoParams(*paramSet, params, paramCount);
+    if (ret.errorCode != OH_HUKS_SUCCESS) {
+        OH_Huks_FreeExternalCryptoParamSet(paramSet);
+        return ret;
+    }
+    ret = OH_Huks_BuildExternalCryptoParamSet(paramSet);
+    if (ret.errorCode != OH_HUKS_SUCCESS) {
+        OH_Huks_FreeExternalCryptoParamSet(paramSet);
+        return ret;
+    }
+    return ret;
+}
 
-30. struct OH_Huks_Blob g_providerName = {
-31. (uint32_t)strlen("testProviderName"),
-32. (uint8_t *)"testProviderName"
-33. };
+struct OH_Huks_Blob g_providerName = {
+    (uint32_t)strlen("testProviderName"),
+    (uint8_t *)"testProviderName"
+};
 
-35. static struct OH_Huks_ExternalCryptoParam g_abilityParams[] = {};
+static struct OH_Huks_ExternalCryptoParam g_abilityParams[] = {};
 
-37. static napi_value unregisterProvider(napi_env env, napi_callback_info info)
-38. {
-39. struct OH_Huks_ExternalCryptoParamSet *providerParamSet = nullptr;
-40. OH_Huks_Result ohResult;
-41. do {
-42. ohResult = InitParamSet(&providerParamSet, g_abilityParams,
-43. sizeof(g_abilityParams) / sizeof(OH_Huks_ExternalCryptoParam));
-44. if (ohResult.errorCode != OH_HUKS_SUCCESS) {
-45. break;
-46. }
-47. ohResult = OH_Huks_UnregisterProvider(&g_providerName, providerParamSet);
-48. if (ohResult.errorCode != OH_HUKS_SUCCESS) {
-49. break;
-50. }
-51. } while (0);
-52. OH_Huks_FreeExternalCryptoParamSet(&providerParamSet);
+static napi_value unregisterProvider(napi_env env, napi_callback_info info)
+{
+    struct OH_Huks_ExternalCryptoParamSet *providerParamSet = nullptr;
+    OH_Huks_Result ohResult;
+    do {
+        ohResult = InitParamSet(&providerParamSet, g_abilityParams,
+            sizeof(g_abilityParams) / sizeof(OH_Huks_ExternalCryptoParam));
+        if (ohResult.errorCode != OH_HUKS_SUCCESS) {
+            break;
+        }
+        ohResult = OH_Huks_UnregisterProvider(&g_providerName, providerParamSet);
+        if (ohResult.errorCode != OH_HUKS_SUCCESS) {
+            break;
+        }
+    } while (0);
+    OH_Huks_FreeExternalCryptoParamSet(&providerParamSet);
 
-54. napi_value ret;
-55. napi_create_int32(env, ohResult.errorCode, &ret);
-56. return ret;
-57. }
+    napi_value ret;
+    napi_create_int32(env, ohResult.errorCode, &ret);
+    return ret;
+}
 ```

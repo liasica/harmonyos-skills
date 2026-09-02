@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/incoming-call
 title: 来电场景
 breadcrumb: 指南 > 应用服务 > Call Service Kit（通话服务） > 来电场景
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:37:37+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3f5cfab94cec29fe21e9798b46d888b4d066e968c08d25f0f8a932dadb90f77e
+scraped_at: 2026-09-02T14:59:53+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7c9a1eef870824edc7c14eb5a45570cfc523cf6685422daf527f8f44d5590d90
 ---
 
 ## 场景介绍
@@ -22,17 +22,17 @@ content_hash: sha256:3f5cfab94cec29fe21e9798b46d888b4d066e968c08d25f0f8a932dadb9
 
 ## 约束与限制
 
-来电场景支持Phone、Tablet设备，并从6.0(20)版本开始支持Wearable设备。
+来电场景支持Phone、Tablet设备，并从6.0.0(20)版本开始支持Wearable设备，6.1.1(24)版本开始支持PC/2in1设备。
 
 ## 业务流程
 
 ### 来电场景：接听流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/RBoC3w2cSdWkEKx3g-mVQA/zh-cn_image_0000002558605674.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/3WvAOyA5SuuAsG-nvAkXxA/zh-cn_image_0000002736313953.jpg)
 
 ### 来电场景：拒接流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/yxFTAlvVSvix4R_P3fJSfQ/zh-cn_image_0000002589325201.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/A0vgmrZcTguwnKD9o7NI8g/zh-cn_image_0000002706674910.jpg)
 
 ## 接口说明
 
@@ -51,20 +51,20 @@ content_hash: sha256:3f5cfab94cec29fe21e9798b46d888b4d066e968c08d25f0f8a932dadb9
 
 1. 导入相关依赖。
 
-   ```
-   1. import { voipCall } from '@kit.CallServiceKit';
-   2. import { image } from '@kit.ImageKit';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { voipCall } from '@kit.CallServiceKit';
+   import { image } from '@kit.ImageKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 为了感知到用户在横幅通知上做的接听、挂断、静音与解除静音等操作，应用需要注册voipCallUiEvent事件。建议在上报来电之前注册。
 
    示例代码如下：
 
-   ```
-   1. // 注册voipCallUiEvent事件
-   2. voipCall.on('voipCallUiEvent', callback => {
-   3. hilog.info(0x0000, 'CallDemo', 'Succeeded in registering voipCallUiEvent');
-   4. });
+   ```typescript
+   // 注册voipCallUiEvent事件
+   voipCall.on('voipCallUiEvent', callback => {
+     hilog.info(0x0000, 'CallDemo', 'Succeeded in registering voipCallUiEvent');
+   });
    ```
 3. 应用内部建立通话连接之后，需要向Call Service Kit上报来电，并携带通话信息，详见[VoipCallAttribute](../harmonyos-references/call-voipcall.md#voipcallattribute)。
 
@@ -72,42 +72,42 @@ content_hash: sha256:3f5cfab94cec29fe21e9798b46d888b4d066e968c08d25f0f8a932dadb9
 
    示例代码如下：
 
-   ```
-   1. // 构造上报来电的参数
-   2. let voipCallAttribute: voipCall.VoipCallAttribute = {
-   3. callId: '1234567890',
-   4. voipCallType: voipCall.VoipCallType.VOIP_CALL_VOICE,
-   5. userName: 'Callman',
-   6. userProfile: image.createPixelMapSync(new ArrayBuffer(100), { size: { width: 90, height: 90 } }),
-   7. abilityName: 'VoipCallAbility',
-   8. voipCallState: voipCall.VoipCallState.VOIP_CALL_STATE_RINGING,
-   9. showBannerForIncomingCall: true
-   10. };
+   ```typescript
+   // 构造上报来电的参数
+   let voipCallAttribute: voipCall.VoipCallAttribute = {
+     callId: 'callId123',
+     voipCallType: voipCall.VoipCallType.VOIP_CALL_VOICE,
+     userName: 'Callman',
+     userProfile: image.createPixelMapSync(new ArrayBuffer(100), { size: { width: 90, height: 90 } }),
+     abilityName: 'VoipCallAbility',
+     voipCallState: voipCall.VoipCallState.VOIP_CALL_STATE_RINGING,
+     showBannerForIncomingCall: true
+   };
 
-   12. // 上报来电
-   13. voipCall.reportIncomingCall(voipCallAttribute).then(errorReason => {
-   14. if (errorReason == voipCall.ErrorReason.ERROR_NONE) {
-   15. hilog.info(0x0000, 'CallDemo', 'Succeeded in reporting the incoming call');
-   16. } else {
-   17. hilog.error(0x0000, 'CallDemo', 'Failed to report the incoming call: %{public}d', errorReason);
-   18. }
-   19. });
+   // 上报来电
+   voipCall.reportIncomingCall(voipCallAttribute).then(errorReason => {
+     if (errorReason == voipCall.ErrorReason.ERROR_NONE) {
+       hilog.info(0x0000, 'CallDemo', 'Succeeded in reporting the incoming call');
+     } else {
+       hilog.error(0x0000, 'CallDemo', 'Failed to report the incoming call: %{public}d', errorReason);
+     }
+   });
    ```
 
    对于视频通话，可以通过参数[isVoiceAnswerSupported](../harmonyos-references/call-voipcall.md#voipcallattribute)指定是否允许语音接听，示例代码如下：
 
-   ```
-   1. // 构造上报来电的参数
-   2. let voipCallAttribute: voipCall.VoipCallAttribute = {
-   3. callId: '1234567890',
-   4. voipCallType: voipCall.VoipCallType.VOIP_CALL_VIDEO,
-   5. userName: 'Jack',
-   6. userProfile: image.createPixelMapSync(new ArrayBuffer(100), { size: { width: 90, height: 90 } }),
-   7. abilityName: 'VoipCallAbility',
-   8. voipCallState: voipCall.VoipCallState.VOIP_CALL_STATE_RINGING,
-   9. showBannerForIncomingCall: true,
-   10. isVoiceAnswerSupported: false  // 视频通话不支持语音接听
-   11. };
+   ```typescript
+   // 构造上报来电的参数
+   let voipCallAttribute: voipCall.VoipCallAttribute = {
+     callId: 'callId123',
+     voipCallType: voipCall.VoipCallType.VOIP_CALL_VIDEO,
+     userName: 'Jack',
+     userProfile: image.createPixelMapSync(new ArrayBuffer(100), { size: { width: 90, height: 90 } }),
+     abilityName: 'VoipCallAbility',
+     voipCallState: voipCall.VoipCallState.VOIP_CALL_STATE_RINGING,
+     showBannerForIncomingCall: true,
+     isVoiceAnswerSupported: false  // 视频通话不支持语音接听
+   };
    ```
 4. 接收到来电之后，用户可以选择接听或拒接。
 
@@ -121,18 +121,18 @@ content_hash: sha256:3f5cfab94cec29fe21e9798b46d888b4d066e968c08d25f0f8a932dadb9
 
      示例代码如下：
 
-     ```
-     1. voipCall.on('voipCallUiEvent', callback => {
-     2. if (callback?.voipCallUiEvent == voipCall.VoipCallUiEvent.VOIP_CALL_EVENT_VOICE_ANSWER) {
-     3. // 立即向Call Service Kit上报answered状态
-     4. voipCall.reportCallStateChange(callback.callId, voipCall.VoipCallState.VOIP_CALL_STATE_ANSWERED);
+     ```typescript
+     voipCall.on('voipCallUiEvent', callback => {
+       if (callback?.voipCallUiEvent == voipCall.VoipCallUiEvent.VOIP_CALL_EVENT_VOICE_ANSWER) {
+         // 立即向Call Service Kit上报answered状态
+         voipCall.reportCallStateChange(callback.callId, voipCall.VoipCallState.VOIP_CALL_STATE_ANSWERED);
 
-     6. //...在应用内完成接听
+         // ...在应用内完成接听
 
-     8. // 应用内接听后，向Call Service Kit上报active状态
-     9. voipCall.reportCallStateChange(callback.callId, voipCall.VoipCallState.VOIP_CALL_STATE_ACTIVE);
-     10. }
-     11. });
+         // 应用内接听后，向Call Service Kit上报active状态
+         voipCall.reportCallStateChange(callback.callId, voipCall.VoipCallState.VOIP_CALL_STATE_ACTIVE);
+       }
+     });
      ```
 
      接听过程的效果图展示如下：
@@ -141,7 +141,7 @@ content_hash: sha256:3f5cfab94cec29fe21e9798b46d888b4d066e968c08d25f0f8a932dadb9
      | --- | --- |
      |  |  |
 
-     说明
+     **说明** 
 
      通话接听时，上报两次状态的好处是：
 
@@ -156,15 +156,15 @@ content_hash: sha256:3f5cfab94cec29fe21e9798b46d888b4d066e968c08d25f0f8a932dadb9
 
    示例代码如下：
 
-   ```
-   1. voipCall.on('voipCallUiEvent', callback => {
-   2. if (callback?.voipCallUiEvent == voipCall.VoipCallUiEvent.VOIP_CALL_EVENT_VOICE_ANSWER) {
-   3. //...在应用内完成接听
+   ```typescript
+   voipCall.on('voipCallUiEvent', callback => {
+     if (callback?.voipCallUiEvent == voipCall.VoipCallUiEvent.VOIP_CALL_EVENT_VOICE_ANSWER) {
+       // ...在应用内完成接听
 
-   5. // 应用内接听后，向Call Service Kit上报通话状态
-   6. voipCall.reportCallStateChange(callback.callId, voipCall.VoipCallState.VOIP_CALL_STATE_ACTIVE);
-   7. }
-   8. });
+       // 应用内接听后，向Call Service Kit上报通话状态
+       voipCall.reportCallStateChange(callback.callId, voipCall.VoipCallState.VOIP_CALL_STATE_ACTIVE);
+     }
+   });
    ```
 
    如果用户在横幅通知上点击拒接，则应用在接收到[VOIP\_CALL\_EVENT\_REJECT](../harmonyos-references/call-voipcall.md#voipcalluievent)事件回调之后，在应用内完成拒接，然后向Call Service Kit 上报[VOIP\_CALL\_STATE\_DISCONNECTED](../harmonyos-references/call-voipcall.md#voipcallstate)状态，系统会取消横幅通知。
@@ -173,15 +173,15 @@ content_hash: sha256:3f5cfab94cec29fe21e9798b46d888b4d066e968c08d25f0f8a932dadb9
 
    拒接的示例代码如下：
 
-   ```
-   1. voipCall.on('voipCallUiEvent', callback => {
-   2. if (callback?.voipCallUiEvent == voipCall.VoipCallUiEvent.VOIP_CALL_EVENT_REJECT) {
-   3. // ...应用内完成拒接
+   ```typescript
+   voipCall.on('voipCallUiEvent', callback => {
+     if (callback?.voipCallUiEvent == voipCall.VoipCallUiEvent.VOIP_CALL_EVENT_REJECT) {
+       // ...应用内完成拒接
 
-   5. // 向Call Service Kit上报通话状态
-   6. voipCall.reportCallStateChange(callback.callId, voipCall.VoipCallState.VOIP_CALL_STATE_DISCONNECTED);
-   7. }
-   8. });
+       // 向Call Service Kit上报通话状态
+       voipCall.reportCallStateChange(callback.callId, voipCall.VoipCallState.VOIP_CALL_STATE_DISCONNECTED);
+     }
+   });
    ```
 5. 在通话过程中，用户可以根据需要，可以静音或解除静音。
 
@@ -191,16 +191,16 @@ content_hash: sha256:3f5cfab94cec29fe21e9798b46d888b4d066e968c08d25f0f8a932dadb9
 
    示例代码如下：
 
-   ```
-   1. voipCall.on('voipCallUiEvent', callback => {
-   2. if (callback?.voipCallUiEvent == voipCall.VoipCallUiEvent.VOIP_CALL_EVENT_MUTED) {
-   3. // 向Call Service Kit上报静音
-   4. voipCall.reportCallAudioEventChange(callback.callId, voipCall.CallAudioEvent.AUDIO_EVENT_MUTED);
-   5. } else if (callback?.voipCallUiEvent == voipCall.VoipCallUiEvent.VOIP_CALL_EVENT_UNMUTED) {
-   6. // 向Call Service Kit上报解除静音
-   7. voipCall.reportCallAudioEventChange(callback.callId, voipCall.CallAudioEvent.AUDIO_EVENT_UNMUTED);
-   8. }
-   9. });
+   ```typescript
+   voipCall.on('voipCallUiEvent', callback => {
+     if (callback?.voipCallUiEvent == voipCall.VoipCallUiEvent.VOIP_CALL_EVENT_MUTED) {
+       // 向Call Service Kit上报静音
+       voipCall.reportCallAudioEventChange(callback.callId, voipCall.CallAudioEvent.AUDIO_EVENT_MUTED);
+     } else if (callback?.voipCallUiEvent == voipCall.VoipCallUiEvent.VOIP_CALL_EVENT_UNMUTED) {
+       // 向Call Service Kit上报解除静音
+       voipCall.reportCallAudioEventChange(callback.callId, voipCall.CallAudioEvent.AUDIO_EVENT_UNMUTED);
+     }
+   });
    ```
 
    静音、解除静音的横幅通知效果图展示如下：
@@ -214,23 +214,23 @@ content_hash: sha256:3f5cfab94cec29fe21e9798b46d888b4d066e968c08d25f0f8a932dadb9
 
    示例代码如下：
 
-   ```
-   1. voipCall.on('voipCallUiEvent', callback => {
-   2. if (callback?.voipCallUiEvent == voipCall.VoipCallUiEvent.VOIP_CALL_EVENT_HANGUP) {
-   3. // ...应用内完成挂断
+   ```typescript
+   voipCall.on('voipCallUiEvent', callback => {
+     if (callback?.voipCallUiEvent == voipCall.VoipCallUiEvent.VOIP_CALL_EVENT_HANGUP) {
+       // ...应用内完成挂断
 
-   5. // 向Call Service Kit上报通话状态
-   6. voipCall.reportCallStateChange(callback.callId, voipCall.VoipCallState.VOIP_CALL_STATE_DISCONNECTED);
-   7. }
-   8. });
+       // 向Call Service Kit上报通话状态
+       voipCall.reportCallStateChange(callback.callId, voipCall.VoipCallState.VOIP_CALL_STATE_DISCONNECTED);
+     }
+   });
    ```
 7. 通话结束后，应用不再需要感知到用户在通话横幅上的操作，可以解除voipCallUiEvent事件。
 
    示例代码如下：
 
-   ```
-   1. // 解除voipCallUiEvent事件
-   2. voipCall.off('voipCallUiEvent', callback => {
-   3. hilog.info(0x0000, 'CallDemo', `Succeeded in unRegistering voipCallUiEvent, callId: ${callback.callId}`);
-   4. });
+   ```typescript
+   // 解除voipCallUiEvent事件
+   voipCall.off('voipCallUiEvent', callback => {
+     hilog.info(0x0000, 'CallDemo', `Succeeded in unRegistering voipCallUiEvent, callId: ${callback.callId}`);
+   });
    ```

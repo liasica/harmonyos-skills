@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/we-business_i
 title: 业务简介
 breadcrumb: 指南 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > Wear Engine Kit简介 > 业务简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:50+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0dfc4c83c831cfe19f0a4855d50fac7f663f5d66dfd5b2e902ba3feadb9ef451
+scraped_at: 2026-09-02T14:59:38+08:00
+doc_updated_at: 2026-08-03
+content_hash: sha256:4bfedec135badc65e3bf5c7afbc11e845e22a8669b1843041fcce4ec6ef9053d
 ---
 
-Wear Engine（穿戴服务）面向手机和穿戴设备的应用与服务开发者，提供华为穿戴设备开放能力。
+Wear Engine Kit（穿戴服务）面向手机和穿戴设备的应用与服务开发者，提供华为穿戴设备开放能力。
 
 开发者通过调用Wear Engine开放能力，可以实现手机上的生态应用与服务给华为穿戴设备发消息、发通知、传输数据，并获取穿戴设备状态、读取传感器数据等，也可以实现华为穿戴设备上的生态应用与服务给手机发消息、传输数据等。
 
@@ -61,8 +61,7 @@ Wear Engine使应用能快速便捷地接入华为穿戴设备，为开发者提
 
 ### 支持的设备
 
-* 本Kit适用于Phone和Tablet。
-* 从5.1.0(18)版本开始支持Wearable。
+本Kit适用于Phone、Tablet、Wearable、Lite Wearable。
 
 ### 支持的国家/地区
 

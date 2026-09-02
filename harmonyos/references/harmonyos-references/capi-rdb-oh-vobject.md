@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-rdb-
 title: OH_VObject
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 结构体 > OH_VObject
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:36+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:311e6a658f2f6217e39675a1a22d5d817adfbf5e741f77444acfea6066e4b05b
+scraped_at: 2026-09-02T15:00:43+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8470f151d251229ff4c20331b486ecb8e0873bebb7eb85fdb0deb2de7e08dfcb
 ---
 
-```
-1. typedef struct {...} OH_VObject
+```c
+typedef struct {...} OH_VObject
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 表示允许的数据字段类型。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -38,31 +32,25 @@ PhonePC/2in1TabletTVWearable
 
 ### 成员函数
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 描述 |
 | --- | --- |
 | [int (\*putInt64)(OH\_VObject \*valueObject, int64\_t \*value, uint32\_t count)](capi-rdb-oh-vobject.md#putint64) | 将int64类型的单个参数或者数组转换为OH\_VObject类型的值。 |
 | [int (\*putDouble)(OH\_VObject \*valueObject, double \*value, uint32\_t count)](capi-rdb-oh-vobject.md#putdouble) | 将double类型的单个参数或者数组转换为OH\_VObject类型的值。 |
-| [int (\*putText)(OH\_VObject \*valueObject, const char \*value)](capi-rdb-oh-vobject.md#puttext) | 将char \*类型的字符数组转换为OH\_VObject类型的值。 |
+| [int (\*putText)(OH\_VObject \*valueObject, const char \*value)](capi-rdb-oh-vobject.md#puttext) | 将char \*类型的字符串转换为OH\_VObject类型的值。 |
 | [int (\*putTexts)(OH\_VObject \*valueObject, const char \*\*value, uint32\_t count)](capi-rdb-oh-vobject.md#puttexts) | 将char \*类型的字符串数组转换为OH\_VObject类型的值。 |
 | [int (\*destroy)(OH\_VObject \*valueObject)](capi-rdb-oh-vobject.md#destroy) | 销毁OH\_VObject对象，并回收该对象占用的内存。 |
 
 ## 成员函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### putInt64()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int (*putInt64)(OH_VObject *valueObject, int64_t *value, uint32_t count)
+```c
+int (*putInt64)(OH_VObject *valueObject, int64_t *value, uint32_t count)
 ```
 
 **描述**
 
-将int64类型的单个参数或者数组转换为OH\_VObject类型的值。
+将int64\_t类型的单个参数或者数组转换为OH\_VObject类型的值。
 
 **起始版本：** 10
 
@@ -82,10 +70,8 @@ PhonePC/2in1TabletTVWearable
 
 ### putDouble()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int (*putDouble)(OH_VObject *valueObject, double *value, uint32_t count)
+```c
+int (*putDouble)(OH_VObject *valueObject, double *value, uint32_t count)
 ```
 
 **描述**
@@ -110,15 +96,13 @@ PhonePC/2in1TabletTVWearable
 
 ### putText()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int (*putText)(OH_VObject *valueObject, const char *value)
+```c
+int (*putText)(OH_VObject *valueObject, const char *value)
 ```
 
 **描述**
 
-将char \*类型的字符数组转换为OH\_VObject类型的值。
+将char \*类型的字符串转换为OH\_VObject类型的值。
 
 **起始版本：** 10
 
@@ -127,7 +111,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | OH\_VObject \*valueObject | 表示指向OH\_VObject实例的指针。 |
-| const char \*value | 表示字符数组参数。 |
+| const char \*value | 表示字符串参数。 |
 
 **返回：**
 
@@ -137,10 +121,8 @@ PhonePC/2in1TabletTVWearable
 
 ### putTexts()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int (*putTexts)(OH_VObject *valueObject, const char **value, uint32_t count)
+```c
+int (*putTexts)(OH_VObject *valueObject, const char **value, uint32_t count)
 ```
 
 **描述**
@@ -165,10 +147,8 @@ PhonePC/2in1TabletTVWearable
 
 ### destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int (*destroy)(OH_VObject *valueObject)
+```c
+int (*destroy)(OH_VObject *valueObject)
 ```
 
 **描述**

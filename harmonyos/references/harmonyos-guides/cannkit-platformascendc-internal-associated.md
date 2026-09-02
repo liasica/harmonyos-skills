@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-platf
 title: 内部关联接口
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > Host API > 内部关联接口
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:47+08:00
+scraped_at: 2026-09-02T14:50:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:228fe9948d49cbc310681672db2f966feb03934b9f0a242fe9fbd23d1402863f
+content_hash: sha256:d8a5ccb4961360ca7e133e81ba266e1303047f559e40631f6c6b5caac3c3e2c1
 ---
 
 在进行算子原型注册、Tiling实现、shape推导过程中，使用到的外部开放接口中会调用到一些辅助数据结构和接口，称之为**内部关联接口**。开发者不会直接调用内部关联接口，此处仅作简单介绍。
@@ -39,16 +39,16 @@ CTilingDataClassFactory类用于注册AscendC高阶API和开发者自定义tilin
 
 以下接口为Tiling定义辅助接口。AscendC提供了一系列Tiling类型定义宏，包含BEGIN\_TILING\_DATA\_DEF、TILING\_DATA\_FIELD\_DEF、TILING\_DATA\_FIELD\_DEF\_ARR、TILING\_DATA\_FIELD\_DEF\_STRUCT、REGISTER\_TILING\_DATA\_CLASS。开发者调用该系列宏会调用以下接口对tiling信息进一步处理，包含结构信息保留、字节对齐等。
 
-```
-1. // TilingDef类
-2. void SaveToBuffer(void *pdata, size_t capacity);
-3. std::vector<FieldInfo> GetFieldInfo() const;
-4. const char *GetTilingClassName() const;
-5. size_t GetDataSize() const;
-6. void SetDataPtr(void *dataPtr);
-7. void CheckAlignAndGenPlaceHolder(const char *name, size_t typeSize);
-8. // FieldInfo类
-9. FieldInfo(const char *dtype, const char *name)
-10. FieldInfo(const char *dtype, const char *name, size_t arrSize)
-11. FieldInfo(const char *dtype, const char *name, const char *structType,size_t structSize)
+```cpp
+// TilingDef类
+void SaveToBuffer(void *pdata, size_t capacity);
+std::vector<FieldInfo> GetFieldInfo() const;
+const char *GetTilingClassName() const;
+size_t GetDataSize() const;
+void SetDataPtr(void *dataPtr);
+void CheckAlignAndGenPlaceHolder(const char *name, size_t typeSize);
+// FieldInfo类
+FieldInfo(const char *dtype, const char *name)
+FieldInfo(const char *dtype, const char *name, size_t arrSize)
+FieldInfo(const char *dtype, const char *name, const char *structType,size_t structSize)
 ```

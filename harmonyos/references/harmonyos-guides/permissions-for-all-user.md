@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-f
 title: 开放权限（用户授权）
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 应用权限列表 > 开放权限（用户授权）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:03+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:cbbe2d4a6a8eebffa69428d8fb839968cc09873ef3d9a98ab6f93dd835e82a47
+scraped_at: 2026-09-02T14:59:27+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:35fa7a2863a810ed093ee1733a0438b044234dbfedeb8ea4058f3e96fa71872e
 ---
 
 此列表内所有权限均为用户授权（user\_grant）的开放权限，面向所有应用开放。
@@ -42,7 +42,7 @@ content_hash: sha256:cbbe2d4a6a8eebffa69428d8fb839968cc09873ef3d9a98ab6f93dd835e
 
 允许应用读取开放匿名设备标识符。
 
-注意
+**注意** 
 
 在申请此权限时，是否弹窗向用户请求授权，取决于“要求应用请求关联”的开关状态。
 
@@ -66,6 +66,8 @@ content_hash: sha256:cbbe2d4a6a8eebffa69428d8fb839968cc09873ef3d9a98ab6f93dd835e
 **权限级别**：normal
 
 **授权方式**：用户授权（user\_grant）
+
+**支持设备**：Phone | PC/2in1 | Tablet | TV | Wearable
 
 **起始版本**：7
 
@@ -166,11 +168,13 @@ content_hash: sha256:cbbe2d4a6a8eebffa69428d8fb839968cc09873ef3d9a98ab6f93dd835e
 
 ## ohos.permission.READ\_HEALTH\_DATA
 
-允许应用读取用户的健康数据。
+允许应用读取用户的健康数据，如心率数据等。
 
 **权限级别**：normal
 
 **授权方式**：用户授权（user\_grant）
+
+**支持设备**：Phone | PC/2in1 | Tablet | TV | Wearable
 
 **起始版本**：7
 
@@ -188,7 +192,7 @@ content_hash: sha256:cbbe2d4a6a8eebffa69428d8fb839968cc09873ef3d9a98ab6f93dd835e
 
 允许应用访问公共目录下Download目录及子目录。
 
-说明
+**说明** 
 
 该权限级别发生变更，为保证兼容性，在当前版本请继续采用[受限权限申请方式](declare-permissions-in-acl.md)申请使用该权限。
 
@@ -206,7 +210,7 @@ content_hash: sha256:cbbe2d4a6a8eebffa69428d8fb839968cc09873ef3d9a98ab6f93dd835e
 
 允许应用访问公共目录下的Documents目录及子目录。
 
-说明
+**说明** 
 
 该权限级别发生变更，为保证兼容性，在当前版本请继续采用[受限权限申请方式](declare-permissions-in-acl.md)申请使用该权限。
 

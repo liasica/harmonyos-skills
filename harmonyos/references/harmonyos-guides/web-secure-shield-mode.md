@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-secure-sh
 title: 坚盾守护模式
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理Web组件的网络安全与隐私 > 坚盾守护模式
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:24+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0c9247cbe5c54869390ef6c7fc60ed4ae9feafd0e73f765c94cff25afe8da735
+scraped_at: 2026-09-02T14:59:23+08:00
+doc_updated_at: 2026-07-09
+content_hash: sha256:01f6782a5f7b1fde6331d5ecdc510abe7966a4faecfd6c392482cbcf3772a80d
 ---
 
 坚盾守护模式提供给高安全需求用户的系统级别安全模式。该模式通过限制设备基础功能，增强安全性，有效抵御远程攻击面的针对性攻击。
@@ -18,9 +18,9 @@ content_hash: sha256:0c9247cbe5c54869390ef6c7fc60ed4ae9feafd0e73f765c94cff25afe8
 * 禁止使用WebGL、WebGL2能力。
 * 禁止使用PDF Viewer预览功能。
 * 禁止使用MathML能力。
-* 禁止使用Web Speech API语音识别能力。
+* 禁止使用Web Speech API语音识别与语音合成能力。
 * 禁止使用RTCDataChannel接口。
-* 禁止使用MediaDevices.getUserMedia接口提示用户允许访问媒体输入设备。
+* 禁止使用MediaDevices.getUserMedia接口提示用户允许访问媒体输入设备（麦克风与摄像头）。
 * 禁止使用Service Worker能力。
 * 禁止使用非代理UDP流量，防止WebRTC泄露真实源IP。
 * 禁止即时编译（JIT）能力。
@@ -29,9 +29,9 @@ content_hash: sha256:0c9247cbe5c54869390ef6c7fc60ed4ae9feafd0e73f765c94cff25afe8
 
 要评估应用在坚盾守护模式下的受影响程度及兼容性，可前往“设置 > 隐私和安全 > 坚盾守护模式”开启。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/-tIbnPUkQKCX-zEfcQx31Q/zh-cn_image_0000002558764716.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/kqlAKZ-XRsasASjnFz_E8w/zh-cn_image_0000002706834066.png)
 
-说明
+**说明** 
 
 * 如果需要评估调试版本（未上架应用市场）应用的兼容性，先开启开发者选项，然后开启坚盾守护模式。
 * 可以采用Device Security Kit提供的[查询设备安全模式(C/C++)能力](devicesecurity-securitymode.md)，判断坚盾守护模式是否开启。

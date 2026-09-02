@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getin
 title: GetInputTensor
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > TilingContext > GetInputTensor
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:16+08:00
+scraped_at: 2026-09-02T14:50:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8ff1adfc9041a4628045fdeb01a6125187dc4e9be9b2175dbfc3b9cfcd57857e
+content_hash: sha256:2f5271a58849e69b8a8d9ad1b2e7c2b7e6d5d479fac178904727c71674f061d0
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:8ff1adfc9041a4628045fdeb01a6125187dc4e9be9b2175dbfc3b9cfcd5
 
 ## 函数原型
 
-```
-1. const Tensor *GetInputTensor(const size_t index) const;
+```cpp
+const Tensor *GetInputTensor(const size_t index) const;
 ```
 
 ## 参数说明
@@ -36,11 +36,11 @@ content_hash: sha256:8ff1adfc9041a4628045fdeb01a6125187dc4e9be9b2175dbfc3b9cfcd5
 
 ## 调用示例
 
-```
-1. ge::graphStatus Tiling4ReduceCommon(TilingContext* context) {
-2. auto in_shape = context->GetInputShape(0);
-3. GE_ASSERT_NOTNULL(in_shape);
-4. auto axes_tensor = context->GetInputTensor(1);
-5. // ...
-6. }
+```cpp
+ge::graphStatus Tiling4ReduceCommon(TilingContext* context) {
+  auto in_shape = context->GetInputShape(0);
+  GE_ASSERT_NOTNULL(in_shape);
+  auto axes_tensor = context->GetInputTensor(1);
+  // ...
+}
 ```

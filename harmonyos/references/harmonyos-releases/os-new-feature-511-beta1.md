@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-511-beta1
 title: 新增和增强特性
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.1.1(19) > OS平台能力 > 新增和增强特性
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.1(19) > OS平台能力 > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:46+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:ae079b42515b4017cf25d6ffa7af5a9c752b6b7021127fc54b89de1b05921c99
+scraped_at: 2026-09-02T14:49:18+08:00
+doc_updated_at: 2026-08-04
+content_hash: sha256:1230be477c385c69657747ef51da6d097c7188379b560bb191e3032e909a1aa8
 ---
 
 ## ArkUI
@@ -20,7 +20,7 @@ content_hash: sha256:ae079b42515b4017cf25d6ffa7af5a9c752b6b7021127fc54b89de1b059
 * 新增LazyVGridLayout组件，用于实现懒加载的网格布局。（[API参考](../harmonyos-references/ts-container-lazyvgridlayout.md)）
 * Tabs支持设置子组件的最大缓存个数和缓存模式。（[API参考](../harmonyos-references/ts-container-tabs.md#cachedmaxcount19)）
 * List组件支持从末尾开始布局。（[API参考](../harmonyos-references/ts-container-list.md#stackfromend19)）
-* 丰富Swiper组件在Native侧的能力，包括：创建并设置数字导航指示器的样式、创建并设置导航箭头的样式等。（[API参考](../harmonyos-references/capi-native-type-h.md#oh_arkui_swiperdigitindicator_create)）
+* 丰富Swiper组件在Native侧的能力，包括：创建并设置数字导航指示器的样式、创建并设置导航箭头的样式等。（[API参考](../harmonyos-references/capi-swiper-h.md#oh_arkui_swiperdigitindicator_create)）
 * Swiper组件支持设置圆点导航点间距和导航点底部相对于Swiper的位置。（[API参考](../harmonyos-references/ts-container-swiper.md#space19)）
 * Navigation支持获取当前路由栈中的路由页面信息数组，并将数组更新为指定内容，实现路由转场。（[API参考](../harmonyos-references/ts-basic-components-navigation.md#getpathstack19)）
 * 新增onNewParam回调，当栈中存在的NavDestination页面通过单实例方式移动到栈顶时，触发对应的生命周期。（[API参考](../harmonyos-references/ts-basic-components-navdestination.md#onnewparam19)）

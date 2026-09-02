@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tenso
 title: SetExpandDimsRule
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Tensor > SetExpandDimsRule
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:06+08:00
+scraped_at: 2026-09-02T14:50:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:fdc3fa1c8dcf10d40e889c8f729040aada0e9c4a6bd5a99965787745d99f937f
+content_hash: sha256:b05c16e03157dbc642988c78332ae2ddf7a99fb7013d13da32300701fd181e3b
 ---
 
 ## 函数功能
@@ -26,8 +26,8 @@ content_hash: sha256:fdc3fa1c8dcf10d40e889c8f729040aada0e9c4a6bd5a99965787745d99
 
 ## 函数原型
 
-```
-1. graphStatus SetExpandDimsRule(const AscendString &expand_dims_rule);
+```cpp
+graphStatus SetExpandDimsRule(const AscendString &expand_dims_rule);
 ```
 
 ## 参数说明

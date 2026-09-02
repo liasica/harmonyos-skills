@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/contacts-intr
 title: Contacts Kit简介
 breadcrumb: 指南 > 应用服务 > Contacts Kit（联系人服务） > Contacts Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:52+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:63664409978262bf4d507312df07d7cea7281adcae349f9aff3a9f2d2a6cac6f
+scraped_at: 2026-09-02T14:59:54+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:523c8406633c4f1878ff67610345b958adceeb445feccbb892f2c58c3162f85e
 ---
 
 Contacts Kit（联系人服务）可以帮助开发者轻松实现联系人的增删改查等功能。该Kit提供了一系列API，可以让开发者在应用中快速集成联系人管理功能。
@@ -22,7 +22,7 @@ Contacts Kit（联系人服务）可以帮助开发者轻松实现联系人的�
 
 面向三方应用受限开放如下能力：
 
-注意
+**注意** 
 
 当前能力受限开放，需要申请受限开放权限ohos.permission.READ\_CONTACTS或ohos.permission.WRITE\_CONTACTS。该权限通常不允许三方应用申请，仅符合[指定场景](restricted-permissions.md#ohospermissionread_contacts)的应用可申请该权限。
 
@@ -36,22 +36,22 @@ Contacts Kit（联系人服务）可以帮助开发者轻松实现联系人的�
 
 1. 导入相关的联系人模块。
 
-   ```
-   1. import { contact } from '@kit.ContactsKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```ts
+   import { contact } from '@kit.ContactsKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 调用联系人接口，拉起联系人列表，用户点击对应的联系人后返回。
 
-   ```
-   1. contact.selectContacts({
-   2. isMultiSelect:false
-   3. },(err: BusinessError, data) => {
-   4. if (err) {
-   5. console.error('selectContact callback, errCode:' + err.code + ', errMessage:' + err.message);
-   6. return;
-   7. }
-   8. console.info(`selectContact callback: success data->${JSON.stringify(data)}`);
-   9. });
+   ```ts
+   contact.selectContacts({
+     isMultiSelect:false
+   }, (err: BusinessError, data) => {
+       if (err) {
+         console.error('selectContact callback, errCode:' + err.code + ', errMessage:' + err.message);
+           return;
+       }
+       console.info(`selectContact callback: success data->${JSON.stringify(data)}`);
+   });
    ```
 3. 完成操作，返回想要的data数据。
 
@@ -65,50 +65,53 @@ Contacts Kit（联系人服务）可以帮助开发者轻松实现联系人的�
 2. 设置一个需要的Permissions数组变量。
 3. 执行对应联系人的权限操作。
 
-```
-1. // 示例代码
-2. import { common, abilityAccessCtrl, Permissions, PermissionRequestResult } from '@kit.AbilityKit';
-3. import { contact } from '@kit.ContactsKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+   ```ts
+   // 示例代码
+   import { common, abilityAccessCtrl, Permissions, PermissionRequestResult } from '@kit.AbilityKit';
+   import { contact } from '@kit.ContactsKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
 
-6. @Entry
-7. @Component
-8. struct Contact {
-9. addContactByPermissions() {
-10. // 在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-11. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-12. const permissions: Array<Permissions> = ['ohos.permission.WRITE_CONTACTS'];
-13. const contactInfo: contact.Contact = {
-14. name: { fullName: '王小明' },
-15. phoneNumbers: [{ phoneNumber: '13912345678' }]
-16. }
-17. abilityAccessCtrl.createAtManager().requestPermissionsFromUser(context, permissions).then((result: PermissionRequestResult) => {
-18. if (result.authResults[0] !== 0) { // 0 表示请求权限成功，其他任何非零值表示请求失败
-19. console.error('request contact permissions failed');
-20. return;
-21. }
-22. contact.addContact(context, contactInfo).then((data) => {
-23. console.info(`Succeeded in adding Contact. data: ${JSON.stringify(data)}`);
-24. }).catch((err: BusinessError) => {
-25. console.error(`Failed to add Contact. Code: ${err.code}, message: ${err.message}`);
-26. });
-27. })
-28. }
+   @Entry
+   @Component
+   struct Contact {
+     addContactByPermissions() {
+       // 在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+       let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+       const permissions: Array<Permissions> = ['ohos.permission.WRITE_CONTACTS'];
+       const contactInfo: contact.Contact = {
+         name: { fullName: '王小明' },
+         phoneNumbers: [{ phoneNumber: '139xxxxxxxx' }]
+       };
+       abilityAccessCtrl.createAtManager().requestPermissionsFromUser(context, permissions).
+         then((result: PermissionRequestResult) => {
+          if (result.authResults[0] !== 0) { // 0 表示请求权限成功，其他任何非零值表示请求失败
+            console.error('request contact permissions failed');
+            return;
+          }
+          contact.addContact(context, contactInfo).then((data) => {
+            console.info(`Succeeded in adding Contact. data: ${JSON.stringify(data)}`);
+          }).catch((err: BusinessError) => {
+            console.error(`Failed to add Contact. Code: ${err.code}, message: ${err.message}`);
+          });
+        }).catch((err: BusinessError) => {
+            console.error(`Failed to createAtManager. Code: ${err.code}, message: ${err.message}`);
+        });
+     }
 
-30. build() {
-31. Row() {
-32. Column() {
-33. Button('添加联系人')
-34. .onClick(() => {
-35. this.addContactByPermissions();
-36. })
-37. }
-38. .width('100%')
-39. }
-40. .height('100%')
-41. }
-42. }
-```
+     build() {
+       Row() {
+         Column() {
+           Button('添加联系人')
+             .onClick(() => {
+               this.addContactByPermissions();
+             })
+         }
+         .width('100%')
+       }
+       .height('100%')
+     }
+   }
+   ```
 
 ## 模拟器支持情况
 

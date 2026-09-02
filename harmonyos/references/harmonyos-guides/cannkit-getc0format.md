@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getc0
 title: GetC0Format
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > GetC0Format
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6ccff4ae49aec0a246898be350f14d8b0ffae769ea49ed957503bb5e3cf167f5
+scraped_at: 2026-09-02T14:50:43+08:00
+doc_updated_at: 2026-05-18
+content_hash: sha256:02167a6200bcd1bc90d800da19b7449497da5939ccafcddf0976cf29b7af5a65
 ---
 
 ## 函数功能
@@ -22,7 +22,7 @@ content_hash: sha256:6ccff4ae49aec0a246898be350f14d8b0ffae769ea49ed957503bb5e3cf
 
 \* |------------|-------------|----------------|--------|
 
-\* | reserved | c0 -format | sub-format | format |
+\* | reserved | c0-format | sub-format | format |
 
 \* ---------------------------------------------------
 
@@ -30,8 +30,8 @@ content_hash: sha256:6ccff4ae49aec0a246898be350f14d8b0ffae769ea49ed957503bb5e3cf
 
 ## 函数原型
 
-```
-1. inline int32_t GetC0Format(int32_t format)
+```cpp
+inline int32_t GetC0Format(int32_t format)
 ```
 
 ## 参数说明

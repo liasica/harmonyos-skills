@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-f
 title: 创建特性实例失败如何处理
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > XEngine Kit常见问题 > 创建特性实例失败如何处理
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:55+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:17:38+08:00
+doc_updated_at: 2026-05-26
 content_hash: sha256:58fe566e79a6212707d159ecb025ec6a447b017643d8b513121b189f0b281249
 ---
 

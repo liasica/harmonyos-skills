@@ -3,32 +3,30 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.file.statvfs (文件系统空间统计)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > @ohos.file.statvfs (文件系统空间统计)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:45+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c08c0e25e2e215bd3e94c2975bf59559d3f1890d431ba6fd929feeea04e3b4bc
+scraped_at: 2026-09-02T15:01:31+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d6aff1a895947548b5184fca33e55f53bb949c7bffea171ea60da4057d23bf0b
 ---
 
-该模块提供文件系统相关存储信息的功能：向应用程序提供获取文件系统总字节数、空闲字节数的ArkTS接口。
+该模块向应用程序提供获取文件系统总字节数、空闲字节数的ArkTS接口。通过该模块，开发者可以实时掌握文件系统存储状况，避免因存储空间不足导致的应用崩溃，提升用户体验和系统稳定性。
 
-说明
+使用场景包括：文件下载前检查存储空间、应用安装前进行磁盘空间预估、缓存管理中的空间监控等。
+
+**说明** 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { statfs } from '@kit.CoreFileKit';
+```ts
+import { statfs } from '@kit.CoreFileKit';
 ```
 
 ## statfs.getFreeSize
 
-PhonePC/2in1TabletTVWearable
+getFreeSize(path: string): Promise<number>
 
-getFreeSize(path:string): Promise<number>
-
-异步方法获取指定文件系统空闲字节数，以Promise形式返回结果。
+获取指定文件或目录所在文件系统的空闲字节数。使用Promise异步回调。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -36,13 +34,13 @@ getFreeSize(path:string): Promise<number>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | 需要查询的文件系统的文件路径。 |
+| path | string | 是 | 文件或目录的应用沙箱路径。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<number> | Promise对象，返回空闲字节数。 |
+| Promise<number> | Promise对象，返回空闲字节数，单位为Byte。 |
 
 **错误码：**
 
@@ -66,27 +64,25 @@ getFreeSize(path:string): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let path = context.filesDir;
-7. statfs.getFreeSize(path).then((number: number) => {
-8. console.info("getFreeSize succeed, Size: " + number);
-9. }).catch((err: BusinessError) => {
-10. console.error("getFreeSize failed with error message: " + err.message + ", error code: " + err.code);
-11. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let path = context.filesDir;
+statfs.getFreeSize(path).then((freeSize: number) => {
+  console.info("Succeeded in getting free size: " + freeSize);
+}).catch((err: BusinessError) => {
+  console.error("Failed to get free size. Code: " + err.code + ", message: " + err.message);
+});
 ```
 
 ## statfs.getFreeSize
 
-PhonePC/2in1TabletTVWearable
+getFreeSize(path: string, callback:AsyncCallback<number>): void
 
-getFreeSize(path:string, callback:AsyncCallback<number>): void
-
-异步方法获取指定文件系统空闲字节数，使用callback形式返回结果。
+获取指定文件或目录所在文件系统的空闲字节数。使用callback异步回调。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -94,8 +90,8 @@ getFreeSize(path:string, callback:AsyncCallback<number>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | 需要查询的文件系统的文件路径。 |
-| callback | AsyncCallback<number> | 是 | 异步获取空闲字节数之后的回调。 |
+| path | string | 是 | 文件或目录的应用沙箱路径。 |
+| callback | AsyncCallback<number> | 是 | 回调函数，返回空闲字节数，单位为Byte。 |
 
 **错误码：**
 
@@ -119,29 +115,27 @@ getFreeSize(path:string, callback:AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let path = context.filesDir;
-7. statfs.getFreeSize(path, (err: BusinessError, number: number) => {
-8. if (err) {
-9. console.error("getFreeSize failed with error message: " + err.message + ", error code: " + err.code);
-10. } else {
-11. console.info("getFreeSize succeed, Size: " + number);
-12. }
-13. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let path = context.filesDir;
+statfs.getFreeSize(path, (err: BusinessError, freeSize: number) => {
+  if (err) {
+    console.error("Failed to get free size. Code: " + err.code + ", message: " + err.message);
+  } else {
+    console.info("Succeeded in getting free size: " + freeSize);
+  }
+});
 ```
 
 ## statfs.getFreeSizeSync10+
 
-PhonePC/2in1TabletTVWearable
+getFreeSizeSync(path: string): number
 
-getFreeSizeSync(path:string): number
-
-以同步方法获取指定文件系统空闲字节数。
+以同步方法获取指定文件或目录所在文件系统的空闲字节数。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -149,13 +143,13 @@ getFreeSizeSync(path:string): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | 需要查询的文件系统的文件路径。 |
+| path | string | 是 | 文件或目录的应用沙箱路径。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 返回空闲字节数。 |
+| number | 返回空闲字节数，单位为Byte。 |
 
 **错误码：**
 
@@ -179,23 +173,21 @@ getFreeSizeSync(path:string): number
 
 **示例：**
 
-```
-1. import { common } from '@kit.AbilityKit';
+```ts
+import { common } from '@kit.AbilityKit';
 
-3. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-4. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-5. let path = context.filesDir;
-6. let number = statfs.getFreeSizeSync(path);
-7. console.info("getFreeSizeSync succeed, Size: " + number);
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let path = context.filesDir;
+let freeSize = statfs.getFreeSizeSync(path);
+console.info("Succeeded in getting free size: " + freeSize);
 ```
 
 ## statfs.getTotalSize
-
-PhonePC/2in1TabletTVWearable
 
 getTotalSize(path: string): Promise<number>
 
-异步方法获取指定文件系统总字节数，以Promise形式返回结果。
+获取指定文件或目录所在文件系统的总字节数。使用Promise异步回调。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -203,13 +195,13 @@ getTotalSize(path: string): Promise<number>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | 需要查询的文件系统的文件路径。 |
+| path | string | 是 | 文件或目录的应用沙箱路径。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<number> | Promise对象，返回总字节数。 |
+| Promise<number> | Promise对象，返回总字节数，单位为Byte。 |
 
 **错误码：**
 
@@ -233,27 +225,25 @@ getTotalSize(path: string): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let path = context.filesDir;
-7. statfs.getTotalSize(path).then((number: number) => {
-8. console.info("getTotalSize succeed, Size: " + number);
-9. }).catch((err: BusinessError) => {
-10. console.error("getTotalSize failed with error message: " + err.message + ", error code: " + err.code);
-11. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let path = context.filesDir;
+statfs.getTotalSize(path).then((totalSize: number) => {
+  console.info("Succeeded in getting total size: " + totalSize);
+}).catch((err: BusinessError) => {
+  console.error("Failed to get total size. Code: " + err.code + ", message: " + err.message);
+});
 ```
 
 ## statfs.getTotalSize
 
-PhonePC/2in1TabletTVWearable
-
 getTotalSize(path: string, callback: AsyncCallback<number>): void
 
-异步方法获取指定文件系统总字节数，使用callback形式返回结果。
+获取指定文件或目录所在文件系统的总字节数。使用callback异步回调。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -261,8 +251,8 @@ getTotalSize(path: string, callback: AsyncCallback<number>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | 需要查询的文件系统的文件路径。 |
-| callback | AsyncCallback<number> | 是 | 异步获取总字节数之后的回调。 |
+| path | string | 是 | 文件或目录的应用沙箱路径。 |
+| callback | AsyncCallback<number> | 是 | 回调函数，返回总字节数，单位为Byte。 |
 
 **错误码：**
 
@@ -286,29 +276,27 @@ getTotalSize(path: string, callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let path = context.filesDir;
-7. statfs.getTotalSize(path, (err: BusinessError, number: number) => {
-8. if (err) {
-9. console.error("getTotalSize failed with error message: " + err.message + ", error code: " + err.code);
-10. } else {
-11. console.info("getTotalSize succeed, Size: " + number);
-12. }
-13. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let path = context.filesDir;
+statfs.getTotalSize(path, (err: BusinessError, totalSize: number) => {
+  if (err) {
+    console.error("Failed to get total size. Code: " + err.code + ", message: " + err.message);
+  } else {
+    console.info("Succeeded in getting total size: " + totalSize);
+  }
+});
 ```
 
 ## statfs.getTotalSizeSync10+
 
-PhonePC/2in1TabletTVWearable
-
 getTotalSizeSync(path: string): number
 
-以同步方法获取指定文件系统总字节数。
+以同步方法获取指定文件或目录所在文件系统的总字节数。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -316,13 +304,13 @@ getTotalSizeSync(path: string): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | 需要查询的文件系统的文件路径。 |
+| path | string | 是 | 文件或目录的应用沙箱路径。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 返回总字节数。 |
+| number | 返回总字节数，单位为Byte。 |
 
 **错误码：**
 
@@ -346,12 +334,12 @@ getTotalSizeSync(path: string): number
 
 **示例：**
 
-```
-1. import { common } from '@kit.AbilityKit';
+```ts
+import { common } from '@kit.AbilityKit';
 
-3. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-4. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-5. let path = context.filesDir;
-6. let number = statfs.getTotalSizeSync(path);
-7. console.info("getTotalSizeSync succeed, Size: " + number);
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let path = context.filesDir;
+let totalSize = statfs.getTotalSizeSync(path);
+console.info("Succeeded in getting total size: " + totalSize);
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-decorat
 title: UI装饰器总览
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > UI装饰器总览
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:53+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:cc1f79408e4344d1c52d4768e3a9c8a2c6ff1a74c5d8b2dbcc59680112c347bb
+scraped_at: 2026-09-02T14:49:47+08:00
+doc_updated_at: 2026-06-09
+content_hash: sha256:741d19d1fc0f636efb62f9dc39dc2f9d2fb3e8d0fd2ec3b8e7246b95d7fbde39
 ---
 
 在声明式UI开发范式中，UI是程序状态的运行结果，状态的变化会驱动UI的刷新。ArkUI提供了一套装饰器机制，使开发者能够便捷地定义和管理状态变量，实现数据与UI的联动。
@@ -53,6 +53,7 @@ ArkUI包含的通用UI装饰器列表如下：
 
 | 通用装饰器 | 装饰器说明 |
 | --- | --- |
+| [@Entry](../harmonyos-references/ts-universal-entry.md#entry) | 标记页面入口。 |
 | [@Builder](arkts-builder.md) | 自定义构建函数。 |
 | [@LocalBuilder](arkts-localbuilder.md) | 维持组件关系。 |
 | [@BuilderParam](arkts-builderparam.md) | 引用@Builder函数。 |

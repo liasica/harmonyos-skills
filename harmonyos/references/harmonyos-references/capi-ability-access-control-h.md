@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-abil
 title: ability_access_control.h
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > C API > 头文件 > ability_access_control.h
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:57+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:ab3032ced17406f497207231fd3e26e28c7aaed2ca152737db5022cfef51abd2
+scraped_at: 2026-09-02T15:00:36+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:69b73db6e4a39ccd724e0f05590071107150f1caf35596a7f8f6cda2e8caa8bd
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明管理进程访问控制的接口。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -38,14 +32,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AT\_CheckSelfPermission()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. bool OH_AT_CheckSelfPermission(const char *permission)
+```c
+bool OH_AT_CheckSelfPermission(const char *permission)
 ```
 
 **描述**

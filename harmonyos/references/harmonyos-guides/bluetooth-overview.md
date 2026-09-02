@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bluetooth-ove
 title: 蓝牙服务开发概述
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 蓝牙 > 蓝牙服务开发概述
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:32:27+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:800ae1728be01850a8a2c0a3a967e4df877e025dc4875431e97cc69a0982f17f
+scraped_at: 2026-09-02T14:50:05+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:008617b92b6b2b647f3e82f81d9a6d2dce8a70241da1042d2b338e567e50380b
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:800ae1728be01850a8a2c0a3a967e4df877e025dc4875431e97cc69a098
 
 ## 传统蓝牙
 
-蓝牙基础率/增强数据率（Basic Rate/Enhanced Data Rate，BR/EDR），也被称为传统蓝牙。蓝牙EDR技术是蓝牙BR技术的增强版本，有更高的数据传输速率，比BR快2~3倍，最高可达2~3Mbps。在理想条件下，通信范围约100米。
+蓝牙基础速率/增强数据速率（Basic Rate/Enhanced Data Rate，BR/EDR），也被称为传统蓝牙。蓝牙EDR技术是蓝牙BR技术的增强版本，有更高的数据传输速率，比BR快2~3倍，最高可达2~3Mbps。在理想条件下，通信范围约100米。
 
 传统蓝牙提供了多样化且成熟的技术协议。例如：高级音频分发、免提通话、个人局域网、电话簿访问等协议。利用这些技术，使得传统蓝牙可以满足许多不同应用场景下的多样化需求。例如：使用蓝牙耳机、音响等设备听音乐，通过车载访问手机电话本、短信等数据，实现设备间的数据共享。
 
@@ -30,12 +30,12 @@ content_hash: sha256:800ae1728be01850a8a2c0a3a967e4df877e025dc4875431e97cc69a098
 
 在蓝牙服务开发过程中，涉及两种维度的地址类型定义。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/yLvUPsvIROm5n6Xe-TH4cQ/zh-cn_image_0000002558605262.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/cUyeeYGTTF6dWpSalH_diA/zh-cn_image_0000002706834328.png)
 
 **图1** 蓝牙设备地址类型
 
 * 蓝牙子系统定义的地址类型。蓝牙设备的实际MAC地址属于用户的隐私信息，在发现设备的过程中，蓝牙子系统会给每个蓝牙外设分配一个虚拟MAC地址，并保存该虚拟MAC地址和外设实际MAC地址的映射关系。
-* 蓝牙协议定义的地址类型。蓝牙协议定义的蓝牙设备地址类型主要可以分为两大类：Public Address和Random Address。传统蓝牙使用的是Public Address，低功耗蓝牙可以使用Public Address和Random Address。其中，Random Address又包括Static Random Adress和Private Random Address两种类型。Private Random Address可以继续分为Non-resolvable Private Address和Resolvable Private Address两种类型。每种地址类型介绍如下：
+* 蓝牙协议定义的地址类型。蓝牙协议定义的蓝牙设备地址类型主要可以分为两大类：Public Address和Random Address。传统蓝牙使用的是Public Address，低功耗蓝牙可以使用Public Address和Random Address。其中，Random Address又包括Static Random Address和Private Random Address两种类型。Private Random Address可以继续分为Non-resolvable Private Address和Resolvable Private Address两种类型。每种地址类型介绍如下：
 
 | 类型 | 说明 |
 | --- | --- |
@@ -44,6 +44,8 @@ content_hash: sha256:800ae1728be01850a8a2c0a3a967e4df877e025dc4875431e97cc69a098
 | Resolvable Private Address | 可解析私有地址，该类型地址通过一组地址解析密钥（Identity Resolving Key, IRK）生成，会定期（蓝牙协议建议15分钟更新一次）发生变化。若一个蓝牙设备A拥有另一个蓝牙设备B的IRK，即可通过解析设备B的可解析私有地址来识别设备B。 |
 | Non-resolvable Private Address | 不可解析私有地址，该类型地址是完全随机的临时地址，会定期（蓝牙协议建议15分钟更新一次）发生变化，难以追踪。 |
 
+* 蓝牙子系统API中，蓝牙MAC地址采用六段冒号分隔格式：XX:XX:XX:XX:XX:XX，其中 X 为十六进制字符（0-9、A-F、a-f），例如："08:00:27:AB:CD:EF"。
+
 ## 设备角色
 
 在蓝牙设备的配对和连接过程中，根据设备在连接建立阶段所表现出的主动或被动行为，可以将其定义为中心设备（Central）和外围设备（Peripheral）两种角色。
@@ -51,3 +53,7 @@ content_hash: sha256:800ae1728be01850a8a2c0a3a967e4df877e025dc4875431e97cc69a098
 在传统蓝牙中，通过查询来发现周围设备，并主动发起配对和连接的设备称为中心设备，响应其他设备的查询并接受配对和连接请求的设备称为外围设备。
 
 在低功耗蓝牙中，扫描其他设备并主动发起连接的设备称为中心设备，发送广播并接受其他设备连接请求的设备称为外围设备。
+
+## 模拟器支持情况
+
+蓝牙模块暂不支持模拟器。

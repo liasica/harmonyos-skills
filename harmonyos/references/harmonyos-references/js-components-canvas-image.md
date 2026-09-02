@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: Image对象
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 画布组件 > Image对象
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:30+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:2fc6f5a40b68863c793c39643be77358855d0a33c97a41c1341c5c3b9922791e
+scraped_at: 2026-09-02T15:01:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:23a0028316043f638fe8ffcc970147d869e8ea8122aeafa2a5aeb5097ccabc7c
 ---
 
-说明
+**说明** 
 
 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 图片对象。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 | 属性 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
@@ -28,33 +26,31 @@ PhonePC/2in1TabletTVWearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div>
-3. <canvas ref="canvas" style="width: 500px; height: 500px; "></canvas>
-4. </div>
+```html
+<!-- xxx.hml -->
+<div>
+  <canvas ref="canvas" style="width: 500px; height: 500px; "></canvas>
+</div>
 ```
 
-```
-1. // xxx.js
-2. export default {
-3. onShow() {
-4. const el = this.$refs.canvas;
-5. var ctx = el.getContext('2d');
-6. var img = new Image();
-7. // 图片路径建议放在common目录下
-8. img.src = 'common/images/example.jpg';
-9. img.onload = function () {
-10. console.log('Image load success');
-11. ctx.drawImage(img, 0, 0, 360, 250);
-12. };
-13. img.onerror = function () {
-14. console.error('Image load fail');
-15. };
-16. }
-17. }
+```js
+// xxx.js
+export default {
+    onShow() {
+        const el = this.$refs.canvas;
+        var ctx = el.getContext('2d');
+        var img = new Image();
+        // 图片路径建议放在common目录下
+        img.src = 'common/images/example.jpg';
+        img.onload = function () {
+            console.info('Image load success');
+            ctx.drawImage(img, 0, 0, 360, 250);
+        };
+        img.onerror = function () {
+            console.error('Image load fail');
+        };
+    }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/x-Fq1XwYRU2fqxjEkugRYQ/zh-cn_image_0000002589326623.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/ygAHe8R-Qx6o17xR1KrPIw/zh-cn_image_0000002736435573.png)

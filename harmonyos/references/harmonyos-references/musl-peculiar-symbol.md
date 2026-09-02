@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/musl-pecu
 title: Native api中没有导出的符号列表
 breadcrumb: API参考 > 标准库 > 附录 > Native api中没有导出的符号列表
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:39+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-02T15:21:00+08:00
+doc_updated_at: 2026-08-29
 content_hash: sha256:06b99b820607b6971c5bc274f4472ef7c3a12fc759f824cbc88b7547346fbde8
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-setin
 title: SetInferenceContext
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator > SetInferenceContext
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:46+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8a3aa54b6d4848789470a456c3466477d09026c9409f952c20a42df78ac15403
+content_hash: sha256:ee5cd0751eb5d5d346eaba1a1292ba6c4d267efd3fe2717bb5af2993a3c07908
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:8a3aa54b6d4848789470a456c3466477d09026c9409f952c20a42df78ac
 
 ## 函数原型
 
-```
-1. void SetInferenceContext(const InferenceContextPtr &inference_context);
+```cpp
+void SetInferenceContext(const InferenceContextPtr &inference_context);
 ```
 
 ## 参数说明

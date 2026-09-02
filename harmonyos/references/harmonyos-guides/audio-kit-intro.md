@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-kit-int
 title: Audio Kit简介
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > Audio Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:34:26+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:b6fcb629ed527ca3c9c67101ea58498f31d37ea02352687977599f05d07d1320
+scraped_at: 2026-09-02T14:59:42+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:277a04167fc7becfb6a6169a9a1a197fbd0e3769f4a7f02af222a8e1abaca481
 ---
 
 Audio Kit（音频服务）旨在提供场景化的音频播放和录制接口，助力开发者迅速构建音频高清采集及沉浸式播放能力。
@@ -28,7 +28,7 @@ Audio Kit（音频服务）旨在提供场景化的音频播放和录制接口�
 
 开发者可以利用Audio Kit的接口，使用音频系统提供的播放、录音及音频策略管理能力，进而访问相应的音频硬件。音频架构定义了系统如何封装和管理音频硬件能力。音频架构图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/qEVrU06nTJqr1OnwcICylQ/zh-cn_image_0000002558605370.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/Jysirkf8QQqeatKOCbbzEA/zh-cn_image_0000002736313577.png)
 
 **Application**
 
@@ -82,13 +82,15 @@ HAL通过统一的HDI接口对外提供服务，不同的音频硬件开发人�
   音频播放场景的信息，通过[StreamUsage](../harmonyos-references/arkts-apis-audio-e.md#streamusage)进行描述。
 
   StreamUsage指音频流本身的用途类型，包括媒体、语音通信、语音播报、通知、铃声等。
+
+  播放流类型的设置请参考[选择合适的播放流类型](using-right-streamusage-for-playback.md)。
 * 录制场景
 
   音频流录制场景的信息，通过[SourceType](../harmonyos-references/arkts-apis-audio-e.md#sourcetype8)进行描述。
 
   SourceType指音频流中录音源的类型，包括麦克风音频源、语音识别音频源、语音通话音频源等。
 
-可参考[使用合适的音频流类型](using-right-streamusage-and-sourcetype.md)进行设置。
+  录制流类型的设置请参考[选择合适的录制流类型](using-right-sourcetype-for-recording.md)。
 
 ## 支持的音频格式
 
@@ -105,3 +107,14 @@ audio模块下的接口支持PCM编码，包括AudioRenderer、AudioCapturer、T
   由于系统限制，S24LE、S32LE、F32LE仅部分设备支持，请根据实际情况使用。
 
   小尾数指的是小端模式，即数据的高字节保存在内存的高地址中，而数据的低字节保存在内存的低地址中。这种存储模式将地址的高低和数据的位权有效结合起来，高地址部分权值高，低地址部分权值低。
+
+## 模拟器支持情况
+
+本Kit支持模拟器，但与真机存在部分能力差异，具体差异如下。
+
+* 通用差异：请参见[模拟器与真机的差异](ide-emulator-specification.md)。
+* 不支持低时延音频播放。
+* 不支持低时延音频录制。
+* 不支持低功耗音频播放。
+* 不支持音效，音效跟随模拟器运行操作系统的硬件通路。
+* 只存在默认输出（Speaker）和默认输入（Mic）设备，会映射到模拟器运行操作系统的音频设备，没有其他外设的概念。

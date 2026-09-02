@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-501
 title: 版本概览
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.1(13) > 版本概览
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.1(13) > 版本概览
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:56+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:960ae2a0752aeaab6832209840145254e0195f1f10bb5523c314322c4bce28c8
+scraped_at: 2026-09-02T14:58:52+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:7a2fbc028de22457e12fa08117cb2ece42c84c7af4b91d9ed00c97a6e0e00fbd
 ---
 
 HarmonyOS 5.0.1(13)在HarmonyOS 5.0.0(12)的基础上增强了C API的相关能力，多个特性补充了C API供开发者使用。
@@ -14,7 +14,7 @@ HarmonyOS 5.0.1(13)在HarmonyOS 5.0.0(12)的基础上增强了C API的相关能�
 
 ## 版本信息
 
-说明
+**说明** 
 
 使用正确的配套关系进行应用开发可以获得更流畅的开发体验。
 
@@ -36,7 +36,7 @@ HarmonyOS 5.0.1(13)在HarmonyOS 5.0.0(12)的基础上增强了C API的相关能�
 | 基于OpenHarmony SDK Ohos\_sdk\_public 5.0.1.113(API 13 Release) | 2024/12/08 |
 | 基于OpenHarmony SDK Ohos\_sdk\_public 5.0.1.112(API 13 Release) | 2024/11/30 |
 
-说明
+**说明** 
 
 * 系统版本请通过设备的“设置 > *设备名称* > 软件版本”进行查询。可在本页面检查版本更新，以及时升级至最新版本。
 

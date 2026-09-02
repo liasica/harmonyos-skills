@@ -1,13 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-adopt
 title: 附属节点错误码
+breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > 错误码 > UI界面 > 附属节点错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:53+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5e8ebae36def8b145bfdeef7a67e561afa6db14f28c05fe1718cc46a554f9a15
+scraped_at: 2026-09-02T15:01:25+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:11cfbe40c91922f9dba069016507ddc522249b43e93baadd9fcf05b6eab3273d
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码](errorcode-universal.md)。
 
@@ -23,7 +24,7 @@ The node has already been adopted.
 
 **可能原因**
 
-该节点已经被接纳为附属节点，不能再作为子节点挂载。
+该节点已被接纳为附属节点（来自之前的接纳操作），对其再次执行接纳或挂载操作时会触发此错误。
 
 **处理步骤**
 
@@ -41,7 +42,7 @@ This node already has a parent node.
 
 **可能原因**
 
-该节点已经有父节点，不能再被其他节点接纳。
+被接纳的节点当前已存在父节点（例如已被挂载到其他父节点下），再次接纳时触发此错误。
 
 **处理步骤**
 
@@ -77,18 +78,18 @@ The node cannot adopt children.
 
 **错误描述**
 
-该节点无法接纳其它附属节点。
+该节点无法接纳其他节点。
 
 **可能原因**
 
 1. 节点为空指针。
-2. 节点不支持被接纳，只有下面几种节点可被接纳：
+2. 节点不支持接纳操作，只有下面几种节点可接纳其他节点：
    * 使用ArkTS语言创建的命令式节点。
    * 使用C语言创建的命令式节点。
 
 **处理步骤**
 
-确保节点非空，且支持被接纳，再进行接纳操作。
+确保节点非空，且支持接纳其他节点，再进行接纳操作。
 
 ## 106210 节点不是被目标节点接纳的附属节点
 
@@ -98,7 +99,7 @@ This child is not adopted by the parent node.
 
 **错误描述**
 
-子节点并不是被父节点接纳的节点。
+子节点并不是被父节点接纳的附属节点。
 
 **可能原因**
 
@@ -107,4 +108,4 @@ This child is not adopted by the parent node.
 
 **处理步骤**
 
-如果节点未被目标节点接纳为附属节点，无需移除。
+检查该节点是否被父节点接纳为附属节点：若未被接纳，无需移除；若被其他节点接纳，需先从原父节点移除后再进行操作。

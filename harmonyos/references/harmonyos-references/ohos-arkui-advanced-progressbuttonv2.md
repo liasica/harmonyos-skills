@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ProgressButtonV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ProgressButtonV2
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:01+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6e07f842e06f64fb9353949470803fc14dbd5952ddb457453e6710c8bd42e7c3
+scraped_at: 2026-09-02T15:01:09+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:585be28466741c912b07a92418862cbcf5204855dbf472bd29664e73062b4ccb
 ---
 
 文本下载按钮，可显示具体的下载进度。
 
 该组件基于[状态管理（V2）](../harmonyos-guides/arkts-state-management-overview.md#状态管理v2)实现，相较于[状态管理（V1）](../harmonyos-guides/arkts-state-management-overview.md#状态管理v1)，状态管理（V2）增强了对数据对象的深度观察与管理能力，不再局限于组件层级。借助状态管理（V2），开发者可以通过该组件更灵活地控制文本下载按钮的数据和状态，实现更高效的用户界面刷新。
 
-说明
+**说明** 
 
 * 该组件从API version 18开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 该组件仅可在Stage模型下使用。
@@ -20,15 +20,11 @@ content_hash: sha256:6e07f842e06f64fb9353949470803fc14dbd5952ddb457453e6710c8bd4
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { ColorMetrics, LengthMetrics, ProgressButtonV2,  ProgressButtonV2Color } from '@kit.ArkUI';
+```ts
+import { ColorMetrics, LengthMetrics, ProgressButtonV2, ProgressButtonV2Color } from '@kit.ArkUI';
 ```
 
 ## ProgressButtonV2
-
-PhonePC/2in1TabletTVWearable
 
 ProgressButtonV2({progress: number, content: ResourceStr, progressButtonWidth?: LengthMetrics, onClicked: ClickCallback, isEnabled: boolean, colorOptions?: ProgressButtonColorOptions, progressButtonRadius?: LengthMetrics})
 
@@ -37,6 +33,8 @@ ProgressButtonV2({progress: number, content: ResourceStr, progressButtonWidth?: 
 **装饰器类型：**@ComponentV2
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -50,17 +48,13 @@ ProgressButtonV2({progress: number, content: ResourceStr, progressButtonWidth?: 
 | onClicked | [ClickCallback](ohos-arkui-advanced-progressbuttonv2.md#clickcallback) | 是 | @Param | 下载按钮的点击回调。 |
 | isEnabled | boolean | 是 | @Param | 下载按钮是否可以点击。  true：可以点击。  false：不可点击。 |
 | colorOptions | [ProgressButtonV2Color](ohos-arkui-advanced-progressbuttonv2.md#progressbuttonv2color) | 否 | @Param | 下载按钮颜色选项。 |
-| progressButtonRadius18+ | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | @Param | 下载按钮的圆角（不支持百分比设置）。  取值范围：[0, height/2]  默认值：height/2  设置非法数值时，按照默认值处理。 |
+| progressButtonRadius | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | @Param | 下载按钮的圆角（不支持百分比设置）。  取值范围：[0, height/2]  默认值：height/2  设置非法数值时，按照默认值处理。 |
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 不支持[通用属性](ts-component-general-attributes.md)。
 
 ## ClickCallback
-
-PhonePC/2in1TabletTVWearable
 
 type ClickCallback = () => void
 
@@ -74,17 +68,15 @@ type ClickCallback = () => void
 
 ## ProgressButtonV2Color
 
-PhonePC/2in1TabletTVWearable
-
 下载按钮颜色选项。
 
 **装饰器类型：**@ObservedV2
 
 ### 属性
 
-PhonePC/2in1TabletTVWearable
-
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -99,8 +91,6 @@ PhonePC/2in1TabletTVWearable
 
 ### constructor
 
-PhonePC/2in1TabletTVWearable
-
 constructor(options: ProgressButtonV2ColorOptions);
 
 下载按钮颜色选项构造函数。
@@ -108,6 +98,8 @@ constructor(options: ProgressButtonV2ColorOptions);
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
@@ -119,11 +111,11 @@ constructor(options: ProgressButtonV2ColorOptions);
 
 ## ProgressButtonV2ColorOptions
 
-PhonePC/2in1TabletTVWearable
-
 下载按钮色彩信息选项。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -138,64 +130,60 @@ PhonePC/2in1TabletTVWearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 不支持[通用事件](ts-component-general-events.md)。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 该示例实现了一个简单的带加载进度的文本下载按钮。
 
+```ts
+import { LengthMetrics, ProgressButtonV2 } from '@kit.ArkUI';
+
+@Entry
+@ComponentV2
+struct Index {
+  @Local progressIndex: number = 0;
+  @Local textState: string = '下载';
+  @Local buttonWidth: LengthMetrics = LengthMetrics.vp(200);
+  @Local isRunning: boolean = false;
+  @Local enableState: boolean = true;
+
+  build() {
+    Column() {
+      Scroll() {
+        Column({ space: 20 }) {
+          ProgressButtonV2({
+            progress: this.progressIndex,
+            progressButtonWidth: this.buttonWidth,
+            content: this.textState,
+            isEnabled: this.enableState,
+            onClicked: () => {
+              if (this.textState && !this.isRunning && this.progressIndex < 100) {
+                this.textState = '继续';
+              }
+              this.isRunning = !this.isRunning;
+              let timer = setInterval(() => {
+                if (this.isRunning) {
+                  if (this.progressIndex === 100) {
+                    clearInterval(timer);
+                  } else {
+                    this.progressIndex++;
+                    if (this.progressIndex === 100) {
+                      this.textState = '已完成';
+                      this.enableState = false;
+                    }
+                  }
+                } else {
+                  clearInterval(timer);
+                }
+              }, 20);
+            }
+          })
+        }.alignItems(HorizontalAlign.Center).width('100%').margin({ top: 20 });
+      }
+    }
+  }
+}
 ```
-1. import { LengthMetrics, ProgressButtonV2 } from '@kit.ArkUI';
 
-3. @Entry
-4. @ComponentV2
-5. struct Index {
-6. @Local progressIndex: number = 0;
-7. @Local textState: string = '下载';
-8. @Local buttonWidth: LengthMetrics = LengthMetrics.vp(200);
-9. @Local isRunning: boolean = false;
-10. @Local enableState: boolean = true;
-
-12. build() {
-13. Column() {
-14. Scroll() {
-15. Column({ space: 20 }) {
-16. ProgressButtonV2({
-17. progress: this.progressIndex,
-18. progressButtonWidth: this.buttonWidth,
-19. content: this.textState,
-20. isEnabled: this.enableState,
-21. onClicked: () => {
-22. if (this.textState && !this.isRunning && this.progressIndex < 100) {
-23. this.textState = '继续';
-24. }
-25. this.isRunning = !this.isRunning;
-26. let timer = setInterval(() => {
-27. if (this.isRunning) {
-28. if (this.progressIndex === 100) {
-29. clearInterval(timer);
-30. } else {
-31. this.progressIndex++;
-32. if (this.progressIndex === 100) {
-33. this.textState = '已完成';
-34. this.enableState = false;
-35. }
-36. }
-37. } else {
-38. clearInterval(timer);
-39. }
-40. }, 20);
-41. }
-42. })
-43. }.alignItems(HorizontalAlign.Center).width('100%').margin({ top: 20 });
-44. }
-45. }
-46. }
-47. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/zKoIXVgOSCWHi7b0wHUz3A/zh-cn_image_0000002589326513.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/gOZaS4BERa2SuoKDEFikAw/zh-cn_image_0000002736435455.png)

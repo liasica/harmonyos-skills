@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: OH_Drawing_GpuContextOptions
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 结构体 > OH_Drawing_GpuContextOptions
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:11+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b724cd1201d1ae6acffa9966541c4219c80bdba6dafbf16810513b94057cfc19
+scraped_at: 2026-09-02T15:02:45+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f216c5ae3ca09fe286ec9849641c1efe795124e75147e15e9f07ad858b0e5de2
 ---
 
-```
-1. typedef struct {...} OH_Drawing_GpuContextOptions
+```c
+typedef struct {...} OH_Drawing_GpuContextOptions
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义有关图形处理器上下文的选项。
 
@@ -28,11 +26,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

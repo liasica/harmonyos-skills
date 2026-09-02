@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-arktsdoc-
 title: "@throws"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 生成ArkTSDoc文档 > 标准标签 > @throws
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:34+08:00
+scraped_at: 2026-09-02T14:50:53+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:42fe312dbe969d7116808680a9e1e33b000ff7fac6b877345000ba033bf4c3ff
+content_hash: sha256:b796b917bf58176355350edab3077e0859f80a9af7277454b45a7ce15e9f7a3a
 ---
 
 @throws标签用于函数，记录函数可能引发的错误。可以在一个ArkTSDoc注释中多次使用@throws标记。
@@ -18,11 +18,11 @@ content_hash: sha256:42fe312dbe969d7116808680a9e1e33b000ff7fac6b877345000ba033bf
 
 使用带有描述的 @throws 标记：
 
-```
-1. /**
-2. * @throws Will throw an error if the argument is null.
-3. */
-4. export function bar(x: number) {
-5. throw new Error();
-6. }
+```screen
+/**
+ * @throws Will throw an error if the argument is null.
+ */
+export function bar(x: number) {
+  throw new Error();
+}
 ```

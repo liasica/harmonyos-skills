@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-g
 title: "@ohos.geolocation (位置服务)"
 breadcrumb: API参考 > 应用服务 > Location Kit（位置服务） > ArkTS API > 已停止维护的接口 > @ohos.geolocation (位置服务)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:05+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d69ac0348bad10fb1109b8a1f077779011863932d8c736d7c5b0db2a64425b61
+scraped_at: 2026-09-02T15:02:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3523e77819b84ed3a174c8402ba2eb810c1bb4eaf3751d20723a387c9f072a69
 ---
 
 位置服务提供GNSS定位、网络定位、地理编码、逆地理编码、国家码和地理围栏等基本功能。
 
-说明
+**说明** 
 
 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -19,8 +19,6 @@ content_hash: sha256:d69ac0348bad10fb1109b8a1f077779011863932d8c736d7c5b0db2a644
 本模块能力仅支持WGS-84坐标系。
 
 ## 申请权限
-
-PhonePC/2in1TabletTVWearable
 
 应用在使用系统能力前，需要检查是否已经获取用户授权访问设备位置信息。如未获得授权，可以向用户申请需要的位置权限，申请方式请参考下文。
 
@@ -51,21 +49,17 @@ API9及之后的版本，需要申请ohos.permission.APPROXIMATELY\_LOCATION或�
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import geolocation from '@ohos.geolocation';
+```ts
+import geolocation from '@ohos.geolocation';
 ```
 
 ## geolocation.on('locationChange')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'locationChange', request: LocationRequest, callback: Callback<Location>): void
 
 开启位置变化订阅，并发起定位请求。使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[geoLocationManager.on('locationChange')](js-apis-geolocationmanager.md#geolocationmanageronlocationchange)替代。
 
@@ -83,24 +77,22 @@ on(type: 'locationChange', request: LocationRequest, callback: Callback<Location
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. let requestInfo:geolocation.LocationRequest = {'priority': 0x203, 'scenario': 0x300, 'timeInterval': 0, 'distanceInterval': 0, 'maxAccuracy': 0};
-3. let locationChange = (location:geolocation.Location):void => {
-4. console.info('locationChanger: data: ' + JSON.stringify(location));
-5. };
-6. geolocation.on('locationChange', requestInfo, locationChange);
+```ts
+import geolocation from '@ohos.geolocation';
+let requestInfo:geolocation.LocationRequest = {'priority': 0x203, 'scenario': 0x300, 'timeInterval': 0, 'distanceInterval': 0, 'maxAccuracy': 0};
+let locationChange = (location:geolocation.Location):void => {
+    console.info('locationChanger: data: ' + JSON.stringify(location));
+};
+geolocation.on('locationChange', requestInfo, locationChange);
 ```
 
 ## geolocation.off('locationChange')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'locationChange', callback?: Callback<Location>): void
 
 关闭位置变化订阅，并删除对应的定位请求。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[geoLocationManager.off('locationChange')](js-apis-geolocationmanager.md#geolocationmanagerofflocationchange)替代。
 
@@ -117,25 +109,23 @@ off(type: 'locationChange', callback?: Callback<Location>): void
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. let requestInfo:geolocation.LocationRequest = {'priority': 0x203, 'scenario': 0x300, 'timeInterval': 0, 'distanceInterval': 0, 'maxAccuracy': 0};
-3. let locationChange = (location:geolocation.Location):void => {
-4. console.info('locationChanger: data: ' + JSON.stringify(location));
-5. };
-6. geolocation.on('locationChange', requestInfo, locationChange);
-7. geolocation.off('locationChange', locationChange);
+```ts
+import geolocation from '@ohos.geolocation';
+let requestInfo:geolocation.LocationRequest = {'priority': 0x203, 'scenario': 0x300, 'timeInterval': 0, 'distanceInterval': 0, 'maxAccuracy': 0};
+let locationChange = (location:geolocation.Location):void => {
+    console.info('locationChanger: data: ' + JSON.stringify(location));
+};
+geolocation.on('locationChange', requestInfo, locationChange);
+geolocation.off('locationChange', locationChange);
 ```
 
 ## geolocation.on('locationServiceState')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'locationServiceState', callback: Callback<boolean>): void
 
 订阅位置服务状态变化。使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[geoLocationManager.on('locationEnabledChange')](js-apis-geolocationmanager.md#geolocationmanageronlocationenabledchange)替代。
 
@@ -152,23 +142,21 @@ on(type: 'locationServiceState', callback: Callback<boolean>): void
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. let locationServiceState = (state:boolean):void => {
-3. console.info('locationServiceState: ' + JSON.stringify(state));
-4. }
-5. geolocation.on('locationServiceState', locationServiceState);
+```ts
+import geolocation from '@ohos.geolocation';
+let locationServiceState = (state:boolean):void => {
+    console.info('locationServiceState: ' + JSON.stringify(state));
+}
+geolocation.on('locationServiceState', locationServiceState);
 ```
 
 ## geolocation.off('locationServiceState')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'locationServiceState', callback?: Callback<boolean>): void
 
 取消订阅位置服务状态变化。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[geoLocationManager.off('locationEnabledChange')](js-apis-geolocationmanager.md#geolocationmanagerofflocationenabledchange)替代。
 
@@ -185,24 +173,22 @@ off(type: 'locationServiceState', callback?: Callback<boolean>): void
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. let locationServiceState = (state:boolean):void => {
-3. console.info('locationServiceState: state: ' + JSON.stringify(state));
-4. }
-5. geolocation.on('locationServiceState', locationServiceState);
-6. geolocation.off('locationServiceState', locationServiceState);
+```ts
+import geolocation from '@ohos.geolocation';
+let locationServiceState = (state:boolean):void => {
+    console.info('locationServiceState: state: ' + JSON.stringify(state));
+}
+geolocation.on('locationServiceState', locationServiceState);
+geolocation.off('locationServiceState', locationServiceState);
 ```
 
 ## geolocation.on('cachedGnssLocationsReporting')(deprecated)
-
-PhoneTabletWearable
 
 on(type: 'cachedGnssLocationsReporting', request: CachedGnssLocationsRequest, callback: Callback<Array<Location>>): void
 
 订阅缓存GNSS定位结果上报事件。使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 8开始支持。
 
@@ -222,24 +208,22 @@ on(type: 'cachedGnssLocationsReporting', request: CachedGnssLocationsRequest, ca
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. let cachedLocationsCb = (locations:Array<geolocation.Location>):void => {
-3. console.info('cachedGnssLocationsReporting: locations: ' + JSON.stringify(locations));
-4. }
-5. let requestInfo:geolocation.CachedGnssLocationsRequest = {'reportingPeriodSec': 10, 'wakeUpCacheQueueFull': true};
-6. geolocation.on('cachedGnssLocationsReporting', requestInfo, cachedLocationsCb);
+```ts
+import geolocation from '@ohos.geolocation';
+let cachedLocationsCb = (locations:Array<geolocation.Location>):void => {
+    console.info('cachedGnssLocationsReporting: locations: ' + JSON.stringify(locations));
+}
+let requestInfo:geolocation.CachedGnssLocationsRequest = {'reportingPeriodSec': 10, 'wakeUpCacheQueueFull': true};
+geolocation.on('cachedGnssLocationsReporting', requestInfo, cachedLocationsCb);
 ```
 
 ## geolocation.off('cachedGnssLocationsReporting')(deprecated)
-
-PhoneTabletWearable
 
 off(type: 'cachedGnssLocationsReporting', callback?: Callback<Array<Location>>): void
 
 取消订阅缓存GNSS定位结果上报事件。
 
-说明
+**说明** 
 
 从API version 8开始支持。
 
@@ -258,25 +242,23 @@ off(type: 'cachedGnssLocationsReporting', callback?: Callback<Array<Location>>):
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. let cachedLocationsCb = (locations:Array<geolocation.Location>):void => {
-3. console.info('cachedGnssLocationsReporting: locations: ' + JSON.stringify(locations));
-4. }
-5. let requestInfo:geolocation.CachedGnssLocationsRequest = {'reportingPeriodSec': 10, 'wakeUpCacheQueueFull': true};
-6. geolocation.on('cachedGnssLocationsReporting', requestInfo, cachedLocationsCb);
-7. geolocation.off('cachedGnssLocationsReporting');
+```ts
+import geolocation from '@ohos.geolocation';
+let cachedLocationsCb = (locations:Array<geolocation.Location>):void => {
+    console.info('cachedGnssLocationsReporting: locations: ' + JSON.stringify(locations));
+}
+let requestInfo:geolocation.CachedGnssLocationsRequest = {'reportingPeriodSec': 10, 'wakeUpCacheQueueFull': true};
+geolocation.on('cachedGnssLocationsReporting', requestInfo, cachedLocationsCb);
+geolocation.off('cachedGnssLocationsReporting');
 ```
 
 ## geolocation.on('gnssStatusChange')(deprecated)
-
-PhoneTabletWearable
 
 on(type: 'gnssStatusChange', callback: Callback<SatelliteStatusInfo>): void
 
 订阅GNSS卫星状态信息上报事件。使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 8开始支持。
 
@@ -295,23 +277,21 @@ on(type: 'gnssStatusChange', callback: Callback<SatelliteStatusInfo>): void
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. let gnssStatusCb = (satelliteStatusInfo:geolocation.SatelliteStatusInfo):void => {
-3. console.info('gnssStatusChange: ' + JSON.stringify(satelliteStatusInfo));
-4. }
-5. geolocation.on('gnssStatusChange', gnssStatusCb);
+```ts
+import geolocation from '@ohos.geolocation';
+let gnssStatusCb = (satelliteStatusInfo:geolocation.SatelliteStatusInfo):void => {
+    console.info('gnssStatusChange: ' + JSON.stringify(satelliteStatusInfo));
+}
+geolocation.on('gnssStatusChange', gnssStatusCb);
 ```
 
 ## geolocation.off('gnssStatusChange')(deprecated)
-
-PhoneTabletWearable
 
 off(type: 'gnssStatusChange', callback?: Callback<SatelliteStatusInfo>): void
 
 取消订阅GNSS卫星状态信息上报事件。
 
-说明
+**说明** 
 
 从API version 8开始支持。
 
@@ -330,24 +310,22 @@ off(type: 'gnssStatusChange', callback?: Callback<SatelliteStatusInfo>): void
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. let gnssStatusCb = (satelliteStatusInfo:geolocation.SatelliteStatusInfo) => {
-3. console.info('gnssStatusChange: ' + JSON.stringify(satelliteStatusInfo));
-4. }
-5. geolocation.on('gnssStatusChange', gnssStatusCb);
-6. geolocation.off('gnssStatusChange', gnssStatusCb);
+```ts
+import geolocation from '@ohos.geolocation';
+let gnssStatusCb = (satelliteStatusInfo:geolocation.SatelliteStatusInfo) => {
+    console.info('gnssStatusChange: ' + JSON.stringify(satelliteStatusInfo));
+}
+geolocation.on('gnssStatusChange', gnssStatusCb);
+geolocation.off('gnssStatusChange', gnssStatusCb);
 ```
 
 ## geolocation.on('nmeaMessageChange')(deprecated)
-
-PhoneTabletWearable
 
 on(type: 'nmeaMessageChange', callback: Callback<string>): void
 
 订阅GNSS NMEA信息上报事件。使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 8开始支持。
 
@@ -366,23 +344,21 @@ on(type: 'nmeaMessageChange', callback: Callback<string>): void
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. let nmeaCb = (str:string):void => {
-3. console.info('nmeaMessageChange: ' + JSON.stringify(str));
-4. }
-5. geolocation.on('nmeaMessageChange', nmeaCb );
+```ts
+import geolocation from '@ohos.geolocation';
+let nmeaCb = (str:string):void => {
+    console.info('nmeaMessageChange: ' + JSON.stringify(str));
+}
+geolocation.on('nmeaMessageChange', nmeaCb );
 ```
 
 ## geolocation.off('nmeaMessageChange')(deprecated)
-
-PhoneTabletWearable
 
 off(type: 'nmeaMessageChange', callback?: Callback<string>): void
 
 取消订阅GNSS NMEA信息上报事件。
 
-说明
+**说明** 
 
 从API version 8开始支持。
 
@@ -401,24 +377,22 @@ off(type: 'nmeaMessageChange', callback?: Callback<string>): void
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. let nmeaCb = (str:string):void => {
-3. console.info('nmeaMessageChange: ' + JSON.stringify(str));
-4. }
-5. geolocation.on('nmeaMessageChange', nmeaCb);
-6. geolocation.off('nmeaMessageChange', nmeaCb);
+```ts
+import geolocation from '@ohos.geolocation';
+let nmeaCb = (str:string):void => {
+    console.info('nmeaMessageChange: ' + JSON.stringify(str));
+}
+geolocation.on('nmeaMessageChange', nmeaCb);
+geolocation.off('nmeaMessageChange', nmeaCb);
 ```
 
 ## geolocation.on('fenceStatusChange')(deprecated)
-
-PhoneTablet
 
 on(type: 'fenceStatusChange', request: GeofenceRequest, want: WantAgent): void
 
 添加一个围栏，并订阅地理围栏事件。使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 8开始支持。
 
@@ -438,38 +412,36 @@ on(type: 'fenceStatusChange', request: GeofenceRequest, want: WantAgent): void
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. import wantAgent from '@ohos.app.ability.wantAgent';
+```ts
+import geolocation from '@ohos.geolocation';
+import wantAgent from '@ohos.app.ability.wantAgent';
 
-4. let wantAgentInfo:wantAgent.WantAgentInfo = {
-5. wants: [
-6. {
-7. bundleName: "com.example.myapplication",
-8. abilityName: "EntryAbility",
-9. action: "action1"
-10. }
-11. ],
-12. operationType: wantAgent.OperationType.START_ABILITY,
-13. requestCode: 0,
-14. wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG],
-15. };
+let wantAgentInfo:wantAgent.WantAgentInfo = {
+    wants: [
+        {
+            bundleName: "com.example.myapplication",
+            abilityName: "EntryAbility",
+            action: "action1"
+        }
+    ],
+    operationType: wantAgent.OperationType.START_ABILITY,
+    requestCode: 0,
+    wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG],
+};
 
-17. wantAgent.getWantAgent(wantAgentInfo).then((wantAgentObj) => {
-18. let requestInfo:geolocation.GeofenceRequest = {'priority': 0x201, 'scenario': 0x301, "geofence": {"latitude": 31.12, "longitude": 121.11, "radius": 100, "expiration": 10000}};
-19. geolocation.on('fenceStatusChange', requestInfo, wantAgentObj);
-20. });
+wantAgent.getWantAgent(wantAgentInfo).then((wantAgentObj) => {
+  let requestInfo:geolocation.GeofenceRequest = {'priority': 0x201, 'scenario': 0x301, "geofence": {"latitude": 31.12, "longitude": 121.11, "radius": 100, "expiration": 10000}};
+  geolocation.on('fenceStatusChange', requestInfo, wantAgentObj);
+});
 ```
 
 ## geolocation.off('fenceStatusChange')(deprecated)
-
-PhoneTablet
 
 off(type: 'fenceStatusChange', request: GeofenceRequest, want: WantAgent): void
 
 删除一个围栏，并取消订阅该围栏事件。
 
-说明
+**说明** 
 
 从API version 8开始支持。
 
@@ -489,39 +461,37 @@ off(type: 'fenceStatusChange', request: GeofenceRequest, want: WantAgent): void
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. import wantAgent from '@ohos.app.ability.wantAgent';
+```ts
+import geolocation from '@ohos.geolocation';
+import wantAgent from '@ohos.app.ability.wantAgent';
 
-4. let wantAgentInfo:wantAgent.WantAgentInfo = {
-5. wants: [
-6. {
-7. bundleName: "com.example.myapplication",
-8. abilityName: "EntryAbility",
-9. action: "action1",
-10. }
-11. ],
-12. operationType: wantAgent.OperationType.START_ABILITY,
-13. requestCode: 0,
-14. wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
-15. };
+let wantAgentInfo:wantAgent.WantAgentInfo = {
+    wants: [
+        {
+            bundleName: "com.example.myapplication",
+            abilityName: "EntryAbility",
+            action: "action1",
+        }
+    ],
+    operationType: wantAgent.OperationType.START_ABILITY,
+    requestCode: 0,
+    wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+};
 
-17. wantAgent.getWantAgent(wantAgentInfo).then((wantAgentObj) => {
-18. let requestInfo:geolocation.GeofenceRequest = {'priority': 0x201, 'scenario': 0x301, "geofence": {"latitude": 31.12, "longitude": 121.11, "radius": 100, "expiration": 10000}};
-19. geolocation.on('fenceStatusChange', requestInfo, wantAgentObj);
-20. geolocation.off('fenceStatusChange', requestInfo, wantAgentObj);
-21. });
+wantAgent.getWantAgent(wantAgentInfo).then((wantAgentObj) => {
+  let requestInfo:geolocation.GeofenceRequest = {'priority': 0x201, 'scenario': 0x301, "geofence": {"latitude": 31.12, "longitude": 121.11, "radius": 100, "expiration": 10000}};
+  geolocation.on('fenceStatusChange', requestInfo, wantAgentObj);
+  geolocation.off('fenceStatusChange', requestInfo, wantAgentObj);
+});
 ```
 
 ## geolocation.getCurrentLocation(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getCurrentLocation(request: CurrentLocationRequest, callback: AsyncCallback<Location>): void
 
 获取当前位置，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[geoLocationManager.getCurrentLocation](js-apis-geolocationmanager.md#geolocationmanagergetcurrentlocation)替代。
 
@@ -538,30 +508,28 @@ getCurrentLocation(request: CurrentLocationRequest, callback: AsyncCallback<Loca
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. import BusinessError from "@ohos.base"
-3. let requestInfo:geolocation.CurrentLocationRequest = {'priority': 0x203, 'scenario': 0x300,'maxAccuracy': 0};
-4. let locationChange = (err:BusinessError.BusinessError, location:geolocation.Location) => {
-5. if (err) {
-6. console.info('locationChanger: err=' + JSON.stringify(err));
-7. }
-8. if (location) {
-9. console.info('locationChanger: location=' + JSON.stringify(location));
-10. }
-11. };
-12. geolocation.getCurrentLocation(requestInfo, locationChange);
+```ts
+import geolocation from '@ohos.geolocation';
+import BusinessError from "@ohos.base"
+let requestInfo:geolocation.CurrentLocationRequest = {'priority': 0x203, 'scenario': 0x300,'maxAccuracy': 0};
+let locationChange = (err:BusinessError.BusinessError, location:geolocation.Location) => {
+    if (err) {
+        console.info('locationChanger: err=' + JSON.stringify(err));
+    }
+    if (location) {
+        console.info('locationChanger: location=' + JSON.stringify(location));
+    }
+};
+geolocation.getCurrentLocation(requestInfo, locationChange);
 ```
 
 ## geolocation.getCurrentLocation(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getCurrentLocation(callback: AsyncCallback<Location>): void
 
 获取当前位置，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[geoLocationManager.getCurrentLocation](js-apis-geolocationmanager.md#geolocationmanagergetcurrentlocation)替代。
 
@@ -577,29 +545,27 @@ getCurrentLocation(callback: AsyncCallback<Location>): void
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. import BusinessError from "@ohos.base"
-3. let locationChange = (err:BusinessError.BusinessError, location:geolocation.Location):void => {
-4. if (err) {
-5. console.info('locationChanger: err=' + JSON.stringify(err));
-6. }
-7. if (location) {
-8. console.info('locationChanger: location=' + JSON.stringify(location));
-9. }
-10. };
-11. geolocation.getCurrentLocation(locationChange);
+```ts
+import geolocation from '@ohos.geolocation';
+import BusinessError from "@ohos.base"
+let locationChange = (err:BusinessError.BusinessError, location:geolocation.Location):void => {
+    if (err) {
+        console.info('locationChanger: err=' + JSON.stringify(err));
+    }
+    if (location) {
+        console.info('locationChanger: location=' + JSON.stringify(location));
+    }
+};
+geolocation.getCurrentLocation(locationChange);
 ```
 
 ## geolocation.getCurrentLocation(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getCurrentLocation(request?: CurrentLocationRequest): Promise<Location>
 
 获取当前位置，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[geoLocationManager.getCurrentLocation](js-apis-geolocationmanager.md#geolocationmanagergetcurrentlocation-2)替代。
 
@@ -621,23 +587,21 @@ getCurrentLocation(request?: CurrentLocationRequest): Promise<Location>
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. let requestInfo:geolocation.CurrentLocationRequest = {'priority': 0x203, 'scenario': 0x300,'maxAccuracy': 0};
-3. geolocation.getCurrentLocation(requestInfo).then((result) => {
-4. console.info('current location: ' + JSON.stringify(result));
-5. });
+```ts
+import geolocation from '@ohos.geolocation';
+let requestInfo:geolocation.CurrentLocationRequest = {'priority': 0x203, 'scenario': 0x300,'maxAccuracy': 0};
+geolocation.getCurrentLocation(requestInfo).then((result) => {
+    console.info('current location: ' + JSON.stringify(result));
+});
 ```
 
 ## geolocation.getLastLocation(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getLastLocation(callback: AsyncCallback<Location>): void
 
 获取上一次位置，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[geoLocationManager.getLastLocation](js-apis-geolocationmanager.md#geolocationmanagergetlastlocation)替代。
 
@@ -653,27 +617,25 @@ getLastLocation(callback: AsyncCallback<Location>): void
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. geolocation.getLastLocation((err, data) => {
-3. if (err) {
-4. console.info('getLastLocation: err=' + JSON.stringify(err));
-5. }
-6. if (data) {
-7. console.info('getLastLocation: data=' + JSON.stringify(data));
-8. }
-9. });
+```ts
+import geolocation from '@ohos.geolocation';
+geolocation.getLastLocation((err, data) => {
+    if (err) {
+        console.info('getLastLocation: err=' + JSON.stringify(err));
+    }
+    if (data) {
+        console.info('getLastLocation: data=' + JSON.stringify(data));
+    }
+});
 ```
 
 ## geolocation.getLastLocation(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getLastLocation(): Promise<Location>
 
 获取上一次位置，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[geoLocationManager.getLastLocation](js-apis-geolocationmanager.md#geolocationmanagergetlastlocation)替代。
 
@@ -689,22 +651,20 @@ getLastLocation(): Promise<Location>
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. geolocation.getLastLocation().then((result) => {
-3. console.info('getLastLocation: result: ' + JSON.stringify(result));
-4. });
+```ts
+import geolocation from '@ohos.geolocation';
+geolocation.getLastLocation().then((result) => {
+    console.info('getLastLocation: result: ' + JSON.stringify(result));
+});
 ```
 
 ## geolocation.isLocationEnabled(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isLocationEnabled(callback: AsyncCallback<boolean>): void
 
 判断位置服务是否已经打开，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[geoLocationManager.isLocationEnabled](js-apis-geolocationmanager.md#geolocationmanagerislocationenabled)替代。
 
@@ -720,27 +680,25 @@ isLocationEnabled(callback: AsyncCallback<boolean>): void
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. geolocation.isLocationEnabled((err, data) => {
-3. if (err) {
-4. console.info('isLocationEnabled: err=' + JSON.stringify(err));
-5. }
-6. if (data) {
-7. console.info('isLocationEnabled: data=' + JSON.stringify(data));
-8. }
-9. });
+```ts
+import geolocation from '@ohos.geolocation';
+geolocation.isLocationEnabled((err, data) => {
+    if (err) {
+        console.info('isLocationEnabled: err=' + JSON.stringify(err));
+    }
+    if (data) {
+        console.info('isLocationEnabled: data=' + JSON.stringify(data));
+    }
+});
 ```
 
 ## geolocation.isLocationEnabled(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isLocationEnabled(): Promise<boolean>
 
 判断位置服务是否已经开启，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[geoLocationManager.isLocationEnabled](js-apis-geolocationmanager.md#geolocationmanagerislocationenabled)替代。
 
@@ -756,22 +714,20 @@ isLocationEnabled(): Promise<boolean>
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. geolocation.isLocationEnabled().then((result) => {
-3. console.info('promise, isLocationEnabled: ' + JSON.stringify(result));
-4. });
+```ts
+import geolocation from '@ohos.geolocation';
+geolocation.isLocationEnabled().then((result) => {
+    console.info('promise, isLocationEnabled: ' + JSON.stringify(result));
+});
 ```
 
 ## geolocation.requestEnableLocation(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 requestEnableLocation(callback: AsyncCallback<boolean>): void
 
 请求打开位置服务，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议由应用本身弹框请求用户跳转到settings开启位置开关，并且在弹框上写清楚会在什么场景下使用位置信息。
 
@@ -787,27 +743,25 @@ requestEnableLocation(callback: AsyncCallback<boolean>): void
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. geolocation.requestEnableLocation((err, data) => {
-3. if (err) {
-4. console.info('requestEnableLocation: err=' + JSON.stringify(err));
-5. }
-6. if (data) {
-7. console.info('requestEnableLocation: data=' + JSON.stringify(data));
-8. }
-9. });
+```ts
+import geolocation from '@ohos.geolocation';
+geolocation.requestEnableLocation((err, data) => {
+    if (err) {
+        console.info('requestEnableLocation: err=' + JSON.stringify(err));
+    }
+    if (data) {
+        console.info('requestEnableLocation: data=' + JSON.stringify(data));
+    }
+});
 ```
 
 ## geolocation.requestEnableLocation(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 requestEnableLocation(): Promise<boolean>
 
 请求打开位置服务，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议由应用本身弹框请求用户跳转到settings开启位置开关，并且在弹框上写清楚会在什么场景下使用位置信息。
 
@@ -823,22 +777,20 @@ requestEnableLocation(): Promise<boolean>
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. geolocation.requestEnableLocation().then((result) => {
-3. console.info('promise, requestEnableLocation: ' + JSON.stringify(result));
-4. });
+```ts
+import geolocation from '@ohos.geolocation';
+geolocation.requestEnableLocation().then((result) => {
+    console.info('promise, requestEnableLocation: ' + JSON.stringify(result));
+});
 ```
 
 ## geolocation.isGeoServiceAvailable(deprecated)
-
-PhonePC/2in1TabletWearable
 
 isGeoServiceAvailable(callback: AsyncCallback<boolean>): void
 
 判断（逆）地理编码服务状态，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[geoLocationManager.isGeocoderAvailable](js-apis-geolocationmanager.md#geolocationmanagerisgeocoderavailable)替代。
 
@@ -854,27 +806,25 @@ isGeoServiceAvailable(callback: AsyncCallback<boolean>): void
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. geolocation.isGeoServiceAvailable((err, data) => {
-3. if (err) {
-4. console.info('isGeoServiceAvailable: err=' + JSON.stringify(err));
-5. }
-6. if (data) {
-7. console.info('isGeoServiceAvailable: data=' + JSON.stringify(data));
-8. }
-9. });
+```ts
+import geolocation from '@ohos.geolocation';
+geolocation.isGeoServiceAvailable((err, data) => {
+    if (err) {
+        console.info('isGeoServiceAvailable: err=' + JSON.stringify(err));
+    }
+    if (data) {
+        console.info('isGeoServiceAvailable: data=' + JSON.stringify(data));
+    }
+});
 ```
 
 ## geolocation.isGeoServiceAvailable(deprecated)
-
-PhonePC/2in1TabletWearable
 
 isGeoServiceAvailable(): Promise<boolean>
 
 判断（逆）地理编码服务状态，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[geoLocationManager.isGeocoderAvailable](js-apis-geolocationmanager.md#geolocationmanagerisgeocoderavailable)替代。
 
@@ -890,22 +840,20 @@ isGeoServiceAvailable(): Promise<boolean>
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. geolocation.isGeoServiceAvailable().then((result) => {
-3. console.info('promise, isGeoServiceAvailable: ' + JSON.stringify(result));
-4. });
+```ts
+import geolocation from '@ohos.geolocation';
+geolocation.isGeoServiceAvailable().then((result) => {
+    console.info('promise, isGeoServiceAvailable: ' + JSON.stringify(result));
+});
 ```
 
 ## geolocation.getAddressesFromLocation(deprecated)
-
-PhonePC/2in1TabletWearable
 
 getAddressesFromLocation(request: ReverseGeoCodeRequest, callback: AsyncCallback<Array<GeoAddress>>): void
 
 调用逆地理编码服务，将坐标转换为地理描述，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[geoLocationManager.getAddressesFromLocation](js-apis-geolocationmanager.md#geolocationmanagergetaddressesfromlocation)替代。
 
@@ -922,28 +870,26 @@ getAddressesFromLocation(request: ReverseGeoCodeRequest, callback: AsyncCallback
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. let reverseGeocodeRequest:geolocation.ReverseGeoCodeRequest = {"latitude": 31.12, "longitude": 121.11, "maxItems": 1};
-3. geolocation.getAddressesFromLocation(reverseGeocodeRequest, (err, data) => {
-4. if (err) {
-5. console.info('getAddressesFromLocation: err=' + JSON.stringify(err));
-6. }
-7. if (data) {
-8. console.info('getAddressesFromLocation: data=' + JSON.stringify(data));
-9. }
-10. });
+```ts
+import geolocation from '@ohos.geolocation';
+let reverseGeocodeRequest:geolocation.ReverseGeoCodeRequest = {"latitude": 31.12, "longitude": 121.11, "maxItems": 1};
+geolocation.getAddressesFromLocation(reverseGeocodeRequest, (err, data) => {
+    if (err) {
+        console.info('getAddressesFromLocation: err=' + JSON.stringify(err));
+    }
+    if (data) {
+        console.info('getAddressesFromLocation: data=' + JSON.stringify(data));
+    }
+});
 ```
 
 ## geolocation.getAddressesFromLocation(deprecated)
-
-PhonePC/2in1TabletWearable
 
 getAddressesFromLocation(request: ReverseGeoCodeRequest): Promise<Array<GeoAddress>>
 
 调用逆地理编码服务，将坐标转换为地理描述，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[geoLocationManager.getAddressesFromLocation](js-apis-geolocationmanager.md#geolocationmanagergetaddressesfromlocation-1)替代。
 
@@ -965,23 +911,21 @@ getAddressesFromLocation(request: ReverseGeoCodeRequest): Promise<Array<GeoAddre
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. let reverseGeocodeRequest:geolocation.ReverseGeoCodeRequest = {"latitude": 31.12, "longitude": 121.11, "maxItems": 1};
-3. geolocation.getAddressesFromLocation(reverseGeocodeRequest).then((data) => {
-4. console.info('getAddressesFromLocation: ' + JSON.stringify(data));
-5. });
+```ts
+import geolocation from '@ohos.geolocation';
+let reverseGeocodeRequest:geolocation.ReverseGeoCodeRequest = {"latitude": 31.12, "longitude": 121.11, "maxItems": 1};
+geolocation.getAddressesFromLocation(reverseGeocodeRequest).then((data) => {
+    console.info('getAddressesFromLocation: ' + JSON.stringify(data));
+});
 ```
 
 ## geolocation.getAddressesFromLocationName(deprecated)
-
-PhonePC/2in1TabletWearable
 
 getAddressesFromLocationName(request: GeoCodeRequest, callback: AsyncCallback<Array<GeoAddress>>): void
 
 调用地理编码服务，将地理描述转换为具体坐标，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[geoLocationManager.getAddressesFromLocationName](js-apis-geolocationmanager.md#geolocationmanagergetaddressesfromlocationname)替代。
 
@@ -998,28 +942,26 @@ getAddressesFromLocationName(request: GeoCodeRequest, callback: AsyncCallback<Ar
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. let geocodeRequest:geolocation.GeoCodeRequest = {"description": "上海市浦东新区xx路xx号", "maxItems": 1};
-3. geolocation.getAddressesFromLocationName(geocodeRequest, (err, data) => {
-4. if (err) {
-5. console.info('getAddressesFromLocationName: err=' + JSON.stringify(err));
-6. }
-7. if (data) {
-8. console.info('getAddressesFromLocationName: data=' + JSON.stringify(data));
-9. }
-10. });
+```ts
+import geolocation from '@ohos.geolocation';
+let geocodeRequest:geolocation.GeoCodeRequest = {"description": "上海市浦东新区xx路xx号", "maxItems": 1};
+geolocation.getAddressesFromLocationName(geocodeRequest, (err, data) => {
+    if (err) {
+        console.info('getAddressesFromLocationName: err=' + JSON.stringify(err));
+    }
+    if (data) {
+        console.info('getAddressesFromLocationName: data=' + JSON.stringify(data));
+    }
+});
 ```
 
 ## geolocation.getAddressesFromLocationName(deprecated)
-
-PhonePC/2in1TabletWearable
 
 getAddressesFromLocationName(request: GeoCodeRequest): Promise<Array<GeoAddress>>
 
 调用地理编码服务，将地理描述转换为具体坐标，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[geoLocationManager.getAddressesFromLocationName](js-apis-geolocationmanager.md#geolocationmanagergetaddressesfromlocationname-1)替代。
 
@@ -1041,23 +983,21 @@ getAddressesFromLocationName(request: GeoCodeRequest): Promise<Array<GeoAddress>
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. let geocodeRequest:geolocation.GeoCodeRequest = {"description": "上海市浦东新区xx路xx号", "maxItems": 1};
-3. geolocation.getAddressesFromLocationName(geocodeRequest).then((result) => {
-4. console.info('getAddressesFromLocationName: ' + JSON.stringify(result));
-5. });
+```ts
+import geolocation from '@ohos.geolocation';
+let geocodeRequest:geolocation.GeoCodeRequest = {"description": "上海市浦东新区xx路xx号", "maxItems": 1};
+geolocation.getAddressesFromLocationName(geocodeRequest).then((result) => {
+    console.info('getAddressesFromLocationName: ' + JSON.stringify(result));
+});
 ```
 
 ## geolocation.getCachedGnssLocationsSize(deprecated)
-
-PhoneTabletWearable
 
 getCachedGnssLocationsSize(callback: AsyncCallback<number>): void
 
 获取GNSS芯片缓存位置的个数。使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 8开始支持。
 
@@ -1075,27 +1015,25 @@ getCachedGnssLocationsSize(callback: AsyncCallback<number>): void
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. geolocation.getCachedGnssLocationsSize((err, size) => {
-3. if (err) {
-4. console.info('getCachedGnssLocationsSize: err=' + JSON.stringify(err));
-5. }
-6. if (size) {
-7. console.info('getCachedGnssLocationsSize: size=' + JSON.stringify(size));
-8. }
-9. });
+```ts
+import geolocation from '@ohos.geolocation';
+geolocation.getCachedGnssLocationsSize((err, size) => {
+    if (err) {
+        console.info('getCachedGnssLocationsSize: err=' + JSON.stringify(err));
+    }
+    if (size) {
+        console.info('getCachedGnssLocationsSize: size=' + JSON.stringify(size));
+    }
+});
 ```
 
 ## geolocation.getCachedGnssLocationsSize(deprecated)
-
-PhoneTabletWearable
 
 getCachedGnssLocationsSize(): Promise<number>;
 
 获取GNSS芯片缓存位置的个数。使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 8开始支持。
 
@@ -1113,22 +1051,20 @@ getCachedGnssLocationsSize(): Promise<number>;
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. geolocation.getCachedGnssLocationsSize().then((result) => {
-3. console.info('promise, getCachedGnssLocationsSize: ' + JSON.stringify(result));
-4. });
+```ts
+import geolocation from '@ohos.geolocation';
+geolocation.getCachedGnssLocationsSize().then((result) => {
+    console.info('promise, getCachedGnssLocationsSize: ' + JSON.stringify(result));
+});
 ```
 
 ## geolocation.flushCachedGnssLocations(deprecated)
-
-PhoneTabletWearable
 
 flushCachedGnssLocations(callback: AsyncCallback<boolean>): void
 
 读取并清空GNSS芯片所有缓存位置。使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 8开始支持。
 
@@ -1146,27 +1082,25 @@ flushCachedGnssLocations(callback: AsyncCallback<boolean>): void
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. geolocation.flushCachedGnssLocations((err, result) => {
-3. if (err) {
-4. console.info('flushCachedGnssLocations: err=' + JSON.stringify(err));
-5. }
-6. if (result) {
-7. console.info('flushCachedGnssLocations: result=' + JSON.stringify(result));
-8. }
-9. });
+```ts
+import geolocation from '@ohos.geolocation';
+geolocation.flushCachedGnssLocations((err, result) => {
+    if (err) {
+        console.info('flushCachedGnssLocations: err=' + JSON.stringify(err));
+    }
+    if (result) {
+        console.info('flushCachedGnssLocations: result=' + JSON.stringify(result));
+    }
+});
 ```
 
 ## geolocation.flushCachedGnssLocations(deprecated)
-
-PhoneTabletWearable
 
 flushCachedGnssLocations(): Promise<boolean>
 
 读取并清空GNSS芯片所有缓存位置。使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 8开始支持。
 
@@ -1184,22 +1118,20 @@ flushCachedGnssLocations(): Promise<boolean>
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. geolocation.flushCachedGnssLocations().then((result) => {
-3. console.info('promise, flushCachedGnssLocations: ' + JSON.stringify(result));
-4. });
+```ts
+import geolocation from '@ohos.geolocation';
+geolocation.flushCachedGnssLocations().then((result) => {
+    console.info('promise, flushCachedGnssLocations: ' + JSON.stringify(result));
+});
 ```
 
 ## geolocation.sendCommand(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 sendCommand(command: LocationCommand, callback: AsyncCallback<boolean>): void
 
 给位置服务子系统的各个部件发送扩展命令。使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 8开始支持。
 
@@ -1218,28 +1150,26 @@ sendCommand(command: LocationCommand, callback: AsyncCallback<boolean>): void
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. let requestInfo:geolocation.LocationCommand = {'scenario': 0x301, 'command': "command_1"};
-3. geolocation.sendCommand(requestInfo, (err, result) => {
-4. if (err) {
-5. console.info('sendCommand: err=' + JSON.stringify(err));
-6. }
-7. if (result) {
-8. console.info('sendCommand: result=' + JSON.stringify(result));
-9. }
-10. });
+```ts
+import geolocation from '@ohos.geolocation';
+let requestInfo:geolocation.LocationCommand = {'scenario': 0x301, 'command': "command_1"};
+geolocation.sendCommand(requestInfo, (err, result) => {
+    if (err) {
+        console.info('sendCommand: err=' + JSON.stringify(err));
+    }
+    if (result) {
+        console.info('sendCommand: result=' + JSON.stringify(result));
+    }
+});
 ```
 
 ## geolocation.sendCommand(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 sendCommand(command: LocationCommand): Promise<boolean>
 
 给位置服务子系统的各个部件发送扩展命令。使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 8开始支持。
 
@@ -1263,21 +1193,19 @@ sendCommand(command: LocationCommand): Promise<boolean>
 
 **示例**
 
-```
-1. import geolocation from '@ohos.geolocation';
-2. let requestInfo:geolocation.LocationCommand = {'scenario': 0x301, 'command': "command_1"};
-3. geolocation.sendCommand(requestInfo).then((result) => {
-4. console.info('promise, sendCommand: ' + JSON.stringify(result));
-5. });
+```ts
+import geolocation from '@ohos.geolocation';
+let requestInfo:geolocation.LocationCommand = {'scenario': 0x301, 'command': "command_1"};
+geolocation.sendCommand(requestInfo).then((result) => {
+    console.info('promise, sendCommand: ' + JSON.stringify(result));
+});
 ```
 
 ## ReverseGeoCodeRequest(deprecated)
 
-PhonePC/2in1TabletWearable
-
 逆地理编码请求参数。
 
-说明
+**说明** 
 
 从API version 9开始废弃，建议使用[geoLocationManager.ReverseGeoCodeRequest](js-apis-geolocationmanager.md#reversegeocoderequest)替代。
 
@@ -1294,11 +1222,9 @@ PhonePC/2in1TabletWearable
 
 ## GeoCodeRequest(deprecated)
 
-PhonePC/2in1TabletWearable
-
 地理编码请求参数。
 
-说明
+**说明** 
 
 从API version 9开始废弃，建议使用[geoLocationManager.GeoCodeRequest](js-apis-geolocationmanager.md#geocoderequest)替代。
 
@@ -1318,11 +1244,9 @@ PhonePC/2in1TabletWearable
 
 ## GeoAddress(deprecated)
 
-PhonePC/2in1TabletWearable
-
 地理编码地址信息。
 
-说明
+**说明** 
 
 从API version 9开始废弃，建议使用[geoLocationManager.GeoAddress](js-apis-geolocationmanager.md#geoaddress)替代。
 
@@ -1353,11 +1277,9 @@ PhonePC/2in1TabletWearable
 
 ## LocationRequest(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 位置信息请求参数。
 
-说明
+**说明** 
 
 从API version 9开始废弃，建议使用[geoLocationManager.LocationRequest](js-apis-geolocationmanager.md#locationrequest)替代。
 
@@ -1375,11 +1297,9 @@ PhonePC/2in1TabletTVWearable
 
 ## CurrentLocationRequest(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 当前位置信息请求参数。
 
-说明
+**说明** 
 
 从API version 9开始废弃，建议使用[geoLocationManager.CurrentLocationRequest](js-apis-geolocationmanager.md#currentlocationrequest)替代。
 
@@ -1396,11 +1316,9 @@ PhonePC/2in1TabletTVWearable
 
 ## SatelliteStatusInfo(deprecated)
 
-PhoneTabletWearable
-
 卫星状态信息。
 
-说明
+**说明** 
 
 从API version 8开始支持。
 
@@ -1421,11 +1339,9 @@ PhoneTabletWearable
 
 ## CachedGnssLocationsRequest(deprecated)
 
-PhoneTabletWearable
-
 请求订阅GNSS缓存位置上报功能接口的配置参数。
 
-说明
+**说明** 
 
 从API version 8开始支持。
 
@@ -1442,11 +1358,9 @@ PhoneTabletWearable
 
 ## Geofence(deprecated)
 
-PhoneTablet
-
 GNSS围栏的配置参数。目前只支持圆形围栏。
 
-说明
+**说明** 
 
 从API version 8开始支持。
 
@@ -1465,11 +1379,9 @@ GNSS围栏的配置参数。目前只支持圆形围栏。
 
 ## GeofenceRequest(deprecated)
 
-PhoneTablet
-
 请求添加GNSS围栏消息中携带的参数，包括定位场景和围栏信息。
 
-说明
+**说明** 
 
 从API version 8开始支持。
 
@@ -1487,11 +1399,9 @@ PhoneTablet
 
 ## LocationCommand(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 扩展命令参数。
 
-说明
+**说明** 
 
 从API version 8开始支持。
 
@@ -1508,11 +1418,9 @@ PhonePC/2in1TabletTVWearable
 
 ## Location(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 位置信息。
 
-说明
+**说明** 
 
 从API version 9开始废弃，建议使用[geoLocationManager.Location](js-apis-geolocationmanager.md#location)替代。
 
@@ -1535,11 +1443,9 @@ PhonePC/2in1TabletTVWearable
 
 ## LocationPrivacyType(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 定位服务隐私协议类型。
 
-说明
+**说明** 
 
 从API version 8开始支持。
 
@@ -1557,11 +1463,9 @@ PhonePC/2in1TabletTVWearable
 
 ## LocationRequestPriority(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 位置请求中位置信息优先级类型。
 
-说明
+**说明** 
 
 从API version 9开始废弃，建议使用[geoLocationManager.LocationRequestPriority](js-apis-geolocationmanager.md#locationrequestpriority)替代。
 
@@ -1578,11 +1482,9 @@ PhonePC/2in1TabletTVWearable
 
 ## LocationRequestScenario(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 位置请求中定位场景类型。
 
-说明
+**说明** 
 
 从API version 9开始废弃，建议使用[geoLocationManager.LocationRequestScenario](js-apis-geolocationmanager.md#locationrequestscenario)替代。
 
@@ -1601,11 +1503,9 @@ PhonePC/2in1TabletTVWearable
 
 ## GeoLocationErrorCode(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 位置服务中的错误码信息。
 
-说明
+**说明** 
 
 从API version 9开始废弃，建议使用[位置服务错误码](errorcode-geolocationmanager.md)替代。
 

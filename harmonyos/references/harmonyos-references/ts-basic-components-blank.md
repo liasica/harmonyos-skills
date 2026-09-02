@@ -3,26 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Blank
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 空白与分隔 > Blank
 category: harmonyos-references
-scraped_at: 2026-04-29T13:52:23+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8e0dcf44d901068852bf32e49f4f8e26d68428cb89dc29f386df258342768695
+scraped_at: 2026-09-02T15:01:05+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5f12d4781ab524f5ef5fbe4af79fc309aed3671e8ccbbd3eaf225a3e7f582e50
 ---
 
 空白填充组件，在容器主轴方向上，空白填充组件具有自动填充容器空余部分的能力。仅当父组件为[Row](ts-container-row.md)/[Column](ts-container-column.md)/[Flex](ts-container-flex.md)时生效。
 
-说明
+**说明** 
 
 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 不支持设置子组件。
 
 ## 接口
-
-PhonePC/2in1TabletTVWearable
 
 Blank(min?: number | string)
 
@@ -48,13 +44,9 @@ Blank(min?: number | string)
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用属性](ts-component-general-attributes.md)外，还支持以下属性：
 
 ### color
-
-PhonePC/2in1TabletTVWearable
 
 color(value: ResourceColor)
 
@@ -74,73 +66,69 @@ color(value: ResourceColor)
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用事件](ts-component-general-events.md)。
 
 ## 示例
-
-PhonePC/2in1TabletTVWearable
 
 ### 示例1（占满空余空间）
 
 Blank组件在横竖屏占满空余空间效果。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct BlankExample {
-5. build() {
-6. Column() {
-7. Row() {
-8. Text('Bluetooth').fontSize(18)
-9. Blank()
-10. Toggle({ type: ToggleType.Switch }).margin({ top: 14, bottom: 14, left: 6, right: 6 })
-11. }.width('100%').backgroundColor(0xFFFFFF).borderRadius(15).padding({ left: 12 })
-12. }.backgroundColor(0xEFEFEF).padding(20)
-13. }
-14. }
+```ts
+// xxx.ets
+@Entry
+@Component
+struct BlankExample {
+  build() {
+    Column() {
+      Row() {
+        Text('Bluetooth').fontSize(18)
+        Blank()
+        Toggle({ type: ToggleType.Switch }).margin({ top: 14, bottom: 14, left: 6, right: 6 })
+      }.width('100%').backgroundColor(0xFFFFFF).borderRadius(15).padding({ left: 12 })
+    }.backgroundColor(0xEFEFEF).padding(20)
+  }
+}
 ```
 
 竖屏状态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/iUjUOKGzQEiKskteFvuNuQ/zh-cn_image_0000002589326315.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/rbNRFGgFQz2ZSupNDbcRfg/zh-cn_image_0000002736435253.gif)
 
 横屏状态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/sTeeyj2pQKOvJiVRY9yrVQ/zh-cn_image_0000002589246257.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/Fo4ygR3eQQu9UCALdpM4gw/zh-cn_image_0000002706836106.gif)
 
 ### 示例2（填充固定宽度）
 
 Blank组件的父组件未设置宽度时，min参数的使用效果。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct BlankExample {
-5. build() {
-6. Column({ space: 20 }) {
-7. // Blank父组件不设置宽度时，Blank失效，可以通过设置min最小宽度填充固定宽度
-8. Row() {
-9. Text('Bluetooth').fontSize(18)
-10. Blank().color(Color.Yellow)
-11. Toggle({ type: ToggleType.Switch }).margin({ top: 14, bottom: 14, left: 6, right: 6 })
-12. }.backgroundColor(0xFFFFFF).borderRadius(15).padding({ left: 12 })
+```ts
+// xxx.ets
+@Entry
+@Component
+struct BlankExample {
+  build() {
+    Column({ space: 20 }) {
+      // Blank父组件不设置宽度时，Blank失效，可以通过设置min最小宽度填充固定宽度
+      Row() {
+        Text('Bluetooth').fontSize(18)
+        Blank().color(Color.Yellow)
+        Toggle({ type: ToggleType.Switch }).margin({ top: 14, bottom: 14, left: 6, right: 6 })
+      }.backgroundColor(0xFFFFFF).borderRadius(15).padding({ left: 12 })
 
-14. Row() {
-15. Text('Bluetooth').fontSize(18)
-16. // 设置最小宽度为160
-17. Blank('160').color(Color.Yellow)
-18. Toggle({ type: ToggleType.Switch }).margin({ top: 14, bottom: 14, left: 6, right: 6 })
-19. }.backgroundColor(0xFFFFFF).borderRadius(15).padding({ left: 12 })
+      Row() {
+        Text('Bluetooth').fontSize(18)
+        // 设置最小宽度为160
+        Blank('160').color(Color.Yellow)
+        Toggle({ type: ToggleType.Switch }).margin({ top: 14, bottom: 14, left: 6, right: 6 })
+      }.backgroundColor(0xFFFFFF).borderRadius(15).padding({ left: 12 })
 
-21. }.backgroundColor(0xEFEFEF).padding(20).width('100%')
-22. }
-23. }
+    }.backgroundColor(0xEFEFEF).padding(20).width('100%')
+  }
+}
 ```
 
 Blank父组件未设置宽度时，子组件间无空白填充，使用min参数设置填充尺寸
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/rd-TCwUiRtWKbNwiOqLGsA/zh-cn_image_0000002558766450.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/ZK-ZwqXKQHyjSheVxrwaSw/zh-cn_image_0000002736315211.png)

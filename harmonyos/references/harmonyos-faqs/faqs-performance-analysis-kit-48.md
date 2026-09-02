@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 如何在多设备情况下使用hdc
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > 如何在多设备情况下使用hdc
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:19+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:99fc45a8e2368d1fe141fea28ad2b38dbadc654066e6354267a3afc02eb3d06b
+scraped_at: 2026-09-02T14:53:51+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:696b2bafa6a6389b0821967e5699948e38bae99b06e83f7cd713150d3fd190fa
 ---
 
 **问题场景**
@@ -14,4 +14,10 @@ content_hash: sha256:99fc45a8e2368d1fe141fea28ad2b38dbadc654066e6354267a3afc02eb
 
 **解决措施**
 
-多设备环境下执行hdc shell会失败，需要指定设备执行hdc -t xx shell。否则，会报错。
+在多设备环境下直接执行hdc shell会失败，需要使用hdc -t [connect-key] shell指定设备进行操作。其中，connect-key为每个设备的唯一标识符，可通过执行hdc list targets命令获取。
+
+参考链接
+
+[查询设备列表](../harmonyos-guides/hdc.md#查询设备列表)
+
+[连接指定的目标设备](../harmonyos-guides/hdc.md#连接指定的目标设备)

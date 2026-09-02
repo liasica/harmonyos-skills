@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: HAR包中使用window作为Toast时无法引入页面组件
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > HAR包中使用window作为Toast时无法引入页面组件
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:28+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:13+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:f67e20390c07c1635fb470ee5dca5e411ac448c7f32975886e58e6ab4625d691
 ---
 

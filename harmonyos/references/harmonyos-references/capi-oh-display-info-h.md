@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-d
 title: oh_display_info.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > oh_display_info.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:58+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:910c9cbd32b26964a2bc439091dac427a2e63ef25a45198971f06cbd31658e46
+scraped_at: 2026-09-02T15:01:22+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:200cdc7ae04ee949777d654d5004b3fac4e49323e21f81eabcd0e4b6f600e02c
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供屏幕的公共枚举、公共定义等。
 
@@ -26,16 +24,12 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [NativeDisplayManager\_Rect](capi-nativedisplaymanager-rect.md) | NativeDisplayManager\_Rect | 矩形区域。 |
-| [NativeDisplayManager\_WaterfallDisplayAreaRects](api-nativedisplaymanager-waterfalldisplayarearects.md) | NativeDisplayManager\_WaterfallDisplayAreaRects | 瀑布屏曲面部分显示区域。 |
+| [NativeDisplayManager\_WaterfallDisplayAreaRects](capi-nativedisplaymanager-waterfalldisplayarearects.md) | NativeDisplayManager\_WaterfallDisplayAreaRects | 瀑布屏曲面部分显示区域。 |
 | [NativeDisplayManager\_CutoutInfo](capi-nativedisplaymanager-cutoutinfo.md) | NativeDisplayManager\_CutoutInfo | 挖孔屏、刘海屏、瀑布屏等不可用屏幕区域信息。 |
 | [NativeDisplayManager\_DisplayHdrFormat](capi-nativedisplaymanager-displayhdrformat.md) | NativeDisplayManager\_DisplayHdrFormat | 显示设备支持的所有HDR格式。 |
 | [NativeDisplayManager\_DisplayColorSpace](capi-nativedisplaymanager-displaycolorspace.md) | NativeDisplayManager\_DisplayColorSpace | 显示设备支持的所有色域类型。 |
@@ -44,15 +38,11 @@ PhonePC/2in1TabletTVWearable
 
 ### 宏定义
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 描述 |
 | --- | --- |
 | OH\_DISPLAY\_NAME\_LENGTH 32 | 屏幕名称的最大长度。  **起始版本：** 14 |
 
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -65,14 +55,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### NativeDisplayManager\_Rotation
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum NativeDisplayManager_Rotation
+```c
+enum NativeDisplayManager_Rotation
 ```
 
 **描述**
@@ -83,17 +69,15 @@ PhonePC/2in1TabletTVWearable
 
 | 枚举项 | 描述 |
 | --- | --- |
-| DISPLAY\_MANAGER\_ROTATION\_0 = 0 | 代表屏幕顺时针旋转角度0度。 |
-| DISPLAY\_MANAGER\_ROTATION\_90 = 1 | 代表屏幕顺时针旋转角度90度。 |
-| DISPLAY\_MANAGER\_ROTATION\_180 = 2 | 代表屏幕顺时针旋转角度180度。 |
-| DISPLAY\_MANAGER\_ROTATION\_270 = 3 | 代表屏幕顺时针旋转角度270度。 |
+| DISPLAY\_MANAGER\_ROTATION\_0 = 0 | 表示屏幕顺时针旋转角度0度。 |
+| DISPLAY\_MANAGER\_ROTATION\_90 = 1 | 表示屏幕顺时针旋转角度90度。 |
+| DISPLAY\_MANAGER\_ROTATION\_180 = 2 | 表示屏幕顺时针旋转角度180度。 |
+| DISPLAY\_MANAGER\_ROTATION\_270 = 3 | 表示屏幕顺时针旋转角度270度。 |
 
 ### NativeDisplayManager\_Orientation
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum NativeDisplayManager_Orientation
+```c
+enum NativeDisplayManager_Orientation
 ```
 
 **描述**
@@ -108,14 +92,12 @@ PhonePC/2in1TabletTVWearable
 | DISPLAY\_MANAGER\_LANDSCAPE = 1 | 表示设备当前以横屏方式显示。 |
 | DISPLAY\_MANAGER\_PORTRAIT\_INVERTED = 2 | 表示设备当前以反向竖屏方式显示。 |
 | DISPLAY\_MANAGER\_LANDSCAPE\_INVERTED = 3 | 表示设备当前以反向横屏方式显示。 |
-| DISPLAY\_MANAGER\_UNKNOWN | 表示显示未识别屏幕方向。 |
+| DISPLAY\_MANAGER\_UNKNOWN | 表示显示未识别的屏幕方向。 |
 
 ### NativeDisplayManager\_ErrorCode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum NativeDisplayManager_ErrorCode
+```c
+enum NativeDisplayManager_ErrorCode
 ```
 
 **描述**
@@ -138,10 +120,8 @@ PhonePC/2in1TabletTVWearable
 
 ### NativeDisplayManager\_FoldDisplayMode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum NativeDisplayManager_FoldDisplayMode
+```c
+enum NativeDisplayManager_FoldDisplayMode
 ```
 
 **描述**
@@ -160,10 +140,8 @@ PhonePC/2in1TabletTVWearable
 
 ### NativeDisplayManager\_DisplayState
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum NativeDisplayManager_DisplayState
+```c
+enum NativeDisplayManager_DisplayState
 ```
 
 **描述**
@@ -184,10 +162,8 @@ PhonePC/2in1TabletTVWearable
 
 ### NativeDisplayManager\_SourceMode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum NativeDisplayManager_SourceMode
+```c
+enum NativeDisplayManager_SourceMode
 ```
 
 **描述**

@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-t
 title: "@ohos.util.TreeSet (非线性容器TreeSet)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.util.TreeSet (非线性容器TreeSet)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:11+08:00
-doc_updated_at: 2026-04-02
-content_hash: sha256:8472355f474150daaa2166fd72eb63a20a77f42c42dce8ad86a41d885981cf23
+scraped_at: 2026-09-02T15:00:48+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8ddad87692bd0d78991187446cb6222f5eed5612016ecc74edf5e016191d6e72
 ---
 
-TreeSet基于[TreeMap](js-apis-treemap.md)实现，在TreeSet中，只对value对象进行处理。TreeSet可用于存储一系列值的集合，元素中value唯一且有序。
+TreeSet基于[TreeMap](js-apis-treemap.md)实现，在TreeSet中，仅处理元素的值（value），不单独处理键（key）。TreeSet的每个元素在底层TreeMap中同时作为key和value存储，因此元素中value唯一且有序。关于TreeMap的详细实现机制，请参见[TreeMap](js-apis-treemap.md)。
 
 TreeSet和[HashSet](js-apis-hashset.md)中的元素都不允许重复。HashSet中的数据无序存放，而TreeSet是有序存放。HashSet允许插入null值，但TreeSet不建议插入null值，可能会影响排序结果。
 
-**推荐使用场景：** 一般需要存储有序集合的场景，可以使用TreeSet。
+**推荐使用场景：** TreeSet适用于需要有序存储和遍历集合的场景，如：有序数据展示、排名与排序系统、需要获取排序相邻元素的场景或自动排序插入等。
 
 文档中使用了泛型，涉及以下泛型标记符：
 
-* T：Type，类
+* T：Type，表示TreeSet中元素的类型。
 
-说明
+**说明** 
 
 本模块首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -26,19 +26,13 @@ TreeSet和[HashSet](js-apis-hashset.md)中的元素都不允许重复。HashSet�
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { TreeSet } from '@kit.ArkTS';
+```ts
+import { TreeSet } from '@kit.ArkTS';
 ```
 
 ## TreeSet
 
-PhonePC/2in1TabletTVWearable
-
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -50,11 +44,9 @@ PhonePC/2in1TabletTVWearable
 
 ### constructor
 
-PhonePC/2in1TabletTVWearable
-
 constructor(comparator?: (firstValue: T, secondValue: T) => boolean)
 
-TreeSet的构造函数，支持通过比较函数对元素进行升序或降序排序。
+TreeSet的构造函数，支持通过比较函数对元素进行升序或降序排序。当插入自定义类型时，必须提供比较函数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -64,69 +56,66 @@ TreeSet的构造函数，支持通过比较函数对元素进行升序或降序�
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| comparator | function | 否 | 用户自定义的比较函数，可通过比较关系对元素进行排序。默认值为null，表示不提供比较函数。 |
+| comparator | function | 否 | 用户自定义的比较函数，可通过比较关系对元素排序。默认值为null，表示不提供比较函数。取值原则：比较函数返回值决定排序方向，返回firstValue < secondValue为升序排序，返回firstValue > secondValue为降序排序。 |
 
 comparator的参数说明：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| firstValue | T | 是 | 前一项元素。 |
-| secondValue | T | 是 | 后一项元素。 |
+| firstValue | T | 是 | 比较函数中的第一个比较元素，与secondValue比较后决定排序方向。 |
+| secondValue | T | 是 | 比较函数中的第二个比较元素，与firstValue比较后决定排序方向。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed. |
 | 10200012 | The TreeSet's constructor cannot be directly invoked. |
 
 **示例：**
 
-```
-1. // 默认构造
-2. let treeSet = new TreeSet<string | number | boolean | Object>();
-```
-
-```
-1. // 使用comparator firstValue < secondValue，表示期望结果为升序排序。反之firstValue > secondValue，表示为降序排序。
-2. let treeSet: TreeSet<string> = new TreeSet<string>((firstValue: string, secondValue: string): boolean => {
-3. return firstValue < secondValue;
-4. });
-5. treeSet.add("a");
-6. treeSet.add("c");
-7. treeSet.add("d");
-8. treeSet.add("b");
-9. for (let value of treeSet) {
-10. console.info("value:", value);
-11. }
-12. // value: a
-13. // value: b
-14. // value: c
-15. // value: d
+```ts
+// 默认构造
+let treeSet = new TreeSet<string | number | boolean | Object>();
 ```
 
+```ts
+// 使用comparator firstValue < secondValue，表示期望结果为升序排序。反之firstValue > secondValue，表示为降序排序。
+let treeSet: TreeSet<string> = new TreeSet<string>((firstValue: string, secondValue: string): boolean => {
+  return firstValue < secondValue;
+});
+treeSet.add('a');
+treeSet.add('c');
+treeSet.add('d');
+treeSet.add('b');
+for (let value of treeSet) {
+  console.info('value:', value);
+};
+// value: a
+// value: b
+// value: c
+// value: d
 ```
-1. // 当插入自定义类型时，则必须要提供比较函数。
-2. class TestEntry{
-3. public id: number = 0;
-4. }
-5. let ts1: TreeSet<TestEntry> = new TreeSet<TestEntry>((t1: TestEntry, t2: TestEntry): boolean => {return t1.id > t2.id;});
-6. let entry1: TestEntry = {
-7. id: 0
-8. };
-9. let entry2: TestEntry = {
-10. id: 1
-11. }
-12. ts1.add(entry1);
-13. ts1.add(entry2);
-14. console.info("treeSet: ", ts1.length);
+
+```ts
+// 插入自定义类型时，必须提供比较函数。
+class TestEntry {
+  public id: number = 0;
+}
+let testEntrySet: TreeSet<TestEntry> = new TreeSet<TestEntry>((t1: TestEntry, t2: TestEntry): boolean => { return t1.id > t2.id; });
+let firstEntry: TestEntry = {
+  id: 0
+};
+let secondEntry: TestEntry = {
+  id: 1
+}
+testEntrySet.add(firstEntry);
+testEntrySet.add(secondEntry);
+console.info('treeSet: ', testEntrySet.length);
 ```
 
 ### isEmpty
-
-PhonePC/2in1TabletTVWearable
 
 isEmpty(): boolean
 
@@ -152,15 +141,14 @@ isEmpty(): boolean
 
 **示例：**
 
-```
-1. let treeSet = new TreeSet<string>();
-2. let result = treeSet.isEmpty();
-3. console.info("result:", result);  // result: true
+```ts
+let treeSet = new TreeSet<string>();
+// 判断容器是否为空
+let result = treeSet.isEmpty();
+console.info('result:', result);  // result: true
 ```
 
 ### has
-
-PhonePC/2in1TabletTVWearable
 
 has(value: T): boolean
 
@@ -174,13 +162,13 @@ has(value: T): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | T | 是 | 指定元素。 |
+| value | T | 是 | 要判断是否存在于容器中的目标元素。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 包含指定元素返回true，否则返回false。 |
+| boolean | 包含指定元素返回true，不包含指定元素返回false。 |
 
 **错误码：**
 
@@ -192,20 +180,19 @@ has(value: T): boolean
 
 **示例：**
 
-```
-1. let treeSet  = new TreeSet<number>();
-2. treeSet.add(123);
-3. let result = treeSet.has(123);
-4. console.info("result:", result); // result: true
+```ts
+let treeSet = new TreeSet<number>();
+treeSet.add(123);
+// 判断容器中是否包含指定元素
+let result = treeSet.has(123);
+console.info('result:', result); // result: true
 ```
 
 ### getFirstValue
 
-PhonePC/2in1TabletTVWearable
-
 getFirstValue(): T
 
-获取容器中排序第一的数据，为空时返回undefined。
+获取容器中排序第一的元素，为空时返回undefined。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -227,17 +214,15 @@ getFirstValue(): T
 
 **示例：**
 
-```
-1. let treeSet = new TreeSet<string>();
-2. treeSet.add("squirrel");
-3. treeSet.add("sparrow");
-4. let result = treeSet.getFirstValue();
-5. console.info("result:", result); // result: sparrow
+```ts
+let treeSet = new TreeSet<string>();
+treeSet.add('squirrel');
+treeSet.add('sparrow');
+let result = treeSet.getFirstValue();
+console.info('result:', result); // result: sparrow
 ```
 
 ### getLastValue
-
-PhonePC/2in1TabletTVWearable
 
 getLastValue(): T
 
@@ -263,21 +248,19 @@ getLastValue(): T
 
 **示例：**
 
-```
-1. let treeSet = new TreeSet<string>();
-2. treeSet.add("squirrel");
-3. treeSet.add("sparrow");
-4. let result = treeSet.getLastValue();
-5. console.info("result:", result); // result: squirrel
+```ts
+let treeSet = new TreeSet<string>();
+treeSet.add('squirrel');
+treeSet.add('sparrow');
+let result = treeSet.getLastValue();
+console.info('result:', result); // result: squirrel
 ```
 
 ### add
 
-PhonePC/2in1TabletTVWearable
-
 add(value: T): boolean
 
-向容器中添加一组数据。
+向容器中添加指定元素。不建议插入null值，可能会影响排序结果；添加自定义类型元素时，需确保TreeSet在构造时已提供比较函数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -287,34 +270,31 @@ add(value: T): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | T | 是 | 添加的成员数据。 |
+| value | T | 是 | 向TreeSet中添加的值元素。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 成功添加新数据至容器返回true，否则返回false。 |
+| boolean | 成功添加新元素至容器返回true，当元素已存在时返回false。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 10200011 | The add method cannot be bound. |
 
 **示例：**
 
-```
-1. let treeSet = new TreeSet<string>();
-2. let result = treeSet.add("squirrel");
-3. console.info("result:", result); // result: true
+```ts
+let treeSet = new TreeSet<string>();
+let result = treeSet.add('squirrel');
+console.info('result:', result); // result: true
 ```
 
 ### remove
-
-PhonePC/2in1TabletTVWearable
 
 remove(value: T): boolean
 
@@ -328,13 +308,13 @@ remove(value: T): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | T | 是 | 指定的元素。 |
+| value | T | 是 | 要从容器中删除的目标元素。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 成功删除元素返回true，否则返回false。 |
+| boolean | 成功删除元素返回true，指定元素不存在返回false。 |
 
 **错误码：**
 
@@ -346,17 +326,15 @@ remove(value: T): boolean
 
 **示例：**
 
-```
-1. let treeSet = new TreeSet<string>();
-2. treeSet.add("squirrel");
-3. treeSet.add("sparrow");
-4. let result = treeSet.remove("sparrow");
-5. console.info("result:", result); // result: true
+```ts
+let treeSet = new TreeSet<string>();
+treeSet.add('squirrel');
+treeSet.add('sparrow');
+let result = treeSet.remove('sparrow');
+console.info('result:', result); // result: true
 ```
 
 ### getLowerValue
-
-PhonePC/2in1TabletTVWearable
 
 getLowerValue(key: T): T
 
@@ -370,37 +348,34 @@ getLowerValue(key: T): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| key | T | 是 | 对比的元素值。 |
+| key | T | 是 | 作为查找基准的元素值，用于定位排序中比该元素靠前一位的数据。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回排序中对比元素前一位的数据，为空时返回undefined。 |
+| T | 返回排序中传入元素前一位的数据，为空时返回undefined。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 10200011 | The getLowerValue method cannot be bound. |
 
 **示例：**
 
-```
-1. let treeSet = new TreeSet<string>();
-2. treeSet.add("squirrel");
-3. treeSet.add("sparrow");
-4. treeSet.add("gander");
-5. let result = treeSet.getLowerValue("sparrow");
-6. console.info("result:", result); // result: gander
+```ts
+let treeSet = new TreeSet<string>();
+treeSet.add('squirrel');
+treeSet.add('sparrow');
+treeSet.add('gander');
+let result = treeSet.getLowerValue('sparrow');
+console.info('result:', result); // result: gander
 ```
 
 ### getHigherValue
-
-PhonePC/2in1TabletTVWearable
 
 getHigherValue(key: T): T
 
@@ -414,7 +389,7 @@ getHigherValue(key: T): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| key | T | 是 | 对比的元素。 |
+| key | T | 是 | 作为查找基准的元素，用于定位排序中比该元素靠后一位的数据。 |
 
 **返回值：**
 
@@ -424,27 +399,24 @@ getHigherValue(key: T): T
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 10200011 | The getHigherValue method cannot be bound. |
 
 **示例：**
 
-```
-1. let treeSet = new TreeSet<string>();
-2. treeSet.add("squirrel");
-3. treeSet.add("sparrow");
-4. treeSet.add("gander");
-5. let result = treeSet.getHigherValue("sparrow");
-6. console.info("result:", result); // result: squirrel
+```ts
+let treeSet = new TreeSet<string>();
+treeSet.add('squirrel');
+treeSet.add('sparrow');
+treeSet.add('gander');
+let result = treeSet.getHigherValue('sparrow');
+console.info('result:', result); // result: squirrel
 ```
 
 ### popFirst
-
-PhonePC/2in1TabletTVWearable
 
 popFirst(): T
 
@@ -470,17 +442,15 @@ popFirst(): T
 
 **示例：**
 
-```
-1. let treeSet = new TreeSet<string>();
-2. treeSet.add("squirrel");
-3. treeSet.add("sparrow");
-4. let result = treeSet.popFirst();
-5. console.info("result:", result); // result: sparrow
+```ts
+let treeSet = new TreeSet<string>();
+treeSet.add('squirrel');
+treeSet.add('sparrow');
+let result = treeSet.popFirst();
+console.info('result:', result); // result: sparrow
 ```
 
 ### popLast
-
-PhonePC/2in1TabletTVWearable
 
 popLast(): T
 
@@ -506,17 +476,15 @@ popLast(): T
 
 **示例：**
 
-```
-1. let treeSet = new TreeSet<string>();
-2. treeSet.add("squirrel");
-3. treeSet.add("sparrow");
-4. let result = treeSet.popLast();
-5. console.info("result:", result); // result: squirrel
+```ts
+let treeSet = new TreeSet<string>();
+treeSet.add('squirrel');
+treeSet.add('sparrow');
+let result = treeSet.popLast();
+console.info('result:', result); // result: squirrel
 ```
 
 ### clear
-
-PhonePC/2in1TabletTVWearable
 
 clear(): void
 
@@ -536,22 +504,20 @@ clear(): void
 
 **示例：**
 
-```
-1. let treeSet = new TreeSet<string>();
-2. treeSet.add("squirrel");
-3. treeSet.add("sparrow");
-4. treeSet.clear();
-5. let result = treeSet.isEmpty();
-6. console.info("result:", result); // result: true
+```ts
+let treeSet = new TreeSet<string>();
+treeSet.add('squirrel');
+treeSet.add('sparrow');
+treeSet.clear();
+let result = treeSet.isEmpty();
+console.info('result:', result); // result: true
 ```
 
 ### values
 
-PhonePC/2in1TabletTVWearable
-
 values(): IterableIterator<T>
 
-返回包含此映射中键值的新迭代器对象。
+返回包含此容器中元素值的新迭代器对象。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -561,7 +527,7 @@ values(): IterableIterator<T>
 
 | 类型 | 说明 |
 | --- | --- |
-| IterableIterator<T> | 返回一个迭代器。 |
+| IterableIterator<T> | 返回包含TreeSet中所有元素的迭代器。 |
 
 **错误码：**
 
@@ -573,25 +539,24 @@ values(): IterableIterator<T>
 
 **示例：**
 
-```
-1. let treeSet = new TreeSet<string>();
-2. treeSet.add("squirrel");
-3. treeSet.add("sparrow");
-4. let values = treeSet.values();
-5. for (let value of values) {
-6. console.info("value:", value)
-7. }
-8. // value: sparrow
-9. // value: squirrel
+```ts
+// 不建议在values中使用add、remove方法，会导致死循环等不可预知的风险，可使用for循环来进行插入和删除。
+let treeSet = new TreeSet<string>();
+treeSet.add('squirrel');
+treeSet.add('sparrow');
+let values = treeSet.values();
+for (let value of values) {
+  console.info('value:', value);
+}
+// value: sparrow
+// value: squirrel
 ```
 
 ### forEach
 
-PhonePC/2in1TabletTVWearable
-
 forEach(callbackFn: (value?: T, key?: T, set?: TreeSet<T>) => void, thisArg?: Object): void
 
-通过回调函数来遍历实例对象上的元素及其下标。
+通过回调函数来遍历实例对象上的元素。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -601,57 +566,55 @@ forEach(callbackFn: (value?: T, key?: T, set?: TreeSet<T>) => void, thisArg?: Ob
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callbackFn | function | 是 | 回调函数。 |
-| thisArg | Object | 否 | callbackFn被调用时用作this值，默认值为当前实例对象。 |
+| callbackFn | function | 是 | 遍历实例对象中每个元素时调用的回调函数，开发者可在回调中对元素及其下标进行自定义处理。 |
+| thisArg | Object | 否 | callbackFn被调用时用作this值。当需要在回调函数中使用特定的this上下文（如访问外部对象属性）时传入此参数。不传入时默认值为当前实例对象，回调函数中的this指向TreeSet实例本身。 |
 
 callbackFn的参数说明：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | T | 否 | 当前遍历到的value元素。 |
-| key | T | 否 | 当前遍历到的key元素。 |
-| set | TreeSet<T> | 否 | 当前调用forEach方法的实例对象，默认值为当前实例对象。 |
+| value | T | 否 | 当前遍历到的value元素，forEach调用回调时始终传入此参数。 |
+| key | T | 否 | 当前遍历到的元素（在TreeSet中key与value相同，均为元素本身）。 |
+| set | TreeSet<T> | 否 | 当前调用forEach方法的实例对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200011 | The forEach method cannot be bound. |
 
 **示例：**
 
-```
-1. let treeSet = new TreeSet<string>();
-2. treeSet.add("sparrow");
-3. treeSet.add("gull");
-4. treeSet.forEach((value: string, key: string): void => {
-5. console.info("value:" + value);
-6. });
-7. // value:gull
-8. // value:sparrow
+```ts
+let treeSet = new TreeSet<string>();
+treeSet.add('sparrow');
+treeSet.add('gull');
+// 通过forEach遍历TreeSet中的元素
+treeSet.forEach((value: string, key: string): void => {
+  console.info('value:' + value);
+});
+// value:gull
+// value:sparrow
 ```
 
-```
-1. // 不建议在forEach中使用set、remove方法，会导致死循环等不可预知的风险，可使用for循环来进行插入和删除。
-2. let treeSet = new TreeSet<string>();
-3. for(let i = 0; i < 10; i++) {
-4. treeSet.add("sparrow" + i);
-5. }
-6. for(let i = 0; i < 10; i++) {
-7. treeSet.remove("sparrow" + i);
-8. }
+```ts
+// 不建议在forEach中使用add、remove方法，会导致死循环等不可预知的风险，可使用for循环来进行插入和删除。
+let treeSet = new TreeSet<string>();
+for (let i = 0; i < 10; i++) {
+  treeSet.add('sparrow' + i);
+}
+for (let i = 0; i < 10; i++) {
+  treeSet.remove('sparrow' + i);
+}
 ```
 
 ### entries
 
-PhonePC/2in1TabletTVWearable
-
 entries(): IterableIterator<[T, T]>
 
-返回包含此映射中键值对的新迭代器对象。
+返回包含此容器中元素的新迭代器对象，每个元素以[value, value]的形式返回。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -661,7 +624,7 @@ entries(): IterableIterator<[T, T]>
 
 | 类型 | 说明 |
 | --- | --- |
-| IterableIterator<[T, T]> | 返回一个迭代器。 |
+| IterableIterator<[T, T]> | 返回包含TreeSet中所有元素键值对的迭代器对象，每个键值对中键与值相同，均为元素本身。 |
 
 **错误码：**
 
@@ -673,38 +636,38 @@ entries(): IterableIterator<[T, T]>
 
 **示例：**
 
-```
-1. let treeSet = new TreeSet<string>();
-2. treeSet.add("squirrel");
-3. treeSet.add("sparrow");
-4. let it = treeSet.entries();
-5. let t: IteratorResult<Object[]> = it.next();
-6. while(!t.done) {
-7. console.info("TreeSet: " + t.value[1]);
-8. t = it.next()
-9. }
-10. // TreeSet: sparrow
-11. // TreeSet: squirrel
+```ts
+let treeSet = new TreeSet<string>();
+treeSet.add('squirrel');
+treeSet.add('sparrow');
+// 获取entries迭代器
+let iterator = treeSet.entries();
+// 遍历迭代器获取键值对
+let iterResult: IteratorResult<Object[]> = iterator.next();
+while (!iterResult.done) {
+  console.info('TreeSet: ' + iterResult.value[1]);
+  iterResult = iterator.next();
+}
+// TreeSet: sparrow
+// TreeSet: squirrel
 ```
 
-```
-1. // 不建议在entries中使用set、remove方法，会导致死循环等不可预知的风险，可使用for循环来进行插入和删除。
-2. let treeSet = new TreeSet<string>();
-3. for(let i = 0; i < 10; i++) {
-4. treeSet.add("sparrow" + i);
-5. }
-6. for(let i = 0; i < 10; i++) {
-7. treeSet.remove("sparrow" + i);
-8. }
+```ts
+// 不建议在entries中使用add、remove方法，会导致死循环等不可预知的风险，可使用for循环来进行插入和删除。
+let treeSet = new TreeSet<string>();
+for(let i = 0; i < 10; i++) {
+  treeSet.add('sparrow' + i);
+}
+for(let i = 0; i < 10; i++) {
+  treeSet.remove('sparrow' + i);
+}
 ```
 
 ### [Symbol.iterator]
 
-PhonePC/2in1TabletTVWearable
-
 [Symbol.iterator](): IterableIterator<T>
 
-返回一个迭代器，迭代器的每一项都是一个JavaScript对象。
+返回一个迭代器，迭代器的每一项为容器中的元素值。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -714,7 +677,7 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| IterableIterator<T> | 返回一个迭代器。 |
+| IterableIterator<T> | 返回包含TreeSet中所有元素的迭代器。 |
 
 **错误码：**
 
@@ -726,35 +689,35 @@ PhonePC/2in1TabletTVWearable
 
 **示例：**
 
-```
-1. let treeSet = new TreeSet<string>();
-2. treeSet.add("squirrel");
-3. treeSet.add("sparrow");
-4. // 使用方法一：
-5. for (let item of treeSet) {
-6. console.info("value:" + item);
-7. }
-8. // value:sparrow
-9. // value:squirrel
+```ts
+let treeSet = new TreeSet<string>();
+treeSet.add('squirrel');
+treeSet.add('sparrow');
+// 使用方法一：使用for...of语法遍历TreeSet
+for (let item of treeSet) {
+  console.info('value:' + item);
+}
+// value:sparrow
+// value:squirrel
 
-11. // 使用方法二：
-12. let iter = treeSet[Symbol.iterator]();
-13. let temp: IteratorResult<string> = iter.next().value;
-14. while(temp != undefined) {
-15. console.info("value:" + temp);
-16. temp = iter.next().value;
-17. }
-18. // value:sparrow
-19. // value:squirrel
+// 使用方法二：通过Symbol.iterator获取迭代器手动遍历
+let iterator = treeSet[Symbol.iterator]();
+let currentValue: IteratorResult<string> = iterator.next().value;
+while (currentValue != undefined) {
+  console.info('value:' + currentValue);
+  currentValue = iterator.next().value;
+}
+// value:sparrow
+// value:squirrel
 ```
 
-```
-1. // 不建议在Symbol.iterator中使用set、remove方法，会导致死循环等不可预知的风险，可使用for循环来进行插入和删除。
-2. let treeSet = new TreeSet<string>();
-3. for(let i = 0; i < 10; i++) {
-4. treeSet.add("sparrow" + i);
-5. }
-6. for(let i = 0; i < 10; i++) {
-7. treeSet.remove("sparrow" + i);
-8. }
+```ts
+// 不建议在Symbol.iterator中使用add、remove方法，会导致死循环等不可预知的风险，可使用for循环来进行插入和删除。
+let treeSet = new TreeSet<string>();
+for (let i = 0; i < 10; i++) {
+  treeSet.add('sparrow' + i);
+}
+for (let i = 0; i < 10; i++) {
+  treeSet.remove('sparrow' + i);
+}
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-oh-packag
 title: oh-package.json5
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > oh-package.json5
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:40+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:554d944db41397de2d7e559065359ecf92b25c0c133f29da0da2f49fe344a1b9
+scraped_at: 2026-09-02T15:00:29+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7a0f7783b76e770eee4098f4557dd94e50cd7df33fd3277e77eb403ee9b91cb9
 ---
 
 从OHPM 5.0.0版本开始，支持区分工程级与模块级oh-package.json5配置。其中：
@@ -15,11 +15,11 @@ content_hash: sha256:554d944db41397de2d7e559065359ecf92b25c0c133f29da0da2f49fe34
 
 开发者可将标准的DevEco Studio工程下的各个模块打成HAR包后，发布到OpenHarmony三方库中心仓；所有发布到仓库的包必须包含模块级oh-package.json5文件，以描述当前包基本信息。
 
-## 工程级oh-package.json5 字段说明
+## 工程级oh-package.json5字段说明
 
 | 配置项 | 字段名称 | 字段说明 | 字段要求 | 字段类型 | 默认值 | 备注 |
 | --- | --- | --- | --- | --- | --- | --- |
-| **开发态版本** | modelVersion | 开发态版本号 | **必选** | 字符串 | 无 | 开发态版本号。 |
+| **开发态版本** | modelVersion | 开发态版本号 | **必选** | 字符串 | 无 | 开发态版本号。  默认版本号为DevEco Studio配套的modelVersion，以[DevEco Studio 6.1.1 Release](../harmonyos-releases/deveco-studio-new-features-611.md#section1376764215234)为例，配套的modelVersion为"6.1.1"。如需修改modelVersion，修改后的值不能小于5.0.0，且不能大于DevEco Studio配套的modelVersion。 |
 | **描述配置** | description | 简介 | 可选 | 字符串 | 无 | 用于描述工程信息的字符串。 |
 | **依赖配置** | dependencies | 生产依赖 | 可选 | 对象 | {} | 用于配置参与编译/运行阶段使用的依赖，声明需要在代码中import的三方库（不建议在工程级oh-package.json5中配置生产依赖）。 |
 | devDependencies | 开发依赖 | 可选 | 对象 | {} | 配置开发态依赖，配置只能参与项目的开发或测试阶段的依赖。如果被依赖的组件最终要与依赖的组件一起发布到目标机器（如手机）上使用，则不能在其中配置。 |
@@ -30,8 +30,9 @@ content_hash: sha256:554d944db41397de2d7e559065359ecf92b25c0c133f29da0da2f49fe34
 | **其他** | scripts | 自定义脚本 | 可选 | 对象 | {} | 维护一个脚本别名到脚本内容的映射表，开发者可以通过ohpm run <脚本别名>来触发对应脚本内容的执行。 |
 | hooks | 钩子 | 可选 | 对象 | {} | 安装或卸载的钩子设置，包含 "preInstall"，"postInstall"，"preUninstall"，"postUninstall"，"preVersion"，"postVersion"，"prePublish"，"postPublish" 字段。仅支持执行当前工程中的 hooks，不支持执行依赖中的 hooks。 |
 | parameterFile | 参数化配置文件路径 | 可选 | 字符串 | 无 | 标识是否开启参数化。未配置：关闭参数化；已配置：开启参数化。需同时指定参数化配置文件路径，详情见[parameterFile](ide-oh-package-json5.md#section122411462820)。 |
+| properties | 多环境依赖管理参数 | 可选 | 对象 | {} | 该配置参数用于多环境下的依赖管理。  开发者通过parameterFile完成依赖配置后，在parameterFile字段中使用properties参数，详情见[properties](ide-oh-package-json5.md#section12230213121314)。  说明：  如debug和beta环境下需要配置不同的parameterFile，实现不同的包依赖管理，诸如此类场景称为多环境。 |
 
-注意
+**注意** 
 
 不建议在工程级依赖中配置非devDependencies的依赖，即一个Hsp/Har模块的非开发态依赖都要在相应模块的dependencies和dynamicDependencies中声明。
 
@@ -45,7 +46,7 @@ content_hash: sha256:554d944db41397de2d7e559065359ecf92b25c0c133f29da0da2f49fe34
 | version | 版本号 | 必选 | 字符串 | 1.0.0 | 该模块构建产物（HAR/HSP）的版本号。  规范：采用X.Y.Z（主版本.次版本.修订号）三段式结构，遵循 [semver](https://semver.org/) 语义化规范，从1.0.0开始。 |
 | description | 简介 | 可选 | 字符串 | 无 | 用于描述该模块构建产物（HAR/HSP）的信息，有助于被搜索发现。长度范围为0-512字符。 |
 | keywords | 关键字 | 可选 | 数组 | [] | 关键字信息数组，便于搜索使用。例如：["tools", "project"]。 |
-| author | 作者 | 可选/必选 | 对象或字符串 | 无 | author包含 name 字段（必选）、 email 字段（可选）、url字段（可选），可通过格式对象或字符串格式配置。  name字段允许使用字母、数字，点（.），中划线（-），下划线（\_），空格，中文。   * 对象格式："author": {"name": "xxx" , "email": "\*\*\*@example.com" , "url": "https://xxx.com" }。 * 字符串格式："author": "name<\*\*\*@example.com>(https://xxx.com)"。   仅发布到[OpenHarmony三方库中心仓](https://ohpm.openharmony.cn/)时，必须填写，其他场景可选填。 |
+| author | 作者 | 可选/必选 | 对象或字符串 | 无 | author包含 name 字段（必选）、 email 字段（可选）、url字段（可选），可通过格式对象或字符串格式配置。  name字段允许使用字母、数字，点（.），中划线（-），下划线（\_），空格，中文，长度范围为[1,128]，email长度范围为[1,64]，url长度范围为[1,256]。  * 对象格式："author": {"name": "xxx" , "email": "\*\*\*@example.com" , "url": "https://xxx.com" }。 * 字符串格式："author": "name<\*\*\*@example.com>(https://xxx.com)"。  仅发布到[OpenHarmony三方库中心仓](https://ohpm.openharmony.cn/)时，必须填写，其他场景可选填。 |
 | homepage | 主页链接 | 可选 | 字符串 | "" | 通常是项目gitee链接。 |
 | repository | 仓库地址 | 可选 | 字符串 | "" | 开源代码仓库地址。在私仓管理界面的系统设置处可定义是否为必填。 |
 | license | 开源协议 | 可选/必选 | 字符串 | "ISC" | 当前项目的开源许可证。遵循 [spdx license](https://spdx.org/licenses/) 规范。许可证若为 GPL，repository 建议不为空。  仅发布开源三方库到[OpenHarmony三方库中心仓](https://ohpm.openharmony.cn/)时，必须填写，其他场景可选填。 |
@@ -64,8 +65,9 @@ content_hash: sha256:554d944db41397de2d7e559065359ecf92b25c0c133f29da0da2f49fe34
 | hooks | 钩子 | 可选 | 对象 | {} | 安装或卸载的钩子设置，包含 "preInstall", "postInstall", "preUninstall", "postUninstall","preVersion", "postVersion", "prePublish", "postPublish" 字段。仅支持执行当前工程中的 hooks，不支持执行依赖中的 hooks。 |
 | category | 检查规则白名单 | 可选 | 字符串 | {} | 在私仓管理界面配置后自动生成，白名单为分号隔开的字符串列表，每个列表项必须是一个由大小写字母或下划线组成的字符串，包含在白名单中的配置项，不再做规则检查。 |
 | packageType | 包类型 | 可选 | 字符串 | InterfaceHar | 标识模块是否为HSP包，在新建Shared Library时会自动生成该字段，并默认赋值为"InterfaceHar"；Static Library中没有该字段，表示为普通HAR包。 |
+| dependencyMode | BundledHar类型 | 可选 | 字符串 | loose | 该字段由编译构建自动生成，不推荐开发者手动配置。  用于标识当前HAR包编译时是否开启[bundledAllDependencies](ide-hvigor-build-har.md#section121297571296)。若开启填入bundled，若未开启填入loose或缺省。  三方中心仓仅支持bundled和loose两种取值，其他取值会导致校验失败。 |
 
-注意
+**注意** 
 
 **依赖名使用要求：**
 
@@ -81,27 +83,27 @@ content_hash: sha256:554d944db41397de2d7e559065359ecf92b25c0c133f29da0da2f49fe34
 
 三方库开发者使用的SDK和当前集成该三方库工程编译时使用的SDK可能存在不一致的情况。因此，ohpm新增了兼容性检测相关配置以帮助SDK做兼容性分析。配置示例如下：
 
-```
-1. {
-2. "name": "library",
-3. "version": "1.0.0",
-4. "description": "Please describe the basic information.",
-5. "main": "Index.ets",
-6. "license": "Apache-2.0",
-7. "dependencies": {
-8. "liblibrary.so": "file:./src/main/cpp/types/liblibrary"
-9. },
-10. "compatibleSdkVersion": "12",
-11. "compatibleSdkType": "HarmonyOS",
-12. "obfuscated": false,
-13. "nativeComponents": [
-14. {
-15. "name": "liblibrary.so",
-16. "compatibleSdkVersion": "12",
-17. "compatibleSdkType": "HarmonyOS"
-18. }
-19. ]
-20. }
+```screen
+{
+  "name": "library",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "Index.ets",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "liblibrary.so": "file:./src/main/cpp/types/liblibrary"
+  },
+  "compatibleSdkVersion": "12",
+  "compatibleSdkType": "HarmonyOS",
+  "obfuscated": false,
+  "nativeComponents": [
+    {
+      "name": "liblibrary.so",
+      "compatibleSdkVersion": "12",
+      "compatibleSdkType": "HarmonyOS"
+    }
+  ]
+}
 ```
 
 ## 创建一个新的oh-package.json5文件
@@ -110,46 +112,46 @@ content_hash: sha256:554d944db41397de2d7e559065359ecf92b25c0c133f29da0da2f49fe34
 
 1. 导航到包的目录。
 
-   ```
-   1. cd /path/to/package
+   ```screen
+   cd /path/to/package
    ```
 2. 执行初始化命令，并按照问卷填写相关参数。
 
    * 对无命名空间模块，执行以下命令：
 
-     ```
-     1. ohpm init
+     ```screen
+     ohpm init
      ```
    * 对有命名空间模块，执行以下命令：
 
-     ```
-     1. ohpm init --group group_name
+     ```screen
+     ohpm init --group group_name
      ```
 3. 若跳过问卷填写，创建默认文件，可在初始化命令行加上配置参数 --yes。
 
-   ```
-   1. ohpm init --yes
+   ```screen
+   ohpm init --yes
    ```
 
    默认创建的oh-package.json5 文件示例：
 
-   ```
-   1. {
-   2. "name": "package_name",
-   3. "version": "1.0.0",
-   4. "description": "",
-   5. "main": "index.ts",
-   6. "author": "",
-   7. "license": "ISC",
-   8. "dependencies": {}
-   9. }
+   ```screen
+   {
+    "name": "package_name",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.ts",
+    "author": "",
+    "license": "ISC",
+    "dependencies": {}
+   }
    ```
 
 ## 依赖配置说明
 
 ohpm 存在 dependencies，devDependencies和dynamicDependencies 三种依赖类型。同时支持具体版本号，范围版本号，tag标签，本地har/tgz文件路径、本地源码目录和使用@module通过模块名指向模块目录（示例："module\_key": "@module:module\_name"）多种方式引入依赖。当依赖的三方库版本号配置为 \* 时，表示当前依赖的包版本为该三方库的最新包版本。
 
-说明
+**说明** 
 
 1、从DevEco Studio 6.0.0 Beta1开始支持@module配置方式；从DevEco Studio 6.0.2 Beta1开始，通过devDependencies引入的依赖，不校验循环依赖。
 
@@ -162,65 +164,65 @@ ohpm 存在 dependencies，devDependencies和dynamicDependencies 三种依赖类
 3. dynamicDependencies：动态依赖，用来配合[动态import](arkts-dynamic-import.md)，表达动态 import 使用的HSP 包依赖。动态依赖不会在加载时就被编译，而是根据条件导入模块或者按需导入模块，具有更高效的依赖加载速度。
 4. 依赖配置示例：
 
-   ```
-   1. {
-   2. "dependencies": {
-   3. // 具体版本号引入，支持符合semver标准的版本号
-   4. "specific_version": "1.0.0",
+   ```json5
+   {
+     "dependencies": {
+       // 具体版本号引入，支持符合semver标准的版本号
+       "specific_version": "1.0.0",
 
-   6. // 范围版本号引入，^引入1.x.x的最新版本，~引入1.0.x的最新版本。范围版本优先选取正式版本，无匹配的正式版本才会选取先行版本
-   7. "scope_version": "^1.0.1",
+       // 范围版本号引入，^引入1.x.x的最新版本，~引入1.0.x的最新版本。范围版本优先选取正式版本，无匹配的正式版本才会选取先行版本
+       "scope_version": "^1.0.1",
 
-   9. // tag标签引入，示例引入标签为"beta"对应的版本号
-   10. "tag_version": "tag:beta",
+       // tag标签引入，示例引入标签为"beta"对应的版本号
+       "tag_version": "tag:beta",
 
-   12. // 本地文件引入，可引入本地har/tgz文件
-   13. "local_file": "file:./xx.har",
+       // 本地文件引入，可引入本地har/tgz文件
+       "local_file": "file:./xx.har",
 
-   15. // 本地源码引入，可引入本地其他模块的源码，示例直接引入本地的"module1"模块
-   16. "local_source_code": "file:../module1"
+       // 本地源码引入，可引入本地其他模块的源码，示例直接引入本地的"module1"模块
+       "local_source_code": "file:../module1"
 
-   18. // 项目存在Foo模块，即build-profile.json5文件或dependencyMap.json5文件中modules节点下存在名称为Foo的模块；该模块Foo的oh-package.json5中name为：foo_test
-   19. "foo_test": "@module:Foo"
-   20. },
-   21. "devDependencies": {
-   22. // 支持依赖引入类型同dependencies
-   23. },
-   24. "dynamicDependencies": {
-   25. // 支持依赖引入类型同 dependencies
-   26. }
-   27. }
+       // 项目存在Foo模块，即build-profile.json5文件或dependencyMap.json5文件中modules节点下存在名称为Foo的模块；该模块Foo的oh-package.json5中name为：foo_test
+       "foo_test": "@module:Foo"
+     },
+     "devDependencies": {
+       // 支持依赖引入类型同dependencies
+     },
+     "dynamicDependencies": {
+       // 支持依赖引入类型同 dependencies
+     }
+   }
    ```
 5. devDependencies引入的依赖，不校验循环配置示例：
 
    如下oh-package.json5配置所示，模块ma通过配置dependencies依赖模块mb，同时模块mb通过配置devDependencies依赖模块ma，进而构造成循环依赖。
 
-   ```
-   1. // 模块ma的oh-package.json5
-   2. {
-   3. "name": "ma",
-   4. "version": "1.0.0",
-   5. "description": "Please describe the basic information.",
-   6. "main": "Index.ets",
-   7. "author": "",
-   8. "license": "Apache-2.0",
-   9. "dependencies": {
-   10. "mb": "../mb"
-   11. }
-   12. }
+   ```json5
+   // 模块ma的oh-package.json5
+   {
+     "name": "ma",
+     "version": "1.0.0",
+     "description": "Please describe the basic information.",
+     "main": "Index.ets",
+     "author": "",
+     "license": "Apache-2.0",
+     "dependencies": {
+       "mb": "../mb"
+     }
+   }
 
-   14. // 模块mb的oh-package.json5
-   15. {
-   16. "name": "mb",
-   17. "version": "1.0.0",
-   18. "description": "Please describe the basic information.",
-   19. "main": "Index.ets",
-   20. "author": "",
-   21. "license": "Apache-2.0",
-   22. "devDependencies": {
-   23. "ma": "../ma"
-   24. }
-   25. }
+   // 模块mb的oh-package.json5
+   {
+     "name": "mb",
+     "version": "1.0.0",
+     "description": "Please describe the basic information.",
+     "main": "Index.ets",
+     "author": "",
+     "license": "Apache-2.0",
+     "devDependencies": {
+       "ma": "../ma"
+     }
+   }
    ```
 
 ## overrides
@@ -229,34 +231,34 @@ ohpm客户端在1.4.0版本开始支持Override机制，可以在项目级别的
 
 例如，想要确保foo始终安装1.0.0版本，可以在**项目级**的oh-package.json5中增加如下配置：
 
-说明
+**说明** 
 
 1. overrides必须配置在项目级别的oh-package.json5中，配置在模块级别的oh-package.json5中将不会生效。
 2. 从DevEco Studio 6.0.0 Beta1开始支持@module配置方式。
 3. @module配置中module\_name必须在project/build-profile.json5文件或者project/.hvigor/dependencyMap/dependencyMap.json5（hvigor生成）文件的modules节点下存在，否则报错处理。
 4. @module配置中，module\_key需和"@module:module\_name"指向的模块目录下oh-package.json5文件中配置的name一致，否则报错处理。
 
-```
-1. {
-2. "overrides": {
-3. "foo": "1.0.0"
-4. }
-5. }
+```json5
+{
+  "overrides": {
+    "foo": "1.0.0"
+  }
+}
 ```
 
 若本地存在foo的源码、HAR包或者@module配置，想确保foo始终使用您本地的版本，可以在**项目级**的oh-package.json5中如下配置：
 
-```
-1. {
-2. "overrides": {
-3. // 项目存在Foo模块，即build-profile.json5文件或dependencyMap.json5文件中modules节点下存在名称为Foo的模块；该模块Foo的oh-package.json5中name为：foo_test
-4. // "foo_test": "@module:Foo"
-5. // 本地存在"foo"的源码目录，如项目根目录下的foo目录
-6. // "foo": "file:./foo"
-7. // 本地存在"foo"的HAR文件，如项目根目录下的libs目录中的foo.har
-8. "foo": "file:./libs/foo.har"
-9. }
-10. }
+```json5
+{
+   "overrides": {
+      // 项目存在Foo模块，即build-profile.json5文件或dependencyMap.json5文件中modules节点下存在名称为Foo的模块；该模块Foo的oh-package.json5中name为：foo_test
+      // "foo_test": "@module:Foo"
+      // 本地存在"foo"的源码目录，如项目根目录下的foo目录
+      // "foo": "file:./foo" 
+      // 本地存在"foo"的HAR文件，如项目根目录下的libs目录中的foo.har
+      "foo": "file:./libs/foo.har"
+   }
+}
 ```
 
 ## exclusions
@@ -267,9 +269,9 @@ ohpm客户端在5.3.0版本开始支持exclusions机制，可以在项目级oh-p
 
 * 配置格式
 
-  ```
-  1. // key: value形式配置
-  2. "[@group/]libname[@spec]" : ['exclude_sub_libname']
+  ```json5
+  // key: value形式配置
+  "[@group/]libname[@spec]" : ['exclude_sub_libname']
   ```
 
   + 配置key部分：[@group/]libname[@spec]，代表需要做子依赖排除的依赖名称及其版本，'[]'代表该内容为可选配置。当依赖没有组织名称时，[@group/]部分可不配置；当不需要精确匹配具体版本号或具体某个本地文件依赖时，[@spec]部分可不配置；spec可以是一个具体的版本号、本地文件路径（支持相对路径和绝对路径，配置为相对路径时指相对于项目根路径）。
@@ -277,13 +279,13 @@ ohpm客户端在5.3.0版本开始支持exclusions机制，可以在项目级oh-p
 
 * 配置示例
 
-```
-1. {
-2. "exclusions": {
-3. "@ohos/lib1@1.0.0": ['@ohos/sub_lib1']      // 排除远程依赖@ohos/lib1的子依赖：@ohos/sub_lib1
-4. "@ohos/lib2@./lib2.har": ['@ohos/sub_lib2'] // 排除本地文件依赖@ohos/lib2的子依赖：@ohos/sub_lib2
-5. }
-6. }
+```json5
+{
+  "exclusions": {
+    "@ohos/lib1@1.0.0": ['@ohos/sub_lib1']      // 排除远程依赖@ohos/lib1的子依赖：@ohos/sub_lib1
+    "@ohos/lib2@./lib2.har": ['@ohos/sub_lib2'] // 排除本地文件依赖@ohos/lib2的子依赖：@ohos/sub_lib2
+  }
+}
 ```
 
 * 配置约束
@@ -299,67 +301,67 @@ ohpm客户端在5.3.0版本开始支持exclusions机制，可以在项目级oh-p
 
 1、模块级oh-package.json5内容如下，将安装依赖@ohos/lib1、@ohos/lib2。
 
-```
-1. {
-2. "name": "entry",
-3. "version": "1.0.0",
-4. "description": "Please describe the basic information.",
-5. "dependencies": {
-6. "@ohos/lib1": "1.0.0" // 远程依赖
-7. "@ohos/lib2": "file:../lib2.har" // 本地文件依赖
-8. }
-9. }
+```json5
+{
+  "name": "entry",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",  
+  "dependencies": {
+    "@ohos/lib1": "1.0.0" // 远程依赖
+    "@ohos/lib2": "file:../lib2.har" // 本地文件依赖
+  }
+}
 
-11. // @ohos/lib1的oh-package.json5配置
-12. {
-13. "name": "@ohos/lib1",
-14. "version": "1.0.0",
-15. "description": "Please describe the basic information.",
-16. "dependencies": {
-17. "@ohos/lib1_sub1": "1.0.0" // 子依赖1
-18. "@ohos/lib1_sub2": "2.0.0" // 子依赖2
-19. }
-20. }
+// @ohos/lib1的oh-package.json5配置
+{
+  "name": "@ohos/lib1",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",  
+  "dependencies": {
+    "@ohos/lib1_sub1": "1.0.0" // 子依赖1
+    "@ohos/lib1_sub2": "2.0.0" // 子依赖2
+  }
+}
 
-22. // @ohos/lib2的oh-package.json5配置
-23. {
-24. "name": "@ohos/lib2",
-25. "version": "1.0.0",
-26. "description": "Please describe the basic information.",
-27. "dependencies": {
-28. "@ohos/lib2_sub1": "1.0.0" // 子依赖1
-29. "@ohos/lib2_sub2": "2.0.0" // 子依赖2
-30. }
-31. }
+// @ohos/lib2的oh-package.json5配置
+{
+  "name": "@ohos/lib2",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",  
+  "dependencies": {
+    "@ohos/lib2_sub1": "1.0.0" // 子依赖1
+    "@ohos/lib2_sub2": "2.0.0" // 子依赖2
+  }
+}
 ```
 
 2、项目级oh-package.json5内容如下，添加exclusions配置，其中lib2.har放置在项目根目录下。
 
-```
-1. {
-2. "modelVersion": "6.1.0",
-3. "description": "Please describe the basic information.",
-4. "exclusions": {
-5. "@ohos/lib1@1.0.0": ['@ohos/lib1_sub1'],  // 排除远程依赖@ohos/lib1的子依赖：@ohos/lib1_sub1
-6. "@ohos/lib2@./lib2.har": ['@ohos/lib2_sub2'] // 排除本地文件依赖@ohos/lib2的子依赖：@ohos/lib2_sub2
-7. }
-8. }
+```json5
+{
+  "modelVersion": "6.1.1",
+  "description": "Please describe the basic information.",
+  "exclusions": {
+    "@ohos/lib1@1.0.0": ['@ohos/lib1_sub1'],  // 排除远程依赖@ohos/lib1的子依赖：@ohos/lib1_sub1
+    "@ohos/lib2@./lib2.har": ['@ohos/lib2_sub2'] // 排除本地文件依赖@ohos/lib2的子依赖：@ohos/lib2_sub2
+  }
+}
 ```
 
 3、执行ohpm安装命令。
 
-```
-1. ohpm install --all
+```json5
+ohpm install --all
 ```
 
 4、ohpm安装完成后，在entry目录下执行：ohpm list -d 10，打印依赖结构如下。
 
-```
-1. entry 1.0.0 <project>\entry
-2. ├─┬ @ohos/lib1 1.0.0
-3. │ └── @ohos/lib1_sub2 1.0.0 // 安装了子依赖@ohos/lib1_sub2,@ohos/lib1_sub1已被排除
-4. ├─┬ @ohos/lib2 <project>\lib2.har
-5. └── @ohos/lib2_sub1 1.0.0 // 安装了子依赖@ohos/lib2_sub1,@ohos/lib2_sub2已被排除
+```json5
+entry 1.0.0 <project>\entry
+├─┬ @ohos/lib1 1.0.0
+│ └── @ohos/lib1_sub2 1.0.0 // 安装了子依赖@ohos/lib1_sub2,@ohos/lib1_sub1已被排除
+├─┬ @ohos/lib2 <project>\lib2.har
+  └── @ohos/lib2_sub1 1.0.0 // 安装了子依赖@ohos/lib2_sub1,@ohos/lib2_sub2已被排除
 ```
 
 ## parameterFile
@@ -373,7 +375,7 @@ OHPM客户端在1.6.0版本开始支持参数化配置。可以在项目级别�
 * 参数化key支持的字符与包名一致，请见[模块级oh-package.json5字段说明](ide-oh-package-json5.md#zh-cn_topic_0000001792256137_oh-packagejson5-字段说明)中name字段要求，大小写敏感；
 * 参数化value类型为是"string"或"object"。 value类型为string时，可以是符合[semver规范](https://semver.org/)的版本号，也可以使用本地相对路径（相对于parameterFile文件所在目录）或本地绝对路径。
 
-说明
+**说明** 
 
 1. parameterFile字段必须配置在项目级别的oh-package.json5中，否则将不会生效或产生报错提示。
 2. parameterFile配置文件位置可以通过命令行选项'-pf <string>' 或 '--parameterFile <string>'指定，但必须先在项目级别oh-package.json5中配置parameterFile字段，否则会报错提示；支持该选项的命令有：install、list、version。
@@ -385,57 +387,57 @@ OHPM客户端在1.6.0版本开始支持参数化配置。可以在项目级别�
 
 工程级oh-package.json5示例：
 
-```
-1. {
-2. "modelVersion": "6.1.0",
-3. "description": "Please describe the project information.",
-4. ...
-5. "parameterFile": './parameterFile/parameterFile.json5', // 开启参数化并指定参数化配置文件路径
-6. "overrides": {
-7. "libtest1": "@param:dependencies.libtest1", // 所有依赖名称为：libtest1的版本会被替换为：1.0.1
-8. "libnative": "@param:dependencies.libnative" // 所有依赖名称为：libnative的版本会被替换为：libnative源码依赖路径
-9. }
-10. }
+```json5
+{
+  "modelVersion": "6.1.1",
+  "description": "Please describe the project information.",
+   ...
+  "parameterFile": './parameterFile/parameterFile.json5', // 开启参数化并指定参数化配置文件路径
+  "overrides": {
+    "libtest1": "@param:dependencies.libtest1", // 所有依赖名称为：libtest1的版本会被替换为：1.0.1
+    "libnative": "@param:dependencies.libnative" // 所有依赖名称为：libnative的版本会被替换为：libnative源码依赖路径  
+  }
+}
 ```
 
 模块级oh-package.json5示例：
 
-```
-1. {
-2. "name": "parameter-test",
-3. "version": "@param:version", //使用时必须以 '@param:' 开头
-4. "description": "test desc.",
-5. "main": "index.ets",
-6. "author": "test author",
-7. "license": "ISC",
-8. "dependencies": {
-9. "libtest1": "@param:dependencies.libtest1"
-10. },
-11. "devDependencies": {
-12. "libtest2": "@param:devDependencies.libtest2"
-13. },
-14. "dynamicDependencies": {
-15. "libtest3": "@param:dynamicDependencies.libtest3"
-16. }
-17. }
+```json5
+{
+  "name": "parameter-test",
+  "version": "@param:version", //使用时必须以 '@param:' 开头
+  "description": "test desc.",
+  "main": "index.ets",
+  "author": "test author",
+  "license": "ISC",
+  "dependencies": {
+    "libtest1": "@param:dependencies.libtest1"
+  },
+  "devDependencies": {
+    "libtest2": "@param:devDependencies.libtest2"
+  },
+  "dynamicDependencies": {
+    "libtest3": "@param:dynamicDependencies.libtest3"
+  }
+ }
 ```
 
 parameterFile所指向文件的配置示例：
 
-```
-1. {
-2. "version": "1.0.0",
-3. "dependencies": {
-4. "libtest1": "1.0.1",
-5. "libnative": "../libnative" // 相对于parameterFile配置文件所在目录
-6. },
-7. "devDependencies": {
-8. "libtest2": "*"
-9. },
-10. "dynamicDependencies": {
-11. "libtest3": "latest"
-12. }
-13. }
+```json5
+{
+  "version": "1.0.0",
+  "dependencies": {
+    "libtest1": "1.0.1",
+    "libnative": "../libnative" // 相对于parameterFile配置文件所在目录
+  },
+  "devDependencies": {
+    "libtest2": "*"
+  },
+  "dynamicDependencies": {
+    "libtest3": "latest"
+  }
+}
 ```
 
 ### 一仓多包示例
@@ -446,45 +448,102 @@ parameterFile所指向文件的配置示例：
 
 如下工程结构所示，所有模块的oh-package.json5中version字段均配置参数化版本（'@param:'开头部分），不同模块的版本均不一致，但都由参数化配置文件'parameter.json'全局统一管理；发包前，只需修改'parameter.json'文件中相关模块的版本，再构建所有模块即可；打包构建时，所有模块的参数化版本均会被替换为'parameter.json'中配置的具体版本（如：@param:har1会被替换为：1.0.0）。
 
-```
-1. AppTest
-2. └── har1(模块)
-3. └── oh-package.json5
-4. └── "version": "@param:har1"
-5. └── har2(模块)
-6. └── oh-package.json5
-7. └── "version": "@param:har2"
-8. ... harn(模块)
-9. └── oh-package.json5
-10. └── "version": "@param:harn"
-11. └── oh-package.json5
-12. └── "parameterFile": "./parameter.json"
-13. └── parameter.json(参数化配置文件)
-14. └── "har1": "1.0.0"
-15. └── "har2": "2.0.0"
-16. ...
-17. └── "harn": "n.0.0"
+```screen
+AppTest
+└── har1(模块)
+    └── oh-package.json5
+        └── "version": "@param:har1"
+└── har2(模块)
+    └── oh-package.json5
+        └── "version": "@param:har2"
+... harn(模块)
+    └── oh-package.json5
+        └── "version": "@param:harn"
+└── oh-package.json5 
+    └── "parameterFile": "./parameter.json"    
+└── parameter.json(参数化配置文件)
+    └── "har1": "1.0.0"
+    └── "har2": "2.0.0"
+    ...
+    └── "harn": "n.0.0"
 ```
 
 **当所有模块版本一致**：
 
 如下工程结构所示，所有模块均使用同一个参数化版本（@param:module\_version），发包前，只需修改'parameter.json'中module\_version的值，再构建所有模块即可；打包构建时，所有模块的参数化版本均会被替换为'parameter.json'中module\_version对应的版本（如：@param:module\_version会被替换为：1.0.0）。
 
+```screen
+AppTest
+└── har1(模块)
+    └── oh-package.json5
+        └── "version": "@param:module_version"
+└── har2(模块)
+    └── oh-package.json5
+        └── "version": "@param:module_version"
+... harn(模块)
+    └── oh-package.json5
+        └── "version": "@param:module_version"
+└── oh-package.json5 
+    └── "parameterFile": "./parameter.json" 
+└── parameter.json(参数化配置文件)
+    └── "module_version": "1.0.0"
 ```
-1. AppTest
-2. └── har1(模块)
-3. └── oh-package.json5
-4. └── "version": "@param:module_version"
-5. └── har2(模块)
-6. └── oh-package.json5
-7. └── "version": "@param:module_version"
-8. ... harn(模块)
-9. └── oh-package.json5
-10. └── "version": "@param:module_version"
-11. └── oh-package.json5
-12. └── "parameterFile": "./parameter.json"
-13. └── parameter.json(参数化配置文件)
-14. └── "module_version": "1.0.0"
+
+## properties
+
+从ohpm 6.1.2.268版本开始，在工程级的oh-package.json5中新增properties参数，该配置参数用于多环境下的依赖管理。
+
+开发者通过parameterFile完成依赖配置后，再在parameterFile字段中使用properties参数，实现工程多环境下的依赖管理。
+
+**参数引用方式**
+
+支持如下三种参数引用方式：
+
+* 使用${key}方式获取参数值。
+* 使用json属性访问方式获取参数值。
+* 使用字符串拼接的方式获取参数值。
+
+**基础配置示例**
+
+```json5
+// 使用${key}方式获取参数值
+{
+  "modelVersion": "6.1.1",
+  "description": "Please describe the project information.",
+   ...
+  "parameterFile": '${ohpm_environment}', 
+  "properties": {
+    "ohpm_environment":"./parameterFile/debug.json5",
+  }
+}
+
+// 使用json属性访问方式获取参数值
+{
+  "modelVersion": "6.1.1",
+  "description": "Please describe the project information.",
+   ...
+  "parameterFile": '${versions.release}',
+  "properties": {
+    "ohpm_environment":"./parameterFile/debug.json5",
+    "versions": {
+      "release": "./parameterFile/release.json5",
+    }
+  }
+}
+
+// 使用字符串拼接的方式获取参数值
+{
+  "modelVersion": "6.1.1",
+  "description": "Please describe the project information.",
+   ...
+  "parameterFile": './parameterFile/${versions.debug}.json5',
+  "properties": {
+    "ohpm_environment":"",
+    "versions": {
+      "debug": "debug-1.0.0",
+    }
+  }
+}
 ```
 
 ## overrideDependencyMap
@@ -501,12 +560,12 @@ OHPM客户端在1.7.0版本开始支持使用overrideDependencyMap机制重写�
 
 * 配置示例
 
-  ```
-  1. {
-  2. "overrideDependencyMap": {
-  3. "@group/libname": "dep-test.json5"
-  4. }
-  5. }
+  ```screen
+  {
+    "overrideDependencyMap": {
+    "@group/libname": "dep-test.json5" 
+    }
+  }
   ```
 
 * 配置约束
@@ -519,66 +578,66 @@ OHPM客户端在1.7.0版本开始支持使用overrideDependencyMap机制重写�
 
 * 模块entry下oh-package.json5配置了一个远程包依赖libbase，如下所示：
 
-  ```
-  1. {
-  2. "name": "entry",
-  3. "version": "1.0.0",
-  4. "main": "Index.ets",
-  5. "license": "Apache-2.0",
-  6. "dependencies": {
-  7. "libbase": "1.0.0"
-  8. }
-  9. }
+  ```screen
+  {
+    "name": "entry",
+    "version": "1.0.0",
+    "main": "Index.ets",
+    "license": "Apache-2.0",
+    "dependencies": {
+      "libbase": "1.0.0"
+    }
+  }
   ```
 * 模块级oh-package.json5文件内容，依赖项libbase中存在一个子依赖lib1，如下所示：
 
-  ```
-  1. {
-  2. "name": "libbase",
-  3. "version": "1.0.0",
-  4. "description": "Please describe the basic information.",
-  5. "main": "Index.ets",
-  6. "author": "",
-  7. "license": "Apache-2.0",
-  8. "dependencies": {
-  9. "lib1": "1.0.0" //子依赖
-  10. }
-  11. }
+  ```screen
+  {
+    "name": "libbase",
+    "version": "1.0.0",
+    "description": "Please describe the basic information.",
+    "main": "Index.ets",
+    "author": "",
+    "license": "Apache-2.0",
+    "dependencies": {
+      "lib1": "1.0.0" //子依赖
+    }
+  }
   ```
 * 项目根目录oh-package.json5内容，如下所示：
 
-  ```
-  1. {
-  2. "name": "overridedependencymaptest",
-  3. "version": "1.0.0",
-  4. "description": "Please describe the basic information.",
-  5. "overrideDependencyMap": {
-  6. "libbase": "D:\\overrideDependencyMapTest\\dep-debug.json5" //overrideDependencyMap依赖替换配置，可配置多条
-  7. }
-  8. }
+  ```screen
+  {
+    "name": "overridedependencymaptest",
+    "version": "1.0.0",
+    "description": "Please describe the basic information.",
+    "overrideDependencyMap": {      
+      "libbase": "D:\\overrideDependencyMapTest\\dep-debug.json5" //overrideDependencyMap依赖替换配置，可配置多条
+    }
+  }
   ```
 * 配置文件dep-debug.json5中依赖配置如下所示：
 
-  ```
-  1. {
-  2. "dependencies": { // 详细依赖配置
-  3. "lib1": "2.0.0",
-  4. "log4js": "2.0.0"
-  5. },
-  6. "devDependencies": {
-  7. },
-  8. "dynamicDependencies": {
-  9. }
-  10. }
+  ```screen
+  {
+    "dependencies": { // 详细依赖配置
+      "lib1": "2.0.0",
+      "log4js": "2.0.0"
+    },
+    "devDependencies": {
+    },
+    "dynamicDependencies": {
+    }
+  }
   ```
 * entry模块下执行：ohpm i, 由于entry下依赖了libbase，而libbase在overrideDependencyMap有配置，此时会使用dep-debug.json5文件内的依赖覆盖libbase的dependencies、devDependencies、dynamicDependencies节点，最终，entry模块会安装libbase、lib1、log4js（无overrideDependencyMap配置覆盖时，只会安装：libbase、lib1）。
 * entry list结果如下：
 
-  ```
-  1. entry 1.0.0 D:\overrideDependencyMapTest\entry
-  2. └── libbase 1.0.0
-  3. └── lib1 2.0.0
-  4. └── log4js 2.0.0
+  ```screen
+  entry 1.0.0 D:\overrideDependencyMapTest\entry
+  └── libbase 1.0.0
+      └── lib1 2.0.0
+      └── log4js 2.0.0
   ```
 
 ## oh-exports
@@ -587,17 +646,17 @@ OHPM客户端在1.7.0版本开始支持使用overrideDependencyMap机制重写�
 
 * 配置示例
 
-  ```
-  1. {
-  2. "oh-exports": [
-  3. 'src',
-  4. './src',
-  5. 'src/main',
-  6. 'src/main/ets/components/MainPage1.ets',
-  7. 'src/main/ets/components/MainPage2.ts'
-  8. 'src/main/ets/components/MainPage2.js'
-  9. ]
-  10. }
+  ```screen
+  {
+    "oh-exports": [
+      'src',
+      './src',
+      'src/main',
+      'src/main/ets/components/MainPage1.ets',
+      'src/main/ets/components/MainPage2.ts'
+      'src/main/ets/components/MainPage2.js'
+    ]
+  }
   ```
 * 配置约束
   + oh-exports为选填字段，字段值为字符串数组。
@@ -626,55 +685,55 @@ OHPM客户端在1.7.0版本开始支持使用overrideDependencyMap机制重写�
 
 * 在项目级或用户级.ohpmrc中增加2条配置，分别对应开发、Release环境，如下所示：
 
-  ```
-  1. registry=http://localhost:8088/repos/ohpm
-  2. log_level=debug
-  3. strict_ssl=false
-  4. projectPackageJson:D:\overrideDependencyMapTest=oh-pkg-debug.json5 //debug环境配置
-  5. projectPackageJson:D:\overrideDependencyMapTest=oh-pkg-release.json5 //release环境配置，.ohpmrc中存在同一工程的多条配置时默认按配置先后顺序取最后一条，即当前配置生效
+  ```screen
+  registry=http://localhost:8088/repos/ohpm
+  log_level=debug
+  strict_ssl=false
+  projectPackageJson:D:\overrideDependencyMapTest=oh-pkg-debug.json5 //debug环境配置
+  projectPackageJson:D:\overrideDependencyMapTest=oh-pkg-release.json5 //release环境配置，.ohpmrc中存在同一工程的多条配置时默认按配置先后顺序取最后一条，即当前配置生效
   ```
 
 * 文件oh-pkg-release.json5配置，新增了一条依赖libbase的配置，如下所示：
 
-  ```
-  1. {
-  2. "overrideDependencyMap": {
-  3. "libbase": "D:\\overrideDependencyMapTest\\dep-release.json5"
-  4. }
-  5. }
+  ```screen
+  {
+    "overrideDependencyMap": {
+      "libbase": "D:\\overrideDependencyMapTest\\dep-release.json5"
+    }
+  }
   ```
 * Release环境下libbase的依赖替换文件dep-release.json5中依赖配置如下所示：
 
-  ```
-  1. {
-  2. "dependencies": {
-  3. "lib1": "1.0.0",
-  4. "lib2": "2.0.0",
-  5. "lib3": "3.0.0"
-  6. }
-  7. }
+  ```screen
+  {
+    "dependencies": {
+      "lib1": "1.0.0",
+      "lib2": "2.0.0",
+      "lib3": "3.0.0"
+    }
+  }
   ```
 * 基于 [overrideDependencyMap场景示例](ide-oh-package-json5.md#section106151513236) 工程，在entry模块下执行：ohpm i，此时，在ohpm运行时中会将项目级oh-package.json5中的配置会变更为：
 
-  ```
-  1. {
-  2. "name": "overridedependencymaptest",
-  3. "version": "1.0.0",
-  4. "description": "Please describe the basic information.",
-  5. "overrideDependencyMap": {
-  6. "libbase": "D:\\overrideDependencyMapTest\\dep-release.json5"
-  7. }
-  8. }
+  ```screen
+  {
+    "name": "overridedependencymaptest",
+    "version": "1.0.0",
+    "description": "Please describe the basic information.",
+    "overrideDependencyMap": {
+      "libbase": "D:\\overrideDependencyMapTest\\dep-release.json5"
+    }
+  }
   ```
 
 * 最终安装结果如下：
 
-  ```
-  1. entry 1.0.0 D:\overrideDependencyMapTest\entry
-  2. └── libbase 1.0.0
-  3. └── lib1 1.0.0
-  4. └── lib2 2.0.0
-  5. └── lib3 3.0.0
+  ```screen
+  entry 1.0.0 D:\overrideDependencyMapTest\entry
+  └── libbase 1.0.0
+      └── lib1 1.0.0
+      └── lib2 2.0.0
+      └── lib3 3.0.0
   ```
 
 ## oh-package-lock.json5

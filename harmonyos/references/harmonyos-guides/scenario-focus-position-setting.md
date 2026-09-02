@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-focus-position-setting
-title: 重新设置新焦点位置的场景
-breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 重新设置新焦点位置的场景
+title: 重新设置新焦点位置
+breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 重新设置新焦点位置
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:09+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:40845434aacbf749dd1ac8447a2cf3a6c1bacf2e8e84223ccad6587d2ae05865
+scraped_at: 2026-09-02T14:49:44+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:97260811ad9412e443189bf078e0d588fd959bbdae7bcdfb14aac85ee18e7386
 ---
 
 ## 设计场景
@@ -14,7 +14,7 @@ content_hash: sha256:40845434aacbf749dd1ac8447a2cf3a6c1bacf2e8e84223ccad6587d2ae
 
 主动聚焦接口相关参数说明
 
-**表1** **EventInfo 说明**
+**表1** **[EventInfo](../harmonyos-references/js-apis-accessibility.md#eventinfo) 说明**
 
 | 属性 | 类型 | 说明 | 例 |
 | --- | --- | --- | --- |
@@ -23,55 +23,56 @@ content_hash: sha256:40845434aacbf749dd1ac8447a2cf3a6c1bacf2e8e84223ccad6587d2ae
 | triggerAction | Action | 触发事件的Action | click或其他都不会有任何影响 |
 | customId | string | 组件id | abc345 |
 
-## 开发实例
+## 开发流程
 
-```
-1. import accessibility from '@ohos.accessibility';
+```typescript
+import { accessibility } from '@kit.AccessibilityKit'
 
-3. @Entry
-4. @Component
-5. export struct Rule_2_1_12 {
-6. title: string = 'Rule 2.1.12';
-7. eventInfo: accessibility.EventInfo = ({
-8. type: 'requestFocusForAccessibility',
-9. bundleName: 'com.example.pagesrouter',
-10. triggerAction: 'common',
-11. customId: 'button1'
-12. });
+@Entry
+@Component
+export struct Rule_2_1_12 {
+  title: string = 'Rule 2.1.12';
+  eventInfo: accessibility.EventInfo = ({
+    type: 'requestFocusForAccessibility',
+    bundleName: 'com.samples.uiextensionandaccessibility',
+    triggerAction: 'common',
+    customId: 'button1'
+  });
 
-14. build() {
-15. NavDestination() {
-16. Column() {
-17. Blank()
-18. Button('button1')
-19. .accessibilityText('点击聚焦到button2')
-20. .align(Alignment.Center)
-21. .fontSize(20)
-22. .id('button1')
-23. .onClick(() => {
-24. this.eventInfo.customId = 'button2';
-25. accessibility.sendAccessibilityEvent(this.eventInfo).then(() => {
-26. console.info(`Succeeded in send event, eventInfo is ${JSON.stringify(this.eventInfo)}`);
-27. });
-28. })
-29. Blank().height('10px')
-30. Button('button2')
-31. .accessibilityText('点击聚焦到button1')
-32. .align(Alignment.Center)
-33. .fontSize(20)
-34. .id('button2')
-35. .onClick(() => {
-36. this.eventInfo.customId = 'button1';
-37. accessibility.sendAccessibilityEvent(this.eventInfo).then(() => {
-38. console.info(`Succeeded in send event, eventInfo is ${JSON.stringify(this.eventInfo)}`);
-39. });
-40. })
-41. Blank()
-42. }
-43. .width('100%')
-44. .height('100%')
-45. }
-46. .title(this.title)
-47. }
-48. }
+  build() {
+    NavDestination() {
+      Column() {
+        Blank()
+        Button('button1')
+          .accessibilityText('点击聚焦到button2')
+          .align(Alignment.Center)
+          .fontSize(20)
+          .id('button1')
+          .onClick(() => {
+            this.eventInfo.customId = 'button2';
+            accessibility.sendAccessibilityEvent(this.eventInfo).then(() => {
+              console.info(`Succeeded in send event, eventInfo is: ${JSON.stringify(this.eventInfo)}`);
+            });
+          })
+        Blank()
+          .height(10)
+        Button('button2')
+          .accessibilityText('点击聚焦到button1')
+          .align(Alignment.Center)
+          .fontSize(20)
+          .id('button2')
+          .onClick(() => {
+            this.eventInfo.customId = 'button1';
+            accessibility.sendAccessibilityEvent(this.eventInfo).then(() => {
+              console.info(`Succeeded in send event, eventInfo is: ${JSON.stringify(this.eventInfo)}`);
+            });
+          })
+        Blank()
+      }
+      .width('100%')
+      .height('100%')
+    }
+    .title(this.title)
+  }
+}
 ```

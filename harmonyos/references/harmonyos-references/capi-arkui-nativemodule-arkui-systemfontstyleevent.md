@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_SystemFontStyleEvent
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_SystemFontStyleEvent
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:30+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:80c7d353d44b1cc27b946e702998885f47e04e096f75475b42c686de63431d90
+scraped_at: 2026-09-02T14:51:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0c62d1d1bba8426df4183adc030c62224381e53819f47372bfdb9f8523bda635
 ---
 
-```
-1. typedef struct ArkUI_SystemFontStyleEvent ArkUI_SystemFontStyleEvent
+```c
+typedef struct ArkUI_SystemFontStyleEvent ArkUI_SystemFontStyleEvent
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-系统字体变更事件定义。
+系统字体样式变更事件定义，用于在系统字体大小或字体粗细发生变化时，向已注册的系统字体样式变更回调传递事件信息。
 
 **起始版本：** 12
 

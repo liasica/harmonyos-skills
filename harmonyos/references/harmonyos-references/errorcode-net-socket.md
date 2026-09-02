@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: Socket错误码
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 错误码 > Socket错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:43+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c5764f512cae5566e7c4f45bd7f25a859a2bc9a03636af7cc12edc6ea3800d6c
+scraped_at: 2026-09-02T15:01:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ac6e566d48f9d3a8c38b2594445c3e20d304ce9509e86b158080b8b4b4bf2c56
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码](errorcode-universal.md)说明文档。
 
-socket错误码映射关系：2301000 + [内核错误码](errorcode-kernel.md)。
+Socket错误码映射关系：2301000 + [内核错误码](errorcode-kernel.md)。
 
-socket server错误码映射关系：2303100 + [内核错误码](errorcode-kernel.md)。
+Socket server错误码映射关系：2303100 + [内核错误码](errorcode-kernel.md)。
 
 ## 2301001 操作不允许
 
@@ -94,8 +94,6 @@ TCP/UDP Socket其余错误码映射形式为：2301000 + Linux系统内核错误
 
 ## 2300002 系统内部错误
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 System internal error.
@@ -118,8 +116,6 @@ System internal error.
 
 ## 2301206 SOCKS5连接代理服务器失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Socks5 failed to connect to the proxy server.
@@ -137,8 +133,6 @@ SOCKS5客户端连接代理服务器失败。
 排查代理服务器地址是否正确。
 
 ## 2301207 SOCKS5认证用户名或密码无效
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -158,8 +152,6 @@ SOCKS5使用用户名密码认证方式时，用户名或者密码无效。
 
 ## 2301208 SOCKS5连接远程服务器失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Socks5 failed to connect to the remote server.
@@ -177,8 +169,6 @@ SOCKS5代理连接远程服务器失败。
 排查远程服务器网络状况。
 
 ## 2301209 SOCKS5协商认证方式失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -198,8 +188,6 @@ SOCKS5协商认证方式失败。
 
 ## 2301210 SOCKS5发送消息失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Socks5 failed to send the message.
@@ -217,8 +205,6 @@ SOCKS5因系统调用错误，发送消息失败。
 尝试新建socket，再次发起连接。
 
 ## 2301211 SOCKS5接收消息失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -238,8 +224,6 @@ SOCKS5因系统调用错误，接收消息失败。
 
 ## 2301212 SOCKS5消息序列化失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Socks5 serialization error.
@@ -257,8 +241,6 @@ SOCKS5消息序列化失败。
 排查用户名密码长度是否过长，代理服务器、远端服务器的地址和协议类型是否匹配。
 
 ## 2301213 SOCKS5消息反序列化失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -278,8 +260,6 @@ SOCKS5消息反序列化失败。
 
 ## 2303104 中断系统调用
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Interrupted system call.
@@ -298,8 +278,6 @@ Interrupted system call.
 
 ## 2303109 错误文件编号
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Bad file number.
@@ -316,9 +294,50 @@ socket fd可能被关闭了，所以发生参数无效的错误。
 
 检查socket是否被意外关闭。
 
-## 2303111 资源暂时不可用，请重试
+## 2301009 错误文件描述符
 
-PhonePC/2in1TabletTVWearable
+**错误信息**
+
+Bad file descriptor.
+
+**错误描述**
+
+文件描述符无效或已关闭。
+
+**可能原因**
+
+1. Socket已被关闭或销毁。
+2. Socket未正确创建。
+3. 在已关闭的Socket上执行操作。
+4. Socket fd被意外关闭，日志提示poll to send failed, socket is .\*, errno is 9或fcntl F\_GETFL error, errno is .\*，其中 .\* 为通配符。
+
+**处理步骤**
+
+1. 检查Socket是否被意外关闭。
+2. 确保在调用其他方法前Socket已正确创建并处于有效状态。
+3. 若Socket已关闭，请重新创建Socket实例。
+
+## 2301013 权限不足
+
+**错误信息**
+
+Insufficient permissions.
+
+**错误描述**
+
+权限不足，操作被拒绝。
+
+**可能原因**
+
+1. 应用缺少必要的网络权限配置（如ohos.permission.INTERNET）。
+2. 系统权限限制，如访问特定端口需要特殊权限。
+
+**处理步骤**
+
+1. 检查module.json5中是否配置了必要的网络权限（如ohos.permission.INTERNET）。
+2. 确认操作是否符合权限要求。可通过日志关键词"Permission denied"定位该错误。
+
+## 2303111 资源暂时不可用，请重试
 
 **错误信息**
 
@@ -338,8 +357,6 @@ Resource temporarily unavailable. Try again.
 
 ## 2303188 非套接字的套接字操作
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Not a socket.
@@ -357,8 +374,6 @@ Not a socket.
 检查代码描述符的获取是否正确。
 
 ## 2303191 socket协议类型错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -378,8 +393,6 @@ Incorrect socket protocol type.
 
 ## 2303198 网络地址已被使用
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Address already in use.
@@ -397,8 +410,6 @@ Address already in use.
 尝试其他地址。
 
 ## 2303199 不能分配请求的地址
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -436,8 +447,6 @@ Network is down.
 
 ## 2303210 连接超时
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Connection timed out.
@@ -456,27 +465,28 @@ Connection timed out.
 
 ## 2303501 SSL为空
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 SSL is null.
 
 **错误描述**
 
-参数错误。
+SSL对象为空。
 
 **可能原因**
 
-当[Tlssocket.connect](js-apis-socket.md#connect9)未调用或者[Tlssocket.connect](js-apis-socket.md#connect9)执行未成功时发生该错误。
+1. [TLSSocket.connect](js-apis-socket.md#connect9)方法未调用。
+2. [TLSSocket.connect](js-apis-socket.md#connect9)方法执行失败。
+3. SSL连接未成功建立。
+4. TLSSocket未正确绑定（未调用bind方法），日志提示"tlsSocket is null"。
 
 **处理步骤**
 
-尝试重新执行一遍流程。
+1. 确保在调用其他方法前先成功调用[TLSSocket.connect](js-apis-socket.md#connect9)方法。
+2. 检查connect方法的执行结果，确认连接已成功建立。
+3. 若connect失败，请排查失败原因后重新尝试连接。
 
 ## 2303502 TLS读取错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -484,7 +494,7 @@ An error occurred when reading data on the TLS socket.
 
 **错误描述**
 
-等待套接字可读。
+在TLS套接字上读取数据时发生错误。
 
 **可能原因**
 
@@ -496,15 +506,13 @@ An error occurred when reading data on the TLS socket.
 
 ## 2303503 TLS写入错误
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 An error occurred when writing data on the TLS socket.
 
 **错误描述**
 
-等待套接字可写。
+在TLS套接字上写入数据时发生错误。
 
 **可能原因**
 
@@ -515,8 +523,6 @@ An error occurred when writing data on the TLS socket.
 需检查服务器状态并进行修复。
 
 ## 2303504 查找x509时出错
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -536,27 +542,28 @@ An error occurred when verifying the x509 certificate.
 
 ## 2303505 TLS系统调用错误
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 An error occurred in the TLS system call.
 
 **错误描述**
 
-发生了一些不可恢复的致命I/O错误。
+TLS系统调用发生不可恢复的致命I/O错误。
 
 **可能原因**
 
-网络问题，导致通信失败。
+1. 网络问题导致通信失败。
+2. 底层Socket异常。
+3. TLS握手过程中发生错误。
+4. Socket在TLS操作过程中被关闭，日志提示poll to recv failed, socket is .\*, errno is .\*或recv fail, socket:.\*, errno:.\*，其中 .\* 为通配符。常见errno值参考：errno=9（EBADF，无效文件描述符）、errno=104（ECONNRESET，连接被重置）、errno=110（ETIMEDOUT，连接超时）、errno=111（ECONNREFUSED，连接被拒绝）。
 
 **处理步骤**
 
-请参阅Linux系统内核错误码errno以了解详细信息。
+1. 请参阅日志中的内核通用错误码errno以了解详细信息。
+2. 检查网络连接状态。
+3. 尝试重新建立TLS连接。
 
-## 2303506 清除TLS连接出错
-
-PhonePC/2in1TabletTVWearable
+## 2303506 关闭TLS连接失败
 
 **错误信息**
 
@@ -564,7 +571,7 @@ Failed to close the TLS connection.
 
 **错误描述**
 
-TLS/SSL连接已关闭。
+关闭TLS连接失败。
 
 **可能原因**
 

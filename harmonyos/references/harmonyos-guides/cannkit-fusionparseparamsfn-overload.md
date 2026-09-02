@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-fusio
 title: FusionParseParamsFn（Overload）
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OpRegistrationData > FusionParseParamsFn（Overload）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:42:20+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:5cca3f555390121774736c0c848fa059a998430056ca6e28ce0573069095140f
+content_hash: sha256:7be6f35f6f6585e15cab16778a1c28e0962b49b6e395f9912c715186d541b19c
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:5cca3f555390121774736c0c848fa059a998430056ca6e28ce057306909
 
 ## 函数原型
 
-```
-1. OpRegistrationData &FusionParseParamsFn(const FusionParseParamByOpFunc &fusion_parse_param_fn)
+```cpp
+OpRegistrationData &FusionParseParamsFn(const FusionParseParamByOpFunc &fusion_parse_param_fn)
 ```
 
 ## 参数说明
@@ -28,8 +28,8 @@ content_hash: sha256:5cca3f555390121774736c0c848fa059a998430056ca6e28ce057306909
 
 开发者自定义并实现FusionParseParamByOpFunc类函数，完成原始模型中属性到适配AI处理器的模型中的属性映射，将结果填入Operator类中。
 
-```
-1. Status FusionParseParamByOpFunc(const std::vector<ge::Operator> &op_src,  ge::Operator &op_dest);
+```cpp
+Status FusionParseParamByOpFunc(const std::vector<ge::Operator> &op_src,  ge::Operator &op_dest);
 ```
 
 **表1** 参数说明
@@ -41,10 +41,10 @@ content_hash: sha256:5cca3f555390121774736c0c848fa059a998430056ca6e28ce057306909
 
 ## 调用示例
 
-```
-1. REGISTER_CUSTOM_OP(XXXXXX)
-2. .FrameworkType(TENSORFLOW)
-3. .FusionParseParamsFn(FusionParseParamsFn)
-4. .OriginOpType(XXXXX)
-5. .ImplyType(XXXXX);
+```cpp
+REGISTER_CUSTOM_OP(XXXXXX)
+.FrameworkType(TENSORFLOW)
+.FusionParseParamsFn(FusionParseParamsFn)
+.OriginOpType(XXXXX)
+.ImplyType(XXXXX);
 ```

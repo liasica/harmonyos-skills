@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: image_mdk.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > image_mdk.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:19+08:00
-doc_updated_at: 2026-03-19
-content_hash: sha256:a9f81ebd45ae552d740ec583d34170f7b848988bce9b96a2a9aff7861f69b6cc
+scraped_at: 2026-09-02T15:02:31+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9dec5ab4cf136f44555af88d0cc8a83ac7dc27e1f0a451b5eb59ee7fc7c69fb5
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明访问图像矩形、大小、格式和组件数据的函数。
 
@@ -26,21 +24,15 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [OhosImageRect](capi-image-ohosimagerect.md) | - | 定义图像矩形信息。 |
 | [ImageNative\_](capi-image-imagenative-.md) | ImageNative | 为图像接口定义native层图像对象。 |
-| [OhosImageComponent](capi-image-ohosimagecomponent.md) | - | 定义图像组成信息。 |
+| [OhosImageComponent](capi-image-ohosimagecomponent.md) | - | 定义图像组件信息。 |
 
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -48,8 +40,6 @@ PhonePC/2in1TabletTVWearable
 | [图像颜色通道类型](capi-image-mdk-h.md#图像颜色通道类型) | 图像颜色通道类型枚举值。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -62,14 +52,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### 图像格式
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum anonymous enum
+```c
+enum anonymous enum
 ```
 
 **描述**
@@ -85,10 +71,8 @@ PhonePC/2in1TabletTVWearable
 
 ### 图像颜色通道类型
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum anonymous enum
+```c
+enum anonymous enum
 ```
 
 **描述**
@@ -106,14 +90,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Image\_InitImageNative()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. ImageNative* OH_Image_InitImageNative(napi_env env, napi_value source)
+```c
+ImageNative* OH_Image_InitImageNative(napi_env env, napi_value source)
 ```
 
 **描述**
@@ -141,10 +121,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Image\_ClipRect()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_Image_ClipRect(const ImageNative* native, struct OhosImageRect* rect)
+```c
+int32_t OH_Image_ClipRect(const ImageNative* native, struct OhosImageRect* rect)
 ```
 
 **描述**
@@ -168,10 +146,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Image\_Size()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_Image_Size(const ImageNative* native, struct OhosImageSize* size)
+```c
+int32_t OH_Image_Size(const ImageNative* native, struct OhosImageSize* size)
 ```
 
 **描述**
@@ -199,10 +175,8 @@ ImageNative对象所存储的数据是预览流还是拍照流，取决于应用
 
 ### OH\_Image\_Format()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_Image_Format(const ImageNative* native, int32_t* format)
+```c
+int32_t OH_Image_Format(const ImageNative* native, int32_t* format)
 ```
 
 **描述**
@@ -226,10 +200,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Image\_GetComponent()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_Image_GetComponent(const ImageNative* native, int32_t componentType, struct OhosImageComponent* componentNative)
+```c
+int32_t OH_Image_GetComponent(const ImageNative* native, int32_t componentType, struct OhosImageComponent* componentNative)
 ```
 
 **描述**
@@ -254,10 +226,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Image\_Release()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_Image_Release(ImageNative* native)
+```c
+int32_t OH_Image_Release(ImageNative* native)
 ```
 
 **描述**

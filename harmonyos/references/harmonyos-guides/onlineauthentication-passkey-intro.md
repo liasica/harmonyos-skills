@@ -1,14 +1,16 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/onlineauthentication-passkey-intro
 title: 概述
-breadcrumb: 指南 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > 通行密钥 > 概述
+breadcrumb: 指南 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > 免密认证 > 通行密钥 > 概述
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:31:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:742b85c6ed1f1cd928f2eedd0cb34549c1c7b9947b55ce42c4ec422f71d873dc
+scraped_at: 2026-09-02T14:59:31+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c7431ae7a4be96c876f9934a7e9d54ab78318b2c8dd83a761320bb4d89491cc9
 ---
 
-从HarmonyOS 6.0.0(20)开始，在线认证服务提供了通行密钥特性。通行密钥主要提供了以下能力：
+通行密钥（Passkey）是基于[FIDO2标准协议](https://fidoalliance.org/passkeys/)（见[网站链接免责声明](onlineauthentication-website-disclaimer.md)）实现的一种简单又安全的登录方式。借用通行密钥，用户可使用指纹、人脸或手机解锁PIN码登录应用或网页。相较于传统密码，通行密钥具有更便捷、安全的优势。更多关于FIDO的背景知识，可以参见[FIDO规范介绍](https://fidoalliance.org/specifications-overview/)（见[网站链接免责声明](onlineauthentication-website-disclaimer.md)）。
+
+从6.0.0(20)版本开始，Online Authentication Kit（在线认证服务）新增通行密钥特性。通行密钥主要提供了以下能力：
 
 * 通行密钥注册：支持使用用户身份认证特征（如人脸、指纹、PIN码）作为平台认证器，在本设备上创建应用或网页的通行密钥。
 * 本地免密认证：支持使用用户身份认证特征（如人脸、指纹、PIN码）作为平台认证器，使用通行密钥在本设备上进行应用或网页的免密认证。
@@ -22,27 +24,23 @@ content_hash: sha256:742b85c6ed1f1cd928f2eedd0cb34549c1c7b9947b55ce42c4ec422f71d
 
 需要提供方便、快速、安全的本地应用或网页登录方式时，可以使用通行密钥服务的通行密钥注册能力为用户创建通行密钥。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/TDEe8d0ZR-arougJRWsyAQ/zh-cn_image_0000002589324775.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/bfCJRfK9SYKCxaPeggoKWg/zh-cn_image_0000002736433467.png)
 
 ### 使用通行密钥登录本设备的应用或网页账号
 
 用户在登录应用或者网页时，需要验证用户的身份，可以使用通行密钥服务的本地免密认证能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/rwjByqiPQAqEzsytHzE15w/zh-cn_image_0000002589244713.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/Mihp7Ji0RrmSPO6o09NirQ/zh-cn_image_0000002706834312.png)
 
 ### 使用跨设备扫码登录其他设备的应用或网页账号
 
 用户在其他设备上登录应用或网页时，需要验证用户的身份，可以使用通行密钥服务的跨设备扫码认证能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/q30iz3NITPGAJ43WkjNo8A/zh-cn_image_0000002558764908.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/qBKBpIeLTliSYTuALln3Rw/zh-cn_image_0000002736313421.png)
 
-说明
+**说明** 
 
 以上使用场景均需要开发者部署符合FIDO2标准协议的FIDO服务器。
-
-## 基本概念
-
-通行密钥（Passkey）是基于[FIDO2标准协议](https://fidoalliance.org/passkeys/)（见[网站链接免责声明](onlineauthentication-website-disclaimer.md)）实现的一种简单又安全的登录方式。借用通行密钥，用户可使用指纹、人脸或手机解锁PIN码登录应用或网页。相较于传统密码，通行密钥具有更便捷、安全的优势。更多关于FIDO的背景知识，可以参见[FIDO规范介绍](https://fidoalliance.org/specifications-overview/)（见[网站链接免责声明](onlineauthentication-website-disclaimer.md)）。
 
 ## 约束与限制
 
@@ -51,21 +49,21 @@ content_hash: sha256:742b85c6ed1f1cd928f2eedd0cb34549c1c7b9947b55ce42c4ec422f71d
 * 开发者的业务需要接入符合FIDO2标准的协议，并部署符合FIDO2标准协议的FIDO服务器。
 * 移动端设备需要支持生物特征（指纹或3D人脸），查询当前移动端设备是否支持ATL4级别的认证可信等级。
 
-  ```
-  1. import { BusinessError } from '@kit.BasicServicesKit';
-  2. import { userAuth } from '@kit.UserAuthenticationKit';
+  ```typescript
+  import { BusinessError } from '@kit.BasicServicesKit';
+  import { userAuth } from '@kit.UserAuthenticationKit';
 
-  4. try {
-  5. // 示例，查询设备人脸识别是否支持ATL4级别的认证可信等级
-  6. userAuth.getAvailableStatus(userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL4);
-  7. console.info('current auth trust level is supported');
-  8. } catch (error) {
-  9. const err: BusinessError = error as BusinessError;
-  10. console.error(`current auth trust level is not supported. Code is ${err?.code}, message is ${err?.message}`);
-  11. }
+  try {
+    // 示例，查询设备人脸识别是否支持ATL4级别的认证可信等级
+    userAuth.getAvailableStatus(userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL4);
+    console.info('current auth trust level is supported');
+  } catch (error) {
+    const err: BusinessError = error as BusinessError;
+    console.error(`current auth trust level is not supported. Code is ${err?.code}, message is ${err?.message}`);
+  }
   ```
 * 通行密钥服务需要联网以及蓝牙能力，以便提供完整的在线身份校验服务。应用在调用本服务API前，需将通行密钥服务联网、使用蓝牙行为向用户明示，并且取得用户同意。
-* 根据[FIDO规范](https://fidoalliance.org/specifications-overview/)（见[网站链接免责声明](onlineauthentication-website-disclaimer.md)），通行密钥服务需要将三方应用中的用户昵称及标识符信息上传至网络中继服务器，用于跨设备扫码认证场景，以便实现两台设备的认证数据通信。应用在调用本服务API前，需将收集的个人数据信息向用户明示，并且取得用户同意。
+* 根据[FIDO规范](https://fidoalliance.org/specifications-overview/)（见[网站链接免责声明](onlineauthentication-website-disclaimer.md)），通行密钥服务需要将应用中的用户昵称及标识符信息上传至网络中继服务器，用于跨设备扫码认证场景，以便实现两台设备的认证数据通信。应用在调用本服务API前，需将收集的个人数据信息向用户明示，并且取得用户同意，详细请参考[个人数据处理说明](onlineauthentication-personal-data-processing-description.md)。
 
 ## 业务流程
 

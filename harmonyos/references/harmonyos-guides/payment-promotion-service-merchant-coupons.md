@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-promo
 title: 商家券场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 运营工具 > 商家券场景
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:35+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f35cff7ac8242988e5f635283b46e03661c35d83bda5803d7245a87041137f90
+scraped_at: 2026-09-02T14:59:59+08:00
+doc_updated_at: 2026-06-03
+content_hash: sha256:fa7b7eb93810b47d457873f82b242a187019788467b5cd720bcf4374cacd8ed7
 ---
 
 ## 场景介绍
 
-商家券是华为支付为商户提供的电子优惠券解决方案，通过该产品实现商家优惠券创建、投放、领取、核销及券查询等管理操作，商家券优惠规则和玩法由商家自定义，商家可将自有营销体系的优惠券同步到华为服务分发平台流量（日日有礼、搜索、品牌专区、支付成功页等）和商家自有流量进行发放和运营。
+商家券是华为支付为商户提供的电子优惠券解决方案，通过该产品实现商家优惠券创建、投放、领取、核销及券查询等管理操作，商家券优惠规则和玩法由商家自定义，商家可将自有营销体系的优惠券同步到华为流量场景（日日有礼、搜索、品牌专区、支付成功页等）和商家自有流量进行发放和运营。
 
 有开发意愿的商户或者服务商可使用API接口完成商家券创建、发放、领取、核销、券查询等全链路操作。
 
@@ -18,7 +18,7 @@ content_hash: sha256:f35cff7ac8242988e5f635283b46e03661c35d83bda5803d7245a870411
 
 用户在华为钱包卡包可见的商家券样式（参考下图，商家自定义）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/YrfUkq-mQ_2z8s9JSF3rYQ/zh-cn_image_0000002589245405.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/7lqMCfGVSg2Aqi3gyci-6w/zh-cn_image_0000002736434271.png)
 
 ## 接入前置条件
 
@@ -74,149 +74,149 @@ content_hash: sha256:f35cff7ac8242988e5f635283b46e03661c35d83bda5803d7245a870411
 
 ## 业务流程
 
-### 华为平台随机Code发放场景
+### 华为随机Code发放场景
 
 如果系统对商家券Code无特殊要求，则使用随机Code模式（HWPAY\_MODE），华为在代发商家券时，随机生成券码给用户发券，发券成功后会回调通知本次发券所使用的券码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/ECWO_t3JT6K8dt3MFcQC4Q/zh-cn_image_0000002558765598.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/BcyAkLrJQuSP29WTjxi9xA/zh-cn_image_0000002706835120.png)
 
 **券批次管理**
 
-1. 商户服务端调Payment Kit服务端[创建商家券批次](../harmonyos-references/ommon-promotion-service-merc-coup-coupbatch-create.md)接口创建批次。
+1. 商户服务端调Payment Kit服务端[创建商家券批次](../harmonyos-references/payment-api-common-promotion-service-merc-coup-coupbatch-create.md)接口创建批次。
 2. 批次创建成功后，Payment Kit服务端返回批次号信息。
-3. 如果商户服务端没有记录批次信息，需要调用[查询商家券批次详情](../harmonyos-references/common-promotion-service-merc-coup-coupbatch-query.md)接口获取批次库存信息，用于构造修改批次预算接口请求体。
+3. 如果商户服务端没有记录批次信息，需要调用[查询商家券批次详情](../harmonyos-references/payment-api-common-promotion-service-merc-coup-coupbatch-query.md)接口获取批次库存信息，用于构造修改批次预算接口请求体。
 4. Payment Kit服务端给商户返回批次详情信息。
-5. 商户服务端调Payment Kit服务端[修改商家券批次预算](../harmonyos-references/mmon-promotion-service-merc-coup-coupbatch-upbudge.md)接口修改批次预算。
+5. 商户服务端调Payment Kit服务端[修改商家券批次预算](../harmonyos-references/payment-api-common-promotion-service-merc-coup-coupbatch-upbudge.md)接口修改批次预算。
 6. Payment Kit服务端返回批次预算修改结果。
 
 **券管理**
 
 在商户没有券系统记录用户券列表的情况下，交互流程如下：
 
-1. 用户在华为平台（负一屏）领券。
-2. 华为平台（负一屏）调Payment Kit服务端接口给用户发券。
-3. Payment Kit服务端通过批次上设置的回调地址给商户服务端发送[发券事件回调通知](../harmonyos-references/motion-service-merc-coup-ucoup-callback-distribute.md)。
-4. 用户在华为平台（负一屏）点击“去使用”。
+1. 用户在华为流量场景领券。
+2. 华为流量场景调Payment Kit服务端接口给用户发券。
+3. Payment Kit服务端通过批次上设置的回调地址给商户服务端发送[发券事件回调通知](../harmonyos-references/payment-api-common-promotion-service-merc-coup-ucoup-callback-distribute.md)。
+4. 用户在华为流量场景点击“去使用”。
 5. 用户点击“去使用”后，引导用户跳转到商户服务端使用券。
-6. 商户服务端调Payment Kit服务端[查询用户优惠券列表](../harmonyos-references/api-common-promotion-service-merc-coup-ucoup-query.md)查询用户优惠券列表。
+6. 商户服务端调Payment Kit服务端[查询用户优惠券列表](../harmonyos-references/payment-api-common-promotion-service-merc-coup-ucoup-query.md)查询用户优惠券列表。
 7. Payment Kit服务端返回优惠券列表。
-8. 用户在商户服务端选择优惠券并下单后，商户服务端调用[核销优惠券](../harmonyos-references/t-api-common-promotion-service-merc-coup-ucoup-use.md)接口核销券，把券状态同步给Payment Kit服务端。
+8. 用户在商户服务端选择优惠券并下单后，商户服务端调用[核销优惠券](../harmonyos-references/payment-api-common-promotion-service-merc-coup-ucoup-use.md)接口核销券，把券状态同步给Payment Kit服务端。
 9. Payment Kit服务端券核销成功后，把核销结果返回给商户服务端。
 10. 用户在商户服务端上进行退单。
-11. 商户服务端退单过程中调用华为支付[申请退券](../harmonyos-references/pi-common-promotion-service-merc-coup-ucoup-refund.md)接口退券。
+11. 商户服务端退单过程中调用华为支付[申请退券](../harmonyos-references/payment-api-common-promotion-service-merc-coup-ucoup-refund.md)接口退券。
 12. Payment Kit服务端退券处理完后，把退券结果返回给商户服务端。
 
 在商户服务端记录用户券列表的情况下，交互流程如下：
 
-1. 用户在华为平台（负一屏）领券。
-2. 华为平台（负一屏）调Payment Kit服务端接口给用户发券。
-3. Payment Kit服务端通过批次上设置的回调地址给商户服务端发送[发券事件回调通知](../harmonyos-references/motion-service-merc-coup-ucoup-callback-distribute.md)。
+1. 用户在华为流量场景领券。
+2. 华为流量场景调Payment Kit服务端接口给用户发券。
+3. Payment Kit服务端通过批次上设置的回调地址给商户服务端发送[发券事件回调通知](../harmonyos-references/payment-api-common-promotion-service-merc-coup-ucoup-callback-distribute.md)。
 4. 商户服务端将发出去的券码与自有系统券码做映射。
-5. 用户在华为平台（负一屏）点击“去使用”。
+5. 用户在华为流量场景点击“去使用”。
 6. 用户点击“去使用”后，引导用户跳转到商户服务端使用券。
-7. 商户服务端在下单成功后，调用[核销优惠券](../harmonyos-references/t-api-common-promotion-service-merc-coup-ucoup-use.md)接口核销券，把券状态同步给Payment Kit服务端。
+7. 商户服务端在下单成功后，调用[核销优惠券](../harmonyos-references/payment-api-common-promotion-service-merc-coup-ucoup-use.md)接口核销券，把券状态同步给Payment Kit服务端。
 8. Payment Kit服务端券状态刷新后，把核销结果返回给商户服务端。
 9. 用户在商户服务端上进行退单。
-10. 商户服务端退单过程中调用华为支付[申请退券](../harmonyos-references/pi-common-promotion-service-merc-coup-ucoup-refund.md)接口退券。
+10. 商户服务端退单过程中调用华为支付[申请退券](../harmonyos-references/payment-api-common-promotion-service-merc-coup-ucoup-refund.md)接口退券。
 11. Payment Kit服务端退券处理完后，把退券结果返回给商户服务端。
 
-### 华为平台导入Code发放场景
+### 华为导入Code发放场景
 
-如果华为商家券系统中对商家券Code有特殊要求，希望华为平台（负一屏）代发券时使用自有券码，则在创建券批次时选用MERCHANT\_UPLOAD模式，并把自有券码通过[上传券预存Code](../harmonyos-references/ommon-promotion-service-merc-coup-coupbatch-upload.md)接口同步到华为商家券系统。华为商家券系统在代发商家券时，随机选取已上传的券码给用户发券，发券成功后会回调通知本次发放所使用的券码。
+如果华为商家券系统中对商家券Code有特殊要求，希望华为流量场景代发券时使用自有券码，则在创建券批次时选用MERCHANT\_UPLOAD模式，并把自有券码通过[上传券预存Code](../harmonyos-references/payment-api-common-promotion-service-merc-coup-coupbatch-upload.md)接口同步到华为商家券系统。华为商家券系统在代发商家券时，随机选取已上传的券码给用户发券，发券成功后会回调通知本次发放所使用的券码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/34sdYBOHRvmWoUGOCvDFww/zh-cn_image_0000002558605942.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/jDPFRYuITgu24Gtay6bXGw/zh-cn_image_0000002736314227.png)
 
 **券批次管理**
 
-1. 商户服务端调Payment Kit服务端[创建商家券批次](../harmonyos-references/ommon-promotion-service-merc-coup-coupbatch-create.md)接口创建批次。
+1. 商户服务端调Payment Kit服务端[创建商家券批次](../harmonyos-references/payment-api-common-promotion-service-merc-coup-coupbatch-create.md)接口创建批次。
 2. 批次创建成功后，Payment Kit服务端返回批次号信息。
-3. 商户服务端调Payment Kit服务端[上传券预存Code](../harmonyos-references/ommon-promotion-service-merc-coup-coupbatch-upload.md)接口上传Code。
+3. 商户服务端调Payment Kit服务端[上传券预存Code](../harmonyos-references/payment-api-common-promotion-service-merc-coup-coupbatch-upload.md)接口上传Code。
 4. Payment Kit服务端返回预存Code结果。
-5. 如果商户服务端没有记录批次信息，需要调用[查询商家券批次详情](../harmonyos-references/common-promotion-service-merc-coup-coupbatch-query.md)接口获取批次库存信息，用于构造修改批次预算接口请求体。
+5. 如果商户服务端没有记录批次信息，需要调用[查询商家券批次详情](../harmonyos-references/payment-api-common-promotion-service-merc-coup-coupbatch-query.md)接口获取批次库存信息，用于构造修改批次预算接口请求体。
 6. Payment Kit服务端给商户返回批次详情信息。
-7. 商户服务端调Payment Kit服务端[修改商家券批次预算](../harmonyos-references/mmon-promotion-service-merc-coup-coupbatch-upbudge.md)接口修改批次预算。
+7. 商户服务端调Payment Kit服务端[修改商家券批次预算](../harmonyos-references/payment-api-common-promotion-service-merc-coup-coupbatch-upbudge.md)接口修改批次预算。
 8. Payment Kit服务端返回批次预算修改结果。
 
 **券管理**
 
-1. 用户在华为平台（负一屏）领券。
-2. 华为平台（负一屏）调Payment Kit服务端接口给用户发券。
-3. Payment Kit服务端通过[创建商家券批次](../harmonyos-references/ommon-promotion-service-merc-coup-coupbatch-create.md)接口设置的回调地址给商户服务端发送[发券事件回调通知](../harmonyos-references/motion-service-merc-coup-ucoup-callback-distribute.md)。
-4. 用户在华为平台（负一屏）点击“去使用”。
+1. 用户在华为流量场景领券。
+2. 华为流量场景调Payment Kit服务端接口给用户发券。
+3. Payment Kit服务端通过[创建商家券批次](../harmonyos-references/payment-api-common-promotion-service-merc-coup-coupbatch-create.md)接口设置的回调地址给商户服务端发送[发券事件回调通知](../harmonyos-references/payment-api-common-promotion-service-merc-coup-ucoup-callback-distribute.md)。
+4. 用户在华为流量场景点击“去使用”。
 5. 用户点击“去使用”后，引导用户跳转到商户服务端使用券。
-6. 商户服务端在下单成功后，调用[核销优惠券](../harmonyos-references/t-api-common-promotion-service-merc-coup-ucoup-use.md)接口核销券，把券状态同步给Payment Kit服务端。
+6. 商户服务端在下单成功后，调用[核销优惠券](../harmonyos-references/payment-api-common-promotion-service-merc-coup-ucoup-use.md)接口核销券，把券状态同步给Payment Kit服务端。
 7. Payment Kit服务端券状态刷新后，把核销结果返回给商户服务端。
 8. 用户在商户服务端上进行退单。
-9. 商户服务端退单过程中调用华为支付[申请退券](../harmonyos-references/pi-common-promotion-service-merc-coup-ucoup-refund.md)接口退券。
+9. 商户服务端退单过程中调用华为支付[申请退券](../harmonyos-references/payment-api-common-promotion-service-merc-coup-ucoup-refund.md)接口退券。
 10. Payment Kit服务端退券处理完后，把退券结果返回给商户服务端。
 
-### 商户平台指定Code发放场景
+### 商户指定Code发放场景
 
-如果系统对商家券Code有特殊要求，仅希望在华为平台（负一屏）中展示用户在自有应用中领取到的券，则使用商户平台发券和指定券Code（MERCHANT\_API）模式，在调用“发放优惠券”接口时，把券码同步到华为商家券系统。
+如果系统对商家券Code有特殊要求，仅希望在华为流量场景中展示用户在自有应用中领取到的券，则使用商户平台发券和指定券Code（MERCHANT\_API）模式，在调用“发放优惠券”接口时，把券码同步到华为商家券系统。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/D91byVXWRDqiafPeZNv8Pg/zh-cn_image_0000002589325469.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/2f17DeDyR9mPQjd_JwEk2g/zh-cn_image_0000002706675184.png)
 
 **券批次管理**
 
-1. 商户服务端调Payment Kit服务端[创建商家券批次](../harmonyos-references/ommon-promotion-service-merc-coup-coupbatch-create.md)接口创建批次。
+1. 商户服务端调Payment Kit服务端[创建商家券批次](../harmonyos-references/payment-api-common-promotion-service-merc-coup-coupbatch-create.md)接口创建批次。
 2. 批次创建成功后，Payment Kit服务端返回批次号信息。
-3. 如果商户服务端没有记录批次信息，需要调用[查询商家券批次详情](../harmonyos-references/common-promotion-service-merc-coup-coupbatch-query.md)接口获取批次库存信息，用于构造修改批次预算接口请求体。
+3. 如果商户服务端没有记录批次信息，需要调用[查询商家券批次详情](../harmonyos-references/payment-api-common-promotion-service-merc-coup-coupbatch-query.md)接口获取批次库存信息，用于构造修改批次预算接口请求体。
 4. Payment Kit服务端给商户返回批次详情信息。
-5. 商户服务端调Payment Kit服务端[修改商家券批次预算](../harmonyos-references/mmon-promotion-service-merc-coup-coupbatch-upbudge.md)接口修改批次预算。
+5. 商户服务端调Payment Kit服务端[修改商家券批次预算](../harmonyos-references/payment-api-common-promotion-service-merc-coup-coupbatch-upbudge.md)接口修改批次预算。
 6. Payment Kit服务端返回批次预算修改结果。
 
 **券管理**
 
 1. 用户在商户服务端商户平台领券。
-2. 商户服务端调Payment Kit服务端[发放优惠券](../harmonyos-references/ommon-promotion-service-merc-coup-ucoup-distribute.md)接口给用户发券。
+2. 商户服务端调Payment Kit服务端[发放优惠券](../harmonyos-references/payment-api-common-promotion-service-merc-coup-ucoup-distribute.md)接口给用户发券。
 3. Payment Kit服务端处理完后响应商户平台发券结果。
-4. 用户在华为平台（负一屏）点击“去使用”。
+4. 用户在华为流量场景点击“去使用”。
 5. 用户点击“去使用”后，引导用户跳转到商户服务端使用券。
-6. 商户服务端在下单成功后，调用[核销优惠券](../harmonyos-references/t-api-common-promotion-service-merc-coup-ucoup-use.md)接口核销券，把券状态同步给Payment Kit服务端。
+6. 商户服务端在下单成功后，调用[核销优惠券](../harmonyos-references/payment-api-common-promotion-service-merc-coup-ucoup-use.md)接口核销券，把券状态同步给Payment Kit服务端。
 7. Payment Kit服务端券状态刷新后，把核销结果返回给商户服务端。
 8. 用户在商户服务端上进行退单。
-9. 商户服务端退单过程中调用华为支付[申请退券](../harmonyos-references/pi-common-promotion-service-merc-coup-ucoup-refund.md)接口退券。
+9. 商户服务端退单过程中调用华为支付[申请退券](../harmonyos-references/payment-api-common-promotion-service-merc-coup-ucoup-refund.md)接口退券。
 10. Payment Kit服务端退券处理完后，把退券结果返回给商户服务端。
 
 ## 开发步骤
 
-说明
+**说明** 
 
 * 以下开发步骤仅涉及服务端开发，业务接口请求示例代码可参考[业务接口请求](payment-server-connect.md#业务接口请求)。
-* [发券事件回调通知](../harmonyos-references/motion-service-merc-coup-ucoup-callback-distribute.md)回调地址是开发者调用[创建商家券批次](../harmonyos-references/ommon-promotion-service-merc-coup-coupbatch-create.md)接口时通过notifyConfig字段设置的回调地址，接收到回调通知后商户服务端可先对返回的支付信息进行[SM2验签](../harmonyos-references/payment-rest-overview.md#验签规则)处理。
+* [发券事件回调通知](../harmonyos-references/payment-api-common-promotion-service-merc-coup-ucoup-callback-distribute.md)回调地址是开发者调用[创建商家券批次](../harmonyos-references/payment-api-common-promotion-service-merc-coup-coupbatch-create.md)接口时通过notifyConfig字段设置的回调地址，接收到回调通知后商户服务端可先对返回的支付信息进行[SM2验签](../harmonyos-references/payment-rest-overview.md#验签规则)处理。
 
-### 华为平台随机Code发放场景
-
-**券批次管理（服务端开发）**
-
-开发者调用[创建商家券批次](../harmonyos-references/ommon-promotion-service-merc-coup-coupbatch-create.md)接口创建券批次。成功后调用[修改商家券批次预算](../harmonyos-references/mmon-promotion-service-merc-coup-coupbatch-upbudge.md)接口修改批次预算。
-
-**券管理（服务端开发）**
-
-1. 华为平台（负一屏）调Payment Kit服务端接口给用户发券后（使用随机Code模式，随机生成券码给用户发券），会给商户服务端发送发券事件回调，回调详细信息请参见[发券事件回调通知](../harmonyos-references/motion-service-merc-coup-ucoup-callback-distribute.md)（商户服务端将发出去的券码与自有系统券码做映射）。
-2. 商户服务端调Payment Kit服务端[查询用户优惠券列表](../harmonyos-references/api-common-promotion-service-merc-coup-ucoup-query.md)查询用户优惠券列表，用户在商户服务端选择优惠券并下单后，调用[核销优惠券](../harmonyos-references/t-api-common-promotion-service-merc-coup-ucoup-use.md)接口核销券，把券状态同步给Payment Kit服务端。如果用户在商户服务端上进行退单，商户服务端退单过程中调用华为支付[申请退券](../harmonyos-references/pi-common-promotion-service-merc-coup-ucoup-refund.md)接口退券，把退券结果返回给商户服务端。
-
-### 华为平台导入Code发放场景
+### 华为随机Code发放场景
 
 **券批次管理（服务端开发）**
 
-开发者调用[创建商家券批次](../harmonyos-references/ommon-promotion-service-merc-coup-coupbatch-create.md)接口创建券批次。创建券批次成功后调用[上传券预存Code](../harmonyos-references/ommon-promotion-service-merc-coup-coupbatch-upload.md)接口上传Code，券code上传成功后调用[修改商家券批次预算](../harmonyos-references/mmon-promotion-service-merc-coup-coupbatch-upbudge.md)接口修改批次预算。
+开发者调用[创建商家券批次](../harmonyos-references/payment-api-common-promotion-service-merc-coup-coupbatch-create.md)接口创建券批次。成功后调用[修改商家券批次预算](../harmonyos-references/payment-api-common-promotion-service-merc-coup-coupbatch-upbudge.md)接口修改批次预算。
 
 **券管理（服务端开发）**
 
-1. 华为平台（负一屏）给用户发券后会给商户服务端发送发券事件回调，回调详细信息请参见[发券事件回调通知](../harmonyos-references/motion-service-merc-coup-ucoup-callback-distribute.md)。
-2. 商户服务端在下单成功后，调用[核销优惠券](../harmonyos-references/t-api-common-promotion-service-merc-coup-ucoup-use.md)接口核销券，把券状态同步给Payment Kit服务端。用户如果在商户服务端上进行退单，商户服务端退单过程中调用华为支付[申请退券](../harmonyos-references/pi-common-promotion-service-merc-coup-ucoup-refund.md)接口退券，把退券结果返回给商户服务端。
+1. 华为流量场景调Payment Kit服务端接口给用户发券后（使用随机Code模式，随机生成券码给用户发券），会给商户服务端发送发券事件回调，回调详细信息请参见[发券事件回调通知](../harmonyos-references/payment-api-common-promotion-service-merc-coup-ucoup-callback-distribute.md)（商户服务端将发出去的券码与自有系统券码做映射）。
+2. 商户服务端调Payment Kit服务端[查询用户优惠券列表](../harmonyos-references/payment-api-common-promotion-service-merc-coup-ucoup-query.md)查询用户优惠券列表，用户在商户服务端选择优惠券并下单后，调用[核销优惠券](../harmonyos-references/payment-api-common-promotion-service-merc-coup-ucoup-use.md)接口核销券，把券状态同步给Payment Kit服务端。如果用户在商户服务端上进行退单，商户服务端退单过程中调用华为支付[申请退券](../harmonyos-references/payment-api-common-promotion-service-merc-coup-ucoup-refund.md)接口退券，把退券结果返回给商户服务端。
 
-### 商户平台指定Code发放场景
+### 华为导入Code发放场景
 
 **券批次管理（服务端开发）**
 
-开发者调用[创建商家券批次](../harmonyos-references/ommon-promotion-service-merc-coup-coupbatch-create.md)接口创建券批次，成功后调用[修改商家券批次预算](../harmonyos-references/mmon-promotion-service-merc-coup-coupbatch-upbudge.md)接口修改批次预算。
+开发者调用[创建商家券批次](../harmonyos-references/payment-api-common-promotion-service-merc-coup-coupbatch-create.md)接口创建券批次。创建券批次成功后调用[上传券预存Code](../harmonyos-references/payment-api-common-promotion-service-merc-coup-coupbatch-upload.md)接口上传Code，券code上传成功后调用[修改商家券批次预算](../harmonyos-references/payment-api-common-promotion-service-merc-coup-coupbatch-upbudge.md)接口修改批次预算。
 
 **券管理（服务端开发）**
 
-1. 商户服务端调Payment Kit服务端[发放优惠券](../harmonyos-references/ommon-promotion-service-merc-coup-ucoup-distribute.md)接口给用户发券（使用指定Code模式，在调用接口时把券码同步到华为商家券系统），Payment Kit服务端处理完后响应商户平台发券结果。
-2. 商户服务端在下单成功后，调用[核销优惠券](../harmonyos-references/t-api-common-promotion-service-merc-coup-ucoup-use.md)接口核销券，把券状态同步给Payment Kit服务端。用户如果在商户服务端上进行退单，商户服务端退单过程中调用华为支付[申请退券](../harmonyos-references/pi-common-promotion-service-merc-coup-ucoup-refund.md)接口退券，把退券结果返回给商户服务端。
+1. 华为流量场景给用户发券后会给商户服务端发送发券事件回调，回调详细信息请参见[发券事件回调通知](../harmonyos-references/payment-api-common-promotion-service-merc-coup-ucoup-callback-distribute.md)。
+2. 商户服务端在下单成功后，调用[核销优惠券](../harmonyos-references/payment-api-common-promotion-service-merc-coup-ucoup-use.md)接口核销券，把券状态同步给Payment Kit服务端。用户如果在商户服务端上进行退单，商户服务端退单过程中调用华为支付[申请退券](../harmonyos-references/payment-api-common-promotion-service-merc-coup-ucoup-refund.md)接口退券，把退券结果返回给商户服务端。
+
+### 商户指定Code发放场景
+
+**券批次管理（服务端开发）**
+
+开发者调用[创建商家券批次](../harmonyos-references/payment-api-common-promotion-service-merc-coup-coupbatch-create.md)接口创建券批次，成功后调用[修改商家券批次预算](../harmonyos-references/payment-api-common-promotion-service-merc-coup-coupbatch-upbudge.md)接口修改批次预算。
+
+**券管理（服务端开发）**
+
+1. 商户服务端调Payment Kit服务端[发放优惠券](../harmonyos-references/payment-api-common-promotion-service-merc-coup-ucoup-distribute.md)接口给用户发券（使用指定Code模式，在调用接口时把券码同步到华为商家券系统），Payment Kit服务端处理完后响应商户平台发券结果。
+2. 商户服务端在下单成功后，调用[核销优惠券](../harmonyos-references/payment-api-common-promotion-service-merc-coup-ucoup-use.md)接口核销券，把券状态同步给Payment Kit服务端。用户如果在商户服务端上进行退单，商户服务端退单过程中调用华为支付[申请退券](../harmonyos-references/payment-api-common-promotion-service-merc-coup-ucoup-refund.md)接口退券，把退券结果返回给商户服务端。
 
 ## 测试和上线
 
@@ -228,4 +228,4 @@ content_hash: sha256:f35cff7ac8242988e5f635283b46e03661c35d83bda5803d7245a870411
 
 当开发者完成上述能力之后，可以调用以下API接口完成其他相关操作。
 
-[修改商家券批次基本信息](../harmonyos-references/ommon-promotion-service-merc-coup-coupbatch-update.md)、[使券失效](../harmonyos-references/ommon-promotion-service-merc-coup-ucoup-deactivate.md)、[查询用户单张优惠券详情](../harmonyos-references/common-promotion-service-merc-coup-ucoup-query-one.md)、[设置回调通知地址](../harmonyos-references/ion-service-merc-coup-coupbatch-callbackurl-update.md)、[查询回调通知地址](../harmonyos-references/ion-service-merc-coup-coupbatch-callbackurl-select.md)
+[修改商家券批次基本信息](../harmonyos-references/payment-api-common-promotion-service-merc-coup-coupbatch-update.md)、[使券失效](../harmonyos-references/payment-api-common-promotion-service-merc-coup-ucoup-deactivate.md)、[查询用户单张优惠券详情](../harmonyos-references/payment-api-common-promotion-service-merc-coup-ucoup-query-one.md)、[设置回调通知地址](../harmonyos-references/payment-api-common-promotion-service-merc-coup-coupbatch-callbackurl-update.md)、[查询回调通知地址](../harmonyos-references/payment-api-common-promotion-service-merc-coup-coupbatch-callbackurl-select.md)

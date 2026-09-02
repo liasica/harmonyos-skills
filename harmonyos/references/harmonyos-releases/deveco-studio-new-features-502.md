@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/deveco-studio-new-features-502
 title: 新增和增强特性
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.2(14) > DevEco Studio > 新增和增强特性
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.2(14) > DevEco Studio > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:55+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:54373f468b8e48e480d30e01a46d08f0947ed88cea252b36c9c2221b2a977e12
+scraped_at: 2026-09-02T14:58:52+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:477a4f4938addae88590ec83d0e51e3411f40592bc69739b5aeed4fb118744a8
 ---
 
 ## DevEco Studio 5.0.2 Release（5.0.7.210）兼容性配套关系
@@ -101,7 +101,7 @@ DevEco Studio 5.0.7.200配套使用的命令行工具列表、支持的API范围
 * Code Linter新增性能、安全及正确性代码检查规则。具体请参考[规则变更说明](../harmonyos-guides/ide-codelinter-rules-change.md)。
 * 端云一体化工程优化基于云开发模板创建应用/元服务的流程，具体请参考[创建端云一体化开发工程](../harmonyos-guides/agc-harmonyos-clouddev-devproject.md)。
 * DevEco Profiler全局搜索功能优化，并支持使用“/”展示快捷键使用说明。具体请参考[调优工具简介](../harmonyos-guides/ide-profiler.md)。
-* DevEco Studio内上传软件包支持同时上传符号表信息。具体请参考[上传软件包](../harmonyos-guides/ide-publish-app.md#section97874500234)。
+* DevEco Studio内上传软件包支持同时上传符号表信息。具体请参考[上传软件包](../harmonyos-guides/ide-publish-app.md#section4486164416341)。
 * release构建模式下，如果app.json5的debug字段为true，则支持调试。
 
 ### 变更特性

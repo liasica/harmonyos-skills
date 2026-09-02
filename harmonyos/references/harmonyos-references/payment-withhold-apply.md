@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-w
 title: 申请免密代扣
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 直连商户 > 签约代扣 > 申请免密代扣
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ea122b0e1677298e6083934367e707692b3c354803071ac8715789b9f4494c8f
+scraped_at: 2026-09-02T14:53:27+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:780c0386266f02fbee0bc803aa3ec6e23d487b8ecc808984d3195c7d0848f862
 ---
 
 ## 功能介绍
@@ -63,22 +63,22 @@ content_hash: sha256:ea122b0e1677298e6083934367e707692b3c354803071ac8715789b9f44
 
 ## 请求示例
 
-```
-1. POST /api/v1/aggr/transactions/withhold HTTP/1.1
-2. Content-Type: application/json;charset=UTF-8
-3. PayMercAuth: {"callerId":"10132120***","traceId":"202305151026422776499","time":1684117602555,"authId":"120291744647139***","headerSign":"u+H1Oe3fXV9mGCES89XA7tSjp8+TELYgG*******************4WvEpfjLzpzKE2/+KYaq1jDH/+VmefC29ZXpK54c5DwKJH7rMv6SBj/z0UcN9Qr*******************AFfwjEWJu5JyvY5KunSeE6DiKs=","bodySign":"yWDtXOBqDoItPgHmF57L6U5G7F/L*******************Du6E6KxPAHE0TIkTxHMcUWx7N6405QrcBimTcTN7pBpFA7pvFe*******************vta6J5UxIUmAp+wGdV/juGEvQ="}
-4. Accept: application/json
-5. {
-6. "appId": "5765880207853***",
-7. "contractId": "2024070914615843071097***",
-8. "mercNo": "10132120***",
-9. "mercOrderNo": "czl00120240705***",
-10. "allocationType": "DELAY_ORDER_ALLOCATION",
-11. "callbackUrl": "https://www.xxxxxx.com/hw/pay/callback",
-12. "currency": "CNY",
-13. "totalAmount": 2,
-14. "tradeSummary": "xx服务-杂志报刊"
-15. }
+```json
+POST /api/v1/aggr/transactions/withhold HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+PayMercAuth: {"callerId":"10132120***","traceId":"202305151026422776499","time":1684117602555,"authId":"120291744647139***","headerSign":"u+H1Oe3fXV9mGCES89XA7tSjp8+TELYgG*******************4WvEpfjLzpzKE2/+KYaq1jDH/+VmefC29ZXpK54c5DwKJH7rMv6SBj/z0UcN9Qr*******************AFfwjEWJu5JyvY5KunSeE6DiKs=","bodySign":"yWDtXOBqDoItPgHmF57L6U5G7F/L*******************Du6E6KxPAHE0TIkTxHMcUWx7N6405QrcBimTcTN7pBpFA7pvFe*******************vta6J5UxIUmAp+wGdV/juGEvQ="}
+Accept: application/json
+{
+  "appId": "5765880207853***",
+  "contractId": "2024070914615843071097***",
+  "mercNo": "10132120***",
+  "mercOrderNo": "czl00120240705***",
+  "allocationType": "DELAY_ORDER_ALLOCATION",
+  "callbackUrl": "https://www.xxxxxx.com/hw/pay/callback",
+  "currency": "CNY",
+  "totalAmount": 2,
+  "tradeSummary": "xx服务-杂志报刊"
+}
 ```
 
 ## 响应参数
@@ -102,15 +102,15 @@ content_hash: sha256:ea122b0e1677298e6083934367e707692b3c354803071ac8715789b9f44
 
 **响应示例**
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json; charset=UTF-8
-3. {
-4. "resultCode": "000000",
-5. "resultDesc": "Success.",
-6. "sign": "MEQCIEIWzdpziRyTi8vhwWHFuDdx********************beCgTDG77e+2XJItvq/ZkIcCN5/B20pQ==",
-7. "sysTransOrderNo": "12407030857530004914518***"
-8. }
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+{
+  "resultCode": "000000",
+  "resultDesc": "Success.",
+  "sign": "MEQCIEIWzdpziRyTi8vhwWHFuDdx********************beCgTDG77e+2XJItvq/ZkIcCN5/B20pQ==",
+  "sysTransOrderNo": "12407030857530004914518***"
+}
 ```
 
 ## 错误码

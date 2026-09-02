@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-60
-title: 如何解决应用需要避免创建过多线程，并发处理任务数量受限，无法充分发挥设备性能的问题
-breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > ArkTS线程模型和并发 > 如何解决应用需要避免创建过多线程，并发处理任务数量受限，无法充分发挥设备性能的问题
+title: 如何解决应用需要避免开辟过多线程，并发处理任务数量受限，无法充分发挥设备性能的问题
+breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > ArkTS线程模型和并发 > 如何解决应用需要避免开辟过多线程，并发处理任务数量受限，无法充分发挥设备性能的问题
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:26+08:00
-doc_updated_at: 2026-03-17
+scraped_at: 2026-09-02T15:21:16+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:7d40a4c9abbf375448feb7633db49151e8e1f2d9321892ec43323ac90264243b
 ---
 

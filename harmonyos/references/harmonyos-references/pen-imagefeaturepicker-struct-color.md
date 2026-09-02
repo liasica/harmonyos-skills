@@ -3,16 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pen-image
 title: HMS_GCP_Color
 breadcrumb: API参考 > 系统 > 硬件 > Pen Kit（手写笔服务） > C API > 头文件和结构体 > 结构体 > HMS_GCP_Color
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:01+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1f7f49bec76e3f822b699c87b34f5b945b309bc8101a9f260c424c6eae93c261
+scraped_at: 2026-09-02T15:02:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:20bfdf6128cb2816b4a85a0e2f46e08952a8a3dcd40a83cdaacc1f91219ef665
 ---
 
 ## 概述
 
-PhonePC/2in1Tablet
-
-定义颜色值的结构体。
+定义颜色值的结构体，用于显示全局取色提取的颜色值。
 
 **系统能力：** SystemCapability.Stylus.ColorPicker
 
@@ -24,11 +22,7 @@ PhonePC/2in1Tablet
 
 ## 汇总
 
-PhonePC/2in1Tablet
-
 ### 成员变量
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
@@ -39,14 +33,10 @@ PhonePC/2in1Tablet
 
 ## 结构体成员变量说明
 
-PhonePC/2in1Tablet
-
 ### alpha
 
-PhonePC/2in1Tablet
-
-```
-1. int32_t HMS_GCP_Color::alpha
+```c
+int32_t HMS_GCP_Color::alpha
 ```
 
 **描述**
@@ -55,10 +45,8 @@ PhonePC/2in1Tablet
 
 ### blue
 
-PhonePC/2in1Tablet
-
-```
-1. int32_t HMS_GCP_Color::blue
+```c
+int32_t HMS_GCP_Color::blue
 ```
 
 **描述**
@@ -67,10 +55,8 @@ PhonePC/2in1Tablet
 
 ### green
 
-PhonePC/2in1Tablet
-
-```
-1. int32_t HMS_GCP_Color::green
+```c
+int32_t HMS_GCP_Color::green
 ```
 
 **描述**
@@ -79,10 +65,8 @@ PhonePC/2in1Tablet
 
 ### red
 
-PhonePC/2in1Tablet
-
-```
-1. int32_t HMS_GCP_Color::red
+```c
+int32_t HMS_GCP_Color::red
 ```
 
 **描述**

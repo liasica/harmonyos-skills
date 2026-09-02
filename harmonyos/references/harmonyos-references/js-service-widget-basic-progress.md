@@ -3,26 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: progress
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 基础组件 > progress
 category: harmonyos-references
-scraped_at: 2026-04-29T13:54:02+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:a6f461e8b90939b65332350486c016c6e8601c15e0ee181336da999be7283a94
+scraped_at: 2026-09-02T15:01:14+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:5148fe747b8dc18829566c85935f4896dce225e698e3a3123f63f6007ee62c54
 ---
 
 进度条，用于显示内容加载或操作的处理进度。
 
-说明
+**说明** 
 
 从API version 8 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 不支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-service-widget-common-attributes.md)外，还支持如下属性：
 
@@ -37,7 +33,7 @@ PhonePC/2in1TabletTVWearable
   | 名称 | 类型 | 默认值 | 必填 | 描述 |
   | --- | --- | --- | --- | --- |
   | percent | number | 0 | 否 | 当前进度。取值范围为0-100。 |
-  | secondarypercent(Rich) | number | 0 | 否 | 次级进度。取值范围为0-100。 |
+  | secondarypercent | number | 0 | 否 | 次级进度。取值范围为0-100。 |
 * 类型为ring、scale-ring时，支持如下属性：
 
   | 名称 | 类型 | 默认值 | 必填 | 描述 |
@@ -50,8 +46,6 @@ PhonePC/2in1TabletTVWearable
   | percent | number | 0 | 否 | 当前进度。取值范围为0-100。 |
 
 ## 样式
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用样式](js-service-widget-common-styles.md)外，还支持如下样式：
 
@@ -89,45 +83,41 @@ type=arc
 | background-color | <color> | - | 否 | 弧形进度条的背景色。 |
 | stroke-width | <length> | - | 否 | 弧形进度条的宽度。  进度条宽度越大，进度条越靠近圆心。即进度条始终在半径区域内。 |
 | start-angle | <deg> | 240 | 否 | 弧形进度条起始角度，以时钟0点为基线。范围为0到360（顺时针）。 |
-| total-angle | <deg> | 240 | 否 | 弧形进度条总长度，范围为-360到360，负数标识起点到终点为逆时针。 |
+| total-angle | <deg> | 240 | 否 | 弧形进度条总角度，范围为-360到360，负数表示起点到终点为逆时针。 |
 | center-x | <length> | - | 否 | 弧形进度条中心位置，（坐标原点为组件左上角顶点）。该样式需要和center-y和radius一起。 |
 | center-y | <length> | - | 否 | 弧形进度条中心位置，（坐标原点为组件左上角顶点）。该样式需要和center-x和radius一起。 |
 | radius | <length> | - | 否 | 弧形进度条半径，该样式需要和center-x和center-y一起。 |
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用事件](js-service-widget-common-events.md)。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!--xxx.hml -->
-2. <div class="container">
-3. <progress class="min-progress" type="scale-ring"  percent= "10" secondarypercent="50"></progress>
-4. <progress class="min-progress" type="horizontal" percent= "10" secondarypercent="50"></progress>
-5. <progress class="min-progress" type="arc" percent= "10"></progress>
-6. <progress class="min-progress" type="ring" percent= "10" secondarypercent="50"></progress>
-7. </div>
+```html
+<!--xxx.hml -->
+<div class="container">
+  <progress class="min-progress" type="scale-ring"  percent= "10" secondarypercent="50"></progress>
+  <progress class="min-progress" type="horizontal" percent= "10" secondarypercent="50"></progress>
+  <progress class="min-progress" type="arc" percent= "10"></progress>
+  <progress class="min-progress" type="ring" percent= "10" secondarypercent="50"></progress>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .container {
-3. flex-direction: column;
-4. height: 100%;
-5. width: 100%;
-6. align-items: center;
-7. }
-8. .min-progress {
-9. width: 300px;
-10. height: 300px;
-11. }
+```css
+/* xxx.css */
+.container {
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+}
+.min-progress {
+  width: 300px;
+  height: 300px;
+}
 ```
 
 **4\*4卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/MRZ1c_ufSt-_AsOpvPiRTw/zh-cn_image_0000002558607298.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/H87gno0oTY6c77HxhVSOWA/zh-cn_image_0000002736315731.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-creat
 title: Create
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > InferenceContext > Create
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:32+08:00
+scraped_at: 2026-09-02T14:50:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:48dff9796e7f9663f67cae3cec08544b957d67ddf3674f7f1e01207bdff123a3
+content_hash: sha256:f058e3fb64ac06c0989a8221daef094ca9b4c90bc0dfc4ebc9e4b2e2098d3b03
 ---
 
 ## 函数功能
@@ -14,10 +14,10 @@ content_hash: sha256:48dff9796e7f9663f67cae3cec08544b957d67ddf3674f7f1e01207bdff
 
 ## 函数原型
 
-```
-1. static std::unique_ptr<InferenceContext> Create(
-2. void *resource_context_mgr = nullptr
-3. )
+```cpp
+static std::unique_ptr<InferenceContext> Create(
+void *resource_context_mgr = nullptr
+)
 ```
 
 ## 参数说明

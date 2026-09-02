@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getsh
 title: GetShapeRange
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > TensorDesc > GetShapeRange
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:58+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:45c7eb76b59a1f2b065e0ec2f63403b391cafce76b0dcbbbe1acd4db88ac831e
+content_hash: sha256:e2c1458b5b2434eec471ab946745b82e1a252c5bdd151a6e812a66b04fa6155a
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:45c7eb76b59a1f2b065e0ec2f63403b391cafce76b0dcbbbe1acd4db88a
 
 ## 函数原型
 
-```
-1. graphStatus GetShapeRange(std::vector<std::pair<int64_t,int64_t>> &range) const;
+```cpp
+graphStatus GetShapeRange(std::vector<std::pair<int64_t,int64_t>> &range) const;
 ```
 
 ## 参数说明

@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: textarea
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > textarea
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:28+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:8c0d43db3895c82c9e97c78098515ae37beeedc8e96a1d8a3b7b8b8026bb84e9
+scraped_at: 2026-09-02T15:01:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c5a31d7bdfe000c4bb9fe73afcc57dbbb8dab026a0b152788a3699f003745ad1
 ---
 
-说明
+**说明** 
 
 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -16,19 +16,13 @@ content_hash: sha256:8c0d43db3895c82c9e97c78098515ae37beeedc8e96a1d8a3b7b8b8026b
 
 ## 权限列表
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 不支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-components-common-attributes.md)外，还支持如下属性：
 
@@ -55,8 +49,6 @@ PhonePC/2in1TabletTVWearable
 
 ## 样式
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用样式](js-components-common-styles.md)外，还支持如下样式：
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
@@ -64,14 +56,12 @@ PhonePC/2in1TabletTVWearable
 | color | <color> | #e6000000 | 否 | 多行文本框的文本颜色。 |
 | font-size | <length> | 16px | 否 | 多行文本框的文本尺寸。 |
 | allow-scale | boolean | true | 否 | 多行文本框的文本尺寸是否跟随系统设置字体缩放尺寸进行放大缩小。true表示跟随系统放大缩小，false表示不跟随系统放大缩小。  如果在config描述文件中针对ability配置了fontSize的config-changes标签，则应用不会重启而直接生效。 |
-| placeholder-color | <color> | #99000000 | 否 | 多行文本框的提示文本颜色，type为text|email|date|time|number|password时生效。 |
+| placeholder-color | <color> | #99000000 | 否 | 多行文本框的提示文本颜色。 |
 | font-weight | number | string | normal | 否 | 多行文本框的字体粗细，见[text组件font-weight的样式属性](js-components-basic-text.md#样式)。 |
 | font-family | string | sans-serif | 否 | 多行文本框的字体列表，用逗号分隔，每个字体用字体名或者字体族名设置。列表中第一个系统中存在的或者通过[自定义字体](js-components-common-customizing-font.md)指定的字体，会被选中作为文本的字体。 |
 | caret-color6+ | <color> | - | 否 | 设置输入光标的颜色。 |
 
 ## 事件
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用事件](js-components-common-events.md)外，还支持如下事件：
 
@@ -82,44 +72,40 @@ PhonePC/2in1TabletTVWearable
 | share5+ | { value: selectedText } | 设置此事件后，进行文本选择操作后文本选择弹窗会出现分享按钮，点击分享按钮之后，触发该回调，返回选中的文本内容。 |
 | search5+ | { value: selectedText } | 设置此事件后，进行文本选择操作后文本选择弹窗会出现搜索按钮，点击搜索按钮之后，触发该回调，返回选中的文本内容。 |
 | optionselect5+ | { index:optionIndex, value: selectedText } | 文本选择弹窗中设置menuoptions属性后，用户在文本选择操作后，点击菜单项后触发该回调，返回点击的菜单项序号和选中的文本内容。 |
-| selectchange6+ | { start: number，end: number } | 文本选择变化时触发事件。 |
+| selectchange6+ | { start: number, end: number } | 文本选择变化时触发事件。 |
 
 ## 方法
-
-PhonePC/2in1TabletTVWearable
 
 支持[通用方法](js-components-common-methods.md)。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <textarea id="textarea" class="textarea" extend="true" maxlength="20"
-3. headericon="/common/navigation_menu1_icon.svg" placeholder="Please input text"
-4. onchange="change">
-5. </textarea>
+```html
+<!-- xxx.hml -->
+<textarea id="textarea" class="textarea" extend="true" maxlength="20"
+  headericon="/common/navigation_menu1_icon.svg" placeholder="Please input text"
+  onchange="change">
+</textarea>
 ```
 
-```
-1. /* xxx.css */
-2. .textarea {
-3. placeholder-color: gray;
-4. }
-```
-
-```
-1. // xxx.js
-2. import promptAction from '@ohos.promptAction';
-3. export default {
-4. change(e){
-5. promptAction.showToast({
-6. message: 'value: ' + e.text + ', lines: ' + e.lines + ', height: ' + e.height,
-7. duration: 3000,
-8. });
-9. }
-10. }
+```css
+/* xxx.css */
+.textarea {
+  placeholder-color: gray;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/IUaNXL8ERCO2BC8dGlatWA/zh-cn_image_0000002558607068.png)
+```js
+// xxx.js
+import promptAction from '@ohos.promptAction';
+export default {
+change(e){
+  promptAction.showToast({
+    message: 'value: ' + e.text + ', lines: ' + e.lines + ', height: ' + e.height,
+    duration: 3000,
+  });
+}
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/WypTXZmCRtebJhM9zBeayg/zh-cn_image_0000002706676458.png)

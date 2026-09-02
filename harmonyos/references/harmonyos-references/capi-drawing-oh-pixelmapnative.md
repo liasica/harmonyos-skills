@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: OH_PixelmapNative
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 结构体 > OH_PixelmapNative
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:20+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:21ccfa1a1d9361366de9757efe1eed5d3659b43dbd76a7fd04da964fa5728372
+scraped_at: 2026-09-02T14:53:10+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:98df30825a794a1b6df187992ee667b02c83bda92d441067cad910a43c3bf925
 ---
 
-```
-1. typedef struct OH_PixelmapNative OH_PixelmapNative
+```c
+typedef struct OH_PixelmapNative OH_PixelmapNative
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明由图像框架定义的像素图对象。
 

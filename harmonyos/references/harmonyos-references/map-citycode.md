@@ -3,12 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-cityc
 title: 城市码及区划代码表
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > 附录 > 城市码及区划代码表
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:31+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e8ae39d872ff7a8eb93ab1a3bf5c290aeee622491b6af6bde33e80110343b28f
+scraped_at: 2026-09-02T15:03:02+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8961662e6d2e916801ca2b393980a6112c3637d423893a407cc58e9d5cb055c2
 ---
 
-说明
+城市码(cityCode)是指用于标识城市级别的编码；区划代码(adminCode)是指用于标识行政区划级别的编码。
+
+**说明** 
 
 仅中国大陆及港澳地区支持城市码及区划代码。
 

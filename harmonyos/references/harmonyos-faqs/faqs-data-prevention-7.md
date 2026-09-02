@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-data-preve
 title: Asset Store是否会被其他应用获取？是否会出现跨设备同步的情况
 breadcrumb: FAQ > 系统开发 > 安全 > 数据安全存储（Data Prevention） > Asset Store是否会被其他应用获取？是否会出现跨设备同步的情况
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:55+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:56+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:70811affab882a5b1f10d6ad4f746ecbc2648f9f1dbcea84d01a92464cbe4f2c
 ---
 

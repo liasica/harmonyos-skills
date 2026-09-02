@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_ContextCallback
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_ContextCallback
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:19+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:e2e075b4b389751b45c54ad75c8eacbf093a4438d6231f977101493586179eae
+scraped_at: 2026-09-02T15:01:23+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:eaf8c59380c4dd268cbe2616cf06f8f3df8b4da871879cba9436380b6a1109c6
 ---
 
-```
-1. typedef struct {...} ArkUI_ContextCallback
+```c
+typedef struct {...} ArkUI_ContextCallback
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-事件回调类型。
+事件回调类型，用于定义回调函数及其用户自定义数据。使用该类型的接口触发回调时，会调用callback，并将userData作为参数传入。
 
 **起始版本：** 12
 
@@ -26,36 +24,26 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
-| void\* userData | 自定义类型，开发者自定义类型的数据，在回调时作为参数传入。 |
+| void\* userData | 用户自定义数据，在回调时作为参数传入。 |
 
 ### 成员函数
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 描述 |
 | --- | --- |
-| [void (\*callback)(void\* userData)](capi-arkui-nativemodule-arkui-contextcallback.md#callback) | 事件回调。 |
+| [void (\*callback)(void\* userData)](capi-arkui-nativemodule-arkui-contextcallback.md#callback) | 事件触发时执行的回调函数，调用时会传入userData指向的用户自定义数据。 |
 
 ## 成员函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### callback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void (*callback)(void* userData)
+```c
+void (*callback)(void* userData)
 ```
 
 **描述：**
 
-事件回调。
+事件触发时执行的回调函数，无返回值。触发该回调时，会将userData指向的用户自定义数据作为参数传入，用于执行自定义处理逻辑。具体触发时机由使用该类型的接口定义。

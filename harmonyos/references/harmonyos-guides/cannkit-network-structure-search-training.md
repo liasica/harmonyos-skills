@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-netwo
 title: 网络结构搜索训练
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > 模型轻量化 > 网络结构搜索训练
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:40:55+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:2ac60138e352362178c72befb8a929d25b87e3d6920287a48ecd0ff335e6fb38
+scraped_at: 2026-09-02T15:00:04+08:00
+doc_updated_at: 2026-07-17
+content_hash: sha256:4f8bed1749809d09d7335e6f8813e85e1a511c47d29de3a124e2bb745d8db804
 ---
 
 网络结构搜索训练请按照如下步骤进行：
@@ -22,41 +22,41 @@ content_hash: sha256:2ac60138e352362178c72befb8a929d25b87e3d6920287a48ecd0ff335e
 
 1. NASEA策略运行环境的依赖在如下的requirements中：
 
-   ```
-   1. tensorflow-gpu==2.8
-   2. ruamel.yaml==0.17.28
-   3. PyYAML==5.4.1
-   4. Cython==0.29.35
-   5. pymoo==0.3.2
-   6. pathlib
-   7. mpi4py==3.1.4
-   8. sklearn
-   9. opencv-python
-   10. matplotlib
-   11. numpy==1.23.5
-   12. tqdm==4.43.0
-   13. protobuf==3.20.3
-   14. requests==2.31.0
-   15. Pillow==7.1.2
+   ```console
+   tensorflow-gpu==2.8
+   ruamel.yaml==0.17.28
+   PyYAML==5.4.1
+   Cython==0.29.35
+   pymoo==0.3.2
+   pathlib
+   mpi4py==3.1.4
+   sklearn
+   opencv-python
+   matplotlib
+   numpy==1.23.5
+   tqdm==4.43.0
+   protobuf==3.20.3
+   requests==2.31.0
+   Pillow==7.1.2
    ```
 
    请使用pip或者conda安装上述依赖。
 
-   说明
+   **说明** 
 
    如果仅需要在单机单卡运行工具，可跳过后续步骤。如需要单机多卡环境运行，请继续完成如下步骤。
 2. 安装并配置[Horovod](https://github.com/horovod/horovod#instal)和Open MPI。
 3. 安装mpi4py。
 
-   ```
-   1. pip3 install mpi4py
+   ```console
+   pip3 install mpi4py
    ```
 4. 验证安装。
 
    下载[Horovod](https://github.com/horovod/horovod/blob/master/examples/tensorflow/tensorflow_mnist.py)官方对应的[Demo](https://github.com/horovod/horovod/blob/master/examples/tensorflow/tensorflow_mnist.py)到当前目录。在一台服务器上利用4张加速卡运行如下命令：
 
-   ```
-   1. horovodrun -np 4 -H localhost:4 python3 tensorflow_mnist.py
+   ```console
+   horovodrun -np 4 -H localhost:4 python3 tensorflow_mnist.py
    ```
 
    若正常训练，则Horovod环境部署成功。
@@ -67,7 +67,7 @@ content_hash: sha256:2ac60138e352362178c72befb8a929d25b87e3d6920287a48ecd0ff335e
 
 1. 在user\_module.py中定义数据集函数，并在该函数中接收scen.yaml传入的数据集路径。
 
-   说明
+   **说明** 
 
    TensorFlow版本中函数名为build\_dataset\_search，PyTorch版本中函数名为dataset\_define。
 2. 解析数据集，读取图片和标签。根据is\_training判断是训练还是评估模式。
@@ -80,39 +80,40 @@ content_hash: sha256:2ac60138e352362178c72befb8a929d25b87e3d6920287a48ecd0ff335e
 
 开发者可配置合适的搜索参数，以达到较优的搜索结果。开发者需自行完成配置文件（可参考"tools\_dopt/dopt\_tf\_py3/demo/nas\_ea/ea\_cls\_imagenet/scen.yaml"），如下示例：
 
-```
-1. ## Network architecture search scenario
-2. scenario:
-3. strategy:
-4. name:                NASEA
-5. framework:           Tensorflow
-6. batch_size:          128
-7. epochs:              60
-8. constraint:
-9. application_type:  "image_classification"
-10. constraint_type:   "size"
-11. constraint_value:  11000000
-12. supernet:
-13. input_shape:       (224, 224, 3)
-14. data_format:       "channels_last"
-15. filters:           [64, 64, 128, 128, 256, 256]
-16. strides:           [1, 1, 2, 1, 2, 1]
-17. feature_choose:    [4, 5]
-18. optimizer:
-19. weights_optimizer:
-20. type:            "Adam"
-21. betas:           [0.9, 0.999]
-22. learning_rate:   0.0001
-23. dataset:
-24. pre_train_dir:   "/tmp/tfrecords"
-25. train_dir:        "/tmp/ImageNet_tf/"
-26. val_dir:          "/tmp/ImageNet_tf/"
-27. searcher:
-28. generation_num:    100
-29. pop_size:          40
-30. resource:
-31. name:              Tensorflow_standalone
-32. gpu_id:            0,1,2,3,4,5,6,7
+```yaml
+## 网络架构搜索场景
+scenario:
+  strategy:
+    name:                NASEA
+    framework:           TensorFlow
+    batch_size:          128
+    epochs:              60
+    constraint:
+      application_type:  "image_classification"
+      constraint_type:   "size"
+      constraint_value:  11000000
+    supernet:
+      input_shape:       (224, 224, 3)
+      data_format:       "channels_last"
+      filters:           [64, 64, 128, 128, 256, 256]
+      strides:           [1, 1, 2, 1, 2, 1]
+      feature_choose:    [4, 5]
+    optimizer:
+      weights_optimizer:
+        type:            "Adam"
+        betas:           [0.9, 0.999]
+        learning_rate:   0.0001
+        momentum:        0.9
+    dataset:
+      pre_train_dir:   "/tmp/tfrecords"
+      train_dir:        "/tmp/ImageNet_tf/"
+      val_dir:          "/tmp/ImageNet_tf/"
+    searcher:
+      generation_num:    100
+      pop_size:          40
+    resource:
+      name:              Tensorflow_standalone
+      gpu_id:            0,1,2,3,4,5,6,7
 ```
 
 参数说明如下表所示。
@@ -146,13 +147,13 @@ content_hash: sha256:2ac60138e352362178c72befb8a929d25b87e3d6920287a48ecd0ff335e
 | train\_dir | string | N/A | 是 | 训练数据集路径。 |
 | val\_dir | string | N/A | 是 | 验证数据集路径。 |
 | **scenario.strategy.searcher** | N/A | N/A | N/A | N/A |
-| generation\_num | int | N/A | 否 | 进化算法的代数，例：100。 |
+| generation\_num | int | N/A | 否 | 进化算法的代数，默认值：100。 |
 | pop\_size | int | N/A | 否 | 进化算法的种群数量，默认值：40。 |
 | **scenario.resource** | N/A | N/A | N/A | N/A |
 | name | string | Tensorflow\_standalone/ pytorch\_standalone | 是 | 资源对象名称。 |
 | gpu\_id | string | N/A | 是 | 指定使用的gpuID。  - 填写一个gpu id，如0，则使用单机单卡模式进行训练。  - 填写多个gpu id，如0, 1, 2, 3，则使用单机多卡模型进行训练。 |
 
-说明
+**说明** 
 
 [1] 优化器类型支持SGD，Momentum和Adam三种优化器类型。
 
@@ -166,7 +167,7 @@ content_hash: sha256:2ac60138e352362178c72befb8a929d25b87e3d6920287a48ecd0ff335e
 
 网络结构搜索基于TensorFlow框架进行训练，开发者需要按照如下的接口定义配置模型训练文件。
 
-说明
+**说明** 
 
 仅支持tf.keras实现。
 
@@ -189,7 +190,7 @@ content_hash: sha256:2ac60138e352362178c72befb8a929d25b87e3d6920287a48ecd0ff335e
   | --- | --- | --- | --- |
   | 学习率更新策略函数。 | def **lr\_scheduler**(self, lr\_init, global\_step) | lr\_init：学习率的初始值。  global\_step：TensorFlow的global step。 | 已更新的学习率。 |
 
-  说明
+  **说明** 
 
   推荐将学习率的初始值设为常数。
 * 评估函数。
@@ -285,7 +286,7 @@ content_hash: sha256:2ac60138e352362178c72befb8a929d25b87e3d6920287a48ecd0ff335e
 
 TensorFlow开发者执行python3 tools\_dopt/dopt\_tf\_py3/dopt\_so.py -c scen.yaml，即开启搜索训练；PyTorch开发者执行python3 tools\_dopt/dopt\_pytorch\_py3/dopt\_so.py -c scen.yaml。针对每种场景都有对应的demo目录入口，详见[TensorFlow NASEA网络结构搜索Demo](cannkit-examples.md#tensorflow-nasea网络结构搜索demo)。
 
-说明
+**说明** 
 
 在执行上述命令时，工具将在当前目录下查找user\_module.py文件。
 
@@ -295,13 +296,13 @@ TensorFlow开发者执行python3 tools\_dopt/dopt\_tf\_py3/dopt\_so.py -c scen.y
 
 * loss-模型精度损失loss曲线
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/14dXy4eCSMeubw01W8kOjQ/zh-cn_image_0000002589245519.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/po5P2W4JQKu1aXS2Cb-XrQ/zh-cn_image_0000002706835276.png)
 * lr-学习率变化曲线
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/tJj4eJ5wT6-FtRIc07CQQg/zh-cn_image_0000002558765712.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/0ZbZBM0uQuiVA59v2s7cdw/zh-cn_image_0000002736314381.png)
 * pareto-帕累托前沿图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/p9H0UCAhTPGSFL6O00MLnA/zh-cn_image_0000002558606056.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/kmlgXDpARbWKWC-5KV4W2w/zh-cn_image_0000002706675338.png)
 
 帕累托图横坐标为模型大小或计算量即约束项，纵坐标为结构搜索后的精度。图中的精度为搜索过程的评估结果，如果要获得更好的精度，建议对搜索结构进行充分训练。
 
@@ -311,14 +312,14 @@ TensorFlow开发者执行python3 tools\_dopt/dopt\_tf\_py3/dopt\_so.py -c scen.y
 
 搜索结束后，工具会自动将pareto图中模型结构保存在results目录，生成多个model\_arch\_result\_$NUM.py文件。其中$NUM文件编号与pareto图上的编号一致，头部有model\_param\_size和accuracy，开发者可根据TensorBoard中的pareto图或者这两个参数选择合适的网络结构，例如TensorFlow版本的搜索结果（PyTorch版本的搜索结果只是实现框架不同，不再赘述）如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/d6fw4hOJTO22-kvhVUqK9w/zh-cn_image_0000002589325583.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/iiZ-oybfS_SW7OqDd9D7hw/zh-cn_image_0000002736434425.png)
 
 开发者选定合适的模型结构文件，可以拷贝到results的上一级目录，并执行模型结构文件。
 
-```
-1. python3 model_arch_result_$NUM.py
+```console
+python3 model_arch_result_$NUM.py
 ```
 
 执行结束后，当前目录下会生成模型的pb文件和TensorBoard日志文件，开发者可通过TensorBoard查看模型的图结构。如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/gs3cB-tCT46SJd0GnQ3mAw/zh-cn_image_0000002589245521.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/eEYaRpywQ_aRpFM9TI7EVA/zh-cn_image_0000002706835278.png)

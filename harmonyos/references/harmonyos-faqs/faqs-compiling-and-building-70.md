@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 如何进行DevEco Studio编译构建初步性能分析
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 如何进行DevEco Studio编译构建初步性能分析
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:20:35+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:327a0503fc058c80111f17a346b4c9eb483110cf7b722fc827dff7a6e4e9dd4c
+scraped_at: 2026-09-02T14:54:54+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:5772aaf4747992465cdd67c202b8744a0eb4b783ec878baddb683dcc723e3cd7
 ---
 
 Build Analyzer工具显示编译构建的重要信息，帮助开发者分析和排查性能问题。
@@ -13,14 +13,14 @@ Build Analyzer工具显示编译构建的重要信息，帮助开发者分析和
 构建完成后，通过以下方式打开Build Analyzer窗口：
 
 * 在底部的工具栏区域，单击Build Analyzer窗口进行查看。
-* 在左侧边栏单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/tdXpfARhTweQkD7amOYE1g/zh-cn_image_0000002229758897.png)，打开Build Analyzer窗口。
+* 在左侧边栏单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/VVnxFQ7fRWi652gRLb9z8w/zh-cn_image_0000002624638434.png)，打开Build Analyzer窗口。
 * 完成构建后首次打开Build Analyzer时，窗口显示构建分析概览，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/Kyz5mjkNSOG9stZqlB3D5w/zh-cn_image_0000002229604409.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/wlhGkdk-Tle9eJbqNEDtEQ/zh-cn_image_0000002654837845.png "点击放大")
 
 如需查看构建任务时间图谱，从下拉菜单中点击Tasks，默认进入时间图谱界面。该界面分块显示构建历史记录、构建任务时长图谱、构建日志及日志详情信息，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/KlVqll1KR0S8hnI7kTiYWg/zh-cn_image_0000002194159012.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/pz4PzYwbRlyjCu7dP6982Q/zh-cn_image_0000002624478534.png "点击放大")
 
 事件信息：
 

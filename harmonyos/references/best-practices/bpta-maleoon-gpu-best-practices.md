@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-maleoon-gp
 title: 马良GPU渲染优化
 breadcrumb: 最佳实践 > 图形 > GPU加速 > 马良GPU渲染优化
 category: best-practices
-scraped_at: 2026-04-29T14:11:48+08:00
+scraped_at: 2026-09-02T15:03:18+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:5b81aff4c02a18d1ddbba0122a41a91831aa35cc27322373f801df1764594fa9
+content_hash: sha256:b73d7529e5ddc02f32a75785431e065f918871cabd802bfb02880d4d94136c71
 ---
 
 ## 概述
@@ -17,9 +17,9 @@ content_hash: sha256:5b81aff4c02a18d1ddbba0122a41a91831aa35cc27322373f801df17645
 
 图形渲染的基本流程如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/nJh1V0BCQ3WO8OLNiLmwww/zh-cn_image_0000002229450553.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/7ft2rHeJR7SYze4ejRvzOQ/zh-cn_image_0000002229450553.jpg "点击放大")
 
-说明
+**说明** 
 
 本文档主要适用于以下开发者：
 
@@ -31,7 +31,7 @@ content_hash: sha256:5b81aff4c02a18d1ddbba0122a41a91831aa35cc27322373f801df17645
 
 **1. Device Memory分配与释放**
 
-说明
+**说明** 
 
 仅适用于[Vulkan](https://registry.khronos.org/vulkan/#apispecs)。
 
@@ -41,7 +41,7 @@ vkAllocateMemory为了避免分配的内存没有真正被渲染线程使用，�
 
 根据资源需求，选择最为匹配的内存类型进行内存分配，相同类型的memory按照用户实际需求一次分配大块size用于不同类型的资源（比如index buffer、vertex buffer及uniform buffer），可以提升内存申请的效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/01mdVWFMSXaw4hhyLlELfw/zh-cn_image_0000002229336081.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/0_3ithWfQ9OvKHkdbRSpPg/zh-cn_image_0000002229336081.jpg "点击放大")
 
 * vkFreeMemory一定要与vkAllocateMemory成对使用，避免内存泄漏。
 * 绑定的memory资源尽量分时复用。
@@ -53,7 +53,7 @@ vkAllocateMemory为了避免分配的内存没有真正被渲染线程使用，�
 
 **2. D****evice Memory访问**
 
-说明
+**说明** 
 
 仅适用于[Vulkan](https://registry.khronos.org/vulkan/#apispecs)。
 
@@ -92,7 +92,7 @@ vkAllocateMemory为了避免分配的内存没有真正被渲染线程使用，�
 
 ### Pipeline
 
-说明
+**说明** 
 
 仅适用于[Vulkan](https://registry.khronos.org/vulkan/#apispecs)。
 
@@ -104,17 +104,15 @@ Pipeline是整个渲染过程的状态集合，包括可编程的shader和不可
 
 * 在shader中如果需要用同一个sampler对同一个纹理多次采样的结果进行加权处理（比如模糊处理）并且权值和坐标是都mediump，建议可以使用base采样坐标加多组偏移的方式进行采样，并且用一层for循环进行多次采样加权操作。base采样坐标、偏移值和加权值需要是uniform，例如编译时常量或者来自uniform buffer（循环次数为编译时常量，最大为64）。
 
+  ```screen
+  vec2 baseCoord = vec2(0.0);
+  vec2 offset[4] = {...};
+  float weight[4] = {...};
+  vec4 color = vec4(0.0);
+  for (int i = 0; i < 4; i++) {
+      color += weight[i] * texture(texSampler, baseCoord + offset[i]);
+  }
   ```
-  1. vec2 baseCoord = vec2(0.0);
-  2. vec2 offset[4] = {...};
-  3. float weight[4] = {...};
-  4. vec4 color = vec4(0.0);
-  5. for (int i = 0; i < 4; i++) {
-  6. color += weight[i] * texture(texSampler, baseCoord + offset[i]);
-  7. }
-  ```
-
-  [shader.frag](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MaliangGPU/entry/src/main/ets/pages/shader.frag#L20-L26)
 * shader中如果访问小批量的常量数据，推荐使用push constant。
 * shader中访问uniform buffer array时，索引下标使用编译时常量。
 * shader中访问uniform buffer时，访问的位置使用编译时常量。
@@ -150,7 +148,7 @@ Pipeline是整个渲染过程的状态集合，包括可编程的shader和不可
 
 ### Shader编译
 
-说明
+**说明** 
 
 仅适用于[OpenGL ES](https://www.khronos.org/opengles/)。
 
@@ -225,40 +223,36 @@ InstanceID经常会参与uniform buffer索引值的计算，此种情况下，Ma
 
 原始shader：
 
+```screen
+struct UnityType {
+  vec4 MemberA[4];
+  vec4 MemberB[4];
+};
+layout(std140) uniform UnityInstance {
+  UnityType Array[32];
+};
+void main() {
+  uint Idx = gl_InstanceID + uniformA.x;
+  Idx = Idx << 2;
+  TempVec.xy = uniformB.xy + Array[Idx / 4].MemberA[3].xy;
+}
 ```
-1. struct UnityType {
-2. vec4 MemberA[4];
-3. vec4 MemberB[4];
-4. };
-5. layout(std140) uniform UnityInstance {
-6. UnityType Array[32];
-7. };
-8. void main() {
-9. uint Idx = gl_InstanceID + uniformA.x;
-10. Idx = Idx << 2;
-11. TempVec.xy = uniformB.xy + Array[Idx / 4].MemberA[3].xy;
-12. }
-```
-
-[shader.frag](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MaliangGPU/entry/src/main/ets/pages/shader.frag#L29-L40)
 
 推荐shader：
 
+```screen
+struct UnityType {
+    vec4 MemberA[4];
+};
+layout(std140) uniform UnityInstance {
+    UnityType Array[32];
+};
+void main() {
+    uint Idx = gl_InstanceID + uniformA.x;
+    Idx = Idx << 2;
+    TempVec.xy = uniformB.xy + Array[Idx / 4].MemberA[3].xy;
+}
 ```
-1. struct UnityType {
-2. vec4 MemberA[4];
-3. };
-4. layout(std140) uniform UnityInstance {
-5. UnityType Array[32];
-6. };
-7. void main() {
-8. uint Idx = gl_InstanceID + uniformA.x;
-9. Idx = Idx << 2;
-10. TempVec.xy = uniformB.xy + Array[Idx / 4].MemberA[3].xy;
-11. }
-```
-
-[shader.frag](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MaliangGPU/entry/src/main/ets/pages/shader.frag#L43-L53)
 
 **3. 顶点排布**
 
@@ -394,61 +388,57 @@ shader中texture prefetch需要满足以下条件：
 
 原始shader：
 
-```
-1. // Vertex shader
-2. #version 300 es
-3. in vec4 in_position;
-4. in vec2 in_coord;
-5. out vec2 texCoord;
-6. void main() {
-7. gl_Position = in_position;
-8. texCoord = in_coord;
-9. }
+```cpp
+// Vertex shader
+#version 300 es
+in vec4 in_position;
+in vec2 in_coord;
+out vec2 texCoord;
+void main() {
+    gl_Position = in_position;
+    texCoord = in_coord;
+}
 
-12. // Fragment shader
-13. #version 300 es
-14. precision highp int;
-15. precision highp float;
-16. in vec2 texCoord;
-17. uniform vec2 texOffset;
-18. layout(location = 0) out highp vec4 fragColor0;
-19. layout(location = 0) uniform highp sampler2D sampler0;
-20. void main() {
-21. vec2 coord = texCoord + texOffset;
-22. fragColor0 = texture(sampler0, coord);
-23. }
+// Fragment shader
+#version 300 es
+precision highp int;
+precision highp float;
+in vec2 texCoord;
+uniform vec2 texOffset;
+layout(location = 0) out highp vec4 fragColor0;
+layout(location = 0) uniform highp sampler2D sampler0;
+void main() {
+    vec2 coord = texCoord + texOffset;
+    fragColor0 = texture(sampler0, coord);
+}
 ```
-
-[shader.frag](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MaliangGPU/entry/src/main/ets/pages/shader.frag#L57-L79)
 
 推荐shader：
 
-```
-1. // Vertex shader
-2. #version 300 es
-3. in vec4 in_position;
-4. in vec2 in_coord;
-5. out vec2 texCoord;
-6. uniform vec2 texOffset;
-7. void main() {
-8. gl_Position = in_position;
-9. texCoord = in_coord + texOffset;
-10. }
+```cpp
+// Vertex shader
+#version 300 es
+in vec4 in_position;
+in vec2 in_coord;
+out vec2 texCoord;
+uniform vec2 texOffset;
+void main() {
+    gl_Position = in_position;
+    texCoord = in_coord + texOffset;
+}
 
-13. // Fragment shader
-14. #version 300 es
-15. precision highp int;
-16. precision highp float;
-17. in vec2 texCoord;
-18. uniform vec2 texOffset;
-19. layout(location = 0) out highp vec4 fragColor0;
-20. layout(location = 0) uniform highp sampler2D sampler0;
-21. void main() {
-22. fragColor0 = texture(sampler0, texCoord);
-23. }
+// Fragment shader
+#version 300 es
+precision highp int;
+precision highp float;
+in vec2 texCoord;
+uniform vec2 texOffset;
+layout(location = 0) out highp vec4 fragColor0;
+layout(location = 0) uniform highp sampler2D sampler0;
+void main() {
+    fragColor0 = texture(sampler0, texCoord);
+}
 ```
-
-[shader.frag](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MaliangGPU/entry/src/main/ets/pages/shader.frag#L83-L106)
 
 **3. Texture Reuse**
 
@@ -462,42 +452,36 @@ Texture Reuse可以分为三种模式：TSLOOP、POLOOP和OFFSETLOOP。
 
   推荐shader：
 
+  ```cpp
+  highp vec4 t0 = texture(texture_unit0, texcoord, bias);
+  highp vec4 t1 = texture(texture_unit1, texcoord, bias);
+  highp vec4 t2 = texture(texture_unit2, texcoord, bias);
+  highp vec4 t3 = texture(texture_unit3, texcoord, bias);
   ```
-  1. highp vec4 t0 = texture(texture_unit0, texcoord, bias);
-  2. highp vec4 t1 = texture(texture_unit1, texcoord, bias);
-  3. highp vec4 t2 = texture(texture_unit2, texcoord, bias);
-  4. highp vec4 t3 = texture(texture_unit3, texcoord, bias);
-  ```
-
-  [shader.frag](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MaliangGPU/entry/src/main/ets/pages/shader.frag#L110-L113)
 * POLOOP：相同的sampler，相同的texcoord，不同的offset。
 
   offset支持immediate。
 
   推荐shader：
 
+  ```cpp
+  vec4 t0 = texelFetchOffset(texture_unit0, texcoord0, lod, offset0);
+  vec4 t1 = texelFetchOffset(texture_unit0, texcoord0, lod, offset1);
+  vec4 t2 = texelFetchOffset(texture_unit0, texcoord0, lod, offset2);
+  vec4 t3 = texelFetchOffset(texture_unit0, texcoord0, lod, offset3);
   ```
-  1. vec4 t0 = texelFetchOffset(texture_unit0, texcoord0, lod, offset0);
-  2. vec4 t1 = texelFetchOffset(texture_unit0, texcoord0, lod, offset1);
-  3. vec4 t2 = texelFetchOffset(texture_unit0, texcoord0, lod, offset2);
-  4. vec4 t3 = texelFetchOffset(texture_unit0, texcoord0, lod, offset3);
-  ```
-
-  [shader.frag](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MaliangGPU/entry/src/main/ets/pages/shader.frag#L117-L120)
 * OFFSETLOOP：相同的sampler，texcoord相同的base（texcoord0），不同的offset。
 
   offset支持immediate和uniform。
 
   推荐shader：
 
+  ```cpp
+  vec4 t0 = texture(texture_unit0, texcoord0 + vec2(-0.25, 0), bias0);
+  vec4 t1 = texture(texture_unit0, texcoord0 + vec2(0.0, 0.25), bias1);
+  vec4 t2 = texture(texture_unit0, texcoord0 + vec2(0.0, 0.0), bias2);
+  vec4 t3 = texture(texture_unit0, texcoord0 + vec2(-0.25, 0.25), bias3);
   ```
-  1. vec4 t0 = texture(texture_unit0, texcoord0 + vec2(-0.25, 0), bias0);
-  2. vec4 t1 = texture(texture_unit0, texcoord0 + vec2(0.0, 0.25), bias1);
-  3. vec4 t2 = texture(texture_unit0, texcoord0 + vec2(0.0, 0.0), bias2);
-  4. vec4 t3 = texture(texture_unit0, texcoord0 + vec2(-0.25, 0.25), bias3);
-  ```
-
-  [shader.frag](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MaliangGPU/entry/src/main/ets/pages/shader.frag#L123-L126)
 
 对于这三类texture，Maleoon GPU会对其进行reuse，减少传输的次数，降低功耗。
 
@@ -515,49 +499,43 @@ Texture Reuse可以分为三种模式：TSLOOP、POLOOP和OFFSETLOOP。
 
   推荐shader：
 
+  ```cpp
+  uniform lowp/mediump sampler2D texture_unit0;
+  uniform highp float w[4];
+  vec4 t0 = texelFetchOffset(texture_unit0, texcoord0, lod, offset0);
+  vec4 t1 = texelFetchOffset(texture_unit0, texcoord0, lod, offset1);
+  vec4 t2 = texelFetchOffset(texture_unit0, texcoord0, lod, offset2);
+  vec4 t3 = texelFetchOffset(texture_unit0, texcoord0, lod, offset3);
+  vec4 conv_enable = w[0] * t0 + w[1] * t1 + w[2] * t2 + w[3] * t3;
   ```
-  1. uniform lowp/mediump sampler2D texture_unit0;
-  2. uniform highp float w[4];
-  3. vec4 t0 = texelFetchOffset(texture_unit0, texcoord0, lod, offset0);
-  4. vec4 t1 = texelFetchOffset(texture_unit0, texcoord0, lod, offset1);
-  5. vec4 t2 = texelFetchOffset(texture_unit0, texcoord0, lod, offset2);
-  6. vec4 t3 = texelFetchOffset(texture_unit0, texcoord0, lod, offset3);
-  7. vec4 conv_enable = w[0] * t0 + w[1] * t1 + w[2] * t2 + w[3] * t3;
-  ```
-
-  [shader.frag](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MaliangGPU/entry/src/main/ets/pages/shader.frag#L130-L136)
 * Max：取最大值操作
 
   sampler支持lowp/mediump
 
   推荐shader：
 
+  ```cpp
+  uniform lowp/mediump sampler2D texture_unit0;
+  vec4 t0 = texelFetchOffset(texture_unit0, texcoord0, lod, offset0);
+  vec4 t1 = texelFetchOffset(texture_unit0, texcoord0, lod, offset1);
+  vec4 t2 = texelFetchOffset(texture_unit0, texcoord0, lod, offset2);
+  vec4 t3 = texelFetchOffset(texture_unit0, texcoord0, lod, offset3);
+  vec4 max_enable = max(max(max(t0, t1), t2), t3);
   ```
-  1. uniform lowp/mediump sampler2D texture_unit0;
-  2. vec4 t0 = texelFetchOffset(texture_unit0, texcoord0, lod, offset0);
-  3. vec4 t1 = texelFetchOffset(texture_unit0, texcoord0, lod, offset1);
-  4. vec4 t2 = texelFetchOffset(texture_unit0, texcoord0, lod, offset2);
-  5. vec4 t3 = texelFetchOffset(texture_unit0, texcoord0, lod, offset3);
-  6. vec4 max_enable = max(max(max(t0, t1), t2), t3);
-  ```
-
-  [shader.frag](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MaliangGPU/entry/src/main/ets/pages/shader.frag#L140-L145)
 * Min：取最小值操作
 
   sampler支持lowp/mediump
 
   推荐shader：
 
+  ```cpp
+  uniform lowp/mediump sampler2D texture_unit0;
+  vec4 t0 = texelFetchOffset(texture_unit0, texcoord0, lod, offset0);
+  vec4 t1 = texelFetchOffset(texture_unit0, texcoord0, lod, offset1);
+  vec4 t2 = texelFetchOffset(texture_unit0, texcoord0, lod, offset2);
+  vec4 t3 = texelFetchOffset(texture_unit0, texcoord0, lod, offset3);
+  vec4 min_enable = min(min(min(t0, t1), t2), t3);
   ```
-  1. uniform lowp/mediump sampler2D texture_unit0;
-  2. vec4 t0 = texelFetchOffset(texture_unit0, texcoord0, lod, offset0);
-  3. vec4 t1 = texelFetchOffset(texture_unit0, texcoord0, lod, offset1);
-  4. vec4 t2 = texelFetchOffset(texture_unit0, texcoord0, lod, offset2);
-  5. vec4 t3 = texelFetchOffset(texture_unit0, texcoord0, lod, offset3);
-  6. vec4 min_enable = min(min(min(t0, t1), t2), t3);
-  ```
-
-  [shader.frag](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MaliangGPU/entry/src/main/ets/pages/shader.frag#L149-L154)
 
 对于这三类texture，Maleoon GPU在reuse基础上进一步减少传输的信息，降低功耗。
 
@@ -569,7 +547,7 @@ Maleoon GPU上，Blend可以通过Fixed Function（硬件加速）的方式，�
 
 * Blend mode为add、sub。
 
-  说明
+  **说明** 
 
   仅适用于Maleoon 910 GPU。
 * App本身不需要使能blend时，如果color attachment为以下format时，建议VkPipelineColorBlendAttachmentState::colorWriteMask配置成0xf，并且fragment shader中对应attachment输出color的四个通道都有赋值。
@@ -592,7 +570,7 @@ Maleoon GPU上，Blend可以通过Fixed Function（硬件加速）的方式，�
 
 * Blend mode为min、max。
 
-  说明
+  **说明** 
 
   仅适用于Maleoon 910 GPU。
 
@@ -609,14 +587,14 @@ Maleoon GPU上，Blend可以通过Fixed Function（硬件加速）的方式，�
 
 * Shader中大量使用EXT\_shader\_framebuffer\_fetch，会影响GPU的执行效率。建议开发者识别如果是Maleoon GPU时，请关闭framebuffer fetch功能。
 
-  说明
+  **说明** 
 
   + 仅适用于[OpenGL ES](https://www.khronos.org/opengles/)。
   + Maleoon 920及以上的GPU，在单个三角形覆盖全屏区域的场景下，推荐使用EXT\_shader\_framebuffer\_fetch。
 
 ### Transfer
 
-说明
+**说明** 
 
 仅适用于[Vulkan](https://registry.khronos.org/vulkan/#apispecs)。
 
@@ -679,16 +657,14 @@ Loop Reduction是用OpenCL有效实现数组求和，Maleoon GPU支持Vulkan与O
 * 如果需要获得最优的OpenCL性能，需要去轮询workgroup size，使得并行度等最优，从而获取最优的性能。
 * 使用cl\_arm\_import\_memory\_dma\_buf的扩展特性。
 
+  ```cpp
+  cl_mem clImportMemoryARM(cl_context context,
+      cl_mem_flags flags,
+      const cl_import_properties_arm *properties,
+      void *memory,
+      size_t size,
+      cl_int *errorcode_ret);
   ```
-  1. cl_mem clImportMemoryARM(cl_context context,
-  2. cl_mem_flags flags,
-  3. const cl_import_properties_arm *properties,
-  4. void *memory,
-  5. size_t size,
-  6. cl_int *errorcode_ret);
-  ```
-
-  [shader.frag](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MaliangGPU/entry/src/main/ets/pages/shader.frag#L158-L163)
 
 **2.2 Kernel算子**
 
@@ -700,17 +676,15 @@ Kernel算子是OpenCL的核心模块，算子的写法会影响OpenCL程序的�
 
   通常在精度允许的情况下，可以使用half\_or native\_等内建函数版本，这样可以获取比数学函数更好的性能。
 
+  ```cpp
+  native_sin();
+  native_cos();
+  native_tan();
+  native_divide();
+  native_exp();
+  native_sqrt();
+  half_sqrt();
   ```
-  1. native_sin();
-  2. native_cos();
-  3. native_tan();
-  4. native_divide();
-  5. native_exp();
-  6. native_sqrt();
-  7. half_sqrt();
-  ```
-
-  [shader.frag](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MaliangGPU/entry/src/main/ets/pages/shader.frag#L167-L173)
 
 * 编译优化选项
 
@@ -760,7 +734,7 @@ Kernel算子是OpenCL的核心模块，算子的写法会影响OpenCL程序的�
 
 ### Window System Integration
 
-说明
+**说明** 
 
 仅适用于[Vulkan](https://registry.khronos.org/vulkan/#apispecs)。
 
@@ -894,7 +868,7 @@ HEBC是Maleoon GPU独有的硬件压缩算法，纹理的数据以无损的压�
 
 通过glBindImageTexture绑定到image unit的已经被压缩的纹理，在被imageLoad/imageStore访问时，驱动侧会触发解压缩流程。
 
-说明
+**说明** 
 
 解压缩后的纹理在之后的渲染过程中不会被重新压缩，都是以非压缩的状态存在。
 
@@ -912,7 +886,7 @@ HEBC是Maleoon GPU独有的硬件压缩算法，纹理的数据以无损的压�
 
 **1.3 三通道Texture Buffer**
 
-说明
+**说明** 
 
 仅适用于[OpenGL ES](https://www.khronos.org/opengles/)。
 
@@ -932,7 +906,7 @@ HEBC是Maleoon GPU独有的硬件压缩算法，纹理的数据以无损的压�
 
 **2. Buffer**
 
-说明
+**说明** 
 
 仅适用于[OpenGL ES](https://www.khronos.org/opengles/)。
 
@@ -948,7 +922,7 @@ HEBC是Maleoon GPU独有的硬件压缩算法，纹理的数据以无损的压�
 
 ### Synchronization
 
-说明
+**说明** 
 
 仅适用于[Vulkan](https://registry.khronos.org/vulkan/#apispecs)。
 
@@ -965,46 +939,42 @@ Vulkan提供了多种不同的同步原语供App使用，用户可以用这些�
 
 例如以下序列，compute执行时graphics是闲置的，导致graphics并发度低。
 
+```cpp
+vkCmdBeginRenderPass(renderpass1)；
+vkCmdDraw()；
+vkCmdEndRenderPass()；
+vkCmdPipelineBarrier(src: rendering, dst:compute)；
+vkCmdDispatch()；
+vkCmdPipelineBarrier(src: compute, dst:rendering)；
+vkCmdBeginRenderPass(renderpass2)；
+vkCmdDraw()；
+vkCmdEndRenderPass()；
 ```
-1. vkCmdBeginRenderPass(renderpass1)；
-2. vkCmdDraw()；
-3. vkCmdEndRenderPass()；
-4. vkCmdPipelineBarrier(src: rendering, dst:compute)；
-5. vkCmdDispatch()；
-6. vkCmdPipelineBarrier(src: compute, dst:rendering)；
-7. vkCmdBeginRenderPass(renderpass2)；
-8. vkCmdDraw()；
-9. vkCmdEndRenderPass()；
-```
-
-[shader.frag](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MaliangGPU/entry/src/main/ets/pages/shader.frag#L177-L185)
 
 Job的执行顺序如下图所示，可见graphics jobs之间存在较大空隙，compute和graphics jobs为串行执行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/CtlwF1Q3ThKq9pf7giEM6Q/zh-cn_image_0000002194010276.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/hEp4Ndh0Taer4QV55lcvQQ/zh-cn_image_0000002194010276.jpg "点击放大")
 
 为了避免以上情况出现，compute执行时，尽量让可以并行的graphics任务与compute同时执行。API序列如下所示：
 
+```cpp
+vkCmdBeginRenderPass(renderpass1);
+vkCmdDraw();
+vkCmdEndRenderPass();
+vkCmdPipelineBarrier(src:rendering, dst:compute);
+vkCmdDispatch();
+vkCmdBeginRenderPass(renderpass3);
+vkCmdDraw();
+vkCmdEndRenderPass();
+vkCmdPipelineBarrier(src:compute, dst:rendering);
+vkCmdBeginRenderPass(renderpass2);
+vkCmdDraw();
+vkCmdEndRenderPass();
 ```
-1. vkCmdBeginRenderPass(renderpass1);
-2. vkCmdDraw();
-3. vkCmdEndRenderPass();
-4. vkCmdPipelineBarrier(src:rendering, dst:compute);
-5. vkCmdDispatch();
-6. vkCmdBeginRenderPass(renderpass3);
-7. vkCmdDraw();
-8. vkCmdEndRenderPass();
-9. vkCmdPipelineBarrier(src:compute, dst:rendering);
-10. vkCmdBeginRenderPass(renderpass2);
-11. vkCmdDraw();
-12. vkCmdEndRenderPass();
-```
-
-[shader.frag](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MaliangGPU/entry/src/main/ets/pages/shader.frag#L189-L200)
 
 Job的执行顺序如下图所示，此时compute和graphics jobs可以并发执行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/Lvoh_N65ReipKlRM1uaq4Q/zh-cn_image_0000002193850692.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/sWorBVcKRn2j4oh3qMDhHw/zh-cn_image_0000002193850692.jpg "点击放大")
 
 **【不推荐】**
 
@@ -1017,7 +987,7 @@ Job的执行顺序如下图所示，此时compute和graphics jobs可以并发执
 
 ### Subpass Merge
 
-说明
+**说明** 
 
 仅适用于[Vulkan](https://registry.khronos.org/vulkan/#apispecs)。
 
@@ -1039,7 +1009,7 @@ Maleoon GPU硬件支持在满足以下条件时，允许后面的subpass按照�
 * 必须存在前面subpass的输出被后面subpass作为input attachment的情况。
 * Input attachment的format不能是srgb格式。
 
-  说明
+  **说明** 
 
   仅适用于Maleoon 910 GPU。
 * 非multiview和multilayer场景。
@@ -1075,47 +1045,43 @@ Maleoon GPU在内存访问操作上使用向量化是更加高效的行为，向
 
 推荐shader写法：
 
+```cpp
+struct FCocTileSample {
+    vec4 Fgd;
+};
+void main() {
+    uint u12 = 0u;
+    FCocTileSample t10[3];
+    while (u12 < 3u) {
+        t10[int(u12)].Fgd = a;
+        u12++;
+    }
+}
 ```
-1. struct FCocTileSample {
-2. vec4 Fgd;
-3. };
-4. void main() {
-5. uint u12 = 0u;
-6. FCocTileSample t10[3];
-7. while (u12 < 3u) {
-8. t10[int(u12)].Fgd = a;
-9. u12++;
-10. }
-11. }
-```
-
-[shader.frag](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MaliangGPU/entry/src/main/ets/pages/shader.frag#L204-L214)
 
 **【不推荐】**
 
 原始shader写法：
 
+```cpp
+struct FCocTileSample {
+    float FgdMinCoc;
+    float FgdMaxCoc;
+    float BgdMinCoc;
+    float BgdMaxCoc;
+};
+void main() {
+    uint u12 = 0u;
+    FCocTileSample t10[3];
+    while (u12 < 3u) {
+        t10[int(u12)].FgdMinCoc = a;
+        t10[int(u12)].FgdMaxCoc = b;
+        t10[int(u12)].BgdMinCoc = c;
+        t10[int(u12)].BgdMaxCoc = d;
+        u12++;
+    }
+}
 ```
-1. struct FCocTileSample {
-2. float FgdMinCoc;
-3. float FgdMaxCoc;
-4. float BgdMinCoc;
-5. float BgdMaxCoc;
-6. };
-7. void main() {
-8. uint u12 = 0u;
-9. FCocTileSample t10[3];
-10. while (u12 < 3u) {
-11. t10[int(u12)].FgdMinCoc = a;
-12. t10[int(u12)].FgdMaxCoc = b;
-13. t10[int(u12)].BgdMinCoc = c;
-14. t10[int(u12)].BgdMaxCoc = d;
-15. u12++;
-16. }
-17. }
-```
-
-[field.glsl](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MaliangGPU/entry/src/main/ets/pages/field.glsl#L20-L36)
 
 ### 尽量使用低精度
 
@@ -1128,15 +1094,13 @@ Maleoon GPU同时支持高精度和低精度，并且在软硬件上对低精度
 
 推荐shader写法：
 
+```cpp
+precision highp float;
+varying mediump vec4 in0;
+mediump vec2 var0 = in0.xw;
+mediump vec2 var1 = in0.zy;
+mediump vec2 var2 = (var0 + var1) / 2.0f;
 ```
-1. precision highp float;
-2. varying mediump vec4 in0;
-3. mediump vec2 var0 = in0.xw;
-4. mediump vec2 var1 = in0.zy;
-5. mediump vec2 var2 = (var0 + var1) / 2.0f;
-```
-
-[field.glsl](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MaliangGPU/entry/src/main/ets/pages/field.glsl#L40-L44)
 
 **【不推荐】**
 
@@ -1147,15 +1111,13 @@ Maleoon GPU同时支持高精度和低精度，并且在软硬件上对低精度
 
 原始shader写法：
 
+```cpp
+precision highp float;
+varying vec4 in0;
+vec2 var0 = in0.xw;
+vec2 var1 = in0.zy;
+vec2 var2 = (var0 + var1) / 2.0f;
 ```
-1. precision highp float;
-2. varying vec4 in0;
-3. vec2 var0 = in0.xw;
-4. vec2 var1 = in0.zy;
-5. vec2 var2 = (var0 + var1) / 2.0f;
-```
-
-[field.glsl](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MaliangGPU/entry/src/main/ets/pages/field.glsl#L48-L53)
 
 ### 生成优化的SPIR-V
 
@@ -1203,36 +1165,32 @@ Maleoon GPU对于Uniform relative indexing的一般做法为将动态索引的�
 
 原始shader写法：
 
+```cpp
+if (_61.x) {
+    vec3 _513 = (-_37.xyz) * _462._m0[_440 / 8]._m0.www + _462._m0[_440 / 8]._m0.xyz;
+    _179.x = _516 + _462._m0[_440 / 8]._m3.w;
+    _516 *= _462._m0[_440 / 8]._m2.x;
+    _516 *= _462._m0[_440 / 8]._m3.w;
+    _559 = dot(_462._m0[_440 / 8]._m3.xyz, _71.xyz);
+    _559 = (_559 * _462._m0[_440 / 8]._m2.z) + _462._m0[_440 / 8]._m2.w;
+}
 ```
-1. if (_61.x) {
-2. vec3 _513 = (-_37.xyz) * _462._m0[_440 / 8]._m0.www + _462._m0[_440 / 8]._m0.xyz;
-3. _179.x = _516 + _462._m0[_440 / 8]._m3.w;
-4. _516 *= _462._m0[_440 / 8]._m2.x;
-5. _516 *= _462._m0[_440 / 8]._m3.w;
-6. _559 = dot(_462._m0[_440 / 8]._m3.xyz, _71.xyz);
-7. _559 = (_559 * _462._m0[_440 / 8]._m2.z) + _462._m0[_440 / 8]._m2.w;
-8. }
-```
-
-[field.glsl](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MaliangGPU/entry/src/main/ets/pages/field.glsl#L57-L64)
 
 推荐shader写法：
 
+```cpp
+if (_61.x) {
+    vec4 ldubo_mo = _462._m0[_440 / 8]._m0.xyzw;
+    vec4 ldubo_m2 = _462._m0[_440 / 8]._m2.xyzw;
+    vec4 ldubo_m3 = _462._m0[_440 / 8]._m3.xyzw;
+    vec3 _513 = (-_37.xyz) * ldubo_mo.www + ldubo_mo.xyz;
+    _179.x = _516 + ldubo_m3.w;
+    _516 *= ldubo_m2.x;
+    _516 *= ldubo_m3.w;
+    _559 = dot(ldubo_m3.xyz, _71.xyz);
+    _559 = (_559 * ldubo_m2.z) + ldubo_m2.w;
+}
 ```
-1. if (_61.x) {
-2. vec4 ldubo_mo = _462._m0[_440 / 8]._m0.xyzw;
-3. vec4 ldubo_m2 = _462._m0[_440 / 8]._m2.xyzw;
-4. vec4 ldubo_m3 = _462._m0[_440 / 8]._m3.xyzw;
-5. vec3 _513 = (-_37.xyz) * ldubo_mo.www + ldubo_mo.xyz;
-6. _179.x = _516 + ldubo_m3.w;
-7. _516 *= ldubo_m2.x;
-8. _516 *= ldubo_m3.w;
-9. _559 = dot(ldubo_m3.xyz, _71.xyz);
-10. _559 = (_559 * ldubo_m2.z) + ldubo_m2.w;
-11. }
-```
-
-[field.glsl](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MaliangGPU/entry/src/main/ets/pages/field.glsl#L68-L78)
 
 ### Branch
 
@@ -1259,57 +1217,53 @@ Maleoon GPU对于Uniform relative indexing的一般做法为将动态索引的�
 
 原始shader写法：
 
+```cpp
+vec4 UniformArrayDynamicIndex(int i) {
+    if (i <= 0) return UArray[0];
+    else if (i == 1) return UArray[1];
+    else if (i == 2) return UArray[2];
+    else if (i == 3) return UArray[3];
+    else if (i == 4) return UArray[4];
+    else if (i == 5) return UArray[5];
+    else if (i == 6) return UArray[6];
+    else if (i == 7) return UArray[7];
+    else if (i == 8) return UArray[8];
+    else if (i == 9) return UArray[9];
+    else if (i == 10) return UArray[10];
+    else if (i == 11) return UArray[11];
+    else if (i == 12) return UArray[12];
+    else if (i == 13) return UArray[13];
+    else if (i == 14) return UArray[14];
+    else if (i == 15) return UArray[15];
+    else if (i == 16) return UArray[16];
+    else if (i == 17) return UArray[17];
+    else if (i == 18) return UArray[18];
+    else if (i == 19) return UArray[19];
+    else if (i == 20) return UArray[20];
+    else if (i == 21) return UArray[21];
+    else if (i == 22) return UArray[22];
+    else if (i == 23) return UArray[23];
+    else if (i == 24) return UArray[24];
+    else if (i == 25) return UArray[25];
+    else if (i == 26) return UArray[26];
+    else if (i == 27) return UArray[27];
+    else if (i == 28) return UArray[28];
+    else if (i == 29) return UArray[29];
+    else if (i == 30) return UArray[30];
+    else if (i == 31) return UArray[31];
+    return UArray[0];
+}
 ```
-1. vec4 UniformArrayDynamicIndex(int i) {
-2. if (i <= 0) return UArray[0];
-3. else if (i == 1) return UArray[1];
-4. else if (i == 2) return UArray[2];
-5. else if (i == 3) return UArray[3];
-6. else if (i == 4) return UArray[4];
-7. else if (i == 5) return UArray[5];
-8. else if (i == 6) return UArray[6];
-9. else if (i == 7) return UArray[7];
-10. else if (i == 8) return UArray[8];
-11. else if (i == 9) return UArray[9];
-12. else if (i == 10) return UArray[10];
-13. else if (i == 11) return UArray[11];
-14. else if (i == 12) return UArray[12];
-15. else if (i == 13) return UArray[13];
-16. else if (i == 14) return UArray[14];
-17. else if (i == 15) return UArray[15];
-18. else if (i == 16) return UArray[16];
-19. else if (i == 17) return UArray[17];
-20. else if (i == 18) return UArray[18];
-21. else if (i == 19) return UArray[19];
-22. else if (i == 20) return UArray[20];
-23. else if (i == 21) return UArray[21];
-24. else if (i == 22) return UArray[22];
-25. else if (i == 23) return UArray[23];
-26. else if (i == 24) return UArray[24];
-27. else if (i == 25) return UArray[25];
-28. else if (i == 26) return UArray[26];
-29. else if (i == 27) return UArray[27];
-30. else if (i == 28) return UArray[28];
-31. else if (i == 29) return UArray[29];
-32. else if (i == 30) return UArray[30];
-33. else if (i == 31) return UArray[31];
-34. return UArray[0];
-35. }
-```
-
-[field.glsl](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MaliangGPU/entry/src/main/ets/pages/field.glsl#L82-L116)
 
 推荐shader写法：
 
+```cpp
+vec4 UniformArrayDynamicIndex(int i) {
+    if (i <0 || i > 31)
+        i = 0;
+    return UArray[i];
+}
 ```
-1. vec4 UniformArrayDynamicIndex(int i) {
-2. if (i <0 || i > 31)
-3. i = 0;
-4. return UArray[i];
-5. }
-```
-
-[field.glsl](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MaliangGPU/entry/src/main/ets/pages/field.glsl#L120-L124)
 
 ### Loop
 
@@ -1324,24 +1278,20 @@ Loop运行过程中，会产生较多的分叉，且会有大量的分支指令�
 
 推荐shader：
 
+```cpp
+for (i = 0; i < 2 ; i++) {}
 ```
-1. for (i = 0; i < 2 ; i++) {}
-```
-
-[field.glsl](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MaliangGPU/entry/src/main/ets/pages/field.glsl#L128-L128)
 
 **【不推荐】**
 
 原始shader：
 
+```cpp
+i = 0;
+for (;;) {
+    if (((i * 2 ) + 1 >=4)) {
+        break;
+    }
+    i++;
+}
 ```
-1. i = 0;
-2. for (;;) {
-3. if (((i * 2 ) + 1 >=4)) {
-4. break;
-5. }
-6. i++;
-7. }
-```
-
-[field.glsl](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MaliangGPU/entry/src/main/ets/pages/field.glsl#L132-L138)

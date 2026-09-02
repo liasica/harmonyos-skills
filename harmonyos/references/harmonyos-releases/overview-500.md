@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-500
 title: 版本概览
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > 版本概览
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:36:07+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:0fd579871120732131f679f2c8d029fd54a6970bfd753503a5b94fb5c61d0748
+scraped_at: 2026-09-02T14:58:53+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:f40cdcf4743ae2252f92d84866261047ad6d8b4ee5f08e13a1a00127d610e52b
 ---
 
 欢迎开发者进入HarmonyOS NEXT。暌违一年，HarmonyOS NEXT终于在万千开发者的期待下从幕后走向台前。
@@ -21,7 +22,7 @@ HarmonyOS NEXT在开放能力方面所做的新增和增强，请参考[OS平台
 
 ## 版本信息
 
-说明
+**说明** 
 
 使用正确的配套关系进行应用开发可以获得更流畅的开发体验。
 
@@ -36,7 +37,7 @@ HarmonyOS NEXT在开放能力方面所做的新增和增强，请参考[OS平台
 | 5.0.3.906 | 2024/10/22 |
 | SDK | Release | HarmonyOS 5.0.0 Release SDK | 基于OpenHarmony SDK Ohos\_sdk\_public 5.0.0.71 (API 12 Release) | 2024/10/22 |
 
-说明
+**说明** 
 
 * 系统版本请通过设备的“设置 > *设备名称* > 软件版本”进行查询。可在本页面检查版本更新，以及时升级至最新版本。
 * DevEco Studio版本请从DevEco Studio界面菜单选择“Help > About DevEco Studio”进行查询。请[点击此处](https://developer.huawei.com/consumer/cn/deveco-studio/)获取最新的DevEco Studio软件版本。

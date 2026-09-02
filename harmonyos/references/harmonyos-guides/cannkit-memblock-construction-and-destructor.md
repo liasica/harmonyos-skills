@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-membl
 title: 构造函数和析构函数
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > MemBlock > 构造函数和析构函数
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:35+08:00
+scraped_at: 2026-09-02T14:50:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:888dc27f359f2dfa463d2493ca02006dfd17350a3b255afa998e906cad7987f8
+content_hash: sha256:f6544ff1bcf6b0022851ca8b5982bccc11083676051c48a0c367e0528754ba4c
 ---
 
 ## 函数功能
@@ -14,10 +14,10 @@ MemBlock构造函数和析构函数。
 
 ## 函数原型
 
-```
-1. MemBlock(Allocator &allocator, void *addr, size_t block_size)
-2. : allocator_(allocator), addr_(addr), count_(1U), block_size_(block_size) {}
-3. virtual ~MemBlock() = default;
+```cpp
+MemBlock(Allocator &allocator, void *addr, size_t block_size)
+: allocator_(allocator), addr_(addr), count_(1U), block_size_(block_size) {}
+virtual ~MemBlock() = default;
 ```
 
 ## 参数说明

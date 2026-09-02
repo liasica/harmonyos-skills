@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-high-perfo
 title: 高性能JSON解析
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 对象序列化性能优化 > 高性能JSON解析
 category: best-practices
-scraped_at: 2026-04-29T14:13:40+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:5dfb03c8a3d8ef390b607aef69aeeb494955b98f31cf09b1e07136c8cacc0070
+scraped_at: 2026-09-02T15:03:22+08:00
+doc_updated_at: 2026-08-17
+content_hash: sha256:c9cb7066acdc906790f33b2ecd326d2da4485c0c94f34ea3cc1b08b8d183b424
 ---
 
 ## 概述
@@ -49,63 +49,55 @@ TurboTransJSON采用编译器代码生成的方式，当开发者使用TurboTran
 1. 引入TurboTransJSONPlugin和TurboTransJSON三方库。
    * 插件引入，在工程根目录hvigor/hvigor-config.json5文件内加入如下配置：
 
+     ```screen
+     "dependencies": {
+       // ...
+       "@hadss/turbo-trans-json-plugin": "latest"
+     },
      ```
-     1. "dependencies": {
-     2. // ...
-     3. "@hadss/turbo-trans-json-plugin": "latest"
-     4. },
-     ```
-
-     [hvigor-config.json5](https://gitcode.com/harmonyos_samples/TurboTransJSON/blob/master/hvigor/hvigor-config.json5#L4-L9)
    * 三方库引入，在工程目录或者模块下使用ohpm方式安装：
 
-     ```
-     1. ohpm install @hadss/turbo-trans-core @hadss/turbo-trans-json
+     ```shell
+     ohpm install @hadss/turbo-trans-core @hadss/turbo-trans-json
      ```
 2. 插件生效还需在工程根目录 hvigorfile.ts 添加相关插件配置，参考如下：
 
-   ```
-   1. import { turboTransJsonPlugin } from '@hadss/turbo-trans-json-plugin';
+   ```screen
+   import { turboTransJsonPlugin } from '@hadss/turbo-trans-json-plugin';
 
-   3. export default {
-   4. system: appTasks,
-   5. plugins: [
-   6. // ...
-   7. turboTransJsonPlugin(hvigor)
-   8. ]
-   9. }
+   export default {
+     system: appTasks,
+     plugins: [
+       // ...
+       turboTransJsonPlugin(hvigor),
+     ],
+   };
    ```
-
-   [hvigorfile.ts](https://gitcode.com/harmonyos_samples/TurboTransJSON/blob/master/hvigorfile.ts#L20-L30)
 3. 给自定义类添加@Serializable装饰器，标记为自定义序列化类。
 
-   ```
-   1. import { Serializable } from '@hadss/turbo-trans-core';
+   ```screen
+   import { Serializable } from '@hadss/turbo-trans-core';
 
-   3. @Serializable()
-   4. export class Person {
-   5. // ...
-   6. }
+   @Serializable()
+   export class Person {
+     // ...
+   }
    ```
-
-   [Person.ets](https://gitcode.com/harmonyos_samples/TurboTransJSON/blob/master/entry/src/main/ets/model/Person.ets#L16-L33)
 4. 在首次配置插件之后，执行下述命令，确保模块配置：
 
-   ```
-   1. hvigorw jsonSync
+   ```shell
+   hvigorw jsonSync
    ```
 
    该命令会扫描项目中使用 @Serializable 注解的模块，自动配置 build-profile.json5 文件并生成序列化器代码。
 5. 获取网络数据后，可使用TJSON提供的fromBuffer()或fromString()方法进行反序列化，生成相应的业务对象。
 
+   ```screen
+   const response = await session.fetch(request);
+   if (response && response.body) {
+     this.person = TJSON.fromBuffer<Person>(response.body, Person);
+   }
    ```
-   1. const response = await session.fetch(request);
-   2. if (response && response.body) {
-   3. this.person = TJSON.fromBuffer<Person>(response.body, Person);
-   4. }
-   ```
-
-   [NetworkRequestPage.ets](https://gitcode.com/harmonyos_samples/TurboTransJSON/blob/master/entry/src/main/ets/pages/NetworkRequestPage.ets#L57-L60)
 
 ## 跨线程数据传输
 
@@ -126,41 +118,35 @@ TurboTransJSON在跨线程数据传输方面采用了以下优化策略：
 
 1. 向TurboTransJSON提供的@Serializable装饰器添加generateSendable: true属性。
 
-   ```
-   1. import { Serializable } from '@hadss/turbo-trans-core';
+   ```screen
+   import { Serializable } from '@hadss/turbo-trans-core';
 
-   3. @Serializable({ generateSendable: true })
-   4. export class PersonWithSendable {
-   5. // ...
-   6. }
+   @Serializable({ generateSendable: true })
+   export class PersonWithSendable {
+     // ...
+   }
    ```
-
-   [PersonWithSendable.ets](https://gitcode.com/harmonyos_samples/TurboTransJSON/blob/master/entry/src/main/ets/model/PersonWithSendable.ets#L16-L33)
 2. 定义子线程执行方法，在子线程内创建原始对象并使用toSendable()方法，将原始对象转换为Sendable对象，并返回给主线程。使用引用方式跨线程传输数据，避免序列化和序列化耗时以及破坏对象结构。
 
+   ```screen
+   // The buf parameter only demonstrates TJSON's serialization and deserialization capabilities for ArrayBuffer type
+   @Concurrent
+   function childThreadTask(buf: ArrayBuffer): lang.ISendable | undefined {
+     const scores: number[] = TJSON.fromBuffer(buf, { classKey: 'Array', genericTypes: ['number']});
+     const person = new PersonWithSendable('John', 20, 'man', scores);
+     return (person as object as ITSerializable).toSendable();
+   }
    ```
-   1. // The buf parameter is only used to demonstrate TJSON's serialization and deserialization capabilities for ArrayBuffer type
-   2. @Concurrent
-   3. function childThreadTask(buf: ArrayBuffer): lang.ISendable | undefined {
-   4. const scores: number[] = TJSON.fromBuffer(buf, { classKey: 'Array', genericTypes: ['number']});
-   5. const person = new PersonWithSendable('John', 20, 'man', scores);
-   6. return (person as object as ITSerializable).toSendable();
-   7. }
-   ```
-
-   [WithSendablePage.ets](https://gitcode.com/harmonyos_samples/TurboTransJSON/blob/master/entry/src/main/ets/pages/WithSendablePage.ets#L27-L33)
 
    在工程编译之后，PersonWithSendable引用会指向插件生成的类，该类包含toSendable()方法。
 3. 通过实例化对象调用toOrigin()方法将子线程返回的Senable对象转换为开发者自定义对象。
 
+   ```screen
+   const scores = TJSON.toBuffer([10, 20, 30], { classKey: 'Array', genericTypes: ['number']});
+   const task: taskpool.Task = new taskpool.Task(childThreadTask, scores);
+   const data = await taskpool.execute(task);
+   this.person = TJSON.toOrigin<PersonWithSendable>(data);
    ```
-   1. const scores = TJSON.toBuffer([10, 20, 30], { classKey: 'Array', genericTypes: ['number']});
-   2. const task: taskpool.Task = new taskpool.Task(childThreadTask, scores);
-   3. const data = await taskpool.execute(task);
-   4. this.person = TJSON.toOrigin<PersonWithSendable>(data);
-   ```
-
-   [WithSendablePage.ets](https://gitcode.com/harmonyos_samples/TurboTransJSON/blob/master/entry/src/main/ets/pages/WithSendablePage.ets#L48-L51)
 
 ## 大文件解析
 
@@ -180,80 +166,68 @@ TurboTransJSON库在大文件解析方面采用了以下技术：
 
 1. 通过toJsonNodeFromBuffer()或toJsonNodeFromString()方法，将ArrayBuffer数据或JSON字符串转换为JsonNode对象。
 
+   ```screen
+   // this.json.buffer is read citylots.json buffer
+   let jsonNode = TJSON.toJsonNodeFromBuffer(buffer);
    ```
-   1. // this.json.buffer is read citylots.json buffer
-   2. let jsonNode = TJSON.toJsonNodeFromBuffer(buffer);
-   ```
-
-   [BigJsonFileDecodePage.ets](https://gitcode.com/harmonyos_samples/TurboTransJSON/blob/master/entry/src/main/ets/pages/BigJsonFileDecodePage.ets#L43-L44)
 2. 通过JsonNode提供的JsonPointer局部访问功能，调用JsonNode的at()方法读取当前需解析的部分。
 
+   ```screen
+   // json structure {features: [{ ... }]}
+   const featureJsonNode = jsonNode.at('/features/0');
    ```
-   1. // json structure {features: [{ ... }]}
-   2. const featureJsonNode = jsonNode.at('/features/0');
-   ```
-
-   [BigJsonFileDecodePage.ets](https://gitcode.com/harmonyos_samples/TurboTransJSON/blob/master/entry/src/main/ets/pages/BigJsonFileDecodePage.ets#L58-L59)
 
    或者使用get()获取子节点，使用此方法前需先判断jsonNode的类型，该方法仅适用于JSON\_ARRAY和JSON\_OBJECT类型。
 
+   ```screen
+   private get(methodParam: string): ResourceStr {
+     if (this.jsonNode.jsonType() === JsonNodeType.JSON_OBJECT) {
+       const obj = this.jsonNode.jsonObject();
+       const result = obj.get(methodParam);
+       // ...
+     } else if (this.jsonNode.jsonType() === JsonNodeType.JSON_ARRAY) {
+       const arr = this.jsonNode.jsonArray();
+       const index = parseInt(methodParam);
+       if (!isNaN(index)) {
+         const result = arr.get(index);
+         // ...
+       }
+       // ...
+     } else {
+       // ...
+     }
+   }
    ```
-   1. private get(methodParam: string): ResourceStr {
-   2. if (this.jsonNode.jsonType() === JsonNodeType.JSON_OBJECT) {
-   3. const obj = this.jsonNode.jsonObject();
-   4. const result = obj.get(methodParam);
-   5. // ...
-   6. } else if (this.jsonNode.jsonType() === JsonNodeType.JSON_ARRAY) {
-   7. const arr = this.jsonNode.jsonArray();
-   8. const index = parseInt(methodParam);
-   9. if (!isNaN(index)) {
-   10. const result = arr.get(index);
-   11. // ...
-   12. }
-   13. // ...
-   14. } else {
-   15. // ...
-   16. }
-   17. }
-   ```
-
-   [JsonNodeMethod.ets](https://gitcode.com/harmonyos_samples/TurboTransJSON/blob/master/entry/src/main/ets/utils/JsonNodeMethod.ets#L110-L134)
 3. 将读取的部分JsonNode转化为业务所需对象，其他部分保持未解析状态。
 
    CityLots类型定义：
 
+   ```screen
+   @Serializable()
+   export class CityLots {
+     // ...
+   }
    ```
-   1. @Serializable()
-   2. export class CityLots {
-   3. // ...
-   4. }
-   ```
-
-   [CityLots.ets](https://gitcode.com/harmonyos_samples/TurboTransJSON/blob/master/entry/src/main/ets/model/CityLots.ets#L52-L65)
 
    使用TJSON.fromJsonNode()方法将JsonNode转化为业务对象：
 
+   ```screen
+   if (featureJsonNode.jsonType() === JsonNodeType.JSON_OBJECT) {
+     const cityLots = TJSON.fromJsonNode<CityLots>(featureJsonNode, CityLots);
+     // ...
+   }
    ```
-   1. if (featureJsonNode.jsonType() === JsonNodeType.JSON_OBJECT) {
-   2. const cityLots = TJSON.fromJsonNode<CityLots>(featureJsonNode, CityLots);
-   3. // ...
-   4. }
-   ```
+4. 针对未定义业务类型的，可以使用toPlainObjectAsync()方法将JsonNode转换为简单对象。在实际业务场景中，可先利用JsonNode提供的JsonPointer局部访问能力读取所需节点，再通过toPlainObjectAsync()方法转换，以减少对象创建的耗时。
 
-   [BigJsonFileDecodePage.ets](https://gitcode.com/harmonyos_samples/TurboTransJSON/blob/master/entry/src/main/ets/pages/BigJsonFileDecodePage.ets#L62-L69)
-4. 针对未定义业务类型的，可以使用toPlainObjectAsync()方法将JsonNode转换为简单对象。在实际业务场景中，可先利用JsonNode提供的JsonPointer局部访问能力读取所需节点，再通过toPlainObjectAsync方法转换，以减少对象创建的耗时。
-
+   ```typescript
+   const obj: ESObject = await jsonNode.toPlainObjectAsync();
    ```
-   1. const obj: ESObject = await jsonNode.toPlainObjectAsync();
-   ```
-
-   [BigJsonFileDecodePage.ets](https://gitcode.com/harmonyos_samples/TurboTransJSON/blob/master/entry/src/main/ets/pages/BigJsonFileDecodePage.ets#L50-L50)
 
 ## 性能对比
 
 测试用例输入包括4KB、53KB、467KB、2765KB大小的四个 JSON 文件，分别对应数据集small json、medium json、large json、huge json，以测试JSON大小对序列化以及反序列化速度的影响。
 
-说明
+**说明** 
 
 以下性能数据中，使用ohos.util.json提供的反序列化方法，仅将数据反序列化为简单对象（Object），而非自定义类；QuickTransformer是基于class-transformer库实现。
 
@@ -266,7 +240,7 @@ TurboTransJSON库在大文件解析方面采用了以下技术：
 | large json | 52.06MB/s | 9.51MB/s | 44.36MB/s |
 | huge json | 86.40MB/s | 18.90MB/s | 116.10MB/s |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/n8X60DktSDGAMpI1cisxeg/zh-cn_image_0000002501490386.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/-QynKJZATzG2kJFSlPux6A/zh-cn_image_0000002501490386.png "点击放大")
 
 **反序列化性能对比**
 
@@ -277,7 +251,7 @@ TurboTransJSON库在大文件解析方面采用了以下技术：
 | large json | 82.39MB/s | 57.49MB/s | 68.81MB/s |
 | huge json | 170.10MB/s | 140.40MB/s | 207.90MB/s |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/cvuSxgEYRf-09DgQVSIA9w/zh-cn_image_0000002501330544.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/vQiJeBKnQnSffRbHw6RLZA/zh-cn_image_0000002501330544.png "点击放大")
 
 通过上述比对数据发现：
 

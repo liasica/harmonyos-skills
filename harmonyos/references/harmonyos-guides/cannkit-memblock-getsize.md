@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-membl
 title: GetSize
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > MemBlock > GetSize
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:35+08:00
+scraped_at: 2026-09-02T14:50:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3e2a35a99f5cdc4fba3cbf1da52a22f453c320d4f858de5822314014ce9743ed
+content_hash: sha256:574c54d165a32bd6c667f5643c8b78a3371f21ab6538bc7bfd930dad0ec8abea
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:3e2a35a99f5cdc4fba3cbf1da52a22f453c320d4f858de5822314014ce9
 
 ## 函数原型
 
-```
-1. size_t GetSize() const
+```cpp
+size_t GetSize() const
 ```
 
 ## 参数说明

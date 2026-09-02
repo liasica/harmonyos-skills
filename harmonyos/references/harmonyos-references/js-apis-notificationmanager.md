@@ -3,34 +3,41 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.notificationManager (NotificationManager模块)"
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > ArkTS API > @ohos.notificationManager (NotificationManager模块)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:33+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:71fc1e51e8d27f02330aa71733009ac2cbe83cd078295a0d5a2e596220c98b54
+scraped_at: 2026-09-02T15:03:00+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1c83af2359965633faf1602bca021eb138c7afd03c5881ab863355a374b6655a
 ---
 
-本模块提供通知管理的能力，包括发布、更新、取消通知，创建、获取、移除通知渠道，获取发布通知应用的使能状态，获取通知的相关信息等。
+本模块提供通知管理的能力，应用可使用本模块完成通知的完整生命周期管理。其中涉及通知的发布、更新与取消，[通知渠道](../harmonyos-guides/notification-glossary.md#notification-slot通知渠道)的创建与查询、通知能力授权状态的查询与申请、应用角标的设置、[通知中心](../harmonyos-guides/notification-glossary.md#notification-center通知中心)存量通知的查询等操作。
 
-说明
+**API组合使用关系说明**：
+
+本模块的接口围绕通知的“授权→发布→取消→渠道管理”的完整流程展开，各接口间存在明确的组合使用关系：
+
+1. **授权查询与申请流程**：发布通知前，先通过isNotificationEnabled查询通知能力的授权状态。如果通知能力未授权，通过requestEnableNotification引导用户开启通知权限。
+2. **通知发布与更新流程**：通过publish发布通知，[通知内容](../harmonyos-guides/notification-glossary.md#notification-content通知内容)通过NotificationRequest指定。如果新发布通知与已有通知的ID和标签相同，将自动更新已有通知。如果新发布通知与已有通知的ID或标签不相同，将创建新的通知。
+3. **通知取消流程**：通过cancel取消指定ID的通知，通过cancelAll取消本应用所有通知，通过cancelGroup取消指定分组下的通知。
+4. **通知渠道管理流程**：通过addSlot创建通知渠道，通过getSlot/getSlots查询通知渠道配置，通过removeSlot/removeAllSlots删除通知渠道。建议在发布通知前先创建对应类型的通知渠道。除了可以使用addSlot创建通知渠道，还可以在发布通知的[NotificationRequest](js-apis-inner-notification-notificationrequest.md#notificationrequest-1)中携带notificationSlotType字段，如果对应类型的渠道不存在，会自动创建。
+5. **角标管理流程**：通过setBadgeNumber设置角标数字，或者通过publish接口发布通知时，在[NotificationRequest](js-apis-inner-notification-notificationrequest.md#notificationrequest-1)的badgeNumber字段里携带需要增加的角标数量。
+6. **存量通知查询流程**：通过getActiveNotificationCount获取通知中心本应用存量通知数量，通过getActiveNotifications获取通知中心本应用存量通知详情。
+
+**说明** 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { notificationManager } from '@kit.NotificationKit';
+```ts
+import { notificationManager } from '@kit.NotificationKit';
 ```
 
 ## notificationManager.publish
-
-PhonePC/2in1TabletTVWearable
 
 publish(request: NotificationRequest, callback: AsyncCallback<void>): void
 
 发布通知。使用callback异步回调。
 
-如果新发布通知与已发布通知的ID和标签都相同，则新通知将取代原有通知。
+发布通知后，通知将以[通知卡片](../harmonyos-guides/notification-glossary.md#notification-card通知卡片)的形式展示在设备的[通知中心](../harmonyos-guides/notification-glossary.md#notification-center通知中心)、状态栏等位置。如果新发布通知与已发布通知的ID和标签都相同，则新通知将取代原有通知，实现通知的更新效果。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -47,58 +54,57 @@ publish(request: NotificationRequest, callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
 | 1600004 | Notification disabled. |
 | 1600005 | Notification slot disabled. |
-| 1600007 | The notification does not exist. |
+| 1600007 | The notification does not exist.  适用版本：11+ |
 | 1600009 | The notification sending frequency reaches the upper limit. |
 | 1600012 | No memory space. |
-| 1600014 | No permission. |
-| 1600015 | The current notification status does not support duplicate configurations. |
-| 1600016 | The notification version for this update is too low. |
-| 1600020 | The application is not allowed to send notifications due to permission settings. |
-| 2300007 | Network unreachable. |
+| 1600014 | No permission.  适用版本：11+ |
+| 1600015 | The current notification status does not support duplicate configurations.  适用版本：11+ |
+| 1600016 | The notification version for this update is too low.  适用版本：11+ |
+| 1600020 | The application is not allowed to send notifications due to permission settings.  适用版本：12+ |
+| 1600029 | The system failed to find the ExtensionAbility instance for the custom Live View widget template.  适用版本：26.0.0+ |
+| 2300007 | Network unreachable.  适用版本：11+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. // publish回调
-4. let publishCallback = (err: BusinessError): void => {
-5. if (err) {
-6. console.error(`Failed to publish notification. Code is ${err.code}, message is ${err.message}`);
-7. } else {
-8. console.info(`Succeeded in publishing notification.`);
-9. }
-10. }
-11. // 通知Request对象
-12. let notificationRequest: notificationManager.NotificationRequest = {
-13. id: 1,
-14. content: {
-15. notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
-16. normal: {
-17. title: "test_title",
-18. text: "test_text",
-19. additionalText: "test_additionalText"
-20. }
-21. }
-22. };
-23. notificationManager.publish(notificationRequest, publishCallback);
+// publish回调
+let publishCallback = (err: BusinessError): void => {
+  if (err) {
+    console.error(`Failed to publish notification. Code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info(`Succeeded in publishing notification.`);
+  }
+}
+// 通知Request对象
+let notificationRequest: notificationManager.NotificationRequest = {
+  id: 1,
+  content: {
+    notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
+    normal: {
+      title: 'test_title',
+      text: 'test_text',
+      additionalText: 'test_additionalText'
+    }
+  }
+};
+notificationManager.publish(notificationRequest, publishCallback);
 ```
 
 ## notificationManager.publish
-
-PhonePC/2in1TabletTVWearable
 
 publish(request: NotificationRequest): Promise<void>
 
 发布通知。使用Promise异步回调。
 
-如果新发布通知与已发布通知的ID和标签都相同，则新通知将取代原有通知。
+发布通知后，通知将以[通知卡片](../harmonyos-guides/notification-glossary.md#notification-card通知卡片)的形式展示在设备的[通知中心](../harmonyos-guides/notification-glossary.md#notification-center通知中心)、状态栏等位置。如果新发布通知与已发布通知的ID和标签都相同，则新通知将取代原有通知，实现通知的更新效果。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -120,52 +126,55 @@ publish(request: NotificationRequest): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
 | 1600004 | Notification disabled. |
 | 1600005 | Notification slot disabled. |
-| 1600007 | The notification does not exist. |
+| 1600007 | The notification does not exist.  适用版本：11+ |
 | 1600009 | The notification sending frequency reaches the upper limit. |
 | 1600012 | No memory space. |
-| 1600014 | No permission. |
-| 1600015 | The current notification status does not support duplicate configurations. |
-| 1600016 | The notification version for this update is too low. |
-| 1600020 | The application is not allowed to send notifications due to permission settings. |
-| 2300007 | Network unreachable. |
+| 1600014 | No permission.  适用版本：11+ |
+| 1600015 | The current notification status does not support duplicate configurations.  适用版本：11+ |
+| 1600016 | The notification version for this update is too low.  适用版本：11+ |
+| 1600020 | The application is not allowed to send notifications due to permission settings.  适用版本：12+ |
+| 1600029 | The system failed to find the ExtensionAbility instance for the custom Live View widget template.  适用版本：26.0.0+ |
+| 2300007 | Network unreachable.  适用版本：11+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. // 通知Request对象
-4. let notificationRequest: notificationManager.NotificationRequest = {
-5. id: 1,
-6. content: {
-7. notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
-8. normal: {
-9. title: "test_title",
-10. text: "test_text",
-11. additionalText: "test_additionalText"
-12. }
-13. }
-14. };
-15. notificationManager.publish(notificationRequest).then(() => {
-16. console.info(`Succeeded in publishing notification.`);
-17. }).catch((err: BusinessError) => {
-18. console.error(`Failed to publish notification. Code is ${err.code}, message is ${err.message}`);
-19. });
+// 通知Request对象
+let notificationRequest: notificationManager.NotificationRequest = {
+  id: 1,
+  content: {
+    notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
+    normal: {
+      title: 'test_title',
+      text: 'test_text',
+      additionalText: 'test_additionalText'
+    }
+  }
+};
+notificationManager.publish(notificationRequest).then(() => {
+  console.info(`Succeeded in publishing notification.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to publish notification. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ## notificationManager.cancel
 
-PhonePC/2in1TabletTVWearable
-
 cancel(id: number, label: string, callback: AsyncCallback<void>): void
 
-根据通知ID和标签取消已发布的通知。使用callback异步回调。
+根据通知ID和标签label取消已发布的通知。使用callback异步回调。
+
+取消后，对应的通知将从[通知中心](../harmonyos-guides/notification-glossary.md#notification-center通知中心)、状态栏等位置移除，用户不再可见。适用于需要精确取消某一条带有特定标签的通知的场景。
+
+与仅传入通知ID的[notificationManager.cancel(id, callback)](js-apis-notificationmanager.md#notificationmanagercancel-2)相比，此接口额外传入label参数，可精确取消同一ID，不同标签的通知。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -173,8 +182,8 @@ cancel(id: number, label: string, callback: AsyncCallback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| id | number | 是 | 通知ID。 |
-| label | string | 是 | 通知标签。 |
+| id | number | 是 | 通知ID，用于标识目标通知。该值由发布通知时[NotificationRequest](js-apis-inner-notification-notificationrequest.md#notificationrequest-1)的id字段指定。 |
+| label | string | 是 | 通知标签。该值由发布通知时[NotificationRequest](js-apis-inner-notification-notificationrequest.md#notificationrequest-1)的label字段指定。  - 若标签为空，则取消与指定通知ID匹配，标签为空的已发布通知。  - 若标签不为空，则取消与指定通知ID和标签同时匹配的已发布通知。 |
 | callback | AsyncCallback<void> | 是 | 回调函数。根据通知ID和标签取消已发布的通知成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
@@ -183,7 +192,7 @@ cancel(id: number, label: string, callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
@@ -191,27 +200,27 @@ cancel(id: number, label: string, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. // cancel回调
-4. let cancelCallback = (err: BusinessError): void => {
-5. if (err) {
-6. console.error(`Failed to cancel notification. Code is ${err.code}, message is ${err.message}`);
-7. } else {
-8. console.info(`Succeeded in canceling notification.`);
-9. }
-10. }
-11. notificationManager.cancel(0, "label", cancelCallback);
+// cancel回调
+let cancelCallback = (err: BusinessError): void => {
+  if (err) {
+    console.error(`Failed to cancel notification. Code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info(`Succeeded in canceling notification.`);
+  }
+}
+notificationManager.cancel(0, 'label', cancelCallback);
 ```
 
 ## notificationManager.cancel
 
-PhonePC/2in1TabletTVWearable
-
 cancel(id: number, label?: string): Promise<void>
 
-根据通知ID和标签取消已发布的通知，若标签为空，则取消与指定通知ID匹配的已发布通知。使用Promise异步回调。
+根据通知ID和标签label取消已发布的通知。使用Promise异步回调。
+
+取消后，对应的通知将从[通知中心](../harmonyos-guides/notification-glossary.md#notification-center通知中心)、状态栏等位置移除，用户不再可见。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -219,8 +228,8 @@ cancel(id: number, label?: string): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| id | number | 是 | 通知ID。 |
-| label | string | 否 | 通知标签，默认为空。 |
+| id | number | 是 | 通知ID，用于标识目标通知。该值由发布通知时[NotificationRequest](js-apis-inner-notification-notificationrequest.md#notificationrequest-1)的id字段指定。 |
+| label | string | 否 | 通知标签，默认为空。该值由发布通知时[NotificationRequest](js-apis-inner-notification-notificationrequest.md#notificationrequest-1)的label字段指定。  - 若标签为空，则取消与指定通知ID匹配，标签为空的已发布通知。  - 若标签不为空，则取消与指定通知ID和标签同时匹配的已发布通知。 |
 
 **返回值：**
 
@@ -234,7 +243,7 @@ cancel(id: number, label?: string): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
@@ -242,23 +251,25 @@ cancel(id: number, label?: string): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. notificationManager.cancel(0).then(() => {
-4. console.info(`Succeeded in canceling notification.`);
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to cancel notification. Code is ${err.code}, message is ${err.message}`);
-7. });
+notificationManager.cancel(0).then(() => {
+  console.info(`Succeeded in canceling notification.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to cancel notification. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ## notificationManager.cancel
 
-PhonePC/2in1TabletTVWearable
-
 cancel(id: number, callback: AsyncCallback<void>): void
 
 根据指定的通知ID取消已发布的通知。使用callback异步回调。
+
+取消后，对应的通知将从[通知中心](../harmonyos-guides/notification-glossary.md#notification-center通知中心)、状态栏等位置移除，用户不再可见。
+
+与带label参数的[notificationManager.cancel(id, label, callback)](js-apis-notificationmanager.md#notificationmanagercancel)相比，此接口不传入label，将取消与指定ID匹配的通知。当发布通知，label不为空时，则需使用接口notificationManager.cancel(id, label, callback)取消通知。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -266,7 +277,7 @@ cancel(id: number, callback: AsyncCallback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| id | number | 是 | 通知ID。 |
+| id | number | 是 | 通知ID，用于标识目标通知。该值由发布通知时[NotificationRequest](js-apis-inner-notification-notificationrequest.md#notificationrequest-1)的id字段指定。 |
 | callback | AsyncCallback<void> | 是 | 回调函数。当取消已发布的通知成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
@@ -275,7 +286,7 @@ cancel(id: number, callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
@@ -283,27 +294,27 @@ cancel(id: number, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. // cancel回调
-4. let cancelCallback = (err: BusinessError): void => {
-5. if (err) {
-6. console.error(`Failed to cancel notification. Code is ${err.code}, message is ${err.message}`);
-7. } else {
-8. console.info(`Succeeded in canceling notification.`);
-9. }
-10. }
-11. notificationManager.cancel(0, cancelCallback);
+// cancel回调
+let cancelCallback = (err: BusinessError): void => {
+  if (err) {
+    console.error(`Failed to cancel notification. Code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info(`Succeeded in canceling notification.`);
+  }
+}
+notificationManager.cancel(0, cancelCallback);
 ```
 
 ## notificationManager.cancelAll
 
-PhonePC/2in1TabletTVWearable
-
 cancelAll(callback: AsyncCallback<void>): void
 
 取消当前应用所有已发布的通知。使用callback异步回调。
+
+取消后，当前应用的所有通知将从[通知中心](../harmonyos-guides/notification-glossary.md#notification-center通知中心)、状态栏等位置移除，用户不再可见。适用于应用退出或用户手动清除全部通知的场景。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -319,34 +330,34 @@ cancelAll(callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. // cancel回调
-4. let cancelAllCallback = (err: BusinessError): void => {
-5. if (err) {
-6. console.error(`Failed to cancel all notification. Code is ${err.code}, message is ${err.message}`);
-7. } else {
-8. console.info(`Succeeded in canceling all notification.`);
-9. }
-10. }
-11. notificationManager.cancelAll(cancelAllCallback);
+// cancelAll回调
+let cancelAllCallback = (err: BusinessError): void => {
+  if (err) {
+    console.error(`Failed to cancel all notification. Code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info(`Succeeded in canceling all notification.`);
+  }
+}
+notificationManager.cancelAll(cancelAllCallback);
 ```
 
 ## notificationManager.cancelAll
 
-PhonePC/2in1TabletTVWearable
-
 cancelAll(): Promise<void>
 
 取消当前应用所有已发布的通知。使用Promise异步回调。
+
+取消后，当前应用的所有通知将从[通知中心](../harmonyos-guides/notification-glossary.md#notification-center通知中心)、状态栏等位置移除，用户不再可见。适用于应用退出或用户手动清除全部通知的场景。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -368,23 +379,23 @@ cancelAll(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. notificationManager.cancelAll().then(() => {
-4. console.info(`Succeeded in canceling all notification.`);
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to cancel all notification. Code is ${err.code}, message is ${err.message}`);
-7. });
+notificationManager.cancelAll().then(() => {
+  console.info(`Succeeded in canceling all notification.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to cancel all notification. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ## notificationManager.addSlot
 
-PhonePC/2in1TabletTVWearable
-
 addSlot(type: SlotType, callback: AsyncCallback<void>): void
 
-创建指定类型的通知渠道。使用callback异步回调。
+创建指定类型的[通知渠道](../harmonyos-guides/notification-glossary.md#notification-slot通知渠道)。使用callback异步回调。
+
+通知渠道[NotificationSlot](js-apis-inner-notification-notificationslot.md#notificationslot-1)定义了通知的提醒方式（如提示音、振动、横幅等）和级别。发布通知前，应用需先创建对应类型的通知渠道，或者发布通知时系统将自动创建对应类型的通知渠道。同一类型的通知渠道只能创建一个。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -392,7 +403,7 @@ addSlot(type: SlotType, callback: AsyncCallback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | [SlotType](js-apis-notificationmanager.md#slottype) | 是 | 要创建的通知渠道的类型。 |
+| type | [SlotType](js-apis-notificationmanager.md#slottype) | 是 | 要创建的通知渠道的类型。不同的渠道类型对应不同的默认[SlotLevel](js-apis-notificationmanager.md#slotlevel)，影响通知的提醒方式。例如SOCIAL\_COMMUNICATION对应LEVEL\_HIGH（状态栏图标+横幅+提示音），CONTENT\_INFORMATION对应LEVEL\_MIN（状态栏不显示图标+无横幅+无提示音）。 |
 | callback | AsyncCallback<void> | 是 | 回调函数。当创建指定类型的通知渠道成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
@@ -401,7 +412,7 @@ addSlot(type: SlotType, callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
@@ -409,27 +420,27 @@ addSlot(type: SlotType, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. // addSlot回调
-4. let addSlotCallBack = (err: BusinessError): void => {
-5. if (err) {
-6. console.error(`Failed to add slot. Code is ${err.code}, message is ${err.message}`);
-7. } else {
-8. console.info(`Succeeded in adding slot.`);
-9. }
-10. }
-11. notificationManager.addSlot(notificationManager.SlotType.SOCIAL_COMMUNICATION, addSlotCallBack);
+// addSlot回调
+let addSlotCallBack = (err: BusinessError): void => {
+  if (err) {
+    console.error(`Failed to add slot. Code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info(`Succeeded in adding slot.`);
+  }
+}
+notificationManager.addSlot(notificationManager.SlotType.SOCIAL_COMMUNICATION, addSlotCallBack);
 ```
 
 ## notificationManager.addSlot
 
-PhonePC/2in1TabletTVWearable
-
 addSlot(type: SlotType): Promise<void>
 
-创建指定类型的通知渠道。使用Promise异步回调。
+创建指定类型的[通知渠道](../harmonyos-guides/notification-glossary.md#notification-slot通知渠道)。使用Promise异步回调。
+
+通知渠道[NotificationSlot](js-apis-inner-notification-notificationslot.md#notificationslot-1)定义了通知的提醒方式（如提示音、振动、横幅等）和级别。发布通知前，应用需先创建对应类型的通知渠道，或者发布通知时系统将自动创建对应类型的通知渠道。同一类型的通知渠道只能创建一个。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -437,7 +448,7 @@ addSlot(type: SlotType): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | [SlotType](js-apis-notificationmanager.md#slottype) | 是 | 要创建的通知渠道的类型。 |
+| type | [SlotType](js-apis-notificationmanager.md#slottype) | 是 | 要创建的通知渠道的类型。不同的渠道类型对应不同的默认[SlotLevel](js-apis-notificationmanager.md#slotlevel)，影响通知的提醒方式。例如SOCIAL\_COMMUNICATION对应LEVEL\_HIGH（状态栏图标+横幅+提示音），CONTENT\_INFORMATION对应LEVEL\_MIN（状态栏不显示图标+无横幅+无提示音）。 |
 
 **返回值：**
 
@@ -451,7 +462,7 @@ addSlot(type: SlotType): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
@@ -459,23 +470,23 @@ addSlot(type: SlotType): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. notificationManager.addSlot(notificationManager.SlotType.SOCIAL_COMMUNICATION).then(() => {
-4. console.info(`Succeeded in adding slot.`);
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to add slot. Code is ${err.code}, message is ${err.message}`);
-7. });
+notificationManager.addSlot(notificationManager.SlotType.SOCIAL_COMMUNICATION).then(() => {
+  console.info(`Succeeded in adding slot.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to add slot. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ## notificationManager.getSlot
 
-PhonePC/2in1TabletTVWearable
-
 getSlot(slotType: SlotType, callback: AsyncCallback<NotificationSlot>): void
 
-获取指定类型的通知渠道。使用callback异步回调。
+获取指定类型的[通知渠道](../harmonyos-guides/notification-glossary.md#notification-slot通知渠道)。使用callback异步回调。
+
+用于查询已创建的通知渠道的详细配置信息，包括提醒方式、级别、锁屏显示等设置。需先通过[addSlot](js-apis-notificationmanager.md#notificationmanageraddslot)创建对应类型的通知渠道，否则获取结果为空。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -492,35 +503,35 @@ getSlot(slotType: SlotType, callback: AsyncCallback<NotificationSlot>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. // getSlot回调
-4. let getSlotCallback = (err: BusinessError, data: notificationManager.NotificationSlot): void => {
-5. if (err) {
-6. console.error(`Failed to get slot. Code is ${err.code}, message is ${err.message}`);
-7. } else {
-8. console.info(`Succeeded in getting slot, data is ${JSON.stringify(data)}`);
-9. }
-10. }
-11. let slotType: notificationManager.SlotType = notificationManager.SlotType.SOCIAL_COMMUNICATION;
-12. notificationManager.getSlot(slotType, getSlotCallback);
+// getSlot回调
+let getSlotCallback = (err: BusinessError, data: notificationManager.NotificationSlot): void => {
+  if (err) {
+    console.error(`Failed to get slot. Code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info(`Succeeded in getting slot, data is ${JSON.stringify(data)}`);
+  }
+}
+let slotType: notificationManager.SlotType = notificationManager.SlotType.SOCIAL_COMMUNICATION;
+notificationManager.getSlot(slotType, getSlotCallback);
 ```
 
 ## notificationManager.getSlot
 
-PhonePC/2in1TabletTVWearable
-
 getSlot(slotType: SlotType): Promise<NotificationSlot>
 
-获取指定类型的通知渠道。使用Promise异步回调。
+获取指定类型的[通知渠道](../harmonyos-guides/notification-glossary.md#notification-slot通知渠道)。使用Promise异步回调。
+
+用于查询已创建的通知渠道的详细配置信息，包括提醒方式、级别、锁屏显示等设置。需先通过[addSlot](js-apis-notificationmanager.md#notificationmanageraddslot)创建对应类型的通知渠道，否则获取结果为空。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -542,31 +553,31 @@ getSlot(slotType: SlotType): Promise<NotificationSlot>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let slotType: notificationManager.SlotType = notificationManager.SlotType.SOCIAL_COMMUNICATION;
-4. notificationManager.getSlot(slotType).then((data: notificationManager.NotificationSlot) => {
-5. console.info(`Succeeded in getting slot, data is ${JSON.stringify(data)}`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`Failed to get slot. Code is ${err.code}, message is ${err.message}`);
-8. });
+let slotType: notificationManager.SlotType = notificationManager.SlotType.SOCIAL_COMMUNICATION;
+notificationManager.getSlot(slotType).then((data: notificationManager.NotificationSlot) => {
+  console.info(`Succeeded in getting slot, data is ${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to get slot. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ## notificationManager.getSlots
 
-PhonePC/2in1TabletTVWearable
-
 getSlots(callback: AsyncCallback<Array<NotificationSlot>>): void
 
-获取当前应用的所有通知渠道。使用callback异步回调。
+获取当前应用的所有[通知渠道](../harmonyos-guides/notification-glossary.md#notification-slot通知渠道)。使用callback异步回调。
+
+用于批量查询当前应用已创建的所有通知渠道的配置信息，包括各渠道的类型、提醒方式、级别等设置。适用于需要查看所有渠道配置的场景。需先通过[addSlot](js-apis-notificationmanager.md#notificationmanageraddslot)创建对应类型的通知渠道，否则获取结果为空。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -582,34 +593,34 @@ getSlots(callback: AsyncCallback<Array<NotificationSlot>>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. // getSlots回调
-4. let getSlotsCallback = (err: BusinessError, data: Array<notificationManager.NotificationSlot>): void => {
-5. if (err) {
-6. console.error(`Failed to get slots. Code is ${err.code}, message is ${err.message}`);
-7. } else {
-8. console.info(`Succeeded in getting slots, data is ${JSON.stringify(data)}`);
-9. }
-10. }
-11. notificationManager.getSlots(getSlotsCallback);
+// getSlots回调
+let getSlotsCallback = (err: BusinessError, data: Array<notificationManager.NotificationSlot>): void => {
+  if (err) {
+    console.error(`Failed to get slots. Code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info(`Succeeded in getting slots, data is ${JSON.stringify(data)}`);
+  }
+}
+notificationManager.getSlots(getSlotsCallback);
 ```
 
 ## notificationManager.getSlots
 
-PhonePC/2in1TabletTVWearable
-
 getSlots(): Promise<Array<NotificationSlot>>
 
-获取当前应用的所有通知渠道。使用Promise异步回调。
+获取当前应用的所有[通知渠道](../harmonyos-guides/notification-glossary.md#notification-slot通知渠道)。使用Promise异步回调。
+
+用于批量查询当前应用已创建的所有通知渠道的配置信息，包括各渠道的类型、提醒方式、级别等设置。适用于需要查看所有渠道配置的场景。需先通过[addSlot](js-apis-notificationmanager.md#notificationmanageraddslot)创建对应类型的通知渠道，否则获取结果为空。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -631,23 +642,23 @@ getSlots(): Promise<Array<NotificationSlot>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. notificationManager.getSlots().then((data: Array<notificationManager.NotificationSlot>) => {
-4. console.info(`Succeeded in getting slots, data is ${JSON.stringify(data)}`);
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to get slots. Code is ${err.code}, message is ${err.message}`);
-7. });
+notificationManager.getSlots().then((data: Array<notificationManager.NotificationSlot>) => {
+  console.info(`Succeeded in getting slots, data is ${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to get slots. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ## notificationManager.removeSlot
 
-PhonePC/2in1TabletTVWearable
-
 removeSlot(slotType: SlotType, callback: AsyncCallback<void>): void
 
-删除当前应用指定类型的通知渠道。使用callback异步回调。
+删除当前应用指定类型的[通知渠道](../harmonyos-guides/notification-glossary.md#notification-slot通知渠道)。使用callback异步回调。
+
+删除后，对应类型的通知渠道及其配置将被永久移除，后续发布该类型通知时系统将自动创建默认渠道。已通过该渠道发布的通知不受影响，仍可在[通知中心](../harmonyos-guides/notification-glossary.md#notification-center通知中心)查看。适用于需要重新配置渠道时先删除再创建的场景。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -655,7 +666,7 @@ removeSlot(slotType: SlotType, callback: AsyncCallback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| slotType | [SlotType](js-apis-notificationmanager.md#slottype) | 是 | 通知渠道类型，例如社交通信、服务提醒、内容咨询等类型。 |
+| slotType | [SlotType](js-apis-notificationmanager.md#slottype) | 是 | 通知渠道类型，例如社交通信、服务提醒、内容咨询等类型。需传入已创建的渠道类型，否则删除操作无效。 |
 | callback | AsyncCallback<void> | 是 | 回调函数。当删除指定类型的通知渠道成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
@@ -664,35 +675,35 @@ removeSlot(slotType: SlotType, callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. // removeSlot回调
-4. let removeSlotCallback = (err: BusinessError): void => {
-5. if (err) {
-6. console.error(`Failed to remove slot. Code is ${err.code}, message is ${err.message}`);
-7. } else {
-8. console.info(`Succeeded in removing slot.`);
-9. }
-10. }
-11. let slotType: notificationManager.SlotType = notificationManager.SlotType.SOCIAL_COMMUNICATION;
-12. notificationManager.removeSlot(slotType, removeSlotCallback);
+// removeSlot回调
+let removeSlotCallback = (err: BusinessError): void => {
+  if (err) {
+    console.error(`Failed to remove slot. Code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info(`Succeeded in removing slot.`);
+  }
+}
+let slotType: notificationManager.SlotType = notificationManager.SlotType.SOCIAL_COMMUNICATION;
+notificationManager.removeSlot(slotType, removeSlotCallback);
 ```
 
 ## notificationManager.removeSlot
 
-PhonePC/2in1TabletTVWearable
-
 removeSlot(slotType: SlotType): Promise<void>
 
-删除当前应用指定类型的通知渠道。使用Promise异步回调。
+删除当前应用指定类型的[通知渠道](../harmonyos-guides/notification-glossary.md#notification-slot通知渠道)。使用Promise异步回调。
+
+删除后，对应类型的通知渠道及其配置将被永久移除，后续发布该类型通知时系统将自动创建默认渠道。已通过该渠道发布的通知不受影响，仍可在[通知中心](../harmonyos-guides/notification-glossary.md#notification-center通知中心)查看。适用于需要重新配置渠道时先删除再创建的场景。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -700,7 +711,7 @@ removeSlot(slotType: SlotType): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| slotType | [SlotType](js-apis-notificationmanager.md#slottype) | 是 | 通知渠道类型，例如社交通信、服务提醒、内容咨询等类型。 |
+| slotType | [SlotType](js-apis-notificationmanager.md#slottype) | 是 | 通知渠道类型，例如社交通信、服务提醒、内容咨询等类型。需传入已创建的渠道类型，否则删除操作无效。 |
 
 **返回值：**
 
@@ -714,31 +725,31 @@ removeSlot(slotType: SlotType): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let slotType: notificationManager.SlotType = notificationManager.SlotType.SOCIAL_COMMUNICATION;
-4. notificationManager.removeSlot(slotType).then(() => {
-5. console.info(`Succeeded in removing slot.`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`Failed to remove slot. Code is ${err.code}, message is ${err.message}`);
-8. });
+let slotType: notificationManager.SlotType = notificationManager.SlotType.SOCIAL_COMMUNICATION;
+notificationManager.removeSlot(slotType).then(() => {
+  console.info(`Succeeded in removing slot.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to remove slot. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ## notificationManager.removeAllSlots
 
-PhonePC/2in1TabletTVWearable
-
 removeAllSlots(callback: AsyncCallback<void>): void
 
-删除当前应用所有通知渠道。使用callback异步回调。
+删除当前应用所有[通知渠道](../harmonyos-guides/notification-glossary.md#notification-slot通知渠道)。使用callback异步回调。
+
+删除后，当前应用的所有通知渠道及其配置将被永久移除，后续发布通知时系统将自动创建对应类型的渠道。已通过这些渠道发布的通知不受影响，仍可在[通知中心](../harmonyos-guides/notification-glossary.md#notification-center通知中心)查看。适用于需要一次性清除所有渠道配置的场景。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -754,33 +765,33 @@ removeAllSlots(callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let removeAllSlotsCallback = (err: BusinessError): void => {
-4. if (err) {
-5. console.error(`Failed to remove all slots. Code is ${err.code}, message is ${err.message}`);
-6. } else {
-7. console.info(`Succeeded in removing all slots.`);
-8. }
-9. }
-10. notificationManager.removeAllSlots(removeAllSlotsCallback);
+let removeAllSlotsCallback = (err: BusinessError): void => {
+  if (err) {
+    console.error(`Failed to remove all slots. Code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info(`Succeeded in removing all slots.`);
+  }
+}
+notificationManager.removeAllSlots(removeAllSlotsCallback);
 ```
 
 ## notificationManager.removeAllSlots
 
-PhonePC/2in1TabletTVWearable
-
 removeAllSlots(): Promise<void>
 
-删除当前应用所有通知渠道。使用Promise异步回调。
+删除当前应用所有[通知渠道](../harmonyos-guides/notification-glossary.md#notification-slot通知渠道)。使用Promise异步回调。
+
+删除后，当前应用的所有通知渠道及其配置将被永久移除，后续发布通知时系统将自动创建对应类型的渠道。已通过这些渠道发布的通知不受影响，仍可在[通知中心](../harmonyos-guides/notification-glossary.md#notification-center通知中心)查看。适用于需要一次性清除所有渠道配置的场景。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -802,23 +813,23 @@ removeAllSlots(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. notificationManager.removeAllSlots().then(() => {
-4. console.info(`Succeeded in removing all slots.`);
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to remove all slots. Code is ${err.code}, message is ${err.message}`);
-7. });
+notificationManager.removeAllSlots().then(() => {
+  console.info(`Succeeded in removing all slots.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to remove all slots. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ## notificationManager.isNotificationEnabled11+
 
-PhonePC/2in1TabletTVWearable
-
 isNotificationEnabled(callback: AsyncCallback<boolean>): void
 
-查询当前应用通知使能状态。使用callback异步回调。
+查询当前应用[通知授权](../harmonyos-guides/notification-glossary.md#notification-authorization通知授权)状态。使用callback异步回调。
+
+用于在发布通知前检查当前应用是否被允许发送通知，避免在通知授权关闭时发布导致失败。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -834,7 +845,7 @@ isNotificationEnabled(callback: AsyncCallback<boolean>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
@@ -843,27 +854,27 @@ isNotificationEnabled(callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let isNotificationEnabledCallback = (err: BusinessError, data: boolean): void => {
-4. if (err) {
-5. console.error(`isNotificationEnabled failed, code is ${err.code}, message is ${err.message}`);
-6. } else {
-7. console.info(`isNotificationEnabled success, data is ${JSON.stringify(data)}`);
-8. }
-9. }
+let isNotificationEnabledCallback = (err: BusinessError, data: boolean): void => {
+  if (err) {
+    console.error(`isNotificationEnabled failed, code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info(`isNotificationEnabled success, data is ${JSON.stringify(data)}`);
+  }
+}
 
-11. notificationManager.isNotificationEnabled(isNotificationEnabledCallback);
+notificationManager.isNotificationEnabled(isNotificationEnabledCallback);
 ```
 
 ## notificationManager.isNotificationEnabled11+
 
-PhonePC/2in1TabletTVWearable
-
 isNotificationEnabled(): Promise<boolean>
 
-查询当前应用通知使能状态。使用Promise异步回调。
+查询当前应用[通知授权](../harmonyos-guides/notification-glossary.md#notification-authorization通知授权)状态。使用Promise异步回调。
+
+用于在发布通知前检查当前应用是否被允许发送通知，避免在通知使能关闭时发布导致失败。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -887,23 +898,23 @@ isNotificationEnabled(): Promise<boolean>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. notificationManager.isNotificationEnabled().then((data: boolean) => {
-4. console.info(`isNotificationEnabled success, data: ${JSON.stringify(data)}`);
-5. }).catch((err: BusinessError) => {
-6. console.error(`isNotificationEnabled failed, code is ${err.code}, message is ${err.message}`);
-7. });
+notificationManager.isNotificationEnabled().then((data: boolean) => {
+  console.info(`isNotificationEnabled success, data: ${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+  console.error(`isNotificationEnabled failed, code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ## notificationManager.isNotificationEnabledSync12+
 
-PhonePC/2in1TabletTVWearable
-
 isNotificationEnabledSync(): boolean
 
-同步查询当前应用通知使能状态。
+同步查询当前应用[通知授权](../harmonyos-guides/notification-glossary.md#notification-authorization通知授权)状态。
+
+用于在发布通知前快速检查当前应用是否被允许发送通知。此接口为同步接口，调用后立即返回结果，适用于需要在同步代码流程中获取使能状态的场景。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -925,18 +936,18 @@ isNotificationEnabledSync(): boolean
 
 **示例：**
 
-```
-1. let enabled: boolean = notificationManager.isNotificationEnabledSync();
-2. console.info(`isNotificationEnabledSync success, data is : ${JSON.stringify(enabled)}`);
+```ts
+let enabled: boolean = notificationManager.isNotificationEnabledSync();
+console.info(`isNotificationEnabledSync success, data is : ${JSON.stringify(enabled)}`);
 ```
 
 ## notificationManager.setBadgeNumber10+
 
-PhonePC/2in1TabletTVWearable
-
 setBadgeNumber(badgeNumber: number): Promise<void>
 
 设定角标个数，在应用的桌面图标上呈现。使用Promise异步回调。
+
+角标是应用桌面图标右上角显示的数字标识，用于提示用户有未处理的通知数量。设定后，桌面图标将显示对应角标数字。适用于需要在桌面图标上提示用户待处理消息数量的场景，如未读消息数、待办事项数等。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -946,7 +957,7 @@ setBadgeNumber(badgeNumber: number): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| badgeNumber | number | 是 | 角标个数。当角标设定个数取值小于或等于0时，清除角标。取值大于99时，通知角标将显示99+。 |
+| badgeNumber | number | 是 | 角标个数。当角标设定个数取值小于或等于0时，清除角标。取值大于99时，[通知角标](../harmonyos-guides/notification-glossary.md#notification-badge通知角标)将显示99+。 |
 
 **返回值：**
 
@@ -960,8 +971,8 @@ setBadgeNumber(badgeNumber: number): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
-| 801 | Capability not supported. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 801 | Capability not supported.  适用版本：18+ |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
@@ -969,24 +980,24 @@ setBadgeNumber(badgeNumber: number): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let badgeNumber: number = 10;
-4. notificationManager.setBadgeNumber(badgeNumber).then(() => {
-5. console.info(`Succeeded in setting badge number.`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`Failed to set badge number. Code is ${err.code}, message is ${err.message}`);
-8. });
+let badgeNumber: number = 10;
+notificationManager.setBadgeNumber(badgeNumber).then(() => {
+  console.info(`Succeeded in setting badge number.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to set badge number. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ## notificationManager.setBadgeNumber10+
 
-PhonePC/2in1TabletTVWearable
-
 setBadgeNumber(badgeNumber: number, callback: AsyncCallback<void>): void
 
 设定角标个数，在应用的桌面图标上呈现。使用callback异步回调。
+
+角标是应用桌面图标右上角显示的数字标识，用于提示用户有未处理的通知数量。设定后，桌面图标将显示对应角标数字。适用于需要在桌面图标上提示用户待处理消息数量的场景，如未读消息数、待办事项数等。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -996,7 +1007,7 @@ setBadgeNumber(badgeNumber: number, callback: AsyncCallback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| badgeNumber | number | 是 | 角标个数。当角标设定个数取值小于或等于0时，清除角标。取值大于99时，通知角标将显示99+。 |
+| badgeNumber | number | 是 | 角标个数。当角标设定个数取值小于或等于0时，清除角标。取值大于99时，[通知角标](../harmonyos-guides/notification-glossary.md#notification-badge通知角标)将显示99+。 |
 | callback | AsyncCallback<void> | 是 | 回调函数。当设定角标个数成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
@@ -1005,8 +1016,8 @@ setBadgeNumber(badgeNumber: number, callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
-| 801 | Capability not supported. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 801 | Capability not supported.  适用版本：18+ |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
@@ -1014,27 +1025,27 @@ setBadgeNumber(badgeNumber: number, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let setBadgeNumberCallback = (err: BusinessError): void => {
-4. if (err) {
-5. console.error(`Failed to set badge number. Code is ${err.code}, message is ${err.message}`);
-6. } else {
-7. console.info(`Succeeded in setting badge number.`);
-8. }
-9. }
-10. let badgeNumber: number = 10;
-11. notificationManager.setBadgeNumber(badgeNumber, setBadgeNumberCallback);
+let setBadgeNumberCallback = (err: BusinessError): void => {
+  if (err) {
+    console.error(`Failed to set badge number. Code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info(`Succeeded in setting badge number.`);
+  }
+}
+let badgeNumber: number = 10;
+notificationManager.setBadgeNumber(badgeNumber, setBadgeNumberCallback);
 ```
 
 ## notificationManager.getBadgeNumber22+
 
-PhonePC/2in1TabletTVWearable
-
 getBadgeNumber(): Promise<number>
 
 获取当前应用角标数量。使用Promise异步回调。
+
+用于查询当前应用桌面图标上显示的角标数字。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -1056,23 +1067,23 @@ getBadgeNumber(): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. notificationManager.getBadgeNumber().then((badgeNumber: number) => {
-4. console.info(`Succeeded in getting badge number, badgeNumber is ${JSON.stringify(badgeNumber)}`);
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to get badge number. Code is ${err.code}, message is ${err.message}`);
-7. });
+notificationManager.getBadgeNumber().then((badgeNumber: number) => {
+  console.info(`Succeeded in getting badge number, badgeNumber is ${JSON.stringify(badgeNumber)}`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to get badge number. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ## notificationManager.getActiveNotificationCount
 
-PhonePC/2in1TabletTVWearable
-
 getActiveNotificationCount(callback: AsyncCallback<number>): void
 
-获取当前应用未删除的通知数。使用callback异步回调。
+获取当前应用的通知数量。使用callback异步回调。
+
+用于查询当前应用在[通知中心](../harmonyos-guides/notification-glossary.md#notification-center通知中心)中已发布的存量通知数量。适用于需要展示未读通知数量提示的场景。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -1088,34 +1099,34 @@ getActiveNotificationCount(callback: AsyncCallback<number>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let getActiveNotificationCountCallback = (err: BusinessError, data: number): void => {
-4. if (err) {
-5. console.error(`Failed to get active notification count. Code is ${err.code}, message is ${err.message}`);
-6. } else {
-7. console.info(`Succeeded in getting active notification count, data is ${JSON.stringify(data)}`);
-8. }
-9. }
+let getActiveNotificationCountCallback = (err: BusinessError, data: number): void => {
+  if (err) {
+    console.error(`Failed to get active notification count. Code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info(`Succeeded in getting active notification count, data is ${JSON.stringify(data)}`);
+  }
+}
 
-11. notificationManager.getActiveNotificationCount(getActiveNotificationCountCallback);
+notificationManager.getActiveNotificationCount(getActiveNotificationCountCallback);
 ```
 
 ## notificationManager.getActiveNotificationCount
 
-PhonePC/2in1TabletTVWearable
-
 getActiveNotificationCount(): Promise<number>
 
-获取当前应用未删除的通知数。使用Promise异步回调。
+获取当前应用的通知数量。使用Promise异步回调。
+
+用于查询当前应用在[通知中心](../harmonyos-guides/notification-glossary.md#notification-center通知中心)中已发布的存量通知数量。适用于需要展示未读通知数量提示的场景。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -1137,23 +1148,23 @@ getActiveNotificationCount(): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. notificationManager.getActiveNotificationCount().then((data: number) => {
-4. console.info(`Succeeded in getting active notification count, data is ${JSON.stringify(data)}`);
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to get active notification count. Code is ${err.code}, message is ${err.message}`);
-7. });
+notificationManager.getActiveNotificationCount().then((data: number) => {
+  console.info(`Succeeded in getting active notification count, data is ${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to get active notification count. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ## notificationManager.getActiveNotifications
 
-PhonePC/2in1TabletTVWearable
-
 getActiveNotifications(callback: AsyncCallback<Array<NotificationRequest>>): void
 
 获取当前应用未删除的通知列表。使用callback异步回调。
+
+用于查询当前应用在[通知中心](../harmonyos-guides/notification-glossary.md#notification-center通知中心)中所有存量通知的详细信息列表，包括每条通知的ID、标签、内容、创建时间等。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -1169,33 +1180,33 @@ getActiveNotifications(callback: AsyncCallback<Array<NotificationRequest>>): voi
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let getActiveNotificationsCallback = (err: BusinessError, data: Array<notificationManager.NotificationRequest>): void => {
-4. if (err) {
-5. console.error(`Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-6. } else {
-7. console.info(`Succeeded in getting active notifications, data is ${JSON.stringify(data)}`);
-8. }
-9. }
-10. notificationManager.getActiveNotifications(getActiveNotificationsCallback);
+let getActiveNotificationsCallback = (err: BusinessError, data: Array<notificationManager.NotificationRequest>): void => {
+  if (err) {
+    console.error(`Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info(`Succeeded in getting active notifications, data is ${JSON.stringify(data)}`);
+  }
+}
+notificationManager.getActiveNotifications(getActiveNotificationsCallback);
 ```
 
 ## notificationManager.getActiveNotifications
 
-PhonePC/2in1TabletTVWearable
-
 getActiveNotifications(): Promise<Array<NotificationRequest>>
 
 获取当前应用未删除的通知列表。使用Promise异步回调。
+
+用于查询当前应用在[通知中心](../harmonyos-guides/notification-glossary.md#notification-center通知中心)中所有存量通知的详细信息列表，包括每条通知的ID、标签、内容、创建时间等。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -1217,23 +1228,71 @@ getActiveNotifications(): Promise<Array<NotificationRequest>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. notificationManager.getActiveNotifications().then((data: Array<notificationManager.NotificationRequest>) => {
-4. console.info(`Succeeded in getting active notifications, data is ${JSON.stringify(data)}`);
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-7. });
+notificationManager.getActiveNotifications().then((data: Array<notificationManager.NotificationRequest>) => {
+  console.info(`Succeeded in getting active notifications, data is ${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
+});
+```
+
+## notificationManager.getNotificationParameters24+
+
+getNotificationParameters(id: number, label?: string): Promise<NotificationParameters>
+
+获取通知[NotificationRequest](js-apis-inner-notification-notificationrequest.md#notificationrequest-1)中wantAgent字段的部分信息。使用Promise异步回调。
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Notification.Notification
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| id | number | 是 | 通知ID，用于标识目标通知。该值由发布通知时[NotificationRequest](js-apis-inner-notification-notificationrequest.md#notificationrequest-1)的id字段指定。 |
+| label | string | 否 | 通知标签，默认为空。该值由发布通知时[NotificationRequest](js-apis-inner-notification-notificationrequest.md#notificationrequest-1)的label字段指定。  - 若标签为空，则获取与指定通知ID匹配，标签为空的已发布通知的部分信息。  - 若标签不为空，则获取与指定通知ID和标签同时匹配的已发布通知的部分信息。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[NotificationParameters](js-apis-inner-notification-notificationrequest.md#notificationparameters24)> | Promise对象，返回wantAgent的部分信息。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通知错误码](errorcode-notification.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1600001 | Internal error. |
+| 1600002 | Marshalling or unmarshalling error. |
+| 1600003 | Failed to connect to the service. |
+| 1600007 | The notification does not exist. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let id: number = 0;
+let label: string = '';
+notificationManager.getNotificationParameters(id, label).then((data: notificationManager.NotificationParameters) => {
+  console.info(`Succeeded in getting notification parameters, data is ${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to get notification parameters. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ## notificationManager.cancelGroup
 
-PhonePC/2in1TabletTVWearable
-
 cancelGroup(groupName: string, callback: AsyncCallback<void>): void
 
 取消当前应用指定组下的通知。使用callback异步回调。
+
+通知组groupName是在发布通知时通过[NotificationRequest](js-apis-inner-notification-notificationrequest.md#notificationrequest-1)的groupName字段指定的分组标识。取消后，该组下所有通知将从[通知中心](../harmonyos-guides/notification-glossary.md#notification-center通知中心)移除。适用于需要按业务分组批量取消通知的场景。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -1250,34 +1309,34 @@ cancelGroup(groupName: string, callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let cancelGroupCallback = (err: BusinessError): void => {
-4. if (err) {
-5. console.error(`Failed to cancel group. Code is ${err.code}, message is ${err.message}`);
-6. } else {
-7. console.info(`Succeeded in canceling group.`);
-8. }
-9. }
-10. let groupName: string = "GroupName";
-11. notificationManager.cancelGroup(groupName, cancelGroupCallback);
+let cancelGroupCallback = (err: BusinessError): void => {
+  if (err) {
+    console.error(`Failed to cancel group. Code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info(`Succeeded in canceling group.`);
+  }
+}
+let groupName: string = 'GroupName';
+notificationManager.cancelGroup(groupName, cancelGroupCallback);
 ```
 
 ## notificationManager.cancelGroup
 
-PhonePC/2in1TabletTVWearable
-
 cancelGroup(groupName: string): Promise<void>
 
 取消当前应用指定组下的通知。使用Promise异步回调。
+
+通知组groupName是在发布通知时通过[NotificationRequest](js-apis-inner-notification-notificationrequest.md#notificationrequest-1)的groupName字段指定的分组标识。取消后，该组下所有通知将从[通知中心](../harmonyos-guides/notification-glossary.md#notification-center通知中心)移除。适用于需要按业务分组批量取消通知的场景。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -1299,31 +1358,29 @@ cancelGroup(groupName: string): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let groupName: string = "GroupName";
-4. notificationManager.cancelGroup(groupName).then(() => {
-5. console.info(`Succeeded in canceling group.`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`Failed to cancel group. Code is ${err.code}, message is ${err.message}`);
-8. });
+let groupName: string = 'GroupName';
+notificationManager.cancelGroup(groupName).then(() => {
+  console.info(`Succeeded in canceling group.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to cancel group. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ## notificationManager.isSupportTemplate
 
-PhonePC/2in1TabletTVWearable
-
 isSupportTemplate(templateName: string, callback: AsyncCallback<boolean>): void
 
-在使用[通知模板](js-apis-inner-notification-notificationtemplate.md)发布通知前，可以通过该接口查询是否支持对应的通知模板。使用callback异步回调。
+在使用[NotificationTemplate](js-apis-inner-notification-notificationtemplate.md)发布通知前，可以通过该接口查询是否支持对应的通知模板。使用callback异步回调。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -1340,34 +1397,32 @@ isSupportTemplate(templateName: string, callback: AsyncCallback<boolean>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let templateName: string = 'downloadTemplate';
-4. let isSupportTemplateCallback = (err: BusinessError, data: boolean): void => {
-5. if (err) {
-6. console.error(`isSupportTemplate failed, code is ${err.code}, message is ${err.message}`);
-7. } else {
-8. console.info(`isSupportTemplate success, data: ${JSON.stringify(data)}`);
-9. }
-10. }
-11. notificationManager.isSupportTemplate(templateName, isSupportTemplateCallback);
+let templateName: string = 'downloadTemplate';
+let isSupportTemplateCallback = (err: BusinessError, data: boolean): void => {
+  if (err) {
+    console.error(`isSupportTemplate failed, code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info(`isSupportTemplate success, data: ${JSON.stringify(data)}`);
+  }
+}
+notificationManager.isSupportTemplate(templateName, isSupportTemplateCallback);
 ```
 
 ## notificationManager.isSupportTemplate
 
-PhonePC/2in1TabletTVWearable
-
 isSupportTemplate(templateName: string): Promise<boolean>
 
-在使用[通知模板](js-apis-inner-notification-notificationtemplate.md)发布通知前，可以通过该接口查询是否支持对应的通知模板。使用Promise异步回调。
+在使用[NotificationTemplate](js-apis-inner-notification-notificationtemplate.md)发布通知前，可以通过该接口查询是否支持对应的通知模板。使用Promise异步回调。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -1389,36 +1444,34 @@ isSupportTemplate(templateName: string): Promise<boolean>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let templateName: string = 'downloadTemplate';
-4. notificationManager.isSupportTemplate(templateName).then((data: boolean) => {
-5. console.info(`isSupportTemplate success, data: ${JSON.stringify(data)}`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`isSupportTemplate failed, code is ${err.code}, message is ${err.message}`);
-8. });
+let templateName: string = 'downloadTemplate';
+notificationManager.isSupportTemplate(templateName).then((data: boolean) => {
+  console.info(`isSupportTemplate success, data: ${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+  console.error(`isSupportTemplate failed, code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ## notificationManager.requestEnableNotification10+
 
-PhonePC/2in1TabletTVWearable
-
 requestEnableNotification(context: UIAbilityContext, callback: AsyncCallback<void>): void
 
-应用需要获取用户授权才能发送通知。在通知发布前调用该接口，可以拉起通知授权弹窗，让用户选择是否允许发送通知。使用callback异步回调。
+应用需要获取用户授权才能发送通知。在通知发布前调用该接口，可以拉起[通知授权](../harmonyos-guides/notification-glossary.md#notification-authorization通知授权)弹窗，让用户选择是否允许发送通知。使用callback异步回调。
 
-说明
+**说明** 
 
 * 仅当应用界面加载完成后（即调用[loadContent](js-apis-app-ability-uiextensioncontentsession.md#loadcontent)成功），方可使用该接口。
-* 在使用该接口拉起通知授权弹窗后，如果用户拒绝授权，将无法使用该接口再次拉起弹窗。开发者可以调用[openNotificationSettings](js-apis-notificationmanager.md#notificationmanageropennotificationsettings13)二次申请授权，拉起通知管理弹窗。
+* 在使用该接口拉起通知授权弹窗后，如果用户拒绝授权，将无法使用该接口再次拉起弹窗。开发者可以调用[openNotificationSettingsWithResult](js-apis-notificationmanager.md#notificationmanageropennotificationsettingswithresult)二次申请授权，拉起通知管理弹窗。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
@@ -1437,55 +1490,53 @@ requestEnableNotification(context: UIAbilityContext, callback: AsyncCallback<voi
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
-| 1600004 | Notification disabled. |
-| 1600013 | A notification dialog box is already displayed. |
+| 1600004 | Notification disabled.  适用版本：11+ |
+| 1600013 | A notification dialog box is already displayed.  适用版本：11+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { UIAbility } from '@kit.AbilityKit';
-3. import { window } from '@kit.ArkUI';
-4. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { UIAbility } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-6. class MyAbility extends UIAbility {
-7. onWindowStageCreate(windowStage: window.WindowStage) {
-8. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
-9. windowStage.loadContent('pages/Index', (err, data) => {
-10. if (err.code) {
-11. hilog.error(0x0000, 'testTag', `Failed to load the content. Cause: ${JSON.stringify(err) ?? ''}`);
-12. return;
-13. }
-14. hilog.info(0x0000, 'testTag', `Succeeded in loading the content. Data: ${JSON.stringify(data) ?? ''}`);
-15. let requestEnableNotificationCallback = (err: BusinessError): void => {
-16. if (err) {
-17. hilog.error(0x0000, 'testTag', `[ANS] requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
-18. } else {
-19. hilog.info(0x0000, 'testTag', `[ANS] requestEnableNotification success`);
-20. }
-21. };
-22. notificationManager.requestEnableNotification(this.context, requestEnableNotificationCallback);
-23. });
-24. }
-25. }
+class MyAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+    windowStage.loadContent('pages/Index', (err, data) => {
+      if (err.code) {
+        hilog.error(0x0000, 'testTag', `Failed to load the content. Cause: ${JSON.stringify(err) ?? ''}`);
+        return;
+      }
+      hilog.info(0x0000, 'testTag', `Succeeded in loading the content. Data: ${JSON.stringify(data) ?? ''}`);
+      let requestEnableNotificationCallback = (err: BusinessError): void => {
+        if (err) {
+          hilog.error(0x0000, 'testTag', `[ANS] requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
+        } else {
+          hilog.info(0x0000, 'testTag', `[ANS] requestEnableNotification success`);
+        }
+      };
+      notificationManager.requestEnableNotification(this.context, requestEnableNotificationCallback);
+    });
+  }
+}
 ```
 
 ## notificationManager.requestEnableNotification10+
 
-PhonePC/2in1TabletTVWearable
-
 requestEnableNotification(context: UIAbilityContext): Promise<void>
 
-应用需要获取用户授权才能发送通知。在通知发布前调用该接口，可以拉起通知授权弹窗，让用户选择是否允许发送通知。使用Promise异步回调。
+应用需要获取用户授权才能发送通知。在通知发布前调用该接口，可以拉起[通知授权](../harmonyos-guides/notification-glossary.md#notification-authorization通知授权)弹窗，让用户选择是否允许发送通知。使用Promise异步回调。
 
-说明
+**说明** 
 
 * 仅当应用界面加载完成后（即调用[loadContent](js-apis-app-ability-uiextensioncontentsession.md#loadcontent)成功），方可使用该接口。
-* 在使用该接口拉起通知授权弹窗后，如果用户拒绝授权，将无法使用该接口再次拉起弹窗。开发者可以调用[openNotificationSettings](js-apis-notificationmanager.md#notificationmanageropennotificationsettings13)二次申请授权，拉起通知管理弹窗。
+* 在使用该接口拉起通知授权弹窗后，如果用户拒绝授权，将无法使用该接口再次拉起弹窗。开发者可以调用[openNotificationSettingsWithResult](js-apis-notificationmanager.md#notificationmanageropennotificationsettingswithresult)二次申请授权，拉起通知管理弹窗。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
@@ -1509,49 +1560,47 @@ requestEnableNotification(context: UIAbilityContext): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
-| 1600004 | Notification disabled. |
-| 1600013 | A notification dialog box is already displayed. |
+| 1600004 | Notification disabled.  适用版本：11+ |
+| 1600013 | A notification dialog box is already displayed.  适用版本：11+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { UIAbility } from '@kit.AbilityKit';
-3. import { window } from '@kit.ArkUI';
-4. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { UIAbility } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-6. class MyAbility extends UIAbility {
-7. onWindowStageCreate(windowStage: window.WindowStage) {
-8. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
-9. windowStage.loadContent('pages/Index', (err, data) => {
-10. if (err.code) {
-11. hilog.error(0x0000, 'testTag', `Failed to load the content. Cause: ${JSON.stringify(err) ?? ''}`);
-12. return;
-13. }
-14. hilog.info(0x0000, 'testTag', `Succeeded in loading the content. Data: ${JSON.stringify(data) ?? ''}`);
-15. notificationManager.requestEnableNotification(this.context).then(() => {
-16. hilog.info(0x0000, 'testTag', `[ANS] requestEnableNotification success`);
-17. }).catch((err: BusinessError) => {
-18. hilog.error(0x0000, 'testTag', `[ANS] requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
-19. });
-20. });
-21. }
-22. }
+class MyAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+    windowStage.loadContent('pages/Index', (err, data) => {
+      if (err.code) {
+        hilog.error(0x0000, 'testTag', `Failed to load the content. Cause: ${JSON.stringify(err) ?? ''}`);
+        return;
+      }
+      hilog.info(0x0000, 'testTag', `Succeeded in loading the content. Data: ${JSON.stringify(data) ?? ''}`);
+      notificationManager.requestEnableNotification(this.context).then(() => {
+        hilog.info(0x0000, 'testTag', `[ANS] requestEnableNotification success`);
+      }).catch((err: BusinessError) => {
+        hilog.error(0x0000, 'testTag', `[ANS] requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
+      });
+    });
+  }
+}
 ```
 
 ## notificationManager.requestEnableNotification(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 requestEnableNotification(callback: AsyncCallback<void>): void
 
 当前应用请求通知使能。使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始支持，从API version 12开始废弃，建议使用有context入参的[requestEnableNotification](js-apis-notificationmanager.md#notificationmanagerrequestenablenotification10)替代。
 
@@ -1569,37 +1618,35 @@ requestEnableNotification(callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
-| 1600004 | Notification disabled. |
-| 1600013 | A notification dialog box is already displayed. |
+| 1600004 | Notification disabled.  适用版本：11+ |
+| 1600013 | A notification dialog box is already displayed.  适用版本：11+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let requestEnableNotificationCallback = (err: BusinessError): void => {
-4. if (err) {
-5. console.error(`requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
-6. } else {
-7. console.info("requestEnableNotification success");
-8. }
-9. };
-10. notificationManager.requestEnableNotification(requestEnableNotificationCallback);
+let requestEnableNotificationCallback = (err: BusinessError): void => {
+  if (err) {
+    console.error(`requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info(`requestEnableNotification success`);
+  }
+};
+notificationManager.requestEnableNotification(requestEnableNotificationCallback);
 ```
 
 ## notificationManager.requestEnableNotification(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 requestEnableNotification(): Promise<void>
 
 当前应用请求通知使能。使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始支持，从API version 12开始废弃，建议使用有context入参的[requestEnableNotification](js-apis-notificationmanager.md#notificationmanagerrequestenablenotification10-1)替代。
 
@@ -1620,30 +1667,30 @@ requestEnableNotification(): Promise<void>
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
-| 1600004 | Notification disabled. |
-| 1600013 | A notification dialog box is already displayed. |
+| 1600004 | Notification disabled.  适用版本：11+ |
+| 1600013 | A notification dialog box is already displayed.  适用版本：11+ |
 
 **示例：**
 
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+notificationManager.requestEnableNotification().then(() => {
+  console.info(`requestEnableNotification success`);
+}).catch((err: BusinessError) => {
+  console.error(`requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
+});
 ```
-1. import { BusinessError } from '@kit.BasicServicesKit';
 
-3. notificationManager.requestEnableNotification().then(() => {
-4. console.info("requestEnableNotification success");
-5. }).catch((err: BusinessError) => {
-6. console.error(`requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
-7. });
-```
-
-## notificationManager.isDistributedEnabled
-
-PhonePC/2in1TabletTVWearable
+## notificationManager.isDistributedEnabled(deprecated)
 
 isDistributedEnabled(callback: AsyncCallback<boolean>): void
 
-查询设备是否支持跨设备协同通知。使用callback异步回调。
+查询设备是否支持[跨设备协同](../harmonyos-guides/notification-glossary.md#cross-device-collaboration跨设备协同)通知。使用callback异步回调。
 
-**设备行为差异**：该接口在Wearable/TV中回调返回恒为false，在其他设备类型中回调正常。
+**说明** 
+
+从API version 9开始支持，从API version 26.0.0开始废弃。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -1659,7 +1706,8 @@ isDistributedEnabled(callback: AsyncCallback<boolean>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 801 | Capability not supported.  适用版本：26.0.0+ |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
@@ -1667,28 +1715,28 @@ isDistributedEnabled(callback: AsyncCallback<boolean>): void
 
 **示例：**
 
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let isDistributedEnabledCallback = (err: BusinessError, data: boolean): void => {
+  if (err) {
+    console.error(`isDistributedEnabled failed, code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info(`isDistributedEnabled success ${JSON.stringify(data)}`);
+  }
+};
+notificationManager.isDistributedEnabled(isDistributedEnabledCallback);
 ```
-1. import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let isDistributedEnabledCallback = (err: BusinessError, data: boolean): void => {
-4. if (err) {
-5. console.error(`isDistributedEnabled failed, code is ${err.code}, message is ${err.message}`);
-6. } else {
-7. console.info(`isDistributedEnabled success ${JSON.stringify(data)}`);
-8. }
-9. };
-10. notificationManager.isDistributedEnabled(isDistributedEnabledCallback);
-```
-
-## notificationManager.isDistributedEnabled
-
-PhonePC/2in1TabletTVWearable
+## notificationManager.isDistributedEnabled(deprecated)
 
 isDistributedEnabled(): Promise<boolean>
 
-查询设备是否支持跨设备协同通知。使用Promise异步回调。
+查询设备是否支持[跨设备协同](../harmonyos-guides/notification-glossary.md#cross-device-collaboration跨设备协同)通知。使用Promise异步回调。
 
-**设备行为差异**：该接口在Wearable/TV中回调返回恒为false，在其他设备类型中回调正常。
+**说明** 
+
+从API version 9开始支持，从API version 26.0.0开始废弃。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -1704,6 +1752,7 @@ isDistributedEnabled(): Promise<boolean>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 801 | Capability not supported.  适用版本：26.0.0+ |
 | 1600001 | Internal error. |
 | 1600002 | Marshalling or unmarshalling error. |
 | 1600003 | Failed to connect to the service. |
@@ -1711,23 +1760,23 @@ isDistributedEnabled(): Promise<boolean>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. notificationManager.isDistributedEnabled().then((data: boolean) => {
-4. console.info(`isDistributedEnabled success, data: ${JSON.stringify(data)}`);
-5. }).catch((err: BusinessError) => {
-6. console.error(`isDistributedEnabled failed, code is ${err.code}, message is ${err.message}`);
-7. });
+notificationManager.isDistributedEnabled().then((data: boolean) => {
+  console.info(`isDistributedEnabled success, data: ${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+  console.error(`isDistributedEnabled failed, code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ## notificationManager.openNotificationSettings13+
 
-PhonePC/2in1TabletTV
-
 openNotificationSettings(context: UIAbilityContext): Promise<void>
 
-拉起应用的通知设置界面，该页面以半模态形式呈现，可用于设置通知开关、通知提醒方式等。使用Promise异步回调。
+拉起应用的[通知设置](../harmonyos-guides/notification-glossary.md#notification-setting通知设置)界面，该页面以半模态形式呈现，可用于设置通知开关、[通知提醒方式](../harmonyos-guides/notification-glossary.md#notification-reminder-mode通知提醒方式)等。使用Promise异步回调。
+
+适用于用户需要手动修改通知设置的场景，如用户拒绝授权后二次申请，或需要修改通知提醒方式（振动、响铃等）。当[requestEnableNotification](js-apis-notificationmanager.md#notificationmanagerrequestenablenotification10)弹窗被用户拒绝后，开发者可调用此接口引导用户前往通知设置页面手动开启。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
@@ -1751,6 +1800,70 @@ openNotificationSettings(context: UIAbilityContext): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 801 | Capability not supported.  适用版本：18+ |
+| 1600001 | Internal error. |
+| 1600003 | Failed to connect to the service. |
+| 1600018 | The notification settings window is already displayed. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { UIAbility } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+class MyAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+    windowStage.loadContent('pages/Index', (err, data) => {
+      if (err.code) {
+        hilog.error(0x0000, 'testTag', `Failed to load the content. Cause: ${JSON.stringify(err) ?? ''}`);
+        return;
+      }
+      hilog.info(0x0000, 'testTag', `Succeeded in loading the content. Data: ${JSON.stringify(data) ?? ''}`);
+      notificationManager.openNotificationSettings(this.context).then(() => {
+        hilog.info(0x0000, 'testTag', `[ANS] openNotificationSettings success`);
+      }).catch((err: BusinessError) => {
+        hilog.error(0x0000, 'testTag', `[ANS] openNotificationSettings failed, code is ${err.code}, message is ${err.message}`);
+      });
+    });
+  }
+}
+```
+
+## notificationManager.openNotificationSettingsWithResult
+
+openNotificationSettingsWithResult(context: UIAbilityContext): Promise<NotificationSetting>
+
+拉起应用的[通知设置](../harmonyos-guides/notification-glossary.md#notification-setting通知设置)界面，该页面以半模态形式呈现，可用于设置通知开关、[通知提醒方式](../harmonyos-guides/notification-glossary.md#notification-reminder-mode通知提醒方式)等。使用Promise异步回调，当半模态窗口关闭时返回用户设置的状态。
+
+与[openNotificationSettings](js-apis-notificationmanager.md#notificationmanageropennotificationsettings13)相比，此接口在半模态窗口关闭时返回[NotificationSetting](js-apis-notificationmanager.md#notificationsetting20)对象，开发者可根据返回结果判断用户是否开启了通知权限，从而决定后续逻辑。
+
+**起始版本**：26.0.0
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Notification.NotificationSettings
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | [UIAbilityContext](js-apis-inner-application-uiabilitycontext.md) | 是 | 通知设置页面绑定Ability的上下文。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[NotificationSetting](js-apis-notificationmanager.md#notificationsetting20)> | Promise对象，返回此应用的通知设置。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[通知错误码](errorcode-notification.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
 | 801 | Capability not supported. |
 | 1600001 | Internal error. |
 | 1600003 | Failed to connect to the service. |
@@ -1758,38 +1871,36 @@ openNotificationSettings(context: UIAbilityContext): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { UIAbility } from '@kit.AbilityKit';
-3. import { window } from '@kit.ArkUI';
-4. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { UIAbility } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-6. class MyAbility extends UIAbility {
-7. onWindowStageCreate(windowStage: window.WindowStage) {
-8. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
-9. windowStage.loadContent('pages/Index', (err, data) => {
-10. if (err.code) {
-11. hilog.error(0x0000, 'testTag', `Failed to load the content. Cause: ${JSON.stringify(err) ?? ''}`);
-12. return;
-13. }
-14. hilog.info(0x0000, 'testTag', `Succeeded in loading the content. Data: ${JSON.stringify(data) ?? ''}`);
-15. notificationManager.openNotificationSettings(this.context).then(() => {
-16. hilog.info(0x0000, 'testTag', `[ANS] openNotificationSettings success`);
-17. }).catch((err: BusinessError) => {
-18. hilog.error(0x0000, 'testTag', `[ANS] openNotificationSettings failed, code is ${err.code}, message is ${err.message}`);
-19. });
-20. });
-21. }
-22. }
+class MyAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+    windowStage.loadContent('pages/Index', (err, data) => {
+      if (err.code) {
+        hilog.error(0x0000, 'testTag', `Failed to load the content. Cause: ${JSON.stringify(err) ?? ''}`);
+        return;
+      }
+      hilog.info(0x0000, 'testTag', `Succeeded in loading the content. Data: ${JSON.stringify(data) ?? ''}`);
+      notificationManager.openNotificationSettingsWithResult(this.context).then((data) => {
+        hilog.info(0x0000, 'testTag', `[ANS] openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
+      }).catch((err: BusinessError) => {
+        hilog.error(0x0000, 'testTag', `[ANS] openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
+      });
+    });
+  }
+}
 ```
 
 ## notificationManager.getNotificationSetting20+
 
-PhonePC/2in1TabletTVWearable
-
 getNotificationSetting(): Promise<NotificationSetting>
 
-获取应用程序的通知设置。使用Promise异步回调。
+获取应用的[通知设置](../harmonyos-guides/notification-glossary.md#notification-setting通知设置)，包括锁屏通知、横幅通知、桌面角标、振动、铃声等开关状态。使用Promise异步回调。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -1797,7 +1908,7 @@ getNotificationSetting(): Promise<NotificationSetting>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[NotificationSetting](js-apis-notificationmanager.md#notificationsetting20)> | Promise对象，返回此应用程序的通知设置。 |
+| Promise<[NotificationSetting](js-apis-notificationmanager.md#notificationsetting20)> | Promise对象，返回此应用的通知设置。 |
 
 **错误码：**
 
@@ -1811,23 +1922,21 @@ getNotificationSetting(): Promise<NotificationSetting>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. notificationManager.getNotificationSetting().then((data: notificationManager.NotificationSetting) => {
-4. console.info(`getNotificationSetting success, data: ${JSON.stringify(data)}`);
-5. }).catch((err: BusinessError) => {
-6. console.error(`getNotificationSetting failed, code is ${err.code}, message is ${err.message}`);
-7. });
+notificationManager.getNotificationSetting().then((data: notificationManager.NotificationSetting) => {
+    console.info(`getNotificationSetting success, data: ${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+    console.error(`getNotificationSetting failed, code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ## notificationManager.isGeofenceEnabled23+
 
-PhonePC/2in1TabletTVWearable
-
 isGeofenceEnabled(): Promise<boolean>
 
-检查地理围栏功能是否已启用。使用Promise异步回调。
+检查[地理围栏](../harmonyos-guides/notification-glossary.md#geofence地理围栏)功能是否已启用。使用Promise异步回调。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -1850,22 +1959,20 @@ isGeofenceEnabled(): Promise<boolean>
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. notificationManager.isGeofenceEnabled().then((data: boolean) => {
-5. hilog.info(0x0000, 'testTag', '%{public}s', `isGeofenceEnabled success, enabled:  ${JSON.stringify(data)}.`);
-6. }).catch((err: BusinessError) => {
-7. hilog.error(0x0000, 'testTag', '%{public}s',`isGeofenceEnabled failed, code is ${err.code}, message is ${err.message}`);
-8. });
+notificationManager.isGeofenceEnabled().then((data: boolean) => {
+  hilog.info(0x0000, 'testTag', '%{public}s', `isGeofenceEnabled success, enabled:  ${JSON.stringify(data)}.`);
+}).catch((err: BusinessError) => {
+  hilog.error(0x0000, 'testTag', '%{public}s',`isGeofenceEnabled failed, code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ## ContentType
 
-PhonePC/2in1TabletTVWearable
-
-通知内容类型。
+[通知内容类型](../harmonyos-guides/notification-glossary.md#content-type通知内容类型)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1876,16 +1983,16 @@ PhonePC/2in1TabletTVWearable
 | NOTIFICATION\_CONTENT\_BASIC\_TEXT | 0 | 普通文本类型通知。 |
 | NOTIFICATION\_CONTENT\_LONG\_TEXT | 1 | 长文本类型通知。 |
 | NOTIFICATION\_CONTENT\_PICTURE | 2 | 图片类型通知。 |
-| NOTIFICATION\_CONTENT\_CONVERSATION | 3 | 社交类型通知。预留能力，暂未支持。 |
+| NOTIFICATION\_CONTENT\_CONVERSATION | 3 | 社交类型通知。 |
 | NOTIFICATION\_CONTENT\_MULTILINE | 4 | 多行文本类型通知。 |
-| NOTIFICATION\_CONTENT\_SYSTEM\_LIVE\_VIEW11+ | 5 | 系统实况窗类型通知。不支持三方应用直接创建该类型通知。系统代理创建系统实况窗类型通知后，三方应用可以通过发布相同ID的通知来更新指定内容。 |
+| NOTIFICATION\_CONTENT\_SYSTEM\_LIVE\_VIEW11+ | 5 | [系统实况窗](../harmonyos-guides/notification-glossary.md#system-live-view系统实况窗)类型通知。不支持三方应用直接创建该类型通知。系统代理创建系统实况窗类型通知后，三方应用可以通过发布相同ID的通知来更新指定内容。 |
 | NOTIFICATION\_CONTENT\_LIVE\_VIEW11+ | 6 | 普通实况窗类型通知。仅系统应用可用。 |
 
 ## SlotLevel
 
-PhonePC/2in1TabletTVWearable
-
 通知级别。
+
+用于定义[NotificationSlot](js-apis-inner-notification-notificationslot.md)的通知提醒行为级别，影响通知在状态栏的显示方式，是否展示横幅和提示音等。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -1899,9 +2006,9 @@ PhonePC/2in1TabletTVWearable
 
 ## SlotType
 
-PhonePC/2in1TabletTVWearable
+[通知渠道](../harmonyos-guides/notification-glossary.md#notification-slot通知渠道)类型。
 
-通知渠道类型。
+不同类型对应不同的[SlotLevel](js-apis-notificationmanager.md#slotlevel)，决定通知的提醒行为。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1910,7 +2017,7 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNKNOWN\_TYPE | 0 | 未知类型。该类型对应[SlotLevel](js-apis-notificationmanager.md#slotlevel)为LEVEL\_MIN。 |
-| SOCIAL\_COMMUNICATION | 1 | 社交通信。该类型对应[SlotLevel](js-apis-notificationmanager.md#slotlevel)为LEVEL\_HIGH。 |
+| SOCIAL\_COMMUNICATION | 1 | 社交通讯。该类型对应[SlotLevel](js-apis-notificationmanager.md#slotlevel)为LEVEL\_HIGH。 |
 | SERVICE\_INFORMATION | 2 | 服务提醒。该类型对应[SlotLevel](js-apis-notificationmanager.md#slotlevel)为LEVEL\_HIGH。 |
 | CONTENT\_INFORMATION | 3 | 内容资讯。该类型对应[SlotLevel](js-apis-notificationmanager.md#slotlevel)为LEVEL\_MIN。 |
 | LIVE\_VIEW11+ | 4 | 实况窗。不支持三方应用直接创建该渠道类型通知，可以由系统代理创建后，三方应用发布同ID的通知来更新指定内容，更新时默认无提示音。该类型对应[SlotLevel](js-apis-notificationmanager.md#slotlevel)为LEVEL\_DEFAULT。 |
@@ -1919,9 +2026,7 @@ PhonePC/2in1TabletTVWearable
 
 ## NotificationSetting20+
 
-PhonePC/2in1TabletTVWearable
-
-通知设置状态，包括是否开启振动、是否开启响铃。
+[通知提醒方式](../harmonyos-guides/notification-glossary.md#notification-reminder-mode通知提醒方式)开关的设置状态。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -1929,248 +2034,12 @@ PhonePC/2in1TabletTVWearable
 | --- | --- | --- | --- | --- |
 | vibrationEnabled | boolean | 否 | 否 | 表示是否开启振动。  - true：开启。  - false：关闭。 |
 | soundEnabled | boolean | 否 | 否 | 表示是否开启响铃。  - true：开启。  - false：关闭。 |
-
-## BundleOption
-
-PhonePC/2in1TabletTVWearable
-
-type BundleOption = \_BundleOption
-
-指定应用的包信息。
-
-**系统能力**： SystemCapability.Notification.Notification
-
-| 类型 | 说明 |
-| --- | --- |
-| [\_BundleOption](js-apis-inner-notification-notificationcommondef.md#bundleoption) | 指定应用的包信息。 |
-
-## NotificationActionButton
-
-PhonePC/2in1TabletTVWearable
-
-type NotificationActionButton = \_NotificationActionButton
-
-通知中显示的操作按钮。
-
-**系统能力**： SystemCapability.Notification.Notification
-
-| 类型 | 说明 |
-| --- | --- |
-| [\_NotificationActionButton](s-apis-inner-notification-notificationactionbutton.md) | 通知中显示的操作按钮。 |
-
-## NotificationBasicContent
-
-PhonePC/2in1TabletTVWearable
-
-type NotificationBasicContent = \_NotificationBasicContent
-
-普通文本通知。
-
-**系统能力**： SystemCapability.Notification.Notification
-
-| 类型 | 说明 |
-| --- | --- |
-| [\_NotificationBasicContent](js-apis-inner-notification-notificationcontent.md#notificationbasiccontent) | 描述普通文本通知。 |
-
-## NotificationContent
-
-PhonePC/2in1TabletTVWearable
-
-type NotificationContent = \_NotificationContent
-
-通知内容。
-
-**系统能力**： SystemCapability.Notification.Notification
-
-| 类型 | 说明 |
-| --- | --- |
-| [\_NotificationContent](js-apis-inner-notification-notificationcontent.md#notificationcontent-1) | 描述通知内容。 |
-
-## NotificationLongTextContent
-
-PhonePC/2in1TabletTVWearable
-
-type NotificationLongTextContent = \_NotificationLongTextContent
-
-长文本通知。
-
-**系统能力**： SystemCapability.Notification.Notification
-
-| 类型 | 说明 |
-| --- | --- |
-| [\_NotificationLongTextContent](js-apis-inner-notification-notificationcontent.md#notificationlongtextcontent) | 描述长文本通知。 |
-
-## NotificationMultiLineContent
-
-PhonePC/2in1TabletTVWearable
-
-type NotificationMultiLineContent = \_NotificationMultiLineContent
-
-多行文本通知。
-
-**系统能力**： SystemCapability.Notification.Notification
-
-| 类型 | 说明 |
-| --- | --- |
-| [\_NotificationMultiLineContent](js-apis-inner-notification-notificationcontent.md#notificationmultilinecontent) | 描述多行文本通知。 |
-
-## NotificationPictureContent
-
-PhonePC/2in1TabletTVWearable
-
-type NotificationPictureContent = \_NotificationPictureContent
-
-附有图片的通知。
-
-**系统能力**： SystemCapability.Notification.Notification
-
-| 类型 | 说明 |
-| --- | --- |
-| [\_NotificationPictureContent](js-apis-inner-notification-notificationcontent.md#notificationpicturecontent) | 附有图片的通知。 |
-
-## NotificationSystemLiveViewContent11+
-
-PhonePC/2in1TabletTVWearable
-
-type NotificationSystemLiveViewContent = \_NotificationSystemLiveViewContent
-
-系统实况窗通知内容。
-
-**系统能力**： SystemCapability.Notification.Notification
-
-| 类型 | 说明 |
-| --- | --- |
-| [\_NotificationSystemLiveViewContent](js-apis-inner-notification-notificationcontent.md#notificationsystemliveviewcontent) | 系统实况窗通知内容。 |
-
-## NotificationRequest
-
-PhonePC/2in1TabletTVWearable
-
-type NotificationRequest = \_NotificationRequest
-
-通知请求。
-
-**系统能力**： SystemCapability.Notification.Notification
-
-| 类型 | 说明 |
-| --- | --- |
-| [\_NotificationRequest](js-apis-inner-notification-notificationrequest.md#notificationrequest-1) | 通知请求。 |
-
-## DistributedOptions
-
-PhonePC/2in1TabletTVWearable
-
-type DistributedOptions = \_DistributedOptions
-
-分布式选项。
-
-**系统能力**： SystemCapability.Notification.Notification
-
-| 类型 | 说明 |
-| --- | --- |
-| [\_DistributedOptions](js-apis-inner-notification-notificationrequest.md#distributedoptions8) | 分布式选项。 |
-
-## NotificationSlot
-
-PhonePC/2in1TabletTVWearable
-
-type NotificationSlot = \_NotificationSlot
-
-通知渠道。
-
-**系统能力**： SystemCapability.Notification.Notification
-
-| 类型 | 说明 |
-| --- | --- |
-| [\_NotificationSlot](js-apis-inner-notification-notificationslot.md) | 通知渠道。 |
-
-## NotificationTemplate
-
-PhonePC/2in1TabletTVWearable
-
-type NotificationTemplate = \_NotificationTemplate
-
-通知模板。
-
-**系统能力**： SystemCapability.Notification.Notification
-
-| 类型 | 说明 |
-| --- | --- |
-| [\_NotificationTemplate](js-apis-inner-notification-notificationtemplate.md) | 通知模板。 |
-
-## NotificationUserInput
-
-PhonePC/2in1TabletTVWearable
-
-type NotificationUserInput = \_NotificationUserInput
-
-保存用户输入的通知消息。
-
-**系统能力**： SystemCapability.Notification.Notification
-
-| 类型 | 说明 |
-| --- | --- |
-| [\_NotificationUserInput](js-apis-inner-notification-notificationuserinput.md) | 保存用户输入的通知消息。 |
-
-## NotificationCapsule11+
-
-PhonePC/2in1TabletTVWearable
-
-type NotificationCapsule = \_NotificationCapsule
-
-通知胶囊。
-
-**系统能力**： SystemCapability.Notification.Notification
-
-| 类型 | 说明 |
-| --- | --- |
-| [\_NotificationCapsule](js-apis-inner-notification-notificationcontent.md#notificationcapsule11) | 通知胶囊。 |
-
-## NotificationButton11+
-
-PhonePC/2in1TabletTVWearable
-
-type NotificationButton = \_NotificationButton
-
-通知按钮。
-
-**系统能力**： SystemCapability.Notification.Notification
-
-| 类型 | 说明 |
-| --- | --- |
-| [\_NotificationButton](js-apis-inner-notification-notificationcontent.md#notificationbutton11) | 通知按钮。 |
-
-## NotificationTime11+
-
-PhonePC/2in1TabletTVWearable
-
-type NotificationTime = \_NotificationTime
-
-通知计时信息。
-
-**系统能力**： SystemCapability.Notification.Notification
-
-| 类型 | 说明 |
-| --- | --- |
-| [\_NotificationTime](js-apis-inner-notification-notificationcontent.md#notificationtime11) | 描述通知计时信息。 |
-
-## NotificationProgress11+
-
-PhonePC/2in1TabletTVWearable
-
-type NotificationProgress = \_NotificationProgress
-
-通知进度。
-
-**系统能力**： SystemCapability.Notification.Notification
-
-| 类型 | 说明 |
-| --- | --- |
-| [\_NotificationProgress](js-apis-inner-notification-notificationcontent.md#notificationprogress11) | 描述通知进度。 |
+| lockScreenEnabled | boolean | 否 | 是 | 表示是否开启锁屏通知。  **模型约束**: 此接口仅可在Stage模型下使用。  **起始版本**：26.0.0  - true：开启。  - false：关闭。 |
+| bannerEnabled | boolean | 否 | 是 | 表示是否开启横幅通知。  **模型约束**: 此接口仅可在Stage模型下使用。  **起始版本**：26.0.0  - true：开启。  - false：关闭。 |
+| badgeNumberEnabled | boolean | 否 | 是 | 表示是否开启[通知角标](../harmonyos-guides/notification-glossary.md#notification-badge通知角标)数字展示。  **模型约束**: 此接口仅可在Stage模型下使用。  **起始版本**：26.0.0  - true：开启。  - false：关闭。 |
+| notificationEnabled | boolean | 否 | 是 | 表示应用通知使能状态。  **模型约束**: 此接口仅可在Stage模型下使用。  **起始版本**：26.0.0  - true：开启。  - false：关闭。 |
 
 ## PriorityNotificationType23+
-
-PhonePC/2in1TabletTVWearable
 
 描述通知的优先级类型。
 
@@ -2178,8 +2047,226 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| OTHER | "OTHER" | 表示通知优先级类型为默认。 |
-| PRIMARY\_CONTACT | "PRIMARY\_CONTACT" | 表示通知优先级类型为重要联系人。 |
-| AT\_ME | "AT\_ME" | 表示通知优先级类型为@我。 |
-| URGENT\_MESSAGE | "URGENT\_MESSAGE" | 表示通知优先级类型为加急消息。 |
-| SCHEDULE\_REMINDER | "SCHEDULE\_REMINDER" | 表示通知优先级类型为日程待办。 |
+| OTHER | 'OTHER' | 表示通知优先级类型为默认。 |
+| PRIMARY\_CONTACT | 'PRIMARY\_CONTACT' | 表示通知优先级类型为重要联系人。 |
+| AT\_ME | 'AT\_ME' | 表示通知优先级类型为@我。 |
+| URGENT\_MESSAGE | 'URGENT\_MESSAGE' | 表示通知优先级类型为加急消息。 |
+| SCHEDULE\_REMINDER | 'SCHEDULE\_REMINDER' | 表示通知优先级类型为日程待办。 |
+
+## BundleOption
+
+type BundleOption = \_BundleOption
+
+指定应用的包信息。
+
+**系统能力**：SystemCapability.Notification.Notification
+
+| 类型 | 说明 |
+| --- | --- |
+| [\_BundleOption](js-apis-inner-notification-notificationcommondef.md#bundleoption) | 指定应用的包信息。 |
+
+## NotificationActionButton
+
+type NotificationActionButton = \_NotificationActionButton
+
+通知中显示的操作按钮。
+
+**系统能力**：SystemCapability.Notification.Notification
+
+| 类型 | 说明 |
+| --- | --- |
+| [\_NotificationActionButton](js-apis-inner-notification-notificationactionbutton.md) | 通知中显示的操作按钮。 |
+
+## NotificationBasicContent
+
+type NotificationBasicContent = \_NotificationBasicContent
+
+普通文本通知。
+
+**系统能力**：SystemCapability.Notification.Notification
+
+| 类型 | 说明 |
+| --- | --- |
+| [\_NotificationBasicContent](js-apis-inner-notification-notificationcontent.md#notificationbasiccontent) | 描述普通文本通知。 |
+
+## NotificationContent
+
+type NotificationContent = \_NotificationContent
+
+[通知内容](../harmonyos-guides/notification-glossary.md#notification-content通知内容)。
+
+**系统能力**：SystemCapability.Notification.Notification
+
+| 类型 | 说明 |
+| --- | --- |
+| [\_NotificationContent](js-apis-inner-notification-notificationcontent.md#notificationcontent-1) | 描述通知内容。 |
+
+## NotificationLongTextContent
+
+type NotificationLongTextContent = \_NotificationLongTextContent
+
+长文本通知。
+
+**系统能力**：SystemCapability.Notification.Notification
+
+| 类型 | 说明 |
+| --- | --- |
+| [\_NotificationLongTextContent](js-apis-inner-notification-notificationcontent.md#notificationlongtextcontent) | 描述长文本通知。 |
+
+## NotificationMultiLineContent
+
+type NotificationMultiLineContent = \_NotificationMultiLineContent
+
+多行文本通知。
+
+**系统能力**：SystemCapability.Notification.Notification
+
+| 类型 | 说明 |
+| --- | --- |
+| [\_NotificationMultiLineContent](js-apis-inner-notification-notificationcontent.md#notificationmultilinecontent) | 描述多行文本通知。 |
+
+## NotificationPictureContent
+
+type NotificationPictureContent = \_NotificationPictureContent
+
+附有图片的通知。
+
+**系统能力**：SystemCapability.Notification.Notification
+
+| 类型 | 说明 |
+| --- | --- |
+| [\_NotificationPictureContent](js-apis-inner-notification-notificationcontent.md#notificationpicturecontent) | 附有图片的通知。 |
+
+## NotificationSystemLiveViewContent11+
+
+type NotificationSystemLiveViewContent = \_NotificationSystemLiveViewContent
+
+[系统实况窗](../harmonyos-guides/notification-glossary.md#system-live-view系统实况窗)[通知内容](../harmonyos-guides/notification-glossary.md#notification-content通知内容)。
+
+**系统能力**：SystemCapability.Notification.Notification
+
+| 类型 | 说明 |
+| --- | --- |
+| [\_NotificationSystemLiveViewContent](js-apis-inner-notification-notificationcontent.md#notificationsystemliveviewcontent) | 系统实况窗通知内容。 |
+
+## NotificationRequest
+
+type NotificationRequest = \_NotificationRequest
+
+[通知请求](../harmonyos-guides/notification-glossary.md#notification-request通知请求)。
+
+**系统能力**：SystemCapability.Notification.Notification
+
+| 类型 | 说明 |
+| --- | --- |
+| [\_NotificationRequest](js-apis-inner-notification-notificationrequest.md#notificationrequest-1) | 通知请求。 |
+
+## NotificationParameters24+
+
+type NotificationParameters = \_NotificationParameters
+
+描述[通知请求](../harmonyos-guides/notification-glossary.md#notification-request通知请求)中wantAgent的部分信息。
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Notification.Notification
+
+| 类型 | 说明 |
+| --- | --- |
+| [\_NotificationParameters](js-apis-inner-notification-notificationrequest.md#notificationparameters24) | 描述通知请求中wantAgent的部分信息。 |
+
+## DistributedOptions
+
+type DistributedOptions = \_DistributedOptions
+
+分布式选项。
+
+**系统能力**：SystemCapability.Notification.Notification
+
+| 类型 | 说明 |
+| --- | --- |
+| [\_DistributedOptions](js-apis-inner-notification-notificationrequest.md#distributedoptions8) | 分布式选项。 |
+
+## NotificationSlot
+
+type NotificationSlot = \_NotificationSlot
+
+[通知渠道](../harmonyos-guides/notification-glossary.md#notification-slot通知渠道)。
+
+**系统能力**：SystemCapability.Notification.Notification
+
+| 类型 | 说明 |
+| --- | --- |
+| [\_NotificationSlot](js-apis-inner-notification-notificationslot.md) | 通知渠道。 |
+
+## NotificationTemplate
+
+type NotificationTemplate = \_NotificationTemplate
+
+通知模板。
+
+**系统能力**：SystemCapability.Notification.Notification
+
+| 类型 | 说明 |
+| --- | --- |
+| [\_NotificationTemplate](js-apis-inner-notification-notificationtemplate.md) | 通知模板。 |
+
+## NotificationUserInput
+
+type NotificationUserInput = \_NotificationUserInput
+
+保存用户输入的通知消息。
+
+**系统能力**：SystemCapability.Notification.Notification
+
+| 类型 | 说明 |
+| --- | --- |
+| [\_NotificationUserInput](js-apis-inner-notification-notificationuserinput.md) | 保存用户输入的通知消息。 |
+
+## NotificationCapsule11+
+
+type NotificationCapsule = \_NotificationCapsule
+
+[通知胶囊](../harmonyos-guides/notification-glossary.md#notification-capsule通知胶囊)。
+
+**系统能力**：SystemCapability.Notification.Notification
+
+| 类型 | 说明 |
+| --- | --- |
+| [\_NotificationCapsule](js-apis-inner-notification-notificationcontent.md#notificationcapsule11) | 通知胶囊。 |
+
+## NotificationButton11+
+
+type NotificationButton = \_NotificationButton
+
+[通知按钮](../harmonyos-guides/notification-glossary.md#notification-button通知按钮)。
+
+**系统能力**：SystemCapability.Notification.Notification
+
+| 类型 | 说明 |
+| --- | --- |
+| [\_NotificationButton](js-apis-inner-notification-notificationcontent.md#notificationbutton11) | 通知按钮。 |
+
+## NotificationTime11+
+
+type NotificationTime = \_NotificationTime
+
+通知计时信息。
+
+**系统能力**：SystemCapability.Notification.Notification
+
+| 类型 | 说明 |
+| --- | --- |
+| [\_NotificationTime](js-apis-inner-notification-notificationcontent.md#notificationtime11) | 描述通知计时信息。 |
+
+## NotificationProgress11+
+
+type NotificationProgress = \_NotificationProgress
+
+[通知进度](../harmonyos-guides/notification-glossary.md#notification-progress通知进度)。
+
+**系统能力**：SystemCapability.Notification.Notification
+
+| 类型 | 说明 |
+| --- | --- |
+| [\_NotificationProgress](js-apis-inner-notification-notificationcontent.md#notificationprogress11) | 描述通知进度。 |

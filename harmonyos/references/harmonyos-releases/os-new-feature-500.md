@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-500
 title: 新增和增强特性
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > 新增和增强特性
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:36:08+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:b72ad7481f53aee145041568a9ce871f4c3c5f76767fda0a8c777f54ed6ca161
+scraped_at: 2026-09-02T14:58:53+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:05a2ca10e9dbb36d3ef28664d0e5180f0536ca51be2f01b916258c15ffd8015c
 ---
 
 ## 应用框架
@@ -1170,7 +1170,7 @@ Vision Kit是HarmonyOS NEXT全新提供的能力。详细信息请参见[Vision 
 
 商用系统版本中应用的HiLog日志默认级别由INFO调整为WARN。受此影响，Faultlogger崩溃日志中进程崩溃前的HiLog日志，包含WARN/ERROR/FATAL级别日志，不再包含INFO级别日志。
 
-说明
+**说明** 
 
 可通过如下方法确认系统版本为商用版或开发者版本：
 

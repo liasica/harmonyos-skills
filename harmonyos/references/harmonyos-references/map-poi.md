@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-poi
 title: POI类型值
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > 附录 > POI类型值
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:32+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:97b2845bef0f04e412b9fc592b6d5ef46a5242ed374289247a2d7d5c60f0bfca
+scraped_at: 2026-09-02T15:03:01+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ab01f17bced6e40befbd7a67dd86aac8d4e0b8d1d2d20e056a9bc5d82c7ddbec
 ---
 
 ## HwLocationType
-
-PhonePC/2in1TabletWearable
 
 华为地点类型的枚举类。
 

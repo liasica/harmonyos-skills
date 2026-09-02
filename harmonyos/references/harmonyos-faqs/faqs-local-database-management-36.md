@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 为什么在关系型数据库中调用deleteRdbStore函数后并未真实删除数据库，对数据库的操作依旧可用
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 为什么在关系型数据库中调用deleteRdbStore函数后并未真实删除数据库，对数据库的操作依旧可用
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:19+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:51+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:a5110498c1f3b7c1121f377b231af8d16dc5692c60b5f0b79c75e8e694bb57f9
 ---
 

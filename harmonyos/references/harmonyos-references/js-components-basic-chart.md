@@ -3,32 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: chart
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > chart
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:23+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e46f34bb9331259583159e39cd9ed96ae0285c89db4ae208aaa8b60c4a774553
+scraped_at: 2026-09-02T15:01:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:827765ba749d6802cc3410b5c572db8685b787dbc2f4244edc61707184fd5600
 ---
 
-说明
+**说明** 
 
 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
-图表组件，用于呈现线形图、柱状图、量规图界面。
+图表组件，用于呈现线形图、柱状图、量规图、进度类圆形图表、加载类圆形图表、占比类圆形图表界面。
 
 ## 权限列表
-
-PhonePC/2in1TabletTVWearable
 
 无
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 不支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-components-common-attributes.md)外，还支持如下属性：
 
@@ -143,8 +137,6 @@ PhonePC/2in1TabletTVWearable
 
 ## 样式
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用样式](js-components-common-styles.md)外，还支持如下样式：
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
@@ -157,18 +149,14 @@ PhonePC/2in1TabletTVWearable
 | radius | <length> | - | 否 | 量规组件刻度条半径，该样式优先于通用样式的width和height样式。该样式需要和center-x和center-y一起配置才能生效。（仅量规图支持） |
 | colors | Array | - | 否 | 量规组件刻度条每一个区段的颜色。  如：colors: #ff0000, #00ff00。（仅量规图支持） |
 | weights | Array | - | 否 | 量规组件刻度条每一个区段的权重。  如：weights: 2, 2。（仅量规图支持） |
-| font-family5+ | Array | - | 否 | 表示绘制注释的字体样式，支持[自定义字体](js-components-common-customizing-font.md)。 |
+| font-family5+ | Array | - | 否 | 表示绘制注释的字体族，支持[自定义字体](js-components-common-customizing-font.md)。 |
 | font-size5+ | <length> | - | 否 | 表示绘制注释的字体的大小。 |
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用事件](js-components-common-events.md)。
 
 ## 方法
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用方法](js-components-common-methods.md)外，还支持如下方法：
 
@@ -178,270 +166,268 @@ PhonePC/2in1TabletTVWearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 1. 线形图
 
-   ```
-   1. <!-- xxx.hml -->
-   2. <div class="container">
-   3. <stack class="chart-region">
-   4. <image class="chart-background" src="common/background.png"></image>
-   5. <chart class="chart-data" type="line" ref="linechart" options="{{lineOps}}" datasets="{{lineData}}"></chart>
-   6. </stack>
-   7. <button value="Add data" onclick="addData"></button>
-   8. </div>
-   ```
-
-   ```
-   1. /* xxx.css */
-   2. .container {
-   3. flex-direction: column;
-   4. justify-content: center;
-   5. align-items: center;
-   6. }
-   7. .chart-region {
-   8. height: 400px;
-   9. width: 700px;
-   10. }
-   11. .chart-background {
-   12. object-fit: fill;
-   13. }
-   14. .chart-data {
-   15. width: 700px;
-   16. height: 600px;
-   17. }
-   18. button {
-   19. width: 100%;
-   20. height: 50px;
-   21. background-color: #F4F2F1;
-   22. text-color: #0C81F3;
-   23. }
+   ```html
+   <!-- xxx.hml -->
+   <div class="container">
+     <stack class="chart-region">
+       <image class="chart-background" src="common/background.png"></image>
+       <chart class="chart-data" type="line" ref="linechart" options="{{lineOps}}" datasets="{{lineData}}"></chart>
+     </stack>
+     <button value="Add data" onclick="addData"></button>
+   </div>
    ```
 
-   ```
-   1. // xxx.js
-   2. export default {
-   3. data: {
-   4. lineData: [
-   5. {
-   6. strokeColor: '#0081ff',
-   7. fillColor: '#cce5ff',
-   8. data: [763, 550, 551, 554, 731, 654, 525, 696, 595, 628, 791, 505, 613, 575, 475, 553, 491, 680, 657, 716],
-   9. gradient: true
-   10. }
-   11. ],
-   12. lineOps: {
-   13. xAxis: {
-   14. min: 0,
-   15. max: 20,
-   16. display: false
-   17. },
-   18. yAxis: {
-   19. min: 0,
-   20. max: 1000,
-   21. display: false
-   22. },
-   23. series: {
-   24. lineStyle: {
-   25. width: "5px",
-   26. smooth: true
-   27. },
-   28. headPoint: {
-   29. shape: "circle",
-   30. size: 20,
-   31. strokeWidth: 5,
-   32. fillColor: '#ffffff',
-   33. strokeColor: '#007aff',
-   34. display: true
-   35. },
-   36. loop: {
-   37. margin: 2,
-   38. gradient: true
-   39. }
-   40. }
-   41. }
-   42. },
-   43. addData() {
-   44. this.$refs.linechart.append({
-   45. serial: 0,
-   46. data: [Math.floor(Math.random() * 400) + 400]
-   47. })
-   48. }
-   49. }
+   ```css
+   /* xxx.css */
+   .container {
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+   }
+   .chart-region {
+     height: 400px;
+     width: 700px;
+   }
+   .chart-background {
+     object-fit: fill;
+   }
+   .chart-data {
+     width: 700px;
+     height: 600px;
+   }
+   button {
+     width: 100%;
+     height: 50px;
+     background-color: #F4F2F1;
+     text-color: #0C81F3;
+   }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/jfIqNL5QT5qdtvzhWDaNqg/zh-cn_image_0000002589246521.png)
+   ```js
+   // xxx.js
+   export default {
+     data: {
+       lineData: [
+         {
+           strokeColor: '#0081ff',
+           fillColor: '#cce5ff',
+           data: [763, 550, 551, 554, 731, 654, 525, 696, 595, 628, 791, 505, 613, 575, 475, 553, 491, 680, 657, 716],
+           gradient: true
+         }
+       ],
+       lineOps: {
+         xAxis: {
+           min: 0,
+           max: 20,
+           display: false
+         },
+         yAxis: {
+           min: 0,
+           max: 1000,
+           display: false
+         },
+         series: {
+           lineStyle: {
+             width: "5px",
+             smooth: true
+           },
+           headPoint: {
+             shape: "circle",
+             size: 20,
+             strokeWidth: 5,
+             fillColor: '#ffffff',
+             strokeColor: '#007aff',
+             display: true
+           },
+           loop: {
+             margin: 2,
+             gradient: true
+           }
+         }
+       }
+     },
+     addData() {
+       this.$refs.linechart.append({
+         serial: 0,
+         data: [Math.floor(Math.random() * 400) + 400]
+       })
+     }
+   }
+   ```
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/5G5yFp5jR4axwGhweoH_uw/zh-cn_image_0000002706836378.png)
 2. 柱状图
 
-   ```
-   1. <!-- xxx.hml -->
-   2. <div class="container">
-   3. <stack class="data-region">
-   4. <image class="data-background" src="common/background.png"></image>
-   5. <chart class="data-bar" type="bar" id="bar-chart" options="{{barOps}}" datasets="{{barData}}"></chart>
-   6. </stack>
-   7. </div>
-   ```
-
-   ```
-   1. /* xxx.css */
-   2. .container {
-   3. flex-direction: column;
-   4. justify-content: center;
-   5. align-items: center;
-   6. }
-   7. .data-region {
-   8. height: 400px;
-   9. width: 700px;
-   10. }
-   11. .data-background {
-   12. object-fit: fill;
-   13. }
-   14. .data-bar {
-   15. width: 700px;
-   16. height: 400px;
-   17. }
+   ```html
+   <!-- xxx.hml -->
+   <div class="container">
+     <stack class="data-region">
+       <image class="data-background" src="common/background.png"></image>
+       <chart class="data-bar" type="bar" id="bar-chart" options="{{barOps}}" datasets="{{barData}}"></chart>
+     </stack>
+   </div>
    ```
 
-   ```
-   1. // xxx.js
-   2. export default {
-   3. data: {
-   4. barData: [
-   5. {
-   6. fillColor: '#f07826',
-   7. data: [763, 550, 551, 554, 731, 654, 525, 696, 595, 628]
-   8. },
-   9. {
-   10. fillColor: '#cce5ff',
-   11. data: [535, 776, 615, 444, 694, 785, 677, 609, 562, 410]
-   12. },
-   13. {
-   14. fillColor: '#ff88bb',
-   15. data: [673, 500, 574, 483, 702, 583, 437, 506, 693, 657]
-   16. },
-   17. ],
-   18. barOps: {
-   19. xAxis: {
-   20. min: 0,
-   21. max: 20,
-   22. display: false,
-   23. axisTick: 10
-   24. },
-   25. yAxis: {
-   26. min: 0,
-   27. max: 1000,
-   28. display: false
-   29. }
-   30. }
-   31. }
-   32. }
+   ```css
+   /* xxx.css */
+   .container {
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+   }
+   .data-region {
+     height: 400px;
+     width: 700px;
+   }
+   .data-background {
+     object-fit: fill;
+   }
+   .data-bar {
+     width: 700px;
+     height: 400px;
+   }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/kW2UzCfXQJ61o3BxbiOmVA/zh-cn_image_0000002558766714.png)
+   ```js
+   // xxx.js
+   export default {
+     data: {
+       barData: [
+         {
+           fillColor: '#f07826',
+           data: [763, 550, 551, 554, 731, 654, 525, 696, 595, 628]
+         },
+         {
+           fillColor: '#cce5ff',
+           data: [535, 776, 615, 444, 694, 785, 677, 609, 562, 410]
+         },
+         {
+           fillColor: '#ff88bb',
+           data: [673, 500, 574, 483, 702, 583, 437, 506, 693, 657]
+         },
+       ],
+       barOps: {
+         xAxis: {
+           min: 0,
+           max: 20,
+           display: false,
+           axisTick: 10
+         },
+         yAxis: {
+           min: 0,
+           max: 1000,
+           display: false
+         }
+       }
+     }
+   }
+   ```
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/6519tEvsTtigEWkU3qkF0A/zh-cn_image_0000002736315483.png)
 3. 量规图
 
-   ```
-   1. <!-- xxx.hml -->
-   2. <div class="container">
-   3. <div class="gauge-region">
-   4. <chart class="data-gauge" type="gauge" percent = "50"></chart>
-   5. </div>
-   6. </div>
-   ```
-
-   ```
-   1. /* xxx.css */
-   2. .container {
-   3. flex-direction: column;
-   4. justify-content: center;
-   5. align-items: center;
-   6. }
-   7. .gauge-region {
-   8. height: 400px;
-   9. width: 400px;
-   10. }
-   11. .data-gauge {
-   12. colors: #83f115, #fd3636, #3bf8ff;
-   13. weights: 4, 2, 1;
-   14. }
+   ```html
+   <!-- xxx.hml -->
+   <div class="container">
+     <div class="gauge-region">
+       <chart class="data-gauge" type="gauge" percent = "50"></chart>
+     </div>
+   </div>
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/WgSrQDyHQDywo2vGKtuQog/zh-cn_image_0000002558607054.png)
+   ```css
+   /* xxx.css */
+   .container {
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+   }
+   .gauge-region {
+     height: 400px;
+     width: 400px;
+   }
+   .data-gauge {
+     colors: #83f115, #fd3636, #3bf8ff;
+     weights: 4, 2, 1;
+   }
+   ```
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/c1n4ni19SO-2DtfPBDeErA/zh-cn_image_0000002706676444.png)
 4. 进度类、加载类、占比类圆形图表
 
-   ```
-   1. <!-- xxx.hml -->
-   2. <div class="container">
-   3. <text class="text">progress Example</text>
-   4. <stack class="chart-region">
-   5. <chart class="" type="progress" segments="{{ progressdata }}"></chart>
-   6. </stack>
-   7. <text class="text">loading Example</text>
-   8. <stack class="chart-region">
-   9. <chart class="" type="loading" segments="{{ loadingdata }}"></chart>
-   10. </stack>
-   11. <text class="text">rainbow Example</text>
-   12. <stack class="chart-region">
-   13. <chart class="" type="rainbow" segments="{{ rainbowdata }}" effects="true" animationduration="5000"></chart>
-   14. </stack>
-   15. </div>
-   ```
-
-   ```
-   1. /* xxx.css */
-   2. .container {
-   3. flex-direction: column;
-   4. justify-content: center;
-   5. align-items: center;
-   6. }
-   7. .chart-region {
-   8. height: 400px;
-   9. width: 700px;
-   10. margin-top: 10px;
-   11. }
-   12. .text {
-   13. margin-top: 30px;
-   14. }
+   ```html
+   <!-- xxx.hml -->
+   <div class="container">
+       <text class="text">progress Example</text>
+       <stack class="chart-region">
+           <chart class="" type="progress" segments="{{ progressdata }}"></chart>
+       </stack>
+       <text class="text">loading Example</text>
+       <stack class="chart-region">
+           <chart class="" type="loading" segments="{{ loadingdata }}"></chart>
+       </stack>
+       <text class="text">rainbow Example</text>
+       <stack class="chart-region">
+           <chart class="" type="rainbow" segments="{{ rainbowdata }}" effects="true" animationduration="5000"></chart>
+       </stack>
+   </div>
    ```
 
-   ```
-   1. // xxx.js
-   2. export default {
-   3. data: {
-   4. progressdata: {
-   5. value: 50,
-   6. name: 'progress'
-   7. },
-   8. loadingdata: {
-   9. startColor: "#ffc0cb",
-   10. endColor: "#00bfff",
-   11. },
-   12. rainbowdata: [
-   13. {
-   14. value: 50,
-   15. name: 'item1'
-   16. },
-   17. {
-   18. value: 10,
-   19. name: 'item2'
-   20. },
-   21. {
-   22. value: 20,
-   23. name: 'item3'
-   24. },
-   25. {
-   26. value: 10,
-   27. name: 'item4'
-   28. },
-   29. {
-   30. value: 10,
-   31. name: 'item5'
-   32. }
-   33. ]
-   34. }
-   35. }
+   ```css
+   /* xxx.css */
+   .container {
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+   }
+   .chart-region {
+       height: 400px;
+       width: 700px;
+       margin-top: 10px;
+   }
+   .text {
+       margin-top: 30px;
+   }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/jzFiH97OSTe9tEY3c2Imcw/zh-cn_image_0000002589326581.gif)
+   ```js
+   // xxx.js
+   export default {
+      data: {
+         progressdata: {
+            value: 50,
+            name: 'progress'
+         },
+         loadingdata: {
+            startColor: "#ffc0cb",
+            endColor: "#00bfff",
+         },
+         rainbowdata: [
+            {
+               value: 50,
+               name: 'item1'
+            },
+            {
+               value: 10,
+               name: 'item2'
+            },
+            {
+               value: 20,
+               name: 'item3'
+            },
+            {
+               value: 10,
+               name: 'item4'
+            },
+            {
+               value: 10,
+               name: 'item5'
+            }
+         ]
+      }
+   }
+   ```
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/65tZB_CSSMq-WPma1Djz-A/zh-cn_image_0000002736435531.gif)

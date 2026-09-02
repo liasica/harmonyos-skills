@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: HSP包编译之后的.har文件的作用是什么
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > HSP包编译之后的.har文件的作用是什么
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:31+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:13+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:fe58d7f294b9f11d6a669c7f46d1d6278cca8b54d20e136953435b81329047ed
 ---
 

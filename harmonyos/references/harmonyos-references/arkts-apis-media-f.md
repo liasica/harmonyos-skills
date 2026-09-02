@@ -3,32 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Functions
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Functions
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:41+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:9839ab9c4a91b0983299000120df80aab22041bf586220684e44bba87b0cbd7a
+scraped_at: 2026-09-02T15:02:34+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:c8b8827ec77a4b2d04ddee133883d40288547a0c28bcd39f7c846acca2989fd8
 ---
 
-说明
+**说明** 
 
 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { media } from '@kit.MediaKit';
+```ts
+import { media } from '@kit.MediaKit';
 ```
 
 ## media.createAVPlayer9+
-
-PhonePC/2in1TabletTVWearable
 
 createAVPlayer(callback: AsyncCallback<AVPlayer>): void
 
 创建音视频播放实例。使用callback异步回调。
 
-说明
+**说明** 
 
 * 推荐单个应用创建的音视频播放实例（即音频、视频、音视频三类相加）不超过16个。
 * 应用需要按照实际业务需求合理使用AVPlayer对象，按需创建并及时释放，避免持有过多AVPlayer实例导致内存消耗过大，否则在一定情况下可能导致系统终止应用。
@@ -53,29 +49,27 @@ createAVPlayer(callback: AsyncCallback<AVPlayer>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let avPlayer: media.AVPlayer;
-4. media.createAVPlayer((error: BusinessError, video: media.AVPlayer) => {
-5. if (video) {
-6. avPlayer = video;
-7. console.info('Succeeded in creating AVPlayer');
-8. } else {
-9. console.error(`Failed to create AVPlayer, error message:${error.message}`);
-10. }
-11. });
+let avPlayer: media.AVPlayer;
+media.createAVPlayer((error: BusinessError, video: media.AVPlayer) => {
+  if (video) {
+    avPlayer = video;
+    console.info('Succeeded in creating AVPlayer');
+  } else {
+    console.error(`Failed to create AVPlayer, error message:${error.message}`);
+  }
+});
 ```
 
 ## media.createAVPlayer9+
-
-PhonePC/2in1TabletTVWearable
 
 createAVPlayer(): Promise<AVPlayer>
 
 异步方式创建音视频播放实例。使用Promise异步回调。
 
-说明
+**说明** 
 
 * 推荐单个应用创建的音视频播放实例（即音频、视频、音视频三类相加）不超过16个。
 * 应用需要按照实际业务需求合理使用AVPlayer对象，按需创建并及时释放，避免持有过多AVPlayer实例导致内存消耗过大，导致系统终止应用。
@@ -100,31 +94,29 @@ createAVPlayer(): Promise<AVPlayer>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let avPlayer: media.AVPlayer;
-4. media.createAVPlayer().then((video: media.AVPlayer) => {
-5. if (video) {
-6. avPlayer = video;
-7. console.info('Succeeded in creating AVPlayer');
-8. } else {
-9. console.error('Failed to create AVPlayer');
-10. }
-11. }).catch((error: BusinessError) => {
-12. console.error(`Failed to create AVPlayer, error message:${error.message}`);
-13. });
+let avPlayer: media.AVPlayer;
+media.createAVPlayer().then((video: media.AVPlayer) => {
+  if (video) {
+    avPlayer = video;
+    console.info('Succeeded in creating AVPlayer');
+  } else {
+    console.error('Failed to create AVPlayer');
+  }
+}).catch((error: BusinessError) => {
+  console.error(`Failed to create AVPlayer, error message:${error.message}`);
+});
 ```
 
 ## media.createAVRecorder9+
-
-PhonePC/2in1TabletTVWearable
 
 createAVRecorder(callback: AsyncCallback<AVRecorder>): void
 
 创建音视频录制实例。使用callback异步回调。
 
-说明
+**说明** 
 
 应用可创建多个音视频录制实例，但由于设备共用音频通路，一个设备仅能有一个实例进行音频录制。创建第二个实例录制音频时，将会因为音频通路冲突导致创建失败。
 
@@ -146,29 +138,27 @@ createAVRecorder(callback: AsyncCallback<AVRecorder>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. let avRecorder: media.AVRecorder;
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+let avRecorder: media.AVRecorder;
 
-4. media.createAVRecorder((error: BusinessError, recorder: media.AVRecorder) => {
-5. if (recorder) {
-6. avRecorder = recorder;
-7. console.info('Succeeded in creating AVRecorder');
-8. } else {
-9. console.error(`Failed to create AVRecorder, error message:${error.message}`);
-10. }
-11. });
+media.createAVRecorder((error: BusinessError, recorder: media.AVRecorder) => {
+  if (recorder) {
+    avRecorder = recorder;
+    console.info('Succeeded in creating AVRecorder');
+  } else {
+    console.error(`Failed to create AVRecorder, error message:${error.message}`);
+  }
+});
 ```
 
 ## media.createAVRecorder9+
-
-PhonePC/2in1TabletTVWearable
 
 createAVRecorder(): Promise<AVRecorder>
 
 创建音视频录制实例。使用Promise异步回调。
 
-说明
+**说明** 
 
 应用可创建多个音视频录制实例，但由于设备共用音频通路，一个设备仅能有一个实例进行音频录制。创建第二个实例录制音频时，将会因为音频通路冲突导致创建失败。
 
@@ -192,30 +182,28 @@ createAVRecorder(): Promise<AVRecorder>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. let avRecorder: media.AVRecorder;
-3. media.createAVRecorder().then((recorder: media.AVRecorder) => {
-4. if (recorder) {
-5. avRecorder = recorder;
-6. console.info('Succeeded in creating AVRecorder');
-7. } else {
-8. console.error('Failed to create AVRecorder');
-9. }
-10. }).catch((error: BusinessError) => {
-11. console.error(`Failed to create AVRecorder, error message:${error.message}`);
-12. });
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+let avRecorder: media.AVRecorder;
+media.createAVRecorder().then((recorder: media.AVRecorder) => {
+  if (recorder) {
+    avRecorder = recorder;
+    console.info('Succeeded in creating AVRecorder');
+  } else {
+    console.error('Failed to create AVRecorder');
+  }
+}).catch((error: BusinessError) => {
+  console.error(`Failed to create AVRecorder, error message:${error.message}`);
+});
 ```
 
 ## media.createAVTranscoder12+
-
-PhonePC/2in1TabletTV
 
 createAVTranscoder(): Promise<AVTranscoder>
 
 创建视频转码实例。使用Promise异步回调。
 
-说明
+**说明** 
 
 可创建的视频转码实例不能超过2个。
 
@@ -239,25 +227,23 @@ createAVTranscoder(): Promise<AVTranscoder>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let avTranscoder: media.AVTranscoder | undefined = undefined;
-4. media.createAVTranscoder().then((transcoder: media.AVTranscoder) => {
-5. if (transcoder) {
-6. avTranscoder = transcoder;
-7. console.info('Succeeded in creating AVTranscoder');
-8. } else {
-9. console.error('Failed to create AVTranscoder');
-10. }
-11. }).catch((error: BusinessError) => {
-12. console.error(`Failed to create AVTranscoder, error message:${error.message}`);
-13. });
+let avTranscoder: media.AVTranscoder | undefined = undefined;
+media.createAVTranscoder().then((transcoder: media.AVTranscoder) => {
+  if (transcoder) {
+    avTranscoder = transcoder;
+    console.info('Succeeded in creating AVTranscoder');
+  } else {
+    console.error('Failed to create AVTranscoder');
+  }
+}).catch((error: BusinessError) => {
+  console.error(`Failed to create AVTranscoder, error message:${error.message}`);
+});
 ```
 
 ## media.createAVMetadataExtractor11+
-
-PhonePC/2in1TabletTVWearable
 
 createAVMetadataExtractor(callback: AsyncCallback<AVMetadataExtractor>): void
 
@@ -281,23 +267,21 @@ createAVMetadataExtractor(callback: AsyncCallback<AVMetadataExtractor>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let avMetadataExtractor: media.AVMetadataExtractor;
-4. media.createAVMetadataExtractor((error: BusinessError, extractor: media.AVMetadataExtractor) => {
-5. if (extractor) {
-6. avMetadataExtractor = extractor;
-7. console.info('Succeeded in creating AVMetadataExtractor');
-8. } else {
-9. console.error(`Failed to create AVMetadataExtractor, error message:${error.message}`);
-10. }
-11. });
+let avMetadataExtractor: media.AVMetadataExtractor;
+media.createAVMetadataExtractor((error: BusinessError, extractor: media.AVMetadataExtractor) => {
+  if (extractor) {
+    avMetadataExtractor = extractor;
+    console.info('Succeeded in creating AVMetadataExtractor');
+  } else {
+    console.error(`Failed to create AVMetadataExtractor, error message:${error.message}`);
+  }
+});
 ```
 
 ## media.createAVMetadataExtractor11+
-
-PhonePC/2in1TabletTVWearable
 
 createAVMetadataExtractor(): Promise<AVMetadataExtractor>
 
@@ -321,31 +305,29 @@ createAVMetadataExtractor(): Promise<AVMetadataExtractor>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let avMetadataExtractor: media.AVMetadataExtractor;
-4. media.createAVMetadataExtractor().then((extractor: media.AVMetadataExtractor) => {
-5. if (extractor) {
-6. avMetadataExtractor = extractor;
-7. console.info('Succeeded in creating AVMetadataExtractor');
-8. } else {
-9. console.error(`Failed to create AVMetadataExtractor`);
-10. }
-11. }).catch((error: BusinessError) => {
-12. console.error(`Failed to create AVMetadataExtractor, error message:${error.message}`);
-13. });
+let avMetadataExtractor: media.AVMetadataExtractor;
+media.createAVMetadataExtractor().then((extractor: media.AVMetadataExtractor) => {
+  if (extractor) {
+    avMetadataExtractor = extractor;
+    console.info('Succeeded in creating AVMetadataExtractor');
+  } else {
+    console.error(`Failed to create AVMetadataExtractor`);
+  }
+}).catch((error: BusinessError) => {
+  console.error(`Failed to create AVMetadataExtractor, error message:${error.message}`);
+});
 ```
 
 ## media.createSoundPool10+
-
-PhonePC/2in1TabletTVWearable
 
 createSoundPool(maxStreams: number, audioRenderInfo: audio.AudioRendererInfo, callback: AsyncCallback<SoundPool>): void
 
 创建音频池实例。使用callback异步回调。
 
-说明
+**说明** 
 
 * API version 18以下版本，创建的SoundPool对象底层为单实例模式，一个应用进程只能够创建1个SoundPool实例。
 * API version 18及API version 18以上版本，创建的SoundPool对象底层为多实例模式，一个应用进程最多能够创建128个SoundPool实例。
@@ -370,35 +352,33 @@ createSoundPool(maxStreams: number, audioRenderInfo: audio.AudioRendererInfo, ca
 
 **示例：**
 
-```
-1. import { audio } from '@kit.AudioKit';
+```js
+import { audio } from '@kit.AudioKit';
 
-3. let soundPool: media.SoundPool;
-4. let audioRendererInfo: audio.AudioRendererInfo = {
-5. usage : audio.StreamUsage.STREAM_USAGE_MUSIC,
-6. rendererFlags : 0
-7. };
+let soundPool: media.SoundPool;
+let audioRendererInfo: audio.AudioRendererInfo = {
+  usage : audio.StreamUsage.STREAM_USAGE_MUSIC,
+  rendererFlags : 0
+};
 
-9. media.createSoundPool(5, audioRendererInfo, (error, soundPool_: media.SoundPool) => {
-10. if (error) {
-11. console.error(`Failed to createSoundPool`);
-12. return;
-13. } else {
-14. soundPool = soundPool_;
-15. console.info(`Succeeded in createSoundPool`);
-16. }
-17. });
+media.createSoundPool(5, audioRendererInfo, (error, soundPool_: media.SoundPool) => {
+  if (error) {
+    console.error(`Failed to createSoundPool`);
+    return;
+  } else {
+    soundPool = soundPool_;
+    console.info(`Succeeded in createSoundPool`);
+  }
+});
 ```
 
 ## media.createSoundPool10+
-
-PhonePC/2in1TabletTVWearable
 
 createSoundPool(maxStreams: number, audioRenderInfo: audio.AudioRendererInfo): Promise<SoundPool>
 
 创建音频池实例。使用Promise异步回调。
 
-说明
+**说明** 
 
 * API version 18以下版本，创建的SoundPool对象底层为单实例模式，一个应用进程只能够创建1个SoundPool实例。
 * API version 18及API version 18以上版本，创建的SoundPool对象底层为多实例模式，一个应用进程最多能够创建128个SoundPool实例。
@@ -428,31 +408,29 @@ createSoundPool(maxStreams: number, audioRenderInfo: audio.AudioRendererInfo): P
 
 **示例：**
 
-```
-1. import { audio } from '@kit.AudioKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { audio } from '@kit.AudioKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let soundPool: media.SoundPool;
-5. let audioRendererInfo: audio.AudioRendererInfo = {
-6. usage : audio.StreamUsage.STREAM_USAGE_MUSIC,
-7. rendererFlags : 0
-8. };
+let soundPool: media.SoundPool;
+let audioRendererInfo: audio.AudioRendererInfo = {
+  usage : audio.StreamUsage.STREAM_USAGE_MUSIC,
+  rendererFlags : 0
+};
 
-10. media.createSoundPool(5, audioRendererInfo).then((soundpool_: media.SoundPool) => {
-11. if (soundpool_) {
-12. soundPool = soundpool_;
-13. console.info('Succeeded in creating SoundPool');
-14. } else {
-15. console.error('Failed to create SoundPool');
-16. }
-17. }, (error: BusinessError) => {
-18. console.error(`soundpool catchCallback, error message:${error.message}`);
-19. });
+media.createSoundPool(5, audioRendererInfo).then((soundpool_: media.SoundPool) => {
+  if (soundpool_) {
+    soundPool = soundpool_;
+    console.info('Succeeded in creating SoundPool');
+  } else {
+    console.error('Failed to create SoundPool');
+  }
+}, (error: BusinessError) => {
+  console.error(`soundpool catchCallback, error message:${error.message}`);
+});
 ```
 
 ## media.createAVScreenCaptureRecorder12+
-
-PhonePC/2in1TabletTV
 
 createAVScreenCaptureRecorder(): Promise<AVScreenCaptureRecorder>
 
@@ -476,25 +454,23 @@ createAVScreenCaptureRecorder(): Promise<AVScreenCaptureRecorder>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let avScreenCaptureRecorder: media.AVScreenCaptureRecorder;
-4. media.createAVScreenCaptureRecorder().then((captureRecorder: media.AVScreenCaptureRecorder) => {
-5. if (captureRecorder) {
-6. avScreenCaptureRecorder = captureRecorder;
-7. console.info('Succeeded in createAVScreenCaptureRecorder');
-8. } else {
-9. console.error('Failed to createAVScreenCaptureRecorder');
-10. }
-11. }).catch((error: BusinessError) => {
-12. console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
-13. });
+let avScreenCaptureRecorder: media.AVScreenCaptureRecorder;
+media.createAVScreenCaptureRecorder().then((captureRecorder: media.AVScreenCaptureRecorder) => {
+  if (captureRecorder) {
+    avScreenCaptureRecorder = captureRecorder;
+    console.info('Succeeded in createAVScreenCaptureRecorder');
+  } else {
+    console.error('Failed to createAVScreenCaptureRecorder');
+  }
+}).catch((error: BusinessError) => {
+  console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
+});
 ```
 
 ## media.createAVImageGenerator12+
-
-PhonePC/2in1TabletTVWearable
 
 createAVImageGenerator(callback: AsyncCallback<AVImageGenerator>): void
 
@@ -518,23 +494,21 @@ createAVImageGenerator(callback: AsyncCallback<AVImageGenerator>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let avImageGenerator: media.AVImageGenerator;
-4. media.createAVImageGenerator((error: BusinessError, generator: media.AVImageGenerator) => {
-5. if (generator) {
-6. avImageGenerator = generator;
-7. console.info('Succeeded in creating AVImageGenerator');
-8. } else {
-9. console.error(`Failed to create AVImageGenerator, error message:${error.message}`);
-10. }
-11. });
+let avImageGenerator: media.AVImageGenerator;
+media.createAVImageGenerator((error: BusinessError, generator: media.AVImageGenerator) => {
+  if (generator) {
+    avImageGenerator = generator;
+    console.info('Succeeded in creating AVImageGenerator');
+  } else {
+    console.error(`Failed to create AVImageGenerator, error message:${error.message}`);
+  }
+});
 ```
 
 ## media.createAVImageGenerator12+
-
-PhonePC/2in1TabletTVWearable
 
 createAVImageGenerator(): Promise<AVImageGenerator>
 
@@ -558,25 +532,23 @@ createAVImageGenerator(): Promise<AVImageGenerator>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let avImageGenerator: media.AVImageGenerator;
-4. media.createAVImageGenerator().then((generator: media.AVImageGenerator) => {
-5. if (generator) {
-6. avImageGenerator = generator;
-7. console.info('Succeeded in creating AVImageGenerator');
-8. } else {
-9. console.error('Failed to create AVImageGenerator');
-10. }
-11. }).catch((error: BusinessError) => {
-12. console.error(`Failed to create AVImageGenerator, error message:${error.message}`);
-13. });
+let avImageGenerator: media.AVImageGenerator;
+media.createAVImageGenerator().then((generator: media.AVImageGenerator) => {
+  if (generator) {
+    avImageGenerator = generator;
+    console.info('Succeeded in creating AVImageGenerator');
+  } else {
+    console.error('Failed to create AVImageGenerator');
+  }
+}).catch((error: BusinessError) => {
+  console.error(`Failed to create AVImageGenerator, error message:${error.message}`);
+});
 ```
 
 ## media.createMediaSourceWithUrl12+
-
-PhonePC/2in1TabletTVWearable
 
 createMediaSourceWithUrl(url: string, headers?: Record<string, string>): MediaSource
 
@@ -590,7 +562,7 @@ createMediaSourceWithUrl(url: string, headers?: Record<string, string>): MediaSo
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| url | string | 是 | - 流媒体预下载媒体来源url，支持的流媒体格式：HLS、HTTP-FLV、Dash、Https。  - 本地m3u8的fd路径。 |
+| url | string | 是 | - 流媒体预下载媒体来源url，支持的流媒体格式：HLS、HTTP-FLV、Dash、HTTPS。  - 本地m3u8的fd路径。 |
 | headers | Record<string, string> | 否 | 支持流媒体预下载HttpHeader自定义。不传时为网络请求默认的HttpHeader。 |
 
 **返回值：**
@@ -610,36 +582,33 @@ createMediaSourceWithUrl(url: string, headers?: Record<string, string>): MediaSo
 
 **示例1：**
 
-```
-1. let headers: Record<string, string> = {"User-Agent" : "User-Agent-Value"};
-2. let mediaSource : media.MediaSource = media.createMediaSourceWithUrl("http://xxx",  headers);
+```ts
+let headers: Record<string, string> = {"User-Agent" : "User-Agent-Value"};
+let mediaSource : media.MediaSource = media.createMediaSourceWithUrl("http://xxx", headers);
 ```
 
 **示例2：**
 
-```
-1. import { media } from "@kit.MediaKit";
+```ts
+import { media } from "@kit.MediaKit";
 
-3. async function test(context: Context){
-4. // this.getUIContext().getHostContext();
-5. let mgr = context?.resourceManager;
-6. if (!mgr) {
-7. return;
-8. }
-9. let fileDescriptor = await mgr.getRawFd("xxx.m3u8");
+async function test(context: Context){
+    let mgr = context?.resourceManager;
+    if (!mgr) {
+        return;
+    }
+    let fileDescriptor = await mgr.getRawFd("xxx.m3u8");
 
-11. let fd: string = fileDescriptor.fd.toString();
-12. let offset: string = fileDescriptor.offset.toString();
-13. let length: string = fileDescriptor.length.toString();
-14. let fdUrl: string = "fd://" + fd + "?offset=" + offset + "&size=" + length;
+    let fd: string = fileDescriptor.fd.toString();
+    let offset: string = fileDescriptor.offset.toString();
+    let length: string = fileDescriptor.length.toString();
+    let fdUrl: string = "fd://" + fd + "?offset=" + offset + "&size=" + length;
 
-16. let mediaSource: media.MediaSource = media.createMediaSourceWithUrl(fdUrl);
-17. }
+    let mediaSource: media.MediaSource = media.createMediaSourceWithUrl(fdUrl);
+}
 ```
 
 ## media.createMediaSourceWithStreamData19+
-
-PhonePC/2in1TabletTVWearable
 
 createMediaSourceWithStreamData(streams: Array<MediaStream>): MediaSource
 
@@ -663,23 +632,109 @@ createMediaSourceWithStreamData(streams: Array<MediaStream>): MediaSource
 
 **示例：**
 
+```ts
+let streams : Array<media.MediaStream> = [];
+streams.push({url: "http://xxx/480p.flv", width: 854, height: 480, bitrate: 800000});
+streams.push({url: "http://xxx/720p.flv", width: 1280, height: 720, bitrate: 2000000});
+streams.push({url: "http://xxx/1080p.flv", width: 1920, height: 1080, bitrate: 2000000});
+let mediaSource : media.MediaSource = media.createMediaSourceWithStreamData(streams);
 ```
-1. let streams : Array<media.MediaStream> = [];
-2. streams.push({url: "http://xxx/480p.flv", width: 854, height: 480, bitrate: 800000});
-3. streams.push({url: "http://xxx/720p.flv", width: 1280, height: 720, bitrate: 2000000});
-4. streams.push({url: "http://xxx/1080p.flv", width: 1920, height: 1080, bitrate: 2000000});
-5. let mediaSource : media.MediaSource = media.createMediaSourceWithStreamData(streams);
+
+## media.createMediaSourceWithFd
+
+createMediaSourceWithFd(fdSrc: AVFileDescriptor): MediaSource | undefined
+
+通过文件描述符创建媒体源。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| fdSrc | [AVFileDescriptor](arkts-apis-media-i.md#avfiledescriptor9) | 是 | 媒体文件描述符。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [MediaSource](arkts-apis-media-mediasource.md) | undefined | 返回MediaSource，用于媒体资源设置。 |
+
+**示例：**
+
+```ts
+import { common } from '@kit.AbilityKit';
+
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let fdSrc = await context.resourceManager.getRawFd('xxx.mp4');
+let mediaSource : media.MediaSource | undefined = media.createMediaSourceWithFd(fdSrc);
+```
+
+## media.createMediaSourceWithDataSource
+
+createMediaSourceWithDataSource(dataSrc: AVDataSrcDescriptor): MediaSource | undefined
+
+通过自定义数据源创建媒体源。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dataSrc | [AVDataSrcDescriptor](arkts-apis-media-i.md#avdatasrcdescriptor10) | 是 | 流式媒体资源描述符。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [MediaSource](arkts-apis-media-mediasource.md) | undefined | 返回MediaSource，用于媒体资源设置。 |
+
+**示例：**
+
+```ts
+import { common } from '@kit.AbilityKit';
+import { fileIo as fs, ReadOptions } from '@kit.CoreFileKit';
+
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let fileDescriptor = await context.resourceManager.getRawFd('xxx.mp4');
+let file = fs.openSync("xxx.mp4");
+let dataSrc: media.AVDataSrcDescriptor = {
+  fileSize: fileDescriptor.length,
+  callback: (buf: ArrayBuffer, length: number, pos?: number) => {
+    let readLen = 0;
+    if (pos) {
+      let option: ReadOptions = {
+        offset: pos,
+        length: length,
+      };
+      readLen = fs.readSync(file.fd, buf, option);
+    }
+    return readLen > 0 ? readLen : -1;
+  }
+}
+let mediaSource : media.MediaSource | undefined =  media.createMediaSourceWithDataSource(dataSrc);
 ```
 
 ## media.createAudioPlayer(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 createAudioPlayer(): AudioPlayer
 
 同步方式创建音频播放实例。
 
-说明
+**说明** 
 
 从API version 6开始支持，从API version 9开始废弃，建议使用[createAVPlayer](arkts-apis-media-f.md#mediacreateavplayer9)替代。
 
@@ -693,19 +748,17 @@ createAudioPlayer(): AudioPlayer
 
 **示例：**
 
-```
-1. let audioPlayer: media.AudioPlayer = media.createAudioPlayer();
+```ts
+let audioPlayer: media.AudioPlayer = media.createAudioPlayer();
 ```
 
 ## media.createVideoPlayer(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 createVideoPlayer(callback: AsyncCallback<VideoPlayer>): void
 
 异步方式创建视频播放实例，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[createAVPlayer](arkts-apis-media-f.md#mediacreateavplayer9)替代。
 
@@ -719,29 +772,27 @@ createVideoPlayer(callback: AsyncCallback<VideoPlayer>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let videoPlayer: media.VideoPlayer;
-4. media.createVideoPlayer((error: BusinessError, video: media.VideoPlayer) => {
-5. if (video) {
-6. videoPlayer = video;
-7. console.info('Succeeded in creating VideoPlayer');
-8. } else {
-9. console.error(`Failed to create VideoPlayer, error:${error}`);
-10. }
-11. });
+let videoPlayer: media.VideoPlayer;
+media.createVideoPlayer((error: BusinessError, video: media.VideoPlayer) => {
+  if (video) {
+    videoPlayer = video;
+    console.info('Succeeded in creating VideoPlayer');
+  } else {
+    console.error(`Failed to create VideoPlayer, error:${error}`);
+  }
+});
 ```
 
 ## media.createVideoPlayer(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 createVideoPlayer(): Promise<VideoPlayer>
 
 异步方式创建视频播放实例，通过Promise获取返回值。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[createAVPlayer](arkts-apis-media-f.md#mediacreateavplayer9-1)替代。
 
@@ -755,31 +806,29 @@ createVideoPlayer(): Promise<VideoPlayer>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let videoPlayer: media.VideoPlayer;
-4. media.createVideoPlayer().then((video: media.VideoPlayer) => {
-5. if (video) {
-6. videoPlayer = video;
-7. console.info('Succeeded in creating VideoPlayer');
-8. } else {
-9. console.error('Failed to create VideoPlayer');
-10. }
-11. }).catch((error: BusinessError) => {
-12. console.error(`Failed to create VideoPlayer, error:${error}`);
-13. });
+let videoPlayer: media.VideoPlayer;
+media.createVideoPlayer().then((video: media.VideoPlayer) => {
+  if (video) {
+    videoPlayer = video;
+    console.info('Succeeded in creating VideoPlayer');
+  } else {
+    console.error('Failed to create VideoPlayer');
+  }
+}).catch((error: BusinessError) => {
+  console.error(`Failed to create VideoPlayer, error:${error}`);
+});
 ```
 
 ## media.createAudioRecorder(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 createAudioRecorder(): AudioRecorder
 
 创建音频录制的实例来控制音频的录制。一台设备只允许创建一个录制实例。
 
-说明
+**说明** 
 
 从API version 6开始支持，从API version 9开始废弃，建议使用[createAVRecorder](arkts-apis-media-f.md#mediacreateavrecorder9)替代。
 
@@ -793,6 +842,139 @@ createAudioRecorder(): AudioRecorder
 
 **示例：**
 
+```ts
+let audioRecorder: media.AudioRecorder = media.createAudioRecorder();
 ```
-1. let audioRecorder: media.AudioRecorder = media.createAudioRecorder();
+
+## media.createAVAdsController
+
+createAVAdsController(player: AVPlayer): Promise<AVAdsController | undefined>
+
+创建一个与播放器实例关联的广告播放控制器。使用Promise异步回调。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVPlayer
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| player | [AVPlayer](arkts-apis-media-avplayer.md) | 是 | 已创建的播放器实例。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[AVAdsController](arkts-apis-media-avadscontroller.md) | undefined> | Promise对象。成功时返回广告播放控制器实例，失败时返回undefined。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Media错误码](errorcode-media.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400108 | The player object corresponding to player does not exist or is invalid. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+async function test() {
+  let player: media.AVPlayer = await media.createAVPlayer();
+  media.createAVAdsController(player).then((adsController: media.AVAdsController | undefined) => {
+    if (adsController) {
+      console.info('Succeeded in creating AVAdsController');
+    } else {
+      console.error('Failed to create AVAdsController');
+    }
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to create AVAdsController, error: ${error}`);
+  });
+}
+```
+
+## media.createMediaSourceWithDirectory
+
+createMediaSourceWithDirectory(path: string): Promise<MediaSource | undefined>
+
+根据指定目录路径创建一个媒体源对象。使用Promise异步回调。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 是 | 用于创建媒体源的目录路径信息。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[MediaSource](arkts-apis-media-mediasource.md) | undefined> | Promise对象。成功时返回MediaSource实例，失败时返回undefined。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Media错误码](errorcode-media.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5411007 | The directory specified by the path parameter does not exist or inaccessible. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+async function test() {
+  media.createMediaSourceWithDirectory("/data/storage/el2/base/media/cache/").then((mediaSource: media.MediaSource | undefined) => {
+    if (mediaSource) {
+      console.info('Succeeded in creating MediaSource with directory');
+    } else {
+      console.error('Failed to create MediaSource with directory');
+    }
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to create MediaSource with directory, error: ${error}`);
+  });
+}
+```
+
+## media.createAVDownloaderManager
+
+createAVDownloaderManager(): Promise<AVDownloaderManager>
+
+创建一个离线下载任务管理器实例。使用Promise异步回调。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[AVDownloaderManager](arkts-apis-media-avdownloadermanager.md)> | Promise对象。返回离线下载任务管理器实例。 |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+async function test() {
+  media.createAVDownloaderManager().then((downloaderManager: media.AVDownloaderManager) => {
+    console.info('Succeeded in creating AVDownloaderManager');
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to create AVDownloaderManager, error: ${error}`);
+  });
+}
 ```

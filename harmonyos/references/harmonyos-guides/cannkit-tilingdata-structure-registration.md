@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tilin
 title: TilingData结构注册
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > Host API > Tiling数据结构注册 > TilingData结构注册
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:46+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e50baafca67c1e0b8e0c14253eeb66ddcc7ac77b603f2ec3ddc5e5cddd8589dc
+scraped_at: 2026-09-02T14:50:38+08:00
+doc_updated_at: 2026-05-12
+content_hash: sha256:09c970fda050bafd91324c618c4818a78592b29e82e6160cad8a25b445f5c347
 ---
 
 ## 函数功能
@@ -14,19 +14,19 @@ content_hash: sha256:e50baafca67c1e0b8e0c14253eeb66ddcc7ac77b603f2ec3ddc5e5cddd8
 
 ## 函数原型
 
-```
-1. REGISTER_TILING_DATA_CLASS(op_type, class_name)
-2. #define REGISTER_TILING_DATA_CLASS(op_type, class_name)
-3. class op_type##class_name##Helper {
-4. public:
-5. op_type##class_name##Helper() {
-6. CTilingDataClassFactory::RegisterTilingData(#op_type, op_type##class_name##Helper::CreateTilingDataInstance);
-7. }
-8. static std::shared_ptr<TilingDef> CreateTilingDataInstance() {
-9. return std::make_shared<class_name>();
-10. }
-11. };
-12. op_type##class_name##Helper g_tilingdata_##op_type##class_name##helper;
+```cpp
+REGISTER_TILING_DATA_CLASS(op_type, class_name)
+#define REGISTER_TILING_DATA_CLASS(op_type, class_name)
+  class op_type##class_name##Helper {
+  public:
+    op_type##class_name##Helper() {
+      CTilingDataClassFactory::RegisterTilingData(#op_type, op_type##class_name##Helper::CreateTilingDataInstance);
+    }
+    static std::shared_ptr<TilingDef> CreateTilingDataInstance() {
+      return std::make_shared<class_name>();
+    }
+  };
+  op_type##class_name##Helper g_tilingdata_##op_type##class_name##helper;
 ```
 
 ## 参数说明
@@ -49,46 +49,46 @@ content_hash: sha256:e50baafca67c1e0b8e0c14253eeb66ddcc7ac77b603f2ec3ddc5e5cddd8
 
 * 注册算子Tiling结构体
 
-  ```
-  1. #include "register/tilingdata_base.h"
+  ```cpp
+  #include "register/tilingdata_base.h"
 
-  3. // 定义tilingdata类
-  4. namespace optiling {
-  5. BEGIN_TILING_DATA_DEF(AddCustomTilingData)    // 注册一个tiling的类，以tiling的名字作为入参
-  6. TILING_DATA_FIELD_DEF(uint32_t, blkDim);    // 添加tiling字段，参与计算核数
-  7. TILING_DATA_FIELD_DEF(uint32_t, totalSize); // 添加tiling字段，总计算数据量-输入shape大小
-  8. TILING_DATA_FIELD_DEF(uint32_t, splitTile); // 添加tiling字段，每个core处理的数据分块计算
-  9. END_TILING_DATA_DEF;                          // 定义结束
-  10. // 注册算子tilingdata类到对应的AddCustom算子
-  11. REGISTER_TILING_DATA_CLASS(AddCustom, AddCustomTilingData)
-  12. }
+  // 定义tilingdata类
+  namespace optiling {
+  BEGIN_TILING_DATA_DEF(AddCustomTilingData) // 注册一个tiling的类，以tiling的名字作为入参
+    TILING_DATA_FIELD_DEF(uint32_t, blkDim); // 添加tiling字段，参与计算核数
+    TILING_DATA_FIELD_DEF(uint32_t, totalSize); // 添加tiling字段，总计算数据量-输入shape大小
+    TILING_DATA_FIELD_DEF(uint32_t, splitTile); // 添加tiling字段，每个core处理的数据分块计算
+  END_TILING_DATA_DEF; // 定义结束
+  // 注册算子tilingdata类到对应的AddCustom算子
+  REGISTER_TILING_DATA_CLASS(AddCustom, AddCustomTilingData)
+  }
   ```
 * 注册中间结构体。当开发者有结构体嵌套场景时，嵌套的结构体称为中间结构体。因为一个算子名只能注册一个Tiling结构体，为使得框架能够检测中间结构体信息，需要构造"虚拟算子名"（结构体名+Op）并通过REGISTER\_TILING\_DATA\_CLASS接口注册中间结构体，注册方式如下。
 
-  ```
-  1. BEGIN_TILING_DATA_DEF(Matmul)
-  2. TILING_DATA_FIELD_DEF(uint16_t, mmVar);
-  3. TILING_DATA_FIELD_DEF_ARR(uint16_t, 3, mmArr);
-  4. END_TILING_DATA_DEF;
-  5. // 注册中间结构体，第一个参数固定为struct_name#Op，第二个参数即struct_name, 如struct_name为Matmul，第一参数为MatmulOp，第二个参数为Matmul
-  6. REGISTER_TILING_DATA_CLASS(MatmulOp, Matmul)      // 注册中间结构体
+  ```cpp
+  BEGIN_TILING_DATA_DEF(Matmul)
+    TILING_DATA_FIELD_DEF(uint16_t, mmVar);
+    TILING_DATA_FIELD_DEF_ARR(uint16_t, 3, mmArr);
+  END_TILING_DATA_DEF;
+  // 注册中间结构体，第一个参数固定为struct_name#Op，第二个参数即struct_name, 如struct_name为Matmul，第一参数为MatmulOp，第二个参数为Matmul
+  REGISTER_TILING_DATA_CLASS(MatmulOp, Matmul) // 注册中间结构体
   ```
 * 定制tiling\_key注册不同Tiling结构体
 
-  ```
-  1. // REGISTER_TILING_DATA_CLASS中第一个参数为${op_type} + ‘_’ + tiling_key。若tiling_key未注册匹配的tiling结构体，则会使用默认的结构体。如下面两种方式，tiling_key不指定或者非1情况，tiling结构体为AddStruct；tiling_key等于1的时候，tiling结构体为AddStructSample1
+  ```cpp
+  // REGISTER_TILING_DATA_CLASS中第一个参数为${op_type} + ‘_’ + tiling_key。若tiling_key未注册匹配的tiling结构体，则会使用默认的结构体。如下面两种方式，tiling_key不指定或者非1情况，tiling结构体为AddStruct；tiling_key等于1的时候，tiling结构体为AddStructSample1
 
-  3. // 以op_type为Add为例，默认tiling结构体注册如下
-  4. BEGIN_TILING_DATA_DEF(AddStruct)
-  5. TILING_DATA_FIELD_DEF(uint16_t, mmVar);
-  6. TILING_DATA_FIELD_DEF_ARR(uint16_t, 3, mmArr);
-  7. END_TILING_DATA_DEF;
-  8. REGISTER_TILING_DATA_CLASS(Add, AddStruct)
+  // 以op_type为Add为例，默认tiling结构体注册如下
+  BEGIN_TILING_DATA_DEF(AddStruct)
+    TILING_DATA_FIELD_DEF(uint16_t, mmVar);
+    TILING_DATA_FIELD_DEF_ARR(uint16_t, 3, mmArr);
+  END_TILING_DATA_DEF;
+  REGISTER_TILING_DATA_CLASS(Add, AddStruct)
 
-  10. // TilingKey等于1时注册结构体如下
-  11. BEGIN_TILING_DATA_DEF(AddStructSample1)
-  12. TILING_DATA_FIELD_DEF(uint16_t, mmVar);
-  13. TILING_DATA_FIELD_DEF_ARR(uint16_t, 3, mmArr);
-  14. END_TILING_DATA_DEF;
-  15. REGISTER_TILING_DATA_CLASS(Add_1, AddStructSample1)
+  // TilingKey等于1时注册结构体如下
+  BEGIN_TILING_DATA_DEF(AddStructSample1)
+    TILING_DATA_FIELD_DEF(uint16_t, mmVar);
+    TILING_DATA_FIELD_DEF_ARR(uint16_t, 3, mmArr);
+  END_TILING_DATA_DEF;
+  REGISTER_TILING_DATA_CLASS(Add_1, AddStructSample1)
   ```

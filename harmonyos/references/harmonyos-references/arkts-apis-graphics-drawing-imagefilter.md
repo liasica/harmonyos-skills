@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (ImageFilter)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (ImageFilter)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:39+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:bd055093336d05b95c58fab88c315fac1938d5f6dd5a08eba82a811ef511a497
+scraped_at: 2026-09-02T15:02:41+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e5998f365743351408f0364f8587409a83bc07ffb22e543aa32fc90fa5fab090
 ---
 
 图像滤波器。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Class首批接口从API version 12开始支持。
@@ -19,15 +19,11 @@ content_hash: sha256:bd055093336d05b95c58fab88c315fac1938d5f6dd5a08eba82a811ef51
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 ```
 
 ## createBlurImageFilter12+
-
-PhonePC/2in1TabletTVWearable
 
 static createBlurImageFilter(sigmaX: number, sigmaY: number, tileMode: TileMode, imageFilter?: ImageFilter | null ): ImageFilter
 
@@ -39,8 +35,8 @@ static createBlurImageFilter(sigmaX: number, sigmaY: number, tileMode: TileMode,
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| sigmaX | number | 是 | 表示沿x轴方向上高斯模糊的标准差，必须大于0，该参数为浮点数。 |
-| sigmaY | number | 是 | 表示沿y轴方向上高斯模糊的标准差，必须大于0，该参数为浮点数。 |
+| sigmaX | number | 是 | 表示沿x轴方向上高斯模糊的标准差，必须大于0，该参数为浮点数。单位为物理像素px。 |
+| sigmaY | number | 是 | 表示沿y轴方向上高斯模糊的标准差，必须大于0，该参数为浮点数。单位为物理像素px。 |
 | tileMode | [TileMode](arkts-apis-graphics-drawing-e.md#tilemode12) | 是 | 表示在边缘处应用的平铺模式。 |
 | imageFilter | [ImageFilter](arkts-apis-graphics-drawing-imagefilter.md) | null | 否 | 要与当前图像滤波器叠加的输入滤波器，默认为null，表示直接将当前图像滤波器作用于原始图像。 |
 
@@ -60,15 +56,13 @@ static createBlurImageFilter(sigmaX: number, sigmaY: number, tileMode: TileMode,
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let imgFilter = drawing.ImageFilter.createBlurImageFilter(5, 10, drawing.TileMode.CLAMP);
+let imgFilter = drawing.ImageFilter.createBlurImageFilter(5, 10, drawing.TileMode.CLAMP);
 ```
 
 ## createFromImage20+
-
-PhonePC/2in1TabletTVWearable
 
 static createFromImage(pixelmap: image.PixelMap, srcRect?: common2D.Rect | null, dstRect?: common2D.Rect | null): ImageFilter
 
@@ -92,55 +86,53 @@ static createFromImage(pixelmap: image.PixelMap, srcRect?: common2D.Rect | null,
 
 **示例：**
 
-```
-1. import { RenderNode } from '@kit.ArkUI';
-2. import { image } from '@kit.ImageKit';
-3. import { common2D, drawing } from '@kit.ArkGraphics2D';
+```ts
+import { RenderNode } from '@kit.ArkUI';
+import { image } from '@kit.ImageKit';
+import { common2D, drawing } from '@kit.ArkGraphics2D';
 
-5. class DrawingRenderNode extends RenderNode {
-6. draw(context: DrawContext) {
-7. const width = 1000;
-8. const height = 1000;
-9. const bufferSize = width * height * 4;
-10. const color: ArrayBuffer = new ArrayBuffer(bufferSize);
+class DrawingRenderNode extends RenderNode {
+  draw(context: DrawContext) {
+    const width = 1000;
+    const height = 1000;
+    const bufferSize = width * height * 4;
+    const color: ArrayBuffer = new ArrayBuffer(bufferSize);
 
-12. const colorData = new Uint8Array(color);
-13. for (let i = 0; i < colorData.length; i += 4) {
-14. colorData[i] = 255;
-15. colorData[i+1] = 156;
-16. colorData[i+2] = 0;
-17. colorData[i+3] = 255;
-18. }
+    const colorData = new Uint8Array(color);
+    for (let i = 0; i < colorData.length; i += 4) {
+      colorData[i] = 255;
+      colorData[i+1] = 156;
+      colorData[i+2] = 0;
+      colorData[i+3] = 255;
+    }
 
-20. let opts: image.InitializationOptions = {
-21. editable: true,
-22. pixelFormat: 3,
-23. size: { height, width }
-24. }
+    let opts: image.InitializationOptions = {
+      editable: true,
+      pixelFormat: 3,
+      size: { height, width }
+    }
 
-26. let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
-27. let srcRect: common2D.Rect = {
-28. left: 10,
-29. top: 10,
-30. right: 80,
-31. bottom: 80
-32. };
-33. let dstRect: common2D.Rect = {
-34. left: 200,
-35. top: 200,
-36. right: 400,
-37. bottom: 400
-38. };
-39. if (pixelMap != null) {
-40. let filter = drawing.ImageFilter.createFromImage(pixelMap, srcRect, dstRect);
-41. }
-42. }
-43. }
+    let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
+    let srcRect: common2D.Rect = {
+      left: 10,
+      top: 10,
+      right: 80,
+      bottom: 80
+    };
+    let dstRect: common2D.Rect = {
+      left: 200,
+      top: 200,
+      right: 400,
+      bottom: 400
+    };
+    if (pixelMap != null) {
+      let filter = drawing.ImageFilter.createFromImage(pixelMap, srcRect, dstRect);
+    }
+  }
+}
 ```
 
 ## createBlendImageFilter20+
-
-PhonePC/2in1TabletTVWearable
 
 static createBlendImageFilter(mode: BlendMode, background: ImageFilter, foreground: ImageFilter): ImageFilter
 
@@ -172,21 +164,19 @@ static createBlendImageFilter(mode: BlendMode, background: ImageFilter, foregrou
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let dx = 15.0;
-4. let dy = 10.0;
-5. let offsetFilter1 = drawing.ImageFilter.createOffsetImageFilter(dx, dy, null);
-6. let x = 15.0;
-7. let y = 30.0;
-8. let offsetFilter2 = drawing.ImageFilter.createOffsetImageFilter(x, y, null);
-9. let blendImageFilter = drawing.ImageFilter.createBlendImageFilter(drawing.BlendMode.SRC_IN, offsetFilter1, offsetFilter2);
+let dx = 15.0;
+let dy = 10.0;
+let offsetFilter1 = drawing.ImageFilter.createOffsetImageFilter(dx, dy, null);
+let x = 15.0;
+let y = 30.0;
+let offsetFilter2 = drawing.ImageFilter.createOffsetImageFilter(x, y, null);
+let blendImageFilter = drawing.ImageFilter.createBlendImageFilter(drawing.BlendMode.SRC_IN, offsetFilter1, offsetFilter2);
 ```
 
 ## createComposeImageFilter20+
-
-PhonePC/2in1TabletTVWearable
 
 static createComposeImageFilter(cOuter: ImageFilter, cInner: ImageFilter): ImageFilter
 
@@ -209,26 +199,24 @@ static createComposeImageFilter(cOuter: ImageFilter, cInner: ImageFilter): Image
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let blurSigmaX = 10.0;
-4. let blurSigmaY = 10.0;
-5. let blurFilter = drawing.ImageFilter.createBlurImageFilter(blurSigmaX, blurSigmaY, drawing.TileMode.CLAMP, null);
-6. let colorMatrix:Array<number> = [
-7. 0, 0, 0, 0, 0,
-8. 0, 1, 0, 0, 0,
-9. 0, 0, 1, 0, 0,
-10. 0, 0, 0, 1, 0
-11. ];
-12. let redRemovalFilter = drawing.ColorFilter.createMatrixColorFilter(colorMatrix);
-13. let colorFilter = drawing.ImageFilter.createFromColorFilter(redRemovalFilter, null);
-14. let composedImageFilter = drawing.ImageFilter.createComposeImageFilter(colorFilter, blurFilter);
+let blurSigmaX = 10.0;
+let blurSigmaY = 10.0;
+let blurFilter = drawing.ImageFilter.createBlurImageFilter(blurSigmaX, blurSigmaY, drawing.TileMode.CLAMP, null);
+let colorMatrix:Array<number> = [
+  0, 0, 0, 0, 0,
+  0, 1, 0, 0, 0,
+  0, 0, 1, 0, 0,
+  0, 0, 0, 1, 0
+];
+let redRemovalFilter = drawing.ColorFilter.createMatrixColorFilter(colorMatrix);
+let colorFilter = drawing.ImageFilter.createFromColorFilter(redRemovalFilter, null);
+let composedImageFilter = drawing.ImageFilter.createComposeImageFilter(colorFilter, blurFilter);
 ```
 
 ## createFromColorFilter12+
-
-PhonePC/2in1TabletTVWearable
 
 static createFromColorFilter(colorFilter: ColorFilter, imageFilter?: ImageFilter | null): ImageFilter
 
@@ -259,17 +247,15 @@ static createFromColorFilter(colorFilter: ColorFilter, imageFilter?: ImageFilter
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let imgFilter = drawing.ImageFilter.createBlurImageFilter(5, 10, drawing.TileMode.CLAMP);
-4. let colorFilter = drawing.ColorFilter.createSRGBGammaToLinear();
-5. let imgFilter1 = drawing.ImageFilter.createFromColorFilter(colorFilter, imgFilter);
+let imgFilter = drawing.ImageFilter.createBlurImageFilter(5, 10, drawing.TileMode.CLAMP);
+let colorFilter = drawing.ColorFilter.createSRGBGammaToLinear();
+let imgFilter1 = drawing.ImageFilter.createFromColorFilter(colorFilter, imgFilter);
 ```
 
 ## createOffsetImageFilter20+
-
-PhonePC/2in1TabletTVWearable
 
 static createOffsetImageFilter(dx: number, dy: number, input?: ImageFilter | null): ImageFilter
 
@@ -281,8 +267,8 @@ static createOffsetImageFilter(dx: number, dy: number, input?: ImageFilter | nul
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| dx | number | 是 | 水平方向的平移距离， 该参数为浮点数。 |
-| dy | number | 是 | 竖直方向的平移距离， 该参数为浮点数。 |
+| dx | number | 是 | 水平方向的平移距离，该参数为浮点数。单位为物理像素px。 |
+| dy | number | 是 | 竖直方向的平移距离，该参数为浮点数。单位为物理像素px。 |
 | input | [ImageFilter](arkts-apis-graphics-drawing-imagefilter.md) | null | 否 | 需进行平移的滤波器。默认为空，如果为空，则将无滤波效果的绘制结果进行平移。 |
 
 **返回值：**
@@ -293,17 +279,15 @@ static createOffsetImageFilter(dx: number, dy: number, input?: ImageFilter | nul
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let dx = 15.0;
-4. let dy = 10.0;
-5. let offsetFilter = drawing.ImageFilter.createOffsetImageFilter(dx, dy, null);
+let dx = 15.0;
+let dy = 10.0;
+let offsetFilter = drawing.ImageFilter.createOffsetImageFilter(dx, dy, null);
 ```
 
 ## createFromShaderEffect20+
-
-PhonePC/2in1TabletTVWearable
 
 static createFromShaderEffect(shader: ShaderEffect): ImageFilter
 
@@ -325,9 +309,9 @@ static createFromShaderEffect(shader: ShaderEffect): ImageFilter
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let shaderEffect = drawing.ShaderEffect.createColorShader(0xFF00FF00);
-4. let renderEffect = drawing.ImageFilter.createFromShaderEffect(shaderEffect);
+let shaderEffect = drawing.ShaderEffect.createColorShader(0xFF00FF00);
+let renderEffect = drawing.ImageFilter.createFromShaderEffect(shaderEffect);
 ```

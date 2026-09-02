@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@system.brightness (屏幕亮度)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 已停止维护的接口 > @system.brightness (屏幕亮度)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8f3cce8d0a75521565436858577dcc008d9d113503e53223c51608901d35d7fb
+scraped_at: 2026-09-02T15:02:04+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:61d4ee345215742fbd104bfb10b6e865096b3f17ff02d748721b67d239784322
 ---
 
 该模块提供屏幕亮度和模式的查询、调节接口。
 
-说明
+**说明** 
 
 * 模块维护策略：
 
@@ -21,15 +21,15 @@ content_hash: sha256:8f3cce8d0a75521565436858577dcc008d9d113503e53223c51608901d3
 
 ## 导入模块
 
-WearableLite Wearable
-
-```
-1. import brightness, { BrightnessModeResponse, BrightnessResponse } from '@system.brightness';
+```js
+import brightness, { BrightnessModeResponse, BrightnessResponse } from '@system.brightness';
 ```
 
-## brightness.getValue(deprecated)
+## Brightness
 
-WearableLite Wearable
+提供屏幕亮度和模式的查询、调节接口。
+
+### getValue(deprecated)
 
 getValue(options?: GetBrightnessOptions): void
 
@@ -45,20 +45,72 @@ getValue(options?: GetBrightnessOptions): void
 
 **示例：**
 
-```
-1. brightness.getValue({
-2. success: (data: BrightnessResponse) => {
-3. console.log('success get brightness value:' + data.value);
-4. },
-5. fail: (data: string, code: number) => {
-6. console.error('get brightness fail, code: ' + code + ', data: ' + data);
-7. }
-8. });
+ArkTS示例：
+
+```js
+brightness.getValue({
+    success: (data: BrightnessResponse) => {
+      console.info('success get brightness value:' + data.value);
+    },
+    fail: (data: string, code: number) => {
+      console.error('get brightness fail, code: ' + code + ', data: ' + data);
+    }
+});
 ```
 
-## brightness.setValue(deprecated)
+JS示例：
 
-WearableLite Wearable
+```xml
+<!-- xxx.hml -->
+<div class="container">
+    <input type="button" value="Get Value" style="width: 240px; height: 50px; margin: 5px;" onclick="getValue"></input>
+    <text class="title">getValue: {{ value }}</text>
+</div>
+```
+
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.title {
+  width: 200px;
+  font-size: 30px;
+  text-align: center;
+}
+```
+
+```js
+// xxx.js
+import brightness from '@system.brightness';
+
+export default {
+    data: {
+        value: ''
+    },
+    getValue() {
+        let TAG = 'get_value_success_test';
+        brightness.getValue({
+            success: (brightnessResponse) => {
+                this.value = brightnessResponse.value;
+                console.info(`${TAG} brightnessResponse.value: ${brightnessResponse.value}`);
+            },
+            fail: (data, code) => {
+                console.error(`${TAG} fail data: ${data}, code: ${code}`);
+            },
+            complete: () => {
+                console.info(`${TAG} getValue complete`);
+            }
+        });
+    },
+}
+```
+
+### setValue(deprecated)
 
 setValue(options?: SetBrightnessOptions): void
 
@@ -74,21 +126,73 @@ setValue(options?: SetBrightnessOptions): void
 
 **示例：**
 
-```
-1. brightness.setValue({
-2. value: 100,
-3. success: () => {
-4. console.log('handling set brightness success.');
-5. },
-6. fail: (data: string, code: number) => {
-7. console.error('handling set brightness value fail, code:' + code + ', data: ' + data);
-8. }
-9. });
+ArkTS示例：
+
+```js
+brightness.setValue({
+    value: 100,
+    success: () => {
+      console.info('handling set brightness success.');
+    },
+    fail: (data: string, code: number) => {
+      console.error('handling set brightness value fail, code:' + code + ', data: ' + data);
+    }
+});
 ```
 
-## brightness.getMode(deprecated)
+JS示例：
 
-WearableLite Wearable
+```xml
+<!-- xxx.hml -->
+<div class="container">
+    <input type="button" value="Set Value" style="width: 240px; height: 50px; margin: 5px;" onclick="setValue"></input>
+    <text class="title">setValue: {{ value }}</text>
+</div>
+```
+
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.title {
+  width: 200px;
+  font-size: 30px;
+  text-align: center;
+}
+```
+
+```js
+// xxx.js
+import brightness from '@system.brightness';
+
+export default {
+    data: {
+        value: 100
+    },
+    setValue() {
+        let TAG = 'set_value_success_test';
+        brightness.setValue({
+            value: this.value,
+            success: () => {
+                console.info(`${TAG} setValue success!`);
+            },
+            fail: (data, code) => {
+                console.error(`${TAG} fail data: ${data}, code: ${code}`);
+            },
+            complete: () => {
+                console.info(`${TAG} setValue complete`);
+            }
+        });
+    },
+}
+```
+
+### getMode(deprecated)
 
 getMode(options?: GetBrightnessModeOptions): void
 
@@ -104,20 +208,72 @@ getMode(options?: GetBrightnessModeOptions): void
 
 **示例：**
 
-```
-1. brightness.getMode({
-2. success: (data: BrightnessModeResponse) => {
-3. console.log('success get mode:' + data.mode);
-4. },
-5. fail: (data: string, code: number) => {
-6. console.error('handling get mode fail, code:' + code + ', data: ' + data);
-7. }
-8. });
+ArkTS示例：
+
+```js
+brightness.getMode({
+    success: (data: BrightnessModeResponse) => {
+      console.info('success get mode:' + data.mode);
+    },
+    fail: (data: string, code: number) => {
+      console.error('handling get mode fail, code:' + code + ', data: ' + data);
+    }
+});
 ```
 
-## brightness.setMode(deprecated)
+JS示例：
 
-WearableLite Wearable
+```xml
+<!-- xxx.hml -->
+<div class="container">
+    <input type="button" value="Get Mode" style="width: 240px; height: 50px; margin: 5px;" onclick="getMode"></input>
+    <text class="title">getMode: {{ mode }}</text>
+</div>
+```
+
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.title {
+  width: 200px;
+  font-size: 30px;
+  text-align: center;
+}
+```
+
+```js
+// xxx.js
+import brightness from '@system.brightness';
+
+export default {
+    data: {
+        mode: ''
+    },
+    getMode() {
+        let TAG = 'get_mode_success_test';
+        brightness.getMode({
+            success: (brightnessModeResponse) => {
+                this.mode = brightnessModeResponse.mode;
+                console.info(`${TAG} brightnessModeResponse mode: ${brightnessModeResponse.mode}`);
+            },
+            fail: (data, code) => {
+                console.error(`${TAG} fail data: ${data}, code: ${code}`);
+            },
+            complete: () => {
+                console.info(`${TAG} getMode complete`);
+            }
+        });
+    },
+}
+```
+
+### setMode(deprecated)
 
 setMode(options?: SetBrightnessModeOptions): void
 
@@ -133,27 +289,82 @@ setMode(options?: SetBrightnessModeOptions): void
 
 **示例：**
 
-```
-1. brightness.setMode({
-2. mode: 1,
-3. success: () => {
-4. console.log('handling set mode success.');
-5. },
-6. fail: (data: string, code: number) => {
-7. console.error('handling set mode fail, code:' + code + ', data: ' + data);
-8. }
-9. });
+ArkTS示例：
+
+```js
+brightness.setMode({
+    mode: 1,
+    success: () => {
+      console.info('handling set mode success.');
+    },
+    fail: (data: string, code: number) => {
+      console.error('handling set mode fail, code:' + code + ', data: ' + data);
+    }
+});
 ```
 
-## brightness.setKeepScreenOn(deprecated)
+JS示例：
 
-WearableLite Wearable
+```xml
+<!-- xxx.hml -->
+<div class="container">
+    <input type="button" value="Set Mode" style="width: 240px; height: 50px; margin: 5px;" onclick="setMode"></input>
+    <text class="title">setMode: {{ mode }}</text>
+</div>
+```
+
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.title {
+  width: 200px;
+  font-size: 30px;
+  text-align: center;
+}
+```
+
+```js
+// xxx.js
+import brightness from '@system.brightness';
+
+export default {
+    data: {
+        mode: 1
+    },
+    setMode() {
+        let TAG = 'set_mode_success_test';
+        brightness.setMode({
+            mode: this.mode,
+            success: () => {
+                console.info(`${TAG} setMode success`);
+            },
+            fail: (data, code) => {
+                console.error(`${TAG} fail data: ${data}, code: ${code}`);
+            },
+            complete: () => {
+                console.info(`${TAG} setMode complete`);
+            }
+        });
+    },
+}
+```
+
+### setKeepScreenOn(deprecated)
 
 setKeepScreenOn(options?: SetKeepScreenOnOptions): void
 
-除Lite Wearable外，从API version 7开始不再维护，建议使用[window.setWindowKeepScreenOn()](arkts-apis-window-window.md#setwindowkeepscreenon9)替代。
-
 设置屏幕是否保持常亮状态，开启常亮模式推荐在onShow()阶段调用。
+
+**注意** 
+
+* 除Lite Wearable外，从API version 7开始不再维护，建议使用[window.setWindowKeepScreenOn()](arkts-apis-window-window.md#setwindowkeepscreenon9)替代。
+* 在Lite Wearable上，该接口仅能阻止系统无活动超时灭屏（自动），无法阻止用户主动操作（如盖屏）、常亮时刻结束等导致的灭屏。
 
 **系统能力：** SystemCapability.PowerManager.DisplayPowerManager.Lite
 
@@ -165,21 +376,73 @@ setKeepScreenOn(options?: SetKeepScreenOnOptions): void
 
 **示例：**
 
+ArkTS示例：
+
+```js
+brightness.setKeepScreenOn({
+    keepScreenOn: true,
+    success: () => {
+      console.info('handling set keep screen on success.');
+    },
+    fail: (data: string, code: number) => {
+      console.error('handling set keep screen on fail, code:' + code + ', data: ' + data);
+    }
+});
 ```
-1. brightness.setKeepScreenOn({
-2. keepScreenOn: true,
-3. success: () => {
-4. console.log('handling set keep screen on success.');
-5. },
-6. fail: (data: string, code: number) => {
-7. console.error('handling set keep screen on fail, code:' + code + ', data: ' + data);
-8. }
-9. });
+
+JS示例：
+
+```xml
+<!-- xxx.hml -->
+<div class="container">
+    <input type="button" value="SetKeepScreenOn" style="width: 240px; height: 50px; margin: 5px;" onclick="setKeepScreenOn"></input>
+    <text class="title">setKeepScreenOn: {{ keepScreenOn }}</text>
+</div>
+```
+
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.title {
+  width: 200px;
+  font-size: 30px;
+  text-align: center;
+}
+```
+
+```js
+// xxx.js
+import brightness from '@system.brightness';
+
+export default {
+    data: {
+        keepScreenOn: true
+    },
+    setKeepScreenOn() {
+        let TAG = 'set_keep_screen_on_success_test';
+        brightness.setKeepScreenOn({
+            keepScreenOn: this.keepScreenOn,
+            success: () => {
+                console.info(`${TAG} setKeepScreenOn success`);
+            },
+            fail: (data, code) => {
+                console.error(`${TAG} fail data: ${data}, code: ${code}`);
+            },
+            complete: () => {
+                console.info(`${TAG} setKeepScreenOn complete`);
+            }
+        });
+    },
+}
 ```
 
 ## GetBrightnessOptions(deprecated)
-
-WearableLite Wearable
 
 获取屏幕亮度的参数对象。
 
@@ -192,8 +455,6 @@ WearableLite Wearable
 | complete | () => void | 否 | 接口调用结束的回调函数。 |
 
 ## SetBrightnessOptions(deprecated)
-
-WearableLite Wearable
 
 设置屏幕亮度的参数对象。
 
@@ -208,8 +469,6 @@ WearableLite Wearable
 
 ## BrightnessResponse(deprecated)
 
-WearableLite Wearable
-
 包含屏幕亮度的对象。
 
 **系统能力：** SystemCapability.PowerManager.DisplayPowerManager.Lite
@@ -219,8 +478,6 @@ WearableLite Wearable
 | value | number | 是 | 否 | 屏幕亮度，范围：1到255。 |
 
 ## GetBrightnessModeOptions(deprecated)
-
-WearableLite Wearable
 
 获取屏幕亮度模式的参数对象。
 
@@ -233,8 +490,6 @@ WearableLite Wearable
 | complete | () => void | 否 | 接口调用结束的回调函数。 |
 
 ## SetBrightnessModeOptions(deprecated)
-
-WearableLite Wearable
 
 设置屏幕亮度模式的参数对象。
 
@@ -249,8 +504,6 @@ WearableLite Wearable
 
 ## BrightnessModeResponse(deprecated)
 
-WearableLite Wearable
-
 包含屏幕亮度模式的对象。
 
 **系统能力：** SystemCapability.PowerManager.DisplayPowerManager.Lite
@@ -260,8 +513,6 @@ WearableLite Wearable
 | mode | number | 是 | 否 | 0表示手动调节屏幕亮度模式，1表示自动调节屏幕亮度模式。 |
 
 ## SetKeepScreenOnOptions(deprecated)
-
-WearableLite Wearable
 
 设置屏幕常亮的参数对象。
 

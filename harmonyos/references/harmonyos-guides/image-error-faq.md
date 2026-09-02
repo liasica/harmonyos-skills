@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-error-f
 title: Image Kit异常处理
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > Image Kit常见问题 > Image Kit异常处理
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:22+08:00
+scraped_at: 2026-09-02T14:50:17+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:2d94672e1d999f9e9b26dca22acbf3dcded30e42b462b84c46c54fa9dbec8384
+content_hash: sha256:aa36442823d980875bc392c09d2c0d56e55270f738e71f8239c7bfaaa168cf9d
 ---
 
 [Image Kit](image-overview.md)提供**ArkTS接口**和**C接口**。在遇到特殊情况时（例如输入参数无效、内存不足或函数无法处理请求等），系统会通过异常（ArkTS）或错误码（C接口）来反馈错误。开发者需要在应用层合理捕获和处理这些错误，以避免应用崩溃或出现未定义行为。在[Image错误码](../harmonyos-references/errorcode-image.md)中给出了Image Kit错误码对应的错误信息、可能原因、处理步骤。但由于部分场景引发错误的原因较为复杂，还需要开发者结合日志进一步定位。例如：401参数错误，可能是函数入参存在问题，也可能是由于缺少特定的文件读写权限导致无法访问或修改图片文件（Image Kit不感知权限，表现为传入文件异常的参数错误）。
@@ -24,65 +24,65 @@ ArkTS接口调用时，如果传入的参数不符合要求，或者底层执行
 
 1. AsyncCallback异步接口示例。
 
-   ```
-   1. import { image } from '@kit.ImageKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```ts
+   import { image } from '@kit.ImageKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
 
-   4. function getImageInfoByCallback(pixelMap: image.PixelMap): void {
-   5. if (!pixelMap) {
-   6. console.error("pixelMap is null or undefined");
-   7. return;
-   8. }
-   9. pixelMap.getImageInfo((err: BusinessError, info: image.ImageInfo) => {
-   10. if (err) {
-   11. console.error(`getImageInfo callback failed, code=${err.code}, msg=${err.message}`);
-   12. return;
-   13. }
-   14. console.info(`Image width=${info.size.width}, height=${info.size.height}`);
-   15. });
-   16. }
+   function getImageInfoByCallback(pixelMap: image.PixelMap): void {
+     if (!pixelMap) {
+       console.error("pixelMap is null or undefined");
+       return;
+     }
+     pixelMap.getImageInfo((err: BusinessError, info: image.ImageInfo) => {
+       if (err) {
+         console.error(`getImageInfo callback failed, code=${err.code}, msg=${err.message}`);
+         return;
+       }
+       console.info(`Image width=${info.size.width}, height=${info.size.height}`);
+     });
+   }
    ```
 2. Promise异步接口示例。
 
-   ```
-   1. import { image } from '@kit.ImageKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```ts
+   import { image } from '@kit.ImageKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
 
-   4. // getImageInfo(): Promise<ImageInfo>
-   5. async function getImageInfoByPromise(pixelMap: image.PixelMap): Promise<void> {
-   6. try {
-   7. const info = await pixelMap.getImageInfo();
-   8. console.info(`Image width=${info.size.width}, height=${info.size.height}`);
-   9. } catch (err) {
-   10. const e = err as BusinessError;
-   11. console.error(`getImageInfo promise failed, code=${e.code}, msg=${e.message}`);
-   12. }
-   13. }
+   // getImageInfo(): Promise<ImageInfo>
+   async function getImageInfoByPromise(pixelMap: image.PixelMap): Promise<void> {
+     try {
+       const info = await pixelMap.getImageInfo();
+       console.info(`Image width=${info.size.width}, height=${info.size.height}`);
+     } catch (err) {
+       const e = err as BusinessError;
+       console.error(`getImageInfo promise failed, code=${e.code}, msg=${e.message}`);
+     }
+   }
 
-   15. // modifyImageProperty(key: PropertyKey, value: string): Promise<void>
-   16. function modifyImagePropertyPromise(imageSource: image.ImageSource): void {
-   17. imageSource.modifyImageProperty(image.PropertyKey.ORIENTATION, 'Top-left').then(() => {
-   18. console.info('modifyImageProperty success');
-   19. }).catch((err: BusinessError) => {
-   20. console.error(`modifyImageProperty failed, code=${err.code}, msg=${err.message}`);
-   21. });
-   22. }
+   // modifyImageProperty(key: PropertyKey, value: string): Promise<void>
+   function modifyImagePropertyPromise(imageSource: image.ImageSource): void {
+     imageSource.modifyImageProperty(image.PropertyKey.ORIENTATION, 'Top-left').then(() => {
+       console.info('modifyImageProperty success');
+     }).catch((err: BusinessError) => {
+       console.error(`modifyImageProperty failed, code=${err.code}, msg=${err.message}`);
+     });
+   }
    ```
 3. 同步型示例。
 
-   ```
-   1. import { image } from '@kit.ImageKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```ts
+   import { image } from '@kit.ImageKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
 
-   4. function getImageInfoBySync(pixelMap: image.PixelMap): void {
-   5. try {
-   6. const info = pixelMap.getImageInfoSync();
-   7. console.info(`Image width=${info.size.width}, height=${info.size.height}`);
-   8. } catch (err) {
-   9. const e = err as BusinessError;
-   10. console.error(`getImageInfoSync failed, code=${e.code}, msg=${e.message}`);
-   11. }
-   12. }
+   function getImageInfoBySync(pixelMap: image.PixelMap): void {
+     try {
+       const info = pixelMap.getImageInfoSync();
+       console.info(`Image width=${info.size.width}, height=${info.size.height}`);
+     } catch (err) {
+       const e = err as BusinessError;
+       console.error(`getImageInfoSync failed, code=${e.code}, msg=${e.message}`);
+     }
+   }
    ```
 
 ## C接口异常处理
@@ -93,80 +93,80 @@ C接口统一通过[Image错误码](../harmonyos-references/errorcode-image.md)�
 
    Image\_ErrorCode OH\_PixelmapNative\_GetImageInfo(OH\_PixelmapNative \*pixelmap, OH\_Pixelmap\_ImageInfo \*imageInfo)
 
-   ```
-   1. // 需要在src/main/cpp/CMakeLists.txt文件中链接so库文件：target_link_libraries(entry PUBLIC libhilog_ndk.z.so libpixelmap.so)。
-   2. #include <hilog/log.h>
-   3. #include <multimedia/image_framework/image/pixelmap_native.h>
+   ```cpp
+   // 需要在src/main/cpp/CMakeLists.txt文件中链接so库文件：target_link_libraries(entry PUBLIC libhilog_ndk.z.so libpixelmap.so)。
+   #include <hilog/log.h>
+   #include <multimedia/image_framework/image/pixelmap_native.h>
 
-   5. #undef LOG_DOMAIN
-   6. #undef LOG_TAG
-   7. #define LOG_DOMAIN 0x02b6
-   8. #define LOG_TAG "ImageKitDemo"
+   #undef LOG_DOMAIN
+   #undef LOG_TAG
+   #define LOG_DOMAIN 0x02b6
+   #define LOG_TAG "ImageKitDemo"
 
-   10. void GetImageInfoExample(OH_PixelmapNative *pixelmap) {
-   11. if (!pixelmap) {
-   12. OH_LOG_ERROR(LOG_APP, "GetImageInfoExample: pixelmap is nullptr");
-   13. return;
-   14. }
-   15. OH_Pixelmap_ImageInfo *imageInfo;
-   16. Image_ErrorCode errCode = OH_PixelmapImageInfo_Create(&imageInfo);
-   17. if (errCode != IMAGE_SUCCESS) {
-   18. OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_Create failed, errCode: %{public}d.", errCode);
-   19. return;
-   20. }
-   21. errCode = OH_PixelmapNative_GetImageInfo(pixelmap, imageInfo);
-   22. if (errCode != IMAGE_SUCCESS) {
-   23. OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_GetImageInfo failed, errCode: %{public}d.", errCode);
-   24. return;
-   25. }
+   void GetImageInfoExample(OH_PixelmapNative *pixelmap) {
+       if (!pixelmap) {
+           OH_LOG_ERROR(LOG_APP, "GetImageInfoExample: pixelmap is nullptr");
+           return;
+       }
+       OH_Pixelmap_ImageInfo *imageInfo;
+       Image_ErrorCode errCode = OH_PixelmapImageInfo_Create(&imageInfo);
+       if (errCode != IMAGE_SUCCESS) {
+           OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_Create failed, errCode: %{public}d.", errCode);
+           return;
+       }
+       errCode = OH_PixelmapNative_GetImageInfo(pixelmap, imageInfo);
+       if (errCode != IMAGE_SUCCESS) {
+           OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_GetImageInfo failed, errCode: %{public}d.", errCode);
+           return;
+       }
 
-   27. // 获取图片的宽、高、像素格式和透明度等信息。
-   28. uint32_t width, height, rowStride;
-   29. int32_t pixelFormat, alphaType;
-   30. OH_PixelmapImageInfo_GetWidth(imageInfo, &width);
-   31. OH_PixelmapImageInfo_GetHeight(imageInfo, &height);
-   32. OH_PixelmapImageInfo_GetRowStride(imageInfo, &rowStride);
-   33. OH_PixelmapImageInfo_GetPixelFormat(imageInfo, &pixelFormat);
-   34. OH_PixelmapImageInfo_GetAlphaType(imageInfo, &alphaType);
-   35. OH_PixelmapImageInfo_Release(imageInfo);
-   36. OH_LOG_INFO(LOG_APP,
-   37. "GetImageInfo success, width: %{public}d, height: %{public}d, "
-   38. "rowStride: %{public}d, pixelFormat: %{public}d, alphaType: %{public}d.",
-   39. width, height, rowStride, pixelFormat, alphaType);
-   40. }
+       // 获取图片的宽、高、像素格式和透明度等信息。
+       uint32_t width, height, rowStride;
+       int32_t pixelFormat, alphaType;
+       OH_PixelmapImageInfo_GetWidth(imageInfo, &width);
+       OH_PixelmapImageInfo_GetHeight(imageInfo, &height);
+       OH_PixelmapImageInfo_GetRowStride(imageInfo, &rowStride);
+       OH_PixelmapImageInfo_GetPixelFormat(imageInfo, &pixelFormat);
+       OH_PixelmapImageInfo_GetAlphaType(imageInfo, &alphaType);
+       OH_PixelmapImageInfo_Release(imageInfo);
+       OH_LOG_INFO(LOG_APP,
+                   "GetImageInfo success, width: %{public}d, height: %{public}d, "
+                   "rowStride: %{public}d, pixelFormat: %{public}d, alphaType: %{public}d.",
+                   width, height, rowStride, pixelFormat, alphaType);
+   }
    ```
 2. 修改EXIF信息。
 
    Image\_ErrorCode OH\_ImageSourceNative\_ModifyImageProperty(OH\_ImageSourceNative \*source, Image\_String \*key, Image\_String \*value)
 
-   ```
-   1. // 需要在src/main/cpp/CMakeLists.txt文件中链接so库文件：target_link_libraries(entry PUBLIC libhilog_ndk.z.so libimage_source.so)。
-   2. #include <string>
-   3. #include <hilog/log.h>
-   4. #include <multimedia/image_framework/image/image_source_native.h>
+   ```cpp
+   // 需要在src/main/cpp/CMakeLists.txt文件中链接so库文件：target_link_libraries(entry PUBLIC libhilog_ndk.z.so libimage_source.so)。
+   #include <string>
+   #include <hilog/log.h>
+   #include <multimedia/image_framework/image/image_source_native.h>
 
-   6. #undef LOG_DOMAIN
-   7. #undef LOG_TAG
-   8. #define LOG_DOMAIN 0x02b6
-   9. #define LOG_TAG "ImageKitDemo"
+   #undef LOG_DOMAIN
+   #undef LOG_TAG
+   #define LOG_DOMAIN 0x02b6
+   #define LOG_TAG "ImageKitDemo"
 
-   11. void ModifyImagePropertyExample(OH_ImageSourceNative *source) {
-   12. if (!source) {
-   13. OH_LOG_ERROR(LOG_APP, "ModifyImagePropertyExample: source is nullptr");
-   14. return;
-   15. }
-   16. const std::string keyStr = OHOS_IMAGE_PROPERTY_ORIENTATION;
-   17. const std::string valueStr = "Top-left";
-   18. Image_String key{const_cast<char *>(keyStr.c_str()), keyStr.length()};
-   19. Image_String value{const_cast<char *>(valueStr.c_str()), valueStr.length()};
+   void ModifyImagePropertyExample(OH_ImageSourceNative *source) {
+       if (!source) {
+           OH_LOG_ERROR(LOG_APP, "ModifyImagePropertyExample: source is nullptr");
+           return;
+       }
+       const std::string keyStr = OHOS_IMAGE_PROPERTY_ORIENTATION;
+       const std::string valueStr = "Top-left";
+       Image_String key{const_cast<char *>(keyStr.c_str()), keyStr.length()};
+       Image_String value{const_cast<char *>(valueStr.c_str()), valueStr.length()};
 
-   21. Image_ErrorCode ret = OH_ImageSourceNative_ModifyImageProperty(source, &key, &value);
-   22. if (ret != IMAGE_SUCCESS) {
-   23. OH_LOG_ERROR(LOG_APP, "ModifyImageProperty failed, code=%{public}d", ret);
-   24. return;
-   25. }
+       Image_ErrorCode ret = OH_ImageSourceNative_ModifyImageProperty(source, &key, &value);
+       if (ret != IMAGE_SUCCESS) {
+           OH_LOG_ERROR(LOG_APP, "ModifyImageProperty failed, code=%{public}d", ret);
+           return;
+       }
 
-   27. OH_LOG_INFO(LOG_APP, "ModifyImageProperty success, key=%{public}s, value=%{public}s", keyStr.c_str(),
-   28. valueStr.c_str());
-   29. }
+       OH_LOG_INFO(LOG_APP, "ModifyImageProperty success, key=%{public}s, value=%{public}s", keyStr.c_str(),
+                   valueStr.c_str());
+   }
    ```

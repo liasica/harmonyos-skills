@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_lines-bet
 title: "@typescript-eslint/lines-between-class-members"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/lines-between-class-members
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:28+08:00
+scraped_at: 2026-09-02T14:50:51+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:2ca170b157f8090c72845ca34796429b65d8136bd9471c8d70b43f92564e845d
+content_hash: sha256:890b73947de87196f193875faa36161842dd9670a7d5f6c487d9be00ea0f3d92
 ---
 
 禁止或者要求类成员之间有空行分隔。
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@typescript-eslint/lines-between-class-members": "error"
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@typescript-eslint/lines-between-class-members": "error"
+  }
+}
 ```
 
 ## 选项
@@ -29,49 +29,49 @@ content_hash: sha256:2ca170b157f8090c72845ca34796429b65d8136bd9471c8d70b43f92564
 
 示例：
 
-```
-1. "@typescript-eslint/lines-between-class-members": [
-2. "error",
-3. "always",
-4. {
-5. "exceptAfterOverload": true
-6. },
-7. ]
+```screen
+"@typescript-eslint/lines-between-class-members": [
+  "error",
+  "always",
+  {
+    "exceptAfterOverload": true
+  },
+]
 ```
 
 ## 正例
 
-```
-1. // 默认要求类成员之间有空行分隔
-2. export class Foo {
-3. public baz() {
-4. console.info('baz');
-5. }
+```screen
+// 默认要求类成员之间有空行分隔
+export class Foo {
+  public baz() {
+    console.info('baz');
+  }
 
-7. public qux() {
-8. console.info('qux');
-9. }
-10. }
+  public qux() {
+    console.info('qux');
+  }
+}
 ```
 
 ## 反例
 
-```
-1. // 默认要求类成员之间有空行分隔
-2. export class Foo {
-3. public baz() {
-4. console.info('baz');
-5. }
-6. public qux() {
-7. console.info('qux');
-8. }
-9. }
+```screen
+// 默认要求类成员之间有空行分隔
+export class Foo {
+  public baz() {
+    console.info('baz');
+  }
+  public qux() {
+    console.info('qux');
+  }
+}
 ```
 
 ## 规则集
 
-```
-1. plugin:@typescript-eslint/all
+```screen
+plugin:@typescript-eslint/all
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

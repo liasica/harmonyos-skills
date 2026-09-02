@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/abilitykit-ov
 title: Ability Kit简介
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Ability Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:39+08:00
-doc_updated_at: 2026-04-24
+scraped_at: 2026-09-02T15:16:56+08:00
+doc_updated_at: 2026-06-12
 content_hash: sha256:283085bb71b80092cca8f533abf059f58dfd09c56ea36fb8f80bbee8220165d6
 ---
 

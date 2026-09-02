@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-healthservicekit-510
 title: Health Service Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.1.0(18) > OS平台能力 > API变更清单 > Health Service Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.0(18) > OS平台能力 > API变更清单 > Health Service Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:09+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:35+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:4eb1c66a8f6786db065643e7b641458d01be40bea323649fccc48481cf1a2689
 ---
 

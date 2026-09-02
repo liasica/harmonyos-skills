@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-servic
 title: Health Service Kit简介
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > Health Service Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:38:17+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fc2163bcc0f27967a55d2cd340e5a37d554df65aa557e28afa69db8d14b21c9a
+scraped_at: 2026-09-02T14:59:55+08:00
+doc_updated_at: 2026-07-21
+content_hash: sha256:83dd9483bc74b813e06aed5553df217b4bbed2e0be4c27825977c322e769a3b4
 ---
 
 Health Service Kit（运动健康服务）是为华为生态应用打造的基于华为账号和用户授权的运动健康数据开放平台。在获取用户授权后，开发者可以使用Health Service Kit提供的开放能力获取运动健康数据，基于多种类型数据构建运动健康领域应用与服务，为用户打造丰富、便捷、专业的运动健康场景体验。
 
 ## 业务介绍
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/D80adc8TTY-hkmVEqY19fg/zh-cn_image_0000002558765406.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/7tYDM965QxO_sHn0hNbNIw/zh-cn_image_0000002706674986.png)
 
 ## 应用服务
 
@@ -40,11 +40,11 @@ Health Service Kit（运动健康服务）是为华为生态应用打造的基�
 
 ### 支持的设备
 
-本Kit仅适用于Phone、Tablet、Wearable。
+本Kit仅适用于Phone、Tablet、Wearable、Lite Wearable。
 
 ### 支持的国家/地区
 
-仅支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。
+Phone、Tablet仅支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。
 
 ## 模拟器支持情况
 

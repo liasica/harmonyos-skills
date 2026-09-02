@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-36
 title: 如何使用后缀为so.x.y类型的so库，例如libxxx.so.3.1、libxxx.so.3.1.0
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何使用后缀为so.x.y类型的so库，例如libxxx.so.3.1、libxxx.so.3.1.0
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:35+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:18+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:aaa99729d4e9fb055f8f63a1419f27507304ab5428806382d170d2c2ef4e4e88
 ---
 

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-p
 title: oh_preferences_option.h
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 头文件 > oh_preferences_option.h
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:27+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:01902e5f35cfee733aceaf0c072ef04a46a676aa55d26e20ca54b91bba83771f
+scraped_at: 2026-09-02T15:00:42+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:147c9dc3efdb5c809fa8629cb1d7646be6e1c286df0fa1823f205fb1eaa298d1
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供访问Preferences配置选项（PreferencesOption）的接口与数据结构。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,15 +32,11 @@ PhonePC/2in1TabletTVWearable
 
 ### 枚举
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [Preferences\_StorageType](capi-oh-preferences-option-h.md#preferences_storagetype) | Preferences\_StorageType | 首选项配置选项的存储模式枚举。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -59,14 +49,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### Preferences\_StorageType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Preferences_StorageType
+```c
+enum Preferences_StorageType
 ```
 
 **描述**
@@ -78,18 +64,14 @@ PhonePC/2in1TabletTVWearable
 | 枚举项 | 描述 |
 | --- | --- |
 | PREFERENCES\_STORAGE\_XML = 0 | XML存储模式，对数据的操作发生在内存中，调用[OH\_Preferences\_Close](capi-oh-preferences-h.md#oh_preferences_close)时落盘，不支持多进程。 |
-| PREFERENCES\_STORAGE\_GSKV | GSKV存储模式，对数据的操作实时落盘，可支持多进程 |
+| PREFERENCES\_STORAGE\_GSKV | GSKV存储模式，对数据的操作实时落盘，可支持多进程。 |
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_PreferencesOption\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_PreferencesOption *OH_PreferencesOption_Create(void)
+```c
+OH_PreferencesOption *OH_PreferencesOption_Create(void)
 ```
 
 **描述**
@@ -104,14 +86,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_PreferencesOption](capi-preferences-oh-preferencesoption.md) | 如果操作成功，返回指向Preferences配置选项[OH\_PreferencesOption](capi-preferences-oh-preferencesoption.md)实例对象的指针。失败返回空指针。 |
+| [OH\_PreferencesOption](capi-preferences-oh-preferencesoption.md) \* | 如果操作成功，返回指向Preferences配置选项[OH\_PreferencesOption](capi-preferences-oh-preferencesoption.md)实例对象的指针。失败返回空指针。 |
 
 ### OH\_PreferencesOption\_SetFileName()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PreferencesOption_SetFileName(OH_PreferencesOption *option, const char *fileName)
+```c
+int OH_PreferencesOption_SetFileName(OH_PreferencesOption *option, const char *fileName)
 ```
 
 **描述**
@@ -125,7 +105,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_PreferencesOption](capi-preferences-oh-preferencesoption.md) \*option | 指向Preferences配置选项[OH\_PreferencesOption](capi-preferences-oh-preferencesoption.md)实例对象的指针。 |
-| const char \*fileName | 需要设置的文件名称。 |
+| const char \*fileName | 需要设置的文件名称。文件名称长度需大于零且小于等于255字节，名称中不能包含'/'且不能以'/'结尾。 |
 
 **返回：**
 
@@ -139,10 +119,8 @@ OH\_Preferences\_ErrCode
 
 ### OH\_PreferencesOption\_SetBundleName()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PreferencesOption_SetBundleName(OH_PreferencesOption *option, const char *bundleName)
+```c
+int OH_PreferencesOption_SetBundleName(OH_PreferencesOption *option, const char *bundleName)
 ```
 
 **描述**
@@ -166,10 +144,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreferencesOption\_SetDataGroupId()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PreferencesOption_SetDataGroupId(OH_PreferencesOption *option, const char *dataGroupId)
+```c
+int OH_PreferencesOption_SetDataGroupId(OH_PreferencesOption *option, const char *dataGroupId)
 ```
 
 **描述**
@@ -197,10 +173,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreferencesOption\_SetStorageType()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PreferencesOption_SetStorageType(OH_PreferencesOption *option, Preferences_StorageType type)
+```c
+int OH_PreferencesOption_SetStorageType(OH_PreferencesOption *option, Preferences_StorageType type)
 ```
 
 **描述**
@@ -224,10 +198,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreferencesOption\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PreferencesOption_Destroy(OH_PreferencesOption *option)
+```c
+int OH_PreferencesOption_Destroy(OH_PreferencesOption *option)
 ```
 
 **描述**
@@ -246,4 +218,4 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回接口操作执行的状态码。  PREFERENCES\_OK，表示操作成功。  PREFERENCES\_ERROR\_INVALID\_PARAM，表示参数不合法。 |
+| int | 返回接口操作执行的状态码。  若错误码为PREFERENCES\_OK，表示操作成功。  若错误码为PREFERENCES\_ERROR\_INVALID\_PARAM，表示参数不合法。 |

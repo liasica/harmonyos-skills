@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_AccessibleRect
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_AccessibleRect
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:11+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:fe542e4a053e1fd3dfd413abbce962f813b85f1b672b115e5efebf6efb8dbebb
+scraped_at: 2026-09-02T15:01:23+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:761a00e586681ca6b1be5f3f8e8dbe22645410eedc89e5fc892681226aac1109
 ---
 
-```
-1. typedef struct {...} ArkUI_AccessibleRect
+```c
+typedef struct {...} ArkUI_AccessibleRect
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-节点所在坐标位置。
+节点在屏幕中的矩形区域坐标位置。该结构体用于描述无障碍节点的边界矩形，通过左上角和右下角的坐标定义节点在屏幕上的可视区域，支持无障碍服务获取节点的位置和大小信息。
 
 **起始版本：** 13
 
@@ -26,15 +24,11 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
-| int32\_t leftTopX | 左上角X轴坐标位置。 |
-| int32\_t leftTopY | 左上角y轴坐标位置。 |
-| int32\_t rightBottomX | 右下角X轴坐标位置。 |
-| int32\_t rightBottomY | 右下角y轴坐标位置。 |
+| int32\_t leftTopX | 左上角X轴坐标位置，单位：px。 |
+| int32\_t leftTopY | 左上角Y轴坐标位置，单位：px。 |
+| int32\_t rightBottomX | 右下角X轴坐标位置，单位：px。 |
+| int32\_t rightBottomY | 右下角Y轴坐标位置，单位：px。 |

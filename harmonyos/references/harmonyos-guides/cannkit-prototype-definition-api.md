@@ -3,27 +3,27 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-proto
 title: 原型定义接口（REG_OP）
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > 原型定义接口（REG_OP）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:19+08:00
+scraped_at: 2026-09-02T14:50:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:94381bdb648462d2a3e0aa970e7e962362f97cba8d1d94b1882c10111cfe8fe4
+content_hash: sha256:30fadb46499a37bd22a390ffa2dca32fb41fd834c5e08cd796c971ed38ca3cc0
 ---
 
 ## 函数原型
 
 函数原型定义示例如下。
 
-```
-1. REG_OP(xxx)
-2. .INPUT(x1, type)
-3. .OPTIONAL_INPUT(x2, type)
-4. .DYNAMIC_INPUT(x3, type)
-5. .OUTPUT(y1, type)
-6. .DYNAMIC_OUTPUT(y3, type)
-7. .REQUIRED_ATTR(a, type)
-8. .ATTR(b, type, default_value)
-9. .GRAPH(z1)
-10. .DYNAMIC_GRAPH(z2)
-11. .OP_END_FACTORY_REG(xxx)
+```cpp
+REG_OP(xxx)
+    .INPUT(x1, type)
+    .OPTIONAL_INPUT(x2, type)
+    .DYNAMIC_INPUT(x3, type)
+    .OUTPUT(y1, type)
+    .DYNAMIC_OUTPUT(y3, type)
+    .REQUIRED_ATTR(a, type)
+    .ATTR(b, type, default_value)
+    .GRAPH(z1)
+    .DYNAMIC_GRAPH(z2)
+    .OP_END_FACTORY_REG(xxx)
 ```
 
 ## 功能说明
@@ -32,10 +32,10 @@ content_hash: sha256:94381bdb648462d2a3e0aa970e7e962362f97cba8d1d94b1882c10111cf
 
 进行如上算子原型定义后，即相当于向GE注册了该算子的原型，告知GE对应类型的算子应该具备哪些输入、输出与属性；同时相当于定义了一个op::xxx的Class，开发者可以include该原型头文件，然后实例化该Class进行IR模型构建，如下所示：
 
-```
-1. conv = op::Conv2D()
-2. conv.set_input_x(feature_map_data)
-3. conv.set_input_filter(weight_data)
+```cpp
+conv = op::Conv2D()
+conv.set_input_x(feature_map_data)
+conv.set_input_filter(weight_data)
 ```
 
 ## 接口说明
@@ -72,32 +72,32 @@ OpReg类中的OpReg &N()接口的功能是为了开发者进行算子注册的�
 
 动态输入的算子原型定义示例：
 
-```
-1. REG_OP(AddN)
-2. .DYNAMIC_INPUT(x, TensorType::NumberType())
-3. .OUTPUT(y, TensorType::NumberType())
-4. .REQUIRED_ATTR(N, Int)
-5. .OP_END_FACTORY_REG(AddN)
+```cpp
+REG_OP(AddN)
+    .DYNAMIC_INPUT(x, TensorType::NumberType())
+    .OUTPUT(y, TensorType::NumberType())
+    .REQUIRED_ATTR(N, Int)
+    .OP_END_FACTORY_REG(AddN)
 ```
 
 多输入的算子原型定义示例：
 
-```
-1. REG_OP(GreaterEqual)
-2. .INPUT(x1, TensorType::RealNumberType())
-3. .INPUT(x2, TensorType::RealNumberType())
-4. .OUTPUT(y, TensorType({DT_BOOL}))
-5. .OP_END_FACTORY_REG(GreaterEqual)
+```cpp
+REG_OP(GreaterEqual)
+    .INPUT(x1, TensorType::RealNumberType())
+    .INPUT(x2, TensorType::RealNumberType())
+    .OUTPUT(y, TensorType({DT_BOOL}))
+    .OP_END_FACTORY_REG(GreaterEqual)
 ```
 
 注册子图的算子原型定义示例：
 
-```
-1. REG_OP(If)
-2. .INPUT(cond, TensorType::ALL())
-3. .DYNAMIC_INPUT(input, TensorType::ALL())
-4. .DYNAMIC_OUTPUT(output, TensorType::ALL())
-5. .GRAPH(then_branch)
-6. .GRAPH(else_branch)
-7. .OP_END_FACTORY_REG(If)
+```cpp
+REG_OP(If)
+    .INPUT(cond, TensorType::ALL())
+    .DYNAMIC_INPUT(input, TensorType::ALL())
+    .DYNAMIC_OUTPUT(output, TensorType::ALL())
+    .GRAPH(then_branch)
+    .GRAPH(else_branch)
+    .OP_END_FACTORY_REG(If)
 ```

@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.abilityDelegatorRegistry (AbilityDelegatorRegistry)"
 breadcrumb: API参考 > 系统 > 调测调优 > Test Kit（应用测试服务） > ArkTS API > @ohos.app.ability.abilityDelegatorRegistry (AbilityDelegatorRegistry)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:31+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1bf1bd80705ee30db7d94ab9b1360fb4f6c66fed8152019fb1c7fb1b2c5d2867
+scraped_at: 2026-09-02T15:02:17+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e877e8e507312a7dd6b5468b818da390857335f555b9c29b6ffbf701512b939e
 ---
 
-AbilityDelegatorRegistry是自动化测试框架使用指南模块，该模块用于获取[AbilityDelegator](js-apis-inner-application-abilitydelegator.md)和[AbilityDelegatorArgs](js-apis-inner-application-abilitydelegatorargs.md)对象，其中[AbilityDelegator](js-apis-inner-application-abilitydelegator.md)对象提供添加用于监视指定ability的生命周期状态更改的[AbilityMonitor](js-apis-inner-application-abilitymonitor.md#abilitymonitor-1)对象的能力，[AbilityDelegatorArgs](js-apis-inner-application-abilitydelegatorargs.md)对象提供获取当前测试参数的能力。
+AbilityDelegatorRegistry是自动化测试框架的注册模块，用于获取[AbilityDelegator](js-apis-inner-application-abilitydelegator.md)和[AbilityDelegatorArgs](js-apis-inner-application-abilitydelegatorargs.md)对象。通过该模块，开发者可以利用[AbilityDelegator](js-apis-inner-application-abilitydelegator.md)对象添加[AbilityMonitor](js-apis-inner-application-abilitymonitor.md#abilitymonitor-1)对象，实现对指定Ability生命周期状态变化的监视；同时，借助[AbilityDelegatorArgs](js-apis-inner-application-abilitydelegatorargs.md)对象便捷地读取当前运行的测试参数。
 
-说明
+**说明** 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -18,21 +18,17 @@ AbilityDelegatorRegistry是自动化测试框架使用指南模块，该模块�
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
 ```
 
 ## AbilityLifecycleState
 
-PhonePC/2in1TabletTVWearable
-
-Ability生命周期状态，该类型为枚举，可配合[AbilityDelegator](js-apis-inner-application-abilitydelegator.md)的[getAbilityState(ability)](js-apis-inner-application-abilitydelegator.md#getabilitystate9)方法返回不同ability生命周期。
+Ability生命周期状态，可配合[AbilityDelegator](js-apis-inner-application-abilitydelegator.md)的[getAbilityState](js-apis-inner-application-abilitydelegator.md#getabilitystate)方法返回对应Ability的生命周期状态。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
-**系统能力** ：以下各项对应的系统能力均为SystemCapability.Ability.AbilityRuntime.Core
+**系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -44,11 +40,9 @@ Ability生命周期状态，该类型为枚举，可配合[AbilityDelegator](js-
 
 ## abilityDelegatorRegistry.getAbilityDelegator
 
-PhonePC/2in1TabletTVWearable
-
 getAbilityDelegator(): AbilityDelegator
 
-获取应用程序的[AbilityDelegator](js-apis-inner-application-abilitydelegator.md)对象，该对象能够使用调度测试框架的相关功能。
+获取应用程序的[AbilityDelegator](js-apis-inner-application-abilitydelegator.md)对象，该对象可用于调度测试框架，执行相关测试功能。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -58,32 +52,34 @@ getAbilityDelegator(): AbilityDelegator
 
 | 类型 | 说明 |
 | --- | --- |
-| [AbilityDelegator](js-apis-inner-application-abilitydelegator.md) | [AbilityDelegator](js-apis-inner-application-abilitydelegator.md)对象。可以用来调度测试框架相关功能。 |
+| [AbilityDelegator](js-apis-inner-application-abilitydelegator.md) | 用来调度测试框架相关功能。 |
 
 **示例：**
 
-```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-5. let want: Want = {
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EntryAbility'
-8. };
+// 获取应用程序的AbilityDelegator对象
+let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+// 构造Want参数，指定目标Ability
+let want: Want = {
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EntryAbility'
+};
 
-10. abilityDelegator.startAbility(want, (err) => {
-11. if (err) {
-12. console.error(`Failed start ability, error: ${JSON.stringify(err)}`);
-13. } else {
-14. console.info('Success start ability.');
-15. }
-16. });
+// 启动指定Ability
+abilityDelegator.startAbility(want, (err: BusinessError) => {
+  if (err) {
+    console.error(`Failed start ability. code: ${err.code}, message: ${err.message}`);
+  } else {
+    console.info('Success start ability.');
+  }
+});
 ```
 
 ## abilityDelegatorRegistry.getArguments
-
-PhonePC/2in1TabletTVWearable
 
 getArguments(): AbilityDelegatorArgs
 
@@ -101,19 +97,19 @@ getArguments(): AbilityDelegatorArgs
 
 **示例：**
 
-```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
 
-3. let args = abilityDelegatorRegistry.getArguments();
-4. console.info(`getArguments bundleName: ${args.bundleName}`);
-5. console.info(`getArguments parameters: ${JSON.stringify(args.parameters)}`);
-6. console.info(`getArguments testCaseNames: ${args.testCaseNames}`);
-7. console.info(`getArguments testRunnerClassName: ${args.testRunnerClassName}`);
+// 获取单元测试参数AbilityDelegatorArgs对象
+let args = abilityDelegatorRegistry.getArguments();
+// 打印测试参数信息
+console.info(`getArguments bundleName: ${args.bundleName}`);
+console.info(`getArguments parameters: ${JSON.stringify(args.parameters)}`);
+console.info(`getArguments testCaseNames: ${args.testCaseNames}`);
+console.info(`getArguments testRunnerClassName: ${args.testRunnerClassName}`);
 ```
 
 ## AbilityDelegator
-
-PhonePC/2in1TabletTVWearable
 
 type AbilityDelegator = \_AbilityDelegator
 
@@ -129,8 +125,6 @@ type AbilityDelegator = \_AbilityDelegator
 
 ## AbilityDelegatorArgs
 
-PhonePC/2in1TabletTVWearable
-
 type AbilityDelegatorArgs = \_AbilityDelegatorArgs
 
 提供在应用程序执行测试用例期间，获取测试用例参数AbilityDelegatorArgs对象的能力。
@@ -145,11 +139,9 @@ type AbilityDelegatorArgs = \_AbilityDelegatorArgs
 
 ## AbilityMonitor
 
-PhonePC/2in1TabletTVWearable
-
 type AbilityMonitor = \_AbilityMonitor
 
-提供作为abilityDelegator中的[addAbilityMonitor](js-apis-inner-application-abilitydelegator.md#addabilitymonitor9)的入参来监听指定UIAbility的生命周期变化。
+作为[addAbilityMonitor](js-apis-inner-application-abilitydelegator.md#addabilitymonitor)的入参，用于监听指定UIAbility的生命周期变化。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -161,11 +153,9 @@ type AbilityMonitor = \_AbilityMonitor
 
 ## ShellCmdResult
 
-PhonePC/2in1TabletTVWearable
-
 type ShellCmdResult = \_ShellCmdResult
 
-提供Shell命令执行结果的能力。
+提供获取Shell命令执行结果的能力，可用于在自动化测试中执行Shell命令并获取命令的返回结果，包括命令的返回码和标准输出内容等信息。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -177,11 +167,9 @@ type ShellCmdResult = \_ShellCmdResult
 
 ## AbilityStageMonitor14+
 
-PhonePC/2in1TabletTVWearable
-
 type AbilityStageMonitor = \_AbilityStageMonitor
 
-提供监听指定[AbilityStage](js-apis-app-ability-abilitystage.md)对象的能力。开发者可以将AbilityStageMonitor作为[abilityDelegator.waitAbilityStageMonitor](js-apis-inner-application-abilitydelegator.md#waitabilitystagemonitor9)的入参来注册监听。
+提供监听指定[AbilityStage](js-apis-app-ability-abilitystage.md)对象的能力。开发者可以将AbilityStageMonitor作为[abilityDelegator.waitAbilityStageMonitor](js-apis-inner-application-abilitydelegator.md#waitabilitystagemonitor)的入参来注册监听。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 

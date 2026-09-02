@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/device_sensor
 title: 穿戴设备传感器获取
 breadcrumb: 指南 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > 手机侧应用开发 > 应用开发 > 穿戴设备传感器获取
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:53+08:00
+scraped_at: 2026-09-02T14:59:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:62aef3aad815a7edeb24e56df54483ce145fed258186c65b849d042b9326ecf9
+content_hash: sha256:a409b6599429f88423412c544eb9aa94cca8d2e31f8e6f5a6ebd2af57026db67
 ---
 
-说明
+**说明** 
 
 人体传感器功能仅限专业研究机构使用。
 
@@ -21,14 +21,14 @@ content_hash: sha256:62aef3aad815a7edeb24e56df54483ce145fed258186c65b849d042b932
 | ECG、PPG、HR | [HEALTH\_SENSOR](../harmonyos-references/wearengine_api.md#permission)人体传感器 |
 | ACC、GYRO、MAG | [MOTION\_SENSOR](../harmonyos-references/wearengine_api.md#permission)运动传感器 |
 
-说明
+**说明** 
 
 * 穿戴设备侧无对应的应用，手机侧应用也可以使用该能力获取穿戴设备传感器。
 * 请确保穿戴设备和华为运动健康App处于连接状态。用户可进入App“设备”界面查看设备是否在线。开发者可调用[getConnectedDevices](../harmonyos-references/wearengine_api.md#getconnecteddevices)方法了解设备是否在线，如果返回列表中不包含目标设备，则提醒用户重新连接该设备。
 
 ## 获取穿戴设备的传感器列表
 
-说明
+**说明** 
 
 该接口的调用需要在开发者联盟申请运动传感器权限或人体传感器（受限开放，请参考[申请接入Wear Engine服务](wearengine_apply.md)）权限并获得用户授权。
 
@@ -39,21 +39,21 @@ content_hash: sha256:62aef3aad815a7edeb24e56df54483ce145fed258186c65b849d042b932
 3. 调用[wearEngine](../harmonyos-references/wearengine_api.md)中的[getSensorClient](../harmonyos-references/wearengine_api.md#wearenginegetsensorclient)方法，获取[SensorClient](../harmonyos-references/wearengine_api.md#sensorclient)对象。
 4. 调用[getSensorList](../harmonyos-references/wearengine_api.md#getsensorlist)方法，获取指定连接设备的传感器列表。
 
-   ```
-   1. // 步骤3 获取SensorClient客户端
-   2. let sensorClient: wearEngine.SensorClient = wearEngine.getSensorClient(this.getUIContext().getHostContext());
+   ```typescript
+   // 步骤3 获取SensorClient客户端
+   let sensorClient: wearEngine.SensorClient = wearEngine.getSensorClient(this.getUIContext().getHostContext());
 
-   4. // 步骤4 获取指定连接设备的传感器列表
-   5. sensorClient.getSensorList(targetDevice.randomId).then((sensorList) => {
-   6. console.info(`Succeeded in getting sensor list, result is ${sensorList}`);
-   7. }).catch((error: BusinessError) => {
-   8. console.error(`Failed to get sensor list. Code is ${error.code}, message is ${error.message}`);
-   9. })
+   // 步骤4 获取指定连接设备的传感器列表
+   sensorClient.getSensorList(targetDevice.randomId).then((sensorList) => {
+     console.info(`Succeeded in getting sensor list, result is ${sensorList}`);
+   }).catch((error: BusinessError) => {
+     console.error(`Failed to get sensor list. Code is ${error.code}, message is ${error.message}`);
+   })
    ```
 
 ## 订阅指定传感器数据上报
 
-说明
+**说明** 
 
 该接口的调用需要在开发者联盟申请运动传感器权限或人体传感器权限（受限开放，请参考[申请接入Wear Engine服务](wearengine_apply.md)）并获得用户授权。
 
@@ -65,32 +65,32 @@ content_hash: sha256:62aef3aad815a7edeb24e56df54483ce145fed258186c65b849d042b932
 4. 核对传感器列表中是否存在目标传感器。
 5. 订阅或取消订阅传感器数据上报。
 
-   ```
-   1. let sensorClient: wearEngine.SensorClient = wearEngine.getSensorClient(this.getUIContext().getHostContext());
-   2. let sensorList: wearEngine.Sensor[] = await sensorClient.getSensorList(targetDevice.randomId);
-   3. sensorList.forEach((sensor, idx, arr) => {
-   4. if (sensor.type === wearEngine.SensorType.ACCELEROMETER) {
-   5. let callback = (sensorResult: wearEngine.SensorResult) => {
-   6. console.info(`Succeeded in getting sensor result, result is ${sensorResult}`);
-   7. }
-   8. // 订阅传感器数据上报
-   9. sensorClient.subscribeSensor(targetDevice.randomId, wearEngine.SensorType.ACCELEROMETER, callback).then(() => {
-   10. console.info(`Succeeded in subscribing sensor data.`);
-   11. }).catch((error: BusinessError) => {
-   12. console.error(`Failed to subscribe sensor data. Code is ${error.code}, message is ${error.message}`);
-   13. })
+   ```typescript
+   let sensorClient: wearEngine.SensorClient = wearEngine.getSensorClient(this.getUIContext().getHostContext());
+   let sensorList: wearEngine.Sensor[] = await sensorClient.getSensorList(targetDevice.randomId);
+   sensorList.forEach((sensor, idx, arr) => {
+     if (sensor.type === wearEngine.SensorType.ACCELEROMETER) {
+       let callback = (sensorResult: wearEngine.SensorResult) => {
+         console.info(`Succeeded in getting sensor result, result is ${sensorResult}`);
+       }
+       // 订阅传感器数据上报
+       sensorClient.subscribeSensor(targetDevice.randomId, wearEngine.SensorType.ACCELEROMETER, callback).then(() => {
+         console.info(`Succeeded in subscribing sensor data.`);
+       }).catch((error: BusinessError) => {
+         console.error(`Failed to subscribe sensor data. Code is ${error.code}, message is ${error.message}`);
+       })
 
-   15. // 取消传感器数据上报
-   16. sensorClient.unsubscribeSensor(targetDevice.randomId, wearEngine.SensorType.ACCELEROMETER, callback).then(() => {
-   17. console.info(`Succeeded in unsubscribing sensor data.`);
-   18. }).catch((error: BusinessError) => {
-   19. console.error(`Failed to unsubscribe sensor data. Code is ${error.code}, message is ${error.message}`);
-   20. })
-   21. }
-   22. })
+       // 取消传感器数据上报
+       sensorClient.unsubscribeSensor(targetDevice.randomId, wearEngine.SensorType.ACCELEROMETER, callback).then(() => {
+         console.info(`Succeeded in unsubscribing sensor data.`);
+       }).catch((error: BusinessError) => {
+         console.error(`Failed to unsubscribe sensor data. Code is ${error.code}, message is ${error.message}`);
+       })
+     }
+   })
    ```
 
-   说明
+   **说明** 
 
    * 传感器成功打开后，会根据每个传感器的上报周期，连续不断地通过[subscribeSensor](../harmonyos-references/wearengine_api.md#subscribesensor)方法入参的回调函数上报数据，数据上报时长可由开发者通过取消订阅传感器接口自行控制。每组数据都有时间戳属性，建议开发者根据时间戳进行数据对齐。不同的传感器上报的数据格式是不同的，具体可参见：[穿戴设备传感器数据格式及样例](device_sensor.md#穿戴设备传感器数据格式及样例)。
    * 传感器分为多通道传感器，如PPG、ECG，和非多通道传感器，如ACC。对于多通道传感器上报的数据，可以通过[SensorData](../harmonyos-references/wearengine_api.md#sensordata)中的channel字段来区分通道。
@@ -98,7 +98,7 @@ content_hash: sha256:62aef3aad815a7edeb24e56df54483ce145fed258186c65b849d042b932
 
 ## 穿戴设备传感器数据格式及样例
 
-说明
+**说明** 
 
 数据上报数量非固定，示例中给出的是通常上报结果，实际有可能根据设备原因增加或者减少数据。
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 数据存储方案如何选择
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 数据存储方案如何选择
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:19+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:51+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:1e2c9b05fa9fa8725d5c8dde4d48bd916907d21ecfa3da2a34949282bd997393
 ---
 

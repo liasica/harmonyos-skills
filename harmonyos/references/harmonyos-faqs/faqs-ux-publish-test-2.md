@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ux-publish
 title: 测试报告中，所有检测项均异常，异常原因提示“the ux script reports an error”，该如何处理
 breadcrumb: FAQ > DevEco Testing > 上架预检 > UX基础质量测试 > 测试报告中，所有检测项均异常，异常原因提示“the ux script reports an error”，该如何处理
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:34+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:73cee2ddbdd5fb28d21aeab7c1ff9df1c0f6f805698dbaf6c0459177a0988284
 ---
 

@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 取消用户级凭证授权
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 开放接口调用凭证 > 取消用户级凭证授权
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:12+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7b5288114b3d316597e655b59a14cb2d4387100f03e13feda47af4e85dfe7695
+scraped_at: 2026-09-02T15:02:50+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b7875d27572df3ee8fb0c20a9757e5ab017de6069605f6af96ab32f07887739a
 ---
 
-注意
+**注意** 
 
 为了更安全的网络访问，请务必使用TLS1.2协议及规定内的加密套件。若使用协议是TLS1.0、TLS1.1或规定外的加密套件，可能无法正常访问华为账号服务。
 
@@ -53,12 +53,12 @@ content_hash: sha256:7b5288114b3d316597e655b59a14cb2d4387100f03e13feda47af4e85df
 
 ## 请求示例
 
-```
-1. POST /oauth2/v3/revoke HTTP/1.1
-2. Host: oauth-login.cloud.huawei.com
-3. Content-Type: application/x-www-form-urlencoded
+```http
+POST /oauth2/v3/revoke HTTP/1.1
+Host: oauth-login.cloud.huawei.com
+Content-Type: application/x-www-form-urlencoded
 
-5. token=<token>
+token=<token>
 ```
 
 ## 响应参数
@@ -85,62 +85,62 @@ content_hash: sha256:7b5288114b3d316597e655b59a14cb2d4387100f03e13feda47af4e85df
 
 ### 请求成功时
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json
 
-4. {}
+{}
 ```
 
 ### 请求失败时
 
-```
-1. HTTP/1.1 400 Bad Request
-2. Content-Type: application/json
+```json
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
 
-4. {
-5. "sub_error": 31204,
-6. "error_description": "token revoked",
-7. "error": 1203
-8. }
+{
+    "sub_error": 31204,
+    "error_description": "token revoked",
+    "error": 1203
+}
 ```
 
 ## 示例代码
 
 Java示例代码如下，运行前需要进行[示例代码环境配置](account-api-common.md#示例代码环境配置)（请将此示例代码与工具类CallUtils放于同一路径下，如不在同一路径，请手动添加import）
 
-```
-1. import com.alibaba.fastjson2.JSONObject;
-2. import org.apache.http.NameValuePair;
-3. import org.apache.http.client.entity.UrlEncodedFormEntity;
-4. import org.apache.http.client.methods.HttpPost;
-5. import org.apache.http.message.BasicNameValuePair;
-6. import java.io.IOException;
-7. import java.util.ArrayList;
-8. import java.util.List;
+```java
+import com.alibaba.fastjson2.JSONObject;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.message.BasicNameValuePair;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-10. /**
-11. * 取消用户级凭证授权
-12. */
-13. public class RevokeTokenAPIDemo {
-14. public static void main(String[] args) throws IOException {
-15. // 取消用户级凭证授权的接口URL
-16. String url = "https://oauth-login.cloud.huawei.com/oauth2/v3/revoke";
-17. // 用户级凭证Access Token或刷新凭证Refresh Token
-18. String token = "<Access Token or Refresh Token>";
-19. JSONObject result = revokeToken(url, token);
-20. }
+/**
+ * 取消用户级凭证授权
+ */
+public class RevokeTokenAPIDemo {
+    public static void main(String[] args) throws IOException {
+        // 取消用户级凭证授权的接口URL
+        String url = "https://oauth-login.cloud.huawei.com/oauth2/v3/revoke";
+        // 用户级凭证Access Token或刷新凭证Refresh Token
+        String token = "<Access Token or Refresh Token>";
+        JSONObject result = revokeToken(url, token);
+    }
 
-22. private static JSONObject revokeToken(String url, String token) throws IOException {
-23. HttpPost httpPost = new HttpPost(url);
-24. List<NameValuePair> request = new ArrayList<>();
-25. request.add(new BasicNameValuePair("token", token));
-26. httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded");
-27. httpPost.setEntity(new UrlEncodedFormEntity(request));
-28. // 如需要自定义异常处理请使用api CallUtils#remoteCall(HttpUriRequest, BiFunction<CloseableHttpResponse,String,E>)
-29. return CallUtils.toJsonObject(CallUtils.remoteCallOAuth(httpPost));
-30. }
-31. }
+    private static JSONObject revokeToken(String url, String token) throws IOException {
+        HttpPost httpPost = new HttpPost(url);
+        List<NameValuePair> request = new ArrayList<>();
+        request.add(new BasicNameValuePair("token", token));
+        httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded");
+        httpPost.setEntity(new UrlEncodedFormEntity(request));
+        // 如需要自定义异常处理请使用api CallUtils#remoteCall(HttpUriRequest, BiFunction<CloseableHttpResponse,String,E>)
+        return CallUtils.toJsonObject(CallUtils.remoteCallOAuth(httpPost));
+    }
+}
 ```
 
 ## 错误码
@@ -160,12 +160,12 @@ Java示例代码如下，运行前需要进行[示例代码环境配置](account
 
 | 业务响应主错误码 | 业务响应子错误码 | 描述 | 解决方法 |
 | --- | --- | --- | --- |
-| 1101 | 20222 | 无效的token。 | token格式不正确，可能原因：  请求头的Content-Type为application/x-www-form-urlencoded，但实际代码调用时，未对请求body体进行URLEncode处理，可参考[示例代码](account-api-obtain-revoke-token.md#示例代码)组装参数。 |
+| 1101 | 20222 | token格式不正确。 | token格式不正确，可能原因：  请求头的Content-Type为application/x-www-form-urlencoded，但实际代码调用时，未对请求body体进行URLEncode处理，可参考[示例代码](account-api-obtain-revoke-token.md#示例代码)组装参数。 |
 | 1102 | 20221 | token为空。 | 请按照接口参数的要求，传入正确的token参数。 |
 | 1203 | 11205 | token已过期。Access Token有效期为3600秒，Refresh Token有效期为180天，超过有效期后将无法继续使用。 | 请引导用户重新授权，获取新的token并重试。 |
 | 1203 | 17009 | 无效的token。 | 传入的token参数无效，请重新获取token。 |
 | 1203 | 17010 | token验证失败。 | token不是一个正确有效的数据，请检查token参数。 |
 | 1203 | 31202 | token解析失败。 | token不是一个正确有效的数据，请检查token参数。 |
 | 1203 | 31204 | token已失效。正常Access Token有效期为3600秒，Refresh Token有效期为180天，但是由于用户的行为（如更改密码、取消应用的授权等行为），导致华为服务器提前失效已颁发的Access Token和Refresh Token。 | 请引导用户重新授权，获取新的token并重试。 |
-| 1203 | 31218 | token格式不正确。 | 请检查token格式是否正确。 |
-| 1203 | 500 | 系统内部错误。 | 系统内部处理错误，建议业务打印错误码信息，并请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
+| 1203 | 500 | 系统内部错误。 | 系统内部处理错误，建议打印错误码信息，并请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
+| 1203 | 1203 | 系统未知异常。 | 系统未知异常，建议打印错误码信息，并请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |

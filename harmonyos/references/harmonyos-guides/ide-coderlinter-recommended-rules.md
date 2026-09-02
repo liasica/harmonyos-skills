@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-coderlint
 title: recommended推荐规则清单
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > recommended推荐规则清单
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:22+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:e71be2c6e5c637064a4011b39f334e8e20d80a7aadbbda03e7b652f67d594a6d
+scraped_at: 2026-09-02T14:50:50+08:00
+doc_updated_at: 2026-06-24
+content_hash: sha256:b2c9b6103f57b13cfbc4c44f34d1b4da55e2a4dee2f7ea389c8b2f11079c0000
 ---
 
 ## 通用规则推荐规则集@typescript-eslint/recommended
@@ -39,7 +39,7 @@ content_hash: sha256:e71be2c6e5c637064a4011b39f334e8e20d80a7aadbbda03e7b652f67d5
 | @security/no-unsafe-dsa | 该规则禁止使用不安全的DSA签名算法。 |
 | @security/no-unsafe-dsa-key | 该规则禁止使用不安全的DSA密钥。 |
 | @security/no-unsafe-ecdsa | 该规则禁止在ECDSA签名算法中使用不安全的SHA1摘要算法。 |
-| @security/no-unsafe-hash | 该规则使用禁止不安全的哈希算法。 |
+| @security/no-unsafe-hash | 该规则禁止使用不安全的哈希算法。 |
 | @security/no-unsafe-mac | 该规则禁止在MAC消息认证算法中使用不安全的哈希算法。 |
 | @security/no-unsafe-rsa-encrypt | 该规则禁止使用不安全的RSA非对称加密算法。 |
 | @security/no-unsafe-rsa-key | 该规则禁止使用不安全的RSA密钥。 |
@@ -84,7 +84,7 @@ content_hash: sha256:e71be2c6e5c637064a4011b39f334e8e20d80a7aadbbda03e7b652f67d5
 | @performance/reuse-date-instances-check | 用于检测在循环或调用频繁的方法中重复创建Date对象，建议开发者重用现有实例或使用时间戳进行计算，减少创建Date成本。 |
 | @performance/crypto-replacement-check | 对于三方库@ohos/crypto-js所提供的大部分接口，SDK（@ohos.security.cryptoFramework）中有对应的系统原生实现。建议使用系统原生接口。 |
 | @performance/monitor-invisible-area-in-image-animation | 使用ImageAnimation实现帧动画时，建议显式调用monitorInvisibleArea接口。在动画组件不可见时，会停止动画播放，减少无效的冗余动画带来的负载恶化。 |
-| @performance/datashare-query-unrelease-check | 建议使用DataShareHelper的query接口查询数据得到结果后，应及时关闭，避免造成内存泄露。 |
+| @performance/datashare-query-unrelease-check | 建议使用DataShareHelper的query接口查询数据得到结果后，应及时关闭，避免造成内存泄漏。 |
 | @performance/update-state-var-between-animatetos-check | 如果多个animateTo之间存在状态更新，会导致执行下一个animateTo之前又存在需要更新的脏节点，可能造成冗余更新。因此不建议在两次animateTo之间进行状态变量更新。 |
 
 ## 预览规则集@previewer/recommended

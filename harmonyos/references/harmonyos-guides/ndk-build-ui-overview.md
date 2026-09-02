@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-build-ui-
 title: 基于NDK构建UI概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 基于NDK构建UI概述
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:29+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5710433bda0d42b8e3c0e741e422aca0e95a978f09705f78425bcb9b068f1e91
+scraped_at: 2026-09-02T14:49:52+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:02fbe1cc305ff867cce31660b80d9223c35a1739a09581a5fc94ff8b758b10f6
 ---
 
 ArkUI开发框架提供了一系列[NDK接口](ndk-development-overview.md)，能够在应用中使用C和C++代码构建UI界面，这些接口包括UI组件创建、UI树操作、属性设置和事件监听等。面向通用UI界面开发场景，建议使用ArkTS代码和ArkUI声明式开发框架。然而，如果需要实现以下一个或多个目标，那么ArkUI NDK接口就能派上用场：
@@ -35,11 +35,11 @@ ArkUI NDK接口能力主要包括：
 
 **图1** NDK接口和ArkTS声明式关系架构图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/qX7Eph_3QpOw-Yk8cF48wQ/zh-cn_image_0000002589244359.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/8sweVixeR9mIICaguAbHrg/zh-cn_image_0000002736312993.png)
 
 **图2** 通过NDK接口创建的组件挂载示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/xE3hFAYuTr-5nqrzmgtXag/zh-cn_image_0000002558764552.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/X5euEpFDQiWXBI7WFlCLBg/zh-cn_image_0000002706673952.png)
 
 * ArkTS声明式UI前端和NDK接口都是针对ArkUI底层实现的接口暴露，NDK接口相比于ArkTS声明式UI前端，除了剥离状态管理等声明式UI语法外，还精简了组件能力，将ArkUI组件核心功能通过C接口进行封装暴露。
 * NDK创建的UI组件需要通过ArkTS层的占位组件进行挂载显示，挂载后，NDK创建的组件和ArkTS创建的组件位于同一个UI树上，相关布局渲染和事件处理遵循相同规则。
@@ -52,10 +52,11 @@ ArkUI NDK接口能力主要包括：
 | --- | --- |
 | [NDK开发导读](ndk-development-overview.md) | 介绍NDK的适用场景与必备基础知识。 |
 | [接入ArkTS页面](ndk-access-the-arkts-page.md) | 介绍了如何将NDK接口开发的UI界面挂载到ArkTS主页面上进行渲染显示。 |
-| [添加交互事件](ndk-listen-to-component-events.md) | 介绍了如何添加组件的交互事件。 |
+| [添加事件响应](ndk-add-event-response.md) | 介绍了如何在Native侧添加事件监听和事件处理逻辑。 |
 | [使用动画](ndk-use-animation.md) | 介绍了如何在Native侧添加动画。 |
 | [构建布局](ndk-loading-long-list.md) | 介绍了如何在Native侧使用容器组件构建布局。 |
 | [构建弹窗](ndk-build-pop-up-window.md) | 介绍了如何使用弹窗接口构建UI界面进行弹窗显示。 |
+| [构建表单组件](ndk-build-form-components.md) | 介绍了如何使用NDK接口创建按钮、滑动条、开关、复选框和单选按钮等表单组件。 |
 | [构建自定义组件](ndk-build-custom-components.md) | 介绍了如何使用NDK接口能力构建自定义组件，实现差异化UI组件。 |
 | [嵌入ArkTS组件](ndk-embed-arkts-components.md) | 介绍了如何在Native侧构建带有ArkTS组件的界面。 |
 | [构建渲染节点](ndk-embed-render-components.md) | 介绍了如何在Native侧构建渲染节点。 |
@@ -64,7 +65,7 @@ ArkUI NDK接口能力主要包括：
 | [查询和操作自定义节点](ndk-node-query-operate.md) | 介绍了如何对自定义节点进行查询和操作。 |
 | [通过EmbeddedComponent拉起EmbeddedUIExtensionAbility](ndk-embedded-component.md) | 介绍了如何在Native侧通过EmbeddedComponent拉起EmbeddedUIExtensionAbility。主要用于有进程隔离需求的模块化开发场景。 |
 | [使用文本](ndk-styled-string.md) | 介绍了Text组件与字体引擎如何配套使用。 |
-| [在NDK中保证多实例场景功能正常](ndk-scope-task.md) | 介绍了如何在NDK多线程场景中保证接口调用的功能正常。 |
+| [在NDK中保证多实例场景功能正常](ndk-scope-task.md) | 介绍了如何在NDK多实例场景中保证接口调用的功能正常。 |
 | [使用多线程NDK接口并行化构建UI页面](ndk-build-on-multi-thread.md) | 介绍了如何使用NDK进行多线程UI组件创建。 |
 
 ## 注意事项

@@ -3,22 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-loca
 title: Location
 breadcrumb: API参考 > 应用服务 > Location Kit（位置服务） > C API > 模块 > Location
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:06+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8b91fcebe08eee55b27f5197d115e6e7b94f22f8b59d9d85dd4add03c19bcbf7
+scraped_at: 2026-09-02T14:53:21+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3af5d82222e0861fd1184d57fcf8921cadf8c1d57a2cc73b7eabeed087bc8169
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供用于查询位置开关状态、启动和停止定位的功能。
 
 **起始版本：** 13
 
 ## 文件汇总
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

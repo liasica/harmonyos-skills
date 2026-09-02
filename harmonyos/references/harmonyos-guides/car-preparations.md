@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/car-preparati
 title: 开发准备
 breadcrumb: 指南 > 系统 > 硬件 > Car Kit（车服务） > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:33:28+08:00
+scraped_at: 2026-09-02T14:59:37+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2c4210c2b7836bb0b78fbe83d06de62f561abbf84f40985d0ea78f140a4c3afc
+content_hash: sha256:2df539ddb58e4716fe74da8f5cf3fbb6e812fa1efef179efb60db9dcc8bdbc71
 ---
 
 应用在使用Car Kit能力前，开发者需要完成的配置：配置编译模式、配置权限、配置能力。
 
 ## 配置编译模式
 
-在打包应用时，请在DevEco Studio中，点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/_1_ObhKjTv20vrJDf-2O7w/zh-cn_image_0000002589244771.png)图标，将编译模式修改为“release”，然后点击右下角的“Apply”即可。
+在打包应用时，请在DevEco Studio中，点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/-eICjmHaQT-b3fM3SLGoKA/zh-cn_image_0000002706674462.png)图标，将编译模式修改为“release”，然后点击右下角的“Apply”即可。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/SwNvxjUkT_2sGs39heTawQ/zh-cn_image_0000002558764966.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/WorVT79RQ0mIGp243hgywQ/zh-cn_image_0000002736433551.png)
 
 ## 配置权限
 
@@ -25,19 +25,19 @@ Car Kit为开发者提供了两类接口：导航类接口和出行互联类接�
 
 开发者需要在entry/src/main路径下的应用配置文件module.json5中配置所需权限。示例代码如下所示：
 
-```
-1. {
-2. "module": {
-3. "requestPermissions": [
-4. {
-5. "name": "ohos.permission.ACCESS_CAR_DISTRIBUTED_ENGINE"
-6. },
-7. {
-8. "name": "ohos.permission.ACCESS_SERVICE_NAVIGATION_INFO"
-9. }
-10. ]
-11. }
-12. }
+```typescript
+{
+  "module": {
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.ACCESS_CAR_DISTRIBUTED_ENGINE"
+      },
+      {
+        "name": "ohos.permission.ACCESS_SERVICE_NAVIGATION_INFO"
+      }
+    ]
+  }
+}
 ```
 
 ## 配置能力
@@ -46,68 +46,68 @@ Car Kit为开发者提供了两类接口：导航类接口和出行互联类接�
 
 1. 在[skills](module-configuration-file.md#skills标签)中配置导航信息服务的actions。
 
-   说明
+   **说明** 
 
    生态应用如有其它skills配置，请避免直接修改现有的配置，需在skills数组内追加。
 
-   ```
-   1. "skills": [
-   2. {
-   3. "entities": [
-   4. "entity.system.default"
-   5. ],
-   6. "actions": [
-   7. "action.navigation.infoservice"
-   8. ]
-   9. },
-   10. // 其它 skills 配置
-   11. {
-   12. // ...
-   13. }
-   14. ]
+   ```typescript
+   "skills": [
+     {
+       "entities": [
+         "entity.system.default"
+       ],
+       "actions": [
+         "action.navigation.infoservice"
+       ]
+     },
+     // 其它 skills 配置
+     {
+       // ...
+     }
+   ]
    ```
 2. 在元数据信息metadata中配置导航流转能力或HiCar能力。具体示例代码如下所示：
 
-   ```
-   1. {
-   2. "module": {
-   3. "abilities": [
-   4. {
-   5. "name": "xxxx",
-   6. "srcEntry": "xxxx",
-   7. "description": "xxxx",
-   8. "skills": [
-   9. {
-   10. "entities": [
-   11. "entity.system.home"
-   12. ],
-   13. "actions": [
-   14. "action.system.home"
-   15. ]
-   16. },
-   17. {
-   18. "entities": [
-   19. "entity.system.default"
-   20. ],
-   21. "actions": [
-   22. "action.navigation.infoservice"
-   23. ]
-   24. }
-   25. ],
-   26. "metadata": [
-   27. {
-   28. "name" : "carHopCapability",
-   29. "value" : "carHopNavi,getOnCarNavi,insideCarNavi,getOffCarNavi"
-   30. },
-   31. {
-   32. "name" : "hiCarCapability",
-   33. "value" :"basicNavi,shortcutOper,multiScreenUI,mapUIOper,updateNaviStatus,searchPOI"
-   34. }
-   35. ]
-   36. }
-   37. ]
-   38. }
-   39. }
+   ```typescript
+   {
+     "module": {
+       "abilities": [
+        {
+           "name": "xxxx",
+           "srcEntry": "xxxx",
+           "description": "xxxx",
+           "skills": [
+             {
+               "entities": [
+                 "entity.system.home"
+               ],
+               "actions": [
+                 "action.system.home"
+               ]
+             },
+             {
+               "entities": [
+                 "entity.system.default"
+               ],
+               "actions": [
+                 "action.navigation.infoservice"
+               ]
+             }
+           ],
+           "metadata": [
+             {
+               "name" : "carHopCapability",
+               "value" : "carHopNavi,getOnCarNavi,insideCarNavi,getOffCarNavi"
+             },
+             {
+               "name" : "hiCarCapability",
+               "value" :"basicNavi,shortcutOper,multiScreenUI,mapUIOper,updateNaviStatus,searchPOI"
+             }
+           ]
+         }
+       ]
+     }
+   }
    ```
 
 metadata的name可选值：carHopCapability、hiCarCapability。

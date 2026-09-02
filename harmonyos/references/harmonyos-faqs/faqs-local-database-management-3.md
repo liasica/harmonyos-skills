@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 如何将PixelMap的数据存储到数据库中
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 如何将PixelMap的数据存储到数据库中
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:11+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:51+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:cdb1eaeb8aa832bf1fdb33446da24e7b32cc925f066dad871f7f39932307be33
 ---
 

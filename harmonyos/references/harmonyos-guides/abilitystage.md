@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/abilitystage
 title: AbilityStage组件管理器
-breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > Stage模型应用组件 > AbilityStage组件管理器
+breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > AbilityStage组件管理器
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:43+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a640eb571a11971bc82cb26ab90cc764acd08189b8746e6b468e7de174c845ff
+scraped_at: 2026-09-02T14:59:09+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6027308b9f5168da7a4a6e198f763f44edfbe8895ebf745d9d3e27ef3e627efe
 ---
 
 ## 概述
@@ -32,36 +32,32 @@ DevEco Studio默认工程中未自动生成AbilityStage，如需要使用Ability
 2. 在exampleabilitystage目录，右键选择“New > ArkTS File”，新建一个文件并命名为MyAbilityStage.ets。
 3. 打开MyAbilityStage.ets文件，导入AbilityStage的依赖包，自定义类继承AbilityStage并加上需要的生命周期回调，示例中增加了一个[onCreate()](../harmonyos-references/js-apis-app-ability-abilitystage.md#oncreate)生命周期回调。
 
+   ```typescript
+   import { AbilityStage, Want } from '@kit.AbilityKit';
+
+   export default class MyAbilityStage extends AbilityStage {
+     onCreate(): void {
+       // 应用HAP首次加载时触发，可以在此执行该Module的初始化操作（例如资源预加载、线程创建等）。
+     }
+
+     onAcceptWant(want: Want): string {
+       // 仅specified模式下触发
+       return 'MyAbilityStage';
+     }
+   }
    ```
-   1. import { AbilityStage, Want } from '@kit.AbilityKit';
-
-   3. export default class MyAbilityStage extends AbilityStage {
-   4. onCreate(): void {
-   5. // 应用HAP首次加载时触发，可以在此执行该Module的初始化操作（例如资源预加载、线程创建等）。
-   6. }
-
-   8. onAcceptWant(want: Want): string {
-   9. // 仅specified模式下触发
-   10. return 'MyAbilityStage';
-   11. }
-   12. }
-   ```
-
-   [MyAbilityStage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/AbilityStage/entry/src/main/ets/exampleabilitystage/MyAbilityStage.ets#L16-L29)
 4. 在[module.json5配置文件](module-configuration-file.md)中，通过配置 srcEntry 参数来指定模块对应的代码路径，以作为HAP加载的入口。
 
+   ```json5
+   {
+     "module": {
+       "name": "entry",
+       "type": "entry",
+       "srcEntry": "./ets/myabilitystage/MyAbilityStage.ets",
+       // ···
+     }
+   }
    ```
-   1. {
-   2. "module": {
-   3. "name": "entry",
-   4. "type": "entry",
-   5. "srcEntry": "./ets/myabilitystage/MyAbilityStage.ets",
-   6. // ···
-   7. }
-   8. }
-   ```
-
-   [module.json5](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/AbilityStage/entry/src/main/module.json5#L16-L71)
 
 ### 监听系统环境变量的变化
 
@@ -71,40 +67,38 @@ DevEco Studio默认工程中未自动生成AbilityStage，如需要使用Ability
 * 当系统环境变量发生变更时，会触发EnvironmentCallback中的onConfigurationUpdated()回调，并打印相关信息。
 * 通过关闭应用进程，可以触发AbilityStage的onDestroy()生命周期回调。
 
+  ```typescript
+  import { EnvironmentCallback, AbilityStage } from '@kit.AbilityKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
+
+  export default class MyAbilityStage extends AbilityStage {
+    onCreate(): void {
+      console.info('AbilityStage onCreate');
+      let envCallback: EnvironmentCallback = {
+        onConfigurationUpdated(config) {
+          console.info(`envCallback onConfigurationUpdated success: ${JSON.stringify(config)}`);
+          let language = config.language; // 应用程序的当前语言
+          let colorMode = config.colorMode; // 深浅色模式
+          let direction = config.direction; // 屏幕方向
+          let fontSizeScale = config.fontSizeScale; // 字体大小缩放比例
+          let fontWeightScale = config.fontWeightScale; // 字体粗细缩放比例
+        },
+        onMemoryLevel(level) {
+          console.info(`onMemoryLevel level: ${level}`);
+        }
+      };
+      try {
+        let applicationContext = this.context.getApplicationContext();
+        let callbackId = applicationContext.on('environment', envCallback);
+        console.info(`callbackId: ${callbackId}`);
+      } catch (paramError) {
+        console.error(`error: ${(paramError as BusinessError).code}, ${(paramError as BusinessError).message}`);
+      }
+    }
+
+    onDestroy(): void {
+      // 通过onDestroy()方法，可以监听到Ability的销毁事件。
+      console.info('AbilityStage onDestroy');
+    }
+  }
   ```
-  1. import { EnvironmentCallback, AbilityStage } from '@kit.AbilityKit';
-  2. import { BusinessError } from '@kit.BasicServicesKit';
-
-  4. export default class MyAbilityStage extends AbilityStage {
-  5. onCreate(): void {
-  6. console.info('AbilityStage onCreate');
-  7. let envCallback: EnvironmentCallback = {
-  8. onConfigurationUpdated(config) {
-  9. console.info(`envCallback onConfigurationUpdated success: ${JSON.stringify(config)}`);
-  10. let language = config.language; // 应用程序的当前语言
-  11. let colorMode = config.colorMode; // 深浅色模式
-  12. let direction = config.direction; // 屏幕方向
-  13. let fontSizeScale = config.fontSizeScale; // 字体大小缩放比例
-  14. let fontWeightScale = config.fontWeightScale; // 字体粗细缩放比例
-  15. },
-  16. onMemoryLevel(level) {
-  17. console.info(`onMemoryLevel level: ${level}`);
-  18. }
-  19. };
-  20. try {
-  21. let applicationContext = this.context.getApplicationContext();
-  22. let callbackId = applicationContext.on('environment', envCallback);
-  23. console.info(`callbackId: ${callbackId}`);
-  24. } catch (paramError) {
-  25. console.error(`error: ${(paramError as BusinessError).code}, ${(paramError as BusinessError).message}`);
-  26. }
-  27. }
-
-  29. onDestroy(): void {
-  30. // 通过onDestroy()方法，可以监听到Ability的销毁事件。
-  31. console.info('AbilityStage onDestroy');
-  32. }
-  33. }
-  ```
-
-  [MyAbilityStage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/AbilityStage/entry/src/main/ets/myabilitystage/MyAbilityStage.ets#L16-L50)

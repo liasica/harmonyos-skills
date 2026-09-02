@@ -3,30 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Button
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > Button
 category: harmonyos-references
-scraped_at: 2026-04-29T13:51:57+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:f7f84d9084eaf5a1d4de9504055bc54a3c9fe5be18c26e1f955a3f7d51373478
+scraped_at: 2026-09-02T15:01:01+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:4b90bae5a6ad341cac53605353642981260094177382689924ced628e9d3a034
 ---
 
 按钮组件，可快速创建不同样式的按钮。
 
-说明
+**说明** 
 
 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 可以包含单个子组件。
 
 ## 接口
 
-PhonePC/2in1TabletTVWearable
-
 ### Button
-
-PhonePC/2in1TabletTVWearable
 
 Button(options: ButtonOptions)
 
@@ -45,8 +39,6 @@ Button(options: ButtonOptions)
 | options | [ButtonOptions](ts-basic-components-button.md#buttonoptions对象说明) | 是 | 配置按钮的显示样式。 |
 
 ### Button
-
-PhonePC/2in1TabletTVWearable
 
 Button(label: ResourceStr, options?: ButtonOptions)
 
@@ -69,8 +61,6 @@ Button(label: ResourceStr, options?: ButtonOptions)
 
 ### Button
 
-PhonePC/2in1TabletTVWearable
-
 Button()
 
 创建一个空按钮。
@@ -83,29 +73,23 @@ Button()
 
 ## ButtonOptions对象说明
 
-PhonePC/2in1TabletTVWearable
-
 按钮的样式。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| type | [ButtonType](ts-basic-components-button.md#buttontype枚举说明) | 否 | 是 | 按钮显示样式。  默认值：ButtonType.ROUNDED\_RECTANGLE  API version 18及之后，ButtonType的默认值修改为ButtonType.ROUNDED\_RECTANGLE。API version 18之前的版本，ButtonType的默认值为ButtonType.Capsule。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| stateEffect | boolean | 否 | 是 | 按钮按下时是否开启按压态显示效果。  true：开启按压效果；false：关闭按压效果。  默认值：true  **说明：**  当开启按压态显示效果，且开发者设置状态样式时，会基于状态样式设置完成后的背景色再进行颜色叠加。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| buttonStyle11+ | [ButtonStyleMode](ts-basic-components-button.md#buttonstylemode11枚举说明) | 否 | 是 | 按钮的样式和重要程度，根据设置枚举值的不同，系统自动会调整按钮的背景色和文字颜色。背景色和文字颜色也支持开发者通过[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、[fontColor](ts-basic-components-button.md#fontcolor)和[role](ts-basic-components-button.md#role12)接口设置，实际显示效果以最后一次设置为准。  默认值：ButtonStyleMode.EMPHASIZED  **说明：**  按钮重要程度：强调按钮>普通按钮>文字按钮。  **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| controlSize11+ | [ControlSize](ts-basic-components-button.md#controlsize11枚举说明) | 否 | 是 | 按钮的尺寸。  默认值：ControlSize.NORMAL  **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| role12+ | [ButtonRole](ts-basic-components-button.md#buttonrole12枚举说明) | 否 | 是 | 按钮的角色，根据设置枚举值的不同，系统自动会调整按钮的背景色和文字颜色。背景色和文字颜色也支持开发者通过[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、[fontColor](ts-basic-components-button.md#fontcolor)和[buttonStyle](ts-basic-components-button.md#buttonstyle11)接口设置，实际显示效果以最后一次设置为准。  默认值：ButtonRole.NORMAL  **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| type | [ButtonType](ts-basic-components-button.md#buttontype枚举说明) | 否 | 是 | 按钮显示样式。  默认值：API version 18及之后为ButtonType.ROUNDED\_RECTANGLE，API version 18之前为ButtonType.Capsule。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| stateEffect | boolean | 否 | 是 | 按钮按下时是否开启按压态显示效果。  true：开启按压效果；false：关闭按压效果。  默认值：true  **说明：**  当开启按压态显示效果，且开发者设置状态样式时，会基于状态样式设置完成后的背景色再进行颜色叠加。使用多态样式设置按压态时，需优先设置stateEffect为false，防止内置按压态与多态样式按压态冲突。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| buttonStyle11+ | [ButtonStyleMode](ts-basic-components-button.md#buttonstylemode11枚举说明) | 否 | 是 | 按钮的样式和重要程度。根据设置枚举值的不同，系统自动调整按钮的背景色和文字颜色。背景色和文字颜色也支持开发者通过[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、[fontColor](ts-basic-components-button.md#fontcolor)和[role](ts-basic-components-button.md#role12)接口设置，实际显示效果以最后一次设置为准。  默认值：ButtonStyleMode.EMPHASIZED  **说明：** 按钮重要程度：强调按钮>普通按钮>文字按钮。  **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| controlSize11+ | [ControlSize](ts-basic-components-button.md#controlsize11枚举说明) | 否 | 是 | 按钮的尺寸。  默认值：ControlSize.NORMAL  **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| role12+ | [ButtonRole](ts-basic-components-button.md#buttonrole12枚举说明) | 否 | 是 | 按钮的角色。根据设置枚举值的不同，系统自动调整按钮的背景色和文字颜色。背景色和文字颜色也支持开发者通过[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、[fontColor](ts-basic-components-button.md#fontcolor)和[buttonStyle](ts-basic-components-button.md#buttonstyle11)接口设置，实际显示效果以最后一次设置为准。  默认值：ButtonRole.NORMAL  **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](ts-component-general-attributes.md)外，还支持以下属性：
 
 ### type
-
-PhonePC/2in1TabletTVWearable
 
 type(value: ButtonType)
 
@@ -125,8 +109,6 @@ type(value: ButtonType)
 
 ### fontSize
 
-PhonePC/2in1TabletTVWearable
-
 fontSize(value: Length)
 
 设置文本显示字号。
@@ -141,11 +123,9 @@ fontSize(value: Length)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Length](ts-types.md#length) | 是 | 文本显示字号。  默认值：当controlSize为ControlSize.NORMAL时，默认值为$r('sys.float.Body\_L')。  当controlSize为ControlSize.SMALL时，默认值为$r('sys.float.Body\_S')。  **说明**：设置string类型时，不支持百分比。 |
+| value | [Length](ts-types.md#length) | 是 | 设置文本显示字号。  默认值：当controlSize为ControlSize.NORMAL时，默认值为$r('sys.float.Body\_L')。  当controlSize为ControlSize.SMALL时，默认值为$r('sys.float.Body\_S')。  **说明**：设置string类型时，支持vp、fp等单位，不支持百分比。 |
 
 ### fontColor
-
-PhonePC/2in1TabletTVWearable
 
 fontColor(value: ResourceColor)
 
@@ -161,11 +141,9 @@ fontColor(value: ResourceColor)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [ResourceColor](ts-types.md#resourcecolor) | 是 | 文本显示颜色。  默认值：$r('sys.color.font\_on\_primary')，显示为白色字体。 |
+| value | [ResourceColor](ts-types.md#resourcecolor) | 是 | 文本显示颜色。  默认值：$r('sys.color.font\_on\_primary')。 |
 
 ### fontWeight
-
-PhonePC/2in1TabletTVWearable
 
 fontWeight(value: number | FontWeight | string)
 
@@ -185,8 +163,6 @@ fontWeight(value: number | FontWeight | string)
 
 ### fontStyle8+
 
-PhonePC/2in1TabletTVWearable
-
 fontStyle(value: FontStyle)
 
 设置文本的字体样式。
@@ -205,8 +181,6 @@ fontStyle(value: FontStyle)
 
 ### stateEffect
 
-PhonePC/2in1TabletTVWearable
-
 stateEffect(value: boolean)
 
 设置是否开启按压态显示效果。
@@ -223,13 +197,11 @@ stateEffect(value: boolean)
 | --- | --- | --- | --- |
 | value | boolean | 是 | 按钮按下时是否开启按压态显示效果。  true：开启按压效果；false：关闭按压效果。  默认值：true |
 
-说明
+**说明** 
 
 使用多态样式设置按压态时，需优先设置stateEffect为false，防止内置按压态与多态样式按压态冲突。
 
 ### fontFamily8+
-
-PhonePC/2in1TabletTVWearable
 
 fontFamily(value: string | Resource)
 
@@ -249,13 +221,13 @@ fontFamily(value: string | Resource)
 
 ### labelStyle10+
 
-PhonePC/2in1TabletTVWearable
-
 labelStyle(value: LabelStyle)
 
 设置Button组件label文本和字体的样式。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -267,19 +239,19 @@ labelStyle(value: LabelStyle)
 
 ### buttonStyle11+
 
-PhonePC/2in1TabletTVWearable
-
 buttonStyle(value: ButtonStyleMode)
 
-设置Button组件的样式和重要程度。根据设置枚举值的不同，系统自动会调整按钮的背景色和文字颜色。背景色和文字颜色也支持开发者通过[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、[fontColor](ts-basic-components-button.md#fontcolor)和[role](ts-basic-components-button.md#role12)接口设置，实际显示效果以最后一次设置为准。
+设置Button组件的样式和重要程度。根据设置枚举值的不同，系统自动调整按钮的背景色和文字颜色。背景色和文字颜色也支持开发者通过[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、[fontColor](ts-basic-components-button.md#fontcolor)和[role](ts-basic-components-button.md#role12)接口设置，实际显示效果以最后一次设置为准。
 
-说明
+**说明** 
 
 从API version 12开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
 **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -291,19 +263,19 @@ buttonStyle(value: ButtonStyleMode)
 
 ### controlSize11+
 
-PhonePC/2in1TabletTVWearable
-
 controlSize(value: ControlSize)
 
 设置Button组件的尺寸。
 
-说明
+**说明** 
 
 从API version 12开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
 **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -315,15 +287,15 @@ controlSize(value: ControlSize)
 
 ### role12+
 
-PhonePC/2in1TabletTVWearable
-
 role(value: ButtonRole)
 
-设置Button组件的角色。根据设置枚举值的不同，系统自动会调整按钮的背景色和文字颜色。背景色和文字颜色也支持开发者通过[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、[fontColor](ts-basic-components-button.md#fontcolor)和[buttonStyle](ts-basic-components-button.md#buttonstyle11)接口设置，实际显示效果以最后一次设置为准。
+设置Button组件的角色。根据设置枚举值的不同，系统自动调整按钮的背景色和文字颜色。背景色和文字颜色也支持开发者通过[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、[fontColor](ts-basic-components-button.md#fontcolor)和[buttonStyle](ts-basic-components-button.md#buttonstyle11)接口设置，实际显示效果以最后一次设置为准。ERROR角色通常用于删除、清空等危险或警示性操作。
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -331,17 +303,17 @@ role(value: ButtonRole)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [ButtonRole](ts-basic-components-button.md#buttonrole12枚举说明) | 是 | 设置Button组件的角色。  默认值：ButtonRole.NORMAL |
+| value | [ButtonRole](ts-basic-components-button.md#buttonrole12枚举说明) | 是 | Button组件的角色。  默认值：ButtonRole.NORMAL |
 
 ### contentModifier12+
-
-PhonePC/2in1TabletTVWearable
 
 contentModifier(modifier: ContentModifier<ButtonConfiguration>)
 
 定制Button内容区的方法。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -353,13 +325,13 @@ contentModifier(modifier: ContentModifier<ButtonConfiguration>)
 
 ### minFontScale18+
 
-PhonePC/2in1TabletTVWearable
-
 minFontScale(scale: number | Resource)
 
 设置文本最小的字体缩放倍数。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -371,13 +343,13 @@ minFontScale(scale: number | Resource)
 
 ### maxFontScale18+
 
-PhonePC/2in1TabletTVWearable
-
 maxFontScale(scale: number | Resource)
 
 设置文本最大的字体缩放倍数。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -389,8 +361,6 @@ maxFontScale(scale: number | Resource)
 
 ## ButtonType枚举说明
 
-PhonePC/2in1TabletTVWearable
-
 按钮的类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
@@ -398,15 +368,15 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | Normal | 0 | 普通按钮（默认不带圆角）。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| Capsule | 1 | 胶囊型按钮（圆角默认为高度的一半）。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| Capsule | 1 | 胶囊型按钮（圆角默认为宽、高中较小值的一半）。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | Circle | 2 | 圆形按钮。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| ROUNDED\_RECTANGLE15+ | 8 | 圆角矩形按钮（默认值：controlSize为NORMAL，圆角大小20vp，controlSize为SMALL，圆角大小14vp）。  **卡片能力：** 从API version 15开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 15开始，该接口支持在元服务中使用。 |
+| ROUNDED\_RECTANGLE15+ | 8 | 圆角矩形按钮（在不设置borderRadius时，默认值：controlSize为NORMAL，圆角大小20vp，controlSize为SMALL，圆角大小14vp）。  **卡片能力：** 从API version 15开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 15开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
-说明
+**说明** 
 
 * 按钮圆角通过[通用属性borderRadius](ts-universal-attributes-border.md#borderradius)设置。
 * 当按钮类型为Capsule时，borderRadius设置不生效，按钮圆角始终为宽、高中较小值的一半。
-* 当按钮类型为Circle时，若同时设置了宽和高，则borderRadius不生效，且按钮半径为宽高中较小值的一半；若只设置宽、高中的一个，则borderRadius不生效，且按钮半径为所设宽或所设高值的一半；若不设置宽高，则borderRadius为按钮半径；若borderRadius的值为负，则borderRadius的值按照0处理。
+* 当按钮类型为Circle时，若同时设置了宽和高，则borderRadius不生效，且按钮半径为宽高中较小值的一半；若只设置宽、高中的一个，则borderRadius不生效，且按钮半径为所设宽或所设高值的一半；若不设置宽高，则按钮半径为borderRadius的值；若borderRadius的值为负，则borderRadius的值按照0处理。
 * 按钮文本通过[fontSize](ts-basic-components-button.md#fontsize)、[fontColor](ts-basic-components-button.md#fontcolor)、[fontStyle](ts-basic-components-button.md#fontstyle8)、[fontFamily](ts-basic-components-button.md#fontfamily8)、[fontWeight](ts-basic-components-button.md#fontweight)进行设置。
 * 设置[颜色渐变](ts-universal-attributes-gradient-color.md)需先设置[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)为透明色。
 * 在不设置borderRadius时，圆角矩形按钮的圆角大小保持默认值不变。圆角大小不会随按钮高度变化而变化，和controlSize属性有关，controlSize为NORMAL时圆角大小20vp，controlSize为SMALL时圆角大小14vp。
@@ -414,9 +384,9 @@ PhonePC/2in1TabletTVWearable
 
 ## LabelStyle10+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 Button组件的label文本及其字体样式。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -424,15 +394,13 @@ Button组件的label文本及其字体样式。
 | --- | --- | --- | --- | --- |
 | overflow | [TextOverflow](ts-appendix-enums.md#textoverflow) | 否 | 是 | 设置label文本超长时的显示方式。文本截断是按字截断。例如，英文以单词为最小单位进行截断，若需要以字母为单位进行截断，可在字母间添加零宽空格。  默认值：TextOverflow.Ellipsis  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | maxLines | number | 否 | 是 | 设置label文本的最大行数。如果指定此参数，则文本最多不会超过指定的行。如果有多余的文本，可以通过overflow来指定截断方式。  默认值：1  **说明：**  设置小于等于0的值时，按默认值处理。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| minFontSize | number | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 设置label文本最小显示字号。需配合maxFontSize以及maxLines或布局大小限制使用。  **说明：**  minFontSize小于或等于0时，自适应字号不生效。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| maxFontSize | number | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 设置label文本最大显示字号。需配合minFontSize以及maxLines或布局大小限制使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| minFontSize | number | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 设置label文本最小显示字号。需配合maxFontSize以及maxLines或布局大小限制使用。  **说明：**  minFontSize小于或等于0时，自适应字号不生效。为number类型时单位：fp。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| maxFontSize | number | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 设置label文本最大显示字号。需配合minFontSize以及maxLines或布局大小限制使用。为number类型时单位：fp。  **说明：**  maxFontSize小于或等于0时，自适应字号不生效。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | heightAdaptivePolicy | [TextHeightAdaptivePolicy](ts-appendix-enums.md#textheightadaptivepolicy10) | 否 | 是 | 设置label文本自适应高度的方式。  默认值：TextHeightAdaptivePolicy.MAX\_LINES\_FIRST  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | font | [Font](ts-types.md#font) | 否 | 是 | 设置label文本字体样式。  默认值：  {  size:'16.0fp',  weight:FontWeight.Medium,  style:FontStyle.Normal,  family:'HarmonyOS Sans'  }  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| textAlign23+ | [TextAlign](ts-appendix-enums.md#textalign) | 否 | 是 | 设置label文本在水平方向上的对齐方式，label文本被截断时生效。当使用子节点的Text组件设置label时，此属性不生效，实际的文本对齐方式由子节点Text组件的textAlign属性决定。  Wearable设备默认值为TextAlign.Center，其他设备默认值为TextAlign.Start。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
+| textAlign23+ | [TextAlign](ts-appendix-enums.md#textalign) | 否 | 是 | 设置label文本在水平方向上的对齐方式。当label文本被截断时属性生效。当使用子节点的Text组件设置label时，此属性不生效，实际的文本对齐方式由子节点Text组件的textAlign属性决定。  可穿戴设备默认值为TextAlign.Center，其他设备默认值为TextAlign.Start。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
 
 ## ButtonStyleMode11+枚举说明
-
-PhonePC/2in1TabletTVWearable
 
 按钮的重要程度。
 
@@ -440,23 +408,25 @@ PhonePC/2in1TabletTVWearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| NORMAL | 0 | 普通按钮（一般界面操作）。 |
-| EMPHASIZED | 1 | 强调按钮（用于强调当前操作）。 |
-| TEXTUAL | 2 | 文本按钮（纯文本，无背景颜色）。 |
+| NORMAL | 0 | 普通按钮（一般界面操作），适用于取消、关闭等非关键交互。 |
+| EMPHASIZED | 1 | 强调按钮（用于强调当前操作），适用于提交表单、确认删除等关键操作。 |
+| TEXTUAL | 2 | 文本按钮（纯文本，无背景颜色），适用于次要操作或不需要强调的场景。 |
 
 ## ControlSize11+枚举说明
-
-PhonePC/2in1TabletTVWearable
 
 按钮的尺寸。
 
 **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -467,46 +437,46 @@ PhonePC/2in1TabletTVWearable
 
 ## ButtonRole12+枚举说明
 
-PhonePC/2in1TabletTVWearable
-
 按钮的角色。
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NORMAL | 0 | 正常按钮。 |
-| ERROR | 1 | 警示按钮。 |
+| ERROR | 1 | 警示按钮，通常用于删除、清空等危险或警示性操作。 |
 
 ## ButtonConfiguration12+对象说明
-
-PhonePC/2in1TabletTVWearable
 
 开发者需要自定义class实现ContentModifier接口。继承自[CommonConfiguration](ts-universal-attributes-content-modifier.md#commonconfigurationt)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| label | string | 否 | 否 | Button的文本标签。  **说明**：当文本字符的长度超过按钮本身的宽度时，文本将会被截断。 |
+| label | string | 否 | 否 | Button的文本标签，用于标识按钮的功能。  **说明**：当文本长度超过按钮本身的宽度时，文本将会被截断。 |
 | pressed | boolean | 否 | 否 | 指示是否按下Button。  true：按下；false：未按下。  默认值：false  **说明：**  此按压属性生效区域大小为原本Button组件的大小，而非build出来的新组件大小。 |
-| triggerClick | [ButtonTriggerClickCallback](ts-basic-components-button.md#buttontriggerclickcallback12) | 否 | 否 | 使用builder新构建出来组件的点击事件。 |
+| triggerClick | [ButtonTriggerClickCallback](ts-basic-components-button.md#buttontriggerclickcallback12) | 否 | 否 | 点击事件回调，用于处理使用builder新构建出来组件的点击操作。 |
 
 ## ButtonTriggerClickCallback12+
-
-PhonePC/2in1TabletTVWearable
 
 type ButtonTriggerClickCallback = (xPos: number, yPos: number) => void
 
 定义ButtonConfiguration中使用的回调类型。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -519,331 +489,325 @@ type ButtonTriggerClickCallback = (xPos: number, yPos: number) => void
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用事件](ts-component-general-events.md)。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 ### 示例1（设置按钮的显示样式）
 
-该示例实现了两种创建按钮的方式，包含子组件或使用文本内容创建相应的按钮。
+该示例展示两种创建按钮的方式：包含子组件或使用文本内容。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct ButtonExample {
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start, justifyContent: FlexAlign.SpaceBetween }) {
+      Text('Normal button').fontSize(9).fontColor(0xCCCCCC)
+      Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
+        Button('OK', { type: ButtonType.Normal, stateEffect: true }) // 创建普通按钮，开启按压效果
+          .borderRadius(8) // 设置圆角大小
+          .backgroundColor(0x317aff) // 设置背景颜色
+          .width(90) // 设置按钮宽度
+          .onClick(() => { // 设置按钮点击事件
+            console.info('ButtonType.Normal');
+          })
+        Button({ type: ButtonType.Normal, stateEffect: true }) {
+          Row() {
+            LoadingProgress().width(20).height(20).margin({ left: 12 }).color(0xFFFFFF)
+            Text('loading').fontSize(12).fontColor(0xffffff).margin({ left: 5, right: 12 })
+          }.alignItems(VerticalAlign.Center)
+        }.borderRadius(8).backgroundColor(0x317aff).width(90).height(40)
+
+        Button('Disable', { type: ButtonType.Normal, stateEffect: false }).opacity(0.4)
+          .borderRadius(8).backgroundColor(0x317aff).width(90)
+      }
+
+      Text('Capsule button').fontSize(9).fontColor(0xCCCCCC)
+      Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
+        Button('OK', { type: ButtonType.Capsule, stateEffect: true }).backgroundColor(0x317aff).width(90)
+        Button({ type: ButtonType.Capsule, stateEffect: true }) {
+          Row() {
+            LoadingProgress().width(20).height(20).margin({ left: 12 }).color(0xFFFFFF)
+            Text('loading').fontSize(12).fontColor(0xffffff).margin({ left: 5, right: 12 })
+          }.alignItems(VerticalAlign.Center).width(90).height(40)
+        }.backgroundColor(0x317aff)
+
+        Button('Disable', { type: ButtonType.Capsule, stateEffect: false }).opacity(0.4)
+          .backgroundColor(0x317aff).width(90)
+      }
+
+      Text('Circle button').fontSize(9).fontColor(0xCCCCCC)
+      Flex({ alignItems: ItemAlign.Center, wrap: FlexWrap.Wrap }) {
+        Button({ type: ButtonType.Circle, stateEffect: true }) {
+          LoadingProgress().width(20).height(20).color(0xFFFFFF)
+        }.width(55).height(55).backgroundColor(0x317aff)
+
+        Button({ type: ButtonType.Circle, stateEffect: true }) {
+          LoadingProgress().width(20).height(20).color(0xFFFFFF)
+        }.width(55).height(55).margin({ left: 20 }).backgroundColor(0xF55A42)
+      }
+    }.height(400).padding({ left: 35, right: 35, top: 35 })
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct ButtonExample {
-5. build() {
-6. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start, justifyContent: FlexAlign.SpaceBetween }) {
-7. Text('Normal button').fontSize(9).fontColor(0xCCCCCC)
-8. Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
-9. Button('OK', { type: ButtonType.Normal, stateEffect: true })
-10. .borderRadius(8)
-11. .backgroundColor(0x317aff)
-12. .width(90)
-13. .onClick(() => {
-14. console.info('ButtonType.Normal');
-15. })
-16. Button({ type: ButtonType.Normal, stateEffect: true }) {
-17. Row() {
-18. LoadingProgress().width(20).height(20).margin({ left: 12 }).color(0xFFFFFF)
-19. Text('loading').fontSize(12).fontColor(0xffffff).margin({ left: 5, right: 12 })
-20. }.alignItems(VerticalAlign.Center)
-21. }.borderRadius(8).backgroundColor(0x317aff).width(90).height(40)
 
-23. Button('Disable', { type: ButtonType.Normal, stateEffect: false }).opacity(0.4)
-24. .borderRadius(8).backgroundColor(0x317aff).width(90)
-25. }
-
-27. Text('Capsule button').fontSize(9).fontColor(0xCCCCCC)
-28. Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
-29. Button('OK', { type: ButtonType.Capsule, stateEffect: true }).backgroundColor(0x317aff).width(90)
-30. Button({ type: ButtonType.Capsule, stateEffect: true }) {
-31. Row() {
-32. LoadingProgress().width(20).height(20).margin({ left: 12 }).color(0xFFFFFF)
-33. Text('loading').fontSize(12).fontColor(0xffffff).margin({ left: 5, right: 12 })
-34. }.alignItems(VerticalAlign.Center).width(90).height(40)
-35. }.backgroundColor(0x317aff)
-
-37. Button('Disable', { type: ButtonType.Capsule, stateEffect: false }).opacity(0.4)
-38. .backgroundColor(0x317aff).width(90)
-39. }
-
-41. Text('Circle button').fontSize(9).fontColor(0xCCCCCC)
-42. Flex({ alignItems: ItemAlign.Center, wrap: FlexWrap.Wrap }) {
-43. Button({ type: ButtonType.Circle, stateEffect: true }) {
-44. LoadingProgress().width(20).height(20).color(0xFFFFFF)
-45. }.width(55).height(55).backgroundColor(0x317aff)
-
-47. Button({ type: ButtonType.Circle, stateEffect: true }) {
-48. LoadingProgress().width(20).height(20).color(0xFFFFFF)
-49. }.width(55).height(55).margin({ left: 20 }).backgroundColor(0xF55A42)
-50. }
-51. }.height(400).padding({ left: 35, right: 35, top: 35 })
-52. }
-53. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/85VBxrQ3QRu08liVE-XN3g/zh-cn_image_0000002558766214.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/t1ZvFn0ES76d1mTapNR-6w/zh-cn_image_0000002736434997.gif)
 
 ### 示例2 （为按钮添加渲染控制）
 
 该示例通过if/else控制按钮的显示文本。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct SwipeGestureExample {
-5. @State count: number = 0;
+```ts
+// xxx.ets
+@Entry
+@Component
+struct ButtonRenderControlExample {
+  @State count: number = 0;
 
-7. build() {
-8. Column() {
-9. Text(`${this.count}`)
-10. .fontSize(30)
-11. .onClick(() => {
-12. this.count++;
-13. })
-14. if (this.count <= 0) {
-15. Button('count is negative').fontSize(30).height(50)
-16. } else if (this.count % 2 === 0) {
-17. Button('count is even').fontSize(30).height(50)
-18. } else {
-19. Button('count is odd').fontSize(30).height(50)
-20. }
-21. }.height('100%').width('100%').justifyContent(FlexAlign.Center)
-22. }
-23. }
+  build() {
+    Column() {
+      Text(`${this.count}`)
+        .fontSize(30)
+        .onClick(() => {
+          this.count++;
+        })
+      if (this.count <= 0) { // 当count小于等于0时，显示负数按钮
+        Button('count is negative').fontSize(30).height(50)
+      } else if (this.count % 2 === 0) { // 当count为偶数时，显示偶数按钮
+        Button('count is even').fontSize(30).height(50)
+      } else { // 当count为奇数时，显示奇数按钮
+        Button('count is odd').fontSize(30).height(50)
+      }
+    }.height('100%').width('100%').justifyContent(FlexAlign.Center)
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/_OTr5QypRjeyFbVC2owGHA/zh-cn_image_0000002558606556.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/drPg9H8HS7KScu20QxeKTA/zh-cn_image_0000002706835850.gif)
 
 ### 示例3 （设置按钮文本样式）
 
 该示例通过配置labelStyle自定义按钮文本的显示样式。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct ButtonTestDemo {
-5. @State txt: string = 'overflowTextOverLengthTextOverflow.Clip';
-6. @State widthShortSize: number = 205;
+```ts
+// xxx.ets
+@Entry
+@Component
+struct ButtonTestDemo {
+  @State txt: string = 'overflowTextOverLengthTextOverflow.Clip';
+  @State widthShortSize: number = 205;
 
-8. build() {
-9. Row() {
-10. Column() {
-11. Button(this.txt)
-12. .type(ButtonType.Capsule)
-13. .width(this.widthShortSize)
-14. .height(100)
-15. .backgroundColor(0x317aff)
-16. .labelStyle({ overflow: TextOverflow.Clip,
-17. maxLines: 1,
-18. minFontSize: 20,
-19. maxFontSize: 20,
-20. font: {
-21. size: 20,
-22. weight: FontWeight.Bolder,
-23. family: 'cursive',
-24. style: FontStyle.Italic
-25. }
-26. })
-27. .fontSize(40)
-28. }
-29. .width('100%')
-30. }
-31. .height('100%')
-32. }
-33. }
+  build() {
+    Row() {
+      Column() {
+        Button(this.txt)
+          .type(ButtonType.Capsule)
+          .width(this.widthShortSize)
+          .height(100)
+          .backgroundColor(0x317aff)
+          .labelStyle({ overflow: TextOverflow.Clip, // 设置文本溢出方式为截断
+            maxLines: 1, // 设置最大显示行数为1
+            minFontSize: 20, // 设置最小字号为20
+            maxFontSize: 20, // 设置最大字号为20
+            font: {
+              size: 20,
+              weight: FontWeight.Bolder,
+              family: 'cursive',
+              style: FontStyle.Italic
+            }
+          })
+          .fontSize(40)
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/QJ2sCKrZRY6TF4UTJgRn3A/zh-cn_image_0000002589326083.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/0sEeA2qrRKCDEp1QBA9IAA/zh-cn_image_0000002736314955.png)
 
 ### 示例4（设置不同尺寸按钮的重要程度）
 
-该示例通过配置controlSize、buttonStyle实现不同尺寸按钮的重要程度。
+该示例通过配置controlSize、buttonStyle展示不同尺寸和样式的按钮。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct ButtonExample {
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start, justifyContent: FlexAlign.SpaceBetween }) {
+      Text('Normal size button').fontSize(9).fontColor(0xCCCCCC)
+      Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
+        Button('Emphasized', { buttonStyle: ButtonStyleMode.EMPHASIZED }); // 创建强调按钮
+        Button('Normal', { buttonStyle: ButtonStyleMode.NORMAL }); // 创建普通按钮
+        Button('Textual', { buttonStyle: ButtonStyleMode.TEXTUAL }); // 创建文本按钮
+      }
+
+      Text('Small size button').fontSize(9).fontColor(0xCCCCCC)
+      Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
+        Button('Emphasized', { controlSize: ControlSize.SMALL, buttonStyle: ButtonStyleMode.EMPHASIZED });
+        Button('Normal', { controlSize: ControlSize.SMALL, buttonStyle: ButtonStyleMode.NORMAL });
+        Button('Textual', { controlSize: ControlSize.SMALL, buttonStyle: ButtonStyleMode.TEXTUAL });
+      }
+
+      Text('Small size button').fontSize(9).fontColor(0xCCCCCC)
+      Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
+        Button('Emphasized').controlSize(ControlSize.SMALL).buttonStyle(ButtonStyleMode.EMPHASIZED);
+        Button('Normal').controlSize(ControlSize.SMALL).buttonStyle(ButtonStyleMode.NORMAL);
+        Button('Textual').controlSize(ControlSize.SMALL).buttonStyle(ButtonStyleMode.TEXTUAL);
+      }
+
+    }.height(400).padding({ left: 35, right: 35, top: 35 })
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct ButtonExample {
-5. build() {
-6. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start, justifyContent: FlexAlign.SpaceBetween }) {
-7. Text('Normal size button').fontSize(9).fontColor(0xCCCCCC)
-8. Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
-9. Button('Emphasized', { buttonStyle: ButtonStyleMode.EMPHASIZED });
-10. Button('Normal', { buttonStyle: ButtonStyleMode.NORMAL });
-11. Button('Textual', { buttonStyle: ButtonStyleMode.TEXTUAL });
-12. }
 
-14. Text('Small size button').fontSize(9).fontColor(0xCCCCCC)
-15. Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
-16. Button('Emphasized', { controlSize: ControlSize.SMALL, buttonStyle: ButtonStyleMode.EMPHASIZED });
-17. Button('Normal', { controlSize: ControlSize.SMALL, buttonStyle: ButtonStyleMode.NORMAL });
-18. Button('Textual', { controlSize: ControlSize.SMALL, buttonStyle: ButtonStyleMode.TEXTUAL });
-19. }
-
-21. Text('Small size button').fontSize(9).fontColor(0xCCCCCC)
-22. Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
-23. Button('Emphasized').controlSize(ControlSize.SMALL).buttonStyle(ButtonStyleMode.EMPHASIZED);
-24. Button('Normal').controlSize(ControlSize.SMALL).buttonStyle(ButtonStyleMode.NORMAL);
-25. Button('Textual').controlSize(ControlSize.SMALL).buttonStyle(ButtonStyleMode.TEXTUAL);
-26. }
-
-28. }.height(400).padding({ left: 35, right: 35, top: 35 })
-29. }
-30. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/ZcNVd1tLTrm6Qg_c4GHN7w/zh-cn_image_0000002589246025.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/zVdr2LcDRC-KxlKZkxcpnw/zh-cn_image_0000002706675912.jpeg)
 
 ### 示例5（设置按钮的角色）
 
-该示例通过配置role实现按钮的角色。
+该示例通过配置role设置按钮的角色。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct ButtonExample {
-5. build() {
-6. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start, justifyContent: FlexAlign.SpaceBetween }) {
-7. Text('Role is Normal button').fontSize(9).fontColor(0xCCCCCC)
-8. Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
-9. Button('Emphasized', { buttonStyle: ButtonStyleMode.EMPHASIZED, role: ButtonRole.NORMAL });
-10. Button('Normal', { buttonStyle: ButtonStyleMode.NORMAL, role: ButtonRole.NORMAL });
-11. Button('Textual', { buttonStyle: ButtonStyleMode.TEXTUAL, role: ButtonRole.NORMAL });
-12. }
-13. Text('Role is Error button').fontSize(9).fontColor(0xCCCCCC)
-14. Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
-15. Button('Emphasized', { buttonStyle: ButtonStyleMode.EMPHASIZED, role: ButtonRole.ERROR});
-16. Button('Normal', { buttonStyle: ButtonStyleMode.NORMAL, role: ButtonRole.ERROR });
-17. Button('Textual', { buttonStyle: ButtonStyleMode.TEXTUAL, role: ButtonRole.ERROR });
-18. }
-19. }.height(200).padding({ left: 15, right: 15, top: 35 })
-20. }
-21. }
+```ts
+// xxx.ets
+@Entry
+@Component
+struct ButtonExample {
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start, justifyContent: FlexAlign.SpaceBetween }) {
+      Text('Role is Normal button').fontSize(9).fontColor(0xCCCCCC)
+      Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
+        Button('Emphasized', { buttonStyle: ButtonStyleMode.EMPHASIZED, role: ButtonRole.NORMAL });
+        Button('Normal', { buttonStyle: ButtonStyleMode.NORMAL, role: ButtonRole.NORMAL });
+        Button('Textual', { buttonStyle: ButtonStyleMode.TEXTUAL, role: ButtonRole.NORMAL });
+      }
+      Text('Role is Error button').fontSize(9).fontColor(0xCCCCCC)
+      Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
+        Button('Emphasized', { buttonStyle: ButtonStyleMode.EMPHASIZED, role: ButtonRole.ERROR});
+        Button('Normal', { buttonStyle: ButtonStyleMode.NORMAL, role: ButtonRole.ERROR });
+        Button('Textual', { buttonStyle: ButtonStyleMode.TEXTUAL, role: ButtonRole.ERROR });
+      }
+    }.height(200).padding({ left: 15, right: 15, top: 35 })
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/9fYcfZsFQOycmU2lDgGfrQ/zh-cn_image_0000002558766216.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/_jSJ0C2RQ4G92iThvm5d3Q/zh-cn_image_0000002736434999.jpeg)
 
 ### 示例6（设置自定义样式按钮）
 
-该示例实现了自定义样式的功能，自定义样式实现了一个圆圈替换原本的按钮样式。如果按压，圆圈将变成红色，标题会显示按压字样；如果没有按压，圆圈将变成黑色，标题会显示非按压字样。
+该示例通过自定义样式用一个圆圈替换原本的按钮样式。如果按压，圆圈将变成红色，标题会显示按压字样；如果没有按压，圆圈将变成黑色，标题会显示非按压字样。
 
-```
-1. class MyButtonStyle implements ContentModifier<ButtonConfiguration> {
-2. x: number = 0;
-3. y: number = 0;
-4. selectedColor: Color = Color.Black;
+```ts
+class MyButtonStyle implements ContentModifier<ButtonConfiguration> {
+  x: number = 0;
+  y: number = 0;
+  selectedColor: Color = Color.Black;
 
-6. constructor(x: number, y: number, colorType: Color) {
-7. this.x = x;
-8. this.y = y;
-9. this.selectedColor = colorType;
-10. }
+  constructor(x: number, y: number, colorType: Color) {
+    this.x = x;
+    this.y = y;
+    this.selectedColor = colorType;
+  }
 
-12. applyContent(): WrappedBuilder<[ButtonConfiguration]> {
-13. return wrapBuilder(buildButton1);
-14. }
-15. }
+  applyContent(): WrappedBuilder<[ButtonConfiguration]> {
+    return wrapBuilder(buildButton1);
+  }
+}
 
-17. @Builder
-18. function buildButton1(config: ButtonConfiguration) {
-19. Column({ space: 30 }) {
-20. Text(config.enabled ? "enabled true" : "enabled false")
-21. Text('圆圈状态' + (config.pressed ? "（ 按压 ）" : "（ 非按压 ）"))
-22. Text('点击位置x坐标：' + (config.enabled ? (config.contentModifier as MyButtonStyle).x : "0"))
-23. Text('点击位置y坐标：' + (config.enabled ? (config.contentModifier as MyButtonStyle).y : "0"))
-24. Circle({ width: 50, height: 50 })
-25. .fill(config.pressed ? (config.contentModifier as MyButtonStyle).selectedColor : Color.Black)
-26. .gesture(
-27. TapGesture({ count: 1 }).onAction((event: GestureEvent) => {
-28. config.triggerClick(event.fingerList[0].localX, event.fingerList[0].localY)
-29. })).opacity(config.enabled ? 1 : 0.1)
-30. }
-31. }
+@Builder
+function buildButton1(config: ButtonConfiguration) {
+  Column({ space: 30 }) {
+    Text(config.enabled ? "enabled true" : "enabled false")
+    Text('圆圈状态' + (config.pressed ? "（ 按压 ）" : "（ 非按压 ）"))
+    Text('点击位置x坐标：' + (config.enabled ? (config.contentModifier as MyButtonStyle).x : "0"))
+    Text('点击位置y坐标：' + (config.enabled ? (config.contentModifier as MyButtonStyle).y : "0"))
+    Circle({ width: 50, height: 50 })
+      .fill(config.pressed ? (config.contentModifier as MyButtonStyle).selectedColor : Color.Black)
+      .gesture(
+        TapGesture({ count: 1 }).onAction((event: GestureEvent) => {
+          config.triggerClick(event.fingerList[0].localX, event.fingerList[0].localY)
+        })).opacity(config.enabled ? 1 : 0.1)
+  }
+}
 
-33. @Entry
-34. @Component
-35. struct ButtonExample {
-36. @State buttonEnabled: boolean = true;
-37. @State positionX: number = 0;
-38. @State positionY: number = 0;
-39. @State state: boolean[] = [true, false];
-40. @State index: number = 0;
+@Entry
+@Component
+struct ButtonExample {
+  @State buttonEnabled: boolean = true;
+  @State positionX: number = 0;
+  @State positionY: number = 0;
 
-42. build() {
-43. Column() {
-44. Button('OK')
-45. .contentModifier(new MyButtonStyle(this.positionX, this.positionY, Color.Red))
-46. .onClick((event) => {
-47. console.info('change' + JSON.stringify(event));
-48. this.positionX = event.displayX;
-49. this.positionY = event.displayY;
-50. }).enabled(this.buttonEnabled)
-51. Row() {
-52. Toggle({ type: ToggleType.Switch, isOn: true }).onChange((value: boolean) => {
-53. if (value) {
-54. this.buttonEnabled = true;
-55. } else {
-56. this.buttonEnabled = false;
-57. }
-58. }).margin({ left: -80 })
-59. }
-60. }.height('100%').width('100%').justifyContent(FlexAlign.Center)
-61. }
-62. }
+  build() {
+    Column() {
+      Button('OK')
+        .contentModifier(new MyButtonStyle(this.positionX, this.positionY, Color.Red))
+        .onClick((event) => {
+          console.info('change' + JSON.stringify(event));
+          this.positionX = event.displayX;
+          this.positionY = event.displayY;
+        }).enabled(this.buttonEnabled)
+      Row() {
+        Toggle({ type: ToggleType.Switch, isOn: true }).onChange((value: boolean) => {
+          if (value) {
+            this.buttonEnabled = true;
+          } else {
+            this.buttonEnabled = false;
+          }
+        }).margin({ left: -80 })
+      }
+    }.height('100%').width('100%').justifyContent(FlexAlign.Center)
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/5LIqlnUYTUefOA4nybNeTQ/zh-cn_image_0000002558606558.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Q9tHMeMBQpu_7tdXoWj2SA/zh-cn_image_0000002706835852.gif)
 
 ### 示例7（设置圆角矩形按钮）
 
-该示例通过配置ButtonType.ROUNDED\_RECTANGLE创建圆角矩形按钮。
+该示例展示圆角矩形按钮的创建、圆角大小设置及长文本截断效果。
 
-```
-1. @Entry
-2. @Component
-3. struct ButtonExample {
-4. build() {
-5. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start, justifyContent: FlexAlign.SpaceBetween }) {
-6. Text('Rounded rectangle button with rounded corners by default.').fontSize(9).fontColor(0xCCCCCC)
-7. Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
-8. Button('Rounded rectangle')
-9. .type(ButtonType.ROUNDED_RECTANGLE)
-10. .backgroundColor(0x317aff)
-11. .controlSize(ControlSize.NORMAL)
-12. .width(180)
-13. }
-14. Text('Rounded rectangle button configured with a borderRadius of 5.').fontSize(9).fontColor(0xCCCCCC)
-15. Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
-16. Button('Rounded rectangle')
-17. .type(ButtonType.ROUNDED_RECTANGLE)
-18. .backgroundColor(0x317aff)
-19. .controlSize(ControlSize.NORMAL)
-20. .width(180)
-21. .borderRadius(5)
-22. }
-23. Text('Rounded rectangle button configured extra long text.').fontSize(9).fontColor(0xCCCCCC)
-24. Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
-25. Button('Rounded rectangle Rounded rectangle Rounded rectangle Rounded rectangle')
-26. .type(ButtonType.ROUNDED_RECTANGLE)
-27. .backgroundColor(0x317aff)
-28. .width(180)
-29. .labelStyle({overflow:TextOverflow.Ellipsis, maxLines:3, minFontSize: 0})
-30. }
-31. }.height(400).padding({ left: 35, right: 35, top: 35 })
-32. }
-33. }
+```ts
+@Entry
+@Component
+struct ButtonExample {
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start, justifyContent: FlexAlign.SpaceBetween }) {
+      Text('Rounded rectangle button with rounded corners by default.').fontSize(9).fontColor(0xCCCCCC)
+      Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
+        Button('Rounded rectangle')
+          .type(ButtonType.ROUNDED_RECTANGLE) // 设置按钮类型为圆角矩形
+          .backgroundColor(0x317aff)
+          .controlSize(ControlSize.NORMAL)
+          .width(180)
+      }
+      Text('Rounded rectangle button configured with a borderRadius of 5.').fontSize(9).fontColor(0xCCCCCC)
+      Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
+        Button('Rounded rectangle')
+          .type(ButtonType.ROUNDED_RECTANGLE)
+          .backgroundColor(0x317aff)
+          .controlSize(ControlSize.NORMAL)
+          .width(180)
+          .borderRadius(5)
+      }
+      Text('Rounded rectangle button configured extra long text.').fontSize(9).fontColor(0xCCCCCC)
+      Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
+        Button('Rounded rectangle Rounded rectangle Rounded rectangle Rounded rectangle')
+          .type(ButtonType.ROUNDED_RECTANGLE)
+          .backgroundColor(0x317aff)
+          .width(180)
+          .labelStyle({overflow:TextOverflow.Ellipsis, maxLines:3, minFontSize: 0})
+      }
+    }.height(400).padding({ left: 35, right: 35, top: 35 })
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/RnEWgQD9S5CYGJoswZgicQ/zh-cn_image_0000002589326085.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/5GqNAiLgRMqyOSlf7AUIHw/zh-cn_image_0000002736314957.jpeg)
 
 ### 示例8（设置label文本水平对齐方式）
 
@@ -851,22 +815,97 @@ PhonePC/2in1TabletTVWearable
 
 从API version 23开始，新增textAlign接口。
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. build() {
-5. Column(){
-6. Button('helloWorld helloWorld helloWorld helloWorld helloWorld helloWorld')
-7. .width(200)
-8. .labelStyle({
-9. textAlign: TextAlign.Center
-10. })
-11. }
-12. .width('100%')
-13. .alignItems(HorizontalAlign.Center)
-14. }
-15. }
+```ts
+@Entry
+@Component
+struct Index {
+  build() {
+    Column(){
+      Button('helloWorld helloWorld helloWorld helloWorld helloWorld helloWorld')
+        .width(200)
+        .labelStyle({
+          textAlign: TextAlign.Center // 设置文本水平对齐方式为居中
+        })
+    }
+    .width('100%')
+    .alignItems(HorizontalAlign.Center)
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/_dX4yBEMTrOk7wbsRosV1A/zh-cn_image_0000002589246027.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/vjq1a_GgSRKFwCFtTvV92g/zh-cn_image_0000002706675914.jpeg)
+
+### 示例9（设置按钮的沉浸光感效果）
+
+该示例使用通用属性[systemMaterial](ts-universal-attributes-image-effect.md#systemmaterial)接口来设置组件的系统材质，以实现沉浸光感效果。
+
+组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
+
+从API版本26.0.0开始，新增systemMaterial属性。
+
+```ts
+import { uiMaterial } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct Index {
+  @Builder
+  NavigationTitle() {
+    Column() {
+      Button('helloWorld')
+        .width(200)
+        .fontColor(Color.Black)
+        .systemMaterial(new uiMaterial.ImmersiveMaterial({
+          style: uiMaterial.ImmersiveStyle.THIN
+        }))
+        .backgroundColor('#7755bbff')
+    }
+    .width('100%')
+    .height('100%')
+  }
+
+  build() {
+    Column() {
+      Navigation() {
+        Row() {
+          Column()
+            .width('50%')
+            .height('100%')
+            .background(Color.White)
+
+          Column()
+            .width('50%')
+            .height('100%')
+            .background(Color.Black)
+        }
+        .height('100%')
+        .width('100%')
+        .margin({ top: 12, left: '10%' })
+      }
+      .title(this.NavigationTitle, {
+        systemMaterial: new uiMaterial.ImmersiveMaterial({
+          style: uiMaterial.ImmersiveStyle.ULTRA_THIN,
+          colorInvert: true,
+          interactive: true,
+          lightEffect: {}
+        }),
+        // systemMaterial和barStyle没有关联性，但是同时设置barStyle为STACK样式可获得最佳沉浸效果
+        barStyle: BarStyle.STACK
+      })
+      .hideTitleBar(false)
+      .titleMode(NavigationTitleMode.Free)
+      .onTitleModeChange((titleModel: NavigationTitleMode) => {
+        console.info('titleMode' + titleModel)
+      })
+    }
+  }
+}
+```
+
+未设置系统材质时：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/cOFP_mbuSD2XrZPEhnJSyA/zh-cn_image_0000002706703778.png)
+
+设置沉浸光感后：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/HXP5KTDSQPq8rGaGa4rE2w/zh-cn_image_0000002706863812.png)

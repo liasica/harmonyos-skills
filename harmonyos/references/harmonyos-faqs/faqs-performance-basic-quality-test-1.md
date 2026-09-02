@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 报告中为什么会出现未执行检测
 breadcrumb: FAQ > DevEco Testing > 专项测试 > 性能基础质量测试 > 报告中为什么会出现未执行检测
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:26+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:a3ae5fee776b3121c997c68e079b81f5eb8df4677e42f4bc833e0d8c14ef6fa0
 ---
 

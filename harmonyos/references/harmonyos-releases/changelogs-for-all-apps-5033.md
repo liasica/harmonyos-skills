@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-for-all-apps-5033
 title: OS平台API行为的变更
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.3(15) > OS平台能力 > OS平台行为变更说明 > HarmonyOS 5.0.3(15) Release引入的行为变更 > OS平台API行为的变更
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.3(15) > OS平台能力 > OS平台行为变更说明 > HarmonyOS 5.0.3(15) Release引入的行为变更 > OS平台API行为的变更
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:30+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:428e6a7eaa31d1669bd98e73f11d4440af0f14f427eccd408e4461f5b17e20e7
+scraped_at: 2026-09-02T14:58:49+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:de6065d92d7821a997b1f8a2e68e1b3e31f7a6bba8e73e21215486477ae5e41a
 ---
 
 ## ArkUI
@@ -37,32 +37,32 @@ OH\_ArkUI\_UIInputEvent\_GetSourceType和OH\_ArkUI\_UIInputEvent\_GetToolType
 
 例如以下示例：
 
-```
-1. if (toolType != UI_INPUT_EVENT_TOOL_TYPE_UNKNOWN) {
-2. // 应用业务逻辑
-3. }
+```cpp
+if (toolType != UI_INPUT_EVENT_TOOL_TYPE_UNKNOWN) {
+    // 应用业务逻辑
+}
 ```
 
 建议以明确的目标类型进行区分，修改为如下代码实现：
 
-```
-1. if (toolType != UI_INPUT_EVENT_TOOL_TYPE_MOUSE) { // 是鼠标滚轮尝试的轴事件，数值单位为角度
-2. // 鼠标滚轮只有竖向轴，获取滚动角度
-3. double degree = OH_ArkUI_AxisEvent_GetVerticalAxisValue(event);
-4. // 将角度映射为距离像素值
-5. // 控制UI进行位移更新
-6. } else if (toolType != UI_INPUT_EVENT_TOOL_TYPE_TOUCHPAD) {
-7. // 触控板上操作，用户即可横向滑动，也可竖向滑动，需要都获取分量
-8. double offsetX = OH_ArkUI_AxisEvent_GetHorizontalAxisValue(event);
-9. double offsetY = OH_ArkUI_AxisEvent_GetVerticalAxisValue(event);
-10. if (offsetX == 0) {
-11. // 横向分量为0，说明为竖向滑动
-12. // 处理UI竖向滑动
-13. } else {
-14. // 横向滑动
-15. // 处理UI横向滚动
-16. }
-17. } else {
-18. // 异常情况，应忽略
-19. }
+```cpp
+if (toolType != UI_INPUT_EVENT_TOOL_TYPE_MOUSE) { // 是鼠标滚轮尝试的轴事件，数值单位为角度
+    // 鼠标滚轮只有竖向轴，获取滚动角度
+    double degree = OH_ArkUI_AxisEvent_GetVerticalAxisValue(event);
+    // 将角度映射为距离像素值
+    // 控制UI进行位移更新
+} else if (toolType != UI_INPUT_EVENT_TOOL_TYPE_TOUCHPAD) {
+    // 触控板上操作，用户即可横向滑动，也可竖向滑动，需要都获取分量
+    double offsetX = OH_ArkUI_AxisEvent_GetHorizontalAxisValue(event);
+    double offsetY = OH_ArkUI_AxisEvent_GetVerticalAxisValue(event);
+    if (offsetX == 0) {
+        // 横向分量为0，说明为竖向滑动
+        // 处理UI竖向滑动
+    } else {
+        // 横向滑动
+        // 处理UI横向滚动
+    }
+} else {
+    // 异常情况，应忽略
+}
 ```

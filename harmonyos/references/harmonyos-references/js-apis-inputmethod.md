@@ -3,40 +3,129 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.inputMethod (输入法框架)"
 breadcrumb: API参考 > 应用框架 > IME Kit（输入法开发服务） > ArkTS API > @ohos.inputMethod (输入法框架)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:08+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c3851b5f75977791581202a5bb6cf99561084c5f879432371284286efeb266c6
+scraped_at: 2026-09-02T15:01:35+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e457e727bcc10baaf3d4f36aabc11e68e3a0574c01d092c949f79d3c969f06f4
 ---
 
-本模块主要面向普通前台应用（备忘录、信息、设置等系统应用与三方应用），提供对输入法（输入法应用）的控制、管理能力，包括显示/隐藏输入法软键盘、切换输入法、获取所有输入法列表等等。
+@ohos.inputMethod模块是面向普通前台应用（如备忘录、短信、设置等应用）的输入法客户端模块，提供输入法控制和管理能力。
 
-说明
+本模块是输入法框架的客户端接口，为编辑框应用提供与输入法服务的交互能力，包括输入法绑定/解绑、软键盘显示/隐藏、输入法切换、输入法列表查询、编辑框属性与光标更新、文本选择与操作事件监听、自定义消息通信等。
+
+本模块提供两大核心能力集：1）通过InputMethodController实现编辑框应用与输入法之间的绑定、交互和事件监听——编辑框应用绑定输入法后可控制键盘显隐、更新光标和编辑属性、监听输入法发出的文本操作事件（插入、删除、选中文本、移动光标、发送功能键和扩展动作等），以及通过自定义消息通道与输入法应用双向通信；2）通过InputMethodSetting实现输入法管理——获取输入法列表、查询当前输入法及子类型、订阅输入法切换事件、切换输入法及子类型、查询面板显示状态等。
+
+当开发带有文本编辑框的应用（需要与输入法交互）或系统应用（需要管理输入法）时使用本模块。典型场景包括：应用中编辑框获取焦点时绑定输入法并显示键盘、编辑框失去焦点时解绑输入法并隐藏键盘、系统设置应用中切换和配置输入法等。
+
+**说明** 
 
 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
+本模块是IME Kit（输入法框架Kit）中的客户端控制模块，与IME Kit中的其他模块协同工作：
+
+* @ohos.inputMethodEngine：面向输入法应用的服务端模块，提供软键盘窗口创建、文本插入/删除、监听物理按键等能力。本模块（@ohos.inputMethod）发出的请求（如显示键盘、切换输入法）最终由@ohos.inputMethodEngine侧的输入法应用响应和处理。
+* @ohos.inputMethodList：提供输入法列表选择对话框的显示与管理能力。
+* @ohos.inputMethod.Panel：定义输入法面板类型与状态信息，用于查询面板可见性等。
+
+典型的客户端应用（如备忘录、设置）与输入法交互的调用序列如下：
+
+1. 通过inputMethod.getController()获取客户端控制器实例InputMethodController。
+2. 通过InputMethodController.attach()绑定输入法（对于自绘控件场景），或依赖系统原生编辑框自动绑定。
+3. 通过InputMethodController.showTextInput()拉起软键盘，进入文本编辑状态。
+4. 在编辑过程中，通过updateCursor、changeSelection、updateAttribute等接口向输入法同步编辑框状态。
+5. 通过InputMethodController.hideTextInput()隐藏软键盘，退出编辑状态。
+6. 通过InputMethodController.detach()解除与输入法的绑定。
+
+配对约束：
+
+* attach与detach必须配对使用，未detach而直接退出可能导致资源泄漏。
+* showTextInput与hideTextInput必须配对使用，避免输入法状态不一致。
+
+本模块的核心开放能力由以下关键Interface承载：
+
+| Interface | 说明 |
+| --- | --- |
+| InputMethodController | 输入法控制器，编辑框应用与输入法交互的核心对象。提供绑定/解绑输入法（attach/detach）、显示/隐藏键盘（showTextInput/hideTextInput）、更新光标和编辑属性（updateCursor/updateAttribute/changeSelection）、监听输入法操作事件（insertText/deleteLeft/deleteRight/selectByRange/selectByMovement/moveCursor/sendFunctionKey/sendKeyboardStatus/handleExtendAction/setPreviewText/finishTextPreview）、自定义消息通信（sendMessage/recvMessage）、停止输入会话等能力。通过getController()获取实例。 |
+| InputMethodSetting | 输入法设置管理对象，提供输入法查询和管理能力。包括获取已启用/已禁用/全部输入法列表（getInputMethods/getAllInputMethods）、查询指定输入法的子类型列表（listInputMethodSubtype）、获取当前输入法及子类型、订阅输入法切换事件（on('imeChange')）、订阅面板显隐事件（on('imeShow')/on('imeHide')）、查询面板显示状态（isPanelShown）、启用/禁用输入法（enableInputMethod）、获取输入法自身启用状态（getInputMethodState）等。通过getSetting()获取实例。 |
+
+此外，本模块还定义了多个关键数据类型：
+
+| 类型 | 说明 |
+| --- | --- |
+| InputMethodProperty | 输入法属性信息，描述一个输入法的名称、ID、标签、图标、启用状态等。 |
+| InputMethodSubtype | 输入法子类型，描述输入法的语言、模式等子类型属性。 |
+| TextConfig | 编辑框文本配置，包含输入属性（InputAttribute）、光标信息（CursorInfo）、选区信息、窗口ID等。 |
+| InputAttribute | 输入属性，定义文本输入类型（TextInputType）和回车键类型（EnterKeyType）。 |
+| CursorInfo | 光标信息，定义光标的位置和尺寸。 |
+| MessageHandler | 自定义消息处理器，用于接收输入法应用发送的消息并提供终止通知。 |
+
+编辑框应用与输入法交互的典型流程涉及InputMethodController的多个API组合调用：获取控制器 -> 绑定输入法 -> 订阅输入法操作事件 -> 在回调中处理文本操作 -> 解绑输入法。
+
+```javascript
+// 以下为阐述调用逻辑的伪代码
+
+// 1. 获取输入法控制器和设置对象
+let controller = inputMethod.getController();
+let setting = inputMethod.getSetting();
+
+// 2. 订阅输入法操作事件（在attach之前订阅，确保事件不遗漏）
+controller.on('insertText', (text) => { /* 处理文本插入 */ });
+controller.on('deleteLeft', (length) => { /* 处理左删 */ });
+controller.on('deleteRight', (length) => { /* 处理右删 */ });
+controller.on('selectByRange', (range) => { /* 处理按范围选中文本 */ });
+controller.on('selectByMovement', (movement) => { /* 处理按方向选中文本 */ });
+controller.on('moveCursor', (direction) => { /* 处理光标移动 */ });
+controller.on('sendFunctionKey', (functionKey) => { /* 处理功能键 */ });
+controller.on('handleExtendAction', (action) => { /* 处理扩展动作 */ });
+
+// 3. 绑定输入法（编辑框获得焦点时调用）
+let textConfig = {
+  inputAttribute: { textInputType: TextInputType.TEXT, enterKeyType: EnterKeyType.NONE },
+  cursorInfo: { left: 100, top: 200, width: 2, height: 20 },
+  selection: { start: 0, end: 0 },
+  windowId: 1
+};
+controller.attach(true, textConfig);
+
+// 4. 显示键盘
+controller.showTextInput();
+
+// 5. 更新光标和编辑属性（编辑框状态变化时调用）
+controller.updateCursor(cursorInfo);
+controller.updateAttribute(inputAttribute);
+controller.changeSelection(text, start, end);
+
+// 6. 需要隐藏键盘时
+controller.hideTextInput();
+
+// 7. 编辑框失去焦点时解绑输入法
+controller.detach();
+
+// 8. 系统应用切换输入法
+setting.getInputMethods(true);  // 获取已启用输入法列表
+inputMethod.switchInputMethod(targetProperty);  // 切换到目标输入法
+```
+
+**说明** 
+
+订阅输入法操作事件（如insertText、deleteLeft等）应在attach之前完成，避免事件遗漏。attach是编辑框应用使用输入法能力的前提，必须先绑定才能进行后续操作。
+
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { inputMethod } from '@kit.IMEKit';
+```ts
+import { inputMethod } from '@kit.IMEKit';
 ```
 
 ## 常量
-
-PhonePC/2in1TabletTVWearable
 
 常量值。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
-| 参数名 | 类型 | 常量值 | 说明 |
+| 名称 | 类型 | 常量值 | 说明 |
 | --- | --- | --- | --- |
 | MAX\_TYPE\_NUM8+ | number | 128 | 可支持的最大输入法个数。 |
 
 ## InputMethodProperty8+
-
-PhonePC/2in1TabletTVWearable
 
 输入法应用属性。
 
@@ -51,13 +140,11 @@ PhonePC/2in1TabletTVWearable
 | icon9+ | string | 是 | 是 | 非必填。  - 当InputMethodProperty用于切换、查询等接口的入参时，开发者可不填写此字段，通过name和id即可唯一指定一个输入法扩展。  - 当InputMethodProperty作为查询接口的返回值时（如[getCurrentInputMethod](js-apis-inputmethod.md#inputmethodgetcurrentinputmethod9)），此字段表示输入法图标数据，可以通过iconId查询获取。 |
 | iconId9+ | number | 是 | 是 | 非必填。  - 当InputMethodProperty用于切换、查询等接口的入参时，开发者可不填写此字段，通过name和id即可唯一指定一个输入法扩展。  - 当InputMethodProperty作为查询接口的返回值时（如[getCurrentInputMethod](js-apis-inputmethod.md#inputmethodgetcurrentinputmethod9)），此字段表示icon字段的资源号。 |
 | enabledState20+ | [EnabledState](js-apis-inputmethod.md#enabledstate15) | 是 | 是 | 非必填。  - 当InputMethodProperty用于切换、查询等接口的入参时，开发者可不填写此字段，通过name和id即可唯一指定一个输入法扩展  - 当InputMethodProperty作为查询接口的返回值时（如[getCurrentInputMethod](js-apis-inputmethod.md#inputmethodgetcurrentinputmethod9)），此字段表示该输入法启用状态。 |
-| extra9+ | object | 否 | 是 | 输入法扩展信息。预留字段，当前无具体含义，暂不支持使用。  - API version 10起：非必填；  - API version 9：必填。 |
+| extra9+ | object | 否 | 是 | 输入法扩展信息。  - API version 10起：非必填；  - API version 9：必填。 |
 | packageName(deprecated) | string | 是 | 否 | 输入法包名。必填。  说明：从API version 8开始支持，从API version 9开始废弃，建议使用name替代。 |
 | methodId(deprecated) | string | 是 | 否 | 输入法唯一标识。必填。  说明：从API version 8开始支持，从API version 9开始废弃，建议使用id替代。 |
 
 ## CapitalizeMode20+
-
-PhonePC/2in1TabletTVWearable
 
 枚举，定义了文本首字母大写的不同模式。
 
@@ -65,18 +152,22 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| NONE | 0 | 不进行任何首字母大写处理。 |
-| SENTENCES | 1 | 每个句子的首字母大写。 |
-| WORDS | 2 | 每个单词首字母大写。 |
-| CHARACTERS | 3 | 每个字母都大写。 |
+| NONE | 0 | 不进行任何首字母大写处理。  使用场景：适用于无需自动大写的输入框，如密码输入、验证码输入等。 |
+| SENTENCES | 1 | 每个句子的首字母大写。  使用场景：适用于普通文本输入框，如聊天、备忘录等，自动在句号等标点后将首字母大写。 |
+| WORDS | 2 | 每个单词首字母大写。  使用场景：适用于标题、人名等需要每个单词首字母大写的场景。 |
+| CHARACTERS | 3 | 每个字母都大写。  使用场景：适用于全大写输入场景，如缩写词输入（如URL中的域名部分）。 |
 
 ## inputMethod.getController9+
-
-PhonePC/2in1TabletTVWearable
 
 getController(): InputMethodController
 
 获取客户端实例[InputMethodController](js-apis-inputmethod.md#inputmethodcontroller)。
+
+含义/功能：获取当前应用的输入法客户端控制器实例，用于后续与输入法进行交互（绑定、显示/隐藏键盘、同步编辑框状态等）。
+
+使用场景：当前台应用（如备忘录、聊天应用）需要控制输入法的显示/隐藏、绑定/解绑、同步编辑框信息时，必须先通过此接口获取InputMethodController实例。
+
+使用后效果：返回一个InputMethodController实例，后续可通过该实例调用attach、showTextInput、hideTextInput、detach等一系列接口与输入法交互。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -96,13 +187,11 @@ getController(): InputMethodController
 
 **示例：**
 
-```
-1. let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
+```ts
+let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
 ```
 
 ## inputMethod.getDefaultInputMethod11+
-
-PhonePC/2in1TabletTVWearable
 
 getDefaultInputMethod(): InputMethodProperty
 
@@ -126,13 +215,11 @@ getDefaultInputMethod(): InputMethodProperty
 
 **示例：**
 
-```
-1. let defaultIme: inputMethod.InputMethodProperty = inputMethod.getDefaultInputMethod();
+```ts
+let defaultIme: inputMethod.InputMethodProperty = inputMethod.getDefaultInputMethod();
 ```
 
 ## inputMethod.getSystemInputMethodConfigAbility11+
-
-PhonePC/2in1TabletTVWearable
 
 getSystemInputMethodConfigAbility(): ElementName
 
@@ -156,19 +243,23 @@ getSystemInputMethodConfigAbility(): ElementName
 
 **示例：**
 
-```
-1. import { bundleManager } from '@kit.AbilityKit';
+```ts
+import { bundleManager } from '@kit.AbilityKit';
 
-3. let inputMethodConfig: bundleManager.ElementName = inputMethod.getSystemInputMethodConfigAbility();
+let inputMethodConfig: bundleManager.ElementName = inputMethod.getSystemInputMethodConfigAbility();
 ```
 
 ## inputMethod.getSetting9+
 
-PhonePC/2in1TabletTVWearable
-
 getSetting(): InputMethodSetting
 
 获取客户端设置实例[InputMethodSetting](js-apis-inputmethod.md#inputmethodsetting8)。
+
+含义/功能：获取输入法设置实例，用于查询输入法列表、订阅输入法变化事件、查询面板可见性等配置管理操作。
+
+使用场景：当应用需要查询已安装/已激活输入法列表、订阅输入法切换事件、或显示输入法选择对话框时，必须先通过此接口获取InputMethodSetting实例。
+
+使用后效果：返回一个InputMethodSetting实例，后续可通过该实例调用getInputMethods、listInputMethodSubtype、on('imeChange')等接口。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -188,22 +279,31 @@ getSetting(): InputMethodSetting
 
 **示例：**
 
-```
-1. let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getSetting();
+```ts
+let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getSetting();
 ```
 
 ## inputMethod.switchInputMethod9+
-
-PhonePC/2in1TabletTVWearable
 
 switchInputMethod(target: InputMethodProperty, callback: AsyncCallback<boolean>): void
 
 切换输入法，使用callback异步回调。
 
-说明
+含义/功能：将当前输入法切换为指定的目标输入法。
 
-* 在API version 9-10版本，仅支持系统应用调用且需要权限ohos.permission.CONNECT\_IME\_ABILITY。
-* 在API version 11版本起，仅支持当前输入法应用调用。
+使用场景：当前输入法应用需要切换到另一个输入法时使用（如用户在输入法设置中选择了新的输入法）。
+
+使用后效果：成功时系统将当前输入法切换为目标输入法，目标输入法成为新的当前输入法；失败时当前输入法不变。
+
+**需要权限：**
+
+* API版本9-10：ohos.permission.CONNECT\_IME\_ABILITY
+* API版本11+：N/A
+
+**需要权限：**
+
+* API版本9-10：ohos.permission.CONNECT\_IME\_ABILITY
+* API版本11+：N/A
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -211,7 +311,7 @@ switchInputMethod(target: InputMethodProperty, callback: AsyncCallback<boolean>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| target | [InputMethodProperty](js-apis-inputmethod.md#inputmethodproperty8) | 是 | 目标输入法。 |
+| target | [InputMethodProperty](js-apis-inputmethod.md#inputmethodproperty8) | 是 | 目标输入法。  使用场景：指定要切换到的目标输入法，通过name和id唯一确定。  说明：只需填写name和id字段即可唯一指定一个输入法，无需填写label、icon等可选字段。 |
 | callback | AsyncCallback<boolean> | 是 | 回调函数。当输入法切换成功，err为undefined，data为true；否则为错误对象。 |
 
 **错误码：**
@@ -220,45 +320,55 @@ switchInputMethod(target: InputMethodProperty, callback: AsyncCallback<boolean>)
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 201 | permissions check fails. [since 9 - 10]. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800005 | configuration persistence error. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let currentIme: inputMethod.InputMethodProperty = inputMethod.getCurrentInputMethod();
-4. inputMethod.switchInputMethod(currentIme, (err: BusinessError, result: boolean) => {
-5. if (err) {
-6. console.error(`Failed to switchInputMethod, code: ${err.code}, message: ${err.message}`);
-7. return;
-8. }
-9. if (result) {
-10. console.info('Succeeded in switching input method.');
-11. } else {
-12. console.error('Failed to switch input method.');
-13. }
-14. });
+let currentIme: inputMethod.InputMethodProperty = inputMethod.getCurrentInputMethod();
+inputMethod.switchInputMethod(currentIme, (err: BusinessError, result: boolean) => {
+  if (err) {
+    console.error(`Failed to switchInputMethod, code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  if (result) {
+    console.info('Succeeded in switching input method.');
+  } else {
+    console.error('Failed to switch input method.');
+  }
+});
 ```
 
-说明
+**说明** 
 
 在 API11 中 201 permissions check fails. 这个错误码被移除。
 
 ## inputMethod.switchInputMethod9+
 
-PhonePC/2in1TabletTVWearable
-
 switchInputMethod(target: InputMethodProperty): Promise<boolean>
 
 切换输入法，使用promise异步回调。
 
-说明
+含义/功能：将当前输入法切换为指定的目标输入法。
 
-* 在API version 9-10版本，仅支持系统应用调用且需要权限ohos.permission.CONNECT\_IME\_ABILITY。
-* 在API version 11版本起，仅支持当前输入法应用调用。
+使用场景：当前输入法应用需要切换到另一个输入法时使用。
+
+使用后效果：成功时系统将当前输入法切换为目标输入法；失败时当前输入法不变。
+
+**需要权限：**
+
+* API版本9-10：ohos.permission.CONNECT\_IME\_ABILITY
+* API版本11+：N/A
+
+**需要权限：**
+
+* API版本9-10：ohos.permission.CONNECT\_IME\_ABILITY
+* API版本11+：N/A
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -266,13 +376,13 @@ switchInputMethod(target: InputMethodProperty): Promise<boolean>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| target | [InputMethodProperty](js-apis-inputmethod.md#inputmethodproperty8) | 是 | 目标输入法。 |
+| target | [InputMethodProperty](js-apis-inputmethod.md#inputmethodproperty8) | 是 | 目标输入法。  使用场景：指定要切换到的目标输入法，通过name和id唯一确定。  说明：只需填写name和id字段即可唯一指定一个输入法。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<boolean> | Promise对象。返回true表示切换输入法成功，返回false表示切换输入法失败。 |
+| Promise<boolean> | Promise对象。resolve时返回true表示切换输入法成功，返回false表示切换输入法失败；reject时返回错误对象，表示切换输入法时发生错误。 |
 
 **错误码：**
 
@@ -280,38 +390,43 @@ switchInputMethod(target: InputMethodProperty): Promise<boolean>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 201 | permissions check fails. [since 9 - 10] |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800005 | configuration persistence error. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let currentIme: inputMethod.InputMethodProperty = inputMethod.getCurrentInputMethod();
-4. inputMethod.switchInputMethod(currentIme).then((result: boolean) => {
-5. if (result) {
-6. console.info('Succeeded in switching input method.');
-7. } else {
-8. console.error('Failed to switch input method.');
-9. }
-10. }).catch((err: BusinessError) => {
-11. console.error(`Failed to switchInputMethod, code: ${err.code}, message: ${err.message}`);
-12. });
+let currentIme: inputMethod.InputMethodProperty = inputMethod.getCurrentInputMethod();
+inputMethod.switchInputMethod(currentIme).then((result: boolean) => {
+  if (result) {
+    console.info('Succeeded in switching input method.');
+  } else {
+    console.error('Failed to switch input method.');
+  }
+}).catch((err: BusinessError) => {
+  console.error(`Failed to switchInputMethod, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
-说明
+**说明** 
 
 在 API11 中 201 permissions check fails. 这个错误码被移除。
 
 ## inputMethod.getCurrentInputMethod9+
 
-PhonePC/2in1TabletTVWearable
-
 getCurrentInputMethod(): InputMethodProperty
 
 使用同步方法获取当前输入法。
+
+含义/功能：获取当前正在使用的输入法属性信息。
+
+使用场景：当应用需要知道当前活跃的输入法是哪个（如判断输入法名称、获取输入法id用于后续切换操作）时使用。
+
+使用后效果：返回当前输入法的InputMethodProperty对象。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -323,23 +438,25 @@ getCurrentInputMethod(): InputMethodProperty
 
 **示例：**
 
-```
-1. let currentIme: inputMethod.InputMethodProperty = inputMethod.getCurrentInputMethod();
+```ts
+let currentIme: inputMethod.InputMethodProperty = inputMethod.getCurrentInputMethod();
 ```
 
 ## inputMethod.switchCurrentInputMethodSubtype9+
-
-PhonePC/2in1TabletTVWearable
 
 switchCurrentInputMethodSubtype(target: InputMethodSubtype, callback: AsyncCallback<boolean>): void
 
 切换当前输入法的子类型。使用callback异步回调。
 
-说明
+**需要权限：**
 
-* 在API version 9版本，仅支持系统应用调用且需要权限ohos.permission.CONNECT\_IME\_ABILITY。
-* 在API version 10版本，支持系统应用和当前输入法应用调用；需要权限ohos.permission.CONNECT\_IME\_ABILITY。
-* 在API version 11版本起，仅支持当前输入法调用。
+* API版本9-10：ohos.permission.CONNECT\_IME\_ABILITY
+* API版本11+：N/A
+
+**需要权限：**
+
+* API版本9-10：ohos.permission.CONNECT\_IME\_ABILITY
+* API版本11+：N/A
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -356,57 +473,60 @@ switchCurrentInputMethodSubtype(target: InputMethodSubtype, callback: AsyncCallb
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 201 | permissions check fails. [since 9 - 10] |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800005 | configuration persistence error. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let extra: Record<string, string> = {}
-4. // 参考InputMethodSubtype参数说明
-5. inputMethod.switchCurrentInputMethodSubtype({
-6. id: "ServiceExtAbility",
-7. label: "",
-8. name: "com.example.keyboard",
-9. mode: "upper",
-10. locale: "",
-11. language: "",
-12. icon: "",
-13. iconId: 0,
-14. extra: extra
-15. }, (err: BusinessError, result: boolean) => {
-16. if (err) {
-17. console.error(`Failed to switchCurrentInputMethodSubtype, code: ${err.code}, message: ${err.message}`);
-18. return;
-19. }
-20. if (result) {
-21. console.info('Succeeded in switching currentInputMethodSubtype.');
-22. } else {
-23. console.error('Failed to switchCurrentInputMethodSubtype');
-24. }
-25. });
+let extra: Record<string, string> = {}
+// 参考InputMethodSubtype参数说明
+inputMethod.switchCurrentInputMethodSubtype({
+  id: "ServiceExtAbility",
+  label: "",
+  name: "com.example.keyboard",
+  mode: "upper",
+  locale: "",
+  language: "",
+  icon: "",
+  iconId: 0,
+  extra: extra
+}, (err: BusinessError, result: boolean) => {
+  if (err) {
+    console.error(`Failed to switchCurrentInputMethodSubtype, code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  if (result) {
+    console.info('Succeeded in switching currentInputMethodSubtype.');
+  } else {
+    console.error('Failed to switchCurrentInputMethodSubtype');
+  }
+});
 ```
 
-说明
+**说明** 
 
 在 API11 中 201 permissions check fails. 这个错误码被移除。
 
 ## inputMethod.switchCurrentInputMethodSubtype9+
 
-PhonePC/2in1TabletTVWearable
-
 switchCurrentInputMethodSubtype(target: InputMethodSubtype): Promise<boolean>
 
 切换当前输入法的子类型。使用promise异步回调。
 
-说明
+**需要权限：**
 
-* 在API version 9版本，仅支持系统应用调用且需要权限ohos.permission.CONNECT\_IME\_ABILITY。
-* 在API version 10版本，支持系统应用和当前输入法应用调用；需要权限ohos.permission.CONNECT\_IME\_ABILITY。
-* 在API version 11版本起，仅支持当前输入法调用。
+* API版本9-10：ohos.permission.CONNECT\_IME\_ABILITY
+* API版本11+：N/A
+
+**需要权限：**
+
+* API版本9-10：ohos.permission.CONNECT\_IME\_ABILITY
+* API版本11+：N/A
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -420,7 +540,7 @@ switchCurrentInputMethodSubtype(target: InputMethodSubtype): Promise<boolean>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<boolean> | Promise对象。返回true表示当前输入法切换子类型成功，返回false表示当前输入法切换子类型成功失败。 |
+| Promise<boolean> | Promise对象。resolve时返回true表示当前输入法切换子类型成功，返回false表示当前输入法切换子类型失败；reject时返回错误对象，表示切换输入法子类型时发生错误。 |
 
 **错误码：**
 
@@ -428,45 +548,44 @@ switchCurrentInputMethodSubtype(target: InputMethodSubtype): Promise<boolean>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 201 | permissions check fails. [since 9 - 10] |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800005 | configuration persistence error. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let extra: Record<string, string> = {}
-4. // 参考InputMethodSubtype参数说明
-5. inputMethod.switchCurrentInputMethodSubtype({
-6. id: "ServiceExtAbility",
-7. label: "",
-8. name: "com.example.keyboard",
-9. mode: "upper",
-10. locale: "",
-11. language: "",
-12. icon: "",
-13. iconId: 0,
-14. extra: extra
-15. }).then((result: boolean) => {
-16. if (result) {
-17. console.info('Succeeded in switching currentInputMethodSubtype.');
-18. } else {
-19. console.error('Failed to switchCurrentInputMethodSubtype.');
-20. }
-21. }).catch((err: BusinessError) => {
-22. console.error(`Failed to switchCurrentInputMethodSubtype, code: ${err.code}, message: ${err.message}`);
-23. });
+let extra: Record<string, string> = {}
+// 参考InputMethodSubtype参数说明
+inputMethod.switchCurrentInputMethodSubtype({
+  id: "ServiceExtAbility",
+  label: "",
+  name: "com.example.keyboard",
+  mode: "upper",
+  locale: "",
+  language: "",
+  icon: "",
+  iconId: 0,
+  extra: extra
+}).then((result: boolean) => {
+  if (result) {
+    console.info('Succeeded in switching currentInputMethodSubtype.');
+  } else {
+    console.error('Failed to switchCurrentInputMethodSubtype.');
+  }
+}).catch((err: BusinessError) => {
+  console.error(`Failed to switchCurrentInputMethodSubtype, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
-说明
+**说明** 
 
 在 API11 中 201 permissions check fails. 这个错误码被移除。
 
 ## inputMethod.getCurrentInputMethodSubtype9+
-
-PhonePC/2in1TabletTVWearable
 
 getCurrentInputMethodSubtype(): InputMethodSubtype
 
@@ -482,24 +601,27 @@ getCurrentInputMethodSubtype(): InputMethodSubtype
 
 **示例：**
 
-```
-1. import { InputMethodSubtype } from '@kit.IMEKit';
+```ts
+import { InputMethodSubtype } from '@kit.IMEKit';
 
-3. let currentImeSubType: InputMethodSubtype = inputMethod.getCurrentInputMethodSubtype();
+let currentImeSubType: InputMethodSubtype = inputMethod.getCurrentInputMethodSubtype();
 ```
 
 ## inputMethod.switchCurrentInputMethodAndSubtype9+
-
-PhonePC/2in1TabletTVWearable
 
 switchCurrentInputMethodAndSubtype(inputMethodProperty: InputMethodProperty, inputMethodSubtype: InputMethodSubtype, callback: AsyncCallback<boolean>): void
 
 切换至指定输入法的指定子类型，适用于跨输入法切换子类型。使用callback异步回调。
 
-说明
+**需要权限：**
 
-* 在API version 9-10版本，仅支持系统应用调用且需要权限ohos.permission.CONNECT\_IME\_ABILITY。
-* 在API version 11版本起，仅支持当前输入法调用。
+* API版本9-10：ohos.permission.CONNECT\_IME\_ABILITY
+* API版本11+：N/A
+
+**需要权限：**
+
+* API版本9-10：ohos.permission.CONNECT\_IME\_ABILITY
+* API版本11+：N/A
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -517,47 +639,51 @@ switchCurrentInputMethodAndSubtype(inputMethodProperty: InputMethodProperty, inp
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 201 | permissions check fails. [since 9 - 10]. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800005 | configuration persistence error. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
 
 **示例：**
 
-```
-1. import { InputMethodSubtype } from '@kit.IMEKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { InputMethodSubtype } from '@kit.IMEKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let currentIme: inputMethod.InputMethodProperty = inputMethod.getCurrentInputMethod();
-5. let imSubType: InputMethodSubtype = inputMethod.getCurrentInputMethodSubtype();
-6. inputMethod.switchCurrentInputMethodAndSubtype(currentIme, imSubType, (err: BusinessError, result: boolean) => {
-7. if (err) {
-8. console.error(`Failed to switchCurrentInputMethodAndSubtype, code: ${err.code}, message: ${err.message}`);
-9. return;
-10. }
-11. if (result) {
-12. console.info('Succeeded in switching currentInputMethodAndSubtype.');
-13. } else {
-14. console.error('Failed to switchCurrentInputMethodAndSubtype.');
-15. }
-16. });
+let currentIme: inputMethod.InputMethodProperty = inputMethod.getCurrentInputMethod();
+let imSubType: InputMethodSubtype = inputMethod.getCurrentInputMethodSubtype();
+inputMethod.switchCurrentInputMethodAndSubtype(currentIme, imSubType, (err: BusinessError, result: boolean) => {
+  if (err) {
+    console.error(`Failed to switchCurrentInputMethodAndSubtype, code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  if (result) {
+    console.info('Succeeded in switching currentInputMethodAndSubtype.');
+  } else {
+    console.error('Failed to switchCurrentInputMethodAndSubtype.');
+  }
+});
 ```
 
-说明
+**说明** 
 
 在 API11 中 201 permissions check fails. 这个错误码被移除。
 
 ## inputMethod.switchCurrentInputMethodAndSubtype9+
 
-PhonePC/2in1TabletTVWearable
-
 switchCurrentInputMethodAndSubtype(inputMethodProperty: InputMethodProperty, inputMethodSubtype: InputMethodSubtype): Promise<boolean>
 
 切换至指定输入法的指定子类型，适用于跨输入法切换子类型。使用promise异步回调。
 
-说明
+**需要权限：**
 
-* 在API version 9-10版本，仅支持系统应用调用且需要权限ohos.permission.CONNECT\_IME\_ABILITY。
-* 在API version 11版本起，仅支持当前输入法调用。
+* API版本9-10：ohos.permission.CONNECT\_IME\_ABILITY
+* API版本11+：N/A
+
+**需要权限：**
+
+* API版本9-10：ohos.permission.CONNECT\_IME\_ABILITY
+* API版本11+：N/A
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -572,7 +698,7 @@ switchCurrentInputMethodAndSubtype(inputMethodProperty: InputMethodProperty, inp
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<boolean> | Promise对象。返回true表示切换至指定输入法的指定子类型成功，返回false表示切换至指定输入法的指定子类型失败。 |
+| Promise<boolean> | Promise对象。resolve时返回true表示切换至指定输入法的指定子类型成功，返回false表示切换至指定输入法的指定子类型失败；reject时返回错误对象，表示切换至指定输入法的指定子类型时发生错误。 |
 
 **错误码：**
 
@@ -580,42 +706,41 @@ switchCurrentInputMethodAndSubtype(inputMethodProperty: InputMethodProperty, inp
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 201 | permissions check fails. [since 9 - 10]. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800005 | configuration persistence error. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
 
 **示例：**
 
-```
-1. import { InputMethodSubtype } from '@kit.IMEKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { InputMethodSubtype } from '@kit.IMEKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let currentIme: inputMethod.InputMethodProperty = inputMethod.getCurrentInputMethod();
-5. let imSubType: InputMethodSubtype = inputMethod.getCurrentInputMethodSubtype();
-6. inputMethod.switchCurrentInputMethodAndSubtype(currentIme, imSubType).then((result: boolean) => {
-7. if (result) {
-8. console.info('Succeeded in switching currentInputMethodAndSubtype.');
-9. } else {
-10. console.error('Failed to switchCurrentInputMethodAndSubtype.');
-11. }
-12. }).catch((err: BusinessError) => {
-13. console.error(`Failed to switchCurrentInputMethodAndSubtype, code: ${err.code}, message: ${err.message}`);
-14. });
+let currentIme: inputMethod.InputMethodProperty = inputMethod.getCurrentInputMethod();
+let imSubType: InputMethodSubtype = inputMethod.getCurrentInputMethodSubtype();
+inputMethod.switchCurrentInputMethodAndSubtype(currentIme, imSubType).then((result: boolean) => {
+  if (result) {
+    console.info('Succeeded in switching currentInputMethodAndSubtype.');
+  } else {
+    console.error('Failed to switchCurrentInputMethodAndSubtype.');
+  }
+}).catch((err: BusinessError) => {
+  console.error(`Failed to switchCurrentInputMethodAndSubtype, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
-说明
+**说明** 
 
 在 API11 中 201 permissions check fails. 这个错误码被移除。
 
 ## inputMethod.getInputMethodController(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 getInputMethodController(): InputMethodController
 
 获取客户端实例[InputMethodController](js-apis-inputmethod.md#inputmethodcontroller)。
 
-说明
+**说明** 
 
 从API version 6开始支持，从API version 9开始废弃，建议使用[getController](js-apis-inputmethod.md#inputmethodgetcontroller9)替代。
 
@@ -629,19 +754,17 @@ getInputMethodController(): InputMethodController
 
 **示例：**
 
-```
-1. let inputMethodController: inputMethod.InputMethodController = inputMethod.getInputMethodController();
+```ts
+let inputMethodController: inputMethod.InputMethodController = inputMethod.getInputMethodController();
 ```
 
 ## inputMethod.getInputMethodSetting(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getInputMethodSetting(): InputMethodSetting
 
 获取客户端设置实例[InputMethodSetting](js-apis-inputmethod.md#inputmethodsetting8)。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[getSetting](js-apis-inputmethod.md#inputmethodgetsetting9)替代。
 
@@ -655,13 +778,11 @@ getInputMethodSetting(): InputMethodSetting
 
 **示例：**
 
-```
-1. let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getInputMethodSetting();
+```ts
+let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getInputMethodSetting();
 ```
 
 ## inputMethod.setSimpleKeyboardEnabled20+
-
-PhonePC/2in1TabletTVWearable
 
 setSimpleKeyboardEnabled(enable: boolean): void
 
@@ -677,14 +798,12 @@ setSimpleKeyboardEnabled(enable: boolean): void
 
 **示例：**
 
-```
-1. let enable: boolean = false;
-2. inputMethod.setSimpleKeyboardEnabled(enable);
+```ts
+  let enable: boolean = false;
+  inputMethod.setSimpleKeyboardEnabled(enable);
 ```
 
 ## inputMethod.onAttachmentDidFail22+
-
-PhonePC/2in1TabletTVWearable
 
 onAttachmentDidFail(callback: Callback<AttachFailureReason>): void
 
@@ -700,22 +819,20 @@ onAttachmentDidFail(callback: Callback<AttachFailureReason>): void
 
 **示例：**
 
-```
-1. import { Callback } from '@kit.BasicServicesKit';
+```ts
+import { Callback } from '@kit.BasicServicesKit';
 
-3. let attachmentDidFailCallback: Callback<inputMethod.AttachFailureReason> =
-4. (reason: inputMethod.AttachFailureReason): void => {
-5. console.info(`Attachment failed with reason: ${reason}.`);
-6. if (reason === inputMethod.AttachFailureReason.CALLER_NOT_FOCUSED) {
-7. console.info(`Failure reason is CALLER_NOT_FOCUSED.`);
-8. }
-9. };
-10. inputMethod.onAttachmentDidFail(attachmentDidFailCallback);
+let attachmentDidFailCallback: Callback<inputMethod.AttachFailureReason> =
+  (reason: inputMethod.AttachFailureReason): void => {
+    console.error(`Attachment failed with reason: ${reason}.`);
+  if (reason === inputMethod.AttachFailureReason.CALLER_NOT_FOCUSED) {
+    console.error(`Failure reason is CALLER_NOT_FOCUSED.`);
+  }
+  };
+inputMethod.onAttachmentDidFail(attachmentDidFailCallback);
 ```
 
 ## inputMethod.offAttachmentDidFail22+
-
-PhonePC/2in1TabletTVWearable
 
 offAttachmentDidFail(callback?: Callback<AttachFailureReason>): void
 
@@ -731,23 +848,21 @@ offAttachmentDidFail(callback?: Callback<AttachFailureReason>): void
 
 **示例：**
 
-```
-1. import { Callback } from '@kit.BasicServicesKit';
+```ts
+import { Callback } from '@kit.BasicServicesKit';
 
-3. let attachmentDidFailCallback: Callback<inputMethod.AttachFailureReason> =
-4. (reason: inputMethod.AttachFailureReason): void => {
-5. console.info(`Attachment failed with reason: ${reason}.`);
-6. if (reason === inputMethod.AttachFailureReason.CALLER_NOT_FOCUSED) {
-7. console.info(`Failure reason is CALLER_NOT_FOCUSED.`);
-8. }
-9. };
-10. inputMethod.onAttachmentDidFail(attachmentDidFailCallback);
-11. inputMethod.offAttachmentDidFail(attachmentDidFailCallback);
+let attachmentDidFailCallback: Callback<inputMethod.AttachFailureReason> =
+  (reason: inputMethod.AttachFailureReason): void => {
+    console.error(`Attachment failed with reason: ${reason}.`);
+  if (reason === inputMethod.AttachFailureReason.CALLER_NOT_FOCUSED) {
+    console.error(`Failure reason is CALLER_NOT_FOCUSED.`);
+  }
+  };
+inputMethod.onAttachmentDidFail(attachmentDidFailCallback);
+inputMethod.offAttachmentDidFail(attachmentDidFailCallback);
 ```
 
 ## TextInputType10+
-
-PhonePC/2in1TabletTVWearable
 
 文本输入类型。
 
@@ -755,25 +870,23 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| NONE | -1 | NONE。 |
-| TEXT | 0 | 文本类型。 |
-| MULTILINE | 1 | 多行类型。 |
-| NUMBER | 2 | 数字类型。 |
-| PHONE | 3 | 电话号码类型。 |
-| DATETIME | 4 | 日期类型。 |
-| EMAIL\_ADDRESS | 5 | 邮箱地址类型。 |
-| URL | 6 | 链接类型。 |
-| VISIBLE\_PASSWORD | 7 | 密码类型。 |
-| NUMBER\_PASSWORD11+ | 8 | 数字密码类型。 |
-| SCREEN\_LOCK\_PASSWORD20+ | 9 | 锁屏密码类型。 |
-| USER\_NAME20+ | 10 | 用户名类型。 |
-| NEW\_PASSWORD20+ | 11 | 新密码类型。 |
-| NUMBER\_DECIMAL20+ | 12 | 带小数点的数字类型。 |
-| ONE\_TIME\_CODE20+ | 13 | 验证码类型。 |
+| NONE | -1 | NONE。  使用场景：当编辑框不希望指定特定输入类型时使用，输入法将使用默认键盘布局。 |
+| TEXT | 0 | 文本类型。  使用场景：适用于普通文本输入框，如聊天、备忘录等，输入法显示全功能键盘。 |
+| MULTILINE | 1 | 多行类型。  使用场景：适用于需要多行文本输入的场景，如长文本编辑、评论框等。 |
+| NUMBER | 2 | 数字类型。  使用场景：适用于仅需要输入数字的场景，如数量输入、年龄输入等，输入法显示数字键盘。 |
+| PHONE | 3 | 电话号码类型。  使用场景：适用于电话号码输入框，输入法显示电话号码键盘（包含数字和常用电话符号）。 |
+| DATETIME | 4 | 日期类型。  使用场景：适用于日期时间输入框，输入法显示日期相关的键盘布局。 |
+| EMAIL\_ADDRESS | 5 | 邮箱地址类型。  使用场景：适用于邮箱输入框，输入法键盘会突出显示"@""."等常用邮箱符号。 |
+| URL | 6 | 链接类型。  使用场景：适用于网址输入框，输入法键盘会突出显示"/""."等常用URL符号。 |
+| VISIBLE\_PASSWORD | 7 | 密码类型。  使用场景：适用于密码输入框，输入法显示可见密码键盘，不进行自动建议。 |
+| NUMBER\_PASSWORD11+ | 8 | 数字密码类型。  使用场景：适用于仅需输入数字密码的场景，如PIN码输入。 |
+| SCREEN\_LOCK\_PASSWORD20+ | 9 | 锁屏密码类型。  使用场景：适用于锁屏界面的密码输入框。 |
+| USER\_NAME20+ | 10 | 用户名类型。  使用场景：适用于用户名输入框，输入法可根据用户名特点优化建议。 |
+| NEW\_PASSWORD20+ | 11 | 新密码类型。  使用场景：适用于设置新密码的输入框，输入法可提供密码强度提示。 |
+| NUMBER\_DECIMAL20+ | 12 | 带小数点的数字类型。  使用场景：适用于需要输入带小数点数字的场景，如金额输入。 |
+| ONE\_TIME\_CODE20+ | 13 | 验证码类型。  使用场景：适用于验证码输入框，输入法可优化验证码输入体验。 |
 
 ## EnterKeyType10+
-
-PhonePC/2in1TabletTVWearable
 
 Enter键的功能类型。
 
@@ -781,19 +894,17 @@ Enter键的功能类型。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| UNSPECIFIED | 0 | 未指定。 |
-| NONE | 1 | NONE。 |
-| GO | 2 | 前往。 |
-| SEARCH | 3 | 查找。 |
-| SEND | 4 | 发送。 |
-| NEXT | 5 | 下一步。 |
-| DONE | 6 | 完成。 |
-| PREVIOUS | 7 | 上一步。 |
-| NEWLINE12+ | 8 | 换行。 |
+| UNSPECIFIED | 0 | 未指定。  使用场景：编辑框不指定Enter键具体功能时使用。 |
+| NONE | 1 | NONE。  使用场景：Enter键无特定行为，仅作为换行或普通按键使用。 |
+| GO | 2 | 前往。  使用场景：适用于URL输入框，Enter键触发"前往"操作，如打开链接。 |
+| SEARCH | 3 | 查找。  使用场景：适用于搜索框，Enter键触发搜索操作。 |
+| SEND | 4 | 发送。  使用场景：适用于消息发送框，Enter键触发发送操作。 |
+| NEXT | 5 | 下一步。  使用场景：适用于多步骤表单，Enter键跳转到下一个输入框。 |
+| DONE | 6 | 完成。  使用场景：适用于单步骤表单的最后输入框，Enter键表示输入完成。 |
+| PREVIOUS | 7 | 上一步。  使用场景：适用于多步骤表单，Enter键跳转到上一个输入框。 |
+| NEWLINE12+ | 8 | 换行。  使用场景：适用于多行文本编辑框，Enter键插入换行符。 |
 
 ## KeyboardStatus10+
-
-PhonePC/2in1TabletTVWearable
 
 输入法软键盘状态。
 
@@ -801,13 +912,11 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| NONE | 0 | NONE。 |
-| HIDE | 1 | 隐藏状态。 |
-| SHOW | 2 | 显示状态。 |
+| NONE | 0 | NONE。  使用场景：表示键盘状态尚未确定或无法判断时使用。 |
+| HIDE | 1 | 隐藏状态。  使用场景：表示当前软键盘处于隐藏状态。 |
+| SHOW | 2 | 显示状态。  使用场景：表示当前软键盘处于显示状态。 |
 
 ## Direction10+
-
-PhonePC/2in1TabletTVWearable
 
 光标移动方向。
 
@@ -815,14 +924,12 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| CURSOR\_UP | 1 | 向上。 |
-| CURSOR\_DOWN | 2 | 向下。 |
-| CURSOR\_LEFT | 3 | 向左。 |
-| CURSOR\_RIGHT | 4 | 向右。 |
+| CURSOR\_UP | 1 | 向上。  使用场景：输入法请求光标向上移动时使用，如多行文本中上移光标。 |
+| CURSOR\_DOWN | 2 | 向下。  使用场景：输入法请求光标向下移动时使用。 |
+| CURSOR\_LEFT | 3 | 向左。  使用场景：输入法请求光标向左移动时使用，如删除左侧字符前移动光标。 |
+| CURSOR\_RIGHT | 4 | 向右。  使用场景：输入法请求光标向右移动时使用。 |
 
 ## ExtendAction10+
-
-PhonePC/2in1TabletTVWearable
 
 编辑框中文本的扩展编辑操作类型，如剪切、复制等。
 
@@ -830,14 +937,12 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| SELECT\_ALL | 0 | 全选。 |
-| CUT | 3 | 剪切。 |
-| COPY | 4 | 复制。 |
-| PASTE | 5 | 粘贴。 |
+| SELECT\_ALL | 0 | 全选。  使用场景：输入法请求全选编辑框中的文本时使用。 |
+| CUT | 3 | 剪切。  使用场景：输入法请求剪切选中的文本时使用，将选中文本复制到剪贴板并删除原文本。 |
+| COPY | 4 | 复制。  使用场景：输入法请求复制选中的文本时使用，将选中文本复制到剪贴板。 |
+| PASTE | 5 | 粘贴。  使用场景：输入法请求粘贴剪贴板内容时使用。 |
 
 ## FunctionKey10+
-
-PhonePC/2in1TabletTVWearable
 
 输入法功能键类型。
 
@@ -849,8 +954,6 @@ PhonePC/2in1TabletTVWearable
 
 ## InputAttribute10+
 
-PhonePC/2in1TabletTVWearable
-
 编辑框属性，包含文本输入类型和Enter键功能类型。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
@@ -861,10 +964,9 @@ PhonePC/2in1TabletTVWearable
 | enterKeyType | [EnterKeyType](js-apis-inputmethod.md#enterkeytype10) | 否 | 否 | Enter键功能类型。 |
 | placeholder20+ | string | 否 | 是 | 编辑框设置的占位符信息。  - 编辑框设置占位符信息时，长度不超过255个字符（如果超出将会自动截断为255个字符），用于提示或引导用户输入临时性文本或符号。（例如：提示输入项为"必填"或"非必填"的输入结果反馈。）  - 编辑框没有设置占位符信息时，默认为空字符串。  - 该字段在调用[attach](js-apis-inputmethod.md#attach10)时提供给输入法应用。 |
 | abilityName20+ | string | 否 | 是 | 编辑框设置的ability名称。  - 编辑框设置ability名称时，长度不超过127个字符（如果超出将会自动截断为127个字符）。  - 编辑框未设置ability名称时，默认为空字符串。  - 该字段在调用绑定[attach](js-apis-inputmethod.md#attach10)时提供给输入法应用。 |
+| consumeKeyEvents | boolean | 否 | 是 | 编辑框是否具有完整处理字母、字符、功能等按键的能力。默认值为false。  - 值为true，表示具备此能力。  - 值为false，表示不具备此能力。  - 该字段在调用[attach](js-apis-inputmethod.md#attach10) / [InputAttribute](js-apis-inputmethod.md#inputattribute10)时提供给输入法应用。  **起始版本：** 26.0.0  **模型约束：** 该参数仅可在Stage模型下使用。 |
 
 ## TextConfig10+
-
-PhonePC/2in1TabletTVWearable
 
 编辑框的配置信息。
 
@@ -881,8 +983,6 @@ PhonePC/2in1TabletTVWearable
 
 ## CursorInfo10+
 
-PhonePC/2in1TabletTVWearable
-
 光标信息。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
@@ -892,11 +992,10 @@ PhonePC/2in1TabletTVWearable
 | left | number | 否 | 否 | 光标的横坐标，单位为px。该参数应为整数，最小值为0，最大值为当前屏幕的宽度。 |
 | top | number | 否 | 否 | 光标的纵坐标，单位为px。该参数应为整数，最小值为0，最大值为当前屏幕的高度。 |
 | width | number | 否 | 否 | 光标的宽度，单位为px。该参数应为整数，最小值为0，最大值为当前屏幕的宽度。 |
-| height | number | 否 | 否 | 光标的高度，单位为px。该参数应为整数，最小值为0，最大值为当前屏幕的高度 |
+| height | number | 否 | 否 | 光标的高度，单位为px。该参数应为整数，最小值为0，最大值为当前屏幕的高度。 |
+| displayId | number | 否 | 是 | 光标所在显示器的ID。  **起始版本：** 26.0.0  **模型约束：** 该参数仅可在Stage模型下使用。 |
 
 ## Range10+
-
-PhonePC/2in1TabletTVWearable
 
 文本的选中范围。
 
@@ -909,8 +1008,6 @@ PhonePC/2in1TabletTVWearable
 
 ## Movement10+
 
-PhonePC/2in1TabletTVWearable
-
 选中文本时，光标移动的方向。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
@@ -920,8 +1017,6 @@ PhonePC/2in1TabletTVWearable
 | direction | [Direction](js-apis-inputmethod.md#direction10) | 否 | 否 | 选中文本时，光标的移动方向。 |
 
 ## InputWindowInfo10+
-
-PhonePC/2in1TabletTVWearable
 
 输入法软键盘的窗口信息。
 
@@ -938,21 +1033,17 @@ PhonePC/2in1TabletTVWearable
 
 ## EnabledState15+
 
-PhonePC/2in1TabletTVWearable
-
 输入法启用状态。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| DISABLED | 0 | 未启用。 |
-| BASIC\_MODE | 1 | 基础模式。 |
-| FULL\_EXPERIENCE\_MODE | 2 | 完整体验模式。 |
+| DISABLED | 0 | 未启用。  使用场景：输入法已被禁用，不能作为当前输入法使用。 |
+| BASIC\_MODE | 1 | 基础模式。  使用场景：输入法已启用但处于基础模式，仅具备基础输入能力，不支持高级功能（如自定义通信）。 |
+| FULL\_EXPERIENCE\_MODE | 2 | 完整体验模式。  使用场景：输入法已启用且处于完整体验模式，支持所有功能（包括自定义通信、预上屏等）。 |
 
 ## RequestKeyboardReason15+
-
-PhonePC/2in1TabletTVWearable
 
 请求键盘输入的原因。
 
@@ -960,18 +1051,16 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| NONE | 0 | 表示没有特定的原因触发键盘请求。 |
-| MOUSE | 1 | 表示键盘请求是由鼠标操作触发的。 |
-| TOUCH | 2 | 表示键盘请求是由触摸操作触发的。 |
-| OTHER | 20 | 表示键盘请求是由其他原因触发的。 |
+| NONE | 0 | 表示没有特定的原因触发键盘请求。  使用场景：默认值，不指定特定触发原因时使用。 |
+| MOUSE | 1 | 表示键盘请求是由鼠标操作触发的。  使用场景：用户通过鼠标点击编辑框触发键盘弹出时使用。 |
+| TOUCH | 2 | 表示键盘请求是由触摸操作触发的。  使用场景：用户通过触摸点击编辑框触发键盘弹出时使用。 |
+| OTHER | 20 | 表示键盘请求是由其他原因触发的。  使用场景：键盘弹出的触发原因不属于鼠标和触摸时使用。 |
 
 ## MessageHandler15+
 
-PhonePC/2in1TabletTVWearable
-
 自定义通信对象。
 
-说明
+**说明** 
 
 开发者可通过注册此对象来接收输入法应用发送的自定义通信数据，接收到自定义通信数据时会触发此对象中[onMessage](js-apis-inputmethod.md#onmessage15)回调函数。
 
@@ -981,13 +1070,11 @@ PhonePC/2in1TabletTVWearable
 
 ### onMessage15+
 
-PhonePC/2in1TabletTVWearable
-
 onMessage(msgId: string, msgParam?: ArrayBuffer): void
 
 接收输入法应用发送的自定义数据回调函数。
 
-说明
+**说明** 
 
 当已注册的MessageHandler接收到来自输入法应用发送的自定义通信数据时，会触发该回调函数。
 
@@ -1004,29 +1091,27 @@ msgId为必选参数，msgParam为可选参数。存在收到仅有msgId自定�
 
 **示例：**
 
-```
-1. let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
+```ts
+let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
 
-3. let messageHandler: inputMethod.MessageHandler = {
-4. onTerminated(): void {
-5. console.info('OnTerminated.');
-6. },
-7. onMessage(msgId: string, msgParam?: ArrayBuffer): void {
-8. console.info(`recv message, msg: ${msgId}, msgParam: ${JSON.stringify(msgParam)}`);
-9. }
-10. };
-11. inputMethodController.recvMessage(messageHandler);
+let messageHandler: inputMethod.MessageHandler = {
+  onTerminated(): void {
+    console.info('OnTerminated.');
+  },
+  onMessage(msgId: string, msgParam?: ArrayBuffer): void {
+    console.info(`recv message, msg: ${msgId}, msgParam: ${JSON.stringify(msgParam)}`);
+  }
+};
+inputMethodController.recvMessage(messageHandler);
 ```
 
 ### onTerminated15+
-
-PhonePC/2in1TabletTVWearable
 
 onTerminated(): void
 
 监听对象终止回调函数。
 
-说明
+**说明** 
 
 当应用注册新的MessageHandler对象时，会触发上一个已注册MessageHandler对象的OnTerminated回调函数。
 
@@ -1036,23 +1121,21 @@ onTerminated(): void
 
 **示例：**
 
-```
-1. let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
+```ts
+let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
 
-3. let messageHandler: inputMethod.MessageHandler = {
-4. onTerminated(): void {
-5. console.info('OnTerminated.');
-6. },
-7. onMessage(msgId: string, msgParam?: ArrayBuffer): void {
-8. console.info(`recv message, msg: ${msgId}, msgParam: ${JSON.stringify(msgParam)}`);
-9. }
-10. };
-11. inputMethodController.recvMessage(messageHandler);
+let messageHandler: inputMethod.MessageHandler = {
+  onTerminated(): void {
+    console.info('OnTerminated.');
+  },
+  onMessage(msgId: string, msgParam?: ArrayBuffer): void {
+    console.info(`recv message, msg: ${msgId}, msgParam: ${JSON.stringify(msgParam)}`);
+  }
+};
+inputMethodController.recvMessage(messageHandler);
 ```
 
 ## SetPreviewTextCallback17+
-
-PhonePC/2in1TabletTVWearable
 
 type SetPreviewTextCallback = (text: string, range: Range) => void
 
@@ -1069,21 +1152,17 @@ type SetPreviewTextCallback = (text: string, range: Range) => void
 
 ## AttachFailureReason22+
 
-PhonePC/2in1TabletTVWearable
-
 枚举，绑定失败的原因。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| CALLER\_NOT\_FOCUSED | 0 | 表示调用者非焦点窗口所属应用导致的失败。 |
-| IME\_ABNORMAL | 1 | 表示输入法应用异常导致的失败。 |
-| SERVICE\_ABNORMAL | 2 | 表示输入法框架服务异常导致的失败。 |
+| CALLER\_NOT\_FOCUSED | 0 | 表示调用者非焦点窗口所属应用导致的失败。  使用场景：应用窗口未获得焦点时调用attach，会返回此失败原因。  说明：调用attach前需确保应用窗口已获焦。 |
+| IME\_ABNORMAL | 1 | 表示输入法应用异常导致的失败。  使用场景：输入法应用进程崩溃或未正常运行时，attach会返回此失败原因。 |
+| SERVICE\_ABNORMAL | 2 | 表示输入法框架服务异常导致的失败。  使用场景：输入法框架服务进程异常时，attach会返回此失败原因。 |
 
 ## AttachOptions23+
-
-PhonePC/2in1TabletTVWearable
 
 绑定输入法的附加选项。
 
@@ -1098,19 +1177,44 @@ PhonePC/2in1TabletTVWearable
 
 ## InputMethodController
 
-PhonePC/2in1TabletTVWearable
-
 下列API示例中都需使用[getController](js-apis-inputmethod.md#inputmethodgetcontroller9)获取到InputMethodController实例，再通过实例调用对应方法。
 
-### attach10+
+InputMethodController是输入法客户端控制器，面向前台应用提供与输入法交互的核心能力。通过inputMethod.getController()获取实例后，可进行以下操作：
 
-PhonePC/2in1TabletTVWearable
+* 绑定管理：通过[attach](js-apis-inputmethod.md#attach10)建立与输入法的绑定，通过[detach](js-apis-inputmethod.md#detach10)解除绑定。attach和detach必须配对使用。
+* 键盘控制：通过[showTextInput](js-apis-inputmethod.md#showtextinput10)拉起软键盘进入编辑状态，通过[hideTextInput](js-apis-inputmethod.md#hidetextinput10)隐藏软键盘退出编辑状态。showTextInput和hideTextInput必须配对使用。
+* 编辑框状态同步：通过[updateCursor](js-apis-inputmethod.md#updatecursor10)、[changeSelection](js-apis-inputmethod.md#changeselection10)、[updateAttribute](js-apis-inputmethod.md#updateattribute10)等接口向输入法同步光标、选区、属性等编辑框状态信息。
+* 事件订阅：通过on('insertText')、on('deleteLeft')等接口订阅输入法应用发送的文本操作事件。
+
+典型调用序列：getController() → attach() → showTextInput()/hideTextInput() → detach()
+
+**说明** 
+
+attach和detach必须配对使用，showTextInput和hideTextInput必须配对使用，否则可能导致资源泄漏或状态不一致。
+
+### attach10+
 
 attach(showKeyboard: boolean, textConfig: TextConfig, callback: AsyncCallback<void>): void
 
 自绘控件绑定输入法。使用callback异步回调。
 
-说明
+含义/功能：建立自绘控件与输入法应用之间的绑定关系，是自绘控件使用输入法功能的前提。
+
+使用场景：自绘控件（非系统原生编辑框）需要与输入法交互时，必须先调用此接口建立绑定。原生编辑框获焦时系统自动绑定，无需调用此接口。
+
+使用后效果：绑定成功后，自绘控件可调用showTextInput/hideTextInput控制键盘显隐、调用updateCursor/changeSelection同步编辑框状态、订阅输入法事件等。
+
+前提条件/前置操作：自绘控件所在窗口需处于获焦状态，否则绑定会失败。
+
+相关接口间的配合/制约关系：attach必须与detach配对使用。调用attach后才能调用showTextInput、hideTextInput、updateCursor等接口。
+
+相似接口差异点及选取原则：
+
+* attach：不需要传入UIContext，适用于API version 10+的自绘控件绑定场景。
+* attachWithUIContext：需要传入UIContext，适用于API version 23+的Stage模型场景，支持更多绑定选项。
+* 选取原则：API version 23+的Stage模型应用优先使用attachWithUIContext，以获得更完整的绑定选项支持。
+
+**说明** 
 
 需要先调用此接口，完成自绘控件与输入法的绑定，才能使用以下功能：显示/隐藏键盘、更新光标信息、更改编辑框选中范围、保存配置信息、监听处理由输入法应用发送的信息或命令等。
 
@@ -1132,38 +1236,36 @@ attach(showKeyboard: boolean, textConfig: TextConfig, callback: AsyncCallback<vo
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let inputAttribute: inputMethod.InputAttribute = {
-4. textInputType: inputMethod.TextInputType.TEXT,
-5. enterKeyType: inputMethod.EnterKeyType.GO
-6. }
-7. let textConfig: inputMethod.TextConfig = { inputAttribute: inputAttribute };
-8. inputMethod.getController().attach(true, textConfig, (err: BusinessError) => {
-9. if (err) {
-10. console.error(`Failed to attach, code: ${err.code}, message: ${err.message}`);
-11. return;
-12. }
-13. console.info('Succeeded in attaching the inputMethod.');
-14. });
+let inputAttribute: inputMethod.InputAttribute = {
+  textInputType: inputMethod.TextInputType.TEXT,
+  enterKeyType: inputMethod.EnterKeyType.GO
+}
+let textConfig: inputMethod.TextConfig = { inputAttribute: inputAttribute };
+inputMethod.getController().attach(true, textConfig, (err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to attach, code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in attaching the inputMethod.');
+});
 ```
 
 ### attach10+
-
-PhonePC/2in1TabletTVWearable
 
 attach(showKeyboard: boolean, textConfig: TextConfig): Promise<void>
 
 自绘控件绑定输入法。使用promise异步回调。
 
-说明
+**说明** 
 
 需要先调用此接口，完成自绘控件与输入法的绑定，才能使用以下功能：显示/隐藏键盘、更新光标信息、更改编辑框选中范围、保存配置信息、监听处理由输入法应用发送的信息或命令等。
 
@@ -1182,7 +1284,7 @@ attach(showKeyboard: boolean, textConfig: TextConfig): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -1190,36 +1292,34 @@ attach(showKeyboard: boolean, textConfig: TextConfig): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let inputAttribute: inputMethod.InputAttribute = {
-4. textInputType: inputMethod.TextInputType.TEXT,
-5. enterKeyType: inputMethod.EnterKeyType.GO
-6. }
-7. let textConfig: inputMethod.TextConfig = { inputAttribute: inputAttribute };
-8. inputMethod.getController().attach(true, textConfig).then(() => {
-9. console.info('Succeeded in attaching inputMethod.');
-10. }).catch((err: BusinessError) => {
-11. console.error(`Failed to attach, code: ${err.code}, message: ${err.message}`);
-12. });
+let inputAttribute: inputMethod.InputAttribute = {
+  textInputType: inputMethod.TextInputType.TEXT,
+  enterKeyType: inputMethod.EnterKeyType.GO
+}
+let textConfig: inputMethod.TextConfig = { inputAttribute: inputAttribute };
+inputMethod.getController().attach(true, textConfig).then(() => {
+  console.info('Succeeded in attaching inputMethod.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to attach, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### attach15+
-
-PhonePC/2in1TabletTVWearable
 
 attach(showKeyboard: boolean, textConfig: TextConfig, requestKeyboardReason: RequestKeyboardReason): Promise<void>
 
 自绘控件绑定输入法。使用promise异步回调。
 
-说明
+**说明** 
 
 需要先调用此接口，完成自绘控件与输入法的绑定，才能使用以下功能：显示/隐藏键盘、更新光标信息、更改编辑框选中范围、保存配置信息、监听处理由输入法应用发送的信息或命令等。
 
@@ -1239,7 +1339,7 @@ attach(showKeyboard: boolean, textConfig: TextConfig, requestKeyboardReason: Req
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -1247,38 +1347,36 @@ attach(showKeyboard: boolean, textConfig: TextConfig, requestKeyboardReason: Req
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let inputAttribute: inputMethod.InputAttribute = {
-4. textInputType: inputMethod.TextInputType.TEXT,
-5. enterKeyType: inputMethod.EnterKeyType.GO
-6. }
-7. let textConfig: inputMethod.TextConfig = { inputAttribute: inputAttribute };
-8. let requestKeyboardReason: inputMethod.RequestKeyboardReason = inputMethod.RequestKeyboardReason.MOUSE;
+let inputAttribute: inputMethod.InputAttribute = {
+  textInputType: inputMethod.TextInputType.TEXT,
+  enterKeyType: inputMethod.EnterKeyType.GO
+}
+let textConfig: inputMethod.TextConfig = { inputAttribute: inputAttribute };
+let requestKeyboardReason: inputMethod.RequestKeyboardReason = inputMethod.RequestKeyboardReason.MOUSE;
 
-10. inputMethod.getController().attach(true, textConfig, requestKeyboardReason).then(() => {
-11. console.info('Succeeded in attaching inputMethod.');
-12. }).catch((err: BusinessError) => {
-13. console.error(`Failed to attach, code: ${err.code}, message: ${err.message}`);
-14. });
+inputMethod.getController().attach(true, textConfig, requestKeyboardReason).then(() => {
+  console.info('Succeeded in attaching inputMethod.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to attach, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### attachWithUIContext23+
-
-PhonePC/2in1TabletTVWearable
 
 attachWithUIContext(uiContext: UIContext, textConfig: TextConfig, attachOptions?: AttachOptions): Promise<void>
 
 自绘控件绑定输入法。使用promise异步回调。
 
-说明
+**说明** 
 
 需要先调用此接口，完成自绘控件与输入法的绑定，才能使用以下功能：显示/隐藏键盘、更新光标信息、更改编辑框选中范围、保存配置信息、监听处理由输入法应用发送的信息或命令等。
 
@@ -1311,33 +1409,31 @@ attachWithUIContext(uiContext: UIContext, textConfig: TextConfig, attachOptions?
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { UIContext } from '@kit.ArkUI';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { UIContext } from '@kit.ArkUI';
 
-4. let uiContext: UIContext | undefined = UIContext.getCallingScopeUIContext();
-5. let inputAttribute: inputMethod.InputAttribute = {
-6. textInputType: inputMethod.TextInputType.TEXT,
-7. enterKeyType: inputMethod.EnterKeyType.GO
-8. }
-9. let textConfig: inputMethod.TextConfig = { inputAttribute: inputAttribute };
-10. let attachOptions: inputMethod.AttachOptions = { showKeyboard: true };
-11. inputMethod.getController().attachWithUIContext(uiContext, textConfig, attachOptions).then(() => {
-12. console.info('Succeeded in attaching inputMethod.');
-13. }).catch((err: BusinessError) => {
-14. console.error(`Failed to attach, code: ${err.code}, message: ${err.message}`);
-15. });
+let uiContext: UIContext | undefined = UIContext.getCallingScopeUIContext();
+let inputAttribute: inputMethod.InputAttribute = {
+  textInputType: inputMethod.TextInputType.TEXT,
+  enterKeyType: inputMethod.EnterKeyType.GO
+}
+let textConfig: inputMethod.TextConfig = { inputAttribute: inputAttribute };
+let attachOptions: inputMethod.AttachOptions = { showKeyboard: true };
+inputMethod.getController().attachWithUIContext(uiContext, textConfig, attachOptions).then(() => {
+  console.info('Succeeded in attaching inputMethod.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to attach, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### discardTypingText20+
-
-PhonePC/2in1TabletTVWearable
 
 discardTypingText(): Promise<void>
 
 编辑框应用发送“清空正在输入的文字”命令到输入法。使用promise异步回调。
 
-说明
+**说明** 
 
 当编辑框应用与输入法绑定成功后，才可调用该接口实现此功能。
 
@@ -1361,25 +1457,39 @@ discardTypingText(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getController().discardTypingText().then(() => {
-4. console.info('Succeeded discardTypingText.');
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to discardTypingText, code: ${err.code}, message: ${err.message}`);
-7. });
+inputMethod.getController().discardTypingText().then(() => {
+  console.info('Succeeded discardTypingText.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to discardTypingText, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### showTextInput10+
-
-PhonePC/2in1TabletTVWearable
 
 showTextInput(callback: AsyncCallback<void>): void
 
 进入文本编辑状态。使用callback异步回调。
 
-说明
+含义/功能：拉起软键盘，使编辑框进入文本编辑状态。
+
+使用场景：自绘控件绑定输入法后，需要显示软键盘开始文本输入时调用。
+
+使用后效果：软键盘弹出，编辑框进入可输入的文本编辑状态。
+
+前提条件/前置操作：需先调用[attach](js-apis-inputmethod.md#attach10)完成绑定，否则会报12800009错误。
+
+相关接口间的配合/制约关系：showTextInput与hideTextInput必须配对使用。调用hideTextInput退出编辑状态后，需再次调用showTextInput才能重新进入编辑状态。
+
+相似接口差异点及选取原则：
+
+* showTextInput：面向自绘控件，需先attach绑定后调用。适用于自绘控件场景，是标准的键盘显示方式。
+* showSoftKeyboard：面向系统应用，需权限ohos.permission.CONNECT\_IME\_ABILITY。适用于系统应用需要强制显示键盘的场景。
+* 选取原则：自绘控件优先使用showTextInput；系统应用且有特殊需求时使用showSoftKeyboard。
+
+**说明** 
 
 编辑框与输入法绑定成功后，可调用该接口拉起软键盘，进入文本编辑状态。
 
@@ -1403,27 +1513,25 @@ showTextInput(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getController().showTextInput((err: BusinessError) => {
-4. if (err) {
-5. console.error(`Failed to showTextInput, code: ${err.code}, message: ${err.message}`);
-6. return;
-7. }
-8. console.info('Succeeded in showing the inputMethod.');
-9. });
+inputMethod.getController().showTextInput((err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to showTextInput, code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in showing the inputMethod.');
+});
 ```
 
 ### showTextInput10+
-
-PhonePC/2in1TabletTVWearable
 
 showTextInput(): Promise<void>
 
 进入文本编辑状态。使用promise异步回调。
 
-说明
+**说明** 
 
 编辑框与输入法绑定成功后，可调用该接口拉起软键盘，进入文本编辑状态。
 
@@ -1433,7 +1541,7 @@ showTextInput(): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -1447,25 +1555,23 @@ showTextInput(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getController().showTextInput().then(() => {
-4. console.info('Succeeded in showing text input.');
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to showTextInput, code: ${err.code}, message: ${err.message}`);
-7. });
+inputMethod.getController().showTextInput().then(() => {
+  console.info('Succeeded in showing text input.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to showTextInput, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### showTextInput15+
-
-PhonePC/2in1TabletTVWearable
 
 showTextInput(requestKeyboardReason: RequestKeyboardReason): Promise<void>
 
 进入文本编辑状态。使用promise异步回调。
 
-说明
+**说明** 
 
 编辑框与输入法绑定成功后，可调用该接口拉起软键盘，进入文本编辑状态。
 
@@ -1481,7 +1587,7 @@ showTextInput(requestKeyboardReason: RequestKeyboardReason): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -1495,27 +1601,41 @@ showTextInput(requestKeyboardReason: RequestKeyboardReason): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let requestKeyboardReason: inputMethod.RequestKeyboardReason = inputMethod.RequestKeyboardReason.MOUSE;
+let requestKeyboardReason: inputMethod.RequestKeyboardReason = inputMethod.RequestKeyboardReason.MOUSE;
 
-5. inputMethod.getController().showTextInput(requestKeyboardReason).then(() => {
-6. console.info('Succeeded in showing text input.');
-7. }).catch((err: BusinessError) => {
-8. console.error(`Failed to showTextInput, code: ${err.code}, message: ${err.message}`);
-9. });
+inputMethod.getController().showTextInput(requestKeyboardReason).then(() => {
+  console.info('Succeeded in showing text input.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to showTextInput, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### hideTextInput10+
-
-PhonePC/2in1TabletTVWearable
 
 hideTextInput(callback: AsyncCallback<void>): void
 
 退出文本编辑状态。使用callback异步回调。
 
-说明
+含义/功能：隐藏软键盘，使编辑框退出文本编辑状态。
+
+使用场景：自绘控件不再需要输入时调用，如用户点击了编辑框外的区域、切换到其他页面等。
+
+使用后效果：软键盘被隐藏，编辑框退出编辑状态。调用此接口不会解除与输入法的绑定，再次调用showTextInput可重新进入编辑状态。
+
+前提条件/前置操作：需先调用[attach](js-apis-inputmethod.md#attach10)完成绑定，且已调用showTextInput进入编辑状态。
+
+相关接口间的配合/制约关系：hideTextInput与showTextInput必须配对使用。hideTextInput后如需再次输入，必须先调用showTextInput重新进入编辑状态，不能直接调用其他编辑操作。
+
+相似接口差异点及选取原则：
+
+* hideTextInput：面向自绘控件，退出编辑状态但不解除绑定，可再次showTextInput重新进入。适用于自绘控件需要暂时隐藏键盘的场景。
+* hideSoftKeyboard：面向系统应用，需权限ohos.permission.CONNECT\_IME\_ABILITY。仅隐藏键盘，不改变编辑状态。
+* 选取原则：自绘控件优先使用hideTextInput；系统应用且有特殊需求时使用hideSoftKeyboard。
+
+**说明** 
 
 调用接口时，若软键盘处于显示状态，调用接口后软键盘会被隐藏。
 
@@ -1541,27 +1661,25 @@ hideTextInput(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getController().hideTextInput((err: BusinessError) => {
-4. if (err) {
-5. console.error(`Failed to hideTextInput, code: ${err.code}, message: ${err.message}`);
-6. return;
-7. }
-8. console.info('Succeeded in hiding text input.');
-9. });
+inputMethod.getController().hideTextInput((err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to hideTextInput, code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in hiding text input.');
+});
 ```
 
 ### hideTextInput10+
-
-PhonePC/2in1TabletTVWearable
 
 hideTextInput(): Promise<void>
 
 退出文本编辑状态。使用promise异步回调。
 
-说明
+**说明** 
 
 调用接口时，若软键盘处于显示状态，调用接口后软键盘会被隐藏。
 
@@ -1573,7 +1691,7 @@ hideTextInput(): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -1587,23 +1705,29 @@ hideTextInput(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getController().hideTextInput().then(() => {
-4. console.info('Succeeded in hiding inputMethod.');
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to hideTextInput, code: ${err.code}, message: ${err.message}`);
-7. })
+inputMethod.getController().hideTextInput().then(() => {
+  console.info('Succeeded in hiding inputMethod.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to hideTextInput, code: ${err.code}, message: ${err.message}`);
+})
 ```
 
 ### detach10+
 
-PhonePC/2in1TabletTVWearable
-
 detach(callback: AsyncCallback<void>): void
 
 自绘控件解除与输入法的绑定。使用callback异步回调。
+
+含义/功能：解除自绘控件与输入法应用之间的绑定关系，释放相关资源。
+
+使用场景：自绘控件不再需要与输入法交互时调用（如页面切换、编辑框被销毁等）。
+
+使用后效果：解除绑定后，不能再调用showTextInput、hideTextInput、updateCursor等需要绑定状态的接口。输入法软键盘将被隐藏。
+
+相关接口间的配合/制约关系：detach必须与attach配对使用。建议在hideTextInput之后调用detach，完整流程为：attach → showTextInput → hideTextInput → detach。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -1624,25 +1748,31 @@ detach(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getController().detach((err: BusinessError) => {
-4. if (err) {
-5. console.error(`Failed to detach, code: ${err.code}, message: ${err.message}`);
-6. return;
-7. }
-8. console.info('Succeeded in detaching inputMethod.');
-9. });
+inputMethod.getController().detach((err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to detach, code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in detaching inputMethod.');
+});
 ```
 
 ### detach10+
 
-PhonePC/2in1TabletTVWearable
-
 detach(): Promise<void>
 
 自绘控件解除与输入法的绑定。使用promise异步回调。
+
+含义/功能：解除自绘控件与输入法应用之间的绑定关系，释放相关资源。
+
+使用场景：自绘控件不再需要与输入法交互时调用。
+
+使用后效果：解除绑定后，不能再调用需要绑定状态的接口。输入法软键盘将被隐藏。
+
+相关接口间的配合/制约关系：detach必须与attach配对使用。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -1650,7 +1780,7 @@ detach(): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -1663,25 +1793,25 @@ detach(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getController().detach().then(() => {
-4. console.info('Succeeded in detaching inputMethod.');
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to detach, code: ${err.code}, message: ${err.message}`);
-7. });
+inputMethod.getController().detach().then(() => {
+  console.info('Succeeded in detaching inputMethod.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to detach, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### setCallingWindow10+
-
-PhonePC/2in1TabletTVWearable
 
 setCallingWindow(windowId: number, callback: AsyncCallback<void>): void
 
 设置要避让软键盘的窗口。使用callback异步回调。
 
-说明
+**说明** 
+
+编辑框与输入法绑定成功后，才可调用该接口设置避让软键盘的窗口。
 
 将绑定到输入法的应用程序所在的窗口Id传入，此窗口可以避让输入法窗口。
 
@@ -1700,35 +1830,33 @@ setCallingWindow(windowId: number, callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
 | 12800009 | input method client detached. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let windowId: number = 2000;
-4. inputMethod.getController().setCallingWindow(windowId, (err: BusinessError) => {
-5. if (err) {
-6. console.error(`Failed to setCallingWindow, code: ${err.code}, message: ${err.message}`);
-7. return;
-8. }
-9. console.info('Succeeded in setting callingWindow.');
-10. });
+let windowId: number = 2000;
+inputMethod.getController().setCallingWindow(windowId, (err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to setCallingWindow, code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in setting callingWindow.');
+});
 ```
 
 ### setCallingWindow10+
-
-PhonePC/2in1TabletTVWearable
 
 setCallingWindow(windowId: number): Promise<void>
 
 设置要避让软键盘的窗口。使用promise异步回调。
 
-说明
+**说明** 
 
 将绑定到输入法的应用程序所在的窗口Id传入，此窗口可以避让输入法窗口。
 
@@ -1744,7 +1872,7 @@ setCallingWindow(windowId: number): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -1752,31 +1880,33 @@ setCallingWindow(windowId: number): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
 | 12800009 | input method client detached. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let windowId: number = 2000;
-4. inputMethod.getController().setCallingWindow(windowId).then(() => {
-5. console.info('Succeeded in setting callingWindow.');
-6. }).catch((err: BusinessError) => {
-7. console.error(`Failed to setCallingWindow, code: ${err.code}, message: ${err.message}`);
-8. })
+let windowId: number = 2000;
+inputMethod.getController().setCallingWindow(windowId).then(() => {
+  console.info('Succeeded in setting callingWindow.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to setCallingWindow, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### updateCursor10+
 
-PhonePC/2in1TabletTVWearable
-
 updateCursor(cursorInfo: CursorInfo, callback: AsyncCallback<void>): void
 
 当编辑框内的光标信息发生变化时，调用该接口使输入法感知到光标变化。使用callback异步回调。
+
+**说明** 
+
+编辑框与输入法绑定成功后，才可调用该接口更新光标信息。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -1793,38 +1923,40 @@ updateCursor(cursorInfo: CursorInfo, callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
 | 12800009 | input method client detached. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let cursorInfo: inputMethod.CursorInfo = {
-4. left: 0,
-5. top: 0,
-6. width: 600,
-7. height: 800
-8. };
-9. inputMethod.getController().updateCursor(cursorInfo, (err: BusinessError) => {
-10. if (err) {
-11. console.error(`Failed to updateCursor, code: ${err.code}, message: ${err.message}`);
-12. return;
-13. }
-14. console.info('Succeeded in updating cursorInfo.');
-15. });
+let cursorInfo: inputMethod.CursorInfo = {
+  left: 0,
+  top: 0,
+  width: 600,
+  height: 800
+};
+inputMethod.getController().updateCursor(cursorInfo, (err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to updateCursor, code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in updating cursorInfo.');
+});
 ```
 
 ### updateCursor10+
 
-PhonePC/2in1TabletTVWearable
-
 updateCursor(cursorInfo: CursorInfo): Promise<void>
 
 当编辑框内的光标信息发生变化时，调用该接口使输入法感知到光标变化。使用promise异步回调。
+
+**说明** 
+
+编辑框与输入法绑定成功后，才可调用该接口更新光标信息。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -1838,7 +1970,7 @@ updateCursor(cursorInfo: CursorInfo): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -1846,36 +1978,38 @@ updateCursor(cursorInfo: CursorInfo): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
 | 12800009 | input method client detached. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let cursorInfo: inputMethod.CursorInfo = {
-4. left: 0,
-5. top: 0,
-6. width: 600,
-7. height: 800
-8. };
-9. inputMethod.getController().updateCursor(cursorInfo).then(() => {
-10. console.info('Succeeded in updating cursorInfo.');
-11. }).catch((err: BusinessError) => {
-12. console.error(`Failed to updateCursor, code: ${err.code}, message: ${err.message}`);
-13. });
+let cursorInfo: inputMethod.CursorInfo = {
+  left: 0,
+  top: 0,
+  width: 600,
+  height: 800
+};
+inputMethod.getController().updateCursor(cursorInfo).then(() => {
+  console.info('Succeeded in updating cursorInfo.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to updateCursor, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### changeSelection10+
 
-PhonePC/2in1TabletTVWearable
-
 changeSelection(text: string, start: number, end: number, callback: AsyncCallback<void>): void
 
 当编辑框内被选中的文本信息内容或文本范围发生变化时，可调用该接口更新文本信息，使输入法应用感知到变化。使用callback异步回调。
+
+**说明** 
+
+编辑框与输入法绑定成功后，才可调用该接口更新文本选区信息。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -1894,32 +2028,34 @@ changeSelection(text: string, start: number, end: number, callback: AsyncCallbac
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
 | 12800009 | input method client detached. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getController().changeSelection('text', 0, 5, (err: BusinessError) => {
-4. if (err) {
-5. console.error(`Failed to changeSelection, code: ${err.code}, message: ${err.message}`);
-6. return;
-7. }
-8. console.info('Succeeded in changing selection.');
-9. });
+inputMethod.getController().changeSelection('text', 0, 5, (err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to changeSelection, code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in changing selection.');
+});
 ```
 
 ### changeSelection10+
 
-PhonePC/2in1TabletTVWearable
-
 changeSelection(text: string, start: number, end: number): Promise<void>
 
 当编辑框内被选中的文本信息内容或文本范围发生变化时，可调用该接口更新文本信息，使输入法应用感知到变化。使用promise异步回调。
+
+**说明** 
+
+编辑框与输入法绑定成功后，才可调用该接口更新文本选区信息。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -1935,7 +2071,7 @@ changeSelection(text: string, start: number, end: number): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -1943,26 +2079,24 @@ changeSelection(text: string, start: number, end: number): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
 | 12800009 | input method client detached. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getController().changeSelection('test', 0, 5).then(() => {
-4. console.info('Succeeded in changing selection.');
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to changeSelection, code: ${err.code}, message: ${err.message}`);
-7. });
+inputMethod.getController().changeSelection('test', 0, 5).then(() => {
+  console.info('Succeeded in changing selection.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to changeSelection, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### updateAttribute10+
-
-PhonePC/2in1TabletTVWearable
 
 updateAttribute(attribute: InputAttribute, callback: AsyncCallback<void>): void
 
@@ -1983,33 +2117,35 @@ updateAttribute(attribute: InputAttribute, callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
 | 12800009 | input method client detached. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let inputAttribute: inputMethod.InputAttribute = { textInputType: 0, enterKeyType: 1 };
-4. inputMethod.getController().updateAttribute(inputAttribute, (err: BusinessError) => {
-5. if (err) {
-6. console.error(`Failed to updateAttribute, code: ${err.code}, message: ${err.message}`);
-7. return;
-8. }
-9. console.info('Succeeded in updating attribute.');
-10. });
+let inputAttribute: inputMethod.InputAttribute = { textInputType: 0, enterKeyType: 1 };
+inputMethod.getController().updateAttribute(inputAttribute, (err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to updateAttribute, code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in updating attribute.');
+});
 ```
 
 ### updateAttribute10+
 
-PhonePC/2in1TabletTVWearable
-
 updateAttribute(attribute: InputAttribute): Promise<void>
 
 更新编辑框属性信息。使用promise异步回调。
+
+**说明** 
+
+编辑框与输入法绑定成功后，才可调用该接口更新编辑框属性信息。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -2023,7 +2159,7 @@ updateAttribute(attribute: InputAttribute): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -2031,33 +2167,41 @@ updateAttribute(attribute: InputAttribute): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
 | 12800009 | input method client detached. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let inputAttribute: inputMethod.InputAttribute = { textInputType: 0, enterKeyType: 1 };
-4. inputMethod.getController().updateAttribute(inputAttribute).then(() => {
-5. console.info('Succeeded in updating attribute.');
-6. }).catch((err: BusinessError) => {
-7. console.error(`Failed to updateAttribute, code: ${err.code}, message: ${err.message}`);
-8. });
+let inputAttribute: inputMethod.InputAttribute = { textInputType: 0, enterKeyType: 1 };
+inputMethod.getController().updateAttribute(inputAttribute).then(() => {
+  console.info('Succeeded in updating attribute.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to updateAttribute, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### stopInputSession9+
-
-PhonePC/2in1TabletTVWearable
 
 stopInputSession(callback: AsyncCallback<boolean>): void
 
 结束输入会话。使用callback异步回调。
 
-说明
+含义/功能：结束当前的输入会话，隐藏软键盘。
+
+使用场景：应用需要主动结束输入会话时调用（如用户完成了输入操作）。
+
+使用后效果：软键盘被隐藏，输入会话结束。
+
+前提条件/前置操作：编辑框与输入法绑定时才能调用，即点击编辑控件后。
+
+相关接口间的配合/制约关系：stopInputSession会隐藏软键盘并结束输入会话。如果使用自绘控件的attach/showTextInput/hideTextInput/detach流程，建议使用hideTextInput而非stopInputSession。
+
+**说明** 
 
 该接口需要编辑框与输入法绑定时才能调用，即点击编辑控件后，才可调用该接口结束输入会话。
 
@@ -2067,7 +2211,7 @@ stopInputSession(callback: AsyncCallback<boolean>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<boolean> | 是 | 回调函数。当结束输入会话成功时，err为undefined，data为true；否则为错误对象。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。当结束输入会话成功时，err为undefined，data为true；失败时err为错误对象。 |
 
 **错误码：**
 
@@ -2080,31 +2224,29 @@ stopInputSession(callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getController().stopInputSession((err: BusinessError, result: boolean) => {
-4. if (err) {
-5. console.error(`Failed to stopInputSession, code: ${err.code}, message: ${err.message}`);
-6. return;
-7. }
-8. if (result) {
-9. console.info('Succeeded in stopping inputSession.');
-10. } else {
-11. console.error('Failed to stopInputSession.');
-12. }
-13. });
+inputMethod.getController().stopInputSession((err: BusinessError, result: boolean) => {
+  if (err) {
+    console.error(`Failed to stopInputSession, code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  if (result) {
+    console.info('Succeeded in stopping inputSession.');
+  } else {
+    console.error('Failed to stopInputSession.');
+  }
+});
 ```
 
 ### stopInputSession9+
-
-PhonePC/2in1TabletTVWearable
 
 stopInputSession(): Promise<boolean>
 
 结束输入会话。使用promise异步回调。
 
-说明
+**说明** 
 
 该接口需要编辑框与输入法绑定时才能调用，即点击编辑控件后，才可调用该接口结束输入会话。
 
@@ -2127,29 +2269,41 @@ stopInputSession(): Promise<boolean>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getController().stopInputSession().then((result: boolean) => {
-4. if (result) {
-5. console.info('Succeeded in stopping inputSession.');
-6. } else {
-7. console.error('Failed to stopInputSession.');
-8. }
-9. }).catch((err: BusinessError) => {
-10. console.error(`Failed to stopInputSession, code: ${err.code}, message: ${err.message}`);
-11. });
+inputMethod.getController().stopInputSession().then((result: boolean) => {
+  if (result) {
+    console.info('Succeeded in stopping inputSession.');
+  } else {
+    console.error('Failed to stopInputSession.');
+  }
+}).catch((err: BusinessError) => {
+  console.error(`Failed to stopInputSession, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### showSoftKeyboard9+
-
-PhonePC/2in1TabletTVWearable
 
 showSoftKeyboard(callback: AsyncCallback<void>): void
 
 显示输入法软键盘。使用callback异步回调。
 
-说明
+含义/功能：强制显示当前输入法的软键盘。
+
+使用场景：系统应用需要强制显示输入法软键盘时使用（如设置应用测试输入法）。
+
+使用后效果：输入法软键盘弹出显示。
+
+前提条件/前置操作：编辑框与输入法绑定时才能调用。
+
+相似接口差异点及选取原则：
+
+* showSoftKeyboard：面向系统应用，需权限ohos.permission.CONNECT\_IME\_ABILITY，仅显示键盘不改变编辑状态。
+* showTextInput：面向自绘控件，需先attach绑定，拉起键盘并进入编辑状态。
+* 选取原则：自绘控件使用showTextInput；系统应用且有权限时使用showSoftKeyboard。
+
+**说明** 
 
 该接口需要编辑框与输入法绑定时才能调用，即点击编辑控件后，才可调用显示当前输入法的软键盘。
 
@@ -2175,27 +2329,25 @@ showSoftKeyboard(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getController().showSoftKeyboard((err: BusinessError) => {
-4. if (!err) {
-5. console.info('Succeeded in showing softKeyboard.');
-6. } else {
-7. console.error(`Failed to show softKeyboard, ${err.code}, message: ${err.message}`);
-8. }
-9. });
+inputMethod.getController().showSoftKeyboard((err: BusinessError) => {
+  if (!err) {
+    console.info('Succeeded in showing softKeyboard.');
+  } else {
+    console.error(`Failed to show softKeyboard, ${err.code}, message: ${err.message}`);
+  }
+});
 ```
 
 ### showSoftKeyboard9+
-
-PhonePC/2in1TabletTVWearable
 
 showSoftKeyboard(): Promise<void>
 
 显示输入法软键盘。使用Promise异步回调。
 
-说明
+**说明** 
 
 该接口需要编辑框与输入法绑定时才能调用，即点击编辑控件后，才可调用显示当前输入法的软键盘。
 
@@ -2207,7 +2359,7 @@ showSoftKeyboard(): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -2221,25 +2373,37 @@ showSoftKeyboard(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getController().showSoftKeyboard().then(() => {
-4. console.info('Succeeded in showing softKeyboard.');
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to show softKeyboard, code: ${err.code}, message: ${err.message}`);
-7. });
+inputMethod.getController().showSoftKeyboard().then(() => {
+  console.info('Succeeded in showing softKeyboard.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to show softKeyboard, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### hideSoftKeyboard9+
-
-PhonePC/2in1TabletTVWearable
 
 hideSoftKeyboard(callback: AsyncCallback<void>): void
 
 隐藏输入法软键盘。使用callback异步回调。
 
-说明
+含义/功能：强制隐藏当前输入法的软键盘。
+
+使用场景：系统应用需要强制隐藏输入法软键盘时使用。
+
+使用后效果：输入法软键盘被隐藏。
+
+前提条件/前置操作：编辑框与输入法绑定时才能调用。
+
+相似接口差异点及选取原则：
+
+* hideSoftKeyboard：面向系统应用，需权限ohos.permission.CONNECT\_IME\_ABILITY，仅隐藏键盘不退出编辑状态。
+* hideTextInput：面向自绘控件，隐藏键盘并退出编辑状态，可再次showTextInput重新进入。
+* 选取原则：自绘控件使用hideTextInput；系统应用且有权限时使用hideSoftKeyboard。
+
+**说明** 
 
 该接口需要编辑框与输入法绑定时才能调用，即点击编辑控件后，才可调用隐藏当前输入法的软键盘。
 
@@ -2265,27 +2429,25 @@ hideSoftKeyboard(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getController().hideSoftKeyboard((err: BusinessError) => {
-4. if (!err) {
-5. console.info('Succeeded in hiding softKeyboard.');
-6. } else {
-7. console.error(`Failed to hide softKeyboard, code: ${err.code}, message: ${err.message}`);
-8. }
-9. })
+inputMethod.getController().hideSoftKeyboard((err: BusinessError) => {
+  if (!err) {
+    console.info('Succeeded in hiding softKeyboard.');
+  } else {
+    console.error(`Failed to hide softKeyboard, code: ${err.code}, message: ${err.message}`);
+  }
+})
 ```
 
 ### hideSoftKeyboard9+
-
-PhonePC/2in1TabletTVWearable
 
 hideSoftKeyboard(): Promise<void>
 
 隐藏输入法软键盘。使用Promise异步回调。
 
-说明
+**说明** 
 
 该接口需要编辑框与输入法绑定时才能调用，即点击编辑控件后，才可调用隐藏当前输入法的软键盘。
 
@@ -2297,7 +2459,7 @@ hideSoftKeyboard(): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -2311,25 +2473,23 @@ hideSoftKeyboard(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getController().hideSoftKeyboard().then(() => {
-4. console.info('Succeeded in hiding softKeyboard.');
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to hide softKeyboard, code: ${err.code}, message: ${err.message}`);
-7. });
+inputMethod.getController().hideSoftKeyboard().then(() => {
+  console.info('Succeeded in hiding softKeyboard.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to hide softKeyboard, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### sendMessage15+
-
-PhonePC/2in1TabletTVWearable
 
 sendMessage(msgId: string, msgParam?: ArrayBuffer): Promise<void>
 
 发送自定义通信至输入法应用。使用Promise异步回调。
 
-说明
+**说明** 
 
 该接口需要编辑框与输入法绑定并进入编辑状态，且输入法应用处于完整体验模式时才能调用。
 
@@ -2348,7 +2508,7 @@ msgId最大限制256B，msgParam最大限制128KB。
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -2356,7 +2516,7 @@ msgId最大限制256B，msgParam最大限制128KB。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Incorrect parameter types. 2. Incorrect parameter length. |
+| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. 2. Incorrect parameter length. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800009 | input method client detached. |
 | 12800014 | the input method is in basic mode. |
@@ -2365,27 +2525,25 @@ msgId最大限制256B，msgParam最大限制128KB。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let msgId: string = "testMsgId";
-4. let msgParam: ArrayBuffer = new ArrayBuffer(128);
-5. inputMethod.getController().sendMessage(msgId, msgParam).then(() => {
-6. console.info('Succeeded send message.');
-7. }).catch((err: BusinessError) => {
-8. console.error(`Failed to send message, code: ${err.code}, message: ${err.message}`);
-9. });
+let msgId: string = "testMsgId";
+let msgParam: ArrayBuffer = new ArrayBuffer(128);
+inputMethod.getController().sendMessage(msgId, msgParam).then(() => {
+  console.info('Succeeded send message.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to send message, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### recvMessage15+
-
-PhonePC/2in1TabletTVWearable
 
 recvMessage(msgHandler?: MessageHandler): void
 
 注册或取消注册MessageHandler。
 
-说明
+**说明** 
 
 [MessageHandler](js-apis-inputmethod.md#messagehandler15)对象全局唯一，多次注册仅保留最后一次注册的对象及有效性，并触发上一个已注册对象的[onTerminated](js-apis-inputmethod.md#onterminated15)回调函数。
 
@@ -2405,36 +2563,34 @@ recvMessage(msgHandler?: MessageHandler): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let messageHandler: inputMethod.MessageHandler = {
-4. onTerminated(): void {
-5. console.info('OnTerminated.');
-6. },
-7. onMessage(msgId: string, msgParam?: ArrayBuffer): void {
-8. console.info('recv message.');
-9. }
-10. };
-11. let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
-12. inputMethodController.recvMessage(messageHandler);
-13. // 取消已注册的MessageHandler
-14. inputMethodController.recvMessage();
+let messageHandler: inputMethod.MessageHandler = {
+  onTerminated(): void {
+    console.info('OnTerminated.');
+  },
+  onMessage(msgId: string, msgParam?: ArrayBuffer): void {
+    console.info('recv message.');
+  }
+};
+let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
+inputMethodController.recvMessage(messageHandler);
+// 取消已注册的MessageHandler
+inputMethodController.recvMessage();
 ```
 
 ### stopInput(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 stopInput(callback: AsyncCallback<boolean>): void
 
 结束输入会话。使用callback异步回调。
 
-说明
+**说明** 
 
 该接口需要编辑框与输入法绑定时才能调用，即点击编辑控件后，才可调用该接口结束输入会话。
 
@@ -2450,31 +2606,29 @@ stopInput(callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getController().stopInput((err: BusinessError, result: boolean) => {
-4. if (err) {
-5. console.error(`Failed to stopInput, code: ${err.code}, message: ${err.message}`);
-6. return;
-7. }
-8. if (result) {
-9. console.info('Succeeded in stopping input.');
-10. } else {
-11. console.error('Failed to stopInput.');
-12. }
-13. });
+inputMethod.getController().stopInput((err: BusinessError, result: boolean) => {
+  if (err) {
+    console.error(`Failed to stopInput, code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  if (result) {
+    console.info('Succeeded in stopping input.');
+  } else {
+    console.error('Failed to stopInput.');
+  }
+});
 ```
 
 ### stopInput(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 stopInput(): Promise<boolean>
 
 结束输入会话。使用promise异步回调。
 
-说明
+**说明** 
 
 该接口需要编辑框与输入法绑定时才能调用，即点击编辑控件后，才可调用该接口结束输入会话。
 
@@ -2490,23 +2644,21 @@ stopInput(): Promise<boolean>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getController().stopInput().then((result: boolean) => {
-4. if (result) {
-5. console.info('Succeeded in stopping input.');
-6. } else {
-7. console.error('Failed to stopInput.');
-8. }
-9. }).catch((err: BusinessError) => {
-10. console.error(`Failed to stopInput, code: ${err.code}, message: ${err.message}`);
-11. })
+inputMethod.getController().stopInput().then((result: boolean) => {
+  if (result) {
+    console.info('Succeeded in stopping input.');
+  } else {
+    console.error('Failed to stopInput.');
+  }
+}).catch((err: BusinessError) => {
+  console.error(`Failed to stopInput, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### on('insertText')10+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'insertText', callback: (text: string) => void): void
 
@@ -2527,33 +2679,31 @@ on(type: 'insertText', callback: (text: string) => void): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800009 | input method client detached. |
 
 **示例：**
 
-```
-1. function callback1(text: string): void {
-2. console.info(`Succeeded in getting callback1, data: ${text}`);
-3. }
+```ts
+const callback1 = (text: string): void => {
+  console.info(`Succeeded in getting callback1, data: ${text}`);
+}
 
-5. function callback2(text: string): void {
-6. console.info(`Succeeded in getting callback2, data: ${text}`);
-7. }
+const callback2 = (text: string): void => {
+  console.info(`Succeeded in getting callback2, data: ${text}`);
+}
 
-9. let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
-10. // 注册回调
-11. inputMethodController.on('insertText', callback1);
-12. inputMethodController.on('insertText', callback2);
-13. // 仅取消insertText的callback1的回调
-14. inputMethodController.off('insertText', callback1);
-15. // 取消insertText的所有回调
-16. inputMethodController.off('insertText');
+let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
+// 注册回调
+inputMethodController.on('insertText', callback1);
+inputMethodController.on('insertText', callback2);
+// 仅取消insertText的callback1的回调
+inputMethodController.off('insertText', callback1);
+// 取消insertText的所有回调
+inputMethodController.off('insertText');
 ```
 
 ### off('insertText')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'insertText', callback?: (text: string) => void): void
 
@@ -2570,21 +2720,19 @@ off(type: 'insertText', callback?: (text: string) => void): void
 
 **示例：**
 
-```
-1. import { Callback } from '@kit.BasicServicesKit';
+```ts
+import { Callback } from '@kit.BasicServicesKit';
 
-3. let onInsertTextCallback: Callback<string> = (text: string): void => {
-4. console.info(`Succeeded in subscribing insertText: ${text}`);
-5. };
+let onInsertTextCallback: Callback<string> = (text: string): void => {
+  console.info(`Succeeded in subscribing insertText: ${text}`);
+};
 
-7. let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
-8. inputMethodController.off('insertText', onInsertTextCallback);
-9. inputMethodController.off('insertText');
+let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
+inputMethodController.off('insertText', onInsertTextCallback);
+inputMethodController.off('insertText');
 ```
 
 ### on('deleteLeft')10+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'deleteLeft', callback: (length: number) => void): void
 
@@ -2605,20 +2753,18 @@ on(type: 'deleteLeft', callback: (length: number) => void): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800009 | input method client detached. |
 
 **示例：**
 
-```
-1. inputMethod.getController().on('deleteLeft', (length: number) => {
-2. console.info(`Succeeded in subscribing deleteLeft, length: ${length}`);
-3. });
+```ts
+inputMethod.getController().on('deleteLeft', (length: number) => {
+  console.info(`Succeeded in subscribing deleteLeft, length: ${length}`);
+});
 ```
 
 ### off('deleteLeft')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'deleteLeft', callback?: (length: number) => void): void
 
@@ -2635,21 +2781,19 @@ off(type: 'deleteLeft', callback?: (length: number) => void): void
 
 **示例：**
 
-```
-1. import { Callback } from '@kit.BasicServicesKit';
+```ts
+import { Callback } from '@kit.BasicServicesKit';
 
-3. let onDeleteLeftCallback: Callback<number> = (length: number): void => {
-4. console.info(`Succeeded in subscribing deleteLeft, length: ${length}`);
-5. };
+let onDeleteLeftCallback: Callback<number> = (length: number): void => {
+  console.info(`Succeeded in subscribing deleteLeft, length: ${length}`);
+};
 
-7. let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
-8. inputMethodController.off('deleteLeft', onDeleteLeftCallback);
-9. inputMethodController.off('deleteLeft');
+let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
+inputMethodController.off('deleteLeft', onDeleteLeftCallback);
+inputMethodController.off('deleteLeft');
 ```
 
 ### on('deleteRight')10+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'deleteRight', callback: (length: number) => void): void
 
@@ -2670,20 +2814,18 @@ on(type: 'deleteRight', callback: (length: number) => void): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800009 | input method client detached. |
 
 **示例：**
 
-```
-1. inputMethod.getController().on('deleteRight', (length: number) => {
-2. console.info(`Succeeded in subscribing deleteRight, length: ${length}`);
-3. });
+```ts
+inputMethod.getController().on('deleteRight', (length: number) => {
+  console.info(`Succeeded in subscribing deleteRight, length: ${length}`);
+});
 ```
 
 ### off('deleteRight')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'deleteRight', callback?: (length: number) => void): void
 
@@ -2700,20 +2842,18 @@ off(type: 'deleteRight', callback?: (length: number) => void): void
 
 **示例：**
 
-```
-1. import { Callback } from '@kit.BasicServicesKit';
+```ts
+import { Callback } from '@kit.BasicServicesKit';
 
-3. let onDeleteRightCallback: Callback<number> = (length: number): void => {
-4. console.info(`Succeeded in subscribing deleteRight, length: ${length}`);
-5. };
-6. let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
-7. inputMethodController.off('deleteRight', onDeleteRightCallback);
-8. inputMethodController.off('deleteRight');
+let onDeleteRightCallback: Callback<number> = (length: number): void => {
+  console.info(`Succeeded in subscribing deleteRight, length: ${length}`);
+};
+let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
+inputMethodController.off('deleteRight', onDeleteRightCallback);
+inputMethodController.off('deleteRight');
 ```
 
 ### on('sendKeyboardStatus')10+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'sendKeyboardStatus', callback: (keyboardStatus: KeyboardStatus) => void): void
 
@@ -2734,20 +2874,18 @@ on(type: 'sendKeyboardStatus', callback: (keyboardStatus: KeyboardStatus) => voi
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800009 | input method client detached. |
 
 **示例：**
 
-```
-1. inputMethod.getController().on('sendKeyboardStatus', (keyboardStatus: inputMethod.KeyboardStatus) => {
-2. console.info(`Succeeded in subscribing sendKeyboardStatus, keyboardStatus: ${keyboardStatus}`);
-3. });
+```ts
+inputMethod.getController().on('sendKeyboardStatus', (keyboardStatus: inputMethod.KeyboardStatus) => {
+  console.info(`Succeeded in subscribing sendKeyboardStatus, keyboardStatus: ${keyboardStatus}`);
+});
 ```
 
 ### off('sendKeyboardStatus')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'sendKeyboardStatus', callback?: (keyboardStatus: KeyboardStatus) => void): void
 
@@ -2764,21 +2902,19 @@ off(type: 'sendKeyboardStatus', callback?: (keyboardStatus: KeyboardStatus) => v
 
 **示例：**
 
-```
-1. import { Callback } from '@kit.BasicServicesKit';
+```ts
+import { Callback } from '@kit.BasicServicesKit';
 
-3. let onSendKeyboardStatus: Callback<inputMethod.KeyboardStatus> = (keyboardStatus: inputMethod.KeyboardStatus): void => {
-4. console.info(`Succeeded in subscribing sendKeyboardStatus, keyboardStatus: ${keyboardStatus}`);
-5. };
+let onSendKeyboardStatus: Callback<inputMethod.KeyboardStatus> = (keyboardStatus: inputMethod.KeyboardStatus): void => {
+  console.info(`Succeeded in subscribing sendKeyboardStatus, keyboardStatus: ${keyboardStatus}`);
+};
 
-7. let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
-8. inputMethodController.off('sendKeyboardStatus', onSendKeyboardStatus);
-9. inputMethodController.off('sendKeyboardStatus');
+let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
+inputMethodController.off('sendKeyboardStatus', onSendKeyboardStatus);
+inputMethodController.off('sendKeyboardStatus');
 ```
 
 ### on('sendFunctionKey')10+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'sendFunctionKey', callback: (functionKey: FunctionKey) => void): void
 
@@ -2799,20 +2935,18 @@ on(type: 'sendFunctionKey', callback: (functionKey: FunctionKey) => void): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800009 | input method client detached. |
 
 **示例：**
 
-```
-1. inputMethod.getController().on('sendFunctionKey', (functionKey: inputMethod.FunctionKey) => {
-2. console.info(`Succeeded in subscribing sendFunctionKey, functionKey.enterKeyType: ${functionKey.enterKeyType}`);
-3. });
+```ts
+inputMethod.getController().on('sendFunctionKey', (functionKey: inputMethod.FunctionKey) => {
+  console.info(`Succeeded in subscribing sendFunctionKey, functionKey.enterKeyType: ${functionKey.enterKeyType}`);
+});
 ```
 
 ### off('sendFunctionKey')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'sendFunctionKey', callback?: (functionKey: FunctionKey) => void): void
 
@@ -2829,21 +2963,19 @@ off(type: 'sendFunctionKey', callback?: (functionKey: FunctionKey) => void): voi
 
 **示例：**
 
-```
-1. import { Callback } from '@kit.BasicServicesKit';
+```ts
+import { Callback } from '@kit.BasicServicesKit';
 
-3. let onSendFunctionKey: Callback<inputMethod.FunctionKey> = (functionKey: inputMethod.FunctionKey): void => {
-4. console.info(`Succeeded in subscribing sendFunctionKey, functionKey: ${functionKey.enterKeyType}`);
-5. };
+let onSendFunctionKey: Callback<inputMethod.FunctionKey> = (functionKey: inputMethod.FunctionKey): void => {
+  console.info(`Succeeded in subscribing sendFunctionKey, functionKey: ${functionKey.enterKeyType}`);
+};
 
-7. let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
-8. inputMethodController.off('sendFunctionKey', onSendFunctionKey);
-9. inputMethodController.off('sendFunctionKey');
+let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
+inputMethodController.off('sendFunctionKey', onSendFunctionKey);
+inputMethodController.off('sendFunctionKey');
 ```
 
 ### on('moveCursor')10+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'moveCursor', callback: (direction: Direction) => void): void
 
@@ -2864,20 +2996,18 @@ on(type: 'moveCursor', callback: (direction: Direction) => void): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800009 | input method client detached. |
 
 **示例：**
 
-```
-1. inputMethod.getController().on('moveCursor', (direction: inputMethod.Direction) => {
-2. console.info(`Succeeded in subscribing moveCursor, direction: ${direction}`);
-3. });
+```ts
+inputMethod.getController().on('moveCursor', (direction: inputMethod.Direction) => {
+  console.info(`Succeeded in subscribing moveCursor, direction: ${direction}`);
+});
 ```
 
 ### off('moveCursor')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'moveCursor', callback?: (direction: Direction) => void): void
 
@@ -2894,21 +3024,19 @@ off(type: 'moveCursor', callback?: (direction: Direction) => void): void
 
 **示例：**
 
-```
-1. import { Callback } from '@kit.BasicServicesKit';
+```ts
+import { Callback } from '@kit.BasicServicesKit';
 
-3. let onMoveCursorCallback: Callback<inputMethod.Direction> = (direction: inputMethod.Direction): void => {
-4. console.info(`Succeeded in subscribing moveCursor, direction: ${direction}`);
-5. };
+let onMoveCursorCallback: Callback<inputMethod.Direction> = (direction: inputMethod.Direction): void => {
+  console.info(`Succeeded in subscribing moveCursor, direction: ${direction}`);
+};
 
-7. let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
-8. inputMethodController.off('moveCursor', onMoveCursorCallback);
-9. inputMethodController.off('moveCursor');
+let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
+inputMethodController.off('moveCursor', onMoveCursorCallback);
+inputMethodController.off('moveCursor');
 ```
 
 ### on('handleExtendAction')10+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'handleExtendAction', callback: (action: ExtendAction) => void): void
 
@@ -2929,20 +3057,18 @@ on(type: 'handleExtendAction', callback: (action: ExtendAction) => void): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800009 | input method client detached. |
 
 **示例：**
 
-```
-1. inputMethod.getController().on('handleExtendAction', (action: inputMethod.ExtendAction) => {
-2. console.info(`Succeeded in subscribing handleExtendAction, action: ${action}`);
-3. });
+```ts
+inputMethod.getController().on('handleExtendAction', (action: inputMethod.ExtendAction) => {
+  console.info(`Succeeded in subscribing handleExtendAction, action: ${action}`);
+});
 ```
 
 ### off('handleExtendAction')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'handleExtendAction', callback?: (action: ExtendAction) => void): void
 
@@ -2959,21 +3085,19 @@ off(type: 'handleExtendAction', callback?: (action: ExtendAction) => void): void
 
 **示例：**
 
-```
-1. import { Callback } from '@kit.BasicServicesKit';
+```ts
+import { Callback } from '@kit.BasicServicesKit';
 
-3. let onHandleExtendActionCallback: Callback<inputMethod.ExtendAction> = (action: inputMethod.ExtendAction): void => {
-4. console.info(`Succeeded in subscribing handleExtendAction, action: ${action}`);
-5. };
+let onHandleExtendActionCallback: Callback<inputMethod.ExtendAction> = (action: inputMethod.ExtendAction): void => {
+  console.info(`Succeeded in subscribing handleExtendAction, action: ${action}`);
+};
 
-7. let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
-8. inputMethodController.off('handleExtendAction', onHandleExtendActionCallback);
-9. inputMethodController.off('handleExtendAction');
+let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
+inputMethodController.off('handleExtendAction', onHandleExtendActionCallback);
+inputMethodController.off('handleExtendAction');
 ```
 
 ### on('selectByRange')10+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'selectByRange', callback: Callback<Range>): void
 
@@ -2994,19 +3118,17 @@ on(type: 'selectByRange', callback: Callback<Range>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. inputMethod.getController().on('selectByRange', (range: inputMethod.Range) => {
-2. console.info(`Succeeded in subscribing selectByRange: start: ${range.start} , end: ${range.end}`);
-3. });
+```ts
+inputMethod.getController().on('selectByRange', (range: inputMethod.Range) => {
+  console.info(`Succeeded in subscribing selectByRange: start: ${range.start} , end: ${range.end}`);
+});
 ```
 
 ### off('selectByRange')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'selectByRange', callback?: Callback<Range>): void
 
@@ -3023,21 +3145,19 @@ off(type: 'selectByRange', callback?: Callback<Range>): void
 
 **示例：**
 
-```
-1. import { Callback } from '@kit.BasicServicesKit';
+```ts
+import { Callback } from '@kit.BasicServicesKit';
 
-3. let onSelectByRangeCallback: Callback<inputMethod.Range> = (range: inputMethod.Range): void => {
-4. console.info(`Succeeded in subscribing selectByRange, start: ${range.start} , end: ${range.end}`);
-5. };
+let onSelectByRangeCallback: Callback<inputMethod.Range> = (range: inputMethod.Range): void => {
+  console.info(`Succeeded in subscribing selectByRange, start: ${range.start} , end: ${range.end}`);
+};
 
-7. let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
-8. inputMethodController.off('selectByRange', onSelectByRangeCallback);
-9. inputMethodController.off('selectByRange');
+let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
+inputMethodController.off('selectByRange', onSelectByRangeCallback);
+inputMethodController.off('selectByRange');
 ```
 
 ### on('selectByMovement')10+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'selectByMovement', callback: Callback<Movement>): void
 
@@ -3058,19 +3178,17 @@ on(type: 'selectByMovement', callback: Callback<Movement>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. inputMethod.getController().on('selectByMovement', (movement: inputMethod.Movement) => {
-2. console.info('Succeeded in subscribing selectByMovement: direction: ' + movement.direction);
-3. });
+```ts
+inputMethod.getController().on('selectByMovement', (movement: inputMethod.Movement) => {
+  console.info('Succeeded in subscribing selectByMovement: direction: ' + movement.direction);
+});
 ```
 
 ### off('selectByMovement')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'selectByMovement', callback?: Callback<Movement>): void
 
@@ -3087,21 +3205,19 @@ off(type: 'selectByMovement', callback?: Callback<Movement>): void
 
 **示例：**
 
-```
-1. import { Callback } from '@kit.BasicServicesKit';
+```ts
+import { Callback } from '@kit.BasicServicesKit';
 
-3. let onSelectByMovementCallback: Callback<inputMethod.Movement> = (movement: inputMethod.Movement): void => {
-4. console.info(`Succeeded in subscribing selectByMovement, movement.direction: ${movement.direction}`);
-5. };
+let onSelectByMovementCallback: Callback<inputMethod.Movement> = (movement: inputMethod.Movement): void => {
+  console.info(`Succeeded in subscribing selectByMovement, movement.direction: ${movement.direction}`);
+};
 
-7. let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
-8. inputMethodController.off('selectByMovement', onSelectByMovementCallback);
-9. inputMethodController.off('selectByMovement');
+let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
+inputMethodController.off('selectByMovement', onSelectByMovementCallback);
+inputMethodController.off('selectByMovement');
 ```
 
 ### on('getLeftTextOfCursor')10+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'getLeftTextOfCursor', callback: (length: number) => string): void
 
@@ -3122,22 +3238,20 @@ on(type: 'getLeftTextOfCursor', callback: (length: number) => string): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800009 | input method client detached. |
 
 **示例：**
 
-```
-1. inputMethod.getController().on('getLeftTextOfCursor', (length: number) => {
-2. console.info(`Succeeded in subscribing getLeftTextOfCursor, length: ${length}`);
-3. let text: string = "";
-4. return text;
-5. });
+```ts
+inputMethod.getController().on('getLeftTextOfCursor', (length: number) => {
+  console.info(`Succeeded in subscribing getLeftTextOfCursor, length: ${length}`);
+  let text: string = "";
+  return text;
+});
 ```
 
 ### off('getLeftTextOfCursor')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'getLeftTextOfCursor', callback?: (length: number) => string): void
 
@@ -3154,21 +3268,19 @@ off(type: 'getLeftTextOfCursor', callback?: (length: number) => string): void
 
 **示例：**
 
-```
-1. let getLeftTextOfCursorCallback: (length: number) => string = (length: number): string => {
-2. console.info(`Succeeded in unsubscribing getLeftTextOfCursor, length: ${length}`);
-3. let text: string = "";
-4. return text;
-5. };
+```ts
+let getLeftTextOfCursorCallback: (length: number) => string = (length: number): string => {
+  console.info(`Succeeded in unsubscribing getLeftTextOfCursor, length: ${length}`);
+  let text: string = "";
+  return text;
+};
 
-7. let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
-8. inputMethodController.off('getLeftTextOfCursor', getLeftTextOfCursorCallback);
-9. inputMethodController.off('getLeftTextOfCursor');
+let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
+inputMethodController.off('getLeftTextOfCursor', getLeftTextOfCursorCallback);
+inputMethodController.off('getLeftTextOfCursor');
 ```
 
 ### on('getRightTextOfCursor')10+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'getRightTextOfCursor', callback: (length: number) => string): void
 
@@ -3189,22 +3301,20 @@ on(type: 'getRightTextOfCursor', callback: (length: number) => string): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800009 | input method client detached. |
 
 **示例：**
 
-```
-1. inputMethod.getController().on('getRightTextOfCursor', (length: number) => {
-2. console.info(`Succeeded in subscribing getRightTextOfCursor, length: ${length}`);
-3. let text: string = "";
-4. return text;
-5. });
+```ts
+inputMethod.getController().on('getRightTextOfCursor', (length: number) => {
+  console.info(`Succeeded in subscribing getRightTextOfCursor, length: ${length}`);
+  let text: string = "";
+  return text;
+});
 ```
 
 ### off('getRightTextOfCursor')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'getRightTextOfCursor', callback?: (length: number) => string): void
 
@@ -3221,21 +3331,19 @@ off(type: 'getRightTextOfCursor', callback?: (length: number) => string): void
 
 **示例：**
 
-```
-1. let getRightTextOfCursorCallback: (length: number) => string = (length: number): string => {
-2. console.info(`Succeeded in unsubscribing getRightTextOfCursor, length: ${length}`);
-3. let text: string = "";
-4. return text;
-5. };
+```ts
+let getRightTextOfCursorCallback: (length: number) => string = (length: number): string => {
+  console.info(`Succeeded in unsubscribing getRightTextOfCursor, length: ${length}`);
+  let text: string = "";
+  return text;
+};
 
-7. let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
-8. inputMethodController.off('getRightTextOfCursor', getRightTextOfCursorCallback);
-9. inputMethodController.off('getRightTextOfCursor');
+let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
+inputMethodController.off('getRightTextOfCursor', getRightTextOfCursorCallback);
+inputMethodController.off('getRightTextOfCursor');
 ```
 
 ### on('getTextIndexAtCursor')10+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'getTextIndexAtCursor', callback: () => number): void
 
@@ -3256,22 +3364,20 @@ on(type: 'getTextIndexAtCursor', callback: () => number): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800009 | input method client detached. |
 
 **示例：**
 
-```
-1. inputMethod.getController().on('getTextIndexAtCursor', () => {
-2. console.info(`Succeeded in subscribing getTextIndexAtCursor.`);
-3. let index: number = 0;
-4. return index;
-5. });
+```ts
+inputMethod.getController().on('getTextIndexAtCursor', () => {
+  console.info(`Succeeded in subscribing getTextIndexAtCursor.`);
+  let index: number = 0;
+  return index;
+});
 ```
 
 ### off('getTextIndexAtCursor')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'getTextIndexAtCursor', callback?: () => number): void
 
@@ -3288,27 +3394,25 @@ off(type: 'getTextIndexAtCursor', callback?: () => number): void
 
 **示例：**
 
-```
-1. let getTextIndexAtCursorCallback: () => number = (): number => {
-2. console.info(`Succeeded in unsubscribing getTextIndexAtCursor.`);
-3. let index: number = 0;
-4. return index;
-5. };
+```ts
+let getTextIndexAtCursorCallback: () => number = (): number => {
+  console.info(`Succeeded in unsubscribing getTextIndexAtCursor.`);
+  let index: number = 0;
+  return index;
+};
 
-7. let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
-8. inputMethodController.off('getTextIndexAtCursor', getTextIndexAtCursorCallback);
-9. inputMethodController.off('getTextIndexAtCursor');
+let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
+inputMethodController.off('getTextIndexAtCursor', getTextIndexAtCursorCallback);
+inputMethodController.off('getTextIndexAtCursor');
 ```
 
 ### on('setPreviewText')17+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'setPreviewText', callback: SetPreviewTextCallback): void
 
 订阅输入法应用操作文本预览内容的事件。使用callback异步回调。
 
-说明
+**说明** 
 
 使用预览文本功能，需在调用[attach](js-apis-inputmethod.md#attach10)前订阅此事件，并和[on('finishTextPreview')](js-apis-inputmethod.md#onfinishtextpreview17)一起订阅。
 
@@ -3331,31 +3435,29 @@ on(type: 'setPreviewText', callback: SetPreviewTextCallback): void
 
 **示例：**
 
-```
-1. let setPreviewTextCallback1: inputMethod.SetPreviewTextCallback = (text: string, range: inputMethod.Range): void => {
-2. console.info(`SetPreviewTextCallback1: Received text - ${text}, Received range - start: ${range.start}, end: ${range.end}`);
-3. };
+```ts
+let setPreviewTextCallback1: inputMethod.SetPreviewTextCallback = (text: string, range: inputMethod.Range): void => {
+  console.info(`SetPreviewTextCallback1: Received text - ${text}, Received range - start: ${range.start}, end: ${range.end}`);
+};
 
-5. let setPreviewTextCallback2: inputMethod.SetPreviewTextCallback = (text: string, range: inputMethod.Range): void => {
-6. console.info(`setPreviewTextCallback2: Received text - ${text}, Received range - start: ${range.start}, end: ${range.end}`);
-7. };
+let setPreviewTextCallback2: inputMethod.SetPreviewTextCallback = (text: string, range: inputMethod.Range): void => {
+  console.info(`setPreviewTextCallback2: Received text - ${text}, Received range - start: ${range.start}, end: ${range.end}`);
+};
 
-9. let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
-10. inputMethodController.on('setPreviewText', setPreviewTextCallback1);
-11. console.info(`SetPreviewTextCallback1 subscribed to setPreviewText`);
-12. inputMethodController.on('setPreviewText', setPreviewTextCallback2);
-13. console.info(`SetPreviewTextCallback2 subscribed to setPreviewText`);
-14. // 仅取消setPreviewText的callback1的回调。
-15. inputMethodController.off('setPreviewText', setPreviewTextCallback1);
-16. console.info(`SetPreviewTextCallback1 unsubscribed from setPreviewText`);
-17. // 取消setPreviewText的所有回调。
-18. inputMethodController.off('setPreviewText');
-19. console.info(`All callbacks unsubscribed from setPreviewText`);
+let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
+inputMethodController.on('setPreviewText', setPreviewTextCallback1);
+console.info(`SetPreviewTextCallback1 subscribed to setPreviewText`);
+inputMethodController.on('setPreviewText', setPreviewTextCallback2);
+console.info(`SetPreviewTextCallback2 subscribed to setPreviewText`);
+// 仅取消setPreviewText的callback1的回调。
+inputMethodController.off('setPreviewText', setPreviewTextCallback1);
+console.info(`SetPreviewTextCallback1 unsubscribed from setPreviewText`);
+// 取消setPreviewText的所有回调。
+inputMethodController.off('setPreviewText');
+console.info(`All callbacks unsubscribed from setPreviewText`);
 ```
 
 ### off('setPreviewText')17+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'setPreviewText', callback?: SetPreviewTextCallback): void
 
@@ -3372,37 +3474,35 @@ off(type: 'setPreviewText', callback?: SetPreviewTextCallback): void
 
 **示例：**
 
-```
-1. let setPreviewTextCallback1: inputMethod.SetPreviewTextCallback = (text: string, range: inputMethod.Range): void => {
-2. console.info(`SetPreviewTextCallback1: Received text - ${text}, Received range - start: ${range.start}, end: ${range.end}`);
-3. };
+```ts
+let setPreviewTextCallback1: inputMethod.SetPreviewTextCallback = (text: string, range: inputMethod.Range): void => {
+  console.info(`SetPreviewTextCallback1: Received text - ${text}, Received range - start: ${range.start}, end: ${range.end}`);
+};
 
-5. let setPreviewTextCallback2: inputMethod.SetPreviewTextCallback = (text: string, range: inputMethod.Range): void => {
-6. console.info(`setPreviewTextCallback2: Received text - ${text}, Received range - start: ${range.start}, end: ${range.end}`);
-7. };
+let setPreviewTextCallback2: inputMethod.SetPreviewTextCallback = (text: string, range: inputMethod.Range): void => {
+  console.info(`setPreviewTextCallback2: Received text - ${text}, Received range - start: ${range.start}, end: ${range.end}`);
+};
 
-9. let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
-10. inputMethodController.on('setPreviewText', setPreviewTextCallback1);
-11. console.info(`SetPreviewTextCallback1 subscribed to setPreviewText`);
-12. inputMethodController.on('setPreviewText', setPreviewTextCallback2);
-13. console.info(`SetPreviewTextCallback2 subscribed to setPreviewText`);
-14. // 仅取消setPreviewText的callback1的回调。
-15. inputMethodController.off('setPreviewText', setPreviewTextCallback1);
-16. console.info(`SetPreviewTextCallback1 unsubscribed from setPreviewText`);
-17. // 取消setPreviewText的所有回调。
-18. inputMethodController.off('setPreviewText');
-19. console.info(`All callbacks unsubscribed from setPreviewText`);
+let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
+inputMethodController.on('setPreviewText', setPreviewTextCallback1);
+console.info(`SetPreviewTextCallback1 subscribed to setPreviewText`);
+inputMethodController.on('setPreviewText', setPreviewTextCallback2);
+console.info(`SetPreviewTextCallback2 subscribed to setPreviewText`);
+// 仅取消setPreviewText的callback1的回调。
+inputMethodController.off('setPreviewText', setPreviewTextCallback1);
+console.info(`SetPreviewTextCallback1 unsubscribed from setPreviewText`);
+// 取消setPreviewText的所有回调。
+inputMethodController.off('setPreviewText');
+console.info(`All callbacks unsubscribed from setPreviewText`);
 ```
 
 ### on('finishTextPreview')17+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'finishTextPreview', callback: Callback<void>): void
 
 订阅结束文本预览事件。使用callback异步回调。
 
-说明
+**说明** 
 
 使用预览文本功能，需在调用[attach](js-apis-inputmethod.md#attach10)前订阅此事件，并和[on('setPreviewText')](js-apis-inputmethod.md#onsetpreviewtext17)一起订阅。
 
@@ -3425,32 +3525,30 @@ on(type: 'finishTextPreview', callback: Callback<void>): void
 
 **示例：**
 
-```
-1. import { Callback } from '@kit.BasicServicesKit';
+```ts
+import { Callback } from '@kit.BasicServicesKit';
 
-3. let finishTextPreviewCallback1: Callback<void> = (): void => {
-4. console.info(`FinishTextPreviewCallback1: finishTextPreview event triggered`);
-5. };
-6. let finishTextPreviewCallback2: Callback<void> = (): void => {
-7. console.info(`FinishTextPreviewCallback2: finishTextPreview event triggered`);
-8. };
+let finishTextPreviewCallback1: Callback<void> = (): void => {
+  console.info(`FinishTextPreviewCallback1: finishTextPreview event triggered`);
+};
+let finishTextPreviewCallback2: Callback<void> = (): void => {
+  console.info(`FinishTextPreviewCallback2: finishTextPreview event triggered`);
+};
 
-10. let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
-11. inputMethodController.on('finishTextPreview', finishTextPreviewCallback1);
-12. console.info(`FinishTextPreviewCallback1 subscribed to finishTextPreview`);
-13. inputMethodController.on('finishTextPreview', finishTextPreviewCallback2);
-14. console.info(`FinishTextPreviewCallback2 subscribed to finishTextPreview`);
-15. // 仅取消finishTextPreview的callback1的回调。
-16. inputMethodController.off('finishTextPreview', finishTextPreviewCallback1);
-17. console.info(`FinishTextPreviewCallback1 unsubscribed from finishTextPreview`);
-18. // 取消finishTextPreview的所有回调。
-19. inputMethodController.off('finishTextPreview');
-20. console.info(`All callbacks unsubscribed from finishTextPreview`);
+let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
+inputMethodController.on('finishTextPreview', finishTextPreviewCallback1);
+console.info(`FinishTextPreviewCallback1 subscribed to finishTextPreview`);
+inputMethodController.on('finishTextPreview', finishTextPreviewCallback2);
+console.info(`FinishTextPreviewCallback2 subscribed to finishTextPreview`);
+// 仅取消finishTextPreview的callback1的回调。
+inputMethodController.off('finishTextPreview', finishTextPreviewCallback1);
+console.info(`FinishTextPreviewCallback1 unsubscribed from finishTextPreview`);
+// 取消finishTextPreview的所有回调。
+inputMethodController.off('finishTextPreview');
+console.info(`All callbacks unsubscribed from finishTextPreview`);
 ```
 
 ### off('finishTextPreview')17+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'finishTextPreview', callback?: Callback<void>): void
 
@@ -3467,38 +3565,43 @@ off(type: 'finishTextPreview', callback?: Callback<void>): void
 
 **示例：**
 
-```
-1. import { Callback } from '@kit.BasicServicesKit';
+```ts
+import { Callback } from '@kit.BasicServicesKit';
 
-3. let finishTextPreviewCallback1: Callback<void> = (): void => {
-4. console.info(`FinishTextPreviewCallback1: finishTextPreview event triggered`);
-5. };
-6. let finishTextPreviewCallback2: Callback<void> = (): void => {
-7. console.info(`FinishTextPreviewCallback2: finishTextPreview event triggered`);
-8. };
+let finishTextPreviewCallback1: Callback<void> = (): void => {
+  console.info(`FinishTextPreviewCallback1: finishTextPreview event triggered`);
+};
+let finishTextPreviewCallback2: Callback<void> = (): void => {
+  console.info(`FinishTextPreviewCallback2: finishTextPreview event triggered`);
+};
 
-10. let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
-11. inputMethodController.on('finishTextPreview', finishTextPreviewCallback1);
-12. console.info(`FinishTextPreviewCallback1 subscribed to finishTextPreview`);
-13. inputMethodController.on('finishTextPreview', finishTextPreviewCallback2);
-14. console.info(`FinishTextPreviewCallback2 subscribed to finishTextPreview`);
-15. // 仅取消finishTextPreview的callback1的回调。
-16. inputMethodController.off('finishTextPreview', finishTextPreviewCallback1);
-17. console.info(`FinishTextPreviewCallback1 unsubscribed from finishTextPreview`);
-18. // 取消finishTextPreview的所有回调。
-19. inputMethodController.off('finishTextPreview');
-20. console.info(`All callbacks unsubscribed from finishTextPreview`);
+let inputMethodController: inputMethod.InputMethodController = inputMethod.getController();
+inputMethodController.on('finishTextPreview', finishTextPreviewCallback1);
+console.info(`FinishTextPreviewCallback1 subscribed to finishTextPreview`);
+inputMethodController.on('finishTextPreview', finishTextPreviewCallback2);
+console.info(`FinishTextPreviewCallback2 subscribed to finishTextPreview`);
+// 仅取消finishTextPreview的callback1的回调。
+inputMethodController.off('finishTextPreview', finishTextPreviewCallback1);
+console.info(`FinishTextPreviewCallback1 unsubscribed from finishTextPreview`);
+// 取消finishTextPreview的所有回调。
+inputMethodController.off('finishTextPreview');
+console.info(`All callbacks unsubscribed from finishTextPreview`);
 ```
 
 ## InputMethodSetting8+
 
-PhonePC/2in1TabletTVWearable
+InputMethodSetting提供输入法配置与查询能力，面向前台应用提供以下功能：
+
+* 输入法变化订阅：通过[on('imeChange')](js-apis-inputmethod.md#onimechange9)订阅输入法及子类型变化事件，当用户切换输入法时收到通知。
+* 输入法列表查询：通过[getInputMethods](js-apis-inputmethod.md#getinputmethods9)查询已激活/未激活输入法列表，通过[getAllInputMethods](js-apis-inputmethod.md#getallinputmethods11)查询所有已安装输入法列表，通过[listInputMethodSubtype](js-apis-inputmethod.md#listinputmethodsubtype9)查询指定输入法的子类型列表。
+* 面板可见性查询：通过isPanelShown查询输入法面板是否显示。
+* 输入法选择对话框：通过showOptionalInputMethods显示输入法选择对话框（已废弃，建议使用InputMethodListDialog）。
+
+需通过[getSetting](js-apis-inputmethod.md#inputmethodgetsetting9)获取InputMethodSetting实例后使用。
 
 下列API均需使用[getSetting](js-apis-inputmethod.md#inputmethodgetsetting9)获取到InputMethodSetting实例后，通过实例调用。
 
 ### on('imeChange')9+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'imeChange', callback: (inputMethodProperty: InputMethodProperty, inputMethodSubtype: InputMethodSubtype) => void): void
 
@@ -3515,19 +3618,17 @@ on(type: 'imeChange', callback: (inputMethodProperty: InputMethodProperty, input
 
 **示例：**
 
-```
-1. import { InputMethodSubtype } from '@kit.IMEKit';
+```ts
+import { InputMethodSubtype } from '@kit.IMEKit';
 
-3. inputMethod.getSetting()
-4. .on('imeChange', (inputMethodProperty: inputMethod.InputMethodProperty, inputMethodSubtype: InputMethodSubtype) => {
-5. console.info(`Succeeded in subscribing imeChange: inputMethodProperty.name: ${inputMethodProperty.name} ` +
-6. `, inputMethodSubtype.id: ${inputMethodSubtype.id}`);
-7. });
+inputMethod.getSetting()
+  .on('imeChange', (inputMethodProperty: inputMethod.InputMethodProperty, inputMethodSubtype: InputMethodSubtype) => {
+    console.info(`Succeeded in subscribing imeChange: inputMethodProperty.name: ${inputMethodProperty.name} ` +
+      `, inputMethodSubtype.id: ${inputMethodSubtype.id}`);
+  });
 ```
 
 ### off('imeChange')9+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'imeChange', callback?: (inputMethodProperty: InputMethodProperty, inputMethodSubtype: InputMethodSubtype) => void): void
 
@@ -3544,13 +3645,11 @@ off(type: 'imeChange', callback?: (inputMethodProperty: InputMethodProperty, inp
 
 **示例：**
 
-```
-1. inputMethod.getSetting().off('imeChange');
+```ts
+inputMethod.getSetting().off('imeChange');
 ```
 
 ### listInputMethodSubtype9+
-
-PhonePC/2in1TabletTVWearable
 
 listInputMethodSubtype(inputMethodProperty: InputMethodProperty, callback: AsyncCallback<Array<InputMethodSubtype>>): void
 
@@ -3571,37 +3670,35 @@ listInputMethodSubtype(inputMethodProperty: InputMethodProperty, callback: Async
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800001 | bundle manager error. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
 
 **示例：**
 
-```
-1. import { InputMethodSubtype } from '@kit.IMEKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { InputMethodSubtype } from '@kit.IMEKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let inputMethodProperty: inputMethod.InputMethodProperty = {
-5. name: 'com.example.keyboard',
-6. id: 'propertyId',
-7. packageName: 'com.example.keyboard',
-8. methodId: 'propertyId',
-9. }
-10. let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getSetting();
+let inputMethodProperty: inputMethod.InputMethodProperty = {
+  name: 'com.example.keyboard',
+  id: 'propertyId',
+  packageName: 'com.example.keyboard',
+  methodId: 'propertyId'
+}
+let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getSetting();
 
-12. inputMethodSetting.listInputMethodSubtype(inputMethodProperty,
-13. (err: BusinessError, data: Array<InputMethodSubtype>) => {
-14. if (err) {
-15. console.error(`Failed to listInputMethodSubtype, code: ${err.code}, message: ${err.message}`);
-16. return;
-17. }
-18. console.info('Succeeded in listing inputMethodSubtype.');
-19. });
+inputMethodSetting.listInputMethodSubtype(inputMethodProperty,
+  (err: BusinessError, data: Array<InputMethodSubtype>) => {
+    if (err) {
+      console.error(`Failed to listInputMethodSubtype, code: ${err.code}, message: ${err.message}`);
+      return;
+    }
+    console.info('Succeeded in listing inputMethodSubtype.');
+  });
 ```
 
 ### listInputMethodSubtype9+
-
-PhonePC/2in1TabletTVWearable
 
 listInputMethodSubtype(inputMethodProperty: InputMethodProperty): Promise<Array<InputMethodSubtype>>
 
@@ -3627,34 +3724,32 @@ listInputMethodSubtype(inputMethodProperty: InputMethodProperty): Promise<Array<
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800001 | bundle manager error. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
 
 **示例：**
 
-```
-1. import { InputMethodSubtype } from '@kit.IMEKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { InputMethodSubtype } from '@kit.IMEKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let inputMethodProperty: inputMethod.InputMethodProperty = {
-5. name: 'com.example.keyboard',
-6. id: 'propertyId',
-7. packageName: 'com.example.keyboard',
-8. methodId: 'propertyId',
-9. }
-10. let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getSetting();
+let inputMethodProperty: inputMethod.InputMethodProperty = {
+  name: 'com.example.keyboard',
+  id: 'propertyId',
+  packageName: 'com.example.keyboard',
+  methodId: 'propertyId'
+}
+let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getSetting();
 
-12. inputMethodSetting.listInputMethodSubtype(inputMethodProperty).then((data: Array<InputMethodSubtype>) => {
-13. console.info('Succeeded in listing inputMethodSubtype.');
-14. }).catch((err: BusinessError) => {
-15. console.error(`Failed to listInputMethodSubtype, code: ${err.code}, message: ${err.message}`);
-16. })
+inputMethodSetting.listInputMethodSubtype(inputMethodProperty).then((data: Array<InputMethodSubtype>) => {
+  console.info('Succeeded in listing inputMethodSubtype.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to listInputMethodSubtype, code: ${err.code}, message: ${err.message}`);
+})
 ```
 
 ### listCurrentInputMethodSubtype9+
-
-PhonePC/2in1TabletTVWearable
 
 listCurrentInputMethodSubtype(callback: AsyncCallback<Array<InputMethodSubtype>>): void
 
@@ -3679,23 +3774,21 @@ listCurrentInputMethodSubtype(callback: AsyncCallback<Array<InputMethodSubtype>>
 
 **示例：**
 
-```
-1. import { InputMethodSubtype } from '@kit.IMEKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { InputMethodSubtype } from '@kit.IMEKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getSetting();
-5. inputMethodSetting.listCurrentInputMethodSubtype((err: BusinessError, data: Array<InputMethodSubtype>) => {
-6. if (err) {
-7. console.error(`Failed to listCurrentInputMethodSubtype, code: ${err.code}, message: ${err.message}`);
-8. return;
-9. }
-10. console.info('Succeeded in listing currentInputMethodSubtype.');
-11. });
+let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getSetting();
+inputMethodSetting.listCurrentInputMethodSubtype((err: BusinessError, data: Array<InputMethodSubtype>) => {
+  if (err) {
+    console.error(`Failed to listCurrentInputMethodSubtype, code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in listing currentInputMethodSubtype.');
+});
 ```
 
 ### listCurrentInputMethodSubtype9+
-
-PhonePC/2in1TabletTVWearable
 
 listCurrentInputMethodSubtype(): Promise<Array<InputMethodSubtype>>
 
@@ -3720,28 +3813,26 @@ listCurrentInputMethodSubtype(): Promise<Array<InputMethodSubtype>>
 
 **示例：**
 
-```
-1. import { InputMethodSubtype } from '@kit.IMEKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { InputMethodSubtype } from '@kit.IMEKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getSetting();
+let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getSetting();
 
-6. inputMethodSetting.listCurrentInputMethodSubtype().then((data: Array<InputMethodSubtype>) => {
-7. console.info('Succeeded in listing currentInputMethodSubtype.');
-8. }).catch((err: BusinessError) => {
-9. console.error(`Failed to listCurrentInputMethodSubtype, code: ${err.code}, message: ${err.message}`);
-10. })
+inputMethodSetting.listCurrentInputMethodSubtype().then((data: Array<InputMethodSubtype>) => {
+  console.info('Succeeded in listing currentInputMethodSubtype.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to listCurrentInputMethodSubtype, code: ${err.code}, message: ${err.message}`);
+})
 ```
 
 ### getInputMethods9+
-
-PhonePC/2in1TabletTVWearable
 
 getInputMethods(enable: boolean, callback: AsyncCallback<Array<InputMethodProperty>>): void
 
 获取已激活/未激活的输入法应用列表。使用callback异步回调。
 
-说明
+**说明** 
 
 已激活输入法为使能的输入法应用。默认输入法默认使能，其他输入法可被设置为使能或非使能。
 
@@ -3762,33 +3853,31 @@ getInputMethods(enable: boolean, callback: AsyncCallback<Array<InputMethodProper
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800001 | bundle manager error. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getSetting().getInputMethods(true, (err: BusinessError, data: Array<inputMethod.InputMethodProperty>) => {
-4. if (err) {
-5. console.error(`Failed to getInputMethods, code: ${err.code}, message: ${err.message}`);
-6. return;
-7. }
-8. console.info('Succeeded in getting inputMethods.');
-9. });
+inputMethod.getSetting().getInputMethods(true, (err: BusinessError, data: Array<inputMethod.InputMethodProperty>) => {
+  if (err) {
+    console.error(`Failed to getInputMethods, code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in getting inputMethods.');
+});
 ```
 
 ### getInputMethods9+
-
-PhonePC/2in1TabletTVWearable
 
 getInputMethods(enable: boolean): Promise<Array<InputMethodProperty>>
 
 获取已激活/未激活的输入法应用列表。使用promise异步回调。
 
-说明
+**说明** 
 
 已激活输入法为使能的输入法应用。默认输入法默认使能，其他输入法可被设置为使能或非使能。
 
@@ -3814,31 +3903,31 @@ getInputMethods(enable: boolean): Promise<Array<InputMethodProperty>>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800001 | bundle manager error. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getSetting().getInputMethods(true).then((data: Array<inputMethod.InputMethodProperty>) => {
-4. console.info('Succeeded in getting inputMethods.');
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to getInputMethods, code: ${err.code}, message: ${err.message}`);
-7. })
+inputMethod.getSetting().getInputMethods(true).then((data: Array<inputMethod.InputMethodProperty>) => {
+  console.info('Succeeded in getting inputMethods.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to getInputMethods, code: ${err.code}, message: ${err.message}`);
+})
 ```
 
 ### getInputMethodsSync11+
-
-PhonePC/2in1TabletTVWearable
 
 getInputMethodsSync(enable: boolean): Array<InputMethodProperty>
 
 获取已激活/未激活的输入法应用列表。同步接口。
 
-说明
+**说明** 
+
+同步接口阻塞主线程，容易影响UI交互，需谨慎使用。
 
 已激活输入法为使能的输入法应用。默认输入法默认使能，其他输入法可被设置为使能或非使能。
 
@@ -3864,19 +3953,17 @@ getInputMethodsSync(enable: boolean): Array<InputMethodProperty>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800001 | bundle manager error. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
 
 **示例：**
 
-```
-1. let imeProperty: Array<inputMethod.InputMethodProperty> = inputMethod.getSetting().getInputMethodsSync(true);
+```ts
+let imeProperty: Array<inputMethod.InputMethodProperty> = inputMethod.getSetting().getInputMethodsSync(true);
 ```
 
 ### getAllInputMethods11+
-
-PhonePC/2in1TabletTVWearable
 
 getAllInputMethods(callback: AsyncCallback<Array<InputMethodProperty>>): void
 
@@ -3901,21 +3988,19 @@ getAllInputMethods(callback: AsyncCallback<Array<InputMethodProperty>>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getSetting().getAllInputMethods((err: BusinessError, data: Array<inputMethod.InputMethodProperty>) => {
-4. if (err) {
-5. console.error(`Failed to getAllInputMethods, code: ${err.code}, message: ${err.message}`);
-6. return;
-7. }
-8. console.info('Succeeded in getting all inputMethods.');
-9. });
+inputMethod.getSetting().getAllInputMethods((err: BusinessError, data: Array<inputMethod.InputMethodProperty>) => {
+  if (err) {
+    console.error(`Failed to getAllInputMethods, code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in getting all inputMethods.');
+});
 ```
 
 ### getAllInputMethods11+
-
-PhonePC/2in1TabletTVWearable
 
 getAllInputMethods(): Promise<Array<InputMethodProperty>>
 
@@ -3940,23 +4025,25 @@ getAllInputMethods(): Promise<Array<InputMethodProperty>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getSetting().getAllInputMethods().then((data: Array<inputMethod.InputMethodProperty>) => {
-4. console.info('Succeeded in getting all inputMethods.');
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to getAllInputMethods, code: ${err.code}, message: ${err.message}`);
-7. })
+inputMethod.getSetting().getAllInputMethods().then((data: Array<inputMethod.InputMethodProperty>) => {
+  console.info('Succeeded in getting all inputMethods.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to getAllInputMethods, code: ${err.code}, message: ${err.message}`);
+})
 ```
 
 ### getAllInputMethodsSync11+
 
-PhonePC/2in1TabletTVWearable
-
 getAllInputMethodsSync(): Array<InputMethodProperty>
 
 获取所有输入法应用列表。同步接口。
+
+**说明** 
+
+同步接口阻塞主线程，容易影响UI交互，需谨慎使用。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -3977,19 +4064,17 @@ getAllInputMethodsSync(): Array<InputMethodProperty>
 
 **示例：**
 
-```
-1. let imeProperty: Array<inputMethod.InputMethodProperty> = inputMethod.getSetting().getAllInputMethodsSync();
+```ts
+let imeProperty: Array<inputMethod.InputMethodProperty> = inputMethod.getSetting().getAllInputMethodsSync();
 ```
 
 ### showOptionalInputMethods(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 showOptionalInputMethods(callback: AsyncCallback<boolean>): void
 
 显示输入法选择对话框。使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始支持，从API version 18开始废弃，建议使用[InputMethodListDialog](js-apis-inputmethodlist.md#inputmethodlistdialog)替代。
 
@@ -4011,31 +4096,29 @@ showOptionalInputMethods(callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getSetting().showOptionalInputMethods((err: BusinessError, result: boolean) => {
-4. if (err) {
-5. console.error(`Failed to showOptionalInputMethods, code: ${err.code}, message: ${err.message}`);
-6. return;
-7. }
-8. if (result) {
-9. console.info('Succeeded in showing optionalInputMethods.');
-10. } else {
-11. console.error(`Failed to showOptionalInputMethods.`);
-12. }
-13. });
+inputMethod.getSetting().showOptionalInputMethods((err: BusinessError, result: boolean) => {
+  if (err) {
+    console.error(`Failed to showOptionalInputMethods, code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  if (result) {
+    console.info('Succeeded in showing optionalInputMethods.');
+  } else {
+    console.error(`Failed to showOptionalInputMethods.`);
+  }
+});
 ```
 
 ### showOptionalInputMethods(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 showOptionalInputMethods(): Promise<boolean>
 
 显示输入法选择对话框。使用promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始支持，从API version 18开始废弃，建议使用[InputMethodListDialog](js-apis-inputmethodlist.md#inputmethodlistdialog)替代。
 
@@ -4045,7 +4128,7 @@ showOptionalInputMethods(): Promise<boolean>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<boolean> | Promise对象。当输入法选择对话框显示成功，err为undefined，data为true；否则为错误对象。 |
+| Promise<boolean> | Promise对象。返回true表示输入法选择对话框显示成功，返回false表示显示失败。 |
 
 **错误码：**
 
@@ -4057,29 +4140,27 @@ showOptionalInputMethods(): Promise<boolean>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getSetting().showOptionalInputMethods().then((result: boolean) => {
-4. if (result) {
-5. console.info('Succeeded in showing optionalInputMethods.');
-6. } else {
-7. console.error(`Failed to showOptionalInputMethods.`);
-8. }
-9. }).catch((err: BusinessError) => {
-10. console.error(`Failed to showOptionalInputMethods, code: ${err.code}, message: ${err.message}`);
-11. })
+inputMethod.getSetting().showOptionalInputMethods().then((result: boolean) => {
+  if (result) {
+    console.info('Succeeded in showing optionalInputMethods.');
+  } else {
+    console.error(`Failed to showOptionalInputMethods.`);
+  }
+}).catch((err: BusinessError) => {
+  console.error(`Failed to showOptionalInputMethods, code: ${err.code}, message: ${err.message}`);
+})
 ```
 
 ### listInputMethod(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 listInputMethod(callback: AsyncCallback<Array<InputMethodProperty>>): void
 
 查询已安装的输入法列表。使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[getInputMethods](js-apis-inputmethod.md#getinputmethods9)替代。
 
@@ -4093,27 +4174,25 @@ listInputMethod(callback: AsyncCallback<Array<InputMethodProperty>>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getSetting().listInputMethod((err: BusinessError, data: Array<inputMethod.InputMethodProperty>) => {
-4. if (err) {
-5. console.error(`Failed to listInputMethod, code: ${err.code}, message: ${err.message}`);
-6. return;
-7. }
-8. console.info('Succeeded in listing inputMethod.');
-9. });
+inputMethod.getSetting().listInputMethod((err: BusinessError, data: Array<inputMethod.InputMethodProperty>) => {
+  if (err) {
+    console.error(`Failed to listInputMethod, code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in listing inputMethod.');
+});
 ```
 
 ### listInputMethod(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 listInputMethod(): Promise<Array<InputMethodProperty>>
 
 查询已安装的输入法列表。使用promise异步回调。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[getInputMethods](js-apis-inputmethod.md#getinputmethods9-1)替代。
 
@@ -4127,25 +4206,23 @@ listInputMethod(): Promise<Array<InputMethodProperty>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getSetting().listInputMethod().then((data: Array<inputMethod.InputMethodProperty>) => {
-4. console.info('Succeeded in listing inputMethod.');
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to listInputMethod, code: ${err.code}, message: ${err.message}`);
-7. })
+inputMethod.getSetting().listInputMethod().then((data: Array<inputMethod.InputMethodProperty>) => {
+  console.info('Succeeded in listing inputMethod.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to listInputMethod, code: ${err.code}, message: ${err.message}`);
+})
 ```
 
 ### displayOptionalInputMethod(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 displayOptionalInputMethod(callback: AsyncCallback<void>): void
 
 显示输入法选择对话框。使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[InputMethodListDialog](js-apis-inputmethodlist.md#inputmethodlistdialog)替代。
 
@@ -4159,27 +4236,25 @@ displayOptionalInputMethod(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getSetting().displayOptionalInputMethod((err: BusinessError) => {
-4. if (err) {
-5. console.error(`Failed to displayOptionalInputMethod, code: ${err.code}, message: ${err.message}`);
-6. return;
-7. }
-8. console.info('Succeeded in displaying optionalInputMethod.');
-9. });
+inputMethod.getSetting().displayOptionalInputMethod((err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to displayOptionalInputMethod, code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in displaying optionalInputMethod.');
+});
 ```
 
 ### displayOptionalInputMethod(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 displayOptionalInputMethod(): Promise<void>
 
 显示输入法选择对话框。使用promise异步回调。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[InputMethodListDialog](js-apis-inputmethodlist.md#inputmethodlistdialog)替代。
 
@@ -4189,23 +4264,21 @@ displayOptionalInputMethod(): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getSetting().displayOptionalInputMethod().then(() => {
-4. console.info('Succeeded in displaying optionalInputMethod.');
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to displayOptionalInputMethod, code: ${err.code}, message: ${err.message}`);
-7. })
+inputMethod.getSetting().displayOptionalInputMethod().then(() => {
+  console.info('Succeeded in displaying optionalInputMethod.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to displayOptionalInputMethod, code: ${err.code}, message: ${err.message}`);
+})
 ```
 
 ### getInputMethodState15+
-
-PhonePC/2in1TabletTVWearable
 
 getInputMethodState(): Promise<EnabledState>
 
@@ -4230,12 +4303,12 @@ getInputMethodState(): Promise<EnabledState>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethod.getSetting().getInputMethodState().then((status: inputMethod.EnabledState) => {
-4. console.info(`Succeeded in getInputMethodState, status: ${status}`);
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to getInputMethodState, code: ${err.code}, message: ${err.message}`);
-7. })
+inputMethod.getSetting().getInputMethodState().then((status: inputMethod.EnabledState) => {
+  console.info(`Succeeded in getInputMethodState, status: ${status}`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to getInputMethodState, code: ${err.code}, message: ${err.message}`);
+});
 ```

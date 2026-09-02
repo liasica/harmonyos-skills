@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-debug
 title: 维测调优
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部署 > 维测调优
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:21+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5a389f3e89498706f33e6a7f4983ad85a99b51c5e033cc7e765c46af92626b81
+scraped_at: 2026-09-02T14:50:34+08:00
+doc_updated_at: 2026-07-17
+content_hash: sha256:7e15a07c45b2c43aedd0d5be583e4c29f5095dc656770609cba32f54f5e72e41
 ---
 
 ## 概述
@@ -25,4 +25,4 @@ content_hash: sha256:5a389f3e89498706f33e6a7f4983ad85a99b51c5e033cc7e765c46af926
 
 ## 使用说明
 
-开发者可参考[CANN Kit Codelab](https://developer.huawei.com/consumer/cn/codelabsPortal/carddetails/tutorials_CANNKit-Optimize)示例完成性能数据获取。当前仅支持HarmonyOS 6.0.0(20)及以上版本的华为手机使用，可在[版本说明](../harmonyos-releases/overview-allversion.md)获取匹配的开发者套件，包含DevEco Studio和SDK。
+开发者可参考[CANN Kit Codelab](https://developer.huawei.com/consumer/cn/codelabsPortal/carddetails/tutorials_CANNKit-NPUProfiling)示例完成性能数据获取。当前仅支持HarmonyOS 6.0.0(20)及以上版本的华为手机使用，可在[版本说明](../harmonyos-releases/overview-allversion.md)获取匹配的开发者套件，包含DevEco Studio和SDK。

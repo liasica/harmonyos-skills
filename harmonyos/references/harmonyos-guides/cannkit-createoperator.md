@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-creat
 title: CreateOperator
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OperatorFactory > CreateOperator
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:37+08:00
+scraped_at: 2026-09-02T15:00:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:bbce2e3cc346d65d2e8ed085cc84dea8a24c170aaf79e20240b7ec19c0751876
+content_hash: sha256:c33c634bfd284a587e1a93cf44e58b3afdb82b97cf8897c9429dd42be689a119
 ---
 
 ## 函数功能
@@ -14,13 +14,13 @@ content_hash: sha256:bbce2e3cc346d65d2e8ed085cc84dea8a24c170aaf79e20240b7ec19c07
 
 ## 函数原型
 
-说明
+**说明** 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 
-```
-1. static Operator CreateOperator(const std::string &operator_name, const std::string &operator_type)
-2. static Operator CreateOperator(const char_t *const operator_name, const char_t *const operator_type)
+```cpp
+static Operator CreateOperator(const std::string &operator_name, const std::string &operator_type)
+static Operator CreateOperator(const char_t *const operator_name, const char_t *const operator_type)
 ```
 
 ## 参数说明

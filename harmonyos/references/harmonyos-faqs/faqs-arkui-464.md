@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-464
 title: 半模态打开的页面被半模态覆盖了，怎么解决
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 半模态打开的页面被半模态覆盖了，怎么解决
+breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 半模态打开的页面被半模态覆盖了，怎么解决
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:02+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:50+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:1fcec62ee215192a29208a231f43c1d2a7ce3b6d14b944b4e7b8abfebdc57274
 ---
 

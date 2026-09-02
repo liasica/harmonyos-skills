@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: OH_ImageBufferData
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 结构体 > OH_ImageBufferData
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:28+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:398e181a9728a1f2ecb09b811b63a2e9da51f07595222028d50f7be2023045d1
+scraped_at: 2026-09-02T15:02:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a8e2d5eb59b340526447bb402ed6db84dbb624e022acbcb2e825509c7e8011af
 ---
 
-```
-1. typedef struct {...} OH_ImageBufferData
+```c
+typedef struct {...} OH_ImageBufferData
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 OH\_ImageBufferData是native层封装的图像数据结构体。获取OH\_ImageNative\_GetBufferData对象使用[OH\_ImageNative\_GetBufferData](capi-image-native-h.md#oh_imagenative_getbufferdata)函数。
 
@@ -28,11 +26,7 @@ OH\_ImageBufferData是native层封装的图像数据结构体。获取OH\_ImageN
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

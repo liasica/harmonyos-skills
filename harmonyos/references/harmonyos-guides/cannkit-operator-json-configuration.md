@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-opera
 title: params归一格式的算子json配置
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子调试调优 > 数据准备和配置说明 > params归一格式的算子json配置
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:31+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f46315e88971f9c20866ca83d6ba04263b42df1a9a22690add3a7d48dc3594b9
+scraped_at: 2026-09-02T15:00:05+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:9aadde38da3d655914782490d4b3850a46b482a5dcf1833f773737886c36d56d
 ---
 
 ## json配置说明
 
 为了支持输入/输出参数交叉配置的场景，params归一配置格式应运而生，所有输入/输出参数均放在“params”配置项中。该算子json配置文件中参数可以按**输入/输出规则排布**，也可以按**输入/输出交叉排布**，只要保证参数顺序与Kernel入口函数的参数顺序保持一致即可。
 
-说明
+**说明** 
 
 * **调试工具暂不支持该配置**。
 * **输入/输出规则排布**（所有输出参数排布在输入参数之后）：例如Kernel入口函数的参数排布为extern "C" \_\_global\_\_ \_\_aicore\_\_ void add\_custom(GM\_ADDR input1, GM\_ADDR input2, GM\_ADDR input3,**GM\_ADDR output**)。
@@ -21,44 +21,44 @@ content_hash: sha256:f46315e88971f9c20866ca83d6ba04263b42df1a9a22690add3a7d48dc3
 
 以AddCustom算子为例，对应的json配置示例如下，参数说明参见表1。
 
-```
-1. {
-2. "op_type": "add_custom",
-3. "data_script": "",
-4. "gen_data": false,
-5. "params": [{
-6. "name": "x",
-7. "dtype": "float16",
-8. "param_type": "input",
-9. "shape": [1,16384],
-10. "data_file": "x.bin"
-11. },
-12. {
-13. "name": "z",
-14. "dtype": "float16",
-15. "param_type": "output",
-16. "shape": [1,16384],
-17. "data_file": "golden_z.bin"
-18. },
-19. {
-20. "name": "y",
-21. "dtype": "float16",
-22. "param_type": "input",
-23. "shape": [1,16384],
-24. "data_file": "y.bin"
-25. },
-26. ],
-27. "kernel_info": {
-28. "kernel_source": "add_custom.cpp",
-29. "kernel_name": "add_custom",
-30. "kernel_includes": []
-31. }
-32. }
+```json
+{
+    "op_type": "add_custom",
+    "data_script": "",
+    "gen_data": false,
+    "params": [{
+                "name": "x",
+                "dtype": "float16",
+                "param_type": "input",
+                "shape": [1,16384],
+                "data_file": "x.bin"
+            },
+            {
+                "name": "z",
+                "dtype": "float16",
+                "param_type": "output",
+                "shape": [1,16384],
+                "data_file": "golden_z.bin"
+            },
+            {
+                "name": "y",
+                "dtype": "float16",
+                "param_type": "input",
+                "shape": [1,16384],
+                "data_file": "y.bin"
+            },
+    ],
+    "kernel_info": {
+        "kernel_source": "add_custom.cpp",
+        "kernel_name": "add_custom",
+        "kernel_includes": []
+    }
+}
 ```
 
 **表1** params归一格式的算子json全量参数说明
 
-| 参数名 | 参数名 | 数据类型 | 参数说明 | 取值说明 | 是否必选 |
+| 参数名 | 配置项 | 数据类型 | 参数说明 | 取值说明 | 是否必选 |
 | --- | --- | --- | --- | --- | --- |
 | op\_type | - | string | 算子名。 | 与待调测算子严格匹配。 | 是 |
 | data\_script | - | string | 数据生成脚本(python)，用于生成输入和标杆数据。 | 根据实际情况设置，如"/home/flash\_attention\_golden.py"。  **说明：** 若无数据生成脚本，填写空字符或null。 | 否 |
@@ -79,59 +79,59 @@ content_hash: sha256:f46315e88971f9c20866ca83d6ba04263b42df1a9a22690add3a7d48dc3
 
   当输入为Scalar格式，json中“params”配置项中删除data\_file，param\_type配为“input”，shape配为null，data\_value配为指定的标量值。
 
-  ```
-  1. {
-  2. "op_type": "xxxx",
-  3. "data_script": "",
-  4. "gen_data": false,
-  5. "params": [{
-  6. "name": "input_1",
-  7. "dtype": "float16",
-  8. "param_type": "input",
-  9. "shape": null,
-  10. "data_value": 8
-  11. }
-  12. ]
-  13. }
+  ```json
+  {
+       "op_type": "xxxx",
+       "data_script": "",
+       "gen_data": false,
+       "params": [{
+                   "name": "input_1",
+                   "dtype": "float16",
+                   "param_type": "input",
+                   "shape": null,
+                   "data_value": 8
+               }
+       ]
+   }
   ```
 * **场景2：支持TensorList格式的输入。**
 
   当输入为TensorList格式，该参数需要用[ ]表示，List中的每一项表示一个Tensor，示例如下。
 
-  ```
-  1. {
-  2. "op_type": "xxxx",
-  3. "data_script": "",
-  4. "gen_data": false,
-  5. "params": [
-  6. [{
-  7. "name": "input_1",
-  8. "dtype": "float16",
-  9. "param_type": "input",
-  10. "shape": [1,16384],
-  11. "data_file": "input_1.bin"
-  12. },
-  13. {
-  14. "name": "input_2",
-  15. "dtype": "float16",
-  16. "param_type": "input",
-  17. "shape": [1,16384],
-  18. "data_file": "input_2.bin"
-  19. }],
-  20. {
-  21. "name": "output",
-  22. "dtype": "float16",
-  23. "param_type": "output",
-  24. "shape": [1,16384],
-  25. "data_file": "golden.bin"
-  26. },
-  27. ],
-  28. "kernel_info": {
-  29. "kernel_source": "add_custom.cpp",
-  30. "kernel_name": "add_custom",
-  31. "kernel_includes": []
-  32. }
-  33. }
+  ```json
+  {
+       "op_type": "xxxx",
+       "data_script": "",
+       "gen_data": false,
+       "params": [
+               [{
+                   "name": "input_1",
+                   "dtype": "float16",
+                   "param_type": "input",
+                   "shape": [1,16384],
+                   "data_file": "input_1.bin"
+               },
+               {
+                   "name": "input_2",
+                   "dtype": "float16",
+                   "param_type": "input",
+                   "shape": [1,16384],
+                   "data_file": "input_2.bin"
+               }],
+               {
+                   "name": "output",
+                   "dtype": "float16",
+                   "param_type": "output",
+                   "shape": [1,16384],
+                   "data_file": "golden.bin"
+               },
+       ],
+       "kernel_info": {
+           "kernel_source": "add_custom.cpp",
+           "kernel_name": "add_custom",
+           "kernel_includes": []
+       }
+   }
   ```
 * **场景3：支持原地算子格式的输入。**
 
@@ -140,37 +140,37 @@ content_hash: sha256:f46315e88971f9c20866ca83d6ba04263b42df1a9a22690add3a7d48dc3
   + param\_type：分别配为input、output。
   + data\_file：输入数据为x.bin，输出数据为标杆数据golden\_x.bin。
 
-  ```
-  1. {
-  2. "op_type": "add_custom",
-  3. "data_script": "",
-  4. "gen_data": false,
-  5. "params": [{
-  6. "name": "x",
-  7. "dtype": "float16",
-  8. "param_type": "input",
-  9. "shape": [1,16384],
-  10. "data_file": "x.bin"
-  11. },
-  12. {
-  13. "name": "x",
-  14. "dtype": "float16",
-  15. "param_type": "output",
-  16. "shape": [1,16384],
-  17. "data_file": "golden_x.bin"
-  18. },
-  19. {
-  20. "name": "y",
-  21. "dtype": "float16",
-  22. "param_type": "input",
-  23. "shape": [1,16384],
-  24. "data_file": "y.bin"
-  25. },
-  26. ],
-  27. "kernel_info": {
-  28. "kernel_source": "add_custom.cpp",
-  29. "kernel_name": "add_custom",
-  30. "kernel_includes": []
-  31. }
-  32. }
+  ```json
+  {
+       "op_type": "add_custom",
+       "data_script": "",
+       "gen_data": false,
+       "params": [{
+                   "name": "x",
+                   "dtype": "float16",
+                   "param_type": "input",
+                   "shape": [1,16384],
+                   "data_file": "x.bin"
+               },
+               {
+                   "name": "x",
+                   "dtype": "float16",
+                   "param_type": "output",
+                   "shape": [1,16384],
+                   "data_file": "golden_x.bin"
+               },
+               {
+                   "name": "y",
+                   "dtype": "float16",
+                   "param_type": "input",
+                   "shape": [1,16384],
+                   "data_file": "y.bin"
+               },
+       ],
+       "kernel_info": {
+           "kernel_source": "add_custom.cpp",
+           "kernel_name": "add_custom",
+           "kernel_includes": []
+       }
+   }
   ```

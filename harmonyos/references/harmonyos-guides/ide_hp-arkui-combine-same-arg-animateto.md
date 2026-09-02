@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_hp-arkui-
 title: "@performance/hp-arkui-combine-same-arg-animateto"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/hp-arkui-combine-same-arg-animateto
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:03+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:23b6965711e290131a624fa0031727f7bb74b803ab502a45d0a32e898d07307d
+scraped_at: 2026-09-02T14:50:52+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8d55fcad8fa74c0a5433dae9aae7971b48698c31c54d2c2ab5162ab4b7f36285
 ---
 
 建议动画参数相同时使用同一个animateTo。
@@ -14,96 +14,96 @@ content_hash: sha256:23b6965711e290131a624fa0031727f7bb74b803ab502a45d0a32e898d0
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@performance/hp-arkui-combine-same-arg-animateto": "warn",
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@performance/hp-arkui-combine-same-arg-animateto": "warn",
+  }
+}
 ```
 
 ## 选项
 
-该规则无需配置额外选项。
+该规则无需配置选项。
 
 ## 正例
 
-```
-1. @Entry
-2. @Component
-3. struct MyComponent {
-4. @State textWidth: number = 200;
-5. @State color: Color = Color.Red;
-
-7. func() {
-8. this.getUIContext().animateTo({ curve: Curve.Sharp, duration: 1000 }, () => {
-9. this.textWidth = (this.textWidth === 100 ? 200 : 100);
-10. this.color = (this.color === Color.Yellow ? Color.Red : Color.Yellow);
-11. });
-12. }
-
-14. build() {
-15. Column() {
-16. Row()
-17. .width(this.textWidth)
-18. .height(10)
-19. .backgroundColor(this.color)
-20. Text('click')
-21. .onClick(() => {
-22. this.func();
-23. })
-24. }
-25. .width('100%')
-26. .height('100%')
-27. }
-28. }
+```screen
+@Entry
+@Component
+struct MyComponent {
+  @State textWidth: number = 200;
+  @State color: Color = Color.Red;
+  
+  func() {
+    this.getUIContext().animateTo({ curve: Curve.Sharp, duration: 1000 }, () => {
+      this.textWidth = (this.textWidth === 100 ? 200 : 100);
+      this.color = (this.color === Color.Yellow ? Color.Red : Color.Yellow);
+    });
+  }
+  
+  build() {
+    Column() {
+      Row()
+        .width(this.textWidth)
+        .height(10)
+        .backgroundColor(this.color)
+      Text('click')
+        .onClick(() => {
+          this.func();
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## 反例
 
-```
-1. @Entry
-2. @Component
-3. struct MyComponent {
-4. @State textWidth: number = 200;
-5. @State color: Color = Color.Red;
-
-7. func1() {
-8. animateTo({ curve: Curve.Sharp, duration: 1000 }, () => {
-9. this.textWidth = (this.textWidth === 100 ? 200 : 100);
-10. });
-11. }
-
-13. func2() {
-14. animateTo({ curve: Curve.Sharp, duration: 1000 }, () => {
-15. this.color = (this.color === Color.Yellow ? Color.Red : Color.Yellow);
-16. });
-17. }
-
-19. build() {
-20. Column() {
-21. Row()
-22. .width(this.textWidth)
-23. .height(10)
-24. .backgroundColor(this.color)
-25. Text('click')
-26. .onClick(() => {
-27. this.func1();
-28. this.func2();
-29. })
-30. }
-31. .width('100%')
-32. .height('100%')
-33. }
-34. }
+```screen
+@Entry
+@Component
+struct MyComponent {
+  @State textWidth: number = 200;
+  @State color: Color = Color.Red;
+  
+  func1() {
+    animateTo({ curve: Curve.Sharp, duration: 1000 }, () => {
+      this.textWidth = (this.textWidth === 100 ? 200 : 100);
+    });
+  }
+  
+  func2() {
+    animateTo({ curve: Curve.Sharp, duration: 1000 }, () => {
+      this.color = (this.color === Color.Yellow ? Color.Red : Color.Yellow);
+    });
+  }
+  
+  build() {
+    Column() {
+      Row()
+        .width(this.textWidth)
+        .height(10)
+        .backgroundColor(this.color)
+      Text('click')
+        .onClick(() => {
+          this.func1();
+          this.func2();
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## 规则集
 
-```
-1. plugin:@performance/recommended
-2. plugin:@performance/all
+```screen
+plugin:@performance/recommended
+plugin:@performance/all
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: TrustedAuthentication（数字盾服务）
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > ArkTS API > TrustedAuthentication（数字盾服务）
 category: harmonyos-references
-scraped_at: 2026-04-29T13:57:42+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:3bd97da591fa1fe3c60d0ce54c080ab606edcee487f95ec62e56bafef08851b9
+scraped_at: 2026-09-02T15:01:43+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f9fe8222aebb20a0be7b4c9901be91af134051226dbe96e579e85c67b1822d96
 ---
 
 本模块提供数字盾密码创建、修改、删除、交易认证，开通生物特征（3D人脸/指纹）交易认证能力、生物特征交易认证，密钥信息导入导出相关接口，金融应用可以使用对应接口，支撑数字盾业务开发。
@@ -14,21 +14,23 @@ content_hash: sha256:3bd97da591fa1fe3c60d0ce54c080ab606edcee487f95ec62e56bafef08
 
 ## 导入模块
 
-Phone
-
-```
-1. import { trustedAuthentication } from '@kit.DeviceSecurityKit';
+```typescript
+import { trustedAuthentication } from '@kit.DeviceSecurityKit';
 ```
 
-## enableTrustedAuthentication
-
-Phone
+## trustedAuthentication.enableTrustedAuthentication
 
 enableTrustedAuthentication(challenge: Uint8Array, pwdInfo: PasswordInfo, label: TUILable): Promise<AuthInfo>
 
 拉起TUI（Trusted User Interface）界面并指引用户创建数字盾密码。使用Promise异步回调。
 
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.Security.TrustedAuthentication
+
+**设备行为差异：** 对于6.1.1(24)之前版本，该接口在Phone中可正常调用，在其他设备类型中统一返回业务错误码1019100016。对于6.1.1(24)及之后版本，该接口在Phone、部分支持TUI能力的Tablet、PC/2in1中均可正常调用，在不支持TUI能力的Tablet、PC/2in1设备及其他设备类型中统一返回业务错误码1019100016。可使用[checkConfirmUITextFormat](devicesecurity-trusted-auth-api.md#trustedauthenticationcheckconfirmuitextformat)查询能力是否支持。
 
 **起始版本：** 6.0.0(20)
 
@@ -48,62 +50,69 @@ enableTrustedAuthentication(challenge: Uint8Array, pwdInfo: PasswordInfo, label:
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](devicesecurity-arktsapi-errcode-trusted-auth.md) **。**
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-devicesecurity-trusted-auth.md) **。**
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 801 | Failed to call the API due to limited device capabilities.  适用版本：26.0.0+ |
 | 1019100001 | The interface invoker does not have the corresponding permission. |
 | 1019100002 | Parameter error.  Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
 | 1019100007 | Unsupported custom image. |
 | 1019100008 | The user canceled the operation. |
 | 1019100011 | The title text cannot be displayed. |
 | 1019100013 | Failed to set the password. |
+| 1019100023 | Secure element fault.  适用版本：26.0.0+ |
+| 1019100025 | The TUI is occupied by another app.  适用版本：6.1.1(24)+ |
 
 **示例：**
 
+```typescript
+import { trustedAuthentication} from '@kit.DeviceSecurityKit';
+import { BusinessError} from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { resourceManager } from '@kit.LocalizationKit';
+import { common } from '@kit.AbilityKit';
+
+const TAG = 'TrustedAuthenticationJsTest';
+try {
+  const rand = cryptoFramework.createRandom();
+  const len: number = 32;
+  const challenge: Uint8Array = rand?.generateRandomSync(len)?.data;
+  const passwordInfo: trustedAuthentication.PasswordInfo = {
+    pwdType: trustedAuthentication.PasswordType.PASSWORD_TYPE_MIXED,
+    pwdMaxLength: 10,
+    pwdMinLength: 6,
+    maxAuthFailCount: 6
+  };
+  let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
+  const fileData : Uint8Array = await resourceMgr.getRawFileContent('test_logo_rgba.png');
+  const buffer = fileData.buffer;
+  const label:trustedAuthentication.TUILable = {
+    image: buffer as ArrayBuffer,
+    title: "开通数字盾",
+  }
+  const authToken = await trustedAuthentication.enableTrustedAuthentication(challenge, passwordInfo, label);
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
+  hilog.error(0x0000, TAG, 'enableTrustedAuthentication failed: %{public}d %{public}s', e.code, e.message);
+}
 ```
-1. import { trustedAuthentication} from '@kit.DeviceSecurityKit';
-2. import { BusinessError} from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { cryptoFramework } from '@kit.CryptoArchitectureKit';
-5. import { resourceManager } from '@kit.LocalizationKit';
-6. import { common } from '@kit.AbilityKit';
 
-8. const TAG = "TrustedAuthenticationJsTest";
-9. try {
-10. const rand = cryptoFramework.createRandom();
-11. const len: number = 32;
-12. const challenge: Uint8Array = rand?.generateRandomSync(len)?.data;
-13. const passwordInfo: trustedAuthentication.PasswordInfo = {
-14. pwdType: trustedAuthentication.PasswordType.PASSWORD_TYPE_MIXED,
-15. pwdMaxLength: 10,
-16. pwdMinLength: 6,
-17. maxAuthFailCount: 6
-18. };
-19. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-20. const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
-21. const fileData : Uint8Array = await resourceMgr.getRawFileContent('test_logo_rgba.png');
-22. const buffer = fileData.buffer;
-23. const label:trustedAuthentication.TUILable = {
-24. image: buffer as ArrayBuffer,
-25. title: "开通数字盾",
-26. }
-27. const authToken = await trustedAuthentication.enableTrustedAuthentication(challenge, passwordInfo, label);
-28. } catch (err) {
-29. let e: BusinessError = err as BusinessError;
-30. hilog.error(0x0000, TAG, 'enableTrustedAuthentication failed: %{public}d %{public}s', e.code, e.message);
-31. }
-```
-
-## modifyTrustedAuthenticationPwd
-
-Phone
+## trustedAuthentication.modifyTrustedAuthenticationPwd
 
 modifyTrustedAuthenticationPwd(challenge: Uint8Array, pwdInfo: PasswordInfo, authID: bigint, label: TUILable): Promise<AuthToken>
 
 拉起TUI界面并指引用户修改数字盾密码，修改密码前会根据authID进行对应密码认证。使用Promise异步回调。
 
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.Security.TrustedAuthentication
+
+**设备行为差异：** 对于6.1.1(24)之前版本，该接口在Phone中可正常调用，在其他设备类型中统一返回业务错误码1019100016。对于6.1.1(24)及之后版本，该接口在Phone、部分支持TUI能力的Tablet、PC/2in1中均可正常调用，在不支持TUI能力的Tablet、PC/2in1设备及其他设备类型中统一返回业务错误码1019100016。可使用[checkConfirmUITextFormat](devicesecurity-trusted-auth-api.md#trustedauthenticationcheckconfirmuitextformat)查询能力是否支持。
 
 **起始版本：** 6.0.0(20)
 
@@ -124,7 +133,7 @@ modifyTrustedAuthenticationPwd(challenge: Uint8Array, pwdInfo: PasswordInfo, aut
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](devicesecurity-arktsapi-errcode-trusted-auth.md) **。**
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-devicesecurity-trusted-auth.md) **。**
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -137,54 +146,60 @@ modifyTrustedAuthenticationPwd(challenge: Uint8Array, pwdInfo: PasswordInfo, aut
 | 1019100011 | The title text cannot be displayed. |
 | 1019100012 | Invalid authentication ID. |
 | 1019100014 | Failed to change the password. |
+| 1019100023 | Secure element fault.  适用版本：26.0.0+ |
+| 1019100025 | The TUI is occupied by another app.  适用版本：6.1.1(24)+ |
 
 **示例：**
 
+```typescript
+import { trustedAuthentication} from '@kit.DeviceSecurityKit';
+import { BusinessError} from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { resourceManager } from '@kit.LocalizationKit';
+import { common } from '@kit.AbilityKit';
+
+const TAG = 'TrustedAuthenticationJsTest';
+
+try {
+ const rand = cryptoFramework.createRandom();
+ const len: number = 32;
+ const challenge: Uint8Array = rand?.generateRandomSync(len)?.data;
+ const passwordInfo: trustedAuthentication.PasswordInfo = {
+   pwdType: trustedAuthentication.PasswordType.PASSWORD_TYPE_DIGITAL,
+   pwdMaxLength: 10,
+   pwdMinLength: 6,
+   maxAuthFailCount: 6,
+ };
+ const authID: bigint = 1687413472599354502n;
+ let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+ const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
+ const fileData : Uint8Array = await resourceMgr.getRawFileContent('test_logo_rgba.png');
+ const buffer = fileData.buffer;
+ const label:trustedAuthentication.TUILable = {
+   image: buffer as ArrayBuffer,
+   title: "修改密码",
+ }
+ const authToken = await trustedAuthentication.modifyTrustedAuthenticationPwd(challenge, passwordInfo, authID, label);
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
+  hilog.error(0x0000, TAG, 'modifyTrustedAuthenticationPwd failed: %{public}d %{public}s', e.code, e.message);
+}
 ```
-1. import { trustedAuthentication} from '@kit.DeviceSecurityKit';
-2. import { BusinessError} from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { cryptoFramework } from '@kit.CryptoArchitectureKit';
-5. import { resourceManager } from '@kit.LocalizationKit';
-6. import { common } from '@kit.AbilityKit';
 
-8. const TAG = "TrustedAuthenticationJsTest";
-
-10. try {
-11. const rand = cryptoFramework.createRandom();
-12. const len: number = 32;
-13. const challenge: Uint8Array = rand?.generateRandomSync(len)?.data;
-14. const passwordInfo: trustedAuthentication.PasswordInfo = {
-15. pwdType: trustedAuthentication.PasswordType.PASSWORD_TYPE_DIGITAL,
-16. pwdMaxLength: 10,
-17. pwdMinLength: 6,
-18. maxAuthFailCount: 6,
-19. };
-20. const authID: bigint = 1687413472599354502n;
-21. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-22. const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
-23. const fileData : Uint8Array = await resourceMgr.getRawFileContent('test_logo_rgba.png');
-24. const buffer = fileData.buffer;
-25. const label:trustedAuthentication.TUILable = {
-26. image: buffer as ArrayBuffer,
-27. title: "修改密码",
-28. }
-29. const authToken = await trustedAuthentication.modifyTrustedAuthenticationPwd(challenge, passwordInfo, authID, label);
-30. } catch (err) {
-31. let e: BusinessError = err as BusinessError;
-32. hilog.error(0x0000, TAG, 'modifyTrustedAuthenticationPwd failed: %{public}d %{public}s', e.code, e.message);
-33. }
-```
-
-## disableTrustedAuthentication
-
-Phone
+## trustedAuthentication.disableTrustedAuthentication
 
 disableTrustedAuthentication(challenge: Uint8Array, needAuth: boolean, authID: bigint, label: TUILable): Promise<AuthToken>
 
 关闭数字盾服务，开发者可通过参数needAuth控制密码关闭前是否需要密码认证。使用Promise异步回调。
 
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.Security.TrustedAuthentication
+
+**设备行为差异：** 对于6.1.1(24)之前版本，该接口在Phone中可正常调用，在其他设备类型中统一返回业务错误码1019100016。对于6.1.1(24)及之后版本，该接口在Phone、部分支持TUI能力的Tablet、PC/2in1中均可正常调用，在不支持TUI能力的Tablet、PC/2in1设备及其他设备类型中统一返回业务错误码1019100016。可使用[checkConfirmUITextFormat](devicesecurity-trusted-auth-api.md#trustedauthenticationcheckconfirmuitextformat)查询能力是否支持。
 
 **起始版本：** 6.0.0(20)
 
@@ -205,7 +220,7 @@ disableTrustedAuthentication(challenge: Uint8Array, needAuth: boolean, authID: b
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](devicesecurity-arktsapi-errcode-trusted-auth.md) **。**
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-devicesecurity-trusted-auth.md) **。**
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -218,48 +233,54 @@ disableTrustedAuthentication(challenge: Uint8Array, needAuth: boolean, authID: b
 | 1019100008 | The user canceled the operation. |
 | 1019100011 | The title text cannot be displayed. |
 | 1019100012 | Invalid authentication ID. |
+| 1019100023 | Secure element fault.  适用版本：26.0.0+ |
+| 1019100025 | The TUI is occupied by another app.  适用版本：6.1.1(24)+ |
 
 **示例：**
 
+```typescript
+import { trustedAuthentication} from '@kit.DeviceSecurityKit';
+import { BusinessError} from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { resourceManager } from '@kit.LocalizationKit';
+import { common } from '@kit.AbilityKit';
+
+const TAG = 'TrustedAuthenticationJsTest';
+
+try {
+ const rand = cryptoFramework.createRandom();
+ const len: number = 32;
+ const challenge: Uint8Array = rand?.generateRandomSync(len)?.data;
+ const authID: bigint = 1687413472599354502n;
+ let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+ const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
+ const fileData : Uint8Array = await resourceMgr.getRawFileContent('test_logo_rgba.png');
+ const buffer = fileData.buffer;
+ const label:trustedAuthentication.TUILable = {
+   image: buffer as ArrayBuffer,
+   title: "关闭数字盾",
+ }
+ const authToken = await trustedAuthentication.disableTrustedAuthentication(challenge, true, authID, label);
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
+  hilog.error(0x0000, TAG, 'disableTrustedAuthentication failed: %{public}d %{public}s', e.code, e.message);
+}
 ```
-1. import { trustedAuthentication} from '@kit.DeviceSecurityKit';
-2. import { BusinessError} from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { cryptoFramework } from '@kit.CryptoArchitectureKit';
-5. import { resourceManager } from '@kit.LocalizationKit';
-6. import { common } from '@kit.AbilityKit';
 
-8. const TAG = "TrustedAuthenticationJsTest";
-
-10. try {
-11. const rand = cryptoFramework.createRandom();
-12. const len: number = 32;
-13. const challenge: Uint8Array = rand?.generateRandomSync(len)?.data;
-14. const authID: bigint = 1687413472599354502n;
-15. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-16. const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
-17. const fileData : Uint8Array = await resourceMgr.getRawFileContent('test_logo_rgba.png');
-18. const buffer = fileData.buffer;
-19. const label:trustedAuthentication.TUILable = {
-20. image: buffer as ArrayBuffer,
-21. title: "关闭数字盾",
-22. }
-23. const authToken = await trustedAuthentication.disableTrustedAuthentication(challenge, true, authID, label);
-24. } catch (err) {
-25. let e: BusinessError = err as BusinessError;
-26. hilog.error(0x0000, TAG, 'disableTrustedAuthentication failed: %{public}d %{public}s', e.code, e.message);
-27. }
-```
-
-## trustedAuthentication
-
-Phone
+## trustedAuthentication.trustedAuthentication
 
 trustedAuthentication(challenge: Uint8Array, authID: bigint, label: TUILable): Promise<AuthToken>
 
 提供数字盾密码认证能力，开发者可使用该接口完成绑定生物特征支付前的密码认证。使用Promise异步回调。
 
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.Security.TrustedAuthentication
+
+**设备行为差异：** 对于6.1.1(24)之前版本，该接口在Phone中可正常调用，在其他设备类型中统一返回业务错误码1019100016。对于6.1.1(24)及之后版本，该接口在Phone、部分支持TUI能力的Tablet、PC/2in1中均可正常调用，在不支持TUI能力的Tablet、PC/2in1设备及其他设备类型中统一返回业务错误码1019100016。可使用[checkConfirmUITextFormat](devicesecurity-trusted-auth-api.md#trustedauthenticationcheckconfirmuitextformat)查询能力是否支持。
 
 **起始版本：** 6.0.0(20)
 
@@ -279,7 +300,7 @@ trustedAuthentication(challenge: Uint8Array, authID: bigint, label: TUILable): P
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](devicesecurity-arktsapi-errcode-trusted-auth.md) **。**
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-devicesecurity-trusted-auth.md) **。**
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -290,48 +311,54 @@ trustedAuthentication(challenge: Uint8Array, authID: bigint, label: TUILable): P
 | 1019100007 | Unsupported custom image. |
 | 1019100008 | The user canceled the operation. |
 | 1019100012 | Invalid authentication ID. |
+| 1019100023 | Secure element fault.  适用版本：26.0.0+ |
+| 1019100025 | The TUI is occupied by another app.  适用版本：6.1.1(24)+ |
 
 **示例：**
 
+```typescript
+import { trustedAuthentication} from '@kit.DeviceSecurityKit';
+import { BusinessError} from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { resourceManager } from '@kit.LocalizationKit';
+import { common } from '@kit.AbilityKit';
+
+const TAG = 'TrustedAuthenticationJsTest';
+
+try {
+ const rand = cryptoFramework.createRandom();
+ const len: number = 32;
+ const challenge: Uint8Array = rand?.generateRandomSync(len)?.data;
+ const authID: bigint = 1687413472599354502n;
+ let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+ const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
+ const fileData : Uint8Array = await resourceMgr.getRawFileContent('test_logo_rgba.png');
+ const buffer = fileData.buffer;
+ const label:trustedAuthentication.TUILable = {
+   image: buffer as ArrayBuffer,
+   title: "密码认证",
+ }
+ const authToken = await trustedAuthentication.trustedAuthentication(challenge, authID, label);
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
+  hilog.error(0x0000, TAG, 'trustedAuthentication failed: %{public}d %{public}s', e.code, e.message);
+}
 ```
-1. import { trustedAuthentication} from '@kit.DeviceSecurityKit';
-2. import { BusinessError} from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { cryptoFramework } from '@kit.CryptoArchitectureKit';
-5. import { resourceManager } from '@kit.LocalizationKit';
-6. import { common } from '@kit.AbilityKit';
 
-8. const TAG = "TrustedAuthenticationJsTest";
-
-10. try {
-11. const rand = cryptoFramework.createRandom();
-12. const len: number = 32;
-13. const challenge: Uint8Array = rand?.generateRandomSync(len)?.data;
-14. const authID: bigint = 1687413472599354502n;
-15. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-16. const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
-17. const fileData : Uint8Array = await resourceMgr.getRawFileContent('test_logo_rgba.png');
-18. const buffer = fileData.buffer;
-19. const label:trustedAuthentication.TUILable = {
-20. image: buffer as ArrayBuffer,
-21. title: "密码认证",
-22. }
-23. const authToken = await trustedAuthentication.trustedAuthentication(challenge, authID, label);
-24. } catch (err) {
-25. let e: BusinessError = err as BusinessError;
-26. hilog.error(0x0000, TAG, 'trustedAuthentication failed: %{public}d %{public}s', e.code, e.message);
-27. }
-```
-
-## procContentAuthentication
-
-Phone
+## trustedAuthentication.procContentAuthentication
 
 procContentAuthentication(challenge: Uint8Array, authID: bigint, authMsg: AuthReqParams, label: TUILable): Promise<AuthToken>
 
 数字盾交易认证接口。使用Promise异步回调。
 
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.Security.TrustedAuthentication
+
+**设备行为差异：** 对于6.1.1(24)之前版本，该接口在Phone中可正常调用，在其他设备类型中统一返回业务错误码1019100016。对于6.1.1(24)及之后版本，该接口在Phone、部分支持TUI能力的Tablet、PC/2in1中均可正常调用，在不支持TUI能力的Tablet、PC/2in1设备及其他设备类型中统一返回业务错误码1019100016。可使用[checkConfirmUITextFormat](devicesecurity-trusted-auth-api.md#trustedauthenticationcheckconfirmuitextformat)查询能力是否支持。
 
 **起始版本：** 6.0.0(20)
 
@@ -348,11 +375,11 @@ procContentAuthentication(challenge: Uint8Array, authID: bigint, authMsg: AuthRe
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[AuthToken](devicesecurity-trusted-auth-api.md#authtoken)> | Promise对象。  当使用密码认证时，返回结果包括交易数据信息的authToken。  当使用生物特征进行认证时，返回结果为临时authToken，在经过生物认证通过后，需使用[getBiometricAuthToken](devicesecurity-trusted-auth-api.md#getbiometricauthtoken)获取正式签发的包含交易信息的authToken。 |
+| Promise<[AuthToken](devicesecurity-trusted-auth-api.md#authtoken)> | Promise对象。  当使用密码认证时，返回结果包括交易数据信息的authToken。  当使用生物特征进行认证时，返回结果为临时authToken，在经过生物认证通过后，需使用[getBiometricAuthToken](devicesecurity-trusted-auth-api.md#trustedauthenticationgetbiometricauthtoken)获取正式签发的包含交易信息的authToken。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](devicesecurity-arktsapi-errcode-trusted-auth.md) **。**
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-devicesecurity-trusted-auth.md) **。**
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -363,52 +390,59 @@ procContentAuthentication(challenge: Uint8Array, authID: bigint, authMsg: AuthRe
 | 1019100011 | The text content cannot be displayed. |
 | 1019100012 | Invalid authentication ID. |
 | 1019100021 | The corresponding biometric data has not been bound. |
+| 1019100023 | Secure element fault.  适用版本：26.0.0+ |
+| 1019100024 | The bound biometric ID is invalid.  适用版本：26.0.0+ |
+| 1019100025 | The TUI is occupied by another app.  适用版本：6.1.1(24)+ |
 
 **示例：**
 
+```typescript
+import { trustedAuthentication} from '@kit.DeviceSecurityKit';
+import { BusinessError} from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { resourceManager } from '@kit.LocalizationKit';
+import { common } from '@kit.AbilityKit';
+
+const TAG = 'TrustedAuthenticationJsTest';
+
+try {
+ const rand = cryptoFramework.createRandom();
+ const len: number = 32;
+ const challenge: Uint8Array = rand?.generateRandomSync(len)?.data;
+ const authID: bigint = 1687413472599354502n;
+ let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+ const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
+ const fileData : Uint8Array = await resourceMgr.getRawFileContent('test_logo_rgba.png');
+ const reqParams:trustedAuthentication.AuthReqParams = {
+  reqType: trustedAuthentication.AuthType.AUTH_TYPE_TUI_PIN,
+  authContent: ["用户：王xx", "账号：95588180804408xxxx", "交易金额：1000000000"],
+ }
+ const buffer = fileData.buffer;
+ const label:trustedAuthentication.TUILable = {
+  image: buffer as ArrayBuffer,
+  title: "密码交易认证",
+ }
+ const result = await trustedAuthentication.procContentAuthentication(challenge, authID, reqParams, label);
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
+  hilog.error(0x0000, TAG, 'procContentAuthentication failed: %{public}d %{public}s', e.code, e.message);
+}
 ```
-1. import { trustedAuthentication} from '@kit.DeviceSecurityKit';
-2. import { BusinessError} from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { cryptoFramework } from '@kit.CryptoArchitectureKit';
-5. import { resourceManager } from '@kit.LocalizationKit';
-6. import { common } from '@kit.AbilityKit';
 
-8. const TAG = "TrustedAuthenticationJsTest";
-
-10. try {
-11. const rand = cryptoFramework.createRandom();
-12. const len: number = 32;
-13. const challenge: Uint8Array = rand?.generateRandomSync(len)?.data;
-14. const authID: bigint = 1687413472599354502n;
-15. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-16. const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
-17. const fileData : Uint8Array = await resourceMgr.getRawFileContent('test_logo_rgba.png');
-18. const reqParams:trustedAuthentication.AuthReqParams = {
-19. reqType: trustedAuthentication.AuthType.AUTH_TYPE_TUI_PIN,
-20. authContent: ["用户：王xx", "账号：95588180804408xxxx", "交易金额：1000000000"],
-21. }
-22. const buffer = fileData.buffer;
-23. const label:trustedAuthentication.TUILable = {
-24. image: buffer as ArrayBuffer,
-25. title: "密码交易认证",
-26. }
-27. const result = await trustedAuthentication.procContentAuthentication(challenge, authID, reqParams, label);
-28. } catch (err) {
-29. let e: BusinessError = err as BusinessError;
-30. hilog.error(0x0000, TAG, 'procContentAuthentication failed: %{public}d %{public}s', e.code, e.message);
-31. }
-```
-
-## getBiometricAuthToken
-
-Phone
+## trustedAuthentication.getBiometricAuthToken
 
 getBiometricAuthToken(operType: OperateType, tuiAuthToken: Uint8Array, bioAuthToken: Uint8Array): Promise<AuthToken>
 
 获取生物特征绑定/生物特征交易认证对应的authToken信息。使用Promise异步回调。
 
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.Security.TrustedAuthentication
+
+**设备行为差异：** 对于6.1.1(24)之前版本，该接口在Phone中可正常调用，在其他设备类型中统一返回业务错误码1019100016。对于6.1.1(24)及之后版本，该接口在Phone、部分支持TUI能力的Tablet、PC/2in1中均可正常调用，在不支持TUI能力的Tablet、PC/2in1设备及其他设备类型中统一返回业务错误码1019100016。可使用[checkConfirmUITextFormat](devicesecurity-trusted-auth-api.md#trustedauthenticationcheckconfirmuitextformat)查询能力是否支持。
 
 **起始版本：** 6.0.0(20)
 
@@ -417,7 +451,7 @@ getBiometricAuthToken(operType: OperateType, tuiAuthToken: Uint8Array, bioAuthTo
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | operType | [OperateType](devicesecurity-trusted-auth-api.md#operatetype) | 是 | 获取生物特征authToken操作类型，详见[OperateType](devicesecurity-trusted-auth-api.md#operatetype)。 |
-| tuiAuthToken | Uint8Array | 是 | 当操作类型为OPERATE\_TYPE\_BIOMETRIC\_AUTH时，tuiAuthToken表示通过密码认证（即[trustedAuthentication](devicesecurity-trusted-auth-api.md#trustedauthentication)）获取的authToken信息。  当操作类型为OPERATE\_TYPE\_CONTENT\_AUTH时，tuiAuthToken表示通过交易信息临时确认（即[procContentAuthentication](devicesecurity-trusted-auth-api.md#proccontentauthentication)）获取的authToken信息。 |
+| tuiAuthToken | Uint8Array | 是 | 当操作类型为OPERATE\_TYPE\_BIOMETRIC\_AUTH时，tuiAuthToken表示通过密码认证（即[trustedAuthentication](devicesecurity-trusted-auth-api.md#trustedauthenticationtrustedauthentication)）获取的authToken信息。  当操作类型为OPERATE\_TYPE\_CONTENT\_AUTH时，tuiAuthToken表示通过交易信息临时确认（即[procContentAuthentication](devicesecurity-trusted-auth-api.md#trustedauthenticationproccontentauthentication)）获取的authToken信息。 |
 | bioAuthToken | Uint8Array | 是 | 生物特征认证获取的authToken，要求tuiAuthToken和bioAuthToken获取时使用同一个challenge，即保障两个authToken通过同一次会话获取。 |
 
 **返回值：**
@@ -428,7 +462,7 @@ getBiometricAuthToken(operType: OperateType, tuiAuthToken: Uint8Array, bioAuthTo
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](devicesecurity-arktsapi-errcode-trusted-auth.md) **。**
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-devicesecurity-trusted-auth.md) **。**
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -438,83 +472,89 @@ getBiometricAuthToken(operType: OperateType, tuiAuthToken: Uint8Array, bioAuthTo
 | 1019100015 | Failed to get the biometric authToken. |
 | 1019100019 | The biometric data for authentication does not match the bound biometric feature. |
 | 1019100020 | The biometric data has already been bound. |
+| 1019100023 | Secure element fault.  适用版本：26.0.0+ |
 
 **示例：**
 
+```typescript
+import { userAuth } from '@kit.UserAuthenticationKit';
+import { trustedAuthentication} from '@kit.DeviceSecurityKit';
+import { BusinessError} from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { resourceManager } from '@kit.LocalizationKit';
+import { common } from '@kit.AbilityKit';
+
+const TAG = 'TrustedAuthenticationJsTest';
+async function PwdVerify(challenge: Uint8Array,
+  resourceMgr:resourceManager.ResourceManager):Promise<trustedAuthentication.AuthToken> {
+  try {
+    const authID: bigint = 11842183505170721246n; // 实际填充为从服务器获取到的账号对应的credentialID值
+    const fileData : Uint8Array = await resourceMgr.getRawFileContent('test_logo_rgba.png'); // 实际使用时请替换为应用要在TUI界面展示的logo图片名称
+    const buffer = fileData.buffer;
+    const label:trustedAuthentication.TUILable = {
+      image: buffer as ArrayBuffer,
+      title: "数字盾密码认证"
+    }
+    const result = await trustedAuthentication.trustedAuthentication(challenge, authID, label);
+    return result;
+  } catch (err) {
+    hilog.error(0x0000, 'testTag', `Failed to trustedAuthentication, code:${err.code}, message:${err.message}`);
+    throw new Error('Password verify failed:' + (err as BusinessError).message);
+  }
+}
+const rand = cryptoFramework.createRandom();
+const len: number = 32;
+let challengeID: Uint8Array = rand?.generateRandomSync(len)?.data;
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
+const TuiAuthToken: trustedAuthentication.AuthToken = await PwdVerify(challengeID, resourceMgr);
+let authTypeList :number[] = new Array();
+authTypeList[0] = userAuth.UserAuthType.FINGERPRINT;
+authTypeList[1] = userAuth.UserAuthType.FACE;
+
+const authParam : userAuth.AuthParam = {
+  challenge: challengeID,
+  authType: authTypeList,
+  authTrustLevel: userAuth.AuthTrustLevel.ATL4
+};
+const widgetParam: userAuth.WidgetParam = {
+  title: '请输入盾密码',
+  navigationButtonText: '请输入盾密码',
+};
+
+try {
+  const userAuthInstance = userAuth.getUserAuthInstance(authParam, widgetParam);
+  userAuthInstance.on('result', {
+    onResult(result) {
+      let authTokenData = result.token;
+      let operType = trustedAuthentication.OperateType.OPERATE_TYPE_BIOMETRIC_AUTH;
+      trustedAuthentication.getBiometricAuthToken(operType, TuiAuthToken.authToken, authTokenData).then((newAuthToken) => {
+        let authToken = newAuthToken.authToken as Uint8Array;
+        hilog.info(0x0000, TAG, `authToken content: ${authToken}`);
+      });
+    }
+  })
+  userAuthInstance.start();
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
+  hilog.error(0x0000, TAG, 'getUserAuthInstance failed: %{public}d %{public}s', e.code, e.message);
+}
 ```
-1. import { userAuth } from '@kit.UserAuthenticationKit';
-2. import { trustedAuthentication} from '@kit.DeviceSecurityKit';
-3. import { BusinessError} from '@kit.BasicServicesKit';
-4. import { hilog } from '@kit.PerformanceAnalysisKit';
-5. import { cryptoFramework } from '@kit.CryptoArchitectureKit';
-6. import { resourceManager } from '@kit.LocalizationKit';
-7. import { common } from '@kit.AbilityKit';
 
-9. const TAG = "TrustedAuthenticationJsTest";
-10. async function PwdVerify(challenge: Uint8Array, resourceMgr:resourceManager.ResourceManager):Promise<trustedAuthentication.AuthToken> {
-11. try {
-12. const authID: bigint = 11842183505170721246n; // 实际填充为从服务器获取到的账号对应的authID值
-13. const fileData : Uint8Array = await resourceMgr.getRawFileContent('test_logo_rgba.png'); // 实际使用时请替换为应用要在TUI界面展示的logo图片名称
-14. const buffer = fileData.buffer;
-15. const label:trustedAuthentication.TUILable = {
-16. image: buffer as ArrayBuffer,
-17. title: "数字盾密码认证",
-18. }
-19. const result = await trustedAuthentication.trustedAuthentication(challenge, authID, label);
-20. return result;
-21. } catch (err) {
-22. hilog.error(0x0000, 'testTag', `Failed to trustedAuthentication, code:${err.code}, message:${err.message}`);
-23. throw new Error('Password verify failed:' + (err as BusinessError).message);
-24. }
-25. }
-26. const rand = cryptoFramework.createRandom();
-27. const len: number = 32;
-28. let challengeID: Uint8Array = rand?.generateRandomSync(len)?.data;
-29. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-30. const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
-31. const TuiAuthToken: trustedAuthentication.AuthToken = await PwdVerify(challengeID, resourceMgr);
-32. let authTypeList :number[] = new Array();
-33. authTypeList[0] = userAuth.UserAuthType.FINGERPRINT;
-34. authTypeList[1] = userAuth.UserAuthType.FACE;
-
-36. const authParam : userAuth.AuthParam = {
-37. challenge:  challengeID,
-38. authType: authTypeList,
-39. authTrustLevel: userAuth.AuthTrustLevel.ATL4
-40. };
-41. const widgetParam: userAuth.WidgetParam = {
-42. title: '请输入盾密码',
-43. navigationButtonText: '请输入盾密码',
-44. };
-
-46. try {
-47. const userAuthInstance = await userAuth.getUserAuthInstance(authParam, widgetParam);
-48. userAuthInstance.on('result', {
-49. onResult (result) {
-50. let authTokenData = result.token;
-51. let operType = trustedAuthentication.OperateType.OPERATE_TYPE_BIOMETRIC_AUTH;
-52. trustedAuthentication.getBiometricAuthToken(operType, TuiAuthToken.authToken, authTokenData).then((newAuthToken) => {
-53. let authToken = newAuthToken.authToken as Uint8Array;
-54. hilog.info(0x0000, TAG, `authToken content: ${authToken}`);
-55. });
-56. }
-57. })
-58. userAuthInstance.start();
-59. } catch (err) {
-60. let e: BusinessError = err as BusinessError;
-61. hilog.error(0x0000, TAG, 'getUserAuthInstance failed: %{public}d %{public}s', e.code, e.message);
-62. }
-```
-
-## importData
-
-Phone
+## trustedAuthentication.importData
 
 importData(data: ArrayBuffer, authID: bigint): Promise<void>
 
 导入备份的数据信息（即与HUKS签名验签时使用的加密密钥信息）。使用Promise异步回调。
 
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.Security.TrustedAuthentication
+
+**设备行为差异：** 对于6.1.1(24)之前版本，该接口在Phone中可正常调用，在其他设备类型中统一返回业务错误码1019100016。对于6.1.1(24)及之后版本，该接口在Phone、部分支持TUI能力的Tablet、PC/2in1中均可正常调用，在不支持TUI能力的Tablet、PC/2in1设备及其他设备类型中统一返回业务错误码1019100016。可使用[checkConfirmUITextFormat](devicesecurity-trusted-auth-api.md#trustedauthenticationcheckconfirmuitextformat)查询能力是否支持。
 
 **起始版本：** 6.0.0(20)
 
@@ -533,7 +573,7 @@ importData(data: ArrayBuffer, authID: bigint): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](devicesecurity-arktsapi-errcode-trusted-auth.md) **。**
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-devicesecurity-trusted-auth.md) **。**
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -541,37 +581,42 @@ importData(data: ArrayBuffer, authID: bigint): Promise<void>
 | 1019100002 | Parameter error.  Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
 | 1019100010 | Failed to import data. |
 | 1019100012 | Invalid authentication ID. |
+| 1019100023 | Secure element fault.  适用版本：26.0.0+ |
 
 **示例：**
 
+```typescript
+import { trustedAuthentication} from '@kit.DeviceSecurityKit';
+import { BusinessError} from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const TAG = 'TrustedAuthenticationJsTest';
+
+try {
+ const authID: bigint = 1687413472599354502n;
+ const buffer = new ArrayBuffer(8);
+ const bufferArray = new Uint8Array(buffer);
+ bufferArray.set([1, 2, 3, 4, 5, 6, 7, 8]);
+ const result = await trustedAuthentication.importData(buffer, authID);
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
+  hilog.error(0x0000, TAG, 'importData failed: %{public}d %{public}s', e.code, e.message);
+}
 ```
-1. import { trustedAuthentication} from '@kit.DeviceSecurityKit';
-2. import { BusinessError} from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. const TAG = "TrustedAuthenticationJsTest";
-
-7. try {
-8. const authID: bigint = 1687413472599354502n;
-9. const buffer = new ArrayBuffer(8);
-10. const bufferArray = new Uint8Array(buffer);
-11. bufferArray.set([1, 2, 3, 4, 5, 6, 7, 8]);
-12. const result = await trustedAuthentication.importData(buffer, authID);
-13. } catch (err) {
-14. let e: BusinessError = err as BusinessError;
-15. hilog.error(0x0000, TAG, 'importData failed: %{public}d %{public}s', e.code, e.message);
-16. }
-```
-
-## exportData
-
-Phone
+## trustedAuthentication.exportData
 
 exportData(authID: bigint, label: TUILable): Promise<ArrayBuffer>
 
 导出备份的数据信息（即与HUKS签名验签时使用的加密密钥信息），在导出时，需要经过密码认证，认证通过后才可导出对应的备份数据信息。使用Promise异步回调。
 
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.Security.TrustedAuthentication
+
+**设备行为差异：** 对于6.1.1(24)之前版本，该接口在Phone中可正常调用，在其他设备类型中统一返回业务错误码1019100016。对于6.1.1(24)及之后版本，该接口在Phone、部分支持TUI能力的Tablet、PC/2in1中均可正常调用，在不支持TUI能力的Tablet、PC/2in1设备及其他设备类型中统一返回业务错误码1019100016。可使用[checkConfirmUITextFormat](devicesecurity-trusted-auth-api.md#trustedauthenticationcheckconfirmuitextformat)查询能力是否支持。
 
 **起始版本：** 6.0.0(20)
 
@@ -590,7 +635,7 @@ exportData(authID: bigint, label: TUILable): Promise<ArrayBuffer>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](devicesecurity-arktsapi-errcode-trusted-auth.md) **。**
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-devicesecurity-trusted-auth.md) **。**
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -598,44 +643,50 @@ exportData(authID: bigint, label: TUILable): Promise<ArrayBuffer>
 | 1019100002 | Parameter error.  Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
 | 1019100009 | Failed to export data. |
 | 1019100012 | Invalid authentication ID. |
+| 1019100023 | Secure element fault.  适用版本：26.0.0+ |
+| 1019100025 | The TUI is occupied by another app.  适用版本：6.1.1(24)+ |
 
 **示例：**
 
+```typescript
+import { trustedAuthentication} from '@kit.DeviceSecurityKit';
+import { BusinessError} from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { resourceManager } from '@kit.LocalizationKit';
+import { common } from '@kit.AbilityKit';
+
+const TAG = 'TrustedAuthenticationJsTest';
+
+try {
+ const credentialID: bigint = 1687413472599354502n;
+ let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+ const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
+ const fileData : Uint8Array = await resourceMgr.getRawFileContent('test_logo_rgba.png');
+ const buffer = fileData.buffer;
+ const label:trustedAuthentication.TUILable = {
+  image: buffer as ArrayBuffer,
+  title: "备份数据导出",
+ }
+ const result = await trustedAuthentication.exportData(credentialID, label);
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
+  hilog.error(0x0000, TAG, 'exportData failed: %{public}d %{public}s', e.code, e.message);
+}
 ```
-1. import { trustedAuthentication} from '@kit.DeviceSecurityKit';
-2. import { BusinessError} from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { resourceManager } from '@kit.LocalizationKit';
-5. import { common } from '@kit.AbilityKit';
 
-7. const TAG = "TrustedAuthenticationJsTest";
-
-9. try {
-10. const credentialID: bigint = 1687413472599354502n;
-11. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-12. const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
-13. const fileData : Uint8Array = await resourceMgr.getRawFileContent('test_logo_rgba.png');
-14. const buffer = fileData.buffer;
-15. const label:trustedAuthentication.TUILable = {
-16. image: buffer as ArrayBuffer,
-17. title: "备份数据导出",
-18. }
-19. const result = await trustedAuthentication.exportData(credentialID, label);
-20. } catch (err) {
-21. let e: BusinessError = err as BusinessError;
-22. hilog.error(0x0000, TAG, 'exportData failed: %{public}d %{public}s', e.code, e.message);
-23. }
-```
-
-## checkConfirmUITextFormat
-
-Phone
+## trustedAuthentication.checkConfirmUITextFormat
 
 checkConfirmUITextFormat(text: string): Promise<TextCheckResult>
 
 检查将在TUI呈现的内容是否可以在屏幕上单行完整展示。使用Promise异步回调。
 
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.Security.TrustedAuthentication
+
+**设备行为差异：** 对于6.1.1(24)之前版本，该接口在Phone中可正常调用，在其他设备类型中统一返回业务错误码1019100016。对于6.1.1(24)及之后版本，该接口在Phone、部分支持TUI能力的Tablet、PC/2in1中均可正常调用，在不支持TUI能力的Tablet、PC/2in1设备及其他设备类型中统一返回业务错误码1019100016。
 
 **起始版本：** 6.0.0(20)
 
@@ -649,45 +700,80 @@ checkConfirmUITextFormat(text: string): Promise<TextCheckResult>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[TextCheckResult](devicesecurity-trusted-auth-api.md#textcheckresult)> | Promise对象，TUI界面显示指定text对应检查结果。 |
+| Promise<[TextCheckResult](devicesecurity-trusted-auth-api.md#textcheckresult)> | Promise对象，返回TUI界面显示指定text对应检查结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](devicesecurity-arktsapi-errcode-trusted-auth.md) **。**
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-devicesecurity-trusted-auth.md) **。**
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1019100001 | The interface invoker does not have the corresponding permission. |
 | 1019100002 | Parameter error.  Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
 | 1019100006 | Check input confirm text failed. |
+| 1019100025 | The TUI is occupied by another app.  适用版本：6.1.1(24)+ |
 
 **示例：**
 
+```typescript
+import { trustedAuthentication} from '@kit.DeviceSecurityKit';
+import { BusinessError} from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const TAG = 'TrustedAuthenticationJsTest';
+
+try {
+ const text: string = "检查将在TUI呈现的text是否可以正常展示";
+ const result = await trustedAuthentication.checkConfirmUITextFormat(text);
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
+  hilog.error(0x0000, TAG, 'checkConfirmUITextFormat failed: %{public}d %{public}s', e.code, e.message);
+}
 ```
-1. import { trustedAuthentication} from '@kit.DeviceSecurityKit';
-2. import { BusinessError} from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. const TAG = "TrustedAuthenticationJsTest";
+**说明** 
 
-7. try {
-8. const text: string = "检查将在TUI呈现的text是否可以正常展示";
-9. const result = await trustedAuthentication.checkConfirmUITextFormat(text);
-10. } catch (err) {
-11. let e: BusinessError = err as BusinessError;
-12. hilog.error(0x0000, TAG, 'checkConfirmUITextFormat failed: %{public}d %{public}s', e.code, e.message);
-13. }
+开发者可通过本接口间接判断设备是否具备TUI能力。
+
+**示例：**
+
+```typescript
+import { trustedAuthentication} from '@kit.DeviceSecurityKit';
+import { BusinessError} from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+const TAG = 'TrustedAuthenticationJsTest';
+
+async function isSupportTUI():Promise<boolean> {
+  if (canIUse('SystemCapability.Security.TrustedAuthentication')) {
+    let text = 'a'; // 任意短字符串。
+    try {
+      const result = await trustedAuthentication.checkConfirmUITextFormat(text);
+      if (result.result == 0) {
+        return true;
+      }
+    } catch (error) {
+      hilog.error(0x0000, TAG, 'The trusted authentication feature is not enabled.');
+      return false;
+    }
+  }
+  return false;
+}
+let supportFlag:boolean = await isSupportTUI();
 ```
 
-## getRemainAuthTimes
-
-Phone
+## trustedAuthentication.getRemainAuthTimes
 
 getRemainAuthTimes(authID: bigint): Promise<number>
 
 获取数字盾剩余认证次数。使用Promise异步回调。
 
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.Security.TrustedAuthentication
+
+**设备行为差异：** 对于6.1.1(24)之前版本，该接口在Phone中可正常调用，在其他设备类型中统一返回业务错误码1019100016。对于6.1.1(24)及之后版本，该接口在Phone、部分支持TUI能力的Tablet、PC/2in1中均可正常调用，在不支持TUI能力的Tablet、PC/2in1设备及其他设备类型中统一返回业务错误码1019100016。可使用[checkConfirmUITextFormat](devicesecurity-trusted-auth-api.md#trustedauthenticationcheckconfirmuitextformat)查询能力是否支持。
 
 **起始版本：** 6.0.0(20)
 
@@ -701,11 +787,11 @@ getRemainAuthTimes(authID: bigint): Promise<number>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<number> | Promise对象，数字盾剩余认证次数。 |
+| Promise<number> | Promise对象，返回数字盾剩余认证次数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](devicesecurity-arktsapi-errcode-trusted-auth.md) **。**
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-devicesecurity-trusted-auth.md) **。**
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -713,34 +799,39 @@ getRemainAuthTimes(authID: bigint): Promise<number>
 | 1019100002 | Parameter error.  Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
 | 1019100012 | Invalid authentication ID. |
 | 1019100017 | Failed to get the remaining number of authentication attempts. |
+| 1019100023 | Secure element fault.  适用版本：26.0.0+ |
 
 **示例：**
 
+```typescript
+import { trustedAuthentication} from '@kit.DeviceSecurityKit';
+import { BusinessError} from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const TAG = 'TrustedAuthenticationJsTest';
+
+try {
+ const authID: bigint = 1687413472599354502n;
+ const remainTimes = await trustedAuthentication.getRemainAuthTimes(authID);
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
+  hilog.error(0x0000, TAG, 'getRemainAuthTimesfailed: %{public}d %{public}s', e.code, e.message);
+}
 ```
-1. import { trustedAuthentication} from '@kit.DeviceSecurityKit';
-2. import { BusinessError} from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. const TAG = "TrustedAuthenticationJsTest";
-
-7. try {
-8. const authID: bigint = 1687413472599354502n;
-9. const remainTimes = await trustedAuthentication.getRemainAuthTimes(authID);
-10. } catch (err) {
-11. let e: BusinessError = err as BusinessError;
-12. hilog.error(0x0000, TAG, 'getRemainAuthTimesfailed: %{public}d %{public}s', e.code, e.message);
-13. }
-```
-
-## disableTrustedBioAuthentication
-
-Phone
+## trustedAuthentication.disableTrustedBioAuthentication
 
 disableTrustedBioAuthentication(authID: bigint, authType: AuthType): Promise<void>
 
 解绑指定生物类型认证能力。使用Promise异步回调。
 
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.Security.TrustedAuthentication
+
+**设备行为差异：** 对于6.1.1(24)之前版本，该接口在Phone中可正常调用，在其他设备类型中统一返回业务错误码1019100016。对于6.1.1(24)及之后版本，该接口在Phone、部分支持TUI能力的Tablet、PC/2in1中均可正常调用，在不支持TUI能力的Tablet、PC/2in1设备及其他设备类型中统一返回业务错误码1019100016。可使用[checkConfirmUITextFormat](devicesecurity-trusted-auth-api.md#trustedauthenticationcheckconfirmuitextformat)查询能力是否支持。
 
 **起始版本：** 6.0.0(20)
 
@@ -749,7 +840,7 @@ disableTrustedBioAuthentication(authID: bigint, authType: AuthType): Promise<voi
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | authID | bigint | 是 | 密码创建时获取的authID信息。 |
-| authType | AuthType | 是 | 仅支持AUTH\_TYPE\_FACE、AUTH\_TYPE\_FINGERPRINT |
+| authType | AuthType | 是 | 仅支持AUTH\_TYPE\_FACE、AUTH\_TYPE\_FINGERPRINT。 |
 
 **返回值：**
 
@@ -759,7 +850,7 @@ disableTrustedBioAuthentication(authID: bigint, authType: AuthType): Promise<voi
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](devicesecurity-arktsapi-errcode-trusted-auth.md) **。**
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-devicesecurity-trusted-auth.md) **。**
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -771,27 +862,94 @@ disableTrustedBioAuthentication(authID: bigint, authType: AuthType): Promise<voi
 
 **示例：**
 
+```typescript
+import { trustedAuthentication} from '@kit.DeviceSecurityKit';
+import { BusinessError} from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const TAG = 'TrustedAuthenticationJsTest';
+
+try {
+ const authID: bigint = 1687413472599354502n;
+ const remainTimes = await trustedAuthentication.disableTrustedBioAuthentication(authID, trustedAuthentication.AuthType.AUTH_TYPE_FACE);
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
+  hilog.error(0x0000, TAG, 'disableTrustedBioAuthentication: %{public}d %{public}s', e.code, e.message);
+}
 ```
-1. import { trustedAuthentication} from '@kit.DeviceSecurityKit';
-2. import { BusinessError} from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. const TAG = "TrustedAuthenticationJsTest";
+## trustedAuthentication.getSecurityLevel
 
-7. try {
-8. const authID: bigint = 1687413472599354502n;
-9. const remainTimes = await trustedAuthentication.disableTrustedBioAuthentication(authID, trustedAuthentication.AuthType.AUTH_TYPE_FACE);
-10. } catch (err) {
-11. let e: BusinessError = err as BusinessError;
-12. hilog.error(0x0000, TAG, 'disableTrustedBioAuthentication: %{public}d %{public}s', e.code, e.message);
-13. }
+getSecurityLevel(authID?: bigint): Promise<SecurityLevel>
+
+获取当前系统支持开通数字盾的最高安全等级或指定数字盾对应的安全等级。使用Promise异步回调。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Security.TrustedAuthentication
+
+**设备行为差异：** 对于API 24之前版本，该接口在Phone中可正常调用，在其他设备类型中统一返回业务错误码1019100016。对于API 24及之后版本，该接口在Phone、部分支持TUI能力的Tablet、PC/2in1中均可正常调用，在不支持TUI能力的Tablet、PC/2in1设备及其他设备类型中统一返回业务错误码1019100016。可使用[checkConfirmUITextFormat](devicesecurity-trusted-auth-api.md#trustedauthenticationcheckconfirmuitextformat)查询能力是否支持。
+
+**起始版本：** 26.0.0
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| authID | bigint | 否 | 数字盾对应的authID。如果不设置该参数，则表示查询系统支持开通数字盾的最高安全等级。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[SecurityLevel](devicesecurity-trusted-auth-api.md#securitylevel)> | Promise对象，系统或数字盾对应的安全等级。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-devicesecurity-trusted-auth.md) **。**
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1019100001 | The interface invoker does not have the corresponding permission. |
+| 1019100012 | Invalid authentication ID. |
+| 1019100016 | The trusted authentication feature is not enabled. |
+
+**示例：**
+
+```typescript
+import { trustedAuthentication} from '@kit.DeviceSecurityKit';
+import { BusinessError} from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const TAG = "TrustedAuthenticationJsTest";
+
+try {
+  const securityLevel = await trustedAuthentication.getSecurityLevel();
+  hilog.info(0x0000, TAG, `The current system supports enabling the highest security level for the digital shield is: ${securityLevel}`);
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
+  hilog.error(0x0000, TAG, 'get system securityLevel failed: %{public}d %{public}s', e.code, e.message);
+}
+
+try {
+ const authID: bigint = 1687413472599354502n;
+ const securityLevel = await trustedAuthentication.getSecurityLevel(authID);
+  hilog.info(0x0000, TAG, `The digital shield security level is: ${securityLevel}`);
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
+  hilog.error(0x0000, TAG, 'getSecurityLevel failed: %{public}d %{public}s', e.code, e.message);
+}
 ```
 
 ## PasswordInfo
 
-Phone
-
 设置密码时业务对密码规格参数要求。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Security.TrustedAuthentication
 
@@ -803,12 +961,15 @@ Phone
 | pwdMaxLength | number | 否 | 否 | 密码最大长度，取值范围6~18。 |
 | pwdMinLength | number | 否 | 否 | 密码最小长度，取值范围6~18，且小于等于pwdMaxLength。 |
 | maxAuthFailCount | number | 否 | 否 | 密码最大连续认证失败次数，取值范围1~10。 |
+| securityLevel | [SecurityLevel](devicesecurity-trusted-auth-api.md#securitylevel) | 否 | 是 | 指定开通数字盾的安全等级，当不传入时，则默认为SECURITY\_LEVEL\_TEE。在调用enableTrustedAuthentication时，该参数有效；而在调用modifyTrustedAuthenticationPwd时，则遵循当前盾的安全等级设定，该参数不生效。  **起始版本：** 26.0.0 |
 
 ## TUILable
 
-Phone
-
 TUI页面下的定制信息，包括定制图像logo和页面标题。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Security.TrustedAuthentication
 
@@ -821,9 +982,11 @@ TUI页面下的定制信息，包括定制图像logo和页面标题。
 
 ## AuthInfo
 
-Phone
-
 开通数字盾服务对应的参数信息。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Security.TrustedAuthentication
 
@@ -836,9 +999,11 @@ Phone
 
 ## AuthToken
 
-Phone
-
 经数字盾服务指定操作获取的authToken，不同操作流程中authToken包括的加密信息不同，详细可参考各个接口参数说明。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Security.TrustedAuthentication
 
@@ -850,9 +1015,11 @@ Phone
 
 ## AuthType
 
-Phone
-
 交易认证类型定义。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Security.TrustedAuthentication
 
@@ -861,14 +1028,33 @@ Phone
 | **名称** | 值 | **说明** |
 | --- | --- | --- |
 | AUTH\_TYPE\_FACE | 2 | 人脸认证 |
-| AUTH\_TYPE\_FINGERPRINT | 4 | 指纹认证 |
-| AUTH\_TYPE\_TUI\_PIN | 32 | TUI密码认证 |
+| AUTH\_TYPE\_FINGERPRINT | 4 | 指纹认证。 |
+| AUTH\_TYPE\_TUI\_PIN | 32 | TUI密码认证。 |
+
+## SecurityLevel
+
+数字盾安全级别定义。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Security.TrustedAuthentication
+
+**起始版本：** 26.0.0
+
+| **名称** | 值 | **说明** |
+| --- | --- | --- |
+| SECURITY\_LEVEL\_TEE | 0 | TEE安全级别。 |
+| SECURITY\_LEVEL\_SE | 1 | SE安全级别。 |
 
 ## PasswordType
 
-Phone
-
 密码类型定义，根据密码类型TUI界面弹出不同类型的安全键盘。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Security.TrustedAuthentication
 
@@ -876,14 +1062,16 @@ Phone
 
 | **名称** | 值 | **说明** |
 | --- | --- | --- |
-| PASSWORD\_TYPE\_DIGITAL | 0 | 纯数字密码类型 |
-| PASSWORD\_TYPE\_MIXED | 1 | 数字、字符混合密码类型 |
+| PASSWORD\_TYPE\_DIGITAL | 0 | 纯数字密码类型。 |
+| PASSWORD\_TYPE\_MIXED | 1 | 数字、字符混合密码类型。 |
 
 ## OperateType
 
-Phone
-
 操作类型定义。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Security.TrustedAuthentication
 
@@ -891,14 +1079,16 @@ Phone
 
 | **名称** | 值 | **说明** |
 | --- | --- | --- |
-| OPERATE\_TYPE\_BIOMETRIC\_AUTH | 1 | 生物特征与密码认证绑定操作 |
-| OPERATE\_TYPE\_CONTENT\_AUTH | 2 | 使用生物特征进行交易认证操作 |
+| OPERATE\_TYPE\_BIOMETRIC\_AUTH | 1 | 生物特征与密码认证绑定操作。 |
+| OPERATE\_TYPE\_CONTENT\_AUTH | 2 | 使用生物特征进行交易认证操作。 |
 
 ## AuthReqParams
 
-Phone
-
 交易认证请求相关参数。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Security.TrustedAuthentication
 
@@ -907,13 +1097,15 @@ Phone
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | reqType | [AuthType](devicesecurity-trusted-auth-api.md#authtype) | 否 | 否 | 认证类型，取值范围详见[AuthType](devicesecurity-trusted-auth-api.md#authtype)。 |
-| authContent | Array<string> | 否 | 否 | 认证数据，即交易场景下交易数据，单条数据大小在1024字节以内。 |
+| authContent | Array<string> | 否 | 否 | 认证数据，即交易场景下交易数据，单条数据大小在1024字节以内，换行需使用\n换行，不支持\r\n换行。 |
 
 ## TextCheckResult
 
-Phone
-
 TUI界面文本信息是否可以单行显示的检查结果。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Security.TrustedAuthentication
 
@@ -921,14 +1113,16 @@ TUI界面文本信息是否可以单行显示的检查结果。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| result | number | 否 | 否 | 指定输入文本检查结果，如果可以正常显示，返回为0，否则返回[1019100011 不合法的TUI认证信息](devicesecurity-arktsapi-errcode-trusted-auth.md#section1019100011-不合法的tui认证信息)。 |
+| result | number | 否 | 否 | 指定输入文本检查结果，如果可以正常显示，返回为0，否则返回[1019100011 不合法的TUI认证信息](errorcode-devicesecurity-trusted-auth.md#section1019100011-不合法的tui认证信息)。 |
 | lastIndex | number | 否 | 否 | 输入字符串可正常显示的最后一个字符对应的索引。 |
 
 ## TrustedAuthErrorCode
 
-Phone
-
 数字盾服务开放接口执行失败错误码。
+
+**元服务API：** 从API版本26.0.0开始，以下接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Security.TrustedAuthentication
 
@@ -936,24 +1130,27 @@ Phone
 
 | **名称** | 值 | **说明** |
 | --- | --- | --- |
-| TRUSTED\_AUTH\_ERROR\_NO\_PERMISSION | 1019100001 | 权限校验失败 |
-| TRUSTED\_AUTH\_ERROR\_ILLEGAL\_ARGUMENT | 1019100002 | 参数检查失败 |
-| TRUSTED\_AUTH\_ERROR\_PWD\_LIMIT\_REACHED | 1019100003 | 密码认证连续失败次数达到应用定义的最大次数 |
-| TRUSTED\_AUTH\_ERROR\_PWD\_DELETE\_FAILED | 1019100004 | 删除密码失败 |
-| TRUSTED\_AUTH\_ERROR\_VERIFY\_FAILED | 1019100005 | 密码认证失败 |
-| TRUSTED\_AUTH\_ERROR\_CHECK\_CONFIRM\_TEXT\_FAILED | 1019100006 | 输入文本信息检查失败 |
-| TRUSTED\_AUTH\_ERROR\_NOT\_SUPPORT\_IMAGE | 1019100007 | 不支持的图片格式 |
-| TRUSTED\_AUTH\_ERROR\_USER\_REQ\_CANCEL | 1019100008 | 用户取消操作 |
-| TRUSTED\_AUTH\_ERROR\_EXPORT\_DATA\_FAILED | 1019100009 | 备份数据导出失败 |
-| TRUSTED\_AUTH\_ERROR\_IMPORT\_DATA\_FAILED | 1019100010 | 备份数据导入失败 |
-| TRUSTED\_AUTH\_ERROR\_INVALID\_CONTENT | 1019100011 | 不合法的TUI认证信息 |
-| TRUSTED\_AUTH\_ERROR\_INVALID\_AUTH\_ID | 1019100012 | 无效的authID |
-| TRUSTED\_AUTH\_ERROR\_SET\_PWD\_FAILED | 1019100013 | 创建密码失败 |
-| TRUSTED\_AUTH\_ERROR\_MODIFY\_PWD\_FAILED | 1019100014 | 修改密码失败 |
-| TRUSTED\_AUTH\_ERROR\_BIO\_RESIGN\_FAILED | 1019100015 | 生物认证authToken签发失败 |
-| TRUSTED\_AUTH\_FEATURE\_INITIALIZATION\_FAILED | 1019100016 | 数字盾服务未使能 |
-| TRUSTED\_AUTH\_ERROR\_GET\_REMAIN\_TIME | 1019100017 | 获取数字盾剩余认证次数失败 |
-| TRUSTED\_AUTH\_ERROR\_DISABLE\_BIO\_AUTH | 1019100018 | 解绑指定生物特征认证能力失败 |
-| TRUSTED\_AUTH\_ERROR\_BIO\_MISMATCH | 1019100019 | 认证的生物特征与绑定的生物特征不匹配 |
-| TRUSTED\_AUTH\_ERROR\_BIO\_REPEATED\_BIND | 1019100020 | 已绑定对应的生物特征 |
-| TRUSTED\_AUTH\_ERROR\_NOT\_BIND\_BIO | 1019100021 | 对应生物特征未绑定 |
+| TRUSTED\_AUTH\_ERROR\_NO\_PERMISSION | 1019100001 | 权限校验失败。 |
+| TRUSTED\_AUTH\_ERROR\_ILLEGAL\_ARGUMENT | 1019100002 | 参数检查失败。 |
+| TRUSTED\_AUTH\_ERROR\_PWD\_LIMIT\_REACHED | 1019100003 | 密码认证连续失败次数达到应用定义的最大次数。 |
+| TRUSTED\_AUTH\_ERROR\_PWD\_DELETE\_FAILED | 1019100004 | 删除密码失败。 |
+| TRUSTED\_AUTH\_ERROR\_VERIFY\_FAILED | 1019100005 | 密码认证失败。 |
+| TRUSTED\_AUTH\_ERROR\_CHECK\_CONFIRM\_TEXT\_FAILED | 1019100006 | 输入文本信息检查失败。 |
+| TRUSTED\_AUTH\_ERROR\_NOT\_SUPPORT\_IMAGE | 1019100007 | 不支持的图片格式。 |
+| TRUSTED\_AUTH\_ERROR\_USER\_REQ\_CANCEL | 1019100008 | 用户取消操作。 |
+| TRUSTED\_AUTH\_ERROR\_EXPORT\_DATA\_FAILED | 1019100009 | 备份数据导出失败。 |
+| TRUSTED\_AUTH\_ERROR\_IMPORT\_DATA\_FAILED | 1019100010 | 备份数据导入失败。 |
+| TRUSTED\_AUTH\_ERROR\_INVALID\_CONTENT | 1019100011 | 不合法的TUI认证信息。 |
+| TRUSTED\_AUTH\_ERROR\_INVALID\_AUTH\_ID | 1019100012 | 无效的authID。 |
+| TRUSTED\_AUTH\_ERROR\_SET\_PWD\_FAILED | 1019100013 | 创建密码失败。 |
+| TRUSTED\_AUTH\_ERROR\_MODIFY\_PWD\_FAILED | 1019100014 | 修改密码失败。 |
+| TRUSTED\_AUTH\_ERROR\_BIO\_RESIGN\_FAILED | 1019100015 | 生物认证authToken签发失败。 |
+| TRUSTED\_AUTH\_FEATURE\_INITIALIZATION\_FAILED | 1019100016 | 数字盾服务未使能。 |
+| TRUSTED\_AUTH\_ERROR\_GET\_REMAIN\_TIME | 1019100017 | 获取数字盾剩余认证次数失败。 |
+| TRUSTED\_AUTH\_ERROR\_DISABLE\_BIO\_AUTH | 1019100018 | 解绑指定生物特征认证能力失败。 |
+| TRUSTED\_AUTH\_ERROR\_BIO\_MISMATCH | 1019100019 | 认证的生物特征与绑定的生物特征不匹配。 |
+| TRUSTED\_AUTH\_ERROR\_BIO\_REPEATED\_BIND | 1019100020 | 已绑定对应的生物特征。 |
+| TRUSTED\_AUTH\_ERROR\_NOT\_BIND\_BIO | 1019100021 | 对应生物特征未绑定。 |
+| TRUSTED\_AUTH\_ERROR\_SE\_FAULT | 1019100023 | 安全器件故障。  适用版本：26.0.0+ |
+| TRUSTED\_AUTH\_ERROR\_BIO\_ID\_INVALID | 1019100024 | 绑定的生物特征ID已失效。  适用版本：26.0.0+ |
+| TRUSTED\_AUTH\_ERROR\_TUI\_OCCUPIED | 1019100025 | TUI界面被其他应用占用。  适用版本：6.1.1(24)+ |

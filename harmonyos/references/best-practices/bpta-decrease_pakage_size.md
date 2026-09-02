@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-decrease_p
 title: 应用包体积优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 资源与存储优化 > 应用包体积优化
 category: best-practices
-scraped_at: 2026-04-29T14:13:37+08:00
+scraped_at: 2026-09-02T15:03:21+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:a84b72edcc97cc7a3865fe24d5ba4a7f825ff266c2f71e2253dddaae670f4411
+content_hash: sha256:7594b15aabb477c7d369a2a38ec181560f59f93d64ba8b4c685ca3b62c7f4c70
 ---
 
 ## 概述
@@ -46,13 +46,13 @@ DevEco Studio 默认在打包应用时不压缩 so 库文件。配置 so 压缩�
 
 修改应用模块配置文件module.json5中的compressNativeLibs字段，将值配置为true，重新编译、打包应用。
 
-```
-1. {
-2. "module": {
-3. // ...
-4. "compressNativeLibs": true // Identify whether the so library is packaged in compressed storage. ’true’ means compressed so library, ’false’ means non-compressed.
-5. }
-6. }
+```screen
+{
+  "module": { 
+    // ...
+    "compressNativeLibs": true // Identify whether the so library is packaged in compressed storage. ’true’ means compressed so library, ’false’ means non-compressed.
+  }
+}
 ```
 
 **so压缩效果**
@@ -67,7 +67,7 @@ DevEco Studio 默认在打包应用时不压缩 so 库文件。配置 so 压缩�
 
 对于ohpm 1.5.0之前的版本，如果hap依赖了不同版本的har（例如下图中的V1版本的harC和V2版本的harC），默认情况下，V1和V2两个版本的harC都会被打包到hap中。开发者可以使用ohpm的[override](../harmonyos-guides/ide-oh-package-json5.md#zh-cn_topic_0000001792256137_overrides)机制，指定只打包一个版本。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/biQLgq64ST-SW1mQKgy9KA/zh-cn_image_0000002194011048.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/QDObytZ_Rq2Rk4AIjFw7eQ/zh-cn_image_0000002194011048.png "点击放大")
 
 如果使用的是ohpm 1.4.0 版本，可以使用override机制，开发者可以在项目级别的 oh-package.json5 （即项目根目录下的 oh-package.json5）文件中添加 overrides 配置，将依赖树中的依赖替换为另一个版本。替换的版本既可以是一个具体的版本号，也可以是本地存在的HAR包或源码目录。
 
@@ -77,34 +77,34 @@ DevEco Studio 默认在打包应用时不压缩 so 库文件。配置 so 压缩�
 
 例如， 这里以 'foo' 库为例，如果在项目中始终需要使用'1.0.0'版本，可在项目级的 oh-package.json5 中添加以下配置：
 
-```
-1. {
-2. "overrides": {
-3. "foo": "1.0.0"
-4. }
-5. }
+```screen
+{
+  "overrides": {
+    "foo": "1.0.0"
+  }
+}
 ```
 
 若本地存在 foo 的源码或 HAR 包，确保 foo 始终使用本地版本，可在项目级 oh-package.json5 中进行如下配置：
 
 1、本地存在"foo"的源码，即配置项目根目录下的foo目录，以"file:./foo"标识其路径。
 
-```
-1. {
-2. "overrides": {
-3. "foo": "file:./foo"
-4. }
-5. }
+```screen
+{
+  "overrides": {
+    "foo": "file:./foo" 
+  }
+}
 ```
 
 2、本地存在"foo.har"的HAR包，其存放在libs目录下，即配置"file:./libs/foo.har"。
 
-```
-1. {
-2. "overrides": {
-3. "foo": "file:./libs/foo.har"
-4. }
-5. }
+```screen
+{
+  "overrides": {   
+    "foo": "file:./libs/foo.har"
+  }
+}
 ```
 
 对于1.5.0版本之后的ohpm，可以通过开启`[resolve\_conflict](../harmonyos-guides/ide-ohpmrc.md#section368717475562)`，自动解决依赖冲突。依赖冲突的处理策略为：当项目同时依赖某个三方库的不同版本时，ohpm会选择其中的最高版本进行安装。
@@ -119,8 +119,8 @@ DevEco Studio 默认在打包应用时不压缩 so 库文件。配置 so 压缩�
 
 在多包场景下，如果应用的多个HAP或HSP包使用HAR包实现代码和资源的共享，打包后的每个HAP或HSP包中都会包含共享HAR包的拷贝，导致App包中存在冗余代码和资源。如下图示例，应用模块HAP1和HAP2/HSP1都引用了HAR2和HAR3，打包后，App包中HAR2和HAR3有多份重复拷贝，体积较大。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/NWp2adUgQka7gDMQXAXoag/zh-cn_image_0000002229451341.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/iW9kQSjNQbeX95XHcysmIQ/zh-cn_image_0000002229451341.png "点击放大")
 
 推荐使用HSP代替HAR实现代码和资源共享。如下图示例，使用HSP2对原应用进行升级改造，打包后，APP包中HAR2和HAR3仅保留一份拷贝。当HAR2和HAR3的总大小超过HSP时，可以减小应用包大小。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/yAN-fcgoSUaLmO50vAycng/zh-cn_image_0000002229336845.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/FwrW8iO_RfytGAI22FeU7g/zh-cn_image_0000002229336845.png "点击放大")

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-deveco-tes
 title: 创建任务时，为什么会提示创建任务失败
 breadcrumb: FAQ > DevEco Testing > 常见问题 > 创建任务时，为什么会提示创建任务失败
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:25+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:db0a64670f3b0fe6613ff4bfaf231439eb578a912464a0a08e9c3a15ade7bb78
 ---
 

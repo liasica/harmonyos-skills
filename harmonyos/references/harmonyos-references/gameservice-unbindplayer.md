@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservi
 title: 解绑账号
 breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > REST API > 解绑账号
 category: harmonyos-references
-scraped_at: 2026-04-29T14:07:30+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:83d7e9b10061cbe3a8b3575b61fc18dace98ebe2970ed7f84492bf6329c6fe30
+scraped_at: 2026-09-02T15:02:54+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:48e78bd25553a2a592f990c1251087937ca5c7190b1bd1eca389efd908e36d18
 ---
 
 ## 功能介绍
@@ -22,7 +22,7 @@ content_hash: sha256:83d7e9b10061cbe3a8b3575b61fc18dace98ebe2970ed7f84492bf6329c
 
 * **承载协议**：HTTPS POST
 * **接口方向**：开发者服务器->华为游戏服务器
-* **接口URL**：<https://jos-open-api.cloud.huawei.com/gameservice/api/gbClientApi>
+* **接口URL**：https://jos-open-api.cloud.huawei.com/gameservice/api/gbClientApi
 * **数据格式**：
 
   + 请求：Content-Type: application/x-www-form-urlencoded（表单方式）
@@ -43,12 +43,12 @@ content_hash: sha256:83d7e9b10061cbe3a8b3575b61fc18dace98ebe2970ed7f84492bf6329c
 
 ## 请求示例
 
-```
-1. POST /gameservice/api/gbClientApi
-2. Host: jos-open-api.cloud.huawei.com
-3. Content-Type: application/x-www-form-urlencoded
-4. // 所有请求参数值均需要urlencode编码后再进行拼接
-5. method=external.hms.gs.player.unbindPlayer&appId=135***568&cpId=123***21f&teamPlayerId=******&ts=1670841860308&sign=**************
+```java
+POST /gameservice/api/gbClientApi HTTP/1.1
+Host: jos-open-api.cloud.huawei.com
+Content-Type: application/x-www-form-urlencoded
+// 所有请求参数值均需要urlencode编码后再进行拼接
+method=external.hms.gs.player.unbindPlayer&appId=135***568&cpId=123***21f&teamPlayerId=******&ts=1670841860308&sign=**************
 ```
 
 ## 响应参数
@@ -60,12 +60,12 @@ content_hash: sha256:83d7e9b10061cbe3a8b3575b61fc18dace98ebe2970ed7f84492bf6329c
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json;charset=UTF-8
-3. {
-4. "rtnCode":0
-5. }
+```java
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+{
+    "rtnCode":0
+}
 ```
 
 ## 签名机制
@@ -74,72 +74,72 @@ content_hash: sha256:83d7e9b10061cbe3a8b3575b61fc18dace98ebe2970ed7f84492bf6329c
 
 1. 将请求参数Body中除**sign**和**method**以外的参数，按参数名首字母的ASCII码将参数升序排序。若遇到相同首字母，则比较第二个字母，以此类推。
 
-   注意
+   **注意** 
 
    **sign**和**method**参数不参与签名。
 2. 添加依赖项。
 
-   ```
-   1. <dependencies>
-   2. <dependency>
-   3. <groupId>commons-codec</groupId>
-   4. <artifactId>commons-codec</artifactId>
-   5. <version>1.15</version> <!-- 请使用最新的稳定版本 -->
-   6. </dependency>
-   7. <dependency>
-   8. <groupId>org.bouncycastle</groupId>
-   9. <artifactId>bcprov-jdk18on</artifactId>
-   10. <version>1.74</version> <!-- 请使用最新的稳定版本 -->
-   11. </dependency>
-   12. </dependencies>
+   ```java
+   <dependencies>
+          <dependency>
+               <groupId>commons-codec</groupId>
+               <artifactId>commons-codec</artifactId>
+               <version>1.15</version> <!-- 请使用最新的稳定版本 -->
+           </dependency>
+           <dependency>
+               <groupId>org.bouncycastle</groupId>
+               <artifactId>bcprov-jdk18on</artifactId>
+               <version>1.74</version> <!-- 请使用最新的稳定版本 -->
+           </dependency>
+   </dependencies>
    ```
 3. 将所有参与签名的参数名和参数值的键值对以“&”字符连接成待签名字符串，例如“a=xxxxxx&b=xxxxxxx&c=xxxxxxxxxxx...”。其中，参数值需要进行urlencode。
 
    Java示例代码如下：
 
-   ```
-   1. // 组装body内除sign和method以外的参数，此处参数值仅为示例
-   2. Map<String, String> paramsMap = new HashMap<>();
-   3. paramsMap.put("appId", "appId");
-   4. paramsMap.put("cpId", "cpId");
-   5. paramsMap.put("teamPlayerId", "teamPlayerId");
-   6. paramsMap.put("ts", 123456L);
+   ```java
+   // 组装body内除sign和method以外的参数，此处参数值仅为示例
+   Map<String, String> paramsMap = new HashMap<>();
+   paramsMap.put("appId", "135***568");
+   paramsMap.put("cpId", "123***21f");
+   paramsMap.put("teamPlayerId", "E5B***E9B");
+   paramsMap.put("ts", 123456L);
 
-   8. // 对参数进行字典序排序
-   9. Map<String, String> tempMap = new TreeMap<>(paramsMap);
-   10. StringBuffer base = new StringBuffer();
+   // 对参数进行字典序排序
+   Map<String, String> tempMap = new TreeMap<>(paramsMap);
+   StringBuffer base = new StringBuffer();
 
-   12. // 拼接参数
-   13. for (Map.Entry<String, String> entry : tempMap.entrySet()) {
-   14. String key = entry.getKey();
-   15. String value = entry.getValue();
-   16. base.append(key).append('=').append(null == value ? '' : URLEncoder.encode(value, "UTF-8")).append('&');
-   17. }
+   // 拼接参数
+   for (Map.Entry<String, String> entry : tempMap.entrySet()) {
+       String key = entry.getKey();
+       String value = entry.getValue();
+       base.append(key).append('=').append(null == value ? '' : URLEncoder.encode(value, "UTF-8")).append('&');
+   }
 
-   19. if (base.length() > 0) {
-   20. base.deleteCharAt(base.length() - 1);
-   21. }
+   if (base.length() > 0) {
+       base.deleteCharAt(base.length() - 1);
+   }
    ```
 4. 将待签名字符串使用游戏私钥按照RSA算法（SHA256WithRSA/PSS）进行签名，将签名后的字符串经过Base64编码，得到的字符串即为签名字符串。
 
-   说明
+   **说明** 
 
    * 游戏私钥获取请参见[获取游戏密钥](../harmonyos-guides/gameservice-key.md)。
    * 签名字符串需要进行urlencode后再拼接到请求中。
 
    Java示例代码如下：
 
-   ```
-   1. // 获取签名私钥，具体实现方法由开发者自行决定，此处仅为接口示例
-   2. String privateKey = "xxxxxx";
+   ```java
+   // 获取签名私钥，具体实现方法由开发者自行决定，此处仅为接口示例
+   String privateKey = "xxxxxx";
 
-   4. // 加签
-   5. byte[] keyBytes = Base64.decodeBase64(privateKey);
-   6. PKCS8EncodedKeySpec pkcs8KeySpec = new PKCS8EncodedKeySpec(keyBytes);
-   7. KeyFactory keyFactory = KeyFactory.getInstance("RSA");
-   8. PrivateKey privateK =  keyFactory.generatePrivate(pkcs8KeySpec);
-   9. Signature signature = Signature.getInstance("SHA256withRSA/PSS", new BouncyCastleProvider());
-   10. signature.initSign(privateK);
-   11. signature.update(base.getBytes(StandardCharsets.UTF_8));
-   12. String sign =  Base64.encodeBase64String(signature.sign());
+   // 加签
+   byte[] keyBytes = Base64.decodeBase64(privateKey);
+   PKCS8EncodedKeySpec pkcs8KeySpec = new PKCS8EncodedKeySpec(keyBytes);
+   KeyFactory keyFactory = KeyFactory.getInstance("RSA");
+   PrivateKey privateK =  keyFactory.generatePrivate(pkcs8KeySpec);
+   Signature signature = Signature.getInstance("SHA256withRSA/PSS", new BouncyCastleProvider());
+   signature.initSign(privateK);
+   signature.update(base.getBytes(StandardCharsets.UTF_8));
+   String sign =  Base64.encodeBase64String(signature.sign());
    ```

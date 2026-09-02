@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 如何线上分析应用在CPU占用情况
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > 如何线上分析应用在CPU占用情况
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:16+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:13+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:66ef7cbaef9dd75d711b1b5d39e153d7afb8ed1ede2fb82f3ba0bf3ac7457e6e
 ---
 

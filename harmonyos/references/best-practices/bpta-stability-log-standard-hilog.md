@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: HiLog打印规范
 breadcrumb: 最佳实践 > 稳定性 > 稳定性优化 > 日志打印规范 > HiLog打印规范
 category: best-practices
-scraped_at: 2026-04-28T08:23:01+08:00
+scraped_at: 2026-09-02T15:03:24+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:5f02b483ac41f686f516939a86700ba7167894b0fa4b29cedbef7d1b1194c614
+content_hash: sha256:2cd2e9c458bb5faef654f4626d8a72140e373be472f256c59148ad65db4f49fe
 ---
 
 ## 简介
@@ -78,10 +78,10 @@ content_hash: sha256:5f02b483ac41f686f516939a86700ba7167894b0fa4b29cedbef7d1b119
 
 说明：例如日志打印中存在函数入参: hilog.debug(0xd010, 'testTag', 'map info: %{public}s', mapToJson(this.paramsMap)), 这行日志打印代码中，需要先执行mapToJson(this.paramsMap)获取日志参数字符串，此函数可能有耗时操作，从而使hilog.debug接口耗时变长，如果确认日志打印中参数需要调用耗时函数接口，可以在日志打印前先使用hilog.isLoggable判断当前打印是否符合日志级别要求，如果不满足日志级别则不执行日志打印，例如：
 
-```
-1. if (hilog.isLoggable(0xd010, 'testTag', hilog.LogLevel.DEBUG)) {
-2. hilog.debug(0xd010, 'testTag', 'map info: %{public}s', mapToJson(this.paramsMap))
-3. }
+```screen
+if (hilog.isLoggable(0xd010, 'testTag', hilog.LogLevel.DEBUG)) {
+  hilog.debug(0xd010, 'testTag', 'map info: %{public}s', mapToJson(this.paramsMap))
+}
 ```
 
 ## 日志形式

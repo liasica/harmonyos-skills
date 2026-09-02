@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-scenario-s
 title: 资源泄漏类问题案例
 breadcrumb: 最佳实践 > 稳定性 > 稳定性案例 > 资源泄漏类问题案例
 category: best-practices
-scraped_at: 2026-04-29T14:14:18+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:494254378dfc6598f5904e93004d178abdb4f34fd2485b8c4988b9e12ef1060b
+scraped_at: 2026-09-02T15:03:24+08:00
+doc_updated_at: 2026-08-17
+content_hash: sha256:0e074c8e7a609d71a3a365e624039650f9e0926155fed8071075a6861b5d9aec
 ---
 
 本文按照[资源泄漏分析方法](bpta-stability-leak-way.md)的流程展开，以实际案例的形式指导开发者如何从泄漏维测日志出发，分析、定位具体泄漏点。开发者可阅读[资源泄漏检测](../harmonyos-guides/resource-leak-guidelines.md)了解系统检测资源泄漏问题的机制与日志规格。
@@ -24,17 +24,17 @@ content_hash: sha256:494254378dfc6598f5904e93004d178abdb4f34fd2485b8c4988b9e12ef
 
 代码中定时器没有增加停止逻辑导致组件一直没有释放，出现泄漏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/pUU1e24rRgeqo6pqLenoyg/zh-cn_image_0000002404125249.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/2-qcnvLBT6mCTIluqnvlIA/zh-cn_image_0000002404125249.png)
 
 ### 分析思路
 
-详见[JS泄漏问题分析方法](bpta-stability-leak-way.md#section1183695881312)。
+详见[开发态快速定位ArkTS泄漏](bpta-arkts-leak-in-develop.md)。
 
 ### 分析步骤
 
 某应用AppIconCalendar对象大量泄漏触发虚拟机OOM，打开heapdump，按照RetainedSize排序后发现AppIconCalendarEvent.ts18对象存在307.54MB，该对象及其引用的内存占用81%内存**。**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/F2jVuSg4SoGqlBclZBMVvQ/zh-cn_image_0000002370405704.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/1Q0MfBNgRpytoIdJfn08jQ/zh-cn_image_0000002370405704.png "点击放大")
 
 结合代码分析**：**这两个定时器没有停止逻辑导致组件对象一直未析构。
 
@@ -54,50 +54,48 @@ content_hash: sha256:494254378dfc6598f5904e93004d178abdb4f34fd2485b8c4988b9e12ef
 
 ### 问题代码
 
+```cpp
+void DemoCase(int length)
+{
+    // ...
+    int bitmapLength = inShapeFromImage[0] * inShapeForImage[1];
+    auto bitmapBuffer = new unsigned char[bitmapLength];
+    for (int i = 0; i < length; ++i) {
+        if (!CheckBuffer(bitmapBuffer)) {
+            free(bitmapBuffer);
+            bitmapBuffer = nullptr;
+            return;
+        }
+    }
+    // ...
+    delete[] bitmapBuffer;
+}
 ```
-1. void DemoCase(int length)
-2. {
-3. // ...
-4. int bitmapLength = inShapeFromImage[0] * inShapeForImage[1];
-5. auto bitmapBuffer = new unsigned char[bitmapLength];
-6. for (int i = 0; i < length; ++i) {
-7. if (!CheckBuffer(bitmapBuffer)) {
-8. free(bitmapBuffer);
-9. bitmapBuffer = nullptr;
-10. return;
-11. }
-12. }
-13. // ...
-14. delete[] bitmapBuffer;
-15. }
-```
-
-[resource\_leak.cpp](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MemoryDetection/entry/src/main/cpp/resource_leak.cpp#L203-L217)
 
 ### 分析思路
 
-详见[Native泄漏问题分析方法](bpta-stability-leak-way.md#section1658571616574)。
+详见[开发态快速定位Native泄漏](bpta-native-leak-in-develop.md)。
 
 ### 分析步骤
 
 1. 某应用发生PSS泄漏，分析采样文件，发现峰值内存TopPssMemory为2.9GB左右，且内存一直增长。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/zv1xeTEkTQStvNFrGmvY9Q/zh-cn_image_0000002404045437.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/RqjNEJiVTT-N-0MgGP103w/zh-cn_image_0000002404045437.png)
 2. 分析smaps日志，发现本例当前应用jemalloc大小2.6GB（Pss 1.5GB + SwapPss 1.1GB），占总内存的90%+，因此怀疑堆内存泄漏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/zDMSOufqSB-0Tyag_Enk6w/zh-cn_image_0000002370565616.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/AtnJUM1NTGCNProecsurHw/zh-cn_image_0000002370565616.png)
 3. 按照[资源泄漏类问题分析方法](bpta-stability-leak-way.md)基于NMD和profiler继续分析：
 
    观察NMD信息发现，size=12582912字节的内存块占用最多（allocated值最大），优先怀疑该内存块。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/Pg4OiGHLRBOi5m4GRkdhEQ/zh-cn_image_0000002404125253.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/xKOqrJjZTlKK91eR_jgxcA/zh-cn_image_0000002404125253.png)
 4. 分析profiler日志：
    * 方法一：将获取到的profiler文件导入DevEco Studio Profiler插件中进行分析，通过将profile框选All Heap，解析profiler，选择Created & Existing，内存块会按照占用比例排序，此处展开的栈中，存在内存占用比例为98%的可疑点，展开可疑点发现其中大头是“operator new(unsigned long)”申请了89次。此时，将步骤3中NMD找到的size=12582912字节的内存块乘以89再对齐是GB单位，大小恰好是1.04G左右，由此可确认进程的真正泄漏点。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/zIoSZvfnQh2MmeznTtAeJQ/zh-cn_image_0000002370405708.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/tdvGQJ9qQjeRVyVfYFoDDA/zh-cn_image_0000002370405708.png "点击放大")
    * 方法二：本地搭建[Smartperf](https://gitcode.com/openharmony-sig/smartperf)环境，并导入profiler日志进行解析，框选All Heap，解析profiler，选择Created & Existing，在搜索框中搜索12582912字节，并查看调用栈，确认泄漏点。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/JzQWXPqtSSOQc380nUZO5Q/zh-cn_image_0000002404045445.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/Q8up06SfRsyB4nc8mBu3Jg/zh-cn_image_0000002404045445.png)
 5. 分析代码：bitmapBuffer new后只在异常分支释放了内存，主分支未释放。
 
 ### 修复方法
@@ -122,13 +120,13 @@ content_hash: sha256:494254378dfc6598f5904e93004d178abdb4f34fd2485b8c4988b9e12ef
 
 1. 分析sample文件，可确认整机ION内存在16:37-16:52期间内存波动较明显。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/YadZhWGlT82Ym1xHrCE9GQ/zh-cn_image_0000002370565620.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/u93qyme5RvyNc58UQFu7zQ/zh-cn_image_0000002370565620.png)
 2. 根据memleak-kernel-[module]-0-[timestamp].txt中ION节点信息，看到上报进程process7的ION内存占用3.3G，基本可以确定第一步中的内存增长时间段就是process7进程泄漏时间段。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/PoSdye-YTNGMFpeprt5zWw/zh-cn_image_0000002404125257.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/OLRiMtUURUqCi8xFGQZnzQ/zh-cn_image_0000002404125257.png)
 3. 进一步查看process7进程详细ION内存信息，主要是192512000和48128000 bytes大小的内存块占用，再结合内存增长时间段的日志，以及这些buffer都设定了pixelmap name，确认是ImageEditorCallback存在ION泄漏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/n7hABFbiQAKdJhWR8VB6QA/zh-cn_image_0000002370405712.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/6uOkU0Z2QZmMtv-TKH4F7g/zh-cn_image_0000002370405712.png)
 4. 根据pixelmap name已确定创建pixelmap的位置（由于开发者已通过[setMemoryNameSync](https://gitcode.com/openharmony/docs/blob/c897489afd3a7403adfff79f20b8596ca05f7bcf/zh-cn/application-dev/reference/apis-image-kit/js-apis-image.md#setmemorynamesync13)接口接入能力，所以能快速定位到pixelmap创建位置），查看相关代码确认问题根因：创建pixelmap后未关闭句柄。
 
 ### 修复方法
@@ -158,42 +156,42 @@ content_hash: sha256:494254378dfc6598f5904e93004d178abdb4f34fd2485b8c4988b9e12ef
 
 某service上报句柄泄漏，/system/lib占用的so句柄个数超过5000。
 
-```
-1. time: 2024/07/09 08:32:16
-2. pid: 1386
-3. process: XXX
-4. leaked fd nums: 5022
-5. FdCount    FileDescriptor
-6. *****************************
-7. Leaked fd Top 10:
-8. 179    /system/lib64/libinsightintent_common.z.so
-9. 179    /system/lib64/platformsdk/libzuri.z.so
-10. 179    /system/lib64/platformsdk/libpdfinner.z.so
-11. 179    /system/lib64/platformsdk/libwant.z.so
-12. 179    /system/lib64/platformsdk/libtokenid_sdk.z.so
-13. 179    /system/lib64/chipset-pub-sdk/libcrypto_openssl.z.so
-14. 179    /system/lib64/chipset-pub-sdk/libjsoncpp.z.so
-15. 179    /system/lib64/libai_datasync_innerapi.z.so
-16. 179    /system/lib64/libai_framework_innerapi.z.so
-17. 179    /system/lib64/libai_label_detect_innerapi.z.so
-18. Top Dir Type 10:
-19. 5012    /system/lib
-20. 3    /dev/null
-21. 1    /dev/binder
-22. 1    /dev/kmsg
-23. 1    /dev/tty
-24. 1    /sys/kernel/debug/tracing/trace_marker
-25. *****************************
-26. LOGGER_MEMCHECK_FD_STACK_INFO
-27. pid: 1386
-28. get stack time: 2024/07/09 08:42:22
-29. ==============================FdTrack Stack==============================
-30. Generated by HiviewDFX @OpenHarmony
-31. ==============================Sorted by num==============================
-32. num 1134 bt [/system/lib64/libfdleak_tracker.so+0x20248] [/system/lib/ld-musl-aarch64.so.1+0x144dfc] [/system/lib/ld-musl-aarch64.so.1+0xba5b0] [/system/lib/ld-musl-aarch64.so.1+0xd1ac] [/system/lib/ld-musl-aarch64.so.1+0x7c30] [/system/lib/ld-musl-aarch64.so.1+0x48e8] [/system/lib/ld-musl-aarch64.so.1+0x62bc] [/system/lib64/platformsdk/libsamgr_common.z.so+0xdb88] [/system/lib64/platformsdk/libsamgr_common.z.so+0xde58]
-33. num 42 bt [/system/lib64/libfdleak_tracker.so+0x20248] [/system/lib/ld-musl-aarch64.so.1+0x144dfc] [/system/lib/ld-musl-aarch64.so.1+0xba5b0] [/system/lib/ld-musl-aarch64.so.1+0xd1ac] [/system/lib/ld-musl-aarch64.so.1+0x7c30] [/system/lib/ld-musl-aarch64.so.1+0x6250] [/system/lib64/platformsdk/libsamgr_common.z.so+0xdb88] [/system/lib64/platformsdk/libsamgr_common.z.so+0xde58] [/system/lib64/platformsdk/libsystem_ability_fwk.z.so+0x127d0]
-34. num 1 bt [/system/lib64/libfdleak_tracker.so+0x20248] [/system/lib/ld-musl-aarch64.so.1+0x144dfc] [/system/lib64/platformsdk/libfwmark_client.z.so+0x4208] [/system/lib64/chipset-pub-sdk/libhisysevent.z.so+0x13abc] [/system/lib64/chipset-pub-sdk/libhisysevent.z.so+0x13eec] [/system/lib64/chipset-pub-sdk/libhisysevent.z.so+0x7b08] [/system/lib64/platformsdk/libsamgr_common.z.so+0x26c38] [/system/lib64/platformsdk/libsamgr_common.z.so+0x26998] [/system/lib64/platformsdk/libsamgr_common.z.so+0x294ec]
-35. END
+```screen
+time: 2024/07/09 08:32:16
+pid: 1386
+process: XXX
+leaked fd nums: 5022
+FdCount	FileDescriptor
+*****************************
+Leaked fd Top 10:
+179	/system/lib64/libinsightintent_common.z.so
+179	/system/lib64/platformsdk/libzuri.z.so
+179	/system/lib64/platformsdk/libpdfinner.z.so
+179	/system/lib64/platformsdk/libwant.z.so
+179	/system/lib64/platformsdk/libtokenid_sdk.z.so
+179	/system/lib64/chipset-pub-sdk/libcrypto_openssl.z.so
+179	/system/lib64/chipset-pub-sdk/libjsoncpp.z.so
+179	/system/lib64/libai_datasync_innerapi.z.so
+179	/system/lib64/libai_framework_innerapi.z.so
+179	/system/lib64/libai_label_detect_innerapi.z.so
+Top Dir Type 10:
+5012	/system/lib
+3	/dev/null
+1	/dev/binder
+1	/dev/kmsg
+1	/dev/tty
+1	/sys/kernel/debug/tracing/trace_marker
+*****************************
+LOGGER_MEMCHECK_FD_STACK_INFO
+pid: 1386
+get stack time: 2024/07/09 08:42:22
+==============================FdTrack Stack==============================
+Generated by HiviewDFX @OpenHarmony
+==============================Sorted by num==============================
+num 1134 bt [/system/lib64/libfdleak_tracker.so+0x20248] [/system/lib/ld-musl-aarch64.so.1+0x144dfc] [/system/lib/ld-musl-aarch64.so.1+0xba5b0] [/system/lib/ld-musl-aarch64.so.1+0xd1ac] [/system/lib/ld-musl-aarch64.so.1+0x7c30] [/system/lib/ld-musl-aarch64.so.1+0x48e8] [/system/lib/ld-musl-aarch64.so.1+0x62bc] [/system/lib64/platformsdk/libsamgr_common.z.so+0xdb88] [/system/lib64/platformsdk/libsamgr_common.z.so+0xde58] 
+num 42 bt [/system/lib64/libfdleak_tracker.so+0x20248] [/system/lib/ld-musl-aarch64.so.1+0x144dfc] [/system/lib/ld-musl-aarch64.so.1+0xba5b0] [/system/lib/ld-musl-aarch64.so.1+0xd1ac] [/system/lib/ld-musl-aarch64.so.1+0x7c30] [/system/lib/ld-musl-aarch64.so.1+0x6250] [/system/lib64/platformsdk/libsamgr_common.z.so+0xdb88] [/system/lib64/platformsdk/libsamgr_common.z.so+0xde58] [/system/lib64/platformsdk/libsystem_ability_fwk.z.so+0x127d0] 
+num 1 bt [/system/lib64/libfdleak_tracker.so+0x20248] [/system/lib/ld-musl-aarch64.so.1+0x144dfc] [/system/lib64/platformsdk/libfwmark_client.z.so+0x4208] [/system/lib64/chipset-pub-sdk/libhisysevent.z.so+0x13abc] [/system/lib64/chipset-pub-sdk/libhisysevent.z.so+0x13eec] [/system/lib64/chipset-pub-sdk/libhisysevent.z.so+0x7b08] [/system/lib64/platformsdk/libsamgr_common.z.so+0x26c38] [/system/lib64/platformsdk/libsamgr_common.z.so+0x26998] [/system/lib64/platformsdk/libsamgr_common.z.so+0x294ec] 
+END
 ```
 
 分析：
@@ -203,19 +201,19 @@ content_hash: sha256:494254378dfc6598f5904e93004d178abdb4f34fd2485b8c4988b9e12ef
 3. 获取这些so的符号表（libfdleak\_tracker.so是维测用的so，可忽略），通过[addr2line](https://llvm.org/docs/CommandGuide/llvm-symbolizer.html)获取调用栈。
 4. 对应的代码调用顺序如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/ASXvg8z7R_68v4Lt2Nwldg/zh-cn_image_0000002404045449.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/5iUGIJs0Qj-RSivHQdz32Q/zh-cn_image_0000002404045449.png)
 
    dlopen获取的句柄的位置如下，fd存在saProfile，需要进一步查看saProfile的释放时机。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/iDIuCoQMTwSirLqE8CuNvQ/zh-cn_image_0000002370565624.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/FG4vGQOsSiCBygEhfDrV-w/zh-cn_image_0000002370565624.png "点击放大")
 
    搜索saProfile的释放位置，发现只有在ParseUtil对象析构时才会释放fd资源。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/yfVH0E4wSPS-6AHT-o-JVQ/zh-cn_image_0000002404125261.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/ksiTIwGNRXOX-ElqPfIxVQ/zh-cn_image_0000002404125261.png "点击放大")
 
    找到调用者的位置，发现定义了一个类内的私有变量，而这个类的对象一直没析构，导致profileParser\_一直没析构，从而导致fd资源一直未释放。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/eT8WjdaeRQ6C1FHIEd73cw/zh-cn_image_0000002370405716.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/iNOMxOjcSE6nQa0zUH4ASg/zh-cn_image_0000002370405716.png)
 
 ### 修复方法
 
@@ -243,15 +241,15 @@ content_hash: sha256:494254378dfc6598f5904e93004d178abdb4f34fd2485b8c4988b9e12ef
 
 某应用network和Network File Thread线程泄漏，运维态泄漏检测机制抓取的日志如下：
 
-```
-1. process: 某应用
-2. summary: 826
-
-4. Top 10 Thread Name:
-5. 309  network
-6. 309  Network File Th
-7. ......
-8. =================================
+```screen
+process: 某应用
+summary: 826
+ 
+Top 10 Thread Name:
+309  network
+309  Network File Th
+......
+=================================
 ```
 
 1. 流水/故障日志分析
@@ -271,7 +269,7 @@ content_hash: sha256:494254378dfc6598f5904e93004d178abdb4f34fd2485b8c4988b9e12ef
 1. HttpClient.getRequestSize()接口判断当前是否还有未结束的请求
 2. HttpClient.releaseHttpClient()接口释放线程
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/PLnfXRKNQ-61lgUAmJp93A/zh-cn_image_0000002404045453.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/UR51J_y-TP20pB8UmhkiRA/zh-cn_image_0000002404045453.png)
 
 ### 建议与总结
 

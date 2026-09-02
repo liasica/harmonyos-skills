@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-attribu
 title: 接入调试功能
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用归因服务 > 接入调试功能
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:21+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d0cc4018427f67963a5103d8573739ae23588d7ace25f805aaaf1f9f24a84bef
+scraped_at: 2026-09-02T14:59:53+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:4e08875dcfa9e4740586f967b87c82831e700178c24043f56a0044c9578dc7fc
 ---
 
 应用归因服务为开发者提供接入调试能力，支持开发者在接入过程中进行自助调试，通过调用调试接口验证接入的准确性及归因结果回传等基础能力，从而提升接入效率。
@@ -37,104 +37,150 @@ content_hash: sha256:d0cc4018427f67963a5103d8573739ae23588d7ace25f805aaaf1f9f24a
 
 1. 导入相关模块。
 
-   ```
-   1. import { attributionTestManager } from '@kit.AppGalleryKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
-   3. import { BusinessError,deviceInfo} from '@kit.BasicServicesKit';
+   ```typescript
+   import { BusinessError, deviceInfo } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { SignUtil } from '../common/utils/SignUtil';
+   import { util } from '@kit.ArkTS';
+   // ...
+   import { attributionTestManager } from '@kit.AppGalleryKit';
    ```
 2. 构造参数，入参为[AdSourceInfo](../harmonyos-references/store-attributiontestmanager.md#adsourceinfo)、publickey。
 
-   ```
-   1. // 注册归因角色时提供给应用归因服务云侧的公钥
-   2. let publicKey: string = '';
-   3. let adSourceInfo: attributionTestManager.AdSourceInfo = {
-   4. // 可以使用虚拟的adTechId
-   5. adTechId: '2******8',
-   6. campaignId: '',
-   7. destinationId: '1*******8',
-   8. sourceType: attributionTestManager.SourceType.IMPRESSION,
-   9. mmpIds: ['1******8', '2******9'],
-   10. serviceTag: 'testServiceTag',
-   11. nonce: '123***2',
-   12. timestamp: Date.now(),
-   13. signature: 'MEQCIEQlmZ****zKBSE8QnhLTIHZZZ****ZpRqRxHss65Ko****JgJKjdrWdkL****juEx2RmFS7da****ZRVZ8RyMyUXg=='
-   14. };
-   15. let osApiVersion: number = deviceInfo.sdkApiVersion;
-   16. if (osApiVersion >= 22) {
-   17. adSourceInfo.campaignId = '1*******9';
-   18. } else {
-   19. adSourceInfo.campaignId = '1****6';
-   20. }
+   ```typescript
+   // 应用归因服务云平台注册角色时提供的公钥和对应的私钥。
+   let privateKey: string = '';
+   let publicKey: string = '';
+   // 可以使用虚拟的adTechId，长度固定为8个字符。
+   let adTechId: string = '1******8';
+   // 广告平台创建的广告任务ID。
+   // 自API 12起，campaignId长度小于等于6个字符
+   // 自API 22起，campaignId长度小于等于9个字符
+   let campaignId: string = '';
+   let osApiVersion: number = deviceInfo.sdkApiVersion;
+   if (osApiVersion >= 22) {
+       campaignId = '1*******9';
+   } else {
+       campaignId = '1****6';
+   }
+   // 开发者应用上架华为应用市场的appId，不带C
+   let destinationId: string = '1******8';
+   // 归因监测平台id
+   let mmpIds: string[] = ['1******8', '2******9'];
+   // 分发平台关注的业务信息
+   let serviceTag: string = 'testServiceTag';
+   // 用于计算签名的随机数，不带'-'
+   let nonce: string = util.generateRandomUUID().replace(/-/g, '');
+   // 时间戳.
+   let timestamp: number = Date.now()
+   let adSourceInfo: attributionTestManager.AdSourceInfo = {
+       adTechId: adTechId,
+       campaignId: campaignId,
+       destinationId: destinationId,
+       // 曝光.
+       sourceType: attributionTestManager.SourceType.IMPRESSION,
+       mmpIds: mmpIds,
+       serviceTag: serviceTag,
+       nonce: nonce,
+       timestamp: timestamp,
+       // 签名值.
+       signature: await SignUtil.getSign(this.getUIContext(),
+           SignUtil.genSignContent(adTechId, campaignId, destinationId, mmpIds, serviceTag, nonce, timestamp),
+           privateKey)
+   };
    ```
 3. 调用[attributionTestManager.validateSource](../harmonyos-references/store-attributiontestmanager.md#attributiontestmanagervalidatesource)方法验证归因来源。
 
-   ```
-   1. attributionTestManager.validateSource(adSourceInfo, publicKey).then(() => {
-   2. hilog.info(0, "testTag", 'Succeeded in validating source.');
-   3. }).catch((error: BusinessError) => {
-   4. hilog.error(0, "testTag", `testValidateSource failed.code is ${error.code}, message is ${error.message}`);
-   5. })
+   ```typescript
+   try {
+       // ...
+       await attributionTestManager.validateSource(adSourceInfo, publicKey);
+       hilog.info(0, TAG, 'validateSource success.');
+       // ...
+   } catch (error) {
+       hilog.error(0, TAG, `validateSource error. code is ${error.code}, message is ${error.message}`);
+       // ...
+   }
    ```
 
 ### 设置归因结果回传
 
 1. 导入相关模块。
 
-   ```
-   1. import { attributionTestManager } from '@kit.AppGalleryKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
-   3. import { BusinessError,deviceInfo } from '@kit.BasicServicesKit';
+   ```typescript
+   import { BusinessError, deviceInfo } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   // ...
+   import { attributionTestManager } from '@kit.AppGalleryKit';
    ```
 2. 构造参数，入参为[PostbackInfo](../harmonyos-references/store-attributiontestmanager.md#postbackinfo)。
 
-   ```
-   1. let postbackInfo: attributionTestManager.PostbackInfo = {
-   2. adTechId: '1******8',
-   3. campaignId: '',
-   4. sourceId: '1*******8',
-   5. destinationId: '1*******8',
-   6. serviceTag: 'testServiceTag',
-   7. businessScene: 5,
-   8. triggerData: 123,
-   9. postbackUrl: 'https://xxx.com'
-   10. };
-   11. let osApiVersion: number = deviceInfo.sdkApiVersion;
-   12. if (osApiVersion >= 22) {
-   13. postbackInfo.campaignId = '1*******9';
-   14. } else {
-   15. postbackInfo.campaignId = '1****6';
-   16. }
+   ```typescript
+   // 广告平台创建的广告任务ID。
+   // 自API 12起，campaignId长度小于等于6个字符
+   // 自API 22起，campaignId长度小于等于9个字符
+   let campaignId: string = '';
+   let osApiVersion: number = deviceInfo.sdkApiVersion;
+   if (osApiVersion >= 22) {
+       campaignId = '1*******9';
+   } else {
+       campaignId = '1****6';
+   }
+   let postbackInfo: attributionTestManager.PostbackInfo = {
+       // 分发平台对应的归因角色ID，在应用归因云侧注册应用生态伙伴角色时，由应用归因服务分配
+       adTechId: '1******8',
+       campaignId: campaignId,
+       // 开发者应用上架华为应用市场的appId，不带C
+       destinationId: '1******8',
+       // 媒体应用id
+       sourceId: '1******8',
+       // 分发平台关注的业务信息
+       serviceTag: 'testServiceTag',
+       triggerData: 123,
+       businessScene: 5,
+       // 需要回传服务器地址
+       postbackUrl: 'xxx.com'
+   };
    ```
 3. 调用[attributionTestManager.setPostback](../harmonyos-references/store-attributiontestmanager.md#attributiontestmanagersetpostback)方法设置归因结果回传数据。
 
-   ```
-   1. attributionTestManager.setPostback(postbackInfo).then(() => {
-   2. hilog.info(0, "testTag", 'Succeeded in setting postback.');
-   3. }).catch((error: BusinessError) => {
-   4. hilog.error(0, "testTag", `setPostback onError.code is ${error.code}, message is ${error.message}`);
-   5. })
+   ```typescript
+   try {
+       // ...
+       await attributionTestManager.setPostback(postbackInfo);
+       hilog.info(0, TAG, 'setPostback success.');
+       // ...
+   } catch (error) {
+       hilog.error(0, TAG, `setPostback error. code is ${error.code}, message is ${error.message}`);
+       // ...
+   }
    ```
 
 ### 触发归因结果回传
 
 1. 导入相关模块。
 
-   ```
-   1. import { attributionTestManager } from '@kit.AppGalleryKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
-   3. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { BusinessError, deviceInfo } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   // ...
+   import { attributionTestManager } from '@kit.AppGalleryKit';
    ```
 2. 构造参数adTechId。
 
-   ```
-   1. let adTechId: string = '1******8';
+   ```typescript
+   let adTechId: string = '1******8';
    ```
 3. 调用[attributionTestManager.flushPostbacks](../harmonyos-references/store-attributiontestmanager.md#attributiontestmanagerflushpostbacks)方法触发归因结果回传。
 
-   ```
-   1. attributionTestManager.flushPostbacks(adTechId).then(() => {
-   2. hilog.info(0, "testTag", 'Succeeded in flushing postbacks.');
-   3. }).catch((error: BusinessError) => {
-   4. hilog.error(0, "testTag", `flushPostbacks onError.code is ${error.code}, message is ${error.message}`);
-   5. })
+   ```typescript
+   try {
+       // ...
+       await attributionTestManager.flushPostbacks(adTechId);
+       hilog.info(0, TAG, 'flushPostbacks success.');
+       // ...
+   } catch (error) {
+       hilog.error(0, TAG, `flushPostbacks error. code is ${error.code}, message is ${error.message}`);
+       // ...
+   }
    ```

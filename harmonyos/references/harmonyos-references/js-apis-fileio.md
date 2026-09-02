@@ -3,55 +3,49 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.fileio (文件管理)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > 已停止维护的接口 > @ohos.fileio (文件管理)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:48+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ec13ad36faf0ad436f24f0c32b01a9d7e61072030e971f6d072ad2bcd404fa53
+scraped_at: 2026-09-02T15:01:32+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:dc5f196b9cb8208fb68467b54ac74e4c47a412e1f107067fea0303dedb9e1262
 ---
 
 该模块提供文件存储管理能力，包括文件基本管理、文件目录管理、文件信息统计、文件流式读写等常用功能。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本模块从API version 9开始废弃，建议使用[@ohos.file.fs](js-apis-file-fs.md)替代。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import fileio from '@ohos.fileio';
+```ts
+import fileio from '@ohos.fileio';
 ```
 
 ## 使用说明
 
-PhonePC/2in1TabletTVWearable
-
 使用该功能模块对文件/目录进行操作前，需要先获取其应用沙箱路径，获取方式及其接口用法请参考：
 
-```
-1. import UIAbility from '@ohos.app.ability.UIAbility';
-2. import window from '@ohos.window';
+```ts
+ import UIAbility from '@ohos.app.ability.UIAbility';
+ import window from '@ohos.window';
 
-4. export default class EntryAbility extends UIAbility {
-5. onWindowStageCreate(windowStage: window.WindowStage) {
-6. let context = this.context;
-7. let pathDir = context.filesDir;
-8. }
-9. }
+ export default class EntryAbility extends UIAbility {
+   onWindowStageCreate(windowStage: window.WindowStage) {
+     let context = this.context;
+     let pathDir = context.filesDir;
+   }
+ }
 ```
 
 使用该功能模块对文件/目录进行操作前，需要先获取其应用沙箱路径，获取方式及其接口用法请参考：[应用上下文Context-获取应用文件路径](../harmonyos-guides/application-context-stage.md#获取应用文件路径)
 
 ## fileio.stat
 
-PhonePC/2in1TabletTVWearable
-
 stat(path: string): Promise<Stat>
 
 获取文件信息，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.stat](js-apis-file-fs.md#fileiostat)替代。
 
@@ -71,25 +65,23 @@ stat(path: string): Promise<Stat>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "test.txt";
-3. fileio.stat(filePath).then((stat: fileio.Stat) => {
-4. console.info("getFileInfo succeed, the size of file is " + stat.size);
-5. }).catch((err: BusinessError) => {
-6. console.error("getFileInfo failed with error:" + err);
-7. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "test.txt";
+fileio.stat(filePath).then((stat: fileio.Stat) => {
+  console.info("getFileInfo succeed, the size of file is " + stat.size);
+}).catch((err: BusinessError) => {
+  console.error("getFileInfo failed with error:" + err);
+});
 ```
 
 ## fileio.stat
-
-PhonePC/2in1TabletTVWearable
 
 stat(path: string, callback: AsyncCallback<Stat>): void
 
 获取文件信息，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.stat](js-apis-file-fs.md#fileiostat-1)替代。
 
@@ -104,22 +96,20 @@ stat(path: string, callback: AsyncCallback<Stat>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. fileio.stat(pathDir, (err: BusinessError, stat: fileio.Stat) => {
-3. // example code in Stat
-4. });
+```ts
+import { BusinessError } from '@ohos.base';
+fileio.stat(pathDir, (err: BusinessError, stat: fileio.Stat) => {
+  // example code in Stat
+});
 ```
 
 ## fileio.statSync
-
-PhonePC/2in1TabletTVWearable
 
 statSync(path: string): Stat
 
 以同步方法获取文件的信息。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.statSync](js-apis-file-fs.md#fileiostatsync)替代。
 
@@ -139,20 +129,18 @@ statSync(path: string): Stat
 
 **示例：**
 
-```
-1. let stat = fileio.statSync(pathDir);
-2. // example code in Stat
+```ts
+let stat = fileio.statSync(pathDir);
+// example code in Stat
 ```
 
 ## fileio.opendir
-
-PhonePC/2in1TabletTVWearable
 
 opendir(path: string): Promise<Dir>
 
 打开文件目录，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.listFile](js-apis-file-fs.md#fileiolistfile)替代。
 
@@ -172,25 +160,23 @@ opendir(path: string): Promise<Dir>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let dirPath = pathDir + "/testDir";
-3. fileio.opendir(dirPath).then((dir: fileio.Dir) => {
-4. console.info("opendir succeed");
-5. }).catch((err: BusinessError) => {
-6. console.error("opendir failed with error:" + err);
-7. });
+```ts
+import { BusinessError } from '@ohos.base';
+let dirPath = pathDir + "/testDir";
+fileio.opendir(dirPath).then((dir: fileio.Dir) => {
+  console.info("opendir succeed");
+}).catch((err: BusinessError) => {
+  console.error("opendir failed with error:" + err);
+});
 ```
 
 ## fileio.opendir
-
-PhonePC/2in1TabletTVWearable
 
 opendir(path: string, callback: AsyncCallback<Dir>): void
 
 打开文件目录，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.listFile](js-apis-file-fs.md#fileiolistfile-1)替代。
 
@@ -205,23 +191,21 @@ opendir(path: string, callback: AsyncCallback<Dir>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. fileio.opendir(pathDir, (err: BusinessError, dir: fileio.Dir) => {
-3. // example code in Dir struct
-4. // use read/readSync/close
-5. });
+```ts
+import { BusinessError } from '@ohos.base';
+fileio.opendir(pathDir, (err: BusinessError, dir: fileio.Dir) => {
+  // example code in Dir struct
+  // use read/readSync/close
+});
 ```
 
 ## fileio.opendirSync
-
-PhonePC/2in1TabletTVWearable
 
 opendirSync(path: string): Dir
 
 以同步方法打开文件目录。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.listFileSync](js-apis-file-fs.md#fileiolistfilesync)替代。
 
@@ -241,21 +225,19 @@ opendirSync(path: string): Dir
 
 **示例：**
 
-```
-1. let dir = fileio.opendirSync(pathDir);
-2. // example code in Dir struct
-3. // use read/readSync/close
+```ts
+let dir = fileio.opendirSync(pathDir);
+// example code in Dir struct
+// use read/readSync/close
 ```
 
 ## fileio.access
-
-PhonePC/2in1TabletTVWearable
 
 access(path: string, mode?: number): Promise<void>
 
 检查当前进程是否可访问某文件，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.access](js-apis-file-fs.md#fileioaccess)替代。
 
@@ -276,25 +258,23 @@ access(path: string, mode?: number): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. fileio.access(filePath).then(() => {
-4. console.info("access succeed");
-5. }).catch((err: BusinessError) => {
-6. console.error("access failed with error:" + err);
-7. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+fileio.access(filePath).then(() => {
+  console.info("access succeed");
+}).catch((err: BusinessError) => {
+  console.error("access failed with error:" + err);
+});
 ```
 
 ## fileio.access
-
-PhonePC/2in1TabletTVWearable
 
 access(path: string, mode?: number, callback: AsyncCallback<void>): void
 
 检查当前进程是否可访问某文件，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.access](js-apis-file-fs.md#fileioaccess-1)替代。
 
@@ -310,23 +290,21 @@ access(path: string, mode?: number, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. fileio.access(filePath, (err: BusinessError) => {
-4. // do something
-5. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+fileio.access(filePath, (err: BusinessError) => {
+  // do something
+});
 ```
 
 ## fileio.accessSync
-
-PhonePC/2in1TabletTVWearable
 
 accessSync(path: string, mode?: number): void
 
 以同步方法检查当前进程是否可访问某文件。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.accessSync](js-apis-file-fs.md#fileioaccesssync)替代。
 
@@ -341,26 +319,24 @@ accessSync(path: string, mode?: number): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. try {
-4. fileio.accessSync(filePath);
-5. } catch(error) {
-6. let err: BusinessError = error as BusinessError;
-7. console.error("accessSync failed with error:" + err);
-8. }
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+try {
+  fileio.accessSync(filePath);
+} catch(error) {
+  let err: BusinessError = error as BusinessError;
+  console.error("accessSync failed with error:" + err);
+}
 ```
 
 ## fileio.close7+
-
-PhonePC/2in1TabletTVWearable
 
 close(fd: number): Promise<void>
 
 关闭文件，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.close](js-apis-file-fs.md#fileioclose)替代。
 
@@ -380,26 +356,24 @@ close(fd: number): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let fd = fileio.openSync(filePath);
-4. fileio.close(fd).then(() => {
-5. console.info("close file succeed");
-6. }).catch((err: BusinessError) => {
-7. console.error("close file failed with error:" + err);
-8. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath);
+fileio.close(fd).then(() => {
+  console.info("close file succeed");
+}).catch((err: BusinessError) => {
+  console.error("close file failed with error:" + err);
+});
 ```
 
 ## fileio.close7+
-
-PhonePC/2in1TabletTVWearable
 
 close(fd: number, callback: AsyncCallback<void>): void
 
 关闭文件，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.close](js-apis-file-fs.md#fileioclose-1)替代。
 
@@ -414,24 +388,22 @@ close(fd: number, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let fd = fileio.openSync(filePath);
-4. fileio.close(fd, (err: BusinessError) => {
-5. // do something
-6. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath);
+fileio.close(fd, (err: BusinessError) => {
+  // do something
+});
 ```
 
 ## fileio.closeSync
-
-PhonePC/2in1TabletTVWearable
 
 closeSync(fd: number): void
 
 以同步方法关闭文件。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.closeSync](js-apis-file-fs.md#fileioclosesync)替代。
 
@@ -445,21 +417,19 @@ closeSync(fd: number): void
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. let fd = fileio.openSync(filePath);
-3. fileio.closeSync(fd);
+```ts
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath);
+fileio.closeSync(fd);
 ```
 
 ## fileio.copyFile
-
-PhonePC/2in1TabletTVWearable
 
 copyFile(src: string|number, dest: string|number, mode?: number): Promise<void>
 
 复制文件，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.copyFile](js-apis-file-fs.md#fileiocopyfile)替代。
 
@@ -481,26 +451,24 @@ copyFile(src: string|number, dest: string|number, mode?: number): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let srcPath = pathDir + "srcDir/test.txt";
-3. let dstPath = pathDir + "dstDir/test.txt";
-4. fileio.copyFile(srcPath, dstPath).then(() => {
-5. console.info("copyFile succeed");
-6. }).catch((err: BusinessError) => {
-7. console.error("copyFile failed with error:" + err);
-8. });
+```ts
+import { BusinessError } from '@ohos.base';
+let srcPath = pathDir + "srcDir/test.txt";
+let dstPath = pathDir + "dstDir/test.txt";
+fileio.copyFile(srcPath, dstPath).then(() => {
+  console.info("copyFile succeed");
+}).catch((err: BusinessError) => {
+  console.error("copyFile failed with error:" + err);
+});
 ```
 
 ## fileio.copyFile
-
-PhonePC/2in1TabletTVWearable
 
 copyFile(src: string|number, dest: string|number, mode: number, callback: AsyncCallback<void>): void
 
 复制文件，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.copyFile](js-apis-file-fs.md#fileiocopyfile-1)替代。
 
@@ -517,24 +485,22 @@ copyFile(src: string|number, dest: string|number, mode: number, callback: AsyncC
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let srcPath = pathDir + "srcDir/test.txt";
-3. let dstPath = pathDir + "dstDir/test.txt";
-4. fileio.copyFile(srcPath, dstPath, (err: BusinessError) => {
-5. // do something
-6. });
+```ts
+import { BusinessError } from '@ohos.base';
+let srcPath = pathDir + "srcDir/test.txt";
+let dstPath = pathDir + "dstDir/test.txt";
+fileio.copyFile(srcPath, dstPath, (err: BusinessError) => {
+  // do something
+});
 ```
 
 ## fileio.copyFileSync
-
-PhonePC/2in1TabletTVWearable
 
 copyFileSync(src: string|number, dest: string|number, mode?: number): void
 
 以同步方法复制文件。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.copyFileSync](js-apis-file-fs.md#fileiocopyfilesync)替代。
 
@@ -550,21 +516,19 @@ copyFileSync(src: string|number, dest: string|number, mode?: number): void
 
 **示例：**
 
-```
-1. let srcPath = pathDir + "srcDir/test.txt";
-2. let dstPath = pathDir + "dstDir/test.txt";
-3. fileio.copyFileSync(srcPath, dstPath);
+```ts
+let srcPath = pathDir + "srcDir/test.txt";
+let dstPath = pathDir + "dstDir/test.txt";
+fileio.copyFileSync(srcPath, dstPath);
 ```
 
 ## fileio.mkdir
-
-PhonePC/2in1TabletTVWearable
 
 mkdir(path: string, mode?: number): Promise<void>
 
 创建目录，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.mkdir](js-apis-file-fs.md#fileiomkdir)替代。
 
@@ -585,25 +549,23 @@ mkdir(path: string, mode?: number): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let dirPath = pathDir + '/testDir';
-3. fileio.mkdir(dirPath).then(() => {
-4. console.info("mkdir succeed");
-5. }).catch((error: BusinessError) => {
-6. console.error("mkdir failed with error:" + error);
-7. });
+```ts
+import { BusinessError } from '@ohos.base';
+let dirPath = pathDir + '/testDir';
+fileio.mkdir(dirPath).then(() => {
+  console.info("mkdir succeed");
+}).catch((error: BusinessError) => {
+  console.error("mkdir failed with error:" + error);
+});
 ```
 
 ## fileio.mkdir
-
-PhonePC/2in1TabletTVWearable
 
 mkdir(path: string, mode: number, callback: AsyncCallback<void>): void
 
 创建目录，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.mkdir](js-apis-file-fs.md#fileiomkdir-1)替代。
 
@@ -619,23 +581,21 @@ mkdir(path: string, mode: number, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let dirPath = pathDir + '/testDir';
-3. fileio.mkdir(dirPath, (err: BusinessError) => {
-4. console.info("mkdir succeed");
-5. });
+```ts
+import { BusinessError } from '@ohos.base';
+let dirPath = pathDir + '/testDir';
+fileio.mkdir(dirPath, (err: BusinessError) => {
+  console.info("mkdir succeed");
+});
 ```
 
 ## fileio.mkdirSync
-
-PhonePC/2in1TabletTVWearable
 
 mkdirSync(path: string, mode?: number): void
 
 以同步方法创建目录。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.mkdirSync](js-apis-file-fs.md#fileiomkdirsync)替代。
 
@@ -650,20 +610,18 @@ mkdirSync(path: string, mode?: number): void
 
 **示例：**
 
-```
-1. let dirPath = pathDir + '/testDir';
-2. fileio.mkdirSync(dirPath);
+```ts
+let dirPath = pathDir + '/testDir';
+fileio.mkdirSync(dirPath);
 ```
 
 ## fileio.open7+
-
-PhonePC/2in1TabletTVWearable
 
 open(path: string, flags?: number, mode?: number): Promise<number>
 
 打开文件，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.open](js-apis-file-fs.md#fileioopen)替代。
 
@@ -685,25 +643,23 @@ open(path: string, flags?: number, mode?: number): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. fileio.open(filePath, 0o1, 0o0200).then((number: number) => {
-4. console.info("open file succeed");
-5. }).catch((err: BusinessError) => {
-6. console.error("open file failed with error:" + err);
-7. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+fileio.open(filePath, 0o1, 0o0200).then((number: number) => {
+  console.info("open file succeed");
+}).catch((err: BusinessError) => {
+  console.error("open file failed with error:" + err);
+});
 ```
 
 ## fileio.open7+
-
-PhonePC/2in1TabletTVWearable
 
 open(path: string, flags: number, mode: number, callback: AsyncCallback<number>): void
 
 打开文件，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.open](js-apis-file-fs.md#fileioopen-1)替代。
 
@@ -720,23 +676,21 @@ open(path: string, flags: number, mode: number, callback: AsyncCallback<number>)
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. fileio.open(filePath, 0, (err: BusinessError, fd: number) => {
-4. // do something
-5. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+fileio.open(filePath, 0, (err: BusinessError, fd: number) => {
+  // do something
+});
 ```
 
 ## fileio.openSync
-
-PhonePC/2in1TabletTVWearable
 
 openSync(path: string, flags?: number, mode?: number): number
 
 以同步方法打开文件。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.openSync](js-apis-file-fs.md#fileioopensync)替代。
 
@@ -758,13 +712,11 @@ openSync(path: string, flags?: number, mode?: number): number
 
 ## fileio.read
 
-PhonePC/2in1TabletTVWearable
-
 read(fd: number, buffer: ArrayBuffer, options?: { offset?: number; length?: number; position?: number; }): Promise<ReadOut>
 
 从文件读取数据，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.read](js-apis-file-fs.md#fileioread)替代。
 
@@ -786,13 +738,11 @@ read(fd: number, buffer: ArrayBuffer, options?: { offset?: number; length?: numb
 
 ## fileio.read
 
-PhonePC/2in1TabletTVWearable
-
 read(fd: number, buffer: ArrayBuffer, options: { offset?: number; length?: number; position?: number; }, callback: AsyncCallback<ReadOut>): void
 
 从文件读取数据，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.read](js-apis-file-fs.md#fileioread-1)替代。
 
@@ -809,13 +759,11 @@ read(fd: number, buffer: ArrayBuffer, options: { offset?: number; length?: numbe
 
 ## fileio.readSync
 
-PhonePC/2in1TabletTVWearable
-
 readSync(fd: number, buffer: ArrayBuffer, options?: { offset?: number; length?: number; position?: number; }): number
 
 以同步方法从文件读取数据。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.readSync](js-apis-file-fs.md#fileioreadsync)替代。
 
@@ -837,22 +785,20 @@ readSync(fd: number, buffer: ArrayBuffer, options?: { offset?: number; length?: 
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. let fd = fileio.openSync(filePath, 0o2);
-3. let buf = new ArrayBuffer(4096);
-4. let num = fileio.readSync(fd, buf);
+```ts
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath, 0o2);
+let buf = new ArrayBuffer(4096);
+let num = fileio.readSync(fd, buf);
 ```
 
 ## fileio.rmdir7+
-
-PhonePC/2in1TabletTVWearable
 
 rmdir(path: string): Promise<void>
 
 删除目录，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.rmdir](js-apis-file-fs.md#fileiormdir)替代。
 
@@ -872,25 +818,23 @@ rmdir(path: string): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let dirPath = pathDir + '/testDir';
-3. fileio.rmdir(dirPath).then(() => {
-4. console.info("rmdir succeed");
-5. }).catch((err: BusinessError) => {
-6. console.error("rmdir failed with error:" + err);
-7. });
+```ts
+import { BusinessError } from '@ohos.base';
+let dirPath = pathDir + '/testDir';
+fileio.rmdir(dirPath).then(() => {
+  console.info("rmdir succeed");
+}).catch((err: BusinessError) => {
+  console.error("rmdir failed with error:" + err);
+});
 ```
 
 ## fileio.rmdir7+
-
-PhonePC/2in1TabletTVWearable
 
 rmdir(path: string, callback: AsyncCallback<void>): void
 
 删除目录，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.rmdir](js-apis-file-fs.md#fileiormdir-1)替代。
 
@@ -905,24 +849,22 @@ rmdir(path: string, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let dirPath = pathDir + '/testDir';
-3. fileio.rmdir(dirPath, (err: BusinessError) => {
-4. // do something
-5. console.info("rmdir succeed");
-6. });
+```ts
+import { BusinessError } from '@ohos.base';
+let dirPath = pathDir + '/testDir';
+fileio.rmdir(dirPath, (err: BusinessError) => {
+  // do something
+  console.info("rmdir succeed");
+});
 ```
 
 ## fileio.rmdirSync7+
-
-PhonePC/2in1TabletTVWearable
 
 rmdirSync(path: string): void
 
 以同步方法删除目录。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.rmdirSync](js-apis-file-fs.md#fileiormdirsync)替代。
 
@@ -936,20 +878,18 @@ rmdirSync(path: string): void
 
 **示例：**
 
-```
-1. let dirPath = pathDir + '/testDir';
-2. fileio.rmdirSync(dirPath);
+```ts
+let dirPath = pathDir + '/testDir';
+fileio.rmdirSync(dirPath);
 ```
 
 ## fileio.unlink
-
-PhonePC/2in1TabletTVWearable
 
 unlink(path: string): Promise<void>
 
 删除文件，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.unlink](js-apis-file-fs.md#fileiounlink)替代。
 
@@ -969,25 +909,23 @@ unlink(path: string): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. fileio.unlink(filePath).then(() => {
-4. console.info("remove file succeed");
-5. }).catch((error: BusinessError) => {
-6. console.error("remove file failed with error:" + error);
-7. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+fileio.unlink(filePath).then(() => {
+  console.info("remove file succeed");
+}).catch((error: BusinessError) => {
+  console.error("remove file failed with error:" + error);
+});
 ```
 
 ## fileio.unlink
-
-PhonePC/2in1TabletTVWearable
 
 unlink(path: string, callback: AsyncCallback<void>): void
 
 删除文件，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.unlink](js-apis-file-fs.md#fileiounlink-1)替代。
 
@@ -1002,23 +940,21 @@ unlink(path: string, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. fileio.unlink(filePath, (err: BusinessError) => {
-4. console.info("remove file succeed");
-5. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+fileio.unlink(filePath, (err: BusinessError) => {
+  console.info("remove file succeed");
+});
 ```
 
 ## fileio.unlinkSync
-
-PhonePC/2in1TabletTVWearable
 
 unlinkSync(path: string): void
 
 以同步方法删除文件。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.unlinkSync](js-apis-file-fs.md#fileiounlinksync)替代。
 
@@ -1032,20 +968,18 @@ unlinkSync(path: string): void
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. fileio.unlinkSync(filePath);
+```ts
+let filePath = pathDir + "/test.txt";
+fileio.unlinkSync(filePath);
 ```
 
 ## fileio.write
-
-PhonePC/2in1TabletTVWearable
 
 write(fd: number, buffer: ArrayBuffer|string, options?: { offset?: number; length?: number; position?: number; encoding?: string; }): Promise<number>
 
 将数据写入文件，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.write](js-apis-file-fs.md#fileiowrite)替代。
 
@@ -1067,26 +1001,24 @@ write(fd: number, buffer: ArrayBuffer|string, options?: { offset?: number; lengt
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let fd = fileio.openSync(filePath, 0o100 | 0o2, 0o666);
-4. fileio.write(fd, "hello, world").then((number: number) => {
-5. console.info("write data to file succeed and size is:" + number);
-6. }).catch((err: BusinessError) => {
-7. console.error("write data to file failed with error:" + err);
-8. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath, 0o100 | 0o2, 0o666);
+fileio.write(fd, "hello, world").then((number: number) => {
+  console.info("write data to file succeed and size is:" + number);
+}).catch((err: BusinessError) => {
+  console.error("write data to file failed with error:" + err);
+});
 ```
 
 ## fileio.write
-
-PhonePC/2in1TabletTVWearable
 
 write(fd: number, buffer: ArrayBuffer|string, options: { offset?: number; length?: number; position?: number; encoding?: string; }, callback: AsyncCallback<number>): void
 
 将数据写入文件，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.write](js-apis-file-fs.md#fileiowrite-1)替代。
 
@@ -1103,26 +1035,24 @@ write(fd: number, buffer: ArrayBuffer|string, options: { offset?: number; length
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let fd = fileio.openSync(filePath, 0o100 | 0o2, 0o666);
-4. fileio.write(fd, "hello, world", (err: BusinessError, bytesWritten: number) => {
-5. if (bytesWritten) {
-6. console.info("write data to file succeed and size is:" + bytesWritten);
-7. }
-8. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath, 0o100 | 0o2, 0o666);
+fileio.write(fd, "hello, world", (err: BusinessError, bytesWritten: number) => {
+  if (bytesWritten) {
+    console.info("write data to file succeed and size is:" + bytesWritten);
+  }
+});
 ```
 
 ## fileio.writeSync
-
-PhonePC/2in1TabletTVWearable
 
 writeSync(fd: number, buffer: ArrayBuffer|string, options?: { offset?: number; length?: number; position?: number; encoding?: string; }): number
 
 以同步方法将数据写入文件。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.writeSync](js-apis-file-fs.md#fileiowritesync)替代。
 
@@ -1144,23 +1074,21 @@ writeSync(fd: number, buffer: ArrayBuffer|string, options?: { offset?: number; l
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. let fd = fileio.openSync(filePath, 0o100 | 0o2, 0o666);
-3. let num = fileio.writeSync(fd, "hello, world");
+```ts
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath, 0o100 | 0o2, 0o666);
+let num = fileio.writeSync(fd, "hello, world");
 ```
 
 ## fileio.hash
-
-PhonePC/2in1TabletTVWearable
 
 hash(path: string, algorithm: string): Promise<string>
 
 计算文件的哈希值，使用Promise异步回调。
 
-说明
+**说明** 
 
-从API version 9开始废弃，请使用[hash.write](js-apis-file-hash.md#hashhash)替代。
+从API version 9开始废弃，请使用[hash.hash](js-apis-file-hash.md#hashhash)替代。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -1179,27 +1107,25 @@ hash(path: string, algorithm: string): Promise<string>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. fileio.hash(filePath, "sha256").then((str: string) => {
-4. console.info("calculate file hash succeed:" + str);
-5. }).catch((err: BusinessError) => {
-6. console.error("calculate file hash failed with error:" + err);
-7. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+fileio.hash(filePath, "sha256").then((str: string) => {
+  console.info("calculate file hash succeed:" + str);
+}).catch((err: BusinessError) => {
+  console.error("calculate file hash failed with error:" + err);
+});
 ```
 
 ## fileio.hash
-
-PhonePC/2in1TabletTVWearable
 
 hash(path: string, algorithm: string, callback: AsyncCallback<string>): void
 
 计算文件的哈希值，使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 9开始废弃，请使用[hash.write](js-apis-file-hash.md#hashhash-1)替代。
+从API version 9开始废弃，请使用[hash.hash](js-apis-file-hash.md#hashhash-1)替代。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
@@ -1213,25 +1139,23 @@ hash(path: string, algorithm: string, callback: AsyncCallback<string>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. fileio.hash(filePath, "sha256", (err: BusinessError, hashStr: string) => {
-4. if (hashStr) {
-5. console.info("calculate file hash succeed:" + hashStr);
-6. }
-7. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+fileio.hash(filePath, "sha256", (err: BusinessError, hashStr: string) => {
+  if (hashStr) {
+    console.info("calculate file hash succeed:" + hashStr);
+  }
+});
 ```
 
 ## fileio.chmod7+
-
-PhonePC/2in1TabletTVWearable
 
 chmod(path: string, mode: number): Promise<void>
 
 改变文件权限，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃。
 
@@ -1252,25 +1176,23 @@ chmod(path: string, mode: number): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. fileio.chmod(filePath, 0o700).then(() => {
-4. console.info("chmod succeed");
-5. }).catch((err: BusinessError) => {
-6. console.error("chmod failed with error:" + err);
-7. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+fileio.chmod(filePath, 0o700).then(() => {
+  console.info("chmod succeed");
+}).catch((err: BusinessError) => {
+  console.error("chmod failed with error:" + err);
+});
 ```
 
 ## fileio.chmod7+
-
-PhonePC/2in1TabletTVWearable
 
 chmod(path: string, mode: number, callback: AsyncCallback<void>): void
 
 改变文件权限，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃。
 
@@ -1286,23 +1208,21 @@ chmod(path: string, mode: number, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. fileio.chmod(filePath, 0o700, (err: BusinessError) => {
-4. // do something
-5. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+fileio.chmod(filePath, 0o700, (err: BusinessError) => {
+  // do something
+});
 ```
 
 ## fileio.chmodSync7+
-
-PhonePC/2in1TabletTVWearable
 
 chmodSync(path: string, mode: number): void
 
 以同步方法改变文件权限。
 
-说明
+**说明** 
 
 从API version 9开始废弃。
 
@@ -1317,20 +1237,18 @@ chmodSync(path: string, mode: number): void
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. fileio.chmodSync(filePath, 0o700);
+```ts
+let filePath = pathDir + "/test.txt";
+fileio.chmodSync(filePath, 0o700);
 ```
 
 ## fileio.fstat7+
-
-PhonePC/2in1TabletTVWearable
 
 fstat(fd: number): Promise<Stat>
 
 基于文件描述符获取文件状态信息，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.stat](js-apis-file-fs.md#fileiostat)替代。
 
@@ -1350,26 +1268,24 @@ fstat(fd: number): Promise<Stat>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let fd = fileio.openSync(filePath);
-4. fileio.fstat(fd).then((stat: fileio.Stat) => {
-5. console.info("fstat succeed, the size of file is " + stat.size);
-6. }).catch((err: BusinessError) => {
-7. console.error("fstat failed with error:" + err);
-8. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath);
+fileio.fstat(fd).then((stat: fileio.Stat) => {
+  console.info("fstat succeed, the size of file is " + stat.size);
+}).catch((err: BusinessError) => {
+  console.error("fstat failed with error:" + err);
+});
 ```
 
 ## fileio.fstat7+
-
-PhonePC/2in1TabletTVWearable
 
 fstat(fd: number, callback: AsyncCallback<Stat>): void
 
 基于文件描述符获取文件状态信息，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.stat](js-apis-file-fs.md#fileiostat-1)替代。
 
@@ -1384,24 +1300,22 @@ fstat(fd: number, callback: AsyncCallback<Stat>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let fd = fileio.openSync(filePath);
-4. fileio.fstat(fd, (err: BusinessError) => {
-5. // do something
-6. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath);
+fileio.fstat(fd, (err: BusinessError) => {
+  // do something
+});
 ```
 
 ## fileio.fstatSync7+
-
-PhonePC/2in1TabletTVWearable
 
 fstatSync(fd: number): Stat
 
 以同步方法基于文件描述符获取文件状态信息。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.statSync](js-apis-file-fs.md#fileiostatsync)替代。
 
@@ -1421,21 +1335,19 @@ fstatSync(fd: number): Stat
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. let fd = fileio.openSync(filePath);
-3. let stat = fileio.fstatSync(fd);
+```ts
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath);
+let stat = fileio.fstatSync(fd);
 ```
 
 ## fileio.ftruncate7+
-
-PhonePC/2in1TabletTVWearable
 
 ftruncate(fd: number, len?: number): Promise<void>
 
 基于文件描述符截断文件，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.truncate](js-apis-file-fs.md#fileiotruncate)替代。
 
@@ -1456,26 +1368,24 @@ ftruncate(fd: number, len?: number): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let fd = fileio.openSync(filePath);
-4. fileio.ftruncate(fd, 5).then(() => {
-5. console.info("truncate file succeed");
-6. }).catch((err: BusinessError) => {
-7. console.error("truncate file failed with error:" + err);
-8. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath);
+fileio.ftruncate(fd, 5).then(() => {
+  console.info("truncate file succeed");
+}).catch((err: BusinessError) => {
+  console.error("truncate file failed with error:" + err);
+});
 ```
 
 ## fileio.ftruncate7+
-
-PhonePC/2in1TabletTVWearable
 
 ftruncate(fd: number, len?: number, callback: AsyncCallback<void>): void
 
 基于文件描述符截断文件，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.truncate](js-apis-file-fs.md#fileiotruncate-1)替代。
 
@@ -1491,25 +1401,23 @@ ftruncate(fd: number, len?: number, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let fd = fileio.openSync(filePath);
-4. let len = 5;
-5. fileio.ftruncate(fd, 5, (err: BusinessError) => {
-6. // do something
-7. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath);
+let len = 5;
+fileio.ftruncate(fd, 5, (err: BusinessError) => {
+  // do something
+});
 ```
 
 ## fileio.ftruncateSync7+
-
-PhonePC/2in1TabletTVWearable
 
 ftruncateSync(fd: number, len?: number): void
 
 以同步方法基于文件描述符截断文件。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.truncateSync](js-apis-file-fs.md#fileiotruncatesync)替代。
 
@@ -1524,22 +1432,20 @@ ftruncateSync(fd: number, len?: number): void
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. let fd = fileio.openSync(filePath);
-3. let len = 5;
-4. fileio.ftruncateSync(fd, len);
+```ts
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath);
+let len = 5;
+fileio.ftruncateSync(fd, len);
 ```
 
 ## fileio.truncate7+
-
-PhonePC/2in1TabletTVWearable
 
 truncate(path: string, len?: number): Promise<void>
 
 基于文件路径截断文件，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.truncate](js-apis-file-fs.md#fileiotruncate)替代。
 
@@ -1560,26 +1466,24 @@ truncate(path: string, len?: number): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let len = 5;
-4. fileio.truncate(filePath, len).then(() => {
-5. console.info("truncate file succeed");
-6. }).catch((err: BusinessError) => {
-7. console.error("truncate file failed with error:" + err);
-8. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let len = 5;
+fileio.truncate(filePath, len).then(() => {
+  console.info("truncate file succeed");
+}).catch((err: BusinessError) => {
+  console.error("truncate file failed with error:" + err);
+});
 ```
 
 ## fileio.truncate7+
-
-PhonePC/2in1TabletTVWearable
 
 truncate(path: string, len?: number, callback: AsyncCallback<void>): void
 
 基于文件路径截断文件，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.truncate](js-apis-file-fs.md#fileiotruncate-1)替代。
 
@@ -1595,24 +1499,22 @@ truncate(path: string, len?: number, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let len = 5;
-4. fileio.truncate(filePath, len, (err: BusinessError) => {
-5. // do something
-6. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let len = 5;
+fileio.truncate(filePath, len, (err: BusinessError) => {
+  // do something
+});
 ```
 
 ## fileio.truncateSync7+
-
-PhonePC/2in1TabletTVWearable
 
 truncateSync(path: string, len?: number): void
 
 以同步方法基于文件路径截断文件。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.truncateSync](js-apis-file-fs.md#fileiotruncatesync)替代。
 
@@ -1627,21 +1529,19 @@ truncateSync(path: string, len?: number): void
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. let len = 5;
-3. fileio.truncateSync(filePath, len);
+```ts
+let filePath = pathDir + "/test.txt";
+let len = 5;
+fileio.truncateSync(filePath, len);
 ```
 
 ## fileio.readText7+
-
-PhonePC/2in1TabletTVWearable
 
 readText(filePath: string, options?: { position?: number; length?: number; encoding?: string; }): Promise<string>
 
 基于文本方式读取文件（即直接读取文件的文本内容），使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.readText](js-apis-file-fs.md#fileioreadtext)替代。
 
@@ -1662,25 +1562,23 @@ readText(filePath: string, options?: { position?: number; length?: number; encod
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. fileio.readText(filePath).then((str: string) => {
-4. console.info("readText succeed:" + str);
-5. }).catch((err: BusinessError) => {
-6. console.error("readText failed with error:" + err);
-7. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+fileio.readText(filePath).then((str: string) => {
+  console.info("readText succeed:" + str);
+}).catch((err: BusinessError) => {
+  console.error("readText failed with error:" + err);
+});
 ```
 
 ## fileio.readText7+
-
-PhonePC/2in1TabletTVWearable
 
 readText(filePath: string, options: { position?: number; length?: number; encoding?: string; }, callback: AsyncCallback<string>): void
 
 基于文本方式读取文件（即直接读取文件的文本内容），使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.readText](js-apis-file-fs.md#fileioreadtext-1)替代。
 
@@ -1696,31 +1594,29 @@ readText(filePath: string, options: { position?: number; length?: number; encodi
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. class Option {
-4. length: number = 4096;
-5. position: number = 0;
-6. encoding: string = 'utf-8';
-7. }
-8. let option = new Option();
-9. option.position = 1;
-10. option.encoding = 'utf-8';
-11. fileio.readText(filePath, option, (err: BusinessError, str: string) => {
-12. // do something
-13. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+class Option {
+  length: number = 4096;
+  position: number = 0;
+  encoding: string = 'utf-8';
+}
+let option = new Option();
+option.position = 1;
+option.encoding = 'utf-8';
+fileio.readText(filePath, option, (err: BusinessError, str: string) => {
+  // do something
+});
 ```
 
 ## fileio.readTextSync7+
-
-PhonePC/2in1TabletTVWearable
 
 readTextSync(filePath: string, options?: { position?: number; length?: number; encoding?: string; }): string
 
 以同步方法基于文本方式读取文件（即直接读取文件的文本内容）。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.readTextSync](js-apis-file-fs.md#fileioreadtextsync)替代。
 
@@ -1741,28 +1637,26 @@ readTextSync(filePath: string, options?: { position?: number; length?: number; e
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. class Option {
-3. length: number = 4096;
-4. position: number = 0;
-5. encoding: string = 'utf-8';
-6. }
-7. let option = new Option();
-8. option.position = 1;
-9. option.length = 3;
-10. let str = fileio.readTextSync(filePath, option);
+```ts
+let filePath = pathDir + "/test.txt";
+class Option {
+  length: number = 4096;
+  position: number = 0;
+  encoding: string = 'utf-8';
+}
+let option = new Option();
+option.position = 1;
+option.length = 3;
+let str = fileio.readTextSync(filePath, option);
 ```
 
 ## fileio.lstat7+
-
-PhonePC/2in1TabletTVWearable
 
 lstat(path: string): Promise<Stat>
 
 获取链接信息，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.lstat](js-apis-file-fs.md#fileiolstat)替代。
 
@@ -1778,29 +1672,27 @@ lstat(path: string): Promise<Stat>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[Stat](js-apis-fileio.md#stat)> | promise对象，返回文件对象，表示文件的具体信息，详情见stat。 |
+| Promise<[Stat](js-apis-fileio.md#stat)> | Promise对象，返回文件对象，表示文件的具体信息，详情见stat。 |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. fileio.lstat(filePath).then((stat: fileio.Stat) => {
-4. console.info("get link status succeed, the size of file is" + stat.size);
-5. }).catch((err: BusinessError) => {
-6. console.error("get link status failed with error:" + err);
-7. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+fileio.lstat(filePath).then((stat: fileio.Stat) => {
+  console.info("get link status succeed, the size of file is" + stat.size);
+}).catch((err: BusinessError) => {
+  console.error("get link status failed with error:" + err);
+});
 ```
 
 ## fileio.lstat7+
-
-PhonePC/2in1TabletTVWearable
 
 lstat(path: string, callback: AsyncCallback<Stat>): void
 
 获取链接信息，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.lstat](js-apis-file-fs.md#fileiolstat-1)替代。
 
@@ -1815,23 +1707,21 @@ lstat(path: string, callback: AsyncCallback<Stat>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. fileio.lstat(filePath, (err: BusinessError, stat: fileio.Stat) => {
-4. // do something
-5. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+fileio.lstat(filePath, (err: BusinessError, stat: fileio.Stat) => {
+  // do something
+});
 ```
 
 ## fileio.lstatSync7+
-
-PhonePC/2in1TabletTVWearable
 
 lstatSync(path: string): Stat
 
 以同步方法获取链接信息。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.lstatSync](js-apis-file-fs.md#fileiolstatsync)替代。
 
@@ -1851,20 +1741,18 @@ lstatSync(path: string): Stat
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. let stat = fileio.lstatSync(filePath);
+```ts
+let filePath = pathDir + "/test.txt";
+let stat = fileio.lstatSync(filePath);
 ```
 
 ## fileio.rename7+
-
-PhonePC/2in1TabletTVWearable
 
 rename(oldPath: string, newPath: string): Promise<void>
 
 重命名文件，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.rename](js-apis-file-fs.md#fileiorename)替代。
 
@@ -1885,26 +1773,24 @@ rename(oldPath: string, newPath: string): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let srcFile = pathDir + "/test.txt";
-3. let dstFile = pathDir + '/new.txt';
-4. fileio.rename(srcFile, dstFile).then(() => {
-5. console.info("rename succeed");
-6. }).catch((err: BusinessError) => {
-7. console.error("rename failed with error:" + err);
-8. });
+```ts
+import { BusinessError } from '@ohos.base';
+let srcFile = pathDir + "/test.txt";
+let dstFile = pathDir + '/new.txt';
+fileio.rename(srcFile, dstFile).then(() => {
+  console.info("rename succeed");
+}).catch((err: BusinessError) => {
+  console.error("rename failed with error:" + err);
+});
 ```
 
 ## fileio.rename7+
-
-PhonePC/2in1TabletTVWearable
 
 rename(oldPath: string, newPath: string, callback: AsyncCallback<void>): void
 
 重命名文件，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.rename](js-apis-file-fs.md#fileiorename-1)替代。
 
@@ -1920,23 +1806,21 @@ rename(oldPath: string, newPath: string, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let srcFile = pathDir + "/test.txt";
-3. let dstFile = pathDir + '/new.txt';
-4. fileio.rename(srcFile, dstFile, (err: BusinessError) => {
-5. });
+```ts
+import { BusinessError } from '@ohos.base';
+let srcFile = pathDir + "/test.txt";
+let dstFile = pathDir + '/new.txt';
+fileio.rename(srcFile, dstFile, (err: BusinessError) => {
+});
 ```
 
 ## fileio.renameSync7+
-
-PhonePC/2in1TabletTVWearable
 
 renameSync(oldPath: string, newPath: string): void
 
 以同步方法重命名文件。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.renameSync](js-apis-file-fs.md#fileiorenamesync)替代。
 
@@ -1951,21 +1835,19 @@ renameSync(oldPath: string, newPath: string): void
 
 **示例：**
 
-```
-1. let srcFile = pathDir + "/test.txt";
-2. let dstFile = pathDir + '/new.txt';
-3. fileio.renameSync(srcFile, dstFile);
+```ts
+let srcFile = pathDir + "/test.txt";
+let dstFile = pathDir + '/new.txt';
+fileio.renameSync(srcFile, dstFile);
 ```
 
 ## fileio.fsync7+
-
-PhonePC/2in1TabletTVWearable
 
 fsync(fd: number): Promise<void>
 
 同步文件数据，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.fsync](js-apis-file-fs.md#fileiofsync)替代。
 
@@ -1985,26 +1867,24 @@ fsync(fd: number): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let fd = fileio.openSync(filePath);
-4. fileio.fsync(fd).then(() => {
-5. console.info("sync data succeed");
-6. }).catch((err: BusinessError) => {
-7. console.error("sync data failed with error:" + err);
-8. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath);
+fileio.fsync(fd).then(() => {
+  console.info("sync data succeed");
+}).catch((err: BusinessError) => {
+  console.error("sync data failed with error:" + err);
+});
 ```
 
 ## fileio.fsync7+
-
-PhonePC/2in1TabletTVWearable
 
 fsync(fd: number, callback: AsyncCallback<void>): void
 
 同步文件数据，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.fsync](js-apis-file-fs.md#fileiofsync-1)替代。
 
@@ -2019,24 +1899,22 @@ fsync(fd: number, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let fd = fileio.openSync(filePath);
-4. fileio.fsync(fd, (err: BusinessError) => {
-5. // do something
-6. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath);
+fileio.fsync(fd, (err: BusinessError) => {
+  // do something
+});
 ```
 
 ## fileio.fsyncSync7+
-
-PhonePC/2in1TabletTVWearable
 
 fsyncSync(fd: number): void
 
 以同步方法同步文件数据。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.fsyncSync](js-apis-file-fs.md#fileiofsyncsync)替代。
 
@@ -2050,21 +1928,19 @@ fsyncSync(fd: number): void
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. let fd = fileio.openSync(filePath);
-3. fileio.fsyncSync(fd);
+```ts
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath);
+fileio.fsyncSync(fd);
 ```
 
 ## fileio.fdatasync7+
-
-PhonePC/2in1TabletTVWearable
 
 fdatasync(fd: number): Promise<void>
 
 实现文件内容数据同步，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.fdatasync](js-apis-file-fs.md#fileiofdatasync)替代。
 
@@ -2084,26 +1960,24 @@ fdatasync(fd: number): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let fd = fileio.openSync(filePath);
-4. fileio.fdatasync(fd).then(() => {
-5. console.info("sync data succeed");
-6. }).catch((err: BusinessError) => {
-7. console.error("sync data failed with error:" + err);
-8. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath);
+fileio.fdatasync(fd).then(() => {
+  console.info("sync data succeed");
+}).catch((err: BusinessError) => {
+  console.error("sync data failed with error:" + err);
+});
 ```
 
 ## fileio.fdatasync7+
-
-PhonePC/2in1TabletTVWearable
 
 fdatasync(fd: number, callback: AsyncCallback<void>): void
 
 实现文件内容数据同步，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.fdatasync](js-apis-file-fs.md#fileiofdatasync-1)替代。
 
@@ -2118,24 +1992,22 @@ fdatasync(fd: number, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let fd = fileio.openSync(filePath);
-4. fileio.fdatasync (fd, (err: BusinessError) => {
-5. // do something
-6. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath);
+fileio.fdatasync (fd, (err: BusinessError) => {
+  // do something
+});
 ```
 
 ## fileio.fdatasyncSync7+
-
-PhonePC/2in1TabletTVWearable
 
 fdatasyncSync(fd: number): void
 
 以同步方法实现文件内容数据同步。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.fdatasyncSync](js-apis-file-fs.md#fileiofdatasyncsync)替代。
 
@@ -2149,21 +2021,19 @@ fdatasyncSync(fd: number): void
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. let fd = fileio.openSync(filePath);
-3. let stat = fileio.fdatasyncSync(fd);
+```ts
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath);
+let stat = fileio.fdatasyncSync(fd);
 ```
 
 ## fileio.symlink7+
-
-PhonePC/2in1TabletTVWearable
 
 symlink(target: string, srcPath: string): Promise<void>
 
 基于文件路径创建符号链接，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.symlink](js-apis-file-fs.md#fileiosymlink)替代。
 
@@ -2184,26 +2054,24 @@ symlink(target: string, srcPath: string): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let srcFile = pathDir + "/test.txt";
-3. let dstFile = pathDir + '/test';
-4. fileio.symlink(srcFile, dstFile).then(() => {
-5. console.info("symlink succeed");
-6. }).catch((err: BusinessError) => {
-7. console.error("symlink failed with error:" + err);
-8. });
+```ts
+import { BusinessError } from '@ohos.base';
+let srcFile = pathDir + "/test.txt";
+let dstFile = pathDir + '/test';
+fileio.symlink(srcFile, dstFile).then(() => {
+  console.info("symlink succeed");
+}).catch((err: BusinessError) => {
+  console.error("symlink failed with error:" + err);
+});
 ```
 
 ## fileio.symlink7+
-
-PhonePC/2in1TabletTVWearable
 
 symlink(target: string, srcPath: string, callback: AsyncCallback<void>): void
 
 基于文件路径创建符号链接，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.symlink](js-apis-file-fs.md#fileiosymlink-1)替代。
 
@@ -2219,24 +2087,22 @@ symlink(target: string, srcPath: string, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let srcFile = pathDir + "/test.txt";
-3. let dstFile = pathDir + '/test';
-4. fileio.symlink(srcFile, dstFile, (err: BusinessError) => {
-5. // do something
-6. });
+```ts
+import { BusinessError } from '@ohos.base';
+let srcFile = pathDir + "/test.txt";
+let dstFile = pathDir + '/test';
+fileio.symlink(srcFile, dstFile, (err: BusinessError) => {
+  // do something
+});
 ```
 
 ## fileio.symlinkSync7+
-
-PhonePC/2in1TabletTVWearable
 
 symlinkSync(target: string, srcPath: string): void
 
 以同步的方法基于文件路径创建符号链接。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.symlinkSync](js-apis-file-fs.md#fileiosymlinksync)替代。
 
@@ -2251,21 +2117,19 @@ symlinkSync(target: string, srcPath: string): void
 
 **示例：**
 
-```
-1. let srcFile = pathDir + "/test.txt";
-2. let dstFile = pathDir + '/test';
-3. fileio.symlinkSync(srcFile, dstFile);
+```ts
+let srcFile = pathDir + "/test.txt";
+let dstFile = pathDir + '/test';
+fileio.symlinkSync(srcFile, dstFile);
 ```
 
 ## fileio.chown7+
-
-PhonePC/2in1TabletTVWearable
 
 chown(path: string, uid: number, gid: number): Promise<void>
 
 基于文件路径改变文件所有者，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃。
 
@@ -2287,26 +2151,24 @@ chown(path: string, uid: number, gid: number): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let stat = fileio.statSync(filePath);
-4. fileio.chown(filePath, stat.uid, stat.gid).then(() => {
-5. console.info("chown succeed");
-6. }).catch((err: BusinessError) => {
-7. console.error("chown failed with error:" + err);
-8. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let stat = fileio.statSync(filePath);
+fileio.chown(filePath, stat.uid, stat.gid).then(() => {
+  console.info("chown succeed");
+}).catch((err: BusinessError) => {
+  console.error("chown failed with error:" + err);
+});
 ```
 
 ## fileio.chown7+
-
-PhonePC/2in1TabletTVWearable
 
 chown(path: string, uid: number, gid: number, callback: AsyncCallback<void>): void
 
 基于文件路径改变文件所有者，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃。
 
@@ -2323,24 +2185,22 @@ chown(path: string, uid: number, gid: number, callback: AsyncCallback<void>): vo
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let stat = fileio.statSync(filePath)
-4. fileio.chown(filePath, stat.uid, stat.gid, (err: BusinessError) => {
-5. // do something
-6. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let stat = fileio.statSync(filePath)
+fileio.chown(filePath, stat.uid, stat.gid, (err: BusinessError) => {
+  // do something
+});
 ```
 
 ## fileio.chownSync7+
-
-PhonePC/2in1TabletTVWearable
 
 chownSync(path: string, uid: number, gid: number): void
 
 以同步的方法基于文件路径改变文件所有者。
 
-说明
+**说明** 
 
 从API version 9开始废弃。
 
@@ -2356,21 +2216,19 @@ chownSync(path: string, uid: number, gid: number): void
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. let stat = fileio.statSync(filePath)
-3. fileio.chownSync(filePath, stat.uid, stat.gid);
+```ts
+let filePath = pathDir + "/test.txt";
+let stat = fileio.statSync(filePath)
+fileio.chownSync(filePath, stat.uid, stat.gid);
 ```
 
 ## fileio.mkdtemp7+
-
-PhonePC/2in1TabletTVWearable
 
 mkdtemp(prefix: string): Promise<string>
 
 创建临时目录，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.mkdtemp](js-apis-file-fs.md#fileiomkdtemp)替代。
 
@@ -2390,24 +2248,22 @@ mkdtemp(prefix: string): Promise<string>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. fileio.mkdtemp(pathDir + "/XXXXXX").then((pathDir: string) => {
-3. console.info("mkdtemp succeed:" + pathDir);
-4. }).catch((err: BusinessError) => {
-5. console.error("mkdtemp failed with error:" + err);
-6. });
+```ts
+import { BusinessError } from '@ohos.base';
+fileio.mkdtemp(pathDir + "/XXXXXX").then((pathDir: string) => {
+  console.info("mkdtemp succeed:" + pathDir);
+}).catch((err: BusinessError) => {
+  console.error("mkdtemp failed with error:" + err);
+});
 ```
 
 ## fileio.mkdtemp7+
-
-PhonePC/2in1TabletTVWearable
 
 mkdtemp(prefix: string, callback: AsyncCallback<string>): void
 
 创建临时目录，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.mkdtemp](js-apis-file-fs.md#fileiomkdtemp-1)替代。
 
@@ -2422,22 +2278,20 @@ mkdtemp(prefix: string, callback: AsyncCallback<string>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. fileio.mkdtemp(pathDir + "/XXXXXX", (err: BusinessError, res: string) => {
-3. // do something
-4. });
+```ts
+import { BusinessError } from '@ohos.base';
+fileio.mkdtemp(pathDir + "/XXXXXX", (err: BusinessError, res: string) => {
+  // do something
+});
 ```
 
 ## fileio.mkdtempSync7+
-
-PhonePC/2in1TabletTVWearable
 
 mkdtempSync(prefix: string): string
 
 以同步的方法创建临时目录。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.mkdtempSync](js-apis-file-fs.md#fileiomkdtempsync)替代。
 
@@ -2457,19 +2311,17 @@ mkdtempSync(prefix: string): string
 
 **示例：**
 
-```
-1. let res = fileio.mkdtempSync(pathDir + "/XXXXXX");
+```ts
+let res = fileio.mkdtempSync(pathDir + "/XXXXXX");
 ```
 
 ## fileio.fchmod7+
-
-PhonePC/2in1TabletTVWearable
 
 fchmod(fd: number, mode: number): Promise<void>
 
 基于文件描述符改变文件权限，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃。
 
@@ -2490,27 +2342,25 @@ fchmod(fd: number, mode: number): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let fd = fileio.openSync(filePath);
-4. let mode: number = 0o700;
-5. fileio.fchmod(fd, mode).then(() => {
-6. console.info("chmod succeed");
-7. }).catch((err: BusinessError) => {
-8. console.error("chmod failed with error:" + err);
-9. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath);
+let mode: number = 0o700;
+fileio.fchmod(fd, mode).then(() => {
+  console.info("chmod succeed");
+}).catch((err: BusinessError) => {
+  console.error("chmod failed with error:" + err);
+});
 ```
 
 ## fileio.fchmod7+
-
-PhonePC/2in1TabletTVWearable
 
 fchmod(fd: number, mode: number, callback: AsyncCallback<void>): void
 
 基于文件描述符改变文件权限，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃。
 
@@ -2526,25 +2376,23 @@ fchmod(fd: number, mode: number, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let fd = fileio.openSync(filePath);
-4. let mode: number = 0o700;
-5. fileio.fchmod(fd, mode, (err: BusinessError) => {
-6. // do something
-7. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath);
+let mode: number = 0o700;
+fileio.fchmod(fd, mode, (err: BusinessError) => {
+  // do something
+});
 ```
 
 ## fileio.fchmodSync7+
-
-PhonePC/2in1TabletTVWearable
 
 fchmodSync(fd: number, mode: number): void
 
 以同步方法基于文件描述符改变文件权限。
 
-说明
+**说明** 
 
 从API version 9开始废弃。
 
@@ -2559,22 +2407,20 @@ fchmodSync(fd: number, mode: number): void
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. let fd = fileio.openSync(filePath);
-3. let mode: number = 0o700;
-4. fileio.fchmodSync(fd, mode);
+```ts
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath);
+let mode: number = 0o700;
+fileio.fchmodSync(fd, mode);
 ```
 
 ## fileio.createStream7+
-
-PhonePC/2in1TabletTVWearable
 
 createStream(path: string, mode: string): Promise<Stream>
 
 基于文件路径打开文件流，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.createStream](js-apis-file-fs.md#fileiocreatestream)替代。
 
@@ -2595,25 +2441,23 @@ createStream(path: string, mode: string): Promise<Stream>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. fileio.createStream(filePath, "r+").then((stream: fileio.Stream) => {
-4. console.info("createStream succeed");
-5. }).catch((err: BusinessError) => {
-6. console.error("createStream failed with error:" + err);
-7. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+fileio.createStream(filePath, "r+").then((stream: fileio.Stream) => {
+  console.info("createStream succeed");
+}).catch((err: BusinessError) => {
+  console.error("createStream failed with error:" + err);
+});
 ```
 
 ## fileio.createStream7+
-
-PhonePC/2in1TabletTVWearable
 
 createStream(path: string, mode: string, callback: AsyncCallback<Stream>): void
 
 基于文件路径打开文件流，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.createStream](js-apis-file-fs.md#fileiocreatestream-1)替代。
 
@@ -2629,23 +2473,21 @@ createStream(path: string, mode: string, callback: AsyncCallback<Stream>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. fileio.createStream(filePath, "r+", (err: BusinessError, stream: fileio.Stream) => {
-4. // do something
-5. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+fileio.createStream(filePath, "r+", (err: BusinessError, stream: fileio.Stream) => {
+  // do something
+});
 ```
 
 ## fileio.createStreamSync7+
-
-PhonePC/2in1TabletTVWearable
 
 createStreamSync(path: string, mode: string): Stream
 
 以同步方法基于文件路径打开文件流。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.createStreamSync](js-apis-file-fs.md#fileiocreatestreamsync)替代。
 
@@ -2666,20 +2508,18 @@ createStreamSync(path: string, mode: string): Stream
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. let ss = fileio.createStreamSync(filePath, "r+");
+```ts
+let filePath = pathDir + "/test.txt";
+let ss = fileio.createStreamSync(filePath, "r+");
 ```
 
 ## fileio.fdopenStream7+
-
-PhonePC/2in1TabletTVWearable
 
 fdopenStream(fd: number, mode: string): Promise<Stream>
 
 基于文件描述符打开文件流，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.fdopenStream](js-apis-file-fs.md#fileiofdopenstream)替代。
 
@@ -2700,26 +2540,24 @@ fdopenStream(fd: number, mode: string): Promise<Stream>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let fd = fileio.openSync(filePath);
-4. fileio.fdopenStream(fd, "r+").then((stream: fileio.Stream) => {
-5. console.info("openStream succeed");
-6. }).catch((err: BusinessError) => {
-7. console.error("openStream failed with error:" + err);
-8. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath);
+fileio.fdopenStream(fd, "r+").then((stream: fileio.Stream) => {
+  console.info("openStream succeed");
+}).catch((err: BusinessError) => {
+  console.error("openStream failed with error:" + err);
+});
 ```
 
 ## fileio.fdopenStream7+
-
-PhonePC/2in1TabletTVWearable
 
 fdopenStream(fd: number, mode: string, callback: AsyncCallback<Stream>): void
 
 基于文件描述符打开文件流，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.fdopenStream](js-apis-file-fs.md#fileiofdopenstream-1)替代。
 
@@ -2735,24 +2573,22 @@ fdopenStream(fd: number, mode: string, callback: AsyncCallback<Stream>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let fd = fileio.openSync(filePath);
-4. fileio.fdopenStream(fd, "r+", (err: BusinessError, stream: fileio.Stream) => {
-5. // do something
-6. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath);
+fileio.fdopenStream(fd, "r+", (err: BusinessError, stream: fileio.Stream) => {
+  // do something
+});
 ```
 
 ## fileio.fdopenStreamSync7+
-
-PhonePC/2in1TabletTVWearable
 
 fdopenStreamSync(fd: number, mode: string): Stream
 
 以同步方法基于文件描述符打开文件流。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.fdopenStreamSync](js-apis-file-fs.md#fileiofdopenstreamsync)替代。
 
@@ -2773,21 +2609,19 @@ fdopenStreamSync(fd: number, mode: string): Stream
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. let fd = fileio.openSync(filePath);
-3. let ss = fileio.fdopenStreamSync(fd, "r+");
+```ts
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath);
+let ss = fileio.fdopenStreamSync(fd, "r+");
 ```
 
 ## fileio.fchown7+
-
-PhonePC/2in1TabletTVWearable
 
 fchown(fd: number, uid: number, gid: number): Promise<void>
 
 基于文件描述符改变文件所有者，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃。
 
@@ -2809,27 +2643,25 @@ fchown(fd: number, uid: number, gid: number): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let fd = fileio.openSync(filePath);
-4. let stat = fileio.statSync(filePath);
-5. fileio.fchown(fd, stat.uid, stat.gid).then(() => {
-6. console.info("chown succeed");
-7. }).catch((err: BusinessError) => {
-8. console.error("chown failed with error:" + err);
-9. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath);
+let stat = fileio.statSync(filePath);
+fileio.fchown(fd, stat.uid, stat.gid).then(() => {
+  console.info("chown succeed");
+}).catch((err: BusinessError) => {
+  console.error("chown failed with error:" + err);
+});
 ```
 
 ## fileio.fchown7+
-
-PhonePC/2in1TabletTVWearable
 
 fchown(fd: number, uid: number, gid: number, callback: AsyncCallback<void>): void
 
 基于文件描述符改变文件所有者，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃。
 
@@ -2846,25 +2678,23 @@ fchown(fd: number, uid: number, gid: number, callback: AsyncCallback<void>): voi
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let fd = fileio.openSync(filePath);
-4. let stat = fileio.statSync(filePath);
-5. fileio.fchown(fd, stat.uid, stat.gid, (err: BusinessError) => {
-6. // do something
-7. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath);
+let stat = fileio.statSync(filePath);
+fileio.fchown(fd, stat.uid, stat.gid, (err: BusinessError) => {
+  // do something
+});
 ```
 
 ## fileio.fchownSync7+
-
-PhonePC/2in1TabletTVWearable
 
 fchownSync(fd: number, uid: number, gid: number): void
 
 以同步方法基于文件描述符改变文件所有者。
 
-说明
+**说明** 
 
 从API version 9开始废弃。
 
@@ -2880,22 +2710,20 @@ fchownSync(fd: number, uid: number, gid: number): void
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. let fd = fileio.openSync(filePath);
-3. let stat = fileio.statSync(filePath);
-4. fileio.fchownSync(fd, stat.uid, stat.gid);
+```ts
+let filePath = pathDir + "/test.txt";
+let fd = fileio.openSync(filePath);
+let stat = fileio.statSync(filePath);
+fileio.fchownSync(fd, stat.uid, stat.gid);
 ```
 
 ## fileio.lchown7+
-
-PhonePC/2in1TabletTVWearable
 
 lchown(path: string, uid: number, gid: number): Promise<void>
 
 基于文件路径改变文件所有者，更改符号链接本身的所有者，而不是符号链接所指向的实际文件，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃。
 
@@ -2917,26 +2745,24 @@ lchown(path: string, uid: number, gid: number): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let stat = fileio.statSync(filePath);
-4. fileio.lchown(filePath, stat.uid, stat.gid).then(() => {
-5. console.info("chown succeed");
-6. }).catch((err: BusinessError) => {
-7. console.error("chown failed with error:" + err);
-8. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let stat = fileio.statSync(filePath);
+fileio.lchown(filePath, stat.uid, stat.gid).then(() => {
+  console.info("chown succeed");
+}).catch((err: BusinessError) => {
+  console.error("chown failed with error:" + err);
+});
 ```
 
 ## fileio.lchown7+
-
-PhonePC/2in1TabletTVWearable
 
 lchown(path: string, uid: number, gid: number, callback: AsyncCallback<void>): void
 
 基于文件路径改变文件所有者，更改符号链接本身的所有者，而不是更改符号链接所指向的实际文件，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃。
 
@@ -2953,24 +2779,22 @@ lchown(path: string, uid: number, gid: number, callback: AsyncCallback<void>): v
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let stat = fileio.statSync(filePath);
-4. fileio.lchown(filePath, stat.uid, stat.gid, (err: BusinessError) => {
-5. // do something
-6. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let stat = fileio.statSync(filePath);
+fileio.lchown(filePath, stat.uid, stat.gid, (err: BusinessError) => {
+  // do something
+});
 ```
 
 ## fileio.lchownSync7+
-
-PhonePC/2in1TabletTVWearable
 
 lchownSync(path: string, uid: number, gid: number): void
 
 以同步方法基于文件路径改变文件所有者，更改符号链接本身的所有者，而不是更改符号链接所指向的实际文件。
 
-说明
+**说明** 
 
 从API version 9开始废弃。
 
@@ -2986,21 +2810,19 @@ lchownSync(path: string, uid: number, gid: number): void
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. let stat = fileio.statSync(filePath);
-3. fileio.lchownSync(filePath, stat.uid, stat.gid);
+```ts
+let filePath = pathDir + "/test.txt";
+let stat = fileio.statSync(filePath);
+fileio.lchownSync(filePath, stat.uid, stat.gid);
 ```
 
 ## fileio.createWatcher7+
-
-PhonePC/2in1TabletTVWearable
 
 createWatcher(filename: string, events: number, callback: AsyncCallback<number>): Watcher
 
 监听文件或者目录的变化，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 10开始废弃。
 
@@ -3011,7 +2833,7 @@ createWatcher(filename: string, events: number, callback: AsyncCallback<number>)
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | filename | string | 是 | 待监视文件的应用沙箱路径。 |
-| events | number | 是 | - 1: 监听文件或者目录是否发生重命名。  - 2：监听文件或者目录内容的是否修改。  - 3：两者都有。 |
+| events | number | 是 | - 1：监听文件或者目录是否发生重命名。  - 2：监听文件或者目录内容是否修改。  - 3：两者都有。 |
 | callback | AsyncCallback<number> | 是 | 每发生变化一次，调用一次此函数。 |
 
 **返回值：**
@@ -3022,20 +2844,18 @@ createWatcher(filename: string, events: number, callback: AsyncCallback<number>)
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. fileio.createWatcher(filePath, 1, (err: BusinessError, event: number) => {
-3. console.info("event: " + event + "errmsg: " + JSON.stringify(err));
-4. });
+```ts
+let filePath = pathDir + "/test.txt";
+fileio.createWatcher(filePath, 1, (err: BusinessError, event: number) => {
+  console.info("event: " + event + "errmsg: " + JSON.stringify(err));
+});
 ```
 
 ## Readout
 
-PhonePC/2in1TabletTVWearable
-
 仅用于read方法，获取文件的读取结果。
 
-说明
+**说明** 
 
 从API version 9开始废弃。
 
@@ -3049,11 +2869,9 @@ PhonePC/2in1TabletTVWearable
 
 ## Stat
 
-PhonePC/2in1TabletTVWearable
-
 文件具体信息，在调用Stat的方法前，需要先通过[stat()](js-apis-fileio.md#fileiostat)方法（同步或异步）来构建一个Stat实例。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.Stat](js-apis-file-fs.md#stat)替代。
 
@@ -3078,13 +2896,11 @@ PhonePC/2in1TabletTVWearable
 
 ### isBlockDevice
 
-PhonePC/2in1TabletTVWearable
-
 isBlockDevice(): boolean
 
 用于判断文件是否是块特殊文件。一个块特殊文件只能以块为粒度进行访问，且访问的时候带缓存。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.Stat.isBlockDevice](js-apis-file-fs.md#isblockdevice)替代。
 
@@ -3098,20 +2914,18 @@ isBlockDevice(): boolean
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. let isBLockDevice = fileio.statSync(filePath).isBlockDevice();
+```ts
+let filePath = pathDir + "/test.txt";
+let isBLockDevice = fileio.statSync(filePath).isBlockDevice();
 ```
 
 ### isCharacterDevice
-
-PhonePC/2in1TabletTVWearable
 
 isCharacterDevice(): boolean
 
 用于判断文件是否是字符特殊文件。一个字符特殊设备可进行随机访问，且访问的时候不带缓存。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.Stat.isCharacterDevice](js-apis-file-fs.md#ischaracterdevice)替代。
 
@@ -3125,20 +2939,18 @@ isCharacterDevice(): boolean
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. let isCharacterDevice = fileio.statSync(filePath).isCharacterDevice();
+```ts
+let filePath = pathDir + "/test.txt";
+let isCharacterDevice = fileio.statSync(filePath).isCharacterDevice();
 ```
 
 ### isDirectory
-
-PhonePC/2in1TabletTVWearable
 
 isDirectory(): boolean
 
 用于判断文件是否是目录。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.Stat.isDirectory](js-apis-file-fs.md#isdirectory)替代。
 
@@ -3152,20 +2964,18 @@ isDirectory(): boolean
 
 **示例：**
 
-```
-1. let dirPath = pathDir + "/test";
-2. let isDirectory = fileio.statSync(dirPath).isDirectory();
+```ts
+let dirPath = pathDir + "/test";
+let isDirectory = fileio.statSync(dirPath).isDirectory();
 ```
 
 ### isFIFO
-
-PhonePC/2in1TabletTVWearable
 
 isFIFO(): boolean
 
 用于判断文件是否是命名管道（有时也称为FIFO）。命名管道通常用于进程间通信。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.Stat.isFIFO](js-apis-file-fs.md#isfifo)替代。
 
@@ -3179,20 +2989,18 @@ isFIFO(): boolean
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. let isFIFO = fileio.statSync(filePath).isFIFO();
+```ts
+let filePath = pathDir + "/test.txt";
+let isFIFO = fileio.statSync(filePath).isFIFO();
 ```
 
 ### isFile
-
-PhonePC/2in1TabletTVWearable
 
 isFile(): boolean
 
 用于判断文件是否是普通文件。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.Stat.isFile](js-apis-file-fs.md#isfile)替代。
 
@@ -3206,20 +3014,18 @@ isFile(): boolean
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. let isFile = fileio.statSync(filePath).isFile();
+```ts
+let filePath = pathDir + "/test.txt";
+let isFile = fileio.statSync(filePath).isFile();
 ```
 
 ### isSocket
-
-PhonePC/2in1TabletTVWearable
 
 isSocket(): boolean
 
 用于判断文件是否是套接字。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.Stat.isSocket](js-apis-file-fs.md#issocket)替代。
 
@@ -3233,20 +3039,18 @@ isSocket(): boolean
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. let isSocket = fileio.statSync(filePath).isSocket();
+```ts
+let filePath = pathDir + "/test.txt";
+let isSocket = fileio.statSync(filePath).isSocket();
 ```
 
 ### isSymbolicLink
-
-PhonePC/2in1TabletTVWearable
 
 isSymbolicLink(): boolean
 
 用于判断文件是否是符号链接。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.Stat.isSymbolicLink](js-apis-file-fs.md#issymboliclink)替代。
 
@@ -3260,30 +3064,26 @@ isSymbolicLink(): boolean
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test";
-2. let isSymbolicLink = fileio.statSync(filePath).isSymbolicLink();
+```ts
+let filePath = pathDir + "/test";
+let isSymbolicLink = fileio.statSync(filePath).isSymbolicLink();
 ```
 
 ## Watcher7+
 
-PhonePC/2in1TabletTVWearable
-
 Watcher是文件变化监听的实例，调用Watcher.stop()方法（同步或异步）来停止文件监听。
 
-说明
+**说明** 
 
 从API version 10开始废弃。
 
 ### stop7+
 
-PhonePC/2in1TabletTVWearable
-
 stop(): Promise<void>
 
 关闭watcher监听，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 10开始废弃。
 
@@ -3291,25 +3091,23 @@ stop(): Promise<void>
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. let watcher = fileio.createWatcher(filePath, 1, (err: BusinessError, event: number) => {
-3. console.info("event: " + event + "errmsg: " + JSON.stringify(err));
-4. });
-5. watcher.stop().then(() => {
-6. console.info("close watcher succeed");
-7. });
+```ts
+let filePath = pathDir + "/test.txt";
+let watcher = fileio.createWatcher(filePath, 1, (err: BusinessError, event: number) => {
+  console.info("event: " + event + "errmsg: " + JSON.stringify(err));
+});
+watcher.stop().then(() => {
+  console.info("close watcher succeed");
+});
 ```
 
 ### stop7+
-
-PhonePC/2in1TabletTVWearable
 
 stop(callback: AsyncCallback<void>): void
 
 关闭watcher监听，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 10开始废弃。
 
@@ -3323,35 +3121,31 @@ stop(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. let watcher = fileio.createWatcher(filePath, 1, (err: BusinessError, event: number) => {
-3. console.info("event: " + event + "errmsg: " + JSON.stringify(err));
-4. });
-5. watcher.stop(() => {
-6. console.info("close watcher succeed");
-7. })
+```ts
+let filePath = pathDir + "/test.txt";
+let watcher = fileio.createWatcher(filePath, 1, (err: BusinessError, event: number) => {
+  console.info("event: " + event + "errmsg: " + JSON.stringify(err));
+});
+watcher.stop(() => {
+  console.info("close watcher succeed");
+})
 ```
 
 ## Stream
 
-PhonePC/2in1TabletTVWearable
-
 文件流，在调用Stream的方法前，需要先通过createStream()方法（同步或异步）来构建一个Stream实例。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.Stream](js-apis-file-fs.md#stream)替代。
 
 ### close7+
 
-PhonePC/2in1TabletTVWearable
-
 close(): Promise<void>
 
 关闭文件流，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.Stream.close](js-apis-file-fs.md#close)替代。
 
@@ -3365,26 +3159,24 @@ close(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let ss = fileio.createStreamSync(filePath, "r+");
-4. ss.close().then(() => {
-5. console.info("close fileStream succeed");
-6. }).catch((err: BusinessError) => {
-7. console.error("close fileStream  failed with error:" + err);
-8. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let ss = fileio.createStreamSync(filePath, "r+");
+ss.close().then(() => {
+  console.info("close fileStream succeed");
+}).catch((err: BusinessError) => {
+  console.error("close fileStream  failed with error:" + err);
+});
 ```
 
 ### close7+
-
-PhonePC/2in1TabletTVWearable
 
 close(callback: AsyncCallback<void>): void
 
 异步关闭文件流，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.Stream.close](js-apis-file-fs.md#close-1)替代。
 
@@ -3398,24 +3190,22 @@ close(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let ss = fileio.createStreamSync(filePath, "r+");
-4. ss.close((err: BusinessError) => {
-5. // do something
-6. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let ss = fileio.createStreamSync(filePath, "r+");
+ss.close((err: BusinessError) => {
+  // do something
+});
 ```
 
 ### closeSync
-
-PhonePC/2in1TabletTVWearable
 
 closeSync(): void
 
 同步关闭文件流。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.Stream.closeSync](js-apis-file-fs.md#closesync)替代。
 
@@ -3423,21 +3213,19 @@ closeSync(): void
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. let ss = fileio.createStreamSync(filePath, "r+");
-3. ss.closeSync();
+```ts
+let filePath = pathDir + "/test.txt";
+let ss = fileio.createStreamSync(filePath, "r+");
+ss.closeSync();
 ```
 
 ### flush7+
-
-PhonePC/2in1TabletTVWearable
 
 flush(): Promise<void>
 
 刷新文件流，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.Stream.flush](js-apis-file-fs.md#flush)替代。
 
@@ -3451,26 +3239,24 @@ flush(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let ss = fileio.createStreamSync(filePath, "r+");
-4. ss.flush().then(() => {
-5. console.info("flush succeed");
-6. }).catch((err: BusinessError) => {
-7. console.error("flush failed with error:" + err);
-8. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let ss = fileio.createStreamSync(filePath, "r+");
+ss.flush().then(() => {
+  console.info("flush succeed");
+}).catch((err: BusinessError) => {
+  console.error("flush failed with error:" + err);
+});
 ```
 
 ### flush7+
-
-PhonePC/2in1TabletTVWearable
 
 flush(callback: AsyncCallback<void>): void
 
 异步刷新文件流，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.Stream.flush](js-apis-file-fs.md#flush-1)替代。
 
@@ -3484,24 +3270,22 @@ flush(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let ss = fileio.createStreamSync(filePath, "r+");
-4. ss.flush((err: BusinessError) => {
-5. // do something
-6. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let ss = fileio.createStreamSync(filePath, "r+");
+ss.flush((err: BusinessError) => {
+  // do something
+});
 ```
 
 ### flushSync7+
-
-PhonePC/2in1TabletTVWearable
 
 flushSync(): void
 
 同步刷新文件流。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.Stream.flushSync](js-apis-file-fs.md#flushsync)替代。
 
@@ -3509,21 +3293,19 @@ flushSync(): void
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. let ss = fileio.createStreamSync(filePath, "r+");
-3. ss.flushSync();
+```ts
+let filePath = pathDir + "/test.txt";
+let ss = fileio.createStreamSync(filePath, "r+");
+ss.flushSync();
 ```
 
 ### write7+
-
-PhonePC/2in1TabletTVWearable
 
 write(buffer: ArrayBuffer|string, options?: { offset?: number; length?: number; position?: number; encoding?: string; }): Promise<number>
 
 将数据写入流文件，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.Stream.write](js-apis-file-fs.md#write)替代。
 
@@ -3544,36 +3326,34 @@ write(buffer: ArrayBuffer|string, options?: { offset?: number; length?: number; 
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let ss = fileio.createStreamSync(filePath, "r+");
-4. class Option {
-5. offset: number = 0;
-6. length: number = 4096;
-7. position: number = 0;
-8. encoding: string = 'utf-8';
-9. }
-10. let option = new Option();
-11. option.offset = 1;
-12. option.length = 5;
-13. option.position = 5;
-14. ss.write("hello, world", option).then((number: number) => {
-15. console.info("write succeed and size is:" + number);
-16. }).catch((err: BusinessError) => {
-17. console.error("write failed with error:" + err);
-18. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let ss = fileio.createStreamSync(filePath, "r+");
+class Option {
+  offset: number = 0;
+  length: number = 4096;
+  position: number = 0;
+  encoding: string = 'utf-8';
+}
+let option = new Option();
+option.offset = 1;
+option.length = 5;
+option.position = 5;
+ss.write("hello, world", option).then((number: number) => {
+  console.info("write succeed and size is:" + number);
+}).catch((err: BusinessError) => {
+  console.error("write failed with error:" + err);
+});
 ```
 
 ### write7+
-
-PhonePC/2in1TabletTVWearable
 
 write(buffer: ArrayBuffer|string, options: { offset?: number; length?: number; position?: number; encoding?: string; }, callback: AsyncCallback<number>): void
 
 将数据写入流文件，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.Stream.write](js-apis-file-fs.md#write-1)替代。
 
@@ -3589,37 +3369,35 @@ write(buffer: ArrayBuffer|string, options: { offset?: number; length?: number; p
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let filePath = pathDir + "/test.txt";
-3. let ss = fileio.createStreamSync(filePath, "r+");
-4. class Option {
-5. offset: number = 0;
-6. length: number = 4096;
-7. position: number = 0;
-8. encoding: string = 'utf-8';
-9. }
-10. let option = new Option();
-11. option.offset = 1;
-12. option.length = 5;
-13. option.position = 5;
-14. ss.write("hello, world", option, (err: BusinessError, bytesWritten: number) => {
-15. if (bytesWritten) {
-16. // do something
-17. console.info("write succeed and size is:" + bytesWritten);
-18. }
-19. });
+```ts
+import { BusinessError } from '@ohos.base';
+let filePath = pathDir + "/test.txt";
+let ss = fileio.createStreamSync(filePath, "r+");
+class Option {
+  offset: number = 0;
+  length: number = 4096;
+  position: number = 0;
+  encoding: string = 'utf-8';
+}
+let option = new Option();
+option.offset = 1;
+option.length = 5;
+option.position = 5;
+ss.write("hello, world", option, (err: BusinessError, bytesWritten: number) => {
+  if (bytesWritten) {
+    // do something
+    console.info("write succeed and size is:" + bytesWritten);
+  }
+});
 ```
 
 ### writeSync7+
-
-PhonePC/2in1TabletTVWearable
 
 writeSync(buffer: ArrayBuffer|string, options?: { offset?: number; length?: number; position?: number; encoding?: string; }): number
 
 以同步方法将数据写入流文件。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.Stream.writeSync](js-apis-file-fs.md#writesync)替代。
 
@@ -3640,31 +3418,29 @@ writeSync(buffer: ArrayBuffer|string, options?: { offset?: number; length?: numb
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. let ss = fileio.createStreamSync(filePath,"r+");
-3. class Option {
-4. offset: number = 0;
-5. length: number = 4096;
-6. position: number = 0;
-7. encoding: string = 'utf-8';
-8. }
-9. let option = new Option();
-10. option.offset = 1;
-11. option.length = 5;
-12. option.position = 5;
-13. let num = ss.writeSync("hello, world", option);
+```ts
+let filePath = pathDir + "/test.txt";
+let ss = fileio.createStreamSync(filePath,"r+");
+class Option {
+  offset: number = 0;
+  length: number = 4096;
+  position: number = 0;
+  encoding: string = 'utf-8';
+}
+let option = new Option();
+option.offset = 1;
+option.length = 5;
+option.position = 5;
+let num = ss.writeSync("hello, world", option);
 ```
 
 ### read7+
-
-PhonePC/2in1TabletTVWearable
 
 read(buffer: ArrayBuffer, options?: { position?: number; offset?: number; length?: number; }): Promise<ReadOut>
 
 从流文件读取数据，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.Stream.read](js-apis-file-fs.md#read)替代。
 
@@ -3685,39 +3461,37 @@ read(buffer: ArrayBuffer, options?: { position?: number; offset?: number; length
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. import buffer from '@ohos.buffer';
-3. let filePath = pathDir + "/test.txt";
-4. let ss = fileio.createStreamSync(filePath, "r+");
-5. let arrayBuffer = new ArrayBuffer(4096);
-6. class Option {
-7. offset: number = 0;
-8. length: number = 4096;
-9. position: number = 0;
-10. }
-11. let option = new Option();
-12. option.offset = 1;
-13. option.length = 5;
-14. option.position = 5;
-15. ss.read(arrayBuffer, option).then((readResult: fileio.ReadOut) => {
-16. console.info("read data succeed");
-17. let buf = buffer.from(arrayBuffer, 0, readResult.bytesRead);
-18. console.info(`The content of file: ${buf.toString()}`);
-19. }).catch((err: BusinessError) => {
-20. console.error("read data failed with error:" + err);
-21. });
+```ts
+import { BusinessError } from '@ohos.base';
+import buffer from '@ohos.buffer';
+let filePath = pathDir + "/test.txt";
+let ss = fileio.createStreamSync(filePath, "r+");
+let arrayBuffer = new ArrayBuffer(4096);
+class Option {
+  offset: number = 0;
+  length: number = 4096;
+  position: number = 0;
+}
+let option = new Option();
+option.offset = 1;
+option.length = 5;
+option.position = 5;
+ss.read(arrayBuffer, option).then((readResult: fileio.ReadOut) => {
+  console.info("read data succeed");
+  let buf = buffer.from(arrayBuffer, 0, readResult.bytesRead);
+  console.info(`The content of file: ${buf.toString()}`);
+}).catch((err: BusinessError) => {
+  console.error("read data failed with error:" + err);
+});
 ```
 
 ### read7+
-
-PhonePC/2in1TabletTVWearable
 
 read(buffer: ArrayBuffer, options: { position?: number; offset?: number; length?: number; }, callback: AsyncCallback<ReadOut>): void
 
 从流文件读取数据，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.Stream.read](js-apis-file-fs.md#read-1)替代。
 
@@ -3733,39 +3507,37 @@ read(buffer: ArrayBuffer, options: { position?: number; offset?: number; length?
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. import buffer from '@ohos.buffer';
-3. let filePath = pathDir + "/test.txt";
-4. let ss = fileio.createStreamSync(filePath, "r+");
-5. let arrayBuffer = new ArrayBuffer(4096);
-6. class Option {
-7. offset: number = 0;
-8. length: number = 4096;
-9. position: number = 0;
-10. }
-11. let option = new Option();
-12. option.offset = 1;
-13. option.length = 5;
-14. option.position = 5;
-15. ss.read(arrayBuffer, option, (err: BusinessError, readResult: fileio.ReadOut) => {
-16. if (readResult.bytesRead) {
-17. console.info("read data succeed");
-18. let buf = buffer.from(arrayBuffer, 0, readResult.bytesRead);
-19. console.info(`The content of file: ${buf.toString()}`);
-20. }
-21. });
+```ts
+import { BusinessError } from '@ohos.base';
+import buffer from '@ohos.buffer';
+let filePath = pathDir + "/test.txt";
+let ss = fileio.createStreamSync(filePath, "r+");
+let arrayBuffer = new ArrayBuffer(4096);
+class Option {
+  offset: number = 0;
+  length: number = 4096;
+  position: number = 0;
+}
+let option = new Option();
+option.offset = 1;
+option.length = 5;
+option.position = 5;
+ss.read(arrayBuffer, option, (err: BusinessError, readResult: fileio.ReadOut) => {
+  if (readResult.bytesRead) {
+    console.info("read data succeed");
+    let buf = buffer.from(arrayBuffer, 0, readResult.bytesRead);
+    console.info(`The content of file: ${buf.toString()}`);
+  }
+});
 ```
 
 ### readSync7+
-
-PhonePC/2in1TabletTVWearable
 
 readSync(buffer: ArrayBuffer, options?: { position?: number; offset?: number; length?: number; }): number
 
 以同步方法从流文件读取数据。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.Stream.readSync](js-apis-file-fs.md#readsync)替代。
 
@@ -3786,41 +3558,37 @@ readSync(buffer: ArrayBuffer, options?: { position?: number; offset?: number; le
 
 **示例：**
 
-```
-1. let filePath = pathDir + "/test.txt";
-2. let ss = fileio.createStreamSync(filePath, "r+");
-3. class Option {
-4. offset: number = 0;
-5. length: number = 4096;
-6. position: number = 0;
-7. }
-8. let option = new Option();
-9. option.offset = 1;
-10. option.length = 5;
-11. option.position = 5;
-12. let buf = new ArrayBuffer(4096)
-13. let num = ss.readSync(buf, option);
+```ts
+let filePath = pathDir + "/test.txt";
+let ss = fileio.createStreamSync(filePath, "r+");
+class Option {
+  offset: number = 0;
+  length: number = 4096;
+  position: number = 0;
+}
+let option = new Option();
+option.offset = 1;
+option.length = 5;
+option.position = 5;
+let buf = new ArrayBuffer(4096)
+let num = ss.readSync(buf, option);
 ```
 
 ## Dir
 
-PhonePC/2in1TabletTVWearable
-
 管理目录，在调用Dir的方法前，需要先通过opendir方法（同步或异步）来构建一个Dir实例。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.listFile](js-apis-file-fs.md#fileiolistfile)替代。
 
 ### read
 
-PhonePC/2in1TabletTVWearable
-
 read(): Promise<Dirent>
 
 读取下一个目录项，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.listFile](js-apis-file-fs.md#fileiolistfile)替代。
 
@@ -3834,24 +3602,22 @@ read(): Promise<Dirent>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. dir.read().then((dirent: fileio.Dirent) => {
-3. console.info("read succeed, the name of dirent is " + dirent.name);
-4. }).catch((err: BusinessError) => {
-5. console.error("read failed with error:" + err);
-6. });
+```ts
+import { BusinessError } from '@ohos.base';
+dir.read().then((dirent: fileio.Dirent) => {
+  console.info("read succeed, the name of dirent is " + dirent.name);
+}).catch((err: BusinessError) => {
+  console.error("read failed with error:" + err);
+});
 ```
 
 ### read
-
-PhonePC/2in1TabletTVWearable
 
 read(callback: AsyncCallback<Dirent>): void
 
 读取下一个目录项，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.listFile](js-apis-file-fs.md#fileiolistfile-1)替代。
 
@@ -3865,25 +3631,23 @@ read(callback: AsyncCallback<Dirent>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. dir.read((err: BusinessError, dirent: fileio.Dirent) => {
-3. if (dirent) {
-4. // do something
-5. console.info("read succeed, the name of file is " + dirent.name);
-6. }
-7. });
+```ts
+import { BusinessError } from '@ohos.base';
+dir.read((err: BusinessError, dirent: fileio.Dirent) => {
+  if (dirent) {
+    // do something
+    console.info("read succeed, the name of file is " + dirent.name);
+  }
+});
 ```
 
 ### readSync
-
-PhonePC/2in1TabletTVWearable
 
 readSync(): Dirent
 
 同步读取下一个目录项。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.listFileSync](js-apis-file-fs.md#fileiolistfilesync)替代。
 
@@ -3897,19 +3661,17 @@ readSync(): Dirent
 
 **示例：**
 
-```
-1. let dirent = dir.readSync();
+```ts
+let dirent = dir.readSync();
 ```
 
 ### close7+
 
-PhonePC/2in1TabletTVWearable
-
 close(): Promise<void>
 
-异步关闭目录，使用promise形式返回结果。目录被关闭后，Dir中持有的文件描述将被释放，后续将无法从Dir中读取目录项。
+异步关闭目录。使用Promise异步回调。目录被关闭后，Dir中持有的文件描述符将被释放，后续将无法从Dir中读取目录项。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.listFile](js-apis-file-fs.md#fileiolistfile)替代。
 
@@ -3917,22 +3679,20 @@ close(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. dir.close().then(() => {
-3. console.info("close dir successfully");
-4. });
+```ts
+import { BusinessError } from '@ohos.base';
+dir.close().then(() => {
+  console.info("close dir successfully");
+});
 ```
 
 ### close7+
 
-PhonePC/2in1TabletTVWearable
-
 close(callback: AsyncCallback<void>): void
 
-异步关闭目录，使用callback形式返回结果。目录被关闭后，Dir中持有的文件描述将被释放，后续将无法从Dir中读取目录项。
+异步关闭目录。使用callback异步回调。目录被关闭后，Dir中持有的文件描述符将被释放，后续将无法从Dir中读取目录项。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.listFile](js-apis-file-fs.md#fileiolistfile-1)替代。
 
@@ -3940,22 +3700,20 @@ close(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. dir.close((err: BusinessError) => {
-3. console.info("close dir successfully");
-4. });
+```ts
+import { BusinessError } from '@ohos.base';
+dir.close((err: BusinessError) => {
+  console.info("close dir successfully");
+});
 ```
 
 ### closeSync
 
-PhonePC/2in1TabletTVWearable
-
 closeSync(): void
 
-用于关闭目录。目录被关闭后，Dir中持有的文件描述将被释放，后续将无法从Dir中读取目录项。
+用于关闭目录。目录被关闭后，Dir中持有的文件描述符将被释放，后续将无法从Dir中读取目录项。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.listFileSync](js-apis-file-fs.md#fileiolistfilesync)替代。
 
@@ -3963,17 +3721,15 @@ closeSync(): void
 
 **示例：**
 
-```
-1. dir.closeSync();
+```ts
+dir.closeSync();
 ```
 
 ## Dirent
 
-PhonePC/2in1TabletTVWearable
-
 在调用Dirent的方法前，需要先通过[dir.read()](js-apis-fileio.md#read)方法（同步或异步）来构建一个Dirent实例。
 
-说明
+**说明** 
 
 从API version 9开始废弃，请使用[fileIo.listFile](js-apis-file-fs.md#fileiolistfile)替代。
 
@@ -3987,13 +3743,11 @@ PhonePC/2in1TabletTVWearable
 
 ### isBlockDevice
 
-PhonePC/2in1TabletTVWearable
-
 isBlockDevice(): boolean
 
 用于判断当前目录项是否是块特殊文件。一个块特殊文件只能以块为粒度进行访问，且访问的时候带缓存。
 
-说明
+**说明** 
 
 从API version 9开始废弃。
 
@@ -4007,20 +3761,18 @@ isBlockDevice(): boolean
 
 **示例：**
 
-```
-1. let dir = fileio.opendirSync(pathDir);
-2. let isBLockDevice = dir.readSync().isBlockDevice();
+```ts
+let dir = fileio.opendirSync(pathDir);
+let isBLockDevice = dir.readSync().isBlockDevice();
 ```
 
 ### isCharacterDevice
-
-PhonePC/2in1TabletTVWearable
 
 isCharacterDevice(): boolean
 
 用于判断当前目录项是否是字符特殊设备。一个字符特殊设备可进行随机访问，且访问的时候不带缓存。
 
-说明
+**说明** 
 
 从API version 9开始废弃。
 
@@ -4034,20 +3786,18 @@ isCharacterDevice(): boolean
 
 **示例：**
 
-```
-1. let dir = fileio.opendirSync(pathDir);
-2. let isCharacterDevice = dir.readSync().isCharacterDevice();
+```ts
+let dir = fileio.opendirSync(pathDir);
+let isCharacterDevice = dir.readSync().isCharacterDevice();
 ```
 
 ### isDirectory
-
-PhonePC/2in1TabletTVWearable
 
 isDirectory(): boolean
 
 用于判断当前目录项是否是目录。
 
-说明
+**说明** 
 
 从API version 9开始废弃。
 
@@ -4061,20 +3811,18 @@ isDirectory(): boolean
 
 **示例：**
 
-```
-1. let dir = fileio.opendirSync(pathDir);
-2. let isDirectory = dir.readSync().isDirectory();
+```ts
+let dir = fileio.opendirSync(pathDir);
+let isDirectory = dir.readSync().isDirectory();
 ```
 
 ### isFIFO
-
-PhonePC/2in1TabletTVWearable
 
 isFIFO(): boolean
 
 用于判断当前目录项是否是命名管道（有时也称为FIFO）。命名管道通常用于进程间通信。
 
-说明
+**说明** 
 
 从API version 9开始废弃。
 
@@ -4088,20 +3836,18 @@ isFIFO(): boolean
 
 **示例：**
 
-```
-1. let dir = fileio.opendirSync(pathDir);
-2. let isFIFO = dir.readSync().isFIFO();
+```ts
+let dir = fileio.opendirSync(pathDir);
+let isFIFO = dir.readSync().isFIFO();
 ```
 
 ### isFile
-
-PhonePC/2in1TabletTVWearable
 
 isFile(): boolean
 
 用于判断当前目录项是否是普通文件。
 
-说明
+**说明** 
 
 从API version 9开始废弃。
 
@@ -4115,20 +3861,18 @@ isFile(): boolean
 
 **示例：**
 
-```
-1. let dir = fileio.opendirSync(pathDir);
-2. let isFile = dir.readSync().isFile();
+```ts
+let dir = fileio.opendirSync(pathDir);
+let isFile = dir.readSync().isFile();
 ```
 
 ### isSocket
-
-PhonePC/2in1TabletTVWearable
 
 isSocket(): boolean
 
 用于判断当前目录项是否是套接字。
 
-说明
+**说明** 
 
 从API version 9开始废弃。
 
@@ -4142,20 +3886,18 @@ isSocket(): boolean
 
 **示例：**
 
-```
-1. let dir = fileio.opendirSync(pathDir);
-2. let isSocket = dir.readSync().isSocket();
+```ts
+let dir = fileio.opendirSync(pathDir);
+let isSocket = dir.readSync().isSocket();
 ```
 
 ### isSymbolicLink
-
-PhonePC/2in1TabletTVWearable
 
 isSymbolicLink(): boolean
 
 用于判断当前目录项是否是符号链接。
 
-说明
+**说明** 
 
 从API version 9开始废弃。
 
@@ -4169,7 +3911,7 @@ isSymbolicLink(): boolean
 
 **示例：**
 
-```
-1. let dir = fileio.opendirSync(pathDir);
-2. let isSymbolicLink = dir.readSync().isSymbolicLink();
+```ts
+let dir = fileio.opendirSync(pathDir);
+let isSymbolicLink = dir.readSync().isSymbolicLink();
 ```

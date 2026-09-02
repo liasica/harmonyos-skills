@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/start-intent-panel
 title: 拉起指定类型的应用概述
-breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > 应用间跳转 > 拉起指定类型的应用 > 拉起指定类型的应用概述
+breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起指定类型的应用 > 拉起指定类型的应用概述
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:25:51+08:00
-doc_updated_at: 2026-03-27
-content_hash: sha256:c7349f2a496714f787212764ffa8e32532f49b1308028f27f1f85fcc800d0d51
+scraped_at: 2026-09-02T14:59:10+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:a1bddc8bc5f830e67ac66a5cdc2af111ebf47070c2d52c46d1762bb20dc8cf8b
 ---
 
 本章节主要介绍拉起方应用如何通过指定应用类型、而非某个具体的应用，来实现应用跳转。通常有以下几种方式：
@@ -22,10 +22,10 @@ content_hash: sha256:c7349f2a496714f787212764ffa8e32532f49b1308028f27f1f85fcc800
 
 * 如果当前设备已安装应用中存在匹配的应用，选择框中将展示已接入的垂类应用，由用户选择打开指定应用以实现相应的意图。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/f5ythv5AR9a7P9hmH7sfnA/zh-cn_image_0000002589243801.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/stHrNGHTRZmZQt_TILjUOw/zh-cn_image_0000002706833032.png)
 * 如果当前设备已安装应用中没有匹配的应用，系统将自动弹窗提示用户没有相关应用（下图以导航类应用匹配失败为例）。无需开发者适配。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/6bVusHyHTpyfg7tIylWShg/zh-cn_image_0000002558763996.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/Ofz4FiPwTYiXdnPjeRXiYA/zh-cn_image_0000002736312141.png)
 
 这种方式可以为调用方提供统一的安全、可信的目标方应用，同时降低调用方的接入成本。
 
@@ -40,6 +40,7 @@ content_hash: sha256:c7349f2a496714f787212764ffa8e32532f49b1308028f27f1f85fcc800
 | 路线规划功能 | - type：navigation  - wantParams.sceneType：1 | RoutePlan |
 | 导航功能 | - type：navigation  - wantParams.sceneType：2 | Navigation |
 | 位置搜索功能 | - type：navigation  - wantParams.sceneType：3 | PlaceSearch |
+| 地点详情功能 | - type：navigation  - wantParams.sceneType：4 | DetailLocation |
 | 转账汇款功能 | - type：finance  - wantParams.sceneType：1 | Transfer |
 | 信用卡还款功能 | - type：finance  - wantParams.sceneType：2 | CreditCardRepayment |
 | 撰写邮件功能 | - type：mail  - wantParams.sceneType：1 | ComposeMail |

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-runnin
 title: 模拟器应用运行时崩溃退出
 breadcrumb: FAQ > DevEco Studio > 应用运行 > 模拟器应用运行时崩溃退出
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:58+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:16+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:b010177c6e76b73625e9468c042f1efe4deb27a2532020d2e9aace15bedcbc9b
 ---
 

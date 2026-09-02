@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: Image_NativeModule
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 模块 > Image_NativeModule
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:15+08:00
-doc_updated_at: 2026-03-19
-content_hash: sha256:1ad7096c3738483fd81eec65602e15683aa7c47a13cf57fcc9a14936d778d9c2
+scraped_at: 2026-09-02T14:52:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5f65febbebe065144e254fc98dc4ea0fb478d5a65f32bf41795f1805314064f2
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供图片处理的相关能力，包括图片编解码、从Native层获取图片数据等。
 
@@ -28,8 +26,6 @@ PhonePC/2in1TabletTVWearable
 **起始版本：** 12
 
 ## 文件汇总
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

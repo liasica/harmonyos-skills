@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/wearengine_api
-title: wearEngine(穿戴设备能力开放)
-breadcrumb: API参考 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > ArkTS API > wearEngine(穿戴设备能力开放)
+title: wearEngine（穿戴设备能力开放）
+breadcrumb: API参考 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > ArkTS API > wearEngine（穿戴设备能力开放）
 category: harmonyos-references
-scraped_at: 2026-04-29T14:01:54+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:5ba0d0637cd466fa06ab1c5853016bd0207d6704a9b34479b280739e054f9487
+scraped_at: 2026-09-02T15:02:15+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:80b4ce700de650bfee6a91d135befc98680f84fe4c8717630f1eef7d5255bb41
 ---
 
 本模块提供手机与穿戴设备侧的交互能力。应用可调用模块内接口实现如下功能：
@@ -13,7 +13,7 @@ content_hash: sha256:5ba0d0637cd466fa06ab1c5853016bd0207d6704a9b34479b280739e054
 * 获取与当前设备已连接配对的设备列表、与对端设备互通消息互送文件等。
 * 查询穿戴设备状态、向穿戴设备发送模板化通知、接收穿戴设备传感器的相关数据等。
 
-说明
+**说明** 
 
 针对系统能力SystemCapability.Health.WearEngine，请先使用[canIUse()](js-apis-syscap.md#caniuse)接口判断当前设备是否支持此syscap及对应接口。
 
@@ -21,15 +21,11 @@ content_hash: sha256:5ba0d0637cd466fa06ab1c5853016bd0207d6704a9b34479b280739e054
 
 ## 导入模块
 
-PhoneTabletWearable
-
-```
-1. import { wearEngine } from '@kit.WearEngine';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
 ```
 
 ## wearEngine.getAuthClient
-
-PhoneTabletWearable
 
 getAuthClient(context: common.Context): AuthClient
 
@@ -57,26 +53,24 @@ getAuthClient(context: common.Context): AuthClient
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 | 801 | Capability not supported. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
+```ts
+import { wearEngine } from '@kit.WearEngine';
 
-3. let authClient: wearEngine.AuthClient = wearEngine.getAuthClient(this.getUIContext().getHostContext());
-4. console.info(`Succeeded in getting auth client`);
+let authClient: wearEngine.AuthClient = wearEngine.getAuthClient(this.getUIContext().getHostContext());
+console.info(`Succeeded in getting auth client`);
 ```
 
 ## AuthClient
-
-PhoneTabletWearable
 
 权限管理客户端类，由[wearEngine.getAuthClient](wearengine_api.md#wearenginegetauthclient)返回得到。
 
@@ -87,8 +81,6 @@ PhoneTabletWearable
 **起始版本：** 5.0.0(12)
 
 ### requestAuthorization
-
-PhoneTabletWearable
 
 requestAuthorization(request: AuthorizationRequest): Promise<AuthorizationResponse>
 
@@ -116,41 +108,40 @@ requestAuthorization(request: AuthorizationRequest): Promise<AuthorizationRespon
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
-| [1008500001](wearengine_api_error_code.md#section1008500001-网络错误) | Network error. The network is unavailable. |
-| [1008500004](wearengine_api_error_code.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
-| [1008500006](wearengine_api_error_code.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
-| [1008500007](wearengine_api_error_code.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
-| [1008500008](wearengine_api_error_code.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
-| [1008500009](wearengine_api_error_code.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008500001](errorcode-wearengine.md#section1008500001-网络错误) | Network error. The network is unavailable. |
+| [1008500004](errorcode-wearengine.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
+| [1008500006](errorcode-wearengine.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
+| [1008500007](errorcode-wearengine.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
+| [1008500008](errorcode-wearengine.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
+| [1008500009](errorcode-wearengine.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let authClient: wearEngine.AuthClient = wearEngine.getAuthClient(this.getUIContext().getHostContext());
+let authClient: wearEngine.AuthClient = wearEngine.getAuthClient(this.getUIContext().getHostContext());
 
-6. let request: wearEngine.AuthorizationRequest = {
-7. permissions: [wearEngine.Permission.USER_STATUS]
-8. }
+let request: wearEngine.AuthorizationRequest = {
+  permissions: [wearEngine.Permission.USER_STATUS]
+}
 
-10. authClient.requestAuthorization(request).then(result => {
-11. console.info(`Succeeded in requesting authorize, authorized permissions is ${result.permissions}`);
-12. }).catch((error: BusinessError) => {
-13. console.error(`Failed to request authorize. Code is ${error.code}, message is ${error.message}`);
-14. })
+// 向手机用户申请需要授权的权限，返回申请的权限中用户已授权的权限，使用Promise异步回调。
+authClient.requestAuthorization(request).then(result => {
+  console.info(`Succeeded in requesting authorize, authorized permissions is ${result.permissions}`);
+}).catch((error: BusinessError) => {
+  console.error(`Failed to request authorize. Code is ${error.code}, message is ${error.message}`);
+})
 ```
 
 ### getAuthorization
-
-PhoneTabletWearable
 
 getAuthorization(): Promise<AuthorizationResponse>
 
@@ -172,36 +163,35 @@ getAuthorization(): Promise<AuthorizationResponse>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| [1008500001](wearengine_api_error_code.md#section1008500001-网络错误) | Network error. The network is unavailable. |
-| [1008500004](wearengine_api_error_code.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
-| [1008500006](wearengine_api_error_code.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
-| [1008500007](wearengine_api_error_code.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
-| [1008500008](wearengine_api_error_code.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
-| [1008500009](wearengine_api_error_code.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008500001](errorcode-wearengine.md#section1008500001-网络错误) | Network error. The network is unavailable. |
+| [1008500004](errorcode-wearengine.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
+| [1008500006](errorcode-wearengine.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
+| [1008500007](errorcode-wearengine.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
+| [1008500008](errorcode-wearengine.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
+| [1008500009](errorcode-wearengine.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let authClient: wearEngine.AuthClient = wearEngine.getAuthClient(this.getUIContext().getHostContext());
+let authClient: wearEngine.AuthClient = wearEngine.getAuthClient(this.getUIContext().getHostContext());
 
-6. authClient.getAuthorization().then(result => {
-7. console.info(`Succeeded in getting authorized permissions, authorized permissions is ${result.permissions}`);
-8. }).catch((error: BusinessError) => {
-9. console.error(`Failed to get authorized permissions. Code is ${error.code}, message is ${error.message}`);
-10. })
+// 获取用户已授权的权限，使用Promise异步回调。
+authClient.getAuthorization().then(result => {
+  console.info(`Succeeded in getting authorized permissions, authorized permissions is ${result.permissions}`);
+}).catch((error: BusinessError) => {
+  console.error(`Failed to get authorized permissions. Code is ${error.code}, message is ${error.message}`);
+})
 ```
 
 ## AuthorizationBase
-
-PhoneTabletWearable
 
 权限控制模块输入输出的基类。
 
@@ -216,8 +206,6 @@ PhoneTabletWearable
 | permissions | [Permission](wearengine_api.md#permission)[] | 否 | 否 | 权限枚举类型的数组。 |
 
 ## Permission
-
-PhoneTabletWearable
 
 权限枚举类型。
 
@@ -236,8 +224,6 @@ PhoneTabletWearable
 
 ## AuthorizationRequest
 
-PhoneTabletWearable
-
 权限请求类，继承自[AuthorizationBase](wearengine_api.md#authorizationbase)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -248,8 +234,6 @@ PhoneTabletWearable
 
 ## AuthorizationResponse
 
-PhoneTabletWearable
-
 权限响应类，继承自[AuthorizationBase](wearengine_api.md#authorizationbase)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -259,8 +243,6 @@ PhoneTabletWearable
 **起始版本：** 5.0.0(12)
 
 ## wearEngine.getDeviceClient
-
-PhoneTabletWearable
 
 getDeviceClient(context: common.Context): DeviceClient
 
@@ -286,25 +268,23 @@ getDeviceClient(context: common.Context): DeviceClient
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
 
-3. let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
-4. console.info(`Succeeded in getting device client.`);
+let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
+console.info(`Succeeded in getting device client.`);
 ```
 
 ## DeviceClient
-
-PhoneTabletWearable
 
 Device客户端类。由接口[wearEngine.getDeviceClient](wearengine_api.md#wearenginegetdeviceclient)返回得到。
 
@@ -316,11 +296,9 @@ Device客户端类。由接口[wearEngine.getDeviceClient](wearengine_api.md#wea
 
 ### getConnectedDevices
 
-PhoneTabletWearable
-
 getConnectedDevices(): Promise<Device[]>
 
-获取当前已连接且支持wearEngine能力集的设备。
+获取当前已连接且支持wearEngine能力集的设备，使用Promise异步回调。
 
 **系统能力：** SystemCapability.Health.WearEngine
 
@@ -336,34 +314,32 @@ getConnectedDevices(): Promise<Device[]>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| [1008500001](wearengine_api_error_code.md#section1008500001-网络错误) | Network error. The network is unavailable. |
-| [1008500004](wearengine_api_error_code.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
-| [1008500006](wearengine_api_error_code.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
-| [1008500008](wearengine_api_error_code.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
-| [1008500009](wearengine_api_error_code.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008500001](errorcode-wearengine.md#section1008500001-网络错误) | Network error. The network is unavailable. |
+| [1008500004](errorcode-wearengine.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
+| [1008500006](errorcode-wearengine.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
+| [1008500008](errorcode-wearengine.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
+| [1008500009](errorcode-wearengine.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
-5. deviceClient.getConnectedDevices().then((devices) => {
-6. console.info(`Succeeded in getting devices, devices number is ${devices.length}.`);
-7. }).catch((error: BusinessError) => {
-8. console.error(`Failed to get devices. Code is ${error.code}, message is ${error.message}.`);
-9. })
+let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
+deviceClient.getConnectedDevices().then((devices) => {
+  console.info(`Succeeded in getting devices, devices number is ${devices.length}.`);
+}).catch((error: BusinessError) => {
+  console.error(`Failed to get devices. Code is ${error.code}, message is ${error.message}.`);
+})
 ```
 
 ## Device
-
-PhoneTabletWearable
 
 穿戴设备信息类。由接口[getConnectedDevices](wearengine_api.md#getconnecteddevices)返回。
 
@@ -386,8 +362,6 @@ PhoneTabletWearable
 | osCategory | [OsCategory](wearengine_api.md#oscategory) | 否 | 是 | 设备的操作系统类别。  **起始版本：** 5.1.0(18) |
 
 ### isWearEngineCapabilitySupported
-
-PhoneTabletWearable
 
 isWearEngineCapabilitySupported(capability: WearEngineCapability): Promise<boolean>
 
@@ -415,45 +389,48 @@ isWearEngineCapabilitySupported(capability: WearEngineCapability): Promise<boole
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 | 801 | Capability not supported. |
-| [1008500001](wearengine_api_error_code.md#section1008500001-网络错误) | Network error. The network is unavailable. |
-| [1008500002](wearengine_api_error_code.md#section1008500002-无绑定设备) | No device is bound. |
-| [1008500003](wearengine_api_error_code.md#section1008500003-设备未连接) | Device disconnected. |
-| [1008500004](wearengine_api_error_code.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
-| [1008500006](wearengine_api_error_code.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
-| [1008500008](wearengine_api_error_code.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
-| [1008500009](wearengine_api_error_code.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008500001](errorcode-wearengine.md#section1008500001-网络错误) | Network error. The network is unavailable. |
+| [1008500002](errorcode-wearengine.md#section1008500002-无绑定设备) | No device is bound. |
+| [1008500003](errorcode-wearengine.md#section1008500003-设备未连接) | Device disconnected. |
+| [1008500004](errorcode-wearengine.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
+| [1008500006](errorcode-wearengine.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
+| [1008500008](errorcode-wearengine.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
+| [1008500009](errorcode-wearengine.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
-5. let devices: wearEngine.Device[] = await deviceClient.getConnectedDevices();
+let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
+try {
+  let devices: wearEngine.Device[] = await deviceClient.getConnectedDevices();
 
-7. if (devices.length > 0) {
-8. // 从得到的设备列表中选取目标设备，并定义为device(假设数组中存在已连接设备且第一位即为目标设备)
-9. let device: wearEngine.Device = devices[0];
+  if (devices.length > 0) {
+    // 从得到的设备列表中选取目标设备，并定义为device（假设数组中存在已连接设备且第一位即为目标设备）
+    let device: wearEngine.Device = devices[0];
 
-11. device.isWearEngineCapabilitySupported(wearEngine.WearEngineCapability.P2P_COMMUNICATION).then((isSupportP2P) => {
-12. console.info(`Succeeded in checking p2p capability, result is ${isSupportP2P}`);
-13. }).catch((error: BusinessError) => {
-14. console.error(`Failed to check p2p capability. Code is ${error.code}, message is ${error.message}`);
-15. })
-16. }
+    device.isWearEngineCapabilitySupported(wearEngine.WearEngineCapability.P2P_COMMUNICATION)
+      .then((isSupportP2P) => {
+        console.info(`Succeeded in checking p2p capability, result is ${isSupportP2P}`);
+      }).catch((error: BusinessError) => {
+      console.error(`Failed to check p2p capability. Code is ${error.code}, message is${error.message}`);
+    })
+  }
+} catch (error) {
+  console.error(`Failed to get connected devices. Code is ${error.code}, message is${error.message}`);
+}
 ```
 
 ### isDeviceCapabilitySupported
-
-PhoneTabletWearable
 
 isDeviceCapabilitySupported(capability: DeviceCapability): Promise<boolean>
 
@@ -481,45 +458,47 @@ isDeviceCapabilitySupported(capability: DeviceCapability): Promise<boolean>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 | 801 | Capability not supported. |
-| [1008500001](wearengine_api_error_code.md#section1008500001-网络错误) | Network error. The network is unavailable. |
-| [1008500002](wearengine_api_error_code.md#section1008500002-无绑定设备) | No device is bound. |
-| [1008500003](wearengine_api_error_code.md#section1008500003-设备未连接) | Device disconnected. |
-| [1008500004](wearengine_api_error_code.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
-| [1008500006](wearengine_api_error_code.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
-| [1008500008](wearengine_api_error_code.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
-| [1008500009](wearengine_api_error_code.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008500001](errorcode-wearengine.md#section1008500001-网络错误) | Network error. The network is unavailable. |
+| [1008500002](errorcode-wearengine.md#section1008500002-无绑定设备) | No device is bound. |
+| [1008500003](errorcode-wearengine.md#section1008500003-设备未连接) | Device disconnected. |
+| [1008500004](errorcode-wearengine.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
+| [1008500006](errorcode-wearengine.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
+| [1008500008](errorcode-wearengine.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
+| [1008500009](errorcode-wearengine.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
-5. let devices: wearEngine.Device[] = await deviceClient.getConnectedDevices();
+let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
+try {
+  let devices: wearEngine.Device[] = await deviceClient.getConnectedDevices();
+  
+  if (devices.length > 0) {
+    // 从得到的设备列表中选取目标设备，并定义为device（假设数组中存在已连接设备且第一位即为目标设备）
+    let device: wearEngine.Device = devices[0];
 
-7. if (devices.length > 0) {
-8. // 从得到的设备列表中选取目标设备，并定义为device(假设数组中存在已连接设备且第一位即为目标设备)
-9. let device: wearEngine.Device = devices[0];
-
-11. device.isDeviceCapabilitySupported(wearEngine.DeviceCapability.CBT_I).then((isSupportCBTI) => {
-12. console.info(`Succeeded in checking CBTI capability, result is ${isSupportCBTI}`);
-13. }).catch((error: BusinessError) => {
-14. console.error(`Failed to check CBTI capability. Code is ${error.code}, message is ${error.message}`);
-15. })
-16. }
+    device.isDeviceCapabilitySupported(wearEngine.DeviceCapability.CBT_I).then((isSupportCBTI) => {
+      console.info(`Succeeded in checking CBTI capability, result is ${isSupportCBTI}`);
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to check CBTI capability. Code is ${error.code}, message is ${error.message}`);
+    })
+  }
+} catch (error) {
+  console.error(`Failed to get connected devices. Code is ${error.code}, message is ${error.message}`);
+}
 ```
 
 ### getSerialNumber
-
-PhoneTabletWearable
 
 getSerialNumber(): Promise<string>
 
@@ -541,45 +520,47 @@ getSerialNumber(): Promise<string>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. |
-| [1008500001](wearengine_api_error_code.md#section1008500001-网络错误) | Network error. The network is unavailable. |
-| [1008500002](wearengine_api_error_code.md#section1008500002-无绑定设备) | No device is bound. |
-| [1008500003](wearengine_api_error_code.md#section1008500003-设备未连接) | Device disconnected. |
-| [1008500004](wearengine_api_error_code.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
-| [1008500005](wearengine_api_error_code.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
-| [1008500006](wearengine_api_error_code.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
-| [1008500008](wearengine_api_error_code.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
-| [1008500009](wearengine_api_error_code.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008500001](errorcode-wearengine.md#section1008500001-网络错误) | Network error. The network is unavailable. |
+| [1008500002](errorcode-wearengine.md#section1008500002-无绑定设备) | No device is bound. |
+| [1008500003](errorcode-wearengine.md#section1008500003-设备未连接) | Device disconnected. |
+| [1008500004](errorcode-wearengine.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
+| [1008500005](errorcode-wearengine.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
+| [1008500006](errorcode-wearengine.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
+| [1008500008](errorcode-wearengine.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
+| [1008500009](errorcode-wearengine.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
-5. let devices: wearEngine.Device[] = await deviceClient.getConnectedDevices();
+let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
+try {
+  let devices: wearEngine.Device[] = await deviceClient.getConnectedDevices();
 
-7. if (devices.length > 0) {
-8. // 从得到的设备列表中选取目标设备，并定义为device(假设数组中存在已连接设备且第一位即为目标设备)
-9. let device: wearEngine.Device = devices[0];
+  if (devices.length > 0) {
+    // 从得到的设备列表中选取目标设备，并定义为device（假设数组中存在已连接设备且第一位即为目标设备）
+    let device: wearEngine.Device = devices[0];
 
-11. device.getSerialNumber().then((sn) => {
-12. console.info(`Succeeded in getting device SN, result is ${sn}`);
-13. }).catch((error: BusinessError) => {
-14. console.error(`Failed to get device SN. Code is ${error.code}, message is ${error.message}`);
-15. })
-16. }
+    device.getSerialNumber().then((sn) => {
+      console.info(`Succeeded in getting device SN, result is ${sn}`);
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to get device SN. Code is ${error.code}, message is ${error.message}`);
+    })
+  }
+} catch (error) {
+  console.error(`Failed to get connected devices. Code is ${error.code}, message is ${error.message}`);
+}
 ```
 
 ## WearEngineCapability
-
-PhoneTabletWearable
 
 WearEngine能力集枚举类型。
 
@@ -598,8 +579,6 @@ WearEngine能力集枚举类型。
 
 ## DeviceCapability
 
-PhoneTabletWearable
-
 Device能力集枚举类型。
 
 **系统能力：** SystemCapability.Health.WearEngine
@@ -614,8 +593,6 @@ Device能力集枚举类型。
 | CBT\_I | 128 | CBTI数字疗法能力。 |
 
 ## DeviceCategory
-
-PhoneTabletWearable
 
 设备类型枚举类。
 
@@ -634,13 +611,9 @@ PhoneTabletWearable
 
 ## OsCategory
 
-PhoneTabletWearable
-
 设备的操作系统类型枚举类。
 
 **系统能力：** SystemCapability.Health.WearEngine
-
-**设备行为差异：** 该接口在wearable中正常调用，在其他设备类型中调用无效果。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -653,8 +626,6 @@ PhoneTabletWearable
 | OTHER\_OS | 255 | 其他类型 |
 
 ## wearEngine.getMonitorClient
-
-PhoneTabletWearable
 
 getMonitorClient(context: common.Context): MonitorClient
 
@@ -682,26 +653,24 @@ getMonitorClient(context: common.Context): MonitorClient
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 | 801 | Capability not supported. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
 
-3. let monitorClient: wearEngine.MonitorClient = wearEngine.getMonitorClient(this.getUIContext().getHostContext());
-4. console.info(`Succeeded in getting monitor client.`);
+let monitorClient: wearEngine.MonitorClient = wearEngine.getMonitorClient(this.getUIContext().getHostContext());
+console.info(`Succeeded in getting monitor client.`);
 ```
 
 ## MonitorClient
-
-PhoneTabletWearable
 
 Monitor客户端类。由接口[wearEngine.getMonitorClient](wearengine_api.md#wearenginegetmonitorclient)返回得到。
 
@@ -712,8 +681,6 @@ Monitor客户端类。由接口[wearEngine.getMonitorClient](wearengine_api.md#w
 **起始版本：** 5.0.0(12)
 
 ### queryStatus
-
-PhoneTabletWearable
 
 queryStatus(deviceRandomId: string, item: MonitorItem): Promise<MonitorData>
 
@@ -742,53 +709,55 @@ queryStatus(deviceRandomId: string, item: MonitorItem): Promise<MonitorData>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
-| 801 | Capability not supported. |
-| [1008500001](wearengine_api_error_code.md#section1008500001-网络错误) | Network error. The network is unavailable. |
-| [1008500002](wearengine_api_error_code.md#section1008500002-无绑定设备) | No device is bound. |
-| [1008500003](wearengine_api_error_code.md#section1008500003-设备未连接) | Device disconnected. |
-| [1008500004](wearengine_api_error_code.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
-| [1008500005](wearengine_api_error_code.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
-| [1008500006](wearengine_api_error_code.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
-| [1008500007](wearengine_api_error_code.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
-| [1008500008](wearengine_api_error_code.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
-| [1008500009](wearengine_api_error_code.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
-| [1008500010](wearengine_api_error_code.md#section1008500010-无效设备id) | Device ID is invalid. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| 801 | The wearable device does not support the capabilities.  适用版本：6.1.0(23)+ |
+| [1008500001](errorcode-wearengine.md#section1008500001-网络错误) | Network error. The network is unavailable. |
+| [1008500002](errorcode-wearengine.md#section1008500002-无绑定设备) | No device is bound. |
+| [1008500003](errorcode-wearengine.md#section1008500003-设备未连接) | Device disconnected. |
+| [1008500004](errorcode-wearengine.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
+| [1008500005](errorcode-wearengine.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
+| [1008500006](errorcode-wearengine.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
+| [1008500007](errorcode-wearengine.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
+| [1008500008](errorcode-wearengine.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
+| [1008500009](errorcode-wearengine.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
+| [1008500010](errorcode-wearengine.md#section1008500010-无效设备id) | Device ID is invalid. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
-5. let monitorClient: wearEngine.MonitorClient = wearEngine.getMonitorClient(this.getUIContext().getHostContext());
-6. let devices: wearEngine.Device[] = await deviceClient.getConnectedDevices();
+let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
+let monitorClient: wearEngine.MonitorClient = wearEngine.getMonitorClient(this.getUIContext().getHostContext());
+try {
+  let devices: wearEngine.Device[] = await deviceClient.getConnectedDevices();
 
-8. if (devices.length > 0) {
-9. // 从得到的设备列表中选取目标设备，并定义为device(假设数组中存在已连接设备且第一位即为目标设备)
-10. let device: wearEngine.Device = devices[0];
+  if (devices.length > 0) {
+    // 从得到的设备列表中选取目标设备，并定义为device（假设数组中存在已连接设备且第一位即为目标设备）
+    let device: wearEngine.Device = devices[0];
 
-12. monitorClient.queryStatus(device.randomId, wearEngine.MonitorItem.WEAR_STATUS).then((result) => {
-13. console.info(`Succeeded in querying wear status, result is ${result.code}.`);
-14. }).catch((error: BusinessError) => {
-15. console.error(`Failed to query wear status. Code is ${error.code}, message is ${error.message}.`);
-16. })
-17. }
+    monitorClient.queryStatus(device.randomId, wearEngine.MonitorItem.WEAR_STATUS).then((result) => {
+      console.info(`Succeeded in querying wear status, result is ${result.code}.`);
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to query wear status. Code is ${error.code}, message is ${error.message}.`);
+    })
+  }
+} catch (error) {
+  console.error(`Failed to get connected devices. Code is ${error.code}, message is ${error.message}`);
+}
 ```
 
 ### subscribeEvent
 
-PhoneTabletWearable
-
 subscribeEvent(deviceRandomId: string, type: MonitorEvent, callback: Callback<MonitorEventData>): Promise<void>
 
-监听指定设备的指定状态变化事件，当状态发生变化时使用callback异步回调，订阅成功与否使用Promise异步回调。
+监听指定设备的指定状态变化事件，当状态发生变化时，使用callback异步回调，订阅成功与否，使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -804,63 +773,68 @@ subscribeEvent(deviceRandomId: string, type: MonitorEvent, callback: Callback<Mo
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅的设备。 |
 | type | [MonitorEvent](wearengine_api.md#monitorevent) | 是 | 可订阅的设备状态枚举，用于指定本次订阅监听的设备状态。 |
-| callback | Callback<[MonitorEventData](wearengine_api.md#monitoreventdata)> | 是 | 回调函数，状态发生变化后执行，传入[MonitorEventData](wearengine_api.md#monitoreventdata)类。建议保证回调函数的生命周期延长至取消监听时，详情请见[unsubscribeEvent](wearengine_api.md#unsubscribeevent)。 |
+| callback | Callback<[MonitorEventData](wearengine_api.md#monitoreventdata)> | 是 | 回调函数，返回设备对应状态变化后的信息。  状态发生变化后执行，建议保证回调函数的生命周期延长至取消监听时。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象。无结果返回的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
-| 801 | Capability not supported. |
-| [1008500001](wearengine_api_error_code.md#section1008500001-网络错误) | Network error. The network is unavailable. |
-| [1008500002](wearengine_api_error_code.md#section1008500002-无绑定设备) | No device is bound. |
-| [1008500003](wearengine_api_error_code.md#section1008500003-设备未连接) | Device disconnected. |
-| [1008500004](wearengine_api_error_code.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
-| [1008500005](wearengine_api_error_code.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
-| [1008500006](wearengine_api_error_code.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
-| [1008500007](wearengine_api_error_code.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
-| [1008500008](wearengine_api_error_code.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
-| [1008500009](wearengine_api_error_code.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
-| [1008500010](wearengine_api_error_code.md#section1008500010-无效设备id) | Device ID is invalid. |
-| [1008500012](wearengine_api_error_code.md#section1008500012-回调函数过多) | Too many callbacks of the same type. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| 801 | In Wearable, when subscribing to events other than changes in device connection status, this error code is returned.  适用版本：6.1.0(23)+ |
+| [1008500001](errorcode-wearengine.md#section1008500001-网络错误) | Network error. The network is unavailable. |
+| [1008500002](errorcode-wearengine.md#section1008500002-无绑定设备) | No device is bound. |
+| [1008500003](errorcode-wearengine.md#section1008500003-设备未连接) | Device disconnected. |
+| [1008500004](errorcode-wearengine.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
+| [1008500005](errorcode-wearengine.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
+| [1008500006](errorcode-wearengine.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
+| [1008500007](errorcode-wearengine.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
+| [1008500008](errorcode-wearengine.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
+| [1008500009](errorcode-wearengine.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
+| [1008500010](errorcode-wearengine.md#section1008500010-无效设备id) | Device ID is invalid. |
+| [1008500012](errorcode-wearengine.md#section1008500012-回调函数过多) | Too many callbacks of the same type. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
-5. let monitorClient: wearEngine.MonitorClient = wearEngine.getMonitorClient(this.getUIContext().getHostContext());
-6. let devices: wearEngine.Device[] = await deviceClient.getConnectedDevices();
+let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
+let monitorClient: wearEngine.MonitorClient = wearEngine.getMonitorClient(this.getUIContext().getHostContext());
 
-8. if (devices.length > 0) {
-9. // 从得到的设备列表中选取目标设备，并定义为device(假设数组中存在已连接设备且第一位即为目标设备)
-10. let device: wearEngine.Device = devices[0];
+try {
+  let devices: wearEngine.Device[] = await deviceClient.getConnectedDevices();
 
-12. let callback = (monitorEventData: wearEngine.MonitorEventData) => {
-13. console.info(`Succeeded in listening change of ${monitorEventData.event}, the new status is ${monitorEventData.data}.`)
-14. }
-15. monitorClient.subscribeEvent(device.randomId, wearEngine.MonitorEvent.EVENT_WEAR_STATUS_CHANGED, callback).then(() => {
-16. console.info(`Succeeded in subscribing wear status.`);
-17. }).catch((error: BusinessError) => {
-18. console.error(`Failed to subscribe wear status. Code is ${error.code}, message is ${error.message}.`);
-19. })
-20. }
+  if (devices.length > 0) {
+    // 从得到的设备列表中选取目标设备，并定义为device（假设数组中存在已连接设备且第一位即为目标设备）
+    let device: wearEngine.Device = devices[0];
+
+    let callback = (monitorEventData: wearEngine.MonitorEventData) => {
+      console.info(`Succeeded in listening change of ${monitorEventData.event}, the new status is ${monitorEventData.data}.`);
+    }
+    monitorClient.subscribeEvent(device.randomId, wearEngine.MonitorEvent.EVENT_WEAR_STATUS_CHANGED, callback)
+      .then(() => {
+        console.info(`Succeeded in subscribing wear status.`);
+      })
+      .catch((error: BusinessError) => {
+        console.error(`Failed to subscribe wear status. Code is ${error.code}, message is ${error.message}.`);
+      })
+  }
+} catch (error) {
+  console.error(`Failed to get connected devices. Code is ${error.code}, message is ${error.message}`);
+}
 ```
 
 ### unsubscribeEvent
-
-PhoneTabletWearable
 
 unsubscribeEvent(deviceRandomId: string, type: MonitorEvent, callback: Callback<MonitorEventData>): Promise<void>
 
@@ -880,66 +854,79 @@ unsubscribeEvent(deviceRandomId: string, type: MonitorEvent, callback: Callback<
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次取消订阅的设备。 |
 | type | [MonitorEvent](wearengine_api.md#monitorevent) | 是 | 可订阅的设备状态枚举，用于指定本次取消订阅监听的设备状态。 |
-| callback | Callback<[MonitorEventData](wearengine_api.md#monitoreventdata)> | 是 | 回调函数。此处需保证传入的对象与调用[subscribeEvent](wearengine_api.md#subscribeevent)接口时传入的回调函数为同一个对象。 |
+| callback | Callback<[MonitorEventData](wearengine_api.md#monitoreventdata)> | 是 | 回调函数，返回设备对应状态变化后的信息。  此处需保证传入的对象与调用[subscribeEvent](wearengine_api.md#subscribeevent)接口时传入的回调函数为同一个对象。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象。无结果返回的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
-| 801 | Capability not supported. |
-| [1008500001](wearengine_api_error_code.md#section1008500001-网络错误) | Network error. The network is unavailable. |
-| [1008500002](wearengine_api_error_code.md#section1008500002-无绑定设备) | No device is bound. |
-| [1008500003](wearengine_api_error_code.md#section1008500003-设备未连接) | Device disconnected. |
-| [1008500004](wearengine_api_error_code.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
-| [1008500005](wearengine_api_error_code.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
-| [1008500006](wearengine_api_error_code.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
-| [1008500007](wearengine_api_error_code.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
-| [1008500008](wearengine_api_error_code.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
-| [1008500009](wearengine_api_error_code.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
-| [1008500010](wearengine_api_error_code.md#section1008500010-无效设备id) | Device ID is invalid. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| 801 | In Wearable, when unsubscribing to events other than changes in device connection status, this error code is returned.  适用版本：6.1.0(23)+ |
+| [1008500001](errorcode-wearengine.md#section1008500001-网络错误) | Network error. The network is unavailable. |
+| [1008500002](errorcode-wearengine.md#section1008500002-无绑定设备) | No device is bound. |
+| [1008500003](errorcode-wearengine.md#section1008500003-设备未连接) | Device disconnected. |
+| [1008500004](errorcode-wearengine.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
+| [1008500005](errorcode-wearengine.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
+| [1008500006](errorcode-wearengine.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
+| [1008500007](errorcode-wearengine.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
+| [1008500008](errorcode-wearengine.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
+| [1008500009](errorcode-wearengine.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
+| [1008500010](errorcode-wearengine.md#section1008500010-无效设备id) | Device ID is invalid. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
-5. let devices: wearEngine.Device[] = await deviceClient.getConnectedDevices();
-6. let monitorClient: wearEngine.MonitorClient = wearEngine.getMonitorClient(this.getUIContext().getHostContext());
+let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
+let monitorClient: wearEngine.MonitorClient = wearEngine.getMonitorClient(this.getUIContext().getHostContext());
 
-8. if (devices.length > 0) {
-9. // 从得到的设备列表中选取目标设备，并定义为device(假设数组中存在已连接设备且第一位即为目标设备)
-10. let device: wearEngine.Device = devices[0];
+try {
+  let devices: wearEngine.Device[] = await deviceClient.getConnectedDevices();
 
-12. // 解注册时回调函数需要保证和注册时为同一个对象
-13. let callback = (monitorEventData: wearEngine.MonitorEventData) => {
-14. console.info(`Succeeded in listening change of ${monitorEventData.event}, the new status is ${monitorEventData.data}.`)
-15. }
-16. // 创建待删除的订阅任务
-17. await monitorClient.subscribeEvent(device.randomId, wearEngine.MonitorEvent.EVENT_WEAR_STATUS_CHANGED, callback);
-18. // 删除之前创建的订阅任务
-19. monitorClient.unsubscribeEvent(device.randomId, wearEngine.MonitorEvent.EVENT_WEAR_STATUS_CHANGED, callback).then(() => {
-20. console.info(`Succeeded in unsubscribing wear status`);
-21. }).catch((error: BusinessError) => {
-22. console.error(`Failed to unsubscribe wear status. Code is ${error.code}, message is ${error.message}.`);
-23. })
-24. }
+  if (devices.length > 0) {
+    // 从得到的设备列表中选取目标设备，并定义为device（假设数组中存在已连接设备且第一位即为目标设备）
+    let device: wearEngine.Device = devices[0];
+
+    // 解注册时回调函数需要保证和注册时为同一个对象
+    let callback = (monitorEventData: wearEngine.MonitorEventData) => {
+      console.info(`Succeeded in listening change of ${monitorEventData.event}, the new status is ${monitorEventData.data}.`);
+    }
+
+    // 创建待删除的订阅任务
+    monitorClient.subscribeEvent(device.randomId, wearEngine.MonitorEvent.EVENT_WEAR_STATUS_CHANGED, callback)
+      .then(() => {
+        console.info(`Succeeded in subscribing wear status`);
+
+        // 删除之前创建的订阅任务
+        monitorClient.unsubscribeEvent(device.randomId, wearEngine.MonitorEvent.EVENT_WEAR_STATUS_CHANGED, callback)
+          .then(() => {
+            console.info(`Succeeded in unsubscribing wear status`);
+          })
+          .catch((error: BusinessError) => {
+            console.error(`Failed to unsubscribe wear status. Code is ${error.code}, message is ${error.message}.`);
+          })
+      })
+      .catch((error: BusinessError) => {
+        console.error(`Failed to subscribe wear status. Code is ${error.code}, message is ${error.message}.`);
+      })
+  }
+} catch (error) {
+  console.error(`Failed to get connected devices. Code is ${error.code}, message is${error.message}`);
+}
 ```
 
 ## MonitorItem
-
-PhoneTabletWearable
 
 设备状态的枚举类。
 
@@ -951,15 +938,14 @@ PhoneTabletWearable
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| WEAR\_STATUS | wearStatus | 佩戴状态。返回值含义：  1：佩戴  2：未佩戴 |
-| POWER\_STATUS | powerStatus | 电量状态。返回值含义：剩余电量百分比（0~100）。 |
-| CHARGE\_STATUS | chargeStatus | 充电状态。返回值含义：  1：正在充电  2：未充电  3：电量已充满 |
-| AVAILABLE\_STORAGE\_SPACE | availableStorageSpace | 可用存储空间。返回值含义：用户可用空间（KB）。 |
-| POWER\_MODE | powerMode | 电源模式。返回值含义：  -1：设备不区分电源模式  0：智能模式  1：超长续航模式 |
+| WEAR\_STATUS | 'wearStatus' | 佩戴状态。返回值含义：  1：佩戴  2：未佩戴 |
+| POWER\_STATUS | 'powerStatus' | 电量状态。返回值含义：剩余电量百分比（0~100）。 |
+| CHARGE\_STATUS | 'chargeStatus' | 充电状态。返回值含义：  1：正在充电  2：未充电  3：电量已充满 |
+| AVAILABLE\_STORAGE\_SPACE | 'availableStorageSpace' | 可用存储空间。返回值含义：用户可用空间（KB）。 |
+| POWER\_MODE | 'powerMode' | 电源模式。返回值含义：  -1：设备不区分电源模式  0：智能模式  1：超长续航模式 |
+| SPORT\_STATUS | 'sportStatus' | 运动状态。返回值含义：  3：运动开始  4：运动暂停  5：运动中  6：运动结束  **起始版本：** 6.1.1(24) |
 
 ## MonitorEvent
-
-PhoneTabletWearable
 
 设备状态变化事件的枚举类。
 
@@ -971,16 +957,14 @@ PhoneTabletWearable
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| EVENT\_CONNECTION\_STATUS\_CHANGED | connectionStatus | 设备连接状态变化。  返回值含义：2：连接成功；3：连接断开；5：设备解绑 |
-| EVENT\_BATTERY\_LEVEL\_DROPPED | lowPower | 设备电量降低。  返回值含义：剩余电量百分比（0~100）。 |
-| EVENT\_WEAR\_STATUS\_CHANGED | wearStatus | 设备佩戴状态变化。  返回值含义：1：佩戴，2：未佩戴。 |
-| EVENT\_HEART\_RATE\_ALARM | heartRateAlarm | 心率告警。  返回值含义：1：静态心率过高，2：静态心率过低，3：运动心率过高，4：运动心率过低。 |
-| EVENT\_CHARGE\_STATUS\_CHANGED | chargeStatus | 充电状态变化。  返回值含义：1：充电开始，2：充电结束，3：充电完成。 |
-| EVENT\_POWER\_MODE\_CHANGED | powerMode | 电源模式切换。  返回值含义：0：切换至智能模式，1：切换至超长续航模式。 |
+| EVENT\_CONNECTION\_STATUS\_CHANGED | 'connectionStatus' | 设备连接状态变化。  返回值含义：2：连接成功；3：连接断开；5：设备解绑 |
+| EVENT\_BATTERY\_LEVEL\_DROPPED | 'lowPower' | 设备电量降低。  返回值含义：剩余电量百分比（0~100）。 |
+| EVENT\_WEAR\_STATUS\_CHANGED | 'wearStatus' | 设备佩戴状态变化。  返回值含义：1：佩戴，2：未佩戴。 |
+| EVENT\_HEART\_RATE\_ALARM | 'heartRateAlarm' | 心率告警。  返回值含义：1：静态心率过高，2：静态心率过低，3：运动心率过高，4：运动心率过低。 |
+| EVENT\_CHARGE\_STATUS\_CHANGED | 'chargeStatus' | 充电状态变化。  返回值含义：1：充电开始，2：充电结束，3：充电完成。 |
+| EVENT\_POWER\_MODE\_CHANGED | 'powerMode' | 电源模式切换。  返回值含义：0：切换至智能模式，1：切换至超长续航模式。 |
 
 ## MonitorData
-
-PhoneTabletWearable
 
 作为[queryStatus](wearengine_api.md#querystatus)接口的返回值与[subscribeEvent](wearengine_api.md#subscribeevent)接口回调函数的入参，返回设备的状态信息。
 
@@ -997,8 +981,6 @@ PhoneTabletWearable
 
 ## MonitorEventData
 
-PhoneTabletWearable
-
 作为[subscribeEvent](wearengine_api.md#subscribeevent)接口的返回值，当订阅监听的事件触发时，作为入参将设备对应状态变化后的信息传递给回调函数。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1013,8 +995,6 @@ PhoneTabletWearable
 | data | [MonitorData](wearengine_api.md#monitordata) | 否 | 否 | 设备状态发生变化后的状态信息。 |
 
 ## wearEngine.getP2pClient
-
-PhoneTabletWearable
 
 getP2pClient(context: common.Context): P2pClient
 
@@ -1040,25 +1020,23 @@ getP2pClient(context: common.Context): P2pClient
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
 
-3. let p2pClient: wearEngine.P2pClient = wearEngine.getP2pClient(this.getUIContext().getHostContext());
-4. console.info(`Succeeded in getting p2p client.`);
+let p2pClient: wearEngine.P2pClient = wearEngine.getP2pClient(this.getUIContext().getHostContext());
+console.info(`Succeeded in getting p2p client.`);
 ```
 
 ## P2pClient
-
-PhoneTabletWearable
 
 P2p客户端类。由接口[wearEngine.getP2pClient](wearengine_api.md#wearenginegetp2pclient)返回得到。
 
@@ -1069,8 +1047,6 @@ P2p客户端类。由接口[wearEngine.getP2pClient](wearengine_api.md#wearengin
 **起始版本：** 5.0.0(12)
 
 ### isRemoteAppInstalled
-
-PhoneTabletWearable
 
 isRemoteAppInstalled(deviceRandomId: string, remoteBundleName: string): Promise<boolean>
 
@@ -1097,55 +1073,63 @@ isRemoteAppInstalled(deviceRandomId: string, remoteBundleName: string): Promise<
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
-| [1008500001](wearengine_api_error_code.md#section1008500001-网络错误) | Network error. The network is unavailable. |
-| [1008500002](wearengine_api_error_code.md#section1008500002-无绑定设备) | No device is bound. |
-| [1008500003](wearengine_api_error_code.md#section1008500003-设备未连接) | Device disconnected. |
-| [1008500004](wearengine_api_error_code.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
-| [1008500005](wearengine_api_error_code.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
-| [1008500006](wearengine_api_error_code.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
-| [1008500007](wearengine_api_error_code.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
-| [1008500008](wearengine_api_error_code.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
-| [1008500009](wearengine_api_error_code.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
-| [1008500010](wearengine_api_error_code.md#section1008500010-无效设备id) | Device ID is invalid. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008500001](errorcode-wearengine.md#section1008500001-网络错误) | Network error. The network is unavailable. |
+| [1008500002](errorcode-wearengine.md#section1008500002-无绑定设备) | No device is bound. |
+| [1008500003](errorcode-wearengine.md#section1008500003-设备未连接) | Device disconnected. |
+| [1008500004](errorcode-wearengine.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
+| [1008500005](errorcode-wearengine.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
+| [1008500006](errorcode-wearengine.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
+| [1008500007](errorcode-wearengine.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
+| [1008500008](errorcode-wearengine.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
+| [1008500009](errorcode-wearengine.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
+| [1008500010](errorcode-wearengine.md#section1008500010-无效设备id) | Device ID is invalid. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
-5. let p2pClient: wearEngine.P2pClient = wearEngine.getP2pClient(this.getUIContext().getHostContext());
-6. let deviceList: wearEngine.Device[] = await deviceClient.getConnectedDevices();
+let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
+let p2pClient: wearEngine.P2pClient = wearEngine.getP2pClient(this.getUIContext().getHostContext());
 
-8. deviceList.forEach(async (device, idx, arr) => {
-9. // 挑选支持应用安装的设备
-10. if (await device.isDeviceCapabilitySupported(wearEngine.DeviceCapability.APP_INSTALLATION)) {
-11. // 将设备侧应用包名定义为remoteBundleName
-12. let remoteBundleName: string = '';
+try {
+  let deviceList: wearEngine.Device[] = await deviceClient.getConnectedDevices();
 
-14. p2pClient.isRemoteAppInstalled(device.randomId, remoteBundleName).then((isInstall) => {
-15. console.info(`Succeeded in checking remote app install, result is ${isInstall}.`);
-16. }).catch((error: BusinessError) => {
-17. console.error(`Failed to check remote app install. Code is ${error.code}, message is ${error.message}.`);
-18. })
-19. }
-20. if (idx === deviceList.length - 1) {
-21. // 若不存在目标设备则抛出错误
-22. throw new Error('cannot find target device');
-23. }
-24. })
+  deviceList.forEach(async (device, idx) => {
+    try {
+      // 挑选支持应用安装的设备
+      if (await device.isDeviceCapabilitySupported(wearEngine.DeviceCapability.APP_INSTALLATION)) {
+        // 将设备侧应用包名定义为remoteBundleName
+        let remoteBundleName: string = '';
+
+        p2pClient.isRemoteAppInstalled(device.randomId, remoteBundleName).then((isInstall) => {
+          console.info(`Succeeded in checking remote app install, result is ${isInstall}.`);
+        }).catch((error: BusinessError) => {
+          console.error(`Failed to check remote app install. Code is ${error.code}, message is ${error.message}.`);
+        })
+      }
+    } catch (error) {
+      console.error(`Failed to check device capability. Code is ${error.code}, message is ${error.message}.`);
+    }
+
+    if (idx === deviceList.length - 1) {
+      // 若不存在目标设备则抛出错误
+      throw new Error('cannot find target device');
+    }
+  })
+} catch (error) {
+  console.error(`Failed to get connected devices. Code is ${error.code}, message is ${error.message}`);
+}
 ```
 
 ### getRemoteAppVersion
-
-PhoneTabletWearable
 
 getRemoteAppVersion(deviceRandomId: string, remoteBundleName: string): Promise<number>
 
@@ -1155,7 +1139,7 @@ getRemoteAppVersion(deviceRandomId: string, remoteBundleName: string): Promise<n
 
 **系统能力：** SystemCapability.Health.WearEngine
 
-**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 对于6.1.0(23)及之前版本，该接口在Phone、Tablet中可正常调用，在其他设备类型中返回801错误码。 对于6.1.1(24)及之后版本，该接口在Phone、Tablet、Wearable中可正常调用。
 
 **起始版本：** 5.0.0(12)
 
@@ -1170,60 +1154,68 @@ getRemoteAppVersion(deviceRandomId: string, remoteBundleName: string): Promise<n
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<number> | Promise对象。表示设备侧应用的版本号。 |
+| Promise<number> | Promise对象，返回设备侧应用的版本号。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
-| [1008500001](wearengine_api_error_code.md#section1008500001-网络错误) | Network error. The network is unavailable. |
-| [1008500002](wearengine_api_error_code.md#section1008500002-无绑定设备) | No device is bound. |
-| [1008500003](wearengine_api_error_code.md#section1008500003-设备未连接) | Device disconnected. |
-| [1008500004](wearengine_api_error_code.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
-| [1008500005](wearengine_api_error_code.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
-| [1008500006](wearengine_api_error_code.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
-| [1008500007](wearengine_api_error_code.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
-| [1008500008](wearengine_api_error_code.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
-| [1008500009](wearengine_api_error_code.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
-| [1008500010](wearengine_api_error_code.md#section1008500010-无效设备id) | Device ID is invalid. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008500001](errorcode-wearengine.md#section1008500001-网络错误) | Network error. The network is unavailable. |
+| [1008500002](errorcode-wearengine.md#section1008500002-无绑定设备) | No device is bound. |
+| [1008500003](errorcode-wearengine.md#section1008500003-设备未连接) | Device disconnected. |
+| [1008500004](errorcode-wearengine.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
+| [1008500005](errorcode-wearengine.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
+| [1008500006](errorcode-wearengine.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
+| [1008500007](errorcode-wearengine.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
+| [1008500008](errorcode-wearengine.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
+| [1008500009](errorcode-wearengine.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
+| [1008500010](errorcode-wearengine.md#section1008500010-无效设备id) | Device ID is invalid. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
-5. let p2pClient: wearEngine.P2pClient = wearEngine.getP2pClient(this.getUIContext().getHostContext());
-6. let deviceList: wearEngine.Device[] = await deviceClient.getConnectedDevices();
+let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
+let p2pClient: wearEngine.P2pClient = wearEngine.getP2pClient(this.getUIContext().getHostContext());
 
-8. deviceList.forEach(async (device, idx, arr) => {
-9. // 挑选支持应用安装的设备
-10. if (await device.isDeviceCapabilitySupported(wearEngine.DeviceCapability.APP_INSTALLATION)) {
-11. // 将设备侧应用包名定义为remoteBundleName
-12. let remoteBundleName: string = '';
+try {
+  let deviceList: wearEngine.Device[] = await deviceClient.getConnectedDevices();
 
-14. p2pClient.getRemoteAppVersion(device.randomId, remoteBundleName).then((version) => {
-15. console.info(`Succeeded in getting remote app version, version is ${version}.`);
-16. }).catch((error: BusinessError) => {
-17. console.error(`Failed to check get remote app version. Code is ${error.code}, message is ${error.message}.`);
-18. })
-19. }
-20. if (idx === deviceList.length - 1) {
-21. // 若不存在目标设备则抛出错误
-22. throw new Error('cannot find target device');
-23. }
-24. })
+  deviceList.forEach(async (device, idx) => {
+    try {
+      // 挑选支持应用安装的设备
+      if (await device.isDeviceCapabilitySupported(wearEngine.DeviceCapability.APP_INSTALLATION)) {
+        // 将设备侧应用包名定义为remoteBundleName
+        let remoteBundleName: string = '';
+
+        p2pClient.getRemoteAppVersion(device.randomId, remoteBundleName).then((version) => {
+          console.info(`Succeeded in getting remote app version, version is ${version}.`);
+        }).catch((error: BusinessError) => {
+          console.error(`Failed to check get remote app version. Code is ${error.code}, message is${error.message}.`);
+        })
+      }
+    } catch (error) {
+      console.error(`Failed to check device capability. Code is ${error.code}, message is${error.message}.`);
+    }
+
+    if (idx === deviceList.length - 1) {
+      // 若不存在目标设备则抛出错误
+      throw new Error('cannot find target device');
+    }
+  })
+} catch (error) {
+  console.error(`Failed to get connected devices. Code is ${error.code}, message is${error.message}`);
+}
 ```
 
 ### startRemoteApp
-
-PhoneTabletWearable
 
 startRemoteApp(deviceRandomId: string, remoteBundleName: string, transformLocalBundleName?: boolean): Promise<P2pResult>
 
@@ -1249,61 +1241,154 @@ startRemoteApp(deviceRandomId: string, remoteBundleName: string, transformLocalB
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[P2pResult](wearengine_api.md#p2presult)> | Promise对象。属性中的code字段表示本次拉起应用的结果。 |
+| Promise<[P2pResult](wearengine_api.md#p2presult)> | Promise对象，返回P2p通信的结果。  属性中的code字段表示本次拉起应用的结果。其中，返回203表示穿戴设备应用未在module.json5文件的metadata字段中正确配置wearEngineRemoteAppNameList属性，配置方式请参考[对端应用通过startRemoteApp拉起穿戴侧应用](../harmonyos-guides/watch_p2p_communication.md#对端应用通过startremoteapp拉起穿戴侧应用)。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
-| [1008500001](wearengine_api_error_code.md#section1008500001-网络错误) | Network error. The network is unavailable. |
-| [1008500002](wearengine_api_error_code.md#section1008500002-无绑定设备) | No device is bound. |
-| [1008500003](wearengine_api_error_code.md#section1008500003-设备未连接) | Device disconnected. |
-| [1008500004](wearengine_api_error_code.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
-| [1008500005](wearengine_api_error_code.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
-| [1008500006](wearengine_api_error_code.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
-| [1008500007](wearengine_api_error_code.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
-| [1008500008](wearengine_api_error_code.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
-| [1008500009](wearengine_api_error_code.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
-| [1008500010](wearengine_api_error_code.md#section1008500010-无效设备id) | Device ID is invalid. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008500001](errorcode-wearengine.md#section1008500001-网络错误) | Network error. The network is unavailable. |
+| [1008500002](errorcode-wearengine.md#section1008500002-无绑定设备) | No device is bound. |
+| [1008500003](errorcode-wearengine.md#section1008500003-设备未连接) | Device disconnected. |
+| [1008500004](errorcode-wearengine.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
+| [1008500005](errorcode-wearengine.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
+| [1008500006](errorcode-wearengine.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
+| [1008500007](errorcode-wearengine.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
+| [1008500008](errorcode-wearengine.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
+| [1008500009](errorcode-wearengine.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
+| [1008500010](errorcode-wearengine.md#section1008500010-无效设备id) | Device ID is invalid. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
+let p2pClient: wearEngine.P2pClient = wearEngine.getP2pClient(this.getUIContext().getHostContext());
+
+try {
+  let deviceList: wearEngine.Device[] = await deviceClient.getConnectedDevices();
+
+  deviceList.forEach(async (device, idx) => {
+    try {
+      // 挑选支持应用安装的设备
+      if (await device.isDeviceCapabilitySupported(wearEngine.DeviceCapability.APP_INSTALLATION)) {
+        // 将设备侧应用包名定义为remoteBundleName
+        let remoteBundleName: string = '';
+
+        // transformLocalBundleName不传入参数时，默认为false
+        p2pClient.startRemoteApp(device.randomId, remoteBundleName).then((p2pResult) => {
+          console.info(`Succeeded in starting remote app, result is ${p2pResult.code}.`);
+        }).catch((error: BusinessError) => {
+          console.error(`Failed to start remote app. Code is ${error.code}, message is${error.message}.`);
+        })
+      }
+    } catch (error) {
+      console.error(`Failed to check device capability. Code is ${error.code}, message is${error.message}.`);
+    }
+
+    if (idx === deviceList.length - 1) {
+      // 若不存在目标设备则抛出错误
+      throw new Error('cannot find target device');
+    }
+  })
+} catch (error) {
+  console.error(`Failed to get connected devices. Code is ${error.code}, message is${error.message}`);
+}
 ```
-1. import { wearEngine } from '@kit.WearEngine';
-2. import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
-5. let p2pClient: wearEngine.P2pClient = wearEngine.getP2pClient(this.getUIContext().getHostContext());
-6. let deviceList: wearEngine.Device[] = await deviceClient.getConnectedDevices();
+### startRemoteApp
 
-8. deviceList.forEach(async (device, idx, arr) => {
-9. // 挑选支持应用安装的设备
-10. if (await device.isDeviceCapabilitySupported(wearEngine.DeviceCapability.APP_INSTALLATION)) {
-11. // 将设备侧应用包名定义为remoteBundleName
-12. let remoteBundleName: string = '';
+startRemoteApp(deviceRandomId: string, remoteApp: AppInfo, startConfig: StartConfig): Promise<P2pResult>
 
-14. // transformLocalBundleName不传入参数时，默认为false
-15. p2pClient.startRemoteApp(device.randomId, remoteBundleName).then((p2pResult) => {
-16. console.info(`Succeeded in starting remote app, result is ${p2pResult.code}.`);
-17. }).catch((error: BusinessError) => {
-18. console.error(`Failed to start remote app. Code is ${error.code}, message is ${error.message}.`);
-19. })
-20. }
-21. if (idx === deviceList.length - 1) {
-22. // 若不存在目标设备则抛出错误
-23. throw new Error('cannot find target device');
-24. }
-25. })
+拉起对端设备的指定应用，使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Health.WearEngine
+
+**设备行为差异：** 在wearable中可正常调用，支持拉起Phone和Tablet设备中分布式组件或前台组件。HarmonyOS 6.1及以上版本，支持拉起[DISTRIBUTED\_SERVICE](wearengine_api.md#entrytype)组件；HarmonyOS 5.0之前版本（如HarmonyOS 2.x/3.x/4.x），支持拉起[SERVICE](wearengine_api.md#entrytype)组件；Android系统，支持拉起[SERVICE](wearengine_api.md#entrytype)组件。在其他系统和设备中不支持拉起。
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅的设备。 |
+| remoteApp | [AppInfo](wearengine_api.md#appinfo) | 是 | 待拉起的对端设备的应用信息。 |
+| startConfig | [StartConfig](wearengine_api.md#startconfig) | 是 | 待拉起的对端设备应用的配置参数。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[P2pResult](wearengine_api.md#p2presult)> | Promise对象，返回[P2pResult](wearengine_api.md#p2presult)对象。  其属性中的code字段表示本次消息发送的结果。其中，返回203表示[entryName](wearengine_api.md#startconfig)不符合规范要求。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| [1008500001](errorcode-wearengine.md#section1008500001-网络错误) | Network error. The network is unavailable. |
+| [1008500002](errorcode-wearengine.md#section1008500002-无绑定设备) | No device is bound. |
+| [1008500003](errorcode-wearengine.md#section1008500003-设备未连接) | Device disconnected. |
+| [1008500004](errorcode-wearengine.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
+| [1008500005](errorcode-wearengine.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
+| [1008500006](errorcode-wearengine.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
+| [1008500007](errorcode-wearengine.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
+| [1008500008](errorcode-wearengine.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
+| [1008500009](errorcode-wearengine.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
+| [1008500010](errorcode-wearengine.md#section1008500010-无效设备id) | Device ID is invalid. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
+
+**示例：**
+
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
+let p2pClient: wearEngine.P2pClient = wearEngine.getP2pClient(this.getUIContext().getHostContext());
+
+try {
+  let devices: wearEngine.Device[] = await deviceClient.getConnectedDevices();
+
+  if (devices.length > 0) {
+    // 从得到的设备列表中选取目标设备，并定义为device（假设数组中存在已连接设备，第一位即为目标设备且具备相关能力）
+    let device: wearEngine.Device = devices[0];
+    // 设置设备侧应用的应用信息：包名与指纹
+    let remoteApp: wearEngine.AppInfo = {
+      bundleName: 'example_bundleName',
+      fingerprint: 'example_fingerprint'
+    };
+
+    // 设置拉起对端设备侧应用的组件类型
+    let startConfig: wearEngine.StartConfig = {
+      entryType: wearEngine.EntryType.DISTRIBUTED_SERVICE,
+      entryName: 'example_entryName'
+    };
+
+    p2pClient.startRemoteApp(device.randomId, remoteApp, startConfig).then((p2pResult) => {
+      console.info(`Succeeded in starting remote app, result is ${p2pResult.code}.`);
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to start remote app. Code is ${error.code}, message is${error.message}.`);
+    })
+  }
+} catch (error) {
+  console.error(`Failed to get connected devices. Code is ${error.code}, message is${error.message}`);
+}
 ```
 
 ### sendMessage
-
-PhoneTabletWearable
 
 sendMessage(deviceRandomId: string, appParam: P2pAppParam, message: P2pMessage): Promise<P2pResult>
 
@@ -1321,81 +1406,89 @@ sendMessage(deviceRandomId: string, appParam: P2pAppParam, message: P2pMessage):
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅的设备。 |
 | appParam | [P2pAppParam](wearengine_api.md#p2pappparam) | 是 | 指定的设备侧应用参数。 |
-| message | [P2pMessage](wearengine_api.md#p2pmessage) | 是 | 需要传输的消息内容，取值范围：[1，4096)，单位字节。 |
+| message | [P2pMessage](wearengine_api.md#p2pmessage) | 是 | 需要传输的消息内容，取值范围：[1，4096)，单位Byte。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[P2pResult](wearengine_api.md#p2presult)> | Promise对象。返回[P2pResult](wearengine_api.md#p2presult)对象，其属性中的code字段表示本次消息发送的结果。 |
+| Promise<[P2pResult](wearengine_api.md#p2presult)> | Promise对象，返回[P2pResult](wearengine_api.md#p2presult)对象。  其属性中的code字段表示本次消息发送的结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
-| [1008500001](wearengine_api_error_code.md#section1008500001-网络错误) | Network error. The network is unavailable. |
-| [1008500002](wearengine_api_error_code.md#section1008500002-无绑定设备) | No device is bound. |
-| [1008500003](wearengine_api_error_code.md#section1008500003-设备未连接) | Device disconnected. |
-| [1008500004](wearengine_api_error_code.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
-| [1008500005](wearengine_api_error_code.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
-| [1008500006](wearengine_api_error_code.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
-| [1008500007](wearengine_api_error_code.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
-| [1008500008](wearengine_api_error_code.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
-| [1008500009](wearengine_api_error_code.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
-| [1008500010](wearengine_api_error_code.md#section1008500010-无效设备id) | Device ID is invalid. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008500001](errorcode-wearengine.md#section1008500001-网络错误) | Network error. The network is unavailable. |
+| [1008500002](errorcode-wearengine.md#section1008500002-无绑定设备) | No device is bound. |
+| [1008500003](errorcode-wearengine.md#section1008500003-设备未连接) | Device disconnected. |
+| [1008500004](errorcode-wearengine.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
+| [1008500005](errorcode-wearengine.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
+| [1008500006](errorcode-wearengine.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
+| [1008500007](errorcode-wearengine.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
+| [1008500008](errorcode-wearengine.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
+| [1008500009](errorcode-wearengine.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
+| [1008500010](errorcode-wearengine.md#section1008500010-无效设备id) | Device ID is invalid. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { util } from '@kit.ArkTS';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { util } from '@kit.ArkTS';
 
-5. let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
-6. let p2pClient: wearEngine.P2pClient = wearEngine.getP2pClient(this.getUIContext().getHostContext());
-7. let deviceList: wearEngine.Device[] = await deviceClient.getConnectedDevices();
+let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
+let p2pClient: wearEngine.P2pClient = wearEngine.getP2pClient(this.getUIContext().getHostContext());
 
-9. deviceList.forEach(async (device, idx, arr) => {
-10. // 挑选支持应用安装的设备
-11. if (await device.isDeviceCapabilitySupported(wearEngine.DeviceCapability.APP_INSTALLATION)) {
-12. // 设置设备侧应用的应用信息：包名与指纹
-13. let appInfo: wearEngine.AppInfo = {
-14. bundleName: '',
-15. fingerprint: ''
-16. }
-17. // 将设备侧应用参数类定义为appParam
-18. let appParam: wearEngine.P2pAppParam = {
-19. remoteApp: appInfo
-20. // transformLocalAppInfo默认为false，不转换包名指纹
-21. }
+try {
+  let deviceList: wearEngine.Device[] = await deviceClient.getConnectedDevices();
 
-23. // 设置需要发送的消息内容
-24. let messageContent: string = 'this is message';
-25. let textEncoder: util.TextEncoder = new util.TextEncoder;
-26. let message: wearEngine.P2pMessage = {
-27. content: textEncoder.encodeInto(messageContent)
-28. }
+  deviceList.forEach(async (device, idx) => {
+    try {
+      // 挑选支持应用安装的设备
+      if (await device.isDeviceCapabilitySupported(wearEngine.DeviceCapability.APP_INSTALLATION)) {
+        // 设置设备侧应用的应用信息：包名与指纹
+        // 包名与指纹，可在华为开发者联盟获取
+        let appInfo: wearEngine.AppInfo = {
+          bundleName: '',
+          fingerprint: ''
+        }
+        // 将设备侧应用参数类定义为appParam
+        let appParam: wearEngine.P2pAppParam = {
+          remoteApp: appInfo
+          // transformLocalAppInfo默认为false，不转换包名指纹
+        }
+        // 设置需要发送的消息内容
+        let messageContent: string = 'this is message';
+        let textEncoder: util.TextEncoder = new util.TextEncoder;
+        let message: wearEngine.P2pMessage = {
+          content: textEncoder.encodeInto(messageContent)
+        }
 
-30. p2pClient.sendMessage(device.randomId, appParam, message).then((p2pResult) => {
-31. console.info(`Succeeded in sending message, result is ${p2pResult.code}.`);
-32. }).catch((error: BusinessError) => {
-33. console.error(`Failed to send message. Code is ${error.code}, message is ${error.message}.`);
-34. })
-35. }
-36. if (idx === deviceList.length - 1) {
-37. // 若不存在目标设备则抛出错误
-38. throw new Error('cannot find target device');
-39. }
-40. })
+        p2pClient.sendMessage(device.randomId, appParam, message).then((p2pResult) => {
+          console.info(`Succeeded in sending message, result is ${p2pResult.code}.`);
+        }).catch((error: BusinessError) => {
+          console.error(`Failed to send message. Code is ${error.code}, message is ${error.message}.`);
+        })
+      }
+    } catch (error) {
+      console.error(`Failed to check device capability. Code is ${error.code}, message is ${error.message}.`);
+    }
+
+    if (idx === deviceList.length - 1) {
+      // 若不存在目标设备则抛出错误
+      throw new Error('cannot find target device');
+    }
+  })
+} catch (error) {
+  console.error(`Failed to get connected devices. Code is ${error.code}, message is ${error.message}`);
+}
 ```
 
 ### transferFile
-
-PhoneTabletWearable
 
 transferFile(deviceRandomId: string, appParam: P2pAppParam, file: P2pFile, callback: AsyncCallback<P2pResult>): void
 
@@ -1414,85 +1507,114 @@ transferFile(deviceRandomId: string, appParam: P2pAppParam, file: P2pFile, callb
 | deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅的设备。 |
 | appParam | [P2pAppParam](wearengine_api.md#p2pappparam) | 是 | 指定的设备侧应用参数。 |
 | file | [P2pFile](wearengine_api.md#p2pfile) | 是 | 需要传输的文件。 |
-| callback | AsyncCallback<[P2pResult](wearengine_api.md#p2presult)> | 是 | 通用回调函数，携带错误参数和异步返回值。 |
+| callback | AsyncCallback<[P2pResult](wearengine_api.md#p2presult)> | 是 | 回调函数，向对端设备的指定应用发送文件成功，err为undefined，data为返回P2p通信的结果；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
-| [1008500001](wearengine_api_error_code.md#section1008500001-网络错误) | Network error. The network is unavailable. |
-| [1008500002](wearengine_api_error_code.md#section1008500002-无绑定设备) | No device is bound. |
-| [1008500003](wearengine_api_error_code.md#section1008500003-设备未连接) | Device disconnected. |
-| [1008500004](wearengine_api_error_code.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
-| [1008500005](wearengine_api_error_code.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
-| [1008500006](wearengine_api_error_code.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
-| [1008500007](wearengine_api_error_code.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
-| [1008500008](wearengine_api_error_code.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
-| [1008500009](wearengine_api_error_code.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
-| [1008500010](wearengine_api_error_code.md#section1008500010-无效设备id) | Device ID is invalid. |
-| [1008500011](wearengine_api_error_code.md#section1008500011-无效文件) | File is invalid. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008500001](errorcode-wearengine.md#section1008500001-网络错误) | Network error. The network is unavailable. |
+| [1008500002](errorcode-wearengine.md#section1008500002-无绑定设备) | No device is bound. |
+| [1008500003](errorcode-wearengine.md#section1008500003-设备未连接) | Device disconnected. |
+| [1008500004](errorcode-wearengine.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
+| [1008500005](errorcode-wearengine.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
+| [1008500006](errorcode-wearengine.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
+| [1008500007](errorcode-wearengine.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
+| [1008500008](errorcode-wearengine.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
+| [1008500009](errorcode-wearengine.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
+| [1008500010](errorcode-wearengine.md#section1008500010-无效设备id) | Device ID is invalid. |
+| [1008500011](errorcode-wearengine.md#section1008500011-无效文件) | File is invalid. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { fileIo } from '@kit.CoreFileKit';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileIo } from '@kit.CoreFileKit';
 
-5. let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
-6. let p2pClient: wearEngine.P2pClient = wearEngine.getP2pClient(this.getUIContext().getHostContext());
-7. let deviceList: wearEngine.Device[] = await deviceClient.getConnectedDevices();
+let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
+let p2pClient: wearEngine.P2pClient = wearEngine.getP2pClient(this.getUIContext().getHostContext());
 
-9. deviceList.forEach(async (device, idx, arr) => {
-10. // 挑选支持应用安装的设备
-11. if (await device.isDeviceCapabilitySupported(wearEngine.DeviceCapability.APP_INSTALLATION)) {
-12. // 设置设备侧应用的应用信息：包名与指纹
-13. let appInfo: wearEngine.AppInfo = {
-14. bundleName: '',
-15. fingerprint: ''
-16. }
-17. // 将设备侧应用参数类定义为appParam
-18. let appParam: wearEngine.P2pAppParam = {
-19. remoteApp: appInfo
-20. // transformLocalAppInfo默认为false，不转换包名指纹
-21. }
-22. // 设置需要发送的文件
-23. let p2pFile: wearEngine.P2pFile = {
-24. file: fileIo.openSync('')
-25. }
+try {
+  let deviceList: wearEngine.Device[] = await deviceClient.getConnectedDevices();
 
-27. p2pClient.transferFile(device.randomId, appParam, p2pFile, (error: BusinessError, p2pResult: wearEngine.P2pResult) => {
-28. // callback处理逻辑
-29. if (error) {
-30. console.error(`Failed to transfer file. Code is ${error.code}, message is ${error.message}.`);
-31. return;
-32. }
-33. if (p2pResult.code) {
-34. if (p2pResult.code === wearEngine.P2pResultCode.COMMUNICATION_SUCCESS) {
-35. console.info(`Succeeded in transfering file, the result is ${p2pResult.code}.`);
-36. }
-37. console.info(`Failed to transfer file, the error code is ${p2pResult.code}.`);
-38. }
-39. if (p2pResult.progress) {
-40. console.info(`Succeeded in transfering file, the progress is ${p2pResult.progress}.`);
-41. }
-42. });
-43. fileIo.close(p2pFile.file);
-44. }
-45. if (idx === deviceList.length - 1) {
-46. // 若不存在目标设备则抛出错误
-47. throw new Error('cannot find target device');
-48. }
-49. })
+  deviceList.forEach(async (device, idx) => {
+    try {
+      // 挑选支持应用安装的设备
+      if (await device.isDeviceCapabilitySupported(wearEngine.DeviceCapability.APP_INSTALLATION)) {
+        // 设置设备侧应用的应用信息：包名与指纹
+        // 包名与指纹，可在华为开发者联盟获取
+        let appInfo: wearEngine.AppInfo = {
+          bundleName: '',
+          fingerprint: ''
+        }
+        // 将设备侧应用参数类定义为appParam
+        let appParam: wearEngine.P2pAppParam = {
+          remoteApp: appInfo
+          // transformLocalAppInfo默认为false，不转换包名指纹
+        }
+        let file: fileIo.File | null = null;
+        try {
+          // 设置需要发送的文件
+          file = fileIo.openSync('');
+          let p2pFile: wearEngine.P2pFile = {
+            file: file
+          }
+          const closeFile = () => {
+            try {
+              if (file) {
+                fileIo.closeSync(file);
+                console.info('File closed successfully.');
+              }
+            } catch (closeErr) {
+              console.error(`Failed to close file. Code is ${closeErr.code}, message is${closeErr.message}.`);
+            }
+          };
+
+          p2pClient.transferFile(device.randomId, appParam, p2pFile,
+            (error: BusinessError, p2pResult: wearEngine.P2pResult) => {
+              // callback处理逻辑
+              if (error) {
+                console.error(`Failed to transfer file. Code is ${error.code}, message is ${error.message}.`);
+                closeFile();
+                return;
+              }
+              if (p2pResult.code) {
+                if (p2pResult.code === wearEngine.P2pResultCode.COMMUNICATION_SUCCESS) {
+                  console.info(`Succeeded in transferring file, the result is ${p2pResult.code}.`);
+                } else {
+                  console.error(`Failed to transfer file, the error code is ${p2pResult.code}.`);
+                }
+                closeFile();
+              }
+              if (p2pResult.progress) {
+                console.info(`Succeeded in transferring file, the progress is ${p2pResult.progress}.`);
+              }
+            });
+          } catch (fileErr) {
+            console.error(`Failed to open file. Code is ${fileErr.code}, message is${fileErr.message}`);
+            if (file) fileIo.closeSync(file);
+          }
+        }
+      } catch (error) {
+        console.error(`Failed to check device capability. Code is ${error.code}, message is ${error.message}.`);
+    }
+
+    if (idx === deviceList.length - 1) {
+      // 若不存在目标设备则抛出错误
+      throw new Error('cannot find target device');
+    }
+  })
+} catch (error) {
+  console.error(`Failed to get connected devices. Code is ${error.code}, message is ${error.message}`);
+}
 ```
 
 ### cancelFileTransfer
-
-PhoneTabletWearable
 
 cancelFileTransfer(deviceRandomId: string, appParam: P2pAppParam, file: P2pFile): Promise<P2pResult>
 
@@ -1518,81 +1640,90 @@ cancelFileTransfer(deviceRandomId: string, appParam: P2pAppParam, file: P2pFile)
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[P2pResult](wearengine_api.md#p2presult)> | Promise对象。属性中的code字段表示本次取消文件发送的结果。 |
+| Promise<[P2pResult](wearengine_api.md#p2presult)> | Promise对象，返回P2p通信的结果。  属性中的code字段表示本次取消文件发送的结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
-| [1008500001](wearengine_api_error_code.md#section1008500001-网络错误) | Network error. The network is unavailable. |
-| [1008500002](wearengine_api_error_code.md#section1008500002-无绑定设备) | No device is bound. |
-| [1008500003](wearengine_api_error_code.md#section1008500003-设备未连接) | Device disconnected. |
-| [1008500004](wearengine_api_error_code.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
-| [1008500005](wearengine_api_error_code.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
-| [1008500006](wearengine_api_error_code.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
-| [1008500007](wearengine_api_error_code.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
-| [1008500008](wearengine_api_error_code.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
-| [1008500009](wearengine_api_error_code.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
-| [1008500010](wearengine_api_error_code.md#section1008500010-无效设备id) | Device ID is invalid. |
-| [1008500011](wearengine_api_error_code.md#section1008500011-无效文件) | File is invalid. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008500001](errorcode-wearengine.md#section1008500001-网络错误) | Network error. The network is unavailable. |
+| [1008500002](errorcode-wearengine.md#section1008500002-无绑定设备) | No device is bound. |
+| [1008500003](errorcode-wearengine.md#section1008500003-设备未连接) | Device disconnected. |
+| [1008500004](errorcode-wearengine.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
+| [1008500005](errorcode-wearengine.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
+| [1008500006](errorcode-wearengine.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
+| [1008500007](errorcode-wearengine.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
+| [1008500008](errorcode-wearengine.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
+| [1008500009](errorcode-wearengine.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
+| [1008500010](errorcode-wearengine.md#section1008500010-无效设备id) | Device ID is invalid. |
+| [1008500011](errorcode-wearengine.md#section1008500011-无效文件) | File is invalid. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { fileIo } from '@kit.CoreFileKit';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileIo } from '@kit.CoreFileKit';
 
-5. let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
-6. let p2pClient: wearEngine.P2pClient = wearEngine.getP2pClient(this.getUIContext().getHostContext());
-7. let deviceList: wearEngine.Device[] = await deviceClient.getConnectedDevices();
+let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
+let p2pClient: wearEngine.P2pClient = wearEngine.getP2pClient(this.getUIContext().getHostContext());
 
-9. deviceList.forEach(async (device, idx, arr) => {
-10. // 挑选支持应用安装的设备
-11. if (await device.isDeviceCapabilitySupported(wearEngine.DeviceCapability.APP_INSTALLATION)) {
-12. // 设置设备侧应用的应用信息：包名与指纹
-13. let appInfo: wearEngine.AppInfo = {
-14. bundleName: '',
-15. fingerprint: ''
-16. }
-17. // 将设备侧应用参数类定义为appParam
-18. let appParam: wearEngine.P2pAppParam = {
-19. remoteApp: appInfo
-20. // transformLocalAppInfo默认为false，不转换包名指纹
-21. }
-22. // 设置需要发送的文件信息
-23. let p2pFile: wearEngine.P2pFile = {
-24. file: fileIo.openSync('')
-25. }
+try {
+  let deviceList: wearEngine.Device[] = await deviceClient.getConnectedDevices();
 
-27. p2pClient.transferFile(device.randomId, appParam, p2pFile, () => {
-28. // 回调函数执行逻辑
-29. })
+  deviceList.forEach(async (device, idx) => {
+    try {
+      // 挑选支持应用安装的设备
+      if (await device.isDeviceCapabilitySupported(wearEngine.DeviceCapability.APP_INSTALLATION)) {
+        // 设置设备侧应用的应用信息：包名与指纹
+        // 包名与指纹，可在华为开发者联盟获取
+        let appInfo: wearEngine.AppInfo = {
+          bundleName: '',
+          fingerprint: ''
+        }
+        // 将设备侧应用参数类定义为appParam
+        let appParam: wearEngine.P2pAppParam = {
+          remoteApp: appInfo
+          // transformLocalAppInfo默认为false，不转换包名指纹
+        }
+        // 设置需要发送的文件信息
+        let p2pFile: wearEngine.P2pFile = {
+          file: fileIo.openSync('')
+        }
 
-31. p2pClient.cancelFileTransfer(device.randomId, appParam, p2pFile).then((p2pResult) => {
-32. if (p2pResult.code === wearEngine.P2pResultCode.COMMUNICATION_SUCCESS) {
-33. console.info(`Succeeded in cancelling transfer file, the result is ${p2pResult.code}.`);
-34. }
-35. }).catch((error: BusinessError) => {
-36. console.error(`Failed to cancel transfer file. Code is ${error.code}, message is ${error.message}.`);
-37. })
-38. fileIo.close(p2pFile.file);
-39. }
-40. if (idx === deviceList.length - 1) {
-41. // 若不存在目标设备则抛出错误
-42. throw new Error('cannot find target device');
-43. }
-44. })
+        p2pClient.transferFile(device.randomId, appParam, p2pFile, () => {
+          // 回调函数执行逻辑
+        })
+
+        p2pClient.cancelFileTransfer(device.randomId, appParam, p2pFile).then((p2pResult) => {
+          if (p2pResult.code === wearEngine.P2pResultCode.COMMUNICATION_SUCCESS) {
+            console.info(`Succeeded in cancelling transfer file, the result is ${p2pResult.code}.`);
+          }
+        }).catch((error: BusinessError) => {
+          console.error(`Failed to cancel transfer file. Code is ${error.code}, message is ${error.message}.`);
+        })
+        fileIo.close(p2pFile.file);
+      }
+    } catch (error) {
+      console.error(`Failed to check device capability. Code is ${error.code}, message is ${error.message}.`);
+    }
+
+    if (idx === deviceList.length - 1) {
+      // 若不存在目标设备则抛出错误
+      throw new Error('cannot find target device');
+    }
+  })
+} catch (error) {
+  console.error(`Failed to get connected devices. Code is ${error.code}, message is ${error.message}`);
+}
 ```
 
 ### registerMessageReceiver
-
-PhoneTabletWearable
 
 registerMessageReceiver(deviceRandomId: string, appParam: P2pAppParam, callback: Callback<P2pMessage>): Promise<void>
 
@@ -1610,78 +1741,87 @@ registerMessageReceiver(deviceRandomId: string, appParam: P2pAppParam, callback:
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅的设备。 |
 | appParam | [P2pAppParam](wearengine_api.md#p2pappparam) | 是 | 设备侧应用参数。 |
-| callback | Callback<[P2pMessage](wearengine_api.md#p2pmessage)> | 是 | 接收到设备侧应用发送的消息后执行的回调函数。 |
+| callback | Callback<[P2pMessage](wearengine_api.md#p2pmessage)> | 是 | 回调函数，返回对端设备应用发送的消息。  接收到设备侧应用发送的消息后执行的回调函数。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象。无结果返回的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
-| [1008500001](wearengine_api_error_code.md#section1008500001-网络错误) | Network error. The network is unavailable. |
-| [1008500002](wearengine_api_error_code.md#section1008500002-无绑定设备) | No device is bound. |
-| [1008500003](wearengine_api_error_code.md#section1008500003-设备未连接) | Device disconnected. |
-| [1008500004](wearengine_api_error_code.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
-| [1008500005](wearengine_api_error_code.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
-| [1008500006](wearengine_api_error_code.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
-| [1008500007](wearengine_api_error_code.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
-| [1008500008](wearengine_api_error_code.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
-| [1008500009](wearengine_api_error_code.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
-| [1008500010](wearengine_api_error_code.md#section1008500010-无效设备id) | Device ID is invalid. |
-| [1008500012](wearengine_api_error_code.md#section1008500012-回调函数过多) | Too many callbacks of the same type. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008500001](errorcode-wearengine.md#section1008500001-网络错误) | Network error. The network is unavailable. |
+| [1008500002](errorcode-wearengine.md#section1008500002-无绑定设备) | No device is bound. |
+| [1008500003](errorcode-wearengine.md#section1008500003-设备未连接) | Device disconnected. |
+| [1008500004](errorcode-wearengine.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
+| [1008500005](errorcode-wearengine.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
+| [1008500006](errorcode-wearengine.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
+| [1008500007](errorcode-wearengine.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
+| [1008500008](errorcode-wearengine.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
+| [1008500009](errorcode-wearengine.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
+| [1008500010](errorcode-wearengine.md#section1008500010-无效设备id) | Device ID is invalid. |
+| [1008500012](errorcode-wearengine.md#section1008500012-回调函数过多) | Too many callbacks of the same type. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
-5. let p2pClient: wearEngine.P2pClient = wearEngine.getP2pClient(this.getUIContext().getHostContext());
-6. let deviceList: wearEngine.Device[] = await deviceClient.getConnectedDevices();
+let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
+let p2pClient: wearEngine.P2pClient = wearEngine.getP2pClient(this.getUIContext().getHostContext());
 
-8. deviceList.forEach(async (device, idx, arr) => {
-9. // 挑选支持应用安装的设备
-10. if (await device.isDeviceCapabilitySupported(wearEngine.DeviceCapability.APP_INSTALLATION)) {
-11. // 设置设备侧应用的应用信息：包名与指纹
-12. let appInfo: wearEngine.AppInfo = {
-13. bundleName: '',
-14. fingerprint: ''
-15. }
-16. // 将设备侧应用参数类定义为appParam
-17. let appParam: wearEngine.P2pAppParam = {
-18. remoteApp: appInfo
-19. // transformLocalAppInfo默认为false，不转换包名
-20. }
-21. // 设置需要发送的文件信息
-22. let callback = (p2pMessage: wearEngine.P2pMessage) => {
-23. console.info(`Succeeded in receiving message, the message is ${p2pMessage.content}.`)
-24. }
+try {
+  let deviceList: wearEngine.Device[] = await deviceClient.getConnectedDevices();
 
-26. p2pClient.registerMessageReceiver(device.randomId, appParam, callback).then(() => {
-27. console.info(`Succeeded in registering message receiver.`);
-28. }).catch((error: BusinessError) => {
-29. console.error(`Failed to register message receiver. Code is ${error.code}, message is ${error.message}.`);
-30. })
-31. }
-32. if (idx === deviceList.length - 1) {
-33. // 若不存在目标设备则抛出错误
-34. throw new Error('cannot find target device');
-35. }
-36. })
+  deviceList.forEach(async (device, idx) => {
+    try {
+      // 挑选支持应用安装的设备
+      if (await device.isDeviceCapabilitySupported(wearEngine.DeviceCapability.APP_INSTALLATION)) {
+        // 设置设备侧应用的应用信息：包名与指纹
+        // 包名与指纹，可在华为开发者联盟获取
+        let appInfo: wearEngine.AppInfo = {
+          bundleName: '',
+          fingerprint: ''
+        }
+        // 将设备侧应用参数类定义为appParam
+        let appParam: wearEngine.P2pAppParam = {
+          remoteApp: appInfo
+          // transformLocalAppInfo默认为false，不转换包名
+        }
+        // 设置需要发送的消息
+        let callback = (p2pMessage: wearEngine.P2pMessage) => {
+          console.info(`Succeeded in receiving message, the message is ${p2pMessage.content}.`);
+        }
+
+        p2pClient.registerMessageReceiver(device.randomId, appParam, callback).then(() => {
+          console.info(`Succeeded in registering message receiver.`);
+        }).catch((error: BusinessError) => {
+          console.error(`Failed to register message receiver. Code is ${error.code}, message is ${error.message}.`);
+        })
+      }
+    } catch (error) {
+      console.error(`Failed to check device capability. Code is ${error.code}, message is ${error.message}.`);
+    }
+
+    if (idx === deviceList.length - 1) {
+      // 若不存在目标设备则抛出错误
+      throw new Error('cannot find target device');
+    }
+  })
+} catch (error) {
+  console.error(`Failed to get connected devices. Code is ${error.code}, message is ${error.message}`);
+}
 ```
 
 ### registerFileReceiver
-
-PhoneTabletWearable
 
 registerFileReceiver(deviceRandomId: string, appParam: P2pAppParam, callback: Callback<P2pFile>): Promise<void>
 
@@ -1699,78 +1839,190 @@ registerFileReceiver(deviceRandomId: string, appParam: P2pAppParam, callback: Ca
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅的设备。 |
 | appParam | [P2pAppParam](wearengine_api.md#p2pappparam) | 是 | 设备侧应用参数。 |
-| callback | Callback<[P2pFile](wearengine_api.md#p2pfile)> | 是 | 接收到设备侧应用发送的文件后执行的回调函数。 |
+| callback | Callback<[P2pFile](wearengine_api.md#p2pfile)> | 是 | 回调函数，返回对端设备应用发送的文件。  接收到设备侧应用发送的文件后执行的回调函数。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象。无结果返回的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
-| [1008500001](wearengine_api_error_code.md#section1008500001-网络错误) | Network error. The network is unavailable. |
-| [1008500002](wearengine_api_error_code.md#section1008500002-无绑定设备) | No device is bound. |
-| [1008500003](wearengine_api_error_code.md#section1008500003-设备未连接) | Device disconnected. |
-| [1008500004](wearengine_api_error_code.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
-| [1008500005](wearengine_api_error_code.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
-| [1008500006](wearengine_api_error_code.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
-| [1008500007](wearengine_api_error_code.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
-| [1008500008](wearengine_api_error_code.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
-| [1008500009](wearengine_api_error_code.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
-| [1008500010](wearengine_api_error_code.md#section1008500010-无效设备id) | Device ID is invalid. |
-| [1008500012](wearengine_api_error_code.md#section1008500012-回调函数过多) | Too many callbacks of the same type. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008500001](errorcode-wearengine.md#section1008500001-网络错误) | Network error. The network is unavailable. |
+| [1008500002](errorcode-wearengine.md#section1008500002-无绑定设备) | No device is bound. |
+| [1008500003](errorcode-wearengine.md#section1008500003-设备未连接) | Device disconnected. |
+| [1008500004](errorcode-wearengine.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
+| [1008500005](errorcode-wearengine.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
+| [1008500006](errorcode-wearengine.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
+| [1008500007](errorcode-wearengine.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
+| [1008500008](errorcode-wearengine.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
+| [1008500009](errorcode-wearengine.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
+| [1008500010](errorcode-wearengine.md#section1008500010-无效设备id) | Device ID is invalid. |
+| [1008500012](errorcode-wearengine.md#section1008500012-回调函数过多) | Too many callbacks of the same type. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
+let p2pClient: wearEngine.P2pClient = wearEngine.getP2pClient(this.getUIContext().getHostContext());
+
+try {
+  let deviceList: wearEngine.Device[] = await deviceClient.getConnectedDevices();
+
+  deviceList.forEach(async (device, idx) => {
+    try {
+      // 挑选支持应用安装的设备
+      if (await device.isDeviceCapabilitySupported(wearEngine.DeviceCapability.APP_INSTALLATION)) {
+        // 设置设备侧应用的应用信息：包名与指纹
+        // 包名与指纹，可在华为开发者联盟获取
+        let appInfo: wearEngine.AppInfo = {
+          bundleName: '',
+          fingerprint: ''
+        }
+        // 将设备侧应用参数类定义为appParam
+        let appParam: wearEngine.P2pAppParam = {
+          remoteApp: appInfo
+          // transformLocalAppInfo默认为false，不转换包名指纹
+        }
+        // 设置需要发送的文件信息
+        let callback = (p2pMessage: wearEngine.P2pFile) => {
+          console.info(`Succeeded in receiving file.`);
+        }
+
+        p2pClient.registerFileReceiver(device.randomId, appParam, callback).then(() => {
+          console.info(`Succeeded in registering file receiver.`);
+        }).catch((error: BusinessError) => {
+          console.error(`Failed to register file receiver. Code is ${error.code}, message is ${error.message}.`);
+        })
+      }
+    } catch (error) {
+      console.error(`Failed to check device capability. Code is ${error.code}, message is ${error.message}.`);
+    }
+
+    if (idx === deviceList.length - 1) {
+      // 若不存在目标设备则抛出错误
+      throw new Error('cannot find target device');
+    }
+  })
+} catch (error) {
+  console.error(`Failed to get connected devices. Code is ${error.code}, message is ${error.message}`);
+}
 ```
-1. import { wearEngine } from '@kit.WearEngine';
-2. import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
-5. let p2pClient: wearEngine.P2pClient = wearEngine.getP2pClient(this.getUIContext().getHostContext());
-6. let deviceList: wearEngine.Device[] = await deviceClient.getConnectedDevices();
+### registerFileReceiverWithProgress
 
-8. deviceList.forEach(async (device, idx, arr) => {
-9. // 挑选支持应用安装的设备
-10. if (await device.isDeviceCapabilitySupported(wearEngine.DeviceCapability.APP_INSTALLATION)) {
-11. // 设置设备侧应用的应用信息：包名与指纹
-12. let appInfo: wearEngine.AppInfo = {
-13. bundleName: '',
-14. fingerprint: ''
-15. }
-16. // 将设备侧应用参数类定义为appParam
-17. let appParam: wearEngine.P2pAppParam = {
-18. remoteApp: appInfo
-19. // transformLocalAppInfo默认为false，不转换包名指纹
-20. }
-21. // 设置需要发送的文件信息
-22. let callback = (p2pMessage: wearEngine.P2pFile) => {
-23. console.info(`Succeeded in receiving file.`)
-24. }
+registerFileReceiverWithProgress(deviceRandomId: string, appParam: P2pAppParam, callback: Callback<P2pFile>): Promise<void>
 
-26. p2pClient.registerFileReceiver(device.randomId, appParam, callback).then(() => {
-27. console.info(`Succeeded in registering file receiver.`)
-28. }).catch((error: BusinessError) => {
-29. console.error(`Failed to register file receiver. Code is ${error.code}, message is ${error.message}.`);
-30. })
-31. }
-32. if (idx === deviceList.length - 1) {
-33. // 若不存在目标设备则抛出错误
-34. throw new Error('cannot find target device');
-35. }
-36. })
+订阅对端设备向本端设备发送文件和文件传输进度的事件，接收到对端设备发送的文件和文件传输进度时使用callback异步回调，订阅成功与否使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Health.WearEngine
+
+**设备行为差异：** 对于6.1.1(24)及之前版本，本接口实际支持的设备类型范围(Phone、Tablet）小于其所属系统能力支持的设备类型范围（Phone、Tablet、Wearable)。因硬件能力限制，该接口在Wearable设备中无法使用该能力。 对于26.0.0及之后版本，本接口实际支持的设备类型范围与其所属系统能力支持的设备类型范围一致（Phone、Tablet、Wearable)。
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅的设备。 |
+| appParam | [P2pAppParam](wearengine_api.md#p2pappparam) | 是 | 设备侧应用参数。 |
+| callback | Callback<[P2pFile](wearengine_api.md#p2pfile)> | 是 | 回调函数，返回对端设备应用发送的文件类。  接收到设备侧应用发送的文件或者传输进度后执行的回调函数。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| [1008500001](errorcode-wearengine.md#section1008500001-网络错误) | Network error. The network is unavailable. |
+| [1008500002](errorcode-wearengine.md#section1008500002-无绑定设备) | No device is bound. |
+| [1008500003](errorcode-wearengine.md#section1008500003-设备未连接) | Device disconnected. |
+| [1008500004](errorcode-wearengine.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
+| [1008500005](errorcode-wearengine.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
+| [1008500006](errorcode-wearengine.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
+| [1008500007](errorcode-wearengine.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
+| [1008500008](errorcode-wearengine.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
+| [1008500009](errorcode-wearengine.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
+| [1008500010](errorcode-wearengine.md#section1008500010-无效设备id) | Device ID is invalid. |
+| [1008500012](errorcode-wearengine.md#section1008500012-回调函数过多) | Too many callbacks of the same type. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
+
+**示例：**
+
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
+let p2pClient: wearEngine.P2pClient = wearEngine.getP2pClient(this.getUIContext().getHostContext());
+
+try {
+  let deviceList: wearEngine.Device[] = await deviceClient.getConnectedDevices();
+
+  deviceList.forEach(async (device, idx) => {
+    try {
+      // 挑选支持应用安装的设备
+      if (await device.isDeviceCapabilitySupported(wearEngine.DeviceCapability.APP_INSTALLATION)) {
+        // 设置设备侧应用的应用信息：包名与指纹
+        // 包名与指纹，可在华为开发者联盟获取
+        let appInfo: wearEngine.AppInfo = {
+          bundleName: '',
+          fingerprint: ''
+        }
+        // 将设备侧应用参数类定义为appParam
+        let appParam: wearEngine.P2pAppParam = {
+          remoteApp: appInfo
+          // transformLocalAppInfo默认为false，不转换包名指纹
+        }
+        // 设置需要发送的文件信息和传输进度
+        let callback = (p2pMessage: wearEngine.P2pFile) => {
+          if (!p2pMessage.file) {
+            console.info(`progress is ${p2pMessage.progress}`);
+          } else {
+            console.info(`Succeeded in receiving file.`);
+          }
+        }
+
+        p2pClient.registerFileReceiverWithProgress(device.randomId, appParam, callback).then(() => {
+          console.info(`Succeeded in registering file receiver.`);
+        }).catch((error: BusinessError) => {
+          console.error(`Failed to register file receiver. Code is ${error.code}, message is ${error.message}.`);
+        })
+      }
+    } catch (error) {
+      console.error(`Failed to check device capability. Code is ${error.code}, message is ${error.message}.`);
+    }
+
+    if (idx === deviceList.length - 1) {
+      // 若不存在目标设备则抛出错误
+      throw new Error('cannot find target device');
+    }
+  })
+} catch (error) {
+  console.error(`Failed to get connected devices. Code is ${error.code}, message is ${error.message}`);
+}
 ```
 
 ### unregisterMessageReceiver
-
-PhoneTabletWearable
 
 unregisterMessageReceiver(deviceRandomId: string, appParam: P2pAppParam, callback: Callback<P2pMessage>): Promise<void>
 
@@ -1788,83 +2040,92 @@ unregisterMessageReceiver(deviceRandomId: string, appParam: P2pAppParam, callbac
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅的设备。 |
 | appParam | [P2pAppParam](wearengine_api.md#p2pappparam) | 是 | 设备侧应用参数。 |
-| callback | Callback<[P2pMessage](wearengine_api.md#p2pmessage)> | 是 | 回调函数，需要同订阅监听时的回调函数为同一个对象。 |
+| callback | Callback<[P2pMessage](wearengine_api.md#p2pmessage)> | 是 | 回调函数，返回对端设备应用发送的消息。  需要同订阅监听时的回调函数为同一个对象。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象。无结果返回的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
-| [1008500001](wearengine_api_error_code.md#section1008500001-网络错误) | Network error. The network is unavailable. |
-| [1008500002](wearengine_api_error_code.md#section1008500002-无绑定设备) | No device is bound. |
-| [1008500003](wearengine_api_error_code.md#section1008500003-设备未连接) | Device disconnected. |
-| [1008500004](wearengine_api_error_code.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
-| [1008500005](wearengine_api_error_code.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
-| [1008500006](wearengine_api_error_code.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
-| [1008500007](wearengine_api_error_code.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
-| [1008500008](wearengine_api_error_code.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
-| [1008500009](wearengine_api_error_code.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
-| [1008500010](wearengine_api_error_code.md#section1008500010-无效设备id) | Device ID is invalid. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008500001](errorcode-wearengine.md#section1008500001-网络错误) | Network error. The network is unavailable. |
+| [1008500002](errorcode-wearengine.md#section1008500002-无绑定设备) | No device is bound. |
+| [1008500003](errorcode-wearengine.md#section1008500003-设备未连接) | Device disconnected. |
+| [1008500004](errorcode-wearengine.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
+| [1008500005](errorcode-wearengine.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
+| [1008500006](errorcode-wearengine.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
+| [1008500007](errorcode-wearengine.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
+| [1008500008](errorcode-wearengine.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
+| [1008500009](errorcode-wearengine.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
+| [1008500010](errorcode-wearengine.md#section1008500010-无效设备id) | Device ID is invalid. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
-5. let p2pClient: wearEngine.P2pClient = wearEngine.getP2pClient(this.getUIContext().getHostContext());
-6. let deviceList: wearEngine.Device[] = await deviceClient.getConnectedDevices();
+let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
+let p2pClient: wearEngine.P2pClient = wearEngine.getP2pClient(this.getUIContext().getHostContext());
 
-8. deviceList.forEach(async (device, idx, arr) => {
-9. // 挑选支持应用安装的设备
-10. if (await device.isDeviceCapabilitySupported(wearEngine.DeviceCapability.APP_INSTALLATION)) {
-11. // 设置设备侧应用的应用信息：包名与指纹
-12. let appInfo: wearEngine.AppInfo = {
-13. bundleName: '',
-14. fingerprint: ''
-15. }
-16. // 将设备侧应用参数类定义为appParam
-17. let appParam: wearEngine.P2pAppParam = {
-18. remoteApp: appInfo
-19. // transformLocalAppInfo默认为false，不转换包名指纹
-20. }
-21. // 设置需要发送的文件信息
-22. let callback = (p2pMessage: wearEngine.P2pMessage) => {
-23. console.info(`Succeeded in receiving message, the message is ${p2pMessage.content}.`)
-24. }
+try {
+  let deviceList: wearEngine.Device[] = await deviceClient.getConnectedDevices();
 
-26. p2pClient.registerMessageReceiver(device.randomId, appParam, callback).then(() => {
-27. console.info(`Succeeded in registering message receiver.`)
-28. }).catch((error: BusinessError) => {
-29. console.error(`Failed to register message receiver. Code is ${error.code}, message is ${error.message}.`);
-30. })
+  deviceList.forEach(async (device, idx) => {
+    try {
+      // 挑选支持应用安装的设备
+      if (await device.isDeviceCapabilitySupported(wearEngine.DeviceCapability.APP_INSTALLATION)) {
+        // 设置设备侧应用的应用信息：包名与指纹
+        // 包名与指纹，可在华为开发者联盟获取
+        let appInfo: wearEngine.AppInfo = {
+          bundleName: '',
+          fingerprint: ''
+        }
+        // 将设备侧应用参数类定义为appParam
+        let appParam: wearEngine.P2pAppParam = {
+          remoteApp: appInfo
+          // transformLocalAppInfo默认为false，不转换包名指纹
+        }
+        // 设置需要发送的消息
+        let callback = (p2pMessage: wearEngine.P2pMessage) => {
+          console.info(`Succeeded in receiving message, the message is ${p2pMessage.content}.`);
+        }
 
-32. p2pClient.unregisterMessageReceiver(device.randomId, appParam, callback).then(() => {
-33. console.info(`Succeeded in unregistering message receiver.`)
-34. }).catch((error: BusinessError) => {
-35. console.error(`Failed to unregister message receiver. Code is ${error.code}, message is ${error.message}.`);
-36. })
-37. }
-38. if (idx === deviceList.length - 1) {
-39. // 若不存在目标设备则抛出错误
-40. throw new Error('cannot find target device');
-41. }
-42. })
+        p2pClient.registerMessageReceiver(device.randomId, appParam, callback).then(() => {
+          console.info(`Succeeded in registering message receiver.`);
+
+          p2pClient.unregisterMessageReceiver(device.randomId, appParam, callback).then(() => {
+            console.info(`Succeeded in unregistering message receiver.`);
+          }).catch((error: BusinessError) => {
+            console.error(`Failed to unregister message receiver. Code is ${error.code}, message is ${error.message}.`);
+          })
+        }).catch((error: BusinessError) => {
+          console.error(`Failed to register message receiver. Code is ${error.code}, message is ${error.message}.`);
+        })
+      }
+    } catch (error) {
+      console.error(`Failed to check device capability. Code is ${error.code}, message is ${error.message}.`);
+    }
+
+    if (idx === deviceList.length - 1) {
+      // 若不存在目标设备则抛出错误
+      throw new Error('cannot find target device');
+    }
+  })
+} catch (error) {
+  console.error(`Failed to get connected devices. Code is ${error.code}, message is ${error.message}`);
+}
 ```
 
 ### unregisterFileReceiver
-
-PhoneTabletWearable
 
 unregisterFileReceiver(deviceRandomId: string, appParam: P2pAppParam, callback: Callback<P2pFile>): Promise<void>
 
@@ -1882,83 +2143,92 @@ unregisterFileReceiver(deviceRandomId: string, appParam: P2pAppParam, callback: 
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅的设备。 |
 | appParam | [P2pAppParam](wearengine_api.md#p2pappparam) | 是 | 设备侧应用参数。 |
-| callback | Callback<[P2pFile](wearengine_api.md#p2pfile)> | 是 | 回调函数，需要同订阅监听时的回调函数为同一个对象。 |
+| callback | Callback<[P2pFile](wearengine_api.md#p2pfile)> | 是 | 回调函数，返回对端设备应用发送的文件。  需要同订阅监听时的回调函数为同一个对象。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象。无结果返回的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
-| [1008500001](wearengine_api_error_code.md#section1008500001-网络错误) | Network error. The network is unavailable. |
-| [1008500002](wearengine_api_error_code.md#section1008500002-无绑定设备) | No device is bound. |
-| [1008500003](wearengine_api_error_code.md#section1008500003-设备未连接) | Device disconnected. |
-| [1008500004](wearengine_api_error_code.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
-| [1008500005](wearengine_api_error_code.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
-| [1008500006](wearengine_api_error_code.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
-| [1008500007](wearengine_api_error_code.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
-| [1008500008](wearengine_api_error_code.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
-| [1008500009](wearengine_api_error_code.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
-| [1008500010](wearengine_api_error_code.md#section1008500010-无效设备id) | Device ID is invalid. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008500001](errorcode-wearengine.md#section1008500001-网络错误) | Network error. The network is unavailable. |
+| [1008500002](errorcode-wearengine.md#section1008500002-无绑定设备) | No device is bound. |
+| [1008500003](errorcode-wearengine.md#section1008500003-设备未连接) | Device disconnected. |
+| [1008500004](errorcode-wearengine.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
+| [1008500005](errorcode-wearengine.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
+| [1008500006](errorcode-wearengine.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
+| [1008500007](errorcode-wearengine.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
+| [1008500008](errorcode-wearengine.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
+| [1008500009](errorcode-wearengine.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
+| [1008500010](errorcode-wearengine.md#section1008500010-无效设备id) | Device ID is invalid. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
-5. let p2pClient: wearEngine.P2pClient = wearEngine.getP2pClient(this.getUIContext().getHostContext());
-6. let deviceList: wearEngine.Device[] = await deviceClient.getConnectedDevices();
+let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
+let p2pClient: wearEngine.P2pClient = wearEngine.getP2pClient(this.getUIContext().getHostContext());
 
-8. deviceList.forEach(async (device, idx, arr) => {
-9. // 挑选支持应用安装的设备
-10. if (await device.isDeviceCapabilitySupported(wearEngine.DeviceCapability.APP_INSTALLATION)) {
-11. // 设置设备侧应用的应用信息：包名与指纹
-12. let appInfo: wearEngine.AppInfo = {
-13. bundleName: '',
-14. fingerprint: ''
-15. }
-16. // 将设备侧应用参数类定义为appParam
-17. let appParam: wearEngine.P2pAppParam = {
-18. remoteApp: appInfo
-19. // transformLocalAppInfo默认为false，不转换包名指纹
-20. }
-21. // 设置需要发送的文件信息
-22. let callback = (p2pMessage: wearEngine.P2pFile) => {
-23. console.info(`Succeeded in receiving file.`)
-24. }
+try {
+  let deviceList: wearEngine.Device[] = await deviceClient.getConnectedDevices();
 
-26. p2pClient.registerFileReceiver(device.randomId, appParam, callback).then(() => {
-27. console.info(`Succeeded in registering file receiver.`);
-28. }).catch((error: BusinessError) => {
-29. console.error(`Failed to register file receiver. Code is ${error.code}, message is ${error.message}.`);
-30. })
+  deviceList.forEach(async (device, idx) => {
+    try {
+      // 挑选支持应用安装的设备
+      if (await device.isDeviceCapabilitySupported(wearEngine.DeviceCapability.APP_INSTALLATION)) {
+        // 设置设备侧应用的应用信息：包名与指纹
+        // 包名与指纹，可在华为开发者联盟获取
+        let appInfo: wearEngine.AppInfo = {
+          bundleName: '',
+          fingerprint: ''
+        }
+        // 将设备侧应用参数类定义为appParam
+        let appParam: wearEngine.P2pAppParam = {
+          remoteApp: appInfo
+          // transformLocalAppInfo默认为false，不转换包名指纹
+        }
+        // 设置需要发送的文件信息
+        let callback = (p2pMessage: wearEngine.P2pFile) => {
+          console.info(`Succeeded in receiving file.`);
+        }
 
-32. p2pClient.unregisterFileReceiver(device.randomId, appParam, callback).then(() => {
-33. console.info(`Succeeded in unregistering file receiver.`);
-34. }).catch((error: BusinessError) => {
-35. console.error(`Failed to unregister file receiver. Code is ${error.code}, message is ${error.message}.`);
-36. })
-37. }
-38. if (idx === deviceList.length - 1) {
-39. // 若不存在目标设备则抛出错误
-40. throw new Error('cannot find target device');
-41. }
-42. })
+        p2pClient.registerFileReceiver(device.randomId, appParam, callback).then(() => {
+          console.info(`Succeeded in registering file receiver.`);
+
+          p2pClient.unregisterFileReceiver(device.randomId, appParam, callback).then(() => {
+            console.info(`Succeeded in unregistering file receiver.`);
+          }).catch((error: BusinessError) => {
+            console.error(`Failed to unregister file receiver. Code is ${error.code}, message is ${error.message}.`);
+          })
+        }).catch((error: BusinessError) => {
+          console.error(`Failed to register file receiver. Code is ${error.code}, message is ${error.message}.`);
+        })
+      }
+    } catch (error) {
+      console.error(`Failed to check device capability. Code is ${error.code}, message is ${error.message}.`);
+    }
+
+    if (idx === deviceList.length - 1) {
+      // 若不存在目标设备则抛出错误
+      throw new Error('cannot find target device');
+    }
+  })
+} catch (error) {
+  console.error(`Failed to get connected devices. Code is ${error.code}, message is ${error.message}`);
+}
 ```
 
 ## AppInfo
-
-PhoneTabletWearable
 
 设备侧应用信息类。
 
@@ -1971,11 +2241,9 @@ PhoneTabletWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | bundleName | string | 否 | 否 | 应用名称。 |
-| fingerprint | string | 否 | 否 | [应用指纹，用于标识应用的唯一身份。](../harmonyos-guides/wearengine_faq-9.md) |
+| fingerprint | string | 否 | 否 | 应用指纹，用于标识应用的唯一身份。  应用指纹获取请参考[如何获取应用指纹。](../harmonyos-guides/wearengine_faq-9.md#harmonyos-50及之后版本设备的应用) |
 
 ## P2pResultCode
-
-PhoneTabletWearable
 
 存储P2p通信的返回值枚举类。
 
@@ -1996,8 +2264,6 @@ PhoneTabletWearable
 
 ## P2pResult
 
-PhoneTabletWearable
-
 存储P2p通信的结果。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -2013,8 +2279,6 @@ PhoneTabletWearable
 
 ## P2pMessage
 
-PhoneTabletWearable
-
 本端设备应用向对端设备应用发送的消息类。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -2029,8 +2293,6 @@ PhoneTabletWearable
 
 ## P2pFile
 
-PhoneTabletWearable
-
 本端设备应用向对端设备应用发送的文件类。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -2042,10 +2304,9 @@ PhoneTabletWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | file | [fs.File](js-apis-file-fs.md#file) | 否 | 否 | 文件对象。 |
+| progress | number | 否 | 是 | 文件传输进度。  **起始版本：** 6.1.1(24) |
 
 ## P2pAppParam
-
-PhoneTabletWearable
 
 P2p通信过程中可用的设备侧应用参数类。
 
@@ -2060,9 +2321,38 @@ P2p通信过程中可用的设备侧应用参数类。
 | remoteApp | [AppInfo](wearengine_api.md#appinfo) | 否 | 否 | 设备侧应用信息类。 |
 | transformLocalAppInfo | boolean | 否 | 是 | 是否需要将本地包名和指纹转换为兼容应用在云端存储的包名和指纹。默认值：false。  true：转换；false：不转换。  待兼容应用设置请参考[申请接入Wear Engine服务](../harmonyos-guides/wearengine_apply.md)。 |
 
-## wearEngine.getNotifyClient
+## StartConfig
 
-PhoneTabletWearable
+待拉起的对端设备应用的配置参数。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Health.WearEngine
+
+**起始版本：** 6.1.1(24)
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| entryType | [EntryType](wearengine_api.md#entrytype) | 否 | 否 | 需要拉起的对端设备应用的组件类型。 |
+| entryName | string | 否 | 是 | 需要拉起对端设备（Phone/Tablet）应用的组件名称或全限定名称。  对端设备为HarmonyOS 6.1及以上版本时，该属性为组件名称，即"moduleName/abilityName"，如"entry/HiWearAbility"；对端设备为HarmonyOS 5.0之前版本（如HarmonyOS 2.x/3.x/4.x）时，该属性为全限定名称，即"包名.类名"，如"com.huawei.test.demo.FgService"。 |
+
+## EntryType
+
+待拉起的对端设备应用的组件类型。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Health.WearEngine
+
+**起始版本：** 6.1.1(24)
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| DISTRIBUTED\_SERVICE | 'DistributedService' | 分布式服务组件，当要启动分布式服务组件时需设置此值。 |
+| SERVICE | 'Service' | 服务组件，当要拉起前台服务时需设置此值。 |
+| UI | 'UI' | UI组件，当要启动UI组件时需要设置此值。 |
+
+## wearEngine.getNotifyClient
 
 getNotifyClient(context: common.Context): NotifyClient
 
@@ -2090,26 +2380,24 @@ getNotifyClient(context: common.Context): NotifyClient
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 | 801 | Capability not supported. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
 
-3. let notifyClient: wearEngine.NotifyClient = wearEngine.getNotifyClient(this.getUIContext().getHostContext());
-4. console.info(`Succeeded in getting notify client`);
+let notifyClient: wearEngine.NotifyClient = wearEngine.getNotifyClient(this.getUIContext().getHostContext());
+console.info(`Succeeded in getting notify client`);
 ```
 
 ## NotifyClient
-
-PhoneTabletWearable
 
 Notify客户端类，由[wearEngine.getNotifyClient](wearengine_api.md#wearenginegetnotifyclient)返回得到。
 
@@ -2120,8 +2408,6 @@ Notify客户端类，由[wearEngine.getNotifyClient](wearengine_api.md#wearengin
 **起始版本：** 5.0.0(12)
 
 ### notify
-
-PhoneTabletWearable
 
 notify(deviceRandomId: string, options: NotificationOptions): Promise<void>
 
@@ -2146,70 +2432,73 @@ notify(deviceRandomId: string, options: NotificationOptions): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象。无结果返回的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
-| [1008500001](wearengine_api_error_code.md#section1008500001-网络错误) | Network error. The network is unavailable. |
-| [1008500002](wearengine_api_error_code.md#section1008500002-无绑定设备) | No device is bound. |
-| [1008500003](wearengine_api_error_code.md#section1008500003-设备未连接) | Device disconnected. |
-| [1008500004](wearengine_api_error_code.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
-| [1008500005](wearengine_api_error_code.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
-| [1008500006](wearengine_api_error_code.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
-| [1008500007](wearengine_api_error_code.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
-| [1008500008](wearengine_api_error_code.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
-| [1008500009](wearengine_api_error_code.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
-| [1008500010](wearengine_api_error_code.md#section1008500010-无效设备id) | Device ID is invalid. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008500001](errorcode-wearengine.md#section1008500001-网络错误) | Network error. The network is unavailable. |
+| [1008500002](errorcode-wearengine.md#section1008500002-无绑定设备) | No device is bound. |
+| [1008500003](errorcode-wearengine.md#section1008500003-设备未连接) | Device disconnected. |
+| [1008500004](errorcode-wearengine.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
+| [1008500005](errorcode-wearengine.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
+| [1008500006](errorcode-wearengine.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
+| [1008500007](errorcode-wearengine.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
+| [1008500008](errorcode-wearengine.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
+| [1008500009](errorcode-wearengine.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
+| [1008500010](errorcode-wearengine.md#section1008500010-无效设备id) | Device ID is invalid. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let notifyClient: wearEngine.NotifyClient = wearEngine.getNotifyClient(this.getUIContext().getHostContext());
-5. let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
-6. let devices: wearEngine.Device[] = await deviceClient.getConnectedDevices();
+let notifyClient: wearEngine.NotifyClient = wearEngine.getNotifyClient(this.getUIContext().getHostContext());
+let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
 
-8. if (devices.length > 0) {
-9. // 从得到的设备列表中选取目标设备，并定义为device(假设数组中存在已连接设备且第一位即为目标设备)
-10. let device: wearEngine.Device = devices[0];
+try {
+  let devices: wearEngine.Device[] = await deviceClient.getConnectedDevices();
 
-12. let button1: wearEngine.NotificationButton = {
-13. buttonId: wearEngine.ButtonId.FIRST_BUTTON,
-14. content: 'button_1'
-15. }
-16. let type1Notification: wearEngine.Notification = {
-17. type: wearEngine.NotificationType.NOTIFICATION_WITH_ONE_BUTTON,
-18. bundleName: 'bundleName',
-19. title: 'title',
-20. text: 'text',
-21. buttons: [button1]
-22. }
-23. let options: wearEngine.NotificationOptions = {
-24. notification: type1Notification,
-25. onAction: (feedback: wearEngine.NotificationFeedback) => {
-26. console.info(`one button notify get feedback is ${feedback.action ? feedback.action : feedback.errorCode}`);
-27. }
-28. }
+  if (devices.length > 0) {
+    // 从得到的设备列表中选取目标设备，并定义为device（假设数组中存在已连接设备且第一位即为目标设备）
+    let device: wearEngine.Device = devices[0];
 
-30. notifyClient.notify(device.randomId, options).then(result => {
-31. console.info(`Succeeded in sending notification.`);
-32. }).catch((error: BusinessError) => {
-33. console.error(`Failed to send notification. Code is ${error.code}, message is ${error.message}`);
-34. })
-35. }
+    let button1: wearEngine.NotificationButton = {
+      buttonId: wearEngine.ButtonId.FIRST_BUTTON,
+      content: 'button_1'
+    }
+    let type1Notification: wearEngine.Notification = {
+      type: wearEngine.NotificationType.NOTIFICATION_WITH_ONE_BUTTON,
+      bundleName: 'bundleName',
+      title: 'title',
+      text: 'text',
+      buttons: [button1]
+    }
+    let options: wearEngine.NotificationOptions = {
+      notification: type1Notification,
+      onAction: (feedback: wearEngine.NotificationFeedback) => {
+        console.info(`one button notify get feedback is ${feedback.action ? feedback.action : feedback.errorCode}`);
+      }
+    }
+
+    notifyClient.notify(device.randomId, options).then(result => {
+      console.info(`Succeeded in sending notification.`);
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to send notification. Code is ${error.code}, message is ${error.message}`);
+    })
+  }
+} catch (error) {
+  console.error(`Failed to get connected devices. Code is ${error.code}, message is ${error.message}`);
+}
 ```
 
 ## NotificationOptions
-
-PhoneTabletWearable
 
 模板化通知的配置参数类。
 
@@ -2226,8 +2515,6 @@ PhoneTabletWearable
 | notification | [Notification](wearengine_api.md#notification) | 否 | 否 | 模板化通知的通知体参数类。 |
 
 ### onAction
-
-PhoneTabletWearable
 
 onAction(feedback: NotificationFeedback): void
 
@@ -2249,8 +2536,6 @@ onAction(feedback: NotificationFeedback): void
 
 ## Notification
 
-PhoneTabletWearable
-
 模板化通知的通知体参数类。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -2262,14 +2547,12 @@ PhoneTabletWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | [NotificationType](wearengine_api.md#notificationtype) | 否 | 否 | 通知的模板类型。 |
-| bundleName | string | 否 | 否 | 发送通知应用的包名。 |
-| title | string | 否 | 否 | 通知的标题，取值范围：[1，28)，单位字节。 |
-| text | string | 否 | 否 | 通知的内容，取值范围：[1，400)，单位字节。 |
+| bundleName | string | 否 | 否 | 发送通知应用的包名，取值范围：[1，28]，单位Byte。 |
+| title | string | 否 | 否 | 通知的标题，取值范围：[1，28)，单位Byte。 |
+| text | string | 否 | 否 | 通知的内容，取值范围：[1，400)，单位Byte。 |
 | buttons | [NotificationButton](wearengine_api.md#notificationbutton)[] | 否 | 是 | 通知按钮信息类，若未填写，默认为空。 |
 
 ## NotificationType
-
-PhoneTabletWearable
 
 模板化通知的模板类型枚举类。
 
@@ -2288,8 +2571,6 @@ PhoneTabletWearable
 
 ## NotificationButton
 
-PhoneTabletWearable
-
 通知按钮信息类。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -2301,11 +2582,9 @@ PhoneTabletWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | buttonId | [ButtonId](wearengine_api.md#buttonid) | 否 | 否 | 按钮Id枚举类。 |
-| content | string | 否 | 否 | 按钮上的文字内容，取值范围：[1，12)，单位字节。 |
+| content | string | 否 | 否 | 按钮上的文字内容，取值范围：[1，12)，单位Byte。 |
 
 ## ButtonId
-
-PhoneTabletWearable
 
 模板化通知的按钮Id枚举类。
 
@@ -2317,13 +2596,11 @@ PhoneTabletWearable
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| FIRST\_BUTTON | firstButton | 第一个按钮的Id。 |
-| SECOND\_BUTTON | secondButton | 第二个按钮的Id。 |
-| THIRD\_BUTTON | thirdButton | 第三个按钮的Id。 |
+| FIRST\_BUTTON | 'firstButton' | 第一个按钮的Id。 |
+| SECOND\_BUTTON | 'secondButton' | 第二个按钮的Id。 |
+| THIRD\_BUTTON | 'thirdButton' | 第三个按钮的Id。 |
 
 ## NotificationFeedback
-
-PhoneTabletWearable
 
 设备侧操作通知的反馈类。
 
@@ -2339,8 +2616,6 @@ PhoneTabletWearable
 | errorCode | number | 否 | 是 | 错误码，含义请见[NotificationErrorCode](wearengine_api.md#notificationerrorcode)。 |
 
 ## NotificationAction
-
-PhoneTabletWearable
 
 设备侧对通知的操作反馈枚举类。
 
@@ -2360,8 +2635,6 @@ PhoneTabletWearable
 
 ## NotificationErrorCode
 
-PhoneTabletWearable
-
 通知在设备侧发生错误的反馈枚举类。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -2375,8 +2648,6 @@ PhoneTabletWearable
 | INTERNAL\_ERROR | 255 | Wear Engine内部错误。通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题，华为支持人员会及时处理。 |
 
 ## wearEngine.getSensorClient
-
-PhoneTabletWearable
 
 getSensorClient(context: common.Context): SensorClient
 
@@ -2404,26 +2675,24 @@ getSensorClient(context: common.Context): SensorClient
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 | 801 | Capability not supported. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
 
-3. let sensorClient: wearEngine.SensorClient = wearEngine.getSensorClient(this.getUIContext().getHostContext());
-4. console.info(`Succeeded in getting sensor client`);
+let sensorClient: wearEngine.SensorClient = wearEngine.getSensorClient(this.getUIContext().getHostContext());
+console.info(`Succeeded in getting sensor client`);
 ```
 
 ## SensorClient
-
-PhoneTabletWearable
 
 Sensor客户端类。由接口[wearEngine.getSensorClient](wearengine_api.md#wearenginegetsensorclient)返回得到。
 
@@ -2434,8 +2703,6 @@ Sensor客户端类。由接口[wearEngine.getSensorClient](wearengine_api.md#wea
 **起始版本：** 5.0.0(12)
 
 ### getSensorList
-
-PhoneTabletWearable
 
 getSensorList(deviceRandomId: string): Promise<Sensor[]>
 
@@ -2463,48 +2730,51 @@ getSensorList(deviceRandomId: string): Promise<Sensor[]>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
-| [1008500001](wearengine_api_error_code.md#section1008500001-网络错误) | Network error. The network is unavailable. |
-| [1008500002](wearengine_api_error_code.md#section1008500002-无绑定设备) | No device is bound. |
-| [1008500003](wearengine_api_error_code.md#section1008500003-设备未连接) | Device disconnected. |
-| [1008500004](wearengine_api_error_code.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
-| [1008500005](wearengine_api_error_code.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
-| [1008500006](wearengine_api_error_code.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
-| [1008500007](wearengine_api_error_code.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
-| [1008500008](wearengine_api_error_code.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
-| [1008500009](wearengine_api_error_code.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
-| [1008500010](wearengine_api_error_code.md#section1008500010-无效设备id) | Device ID is invalid. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008500001](errorcode-wearengine.md#section1008500001-网络错误) | Network error. The network is unavailable. |
+| [1008500002](errorcode-wearengine.md#section1008500002-无绑定设备) | No device is bound. |
+| [1008500003](errorcode-wearengine.md#section1008500003-设备未连接) | Device disconnected. |
+| [1008500004](errorcode-wearengine.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
+| [1008500005](errorcode-wearengine.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
+| [1008500006](errorcode-wearengine.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
+| [1008500007](errorcode-wearengine.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
+| [1008500008](errorcode-wearengine.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
+| [1008500009](errorcode-wearengine.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
+| [1008500010](errorcode-wearengine.md#section1008500010-无效设备id) | Device ID is invalid. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let sensorClient: wearEngine.SensorClient = wearEngine.getSensorClient(this.getUIContext().getHostContext());
-5. let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
-6. let devices: wearEngine.Device[] = await deviceClient.getConnectedDevices();
+let sensorClient: wearEngine.SensorClient = wearEngine.getSensorClient(this.getUIContext().getHostContext());
+let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
 
-8. if (devices.length > 0) {
-9. // 从得到的设备列表中选取目标设备，并定义为device(假设数组中存在已连接设备且第一位即为目标设备)
-10. let device: wearEngine.Device = devices[0];
+try {
+  let devices: wearEngine.Device[] = await deviceClient.getConnectedDevices();
 
-12. sensorClient.getSensorList(device.randomId).then((sensorList) => {
-13. console.info(`Succeeded in getting sensor list, result is ${sensorList}`);
-14. }).catch((error: BusinessError) => {
-15. console.error(`Failed to get sensor list. Code is ${error.code}, message is ${error.message}`);
-16. })
-17. }
+  if (devices.length > 0) {
+    // 从得到的设备列表中选取目标设备，并定义为device（假设数组中存在已连接设备且第一位即为目标设备）
+    let device: wearEngine.Device = devices[0];
+
+    sensorClient.getSensorList(device.randomId).then((sensorList) => {
+      console.info(`Succeeded in getting sensor list, result is ${sensorList}`);
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to get sensor list. Code is ${error.code}, message is ${error.message}`);
+    })
+  }
+} catch (error) {
+  console.error(`Failed to get connected devices. Code is ${error.code}, message is ${error.message}`);
+}
 ```
 
 ### subscribeSensor
-
-PhoneTabletWearable
 
 subscribeSensor(deviceRandomId: string, type: SensorType, callback: Callback<SensorResult>): Promise<void>
 
@@ -2524,67 +2794,74 @@ subscribeSensor(deviceRandomId: string, type: SensorType, callback: Callback<Sen
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅的设备。 |
 | type | [SensorType](wearengine_api.md#sensortype) | 是 | 传感器类别，用于指定本次订阅的传感器。 |
-| callback | Callback<[SensorResult](wearengine_api.md#sensorresult)> | 是 | 回调函数，用于处理传感器上报的数据。 |
+| callback | Callback<[SensorResult](wearengine_api.md#sensorresult)> | 是 | 回调函数，返回传感器上报结果。  用于处理传感器上报的数据。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象。无结果返回的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
-| [1008500001](wearengine_api_error_code.md#section1008500001-网络错误) | Network error. The network is unavailable. |
-| [1008500002](wearengine_api_error_code.md#section1008500002-无绑定设备) | No device is bound. |
-| [1008500003](wearengine_api_error_code.md#section1008500003-设备未连接) | Device disconnected. |
-| [1008500004](wearengine_api_error_code.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
-| [1008500005](wearengine_api_error_code.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
-| [1008500006](wearengine_api_error_code.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
-| [1008500007](wearengine_api_error_code.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
-| [1008500008](wearengine_api_error_code.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
-| [1008500009](wearengine_api_error_code.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
-| [1008500010](wearengine_api_error_code.md#section1008500010-无效设备id) | Device ID is invalid. |
-| [1008500012](wearengine_api_error_code.md#section1008500012-回调函数过多) | Too many callbacks of the same type. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008500001](errorcode-wearengine.md#section1008500001-网络错误) | Network error. The network is unavailable. |
+| [1008500002](errorcode-wearengine.md#section1008500002-无绑定设备) | No device is bound. |
+| [1008500003](errorcode-wearengine.md#section1008500003-设备未连接) | Device disconnected. |
+| [1008500004](errorcode-wearengine.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
+| [1008500005](errorcode-wearengine.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
+| [1008500006](errorcode-wearengine.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
+| [1008500007](errorcode-wearengine.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
+| [1008500008](errorcode-wearengine.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
+| [1008500009](errorcode-wearengine.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
+| [1008500010](errorcode-wearengine.md#section1008500010-无效设备id) | Device ID is invalid. |
+| [1008500012](errorcode-wearengine.md#section1008500012-回调函数过多) | Too many callbacks of the same type. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let sensorClient: wearEngine.SensorClient = wearEngine.getSensorClient(this.getUIContext().getHostContext());
-5. let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
-6. let devices: wearEngine.Device[] = await deviceClient.getConnectedDevices();
+let sensorClient: wearEngine.SensorClient = wearEngine.getSensorClient(this.getUIContext().getHostContext());
+let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
 
-8. if (devices.length > 0) {
-9. // 从得到的设备列表中选取目标设备，并定义为device(假设数组中存在已连接设备,第一位即为目标设备且具备相关能力)
-10. let device: wearEngine.Device = devices[0];
-11. let sensorList: wearEngine.Sensor[] = await sensorClient.getSensorList(device.randomId);
-12. sensorList.forEach((sensor, idx, arr) => {
-13. if (sensor.type === wearEngine.SensorType.ACCELEROMETER) {
-14. let callback = (sensorResult: wearEngine.SensorResult) => {
-15. console.info(`Succeeded in getting sensor result, result is ${sensorResult}`);
-16. }
-17. // 订阅加速度传感器数据上报
-18. sensorClient.subscribeSensor(device.randomId, wearEngine.SensorType.ACCELEROMETER, callback).then(() => {
-19. console.info(`Succeeded in subscribing sensor data.`);
-20. }).catch((error: BusinessError) => {
-21. console.error(`Failed to subscribe sensor data. Code is ${error.code}, message is ${error.message}`);
-22. })
-23. }
-24. })
-25. }
+try {
+  let devices: wearEngine.Device[] = await deviceClient.getConnectedDevices();
+
+  if (devices.length > 0) {
+    // 从得到的设备列表中选取目标设备，并定义为device（假设数组中存在已连接设备，第一位即为目标设备且具备相关能力）
+    let device: wearEngine.Device = devices[0];
+    try {
+      let sensorList: wearEngine.Sensor[] = await sensorClient.getSensorList(device.randomId);
+      sensorList.forEach((sensor) => {
+        if (sensor.type === wearEngine.SensorType.ACCELEROMETER) {
+          let callback = (sensorResult: wearEngine.SensorResult) => {
+            console.info(`Succeeded in getting sensor result, result is ${sensorResult}`);
+          }
+          // 订阅加速度传感器数据上报
+          sensorClient.subscribeSensor(device.randomId, wearEngine.SensorType.ACCELEROMETER, callback).then(() => {
+            console.info(`Succeeded in subscribing sensor data.`);
+          }).catch((error: BusinessError) => {
+            console.error(`Failed to subscribe sensor data. Code is ${error.code}, message is ${error.message}`);
+          })
+        }
+      })
+    } catch (error) {
+      console.error(`Failed to get sensor list. Code is ${error.code}, message is ${error.message}`);
+    }
+  }
+} catch (error) {
+  console.error(`Failed to get connected devices. Code is ${error.code}, message is ${error.message}`);
+}
 ```
 
 ### unsubscribeSensor
-
-PhoneTabletWearable
 
 unsubscribeSensor(deviceRandomId: string, type: SensorType, callback: Callback<SensorResult>): Promise<void>
 
@@ -2604,72 +2881,84 @@ unsubscribeSensor(deviceRandomId: string, type: SensorType, callback: Callback<S
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次取消订阅的设备。 |
 | type | [SensorType](wearengine_api.md#sensortype) | 是 | 传感器类别，用于指定本次取消订阅的传感器。 |
-| callback | Callback<[SensorResult](wearengine_api.md#sensorresult)> | 是 | 回调函数，用于处理传感器上报的数据，需要同订阅监听时的回调函数为同一个对象。 |
+| callback | Callback<[SensorResult](wearengine_api.md#sensorresult)> | 是 | 回调函数，返回传感器上报结果。  需要同订阅监听时的回调函数为同一个对象。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象。无结果返回的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
-| [1008500001](wearengine_api_error_code.md#section1008500001-网络错误) | Network error. The network is unavailable. |
-| [1008500002](wearengine_api_error_code.md#section1008500002-无绑定设备) | No device is bound. |
-| [1008500003](wearengine_api_error_code.md#section1008500003-设备未连接) | Device disconnected. |
-| [1008500004](wearengine_api_error_code.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
-| [1008500005](wearengine_api_error_code.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
-| [1008500006](wearengine_api_error_code.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
-| [1008500007](wearengine_api_error_code.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
-| [1008500008](wearengine_api_error_code.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
-| [1008500009](wearengine_api_error_code.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
-| [1008500010](wearengine_api_error_code.md#section1008500010-无效设备id) | Device ID is invalid. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008500001](errorcode-wearengine.md#section1008500001-网络错误) | Network error. The network is unavailable. |
+| [1008500002](errorcode-wearengine.md#section1008500002-无绑定设备) | No device is bound. |
+| [1008500003](errorcode-wearengine.md#section1008500003-设备未连接) | Device disconnected. |
+| [1008500004](errorcode-wearengine.md#section1008500004-应用未申请wear-engine服务) | App has not applied for the Wear Engine service. |
+| [1008500005](errorcode-wearengine.md#section1008500005-用户未授权) | The HUAWEI ID is not authorized. |
+| [1008500006](errorcode-wearengine.md#section1008500006-用户未同意隐私授权) | User privacy is not agreed. |
+| [1008500007](errorcode-wearengine.md#section1008500007-穿戴设备侧能力不支持) | The device capability is not supported. |
+| [1008500008](errorcode-wearengine.md#section1008500008-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
+| [1008500009](errorcode-wearengine.md#section1008500009-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
+| [1008500010](errorcode-wearengine.md#section1008500010-无效设备id) | Device ID is invalid. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let sensorClient: wearEngine.SensorClient = wearEngine.getSensorClient(this.getUIContext().getHostContext());
-5. let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
-6. let devices: wearEngine.Device[] = await deviceClient.getConnectedDevices();
+let sensorClient: wearEngine.SensorClient = wearEngine.getSensorClient(this.getUIContext().getHostContext());
+let deviceClient: wearEngine.DeviceClient = wearEngine.getDeviceClient(this.getUIContext().getHostContext());
 
-8. if (devices.length > 0) {
-9. // 从得到的设备列表中选取目标设备，并定义为device(假设数组中存在已连接设备,第一位即为目标设备且具备相关能力)
-10. let device: wearEngine.Device = devices[0];
-11. let sensorList: wearEngine.Sensor[] = await sensorClient.getSensorList(device.randomId);
-12. sensorList.forEach((sensor, idx, arr) => {
-13. if (sensor.type === wearEngine.SensorType.ACCELEROMETER) {
-14. let callback = (sensorResult: wearEngine.SensorResult) => {
-15. console.info(`Succeeded in getting sensor result, result is ${sensorResult}`);
-16. }
-17. // 订阅加速度传感器数据上报
-18. sensorClient.subscribeSensor(device.randomId, wearEngine.SensorType.ACCELEROMETER, callback).then(() => {
-19. console.info(`Succeeded in subscribing sensor data.`);
-20. }).catch((error: BusinessError) => {
-21. console.error(`Failed to subscribe sensor data. Code is ${error.code}, message is ${error.message}`);
-22. })
-23. // 取消加速度传感器数据上报, 注意传入的回调函数需与订阅时为同一对象
-24. sensorClient.unsubscribeSensor(device.randomId, wearEngine.SensorType.ACCELEROMETER, callback).then(() => {
-25. console.info(`Succeeded in unsubscribing sensor data.`);
-26. }).catch((error: BusinessError) => {
-27. console.error(`Failed to unsubscribe sensor data. Code is ${error.code}, message is ${error.message}`);
-28. })
-29. }
-30. })
-31. }
+try {
+  let devices: wearEngine.Device[] = await deviceClient.getConnectedDevices();
+
+  if (devices.length > 0) {
+    // 从得到的设备列表中选取目标设备，并定义为device（假设数组中存在已连接设备，第一位即为目标设备且具备相关能力）
+    let device: wearEngine.Device = devices[0];
+    try {
+      let sensorList: wearEngine.Sensor[] = await sensorClient.getSensorList(device.randomId);
+      sensorList.forEach((sensor) => {
+        if (sensor.type === wearEngine.SensorType.ACCELEROMETER) {
+          let callback = (sensorResult: wearEngine.SensorResult) => {
+            console.info(`Succeeded in getting sensor result, result is ${sensorResult}`);
+          }
+          // 订阅加速度传感器数据上报
+          sensorClient.subscribeSensor(device.randomId, wearEngine.SensorType.ACCELEROMETER, callback)
+            .then(() => {
+              console.info(`Succeeded in subscribing sensor data.`);
+
+              // 取消加速度传感器数据上报，注意传入的回调函数需与订阅时为同一对象
+              sensorClient.unsubscribeSensor(device.randomId, wearEngine.SensorType.ACCELEROMETER, callback)
+                .then(() => {
+                  console.info(`Succeeded in unsubscribing sensor data.`);
+                })
+                .catch((error: BusinessError) => {
+                  console.error(`Failed to unsubscribe sensor data. Code is ${error.code}, message is ${error.message}`);
+                })
+            })
+            .catch((error: BusinessError) => {
+              console.error(`Failed to subscribe sensor data. Code is ${error.code}, message is ${error.message}`);
+            })
+        }
+      })
+    } catch (error) {
+      console.error(`Failed to get sensor list. Code is ${error.code}, message is ${error.message}`);
+    }
+  }
+} catch (error) {
+  console.error(`Failed to get connected devices. Code is ${error.code}, message is ${error.message}`);
+}
 ```
 
 ## SensorType
-
-PhoneTabletWearable
 
 传感器类型。
 
@@ -2690,8 +2979,6 @@ PhoneTabletWearable
 
 ## Sensor
 
-PhoneTabletWearable
-
 传感器信息类。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -2705,13 +2992,11 @@ PhoneTabletWearable
 | name | string | 否 | 否 | 传感器名称。 |
 | id | number | 否 | 否 | 传感器ID。 |
 | type | [SensorType](wearengine_api.md#sensortype) | 否 | 否 | 传感器类型。 |
-| accuracy | number | 否 | 是 | 传感器采样周期，单位毫秒。 |
+| accuracy | number | 否 | 是 | 传感器采样周期，单位ms。 |
 | resolution | number | 否 | 是 | 传感器分辨率，当前仅作为Sensor对象的返回值信息。 |
 | isUtcTimestampSupported | boolean | 否 | 否 | 传感器是否支持UTC（ Coordinated Universal Time）时间戳。true：支持，false：不支持。 |
 
 ## SensorData
-
-PhoneTabletWearable
 
 传感器上报数据类。
 
@@ -2726,14 +3011,12 @@ PhoneTabletWearable
 | sensorType | [SensorType](wearengine_api.md#sensortype) | 否 | 否 | 传感器类型。 |
 | data | number[] | 否 | 否 | 数据内容，格式及含义请参考[穿戴设备传感器数据格式及样例](../harmonyos-guides/device_sensor.md#穿戴设备传感器数据格式及样例)。 |
 | channel | number | 否 | 是 | 传感器通道ID，为大于0的整数。 |
-| timestamp | number | 否 | 是 | 计时时间戳。 |
-| utcTimestamp | number | 否 | 是 | UTC时间戳。 |
+| timestamp | number | 否 | 是 | 计时时间戳，单位ms。 |
+| utcTimestamp | number | 否 | 是 | UTC时间戳，单位ms。 |
 
 ## SensorErrorCode
 
-PhoneTabletWearable
-
-传感器类型。
+传感器上报在设备侧发生错误的反馈枚举类。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -2751,8 +3034,6 @@ PhoneTabletWearable
 
 ## SensorResult
 
-PhoneTabletWearable
-
 传感器上报结果。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -2768,15 +3049,11 @@ PhoneTabletWearable
 
 ## on/off订阅事件
 
-PhoneTabletWearable
-
 ### wearEngine.on
-
-PhoneTabletWearable
 
 on(type: 'serviceDie', callback: Callback<void>): void
 
-订阅服务端消亡事件，调用[wearEngine.destroy](wearengine_api.md#wearenginedestroy)接口主动发起的消亡事件不会触发执行回调函数。
+订阅服务端消亡事件。使用callback异步回调。调用[wearEngine.destroy](wearengine_api.md#wearenginedestroy)接口主动发起的消亡事件不会触发执行回调函数。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -2788,44 +3065,42 @@ on(type: 'serviceDie', callback: Callback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 监听的事件类型，仅支持serviceDie(服务端消亡事件)。 |
-| callback | Callback<void> | 是 | 回调函数。 |
+| type | string | 是 | 监听的事件类型，仅支持serviceDie，表示服务端消亡事件。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
-| [1008500012](wearengine_api_error_code.md#section1008500012-回调函数过多) | Too many callbacks of the same type. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008500012](errorcode-wearengine.md#section1008500012-回调函数过多) | Too many callbacks of the same type. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let callback = () => {
-5. console.info(`The service destruction event`);
-6. }
-7. try {
-8. wearEngine.on('serviceDie', callback);
-9. console.info(`Succeeded in subscribing the service destruction event.`);
-10. } catch (error) {
-11. const err: BusinessError = error as BusinessError;
-12. console.error(`Failed to subscribe the service destruction event. Code is ${err.code}, message is ${err.message}.`);
-13. }
+let callback = () => {
+  console.info(`The service destruction event`);
+}
+try {
+  wearEngine.on('serviceDie', callback);
+  console.info(`Succeeded in subscribing the service destruction event.`);
+} catch (error) {
+  const err: BusinessError = error as BusinessError;
+  console.error(`Failed to subscribe the service destruction event. Code is ${err.code}, message is ${err.message}.`);
+}
 ```
 
 ### wearEngine.off
 
-PhoneTabletWearable
-
 off(type: 'serviceDie', callback?: Callback<void>): void
 
-取消订阅服务端消亡事件。
+取消订阅服务端消亡事件。使用callback异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -2837,41 +3112,39 @@ off(type: 'serviceDie', callback?: Callback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 监听的事件类型，仅支持serviceDie(服务端消亡事件)。 |
-| callback | Callback<void> | 否 | 回调函数，需要同订阅监听时的回调函数为同一个对象。  当该参数为空时，会取消掉之前所有的订阅。 |
+| type | string | 是 | 监听的事件类型，仅支持serviceDie，表示服务端消亡事件。 |
+| callback | Callback<void> | 否 | 回调函数，无返回结果。  需要同订阅监听时的回调函数为同一个对象。  当该参数为空时，会取消掉之前所有的订阅。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let callback = () => {
-5. console.info(`The service destruction event`);
-6. }
-7. wearEngine.on('serviceDie', callback);
+let callback = () => {
+  console.info(`The service destruction event`);
+}
+wearEngine.on('serviceDie', callback);
 
-9. try {
-10. wearEngine.off('serviceDie', callback);
-11. console.info(`Succeeded in unsubscribing the service destruction event.`);
-12. } catch (error) {
-13. const err: BusinessError = error as BusinessError;
-14. console.error(`Failed to unsubscribe the service destruction event. Code is ${err.code}, message is ${err.message}.`);
-15. }
+try {
+  wearEngine.off('serviceDie', callback);
+  console.info(`Succeeded in unsubscribing the service destruction event.`);
+} catch (error) {
+  const err: BusinessError = error as BusinessError;
+  console.error(`Failed to unsubscribe the service destruction event. Code is ${err.code}, message is ${err.message}.`);
+}
 ```
 
 ## wearEngine.destroy
-
-PhoneTabletWearable
 
 destroy(): Promise<void>
 
@@ -2887,25 +3160,25 @@ destroy(): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象。无结果返回的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](wearengine_api_error_code.md)。
+以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](errorcode-wearengine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| [1008509999](wearengine_api_error_code.md#section1008509999-内部错误) | Internal error. |
+| [1008509999](errorcode-wearengine.md#section1008509999-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { wearEngine } from '@kit.WearEngine';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { wearEngine } from '@kit.WearEngine';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. wearEngine.destroy().then(() => {
-5. console.info(`Succeeded in destroying wear engine channel.`);
-6. }).catch((error: BusinessError) => {
-7. console.error(`Failed to destroy wear engine channel. Code is ${error.code}, message is ${error.message}.`);
-8. })
+wearEngine.destroy().then(() => {
+  console.info(`Succeeded in destroying wear engine channel.`);
+}).catch((error: BusinessError) => {
+  console.error(`Failed to destroy wear engine channel. Code is ${error.code}, message is ${error.message}.`);
+})
 ```

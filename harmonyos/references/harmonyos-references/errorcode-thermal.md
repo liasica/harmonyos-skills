@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 热管理错误码
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 错误码 > 热管理错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:57+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:cbeacf54dd5b6bd97107216587093a49be2250c0d2f3fcbd302eda6ef3707e1f
+scraped_at: 2026-09-02T15:02:06+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6758c866294658e32a7e64f33f454ff95e5c918060fe7f0c28f835b82414e6a4
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
@@ -33,7 +33,7 @@ Failed to connect to the service.
 
 1. 在控制台中输入如下命令，查看当前的系统服务列表。
 
-   ```
-   1. > hdc shell hidumper -ls
+   ```bash
+   > hdc shell hidumper -ls
    ```
 2. 查看系统服务列表中是否包含ThermalService系统服务。

@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/car-appendix-naviturnmode
 title: naviTurnMode
-breadcrumb: API参考 > 系统 > 硬件 > Car Kit（车服务） > ArkTS API > 附录 > naviTurnMode
+breadcrumb: API参考 > 系统 > 硬件 > Car Kit（车服务） > 附录 > naviTurnMode
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:35+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6b41c2073383170f9ab58a5b718990ff50320b8c1a1d809b34cceb45009896e9
+scraped_at: 2026-09-02T14:52:37+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2139dc9db81d8a5e962e9308d18f1a47be3ec87f6cc9797c6d04808b65fc5f37
 ---
 
 导航转向映射关系。
@@ -19,7 +19,7 @@ content_hash: sha256:6b41c2073383170f9ab58a5b718990ff50320b8c1a1d809b34cceb45009
 | 0005 |  | 向右前方行驶。 |
 | 0006 |  | 向左后方行驶。 |
 | 0007 |  | 向右后方行驶。 |
-| 0008 |  | 左转调头。 |
+| 0008 |  | 左转掉头。 |
 | 0009 |  | 直行。 |
 | 000A |  | 到达途经地。 |
 | 000B |  | 进入环岛图标，右侧通行地区的逆时针环岛。 |
@@ -81,7 +81,7 @@ content_hash: sha256:6b41c2073383170f9ab58a5b718990ff50320b8c1a1d809b34cceb45009
 | 0043 |  | 三岔口（右侧三条岔路）左。 |
 | 0044 |  | 三岔口（右侧三条岔路）中。 |
 | 0045 |  | 三岔口（右侧三条岔路）右。 |
-| 0046 |  | 三叉口（左侧一条直行岔路，右侧两条岔路）左。 |
-| 0047 |  | 三叉口（左侧一条直行岔路，右侧两条岔路）中。 |
-| 0048 |  | 三叉口（左侧一条直行岔路，右侧两条岔路）右。 |
+| 0046 |  | 三岔口（左侧一条直行岔路，右侧两条岔路）左。 |
+| 0047 |  | 三岔口（左侧一条直行岔路，右侧两条岔路）中。 |
+| 0048 |  | 三岔口（左侧一条直行岔路，右侧两条岔路）右。 |
 | 03E7 | - | 无效值。 |

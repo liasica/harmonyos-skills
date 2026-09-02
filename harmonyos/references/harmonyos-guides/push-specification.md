@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-specific
 title: 学习Push Kit接入规范
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 开发准备 > 学习Push Kit接入规范
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:53+08:00
+scraped_at: 2026-09-02T15:00:00+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:4ece7e5664a1a621c62241e601d3d83020a8c3041e73cf0b2d784a1652fa307e
+content_hash: sha256:871fac9611ed6581d4d47be31794af0d795d7ce38b5c808ccdc29ada1a5242be
 ---
 
 为维护华为通知生态秩序，保障用户合法权益和良好的使用体验，根据现行法律法规及[《华为开发者服务协议》](../start/agreement-0000001052728169.md)、[《华为APIs使用协议》](../20209.md)、[《华为推送服务使用协议》](../app/20213.md)、[《应用审核指南》](../app/50104.md)、[《元服务审核指南》](../app/50129.md)，特制定本规范。
@@ -53,7 +53,7 @@ content_hash: sha256:4ece7e5664a1a621c62241e601d3d83020a8c3041e73cf0b2d784a1652f
 | --- | --- |
 | 以数字的形式展示在右上角。 | 请参考[设计-通知-桌面图标角标](../design-guides/system-features-notification-0000001793074217.md#section20838133494210)。 |
 
-说明
+**说明** 
 
 Wearable、TV不支持此通知样式。
 
@@ -71,7 +71,7 @@ Wearable、TV不支持此通知样式。
 * 图片品质应与通知整体内容品质一致，避免使用内容复杂、排版凌乱、元素混杂、影响整体视觉效果的图片。
 * 图片不可影响通知必要文字内容的阅读。
 
-说明
+**说明** 
 
 Wearable不支持此通知样式。
 
@@ -83,7 +83,7 @@ Wearable不支持此通知样式。
 | --- | --- |
 | 适用于文本内容较长的通知，最多可显示3行内容，每行内容超长后以“...”截断。 | 请参考[设计-通知-多行文本类通知](../design-guides/system-features-notification-0000001793074217.md#section148485300395)。 |
 
-说明
+**说明** 
 
 Wearable不支持此通知样式。
 

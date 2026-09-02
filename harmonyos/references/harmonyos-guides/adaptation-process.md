@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/adaptation-pr
 title: 适配流程
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用数据备份恢复 > 设备升级应用数据迁移适配指导 > 适配流程
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:42+08:00
+scraped_at: 2026-09-02T14:59:24+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6b34a958b10c9bf4e9d267f9c6c78a8d9f36b4dc621fef56be46f612689c232b
+content_hash: sha256:bb58209e326e50f46446c595d392ac18cd214b7f06b43c1e7de57cf01e9a3694
 ---
 
 适配流程包括：适配准备、应用适配、开发者自验证、应用上架和端到端验证。
 
 **图1** 适配流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/l9VBkVN5QJqpvHbvwmuqiQ/zh-cn_image_0000002589244565.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/bNRz8qzPRyeojz9-rIYuGA/zh-cn_image_0000002736433273.png)
 
 ## 适配准备阶段
 
@@ -24,13 +24,13 @@ content_hash: sha256:6b34a958b10c9bf4e9d267f9c6c78a8d9f36b4dc621fef56be46f612689
 
 在适配准备工作完成后，进入应用适配阶段。开发者需要在HarmonyOS应用的代码中，实现“BackupExtensionAbility”，使应用接入到“备份恢复框架”中，完成应用数据的转换和迁移。更多适配指导可参考：[应用数据迁移适配指导](app-data-migration-adaptation.md)。
 
-注意
+**注意** 
 
 应用的“BackupExtensionAbility”执行完后，“备份恢复框架”会清空备份恢复目录，开发者请在应用的“BackupExtensionAbility”执行结束前，完成所有所需数据的转换和迁移。
 
 后续HarmonyOS应用通过访问HarmonyOS应用沙箱获取应用的数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/5UiLhV3BTLuUSB2eNH6-cA/zh-cn_image_0000002558764760.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/0iGhZwHxStCPR0w82C_D0w/zh-cn_image_0000002706834118.png)
 
 备份恢复目录如下表中所示：
 
@@ -56,7 +56,7 @@ HarmonyOS应用沙箱目录请参考[应用沙箱目录](app-sandbox-directory.m
 
 HarmonyOS应用适配成功后，在进行端到端验证之前，需要将HarmonyOS应用上架到华为应用市场。HarmonyOS应用上架指导请参考：[发布HarmonyOS应用指导](../app/agc-help-releaseharmony-0000001933963166.md)。
 
-注意
+**注意** 
 
 HarmonyOS应用上架应用市场的时候，需要配置HarmonyOS应用和APK应用映射关系。HarmonyOS应用关联APK应用指导请参考：[关联APK应用](../app/agc-help-associate-android-app-overview-0000002351878886.md)。
 

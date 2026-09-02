@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: React Native框架+H5接入智能填充
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 智能填充服务 > 三方框架+H5接入智能填充 > React Native框架+H5接入智能填充
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:40:20+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:641883f8fcb10b696e70373ca6b3685f652364d830449e19df004608c5290ff6
+scraped_at: 2026-09-02T15:00:01+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:423437ad8c6d4464e7d39ef462cb7742acf312b2f82a146d074ec01ccefe1b02
 ---
 
-说明
+**说明** 
 
 目前仅支持已适配HarmonyOS的三方框架应用使用。
 
@@ -26,107 +26,112 @@ HarmonyOS版React Native环境搭建请参考官方文档[React Native环境搭�
 
 ## React Native输入框效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/JHde4bbVSJKMjdjydiS5tQ/zh-cn_image_0000002558606004.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/LMiUG2v3T0qMuKHUzoSgpg/zh-cn_image_0000002706675248.png)
 
 ## 示例代码
 
 在React Native输入框TextInput需要配置[textContentType](scenario-fusion-mappingrelationship.md#react-native-textcontenttype和harmonyos的contenttype的映射关系)属性来支持智能填充，代码如下：
 
-```
-1. import React from 'react';
-2. import { Text, TextInput, View, StyleSheet } from 'react-native';
+```tsx
+import React from 'react';
+import { Text, TextInput, View, StyleSheet } from 'react-native';
 
-4. const styles = StyleSheet.create({
-5. default: {
-6. borderWidth: StyleSheet.hairlineWidth,
-7. borderColor: '#0f0f0f',
-8. flex: 1,
-9. fontSize: 13,
-10. padding: 4,
-11. height: 80,
-12. width: 200,
-13. },
-14. labelContainer: {
-15. flexDirection: 'row',
-16. marginVertical: 2,
-17. },
-18. label: {
-19. width: 140,
-20. textAlign: 'right',
-21. marginRight: 10,
-22. paddingTop: 2,
-23. fontSize: 15,
-24. },
-25. inputContainer: {
-26. flex: 1,
-27. }
-28. });
-29. class WithLabel extends React.Component<$FlowFixMeProps> {
-30. render(): React.Node {
-31. return (
-32. <View style={styles.labelContainer}>
-33. <Text style={styles.label}>{this.props.label}</Text>
-34. <View style={styles.inputContainer}>{this.props.children}</View>
-35. </View>
-36. );
-37. }
-38. }
-39. const RNTesterApp = () => {
-40. return (
-41. <View style={{width: '100%', height: '100%'}}>
-42. <WithLabel label="昵称">
-43. <TextInput textContentType="nickname" style={styles.default} />
-44. </WithLabel>
-45. <WithLabel label="姓名">
-46. <TextInput textContentType="name" style={styles.default} />
-47. </WithLabel>
-48. <WithLabel label="手机号">
-49. <TextInput textContentType="telephoneNumber" style={styles.default} />
-50. </WithLabel>
-51. <WithLabel label="邮件">
-52. <TextInput textContentType="emailAddress" style={styles.default} />
-53. </WithLabel>
-54. <WithLabel label="身份证号">
-55. <TextInput textContentType="idCardNumber" style={styles.default} />
-56. </WithLabel>
-57. <WithLabel label="全部地址">
-58. <TextInput textContentType="formatAddress" style={styles.default} />
-59. </WithLabel>
-60. <WithLabel label="带街道的详细地址">
-61. <TextInput textContentType="fullStreetAddress" style={styles.default}  />
-62. </WithLabel>
-63. <WithLabel label="不带街道的详细地址">
-64. <TextInput textContentType="detailInfoWithoutStreet" style={styles.default} />
-65. </WithLabel>
-66. </View>
-67. );
-68. };
-69. export default RNTesterApp;
+const styles = StyleSheet.create({
+  default: {
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: '#0f0f0f',
+    flex: 1,
+    fontSize: 13,
+    padding: 4,
+    height: 80,
+    width: 160,
+  },
+  labelContainer: {
+    flexDirection: 'row',
+    marginVertical: 2,
+  },
+  label: {
+    width: 140,
+    textAlign: 'right',
+    marginRight: 10,
+    paddingTop: 2,
+    fontSize: 15,
+  },
+  inputContainer: {
+    flex: 1,
+  }
+});
+class WithLabel extends React.Component<$FlowFixMeProps> {
+  render(): React.Node {
+    return (
+      <View style={styles.labelContainer}>
+        <Text style={styles.label}>{this.props.label}</Text>
+        <View style={styles.inputContainer}>{this.props.children}</View>
+      </View>
+    );
+  }
+}
+const RNTesterApp = () : React.ReactNode=> {
+  return (
+    <View style={{width: '100%', height: '100%', paddingTop: 40}}>
+      <WithLabel label="昵称">
+        <TextInput textContentType="nickname" style={styles.default} />
+      </WithLabel>
+      <WithLabel label="姓名">
+        <TextInput textContentType="name" style={styles.default} />
+      </WithLabel>
+      <WithLabel label="手机号">
+        <TextInput textContentType="telephoneNumber" style={styles.default} />
+      </WithLabel>
+      <WithLabel label="邮件">
+        <TextInput textContentType="emailAddress" style={styles.default} />
+      </WithLabel>
+      <WithLabel label="身份证号">
+        <TextInput textContentType="idCardNumber" style={styles.default} />
+      </WithLabel>
+      <WithLabel label="全部地址">
+        <TextInput textContentType="formatAddress" style={styles.default} />
+      </WithLabel>
+      <WithLabel label="带街道的详细地址">
+        <TextInput textContentType="fullStreetAddress" style={styles.default}  />
+      </WithLabel>
+      <WithLabel label="不带街道的详细地址">
+        <TextInput textContentType="detailInfoWithoutStreet" style={styles.default} />
+      </WithLabel>
+    </View>
+  );
+};
+export default RNTesterApp;
 ```
 
 ## React Native框架中加载的H5页面效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/8RtYrU92SmatBg4KsU6ejQ/zh-cn_image_0000002589325531.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/nXHeF3unQ3yJ5NiwSy5HYw/zh-cn_image_0000002736434337.png)
 
 React Native框架加载H5页面场景，通过给form表单的input输入框（form表单的子节点）配置[autocomplete](scenario-fusion-mappingrelationship.md#h5-autocomplete和harmonyos的contenttype的映射关系)属性来支持智能填充，代码如下：
 
-```
-1. import React from 'react';
-2. import { View } from 'react-native';
-3. import { WebView } from 'react-native-webview';
+```tsx
+import React,{ useEffect } from 'react';
+import { View } from 'react-native';
+import { WebView } from 'react-native-webview';
+// ...
 
-5. const RNTesterApp = () => {
-6. return (
-7. <View style={{width: '100%', height: '100%'}}>
-8. <WebView
-9. source={require('./autofill_h5.html')}
-10. style={{flex: 1, paddingTop: 50}}
-11. />
-12. </View>
-13. );
-14. };
+const RNTesterAppH5 = () : React.ReactNode => {
+// ...
 
-16. export default RNTesterApp;
+  return (
+// ...
+      <View style={{width: '100%', height: '100%', paddingTop: 40}}>
+        <WebView
+          source={require('./autofill_h5.html')}
+          style={{flex: 1, paddingTop: 50}}
+        />
+      </View>
+// ...
+  );
+};
+
+export default RNTesterAppH5;
 ```
 
 autofill\_h5.html实现参考[示例代码二](scenario-fusion-h5.md#示例代码二)。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-introdu
 title: Share Kit简介
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > Share Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:40:32+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:49fe4c26b3e09ad50a916033b60c3dce9a615ff811ae267df40d073af4658c50
+scraped_at: 2026-09-02T14:50:32+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:95038cf35bbf086dfb343295f1372bb8919caedfdf9530cc156acc4d72696dc2
 ---
 
 Share Kit（分享服务）为应用提供文本、图片、视频等内容跨应用、跨端分享能力。
@@ -17,19 +17,19 @@ Share Kit（分享服务）为应用提供文本、图片、视频等内容跨�
 
 如果应用需要显示在分享面板，则需要构建数据处理能力并按照配置要求在应用配置文件中声明，社交类应用可以通过[意图框架](intents-introduction.md)接口捐献联系人信息，可以让用户一步分享到应用内的指定用户。
 
-Share Kit（分享服务）提供的[SampleCode示例工程](https://gitcode.com/harmonyos_samples/share-kit_-sample-code_-clientdemo_-arkts)体现了系统分享接入模式、文本/图片等分享示例、碰一碰分享示例及卡片模板，可参考该工程进行应用的相关内容开发。
+Share Kit提供的[SampleCode示例工程](https://gitcode.com/harmonyos_samples/share-kit_-sample-code_-clientdemo_-arkts)体现了系统分享接入模式、文本/图片等分享示例、碰一碰分享示例及卡片模板，可参考该工程进行应用的相关内容开发。
 
 **图1** 手机分享面板效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/8K00mYmnQzSr402zcF9fyw/zh-cn_image_0000002558606020.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/PzA9TOoDSq-30agGsgnt3g/zh-cn_image_0000002706675264.png)
 
 **图2** 手机碰一碰跨端发起华为分享效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/f95_r6NwQKKGxBTZDTPN7g/zh-cn_image_0000002589325547.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/aRYGS3qBRoWSUQEJBhhm0w/zh-cn_image_0000002736434353.gif)
 
 **图3** 手机与PC/2in1设备碰一碰分享效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/4yB9K9ztQd2W8jxf5WLa6Q/zh-cn_image_0000002589245485.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/ss6gHCzpSseriiqbXB8Tig/zh-cn_image_0000002706835204.gif)
 
 ## 基本概念
 
@@ -62,7 +62,7 @@ Share Kit（分享服务）提供的[SampleCode示例工程](https://gitcode.com
 
 **图4** 分享运行机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/TznkgdWGRc-xdgtAzRW-8Q/zh-cn_image_0000002558765678.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/MTL3QzBtRky3ipkQp3uUVg/zh-cn_image_0000002736314309.png)
 
 | 应用类型 | 相关逻辑 |
 | --- | --- |
@@ -76,7 +76,7 @@ Share Kit（分享服务）提供的[SampleCode示例工程](https://gitcode.com
   | 能力 | 是否支持手机 | 是否支持平板 | 是否支持PC/2in1 | 是否支持TV |
   | --- | --- | --- | --- | --- |
   | 系统分享 | 支持 | 支持 | 支持 | 部分支持（仅支持分享到周边设备，不支持系统操作及分享给其他应用） |
-  | 碰一碰分享 | 支持 | 不支持 | 支持 | 不支持 |
+  | 碰一碰分享 | 支持 | 支持 | 支持 | 不支持 |
   | 隔空传送 | 支持 | 支持 | 支持 | 不支持 |
 * 使用限制
 

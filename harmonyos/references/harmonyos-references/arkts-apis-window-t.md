@@ -3,19 +3,17 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Types
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.window (窗口) > Types
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6a7c6e7712d0006951d2316062eebcb3503dd81e3922a4d1085e3b08045f944b
+scraped_at: 2026-09-02T15:00:52+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4d428e3186b050b506bec09f8ab6d23003f0bf1289831221b2cce0f65aef7cc1
 ---
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 针对系统能力SystemCapability.Window.SessionManager，请先使用[canIUse()](js-apis-syscap.md#caniuse)接口判断当前设备是否支持此syscap及对应接口。
 
 ## SpecificSystemBar11+
-
-PhonePC/2in1TabletTVWearable
 
 type SpecificSystemBar = 'status' | 'navigation' | 'navigationIndicator'
 
@@ -32,8 +30,6 @@ type SpecificSystemBar = 'status' | 'navigation' | 'navigationIndicator'
 | 'navigationIndicator' | 底部导航。根据用户设置，可表现为导航条或三键导航栏。 |
 
 ## WindowAnimationCurveParam20+
-
-PhonePC/2in1TabletTVWearable
 
 type WindowAnimationCurveParam = Array<number>
 
@@ -73,8 +69,6 @@ type WindowAnimationCurveParam = Array<number>
 
 ## RotationChangeCallback19+
 
-PhonePC/2in1TabletTVWearable
-
 type RotationChangeCallback<T, U> = (info: T) => U
 
 旋转事件通知通用回调函数。
@@ -89,10 +83,29 @@ type RotationChangeCallback<T, U> = (info: T) => U
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| info | T | 是 | 回调函数调用时系统传入[RotationChangeInfo](arkts-apis-window-i.md#rotationchangeinfo19)类型的参数。 |
+| info | T | 是 | 旋转事件信息，系统传入[RotationChangeInfo](arkts-apis-window-i.md#rotationchangeinfo19)类型的参数，用于通知开发者旋转变化时的窗口信息。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| U | 回调函数需要返回[RotationChangeResult](arkts-apis-window-i.md#rotationchangeresult19) | void类型的返回值。 |
+| U | 回调函数需要返回[RotationChangeResult](arkts-apis-window-i.md#rotationchangeresult19) | void类型的返回值，应用指定旋转后的窗口位置；当返回void时，系统不更改窗口位置。 |
+
+## WindowEventListener
+
+type WindowEventListener = (windowId: number, event: window.WindowEventType) => void
+
+窗口生命周期事件通知的回调函数。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Window.SessionManager
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| windowId | number | 是 | 触发生命周期变更的窗口ID。 |
+| event | window.[WindowEventType](arkts-apis-window-e.md#windoweventtype10) | 是 | 窗口生命周期回调的事件类型。 |

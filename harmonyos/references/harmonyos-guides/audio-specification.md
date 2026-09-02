@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-specifi
 title: 音频规格
 breadcrumb: 指南 > 应用体验建议 > 应用基础功能和兼容性体验建议 > 系统特性与基础功能 > 音频规格
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:59+08:00
-doc_updated_at: 2026-01-19
-content_hash: sha256:507d9a107e5d309f8263c540151518cb0d401fcb8c18d85290cc9fb41895909e
+scraped_at: 2026-09-02T14:51:00+08:00
+doc_updated_at: 2026-06-17
+content_hash: sha256:7b1e4ce9e1c6733dab6ad1b723dad36d88a8643e15534f3de46e27f7e96c40f5
 ---
 
 ## 音频流类型与通路配置
@@ -100,7 +100,7 @@ content_hash: sha256:507d9a107e5d309f8263c540151518cb0d401fcb8c18d85290cc9fb4189
 | **类型** | 建议 |
 | **适用设备** | 通用 |
 | **应用形态适用性** | 鸿蒙应用，鸿蒙元服务 |
-| **说明** | [设置元数据](avsession-access-scene.md#设置元数据) |
+| **说明** | [设置元数据](avsession-access-scene.md#设置元数据信息) |
 
 |  |  |
 | --- | --- |
@@ -108,4 +108,4 @@ content_hash: sha256:507d9a107e5d309f8263c540151518cb0d401fcb8c18d85290cc9fb4189
 | **类型** | 规则 |
 | **适用设备** | 通用 |
 | **应用形态适用性** | 鸿蒙应用，鸿蒙元服务 |
-| **说明** | [注册控制命令](avsession-access-scene.md#注册控制命令) |
+| **说明** | [注册控制命令](avsession-access-scene.md#控制命令的处理) |

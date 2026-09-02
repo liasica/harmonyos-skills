@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (ImageReceiver)
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.image (图片处理) > Interface (ImageReceiver)
 category: harmonyos-references
-scraped_at: 2026-04-29T14:03:47+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:3bf1a9d48c84a93a6daf4d500e292a4329822f6ab9e1a314a5448cba8b431ae6
+scraped_at: 2026-09-02T15:02:29+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7376a2288947b9dedaaf10eeacc82a5c01e0f9807f4f0463df5b1e7f521425c7
 ---
 
 ImageReceiver类，用于获取组件surface id、接收最新的图片和读取下一张图片以及释放ImageReceiver实例。ImageReceiver作为图片的接收方和消费者，其参数属性实际上不会对接收到的图片产生影响。图片属性的配置应在发送方和生产者上进行，如相机预览流[createPreviewOutput](arkts-apis-camera-cameramanager.md#createpreviewoutput)。
@@ -16,22 +16,18 @@ ImageReceiver类，用于获取组件surface id、接收最新的图片和读取
 
 由于图片占用内存较大，所以当ImageReceiver实例使用完成后，应主动调用[release](arkts-apis-image-imagereceiver.md#release9)方法及时释放内存。释放时应确保该实例的所有异步方法均执行完成，且后续不再使用该实例。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Interface首批接口从API version 9开始支持。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { image } from '@kit.ImageKit';
+```ts
+import { image } from '@kit.ImageKit';
 ```
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.Multimedia.Image.ImageReceiver
 
@@ -42,8 +38,6 @@ PhonePC/2in1TabletTVWearable
 | format9+ | [ImageFormat](arkts-apis-image-e.md#imageformat9) | 是 | 否 | 图像格式，取值为[ImageFormat](arkts-apis-image-e.md#imageformat9)常量（目前仅支持 ImageFormat:JPEG，实际返回格式由生产者决定，如相机）。 |
 
 ## getReceivingSurfaceId9+
-
-PhonePC/2in1TabletTVWearable
 
 getReceivingSurfaceId(callback: AsyncCallback<string>): void
 
@@ -57,25 +51,23 @@ getReceivingSurfaceId(callback: AsyncCallback<string>): void
 | --- | --- | --- | --- |
 | callback | AsyncCallback<string> | 是 | 回调函数，当获取surface id成功，err为undefined，data为获取到的surface id；否则为错误对象。 |
 
-**示例:**
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function GetReceivingSurfaceId(receiver : image.ImageReceiver) {
-4. receiver.getReceivingSurfaceId((err: BusinessError, id: string) => {
-5. if (err) {
-6. console.error(`Failed to get the ReceivingSurfaceId.code ${err.code},message is ${err.message}`);
-7. } else {
-8. console.info('Succeeded in getting the ReceivingSurfaceId.');
-9. }
-10. });
-11. }
+async function GetReceivingSurfaceId(receiver : image.ImageReceiver) {
+  receiver.getReceivingSurfaceId((err: BusinessError, id: string) => {
+    if (err) {
+      console.error(`Failed to get the ReceivingSurfaceId.code ${err.code},message is ${err.message}`);
+    } else {
+      console.info('Succeeded in getting the ReceivingSurfaceId.');
+    }
+  });
+}
 ```
 
 ## getReceivingSurfaceId9+
-
-PhonePC/2in1TabletTVWearable
 
 getReceivingSurfaceId(): Promise<string>
 
@@ -91,29 +83,27 @@ getReceivingSurfaceId(): Promise<string>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function GetReceivingSurfaceId(receiver : image.ImageReceiver) {
-4. receiver.getReceivingSurfaceId().then((id: string) => {
-5. console.info('Succeeded in getting the ReceivingSurfaceId.');
-6. }).catch((error: BusinessError) => {
-7. console.error(`Failed to get the ReceivingSurfaceId.code ${error.code},message is ${error.message}`);
-8. })
-9. }
+async function GetReceivingSurfaceId(receiver : image.ImageReceiver) {
+  receiver.getReceivingSurfaceId().then((id: string) => {
+    console.info('Succeeded in getting the ReceivingSurfaceId.');
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to get the ReceivingSurfaceId.code ${error.code},message is ${error.message}`);
+  })
+}
 ```
 
 ## readLatestImage9+
-
-PhonePC/2in1TabletTVWearable
 
 readLatestImage(callback: AsyncCallback<Image>): void
 
 从ImageReceiver读取最新的图片。使用callback异步回调。
 
-注意
+**注意** 
 
-此接口需要在[on](arkts-apis-image-imagereceiver.md#on9)回调触发后调用，才能正常的接收到数据。且此接口返回的[Image](arkts-apis-image-image.md)对象使用完毕后需要调用[release](arkts-apis-image-image.md#release9)方法释放，释放后才可以继续接收新的数据。
+此接口需要在[on](arkts-apis-image-imagereceiver.md#on9)回调触发后调用，才能正常地接收到数据。且此接口返回的[Image](arkts-apis-image-image.md)对象使用完毕后需要调用[release](arkts-apis-image-image.md#release9)方法释放，释放后才可以继续接收新的数据。
 
 **系统能力：** SystemCapability.Multimedia.Image.ImageReceiver
 
@@ -125,31 +115,42 @@ readLatestImage(callback: AsyncCallback<Image>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function ReadLatestImage(receiver : image.ImageReceiver) {
-4. receiver.readLatestImage((err: BusinessError, img: image.Image) => {
-5. if (err) {
-6. console.error(`Failed to read the latest Image.code ${err.code},message is ${err.message}`);
-7. } else {
-8. console.info('Succeeded in reading the latest Image.');
-9. }
-10. });
-11. }
+async function ReadLatestImage(receiver : image.ImageReceiver) {
+  receiver.readLatestImage((err: BusinessError, latestImage: image.Image) => {
+    if (err || latestImage === undefined) {
+      console.error('Failed to readLatestImage.');
+      return;
+    }
+    // 解析图像内容。
+    latestImage.getComponent(image.ComponentType.JPEG, async (err: BusinessError,
+      imgComponent: image.Component) => {
+      if (err || imgComponent === undefined) {
+        console.error('Failed to getComponent.');
+        return;
+      }
+      if (imgComponent.byteBuffer) {
+        // 处理二进制图像数据。
+        console.info(`getComponent with width:${latestImage.size.width} height:${latestImage.size.height}`);
+      } else {
+        console.error('byteBuffer is null');
+      }
+    })
+  });
+}
 ```
 
 ## readLatestImage9+
-
-PhonePC/2in1TabletTVWearable
 
 readLatestImage(): Promise<Image>
 
 从ImageReceiver读取最新的图片。使用Promise异步回调。
 
-注意
+**注意** 
 
-此接口需要在[on](arkts-apis-image-imagereceiver.md#on9)回调触发后调用，才能正常的接收到数据。且此接口返回的[Image](arkts-apis-image-image.md)对象使用完毕后需要调用[release](arkts-apis-image-image.md#release9)方法释放，释放后才可以继续接收新的数据。
+此接口需要在[on](arkts-apis-image-imagereceiver.md#on9)回调触发后调用，才能正常地接收到数据。且此接口返回的[Image](arkts-apis-image-image.md)对象使用完毕后需要调用[release](arkts-apis-image-image.md#release9)方法释放，释放后才可以继续接收新的数据。
 
 **系统能力：** SystemCapability.Multimedia.Image.ImageReceiver
 
@@ -161,29 +162,40 @@ readLatestImage(): Promise<Image>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function ReadLatestImage(receiver : image.ImageReceiver) {
-4. receiver.readLatestImage().then((img: image.Image) => {
-5. console.info('Succeeded in reading the latest Image.');
-6. }).catch((error: BusinessError) => {
-7. console.error(`Failed to read the latest Image.code ${error.code},message is ${error.message}`);
-8. });
-9. }
+async function ReadLatestImage(receiver : image.ImageReceiver) {
+  receiver.readLatestImage().then((latestImage: image.Image) => {
+    // 解析图像内容。
+    latestImage.getComponent(image.ComponentType.JPEG, async (err: BusinessError,
+      imgComponent: image.Component) => {
+      if (err || imgComponent === undefined) {
+        console.error('Failed to getComponent.');
+        return;
+      }
+      if (imgComponent.byteBuffer) {
+        // 处理二进制图像数据。
+        console.info(`getComponent with width:${latestImage.size.width} height:${latestImage.size.height}`);
+      } else {
+        console.error('byteBuffer is null');
+      }
+    })
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to read the latest Image.code ${error.code},message is ${error.message}`);
+  });
+}
 ```
 
 ## readNextImage9+
-
-PhonePC/2in1TabletTVWearable
 
 readNextImage(callback: AsyncCallback<Image>): void
 
 从ImageReceiver读取下一张图片。使用callback异步回调。
 
-注意
+**注意** 
 
-此接口需要在[on](arkts-apis-image-imagereceiver.md#on9)回调触发后调用，才能正常的接收到数据。且此接口返回的[Image](arkts-apis-image-image.md)对象使用完毕后需要调用[release](arkts-apis-image-image.md#release9)方法释放，释放后才可以继续接收新的数据。
+此接口需要在[on](arkts-apis-image-imagereceiver.md#on9)回调触发后调用，才能正常地接收到数据。且此接口返回的[Image](arkts-apis-image-image.md)对象使用完毕后需要调用[release](arkts-apis-image-image.md#release9)方法释放，释放后才可以继续接收新的数据。
 
 **系统能力：** SystemCapability.Multimedia.Image.ImageReceiver
 
@@ -195,31 +207,42 @@ readNextImage(callback: AsyncCallback<Image>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function ReadNextImage(receiver : image.ImageReceiver) {
-4. receiver.readNextImage((err: BusinessError, img: image.Image) => {
-5. if (err) {
-6. console.error(`Failed to read the next Image.code ${err.code},message is ${err.message}`);
-7. } else {
-8. console.info('Succeeded in reading the next Image.');
-9. }
-10. });
-11. }
+async function ReadNextImage(receiver : image.ImageReceiver) {
+  receiver.readNextImage((err: BusinessError, nextImage: image.Image) => {
+    if (err || nextImage === undefined) {
+      console.error('Failed to readNextImage.');
+      return;
+    }
+    // 解析图像内容。
+    nextImage.getComponent(image.ComponentType.JPEG, async (err: BusinessError,
+      imgComponent: image.Component) => {
+      if (err || imgComponent === undefined) {
+        console.error('Failed to getComponent.');
+        return;
+      }
+      if (imgComponent.byteBuffer) {
+        // 处理二进制图像数据。
+        console.info(`getComponent with width:${nextImage.size.width} height:${nextImage.size.height} stride:${imgComponent.rowStride}`);
+      } else {
+        console.error('byteBuffer is null');
+      }
+    })
+  });
+}
 ```
 
 ## readNextImage9+
-
-PhonePC/2in1TabletTVWearable
 
 readNextImage(): Promise<Image>
 
 从ImageReceiver读取下一张图片。使用Promise异步回调。
 
-注意
+**注意** 
 
-此接口需要在[on](arkts-apis-image-imagereceiver.md#on9)回调触发后调用，才能正常的接收到数据。且此接口返回的[Image](arkts-apis-image-image.md)对象使用完毕后需要调用[release](arkts-apis-image-image.md#release9)方法释放，释放后才可以继续接收新的数据。
+此接口需要在[on](arkts-apis-image-imagereceiver.md#on9)回调触发后调用，才能正常地接收到数据。且此接口返回的[Image](arkts-apis-image-image.md)对象使用完毕后需要调用[release](arkts-apis-image-image.md#release9)方法释放，释放后才可以继续接收新的数据。
 
 **系统能力：** SystemCapability.Multimedia.Image.ImageReceiver
 
@@ -231,21 +254,32 @@ readNextImage(): Promise<Image>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function ReadNextImage(receiver : image.ImageReceiver) {
-4. receiver.readNextImage().then((img: image.Image) => {
-5. console.info('Succeeded in reading the next Image.');
-6. }).catch((error: BusinessError) => {
-7. console.error(`Failed to read the next Image.code ${error.code},message is ${error.message}`);
-8. });
-9. }
+async function ReadNextImage(receiver : image.ImageReceiver) {
+  receiver.readNextImage().then((nextImage: image.Image) => {
+    console.info('Succeeded in reading the next Image.');
+    nextImage.getComponent(image.ComponentType.JPEG, async (err: BusinessError,
+      imgComponent: image.Component) => {
+      if (err || imgComponent === undefined) {
+        console.error('Failed to getComponent.');
+        return;
+      }
+      if (imgComponent.byteBuffer) {
+        // 处理二进制图像数据。
+        console.info(`getComponent with width:${nextImage.size.width} height:${nextImage.size.height} stride:${imgComponent.rowStride}`);
+      } else {
+        console.error('byteBuffer is null');
+      }
+    })
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to read the next Image.code ${error.code},message is ${error.message}`);
+  });
+}
 ```
 
 ## on9+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'imageArrival', callback: AsyncCallback<void>): void
 
@@ -262,17 +296,21 @@ on(type: 'imageArrival', callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. async function On(receiver : image.ImageReceiver) {
-2. receiver.on('imageArrival', () => {
-3. // 接收到图片，实现回调函数逻辑。
-4. });
-5. }
+```ts
+async function On(receiver : image.ImageReceiver) {
+  receiver.on('imageArrival', () => {
+    // 图片到达回调触发后，读取最新或下一张图片进行处理。
+    receiver.readLatestImage().then((img: image.Image) => {
+      console.info('Succeeded in reading the latest Image.');
+      // 处理图片数据。
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to read the latest Image.`);
+    });
+  });
+}
 ```
 
 ## off13+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'imageArrival', callback?: AsyncCallback<void>): void
 
@@ -289,19 +327,17 @@ off(type: 'imageArrival', callback?: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. async function Off(receiver : image.ImageReceiver) {
-2. let callbackFunc = ()=>{
-3. // 实现回调函数逻辑。
-4. };
-5. receiver.on('imageArrival', callbackFunc);
-6. receiver.off('imageArrival', callbackFunc);
-7. }
+```ts
+async function Off(receiver : image.ImageReceiver) {
+  let callbackFunc = ()=>{
+      // 实现回调函数逻辑。
+  };
+  receiver.on('imageArrival', callbackFunc);
+  receiver.off('imageArrival', callbackFunc);
+}
 ```
 
 ## release9+
-
-PhonePC/2in1TabletTVWearable
 
 release(callback: AsyncCallback<void>): void
 
@@ -321,23 +357,21 @@ release(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function Release(receiver : image.ImageReceiver) {
-4. receiver.release((err: BusinessError) => {
-5. if (err) {
-6. console.error(`Failed to release the receiver.code ${err.code},message is ${err.message}`);
-7. } else {
-8. console.info('Succeeded in releasing the receiver.');
-9. }
-10. })
-11. }
+async function Release(receiver : image.ImageReceiver) {
+  receiver.release((err: BusinessError) => {
+    if (err) {
+      console.error(`Failed to release the receiver.code ${err.code},message is ${err.message}`);
+    } else {
+      console.info('Succeeded in releasing the receiver.');
+    }
+  })
+}
 ```
 
 ## release9+
-
-PhonePC/2in1TabletTVWearable
 
 release(): Promise<void>
 
@@ -353,18 +387,18 @@ release(): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象。无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function Release(receiver : image.ImageReceiver) {
-4. receiver.release().then(() => {
-5. console.info('Succeeded in releasing the receiver.');
-6. }).catch((error: BusinessError) => {
-7. console.error(`Failed to release the receiver.code ${error.code},message is ${error.message}`);
-8. })
-9. }
+async function Release(receiver : image.ImageReceiver) {
+  receiver.release().then(() => {
+    console.info('Succeeded in releasing the receiver.');
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to release the receiver.code ${error.code},message is ${error.message}`);
+  })
+}
 ```

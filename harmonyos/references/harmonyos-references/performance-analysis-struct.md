@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/performan
 title: 结构体
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:23+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:4491fd98e450668c6fefa089bb28814baf4dc583cf85ba430a7a9984271e7b75
+scraped_at: 2026-09-02T14:52:41+08:00
+doc_updated_at: 2026-04-30
+content_hash: sha256:61a295bbf6e3cfbcfae97ae81a242df4bcb199753b7f7a04405e4d7eb923611a
 ---
 
 * **[HiAppEvent\_AppEventInfo](capi-hiappevent-hiappevent-appeventinfo.md)**
@@ -20,6 +20,7 @@ content_hash: sha256:4491fd98e450668c6fefa089bb28814baf4dc583cf85ba430a7a9984271
 * **[HiDebug\_SystemMemInfo](capi-hidebug-hidebug-systemmeminfo.md)**
 * **[HiDebug\_NativeMemInfo](capi-hidebug-hidebug-nativememinfo.md)**
 * **[HiDebug\_MemoryLimit](capi-hidebug-hidebug-memorylimit.md)**
+* **[OH\_HiDebug\_RequestTraceConfig](capi-hidebug-oh-hidebug-requesttraceconfig.md)**
 * **[HiDebug\_JsStackFrame](capi-hidebug-hidebug-jsstackframe.md)**
 * **[HiDebug\_NativeStackFrame](capi-hidebug-hidebug-nativestackframe.md)**
 * **[HiDebug\_StackFrame](capi-hidebug-hidebug-stackframe.md)**
@@ -27,4 +28,6 @@ content_hash: sha256:4491fd98e450668c6fefa089bb28814baf4dc583cf85ba430a7a9984271
 * **[HiDebug\_Backtrace\_Object\_\_\*](capi-hidebug-hidebug-backtrace-object--8h.md)**
 * **[HiDebug\_GraphicsMemorySummary](capi-hidebug-hidebug-graphicsmemorysummary.md)**
 * **[HiDebug\_ProcessSamplerConfig](capi-hidebug-hidebug-processsamplerconfig.md)**
+* **[OH\_HiDebug\_ResProfilerConfig](capi-hidebug-oh-hidebug-resprofilerconfig.md)**
+* **[OH\_HiDebug\_ProfilingResult](capi-hidebug-oh-hidebug-profilingresult.md)**
 * **[HiTraceId](capi-hitrace-hitraceid.md)**

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_avcapability.h
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 头文件 > native_avcapability.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:02+08:00
-doc_updated_at: 2026-03-19
-content_hash: sha256:f2430bb3f1289e936105125486db44b7ad30489d51c442e0e3ed52eb5101ec93
+scraped_at: 2026-09-02T15:02:21+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9e0ad0a12c4dea84ab4b5d62f0e3b0be8d757eaf9d115696970516e0cf6b1c09
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明用于编解码能力查询到的Native API。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -39,23 +33,24 @@ PhonePC/2in1TabletTVWearable
 
 ### 枚举
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [OH\_AVCodecCategory](capi-native-avcapability-h.md#oh_avcodeccategory) | OH\_AVCodecCategory | 编解码器类别。 |
+| [OH\_AVCodecType](capi-native-avcapability-h.md#oh_avcodectype) | OH\_AVCodecType | 编解码器类型。 |
 | [OH\_AVCapabilityFeature](capi-native-avcapability-h.md#oh_avcapabilityfeature) | OH\_AVCapabilityFeature | 可以在特定编解码器场景中使用的可选特性。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
 | [OH\_AVCapability \*OH\_AVCodec\_GetCapability(const char \*mime, bool isEncoder)](capi-native-avcapability-h.md#oh_avcodec_getcapability) | 获取系统推荐的编解码器能力。 |
 | [OH\_AVCapability \*OH\_AVCodec\_GetCapabilityByCategory(const char \*mime, bool isEncoder, OH\_AVCodecCategory category)](capi-native-avcapability-h.md#oh_avcodec_getcapabilitybycategory) | 获取指定类别中的编解码器能力。通过指定类别，匹配的编解码器仅限于硬件编解码器或软件编解码器。 |
+| [OH\_AVCapability \*\*OH\_AVCodec\_GetCapabilityList(OH\_AVCodecType codecType, uint32\_t \*count)](capi-native-avcapability-h.md#oh_avcodec_getcapabilitylist) | 获取指定编解码器类型的能力列表。此功能会根据提供的编解码器类型检索出系统支持的所有匹配的编解码器能力。 |
 | [bool OH\_AVCapability\_IsHardware(OH\_AVCapability \*capability)](capi-native-avcapability-h.md#oh_avcapability_ishardware) | 检查能力实例是否描述了硬件编解码器。 |
-| [const char \*OH\_AVCapability\_GetName(OH\_AVCapability \*capability)](capi-native-avcapability-h.md#oh_avcapability_getname) | 获取编解码器名称。 |
+| [bool OH\_AVCapability\_IsSecure(OH\_AVCapability \*capability)](capi-native-avcapability-h.md#oh_avcapability_issecure) | 检查能力实例是否描述了一个DRM解码器。 |
+| [const char \*OH\_AVCapability\_GetName(OH\_AVCapability \*capability)](capi-native-avcapability-h.md#oh_avcapability_getname) | 获取对应的编解码器名称。 |
+| [const char \*OH\_AVCapability\_GetMimeType(OH\_AVCapability \*capability)](capi-native-avcapability-h.md#oh_avcapability_getmimetype) | 获取编解码器的MIME类型。 |
+| [bool OH\_AVCapability\_CheckMimeType(OH\_AVCapability \*capability, const char \*mimeType)](capi-native-avcapability-h.md#oh_avcapability_checkmimetype) | 检查编解码器的MIME类型是否与指定的MIME类型匹配。 |
 | [int32\_t OH\_AVCapability\_GetMaxSupportedInstances(OH\_AVCapability \*capability)](capi-native-avcapability-h.md#oh_avcapability_getmaxsupportedinstances) | 获取编解码器支持的最大实例数。 |
 | [OH\_AVErrCode OH\_AVCapability\_GetEncoderBitrateRange(OH\_AVCapability \*capability, OH\_AVRange \*bitrateRange)](capi-native-avcapability-h.md#oh_avcapability_getencoderbitraterange) | 获取编码器支持的比特率范围。 |
 | [bool OH\_AVCapability\_IsEncoderBitrateModeSupported(OH\_AVCapability \*capability, OH\_BitrateMode bitrateMode)](capi-native-avcapability-h.md#oh_avcapability_isencoderbitratemodesupported) | 检查编码器是否支持特定的比特率模式。 |
@@ -84,14 +79,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AVCodecCategory
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AVCodecCategory
+```c
+enum OH_AVCodecCategory
 ```
 
 **描述**
@@ -107,12 +98,29 @@ PhonePC/2in1TabletTVWearable
 | HARDWARE = 0 | 硬件编解码。 |
 | SOFTWARE | 软件编解码。 |
 
+### OH\_AVCodecType
+
+```c
+enum OH_AVCodecType
+```
+
+**描述**
+
+编解码器类型。
+
+**起始版本：** 24
+
+| 枚举项 | 描述 |
+| --- | --- |
+| OH\_AVCODEC\_TYPE\_VIDEO\_ENCODER = 0 | 表示视频编码器。  **起始版本：** 24 |
+| OH\_AVCODEC\_TYPE\_VIDEO\_DECODER = 1 | 表示视频解码器。  **起始版本：** 24 |
+| OH\_AVCODEC\_TYPE\_AUDIO\_ENCODER = 2 | 表示音频编码器。  **起始版本：** 24 |
+| OH\_AVCODEC\_TYPE\_AUDIO\_DECODER = 3 | 表示音频解码器。  **起始版本：** 24 |
+
 ### OH\_AVCapabilityFeature
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AVCapabilityFeature
+```c
+enum OH_AVCapabilityFeature
 ```
 
 **描述**
@@ -129,17 +137,16 @@ PhonePC/2in1TabletTVWearable
 | VIDEO\_ENCODER\_LONG\_TERM\_REFERENCE = 1 | 编解码器支持长期参考帧特性，只用于视频编码场景。 |
 | VIDEO\_LOW\_LATENCY = 2 | 编解码器支持低时延特性，只用于视频解码场景。 |
 | VIDEO\_ENCODER\_B\_FRAME = 7 | 编解码器支持B帧特性，只用于视频编码场景。  **起始版本：** 20 |
+| VIDEO\_DECODER\_OUTPUT\_IN\_DECODING\_ORDER = 8 | 解码器支持按解码顺序输出帧特性，只用于视频解码场景。  **起始版本：** 26.0.0 |
+| VIDEO\_ENCODER\_PREPROC\_DOWNSAMPLING = 9 | 编码器支持视频编码前处理降采样特性，该能力仅适用于视频编码器。  仅当编码器通过[OH\_VideoEncoder\_CreatePrimaryWithPreproc](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_createprimarywithpreproc)或[OH\_VideoEncoder\_CreateSecondaryFromPrimary](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_createsecondaryfromprimary)接口创建时，方可启用该能力。  **起始版本：** 26.0.0 |
+| VIDEO\_ENCODER\_PREPROC\_CROP = 10 | 编码器支持视频编码前处理裁剪特性，该特性仅适用于视频编码器。  仅当编码器通过[OH\_VideoEncoder\_CreatePrimaryWithPreproc](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_createprimarywithpreproc)或[OH\_VideoEncoder\_CreateSecondaryFromPrimary](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_createsecondaryfromprimary)接口创建时，方可启用该能力。  **起始版本：** 26.0.0 |
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AVCodec\_GetCapability()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVCapability *OH_AVCodec_GetCapability(const char *mime, bool isEncoder)
+```c
+OH_AVCapability *OH_AVCodec_GetCapability(const char *mime, bool isEncoder)
 ```
 
 **描述**
@@ -154,7 +161,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| const char \*mime | MIME类型描述字符串，请参阅[AVCODEC\_MIME\_TYPE](capi-native-avcodec-base-h.md#变量)。 |
+| const char \*mime | MIME类型描述字符串，请参阅AVCODEC\_MIME\_TYPE类型[变量](capi-native-avcodec-base-h.md#变量)。 |
 | bool isEncoder | 编码器为true，解码器为false。 |
 
 **返回：**
@@ -165,10 +172,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCodec\_GetCapabilityByCategory()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVCapability *OH_AVCodec_GetCapabilityByCategory(const char *mime, bool isEncoder, OH_AVCodecCategory category)
+```c
+OH_AVCapability *OH_AVCodec_GetCapabilityByCategory(const char *mime, bool isEncoder, OH_AVCodecCategory category)
 ```
 
 **描述**
@@ -183,7 +188,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| const char \*mime | MIME类型描述字符串，请参阅[AVCODEC\_MIME\_TYPE](capi-native-avcodec-base-h.md#变量)。 |
+| const char \*mime | MIME类型描述字符串，请参阅AVCODEC\_MIME\_TYPE类型[变量](capi-native-avcodec-base-h.md#变量)。 |
 | bool isEncoder | 编码器为true，解码器为false。 |
 | [OH\_AVCodecCategory](capi-native-avcapability-h.md#oh_avcodeccategory) category | 编解码器类别。 |
 
@@ -193,12 +198,39 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | [OH\_AVCapability](capi-avcapability-oh-avcapability.md) \* | 如果现有编解码器匹配，则返回能力实例，如果指定的MIME类型与任何现有编解码器不匹配，则返回NULL。 |
 
+### OH\_AVCodec\_GetCapabilityList()
+
+```c
+OH_AVCapability **OH_AVCodec_GetCapabilityList(OH_AVCodecType codecType, uint32_t *count)
+```
+
+**描述**
+
+获取指定编解码器类型的能力列表。此功能会根据提供的编解码器类型检索出系统支持的所有匹配的编解码器能力。
+
+**说明** 
+
+编解码器能力列表的内存由系统底层全局维护，调用者无需管理其生命周期，不得手动分配或释放此内存。
+
+**起始版本：** 24
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_AVCodecType](capi-native-avcapability-h.md#oh_avcodectype) codecType | 指定要查询的编解码器类型。 |
+| uint32\_t \*count | 输出参数。指向一个uint32\_t变量的指针，用于存储匹配到的编解码器能力数量。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [OH\_AVCapability \*\*](capi-avcapability-oh-avcapability.md) | 如果找到匹配项，则返回指向OH\_AVCapability实例数组的指针。  如果未找到匹配的编解码器或发生错误，则返回NULL。 |
+
 ### OH\_AVCapability\_IsHardware()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. bool OH_AVCapability_IsHardware(OH_AVCapability *capability)
+```c
+bool OH_AVCapability_IsHardware(OH_AVCapability *capability)
 ```
 
 **描述**
@@ -221,17 +253,39 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | bool | 如果能力实例描述的是硬件编解码器，则返回true，如果功能实例描述的是软件编解码器，则为false。 |
 
-### OH\_AVCapability\_GetName()
+### OH\_AVCapability\_IsSecure()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char *OH_AVCapability_GetName(OH_AVCapability *capability)
+```c
+bool OH_AVCapability_IsSecure(OH_AVCapability *capability)
 ```
 
 **描述**
 
-获取编解码器名称。
+检查能力实例是否描述了一个DRM解码器。
+
+**起始版本：** 24
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_AVCapability](capi-avcapability-oh-avcapability.md) \*capability | 编解码能力指针。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| bool | 如果能力实例描述的是DRM解码器，则返回true。  如果能力实例描述的是非DRM解码器，则为false。 |
+
+### OH\_AVCapability\_GetName()
+
+```c
+const char *OH_AVCapability_GetName(OH_AVCapability *capability)
+```
+
+**描述**
+
+获取对应的编解码器名称。
 
 **系统能力：** SystemCapability.Multimedia.Media.CodecBase
 
@@ -249,12 +303,59 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | const char \* | 返回编解码器名称字符串。 |
 
+### OH\_AVCapability\_GetMimeType()
+
+```c
+const char *OH_AVCapability_GetMimeType(OH_AVCapability *capability)
+```
+
+**描述**
+
+获取编解码器的MIME类型。
+
+**起始版本：** 24
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_AVCapability](capi-avcapability-oh-avcapability.md) \*capability | 编解码能力指针。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| const char \* | 返回编解码器的MIME类型字符串。 |
+
+### OH\_AVCapability\_CheckMimeType()
+
+```c
+bool OH_AVCapability_CheckMimeType(OH_AVCapability *capability, const char *mimeType)
+```
+
+**描述**
+
+检查编解码器的MIME类型是否与指定的MIME类型匹配。
+
+**起始版本：** 24
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_AVCapability](capi-avcapability-oh-avcapability.md) \*capability | 编解码能力指针。 |
+| const char \*mimeType | 要检查的目标MIME类型字符串。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| bool | 如果MIME类型匹配则返回true，否则返回false。 |
+
 ### OH\_AVCapability\_GetMaxSupportedInstances()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_AVCapability_GetMaxSupportedInstances(OH_AVCapability *capability)
+```c
+int32_t OH_AVCapability_GetMaxSupportedInstances(OH_AVCapability *capability)
 ```
 
 **描述**
@@ -279,10 +380,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCapability\_GetEncoderBitrateRange()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVCapability_GetEncoderBitrateRange(OH_AVCapability *capability, OH_AVRange *bitrateRange)
+```c
+OH_AVErrCode OH_AVCapability_GetEncoderBitrateRange(OH_AVCapability *capability, OH_AVRange *bitrateRange)
 ```
 
 **描述**
@@ -308,10 +407,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCapability\_IsEncoderBitrateModeSupported()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. bool OH_AVCapability_IsEncoderBitrateModeSupported(OH_AVCapability *capability, OH_BitrateMode bitrateMode)
+```c
+bool OH_AVCapability_IsEncoderBitrateModeSupported(OH_AVCapability *capability, OH_BitrateMode bitrateMode)
 ```
 
 **描述**
@@ -337,10 +434,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCapability\_GetEncoderQualityRange()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVCapability_GetEncoderQualityRange(OH_AVCapability *capability, OH_AVRange *qualityRange)
+```c
+OH_AVErrCode OH_AVCapability_GetEncoderQualityRange(OH_AVCapability *capability, OH_AVRange *qualityRange)
 ```
 
 **描述**
@@ -366,10 +461,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCapability\_GetEncoderComplexityRange()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVCapability_GetEncoderComplexityRange(OH_AVCapability *capability, OH_AVRange *complexityRange)
+```c
+OH_AVErrCode OH_AVCapability_GetEncoderComplexityRange(OH_AVCapability *capability, OH_AVRange *complexityRange)
 ```
 
 **描述**
@@ -395,10 +488,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCapability\_GetAudioSupportedSampleRates()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVCapability_GetAudioSupportedSampleRates(OH_AVCapability *capability, const int32_t **sampleRates, uint32_t *sampleRateNum)
+```c
+OH_AVErrCode OH_AVCapability_GetAudioSupportedSampleRates(OH_AVCapability *capability, const int32_t **sampleRates, uint32_t *sampleRateNum)
 ```
 
 **描述**
@@ -425,10 +516,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCapability\_GetAudioSupportedSampleRateRanges()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVCapability_GetAudioSupportedSampleRateRanges(OH_AVCapability *capability, OH_AVRange **sampleRateRanges, uint32_t *rangesNum)
+```c
+OH_AVErrCode OH_AVCapability_GetAudioSupportedSampleRateRanges(OH_AVCapability *capability, OH_AVRange **sampleRateRanges, uint32_t *rangesNum)
 ```
 
 **描述**
@@ -455,10 +544,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCapability\_GetAudioChannelCountRange()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVCapability_GetAudioChannelCountRange(OH_AVCapability *capability, OH_AVRange *channelCountRange)
+```c
+OH_AVErrCode OH_AVCapability_GetAudioChannelCountRange(OH_AVCapability *capability, OH_AVRange *channelCountRange)
 ```
 
 **描述**
@@ -484,10 +571,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCapability\_GetVideoWidthAlignment()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVCapability_GetVideoWidthAlignment(OH_AVCapability *capability, int32_t *widthAlignment)
+```c
+OH_AVErrCode OH_AVCapability_GetVideoWidthAlignment(OH_AVCapability *capability, int32_t *widthAlignment)
 ```
 
 **描述**
@@ -513,10 +598,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCapability\_GetVideoHeightAlignment()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVCapability_GetVideoHeightAlignment(OH_AVCapability *capability, int32_t *heightAlignment)
+```c
+OH_AVErrCode OH_AVCapability_GetVideoHeightAlignment(OH_AVCapability *capability, int32_t *heightAlignment)
 ```
 
 **描述**
@@ -542,10 +625,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCapability\_GetVideoWidthRangeForHeight()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVCapability_GetVideoWidthRangeForHeight(OH_AVCapability *capability, int32_t height, OH_AVRange *widthRange)
+```c
+OH_AVErrCode OH_AVCapability_GetVideoWidthRangeForHeight(OH_AVCapability *capability, int32_t height, OH_AVRange *widthRange)
 ```
 
 **描述**
@@ -572,10 +653,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCapability\_GetVideoHeightRangeForWidth()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVCapability_GetVideoHeightRangeForWidth(OH_AVCapability *capability, int32_t width, OH_AVRange *heightRange)
+```c
+OH_AVErrCode OH_AVCapability_GetVideoHeightRangeForWidth(OH_AVCapability *capability, int32_t width, OH_AVRange *heightRange)
 ```
 
 **描述**
@@ -602,10 +681,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCapability\_GetVideoWidthRange()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVCapability_GetVideoWidthRange(OH_AVCapability *capability, OH_AVRange *widthRange)
+```c
+OH_AVErrCode OH_AVCapability_GetVideoWidthRange(OH_AVCapability *capability, OH_AVRange *widthRange)
 ```
 
 **描述**
@@ -631,10 +708,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCapability\_GetVideoHeightRange()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVCapability_GetVideoHeightRange(OH_AVCapability *capability, OH_AVRange *heightRange)
+```c
+OH_AVErrCode OH_AVCapability_GetVideoHeightRange(OH_AVCapability *capability, OH_AVRange *heightRange)
 ```
 
 **描述**
@@ -660,10 +735,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCapability\_IsVideoSizeSupported()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. bool OH_AVCapability_IsVideoSizeSupported(OH_AVCapability *capability, int32_t width, int32_t height)
+```c
+bool OH_AVCapability_IsVideoSizeSupported(OH_AVCapability *capability, int32_t width, int32_t height)
 ```
 
 **描述**
@@ -690,10 +763,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCapability\_GetVideoFrameRateRange()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVCapability_GetVideoFrameRateRange(OH_AVCapability *capability, OH_AVRange *frameRateRange)
+```c
+OH_AVErrCode OH_AVCapability_GetVideoFrameRateRange(OH_AVCapability *capability, OH_AVRange *frameRateRange)
 ```
 
 **描述**
@@ -719,10 +790,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCapability\_GetVideoFrameRateRangeForSize()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVCapability_GetVideoFrameRateRangeForSize(OH_AVCapability *capability, int32_t width, int32_t height, OH_AVRange *frameRateRange)
+```c
+OH_AVErrCode OH_AVCapability_GetVideoFrameRateRangeForSize(OH_AVCapability *capability, int32_t width, int32_t height, OH_AVRange *frameRateRange)
 ```
 
 **描述**
@@ -750,10 +819,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCapability\_AreVideoSizeAndFrameRateSupported()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. bool OH_AVCapability_AreVideoSizeAndFrameRateSupported(OH_AVCapability *capability, int32_t width, int32_t height, int32_t frameRate)
+```c
+bool OH_AVCapability_AreVideoSizeAndFrameRateSupported(OH_AVCapability *capability, int32_t width, int32_t height, int32_t frameRate)
 ```
 
 **描述**
@@ -781,10 +848,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCapability\_GetVideoSupportedPixelFormats()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVCapability_GetVideoSupportedPixelFormats(OH_AVCapability *capability, const int32_t **pixelFormats, uint32_t *pixelFormatNum)
+```c
+OH_AVErrCode OH_AVCapability_GetVideoSupportedPixelFormats(OH_AVCapability *capability, const int32_t **pixelFormats, uint32_t *pixelFormatNum)
 ```
 
 **描述**
@@ -800,7 +865,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AVCapability](capi-avcapability-oh-avcapability.md) \*capability | 视频编解码能力指针。如果给的是音频编解码器能力指针，会导致未定义行为。 |
-| const int32\_t \*\*pixelFormats | 输出参数。指向视频像素格式数组的指针。 |
+| const int32\_t \*\*pixelFormats | 输出参数。指向视频像素格式数组的指针。参考[OH\_AVPixelFormat](capi-native-avformat-h.md#oh_avpixelformat)。 |
 | uint32\_t \*pixelFormatNum | 输出参数。像素格式数组的元素数目。 |
 
 **返回：**
@@ -811,10 +876,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCapability\_GetVideoSupportedNativeBufferFormats()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVCapability_GetVideoSupportedNativeBufferFormats(OH_AVCapability *capability, const OH_NativeBuffer_Format **nativeBufferFormats, uint32_t *nativeBufferFormatNum)
+```c
+OH_AVErrCode OH_AVCapability_GetVideoSupportedNativeBufferFormats(OH_AVCapability *capability, const OH_NativeBuffer_Format **nativeBufferFormats, uint32_t *nativeBufferFormatNum)
 ```
 
 **描述**
@@ -841,10 +904,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCapability\_GetSupportedProfiles()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVCapability_GetSupportedProfiles(OH_AVCapability *capability, const int32_t **profiles, uint32_t *profileNum)
+```c
+OH_AVErrCode OH_AVCapability_GetSupportedProfiles(OH_AVCapability *capability, const int32_t **profiles, uint32_t *profileNum)
 ```
 
 **描述**
@@ -860,7 +921,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AVCapability](capi-avcapability-oh-avcapability.md) \*capability | 编解码能力指针。 |
-| const int32\_t \*\*profiles | 输出参数。指向档次数组的指针。 |
+| const int32\_t \*\*profiles | 输出参数。指向档次数组的指针。例如，H.264档次参考[OH\_AVCProfile](capi-native-avcodec-base-h.md#oh_avcprofile)。 |
 | uint32\_t \*profileNum | 输出参数。档次数组的元素数目。 |
 
 **返回：**
@@ -871,10 +932,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCapability\_GetSupportedLevelsForProfile()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVCapability_GetSupportedLevelsForProfile(OH_AVCapability *capability, int32_t profile, const int32_t **levels, uint32_t *levelNum)
+```c
+OH_AVErrCode OH_AVCapability_GetSupportedLevelsForProfile(OH_AVCapability *capability, int32_t profile, const int32_t **levels, uint32_t *levelNum)
 ```
 
 **描述**
@@ -891,7 +950,7 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | [OH\_AVCapability](capi-avcapability-oh-avcapability.md) \*capability | 编解码能力指针。 |
 | int32\_t profile | 编解码器档次。 |
-| const int32\_t \*\*levels | 输出参数。指向级别数组的指针。 |
+| const int32\_t \*\*levels | 输出参数。指向级别数组的指针。例如，H.264级别参考[OH\_AVCLevel](capi-native-avcodec-base-h.md#oh_avclevel)。 |
 | uint32\_t \*levelNum | 输出参数。级别数组的元素数目。 |
 
 **返回：**
@@ -902,10 +961,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCapability\_AreProfileAndLevelSupported()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. bool OH_AVCapability_AreProfileAndLevelSupported(OH_AVCapability *capability, int32_t profile, int32_t level)
+```c
+bool OH_AVCapability_AreProfileAndLevelSupported(OH_AVCapability *capability, int32_t profile, int32_t level)
 ```
 
 **描述**
@@ -932,10 +989,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCapability\_IsFeatureSupported()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. bool OH_AVCapability_IsFeatureSupported(OH_AVCapability *capability, OH_AVCapabilityFeature feature)
+```c
+bool OH_AVCapability_IsFeatureSupported(OH_AVCapability *capability, OH_AVCapabilityFeature feature)
 ```
 
 **描述**
@@ -961,10 +1016,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCapability\_GetFeatureProperties()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVFormat *OH_AVCapability_GetFeatureProperties(OH_AVCapability *capability, OH_AVCapabilityFeature feature)
+```c
+OH_AVFormat *OH_AVCapability_GetFeatureProperties(OH_AVCapability *capability, OH_AVCapabilityFeature feature)
 ```
 
 **描述**

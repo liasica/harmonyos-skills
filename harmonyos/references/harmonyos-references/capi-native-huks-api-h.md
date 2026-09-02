@@ -3,16 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_huks_api.h
 breadcrumb: API参考 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > C API > 头文件 > native_huks_api.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:49+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:218e34a7acef5fcb1dffe565214954937f519a9db8ca7f0c007ad204e3f18df9
+scraped_at: 2026-09-02T15:01:47+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6df552661df8eb8979014bbf5046af3a41bf21056bc449b60d1d957015435b30
 ---
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-声明用于访问HUKS的API。
+声明用于访问通用密钥库（HUKS）的API。
 
 **引用文件：** <huks/native\_huks\_api.h>
 
@@ -20,23 +18,17 @@ PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.Security.Huks.Core
 
-在API version 9-19，系统能力为SystemCapability.Security.Huks；从API version 20起，系统能力变更为SystemCapability.Security.Huks.Core
-
 **起始版本：** 9
 
 **相关模块：** [HuksKeyApi](capi-hukskeyapi.md)
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
-| [struct OH\_Huks\_Result OH\_Huks\_GetSdkVersion(struct OH\_Huks\_Blob \*sdkVersion)](capi-native-huks-api-h.md#oh_huks_getsdkversion) | 获取当前Huks sdk版本号。 |
+| [struct OH\_Huks\_Result OH\_Huks\_GetSdkVersion(struct OH\_Huks\_Blob \*sdkVersion)](capi-native-huks-api-h.md#oh_huks_getsdkversion) | 获取当前HUKS SDK版本号。 |
 | [struct OH\_Huks\_Result OH\_Huks\_GenerateKeyItem(const struct OH\_Huks\_Blob \*keyAlias, const struct OH\_Huks\_ParamSet \*paramSetIn, struct OH\_Huks\_ParamSet \*paramSetOut)](capi-native-huks-api-h.md#oh_huks_generatekeyitem) | 生成密钥。 |
 | [struct OH\_Huks\_Result OH\_Huks\_ImportKeyItem(const struct OH\_Huks\_Blob \*keyAlias, const struct OH\_Huks\_ParamSet \*paramSet, const struct OH\_Huks\_Blob \*key)](capi-native-huks-api-h.md#oh_huks_importkeyitem) | 导入明文密钥。 |
 | [struct OH\_Huks\_Result OH\_Huks\_ImportWrappedKeyItem(const struct OH\_Huks\_Blob \*keyAlias, const struct OH\_Huks\_Blob \*wrappingKeyAlias, const struct OH\_Huks\_ParamSet \*paramSet, const struct OH\_Huks\_Blob \*wrappedKeyData)](capi-native-huks-api-h.md#oh_huks_importwrappedkeyitem) | 导入密文密钥。 |
@@ -56,19 +48,15 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Huks\_GetSdkVersion()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. struct OH_Huks_Result OH_Huks_GetSdkVersion(struct OH_Huks_Blob *sdkVersion)
+```c
+struct OH_Huks_Result OH_Huks_GetSdkVersion(struct OH_Huks_Blob *sdkVersion)
 ```
 
 **描述**
 
-获取当前Huks sdk版本号。
+获取当前HUKS SDK版本号。
 
 **起始版本：** 9
 
@@ -82,14 +70,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS = 0 ：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT = 401 ：sdkVersion或者sdkVersion->data是null，或者sdkVersion->size太小。 |
+| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS 0：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT 401：sdkVersion或者sdkVersion->data是null，或者sdkVersion->size太小。 |
 
 ### OH\_Huks\_GenerateKeyItem()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. struct OH_Huks_Result OH_Huks_GenerateKeyItem(const struct OH_Huks_Blob *keyAlias, const struct OH_Huks_ParamSet *paramSetIn, struct OH_Huks_ParamSet *paramSetOut)
+```c
+struct OH_Huks_Result OH_Huks_GenerateKeyItem(const struct OH_Huks_Blob *keyAlias, const struct OH_Huks_ParamSet *paramSetIn, struct OH_Huks_ParamSet *paramSetOut)
 ```
 
 **描述**
@@ -104,20 +90,18 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | [const struct OH\_Huks\_Blob](capi-hukstypeapi-oh-huks-blob.md) \*keyAlias | 给要生成的密钥的别名，需要保证业务所在进程内唯一，否则会发生覆盖。 |
 | [const struct OH\_Huks\_ParamSet](capi-hukstypeapi-oh-huks-paramset.md) \*paramSetIn | 生成密钥的属性信息的参数集。 |
-| [struct OH\_Huks\_ParamSet](capi-hukstypeapi-oh-huks-paramset.md) \*paramSetOut | 生成密钥为临时类型时，存放着密钥数据；非临时类型可为空。 |
+| [struct OH\_Huks\_ParamSet](capi-hukstypeapi-oh-huks-paramset.md) \*paramSetOut | 若生成的是临时密钥，此参数存放密钥数据；若生成的是非临时密钥，此参数可为空。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS = 0 ：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT = 401 ：参数keyAlias、paramSetIn、paramSetOut有一个无效。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR = 12000012 ：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_FILE\_OPERATION\_FAIL = 12000004 ：删除或者写文件失败。  OH\_HUKS\_ERR\_CODE\_INVALID\_CRYPTO\_ALG\_ARGUMENT = 12000003 ：密钥参数无效。  OH\_HUKS\_ERR\_CODE\_ITEM\_NOT\_EXIST = 12000011 ：基础密钥文件不存在。  OH\_HUKS\_ERR\_CODE\_MISSING\_CRYPTO\_ALG\_ARGUMENT = 12000002 ：获取密钥参数失败。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL = 12000005 ：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_CRYPTO\_FAIL = 12000006 ：加密引擎失败。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY = 12000014 ：内存不足。  OH\_HUKS\_ERR\_CODE\_CALL\_SERVICE\_FAILED = 12000015 ：连接用户IAM失败。  OH\_HUKS\_ERR\_CODE\_DEVICE\_PASSWORD\_UNSET = 12000016 ：需要设备密码但没有设置。  OH\_HUKS\_ERR\_CODE\_FEATURE\_NOT\_SUPPORTED = 12000001 ：暂不支持该功能。  OH\_HUKS\_ERR\_CODE\_KEY\_ALREADY\_EXIST = 12000017 ：（API 20新增）同名密钥已存在。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT = 12000018 ：（API 23新增）通过访问群组标签指定的群组名无效。 |
+| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS 0：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT 401：参数keyAlias、paramSetIn、paramSetOut存在无效参数。  OH\_HUKS\_ERR\_CODE\_FEATURE\_NOT\_SUPPORTED 12000001：暂不支持该功能。  OH\_HUKS\_ERR\_CODE\_MISSING\_CRYPTO\_ALG\_ARGUMENT 12000002：获取密钥参数失败。  OH\_HUKS\_ERR\_CODE\_INVALID\_CRYPTO\_ALG\_ARGUMENT 12000003：密钥参数无效。  OH\_HUKS\_ERR\_CODE\_FILE\_OPERATION\_FAIL 12000004：删除或者写文件失败。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL 12000005：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_CRYPTO\_FAIL 12000006：加密引擎失败。  OH\_HUKS\_ERR\_CODE\_ITEM\_NOT\_EXIST 12000011：基础密钥文件不存在。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR 12000012：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY 12000014：内存不足。  OH\_HUKS\_ERR\_CODE\_CALL\_SERVICE\_FAILED 12000015：连接用户IAM失败。  OH\_HUKS\_ERR\_CODE\_DEVICE\_PASSWORD\_UNSET 12000016：需要设备密码但没有设置。  OH\_HUKS\_ERR\_CODE\_KEY\_ALREADY\_EXIST 12000017：（API 20新增）同名密钥已存在。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT 12000018：（API 23新增）通过访问群组标签指定的群组名无效。 |
 
 ### OH\_Huks\_ImportKeyItem()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. struct OH_Huks_Result OH_Huks_ImportKeyItem(const struct OH_Huks_Blob *keyAlias, const struct OH_Huks_ParamSet *paramSet, const struct OH_Huks_Blob *key)
+```c
+struct OH_Huks_Result OH_Huks_ImportKeyItem(const struct OH_Huks_Blob *keyAlias, const struct OH_Huks_ParamSet *paramSet, const struct OH_Huks_Blob *key)
 ```
 
 **描述**
@@ -138,14 +122,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS = 0 ：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT = 401 ：参数keyAlias、paramSet、key有一个无效。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR = 12000012 ：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_FILE\_OPERATION\_FAIL = 12000004 ：删除或者写文件失败。  OH\_HUKS\_ERR\_CODE\_INVALID\_CRYPTO\_ALG\_ARGUMENT = 12000003 ：密钥参数无效。  OH\_HUKS\_ERR\_CODE\_MISSING\_CRYPTO\_ALG\_ARGUMENT = 12000002 ：获取密钥参数失败。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL = 12000005 ：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY = 12000014 ：内存不足。  OH\_HUKS\_ERR\_CODE\_CALL\_SERVICE\_FAILED = 12000015 ：连接用户IAM失败。  OH\_HUKS\_ERR\_CODE\_FEATURE\_NOT\_SUPPORTED = 12000001 ：暂不支持该功能。  OH\_HUKS\_ERR\_CODE\_KEY\_ALREADY\_EXIST = 12000017 ：（API 20新增）同名密钥已存在。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT = 12000018 ：（API 23新增）通过访问群组标签指定的群组名无效。 |
+| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS 0：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT 401：参数keyAlias、paramSet、key存在无效参数。  OH\_HUKS\_ERR\_CODE\_FEATURE\_NOT\_SUPPORTED 12000001：暂不支持该功能。  OH\_HUKS\_ERR\_CODE\_MISSING\_CRYPTO\_ALG\_ARGUMENT 12000002：获取密钥参数失败。  OH\_HUKS\_ERR\_CODE\_INVALID\_CRYPTO\_ALG\_ARGUMENT 12000003：密钥参数无效。  OH\_HUKS\_ERR\_CODE\_FILE\_OPERATION\_FAIL 12000004：删除或者写文件失败。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL 12000005：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR 12000012：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY 12000014：内存不足。  OH\_HUKS\_ERR\_CODE\_CALL\_SERVICE\_FAILED 12000015：连接用户IAM失败。  OH\_HUKS\_ERR\_CODE\_KEY\_ALREADY\_EXIST 12000017：（API 20新增）同名密钥已存在。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT 12000018：（API 23新增）通过访问群组标签指定的群组名无效。 |
 
 ### OH\_Huks\_ImportWrappedKeyItem()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. struct OH_Huks_Result OH_Huks_ImportWrappedKeyItem(const struct OH_Huks_Blob *keyAlias, const struct OH_Huks_Blob *wrappingKeyAlias, const struct OH_Huks_ParamSet *paramSet, const struct OH_Huks_Blob *wrappedKeyData)
+```c
+struct OH_Huks_Result OH_Huks_ImportWrappedKeyItem(const struct OH_Huks_Blob *keyAlias, const struct OH_Huks_Blob *wrappingKeyAlias, const struct OH_Huks_ParamSet *paramSet, const struct OH_Huks_Blob *wrappedKeyData)
 ```
 
 **描述**
@@ -159,7 +141,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [const struct OH\_Huks\_Blob](capi-hukstypeapi-oh-huks-blob.md) \*keyAlias | 待导入密钥的别名，需要保证业务所在进程内唯一，否则会发生覆盖。 |
-| [const struct OH\_Huks\_Blob](capi-hukstypeapi-oh-huks-blob.md) \*wrappingKeyAlias | 密钥别名，该对应密钥用于密钥协商出密钥解密待导入密钥。 |
+| [const struct OH\_Huks\_Blob](capi-hukstypeapi-oh-huks-blob.md) \*wrappingKeyAlias | 密钥别名，该别名对应的密钥用于执行密钥协商或解密数字信封，协商或解密出的密钥进而用于解密待导入密钥。 |
 | [const struct OH\_Huks\_ParamSet](capi-hukstypeapi-oh-huks-paramset.md) \*paramSet | 待导入加密密钥的属性参数。 |
 | [const struct OH\_Huks\_Blob](capi-hukstypeapi-oh-huks-blob.md) \*wrappedKeyData | 需要导入的加密的密钥数据，需要符合Huks定义的格式，具体见[OH\_Huks\_AlgSuite](capi-native-huks-type-h.md#oh_huks_algsuite)。 |
 
@@ -167,14 +149,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS = 0 ：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT = 401 ：参数keyAlias、wrappingKeyAlias、paramSet、wrappedKeyData有一个无效。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR = 12000012 ：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_FILE\_OPERATION\_FAIL = 12000004 ：删除或者写文件失败。  OH\_HUKS\_ERR\_CODE\_INVALID\_CRYPTO\_ALG\_ARGUMENT = 12000003 ：密钥参数无效。  OH\_HUKS\_ERR\_CODE\_MISSING\_CRYPTO\_ALG\_ARGUMENT = 12000002 ：获取密钥参数失败。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL = 12000005 ：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_CRYPTO\_FAIL = 12000006 ：加密引擎失败。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY = 12000014 ：内存不足。  OH\_HUKS\_ERR\_CODE\_CALL\_SERVICE\_FAILED = 12000015 ：连接用户IAM失败。  OH\_HUKS\_ERR\_CODE\_FEATURE\_NOT\_SUPPORTED = 12000001 ：暂不支持该功能。  OH\_HUKS\_ERR\_CODE\_KEY\_ALREADY\_EXIST = 12000017 ：（API 20新增）同名密钥已存在。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT = 12000018 ：（API 23新增）通过访问群组标签指定的群组名无效。 |
+| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS 0：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT 401：参数keyAlias、wrappingKeyAlias、paramSet、wrappedKeyData存在无效参数。  OH\_HUKS\_ERR\_CODE\_FEATURE\_NOT\_SUPPORTED 12000001：暂不支持该功能。  OH\_HUKS\_ERR\_CODE\_MISSING\_CRYPTO\_ALG\_ARGUMENT 12000002：获取密钥参数失败。  OH\_HUKS\_ERR\_CODE\_INVALID\_CRYPTO\_ALG\_ARGUMENT 12000003：密钥参数无效。  OH\_HUKS\_ERR\_CODE\_FILE\_OPERATION\_FAIL 12000004：删除或者写文件失败。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL 12000005：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_CRYPTO\_FAIL 12000006：加密引擎失败。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR 12000012：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY 12000014：内存不足。  OH\_HUKS\_ERR\_CODE\_CALL\_SERVICE\_FAILED 12000015：连接用户IAM失败。  OH\_HUKS\_ERR\_CODE\_KEY\_ALREADY\_EXIST 12000017：（API 20新增）同名密钥已存在。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT 12000018：（API 23新增）通过访问群组标签指定的群组名无效。 |
 
 ### OH\_Huks\_ExportPublicKeyItem()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. struct OH_Huks_Result OH_Huks_ExportPublicKeyItem(const struct OH_Huks_Blob *keyAlias, const struct OH_Huks_ParamSet *paramSet, struct OH_Huks_Blob *key)
+```c
+struct OH_Huks_Result OH_Huks_ExportPublicKeyItem(const struct OH_Huks_Blob *keyAlias, const struct OH_Huks_ParamSet *paramSet, struct OH_Huks_Blob *key)
 ```
 
 **描述**
@@ -195,14 +175,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS = 0 ：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT = 401 ：参数keyAlias、paramSet、key有一个无效。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR = 12000012 ：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_ITEM\_NOT\_EXIST = 12000011 ：密钥文件不存在。  OH\_HUKS\_ERR\_CODE\_INVALID\_CRYPTO\_ALG\_ARGUMENT = 12000003 ：密钥参数无效。  OH\_HUKS\_ERR\_CODE\_MISSING\_CRYPTO\_ALG\_ARGUMENT = 12000002 ：获取密钥参数失败。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL = 12000005 ：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY = 12000014 ：内存不足。  OH\_HUKS\_ERR\_CODE\_FEATURE\_NOT\_SUPPORTED = 12000001 ：暂不支持该功能。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT = 12000018 ：（API 23新增）通过访问群组标签指定的群组名无效。 |
+| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS 0：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT 401：参数keyAlias、paramSet、key存在无效参数。  OH\_HUKS\_ERR\_CODE\_FEATURE\_NOT\_SUPPORTED 12000001：暂不支持该功能。  OH\_HUKS\_ERR\_CODE\_MISSING\_CRYPTO\_ALG\_ARGUMENT 12000002：获取密钥参数失败。  OH\_HUKS\_ERR\_CODE\_INVALID\_CRYPTO\_ALG\_ARGUMENT 12000003：密钥参数无效。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL 12000005：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_ITEM\_NOT\_EXIST 12000011：密钥文件不存在。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR 12000012：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY 12000014：内存不足。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT 12000018：（API 23新增）通过访问群组标签指定的群组名无效。 |
 
 ### OH\_Huks\_DeleteKeyItem()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. struct OH_Huks_Result OH_Huks_DeleteKeyItem(const struct OH_Huks_Blob *keyAlias, const struct OH_Huks_ParamSet *paramSet)
+```c
+struct OH_Huks_Result OH_Huks_DeleteKeyItem(const struct OH_Huks_Blob *keyAlias, const struct OH_Huks_ParamSet *paramSet)
 ```
 
 **描述**
@@ -222,14 +200,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS = 0 ：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT = 401 ：参数keyAlias、paramSet有一个无效。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR = 12000012 ：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_INVALID\_CRYPTO\_ALG\_ARGUMENT = 12000003 ：密钥参数无效。  OH\_HUKS\_ERR\_CODE\_ITEM\_NOT\_EXIST = 12000011 ：密钥文件不存在。  OH\_HUKS\_ERR\_CODE\_MISSING\_CRYPTO\_ALG\_ARGUMENT = 12000002 ：获取密钥参数失败。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL = 12000005 ：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY = 12000014 ：内存不足。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT = 12000018 ：（API 23新增）通过访问群组标签指定的群组名无效。 |
+| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS 0：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT 401：参数keyAlias、paramSet存在无效参数。  OH\_HUKS\_ERR\_CODE\_MISSING\_CRYPTO\_ALG\_ARGUMENT 12000002：获取密钥参数失败。  OH\_HUKS\_ERR\_CODE\_INVALID\_CRYPTO\_ALG\_ARGUMENT 12000003：密钥参数无效。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL 12000005：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_ITEM\_NOT\_EXIST 12000011：密钥文件不存在。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR 12000012：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY 12000014：内存不足。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT 12000018：（API 23新增）通过访问群组标签指定的群组名无效。 |
 
 ### OH\_Huks\_GetKeyItemParamSet()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. struct OH_Huks_Result OH_Huks_GetKeyItemParamSet(const struct OH_Huks_Blob *keyAlias, const struct OH_Huks_ParamSet *paramSetIn, struct OH_Huks_ParamSet *paramSetOut)
+```c
+struct OH_Huks_Result OH_Huks_GetKeyItemParamSet(const struct OH_Huks_Blob *keyAlias, const struct OH_Huks_ParamSet *paramSetIn, struct OH_Huks_ParamSet *paramSetOut)
 ```
 
 **描述**
@@ -250,14 +226,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS = 0 ：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT = 401 ：参数keyAlias、paramSetIn、paramSetOut有一个无效。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR = 12000012 ：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_INVALID\_CRYPTO\_ALG\_ARGUMENT = 12000003 ：密钥参数无效。  OH\_HUKS\_ERR\_CODE\_ITEM\_NOT\_EXIST = 12000011 ：密钥文件不存在。  OH\_HUKS\_ERR\_CODE\_MISSING\_CRYPTO\_ALG\_ARGUMENT = 12000002 ：获取密钥参数失败。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL = 12000005 ：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY = 12000014 ：内存不足。  OH\_HUKS\_ERR\_CODE\_FEATURE\_NOT\_SUPPORTED = 12000001 ：暂不支持该功能。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT = 12000018 ：（API 23新增）通过访问群组标签指定的群组名无效。 |
+| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS 0：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT 401：参数keyAlias、paramSetIn、paramSetOut存在无效参数。  OH\_HUKS\_ERR\_CODE\_FEATURE\_NOT\_SUPPORTED 12000001：暂不支持该功能。  OH\_HUKS\_ERR\_CODE\_MISSING\_CRYPTO\_ALG\_ARGUMENT 12000002：获取密钥参数失败。  OH\_HUKS\_ERR\_CODE\_INVALID\_CRYPTO\_ALG\_ARGUMENT 12000003：密钥参数无效。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL 12000005：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_ITEM\_NOT\_EXIST 12000011：密钥文件不存在。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR 12000012：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY 12000014：内存不足。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT 12000018：（API 23新增）通过访问群组标签指定的群组名无效。 |
 
 ### OH\_Huks\_IsKeyItemExist()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. struct OH_Huks_Result OH_Huks_IsKeyItemExist(const struct OH_Huks_Blob *keyAlias, const struct OH_Huks_ParamSet *paramSet)
+```c
+struct OH_Huks_Result OH_Huks_IsKeyItemExist(const struct OH_Huks_Blob *keyAlias, const struct OH_Huks_ParamSet *paramSet)
 ```
 
 **描述**
@@ -277,14 +251,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS = 0 ：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT = 401 ：参数keyAlias、paramSet有一个无效。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR = 12000012 ：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_INVALID\_CRYPTO\_ALG\_ARGUMENT = 12000003 ：密钥参数无效。  OH\_HUKS\_ERR\_CODE\_ITEM\_NOT\_EXIST = 12000011 ：密钥文件不存在。  OH\_HUKS\_ERR\_CODE\_MISSING\_CRYPTO\_ALG\_ARGUMENT = 12000002 ：获取密钥参数失败。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL = 12000005 ：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY = 12000014 ：内存不足。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT = 12000018 ：（API 23新增）通过访问群组标签指定的群组名无效。 |
+| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS 0：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT 401：参数keyAlias、paramSet存在无效参数。  OH\_HUKS\_ERR\_CODE\_MISSING\_CRYPTO\_ALG\_ARGUMENT 12000002：获取密钥参数失败。  OH\_HUKS\_ERR\_CODE\_INVALID\_CRYPTO\_ALG\_ARGUMENT 12000003：密钥参数无效。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL 12000005：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_ITEM\_NOT\_EXIST 12000011：密钥文件不存在。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR 12000012：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY 12000014：内存不足。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT 12000018：（API 23新增）通过访问群组标签指定的群组名无效。 |
 
 ### OH\_Huks\_AttestKeyItem()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. struct OH_Huks_Result OH_Huks_AttestKeyItem(const struct OH_Huks_Blob *keyAlias, const struct OH_Huks_ParamSet *paramSet, struct OH_Huks_CertChain *certChain)
+```c
+struct OH_Huks_Result OH_Huks_AttestKeyItem(const struct OH_Huks_Blob *keyAlias, const struct OH_Huks_ParamSet *paramSet, struct OH_Huks_CertChain *certChain)
 ```
 
 **描述**
@@ -295,7 +267,7 @@ PhonePC/2in1TabletTVWearable
 
 **起始版本：** 9
 
-说明
+**说明** 
 
 使用非匿名证书密钥证明时生成的证书链包含设备标识符，设备标识符的使用、留存、销毁由开发者决定，开发者需在隐私声明中对其使用目的，留存策略和销毁方式进行说明。
 
@@ -311,14 +283,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS = 0 ：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT = 401 ：参数keyAlias、paramSet、certChain有一个无效。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR = 12000012 ：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_INVALID\_CRYPTO\_ALG\_ARGUMENT = 12000003 ：密钥参数无效。  OH\_HUKS\_ERR\_CODE\_ITEM\_NOT\_EXIST = 12000011 ：密钥文件不存在。  OH\_HUKS\_ERR\_CODE\_MISSING\_CRYPTO\_ALG\_ARGUMENT = 12000002 ：获取密钥参数失败。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL = 12000005 ：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_CRYPTO\_FAIL = 12000006 ：加密引擎失败。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY = 12000014 ：内存不足。  OH\_HUKS\_ERR\_CODE\_FEATURE\_NOT\_SUPPORTED = 12000001 ：暂不支持该功能。  OH\_HUKS\_ERR\_CODE\_PERMISSION\_FAIL = 201 ：权限检查失败，请先申请请求权限。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT = 12000018 ：（API 23新增）通过访问群组标签指定的群组名无效。 |
+| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS 0：操作成功。  OH\_HUKS\_ERR\_CODE\_PERMISSION\_FAIL 201：权限检查失败，请先申请请求权限。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT 401：参数keyAlias、paramSet、certChain存在无效参数。  OH\_HUKS\_ERR\_CODE\_FEATURE\_NOT\_SUPPORTED 12000001：暂不支持该功能。  OH\_HUKS\_ERR\_CODE\_MISSING\_CRYPTO\_ALG\_ARGUMENT 12000002：获取密钥参数失败。  OH\_HUKS\_ERR\_CODE\_INVALID\_CRYPTO\_ALG\_ARGUMENT 12000003：密钥参数无效。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL 12000005：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_CRYPTO\_FAIL 12000006：加密引擎失败。  OH\_HUKS\_ERR\_CODE\_ITEM\_NOT\_EXIST 12000011：密钥文件不存在。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR 12000012：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY 12000014：内存不足。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT 12000018：（API 23新增）通过访问群组标签指定的群组名无效。 |
 
 ### OH\_Huks\_AnonAttestKeyItem()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. struct OH_Huks_Result OH_Huks_AnonAttestKeyItem(const struct OH_Huks_Blob *keyAlias, const struct OH_Huks_ParamSet *paramSet, struct OH_Huks_CertChain *certChain)
+```c
+struct OH_Huks_Result OH_Huks_AnonAttestKeyItem(const struct OH_Huks_Blob *keyAlias, const struct OH_Huks_ParamSet *paramSet, struct OH_Huks_CertChain *certChain)
 ```
 
 **描述**
@@ -341,14 +311,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS = 0 ：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT = 401 ：参数keyAlias、paramSet、certChain有一个无效。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR = 12000012 ：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_INVALID\_CRYPTO\_ALG\_ARGUMENT = 12000003 ：密钥参数无效。  OH\_HUKS\_ERR\_CODE\_ITEM\_NOT\_EXIST = 12000011 ：密钥文件不存在。  OH\_HUKS\_ERR\_CODE\_MISSING\_CRYPTO\_ALG\_ARGUMENT = 12000002 ：获取密钥参数失败。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL = 12000005 ：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_CRYPTO\_FAIL = 12000006 ：加密引擎失败。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY = 12000014 ：内存不足。  OH\_HUKS\_ERR\_CODE\_FEATURE\_NOT\_SUPPORTED = 12000001 ：暂不支持该功能。  OH\_HUKS\_ERR\_CODE\_PERMISSION\_FAIL = 201 ：权限检查失败，请先申请请求权限。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT = 12000018 ：（API 23新增）通过访问群组标签指定的群组名无效。 |
+| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS 0：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT 401：参数keyAlias、paramSet、certChain存在无效参数。  OH\_HUKS\_ERR\_CODE\_FEATURE\_NOT\_SUPPORTED 12000001：暂不支持该功能。  OH\_HUKS\_ERR\_CODE\_MISSING\_CRYPTO\_ALG\_ARGUMENT 12000002：获取密钥参数失败。  OH\_HUKS\_ERR\_CODE\_INVALID\_CRYPTO\_ALG\_ARGUMENT 12000003：密钥参数无效。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL 12000005：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_CRYPTO\_FAIL 12000006：加密引擎失败。  OH\_HUKS\_ERR\_CODE\_ITEM\_NOT\_EXIST 12000011：密钥文件不存在。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR 12000012：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY 12000014：内存不足。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT 12000018：（API 23新增）通过访问群组标签指定的群组名无效。 |
 
 ### OH\_Huks\_InitSession()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. struct OH_Huks_Result OH_Huks_InitSession(const struct OH_Huks_Blob *keyAlias, const struct OH_Huks_ParamSet *paramSet, struct OH_Huks_Blob *handle, struct OH_Huks_Blob *token)
+```c
+struct OH_Huks_Result OH_Huks_InitSession(const struct OH_Huks_Blob *keyAlias, const struct OH_Huks_ParamSet *paramSet, struct OH_Huks_Blob *handle, struct OH_Huks_Blob *token)
 ```
 
 **描述**
@@ -370,7 +338,7 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS = 0 ：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT = 401 ：参数 keyAlias、paramSet、handle、token有一个无效。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR = 12000012 ：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_INVALID\_CRYPTO\_ALG\_ARGUMENT = 12000003 ：密钥参数无效。  OH\_HUKS\_ERR\_CODE\_ITEM\_NOT\_EXIST = 12000011 ：密钥文件不存在。  OH\_HUKS\_ERR\_CODE\_MISSING\_CRYPTO\_ALG\_ARGUMENT = 12000002 ：获取密钥参数失败。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL = 12000005 ：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_SESSION\_LIMIT = 12000010 ：已达最大会话限制。  OH\_HUKS\_ERR\_CODE\_CRYPTO\_FAIL = 12000006 ：加密引擎失败。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY = 12000014 ：内存不足。  OH\_HUKS\_ERR\_CODE\_FEATURE\_NOT\_SUPPORTED = 12000001 ：暂不支持该功能。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT = 12000018 ：（API 22新增）指定的aead长度无效或者通过访问群组标签指定的群组名无效。  OH\_HUKS\_ERR\_CODE\_EXTERNAL\_MODULE = 12000020 ：（API 22新增）提供者或Ukey内部执行失败。  OH\_HUKS\_ERR\_CODE\_PIN\_LOCKED = 12000021 ：（API 22新增）PIN码被锁定。  OH\_HUKS\_ERR\_CODE\_PIN\_NO\_AUTH = 12000023 ：（API 22新增）PIN码未认证通过。  OH\_HUKS\_ERR\_CODE\_BUSY = 12000024 ：（API 22新增）提供者或Ukey中的资源正在被使用。 |
+| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS 0：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT 401：参数 keyAlias、paramSet、handle、token存在无效参数。  OH\_HUKS\_ERR\_CODE\_FEATURE\_NOT\_SUPPORTED 12000001：暂不支持该功能。  OH\_HUKS\_ERR\_CODE\_MISSING\_CRYPTO\_ALG\_ARGUMENT 12000002：获取密钥参数失败。  OH\_HUKS\_ERR\_CODE\_INVALID\_CRYPTO\_ALG\_ARGUMENT 12000003：密钥参数无效。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL 12000005：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_CRYPTO\_FAIL 12000006：加密引擎失败。  OH\_HUKS\_ERR\_CODE\_SESSION\_LIMIT 12000010：已达最大会话限制。  OH\_HUKS\_ERR\_CODE\_ITEM\_NOT\_EXIST 12000011：密钥文件不存在。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR 12000012：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY 12000014：内存不足。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT 12000018：（API 22新增）指定的aead长度无效或者通过访问群组标签指定的群组名无效。  OH\_HUKS\_ERR\_CODE\_EXTERNAL\_MODULE 12000020：（API 22新增）提供者或UKey内部执行失败。  OH\_HUKS\_ERR\_CODE\_PIN\_LOCKED 12000021：（API 22新增）PIN码被锁定。  OH\_HUKS\_ERR\_CODE\_PIN\_NO\_AUTH 12000023：（API 22新增）PIN码未认证通过。  OH\_HUKS\_ERR\_CODE\_BUSY 12000024：（API 22新增）提供者或UKey中的资源正在被使用。 |
 
 **参考：**
 
@@ -382,10 +350,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Huks\_UpdateSession()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. struct OH_Huks_Result OH_Huks_UpdateSession(const struct OH_Huks_Blob *handle, const struct OH_Huks_ParamSet *paramSet, const struct OH_Huks_Blob *inData, struct OH_Huks_Blob *outData)
+```c
+struct OH_Huks_Result OH_Huks_UpdateSession(const struct OH_Huks_Blob *handle, const struct OH_Huks_ParamSet *paramSet, const struct OH_Huks_Blob *inData, struct OH_Huks_Blob *outData)
 ```
 
 **描述**
@@ -407,7 +373,7 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS = 0 ：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT = 401 ：参数handle、paramSet、inData、outData有一个无效。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR = 12000012 ：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_INVALID\_CRYPTO\_ALG\_ARGUMENT = 12000003 ：密钥参数无效。  OH\_HUKS\_ERR\_CODE\_ITEM\_NOT\_EXIST = 12000011 ：密钥文件不存在，或handle不存在。  OH\_HUKS\_ERR\_CODE\_MISSING\_CRYPTO\_ALG\_ARGUMENT = 12000002 ：获取密钥参数失败。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL = 12000005 ：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_CREDENTIAL\_NOT\_EXIST = 12000013 ：证书不存在。  OH\_HUKS\_ERR\_CODE\_CRYPTO\_FAIL = 12000006 ：加密引擎失败。  OH\_HUKS\_ERR\_CODE\_KEY\_AUTH\_VERIFY\_FAILED = 12000008 ：认证令牌校验失败。  OH\_HUKS\_ERR\_CODE\_KEY\_AUTH\_PERMANENTLY\_INVALIDATED = 12000007 ：认证令牌信息校验失败。  OH\_HUKS\_ERR\_CODE\_KEY\_AUTH\_TIME\_OUT = 12000009 ：认证令牌超时。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY = 12000014 ：内存不足。  OH\_HUKS\_ERR\_CODE\_DEVICE\_PASSWORD\_UNSET = 12000016 ：需要设备密码但没有设置。  OH\_HUKS\_ERR\_CODE\_FEATURE\_NOT\_SUPPORTED = 12000001 ：暂不支持该功能。  OH\_HUKS\_ERR\_CODE\_EXTERNAL\_MODULE = 12000020 ：（API 22新增）提供者或Ukey内部执行失败。  OH\_HUKS\_ERR\_CODE\_PIN\_LOCKED = 12000021 ：（API 22新增）PIN码被锁定。  OH\_HUKS\_ERR\_CODE\_PIN\_NO\_AUTH = 12000023 ：（API 22新增）PIN码未认证通过。  OH\_HUKS\_ERR\_CODE\_BUSY = 12000024 ：（API 22新增）提供者或Ukey中的资源正在被使用。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT = 12000018 ：（API 23新增）通过访问群组标签指定的群组名无效。 |
+| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS 0：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT 401：参数handle、paramSet、inData、outData存在无效参数。  OH\_HUKS\_ERR\_CODE\_FEATURE\_NOT\_SUPPORTED 12000001：暂不支持该功能。  OH\_HUKS\_ERR\_CODE\_MISSING\_CRYPTO\_ALG\_ARGUMENT 12000002：获取密钥参数失败。  OH\_HUKS\_ERR\_CODE\_INVALID\_CRYPTO\_ALG\_ARGUMENT 12000003：密钥参数无效。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL 12000005：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_CRYPTO\_FAIL 12000006：加密引擎失败。  OH\_HUKS\_ERR\_CODE\_KEY\_AUTH\_PERMANENTLY\_INVALIDATED 12000007：认证令牌信息校验失败。  OH\_HUKS\_ERR\_CODE\_KEY\_AUTH\_VERIFY\_FAILED 12000008：认证令牌校验失败。  OH\_HUKS\_ERR\_CODE\_KEY\_AUTH\_TIME\_OUT 12000009：认证令牌超时。  OH\_HUKS\_ERR\_CODE\_ITEM\_NOT\_EXIST 12000011：密钥文件不存在，或handle不存在。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR 12000012：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_CREDENTIAL\_NOT\_EXIST 12000013：证书不存在。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY 12000014：内存不足。  OH\_HUKS\_ERR\_CODE\_DEVICE\_PASSWORD\_UNSET 12000016：需要设备密码但没有设置。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT 12000018：（API 23新增）通过访问群组标签指定的群组名无效。  OH\_HUKS\_ERR\_CODE\_EXTERNAL\_MODULE 12000020：（API 22新增）提供者或UKey内部执行失败。  OH\_HUKS\_ERR\_CODE\_PIN\_LOCKED 12000021：（API 22新增）PIN码被锁定。  OH\_HUKS\_ERR\_CODE\_PIN\_NO\_AUTH 12000023：（API 22新增）PIN码未认证通过。  OH\_HUKS\_ERR\_CODE\_BUSY 12000024：（API 22新增）提供者或UKey中的资源正在被使用。 |
 
 **参考：**
 
@@ -419,10 +385,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Huks\_FinishSession()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. struct OH_Huks_Result OH_Huks_FinishSession(const struct OH_Huks_Blob *handle, const struct OH_Huks_ParamSet *paramSet, const struct OH_Huks_Blob *inData, struct OH_Huks_Blob *outData)
+```c
+struct OH_Huks_Result OH_Huks_FinishSession(const struct OH_Huks_Blob *handle, const struct OH_Huks_ParamSet *paramSet, const struct OH_Huks_Blob *inData, struct OH_Huks_Blob *outData)
 ```
 
 **描述**
@@ -444,7 +408,7 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS = 0 ：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT = 401 ：参数handle、paramSet、inData、outData有一个无效。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR = 12000012 ：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_INVALID\_CRYPTO\_ALG\_ARGUMENT = 12000003 ：密钥参数无效。  OH\_HUKS\_ERR\_CODE\_ITEM\_NOT\_EXIST = 12000011 ：密钥文件不存在，或handle不存在。  OH\_HUKS\_ERR\_CODE\_MISSING\_CRYPTO\_ALG\_ARGUMENT = 12000002 ：获取密钥参数失败。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL = 12000005 ：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_CREDENTIAL\_NOT\_EXIST = 12000013 ：证书不存在。  OH\_HUKS\_ERR\_CODE\_CRYPTO\_FAIL = 12000006 ：加密引擎失败。  OH\_HUKS\_ERR\_CODE\_KEY\_AUTH\_VERIFY\_FAILED = 12000008 ：认证令牌校验失败。  OH\_HUKS\_ERR\_CODE\_KEY\_AUTH\_PERMANENTLY\_INVALIDATED = 12000007 ：认证令牌信息校验失败。  OH\_HUKS\_ERR\_CODE\_KEY\_AUTH\_TIME\_OUT = 12000009 ：认证令牌超时。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY = 12000014 ：内存不足。  OH\_HUKS\_ERR\_CODE\_DEVICE\_PASSWORD\_UNSET = 12000016 ：需要设备密码但没有设置。  OH\_HUKS\_ERR\_CODE\_FEATURE\_NOT\_SUPPORTED = 12000001 ：暂不支持该功能。  OH\_HUKS\_ERR\_CODE\_KEY\_ALREADY\_EXIST = 12000017 ：（API 20新增）同名密钥已存在。  OH\_HUKS\_ERR\_CODE\_EXTERNAL\_MODULE = 12000020 ：（API 22新增）提供者或Ukey内部执行失败。  OH\_HUKS\_ERR\_CODE\_PIN\_LOCKED = 12000021 ：（API 22新增）PIN码被锁定。  OH\_HUKS\_ERR\_CODE\_PIN\_NO\_AUTH = 12000023 ：（API 22新增）PIN码未认证通过。  OH\_HUKS\_ERR\_CODE\_BUSY = 12000024 ：（API 22新增）提供者或Ukey中的资源正在被使用。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT = 12000018 ：（API 23新增）通过访问群组标签指定的群组名无效。 |
+| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS 0：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT 401：参数handle、paramSet、inData、outData存在无效参数。  OH\_HUKS\_ERR\_CODE\_FEATURE\_NOT\_SUPPORTED 12000001：暂不支持该功能。  OH\_HUKS\_ERR\_CODE\_MISSING\_CRYPTO\_ALG\_ARGUMENT 12000002：获取密钥参数失败。  OH\_HUKS\_ERR\_CODE\_INVALID\_CRYPTO\_ALG\_ARGUMENT 12000003：密钥参数无效。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL 12000005：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_CRYPTO\_FAIL 12000006：加密引擎失败。  OH\_HUKS\_ERR\_CODE\_KEY\_AUTH\_PERMANENTLY\_INVALIDATED 12000007：认证令牌信息校验失败。  OH\_HUKS\_ERR\_CODE\_KEY\_AUTH\_VERIFY\_FAILED 12000008：认证令牌校验失败。  OH\_HUKS\_ERR\_CODE\_KEY\_AUTH\_TIME\_OUT 12000009：认证令牌超时。  OH\_HUKS\_ERR\_CODE\_ITEM\_NOT\_EXIST 12000011：密钥文件不存在，或handle不存在。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR 12000012：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_CREDENTIAL\_NOT\_EXIST 12000013：证书不存在。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY 12000014：内存不足。  OH\_HUKS\_ERR\_CODE\_DEVICE\_PASSWORD\_UNSET 12000016：需要设备密码但没有设置。  OH\_HUKS\_ERR\_CODE\_KEY\_ALREADY\_EXIST 12000017：（API 20新增）同名密钥已存在。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT 12000018：（API 23新增）通过访问群组标签指定的群组名无效。  OH\_HUKS\_ERR\_CODE\_EXTERNAL\_MODULE 12000020：（API 22新增）提供者或UKey内部执行失败。  OH\_HUKS\_ERR\_CODE\_PIN\_LOCKED 12000021：（API 22新增）PIN码被锁定。  OH\_HUKS\_ERR\_CODE\_PIN\_NO\_AUTH 12000023：（API 22新增）PIN码未认证通过。  OH\_HUKS\_ERR\_CODE\_BUSY 12000024：（API 22新增）提供者或UKey中的资源正在被使用。 |
 
 **参考：**
 
@@ -456,10 +420,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Huks\_AbortSession()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. struct OH_Huks_Result OH_Huks_AbortSession(const struct OH_Huks_Blob *handle, const struct OH_Huks_ParamSet *paramSet)
+```c
+struct OH_Huks_Result OH_Huks_AbortSession(const struct OH_Huks_Blob *handle, const struct OH_Huks_ParamSet *paramSet)
 ```
 
 **描述**
@@ -479,7 +441,7 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS = 0 ：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT = 401 ：参数handle、paramSet、inData、outData有一个无效。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR = 12000012 ：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_INVALID\_CRYPTO\_ALG\_ARGUMENT = 12000003 ：密钥参数无效。  OH\_HUKS\_ERR\_CODE\_ITEM\_NOT\_EXIST = 12000011 ：密钥文件不存在，或handle不存在。  OH\_HUKS\_ERR\_CODE\_MISSING\_CRYPTO\_ALG\_ARGUMENT = 12000002 ：获取密钥参数失败。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL = 12000005 ：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_CREDENTIAL\_NOT\_EXIST = 12000013 ：证书不存在。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY = 12000014 ：内存不足。  OH\_HUKS\_ERR\_CODE\_EXTERNAL\_MODULE = 12000020 ：（API 22新增）提供者或Ukey内部执行失败。  OH\_HUKS\_ERR\_CODE\_BUSY = 12000024 ：（API 22新增）提供者或Ukey中的资源正在被使用。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT = 12000018 ：（API 23新增）通过访问群组标签指定的群组名无效。 |
+| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS 0：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT 401：参数handle、paramSet存在无效参数。  OH\_HUKS\_ERR\_CODE\_MISSING\_CRYPTO\_ALG\_ARGUMENT 12000002：获取密钥参数失败。  OH\_HUKS\_ERR\_CODE\_INVALID\_CRYPTO\_ALG\_ARGUMENT 12000003：密钥参数无效。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL 12000005：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_ITEM\_NOT\_EXIST 12000011：密钥文件不存在，或handle不存在。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR 12000012：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_CREDENTIAL\_NOT\_EXIST 12000013：证书不存在。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY 12000014：内存不足。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT 12000018：（API 23新增）通过访问群组标签指定的群组名无效。  OH\_HUKS\_ERR\_CODE\_EXTERNAL\_MODULE 12000020：（API 22新增）提供者或UKey内部执行失败。  OH\_HUKS\_ERR\_CODE\_BUSY 12000024：（API 22新增）提供者或UKey中的资源正在被使用。 |
 
 **参考：**
 
@@ -491,10 +453,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Huks\_ListAliases()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. struct OH_Huks_Result OH_Huks_ListAliases(const struct OH_Huks_ParamSet *paramSet, struct OH_Huks_KeyAliasSet **outData)
+```c
+struct OH_Huks_Result OH_Huks_ListAliases(const struct OH_Huks_ParamSet *paramSet, struct OH_Huks_KeyAliasSet **outData)
 ```
 
 **描述**
@@ -508,20 +468,18 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [const struct OH\_Huks\_ParamSet](capi-hukstypeapi-oh-huks-paramset.md) \*paramSet | 获取密钥别名集需要的输入参数集（默认传空）。 |
-| [struct OH\_Huks\_KeyAliasSet](capi-hukstypeapi-oh-huks-keyaliasset.md) \*\*outData | 经过对应的密钥操作后输出的数据。 |
+| [struct OH\_Huks\_KeyAliasSet](capi-hukstypeapi-oh-huks-keyaliasset.md) \*\*outData | 获取的密钥别名集，使用之后需要使用[OH\_Huks\_FreeKeyAliasSet](capi-native-huks-param-h.md#oh_huks_freekeyaliasset)释放系统分配的内存。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS = 0 ：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT = 401 ：参数paramSet、outData有一个无效。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR = 12000012 ：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL = 12000005 ：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY = 12000014 ：内存不足。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT = 12000018 ：（API 23新增）通过访问群组标签指定的群组名无效。 |
+| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS 0：操作成功。  OH\_HUKS\_ERR\_CODE\_ILLEGAL\_ARGUMENT 401：参数paramSet、outData存在无效参数。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL 12000005：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR 12000012：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY 12000014：内存不足。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT 12000018：（API 23新增）通过访问群组标签指定的群组名无效。 |
 
 ### OH\_Huks\_WrapKey()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. struct OH_Huks_Result OH_Huks_WrapKey(const struct OH_Huks_Blob *keyAlias, const struct OH_Huks_ParamSet *paramSet, struct OH_Huks_Blob *wrappedKey)
+```c
+struct OH_Huks_Result OH_Huks_WrapKey(const struct OH_Huks_Blob *keyAlias, const struct OH_Huks_ParamSet *paramSet, struct OH_Huks_Blob *wrappedKey)
 ```
 
 **描述**
@@ -542,14 +500,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS = 0 ：操作成功。  OH\_HUKS\_ERR\_CODE\_NOT\_SUPPORTED\_API = 801 ：接口不支持。  OH\_HUKS\_ERR\_CODE\_FILE\_OPERATION\_FAIL = 12000004 ：删除或者写文件失败。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL = 12000005 ：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_CRYPTO\_FAIL = 12000011 ：密钥文件不存在。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR = 12000012 ：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY = 12000014 ：内存不足。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT = 12000018 ：密钥别名、参数集或者封装密钥不合法。 |
+| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS 0：操作成功。  OH\_HUKS\_ERR\_CODE\_NOT\_SUPPORTED\_API 801：接口不支持。  OH\_HUKS\_ERR\_CODE\_FILE\_OPERATION\_FAIL 12000004：删除或者写文件失败。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL 12000005：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_ITEM\_NOT\_EXIST 12000011：密钥文件不存在。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR 12000012：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY 12000014：内存不足。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT 12000018：密钥别名、参数集或者封装密钥不合法。 |
 
 ### OH\_Huks\_UnwrapKey()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. struct OH_Huks_Result OH_Huks_UnwrapKey(const struct OH_Huks_Blob *keyAlias, const struct OH_Huks_ParamSet *paramSet, struct OH_Huks_Blob *wrappedKey)
+```c
+struct OH_Huks_Result OH_Huks_UnwrapKey(const struct OH_Huks_Blob *keyAlias, const struct OH_Huks_ParamSet *paramSet, struct OH_Huks_Blob *wrappedKey)
 ```
 
 **描述**
@@ -570,4 +526,4 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS = 0 ：操作成功。  OH\_HUKS\_ERR\_CODE\_NOT\_SUPPORTED\_API = 801 ：接口不支持。  OH\_HUKS\_ERR\_CODE\_FILE\_OPERATION\_FAIL = 12000004 ：删除或者写文件失败。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL = 12000005 ：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR = 12000012 ：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY = 12000014 ：内存不足。  OH\_HUKS\_ERR\_CODE\_CALL\_SERVICE\_FAILED = 12000015 ：连接用户IAM失败。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT = 12000018 ：密钥别名、参数集或者封装密钥不合法。 |
+| [struct OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md) | 可能的返回码（errorCode）：  OH\_HUKS\_SUCCESS 0：操作成功。  OH\_HUKS\_ERR\_CODE\_NOT\_SUPPORTED\_API 801：接口不支持。  OH\_HUKS\_ERR\_CODE\_FILE\_OPERATION\_FAIL 12000004：删除或者写文件失败。  OH\_HUKS\_ERR\_CODE\_COMMUNICATION\_FAIL 12000005：IPC通信失败。  OH\_HUKS\_ERR\_CODE\_INTERNAL\_ERROR 12000012：设备环境或输入参数异常。  OH\_HUKS\_ERR\_CODE\_INSUFFICIENT\_MEMORY 12000014：内存不足。  OH\_HUKS\_ERR\_CODE\_CALL\_SERVICE\_FAILED 12000015：连接用户IAM失败。  OH\_HUKS\_ERR\_CODE\_INVALID\_ARGUMENT 12000018：密钥别名、参数集或者封装密钥不合法。 |

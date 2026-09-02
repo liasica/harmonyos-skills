@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-nor
 title: 单层图标处理
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 图标处理 > 单层图标处理
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:30:18+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4344a8e008c8b6c3d236c28085d234b54571efe4d6ae401c08d2a29e5c52e22f
+scraped_at: 2026-09-02T14:49:58+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:080e3d333ea656ba8e2dd9c1f5c0215180e71d3efa67c22c6b36a83cd00115e4
 ---
 
 ## 场景介绍
@@ -20,147 +20,147 @@ content_hash: sha256:4344a8e008c8b6c3d236c28085d234b54571efe4d6ae401c08d2a29e5c5
 
 ## 开发步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/5t-IRBAASci2Uxs4_kIasw/zh-cn_image_0000002589324699.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/zRgzd11aR_G8-x0TNFlmug/zh-cn_image_0000002706834226.png)
 
 1. 在entry/src/main/resources/base/media下，配置一张图片资源normal\_icon.png。
 2. 将图标处理的相关类添加至工程。
 
-   ```
-   1. import { LayeredDrawableDescriptor, DrawableDescriptor } from '@kit.ArkUI';
-   2. import { hdsDrawable } from '@kit.UIDesignKit';
-   3. import { image } from '@kit.ImageKit';
-   4. import { BusinessError } from '@kit.BasicServicesKit';
-   5. import { resourceManager } from '@kit.LocalizationKit';
-   6. import { common } from '@kit.AbilityKit';
+   ```typescript
+   import { LayeredDrawableDescriptor, DrawableDescriptor } from '@kit.ArkUI';
+   import { hdsDrawable } from '@kit.UIDesignKit';
+   import { image } from '@kit.ImageKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { resourceManager } from '@kit.LocalizationKit';
+   import { common } from '@kit.AbilityKit';
    ```
 3. 简单配置页面的布局，调用[单层图标接口](../harmonyos-references/ui-design-hdsdrawable.md#hdsdrawablegethdsicon)获取处理后的图标信息，也可以调用[异步批量处理接口](../harmonyos-references/ui-design-hdsdrawable.md#hdsdrawablegethdsicons)。
 
-   ```
-   1. @Entry
-   2. @Component
-   3. struct Index{
-   4. bundleName: string = 'com.example.uidesignkit';
-   5. resManager: resourceManager.ResourceManager | undefined = undefined;
-   6. layeredDrawableDescriptor: LayeredDrawableDescriptor | undefined = undefined;
-   7. drawableDescriptor: DrawableDescriptor | undefined = undefined;
-   8. @State iconsResult: Array<hdsDrawable.ProcessedIcon> = [];
+   ```typescript
+   @Entry
+   @Component
+   struct Index{
+     bundleName: string = 'com.example.uidesignsample';
+     resManager: resourceManager.ResourceManager | undefined = undefined;
+     layeredDrawableDescriptor: LayeredDrawableDescriptor | undefined = undefined;
+     drawableDescriptor: DrawableDescriptor | undefined = undefined;
+     @State iconsResult: Array<hdsDrawable.ProcessedIcon> = [];
 
-   10. build() {
-   11. Column() {
-   12. Column() {
-   13. Text('getHdsIcon')
-   14. .fontWeight(FontWeight.Bold)
-   15. .fontSize(16)
-   16. .margin(5)
+     build() {
+       Column() {
+         Column() {
+           Text('getHdsIcon')
+             .fontWeight(FontWeight.Bold)
+             .fontSize(16)
+             .margin(5)
 
-   18. Image(this.getHdsIcon())
-   19. .width(48)
-   20. .height(48)
-   21. }
-   22. .margin(20)
+           Image(this.getHdsIcon())
+             .width(48)
+             .height(48)
+         }
+         .margin(20)
 
-   24. Text('getHdsIcons')
-   25. .fontWeight(FontWeight.Bold)
-   26. .fontSize(16)
-   27. .margin(5)
+         Text('getHdsIcons')
+           .fontWeight(FontWeight.Bold)
+           .fontSize(16)
+           .margin(5)
 
-   29. List() {
-   30. ForEach(this.iconsResult,
-   31. (item: hdsDrawable.ProcessedIcon, index?: number) => {
-   32. ListItem() {
-   33. Column() {
-   34. Text(item.bundleName)
-   35. .fontWeight(FontWeight.Medium)
-   36. .fontSize(16)
-   37. .margin(5)
+         List() {
+           ForEach(this.iconsResult,
+             (item: hdsDrawable.ProcessedIcon, index?: number) => {
+               ListItem() {
+                 Column() {
+                   Text(item.bundleName)
+                     .fontWeight(FontWeight.Medium)
+                     .fontSize(16)
+                     .margin(5)
 
-   39. Image(item.pixelMap)
-   40. .width(48)
-   41. .height(48)
-   42. }
-   43. .margin(15)
-   44. }
-   45. .width('100%')
-   46. }, (item: string) => item.toString())
-   47. }
-   48. .scrollBar(BarState.On)
-   49. .height('60%')
-   50. }
-   51. .height('100%')
-   52. .width('100%')
-   53. }
+                   Image(item.pixelMap)
+                     .width(48)
+                     .height(48)
+                 }
+                 .margin(15)
+               }
+               .width('100%')
+             }, (item: hdsDrawable.ProcessedIcon) => item.toString())
+         }
+         .scrollBar(BarState.On)
+         .height('60%')
+       }
+       .height('100%')
+       .width('100%')
+     }
 
-   55. aboutToAppear(): void {
-   56. // 获取资源管理器
-   57. this.resManager = (this.getUIContext().getHostContext() as common.UIAbilityContext)?.resourceManager;
-   58. if (!this.resManager) {
-   59. return;
-   60. }
+     aboutToAppear(): void {
+       // 获取资源管理器
+       this.resManager = (this.getUIContext().getHostContext() as common.UIAbilityContext)?.resourceManager;
+       if (!this.resManager) {
+         return;
+       }
 
-   62. // 通过资源管理获取分层图标信息
-   63. this.layeredDrawableDescriptor = (this.resManager.getDrawableDescriptor($r('app.media.drawable').id)) as LayeredDrawableDescriptor;
+       // 通过资源管理获取分层图标信息
+       this.layeredDrawableDescriptor = (this.resManager.getDrawableDescriptor($r('app.media.drawable').id)) as LayeredDrawableDescriptor;
 
-   65. // 通过资源管理获取单层图标信息
-   66. this.drawableDescriptor =
-   67. (this.resManager?.getDrawableDescriptor($r('app.media.normal_icon').id)) as DrawableDescriptor;
+       // 通过资源管理获取单层图标信息
+       this.drawableDescriptor =
+         (this.resManager?.getDrawableDescriptor($r('app.media.normal_icon').id)) as DrawableDescriptor;
 
-   69. this.getHdsIcons();
-   70. }
+       this.getHdsIcons();
+     }
 
-   72. private getHdsIcon(): image.PixelMap | null {
-   73. try {
-   74. // 调用HDS单层图标接口
-   75. return hdsDrawable.getHdsIcon(this.bundleName, this.drawableDescriptor?.getPixelMap(), 48,
-   76. this.layeredDrawableDescriptor?.getMask().getPixelMap(), true);
-   77. } catch (err) {
-   78. let message = (err as BusinessError).message;
-   79. let code = (err as BusinessError).code;
-   80. console.error(`getHdsIcon failed, code: ${code}, message: ${message}`);
-   81. return null;
-   82. }
-   83. }
+     private getHdsIcon(): image.PixelMap | null {
+       try {
+         // 调用HDS单层图标接口
+         return hdsDrawable.getHdsIcon(this.bundleName, this.drawableDescriptor?.getPixelMap(), 48,
+           this.layeredDrawableDescriptor?.getMask().getPixelMap(), true);
+       } catch (err) {
+         let message = (err as BusinessError).message;
+         let code = (err as BusinessError).code;
+         console.error(`getHdsIcon failed, code: ${code}, message: ${message}`);
+         return null;
+       }
+     }
 
-   85. getHdsIcons(): void {
-   86. if (!this.drawableDescriptor) {
-   87. console.error(`getHdsIcons drawableDescriptor is undefined.`);
-   88. return;
-   89. }
+     getHdsIcons(): void {
+       if (!this.drawableDescriptor) {
+         console.error(`getHdsIcons drawableDescriptor is undefined.`);
+         return;
+       }
 
-   91. if (!this.layeredDrawableDescriptor) {
-   92. console.error(`getHdsIcons layeredDrawableDescriptor is undefined.`);
-   93. return;
-   94. }
+       if (!this.layeredDrawableDescriptor) {
+         console.error(`getHdsIcons layeredDrawableDescriptor is undefined.`);
+         return;
+       }
 
-   96. // 构造批量接口传参
-   97. let options: hdsDrawable.Options = {
-   98. size: 48,
-   99. hasBorder: true,
-   100. parallelNumber: 4
-   101. };
+       // 构造批量接口传参
+       let options: hdsDrawable.Options = {
+         size: 48,
+         hasBorder: true,
+         parallelNumber: 4
+       };
 
-   103. let icons: Array<hdsDrawable.Icon> = [];
-   104. for (let i = 0; i < 10; i++) {
-   105. icons.push({
-   106. bundleName: `${this.bundleName}-${i}`,
-   107. pixelMap: this.drawableDescriptor.getPixelMap()
-   108. })
-   109. }
+       let icons: hdsDrawable.Icon[] = [];
+       for (let i = 0; i < 10; i++) {
+         icons.push({
+           bundleName: `${this.bundleName}-${i}`,
+           pixelMap: this.drawableDescriptor.getPixelMap()
+         })
+       }
 
-   111. try {
-   112. // 调用HDS单层批量接口处理图标
-   113. hdsDrawable.getHdsIcons(icons, this.layeredDrawableDescriptor.getMask().getPixelMap(), options)
-   114. .then((data: Array<hdsDrawable.ProcessedIcon>) => {
-   115. console.info(`getHdsIcons data size: ${data.length}`);
-   116. this.iconsResult = data;
-   117. })
-   118. .catch((err: BusinessError) => {
-   119. console.error(`getHdsIcons error, code: ${err.code}, msg: ${err.message}`);
-   120. });
-   121. } catch (err) {
-   122. let message = (err as BusinessError).message;
-   123. let code = (err as BusinessError).code;
-   124. console.error(`getHdsIcons callback failed: ${message}, code: ${code}`);
-   125. }
-   126. }
-   127. }
+       try {
+         // 调用HDS单层批量接口处理图标
+         hdsDrawable.getHdsIcons(icons, this.layeredDrawableDescriptor.getMask().getPixelMap(), options)
+           .then((data: hdsDrawable.ProcessedIcon[]) => {
+             console.info(`getHdsIcons data size: ${data.length}`);
+             this.iconsResult = data;
+           })
+           .catch((err: BusinessError) => {
+             console.error(`getHdsIcons error, code: ${err.code}, msg: ${err.message}`);
+           });
+       } catch (err) {
+         let message = (err as BusinessError).message;
+         let code = (err as BusinessError).code;
+         console.error(`getHdsIcons callback failed: ${message}, code: ${code}`);
+       }
+     }
+   }
    ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-infer
 title: INFER_FORMAT_FUNC_REG
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > INFER_FORMAT_FUNC_REG
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:18+08:00
+scraped_at: 2026-09-02T14:50:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ab637f2953c3a5279590e8f90becf0070c091e22fb5fb626f136a8dd93302ac2
+content_hash: sha256:da4e91fb5f8891bdbd64effe4e15400b6afecaf1b1f98d07bb5b411b3a92ed9d
 ---
 
 ## 函数功能
@@ -16,9 +16,9 @@ GE会在整图的Shape与Dtype推导前后分别调用一次整图的InferFormat
 
 ## 函数原型
 
-```
-1. #define INFER_FORMAT_FUNC_REG(op_name, x) \
-2. __INFER_FORMAT_FUNC_REG_IMPL__(op_name, INFER_FORMAT_FUNC(op_name, x), __COUNTER__)
+```cpp
+#define INFER_FORMAT_FUNC_REG(op_name, x) \
+__INFER_FORMAT_FUNC_REG_IMPL__(op_name, INFER_FORMAT_FUNC(op_name, x), __COUNTER__)
 ```
 
 ## 参数说明
@@ -42,6 +42,6 @@ GE会在整图的Shape与Dtype推导前后分别调用一次整图的InferFormat
 
 ## 调用示例
 
-```
-1. INFER_FORMAT_FUNC_REG(Transpose, TransposeInferFormat);
+```cpp
+INFER_FORMAT_FUNC_REG(Transpose, TransposeInferFormat);
 ```

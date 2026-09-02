@@ -3,24 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: 滚动组件通用接口
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > 滚动组件通用接口
 category: harmonyos-references
-scraped_at: 2026-04-29T13:51:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b4e65372b2afff62906272a4551e092c9b36430f4ff605fbe4e4bf724ab17032
+scraped_at: 2026-09-02T15:01:00+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1f01aff8d98e7e305e0ad4b1f71793067083fc2892ac51cfefc14e4bfb30b7d9
 ---
 
-滚动组件通用属性和事件目前只支持[List](ts-container-list.md)、[Grid](ts-container-grid.md)、[Scroll](ts-container-scroll.md)和[WaterFlow](ts-container-waterflow.md)组件。
+滚动组件通用接口目前只支持[List](ts-container-list.md)、[Grid](ts-container-grid.md)、[Scroll](ts-container-scroll.md)和[WaterFlow](ts-container-waterflow.md)组件，提供滚动条样式、边缘滑动效果、嵌套滚动、摩擦系数控制、内容裁剪等通用属性，以及滚动开始、停止、到达边界等事件回调。开发者可通过这些接口统一管理各类滚动组件的行为，适用于列表展示、网格布局、瀑布流排列和页面滚动等场景。
 
-说明
+**说明** 
 
 本模块从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
 ### scrollBar11+
-
-PhonePC/2in1TabletTVWearable
 
 scrollBar(barState: BarState): T
 
@@ -28,13 +24,15 @@ scrollBar(barState: BarState): T
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| barState | [BarState](ts-appendix-enums.md#barstate) | 是 | 滚动条状态。  默认值：List、Grid、Scroll组件默认BarState.Auto，WaterFlow组件默认BarState.Off。 |
+| barState | [BarState](ts-appendix-enums.md#barstate) | 是 | 滚动条状态。BarState.Off表示不显示滚动条；BarState.Auto表示按需显示滚动条；BarState.On表示常驻显示滚动条。  默认值：List、Grid、Scroll组件默认BarState.Auto，WaterFlow组件默认BarState.Off。 |
 
 **返回值：**
 
@@ -44,13 +42,13 @@ scrollBar(barState: BarState): T
 
 ### scrollBarColor11+
 
-PhonePC/2in1TabletTVWearable
-
 scrollBarColor(color: Color | number | string): T
 
 设置滚动条的颜色。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -58,7 +56,7 @@ scrollBarColor(color: Color | number | string): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| color | [Color](ts-appendix-enums.md#color) | number | string | 是 | 滚动条的颜色。  默认值：'#182431'（40%不透明度）  number为HEX格式颜色，支持rgb或者argb，示例：0xffffff。string为rgb或者argb格式颜色，示例：'#ffffff'。 |
+| color | [Color](ts-appendix-enums.md#color) | number | string | 是 | 滚动条的颜色。  儿童智能表的默认值颜色为'#ffffff'，表示白色（100%不透明度）。其他设备默认值为'#182431'，表示深蓝灰色（40%不透明度）。  number为HEX格式颜色，支持rgb或者argb，示例：0xffffff。string为rgb或者argb格式颜色，示例：'#ffffff'。 |
 
 **返回值：**
 
@@ -68,13 +66,13 @@ scrollBarColor(color: Color | number | string): T
 
 ### scrollBarColor22+
 
-PhonePC/2in1TabletTVWearable
-
 scrollBarColor(color: Color | number | string | Resource): T
 
 设置滚动条的颜色。与[scrollBarColor11+](ts-container-scrollable-common.md#scrollbarcolor11)相比，color参数开始支持Resource类型。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -82,7 +80,7 @@ scrollBarColor(color: Color | number | string | Resource): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| color | [Color](ts-appendix-enums.md#color) | number | string | [Resource](ts-types.md#resource) | 是 | 滚动条的颜色。  默认值：'#182431'（40%不透明度）  number为HEX格式颜色，支持rgb或者argb，示例：0xffffff。string为rgb或者argb格式颜色，示例：'#ffffff'。 |
+| color | [Color](ts-appendix-enums.md#color) | number | string | [Resource](ts-types.md#resource) | 是 | 滚动条的颜色。  儿童智能表的默认值颜色为'#ffffff'，表示白色（100%不透明度）。其他设备默认值为'#182431'，表示深蓝灰色（40%不透明度）。  number为HEX格式颜色，支持rgb或者argb，示例：0xffffff。string为rgb或者argb格式颜色，示例：'#ffffff'。 |
 
 **返回值：**
 
@@ -92,13 +90,13 @@ scrollBarColor(color: Color | number | string | Resource): T
 
 ### scrollBarWidth11+
 
-PhonePC/2in1TabletTVWearable
-
 scrollBarWidth(value: number | string): T
 
-设置滚动条的宽度，不支持百分比设置。宽度设置后，滚动条正常状态和按压状态宽度均为滚动条的宽度值。如果滚动条的宽度超过滚动组件主轴方向的高度，则滚动条的宽度会变为默认值。
+设置滚动条的宽度，不支持百分比设置。宽度设置后，滚动条正常状态和按压状态宽度均为滚动条的宽度值。如果滚动条的宽度超过滚动组件主轴方向的可视尺寸，则滚动条的宽度会变为默认值4vp。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -106,7 +104,67 @@ scrollBarWidth(value: number | string): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | string | 是 | 滚动条的宽度。  默认值：4  单位：vp  取值范围：设置为小于0的值时，按默认值处理。设置为0时，不显示滚动条。 |
+| value | number | string | 是 | 滚动条的宽度。  默认值：4  单位：vp  取值范围：[0, +∞)。设置为小于0的值时，按默认值处理，儿童智能表则恢复至默认值5vp。设置为0时，不显示滚动条。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回当前滚动组件。 |
+
+### scrollBarWidth
+
+scrollBarWidth(value: number | string | Resource): T
+
+设置滚动条的宽度，不支持百分比设置。宽度设置后，滚动条正常状态和按压状态宽度均为滚动条的宽度值。如果滚动条的宽度超过滚动组件主轴方向的可视尺寸，则滚动条的宽度会变为默认值4vp，支持Resource资源类型。
+
+未通过该接口设置时，滚动条的宽度为4vp。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | string | [Resource](ts-types.md#resource) | 是 | 滚动条的宽度。  单位：vp  取值范围：[0, +∞)。设置为小于0的值时，按4vp处理，儿童智能表则恢复至5vp。设置为0时，不显示滚动条。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回当前滚动组件。 |
+
+### scrollBarHeight
+
+scrollBarHeight(height: LengthMetrics | undefined): T
+
+设置滚动条滑轨高度。
+
+未设置该接口时，滚动条滑轨高度默认自适应滚动组件高度，儿童智能表的默认高度为37vp。
+
+**说明** 
+
+应确保scrollBarHeight与[scrollBarMargin](ts-container-scrollable-common.md#scrollbarmargin20)的设定值之和不超过滚动组件高度，否则滚动条可能无法正常显示。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| height | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | undefined | 是 | 滚动条滑轨高度。  值必须大于等于0。设置为undefined或小于0时，自适应滚动组件高度，儿童智能表则恢复至默认值37vp。设置为0时，不显示滚动条。 |
 
 **返回值：**
 
@@ -116,13 +174,13 @@ scrollBarWidth(value: number | string): T
 
 ### edgeEffect11+
 
-PhonePC/2in1TabletTVWearable
-
 edgeEffect(edgeEffect: EdgeEffect, options?: EdgeEffectOptions): T
 
 设置边缘滑动效果。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -131,7 +189,7 @@ edgeEffect(edgeEffect: EdgeEffect, options?: EdgeEffectOptions): T
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | edgeEffect | [EdgeEffect](ts-appendix-enums.md#edgeeffect) | 是 | 滚动组件的边缘滑动效果，支持弹簧效果和阴影效果。  默认值：Grid、Scroll、WaterFlow组件默认EdgeEffect.None，List组件默认EdgeEffect.Spring。 |
-| options | [EdgeEffectOptions](ts-container-scrollable-common.md#edgeeffectoptions11对象说明) | 否 | 组件内容大小小于组件自身时是否开启滑动效果，以及设置边缘效果生效的边缘。设置为{ alwaysEnabled: true }会开启滑动效果，{ alwaysEnabled: false }不开启。  默认值：  List、Grid、WaterFlow组件默认{ alwaysEnabled: false, EffectEdge: EffectEdge.START | EffectEdge.END }，Scroll组件默认{ alwaysEnabled: true, EffectEdge: EffectEdge.START | EffectEdge.END }。 |
+| options | [EdgeEffectOptions](ts-container-scrollable-common.md#edgeeffectoptions11对象说明) | 否 | 组件内容大小小于组件自身时是否开启滑动效果。从API version 18开始，支持设置边缘效果生效的边缘。设置为{ alwaysEnabled: true }会开启滑动效果，{ alwaysEnabled: false }不开启。  默认值：  List、Grid、WaterFlow组件默认{ alwaysEnabled: false }，Scroll组件默认{ alwaysEnabled: true }。从API version 18开始，默认增加effectEdge字段，取值为EffectEdge.START | EffectEdge.END。 |
 
 **返回值：**
 
@@ -141,13 +199,13 @@ edgeEffect(edgeEffect: EdgeEffect, options?: EdgeEffectOptions): T
 
 ### nestedScroll11+
 
-PhonePC/2in1TabletTVWearable
-
 nestedScroll(value: NestedScrollOptions): T
 
 设置前后两个方向的嵌套滚动模式，实现与父组件的滚动联动。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -165,13 +223,13 @@ nestedScroll(value: NestedScrollOptions): T
 
 ### enableScrollInteraction11+
 
-PhonePC/2in1TabletTVWearable
-
 enableScrollInteraction(value: boolean): T
 
 设置是否支持滚动手势。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -179,7 +237,7 @@ enableScrollInteraction(value: boolean): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | boolean | 是 | 是否支持滚动手势。设置为true时可以通过手指或者鼠标滚动，设置为false时无法通过手指或者鼠标滚动，但不影响控制器[Scroller](ts-container-scroll.md#scroller)的滚动接口。  默认值：true |
+| value | boolean | 是 | 是否支持手指或鼠标滚动手势。设置为true时支持，设置为false时不支持，但不影响控制器[Scroller](ts-container-scroll.md#scroller)的滚动接口和[backToTop](ts-container-scrollable-common.md#backtotop15)属性。  默认值：true |
 
 **返回值：**
 
@@ -189,13 +247,13 @@ enableScrollInteraction(value: boolean): T
 
 ### friction11+
 
-PhonePC/2in1TabletTVWearable
-
 friction(value: number | Resource): T
 
-设置摩擦系数，手动划动滚动区域时生效，仅影响惯性滚动过程，对惯性滚动过程中的链式效果有间接影响。设置为小于等于0的值时，按默认值处理。
+设置摩擦系数，手动划动滚动区域时生效，仅影响惯性滚动过程，对惯性滚动过程中嵌套滚动组件间的联动效果（如List组件的链式动效[chainAnimation](ts-container-list.md#chainanimation)）有间接影响，适用于需要调整惯性滚动减速快慢的场景。设置为小于等于0的值时，按默认值处理。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -213,13 +271,11 @@ friction(value: number | Resource): T
 
 ### flingSpeedLimit11+
 
-PhonePC/2in1TabletTVWearable
-
 flingSpeedLimit(speedLimit: number): T
 
 限制跟手滑动结束后，惯性动效开始时的最大初始速度。
 
-说明
+**说明** 
 
 * 惯性动效是指手指快速滑动并离开屏幕后，滚动内容继续滚动并逐渐减速停止的效果，也称为惯性滚动。
 * 惯性动效触发场景包括：惯性手指快速滑动并离手时，或调用[fling](ts-container-scroll.md#fling12)方法。
@@ -227,6 +283,8 @@ flingSpeedLimit(speedLimit: number): T
 * 如果惯性动效通过[fling](ts-container-scroll.md#fling12)方法触发，则flingSpeedLimit设置不生效。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -244,21 +302,23 @@ flingSpeedLimit(speedLimit: number): T
 
 ### fadingEdge14+
 
-PhonePC/2in1TabletTVWearable
-
 fadingEdge(enabled: Optional<boolean>, options?: FadingEdgeOptions): T
 
 设置是否开启边缘渐隐效果及设置边缘渐隐长度。
 
-说明
+**说明** 
 
 fadingEdge是通过设置[overlay](ts-universal-attributes-overlay.md#overlay)属性和[blendMode](ts-universal-attributes-image-effect.md#blendmode11)属性（参数值为BlendMode.SRC\_OVER，BlendApplyType.OFFSCREEN）实现的。当fadingEdge生效时，会覆盖原组件的.overlay()属性和.blendMode()属性，并将导致当前组件和其子组件需要截屏的接口无法截取到正确的画面。需要截屏的接口有：[blur](ts-universal-attributes-image-effect.md#blur)、[linearGradientBlur](ts-universal-attributes-image-effect.md#lineargradientblur12)、[brightness](ts-universal-attributes-image-effect.md#brightness)、[visualEffect](ts-universal-attributes-filter-effect.md#visualeffect)、[grayscale](ts-universal-attributes-image-effect.md#grayscale)、[saturate](ts-universal-attributes-image-effect.md#saturate)、[contrast](ts-universal-attributes-image-effect.md#contrast)、[invert](ts-universal-attributes-image-effect.md#invert)、[sepia](ts-universal-attributes-image-effect.md#sepia)、[hueRotate](ts-universal-attributes-image-effect.md#huerotate)、[colorBlend](ts-universal-attributes-image-effect.md#colorblend)、[lightUpEffect](ts-universal-attributes-image-effect.md#lightupeffect12)、[pixelStretchEffect](ts-universal-attributes-image-effect.md#pixelstretcheffect12)、[blendMode](ts-universal-attributes-image-effect.md#blendmode11)、[backgroundBrightness](ts-universal-attributes-background.md#backgroundbrightness12)。
 
 fadingEdge生效时，建议不在设置fadingEdge属性的组件上设置[background](ts-universal-attributes-background.md#background10)相关属性，会影响渐隐的显示效果。
 
+fadingEdge生效时，建议不在设置fadingEdge属性的组件以及其子组件上设置[systemMaterial](ts-universal-attributes-image-effect.md#systemmaterial)相关属性，会影响系统材质的显示效果，导致材质效果与预期效果不一致。
+
 fadingEdge生效时，设置fadingEdge属性的组件会裁剪到边界，在该组件上设置[clip](ts-universal-attributes-sharp-clipping.md#clip12)属性为false不生效。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -277,13 +337,15 @@ fadingEdge生效时，设置fadingEdge属性的组件会裁剪到边界，在该
 
 ### clipContent14+
 
-PhonePC/2in1TabletTVWearable
-
 clipContent(clip: ContentClipMode | RectShape): T
 
 设置滚动容器的内容层裁剪区域。
 
+从API版本26.0.0开始，内容层裁剪区域内的子组件支持正常显示。API版本26.0.0以前的版本，当[List](ts-container-list.md)组件的内容层裁剪区域大于组件自身时，完全在组件区域外但在裁剪区域内的子组件默认不会显示。若需要显示，可将组件的cachedCount属性的show参数设置为true。但由于cachedCount属性设置的预加载子组件仅在空闲时隙执行，在组件大小变化、数据更新等场景下可能存在更新不及时导致闪烁的问题。
+
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -301,8 +363,6 @@ clipContent(clip: ContentClipMode | RectShape): T
 
 ### backToTop15+
 
-PhonePC/2in1TabletTVWearable
-
 backToTop(backToTop: boolean): T
 
 设置滚动组件是否支持点击状态栏回到顶部。
@@ -310,6 +370,8 @@ backToTop(backToTop: boolean): T
 支持当前页面的滚动组件收到点击状态栏事件后，通过动画回到顶部。点击状态栏后，后台应用的滚动组件不受影响，不做回到顶部的动作。本属性不受[enableScrollInteraction](ts-container-scrollable-common.md#enablescrollinteraction11)设置的影响。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -327,13 +389,13 @@ backToTop(backToTop: boolean): T
 
 ### scrollBarMargin20+
 
-PhonePC/2in1TabletTVWearable
-
 scrollBarMargin(margin: ScrollBarMargin): T
 
-设置滚动条的边距。边距是在滚动条避让圆角距离的基础上计算的，如果滚动条区域小于滚动条的最小长度，则不显示滚动条。
+设置滚动条的边距。边距是在滚动条避让滚动组件圆角区域距离的基础上计算的，如果滚动条区域小于滚动条的最小长度，则不显示滚动条。如果设置了本属性，则[autoAdjustScrollBarMargin](ts-container-scrollable-common.md#autoadjustscrollbarmargin)的自动调整边距功能不生效。应注意确保[scrollBarHeight](ts-container-scrollable-common.md#scrollbarheight)与本属性的设定值之和不超过滚动组件高度，否则滚动条可能无法正常显示。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -341,7 +403,35 @@ scrollBarMargin(margin: ScrollBarMargin): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| margin | [ScrollBarMargin](ts-types.md#scrollbarmargin20对象说明) | 是 | 滚动条起始、末尾边距。  默认值：{start: LengthMetrics.vp(0), end: LengthMetrics.vp(0)} |
+| margin | [ScrollBarMargin](ts-types.md#scrollbarmargin20对象说明) | 是 | 滚动条起始、末尾边距。  儿童智能表默认值：{start: LengthMetrics.vp(42), end: LengthMetrics.vp(0)}  其他设备默认值：{start: LengthMetrics.vp(0), end: LengthMetrics.vp(0)} |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回当前滚动组件。 |
+
+### autoAdjustScrollBarMargin
+
+autoAdjustScrollBarMargin(enable: boolean | undefined): T
+
+设置滚动条是否自动调整边距。默认不会自动调整边距。
+
+打开滚动条自动边距调整后，滚动条滚动方向上会避让组件[padding](ts-universal-attributes-size.md#padding)、[safeAreaPadding](ts-universal-attributes-size.md#safeareapadding14)、[contentStartOffset](ts-container-scrollable-common.md#contentstartoffset22)/[contentEndOffset](ts-container-scrollable-common.md#contentendoffset22)区域。如果设置了[scrollBarMargin](ts-container-scrollable-common.md#scrollbarmargin20)属性，则自动调整边距不生效。当[padding](ts-universal-attributes-size.md#padding)、[safeAreaPadding](ts-universal-attributes-size.md#safeareapadding14)、[contentStartOffset](ts-container-scrollable-common.md#contentstartoffset22)、[contentEndOffset](ts-container-scrollable-common.md#contentendoffset22)在水平方向上的总和大于组件的宽度，或在垂直方向上的总和大于组件的高度时，滚动条不显示。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enable | boolean | undefined | 是 | 是否自动调整边距。  true：自动调整边距。  false：不自动调整边距。  undefined：不自动调整边距。 |
 
 **返回值：**
 
@@ -351,8 +441,6 @@ scrollBarMargin(margin: ScrollBarMargin): T
 
 ### digitalCrownSensitivity18+
 
-PhonePC/2in1TabletTVWearable
-
 digitalCrownSensitivity(sensitivity: Optional<CrownSensitivity>): T
 
 设置表冠响应事件灵敏度。
@@ -361,13 +449,15 @@ digitalCrownSensitivity(sensitivity: Optional<CrownSensitivity>): T
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| sensitivity | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[CrownSensitivity](ts-appendix-enums.md#crownsensitivity18)> | 是 | 表冠响应灵敏度。  默认值：CrownSensitivity.MEDIUM，响应速度适中。 |
+| sensitivity | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[CrownSensitivity](ts-appendix-enums.md#crownsensitivity18)> | 是 | 表冠响应灵敏度。CrownSensitivity.LOW表示低灵敏度，滚动响应较慢；CrownSensitivity.MEDIUM表示中灵敏度，滚动响应适中；CrownSensitivity.HIGH表示高灵敏度，滚动响应较快。  默认值：CrownSensitivity.MEDIUM，响应速度适中。 |
 
 **返回值：**
 
@@ -377,8 +467,6 @@ digitalCrownSensitivity(sensitivity: Optional<CrownSensitivity>): T
 
 ### contentStartOffset22+
 
-PhonePC/2in1TabletTVWearable
-
 contentStartOffset(offset: number | Resource): T
 
 设置内容区域起始偏移量。滚动组件滚动到起始位置时，内容与组件显示区域边界保留指定距离。
@@ -387,13 +475,15 @@ contentStartOffset + contentEndOffset超过滚动组件内容区长度后content
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| offset | number | [Resource](ts-types.md#resource) | 是 | 内容区域起始偏移量。  默认值：0  单位：vp  设置异常值如负数、非数字Resource时，按默认值处理。 |
+| offset | number | [Resource](ts-types.md#resource) | 是 | 内容区域起始偏移量。  默认值：0  单位：vp  取值范围：[0, +∞)  设置异常值如负数、非数字Resource时，按默认值处理。 |
 
 **返回值：**
 
@@ -403,8 +493,6 @@ contentStartOffset + contentEndOffset超过滚动组件内容区长度后content
 
 ### contentEndOffset22+
 
-PhonePC/2in1TabletTVWearable
-
 contentEndOffset(offset: number | Resource): T
 
 设置内容区末尾偏移量。滚动组件滚动到末尾位置时，内容与组件显示区域边界保留指定距离。
@@ -413,13 +501,41 @@ contentStartOffset + contentEndOffset超过滚动组件内容区长度后content
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| offset | number | [Resource](ts-types.md#resource) | 是 | 内容区末尾偏移量。  默认值：0  单位：vp  设置异常值如负数、非数字Resource时，按默认值处理。 |
+| offset | number | [Resource](ts-types.md#resource) | 是 | 内容区末尾偏移量。  默认值：0  单位：vp  取值范围：[0, +∞)  设置异常值如负数、非数字Resource时，按默认值处理。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回当前滚动组件。 |
+
+### enableScrollWithMouse
+
+enableScrollWithMouse(enabled: boolean | undefined): T
+
+设置是否支持鼠标左键按下拖动滚动。未通过该接口设置时，默认不支持鼠标左键按下拖动滚动。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enabled | boolean | undefined | 是 | 是否支持鼠标左键按下拖动滚动。  true：支持鼠标左键按下拖动滚动。  false：不支持鼠标左键按下拖动滚动。  undefined：不支持鼠标左键按下拖动滚动。 |
 
 **返回值：**
 
@@ -429,11 +545,7 @@ contentStartOffset + contentEndOffset超过滚动组件内容区长度后content
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 ### onReachStart11+
-
-PhonePC/2in1TabletTVWearable
 
 onReachStart(event: () => void): T
 
@@ -442,6 +554,8 @@ onReachStart(event: () => void): T
 滚动组件初始化时会触发一次，滚动到起始位置时触发一次。边缘效果为弹簧效果时，划动经过起始位置时触发一次，回弹回起始位置时再触发一次。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -459,15 +573,15 @@ onReachStart(event: () => void): T
 
 ### onReachEnd11+
 
-PhonePC/2in1TabletTVWearable
-
 onReachEnd(event: () => void): T
 
 滚动组件到达末尾位置时触发。
 
-滚动组件边缘效果为弹簧效果时，划动经过末尾位置时触发一次，回弹回末尾位置时再触发一次。
+滚动组件初始化时，若已处于末尾位置则会触发一次。边缘效果为弹簧效果时，划动经过末尾位置时触发一次，回弹回末尾位置时再触发一次。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -485,11 +599,9 @@ onReachEnd(event: () => void): T
 
 ### onScrollStart11+
 
-PhonePC/2in1TabletTVWearable
-
 onScrollStart(event: () => void): T
 
-滚动开始时触发。手指拖动滚动组件或拖动滚动组件的滚动条触发的滚动开始时，会触发该事件。使用[Scroller](ts-container-scroll.md#scroller)滚动控制器触发的带动画的滚动，动画开始时会触发该事件。
+滚动开始时触发。手指拖动滚动组件或其滚动条触发的滚动开始时，会触发该事件。使用[Scroller](ts-container-scroll.md#scroller)滚动控制器触发的带动画的滚动，动画开始时会触发该事件。
 
 触发该事件的条件：
 
@@ -497,6 +609,8 @@ onScrollStart(event: () => void): T
 2. 通过滚动控制器API接口调用后开始，带过渡动效。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -514,11 +628,9 @@ onScrollStart(event: () => void): T
 
 ### onScrollStop11+
 
-PhonePC/2in1TabletTVWearable
-
 onScrollStop(event: () => void): T
 
-滚动停止时触发。手拖动滚动组件或拖动滚动组件的滚动条触发的滚动，手离开屏幕后滚动停止时会触发该事件。使用[Scroller](ts-container-scroll.md#scroller)滚动控制器触发的带动画的滚动，动画停止时会触发该事件。
+滚动停止时触发。手指拖动滚动组件或其滚动条触发的滚动，手离开屏幕后滚动停止时会触发该事件。使用[Scroller](ts-container-scroll.md#scroller)滚动控制器触发的带动画的滚动，动画停止时会触发该事件。
 
 触发该事件的条件：
 
@@ -526,6 +638,8 @@ onScrollStop(event: () => void): T
 2. 通过调用带过渡动画的滚动控制器API接口，动画停止时。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -543,20 +657,20 @@ onScrollStop(event: () => void): T
 
 ### onWillScroll12+
 
-PhonePC/2in1TabletTVWearable
-
 onWillScroll(handler: Optional<OnWillScrollCallback>): T
 
-滚动事件回调，滚动组件滚动前触发。
+滚动事件回调，滚动组件滚动前触发。与[onDidScroll](ts-container-scrollable-common.md#ondidscroll12)的对比：onWillScroll在滚动发生前触发，可通过返回值指定将要滚动的偏移量，适用于需要拦截或自定义滚动行为的场景；onDidScroll在滚动发生时触发，返回当前帧的实际滚动偏移量和滑动状态，适用于仅需监听滚动过程的场景。两者可同时使用。
 
-回调当前帧将要滚动的偏移量和当前滚动状态和滚动操作来源，其中回调的偏移量为计算得到的将要滚动的偏移量值，并非最终实际滚动偏移。可以通过该回调返回值指定滚动组件将要滚动的偏移。[Scroll](ts-container-scroll.md)组件的[onWillScroll](ts-container-scroll.md#onwillscroll12)接口的参数类型是[ScrollOnWillScrollCallback](ts-container-scroll.md#scrollonwillscrollcallback12)。
+回调当前帧将要滚动的偏移量、当前滚动状态及滚动操作来源，其中回调的偏移量为计算得到的将要滚动的偏移量值，并非最终实际滚动偏移。可以通过该回调返回值指定滚动组件将要滚动的偏移。[Scroll](ts-container-scroll.md)组件的[onWillScroll](ts-container-scroll.md#onwillscroll12)接口的参数类型是[ScrollOnWillScrollCallback](ts-container-scroll.md#scrollonwillscrollcallback12)。
 
-说明
+**说明** 
 
 * 从API version 14开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 * 调用不带动画的[ScrollEdge](ts-container-scroll.md#scrolledge)和[ScrollToIndex](ts-container-scroll.md#scrolltoindex)时，不触发onWillScroll。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -574,19 +688,19 @@ onWillScroll(handler: Optional<OnWillScrollCallback>): T
 
 ### onDidScroll12+
 
-PhonePC/2in1TabletTVWearable
-
 onDidScroll(handler: OnScrollCallback): T
 
 滚动组件滑动时触发，返回当前帧滑动的偏移量和当前滑动状态。
 
-说明
+**说明** 
 
 从API version 14开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -604,17 +718,17 @@ onDidScroll(handler: OnScrollCallback): T
 
 ### onScroll(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 onScroll(event: (scrollOffset: number, scrollState: ScrollState) => void): T
 
 滚动组件滑动时触发。
 
-说明
+**说明** 
 
-从API version 11开始支持，从API version 12开始废弃，[List](ts-container-list.md)、[Grid](ts-container-grid.md)和[WaterFlow](ts-container-waterflow.md)组件的onScroll事件在布局之后触发，建议使用[onDidScroll](ts-container-scrollable-common.md#ondidscroll12)替代；[Scroll](ts-container-scroll.md)组件的onScroll事件在布局之前触发，建议使用[onWillScroll](ts-container-scrollable-common.md#onwillscroll12)替代。
+从API version 11开始支持，从API version 12开始废弃。[List](ts-container-list.md)、[Grid](ts-container-grid.md)和[WaterFlow](ts-container-waterflow.md)组件的onScroll事件在布局之后触发，建议使用[onDidScroll](ts-container-scrollable-common.md#ondidscroll12)替代；[Scroll](ts-container-scroll.md)组件的onScroll事件在布局之前触发，建议使用[onWillScroll](ts-container-scrollable-common.md#onwillscroll12)替代。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -632,8 +746,6 @@ onScroll(event: (scrollOffset: number, scrollState: ScrollState) => void): T
 
 ### onWillStartDragging21+
 
-PhonePC/2in1TabletTVWearable
-
 onWillStartDragging(handler: VoidCallback): T
 
 滚动组件开始拖动时触发。
@@ -641,6 +753,8 @@ onWillStartDragging(handler: VoidCallback): T
 **卡片能力：** 从API version 21开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 21开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -658,8 +772,6 @@ onWillStartDragging(handler: VoidCallback): T
 
 ### onWillStopDragging20+
 
-PhonePC/2in1TabletTVWearable
-
 onWillStopDragging(handler: OnWillStopDraggingCallback): T
 
 滚动组件划动离手时触发，使用鼠标滚轮划动时不会触发。
@@ -667,6 +779,8 @@ onWillStopDragging(handler: OnWillStopDraggingCallback): T
 **卡片能力：** 从API version 20开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -684,15 +798,15 @@ onWillStopDragging(handler: OnWillStopDraggingCallback): T
 
 ### onDidStopDragging21+
 
-PhonePC/2in1TabletTVWearable
-
 onDidStopDragging(handler: OnDidStopDraggingCallback): T
 
-滚动组件结束拖拽时触发。
+滚动组件结束拖动时触发。
 
 **卡片能力：** 从API version 21开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 21开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -710,13 +824,11 @@ onDidStopDragging(handler: OnDidStopDraggingCallback): T
 
 ### onWillStartFling21+
 
-PhonePC/2in1TabletTVWearable
-
 onWillStartFling(handler: VoidCallback): T
 
 滚动组件将要开始惯性动效时触发。
 
-说明
+**说明** 
 
 * 如果惯性动效通过[fling](ts-container-scroll.md#fling12)方法触发，则onWillStartFling不触发。
 * 惯性动效的触发场景参考[flingSpeedLimit](ts-container-scrollable-common.md#flingspeedlimit11)方法的说明。
@@ -724,6 +836,8 @@ onWillStartFling(handler: VoidCallback): T
 **卡片能力：** 从API version 21开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 21开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -741,8 +855,6 @@ onWillStartFling(handler: VoidCallback): T
 
 ### onDidStopFling21+
 
-PhonePC/2in1TabletTVWearable
-
 onDidStopFling(handler: VoidCallback): T
 
 滚动组件结束惯性动效后触发，进行中的惯性动效被新的滑动事件打断时不触发。
@@ -750,6 +862,8 @@ onDidStopFling(handler: VoidCallback): T
 **卡片能力：** 从API version 21开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 21开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -767,8 +881,6 @@ onDidStopFling(handler: VoidCallback): T
 
 ## ItemDragInfo对象说明
 
-PhonePC/2in1TabletTVWearable
-
 拖拽点信息对象。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -782,24 +894,24 @@ PhonePC/2in1TabletTVWearable
 
 ## NestedScrollOptions10+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 [nestedScroll](ts-container-scrollable-common.md#nestedscroll11)属性参数对象。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| scrollForward | [NestedScrollMode](ts-appendix-enums.md#nestedscrollmode10) | 否 | 否 | 滚动组件往末尾端滚动时的嵌套滚动选项。 |
-| scrollBackward | [NestedScrollMode](ts-appendix-enums.md#nestedscrollmode10) | 否 | 否 | 滚动组件往起始端滚动时的嵌套滚动选项。 |
+| scrollForward | [NestedScrollMode](ts-appendix-enums.md#nestedscrollmode10) | 否 | 否 | 滚动组件往末尾端滚动时的嵌套滚动选项。NestedScrollMode.SELF\_ONLY表示仅自身滚动，不与父组件联动；NestedScrollMode.SELF\_FIRST表示自身先滚动，自身滚动到边缘后父组件滚动；NestedScrollMode.PARENT\_FIRST表示父组件先滚动，父组件滚动到边缘后自身滚动。 |
+| scrollBackward | [NestedScrollMode](ts-appendix-enums.md#nestedscrollmode10) | 否 | 否 | 滚动组件往起始端滚动时的嵌套滚动选项。NestedScrollMode.SELF\_ONLY表示仅自身滚动，不与父组件联动；NestedScrollMode.SELF\_FIRST表示自身先滚动，自身滚动到边缘后父组件滚动；NestedScrollMode.PARENT\_FIRST表示父组件先滚动，父组件滚动到边缘后自身滚动。 |
 
 ## EdgeEffectOptions11+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 [edgeEffect](ts-container-scrollable-common.md#edgeeffect11)属性参数对象。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -810,42 +922,40 @@ PhonePC/2in1TabletTVWearable
 
 ## FadingEdgeOptions14+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 [fadingEdge](ts-container-scrollable-common.md#fadingedge14)属性边缘渐隐参数对象。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| fadingEdgeLength | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 设置边缘渐隐长度。 |
+| fadingEdgeLength | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 设置边缘渐隐长度。默认值为32vp，设置小于0的值或undefined或不设置则取默认值。设置的长度超过容器高度的一半时，渐隐长度取容器高度的一半。 |
 
 ## EditModeOptions23+对象说明
-
-PhonePC/2in1TabletTVWearable
 
 List/Grid组件编辑模式选项属性参数对象。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-**元服务API：** 从API version 23开始，该接口支持在元服务中使用。
-
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| enableGatherSelectedItemsAnimation | boolean | 否 | 是 | 是否启用多选聚拢动画。设置true时启用聚拢动画，设置为false时关闭聚拢动画。  只有GridItem或ListItem上设置了[bindContextMenu](ts-universal-attributes-menu.md#bindcontextmenu8)且responseType设置为[ResponseType](ts-appendix-enums.md#responsetype8).LongPress、[preview](ts-universal-attributes-menu.md#contextmenuoptions10)参数设置为MenuPreviewMode.IMAGE或CustomBuilder时会显示多选聚拢动画。  如果GridItem或ListItem上设置了[拖拽事件](ts-universal-events-drag-drop.md)，是否聚拢以[dragPreviewOptions](ts-universal-attributes-drag-drop.md#dragpreviewoptions11)设置为准。  默认值：false |
-| onGetPreviewBadge | [OnGetPreviewBadgeCallback](ts-container-scrollable-common.md#ongetpreviewbadgecallback23) | 否 | 是 | 即将启动多选长按聚拢动画时，触发用于获取选中数量的回调。  缺省时用Grid或List显示范围内选中item的数量作为多选长按聚拢动画后菜单预览图的角标。 |
+| enableGatherSelectedItemsAnimation | boolean | 否 | 是 | 是否启用多选聚拢动画。设置true时启用聚拢动画，设置为false时关闭聚拢动画。  只有GridItem或ListItem上设置了[bindContextMenu](ts-universal-attributes-menu.md#bindcontextmenu8)且responseType设置为[ResponseType](ts-appendix-enums.md#responsetype8).LongPress、[preview](ts-universal-attributes-menu.md#contextmenuoptions10)参数设置为MenuPreviewMode.IMAGE或CustomBuilder时会显示多选聚拢动画。  如果GridItem或ListItem上设置了[拖拽事件](ts-universal-events-drag-drop.md)，是否聚拢以[dragPreviewOptions](ts-universal-attributes-drag-drop.md#dragpreviewoptions11)设置为准。  默认值：false  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
+| onGetPreviewBadge | [OnGetPreviewBadgeCallback](ts-container-scrollable-common.md#ongetpreviewbadgecallback23) | 否 | 是 | 即将启动多选长按聚拢动画时，触发用于获取选中数量的回调。  缺省时用Grid或List显示范围内选中item的数量作为多选长按聚拢动画后菜单预览图的角标。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
+| useDefaultMultiSelectStyle | boolean | 否 | 是 | 是否使用默认多选样式。  true表示GridItem或ListItem进入多选状态后显示勾选框；false表示进入多选状态后无默认样式。  默认值：true  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| enableTwoFingerMultiSelect | boolean | 否 | 是 | 是否开启双指滑动多选。  true表示双指滑动可以进入编辑模式并进行多选，只有List/Grid使用[enableEditMode](ts-container-grid.md#enableeditmode)双向绑定或设置[onEditModeChange](ts-container-grid.md#oneditmodechange)事件回调才生效；false表示双指滑动不可进行多选。  默认值：true  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
 
 ## EffectEdge18+枚举说明
-
-PhonePC/2in1TabletTVWearable
 
 表示当前边缘效果要生效的边缘。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -856,17 +966,17 @@ PhonePC/2in1TabletTVWearable
 
 ## ContentClipMode14+枚举说明
 
-PhonePC/2in1TabletTVWearable
-
 表示滚动容器的内容裁剪模式。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 下图是组件配置了边距属性后的示意图，可理解每种枚举对应的裁剪区域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/kcbPVpplTFWYXLdA2D_o-A/zh-cn_image_0000002589326049.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/5o1m06pRSW6SsPgKK1UjSA/zh-cn_image_0000002706675876.png)
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -876,13 +986,13 @@ PhonePC/2in1TabletTVWearable
 
 ## OnWillScrollCallback12+
 
-PhonePC/2in1TabletTVWearable
-
 type OnWillScrollCallback = (scrollOffset: number, scrollState: ScrollState, scrollSource: ScrollSource) => void | ScrollResult
 
 滚动组件滑动前触发的回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -902,8 +1012,6 @@ type OnWillScrollCallback = (scrollOffset: number, scrollState: ScrollState, scr
 
 ## OnScrollCallback12+
 
-PhonePC/2in1TabletTVWearable
-
 type OnScrollCallback = (scrollOffset: number, scrollState: ScrollState) => void
 
 滚动组件滑动时触发的回调。
@@ -911,6 +1019,8 @@ type OnScrollCallback = (scrollOffset: number, scrollState: ScrollState) => void
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -922,8 +1032,6 @@ type OnScrollCallback = (scrollOffset: number, scrollState: ScrollState) => void
 | scrollState | [ScrollState](ts-container-list.md#scrollstate枚举说明) | 是 | 当前滑动状态。 |
 
 ## OnItemDragStartCallback23+
-
-PhonePC/2in1TabletTVWearable
 
 type OnItemDragStartCallback = (event: ItemDragInfo, itemIndex: number) => CustomBuilder
 
@@ -948,8 +1056,6 @@ type OnItemDragStartCallback = (event: ItemDragInfo, itemIndex: number) => Custo
 
 ## OnGetPreviewBadgeCallback23+
 
-PhonePC/2in1TabletTVWearable
-
 type OnGetPreviewBadgeCallback = () => boolean | number
 
 即将启动多选长按聚拢动画时，触发用于获取选中数量的回调。
@@ -968,11 +1074,11 @@ type OnGetPreviewBadgeCallback = () => boolean | number
 
 ## ScrollResult12+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 [OnWillScrollCallback](ts-container-scrollable-common.md#onwillscrollcallback12)返回值对象。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -982,27 +1088,27 @@ PhonePC/2in1TabletTVWearable
 
 ## ChildrenMainSize12+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 维护List组件或ListItemGroup组件的子组件在主轴方向的大小信息，仅支持一对一绑定到List组件或ListItemGroup组件。
 
-说明
+**说明** 
 
 * 提供的主轴方向大小信息必须与子组件实际在主轴方向的大小一致，子组件在主轴方向大小变化或者增删子组件时都必须通过ChildrenMainSize对象方法通知List组件或ListItemGroup组件。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ### constructor12+
-
-PhonePC/2in1TabletTVWearable
 
 constructor(childDefaultSize: number)
 
 ChildrenMainSize有参构造函数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1022,13 +1128,13 @@ ChildrenMainSize有参构造函数。
 
 ### childDefaultSize12+
 
-PhonePC/2in1TabletTVWearable
-
 set childDefaultSize(value: number)
 
 修改子组件在主轴方向的默认大小。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1062,13 +1168,13 @@ get childDefaultSize(): number
 
 ### splice12+
 
-PhonePC/2in1TabletTVWearable
-
 splice(start: number, deleteCount?: number, childrenSize?: Array<number>): void
 
 批量增删改子组件在主轴方向的大小信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1088,22 +1194,22 @@ splice(start: number, deleteCount?: number, childrenSize?: Array<number>): void
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
 
-说明
+**说明** 
 
 * 如果仅使用start参数，表示删除索引值start及之后的子组件的大小信息。
 * 如果仅使用start和deleteCount参数，表示删除索引值start开始的deleteCount数量的子组件的大小信息。一般在删除子组件时使用。
-* 如果使用3个参数，表示删除索引值start开始的deleteCount数量的子组件的大小信息，再在start位置插入childrenSize中所有的大小信息。一般在增加子组件或者批量更新子组件主轴方向大小的时候使用，如果仅是增加子组件，deleteCount为0，childrenSize的元素数量和增加子组件的个数应该相等；如果仅是批量更新子组件主轴方向的大小，childrenSize的元素数量应该和deleteCount相等，即为批量更新的数量。
+* 如果使用3个参数，表示删除索引值start开始的deleteCount数量的子组件的大小信息，再在start位置插入childrenSize中所有的大小信息。一般在增加子组件或批量更新子组件主轴方向大小时使用。如果仅是增加子组件，deleteCount应为0，childrenSize的元素数量应与增加子组件的个数相等；如果仅是批量更新子组件主轴方向的大小，childrenSize的元素数量应与deleteCount相等。
 * 如果想要通知某个子组件的大小为默认大小，childrenSize中对应的值不应该给一个有限的非负值，而应该给NaN，任意负值等能被处理成默认大小的值。
 
 ### update12+
-
-PhonePC/2in1TabletTVWearable
 
 update(index: number, childSize: number): void
 
 修改指定索引值对应的子组件的主轴方向的大小信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1124,21 +1230,19 @@ update(index: number, childSize: number): void
 
 ## UIScrollableCommonEvent19+
 
-PhonePC/2in1TabletTVWearable
-
 用于设置滚动事件回调。
 
 ### setOnReachStart19+
-
-PhonePC/2in1TabletTVWearable
 
 setOnReachStart(callback: Callback<void> | undefined): void
 
 设置[onReachStart](ts-container-scrollable-common.md#onreachstart11)事件的回调。
 
-方法入参为undefined的时候，重置对应的事件回调。
+方法入参为undefined时，会重置事件回调。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1150,8 +1254,6 @@ setOnReachStart(callback: Callback<void> | undefined): void
 
 ### setOnReachEnd19+
 
-PhonePC/2in1TabletTVWearable
-
 setOnReachEnd(callback: Callback<void> | undefined): void
 
 设置[onReachEnd](ts-container-scrollable-common.md#onreachend11)事件的回调。
@@ -1159,6 +1261,8 @@ setOnReachEnd(callback: Callback<void> | undefined): void
 方法入参为undefined时，会重置事件回调。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1170,8 +1274,6 @@ setOnReachEnd(callback: Callback<void> | undefined): void
 
 ### setOnScrollStart19+
 
-PhonePC/2in1TabletTVWearable
-
 setOnScrollStart(callback: Callback<void> | undefined): void
 
 设置[onScrollStart](ts-container-scrollable-common.md#onscrollstart11)事件的回调。
@@ -1179,6 +1281,8 @@ setOnScrollStart(callback: Callback<void> | undefined): void
 方法入参为undefined时，会重置事件回调。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1190,8 +1294,6 @@ setOnScrollStart(callback: Callback<void> | undefined): void
 
 ### setOnScrollStop19+
 
-PhonePC/2in1TabletTVWearable
-
 setOnScrollStop(callback: Callback<void> | undefined): void
 
 设置[onScrollStop](ts-container-scrollable-common.md#onscrollstop11)事件的回调。
@@ -1199,6 +1301,8 @@ setOnScrollStop(callback: Callback<void> | undefined): void
 方法入参为undefined时，会重置事件回调。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1210,8 +1314,6 @@ setOnScrollStop(callback: Callback<void> | undefined): void
 
 ### setOnScrollFrameBegin19+
 
-PhonePC/2in1TabletTVWearable
-
 setOnScrollFrameBegin(callback: OnScrollFrameBeginCallback | undefined): void
 
 设置[onScrollFrameBegin](ts-container-scroll.md#onscrollframebegin9)事件的回调。
@@ -1219,6 +1321,8 @@ setOnScrollFrameBegin(callback: OnScrollFrameBeginCallback | undefined): void
 方法入参为undefined时，会重置事件回调。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1230,8 +1334,6 @@ setOnScrollFrameBegin(callback: OnScrollFrameBeginCallback | undefined): void
 
 ## OnWillStopDraggingCallback20+
 
-PhonePC/2in1TabletTVWearable
-
 type OnWillStopDraggingCallback = (velocity: number) => void
 
 滚动组件划动离手时触发的回调。
@@ -1239,6 +1341,8 @@ type OnWillStopDraggingCallback = (velocity: number) => void
 **卡片能力：** 从API version 20开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1250,8 +1354,6 @@ type OnWillStopDraggingCallback = (velocity: number) => void
 
 ## OnDidStopDraggingCallback21+
 
-PhonePC/2in1TabletTVWearable
-
 type OnDidStopDraggingCallback = (willFling: boolean) => void
 
 滚动组件在结束拖拽时触发的回调。
@@ -1259,6 +1361,8 @@ type OnDidStopDraggingCallback = (willFling: boolean) => void
 **卡片能力：** 从API version 21开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 21开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1268,238 +1372,262 @@ type OnDidStopDraggingCallback = (willFling: boolean) => void
 | --- | --- | --- | --- |
 | willFling | boolean | 是 | 结束拖拽后是否会有惯性动效。返回true代表拖拽结束后有惯性动效，返回false代表没有惯性动效。 |
 
-## 示例
+## OnVisibleIndexesChangeCallback
 
-PhonePC/2in1TabletTVWearable
+type OnVisibleIndexesChangeCallback = (start: number, end: number) => void
+
+懒加载布局容器[LazyColumnLayout](ts-container-lazycolumnlayout.md)、[LazyVGridLayout](ts-container-lazyvgridlayout.md)、[LazyVWaterFlowLayout](ts-container-lazyvwaterflowlayout.md)所显示的子组件索引发生变化时的回调类型。
+
+**说明** 
+
+* 当懒加载布局容器没有子组件时，start和end都返回-1。
+* 当懒加载布局容器在可视区域内无子组件时，start和end都返回-1。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| start | number | 是 | 可视区域起始位置的索引值。  取值范围：[0, 子节点总数-1]，当没有子节点或所有子节点都在可视区域外时，返回-1。 |
+| end | number | 是 | 可视区域终止位置的索引值。  取值范围：[0, 子节点总数-1]，当没有子节点或所有子节点都在可视区域外时，返回-1。 |
+
+## 示例
 
 ### 示例1（支持滚动手势）
 
 该示例通过设置[enableScrollInteraction](ts-container-scrollable-common.md#enablescrollinteraction11)属性，实现了使用手势滚动纵向列表，并在当前显示界面发生改变时回调索引。
 
-ListDataSource说明及完整代码参考[示例1添加滚动事件](ts-container-list.md#示例1添加滚动事件)。
+ListDataSource说明及完整代码参考[示例1（添加滚动事件）](ts-container-list.md#示例1添加滚动事件)。
 
+```ts
+// xxx.ets
+import { ListDataSource } from './ListDataSource';
+
+@Entry
+@Component
+struct ListExample {
+  private arr: ListDataSource = new ListDataSource([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+
+  build() {
+    Column() {
+      List({ space: 20, initialIndex: 0 }) {
+        LazyForEach(this.arr, (item: number) => {
+          ListItem() {
+            Text('' + item)
+              .width('100%')
+              .height(100)
+              .fontSize(16)
+              .textAlign(TextAlign.Center)
+              .borderRadius(10)
+              .backgroundColor(0xFFFFFF)
+          }
+        }, (item: number) => item.toString())
+      }
+      .enableScrollInteraction(true)
+      .listDirection(Axis.Vertical) // 排列方向
+      .scrollBar(BarState.Off)
+      .friction(0.6)
+      .divider({
+        strokeWidth: 2,
+        color: 0xFFFFFF,
+        startMargin: 20,
+        endMargin: 20
+      }) // 每行之间的分界线
+      .edgeEffect(EdgeEffect.Spring) // 边缘效果设置为Spring
+      .onScrollIndex((firstIndex: number, lastIndex: number, centerIndex: number) => {
+        console.info('first' + firstIndex);
+        console.info('last' + lastIndex);
+        console.info('center' + centerIndex);
+      })
+      .onScrollVisibleContentChange((start: VisibleListContentInfo, end: VisibleListContentInfo) => {
+        console.info(' start index: ' + start.index +
+          ' start item group area: ' + start.itemGroupArea +
+          ' start index in group: ' + start.itemIndexInGroup);
+        console.info(' end index: ' + end.index +
+          ' end item group area: ' + end.itemGroupArea +
+          ' end index in group: ' + end.itemIndexInGroup);
+      })
+      .onDidScroll((scrollOffset: number, scrollState: ScrollState) => {
+        console.info(`onDidScroll scrollState = ` + scrollState + `, scrollOffset = ` + scrollOffset);
+      })
+      .width('90%')
+    }
+    .width('100%')
+    .height('100%')
+    .backgroundColor(0xDCDCDC)
+    .padding({ top: 5 })
+  }
+}
 ```
-1. // xxx.ets
-2. import { ListDataSource } from './ListDataSource';
 
-4. @Entry
-5. @Component
-6. struct ListExample {
-7. private arr: ListDataSource = new ListDataSource([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
-
-9. build() {
-10. Column() {
-11. List({ space: 20, initialIndex: 0 }) {
-12. LazyForEach(this.arr, (item: number) => {
-13. ListItem() {
-14. Text('' + item)
-15. .width('100%')
-16. .height(100)
-17. .fontSize(16)
-18. .textAlign(TextAlign.Center)
-19. .borderRadius(10)
-20. .backgroundColor(0xFFFFFF)
-21. }
-22. }, (item: number) => item.toString())
-23. }
-24. .enableScrollInteraction(true)
-25. .listDirection(Axis.Vertical) // 排列方向
-26. .scrollBar(BarState.Off)
-27. .friction(0.6)
-28. .divider({
-29. strokeWidth: 2,
-30. color: 0xFFFFFF,
-31. startMargin: 20,
-32. endMargin: 20
-33. }) // 每行之间的分界线
-34. .edgeEffect(EdgeEffect.Spring) // 边缘效果设置为Spring
-35. .onScrollIndex((firstIndex: number, lastIndex: number, centerIndex: number) => {
-36. console.info('first' + firstIndex);
-37. console.info('last' + lastIndex);
-38. console.info('center' + centerIndex);
-39. })
-40. .onScrollVisibleContentChange((start: VisibleListContentInfo, end: VisibleListContentInfo) => {
-41. console.info(' start index: ' + start.index +
-42. ' start item group area: ' + start.itemGroupArea +
-43. ' start index in group: ' + start.itemIndexInGroup);
-44. console.info(' end index: ' + end.index +
-45. ' end item group area: ' + end.itemGroupArea +
-46. ' end index in group: ' + end.itemIndexInGroup);
-47. })
-48. .onDidScroll((scrollOffset: number, scrollState: ScrollState) => {
-49. console.info(`onScroll scrollState = ScrollState` + scrollState + `, scrollOffset = ` + scrollOffset);
-50. })
-51. .width('90%')
-52. }
-53. .width('100%')
-54. .height('100%')
-55. .backgroundColor(0xDCDCDC)
-56. .padding({ top: 5 })
-57. }
-58. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/9Ns2LhdlTASKi0MUgBSy9A/zh-cn_image_0000002558606468.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/UXzf0hgZTYux0mspOd6IDg/zh-cn_image_0000002706835754.gif)
 
 ### 示例2（设置边缘渐隐）
 
 该示例通过设置[fadingEdge](ts-container-scrollable-common.md#fadingedge14)属性，实现了[List](ts-container-list.md)组件开启边缘渐隐效果并设置边缘渐隐长度。
 
-ListDataSource说明及完整代码参考[示例1添加滚动事件](ts-container-list.md#示例1添加滚动事件)。
+ListDataSource说明及完整代码参考[示例1（添加滚动事件）](ts-container-list.md#示例1添加滚动事件)。
 
+```ts
+// xxx.ets
+import { LengthMetrics } from '@kit.ArkUI';
+import { ListDataSource } from './ListDataSource';
+
+@Entry
+@Component
+struct ListExample {
+  private arr: ListDataSource = new ListDataSource([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
+  scrollerForList: Scroller = new Scroller();
+
+  build() {
+    Column() {
+
+      List({ space: 20, initialIndex: 0, scroller: this.scrollerForList }) {
+        LazyForEach(this.arr, (item: number) => {
+          ListItem() {
+            Text('' + item)
+              .width('100%')
+              .height(100)
+              .fontSize(16)
+              .textAlign(TextAlign.Center)
+              .borderRadius(10)
+              .backgroundColor(0xFFFFFF)
+          }
+        }, (item: number) => item.toString())
+      }
+      .fadingEdge(true, { fadingEdgeLength: LengthMetrics.vp(80) })
+    }
+    .width('100%')
+    .height('100%')
+    .backgroundColor(0xDCDCDC)
+    .padding({ top: 5 })
+  }
+}
 ```
-1. // xxx.ets
-2. import { LengthMetrics } from '@kit.ArkUI';
-3. import { ListDataSource } from './ListDataSource';
 
-5. @Entry
-6. @Component
-7. struct ListExample {
-8. private arr: ListDataSource = new ListDataSource([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
-9. scrollerForList: Scroller = new Scroller();
-
-11. build() {
-12. Column() {
-
-14. List({ space: 20, initialIndex: 0, scroller: this.scrollerForList }) {
-15. LazyForEach(this.arr, (item: number) => {
-16. ListItem() {
-17. Text('' + item)
-18. .width('100%')
-19. .height(100)
-20. .fontSize(16)
-21. .textAlign(TextAlign.Center)
-22. .borderRadius(10)
-23. .backgroundColor(0xFFFFFF)
-24. }
-25. }, (item: number) => item.toString())
-26. }
-27. .fadingEdge(true, { fadingEdgeLength: LengthMetrics.vp(80) })
-28. }
-29. .width('100%')
-30. .height('100%')
-31. .backgroundColor(0xDCDCDC)
-32. .padding({ top: 5 })
-33. }
-34. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/j8OxEY_5Rt6M7rYT74kjDw/zh-cn_image_0000002589245939.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/XGGEm7XSRp2jwMNy5e2UNQ/zh-cn_image_0000002706675818.gif)
 
 ### 示例3（设置裁剪区域）
 
 该示例通过设置[clipContent](ts-container-scrollable-common.md#clipcontent14)属性，改变组件的内容层裁剪区域。
 
+```ts
+// xxx.ets
+import { LengthMetrics } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct ScrollExample {
+  scroller: Scroller = new Scroller();
+  private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  @State clipContent: ContentClipMode | RectShape | undefined = undefined;
+
+  build() {
+    Column() {
+      Scroll(this.scroller) {
+        Column() {
+          ForEach(this.arr, (item: number) => {
+            Text(item.toString())
+              .width(300)
+              .height(80)
+              .fontSize(20)
+              .textAlign(TextAlign.Center)
+              .backgroundColor(Color.Grey)
+          }, (item: number) => item.toString())
+        }
+      }
+      .backgroundColor(Color.Blue)
+      .clipContent(this.clipContent)
+      .scrollBar(BarState.Off)
+      .friction(0.6)
+      .width(300)
+      .height('50%')
+      .padding(10)
+      .safeAreaPadding(LengthMetrics.vp(10))
+      .initialOffset({ yOffset: 80 })
+      .margin({ top: 20 })
+
+      Button('clipContent SAFE_AREA')
+        .onClick(() => {
+          this.clipContent = ContentClipMode.SAFE_AREA;
+        }).margin({ top: 30 })
+
+      Button('clipContent BOUNDARY')
+        .onClick(() => {
+          this.clipContent = ContentClipMode.BOUNDARY;
+        }).margin({ top: 35 })
+
+      Button('clipContent CONTENT_ONLY')
+        .onClick(() => {
+          this.clipContent = ContentClipMode.CONTENT_ONLY;
+        }).margin({ top: 40 })
+    }.width('100%').height('100%').backgroundColor(0xDCDCDC)
+  }
+}
 ```
-1. // xxx.ets
-2. import { LengthMetrics } from '@kit.ArkUI';
 
-4. @Entry
-5. @Component
-6. struct ScrollExample {
-7. scroller: Scroller = new Scroller();
-8. private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-9. @State clipContent: ContentClipMode | RectShape | undefined = undefined;
-
-11. build() {
-12. Column() {
-13. Scroll(this.scroller) {
-14. Column() {
-15. ForEach(this.arr, (item: number) => {
-16. Text(item.toString())
-17. .width(300)
-18. .height(80)
-19. .fontSize(20)
-20. .textAlign(TextAlign.Center)
-21. .backgroundColor(Color.Grey)
-22. }, (item: string) => item)
-23. }
-24. }
-25. .backgroundColor(Color.Blue)
-26. .clipContent(this.clipContent)
-27. .scrollBar(BarState.Off)
-28. .friction(0.6)
-29. .width(300)
-30. .height('50%')
-31. .padding(10)
-32. .safeAreaPadding(LengthMetrics.vp(10))
-33. .initialOffset({ yOffset: 80 })
-34. .margin({ top: 20 })
-
-36. Button('clipContent SAFE_AREA')
-37. .onClick(() => {
-38. this.clipContent = ContentClipMode.SAFE_AREA;
-39. }).margin({ top: 30 })
-
-41. Button('clipContent BOUNDARY')
-42. .onClick(() => {
-43. this.clipContent = ContentClipMode.BOUNDARY;
-44. }).margin({ top: 35 })
-
-46. Button('clipContent CONTENT_ONLY')
-47. .onClick(() => {
-48. this.clipContent = ContentClipMode.CONTENT_ONLY;
-49. }).margin({ top: 40 })
-50. }.width('100%').height('100%').backgroundColor(0xDCDCDC)
-51. }
-52. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/G-WpYzqAQJKC3w0gmiYnPw/zh-cn_image_0000002589245991.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/De50WebVSXGsd9y6glowRg/zh-cn_image_0000002736434963.gif)
 
 ### 示例4（设置滚动条边距）
 
 从API version 20开始，该示例通过设置[scrollBarMargin](ts-container-scrollable-common.md#scrollbarmargin20)属性，调整滚动组件的滚动条边距。
 
-ListDataSource说明及完整代码参考[示例1添加滚动事件](ts-container-list.md#示例1添加滚动事件)。
+ListDataSource说明及完整代码参考[示例1（添加滚动事件）](ts-container-list.md#示例1添加滚动事件)。
 
+```ts
+// xxx.ets
+import { ListDataSource } from './ListDataSource';
+import { LengthMetrics } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct ListExample {
+  arr: ListDataSource = new ListDataSource([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+  @State scrollBarMargin: ScrollBarMargin = { start: LengthMetrics.vp(0), end: LengthMetrics.vp(0) };
+
+  build() {
+    Stack({ alignContent: Alignment.TopStart }) {
+      Column() {
+        List({ space: 20, initialIndex: 0 }) {
+          LazyForEach(this.arr, (item: number) => {
+            ListItem() {
+              Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) {
+                Text('' + item)
+                  .width('100%')
+                  .height(80)
+                  .fontSize(20)
+                  .textAlign(TextAlign.Center)
+                  .borderRadius(10)
+                  .backgroundColor(Color.White)
+                  .flexShrink(1)
+              }
+            }
+          }, (item: number) => item.toString())
+        }.width('90%')
+        .friction(0.6)
+        .scrollBar(BarState.On)
+        .scrollBarMargin(this.scrollBarMargin)
+      }.width('100%')
+
+      Button('scrollBarMargin')
+        .onClick(() => {
+          this.scrollBarMargin = { start: LengthMetrics.vp(45), end: LengthMetrics.vp(70) };
+        }).margin({ top: 5, left: 20 })
+
+      Button('scrollBarMargin2')
+        .onClick(() => {
+          this.scrollBarMargin = { start: LengthMetrics.vp(15), end: LengthMetrics.vp(100) };
+        }).margin({ top: 200, left: 20 })
+    }.width('100%').height('100%').backgroundColor(0xDCDCDC).padding({ top: 5 })
+  }
+}
 ```
-1. // xxx.ets
-2. import { ListDataSource } from './ListDataSource';
-3. import { LengthMetrics } from '@kit.ArkUI';
 
-5. @Entry
-6. @Component
-7. struct ListExample {
-8. arr: ListDataSource = new ListDataSource([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
-9. @State scrollBarMargin: ScrollBarMargin = { start: LengthMetrics.vp(0), end: LengthMetrics.vp(0) };
-
-11. build() {
-12. Stack({ alignContent: Alignment.TopStart }) {
-13. Column() {
-14. List({ space: 20, initialIndex: 0 }) {
-15. LazyForEach(this.arr, (item: number, index?: number) => {
-16. ListItem() {
-17. Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) {
-18. Text('' + item)
-19. .width('100%')
-20. .height(80)
-21. .fontSize(20)
-22. .textAlign(TextAlign.Center)
-23. .borderRadius(10)
-24. .backgroundColor(Color.White)
-25. .flexShrink(1)
-26. }
-27. }
-28. }, (item: number) => item.toString())
-29. }.width('90%')
-30. .friction(0.6)
-31. .scrollBar(BarState.On)
-32. .scrollBarMargin(this.scrollBarMargin)
-33. }.width('100%')
-
-35. Button('scrollBarMargin')
-36. .onClick(() => {
-37. this.scrollBarMargin = { start: LengthMetrics.vp(45), end: LengthMetrics.vp(70) };
-38. }).margin({ top: 5, left: 20 })
-
-40. Button('scrollBarMargin2')
-41. .onClick(() => {
-42. this.scrollBarMargin = { start: LengthMetrics.vp(15), end: LengthMetrics.vp(100) };
-43. }).margin({ top: 200, left: 20 })
-44. }.width('100%').height('100%').backgroundColor(0xDCDCDC).padding({ top: 5 })
-45. }
-46. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/myJuzSoXS6GK-KiP_vR6hw/zh-cn_image_0000002558766182.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/2PT2no2mQQ6j0PjcR6sx9g/zh-cn_image_0000002706835816.gif)

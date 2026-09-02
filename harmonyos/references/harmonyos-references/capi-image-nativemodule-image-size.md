@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: Image_Size
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 结构体 > Image_Size
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:27+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:a509b0a9975430866e3019c28f9adac81958a88d649b79e6caa1542f72235b45
+scraped_at: 2026-09-02T15:02:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c4a6baab34c7ab496b7cd9f12e3a27fce4dcba21f59f13f2075e39f37f43968c
 ---
 
-```
-1. struct Image_Size {...}
+```c
+struct Image_Size {...}
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 图像大小结构体。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

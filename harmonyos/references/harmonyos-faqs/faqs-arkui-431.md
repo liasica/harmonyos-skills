@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-431
 title: Tabs是否支持懒加载
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > Tabs是否支持懒加载
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Tabs是否支持懒加载
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:52+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:22+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:21c1467f0da66194dc3b3095a3414780db1baa66b27f7c8aa35b814ffaed885b
 ---
 

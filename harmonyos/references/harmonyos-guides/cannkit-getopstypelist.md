@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getop
 title: GetOpsTypeList
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OperatorFactory > GetOpsTypeList
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:37+08:00
+scraped_at: 2026-09-02T15:00:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d28ecdf8f40fef7d0c6fad784bb4f609e85f6e490a7969870bb3d983cce7d98b
+content_hash: sha256:a805f3e701be55abab9e6818b59f3645fe75a0dd13d425ae2254f87795c6591a
 ---
 
 ## 函数功能
@@ -14,13 +14,13 @@ content_hash: sha256:d28ecdf8f40fef7d0c6fad784bb4f609e85f6e490a7969870bb3d983cce
 
 ## 函数原型
 
-说明
+**说明** 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 
-```
-1. static graphStatus GetOpsTypeList(std::vector<std::string> &all_ops);
-2. static graphStatus GetOpsTypeList(std::vector<AscendString> &all_ops);
+```cpp
+static graphStatus GetOpsTypeList(std::vector<std::string> &all_ops);
+static graphStatus GetOpsTypeList(std::vector<AscendString> &all_ops);
 ```
 
 ## 参数说明

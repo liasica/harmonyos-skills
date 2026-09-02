@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avim
 title: avimage_generator.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > avimage_generator.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:51+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:187744803f4e5b611b81a57cd9e7caa1ca34721efdfa3a6e8d960ae9ae9469ff
+scraped_at: 2026-09-02T15:02:35+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3a11f627b73f50dcc24060a90cd5cbe75d0b999f4e5d6f9e3e88bc564af553d6
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义AVImageGenerator接口。使用其C API从视频资源中获取指定时间点视频帧。
 
@@ -26,19 +24,13 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [OH\_AVImageGenerator](capi-avimagegenerator-oh-avimagegenerator.md) | OH\_AVImageGenerator | 定义OH\_AVImageGenerator类型，用于生成指定时间点视频帧。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -49,14 +41,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AVImageGenerator\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVImageGenerator* OH_AVImageGenerator_Create(void)
+```c
+OH_AVImageGenerator* OH_AVImageGenerator_Create(void)
 ```
 
 **描述**
@@ -75,10 +63,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVImageGenerator\_SetFDSource()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVImageGenerator_SetFDSource(OH_AVImageGenerator* generator,int32_t fd, int64_t offset, int64_t size)
+```c
+OH_AVErrCode OH_AVImageGenerator_SetFDSource(OH_AVImageGenerator* generator, int32_t fd, int64_t offset, int64_t size)
 ```
 
 **描述**
@@ -106,10 +92,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVImageGenerator\_FetchFrameByTime()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVImageGenerator_FetchFrameByTime(OH_AVImageGenerator* generator,int64_t timeUs, OH_AVImageGenerator_QueryOptions options, OH_PixelmapNative** pixelMap)
+```c
+OH_AVErrCode OH_AVImageGenerator_FetchFrameByTime(OH_AVImageGenerator* generator, int64_t timeUs, OH_AVImageGenerator_QueryOptions options, OH_PixelmapNative** pixelMap)
 ```
 
 **描述**
@@ -128,7 +112,7 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | [OH\_AVImageGenerator](capi-avimagegenerator-oh-avimagegenerator.md)\* generator | 指向OH\_AVImageGenerator实例的指针。 |
 | int64\_t timeUs | 需要获取的视频帧在视频中的时间点，单位为微秒（μs）。 |
-| [OH\_AVImageGenerator\_QueryOptions](capi-avimage-generator-base-h.md#oh_avimagegenerator_queryoptions) options | 关于给定时间Us和视频帧之间关系的时间选项。 |
+| [OH\_AVImageGenerator\_QueryOptions](capi-avimage-generator-base-h.md#oh_avimagegenerator_queryoptions) options | 指定如何根据给定时间点查找视频帧的选项。 |
 | [OH\_PixelmapNative](capi-image-nativemodule-oh-pixelmapnative.md)\*\* pixelMap | 获取的视频帧对象。 |
 
 **返回：**
@@ -139,10 +123,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVImageGenerator\_Release()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVImageGenerator_Release(OH_AVImageGenerator* generator)
+```c
+OH_AVErrCode OH_AVImageGenerator_Release(OH_AVImageGenerator* generator)
 ```
 
 **描述**

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-scene
 title: sceneMap（场景化控件）
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > sceneMap（场景化控件）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:26+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:3c0e67afff92dbb0d99aeb3275ea003c9dbfa4b8846800975fdca5b4a9c90157
+scraped_at: 2026-09-02T15:03:00+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6fe3528634cbe334c148510de4903d79c4fdf5e96ebf63d6fa3b02d89ed88792
 ---
 
 本模块提供地图场景化控件功能，包括地点详情展示控件、地点选取控件和区划选择控件。
@@ -14,21 +14,17 @@ content_hash: sha256:3c0e67afff92dbb0d99aeb3275ea003c9dbfa4b8846800975fdca5b4a9c
 
 ## 导入模块
 
-PhonePC/2in1TabletWearable
-
-```
-1. import { sceneMap } from '@kit.MapKit';
+```typescript
+import { sceneMap } from '@kit.MapKit';
 ```
 
 ## queryLocation
-
-PhonePC/2in1TabletWearable
 
 queryLocation(context: common.UIAbilityContext, options: LocationQueryOptions): Promise<void>
 
 根据提供的参数拉起地点详情展示控件。使用Promise异步回调。
 
-说明
+**说明** 
 
 * 此函数必须在ArkUI页面上下文中调用。
 
@@ -38,7 +34,7 @@ queryLocation(context: common.UIAbilityContext, options: LocationQueryOptions): 
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 该接口在phone、tablet和2in1设备上可以正常使用，在其他设备中返回801错误码。
+**设备行为差异：** 该接口在phone、tablet和PC/2in1设备上可以正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -66,33 +62,31 @@ queryLocation(context: common.UIAbilityContext, options: LocationQueryOptions): 
 | 1002600002 | Failed to connect to the Map Kit server. |
 | 1002600003 | App authentication failed. |
 | 1002600004 | The Map permission is not enabled. |
-| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities.  适用版本：5.1.0(18)+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. let queryLocationOptions: sceneMap.LocationQueryOptions = { siteId: "922207154068557824" };
-5. sceneMap.queryLocation(this.getUIContext().getHostContext() as common.UIAbilityContext, queryLocationOptions)
-6. .then(() => {
-7. console.info("QueryLocation", "Succeeded in querying location.");
-8. })
-9. .catch((err: BusinessError) => {
-10. console.error("QueryLocation", `Failed to query Location, code: ${err.code}, message: ${err.message}`);
-11. });
+let queryLocationOptions: sceneMap.LocationQueryOptions = { siteId: "922207154068557824" };
+sceneMap.queryLocation(this.getUIContext().getHostContext() as common.UIAbilityContext, queryLocationOptions)
+  .then(() => {
+    console.info("QueryLocation", "Succeeded in querying location.");
+  })
+  .catch((err: BusinessError) => {
+    console.error("QueryLocation", `Failed to query Location, code: ${err.code}, message: ${err.message}`);
+  });
 ```
 
 ## chooseLocation
-
-PhonePC/2in1TabletWearable
 
 chooseLocation(context: common.UIAbilityContext, options: LocationChoosingOptions): Promise<LocationChoosingResult>
 
 根据提供的参数拉起地点选取控件。使用Promise异步回调。
 
-说明
+**说明** 
 
 * 此函数必须在ArkUI页面上下文中调用。
 
@@ -102,7 +96,7 @@ chooseLocation(context: common.UIAbilityContext, options: LocationChoosingOption
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 该接口在phone、tablet和2in1设备上可以正常使用，在其他设备中返回801错误码。
+**设备行为差异：** 该接口在phone、tablet和PC/2in1设备上可以正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -130,37 +124,35 @@ chooseLocation(context: common.UIAbilityContext, options: LocationChoosingOption
 | 1002600002 | Failed to connect to the Map Kit server. |
 | 1002600003 | App authentication failed. |
 | 1002600004 | The Map permission is not enabled. |
-| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities.  适用版本：5.1.0(18)+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. let locationChoosingOptions: sceneMap.LocationChoosingOptions = {
-5. location: { latitude: 39.92194051376904, longitude: 116.3971836796932 },
-6. searchEnabled: true,
-7. showNearbyPoi: true
-8. };
-9. sceneMap.chooseLocation(this.getUIContext().getHostContext() as common.UIAbilityContext, locationChoosingOptions)
-10. .then((data) => {
-11. console.info("ChooseLocation", "Succeeded in choosing location.");
-12. })
-13. .catch((err: BusinessError) => {
-14. console.error("ChooseLocation", `Failed to choose Location, code: ${err.code}, message: ${err.message}`);
-15. });
+let locationChoosingOptions: sceneMap.LocationChoosingOptions = {
+  location: { latitude: 39.92194051376904, longitude: 116.3971836796932 },
+  searchEnabled: true,
+  showNearbyPoi: true
+};
+sceneMap.chooseLocation(this.getUIContext().getHostContext() as common.UIAbilityContext, locationChoosingOptions)
+  .then((data) => {
+    console.info("ChooseLocation", "Succeeded in choosing location.");
+  })
+  .catch((err: BusinessError) => {
+    console.error("ChooseLocation", `Failed to choose Location, code: ${err.code}, message: ${err.message}`);
+  });
 ```
 
 ## selectDistrict
-
-PhonePC/2in1TabletWearable
 
 selectDistrict(context: common.Context, options: DistrictSelectOptions): Promise<DistrictSelectResult>
 
 根据提供的参数调出区划选择页面。使用Promise异步回调。
 
-说明
+**说明** 
 
 * 此函数必须在ArkUI页面上下文中调用。
 
@@ -170,7 +162,7 @@ selectDistrict(context: common.Context, options: DistrictSelectOptions): Promise
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 该接口在phone、tablet和2in1设备上可以正常使用，在其他设备中返回801错误码。
+**设备行为差异：** 该接口在phone、tablet和PC/2in1设备上可以正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 5.0.0(12)
 
@@ -199,26 +191,24 @@ selectDistrict(context: common.Context, options: DistrictSelectOptions): Promise
 | 1002600003 | App authentication failed. |
 | 1002600004 | The Map permission is not enabled. |
 | 1002600012 | The country code is not supported. |
-| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities.  适用版本：5.1.0(18)+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let districtSelectOptions: sceneMap.DistrictSelectOptions = {
-4. countryCode: "CN"
-5. };
-6. sceneMap.selectDistrict(this.getUIContext().getHostContext(), districtSelectOptions).then((data) => {
-7. console.info("SelectDistrict", "Succeeded in selecting district.");
-8. }).catch((err: BusinessError) => {
-9. console.error("SelectDistrict", `Failed to select district, code: ${err.code}, message: ${err.message}`);
-10. });
+let districtSelectOptions: sceneMap.DistrictSelectOptions = {
+  countryCode: "CN"
+};
+sceneMap.selectDistrict(this.getUIContext().getHostContext(), districtSelectOptions).then((data) => {
+  console.info("SelectDistrict", "Succeeded in selecting district.");
+}).catch((err: BusinessError) => {
+  console.error("SelectDistrict", `Failed to select district, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## LocationQueryOptions
-
-PhonePC/2in1TabletWearable
 
 查询地点详情的参数。
 
@@ -226,7 +216,7 @@ PhonePC/2in1TabletWearable
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 该接口在phone、tablet和2in1设备上可以正常使用，在其他设备中返回801错误码。
+**设备行为差异：** 该接口在phone、tablet和PC/2in1设备上可以正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -239,10 +229,10 @@ PhonePC/2in1TabletWearable
 | address | string | 否 | 是 | 地点的地址。如果没有siteId，使用address作为location的地址标注。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | showBusiness | boolean | 否 | 是 | 是否显示商业信息（如打车），默认值为true。  - true：显示  - false：不显示  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。  **说明：**  版本4.1.0(11)~5.1.1(19)为预留字段，从版本6.0.0(20)开始使用。 |
 | themeColor | [CustomColors](js-apis-arkui-theme.md#customcolors) | 否 | 是 | 自定义主题颜色对象，默认为brand（品牌色）。  **起始版本：** 5.0.3(15)  **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。 |
-| cancelCallback | Callback<void> | 否 | 是 | 回调函数。无返回结果的回调函数。地点详情控件关闭事件回调。  **起始版本：** 5.0.3(15)  **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。 |
-| transitionDuration | number | 否 | 是 | 转场动效时间，默认值：-1，单位：ms，取值范围[0, Number.MAX\_VALUE)，异常值将按照默认值-1处理，保持[interpolatingSpring](js-apis-curve.md#curvesinterpolatingspring10)(0.5, 1, 328, 36)（初始速度为0.5，质量为1，刚度为1，阻尼为1）。2in1设备当前不显示转场动效，该配置不生效。  **起始版本：** 6.0.2(22)  **元服务API：** 从版本6.0.2(22)开始，该接口支持在元服务中使用。 |
+| cancelCallback | Callback<void> | 否 | 是 | 回调函数，无返回结果。地点详情控件关闭事件回调。  **起始版本：** 5.0.3(15)  **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。 |
+| transitionDuration | number | 否 | 是 | 转场动效时间，默认值：-1，单位：ms，取值范围：大于0，异常值将按照默认值-1处理，保持[interpolatingSpring](js-apis-curve.md#curvesinterpolatingspring10)(0.5, 1, 328, 36)（初始速度为0.5，质量为1，刚度为1，阻尼为1）。PC/2in1设备当前不显示转场动效，该配置不生效。  **起始版本：** 6.0.2(22)  **元服务API：** 从版本6.0.2(22)开始，该接口支持在元服务中使用。 |
 
-说明
+**说明** 
 
 以下两组参数，至少传入其中一组，如果都传入，以siteId为主。
 
@@ -251,13 +241,11 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. let queryLocationOptions: sceneMap.LocationQueryOptions = { siteId: "922207154068557824" };
+```typescript
+let queryLocationOptions: sceneMap.LocationQueryOptions = { siteId: "922207154068557824" };
 ```
 
 ## LocationChoosingOptions
-
-PhonePC/2in1TabletWearable
 
 地点选取的参数。
 
@@ -265,7 +253,7 @@ PhonePC/2in1TabletWearable
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 该接口在phone、tablet和2in1设备上可以正常使用，在其他设备中返回801错误码。
+**设备行为差异：** 该接口在phone、tablet和PC/2in1设备上可以正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -278,20 +266,18 @@ PhonePC/2in1TabletWearable
 | showNearbyPoi | boolean | 否 | 是 | 是否展示附近POI，默认值为false，异常值按默认值处理。  - true：展示  - false：不展示  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | snapshotEnabled | boolean | 否 | 是 | 是否返回映射快照，默认值为false。  - true：返回  - false：不返回  **起始版本：** 5.0.0(12)  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 | themeColor | [CustomColors](js-apis-arkui-theme.md#customcolors) | 否 | 是 | 自定义主题颜色对象，默认为brand（品牌色）。  **起始版本：** 5.0.3(15)  **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。 |
-| cancelCallback | Callback<void> | 否 | 是 | 回调函数。无返回结果的回调函数。地点选取控件关闭事件回调。  **起始版本：** 5.0.3(15)  **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。 |
-| transitionDuration | number | 否 | 是 | 转场动效时间，默认值：-1，单位：ms，取值范围[0, Number.MAX\_VALUE)，异常值将按照默认值-1处理，保持[interpolatingSpring](js-apis-curve.md#curvesinterpolatingspring10)(0.5, 1, 328, 36)（初始速度为0.5，质量为1，刚度为1，阻尼为1）。2in1设备当前不显示转场动效，该配置不生效。  **起始版本：** 6.0.2(22)  **元服务API：** 从版本6.0.2(22)开始，该接口支持在元服务中使用。 |
+| cancelCallback | Callback<void> | 否 | 是 | 回调函数，无返回结果。地点选取控件关闭事件回调。  **起始版本：** 5.0.3(15)  **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。 |
+| transitionDuration | number | 否 | 是 | 转场动效时间，默认值：-1，单位：ms，取值范围：大于0，异常值将按照默认值-1处理，保持[interpolatingSpring](js-apis-curve.md#curvesinterpolatingspring10)(0.5, 1, 328, 36)（初始速度为0.5，质量为1，刚度为1，阻尼为1）。PC/2in1设备当前不显示转场动效，该配置不生效。  **起始版本：** 6.0.2(22)  **元服务API：** 从版本6.0.2(22)开始，该接口支持在元服务中使用。 |
 
 **示例：**
 
-```
-1. let locationChoosingOptions: sceneMap.LocationChoosingOptions = {
-2. location: { latitude: 39.9, longitude: 116.4 }
-3. };
+```typescript
+let locationChoosingOptions: sceneMap.LocationChoosingOptions = {
+  location: { latitude: 39.9, longitude: 116.4 }
+};
 ```
 
 ## LocationChoosingResult
-
-PhonePC/2in1TabletWearable
 
 地点选取的返回结果。
 
@@ -299,7 +285,7 @@ PhonePC/2in1TabletWearable
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 该接口在phone、tablet和2in1设备上可以正常使用，在其他设备中返回801错误码。
+**设备行为差异：** 该接口在phone、tablet和PC/2in1设备上可以正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -315,15 +301,13 @@ PhonePC/2in1TabletWearable
 
 ## DistrictSelectOptions
 
-PhonePC/2in1TabletWearable
-
 区划选择页面初始选项。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 该接口在phone、tablet和2in1设备上可以正常使用，在其他设备中返回801错误码。
+**设备行为差异：** 该接口在phone、tablet和PC/2in1设备上可以正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 5.0.0(12)
 
@@ -334,22 +318,22 @@ PhonePC/2in1TabletWearable
 | address | string | 否 | 是 | 指定地址查询。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 | themeColor | [CustomColors](js-apis-arkui-theme.md#customcolors) | 否 | 是 | 自定义主题颜色对象，默认为brand（品牌色）。  **起始版本：** 5.0.3(15)  **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。 |
 | subWindowEnabled | boolean | 否 | 是 | 是否在子窗口中显示区划选择，默认值为false。  - true：在子窗口中显示  - false：不在子窗口中显示  **起始版本：** 5.0.3(15)  **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。 |
-| cancelCallback | Callback<void> | 否 | 是 | 回调函数。无返回结果的回调函数。区划选择控件关闭事件回调。  **起始版本：** 5.0.3(15)  **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。 |
-| transitionDuration | number | 否 | 是 | 转场动效时间，默认值：-1，单位：ms，取值范围[0, Number.MAX\_VALUE)，异常值将按照默认值-1处理，保持[interpolatingSpring](js-apis-curve.md#curvesinterpolatingspring10)(0.5, 1, 328, 36)（初始速度为0.5，质量为1，刚度为1，阻尼为1）。当subWindowEnabled为true时该配置不生效。  **起始版本：** 6.0.2(22)  **元服务API：** 从版本6.0.2(22)开始，该接口支持在元服务中使用。 |
+| cancelCallback | Callback<void> | 否 | 是 | 回调函数，无返回结果。区划选择控件关闭事件回调。  **起始版本：** 5.0.3(15)  **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。 |
+| transitionDuration | number | 否 | 是 | 转场动效时间，默认值：-1，单位：ms，取值范围：大于0，异常值将按照默认值-1处理，保持[interpolatingSpring](js-apis-curve.md#curvesinterpolatingspring10)(0.5, 1, 328, 36)（初始速度为0.5，质量为1，刚度为1，阻尼为1）。当subWindowEnabled为true时该配置不生效。  **起始版本：** 6.0.2(22)  **元服务API：** 从版本6.0.2(22)开始，该接口支持在元服务中使用。 |
+| maxAdminLevel | number | 否 | 是 | 区划选择控件的最大显示层级。取值范围[1, 6]，仅支持整数，小数向下取整处理。默认值：6，异常值按默认值处理。  **起始版本：** 6.1.1(24)  **元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。  **说明：**  如果同时传入address和maxAdminLevel：  - 当传入的address查询的结果为单一结果（无同名地区），则以address查询结果的优先，例如address为雨花台区（显示层级为4）、maxAdminLevel为2，区划选择控件的显示层级为4。  - 当传入的address查询的结果有多个结果（存在同名地区），例如address为大同（山西省大同市和黑龙江省大庆市大同区同名），优先使用maxAdminLevel。 |
 
 **示例：**
 
-```
-1. let districtSelectOptions: sceneMap.DistrictSelectOptions = {
-2. countryCode: "CN",
-3. language:"zh",
-4. address: "河南"
-5. };
+```typescript
+let districtSelectOptions: sceneMap.DistrictSelectOptions = {
+  countryCode: "CN",
+  language:"zh",
+  address: "河南",
+  maxAdminLevel: 3
+};
 ```
 
 ## DistrictSelectResult
-
-PhonePC/2in1TabletWearable
 
 区划选择请求的结果。
 
@@ -359,7 +343,7 @@ PhonePC/2in1TabletWearable
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 该接口在phone、tablet和2in1设备上可以正常使用，在其他设备中返回801错误码。
+**设备行为差异：** 该接口在phone、tablet和PC/2in1设备上可以正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 5.0.0(12)
 
@@ -370,8 +354,6 @@ PhonePC/2in1TabletWearable
 
 ## District
 
-PhonePC/2in1TabletWearable
-
 行政区划信息。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -380,7 +362,7 @@ PhonePC/2in1TabletWearable
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 该接口在phone、tablet和2in1设备上可以正常使用，在其他设备中返回801错误码。
+**设备行为差异：** 该接口在phone、tablet和PC/2in1设备上可以正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 5.0.0(12)
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-exerci
 title: 简介
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 数据类型 > 锻炼记录数据 > 简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:17+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:cb642b15c04948efb79f4ce42d15ef5375b6eb918a8fdfddf0fa79583766c381
+scraped_at: 2026-09-02T14:59:56+08:00
+doc_updated_at: 2026-07-09
+content_hash: sha256:b7fd67388a9749bebe23cd537fad7c89abdee8ae30068ab781f63bf31a700b95
 ---
 
 用户一段持续时间的锻炼记录数据，由运动类型、应用信息、时间范围、关联的详情数据、关联的统计数据等组成，如跑步、跳绳等锻炼记录。
@@ -14,7 +14,7 @@ content_hash: sha256:cb642b15c04948efb79f4ce42d15ef5375b6eb918a8fdfddf0fa7958376
 
 锻炼记录数据模型组成参考[ExerciseSequence](../harmonyos-references/health-api-healthstore.md#exercisesequence)。
 
-锻炼记录类型常量：[exerciseSequenceHelper.DATA\_TYPE](../harmonyos-references/health-api-exercisedequencehelper.md#常量)
+锻炼记录类型常量：[exerciseSequenceHelper.DATA\_TYPE](../harmonyos-references/health-api-exercisesequencehelper.md#常量)
 
 ## OAuth权限
 
@@ -26,7 +26,7 @@ content_hash: sha256:cb642b15c04948efb79f4ce42d15ef5375b6eb918a8fdfddf0fa7958376
 
 锻炼记录 > 锻炼记录位置详情数据
 
-说明
+**说明** 
 
 * 如需读/写锻炼记录，请申请锻炼记录概要的读/写权限。
 * 如需读/写锻炼记录且关联对应的详情数据，则需同时申请锻炼记录概要读/写权限、锻炼记录详情数据的读/写权限。

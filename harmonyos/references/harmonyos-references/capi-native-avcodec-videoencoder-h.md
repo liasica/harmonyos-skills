@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_avcodec_videoencoder.h
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 头文件 > native_avcodec_videoencoder.h
 category: harmonyos-references
-scraped_at: 2026-04-29T14:02:44+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f6d71230911f921c5fc66d60225c94f31b3e7a474d5edc8fa057a031fb792c0a
+scraped_at: 2026-09-02T15:02:22+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8a0c513781c1a65e898a5c72f222c863ed682ec371c88d89b3ec0ea5316bee9b
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明用于视频编码的接口。
 
@@ -26,19 +24,44 @@ PhonePC/2in1TabletTVWearable
 
 **相关示例：** [AVCodec](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/BasicFeature/Media/AVCodec)
 
-接口在每个版本，对每种模式的支持情况说明，如下图所示。
+接口在每个版本、每种模式和状态下的支持情况说明如下表所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/47Zb1WL5Q4-YBXTyG2I2jg/zh-cn_image_0000002558767380.png)
+### 接口状态矩阵
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/2vLyqaXGQPeA61xC4zkhGg/zh-cn_image_0000002589327249.png)
+下方是不同状态下是否可以调用接口的情况概览，√表示可以调用，×表示不可调用。
+
+| 接口 | Initialized | Configured | Prepared | Flushed | Running | EndOfStream | Error | Released |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| OH\_VideoEncoder\_CreateByMime9+ | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| OH\_VideoEncoder\_CreateByName9+ | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| OH\_VideoEncoder\_CreatePrimaryWithPreproc | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| OH\_VideoEncoder\_CreateSecondaryFromPrimary | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| OH\_VideoEncoder\_RegisterCallback11+ | √ | √ | × | × | × | × | × | × |
+| OH\_VideoEncoder\_RegisterParameterCallback12+ | √ | × | × | × | × | × | × | × |
+| OH\_VideoEncoder\_OnNeedInputParameter12+ | × | × | × | × | √ | × | × | × |
+| OH\_VideoEncoder\_Configure9+ | √ | × | × | × | × | × | × | × |
+| OH\_VideoEncoder\_Prepare9+ | × | √ | × | × | × | × | × | × |
+| OH\_VideoEncoder\_SetParameter9+ | × | × | × | √ | √ | √ | × | × |
+| OH\_VideoEncoder\_GetSurface9+ | × | √ | × | × | × | × | × | × |
+| OH\_VideoEncoder\_GetInputDescription10+ | × | √ | √ | √ | √ | √ | × | × |
+| OH\_VideoEncoder\_PushInputBuffer11+ | × | × | × | × | √ | × | × | × |
+| OH\_VideoEncoder\_PushInputParameter12+ | × | × | × | × | √ | × | × | × |
+| OH\_VideoEncoder\_NotifyEndOfStream9+ | × | × | × | × | √ | × | × | × |
+| OH\_VideoEncoder\_GetOutputDescription9+ | √ | √ | √ | √ | √ | √ | × | × |
+| OH\_VideoEncoder\_FreeOutputBuffer11+ | × | × | × | × | √ | √ | × | × |
+| OH\_VideoEncoder\_Start9+ | × | × | √ | √ | × | × | × | × |
+| OH\_VideoEncoder\_Stop9+ | × | × | × | √ | √ | √ | × | × |
+| OH\_VideoEncoder\_Flush9+ | × | × | × | × | √ | √ | × | × |
+| OH\_VideoEncoder\_Reset9+ | √ | √ | √ | √ | √ | √ | √ | × |
+| OH\_VideoEncoder\_Destroy9+ | √ | √ | √ | √ | √ | √ | √ | × |
+| OH\_VideoEncoder\_QueryInputBuffer20+ | × | × | × | × | √ | × | × | × |
+| OH\_VideoEncoder\_GetInputBuffer20+ | × | × | × | × | √ | × | × | × |
+| OH\_VideoEncoder\_QueryOutputBuffer20+ | × | × | × | × | √ | × | × | × |
+| OH\_VideoEncoder\_GetOutputBuffer20+ | × | × | × | × | √ | × | × | × |
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -46,17 +69,17 @@ PhonePC/2in1TabletTVWearable
 
 ### 函数
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| [typedef void (\*OH\_VideoEncoder\_OnNeedInputParameter)(OH\_AVCodec \*codec, uint32\_t index, OH\_AVFormat \*parameter, void \*userData)](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_onneedinputparameter) | OH\_VideoEncoder\_OnNeedInputParameter | 配置随帧参数，当需要设置index对应帧的编码参数时，可以通过该接口设置。只在Surface模式生效。 |
+| [typedef void (\*OH\_VideoEncoder\_OnNeedInputParameter)(OH\_AVCodec \*codec, uint32\_t index, OH\_AVFormat \*parameter, void \*userData)](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_onneedinputparameter) | OH\_VideoEncoder\_OnNeedInputParameter | 配置随帧参数，当需要设置index对应帧的编码参数时，可以通过该接口设置。该接口仅在Surface模式下生效。 |
 | [OH\_AVCodec \*OH\_VideoEncoder\_CreateByMime(const char \*mime)](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_createbymime) | - | 根据MIME类型创建视频编码器实例，推荐使用。 |
 | [OH\_AVCodec \*OH\_VideoEncoder\_CreateByName(const char \*name)](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_createbyname) | - | 根据视频编码器名称创建视频编码器实例。使用此接口的前提是知道编码器的确切名称，编码器的名称可以通过能力查询获取。 |
+| [OH\_AVErrCode OH\_VideoEncoder\_CreatePrimaryWithPreproc(const char \*mime, OH\_AVCodec \*\*codec)](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_createprimarywithpreproc) | - | 创建支持前处理的主视频编码器实例，可用于配置降采样、裁剪、丢帧等前处理参数，并可从该主编码器派生副编码器实现一入二出双路编码。 |
+| [OH\_AVErrCode OH\_VideoEncoder\_CreateSecondaryFromPrimary(OH\_AVCodec \*primary, OH\_AVCodec \*\*codec)](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_createsecondaryfromprimary) | - | 从主编码器创建副视频编码器实例，与主编码器共享输入源，可独立配置编码参数和前处理参数。 |
 | [OH\_AVErrCode OH\_VideoEncoder\_Destroy(OH\_AVCodec \*codec)](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_destroy) | - | 清理编码器内部资源，销毁编码器实例。不能重复销毁。 |
-| [OH\_AVErrCode OH\_VideoEncoder\_SetCallback(OH\_AVCodec \*codec, OH\_AVCodecAsyncCallback callback, void \*userData)](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_setcallback) | - | 设置OH\_AVCodecCallback回调函数，让应用可以响应视频编码器生成的事件。在调用OH\_VideoEncoder\_Prepare接口之前，必须调用此接口。(API11废弃) |
+| [OH\_AVErrCode OH\_VideoEncoder\_SetCallback(OH\_AVCodec \*codec, OH\_AVCodecAsyncCallback callback, void \*userData)](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_setcallback) | - | 设置OH\_AVCodecAsyncCallback回调函数，让应用可以响应视频编码器生成的事件。在调用OH\_VideoEncoder\_Prepare接口之前，必须调用此接口。(API11废弃) |
 | [OH\_AVErrCode OH\_VideoEncoder\_RegisterCallback(OH\_AVCodec \*codec, OH\_AVCodecCallback callback, void \*userData)](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_registercallback) | - | 注册OH\_AVCodecCallback回调函数，让应用可以响应视频编码器生成的事件。在调用OH\_VideoEncoder\_Prepare接口之前，必须调用此接口。 |
-| [OH\_AVErrCode OH\_VideoEncoder\_RegisterParameterCallback(OH\_AVCodec \*codec, OH\_VideoEncoder\_OnNeedInputParameter onInputParameter, void \*userData)](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_registerparametercallback) | - | 注册OH\_AVCodecCallback输入参数回调函数，让应用可以响应视频编码器生成的事件。编码Surface模式，需要设置随帧参数时，须使用该接口。  如果使用该接口，必须在[OH\_VideoEncoder\_Configure](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_configure)之前调用该接口。 |
+| [OH\_AVErrCode OH\_VideoEncoder\_RegisterParameterCallback(OH\_AVCodec \*codec, OH\_VideoEncoder\_OnNeedInputParameter onInputParameter, void \*userData)](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_registerparametercallback) | - | 注册OH\_VideoEncoder\_OnNeedInputParameter输入参数回调函数，让应用可以响应视频编码器生成的事件。在Surface编码模式下，需要设置随帧参数时，须使用该接口。  如果使用该接口，必须在[OH\_VideoEncoder\_Configure](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_configure)之前调用该接口。 |
 | [OH\_AVErrCode OH\_VideoEncoder\_Configure(OH\_AVCodec \*codec, OH\_AVFormat \*format)](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_configure) | - | 配置视频编码器的编码参数，通常需要配置输入视频帧的描述信息，如帧的宽、高、像素格式等。必须在调用OH\_VideoEncoder\_Prepare接口之前，调用此接口。 |
 | [OH\_AVErrCode OH\_VideoEncoder\_Prepare(OH\_AVCodec \*codec)](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_prepare) | - | 准备编码器的内部资源，在OH\_VideoEncoder\_Configure接口后调用。 |
 | [OH\_AVErrCode OH\_VideoEncoder\_Start(OH\_AVCodec \*codec)](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_start) | - | 调用[OH\_VideoEncoder\_Prepare](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_prepare)接口成功后调用此接口启动编码器。成功启动后，编码器将开始报告注册的回调事件。 |
@@ -71,7 +94,7 @@ PhonePC/2in1TabletTVWearable
 | [OH\_AVErrCode OH\_VideoEncoder\_PushInputData(OH\_AVCodec \*codec, uint32\_t index, OH\_AVCodecBufferAttr attr)](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_pushinputdata) | - | 将填入数据的输入缓冲区提交给视频编码器。(API11废弃) |
 | [OH\_AVErrCode OH\_VideoEncoder\_PushInputBuffer(OH\_AVCodec \*codec, uint32\_t index)](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_pushinputbuffer) | - | Buffer模式下，将index对应的OH\_AVBuffer送入编码器编码。 |
 | [OH\_AVErrCode OH\_VideoEncoder\_PushInputParameter(OH\_AVCodec \*codec, uint32\_t index)](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_pushinputparameter) | - | Surface模式下，将index对应帧的编码参数送入编码器编码。 |
-| [OH\_AVErrCode OH\_VideoEncoder\_FreeOutputBuffer(OH\_AVCodec \*codec, uint32\_t index)](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_freeoutputbuffer) | - | 将处理后的index对应的OH\_AVBuffer退回给编码器。开发者使用完需要及时调用此接口释放输出缓存区，否则会阻塞编码流程。 |
+| [OH\_AVErrCode OH\_VideoEncoder\_FreeOutputBuffer(OH\_AVCodec \*codec, uint32\_t index)](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_freeoutputbuffer) | - | 将处理后的index对应的OH\_AVBuffer退回给编码器。开发者使用完需要及时调用此接口释放输出缓冲区，否则会阻塞编码流程。 |
 | [OH\_AVFormat \*OH\_VideoEncoder\_GetInputDescription(OH\_AVCodec \*codec)](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_getinputdescription) | - | 编码器接收到的图像的描述信息。调用[OH\_VideoEncoder\_Configure](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_configure)后调用此接口。  需要注意的是，返回指针所指向的OH\_AVFormat实例的生命周期需要由开发者通过调用[OH\_AVFormat\_Destroy](capi-native-avformat-h.md#oh_avformat_destroy)接口释放。 |
 | [OH\_AVErrCode OH\_VideoEncoder\_IsValid(OH\_AVCodec \*codec, bool \*isValid)](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_isvalid) | - | 在编码器实例存在的情况下，检查当前编码器服务是否有效。 |
 | [OH\_AVErrCode OH\_VideoEncoder\_QueryInputBuffer(struct OH\_AVCodec \*codec, uint32\_t \*index, int64\_t timeoutUs)](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_queryinputbuffer) | - | 查询下一个可用输入缓冲区的索引。  调用此接口后需要接着调用[OH\_VideoEncoder\_GetInputBuffer](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_getinputbuffer)接口获取缓冲区实例，并通过[OH\_VideoEncoder\_PushInputBuffer](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_pushinputbuffer)接口传递给编码器。  需要注意的是，上述操作仅在同步模式下支持。 |
@@ -81,14 +104,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_VideoEncodeBitrateMode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_VideoEncodeBitrateMode
+```c
+enum OH_VideoEncodeBitrateMode
 ```
 
 **描述**
@@ -111,14 +130,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_VideoEncoder\_OnNeedInputParameter()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_VideoEncoder_OnNeedInputParameter)(OH_AVCodec *codec, uint32_t index, OH_AVFormat *parameter, void *userData)
+```c
+typedef void (*OH_VideoEncoder_OnNeedInputParameter)(OH_AVCodec *codec, uint32_t index, OH_AVFormat *parameter, void *userData)
 ```
 
 **描述**
@@ -144,10 +159,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VideoEncoder\_CreateByMime()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVCodec *OH_VideoEncoder_CreateByMime(const char *mime)
+```c
+OH_AVCodec *OH_VideoEncoder_CreateByMime(const char *mime)
 ```
 
 **描述**
@@ -162,7 +175,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| const char \*mime | MIME类型描述字符串，请参阅[AVCODEC\_MIME\_TYPE](capi-native-avcodec-base-h.md#变量)。 |
+| const char \*mime | MIME类型描述字符串，请参阅AVCODEC\_MIME\_TYPE类型[变量](capi-native-avcodec-base-h.md#变量)。 |
 
 **返回：**
 
@@ -172,10 +185,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VideoEncoder\_CreateByName()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVCodec *OH_VideoEncoder_CreateByName(const char *name)
+```c
+OH_AVCodec *OH_VideoEncoder_CreateByName(const char *name)
 ```
 
 **描述**
@@ -198,14 +209,80 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AVCodec](capi-codecbase-oh-avcodec.md) \* | 成功则返回一个指向视频编码实例的指针。  如果输入是不支持编码器名称或者内存资源不足，则返回NULL。 |
+| [OH\_AVCodec](capi-codecbase-oh-avcodec.md) \* | 成功则返回一个指向视频编码实例的指针。  如果输入的是不支持的编码器名称或者内存资源不足，则返回NULL。 |
+
+### OH\_VideoEncoder\_CreatePrimaryWithPreproc()
+
+```c
+OH_AVErrCode OH_VideoEncoder_CreatePrimaryWithPreproc(const char *mime, OH_AVCodec **codec)
+```
+
+**描述**
+
+创建支持前处理的主视频编码器实例。该编码器支持以下能力：
+
+1. 前处理功能（降采样、裁剪、丢帧）。
+2. 从该主编码器创建副编码器实现一入二出双路编码。
+
+通过该接口创建的编码器仅支持Surface模式，不支持Buffer模式和同步模式。创建成功后需通过[OH\_VideoEncoder\_Destroy](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_destroy)销毁。
+
+**系统能力：** SystemCapability.Multimedia.Media.VideoEncoder
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| const char \*mime | MIME类型字符串，不可为NULL。必须是支持的类型。 |
+| [OH\_AVCodec](capi-codecbase-oh-avcodec.md) \*\*codec | 双指针，用于接收创建的编码器实例，不可为NULL。创建成功后需通过[OH\_VideoEncoder\_Destroy](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_destroy)销毁。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_INVALID\_VAL：mime为NULL / codec为NULL / MIME类型不支持。  AV\_ERR\_NO\_MEMORY：内存分配失败。 |
+
+### OH\_VideoEncoder\_CreateSecondaryFromPrimary()
+
+```c
+OH_AVErrCode OH_VideoEncoder_CreateSecondaryFromPrimary(OH_AVCodec *primary, OH_AVCodec **codec)
+```
+
+**描述**
+
+从主编码器创建副视频编码器实例。副编码器具有以下特性：
+
+1. 与主编码器共享输入源。
+2. 可独立配置编码参数。
+3. 可使用不同的前处理参数。
+4. 可独立启动/停止（不依赖主编码器的启停状态）。
+5. 生命周期必须短于主编码器。
+6. 一个主编码器同时只能拥有一个副编码器。
+
+必须在主编码器创建成功之后才能创建。创建成功后需通过[OH\_VideoEncoder\_Destroy](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_destroy)销毁。销毁顺序建议先Destroy Secondary再Destroy Primary。
+
+**系统能力：** SystemCapability.Multimedia.Media.VideoEncoder
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_AVCodec](capi-codecbase-oh-avcodec.md) \*primary | 主编码器句柄，必须由[OH\_VideoEncoder\_CreatePrimaryWithPreproc](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_createprimarywithpreproc)创建，不可为NULL。 |
+| [OH\_AVCodec](capi-codecbase-oh-avcodec.md) \*\*codec | 双指针，用于接收创建的副编码器实例，不可为NULL。创建成功后需通过[OH\_VideoEncoder\_Destroy](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_destroy)销毁。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_INVALID\_VAL：primary为NULL / codec为NULL / primary不是有效的主编码器。  AV\_ERR\_OPERATE\_NOT\_PERMIT：主编码器已存在关联的副编码器。  AV\_ERR\_NO\_MEMORY：内存分配失败。 |
 
 ### OH\_VideoEncoder\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_VideoEncoder_Destroy(OH_AVCodec *codec)
+```c
+OH_AVErrCode OH_VideoEncoder_Destroy(OH_AVCodec *codec)
 ```
 
 **描述**
@@ -226,19 +303,17 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：输入的codec指针为非编码器实例，或者为空指针。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：内部执行错误。 |
+| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：输入的codec指针为非编码器实例，或者为空指针。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：操作不允许。 |
 
 ### OH\_VideoEncoder\_SetCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_VideoEncoder_SetCallback(OH_AVCodec *codec, OH_AVCodecAsyncCallback callback, void *userData)
+```c
+OH_AVErrCode OH_VideoEncoder_SetCallback(OH_AVCodec *codec, OH_AVCodecAsyncCallback callback, void *userData)
 ```
 
 **描述**
 
-设置OH\_AVCodecCallback回调函数，让应用可以响应视频编码器生成的事件。在调用OH\_VideoEncoder\_Prepare接口之前，必须调用此接口。
+设置OH\_AVCodecAsyncCallback回调函数，让应用可以响应视频编码器生成的事件。在调用OH\_VideoEncoder\_Prepare接口之前，必须调用此接口。
 
 **系统能力：** SystemCapability.Multimedia.Media.VideoEncoder
 
@@ -260,14 +335,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：输入的codec指针为非编码器实例，或者为空指针。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：内部执行错误。 |
+| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：输入的codec指针为非编码器实例，或者为空指针。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：操作不允许。 |
 
 ### OH\_VideoEncoder\_RegisterCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_VideoEncoder_RegisterCallback(OH_AVCodec *codec, OH_AVCodecCallback callback, void *userData)
+```c
+OH_AVErrCode OH_VideoEncoder_RegisterCallback(OH_AVCodec *codec, OH_AVCodecCallback callback, void *userData)
 ```
 
 **描述**
@@ -290,19 +363,17 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：输入的codec指针为非编码器实例，或者为空指针。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：内部执行错误。 |
+| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：输入的codec指针为非编码器实例，或者为空指针。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：操作不允许。 |
 
 ### OH\_VideoEncoder\_RegisterParameterCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_VideoEncoder_RegisterParameterCallback(OH_AVCodec *codec, OH_VideoEncoder_OnNeedInputParameter onInputParameter, void *userData)
+```c
+OH_AVErrCode OH_VideoEncoder_RegisterParameterCallback(OH_AVCodec *codec, OH_VideoEncoder_OnNeedInputParameter onInputParameter, void *userData)
 ```
 
 **描述**
 
-注册OH\_AVCodecCallback输入参数回调函数，让应用可以响应视频编码器生成的事件。编码Surface模式，需要设置随帧参数时，须使用该接口。
+注册OH\_VideoEncoder\_OnNeedInputParameter输入参数回调函数，让应用可以响应视频编码器生成的事件。在Surface编码模式下，需要设置随帧参数时，须使用该接口。
 
 如果使用该接口，必须在[OH\_VideoEncoder\_Configure](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_configure)之前调用该接口。
 
@@ -322,14 +393,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：输入的codec指针为非编码器实例，或者为空指针。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：内部执行错误。  AV\_ERR\_INVALID\_STATE：本接口必须在OH\_VideoEncoder\_Prepare接口前调用，如果在其他状态时调用，则返回此错误码。 |
+| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：输入的codec指针为非编码器实例，或者为空指针。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：操作不允许。  AV\_ERR\_INVALID\_STATE：本接口必须在OH\_VideoEncoder\_Configure接口前调用，如果在其他状态时调用，则返回此错误码。 |
 
 ### OH\_VideoEncoder\_Configure()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_VideoEncoder_Configure(OH_AVCodec *codec, OH_AVFormat *format)
+```c
+OH_AVErrCode OH_VideoEncoder_Configure(OH_AVCodec *codec, OH_AVFormat *format)
 ```
 
 **描述**
@@ -382,14 +451,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：1. 输入的codec指针为非编码器实例，或者为空指针；2. 输入format参数不支持。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：内部执行错误。  AV\_ERR\_INVALID\_STATE：本接口必须在OH\_VideoEncoder\_Prepare接口前调用，如果在其他状态时调用，则返回此错误码。 |
+| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：1. 输入的codec指针为非编码器实例，或者为空指针；2. 输入format参数不支持。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：操作不允许。  AV\_ERR\_INVALID\_STATE：本接口必须在OH\_VideoEncoder\_Prepare接口前调用，如果在其他状态时调用，则返回此错误码。  AV\_ERR\_UNSUPPORT：不支持的像素格式。 |
 
 ### OH\_VideoEncoder\_Prepare()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_VideoEncoder_Prepare(OH_AVCodec *codec)
+```c
+OH_AVErrCode OH_VideoEncoder_Prepare(OH_AVCodec *codec)
 ```
 
 **描述**
@@ -410,14 +477,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常。  AV\_ERR\_INVALID\_VAL：输入的codec指针为非编码器实例，或者为空指针。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：内部执行错误。  AV\_ERR\_INVALID\_STATE：当前编码器状态不支持调用本接口。 |
+| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常。  AV\_ERR\_INVALID\_VAL：输入的codec指针为非编码器实例，或者为空指针。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：操作不允许。  AV\_ERR\_INVALID\_STATE：当前编码器状态不支持调用本接口。 |
 
 ### OH\_VideoEncoder\_Start()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_VideoEncoder_Start(OH_AVCodec *codec)
+```c
+OH_AVErrCode OH_VideoEncoder_Start(OH_AVCodec *codec)
 ```
 
 **描述**
@@ -442,14 +507,12 @@ Buffer模式下，编码器会立即触发输入回调，开发者每完成一�
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：输入的codec指针为非编码器实例，或者为空指针。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：内部执行错误。  AV\_ERR\_INVALID\_STATE：当前编码器状态不支持调用本接口。 |
+| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：输入的codec指针为非编码器实例，或者为空指针。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：操作不允许。  AV\_ERR\_INVALID\_STATE：当前编码器状态不支持调用本接口。 |
 
 ### OH\_VideoEncoder\_Stop()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_VideoEncoder_Stop(OH_AVCodec *codec)
+```c
+OH_AVErrCode OH_VideoEncoder_Stop(OH_AVCodec *codec)
 ```
 
 **描述**
@@ -470,14 +533,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：输入的codec指针为非编码器实例，或者为空指针。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：内部执行错误。  AV\_ERR\_INVALID\_STATE：当前编码器状态不支持调用本接口。 |
+| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：输入的codec指针为非编码器实例，或者为空指针。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：操作不允许。  AV\_ERR\_INVALID\_STATE：当前编码器状态不支持调用本接口。 |
 
 ### OH\_VideoEncoder\_Flush()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_VideoEncoder_Flush(OH_AVCodec *codec)
+```c
+OH_AVErrCode OH_VideoEncoder_Flush(OH_AVCodec *codec)
 ```
 
 **描述**
@@ -500,14 +561,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：输入的codec指针为非编码器实例，或者为空指针。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：内部执行错误。  AV\_ERR\_INVALID\_STATE：当前编码器状态不支持调用本接口。 |
+| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：输入的codec指针为非编码器实例，或者为空指针。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：操作不允许。  AV\_ERR\_INVALID\_STATE：当前编码器状态不支持调用本接口。 |
 
 ### OH\_VideoEncoder\_Reset()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_VideoEncoder_Reset(OH_AVCodec *codec)
+```c
+OH_AVErrCode OH_VideoEncoder_Reset(OH_AVCodec *codec)
 ```
 
 **描述**
@@ -528,14 +587,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：输入的codec指针为非编码器实例，或者为空指针。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：内部执行错误。 |
+| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：输入的codec指针为非编码器实例，或者为空指针。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：操作不允许。 |
 
 ### OH\_VideoEncoder\_GetOutputDescription()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVFormat *OH_VideoEncoder_GetOutputDescription(OH_AVCodec *codec)
+```c
+OH_AVFormat *OH_VideoEncoder_GetOutputDescription(OH_AVCodec *codec)
 ```
 
 **描述**
@@ -562,10 +619,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VideoEncoder\_SetParameter()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_VideoEncoder_SetParameter(OH_AVCodec *codec, OH_AVFormat *format)
+```c
+OH_AVErrCode OH_VideoEncoder_SetParameter(OH_AVCodec *codec, OH_AVFormat *format)
 ```
 
 **描述**
@@ -589,14 +644,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：1. 输入的codec指针为非编码器实例，或者为空指针；2. 输入format参数不支持。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：内部执行错误。  AV\_ERR\_INVALID\_STATE：当前编码器状态不支持调用本接口。 |
+| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：1. 输入的codec指针为非编码器实例，或者为空指针；2. 输入format参数不支持。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：操作不允许。  AV\_ERR\_INVALID\_STATE：当前编码器状态不支持调用本接口。 |
 
 ### OH\_VideoEncoder\_GetSurface()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_VideoEncoder_GetSurface(OH_AVCodec *codec, OHNativeWindow **window)
+```c
+OH_AVErrCode OH_VideoEncoder_GetSurface(OH_AVCodec *codec, OHNativeWindow **window)
 ```
 
 **描述**
@@ -618,14 +671,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_INVALID\_VAL：输入的codec指针为非编码器实例，或者为空指针。  AV\_ERR\_OPERATE\_NOT\_PERMIT：内部执行错误。 |
+| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_INVALID\_VAL：输入的codec指针为非编码器实例，或者为空指针。  AV\_ERR\_OPERATE\_NOT\_PERMIT：操作不允许。 |
 
 ### OH\_VideoEncoder\_FreeOutputData()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_VideoEncoder_FreeOutputData(OH_AVCodec *codec, uint32_t index)
+```c
+OH_AVErrCode OH_VideoEncoder_FreeOutputData(OH_AVCodec *codec, uint32_t index)
 ```
 
 **描述**
@@ -651,14 +702,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：输入的codec指针为非编码器实例，或者为空指针。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：内部执行错误。  AV\_ERR\_INVALID\_STATE：当前编码器状态不支持调用本接口。 |
+| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：输入的codec指针为非编码器实例，或者为空指针。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：操作不允许。  AV\_ERR\_INVALID\_STATE：当前编码器状态不支持调用本接口。 |
 
 ### OH\_VideoEncoder\_NotifyEndOfStream()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_VideoEncoder_NotifyEndOfStream(OH_AVCodec *codec)
+```c
+OH_AVErrCode OH_VideoEncoder_NotifyEndOfStream(OH_AVCodec *codec)
 ```
 
 **描述**
@@ -679,14 +728,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：输入的codec指针为非编码器实例，或者为空指针。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：内部执行错误。  AV\_ERR\_INVALID\_STATE：当前编码器状态不支持调用本接口。 |
+| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：输入的codec指针为非编码器实例，或者为空指针。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：操作不允许。  AV\_ERR\_INVALID\_STATE：当前编码器状态不支持调用本接口。 |
 
 ### OH\_VideoEncoder\_PushInputData()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_VideoEncoder_PushInputData(OH_AVCodec *codec, uint32_t index, OH_AVCodecBufferAttr attr)
+```c
+OH_AVErrCode OH_VideoEncoder_PushInputData(OH_AVCodec *codec, uint32_t index, OH_AVCodecBufferAttr attr)
 ```
 
 **描述**
@@ -713,14 +760,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：输入的codec指针为非编码器实例，或者为空指针。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：内部执行错误。  AV\_ERR\_INVALID\_STATE：当前编码器状态不支持调用本接口。 |
+| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：  1. 输入的codec指针为非编码器实例，或者为空指针；  2. index非法，该错误不影响后续编码流程。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：操作不允许。  AV\_ERR\_INVALID\_STATE：当前编码器状态不支持调用本接口。 |
 
 ### OH\_VideoEncoder\_PushInputBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_VideoEncoder_PushInputBuffer(OH_AVCodec *codec, uint32_t index)
+```c
+OH_AVErrCode OH_VideoEncoder_PushInputBuffer(OH_AVCodec *codec, uint32_t index)
 ```
 
 **描述**
@@ -742,14 +787,12 @@ Buffer模式下，将index对应的OH\_AVBuffer送入编码器编码。
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：1. 输入的codec指针为非编码器实例，或者为空指针；2. 输入format参数不支持。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：内部执行错误。  AV\_ERR\_INVALID\_STATE：当前编码器状态不支持调用本接口。 |
+| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：  1. 输入的codec指针为非编码器实例，或者为空指针；  2. index非法，该错误不影响后续编码流程。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：操作不允许。  AV\_ERR\_INVALID\_STATE：当前编码器状态不支持调用本接口。 |
 
 ### OH\_VideoEncoder\_PushInputParameter()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_VideoEncoder_PushInputParameter(OH_AVCodec *codec, uint32_t index)
+```c
+OH_AVErrCode OH_VideoEncoder_PushInputParameter(OH_AVCodec *codec, uint32_t index)
 ```
 
 **描述**
@@ -765,25 +808,23 @@ Surface模式下，将index对应帧的编码参数送入编码器编码。
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AVCodec](capi-codecbase-oh-avcodec.md) \*codec | 指向视频编码实例的指针。 |
-| uint32\_t index | 输入参数缓冲区对应的索引值。由[OH\_AVCodecOnNeedInputBuffer](capi-native-avcodec-base-h.md#oh_avcodeconneedinputbuffer)给出。 |
+| uint32\_t index | 输入参数缓冲区对应的索引值。由[OH\_VideoEncoder\_OnNeedInputParameter](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_onneedinputparameter)给出。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：输入的codec指针为非编码器实例，或者为空指针。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：内部执行错误。  AV\_ERR\_INVALID\_STATE：当前编码器状态不支持调用本接口。 |
+| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：  1. 输入的codec指针为非编码器实例，或者为空指针；  2. index非法，该错误不影响后续编码流程。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：操作不允许。  AV\_ERR\_INVALID\_STATE：当前编码器状态不支持调用本接口。 |
 
 ### OH\_VideoEncoder\_FreeOutputBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_VideoEncoder_FreeOutputBuffer(OH_AVCodec *codec, uint32_t index)
+```c
+OH_AVErrCode OH_VideoEncoder_FreeOutputBuffer(OH_AVCodec *codec, uint32_t index)
 ```
 
 **描述**
 
-将处理后的index对应的OH\_AVBuffer退回给编码器。开发者使用完需要及时调用此接口释放输出缓存区，否则会阻塞编码流程。
+将处理后的index对应的OH\_AVBuffer退回给编码器。开发者使用完需要及时调用此接口释放输出缓冲区，否则会阻塞编码流程。
 
 详情请参见：[视频编码](../harmonyos-guides/video-encoding.md) “Surface模式的步骤-13或Buffer模式步骤-11”。
 
@@ -796,20 +837,18 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AVCodec](capi-codecbase-oh-avcodec.md) \*codec | 指向视频编码实例的指针。 |
-| uint32\_t index | 输出缓冲区对应的索引值。由[OH\_AVCodecOnNeedInputBuffer](capi-native-avcodec-base-h.md#oh_avcodeconneedinputbuffer)给出。 |
+| uint32\_t index | 输出缓冲区对应的索引值。由[OH\_AVCodecOnNewOutputBuffer](capi-native-avcodec-base-h.md#oh_avcodeconnewoutputbuffer)给出。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：  1. 输入的 codec 指针为非编码器实例，或者为空指针；  2. 输入format参数不支持；  3. index非法或者连续给同一个index，该错误不影响后续编码流程。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：内部执行错误。  AV\_ERR\_INVALID\_STATE：当前编码器状态不支持调用本接口。 |
+| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_NO\_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。  AV\_ERR\_INVALID\_VAL：  1. 输入的codec指针为非编码器实例，或者为空指针；  2. index非法，该错误不影响后续编码流程。  AV\_ERR\_UNKNOWN：未知错误。  AV\_ERR\_OPERATE\_NOT\_PERMIT：操作不允许。  AV\_ERR\_INVALID\_STATE：当前编码器状态不支持调用本接口。 |
 
 ### OH\_VideoEncoder\_GetInputDescription()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVFormat *OH_VideoEncoder_GetInputDescription(OH_AVCodec *codec)
+```c
+OH_AVFormat *OH_VideoEncoder_GetInputDescription(OH_AVCodec *codec)
 ```
 
 **描述**
@@ -836,10 +875,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VideoEncoder\_IsValid()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_VideoEncoder_IsValid(OH_AVCodec *codec, bool *isValid)
+```c
+OH_AVErrCode OH_VideoEncoder_IsValid(OH_AVCodec *codec, bool *isValid)
 ```
 
 **描述**
@@ -865,10 +902,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VideoEncoder\_QueryInputBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_VideoEncoder_QueryInputBuffer(struct OH_AVCodec *codec, uint32_t *index, int64_t timeoutUs)
+```c
+OH_AVErrCode OH_VideoEncoder_QueryInputBuffer(struct OH_AVCodec *codec, uint32_t *index, int64_t timeoutUs)
 ```
 
 **描述**
@@ -899,10 +934,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VideoEncoder\_GetInputBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVBuffer *OH_VideoEncoder_GetInputBuffer(struct OH_AVCodec *codec, uint32_t index)
+```c
+OH_AVBuffer *OH_VideoEncoder_GetInputBuffer(struct OH_AVCodec *codec, uint32_t index)
 ```
 
 **描述**
@@ -930,10 +963,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VideoEncoder\_QueryOutputBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_VideoEncoder_QueryOutputBuffer(struct OH_AVCodec *codec, uint32_t *index, int64_t timeoutUs)
+```c
+OH_AVErrCode OH_VideoEncoder_QueryOutputBuffer(struct OH_AVCodec *codec, uint32_t *index, int64_t timeoutUs)
 ```
 
 **描述**
@@ -962,10 +993,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VideoEncoder\_GetOutputBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVBuffer *OH_VideoEncoder_GetOutputBuffer(struct OH_AVCodec *codec, uint32_t index)
+```c
+OH_AVBuffer *OH_VideoEncoder_GetOutputBuffer(struct OH_AVCodec *codec, uint32_t index)
 ```
 
 **描述**
@@ -989,4 +1018,4 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AVBuffer](capi-core-oh-avbuffer.md) \* | 如果执行成功，则返回一个指向OH\_AVBuffer实例的指针，否则返回NULL。 |
+| [OH\_AVBuffer](capi-core-oh-avbuffer.md) \* | 如果执行成功，则返回一个指向可用输出缓冲区OH\_AVBuffer实例的指针，否则返回NULL。 |

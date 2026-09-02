@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-arkgraphics2d-510
 title: ArkGraphics 2D
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.1.0(18) > OS平台能力 > API变更清单 > ArkGraphics 2D
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.0(18) > OS平台能力 > API变更清单 > ArkGraphics 2D
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:02+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:33+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:b18495600f8c46b2406d557ced45c9b1344875f52683b36c44130c21779377fc
 ---
 

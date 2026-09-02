@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-predictor
 title: 加速Web页面的访问
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载与浏览记录 > 加速Web页面的访问
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:25+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:09325fcaac70e96645395ab09540b545fedf14f10de0786e6729789901645e28
+scraped_at: 2026-09-02T14:49:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a004fd3eb9dcec1d39034d8c7b028ce3951ecb644f564b8332c928aa13662e36
 ---
 
 当Web页面加载缓慢时，可以使用预连接、预加载和预获取POST请求的能力加速Web页面的访问。
@@ -18,55 +18,46 @@ content_hash: sha256:09325fcaac70e96645395ab09540b545fedf14f10de0786e67297899016
 
 在下面的示例中，在Web组件的onAppear中对要加载的页面进行预连接。
 
+```typescript
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct WebComponent {
+  webviewController: webview.WebviewController = new webview.WebviewController();
+
+  build() {
+    Column() {
+      Web({ src: 'https://www.example.com/', controller: this.webviewController })
+        .onAppear(() => {
+          // 指定第二个参数为true，代表要进行预连接，如果为false该接口只会对网址进行dns预解析
+          // 第三个参数为要预连接socket的个数。最多允许6个。
+          webview.WebviewController.prepareForPageLoad('https://www.example.com/', true, 2);
+        })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-2. // ...
-
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. webviewController: webview.WebviewController = new webview.WebviewController();
-
-9. build() {
-10. Column() {
-11. Button('loadData')
-12. .onClick(() => {
-13. if (this.webviewController.accessBackward()) {
-14. this.webviewController.backward();
-15. }
-16. })
-17. Web({ src: 'https://www.example.com/', controller: this.webviewController })
-18. .onAppear(() => {
-19. // 指定第二个参数为true，代表要进行预连接，如果为false该接口只会对网址进行dns预解析
-20. // 第三个参数为要预连接socket的个数。最多允许6个。
-21. webview.WebviewController.prepareForPageLoad('https://www.example.com/', true, 2);
-22. })
-23. }
-24. }
-25. }
-```
-
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ManageWebPageLoadBrowse/AcceleratePageAccess/entry1/src/main/ets/pages/Index.ets#L15-L45)
 
 也可以通过[initializeWebEngine()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#initializewebengine)来提前初始化内核，然后在初始化内核后调用[prepareForPageLoad()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#prepareforpageload10)对即将要加载的页面进行预解析、预连接。这种方式适合提前对首页进行预解析、预连接。
 
 在下面的示例中，Ability的onCreate中提前初始化Web内核并对首页进行预连接。
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 
-5. export default class EntryAbility extends UIAbility {
-6. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-7. console.info("EntryAbility onCreate");
-8. webview.WebviewController.initializeWebEngine();
-9. // 预连接时，需要将'https://www.example.com'替换成真实要访问的网站地址。
-10. webview.WebviewController.prepareForPageLoad("https://www.example.com/", true, 2);
-11. AppStorage.setOrCreate("abilityWant", want);
-12. console.info("EntryAbility onCreate done");
-13. }
-14. }
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
+    console.info("EntryAbility onCreate");
+    webview.WebviewController.initializeWebEngine();
+    // 预连接时，需要将'https://www.example.com'替换成真实要访问的网站地址。
+    webview.WebviewController.prepareForPageLoad("https://www.example.com/", true, 2);
+    AppStorage.setOrCreate("abilityWant", want);
+    console.info("EntryAbility onCreate done");
+  }
+}
 ```
 
 ## 预加载
@@ -77,27 +68,25 @@ content_hash: sha256:09325fcaac70e96645395ab09540b545fedf14f10de0786e67297899016
 
 在下面的示例中，在onPageEnd的时候触发下一个要访问的页面的预加载。
 
-```
-1. import { webview } from '@kit.ArkWeb';
-2. // ...
-3. @Entry
-4. @Component
-5. struct WebComponent {
-6. webviewController: webview.WebviewController = new webview.WebviewController();
+```typescript
+import { webview } from '@kit.ArkWeb';
 
-8. build() {
-9. Column() {
-10. Web({ src: 'https://www.example.com/', controller: this.webviewController })
-11. .onPageEnd(() => {
-12. // 预加载https://www.iana.org/help/example-domains。
-13. this.webviewController.prefetchPage('https://www.iana.org/help/example-domains');
-14. })
-15. }
-16. }
-17. }
-```
+@Entry
+@Component
+struct WebComponent {
+  webviewController: webview.WebviewController = new webview.WebviewController();
 
-[Prefetching.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ManageWebPageLoadBrowse/AcceleratePageAccess/entry2/src/main/ets/pages/Prefetching.ets#L15-L37)
+  build() {
+    Column() {
+      Web({ src: 'https://www.example.com/', controller: this.webviewController })
+        .onPageEnd(() => {
+          // 预加载https://www.iana.org/help/example-domains。
+          this.webviewController.prefetchPage('https://www.iana.org/help/example-domains');
+        })
+    }
+  }
+}
+```
 
 ## 预获取POST请求
 
@@ -105,107 +94,103 @@ content_hash: sha256:09325fcaac70e96645395ab09540b545fedf14f10de0786e67297899016
 
 以下示例，在Web组件onAppear中，对要加载页面中的POST请求进行预获取。在onPageEnd中，可以清除预获取的POST请求缓存。
 
-```
-1. import { webview } from '@kit.ArkWeb';
-2. // ...
-3. @Entry
-4. @Component
-5. struct WebComponent {
-6. webviewController: webview.WebviewController = new webview.WebviewController();
+```typescript
+import { webview } from '@kit.ArkWeb';
 
-8. build() {
-9. Column() {
-10. Web({ src: 'https://www.example.com/', controller: this.webviewController })
-11. .onAppear(() => {
-12. // 预获取时，需要将'https://www.example1.com/post?e=f&g=h'替换成真实要访问的网站地址。
-13. webview.WebviewController.prefetchResource(
-14. {
-15. url: 'https://www.example1.com/post?e=f&g=h',
-16. method: 'POST',
-17. formData: 'a=x&b=y',
-18. },
-19. [{
-20. headerKey: 'c',
-21. headerValue: 'z',
-22. },],
-23. 'KeyX', 500);
-24. })
-25. .onPageEnd(() => {
-26. // 清除后续不再使用的预获取资源缓存。
-27. webview.WebviewController.clearPrefetchedResource(['KeyX',]);
-28. })
-29. }
-30. }
-31. }
-```
+@Entry
+@Component
+struct WebComponent {
+  webviewController: webview.WebviewController = new webview.WebviewController();
 
-[PrefetchingAPOSTRequest\_one.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ManageWebPageLoadBrowse/AcceleratePageAccess/entry2/src/main/ets/pages/PrefetchingAPOSTRequest_one.ets#L15-L51)
+  build() {
+    Column() {
+      Web({ src: 'https://www.example.com/', controller: this.webviewController })
+        .onAppear(() => {
+          // 预获取时，需要将'https://www.example1.com/post?e=f&g=h'替换成真实要访问的网站地址。
+          webview.WebviewController.prefetchResource(
+            {
+              url: 'https://www.example1.com/post?e=f&g=h',
+              method: 'POST',
+              formData: 'a=x&b=y',
+            },
+            [{
+              headerKey: 'c',
+              headerValue: 'z',
+            },],
+            'KeyX', 500);
+        })
+        .onPageEnd(() => {
+          // 清除后续不再使用的预获取资源缓存。
+          webview.WebviewController.clearPrefetchedResource(['KeyX',]);
+        })
+    }
+  }
+}
+```
 
 如果能够预测到Web组件将要加载页面或者即将要跳转页面中的POST请求。可以通过[prefetchResource()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#prefetchresource12)预获取即将要加载页面的POST请求。
 
 以下示例，在onPageEnd中，触发预获取一个要访问页面的POST请求。
 
-```
-1. import { webview } from '@kit.ArkWeb';
-2. // ...
-3. @Entry
-4. @Component
-5. struct WebComponent {
-6. webviewController: webview.WebviewController = new webview.WebviewController();
+```typescript
+import { webview } from '@kit.ArkWeb';
 
-8. build() {
-9. Column() {
-10. Web({ src: 'https://www.example.com/', controller: this.webviewController })
-11. .onPageEnd(() => {
-12. // 预获取时，需要将'https://www.example1.com/post?e=f&g=h'替换成真实要访问的网站地址。
-13. webview.WebviewController.prefetchResource(
-14. {
-15. url: 'https://www.example1.com/post?e=f&g=h',
-16. method: 'POST',
-17. formData: 'a=x&b=y',
-18. },
-19. [{
-20. headerKey: 'c',
-21. headerValue: 'z',
-22. },],
-23. 'KeyX', 500);
-24. })
-25. }
-26. }
-27. }
-```
+@Entry
+@Component
+struct WebComponent {
+  webviewController: webview.WebviewController = new webview.WebviewController();
 
-[PrefetchingAPOSTRequest\_three.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ManageWebPageLoadBrowse/AcceleratePageAccess/entry2/src/main/ets/pages/PrefetchingAPOSTRequest_three.ets#L15-L47)
+  build() {
+    Column() {
+      Web({ src: 'https://www.example.com/', controller: this.webviewController })
+        .onPageEnd(() => {
+          // 预获取时，需要将'https://www.example1.com/post?e=f&g=h'替换成真实要访问的网站地址。
+          webview.WebviewController.prefetchResource(
+            {
+              url: 'https://www.example1.com/post?e=f&g=h',
+              method: 'POST',
+              formData: 'a=x&b=y',
+            },
+            [{
+              headerKey: 'c',
+              headerValue: 'z',
+            },],
+            'KeyX', 500);
+        })
+    }
+  }
+}
+```
 
 也可以通过[initializeWebEngine()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#initializewebengine)提前初始化内核，然后在初始化内核后调用[prefetchResource()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#prefetchresource12)预获取将要加载页面中的POST请求。这种方式适合提前预获取首页的POST请求。
 
 以下示例，在Ability的onCreate中，提前初始化Web内核并预获取首页的POST请求。
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 
-5. export default class EntryAbility extends UIAbility {
-6. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-7. console.info("EntryAbility onCreate");
-8. webview.WebviewController.initializeWebEngine();
-9. // 预获取时，需要将"https://www.example1.com/post?e=f&g=h"替换成真实要访问的网站地址。
-10. webview.WebviewController.prefetchResource(
-11. {
-12. url: "https://www.example1.com/post?e=f&g=h",
-13. method: "POST",
-14. formData: "a=x&b=y",
-15. },
-16. [{
-17. headerKey: "c",
-18. headerValue: "z",
-19. },],
-20. "KeyX", 500);
-21. AppStorage.setOrCreate("abilityWant", want);
-22. console.info("EntryAbility onCreate done");
-23. }
-24. }
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
+    console.info("EntryAbility onCreate");
+    webview.WebviewController.initializeWebEngine();
+    // 预获取时，需要将"https://www.example1.com/post?e=f&g=h"替换成真实要访问的网站地址。
+    webview.WebviewController.prefetchResource(
+      {
+        url: "https://www.example1.com/post?e=f&g=h",
+        method: "POST",
+        formData: "a=x&b=y",
+      },
+      [{
+        headerKey: "c",
+        headerValue: "z",
+      },],
+      "KeyX", 500);
+    AppStorage.setOrCreate("abilityWant", want);
+    console.info("EntryAbility onCreate done");
+  }
+}
 ```
 
 ## 预编译生成编译缓存
@@ -216,210 +201,205 @@ content_hash: sha256:09325fcaac70e96645395ab09540b545fedf14f10de0786e67297899016
 
 1. 首先，在EntryAbility中将[UIContext](../harmonyos-references/arkts-apis-uicontext-uicontext.md)存到[localStorage](arkts-localstorage.md)中。
 
-   ```
-   1. // EntryAbility.ets
-   2. import { UIAbility } from '@kit.AbilityKit';
-   3. import { window } from '@kit.ArkUI';
+   ```ts
+   // EntryAbility.ets
+   import { UIAbility } from '@kit.AbilityKit';
+   import { window } from '@kit.ArkUI';
 
-   5. const localStorage: LocalStorage = new LocalStorage('uiContext');
+   const localStorage: LocalStorage = new LocalStorage('uiContext');
 
-   7. export default class EntryAbility extends UIAbility {
-   8. storage: LocalStorage = localStorage;
+   export default class EntryAbility extends UIAbility {
+     storage: LocalStorage = localStorage;
 
-   10. onWindowStageCreate(windowStage: window.WindowStage) {
-   11. windowStage.loadContent('pages/Index', this.storage, (err, data) => {
-   12. if (err.code) {
-   13. return;
-   14. }
+     onWindowStageCreate(windowStage: window.WindowStage) {
+       windowStage.loadContent('pages/Index', this.storage, (err, data) => {
+         if (err.code) {
+           return;
+         }
 
-   16. this.storage.setOrCreate<UIContext>("uiContext", windowStage.getMainWindowSync().getUIContext());
-   17. });
-   18. }
-   19. }
+         this.storage.setOrCreate<UIContext>("uiContext", windowStage.getMainWindowSync().getUIContext());
+       });
+     }
+   }
    ```
 2. 编写动态组件所需基础代码。
 
+   ```typescript
+   // main/ets/pages/DynamicComponent.ets
+   import { NodeController, BuilderNode, FrameNode, UIContext } from '@kit.ArkUI';
+
+   export interface BuilderData {
+     url: string;
+     controller: WebviewController;
+     context: UIContext;
+   }
+
+   let storage : LocalStorage | undefined = undefined;
+
+   export class NodeControllerImpl extends NodeController {
+     private rootNode: BuilderNode<BuilderData[]> | null = null;
+     private wrappedBuilder: WrappedBuilder<BuilderData[]> | null = null;
+
+     constructor(wrappedBuilder: WrappedBuilder<BuilderData[]>, context: UIContext) {
+       storage = context.getSharedLocalStorage();
+       super();
+       this.wrappedBuilder = wrappedBuilder;
+     }
+
+     makeNode(): FrameNode | null {
+       if (this.rootNode != null) {
+         return this.rootNode.getFrameNode();
+       }
+       return null;
+     }
+
+     initWeb(url: string, controller: WebviewController) {
+       if(this.rootNode != null) {
+         return;
+       }
+
+       const uiContext: UIContext = storage!.get<UIContext>('uiContext') as UIContext;
+       if (!uiContext) {
+         return;
+       }
+       this.rootNode = new BuilderNode(uiContext);
+       this.rootNode.build(this.wrappedBuilder, { url: url, controller: controller });
+     }
+   }
+
+   export const createNode = (wrappedBuilder: WrappedBuilder<BuilderData[]>, data: BuilderData) => {
+     const baseNode = new NodeControllerImpl(wrappedBuilder, data.context);
+     baseNode.initWeb(data.url, data.controller);
+     return baseNode;
+   }
    ```
-   1. import { NodeController, BuilderNode, FrameNode, UIContext } from '@kit.ArkUI';
-
-   3. export interface BuilderData {
-   4. url: string;
-   5. controller: WebviewController;
-   6. context: UIContext;
-   7. }
-
-   9. let storage : LocalStorage | undefined = undefined;
-
-   11. export class NodeControllerImpl extends NodeController {
-   12. private rootNode: BuilderNode<BuilderData[]> | null = null;
-   13. private wrappedBuilder: WrappedBuilder<BuilderData[]> | null = null;
-
-   15. constructor(wrappedBuilder: WrappedBuilder<BuilderData[]>, context: UIContext) {
-   16. storage = context.getSharedLocalStorage();
-   17. super();
-   18. this.wrappedBuilder = wrappedBuilder;
-   19. }
-
-   21. makeNode(): FrameNode | null {
-   22. if (this.rootNode != null) {
-   23. return this.rootNode.getFrameNode();
-   24. }
-   25. return null;
-   26. }
-
-   28. initWeb(url: string, controller: WebviewController) {
-   29. if(this.rootNode != null) {
-   30. return;
-   31. }
-
-   33. const uiContext: UIContext = storage!.get<UIContext>('uiContext') as UIContext;
-   34. if (!uiContext) {
-   35. return;
-   36. }
-   37. this.rootNode = new BuilderNode(uiContext);
-   38. this.rootNode.build(this.wrappedBuilder, { url: url, controller: controller });
-   39. }
-   40. }
-
-   42. export const createNode = (wrappedBuilder: WrappedBuilder<BuilderData[]>, data: BuilderData) => {
-   43. const baseNode = new NodeControllerImpl(wrappedBuilder, data.context);
-   44. baseNode.initWeb(data.url, data.controller);
-   45. return baseNode;
-   46. }
-   ```
-
-   [DynamicComponent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ManageWebPageLoadBrowse/AcceleratePageAccess/entry3/src/main/ets/pages/DynamicComponent.ets#L15-L63)
 3. 编写用于生成字节码缓存的组件，本例中的本地JavaScript资源内容通过文件读取接口读取rawfile目录下的本地文件。
 
+   ```typescript
+   // main/ets/pages/PrecompileWebview.ets
+   import { BuilderData } from './DynamicComponent';
+   import { Config, configs } from './PrecompileConfig';
+
+   @Builder
+   function webBuilder(data: BuilderData) {
+     Web({ src: data.url, controller: data.controller })
+       .onControllerAttached(() => {
+         precompile(data.controller, configs, data.context);
+       })
+       .fileAccess(true)
+   }
+
+   export const precompileWebview = wrapBuilder<BuilderData[]>(webBuilder);
+
+   export const precompile = async (controller: WebviewController, configs: Array<Config>, context: UIContext) => {
+     for (const config of configs) {
+       let content = await readRawFile(config.localPath, context);
+
+       try {
+         controller.precompileJavaScript(config.url, content, config.options)
+           .then(errCode => {
+             console.info('precompile successfully! ' + errCode);
+           }).catch((errCode: number) => {
+             console.error('precompile failed. ' + errCode);
+         });
+       } catch (err) {
+         console.error('precompile failed. ' + err.code + ' ' + err.message);
+       }
+     }
+   }
+
+   async function readRawFile(path: string, context: UIContext) {
+     try {
+       return await context.getHostContext()!.resourceManager.getRawFileContent(path);
+     } catch (err) {
+       return new Uint8Array(0);
+     }
+   }
    ```
-   1. import { BuilderData } from './DynamicComponent';
-   2. import { Config, configs } from './PrecompileConfig';
 
-   4. @Builder
-   5. function webBuilder(data: BuilderData) {
-   6. Web({ src: data.url, controller: data.controller })
-   7. .onControllerAttached(() => {
-   8. precompile(data.controller, configs, data.context);
-   9. })
-   10. .fileAccess(true)
-   11. }
-
-   13. export const precompileWebview = wrapBuilder<BuilderData[]>(webBuilder);
-
-   15. export const precompile = async (controller: WebviewController, configs: Array<Config>, context: UIContext) => {
-   16. for (const config of configs) {
-   17. let content = await readRawFile(config.localPath, context);
-
-   19. try {
-   20. controller.precompileJavaScript(config.url, content, config.options)
-   21. .then(errCode => {
-   22. console.error('precompile successfully! ' + errCode);
-   23. }).catch((errCode: number) => {
-   24. console.error('precompile failed. ' + errCode);
-   25. });
-   26. } catch (err) {
-   27. console.error('precompile failed. ' + err.code + ' ' + err.message);
-   28. }
-   29. }
-   30. }
-
-   32. async function readRawFile(path: string, context: UIContext) {
-   33. try {
-   34. return await context.getHostContext()!.resourceManager.getRawFileContent(path);
-   35. } catch (err) {
-   36. return new Uint8Array(0);
-   37. }
-   38. }
-   ```
-
-   [PrecompileWebview.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ManageWebPageLoadBrowse/AcceleratePageAccess/entry3/src/main/ets/pages/PrecompileWebview.ets#L16-L56)
-
-   JavaScript资源的获取方式也可通过[网络请求](../harmonyos-references/js-apis-http.md)的方式获取，但此方法获取到的HTTP响应头非标准HTTP响应头格式，需额外将响应头转换成标准HTTP响应头格式后使用。如通过网络请求获取到的响应头是e-tag，则需要将其转换成E-Tag后使用。
+   JavaScript资源的获取方式也可通过[数据请求](../harmonyos-references/js-apis-http.md)的方式获取，但此方法获取到的HTTP响应头非标准HTTP响应头格式，需额外将响应头转换成标准HTTP响应头格式后使用。如通过网络请求获取到的响应头是e-tag，则需要将其转换成E-Tag后使用。
 4. 编写业务用组件代码。
 
+   ```typescript
+   // main/ets/pages/BusinessWebview.ets
+   import { BuilderData } from './DynamicComponent';
+
+   @Builder
+   function webBuilder(data: BuilderData) {
+     // 此处组件可根据业务需要自行扩展
+     Web({ src: data.url, controller: data.controller })
+       .cacheMode(CacheMode.Default)
+   }
+
+   export const businessWebview = wrapBuilder<BuilderData[]>(webBuilder);
    ```
-   1. import { BuilderData } from './DynamicComponent';
-
-   3. @Builder
-   4. function webBuilder(data: BuilderData) {
-   5. // 此处组件可根据业务需要自行扩展
-   6. Web({ src: data.url, controller: data.controller })
-   7. .cacheMode(CacheMode.Default)
-   8. }
-
-   10. export const businessWebview = wrapBuilder<BuilderData[]>(webBuilder);
-   ```
-
-   [BusinessWebview.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ManageWebPageLoadBrowse/AcceleratePageAccess/entry3/src/main/ets/pages/BusinessWebview.ets#L16-L28)
 5. 编写资源配置信息。
 
+   ```typescript
+   // main/ets/pages/PrecompileConfig.ets
+   import { webview } from '@kit.ArkWeb'
+
+   export interface Config {
+     url:  string,
+     localPath: string, // 本地资源路径
+     options: webview.CacheOptions
+   }
+
+   export let configs: Config[] = [
+     {
+       url: 'https://www.example.com/example.js',
+       localPath: 'example.js',
+       options: {
+         responseHeaders: [
+           { headerKey: 'E-Tag', headerValue: 'aWO42N9P9dG/5xqYQCxsx+vDOoU='},
+           { headerKey: 'Last-Modified', headerValue: 'Wed, 21 Mar 2025 10:38:41 GMT'}
+         ]
+       }
+     }
+   ]
    ```
-   1. import { webview } from '@kit.ArkWeb'
-
-   3. export interface Config {
-   4. url:  string,
-   5. localPath: string, // 本地资源路径
-   6. options: webview.CacheOptions
-   7. }
-
-   9. export let configs: Config[] = [
-   10. {
-   11. url: 'https://www.example.com/example.js',
-   12. localPath: 'example.js',
-   13. options: {
-   14. responseHeaders: [
-   15. { headerKey: 'E-Tag', headerValue: 'aWO42N9P9dG/5xqYQCxsx+vDOoU='},
-   16. { headerKey: 'Last-Modified', headerValue: 'Wed, 21 Mar 2025 10:38:41 GMT'}
-   17. ]
-   18. }
-   19. }
-   20. ]
-   ```
-
-   [PrecompileConfig.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ManageWebPageLoadBrowse/AcceleratePageAccess/entry3/src/main/ets/pages/PrecompileConfig.ets#L16-L38)
 6. 在页面中使用。
 
+   ```typescript
+   // main/ets/pages/Index.ets
+   import { webview } from '@kit.ArkWeb';
+   import { NodeController } from '@kit.ArkUI';
+   import { createNode } from './DynamicComponent';
+   import { precompileWebview } from './PrecompileWebview';
+   import { businessWebview } from './BusinessWebview';
+
+   @Entry
+   @Component
+   struct Index {
+     @State precompileNode: NodeController | undefined = undefined;
+     precompileController: webview.WebviewController = new webview.WebviewController();
+
+     @State businessNode: NodeController | undefined = undefined;
+     businessController: webview.WebviewController = new webview.WebviewController();
+
+     aboutToAppear(): void {
+       // 初始化用于注入本地资源的Web组件
+       this.precompileNode = createNode(precompileWebview,
+         { url: 'https://www.example.com/empty.html', controller: this.precompileController, context: this.getUIContext()});
+     }
+
+     build() {
+       Column() {
+         // 在适当的时机加载业务用Web组件，本例以Button点击触发为例
+         Button('加载页面')
+           .onClick(() => {
+             this.businessNode = createNode(businessWebview, {
+               url: 'https://www.example.com/business.html',
+               controller: this.businessController,
+               context: this.getUIContext()
+             });
+           })
+         // 用于业务的Web组件
+         NodeContainer(this.businessNode);
+       }
+     }
+   }
    ```
-   1. import { webview } from '@kit.ArkWeb';
-   2. import { NodeController } from '@kit.ArkUI';
-   3. import { createNode } from './DynamicComponent';
-   4. import { precompileWebview } from './PrecompileWebview';
-   5. import { businessWebview } from './BusinessWebview';
-
-   7. @Entry
-   8. @Component
-   9. struct Index {
-   10. @State precompileNode: NodeController | undefined = undefined;
-   11. precompileController: webview.WebviewController = new webview.WebviewController();
-
-   13. @State businessNode: NodeController | undefined = undefined;
-   14. businessController: webview.WebviewController = new webview.WebviewController();
-
-   16. aboutToAppear(): void {
-   17. // 初始化用于注入本地资源的Web组件
-   18. this.precompileNode = createNode(precompileWebview,
-   19. { url: 'https://www.example.com/empty.html', controller: this.precompileController, context: this.getUIContext()});
-   20. }
-
-   22. build() {
-   23. Column() {
-   24. // 在适当的时机加载业务用Web组件，本例以Button点击触发为例
-   25. Button('加载页面')
-   26. .onClick(() => {
-   27. this.businessNode = createNode(businessWebview, {
-   28. url: 'https://www.example.com/business.html',
-   29. controller: this.businessController,
-   30. context: this.getUIContext()
-   31. });
-   32. })
-   33. // 用于业务的Web组件
-   34. NodeContainer(this.businessNode);
-   35. }
-   36. }
-   37. }
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ManageWebPageLoadBrowse/AcceleratePageAccess/entry3/src/main/ets/pages/Index.ets#L16-L32)
 
 当需要更新本地已经生成的编译字节码时，修改cacheOptions参数中responseHeaders中的E-Tag或Last-Modified响应头对应的值，再次调用接口即可。
 
@@ -431,242 +411,237 @@ content_hash: sha256:09325fcaac70e96645395ab09540b545fedf14f10de0786e67297899016
 
 1. 首先，在EntryAbility中将[UIContext](../harmonyos-references/arkts-apis-uicontext-uicontext.md)存到[localStorage](arkts-localstorage.md)中。
 
-   ```
-   1. // EntryAbility.ets
-   2. import { UIAbility } from '@kit.AbilityKit';
-   3. import { window } from '@kit.ArkUI';
+   ```ts
+   // EntryAbility.ets
+   import { UIAbility } from '@kit.AbilityKit';
+   import { window } from '@kit.ArkUI';
 
-   5. const localStorage: LocalStorage = new LocalStorage('uiContext');
+   const localStorage: LocalStorage = new LocalStorage('uiContext');
 
-   7. export default class EntryAbility extends UIAbility {
-   8. storage: LocalStorage = localStorage;
+   export default class EntryAbility extends UIAbility {
+     storage: LocalStorage = localStorage;
 
-   10. onWindowStageCreate(windowStage: window.WindowStage) {
-   11. windowStage.loadContent('pages/Index', this.storage, (err, data) => {
-   12. if (err.code) {
-   13. return;
-   14. }
+     onWindowStageCreate(windowStage: window.WindowStage) {
+       windowStage.loadContent('pages/Index', this.storage, (err, data) => {
+         if (err.code) {
+           return;
+         }
 
-   16. this.storage.setOrCreate<UIContext>("uiContext", windowStage.getMainWindowSync().getUIContext());
-   17. });
-   18. }
-   19. }
+         this.storage.setOrCreate<UIContext>("uiContext", windowStage.getMainWindowSync().getUIContext());
+       });
+     }
+   }
    ```
 2. 编写动态组件所需基础代码。
 
+   ```typescript
+   // main/ets/pages/DynamicComponent.ets
+   import { NodeController, BuilderNode, FrameNode, UIContext } from '@kit.ArkUI';
+
+   export interface BuilderData {
+     url: string;
+     controller: WebviewController;
+     context: UIContext;
+   }
+
+   let storage : LocalStorage | undefined = undefined;
+
+   export class NodeControllerImpl extends NodeController {
+     private rootNode: BuilderNode<BuilderData[]> | null = null;
+     private wrappedBuilder: WrappedBuilder<BuilderData[]> | null = null;
+
+     constructor(wrappedBuilder: WrappedBuilder<BuilderData[]>, context: UIContext) {
+     storage = context.getSharedLocalStorage();
+       super();
+       this.wrappedBuilder = wrappedBuilder;
+     }
+
+     makeNode(): FrameNode | null {
+       if (this.rootNode != null) {
+         return this.rootNode.getFrameNode();
+       }
+       return null;
+     }
+
+     initWeb(url: string, controller: WebviewController) {
+       if(this.rootNode != null) {
+         return;
+       }
+
+       const uiContext: UIContext = storage!.get<UIContext>('uiContext') as UIContext;
+       if (!uiContext) {
+         return;
+       }
+       this.rootNode = new BuilderNode(uiContext);
+       this.rootNode.build(this.wrappedBuilder, { url: url, controller: controller });
+     }
+   }
+
+   export const createNode = (wrappedBuilder: WrappedBuilder<BuilderData[]>, data: BuilderData) => {
+     const baseNode = new NodeControllerImpl(wrappedBuilder, data.context);
+     baseNode.initWeb(data.url, data.controller);
+     return baseNode;
+   }
    ```
-   1. import { NodeController, BuilderNode, FrameNode, UIContext } from '@kit.ArkUI';
-
-   3. export interface BuilderData {
-   4. url: string;
-   5. controller: WebviewController;
-   6. context: UIContext;
-   7. }
-
-   9. let storage : LocalStorage | undefined = undefined;
-
-   11. export class NodeControllerImpl extends NodeController {
-   12. private rootNode: BuilderNode<BuilderData[]> | null = null;
-   13. private wrappedBuilder: WrappedBuilder<BuilderData[]> | null = null;
-
-   15. constructor(wrappedBuilder: WrappedBuilder<BuilderData[]>,  context: UIContext) {
-   16. storage = context.getSharedLocalStorage();
-   17. super();
-   18. this.wrappedBuilder = wrappedBuilder;
-   19. }
-
-   21. makeNode(): FrameNode | null {
-   22. if (this.rootNode != null) {
-   23. return this.rootNode.getFrameNode();
-   24. }
-   25. return null;
-   26. }
-
-   28. initWeb(url: string, controller: WebviewController) {
-   29. if(this.rootNode != null) {
-   30. return;
-   31. }
-
-   33. const uiContext: UIContext = storage!.get<UIContext>('uiContext') as UIContext;
-   34. if (!uiContext) {
-   35. return;
-   36. }
-   37. this.rootNode = new BuilderNode(uiContext);
-   38. this.rootNode.build(this.wrappedBuilder, { url: url, controller: controller });
-   39. }
-   40. }
-
-   42. export const createNode = (wrappedBuilder: WrappedBuilder<BuilderData[]>, data: BuilderData) => {
-   43. const baseNode = new NodeControllerImpl(wrappedBuilder, data.context);
-   44. baseNode.initWeb(data.url, data.controller);
-   45. return baseNode;
-   46. }
-   ```
-
-   [DynamicComponent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ManageWebPageLoadBrowse/AcceleratePageAccess/entry4/src/main/ets/pages/DynamicComponent.ets#L15-L63)
 3. 编写用于注入资源的组件代码，本例中的本地资源内容通过文件读取接口读取rawfile目录下的本地文件。
 
+   ```typescript
+   // main/ets/pages/InjectWebview.ets
+   import { webview } from '@kit.ArkWeb';
+   import { resourceConfigs } from './Resource';
+   import { BuilderData } from './DynamicComponent';
+
+   @Builder
+   function webBuilder(data: BuilderData) {
+     Web({ src: data.url, controller: data.controller })
+       .onControllerAttached(async () => {
+         try {
+           data.controller.injectOfflineResources(await getData (data.context));
+         } catch (err) {
+           console.error('error: ' + err.code + ' ' + err.message);
+         }
+       })
+       .fileAccess(true)
+   }
+
+   export const injectWebview = wrapBuilder<BuilderData[]>(webBuilder);
+
+   export async function getData(context: UIContext) {
+     const resourceMapArr: webview.OfflineResourceMap[] = [];
+
+     // 读取配置，从rawfile目录中读取文件内容
+     for (let config of resourceConfigs) {
+       let buf: Uint8Array = new Uint8Array(0);
+       if (config.localPath) {
+         buf = await readRawFile(config.localPath, context);
+       }
+
+       resourceMapArr.push({
+         urlList: config.urlList,
+         resource: buf,
+         responseHeaders: config.responseHeaders,
+         type: config.type,
+       })
+     }
+
+     return resourceMapArr;
+   }
+
+   export async function readRawFile(url: string, context: UIContext) {
+     try {
+       return await context.getHostContext()!.resourceManager.getRawFileContent(url);
+     } catch (err) {
+       return new Uint8Array(0);
+     }
+   }
    ```
-   1. import { webview } from '@kit.ArkWeb';
-   2. import { resourceConfigs } from './Resource';
-   3. import { BuilderData } from './DynamicComponent';
-
-   5. @Builder
-   6. function webBuilder(data: BuilderData) {
-   7. Web({ src: data.url, controller: data.controller })
-   8. .onControllerAttached(async () => {
-   9. try {
-   10. data.controller.injectOfflineResources(await getData (data.context));
-   11. } catch (err) {
-   12. console.error('error: ' + err.code + ' ' + err.message);
-   13. }
-   14. })
-   15. .fileAccess(true)
-   16. }
-
-   18. export const injectWebview = wrapBuilder<BuilderData[]>(webBuilder);
-
-   20. export async function getData(context: UIContext) {
-   21. const resourceMapArr: webview.OfflineResourceMap[] = [];
-
-   23. // 读取配置，从rawfile目录中读取文件内容
-   24. for (let config of resourceConfigs) {
-   25. let buf: Uint8Array = new Uint8Array(0);
-   26. if (config.localPath) {
-   27. buf = await readRawFile(config.localPath, context);
-   28. }
-
-   30. resourceMapArr.push({
-   31. urlList: config.urlList,
-   32. resource: buf,
-   33. responseHeaders: config.responseHeaders,
-   34. type: config.type,
-   35. })
-   36. }
-
-   38. return resourceMapArr;
-   39. }
-
-   41. export async function readRawFile(url: string, context: UIContext) {
-   42. try {
-   43. return await context.getHostContext()!.resourceManager.getRawFileContent(url);
-   44. } catch (err) {
-   45. return new Uint8Array(0);
-   46. }
-   47. }
-   ```
-
-   [InjectWebview.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ManageWebPageLoadBrowse/AcceleratePageAccess/entry4/src/main/ets/pages/InjectWebview.ets#L16-L65)
 4. 编写业务用组件代码。
 
+   ```typescript
+   // main/ets/pages/BusinessWebview.ets
+   import { BuilderData } from './DynamicComponent';
+
+   @Builder
+   function webBuilder(data: BuilderData) {
+     // 此处组件可根据业务需要自行扩展
+     Web({ src: data.url, controller: data.controller })
+       .cacheMode(CacheMode.Default)
+   }
+
+   export const businessWebview = wrapBuilder<BuilderData[]>(webBuilder);
    ```
-   1. import { BuilderData } from './DynamicComponent';
-
-   3. @Builder
-   4. function webBuilder(data: BuilderData) {
-   5. // 此处组件可根据业务需要自行扩展
-   6. Web({ src: data.url, controller: data.controller })
-   7. .cacheMode(CacheMode.Default)
-   8. }
-
-   10. export const businessWebview = wrapBuilder<BuilderData[]>(webBuilder);
-   ```
-
-   [BusinessWebview.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ManageWebPageLoadBrowse/AcceleratePageAccess/entry4/src/main/ets/pages/BusinessWebview.ets#L15-L27)
 5. 编写资源配置信息。
 
+   ```typescript
+   // main/ets/pages/Resource.ets
+   import { webview } from '@kit.ArkWeb';
+
+   export interface ResourceConfig {
+     urlList: Array<string>,
+     type: webview.OfflineResourceType,
+     responseHeaders: Array<Header>,
+     localPath: string, // 本地资源存放在rawfile目录下的路径
+   }
+
+   export const resourceConfigs: ResourceConfig[] = [
+     {
+       localPath: 'example.png',
+       urlList: [
+         'https://www.example.com/',
+         'https://www.example.com/path1/example.png',
+         'https://www.example.com/path2/example.png',
+       ],
+       type: webview.OfflineResourceType.IMAGE,
+       responseHeaders: [
+         { headerKey: 'Cache-Control', headerValue: 'max-age=1000' },
+         { headerKey: 'Content-Type', headerValue: 'image/png' },
+       ]
+     },
+     {
+       localPath: 'example.js',
+       urlList: [ // 仅提供一个url，这个url既作为资源的源，也作为资源的网络请求地址
+         'https://www.example.com/example.js',
+       ],
+       type: webview.OfflineResourceType.CLASSIC_JS,
+       responseHeaders: [
+         // 以<script crossorigin='anonymous' />方式使用，提供额外的响应头
+         { headerKey: 'Cross-Origin', headerValue:'anonymous' }
+       ]
+     },
+   ];
    ```
-   1. import { webview } from '@kit.ArkWeb';
-
-   3. export interface ResourceConfig {
-   4. urlList: Array<string>,
-   5. type: webview.OfflineResourceType,
-   6. responseHeaders: Array<Header>,
-   7. localPath: string, // 本地资源存放在rawfile目录下的路径
-   8. }
-
-   10. export const resourceConfigs: ResourceConfig[] = [
-   11. {
-   12. localPath: 'example.png',
-   13. urlList: [
-   14. 'https://www.example.com/',
-   15. 'https://www.example.com/path1/example.png',
-   16. 'https://www.example.com/path2/example.png',
-   17. ],
-   18. type: webview.OfflineResourceType.IMAGE,
-   19. responseHeaders: [
-   20. { headerKey: 'Cache-Control', headerValue: 'max-age=1000' },
-   21. { headerKey: 'Content-Type', headerValue: 'image/png' },
-   22. ]
-   23. },
-   24. {
-   25. localPath: 'example.js',
-   26. urlList: [ // 仅提供一个url，这个url既作为资源的源，也作为资源的网络请求地址
-   27. 'https://www.example.com/example.js',
-   28. ],
-   29. type: webview.OfflineResourceType.CLASSIC_JS,
-   30. responseHeaders: [
-   31. // 以<script crossorigin='anonymous' />方式使用，提供额外的响应头
-   32. { headerKey: 'Cross-Origin', headerValue:'anonymous' }
-   33. ]
-   34. },
-   35. ];
-   ```
-
-   [Resource.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ManageWebPageLoadBrowse/AcceleratePageAccess/entry4/src/main/ets/pages/Resource.ets#L16-L53)
 6. 在页面中使用。
 
+   ```typescript
+   // main/ets/pages/Index.ets
+   import { webview } from '@kit.ArkWeb';
+   import { NodeController } from '@kit.ArkUI';
+   import { createNode } from './DynamicComponent';
+   import { injectWebview } from './InjectWebview';
+   import { businessWebview } from './BusinessWebview';
+
+   @Entry
+   @Component
+   struct Index {
+     @State injectNode: NodeController | undefined = undefined;
+     injectController: webview.WebviewController = new webview.WebviewController();
+
+     @State businessNode: NodeController | undefined = undefined;
+     businessController: webview.WebviewController = new webview.WebviewController();
+
+     aboutToAppear(): void {
+       // 初始化用于注入本地资源的Web组件, 提供一个空的html页面作为url即可
+       this.injectNode = createNode(injectWebview,
+         { url: 'https://www.example.com/empty.html', controller: this.injectController, context: this.getUIContext()});
+     }
+
+     build() {
+       Column() {
+         // 在适当的时机加载业务用Web组件，本例以Button点击触发为例
+         Button('加载页面')
+           .onClick(() => {
+             this.businessNode = createNode(businessWebview, {
+               url: 'https://www.example.com/business.html',
+               controller: this.businessController,
+               context: this.getUIContext()
+             });
+           })
+         // 用于业务的Web组件
+         NodeContainer(this.businessNode);
+       }
+     }
+   }
    ```
-   1. import { webview } from '@kit.ArkWeb';
-   2. import { NodeController } from '@kit.ArkUI';
-   3. import { createNode } from './DynamicComponent';
-   4. import { injectWebview } from './InjectWebview';
-   5. import { businessWebview } from './BusinessWebview';
-
-   7. @Entry
-   8. @Component
-   9. struct Index {
-   10. @State injectNode: NodeController | undefined = undefined;
-   11. injectController: webview.WebviewController = new webview.WebviewController();
-
-   13. @State businessNode: NodeController | undefined = undefined;
-   14. businessController: webview.WebviewController = new webview.WebviewController();
-
-   16. aboutToAppear(): void {
-   17. // 初始化用于注入本地资源的Web组件, 提供一个空的html页面作为url即可
-   18. this.injectNode = createNode(injectWebview,
-   19. { url: 'https://www.example.com/empty.html', controller: this.injectController, context: this.getUIContext()});
-   20. }
-
-   22. build() {
-   23. Column() {
-   24. // 在适当的时机加载业务用Web组件，本例以Button点击触发为例
-   25. Button('加载页面')
-   26. .onClick(() => {
-   27. this.businessNode = createNode(businessWebview, {
-   28. url: 'https://www.example.com/business.html',
-   29. controller: this.businessController,
-   30. context: this.getUIContext()
-   31. });
-   32. })
-   33. // 用于业务的Web组件
-   34. NodeContainer(this.businessNode);
-   35. }
-   36. }
-   37. }
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ManageWebPageLoadBrowse/AcceleratePageAccess/entry4/src/main/ets/pages/Index.ets#L16-L55)
 7. 加载的HTML网页示例。
 
-   ```
-   1. <!DOCTYPE html>
-   2. <html lang="en">
-   3. <head></head>
-   4. <body>
-   5. <img src="https://www.example.com/path1/request.png" />
-   6. <img src="https://www.example.com/path2/request.png" />
-   7. <script src="https://www.example.com/example.js" crossorigin="anonymous"></script>
-   8. </body>
-   9. </html>
+   ```html
+   <!DOCTYPE html>
+   <html lang="en">
+   <head></head>
+   <body>
+     <img src="https://www.example.com/path1/request.png" />
+     <img src="https://www.example.com/path2/request.png" />
+     <script src="https://www.example.com/example.js" crossorigin="anonymous"></script>
+   </body>
+   </html>
    ```

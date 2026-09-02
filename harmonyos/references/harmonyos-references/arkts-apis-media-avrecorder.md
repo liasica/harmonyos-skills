@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AVRecorder)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Interface (AVRecorder)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:43+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1b3dad6f719ee17f0501ef991bf8403c214a20276b7b1ea2b00a645f9093e868
+scraped_at: 2026-09-02T15:02:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b1bb9e6c5c468dac68d00b77fe556f424c01c5a5b032b50fd5ba2ca773b120a4
 ---
 
-音视频录制管理类，用于音视频媒体录制。在调用AVRecorder的方法前，需要先调用[createAVRecorder](arkts-apis-media-f.md#mediacreateavrecorder9)接口构建一个AVRecorder实例。
+AVRecorder是音视频录制管理类，用于音视频录制的全流程管理，支持音频录制、视频录制及音视频混合录制，可灵活配置编码参数、添加水印、设置元数据、监听录制状态和错误事件等。适用于录制音视频并保存到文件的场景，包括需要在音频流打断期间保持录制连续性、实时监控音频振幅等场景。在调用AVRecorder的方法前，需要先调用[createAVRecorder](arkts-apis-media-f.md#mediacreateavrecorder9)接口构建一个AVRecorder实例。典型录制流程：[createAVRecorder](arkts-apis-media-f.md#mediacreateavrecorder9) → [prepare](arkts-apis-media-avrecorder.md#prepare9) → [getInputSurface](arkts-apis-media-avrecorder.md#getinputsurface9)（纯视频/音视频录制时） → [start](arkts-apis-media-avrecorder.md#start9) → [pause](arkts-apis-media-avrecorder.md#pause9)/[resume](arkts-apis-media-avrecorder.md#resume9) → [stop](arkts-apis-media-avrecorder.md#stop9) → [release](arkts-apis-media-avrecorder.md#release9)。
 
-音视频录制demo可参考：[音频录制开发指导](../harmonyos-guides/using-avrecorder-for-recording.md)、[视频录制开发指导](../harmonyos-guides/video-recording.md)。
+音视频录制示例可参考：[音频录制开发指导](../harmonyos-guides/using-avrecorder-for-recording.md)、[视频录制开发指导](../harmonyos-guides/video-recording.md)。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Interface首批接口从API version 9开始支持。
@@ -20,33 +20,29 @@ content_hash: sha256:1b3dad6f719ee17f0501ef991bf8403c214a20276b7b1ea2b00a645f909
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { media } from '@kit.MediaKit';
+```ts
+import { media } from '@kit.MediaKit';
 ```
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| state9+ | [AVRecorderState](arkts-apis-media-t.md#avrecorderstate9) | 是 | 否 | 音视频录制的状态。  **元服务API：** 从API version 12 开始，该接口支持在元服务中使用。 |
+| state9+ | [AVRecorderState](arkts-apis-media-t.md#avrecorderstate9) | 是 | 否 | 音视频录制的状态。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 
 ## prepare9+
 
-PhonePC/2in1TabletTVWearable
-
 prepare(config: AVRecorderConfig, callback: AsyncCallback<void>): void
 
-音视频录制的参数设置。使用callback异步回调。
+准备录制。设置音视频录制的参数，并初始化录制上下文。使用callback异步回调。
+
+必须在[start](arkts-apis-media-avrecorder.md#start9)之前调用，调用成功后进入prepared状态，此时，纯音频录制可直接调用[start](arkts-apis-media-avrecorder.md#start9)接口开始录制；纯视频或音视频录制需先调用[getInputSurface](arkts-apis-media-avrecorder.md#getinputsurface9)接口获取surface，再调用[start](arkts-apis-media-avrecorder.md#start9)接口开始录制。
 
 **需要权限：** ohos.permission.MICROPHONE
 
-不涉及音频录制时，无需获取ohos.permission.MICROPHONE权限。
+该权限为用户授权权限，需要通过调用[requestPermissionsFromUser()](js-apis-abilityaccessctrl.md#requestpermissionsfromuser9)向用户申请。不涉及音频录制时，无需获取ohos.permission.MICROPHONE权限。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
@@ -54,7 +50,7 @@ prepare(config: AVRecorderConfig, callback: AsyncCallback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| config | [AVRecorderConfig](arkts-apis-media-i.md#avrecorderconfig9) | 是 | 配置音视频录制的相关参数。 |
+| config | [AVRecorderConfig](arkts-apis-media-i.md#avrecorderconfig9) | 是 | 配置音视频录制的相关参数。音频录制时需设置audioSourceType，视频录制时需设置videoSourceType。 |
 | callback | AsyncCallback<void> | 是 | 回调函数。当prepare接口成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
@@ -64,62 +60,62 @@ prepare(config: AVRecorderConfig, callback: AsyncCallback<void>): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. Return by callback. |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
-| 5400102 | Operate not permit. Return by callback. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 5400102 | Operation not allowed. Return by callback. |
 | 5400105 | Service died. Return by callback. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. // 配置参数以实际硬件设备支持的范围为准。
-4. let avRecorderProfile: media.AVRecorderProfile = {
-5. audioBitrate : 48000,
-6. audioChannels : 2,
-7. audioCodec : media.CodecMimeType.AUDIO_AAC,
-8. audioSampleRate : 48000,
-9. fileFormat : media.ContainerFormatType.CFT_MPEG_4,
-10. videoBitrate : 2000000,
-11. videoCodec : media.CodecMimeType.VIDEO_AVC,
-12. videoFrameWidth : 640,
-13. videoFrameHeight : 480,
-14. videoFrameRate : 30
-15. };
-16. let videoMetaData: media.AVMetadata = {
-17. videoOrientation: '0' // 合理值0、90、180、270，非合理值prepare接口报错。
-18. };
-19. let avRecorderConfig: media.AVRecorderConfig = {
-20. audioSourceType : media.AudioSourceType.AUDIO_SOURCE_TYPE_MIC,
-21. videoSourceType : media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_YUV,
-22. profile : avRecorderProfile,
-23. url : 'fd://', // 文件需先由调用者创建，赋予读写权限，将文件fd传给此参数，eg.fd://45
-24. metadata: videoMetaData,
-25. location : { latitude : 30, longitude : 130 }
-26. };
+// 配置参数以实际硬件设备支持的范围为准。
+let avRecorderProfile: media.AVRecorderProfile = {
+  audioBitrate : 48000,
+  audioChannels : 2,
+  audioCodec : media.CodecMimeType.AUDIO_AAC,
+  audioSampleRate : 48000,
+  fileFormat : media.ContainerFormatType.CFT_MPEG_4,
+  videoBitrate : 2000000,
+  videoCodec : media.CodecMimeType.VIDEO_AVC,
+  videoFrameWidth : 640,
+  videoFrameHeight : 480,
+  videoFrameRate : 30
+};
+let videoMetaData: media.AVMetadata = {
+  videoOrientation: '0' // 合理值0、90、180、270，非合理值prepare接口报错。
+};
+let avRecorderConfig: media.AVRecorderConfig = {
+  audioSourceType : media.AudioSourceType.AUDIO_SOURCE_TYPE_MIC,
+  videoSourceType : media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_YUV,
+  profile : avRecorderProfile,
+  url : 'fd://', // 文件需先通过fs.open接口（@kit.FileKit）打开获取文件描述符fd，赋予读写权限，将fd传给此参数，详见文件管理开发指导。
+  metadata: videoMetaData,
+  location : { latitude : 30, longitude : 130 }
+};
 
-28. avRecorder.prepare(avRecorderConfig, (err: BusinessError) => {
-29. if (err) {
-30. console.error(`Failed to prepare and error is: Code: ${err.code}, message: ${err.message}`);
-31. } else {
-32. console.info('Succeeded in preparing');
-33. }
-34. });
+avRecorder.prepare(avRecorderConfig, (err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to prepare and error is: Code: ${err.code}, message: ${err.message}`);
+  } else {
+    console.info('Succeeded in preparing');
+  }
+});
 ```
 
 ## prepare9+
 
-PhonePC/2in1TabletTVWearable
-
 prepare(config: AVRecorderConfig): Promise<void>
 
-音视频录制的参数设置。使用Promise异步回调。
+准备录制。设置音视频录制的参数，并初始化录制上下文。使用Promise异步回调。
+
+必须在[start](arkts-apis-media-avrecorder.md#start9-1)之前调用，调用成功后进入prepared状态，此时，纯音频录制可直接调用[start](arkts-apis-media-avrecorder.md#start9-1)接口开始录制；纯视频或音视频录制需先调用[getInputSurface](arkts-apis-media-avrecorder.md#getinputsurface9-1)接口获取surface，再调用[start](arkts-apis-media-avrecorder.md#start9-1)接口开始录制。
 
 **需要权限：** ohos.permission.MICROPHONE
 
-不涉及音频录制时，无需获取ohos.permission.MICROPHONE权限。
+该权限为用户授权权限，需要通过调用[requestPermissionsFromUser()](js-apis-abilityaccessctrl.md#requestpermissionsfromuser9)向用户申请。不涉及音频录制时，无需获取ohos.permission.MICROPHONE权限。
 
-**元服务API：** 从API version 12 开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
@@ -127,7 +123,7 @@ prepare(config: AVRecorderConfig): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| config | [AVRecorderConfig](arkts-apis-media-i.md#avrecorderconfig9) | 是 | 配置音视频录制的相关参数。 |
+| config | [AVRecorderConfig](arkts-apis-media-i.md#avrecorderconfig9) | 是 | 配置音视频录制的相关参数。音频录制时需设置audioSourceType，视频录制时需设置videoSourceType。 |
 
 **返回值：**
 
@@ -142,61 +138,120 @@ prepare(config: AVRecorderConfig): Promise<void>
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. Return by promise. |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
-| 5400102 | Operate not permit. Return by promise. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 5400102 | Operation not allowed. Return by promise. |
 | 5400105 | Service died. Return by promise. |
 
 **示例：**
 
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+// 配置参数以实际硬件设备支持的范围为准。
+let avRecorderProfile: media.AVRecorderProfile = {
+  audioBitrate : 48000,
+  audioChannels : 2,
+  audioCodec : media.CodecMimeType.AUDIO_AAC,
+  audioSampleRate : 48000,
+  fileFormat : media.ContainerFormatType.CFT_MPEG_4,
+  videoBitrate : 2000000,
+  videoCodec : media.CodecMimeType.VIDEO_AVC,
+  videoFrameWidth : 640,
+  videoFrameHeight : 480,
+  videoFrameRate : 30
+};
+let videoMetaData: media.AVMetadata = {
+  videoOrientation: '0' // 合理值0、90、180、270，非合理值prepare接口报错。
+};
+let avRecorderConfig: media.AVRecorderConfig = {
+  audioSourceType : media.AudioSourceType.AUDIO_SOURCE_TYPE_MIC,
+  videoSourceType : media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_YUV,
+  profile : avRecorderProfile,
+  url : 'fd://',  // 文件需先通过fileIo.open接口（@kit.CoreFileKit）打开获取文件描述符fd，赋予读写权限，将fd传给此参数。
+  metadata : videoMetaData,
+  location : { latitude : 30, longitude : 130 }
+};
+
+avRecorder.prepare(avRecorderConfig).then(() => {
+  console.info('Succeeded in preparing');
+}).catch((err: Error) => {
+  let error: BusinessError = err as BusinessError;
+  console.error(`Failed to prepare and error is: Code: ${error.code}, message: ${error.message}`);
+});
 ```
-1. import { BusinessError } from '@kit.BasicServicesKit';
 
-3. // 配置参数以实际硬件设备支持的范围为准。
-4. let avRecorderProfile: media.AVRecorderProfile = {
-5. audioBitrate : 48000,
-6. audioChannels : 2,
-7. audioCodec : media.CodecMimeType.AUDIO_AAC,
-8. audioSampleRate : 48000,
-9. fileFormat : media.ContainerFormatType.CFT_MPEG_4,
-10. videoBitrate : 2000000,
-11. videoCodec : media.CodecMimeType.VIDEO_AVC,
-12. videoFrameWidth : 640,
-13. videoFrameHeight : 480,
-14. videoFrameRate : 30
-15. };
-16. let videoMetaData: media.AVMetadata = {
-17. videoOrientation: '0' // 合理值0、90、180、270，非合理值prepare接口报错。
-18. };
-19. let avRecorderConfig: media.AVRecorderConfig = {
-20. audioSourceType : media.AudioSourceType.AUDIO_SOURCE_TYPE_MIC,
-21. videoSourceType : media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_YUV,
-22. profile : avRecorderProfile,
-23. url : 'fd://',  // 文件需先由调用者创建，赋予读写权限，将文件fd传给此参数，eg.fd://45
-24. metadata : videoMetaData,
-25. location : { latitude : 30, longitude : 130 }
-26. };
+## addWatermark
 
-28. avRecorder.prepare(avRecorderConfig).then(() => {
-29. console.info('Succeeded in preparing');
-30. }).catch((err: Error) => {
-31. let error: BusinessError = err as BusinessError;
-32. console.error(`Failed to prepare and error is: Code: ${error.code}, message: ${error.message}`);
-33. });
+addWatermark(watermark: image.PixelMap, config: WatermarkConfiguration): Promise<number>
+
+添加自定义水印图像到录制视频中。适用于需要在录制视频中嵌入品牌标识、版权信息或时间戳等水印的场景。使用Promise异步回调。
+
+**说明** 
+
+* 应用最多可添加5个水印。
+* 必须在[prepare](arkts-apis-media-avrecorder.md#prepare9)之前调用。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVRecorder
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| watermark | [image.PixelMap](arkts-apis-image-pixelmap.md) | 是 | 水印图像。该图像将作为水印叠加到录制的视频中。 |
+| config | [WatermarkConfiguration](arkts-apis-media-i.md#watermarkconfiguration) | 是 | 配置视频录制水印的相关参数。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回所添加水印的编号，取值范围[1, 5]。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Media错误码](errorcode-media.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400102 | Operation not allowed. Return by promise. |
+| 5400103 | IO error. Return by promise. |
+| 5400105 | Service died. Return by promise. |
+| 5400108 | The parameter check failed, parameter value out of range. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { image } from '@kit.ImageKit';
+import { media } from '@kit.MediaKit';
+
+let watermark: image.PixelMap | undefined = undefined; // 通过image.createImageSource创建ImageSource对象后调用createPixelMap接口（@kit.ImageKit）获取PixelMap。水印图像不能为空。
+let watermarkConfig: media.WatermarkConfiguration = { top: 100, left: 100, width: 100, height: 100 };
+
+if (watermark) {
+    avRecorder.addWatermark(watermark, watermarkConfig).then((num: number) => {
+      console.info(`Succeeded in adding watermark, watermarkNum is ${num}`);
+    })
+    .catch((error: BusinessError) => {
+      console.error(`Failed to add watermark and catch error is: Code: ${error.code}, message: ${error.message}`);
+    });
+}
 ```
 
 ## getInputSurface9+
 
-PhonePC/2in1TabletTVWearable
-
 getInputSurface(callback: AsyncCallback<string>): void
 
-获得录制需要的surface。使用callback异步回调。
+获得录制需要的surface。适用于纯视频或音视频录制时需要获取surface传递视频数据的场景。相机视频录制功能需配合相机模块使用，详情请参考[相机管理](arkts-apis-camera.md)。使用callback异步回调。
 
-开发者从此surface中获取surfaceBuffer，填入相应的视频数据。
+开发者从此surface中获取surfaceBuffer，填入待录制的视频数据。
 
-应当注意，填入的视频数据需要携带时间戳（单位ns）和buffersize。时间戳的起始时间请以系统启动时间为基准。
+填入视频数据时需携带时间戳（单位ns）和buffer size。时间戳的起始时间以系统启动时间为基准。
 
-需在[prepare](arkts-apis-media-avrecorder.md#prepare9)接口成功调用后，才能调用getInputSurface接口。
+必须在[prepare](arkts-apis-media-avrecorder.md#prepare9)和[start](arkts-apis-media-avrecorder.md#start9)之间调用。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
@@ -212,40 +267,36 @@ getInputSurface(callback: AsyncCallback<string>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 5400102 | Operate not permit. Return by callback. |
+| 5400102 | Operation not allowed. Return by callback. |
 | 5400103 | IO error. Return by callback. |
 | 5400105 | Service died. Return by callback. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let surfaceID: string; // 该surfaceID用于传递给相机接口创建videoOutput。
+let inputSurfaceId: string; // 该inputSurfaceId用于传递给相机接口创建videoOutput。
 
-5. avRecorder.getInputSurface((err: BusinessError, surfaceId: string) => {
-6. if (err) {
-7. console.error(`Failed to do getInputSurface and error is: Code: ${err.code}, message: ${err.message}`);
-8. } else {
-9. console.info('Succeeded in doing getInputSurface');
-10. surfaceID = surfaceId;
-11. }
-12. });
+avRecorder.getInputSurface((err: BusinessError, surfaceId: string) => {
+  if (err) {
+    console.error(`Failed to do getInputSurface and error is: Code: ${err.code}, message: ${err.message}`);
+  } else {
+    console.info('Succeeded in doing getInputSurface');
+    inputSurfaceId = surfaceId;
+  }
+});
 ```
 
 ## getInputSurface9+
 
-PhonePC/2in1TabletTVWearable
-
 getInputSurface(): Promise<string>
 
-获得录制需要的surface。使用Promise异步回调。
+获得录制需要的surface。适用于纯视频或音视频录制时需要获取surface传递视频数据的场景。相机视频录制功能需配合相机模块使用，详情请参考[相机管理](arkts-apis-camera.md)。使用Promise异步回调。
 
-开发者从此surface中获取surfaceBuffer，填入相应的视频数据。
+开发者从此surface中获取surfaceBuffer，填入待录制的视频数据。填入的视频数据需要携带时间戳（单位ns）和buffer size，时间戳的起始时间以系统启动时间为基准。
 
-应当注意，填入的视频数据需要携带时间戳（单位ns）和buffersize。时间戳的起始时间请以系统启动时间为基准。
-
-需在[prepare](arkts-apis-media-avrecorder.md#prepare9-1)接口成功调用后，才能调用getInputSurface接口。
+必须在[prepare](arkts-apis-media-avrecorder.md#prepare9-1)和[start](arkts-apis-media-avrecorder.md#start9-1)之间调用。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
@@ -261,35 +312,33 @@ getInputSurface(): Promise<string>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 5400102 | Operate not permit. Return by promise. |
+| 5400102 | Operation not allowed. Return by promise. |
 | 5400103 | IO error. Return by promise. |
 | 5400105 | Service died. Return by promise. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let surfaceID: string; // 该surfaceID用于传递给相机接口创建videoOutput。
+let inputSurfaceId: string; // 该inputSurfaceId用于传递给相机接口创建videoOutput。
 
-5. avRecorder.getInputSurface().then((surfaceId: string) => {
-6. console.info('Succeeded in getting InputSurface');
-7. surfaceID = surfaceId;
-8. }).catch((err: Error) => {
-9. let error: BusinessError = err as BusinessError;
-10. console.error(`Failed to get InputSurface and error is: Code: ${error.code}, message: ${error.message}`);
-11. });
+avRecorder.getInputSurface().then((surfaceId: string) => {
+  console.info('Succeeded in getting InputSurface');
+  inputSurfaceId = surfaceId;
+}).catch((err: Error) => {
+  let error: BusinessError = err as BusinessError;
+  console.error(`Failed to get InputSurface and error is: Code: ${error.code}, message: ${error.message}`);
+});
 ```
 
 ## updateRotation12+
 
-PhonePC/2in1TabletTVWearable
-
 updateRotation(rotation: number): Promise<void>
 
-更新视频旋转角度。使用Promise异步回调。
+更新视频旋转角度。适用于设备方向发生变化（如横竖屏切换）时需要动态调整录制视频旋转角度的场景。使用Promise异步回调。
 
-当且仅当[prepare](arkts-apis-media-avrecorder.md#prepare9-1)接口成功调用后，且在[start](arkts-apis-media-avrecorder.md#start9)接口之前，才能调用updateRotation接口。
+必须在[prepare](arkts-apis-media-avrecorder.md#prepare9-1)和[start](arkts-apis-media-avrecorder.md#start9-1)之间调用。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
@@ -297,7 +346,7 @@ updateRotation(rotation: number): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| rotation | number | 是 | 旋转角度，取值仅支持0、90、180、270度。 |
+| rotation | number | 是 | 旋转角度，单位为度（°）。取值仅支持0°、90°、180°和270°。传入不支持的角度值时，返回错误码401。 |
 
 **返回值：**
 
@@ -311,33 +360,80 @@ updateRotation(rotation: number): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 5400102 | Operation not allowed. Return by promise. |
 | 5400103 | IO error. Return by promise. |
 | 5400105 | Service died. Return by promise. |
 
 **示例：**
 
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let rotation = 90;
+
+avRecorder.updateRotation(rotation).then(() => {
+  console.info('Succeeded in doing updateRotation');
+}).catch((err: Error) => {
+  let error: BusinessError = err as BusinessError;
+  console.error(`Failed to do updateRotation and error is: Code: ${error.code}, message: ${error.message}`);
+});
 ```
-1. import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let rotation = 90;
+## setMetadata
 
-5. avRecorder.updateRotation(rotation).then(() => {
-6. console.info('Succeeded in doing updateRotation');
-7. }).catch((err: Error) => {
-8. let error: BusinessError = err as BusinessError;
-9. console.error(`Failed to do updateRotation and error is: Code: ${error.code}, message: ${error.message}`);
-10. });
+setMetadata(metadata: Record<string, string>): void
+
+设置录制的元数据信息。适用于需要在录制文件中嵌入自定义元数据（如作者、标题、标签等）的场景。如果metadata参数与config.metadata.customInfo（参考[prepare()](arkts-apis-media-avrecorder.md#prepare9-1)和[AVRecorderConfig](arkts-apis-media-i.md#avrecorderconfig9)）中存在相同的键，前者的对应值将覆盖后者。
+
+必须在[prepare()](arkts-apis-media-avrecorder.md#prepare9-1)和[stop()](arkts-apis-media-avrecorder.md#stop9-1)之间调用。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.Multimedia.Media.AVRecorder
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| metadata | Record<string, string> | 是 | 录制的元数据信息。  格式为字符串键值对，其中，键需要以com.openharmony.开头，否则该键值对将被忽略；值的长度范围为0-256个字节，否则返回错误码5400108。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Media错误码](errorcode-media.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400101 | No memory. |
+| 5400102 | Operation not allowed. |
+| 5400108 | Parameter check failed. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let metadata: Record<string, string> = {
+  'com.openharmony.userdefine': '10',
+  'com.openharmony.userdefine2': '20'
+};
+
+try {
+  avRecorder.setMetadata(metadata);
+  console.info('set metadata successfully');
+} catch (err) {
+  let error: BusinessError = err as BusinessError;
+  console.error(`Failed to set metadata. Code: ${error.code}, message: ${error.message}`);
+}
 ```
 
 ## setWillMuteWhenInterrupted20+
 
-PhonePC/2in1TabletTVWearable
-
 setWillMuteWhenInterrupted(muteWhenInterrupted: boolean): Promise<void>
 
-设置当前录制音频流是否启用静音打断模式。使用Promise异步回调。
+设置当前录制音频流是否启用静音打断模式。启用后，录制音频流被更高优先级音频打断时将录制静音而非停止录制，适用于需要在打断期间保持录制连续性的场景（如会议录音、语音备忘）。不启用则保持默认打断模式（音频流被打断时停止录制）。使用Promise异步回调。
+
+必须在[prepare()](arkts-apis-media-avrecorder.md#prepare9-1)之前调用。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
@@ -345,7 +441,7 @@ setWillMuteWhenInterrupted(muteWhenInterrupted: boolean): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| muteWhenInterrupted | boolean | 是 | 设置当前录制音频流是否启用静音打断模式, true表示启用，false表示不启用，保持为默认打断模式。 |
+| muteWhenInterrupted | boolean | 是 | 设置当前录制音频流是否启用静音打断模式，true表示启用，false表示不启用，保持为默认打断模式。 |
 
 **返回值：**
 
@@ -364,26 +460,24 @@ setWillMuteWhenInterrupted(muteWhenInterrupted: boolean): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. avRecorder.setWillMuteWhenInterrupted(true).then(() => {
-4. console.info('Succeeded in doing setWillMuteWhenInterrupted');
-5. }).catch((err: Error) => {
-6. let error: BusinessError = err as BusinessError;
-7. console.error(`Failed to do setWillMuteWhenInterrupted and error is: Code: ${error.code}, message: ${error.message}`);
-8. });
+avRecorder.setWillMuteWhenInterrupted(true).then(() => {
+  console.info('Succeeded in doing setWillMuteWhenInterrupted');
+}).catch((err: Error) => {
+  let error: BusinessError = err as BusinessError;
+  console.error(`Failed to do setWillMuteWhenInterrupted and error is: Code: ${error.code}, message: ${error.message}`);
+});
 ```
 
 ## start9+
-
-PhonePC/2in1TabletTVWearable
 
 start(callback: AsyncCallback<void>): void
 
-开始视频录制。使用callback异步回调。
+开始录制。使用callback异步回调。
 
-纯音频录制需在[prepare](arkts-apis-media-avrecorder.md#prepare9)接口成功调用后，才能调用start接口。纯视频录制，音视频录制需在[getInputSurface](arkts-apis-media-avrecorder.md#getinputsurface9)接口成功调用后，才能调用start接口。
+必须在[prepare](arkts-apis-media-avrecorder.md#prepare9)之后调用，调用成功后进入started状态。录制视频时，还需在[getInputSurface](arkts-apis-media-avrecorder.md#getinputsurface9)接口调用成功后，才能调用此接口。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
@@ -391,7 +485,7 @@ start(callback: AsyncCallback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<void> | 是 | 回调函数。当开始录制视频成功，err为undefined，否则为错误对象。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。如果开始录制成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
@@ -399,35 +493,33 @@ start(callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 5400102 | Operate not permit. Return by callback. |
+| 5400102 | Operation not allowed. Return by callback. |
 | 5400103 | IO error. Return by callback. |
 | 5400105 | Service died. Return by callback. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. avRecorder.start((err: BusinessError) => {
-4. if (err) {
-5. console.error(`Failed to start AVRecorder and error is: Code: ${err.code}, message: ${err.message}`);
-6. } else {
-7. console.info('Succeeded in starting AVRecorder');
-8. }
-9. });
+avRecorder.start((err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to start AVRecorder and error is: Code: ${err.code}, message: ${err.message}`);
+  } else {
+    console.info('Succeeded in starting AVRecorder');
+  }
+});
 ```
 
 ## start9+
 
-PhonePC/2in1TabletTVWearable
-
 start(): Promise<void>
 
-开始视频录制。使用Promise异步回调。
+开始录制。使用Promise异步回调。
 
-纯音频录制需在[prepare](arkts-apis-media-avrecorder.md#prepare9-1)接口成功调用后，才能调用start接口。纯视频录制，音视频录制需在[getInputSurface](arkts-apis-media-avrecorder.md#getinputsurface9-1)接口成功调用后，才能调用start接口。
+必须在[prepare](arkts-apis-media-avrecorder.md#prepare9-1)之后调用，调用成功后进入started状态。录制视频时，还需在[getInputSurface](arkts-apis-media-avrecorder.md#getinputsurface9-1)接口调用成功后，才能调用此接口。
 
-**元服务API：** 从API version 12 开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
@@ -443,32 +535,30 @@ start(): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 5400102 | Operate not permit. Return by promise. |
+| 5400102 | Operation not allowed. Return by promise. |
 | 5400103 | IO error. Return by promise. |
 | 5400105 | Service died. Return by promise. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. avRecorder.start().then(() => {
-4. console.info('Succeeded in starting AVRecorder');
-5. }).catch((err: Error) => {
-6. let error: BusinessError = err as BusinessError;
-7. console.error(`Failed to start AVRecorder and error is: Code: ${error.code}, message: ${error.message}`);
-8. });
+avRecorder.start().then(() => {
+  console.info('Succeeded in starting AVRecorder');
+}).catch((err: Error) => {
+  let error: BusinessError = err as BusinessError;
+  console.error(`Failed to start AVRecorder and error is: Code: ${error.code}, message: ${error.message}`);
+});
 ```
 
 ## pause9+
-
-PhonePC/2in1TabletTVWearable
 
 pause(callback: AsyncCallback<void>): void
 
-暂停视频录制。使用callback异步回调。
+暂停录制。使用callback异步回调。
 
-需要[start](arkts-apis-media-avrecorder.md#start9)接口成功调用后，才能调用pause接口，可以通过调用[resume](arkts-apis-media-avrecorder.md#resume9)接口来恢复录制。
+必须在[start](arkts-apis-media-avrecorder.md#start9)之后调用，调用成功后进入paused状态，之后可以通过调用[resume](arkts-apis-media-avrecorder.md#resume9)接口来恢复录制。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
@@ -476,7 +566,7 @@ pause(callback: AsyncCallback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<void> | 是 | 回调函数。当暂停视频录制成功，err为undefined，否则为错误对象。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。如果暂停录制成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
@@ -484,35 +574,33 @@ pause(callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 5400102 | Operate not permit. Return by callback. |
+| 5400102 | Operation not allowed. Return by callback. |
 | 5400103 | IO error. Return by callback. |
 | 5400105 | Service died. Return by callback. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. avRecorder.pause((err: BusinessError) => {
-4. if (err) {
-5. console.error(`Failed to pause AVRecorder and error is: Code: ${err.code}, message: ${err.message}`);
-6. } else {
-7. console.info('Succeeded in pausing');
-8. }
-9. });
+avRecorder.pause((err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to pause AVRecorder and error is: Code: ${err.code}, message: ${err.message}`);
+  } else {
+    console.info('Succeeded in pausing');
+  }
+});
 ```
 
 ## pause9+
 
-PhonePC/2in1TabletTVWearable
-
 pause(): Promise<void>
 
-暂停视频录制。使用Promise异步回调。
+暂停录制。使用Promise异步回调。
 
-需要[start](arkts-apis-media-avrecorder.md#start9-1)接口成功调用后，才能调用pause接口，可以通过调用[resume](arkts-apis-media-avrecorder.md#resume9-1)接口来恢复录制。
+必须在[start](arkts-apis-media-avrecorder.md#start9-1)之后调用，调用成功后进入paused状态，之后可以通过调用[resume](arkts-apis-media-avrecorder.md#resume9-1)接口来恢复录制。
 
-**元服务API：** 从API version 12 开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
@@ -528,32 +616,30 @@ pause(): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 5400102 | Operate not permit. Return by promise. |
+| 5400102 | Operation not allowed. Return by promise. |
 | 5400103 | IO error. Return by promise. |
 | 5400105 | Service died. Return by promise. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. avRecorder.pause().then(() => {
-4. console.info('Succeeded in pausing');
-5. }).catch((err: Error) => {
-6. let error: BusinessError = err as BusinessError;
-7. console.error(`Failed to pause AVRecorder and error is: Code: ${error.code}, message: ${error.message}`);
-8. });
+avRecorder.pause().then(() => {
+  console.info('Succeeded in pausing');
+}).catch((err: Error) => {
+  let error: BusinessError = err as BusinessError;
+  console.error(`Failed to pause AVRecorder and error is: Code: ${error.code}, message: ${error.message}`);
+});
 ```
 
 ## resume9+
-
-PhonePC/2in1TabletTVWearable
 
 resume(callback: AsyncCallback<void>): void
 
-恢复视频录制。使用callback异步回调。
+恢复录制。使用callback异步回调。
 
-需要在[pause](arkts-apis-media-avrecorder.md#pause9)接口成功调用后，才能调用resume接口。
+必须在[pause](arkts-apis-media-avrecorder.md#pause9)之后调用，调用成功后进入started状态，之后可以再次调用[pause](arkts-apis-media-avrecorder.md#pause9)接口暂停录制，或调用[stop](arkts-apis-media-avrecorder.md#stop9)接口停止录制。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
@@ -561,7 +647,7 @@ resume(callback: AsyncCallback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<void> | 是 | 回调函数。当恢复视频录制成功，err为undefined，否则为错误对象。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。如果恢复录制成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
@@ -569,35 +655,33 @@ resume(callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 5400102 | Operate not permit. Return by callback. |
+| 5400102 | Operation not allowed. Return by callback. |
 | 5400103 | IO error. Return by callback. |
 | 5400105 | Service died. Return by callback. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. avRecorder.resume((err: BusinessError) => {
-4. if (err) {
-5. console.error(`Failed to resume AVRecorder and error is: Code: ${err.code}, message: ${err.message}`);
-6. } else {
-7. console.info('Succeeded in resuming AVRecorder');
-8. }
-9. });
+avRecorder.resume((err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to resume AVRecorder and error is: Code: ${err.code}, message: ${err.message}`);
+  } else {
+    console.info('Succeeded in resuming AVRecorder');
+  }
+});
 ```
 
 ## resume9+
 
-PhonePC/2in1TabletTVWearable
-
 resume(): Promise<void>
 
-恢复视频录制。使用Promise异步回调。
+恢复录制。使用Promise异步回调。
 
-需要在[pause](arkts-apis-media-avrecorder.md#pause9-1)接口成功调用后，才能调用resume接口。
+必须在[pause](arkts-apis-media-avrecorder.md#pause9-1)之后调用，调用成功后进入started状态，之后可以再次调用[pause](arkts-apis-media-avrecorder.md#pause9-1)接口暂停录制，或调用[stop](arkts-apis-media-avrecorder.md#stop9-1)接口停止录制。
 
-**元服务API：** 从API version 12 开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
@@ -613,34 +697,32 @@ resume(): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 5400102 | Operate not permit. Return by promise. |
+| 5400102 | Operation not allowed. Return by promise. |
 | 5400103 | IO error. Return by promise. |
 | 5400105 | Service died. Return by promise. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. avRecorder.resume().then(() => {
-4. console.info('Succeeded in resuming AVRecorder');
-5. }).catch((err: Error) => {
-6. let error: BusinessError = err as BusinessError;
-7. console.error(`Failed to resume AVRecorder failed and error is: Code: ${error.code}, message: ${error.message}`);
-8. });
+avRecorder.resume().then(() => {
+  console.info('Succeeded in resuming AVRecorder');
+}).catch((err: Error) => {
+  let error: BusinessError = err as BusinessError;
+  console.error(`Failed to resume AVRecorder and error is: Code: ${error.code}, message: ${error.message}`);
+});
 ```
 
 ## stop9+
 
-PhonePC/2in1TabletTVWearable
-
 stop(callback: AsyncCallback<void>): void
 
-停止视频录制。使用callback异步回调。
+停止录制。使用callback异步回调。
 
-需要在[start](arkts-apis-media-avrecorder.md#start9)或[pause](arkts-apis-media-avrecorder.md#pause9)接口成功调用后，才能调用stop接口。
+必须在[start](arkts-apis-media-avrecorder.md#start9)或[pause](arkts-apis-media-avrecorder.md#pause9)之后调用，调用成功后进入stopped状态。当prepare配置中将FileGenerationMode设置为系统创建媒体文件模式时，本接口调用结束后会触发[on('photoAssetAvailable')](arkts-apis-media-avrecorder.md#onphotoassetavailable12)回调。
 
-纯音频录制时，需要重新调用[prepare](arkts-apis-media-avrecorder.md#prepare9)接口才能重新录制。纯视频录制，音视频录制时，需要重新调用[prepare](arkts-apis-media-avrecorder.md#prepare9)和[getInputSurface](arkts-apis-media-avrecorder.md#getinputsurface9)接口才能重新录制。
+纯音频录制时，需要重新调用[prepare](arkts-apis-media-avrecorder.md#prepare9)接口才能重新录制；纯视频录制、音视频录制时，需要重新调用[prepare](arkts-apis-media-avrecorder.md#prepare9)和[getInputSurface](arkts-apis-media-avrecorder.md#getinputsurface9)接口才能重新录制。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
@@ -648,7 +730,7 @@ stop(callback: AsyncCallback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<void> | 是 | 回调函数。当停止视频录制成功，err为undefined，否则为错误对象。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。如果停止录制成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
@@ -656,37 +738,35 @@ stop(callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 5400102 | Operate not permit. Return by callback. |
+| 5400102 | Operation not allowed. Return by callback. |
 | 5400103 | IO error. Return by callback. |
 | 5400105 | Service died. Return by callback. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. avRecorder.stop((err: BusinessError) => {
-4. if (err) {
-5. console.error(`Failed to stop AVRecorder and error is: Code: ${err.code}, message: ${err.message}`);
-6. } else {
-7. console.info('Succeeded in stopping AVRecorder');
-8. }
-9. });
+avRecorder.stop((err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to stop AVRecorder and error is: Code: ${err.code}, message: ${err.message}`);
+  } else {
+    console.info('Succeeded in stopping AVRecorder');
+  }
+});
 ```
 
 ## stop9+
 
-PhonePC/2in1TabletTVWearable
-
 stop(): Promise<void>
 
-停止视频录制。使用Promise异步回调。
+停止录制。使用Promise异步回调。
 
-需要在[start](arkts-apis-media-avrecorder.md#start9-1)或[pause](arkts-apis-media-avrecorder.md#pause9-1)接口成功调用后，才能调用stop接口。
+必须在[start](arkts-apis-media-avrecorder.md#start9-1)或[pause](arkts-apis-media-avrecorder.md#pause9-1)之后调用，调用成功后进入stopped状态。当prepare配置中将FileGenerationMode设置为系统创建媒体文件模式时，本接口调用结束后会触发[on('photoAssetAvailable')](arkts-apis-media-avrecorder.md#onphotoassetavailable12)回调。
 
-纯音频录制时，需要重新调用[prepare](arkts-apis-media-avrecorder.md#prepare9-1)接口才能重新录制。纯视频录制，音视频录制时，需要重新调用[prepare](arkts-apis-media-avrecorder.md#prepare9-1)和[getInputSurface](arkts-apis-media-avrecorder.md#getinputsurface9-1)接口才能重新录制。
+纯音频录制时，需要重新调用[prepare](arkts-apis-media-avrecorder.md#prepare9-1)接口才能重新录制；纯视频录制、音视频录制时，需要重新调用[prepare](arkts-apis-media-avrecorder.md#prepare9-1)和[getInputSurface](arkts-apis-media-avrecorder.md#getinputsurface9-1)接口才能重新录制。
 
-**元服务API：** 从API version 12 开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
@@ -702,32 +782,32 @@ stop(): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 5400102 | Operate not permit. Return by promise. |
+| 5400102 | Operation not allowed. Return by promise. |
 | 5400103 | IO error. Return by promise. |
 | 5400105 | Service died. Return by promise. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. avRecorder.stop().then(() => {
-4. console.info('Succeeded in stopping AVRecorder');
-5. }).catch((err: Error) => {
-6. let error: BusinessError = err as BusinessError;
-7. console.error(`Failed to stop AVRecorder and error is: Code: ${error.code}, message: ${error.message}`);
-8. });
+avRecorder.stop().then(() => {
+  console.info('Succeeded in stopping AVRecorder');
+}).catch((err: Error) => {
+  let error: BusinessError = err as BusinessError;
+  console.error(`Failed to stop AVRecorder and error is: Code: ${error.code}, message: ${error.message}`);
+});
 ```
 
 ## reset9+
 
-PhonePC/2in1TabletTVWearable
-
 reset(callback: AsyncCallback<void>): void
 
-重置音视频录制。使用callback异步回调。
+重置音视频录制，将录制器恢复至初始状态以便重新配置参数。使用callback异步回调。
 
-纯音频录制时，需要重新调用[prepare](arkts-apis-media-avrecorder.md#prepare9)接口才能重新录制。纯视频录制，音视频录制时，需要重新调用[prepare](arkts-apis-media-avrecorder.md#prepare9)和[getInputSurface](arkts-apis-media-avrecorder.md#getinputsurface9)接口才能重新录制。
+必须在非released状态下调用，调用成功后进入idle状态。
+
+纯音频录制时，需要重新调用[prepare](arkts-apis-media-avrecorder.md#prepare9)接口才能重新录制；纯视频录制、音视频录制时，需要重新调用[prepare](arkts-apis-media-avrecorder.md#prepare9)和[getInputSurface](arkts-apis-media-avrecorder.md#getinputsurface9)接口才能重新录制。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
@@ -748,27 +828,27 @@ reset(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. avRecorder.reset((err: BusinessError) => {
-4. if (err) {
-5. console.error(`Failed to reset AVRecorder and error is: Code: ${err.code}, message: ${err.message}`);
-6. } else {
-7. console.info('Succeeded in resetting AVRecorder');
-8. }
-9. });
+avRecorder.reset((err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to reset AVRecorder and error is: Code: ${err.code}, message: ${err.message}`);
+  } else {
+    console.info('Succeeded in resetting AVRecorder');
+  }
+});
 ```
 
 ## reset9+
 
-PhonePC/2in1TabletTVWearable
-
 reset(): Promise<void>
 
-重置音视频录制。使用Promise异步回调。
+重置音视频录制，将录制器恢复至初始状态以便重新配置参数。使用Promise异步回调。
 
-纯音频录制时，需要重新调用[prepare](arkts-apis-media-avrecorder.md#prepare9-1)接口才能重新录制。纯视频录制，音视频录制时，需要重新调用[prepare](arkts-apis-media-avrecorder.md#prepare9-1)和[getInputSurface](arkts-apis-media-avrecorder.md#getinputsurface9-1)接口才能重新录制。
+必须在非released状态下调用，调用成功后进入idle状态。
+
+纯音频录制时，需要重新调用[prepare](arkts-apis-media-avrecorder.md#prepare9-1)接口才能重新录制；纯视频录制、音视频录制时，需要重新调用[prepare](arkts-apis-media-avrecorder.md#prepare9-1)和[getInputSurface](arkts-apis-media-avrecorder.md#getinputsurface9-1)接口才能重新录制。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
@@ -789,26 +869,26 @@ reset(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. avRecorder.reset().then(() => {
-4. console.info('Succeeded in resetting AVRecorder');
-5. }).catch((err: Error) => {
-6. let error: BusinessError = err as BusinessError;
-7. console.error(`Failed to reset AVRecorder and error is: Code: ${error.code}, message: ${error.message}`);
-8. });
+avRecorder.reset().then(() => {
+  console.info('Succeeded in resetting AVRecorder');
+}).catch((err: Error) => {
+  let error: BusinessError = err as BusinessError;
+  console.error(`Failed to reset AVRecorder and error is: Code: ${error.code}, message: ${error.message}`);
+});
 ```
 
 ## release9+
-
-PhonePC/2in1TabletTVWearable
 
 release(callback: AsyncCallback<void>): void
 
 释放音视频录制资源。使用callback异步回调。
 
-释放音视频录制资源之后，该AVRecorder实例不能再进行任何操作。
+必须在非released状态下调用，调用成功后进入released状态。
+
+与[createAVRecorder](arkts-apis-media-f.md#mediacreateavrecorder9)配对使用，录制流程结束后应调用此接口释放资源。释放音视频录制资源之后，该AVRecorder实例不能再进行任何操作。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
@@ -828,29 +908,29 @@ release(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. avRecorder.release((err: BusinessError) => {
-4. if (err) {
-5. console.error(`Failed to release AVRecorder and error is: Code: ${err.code}, message: ${err.message}`);
-6. } else {
-7. console.info('Succeeded in releasing AVRecorder');
-8. }
-9. });
+avRecorder.release((err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to release AVRecorder and error is: Code: ${err.code}, message: ${err.message}`);
+  } else {
+    console.info('Succeeded in releasing AVRecorder');
+  }
+});
 ```
 
 ## release9+
-
-PhonePC/2in1TabletTVWearable
 
 release(): Promise<void>
 
 释放音视频录制资源。使用Promise异步回调。
 
-释放音视频录制资源之后，该AVRecorder实例不能再进行任何操作。
+必须在非released状态下调用，调用成功后进入released状态。
 
-**元服务API：** 从API version 12 开始，该接口支持在元服务中使用。
+与[createAVRecorder](arkts-apis-media-f.md#mediacreateavrecorder9)配对使用，录制流程结束后应调用此接口释放资源。释放音视频录制资源之后，该AVRecorder实例不能再进行任何操作。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
@@ -866,40 +946,38 @@ release(): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 5400105 | Service died. Return by callback. |
+| 5400105 | Service died. Return by promise. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. avRecorder.release().then(() => {
-4. console.info('Succeeded in releasing AVRecorder');
-5. }).catch((err: Error) => {
-6. let error: BusinessError = err as BusinessError;
-7. console.error(`Failed to release AVRecorder and error is: Code: ${error.code}, message: ${error.message}`);
-8. });
+avRecorder.release().then(() => {
+  console.info('Succeeded in releasing AVRecorder');
+}).catch((err: Error) => {
+  let error: BusinessError = err as BusinessError;
+  console.error(`Failed to release AVRecorder and error is: Code: ${error.code}, message: ${error.message}`);
+});
 ```
 
 ## getCurrentAudioCapturerInfo11+
 
-PhonePC/2in1TabletTVWearable
-
 getCurrentAudioCapturerInfo(callback: AsyncCallback<audio.AudioCapturerChangeInfo>): void
 
-获取当前音频采集参数。使用callback异步回调。
+获取当前音频采集参数。适用于需要确认当前音频采集设备类型或验证音频配置的场景。使用callback异步回调。
 
-在[prepare](arkts-apis-media-avrecorder.md#prepare9)接口成功调用后，才能调用此接口。在[stop](arkts-apis-media-avrecorder.md#stop9)接口成功调用后，调用此接口会报错。
+必须在[prepare](arkts-apis-media-avrecorder.md#prepare9)和[stop](arkts-apis-media-avrecorder.md#stop9)之间调用。
 
-**系统能力**：SystemCapability.Multimedia.Media.AVRecorder
+**系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
-**参数**：
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<[audio.AudioCapturerChangeInfo](arkts-apis-audio-i.md#audiocapturerchangeinfo9)> | 是 | 回调函数。当获取音频采集参数成功时，err为undefined，data为获取到的audio.AudioCapturerChangeInfo，否则为错误对象。 |
 
-**错误码**：
+**错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](errorcode-media.md)。
 
@@ -909,43 +987,41 @@ getCurrentAudioCapturerInfo(callback: AsyncCallback<audio.AudioCapturerChangeInf
 | 5400103 | I/O error. |
 | 5400105 | Service died. Return by callback. |
 
-**示例**：
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { audio } from '@kit.AudioKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { audio } from '@kit.AudioKit';
 
-4. let currentCapturerInfo: audio.AudioCapturerChangeInfo;
+let currentCapturerInfo: audio.AudioCapturerChangeInfo;
 
-6. avRecorder.getCurrentAudioCapturerInfo((err: BusinessError, capturerInfo: audio.AudioCapturerChangeInfo) => {
-7. if (err) {
-8. console.error(`Failed to get CurrentAudioCapturerInfo and error is: Code: ${err.code}, message: ${err.message}`);
-9. } else {
-10. console.info('Succeeded in getting CurrentAudioCapturerInfo');
-11. currentCapturerInfo = capturerInfo;
-12. }
-13. });
+avRecorder.getCurrentAudioCapturerInfo((err: BusinessError, capturerInfo: audio.AudioCapturerChangeInfo) => {
+  if (err) {
+    console.error(`Failed to get CurrentAudioCapturerInfo and error is: Code: ${err.code}, message: ${err.message}`);
+  } else {
+    console.info('Succeeded in getting CurrentAudioCapturerInfo');
+    currentCapturerInfo = capturerInfo;
+  }
+});
 ```
 
 ## getCurrentAudioCapturerInfo11+
 
-PhonePC/2in1TabletTVWearable
-
 getCurrentAudioCapturerInfo(): Promise<audio.AudioCapturerChangeInfo>
 
-获取当前音频采集参数。使用Promise异步回调。
+获取当前音频采集参数。适用于需要确认当前音频采集设备类型或验证音频配置的场景。使用Promise异步回调。
 
-在[prepare](arkts-apis-media-avrecorder.md#prepare9)接口成功调用后，才能调用此接口。在[stop](arkts-apis-media-avrecorder.md#stop9)接口成功调用后，调用此接口会报错。
+必须在[prepare](arkts-apis-media-avrecorder.md#prepare9-1)和[stop](arkts-apis-media-avrecorder.md#stop9-1)之间调用。
 
-**系统能力**：SystemCapability.Multimedia.Media.AVRecorder
+**系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
-**返回值**：
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
 | Promise<[audio.AudioCapturerChangeInfo](arkts-apis-audio-i.md#audiocapturerchangeinfo9)> | Promise对象，返回获取的当前音频采集参数。 |
 
-**错误码**：
+**错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](errorcode-media.md)。
 
@@ -955,44 +1031,42 @@ getCurrentAudioCapturerInfo(): Promise<audio.AudioCapturerChangeInfo>
 | 5400103 | I/O error. |
 | 5400105 | Service died. Return by promise. |
 
-**示例**：
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { audio } from '@kit.AudioKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { audio } from '@kit.AudioKit';
 
-4. let currentCapturerInfo: audio.AudioCapturerChangeInfo;
+let currentCapturerInfo: audio.AudioCapturerChangeInfo;
 
-6. avRecorder.getCurrentAudioCapturerInfo().then((capturerInfo: audio.AudioCapturerChangeInfo) => {
-7. console.info('Succeeded in getting CurrentAudioCapturerInfo');
-8. currentCapturerInfo = capturerInfo;
-9. }).catch((err: Error) => {
-10. let error: BusinessError = err as BusinessError;
-11. console.error(`Failed to get CurrentAudioCapturerInfo and error is: Code: ${error.code}, message: ${error.message}`);
-12. });
+avRecorder.getCurrentAudioCapturerInfo().then((capturerInfo: audio.AudioCapturerChangeInfo) => {
+  console.info('Succeeded in getting CurrentAudioCapturerInfo');
+  currentCapturerInfo = capturerInfo;
+}).catch((err: Error) => {
+  let error: BusinessError = err as BusinessError;
+  console.error(`Failed to get CurrentAudioCapturerInfo and error is: Code: ${error.code}, message: ${error.message}`);
+});
 ```
 
 ## getAudioCapturerMaxAmplitude11+
 
-PhonePC/2in1TabletTVWearable
-
 getAudioCapturerMaxAmplitude(callback: AsyncCallback<number>): void
 
-获取当前音频最大振幅。使用callback异步回调。
+获取当前音频最大振幅。适用于需要实时监控音频振幅的场景，如录音音量可视化显示、音频质量检测等。使用callback异步回调。
 
-在[prepare](arkts-apis-media-avrecorder.md#prepare9)接口成功调用后，才能调用此接口。在[stop](arkts-apis-media-avrecorder.md#stop9)接口成功调用后，调用此接口会报错。
+必须在[prepare](arkts-apis-media-avrecorder.md#prepare9)和[stop](arkts-apis-media-avrecorder.md#stop9)之间调用。
 
-调用接口时，获取到的返回值是上一次获取最大振幅的时刻到当前这段区间内的音频最大振幅。例如，在1s时获取了一次最大振幅，到2s时再获取到的最大振幅是1-2s这个区间里面的最大值。
+调用接口时，获取到的返回值是上一次获取最大振幅的时刻到当前这段区间内的音频最大振幅。例如，在1s时获取了一次最大振幅，到2s时再获取到的最大振幅是1-2s这个区间内的最大值。
 
-**系统能力**：SystemCapability.Multimedia.Media.AVRecorder
+**系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
-**参数**：
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<number> | 是 | 回调函数。获取当前音频最大振幅成功时，err为undefined，data为获取到的最大振幅，否则为错误对象。 |
 
-**错误码**：
+**错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](errorcode-media.md)。
 
@@ -1001,44 +1075,42 @@ getAudioCapturerMaxAmplitude(callback: AsyncCallback<number>): void
 | 5400102 | Operation not allowed. |
 | 5400105 | Service died. Return by callback. |
 
-**示例**：
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let maxAmplitude: number;
+let maxAmplitude: number;
 
-5. avRecorder.getAudioCapturerMaxAmplitude((err: BusinessError, amplitude: number) => {
-6. if (err) {
-7. console.error(`Failed to get AudioCapturerMaxAmplitude and error is: Code: ${err.code}, message: ${err.message}`);
-8. } else {
-9. console.info('Succeeded in getting AudioCapturerMaxAmplitude');
-10. maxAmplitude = amplitude;
-11. }
-12. });
+avRecorder.getAudioCapturerMaxAmplitude((err: BusinessError, amplitude: number) => {
+  if (err) {
+    console.error(`Failed to get AudioCapturerMaxAmplitude and error is: Code: ${err.code}, message: ${err.message}`);
+  } else {
+    console.info('Succeeded in getting AudioCapturerMaxAmplitude');
+    maxAmplitude = amplitude;
+  }
+});
 ```
 
 ## getAudioCapturerMaxAmplitude11+
 
-PhonePC/2in1TabletTVWearable
-
 getAudioCapturerMaxAmplitude(): Promise<number>
 
-获取当前音频最大振幅。使用Promise异步回调。
+获取当前音频最大振幅。适用于需要实时监控音频振幅的场景，如录音音量可视化显示、音频质量检测等。使用Promise异步回调。
 
-在[prepare](arkts-apis-media-avrecorder.md#prepare9)接口成功调用后，才能调用此接口。在[stop](arkts-apis-media-avrecorder.md#stop9)接口成功调用后，调用此接口会报错。
+必须在[prepare](arkts-apis-media-avrecorder.md#prepare9-1)和[stop](arkts-apis-media-avrecorder.md#stop9-1)之间调用。
 
 调用接口时，获取到的返回值是上一次获取最大振幅的时刻到当前这段区间内的音频最大振幅。例如，在1s时获取了一次最大振幅，到2s时再获取到的最大振幅是1-2s这个区间里面的最大值。
 
-**系统能力**：SystemCapability.Multimedia.Media.AVRecorder
+**系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
-**返回值**：
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
 | Promise<number> | Promise对象，返回获取的当前音频最大振幅。 |
 
-**错误码**：
+**错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](errorcode-media.md)。
 
@@ -1047,39 +1119,39 @@ getAudioCapturerMaxAmplitude(): Promise<number>
 | 5400102 | Operation not allowed. |
 | 5400105 | Service died. Return by promise. |
 
-**示例**：
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let maxAmplitude: number;
+let maxAmplitude: number;
 
-5. avRecorder.getAudioCapturerMaxAmplitude().then((amplitude: number) => {
-6. console.info('Succeeded in getting AudioCapturerMaxAmplitude');
-7. maxAmplitude = amplitude;
-8. }).catch((err: Error) => {
-9. let error: BusinessError = err as BusinessError;
-10. console.error(`Failed to get AudioCapturerMaxAmplitude and error is: Code: ${error.code}, message: ${error.message}`);
-11. });
+avRecorder.getAudioCapturerMaxAmplitude().then((amplitude: number) => {
+  console.info('Succeeded in getting AudioCapturerMaxAmplitude');
+  maxAmplitude = amplitude;
+}).catch((err: Error) => {
+  let error: BusinessError = err as BusinessError;
+  console.error(`Failed to get AudioCapturerMaxAmplitude and error is: Code: ${error.code}, message: ${error.message}`);
+});
 ```
 
 ## getAvailableEncoder11+
-
-PhonePC/2in1TabletTVWearable
 
 getAvailableEncoder(callback: AsyncCallback<Array<EncoderInfo>>): void
 
 获取可用的编码器参数。使用callback异步回调。
 
-**系统能力**：SystemCapability.Multimedia.Media.AVRecorder
+必须在非released/error状态下调用。
 
-**参数**：
+**系统能力：** SystemCapability.Multimedia.Media.AVRecorder
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array<[EncoderInfo](arkts-apis-media-i.md#encoderinfo11)>> | 是 | 回调函数。获取可用的编码器参数成功时，err为undefined，data为获取到的编码器参数，否则为错误对象。 |
 
-**错误码**：
+**错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](errorcode-media.md)。
 
@@ -1088,44 +1160,44 @@ getAvailableEncoder(callback: AsyncCallback<Array<EncoderInfo>>): void
 | 5400102 | Operation not allowed. |
 | 5400105 | Service died. Return by callback. |
 
-**示例**：
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let encoderInfo: media.EncoderInfo;
+let encoderInfo: media.EncoderInfo;
 
-5. avRecorder.getAvailableEncoder((err: BusinessError, info: media.EncoderInfo[]) => {
-6. if (err) {
-7. console.error(`Failed to get AvailableEncoder and error is: Code: ${err.code}, message: ${err.message}`);
-8. } else {
-9. console.info('Succeeded in getting AvailableEncoder');
-10. if (info.length > 0) {
-11. encoderInfo = info[0];
-12. } else {
-13. console.error('No available encoder');
-14. }
-15. }
-16. });
+avRecorder.getAvailableEncoder((err: BusinessError, info: media.EncoderInfo[]) => {
+  if (err) {
+    console.error(`Failed to get AvailableEncoder and error is: Code: ${err.code}, message: ${err.message}`);
+  } else {
+    console.info('Succeeded in getting AvailableEncoder');
+    if (info.length > 0) {
+      encoderInfo = info[0];
+    } else {
+      console.error('No available encoder');
+    }
+  }
+});
 ```
 
 ## getAvailableEncoder11+
-
-PhonePC/2in1TabletTVWearable
 
 getAvailableEncoder(): Promise<Array<EncoderInfo>>
 
 获取可用的编码器参数。使用Promise异步回调。
 
-**系统能力**：SystemCapability.Multimedia.Media.AVRecorder
+必须在非released/error状态下调用。
 
-**返回值**：
+**系统能力：** SystemCapability.Multimedia.Media.AVRecorder
+
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array<[EncoderInfo](arkts-apis-media-i.md#encoderinfo11)>> | Promise对象，返回获取的可用的编码器参数。 |
 
-**错误码**：
+**错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](errorcode-media.md)。
 
@@ -1134,35 +1206,33 @@ getAvailableEncoder(): Promise<Array<EncoderInfo>>
 | 5400102 | Operation not allowed. |
 | 5400105 | Service died. Return by promise. |
 
-**示例**：
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let encoderInfo: media.EncoderInfo;
+let encoderInfo: media.EncoderInfo;
 
-5. avRecorder.getAvailableEncoder().then((info: media.EncoderInfo[]) => {
-6. console.info('Succeeded in getting AvailableEncoder');
-7. if (info.length > 0) {
-8. encoderInfo = info[0];
-9. } else {
-10. console.error('No available encoder');
-11. }
-12. }).catch((err: Error) => {
-13. let error: BusinessError = err as BusinessError;
-14. console.error(`Failed to get AvailableEncoder and error is: Code: ${error.code}, message: ${error.message}`);
-15. });
+avRecorder.getAvailableEncoder().then((info: media.EncoderInfo[]) => {
+  console.info('Succeeded in getting AvailableEncoder');
+    if (info.length > 0) {
+      encoderInfo = info[0];
+    } else {
+      console.error('No available encoder');
+    }
+}).catch((err: Error) => {
+  let error: BusinessError = err as BusinessError;
+  console.error(`Failed to get AvailableEncoder and error is: Code: ${error.code}, message: ${error.message}`);
+});
 ```
 
 ## getAVRecorderConfig11+
 
-PhonePC/2in1TabletTVWearable
-
 getAVRecorderConfig(callback: AsyncCallback<AVRecorderConfig>): void
 
-获取实时的配置参数。使用callback异步回调。
+获取实时的配置参数。适用于需要确认录制配置是否正确应用的场景，如调试录制参数、验证配置生效情况等。使用callback异步回调。
 
-只能在[prepare](arkts-apis-media-avrecorder.md#prepare9)接口调用成功后调用。
+必须在[prepare](arkts-apis-media-avrecorder.md#prepare9)之后调用。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
@@ -1178,36 +1248,34 @@ getAVRecorderConfig(callback: AsyncCallback<AVRecorderConfig>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 5400102 | Operate not permit. Return by callback. |
+| 5400102 | Operation not allowed. Return by callback. |
 | 5400103 | IO error. Return by callback. |
 | 5400105 | Service died. Return by callback. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let avConfig: media.AVRecorderConfig;
+let avRecorderConfig: media.AVRecorderConfig;
 
-5. avRecorder.getAVRecorderConfig((err: BusinessError, config: media.AVRecorderConfig) => {
-6. if (err) {
-7. console.error(`Failed to get avConfig and error is: Code: ${err.code}, message: ${err.message}`);
-8. } else {
-9. console.info('Succeeded in getting AVRecorderConfig');
-10. avConfig = config;
-11. }
-12. });
+avRecorder.getAVRecorderConfig((err: BusinessError, config: media.AVRecorderConfig) => {
+  if (err) {
+    console.error(`Failed to get avRecorderConfig and error is: Code: ${err.code}, message: ${err.message}`);
+  } else {
+    console.info('Succeeded in getting AVRecorderConfig');
+    avRecorderConfig = config;
+  }
+});
 ```
 
 ## getAVRecorderConfig11+
 
-PhonePC/2in1TabletTVWearable
-
 getAVRecorderConfig(): Promise<AVRecorderConfig>;
 
-获取实时的配置参数。使用Promise异步回调。
+获取实时的配置参数。适用于需要确认录制配置是否正确应用的场景，如调试录制参数、验证配置生效情况等。使用Promise异步回调。
 
-只能在[prepare](arkts-apis-media-avrecorder.md#prepare9-1)接口调用成功后调用。
+必须在[prepare](arkts-apis-media-avrecorder.md#prepare9-1)之后调用。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
@@ -1223,33 +1291,31 @@ getAVRecorderConfig(): Promise<AVRecorderConfig>;
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 5400102 | Operate not permit. Return by promise. |
+| 5400102 | Operation not allowed. Return by promise. |
 | 5400103 | IO error. Return by promise. |
 | 5400105 | Service died. Return by promise. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let avConfig: media.AVRecorderConfig;
+let avRecorderConfig: media.AVRecorderConfig;
 
-5. avRecorder.getAVRecorderConfig().then((config: media.AVRecorderConfig) => {
-6. console.info('Succeeded in getting AVRecorderConfig');
-7. avConfig = config;
-8. }).catch((err: Error) => {
-9. let error: BusinessError = err as BusinessError;
-10. console.error(`Failed to get AVRecorderConfig and error is: Code: ${error.code}, message: ${error.message}`);
-11. });
+avRecorder.getAVRecorderConfig().then((config: media.AVRecorderConfig) => {
+  console.info('Succeeded in getting AVRecorderConfig');
+  avRecorderConfig = config;
+}).catch((err: Error) => {
+  let error: BusinessError = err as BusinessError;
+  console.error(`Failed to get AVRecorderConfig and error is: Code: ${error.code}, message: ${error.message}`);
+});
 ```
 
 ## on('stateChange')9+
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'stateChange', callback: OnAVRecorderStateChangeHandler): void
 
-订阅录制状态机AVRecorderState切换的事件，当AVRecorderState状态机发生变化时，会通过订阅的回调方法通知用户。用户只能订阅一个录制状态机切换事件的回调方法，当用户重复订阅时，以最后一次订阅的回调接口为准。使用callback异步回调。
+订阅录制状态机[AVRecorderState](arkts-apis-media-t.md#avrecorderstate9)切换的回调事件。当AVRecorderState发生变化时，会通过回调方法通知用户。用户只能订阅一个回调方法，重复订阅时以最后一次订阅的回调接口为准。使用callback异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1259,8 +1325,8 @@ on(type: 'stateChange', callback: OnAVRecorderStateChangeHandler): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 录制状态机切换事件回调类型，支持的事件：'stateChange'，用户操作和系统都会触发此事件。 |
-| callback | [OnAVRecorderStateChangeHandler](arkts-apis-media-t.md#onavrecorderstatechangehandler12) | 是 | 回调函数，返回录制状态机切换事件。 |
+| type | string | 是 | 录制状态机切换的回调类型，支持的事件：'stateChange'，用户操作和系统都会触发此事件。 |
+| callback | [OnAVRecorderStateChangeHandler](arkts-apis-media-t.md#onavrecorderstatechangehandler12) | 是 | 回调函数，用于接收录制状态机切换事件。回调参数包括：state（录制状态，类型为AVRecorderState）和reason（状态切换原因，类型为StateChangeReason）。 |
 
 **错误码：**
 
@@ -1273,19 +1339,17 @@ on(type: 'stateChange', callback: OnAVRecorderStateChangeHandler): void
 
 **示例：**
 
-```
-1. avRecorder.on('stateChange', async (state: media.AVRecorderState, reason: media.StateChangeReason) => {
-2. console.info('case state has changed, new state is: ' + state + ', and reason is: ' + reason);
-3. });
+```ts
+avRecorder.on('stateChange', (state: media.AVRecorderState, reason: media.StateChangeReason) => {
+  console.info('case state has changed, new state is: ' + state + ', and reason is: ' + reason);
+});
 ```
 
 ## off('stateChange')9+
 
-PhonePC/2in1TabletTVWearable
-
 off(type: 'stateChange', callback?: OnAVRecorderStateChangeHandler): void
 
-取消订阅录制状态机[AVRecorderState](arkts-apis-media-t.md#avrecorderstate9)切换的事件。使用callback异步回调。
+取消订阅录制状态机[AVRecorderState](arkts-apis-media-t.md#avrecorderstate9)切换的回调事件。使用callback异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1295,22 +1359,20 @@ off(type: 'stateChange', callback?: OnAVRecorderStateChangeHandler): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 录制状态机切换事件回调类型，支持的事件：'stateChange'，用户操作和系统都会触发此事件。 |
-| callback12+ | [OnAVRecorderStateChangeHandler](arkts-apis-media-t.md#onavrecorderstatechangehandler12) | 否 | 回调函数，返回录制状态机切换事件。如果指定参数则取消对应callback（callback对象不能是匿名函数），否则取消所有callback。  从API version 12开始支持此参数。 |
+| type | string | 是 | 录制状态机切换的回调类型，支持的事件：'stateChange'，用户操作和系统都会触发此事件。 |
+| callback12+ | [OnAVRecorderStateChangeHandler](arkts-apis-media-t.md#onavrecorderstatechangehandler12) | 否 | 回调函数，用于接收录制状态机切换事件。如果指定参数则取消对应callback（callback对象不能是匿名函数），否则取消所有callback。  从API version 12开始支持此参数。 |
 
 **示例：**
 
-```
-1. avRecorder.off('stateChange');
+```ts
+avRecorder.off('stateChange');
 ```
 
 ## on('error')9+
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'error', callback: ErrorCallback): void
 
-订阅AVRecorder的错误事件，该事件仅用于错误提示，不需要用户停止播控动作。如果此时[AVRecorderState](arkts-apis-media-t.md#avrecorderstate9)也切换至error状态，用户需要通过[reset](arkts-apis-media-avrecorder.md#reset9)或者[release](arkts-apis-media-avrecorder.md#release9)接口退出录制操作。使用callback异步回调。
+订阅录制错误的回调事件。该事件仅用于错误提示，用户无需停止录制操作。如果[AVRecorderState](arkts-apis-media-t.md#avrecorderstate9)也切换至error状态，用户需通过[reset](arkts-apis-media-avrecorder.md#reset9)或者[release](arkts-apis-media-avrecorder.md#release9)接口退出录制操作。使用callback异步回调。
 
 用户只能订阅一个错误事件的回调方法，当用户重复订阅时，以最后一次订阅的回调接口为准。
 
@@ -1322,8 +1384,8 @@ on(type: 'error', callback: ErrorCallback): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 录制错误事件回调类型'error'。  - 'error'：录制过程中发生错误，触发该事件。 |
-| callback | [ErrorCallback](js-apis-base.md#errorcallback) | 是 | 回调函数，返回录制错误事件。 |
+| type | string | 是 | 录制错误的回调类型，支持的事件：'error'。 |
+| callback | [ErrorCallback](js-apis-base.md#errorcallback) | 是 | 回调函数，用于接收录制错误事件。回调参数为err（错误对象，类型为BusinessError，包含错误码code和错误信息message）。 |
 
 **错误码：**
 
@@ -1332,33 +1394,31 @@ on(type: 'error', callback: ErrorCallback): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
 | 5400101 | No memory. |
 | 5400102 | Operation not allowed. |
 | 5400103 | I/O error. |
-| 5400104 | Time out. |
+| 5400104 | Operation timeout. |
 | 5400105 | Service died. |
 | 5400106 | Unsupported format. |
-| 5400107 | Audio interrupted. |
+| 5400107 | Audio interrupted.  适用版本：11+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. avRecorder.on('error', (err: BusinessError) => {
-4. console.error(`case avRecorder.on(error) called. Code: ${err.code}, message: ${err.message}`);
-5. });
+avRecorder.on('error', (err: BusinessError) => {
+  console.error(`Failed to record. Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## off('error')9+
 
-PhonePC/2in1TabletTVWearable
-
 off(type: 'error', callback?: ErrorCallback): void
 
-取消订阅录制错误事件，取消后不再接收到AVRecorder的错误事件。使用callback异步回调。
+取消订阅录制错误的回调事件。使用callback异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1368,24 +1428,22 @@ off(type: 'error', callback?: ErrorCallback): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 录制错误事件回调类型'error'。  - 'error'：录制过程中发生错误，触发该事件。 |
-| callback12+ | [ErrorCallback](js-apis-base.md#errorcallback) | 否 | 回调函数，返回录制错误事件。如果指定参数则取消对应callback（callback对象不能是匿名函数），否则取消所有callback。  从API version 12开始支持此参数。 |
+| type | string | 是 | 录制错误的回调类型，支持的事件：'error'。 |
+| callback12+ | [ErrorCallback](js-apis-base.md#errorcallback) | 否 | 回调函数，用于接收录制错误事件。如果指定参数则取消对应callback（callback对象不能是匿名函数），否则取消所有callback。  从API version 12开始支持此参数。 |
 
 **示例：**
 
-```
-1. avRecorder.off('error');
+```ts
+avRecorder.off('error');
 ```
 
 ## on('audioCapturerChange')11+
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'audioCapturerChange', callback: Callback<audio.AudioCapturerChangeInfo>): void
 
-订阅录音配置变化的回调，任意录音配置的变化会触发变化后的录音配置全量信息回调。使用callback异步回调。
+订阅录音配置变化的回调事件。当录音配置发生变化时，会触发回调返回变化后的录音配置全量信息。使用callback异步回调。
 
-当用户重复订阅时，以最后一次订阅的回调接口为准。
+用户只能订阅一个录音配置变化事件的回调方法，当用户重复订阅时，以最后一次订阅的回调接口为准。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
@@ -1394,7 +1452,7 @@ on(type: 'audioCapturerChange', callback: Callback<audio.AudioCapturerChangeInfo
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 录音配置变化的回调类型，支持的事件：'audioCapturerChange'。 |
-| callback | Callback<[audio.AudioCapturerChangeInfo](arkts-apis-audio-i.md#audiocapturerchangeinfo9)> | 是 | 回调函数，返回变化后的录音配置全量信息。 |
+| callback | Callback<[audio.AudioCapturerChangeInfo](arkts-apis-audio-i.md#audiocapturerchangeinfo9)> | 是 | 回调函数，用于接收变化后的录音配置全量信息。回调参数为audioCapturerChangeInfo（变化后的录音配置信息，类型为audio.AudioCapturerChangeInfo）。 |
 
 **错误码：**
 
@@ -1402,28 +1460,26 @@ on(type: 'audioCapturerChange', callback: Callback<audio.AudioCapturerChangeInfo
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { audio } from '@kit.AudioKit'
+```ts
+import { audio } from '@kit.AudioKit';
 
-3. let capturerChangeInfo: audio.AudioCapturerChangeInfo;
+let capturerChangeInfo: audio.AudioCapturerChangeInfo;
 
-5. avRecorder.on('audioCapturerChange',  (audioCapturerChangeInfo: audio.AudioCapturerChangeInfo) => {
-6. console.info('audioCapturerChange called');
-7. capturerChangeInfo = audioCapturerChangeInfo;
-8. });
+avRecorder.on('audioCapturerChange', (audioCapturerChangeInfo: audio.AudioCapturerChangeInfo) => {
+  console.info('audioCapturerChange called');
+  capturerChangeInfo = audioCapturerChangeInfo;
+});
 ```
 
 ## off('audioCapturerChange')11+
 
-PhonePC/2in1TabletTVWearable
-
 off(type: 'audioCapturerChange', callback?: Callback<audio.AudioCapturerChangeInfo>): void
 
-取消订阅录音变化的回调事件。使用callback异步回调。
+取消订阅录音配置变化的回调事件。使用callback异步回调。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
@@ -1432,23 +1488,21 @@ off(type: 'audioCapturerChange', callback?: Callback<audio.AudioCapturerChangeIn
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 录音配置变化的回调类型，支持的事件：'audioCapturerChange'。 |
-| callback12+ | Callback<[audio.AudioCapturerChangeInfo](arkts-apis-audio-i.md#audiocapturerchangeinfo9)> | 否 | 回调函数，返回变化后的录音配置全量信息。如果指定参数则取消对应callback（callback对象不能是匿名函数），否则取消所有callback。  从API version 12开始支持此参数。 |
+| callback12+ | Callback<[audio.AudioCapturerChangeInfo](arkts-apis-audio-i.md#audiocapturerchangeinfo9)> | 否 | 回调函数，用于接收变化后的录音配置全量信息。如果指定参数则取消对应callback（callback对象不能是匿名函数），否则取消所有callback。  从API version 12开始支持此参数。 |
 
 **示例：**
 
-```
-1. avRecorder.off('audioCapturerChange');
+```ts
+avRecorder.off('audioCapturerChange');
 ```
 
 ## on('photoAssetAvailable')12+
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'photoAssetAvailable', callback: Callback<photoAccessHelper.PhotoAsset>): void
 
-订阅媒体资源回调事件，当[FileGenerationMode](arkts-apis-media-e.md#filegenerationmode12)枚举设置为系统创建媒体文件时，会在[stop](arkts-apis-media-avrecorder.md#stop9)操作结束后把[PhotoAsset](arkts-apis-photoaccesshelper-photoasset.md)对象回调给应用。使用callback异步回调。
+订阅媒体资源创建完成的回调事件。当[FileGenerationMode](arkts-apis-media-e.md#filegenerationmode12)枚举设置为系统创建媒体文件时，[stop](arkts-apis-media-avrecorder.md#stop9)操作结束后会把[PhotoAsset](arkts-apis-photoaccesshelper-photoasset.md)对象回调给应用。使用callback异步回调。
 
-当用户重复订阅时，以最后一次订阅的回调接口为准。
+用户只能订阅一个媒体资源回调事件的回调方法，当用户重复订阅时，以最后一次订阅的回调接口为准。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
@@ -1456,8 +1510,8 @@ on(type: 'photoAssetAvailable', callback: Callback<photoAccessHelper.PhotoAsset>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 录像资源的回调类型，支持的事件：'photoAssetAvailable'。 |
-| callback | Callback<[photoAccessHelper.PhotoAsset](arkts-apis-photoaccesshelper-photoasset.md)> | 是 | 回调函数，返回系统创建的资源文件对应的PhotoAsset对象。 |
+| type | string | 是 | 媒体资源创建完成的回调类型，支持的事件：'photoAssetAvailable'。 |
+| callback | Callback<[photoAccessHelper.PhotoAsset](arkts-apis-photoaccesshelper-photoasset.md)> | 是 | 回调函数，用于接收系统创建的资源文件对应的PhotoAsset对象。需在prepare配置中将FileGenerationMode设置为系统创建媒体文件模式，stop结束后才会触发此回调。 |
 
 **错误码：**
 
@@ -1470,43 +1524,43 @@ on(type: 'photoAssetAvailable', callback: Callback<photoAccessHelper.PhotoAsset>
 
 **示例：**
 
-```
-1. import { photoAccessHelper } from '@kit.MediaLibraryKit';
-2. let photoAsset: photoAccessHelper.PhotoAsset;
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
+let photoAsset: photoAccessHelper.PhotoAsset;
 
-4. // 例：处理photoAsset回调，保存video。
-5. async function saveVideo(context: Context, asset: photoAccessHelper.PhotoAsset) {
-6. console.info("saveVideo called");
-7. try {
-8. let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
-9. let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = new photoAccessHelper.MediaAssetChangeRequest(asset);
-10. assetChangeRequest.saveCameraPhoto();
-11. await phAccessHelper.applyChanges(assetChangeRequest);
-12. console.info('apply saveVideo successfully');
-13. } catch (err) {
-14. console.error(`apply saveVideo failed with error: ${err.code}, ${err.message}`);
-15. }
-16. }
-17. // 注册photoAsset监听。
-18. avRecorder.on('photoAssetAvailable', (asset: photoAccessHelper.PhotoAsset) => {
-19. console.info('photoAssetAvailable called');
-20. if (asset != undefined) {
-21. photoAsset = asset;
-22. // 处理photoAsset回调。
-23. // 例：this.saveVideo(context, asset);
-24. } else {
-25. console.error('photoAsset is undefined');
-26. }
-27. });
+// 例：处理photoAsset回调，保存video。
+async function saveVideo(context: Context, asset: photoAccessHelper.PhotoAsset) {
+  console.info('saveVideo called');
+  try {
+    let photoHelper = photoAccessHelper.getPhotoAccessHelper(context);
+    let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = new photoAccessHelper.MediaAssetChangeRequest(asset);
+    assetChangeRequest.saveCameraPhoto();
+    await photoHelper.applyChanges(assetChangeRequest);
+    console.info('apply saveVideo successfully');
+  } catch (err) {
+    let error: BusinessError = err as BusinessError;
+    console.error(`Failed to apply saveVideo. Code: ${error.code}, message: ${error.message}`);
+  }
+}
+// 注册photoAsset监听。
+avRecorder.on('photoAssetAvailable', (asset: photoAccessHelper.PhotoAsset) => {
+  console.info('photoAssetAvailable called');
+  if (asset != undefined) {
+    photoAsset = asset;
+    // 处理photoAsset回调。
+    // 例：this.saveVideo(context, asset);
+  } else {
+    console.error('photoAsset is undefined');
+  }
+});
 ```
 
 ## off('photoAssetAvailable')12+
 
-PhonePC/2in1TabletTVWearable
-
 off(type: 'photoAssetAvailable', callback?: Callback<photoAccessHelper.PhotoAsset>): void
 
-取消订阅媒体资源的回调类型。使用callback异步回调。
+取消订阅媒体资源创建完成的回调事件。使用callback异步回调。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
@@ -1514,11 +1568,11 @@ off(type: 'photoAssetAvailable', callback?: Callback<photoAccessHelper.PhotoAsse
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 录音配置变化的回调类型，支持的事件：'photoAssetAvailable'。 |
-| callback | Callback<[photoAccessHelper.PhotoAsset](arkts-apis-photoaccesshelper-photoasset.md)> | 否 | 回调函数，返回系统创建的资源文件对应的PhotoAsset对象。如果指定参数则取消对应callback（callback对象不能是匿名函数），否则取消所有callback。 |
+| type | string | 是 | 媒体资源创建完成的回调类型，支持的事件：'photoAssetAvailable'。 |
+| callback | Callback<[photoAccessHelper.PhotoAsset](arkts-apis-photoaccesshelper-photoasset.md)> | 否 | 回调函数，用于接收系统创建的资源文件对应的PhotoAsset对象。如果指定参数则取消对应callback（callback对象不能是匿名函数），否则取消所有callback。 |
 
 **示例：**
 
-```
-1. avRecorder.off('photoAssetAvailable');
+```ts
+avRecorder.off('photoAssetAvailable');
 ```

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-navis
 title: 路径规划支持的国家/地区
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > 附录 > 路径规划支持的国家/地区
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:32+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:20:45+08:00
+doc_updated_at: 2026-08-29
 content_hash: sha256:a0afc3fc9fca485b9581cb55c1de038d25ee3fc303746f6bd5cb30389a69b5f4
 ---
 

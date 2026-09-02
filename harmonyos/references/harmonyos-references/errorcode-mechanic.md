@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 机械体控制模块错误码
 breadcrumb: API参考 > 系统 > 硬件 > Mechanic Kit（机械设备管理服务） > 错误码 > 机械体控制模块错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:13+08:00
+scraped_at: 2026-09-02T15:02:15+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:8a7c8feef353e712fa088652376b42308133b9c5bc613fb1ec85b5fb69dbaf20
+content_hash: sha256:b9a5ced0f71d9cb8a01591c93678ae14b858627753bc62aeeb85f6382d642ea9
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 33300001 系统错误
-
-PhoneTablet
 
 **错误信息**
 
@@ -34,8 +32,6 @@ Service exception.
 
 ## 33300002 设备未连接
 
-PhoneTablet
-
 **错误信息**
 
 Device not connected.
@@ -53,8 +49,6 @@ Device not connected.
 确保开发设备与机械体通过蓝牙连接正常。
 
 ## 33300003 功能不支持
-
-PhoneTablet
 
 **错误信息**
 

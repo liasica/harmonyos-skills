@@ -1,9 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-96
 title: ArkTS是否支持交叉类型
+breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > ArkTS是否支持交叉类型
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:10+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:14+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:e51d47daa51a72e02f199ccfeb9eb8369a899ae0dbe954626513143f0df3b563
 ---
 

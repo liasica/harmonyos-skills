@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-forma
 title: FormatToSerialString
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > TypeUtils > FormatToSerialString
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:11+08:00
+scraped_at: 2026-09-02T14:50:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b200a8494ebc1f4fb6b4bf254f1c6a4eb2f3bc1a9f83eebfcaf004b6bca70e63
+content_hash: sha256:e0c29c67dd122a67fbdf910a0eea77a443d05efd5e1a019af6003210b39441c4
 ---
 
 ## 函数功能
@@ -16,14 +16,14 @@ content_hash: sha256:b200a8494ebc1f4fb6b4bf254f1c6a4eb2f3bc1a9f83eebfcaf004b6bca
 
 使用该接口需要包含type\_utils.h头文件。
 
-```
-1. #include "graph/utils/type_utils.h"
+```cpp
+#include "graph/utils/type_utils.h"
 ```
 
 ## 函数原型
 
-```
-1. std::string FormatToSerialString(const Format format);
+```cpp
+std::string FormatToSerialString(const Format format);
 ```
 
 ## 参数说明
@@ -42,7 +42,7 @@ content_hash: sha256:b200a8494ebc1f4fb6b4bf254f1c6a4eb2f3bc1a9f83eebfcaf004b6bca
 
 ## 调用示例
 
-```
-1. ge::Format format = ge::Format::FORMAT_NHWC;
-2. auto format_str = FormatToSerialString(format); // "NHWC"
+```cpp
+ge::Format format = ge::Format::FORMAT_NHWC;
+auto format_str = FormatToSerialString(format); // "NHWC"
 ```

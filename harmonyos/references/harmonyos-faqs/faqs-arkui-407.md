@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-407
 title: Navigation路由，下层页面通过什么周期方法感知上层NavDestinationMode.DIALOG的弹出以及销毁
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > Navigation路由，下层页面通过什么周期方法感知上层NavDestinationMode.DIALOG的弹出以及销毁
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Navigation路由，下层页面通过什么周期方法感知上层NavDestinationMode.DIALOG的弹出以及销毁
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:47+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:22+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:818210047b8ce3f41e4f143f7f664a9a8625cf1d7aa54467689caa20ef55efbe
 ---
 

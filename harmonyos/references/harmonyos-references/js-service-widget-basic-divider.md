@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: divider
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 基础组件 > divider
 category: harmonyos-references
-scraped_at: 2026-04-29T13:54:03+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:6cacad34f41ba9565e8d4da87c7b078e800252f7c123f7b64df5ab6aeb0b61b4
+scraped_at: 2026-09-02T15:01:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6dc6fedbf269ca426be5b7893a3b98e6a5cf24e404a6067db671f26e17b322b6
 ---
 
 分隔器组件，分隔不同内容块/内容元素。可用于列表或界面布局。
 
-说明
+**说明** 
 
 从API version 8 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-service-widget-common-attributes.md)外，还支持如下属性：
 
@@ -25,8 +23,6 @@ PhonePC/2in1TabletTVWearable
 | vertical | boolean | false | 否 | 使用水平分割线还是垂直分割线，默认水平分割线。 |
 
 ## 样式
-
-PhonePC/2in1TabletTVWearable
 
 仅支持如下样式：
 
@@ -46,49 +42,45 @@ PhonePC/2in1TabletTVWearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 不支持。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <div class="content">
-4. <divider class="divider" vertical="false"></divider>
-5. </div>
-6. </div>
+```html
+<!-- xxx.hml -->
+<div class="container">   
+  <div class="content">        
+    <divider class="divider" vertical="false"></divider>    
+  </div>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .container {
-3. margin: 20px;
-4. flex-direction:column;
-5. width:100%;
-6. height:100%;
-7. align-items:center;
-8. }
-9. .content{
-10. width:80%;
-11. height:40%;
-12. margin-top:100px;
-13. border:1px solid #000000;
-14. align-items: center;
-15. justify-content: center;
-16. flex-direction:column;
-17. }
-18. .divider {
-19. margin: 10px;
-20. color: #ff0000ff;
-21. stroke-width: 3px;
-22. line-cap: round;
-23. }
+```css
+/* xxx.css */
+.container {
+  margin: 20px;
+  flex-direction:column;
+  width:100%;
+  height:100%;
+  align-items:center;
+}
+.content{
+  width:80%;
+  height:40%;
+  margin-top:100px;
+  border:1px solid #000000;
+  align-items: center;
+  justify-content: center;
+  flex-direction:column;
+}
+.divider {
+  margin: 10px;
+  color: #ff0000ff;
+  stroke-width: 3px;
+  line-cap: round;
+}
 ```
 
 **4\*4卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/g8WPXGeOSU6aqsicKwHkTg/zh-cn_image_0000002589326825.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/Ih2VzYTNTt67snXsTIiX1g/zh-cn_image_0000002706676686.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getou
 title: GetOutputShapeRange
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > InferShapeRangeContext > GetOutputShapeRange
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:04+08:00
+scraped_at: 2026-09-02T14:50:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0ad87920f501b698b6aaca5549886b99ac67fea1de903301c9cbb4ed6413c05c
+content_hash: sha256:8eeb49cba326b1d2a842b10eab71631f73c59f09308651e0af0f0c56bf202334
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:0ad87920f501b698b6aaca5549886b99ac67fea1de903301c9cbb4ed641
 
 ## 函数原型
 
-```
-1. Range<Shape> *GetOutputShapeRange(const size_t index);
+```cpp
+Range<Shape> *GetOutputShapeRange(const size_t index);
 ```
 
 ## 参数说明
@@ -34,22 +34,22 @@ content_hash: sha256:0ad87920f501b698b6aaca5549886b99ac67fea1de903301c9cbb4ed641
 
 ## 调用示例
 
-```
-1. ge::graphStatus InferShapeRangeForXXX(gert::InferShapeRangeContext *context) {
-2. const auto x_shape_range = context->GetInputShapeRange(0);
-3. if (x_shape_range == nullptr) {
-4. // 防御式编程 ....
-5. }
-6. const auto min_shape = x_shape_range->GetMin();
-7. const auto max_shape = x_shape_range->GetMax();
-
-9. auto y_shape_range = context->GetOutputShapeRange(0);
-10. if (y_shape_range == nullptr) {
-11. // 防御式编程 ....
-12. }
-13. if (y_shape_range->GetMin() == nullptr || y_shape_range->GetMax() == nullptr) {
-14. // 防御式编程 ....
-15. }
-16. // shape range推导逻辑 .....
-17. }
+```cpp
+ge::graphStatus InferShapeRangeForXXX(gert::InferShapeRangeContext *context) {
+  const auto x_shape_range = context->GetInputShapeRange(0);
+  if (x_shape_range == nullptr) {
+    // 防御式编程 ....
+  }
+  const auto min_shape = x_shape_range->GetMin();
+  const auto max_shape = x_shape_range->GetMax();
+ 
+  auto y_shape_range = context->GetOutputShapeRange(0);
+  if (y_shape_range == nullptr) {
+    // 防御式编程 ....
+  }
+  if (y_shape_range->GetMin() == nullptr || y_shape_range->GetMax() == nullptr) {
+    // 防御式编程 ....
+  }
+  // shape range推导逻辑 .....
+}
 ```

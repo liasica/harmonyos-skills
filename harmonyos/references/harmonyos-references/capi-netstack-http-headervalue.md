@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nets
 title: Http_HeaderValue
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 结构体 > Http_HeaderValue
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:40+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:d91250bf8866ee4a00e4f5999be8fd524a965c1c777e4b3de3010b87c3956856
+scraped_at: 2026-09-02T15:01:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:838134a5234b54efbb05af62b47d87b596d74d3a9ed05ec47cb84339c2dd60f0
 ---
 
-```
-1. typedef struct Http_HeaderValue {...} Http_HeaderValue
+```c
+typedef struct Http_HeaderValue {...} Http_HeaderValue
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 请求或者响应的标头映射的值类型。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

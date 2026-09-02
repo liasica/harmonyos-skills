@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-k
 title: XEG_HPSRadixSortDescription
 breadcrumb: API参考 > 图形 > XEngine Kit（GPU加速引擎服务） > C API > 头文件和结构体 > 结构体 > XEG_HPSRadixSortDescription
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:01+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:9cbe4fbb75c30fb53c82c10f4072d57bb08d78526f023ea91a954c4120a6e039
+scraped_at: 2026-09-02T15:02:49+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:970a99c0e7c9246870664575124d846722ccae666d35a0210de8d843a638d9e5
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 此结构体描述使用[XEG\_HPS\_RADIX\_SORT\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_hps_radix_sort_extension_name)扩展进行排序时所需的信息。
 
@@ -22,11 +20,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 成员变量
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -38,14 +32,10 @@ PhonePC/2in1TabletTV
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTV
-
 ### indexBuffer
 
-PhonePC/2in1TabletTV
-
-```
-1. VkBuffer XEG_HPSRadixSortDescription::indexBuffer
+```cpp
+VkBuffer XEG_HPSRadixSortDescription::indexBuffer
 ```
 
 **描述**
@@ -54,10 +44,8 @@ PhonePC/2in1TabletTV
 
 ### keyBuffer
 
-PhonePC/2in1TabletTV
-
-```
-1. VkBuffer XEG_HPSRadixSortDescription::keyBuffer
+```cpp
+VkBuffer XEG_HPSRadixSortDescription::keyBuffer
 ```
 
 **描述**
@@ -66,10 +54,8 @@ PhonePC/2in1TabletTV
 
 ### pNext
 
-PhonePC/2in1TabletTV
-
-```
-1. const void* XEG_HPSRadixSortDescription::pNext
+```cpp
+const void* XEG_HPSRadixSortDescription::pNext
 ```
 
 **描述**
@@ -78,10 +64,8 @@ PhonePC/2in1TabletTV
 
 ### sortCount
 
-PhonePC/2in1TabletTV
-
-```
-1. VkBuffer XEG_HPSRadixSortDescription::sortCount
+```cpp
+VkBuffer XEG_HPSRadixSortDescription::sortCount
 ```
 
 **描述**
@@ -90,10 +74,8 @@ PhonePC/2in1TabletTV
 
 ### sType
 
-PhonePC/2in1TabletTV
-
-```
-1. XEG_StructureType XEG_HPSRadixSortDescription::sType
+```cpp
+XEG_StructureType XEG_HPSRadixSortDescription::sType
 ```
 
 **描述**

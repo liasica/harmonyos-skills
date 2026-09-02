@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-vis
 title: 背景流光
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 视效 > 背景流光
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:30:26+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ce1a3c1a3216e94d066435329fbbd6f15ab71e4ff4df3c81191ac4eb1633ca22
+scraped_at: 2026-09-02T14:49:58+08:00
+doc_updated_at: 2026-05-07
+content_hash: sha256:edef49ad44743758dd8bcc667a386d42eaac69544884fec2c932f40138affd41
 ---
 
 ## 场景介绍
 
-从6.0.0(20) Beta1版本开始，新增支持[背景流光](../harmonyos-references/ui-design-hdseffect.md#effecttype)。
+从6.0.0(20)版本开始，新增支持[背景流光](../harmonyos-references/ui-design-hdseffect.md#effecttype)。
 
 通过背景流光接口可以设置组件的背景流动发光效果，并且可以设置背景色及渐变背景色，常用于全屏幕背景流光等。
 
@@ -18,38 +18,38 @@ content_hash: sha256:ce1a3c1a3216e94d066435329fbbd6f15ab71e4ff4df3c81191ac4eb163
 
 1. 导入模块。
 
-   ```
-   1. import { hdsEffect } from '@kit.UIDesignKit';
+   ```typescript
+   import { hdsEffect } from '@kit.UIDesignKit';
    ```
 2. 设置背景流光效果。
 
-   ```
-   1. @Entry
-   2. @Component
-   3. struct UVFlowLight {
-   4. @State controller: hdsEffect.ShaderEffectController = new hdsEffect.ShaderEffectController();
+   ```typescript
+   @Entry
+   @Component
+   struct UVFlowLight {
+     @State controller: hdsEffect.ShaderEffectController = new hdsEffect.ShaderEffectController();
 
-   6. build() {
-   7. Stack() {
-   8. }
-   9. .visualEffect(new hdsEffect.HdsEffectBuilder()
-   10. .shaderEffect({
-   11. effectType: hdsEffect.EffectType.UV_BACKGROUND_FLOW_LIGHT,
-   12. animation: {
-   13. duration: 10000,
-   14. iterations: -1,
-   15. autoPlay: true,
-   16. onFinish: ()=> {
-   17. console.info('Succeeded in finishing');
-   18. }
-   19. },
-   20. controller: this.controller,
-   21. })
-   22. .buildEffect())
-   23. .width('100%')
-   24. .height('100%')
-   25. }
-   26. }
+     build() {
+       Stack() {
+       }
+       .visualEffect(new hdsEffect.HdsEffectBuilder()
+         .shaderEffect({
+           effectType: hdsEffect.EffectType.UV_BACKGROUND_FLOW_LIGHT,
+           animation: {
+             duration: 10000,
+             iterations: -1,
+             autoPlay: true,
+             onFinish: ()=> {
+               console.info('Succeeded in finishing');
+             }
+           },
+           controller: this.controller
+         })
+         .buildEffect())
+       .width('100%')
+       .height('100%')
+     }
+   }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/k84F696vRtO3ouINyFH-rQ/zh-cn_image_0000002589244657.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/7dr7aKi3SJmu0_wuwYKhbg/zh-cn_image_0000002736313355.jpg)

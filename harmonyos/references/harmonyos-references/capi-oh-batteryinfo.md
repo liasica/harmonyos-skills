@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-b
 title: OH_BatteryInfo
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > C API > 模块 > OH_BatteryInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:45+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:8858548ed43dbc02d4a4d7f514579c93b2633b30de484739684bfbab9e56a7b1
+scraped_at: 2026-09-02T14:52:30+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c0d160fb061afd10544162baeafa400ff2bb4a0d7dbfe9498c02364407e8c943
 ---
 
 ## 概述
-
-PhonePC/2in1TabletWearable
 
 提供BatteryInfo模块的电池相关信息的能力。
 
@@ -19,8 +17,6 @@ PhonePC/2in1TabletWearable
 **起始版本：** 13
 
 ## 文件汇总
-
-PhonePC/2in1TabletWearable
 
 | 名称 | 描述 |
 | --- | --- |

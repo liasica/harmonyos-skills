@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tryge
 title: TryGetInputDesc
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator > TryGetInputDesc
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:47+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:94f86893ec620f4fac15904732cf3523b1d7e26d8b87c16dd14a86a7344bb611
+scraped_at: 2026-09-02T15:00:12+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:974982221ce73907ad01f8b91e13975f1bacef8f6968f53de4958bcd8cc7b088
 ---
 
 ## 函数功能
@@ -14,13 +14,13 @@ content_hash: sha256:94f86893ec620f4fac15904732cf3523b1d7e26d8b87c16dd14a86a7344
 
 ## 函数原型
 
-说明
+**说明** 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 
-```
-1. graphStatus TryGetInputDesc(const std::string &name, TensorDesc &tensor_desc) const;
-2. graphStatus TryGetInputDesc(const char_t *name, TensorDesc &tensor_desc) const;
+```cpp
+graphStatus TryGetInputDesc(const std::string &name, TensorDesc &tensor_desc) const;
+graphStatus TryGetInputDesc(const char_t *name, TensorDesc &tensor_desc) const;
 ```
 
 ## 参数说明
@@ -34,13 +34,13 @@ content_hash: sha256:94f86893ec620f4fac15904732cf3523b1d7e26d8b87c16dd14a86a7344
 
 | 类型 | 描述 |
 | --- | --- |
-| graphStatus | true：有此端口，获取TensorDesc成功。  false：无此端口，出参为空，获取TensorDesc失败。 |
+| graphStatus | GRAPH\_SUCCESS：有此端口，获取TensorDesc成功。  GRAPH\_FAILED：无此端口，出参为空，获取TensorDesc失败。 |
 
 ## 异常处理
 
 | 异常场景 | 说明 |
 | --- | --- |
-| 无对应name输入 | 返回false。 |
+| 无对应name输入 | 返回GRAPH\_FAILED。 |
 
 ## 约束说明
 

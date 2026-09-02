@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ToolBar
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ToolBar
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:06+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7391aeb529c84e84ade9c60109b5f46bd89a01dec3eeacd091c622f7b61761b6
+scraped_at: 2026-09-02T15:01:09+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9aa60c00a627c56639bcc72188aef6e374fda2590474618472e7a9557f9034cc
 ---
 
 工具栏组件，用于展示针对当前界面内容的操作选项，在界面底部显示。底部最多显示5个入口，超过则收纳入“更多”子项中，在最右侧显示。
 
-说明
+**说明** 
 
 * 该组件从API version 10开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 该组件仅可在Stage模型下使用。
@@ -18,21 +18,15 @@ content_hash: sha256:7391aeb529c84e84ade9c60109b5f46bd89a01dec3eeacd091c622f7b61
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { SymbolGlyphModifier, DividerModifier, ToolBar, ToolBarOptions, ToolBarModifier, ItemState, LengthMetrics } from '@kit.ArkUI';
+```ts
+import { SymbolGlyphModifier, DividerModifier, ToolBar, ToolBarOptions, ToolBarModifier, ItemState, LengthMetrics } from '@kit.ArkUI';
 ```
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## ToolBar
-
-PhonePC/2in1TabletTVWearable
 
 ToolBar({toolBarList: ToolBarOptions, activateIndex?: number, controller: TabsController, dividerModifier?: DividerModifier, toolBarModifier?: ToolBarModifier})
 
@@ -48,13 +42,11 @@ ToolBar({toolBarList: ToolBarOptions, activateIndex?: number, controller: TabsCo
 | --- | --- | --- | --- | --- |
 | toolBarList | [ToolBarOptions](ohos-arkui-advanced-toolbar.md#toolbaroptions) | 是 | @ObjectLink | 工具栏列表。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | activateIndex | number | 否 | @Prop | 激活态的子项。  取值范围：大于等于-1。  默认值：-1，没有激活态的子项。若设置数值小于-1，按没有激活项处理。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| controller | [TabsController](ts-container-tabs.md#tabscontroller) | 是 | - | 工具栏控制器，不支持控制工具栏子项。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| controller | [TabsController](ts-container-tabs.md#tabscontroller) | 是 | - | 工具栏控制器，不支持控制工具栏子项。  **说明：**  根据自定义组件成员属性访问限定符[使用限制](../harmonyos-guides/arkts-custom-components-access-restrictions.md#使用限制)，该接口属于常规成员变量，可以传参进行初始化；也可以不传。不传时，使用组件内预设值进行初始化，组件内预设值为：new TabsController()。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | dividerModifier13+ | [DividerModifier](ts-universal-attributes-attribute-modifier.md#自定义modifier) | 否 | @Prop | 工具栏头部分割线属性，可设置分割线高度、颜色等。  默认值：系统默认值。  **元服务API：** 从API version 13开始，该接口支持在元服务中使用。 |
 | toolBarModifier13+ | [ToolBarModifier](ohos-arkui-advanced-toolbar.md#toolbarmodifier13) | 否 | @Prop | 工具栏属性，可设置工具栏高度、背景色、内边距（仅在工具栏子项数量小于5时生效）、是否显示按压态。  默认值：  工具栏高度：56vp  背景色：ohos\_id\_toolbar\_bg  内边距：24vp  显示按压态。  **元服务API：** 从API version 13开始，该接口支持在元服务中使用。 |
 
 ## ToolBarOptions
-
-PhonePC/2in1TabletTVWearable
 
 继承于 Array<[ToolBarOption](ohos-arkui-advanced-toolbar.md#toolbaroption)>。
 
@@ -67,8 +59,6 @@ PhonePC/2in1TabletTVWearable
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
 ## ToolBarOption
-
-PhonePC/2in1TabletTVWearable
 
 定义工具栏的列表内容和属性。
 
@@ -95,15 +85,11 @@ PhonePC/2in1TabletTVWearable
 
 ## ToolBarModifier13+
 
-PhonePC/2in1TabletTVWearable
-
 ToolBarModifier提供设置工具栏高度(height)、背景色(backgroundColor)、左右内边距（padding，仅在item小于5个时生效）、是否显示按压态（stateEffect）的方法。
 
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
 
 ### backgroundColor13+
-
-PhonePC/2in1TabletTVWearable
 
 backgroundColor(backgroundColor: ResourceColor): ToolBarModifier
 
@@ -129,8 +115,6 @@ backgroundColor(backgroundColor: ResourceColor): ToolBarModifier
 
 ### padding13+
 
-PhonePC/2in1TabletTVWearable
-
 padding(padding: LengthMetrics): ToolBarModifier
 
 自定义绘制工具栏左右内边距的接口，若重载该方法则可进行工具栏左右内边距的自定义绘制。
@@ -154,8 +138,6 @@ padding(padding: LengthMetrics): ToolBarModifier
 | [ToolBarModifier](ohos-arkui-advanced-toolbar.md#toolbarmodifier13) | 设置padding后的ToolBarModifier对象。 |
 
 ### height13+
-
-PhonePC/2in1TabletTVWearable
 
 height(height: LengthMetrics): ToolBarModifier
 
@@ -181,8 +163,6 @@ height(height: LengthMetrics): ToolBarModifier
 
 ### stateEffect13+
 
-PhonePC/2in1TabletTVWearable
-
 stateEffect(stateEffect: boolean): ToolBarModifier
 
 设置是否显示按压态效果的接口。
@@ -207,8 +187,6 @@ stateEffect(stateEffect: boolean): ToolBarModifier
 
 ## ItemState
 
-PhonePC/2in1TabletTVWearable
-
 定义工具栏子项的当前状态。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -225,8 +203,6 @@ PhonePC/2in1TabletTVWearable
 
 ## ToolBarSymbolGlyphOptions13+
 
-PhonePC/2in1TabletTVWearable
-
 ToolBarSymbolGlyphOptions定义图标的属性。
 
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
@@ -237,266 +213,262 @@ ToolBarSymbolGlyphOptions定义图标的属性。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| normal | [SymbolGlyphModifier](universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | 否 | 是 | 工具栏symbol图标普通态样式。  默认值：fontColor：$r('sys.color.icon\_primary')，fontSize：24vp。 |
-| activated | [SymbolGlyphModifier](universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | 否 | 是 | 工具栏symbol图标激活态样式。  默认值：fontColor：$r('sys.color.icon\_emphasize')，fontSize：24vp。 |
+| normal | [SymbolGlyphModifier](ts-universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | 否 | 是 | 工具栏symbol图标普通态样式。  默认值：fontColor：$r('sys.color.icon\_primary')，fontSize：24vp。 |
+| activated | [SymbolGlyphModifier](ts-universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | 否 | 是 | 工具栏symbol图标激活态样式。  默认值：fontColor：$r('sys.color.icon\_emphasize')，fontSize：24vp。 |
 
 ## 事件
-
-PhonePC/2in1TabletTVWearable
 
 不支持[通用事件](ts-component-general-events.md)。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 ### 示例1（工具栏不同状态的默认效果）
 
 该示例展示了工具栏子项state属性分别设置ENABLE、DISABLE、ACTIVATE状态的不同显示效果。
 
+```ts
+import { ToolBar, ToolBarOptions, ItemState } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct Index {
+  @State toolbarList: ToolBarOptions = new ToolBarOptions();
+
+  aboutToAppear() {
+    this.toolbarList.push({
+      content: '剪贴我是超超超超超超超超超长样式',
+      icon: $r('sys.media.ohos_ic_public_share'),
+      action: () => {
+      },
+    })
+    this.toolbarList.push({
+      content: '拷贝',
+      icon: $r('sys.media.ohos_ic_public_copy'),
+      action: () => {
+      },
+      state: ItemState.DISABLE
+    })
+    this.toolbarList.push({
+      content: '粘贴',
+      icon: $r('sys.media.ohos_ic_public_paste'),
+      action: () => {
+      },
+      state: ItemState.ACTIVATE
+    })
+    this.toolbarList.push({
+      content: '全选',
+      icon: $r('sys.media.ohos_ic_public_select_all'),
+      action: () => {
+      },
+    })
+    this.toolbarList.push({
+      content: '分享',
+      icon: $r('sys.media.ohos_ic_public_share'),
+      action: () => {
+      },
+    })
+    this.toolbarList.push({
+      content: '分享',
+      icon: $r('sys.media.ohos_ic_public_share'),
+      action: () => {
+      },
+    })
+  }
+
+  build() {
+    Row() {
+      Stack() {
+        Column() {
+          ToolBar({
+            activateIndex: 2,
+            toolBarList: this.toolbarList,
+          })
+        }
+      }
+      .align(Alignment.Bottom)
+      .width('100%')
+      .height('100%')
+    }
+  }
+}
 ```
-1. import { ToolBar, ToolBarOptions, ItemState } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. @State toolbarList: ToolBarOptions = new ToolBarOptions();
-
-8. aboutToAppear() {
-9. this.toolbarList.push({
-10. content: '剪贴我是超超超超超超超超超长样式',
-11. icon: $r('sys.media.ohos_ic_public_share'),
-12. action: () => {
-13. },
-14. })
-15. this.toolbarList.push({
-16. content: '拷贝',
-17. icon: $r('sys.media.ohos_ic_public_copy'),
-18. action: () => {
-19. },
-20. state: ItemState.DISABLE
-21. })
-22. this.toolbarList.push({
-23. content: '粘贴',
-24. icon: $r('sys.media.ohos_ic_public_paste'),
-25. action: () => {
-26. },
-27. state: ItemState.ACTIVATE
-28. })
-29. this.toolbarList.push({
-30. content: '全选',
-31. icon: $r('sys.media.ohos_ic_public_select_all'),
-32. action: () => {
-33. },
-34. })
-35. this.toolbarList.push({
-36. content: '分享',
-37. icon: $r('sys.media.ohos_ic_public_share'),
-38. action: () => {
-39. },
-40. })
-41. this.toolbarList.push({
-42. content: '分享',
-43. icon: $r('sys.media.ohos_ic_public_share'),
-44. action: () => {
-45. },
-46. })
-47. }
-
-49. build() {
-50. Row() {
-51. Stack() {
-52. Column() {
-53. ToolBar({
-54. activateIndex: 2,
-55. toolBarList: this.toolbarList,
-56. })
-57. }
-58. }
-59. .align(Alignment.Bottom)
-60. .width('100%')
-61. .height('100%')
-62. }
-63. }
-64. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/j8iDQiCdQAiBIOdxyr9GsA/zh-cn_image_0000002558766664.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/BaOXbHpNQveidUA5P93baQ/zh-cn_image_0000002736315429.png)
 
 ### 示例2（设置工具栏自定义样式）
 
 从API version 13开始，该示例通过设置属性ToolBarModifier自定义工具栏高度、背景色、按压效果等样式。
 
+```ts
+import {
+  SymbolGlyphModifier,
+  DividerModifier,
+  ToolBar,
+  ToolBarOptions,
+  ToolBarModifier,
+  ItemState,
+  LengthMetrics,
+} from '@kit.ArkUI';
+
+@Entry
+@Component
+struct Index {
+  @State toolbarList: ToolBarOptions = new ToolBarOptions();
+  // 自定义工具栏样式
+  private toolBarModifier: ToolBarModifier =
+    new ToolBarModifier().height(LengthMetrics.vp(52)).backgroundColor(Color.Transparent).stateEffect(false);
+  @State dividerModifier: DividerModifier = new DividerModifier().height(0);
+
+  aboutToAppear() {
+    // 添加工具栏子项
+    this.toolbarList.push({
+      content: 'Long long long long long long long long text',
+      icon: $r('sys.media.ohos_ic_public_share'),
+      action: () => {
+      },
+      state: ItemState.ACTIVATE,
+      toolBarSymbolOptions: {
+        normal: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontColor([Color.Green]), // 普通态symbol图标
+        activated: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontColor([Color.Red]), // 激活态symbol图标
+      },
+      activatedTextColor: $r('sys.color.font_primary'),
+    })
+    this.toolbarList.push({
+      content: 'Copy',
+      icon: $r('sys.media.ohos_ic_public_copy'),
+      action: () => {
+      },
+      state: ItemState.DISABLE,
+      iconColor: '#ff18cb53',
+      activatedIconColor: '#ffec5d5d', // 激活态icon颜色
+      activatedTextColor: '#ffec5d5d', // 激活态文本颜色
+    })
+    this.toolbarList.push({
+      content: 'Paste',
+      icon: $r('sys.media.ohos_ic_public_paste'),
+      action: () => {
+      },
+      state: ItemState.ACTIVATE,
+      textColor: '#ff18cb53',
+    })
+    this.toolbarList.push({
+      content: 'All',
+      icon: $r('sys.media.ohos_ic_public_select_all'),
+      action: () => {
+      },
+      state: ItemState.ACTIVATE,
+    })
+    this.toolbarList.push({
+      content: '分享',
+      icon: $r('sys.media.ohos_ic_public_share'),
+      action: () => {
+      },
+    })
+    this.toolbarList.push({
+      content: '分享',
+      icon: $r('sys.media.ohos_ic_public_share'),
+      action: () => {
+      },
+    })
+  }
+
+  build() {
+    Row() {
+      Stack() {
+        Column() {
+          ToolBar({
+            toolBarModifier: this.toolBarModifier,
+            dividerModifier: this.dividerModifier,
+            activateIndex: 0,
+            toolBarList: this.toolbarList,
+          })
+            .height(52)
+        }
+      }
+      .align(Alignment.Bottom)
+      .width('100%')
+      .height('100%')
+    }
+  }
+}
 ```
-1. import {
-2. SymbolGlyphModifier,
-3. DividerModifier,
-4. ToolBar,
-5. ToolBarOptions,
-6. ToolBarModifier,
-7. ItemState,
-8. LengthMetrics,
-9. } from '@kit.ArkUI';
 
-11. @Entry
-12. @Component
-13. struct Index {
-14. @State toolbarList: ToolBarOptions = new ToolBarOptions();
-15. // 自定义工具栏样式
-16. private toolBarModifier: ToolBarModifier =
-17. new ToolBarModifier().height(LengthMetrics.vp(52)).backgroundColor(Color.Transparent).stateEffect(false);
-18. @State dividerModifier: DividerModifier = new DividerModifier().height(0);
-
-20. aboutToAppear() {
-21. // 添加工具栏子项
-22. this.toolbarList.push({
-23. content: 'Long long long long long long long long text',
-24. icon: $r('sys.media.ohos_ic_public_share'),
-25. action: () => {
-26. },
-27. state: ItemState.ACTIVATE,
-28. toolBarSymbolOptions: {
-29. normal: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontColor([Color.Green]), // 普通态symbol图标
-30. activated: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontColor([Color.Red]), // 激活态symbol图标
-31. },
-32. activatedTextColor: $r('sys.color.font_primary'),
-33. })
-34. this.toolbarList.push({
-35. content: 'Copy',
-36. icon: $r('sys.media.ohos_ic_public_copy'),
-37. action: () => {
-38. },
-39. state: ItemState.DISABLE,
-40. iconColor: '#ff18cb53',
-41. activatedIconColor: '#ffec5d5d', // 激活态icon颜色
-42. activatedTextColor: '#ffec5d5d', // 激活态文本颜色
-43. })
-44. this.toolbarList.push({
-45. content: 'Paste',
-46. icon: $r('sys.media.ohos_ic_public_paste'),
-47. action: () => {
-48. },
-49. state: ItemState.ACTIVATE,
-50. textColor: '#ff18cb53',
-51. })
-52. this.toolbarList.push({
-53. content: 'All',
-54. icon: $r('sys.media.ohos_ic_public_select_all'),
-55. action: () => {
-56. },
-57. state: ItemState.ACTIVATE,
-58. })
-59. this.toolbarList.push({
-60. content: '分享',
-61. icon: $r('sys.media.ohos_ic_public_share'),
-62. action: () => {
-63. },
-64. })
-65. this.toolbarList.push({
-66. content: '分享',
-67. icon: $r('sys.media.ohos_ic_public_share'),
-68. action: () => {
-69. },
-70. })
-71. }
-
-73. build() {
-74. Row() {
-75. Stack() {
-76. Column() {
-77. ToolBar({
-78. toolBarModifier: this.toolBarModifier,
-79. dividerModifier: this.dividerModifier,
-80. activateIndex: 0,
-81. toolBarList: this.toolbarList,
-82. })
-83. .height(52)
-84. }
-85. }
-86. .align(Alignment.Bottom)
-87. .width('100%')
-88. .height('100%')
-89. }
-90. }
-91. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/8H6TPwKxS7CJlyTubD-tMA/zh-cn_image_0000002558607004.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/ZxhqPOieQCGl1GZCDkGClg/zh-cn_image_0000002706676390.png)
 
 ### 示例3（设置工具栏自定义播报）
 
 从API version 18开始，该示例通过设置工具栏子项属性accessibilityText、accessibilityDescription、accessibilityLevel自定义屏幕朗读播报文本。
 
+```ts
+import { ToolBar, ToolBarOptions, ItemState } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct Index {
+  @State toolbarList: ToolBarOptions = new ToolBarOptions();
+
+  aboutToAppear() {
+    // 添加工具栏子项
+    this.toolbarList.push({
+      content: '剪贴我是超超超超超超超超超长样式',
+      icon: $r('sys.media.ohos_ic_public_share'),
+      action: () => {
+      },
+      accessibilityText: '剪贴', // 该项屏幕朗读播报文本为‘剪贴’
+      accessibilityDescription: '单指双击即可剪贴', // 该项屏幕朗读播报描述为'单指双击即可剪贴'
+      accessibilityLevel: 'yes' // 该项可被无障碍屏幕朗读聚焦
+    })
+    this.toolbarList.push({
+      content: '拷贝',
+      icon: $r('sys.media.ohos_ic_public_copy'),
+      action: () => {
+      },
+      state: ItemState.DISABLE,
+      accessibilityLevel: 'no' // 该项将无法被屏幕朗读服务所识别，屏幕朗读不可聚焦
+    })
+    this.toolbarList.push({
+      content: '粘贴',
+      icon: $r('sys.media.ohos_ic_public_paste'),
+      action: () => {
+      },
+      state: ItemState.ACTIVATE
+    })
+    this.toolbarList.push({
+      content: '全选',
+      icon: $r('sys.media.ohos_ic_public_select_all'),
+      action: () => {
+      },
+    })
+    this.toolbarList.push({
+      content: '分享',
+      icon: $r('sys.media.ohos_ic_public_share'),
+      action: () => {
+      },
+    })
+    this.toolbarList.push({
+      content: '分享',
+      icon: $r('sys.media.ohos_ic_public_share'),
+      action: () => {
+      },
+    })
+  }
+
+  build() {
+    Row() {
+      Stack() {
+        Column() {
+          ToolBar({
+            activateIndex: 2,
+            toolBarList: this.toolbarList,
+          })
+        }
+      }
+      .align(Alignment.Bottom)
+      .width('100%')
+      .height('100%')
+    }
+  }
+}
 ```
-1. import { ToolBar, ToolBarOptions, ItemState } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. @State toolbarList: ToolBarOptions = new ToolBarOptions();
-
-8. aboutToAppear() {
-9. // 添加工具栏子项
-10. this.toolbarList.push({
-11. content: '剪贴我是超超超超超超超超超长样式',
-12. icon: $r('sys.media.ohos_ic_public_share'),
-13. action: () => {
-14. },
-15. accessibilityText: '剪贴', // 该项屏幕朗读播报文本为‘剪贴’
-16. accessibilityDescription: '单指双击即可剪贴', // 该项屏幕朗读播报描述为'单指双击即可剪贴'
-17. accessibilityLevel: 'yes' // 该项可被无障碍屏幕朗读聚焦
-18. })
-19. this.toolbarList.push({
-20. content: '拷贝',
-21. icon: $r('sys.media.ohos_ic_public_copy'),
-22. action: () => {
-23. },
-24. state: ItemState.DISABLE,
-25. accessibilityLevel: 'no' // 该项将无法被屏幕朗读服务所识别，屏幕朗读不可聚焦
-26. })
-27. this.toolbarList.push({
-28. content: '粘贴',
-29. icon: $r('sys.media.ohos_ic_public_paste'),
-30. action: () => {
-31. },
-32. state: ItemState.ACTIVATE
-33. })
-34. this.toolbarList.push({
-35. content: '全选',
-36. icon: $r('sys.media.ohos_ic_public_select_all'),
-37. action: () => {
-38. },
-39. })
-40. this.toolbarList.push({
-41. content: '分享',
-42. icon: $r('sys.media.ohos_ic_public_share'),
-43. action: () => {
-44. },
-45. })
-46. this.toolbarList.push({
-47. content: '分享',
-48. icon: $r('sys.media.ohos_ic_public_share'),
-49. action: () => {
-50. },
-51. })
-52. }
-
-54. build() {
-55. Row() {
-56. Stack() {
-57. Column() {
-58. ToolBar({
-59. activateIndex: 2,
-60. toolBarList: this.toolbarList,
-61. })
-62. }
-63. }
-64. .align(Alignment.Bottom)
-65. .width('100%')
-66. .height('100%')
-67. }
-68. }
-69. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/N5OKb6gQT76GD4jW5aoPrg/zh-cn_image_0000002558766664.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/bywtTxjRTXGtXTZJSc-c8g/zh-cn_image_0000002736315429.png)

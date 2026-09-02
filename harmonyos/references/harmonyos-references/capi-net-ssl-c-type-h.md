@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-net-
 title: net_ssl_c_type.h
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 头文件 > net_ssl_c_type.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:34+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:305ecc96b59db7c5075eb3c05ed7bfbbb7d2ac1ca9064552e56cbbdd97122346
+scraped_at: 2026-09-02T15:01:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b222b0b46af7ef42e3973152d13e2965e408260d7c91df339f1c91321f62aa87
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义SSL/TLS证书链校验模块的C接口需要的数据结构。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -40,8 +34,6 @@ PhonePC/2in1TabletTVWearable
 
 ### 枚举
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [NetStack\_CertType](capi-net-ssl-c-type-h.md#netstack_certtype) | - | 证书类型枚举。 |
@@ -50,14 +42,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### NetStack\_CertType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum NetStack_CertType
+```c
+enum NetStack_CertType
 ```
 
 **描述**
@@ -68,16 +56,14 @@ PhonePC/2in1TabletTVWearable
 
 | 枚举项 | 描述 |
 | --- | --- |
-| NETSTACK\_CERT\_TYPE\_PEM = 0 | PEM证书类型 |
-| NETSTACK\_CERT\_TYPE\_DER = 1 | DER证书类型 |
-| NETSTACK\_CERT\_TYPE\_INVALID | 错误证书类型 |
+| NETSTACK\_CERT\_TYPE\_PEM = 0 | PEM证书类型。 |
+| NETSTACK\_CERT\_TYPE\_DER = 1 | DER证书类型。 |
+| NETSTACK\_CERT\_TYPE\_INVALID | 错误证书类型。 |
 
 ### NetStack\_CertificatePinningKind
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum NetStack_CertificatePinningKind
+```c
+enum NetStack_CertificatePinningKind
 ```
 
 **描述**
@@ -88,14 +74,12 @@ PhonePC/2in1TabletTVWearable
 
 | 枚举项 | 描述 |
 | --- | --- |
-| PUBLIC\_KEY | 公钥锁定类型 |
+| PUBLIC\_KEY | 公钥锁定类型。 |
 
 ### NetStack\_HashAlgorithm
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum NetStack_HashAlgorithm
+```c
+enum NetStack_HashAlgorithm
 ```
 
 **描述**
@@ -106,4 +90,4 @@ PhonePC/2in1TabletTVWearable
 
 | 枚举项 | 描述 |
 | --- | --- |
-| SHA\_256 | Sha256 |
+| SHA\_256 | Sha256。 |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-m
 title: V1-V2迁移概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1-V2迁移指导 > V1-V2迁移概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:15+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:1b9ceca496bedf3f0c54ed36d5618b5420638b8912017db7c951678d928a9780
+scraped_at: 2026-09-02T14:49:48+08:00
+doc_updated_at: 2026-07-03
+content_hash: sha256:3311a50275218bcd2c23cefede37d2b5c723e13ca86f3d10dc2b835013f46c80
 ---
 
 ## 概述
@@ -38,7 +38,7 @@ content_hash: sha256:1b9ceca496bedf3f0c54ed36d5618b5420638b8912017db7c951678d928
 | [@ObjectLink](arkts-observed-and-objectlink.md) | [@ObservedV2](arkts-new-observedv2-and-trace.md)、[@Trace](arkts-new-observedv2-and-trace.md) | 直接兼容，@ObjectLink需要被@Observed装饰的class的实例初始化，主要应用于观察嵌套类场景。在状态管理V2中可以使用@ObservedV2@Trace。详情见迁移场景---[@ObjectLink/@Observed/@Track -> @ObservedV2/@Trace](arkts-v1-v2-migration-inner-class.md#objectlinkobservedtrack---observedv2trace)。 |
 | [@Track](arkts-track.md) | [@Trace](arkts-new-observedv2-and-trace.md) | V1装饰器@Track为精确观察，不使用则无法做到类属性的精准观察。  V2@Trace装饰的属性可以被精确跟踪观察。详情见迁移场景---[@ObjectLink/@Observed/@Track -> @ObservedV2/@Trace](arkts-v1-v2-migration-inner-class.md#objectlinkobservedtrack---observedv2trace)。 |
 | [@Provide](arkts-provide-and-consume.md)、[@Consume](arkts-provide-and-consume.md) | [@Provider](arkts-new-provider-and-consumer.md)、[@Consumer](arkts-new-provider-and-consumer.md) | 兼容。详情见[@Provide/@Consume迁移场景](arkts-v1-v2-migration-inner-component.md#provideconsume---providerconsumer)。 |
-| [@Watch](arkts-watch.md) | [@Monitor](arkts-new-monitor.md) | @Watch用于监听V1状态变量的变化，具有监听状态变量本身和其第一层属性变化的能力。状态变量可观察到的变化会触发其@Watch监听事件，详情见迁移场景--[@Watch -> @Monitor](arkts-v1-v2-migration-inner-component.md#watch---monitor)。  @Monitor用于监听V2状态变量的变化，搭配@Observed和@Trace一起使用，可有深层监听的能力。状态变量在一次事件中多次变化时，仅会以最终的结果判断是否触发@Monitor监听事件。 |
+| [@Watch](arkts-watch.md) | [@Monitor](arkts-new-monitor.md) | @Watch用于监听V1状态变量的变化，具有监听状态变量本身和其第一层属性变化的能力。状态变量可观察到的变化会触发其@Watch监听事件，详情见迁移场景--[@Watch -> @Monitor](arkts-v1-v2-migration-inner-component.md#watch---monitor)。  @Monitor用于监听V2状态变量的变化，搭配@ObservedV2和@Trace一起使用，可有深层监听的能力。状态变量在一次事件中多次变化时，仅会以最终的结果判断是否触发@Monitor监听事件。 |
 | 无计算属性能力 | [@Computed](arkts-new-computed.md) | 状态管理V1无计算属性相关能力，状态管理V2可使用@Computed避免重复计算。详情见迁移场景--[重复计算->@Computed计算属性](arkts-v1-v2-migration-inner-component.md#重复计算---computed计算属性)。 |
 | [LocalStorage](arkts-localstorage.md) | [@ObservedV2](arkts-new-observedv2-and-trace.md)、[@Trace](arkts-new-observedv2-and-trace.md) | 兼容。详情见迁移场景--[LocalStorage->@ObservedV2/@Trace](arkts-v1-v2-migration-application.md#localstorage-observedv2trace)。 |
 | [AppStorage](arkts-appstorage.md) | [AppStorageV2](arkts-new-appstoragev2.md) | 兼容。详情见迁移场景--[AppStorage->AppStorageV2](arkts-v1-v2-migration-application.md#appstorage-appstoragev2)。 |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-admin
 title: EnterpriseAdminExtensionAbility开发指南
 breadcrumb: 指南 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > EnterpriseAdminExtensionAbility开发指南
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:33:27+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:78e555d641befb28c78dc3bd8f5d7cb2e96c2ec6651bc103f3a120125a228fdf
+scraped_at: 2026-09-02T14:50:08+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:270ef0726f350849fc249f43b15fac1101d5efed55d639771a694a70469bae75
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:78e555d641befb28c78dc3bd8f5d7cb2e96c2ec6651bc103f3a120125a2
 
 ## 接口说明
 
-以下为本次开发示例所使用的接口，更多接口及使用方式请见[企业设备管理扩展能力接口文档](../harmonyos-references/js-apis-enterpriseadminextensionability.md)。
+以下为本次开发示例所使用的接口，更多接口及使用方式请见企业设备管理扩展能力接口文档[EnterpriseAdminExtensionAbility](../harmonyos-references/js-apis-enterpriseadminextensionability.md)。
 
 | 接口名称 | 描述 |
 | --- | --- |
@@ -29,68 +29,64 @@ content_hash: sha256:78e555d641befb28c78dc3bd8f5d7cb2e96c2ec6651bc103f3a120125a2
 
 新建一个工程后，结构如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/ghYeHg8BToqIqpI_xQhG4g/zh-cn_image_0000002589244769.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/XWVYIJ8AQXOnBhM9hKBseg/zh-cn_image_0000002706834394.png)
 
 首先，创建一个EnterpriseAdmin类型的ExtensionAbility（也就是EnterpriseAdminExtensionAbility）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/9jwcgFlSRquGXxQyPuripw/zh-cn_image_0000002558764964.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/EXAXq6w-QfKb9n8ilSQNTQ/zh-cn_image_0000002736313501.png)
 
 其次，打开新建的EnterpriseAdminAbility文件，导入EnterpriseAdminExtensionAbility模块，使其继承EnterpriseAdminExtensionAbility并加上需要的应用通知回调方法，如onAdminEnabled()、onAdminDisabled()等回调方法。当设备管理应用激活或者解除激活时，可以在对应回调方法中接收系统发送通知。
 
+```typescript
+import { EnterpriseAdminExtensionAbility } from '@kit.MDMKit';
+// ...
+
+export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbility {
+  // ...
+
+  // 设备管理器应用激活回调方法，应用可在此回调函数中进行初始化策略设置。
+  onAdminEnabled() {
+    console.info('onAdminEnabled');
+    // ...
+  }
+
+  // 设备管理器应用去激活回调方法，应用可在此回调函数中通知企业管理员设备已脱管。
+  onAdminDisabled() {
+    console.info('onAdminDisabled');
+    // ...
+  }
+
+  // 应用安装回调方法，应用可在此回调函数中进行事件上报，通知企业管理员。
+  onBundleAdded(bundleName: string) {
+    console.info('EnterpriseAdminAbility onBundleAdded bundleName:' + bundleName);
+  }
+
+  // 应用卸载回调方法，应用可在此回调函数中进行事件上报，通知企业管理员。
+  onBundleRemoved(bundleName: string) {
+    console.info('EnterpriseAdminAbility onBundleRemoved bundleName:' + bundleName);
+  }
+
+  // 普通设备管理应用激活回调方法，应用可在此回调函数中进行初始化策略设置。
+  onDeviceAdminEnabled(bundleName: string) {
+    console.info('EnterpriseAdminAbility onDeviceAdminEnabled bundleName:' + bundleName);
+  }
+
+  // 普通设备管理应用解除激活回调方法，应用可在此回调函数中通知企业管理员设备已脱管。
+  onDeviceAdminDisabled(bundleName: string) {
+    console.info('EnterpriseAdminAbility onDeviceAdminDisabled bundleName:' + bundleName);
+  }
+};
 ```
-1. import { EnterpriseAdminExtensionAbility } from '@kit.MDMKit';
-2. // ···
-
-4. export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbility {
-5. // ···
-
-7. // 设备管理器应用激活回调方法，应用可在此回调函数中进行初始化策略设置。
-8. onAdminEnabled() {
-9. console.info('onAdminEnabled');
-10. // ···
-11. }
-
-13. // 设备管理器应用去激活回调方法，应用可在此回调函数中通知企业管理员设备已脱管。
-14. onAdminDisabled() {
-15. console.info('onAdminDisabled');
-16. // ···
-17. }
-
-19. // 应用安装回调方法，应用可在此回调函数中进行事件上报，通知企业管理员。
-20. onBundleAdded(bundleName: string) {
-21. console.info('EnterpriseAdminAbility onBundleAdded bundleName:' + bundleName);
-22. }
-
-24. // 应用卸载回调方法，应用可在此回调函数中进行事件上报，通知企业管理员。
-25. onBundleRemoved(bundleName: string) {
-26. console.info('EnterpriseAdminAbility onBundleRemoved bundleName' + bundleName);
-27. }
-
-29. // 普通设备管理应用激活回调方法，应用可在此回调函数中进行初始化策略设置
-30. onDeviceAdminEnabled(bundleName: string) {
-31. console.info("EnterpriseAdminAbility onDeviceAdminEnabled bundleName:" + bundleName);
-32. }
-
-34. // 普通设备管理应用解除激活回调方法，应用可在此回调函数中通知企业管理员设备已脱管
-35. onDeviceAdminDisabled(bundleName: string) {
-36. console.info("EnterpriseAdminAbility onDeviceAdminDisabled bundleName" + bundleName);
-37. }
-38. };
-```
-
-[EnterpriseAdminAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/EnterpriseAdminExtensionAbility/EnterpriseAdminExtensionAbility/entry/src/main/ets/enterpriseadminability/EnterpriseAdminAbility.ets#L27-L195)
 
 最后，在工程Module对应的[module.json5](module-configuration-file.md)配置文件中将EnterpriseAdminAbility注册为ExtensionAbility，type标签需要设置为“enterpriseAdmin”，srcEntry标签表示当前ExtensionAbility组件所对应的代码路径。
 
+```json5
+"extensionAbilities": [
+  {
+    "name": "EnterpriseAdminAbility",
+    "type": "enterpriseAdmin",
+    "exported": true,
+    "srcEntry": "./ets/enterpriseadminability/EnterpriseAdminAbility.ets"
+  }
+],
 ```
-1. "extensionAbilities": [
-2. {
-3. "name": "EnterpriseAdminAbility",
-4. "type": "enterpriseAdmin",
-5. "exported": true,
-6. "srcEntry": "./ets/enterpriseadminability/EnterpriseAdminAbility.ets"
-7. }
-8. ],
-```
-
-[module.json5](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/EnterpriseAdminExtensionAbility/EnterpriseAdminExtensionAbility/entry/src/main/module.json5#L51-L60)

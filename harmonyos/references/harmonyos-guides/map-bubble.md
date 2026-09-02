@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-bubble
 title: 气泡
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 气泡
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:10+08:00
+scraped_at: 2026-09-02T14:59:58+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:bdc67f10fb84bcad6d7213840356b4df21f35d5ffe319e07ff455135a4dc4b4b
+content_hash: sha256:967615d5bf6f1a2cdfc389a14f0a75bf4f955d7c2a80673b35237887a30d87dd
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:bdc67f10fb84bcad6d7213840356b4df21f35d5ffe319e07ff455135a4d
 * 支持设置图标动画。
 * 支持添加点击事件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/2AYbNwRnQGWVgTVHbLZFfg/zh-cn_image_0000002558605886.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/V6yIdtCZSeGamS0_7I4H-Q/zh-cn_image_0000002706675126.jpg "点击放大")
 
 ## 接口说明
 
@@ -38,93 +38,93 @@ content_hash: sha256:bdc67f10fb84bcad6d7213840356b4df21f35d5ffe319e07ff455135a4d
 
 1. 导入相关模块。
 
-   ```
-   1. import { MapComponent, mapCommon, map } from '@kit.MapKit';
-   2. import { AsyncCallback } from '@kit.BasicServicesKit';
+   ```typescript
+   import { MapComponent, mapCommon, map } from '@kit.MapKit';
+   import { AsyncCallback } from '@kit.BasicServicesKit';
    ```
 2. 添加气泡，在callback方法中创建初始化参数并新建气泡。
 
+   ```typescript
+   @Entry
+   @Component
+   struct BubbleDemo {
+     private mapOptions?: mapCommon.MapOptions;
+     private mapController?: map.MapComponentController;
+     private callback?: AsyncCallback<map.MapComponentController>;
+     private bubble?: map.Bubble;
+
+     aboutToAppear(): void {
+       this.mapOptions = {
+         position: {
+           target: {
+             latitude: 39.918,
+             longitude: 116.397
+           },
+           zoom: 14
+         }
+       };
+
+       this.callback = async (err, mapController) => {
+         if (!err) {
+           this.mapController = mapController;
+           let bubbleOptions: mapCommon.BubbleParams = {
+             // 气泡位置
+             positions: [[{
+               latitude: 39.918,
+               longitude: 116.397
+             }]],
+             // 设置图标，必须提供4个方向的图标，图标存放在resources/rawfile
+             icons: [
+               'speed_limit_10.png',
+               'speed_limit_20.png',
+               'speed_limit_30.png',
+               'speed_limit_40.png'
+             ],
+             // 定义气泡的显示属性，为true时，在被碰撞后仍能显示
+             forceVisible: true,
+             // 定义气泡碰撞优先级，数值越大，优先级越低
+             priority: 3,
+             // 定义气泡展示的最小层级
+             minZoom: 2,
+             // 定义气泡展示的最大层级
+             maxZoom: 20,
+             // 定义气泡是否可见
+             visible: true,
+             // 定义气泡叠加层级属性
+             zIndex: 1
+           }
+
+           // 添加气泡
+           try {
+             this.bubble = await this.mapController.addBubble(bubbleOptions);
+           } catch (e) {
+             console.error(`Failed to create the bubble, code is：${e.code}, message is ${e.message}`);
+           }
+         } else {
+           console.error(`Failed to initialize the map, code is：${err.code}, message is ${err.message}`);
+         }
+       };
+     }
+
+     build() {
+       Stack() {
+         Column() {
+           MapComponent({ mapOptions: this.mapOptions, mapCallback: this.callback });
+         }.width('100%')
+       }.height('100%')
+     }
+   }
    ```
-   1. @Entry
-   2. @Component
-   3. struct BubbleDemo {
-   4. private mapOptions?: mapCommon.MapOptions;
-   5. private mapController?: map.MapComponentController;
-   6. private callback?: AsyncCallback<map.MapComponentController>;
-   7. private bubble?: map.Bubble;
 
-   9. aboutToAppear(): void {
-   10. this.mapOptions = {
-   11. position: {
-   12. target: {
-   13. latitude: 39.918,
-   14. longitude: 116.397
-   15. },
-   16. zoom: 14
-   17. }
-   18. };
-
-   20. this.callback = async (err, mapController) => {
-   21. if (!err) {
-   22. this.mapController = mapController;
-   23. let bubbleOptions: mapCommon.BubbleParams = {
-   24. // 气泡位置
-   25. positions: [[{
-   26. latitude: 39.918,
-   27. longitude: 116.397
-   28. }]],
-   29. // 设置图标，必须提供4个方向的图标，图标存放在resources/rawfile
-   30. icons: [
-   31. 'speed_limit_10.png',
-   32. 'speed_limit_20.png',
-   33. 'speed_limit_30.png',
-   34. 'speed_limit_40.png'
-   35. ],
-   36. // 定义气泡的显示属性，为true时，在被碰撞后仍能显示
-   37. forceVisible: true,
-   38. // 定义气泡碰撞优先级，数值越大，优先级越低
-   39. priority: 3,
-   40. // 定义气泡展示的最小层级
-   41. minZoom: 2,
-   42. // 定义气泡展示的最大层级
-   43. maxZoom: 20,
-   44. // 定义气泡是否可见
-   45. visible: true,
-   46. // 定义气泡叠加层级属性
-   47. zIndex: 1
-   48. }
-
-   50. // 添加气泡
-   51. try {
-   52. this.bubble = await this.mapController.addBubble(bubbleOptions);
-   53. } catch (e) {
-   54. console.error(`Failed to create the bubble, code is：${e.code}, message is ${e.message}`);
-   55. }
-   56. } else {
-   57. console.error(`Failed to initialize the map, code is：${err.code}, message is ${err.message}`);
-   58. }
-   59. };
-   60. }
-
-   62. build() {
-   63. Stack() {
-   64. Column() {
-   65. MapComponent({ mapOptions: this.mapOptions, mapCallback: this.callback });
-   66. }.width('100%')
-   67. }.height('100%')
-   68. }
-   69. }
-   ```
-
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/8rXtr7pwQuCXPIudf4pGUQ/zh-cn_image_0000002589325413.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/EHuYrp3wQ5aKpQZCgPJHxA/zh-cn_image_0000002736434215.jpg "点击放大")
 
 ### 设置监听气泡点击事件
 
-```
-1. let callback = (bubble: map.Bubble) => {
-2. console.info("bubbleClick", `callback bubble = ${bubble.getId()}`);
-3. };
-4. this.mapController?.on("bubbleClick", callback);
+```typescript
+let callback = (bubble: map.Bubble) => {
+  console.info("bubbleClick", `callback bubble = ${bubble.getId()}`);
+};
+this.mapController?.on("bubbleClick", callback);
 ```
 
 ### 气泡动画
@@ -133,28 +133,28 @@ content_hash: sha256:bdc67f10fb84bcad6d7213840356b4df21f35d5ffe319e07ff455135a4d
 
 [Bubble](../harmonyos-references/map-map-bubble.md)调用[startAnimation](../harmonyos-references/map-map-basepriorityoverlay.md#startanimation)启动动画。
 
-```
-1. let animation: map.ScaleAnimation = new map.ScaleAnimation(1, 3, 1, 3);
-2. // 设置动画单次的时长
-3. animation.setDuration(3000);
-4. // 设置动画开始监听
-5. let callbackStart = () => {
-6. console.info("animationStart", `callback`);
-7. };
-8. animation.on("animationStart", callbackStart);
-9. // 设置动画结束监听
-10. let callbackEnd = () => {
-11. console.info("animationEnd", `callback`);
-12. };
-13. animation.on("animationEnd", callbackEnd);
-14. // 设置动画执行完成的状态
-15. animation.setFillMode(map.AnimationFillMode.BACKWARDS);
-16. // 设置动画重复的方式
-17. animation.setRepeatMode(map.AnimationRepeatMode.REVERSE);
-18. // 设置动画插值器
-19. animation.setInterpolator(Curve.Linear);
-20. // 设置动画的重复次数
-21. animation.setRepeatCount(100);
-22. this.bubble.setAnimation(animation);
-23. this.bubble.startAnimation();
+```typescript
+let animation: map.ScaleAnimation = new map.ScaleAnimation(1, 3, 1, 3);
+// 设置动画单次的时长
+animation.setDuration(3000);
+// 设置动画开始监听
+let callbackStart = () => {
+  console.info("animationStart", `callback`);
+};
+animation.on("animationStart", callbackStart);
+// 设置动画结束监听
+let callbackEnd = () => {
+  console.info("animationEnd", `callback`);
+};
+animation.on("animationEnd", callbackEnd);
+// 设置动画执行完成的状态
+animation.setFillMode(map.AnimationFillMode.BACKWARDS);
+// 设置动画重复的方式
+animation.setRepeatMode(map.AnimationRepeatMode.REVERSE);
+// 设置动画插值器
+animation.setInterpolator(Curve.Linear);
+// 设置动画的重复次数
+animation.setRepeatCount(100);
+this.bubble.setAnimation(animation);
+this.bubble.startAnimation();
 ```

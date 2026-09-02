@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-app-killed-way
 title: 应用被查杀类问题分析方法
-breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 应用异常退出类问题分析方法 > 应用被查杀类问题分析方法
+breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 开发态稳定性分析 > 应用崩溃类问题分析 > 应用被查杀类问题分析方法
 category: best-practices
-scraped_at: 2026-04-28T08:22:59+08:00
-doc_updated_at: 2026-03-12
+scraped_at: 2026-09-02T15:21:08+08:00
+doc_updated_at: 2026-07-22
 content_hash: sha256:b78a67690b381dc4ad7712be1cc489e508cfdfb56ca52f8c8b1f970b30c672c5
 ---
 

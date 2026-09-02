@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_Curve*
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_Curve*
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:03+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:d3597d57c9c5470dc7cbe1f9afb2b63341ab2f25af48dd8500c09d5740f814b1
+scraped_at: 2026-09-02T14:51:50+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6602a9a630d0ebda298d03415d3025cdff577dbd5f7872c2771c735a8897c84d
 ---
 
-```
-1. typedef struct ArkUI_Curve* ArkUI_CurveHandle
+```c
+typedef struct ArkUI_Curve* ArkUI_CurveHandle
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-定义曲线的插值对象指针定义。
+曲线插值对象的指针类型定义。曲线插值用于控制动画属性值随时间的变化规律，不同类型的插值曲线可实现不同的动画过渡效果。
 
 **起始版本：** 12
 

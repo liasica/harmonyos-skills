@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/telephony-ove
 title: Telephony Kit简介
 breadcrumb: 指南 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > Telephony Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:13+08:00
-doc_updated_at: 2026-03-20
-content_hash: sha256:72f744677299b7dbf38cd508b2ed053fb40892eed4bf7f92a7754931e4c967c6
+scraped_at: 2026-09-02T14:50:06+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d4ce2e7f522b41a624cce6064726c9fc9758c8bafed8e24b7c06fc52c799b4a4
 ---
 
 Telephony Kit（蜂窝通信服务）提供一系列API帮助开发者开发通信类应用，包括：
@@ -20,3 +20,7 @@ Telephony Kit（蜂窝通信服务）提供一系列API帮助开发者开发通�
 ## 约束与限制
 
 在调用电话服务API前，请确保使用的硬件设备有可以独立蜂窝通信的Modem和SIM卡。
+
+## 模拟器支持情况
+
+本Kit支持模拟器，但与真机存在差异，详情请参见“[模拟器与真机的差异](ide-emulator-specification.md#section38231424133213)”。

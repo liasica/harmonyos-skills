@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-intro
 title: Intents Kit简介
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > Intents Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:43:30+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:59e4e9be1e34474b823a5a917763906950ffe264a01627ec09f1e8d842716260
+scraped_at: 2026-09-02T15:00:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:56c691868af86ace10323df6352570415ba58b90756278fc56531e7fd08b5baf
 ---
 
 Intents Kit（意图框架服务）是HarmonyOS级的意图标准体系 ，意图连接了应用/元服务内的业务功能。
@@ -14,7 +14,7 @@ Intents Kit（意图框架服务）是HarmonyOS级的意图标准体系 ，意�
 
 系统入口、意图框架、鸿蒙生态的关系如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/R62bV5d7SIyUswJ5d5M3aA/zh-cn_image_0000002558606154.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/BwatTfNdRwOp1zuX38X3Jw/zh-cn_image_0000002736314481.png)
 
 ## Intents Kit优势
 
@@ -22,7 +22,7 @@ Intents Kit（意图框架服务）是HarmonyOS级的意图标准体系 ，意�
 
 ## 智慧分发
 
-为方便开发者接入，智慧分发提供了多种特性类别，当前已开放习惯推荐、事件推荐、技能调用-语音、本地搜索，后续会陆续开放其他特性类别。每种特性类型支持的典型系统入口、分发逻辑见下表：
+为方便开发者接入，智慧分发提供了多种特性类别，当前已开放习惯推荐、事件推荐、位置推荐、技能调用-语音、本地搜索，每种特性类型支持的典型系统入口、分发逻辑见下表：
 
 | **特性类型** | **系统入口** | **分发逻辑** |
 | --- | --- | --- |
@@ -38,7 +38,7 @@ Intents Kit（意图框架服务）是HarmonyOS级的意图标准体系 ，意�
 
 HarmonyOS、应用/元服务的交互中，意图运行方式分为意图调用和意图共享：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/rIOctk9HQYu6xdT3j5NOgA/zh-cn_image_0000002589325681.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/yFjpmTkWQzmwaYYTcsoGrA/zh-cn_image_0000002706675438.png)
 
 | “**意图”运行方式** | **发起者** | **定义** |
 | --- | --- | --- |
@@ -47,17 +47,21 @@ HarmonyOS、应用/元服务的交互中，意图运行方式分为意图调用�
 
 ## 约束与限制
 
-* 设备限制
+### 支持的设备
 
-本Kit仅适用于Phone、Tablet、PC/2in1。
+Phone、Tablet、PC/2in1。
 
-* 地区限制
+### 支持的国家/地区
 
-本Kit仅支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）提供服务。
+仅适用于中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。
 
-* 操作系统限制
+### 支持的操作系统版本
 
 HarmonyOS 5.0及以上。
+
+### 支持的开发主体
+
+仅面向企业开发者，个人开发者无法进行意图能力申请和注册等操作。
 
 ## 模拟器支持情况
 

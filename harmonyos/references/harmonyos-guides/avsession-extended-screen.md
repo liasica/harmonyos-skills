@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avsession-ext
 title: 扩展屏投播开发指导
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 分布式媒体会话 > 使用投播组件 > 扩展屏投播开发指导
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:34:50+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:bb718564bc9f5f661d071f29092ca4b10281390bb4ae0e03e116038b7cf79dc7
+scraped_at: 2026-09-02T14:59:44+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:eb6ac059df38ca3dee40899a70cbd1a6c96a477202b831c5efd5a936c2bd1bde
 ---
 
 通过本节开发指导，可在系统镜像投屏后，获取投屏设备信息，实现扩展屏模式的投播，实现双屏协作的能力。
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/e7HxpY5ZRHKQJf-Uo7Rc6Q/zh-cn_image_0000002558605398.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/ulteXdBURhGGvJ_hf3jzCQ/zh-cn_image_0000002706834520.png)
 
 * **虚拟扩展屏**
 
@@ -32,7 +32,7 @@ content_hash: sha256:bb718564bc9f5f661d071f29092ca4b10281390bb4ae0e03e116038b7cf
 
   本端设备：HarmonyOS NEXT Developer Beta1及以上版本的手机设备。
 
-  远端设备：支持Cast+或Miracast标准协议的设备，推荐使用华为智慧屏HarmonyOS2.0及以上版本。
+  远端设备：支持Cast+或Miracast标准协议的设备，推荐使用HarmonyOS2.0及以上版本的TV设备。
 * **使用限制**
 
   需要系统发起无线/有线投屏后才可通过接口获取有效的扩展投屏设备。
@@ -51,134 +51,138 @@ content_hash: sha256:bb718564bc9f5f661d071f29092ca4b10281390bb4ae0e03e116038b7cf
 
 1. UIAbility A创建AVSession, 获取可用扩展屏投播设备并注册监听。
 
-   说明
+   **说明** 
 
    获取的屏幕信息CastDisplayInfo中包含屏幕ID，屏幕名称、状态以及分辨率宽度、高度基础属性，其中屏幕id 值同于[Display](../harmonyos-references/js-apis-display.md#display)的id，如需要获取更详细的信息可参考[Display获取设备信息说明](../harmonyos-references/js-apis-display.md#displaygetalldisplays9)。
 
-   ```
-   1. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-   2. import  { avSession }  from '@kit.AVSessionKit'; // 导入AVSession模块
-   3. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+   import  { avSession }  from '@kit.AVSessionKit'; // 导入AVSession模块。
+   import { BusinessError } from '@kit.BasicServicesKit';
 
-   5. export default class AbilityA extends UIAbility{
-   6. private session: avSession.AVSession | undefined = undefined;
-   7. private extCastDisplayInfo: avSession.CastDisplayInfo | undefined = undefined;
-   8. // 注册监听可投屏设备变化事件
-   9. private onCastDisplayChangedCallback = (castDisplayInfo: avSession.CastDisplayInfo) => {
-   10. // 新增扩展屏,进入扩展屏显示
-   11. if (this.extCastDisplayInfo === undefined && castDisplayInfo.state === avSession.CastDisplayState.STATE_ON) {
-   12. console.info('Succeeded in opening the cast display');
-   13. this.extCastDisplayInfo = castDisplayInfo;
-   14. this.startExternalDisplay();
-   15. } else if (this.extCastDisplayInfo?.id == castDisplayInfo.id) {
-   16. this.extCastDisplayInfo = castDisplayInfo;
-   17. // 扩展屏不可用，退出扩展屏显示
-   18. if (castDisplayInfo.state === avSession.CastDisplayState.STATE_OFF){
-   19. console.info('Succeeded in closing the cast display');
-   20. this.stopExternalDisplay();
-   21. this.extCastDisplayInfo = undefined;
-   22. }
-   23. }
-   24. };
+   export default class AbilityA extends UIAbility{
+     private session: avSession.AVSession | undefined = undefined;
+     private extCastDisplayInfo: avSession.CastDisplayInfo | undefined = undefined;
+     // 注册监听可投屏设备变化事件。
+     private onCastDisplayChangedCallback = (castDisplayInfo: avSession.CastDisplayInfo) => {
+       // 新增扩展屏,进入扩展屏显示。
+       if (this.extCastDisplayInfo === undefined && castDisplayInfo.state === avSession.CastDisplayState.STATE_ON) {
+         console.info('Succeeded in opening the cast display');
+         this.extCastDisplayInfo = castDisplayInfo;
+         this.startExternalDisplay();
+       } else if (this.extCastDisplayInfo?.id == castDisplayInfo.id) {
+         this.extCastDisplayInfo = castDisplayInfo;
+         // 扩展屏不可用，退出扩展屏显示。
+         if (castDisplayInfo.state === avSession.CastDisplayState.STATE_OFF){
+           console.info('Succeeded in closing the cast display');
+           this.stopExternalDisplay();
+           this.extCastDisplayInfo = undefined;
+         }
+       }
+     };
 
-   26. // 创建AVSession, 获取可用扩展屏投播设备并注册监听
-   27. initAVSession(context: Context) {
-   28. avSession.createAVSession(context, 'CastDisplay', 'video').then((session: avSession.AVSession) => {
-   29. this.session = session;
-   30. this.session?.on('castDisplayChange', this.onCastDisplayChangedCallback);
+     // 创建AVSession, 获取可用扩展屏投播设备并注册监听。
+     initAVSession(context: Context) {
+       avSession.createAVSession(context, 'CastDisplay', 'video').then((session: avSession.AVSession) => {
+         this.session = session;
+         this.session?.on('castDisplayChange', this.onCastDisplayChangedCallback);
 
-   32. // 获取当前系统可用的扩展屏显示设备
-   33. session.getAllCastDisplays().then((infoArr: avSession.CastDisplayInfo[]) => {
-   34. // 有多个扩展屏时可以提供用户选择，也可使用其中任一个作为扩展屏使用。
-   35. if (infoArr.length > 0) {
-   36. this.extCastDisplayInfo = infoArr[0];
-   37. this.startExternalDisplay();
-   38. }
-   39. }).catch((err: BusinessError<void>) => {
-   40. console.error(`Failed to get all CastDisplay. Code: ${err.code}, message: ${err.message}`);
-   41. });
-   42. });
-   43. }
+         // 获取当前系统可用的扩展屏显示设备。
+         session.getAllCastDisplays().then((infoArr: avSession.CastDisplayInfo[]) => {
+           // 有多个扩展屏时可以提供用户选择，也可使用其中任一个作为扩展屏使用。
+           if (infoArr.length > 0) {
+             this.extCastDisplayInfo = infoArr[0];
+             this.startExternalDisplay();
+           }
+         }).catch((err: BusinessError<void>) => {
+           console.error(`Failed to get all CastDisplay. Code: ${err.code}, message: ${err.message}`);
+         });
+       });
+     }
 
-   45. async onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): Promise<void> {
-   46. super.onCreate(want, launchParam);
-   47. this.initAVSession(this.context);
-   48. }
+     async onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): Promise<void> {
+       super.onCreate(want, launchParam);
+       this.initAVSession(this.context);
+     }
 
-   50. onDestroy() {
-   51. this.stopExternalDisplay();
-   52. // 去注册监听
-   53. this.session?.off('castDisplayChange');
-   54. }
-   55. }
+     onDestroy() {
+       this.stopExternalDisplay();
+       // 去注册监听。
+       this.session?.off('castDisplayChange');
+     }
+     // ...
+   }
    ```
 2. 在UIAbilityA中构建扩展屏启动和退出能力。
 
-   ```
-   1. // 扩展屏启动UIAbilityB
-   2. startExternalDisplay() {
-   3. if (this.extCastDisplayInfo !== undefined &&
-   4. this.extCastDisplayInfo.id !== 0 &&
-   5. this.extCastDisplayInfo.state === avSession.CastDisplayState.STATE_ON) {
-   6. let id = this.extCastDisplayInfo?.id;
-   7. console.info(`Succeeded in starting ability and the id of display is ${id}`);
-   8. this.context.startAbility({
-   9. bundleName: 'com.example.myapplication', // 应用自有包名
-   10. abilityName: 'AbilityB'
-   11. }, {
-   12. displayId: id // 扩展屏ID
-   13. });
-   14. AppStorage.setOrCreate('CastDisplayState', 1);
-   15. }
-   16. }
+   ```typescript
+   // 扩展屏启动UIAbilityB。
+   startExternalDisplay() {
+     if (this.extCastDisplayInfo !== undefined &&
+       this.extCastDisplayInfo.id !== 0 &&
+       this.extCastDisplayInfo.state === avSession.CastDisplayState.STATE_ON) {
+       let id = this.extCastDisplayInfo?.id;
+       console.info(`Succeeded in starting ability and the id of display is ${id}`);
+       this.context.startAbility({
+         bundleName: 'com.example.myapplication', // 应用自有包名。
+         abilityName: 'AbilityB'
+       }, {
+         displayId: id // 扩展屏ID。
+       });
+       AppStorage.setOrCreate('CastDisplayState', 1);
+     }
+   }
 
-   18. // 停止使用扩展屏
-   19. stopExternalDisplay() {
-   20. AppStorage.setOrCreate('CastDisplayState', 0);
-   21. // 更新本页面显示。
-   22. }
+   // 停止使用扩展屏。
+   stopExternalDisplay() {
+     AppStorage.setOrCreate('CastDisplayState', 0);
+     // 更新本页面显示。
+   }
    ```
 3. UIAbilityB扩展屏显示内容绘制，需响应退出处理。
 
+   ```typescript
+   import { UIAbility } from '@kit.AbilityKit';
+   import { window } from '@kit.ArkUI';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   // ...
+   export default class AbilityB extends UIAbility {
+     // ...
+     onWindowStageCreate(windowStage: window.WindowStage): void {
+       // Main window is created, set main page for this ability
+       windowStage.getMainWindowSync().setWindowLayoutFullScreen(true); // 设置为全屏。
+       windowStage.loadContent('pages/CastPage', (err: BusinessError) => {
+         if (err.code) {
+           console.error(`Failed to load the content. Code: ${err.code}, message: ${err.message}`);
+           return;
+         }
+         console.info('Succeeded in loading the content. ');
+       });
+     }
+     // ...
+   }
    ```
-   1. import { UIAbility } from '@kit.AbilityKit';
-   2. import { window } from '@kit.ArkUI';
-   3. import { BusinessError } from '@kit.BasicServicesKit';
 
-   5. export default class AbilityB extends UIAbility {
-   6. onWindowStageCreate(windowStage: window.WindowStage): void {
-   7. // Main window is created, set main page for this ability
-   8. windowStage.getMainWindowSync().setWindowLayoutFullScreen(true); // 设置为全屏
-   9. windowStage.loadContent('pages/CastPage', (err: BusinessError) => {
-   10. if (err.code) {
-   11. console.error(`Failed to load the content. Code: ${err.code}, message: ${err.message}`);
-   12. return;
-   13. }
-   14. console.info('Succeeded in loading the content. ');
-   15. });
-   16. }
-   17. }
-   ```
+   ```typescript
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { common } from '@kit.AbilityKit';
 
-   ```
-   1. import { BusinessError } from '@kit.BasicServicesKit';
-   2. import { common } from '@kit.AbilityKit';
+   @Entry
+   @Component
+   struct CastPage {
+     // 监测到CastDisplayState变化后，当设备断开时，销毁本页内容。
+     @StorageLink('CastDisplayState') @Watch('onDestroyExtend') private displayState: number = 1;
+     public context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
 
-   4. @Entry
-   5. @Component
-   6. struct CastPage {
-   7. // 监测到CastDisplayState变化后，当设备断开时，销毁本页内容。
-   8. @StorageLink('CastDisplayState') @Watch('onDestroyExtend') private displayState: number = 1;
+     private onDestroyExtend() {
+       if (this.displayState === 1) { return };
+       this.context.terminateSelf().then(() => {
+         console.info('CastPage finished');
+       }).catch((err: BusinessError) => {
+         console.error(`Failed to destroying CastPage. Code: ${err.code}, message: ${err.message}`);
+       });
+     }
 
-   10. private onDestroyExtend() {
-   11. if (this.displayState === 1) return;
-   12. let context = (getContext(this) as common.UIAbilityContext)
-   13. context.terminateSelf().then(() => {
-   14. console.info('CastPage finished');
-   15. }).catch((err: BusinessError) => {
-   16. console.error(`Failed to destroying CastPage. Code: ${err.code}, message: ${err.message}`);
-   17. });
-   18. }
-   19. //...
-   20. }
+   // ...
+   }
    ```

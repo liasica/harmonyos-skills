@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 基础自定义弹出框 (CustomDialog)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 弹出框 (Dialog) > 基础自定义弹出框 (CustomDialog)
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:54+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:07ff779247bd78ff7e6c8b0bcef6d88dbd01bf8a422a1471a6a466af3ee40e4f
+scraped_at: 2026-09-02T14:59:18+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4eb0a2f6176d949bd64e7794bcb6daa5e50ffe9bf44aea642e3d94ee615de9f8
 ---
 
-CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件更新等与用户交互响应操作。开发者可以通过CustomDialogController类显示自定义弹出框。具体用法请参考[自定义弹出框](../harmonyos-references/ts-methods-custom-dialog-box.md)。
+CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件更新等与用户交互响应操作。开发者可以通过CustomDialogController类显示自定义弹出框。具体用法请参考[自定义弹窗](../harmonyos-references/ts-methods-custom-dialog-box.md)。
 
-说明
+**说明** 
 
 当前，ArkUI弹出框默认为非页面级弹出框，在页面路由跳转时，如果开发者未调用close方法将其关闭，弹出框将不会自动关闭。若需实现在跳转页面时覆盖弹出框的场景，可以使用[组件导航子页面显示类型的弹窗类型](arkts-navigation-navdestination.md#页面显示类型)或者[页面级弹出框](arkts-embedded-dialog.md)。
 
@@ -33,61 +33,55 @@ CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件�
 
 1. 使用@CustomDialog装饰器装饰自定义弹出框，可在此装饰器内自定义弹出框内容。CustomDialogController需在@Component内定义。
 
-   ```
-   1. @CustomDialog
-   2. struct CustomDialogExample {
-   3. controller?: CustomDialogController;
+   ```typescript
+   @CustomDialog
+   struct CustomDialogExample {
+     controller?: CustomDialogController;
 
-   5. build() {
-   6. Column() {
-   7. // 请将$r('app.string.i_am_content')替换为实际资源文件，在本示例中该资源文件的value值为"我是内容"
-   8. Text($r('app.string.i_am_content'))
-   9. .fontSize(20)
-   10. }.height(60).justifyContent(FlexAlign.Center)
-   11. }
-   12. }
+     build() {
+       Column() {
+         // 请将$r('app.string.i_am_content')替换为实际资源文件，在本示例中该资源文件的value值为"我是内容"
+         Text($r('app.string.i_am_content'))
+           .fontSize(20)
+       }.height(60).justifyContent(FlexAlign.Center)
+     }
+   }
    ```
-
-   [CreateCustomDialogNew.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/customdialog/CreateCustomDialogNew.ets#L17-L30)
 2. 创建构造器，与装饰器相互连接。
 
+   ```typescript
+   @Entry
+   @Component
+   export struct CreateCustomDialogNew {
+     dialogController: CustomDialogController = new CustomDialogController({
+       builder: CustomDialogExample(),
+     })
+   // ···
+   }
    ```
-   1. @Entry
-   2. @Component
-   3. export struct CreateCustomDialogNew {
-   4. dialogController: CustomDialogController = new CustomDialogController({
-   5. builder: CustomDialogExample(),
-   6. })
-   7. // ···
-   8. }
-   ```
-
-   [CreateCustomDialogNew.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/customdialog/CreateCustomDialogNew.ets#L33-L53)
 3. 点击与onClick事件绑定的组件使弹出框弹出。
 
-   ```
-   1. @Entry
-   2. @Component
-   3. export struct CreateCustomDialogNew {
-   4. dialogController: CustomDialogController = new CustomDialogController({
-   5. builder: CustomDialogExample(),
-   6. })
-   7. build() {
-   8. NavDestination() {
-   9. Column() {
-   10. Button('click me')
-   11. .onClick(() => {
-   12. this.dialogController.open();
-   13. })
-   14. }.width('100%').margin({ top: 5 })
-   15. }
-   16. }
-   17. }
+   ```typescript
+   @Entry
+   @Component
+   export struct CreateCustomDialogNew {
+     dialogController: CustomDialogController = new CustomDialogController({
+       builder: CustomDialogExample(),
+     })
+     build() {
+       NavDestination() {
+         Column() {
+           Button('click me')
+             .onClick(() => {
+               this.dialogController.open();
+             })
+         }.width('100%').margin({ top: 5 })
+       }
+     }
+   }
    ```
 
-   [CreateCustomDialogNew.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/customdialog/CreateCustomDialogNew.ets#L32-L54)
-
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/5GiWSB51QR6gbN3erQosGg/zh-cn_image_0000002558764390.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/6J5T-7V0RGihsXCroBxVug/zh-cn_image_0000002736432829.png)
 
 ## 弹出框的交互
 
@@ -95,461 +89,446 @@ CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件�
 
 1. 在@CustomDialog装饰器内添加按钮和数据函数。
 
-   ```
-   1. @CustomDialog
-   2. struct CustomDialogExample {
-   3. cancel: () => void = () => {
-   4. }
-   5. confirm: () => void = () => {
-   6. }
-   7. controller?: CustomDialogController;
+   ```typescript
+   @CustomDialog
+   struct CustomDialogExample {
+     cancel: () => void = () => {
+     }
+     confirm: () => void = () => {
+     }
+     controller?: CustomDialogController;
 
-   9. build() {
-   10. Column() {
-   11. // 请将$r('app.string.i_am_content')替换为实际资源文件，在本示例中该资源文件的value值为"我是内容"
-   12. Text($r('app.string.i_am_content')).fontSize(20).margin({ top: 10, bottom: 10 })
-   13. Flex({ justifyContent: FlexAlign.SpaceAround }) {
-   14. Button('cancel')
-   15. .onClick(() => {
-   16. this.controller?.close();
-   17. if (this.cancel) {
-   18. this.cancel();
-   19. }
-   20. }).backgroundColor(0xffffff).fontColor(Color.Black)
-   21. Button('confirm')
-   22. .onClick(() => {
-   23. this.controller?.close();
-   24. if (this.confirm) {
-   25. this.confirm();
-   26. }
-   27. }).backgroundColor(0xffffff).fontColor(Color.Red)
-   28. }.margin({ bottom: 10 })
-   29. }
-   30. }
-   31. }
+     build() {
+       Column() {
+         // 请将$r('app.string.i_am_content')替换为实际资源文件，在本示例中该资源文件的value值为"我是内容"
+         Text($r('app.string.i_am_content')).fontSize(20).margin({ top: 10, bottom: 10 })
+         Flex({ justifyContent: FlexAlign.SpaceAround }) {
+           Button('cancel')
+             .onClick(() => {
+               this.controller?.close();
+               if (this.cancel) {
+                 this.cancel();
+               }
+             }).backgroundColor(0xffffff).fontColor(Color.Black)
+           Button('confirm')
+             .onClick(() => {
+               this.controller?.close();
+               if (this.confirm) {
+                 this.confirm();
+               }
+             }).backgroundColor(0xffffff).fontColor(Color.Red)
+         }.margin({ bottom: 10 })
+       }
+     }
+   }
    ```
-
-   [DialogInteractionUseConstructor.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/customdialog/DialogInteractionUseConstructor.ets#L19-L51)
 2. 页面内需要在构造器内进行接收，同时创建相应的函数操作。
 
+   ```typescript
+   @Entry
+   @Component
+   export struct DialogInteractionUseConstructor {
+     dialogController: CustomDialogController = new CustomDialogController({
+       builder: CustomDialogExample({
+         cancel: ()=> { this.onCancel() },
+         confirm: ()=> { this.onAccept() },
+       }),
+     });
+
+     onCancel() {
+       hilog.info(DOMAIN, 'testTag', 'Callback when the first button is clicked');
+     }
+
+     onAccept() {
+       hilog.info(DOMAIN, 'testTag', 'Callback when the second button is clicked');
+     }
+
+     build() {
+       Column() {
+         NavDestination() {
+           Button('click me')
+             .onClick(() => {
+               this.dialogController.open();
+             })
+         }.width('100%').margin({ top: 5 })
+       }
+     }
+   }
    ```
-   1. @Entry
-   2. @Component
-   3. export struct DialogInteractionUseConstructor {
-   4. dialogController: CustomDialogController = new CustomDialogController({
-   5. builder: CustomDialogExample({
-   6. cancel: ()=> { this.onCancel() },
-   7. confirm: ()=> { this.onAccept() },
-   8. }),
-   9. });
 
-   11. onCancel() {
-   12. hilog.info(DOMAIN, 'testTag', 'Callback when the first button is clicked');
-   13. }
-
-   15. onAccept() {
-   16. hilog.info(DOMAIN, 'testTag', 'Callback when the second button is clicked');
-   17. }
-
-   19. build() {
-   20. Column() {
-   21. NavDestination() {
-   22. Button('click me')
-   23. .onClick(() => {
-   24. this.dialogController.open();
-   25. })
-   26. }.width('100%').margin({ top: 5 })
-   27. }
-   28. }
-   29. }
-   ```
-
-   [DialogInteractionUseConstructor.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/customdialog/DialogInteractionUseConstructor.ets#L53-L83)
-
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/MYLmlh2rSbGjtVWTagPzOQ/zh-cn_image_0000002558604734.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/lfXC_CCQTUekX7-d3DzUSQ/zh-cn_image_0000002706833674.png)
 3. 可通过弹出框中的按钮实现路由跳转，同时获取跳转页面向当前页传入的参数。
 
-   ```
-   1. @CustomDialog
-   2. struct CustomDialogExample {
-   3. @Link textValue: string;
-   4. controller?: CustomDialogController;
-   5. cancel: () => void = () => {
-   6. }
-   7. confirm: () => void = () => {
-   8. }
+   ```typescript
+   @CustomDialog
+   struct CustomDialogExample {
+     // 数据监听仅支持@Link或@Consume，其他方式如@Prop、@ObjectLink不适用此场景
+     @Link textValue: string;
+     controller?: CustomDialogController;
+     cancel: () => void = () => {
+     }
+     confirm: () => void = () => {
+     }
 
-   10. build() {
-   11. Column({ space: 20 }) {
-   12. if (this.textValue !== '') {
-   13. // 请将$r('app.string.the_second_page_is')替换为实际资源文件，在本示例中该资源文件的value值为"第二个页面的内容为"
-   14. Text($r('app.string.the_second_page_is')+`：${this.textValue}`)
-   15. .fontSize(20)
-   16. } else {
-   17. // 请将$r('app.string.whether_to_get_the_second_page')替换为实际资源文件，在本示例中该资源文件的value值为"是否获取第二个页面的内容"
-   18. Text($r('app.string.whether_to_get_the_second_page'))
-   19. .fontSize(20)
-   20. }
-   21. Flex({ justifyContent: FlexAlign.SpaceAround }) {
-   22. Button('cancel')
-   23. .onClick(() => {
-   24. if (this.controller !== undefined) {
-   25. this.controller.close();
-   26. this.cancel();
-   27. }
-   28. }).backgroundColor(0xffffff).fontColor(Color.Black)
-   29. Button('confirm')
-   30. .onClick(() => {
-   31. if (this.controller !== undefined && this.textValue !== '') {
-   32. this.controller.close();
-   33. } else if (this.controller !== undefined) {
-   34. this.getUIContext().getRouter().pushUrl({
-   35. url: 'pages/Index2'
-   36. });
-   37. this.controller.close();
-   38. }
-   39. }).backgroundColor(0xffffff).fontColor(Color.Red)
-   40. }.margin({ bottom: 10 })
-   41. }.borderRadius(10).padding({ top: 20 })
-   42. }
-   43. }
+     build() {
+       Column({ space: 20 }) {
+         if (this.textValue !== '') {
+           // 请将$r('app.string.the_second_page_is')替换为实际资源文件，在本示例中该资源文件的value值为"第二个页面的内容为"
+           Text($r('app.string.the_second_page_is')+`：${this.textValue}`)
+             .fontSize(20)
+         } else {
+           // 请将$r('app.string.whether_to_get_the_second_page')替换为实际资源文件，在本示例中该资源文件的value值为"是否获取第二个页面的内容"
+           Text($r('app.string.whether_to_get_the_second_page'))
+             .fontSize(20)
+         }
+         Flex({ justifyContent: FlexAlign.SpaceAround }) {
+           Button('cancel')
+             .onClick(() => {
+               if (this.controller !== undefined) {
+                 this.controller.close();
+                 this.cancel();
+               }
+             }).backgroundColor(0xffffff).fontColor(Color.Black)
+           Button('confirm')
+             .onClick(() => {
+               if (this.controller !== undefined && this.textValue !== '') {
+                 this.controller.close();
+               } else if (this.controller !== undefined) {
+                 this.getUIContext().getRouter().pushUrl({
+                   url: 'pages/Index2'
+                 });
+                 this.controller.close();
+               }
+             }).backgroundColor(0xffffff).fontColor(Color.Red)
+         }.margin({ bottom: 10 })
+       }.borderRadius(10).padding({ top: 20 })
+     }
+   }
 
-   45. @Entry
-   46. @Component
-   47. export struct DialogInteractionUseButton {
-   48. @State textValue: string = '';
-   49. dialogController: CustomDialogController | null = new CustomDialogController({
-   50. builder: CustomDialogExample({
-   51. cancel: () => {
-   52. this.onCancel()
-   53. },
-   54. confirm: () => {
-   55. this.onAccept()
-   56. },
-   57. textValue: this.textValue
-   58. })
-   59. });
+   @Entry
+   @Component
+   export struct DialogInteractionUseButton {
+     @State textValue: string = '';
+     dialogController: CustomDialogController | null = new CustomDialogController({
+       builder: CustomDialogExample({
+         cancel: () => {
+           this.onCancel()
+         },
+         confirm: () => {
+           this.onAccept()
+         },
+         textValue: this.textValue
+       })
+     });
 
-   61. // 在自定义组件即将析构销毁时将dialogController置空
-   62. aboutToDisappear() {
-   63. this.dialogController = null; // 将dialogController置空
-   64. }
+     // 在自定义组件即将析构销毁时将dialogController置空
+     aboutToDisappear() {
+       this.dialogController = null; // 将dialogController置空
+     }
 
-   66. onPageShow() {
-   67. const params = this.getUIContext().getRouter().getParams() as Record<string, string>; // 获取传递过来的参数对象
-   68. if (params) {
-   69. this.dialogController?.open();
-   70. this.textValue = params.info as string; // 获取info属性的值
-   71. }
-   72. }
+     onPageShow() {
+       const params = this.getUIContext().getRouter().getParams() as Record<string, string>; // 获取传递过来的参数对象
+       if (params) {
+         this.dialogController?.open();
+         this.textValue = params.info as string; // 获取info属性的值
+       }
+     }
 
-   74. onCancel() {
-   75. hilog.info(DOMAIN, 'testTag', 'testTag', 'Callback when the first button is clicked');
-   76. }
+     onCancel() {
+       hilog.info(DOMAIN, 'testTag', 'Callback when the first button is clicked');
+     }
 
-   78. onAccept() {
-   79. hilog.info(DOMAIN, 'testTag', 'testTag', 'Callback when the second button is clicked');
-   80. }
+     onAccept() {
+       hilog.info(DOMAIN, 'testTag', 'Callback when the second button is clicked');
+     }
 
-   82. exitApp() {
-   83. hilog.info(DOMAIN, 'testTag', 'testTag', 'Click the callback in the blank area');
-   84. }
+     exitApp() {
+       hilog.info(DOMAIN, 'testTag', 'Click the callback in the blank area');
+     }
 
-   86. build() {
-   87. Column() {
-   88. NavDestination() {
-   89. Button('click me')
-   90. .onClick(() => {
-   91. if (this.dialogController !== null) {
-   92. this.dialogController.open();
-   93. }
-   94. }).backgroundColor(0x317aff)
-   95. }.width('100%').margin({ top: 5 })
-   96. }
-   97. }
-   98. }
-   ```
-
-   [DialogInteractionUseButton.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/customdialog/DialogInteractionUseButton.ets#L18-L117)
-
-   ```
-   1. @Entry
-   2. @Component
-   3. struct IndexNew {
-   4. // 请将$r('app.string.click_and_return')替换为实际资源文件，在本示例中该资源文件的value值为"点击返回"
-   5. @State message: string = $r('app.string.click_and_return');
-
-   7. build() {
-   8. NavDestination() {
-   9. Column() {
-   10. Button(this.message)
-   11. .type(ButtonType.Capsule)
-   12. .onClick(() => {
-   13. this.getUIContext().getRouter().back({
-   14. url: 'pages/Index',
-   15. params: {
-   16. info: 'Hello World'
-   17. }
-   18. });
-   19. })
-   20. }.width('100%').height('100%').margin({ top: 20 })
-   21. }
-   22. }
-   23. }
+     build() {
+       Column() {
+         NavDestination() {
+           Button('click me')
+             .onClick(() => {
+               if (this.dialogController !== null) {
+                 this.dialogController.open();
+               }
+             }).backgroundColor(0x317aff)
+         }.width('100%').margin({ top: 5 })
+       }
+     }
+   }
    ```
 
-   [IndexNew.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/customdialog/IndexNew.ets#L16-L40)
+   ```typescript
+   @Entry
+   @Component
+   struct IndexNew {
+     // 请将$r('app.string.click_and_return')替换为实际资源文件，在本示例中该资源文件的value值为"点击返回"
+     @State message: string = $r('app.string.click_and_return');
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/nwfuVVrpQmKk4kIDxv0m7w/zh-cn_image_0000002589324259.gif)
+     build() {
+       NavDestination() {
+         Column() {
+           Button(this.message)
+             .type(ButtonType.Capsule)
+             .onClick(() => {
+               this.getUIContext().getRouter().back({
+                 url: 'pages/Index',
+                 params: {
+                   info: 'Hello World'
+                 }
+               });
+             })
+         }.width('100%').height('100%').margin({ top: 20 })
+       }
+     }
+   }
+   ```
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/pmMcC3fIS1yBZaY103s-hg/zh-cn_image_0000002736312783.gif)
 
 ## 弹出框的动画
 
 弹出框通过定义[CustomDialogControllerOptions](../harmonyos-references/ts-methods-custom-dialog-box.md#customdialogcontrolleroptions对象说明)中的openAnimation属性控制出现动画的持续时间，速度等参数。
 
+```typescript
+@CustomDialog
+struct CustomDialogExample {
+  controller?: CustomDialogController;
+
+  build() {
+    NavDestination() {
+      Column() {
+        Text('Whether to change a text?').fontSize(16).margin({ bottom: 10 })
+      }
+    }
+  }
+}
+
+@Entry
+@Component
+export struct DialogAnimationNew {
+  @State inputValue: string = 'click me';
+  dialogController: CustomDialogController | null = new CustomDialogController({
+    builder: CustomDialogExample(),
+    openAnimation: {
+      duration: 1200,
+      curve: Curve.Friction,
+      delay: 500,
+      playMode: PlayMode.Alternate,
+      onFinish: () => {
+        hilog.info(DOMAIN, 'testTag', 'play end');
+      }
+    },
+    autoCancel: true,
+    alignment: DialogAlignment.Bottom,
+    offset: { dx: 0, dy: -20 },
+    gridCount: 4,
+    customStyle: false,
+    backgroundColor: 0xd9ffffff,
+    cornerRadius: 10,
+  });
+
+  // 在自定义组件即将析构销毁时将dialogController置空
+  aboutToDisappear() {
+    this.dialogController = null; // 将dialogController置空
+  }
+
+  build() {
+    NavDestination() {
+      Column() {
+        Button(this.inputValue)
+          .onClick(() => {
+            if (this.dialogController !== null) {
+              this.dialogController.open();
+            }
+          }).backgroundColor(0x317aff)
+      }.width('100%').margin({ top: 5 })
+    }
+  }
+}
 ```
-1. @CustomDialog
-2. struct CustomDialogExample {
-3. controller?: CustomDialogController;
 
-5. build() {
-6. NavDestination() {
-7. Column() {
-8. Text('Whether to change a text?').fontSize(16).margin({ bottom: 10 })
-9. }
-10. }
-11. }
-12. }
-
-14. @Entry
-15. @Component
-16. export struct DialogAnimationNew {
-17. @State textValue: string = '';
-18. @State inputValue: string = 'click me';
-19. dialogController: CustomDialogController | null = new CustomDialogController({
-20. builder: CustomDialogExample(),
-21. openAnimation: {
-22. duration: 1200,
-23. curve: Curve.Friction,
-24. delay: 500,
-25. playMode: PlayMode.Alternate,
-26. onFinish: () => {
-27. hilog.info(DOMAIN, 'testTag', 'play end')
-28. }
-29. },
-30. autoCancel: true,
-31. alignment: DialogAlignment.Bottom,
-32. offset: { dx: 0, dy: -20 },
-33. gridCount: 4,
-34. customStyle: false,
-35. backgroundColor: 0xd9ffffff,
-36. cornerRadius: 10,
-37. });
-
-39. // 在自定义组件即将析构销毁时将dialogController置空
-40. aboutToDisappear() {
-41. this.dialogController = null; // 将dialogController置空
-42. }
-
-44. build() {
-45. NavDestination() {
-46. Column() {
-47. Button(this.inputValue)
-48. .onClick(() => {
-49. if (this.dialogController !== null) {
-50. this.dialogController.open();
-51. }
-52. }).backgroundColor(0x317aff)
-53. }.width('100%').margin({ top: 5 })
-54. }
-55. }
-56. }
-```
-
-[DialogAnimationNew.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/customdialog/DialogAnimationNew.ets#L18-L75)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/jP5CE17nRbCguXKMHn-Dxw/zh-cn_image_0000002589244199.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/3ddkGbWnTfumAeYqds66cw/zh-cn_image_0000002706673740.gif)
 
 ## 弹出框的样式
 
 通过定义弹出框的宽度、高度、背景色、阴影等参数，控制其样式。
 
+```typescript
+@CustomDialog
+struct CustomDialogExample {
+  controller?: CustomDialogController;
+
+  build() {
+    Column() {
+      // 请将$r('app.string.i_am_content')替换为实际资源文件，在本示例中该资源文件的value值为"我是内容"
+      Text($r('app.string.i_am_content')).fontSize(16).margin({ bottom: 10 })
+    }
+  }
+}
+
+@Entry
+@Component
+export struct DialogStyleNew {
+  @State inputValue: string = 'click me';
+  dialogController: CustomDialogController | null = new CustomDialogController({
+    builder: CustomDialogExample(),
+    autoCancel: true,
+    alignment: DialogAlignment.Center,
+    offset: { dx: 0, dy: -20 },
+    gridCount: 4,
+    customStyle: false,
+    backgroundColor: 0xd9ffffff,
+    cornerRadius: 20,
+    width: '80%',
+    height: '100px',
+    borderWidth: 1,
+    borderStyle: BorderStyle.Dashed, //使用borderStyle属性，需要和borderWidth属性一起使用
+    borderColor: Color.Blue, //使用borderColor属性，需要和borderWidth属性一起使用
+    shadow: ({
+      radius: 20,
+      color: Color.Grey,
+      offsetX: 50,
+      offsetY: 0
+    }),
+  });
+
+  // 在自定义组件即将析构销毁时将dialogController置空
+  aboutToDisappear() {
+    this.dialogController = null; // 将dialogController置空
+  }
+
+  build() {
+    NavDestination() {
+      Column() {
+        Button(this.inputValue)
+          .onClick(() => {
+            if (this.dialogController !== null) {
+              this.dialogController.open();
+            }
+          }).backgroundColor(0x317aff)
+      }.width('100%').margin({ top: 5 })
+    }
+  }
+}
 ```
-1. @CustomDialog
-2. struct CustomDialogExample {
-3. controller?: CustomDialogController;
 
-5. build() {
-6. Column() {
-7. // 请将$r('app.string.i_am_content')替换为实际资源文件，在本示例中该资源文件的value值为"我是内容"
-8. Text($r('app.string.i_am_content')).fontSize(16).margin({ bottom: 10 })
-9. }
-10. }
-11. }
-
-13. @Entry
-14. @Component
-15. export struct DialogStyleNew {
-16. @State textValue: string = '';
-17. @State inputValue: string = 'click me';
-18. dialogController: CustomDialogController | null = new CustomDialogController({
-19. builder: CustomDialogExample(),
-20. autoCancel: true,
-21. alignment: DialogAlignment.Center,
-22. offset: { dx: 0, dy: -20 },
-23. gridCount: 4,
-24. customStyle: false,
-25. backgroundColor: 0xd9ffffff,
-26. cornerRadius: 20,
-27. width: '80%',
-28. height: '100px',
-29. borderWidth: 1,
-30. borderStyle: BorderStyle.Dashed, //使用borderStyle属性，需要和borderWidth属性一起使用
-31. borderColor: Color.Blue, //使用borderColor属性，需要和borderWidth属性一起使用
-32. shadow: ({
-33. radius: 20,
-34. color: Color.Grey,
-35. offsetX: 50,
-36. offsetY: 0
-37. }),
-38. });
-
-40. // 在自定义组件即将析构销毁时将dialogController置空
-41. aboutToDisappear() {
-42. this.dialogController = null; // 将dialogController置空
-43. }
-
-45. build() {
-46. NavDestination() {
-47. Column() {
-48. Button(this.inputValue)
-49. .onClick(() => {
-50. if (this.dialogController !== null) {
-51. this.dialogController.open();
-52. }
-53. }).backgroundColor(0x317aff)
-54. }.width('100%').margin({ top: 5 })
-55. }
-56. }
-57. }
-```
-
-[DialogStyleNew.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/customdialog/DialogStyleNew.ets#L16-L75)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/J_pobabhTLK2-OLVu1L3TQ/zh-cn_image_0000002558764392.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/-8hwidNuQv-TeqgrmYAJug/zh-cn_image_0000002736432831.gif)
 
 ## 嵌套自定义弹出框
 
 通过第一个弹出框打开第二个弹出框时，最好将第二个弹出框定义在第一个弹出框的父组件处，通过父组件传给第一个弹出框的回调来打开第二个弹出框。
 
+```typescript
+@CustomDialog
+struct CustomDialogExampleTwo {
+  controllerTwo?: CustomDialogController;
+  @State message: string = 'I am the second dialog box.';
+  @State showIf: boolean = false;
+
+  build() {
+    Column() {
+      if (this.showIf) {
+        Text('Text')
+          .fontSize(30)
+          .height(100)
+      }
+      Text(this.message)
+        .fontSize(30)
+        .height(100)
+      Button('Create Text')
+        .onClick(() => {
+          this.showIf = true;
+        })
+      Button('Close Second Dialog Box')
+        .onClick(() => {
+          if (this.controllerTwo !== undefined) {
+            this.controllerTwo.close();
+          }
+        })
+        .margin(20)
+    }
+  }
+}
+
+@CustomDialog
+struct CustomDialogExample {
+  openSecondBox?: () => void;
+  controller?: CustomDialogController;
+
+  build() {
+    Column() {
+      Button('Open Second Dialog Box and close this box')
+        .onClick(() => {
+          this.controller!.close();
+          this.openSecondBox!();
+        })
+        .margin(20)
+    }.borderRadius(10)
+  }
+}
+
+@Entry
+@Component
+export struct NestDialogNew {
+  @State inputValue: string = 'Click Me';
+  dialogController: CustomDialogController | null = new CustomDialogController({
+    builder: CustomDialogExample({
+      openSecondBox: () => {
+        if (this.dialogControllerTwo !== null) {
+          this.dialogControllerTwo.open()
+        }
+      }
+    }),
+    cancel: this.exitApp,
+    autoCancel: true,
+    alignment: DialogAlignment.Bottom,
+    offset: { dx: 0, dy: -20 },
+    gridCount: 4,
+    customStyle: false
+  });
+  dialogControllerTwo: CustomDialogController | null = new CustomDialogController({
+    builder: CustomDialogExampleTwo(),
+    alignment: DialogAlignment.Bottom,
+    offset: { dx: 0, dy: -25 }
+  });
+
+  aboutToDisappear() {
+    this.dialogController = null;
+    this.dialogControllerTwo = null;
+  }
+
+  onCancel() {
+    hilog.info(DOMAIN, 'testTag', 'Callback when the first button is clicked');
+  }
+
+  onAccept() {
+    hilog.info(DOMAIN, 'testTag', 'Callback when the second button is clicked');
+  }
+
+  exitApp() {
+    hilog.info(DOMAIN, 'testTag', 'Click the callback in the blank area');
+  }
+
+  build() {
+    NavDestination() {
+      Column() {
+        Button(this.inputValue)
+          .onClick(() => {
+            if (this.dialogController !== null) {
+              this.dialogController.open();
+            }
+          }).backgroundColor(0x317aff)
+      }.width('100%').margin({ top: 5 })
+    }
+  }
+}
 ```
-1. @CustomDialog
-2. struct CustomDialogExampleTwo {
-3. controllerTwo?: CustomDialogController;
-4. @State message: string = 'I am the second dialog box.';
-5. @State showIf: boolean = false;
 
-7. build() {
-8. Column() {
-9. if (this.showIf) {
-10. Text('Text')
-11. .fontSize(30)
-12. .height(100)
-13. }
-14. Text(this.message)
-15. .fontSize(30)
-16. .height(100)
-17. Button('Create Text')
-18. .onClick(() => {
-19. this.showIf = true;
-20. })
-21. Button('Close Second Dialog Box')
-22. .onClick(() => {
-23. if (this.controllerTwo !== undefined) {
-24. this.controllerTwo.close();
-25. }
-26. })
-27. .margin(20)
-28. }
-29. }
-30. }
-
-32. @CustomDialog
-33. struct CustomDialogExample {
-34. openSecondBox?: () => void;
-35. controller?: CustomDialogController;
-
-37. build() {
-38. Column() {
-39. Button('Open Second Dialog Box and close this box')
-40. .onClick(() => {
-41. this.controller!.close();
-42. this.openSecondBox!();
-43. })
-44. .margin(20)
-45. }.borderRadius(10)
-46. }
-47. }
-
-49. @Entry
-50. @Component
-51. export struct NestDialogNew {
-52. @State inputValue: string = 'Click Me';
-53. dialogController: CustomDialogController | null = new CustomDialogController({
-54. builder: CustomDialogExample({
-55. openSecondBox: () => {
-56. if (this.dialogControllerTwo !== null) {
-57. this.dialogControllerTwo.open()
-58. }
-59. }
-60. }),
-61. cancel: this.exitApp,
-62. autoCancel: true,
-63. alignment: DialogAlignment.Bottom,
-64. offset: { dx: 0, dy: -20 },
-65. gridCount: 4,
-66. customStyle: false
-67. });
-68. dialogControllerTwo: CustomDialogController | null = new CustomDialogController({
-69. builder: CustomDialogExampleTwo(),
-70. alignment: DialogAlignment.Bottom,
-71. offset: { dx: 0, dy: -25 }
-72. });
-
-74. aboutToDisappear() {
-75. this.dialogController = null;
-76. this.dialogControllerTwo = null;
-77. }
-
-79. onCancel() {
-80. hilog.info(DOMAIN, 'testTag', 'Callback when the first button is clicked');
-81. }
-
-83. onAccept() {
-84. hilog.info(DOMAIN, 'testTag', 'Callback when the second button is clicked');
-85. }
-
-87. exitApp() {
-88. hilog.info(DOMAIN, 'testTag', 'Click the callback in the blank area');
-89. }
-
-91. build() {
-92. NavDestination() {
-93. Column() {
-94. Button(this.inputValue)
-95. .onClick(() => {
-96. if (this.dialogController !== null) {
-97. this.dialogController.open();
-98. }
-99. }).backgroundColor(0x317aff)
-100. }.width('100%').margin({ top: 5 })
-101. }
-102. }
-103. }
-```
-
-[NestDialogNew.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/customdialog/NestDialogNew.ets#L18-L122)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/Nk0aDrgASye1gPCdj_RG4Q/zh-cn_image_0000002558604736.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/GqOmjCJ4SAOYOrV4Ld6oJw/zh-cn_image_0000002706833676.gif)
 
 由于自定义弹出框在状态管理侧有父子关系，如果将第二个弹出框定义在第一个弹出框内，那么当父组件（第一个弹出框）被销毁（关闭）时，子组件（第二个弹出框）内无法再继续创建新的组件。
 
@@ -557,102 +536,106 @@ CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件�
 
 执行点击遮障层关闭、侧滑（左滑或右滑）、三键Back、键盘ESC关闭等交互操作时，如果注册了[CustomDialogControllerOptions](../harmonyos-references/ts-methods-custom-dialog-box.md#customdialogcontrolleroptions对象说明)中的onWillDismiss回调函数，弹出框不会立即关闭。在回调函数中，通过[DismissDialogAction](../harmonyos-references/ts-methods-custom-dialog-box.md#dismissdialogaction12)中的reason属性获取阻拦关闭弹出框的操作类型，根据原因决定是否关闭弹出框。
 
+```typescript
+@CustomDialog
+struct CustomDialogExample {
+  cancel: () => void = () => {
+  }
+  confirm: () => void = () => {
+  }
+  controller?: CustomDialogController;
+
+  build() {
+    Column() {
+      Text('Are you sure?')
+        .fontSize(20)
+        .margin({
+          top: 10,
+          bottom: 10
+        })
+      Row() {
+        Button('cancel')
+          .onClick(() => {
+            if (this.controller !== undefined) {
+              this.controller.close();
+            }
+            if (this.cancel) {
+              this.cancel();
+            }
+          })
+          .backgroundColor(0xffffff)
+          .fontColor(Color.Black)
+        Button('confirm')
+          .onClick(() => {
+            if (this.controller !== undefined) {
+              this.controller.close();
+            }
+            if (this.confirm) {
+              this.confirm();
+            }
+          })
+          .backgroundColor(0xffffff)
+          .fontColor(Color.Red)
+      }
+      .width('100%')
+      .justifyContent(FlexAlign.SpaceAround)
+      .margin({ bottom: 10 })
+    }
+  }
+}
+
+@Entry
+@Component
+export struct DialogWithPhysicalBack {
+  dialogController: CustomDialogController = new CustomDialogController({
+    builder: CustomDialogExample({
+      cancel: () => {
+        this.onCancel();
+      },
+      confirm: () => {
+        this.onAccept();
+      }
+    }),
+    onWillDismiss: (dismissDialogAction: DismissDialogAction) => {
+      hilog.info(DOMAIN, 'testTag', 'dialog onWillDismiss reason: ' + dismissDialogAction.reason);
+      // 1、PRESS_BACK    点击三键back、侧滑（左滑/右滑）、键盘ESC。
+      // 2、TOUCH_OUTSIDE    点击遮障层时
+      // 3、CLOSE_BUTTON    点击关闭按钮
+      if (dismissDialogAction.reason === DismissReason.PRESS_BACK) {
+        // 处理业务逻辑后通过dismiss主动关闭对话框
+        dismissDialogAction.dismiss();
+      }
+      if (dismissDialogAction.reason === DismissReason.TOUCH_OUTSIDE) {
+        dismissDialogAction.dismiss();
+      }
+    },
+    alignment: DialogAlignment.Bottom,
+    offset: { dx: 0, dy: -20 }
+  })
+
+  onCancel() {
+    hilog.info(DOMAIN, 'testTag', 'Callback when the first button is clicked');
+  }
+
+  onAccept() {
+    hilog.info(DOMAIN, 'testTag', 'Callback when the second button is clicked');
+  }
+
+  build() {
+    NavDestination() {
+      Column() {
+        Button('click me')
+          .onClick(() => {
+            this.dialogController.open();
+          })
+      }
+      .width('100%')
+    }
+  }
+}
 ```
-1. @CustomDialog
-2. struct CustomDialogExample {
-3. cancel: () => void = () => {
-4. }
-5. confirm: () => void = () => {
-6. }
-7. controller?: CustomDialogController;
 
-9. build() {
-10. Column() {
-11. Text('Are you sure?')
-12. .fontSize(20)
-13. .margin({
-14. top: 10,
-15. bottom: 10
-16. })
-17. Row() {
-18. Button('cancel')
-19. .onClick(() => {
-20. if (this.controller !== undefined) {
-21. this.controller.close();
-22. }
-23. })
-24. .backgroundColor(0xffffff)
-25. .fontColor(Color.Black)
-26. Button('confirm')
-27. .onClick(() => {
-28. if (this.controller !== undefined) {
-29. this.controller.close();
-30. }
-31. })
-32. .backgroundColor(0xffffff)
-33. .fontColor(Color.Red)
-34. }
-35. .width('100%')
-36. .justifyContent(FlexAlign.SpaceAround)
-37. .margin({ bottom: 10 })
-38. }
-39. }
-40. }
-
-42. @Entry
-43. @Component
-44. export struct DialogWithPhysicalBack {
-45. dialogController: CustomDialogController = new CustomDialogController({
-46. builder: CustomDialogExample({
-47. cancel: () => {
-48. this.onCancel();
-49. },
-50. confirm: () => {
-51. this.onAccept();
-52. }
-53. }),
-54. onWillDismiss: (dismissDialogAction: DismissDialogAction) => {
-55. hilog.info(DOMAIN, 'testTag', 'dialog onWillDismiss reason: ' + dismissDialogAction.reason);
-56. // 1、PRESS_BACK    点击三键back、侧滑（左滑/右滑）、键盘ESC。
-57. // 2、TOUCH_OUTSIDE    点击遮障层时
-58. // 3、CLOSE_BUTTON    点击关闭按钮
-59. if (dismissDialogAction.reason === DismissReason.PRESS_BACK) {
-60. // 处理业务逻辑后通过dismiss主动关闭对话框
-61. dismissDialogAction.dismiss();
-62. }
-63. if (dismissDialogAction.reason === DismissReason.TOUCH_OUTSIDE) {
-64. dismissDialogAction.dismiss();
-65. }
-66. },
-67. alignment: DialogAlignment.Bottom,
-68. offset: { dx: 0, dy: -20 }
-69. })
-
-71. onCancel() {
-72. hilog.info(DOMAIN, 'testTag', 'Callback when the first button is clicked');
-73. }
-
-75. onAccept() {
-76. hilog.info(DOMAIN, 'testTag', 'Callback when the second button is clicked');
-77. }
-
-79. build() {
-80. NavDestination() {
-81. Column() {
-82. Button('click me')
-83. .onClick(() => {
-84. this.dialogController.open();
-85. })
-86. }
-87. .width('100%')
-88. }
-89. }
-90. }
-```
-
-[DialogWithPhysicalBack.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/customdialog/DialogWithPhysicalBack.ets#L18-L109)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/p0tB9lTeQT-xw_9040YcEg/zh-cn_image_0000002589324261.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/2qNE96MJS3yKiQehstbDpQ/zh-cn_image_0000002736312785.gif)
 
 ## 设置弹出框避让软键盘的距离
 
@@ -660,133 +643,129 @@ CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件�
 
 设置软键盘间距时，需要将keyboardAvoidMode值设为KeyboardAvoidMode.DEFAULT。
 
+```typescript
+// xxx.ets
+import { LengthMetrics } from '@kit.ArkUI';
+
+@CustomDialog
+struct CustomDialogExample {
+  controller?: CustomDialogController;
+
+  build() {
+    Column() {
+      Column() {
+        Text('keyboardAvoidDistance: 0vp')
+          .fontSize(20)
+          .margin({ bottom: 36 })
+        TextInput({ placeholder: '' })
+      }.backgroundColor('#FFF0F0F0')
+    }
+  }
+}
+
+@Entry
+@Component
+export struct DialogAvoidSoftKeyboard {
+  dialogController: CustomDialogController | null = new CustomDialogController({
+    builder: CustomDialogExample({}),
+    autoCancel: true,
+    gridCount: 4,
+    showInSubWindow: true,
+    isModal: true,
+    customStyle: false,
+    cornerRadius: 30,
+    alignment: DialogAlignment.Bottom,
+    keyboardAvoidMode: KeyboardAvoidMode.DEFAULT, // 软键盘弹出时，弹出框自动避让
+    keyboardAvoidDistance: LengthMetrics.vp(0) // 软键盘弹出时与弹出框的距离为0vp
+  })
+
+  build() {
+    NavDestination() {
+      Row() {
+        Row({ space: 20 }) {
+          // 请将$r('app.string.open_windows')替换为实际资源文件，在本示例中该资源文件的value值为"打开弹窗"
+          Text($r('app.string.open_windows'))
+            .fontSize(30)
+            .onClick(() => {
+              if (this.dialogController !== null) {
+                this.dialogController.open();
+              }
+            })
+        }
+        .width('100%')
+      }
+      .height('100%')
+    }
+  }
+}
 ```
-1. // xxx.ets
-2. import { LengthMetrics } from '@kit.ArkUI';
 
-4. @CustomDialog
-5. struct CustomDialogExample {
-6. controller?: CustomDialogController;
-
-8. build() {
-9. Column() {
-10. Column() {
-11. Text('keyboardAvoidDistance: 0vp')
-12. .fontSize(20)
-13. .margin({ bottom: 36 })
-14. TextInput({ placeholder: '' })
-15. }.backgroundColor('#FFF0F0F0')
-16. }
-17. }
-18. }
-
-20. @Entry
-21. @Component
-22. export struct DialogAvoidSoftKeyboard {
-23. dialogController: CustomDialogController | null = new CustomDialogController({
-24. builder: CustomDialogExample({}),
-25. autoCancel: true,
-26. gridCount: 4,
-27. showInSubWindow: true,
-28. isModal: true,
-29. customStyle: false,
-30. cornerRadius: 30,
-31. alignment: DialogAlignment.Bottom,
-32. keyboardAvoidMode: KeyboardAvoidMode.DEFAULT, // 软键盘弹出时，弹出框自动避让
-33. keyboardAvoidDistance: LengthMetrics.vp(0) // 软键盘弹出时与弹出框的距离为0vp
-34. })
-
-36. build() {
-37. NavDestination() {
-38. Row() {
-39. Row({ space: 20 }) {
-40. // 请将$r('app.string.open_windows')替换为实际资源文件，在本示例中该资源文件的value值为"打开弹窗"
-41. Text($r('app.string.open_windows'))
-42. .fontSize(30)
-43. .onClick(() => {
-44. if (this.dialogController !== null) {
-45. this.dialogController.open();
-46. }
-47. })
-48. }
-49. .width('100%')
-50. }
-51. .height('100%')
-52. }
-53. }
-54. }
-```
-
-[DialogAvoidSoftKeyboard.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/customdialog/DialogAvoidSoftKeyboard.ets#L16-L72)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/pzM5j8imQD6lsrQFaFQWgw/zh-cn_image_0000002589324257.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/qvTAJF5TR4SKbKaJ62jQUg/zh-cn_image_0000002736312781.gif)
 
 ## 获取弹出框的状态
 
 在业务模块中，页面上可能会同时出现多个弹出框。为避免重复打开相同的弹出框，建议在显示弹出框前，先通过控制器检查其当前状态。如果弹出框已处于显示状态，则不应再次打开。
 
-从API version 20开始，新增了getState接口，用于获取弹出框的当前状态。具体的弹出框状态信息，请参见[CommonState](../harmonyos-references/js-apis-promptaction.md#commonstate20枚举说明)枚举的详细说明。
+从API version 20开始，新增了getState接口，用于获取弹出框的当前状态。具体的弹出框状态信息，请参见[CommonState](../harmonyos-references/js-apis-promptaction.md#commonstate20)枚举的详细说明。
 
 以下示例通过[getDialogController](../harmonyos-references/ts-custom-component-api.md#getdialogcontroller18)和[CustomDialogController](../harmonyos-references/ts-methods-custom-dialog-box.md#customdialogcontroller)两种方法，实现了获取弹出框当前状态的功能。
 
+```typescript
+// xxx.ets
+@CustomDialog
+struct CustomDialogExample {
+  controller?: CustomDialogController;
+
+  build() {
+    Column() {
+      // 请将$r('app.string.search_by_dialog')替换为实际资源文件，在本示例中该资源文件的value值为"点我查询弹窗状态:通过自定义组件自带controller"
+      Button($r('app.string.search_by_dialog'))
+        .onClick(() => {
+          if (this.getDialogController() !== undefined) {
+            hilog.info(DOMAIN, 'testTag', 'state:' + this.getDialogController().getState());
+          } else {
+            hilog.info(DOMAIN, 'testTag', 'state: no exist');
+          }
+        }).margin(20)
+      // 请将$r('app.string.search_by_dialog_controller')替换为实际资源文件，在本示例中该资源文件的value值为"点我查询弹窗状态:通过CustomDialogController"
+      Button($r('app.string.search_by_dialog_controller'))
+        .onClick(() => {
+          hilog.info(DOMAIN, 'testTag', 'state:' + this.controller?.getState());
+        }).margin(20)
+      // 请将$r('app.string.close_windows')替换为实际资源文件，在本示例中该资源文件的value值为"点我关闭弹窗"
+      Button($r('app.string.close_windows'))
+        .onClick(() => {
+          if (this.getDialogController() !== undefined) {
+            this.getDialogController().close()
+          }
+        }).margin(20)
+
+    }
+  }
+}
+
+@Entry
+@Component
+export struct GetDialogStatus {
+  dialogController: CustomDialogController | null = new CustomDialogController({
+    builder: CustomDialogExample({
+    }),
+    autoCancel: false
+  })
+
+  build() {
+    NavDestination() {
+      Column() {
+        Button('click me')
+          .onClick(() => {
+            if (this.dialogController !== null) {
+              this.dialogController.open()
+            }
+          })
+      }.width('100%').margin({ top: 5 })
+    }
+  }
+}
 ```
-1. // xxx.ets
-2. @CustomDialog
-3. struct CustomDialogExample {
-4. controller?: CustomDialogController;
 
-6. build() {
-7. Column() {
-8. // 请将$r('app.string.search_by_dialog')替换为实际资源文件，在本示例中该资源文件的value值为"点我查询弹窗状态:通过自定义组件自带controller"
-9. Button($r('app.string.search_by_dialog'))
-10. .onClick(() => {
-11. if (this.getDialogController() !== undefined) {
-12. hilog.info(DOMAIN, 'testTag', 'state:' + this.getDialogController().getState());
-13. } else {
-14. hilog.info(DOMAIN, 'testTag', 'state: no exist');
-15. }
-16. }).margin(20)
-17. // 请将$r('app.string.search_by_dialog_controller')替换为实际资源文件，在本示例中该资源文件的value值为"点我查询弹窗状态:通过CustomDialogController"
-18. Button($r('app.string.search_by_dialog_controller'))
-19. .onClick(() => {
-20. hilog.info(DOMAIN, 'testTag', 'state:' + this.controller?.getState());
-21. }).margin(20)
-22. // 请将$r('app.string.close_widows')替换为实际资源文件，在本示例中该资源文件的value值为"点我关闭弹窗"
-23. Button($r('app.string.close_widows'))
-24. .onClick(() => {
-25. if (this.getDialogController() !== undefined) {
-26. this.getDialogController().close()
-27. }
-28. }).margin(20)
-
-30. }
-31. }
-32. }
-
-34. @Entry
-35. @Component
-36. export struct GetDialogStatus {
-37. dialogController: CustomDialogController | null = new CustomDialogController({
-38. builder: CustomDialogExample({
-39. }),
-40. autoCancel: false
-41. })
-
-43. build() {
-44. NavDestination() {
-45. Column() {
-46. Button('click me')
-47. .onClick(() => {
-48. if (this.dialogController !== null) {
-49. this.dialogController.open()
-50. }
-51. })
-52. }.width('100%').margin({ top: 5 })
-53. }
-54. }
-55. }
-```
-
-[GetDialogStatus.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/customdialog/GetDialogStatus.ets#L18-L74)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/ZbOUODJ9RFy5XmVlwDy2gw/zh-cn_image_0000002589244201.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/7vxs5nKrTVqi7bYIEHqG8g/zh-cn_image_0000002706673742.gif)

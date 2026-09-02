@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-past
 title: Pasteboard_ProgressInfo
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > C API > 结构体 > Pasteboard_ProgressInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:51+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:07ce1b4baf3a99fc806bc2b8df54c651f837922849b990dc0bb40756e303f1ef
+scraped_at: 2026-09-02T14:52:31+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:02f6fbf265ec753f3a46d73fa83504a4b07307a4e15149b61b39cf8383ce60bf
 ---
 
-```
-1. typedef struct Pasteboard_ProgressInfo Pasteboard_ProgressInfo
+```c
+typedef struct Pasteboard_ProgressInfo Pasteboard_ProgressInfo
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义进度上报的数据结构。
 

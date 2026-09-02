@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permi
 title: 声明权限
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 申请应用权限 > 声明权限
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:01+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:96fc4ef633e28e4c54dc76edb347499c179826a70ed6c2dccb6a9a580dec4d65
+scraped_at: 2026-09-02T14:59:27+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:465984b51a56cf91f5388aa392ff05877943b6424510910fe73ae63760be694f
 ---
 
 应用在申请权限时，需在项目的配置文件中逐个声明所需权限，否则无法获取授权，并可能导致应用上架申请被驳回。
@@ -20,7 +20,7 @@ content_hash: sha256:96fc4ef633e28e4c54dc76edb347499c179826a70ed6c2dccb6a9a580de
 | reason | 申请权限的原因。 | 字符串 | **可选填写**，该字段用于应用上架校验，申请user\_grant/manual\_settings权限时必填并需多语种适配。  格式为$string: \*\*\*。string资源引用需要在string.json文件配置标签"name": "reason"，配置样例可参考[资源文件示例](resource-categories-and-access.md#资源文件示例)。  reason填写内容可参考[权限使用理由的文案内容规范](declare-permissions.md#权限使用理由的文案内容规范)。 |
 | usedScene | 权限使用的场景，该字段用于应用上架校验。包括abilities和when两个子项。  - abilities：使用权限的UIAbility或者ExtensionAbility组件的名称。  - when：调用时机。 | 对象 | **申请user\_grant/manual\_settings权限时，usedScene必填，其他情况下选填。**  - abilities：可以配置为多个UIAbility或者ExtensionAbility名称的字符串数组。  - when：配置此字段，只能填入固定值**inuse**（使用时）或**always**（始终），不能为空。 |
 
-说明
+**说明** 
 
 在多HAP场景下，已在[entry](hap-package.md)模块中声明的权限，无需在[feature](hap-package.md)模块中重复添加，权限将在整个应用中生效。
 
@@ -30,46 +30,44 @@ content_hash: sha256:96fc4ef633e28e4c54dc76edb347499c179826a70ed6c2dccb6a9a580de
 
 在[module.json5配置文件](module-configuration-file.md)的requestPermissions标签中声明权限。
 
-说明
+**说明** 
 
 下述"name"中填入的权限仅为样例示意。请开发者根据实际需要，参照上表要求填写对应属性。
 
+```json5
+{
+  "module": {
+    // ···
+    // 1.ohos.permission.APPROXIMATELY_LOCATION与ohos.permission.LOCATION为user_grant权限，reason和usedScene为必填字段。
+    // 2.ohos.permission.USE_BLUETOOTH为system_grant权限，reason和usedScene为选填字段。
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.APPROXIMATELY_LOCATION",
+        "reason": "$string:approximately_location_permission_reason",
+        "usedScene": {
+          "abilities": [
+            "FormAbility"
+          ],
+          "when": "inuse"
+        }
+      },
+      {
+        "name": "ohos.permission.LOCATION",
+        "reason": "$string:location_permission_reason",
+        "usedScene": {
+          "abilities": [
+            "FormAbility"
+          ],
+          "when": "inuse"
+        }
+      },
+      {
+        "name": "ohos.permission.USE_BLUETOOTH"
+      }
+    ]
+  }
+}
 ```
-1. {
-2. "module": {
-3. // ···
-4. // 1.ohos.permission.APPROXIMATELY_LOCATION与ohos.permission.LOCATION为user_grant权限，reason和usedScene为必填字段。
-5. // 2.ohos.permission.USE_BLUETOOTH为system_grant权限，reason和usedScene为选填字段。
-6. "requestPermissions": [
-7. {
-8. "name": "ohos.permission.APPROXIMATELY_LOCATION",
-9. "reason": "$string:approximately_location_permission_reason",
-10. "usedScene": {
-11. "abilities": [
-12. "FormAbility"
-13. ],
-14. "when": "inuse"
-15. }
-16. },
-17. {
-18. "name": "ohos.permission.LOCATION",
-19. "reason": "$string:location_permission_reason",
-20. "usedScene": {
-21. "abilities": [
-22. "FormAbility"
-23. ],
-24. "when": "inuse"
-25. }
-26. },
-27. {
-28. "name": "ohos.permission.USE_BLUETOOTH"
-29. }
-30. ]
-31. }
-32. }
-```
-
-[module.json5](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Security/RequestUserAuthorization/entry/src/main/module.json5#L16-L106)
 
 ## 权限使用理由的文案内容规范
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fenceextensio
 title: 云侧围栏开发指导
 breadcrumb: 指南 > 应用服务 > Location Kit（位置服务） > 地理围栏开发指导 > 云侧围栏开发指导
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:38:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:baa3d8d5fd67b3f5a0d711877c891ec6bbf85f45b8a0b4d8fafec227f36b91ce
+scraped_at: 2026-09-02T14:59:57+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:49242c258c1aeafe12a1cde48f019dc5e4609909a3868f5da9533d27b4cb3890
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:baa3d8d5fd67b3f5a0d711877c891ec6bbf85f45b8a0b4d8fafec227f36
 
 在开通定位服务前，请先参考“[应用开发准备](application-dev-overview.md)”创建项目和应用工程。
 
-说明
+**说明** 
 
 从HarmonyOS NEXT Developer Beta2起，开发者无需配置公钥指纹和Client ID。
 
@@ -24,26 +24,26 @@ content_hash: sha256:baa3d8d5fd67b3f5a0d711877c891ec6bbf85f45b8a0b4d8fafec227f36
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“开发与服务”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/wbvbewdUQuShWrKR-Q7_2Q/zh-cn_image_0000002589325367.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/EDMp2Xl8SHufOOEdp-lKHg/zh-cn_image_0000002706675076.png)
 2. 在项目列表中找到您的项目，在项目下的应用列表中选择需要配置定位服务参数的应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/N4JNajewTumFg4NdHtDwsg/zh-cn_image_0000002589245303.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/vhtW-VDfRgGAy5mWYpr50g/zh-cn_image_0000002736434165.png)
 3. 在左侧导航栏选择“定位服务”，并点击收藏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/0zHVSoz3R3y1y98b3hQSYQ/zh-cn_image_0000002558765496.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/qzm-D5-aTXWbdi_-XzL7GA/zh-cn_image_0000002706835014.png)
 4. 在左侧导航栏选择“构建 > 定位服务”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/7z1B4FhQSQOTMDd5Mn57cA/zh-cn_image_0000002558605842.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/sp3a3C4iRSyqky53pDpyyg/zh-cn_image_0000002736314121.png)
 
 ## 使用场景
 
 1. 开发者可以通过该围栏扩展能力来使用云侧公共围栏。
 2. 开发者首先需要在AGC（AppGallery Connect）平台定位服务选择右侧“添加围栏组触发”开始创建地理围栏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/C8y8XNtiRjWc_UwKZXwn4g/zh-cn_image_0000002589325369.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/YNuqapznQI6AcvalMPWGcA/zh-cn_image_0000002706675078.png)
 3. 可以根据商圈、景点等类别，配置围栏组下发围栏策略。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/CoWHcCReTZGq3vh4mT_VCg/zh-cn_image_0000002589245305.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/TraTnhIjQz-C-oGFKCOs2A/zh-cn_image_0000002736434167.png)
 4. 定位服务在满足围栏触发条件后，通过FenceExtensionAbility把围栏事件通知给APP，APP接收到围栏事件后完成相关的业务处理。
 
 ## 接口介绍
@@ -65,71 +65,71 @@ content_hash: sha256:baa3d8d5fd67b3f5a0d711877c891ec6bbf85f45b8a0b4d8fafec227f36
 
    示例代码如下：
 
-   ```
-   1. import { FenceExtensionAbility, geoLocationManager } from '@kit.LocationKit';
-   2. import { wantAgent } from '@kit.AbilityKit';
-   3. import { notificationManager } from '@kit.NotificationKit';
+   ```ts
+   import { FenceExtensionAbility, geoLocationManager } from '@kit.LocationKit';
+   import { wantAgent } from '@kit.AbilityKit';
+   import { notificationManager } from '@kit.NotificationKit';
 
-   5. export default class MyFenceExtensionAbility extends FenceExtensionAbility {
-   6. async onFenceStatusChange(transition: geoLocationManager.GeofenceTransition, additions: Record<string, string>): Promise<void> {
-   7. super.onFenceStatusChange(transition, additions);
+   export default class MyFenceExtensionAbility extends FenceExtensionAbility {
+     async onFenceStatusChange(transition: geoLocationManager.GeofenceTransition, additions: Record<string, string>): Promise<void> {
+       super.onFenceStatusChange(transition, additions);
 
-   9. // 接收围栏触发信息
-   10. console.info('MyFenceExtensionAbility onFenceStatusChange');
+       // 接收围栏触发信息
+       console.info('MyFenceExtensionAbility onFenceStatusChange');
 
-   12. let poiId: string = additions['poiId'];// 围栏id，唯一标识，示例：'999287512272780934'
-   13. let policyType: string = additions['policyType'];// 策略类型：'0'-普通策略;'1'-标签策略
-   14. let policyResult: string = additions['policyResult'];// 策略结果：标签等策略的额外信息
+       let poiId: string = additions['poiId'];// 围栏id，唯一标识，示例：'999287512272780934'
+       let policyType: string = additions['policyType'];// 策略类型：'0'-普通策略;'1'-标签策略
+       let policyResult: string = additions['policyResult'];// 策略结果：标签等策略的额外信息
 
-   16. console.info(`poiId:${poiId},policyType:${policyType},policyResult:${policyResult}`);
+       console.info(`poiId:${poiId},policyType:${policyType},policyResult:${policyResult}`);
 
-   18. // 可以发送围栏业务通知
-   19. let wantAgentInfo: wantAgent.WantAgentInfo = {
-   20. wants: [
-   21. {
-   22. bundleName: 'com.huawei.hmos.locationtest.smartfence',
-   23. abilityName: 'EntryAbility'
-   24. } as Want
-   25. ],
-   26. actionType: wantAgent.OperationType.START_ABILITY,
-   27. requestCode: 100
-   28. };
-   29. let wantAgentMy = await wantAgent.getWantAgent(wantAgentInfo);
-   30. let notificationRequest: notificationManager.NotificationRequest = {
-   31. id: 1,
-   32. content: {
-   33. notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
-   34. normal: {
-   35. title: `围栏通知`,
-   36. text: `poiId:${poiId},policyType:${policyType},policyResult:${policyResult}`,
-   37. }
-   38. },
-   39. notificationSlotType: notificationManager.SlotType.SOCIAL_COMMUNICATION,
-   40. wantAgent: wantAgentMy
-   41. };
-   42. notificationManager.publish(notificationRequest);
-   43. }
+       // 可以发送围栏业务通知
+       let wantAgentInfo: wantAgent.WantAgentInfo = {
+         wants: [
+           {
+             bundleName: 'com.huawei.hmos.locationtest.smartfence',
+             abilityName: 'EntryAbility'
+           } as Want
+         ],
+         actionType: wantAgent.OperationType.START_ABILITY,
+         requestCode: 100
+       };
+       let wantAgentMy = await wantAgent.getWantAgent(wantAgentInfo);
+       let notificationRequest: notificationManager.NotificationRequest = {
+         id: 1,
+         content: {
+           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
+           normal: {
+             title: `围栏通知`,
+             text: `poiId:${poiId},policyType:${policyType},policyResult:${policyResult}`,
+           }
+         },
+         notificationSlotType: notificationManager.SlotType.CONTENT_INFORMATION,
+         wantAgent: wantAgentMy
+       };
+       notificationManager.publish(notificationRequest);
+     }
 
-   45. onDestroy(): void {
-   46. super.onDestroy();
-   47. console.info('MyFenceExtensionAbility onDestroy');
-   48. }
-   49. }
+     onDestroy(): void {
+       super.onDestroy();
+       console.info('MyFenceExtensionAbility onDestroy');
+     }
+   }
    ```
 4. 在工程Module对应的[module.json5配置文件](module-configuration-file.md#extensionabilities标签)中注册FenceExtensionAbility，type标签需要设置为fence，srcEntry标签表示当前FenceExtensionAbility组件所对应的代码路径。
 
-   ```
-   1. {
-   2. "module": {
-   3. "extensionAbilities": [
-   4. {
-   5. "name": "MyFenceExtensionAbility",
-   6. "srcEntry": "./ets/fenceextensionability/MyFenceExtensionAbility.ets",
-   7. "description": "MyFenceExtensionAbility",
-   8. "type": "fence",
-   9. "exported": false
-   10. },
-   11. ]
-   12. }
-   13. }
+   ```ts
+   {
+     "module": {
+       "extensionAbilities": [
+         {
+           "name": "MyFenceExtensionAbility",
+           "srcEntry": "./ets/fenceextensionability/MyFenceExtensionAbility.ets",
+           "description": "MyFenceExtensionAbility",
+           "type": "fence",
+           "exported": false
+         },
+       ]
+     }
+   }
    ```

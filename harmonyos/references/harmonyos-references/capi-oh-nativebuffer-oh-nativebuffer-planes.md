@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-n
 title: OH_NativeBuffer_Planes
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 结构体 > OH_NativeBuffer_Planes
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:09+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:eae4936b244b2ae127ef25ae94ff64b168248b0db2eb7b63f8fd4e7ad59d2db6
+scraped_at: 2026-09-02T15:02:45+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a20ff64e3b67cf7874629638ea18a66942e62611c1c07509b0fafcf123dc3c2b
 ---
 
-```
-1. typedef struct OH_NativeBuffer_Planes {...} OH_NativeBuffer_Planes
+```c
+typedef struct {...} OH_NativeBuffer_Planes
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 OH\_NativeBuffer的图像平面格式信息。
 
@@ -26,11 +24,7 @@ OH\_NativeBuffer的图像平面格式信息。
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

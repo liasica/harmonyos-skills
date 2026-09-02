@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-inte
 title: 多设备交互
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备交互 > 多设备交互
 category: best-practices
-scraped_at: 2026-04-29T14:12:11+08:00
-doc_updated_at: 2026-04-13
-content_hash: sha256:046af0b54dfee27c7b11ba44d6729bed7008717afb401d5f262f5c4044c7acb7
+scraped_at: 2026-09-02T15:03:18+08:00
+doc_updated_at: 2026-08-17
+content_hash: sha256:6192b926210a3bf8a194fabb3f8e473f8596ba075827f256281ade7c1e44e549
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:046af0b54dfee27c7b11ba44d6729bed7008717afb401d5f262f5c4044c
 
 多设备交互是指应用在不同设备上为实现同一功能，适配相应的输入设备进行交互操作。例如，在视频类应用中控制视频播放/暂停时，不同设备的交互形式各异：
 
-* 直板机：单击屏幕。
+* 手机：单击屏幕。
 
   通过触屏事件触发播放/暂停逻辑，主要依赖手指触碰触摸屏输入。
 * 平板：单击屏幕、外接鼠标单击左键、外接键盘按下空格键。
@@ -39,7 +39,7 @@ content_hash: sha256:046af0b54dfee27c7b11ba44d6729bed7008717afb401d5f262f5c4044c
 交互归一是一种面向多设备输入的响应框架，通过将不同输入设备的交互行为抽象为同一事件，来简化开发逻辑，例如：触屏点击、触控板点击、鼠标左键单击、遥控器OK键确认等统一抽象为点击事件；遥控器功能键、键盘快捷键抽象为按键事件。交互归一实现对多样化输入源的统一处理，确保组件在不同交互场景下具备一致的行为逻辑与用户体验。
 
 **图1** 输入设备  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/4uXrFf0wQ4SW86w5OqHVFw/zh-cn_image_0000002499409917.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/JsPgnbogRtmibz14zBDUwA/zh-cn_image_0000002499409917.png "点击放大")
 
 交互归一并非将所有输入方式简单合并为单一事件或通过一个API处理，而是通过对不同设备的几十种底层交互事件进行语义抽象与归类，在保证交互差异可控的前提下，大幅减少事件类型数量。最终形成的是一组标准化的交互API集合，开发者仍需根据具体场景选择并适配相应的抽象事件，以实现跨设备的一致性与灵活性兼顾的交互体验。
 
@@ -56,66 +56,62 @@ ArkUI框架提供了丰富的交互功能，支持直接处理[基础输入事�
   场景案例：使用手写笔在屏幕上书写，当手写笔在屏幕的某个位置第一次点击的位置（例如画板），当前画板组件就是交互的目标。
 
   **图2** 手写笔套件效果图  
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/02N6y-r1QfS6OGoHDf0anA/zh-cn_image_0000002513308069.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/xCFuITH5SMujMfKykiozUw/zh-cn_image_0000002513308069.gif "点击放大")
 
   手写笔套件的示例代码如下所示：
 
+  ```typescript
+  if (canIUse('SystemCapability.Stylus.Handwrite')) {
+    // Using the canIUse interface to prevent the stylus event from not being supported by some devices
+    HandwriteComponent({
+      handwriteController: this.controller,
+      defaultPenType: PenType.PEN,
+      defaultPenInfo: [{ penType: PenType.PEN, penWidth: this.penWidth },
+        { penType: PenType.BALLPOINT_PEN, penWidth: this.ballpointPenWidth }] as PenHspInfo[],
+      widthRatio: 1,
+      heightRatio: 1,
+    })
+  } else {
+    Text($r('app.string.HandwriteDescInfo'))
+  }
   ```
-  1. if (canIUse('SystemCapability.Stylus.Handwrite')) {
-  2. // Using the canIUse interface to prevent the stylus event from not being supported by some devices
-  3. HandwriteComponent({
-  4. handwriteController: this.controller,
-  5. defaultPenType: PenType.PEN,
-  6. defaultPenInfo: [{ penType: PenType.PEN, penWidth: this.penWidth },
-  7. { penType: PenType.BALLPOINT_PEN, penWidth: this.ballpointPenWidth }] as PenHspInfo[],
-  8. widthRatio: 1,
-  9. heightRatio: 1,
-  10. })
-  11. } else {
-  12. Text($r('app.string.HandwriteDescInfo'))
-  13. }
-  ```
-
-  [HandwriteEvent.ets](https://gitcode.com/HarmonyOS_Samples/multi-device-interaction/blob/master/default/src/main/ets/view/base/HandwriteEvent.ets#L55-L67)
 * 非指向性事件：事件的接收者由当前焦点所在的组件决定。包括：[按键事件](../harmonyos-references/ts-universal-events-key.md)，[表冠事件](../harmonyos-references/ts-universal-events-crown.md)，[焦点轴事件](../harmonyos-references/ts-universal-events-focus_axis.md)。
 
   场景案例：在使用键盘填写表单时，多个输入框之间可通过Tab键进行切换，当前获得焦点的输入框通常会被高亮显示。用户输入的字符内容会被系统视为针对该焦点输入框的交互，直接发送至该组件进行处理。
 
   按键事件的示例代码如下所示，鼠标的按键事件通过[鼠标事件](../harmonyos-references/ts-universal-mouse-key.md)处理：
 
-  说明
+  **说明** 
 
   鼠标左键的事件响应，推荐使用[onClick](../harmonyos-references/ts-universal-events-click.md#onclick12)点击事件，其他按键通过[鼠标事件](../harmonyos-references/ts-universal-mouse-key.md)处理。
 
+  ```typescript
+  .onKeyEvent((event?: KeyEvent) => {
+    if (event) {
+      if (event.type === KeyType.Down) {
+        this.eventType = 'Down';
+      } else if (event.type === KeyType.Up) {
+        this.eventType = 'Up';
+      }
+      this.keyText = event.keyText;
+      this.sourceTool = event.keySource;
+      this.getUserTextData();
+    }
+    return true;
+  })
+  .onMouse((event: MouseEvent): void => {
+    if (event) {
+      // ...
+    }
+  })
   ```
-  1. .onKeyEvent((event?: KeyEvent) => {
-  2. if (event) {
-  3. if (event.type === KeyType.Down) {
-  4. this.eventType = 'Down';
-  5. } else if (event.type === KeyType.Up) {
-  6. this.eventType = 'Up';
-  7. }
-  8. this.keyText = event.keyText;
-  9. this.sourceTool = event.keySource;
-  10. this.getUserTextData();
-  11. }
-  12. return true;
-  13. })
-  14. .onMouse((event: MouseEvent): void => {
-  15. if (event) {
-  16. // ...
-  17. }
-  18. })
-  ```
-
-  [KeyEvent.ets](https://gitcode.com/HarmonyOS_Samples/multi-device-interaction/blob/master/default/src/main/ets/view/base/KeyEvent.ets#L76-L119)
 
   下图为常见基础输入事件，在不同输入设备上的触发方式。
 
   **图3** 输入设备基础输入事件触发方式一览表  
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/bGkItq-VTNK18qKrtccIrg/zh-cn_image_0000002545929217.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/6RAmFxKIQFKu8cMebiVmag/zh-cn_image_0000002545929217.png "点击放大")
 
-  说明
+  **说明** 
 
   onKeyEvent事件默认是冒泡的，在onKeyEvent事件的回调函数中，若事件已被处理，建议开发者返回true，表示已消费该事件。这可以阻止事件继续冒泡，避免上层节点重复响应，从而防止按键事件被触发多次。
 
@@ -134,29 +130,27 @@ ArkUI框架提供了丰富的交互功能，支持直接处理[基础输入事�
 下图为常见手势事件在不同输入设备上的触发方式。
 
 **图4** 输入设备手势事件触发方式一览表  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/-aGOn7dzTBOlMCi-syTlnQ/zh-cn_image_0000002518761840.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/mpejr5XxQjumhhUk7sDxDQ/zh-cn_image_0000002518761840.png "点击放大")
 
 如下是旋转手势的示例代码：
 
+```typescript
+.gesture(
+  RotationGesture()
+    .onActionUpdate((event: GestureEvent) => {
+      if (event) {
+        // Obtain the rotation angle and change the rotation angle of the image
+        this.angle = this.rotateValue + event.angle;
+        this.sourceType = event.source;
+        this.sourceTool = event.sourceTool;
+        this.getUserTextData();
+      }
+    })
+    .onActionEnd(() => {
+      this.rotateValue = this.angle;
+    })
+)
 ```
-1. .gesture(
-2. RotationGesture()
-3. .onActionUpdate((event: GestureEvent) => {
-4. if (event) {
-5. // Obtain the rotation angle and change the rotation angle of the image
-6. this.angle = this.rotateValue + event.angle;
-7. this.sourceType = event.source;
-8. this.sourceTool = event.sourceTool;
-9. this.getUserTextData();
-10. }
-11. })
-12. .onActionEnd(() => {
-13. this.rotateValue = this.angle;
-14. })
-15. )
-```
-
-[RotationGestureEvent.ets](https://gitcode.com/HarmonyOS_Samples/multi-device-interaction/blob/master/default/src/main/ets/view/gesture/RotationGestureEvent.ets#L59-L73)
 
 典型场景举例：宫格排列的界面元素，可以通过双指触发[PinchGesture](../harmonyos-references/ts-basic-gestures-pinchgesture.md)捏合手势，动态修改网格布局的columnsTemplate属性实现。如视频应用中双指捏合实现视频元素的显示个数。
 
@@ -166,47 +160,45 @@ ArkUI框架提供了丰富的交互功能，支持直接处理[基础输入事�
 | --- | --- |
 |  |  |
 
+```typescript
+Grid() {
+  // ...
+}
+// ...
+.gesture(PinchGesture({ fingers: 2 }).onActionUpdate((event: GestureEvent) => {
+  if (event.scale > 1 && this.currentWidthBreakpoint !== 'sm') {
+    if (this.currentWidthBreakpoint === 'md') {
+      this.getUIContext().animateTo({
+        duration: 500
+      }, () => {
+        this.videoGridColumn = '1fr 1fr 1fr';
+      })
+    } else {
+      this.getUIContext().animateTo({
+        duration: 500
+      }, () => {
+        this.videoGridColumn = '1fr 1fr 1fr 1fr';
+      })
+    }
+  } else if (event.scale < 1 && this.currentWidthBreakpoint !== 'sm') {
+    if (this.currentWidthBreakpoint === 'md') {
+      this.getUIContext().animateTo({
+        duration: 500
+      }, () => {
+        this.videoGridColumn = '1fr 1fr 1fr 1fr';
+      })
+    } else {
+      this.getUIContext().animateTo({
+        duration: 500
+      }, () => {
+        this.videoGridColumn = '1fr 1fr 1fr 1fr 1fr';
+      })
+    }
+  } else {
+    Logger.info(`Two-finger operation is not supported`);
+  }
+}))
 ```
-1. Grid() {
-2. // ...
-3. }
-4. // ...
-5. .gesture(PinchGesture({ fingers: 2 }).onActionUpdate((event: GestureEvent) => {
-6. if (event.scale > 1 && this.currentWidthBreakpoint !== 'sm') {
-7. if (this.currentWidthBreakpoint === 'md') {
-8. this.getUIContext().animateTo({
-9. duration: 500
-10. }, () => {
-11. this.videoGridColumn = '1fr 1fr 1fr';
-12. })
-13. } else {
-14. this.getUIContext().animateTo({
-15. duration: 500
-16. }, () => {
-17. this.videoGridColumn = '1fr 1fr 1fr 1fr';
-18. })
-19. }
-20. } else if (event.scale < 1 && this.currentWidthBreakpoint !== 'sm') {
-21. if (this.currentWidthBreakpoint === 'md') {
-22. this.getUIContext().animateTo({
-23. duration: 500
-24. }, () => {
-25. this.videoGridColumn = '1fr 1fr 1fr 1fr';
-26. })
-27. } else {
-28. this.getUIContext().animateTo({
-29. duration: 500
-30. }, () => {
-31. this.videoGridColumn = '1fr 1fr 1fr 1fr 1fr';
-32. })
-33. }
-34. } else {
-35. Logger.info(`Two-finger operation is not supported`);
-36. }
-37. }))
-```
-
-[RecommendedVideo.ets](https://gitcode.com/HarmonyOS_Codelabs/MultiVideoApplication/blob/master/features/home/src/main/ets/view/RecommendedVideo.ets#L45-L208)
 
 ### 焦点事件
 
@@ -218,10 +210,10 @@ ArkUI框架提供了丰富的交互功能，支持直接处理[基础输入事�
 * 走焦：触发走焦时，系统遍历组件树中可走焦的组件。当前焦点框架支持三种走焦算法：线性走焦，按照子节点在节点树中的挂载顺序进行焦点导航；投影走焦，适用于容器内子组件尺寸不一的场景，通过空间位置关系计算最佳焦点目标；此外，开发者还可通过 [tabIndex](../harmonyos-references/ts-universal-attributes-focus.md#tabindex9)和[nextFocus](../harmonyos-references/ts-universal-attributes-focus.md#nextfocus18)灵活自定义走焦逻辑，满足复杂交互需求。详情可参考[走焦规范](../harmonyos-guides/arkts-common-events-focus-event.md#走焦规范)和[走焦算法](../harmonyos-guides/arkts-common-events-focus-event.md#走焦算法)。
 
   **图5** 使用键盘走焦  
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/5TXCpyaIQHCbJshNhLzpuA/zh-cn_image_0000002513429655.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/gVs7YGCURlWM4gN-UlE-ng/zh-cn_image_0000002513429655.gif "点击放大")
 
 **图6** 走焦样式指引案例  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/R1VnADgVTRWJgBaZrREvdw/zh-cn_image_0000002499449901.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/acQ4Q2iWQq6n1zoiHsp7cw/zh-cn_image_0000002499449901.png "点击放大")
 
 更多焦点事件的能力和规范请参考[支持焦点处理](../harmonyos-guides/arkts-common-events-focus-event.md)。
 
@@ -238,7 +230,7 @@ ArkUI框架提供了丰富的交互功能，支持直接处理[基础输入事�
 下图为不同输入设备上支持触发焦点事件的方式。
 
 **图7** 输入设备焦点事件触发方式一览表  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/nCDiLMDsSNKZrH6uDWA7iw/zh-cn_image_0000002545901089.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/5Lz0rkJGRZ-ie1HHuXwS6A/zh-cn_image_0000002545901089.png "点击放大")
 
 ### 拖拽事件
 
@@ -264,45 +256,43 @@ ArkUI框架提供了丰富的交互功能，支持直接处理[基础输入事�
 下图为不同输入设备上触发拖拽事件的方式。
 
 **图8** 输入设备拖拽事件触发方式一览表  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/hglzWxXJSuWz9uuAy0x12g/zh-cn_image_0000002545813259.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/SoZjQN-vTKWs3-od0gJkMw/zh-cn_image_0000002545813259.png "点击放大")
 
 如下是图片拖拽的示例代码：
 
+```typescript
+.allowDrop([uniformTypeDescriptor.UniformDataType.IMAGE])
+.onDrop((event: DragEvent) => {
+  try {
+    let dragData: UnifiedData = (event as DragEvent).getData() as UnifiedData;
+    if (dragData !== undefined) {
+      let records: unifiedDataChannel.UnifiedRecord[] = dragData.getRecords();
+      if (records.length > 0) {
+        for (let i = 0; i < records.length; i++) {
+          let types = records[i].getTypes();
+          if (types.includes(uniformTypeDescriptor.UniformDataType.FILE_URI)) {
+            // Retrieve the image resource URLs from the record and assign them
+            const fileUriUds =
+              records[i].getEntry(uniformTypeDescriptor.UniformDataType.FILE_URI) as uniformDataStruct.FileUri;
+            let typeDescriptor = uniformTypeDescriptor.getTypeDescriptor(fileUriUds.fileType);
+            if (typeDescriptor.belongsTo(uniformTypeDescriptor.UniformDataType.IMAGE)) {
+              this.targetImage = fileUriUds.oriUri;
+            }
+          }
+        }
+      } else {
+        hilog.info(0x0000, TAG, `%{public}s`, `dragData arr is null`);
+      }
+    } else {
+      hilog.info(0x0000, TAG, `%{public}s`, `dragData is undefined`);
+    }
+    this.dragSuccess = true;
+  } catch (error) {
+    const err = error as BusinessError;
+    hilog.error(0x0000, TAG, `startDataLoading errorCode: ${err.code}, errorMessage: ${err.message}`);
+  }
+})
 ```
-1. .allowDrop([uniformTypeDescriptor.UniformDataType.IMAGE])
-2. .onDrop((event: DragEvent) => {
-3. try {
-4. let dragData: UnifiedData = (event as DragEvent).getData() as UnifiedData;
-5. if (dragData !== undefined) {
-6. let records: unifiedDataChannel.UnifiedRecord[] = dragData.getRecords();
-7. if (records.length > 0) {
-8. for (let i = 0; i < records.length; i++) {
-9. let types = records[i].getTypes();
-10. if (types.includes(uniformTypeDescriptor.UniformDataType.FILE_URI)) {
-11. // Retrieve the image resource URLs from the record and assign them
-12. const fileUriUds =
-13. records[i].getEntry(uniformTypeDescriptor.UniformDataType.FILE_URI) as uniformDataStruct.FileUri;
-14. let typeDescriptor = uniformTypeDescriptor.getTypeDescriptor(fileUriUds.fileType);
-15. if (typeDescriptor.belongsTo(uniformTypeDescriptor.UniformDataType.IMAGE)) {
-16. this.targetImage = fileUriUds.oriUri;
-17. }
-18. }
-19. }
-20. } else {
-21. hilog.info(0x0000, TAG, `%{public}s`, `dragData arr is null`);
-22. }
-23. } else {
-24. hilog.info(0x0000, TAG, `%{public}s`, `dragData is undefined`);
-25. }
-26. this.dragSuccess = true;
-27. } catch (error) {
-28. const err = error as BusinessError;
-29. hilog.error(0x0000, TAG, `startDataLoading errorCode: ${err.code}, errorMessage: ${err.message}`);
-30. }
-31. })
-```
-
-[DragEvent.ets](https://gitcode.com/HarmonyOS_Samples/multi-device-interaction/blob/master/default/src/main/ets/view/drag/DragEvent.ets#L129-L159)
 
 ## 应用开发步骤
 
@@ -316,62 +306,60 @@ ArkUI框架提供了丰富的交互功能，支持直接处理[基础输入事�
 | --- | --- |
 | 直板机 | 触控屏 |
 | 折叠屏 | 触控屏 |
-| 阔折叠 | 触控屏 |
+| 阔折叠 | 触控屏、手写笔（Pura X Max） |
 | 三折叠 | 触控屏、手写笔（Mate XTs） |
 | 平板 | 触摸屏、鼠标、键盘、手写笔 |
 | 电脑 | 触控屏、触控板、鼠标、键盘、手柄 |
-| 智慧屏 | 灵犀指向遥控、灵犀悬浮触控、走焦类遥控、键盘、鼠标、手柄 |
+| 智慧屏 | 灵犀指向遥控、灵犀悬浮触控、灵犀手写笔、键盘、鼠标 |
 | 智能穿戴 | 触控屏、表冠 |
 
 接下来，以实现视频播放页的暂停/播放功能为例，阐述在多设备交互适配中的开发思路与实施步骤：
 
 1. 首先，明确长视频类应用的目标适配设备为手机、平板、电脑及智慧屏。
-2. 根据[设备支持的输入设备一览表](bpta-multi-interaction.md#table87765613332)可知手机、平板、电脑和智慧屏支持的输入设备包括：触控屏、手写笔、鼠标、键盘、手柄、灵犀指向遥控、灵犀悬浮触控、走焦类遥控。
-3. 在实现播放/暂停功能时，需根据不同输入设备的交互方式，适配相应的事件处理机制。根据[输入设备手势事件触发方式一览表](bpta-multi-interaction.md#fig171915584482)可知：对于触控屏、鼠标、灵犀指向遥控和走焦类遥控，均可通过响应[onClick](../harmonyos-references/ts-universal-events-click.md)点击事件来触发操作；根据[输入设备基础输入事件触发方式一览表](bpta-multi-interaction.md#fig181131199359)可知，使用键盘时，则需监听[特定按键](../harmonyos-references/js-apis-keycode.md#keycode)（如空格键、回车键）的[onKeyEvent](../harmonyos-references/ts-universal-events-key.md)按键事件，识别后执行对应逻辑。
-   * 触控屏：单击屏幕。鼠标：点击左键。灵犀指向遥控：单击OK键。走焦类遥控器：单击OK键。
+2. 根据[设备支持的输入设备一览表](bpta-multi-interaction.md#table87765613332)可知手机、平板、电脑和智慧屏支持的输入设备包括：触控屏、手写笔、鼠标、键盘、手柄、灵犀指向遥控、灵犀悬浮触控。
+3. 在实现播放/暂停功能时，需根据不同输入设备的交互方式，适配相应的事件处理机制。根据[输入设备手势事件触发方式一览表](bpta-multi-interaction.md#fig171915584482)可知：对于触控屏、鼠标和 灵犀指向遥控，均可通过响应[onClick](../harmonyos-references/ts-universal-events-click.md)点击事件来触发操作；根据[输入设备基础输入事件触发方式一览表](bpta-multi-interaction.md#fig181131199359)可知，使用键盘时，则需监听[特定按键](../harmonyos-references/js-apis-keycode.md#keycode)（如空格键、回车键）的[onKeyEvent](../harmonyos-references/ts-universal-events-key.md)按键事件，识别后执行对应逻辑。
+   * 触控屏：单击屏幕。鼠标：点击左键。灵犀指向遥控：单击OK键。
 
+     ```screen
+     Flex({
+       // ...
+     }) {
+       Column() {
+         // ...
+     }
+     .width('100%')
+     .onClick(() => {
+       // ...
+     })
      ```
-     1. Flex({
-     2. // ...
-     3. }) {
-     4. Column() {
-     5. // ...
-     6. }
-     7. .width('100%')
-     8. .onClick(() => {
-     9. // ...
-     10. })
-     ```
-
-     [VideoPlayer.ets](https://gitcode.com/HarmonyOS_Codelabs/MultiVideoApplication/blob/master/features/videoDetail/src/main/ets/view/VideoPlayer.ets#L87-L132)
    * 键盘：键盘按下空格键。空格键的键码为KEYCODE\_SPACE，其他按键的键码可通过[keyCode](../harmonyos-references/js-apis-keycode.md#keycode)枚举查询，例如回车键对应KEYCODE\_ENTER。应用可根据实际交互需求，灵活适配不同按键。
 
+     ```screen
+     .onKeyEvent((event?: KeyEvent) => {
+       //If the key type is pressed, the subsequent code will not be executed,
+       // and the specific key logic will be executed when released.
+       if (!event || event.type !== KeyType.Down) {
+         return;
+       }
+       // Space key controls pause/play.
+       if (event.keyCode === KeyCode.KEYCODE_SPACE) {
+         this.avPlayerUtil?.playerStateControl();
+       } else if (event.keyCode === KeyCode.KEYCODE_ESCAPE) {
+         //Press ESC to exit full screen.
+         if (this.isFullScreen) {
+           this.exitFullScreen();
+         }
+       } else if (event.keyCode === KeyCode.KEYCODE_DPAD_RIGHT) {
+         //Right-click fast forward
+         this.avPlayerUtil?.fastForward();
+       } else if (event.keyCode === KeyCode.KEYCODE_DPAD_LEFT) {
+         //Left click to go back quickly
+         this.avPlayerUtil?.rewind();
+       } else {
+         return;
+       }
+     })
      ```
-     1. .onKeyEvent((event?: KeyEvent) => {
-     2. //If the key type is pressed, the subsequent code will not be executed, and the specific key logic will be executed when released.
-     3. if (!event || event.type !== KeyType.Down) {
-     4. return;
-     5. }
-     6. // Space key controls pause/play.
-     7. if (event.keyCode === KeyCode.KEYCODE_SPACE) {
-     8. this.avPlayerUtil!.playerStateControl();
-     9. }
-     10. //press ESC to exit full screen.
-     11. if (event.keyCode === KeyCode.KEYCODE_ESCAPE) {
-     12. this.windowUtil!.recover();
-     13. }
-     14. //Right-click fast forward
-     15. if (event.keyCode === KeyCode.KEYCODE_DPAD_RIGHT) {
-     16. this.avPlayerUtil!.fastForward();
-     17. }
-     18. //Left click to go back quickly
-     19. if (event.keyCode === KeyCode.KEYCODE_DPAD_LEFT) {
-     20. this.avPlayerUtil!.rewind();
-     21. }
-     22. })
-     ```
-
-     [VideoDetail.ets](https://gitcode.com/HarmonyOS_Codelabs/MultiVideoApplication/blob/master/features/videoDetail/src/main/ets/view/VideoDetail.ets#L250-L271)
 
 开发者可根据业务场景明确适配的设备范围，并针对不同功能所支持的输入方式，灵活选择与之匹配的交互事件进行适配。
 

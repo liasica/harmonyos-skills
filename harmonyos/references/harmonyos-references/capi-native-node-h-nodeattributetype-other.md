@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: ArkUI_NodeAttributeType（其他）
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_node.h > ArkUI_NodeAttributeType（其他）
 category: harmonyos-references
-scraped_at: 2026-04-29T13:54:17+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:3ceba78a1cb3562f2d39e3a836a0d9be402d38ae0585eb404991468897515485
+scraped_at: 2026-09-02T14:51:46+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c51438e00a5030bb01456bbcf14bc58762c694cc87c56bf6e79f8ded8a2d9321
 ---
 
-```
-1. enum ArkUI_NodeAttributeType
+```c
+enum ArkUI_NodeAttributeType
 ```
 
 ## 概述
@@ -24,11 +24,11 @@ content_hash: sha256:3ceba78a1cb3562f2d39e3a836a0d9be402d38ae0585eb4049914688975
 
 ## NODE\_ENABLED
 
-```
-1. NODE_ENABLED = 6
+```c
+NODE_ENABLED = 6
 ```
 
-设置组件是否可交互，支持属性设置，属性重置和属性获取。
+设置组件是否可交互，支持属性设置、属性重置和属性获取。
 
 作为属性设置方法参数、属性获取方法返回值[ArkUI\_AttributeItem](capi-arkui-nativemodule-arkui-attributeitem.md)格式如下。
 
@@ -37,22 +37,22 @@ content_hash: sha256:3ceba78a1cb3562f2d39e3a836a0d9be402d38ae0585eb4049914688975
 **参数：**
 
 | 参数项 | 描述 |
-| --- | --- |
-| .value[0].i32 | false表示不可交互，true表示可交互。 |
-
-**返回：**
-
-| 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 0表示不可交互，1表示可交互。 |
 
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| .value[0].i32 | 返回值为0表示不可交互，返回值为1表示可交互。 |
+
 ## NODE\_FOCUSABLE
 
-```
-1. NODE_FOCUSABLE = 39
+```c
+NODE_FOCUSABLE = 39
 ```
 
-获焦属性，支持属性设置，属性重置和属性获取。
+设置组件是否可获焦，支持属性设置、属性重置和属性获取。
 
 作为属性设置方法参数、属性获取方法返回值[ArkUI\_AttributeItem](capi-arkui-nativemodule-arkui-attributeitem.md)格式如下。
 
@@ -62,18 +62,18 @@ content_hash: sha256:3ceba78a1cb3562f2d39e3a836a0d9be402d38ae0585eb4049914688975
 
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].i32 | 参数类型为1表示可获焦，为0表示不可获焦。默认为不可获焦。 |
+| .value[0].i32 | 取值为0或1，参数值为1表示可获焦，为0表示不可获焦。默认为不可获焦。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].i32 | 参数类型为1表示可获焦，为0表示不可获焦。 |
+| .value[0].i32 | 返回值为1表示可获焦，为0表示不可获焦。 |
 
 ## NODE\_RENDER\_GROUP
 
-```
-1. NODE_RENDER_GROUP = 80
+```c
+NODE_RENDER_GROUP = 80
 ```
 
 设置当前组件和子组件是否先整体离屏渲染绘制后再与父控件融合绘制，支持属性设置，属性重置和属性获取。
@@ -86,21 +86,21 @@ content_hash: sha256:3ceba78a1cb3562f2d39e3a836a0d9be402d38ae0585eb4049914688975
 
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].i32 | 参数类型为1表示当前组件与子组件需要先整体离屏渲染绘制后再与父控件融合绘制，参数类型为0表示不需要整体离屏渲染绘制后再与父控件融合绘制。默认值为0。 |
+| .value[0].i32 | 参数值为1表示当前组件与子组件需要先整体离屏渲染绘制后再与父控件融合绘制，参数值为0表示不需要整体离屏渲染绘制后再与父控件融合绘制。默认值为0。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].i32 | 参数类型为1表示当前组件与子组件完成整体离屏渲染绘制，参数类型为0表示当前组件与子组件未完成整体离屏渲染绘制。 |
+| .value[0].i32 | 返回值为1表示当前组件与子组件完成整体离屏渲染绘制，返回值为0表示当前组件与子组件未完成整体离屏渲染绘制。 |
 
 ## NODE\_CLICK\_DISTANCE
 
-```
-1. NODE_CLICK_DISTANCE = 97
+```c
+NODE_CLICK_DISTANCE = 97
 ```
 
-组件所绑定的点击手势移动距离限制，支持属性设置。
+设置组件点击手势的移动距离限制，支持属性设置。
 
 作为属性设置方法参数[ArkUI\_AttributeItem](capi-arkui-nativemodule-arkui-attributeitem.md)格式如下。
 
@@ -110,12 +110,12 @@ content_hash: sha256:3ceba78a1cb3562f2d39e3a836a0d9be402d38ae0585eb4049914688975
 
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].f32 | 表示识别点击手势时允许手指在该范围内移动，单位为vp。 |
+| .value[0].f32 | 表示识别点击手势时允许手指在设定的距离阈值内移动，取值范围为[0, +∞)，单位为vp。 |
 
 ## NODE\_ALLOW\_FORCE\_DARK
 
-```
-1. NODE_ALLOW_FORCE_DARK = 108
+```c
+NODE_ALLOW_FORCE_DARK = 108
 ```
 
 设置组件是否启用反色能力，支持属性设置，属性重置和属性获取接口。

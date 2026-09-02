@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-e
 title: REST API错误码
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > REST API错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:18+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b02e6b5c9b5d85275363d7343ecc3376775adddda21c97f4c785e37b6e7c1fd8
+scraped_at: 2026-09-02T15:03:05+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:54781cbc43e89df852170fbd9accfb4d0791aae734515988a2b7cf373570ff4c
 ---
 
-说明
+**说明** 
 
 若问题仍无法解决，请选择[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题，华为支持人员会及时处理。
 

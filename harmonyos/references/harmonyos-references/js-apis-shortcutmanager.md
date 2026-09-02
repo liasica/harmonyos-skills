@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.bundle.shortcutManager (shortcutManager模块)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.bundle.shortcutManager (shortcutManager模块)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:35+08:00
-doc_updated_at: 2026-04-10
-content_hash: sha256:ead55ad66f0b9b8e43f77aa32acddea02fd97d9bfecbfcc5394f83920580a21b
+scraped_at: 2026-09-02T15:00:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2083c0c4062216beb4099cc917459402a140d9162f9a58060de366610a272a8d
 ---
 
-本模块提供应用对于[快捷方式](../harmonyos-guides/typical-scenario-configuration.md)的管理能力，包括设置快捷方式是否显示等。
+本模块提供应用对于[快捷方式](../harmonyos-guides/typical-scenario-configuration.md)的管理能力，包括设置快捷方式是否显示等。通过快捷方式，用户可以从桌面快速启动应用的特定功能，提升应用的使用便捷性和用户粘性。典型使用场景包括：应用向用户提供常用功能的快速入口、根据用户使用习惯动态调整快捷方式的显示等。
 
-说明
+**说明** 
 
 本模块首批接口从API version 20开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { shortcutManager } from '@kit.AbilityKit';
+```ts
+import { shortcutManager } from '@kit.AbilityKit';
 ```
 
 ## shortcutManager.setShortcutVisibleForSelf
-
-PhonePC/2in1TabletTVWearable
 
 setShortcutVisibleForSelf(id: string, visible: boolean) : Promise<void>
 
@@ -51,26 +47,24 @@ setShortcutVisibleForSelf(id: string, visible: boolean) : Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 17700070 | The specified shortcut id is illegal. |
+| 17700070 | The specified shortcut id is not exist. |
 
 **示例：**
 
-```
-1. import { shortcutManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { shortcutManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 请替换为module.json5配置文件中的shortcuts标签下实际配置的shortcutId字段
-5. shortcutManager.setShortcutVisibleForSelf("shortcut_id", false)
-6. .then(() => {
-7. console.info('setShortcutVisibleForSelf success');
-8. }).catch((err: BusinessError) => {
-9. console.error(`setShortcutVisibleForSelf errData is errCode:${err.code}  message:${err.message}`);
-10. });
+// 请替换为module.json5配置文件中的shortcuts标签下实际配置的shortcutId字段
+shortcutManager.setShortcutVisibleForSelf("shortcut_id", false)
+  .then(() => {
+    console.info('setShortcutVisibleForSelf success');
+  }).catch((err: BusinessError) => {
+  console.error(`setShortcutVisibleForSelf errData is errCode:${err.code}  message:${err.message}`);
+});
 ```
 
 ## shortcutManager.getAllShortcutInfoForSelf
-
-PhonePC/2in1TabletTVWearable
 
 getAllShortcutInfoForSelf(): Promise<Array<ShortcutInfo>>
 
@@ -86,21 +80,52 @@ getAllShortcutInfoForSelf(): Promise<Array<ShortcutInfo>>
 
 **示例：**
 
-```
-1. import { shortcutManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { shortcutManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. shortcutManager.getAllShortcutInfoForSelf()
-5. .then((data: shortcutManager.ShortcutInfo[]) => {
-6. console.info('getAllShortcutInfoForSelf shortcut data is' + JSON.stringify(data));
-7. }).catch((err: BusinessError) => {
-8. console.error(`getAllShortcutInfoForSelf errData is errCode:${err.code}  message:${err.message}`);
-9. });
+shortcutManager.getAllShortcutInfoForSelf()
+  .then((data: shortcutManager.ShortcutInfo[]) => {
+    console.info('getAllShortcutInfoForSelf shortcut data is' + JSON.stringify(data));
+  }).catch((err: BusinessError) => {
+  console.error(`getAllShortcutInfoForSelf errData is errCode:${err.code}  message:${err.message}`);
+});
+```
+
+## shortcutManager.isShortcutSupported
+
+isShortcutSupported(): boolean
+
+查询当前设备是否支持快捷方式。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.BundleManager.BundleFramework.Launcher
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 表示当前设备是否支持快捷方式。  返回值为true表示当前设备支持快捷方式；返回值为false表示当前设备不支持快捷方式。 |
+
+**示例：**
+
+```ts
+import { shortcutManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+try {
+  let data = shortcutManager.isShortcutSupported();
+  console.info('isShortcutSupported data is' + JSON.stringify(data));
+} catch (err) {
+  let message = (err as BusinessError).message;
+  console.error(`isShortcutSupported errData is errCode:${err.code}  message:${err.message}`);
+}
 ```
 
 ## ShortcutInfo
-
-PhonePC/2in1TabletTVWearable
 
 type ShortcutInfo = \_ShortcutInfo
 
@@ -114,8 +139,6 @@ type ShortcutInfo = \_ShortcutInfo
 
 ## ShortcutWant
 
-PhonePC/2in1TabletTVWearable
-
 type ShortcutWant = \_ShortcutWant
 
 快捷方式内定义的目标[wants](../harmonyos-guides/module-configuration-file.md#wants标签)信息集合。
@@ -127,8 +150,6 @@ type ShortcutWant = \_ShortcutWant
 | [\_ShortcutWant](js-apis-bundlemanager-shortcutinfo.md#shortcutwant) | 快捷方式内定义的目标[wants](../harmonyos-guides/module-configuration-file.md#wants标签)信息集合。 |
 
 ## ParameterItem
-
-PhonePC/2in1TabletTVWearable
 
 type ParameterItem = \_ParameterItem
 

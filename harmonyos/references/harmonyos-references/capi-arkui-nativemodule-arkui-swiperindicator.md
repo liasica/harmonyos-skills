@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_SwiperIndicator
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_SwiperIndicator
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:31+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:711e46529771619893ffac87a489aacd5aa3ddcc19e3c22f4aff18333328b9d9
+scraped_at: 2026-09-02T14:51:52+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6b365206ebcd8d5d8289a7c231e9f5d2d987f2584e8e35587ea55f53d849f23c
 ---
 
-```
-1. typedef struct ArkUI_SwiperIndicator ArkUI_SwiperIndicator
+```c
+typedef struct ArkUI_SwiperIndicator ArkUI_SwiperIndicator
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义 Swiper 组件的导航指示器风格。
 

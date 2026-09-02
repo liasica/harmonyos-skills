@@ -3,45 +3,55 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-1
 title: DevEco Studio AppAnalyzer-安装Python依赖错误
 breadcrumb: FAQ > DevEco Studio > 应用测试 > DevEco Studio AppAnalyzer-安装Python依赖错误
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:21:37+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:2cb77593dabfa718942f8cd33ae33de14b207425ea79921be66cffbe9f097364
+scraped_at: 2026-09-02T15:04:36+08:00
+doc_updated_at: 2026-07-15
+content_hash: sha256:f6a8c82bd28245281b927da71d7717ea00f025c3529f77a13dcef71238358de2
 ---
 
-**问题现象**
+## 问题现象
 
 安装Python依赖报错。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/9SNxKQv6QISjTP9s9lZnXA/zh-cn_image_0000002265289721.png)
+## DevEco Studio 6.0.2及以上版本
 
-**可能原因**一
+### 可能原因
+
+DevEco Studio 代理配置不正确。
+
+### 解决措施
+
+请点击 DevEco Studio 文件 > 设置 > 外观和行为 > 系统设置 > Http 代理，检查代理配置。
+
+## DevEco Studio 6.0.2以下版本
+
+### 可能原因一
 
 pip配置问题。
 
-**解决措施**
+### 解决措施
 
 1. 修改pip配置。
 
    pip的配置文件位于用户根目录下的：~/.pip/pip.conf（Windows路径为：C:\Users\<UserName>\pip\pip.ini\*）。 开发者可以配置如下内容：
 
-   ```
-   1. [global]
-   2. index-url = https://mirrors.huaweicloud.com/repository/pypi/simple
-   3. trusted-host = mirrors.huaweicloud.com
-   4. timeout = 120
+   ```text
+   [global]
+   index-url = https://mirrors.huaweicloud.com/repository/pypi/simple
+   trusted-host = mirrors.huaweicloud.com
+   timeout = 120
    ```
 
    如需设置代理，可以参考以下配置，如果username、password包含特殊字符，需要进行转义。**proxyserver和port请按照实际代理服务器进行修改**。示例如下所示：
 
-   ```
-   1. [global]
-   2. index-url = https://mirrors.huaweicloud.com/repository/pypi/simple
-   3. proxy = http://username:password@proxyserver:port/
-   4. trusted-host = mirrors.huaweicloud.com
-   5. timeout = 120
+   ```text
+   [global]
+   index-url = https://mirrors.huaweicloud.com/repository/pypi/simple
+   proxy = http://username:password@proxyserver:port/
+   trusted-host = mirrors.huaweicloud.com
+   timeout = 120
    ```
 
-   说明
+   **说明** 
 
    如果password中存在特殊字符，如@、#、\*等符号，可能导致配置不生效，建议将特殊字符替换为ASCII码，并在ASCII码前加百分号%。常用符号替换为ASCII码对照表如下：
 
@@ -53,60 +63,60 @@ pip配置问题。
    * \*：%2A
 2. 查看本地生效的pip配置。
 
-   ```
-   1. pip config list
+   ```powershell
+   pip config list
    ```
 
-**可能原因二**
+### 可能原因二
 
 Win系统卸载Python时有残留。
 
-**解决措施**
+### 解决措施
 
 Win系统卸载Python时未删除Python安装目录，需要清理Python的安装目录。
 
-**可能原因三**
+### 可能原因三
 
 无外网访问权限。
 
-**解决措施**
+### 解决措施
 
-冷启动、白块检测、UX检测需要网络下载依赖。请更换有外网访问权限的网络。
+冷启动、白块检测、UX检测需要网络下载依赖，需更换有外网访问权限的网络。
 
-**可能原因四**
+### 可能原因四
 
-paddlepaddle==2.6.1已经日落，导致pip安装失败
+paddlepaddle==2.6.1已经日落，导致pip安装失败。
 
-**解决措施**
+### 解决措施
 
-MAC
+MAC：
 
-```
-1. //进入python安装目录
-2. cd python_dir_xxxx
-3. //python3.9安装命令
-4. ./python -m pip install https://paddle-wheel.bj.bcebos.com/2.6.1/macos/macos-cpu-openblas/paddlepaddle-2.6.1-cp39-cp39-macosx_10_9_x86_64.whl
-5. //python3.10安装命令
-6. ./python -m pip install https://paddle-wheel.bj.bcebos.com/2.6.1/macos/macos-cpu-openblas/paddlepaddle-2.6.1-cp310-cp310-macosx_10_9_x86_64.whl
-7. //python3.11安装命令
-8. ./python -m pip install https://paddle-wheel.bj.bcebos.com/2.6.1/macos/macos-cpu-openblas/paddlepaddle-2.6.1-cp311-cp311-macosx_10_9_x86_64.whl
-9. //python3.12安装命令
-10. ./python -m pip install https://paddle-wheel.bj.bcebos.com/2.6.1/macos/macos-cpu-openblas/paddlepaddle-2.6.1-cp312-cp312-macosx_10_9_x86_64.whl
-```
-
-Win
-
-```
-1. //进入python安装目录
-2. cd python_dir_xxxx
-3. ./python.exe -m pip install paddlepaddle==2.6.1 -i https://www.paddlepaddle.org.cn/packages/stable/cpu/
+```powershell
+ //进入python安装目录
+cd python_dir_xxxx   
+//python3.9安装命令
+./python -m pip install https://paddle-wheel.bj.bcebos.com/2.6.1/macos/macos-cpu-openblas/paddlepaddle-2.6.1-cp39-cp39-macosx_10_9_x86_64.whl
+//python3.10安装命令
+./python -m pip install https://paddle-wheel.bj.bcebos.com/2.6.1/macos/macos-cpu-openblas/paddlepaddle-2.6.1-cp310-cp310-macosx_10_9_x86_64.whl
+//python3.11安装命令
+./python -m pip install https://paddle-wheel.bj.bcebos.com/2.6.1/macos/macos-cpu-openblas/paddlepaddle-2.6.1-cp311-cp311-macosx_10_9_x86_64.whl
+//python3.12安装命令
+./python -m pip install https://paddle-wheel.bj.bcebos.com/2.6.1/macos/macos-cpu-openblas/paddlepaddle-2.6.1-cp312-cp312-macosx_10_9_x86_64.whl
 ```
 
-**可能原因五**
+Win：
+
+```powershell
+//进入python安装目录
+cd python_dir_xxxx   
+./python.exe -m pip install paddlepaddle==2.6.1 -i https://www.paddlepaddle.org.cn/packages/stable/cpu/
+```
+
+### 可能原因五
 
 Python兼容性问题。
 
-**解决措施**
+### 解决措施
 
 Python与某些指定版本的依赖不兼容，支持的版本为**Python 3.9 ~3.12**，推荐**Python 3.11.7。**如果Python最新的版本与一些依赖不兼容，建议卸载Python并安装推荐版本或者更新[DevEco Studio](https://developer.huawei.com/consumer/cn/deveco-studio/)。
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-151
 title: ArkTS自定义注解使用场景
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > ArkTS自定义注解使用场景
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:20+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:15+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:ad5a00ac779273a270dea4d705330906a9e01b31f4dbfff06ecececa2edf9a1b
 ---
 

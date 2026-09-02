@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-texture-co
 title: 图片资源加载优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 资源与存储优化 > 图片资源加载优化
 category: best-practices
-scraped_at: 2026-04-29T14:13:38+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:39fe1b643eaeb2e5550809aaada64c67a61d826f4520f19f2470af72fa2f3787
+scraped_at: 2026-09-02T15:03:21+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:22229811e6640dd6141e4b569751081cffa142e58e37c4ef0167378cd0c6d729
 ---
 
 ## 概述
@@ -24,15 +24,15 @@ content_hash: sha256:39fe1b643eaeb2e5550809aaada64c67a61d826f4520f19f2470af72fa2
 
 预置图片在不使用纹理压缩时，需要先经CPU解码生成PixelMap，再上传给GPU生成纹理。此过程耗时较长。开发者可使用纹理压缩技术，在编译构建阶段提前完成CPU解码和纹理生成，以减少CPU处理图片的时间。纹理压缩需在编译文件中配置相关属性，构建时根据配置找到预置图片，转换生成纹理码流，并进行超压缩编码生成超压缩码流。编译完成后进入运行态，进行超压缩解码生成纹理码流，GPU读取纹理码流后进行渲染显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/GUbb3v7tQhSWKIc2KV0C0Q/zh-cn_image_0000002484161165.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/33w5671hRNOilRTLFvovoA/zh-cn_image_0000002484161165.png "点击放大")
 
 纹理压缩在编译构建中对预置图片进行处理。首先在编辑器的编译文件中配置纹理压缩参数。根据配置参数，hvigor读取待压缩的文件资源，构造[restool](../harmonyos-guides/restool.md)命令解析并生成资源文件列表。然后遍历文件列表，将待转换文件转码为纹理格式。已转换的资源文件不再打包到构建产物中。最后将纹理文件和未转换的文件一起构建生成资源产物。
 
 编译构建资源文件开启纹理压缩时序图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/qYotpmVDQTS6DGLHBdvdvg/zh-cn_image_0000002484041709.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/mQMJ44CkTMytNszV0kNASA/zh-cn_image_0000002484041709.png "点击放大")
 
-说明
+**说明** 
 
 纹理压缩在编译构建时会提前处理预置图片，这可能会增加编译时间并导致包体增大。如果资源图片占用较多空间，对包体积影响显著，建议筛选图片资源，以减少纹理压缩的开销。
 
@@ -40,7 +40,7 @@ content_hash: sha256:39fe1b643eaeb2e5550809aaada64c67a61d826f4520f19f2470af72fa2
 
 由于图片格式无法直接被GPU渲染，需要CPU解码后上传到GPU，这会消耗一定时间。当一个页面同时渲染一定数量的预置图片时，可能会导致图片完成时延增加。以下是一个Tab栏切换的示例，当向右滑动切换到tab2页面时，新页面通过横列布局加载40张.png格式和40张.jpg格式的预置图片。对比开启和关闭纹理压缩两种情况，图片完成时延有显著差异。未开启纹理压缩情况下切换过程的效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/S6GBDxr5SZqwVj0qOX8tqQ/zh-cn_image_0000002451514896.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/lSNAv8BFT0qaiKV4HSt42w/zh-cn_image_0000002451514896.gif "点击放大")
 
 在不使用纹理压缩的情况下，当向右滑动切换到tab2页面时，由于新页面包含多张预置图片需要加载，可能会导致部分图片加载延迟，出现显示白块的情况。
 
@@ -58,51 +58,49 @@ filters：在filters属性中可配置method、files和exclude三个属性对象
 
 基本编译配置项的类型及说明可参考[compression](../harmonyos-guides/ide-hvigor-build-profile.md#section2095319147103)。纹理压缩配置的示例代码如下：
 
+```screen
+"buildOption": {
+  "resOptions": {
+    "compression": {
+      "media": {
+        "enable": true // Whether to enable texture compression for media images
+      },
+      // Filtering of texture compression files. This field is not mandatory. If this field is not set, all images in the resource directory will be compressed
+      "filters": [
+        {
+          "method": {
+            "type": "sut", // conversion type
+            "blocks": "4x4" // The extended parameters of the conversion type
+          },
+          // Specifies the files used for compression. Only files that meet all conditions and are not excluded can be compressed
+          "files": {
+            "path": ["./**/*"], // All files in the specified resource directory
+            "size": [[0, '1000k']], // Files with a specified size of less than 1000k
+            // Pictures with a resolution smaller than 3000 x 3000
+            "resolution": [
+              [
+                { "width": 0, "height": 0 }, // minimum width and height
+                { "width": 3000, "height": 3000 } // Maximum width and height
+              ]
+            ]
+          },
+          // Remove files that do not need to be compressed from the files list. Only files that meet all filtering conditions are deleted
+          "exclude": {
+            "path": ["./**/*.webp"], // Filter all webp files
+            "size": [[0, '1k']], // Filter files smaller than 1k in size
+            // Filter images with a resolution smaller than 1024 x 1024
+            "resolution": [
+              [
+                { "width": 0, "height": 0 }, // minimum width and height
+                { "width": 1024, "height": 1024 } // Maximum width and height
+              ]
+            ]
+          }
+        }
+      ]
+    }
+  }},
 ```
-1. "buildOption": {
-2. "resOptions": {
-3. "compression": {
-4. "media": {
-5. "enable": true // Whether to enable texture compression for media images
-6. },
-7. // Filtering of texture compression files. This field is not mandatory. If this field is not set, all images in the resource directory will be compressed
-8. "filters": [
-9. {
-10. "method": {
-11. "type": "sut", // conversion type
-12. "blocks": "4x4" // The extended parameters of the conversion type
-13. },
-14. // Specifies the files used for compression. Only files that meet all conditions and are not excluded can be compressed
-15. "files": {
-16. "path": ["./**/*"], // All files in the specified resource directory
-17. "size": [[0, '1000k']], // Files with a specified size of less than 1000k
-18. // Pictures with a resolution smaller than 3000 x 3000
-19. "resolution": [
-20. [
-21. { "width": 0, "height": 0 }, // minimum width and height
-22. { "width": 3000, "height": 3000 } // Maximum width and height
-23. ]
-24. ]
-25. },
-26. // Remove files that do not need to be compressed from the files list. Only files that meet all filtering conditions are deleted
-27. "exclude": {
-28. "path": ["./**/*.webp"], // Filter all webp files
-29. "size": [[0, '1k']], // Filter files smaller than 1k in size
-30. // Filter images with a resolution smaller than 1024 x 1024
-31. "resolution": [
-32. [
-33. { "width": 0, "height": 0 }, // minimum width and height
-34. { "width": 1024, "height": 1024 } // Maximum width and height
-35. ]
-36. ]
-37. }
-38. }
-39. ]
-40. }
-41. }},
-```
-
-[build-profile.json5](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/TextureHypercompression/build-profile.json5#L17-L57)
 
 配置项注意点：
 
@@ -116,13 +114,13 @@ filters：在filters属性中可配置method、files和exclude三个属性对象
 
 按分辨率匹配时，匹配分辨率的宽高值是二维数组。下图左侧表示分辨率小于2048×2048的所有图片，右侧表示分辨率小于1024×1024的图片和分辨率大于1024×1024且小于2048×2048的图片。虽然两种写法看似相同，但其取值范围并不一致。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/Css0YFAjTCmFX0iiU7xngQ/zh-cn_image_0000002474118625.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/7iQziP0-QpKPks9orV97xw/zh-cn_image_0000002474118625.png)
 
 **编译执行**
 
 配置相关参数后，执行项目编译构建。编译过程中，hvigor根据配置参数获取预置图片，通过转码部件进行纹理压缩并打包。纹理压缩后的Tab栏切换效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/RYIU6ynbS22N52xX6sFejA/zh-cn_image_0000002484595545.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/79RxCwF5S1CBtJqk2q82rg/zh-cn_image_0000002484595545.gif "点击放大")
 
 通过效果图可以看出，使用纹理压缩时，切换到tab2页面后，图片立即显示，没有延迟或白块出现。
 
@@ -134,7 +132,7 @@ filters：在filters属性中可配置method、files和exclude三个属性对象
 
 纹理压缩的主要收益是将预置图片转换为纹理格式，直接被GPU读取，降低CPU和DDR的负载，加快图片加载速度。在Tab栏切换示例中，预置图片分别以原图（.png）、纹理超压缩（.sut）和自适应可变纹理压缩（.astc）三种方式测试，图片读取耗时如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/XJY7KLEqRe6battyCAR-5Q/zh-cn_image_0000002440718508.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/vIsQQ9QrS6SCETFpp6_uAA/zh-cn_image_0000002651423776.png "点击放大")
 
 统计以上H:CreateImagePixelMap的耗时得到下表：
 
@@ -148,11 +146,11 @@ filters：在filters属性中可配置method、files和exclude三个属性对象
 
 在对比加载图片的耗时后，使用Tab栏切换示例测试内存大小，查看纹理压缩前后的内存占用情况。相关数据如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/2kjrg29nTLiAlud5DIv-_A/zh-cn_image_0000002474038453.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/eGBcEkUzTrS8vxWlGGiCsg/zh-cn_image_0000002474038453.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/y_NNNqWeShimETLaWWzq4g/zh-cn_image_0000002474118629.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/MSqAefoWRF-6QQkgitAJmg/zh-cn_image_0000002474118629.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/Zk2R5d57QQ-5dCKotrTCyQ/zh-cn_image_0000002440558608.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/44MiOMlFQxq9ZUsFHJN42w/zh-cn_image_0000002440558608.png "点击放大")
 
 统计纹理压缩开启前后的内存占用大小数据如下表：
 
@@ -186,7 +184,7 @@ filters：在filters属性中可配置method、files和exclude三个属性对象
 | .png | 0.92 |
 | .webp | 2.50 |
 
-说明
+**说明** 
 
 具体工程应用会因为实际工程内资源大小、格式、分辨率和数量等因素的不同产生不同的包体膨胀率，以上数据仅供开发者参考。
 
@@ -217,14 +215,14 @@ filters：在filters属性中可配置method、files和exclude三个属性对象
 
 使用-s设置图片的分辨率，例如，将一个GIF图片的分辨率降低，宽高设置为90x90像素，可以使用如下命令：
 
-```
-1. ffmpeg -i input.gif -s 90x90 -y output.gif （设置宽高均为90像素）
+```screen
+ffmpeg -i input.gif -s 90x90 -y output.gif （设置宽高均为90像素）
 ```
 
 或者使用-vf参数配合scale过滤器，设置宽为90像素，高度自动等比例缩放。
 
-```
-1. ffmpeg -i input.gif -vf "scale=90:-1" -y output.gif
+```screen
+ffmpeg -i input.gif -vf "scale=90:-1" -y output.gif
 ```
 
 以上命令的参数的意义如下：
@@ -237,13 +235,13 @@ filters：在filters属性中可配置method、files和exclude三个属性对象
 
 例如，在网页或App中有一个头像显示区域，大小为80\*80px，此时有一张4180\*4180的大图，若直接通过代码缩放到80\*80显示，会出现内存占用高、解码慢、滚动卡顿的问题；正确的做法是，提前将图片压缩并缩放为80\*80的小图，然后再进行加载显示。对比压缩前和压缩后两种情况，图片完成时延有显著差异。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/pvxE-p37Q3uYgOYeLN5QYA/zh-cn_image_0000002484478373.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/fWZW_OvqSI-QMc5a89_Zug/zh-cn_image_0000002651583686.gif "点击放大")
 
 **耗时对比**
 
 点击切换示例测试耗时时长，查看压缩前后的图片读取耗时情况。相关数据如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/9qRaMEZOTQmD-AGdy7CJhQ/zh-cn_image_0000002474038457.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/B178Ifb0Sgq2UBA1IKd-3g/zh-cn_image_0000002474118633.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/v-TpalN-R126gGfoYYBLgg/zh-cn_image_0000002474038457.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/tDZt2lAVQIKrD8BFCcBdsg/zh-cn_image_0000002474118633.png "点击放大")
 
 统计预压缩到实际UI尺寸前后的图片解码耗时数据如下表：
 
@@ -252,15 +250,15 @@ filters：在filters属性中可配置method、files和exclude三个属性对象
 | 否 | 93ms |
 | 是 | 740us |
 
-通过表中数据可知，预压缩到实际UI尺寸后，图片加载耗时从183us下降到95us，加载速度显著提升。
+通过表中数据可知，预压缩到实际UI尺寸后，图片解码耗时从93ms下降到740us，加载速度显著提升。
 
 **内存占用对比**
 
 点击切换示例测试内存大小，查看压缩前后的内存占用情况。相关数据如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/FhSrRffjTIWi4oGKrlgWaQ/zh-cn_image_0000002440558612.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/yEQ0elXQQJCNS3lcaxun2w/zh-cn_image_0000002440558612.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/mXRbqOaaRUyGGtiw6CbPgQ/zh-cn_image_0000002440718516.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/N_UgKAUWQySK9w7FHjMu2Q/zh-cn_image_0000002440718516.png "点击放大")
 
 统计预压缩到实际UI尺寸前后的内存占用大小数据如下表：
 
@@ -287,28 +285,26 @@ filters：在filters属性中可配置method、files和exclude三个属性对象
 
 例如，有一个URL为"https://your-cdn-url.com/path/to/image.jpg"的网络图片，需要返回一个宽度为200，高度为150，采用cover裁剪方式，质量（图片清晰度等综合指标）为85%，并且转换为.webp格式的图片。可参考以下方式实现。
 
+```screen
+// It needs to be replaced with the image resource address required by the developer.
+private imgUrl = 'https://******.com/path/to/image.jpg?w=200&h=150&fit=cover&q=85&format=webp';
+
+build() {
+  NavDestination() {
+    Column() {
+      Image(this.imgUrl)
+        .width(200)
+        .height(150)
+        .objectFit(ImageFit.Cover)
+    }
+    .width('100%')
+    .height('100%')
+  }
+  .backgroundColor($r('sys.color.point_color_checked'))
+}
 ```
-1. // It needs to be replaced with the image resource address required by the developer.
-2. private imgUrl = 'https://******.com/path/to/image.jpg?w=200&h=150&fit=cover&q=85&format=webp';
 
-4. build() {
-5. NavDestination() {
-6. Column() {
-7. Image(this.imgUrl)
-8. .width(200)
-9. .height(150)
-10. .objectFit(ImageFit.Cover)
-11. }
-12. .width('100%')
-13. .height('100%')
-14. }
-15. .backgroundColor('#F1F3F5')
-16. }
-```
-
-[OptimizeWebImagesUsingCDN.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/TextureHypercompression/entry/src/main/ets/pages/OptimizeWebImagesUsingCDN.ets#L19-L34)
-
-说明
+**说明** 
 
 并非所有CDN服务均支持相同参数集，请查阅所用CDN服务商提供的文档了解详细参数信息。
 
@@ -328,14 +324,12 @@ filters：在filters属性中可配置method、files和exclude三个属性对象
 
 autoResize适用于需要组件尺寸动态适配的场景。例如，在响应页面内容变化或设备形态差异（如不同屏幕尺寸、折叠屏展开/收起）时，图片需要根据父容器尺寸自动缩放，使用autoResize可避免图片溢出或留白，提升界面自适应能力。通过给Image组件设置[autoResize](../harmonyos-references/ts-basic-components-image.md#autoresize)为true时，组件会根据显示区域的尺寸决定用于绘制的图源尺寸，有利于减少内存占用。
 
+```screen
+Image(this.imageUrl)
+  .width(300)
+  .height(200)
+  .autoResize(true)
 ```
-1. Image(this.imageUrl)
-2. .width(300)
-3. .height(200)
-4. .autoResize(true)
-```
-
-[UseAutoResizeToDownsampleTheImageComponent.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/TextureHypercompression/entry/src/main/ets/pages/UseAutoResizeToDownsampleTheImageComponent.ets#L29-L32)
 
 ## 总结
 

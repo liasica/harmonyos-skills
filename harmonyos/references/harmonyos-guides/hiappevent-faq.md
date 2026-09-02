@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-fa
 title: HiAppEvent常见问题
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > HiAppEvent常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:15+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:06272e48acace848cf2cd8203b6c7caeb056b257aa61553738c12afeb775c4b8
+scraped_at: 2026-09-02T14:59:40+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:a79077587f1c4f99e896e8b53826aaa5c7f52bd92a7bdfbcb06c6e26abf1adf5
 ---
 
 ## 查不到已通过HiAppEvent订阅的事件内容
@@ -24,7 +24,7 @@ content_hash: sha256:06272e48acace848cf2cd8203b6c7caeb056b257aa61553738c12afeb77
 
 **问题现象**
 
-Hilog中出现如下日志：
+HiLog中出现如下日志：
 
 * eventInfo.params.external\_log=[]
 * HiAppEvent file does not exist
@@ -96,78 +96,78 @@ external\_log日志文件所在目录的空间已达到上限，但无法删除e
 
 **代码示例**
 
-```
-1. import { fileIo } from '@kit.CoreFileKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hiAppEvent, hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { fileIo } from '@kit.CoreFileKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hiAppEvent, hilog } from '@kit.PerformanceAnalysisKit';
 
-5. hiAppEvent.addWatcher({
-6. // 开发者可以自定义观察者名称，系统会使用名称来标识不同的观察者
-7. name: "AppCrashWatcher",
-8. // 订阅过滤条件，这里是订阅了系统事件中的崩溃事件
-9. appEventFilters: [
-10. {
-11. domain: hiAppEvent.domain.OS,
-12. names: [hiAppEvent.event.APP_CRASH]
-13. }
-14. ],
-15. // 实现onReceive回调，监听到事件后实时回调
-16. onReceive: (domain: string, appEventGroups: Array<hiAppEvent.AppEventGroup>) => {
-17. hilog.info(0x0000, 'testTag', `domain=${domain}`);
-18. for (const eventGroup of appEventGroups) {
-19. hilog.info(0x0000, 'testTag', `HiAppEvent eventName=${eventGroup.name}`);
-20. for (const eventInfo of eventGroup.appEventInfos) {
-21. // 开发者可以获取到崩溃事件发生的时间戳
-22. hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.time=${JSON.stringify(eventInfo.params['time'])}`);
-23. // 开发者可以获取到崩溃应用的包名
-24. hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.bundle_name=${JSON.stringify(eventInfo.params['bundle_name'])}`);
-25. // 开发者可以获取到崩溃事件发生时的故障日志文件
-26. hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.external_log=${JSON.stringify(eventInfo.params['external_log'])}`);
+  hiAppEvent.addWatcher({
+    // 开发者可以自定义观察者名称，系统会使用名称来标识不同的观察者
+    name: "AppCrashWatcher",
+    // 订阅过滤条件，这里是订阅了系统事件中的崩溃事件
+    appEventFilters: [
+      {
+        domain: hiAppEvent.domain.OS,
+        names: [hiAppEvent.event.APP_CRASH]
+      }
+    ],
+    // 实现onReceive回调，监听到事件后实时回调
+    onReceive: (domain: string, appEventGroups: Array<hiAppEvent.AppEventGroup>) => {
+      hilog.info(0x0000, 'testTag', `domain=${domain}`);
+      for (const eventGroup of appEventGroups) {
+        hilog.info(0x0000, 'testTag', `HiAppEvent eventName=${eventGroup.name}`);
+        for (const eventInfo of eventGroup.appEventInfos) {
+          // 开发者可以获取到崩溃事件发生的时间戳
+          hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.time=${JSON.stringify(eventInfo.params['time'])}`);
+          // 开发者可以获取到崩溃应用的包名
+          hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.bundle_name=${JSON.stringify(eventInfo.params['bundle_name'])}`);
+          // 开发者可以获取到崩溃事件发生时的故障日志文件
+          hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.external_log=${JSON.stringify(eventInfo.params['external_log'])}`);
 
-28. if (eventInfo.params['external_log'] != undefined) {
-29. for (let index = 0; index < eventInfo.params['external_log'].length; ++index) {
-30. let externalLog: string = eventInfo.params['external_log'][index];
-31. hilog.info(0x0000, 'testTag', `externalLog=${externalLog}`);
-32. // 验证访问权限：
-33. let res = fileIo.accessSync(externalLog);
-34. if (res) {
-35. hilog.info(0x0000, 'testTag', `HiAppEvent file exists`);
-36. } else {
-37. hilog.error(0x0000, 'testTag', `HiAppEvent file does not exist`);
-38. }
-39. // 验证读写权限：
-40. fileIo.open(externalLog, fileIo.OpenMode.READ_WRITE).then((file: fileIo.File) => {
-41. hilog.info(0x0000, 'testTag', `HiAppEvent file=${externalLog} fd=${file.fd}`);
-42. fileIo.closeSync(file);
-43. }).catch((err: BusinessError) => {
-44. hilog.info(0x0000, 'testTag',
-45. `HiAppEvent open file=${externalLog} failed with error message=${err.message}, error code=${err.code}`);
-46. });
-47. // 删除external_log日志文件：
-48. fileIo.unlink(externalLog).then(() => {
-49. console.info("HiAppEvent remove file:" + externalLog + " succeed");
-50. }).catch((err: BusinessError) => {
-51. console.error("HiAppEvent remove file:" + externalLog + " failed with error message: " + err.message +
-52. ", error code: " + err.code);
-53. });
-54. }
-55. }
-56. }
-57. }
-58. }
-59. });
+          if (eventInfo.params['external_log'] != undefined) {
+            for (let index = 0; index < eventInfo.params['external_log'].length; ++index) {
+              let externalLog: string = eventInfo.params['external_log'][index];
+              hilog.info(0x0000, 'testTag', `externalLog=${externalLog}`);
+              // 验证访问权限：
+              let res = fileIo.accessSync(externalLog);
+              if (res) {
+                hilog.info(0x0000, 'testTag', `HiAppEvent file exists`);
+              } else {
+                hilog.error(0x0000, 'testTag', `HiAppEvent file does not exist`);
+              }
+              // 验证读写权限：
+              fileIo.open(externalLog, fileIo.OpenMode.READ_WRITE).then((file: fileIo.File) => {
+              hilog.info(0x0000, 'testTag', `HiAppEvent file=${externalLog} fd=${file.fd}`);
+              fileIo.closeSync(file);
+              }).catch((err: BusinessError) => {
+                hilog.info(0x0000, 'testTag',
+                `HiAppEvent open file=${externalLog} failed with error message=${err.message}, error code=${err.code}`);
+              });
+              // 删除external_log日志文件：
+              fileIo.unlink(externalLog).then(() => {
+                console.info("HiAppEvent remove file:" + externalLog + " succeed");
+              }).catch((err: BusinessError) => {
+                console.error("HiAppEvent remove file:" + externalLog + " failed with error message: " + err.message +
+                ", error code: " + err.code);
+              });
+            }
+          }
+        }
+      }
+    }
+  });
 ```
 
 访问及删除external\_log日志文件的日志：
 
-```
-1. externalLog=/data/storage/el2/log/hiappevent/APP_CRASH_1751081104816_35595.log
-2. HiAppEvent file exists
-3. HiAppEvent file=/data/storage/el2/log/hiappevent/APP_CRASH_1751081104816_35595.log fd=61
-4. HiAppEvent remove file:/data/storage/el2/log/hiappevent/APP_CRASH_1751081104816_35595.log succeed
+```text
+externalLog=/data/storage/el2/log/hiappevent/APP_CRASH_1751081104816_35595.log
+HiAppEvent file exists
+HiAppEvent file=/data/storage/el2/log/hiappevent/APP_CRASH_1751081104816_35595.log fd=61
+HiAppEvent remove file:/data/storage/el2/log/hiappevent/APP_CRASH_1751081104816_35595.log succeed
 ```
 
-说明
+**说明** 
 
 external\_log返回的路径是应用沙箱目录，非真实物理路径。应用有权限访问自己的沙箱目录。external\_log日志空间受限，应用处理完日志文件后应及时删除。
 

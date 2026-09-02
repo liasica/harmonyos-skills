@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-udmf
 title: OH_UdsHyperlink
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 结构体 > OH_UdsHyperlink
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:44+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:a15f6b7296af22521f8d489b8d149fe962b02cced2ea078f16a2aaf86481b021
+scraped_at: 2026-09-02T14:51:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:038b2e74eace803b8fa7ec1e8c44e9aaecaf6200f039f134f2bebf504ffd453a
 ---
 
-```
-1. typedef struct OH_UdsHyperlink OH_UdsHyperlink
+```c
+typedef struct OH_UdsHyperlink OH_UdsHyperlink
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 描述超链接类型的统一数据结构。
 

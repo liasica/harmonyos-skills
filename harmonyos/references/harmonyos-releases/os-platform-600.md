@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-platform-600
 title: OS平台能力
-breadcrumb: 版本说明 > HarmonyOS 6.0.0(20) > OS平台能力
+breadcrumb: 版本说明 > 更多版本 > 6.0.0(20) > OS平台能力
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:04+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:26+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:02beee279bd78c9da66ecad08a010c824ffcd7a962fcf5b26742900dc3f44f6a
 ---
 

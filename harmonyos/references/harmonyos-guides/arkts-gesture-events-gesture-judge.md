@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-gesture
 title: 手势冲突处理
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 添加手势响应 > 手势冲突处理
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:06+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5aca965c01998e4d30499c821b04f7cf4d25a313a73102cff23dcf0f3ff9c843
+scraped_at: 2026-09-02T14:59:18+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7945c9b5a6b82444128de0b7c18256efe3211514f0d0806e4dc248214a968a8c
 ---
 
 手势冲突是指多个手势识别器在同一组件或重叠区域同时识别时产生竞争，导致识别结果不符合预期。常见冲突场景包括：
@@ -14,7 +14,7 @@ content_hash: sha256:5aca965c01998e4d30499c821b04f7cf4d25a313a73102cff23dcf0f3ff
 * 父子组件的同类型手势识别器。
 * 系统默认手势与自定义手势（如[Scroll](../harmonyos-references/ts-container-scroll.md)滑动手势与子组件点击手势冲突）。
 
-干预手势处理可有效解决冲突，除控制组件响应热区和命中测试模式外，主要通过以下三种方式：[自定义手势判定](arkts-gesture-events-gesture-judge.md#自定义手势判定)、[手势并行动态控制](arkts-gesture-events-gesture-judge.md#手势并行动态控制)、[阻止手势参与识别](arkts-gesture-events-gesture-judge.md#阻止手势参与识别)。
+干预手势处理可有效解决冲突，除控制组件响应热区和命中测试模式外，主要通过以下四种方式：[自定义手势判定](arkts-gesture-events-gesture-judge.md#自定义手势判定)、[手势并行动态控制](arkts-gesture-events-gesture-judge.md#手势并行动态控制)、[阻止手势参与识别](arkts-gesture-events-gesture-judge.md#阻止手势参与识别)、[自定义干预事件和手势的收集结果](arkts-gesture-events-gesture-judge.md#自定义干预事件和手势的收集结果)。
 
 ## 自定义手势判定
 
@@ -22,11 +22,11 @@ content_hash: sha256:5aca965c01998e4d30499c821b04f7cf4d25a313a73102cff23dcf0f3ff
 
 **图1** 自定义手势判定流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/tUyE1fb8RGaVlxsfEUeb_A/zh-cn_image_0000002558604796.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/oC0ttvMoTJOmy1I2N5vqlg/zh-cn_image_0000002706833754.png)
 
 自定义手势判定涉及以下接口。
 
-| **接口** | **说明** |
+| 接口 | 说明 |
 | --- | --- |
 | [onGestureJudgeBegin](../harmonyos-references/ts-gesture-customize-judge.md#ongesturejudgebegin) | 用于手势拦截，是通用事件。在手势满足系统触发阈值场景下，回调给应用判断是否拦截手势。 |
 | [onGestureRecognizerJudgeBegin](../harmonyos-references/ts-gesture-blocking-enhancement.md#ongesturerecognizerjudgebegin) | 用于手势拦截、获取手势识别器和设置手势识别器开闭状态。是onGestureJudgeBegin接口的能力扩展，可以代替onGestureJudgeBegin接口。  获取手势识别器时，会获取一次交互中手势响应链上的所有手势识别器，以及当前即将触发成功的手势识别器，此时可以设置手势的激活状态。 |
@@ -35,135 +35,135 @@ content_hash: sha256:5aca965c01998e4d30499c821b04f7cf4d25a313a73102cff23dcf0f3ff
 
 **图2** 示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/Nv2PgOzRQNat7aOpx5Sq9Q/zh-cn_image_0000002589324321.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/Dga_8FvNRYCw4xHRCrUU1w/zh-cn_image_0000002736312863.png)
 
 1. Image组件设置拖拽。
 
+   ```typescript
+   // $r('sys.media.ohos_app_icon') 需要替换为开发者所需的资源文件
+   Image($r('sys.media.ohos_app_icon'))
+     .draggable(true)
+     .onDragStart(()=>{
+       // ...
+       // 请将$r('app.string.Allow_dragging_prompt')替换为实际资源文件，在本示例中该资源文件的value值为"Drag 下半区蓝色区域，Image响应"
+       promptAction.showToast({ message: $r('app.string.Allow_dragging_prompt') });
+     })
+     .width('200vp').height('200vp')
    ```
-   1. // $r('sys.media.ohos_app_icon') 需要替换为开发者所需的资源文件
-   2. Image($r('sys.media.ohos_app_icon'))
-   3. .draggable(true)
-   4. .onDragStart(()=>{
-   5. // ...
-   6. // 请将$r('app.string.Allow_dragging_prompt')替换为实际资源文件，在本示例中该资源文件的value值为"Drag 下半区蓝色区域，Image响应"
-   7. promptAction.showToast({ message: $r('app.string.Allow_dragging_prompt') });
-   8. })
-   9. .width('200vp').height('200vp')
-   ```
-
-   [CustomGestures.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/GestureConflict/entry/src/main/ets/Component/CustomGestures/CustomGestures.ets#L34-L46)
 2. Stack组件设置手势。
 
+   ```typescript
+   Stack() {}
+   .width('200vp')
+   .height('200vp')
+   .hitTestBehavior(HitTestMode.Transparent)
+   .gesture(GestureGroup(GestureMode.Parallel,
+     LongPressGesture()
+       .onAction((event: GestureEvent) => {
+         // ...
+         /*
+         请将$r('app.string.Stop_dragging_prompt')替换为实际资源文件，在本示例中
+         该资源文件的value值为"LongPressGesture 长按上半区 灰色区域，灰色区域响应"
+          */
+         promptAction.showToast({ message: $r('app.string.Stop_dragging_prompt')  });
+       })
+       .tag('longPress')
+   ))
    ```
-   1. Stack() {}
-   2. .width('200vp')
-   3. .height('200vp')
-   4. .hitTestBehavior(HitTestMode.Transparent)
-   5. .gesture(GestureGroup(GestureMode.Parallel,
-   6. LongPressGesture()
-   7. .onAction((event: GestureEvent) => {
-   8. // ...
-   9. /*
-   10. 请将$r('app.string.Stop_dragging_prompt')替换为实际资源文件，在本示例中
-   11. 该资源文件的value值为"LongPressGesture 长按上半区 红色区域，红色区域响应"
-   12. */
-   13. promptAction.showToast({ message: $r('app.string.Stop_dragging_prompt')  });
-   14. })
-   15. .tag('longpress')
-   16. ))
-   ```
-
-   [CustomGestures.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/GestureConflict/entry/src/main/ets/Component/CustomGestures/CustomGestures.ets#L50-L67)
 3. Stack组件设置拦截。
 
+   ```typescript
+   .onGestureJudgeBegin((gestureInfo: GestureInfo, event: BaseGestureEvent) => {
+     // 如果是长按类型手势，判断点击的位置是否在上半区
+     if (gestureInfo.type == GestureControl.GestureType.LONG_PRESS_GESTURE) {
+       if (event.fingerList.length > 0 && event.fingerList[0].localY < 100) {
+         return GestureJudgeResult.CONTINUE;
+       } else {
+         return GestureJudgeResult.REJECT;
+       }
+     };
+     return GestureJudgeResult.CONTINUE;
+   })
    ```
-   1. .onGestureJudgeBegin((gestureInfo: GestureInfo, event: BaseGestureEvent) => {
-   2. // 如果是长按类型手势，判断点击的位置是否在上半区
-   3. if (gestureInfo.type == GestureControl.GestureType.LONG_PRESS_GESTURE) {
-   4. if (event.fingerList.length > 0 && event.fingerList[0].localY < 100) {
-   5. return GestureJudgeResult.CONTINUE;
-   6. } else {
-   7. return GestureJudgeResult.REJECT;
-   8. }
-   9. };
-   10. return GestureJudgeResult.CONTINUE;
-   11. })
-   ```
-
-   [CustomGestures.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/GestureConflict/entry/src/main/ets/Component/CustomGestures/CustomGestures.ets#L69-L81)
 4. 代码完整示例。
 
+   ```typescript
+   import { PromptAction } from '@kit.ArkUI';
+
+   @Entry
+   @Component
+   struct Index {
+     scroller: Scroller = new Scroller();
+     promptAction: PromptAction = this.getUIContext().getPromptAction();
+
+     build() {
+       Scroll(this.scroller) {
+         Column({ space: 8 }) {
+           /*
+           请将$r('app.string.Drag_instructions')替换为实际资源文件，在本示例中该资源文件的value值为"包括上下两层组件，上层组件绑定长按手势，
+           下层组件绑定拖拽。其中上层组件下半区域绑定手势拦截，使该区域响应下层拖拽手势。"
+            */
+           Text($r('app.string.Drag_instructions')).width('100%').fontSize(20).fontColor('#ffdd00')
+           Stack({ alignContent: Alignment.Center }) {
+             Column() {
+               // 模拟上半区和下半区
+               Stack().width('200vp').height('100vp').backgroundColor(Color.Gray)
+               Stack().width('200vp').height('100vp').backgroundColor(Color.Blue)
+             }.width('200vp').height('200vp')
+
+             // Stack的下半区是绑定了拖拽手势的图像区域。
+             // $r('sys.media.ohos_app_icon') 需要替换为开发者所需的资源文件
+             Image($r('sys.media.ohos_app_icon'))
+               .draggable(true)
+               .onDragStart(() => {
+                 // 请将$r('app.string.Allow_dragging_prompt')替换为实际资源文件，在本示例中该资源文件的value值为"Drag 下半区蓝色区域，Image响应"
+                 try {
+                   this.promptAction.showToast({ message: $r('app.string.Allow_dragging_prompt') });
+                 } catch (error) {
+                   console.error('ShowToast failed!')
+                 }
+               })
+               .width('200vp').height('200vp')
+             // Stack的上半区是绑定了长按手势的浮动区域。
+             Stack() {
+             }
+             .width('200vp')
+             .height('200vp')
+             .hitTestBehavior(HitTestMode.Transparent)
+             .gesture(GestureGroup(GestureMode.Parallel,
+               LongPressGesture()
+                 .onAction(() => {
+                   /*
+                   请将$r('app.string.Stop_dragging_prompt')替换为实际资源文件，在本示例中
+                   该资源文件的value值为"LongPressGesture 长按上半区 灰色区域，灰色区域响应"
+                    */
+                   try {
+                     this.promptAction.showToast({ message: $r('app.string.Stop_dragging_prompt') });
+                   } catch (error) {
+                     console.error('ShowToast failed!')
+                   }
+                 })
+                 .tag('longPress')
+             ))
+             .onGestureJudgeBegin((gestureInfo: GestureInfo, event: BaseGestureEvent) => {
+               // 如果是长按类型手势，判断点击的位置是否在上半区
+               if (gestureInfo.type == GestureControl.GestureType.LONG_PRESS_GESTURE) {
+                 if (event.fingerList.length > 0 && event.fingerList[0].localY < 100) {
+                   return GestureJudgeResult.CONTINUE;
+                 } else {
+                   return GestureJudgeResult.REJECT;
+                 }
+               };
+               return GestureJudgeResult.CONTINUE;
+             })
+           }.width('100%')
+         }.width('100%')
+       }
+     }
+   }
    ```
-   1. import { PromptAction } from '@kit.ArkUI';
 
-   3. @Entry
-   4. @Component
-   5. struct Index {
-   6. scroller: Scroller = new Scroller();
-   7. promptAction: PromptAction = this.getUIContext().getPromptAction();
-
-   9. build() {
-   10. Scroll(this.scroller) {
-   11. Column({ space: 8 }) {
-   12. /*
-   13. 请将$r('app.string.Drag_instructions')替换为实际资源文件，在本示例中该资源文件的value值为"包括上下两层组件，上层组件绑定长按手势，
-   14. 下层组件绑定拖拽。其中上层组件下半区域绑定手势拦截，使该区域响应下层拖拽手势。"
-   15. */
-   16. Text($r('app.string.Drag_instructions')).width('100%').fontSize(20).fontColor('0xffdd00')
-   17. Stack({ alignContent: Alignment.Center }) {
-   18. Column() {
-   19. // 模拟上半区和下半区
-   20. Stack().width('200vp').height('100vp').backgroundColor(Color.Gray)
-   21. Stack().width('200vp').height('100vp').backgroundColor(Color.Blue)
-   22. }.width('200vp').height('200vp')
-
-   24. // Stack的下半区是绑定了滑动手势的图像区域。
-   25. // $r('sys.media.ohos_app_icon') 需要替换为开发者所需的资源文件
-   26. Image($r('sys.media.ohos_app_icon'))
-   27. .draggable(true)
-   28. .onDragStart(() => {
-   29. // 请将$r('app.string.Allow_dragging_prompt')替换为实际资源文件，在本示例中该资源文件的value值为"Drag 下半区蓝色区域，Image响应"
-   30. this.promptAction.showToast({ message: $r('app.string.Allow_dragging_prompt') });
-   31. })
-   32. .width('200vp').height('200vp')
-   33. // Stack的上半区是绑定了长按手势的浮动区域。
-   34. Stack() {
-   35. }
-   36. .width('200vp')
-   37. .height('200vp')
-   38. .hitTestBehavior(HitTestMode.Transparent)
-   39. .gesture(GestureGroup(GestureMode.Parallel,
-   40. LongPressGesture()
-   41. .onAction((event: GestureEvent) => {
-   42. /*
-   43. 请将$r('app.string.Stop_dragging_prompt')替换为实际资源文件，在本示例中
-   44. 该资源文件的value值为"LongPressGesture 长按上半区 红色区域，红色区域响应"
-   45. */
-   46. this.promptAction.showToast({ message: $r('app.string.Stop_dragging_prompt') });
-   47. })
-   48. .tag('longpress')
-   49. ))
-   50. .onGestureJudgeBegin((gestureInfo: GestureInfo, event: BaseGestureEvent) => {
-   51. // 如果是长按类型手势，判断点击的位置是否在上半区
-   52. if (gestureInfo.type == GestureControl.GestureType.LONG_PRESS_GESTURE) {
-   53. if (event.fingerList.length > 0 && event.fingerList[0].localY < 100) {
-   54. return GestureJudgeResult.CONTINUE;
-   55. } else {
-   56. return GestureJudgeResult.REJECT;
-   57. }
-   58. };
-   59. return GestureJudgeResult.CONTINUE;
-   60. })
-   61. }.width('100%')
-   62. }.width('100%')
-   63. }
-   64. }
-   65. }
-   ```
-
-   [CustomGestureDetermination.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/GestureConflict/entry/src/main/ets/Component/CustomGestures/CustomGestureDetermination.ets#L15-L78)
-
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/UG7wMIZwRrK8sSJTF7GPDA/zh-cn_image_0000002589244261.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/JjSbxryqSqWLwazmISjUZw/zh-cn_image_0000002706673820.png)
 
 ## 手势并行动态控制
 
@@ -171,257 +171,443 @@ content_hash: sha256:5aca965c01998e4d30499c821b04f7cf4d25a313a73102cff23dcf0f3ff
 
 **图3** 手势并行动态控制流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/WJe9q3zEQ-6CcqrbwfvwqQ/zh-cn_image_0000002558764454.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/u8Jl5Q6YRcqUx1-8UA9CQQ/zh-cn_image_0000002736432911.png)
 
 手势并行动态控制的前提是手势识别成功，如果手势不成功则不会产生手势回调响应。
 
-1. 业务手势作业流：指真正触发UI变化的业务手势，比如使页面滚动的PanGesture，触发点击的TapGesture等。
+1. 业务手势作业流：指真正触发UI变化的业务手势，比如使页面滚动的[PanGesture](../harmonyos-references/ts-basic-gestures-pangesture.md)，触发点击的[TapGesture](../harmonyos-references/ts-basic-gestures-tapgesture.md)等。
 2. 监听手势作业流：指在监听手势运行的过程中，应根据上下文的业务状态变化动态控制手势识别器的开闭，例如判断组件嵌套滚动过程中是否已滑至边缘。这一监听事件可借助一个使用[并行手势绑定方式](arkts-gesture-events-binding.md#parallelgesture并行手势绑定方法)的PanGesture实现，或者采用Touch事件来完成。
 3. 设置手势并行：此步骤并非必需，典型场景是在嵌套滚动中，设置外部组件的滚动手势与内部的滚动手势并行。
 4. 动态开闭手势：指通过手势识别器的setEnabled方法，控制手势是否响应用户回调。
 
-手势并行动态控制涉及以下接口。
+### 内置手势并行动态控制
 
-| **接口** | **说明** |
+内置手势并行动态控制涉及以下接口。
+
+| 接口 | 说明 |
 | --- | --- |
 | [shouldBuiltInRecognizerParallelWith](../harmonyos-references/ts-gesture-blocking-enhancement.md#shouldbuiltinrecognizerparallelwith) | 用于设置系统组件内置手势与其他手势并行。 |
 | [onGestureRecognizerJudgeBegin](../harmonyos-references/ts-gesture-blocking-enhancement.md#ongesturerecognizerjudgebegin) | 用于手势拦截，获取手势识别器，初始化手势识别器开闭状态。 |
-| [parallelGesture](arkts-gesture-events-binding.md#parallelgesture并行手势绑定方法) | 可使开发者定义的手势，与比他优先级高的手势并行。 |
+| [parallelGesture](arkts-gesture-events-binding.md#parallelgesture并行手势绑定方法) | 可使开发者定义的手势，与比它优先级高的手势并行。 |
 
-以下示例是两个Scroll组件的嵌套滚动场景，使用手势控制的api去控制外部组件和内部组件的嵌套滚动联动。
+以下示例在两个[Scroll](../harmonyos-references/ts-container-scroll.md)组件的嵌套滚动场景下，使用手势控制的接口控制外部组件和内部组件的嵌套滚动联动。
 
 1. 使用shouldBuiltInRecognizerParallelWith接口设置外部Scroll组件的PanGesture手势与内部Scroll组件的PanGesture手势并行。
 
+   ```typescript
+   .shouldBuiltInRecognizerParallelWith((current: GestureRecognizer, others: Array<GestureRecognizer>) => {
+     for (let i = 0; i < others.length; i++) {
+       let target = others[i].getEventTargetInfo();
+       if (target.getId() == 'inner' && others[i].isBuiltIn() && others[i].getType() == GestureControl.GestureType.PAN_GESTURE) { // 找到将要组成并行手势的识别器
+         this.currentRecognizer = current; // 保存当前组件的识别器
+         this.childRecognizer = others[i]; // 保存将要组成并行手势的识别器
+         return others[i]; // 返回和当前手势将要组成并行手势的识别器
+       };
+     };
+     return undefined;
+   })
    ```
-   1. .shouldBuiltInRecognizerParallelWith((current: GestureRecognizer, others: Array<GestureRecognizer>) => {
-   2. for (let i = 0; i < others.length; i++) {
-   3. let target = others[i].getEventTargetInfo();
-   4. if (target.getId() == 'inner' && others[i].isBuiltIn() && others[i].getType() == GestureControl.GestureType.PAN_GESTURE) { // 找到将要组成并行手势的识别器
-   5. this.currentRecognizer = current; // 保存当前组件的识别器
-   6. this.childRecognizer = others[i]; // 保存将要组成并行手势的识别器
-   7. return others[i]; // 返回和当前手势将要组成并行手势的识别器
-   8. };
-   9. };
-   10. return undefined;
-   11. })
-   ```
-
-   [GestureControl.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/GestureConflict/entry/src/main/ets/Component/GestureAndMotionControl/GestureControl.ets#L75-L87)
 2. 使用onGestureRecognizerJudgeBegin接口获取到Scroll组件的PanGesture手势识别器，同时根据内外Scroll组件的边界条件，设置内外手势的开闭状态。
 
+   ```typescript
+   .onGestureRecognizerJudgeBegin((event: BaseGestureEvent, current: GestureRecognizer,
+     others: Array<GestureRecognizer>) => { // 在识别器即将要成功时，根据当前组件状态，设置识别器使能状态
+     let target = current.getEventTargetInfo();
+     if (target && target.getId() == 'outer' && current.isBuiltIn() && current.getType() == GestureControl.GestureType.PAN_GESTURE) {
+       for (let i = 0; i < others.length; i++) {
+         let target = others[i].getEventTargetInfo() as ScrollableTargetInfo;
+         if (target instanceof ScrollableTargetInfo && target.getId() == 'inner') { // 找到响应链上对应并行的识别器
+           let panEvent = event as PanGestureEvent;
+           this.childRecognizer.setEnabled(true);
+           this.currentRecognizer.setEnabled(false);
+           if (target.isEnd()) { // 根据当前组件状态以及移动方向动态控制识别器使能状态
+             if (panEvent && panEvent.offsetY < 0) {
+               this.childRecognizer.setEnabled(false);
+               this.currentRecognizer.setEnabled(true);
+             };
+           } else if (target.isBegin()) {
+             if (panEvent.offsetY > 0) {
+               this.childRecognizer.setEnabled(false);
+               this.currentRecognizer.setEnabled(true);
+             };
+           };
+         };
+       };
+     };
+     return GestureJudgeResult.CONTINUE;
+   })
    ```
-   1. .onGestureRecognizerJudgeBegin((event: BaseGestureEvent, current: GestureRecognizer,
-   2. others: Array<GestureRecognizer>) => { // 在识别器即将要成功时，根据当前组件状态，设置识别器使能状态
-   3. let target = current.getEventTargetInfo();
-   4. if (target && target.getId() == 'outer' && current.isBuiltIn() && current.getType() == GestureControl.GestureType.PAN_GESTURE) {
-   5. for (let i = 0; i < others.length; i++) {
-   6. let target = others[i].getEventTargetInfo() as ScrollableTargetInfo;
-   7. if (target instanceof ScrollableTargetInfo && target.getId() == 'inner') { // 找到响应链上对应并行的识别器
-   8. let panEvent = event as PanGestureEvent;
-   9. this.childRecognizer.setEnabled(true);
-   10. this.currentRecognizer.setEnabled(false);
-   11. if (target.isEnd()) { // 根据当前组件状态以及移动方向动态控制识别器使能状态
-   12. if (panEvent && panEvent.offsetY < 0) {
-   13. this.childRecognizer.setEnabled(false);
-   14. this.currentRecognizer.setEnabled(true);
-   15. };
-   16. } else if (target.isBegin()) {
-   17. if (panEvent.offsetY > 0) {
-   18. this.childRecognizer.setEnabled(false);
-   19. this.currentRecognizer.setEnabled(true);
-   20. };
-   21. };
-   22. };
-   23. };
-   24. };
-   25. return GestureJudgeResult.CONTINUE;
-   26. })
-   ```
-
-   [GestureControl.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/GestureConflict/entry/src/main/ets/Component/GestureAndMotionControl/GestureControl.ets#L90-L117)
 3. 设置监听手势，监听Scroll组件状态，动态调整手势开闭状态，控制手势回调是否触发，从而控制Scroll是否滚动。
 
+   ```typescript
+   .parallelGesture( // 绑定一个Pan手势作为动态控制器
+     PanGesture()
+       .onActionUpdate((event: GestureEvent)=>{
+         if (this.childRecognizer.getState() != GestureRecognizerState.SUCCESSFUL ||
+           this.currentRecognizer.getState() != GestureRecognizerState.SUCCESSFUL) { // 如果识别器状态不是SUCCESSFUL，则不做控制
+           return;
+         };
+         let target = this.childRecognizer.getEventTargetInfo() as ScrollableTargetInfo;
+         let currentTarget = this.currentRecognizer.getEventTargetInfo() as ScrollableTargetInfo;
+         if (target instanceof ScrollableTargetInfo && currentTarget instanceof ScrollableTargetInfo) {
+           this.childRecognizer.setEnabled(true);
+           this.currentRecognizer.setEnabled(false);
+           if (target.isEnd()) { // 在移动过程中实时根据当前组件状态，控制识别器的开闭状态
+             if ((event.offsetY - this.lastOffset) < 0) {
+               this.childRecognizer.setEnabled(false);
+               if (currentTarget.isEnd()) {
+                 this.currentRecognizer.setEnabled(false);
+               } else {
+                 this.currentRecognizer.setEnabled(true);
+               };
+             };
+           } else if (target.isBegin()) {
+             if ((event.offsetY - this.lastOffset) > 0) {
+               this.childRecognizer.setEnabled(false);
+               if (currentTarget.isBegin()) {
+                 this.currentRecognizer.setEnabled(false);
+               } else {
+                 this.currentRecognizer.setEnabled(true);
+               };
+             };
+           };
+         };
+         this.lastOffset = event.offsetY;
+       })
+   )
    ```
-   1. .parallelGesture( // 绑定一个Pan手势作为动态控制器
-   2. PanGesture()
-   3. .onActionUpdate((event: GestureEvent)=>{
-   4. if (this.childRecognizer.getState() != GestureRecognizerState.SUCCESSFUL ||
-   5. this.currentRecognizer.getState() != GestureRecognizerState.SUCCESSFUL) { // 如果识别器状态不是SUCCESSFUL，则不做控制
-   6. return;
-   7. };
-   8. let target = this.childRecognizer.getEventTargetInfo() as ScrollableTargetInfo;
-   9. let currentTarget = this.currentRecognizer.getEventTargetInfo() as ScrollableTargetInfo;
-   10. if (target instanceof ScrollableTargetInfo && currentTarget instanceof ScrollableTargetInfo) {
-   11. this.childRecognizer.setEnabled(true);
-   12. this.currentRecognizer.setEnabled(false);
-   13. if (target.isEnd()) { // 在移动过程中实时根据当前组件状态，控制识别器的开闭状态
-   14. if ((event.offsetY - this.lastOffset) < 0) {
-   15. this.childRecognizer.setEnabled(false);
-   16. if (currentTarget.isEnd()) {
-   17. this.currentRecognizer.setEnabled(false);
-   18. } else {
-   19. this.currentRecognizer.setEnabled(true);
-   20. };
-   21. };
-   22. } else if (target.isBegin()) {
-   23. if ((event.offsetY - this.lastOffset) > 0) {
-   24. this.childRecognizer.setEnabled(false);
-   25. if (currentTarget.isBegin()) {
-   26. this.currentRecognizer.setEnabled(false);
-   27. } else {
-   28. this.currentRecognizer.setEnabled(true);
-   29. };
-   30. };
-   31. };
-   32. };
-   33. this.lastOffset = event.offsetY;
-   34. })
-   35. )
-   ```
-
-   [GestureControl.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/GestureConflict/entry/src/main/ets/Component/GestureAndMotionControl/GestureControl.ets#L119-L155)
 4. 代码完整示例。
 
-   ```
-   1. // xxx.ets
-   2. @Entry
-   3. @Component
-   4. struct FatherControlChild {
-   5. scroller: Scroller = new Scroller();
-   6. scroller2: Scroller = new Scroller();
-   7. private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-   8. private childRecognizer: GestureRecognizer = new GestureRecognizer();
-   9. private currentRecognizer: GestureRecognizer = new GestureRecognizer();
-   10. private lastOffset: number = 0;
+   ```typescript
+   // xxx.ets
+   @Entry
+   @Component
+   struct FatherControlChild {
+     scroller: Scroller = new Scroller();
+     scroller2: Scroller = new Scroller();
+     private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+     private childRecognizer: GestureRecognizer = new GestureRecognizer();
+     private currentRecognizer: GestureRecognizer = new GestureRecognizer();
+     private lastOffset: number = 0;
 
-   12. build() {
-   13. Stack({ alignContent: Alignment.TopStart }) {
-   14. Scroll(this.scroller) { // 外部滚动容器
-   15. Column() {
-   16. Text('Scroll Area')
-   17. .width('90%')
-   18. .height(150)
-   19. .backgroundColor(0xFFFFFF)
-   20. .borderRadius(15)
-   21. .fontSize(16)
-   22. .textAlign(TextAlign.Center)
-   23. .margin({ top: 10 })
-   24. Scroll(this.scroller2) { // 内部滚动容器
-   25. Column() {
-   26. Text('Scroll Area2')
-   27. .width('90%')
-   28. .height(150)
-   29. .backgroundColor(0xFFFFFF)
-   30. .borderRadius(15)
-   31. .fontSize(16)
-   32. .textAlign(TextAlign.Center)
-   33. .margin({ top: 10 })
-   34. Column() {
-   35. ForEach(this.arr, (item: number) => {
-   36. Text(item.toString())
-   37. .width('90%')
-   38. .height(150)
-   39. .backgroundColor(0xFFFFFF)
-   40. .borderRadius(15)
-   41. .fontSize(16)
-   42. .textAlign(TextAlign.Center)
-   43. .margin({ top: 10 })
-   44. }, (item: string) => item)
-   45. }.width('100%')
-   46. }
-   47. }
-   48. .id('inner')
-   49. .width('100%')
-   50. .height(800)
-   51. }.width('100%')
-   52. }
-   53. .id('outer')
-   54. .height(600)
-   55. .scrollable(ScrollDirection.Vertical) // 滚动方向纵向
-   56. .scrollBar(BarState.On) // 滚动条常驻显示
-   57. .scrollBarColor(Color.Gray) // 滚动条颜色
-   58. .scrollBarWidth(10) // 滚动条宽度
-   59. .edgeEffect(EdgeEffect.None)
-   60. .shouldBuiltInRecognizerParallelWith((current: GestureRecognizer, others: Array<GestureRecognizer>) => {
-   61. for (let i = 0; i < others.length; i++) {
-   62. let target = others[i].getEventTargetInfo();
-   63. if (target.getId() == 'inner' && others[i].isBuiltIn() &&
-   64. others[i].getType() == GestureControl.GestureType.PAN_GESTURE) { // 找到将要组成并行手势的识别器
-   65. this.currentRecognizer = current; // 保存当前组件的识别器
-   66. this.childRecognizer = others[i]; // 保存将要组成并行手势的识别器
-   67. return others[i]; // 返回和当前手势将要组成并行手势的识别器
-   68. }
-   69. }
-   70. return undefined;
-   71. })
-   72. .onGestureRecognizerJudgeBegin((event: BaseGestureEvent, current: GestureRecognizer,
-   73. others: Array<GestureRecognizer>) => { // 在识别器即将要成功时，根据当前组件状态，设置识别器使能状态
-   74. let target = current.getEventTargetInfo();
-   75. if (target && target.getId() == 'outer' && current.isBuiltIn() &&
-   76. current.getType() == GestureControl.GestureType.PAN_GESTURE) {
-   77. for (let i = 0; i < others.length; i++) {
-   78. let target = others[i].getEventTargetInfo() as ScrollableTargetInfo;
-   79. if (target instanceof ScrollableTargetInfo && target.getId() == 'inner') { // 找到响应链上对应并行的识别器
-   80. let panEvent = event as PanGestureEvent;
-   81. this.childRecognizer.setEnabled(true);
-   82. this.currentRecognizer.setEnabled(false);
-   83. if (target.isEnd()) { // 根据当前组件状态以及移动方向动态控制识别器使能状态
-   84. if (panEvent && panEvent.offsetY < 0) {
-   85. this.childRecognizer.setEnabled(false);
-   86. this.currentRecognizer.setEnabled(true);
-   87. }
-   88. } else if (target.isBegin()) {
-   89. if (panEvent.offsetY > 0) {
-   90. this.childRecognizer.setEnabled(false);
-   91. this.currentRecognizer.setEnabled(true);
-   92. }
-   93. }
-   94. }
-   95. }
-   96. }
-   97. return GestureJudgeResult.CONTINUE;
-   98. })
-   99. .parallelGesture( // 绑定一个Pan手势作为动态控制器
-   100. PanGesture()
-   101. .onActionUpdate((event: GestureEvent) => {
-   102. if (this.childRecognizer?.getState() != GestureRecognizerState.SUCCESSFUL ||
-   103. this.currentRecognizer?.getState() != GestureRecognizerState.SUCCESSFUL) { // 如果识别器状态不是SUCCESSFUL，则不做控制
-   104. return;
-   105. }
-   106. let target = this.childRecognizer.getEventTargetInfo() as ScrollableTargetInfo;
-   107. let currentTarget = this.currentRecognizer.getEventTargetInfo() as ScrollableTargetInfo;
-   108. if (target instanceof ScrollableTargetInfo && currentTarget instanceof ScrollableTargetInfo) {
-   109. this.childRecognizer.setEnabled(true);
-   110. this.currentRecognizer.setEnabled(false);
-   111. if (target.isEnd()) { // 在移动过程中实时根据当前组件状态，控制识别器的开闭状态
-   112. if ((event.offsetY - this.lastOffset) < 0) {
-   113. this.childRecognizer.setEnabled(false);
-   114. if (currentTarget.isEnd()) {
-   115. this.currentRecognizer.setEnabled(false);
-   116. } else {
-   117. this.currentRecognizer.setEnabled(true);
-   118. };
-   119. };
-   120. } else if (target.isBegin()) {
-   121. if ((event.offsetY - this.lastOffset) > 0) {
-   122. this.childRecognizer.setEnabled(false)
-   123. if (currentTarget.isBegin()) {
-   124. this.currentRecognizer.setEnabled(false);
-   125. } else {
-   126. this.currentRecognizer.setEnabled(true);
-   127. };
-   128. };
-   129. };
-   130. };
-   131. this.lastOffset = event.offsetY;
-   132. })
-   133. )
-   134. }.width('100%').height('100%').backgroundColor(0xDCDCDC)
-   135. }
-   136. }
+     build() {
+       Stack({ alignContent: Alignment.TopStart }) {
+         Scroll(this.scroller) { // 外部滚动容器
+           Column() {
+             Text('Scroll Area')
+               .width('90%')
+               .height(150)
+               .backgroundColor(0xFFFFFF)
+               .borderRadius(15)
+               .fontSize(16)
+               .textAlign(TextAlign.Center)
+               .margin({ top: 10 })
+             Scroll(this.scroller2) { // 内部滚动容器
+               Column() {
+                 Text('Scroll Area2')
+                   .width('90%')
+                   .height(150)
+                   .backgroundColor(0xFFFFFF)
+                   .borderRadius(15)
+                   .fontSize(16)
+                   .textAlign(TextAlign.Center)
+                   .margin({ top: 10 })
+                 Column() {
+                   ForEach(this.arr, (item: number) => {
+                     Text(item.toString())
+                       .width('90%')
+                       .height(150)
+                       .backgroundColor(0xFFFFFF)
+                       .borderRadius(15)
+                       .fontSize(16)
+                       .textAlign(TextAlign.Center)
+                       .margin({ top: 10 })
+                   }, (item: string) => item)
+                 }.width('100%')
+               }
+             }
+             .id('inner')
+             .width('100%')
+             .height(800)
+           }.width('100%')
+         }
+         .id('outer')
+         .height(600)
+         .scrollable(ScrollDirection.Vertical) // 滚动方向纵向
+         .scrollBar(BarState.On) // 滚动条常驻显示
+         .scrollBarColor(Color.Gray) // 滚动条颜色
+         .scrollBarWidth(10) // 滚动条宽度
+         .edgeEffect(EdgeEffect.None)
+         .shouldBuiltInRecognizerParallelWith((current: GestureRecognizer, others: Array<GestureRecognizer>) => {
+           for (let i = 0; i < others.length; i++) {
+             let target = others[i].getEventTargetInfo();
+             if (target.getId() == 'inner' && others[i].isBuiltIn() &&
+               others[i].getType() == GestureControl.GestureType.PAN_GESTURE) { // 找到将要组成并行手势的识别器
+               this.currentRecognizer = current; // 保存当前组件的识别器
+               this.childRecognizer = others[i]; // 保存将要组成并行手势的识别器
+               return others[i]; // 返回和当前手势将要组成并行手势的识别器
+             }
+           }
+           return undefined;
+         })
+         .onGestureRecognizerJudgeBegin((event: BaseGestureEvent, current: GestureRecognizer,
+           others: Array<GestureRecognizer>) => { // 在识别器即将要成功时，根据当前组件状态，设置识别器使能状态
+           let target = current.getEventTargetInfo();
+           if (target && target.getId() == 'outer' && current.isBuiltIn() &&
+             current.getType() == GestureControl.GestureType.PAN_GESTURE) {
+             for (let i = 0; i < others.length; i++) {
+               let target = others[i].getEventTargetInfo() as ScrollableTargetInfo;
+               if (target instanceof ScrollableTargetInfo && target.getId() == 'inner') { // 找到响应链上对应并行的识别器
+                 let panEvent = event as PanGestureEvent;
+                 this.childRecognizer.setEnabled(true);
+                 this.currentRecognizer.setEnabled(false);
+                 if (target.isEnd()) { // 根据当前组件状态以及移动方向动态控制识别器使能状态
+                   if (panEvent && panEvent.offsetY < 0) {
+                     this.childRecognizer.setEnabled(false);
+                     this.currentRecognizer.setEnabled(true);
+                   }
+                 } else if (target.isBegin()) {
+                   if (panEvent.offsetY > 0) {
+                     this.childRecognizer.setEnabled(false);
+                     this.currentRecognizer.setEnabled(true);
+                   }
+                 }
+               }
+             }
+           }
+           return GestureJudgeResult.CONTINUE;
+         })
+         .parallelGesture( // 绑定一个Pan手势作为动态控制器
+           PanGesture()
+             .onActionUpdate((event: GestureEvent) => {
+               if (this.childRecognizer?.getState() != GestureRecognizerState.SUCCESSFUL ||
+                 this.currentRecognizer?.getState() != GestureRecognizerState.SUCCESSFUL) { // 如果识别器状态不是SUCCESSFUL，则不做控制
+                 return;
+               }
+               let target = this.childRecognizer.getEventTargetInfo() as ScrollableTargetInfo;
+               let currentTarget = this.currentRecognizer.getEventTargetInfo() as ScrollableTargetInfo;
+               if (target instanceof ScrollableTargetInfo && currentTarget instanceof ScrollableTargetInfo) {
+                 this.childRecognizer.setEnabled(true);
+                 this.currentRecognizer.setEnabled(false);
+                 if (target.isEnd()) { // 在移动过程中实时根据当前组件状态，控制识别器的开闭状态
+                   if ((event.offsetY - this.lastOffset) < 0) {
+                     this.childRecognizer.setEnabled(false);
+                     if (currentTarget.isEnd()) {
+                       this.currentRecognizer.setEnabled(false);
+                     } else {
+                       this.currentRecognizer.setEnabled(true);
+                     };
+                   };
+                 } else if (target.isBegin()) {
+                   if ((event.offsetY - this.lastOffset) > 0) {
+                     this.childRecognizer.setEnabled(false)
+                     if (currentTarget.isBegin()) {
+                       this.currentRecognizer.setEnabled(false);
+                     } else {
+                       this.currentRecognizer.setEnabled(true);
+                     };
+                   };
+                 };
+               };
+               this.lastOffset = event.offsetY;
+             })
+         )
+       }.width('100%').height('100%').backgroundColor(0xDCDCDC)
+     }
+   }
    ```
 
-   [GestureAndMotionControl.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/GestureConflict/entry/src/main/ets/Component/GestureAndMotionControl/GestureAndMotionControl.ets#L16-L153)
+### 非内置手势并行动态控制
+
+从API版本26.0.0开始，可以使用shouldRecognizerParallelWith接口设置非内置手势与其他手势并行。
+
+非内置手势并行动态控制涉及以下接口。
+
+| 接口 | 说明 |
+| --- | --- |
+| [shouldRecognizerParallelWith](../harmonyos-references/ts-gesture-blocking-enhancement.md#shouldrecognizerparallelwith) | 用于设置组件非内置手势与其他手势并行。 |
+| [onGestureRecognizerJudgeBegin](../harmonyos-references/ts-gesture-blocking-enhancement.md#ongesturerecognizerjudgebegin) | 用于获取手势识别器，再通过控制手势识别器开闭状态拦截手势。 |
+
+以下示例在嵌套滚动场景下，使用手势控制的接口控制外部的Column组件和内部的Scroll组件的嵌套滚动联动。
+
+1. 使用shouldRecognizerParallelWith接口设置外部Column组件的非内置PanGesture手势与内部Scroll组件的内置PanGesture手势并行。
+
+   ```typescript
+   .shouldRecognizerParallelWith((current: GestureRecognizer, others: Array<GestureRecognizer>) => {
+     for (let i = 0; i < others.length; i++) {
+       let target = others[i].getEventTargetInfo();
+       if (target) {
+         if (target.getId() == 'inner' && others[i].isBuiltIn() &&
+           others[i].getType() == GestureControl.GestureType.PAN_GESTURE) { // 找到将要组成并行手势的识别器
+           this.currentRecognizer = current; // 保存当前组件的识别器
+           this.childRecognizer = others[i]; // 保存将要组成并行手势的识别器
+           return others[i]; // 返回将要组成并行手势的识别器
+         }
+       }
+     }
+     return undefined;
+   })
+   ```
+2. 使用onGestureRecognizerJudgeBegin接口获取到Column和Scroll组件的PanGesture手势识别器，同时根据内外组件的边界条件，设置内外手势的开闭状态。
+
+   ```typescript
+   .onGestureRecognizerJudgeBegin((event: BaseGestureEvent, current: GestureRecognizer,
+     others: Array<GestureRecognizer>) => { // 在识别器即将要成功时，根据当前组件状态，设置识别器使能状态
+     let target = current.getEventTargetInfo();
+     if (target && target.getId() == 'outer' &&
+       current.getType() == GestureControl.GestureType.PAN_GESTURE) {
+       for (let i = 0; i < others.length; i++) {
+         let target = others[i].getEventTargetInfo();
+         if (target instanceof ScrollableTargetInfo && target.getId() == 'inner') { // 找到响应链上对应并行的识别器
+           let panEvent = event as PanGestureEvent;
+           if (target.isEnd()) { // 根据当前组件状态以及移动方向动态控制识别器使能状态
+             if (panEvent && panEvent.offsetY < 0) {
+               this.childRecognizer.setEnabled(false);
+               this.currentRecognizer.setEnabled(true);
+             } else {
+               this.childRecognizer.setEnabled(true);
+               this.currentRecognizer.setEnabled(false);
+             }
+           } else if (target.isBegin()) {
+             if (panEvent.offsetY > 0) {
+               this.childRecognizer.setEnabled(false);
+               this.currentRecognizer.setEnabled(true);
+             } else {
+               this.childRecognizer.setEnabled(true);
+               this.currentRecognizer.setEnabled(false);
+             }
+           } else {
+             this.childRecognizer.setEnabled(true);
+             this.currentRecognizer.setEnabled(false);
+           }
+         }
+       }
+     }
+     return GestureJudgeResult.CONTINUE;
+   })
+   ```
+3. 代码完整示例。
+
+   ```typescript
+   @Entry
+   @Component
+   struct CustomGestureControlGroup {
+     @State offsetY: number = 0
+     scroller2: Scroller = new Scroller();
+     private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+     private childRecognizer: GestureRecognizer = new GestureRecognizer();
+     private currentRecognizer: GestureRecognizer = new GestureRecognizer();
+     private lastOffset: number = 0;
+
+     build() {
+       Stack({ alignContent: Alignment.TopStart }) {
+         Column() { // 外部滚动容器
+           Column() {
+             Text('Scroll Area')
+               .width('90%')
+               .height(150)
+               .backgroundColor(0xFFFFFF)
+               .borderRadius(15)
+               .fontSize(16)
+               .textAlign(TextAlign.Center)
+               .margin({ top: 10 })
+             Scroll(this.scroller2) { // 内部滚动容器
+               Column() {
+                 Text('Scroll Area2')
+                   .width('90%')
+                   .height(150)
+                   .backgroundColor(0xFFFFFF)
+                   .borderRadius(15)
+                   .fontSize(16)
+                   .textAlign(TextAlign.Center)
+                   .margin({ top: 10 })
+                 Column() {
+                   ForEach(this.arr, (item: number) => {
+                     Text(item.toString())
+                       .width('90%')
+                       .height(150)
+                       .backgroundColor(0xFFFFFF)
+                       .borderRadius(15)
+                       .fontSize(16)
+                       .textAlign(TextAlign.Center)
+                       .margin({ top: 10 })
+                   }, (item: string) => item)
+                 }.width('100%')
+               }
+             }
+             .id('inner')
+             .width('100%')
+             .height(800)
+           }
+           .width('100%')
+           .offset({ y: -this.offsetY })
+         }
+         .id('outer')
+         .height(600)
+         .clip(true)
+         .gesture(
+           PanGesture()
+             .onActionStart((event: GestureEvent) => {
+               this.lastOffset = this.offsetY // 手势开始时，记录当前滚动位置
+             })
+             .onActionUpdate((event: GestureEvent) => {
+               let moveY = event.offsetY; // 手势移动时，计算新位置
+               let targetOffset = this.lastOffset - moveY; // 目标位置 = 初始位置 - 移动距离
+               this.offsetY = Math.max(0, Math.min(360, targetOffset));
+             })
+         )
+         .shouldRecognizerParallelWith((current: GestureRecognizer, others: Array<GestureRecognizer>) => {
+           for (let i = 0; i < others.length; i++) {
+             let target = others[i].getEventTargetInfo();
+             if (target) {
+               if (target.getId() == 'inner' && others[i].isBuiltIn() &&
+                 others[i].getType() == GestureControl.GestureType.PAN_GESTURE) { // 找到将要组成并行手势的识别器
+                 this.currentRecognizer = current; // 保存当前组件的识别器
+                 this.childRecognizer = others[i]; // 保存将要组成并行手势的识别器
+                 return others[i]; // 返回将要组成并行手势的识别器
+               }
+             }
+           }
+           return undefined;
+         })
+         .onGestureRecognizerJudgeBegin((event: BaseGestureEvent, current: GestureRecognizer,
+           others: Array<GestureRecognizer>) => { // 在识别器即将要成功时，根据当前组件状态，设置识别器使能状态
+           let target = current.getEventTargetInfo();
+           if (target && target.getId() == 'outer' &&
+             current.getType() == GestureControl.GestureType.PAN_GESTURE) {
+             for (let i = 0; i < others.length; i++) {
+               let target = others[i].getEventTargetInfo();
+               if (target instanceof ScrollableTargetInfo && target.getId() == 'inner') { // 找到响应链上对应并行的识别器
+                 let panEvent = event as PanGestureEvent;
+                 if (target.isEnd()) { // 根据当前组件状态以及移动方向动态控制识别器使能状态
+                   if (panEvent && panEvent.offsetY < 0) {
+                     this.childRecognizer.setEnabled(false);
+                     this.currentRecognizer.setEnabled(true);
+                   } else {
+                     this.childRecognizer.setEnabled(true);
+                     this.currentRecognizer.setEnabled(false);
+                   }
+                 } else if (target.isBegin()) {
+                   if (panEvent.offsetY > 0) {
+                     this.childRecognizer.setEnabled(false);
+                     this.currentRecognizer.setEnabled(true);
+                   } else {
+                     this.childRecognizer.setEnabled(true);
+                     this.currentRecognizer.setEnabled(false);
+                   }
+                 } else {
+                   this.childRecognizer.setEnabled(true);
+                   this.currentRecognizer.setEnabled(false);
+                 }
+               }
+             }
+           }
+           return GestureJudgeResult.CONTINUE;
+         })
+       }.width('100%').height('100%').backgroundColor(0xDCDCDC)
+     }
+   }
+   ```
 
 ## 阻止手势参与识别
 
@@ -431,57 +617,51 @@ content_hash: sha256:5aca965c01998e4d30499c821b04f7cf4d25a313a73102cff23dcf0f3ff
 
 根据手势类型进行禁用：
 
+```typescript
+.onTouchTestDone((event, recognizers) => {
+  for (let i = 0; i < recognizers.length; i++) {
+    let recognizer = recognizers[i];
+    // 根据类型禁用所有滑动手势
+    if (recognizer.getType() == GestureControl.GestureType.PAN_GESTURE) {
+      recognizer.preventBegin();
+    };
+  };
+})
 ```
-1. .onTouchTestDone((event, recognizers) => {
-2. for (let i = 0; i < recognizers.length; i++) {
-3. let recognizer = recognizers[i];
-4. // 根据类型禁用所有滑动手势
-5. if (recognizer.getType() == GestureControl.GestureType.PAN_GESTURE) {
-6. recognizer.preventBegin();
-7. };
-8. };
-9. })
-```
-
-[PreventIdentification.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/GestureConflict/entry/src/main/ets/Component/PreventGestureRecognition/PreventIdentification.ets#L182-L192)
 
 根据手势所归属的组件禁用：
 
 组件需要提前通过通用属性[id](../harmonyos-references/ts-universal-attributes-component-id.md#id)配置组件标识。
 
+```typescript
+.onTouchTestDone((event, recognizers) => {
+  for (let i = 0; i < recognizers.length; i++) {
+    let recognizer = recognizers[i];
+    // 禁用掉标识为myID的组件上的所有手势
+    if (recognizer.getEventTargetInfo().getId() == 'myID') {
+      recognizer.preventBegin();
+    };
+  };
+})
 ```
-1. .onTouchTestDone((event, recognizers) => {
-2. for (let i = 0; i < recognizers.length; i++) {
-3. let recognizer = recognizers[i];
-4. // 禁用掉标识为myID的组件上的所有手势
-5. if (recognizer.getEventTargetInfo().getId() == 'myID') {
-6. recognizer.preventBegin();
-7. };
-8. };
-9. })
-```
-
-[PreventIdentification.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/GestureConflict/entry/src/main/ets/Component/PreventGestureRecognition/PreventIdentification.ets#L194-L204)
 
 根据是否系统内置手势禁用：
 
+```typescript
+.onTouchTestDone((event, recognizers) => {
+  for (let i = 0; i < recognizers.length; i++) {
+    let recognizer = recognizers[i];
+    // 禁用掉所有系统内置的手势
+    if (recognizer.isBuiltIn()) {
+      recognizer.preventBegin();
+    };
+  };
+})
 ```
-1. .onTouchTestDone((event, recognizers) => {
-2. for (let i = 0; i < recognizers.length; i++) {
-3. let recognizer = recognizers[i];
-4. // 禁用掉所有系统内置的手势
-5. if (recognizer.isBuiltIn()) {
-6. recognizer.preventBegin();
-7. };
-8. };
-9. })
-```
-
-[PreventIdentification.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/GestureConflict/entry/src/main/ets/Component/PreventGestureRecognition/PreventIdentification.ets#L206-L216)
 
 根据具体情况组合使用这些条件。
 
-说明
+**说明** 
 
 系统由内向外执行节点上的onTouchTestDone回调。
 
@@ -503,247 +683,423 @@ content_hash: sha256:5aca965c01998e4d30499c821b04f7cf4d25a313a73102cff23dcf0f3ff
 
 以下为完整示例代码：
 
+```typescript
+@Entry
+@ComponentV2
+struct Index {
+  @Local progress: number = 496000; // 初始进度，毫秒
+  @Local total: number = 27490000; // 总时长，毫秒
+  @Local currentWidth: string = '100%';
+  @Local currentHeight: string = '100%';
+  @Local playbackProgress: string = '';
+  private currentPosX: number = 0;
+  private currentPosY: number = 0;
+  private currentFullScreenState: boolean = true;
+  private normalPlayTimer: number = -1;
+  private isPlaying: boolean = true;
+  private fastForwardTimer: number = -1;
+  private context = this.getUIContext().getHostContext()
+
+  aboutToAppear(): void {
+    // 请将$r('app.string.Playback_progress')替换为实际资源文件，在本示例中该资源文件的value值为"播放进度"
+    try {
+      this.playbackProgress = this.context!.resourceManager.getStringSync($r('app.string.Playback_progress').id);
+    } catch (error) {
+      console.error('Get play back progress failed!');
+    }
+    // 启动一个周期性定时器每隔一秒刷新一次进度
+    this.startNormalPlayTimer();
+  };
+
+  startNormalPlayTimer(): void {
+    if (this.normalPlayTimer != -1) {
+      this.stopNormalPlayTimer()
+    };
+    this.normalPlayTimer = setInterval(() => {
+      this.progress = this.progress + 1000
+    }, 1000);
+  };
+
+  stopNormalPlayTimer(): void {
+    if (this.normalPlayTimer == -1) {
+      return;
+    };
+    clearInterval(this.normalPlayTimer);
+    this.normalPlayTimer = -1;
+  };
+
+  startFastForwardTimer(): void {
+    if (this.fastForwardTimer != -1) {
+      this.stopFastForwardTimer();
+    };
+    this.fastForwardTimer = setInterval(() => {
+      this.progress = this.progress + 100000;
+    }, 100);
+  };
+
+  stopFastForwardTimer(): void {
+    if (this.fastForwardTimer == -1) {
+      return;
+    };
+    clearInterval(this.fastForwardTimer);
+    this.fastForwardTimer = -1;
+  };
+
+  showMessage(message: string): void {
+    try {
+      this.getUIContext().getPromptAction().showToast({ message: message, alignment: Alignment.Center });
+    } catch (error) {
+      console.error('ShowToast failed!');
+    }
+  };
+
+  resetPosInfo(): void {
+    this.currentPosX = 0;
+    this.currentPosY = 0;
+  };
+
+  toggleFullScreenState(): void {
+    this.currentFullScreenState = !this.currentFullScreenState;
+    if (this.currentFullScreenState) {
+      this.currentWidth = '100%';
+      this.currentHeight = '100%';
+    } else {
+      this.currentWidth = '100%';
+      this.currentHeight = '50%';
+    };
+    // 请将$r('app.string.Play_full_screen')替换为实际资源文件，在本示例中该资源文件的value值为"全屏播放"
+    // 请将$r('app.string.Exit_play_full_screen')替换为实际资源文件，在本示例中该资源文件的value值为"取消全屏播放"
+    try {
+      this.showMessage(this.currentFullScreenState
+        ? this.context!.resourceManager.getStringSync($r('app.string.Play_full_screen').id)
+        : this.context!.resourceManager.getStringSync($r('app.string.Exit_play_full_screen').id));
+    } catch (error) {
+      console.error('GetStringSync failed!');
+    }
+  };
+
+  togglePlayAndPause(): void {
+    this.isPlaying = !this.isPlaying;
+    if (!this.isPlaying) {
+      this.stopNormalPlayTimer();
+    } else {
+      // 重新启动
+      this.startNormalPlayTimer();
+    };
+    // 请将$r('app.string.stop_playing')替换为实际资源文件，在本示例中该资源文件的value值为"暂停播放"
+    // 请将$r('app.string.Continue_playing')替换为实际资源文件，在本示例中该资源文件的value值为"继续播放"
+    try {
+      this.showMessage(this.isPlaying
+        ? this.context!.resourceManager.getStringSync($r('app.string.stop_playing').id)
+        : this.context!.resourceManager.getStringSync($r('app.string.Continue_playing').id));
+    } catch (error) {
+      console.error('GetStringSync failed!');
+    }
+  };
+
+  doFastForward(start: boolean): void {
+    if (!start) { // 停止快进，恢复正常播放
+      this.stopFastForwardTimer();
+      this.startNormalPlayTimer();
+      // 请将$r('app.string.Cancel_FastForwarding')替换为实际资源文件，在本示例中该资源文件的value值为"取消快进"
+      try {
+        this.showMessage(
+          this.context!.resourceManager.getStringSync($r('app.string.Cancel_FastForwarding').id));
+      } catch (error) {
+        console.error('GetStringSync failed!');
+      }
+      return;
+    };
+
+    this.stopNormalPlayTimer();
+    this.startFastForwardTimer();
+    // 请将$r('app.string.Start_FastForwarding')替换为实际资源文件，在本示例中该资源文件的value值为"开始快进"
+    try {
+      this.showMessage(
+        this.context!.resourceManager.getStringSync($r('app.string.Start_FastForwarding').id));
+    } catch (error) {
+      console.error('GetStringSync failed!');
+    }
+  };
+
+  updateBrightness(start: boolean, event: BaseGestureEvent): void {
+    let newY = event.fingerList[0].localY;
+    if (start) {
+      this.currentPosY = newY;
+      // 请将$r('app.string.Start_adjusting_brightness')替换为实际资源文件，在本示例中该资源文件的value值为"开始调整 亮度"
+      try {
+        this.showMessage(this.context!.resourceManager
+          .getStringSync($r('app.string.Start_adjusting_brightness').id));
+      } catch (error) {
+        console.error('GetStringSync failed!');
+      }
+      return;
+    };
+    let offsetY = newY - this.currentPosY;
+    if (Math.abs(offsetY) > 10) {
+      // 请将$r('app.string.Reduce_brightness')替换为实际资源文件，在本示例中该资源文件的value值为"降低亮度"
+      // 请将$r('app.string.Increase_brightness')替换为实际资源文件，在本示例中该资源文件的value值为"提高亮度"
+      try {
+        this.showMessage((offsetY > 0)
+          ? this.context!.resourceManager.getStringSync($r('app.string.Reduce_brightness').id)
+          : this.context!.resourceManager.getStringSync($r('app.string.Increase_brightness').id))
+      } catch (error) {
+        console.error('GetStringSync failed!');
+      }
+      this.currentPosY = newY;
+    };
+  };
+
+  updateProgress(start: boolean, event: BaseGestureEvent): void {
+    let newX = event.fingerList[0].localX;
+    if (start) {
+      this.currentPosX = newX;
+      // 请将$r('app.string.Adjust_schedule')替换为实际资源文件，在本示例中该资源文件的value值为"开始调整 进度"
+      try {
+        this.showMessage(this.context!.resourceManager
+          .getStringSync($r('app.string.Adjust_schedule').id));
+      } catch (error) {
+        console.error('GetStringSync failed!');
+      }
+      return;
+    };
+    let offsetX = newX - this.currentPosX;
+    this.progress = Math.floor(this.progress + offsetX * 10000);
+    this.currentPosX = newX;
+  };
+
+  build() {
+    Stack({ alignContent: Alignment.Center }) {
+      Column() {
+        Column() {
+          Text(this.playbackProgress + this.progress)
+        }
+        .width('100%').height('90%')
+
+        Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
+          Slider({
+            value: this.progress,
+            min: 0,
+            max: this.total,
+            style: SliderStyle.OutSet
+          })
+            .onChange((value: number, mode: SliderChangeMode) => {
+              this.progress = value;
+            })
+            .id('progress_layer')
+            .onTouchTestDone((event, allRecognizers: Array<GestureRecognizer>) => {
+              for (let i = 0; i < allRecognizers.length; i++) {
+                let recognizer = allRecognizers[i];
+                let inspectorInfo = recognizer.getEventTargetInfo().getId();
+                if (inspectorInfo !== 'progress_layer') {
+                  // 用户操作到进度条区域时，禁用掉所有非progress_layer上的手势
+                  recognizer.preventBegin();
+                };
+              };
+            })
+            .margin({ left: 5 })
+            .trackColor(Color.Blue)
+            .blockColor(Color.Gray)
+            .selectedColor(Color.White)
+            .trackThickness(2)
+            .flexShrink(1)
+            .flexGrow(1)
+        }
+        .flexGrow(1)
+        .flexShrink(1)
+        .id('id_progress_view')
+      }
+    }
+    .id('video_layer')
+    .backgroundColor('#E0E0E0')
+    .gesture(
+      GestureGroup(GestureMode.Exclusive,
+        PanGesture({ direction: PanDirection.Vertical, distance: 10 })
+          .tag('pan_for_brightness_control')
+          .onActionStart((event) => {
+            this.updateBrightness(true, event);
+          })
+          .onActionUpdate((event) => {
+            this.updateBrightness(false, event);
+          }),
+        PanGesture({ direction: PanDirection.Horizontal, distance: 10 })
+          .tag('pan_for_play_progress_control')
+          .onActionStart((event) => {
+            this.updateProgress(true, event);
+          })
+          .onActionUpdate((event) => {
+            this.updateProgress(false, event);
+          }),
+
+        LongPressGesture()
+          .tag('long_press_for_fast_forward_control')
+          .onAction(() => {
+            this.doFastForward(true); // 开始快进
+          })
+          .onActionEnd(() => {
+            this.doFastForward(false); // 停止快进
+          })
+          .onActionCancel(() => {
+            this.doFastForward(false);
+          }),
+
+        TapGesture({ count: 2 })
+          .tag('double_tap_on_video')
+          .onAction(() => {
+            this.toggleFullScreenState();
+          }),
+
+        TapGesture()
+          .tag('single_tap_on_video')
+          .onAction(() => {
+            this.togglePlayAndPause();
+          })
+      )
+    )
+    .width(this.currentWidth)
+    .height(this.currentHeight)
+  }
+}
 ```
-1. @Entry
-2. @ComponentV2
-3. struct Index {
-4. @Local progress: number = 496000; // 初始进度，秒
-5. @Local total: number = 27490000; // 总时长，秒
-6. @Local currentWidth: string = '100%';
-7. @Local currentHeight: string = '100%';
-8. private currentPosX: number = 0;
-9. private currentPosY: number = 0;
-10. private currentFullScreenState: boolean = true;
-11. private normalPlayTimer: number = -1;
-12. private isPlaying: boolean = true;
-13. private fastForwardTimer: number = -1;
-14. private context = this.getUIContext().getHostContext()
 
-16. aboutToAppear(): void {
-17. // 启动一个周期性定时器每隔一秒刷新一次进度
-18. this.startNormalPlayTimer();
-19. };
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/zWR4jX2DRj-wmqI02KrCXA/zh-cn_image_0000002706833756.gif)
 
-21. startNormalPlayTimer(): void {
-22. if (this.normalPlayTimer != -1) {
-23. this.stopNormalPlayTimer()
-24. };
-25. this.normalPlayTimer = setInterval(() => {
-26. this.progress = this.progress + 1000
-27. }, 1000);
-28. };
+## 自定义干预事件和手势的收集结果
 
-30. stopNormalPlayTimer(): void {
-31. if (this.normalPlayTimer == -1) {
-32. return;
-33. };
-34. clearInterval(this.normalPlayTimer);
-35. this.normalPlayTimer = -1;
-36. };
+从API版本26.0.0开始，在手势、触摸事件发起时，系统会收集已绑定手势和触摸识别器的识别结果。开发者可以通过onGestureCollectIntercept回调对收集结果进行干预，通过返回不同的干预策略来动态控制识别结果的收集行为，例如阻止触摸事件向父组件透传、丢弃当前节点的手势等。
 
-38. startFastForwardTimer(): void {
-39. if (this.fastForwardTimer != -1) {
-40. this.stopFastForwardTimer();
-41. };
-42. this.fastForwardTimer = setInterval(() => {
-43. this.progress = this.progress + 100000;
-44. }, 100);
-45. };
+手势收集干预涉及以下接口。
 
-47. stopFastForwardTimer(): void {
-48. if (this.fastForwardTimer == -1) {
-49. return;
-50. };
-51. clearInterval(this.fastForwardTimer);
-52. this.fastForwardTimer = -1;
-53. };
+| 接口 | 说明 |
+| --- | --- |
+| [onGestureCollectIntercept](../harmonyos-references/ts-gesture-blocking-enhancement.md#ongesturecollectintercept) | 在当前节点及更高优先级节点上的事件和手势被收集完成后触发该回调。回调返回干预策略，控制后续收集流程。 |
+| [getUniqueId](../harmonyos-references/ts-gesture-common.md#getuniqueid) | 通过识别器的[getEventTargetInfo()](../harmonyos-references/ts-gesture-common.md#geteventtargetinfo12)获取的组件信息对象上调用，返回当前组件的唯一数字ID，可用于与其他组件的唯一ID进行比对。 |
+| [isHostBelongsTo](../harmonyos-references/ts-gesture-common.md#ishostbelongsto) | 判断当前手势或触摸识别器绑定的节点是否为指定组件的后代节点。传入组件的唯一ID，返回布尔值。该接口在[GestureRecognizer](../harmonyos-references/ts-gesture-common.md#gesturerecognizer12)和[TouchRecognizer](../harmonyos-references/ts-gesture-common.md#touchrecognizer20)上均可调用。 |
 
-55. showMessage(message: string): void {
-56. this.getUIContext().getPromptAction().showToast({ message: message, alignment: Alignment.Center });
-57. };
+下面通过示例介绍如何实现自定义干预事件和手势的收集结果。示例中构建了如下组件树。
 
-59. resetPosInfo(): void {
-60. this.currentPosX = 0;
-61. this.currentPosY = 0;
-62. };
+```mermaid
+graph TD
+    A((outerColumn))
+    B((innerColumn))
+    C((Row))
+    D((Button1))
+    E((Button2))
 
-64. toggleFullScreenState(): void {
-65. this.currentFullScreenState = !this.currentFullScreenState;
-66. if (this.currentFullScreenState) {
-67. this.currentWidth = '100%';
-68. this.currentHeight = '100%';
-69. } else {
-70. this.currentWidth = '100%';
-71. this.currentHeight = '50%';
-72. };
-73. // 请将$r('app.string.Play_full_screen')替换为实际资源文件，在本示例中该资源文件的value值为"全屏播放"
-74. // 请将$r('app.string.Exit_play_full_screen')替换为实际资源文件，在本示例中该资源文件的value值为"取消全屏播放"
-75. this.showMessage(this.currentFullScreenState
-76. ? this.context!.resourceManager.getStringSync($r('app.string.Play_full_screen').id)
-77. : this.context!.resourceManager.getStringSync($r('app.string.Exit_play_full_screen').id));
-78. };
-
-80. togglePlayAndPause(): void {
-81. this.isPlaying = !this.isPlaying;
-82. if (!this.isPlaying) {
-83. this.stopNormalPlayTimer();
-84. } else {
-85. // 重新启动
-86. this.startNormalPlayTimer();
-87. };
-88. // 请将$r('app.string.stop_playing')替换为实际资源文件，在本示例中该资源文件的value值为"暂停播放"
-89. // 请将$r('app.string.Continue_playing')替换为实际资源文件，在本示例中该资源文件的value值为"继续播放"
-90. this.showMessage(this.isPlaying
-91. ? this.context!.resourceManager.getStringSync($r('app.string.stop_playing').id)
-92. : this.context!.resourceManager.getStringSync($r('app.string.Continue_playing').id));
-93. };
-
-95. doFastForward(start: boolean): void {
-96. if (!start) { // 停止快进，恢复正常播放
-97. this.stopFastForwardTimer();
-98. this.startNormalPlayTimer();
-99. // 请将$r('app.string.Cancel_FastForwarding')替换为实际资源文件，在本示例中该资源文件的value值为"取消快进"
-100. this.showMessage(
-101. this.context!.resourceManager.getStringSync($r('app.string.Cancel_FastForwarding').id));
-102. return;
-103. };
-
-105. this.stopNormalPlayTimer();
-106. this.startFastForwardTimer();
-107. // 请将$r('app.string.Start_FastForwarding')替换为实际资源文件，在本示例中该资源文件的value值为"开始快进"
-108. this.showMessage(
-109. this.context!.resourceManager.getStringSync($r('app.string.Start_FastForwarding').id));
-110. };
-
-112. updateBrightness(start: boolean, event: BaseGestureEvent): void {
-113. let newY = event.fingerList[0].localY;
-114. if (start) {
-115. this.currentPosY = newY;
-116. // 请将$r('app.string.Start_adjusting_brightness')替换为实际资源文件，在本示例中该资源文件的value值为"开始调整 亮度"
-117. this.showMessage(this.context!.resourceManager
-118. .getStringSync($r('app.string.Start_adjusting_brightness').id));
-119. return;
-120. };
-121. let offsetY = newY - this.currentPosY;
-122. if (Math.abs(offsetY) > 10) {
-123. // 请将$r('app.string.Reduce_brightness')替换为实际资源文件，在本示例中该资源文件的value值为"降低亮度"
-124. // 请将$r('app.string.Increase_brightness')替换为实际资源文件，在本示例中该资源文件的value值为"提高亮度"
-125. this.showMessage((offsetY > 0)
-126. ? this.context!.resourceManager.getStringSync($r('app.string.Reduce_brightness').id)
-127. : this.context!.resourceManager.getStringSync($r('app.string.Increase_brightness').id))
-128. this.currentPosY = newY;
-129. };
-130. };
-
-132. updateProgress(start: boolean, event: BaseGestureEvent): void {
-133. let newX = event.fingerList[0].localX;
-134. if (start) {
-135. this.currentPosX = newX;
-136. // 请将$r('app.string.Adjust_schedule')替换为实际资源文件，在本示例中该资源文件的value值为"开始调整 进度"
-137. this.showMessage(this.context!.resourceManager
-138. .getStringSync($r('app.string.Adjust_schedule').id));
-139. return;
-140. };
-141. let offsetX = newX - this.currentPosX;
-142. this.progress = Math.floor(this.progress + offsetX * 10000);
-143. this.currentPosX = newX;
-144. };
-
-146. build() {
-147. Stack({ alignContent: Alignment.Center }) {
-148. Column() {
-149. Column() {
-150. // 请将$r('app.string.Playback_progress')替换为实际资源文件，在本示例中该资源文件的value值为"播放进度"
-151. Text(this.context!.resourceManager.getStringSync($r('app.string.Playback_progress').id) + this.progress)
-152. }
-153. .width('100%').height('90%')
-
-155. Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
-156. Slider({
-157. value: this.progress,
-158. min: 0,
-159. max: this.total,
-160. style: SliderStyle.OutSet
-161. })
-162. .onChange((value: number, mode: SliderChangeMode) => {
-163. this.progress = value;
-164. })
-165. .id('progress_layer')
-166. .onTouchTestDone((event, allRecognizers: Array<GestureRecognizer>) => {
-167. for (let i = 0; i < allRecognizers.length; i++) {
-168. let recognizer = allRecognizers[i];
-169. let inspectorInfo = recognizer.getEventTargetInfo().getId();
-170. if (inspectorInfo !== 'progress_layer') {
-171. // 用户操作到进度条区域时，禁用掉所有非progress_layer上的手势
-172. recognizer.preventBegin();
-173. };
-174. };
-175. })
-176. .margin({ left: 5 })
-177. .trackColor(Color.Blue)
-178. .blockColor(Color.Gray)
-179. .selectedColor(Color.White)
-180. .trackThickness(2)
-181. .flexShrink(1)
-182. .flexGrow(1)
-183. }
-184. .flexGrow(1)
-185. .flexShrink(1)
-186. .id('id_progress_view')
-187. }
-188. }
-189. .id('video_layer')
-190. .backgroundColor('#E0E0E0')
-191. .gesture(
-192. GestureGroup(GestureMode.Exclusive,
-193. PanGesture({ direction: PanDirection.Vertical, distance: 10 })
-194. .tag('pan_for_brightness_control')
-195. .onActionStart((event) => {
-196. this.updateBrightness(true, event);
-197. })
-198. .onActionUpdate((event) => {
-199. this.updateBrightness(false, event);
-200. }),
-201. PanGesture({ direction: PanDirection.Horizontal, distance: 10 })
-202. .tag('pan_for_play_progress_control')
-203. .onActionStart((event) => {
-204. this.updateProgress(true, event);
-205. })
-206. .onActionUpdate((event) => {
-207. this.updateProgress(false, event);
-208. }),
-
-210. LongPressGesture()
-211. .tag('long_press_for_fast_forward_control')
-212. .onAction(() => {
-213. this.doFastForward(true); // 开始快进
-214. })
-215. .onActionEnd(() => {
-216. this.doFastForward(false); // 停止快进
-217. })
-218. .onActionCancel(() => {
-219. this.doFastForward(false);
-220. }),
-
-222. TapGesture({ count: 2 })
-223. .tag('double_tap_on_video')
-224. .onAction(() => {
-225. this.toggleFullScreenState();
-226. }),
-
-228. TapGesture()
-229. .tag('single_tap_on_video')
-230. .onAction(() => {
-231. this.togglePlayAndPause();
-232. })
-233. )
-234. )
-235. .width(this.currentWidth)
-236. .height(this.currentHeight)
-237. }
-238. }
+    A --> B
+    A --> C
+    C --> D
+    C --> E
 ```
 
-[PreventGestureRecognition.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/GestureConflict/entry/src/main/ets/Component/PreventGestureRecognition/PreventGestureRecognition.ets#L16-L256)
+Button1未绑定点击事件，Button2绑定了点击事件。当用户点击Button2时，innerColumn上的onGestureCollectIntercept回调会对触摸识别器进行干预，阻止触摸事件继续向outerColumn透传；点击Button1时则允许正常透传。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/OPdfm_yyRTCQzLf9rFN6kw/zh-cn_image_0000002558604798.gif)
+1. 在innerColumn组件上绑定onGestureCollectIntercept回调，在回调中获取触摸识别器列表。
+
+   ```typescript
+   .onGestureCollectIntercept((recognizers: Array<GestureRecognizer>,
+     touchRecognizers?: Array<TouchRecognizer> | undefined) => {
+     if (!touchRecognizers) {
+       return GestureCollectIntervention.CONTINUE;
+     }
+     // 遍历所有触摸识别器，获取目标组件信息
+     for (let i = 0; i < touchRecognizers.length; i++) {
+       let touchRecognizer = touchRecognizers[i];
+       let targetInfo = touchRecognizer.getEventTargetInfo();
+       let uniqueId = targetInfo.getUniqueId();
+       // 使用 isHostBelongsTo 判断识别器是否属于 innerColumn 的后代
+       if (touchRecognizer.isHostBelongsTo(uniqueId)) {
+         console.info('Touch belongs to innerColumn subtree');
+       }
+       if (targetInfo.getId() == 'button2') {
+         // 丢弃低优先级节点的收集，阻止事件透传到 outerColumn
+         return GestureCollectIntervention.DISCARD_LOWER;
+       }
+     }
+     return GestureCollectIntervention.CONTINUE;
+   })
+   ```
+2. 代码完整示例。
+
+   ```typescript
+   @Entry
+   @Component
+   struct InterceptGestureCollection {
+     @State backgroundColorButton1: string = '#D5D5D5';
+     @State backgroundColorButton2: string = '#D5D5D5';
+     @State backgroundColorRow: string = '#FFFFFF';
+     @State backgroundColorColumn: string = '#FFFFFF';
+
+     build() {
+       Column() {
+         Column() {
+           Row() {
+             Button('button1')
+               .width('30%')
+               .height(40)
+               .id('button1')
+               .onTouch((e?: TouchEvent) => {
+                 this.backgroundColorButton1 = '#E5E5E5';
+               })
+               .backgroundColor(this.backgroundColorButton1)
+             Button('button2')
+               .width('30%')
+               .height(40)
+               .id('button2')
+               .onTouch((e?: TouchEvent) => {
+                 this.backgroundColorButton2 = '#E5E5E5';
+               })
+               .onClick((e?: ClickEvent) => {
+                 console.info('button2 is clicked')
+               })
+               .backgroundColor(this.backgroundColorButton2)
+           }
+           .id('row')
+           .justifyContent(FlexAlign.Center)
+           .width('90%')
+           .height(200)
+           .margin(25)
+           .onTouch((e?: TouchEvent) => {
+             this.backgroundColorRow = '#666666';
+           })
+           .backgroundColor(this.backgroundColorRow)
+         }
+         .id('innerColumn')
+         .margin(25)
+         .padding(20)
+         .width('90%')
+         .height(250)
+         .borderWidth(2)
+         .onGestureCollectIntercept((recognizers: Array<GestureRecognizer>,
+           touchRecognizers?: Array<TouchRecognizer> | undefined) => {
+           if (!touchRecognizers) {
+             return GestureCollectIntervention.CONTINUE;
+           }
+           // 遍历所有触摸识别器，获取目标组件信息
+           for (let i = 0; i < touchRecognizers.length; i++) {
+             let touchRecognizer = touchRecognizers[i];
+             let targetInfo = touchRecognizer.getEventTargetInfo();
+             let uniqueId = targetInfo.getUniqueId();
+             // 使用 isHostBelongsTo 判断识别器是否属于 innerColumn 的后代
+             if (touchRecognizer.isHostBelongsTo(uniqueId)) {
+               console.info('Touch belongs to innerColumn subtree');
+             }
+             if (targetInfo.getId() == 'button2') {
+               // 丢弃低优先级节点的收集，阻止事件透传到 outerColumn
+               return GestureCollectIntervention.DISCARD_LOWER;
+             }
+           }
+           return GestureCollectIntervention.CONTINUE;
+         })
+       }
+       .id('outerColumn')
+       .padding(15)
+       .onTouch((e?: TouchEvent) => {
+         this.backgroundColorColumn = '#E5E5E5';
+       })
+       .backgroundColor(this.backgroundColorColumn)
+     }
+   }
+   ```
+
+经过上述处理后，点击Button2时，onGestureCollectIntercept返回DISCARD\_LOWER，触摸事件不会透传至outerColumn；点击Button1时，返回CONTINUE，触摸事件正常透传，outerColumn响应变色。

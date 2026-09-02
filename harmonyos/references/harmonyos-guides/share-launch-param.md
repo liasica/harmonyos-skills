@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-launch-
 title: 判断应用是否被系统分享拉起
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 > 目标应用处理分享内容 > 判断应用是否被系统分享拉起
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:00+08:00
+scraped_at: 2026-09-02T14:50:32+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0d197b57de1dbd9f6a44318f60acd90da40506ade322e29ba61925fba9d17d24
+content_hash: sha256:27eb76318bcbcaf294855334535289c3e32062cffaa7492aeda2ede0a707cd16
 ---
 
 从5.1.0(18)版本开始，支持应用判断是否被系统分享拉起。
@@ -19,45 +19,45 @@ content_hash: sha256:0d197b57de1dbd9f6a44318f60acd90da40506ade322e29ba61925fba9d
 
 * 通过[UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md)处理分享内容。
 
-  ```
-  1. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-  2. import { window } from '@kit.ArkUI';
+  ```typescript
+  import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+  import { window } from '@kit.ArkUI';
 
-  4. export default class ShareUIAbility extends UIAbility {
-  5. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-  6. if (launchParam.launchReasonMessage === 'ReasonMessage_SystemShare') {
-  7. // 识别为被系统分享拉起
-  8. console.info('被拉起原因：系统分享');
-  9. }
-  10. }
+  export default class ShareUIAbility extends UIAbility {
+    onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+      if (launchParam.launchReasonMessage === 'ReasonMessage_SystemShare') {
+        // 识别为被系统分享拉起
+        console.info('被拉起原因：系统分享');
+      }
+    }
 
-  12. onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-  13. if (launchParam.launchReasonMessage === 'ReasonMessage_SystemShare') {
-  14. // 识别为被系统分享拉起
-  15. console.info('被拉起原因：系统分享');
-  16. }
-  17. }
+    onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+      if (launchParam.launchReasonMessage === 'ReasonMessage_SystemShare') {
+        // 识别为被系统分享拉起
+        console.info('被拉起原因：系统分享');
+      }
+    }
 
-  19. onWindowStageCreate(windowStage: window.WindowStage): void {
-  20. windowStage.loadContent('pages/ShareUIPage'); // 此路径仅为示例 请替换实际路径
-  21. }
-  22. }
+    onWindowStageCreate(windowStage: window.WindowStage): void {
+      windowStage.loadContent('pages/ShareUIPage'); // 此路径仅为示例 请替换实际路径
+    }
+  }
   ```
 * 通过[UIExtensionAbility](../harmonyos-references/js-apis-app-ability-uiextensionability.md)处理分享内容。
 
-  ```
-  1. import { AbilityConstant, ShareExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
+  ```typescript
+  import { AbilityConstant, ShareExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
 
-  3. export default class ShareExtAbility extends ShareExtensionAbility {
-  4. onCreate(launchParam: AbilityConstant.LaunchParam): void {
-  5. if (launchParam.launchReasonMessage === 'ReasonMessage_SystemShare') {
-  6. // 识别为被系统分享拉起
-  7. console.info('被拉起原因：系统分享');
-  8. }
-  9. }
+  export default class ShareExtAbility extends ShareExtensionAbility {
+    onCreate(launchParam: AbilityConstant.LaunchParam): void {
+      if (launchParam.launchReasonMessage === 'ReasonMessage_SystemShare') {
+        // 识别为被系统分享拉起
+        console.info('被拉起原因：系统分享');
+      }
+    }
 
-  11. onSessionCreate(want: Want, session: UIExtensionContentSession) {
-  12. session.loadContent('pages/ShareExtDialog'); // 此路径仅为示例 请替换实际路径
-  13. }
-  14. }
+    onSessionCreate(want: Want, session: UIExtensionContentSession) {
+      session.loadContent('pages/ShareExtDialog'); // 此路径仅为示例 请替换实际路径
+    }
+  }
   ```

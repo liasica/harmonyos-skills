@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-loca
 title: Location_RequestConfig
 breadcrumb: API参考 > 应用服务 > Location Kit（位置服务） > C API > 结构体 > Location_RequestConfig
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:08+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ba02c671ea0171b4f2ed1447ffdfcb6973446eea63899c13edc97259a4517411
+scraped_at: 2026-09-02T14:53:21+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:55ff54667d0a1538526cfa26b519c256680c65fe8f9b2f4b5822054fcc7ad92d
 ---
 
-```
-1. typedef struct Location_RequestConfig Location_RequestConfig
+```c
+typedef struct Location_RequestConfig Location_RequestConfig
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义位置请求参数的结构体。
 

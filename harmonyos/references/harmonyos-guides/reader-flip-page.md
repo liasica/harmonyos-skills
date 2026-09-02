@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-flip-p
 title: 手动触发翻页
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容交互 > 手动触发翻页
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:40:06+08:00
+scraped_at: 2026-09-02T14:50:32+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:7c38a154fdbb41ab624c871ec9d34df50ef87bdd3e61d9a57b9cced806a255f7
+content_hash: sha256:993e951ced82355eb2a849713ba569e5981edf434f7d6f5dc3ae7c6cb2837347
 ---
 
 Reader Kit的交互能力已经集成了手指点击和触摸滑动翻页，如果开发者需要增加其它翻页场景时（如：耳机播控翻页），可使用手动翻页接口实现自定义翻页场景。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/AUnC9-MbRD2GLL59cDmjEg/zh-cn_image_0000002558765646.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/EPYy0gZ3SjGipCjO48oFmg/zh-cn_image_0000002736314277.png)
 
 ## 接口说明
 
@@ -31,7 +31,7 @@ Reader Kit的交互能力已经集成了手指点击和触摸滑动翻页，如�
 1. 在调用翻页接口之前，需要应用先构建需要手动触发翻页的场景，如耳机播控场景等。
 2. 当自定义翻页场景调用触发翻页时，调用flipPage接口即可实现翻页能力。
 
-   ```
-   1. let isNext: boolean = true; // true为下一页, false为上一页
-   2. this.readerComponentController.flipPage(isNext);
+   ```typescript
+   let isNext: boolean = true; // true为下一页, false为上一页
+   this.readerComponentController.flipPage(isNext);
    ```

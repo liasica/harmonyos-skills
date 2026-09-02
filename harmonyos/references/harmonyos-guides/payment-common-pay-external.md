@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-commo
 title: 纯外部支付场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 通用收银台接入 > 纯外部支付场景
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:33+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:ce5359f10f724d884e88211bb9dcb1ea629ca78c8066896b7a22cec5bdc610ab
+scraped_at: 2026-09-02T14:59:59+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:f6eb83e07c2bd5445623f5a19b657a8fd83797fee698a2e6d974d7bdb868a3f6
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:ce5359f10f724d884e88211bb9dcb1ea629ca78c8066896b7a22cec5bdc
 
 通用收银台纯外部支付页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/h-BnJoyVQWCk4x98PzRG3g/zh-cn_image_0000002589325463.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/uR51lzcHQxqs781iZiNEmg/zh-cn_image_0000002706675178.png)
 
 ## 接入流程
 
@@ -34,7 +34,7 @@ content_hash: sha256:ce5359f10f724d884e88211bb9dcb1ea629ca78c8066896b7a22cec5bdc
 
 纯外部支付模式下，收银台仅支持第三方平台支付，用户无法使用华为支付。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/_rWgqGHOT2aKZNo8RjkSKQ/zh-cn_image_0000002589245401.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/MnUvscAgSbGiJaIn5h2IdQ/zh-cn_image_0000002736434267.png)
 
 1. 商户客户端根据商户已开通的支付模式构建[PaymentInfo](../harmonyos-references/payment-paymentservice.md#paymentinfo)参数调用[cashierPicker](../harmonyos-references/payment-paymentservice.md#cashierpicker)接口拉起Payment Kit通用收银台。
 2. Payment Kit通用收银台展示可用的三方支付方式，用户选择三方支付方式并确认支付。
@@ -88,50 +88,50 @@ content_hash: sha256:ce5359f10f724d884e88211bb9dcb1ea629ca78c8066896b7a22cec5bdc
 
 商户客户端构建[PaymentInfo](../harmonyos-references/payment-paymentservice.md#paymentinfo)参数调用[cashierPicker](../harmonyos-references/payment-paymentservice.md#cashierpicker)接口拉起Payment Kit通用收银台，用户选择支付方式并确认支付后，Payment Kit客户端将支付信息[PickerResult](../harmonyos-references/payment-paymentservice.md#pickerresult)返回给商户客户端 。
 
-当接口通过.then()方法返回时，则表示当前接口请求响应正常，通过.catch()方法返回表示接口请求响应异常。当此次请求有异常时，可通过**error.code**获取错误码，错误码相关信息请参见[错误码](../harmonyos-references/payment-error-code.md)。示例代码如下：
+当接口通过.then()方法返回时，则表示当前接口请求响应正常，通过.catch()方法返回表示接口请求响应异常。当此次请求有异常时，可通过**error.code**获取错误码，错误码相关信息请参见[错误码](../harmonyos-references/errorcode-payment.md)。示例代码如下：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { paymentService } from '@kit.PaymentKit';
-3. import { common } from '@kit.AbilityKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { paymentService } from '@kit.PaymentKit';
+import { common } from '@kit.AbilityKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-9. requestCashierPickerCallBack() {
-10. // use your own paymentInfo
-11. const paymentInfo: paymentService.PaymentInfo= {
-12. tradeSummary: "***交易",
-13. amount: 100,
-14. currency: "CNY",
-15. extraInfo: '{"***":"***"}'
-16. }
-17. paymentService.cashierPicker(this.context, paymentInfo)
-18. .then((pickerResult: paymentService.PickerResult) => {
-19. // succeeded in paying
-20. console.info('succeeded in paying, picker result: ', pickerResult);
-21. })
-22. .catch((error: BusinessError) => {
-23. // failed to pay
-24. console.error(`failed to pay, error.code: ${error.code}, error.message: ${error.message}`);
-25. });
-26. }
+@Entry
+@Component
+struct Index {
+  context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  requestCashierPickerCallBack() {
+    // 请开发者使用自己的支付订单信息（paymentInfo）
+    const paymentInfo: paymentService.PaymentInfo= {
+      tradeSummary: '***交易',
+      amount: 100,
+      currency: 'CNY',
+      extraInfo: '{"***":"***"}'
+    }
+    paymentService.cashierPicker(this.context, paymentInfo)
+      .then((pickerResult: paymentService.PickerResult) => {
+        // 支付成功
+        console.info('succeeded in paying, picker result: ', pickerResult);
+      })
+      .catch((error: BusinessError) => {
+        // 支付失败
+        console.error(`failed to pay, error.code: ${error.code}, error.message: ${error.message}`);
+      });
+  }
 
-28. build() {
-29. Column() {
-30. Button('requestCashierPickerCallBack')
-31. .type(ButtonType.Capsule)
-32. .width('50%')
-33. .margin(20)
-34. .onClick(() => {
-35. this.requestCashierPickerCallBack();
-36. })
-37. }
-38. .width('100%')
-39. .height('100%')
-40. }
-41. }
+  build() {
+    Column() {
+      Button('requestCashierPickerCallBack')
+        .type(ButtonType.Capsule)
+        .width('50%')
+        .margin(20)
+        .onClick(() => {
+          this.requestCashierPickerCallBack();
+        })
+      }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ### 拉起三方支付收银台（端侧开发）

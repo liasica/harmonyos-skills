@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_audio_device_base.h
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 头文件 > native_audio_device_base.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:48+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:b1d3365c87f8f385c58e3a0550c755eb3770a5b3c98c1de228b6aa79fc210d4c
+scraped_at: 2026-09-02T15:02:20+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ed1d9073dcd513dee4e5c71aa0a923f16505d6a8b886d9ac8e8d4f9e206ac77b
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义音频设备参数的类型以及获取每个设备参数的接口。
 
@@ -26,20 +24,14 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [OH\_AudioDeviceDescriptorArray](capi-ohaudio-oh-audiodevicedescriptorarray.md) | OH\_AudioDeviceDescriptorArray | 声明音频设备描述符数组。 |
-| [OH\_AudioDeviceDescriptor](capi-ohaudio-oh-audiodevicedescriptor.md) | OH\_AudioDeviceDescriptor | 声明音频设备描述符。该实例用于获取更多音频设备详细信息属性。 |
+| [OH\_AudioDeviceDescriptor](capi-ohaudio-oh-audiodevicedescriptor.md) | OH\_AudioDeviceDescriptor | 声明音频设备描述符。该结构体用于获取音频设备的详细属性信息。 |
 
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -48,17 +40,15 @@ PhonePC/2in1TabletTVWearable
 | [OH\_AudioDevice\_Type](capi-native-audio-device-base-h.md#oh_audiodevice_type) | OH\_AudioDevice\_Type | 定义音频设备类型。 |
 | [OH\_AudioDevice\_Flag](capi-native-audio-device-base-h.md#oh_audiodevice_flag) | OH\_AudioDevice\_Flag | 定义音频设备标志。 |
 | [OH\_AudioDevice\_Usage](capi-native-audio-device-base-h.md#oh_audiodevice_usage) | OH\_AudioDevice\_Usage | 定义可获取的设备种类。 |
-| [OH\_AudioDevice\_BlockStatus](capi-native-audio-device-base-h.md#oh_audiodevice_blockstatus) | OH\_AudioDevice\_BlockStatus | 声明音频设备的堵塞状态。默认情况下，音频设备被视为未堵塞。 |
+| [OH\_AudioDevice\_BlockStatus](capi-native-audio-device-base-h.md#oh_audiodevice_blockstatus) | OH\_AudioDevice\_BlockStatus | 定义音频设备的堵塞状态。默认情况下，音频设备被视为未堵塞。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
 | [OH\_AudioCommon\_Result OH\_AudioDeviceDescriptor\_GetDeviceRole(OH\_AudioDeviceDescriptor \*audioDeviceDescriptor, OH\_AudioDevice\_Role \*deviceRole)](capi-native-audio-device-base-h.md#oh_audiodevicedescriptor_getdevicerole) | 查询目标音频设备描述符的设备角色。 |
 | [OH\_AudioCommon\_Result OH\_AudioDeviceDescriptor\_GetDeviceType(OH\_AudioDeviceDescriptor \*audioDeviceDescriptor, OH\_AudioDevice\_Type \*deviceType)](capi-native-audio-device-base-h.md#oh_audiodevicedescriptor_getdevicetype) | 查询目标音频设备描述符的设备类型。 |
-| [OH\_AudioCommon\_Result OH\_AudioDeviceDescriptor\_GetDeviceId(OH\_AudioDeviceDescriptor \*audioDeviceDescriptor, uint32\_t \*id)](capi-native-audio-device-base-h.md#oh_audiodevicedescriptor_getdeviceid) | 查询目标音频设备描述符的设备id。 |
+| [OH\_AudioCommon\_Result OH\_AudioDeviceDescriptor\_GetDeviceId(OH\_AudioDeviceDescriptor \*audioDeviceDescriptor, uint32\_t \*id)](capi-native-audio-device-base-h.md#oh_audiodevicedescriptor_getdeviceid) | 查询目标音频设备描述符的设备ID。 |
 | [OH\_AudioCommon\_Result OH\_AudioDeviceDescriptor\_GetDeviceName(OH\_AudioDeviceDescriptor \*audioDeviceDescriptor, char \*\*name)](capi-native-audio-device-base-h.md#oh_audiodevicedescriptor_getdevicename) | 查询目标音频设备描述符的设备名称。 |
 | [OH\_AudioCommon\_Result OH\_AudioDeviceDescriptor\_GetDeviceAddress(OH\_AudioDeviceDescriptor \*audioDeviceDescriptor, char \*\*address)](capi-native-audio-device-base-h.md#oh_audiodevicedescriptor_getdeviceaddress) | 查询目标音频设备描述符的设备地址。 |
 | [OH\_AudioCommon\_Result OH\_AudioDeviceDescriptor\_GetDeviceSampleRates(OH\_AudioDeviceDescriptor \*audioDeviceDescriptor, uint32\_t \*\*sampleRates, uint32\_t \*size)](capi-native-audio-device-base-h.md#oh_audiodevicedescriptor_getdevicesamplerates) | 查询目标音频设备描述符的采样率数组。 |
@@ -68,14 +58,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AudioDevice\_ChangeType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioDevice_ChangeType
+```c
+enum OH_AudioDevice_ChangeType
 ```
 
 **描述**
@@ -91,10 +77,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioDevice\_Role
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioDevice_Role
+```c
+enum OH_AudioDevice_Role
 ```
 
 **描述**
@@ -110,10 +94,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioDevice\_Type
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioDevice_Type
+```c
+enum OH_AudioDevice_Type
 ```
 
 **描述**
@@ -145,10 +127,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioDevice\_Flag
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioDevice_Flag
+```c
+enum OH_AudioDevice_Flag
 ```
 
 **描述**
@@ -166,10 +146,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioDevice\_Usage
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioDevice_Usage
+```c
+enum OH_AudioDevice_Usage
 ```
 
 **描述**
@@ -189,15 +167,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioDevice\_BlockStatus
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioDevice_BlockStatus
+```c
+enum OH_AudioDevice_BlockStatus
 ```
 
 **描述**
 
-声明音频设备的堵塞状态。默认情况下，音频设备被视为未堵塞。
+定义音频设备的堵塞状态。默认情况下，音频设备被视为未堵塞。
 
 **起始版本：** 13
 
@@ -208,14 +184,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AudioDeviceDescriptor\_GetDeviceRole()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceRole(OH_AudioDeviceDescriptor *audioDeviceDescriptor,OH_AudioDevice_Role *deviceRole)
+```c
+OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceRole(OH_AudioDeviceDescriptor *audioDeviceDescriptor,OH_AudioDevice_Role *deviceRole)
 ```
 
 **描述**
@@ -229,7 +201,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AudioDeviceDescriptor](capi-ohaudio-oh-audiodevicedescriptor.md) \*audioDeviceDescriptor | 音频设备描述符。通过 [OH\_AudioRoutingManager\_GetDevices](capi-native-audio-routing-manager-h.md#oh_audioroutingmanager_getdevices) 或者[OH\_AudioRoutingManager\_OnDeviceChangedCallback](capi-native-audio-routing-manager-h.md#oh_audioroutingmanager_ondevicechangedcallback)获取。 |
-| [OH\_AudioDevice\_Role](capi-native-audio-device-base-h.md#oh_audiodevice_role) \*deviceRole | 设备角色指针。将设置设备角色值的变量，指向[OH\_AudioDevice\_Role](capi-native-audio-device-base-h.md#oh_audiodevice_role)。 |
+| [OH\_AudioDevice\_Role](capi-native-audio-device-base-h.md#oh_audiodevice_role) \*deviceRole | 设备角色指针。指向用于接收设备角色值的变量，详细信息请参考[OH\_AudioDevice\_Role](capi-native-audio-device-base-h.md#oh_audiodevice_role)。 |
 
 **返回：**
 
@@ -239,10 +211,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioDeviceDescriptor\_GetDeviceType()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceType(OH_AudioDeviceDescriptor *audioDeviceDescriptor,OH_AudioDevice_Type *deviceType)
+```c
+OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceType(OH_AudioDeviceDescriptor *audioDeviceDescriptor,OH_AudioDevice_Type *deviceType)
 ```
 
 **描述**
@@ -256,7 +226,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AudioDeviceDescriptor](capi-ohaudio-oh-audiodevicedescriptor.md) \*audioDeviceDescriptor | 音频设备描述符。通过 [OH\_AudioRoutingManager\_GetDevices](capi-native-audio-routing-manager-h.md#oh_audioroutingmanager_getdevices) 或者[OH\_AudioRoutingManager\_OnDeviceChangedCallback](capi-native-audio-routing-manager-h.md#oh_audioroutingmanager_ondevicechangedcallback)获取。 |
-| [OH\_AudioDevice\_Type](capi-native-audio-device-base-h.md#oh_audiodevice_type) \*deviceType | 设备类型指针。将设置设备类型值的变量，指向[OH\_AudioDevice\_Type](capi-native-audio-device-base-h.md#oh_audiodevice_type)。 |
+| [OH\_AudioDevice\_Type](capi-native-audio-device-base-h.md#oh_audiodevice_type) \*deviceType | 设备类型指针。指向用于接收设备类型值的变量，详细信息请参考[OH\_AudioDevice\_Type](capi-native-audio-device-base-h.md#oh_audiodevice_type)。 |
 
 **返回：**
 
@@ -266,15 +236,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioDeviceDescriptor\_GetDeviceId()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceId(OH_AudioDeviceDescriptor *audioDeviceDescriptor,uint32_t *id)
+```c
+OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceId(OH_AudioDeviceDescriptor *audioDeviceDescriptor,uint32_t *id)
 ```
 
 **描述**
 
-查询目标音频设备描述符的设备id。
+查询目标音频设备描述符的设备ID。
 
 **起始版本：** 12
 
@@ -283,7 +251,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AudioDeviceDescriptor](capi-ohaudio-oh-audiodevicedescriptor.md) \*audioDeviceDescriptor | 音频设备描述符。通过 [OH\_AudioRoutingManager\_GetDevices](capi-native-audio-routing-manager-h.md#oh_audioroutingmanager_getdevices) 或者[OH\_AudioRoutingManager\_OnDeviceChangedCallback](capi-native-audio-routing-manager-h.md#oh_audioroutingmanager_ondevicechangedcallback)获取。 |
-| uint32\_t \*id | 设备id指针，将设置设备角色值的变量。 |
+| uint32\_t \*id | 设备ID指针，指向用于接收设备ID值的变量。 |
 
 **返回：**
 
@@ -293,10 +261,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioDeviceDescriptor\_GetDeviceName()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceName(OH_AudioDeviceDescriptor *audioDeviceDescriptor,char **name)
+```c
+OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceName(OH_AudioDeviceDescriptor *audioDeviceDescriptor,char **name)
 ```
 
 **描述**
@@ -310,7 +276,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AudioDeviceDescriptor](capi-ohaudio-oh-audiodevicedescriptor.md) \*audioDeviceDescriptor | 音频设备描述符。通过 [OH\_AudioRoutingManager\_GetDevices](capi-native-audio-routing-manager-h.md#oh_audioroutingmanager_getdevices) 或者[OH\_AudioRoutingManager\_OnDeviceChangedCallback](capi-native-audio-routing-manager-h.md#oh_audioroutingmanager_ondevicechangedcallback)获取。 |
-| char \*\*name | 设备名称指针，将设置设备名称值的变量。  不要单独释放音频设备名称指针，而是调用[OH\_AudioRoutingManager\_ReleaseDevices](capi-native-audio-routing-manager-h.md#oh_audioroutingmanager_releasedevices)，以便在不再使用时释放所有DeviceDescriptor数组。 |
+| char \*\*name | 设备名称指针，指向用于接收设备名称值的变量。  不要单独释放音频设备名称指针，而是调用[OH\_AudioRoutingManager\_ReleaseDevices](capi-native-audio-routing-manager-h.md#oh_audioroutingmanager_releasedevices)，以便在不再使用时释放所有DeviceDescriptor数组。 |
 
 **返回：**
 
@@ -320,10 +286,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioDeviceDescriptor\_GetDeviceAddress()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceAddress(OH_AudioDeviceDescriptor *audioDeviceDescriptor,char **address)
+```c
+OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceAddress(OH_AudioDeviceDescriptor *audioDeviceDescriptor,char **address)
 ```
 
 **描述**
@@ -337,7 +301,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AudioDeviceDescriptor](capi-ohaudio-oh-audiodevicedescriptor.md) \*audioDeviceDescriptor | 音频设备描述符。通过 [OH\_AudioRoutingManager\_GetDevices](capi-native-audio-routing-manager-h.md#oh_audioroutingmanager_getdevices) 或者[OH\_AudioRoutingManager\_OnDeviceChangedCallback](capi-native-audio-routing-manager-h.md#oh_audioroutingmanager_ondevicechangedcallback)获取。 |
-| char \*\*address | 设备MAC地址指针，将设置设备MAC地址值的变量。  不要单独释放音频设备MAC地址指针，而是调用[OH\_AudioRoutingManager\_ReleaseDevices](capi-native-audio-routing-manager-h.md#oh_audioroutingmanager_releasedevices)，以便在不再使用时释放所有DeviceDescriptor数组。 |
+| char \*\*address | 设备地址指针，指向用于接收设备地址值的变量。  不要单独释放音频设备地址指针，而是调用[OH\_AudioRoutingManager\_ReleaseDevices](capi-native-audio-routing-manager-h.md#oh_audioroutingmanager_releasedevices)，以便在不再使用时释放所有DeviceDescriptor数组。 |
 
 **返回：**
 
@@ -347,10 +311,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioDeviceDescriptor\_GetDeviceSampleRates()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceSampleRates(OH_AudioDeviceDescriptor *audioDeviceDescriptor,uint32_t **sampleRates, uint32_t *size)
+```c
+OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceSampleRates(OH_AudioDeviceDescriptor *audioDeviceDescriptor,uint32_t **sampleRates, uint32_t *size)
 ```
 
 **描述**
@@ -375,10 +337,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioDeviceDescriptor\_GetDeviceChannelCounts()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceChannelCounts(OH_AudioDeviceDescriptor *audioDeviceDescriptor,uint32_t **channelCounts, uint32_t *size)
+```c
+OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceChannelCounts(OH_AudioDeviceDescriptor *audioDeviceDescriptor,uint32_t **channelCounts, uint32_t *size)
 ```
 
 **描述**
@@ -403,10 +363,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioDeviceDescriptor\_GetDeviceDisplayName()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceDisplayName(OH_AudioDeviceDescriptor *audioDeviceDescriptor,char **displayName)
+```c
+OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceDisplayName(OH_AudioDeviceDescriptor *audioDeviceDescriptor,char **displayName)
 ```
 
 **描述**
@@ -430,10 +388,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioDeviceDescriptor\_GetDeviceEncodingTypes()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceEncodingTypes(OH_AudioDeviceDescriptor *audioDeviceDescriptor,OH_AudioStream_EncodingType **encodingTypes, uint32_t *size)
+```c
+OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceEncodingTypes(OH_AudioDeviceDescriptor *audioDeviceDescriptor,OH_AudioStream_EncodingType **encodingTypes, uint32_t *size)
 ```
 
 **描述**
@@ -447,7 +403,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AudioDeviceDescriptor](capi-ohaudio-oh-audiodevicedescriptor.md) \*audioDeviceDescriptor | 音频设备描述符。通过 [OH\_AudioRoutingManager\_GetDevices](capi-native-audio-routing-manager-h.md#oh_audioroutingmanager_getdevices) 或者[OH\_AudioRoutingManager\_OnDeviceChangedCallback](capi-native-audio-routing-manager-h.md#oh_audioroutingmanager_ondevicechangedcallback)获取。 |
-| [OH\_AudioStream\_EncodingType](capi-native-audiostream-base-h.md#oh_audiostream_encodingtype) \*\*encodingTypes | 音频设备编码类型，指向[OH\_AudioStream\_EncodingType](capi-native-audiostream-base-h.md#oh_audiostream_encodingtype)。  不要单独释放音频设备编码类型指针，而是调用[OH\_AudioRoutingManager\_ReleaseDevices](capi-native-audio-routing-manager-h.md#oh_audioroutingmanager_releasedevices)，以便在不再使用时释放所有DeviceDescriptor数组。 |
+| [OH\_AudioStream\_EncodingType](capi-native-audiostream-base-h.md#oh_audiostream_encodingtype) \*\*encodingTypes | 音频设备编码类型指针，指向用于接收编码类型数组的变量，详细信息请参考[OH\_AudioStream\_EncodingType](capi-native-audiostream-base-h.md#oh_audiostream_encodingtype)。  不要单独释放音频设备编码类型指针，而是调用[OH\_AudioRoutingManager\_ReleaseDevices](capi-native-audio-routing-manager-h.md#oh_audioroutingmanager_releasedevices)，以便在不再使用时释放所有DeviceDescriptor数组。 |
 | uint32\_t \*size | 设置编码类型大小值的指针变量。 |
 
 **返回：**

@@ -3,22 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: resultSet (结果集)
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > 已停止维护的接口 > data/rdb > resultSet (结果集)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:25+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:b271958e044ad2f6690f6f0818940843958e63f455d4bba0348506d0eeee6312
+scraped_at: 2026-09-02T15:00:41+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0cdfb90e6075a1a1a131bd035dd761c33d0cfa6da63c90e134b2c9e2e9ce301e
 ---
 
 结果集是指用户调用关系型数据库查询接口之后返回的结果集合，提供了多种灵活的数据访问方式，以便用户获取各项数据。
 
-说明
+**说明** 
 
 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
-从API Version 9开始，该接口不再维护，推荐使用新接口[@ohos.data.relationalStore#ResultSet](arkts-apis-data-relationalstore-resultset.md)。
+从API Version 9开始，该接口不再维护，推荐使用新接口[ResultSet](arkts-apis-data-relationalstore-resultset.md)。
 
 ## ResultSet
-
-PhonePC/2in1TabletTVWearable
 
 提供通过查询数据库生成的数据库结果集的访问方法。
 
@@ -26,20 +24,19 @@ PhonePC/2in1TabletTVWearable
 
 需要通过[RdbStore.query()](js-apis-data-rdb.md#query)获取resultSet对象。
 
-```
-1. import dataRdb from '@ohos.data.rdb';
-2. let predicates = new dataRdb.RdbPredicates("EMPLOYEE");
-3. predicates.equalTo("AGE", 18);
-4. let promise = rdbStore.query(predicates, ["ID", "NAME", "AGE", "SALARY", "CODES"]);
-5. promise.then((resultSet) => {
-6. console.log(TAG + "resultSet columnNames:" + resultSet.columnNames);
-7. console.log(TAG + "resultSet columnCount:" + resultSet.columnCount);
-8. });
+```ts
+import dataRdb from '@ohos.data.rdb';
+let predicates = new dataRdb.RdbPredicates("EMPLOYEE");
+predicates.equalTo("AGE", 18);
+let promise = rdbStore.query(predicates, ["ID", "NAME", "AGE", "SALARY", "CODES"]);
+promise.then((resultSet) => {
+  console.info("resultSet columnNames:" + resultSet.columnNames);
+  console.info("resultSet columnCount:" + resultSet.columnCount);
+  resultSet.close();
+});
 ```
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
@@ -56,8 +53,6 @@ PhonePC/2in1TabletTVWearable
 | isClosed | boolean | 是 | 否 | 检查当前结果集是否关闭。 |
 
 ### getColumnIndex
-
-PhonePC/2in1TabletTVWearable
 
 getColumnIndex(columnName: string): number
 
@@ -79,19 +74,17 @@ getColumnIndex(columnName: string): number
 
 **示例：**
 
-```
-1. const success = resultSet.goToFirstRow();
-2. if (success) {
-3. const id = resultSet.getLong(resultSet.getColumnIndex("ID"));
-4. const name = resultSet.getString(resultSet.getColumnIndex("NAME"));
-5. const age = resultSet.getLong(resultSet.getColumnIndex("AGE"));
-6. const salary = resultSet.getDouble(resultSet.getColumnIndex("SALARY"));
-7. }
+```ts
+const success = resultSet.goToFirstRow();
+if (success) {
+  const id = resultSet.getLong(resultSet.getColumnIndex("ID"));
+  const name = resultSet.getString(resultSet.getColumnIndex("NAME"));
+  const age = resultSet.getLong(resultSet.getColumnIndex("AGE"));
+  const salary = resultSet.getDouble(resultSet.getColumnIndex("SALARY"));
+}
 ```
 
 ### getColumnName
-
-PhonePC/2in1TabletTVWearable
 
 getColumnName(columnIndex: number): string
 
@@ -113,15 +106,13 @@ getColumnName(columnIndex: number): string
 
 **示例：**
 
-```
-1. const id = resultSet.getColumnName(0);
-2. const name = resultSet.getColumnName(1);
-3. const age = resultSet.getColumnName(2);
+```ts
+const id = resultSet.getColumnName(0);
+const name = resultSet.getColumnName(1);
+const age = resultSet.getColumnName(2);
 ```
 
 ### goTo
-
-PhonePC/2in1TabletTVWearable
 
 goTo(offset:number): boolean
 
@@ -143,20 +134,18 @@ goTo(offset:number): boolean
 
 **示例：**
 
-```
-1. let predicatesgoto = new dataRdb.RdbPredicates("EMPLOYEE");
-2. let promisequerygoto = rdbStore.query(predicatesgoto, ["ID", "NAME", "AGE", "SALARY", "CODES"]);
-3. promisequerygoto.then((resultSet) => {
-4. resultSet.goTo(1);
-5. resultSet.close();
-6. }).catch((err) => {
-7. console.log('query failed');
-8. });
+```ts
+let predicatesgoto = new dataRdb.RdbPredicates("EMPLOYEE");
+let promisequerygoto = rdbStore.query(predicatesgoto, ["ID", "NAME", "AGE", "SALARY", "CODES"]);
+promisequerygoto.then((resultSet) => {
+  resultSet.goTo(1);
+  resultSet.close();
+}).catch((err) => {
+  console.error('query failed');
+});
 ```
 
 ### goToRow
-
-PhonePC/2in1TabletTVWearable
 
 goToRow(position: number): boolean
 
@@ -178,20 +167,18 @@ goToRow(position: number): boolean
 
 **示例：**
 
-```
-1. let predicatesgotorow = new dataRdb.RdbPredicates("EMPLOYEE");
-2. let promisequerygotorow = rdbStore.query(predicatesgotorow, ["ID", "NAME", "AGE", "SALARY", "CODES"]);
-3. promisequerygotorow.then((resultSet) => {
-4. resultSet.goToRow(5);
-5. resultSet.close();
-6. }).catch((err) => {
-7. console.log('query failed');
-8. });
+```ts
+let predicatesgotorow = new dataRdb.RdbPredicates("EMPLOYEE");
+let promisequerygotorow = rdbStore.query(predicatesgotorow, ["ID", "NAME", "AGE", "SALARY", "CODES"]);
+promisequerygotorow.then((resultSet) => {
+  resultSet.goToRow(5);
+  resultSet.close();
+}).catch((err) => {
+  console.error('query failed');
+});
 ```
 
 ### goToFirstRow
-
-PhonePC/2in1TabletTVWearable
 
 goToFirstRow(): boolean
 
@@ -203,24 +190,22 @@ goToFirstRow(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 如果成功移动结果集，则为true；否则返回false。 |
+| boolean | 如果成功移动结果集到第一行，则为true；否则为false。 |
 
 **示例：**
 
-```
-1. let predicatesgoFirst = new dataRdb.RdbPredicates("EMPLOYEE");
-2. let promisequerygoFirst = rdbStore.query(predicatesgoFirst, ["ID", "NAME", "AGE", "SALARY", "CODES"]);
-3. promisequerygoFirst.then((resultSet) => {
-4. resultSet.goToFirstRow();
-5. resultSet.close();
-6. }).catch((err) => {
-7. console.log('query failed');
-8. });
+```ts
+let predicatesgoFirst = new dataRdb.RdbPredicates("EMPLOYEE");
+let promisequerygoFirst = rdbStore.query(predicatesgoFirst, ["ID", "NAME", "AGE", "SALARY", "CODES"]);
+promisequerygoFirst.then((resultSet) => {
+  resultSet.goToFirstRow();
+  resultSet.close();
+}).catch((err) => {
+  console.error('query failed');
+});
 ```
 
 ### goToLastRow
-
-PhonePC/2in1TabletTVWearable
 
 goToLastRow(): boolean
 
@@ -232,24 +217,22 @@ goToLastRow(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 如果成功移动结果集，则为true；否则返回false。 |
+| boolean | 如果成功移动结果集到最后一行，则为true；否则为false。 |
 
 **示例：**
 
-```
-1. let predicatesgoLast = new dataRdb.RdbPredicates("EMPLOYEE");
-2. let promisequerygoLast = rdbStore.query(predicatesgoLast, ["ID", "NAME", "AGE", "SALARY", "CODES"]);
-3. promisequerygoLast.then((resultSet) => {
-4. resultSet.goToLastRow();
-5. resultSet.close();
-6. }).catch((err) => {
-7. console.log('query failed');
-8. });
+```ts
+let predicatesgoLast = new dataRdb.RdbPredicates("EMPLOYEE");
+let promisequerygoLast = rdbStore.query(predicatesgoLast, ["ID", "NAME", "AGE", "SALARY", "CODES"]);
+promisequerygoLast.then((resultSet) => {
+  resultSet.goToLastRow();
+  resultSet.close();
+}).catch((err) => {
+  console.error('query failed');
+});
 ```
 
 ### goToNextRow
-
-PhonePC/2in1TabletTVWearable
 
 goToNextRow(): boolean
 
@@ -261,24 +244,22 @@ goToNextRow(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 如果成功移动结果集，则为true；否则返回false。 |
+| boolean | 如果成功移动结果集到下一行，则为true；否则为false。 |
 
 **示例：**
 
-```
-1. let predicatesgoNext = new dataRdb.RdbPredicates("EMPLOYEE");
-2. let promisequerygoNext = rdbStore.query(predicatesgoNext, ["ID", "NAME", "AGE", "SALARY", "CODES"]);
-3. promisequerygoNext.then((resultSet) => {
-4. resultSet.goToNextRow();
-5. resultSet.close();
-6. }).catch((err) => {
-7. console.log('query failed');
-8. });
+```ts
+let predicatesgoNext = new dataRdb.RdbPredicates("EMPLOYEE");
+let promisequerygoNext = rdbStore.query(predicatesgoNext, ["ID", "NAME", "AGE", "SALARY", "CODES"]);
+promisequerygoNext.then((resultSet) => {
+  resultSet.goToNextRow();
+  resultSet.close();
+}).catch((err) => {
+  console.error('query failed');
+});
 ```
 
 ### goToPreviousRow
-
-PhonePC/2in1TabletTVWearable
 
 goToPreviousRow(): boolean
 
@@ -290,24 +271,22 @@ goToPreviousRow(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 如果成功移动结果集，则为true；否则返回false。 |
+| boolean | 如果成功移动结果集到上一行，则为true；否则为false。 |
 
 **示例：**
 
-```
-1. let predicatesgoPrev = new dataRdb.RdbPredicates("EMPLOYEE");
-2. let promisequerygoPrev = rdbStore.query(predicatesgoPrev, ["ID", "NAME", "AGE", "SALARY", "CODES"]);
-3. promisequerygoPrev.then((resultSet) => {
-4. resultSet.goToPreviousRow();
-5. resultSet.close();
-6. }).catch((err) => {
-7. console.log('query failed');
-8. });
+```ts
+let predicatesgoPrev = new dataRdb.RdbPredicates("EMPLOYEE");
+let promisequerygoPrev = rdbStore.query(predicatesgoPrev, ["ID", "NAME", "AGE", "SALARY", "CODES"]);
+promisequerygoPrev.then((resultSet) => {
+  resultSet.goToPreviousRow();
+  resultSet.close();
+}).catch((err) => {
+  console.error('query failed');
+});
 ```
 
 ### getBlob
-
-PhonePC/2in1TabletTVWearable
 
 getBlob(columnIndex: number): Uint8Array
 
@@ -329,13 +308,11 @@ getBlob(columnIndex: number): Uint8Array
 
 **示例：**
 
-```
-1. const codes = resultSet.getBlob(resultSet.getColumnIndex("CODES"));
+```ts
+const codes = resultSet.getBlob(resultSet.getColumnIndex("CODES"));
 ```
 
 ### getString
-
-PhonePC/2in1TabletTVWearable
 
 getString(columnIndex: number): string
 
@@ -357,13 +334,11 @@ getString(columnIndex: number): string
 
 **示例：**
 
-```
-1. const name = resultSet.getString(resultSet.getColumnIndex("NAME"));
+```ts
+const name = resultSet.getString(resultSet.getColumnIndex("NAME"));
 ```
 
 ### getLong
-
-PhonePC/2in1TabletTVWearable
 
 getLong(columnIndex: number): number
 
@@ -385,13 +360,11 @@ getLong(columnIndex: number): number
 
 **示例：**
 
-```
-1. const age = resultSet.getLong(resultSet.getColumnIndex("AGE"));
+```ts
+const age = resultSet.getLong(resultSet.getColumnIndex("AGE"));
 ```
 
 ### getDouble
-
-PhonePC/2in1TabletTVWearable
 
 getDouble(columnIndex: number): number
 
@@ -413,13 +386,11 @@ getDouble(columnIndex: number): number
 
 **示例：**
 
-```
-1. const salary = resultSet.getDouble(resultSet.getColumnIndex("SALARY"));
+```ts
+const salary = resultSet.getDouble(resultSet.getColumnIndex("SALARY"));
 ```
 
 ### isColumnNull
-
-PhonePC/2in1TabletTVWearable
 
 isColumnNull(columnIndex: number): boolean
 
@@ -441,13 +412,11 @@ isColumnNull(columnIndex: number): boolean
 
 **示例：**
 
-```
-1. const isColumnNull = resultSet.isColumnNull(resultSet.getColumnIndex("CODES"));
+```ts
+const isColumnNull = resultSet.isColumnNull(resultSet.getColumnIndex("CODES"));
 ```
 
 ### close
-
-PhonePC/2in1TabletTVWearable
 
 close(): void
 
@@ -457,12 +426,12 @@ close(): void
 
 **示例：**
 
-```
-1. let predicatesClose = new dataRdb.RdbPredicates("EMPLOYEE");
-2. let promiseClose = rdbStore.query(predicatesClose, ["ID", "NAME", "AGE", "SALARY", "CODES"]);
-3. promiseClose.then((resultSet) => {
-4. resultSet.close();
-5. }).catch((err) => {
-6. console.log('resultset close failed');
-7. });
+```ts
+let predicatesClose = new dataRdb.RdbPredicates("EMPLOYEE");
+let promiseClose = rdbStore.query(predicatesClose, ["ID", "NAME", "AGE", "SALARY", "CODES"]);
+promiseClose.then((resultSet) => {
+  resultSet.close();
+}).catch((err) => {
+  console.error('resultset close failed');
+});
 ```

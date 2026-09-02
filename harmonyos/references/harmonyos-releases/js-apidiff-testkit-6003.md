@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-testkit-6003
 title: Test Kit
-breadcrumb: 版本说明 > HarmonyOS 6.0.0(20) > OS平台能力 > API变更清单 > 6.0.0(20) Beta3引入的API > Test Kit
+breadcrumb: 版本说明 > 更多版本 > 6.0.0(20) > OS平台能力 > API变更清单 > 6.0.0(20) Beta3引入的API > Test Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:22+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:28+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:fcf96fb6429d598d6c04dd82534dae47b4e40f66daa88f4bf01cd14fd4539ba2
 ---
 

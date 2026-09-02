@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-univers
 title: 无障碍开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 无障碍与适老化 > 无障碍开发指导
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:07+08:00
-doc_updated_at: 2026-04-03
-content_hash: sha256:f24b57cc9710429f997c0549b8811370d6845dbfcdd4bfbe684b5be125bc3d71
+scraped_at: 2026-09-02T14:59:19+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b58537f57551e22b77f7a3147ab2b5888bf0576a3f50122538a2ba5d7a432f4c
 ---
 
 ## 概述
@@ -110,48 +110,48 @@ content_hash: sha256:f24b57cc9710429f997c0549b8811370d6845dbfcdd4bfbe684b5be125b
 
 以下将通过2个示例，对比展示如何为无默认文本的按钮配置accessibilityText，补充核心无障碍朗读信息。
 
-说明
+**说明** 
 
 该示例运行，需在设备上提前[开启屏幕朗读](arkts-universal-attributes-accessibility.md#屏幕朗读操作指导)，否则无效果。
 
 示例1：无默认文本的按钮，屏幕朗读播报内容为：“按钮，单指双击可执行”，用户无法通过语音播报感知此按钮的功能（播放）。
 
-```
-1. @Entry
-2. @Component
-3. export struct AccessibilityTextCase01 {
-4. build() {
-5. // ...
-6. Column() {
-7. Button()
-8. .onClick(() => {
-9. // 播放音频、视频的核心逻辑
-10. })
-11. }
-12. // ...
-13. }
-14. }
+```typescript
+@Entry
+@Component
+export struct AccessibilityTextCase01 {
+  build() {
+    // ...
+    Column() {
+        Button()
+        .onClick(() => {
+            // 播放音频、视频的核心逻辑
+        })
+    }
+    // ...
+  }
+}
 ```
 
 示例2：在示例1的基础上，增加accessibilityText属性，屏幕朗读播报内容为：“播放，按钮，单指双击即可执行”，用户通过语音播报可以感知此按钮的功能。
 
-```
-1. @Entry
-2. @Component
-3. export struct AccessibilityTextCase02 {
-4. build() {
-5. // ...
-6. Column() {
-7. // 需确保resource/base/media目录下图标存在，可用其他图标替换演示。
-8. Button()
-9. .onClick(() => {
-10. // 播放音频、视频的核心逻辑
-11. })
-12. .accessibilityText('播放') // 配置核心无障碍文本
-13. }
-14. // ...
-15. }
-16. }
+```typescript
+@Entry
+@Component
+export struct AccessibilityTextCase02 {
+  build() {
+    // ...
+      Column() {
+        // 需确保resource/base/media目录下图标存在，可用其他图标替换演示。
+        Button()
+          .onClick(() => {
+            // 播放音频、视频的核心逻辑
+          })
+          .accessibilityText('播放') // 配置核心无障碍文本
+      }
+    // ...
+  }
+}
 ```
 
 ### 设置无障碍提醒
@@ -162,46 +162,46 @@ content_hash: sha256:f24b57cc9710429f997c0549b8811370d6845dbfcdd4bfbe684b5be125b
 
 以下给出2个示例，对比介绍在Button组件中，如何设置无障碍提醒。
 
-说明
+**说明** 
 
 该示例运行，需在设备上提前[开启屏幕朗读](arkts-universal-attributes-accessibility.md#屏幕朗读操作指导)，否则无效果。
 
 示例1：以Button组件作为视频播放全屏按钮时，聚焦该按钮后屏幕朗读仅播报：“按钮，单指双击即可​执行​”，用户无法明确该操作的具体含义。
 
-```
-1. @Entry
-2. @Component
-3. export struct AccessibilityDescriptionCase01 {
-4. build() {
-5. // ...
-6. Button()
-7. .background(Color.Blue)
-8. .onClick(() => {
-9. // 全屏逻辑
-10. })
-11. // ...
-12. }
-13. }
+```typescript
+@Entry
+@Component
+export struct AccessibilityDescriptionCase01 {
+  build() {
+    // ...
+    Button()
+      .background(Color.Blue)
+      .onClick(() => {
+        // 全屏逻辑
+      })
+    // ...
+  }
+}
 ```
 
 示例2：在示例1基础上添加accessibilityDescription，聚焦按钮后屏幕朗读播报“按钮，单指双击即可全屏”，用户可明确操作意图。
 
-```
-1. @Entry
-2. @Component
-3. export struct AccessibilityDescriptionCase02 {
-4. build() {
-5. // ...
-6. Button()
-7. .background(Color.Blue)
-8. .onClick(() => {
-9. // 全屏逻辑
-10. })
-11. // 业务自定义提示信息
-12. .accessibilityDescription('单指双击即可全屏') // 业务自定义提示信息
-13. // ...
-14. }
-15. }
+```typescript
+@Entry
+@Component
+export struct AccessibilityDescriptionCase02 {
+  build() {
+    // ...
+    Button()
+      .background(Color.Blue)
+      .onClick(() => {
+        // 全屏逻辑
+      })
+      // 业务自定义提示信息
+      .accessibilityDescription('单指双击即可全屏') // 业务自定义提示信息
+    // ...
+  }
+}
 ```
 
 ### 设置无障碍组件类型
@@ -210,47 +210,47 @@ content_hash: sha256:f24b57cc9710429f997c0549b8811370d6845dbfcdd4bfbe684b5be125b
 
 以下给出2个示例，对比介绍如何自定义组件的无障碍角色类型。
 
-说明
+**说明** 
 
 该示例运行，需在设备上提前[开启屏幕朗读](arkts-universal-attributes-accessibility.md#屏幕朗读操作指导)，否则无效果。
 
 示例1：本示例以Column组件为例，由于该Column组件并非标准按钮组件，屏幕朗读仅会播报其文本内容“点赞”。
 
-```
-1. @Entry
-2. @Component
-3. export struct AccessibilityRoleCase01 {
-4. build() {
-5. // ...
-6. Column() {
-7. Text('点赞')
-8. }
-9. .onClick(() => {
-10. // 业务逻辑
-11. })
-12. // ...
-13. }
-14. }
+```typescript
+@Entry
+@Component
+export struct AccessibilityRoleCase01 {
+  build() {
+    // ...
+    Column() {
+      Text('点赞')
+    }
+    .onClick(() => {
+      // 业务逻辑
+    })
+    // ...
+  }
+}
 ```
 
 示例2：在示例1的基础上，为该Column组件设置accessibilityRole属性值为BUTTON（播报为“按钮”），屏幕朗读最终播报内容为：“点赞，按钮，单指双击即可执行”。
 
-```
-1. @Entry
-2. @Component
-3. export struct AccessibilityRoleCase02 {
-4. build() {
-5. // ...
-6. Column() {
-7. Text('点赞')
-8. }
-9. .onClick(() => {
-10. // 业务逻辑
-11. })
-12. .accessibilityRole(AccessibilityRoleType.BUTTON)
-13. // ...
-14. }
-15. }
+```typescript
+@Entry
+@Component
+export struct AccessibilityRoleCase02 {
+  build() {
+    // ...
+    Column() {
+      Text('点赞')
+    }
+    .onClick(() => {
+      // 业务逻辑
+    })
+    .accessibilityRole(AccessibilityRoleType.BUTTON)
+    // ...
+  }
+}
 ```
 
 ### 设置无障碍节点是否被选中
@@ -267,42 +267,42 @@ content_hash: sha256:f24b57cc9710429f997c0549b8811370d6845dbfcdd4bfbe684b5be125b
 
 以下给出2个示例，介绍accessibilityChecked不同值的播报。
 
-说明
+**说明** 
 
 该示例运行，需在设备上提前[开启屏幕朗读](arkts-universal-attributes-accessibility.md#屏幕朗读操作指导)，否则无效果。
 
 示例1：本示例以Text组件为例，设置accessibilityChecked为true时，表示当前组件为被选中状态，当聚焦到“选项1”时，播报“已选中，选项1”。
 
-```
-1. @Entry
-2. @Component
-3. export struct AccessibilityCheckedCase01 {
-4. build() {
-5. // ...
-6. Column() {
-7. Text('选项1')
-8. .accessibilityChecked(true)
-9. }
-10. // ...
-11. }
-12. }
+```typescript
+@Entry
+@Component
+export struct AccessibilityCheckedCase01 {
+  build() {
+    // ...
+    Column() {
+      Text('选项1')
+        .accessibilityChecked(true)
+    }
+    // ...
+  }
+}
 ```
 
 示例2：本示例以Text组件为例，设置accessibilityChecked为false时，表示当前组件为未选中状态，当聚焦到“选项1”时，播报“未选中，选项1”。
 
-```
-1. @Entry
-2. @Component
-3. export struct AccessibilityCheckedCase02 {
-4. build() {
-5. // ...
-6. Column() {
-7. Text('选项1')
-8. .accessibilityChecked(false)
-9. }
-10. // ...
-11. }
-12. }
+```typescript
+@Entry
+@Component
+export struct AccessibilityCheckedCase02 {
+  build() {
+    // ...
+    Column() {
+      Text('选项1')
+        .accessibilityChecked(false)
+    }
+    // ...
+  }
+}
 ```
 
 在支持单选的情况下，设置无障碍节点是否被选中：
@@ -315,42 +315,42 @@ content_hash: sha256:f24b57cc9710429f997c0549b8811370d6845dbfcdd4bfbe684b5be125b
 
 以下给出2个示例，介绍accessibilitySelected不同值的播报。
 
-说明
+**说明** 
 
 该示例运行，需在设备上提前[开启屏幕朗读](arkts-universal-attributes-accessibility.md#屏幕朗读操作指导)，否则无效果。
 
 示例1：本示例以Text组件为例，设置accessibilitySelected为true时，表示当前组件为被选中状态，当聚焦到“选项1”时，播报“已选中，选项1”。
 
-```
-1. @Entry
-2. @Component
-3. export struct AccessibilitySelectedCase01 {
-4. build() {
-5. // ...
-6. Column() {
-7. Text('选项1')
-8. .accessibilitySelected(true)
-9. }
-10. // ...
-11. }
-12. }
+```typescript
+@Entry
+@Component
+export struct AccessibilitySelectedCase01 {
+  build() {
+    // ...
+    Column() {
+      Text('选项1')
+        .accessibilitySelected(true)
+    }
+    // ...
+  }
+}
 ```
 
 示例2：本示例以Text组件为例，设置accessibilitySelected为false时，表示当前组件为未选中状态，当聚焦到“选项1”时，播报“选项1”。
 
-```
-1. @Entry
-2. @Component
-3. export struct AccessibilitySelectedCase02 {
-4. build() {
-5. // ...
-6. Column() {
-7. Text('选项1')
-8. .accessibilitySelected(false)
-9. }
-10. // ...
-11. }
-12. }
+```typescript
+@Entry
+@Component
+export struct AccessibilitySelectedCase02 {
+  build() {
+    // ...
+    Column() {
+      Text('选项1')
+        .accessibilitySelected(false)
+    }
+    // ...
+  }
+}
 ```
 
 在ArkUI无障碍属性中，[accessibilityChecked](../harmonyos-references/ts-universal-attributes-accessibility.md#accessibilitychecked13)和[accessibilitySelected](../harmonyos-references/ts-universal-attributes-accessibility.md#accessibilityselected13)均用于表示组件的状态，但二者应用场景与语义含义存在本质差异。以下是二者的对比：
@@ -374,45 +374,45 @@ content_hash: sha256:f24b57cc9710429f997c0549b8811370d6845dbfcdd4bfbe684b5be125b
 
 以下给出两个示例，对比介绍在Column组件中使用无障碍分组的作用。
 
-说明
+**说明** 
 
 该示例运行，需在设备上提前[开启屏幕朗读](arkts-universal-attributes-accessibility.md#屏幕朗读操作指导)，否则无效果。
 
 示例1：该场景下包含3个可被单独聚焦的Text子组件节点，用户无法连贯感知完整的时间信息，需多次聚焦才能获取全部内容。
 
-```
-1. @Entry
-2. @Component
-3. export struct AccessibilityGroupCase01 {
-4. build() {
-5. // ...
-6. Column() {
-7. Text('2026年')
-8. Text('1月27日')
-9. Text('星期二')
-10. }
-11. // ...
-12. }
-13. }
+```typescript
+@Entry
+@Component
+export struct AccessibilityGroupCase01 {
+  build() {
+    // ...
+    Column() {
+      Text('2026年')
+      Text('1月27日')
+      Text('星期二')
+    }
+    // ...
+  }
+}
 ```
 
 示例2：在示例1基础上为Column组件启用accessibilityGroup后，仅Column组件可被聚焦，其下所有Text文本会拼接为“2026年1月27日星期二”播报，且单个Text节点无法被单独聚焦。
 
-```
-1. @Entry
-2. @Component
-3. export struct AccessibilityGroupCase02 {
-4. build() {
-5. // ...
-6. Column() {
-7. Text('2026年')
-8. Text('1月27日')
-9. Text('星期二')
-10. }
-11. .accessibilityGroup(true)
-12. // ...
-13. }
-14. }
+```typescript
+@Entry
+@Component
+export struct AccessibilityGroupCase02 {
+  build() {
+    // ...
+    Column() {
+      Text('2026年')
+      Text('1月27日')
+      Text('星期二')
+    }
+    .accessibilityGroup(true)
+    // ...
+  }
+}
 ```
 
 ### 设置无障碍重要性
@@ -426,27 +426,25 @@ content_hash: sha256:f24b57cc9710429f997c0549b8811370d6845dbfcdd4bfbe684b5be125b
 
 本示例以Text组件为例，为其设置Text.accessibilityLevel('yes')后，该组件可被屏幕朗读功能识别。若未配置该属性，“文本1”对应的Text组件无法被单独聚焦。
 
-说明
+**说明** 
 
 该示例运行，需在设备上提前[开启屏幕朗读](arkts-universal-attributes-accessibility.md#屏幕朗读操作指导)，否则无效果。
 
+```typescript
+@Entry
+@Component
+export struct AccessibilityLevelCase01 {
+  build() {
+    // ...
+    Column() {
+      Text('HelloWorld').fontSize(50).fontWeight(FontWeight.Bold)
+    }
+    .accessibilityGroup(true)
+    .accessibilityLevel('yes')
+    // ...
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. export struct AccessibilityLevelCase01 {
-4. build() {
-5. // ...
-6. Column() {
-7. Text('HelloWorld').fontSize(50).fontWeight(FontWeight.Bold)
-8. }
-9. .accessibilityGroup(true)
-10. .accessibilityLevel('yes')
-11. // ...
-12. }
-13. }
-```
-
-[AccessibilityText.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/master/ArkUISample/UIExtensionAndAccessibility/entry/src/main/ets/pages/UniversalAttributesAccessibility/AccessibilityText.ets#L41-L48)
 
 ### 设置无障碍虚拟子节点
 
@@ -454,32 +452,30 @@ content_hash: sha256:f24b57cc9710429f997c0549b8811370d6845dbfcdd4bfbe684b5be125b
 
 本示例以Column组件下的Text('文本1')模拟系统无法识别的自绘制组件，为Column设置accessibilityVirtualNode后，Text('文本2')会在Text('文本1')的位置进行无障碍节点占位，屏幕朗读即可聚焦到Text('文本2')并进行播报。
 
-说明
+**说明** 
 
 该示例运行，需在设备上提前[开启屏幕朗读](arkts-universal-attributes-accessibility.md#屏幕朗读操作指导)，否则无效果。
 
-```
-1. @Entry
-2. @Component
-3. struct VirtualNodeExample {
-4. @Builder customAccessibilityNode() {
-5. Text('文本2')
-6. .fontSize(50)
-7. .fontWeight(FontWeight.Bold)
-8. }
+```typescript
+@Entry
+@Component
+struct VirtualNodeExample {
+  @Builder customAccessibilityNode() {
+    Text('文本2')
+      .fontSize(50)
+      .fontWeight(FontWeight.Bold)
+  }
 
-10. build() {
-11. Column() {
-12. Text('文本1')
-13. .fontSize(50)
-14. .fontWeight(FontWeight.Bold)
-15. }
-16. .accessibilityVirtualNode(this.customAccessibilityNode)
-17. }
-18. }
+  build() {
+    Column() {
+      Text('文本1')
+        .fontSize(50)
+        .fontWeight(FontWeight.Bold)
+    }
+    .accessibilityVirtualNode(this.customAccessibilityNode)
+  }
+}
 ```
-
-[VirtualNodeExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/master/ArkUISample/UIExtensionAndAccessibility/entry/src/main/ets/pages/UniversalAttributesAccessibility/VirtualNodeExample.ets#L16-L38)
 
 ### 设置无障碍下一个焦点
 
@@ -487,58 +483,59 @@ content_hash: sha256:f24b57cc9710429f997c0549b8811370d6845dbfcdd4bfbe684b5be125b
 
 以下给出2个示例，对比介绍如何改变焦点遍历顺序。
 
-说明
+**说明** 
 
 该示例运行，需在设备上提前[开启屏幕朗读](arkts-universal-attributes-accessibility.md#屏幕朗读操作指导)，否则无效果。
 
 示例1：本示例中组件的视觉呈现顺序为“A->C->B->D”，焦点浏览顺序与视觉顺序一致，同样为“A->C->B->D”。
 
-```
-1. @Entry
-2. @Component
-3. export struct AccessibilityNextFocusIdCase01 {
-4. build() {
-5. // ...
-6. Column() {
-7. Button('A')
-8. Button('C')
-9. Button('B')
-10. Button('D')
-11. }
-12. // ...
-13. }
-14. }
+```typescript
+@Entry
+@Component
+export struct AccessibilityNextFocusIdCase01 {
+  build() {
+    // ...
+    Column() {
+      Button('A')
+      Button('C')
+      Button('B')
+      Button('D')
+    }
+    // ...
+  }
+}
 ```
 
 示例2：在示例1的基础上，通过accessibilityNextFocusId自定义焦点浏览顺序，最终走焦顺序为“A->B->C->D”
 
-```
-1. @Entry
-2. @Component
-3. export struct AccessibilityNextFocusIdCase02 {
-4. build() {
-5. // ...
-6. Column() {
-7. Button('A')
-8. .accessibilityNextFocusId('b')
-9. Button('C')
-10. .id('c')
-11. .accessibilityNextFocusId('d')
-12. Button('B')
-13. .id('b')
-14. .accessibilityNextFocusId('c')
-15. Button('D')
-16. .id('d')
-17. }
-18. // ...
-19. }
-20. }
+```typescript
+@Entry
+@Component
+export struct AccessibilityNextFocusIdCase02 {
+  build() {
+    // ...
+    Column() {
+      Button('A')
+        .accessibilityNextFocusId('b')
+      Button('C')
+        .id('c')
+        .accessibilityNextFocusId('d')
+      Button('B')
+        .id('b')
+        .accessibilityNextFocusId('c')
+      Button('D')
+        .id('d')
+    }
+    // ...
+  }
+}
 ```
 
-说明
+**说明** 
 
 * 避免焦点移动陷入死循环。例如为A配置accessibilityNextFocusId为B、为B配置该属性为A后，焦点移动顺序会变为A→B→A→B…，最终陷入死循环，适配无障碍功能时需避免此类情况。
 * 非必要情况下，需避免出现节点无法被焦点遍历到的情况。例如组件树包含A、B、C、D、E组件，默认焦点移动顺序为A→B→C→D→E。若仅为B配置accessibilityNextFocusId为D，焦点移动顺序会变为A→B→D→E→A→B→D→E…，导致节点C始终无法被焦点遍历到。
+* 如需指定当前节点为页面尾节点，可通过配置节点的下一个节点是自己的方式实现，即A配置accessibilityNextFocusId为A。当用户聚焦在该节点时，首次触发向下走焦将触发触底音效，再次触发向下走焦将查找页面首焦点。
 
 ### 设置可滚动模式
 
@@ -549,67 +546,67 @@ content_hash: sha256:f24b57cc9710429f997c0549b8811370d6845dbfcdd4bfbe684b5be125b
 
 以下给出2个示例，对比介绍如何通过配置accessibilityScrollTriggerable属性设置无障碍模式下的滚动触发状态。
 
-说明
+**说明** 
 
 该示例运行，需在设备上提前[开启屏幕朗读](arkts-universal-attributes-accessibility.md#屏幕朗读操作指导)，否则无效果。
 
 示例1：本示例以List组件为例，当焦点处于可见范围内列表的最后一个节点，如“第5项”时，若继续向下触发焦点移动，会触发列表的自动滚动，焦点将聚焦到原本不可见的内容节点“第6项”上。
 
-```
-1. @Entry
-2. @Component
-3. export struct AccessibilityScrollTriggerableCase01 {
-4. private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+```typescript
+@Entry
+@Component
+export struct AccessibilityScrollTriggerableCase01 {
+  private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-6. build() {
-7. // ...
-8. Column() {
-9. List({ space: 20, initialIndex: 0 }) {
-10. ForEach(this.arr, (item: number) => {
-11. ListItem() {
-12. Text(`第${item}项`)
-13. .width('100%')
-14. .height(100)
-15. .textAlign(TextAlign.Center)
-16. }
-17. }, (item: string) => item)
-18. }
-19. }
-20. .width('100%')
-21. .height('100%')
-22. // ...
-23. }
-24. }
+  build() {
+    // ...
+    Column() {
+      List({ space: 20, initialIndex: 0 }) {
+        ForEach(this.arr, (item: number) => {
+          ListItem() {
+            Text(`第${item}项`)
+              .width('100%')
+              .height(100)
+              .textAlign(TextAlign.Center)
+          }
+        }, (item: string) => item)
+      }
+    }
+    .width('100%')
+    .height('100%')
+    // ...
+  }
+}
 ```
 
 示例2：在示例1的基础上，为List组件配置accessibilityScrollTriggerable(false)后，当焦点处于可见范围内列表的最后一个节点，如“第5项”时，若继续向下触发焦点移动，将不再触发列表的自动滚动。若再次向下触发焦点移动，焦点会聚焦回页面的首个可聚焦节点。
 
-```
-1. @Entry
-2. @Component
-3. export struct AccessibilityScrollTriggerableCase02 {
-4. private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+```typescript
+@Entry
+@Component
+export struct AccessibilityScrollTriggerableCase02 {
+  private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-6. build() {
-7. // ...
-8. Column() {
-9. List({ space: 20, initialIndex: 0 }) {
-10. ForEach(this.arr, (item: number) => {
-11. ListItem() {
-12. Text(`第${item}项`)
-13. .width('100%')
-14. .height(100)
-15. .textAlign(TextAlign.Center)
-16. }
-17. }, (item: string) => item)
-18. }
-19. .accessibilityScrollTriggerable(false)
-20. }
-21. .width('100%')
-22. .height('100%')
-23. // ...
-24. }
-25. }
+  build() {
+    // ...
+    Column() {
+      List({ space: 20, initialIndex: 0 }) {
+        ForEach(this.arr, (item: number) => {
+          ListItem() {
+            Text(`第${item}项`)
+              .width('100%')
+              .height(100)
+              .textAlign(TextAlign.Center)
+          }
+        }, (item: string) => item)
+      }
+      .accessibilityScrollTriggerable(false)
+    }
+    .width('100%')
+    .height('100%')
+    // ...
+  }
+}
 ```
 
 ### 设置无障碍焦点绘制图层层级
@@ -618,47 +615,146 @@ content_hash: sha256:f24b57cc9710429f997c0549b8811370d6845dbfcdd4bfbe684b5be125b
 
 以下给出2个示例，对比介绍如何通过配置accessibilityFocusDrawLevel属性提升无障碍焦点绿色边框绘制的Z序。
 
-说明
+**说明** 
 
 该示例运行，需在设备上提前[开启屏幕朗读](arkts-universal-attributes-accessibility.md#屏幕朗读操作指导)，否则无效果。
 
 示例1：“文本1”按钮的焦点绿色边框被“文本2”按钮遮挡裁切，无法完整显示。
 
-```
-1. @Entry
-2. @Component
-3. export struct AccessibilityFocusDrawLevelCase01 {
-4. build() {
-5. // ...
-6. Stack() {
-7. Button('文本1')
+```typescript
+@Entry
+@Component
+export struct AccessibilityFocusDrawLevelCase01 {
+  build() {
+    // ...
+    Stack() {
+      Button('文本1')
 
-9. Button('文本2')
-10. .accessibilityLevel('no')
-11. }
-12. // ...
-13. }
-14. }
+      Button('文本2')
+        .accessibilityLevel('no')
+    }
+    // ...
+  }
+}
 ```
 
 示例2：在示例1的基础上，为“文本1”按钮配置accessibilityFocusDrawLevel(FocusDrawLevel.TOP)后，该按钮的焦点绿色边框能够完整显示。
 
-```
-1. @Entry
-2. @Component
-3. export struct AccessibilityFocusDrawLevelCase02 {
-4. build() {
-5. // ...
-6. Stack() {
-7. Button('文本1')
-8. .accessibilityFocusDrawLevel(FocusDrawLevel.TOP)
+```typescript
+@Entry
+@Component
+export struct AccessibilityFocusDrawLevelCase02 {
+  build() {
+    // ...
+    Stack() {
+      Button('文本1')
+        .accessibilityFocusDrawLevel(FocusDrawLevel.TOP)
 
-10. Button('文本2')
-11. .accessibilityLevel('no')
-12. }
-13. // ...
-14. }
-15. }
+      Button('文本2')
+        .accessibilityLevel('no')
+    }
+    // ...
+  }
+}
+```
+
+### 设置无障碍自定义操作
+
+[accessibilityCustomActions](https://developerlf.hwcloudtest.cn/consumer/cn/doc/harmonyos-references/ts-universal-attributes-accessibility#accessibilitycustomactions)用于设置组件的自定义无障碍操作，支持开发者设置一个自定义actions的数组，用于给组件按操作名进行自定义操作的回调绑定。
+
+当组件包含的操作名包含“IncreaseValue”或“DecreaseValue”时，忽略组件的其他自定义操作，改为支持单指上下扫动，触发业务回调完成调整值，其中“IncreaseValue”代表调大，“DecreaseValue”代表调小。
+
+以下给出2个示例，分别介绍如何通过配置accessibilityCustomActions属性设置无障碍焦点自定义操作及自定义，以及如何配置和实现支持单指上下扫动调整。
+
+**说明** 
+
+该示例运行，需在设备上提前[开启屏幕朗读](arkts-universal-attributes-accessibility.md#屏幕朗读操作指导)，否则无效果。
+
+示例1：
+
+```typescript
+@Entry
+@Component
+struct MailItem {
+  @State private mailTitle: string = '重要通知';
+  @State private mailContent: string = '这是一封重要的邮件内容';
+  @State private isRead: boolean = false;
+
+  build() {
+    Column() {
+    Text(this.mailTitle)
+      .fontSize(18)
+      .fontWeight(FontWeight.Bold)
+    Text(this.mailContent)
+      .fontSize(14)
+      .margin({ top: 8 })
+    }
+    .padding(16)
+    .backgroundColor(this.isRead ? Color.Gray : Color.White)
+    .accessibilityCustomActions([
+      {
+        name: '标记为已读',
+        onAction: () => {
+          this.isRead = true;
+          // 实现邮件已读逻辑
+        }
+      },
+      {
+        name: '删除',
+        onAction: () => {
+          // 执行删除操作
+        }
+      }
+    ])
+  }
+}
+```
+
+示例2（支持单指上下扫动调整）：
+
+```typescript
+@Entry
+@Component
+struct MailItem {
+    @State private value: number = 70;
+    private gradientColor: LinearGradient = new LinearGradient([
+        { color: "#87BDF9", offset: 0.5 },
+        { color: "#3662F0", offset: 1.0 }
+    ])
+
+    build() {
+        Colomn({ space: 15 }) {
+            Text('Linear: ')
+                .fontSize(9)
+                .fontColor(0XCCCCCC)
+                .width('90%')
+            Progress({
+                value: this.value,
+                total: 100,
+                type: ProgressType.Linear
+            })
+            .width(100)
+            .style({ strokeWidth: 20})
+            .color(this.gradientColor)
+            .accessibilityCustomActions([
+                {
+                    name: 'IncreaseValue',
+                    onAction: () => {
+                        this.value += 10;
+                        // 其他业务能力实现
+                    }
+                }，
+                {
+                    name: 'DecreaseValue',
+                    onAction: () => {
+                        this.value -= 10;
+                        // 其他业务能力实现
+                    }
+                }
+            ])
+        }
+    }
+}
 ```
 
 ## 无障碍方法开发指导
@@ -684,25 +780,25 @@ content_hash: sha256:f24b57cc9710429f997c0549b8811370d6845dbfcdd4bfbe684b5be125b
 
 本示例以Button组件为例，当焦点聚焦至Text组件时，该Button组件显示“未获焦”；当焦点聚焦至Button组件时，因触发onAccessibilityFocus回调且接收到的isFocus参数为true，Button组件的显示文本会被修改为“已获焦”。
 
-```
-1. @Entry
-2. @Component
-3. export struct OnAccessibilityFocusCase01 {
-4. @State isFocus: boolean = false;
+```typescript
+@Entry
+@Component
+export struct OnAccessibilityFocusCase01 {
+  @State isFocus: boolean = false;
 
-6. build() {
-7. // ...
-8. Column() {
-9. Text('文本') // 聚焦到此组件时，下面焦点丢失，可验证未获焦状态。
-10. Button(this.isFocus ? '已获焦' : '未获焦')
-11. .onAccessibilityFocus((isFocus: boolean) => {
-12. this.isFocus = isFocus
-13. console.info(`current isFocus: ${this.isFocus}`)
-14. })
-15. }
-16. // ...
-17. }
-18. }
+  build() {
+    // ...
+    Column() {
+      Text('文本') // 聚焦到此组件时，下面焦点丢失，可验证未获焦状态。
+      Button(this.isFocus ? '已获焦' : '未获焦')
+        .onAccessibilityFocus((isFocus: boolean) => {
+          this.isFocus = isFocus
+          console.info(`current isFocus: ${this.isFocus}`)
+        })
+    }
+    // ...
+  }
+}
 ```
 
 ### 无障碍触屏事件回调
@@ -713,48 +809,48 @@ content_hash: sha256:f24b57cc9710429f997c0549b8811370d6845dbfcdd4bfbe684b5be125b
 
 示例1：本示例以Text组件为例，其默认显示文本为“无”。在无障碍读屏模式下，触摸该Text组件时，显示文本无任何变化。
 
-```
-1. @Entry
-2. @Component
-3. export struct OnAccessibilityHoverCase01 {
-4. @State hoverText: string = '无';
+```typescript
+@Entry
+@Component
+export struct OnAccessibilityHoverCase01 {
+  @State hoverText: string = '无';
 
-6. build() {
-7. // ...
-8. Column() {
-9. Text(this.hoverText)
-10. .onTouch((event: TouchEvent) => {
-11. this.hoverText = '上屏文字';
-12. })
-13. }
-14. // ...
-15. }
-16. }
+  build() {
+    // ...
+    Column() {
+      Text(this.hoverText)
+        .onTouch((event: TouchEvent) => {
+          this.hoverText = '上屏文字';
+        })
+    }
+    // ...
+  }
+}
 ```
 
 示例2：通过配置onAccessibilityHover回调函数修改hoverText变量后，当触摸到该Text组件时，其显示文本会变更为“上屏文字”。
 
-```
-1. @Entry
-2. @Component
-3. export struct OnAccessibilityHoverCase02 {
-4. @State hoverText: string = '无';
+```typescript
+@Entry
+@Component
+export struct OnAccessibilityHoverCase02 {
+  @State hoverText: string = '无';
 
-6. build() {
-7. // ...
-8. Column() {
-9. Text(this.hoverText)
-10. .onTouch((event: TouchEvent) => {
-11. this.hoverText = '上屏文字';
-12. })
-13. .onAccessibilityHover((isHover: boolean, event: AccessibilityHoverEvent) => {
-14. // 模拟单击上屏
-15. this.hoverText = '上屏文字';
-16. })
-17. }
-18. // ...
-19. }
-20. }
+  build() {
+    // ...
+    Column() {
+      Text(this.hoverText)
+        .onTouch((event: TouchEvent) => {
+          this.hoverText = '上屏文字';
+        })
+        .onAccessibilityHover((isHover: boolean, event: AccessibilityHoverEvent) => {
+          // 模拟单击上屏
+          this.hoverText = '上屏文字';
+        })
+    }
+    // ...
+  }
+}
 ```
 
 ### 无障碍点击事件回调
@@ -765,77 +861,77 @@ content_hash: sha256:f24b57cc9710429f997c0549b8811370d6845dbfcdd4bfbe684b5be125b
 
 示例1：点击Toggle组件时会弹出弹框，屏幕朗读先播报“开启开关”，再播报弹框弹出的内容“确认开启”。由于间隔很短，导致“确认开启”的播报内容打断“开启开关”的播报。
 
-```
-1. @Entry
-2. @Component
-3. export struct AccessibilityActionInterceptCase01 {
-4. @State isOn: boolean = false;
+```typescript
+@Entry
+@Component
+export struct AccessibilityActionInterceptCase01 {
+  @State isOn: boolean = false;
 
-6. build() {
-7. // ...
-8. Column() {
-9. Toggle({ type: ToggleType.Switch, isOn: this.isOn})
-10. .onClick(() => {
-11. this.getUIContext().showAlertDialog({
-12. title: '',
-13. message: this.isOn ? '确认关闭' : '确认开启?',
-14. primaryButton: {
-15. value: '确认',
-16. action: () => {
-17. this.isOn = !this.isOn;
-18. }
-19. },
-20. secondaryButton: {
-21. value: '取消',
-22. action: () => {}
-23. }
-24. })
-25. })
-26. }
-27. // ...
-28. }
-29. }
+  build() {
+    // ...
+    Column() {
+    Toggle({ type: ToggleType.Switch, isOn: this.isOn})
+        .onClick(() => {
+        this.getUIContext().showAlertDialog({
+            title: '',
+            message: this.isOn ? '确认关闭' : '确认开启?',
+            primaryButton: {
+            value: '确认',
+            action: () => {
+                this.isOn = !this.isOn;
+            }
+            },
+            secondaryButton: {
+            value: '取消',
+            action: () => {}
+            }
+        })
+        })
+    }
+    // ...
+  }
+}
 ```
 
 示例2：通过配置onAccessibilityActionIntercept回调函数，在组件内部消费点击事件后，Toggle被点击时，屏幕朗读不再播报“开启开关”/“关闭开关”，仅播报弹框内容“确认开启”/“确认关闭”。
 
-```
-1. @Entry
-2. @Component
-3. export struct AccessibilityActionInterceptCase02 {
-4. @State isOn: boolean = false;
+```typescript
+@Entry
+@Component
+export struct AccessibilityActionInterceptCase02 {
+  @State isOn: boolean = false;
 
-6. build() {
-7. // ...
-8. Column() {
-9. Toggle({ type: ToggleType.Switch, isOn: this.isOn})
-10. .onClick(() => {
-11. })
-12. .onAccessibilityActionIntercept((action: AccessibilityAction) => {
-13. // ...
-14. if (action == AccessibilityAction.ACCESSIBILITY_CLICK) {
-15. this.getUIContext().showAlertDialog({
-16. title: '',
-17. message: this.isOn ? '确认关闭' : '确认开启?',
-18. primaryButton: {
-19. value: '确认',
-20. action: () => {
-21. this.isOn = !this.isOn;
-22. }
-23. },
-24. secondaryButton: {
-25. value: '取消',
-26. action: () => {}
-27. }
-28. })
-29. return AccessibilityActionInterceptResult.ACTION_INTERCEPT;
-30. }
-31. return AccessibilityActionInterceptResult.ACTION_CONTINUE;
-32. })
-33. }
-34. // ...
-35. }
-36. }
+  build() {
+    // ...
+    Column() {
+    Toggle({ type: ToggleType.Switch, isOn: this.isOn})
+        .onClick(() => {
+        })
+        .onAccessibilityActionIntercept((action: AccessibilityAction) => {
+        // ...
+        if (action == AccessibilityAction.ACCESSIBILITY_CLICK) {
+            this.getUIContext().showAlertDialog({
+            title: '',
+            message: this.isOn ? '确认关闭' : '确认开启?',
+            primaryButton: {
+                value: '确认',
+                action: () => {
+                this.isOn = !this.isOn;
+                }
+            },
+            secondaryButton: {
+                value: '取消',
+                action: () => {}
+            }
+            })
+            return AccessibilityActionInterceptResult.ACTION_INTERCEPT;
+        }
+        return AccessibilityActionInterceptResult.ACTION_CONTINUE;
+        })
+    }
+    // ...
+  }
+}
 ```
 
 ### 主动聚焦
@@ -846,61 +942,61 @@ content_hash: sha256:f24b57cc9710429f997c0549b8811370d6845dbfcdd4bfbe684b5be125b
 
 示例1：本示例以Button组件为例，当“文本1”按钮处于Visibility.Hidden状态时，页面会出现无障碍焦点丢失的问题，即页面无任何焦点。
 
-```
-1. @Entry
-2. @Component
-3. export struct SendAccessibilityEventCase01 {
-4. @State isVisible: boolean = true;
+```typescript
+@Entry
+@Component
+export struct SendAccessibilityEventCase01 {
+  @State isVisible: boolean = true;
 
-6. build() {
-7. // ...
-8. Column() {
-9. Button('文本1')
-10. .visibility(this.isVisible ? Visibility.Visible : Visibility.Hidden)
-11. .onClick((event: ClickEvent) => {
-12. this.isVisible = false;
-13. })
+  build() {
+    // ...
+    Column() {
+      Button('文本1')
+        .visibility(this.isVisible ? Visibility.Visible : Visibility.Hidden)
+        .onClick((event: ClickEvent) => {
+          this.isVisible = false;
+      })
 
-15. Button('文本2')
-16. }
-17. // ...
-18. }
-19. }
+      Button('文本2')
+    }
+    // ...
+  }
+}
 ```
 
 示例2：通过调用[accessibility.sendAccessibilityEvent](../harmonyos-references/js-apis-accessibility.md#accessibilitysendaccessibilityevent9)方法发送requestFocusForAccessibility类型的无障碍主动聚焦事件，在“文本1”按钮变为Visibility.Hidden时，主动聚焦到“文本2”按钮，保证页面至少有一个焦点。
 
-```
-1. import { accessibility } from '@kit.AccessibilityKit';
+```typescript
+import { accessibility } from '@kit.AccessibilityKit';
 
-3. @Entry
-4. @Component
-5. export struct SendAccessibilityEventCase02 {
-6. @State isVisible: boolean = true;
+@Entry
+@Component
+export struct SendAccessibilityEventCase02 {
+  @State isVisible: boolean = true;
 
-8. build() {
-9. // ...
-10. Column() {
-11. Button('文本1')
-12. .visibility(this.isVisible ? Visibility.Visible : Visibility.Hidden)
-13. .onClick(() => {
-14. this.isVisible = false;
-15. const event: accessibility.EventInfo = {
-16. type: "requestFocusForAccessibility",
-17. // 需要替换为当前的工程名称
-18. bundleName: "com.samples.uiextensionandaccessibility",
-19. triggerAction: "common",
-20. customId: '123'
-21. }
-22. accessibility.sendAccessibilityEvent(event);
-23. })
+  build() {
+    // ...
+    Column() {
+      Button('文本1')
+        .visibility(this.isVisible ? Visibility.Visible : Visibility.Hidden)
+        .onClick(() => {
+          this.isVisible = false;
+          const event: accessibility.EventInfo = {
+            type: "requestFocusForAccessibility",
+            // 需要替换为当前的工程名称
+            bundleName: "com.samples.uiextensionandaccessibility",
+            triggerAction: "common",
+            customId: '123'
+          }
+          accessibility.sendAccessibilityEvent(event);
+      })
 
-25. Button('文本2')
-26. .id('123') // 设置组件id
-27. }
-28. // ...
-29. }
-30. }
+      Button('文本2')
+        .id('123') // 设置组件id
+    }
+    // ...
+  }
+}
 ```
 
 ### 主动播报
@@ -909,58 +1005,58 @@ content_hash: sha256:f24b57cc9710429f997c0549b8811370d6845dbfcdd4bfbe684b5be125b
 
 示例1：当Button组件的文本内容发生变化时，屏幕朗读不会重新播报内容，视障用户难以感知该按钮的功能已发生改变。
 
-```
-1. @Entry
-2. @Component
-3. export struct SendAccessibilityEventCase03 {
-4. @State text: string = '暂停';
-5. private isPlay: boolean = false;
+```typescript
+@Entry
+@Component
+export struct SendAccessibilityEventCase03 {
+  @State text: string = '暂停';
+  private isPlay: boolean = false;
 
-7. build() {
-8. // ...
-9. Column() {
-10. Button(this.text)
-11. .onClick(() => {
-12. this.isPlay = !this.isPlay;
-13. this.text = this.isPlay ? '暂停' : '播放';
-14. })
-15. }
-16. // ...
-17. }
-18. }
+  build() {
+    // ...
+    Column() {
+      Button(this.text)
+        .onClick(() => {
+          this.isPlay = !this.isPlay;
+          this.text = this.isPlay ? '暂停' : '播放';
+        })
+    }
+    // ...
+  }
+}
 ```
 
 示例2：当Button组件的文本内容发生变化时，通过调用[accessibility.sendAccessibilityEvent](../harmonyos-references/js-apis-accessibility.md#accessibilitysendaccessibilityevent9)方法，发送announceForAccessibility类型的无障碍事件，触发屏幕朗读主动播报 “播放”/“暂停”，实现按钮文本内容变化与播报同步的效果。
 
-```
-1. import { accessibility } from '@kit.AccessibilityKit';
+```typescript
+import { accessibility } from '@kit.AccessibilityKit';
 
-3. @Entry
-4. @Component
-5. export struct SendAccessibilityEventCase04 {
-6. @State text: string = '暂停';
-7. private isPlay: boolean = false;
+@Entry
+@Component
+export struct SendAccessibilityEventCase04 {
+  @State text: string = '暂停';
+  private isPlay: boolean = false;
 
-9. build() {
-10. // ...
-11. Column() {
-12. Button(this.text)
-13. .onClick(() => {
-14. this.isPlay = !this.isPlay;
-15. this.text = this.isPlay ? '暂停' : '播放';
-16. const event: accessibility.EventInfo = {
-17. type: "announceForAccessibility",
-18. // 需要替换为当前的工程名称
-19. bundleName: "com.samples.uiextensionandaccessibility",
-20. triggerAction: "common",
-21. textAnnouncedForAccessibility: this.text,
-22. }
-23. accessibility.sendAccessibilityEvent(event);
-24. })
-25. }
-26. // ...
-27. }
-28. }
+  build() {
+    // ...
+    Column() {
+      Button(this.text)
+        .onClick(() => {
+          this.isPlay = !this.isPlay;
+          this.text = this.isPlay ? '暂停' : '播放';
+          const event: accessibility.EventInfo = {
+            type: "announceForAccessibility",
+            // 需要替换为当前的工程名称
+            bundleName: "com.samples.uiextensionandaccessibility",
+            triggerAction: "common",
+            textAnnouncedForAccessibility: this.text,
+          }
+          accessibility.sendAccessibilityEvent(event);
+        })
+    }
+    // ...
+  }
+}
 ```
 
 ## 开关状态查询及监听

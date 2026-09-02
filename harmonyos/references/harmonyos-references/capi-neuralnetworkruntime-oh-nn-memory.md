@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-neur
 title: OH_NN_Memory
 breadcrumb: API参考 > AI > Neural Network Runtime Kit（Neural Network运行时服务） > C API > 结构体 > OH_NN_Memory
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:10+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0c5808a08f1e79f0867a7c4a49bb27f6e9d919fb9d00e4d3d073a7956955d0cf
+scraped_at: 2026-09-02T15:03:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ac7f2a3c15f501e91d69421687e073fcb6f912aef367a97fdc300623039b0f6d
 ---
 
-```
-1. typedef struct OH_NN_Memory {...} OH_NN_Memory
+```c
+typedef struct OH_NN_Memory {...} OH_NN_Memory
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 内存结构体。
 
@@ -30,11 +28,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 成员变量
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |

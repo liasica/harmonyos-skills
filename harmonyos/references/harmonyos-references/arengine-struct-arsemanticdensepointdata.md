@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-
 title: AREngine_ARSemanticDensePointData
 breadcrumb: API参考 > 图形 > AR Engine（AR引擎服务） > C API > 头文件和结构体 > 结构体 > AREngine_ARSemanticDensePointData
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:34+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:660a718bd394f0cbbc0bb5e310dd69bb7da7a5968b652a0c3d68a619dfe7cf1d
+scraped_at: 2026-09-02T15:02:40+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:20e314021c6bb132f547bdda49b01664752a8575eba205556f966e6433950828
 ---
 
 ## 概述
-
-PhoneTabletTV
 
 高精几何重建对象的稠密点云数据。
 
@@ -24,11 +22,7 @@ PhoneTabletTV
 
 ## 汇总
 
-PhoneTabletTV
-
 ### 成员变量
-
-PhoneTabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -44,14 +38,10 @@ PhoneTabletTV
 
 ## 结构体成员变量说明
 
-PhoneTabletTV
-
 ### id
 
-PhoneTabletTV
-
-```
-1. int32_t AREngine_ARSemanticDensePointData::id
+```cpp
+int32_t AREngine_ARSemanticDensePointData::id
 ```
 
 **描述**
@@ -60,10 +50,8 @@ PhoneTabletTV
 
 ### x
 
-PhoneTabletTV
-
-```
-1. float AREngine_ARSemanticDensePointData::x
+```cpp
+float AREngine_ARSemanticDensePointData::x
 ```
 
 **描述**
@@ -72,10 +60,8 @@ PhoneTabletTV
 
 ### y
 
-PhoneTabletTV
-
-```
-1. float AREngine_ARSemanticDensePointData::y
+```cpp
+float AREngine_ARSemanticDensePointData::y
 ```
 
 **描述**
@@ -84,10 +70,8 @@ PhoneTabletTV
 
 ### z
 
-PhoneTabletTV
-
-```
-1. float AREngine_ARSemanticDensePointData::z
+```cpp
+float AREngine_ARSemanticDensePointData::z
 ```
 
 **描述**
@@ -96,10 +80,8 @@ PhoneTabletTV
 
 ### r
 
-PhoneTabletTV
-
-```
-1. int32_t AREngine_ARSemanticDensePointData::r
+```cpp
+int32_t AREngine_ARSemanticDensePointData::r
 ```
 
 **描述**
@@ -108,10 +90,8 @@ PhoneTabletTV
 
 ### g
 
-PhoneTabletTV
-
-```
-1. int32_t AREngine_ARSemanticDensePointData::g
+```cpp
+int32_t AREngine_ARSemanticDensePointData::g
 ```
 
 **描述**
@@ -120,10 +100,8 @@ PhoneTabletTV
 
 ### b
 
-PhoneTabletTV
-
-```
-1. int32_t AREngine_ARSemanticDensePointData::b
+```cpp
+int32_t AREngine_ARSemanticDensePointData::b
 ```
 
 **描述**
@@ -132,10 +110,8 @@ PhoneTabletTV
 
 ### a
 
-PhoneTabletTV
-
-```
-1. int32_t AREngine_ARSemanticDensePointData::a
+```cpp
+int32_t AREngine_ARSemanticDensePointData::a
 ```
 
 **描述**
@@ -144,10 +120,8 @@ PhoneTabletTV
 
 ### confidence
 
-PhoneTabletTV
-
-```
-1. float AREngine_ARSemanticDensePointData::confidence
+```cpp
+float AREngine_ARSemanticDensePointData::confidence
 ```
 
 **描述**

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-display-o
 title: 设置地图元素压盖顺序
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 设置地图元素压盖顺序
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:11+08:00
+scraped_at: 2026-09-02T14:50:28+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:fd1691be42544a44b96b05f99b52438d8b21ac8d04f4c8f5eca2e364d4d9e7ff
+content_hash: sha256:8c3bf8f421a0f91ee71cdc646373b1c1c32e21452c06cc0eee65075155526fbe
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:fd1691be42544a44b96b05f99b52438d8b21ac8d04f4c8f5eca2e364d4d
 
 设置地图元素的显示顺序，按照从低到高排列，即后面的地图元素会压盖前面的地图元素。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/cNBjUpMQSWCVgBRSYEF--w/zh-cn_image_0000002589245353.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/BndnRu6VTMutXt4rVq7DXQ/zh-cn_image_0000002706835066.jpg "点击放大")
 
 **表1** 地图元素类型压盖顺序
 
@@ -38,140 +38,140 @@ content_hash: sha256:fd1691be42544a44b96b05f99b52438d8b21ac8d04f4c8f5eca2e364d4d
 
 1. 导入相关模块。
 
-   ```
-   1. import { mapCommon, map, MapComponent } from '@kit.MapKit';
-   2. import { AsyncCallback } from '@kit.BasicServicesKit';
+   ```typescript
+   import { mapCommon, map, MapComponent } from '@kit.MapKit';
+   import { AsyncCallback } from '@kit.BasicServicesKit';
    ```
 2. 设置地图元素层级压盖关系。
 
-   ```
-   1. @Entry
-   2. @Component
-   3. struct MarkerDemo {
-   4. private mapOptions?: mapCommon.MapOptions;
-   5. private mapController?: map.MapComponentController;
-   6. private callback?: AsyncCallback<map.MapComponentController>;
-   7. private mapEventManager?: map.MapEventManager;
-   8. private marker?: map.Marker;
-   9. private bubble?: map.Bubble;
+   ```typescript
+   @Entry
+   @Component
+   struct MarkerDemo {
+     private mapOptions?: mapCommon.MapOptions;
+     private mapController?: map.MapComponentController;
+     private callback?: AsyncCallback<map.MapComponentController>;
+     private mapEventManager?: map.MapEventManager;
+     private marker?: map.Marker;
+     private bubble?: map.Bubble;
 
-   11. aboutToAppear(): void {
-   12. // 地图初始化参数
-   13. this.mapOptions = {
-   14. position: {
-   15. target: {
-   16. latitude: 31.984410259206815,
-   17. longitude: 118.26625379397866
-   18. },
-   19. zoom: 10
-   20. }
-   21. };
-   22. this.callback = async (err, mapController) => {
-   23. if (!err) {
-   24. this.mapController = mapController;
-   25. this.mapEventManager = this.mapController.getEventManager();
-   26. // Marker初始化参数
-   27. let markerOptions: mapCommon.MarkerOptions = {
-   28. position: {
-   29. latitude: 31.984410259206815,
-   30. longitude: 118.26625379397866
-   31. },
-   32. rotation: 0,
-   33. visible: true,
-   34. zIndex: 0,
-   35. alpha: 1,
-   36. anchorU: 0.5,
-   37. anchorV: 1,
-   38. clickable: true,
-   39. draggable: true,
-   40. flat: false
-   41. };
-   42. // 创建Marker
-   43. try {
-   44. this.marker = await this.mapController.addMarker(markerOptions);
-   45. } catch (e) {
-   46. console.error(`Failed to create the marker, code is：${e.code}, message is ${e.message}`);
-   47. }
-   48. let bubbleOptions: mapCommon.BubbleParams = {
-   49. // 气泡位置
-   50. positions: [[{
-   51. latitude: 32.384410259206815,
-   52. longitude: 118.26625379397866
-   53. }]],
-   54. // 设置图标，必须提供4个方向的图标，图标存放在resources/rawfile
-   55. icons: [
-   56. 'speed_limit_10.png',
-   57. 'speed_limit_20.png',
-   58. 'speed_limit_30.png',
-   59. 'speed_limit_40.png'
-   60. ],
-   61. // 定义气泡的显示属性，为true时，在被碰撞后仍能显示
-   62. forceVisible: true,
-   63. // 定义气泡碰撞优先级，数值越大，优先级越低
-   64. priority: 3,
-   65. // 定义气泡展示的最小层级
-   66. minZoom: 2,
-   67. // 定义气泡展示的最大层级
-   68. maxZoom: 20,
-   69. // 定义气泡是否可见
-   70. visible: true,
-   71. // 定义气泡叠加层级属性
-   72. zIndex: 1
-   73. }
-   74. // 添加气泡
-   75. try {
-   76. this.bubble = await this.mapController.addBubble(bubbleOptions);
-   77. } catch (e) {
-   78. console.error(`Failed to create the bubble, code is：${e.code}, message is ${e.message}`);
-   79. }
-   80. let imageOverlayParams: mapCommon.ImageOverlayParams = {
-   81. // 覆盖物范围
-   82. bounds: {
-   83. southwest: {
-   84. latitude: 32,
-   85. longitude: 118
-   86. },
-   87. northeast: {
-   88. latitude: 32.4,
-   89. longitude: 118.4
-   90. }
-   91. },
-   92. // 覆盖物图片
-   93. image: 'icon/icon.png',
-   94. transparency: 0.3,
-   95. zIndex: 101,
-   96. anchorU: 0.5,
-   97. anchorV: 0.5,
-   98. clickable: true,
-   99. visible: true,
-   100. bearing: 0
-   101. };
-   102. // 添加覆盖物
-   103. try {
-   104. await this.mapController?.addImageOverlay(imageOverlayParams);
-   105. } catch (e) {
-   106. console.error(`Failed to create the imageOverlay, code is：${e.code}, message is ${e.message}`);
-   107. }
+     aboutToAppear(): void {
+       // 地图初始化参数
+       this.mapOptions = {
+         position: {
+           target: {
+             latitude: 31.984410259206815,
+             longitude: 118.26625379397866
+           },
+           zoom: 10
+         }
+       };
+       this.callback = async (err, mapController) => {
+         if (!err) {
+           this.mapController = mapController;
+           this.mapEventManager = this.mapController.getEventManager();
+           // Marker初始化参数
+           let markerOptions: mapCommon.MarkerOptions = {
+             position: {
+               latitude: 31.984410259206815,
+               longitude: 118.26625379397866
+             },
+             rotation: 0,
+             visible: true,
+             zIndex: 0,
+             alpha: 1,
+             anchorU: 0.5,
+             anchorV: 1,
+             clickable: true,
+             draggable: true,
+             flat: false
+           };
+           // 创建Marker
+           try {
+             this.marker = await this.mapController.addMarker(markerOptions);
+           } catch (e) {
+             console.error(`Failed to create the marker, code is：${e.code}, message is ${e.message}`);
+           }
+           let bubbleOptions: mapCommon.BubbleParams = {
+             // 气泡位置
+             positions: [[{
+               latitude: 32.384410259206815,
+               longitude: 118.26625379397866
+             }]],
+             // 设置图标，必须提供4个方向的图标，图标存放在resources/rawfile
+             icons: [
+               'speed_limit_10.png',
+               'speed_limit_20.png',
+               'speed_limit_30.png',
+               'speed_limit_40.png'
+             ],
+             // 定义气泡的显示属性，为true时，在被碰撞后仍能显示
+             forceVisible: true,
+             // 定义气泡碰撞优先级，数值越大，优先级越低
+             priority: 3,
+             // 定义气泡展示的最小层级
+             minZoom: 2,
+             // 定义气泡展示的最大层级
+             maxZoom: 20,
+             // 定义气泡是否可见
+             visible: true,
+             // 定义气泡叠加层级属性
+             zIndex: 1
+           }
+           // 添加气泡
+           try {
+             this.bubble = await this.mapController.addBubble(bubbleOptions);
+           } catch (e) {
+             console.error(`Failed to create the bubble, code is：${e.code}, message is ${e.message}`);
+           }
+           let imageOverlayParams: mapCommon.ImageOverlayParams = {
+             // 覆盖物范围
+             bounds: {
+               southwest: {
+                 latitude: 32,
+                 longitude: 118
+               },
+               northeast: {
+                 latitude: 32.4,
+                 longitude: 118.4
+               }
+             },
+             // 覆盖物图片
+             image: 'icon/icon.png',
+             transparency: 0.3,
+             zIndex: 101,
+             anchorU: 0.5,
+             anchorV: 0.5,
+             clickable: true,
+             visible: true,
+             bearing: 0
+           };
+           // 添加覆盖物
+           try {
+             await this.mapController?.addImageOverlay(imageOverlayParams);
+           } catch (e) {
+             console.error(`Failed to create the imageOverlay, code is：${e.code}, message is ${e.message}`);
+           }
 
-   109. // 设置压盖顺序，最底层的是覆盖物，后面依次是POI、支持碰撞的覆盖物和Marker，Marker在最表面一层
-   110. let mapElementTypeArr: Array<mapCommon.MapElementType> = [
-   111. mapCommon.MapElementType.OVERLAY,
-   112. mapCommon.MapElementType.POI,
-   113. mapCommon.MapElementType.CUSTOM_POI,
-   114. mapCommon.MapElementType.MARKER];
-   115. this.mapController.setDisplayOrder(mapElementTypeArr);
-   116. } else {
-   117. console.error(`Failed to initialize the map, code is：${err.code}, message is ${err.message}`);
-   118. }
-   119. }
-   120. }
+           // 设置压盖顺序，最底层的是覆盖物，后面依次是POI、支持碰撞的覆盖物和Marker，Marker在最表面一层
+           let mapElementTypeArr: Array<mapCommon.MapElementType> = [
+             mapCommon.MapElementType.OVERLAY,
+             mapCommon.MapElementType.POI,
+             mapCommon.MapElementType.CUSTOM_POI,
+             mapCommon.MapElementType.MARKER];
+           this.mapController.setDisplayOrder(mapElementTypeArr);
+         } else {
+           console.error(`Failed to initialize the map, code is：${err.code}, message is ${err.message}`);
+         }
+       }
+     }
 
-   122. build() {
-   123. Stack() {
-   124. Column() {
-   125. MapComponent({ mapOptions: this.mapOptions, mapCallback: this.callback });
-   126. }.width('100%')
-   127. }.height('100%')
-   128. }
-   129. }
+     build() {
+       Stack() {
+         Column() {
+           MapComponent({ mapOptions: this.mapOptions, mapCallback: this.callback });
+         }.width('100%')
+       }.height('100%')
+     }
+   }
    ```

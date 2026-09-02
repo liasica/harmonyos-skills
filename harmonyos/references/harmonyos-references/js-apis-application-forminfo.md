@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.application.formInfo (formInfo)"
 breadcrumb: API参考 > 应用框架 > Form Kit（卡片开发服务） > 已停止维护的接口 > @ohos.application.formInfo (formInfo)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:04+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:b05b1ee9ccb589bfe98d647779f5f7f44666250604da8e2e9b97d4b4f2dc379d
+scraped_at: 2026-09-02T15:01:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:59cb07eb117b079c9e6a053872613c913f403f50fd1d39f77c6a7577a10952ad
 ---
 
 formInfo模块提供了卡片信息和状态等相关类型和枚举。
 
-说明
+**说明** 
 
 本模块首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -18,15 +18,11 @@ formInfo模块提供了卡片信息和状态等相关类型和枚举。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { formInfo } from '@kit.FormKit';
+```ts
+import { formInfo } from '@kit.FormKit';
 ```
 
 ## FormInfo
-
-PhonePC/2in1TabletTVWearable
 
 卡片信息。
 
@@ -46,16 +42,14 @@ PhonePC/2in1TabletTVWearable
 | updateEnabled | boolean | 否 | 否 | 表示卡片是否使能更新。  - true：表示支持周期性刷新。  - false：表示不支持周期性刷新。 |
 | formVisibleNotify | boolean | 否 | 否 | 表示卡片是否使能可见通知。  - true：通知卡片提供方可见状态变化。  - false：不通知卡片提供方可见状态变化。 |
 | relatedBundleName | string | 否 | 否 | 表示卡片所属的相关联Bundle名称。 |
-| scheduledUpdateTime | string | 否 | 否 | 表示卡片更新时间。 |
+| scheduledUpdateTime | string | 否 | 否 | 表示卡片定时更新时间。 |
 | formConfigAbility | string | 否 | 否 | 表示卡片配置ability。 |
 | updateDuration | number | 否 | 否 | 表示卡片更新周期。 |
-| defaultDimension | number | 否 | 否 | 表示卡片规格。 |
-| supportDimensions | Array<number> | 否 | 否 | 表示卡片支持的规格。 |
-| customizeData | {[key: string]: [value: string]} | 否 | 否 | 表示卡片用户数据。 |
+| defaultDimension | number | 否 | 否 | 表示卡片默认尺寸。 |
+| supportDimensions | Array<number> | 否 | 否 | 表示卡片支持的尺寸。 |
+| customizeData | {[key: string]: [value: string]} | 否 | 否 | 表示卡片自定义数据。 |
 
 ## FormType
-
-PhonePC/2in1TabletTVWearable
 
 支持的卡片类型枚举。
 
@@ -66,8 +60,6 @@ PhonePC/2in1TabletTVWearable
 | JS | 1 | 卡片类型为JS。 |
 
 ## ColorMode
-
-PhonePC/2in1TabletTVWearable
 
 卡片支持的颜色模式枚举。
 
@@ -81,8 +73,6 @@ PhonePC/2in1TabletTVWearable
 
 ## FormStateInfo
 
-PhonePC/2in1TabletTVWearable
-
 卡片状态信息。
 
 **系统能力：** SystemCapability.Ability.Form
@@ -90,11 +80,9 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | formState | [FormState](js-apis-application-forminfo.md#formstate) | 否 | 否 | 表示卡片状态。 |
-| want | [Want](js-apis-app-ability-want.md) | 否 | 否 | Want文本内容。 |
+| want | [Want](js-apis-app-ability-want.md) | 否 | 否 | 卡片的Want信息。 |
 
 ## FormState
-
-PhonePC/2in1TabletTVWearable
 
 卡片状态枚举。
 
@@ -107,8 +95,6 @@ PhonePC/2in1TabletTVWearable
 | READY | 1 | 表示就绪状态。 |
 
 ## FormParam
-
-PhonePC/2in1TabletTVWearable
 
 卡片参数枚举。
 

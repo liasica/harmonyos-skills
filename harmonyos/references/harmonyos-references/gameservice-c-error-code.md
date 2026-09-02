@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservi
 title: C API错误码
 breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > C API > C API错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:46+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f89aaae1f1d2f36f34618c53ae7601092b9991c4ad25eab1bb575369d7143033
+scraped_at: 2026-09-02T15:02:54+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:99043a92b7e0eaeec0a09fe06c927b90ecfd729d213c1608bae5f9319d5c85e3
 ---
 
-说明
+**说明** 
 
 以下仅介绍Game Service Kit特有错误码，通用错误码请参考[通用错误码](errorcode-universal.md)。
 
@@ -32,8 +32,6 @@ Game Service Kit系统内部错误。
 
 ## 1010300002 鉴权失败
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
 Auth failed.
@@ -52,8 +50,6 @@ Auth failed.
 2. 请检查[HMS\_GamePerformance\_Init](gameservice-game-performance.md#hms_gameperformance_init)接口传参是否正确。
 
 ## 1010300003 非法请求
-
-PhonePC/2in1Tablet
 
 **错误信息**
 

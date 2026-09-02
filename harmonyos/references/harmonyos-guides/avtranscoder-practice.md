@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avtranscoder-
 title: 创建异步线程执行AVTranscoder视频转码(ArkTS)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 视频转码 > 创建异步线程执行AVTranscoder视频转码(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:35:26+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:aca41bc1b42239d4957a0e8f7b48f9abdc404516b63865cb16014da340f13f80
+scraped_at: 2026-09-02T14:59:47+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e982732792efad213afe9c0883fd140838c9b691d7ad779a62842d8096bcccf4
 ---
 
 在开发过程中，应用经常会创建异步线程执行视频转码任务以满足不同诉求，主要包括：
@@ -55,13 +55,13 @@ content_hash: sha256:aca41bc1b42239d4957a0e8f7b48f9abdc404516b63865cb16014da340f
 
   计算过程：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/8342kSOWRDeAKXeAR51Quw/zh-cn_image_0000002589324967.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/Fpxfu4z7TBmuXW-v_Ea1Vg/zh-cn_image_0000002706834574.png)
 
   分辨率和帧率的系数由以下经验公式计算可得。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/DPOSnr9_T4qbvsafzTPMXg/zh-cn_image_0000002589244903.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/iJb_thWEQF2W3iuOx8xkpQ/zh-cn_image_0000002736313681.png)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/9ocZrJfPTAGb0DeBHzqidw/zh-cn_image_0000002558765098.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/Iy5Jf2ruSOGeFCLwLjYXMw/zh-cn_image_0000002706674638.png)
 
   上述计算帧率的公式y=clip(0.5, 2, x)表示：如果x∈[0.5, 2.0]，取y=x；如果x＜0.5，取y=0.5；如果x＞2.0，取y=2.0。
 * **码率计算**
@@ -101,98 +101,98 @@ content_hash: sha256:aca41bc1b42239d4957a0e8f7b48f9abdc404516b63865cb16014da340f
 
 ## 视频转码压缩开发样例
 
-```
-1. import { media } from '@kit.MediaKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { fileIo } from '@kit.CoreFileKit';
-4. export class AVTranscoderDemo {
-5. private avTranscoder: media.AVTranscoder | undefined = undefined;
-6. private context: Context | undefined;
-7. constructor(context: Context) {
-8. this.context = context;
-9. }
-10. private avConfig: media.AVTranscoderConfig = {
-11. // audioBitrate: 100000, // 音频比特率。
-12. // audioCodec: media.CodecMimeType.AUDIO_AAC, // 音频编码格式。
-13. fileFormat: media.ContainerFormatType.CFT_MPEG_4, // 封装格式。
-14. videoBitrate: 1000000, // 视频比特率。
-15. videoCodec: media.CodecMimeType.VIDEO_AVC, // 视频编码格式。
-16. videoFrameWidth: 1280, // 视频分辨率的宽。
-17. videoFrameHeight: 720  // 视频分辨率的高。
-18. };
-19. // 注册avTranscoder回调函数。
-20. setAVTranscoderCallback() {
-21. if (canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
-22. if (this.avTranscoder != undefined) {
-23. // 转码完成回调函数。
-24. this.avTranscoder.on('complete', async () => {
-25. console.info(`AVTranscoder is completed`);
-26. await this.releaseTranscoderingProcess();
-27. });
-28. // 错误上报回调函数。
-29. this.avTranscoder.on('error', (err: BusinessError) => {
-30. console.error(`AVTranscoder failed, code is ${err.code}, message is ${err.message}`);
-31. });
-32. }
-33. }
-34. }
-35. // 开始转码对应的流程。
-36. async startTranscoderingProcess() {
-37. if (canIUse("SystemCapability.Multimedia.Media.AVTranscoder") && this.context != undefined) {
-38. if (this.avTranscoder != undefined) {
-39. await this.avTranscoder.release();
-40. this.avTranscoder = undefined;
-41. }
-42. // 1.创建转码实例。
-43. this.avTranscoder = await media.createAVTranscoder();
-44. this.setAVTranscoderCallback();
-45. // 2.获取转码源文件fd和目标文件fd赋予avTranscoder；参考FilePicker文档。
-46. let fileDescriptor = await this.context.resourceManager.getRawFd('H264_AAC.mp4');
-47. this.avTranscoder.fdSrc = fileDescriptor;
-48. let outputFilePath = this.context.filesDir + "/output.mp4";
-49. let file = fileIo.openSync(outputFilePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
-50. this.avTranscoder.fdDst = file.fd;
-51. // 3.配置转码参数完成准备工作。
-52. await this.avTranscoder.prepare(this.avConfig);
-53. // 4.开始转码。
-54. await this.avTranscoder.start();
-55. }
-56. }
-57. // 暂停转码对应的流程。
-58. async pauseTranscoderingProcess() {
-59. if (canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
-60. if (this.avTranscoder != undefined) { // 仅在调用start返回后调用pause为合理调用。
-61. await this.avTranscoder.pause();
-62. }
-63. }
-64. }
-65. // 恢复对应的转码流程。
-66. async resumeTranscoderingProcess() {
-67. if (canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
-68. if (this.avTranscoder != undefined) { // 仅在调用pause返回后调用resume为合理调用。
-69. await this.avTranscoder.resume();
-70. }
-71. }
-72. }
-73. // 释放转码流程。
-74. async releaseTranscoderingProcess() {
-75. if (canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
-76. if (this.avTranscoder != undefined) {
-77. // 1.释放转码实例。
-78. await this.avTranscoder.release();
-79. this.avTranscoder = undefined;
-80. // 2.关闭转码目标文件fd。
-81. }
-82. }
-83. }
-84. // 一个完整的【开始转码-暂停转码-恢复转码-转码完成】示例。
-85. async avTranscoderDemo() {
-86. await this.startTranscoderingProcess(); // 开始转码。
-87. await this.pauseTranscoderingProcess(); // 暂停转码。
-88. await this.resumeTranscoderingProcess(); // 恢复转码。
-89. await this.releaseTranscoderingProcess(); // 释放转码。
-90. }
-91. }
+```ts
+import { media } from '@kit.MediaKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileIo } from '@kit.CoreFileKit';
+export class AVTranscoderDemo {
+    private avTranscoder: media.AVTranscoder | undefined = undefined;
+    private context: Context | undefined;
+    constructor(context: Context) {
+        this.context = context;
+    }
+    private avConfig: media.AVTranscoderConfig = {
+        // audioBitrate: 100000, // 音频比特率。
+        // audioCodec: media.CodecMimeType.AUDIO_AAC, // 音频编码格式。
+        fileFormat: media.ContainerFormatType.CFT_MPEG_4, // 封装格式。
+        videoBitrate: 1000000, // 视频比特率。
+        videoCodec: media.CodecMimeType.VIDEO_AVC, // 视频编码格式。
+        videoFrameWidth: 1280, // 视频分辨率的宽。
+        videoFrameHeight: 720  // 视频分辨率的高。
+    };
+    // 注册avTranscoder回调函数。
+    setAVTranscoderCallback() {
+        if (canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
+            if (this.avTranscoder != undefined) {
+                // 转码完成回调函数。
+                this.avTranscoder.on('complete', async () => {
+                    console.info(`AVTranscoder is completed`);
+                    await this.releaseTranscoderingProcess();
+                });
+                // 错误上报回调函数。
+                this.avTranscoder.on('error', (err: BusinessError) => {
+                    console.error(`AVTranscoder failed, code is ${err.code}, message is ${err.message}`);
+                });
+            }
+        }
+    }
+    // 开始转码对应的流程。
+    async startTranscoderingProcess() {
+        if (canIUse("SystemCapability.Multimedia.Media.AVTranscoder") && this.context != undefined) {
+            if (this.avTranscoder != undefined) {
+                await this.avTranscoder.release();
+                this.avTranscoder = undefined;
+            }
+            // 1.创建转码实例。
+            this.avTranscoder = await media.createAVTranscoder();
+            this.setAVTranscoderCallback();
+            // 2.获取转码源文件fd和目标文件fd赋予avTranscoder；参考FilePicker文档。
+            let fileDescriptor = await this.context.resourceManager.getRawFd('H264_AAC.mp4');
+            this.avTranscoder.fdSrc = fileDescriptor;
+            let outputFilePath = this.context.filesDir + "/output.mp4";
+            let file = fileIo.openSync(outputFilePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+            this.avTranscoder.fdDst = file.fd;
+            // 3.配置转码参数完成准备工作。
+            await this.avTranscoder.prepare(this.avConfig);
+            // 4.开始转码。
+            await this.avTranscoder.start();
+        }
+    }
+    // 暂停转码对应的流程。
+    async pauseTranscoderingProcess() {
+        if (canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
+            if (this.avTranscoder != undefined) { // 仅在调用start返回后调用pause为合理调用。
+                await this.avTranscoder.pause();
+            }
+        }
+    }
+    // 恢复对应的转码流程。
+    async resumeTranscoderingProcess() {
+        if (canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
+            if (this.avTranscoder != undefined) { // 仅在调用pause返回后调用resume为合理调用。
+                await this.avTranscoder.resume();
+            }
+        }
+    }
+    // 释放转码流程。
+    async releaseTranscoderingProcess() {
+        if (canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
+            if (this.avTranscoder != undefined) {
+                // 1.释放转码实例。
+                await this.avTranscoder.release();
+                this.avTranscoder = undefined;
+                // 2.关闭转码目标文件fd。
+            }
+        }
+    }
+    // 一个完整的【开始转码-暂停转码-恢复转码-转码完成】示例。
+    async avTranscoderDemo() {
+        await this.startTranscoderingProcess(); // 开始转码。
+        await this.pauseTranscoderingProcess(); // 暂停转码。
+        await this.resumeTranscoderingProcess(); // 恢复转码。
+        await this.releaseTranscoderingProcess(); // 释放转码。
+    }
+}
 ```
 
 具体如何使用转码能力对视频进行转码，可以参见文档：[用AVTranscoder实现视频转码](using-avtranscoder-for-transcodering.md)。
@@ -201,193 +201,203 @@ content_hash: sha256:aca41bc1b42239d4957a0e8f7b48f9abdc404516b63865cb16014da340f
 
 本示例使用的是worker线程的方式来实现异步线程进行转码，worker线程的详细使用方式，可以参见文档:
 
-* [Worker线程使用说明](../harmonyos-references/js-apis-worker.md)
+* [@ohos.worker (启动一个Worker)](../harmonyos-references/js-apis-worker.md)
 * [Worker简介](worker-introduction.md)
 
 ### 开发步骤
 
 1. 引入头文件，创建worker线程，并注册回调。
 
+   ```ts
+   import { ErrorEvent, MessageEvents, worker } from '@kit.ArkTS'
+   import { SendableObject } from '../util/SendableObject';
+   import { common, sendableContextManager } from '@kit.AbilityKit';
    ```
-   1. import { ErrorEvent, MessageEvents, worker } from '@kit.ArkTS'
-   2. import { SendableObject } from '../util/SendableObject';
-   3. import { common, sendableContextManager } from '@kit.AbilityKit';
-   ```
 
-   ```
-   1. // 创建Worker对象。
-   2. private workerInstance?: worker.ThreadWorker;
-   3. @State currentProgress: number = 0;
+   ```ts
+   // 创建Worker对象。
+   private workerInstance?: worker.ThreadWorker;
+   @State currentProgress: number = 0;
 
-   5. this.workerInstance = new worker.ThreadWorker('entry/ets/workers/task.ets');
+   this.workerInstance = new worker.ThreadWorker('entry/ets/workers/task.ets');
 
-   7. // 注册onmessage回调，当宿主线程接收到来自其创建的Worker通过workerPort.postMessage接口发送的消息时被调用，在宿主线程执行。
-   8. this.workerInstance.onmessage = (e: MessageEvents) => {
-   9. let data: string | number = e.data;
-   10. if (typeof data === 'string') { // complete事件。
-   11. console.info('workerInstance onmessage is: ', data);
-   12. if (data === 'complete') {
-   13. console.info('complete: ', data);
-   14. this.workerInstance?.terminate();
-   15. }
-   16. } else if (typeof data === 'number') {
-   17. this.currentProgress = data; // 当前进度。
-   18. }
-   19. }
+   // 注册onmessage回调，当宿主线程接收到来自其创建的Worker通过workerPort.postMessage接口发送的消息时被调用，在宿主线程执行。
+   this.workerInstance.onmessage = (e: MessageEvents) => {
+      let data: string | number = e.data;
+      if (typeof data === 'string') { // complete事件。
+        console.info('workerInstance onmessage is: ', data);
+        if (data === 'complete') {
+          console.info('complete: ', data);
+          this.workerInstance?.terminate();
+        }
+      } else if (typeof data === 'number') {
+        this.currentProgress = data; // 当前进度。
+      }
+    }
 
-   21. // 注册onErrors回调，可以捕获Worker线程的onmessage回调、timer回调以及文件执行等流程产生的全局异常，在宿主线程执行。
-   22. this.workerInstance.onerror = (err: ErrorEvent) => {
-   23. console.info("workerInstance onerror message is: " + err.message);
-   24. }
+   // 注册onErrors回调，可以捕获Worker线程的onmessage回调、timer回调以及文件执行等流程产生的全局异常，在宿主线程执行。
+   this.workerInstance.onerror = (err: ErrorEvent) => {
+       console.info("workerInstance onerror message is: " + err.message);
+   }
 
-   26. // 注册onmessageerror回调，当Worker对象接收到一条无法被序列化的消息时被调用，在宿主线程执行。
-   27. this.workerInstance.onmessageerror = () => {
-   28. console.info('workerInstance onmessageerror');
-   29. }
+   // 注册onmessageerror回调，当Worker对象接收到一条无法被序列化的消息时被调用，在宿主线程执行。
+   this.workerInstance.onmessageerror = () => {
+       console.info('workerInstance onmessageerror');
+   }
 
-   31. // 注册onexit回调，当Worker销毁时被调用，在宿主线程执行。
-   32. this.workerInstance.onexit = (e: number) => {
-   33. // 当Worker正常退出时code为0，异常退出时code为1。
-   34. console.info("workerInstance onexit code is: ", e);
-   35. }
+   // 注册onexit回调，当Worker销毁时被调用，在宿主线程执行。
+   this.workerInstance.onexit = (e: number) => {
+       // 当Worker正常退出时code为0，异常退出时code为1。
+       console.info("workerInstance onexit code is: ", e);
+   }
    ```
 2. 创建参数对象，向worker线程发送参数对象。
 
    如下是参数对象模型：
 
-   ```
-   1. import { sendableContextManager } from '@kit.AbilityKit';
+   ```ts
+   import { sendableContextManager } from '@kit.AbilityKit';
 
-   3. // 发送的参数必须加上@Sendable标注。
-   4. @Sendable
-   5. export class SendableObject {
-   6. constructor(sendableContext: sendableContextManager.SendableContext, data: string = '') {
-   7. this.sendableContext = sendableContext;
-   8. this.data = data;
-   9. }
+   // 发送的参数必须加上@Sendable标注。
+   @Sendable
+   export class SendableObject {
+     constructor(sendableContext: sendableContextManager.SendableContext, data: string = '') {
+       this.sendableContext = sendableContext;
+       this.data = data;
+     }
 
-   11. private sendableContext: sendableContextManager.SendableContext;
-   12. private data: string;
+     private sendableContext: sendableContextManager.SendableContext;
+     private data: string;
 
-   15. public getSendableContext() {
-   16. return this.sendableContext;
-   17. }
+     public getSendableContext() {
+       return this.sendableContext;
+     }
 
-   19. public getData() {
-   20. return this.data;
-   21. }
-   22. }
+     public getData() {
+       return this.data;
+     }
+   }
    ```
 
    如下是发送参数的逻辑：
 
-   ```
-   1. private context: Context | undefined;
-   2. // 向Worker线程发送消息。
-   3. this.context = this.getUIContext().getHostContext(); // 获取当前组件所在Ability的Context。
-   4. if (this.context != undefined) {
-   5. const sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext(
-   6. this.context);
-   7. const sendableObject: SendableObject = new SendableObject(sendableContext, 'some information');
-   8. this.workerInstance.postMessageWithSharedSendable(sendableObject);
-   9. }
+   ```ts
+   private context: Context | undefined;
+   // 向Worker线程发送消息。
+   this.context = this.getUIContext().getHostContext(); // 获取当前组件所在Ability的Context。
+   if (this.context != undefined) {
+     const sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext(
+       this.context);
+     const sendableObject: SendableObject = new SendableObject(sendableContext, 'some information');
+     this.workerInstance.postMessageWithSharedSendable(sendableObject);
+   }
    ```
 3. worker线程接收参数，并且执行转码的逻辑。
 
    worker线程接收参数：
 
-   ```
-   1. //worker线程接收参数。
-   2. const sendableObject: SendableObject = event.data;
-   3. const sendableContext: sendableContextManager.SendableContext =
-   4. sendableObject.getSendableContext() as sendableContextManager.SendableContext;
-   5. const context: common.Context =
-   6. sendableContextManager.convertToContext(sendableContext) as common.Context;
-   7. // 执行转码逻辑。
-   8. await doSome(context);
-   9. // 向主线程发送消息。
-   10. workerPort.postMessage('start end');
+   ```ts
+   //worker线程接收参数。
+   const sendableObject: SendableObject = event.data;
+   const sendableContext: sendableContextManager.SendableContext =
+     sendableObject.getSendableContext() as sendableContextManager.SendableContext;
+   const context: common.Context =
+     sendableContextManager.convertToContext(sendableContext) as common.Context;
+   // 执行转码逻辑。
+   await doSome(context);
+   // 向主线程发送消息。
+   workerPort.postMessage('start end');
    ```
 
    执行转码逻辑：
 
-   ```
-   1. async function doSome(context: common.Context) {
-   2. console.info(`doSome in`);
-   3. try {
-   4. let transcoder = await media.createAVTranscoder();
-   5. // 转码完成回调函数。
-   6. transcoder.on('complete', async () => {
-   7. console.info(`transcode complete`);
-   8. fileIo.closeSync(transcoder.fdDst); // 关闭fdDst。
-   9. await transcoder?.release()
-   10. workerPort.postMessage('complete');
-   11. })
-   12. // 转码错误回调函数。
-   13. transcoder.on('error', async (err: BusinessError) => {
-   14. fileIo.closeSync(transcoder.fdDst);
-   15. await transcoder?.release();
-   16. })
-   17. // 转码进度更新回调函数。
-   18. transcoder.on('progressUpdate', (progress: number) => {
-   19. console.info(`AVTranscoder progressUpdate = ${progress}`);
-   20. workerPort.postMessage(progress);
-   21. })
+   ```ts
+   async function doSome(context: common.Context) {
+     console.info(`doSome in`);
+     try {
+       let transcoder = await media.createAVTranscoder();
+       // 转码完成回调函数。
+       transcoder.on('complete', async () => {
+         console.info(`transcode complete`);
+         await transcoder?.release()
+         if (transcoder.fdDst != undefined) {
+           fs.closeSync(transcoder.fdDst);
+         }
+         if (transcoder.fdSrc != undefined) {
+           fs.closeSync(transcoder.fdSrc.fd);
+         }
+         workerPort.postMessage('complete');
+       })
+       // 转码错误回调函数。
+       transcoder.on('error', async (err: BusinessError) => {
+         await transcoder?.release();
+         if (transcoder.fdDst != undefined) {
+           fs.closeSync(transcoder.fdDst);
+         }
+         if (transcoder.fdSrc != undefined) {
+           fs.closeSync(transcoder.fdSrc.fd);
+         }
+       })
+       // 转码进度更新回调函数。
+       transcoder.on('progressUpdate', (progress: number) => {
+         console.info(`AVTranscoder progressUpdate = ${progress}`);
+         workerPort.postMessage(progress);
+       })
 
-   23. try {
-   24. // 获取输入文件fd，H264_AAC.mp4为rawfile目录下的预置资源，需要开发者根据实际情况进行替换。
-   25. let fileDescriptor = await context.resourceManager.getRawFd('H264_AAC.mp4');
-   26. transcoder.fdSrc = fileDescriptor; // 设置fdSrc。
-   27. } catch (error) {
-   28. console.error('Failed to get the file descriptor, please check the resource and path.');
-   29. }
-   30. // 设置输出文件路径，context.filesDir为应用的沙箱路径。
-   31. let fdPath = context.filesDir + "/" + "VID_" + Date.parse(new Date().toString()) + ".mp4";
-   32. let file = fileIo.openSync(fdPath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
-   33. let fd = file.fd;
-   34. console.info(`file fd ${fd}`);
-   35. transcoder.fdDst = file.fd;
+       try {
+         // 获取输入文件fd，H264_AAC.mp4为rawfile目录下的预置资源，需要开发者根据实际情况进行替换。
+         let fileDescriptor = await context.resourceManager.getRawFd('H264_AAC.mp4');
+         transcoder.fdSrc = fileDescriptor; // 设置fdSrc。
+       } catch (error) {
+         console.error('Failed to get the file descriptor, please check the resource and path.');
+       }
+       // 设置输出文件路径，context.filesDir为应用的沙箱路径。
+       let fdPath = context.filesDir + "/" + "VID_" + Date.parse(new Date().toString()) + ".mp4";
+       let file = fileIo.openSync(fdPath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+       let fd = file.fd;
+       console.info(`file fd ${fd}`);
+       transcoder.fdDst = file.fd;
 
-   37. let config: media.AVTranscoderConfig = {
-   38. fileFormat: media.ContainerFormatType.CFT_MPEG_4, // 封装格式。
-   39. audioCodec: media.CodecMimeType.AUDIO_AAC, // 音频编码格式。
-   40. videoCodec: media.CodecMimeType.VIDEO_AVC, // 视频编码格式。
-   41. videoBitrate: 200000, // 视频比特率。
-   42. }
-   43. await transcoder?.prepare(config);
-   44. await transcoder?.start();
-   45. } catch (e) {
-   46. console.error(`transcode error: code = ` + e.code.toString() + `, message = ${JSON.stringify(e.message)}`);
-   47. }
-   48. }
+       let config: media.AVTranscoderConfig = {
+         fileFormat: media.ContainerFormatType.CFT_MPEG_4, // 封装格式。
+         audioCodec: media.CodecMimeType.AUDIO_AAC, // 音频编码格式。
+         videoCodec: media.CodecMimeType.VIDEO_AVC, // 视频编码格式。
+         videoBitrate: 200000, // 视频比特率。
+       }
+       await transcoder?.prepare(config);
+       await transcoder?.start();
+     } catch (e) {
+       console.error(`transcode error: code = ` + e.code.toString() + `, message = ${JSON.stringify(e.message)}`);
+     }
+   }
    ```
 4. 监听转码的Complete回调，在转码结束的时候向主线程发送消息。
 
-   ```
-   1. // 转码完成回调函数。
-   2. transcoder.on('complete', async () => {
-   3. console.info(`transcode complete`);
-   4. fileIo.closeSync(transcoder.fdDst); // 关闭fdDst。
-   5. await transcoder?.release()
-   6. workerPort.postMessage('complete');
-   7. })
+   ```ts
+   // 转码完成回调函数。
+   transcoder.on('complete', async () => {
+     console.info(`transcode complete`);
+     fileIo.closeSync(transcoder.fdDst); // 关闭fdDst。
+     await transcoder?.release()
+     workerPort.postMessage('complete');
+   })
    ```
 5. 主线程接收到worker线程转码结束的信息，销毁worker线程。
 
-   ```
-   1. // 注册onmessage回调，当宿主线程接收到来自其创建的Worker通过workerPort.postMessage接口发送的消息时被调用，在宿主线程执行。
-   2. this.workerInstance.onmessage = (e: MessageEvents) => {
-   3. let data: string | number = e.data;
-   4. if (typeof data === 'string') {
-   5. console.info('workerInstance onmessage is: ', data);
-   6. if (data === 'complete') {
-   7. console.info('complete: ', data);
-   8. this.workerInstance?.terminate();
-   9. }
-   10. } else if (typeof data === 'number') {
-   11. this.currentProgress = data;
-   12. }
-   13. }
+   ```ts
+   // 注册onmessage回调，当宿主线程接收到来自其创建的Worker通过workerPort.postMessage接口发送的消息时被调用，在宿主线程执行。
+   this.workerInstance.onmessage = (e: MessageEvents) => {
+     let data: string | number = e.data;
+     if (typeof data === 'string') {
+       console.info('workerInstance onmessage is: ', data);
+       if (data === 'complete') {
+         console.info('complete: ', data);
+         this.workerInstance?.terminate();
+       }
+     } else if (typeof data === 'number') {
+       this.currentProgress = data;
+     }
+   }
    ```
 
 ## 运行示例工程
@@ -396,27 +406,27 @@ content_hash: sha256:aca41bc1b42239d4957a0e8f7b48f9abdc404516b63865cb16014da340f
 
 1. 新建工程，下载[完整示例工程](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/Media/AVTranscoder/AsyncTranscoder)，并将示例工程的资源复制到对应目录。
 
-   ```
-   1. AsyncTranscoder
-   2. entry/build-profile.json5 (配置字段信息将Worker线程文件打包到应用)
-   3. entry/src/main/ets/
-   4. ├── pages
-   5. │    └── Index.ets (转码界面)
-   6. ├── util
-   7. │    └── SendableObject.ets (Sendable对象)
-   8. │
-   9. └── workers
-   10. └── task.ets (转码任务)
+   ```txt
+   AsyncTranscoder
+   entry/build-profile.json5 (配置字段信息将Worker线程文件打包到应用)
+   entry/src/main/ets/
+   ├── pages
+   │    └── Index.ets (转码界面)
+   ├── util
+   │    └── SendableObject.ets (Sendable对象)
+   │
+   └── workers
+       └── task.ets (转码任务)
 
-   12. entry/src/main/resources/
-   13. ├── base
-   14. │   ├── element
-   15. │   │   ├── color.json
-   16. │   │   ├── float.json
-   17. │   │   └── string.json
-   18. │   └── media
-   19. │
-   20. └── rawfile
-   21. └── H264_AAC.mp4 (视频资源)
+   entry/src/main/resources/
+   ├── base
+   │   ├── element
+   │   │   ├── color.json
+   │   │   ├── float.json
+   │   │   └── string.json
+   │   └── media
+   │
+   └── rawfile
+       └── H264_AAC.mp4 (视频资源)
    ```
 2. 编译新建工程并运行。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-access-
 title: 目标设备接收分享数据一步直达体验
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > Share Kit体验规范 > 目标设备接收分享数据一步直达体验
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:58+08:00
+scraped_at: 2026-09-02T15:00:02+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e9b3c25b15ef1644e53a815cd2ee58a0982c7723eb4f2ddfb7e47f1b5b665797
+content_hash: sha256:67bb053ee63a9714837d6048b73fbc5791f45d99d92c9e66f24e3c7006fc5d26
 ---
 
 为保证华为分享目标设备接收体验更优，规范分享数据接收时的直达体验，目标设备接收到分享数据后，将按照如下规则处理：
@@ -44,51 +44,51 @@ content_hash: sha256:e9b3c25b15ef1644e53a815cd2ee58a0982c7723eb4f2ddfb7e47f1b5b6
 * shareType：用于分组匹配，当发送端应用和接收端应用配置相同的shareType值时，匹配规则才可生效。仅支持配置一项，配置多项时，仅第一项生效。
 * shareBundleName：指定打开应用的包名，可配置多项。当shareType相同时，按数组排列顺序匹配第一个已安装且支持拉起（满足[隐式匹配原理](explicit-implicit-want-mappings.md#隐式want匹配原理)）的应用，并优先拉起该应用。
 
-```
-1. {
-2. "module": {
-3. "abilities": [
-4. {
-5. "name": "EntryAbility",
-6. "srcEntry": "./ets/entryability/EntryAbility.ets",
-7. "startWindowIcon": "$media:launcher",
-8. "startWindowBackground": "$color:start_window_background",
-9. "exported": true,
-10. "skills": [
-11. {
-12. "entities": [
-13. "entity.system.home",
-14. ],
-15. "actions": [
-16. "ohos.want.action.viewData"
-17. ],
-18. "uris": [
-19. {
-20. "scheme": "file",
-21. "linkFeature": "FileOpen",
-22. "type": "org.openxmlformats.wordprocessingml.document",
-23. "maxFileSupported": 1
-24. }
-25. ],
-26. "domainVerify": true
-27. }
-28. ]
-29. },
-30. ],
-31. "metadata": [
-32. {
-33. "name": "shareType",
-34. "value": "sharekitModel",
-35. },
-36. {
-37. "name": "shareBundleName",
-38. "value": "com.example.sharekitPhone",
-39. },
-40. {
-41. "name": "shareBundleName",
-42. "value": "com.example.sharekitPc",
-43. }
-44. ]
-45. }
-46. }
+```json
+{
+  "module": {
+    "abilities": [
+      {
+        "name": "EntryAbility",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
+        "startWindowIcon": "$media:launcher",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true,
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home",
+            ],
+            "actions": [
+              "ohos.want.action.viewData"
+            ],
+            "uris": [
+              {
+                "scheme": "file",
+                "linkFeature": "FileOpen",
+                "type": "org.openxmlformats.wordprocessingml.document",
+                "maxFileSupported": 1
+              }
+            ],
+            "domainVerify": true
+          }
+        ]
+      },
+    ],
+    "metadata": [
+      {
+        "name": "shareType",
+        "value": "sharekitModel",
+      },
+      {
+        "name": "shareBundleName",
+        "value": "com.example.sharekitPhone",
+      },
+      {
+        "name": "shareBundleName",
+        "value": "com.example.sharekitPc",
+      }
+    ]
+  }
+}
 ```

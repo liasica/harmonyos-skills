@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-nat
 title: 堆栈可视化
 breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 堆栈可视化
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:46:46+08:00
+scraped_at: 2026-09-02T14:50:54+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:66caefdd9b635cf6a3bc7f7ce86d6830c5c3da4662890fbbabbd02c07382ac30
+content_hash: sha256:3f6c86dd7f481dad3bdda7c529eabd202e6238960c4e3bc41b40fc89abd0e06f
 ---
 
-在native调试窗口中，点击**Layout Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/OCASlwjySc2ADIQBj2VJlA/zh-cn_image_0000002530753170.png)，勾选**Parallel Stacks**，打开并行栈视图。
+在native调试窗口中，点击**Layout Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/rN8XZItURyuLcbK3g6IbMw/zh-cn_image_0000002731542421.png)，勾选**Parallel Stacks**，打开并行栈视图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/y740sh3bRwGtiK7ls5jYFA/zh-cn_image_0000002561753109.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/ncmCnjakQuOQB_miuXYthw/zh-cn_image_0000002701663228.png)
 
 在程序停下时，并行栈视图可以同时展示多个线程的调用栈信息，合并重复调用栈，帮助您更好地理解程序的并发执行情况，以及发现潜在的多线程问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/BFXXzqRETdyIUN_WAVNwxQ/zh-cn_image_0000002530753168.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/ng1pcIkdR5iEXcJmXfAfRw/zh-cn_image_0000002731382447.png)
 
 ## 调用栈跳转
 
@@ -24,4 +24,4 @@ content_hash: sha256:66caefdd9b635cf6a3bc7f7ce86d6830c5c3da4662890fbbabbd02c0738
 
 在多个线程合并的位置处悬停鼠标，可以显示这些线程的具体信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/1GBxHFOATDyjqHDeGNkeqw/zh-cn_image_0000002530753174.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/zF0JxohQTSqitmHRExxUlw/zh-cn_image_0000002701823146.png)

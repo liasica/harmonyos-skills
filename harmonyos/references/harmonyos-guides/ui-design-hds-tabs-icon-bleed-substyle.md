@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-hds
 title: 设置页签的图标出血样式
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 底部页签 > 设置页签的图标出血样式
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:30:22+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d003c3eb42b34852bd02d7b862f43389743ce1e6eb4b4f23f5a05c4059e88a38
+scraped_at: 2026-09-02T14:49:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9d29504994ac9b65c2b0be7ff4bba1527d45f4fa0ae61df97597cd7da986471a
 ---
 
 ## 场景介绍
 
-从6.0.0(20) Beta1版本开始，新增支持设置页签的图标出血样式。
+从6.0.0(20)版本开始，新增支持设置页签的图标出血样式。
 
-[HdsTabs](../harmonyos-references/ui-design-hdstabs.md)容器组件扩展支持出血图标样式。当应用开发者需要tabBar内的页签高度超出tabBar时，可以通过设置对应页签的属性，添加出血效果的自定义组件，图标超出容器部分最大高度为4vp。
+[HdsTabs (底部页签)](../harmonyos-references/ui-design-hdstabs.md)容器组件扩展支持出血图标样式。当应用开发者需要tabBar内的页签高度超出tabBar时，可以通过设置对应页签的属性，添加出血效果的自定义组件，图标超出容器部分最大高度为4vp。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/6FjmvKo5THGN03Svgi3mfw/zh-cn_image_0000002558764842.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/ziYttNH5So6_H0kYYbQ4gQ/zh-cn_image_0000002706674302.png)
 
 ## 约束条件
 
@@ -24,44 +24,45 @@ content_hash: sha256:d003c3eb42b34852bd02d7b862f43389743ce1e6eb4b4f23f5a05c4059e
 
 1. 导入相关模块。
 
-   ```
-   1. // 从6.0.2(22)版本开始，无需手动导入HdsTabsAttribute。具体请参考HdsTabs的导入模块说明。
-   2. import { HdsTabs, HdsTabsAttribute } from '@kit.UIDesignKit';
-   3. import { bleedIconStyle } from '@hms.hds.HdsStyle';
+   ```typescript
+   // 从6.0.2(22)版本开始，无需手动导入HdsTabsAttribute。具体请参考HdsTabs的导入模块说明。
+   import { HdsTabs, HdsTabsAttribute, bleedIconStyle } from '@kit.UIDesignKit';
    ```
 2. 创建Hds一级容器组件，设置HdsTabs组件的子组件TabContent的tabBar样式。
 
-   ```
-   1. @Entry
-   2. @Component
-   3. struct Index {
-   4. build() {
-   5. Stack() {
-   6. HdsTabs() {
-   7. TabContent() {
-   8. Column().width('100%').height('100%').backgroundColor(Color.Yellow)
-   9. }
-   10. .tabBar(bleedIconStyle(() => {
-   11. this.tabBuilder()
-   12. }))
-   13. TabContent() {
-   14. Column().width('100%').height('100%').backgroundColor(Color.Blue)
-   15. }
-   16. .tabBar(this.tabBuilder())
-   17. }
-   18. .vertical(false)
-   19. .barPosition(BarPosition.End)
-   20. }
-   21. }
+   ```typescript
+   @Entry
+   @Component
+   struct Index {
+     build() {
+       Stack() {
+         HdsTabs() {
+           TabContent() {
+             Column().width('100%').height('100%').backgroundColor(Color.Yellow)
+           }
+           .tabBar(bleedIconStyle(() => {
+             this.tabBuilder()
+           }))
+           TabContent() {
+             Column().width('100%').height('100%').backgroundColor(Color.Blue)
+           }
+           .tabBar(this.tabBuilder())
+         }
+         .vertical(false)
+         .barPosition(BarPosition.End)
+       }
+       .width('100%')
+       .height('100%')
+     }
 
-   23. @Builder
-   24. tabBuilder() {
-   25. Column() {
-   26. Image($r('app.media.startIcon'))
-   27. .width(48)
-   28. .height(48)
-   29. .borderRadius(24)
-   30. }
-   31. }
-   32. }
+     @Builder
+     tabBuilder() {
+       Column() {
+         Image($r('app.media.startIcon'))
+           .width(48)
+           .height(48)
+           .borderRadius(24)
+       }
+     }
+   }
    ```

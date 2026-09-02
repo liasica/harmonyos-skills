@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-verify-func-reg
 title: VERIFY_FUNC_REG
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > VERIFY_FUNC_REG
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:22+08:00
+scraped_at: 2026-09-02T14:50:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3b01c3b9e07154125c58b06733785796e8c842345b9c7e24f65e5c3a344e6c6b
+content_hash: sha256:44f1a724ba621764dff6fe97ddf8d70fa1621d6ee9a59e6c1bf90b5ed80751d5
 ---
 
 ## 函数功能
@@ -13,8 +14,8 @@ content_hash: sha256:3b01c3b9e07154125c58b06733785796e8c842345b9c7e24f65e5c3a344
 
 ## 函数原型
 
-```
-1. VERIFY_FUNC_REG(op_name, x)
+```cpp
+VERIFY_FUNC_REG(op_name, x)
 ```
 
 ## 约束说明

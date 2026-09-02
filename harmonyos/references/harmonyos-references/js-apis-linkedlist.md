@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-l
 title: "@ohos.util.LinkedList (线性容器LinkedList)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.util.LinkedList (线性容器LinkedList)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:08+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:4980de490c68ded3a20afe8eeabe90e4abc32984814f0eecac386f2f337cdbde
+scraped_at: 2026-09-02T15:00:47+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:282d68e8d9389cf922092ab9d3f9888376de467275b86a76831c688bf4253ad5
 ---
 
 LinkedList底层通过双向链表实现，每个节点都包含对前一个元素和后一个元素的引用。查询元素时，可以从头或从尾部遍历，插入和删除效率高，查询效率低。LinkedList允许元素为null。
@@ -14,17 +14,17 @@ LinkedList和[List](js-apis-list.md)相比，LinkedList是双向链表，可以�
 
 LinkedList和[ArrayList](js-apis-arraylist.md)相比，LinkedList插入数据效率高于ArrayList，而ArrayList查询效率高于LinkedList。
 
-注意
+**注意** 
 
-在LinkedList中使用[index]的方式获取元素可能导致未定义结果，推荐使用get()方法。
+在LinkedList中使用[index]的方式获取元素可能导致结果不可预测，推荐使用get()方法。
 
 **推荐使用场景：** 当需要频繁的插入删除元素且需要使用双向链表时，推荐使用LinkedList。
 
-文档中使用了泛型，涉及以下泛型标记符：
+文档中使用了泛型，涉及以下泛型类型参数：
 
-* T： Type，类
+* T： Type，泛型类型参数，可以是任意类型
 
-说明
+**说明** 
 
 本模块首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -32,19 +32,13 @@ LinkedList和[ArrayList](js-apis-arraylist.md)相比，LinkedList插入数据效
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { LinkedList } from '@kit.ArkTS';
+```ts
+import { LinkedList } from '@kit.ArkTS';
 ```
 
 ## LinkedList
 
-PhonePC/2in1TabletTVWearable
-
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -56,11 +50,9 @@ PhonePC/2in1TabletTVWearable
 
 ### constructor
 
-PhonePC/2in1TabletTVWearable
-
 constructor()
 
-LinkedList的构造函数。
+LinkedList的构造函数。调用后，创建一个空的LinkedList实例。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -76,13 +68,11 @@ LinkedList的构造函数。
 
 **示例：**
 
-```
-1. let linkedList = new LinkedList<string | number | boolean | object>();
+```ts
+let linkedList = new LinkedList<string | number | boolean | object>();
 ```
 
 ### add
-
-PhonePC/2in1TabletTVWearable
 
 add(element: T): boolean
 
@@ -114,25 +104,27 @@ add(element: T): boolean
 
 **示例：**
 
-```
-1. let linkedList = new LinkedList<string | number | boolean | object>();
-2. let result = linkedList.add("a");
-3. let result1 = linkedList.add(1);
-4. let b = [1, 2, 3];
-5. let result2 = linkedList.add(b);
-6. class C {
-7. name: string = ''
-8. age: string = ''
-9. }
-10. let c: C = {name : "Dylan", age : "13"};
-11. let result3 = linkedList.add(c);
-12. let result4 = linkedList.add(false);
-13. console.info("result = ", result4) // result =  true
+```ts
+let linkedList = new LinkedList<string | number | boolean | object>();
+let result = linkedList.add("a");
+console.info("result = ", result); // result =  true
+let result1 = linkedList.add(1);
+console.info("result = ", result1); // result =  true
+let numArray = [1, 2, 3];
+let result2 = linkedList.add(numArray);
+console.info("result = ", result2); // result =  true
+class PersonInfo {
+  name: string = '';
+  age: string = '';
+}
+let personInfo: PersonInfo = {name : "Dylan", age : "13"};
+let result3 = linkedList.add(personInfo);
+console.info("result = ", result3); // result =  true
+let result4 = linkedList.add(false);
+console.info("result = ", result4); // result =  true
 ```
 
 ### addFirst
-
-PhonePC/2in1TabletTVWearable
 
 addFirst(element: T): void
 
@@ -158,30 +150,28 @@ addFirst(element: T): void
 
 **示例：**
 
-```
-1. let linkedList = new LinkedList<string | number | boolean | object>();
-2. linkedList.addFirst("a");
-3. linkedList.addFirst(1);
-4. let b = [1, 2, 3];
-5. linkedList.addFirst(b);
-6. class C {
-7. name: string = ''
-8. age: string = ''
-9. }
-10. let c: C = {name : "Dylan", age : "13"};
-11. linkedList.addFirst(c);
-12. linkedList.addFirst(false);
-13. let result = linkedList.get(2);
-14. console.info("result:", result);  // result: 1,2,3
+```ts
+let linkedList = new LinkedList<string | number | boolean | object>();
+linkedList.addFirst("a");
+linkedList.addFirst(1);
+let numArray = [1, 2, 3];
+linkedList.addFirst(numArray);
+class PersonInfo {
+  name: string = '';
+  age: string = '';
+}
+let personInfo: PersonInfo = {name : "Dylan", age : "13"};
+linkedList.addFirst(personInfo);
+linkedList.addFirst(false);
+let result = linkedList.get(2);
+console.info("result:", result);  // result: 1,2,3
 ```
 
 ### insert
 
-PhonePC/2in1TabletTVWearable
-
 insert(index: number, element: T): void
 
-在长度范围内任意位置插入指定元素。
+在长度范围内任意位置插入指定元素，可插入位置区间为[0, LinkedList.length]，在linkedList.length处插入时即在linkedList尾部添加元素。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -191,33 +181,30 @@ insert(index: number, element: T): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| index | number | 是 | 插入位置索引。需要小于等于int32\_max即2147483647。 |
-| element | T | 是 | 插入元素。 |
+| index | number | 是 | 插入位置索引，可插入位置区间为[0, LinkedList.length]，且需要小于等于int32\_max即2147483647。 |
+| element | T | 是 | 待插入元素。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 10200001 | The value of index is out of range. |
 | 10200011 | The insert method cannot be bound. |
 
 **示例：**
 
-```
-1. let linkedList = new LinkedList<string | number | boolean | object>();
-2. linkedList.insert(0, "A");
-3. linkedList.insert(1, 0);
-4. linkedList.insert(2, true);
-5. let result = linkedList.get(1);
-6. console.info("result:", result);  // result: 0
+```ts
+let linkedList = new LinkedList<string | number | boolean | object>();
+linkedList.insert(0, "A");
+linkedList.insert(1, 0);
+linkedList.insert(2, true);
+let result = linkedList.get(1);
+console.info("result:", result);  // result: 0
 ```
 
 ### has
-
-PhonePC/2in1TabletTVWearable
 
 has(element: T): boolean
 
@@ -249,16 +236,14 @@ has(element: T): boolean
 
 **示例：**
 
-```
-1. let linkedList = new LinkedList<string>();
-2. linkedList.add("squirrel");
-3. let result = linkedList.has("squirrel");
-4. console.info("result:", result);  // result: true
+```ts
+let linkedList = new LinkedList<string>();
+linkedList.add("squirrel");
+let result = linkedList.has("squirrel");
+console.info("result:", result);  // result: true
 ```
 
 ### get
-
-PhonePC/2in1TabletTVWearable
 
 get(index: number): T
 
@@ -282,31 +267,28 @@ get(index: number): T
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200011 | The get method cannot be bound. |
 
 **示例：**
 
-```
-1. let linkedList = new LinkedList<number>();
-2. linkedList.add(2);
-3. linkedList.add(4);
-4. linkedList.add(5);
-5. linkedList.add(2);
-6. linkedList.add(1);
-7. linkedList.add(2);
-8. linkedList.add(4);
-9. let result = linkedList.get(2);
-10. console.info("result:", result);  // result: 5
+```ts
+let linkedList = new LinkedList<number>();
+linkedList.add(2);
+linkedList.add(4);
+linkedList.add(5);
+linkedList.add(2);
+linkedList.add(1);
+linkedList.add(2);
+linkedList.add(4);
+let result = linkedList.get(2);
+console.info("result:", result);  // result: 5
 ```
 
 ### getLastIndexOf
-
-PhonePC/2in1TabletTVWearable
 
 getLastIndexOf(element: T): number
 
@@ -338,22 +320,20 @@ getLastIndexOf(element: T): number
 
 **示例：**
 
-```
-1. let linkedList = new LinkedList<number>();
-2. linkedList.add(2);
-3. linkedList.add(4);
-4. linkedList.add(5);
-5. linkedList.add(2);
-6. linkedList.add(1);
-7. linkedList.add(2);
-8. linkedList.add(4);
-9. let result = linkedList.getLastIndexOf(2);
-10. console.info("result:", result);  // result: 5
+```ts
+let linkedList = new LinkedList<number>();
+linkedList.add(2);
+linkedList.add(4);
+linkedList.add(5);
+linkedList.add(2);
+linkedList.add(1);
+linkedList.add(2);
+linkedList.add(4);
+let result = linkedList.getLastIndexOf(2);
+console.info("result:", result);  // result: 5
 ```
 
 ### getIndexOf
-
-PhonePC/2in1TabletTVWearable
 
 getIndexOf(element: T): number
 
@@ -385,26 +365,24 @@ getIndexOf(element: T): number
 
 **示例：**
 
-```
-1. let linkedList = new LinkedList<number>();
-2. linkedList.add(2);
-3. linkedList.add(4);
-4. linkedList.add(5);
-5. linkedList.add(2);
-6. linkedList.add(1);
-7. linkedList.add(2);
-8. linkedList.add(4);
-9. let result = linkedList.getIndexOf(2);
-10. console.info("result:", result);  // result: 0
+```ts
+let linkedList = new LinkedList<number>();
+linkedList.add(2);
+linkedList.add(4);
+linkedList.add(5);
+linkedList.add(2);
+linkedList.add(1);
+linkedList.add(2);
+linkedList.add(4);
+let result = linkedList.getIndexOf(2);
+console.info("result:", result);  // result: 0
 ```
 
 ### removeByIndex
 
-PhonePC/2in1TabletTVWearable
-
 removeByIndex(index: number): T
 
-根据元素的下标值查找元素，并将其删除。
+在LinkedList长度范围内，根据元素的下标值查找元素，并将其删除。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -414,40 +392,37 @@ removeByIndex(index: number): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| index | number | 是 | 指定元素的下标值。需要小于等于int32\_max即2147483647。 |
+| index | number | 是 | 指定元素的下标值，取值范围[0, LinkedList.length-1]，且需要小于等于int32\_max即2147483647。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回删除的元素，如果元素为空返回undefined。 |
+| T | 返回删除的元素，如果元素为undefined则返回undefined，为null则返回null。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 10200001 | The value of index is out of range. |
 | 10200011 | The removeByIndex method cannot be bound. |
 
 **示例：**
 
-```
-1. let linkedList = new LinkedList<number>();
-2. linkedList.add(2);
-3. linkedList.add(4);
-4. linkedList.add(5);
-5. linkedList.add(2);
-6. linkedList.add(4);
-7. let result = linkedList.removeByIndex(2);
-8. console.info("result:", result);  // result: 5
+```ts
+let linkedList = new LinkedList<number>();
+linkedList.add(2);
+linkedList.add(4);
+linkedList.add(5);
+linkedList.add(2);
+linkedList.add(4);
+let result = linkedList.removeByIndex(2);
+console.info("result:", result);  // result: 5
 ```
 
 ### removeFirst
-
-PhonePC/2in1TabletTVWearable
 
 removeFirst(): T
 
@@ -474,20 +449,18 @@ removeFirst(): T
 
 **示例：**
 
-```
-1. let linkedList = new LinkedList<number>();
-2. linkedList.add(2);
-3. linkedList.add(4);
-4. linkedList.add(5);
-5. linkedList.add(2);
-6. linkedList.add(4);
-7. let result = linkedList.removeFirst();
-8. console.info("result:", result);  // result: 2
+```ts
+let linkedList = new LinkedList<number>();
+linkedList.add(2);
+linkedList.add(4);
+linkedList.add(5);
+linkedList.add(2);
+linkedList.add(4);
+let result = linkedList.removeFirst();
+console.info("result:", result);  // result: 2
 ```
 
 ### removeLast
-
-PhonePC/2in1TabletTVWearable
 
 removeLast(): T
 
@@ -514,20 +487,18 @@ removeLast(): T
 
 **示例：**
 
-```
-1. let linkedList = new LinkedList<number>();
-2. linkedList.add(2);
-3. linkedList.add(4);
-4. linkedList.add(5);
-5. linkedList.add(2);
-6. linkedList.add(4);
-7. let result = linkedList.removeLast();
-8. console.info("result:", result);  // result: 4
+```ts
+let linkedList = new LinkedList<number>();
+linkedList.add(2);
+linkedList.add(4);
+linkedList.add(5);
+linkedList.add(2);
+linkedList.add(4);
+let result = linkedList.removeLast();
+console.info("result:", result);  // result: 4
 ```
 
 ### remove
-
-PhonePC/2in1TabletTVWearable
 
 remove(element: T): boolean
 
@@ -559,23 +530,21 @@ remove(element: T): boolean
 
 **示例：**
 
-```
-1. let linkedList = new LinkedList<number>();
-2. linkedList.add(2);
-3. linkedList.add(4);
-4. linkedList.add(5);
-5. linkedList.add(4);
-6. let result = linkedList.remove(2);
-7. console.info("result:", result);  // result: true
+```ts
+let linkedList = new LinkedList<number>();
+linkedList.add(2);
+linkedList.add(4);
+linkedList.add(5);
+linkedList.add(4);
+let result = linkedList.remove(2);
+console.info("result:", result);  // result: true
 ```
 
 ### removeFirstFound
 
-PhonePC/2in1TabletTVWearable
-
 removeFirstFound(element: T): boolean
 
-删除第一次出现的指定元素。
+删除第一次出现的指定元素。如果LinkedList中不存在指定元素，会抛出错误。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -591,7 +560,7 @@ removeFirstFound(element: T): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 删除成功返回true，删除失败或不存在该元素时返回false。 |
+| boolean | 删除成功返回true，删除失败时返回false。 |
 
 **错误码：**
 
@@ -605,23 +574,21 @@ removeFirstFound(element: T): boolean
 
 **示例：**
 
-```
-1. let linkedList = new LinkedList<number>();
-2. linkedList.add(2);
-3. linkedList.add(4);
-4. linkedList.add(5);
-5. linkedList.add(4);
-6. let result = linkedList.removeFirstFound(4);
-7. console.info("result:", result);  // result: true
+```ts
+let linkedList = new LinkedList<number>();
+linkedList.add(2);
+linkedList.add(4);
+linkedList.add(5);
+linkedList.add(4);
+let result = linkedList.removeFirstFound(4);
+console.info("result:", result);  // result: true
 ```
 
 ### removeLastFound
 
-PhonePC/2in1TabletTVWearable
-
 removeLastFound(element: T): boolean
 
-删除最后一次出现的指定元素。
+删除最后一次出现的指定元素。如果LinkedList中不存在指定元素，会抛出错误。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -637,7 +604,7 @@ removeLastFound(element: T): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 删除成功返回true，删除失败或不存在该元素时返回false。 |
+| boolean | 删除成功返回true，删除失败返回false。 |
 
 **错误码：**
 
@@ -651,19 +618,17 @@ removeLastFound(element: T): boolean
 
 **示例：**
 
-```
-1. let linkedList = new LinkedList<number>();
-2. linkedList.add(2);
-3. linkedList.add(4);
-4. linkedList.add(5);
-5. linkedList.add(4);
-6. let result = linkedList.removeLastFound(4);
-7. console.info("result:", result);  // result: true
+```ts
+let linkedList = new LinkedList<number>();
+linkedList.add(2);
+linkedList.add(4);
+linkedList.add(5);
+linkedList.add(4);
+let result = linkedList.removeLastFound(4);
+console.info("result:", result);  // result: true
 ```
 
 ### clone
-
-PhonePC/2in1TabletTVWearable
 
 clone(): LinkedList<T>
 
@@ -677,7 +642,7 @@ clone(): LinkedList<T>
 
 | 类型 | 说明 |
 | --- | --- |
-| LinkedList<T> | 返回LinkedList对象实例。 |
+| LinkedList<T> | 返回LinkedList对象的克隆实例。 |
 
 **错误码：**
 
@@ -689,19 +654,17 @@ clone(): LinkedList<T>
 
 **示例：**
 
-```
-1. let linkedList = new LinkedList<number>();
-2. linkedList.add(2);
-3. linkedList.add(4);
-4. linkedList.add(5);
-5. linkedList.add(4);
-6. let result = linkedList.clone();
-7. console.info("result:", result.has(4));  // result: true
+```ts
+let linkedList = new LinkedList<number>();
+linkedList.add(2);
+linkedList.add(4);
+linkedList.add(5);
+linkedList.add(4);
+let result = linkedList.clone();
+console.info("result:", result.has(4));  // result: true
 ```
 
 ### forEach
-
-PhonePC/2in1TabletTVWearable
 
 forEach(callbackFn: (value: T, index?: number, LinkedList?: LinkedList<T>) => void, thisArg?: Object): void
 
@@ -728,33 +691,30 @@ callbackFn的参数说明：
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200011 | The forEach method cannot be bound. |
 
 **示例：**
 
-```
-1. let linkedList = new LinkedList<number>();
-2. linkedList.add(2);
-3. linkedList.add(4);
-4. linkedList.add(5);
-5. linkedList.add(4);
-6. linkedList.forEach((value: number, index: number) => {
-7. console.info("value:" + value, "index:" + index);
-8. });
-9. // value:2 index:0
-10. // value:4 index:1
-11. // value:5 index:2
-12. // value:4 index:3
+```ts
+let linkedList = new LinkedList<number>();
+linkedList.add(2);
+linkedList.add(4);
+linkedList.add(5);
+linkedList.add(4);
+linkedList.forEach((value: number, index: number) => {
+  console.info("value:" + value, "index:" + index);
+});
+// value:2 index:0
+// value:4 index:1
+// value:5 index:2
+// value:4 index:3
 ```
 
 ### clear
-
-PhonePC/2in1TabletTVWearable
 
 clear(): void
 
@@ -774,20 +734,18 @@ clear(): void
 
 **示例：**
 
-```
-1. let linkedList = new LinkedList<number>();
-2. linkedList.add(2);
-3. linkedList.add(4);
-4. linkedList.add(5);
-5. linkedList.add(4);
-6. linkedList.clear();
-7. let result = linkedList.has(2);
-8. console.info("result:", result);  // result: false
+```ts
+let linkedList = new LinkedList<number>();
+linkedList.add(2);
+linkedList.add(4);
+linkedList.add(5);
+linkedList.add(4);
+linkedList.clear();
+let result = linkedList.has(2);
+console.info("result:", result);  // result: false
 ```
 
 ### set
-
-PhonePC/2in1TabletTVWearable
 
 set(index: number, element: T): T
 
@@ -801,40 +759,37 @@ set(index: number, element: T): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| index | number | 是 | 查找的下标值。需要小于等于int32\_max即2147483647。 |
+| index | number | 是 | 查找的下标值。取值范围[0, LinkedList.length-1]，且需要小于等于int32\_max即2147483647。 |
 | element | T | 是 | 用来替换的元素。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回替换后的元素，如果元素为空则返回undefined。 |
+| T | 返回替换后的元素，如果元素为undefined则返回undefined，为null则返回null。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 10200001 | The value of index is out of range. |
 | 10200011 | The set method cannot be bound. |
 
 **示例：**
 
-```
-1. let linkedList = new LinkedList<number | string>();
-2. linkedList.add(2);
-3. linkedList.add(4);
-4. linkedList.add(5);
-5. linkedList.add(4);
-6. let result = linkedList.set(2, "b");
-7. console.info("result:", result);  // result: b
+```ts
+let linkedList = new LinkedList<number | string>();
+linkedList.add(2);
+linkedList.add(4);
+linkedList.add(5);
+linkedList.add(4);
+let result = linkedList.set(2, "b");
+console.info("result:", result);  // result: b
 ```
 
 ### convertToArray
-
-PhonePC/2in1TabletTVWearable
 
 convertToArray(): Array<T>
 
@@ -860,19 +815,17 @@ convertToArray(): Array<T>
 
 **示例：**
 
-```
-1. let linkedList = new LinkedList<number>();
-2. linkedList.add(2);
-3. linkedList.add(4);
-4. linkedList.add(5);
-5. linkedList.add(4);
-6. let result = linkedList.convertToArray();
-7. console.info("result:", result);  // result: 2,4,5,4
+```ts
+let linkedList = new LinkedList<number>();
+linkedList.add(2);
+linkedList.add(4);
+linkedList.add(5);
+linkedList.add(4);
+let result = linkedList.convertToArray();
+console.info("result:", result);  // result: 2,4,5,4
 ```
 
 ### getFirst
-
-PhonePC/2in1TabletTVWearable
 
 getFirst(): T
 
@@ -898,19 +851,17 @@ getFirst(): T
 
 **示例：**
 
-```
-1. let linkedList = new LinkedList<number>();
-2. linkedList.add(2);
-3. linkedList.add(4);
-4. linkedList.add(5);
-5. linkedList.add(4);
-6. let result = linkedList.getFirst();
-7. console.info("result:", result);  // result: 2
+```ts
+let linkedList = new LinkedList<number>();
+linkedList.add(2);
+linkedList.add(4);
+linkedList.add(5);
+linkedList.add(4);
+let result = linkedList.getFirst();
+console.info("result:", result);  // result: 2
 ```
 
 ### getLast
-
-PhonePC/2in1TabletTVWearable
 
 getLast(): T
 
@@ -936,23 +887,21 @@ getLast(): T
 
 **示例：**
 
-```
-1. let linkedList = new LinkedList<number>();
-2. linkedList.add(2);
-3. linkedList.add(4);
-4. linkedList.add(5);
-5. linkedList.add(4);
-6. let result = linkedList.getLast();
-7. console.info("result:", result);  // result: 4
+```ts
+let linkedList = new LinkedList<number>();
+linkedList.add(2);
+linkedList.add(4);
+linkedList.add(5);
+linkedList.add(4);
+let result = linkedList.getLast();
+console.info("result:", result);  // result: 4
 ```
 
 ### [Symbol.iterator]
 
-PhonePC/2in1TabletTVWearable
-
 [Symbol.iterator](): IterableIterator<T>
 
-返回一个迭代器，迭代器的每一项都是一个JavaScript对象。
+返回一个迭代器，用于遍历LinkedList中的元素。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -974,31 +923,31 @@ PhonePC/2in1TabletTVWearable
 
 **示例：**
 
-```
-1. let linkedList = new LinkedList<number>();
-2. linkedList.add(2);
-3. linkedList.add(4);
-4. linkedList.add(5);
-5. linkedList.add(4);
+```ts
+let linkedList = new LinkedList<number>();
+linkedList.add(2);
+linkedList.add(4);
+linkedList.add(5);
+linkedList.add(4);
 
-7. // 使用方法一：
-8. for (let item of linkedList) {
-9. console.info("value:", item);
-10. }
-11. // value: 2
-12. // value: 4
-13. // value: 5
-14. // value: 4
+// 使用方法一：
+for (let item of linkedList) {
+  console.info("value:", item);
+}
+// value: 2
+// value: 4
+// value: 5
+// value: 4
 
-16. // 使用方法二：
-17. let iter = linkedList[Symbol.iterator]();
-18. let temp: IteratorResult<number> = iter.next();
-19. while(!temp.done) {
-20. console.info("value:", temp.value);
-21. temp = iter.next();
-22. }
-23. // value: 2
-24. // value: 4
-25. // value: 5
-26. // value: 4
+// 使用方法二：
+let iter = linkedList[Symbol.iterator]();
+let temp: IteratorResult<number> = iter.next();
+while(!temp.done) {
+  console.info("value:", temp.value);
+  temp = iter.next();
+}
+// value: 2
+// value: 4
+// value: 5
+// value: 4
 ```

@@ -3,18 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-app-analy
 title: 场景化体检
 breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 场景化体检
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:47:01+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:56b3e55e757f238e31207569c96b57d9774a5ff701e6aa2796ccf9d14a94a047
+scraped_at: 2026-09-02T15:00:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:185e7802b290932fb21a069d24e31eb89e4028dfbb22f30d2a2ff60dcf92ea5c
 ---
 
 场景化体检支持页面滑动、页面间转场、冷启动等多种测试场景，开发者可以基于实际的应用场景进行测试。
 
+## 使用约束
+
+使用26.0.0以下版本的DevEco Studio进行[性能](ide-app-analyzer-scenes.md#section116354571691)相关的测试时，要求DevEco Studio版本与设备API版本配套；从DevEco Studio 26.0.0版本开始，DevEco Studio兼容API 20及以上的设备，无需与设备API版本配套，对于API 20以下的设备，DevEco Studio版本仍需与设备API版本配套。
+
 ## 前置操作
 
 1. 通过以下任意一种方式，打开AppAnalyzer。
-   * 单击菜单栏**Tools >** **AppAnalyzer**，打开AppAnalyzer页面。
-   * 在编辑窗口右侧的工具栏，点击**AppAnalyzer**或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/6YaJgMn_Sm6MLsejRtpV7w/zh-cn_image_0000002561752861.png)，打开AppAnalyzer页面。
+   * 点击菜单栏**Tools >** **AppAnalyzer**，打开AppAnalyzer页面。
+   * 在编辑窗口右侧的工具栏，点击**AppAnalyzer**或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/ZGtaoCP5RtuTEGlnBYtfig/zh-cn_image_0000002731382131.png)，打开AppAnalyzer页面。
 2. 连接设备或启动模拟器，并对应用进行[签名](ide-signing.md)。
    * 真机：参考[使用本地真机运行应用](ide-run-device.md)连接真机。
    * 模拟器：在AppAnalyzer首页创建或启动模拟器，具体请参考[管理模拟器](ide-emulator-management.md)。
@@ -25,59 +29,92 @@ content_hash: sha256:56b3e55e757f238e31207569c96b57d9774a5ff701e6aa2796ccf9d14a9
 
 ### DevEco Studio 6.0.1 Beta1及以上版本
 
-1. 点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/__DGgBvaRgSHgkZXZl27aA/zh-cn_image_0000002530752924.png)图标选择Product、Target和构建模式，点击**Apply**后，在AppAnalyzer的首页中可查看对应的编译产物和构建模式。关于Product、Target、构建模式的介绍请参考[配置多目标产物](ide-customized-multi-targets-and-products-guides.md)和[指定构建模式](ide-hvigor-compilation-options-customizing-guide.md#section192461528194916)。
+1. 点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/uGSskn84QUmWO8leigrsnA/zh-cn_image_0000002731542113.png)图标选择Product、Target和构建模式，点击**Apply**后，在AppAnalyzer的首页中可查看对应的编译产物和构建模式。关于Product、Target、构建模式的介绍请参考[配置多目标产物](ide-customized-multi-targets-and-products-guides.md)和[指定构建模式](ide-hvigor-compilation-options-customizing-guide.md#section192461528194916)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/izKVYDWgSlqio7ZSMeFjlQ/zh-cn_image_0000002561752865.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/AeNfl7BRSBaNHKoGus6pTQ/zh-cn_image_0000002701822850.png)
 2. 在**AppAnalyzer**页面，选择**场景化体检**，选择预置的体检卡片，或根据需要自定义卡片。
-   * 点击预置的体检卡片开始体检，如需查看卡片包含的体检场景，请点击卡片右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/fDgeN8yZQFOgQMWW_Wo3cw/zh-cn_image_0000002561832847.png)按钮，不同场景对应的检测指标请参考[体检场景](ide-app-analyzer-scenes.md#section578981218613)。
+   * 点击预置的卡片开始体检，如需查看卡片包含的体检场景，请点击卡片右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/j2f8bG32See6o6AaAd-lCw/zh-cn_image_0000002701822834.png)按钮，不同场景对应的检测指标请参考[体检场景](ide-app-analyzer-scenes.md#section578981218613)。
    * 如果需要自定义体检场景，点击**+**，选择自动/手动测试和体检场景，部分场景可修改单次录制时长/测试总时长，请根据界面提示进行修改。
 3. 开始体检后，请等待AppAnalyzer完成构建、签名、安装等操作。如果本次体检依赖Python三方库并且本地未安装，AppAnalyzer会同步下载安装三方库。在测试过程中，请保持连接的设备为解锁亮屏状态。
-   * 如果是自动测试，根据界面提示，登录应用账号后点击继续按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/JUeqa2u_SW-92GWX2Ps3kQ/zh-cn_image_0000002561832841.png)，继续测试；或者无需登录账号，直接点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/dFbPE3XOSIeR3kKore12WA/zh-cn_image_0000002561752859.png)按钮继续测试。
-   * 如果是手动测试，根据界面提示，点击开始按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/rOGoX_GcSL61L9idfkncnA/zh-cn_image_0000002561752867.png)开始录制，并手动遍历应用/元服务的功能。如果在录制时间范围内未遍历完成，可继续点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/QrEc-3woTaywMpE24GbF_A/zh-cn_image_0000002530752930.png)按钮，进行多次遍历，遍历完成后点击结束按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/ttun8o77Twazvqx8MKnKMg/zh-cn_image_0000002530912914.png)。
+   * 如果是自动测试，根据界面提示，登录应用账号后点击继续按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/jnO4viCvSWyzxv1JffNR0A/zh-cn_image_0000002731382119.png)，继续测试；或者无需登录账号，直接点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/f88wGyYOSequEY27rO4faA/zh-cn_image_0000002731382143.png)按钮继续测试。
+   * 如果是手动测试，根据界面提示，点击开始按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/bvbeKg3YR4mGCY8qWEAOUA/zh-cn_image_0000002701662904.png)开始录制，并手动遍历应用/元服务的功能。如果在录制时间范围内未遍历完成，可继续点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/cLLvxCsVSfGtDFTcQF-SQw/zh-cn_image_0000002731382137.png)按钮，进行多次遍历，遍历完成后点击结束按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/P4tawVTWTKeqPIVVg-LzXA/zh-cn_image_0000002701822822.png)。
 4. 查看测试报告，包含以下内容。
    * **源文件、调优文件（包含trace文件和调用栈文件）或snapshot文件、时间戳等**：点击源文件可跳转到问题源码，点击调优文件或snapshot文件支持直接拉起性能分析工具Profiler并导入性能检测的问题数据进行调优分析，点击时间戳可以打开Profiler并定位到问题发生的时间范围。
    * **分析文档**：点击链接可跳转至官网文档，参考文档对检测出来的问题进行分析。
    * **优化建议**：针对可能的故障原因，给出对应的最佳实践，点击链接可跳转至官网文档。
 
-   从DevEco Studio 6.0.2 Beta1版本开始，如果在体检中遇到问题，可点击报告右上角的**用户反馈**向我们反馈。
+   从DevEco Studio 6.0.2 Beta1版本开始，如果在体检中遇到问题，可点击报告右上角的**User Feedback**向我们反馈。
 
    从DevEco Studio 6.1.0 Release版本开始，支持导出报告，以实现报告的共享，具体可查看[导出报告](ide-app-analyzer-history-reports.md#section78017171818)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/aGK7zbOlQ7eTeevfR2oHKA/zh-cn_image_0000002530752926.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/NggqUnHKReabo7adRBfiGQ/zh-cn_image_0000002701662926.png)
 
 ### DevEco Studio 6.0.1 Beta1以下版本
 
-1. 如果使用DevEco Studio 6.0.0 Beta2及以上的版本，支持在体检过程中自动编译构建打包。点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/nKFYskrgT9G7jxfsRT-JUA/zh-cn_image_0000002561832837.png)图标选择Product、Target和构建模式，关于Product、Target、构建模式的介绍请参考[配置多目标产物](ide-customized-multi-targets-and-products-guides.md)和[指定构建模式](ide-hvigor-compilation-options-customizing-guide.md#section192461528194916)。
+1. 如果使用DevEco Studio 6.0.0 Beta2及以上的版本，支持在体检过程中自动编译构建打包。点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/o6G5UyZLRvydQSBleUtO3A/zh-cn_image_0000002731382129.png)图标选择Product、Target和构建模式，关于Product、Target、构建模式的介绍请参考[配置多目标产物](ide-customized-multi-targets-and-products-guides.md)和[指定构建模式](ide-hvigor-compilation-options-customizing-guide.md#section192461528194916)。
 2. 在**AppAnalyzer**页面，选择**场景化体检**，选择**自动**或**手动**方式，**模块**选择框选择HarmonyOS应用/元服务工程模块。
    * 自动方式：体检时无需手动遍历，AppAnalyzer会自动检测。自动方式下还需要选择具体的运行时长。
    * 手动方式：体检时需要根据提示手动遍历HarmonyOS应用/元服务的功能。
 
-   说明
+   **说明** 
 
    * 如果使用DevEco Studio 6.0.0 Beta2之前的版本，只有已经完成签名编译打包的模块才能被选中。
-   * 支持同时添加多个模块，要求所有模块的“bundleName”相同，且多个模块中只能包含一个entry。
+   * 支持同时添加多个模块，要求所有模块的bundleName相同，且只能包含一个entry。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/uxYAxMUXRZymkiys0446Xg/zh-cn_image_0000002530752916.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/mWnbjPpOQGWjz97ul2hmLQ/zh-cn_image_0000002701662918.png)
 3. 勾选体检场景，不同场景对应的检测指标请参考[体检场景](ide-app-analyzer-scenes.md#section578981218613)，然后在**AppAnalyzer**页面底部单击**开始**按钮，开始测试。首次测试时，请根据AppAnalyzer的指引，下载Python及三方库，或者登录开发者账号并自动签名音频辅助检测APP。在测试过程中，请保持连接的设备为解锁亮屏状态。
 
-   说明
+   **说明** 
 
    * 请勿在测试完成前点击结束，如果提前结束测试会导致测试结果不准确。
    * 支持Python 3.9~3.12版本，推荐使用Python 3.11.7版本。
 4. 如果是手动方式，在安装应用/元服务完成后，需要根据提示手动遍历HarmonyOS应用/元服务的功能。手动遍历完成后点击**结束**按钮停止测试任务，等待数据解析完成后，查看测试结果如下。
    * 测试报告：检测结果的汇总信息，默认展示告警和失败的检测结果，点击**详情链接**可跳转到对应场景的详情报告。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/8hiRtVduQ8a1r2P_KIi04w/zh-cn_image_0000002561752869.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/dGiEOdQ0QbeOpJlXkM74tg/zh-cn_image_0000002701662930.png)
    * 详情报告：给出详细的测试结果、相关的定位文件和对应的优化建议。
      + **开始/结束页面、时间戳、调优文件（包含trace文件和调用栈文件）或snapshot文件等**：点击开始/结束页面可跳转到问题源码，点击时间戳可以打开性能分析工具Profiler并定位到问题发生的时间范围，点击调优文件或snapshot文件支持直接拉起Profiler并导入性能检测的问题数据进行调优分析。
      + **分析文档**：点击链接可跳转至官网文档，参考文档对检测出来的问题进行分析。
      + **优化建议**：针对可能的故障原因，给出对应的最佳实践，点击链接可跳转至官网文档。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/jDPI3c6QQCejuzRqRTjgzw/zh-cn_image_0000002530752920.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/BR54GcdxSK6WRJUkFy9viQ/zh-cn_image_0000002701662922.png)
 
 ## 体检场景
 
 ### 性能
+
+**DevEco Studio 6.1.1 Beta1及以上版本**
+
+| 场景 | 子场景 | 检测指标/检测项 | 应用或元服务场景 | 自动或手动方式 |
+| --- | --- | --- | --- | --- |
+| 页面转场 | router或者navigation页面跳转 | [点击响应时延](performance-delay.md#section118706211961) | 应用，元服务 | 自动，手动 |
+| [点击完成时延](performance-delay.md#section2406192820717) |
+| [转场卡顿率](performance-frame-rate.md#section1591383182619) |
+| [起播时延](performance-delay.md#section1140562816186) |
+| swiper滑动转场 | [滑动响应时延](performance-delay.md#section1767913186810) |
+| [滑动卡顿率](performance-frame-rate.md#section159268494256) |
+| [起播时延](performance-delay.md#section1140562816186) |
+| tabs点击转场 | [点击响应时延](performance-delay.md#section118706211961) |
+| [点击完成时延](performance-delay.md#section2406192820717) |
+| [转场卡顿率](performance-frame-rate.md#section1591383182619) |
+| tabs滑动转场 | [滑动响应时延](performance-delay.md#section1767913186810) |
+| [滑动卡顿率](performance-frame-rate.md#section159268494256) |
+| [起播时延](performance-delay.md#section1140562816186) |
+| swiper点击转场 | [点击响应时延](performance-delay.md#section118706211961) |
+| [点击完成时延](performance-delay.md#section2406192820717) |
+| [转场卡顿率](performance-frame-rate.md#section1591383182619) |
+| web页面跳转 | [点击响应时延](performance-delay.md#section118706211961) |
+| [点击完成时延](performance-delay.md#section2406192820717) |
+| 其他页面跳转 | [点击响应时延](performance-delay.md#section118706211961) |
+| [点击完成时延](performance-delay.md#section2406192820717) |
+| 页面滑动 | 页面滑动 | [滑动响应时延](performance-delay.md#section1767913186810) | 应用，元服务 | 自动，手动 |
+| [滑动卡顿率](performance-frame-rate.md#section159268494256) |
+| 滑动白块（仅预置的体检卡片“手动性能页面滑动体检（白块）”包含此检测项） |
+| web页面滑动 | [滑动响应时延](performance-delay.md#section1767913186810) |
+| [滑动卡顿率](performance-frame-rate.md#section159268494256) |
+| 冷启动 | 冷启动 | [完成时延](performance-delay.md#section58771582411) | 应用，元服务 | 自动，手动 |
+
+**DevEco Studio 6.1.1 Beta1以下版本**
 
 | 场景 | 子场景 | 检测指标/检测项 | 应用或元服务场景 | 自动或手动方式 |
 | --- | --- | --- | --- | --- |
@@ -87,6 +124,7 @@ content_hash: sha256:56b3e55e757f238e31207569c96b57d9774a5ff701e6aa2796ccf9d14a9
 | [起播时延](performance-delay.md#section1140562816186) |
 | 页面滑动 | 页面滑动（仅支持List、Grid、WaterFlow这三个组件实现的页面滑动） | [滑动响应时延](performance-delay.md#section1767913186810) | 应用，元服务 | 自动，手动 |
 | [滑动卡顿率](performance-frame-rate.md#section159268494256) |
+| 滑动白块（仅预置的体检卡片“手动性能页面滑动体检（白块）”包含此检测项） |
 | 冷启动 | 冷启动 | [完成时延](performance-delay.md#section58771582411) | 应用，元服务 | 自动，手动 |
 | 页面内转场 | swiper滑动转场 | [滑动响应时延](performance-delay.md#section1767913186810) | 应用，元服务 | 自动，手动 |
 | [滑动卡顿率](performance-frame-rate.md#section159268494256) |
@@ -134,14 +172,13 @@ content_hash: sha256:56b3e55e757f238e31207569c96b57d9774a5ff701e6aa2796ccf9d14a9
 
 ### 多设备
 
-多设备测试支持以下设备：
-
-* API 20及以上的双折叠、三折叠手机和模拟器。
-* API 20及以上的Pura X Max手机和模拟器。
-
-| 场景 | 检测指标/检测项 | 应用或元服务场景 | 自动或手动方式 |
-| --- | --- | --- | --- |
-| 折叠开合  （从DevEco Studio 6.0.2 Beta1版本开始支持） | 参考[UX规则](ide-app-analyzer-all-rules.md#section68461625141414) | 应用，元服务 | 手动 |
+| 场景 | 检测指标/检测项 | 应用或元服务场景 | 自动或手动方式 | 说明 |
+| --- | --- | --- | --- | --- |
+| 截断 | 参考[UX规则](ide-app-analyzer-all-rules.md#section68461625141414)的布局基础要求 | 应用，元服务 | 自动，手动 | 从26.0.0版本开始支持。  支持所有手机及对应的模拟器。 |
+| 大图大字 | 参考[UX规则](ide-app-analyzer-all-rules.md#section68461625141414)的图标文字大小适中、  弹出框大小适中、  宫格图片信息量适中、  单图信息量适中、  上下图文信息量适中 | 从26.0.0版本开始支持。  仅支持API 20及以上的双折叠、三折叠、Pura X Max手机和模拟器。 |
+| 留白 | 参考[UX规则](ide-app-analyzer-all-rules.md#section68461625141414)的边距适中 | 从26.0.0版本开始支持。  仅支持API 20及以上的双折叠、三折叠、Pura X Max手机和模拟器。 |
+| 避让区遮挡 | 参考[UX规则](ide-app-analyzer-all-rules.md#section68461625141414)的挖孔区适配、  状态栏、  底部导航条适配 | 从26.0.0版本开始支持。  支持所有手机及对应的模拟器。 |
+| 基础 | 参考[UX规则](ide-app-analyzer-all-rules.md#section68461625141414)的  点击热区、  应用图标、  元服务图标、  布局基础要求、  色彩对比度、  字体大小、  界面图标、  横竖屏适配、  图标清晰度、  开合连续性、  离手减速动效一致性、  元服务胶囊满足规范、  元服务底部导航栏满足规范 | 从26.0.0版本开始支持。  支持所有手机及对应的模拟器。 |
 
 ### 功耗
 
@@ -150,4 +187,4 @@ content_hash: sha256:56b3e55e757f238e31207569c96b57d9774a5ff701e6aa2796ccf9d14a9
 | 前台静置  （从DevEco Studio 6.1.0 Beta1版本开始支持） | 前台静置 | [前台不可见动效](standard-foreground-render.md#section12791152171) | 应用 | 自动，手动 |
 | [UI空跑](standard-foreground-resource.md#section169882223810) |
 | [未使用硬件合成](standard-foreground-render.md#section18911148816) |
-| [CPU负载异常](standard-foreground-resource.md#section177973203218) |
+| [前台进程高负载](standard-foreground-resource.md#section177973203218) |

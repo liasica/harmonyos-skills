@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.data.dataSharePredicates (数据共享谓词)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.dataSharePredicates (数据共享谓词)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:09+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:907934c04dc788abc114066ebf4d99cdc8b74b6f63b427176287d1335616b9cf
+scraped_at: 2026-09-02T15:00:38+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:743761939f19a644d02ee9b92e99d9638331bad26e4cf3bb49f508460762deb8
 ---
 
 **谓词(DataSharePredicates)** 是开发者通过DataShare查询数据库中的数据所使用的筛选条件，经常被应用在更新数据、删除数据和查询数据中。
@@ -16,28 +16,24 @@ content_hash: sha256:907934c04dc788abc114066ebf4d99cdc8b74b6f63b427176287d133561
 
 * 用于在媒体文件管理服务作为检索条件使用，参考相册管理模块检索条件[FetchOptions](arkts-apis-photoaccesshelper-i.md#fetchoptions)。此种场景下，开发者无需关注数据库类型。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本模块接口仅可在Stage模型下使用。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 ```
 
 ## DataSharePredicates
 
-PhonePC/2in1TabletTVWearable
-
 提供用于不同实现不同查询方法的数据共享谓词。该类型不是多线程安全的，如果应用中存在多线程同时操作该类派生出的实例，注意加锁保护。
 
-### equalTo10+
+**系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
 
-PhonePC/2in1TabletTVWearable
+### equalTo
 
 equalTo(field: string, value: ValueType): DataSharePredicates
 
@@ -53,8 +49,8 @@ equalTo(field: string, value: ValueType): DataSharePredicates
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| field | string | 是 | 数据库表中的列名。  field为undefined或者null时，此次调用接口配置的谓词无效。 |
-| value | [ValueType](js-apis-data-valuesbucket.md#valuetype) | 是 | 指示要与谓词匹配的值。  value为undefined或者null时，此次调用接口配置的谓词无效。 |
+| field | string | 是 | 数据库表中的列名。  field为undefined或null时，此次调用接口配置的谓词无效。 |
+| value | [ValueType](js-apis-data-valuesbucket.md#valuetype) | 是 | 指示要与谓词匹配的值。  value为undefined或null时，此次调用接口配置的谓词无效。 |
 
 **返回值：**
 
@@ -64,14 +60,12 @@ equalTo(field: string, value: ValueType): DataSharePredicates
 
 **示例：**
 
-```
-1. let predicates = new dataSharePredicates.DataSharePredicates();
-2. predicates.equalTo("NAME", "Rose");
+```ts
+let predicates = new dataSharePredicates.DataSharePredicates();
+predicates.equalTo("NAME", "Rose");
 ```
 
-### and10+
-
-PhonePC/2in1TabletTVWearable
+### and
 
 and(): DataSharePredicates
 
@@ -91,16 +85,14 @@ and(): DataSharePredicates
 
 **示例：**
 
-```
-1. let predicates = new dataSharePredicates.DataSharePredicates();
-2. predicates.equalTo("NAME", "lisi")
-3. .and()
-4. .equalTo("SALARY", 200.5);
+```ts
+let predicates = new dataSharePredicates.DataSharePredicates();
+predicates.equalTo("NAME", "lisi")
+    .and()
+    .equalTo("SALARY", 200.5);
 ```
 
-### orderByAsc10+
-
-PhonePC/2in1TabletTVWearable
+### orderByAsc
 
 orderByAsc(field: string): DataSharePredicates
 
@@ -116,7 +108,7 @@ orderByAsc(field: string): DataSharePredicates
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| field | string | 是 | 数据库表中的列名。  field为undefined或者null时，此次调用接口配置的谓词无效。 |
+| field | string | 是 | 数据库表中的列名。  field为undefined或null时，此次调用接口配置的谓词无效。 |
 
 **返回值：**
 
@@ -126,14 +118,12 @@ orderByAsc(field: string): DataSharePredicates
 
 **示例：**
 
-```
-1. let predicates = new dataSharePredicates.DataSharePredicates();
-2. predicates.orderByAsc("AGE");
+```ts
+let predicates = new dataSharePredicates.DataSharePredicates();
+predicates.orderByAsc("AGE");
 ```
 
-### orderByDesc10+
-
-PhonePC/2in1TabletTVWearable
+### orderByDesc
 
 orderByDesc(field: string): DataSharePredicates
 
@@ -149,7 +139,7 @@ orderByDesc(field: string): DataSharePredicates
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| field | string | 是 | 数据库表中的列名。  field为undefined或者null时，此次调用接口配置的谓词无效。 |
+| field | string | 是 | 数据库表中的列名。  field为undefined或null时，此次调用接口配置的谓词无效。 |
 
 **返回值：**
 
@@ -159,14 +149,12 @@ orderByDesc(field: string): DataSharePredicates
 
 **示例：**
 
-```
-1. let predicates = new dataSharePredicates.DataSharePredicates();
-2. predicates.orderByDesc("AGE");
+```ts
+let predicates = new dataSharePredicates.DataSharePredicates();
+predicates.orderByDesc("AGE");
 ```
 
-### limit10+
-
-PhonePC/2in1TabletTVWearable
+### limit
 
 limit(total: number, offset: number): DataSharePredicates
 
@@ -193,14 +181,12 @@ limit(total: number, offset: number): DataSharePredicates
 
 **示例：**
 
-```
-1. let predicates = new dataSharePredicates.DataSharePredicates();
-2. predicates.equalTo("NAME", "Rose").limit(10, 3);
+```ts
+let predicates = new dataSharePredicates.DataSharePredicates();
+predicates.equalTo("NAME", "Rose").limit(10, 3);
 ```
 
-### in10+
-
-PhonePC/2in1TabletTVWearable
+### in
 
 in(field: string, value: Array<ValueType>): DataSharePredicates
 
@@ -216,8 +202,8 @@ in(field: string, value: Array<ValueType>): DataSharePredicates
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| field | string | 是 | 数据库表中的列名。  field为undefined或者null时，此次调用接口配置的谓词无效。 |
-| value | Array<[ValueType](js-apis-data-valuesbucket.md#valuetype)> | 是 | 以ValueType型数组形式指定的要匹配的值。 |
+| field | string | 是 | 数据库表中的列名。  field为undefined或null时，此次调用接口配置的谓词无效。  当field为字符串'null'或'undefined'时，键值型数据库和关系型数据库接口使用该谓词时，可能匹配结果非预期或抛出异常。 |
+| value | Array<[ValueType](js-apis-data-valuesbucket.md#valuetype)> | 是 | 以ValueType型数组形式指定的要匹配的值。  value为undefined或null时，此次调用接口配置的谓词无效。 |
 
 **返回值：**
 
@@ -227,14 +213,12 @@ in(field: string, value: Array<ValueType>): DataSharePredicates
 
 **示例：**
 
-```
-1. let predicates = new dataSharePredicates.DataSharePredicates();
-2. predicates.in("AGE", [18, 20]);
+```ts
+let predicates = new dataSharePredicates.DataSharePredicates();
+predicates.in("AGE", [18, 20]);
 ```
 
 ### notEqualTo23+
-
-PhonePC/2in1TabletTVWearable
 
 notEqualTo(field: string, value: ValueType): DataSharePredicates
 
@@ -259,18 +243,16 @@ notEqualTo(field: string, value: ValueType): DataSharePredicates
 
 **示例：**
 
-```
-1. let predicates = new dataSharePredicates.DataSharePredicates();
-2. predicates.notEqualTo("NAME", "Rose");
+```ts
+let predicates = new dataSharePredicates.DataSharePredicates();
+predicates.notEqualTo("NAME", "Rose");
 ```
 
 ### beginWrap23+
 
-PhonePC/2in1TabletTVWearable
-
 beginWrap(): DataSharePredicates
 
-该接口用于向谓词添加左括号，相当于sql语句的“(”，必须和右括号一起使用。
+该接口用于向谓词添加左括号，相当于SQL语句的“(”，必须和右括号一起使用。
 
 目前仅关系型数据库支持该谓词。
 
@@ -284,23 +266,21 @@ beginWrap(): DataSharePredicates
 
 **示例：**
 
-```
-1. let predicates = new dataSharePredicates.DataSharePredicates();
-2. predicates.equalTo("NAME", "lisi")
-3. .beginWrap()
-4. .equalTo("AGE", 18)
-5. .or()
-6. .equalTo("SALARY", 200.5)
-7. .endWrap();
+```ts
+let predicates = new dataSharePredicates.DataSharePredicates();
+predicates.equalTo("NAME", "lisi")
+    .beginWrap()
+    .equalTo("AGE", 18)
+    .or()
+    .equalTo("SALARY", 200.5)
+    .endWrap();
 ```
 
 ### endWrap23+
 
-PhonePC/2in1TabletTVWearable
-
 endWrap(): DataSharePredicates
 
-该接口用于向谓词添加右括号，相当于sql语句的“)”，必须和左括号一起使用。
+该接口用于向谓词添加右括号，相当于SQL语句的“)”，必须和左括号一起使用。
 
 目前仅关系型数据库支持该谓词。
 
@@ -314,19 +294,17 @@ endWrap(): DataSharePredicates
 
 **示例：**
 
-```
-1. let predicates = new dataSharePredicates.DataSharePredicates();
-2. predicates.equalTo("NAME", "lisi")
-3. .beginWrap()
-4. .equalTo("AGE", 18)
-5. .or()
-6. .equalTo("SALARY", 200.5)
-7. .endWrap();
+```ts
+let predicates = new dataSharePredicates.DataSharePredicates();
+predicates.equalTo("NAME", "lisi")
+    .beginWrap()
+    .equalTo("AGE", 18)
+    .or()
+    .equalTo("SALARY", 200.5)
+    .endWrap();
 ```
 
 ### or23+
-
-PhonePC/2in1TabletTVWearable
 
 or(): DataSharePredicates
 
@@ -344,16 +322,14 @@ or(): DataSharePredicates
 
 **示例：**
 
-```
-1. let predicates = new dataSharePredicates.DataSharePredicates()
-2. predicates.equalTo("NAME", "lisi")
-3. .or()
-4. .equalTo("NAME", "Rose");
+```ts
+let predicates = new dataSharePredicates.DataSharePredicates();
+predicates.equalTo("NAME", "lisi")
+    .or()
+    .equalTo("NAME", "Rose");
 ```
 
 ### like23+
-
-PhonePC/2in1TabletTVWearable
 
 like(field: string, value: string): DataSharePredicates
 
@@ -378,14 +354,12 @@ like(field: string, value: string): DataSharePredicates
 
 **示例：**
 
-```
-1. let predicates = new dataSharePredicates.DataSharePredicates();
-2. predicates.like("NAME", "%os%");
+```ts
+let predicates = new dataSharePredicates.DataSharePredicates();
+predicates.like("NAME", "%os%");
 ```
 
 ### between23+
-
-PhonePC/2in1TabletTVWearable
 
 between(field: string, low: ValueType, high: ValueType): DataSharePredicates
 
@@ -411,14 +385,12 @@ between(field: string, low: ValueType, high: ValueType): DataSharePredicates
 
 **示例：**
 
-```
-1. let predicates = new dataSharePredicates.DataSharePredicates();
-2. predicates.between("AGE", 10, 50);
+```ts
+let predicates = new dataSharePredicates.DataSharePredicates();
+predicates.between("AGE", 10, 50);
 ```
 
 ### notBetween23+
-
-PhonePC/2in1TabletTVWearable
 
 notBetween(field: string, low: ValueType, high: ValueType): DataSharePredicates
 
@@ -444,14 +416,12 @@ notBetween(field: string, low: ValueType, high: ValueType): DataSharePredicates
 
 **示例：**
 
-```
-1. let predicates = new dataSharePredicates.DataSharePredicates();
-2. predicates.notBetween("AGE", 10, 50);
+```ts
+let predicates = new dataSharePredicates.DataSharePredicates();
+predicates.notBetween("AGE", 10, 50);
 ```
 
 ### greaterThan23+
-
-PhonePC/2in1TabletTVWearable
 
 greaterThan(field: string, value: ValueType): DataSharePredicates
 
@@ -476,14 +446,12 @@ greaterThan(field: string, value: ValueType): DataSharePredicates
 
 **示例：**
 
-```
-1. let predicates = new dataSharePredicates.DataSharePredicates();
-2. predicates.greaterThan("AGE", 10);
+```ts
+let predicates = new dataSharePredicates.DataSharePredicates();
+predicates.greaterThan("AGE", 10);
 ```
 
 ### lessThan23+
-
-PhonePC/2in1TabletTVWearable
 
 lessThan(field: string, value: ValueType): DataSharePredicates
 
@@ -508,14 +476,12 @@ lessThan(field: string, value: ValueType): DataSharePredicates
 
 **示例：**
 
-```
-1. let predicates = new dataSharePredicates.DataSharePredicates();
-2. predicates.lessThan("AGE", 50);
+```ts
+let predicates = new dataSharePredicates.DataSharePredicates();
+predicates.lessThan("AGE", 50);
 ```
 
 ### greaterThanOrEqualTo23+
-
-PhonePC/2in1TabletTVWearable
 
 greaterThanOrEqualTo(field: string, value: ValueType): DataSharePredicates
 
@@ -529,7 +495,7 @@ greaterThanOrEqualTo(field: string, value: ValueType): DataSharePredicates
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| field | string | 是 | 数据库表中的列名。  field为undefined或null时，此次调用接口配置的谓词无效。  当field为字符串'null'或'undefined'时，此次调用接口配置的谓词匹配结果非预期或抛出异常。 |
+| field | string | 是 | 数据库表中的列名。  field为undefined或null时，此次调用接口配置的谓词无效。  当field为字符串'null'或'undefined'时，键值型数据库和关系型数据库接口使用该谓词时，可能匹配结果非预期或抛出异常。 |
 | value | [ValueType](js-apis-data-valuesbucket.md#valuetype) | 是 | 指示要与谓词匹配的值。  value为undefined或null时，此次调用接口配置的谓词无效。 |
 
 **返回值：**
@@ -540,14 +506,12 @@ greaterThanOrEqualTo(field: string, value: ValueType): DataSharePredicates
 
 **示例：**
 
-```
-1. let predicates = new dataSharePredicates.DataSharePredicates();
-2. predicates.greaterThanOrEqualTo("AGE", 10);
+```ts
+let predicates = new dataSharePredicates.DataSharePredicates();
+predicates.greaterThanOrEqualTo("AGE", 10);
 ```
 
 ### lessThanOrEqualTo23+
-
-PhonePC/2in1TabletTVWearable
 
 lessThanOrEqualTo(field: string, value: ValueType): DataSharePredicates
 
@@ -572,14 +536,12 @@ lessThanOrEqualTo(field: string, value: ValueType): DataSharePredicates
 
 **示例：**
 
-```
-1. let predicates = new dataSharePredicates.DataSharePredicates();
-2. predicates.lessThanOrEqualTo("AGE", 50);
+```ts
+let predicates = new dataSharePredicates.DataSharePredicates();
+predicates.lessThanOrEqualTo("AGE", 50);
 ```
 
 ### notIn23+
-
-PhonePC/2in1TabletTVWearable
 
 notIn(field: string, value: Array<ValueType>): DataSharePredicates
 
@@ -604,7 +566,7 @@ notIn(field: string, value: Array<ValueType>): DataSharePredicates
 
 **示例：**
 
-```
-1. let predicates = new dataSharePredicates.DataSharePredicates();
-2. predicates.notIn("NAME", ["Lisa", "Rose"]);
+```ts
+let predicates = new dataSharePredicates.DataSharePredicates();
+predicates.notIn("NAME", ["Lisa", "Rose"]);
 ```

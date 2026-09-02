@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.net.ethernet (以太网连接管理)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.ethernet (以太网连接管理)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:23+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:fbbe3d579b64955f8ee8d6b4634450b1958318604b7aaa1f6b0522ccb80b969c
+scraped_at: 2026-09-02T15:01:53+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e352cca4e8f34fb17dc2a331627189ac63881c69e932d7822244656b910ade2a
 ---
 
 本模块提供以太网连接管理能力，包括有线网络能力、获取有线网络的IP地址等信息。
 
-说明
+**说明** 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { ethernet } from '@kit.NetworkKit';
+```ts
+import { ethernet } from '@kit.NetworkKit';
 ```
 
 ## HttpProxy10+
-
-PhonePC/2in1TabletTV
 
 type HttpProxy = connection.HttpProxy
 
@@ -37,8 +33,6 @@ type HttpProxy = connection.HttpProxy
 | connection.HttpProxy | 网络代理配置信息。 |
 
 ## ethernet.getMacAddress14+
-
-PhonePC/2in1TabletTV
 
 getMacAddress(): Promise<Array<MacAddressInfo>>
 
@@ -64,20 +58,18 @@ getMacAddress(): Promise<Array<MacAddressInfo>>
 
 **示例：**
 
-```
-1. import { ethernet } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { ethernet } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. ethernet.getMacAddress().then((data: Array<ethernet.MacAddressInfo>) => {
-5. console.info("getMacAddress promise data = " + JSON.stringify(data));
-6. }).catch((error: BusinessError) => {
-7. console.error("getMacAddress promise error = " + JSON.stringify(error));
-8. });
+ethernet.getMacAddress().then((data: Array<ethernet.MacAddressInfo>) => {
+  console.info("getMacAddress promise data = " + JSON.stringify(data));
+}).catch((error: BusinessError) => {
+  console.error("getMacAddress promise error = " + JSON.stringify(error));
+});
 ```
 
 ## MacAddressInfo14+
-
-PhonePC/2in1TabletTV
 
 以太网网卡名称及MAC地址信息。
 

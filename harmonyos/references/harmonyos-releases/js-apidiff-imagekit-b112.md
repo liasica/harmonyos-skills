@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-imagekit-b112
 title: Image Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.1(13) > OS平台能力 > API变更清单 > HarmonyOS 5.0.1(13) Release引入的API > Image Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.1(13) > OS平台能力 > API变更清单 > HarmonyOS 5.0.1(13) Release引入的API > Image Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:36:00+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:39+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:599b08a703765f542e38540b12af5c9c02f013bc819ac40e4b376c3434bddf51
 ---
 

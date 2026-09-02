@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getsi
 title: GetSizeByDataType
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > GetSizeByDataType
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:14+08:00
+scraped_at: 2026-09-02T14:50:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1b63aa706d30001c96178777adeeba1131eed423355a1ecfcbac262c9c1f195e
+content_hash: sha256:f468e73bb8e35158b9452315326b97dc1b8f9c19c44785bd66bcc6515d1c6231
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:1b63aa706d30001c96178777adeeba1131eed423355a1ecfcbac262c9c1
 
 ## 函数原型
 
-```
-1. inline int GetSizeByDataType(DataType data_type)
+```cpp
+inline int GetSizeByDataType(DataType data_type)
 ```
 
 ## 参数说明

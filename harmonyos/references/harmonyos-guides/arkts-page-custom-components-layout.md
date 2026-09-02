@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-page-cu
 title: 自定义组件的自定义布局
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件的自定义布局
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:02+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c2e835e9ca72c0f6afb20f1c354308e56b0878e6a5a759905b63a91254f90292
+scraped_at: 2026-09-02T14:49:47+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2359973f5a273a17435f2676bcb2591ff89e17b98944b3e57925163deba58d2c
 ---
 
 如果系统提供的布局组件（如[Flex](../harmonyos-references/ts-container-flex.md)，[Column](../harmonyos-references/ts-container-column.md)，[Row](../harmonyos-references/ts-container-row.md)等）无法满足复杂布局需求，或开发者希望自定义计算组件内子组件的大小和位置，建议在自定义组件中使用以下接口：
@@ -19,71 +19,68 @@ content_hash: sha256:c2e835e9ca72c0f6afb20f1c354308e56b0878e6a5a759905b63a91254f
 
 **示例：**
 
+```typescript
+// xxx.ets
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      CustomLayout({ builder: columnChildren })
+    }
+  }
+}
+
+// 通过builder的方式传递多个组件，作为自定义组件的一级子组件（即不包含容器组件，如Column）
+@Builder
+function columnChildren() {
+  ForEach([1, 2, 3], (index: number) => { // 暂不支持lazyForEach的写法
+    Text('S' + index)
+      .fontSize(30)
+      .width(100)
+      .height(100)
+      .borderWidth(2)
+      .offset({ x: 10, y: 20 })
+  })
+}
+
+@Component
+struct CustomLayout {
+  @Builder
+  doNothingBuilder() {
+  };
+
+  @BuilderParam builder: () => void = this.doNothingBuilder;
+  result: SizeResult = {
+    width: 0,
+    height: 0
+  };
+
+  // 第一步：计算各子组件的大小
+  onMeasureSize(selfLayoutInfo: GeometryInfo, children: Array<Measurable>, constraint: ConstraintSizeOptions) {
+    let size = 100;
+    children.forEach((child) => {
+      let result: MeasureResult = child.measure({ minHeight: size, minWidth: size, maxWidth: size, maxHeight: size })
+      size += result.width / 2;
+    })
+    // this.result在该用例中代表自定义组件本身的大小，onMeasureSize方法返回的是组件自身的尺寸。
+    this.result.width = 100;
+    this.result.height = 400;
+    return this.result;
+  }
+  // 第二步：放置各子组件的位置
+  onPlaceChildren(selfLayoutInfo: GeometryInfo, children: Array<Layoutable>, constraint: ConstraintSizeOptions) {
+    let startPos = 300;
+    children.forEach((child) => {
+      let pos = startPos - child.measureResult.height;
+      child.layout({ x: pos, y: pos })
+    })
+  }
+
+  build() {
+    this.builder()
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct Index {
-5. build() {
-6. Column() {
-7. CustomLayout({ builder: columnChildren })
-8. }
-9. }
-10. }
 
-12. // 通过builder的方式传递多个组件，作为自定义组件的一级子组件（即不包含容器组件，如Column）
-13. @Builder
-14. function columnChildren() {
-15. ForEach([1, 2, 3], (index: number) => { // 暂不支持lazyForEach的写法
-16. Text('S' + index)
-17. .fontSize(30)
-18. .width(100)
-19. .height(100)
-20. .borderWidth(2)
-21. .offset({ x: 10, y: 20 })
-22. })
-23. }
-
-25. @Component
-26. struct CustomLayout {
-27. @Builder
-28. doNothingBuilder() {
-29. };
-
-31. @BuilderParam builder: () => void = this.doNothingBuilder;
-32. @State startSize: number = 100;
-33. result: SizeResult = {
-34. width: 0,
-35. height: 0
-36. };
-
-38. // 第一步：计算各子组件的大小
-39. onMeasureSize(selfLayoutInfo: GeometryInfo, children: Array<Measurable>, constraint: ConstraintSizeOptions) {
-40. let size = 100;
-41. children.forEach((child) => {
-42. let result: MeasureResult = child.measure({ minHeight: size, minWidth: size, maxWidth: size, maxHeight: size })
-43. size += result.width / 2;
-44. })
-45. // this.result在该用例中代表自定义组件本身的大小，onMeasureSize方法返回的是组件自身的尺寸。
-46. this.result.width = 100;
-47. this.result.height = 400;
-48. return this.result;
-49. }
-50. // 第二步：放置各子组件的位置
-51. onPlaceChildren(selfLayoutInfo: GeometryInfo, children: Array<Layoutable>, constraint: ConstraintSizeOptions) {
-52. let startPos = 300;
-53. children.forEach((child) => {
-54. let pos = startPos - child.measureResult.height;
-55. child.layout({ x: pos, y: pos })
-56. })
-57. }
-
-59. build() {
-60. this.builder()
-61. }
-62. }
-```
-
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentsLayout/entry/src/main/ets/pages/Index.ets#L16-L79)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/C0AiirubTEOhJDZvorDF1g/zh-cn_image_0000002558764046.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/M9NxosOsRaeGQKCebEpRvw/zh-cn_image_0000002736312225.png)

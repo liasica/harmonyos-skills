@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/weather-servi
 title: Weather Service Kit简介
 breadcrumb: 指南 > 应用服务 > Weather Service Kit（天气服务） > Weather Service Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:12+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ff8188ab0d75e0a7023420791254f5f8d9c3e6732c7c0d3ada582b8375b6c259
+scraped_at: 2026-09-02T14:50:34+08:00
+doc_updated_at: 2026-05-18
+content_hash: sha256:4ddb18fb0230421192b7f145a7c9df6ae45913f92bd779af9f9aad252984dc90
 ---
 
-Weather Service Kit（天气服务）是鸿蒙生态下的一个数据提供服务，Weather Service Kit融合了多家气象行业TOPs供应商，提供专业、精准、稳定的超本地化天气预报服务，帮助开发者为用户提供更贴心的本地生活服务，支撑行业客户防灾减灾、降本增效。开发者可以轻松地在HarmonyOS应用/元服务中获取天气数据。
+Weather Service Kit（天气服务）是HarmonyOS生态下的一个数据提供服务，Weather Service Kit融合了多家气象行业TOPs供应商，提供专业、精准、稳定的超本地化天气预报服务，帮助开发者为用户提供更贴心的本地生活服务，支撑行业客户防灾减灾、降本增效。开发者可以轻松地在HarmonyOS应用/元服务中获取天气数据。
 
 ## 场景介绍
 
@@ -24,8 +24,8 @@ Weather Service Kit可以返回以下天气数据，满足开发者的天气数�
 ## 约束与限制
 
 * 使用限制：Weather Service Kit当前仅面向系统应用开放，暂不对外开放。
-* 设备限制：本kit仅适用于Phone、Tablet、PC/2in1、Wearable、TV设备。
+* 设备限制：本Kit仅适用于Phone、Tablet、PC/2in1、Wearable、TV设备。
 
 ## 模拟器支持情况
 
-本kit暂不支持模拟器。
+本Kit暂不支持模拟器。

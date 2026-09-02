@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_NumberValue
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_NumberValue
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:20+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:1b942140837ac19c9e2034ce82bde8eaaf3ee5f903698182cd4d6d42435921fc
+scraped_at: 2026-09-02T15:01:23+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f790ed5c8f1f372d65fc59ef6084a2ee929e7d8371825bc985c280d9ae36041a
 ---
 
-```
-1. typedef union {...} ArkUI_NumberValue
+```c
+typedef union {...} ArkUI_NumberValue
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-ArkUI在Native侧的数字类型定义。
+ArkUI 在 Native 侧使用的数字类型，用于通过统一类型承载浮点、有符号整型和无符号整型数值。
 
 **起始版本：** 12
 
@@ -26,11 +24,7 @@ ArkUI在Native侧的数字类型定义。
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-w
 title: oh_window_comm.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > oh_window_comm.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:58+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:d1b62c4f2b36a86475da4202e5ed92f2305393578560763e2ba96fc869cf3e7b
+scraped_at: 2026-09-02T15:01:22+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5c97400bad7775a184e885afa1c19659187ad4e1447c911c691778d4eb0bcbc3
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供窗口的公共枚举、公共定义等。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -39,11 +33,11 @@ PhonePC/2in1TabletTVWearable
 | [WindowManager\_WindowProperties](capi-windowmanager-windowproperties.md) | WindowManager\_WindowProperties | 窗口属性。 |
 | [WindowManager\_AvoidArea](capi-windowmanager-avoidarea.md) | WindowManager\_AvoidArea | 定义避让区域结构体。 |
 | [WindowManager\_MainWindowInfo](capi-windowmanager-windowmanager-mainwindowinfo.md) | WindowManager\_MainWindowInfo | 主窗口信息。 |
-| [WindowManager\_WindowSnapshotConfig](i-windowmanager-windowmanager-windowsnapshotconfig.md) | WindowManager\_WindowSnapshotConfig | 主窗口截图的配置项。 |
+| [WindowManager\_WindowSnapshotConfig](capi-windowmanager-windowmanager-windowsnapshotconfig.md) | WindowManager\_WindowSnapshotConfig | 主窗口截图的配置项。 |
+| [OH\_WindowManager\_FrameMetrics](capi-windowmanager-oh-windowmanager-framemetrics.md) | OH\_WindowManager\_FrameMetrics | 帧率指标数据对象。 |
+| [OH\_WindowManager\_DensityInfo](capi-windowmanager-oh-windowmanager-densityinfo.md) | OH\_WindowManager\_DensityInfo | 窗口缩放系数相关信息，包括系统显示大小缩放系数、系统默认显示大小缩放系数、自定义显示大小缩放系数。 |
 
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -51,16 +45,19 @@ PhonePC/2in1TabletTVWearable
 | [WindowManager\_AvoidAreaType](capi-oh-window-comm-h.md#windowmanager_avoidareatype) | WindowManager\_AvoidAreaType | 避让区域枚举类型。 |
 | [WindowManager\_WindowType](capi-oh-window-comm-h.md#windowmanager_windowtype) | WindowManager\_WindowType | 窗口类型。 |
 
-## 枚举类型说明
+### 函数
 
-PhonePC/2in1TabletTVWearable
+| 名称 | typedef关键字 | 描述 |
+| --- | --- | --- |
+| [typedef void (\*OH\_WindowManager\_FrameMetricsMeasuredCallback)(int32\_t windowId, const OH\_WindowManager\_FrameMetrics\* metrics)](capi-oh-window-comm-h.md#oh_windowmanager_framemetricsmeasuredcallback) | OH\_WindowManager\_FrameMetricsMeasuredCallback | 帧率指标回调类型。 |
+| [typedef void (\*OH\_WindowManager\_DensityInfoCallback)(int32\_t windowId, const OH\_WindowManager\_DensityInfo\* info)](capi-oh-window-comm-h.md#oh_windowmanager_densityinfocallback) | OH\_WindowManager\_DensityInfoCallback | 窗口缩放系数相关信息回调类型。 |
+
+## 枚举类型说明
 
 ### WindowManager\_ErrorCode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum WindowManager_ErrorCode
+```c
+enum WindowManager_ErrorCode
 ```
 
 **描述**
@@ -76,6 +73,7 @@ PhonePC/2in1TabletTVWearable
 | WINDOW\_MANAGER\_ERRORCODE\_INVALID\_PARAM = 401 | 非法参数。  **起始版本：** 15 |
 | WINDOW\_MANAGER\_ERRORCODE\_DEVICE\_NOT\_SUPPORTED = 801 | 设备不支持。  **起始版本：** 15 |
 | INVAILD\_WINDOW\_ID = 1000 | 非法窗口ID。 |
+| INVALID\_WINDOW\_ID = INVAILD\_WINDOW\_ID | 非法窗口ID。  **起始版本：** 26.0.0 |
 | SERVICE\_ERROR = 2000 | 服务异常。 |
 | WINDOW\_MANAGER\_ERRORCODE\_STATE\_ABNORMAL = 1300002 | 窗口状态异常。  **起始版本：** 15 |
 | WINDOW\_MANAGER\_ERRORCODE\_SYSTEM\_ABNORMAL = 1300003 | 窗口管理器服务异常。  **起始版本：** 15 |
@@ -88,10 +86,8 @@ PhonePC/2in1TabletTVWearable
 
 ### WindowManager\_AvoidAreaType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum WindowManager_AvoidAreaType
+```c
+enum WindowManager_AvoidAreaType
 ```
 
 **描述**
@@ -110,10 +106,8 @@ PhonePC/2in1TabletTVWearable
 
 ### WindowManager\_WindowType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum WindowManager_WindowType
+```c
+enum WindowManager_WindowType
 ```
 
 **描述**
@@ -126,5 +120,32 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | WINDOW\_MANAGER\_WINDOW\_TYPE\_APP = 0 | 子窗口。 |
 | WINDOW\_MANAGER\_WINDOW\_TYPE\_MAIN = 1 | 主窗口。 |
-| WINDOW\_MANAGER\_WINDOW\_TYPE\_FLOAT = 8 | 悬浮窗口。 |
+| WINDOW\_MANAGER\_WINDOW\_TYPE\_FLOAT = 8 | 全局悬浮窗口。 |
 | WINDOW\_MANAGER\_WINDOW\_TYPE\_DIALOG = 16 | 模态窗口。 |
+
+## 函数说明
+
+### OH\_WindowManager\_FrameMetricsMeasuredCallback()
+
+```c
+typedef void (*OH_WindowManager_FrameMetricsMeasuredCallback)(
+    int32_t windowId, const OH_WindowManager_FrameMetrics* metrics)
+```
+
+**描述**
+
+帧率指标回调类型。
+
+**起始版本：** 26.0.0
+
+### OH\_WindowManager\_DensityInfoCallback()
+
+```c
+typedef void (*OH_WindowManager_DensityInfoCallback)(int32_t windowId, const OH_WindowManager_DensityInfo* info)
+```
+
+**描述**
+
+窗口缩放系数相关信息回调类型。
+
+**起始版本：** 24

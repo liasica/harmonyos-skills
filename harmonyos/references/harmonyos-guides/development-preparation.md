@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/development-p
 title: 开发准备
 breadcrumb: 指南 > 应用服务 > Ads Kit（广告服务） > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:10+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4b90e1e7fde95516d4758747d220096be52e3166c0c66b20e5f61bda534e8e27
+scraped_at: 2026-09-02T14:50:23+08:00
+doc_updated_at: 2026-05-13
+content_hash: sha256:fa4f81fdf0922ad08d26e27fab466e97145fd507dfea625eb01885684119598f
 ---
 
 ## 申请权限
@@ -21,24 +21,24 @@ Ads Kit所需的权限有：
 
 示例代码如下所示：
 
-```
-1. {
-2. "module": {
-3. "requestPermissions": [
-4. {
-5. "name": "ohos.permission.APP_TRACKING_CONSENT",
-6. "reason": "$string:reason",
-7. "usedScene": {
-8. "abilities": [
-9. "EntryAbility"
-10. ],
-11. "when": "inuse"
-12. }
-13. },
-14. {
-15. "name": "ohos.permission.INTERNET"
-16. }
-17. ]
-18. }
-19. }
+```typescript
+{
+  "module": {
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.APP_TRACKING_CONSENT",
+        "reason": "$string:reason",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "inuse"
+        }
+      },
+      {
+        "name": "ohos.permission.INTERNET"
+      }
+    ]
+  }
+}
 ```

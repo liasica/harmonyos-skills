@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-progre
 title: 阅读进度通知
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容交互 > 阅读进度通知
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:40+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b0cb437c2ecf42e578e8305837c86e949acc4ea7e9a30407222ddee879ba27bf
+scraped_at: 2026-09-02T14:50:31+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f88e9b07f97fa51f1699096437bfd281924259611b6e6219dd3fb61738f5cdad
 ---
 
 当页面展示时，会通过页面展示回调接口返回页面渲染信息。页面渲染信息提供用于阅读进度跳转的domPos及resourceIndex属性，开发者可将属性缓存到数据库当中，用于阅读进度的恢复。
@@ -16,7 +16,7 @@ content_hash: sha256:b0cb437c2ecf42e578e8305837c86e949acc4ea7e9a30407222ddee879b
 
 | 接口名 | 描述 |
 | --- | --- |
-| [on('pageShow')](../harmonyos-references/reader-read-core.md#onpageshow) | 注册章节内容分页展示结果回调。 |
+| [on('pageShow')](../harmonyos-references/reader-read-core.md#onpageshow) | 注册页面展示的通知服务，该通知在页面排版成功展示后触发。 |
 | [off('pageShow')](../harmonyos-references/reader-read-core.md#offpageshow) | 注销章节内容分页展示结果回调，可在页面销毁时调用。 |
 
 ## 开发准备
@@ -31,26 +31,26 @@ content_hash: sha256:b0cb437c2ecf42e578e8305837c86e949acc4ea7e9a30407222ddee879b
 
    开发者可在on('pageShow')接口回调中将阅读进度实时保存到数据库当中，防止用户异常退出阅读器时的进度丢失。当用户下次继续阅读时，可将保存domPos及resourceIndex属性传入到[startPlay](../harmonyos-references/reader-read-core.md#startplay)接口中，用于阅读进度的恢复。
 
-   ```
-   1. aboutToAppear(): void {
-   2. this.setOnPageShowListener();
-   3. }
+   ```typescript
+   aboutToAppear(): void {
+     this.setOnPageShowListener();
+   }
 
-   5. private async setOnPageShowListener(){
-   6. try {
-   7. this.readerComponentController.on('pageShow', (data: readerCore.PageDataInfo): void => {
-   8. // 开发者可在此保存内容分页排版数据，利用data.resourceIndex及data.startDomPos数据调用startPlay接口继续阅读
-   9. hilog.info(0x0000, 'testTag', 'pageshow: data is: ' + JSON.stringify(data));
-   10. });
-   11. } catch (err) {
-   12. hilog.error(0x0000, 'testTag', `failed to init, Code is ${err.code}, message is ${err.message}`);
-   13. }
-   14. }
+   private async setOnPageShowListener(){
+     try {
+         this.readerComponentController.on('pageShow', (data: readerCore.PageDataInfo): void => {
+         // 开发者可在此保存内容分页排版数据，利用data.resourceIndex及data.startDomPos数据调用startPlay接口继续阅读
+         hilog.info(0x0000, 'testTag', 'pageshow: data is: ' + JSON.stringify(data));
+       });
+     } catch (err) {
+       hilog.error(0x0000, 'testTag', `failed to init, Code is ${err.code}, message is ${err.message}`);
+     }
+   }
    ```
 2. 页面销毁时，需要调用注销页面展示接口。
 
-   ```
-   1. aboutToDisappear(): void {
-   2. this.readerComponentController.off('pageShow');
-   3. }
+   ```typescript
+   aboutToDisappear(): void {
+     this.readerComponentController.off('pageShow');
+   }
    ```

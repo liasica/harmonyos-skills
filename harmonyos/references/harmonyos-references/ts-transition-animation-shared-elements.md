@@ -3,24 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transi
 title: 共享元素转场 (sharedTransition)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 共享元素转场 (sharedTransition)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:52:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:bba5877d0a3bd3377026d2f886ac4e7bd6df8c92cdf6fa0ee97bc6ad90a087c6
+scraped_at: 2026-09-02T15:01:06+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:43fe0acbdd39eed08eef90be7e4a71015ea1a37138a8a814bdd1e96a049ffab4
 ---
 
-可以通过设置组件的sharedTransition属性将该元素标记为共享元素并设置对应的共享元素转场动效。sharedTransition仅发生在[@ohos.router (页面路由)](js-apis-router.md)跳转时。
+共享元素转场（sharedTransition）用于在页面跳转时实现共享元素位置、大小等的平滑过渡动画，使同一元素在不同页面间保持视觉连续性，提升用户体验和转场流畅度。可以通过设置组件的sharedTransition属性将该元素标记为共享元素并设置对应的共享元素转场动效。sharedTransition仅发生在[@ohos.router (页面路由)](js-apis-router.md)跳转时。
 
-说明
+**说明** 
 
 从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## sharedTransition
 
-PhonePC/2in1TabletTVWearable
-
 sharedTransition(id: string, options?: sharedTransitionOptions): T
 
-设置共享元素转场动效。
+设置共享元素转场动效。该转场仅发生在@ohos.router页面路由跳转时。
+
+**说明** 
+
+* sharedTransition需与[PageTransitionEnter](ts-page-transition-animation.md#pagetransitionenter)和[PageTransitionExit](ts-page-transition-animation.md#pagetransitionexit)配合使用，共同控制页面转场动画效果。
+* 当PageTransitionEnter/PageTransitionExit设置type为RouteType.None、duration为0时，页面整体无转场动画，仅显示共享元素转场动效。
+* 当未配置PageTransition时，页面默认转场动画与共享元素转场动效同时播放，可能出现视觉叠加效果。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -30,26 +34,24 @@ sharedTransition(id: string, options?: sharedTransitionOptions): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| id | string | 是 | 两个页面中id值相同且不为空字符串的组件即为共享元素，在页面转场时可显示共享元素转场动效。 |
-| options | [sharedTransitionOptions](ts-transition-animation-shared-elements.md#sharedtransitionoptions) | 否 | 共享元素转场动画参数。不设置时使用默认转场动画参数。各参数具体默认值参考[sharedTransitionOptions](ts-transition-animation-shared-elements.md#sharedtransitionoptions)。 |
+| id | string | 是 | 两个页面中id值相同且不为空字符串的组件即为共享元素，在页面转场时可显示共享元素转场动效。传入空字符串时不产生共享元素转场动效。 |
+| options | [sharedTransitionOptions](ts-transition-animation-shared-elements.md#sharedtransitionoptions) | 否 | 共享元素转场动效参数。未设置时使用默认转场动画参数。各参数具体默认值参考[sharedTransitionOptions](ts-transition-animation-shared-elements.md#sharedtransitionoptions)。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## sharedTransitionOptions
 
-PhonePC/2in1TabletTVWearable
+共享元素转场动效参数。
 
-共享元素转场动画参数。
-
-说明
+**说明** 
 
 type为SharedTransitionEffectType.Exchange时motionPath才会生效。
 
-type为SharedTransitionEffectType.Exchange时，效果为对匹配的共享元素产生位置、大小的过渡（可通过配置组件的border观察），不支持内容的过渡效果。例如，Text组件在两个页面上使用不同的fontSize属性值，即绘制内容有大小差异，在sharedTransition动画结束后的最后一帧，Text的fontSize效果会突变为跳转目标页fontSize的效果。
+type为SharedTransitionEffectType.Exchange时，效果为对匹配的共享元素产生位置、大小的过渡（可通过配置组件的border观察），不支持组件绘制内容的过渡效果（可通过为共享元素组件配置border属性来观察位置和大小变化的过渡范围）。例如，Text组件在两个页面上使用不同的fontSize属性值，即绘制内容有大小差异，在sharedTransition动画结束后的最后一帧，Text的fontSize效果会突变为跳转目标页fontSize的效果。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -60,58 +62,56 @@ type为SharedTransitionEffectType.Exchange时，效果为对匹配的共享元�
 | duration | number | 否 | 是 | 描述共享元素转场动效播放时长。  默认值：1000  单位：毫秒  取值范围：[0, +∞) |
 | curve | [Curve](ts-appendix-enums.md#curve) | string | [ICurve](js-apis-curve.md#icurve9) | 否 | 是 | 动画曲线。  推荐以Curve或ICurve形式指定。  当类型为string时，为动画插值曲线，取值参考[AnimateParam](ts-explicit-animation.md#animateparam对象说明)的curve参数。  默认值：Curve.Linear |
 | delay | number | 否 | 是 | 延迟播放时间。  取值范围：[0, +∞)  默认值：0  单位：毫秒 |
-| motionPath | [MotionPathOptions](ts-motion-path-animation.md#motionpathoptions) | 否 | 是 | 运动路径信息。 |
-| zIndex | number | 否 | 是 | 设置Z轴。  取值范围：(-∞, +∞)  默认值：0 |
-| type | [SharedTransitionEffectType](ts-appendix-enums.md#sharedtransitioneffecttype) | 否 | 是 | 动画类型。  默认值：SharedTransitionEffectType.Exchange |
+| motionPath | [MotionPathOptions](ts-motion-path-animation.md#motionpathoptions) | 否 | 是 | 运动路径信息，用于定义共享元素转场时的运动轨迹。不设置时不启用运动路径效果。仅在type为SharedTransitionEffectType.Exchange时生效。 |
+| zIndex | number | 否 | 是 | 设置共享元素在转场动画期间的Z轴堆叠顺序。  取值范围：(-∞, +∞)  默认值：0  数值越大，该共享元素在转场过程中越靠前（显示在上层），越不容易被其他共享元素遮挡。此zIndex仅在共享元素转场动画期间生效，控制共享元素相对于其他同时参与转场的共享元素在Z轴上的堆叠顺序，不参与页面内普通组件的静态布局层级控制（页面内组件的静态布局层级由组件通用属性[zIndex](ts-universal-attributes-z-order.md#zindex)控制）。 |
+| type | [SharedTransitionEffectType](ts-appendix-enums.md#sharedtransitioneffecttype) | 否 | 是 | 动画类型，决定共享元素转场时的过渡方式。Exchange类型产生位置、大小的过渡动画（不支持内容过渡效果），其他类型详见[SharedTransitionEffectType](ts-appendix-enums.md#sharedtransitioneffecttype)。  默认值：SharedTransitionEffectType.Exchange |
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
+示例代码为点击图片所在区域跳转页面时，显示共享元素图片的自定义转场动效。
 
-示例代码为点击图片跳转页面时，显示共享元素图片的自定义转场动效。
+```ts
+// xxx.ets
+@Entry
+@Component
+struct SharedTransitionExample {
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct SharedTransitionExample {
+  build() {
+    Column() {
+      // $r('app.media.ic_health_heart')需要替换为开发者所需的图像资源文件。
+      Image($r('app.media.ic_health_heart')).width(50).height(50).margin({ left: 20, top: 20 })
+        .sharedTransition('sharedImage', { duration: 800, curve: Curve.Linear, delay: 100 })
+    }.width('100%').height('100%').alignItems(HorizontalAlign.Start)
+    .onClick(() => {
+      this.getUIContext().getRouter().pushUrl({ url: 'pages/PageB' });
+    })
+  }
 
-6. build() {
-7. Column() {
-8. // $r('app.media.ic_health_heart')需要替换为开发者所需的图像资源文件。
-9. Image($r('app.media.ic_health_heart')).width(50).height(50).margin({ left: 20, top: 20 })
-10. .sharedTransition('sharedImage', { duration: 800, curve: Curve.Linear, delay: 100 })
-11. }.width('100%').height('100%').alignItems(HorizontalAlign.Start)
-12. .onClick(() => {
-13. this.getUIContext().getRouter().pushUrl({ url: 'pages/PageB' })
-14. })
-15. }
-
-17. pageTransition() {
-18. PageTransitionEnter({ type: RouteType.None, duration: 0 })
-19. PageTransitionExit({ type: RouteType.None, duration: 0 })
-20. }
-21. }
+  pageTransition() {
+    PageTransitionEnter({ type: RouteType.None, duration: 0 })
+    PageTransitionExit({ type: RouteType.None, duration: 0 })
+  }
+}
 ```
 
-```
-1. // PageB.ets
-2. @Entry
-3. @Component
-4. struct PageBExample {
-5. build() {
-6. Stack() {
-7. // $r('app.media.ic_health_heart')需要替换为开发者所需的图像资源文件。
-8. Image($r('app.media.ic_health_heart')).width(150).height(150)
-9. .sharedTransition('sharedImage', { duration: 800, curve: Curve.Linear, delay: 100 })
-10. }.width('100%').height('100%')
-11. }
+```ts
+// PageB.ets
+@Entry
+@Component
+struct PageBExample {
+  build() {
+    Stack() {
+      // $r('app.media.ic_health_heart')需要替换为开发者所需的图像资源文件。
+      Image($r('app.media.ic_health_heart')).width(150).height(150)
+        .sharedTransition('sharedImage', { duration: 800, curve: Curve.Linear, delay: 100 })
+    }.width('100%').height('100%')
+  }
 
-13. pageTransition() {
-14. PageTransitionEnter({ type: RouteType.None, duration: 0 })
-15. PageTransitionExit({ type: RouteType.None, duration: 0 })
-16. }
-17. }
+  pageTransition() {
+    PageTransitionEnter({ type: RouteType.None, duration: 0 })
+    PageTransitionExit({ type: RouteType.None, duration: 0 })
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/PKuglSyeTUuDhCpyHWyX_Q/zh-cn_image_0000002558766554.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/Lr3-eqUdQC2uSk0_Yr1clw/zh-cn_image_0000002706676256.gif)

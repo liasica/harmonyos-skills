@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: Camera_CaptureStartInfo
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 结构体 > Camera_CaptureStartInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:50+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6ca0c8543d2620cb4d8e2ec00f594b7e31ee053015f4c5cdc047f45f5334e77a
+scraped_at: 2026-09-02T15:02:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1a517659780836d3aedf33bbfd77420245b8fd3905a4767357a219ba487fe460
 ---
 
-```
-1. typedef struct Camera_CaptureStartInfo {...} Camera_CaptureStartInfo
+```c
+typedef struct Camera_CaptureStartInfo {...} Camera_CaptureStartInfo
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 拍照开始信息。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-heart-rat
 title: 心率变异性
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 数据类型 > 采样数据 > 心率变异性
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:17+08:00
+scraped_at: 2026-09-02T14:59:56+08:00
 doc_updated_at: 2026-04-20
 content_hash: sha256:d123e8c83eb3f3b57fc4d3a37aa026672a820370ab464b5562e473c5565d782e
 ---

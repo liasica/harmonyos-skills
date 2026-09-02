@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.appManager (应用管理)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.app.ability.appManager (应用管理)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:31+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:641d9dbba0e698b947f7307a84ea6bc990745141af73850fde2d5e3be0c473ba
+scraped_at: 2026-09-02T15:00:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:78a406994ca286046cf2ec79dd79bf39ea9d7e794a469c52230ac47358bc4e9f
 ---
 
 appManager模块提供应用管理的能力，包括查询当前系统是否处于稳定性测试场景、查询当前设备是否为RAM（Random Access Memory，随机存取存储器）受限设备、获取当前应用程序可以使用的最大内存值、获取有关运行进程的信息等。
 
-说明
+**说明** 
 
-本模块首批接口从API version 9 开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { appManager } from '@kit.AbilityKit';
+```ts
+import { appManager } from '@kit.AbilityKit';
 ```
 
 ## ProcessState10+
-
-PhonePC/2in1TabletTVWearable
 
 表示进程状态的枚举。
 
@@ -42,13 +38,11 @@ PhonePC/2in1TabletTVWearable
 
 ## appManager.isRunningInStabilityTest
 
-PhonePC/2in1TabletTVWearable
-
 isRunningInStabilityTest(callback: AsyncCallback<boolean>): void
 
 查询当前系统是否处于稳定性测试场景。使用callback异步回调。
 
-说明
+**说明** 
 
 稳定性测试场景指为验证应用在复杂、极端或长期运行条件下的可靠性而设计的特定测试环境。
 
@@ -73,27 +67,25 @@ isRunningInStabilityTest(callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { appManager } from '@kit.AbilityKit';
+```ts
+import { appManager } from '@kit.AbilityKit';
 
-3. appManager.isRunningInStabilityTest((err, flag) => {
-4. if (err) {
-5. console.error(`isRunningInStabilityTest fail, err: ${JSON.stringify(err)}`);
-6. } else {
-7. console.info(`The result of isRunningInStabilityTest is: ${JSON.stringify(flag)}`);
-8. }
-9. });
+appManager.isRunningInStabilityTest((err, flag) => {
+  if (err) {
+    console.error(`isRunningInStabilityTest fail, code: ${err.code}, msg:${err.message}`);
+  } else {
+    console.info(`The result of isRunningInStabilityTest is: ${JSON.stringify(flag)}`);
+  }
+});
 ```
 
 ## appManager.isRunningInStabilityTest
-
-PhonePC/2in1TabletTVWearable
 
 isRunningInStabilityTest(): Promise<boolean>
 
 查询当前系统是否处于稳定性测试场景。使用Promise异步回调。
 
-说明
+**说明** 
 
 稳定性测试场景指为验证应用在复杂、极端或长期运行条件下的可靠性而设计的特定测试环境。
 
@@ -117,20 +109,18 @@ isRunningInStabilityTest(): Promise<boolean>
 
 **示例：**
 
-```
-1. import { appManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { appManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. appManager.isRunningInStabilityTest().then((flag) => {
-5. console.info(`The result of isRunningInStabilityTest is: ${JSON.stringify(flag)}`);
-6. }).catch((error: BusinessError) => {
-7. console.error(`error: ${JSON.stringify(error)}`);
-8. });
+appManager.isRunningInStabilityTest().then((flag) => {
+  console.info(`The result of isRunningInStabilityTest is: ${JSON.stringify(flag)}`);
+}).catch((error: BusinessError) => {
+  console.error(`error: ${JSON.stringify(error)}`);
+});
 ```
 
 ## appManager.isRamConstrainedDevice
-
-PhonePC/2in1TabletTVWearable
 
 isRamConstrainedDevice(): Promise<boolean>
 
@@ -156,20 +146,18 @@ isRamConstrainedDevice(): Promise<boolean>
 
 **示例：**
 
-```
-1. import { appManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { appManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. appManager.isRamConstrainedDevice().then((data) => {
-5. console.info(`The result of isRamConstrainedDevice is: ${JSON.stringify(data)}`);
-6. }).catch((error: BusinessError) => {
-7. console.error(`error: ${JSON.stringify(error)}`);
-8. });
+appManager.isRamConstrainedDevice().then((data) => {
+  console.info(`The result of isRamConstrainedDevice is: ${JSON.stringify(data)}`);
+}).catch((error: BusinessError) => {
+  console.error(`error: ${JSON.stringify(error)}`);
+});
 ```
 
 ## appManager.isRamConstrainedDevice
-
-PhonePC/2in1TabletTVWearable
 
 isRamConstrainedDevice(callback: AsyncCallback<boolean>): void
 
@@ -196,21 +184,19 @@ isRamConstrainedDevice(callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { appManager } from '@kit.AbilityKit';
+```ts
+import { appManager } from '@kit.AbilityKit';
 
-3. appManager.isRamConstrainedDevice((err, data) => {
-4. if (err) {
-5. console.error(`isRamConstrainedDevice fail, err: ${JSON.stringify(err)}`);
-6. } else {
-7. console.info(`The result of isRamConstrainedDevice is: ${JSON.stringify(data)}`);
-8. }
-9. });
+appManager.isRamConstrainedDevice((err, data) => {
+  if (err) {
+    console.error(`isRamConstrainedDevice fail, code: ${err.code}, msg:${err.message}`);
+  } else {
+    console.info(`The result of isRamConstrainedDevice is: ${JSON.stringify(data)}`);
+  }
+});
 ```
 
 ## appManager.getAppMemorySize
-
-PhonePC/2in1TabletTVWearable
 
 getAppMemorySize(): Promise<number>
 
@@ -224,7 +210,7 @@ getAppMemorySize(): Promise<number>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<number> | Promise对象，返回当前应用程序可以使用的最大内存（RAM）值，可根据此值进行错误处理或其他自定义处理，单位是M。 |
+| Promise<number> | Promise对象，返回当前应用程序可以使用的最大内存（RAM）值，可根据此值进行错误处理或其他自定义处理，单位是MB。 |
 
 **错误码**：
 
@@ -236,20 +222,18 @@ getAppMemorySize(): Promise<number>
 
 **示例：**
 
-```
-1. import { appManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { appManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. appManager.getAppMemorySize().then((data) => {
-5. console.info(`The size of app memory is: ${JSON.stringify(data)}`);
-6. }).catch((error: BusinessError) => {
-7. console.error(`error: ${JSON.stringify(error)}`);
-8. });
+appManager.getAppMemorySize().then((data) => {
+  console.info(`The size of app memory is: ${JSON.stringify(data)}`);
+}).catch((error: BusinessError) => {
+  console.error(`code: ${error.code}, msg:${error.message}`);
+});
 ```
 
 ## appManager.getAppMemorySize
-
-PhonePC/2in1TabletTVWearable
 
 getAppMemorySize(callback: AsyncCallback<number>): void
 
@@ -263,7 +247,7 @@ getAppMemorySize(callback: AsyncCallback<number>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<number> | 是 | 回调函数。当接口调用成功，err为undefined，data为当前应用程序可以使用的最大内存（RAM）值，单位是M；否则为错误对象。可根据此值进行错误处理或其他自定义处理。 |
+| callback | AsyncCallback<number> | 是 | 回调函数。当接口调用成功，err为undefined，data为当前应用程序可以使用的最大内存（RAM）值，单位是MB；否则为错误对象。可根据此值进行错误处理或其他自定义处理。 |
 
 **错误码**：
 
@@ -276,34 +260,35 @@ getAppMemorySize(callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { appManager } from '@kit.AbilityKit';
+```ts
+import { appManager } from '@kit.AbilityKit';
 
-3. appManager.getAppMemorySize((err, data) => {
-4. if (err) {
-5. console.error(`getAppMemorySize fail, err: ${JSON.stringify(err)}`);
-6. } else {
-7. console.info(`The size of app memory is: ${JSON.stringify(data)}`);
-8. }
-9. });
+appManager.getAppMemorySize((err, data) => {
+  if (err) {
+    console.error(`getAppMemorySize fail, code: ${err.code}, msg:${err.message}`);
+  } else {
+    console.info(`The size of app memory is: ${JSON.stringify(data)}`);
+  }
+});
 ```
 
 ## appManager.getRunningProcessInformation
-
-PhonePC/2in1TabletTVWearable
 
 getRunningProcessInformation(): Promise<Array<ProcessInformation>>
 
 获取当前应用运行进程的相关信息。使用Promise异步回调。
 
-说明
+**说明** 
 
-* 对于API version 11之前的版本，该接口需要申请权限ohos.permission.GET\_RUNNING\_INFO（该权限仅系统应用可申请）。
-* 从API version 11开始，该接口仅用于获取调用方自身的进程信息，不再需要申请权限。
+从API version 11开始，该接口仅用于获取调用方自身的进程信息，不再需要申请权限。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
+**需要权限**：
+
+API版本9-10：ohos.permission.GET\_RUNNING\_INFO（该权限仅系统应用可申请）
 
 **返回值：**
 
@@ -321,33 +306,34 @@ getRunningProcessInformation(): Promise<Array<ProcessInformation>>
 
 **示例：**
 
-```
-1. import { appManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { appManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. appManager.getRunningProcessInformation().then((data) => {
-5. console.info(`The running process information is: ${JSON.stringify(data)}`);
-6. }).catch((error: BusinessError) => {
-7. console.error(`error: ${JSON.stringify(error)}`);
-8. });
+appManager.getRunningProcessInformation().then((data) => {
+  console.info(`The running process information is: ${JSON.stringify(data)}`);
+}).catch((error: BusinessError) => {
+  console.error(`code: ${error.code}, msg:${error.message}`);
+});
 ```
 
 ## appManager.getRunningProcessInformation
-
-PhonePC/2in1TabletTVWearable
 
 getRunningProcessInformation(callback: AsyncCallback<Array<ProcessInformation>>): void
 
 获取当前应用运行进程的相关信息。使用callback异步回调。
 
-说明
+**说明** 
 
-* 对于API version 11之前的版本，该接口需要申请权限ohos.permission.GET\_RUNNING\_INFO（该权限仅系统应用可申请）。
-* 从API version 11开始，该接口仅用于获取调用方自身的进程信息，不再需要申请权限。
+从API version 11开始，该接口仅用于获取调用方自身的进程信息，不再需要申请权限。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
+**需要权限**：
+
+API版本9-10：ohos.permission.GET\_RUNNING\_INFO（该权限仅系统应用可申请）
 
 **参数：**
 
@@ -366,21 +352,19 @@ getRunningProcessInformation(callback: AsyncCallback<Array<ProcessInformation>>)
 
 **示例：**
 
-```
-1. import { appManager } from '@kit.AbilityKit';
+```ts
+import { appManager } from '@kit.AbilityKit';
 
-3. appManager.getRunningProcessInformation((err, data) => {
-4. if (err) {
-5. console.error(`getRunningProcessInformation fail, err: ${JSON.stringify(err)}`);
-6. } else {
-7. console.info(`The running process information is: ${JSON.stringify(data)}`);
-8. }
-9. });
+appManager.getRunningProcessInformation((err, data) => {
+  if (err) {
+    console.error(`getRunningProcessInformation fail, code: ${err.code}, msg:${err.message}`);
+  } else {
+    console.info(`The running process information is: ${JSON.stringify(data)}`);
+  }
+});
 ```
 
 ## appManager.on('applicationState')14+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'applicationState', observer: ApplicationStateObserver): number
 
@@ -415,47 +399,45 @@ on(type: 'applicationState', observer: ApplicationStateObserver): number
 
 **示例：**
 
-```
-1. import { appManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { appManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let applicationStateObserver: appManager.ApplicationStateObserver = {
-5. onForegroundApplicationChanged(appStateData) {
-6. console.info(`[appManager] onForegroundApplicationChanged: ${JSON.stringify(appStateData)}`);
-7. },
-8. onAbilityStateChanged(abilityStateData) {
-9. console.info(`[appManager] onAbilityStateChanged: ${JSON.stringify(abilityStateData)}`);
-10. },
-11. onProcessCreated(processData) {
-12. console.info(`[appManager] onProcessCreated: ${JSON.stringify(processData)}`);
-13. },
-14. onProcessDied(processData) {
-15. console.info(`[appManager] onProcessDied: ${JSON.stringify(processData)}`);
-16. },
-17. onProcessStateChanged(processData) {
-18. console.info(`[appManager] onProcessStateChanged: ${JSON.stringify(processData)}`);
-19. },
-20. onAppStarted(appStateData) {
-21. console.info(`[appManager] onAppStarted: ${JSON.stringify(appStateData)}`);
-22. },
-23. onAppStopped(appStateData) {
-24. console.info(`[appManager] onAppStopped: ${JSON.stringify(appStateData)}`);
-25. }
-26. };
+let applicationStateObserver: appManager.ApplicationStateObserver = {
+  onForegroundApplicationChanged(appStateData: appManager.AppStateData) {
+    console.info(`[appManager] onForegroundApplicationChanged: ${JSON.stringify(appStateData)}`);
+  },
+  onAbilityStateChanged(abilityStateData: appManager.AbilityStateData) {
+    console.info(`[appManager] onAbilityStateChanged: ${JSON.stringify(abilityStateData)}`);
+  },
+  onProcessCreated(processData: appManager.ProcessData) {
+    console.info(`[appManager] onProcessCreated: ${JSON.stringify(processData)}`);
+  },
+  onProcessDied(processData: appManager.ProcessData) {
+    console.info(`[appManager] onProcessDied: ${JSON.stringify(processData)}`);
+  },
+  onProcessStateChanged(processData: appManager.ProcessData) {
+    console.info(`[appManager] onProcessStateChanged: ${JSON.stringify(processData)}`);
+  },
+  onAppStarted(appStateData: appManager.AppStateData) {
+    console.info(`[appManager] onAppStarted: ${JSON.stringify(appStateData)}`);
+  },
+  onAppStopped(appStateData: appManager.AppStateData) {
+    console.info(`[appManager] onAppStopped: ${JSON.stringify(appStateData)}`);
+  }
+};
 
-28. try {
-29. const observerId = appManager.on('applicationState', applicationStateObserver);
-30. console.info(`[appManager] observerCode: ${observerId}`);
-31. } catch (paramError) {
-32. let code = (paramError as BusinessError).code;
-33. let message = (paramError as BusinessError).message;
-34. console.error(`[appManager] error: ${code}, ${message}`);
-35. }
+try {
+  const observerId = appManager.on('applicationState', applicationStateObserver);
+  console.info(`[appManager] observerCode: ${observerId}`);
+} catch (paramError) {
+  let code = (paramError as BusinessError).code;
+  let message = (paramError as BusinessError).message;
+  console.error(`[appManager] error: ${code}, ${message}`);
+}
 ```
 
 ## appManager.on('applicationState')14+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'applicationState', observer: ApplicationStateObserver, bundleNameList: Array<string>): number
 
@@ -471,7 +453,7 @@ on(type: 'applicationState', observer: ApplicationStateObserver, bundleNameList:
 | --- | --- | --- | --- |
 | type | string | 是 | 调用接口类型，固定填'applicationState'字符串。 |
 | observer | [ApplicationStateObserver](js-apis-inner-application-applicationstateobserver.md) | 是 | 应用状态监听器，用于监听应用的生命周期变化。 |
-| bundleNameList | Array<string> | 是 | 表示需要注册监听的bundleName数组。最大值128。 |
+| bundleNameList | Array<string> | 是 | 表示需要注册监听的bundleName数组。最大值128，超过这个数量将返回16000050错误码。 |
 
 **返回值：**
 
@@ -491,49 +473,47 @@ on(type: 'applicationState', observer: ApplicationStateObserver, bundleNameList:
 
 **示例：**
 
-```
-1. import { appManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { appManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let applicationStateObserver: appManager.ApplicationStateObserver = {
-5. onForegroundApplicationChanged(appStateData) {
-6. console.info(`[appManager] onForegroundApplicationChanged: ${JSON.stringify(appStateData)}`);
-7. },
-8. onAbilityStateChanged(abilityStateData) {
-9. console.info(`[appManager] onAbilityStateChanged: ${JSON.stringify(abilityStateData)}`);
-10. },
-11. onProcessCreated(processData) {
-12. console.info(`[appManager] onProcessCreated: ${JSON.stringify(processData)}`);
-13. },
-14. onProcessDied(processData) {
-15. console.info(`[appManager] onProcessDied: ${JSON.stringify(processData)}`);
-16. },
-17. onProcessStateChanged(processData) {
-18. console.info(`[appManager] onProcessStateChanged: ${JSON.stringify(processData)}`);
-19. },
-20. onAppStarted(appStateData) {
-21. console.info(`[appManager] onAppStarted: ${JSON.stringify(appStateData)}`);
-22. },
-23. onAppStopped(appStateData) {
-24. console.info(`[appManager] onAppStopped: ${JSON.stringify(appStateData)}`);
-25. }
-26. };
+let applicationStateObserver: appManager.ApplicationStateObserver = {
+  onForegroundApplicationChanged(appStateData: appManager.AppStateData) {
+    console.info(`[appManager] onForegroundApplicationChanged: ${JSON.stringify(appStateData)}`);
+  },
+  onAbilityStateChanged(abilityStateData: appManager.AbilityStateData) {
+    console.info(`[appManager] onAbilityStateChanged: ${JSON.stringify(abilityStateData)}`);
+  },
+  onProcessCreated(processData: appManager.ProcessData) {
+    console.info(`[appManager] onProcessCreated: ${JSON.stringify(processData)}`);
+  },
+  onProcessDied(processData: appManager.ProcessData) {
+    console.info(`[appManager] onProcessDied: ${JSON.stringify(processData)}`);
+  },
+  onProcessStateChanged(processData: appManager.ProcessData) {
+    console.info(`[appManager] onProcessStateChanged: ${JSON.stringify(processData)}`);
+  },
+  onAppStarted(appStateData: appManager.AppStateData) {
+    console.info(`[appManager] onAppStarted: ${JSON.stringify(appStateData)}`);
+  },
+  onAppStopped(appStateData: appManager.AppStateData) {
+    console.info(`[appManager] onAppStopped: ${JSON.stringify(appStateData)}`);
+  }
+};
 
-28. let bundleNameList = ['bundleName1', 'bundleName2'];
+let bundleNameList = ['bundleName1', 'bundleName2'];
 
-30. try {
-31. const observerId = appManager.on('applicationState', applicationStateObserver, bundleNameList);
-32. console.info(`[appManager] observerCode: ${observerId}`);
-33. } catch (paramError) {
-34. let code = (paramError as BusinessError).code;
-35. let message = (paramError as BusinessError).message;
-36. console.error(`[appManager] error: ${code}, ${message}`);
-37. }
+try {
+  const observerId = appManager.on('applicationState', applicationStateObserver, bundleNameList);
+  console.info(`[appManager] observerCode: ${observerId}`);
+} catch (paramError) {
+  let code = (paramError as BusinessError).code;
+  let message = (paramError as BusinessError).message;
+  console.error(`[appManager] error: ${code}, ${message}`);
+}
 ```
 
 ## appManager.off('applicationState')14+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'applicationState', observerId: number): Promise<void>
 
@@ -568,63 +548,61 @@ off(type: 'applicationState', observerId: number): Promise<void>
 
 **示例：**
 
-```
-1. import { appManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { appManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let observerId = 0;
+let observerId = 0;
 
-6. // 1.注册应用状态监听器
-7. let applicationStateObserver: appManager.ApplicationStateObserver = {
-8. onForegroundApplicationChanged(appStateData) {
-9. console.info(`[appManager] onForegroundApplicationChanged: ${JSON.stringify(appStateData)}`);
-10. },
-11. onAbilityStateChanged(abilityStateData) {
-12. console.info(`[appManager] onAbilityStateChanged: ${JSON.stringify(abilityStateData)}`);
-13. },
-14. onProcessCreated(processData) {
-15. console.info(`[appManager] onProcessCreated: ${JSON.stringify(processData)}`);
-16. },
-17. onProcessDied(processData) {
-18. console.info(`[appManager] onProcessDied: ${JSON.stringify(processData)}`);
-19. },
-20. onProcessStateChanged(processData) {
-21. console.info(`[appManager] onProcessStateChanged: ${JSON.stringify(processData)}`);
-22. },
-23. onAppStarted(appStateData) {
-24. console.info(`[appManager] onAppStarted: ${JSON.stringify(appStateData)}`);
-25. },
-26. onAppStopped(appStateData) {
-27. console.info(`[appManager] onAppStopped: ${JSON.stringify(appStateData)}`);
-28. }
-29. };
-30. let bundleNameList = ['bundleName1', 'bundleName2'];
+// 1.注册应用状态监听器
+let applicationStateObserver: appManager.ApplicationStateObserver = {
+  onForegroundApplicationChanged(appStateData: appManager.AppStateData) {
+    console.info(`[appManager] onForegroundApplicationChanged: ${JSON.stringify(appStateData)}`);
+  },
+  onAbilityStateChanged(abilityStateData: appManager.AbilityStateData) {
+    console.info(`[appManager] onAbilityStateChanged: ${JSON.stringify(abilityStateData)}`);
+  },
+  onProcessCreated(processData: appManager.ProcessData) {
+    console.info(`[appManager] onProcessCreated: ${JSON.stringify(processData)}`);
+  },
+  onProcessDied(processData: appManager.ProcessData) {
+    console.info(`[appManager] onProcessDied: ${JSON.stringify(processData)}`);
+  },
+  onProcessStateChanged(processData: appManager.ProcessData) {
+    console.info(`[appManager] onProcessStateChanged: ${JSON.stringify(processData)}`);
+  },
+  onAppStarted(appStateData: appManager.AppStateData) {
+    console.info(`[appManager] onAppStarted: ${JSON.stringify(appStateData)}`);
+  },
+  onAppStopped(appStateData: appManager.AppStateData) {
+    console.info(`[appManager] onAppStopped: ${JSON.stringify(appStateData)}`);
+  }
+};
+let bundleNameList = ['bundleName1', 'bundleName2'];
 
-32. try {
-33. observerId = appManager.on('applicationState', applicationStateObserver, bundleNameList);
-34. } catch (paramError) {
-35. let code = (paramError as BusinessError).code;
-36. let message = (paramError as BusinessError).message;
-37. console.error(`[appManager] error: ${code}, ${message}`);
-38. }
+try {
+  observerId = appManager.on('applicationState', applicationStateObserver, bundleNameList);
+} catch (paramError) {
+  let code = (paramError as BusinessError).code;
+  let message = (paramError as BusinessError).message;
+  console.error(`[appManager] error: ${code}, ${message}`);
+}
 
-40. // 2.注销应用状态监听器
-41. try {
-42. appManager.off('applicationState', observerId).then((data) => {
-43. console.info(`unregisterApplicationStateObserver success, data: ${JSON.stringify(data)}`);
-44. }).catch((err: BusinessError) => {
-45. console.error(`unregisterApplicationStateObserver fail, err: ${JSON.stringify(err)}`);
-46. });
-47. } catch (paramError) {
-48. let code = (paramError as BusinessError).code;
-49. let message = (paramError as BusinessError).message;
-50. console.error(`[appManager] error: ${code}, ${message}`);
-51. }
+// 2.注销应用状态监听器
+try {
+  appManager.off('applicationState', observerId).then((data) => {
+    console.info(`unregisterApplicationStateObserver success, data: ${JSON.stringify(data)}`);
+  }).catch((err: BusinessError) => {
+    console.error(`unregisterApplicationStateObserver fail, code: ${err.code}, msg:${err.message}`);
+  });
+} catch (paramError) {
+  let code = (paramError as BusinessError).code;
+  let message = (paramError as BusinessError).message;
+  console.error(`[appManager] error: ${code}, ${message}`);
+}
 ```
 
 ## appManager.off('applicationState')15+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'applicationState', observerId: number, callback: AsyncCallback<void>): void
 
@@ -640,7 +618,7 @@ off(type: 'applicationState', observerId: number, callback: AsyncCallback<void>)
 | --- | --- | --- | --- |
 | type | string | 是 | 调用接口类型，固定填'applicationState'字符串。 |
 | observerId | number | 是 | 注册的应用状态监听器ID，即[on('applicationState')](js-apis-app-ability-appmanager.md#appmanageronapplicationstate14)返回的监听器ID。 |
-| callback | AsyncCallback<void> | 是 | 回调函数。当取消注册应用程序状态观测器成功，err为undefined，否则为错误对象。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当注销应用状态监听器成功，err为undefined，否则为错误对象。 |
 
 **错误码**：
 
@@ -654,67 +632,65 @@ off(type: 'applicationState', observerId: number, callback: AsyncCallback<void>)
 
 **示例：**
 
-```
-1. import { appManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { appManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let observerId = 0;
+let observerId = 0;
 
-6. // 1.注册应用状态监听器
-7. let applicationStateObserver: appManager.ApplicationStateObserver = {
-8. onForegroundApplicationChanged(appStateData) {
-9. console.info(`[appManager] onForegroundApplicationChanged: ${JSON.stringify(appStateData)}`);
-10. },
-11. onAbilityStateChanged(abilityStateData) {
-12. console.info(`[appManager] onAbilityStateChanged: ${JSON.stringify(abilityStateData)}`);
-13. },
-14. onProcessCreated(processData) {
-15. console.info(`[appManager] onProcessCreated: ${JSON.stringify(processData)}`);
-16. },
-17. onProcessDied(processData) {
-18. console.info(`[appManager] onProcessDied: ${JSON.stringify(processData)}`);
-19. },
-20. onProcessStateChanged(processData) {
-21. console.info(`[appManager] onProcessStateChanged: ${JSON.stringify(processData)}`);
-22. },
-23. onAppStarted(appStateData) {
-24. console.info(`[appManager] onAppStarted: ${JSON.stringify(appStateData)}`);
-25. },
-26. onAppStopped(appStateData) {
-27. console.info(`[appManager] onAppStopped: ${JSON.stringify(appStateData)}`);
-28. }
-29. };
-30. let bundleNameList = ['bundleName1', 'bundleName2'];
+// 1.注册应用状态监听器
+let applicationStateObserver: appManager.ApplicationStateObserver = {
+  onForegroundApplicationChanged(appStateData: appManager.AppStateData) {
+    console.info(`[appManager] onForegroundApplicationChanged: ${JSON.stringify(appStateData)}`);
+  },
+  onAbilityStateChanged(abilityStateData: appManager.AbilityStateData) {
+    console.info(`[appManager] onAbilityStateChanged: ${JSON.stringify(abilityStateData)}`);
+  },
+  onProcessCreated(processData: appManager.ProcessData) {
+    console.info(`[appManager] onProcessCreated: ${JSON.stringify(processData)}`);
+  },
+  onProcessDied(processData: appManager.ProcessData) {
+    console.info(`[appManager] onProcessDied: ${JSON.stringify(processData)}`);
+  },
+  onProcessStateChanged(processData: appManager.ProcessData) {
+    console.info(`[appManager] onProcessStateChanged: ${JSON.stringify(processData)}`);
+  },
+  onAppStarted(appStateData: appManager.AppStateData) {
+    console.info(`[appManager] onAppStarted: ${JSON.stringify(appStateData)}`);
+  },
+  onAppStopped(appStateData: appManager.AppStateData) {
+    console.info(`[appManager] onAppStopped: ${JSON.stringify(appStateData)}`);
+  }
+};
+let bundleNameList = ['bundleName1', 'bundleName2'];
 
-32. try {
-33. observerId = appManager.on('applicationState', applicationStateObserver, bundleNameList);
-34. } catch (paramError) {
-35. let code = (paramError as BusinessError).code;
-36. let message = (paramError as BusinessError).message;
-37. console.error(`[appManager] error: ${code}, ${message}`);
-38. }
+try {
+  observerId = appManager.on('applicationState', applicationStateObserver, bundleNameList);
+} catch (paramError) {
+  let code = (paramError as BusinessError).code;
+  let message = (paramError as BusinessError).message;
+  console.error(`[appManager] error: ${code}, ${message}`);
+}
 
-40. function offCallback(err: BusinessError) {
-41. if (err) {
-42. console.error(`appmanager.off failed, code: ${err.code}, msg: ${err.message}`);
-43. } else {
-44. console.info(`appmanager.off success.`);
-45. }
-46. }
+function offCallback(err: BusinessError) {
+  if (err) {
+    console.error(`appmanager.off failed, code: ${err.code}, msg: ${err.message}`);
+  } else {
+    console.info(`appmanager.off success.`);
+  }
+}
 
-48. // 2.注销应用状态监听器
-49. try {
-50. appManager.off('applicationState', observerId, offCallback);
-51. } catch (paramError) {
-52. let code = (paramError as BusinessError).code;
-53. let message = (paramError as BusinessError).message;
-54. console.error(`[appManager] error: ${code}, ${message}`);
-55. }
+// 2.注销应用状态监听器
+try {
+  appManager.off('applicationState', observerId, offCallback);
+} catch (paramError) {
+  let code = (paramError as BusinessError).code;
+  let message = (paramError as BusinessError).message;
+  console.error(`[appManager] error: ${code}, ${message}`);
+}
 ```
 
 ## appManager.killProcessesByBundleName14+
-
-PhonePC/2in1TabletTVWearable
 
 killProcessesByBundleName(bundleName: string, clearPageStack: boolean, appIndex?: number): Promise<void>
 
@@ -730,7 +706,7 @@ killProcessesByBundleName(bundleName: string, clearPageStack: boolean, appIndex?
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 表示需要终止进程的应用包名。 |
 | clearPageStack | boolean | 是 | 表示是否清除页面堆栈。true表示清除，false表示不清除。 |
-| appIndex | number | 否 | 应用分身Id，默认值为0。取值为0时，表示终止主应用的所有进程。取值大于0时，表示终止指定分身应用的所有进程。 |
+| appIndex | number | 否 | 应用分身ID，不传该参数时默认值为0。取值范围：0~1000。取值为0时，表示终止主应用的所有进程。取值大于0时，表示终止指定分身应用的所有进程。 |
 
 **返回值：**
 
@@ -750,36 +726,34 @@ killProcessesByBundleName(bundleName: string, clearPageStack: boolean, appIndex?
 
 **示例：**
 
-```
-1. import { appManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { appManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let bundleName = 'bundleName';
-5. let isClearPageStack = false;
-6. let appIndex = 1;
+let bundleName = 'bundleName';
+let isClearPageStack = false;
+let appIndex = 1;
 
-8. try {
-9. appManager.killProcessesByBundleName(bundleName, isClearPageStack, appIndex).then((data) => {
-10. console.info('killProcessesByBundleName success.');
-11. }).catch((err: BusinessError) => {
-12. console.error(`killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
-13. });
-14. } catch (paramError) {
-15. let code = (paramError as BusinessError).code;
-16. let message = (paramError as BusinessError).message;
-17. console.error(`[appManager] error: ${code}, ${message}`);
-18. }
+try {
+  appManager.killProcessesByBundleName(bundleName, isClearPageStack, appIndex).then((data) => {
+    console.info('killProcessesByBundleName success.');
+  }).catch((err: BusinessError) => {
+    console.error(`killProcessesByBundleName fail, code: ${err.code}, msg:${err.message}`);
+  });
+} catch (paramError) {
+  let code = (paramError as BusinessError).code;
+  let message = (paramError as BusinessError).message;
+  console.error(`[appManager] error: ${code}, ${message}`);
+}
 ```
 
 ## appManager.isAppRunning14+
-
-PhonePC/2in1TabletTVWearable
 
 isAppRunning(bundleName: string, appCloneIndex?: number): Promise<boolean>
 
 判断所有用户下指定包名和分身应用索引的应用是否正在运行。使用Promise异步回调。
 
-说明
+**说明** 
 
 如果当前用户未安装该应用，则返回错误码16000073；如果当前用户已安装该应用，则判断所有用户下该指定应用是否正在运行。
 
@@ -792,7 +766,7 @@ isAppRunning(bundleName: string, appCloneIndex?: number): Promise<boolean>
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 查询的应用包名。 |
-| appCloneIndex | number | 否 | 分身应用索引，默认值为0。取值范围：0~1000。取值为0时表示主应用；取值大于0时表示指定分身应用。 |
+| appCloneIndex | number | 否 | 分身应用索引，不传该参数时默认值为0。取值范围：0~1000。取值为0时表示判断主应用是否正在运行；取值大于0时表示判断指定分身应用是否正在运行。 |
 
 **返回值：**
 
@@ -807,32 +781,29 @@ isAppRunning(bundleName: string, appCloneIndex?: number): Promise<boolean>
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 16000050 | Internal error. |
 | 16000073 | The app clone index is invalid. |
 
 **示例：**
 
-```
-1. import { appManager } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { appManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. try {
-6. let bundleName = "ohos.samples.etsclock";
-7. appManager.isAppRunning(bundleName).then((data: boolean) => {
-8. hilog.info(0x0000, 'testTag', `data: ${JSON.stringify(data)}`);
-9. }).catch((err: BusinessError) => {
-10. hilog.error(0x0000, 'testTag', `isAppRunning error, code: ${err.code}, msg:${err.message}`);
-11. })
-12. } catch (err) {
-13. hilog.error(0x0000, 'testTag', `isAppRunning error, code: ${err.code}, msg:${err.message}`);
-14. }
+try {
+  let bundleName = 'ohos.samples.etsclock';
+  appManager.isAppRunning(bundleName).then((data: boolean) => {
+      console.info(`data: ${JSON.stringify(data)}`);
+    }).catch((err: BusinessError) => {
+      console.error(`isAppRunning error, code: ${err.code}, msg:${err.message}`);
+    });
+} catch (err) {
+  console.error(`isAppRunning error, code: ${err.code}, msg:${err.message}`);
+}
 ```
 
 ## AbilityStateData14+
-
-PhonePC/2in1TabletTVWearable
 
 type AbilityStateData = \_AbilityStateData.default
 
@@ -842,11 +813,9 @@ Ability状态信息。
 
 | 类型 | 说明 |
 | --- | --- |
-| [\_AbilityStateData.default](js-apis-inner-application-abilitystatedata.md) | Ability状态信息。 |
+| \_[AbilityStateData](js-apis-inner-application-abilitystatedata.md).default | Ability状态信息。 |
 
 ## AppStateData14+
-
-PhonePC/2in1TabletTVWearable
 
 type AppStateData = \_AppStateData.default
 
@@ -856,11 +825,9 @@ type AppStateData = \_AppStateData.default
 
 | 类型 | 说明 |
 | --- | --- |
-| [\_AppStateData.default](js-apis-inner-application-appstatedata.md) | 应用状态信息。 |
+| \_[AppStateData](js-apis-inner-application-appstatedata.md).default | 应用状态信息。 |
 
 ## ApplicationStateObserver14+
-
-PhonePC/2in1TabletTVWearable
 
 type ApplicationStateObserver = \_ApplicationStateObserver.default
 
@@ -870,11 +837,9 @@ type ApplicationStateObserver = \_ApplicationStateObserver.default
 
 | 类型 | 说明 |
 | --- | --- |
-| [\_ApplicationStateObserver.default](js-apis-inner-application-applicationstateobserver.md) | 应用状态监听器。 |
+| \_[ApplicationStateObserver](js-apis-inner-application-applicationstateobserver.md).default | 应用状态监听器。 |
 
 ## ProcessInformation
-
-PhonePC/2in1TabletTVWearable
 
 type ProcessInformation = \_ProcessInformation
 
@@ -886,11 +851,9 @@ type ProcessInformation = \_ProcessInformation
 
 | 类型 | 说明 |
 | --- | --- |
-| [\_ProcessInformation](js-apis-inner-application-processinformation.md) | 进程信息。 |
+| \_[ProcessInformation](js-apis-inner-application-processinformation.md) | 进程信息。 |
 
 ## ProcessData14+
-
-PhonePC/2in1TabletTVWearable
 
 type ProcessData = \_ProcessData.default
 
@@ -900,4 +863,4 @@ type ProcessData = \_ProcessData.default
 
 | 类型 | 说明 |
 | --- | --- |
-| [\_ProcessData.default](js-apis-inner-application-processdata.md) | 进程数据。 |
+| \_[ProcessData](js-apis-inner-application-processdata.md).default | 进程数据。 |

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-26
 title: UIAbility在onBackground执行耗时操作时是否会影响另外一个UIAbility的onForeground
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > UIAbility在onBackground执行耗时操作时是否会影响另外一个UIAbility的onForeground
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:42+08:00
-doc_updated_at: 2026-03-20
+scraped_at: 2026-09-02T15:21:16+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:2cb6e4f5ab1b468c2622ead7dbbc1b3946bf024b2a9b357af0e5162e69c4f8dd
 ---
 

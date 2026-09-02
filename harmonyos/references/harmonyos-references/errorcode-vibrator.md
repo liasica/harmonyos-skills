@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 振动错误码
 breadcrumb: API参考 > 系统 > 硬件 > Sensor Service Kit（传感器服务） > 错误码 > 振动错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:12+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:211f4a363383a82418f36c7ba1d3bc76ef3364df890f34c50bbd5cc4adaeee5d
+scraped_at: 2026-09-02T15:02:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:cee436b03d94de5cf392b9b717c794d33f03c294f1591c0b7f5710c7dfb8d4fb
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 14600101 操作设备失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 

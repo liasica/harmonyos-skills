@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-ellipt
 title: 椭圆机
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 数据类型 > 锻炼记录数据 > 椭圆机
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:20+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a1732713d354da4e6bb03701fb7d63d221776c22cb86fd8a41b4898ad7b26eaf
+scraped_at: 2026-09-02T14:50:27+08:00
+doc_updated_at: 2026-07-09
+content_hash: sha256:06cbbb62763adeca56d0d0b1cbb773b3175044c7be515e05b20f2c0a8e1ebe5a
 ---
 
 椭圆机相关锻炼记录类型如下：
 
 | **锻炼记录子类型常量** | **描述** | 数据来源 |
 | --- | --- | --- |
-| [exerciseSequenceHelper.elliptical.EXERCISE\_TYPE](../harmonyos-references/health-api-exercisedequencehelper.md#常量-9) | 椭圆机 | 手环、手表 |
+| [exerciseSequenceHelper.elliptical.EXERCISE\_TYPE](../harmonyos-references/health-api-exercisesequencehelper.md#常量-9) | 椭圆机 | 手环、手表 |
 
 ## 椭圆机关联的统计数据说明
 
-字段定义：[exerciseSequenceHelper.elliptical.SummaryFields](../harmonyos-references/health-api-exercisedequencehelper.md#summaryfields-8)
+字段定义：[exerciseSequenceHelper.elliptical.SummaryFields](../harmonyos-references/health-api-exercisesequencehelper.md#summaryfields-8)
 
 | **字段**列表 | 描述 | **类型** | 可选/必选 |
 | --- | --- | --- | --- |
@@ -32,7 +32,7 @@ content_hash: sha256:a1732713d354da4e6bb03701fb7d63d221776c22cb86fd8a41b4898ad7b
 
 ## 关联的明细数据说明
 
-字段定义：[exerciseSequenceHelper.elliptical.DetailFields](../harmonyos-references/health-api-exercisedequencehelper.md#detailfields-8)
+字段定义：[exerciseSequenceHelper.elliptical.DetailFields](../harmonyos-references/health-api-exercisesequencehelper.md#detailfields-8)
 
 | **字段**列表 | 描述 | **类型** | 可选/必选 |
 | --- | --- | --- | --- |

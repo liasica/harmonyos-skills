@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: image_effect_filter.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > image_effect_filter.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:24+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:4f6ae141e5715f1ebff79d2b49d3351233e74a923730db4a674297cf201326be
+scraped_at: 2026-09-02T15:02:32+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b7c7ddeb0748fedad1ef08aee9bbed0001c4178965919f3ae1ee551f9fc0c650
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 声明滤镜相关接口。
 
@@ -28,11 +26,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 结构体
-
-PhonePC/2in1TabletTV
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -48,8 +42,6 @@ PhonePC/2in1TabletTV
 
 ### 枚举
 
-PhonePC/2in1TabletTV
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [ImageEffect\_DataType](capi-image-effect-filter-h.md#imageeffect_datatype) | ImageEffect\_DataType | 数据类型枚举值。 |
@@ -57,8 +49,6 @@ PhonePC/2in1TabletTV
 | [ImageEffect\_BufferType](capi-image-effect-filter-h.md#imageeffect_buffertype) | ImageEffect\_BufferType | 内存类型枚举值。 |
 
 ### 宏定义
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -69,8 +59,6 @@ PhonePC/2in1TabletTV
 | OH\_EFFECT\_FILTER\_REGION\_KEY "FilterRegion" | 图像区域参数。  **起始版本：** 12  **系统能力：** SystemCapability.Multimedia.ImageEffect.Core |
 
 ### 函数
-
-PhonePC/2in1TabletTV
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -116,14 +104,10 @@ PhonePC/2in1TabletTV
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTV
-
 ### ImageEffect\_DataType
 
-PhonePC/2in1TabletTV
-
-```
-1. enum ImageEffect_DataType
+```c
+enum ImageEffect_DataType
 ```
 
 **描述**
@@ -137,7 +121,7 @@ PhonePC/2in1TabletTV
 | 枚举项 | 描述 |
 | --- | --- |
 | EFFECT\_DATA\_TYPE\_UNKNOWN = 0 | 未定义类型。 |
-| EFFECT\_DATA\_TYPE\_INT32 = 1 | 整形。 |
+| EFFECT\_DATA\_TYPE\_INT32 = 1 | 整型。 |
 | EFFECT\_DATA\_TYPE\_FLOAT = 2 | 单精度浮点型。 |
 | EFFECT\_DATA\_TYPE\_DOUBLE = 3 | 双精度浮点型。 |
 | EFFECT\_DATA\_TYPE\_CHAR = 4 | 字节类型。 |
@@ -147,10 +131,8 @@ PhonePC/2in1TabletTV
 
 ### ImageEffect\_Format
 
-PhonePC/2in1TabletTV
-
-```
-1. enum ImageEffect_Format
+```c
+enum ImageEffect_Format
 ```
 
 **描述**
@@ -173,10 +155,8 @@ PhonePC/2in1TabletTV
 
 ### ImageEffect\_BufferType
 
-PhonePC/2in1TabletTV
-
-```
-1. enum ImageEffect_BufferType
+```c
+enum ImageEffect_BufferType
 ```
 
 **描述**
@@ -195,14 +175,10 @@ PhonePC/2in1TabletTV
 
 ## 函数说明
 
-PhonePC/2in1TabletTV
-
 ### OH\_EffectFilterInfo\_Create()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_EffectFilterInfo *OH_EffectFilterInfo_Create()
+```c
+OH_EffectFilterInfo *OH_EffectFilterInfo_Create()
 ```
 
 **描述**
@@ -221,10 +197,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilterInfo\_SetFilterName()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectFilterInfo_SetFilterName(OH_EffectFilterInfo *info, const char *name)
+```c
+ImageEffect_ErrorCode OH_EffectFilterInfo_SetFilterName(OH_EffectFilterInfo *info, const char *name)
 ```
 
 **描述**
@@ -250,10 +224,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilterInfo\_GetFilterName()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectFilterInfo_GetFilterName(OH_EffectFilterInfo *info, char **name)
+```c
+ImageEffect_ErrorCode OH_EffectFilterInfo_GetFilterName(OH_EffectFilterInfo *info, char **name)
 ```
 
 **描述**
@@ -279,10 +251,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilterInfo\_SetSupportedBufferTypes()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectFilterInfo_SetSupportedBufferTypes(OH_EffectFilterInfo *info, uint32_t size, ImageEffect_BufferType *bufferTypeArray)
+```c
+ImageEffect_ErrorCode OH_EffectFilterInfo_SetSupportedBufferTypes(OH_EffectFilterInfo *info, uint32_t size, ImageEffect_BufferType *bufferTypeArray)
 ```
 
 **描述**
@@ -309,10 +279,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilterInfo\_GetSupportedBufferTypes()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectFilterInfo_GetSupportedBufferTypes(OH_EffectFilterInfo *info, uint32_t *size, ImageEffect_BufferType **bufferTypeArray)
+```c
+ImageEffect_ErrorCode OH_EffectFilterInfo_GetSupportedBufferTypes(OH_EffectFilterInfo *info, uint32_t *size, ImageEffect_BufferType **bufferTypeArray)
 ```
 
 **描述**
@@ -339,10 +307,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilterInfo\_SetSupportedFormats()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectFilterInfo_SetSupportedFormats(OH_EffectFilterInfo *info, uint32_t size, ImageEffect_Format *formatArray)
+```c
+ImageEffect_ErrorCode OH_EffectFilterInfo_SetSupportedFormats(OH_EffectFilterInfo *info, uint32_t size, ImageEffect_Format *formatArray)
 ```
 
 **描述**
@@ -369,10 +335,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilterInfo\_GetSupportedFormats()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectFilterInfo_GetSupportedFormats(OH_EffectFilterInfo *info, uint32_t *size, ImageEffect_Format **formatArray)
+```c
+ImageEffect_ErrorCode OH_EffectFilterInfo_GetSupportedFormats(OH_EffectFilterInfo *info, uint32_t *size, ImageEffect_Format **formatArray)
 ```
 
 **描述**
@@ -399,10 +363,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilterInfo\_Release()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectFilterInfo_Release(OH_EffectFilterInfo *info)
+```c
+ImageEffect_ErrorCode OH_EffectFilterInfo_Release(OH_EffectFilterInfo *info)
 ```
 
 **描述**
@@ -427,10 +389,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectBufferInfo\_Create()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_EffectBufferInfo *OH_EffectBufferInfo_Create()
+```c
+OH_EffectBufferInfo *OH_EffectBufferInfo_Create()
 ```
 
 **描述**
@@ -449,10 +409,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectBufferInfo\_SetAddr()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectBufferInfo_SetAddr(OH_EffectBufferInfo *info, void *addr)
+```c
+ImageEffect_ErrorCode OH_EffectBufferInfo_SetAddr(OH_EffectBufferInfo *info, void *addr)
 ```
 
 **描述**
@@ -478,10 +436,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectBufferInfo\_GetAddr()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectBufferInfo_GetAddr(OH_EffectBufferInfo *info, void **addr)
+```c
+ImageEffect_ErrorCode OH_EffectBufferInfo_GetAddr(OH_EffectBufferInfo *info, void **addr)
 ```
 
 **描述**
@@ -507,10 +463,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectBufferInfo\_SetWidth()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectBufferInfo_SetWidth(OH_EffectBufferInfo *info, int32_t width)
+```c
+ImageEffect_ErrorCode OH_EffectBufferInfo_SetWidth(OH_EffectBufferInfo *info, int32_t width)
 ```
 
 **描述**
@@ -536,10 +490,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectBufferInfo\_GetWidth()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectBufferInfo_GetWidth(OH_EffectBufferInfo *info, int32_t *width)
+```c
+ImageEffect_ErrorCode OH_EffectBufferInfo_GetWidth(OH_EffectBufferInfo *info, int32_t *width)
 ```
 
 **描述**
@@ -565,10 +517,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectBufferInfo\_SetHeight()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectBufferInfo_SetHeight(OH_EffectBufferInfo *info, int32_t height)
+```c
+ImageEffect_ErrorCode OH_EffectBufferInfo_SetHeight(OH_EffectBufferInfo *info, int32_t height)
 ```
 
 **描述**
@@ -594,10 +544,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectBufferInfo\_GetHeight()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectBufferInfo_GetHeight(OH_EffectBufferInfo *info, int32_t *height)
+```c
+ImageEffect_ErrorCode OH_EffectBufferInfo_GetHeight(OH_EffectBufferInfo *info, int32_t *height)
 ```
 
 **描述**
@@ -623,10 +571,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectBufferInfo\_SetRowSize()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectBufferInfo_SetRowSize(OH_EffectBufferInfo *info, int32_t rowSize)
+```c
+ImageEffect_ErrorCode OH_EffectBufferInfo_SetRowSize(OH_EffectBufferInfo *info, int32_t rowSize)
 ```
 
 **描述**
@@ -652,10 +598,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectBufferInfo\_GetRowSize()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectBufferInfo_GetRowSize(OH_EffectBufferInfo *info, int32_t *rowSize)
+```c
+ImageEffect_ErrorCode OH_EffectBufferInfo_GetRowSize(OH_EffectBufferInfo *info, int32_t *rowSize)
 ```
 
 **描述**
@@ -681,10 +625,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectBufferInfo\_SetEffectFormat()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectBufferInfo_SetEffectFormat(OH_EffectBufferInfo *info, ImageEffect_Format format)
+```c
+ImageEffect_ErrorCode OH_EffectBufferInfo_SetEffectFormat(OH_EffectBufferInfo *info, ImageEffect_Format format)
 ```
 
 **描述**
@@ -710,10 +652,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectBufferInfo\_GetEffectFormat()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectBufferInfo_GetEffectFormat(OH_EffectBufferInfo *info, ImageEffect_Format *format)
+```c
+ImageEffect_ErrorCode OH_EffectBufferInfo_GetEffectFormat(OH_EffectBufferInfo *info, ImageEffect_Format *format)
 ```
 
 **描述**
@@ -739,10 +679,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectBufferInfo\_SetTextureId()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectBufferInfo_SetTextureId(OH_EffectBufferInfo *info, int32_t textureId)
+```c
+ImageEffect_ErrorCode OH_EffectBufferInfo_SetTextureId(OH_EffectBufferInfo *info, int32_t textureId)
 ```
 
 **描述**
@@ -768,10 +706,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectBufferInfo\_GetTextureId()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectBufferInfo_GetTextureId(OH_EffectBufferInfo *info, int32_t *textureId)
+```c
+ImageEffect_ErrorCode OH_EffectBufferInfo_GetTextureId(OH_EffectBufferInfo *info, int32_t *textureId)
 ```
 
 **描述**
@@ -797,10 +733,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectBufferInfo\_Release()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectBufferInfo_Release(OH_EffectBufferInfo *info)
+```c
+ImageEffect_ErrorCode OH_EffectBufferInfo_Release(OH_EffectBufferInfo *info)
 ```
 
 **描述**
@@ -825,10 +759,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilterDelegate\_SetValue()
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef bool (*OH_EffectFilterDelegate_SetValue)(OH_EffectFilter *filter, const char *key, const ImageEffect_Any *value)
+```c
+typedef bool (*OH_EffectFilterDelegate_SetValue)(OH_EffectFilter *filter, const char *key, const ImageEffect_Any *value)
 ```
 
 **描述**
@@ -855,10 +787,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilterDelegate\_PushData()
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void (*OH_EffectFilterDelegate_PushData)(OH_EffectFilter *filter, OH_EffectBufferInfo *info)
+```c
+typedef void (*OH_EffectFilterDelegate_PushData)(OH_EffectFilter *filter, OH_EffectBufferInfo *info)
 ```
 
 **描述**
@@ -878,10 +808,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilterDelegate\_Render()
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef bool (*OH_EffectFilterDelegate_Render)(OH_EffectFilter *filter, OH_EffectBufferInfo *info, OH_EffectFilterDelegate_PushData pushData)
+```c
+typedef bool (*OH_EffectFilterDelegate_Render)(OH_EffectFilter *filter, OH_EffectBufferInfo *info, OH_EffectFilterDelegate_PushData pushData)
 ```
 
 **描述**
@@ -908,10 +836,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilterDelegate\_Save()
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef bool (*OH_EffectFilterDelegate_Save)(OH_EffectFilter *filter, char **info)
+```c
+typedef bool (*OH_EffectFilterDelegate_Save)(OH_EffectFilter *filter, char **info)
 ```
 
 **描述**
@@ -937,10 +863,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilterDelegate\_Restore()
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef OH_EffectFilter *(*OH_EffectFilterDelegate_Restore)(const char *info)
+```c
+typedef OH_EffectFilter *(*OH_EffectFilterDelegate_Restore)(const char *info)
 ```
 
 **描述**
@@ -965,10 +889,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilter\_Create()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_EffectFilter *OH_EffectFilter_Create(const char *name)
+```c
+OH_EffectFilter *OH_EffectFilter_Create(const char *name)
 ```
 
 **描述**
@@ -993,10 +915,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilter\_SetValue()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectFilter_SetValue(OH_EffectFilter *filter, const char *key, const ImageEffect_Any *value)
+```c
+ImageEffect_ErrorCode OH_EffectFilter_SetValue(OH_EffectFilter *filter, const char *key, const ImageEffect_Any *value)
 ```
 
 **描述**
@@ -1023,10 +943,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilter\_GetValue()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectFilter_GetValue(OH_EffectFilter *filter, const char *key, ImageEffect_Any *value)
+```c
+ImageEffect_ErrorCode OH_EffectFilter_GetValue(OH_EffectFilter *filter, const char *key, ImageEffect_Any *value)
 ```
 
 **描述**
@@ -1053,10 +971,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilter\_Register()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectFilter_Register(const OH_EffectFilterInfo *info, const ImageEffect_FilterDelegate *delegate)
+```c
+ImageEffect_ErrorCode OH_EffectFilter_Register(const OH_EffectFilterInfo *info, const ImageEffect_FilterDelegate *delegate)
 ```
 
 **描述**
@@ -1082,10 +998,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilter\_LookupFilters()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_FilterNames *OH_EffectFilter_LookupFilters(const char *key)
+```c
+ImageEffect_FilterNames *OH_EffectFilter_LookupFilters(const char *key)
 ```
 
 **描述**
@@ -1110,10 +1024,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilter\_ReleaseFilterNames()
 
-PhonePC/2in1TabletTV
-
-```
-1. void OH_EffectFilter_ReleaseFilterNames()
+```c
+void OH_EffectFilter_ReleaseFilterNames()
 ```
 
 **描述**
@@ -1126,10 +1038,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilter\_LookupFilterInfo()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectFilter_LookupFilterInfo(const char *name, OH_EffectFilterInfo *info)
+```c
+ImageEffect_ErrorCode OH_EffectFilter_LookupFilterInfo(const char *name, OH_EffectFilterInfo *info)
 ```
 
 **描述**
@@ -1155,10 +1065,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilter\_Render()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectFilter_Render(OH_EffectFilter *filter, OH_PixelmapNative *inputPixelmap, OH_PixelmapNative *outputPixelmap)
+```c
+ImageEffect_ErrorCode OH_EffectFilter_Render(OH_EffectFilter *filter, OH_PixelmapNative *inputPixelmap, OH_PixelmapNative *outputPixelmap)
 ```
 
 **描述**
@@ -1185,10 +1093,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilter\_RenderWithTextureId()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectFilter_RenderWithTextureId(OH_EffectFilter *filter, int32_t inputTextureId, int32_t outputTextureId, int32_t colorSpace)
+```c
+ImageEffect_ErrorCode OH_EffectFilter_RenderWithTextureId(OH_EffectFilter *filter, int32_t inputTextureId, int32_t outputTextureId, int32_t colorSpace)
 ```
 
 **描述**
@@ -1216,10 +1122,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilter\_Release()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectFilter_Release(OH_EffectFilter *filter)
+```c
+ImageEffect_ErrorCode OH_EffectFilter_Release(OH_EffectFilter *filter)
 ```
 
 **描述**
@@ -1244,10 +1148,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectBufferInfo\_SetTimestamp()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectBufferInfo_SetTimestamp(OH_EffectBufferInfo *info, int64_t timestamp)
+```c
+ImageEffect_ErrorCode OH_EffectBufferInfo_SetTimestamp(OH_EffectBufferInfo *info, int64_t timestamp)
 ```
 
 **描述**
@@ -1273,10 +1175,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectBufferInfo\_GetTimestamp()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectBufferInfo_GetTimestamp(OH_EffectBufferInfo *info, int64_t *timestamp)
+```c
+ImageEffect_ErrorCode OH_EffectBufferInfo_GetTimestamp(OH_EffectBufferInfo *info, int64_t *timestamp)
 ```
 
 **描述**

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-467
 title: Swiper左滑为什么会显示空白
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > Swiper左滑为什么会显示空白
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Swiper左滑为什么会显示空白
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:02+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:22+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:7747b6a6a2bc09cb4f19386e93eb03b6b71da6d0a72fe9d7b310e685a067f5d4
 ---
 

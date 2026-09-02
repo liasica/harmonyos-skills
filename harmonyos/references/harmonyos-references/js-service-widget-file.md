@@ -3,29 +3,27 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: 文件组织
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 框架说明 > 文件组织
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:31+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:406c9468c41e7b3692949ee9a0baf06b5fcc827d115c885ec969955c01c8fd4c
+scraped_at: 2026-09-02T15:01:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2235ec65e95b7ac71b66bf0703a000c3bc3156ff30eb0b1ed8e05936ee7a7996
 ---
 
 ## 目录结构
 
-PhonePC/2in1TabletTVWearable
-
 JS服务卡片(entry/src/main/js/Widget)的典型开发目录结构如下：
 
-```
-1. ├─widget
-2. │   ├─common
-3. │   │   └─widget.png
-4. │   ├─i18n
-5. │   │   ├─en-US.json
-6. │   │   └─zh-CN.json
-7. │   └─pages
-8. │       └─index
-9. │           ├─index.css
-10. │           ├─index.hml
-11. │           └─index.json
+```text
+├─widget
+│   ├─common
+│   │   └─widget.png
+│   ├─i18n
+│   │   ├─en-US.json
+│   │   └─zh-CN.json
+│   └─pages
+│       └─index
+│           ├─index.css
+│           ├─index.hml
+│           └─index.json
 ```
 
 目录结构中文件分类如下：
@@ -42,8 +40,6 @@ JS服务卡片(entry/src/main/js/Widget)的典型开发目录结构如下：
 
 ## 文件访问规则
 
-PhonePC/2in1TabletTVWearable
-
 应用资源可通过绝对路径或相对路径的方式进行访问，本开发框架中绝对路径以"/"开头，相对路径以"./"或"../"。具体访问规则如下：
 
 * 引用代码文件，需使用相对路径，比如：../common/style.css。
@@ -51,7 +47,7 @@ PhonePC/2in1TabletTVWearable
 * 公共代码文件和资源文件推荐放在common下，通过规则1和规则2进行访问。
 * CSS样式文件中通过url()函数创建<url>数据类型，如：url(/common/test.png)。
 
-说明
+**说明** 
 
 当代码文件A需要引用代码文件B时：
 
@@ -61,8 +57,6 @@ PhonePC/2in1TabletTVWearable
 
 ## 配置文件
 
-PhonePC/2in1TabletTVWearable
-
-FA卡片需要在应用配置文件config.json中进行配置。详细的配置内容请参考[应用配置文件概述（FA模型）](../harmonyos-guides/application-configuration-file-overview-fa.md)。
+FA卡片需要在应用配置文件config.json中进行配置。详细的配置内容请参考[应用配置文件概述（FA模型）](../lite-wearable-guides/application-configuration-file-overview-fa.md)。
 
 Stage卡片需要在应用配置文件module.json5中的extensionAbilities标签下，配置ExtensionAbility相关信息。详细的配置内容请参考[应用配置文件概述（Stage模型）](../harmonyos-guides/application-configuration-file-overview-stage.md)。

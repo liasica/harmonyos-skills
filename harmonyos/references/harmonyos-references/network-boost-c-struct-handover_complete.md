@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/network-b
 title: NetworkBoost_HandoverComplete
 breadcrumb: API参考 > 系统 > 网络 > Network Boost Kit（网络加速服务） > C API > 结构体 > NetworkBoost_HandoverComplete
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1a9d8a223f2bafb381582458c60201edc4184c7eafdf53593bd25460c83d55e6
+scraped_at: 2026-09-02T15:01:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e0534e3e571b0ed953d4188fc4cce35d0958b85f79a377d60f15379c756d4f1a
 ---
 
 ## 概述
-
-PhonePC/2in1Tablet
 
 连接迁移完成信息。
 
@@ -22,11 +20,7 @@ PhonePC/2in1Tablet
 
 ## 汇总
 
-PhonePC/2in1Tablet
-
 ### 成员变量
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
@@ -41,14 +35,10 @@ PhonePC/2in1Tablet
 
 ## 结构体成员变量说明
 
-PhonePC/2in1Tablet
-
 ### handoverContinue
 
-PhonePC/2in1Tablet
-
-```
-1. bool NetworkBoost_HandoverComplete::handoverContinue
+```c
+bool NetworkBoost_HandoverComplete::handoverContinue
 ```
 
 **描述**
@@ -61,10 +51,8 @@ false表示当前已经是最后一个HandoverComplete消息，连接迁移流�
 
 ### newDataSpeedAction
 
-PhonePC/2in1Tablet
-
-```
-1. NetworkBoost_DataSpeedAction NetworkBoost_HandoverComplete::newDataSpeedAction
+```c
+NetworkBoost_DataSpeedAction NetworkBoost_HandoverComplete::newDataSpeedAction
 ```
 
 **描述**
@@ -73,10 +61,8 @@ PhonePC/2in1Tablet
 
 ### newNetHandle
 
-PhonePC/2in1Tablet
-
-```
-1. NetworkBoost_NetHandle NetworkBoost_HandoverComplete::newNetHandle
+```c
+NetworkBoost_NetHandle NetworkBoost_HandoverComplete::newNetHandle
 ```
 
 **描述**
@@ -85,10 +71,8 @@ PhonePC/2in1Tablet
 
 ### oldDataSpeedAction
 
-PhonePC/2in1Tablet
-
-```
-1. NetworkBoost_DataSpeedAction NetworkBoost_HandoverComplete::oldDataSpeedAction
+```c
+NetworkBoost_DataSpeedAction NetworkBoost_HandoverComplete::oldDataSpeedAction
 ```
 
 **描述**
@@ -97,10 +81,8 @@ PhonePC/2in1Tablet
 
 ### oldPathLifetime
 
-PhonePC/2in1Tablet
-
-```
-1. uint32_t NetworkBoost_HandoverComplete::oldPathLifetime
+```c
+uint32_t NetworkBoost_HandoverComplete::oldPathLifetime
 ```
 
 **描述**
@@ -109,10 +91,8 @@ PhonePC/2in1Tablet
 
 ### pathTypeChanged
 
-PhonePC/2in1Tablet
-
-```
-1. bool NetworkBoost_HandoverComplete::pathTypeChanged
+```c
+bool NetworkBoost_HandoverComplete::pathTypeChanged
 ```
 
 **描述**
@@ -121,10 +101,8 @@ PhonePC/2in1Tablet
 
 ### reEstAction
 
-PhonePC/2in1Tablet
-
-```
-1. NetworkBoost_ReEstAction NetworkBoost_HandoverComplete::reEstAction
+```c
+NetworkBoost_ReEstAction NetworkBoost_HandoverComplete::reEstAction
 ```
 
 **描述**
@@ -133,10 +111,8 @@ PhonePC/2in1Tablet
 
 ### result
 
-PhonePC/2in1Tablet
-
-```
-1. NetworkBoost_ErrorResult NetworkBoost_HandoverComplete::result
+```c
+NetworkBoost_ErrorResult NetworkBoost_HandoverComplete::result
 ```
 
 **描述**

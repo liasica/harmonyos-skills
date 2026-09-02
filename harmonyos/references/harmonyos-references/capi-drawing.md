@@ -1,27 +1,26 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing
 title: Drawing
+breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 模块 > Drawing
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:48+08:00
-doc_updated_at: 2026-04-13
-content_hash: sha256:873d10ea6b112f686e8b9ebdbdc3b38cdf7ab5bc6e9a1a7677e291b708c8d0cc
+scraped_at: 2026-09-02T14:53:06+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:b0daa7d185a30fdc73ea353245cd94fc6ac7674c9333b7ddeb1ab6e0b06489ba
 ---
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
 Drawing模块提供包括2D图形渲染、文字绘制和图片显示等功能函数。
 
 本模块采用屏幕物理像素单位px。
+
+本模块为单线程模型策略，需要调用方自行管理线程安全和上下文状态的切换。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
 
 **起始版本：** 8
 
 ## 文件汇总
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -39,7 +38,7 @@ PhonePC/2in1TabletTVWearable
 | [drawing\_gpu\_context.h](capi-drawing-gpu-context-h.md) | 声明与绘图模块中的图形处理器上下文对象相关的函数。 |
 | [drawing\_image.h](capi-drawing-image-h.md) | 文件中定义了与图片相关的功能函数。 |
 | [drawing\_image\_filter.h](capi-drawing-image-filter-h.md) | 声明与绘图模块中的图像滤波器对象相关的函数。 |
-| [drawing\_mask\_filter.h](capi-drawing-mask-filter-h.md) | 声明与绘图模块中的对象相关的函数。 |
+| [drawing\_mask\_filter.h](capi-drawing-mask-filter-h.md) | 声明与绘图模块中的蒙版滤波器对象相关的函数。 |
 | [drawing\_matrix.h](capi-drawing-matrix-h.md) | 文件中定义了与矩阵相关的功能函数。 |
 | [drawing\_memory\_stream.h](capi-drawing-memory-stream-h.md) | 文件中定义了与内存流相关的功能函数。 |
 | [drawing\_path.h](capi-drawing-path-h.md) | 文件中定义了与自定义路径相关的功能函数。 |

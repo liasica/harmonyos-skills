@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-kerne
 title: 核函数
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 基本概念 > 编程模型 > 核函数
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:04+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ef00ec65344e9a3416bc406b946c0589a141ab3b643b15599d68f0001cba29a1
+scraped_at: 2026-09-02T15:00:04+08:00
+doc_updated_at: 2026-08-18
+content_hash: sha256:17565518b8405aded47c5ea3385f845d9af227aadbcbb3d73e3a0c42e85f6cbf
 ---
 
 从[SPMD模型](cannkit-spmd-model.md)可以得知，使用AscendC进行编程时，我们编写一份算子实现代码，算子被调用时，将启动N个运行实例，在N个核上运行。本节将介绍算子实现的入口函数。
@@ -14,14 +14,14 @@ content_hash: sha256:ef00ec65344e9a3416bc406b946c0589a141ab3b643b15599d68f0001cb
 
 AscendC允许开发者使用核函数这种C/C++函数的语法扩展来管理设备端的运行代码，开发者在核函数中进行算子类对象的创建和其成员函数的调用，由此实现该算子的所有功能。核函数是主机端和设备端连接的桥梁，本章将具体介绍核函数的用法。
 
-说明
+**说明** 
 
-Kirin9020/KirinX90系列处理器暂不支持通过<<<>>>调用核函数。
+Kirin9020/Kirin9030/KirinX90系列处理器暂不支持通过<<<>>>调用核函数。
 
 ## 核函数定义
 
-```
-1. extern "C" __global__ __aicore__ void add_custom(__gm__ uint8_t* x, __gm__ uint8_t* y, __gm__ uint8_t* z)
+```cpp
+extern "C" __global__ __aicore__ void add_custom(__gm__ uint8_t* x, __gm__ uint8_t* y, __gm__ uint8_t* z)
 ```
 
 以上是一个核函数声明的例子，编写核函数时需要遵循以下规则。
@@ -40,7 +40,7 @@ Kirin9020/KirinX90系列处理器暂不支持通过<<<>>>调用核函数。
 
   **图1** 核函数（device侧执行）、host侧执行函数、device侧执行函数（除核函数之外的）调用关系
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/f1VYE1wQQz2g0MUTzi9klg/zh-cn_image_0000002558606074.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/OLEqucytQIatGmqFVcjojQ/zh-cn_image_0000002736314399.png)
 * **使用变量类型限定符**
 
   指针入参变量需要增加变量类型限定符\_\_gm\_\_，表明该指针变量指向Global Memory上某处内存地址。
@@ -50,14 +50,14 @@ Kirin9020/KirinX90系列处理器暂不支持通过<<<>>>调用核函数。
   + 规则2：仅支持入参为指针或C/C++内置数据类型(Primitive data types)，如：half\* s0、float\* s1、int32\_t c。
   + 建议：为了统一表达，建议使用GM\_ADDR宏来修饰入参，GM\_ADDR宏定义如下。
 
-    ```
-    1. #define GM_ADDR __gm__ uint8_t*
+    ```cpp
+    #define GM_ADDR __gm__ uint8_t*
     ```
 
     使用GM\_ADDR修饰入参的样例如下。
 
-    ```
-    1. extern "C" __global__ __aicore__ void add_custom(GM_ADDR x, GM_ADDR y, GM_ADDR z)
+    ```cpp
+    extern "C" __global__ __aicore__ void add_custom(GM_ADDR x, GM_ADDR y, GM_ADDR z)
     ```
 
     这里统一使用uint8\_t类型的指针，在后续的使用中需要将其转化为实际的指针类型。
@@ -68,14 +68,14 @@ Kirin9020/KirinX90系列处理器暂不支持通过<<<>>>调用核函数。
 
 常见的函数调用方式是如下的形式：
 
-```
-1. function_name(argument list);
+```cpp
+function_name(argument list);
 ```
 
 核函数使用内核调用符<<<...>>>这种语法形式，来规定核函数的执行配置：
 
-```
-1. kernel_name<<<blockDim, l2ctrl, stream>>>(argument list);
+```cpp
+kernel_name<<<blockDim, l2ctrl, stream>>>(argument list);
 ```
 
 内核调用符仅可在NPU侧编译时调用，CPU侧编译无法识别该符号。
@@ -95,7 +95,7 @@ blockDim是逻辑核的概念，取值范围为[1, 65535]。为了充分利用�
   + 针对仅包含Cube计算的算子，blockDim用于设置启动多少个Cube(AIC)实例执行，比如某款AI处理器上有20个Cube核，建议设置为20。
   + 针对Vector/Cube融合计算的算子，启动时，按照AIV和AIC组合启动，blockDim用于设置启动多少个组合执行，比如某款AI处理器上有40个Vector核和20个Cube核，一个组合是2个Vector核和1个Cube核，建议设置为20，此时会启动20个组合，即40个Vector核和20个Cube核。
 
-    说明
+    **说明** 
 
     该场景下，设置的blockDim逻辑核的核数不能超过物理核（2个Vector核和1个Cube核组合为1个物理核）的核数。
   + AIC/AIV的核数分别通过[GetCoreNumAic](cannkit-getcorenumaic.md)和[GetCoreNumAiv](cannkit-getcorenumaiv.md)接口获取。
@@ -112,30 +112,30 @@ blockDim是逻辑核的概念，取值范围为[1, 65535]。为了充分利用�
 
 如下名为add\_custom的核函数，实现两个矢量的相加，调用示例如下。
 
-```
-1. // blockDim设置为8表示在8个核上调用了add_custom核函数，每个核都会独立且并行地执行该核函数，该核函数的参数列表为x，y，z。
-2. add_custom<<<8, nullptr, stream>>>(x, y, z);
+```cpp
+// blockDim设置为8表示在8个核上调用了add_custom核函数，每个核都会独立且并行地执行该核函数，该核函数的参数列表为x，y，z。
+add_custom<<<8, nullptr, stream>>>(x, y, z);
 ```
 
 核函数的调用是异步的，核函数的调用结束后，控制权立刻返回给host端，可以调用以下**aclrtSynchronizeStream**函数来强制主机端程序等待所有核函数执行完毕。
 
-```
-1. aclError aclrtSynchronizeStream(aclrtStream stream);
+```cpp
+aclError aclrtSynchronizeStream(aclrtStream stream);
 ```
 
 ## 核函数示例
 
 下面提供核函数实现的样例代码片段，完整样例请参考[矢量编程](cannkit-vector-programming.md)。
 
-```
-1. // 实现核函数
-2. extern "C" __global__ __aicore__ void add_custom(GM_ADDR x, GM_ADDR y, GM_ADDR z)
-3. {
-4. // 初始化算子类，算子类提供算子初始化和核心处理等方法
-5. KernelAdd op;
-6. // 初始化函数，获取该核函数需要处理的输入输出地址，同时完成必要的内存初始化工作
-7. op.Init(x, y, z);
-8. // 核心处理函数，完成算子的数据搬运与计算等核心逻辑
-9. op.Process();
-10. }
+```cpp
+// 实现核函数
+extern "C" __global__ __aicore__ void add_custom(GM_ADDR x, GM_ADDR y, GM_ADDR z)
+{
+    // 初始化算子类，算子类提供算子初始化和核心处理等方法
+    KernelAdd op;
+    // 初始化函数，获取该核函数需要处理的输入输出地址，同时完成必要的内存初始化工作
+    op.Init(x, y, z);
+    // 核心处理函数，完成算子的数据搬运与计算等核心逻辑
+    op.Process();
+}
 ```

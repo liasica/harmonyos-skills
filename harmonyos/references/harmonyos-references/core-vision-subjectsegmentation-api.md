@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/core-visi
 title: subjectSegmentation（主体分割）
 breadcrumb: API参考 > AI > Core Vision Kit（基础视觉服务） > ArkTS API > subjectSegmentation（主体分割）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:55+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b3bef881c41cf1eaaeb094cf01d6cfdfb653a6337cd8d0a790267ef62d6b3ed7
+scraped_at: 2026-09-02T14:53:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:abbcebc64198357c7cb380dd653b93925bcfaba3cffa58993955c9b116253362
 ---
 
 Core Vision Kit根据配置参数（如最多检测多少个物体、是否输出每个物体的详细信息等）可将一张普通的图片进行分割，分割后的信息包括图片整体的分割结果和每个显著物体的详细信息。
@@ -14,49 +14,47 @@ Core Vision Kit根据配置参数（如最多检测多少个物体、是否输�
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { subjectSegmentation } from '@kit.CoreVisionKit';
+```typescript
+import { subjectSegmentation } from '@kit.CoreVisionKit';
 ```
 
 ## VisionInfo
-
-PhonePC/2in1Tablet
 
 待识别的视觉信息，目前仅支持颜色数据格式为RGBA\_8888的PixelMap类型的视觉信息。
 
 **系统能力：** SystemCapability.AI.Vision.SubjectSegmentation
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **起始版本：** 5.0.0(12)
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| pixelMap | [image.PixelMap](arkts-apis-image-pixelmap.md) | 否 | 否 | 待识别的图片。  具体规格请参考[约束与限制](../harmonyos-guides/core-vision-introduction.md#约束与限制)。 |
+| pixelMap | [image.PixelMap](arkts-apis-image-pixelmap.md) | 否 | 否 | 待识别的图片。对于图片的要求请参见[约束与限制](../harmonyos-guides/core-vision-introduction.md#约束与限制)。 |
 
 ## SegmentationConfig
-
-PhonePC/2in1Tablet
 
 显著性分割的可选配置项，包括最多输出的主体个数、是否输出每个主体的详细分割信息，以及是否输出前景图的配置项。
 
 **系统能力：** SystemCapability.AI.Vision.SubjectSegmentation
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **起始版本：** 5.0.0(12)
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| maxCount | number | 否 | 是 | 最多输出主体个数。取值范围为[1,20]，以主体在原图中的面积占比降序排序，默认为6。 |
+| maxCount | number | 否 | 是 | 最多输出主体个数。取值范围为[1,20]个，以主体在原图中的面积占比降序排序，默认为6，超出范围则报错。 |
 | enableSubjectDetails | boolean | 否 | 是 | 是否输出每个主体的前景信息（subjectDetails），默认为false，true代表输出每个主体的前景信息。 |
 | enableSubjectForegroundImage | boolean | 否 | 是 | 是否输出前景图，默认为false，true代表输出前景图。 |
 
 ## Rectangle
 
-PhonePC/2in1Tablet
-
 显著性主体分割后的边界框。
 
 **系统能力：** SystemCapability.AI.Vision.SubjectSegmentation
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -64,16 +62,16 @@ PhonePC/2in1Tablet
 | --- | --- | --- | --- | --- |
 | left | number | 否 | 否 | 边界框左上角的x坐标。 |
 | top | number | 否 | 否 | 边界框左上角的y坐标。 |
-| height | number | 否 | 否 | 边界框高度，单位为像素。 |
-| width | number | 否 | 否 | 边界框宽度，单位为像素。 |
+| height | number | 否 | 否 | 边界框高度，单位：px。 |
+| width | number | 否 | 否 | 边界框宽度，单位：px。 |
 
 ## SubjectResult
-
-PhonePC/2in1Tablet
 
 分割后的详细结果。
 
 **系统能力：** SystemCapability.AI.Vision.SubjectSegmentation
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -85,29 +83,29 @@ PhonePC/2in1Tablet
 
 ## SegmentationResult
 
-PhonePC/2in1Tablet
-
 分割后的总输出结果，包括主体个数、整张图中所有主体的分割信息和每个主体的详细信息。
 
 **系统能力：** SystemCapability.AI.Vision.SubjectSegmentation
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| subjectCount | number | 否 | 否 | 表示主体个数，取决于[SegmentationConfig](core-vision-subjectsegmentation-api.md#segmentationconfig)中maxCount参数的限制。 |
-| fullSubject | [SubjectResult](core-vision-subjectsegmentation-api.md#subjectresult) | 否 | 否 | 默认输出的整张图的所有显著性主体信息。 |
-| subjectDetails | Array<[SubjectResult](core-vision-subjectsegmentation-api.md#subjectresult)> | 否 | 是 | 每个主体的显著性主体信息。 |
+| subjectCount | number | 否 | 否 | 表示返回的主体个数，实际返回数量为画面中检测到的主体数量和maxCount中的较小值，受[SegmentationConfig](core-vision-subjectsegmentation-api.md#segmentationconfig)中maxCount参数的限制。 |
+| fullSubject | [SubjectResult](core-vision-subjectsegmentation-api.md#subjectresult) | 否 | 否 | 默认输出的显著性主体合并信息。当画面主体数超过maxCount时，仅基于面积最大的maxCount个主体进行合并，与subjectDetails范围保持一致。 |
+| subjectDetails | Array<[SubjectResult](core-vision-subjectsegmentation-api.md#subjectresult)> | 否 | 是 | 每个主体的详细信息列表，按主体面积降序排列，长度受maxCount限制。当enableSubjectDetails为true时返回，否则不返回，使用前需进行非空判断。 |
 
 ## subjectSegmentation.init
-
-PhonePC/2in1Tablet
 
 init(): Promise<boolean>
 
 初始化主体分割服务。使用Promise异步回调。
 
 **系统能力：** SystemCapability.AI.Vision.SubjectSegmentation
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -119,46 +117,44 @@ init(): Promise<boolean>
 
 **示例：**
 
-```
-1. import { subjectSegmentation } from '@kit.CoreVisionKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { subjectSegmentation } from '@kit.CoreVisionKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. async function initAndReleaseSubjectSegmentation() {
-5. // 初始化主体分割服务
-6. const initResult = await subjectSegmentation.init();
-7. hilog.info(0x0000, 'subjectSegmentationSample', `Subject segmentation initialization result:${initResult}`);
+async function initAndReleaseSubjectSegmentation() {
+  // 初始化主体分割服务
+  const initResult = await subjectSegmentation.init();
+  hilog.info(0x0000, 'subjectSegmentationSample', `Subject segmentation initialization result:${initResult}`);
 
-9. if (initResult) {
-10. hilog.info(0x0000, 'subjectSegmentationSample', 'Subject segmentation initialized successfully');
+  if (initResult) {
+    hilog.info(0x0000, 'subjectSegmentationSample', 'Subject segmentation initialized successfully');
 
-12. // 这里可以添加使用主体分割服务的代码
+    // 这里可以添加使用主体分割服务的代码
 
-14. // 使用完毕后，释放主体分割服务
-15. await subjectSegmentation.release();
-16. hilog.info(0x0000, 'subjectSegmentationSample', 'Subject segmentation released successfully');
-17. } else {
-18. hilog.error(0x0000, 'subjectSegmentationSample', 'Failed to initialize subject segmentation');
-19. }
-20. }
+    // 使用完毕后，释放主体分割服务
+    await subjectSegmentation.release();
+    hilog.info(0x0000, 'subjectSegmentationSample', 'Subject segmentation released successfully');
+  } else {
+    hilog.error(0x0000, 'subjectSegmentationSample', 'Failed to initialize subject segmentation');
+  }
+}
 
-22. @Entry
-23. @Component
-24. struct Page {
+@Entry
+@Component
+struct Page {
 
-26. build() {
-27. Column(){
-28. Button('initAndReleaseSubjectSegmentation').onClick(() => {
-29. // 调用函数
-30. void initAndReleaseSubjectSegmentation();
-31. })
-32. }
-33. }
-34. }
+  build() {
+    Column(){
+      Button('initAndReleaseSubjectSegmentation').onClick(() => {
+        // 调用函数
+        void initAndReleaseSubjectSegmentation();
+      })
+    }
+  }
+}
 ```
 
 ## subjectSegmentation.release
-
-PhonePC/2in1Tablet
 
 release(): Promise<void>
 
@@ -166,62 +162,64 @@ release(): Promise<void>
 
 **系统能力：** SystemCapability.AI.Vision.SubjectSegmentation
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **起始版本：** 5.0.0(12)
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象，释放接口无返回值。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **示例：**
 
-```
-1. import { subjectSegmentation } from '@kit.CoreVisionKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { subjectSegmentation } from '@kit.CoreVisionKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. async function initAndReleaseSubjectSegmentation() {
-5. // 初始化主体分割服务
-6. const initResult = await subjectSegmentation.init();
-7. hilog.info(0x0000, 'subjectSegmentationSample', `Subject segmentation initialization result:${initResult}`);
+async function initAndReleaseSubjectSegmentation() {
+  // 初始化主体分割服务
+  const initResult = await subjectSegmentation.init();
+  hilog.info(0x0000, 'subjectSegmentationSample', `Subject segmentation initialization result:${initResult}`);
 
-9. if (initResult) {
-10. hilog.info(0x0000, 'subjectSegmentationSample', 'Subject segmentation initialized successfully');
+  if (initResult) {
+    hilog.info(0x0000, 'subjectSegmentationSample', 'Subject segmentation initialized successfully');
 
-12. // 这里可以添加使用主体分割服务的代码
+    // 这里可以添加使用主体分割服务的代码
 
-14. // 使用完毕后，释放主体分割服务
-15. await subjectSegmentation.release();
-16. hilog.info(0x0000, 'subjectSegmentationSample', 'Subject segmentation released successfully');
-17. } else {
-18. hilog.error(0x0000, 'subjectSegmentationSample', 'Failed to initialize subject segmentation');
-19. }
-20. }
+    // 使用完毕后，释放主体分割服务
+    await subjectSegmentation.release();
+    hilog.info(0x0000, 'subjectSegmentationSample', 'Subject segmentation released successfully');
+  } else {
+    hilog.error(0x0000, 'subjectSegmentationSample', 'Failed to initialize subject segmentation');
+  }
+}
 
-22. @Entry
-23. @Component
-24. struct Page {
+@Entry
+@Component
+struct Page {
 
-26. build() {
-27. Column(){
-28. Button('initAndReleaseSubjectSegmentation').onClick(() => {
-29. // 调用函数
-30. void initAndReleaseSubjectSegmentation();
-31. })
-32. }
-33. }
-34. }
+  build() {
+    Column(){
+      Button('initAndReleaseSubjectSegmentation').onClick(() => {
+        // 调用函数
+        void initAndReleaseSubjectSegmentation();
+      })
+    }
+  }
+}
 ```
 
 ## subjectSegmentation.doSegmentation
-
-PhonePC/2in1Tablet
 
 doSegmentation(visionInfo: VisionInfo, config?: SegmentationConfig): Promise<SegmentationResult>
 
 创建显著性分割实例，并初始化引擎。使用Promise异步回调。
 
 **系统能力：** SystemCapability.AI.Vision.SubjectSegmentation
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -236,11 +234,11 @@ doSegmentation(visionInfo: VisionInfo, config?: SegmentationConfig): Promise<Seg
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[SegmentationResult](core-vision-subjectsegmentation-api.md#segmentationresult)> | 返回显著性主体的结果。 |
+| Promise<[SegmentationResult](core-vision-subjectsegmentation-api.md#segmentationresult)> | Promise对象，返回显著性主体的结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Core Vision Kit错误码](core-vision-error-code.md)。
+以下错误码的详细介绍请参见[Core Vision Kit错误码](errorcode-core-vision.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -251,93 +249,87 @@ doSegmentation(visionInfo: VisionInfo, config?: SegmentationConfig): Promise<Seg
 
 **示例：**
 
-```
-1. import { subjectSegmentation } from '@kit.CoreVisionKit';
-2. import { image } from '@kit.ImageKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
-5. import { fileIo } from '@kit.CoreFileKit';
-6. import { photoAccessHelper } from '@kit.MediaLibraryKit';
+```typescript
+import { subjectSegmentation } from '@kit.CoreVisionKit';
+import { image } from '@kit.ImageKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { fileIo } from '@kit.CoreFileKit';
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
-8. const TAG: string = 'ImageSegmentationSample';
+const TAG: string = 'ImageSegmentationSample';
 
-10. async function subjectSegmentationTest() {
-11. let chooseImage: image.PixelMap | undefined = undefined;
-12. // 设置识别主体数量的上限
-13. let maxNum: string = '20';
+async function subjectSegmentationTest() {
+  let chooseImage: image.PixelMap | undefined = undefined;
+  // 设置识别主体数量的上限
+  let maxNum: string = '20';
 
-15. // Select an image from the gallery
-16. let PhotoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
-17. PhotoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
-18. PhotoSelectOptions.maxSelectNumber = 1;
-19. let photoPicker: photoAccessHelper.PhotoViewPicker = new photoAccessHelper.PhotoViewPicker();
-20. let PhotoSelectResult = await photoPicker.select(PhotoSelectOptions);
-21. let uris = PhotoSelectResult.photoUris;
+  // 通过图库选择一张图片
+  let photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
+  photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
+  photoSelectOptions.maxSelectNumber = 1;
+  let photoPicker: photoAccessHelper.PhotoViewPicker = new photoAccessHelper.PhotoViewPicker();
+  let photoSelectResult = await photoPicker.select(photoSelectOptions);
+  let uris = photoSelectResult.photoUris;
 
-23. if (uris.length !== 1) {
-24. hilog.info(0x0000, TAG, 'Selected uris length is not 1');
-25. return;
-26. }
+  if (uris.length !== 1) {
+    hilog.info(0x0000, TAG, 'Selected uris length is not 1');
+    return;
+  }
 
-28. // Convert the selected image to PixelMap
-29. let fileSource = await fileIo.open(uris[0], fileIo.OpenMode.READ_ONLY);
-30. let imageSource = image.createImageSource(fileSource.fd);
-31. chooseImage = await imageSource.createPixelMap();
+  // 将选择的图片转换为PixelMap
+  let fileSource = await fileIo.open(uris[0], fileIo.OpenMode.READ_ONLY);
+  let imageSource = image.createImageSource(fileSource.fd);
+  chooseImage = await imageSource.createPixelMap();
 
-33. if (!chooseImage) {
-34. hilog.info(0x0000, TAG, 'chooseImage is undefined');
-35. return;
-36. }
-37. if (fileSource) {
-38. try {
-39. await fileIo.close(fileSource);
-40. } catch (err) {
-41. hilog.error(0x0000, TAG, `Failed to close fileSource. Code: ${err.code}, message: ${err.message}`);
-42. }
-43. }
+  if (!chooseImage) {
+    hilog.info(0x0000, TAG, 'chooseImage is undefined');
+    return;
+  }
+  if (fileSource) {
+    await fileIo.close(fileSource);
+  }
 
-45. // Call the image segmentation interface
-46. let visionInfo: subjectSegmentation.VisionInfo = {
-47. pixelMap: chooseImage
-48. };
-49. let config: subjectSegmentation.SegmentationConfig = {
-50. maxCount: parseInt(maxNum),
-51. enableSubjectDetails: true,
-52. enableSubjectForegroundImage: true
-53. };
-54. let data: subjectSegmentation.SegmentationResult = await subjectSegmentation.doSegmentation(visionInfo, config);
-55. let outputString = `Subject count: ${data.subjectCount}\n`;
-56. outputString += `Max subject count: ${config.maxCount}\n`;
-57. outputString += `Enable subject details: ${config.enableSubjectDetails ? 'Yes' : 'No'}\n\n`;
-58. let segBox : subjectSegmentation.Rectangle = data.fullSubject.subjectRectangle;
-59. let segBoxString = `Full subject box:\nLeft: ${segBox.left}, Top: ${segBox.top}, Width: ${segBox.width}, Height: ${segBox.height}\n\n`;
-60. outputString += segBoxString;
+  // 调用主体分割接口
+  let visionInfo: subjectSegmentation.VisionInfo = {
+    pixelMap: chooseImage
+  };
+  let config: subjectSegmentation.SegmentationConfig = {
+    maxCount: parseInt(maxNum),
+    enableSubjectDetails: true,
+    enableSubjectForegroundImage: true
+  };
+  let data: subjectSegmentation.SegmentationResult = await subjectSegmentation.doSegmentation(visionInfo, config);
 
-62. if (config.enableSubjectDetails) {
-63. outputString += 'Individual subject boxes:\n';
-64. if (data.subjectDetails) {
-65. for (let i = 0; i < data.subjectDetails.length; i++) {
-66. let detailSegBox: subjectSegmentation.Rectangle = data.subjectDetails[i].subjectRectangle;
-67. outputString += `Subject ${i + 1}:\nLeft: ${detailSegBox.left}, Top: ${detailSegBox.top}, Width: ${detailSegBox.width}, Height: ${detailSegBox.height}\n\n`;
-68. }
-69. }
-70. }
+  // 拼装分割结果信息
+  let outputString = `Subject count: ${data.subjectCount}\n`;
+  outputString += `Max subject count: ${config.maxCount}\n`;
+  outputString += `Enable subject details: ${config.enableSubjectDetails ? 'Yes' : 'No'}\n\n`;
+  let segBox: subjectSegmentation.Rectangle = data.fullSubject.subjectRectangle;
+  outputString += `Full subject box:\nLeft: ${segBox.left}, Top: ${segBox.top}, Width: ${segBox.width}, Height: ${segBox.height}\n\n`;
 
-72. hilog.info(0x0000, TAG, 'Segmentation result: ' + outputString);
-73. }
+  // 拼装每个主体的详细分割信息
+  if (config.enableSubjectDetails && data.subjectDetails) {
+    outputString += 'Individual subject boxes:\n';
+    for (let i = 0; i < data.subjectDetails.length; i++) {
+      let detailSegBox: subjectSegmentation.Rectangle = data.subjectDetails[i].subjectRectangle;
+      outputString += `Subject ${i + 1}:\nLeft: ${detailSegBox.left}, Top: ${detailSegBox.top}, Width: ${detailSegBox.width}, Height: ${detailSegBox.height}\n\n`;
+    }
+  }
 
-77. @Entry
-78. @Component
-79. struct Page {
+  hilog.info(0x0000, TAG, 'Segmentation result: ' + outputString);
+}
 
-81. build() {
-82. Column(){
-83. Button('subjectSegmentationTest').onClick(() => {
-84. subjectSegmentationTest().catch((err: BusinessError) => {
-85. hilog.error(0x0000, TAG, `Failed to segment a photo. code: ${err.code}, message: ${err.message}`);
-86. });
-87. })
-88. }
-89. }
-90. }
+@Entry
+@Component
+struct Page {
+
+  build() {
+    Column(){
+      Button('subjectSegmentationTest').onClick(() => {
+        // 调用函数
+        void subjectSegmentationTest();
+      })
+    }
+  }
+}
 ```

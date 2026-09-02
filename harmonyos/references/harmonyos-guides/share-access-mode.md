@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-access-
 title: 宿主应用接入模式
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 > 宿主应用发起分享 > 宿主应用接入模式
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:59+08:00
+scraped_at: 2026-09-02T15:00:02+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:045132786cc963e668463afacf238e3edbba220f1ca1fd21d556f78c13af6a9f
+content_hash: sha256:db7f4a0b30faac1c6039a248325a4b21d7864de860c4b9fbd748ffdf4e43985b
 ---
 
 为应对开发者接入系统分享能力时的不同诉求，Share Kit支持两种宿主应用接入模式。
@@ -21,15 +21,15 @@ content_hash: sha256:045132786cc963e668463afacf238e3edbba220f1ca1fd21d556f78c13a
 
 ## 半接模式示例代码片段
 
-说明
+**说明** 
 
 为了确保用户获得良好的分享体验，图标请使用HarmonyOS系统资源"$r('sys.symbol.share')"，文本使用"系统分享"，请勿自行更改。
 
-```
-1. // 分享图标使用系统提供的Symbol格式图标
-2. SymbolGlyph($r('sys.symbol.share'))
-3. // 文本使用'系统分享'
-4. Text('系统分享')
+```typescript
+// 分享图标使用系统提供的Symbol格式图标
+SymbolGlyph($r('sys.symbol.share'))
+// 文本使用'系统分享'
+Text('系统分享')
 ```
 
 完整示例代码请参见：[samplecode-接入模式](https://gitcode.com/harmonyos_samples/share-kit_-sample-code_-clientdemo_-arkts/blob/master/entry/src/main/ets/components/AccessModel.ets)。

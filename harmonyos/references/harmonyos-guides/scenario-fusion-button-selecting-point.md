@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 地图选点Button
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 场景化Button > 地图选点Button
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:2cc60909327455a7510659d058a7bbb507b1f32f33cc295075acb4f24251cc08
+scraped_at: 2026-09-02T15:00:01+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:40761cb3b1e65f4e3d4fff183933687311b92372c722bfedd0acef1f3f924cca
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:2cc60909327455a7510659d058a7bbb507b1f32f33cc295075acb4f2425
 
 ## 约束与限制
 
-地图选点Button支持Phone和Tablet设备，并且从5.0.1（13）版本开始，新增支持2in1设备。
+地图选点Button支持Phone和Tablet设备，并且从5.0.1(13)版本开始，新增支持PC/2in1设备。
 
 ## 前提条件
 
@@ -26,64 +26,64 @@ content_hash: sha256:2cc60909327455a7510659d058a7bbb507b1f32f33cc295075acb4f2425
 
 1. 导入Scenario Fusion Kit模块以及相关公共模块。
 
-   ```
-   1. import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 在容器中声明FunctionalButton，指定Button的openType，并设置对应的回调函数，代码如下：
 
-   ```
-   1. @Entry
-   2. @Component
-   3. struct Index {
-   4. build() {
-   5. Row() {
-   6. Column() {
-   7. // 构建FunctionalButton组件实例。
-   8. FunctionalButton({
-   9. params: {
-   10. // OpenType.CHOOSE_LOCATION表示该按钮用于在地图上选择位置。
-   11. openType: functionalButtonComponentManager.OpenType.CHOOSE_LOCATION,
-   12. label: '地图选点',
-   13. // 调整按钮样式。
-   14. styleOption: {
-   15. bgColor: functionalButtonComponentManager.ColorType.DEFAULT,
-   16. size: functionalButtonComponentManager.SizeType.DEFAULT,
-   17. plain: false,
-   18. disabled: false,
-   19. loading: false,
-   20. hoverClass: functionalButtonComponentManager.HoverClassType.HOVER_CLASS,
-   21. hoverStartTime: 0,
-   22. hoverStayTime: 0,
-   23. styleConfig: new functionalButtonComponentManager.ButtonConfig()
-   24. .fontSize(20)
-   25. },
-   26. },
-   27. // 当OpenType设置为CHOOSE_LOCATION时，回调必须为onChooseLocation。
-   28. controller: new functionalButtonComponentManager.FunctionalButtonController()
-   29. .onChooseLocation((err, data) => {
-   30. if (err) {
-   31. // 错误日志处理。
-   32. hilog.error(0x0000, "testTag", "error: %{public}d %{public}s", err.code, err.message);
-   33. return;
-   34. }
-   35. // 成功日志处理。
-   36. hilog.info(0x0000, "testTag", "succeeded in choosing location");
-   37. let name: string = data.name;
-   38. let address: string = data.address;
-   39. let longitude: number = data.longitude;
-   40. let latitude: number = data.latitude;
-   41. })
-   42. })
-   43. }
-   44. .width('100%')
-   45. }
-   46. .height('100%')
-   47. }
-   48. }
+   ```typescript
+   @Entry
+   @Component
+   struct Index {
+     build() {
+       Row() {
+         Column() {
+           // 构建FunctionalButton组件实例。
+           FunctionalButton({
+             params: {
+               // OpenType.CHOOSE_LOCATION表示该按钮用于在地图上选择位置。
+               openType: functionalButtonComponentManager.OpenType.CHOOSE_LOCATION,
+               label: '地图选点',
+               // 调整按钮样式。
+               styleOption: {
+                 bgColor: functionalButtonComponentManager.ColorType.DEFAULT,
+                 size: functionalButtonComponentManager.SizeType.DEFAULT,
+                 plain: false,
+                 disabled: false,
+                 loading: false,
+                 hoverClass: functionalButtonComponentManager.HoverClassType.HOVER_CLASS,
+                 hoverStartTime: 0,
+                 hoverStayTime: 0,
+                 styleConfig: new functionalButtonComponentManager.ButtonConfig()
+                   .fontSize(20)
+               }
+             },
+             // 当OpenType设置为CHOOSE_LOCATION时，回调必须为onChooseLocation。
+             controller: new functionalButtonComponentManager.FunctionalButtonController()
+               .onChooseLocation((err, data) => {
+                 if (err) {
+                   // 错误日志处理。
+                   hilog.error(0x0000, 'testTag', 'Failed to choose location, error: %{public}d %{public}s', err.code, err.message);
+                   return;
+                 }
+                 // 成功日志处理。
+                 hilog.info(0x0000, 'testTag', 'succeeded in choosing location');
+                 let name: string = data.name;
+                 let address: string = data.address;
+                 let longitude: number = data.longitude;
+                 let latitude: number = data.latitude;
+               })
+           })
+         }
+         .width('100%')
+       }
+       .height('100%')
+     }
+   }
    ```
 
-   说明
+   **说明** 
 
    * openType参数填写"functionalButtonComponentManager.OpenType.CHOOSE\_LOCATION"指定Button为打开地图选点类型。
    * controller参数必须对应填写"new functionalButtonComponentManager.FunctionalButtonController().onChooseLocation"。

@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Font)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (Font)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:39+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3cf2e9c7d520513feb6f51eed65031272837cf784b074108bf4cff7d95b4f7b8
+scraped_at: 2026-09-02T15:02:41+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:1f30d973aff930cac53a0f07f3d2e952fe02f8a41dbce5ff285ecd92286a89b4
 ---
 
-描述字型绘制时所使用的属性，如大小、字体等。
+Font类用于描述字型绘制时所使用的属性（如大小、字体、粗细、倾斜、缩放等），并支持文本测量、字形转换、路径轮廓获取、主题字体跟随等能力。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本模块使用屏幕物理像素单位px。
@@ -18,19 +18,15 @@ content_hash: sha256:3cf2e9c7d520513feb6f51eed65031272837cf784b074108bf4cff7d95b
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 ```
 
 ## isSubpixel12+
 
-PhonePC/2in1TabletTVWearable
-
 isSubpixel(): boolean
 
-获取字型是否使用次像素渲染。
+获取字型是否使用亚像素渲染。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -40,21 +36,19 @@ isSubpixel(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 返回字型是否使用次像素渲染的结果，true表示使用，false表示不使用。 |
+| boolean | 返回字型是否使用亚像素渲染的结果，true表示使用，false表示不使用。 |
 
 **示例：**
 
-```
-1. import {drawing} from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font: drawing.Font = new drawing.Font();
-4. font.enableSubpixel(true)
-5. console.info("values=" + font.isSubpixel());
+let font: drawing.Font = new drawing.Font();
+font.enableSubpixel(true)
+console.info("values=" + font.isSubpixel());
 ```
 
 ## isLinearMetrics12+
-
-PhonePC/2in1TabletTVWearable
 
 isLinearMetrics(): boolean
 
@@ -72,21 +66,19 @@ isLinearMetrics(): boolean
 
 **示例：**
 
-```
-1. import {drawing} from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font: drawing.Font = new drawing.Font();
-4. font.enableLinearMetrics(true)
-5. console.info("values=" + font.isLinearMetrics());
+let font: drawing.Font = new drawing.Font();
+font.enableLinearMetrics(true);
+console.info("values=" + font.isLinearMetrics());
 ```
 
 ## getSkewX12+
 
-PhonePC/2in1TabletTVWearable
-
 getSkewX(): number
 
-获取字型在x轴方向上的倾斜度。
+获取字型在x轴方向上的倾斜比例。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -96,21 +88,19 @@ getSkewX(): number
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 返回字型在x轴方向上的倾斜度。 |
+| number | 返回字型在x轴方向上的倾斜比例。 |
 
 **示例：**
 
-```
-1. import {drawing} from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font: drawing.Font = new drawing.Font();
-4. font.setSkewX(-1)
-5. console.info("values=" + font.getSkewX());
+let font: drawing.Font = new drawing.Font();
+font.setSkewX(-1);
+console.info("values=" + font.getSkewX());
 ```
 
 ## isEmbolden12+
-
-PhonePC/2in1TabletTVWearable
 
 isEmbolden(): boolean
 
@@ -128,17 +118,15 @@ isEmbolden(): boolean
 
 **示例：**
 
-```
-1. import {drawing} from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font: drawing.Font = new drawing.Font();
-4. font.enableEmbolden(true);
-5. console.info("values=" + font.isEmbolden());
+let font: drawing.Font = new drawing.Font();
+font.enableEmbolden(true);
+console.info("values=" + font.isEmbolden());
 ```
 
 ## getScaleX12+
-
-PhonePC/2in1TabletTVWearable
 
 getScaleX(): number
 
@@ -156,17 +144,15 @@ getScaleX(): number
 
 **示例：**
 
-```
-1. import {drawing} from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font: drawing.Font = new drawing.Font();
-4. font.setScaleX(2);
-5. console.info("values=" + font.getScaleX());
+let font: drawing.Font = new drawing.Font();
+font.setScaleX(2);
+console.info("values=" + font.getScaleX());
 ```
 
 ## getHinting12+
-
-PhonePC/2in1TabletTVWearable
 
 getHinting(): FontHinting
 
@@ -184,16 +170,14 @@ getHinting(): FontHinting
 
 **示例：**
 
-```
-1. import {drawing} from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font: drawing.Font = new drawing.Font();
-4. console.info("values=" + font.getHinting());
+let font: drawing.Font = new drawing.Font();
+console.info("values=" + font.getHinting());
 ```
 
 ## getEdging12+
-
-PhonePC/2in1TabletTVWearable
 
 getEdging(): FontEdging
 
@@ -211,16 +195,14 @@ getEdging(): FontEdging
 
 **示例：**
 
-```
-1. import {drawing} from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font: drawing.Font = new drawing.Font();
-4. console.info("values=" + font.getEdging());
+let font: drawing.Font = new drawing.Font();
+console.info("values=" + font.getEdging());
 ```
 
 ## enableSubpixel
-
-PhonePC/2in1TabletTVWearable
 
 enableSubpixel(isSubpixel: boolean): void
 
@@ -242,20 +224,18 @@ enableSubpixel(isSubpixel: boolean): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font = new drawing.Font();
-4. font.enableSubpixel(true);
+let font = new drawing.Font();
+font.enableSubpixel(true);
 ```
 
 ## enableEmbolden
-
-PhonePC/2in1TabletTVWearable
 
 enableEmbolden(isEmbolden: boolean): void
 
@@ -277,20 +257,18 @@ enableEmbolden(isEmbolden: boolean): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font = new drawing.Font();
-4. font.enableEmbolden(true);
+let font = new drawing.Font();
+font.enableEmbolden(true);
 ```
 
 ## enableLinearMetrics
-
-PhonePC/2in1TabletTVWearable
 
 enableLinearMetrics(isLinearMetrics: boolean): void
 
@@ -312,20 +290,18 @@ enableLinearMetrics(isLinearMetrics: boolean): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font = new drawing.Font();
-4. font.enableLinearMetrics(true);
+let font = new drawing.Font();
+font.enableLinearMetrics(true);
 ```
 
 ## setSize
-
-PhonePC/2in1TabletTVWearable
 
 setSize(textSize: number): void
 
@@ -339,7 +315,7 @@ setSize(textSize: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| textSize | number | 是 | 字型大小，该参数为浮点数，为负数时字型大小会被置为0。字型大小为0时，绘制的文字不会显示。 |
+| textSize | number | 是 | 字型大小。该参数为浮点数，为负数时会被置为0，为0时绘制的文字不会显示。单位为物理像素px。 |
 
 **错误码：**
 
@@ -347,20 +323,18 @@ setSize(textSize: number): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font = new drawing.Font();
-4. font.setSize(5);
+let font = new drawing.Font();
+font.setSize(5);
 ```
 
 ## getSize
-
-PhonePC/2in1TabletTVWearable
 
 getSize(): number
 
@@ -374,21 +348,19 @@ getSize(): number
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 字型大小，浮点数。 |
+| number | 返回字型大小，浮点数。单位为物理像素px。 |
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font = new drawing.Font();
-4. font.setSize(5);
-5. let fontSize = font.getSize();
+let font = new drawing.Font();
+font.setSize(5);
+let fontSize = font.getSize();
 ```
 
 ## setTypeface
-
-PhonePC/2in1TabletTVWearable
 
 setTypeface(typeface: Typeface): void
 
@@ -410,20 +382,18 @@ setTypeface(typeface: Typeface): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font = new drawing.Font();
-4. font.setTypeface(new drawing.Typeface());
+let font = new drawing.Font();
+font.setTypeface(new drawing.Typeface());
 ```
 
 ## getTypeface
-
-PhonePC/2in1TabletTVWearable
 
 getTypeface(): Typeface
 
@@ -441,16 +411,14 @@ getTypeface(): Typeface
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font = new drawing.Font();
-4. let typeface = font.getTypeface();
+let font = new drawing.Font();
+let typeface = font.getTypeface();
 ```
 
 ## getMetrics
-
-PhonePC/2in1TabletTVWearable
 
 getMetrics(): FontMetrics
 
@@ -464,26 +432,24 @@ getMetrics(): FontMetrics
 
 | 类型 | 说明 |
 | --- | --- |
-| [FontMetrics](arkts-apis-graphics-drawing-i.md#fontmetrics) | FontMetrics属性。 |
+| [FontMetrics](arkts-apis-graphics-drawing-i.md#fontmetrics) | 与字体关联的度量属性对象。 |
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font = new drawing.Font();
-4. let metrics = font.getMetrics();
+let font = new drawing.Font();
+let metrics = font.getMetrics();
 ```
 
 ## measureText
-
-PhonePC/2in1TabletTVWearable
 
 measureText(text: string, encoding: TextEncoding): number
 
 测量文本的宽度。
 
-说明
+**说明** 
 
 此接口用于测量原始字符串的文本宽度，若想测量排版后的文本宽度，建议使用[measure.measureText](arkts-apis-uicontext-measureutils.md#measuretext12)替代。
 
@@ -495,14 +461,14 @@ measureText(text: string, encoding: TextEncoding): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| text | string | 是 | 文本内容。 |
-| encoding | [TextEncoding](arkts-apis-graphics-drawing-e.md#textencoding) | 是 | 编码格式。 |
+| text | string | 是 | 待测量的文本内容，将按encoding指定的编码方式进行解析。 |
+| encoding | [TextEncoding](arkts-apis-graphics-drawing-e.md#textencoding) | 是 | 指定文本的编码格式。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 文本的宽度，浮点数。 |
+| number | 文本的宽度，浮点数。单位为物理像素px。 |
 
 **错误码：**
 
@@ -510,20 +476,18 @@ measureText(text: string, encoding: TextEncoding): number
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font = new drawing.Font();
-4. font.measureText("drawing", drawing.TextEncoding.TEXT_ENCODING_UTF8);
+let font = new drawing.Font();
+font.measureText("drawing", drawing.TextEncoding.TEXT_ENCODING_UTF8);
 ```
 
 ## measureSingleCharacter12+
-
-PhonePC/2in1TabletTVWearable
 
 measureSingleCharacter(text: string): number
 
@@ -533,7 +497,7 @@ measureSingleCharacter(text: string): number
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
-**参数**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -543,7 +507,7 @@ measureSingleCharacter(text: string): number
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 字符的宽度，浮点数。 |
+| number | 字符的宽度，浮点数。单位为物理像素px。 |
 
 **错误码：**
 
@@ -551,27 +515,24 @@ measureSingleCharacter(text: string): number
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { RenderNode } from '@kit.ArkUI';
-2. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { RenderNode } from '@kit.ArkUI';
+import { drawing } from '@kit.ArkGraphics2D';
 
-4. class DrawingRenderNode extends RenderNode {
-5. draw(context : DrawContext) {
-6. const canvas = context.canvas;
-7. const font = new drawing.Font();
-8. font.setSize(20);
-9. let width = font.measureSingleCharacter("你");
-10. }
-11. }
+class DrawingRenderNode extends RenderNode {
+  draw(context : DrawContext) {
+    const font = new drawing.Font();
+    font.setSize(20);
+    let width = font.measureSingleCharacter("你");
+  }
+}
 ```
 
 ## measureSingleCharacterWithFeatures20+
-
-PhonePC/2in1TabletTVWearable
 
 measureSingleCharacterWithFeatures(text: string, features: Array<FontFeature>): number
 
@@ -581,18 +542,18 @@ measureSingleCharacterWithFeatures(text: string, features: Array<FontFeature>): 
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
-**参数**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 待测量的单个字符。字符串长度必须为1。 |
-| features | Array<[FontFeature](arkts-apis-graphics-drawing-i.md#fontfeature20)> | 是 | 字体特征对象数组。参数为空数组时使用TTF(TrueType Font)文件中预设的字体特征。 |
+| features | Array<[FontFeature](arkts-apis-graphics-drawing-i.md#fontfeature20)> | 是 | 字体特征对象数组。参数为空数组时使用TTF（TrueType Font）文件中预设的字体特征。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 字符的宽度，浮点数，单位为px。 |
+| number | 字符的宽度，浮点数。单位为物理像素px。 |
 
 **错误码：**
 
@@ -604,28 +565,26 @@ measureSingleCharacterWithFeatures(text: string, features: Array<FontFeature>): 
 
 **示例：**
 
-```
-1. import { RenderNode } from '@kit.ArkUI';
-2. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { RenderNode } from '@kit.ArkUI';
+import { drawing } from '@kit.ArkGraphics2D';
 
-4. class DrawingRenderNode extends RenderNode {
-5. draw(context : DrawContext) {
-6. const font = new drawing.Font();
-7. font.setSize(20);
-8. let fontFeatures : Array<drawing.FontFeature> = [];
-9. fontFeatures.push({name: 'calt', value: 0});
-10. let width = font.measureSingleCharacterWithFeatures("你", fontFeatures);
-11. }
-12. }
+class DrawingRenderNode extends RenderNode {
+  draw(context : DrawContext) {
+    const font = new drawing.Font();
+    font.setSize(20);
+    let fontFeatures : Array<drawing.FontFeature> = [];
+    fontFeatures.push({name: 'calt', value: 0});
+    let width = font.measureSingleCharacterWithFeatures("你", fontFeatures);
+  }
+}
 ```
 
 ## setScaleX12+
 
-PhonePC/2in1TabletTVWearable
-
 setScaleX(scaleX: number): void
 
-设置字型对象在x轴上的缩放比例。
+设置字型在x轴方向上的缩放比例。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -635,7 +594,7 @@ setScaleX(scaleX: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| scaleX | number | 是 | 文本在x轴上的缩放比例，该参数为浮点数。 |
+| scaleX | number | 是 | 字型在x轴上的缩放比例，该参数为浮点数。 |
 
 **错误码：**
 
@@ -643,37 +602,35 @@ setScaleX(scaleX: number): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
-```
-1. import { RenderNode } from '@kit.ArkUI';
-2. import { common2D, drawing } from '@kit.ArkGraphics2D';
+```ts
+import { RenderNode } from '@kit.ArkUI';
+import { common2D, drawing } from '@kit.ArkGraphics2D';
 
-4. class DrawingRenderNode extends RenderNode {
-5. draw(context : DrawContext) {
-6. const canvas = context.canvas;
-7. const pen = new drawing.Pen();
-8. pen.setStrokeWidth(5);
-9. pen.setColor({alpha: 255, red: 255, green: 0, blue: 0});
-10. canvas.attachPen(pen);
-11. let font = new drawing.Font();
-12. font.setSize(100);
-13. font.setScaleX(2);
-14. const textBlob = drawing.TextBlob.makeFromString("hello", font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
-15. canvas.drawTextBlob(textBlob, 200, 200);
-16. }
-17. }
+class DrawingRenderNode extends RenderNode {
+  draw(context : DrawContext) {
+    const canvas = context.canvas;
+    const pen = new drawing.Pen();
+    pen.setStrokeWidth(5);
+    pen.setColor({alpha: 255, red: 255, green: 0, blue: 0});
+    canvas.attachPen(pen);
+    let font = new drawing.Font();
+    font.setSize(100);
+    font.setScaleX(2);
+    const textBlob = drawing.TextBlob.makeFromString("hello", font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
+    canvas.drawTextBlob(textBlob, 200, 200);
+  }
+}
 ```
 
 ## setSkewX12+
 
-PhonePC/2in1TabletTVWearable
-
 setSkewX(skewX: number): void
 
-设置字型对象在x轴上的倾斜比例。
+设置字型在x轴方向上的倾斜比例。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -683,7 +640,7 @@ setSkewX(skewX: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| skewX | number | 是 | 文本在x轴上的倾斜比例，正数表示往左边倾斜，负数表示往右边倾斜，该参数为浮点数。 |
+| skewX | number | 是 | 字型在x轴方向上的倾斜比例，正数表示向左倾斜，负数表示向右倾斜，该参数为浮点数。 |
 
 **错误码：**
 
@@ -691,33 +648,31 @@ setSkewX(skewX: number): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
-```
-1. import { RenderNode } from '@kit.ArkUI';
-2. import { common2D, drawing } from '@kit.ArkGraphics2D';
+```ts
+import { RenderNode } from '@kit.ArkUI';
+import { common2D, drawing } from '@kit.ArkGraphics2D';
 
-4. class DrawingRenderNode extends RenderNode {
-5. draw(context : DrawContext) {
-6. const canvas = context.canvas;
-7. const pen = new drawing.Pen();
-8. pen.setStrokeWidth(5);
-9. pen.setColor({alpha: 255, red: 255, green: 0, blue: 0});
-10. canvas.attachPen(pen);
-11. let font = new drawing.Font();
-12. font.setSize(100);
-13. font.setSkewX(1);
-14. const textBlob = drawing.TextBlob.makeFromString("hello", font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
-15. canvas.drawTextBlob(textBlob, 200, 200);
-16. }
-17. }
+class DrawingRenderNode extends RenderNode {
+  draw(context : DrawContext) {
+    const canvas = context.canvas;
+    const pen = new drawing.Pen();
+    pen.setStrokeWidth(5);
+    pen.setColor({alpha: 255, red: 255, green: 0, blue: 0});
+    canvas.attachPen(pen);
+    let font = new drawing.Font();
+    font.setSize(100);
+    font.setSkewX(1);
+    const textBlob = drawing.TextBlob.makeFromString("hello", font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
+    canvas.drawTextBlob(textBlob, 200, 200);
+  }
+}
 ```
 
 ## setEdging12+
-
-PhonePC/2in1TabletTVWearable
 
 setEdging(edging: FontEdging): void
 
@@ -739,20 +694,18 @@ setEdging(edging: FontEdging): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font = new drawing.Font();
-4. font.setEdging(drawing.FontEdging.SUBPIXEL_ANTI_ALIAS);
+let font = new drawing.Font();
+font.setEdging(drawing.FontEdging.SUBPIXEL_ANTI_ALIAS);
 ```
 
 ## setHinting12+
-
-PhonePC/2in1TabletTVWearable
 
 setHinting(hinting: FontHinting): void
 
@@ -774,20 +727,18 @@ setHinting(hinting: FontHinting): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font = new drawing.Font();
-4. font.setHinting(drawing.FontHinting.FULL);
+let font = new drawing.Font();
+font.setHinting(drawing.FontHinting.FULL);
 ```
 
 ## countText12+
-
-PhonePC/2in1TabletTVWearable
 
 countText(text: string): number
 
@@ -801,7 +752,7 @@ countText(text: string): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| text | string | 是 | 文本内容。 |
+| text | string | 是 | 待计数的文本内容。 |
 
 **返回值：**
 
@@ -815,21 +766,19 @@ countText(text: string): number
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font = new drawing.Font();
-4. let resultNumber: number = font.countText('ABCDE');
-5. console.info("count text number: " + resultNumber);
+let font = new drawing.Font();
+let resultNumber: number = font.countText('ABCDE');
+console.info("count text number: " + resultNumber);
 ```
 
 ## setBaselineSnap12+
-
-PhonePC/2in1TabletTVWearable
 
 setBaselineSnap(isBaselineSnap: boolean): void
 
@@ -843,7 +792,7 @@ setBaselineSnap(isBaselineSnap: boolean): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| isBaselineSnap | boolean | 是 | 指示字型基线是否和像素对齐，true表示对齐，false表示不对齐。 |
+| isBaselineSnap | boolean | 是 | 表示字型基线是否与像素对齐，true表示对齐，false表示不对齐。 |
 
 **错误码：**
 
@@ -851,21 +800,19 @@ setBaselineSnap(isBaselineSnap: boolean): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
+
+let font : drawing.Font = new drawing.Font();
+font.setBaselineSnap(true);
+console.info("drawing font isBaselineSnap: " + font.isBaselineSnap());
 ```
-1. import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font : drawing.Font = new drawing.Font();
-4. font.setBaselineSnap(true);
-5. console.info("drawing font isBaselineSnap: " + font.isBaselineSnap());
-```
-
-## isBaselineSnap()12+
-
-PhonePC/2in1TabletTVWearable
+## isBaselineSnap12+
 
 isBaselineSnap(): boolean
 
@@ -879,26 +826,24 @@ isBaselineSnap(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 返回字型基线是否与像素对齐，true为对齐，false为没有对齐。 |
+| boolean | 返回字型基线是否与像素对齐，true表示对齐，false表示不对齐。 |
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font : drawing.Font = new drawing.Font();
-4. font.setTypeface(new drawing.Typeface());
-5. font.setBaselineSnap(true);
-6. console.info("drawing font isBaselineSnap: " + font.isBaselineSnap());
+let font : drawing.Font = new drawing.Font();
+font.setTypeface(new drawing.Typeface());
+font.setBaselineSnap(true);
+console.info("drawing font isBaselineSnap: " + font.isBaselineSnap());
 ```
 
 ## setEmbeddedBitmaps12+
 
-PhonePC/2in1TabletTVWearable
-
 setEmbeddedBitmaps(isEmbeddedBitmaps: boolean): void
 
-设置字型是否转换成位图处理。
+设置字型是否使用字体文件中内嵌的位图字形进行渲染。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -908,7 +853,7 @@ setEmbeddedBitmaps(isEmbeddedBitmaps: boolean): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| isEmbeddedBitmaps | boolean | 是 | 设置字型是否转换成位图处理，true表示转换成位图处理，false表示不转换成位图处理。 |
+| isEmbeddedBitmaps | boolean | 是 | 设置字型是否使用字体文件中内嵌的位图字形进行渲染，true表示使用内嵌位图字形，false表示不转换成位图处理。 |
 
 **错误码：**
 
@@ -916,26 +861,24 @@ setEmbeddedBitmaps(isEmbeddedBitmaps: boolean): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
+
+let font : drawing.Font = new drawing.Font();
+font.setTypeface(new drawing.Typeface());
+font.setEmbeddedBitmaps(false);
+console.info("draw isEmbeddedBitmaps: " + font.isEmbeddedBitmaps());
 ```
-1. import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font : drawing.Font = new drawing.Font();
-4. font.setTypeface(new drawing.Typeface());
-5. font.setEmbeddedBitmaps(false);
-6. console.info("draw isEmbeddedBitmaps: " + font.isEmbeddedBitmaps());
-```
-
-## isEmbeddedBitmaps()12+
-
-PhonePC/2in1TabletTVWearable
+## isEmbeddedBitmaps12+
 
 isEmbeddedBitmaps(): boolean
 
-获取字型是否转换成位图处理的结果。
+获取字型是否使用内嵌位图渲染的结果。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -945,26 +888,24 @@ isEmbeddedBitmaps(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 返回字型是否转换成位图处理结果，true表示转换成位图处理，false表示不转换成位图处理。 |
+| boolean | 返回字型是否使用内嵌位图渲染的结果，true表示使用内嵌位图字形，false表示不转换成位图处理。 |
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font : drawing.Font = new drawing.Font();
-4. font.setTypeface(new drawing.Typeface());
-5. font.setEmbeddedBitmaps(true);
-6. console.info("draw isEmbeddedBitmaps: " + font.isEmbeddedBitmaps());
+let font : drawing.Font = new drawing.Font();
+font.setTypeface(new drawing.Typeface());
+font.setEmbeddedBitmaps(true);
+console.info("draw isEmbeddedBitmaps: " + font.isEmbeddedBitmaps());
 ```
 
 ## setForceAutoHinting12+
 
-PhonePC/2in1TabletTVWearable
-
 setForceAutoHinting(isForceAutoHinting: boolean): void
 
-设置是否自动调整字型轮廓。
+设置是否自动调整字型轮廓以优化渲染效果。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -974,7 +915,7 @@ setForceAutoHinting(isForceAutoHinting: boolean): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| isForceAutoHinting | boolean | 是 | 是否自动调整字型轮廓，true为自动调整，false为不自动调整。 |
+| isForceAutoHinting | boolean | 是 | 是否自动调整字型轮廓以优化渲染效果，true为自动调整，false为不自动调整。 |
 
 **错误码：**
 
@@ -982,26 +923,24 @@ setForceAutoHinting(isForceAutoHinting: boolean): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font : drawing.Font = new drawing.Font();
-4. font.setTypeface(new drawing.Typeface());
-5. font.setForceAutoHinting(false);
-6. console.info("drawing isForceAutoHinting:  " + font.isForceAutoHinting());
+let font : drawing.Font = new drawing.Font();
+font.setTypeface(new drawing.Typeface());
+font.setForceAutoHinting(false);
+console.info("drawing isForceAutoHinting:  " + font.isForceAutoHinting());
 ```
 
 ## isForceAutoHinting12+
 
-PhonePC/2in1TabletTVWearable
-
 isForceAutoHinting(): boolean
 
-获取字型轮廓是否自动调整的结果。
+获取字型是否自动调整轮廓以优化渲染效果的结果。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -1011,22 +950,20 @@ isForceAutoHinting(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 返回字型轮廓是否自动调整，true为自动调整，false为不自动调整。 |
+| boolean | 返回字型是否自动调整轮廓以优化渲染效果的结果，true为自动调整，false为不自动调整。 |
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font : drawing.Font = new drawing.Font();
-4. font.setTypeface(new drawing.Typeface());
-5. font.setForceAutoHinting(false);
-6. console.info("drawing isForceAutoHinting:  " + font.isForceAutoHinting());
+let font : drawing.Font = new drawing.Font();
+font.setTypeface(new drawing.Typeface());
+font.setForceAutoHinting(false);
+console.info("drawing isForceAutoHinting:  " + font.isForceAutoHinting());
 ```
 
 ## getWidths12+
-
-PhonePC/2in1TabletTVWearable
 
 getWidths(glyphs: Array<number>): Array<number>
 
@@ -1046,7 +983,7 @@ getWidths(glyphs: Array<number>): Array<number>
 
 | 类型 | 说明 |
 | --- | --- |
-| Array<number> | 返回字形宽度数组。 |
+| Array<number> | 返回字形宽度数组，浮点数。单位为物理像素px。 |
 
 **错误码：**
 
@@ -1054,25 +991,23 @@ getWidths(glyphs: Array<number>): Array<number>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font: drawing.Font = new drawing.Font();
-4. let text: string = 'hello world';
-5. let glyphs: number[] = font.textToGlyphs(text);
-6. let fontWidths: Array<number> = font.getWidths(glyphs);
-7. for (let index = 0; index < fontWidths.length; index++) {
-8. console.info("get fontWidths[", index, "]:", fontWidths[index]);
-9. }
+let font: drawing.Font = new drawing.Font();
+let text: string = 'hello world';
+let glyphs: number[] = font.textToGlyphs(text);
+let fontWidths: Array<number> = font.getWidths(glyphs);
+for (let index = 0; index < fontWidths.length; index++) {
+  console.info("get fontWidths[", index, "]:", fontWidths[index]);
+}
 ```
 
 ## textToGlyphs12+
-
-PhonePC/2in1TabletTVWearable
 
 textToGlyphs(text: string, glyphCount?: number): Array<number>
 
@@ -1086,8 +1021,8 @@ textToGlyphs(text: string, glyphCount?: number): Array<number>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| text | string | 是 | 文本字符串。 |
-| glyphCount | number | 否 | 文本表示的字符数量，必须与[countText](arkts-apis-graphics-drawing-font.md#counttext12)获取的值相等，默认为text的字符数量，该参数为整数。 |
+| text | string | 是 | 待转换为字形索引的文本字符串。 |
+| glyphCount | number | 否 | 文本表示的字符数量，该参数为整数。传入时必须与[countText](arkts-apis-graphics-drawing-font.md#counttext12)获取的值相等，不传入时默认为text表示的字符数量。 |
 
 **返回值：**
 
@@ -1101,22 +1036,20 @@ textToGlyphs(text: string, glyphCount?: number): Array<number>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font : drawing.Font = new drawing.Font();
-4. let text : string = 'hello world';
-5. let glyphs : number[] = font.textToGlyphs(text);
-6. console.info("drawing text toglyphs OnTestFunction num =  " + glyphs.length );
+let font : drawing.Font = new drawing.Font();
+let text : string = 'hello world';
+let glyphs : number[] = font.textToGlyphs(text);
+console.info("drawing text toglyphs OnTestFunction num =  " + glyphs.length );
 ```
 
 ## getBounds18+
-
-PhonePC/2in1TabletTVWearable
 
 getBounds(glyphs: Array<number>): Array<common2D.Rect>
 
@@ -1140,26 +1073,24 @@ getBounds(glyphs: Array<number>): Array<common2D.Rect>
 
 **示例：**
 
-```
-1. import { common2D, drawing } from '@kit.ArkGraphics2D';
+```ts
+import { common2D, drawing } from '@kit.ArkGraphics2D';
 
-3. let font: drawing.Font = new drawing.Font();
-4. let text: string = 'hello world';
-5. let glyphs: number[] = font.textToGlyphs(text);
-6. let fontBounds: Array<common2D.Rect> = font.getBounds(glyphs);
-7. for (let index = 0; index < fontBounds.length; index++) {
-8. console.info("get fontWidths[", index, "] left:", fontBounds[index].left, " top:", fontBounds[index].top,
-9. " right:", fontBounds[index].right, " bottom:", fontBounds[index].bottom);
-10. }
+let font: drawing.Font = new drawing.Font();
+let text: string = 'hello world';
+let glyphs: number[] = font.textToGlyphs(text);
+let fontBounds: Array<common2D.Rect> = font.getBounds(glyphs);
+for (let index = 0; index < fontBounds.length; index++) {
+  console.info("get fontBounds[", index, "] left:", fontBounds[index].left, " top:", fontBounds[index].top,
+    " right:", fontBounds[index].right, " bottom:", fontBounds[index].bottom);
+}
 ```
 
 ## getTextPath18+
 
-PhonePC/2in1TabletTVWearable
-
 getTextPath(text: string, byteLength: number, x: number, y: number): Path
 
-获取文字的轮廓路径。
+获取文字的路径轮廓。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -1169,10 +1100,10 @@ getTextPath(text: string, byteLength: number, x: number, y: number): Path
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| text | string | 是 | 表示存储UTF-8 文本编码的字符。 |
-| byteLength | number | 是 | 表示要获取对应文本路径的字节长度，按传入的字节长度和实际的文本字节大小之间的最小值来获取对应的文本路径。 |
-| x | number | 是 | 表示文本在绘图区域内以原点为起始位置的X坐标。 |
-| y | number | 是 | 表示文本在绘图区域内以原点为起始位置的Y坐标。 |
+| text | string | 是 | 表示以UTF-8格式编码的文本字符串。 |
+| byteLength | number | 是 | 表示要获取对应文本路径的字节长度。按传入的字节长度和实际的文本字节大小之间的最小值来获取对应的文本路径。 |
+| x | number | 是 | 表示文本在绘图区域内以原点为起始位置的X坐标。单位为物理像素px。 |
+| y | number | 是 | 表示文本在绘图区域内以原点为起始位置的Y坐标。单位为物理像素px。 |
 
 **返回值：**
 
@@ -1186,31 +1117,79 @@ getTextPath(text: string, byteLength: number, x: number, y: number): Path
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
-2. import { buffer } from '@kit.ArkTS';
-3. import { RenderNode } from '@kit.ArkUI';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
+import { buffer } from '@kit.ArkTS';
+import { RenderNode } from '@kit.ArkUI';
 
-5. class DrawingRenderNode extends RenderNode {
-6. draw(context : DrawContext) {
-7. const canvas = context.canvas;
-8. let font = new drawing.Font();
-9. font.setSize(50);
-10. let myString: string = "Hello";
-11. let length: number = buffer.from(myString).length;
-12. let path = font.getTextPath(myString, length, 0, 100);
-13. canvas.drawPath(path);
-14. }
-15. }
+class DrawingRenderNode extends RenderNode {
+  draw(context : DrawContext) {
+    const canvas = context.canvas;
+    let font = new drawing.Font();
+    font.setSize(50);
+    let myString: string = "Hello";
+    let length: number = buffer.from(myString).length;
+    let path = font.getTextPath(myString, length, 0, 100);
+    canvas.drawPath(path);
+  }
+}
+```
+
+## getTextPathWithFallback
+
+getTextPathWithFallback(text: string, byteLength: number, x: number, y: number): Path
+
+获取文字的轮廓路径，支持字体回退能力。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Graphics.Drawing
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| text | string | 是 | 表示以UTF-8格式编码的文本字符串。 |
+| byteLength | number | 是 | 表示要获取对应文本路径的字节长度，按传入的字节长度和实际的文本字节大小之间的最小值来获取对应的文本路径。 |
+| x | number | 是 | 表示文本在绘图区域内以原点为起始位置的X坐标。单位为物理像素px。 |
+| y | number | 是 | 表示文本在绘图区域内以原点为起始位置的Y坐标。单位为物理像素px。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Path](arkts-apis-graphics-drawing-path.md) | 返回获取到的文本路径轮廓。路径对象创建失败时返回undefined。 |
+
+**示例：**
+
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
+import { buffer } from '@kit.ArkTS';
+import { RenderNode, DrawContext } from '@kit.ArkUI';
+
+class DrawingRenderNode extends RenderNode {
+  draw(context : DrawContext) {
+    const canvas = context.canvas;
+    let font = new drawing.Font();
+    font.setSize(50);
+    let myString: string = "Hello";
+    let length = buffer.from(myString).length;
+    let path = font.getTextPathWithFallback(myString, length, 0, 100);
+    if (path == undefined) {
+      return;
+    }
+    canvas.drawPath(path);
+  }
+}
 ```
 
 ## createPathForGlyph18+
-
-PhonePC/2in1TabletTVWearable
 
 createPathForGlyph(index: number): Path
 
@@ -1224,7 +1203,7 @@ createPathForGlyph(index: number): Path
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| index | number | 是 | 字形索引。 |
+| index | number | 是 | 字形索引，可由[textToGlyphs](arkts-apis-graphics-drawing-font.md#texttoglyphs12)生成。 |
 
 **返回值：**
 
@@ -1234,28 +1213,26 @@ createPathForGlyph(index: number): Path
 
 **示例：**
 
-```
-1. import { RenderNode } from '@kit.ArkUI';
-2. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { RenderNode } from '@kit.ArkUI';
+import { drawing } from '@kit.ArkGraphics2D';
 
-4. class DrawingRenderNode extends RenderNode {
-5. draw(context : DrawContext) {
-6. const canvas = context.canvas;
-7. let font = new drawing.Font();
-8. font.setSize(50)
-9. let text: string = '你好';
-10. let glyphs: number[] = font.textToGlyphs(text);
-11. for (let index = 0; index < glyphs.length; index++) {
-12. let path: drawing.Path = font.createPathForGlyph(glyphs[index])
-13. canvas.drawPath(path)
-14. }
-15. }
-16. }
+class DrawingRenderNode extends RenderNode {
+  draw(context : DrawContext) {
+    const canvas = context.canvas;
+    let font = new drawing.Font();
+    font.setSize(50);
+    let text: string = '你好';
+    let glyphs: number[] = font.textToGlyphs(text);
+    for (let index = 0; index < glyphs.length; index++) {
+      let path: drawing.Path = font.createPathForGlyph(glyphs[index]);
+      canvas.drawPath(path);
+    }
+  }
+}
 ```
 
 ## setThemeFontFollowed15+
-
-PhonePC/2in1TabletTVWearable
 
 setThemeFontFollowed(followed: boolean): void
 
@@ -1277,21 +1254,19 @@ setThemeFontFollowed(followed: boolean): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font : drawing.Font = new drawing.Font();
-4. font.setThemeFontFollowed(true);
-5. console.info("font is theme font followed: " + font.isThemeFontFollowed());
+let font : drawing.Font = new drawing.Font();
+font.setThemeFontFollowed(true);
+console.info("font is theme font followed: " + font.isThemeFontFollowed());
 ```
 
 ## isThemeFontFollowed()15+
-
-PhonePC/2in1TabletTVWearable
 
 isThemeFontFollowed(): boolean
 
@@ -1309,10 +1284,10 @@ isThemeFontFollowed(): boolean
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let font : drawing.Font = new drawing.Font();
-4. font.setThemeFontFollowed(true);
-5. console.info("font is theme font followed: " + font.isThemeFontFollowed());
+let font : drawing.Font = new drawing.Font();
+font.setThemeFontFollowed(true);
+console.info("font is theme font followed: " + font.isThemeFontFollowed());
 ```

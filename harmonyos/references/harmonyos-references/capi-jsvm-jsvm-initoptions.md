@@ -3,20 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm
 title: JSVM_InitOptions
 breadcrumb: API参考 > 公共基础能力 > C API > 结构体 > JSVM_InitOptions
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:23+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:53fcd6904528b934eb565a96f6f246bab390036fd30d09416274195737588e5f
+scraped_at: 2026-09-02T15:03:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:782ea76b84b907edfe0880b5e43e75745f12f312e2f3a017f0269a48e34b45ca
 ---
 
-```
-1. typedef struct {...} JSVM_InitOptions
+```c
+typedef struct {...} JSVM_InitOptions
 ```
 
 ## 概述
 
-PhonePC/2in1TabletWearable
-
 初始化选项，用于初始化JavaScript虚拟机。
+
+**使用场景：** 嵌入JavaScript引擎的应用程序初始化，需要在应用中执行JavaScript代码的场景，需要自定义虚拟机配置的开发调试场景。
+
+**系统能力：** SystemCapability.ArkCompiler.JSVM
 
 **起始版本：** 11
 
@@ -26,11 +28,7 @@ PhonePC/2in1TabletWearable
 
 ## 汇总
 
-PhonePC/2in1TabletWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletWearable
 
 | 名称 | 描述 |
 | --- | --- |

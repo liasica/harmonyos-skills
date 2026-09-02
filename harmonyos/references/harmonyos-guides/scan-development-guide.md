@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-developm
 title: Wi-Fi扫描开发指南
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > WLAN > Wi-Fi扫描开发指南
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:44+08:00
+scraped_at: 2026-09-02T14:59:33+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:9eeecfc26259d88b9c879c8f748d092d8895422ba1b202a98fbd1fc40c344ecc
+content_hash: sha256:93af03fb939d832db6ad8177ba195abf5f9191d923c00b16e715888caad5998c
 ---
 
 ## 简介
@@ -41,52 +41,52 @@ Wi-Fi扫描是指设备（如手机、电脑、路由器等）搜索周围可用
 4. 开启设备的Wi-Fi。
 5. 示例代码：
 
-   说明
+   **说明** 
 
    主动扫描接口，从API version 10开始废弃。替代接口仅向系统应用开放。
 
-   ```
-   1. import { wifiManager } from '@kit.ConnectivityKit';
+   ```ts
+   import { wifiManager } from '@kit.ConnectivityKit';
 
-   3. try {
-   4. let recvWifiScanStateChangeFunc = (result:number) => {
-   5. console.info("Receive Wifi scan state change event: " + result);
-   6. }
+   try {
+     let recvWifiScanStateChangeFunc = (result:number) => {
+         console.info("Receive Wifi scan state change event: " + result);
+     }
 
-   8. // 获取扫描状态 0：扫描失败；1：扫描成功。
-   9. wifiManager.on("wifiScanStateChange", recvWifiScanStateChangeFunc);
+     // 获取扫描状态 0：扫描失败；1：扫描成功。
+     wifiManager.on("wifiScanStateChange", recvWifiScanStateChangeFunc);
 
-   11. let isWifiActive = wifiManager.isWifiActive();
-   12. if (!isWifiActive) {
-   13. console.error("wifi not enable"); // 请先手动打开WiFi
-   14. return;
-   15. }
+     let isWifiActive = wifiManager.isWifiActive();
+     if (!isWifiActive) {
+       console.error("wifi not enable"); // 请先手动打开WiFi
+       return;
+     }
 
-   17. let scanInfoList = wifiManager.getScanInfoList();
+     let scanInfoList = wifiManager.getScanInfoList();
 
-   19. let len = scanInfoList.length;
-   20. console.info("wifi received scan info: " + len);
-   21. if(len > 0){
-   22. for (let i = 0; i < len; ++i) {
-   23. console.info("ssid: " + scanInfoList[i].ssid);
-   24. console.info("bssid: " + scanInfoList[i].bssid);
-   25. console.info("capabilities: " + scanInfoList[i].capabilities);
-   26. console.info("securityType: " + scanInfoList[i].securityType);
-   27. console.info("rssi: " + scanInfoList[i].rssi);
-   28. console.info("band: " + scanInfoList[i].band);
-   29. console.info("frequency: " + scanInfoList[i].frequency);
-   30. console.info("channelWidth: " + scanInfoList[i].channelWidth);
-   31. console.info("timestamp: " + scanInfoList[i].timestamp);
-   32. console.info("supportedWifiCategory: " + scanInfoList[i].supportedWifiCategory);
-   33. console.info("isHiLinkNetwork: " + scanInfoList[i].isHiLinkNetwork);
-   34. }
-   35. }
+     let len = scanInfoList.length;
+     console.info("wifi received scan info: " + len);
+     if(len > 0){
+       for (let i = 0; i < len; ++i) {
+         console.info("ssid: " + scanInfoList[i].ssid);
+         console.info("bssid: " + scanInfoList[i].bssid);
+         console.info("capabilities: " + scanInfoList[i].capabilities);
+         console.info("securityType: " + scanInfoList[i].securityType);
+         console.info("rssi: " + scanInfoList[i].rssi);
+         console.info("band: " + scanInfoList[i].band);
+         console.info("frequency: " + scanInfoList[i].frequency);
+         console.info("channelWidth: " + scanInfoList[i].channelWidth);
+         console.info("timestamp: " + scanInfoList[i].timestamp);
+         console.info("supportedWifiCategory: " + scanInfoList[i].supportedWifiCategory);
+         console.info("isHiLinkNetwork: " + scanInfoList[i].isHiLinkNetwork);
+       }
+     }
 
-   37. // 取消注册，停止获取扫描状态。
-   38. wifiManager.off("wifiScanStateChange", recvWifiScanStateChangeFunc);
-   39. } catch (error) {
-   40. console.error(`WiFi scan fail. ${error.message}`);
-   41. }
+     // 取消注册，停止获取扫描状态。
+     wifiManager.off("wifiScanStateChange", recvWifiScanStateChangeFunc);
+   } catch (error) {
+     console.error(`WiFi scan fail. ${error.message}`);
+   }
    ```
 6. 错误码详情请参见[WIFI错误码](../harmonyos-references/errorcode-wifi.md)。
 

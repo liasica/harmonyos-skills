@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-symbolregister
-title: symbolRegister
-breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS API > symbolRegister
+title: symbolRegister (symbol注册)
+breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS API > symbolRegister (symbol注册)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:57:09+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fd6737006037354951cf73a334e674669e0ef3007af5c574f7c698432c1a615e
+scraped_at: 2026-09-02T14:52:05+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a06b956a4bb10029fc68aa517b9c1e218cb91d8aeb5c84f50ec39347ea4db41e
 ---
 
 本模块提供自定义Symbol图标资源与动效参数资源注册加载能力。
@@ -14,15 +14,11 @@ content_hash: sha256:fd6737006037354951cf73a334e674669e0ef3007af5c574f7c698432c1
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { symbolRegister } from '@kit.UIDesignKit';
+```typescript
+import { symbolRegister } from '@kit.UIDesignKit';
 ```
 
 ## symbolRegister.registerSymbol
-
-PhonePC/2in1TabletTV
 
 registerSymbol(ttfSrc: resourceManager.Resource, jsonSrc: resourceManager.Resource): boolean
 
@@ -49,7 +45,7 @@ registerSymbol(ttfSrc: resourceManager.Resource, jsonSrc: resourceManager.Resour
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](ui-design-error-code.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-ui-design.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -60,31 +56,31 @@ registerSymbol(ttfSrc: resourceManager.Resource, jsonSrc: resourceManager.Resour
 
 **示例：**
 
+```typescript
+import { symbolRegister } from '@kit.UIDesignKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+@Entry
+@Component
+struct test {
+  aboutToAppear(): void {
+    try {
+      // 注册自定义的Symbol资源，在resource/rawfile目录下配置图标资源
+      let result =
+        symbolRegister.registerSymbol($rawfile("symbol/symbol_register.ttf"), $rawfile("symbol/symbol_register.json"));
+    } catch (error) {
+      let err = error as BusinessError;
+      console.error("errCode:" + err.code)
+      console.error("error " + err.message);
+    }
+  }
+
+  build() {
+    Column() {
+      SymbolGlyph($r('app.string.symbol_custom_phone_fill_1'))
+    }
+  }
+}
 ```
-1. import { symbolRegister } from '@kit.UIDesignKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct test {
-7. aboutToAppear(): void {
-8. try {
-9. // 注册自定义的Symbol资源,在resource/rawfile目录下配置图标资源
-10. let result =
-11. symbolRegister.registerSymbol($rawfile("symbol/symbol_register.ttf"), $rawfile("symbol/symbol_register.json"));
-12. } catch (error) {
-13. let err = error as BusinessError;
-14. console.error("errCode:" + err.code)
-15. console.error("error " + err.message);
-16. }
-17. }
-
-19. build() {
-20. Column() {
-21. SymbolGlyph($r('app.string.symbol_custom_phone_fill_1'))
-22. }
-23. }
-24. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/mW_dmRwRSXWZ_Q9-02qpwA/zh-cn_image_0000002558607384.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/SqGPZAVnT1KyH4a9G27qaA/zh-cn_image_0000002706676774.png)

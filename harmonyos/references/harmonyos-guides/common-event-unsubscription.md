@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/common-event-
 title: 取消动态订阅公共事件
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 进程线程通信 > 使用公共事件进行进程间通信 > 取消动态订阅公共事件
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:16+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:90ed7da240ddc9fc224d15fb380dbec2f373a74da4c46cef94fdd64a65f4beee
+scraped_at: 2026-09-02T14:50:07+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0579f3528eea0171d945fa4cbc65aecc4bf579a9cc0f229bd6b69ccf116965fb
 ---
 
 ## 场景介绍
@@ -22,31 +22,27 @@ content_hash: sha256:90ed7da240ddc9fc224d15fb380dbec2f373a74da4c46cef94fdd64a65f
 
 1. 导入模块。
 
-   ```
-   1. import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
 
-   4. const TAG: string = 'ProcessModel';
-   5. const DOMAIN_NUMBER: number = 0xFF00;
+   const TAG: string = 'ProcessModel';
+   const DOMAIN_NUMBER: number = 0xFF00;
    ```
-
-   [CreatSubscribeInfo.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Basic-Services-Kit/common_event/CommonEvent/entry/src/main/ets/filemanager/CreatSubscribeInfo.ets#L15-L21)
 2. 根据[动态订阅公共事件](common-event-subscription.md)章节的步骤来订阅某个事件。
 3. 调用CommonEvent中的[unsubscribe()](../harmonyos-references/js-apis-commoneventmanager.md#commoneventmanagerunsubscribe)方法取消订阅某事件。
 
+   ```typescript
+   // subscriberCustom为订阅事件时创建的订阅者对象
+   if (subscriberCustom !== null) {
+     commonEventManager.unsubscribe(subscriberCustom, (err: BusinessError) => {
+       if (err) {
+         hilog.error(DOMAIN_NUMBER, TAG,
+           `Failed to unsubscribe. code is ${err.code}, message is ${err.message}`);
+       } else {
+         hilog.info(DOMAIN_NUMBER, TAG, `Succeeded in unsubscribing.`);
+         subscriberCustom = null;
+       }
+     })
+   }
    ```
-   1. // subscriberCustom为订阅事件时创建的订阅者对象
-   2. if (subscriberCustom !== null) {
-   3. commonEventManager.unsubscribe(subscriberCustom, (err: BusinessError) => {
-   4. if (err) {
-   5. hilog.error(DOMAIN_NUMBER, TAG,
-   6. `Failed to unsubscribe. code is ${err.code}, message is ${err.message}`);
-   7. } else {
-   8. hilog.info(DOMAIN_NUMBER, TAG, `Succeeded in unsubscribing.`);
-   9. subscriberCustom = null;
-   10. }
-   11. })
-   12. }
-   ```
-
-   [CreatSubscribeInfo.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Basic-Services-Kit/common_event/CommonEvent/entry/src/main/ets/filemanager/CreatSubscribeInfo.ets#L96-L109)

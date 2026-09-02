@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-publish-te
 title: 测试报告中，为什么会出现测试项检测异常
 breadcrumb: FAQ > DevEco Testing > 上架预检 > 测试报告中，为什么会出现测试项检测异常
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:33+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:4e1516ff8767e71f6a408deb46c98e308791b3f6d778cc079a305edb6b5df9dc
 ---
 

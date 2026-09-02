@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-
 title: 迁移模式设置 (C/C++)
 breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务） > 连接迁移(多网切换) (C/C++) > 迁移模式设置 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:59+08:00
+scraped_at: 2026-09-02T14:50:06+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:05d7ae7b8f022e09f8525686f30e146ccc1ee6b7b56a15ebb7f7061fed648a80
+content_hash: sha256:ef25f825618b870765022e7530b63746b634860d1394b76f87ce451eabbf1619
 ---
 
 ## 场景介绍
@@ -24,23 +24,23 @@ content_hash: sha256:05d7ae7b8f022e09f8525686f30e146ccc1ee6b7b56a15ebb7f7061fed6
 
 1. 导入Network Boost Kit模块。
 
-   ```
-   1. #include "NetworkBoostKit/network_boost_handover.h"
-   2. #include <cstdio>
+   ```cpp
+   #include "NetworkBoostKit/network_boost_handover.h"
+   #include <cstdio>
    ```
 2. CMakeLists.txt中添加以下lib，具体请见[C API开发准备](networkboost-preparations.md#c-api开发准备)。
 
-   ```
-   1. libnetwork_boost.so
+   ```cpp
+   libnetwork_boost.so
    ```
 3. 调用SetHandoverMode接口，设置为自主模式，禁止系统发起连接迁移。
 
-   ```
-   1. int32_t SetHandoverMode()
-   2. {
-   3. NetworkBoost_HandoverMode mode = NB_MODE_DISCRETION;
-   4. int32_t ret = HMS_NetworkBoost_SetHandoverMode(mode);
-   5. printf("设置连接迁移模式结果: %d\n", ret);
-   6. return ret;
-   7. }
+   ```cpp
+   int32_t SetHandoverMode()
+   {
+       NetworkBoost_HandoverMode mode = NB_MODE_DISCRETION;
+       int32_t ret = HMS_NetworkBoost_SetHandoverMode(mode);
+       printf("设置连接迁移模式结果: %d\n", ret);
+       return ret;
+   }
    ```

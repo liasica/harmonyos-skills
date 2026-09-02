@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pen-image-fea
 title: 接入全局取色
 breadcrumb: 指南 > 系统 > 硬件 > Pen Kit（手写笔服务） > 手写功能开发指导（C/C++） > 接入全局取色
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:33:37+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:88cb3dd92b14d00716b3df209259303ebde56d9e773ee8974cb2e48f412a2917
+scraped_at: 2026-09-02T14:59:37+08:00
+doc_updated_at: 2026-05-18
+content_hash: sha256:f94f85cead7b67ae2b460169c5eebb6c9780284f9fd94776607ed3bd8fd0481d
 ---
 
 接入全局取色功能，用户可以使用手指或者手写笔操作取色器在屏幕上移动，在目标位置抬起手指/抬起手写笔，会生成该位置色值对应的图像信息。
@@ -14,7 +14,7 @@ content_hash: sha256:88cb3dd92b14d00716b3df209259303ebde56d9e773ee8974cb2e48f412
 
 在应用中拉起全局取色，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/hH5VAznjS8iVsb90_uzqRQ/zh-cn_image_0000002558764978.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/tSWISukKRt-EJrsSvy8idg/zh-cn_image_0000002736433563.png)
 
 支持获取当前屏幕上选中位置的色值和色域空间。
 
@@ -29,19 +29,19 @@ content_hash: sha256:88cb3dd92b14d00716b3df209259303ebde56d9e773ee8974cb2e48f412
 | int32\_t [HMS\_GCP\_StartColorPicker](../harmonyos-references/pen-imagefeaturepicker-c.md#hms_gcp_startcolorpicker) (int32\_t initialPosX, int32\_t initialPosY, [HMS\_GCP\_OnResult](../harmonyos-references/pen-imagefeaturepicker-c.md#hms_gcp_onresult) onResultCallback, void \*userData) | 启动取色器。此API用于启动取色器，在取色器移动时不显示色值。 |
 | int32\_t [HMS\_GCP\_StartColorPickerWithColorValue](../harmonyos-references/pen-imagefeaturepicker-c.md#hms_gcp_startcolorpickerwithcolorvalue) (int32\_t initialPosX, int32\_t initialPosY, [HMS\_GCP\_OnResult](../harmonyos-references/pen-imagefeaturepicker-c.md#hms_gcp_onresult) onResultCallback, void \*userData) | 启动取色器。此API用于启动取色器，在取色器移动时显示色值。 |
 
-## 接入步骤
+## 开发步骤
 
 ### 在 CMake 脚本中链接动态库
 
-```
-1. target_link_libraries(entry PUBLIC libace_napi.z.so libcolorpicker_ndk.z.so  libhilog_ndk.z.so)
+```c
+target_link_libraries(entry PUBLIC libace_napi.z.so libcolorpicker_ndk.z.so  libhilog_ndk.z.so)
 ```
 
 ### 导入模块
 
-```
-1. #include "color_picker/native_gcp_api.h"
-2. #include "hilog/log.h"
+```c
+#include "color_picker/native_gcp_api.h"
+#include "hilog/log.h"
 ```
 
 ### 示例代码
@@ -50,46 +50,46 @@ native\_gcp\_api.h提供HMS\_GCP\_StartColorPicker()和HMS\_GCP\_StartColorPicke
 
 通过调用HMS\_GCP\_StartColorPicker()，实现启动取色器。
 
-注意
+**须知** 
 
 该启动方法不支持实时显示色值。
 
-```
-1. void onSuccessCallback(void *userData, HMS_GCP_PickedColorInfo pickedColorInfo, const int32_t code) {
-2. OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "penkit", "picked code is: %{public}d", code);
-3. OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "penkit", "picked Red is: %{public}d", pickedColorInfo.color.red);
-4. OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "penkit", "picked Green is:%{public}d ", pickedColorInfo.color.green);
-5. OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "penkit", "picked Blue is: %{public}d", pickedColorInfo.color.blue);
-6. OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "penkit", "picked Alpha is:%{public}d ", pickedColorInfo.color.alpha);
-7. delete userData;
-8. }
-9. void startPick() {
-10. int32_t posX = 200;
-11. int32_t posY = 200;
-12. void *userData = nullptr;
-13. HMS_GCP_StartColorPicker(posX, posY, onSuccessCallback, userData);
-14. }
+```cpp
+void onSuccessCallback(void *userData, HMS_GCP_PickedColorInfo pickedColorInfo, const int32_t code) {
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "penkit", "picked code is: %{public}d", code);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "penkit", "picked Red is: %{public}d", pickedColorInfo.color.red);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "penkit", "picked Green is:%{public}d ", pickedColorInfo.color.green);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "penkit", "picked Blue is: %{public}d", pickedColorInfo.color.blue);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "penkit", "picked Alpha is:%{public}d ", pickedColorInfo.color.alpha);
+    delete userData;
+}
+void startPick() {
+    int32_t posX = 200;
+    int32_t posY = 200;
+    void *userData = nullptr;
+    HMS_GCP_StartColorPicker(posX, posY, onSuccessCallback, userData);
+}
 ```
 
 通过调用HMS\_GCP\_StartColorPickerWithColorValue()，实现启动取色器。
 
-注意
+**须知** 
 
 该启动方法支持实时显示色值。
 
-```
-1. void onSuccessCallback(void *userData, HMS_GCP_PickedColorInfo pickedColorInfo, const int32_t code) {
-2. OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "penkit", "picked code is: %{public}d", code);
-3. OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "penkit", "picked Red is: %{public}d", pickedColorInfo.color.red);
-4. OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "penkit", "picked Green is:%{public}d ", pickedColorInfo.color.green);
-5. OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "penkit", "picked Blue is: %{public}d", pickedColorInfo.color.blue);
-6. OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "penkit", "picked Alpha is:%{public}d ", pickedColorInfo.color.alpha);
-7. delete userData;
-8. }
-9. void startPickWithColorValue() {
-10. int32_t posX = 200;
-11. int32_t posY = 200;
-12. void *userData = nullptr;
-13. HMS_GCP_StartColorPickerWithColorValue(posX, posY, onSuccessCallback, userData);
-14. }
+```cpp
+void onSuccessCallback(void *userData, HMS_GCP_PickedColorInfo pickedColorInfo, const int32_t code) {
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "penkit", "picked code is: %{public}d", code);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "penkit", "picked Red is: %{public}d", pickedColorInfo.color.red);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "penkit", "picked Green is:%{public}d ", pickedColorInfo.color.green);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "penkit", "picked Blue is: %{public}d", pickedColorInfo.color.blue);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "penkit", "picked Alpha is:%{public}d ", pickedColorInfo.color.alpha);
+    delete userData;
+}
+void startPickWithColorValue() {
+    int32_t posX = 200;
+    int32_t posY = 200;
+    void *userData = nullptr;
+    HMS_GCP_StartColorPickerWithColorValue(posX, posY, onSuccessCallback, userData);
+}
 ```

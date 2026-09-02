@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-settin
 title: 自定义页面背景
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容排版 > 修改阅读设置 > 自定义页面背景
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:40:03+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8f8c5aeb3615ddd79feff28e24b5ff9d33887025f8d3b5fa0874e15d896e51b9
+scraped_at: 2026-09-02T14:50:31+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6e516c3e781392b3768293c95dbe4407b1ce535332c021fc6c2cf8dc2b21f1c9
 ---
 
 当应用需要支持自定义背景时，开发者可通过[ReaderSetting](../harmonyos-references/reader-read-core.md#readersetting)的themeColor及themeBgImg属性，实现对阅读内容自定义背景色及背景图片的实时修改。
@@ -19,7 +19,7 @@ content_hash: sha256:8f8c5aeb3615ddd79feff28e24b5ff9d33887025f8d3b5fa0874e15d896
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/PDS5_TQpSwyAcf57H-zDTQ/zh-cn_image_0000002589245453.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/lJm73P4lRWuUStUcSjXEkw/zh-cn_image_0000002706835170.png)
 
 ## 接口说明
 
@@ -38,86 +38,89 @@ content_hash: sha256:8f8c5aeb3615ddd79feff28e24b5ff9d33887025f8d3b5fa0874e15d896
 
 1. 导入相关模块。
 
-   ```
-   1. import { fileIo as fs } from '@kit.CoreFileKit';
-   2. import { common } from '@kit.AbilityKit';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { fileIo as fs } from '@kit.CoreFileKit';
+   import { common } from '@kit.AbilityKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 单独设置背景色。如果有设置背景图片的情况下，背景色通常用于仿真翻页时背面主题色的绘制。否则，背景色还会用于渲染阅读页的背景色。
 
-   ```
-   1. this.readerSetting.themeColor = '#000000';
-   2. this.readerSetting.themeBgImg = '';
-   3. // 当设置背景色为浅色时，需要将深色模式关掉
-   4. this.readerSetting.nightMode = false;
-   5. // 当设置背景色为浅色时，字体颜色也需要适配
-   6. this.readerSetting.fontColor = '#FFFFFF';
+   ```typescript
+   this.readerSetting.themeColor = '#000000';
+   this.readerSetting.themeBgImg = '';
+   // 当设置背景色为浅色时，需要将深色模式关掉
+   this.readerSetting.nightMode = false;
+   // 当设置背景色为浅色时，字体颜色也需要适配
+   this.readerSetting.fontColor = '#FFFFFF';
    ```
 3. 设置背景图片。需要同时设置与背景图片相近的主题颜色，用于仿真翻页时背面主题色的绘制。
 
-   ```
-   1. this.readerSetting.themeBgImg = 'dark_sky_first.jpg';
-   2. this.readerSetting.themeColor = '#000000';
-   3. // 当设置背景图为浅色时，需要将深色模式关掉
-   4. this.readerSetting.nightMode = false;
-   5. // 当设置背景图为浅色时，字体颜色也需要适配
-   6. this.readerSetting.fontColor = '#FFFFFF';
+   ```typescript
+   this.readerSetting.themeBgImg = 'dark_sky_first.jpg';
+   this.readerSetting.themeColor = '#000000';
+   // 当设置背景图为浅色时，需要将深色模式关掉
+   this.readerSetting.nightMode = false;
+   // 当设置背景图为浅色时，字体颜色也需要适配
+   this.readerSetting.fontColor = '#FFFFFF';
    ```
 4. 调用ReaderComponentController组件控制器的setPageConfig接口，重新渲染界面。
 
-   ```
-   1. this.readerComponentController.setPageConfig(this.readerSetting);
+   ```typescript
+   this.readerComponentController.setPageConfig(this.readerSetting);
    ```
 5. 注册排版引擎资源请求接口，并返回相应的背景图资源。
 
    在排版引擎检测到是自定义背景图片场景时，会通过接口请求背景图片资源。开发者需要根据返回的文件路径，判断是否为请求背景图片资源。如果是，则根据背景图片资源所在的路径，返回对应的ArrayBuffer。
 
-   ```
-   1. aboutToAppear(): void {
-   2. // 注册资源请求回调
-   3. this.readerComponentController.on('resourceRequest', this.resourceRequest);
-   4. }
+   ```typescript
+   aboutToAppear(): void {
+     // 注册资源请求回调
+     this.readerComponentController.on('resourceRequest', this.resourceRequest);
+   }
 
-   6. aboutToDisappear(): void {
-   7. // 注销资源请求回调
-   8. this.readerComponentController.off('resourceRequest');
-   9. }
+   aboutToDisappear(): void {
+     // 注销资源请求回调
+     this.readerComponentController.off('resourceRequest');
+   }
 
-   11. /**
-   12. * 资源请求回调
-   13. */
-   14. private resourceRequest: bookParser.CallbackRes<string, ArrayBuffer> = (filePath: string): ArrayBuffer => {
-   15. hilog.info(0x0000, 'testTag', 'resourceRequest : filePath = ' + filePath);
-   16. if(filePath.length === 0){
-   17. return new ArrayBuffer(0);
-   18. }
-   19. try {
-   20. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-   21. // 获取资源路径resources/rawfile下的背景图片文件Uint8Array数据
-   22. let value: Uint8Array = context.resourceManager.getRawFileContentSync(filePath);
-   23. hilog.info(0x0000, 'testTag', 'resourceRequest : get other resource succeeded ');
-   24. return value.buffer as ArrayBuffer;
-   25. } catch (error) {
-   26. let code = (error as BusinessError).code;
-   27. let message = (error as BusinessError).message;
-   28. hilog.error(0x0000, 'testTag',
-   29. `resourceRequest : get other resource failed, error code: ${code}, message: ${message}.`);
-   30. }
-   31. // 如果在资源路径源路径resources/rawfile下获取背景图片文件数据失败，则去沙箱目录下获取背景图片数据
-   32. return this.loadFileFromPath(filePath);
-   33. }
+   /**
+    * 资源请求回调
+    */
+   private resourceRequest: bookParser.CallbackRes<string, ArrayBuffer> = (filePath: string): ArrayBuffer => {
+     hilog.info(0x0000, 'testTag', 'resourceRequest : filePath = ' + filePath);
+     if(filePath.length === 0){
+       return new ArrayBuffer(0);
+     }
+     try {
+       let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+       // 获取资源路径resources/rawfile下的背景图片文件Uint8Array数据
+       let value: Uint8Array = context.resourceManager.getRawFileContentSync(filePath);
+       hilog.info(0x0000, 'testTag', 'resourceRequest : get other resource succeeded ');
+       return value.buffer as ArrayBuffer;
+     } catch (error) {
+       let code = (error as BusinessError).code;
+       let message = (error as BusinessError).message;
+       hilog.error(0x0000, 'testTag',
+         `resourceRequest : get other resource failed, error code: ${code}, message: ${message}.`);
+     }
+     // 如果在资源路径源路径resources/rawfile下获取背景图片文件数据失败，则去沙箱目录下获取背景图片数据
+     return this.loadFileFromPath(filePath);
+   }
 
-   35. private loadFileFromPath(filePath: string): ArrayBuffer {
-   36. try {
-   37. let stats = fs.statSync(filePath);
-   38. let file = fs.openSync(filePath, fs.OpenMode.READ_ONLY);
-   39. let buffer = new ArrayBuffer(stats.size);
-   40. fs.readSync(file.fd, buffer);
-   41. fs.closeSync(file);
-   42. return buffer;
-   43. } catch (err) {
-   44. hilog.error(0x0000, 'testTag', "mkdir failed with error message: ", err.message, ", error code: ", err.code);
-   45. return new ArrayBuffer(0);
-   46. }
-   47. }
+   private loadFileFromPath(filePath: string): ArrayBuffer {
+     try {
+       let stats = fs.statSync(filePath);
+       let file = fs.openSync(filePath, fs.OpenMode.READ_ONLY);
+       let buffer = new ArrayBuffer(stats.size);
+       fs.readSync(file.fd, buffer);
+       fs.closeSync(file);
+       return buffer;
+     } catch (err) {
+       let code = (error as BusinessError).code;
+       let message = (error as BusinessError).message;
+       hilog.error(0x0000, 'testTag',
+         `loadFileFromPath : get file failed, error code: ${code}, message: ${message}.`);
+       return new ArrayBuffer(0);
+     }
+   }
    ```

@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-ux-6001
 title: UX样式或效果的变更
-breadcrumb: 版本说明 > HarmonyOS 6.0.0(20) > OS平台能力 > OS平台行为变更说明 > 6.0.0(20) Beta1引入的行为变更 > UX样式或效果的变更
+breadcrumb: 版本说明 > 更多版本 > 6.0.0(20) > OS平台能力 > OS平台行为变更说明 > 6.0.0(20) Beta1引入的行为变更 > UX样式或效果的变更
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:07+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:1e32981aa9a56e2bef51257c10f05641791064d01f0429a3a6666e826b8abe84
+scraped_at: 2026-09-02T14:58:40+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:6942c7f83a99dfae0948b68540ecbeb73e0d4b928f4f17bef425d182e852bdfa
 ---
 
 ## bindSheet在2in1设备中默认避让窗口安全区
@@ -16,7 +16,7 @@ UX规格变更。
 
 半模态内容需默认避让窗口安全区，否则会有重叠区域。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于6.0.0(20)时生效。
 
@@ -68,7 +68,7 @@ bindSheet的preferType属性
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于6.0.0(20)时生效。
 
@@ -100,15 +100,15 @@ FullScreenLaunchComponent组件及嵌入式拉起的元服务。
   + 不建议宿主应用使用嵌入式运行元服务，建议使用跳出式运行元服务。
   + 如果宿主应用需要使用嵌入式运行元服务，提供方元服务需要判断ohos.extra.atomicservice.param.key.isFollowHostWindowMode，若ohos.extra.atomicservice.param.key.isFollowHostWindowMode为true，无需主动避让适配；否则需要主动避让适配。
 
-```
-1. export default class AtomicServiceAbility extends EmbeddableUIAbility {
-2. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-3. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-4. if (want.parameters) {
-5. hilog.info(0x0000, 'testTag', '%{public}s', 'followed host window mode' + want.parameters['ohos.extra.atomicservice.param.key.isFollowHostWindowMode']);
-6. }
-7. }
-8. }
+```ts
+export default class AtomicServiceAbility extends EmbeddableUIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+    if (want.parameters) {
+      hilog.info(0x0000, 'testTag', '%{public}s', 'followed host window mode' + want.parameters['ohos.extra.atomicservice.param.key.isFollowHostWindowMode']);
+    }
+  }
+}
 ```
 
 ## 半模态跟手样式弹窗显示位置避让规则变更
@@ -121,7 +121,7 @@ FullScreenLaunchComponent组件及嵌入式拉起的元服务。
 
 此变更不涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于6.0.0(20)时生效。
 

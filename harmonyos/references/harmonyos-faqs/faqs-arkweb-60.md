@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-60
 title: 如何全局存储WebController
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 如何全局存储WebController
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:44+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:53+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:872d1809402acccb5a7a353b34289679b9ab3d56d73ea00b6637b7538b983e34
 ---
 

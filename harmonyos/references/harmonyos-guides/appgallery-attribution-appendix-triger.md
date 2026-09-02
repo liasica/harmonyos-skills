@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-at
 title: 标准化事件及应用归因签名
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 附录 > 标准化事件及应用归因签名
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:30+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c2a30919a7973ef6e2f938b8c4528e121a2f2da181a9dbb10243f1807ff33beb
+scraped_at: 2026-09-02T14:59:53+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:85fcab50752858601c9ada094546ab98ba1b0771761a1e80ac0f99069a31ac7d
 ---
 
 ## 标准转化事件信息
@@ -22,6 +22,7 @@ content_hash: sha256:c2a30919a7973ef6e2f938b8c4528e121a2f2da181a9dbb10243f1807ff
 | 注册 | 7 | 注册应用或服务 |
 | 关键页面访问 | 9 | 发生关键页面浏览行为 |
 | 申请 | 14 | 申请服务 |
+| 老客激活 | 15 | 流失用户再次激活  **说明：** 用于再归因，可触发用户刷新来源。 |
 | 下单 | 18 | 将购物清单正式生成订单 |
 | 预约 | 21 | 预约商品、内容或服务 |
 
@@ -29,16 +30,16 @@ content_hash: sha256:c2a30919a7973ef6e2f938b8c4528e121a2f2da181a9dbb10243f1807ff
 
 1.按照如下规则（字段顺序及分隔符）拼接待签名的字符串：
 
-```
-1. adTechId+ '\u2063' + campaignId+ '\u2063'  + destinationId+ '\u2063' + serviceTag+ '\u2063' + mmpIdStr + '\u2063' + nonce + '\u2063' + timestamp
+```typescript
+adTechId+ '\u2063' + campaignId+ '\u2063'  + destinationId+ '\u2063' + serviceTag+ '\u2063' + mmpIdStr + '\u2063' + nonce + '\u2063' + timestamp
 ```
 
 其中，mmpIdStr生成规则为：
 
 若归因监测平台的数组不为空，则将归因监测平台中的元素以'\u2063'为连接符进行拼接，假设mmpIds中有两个归因监测平台，拼接示例：
 
-```
-1. mmpIdStr = mmpId1 + '\u2063' + mmpId2
+```typescript
+mmpIdStr = mmpId1 + '\u2063' + mmpId2
 ```
 
 2.使用分发平台在应用归因服务云侧注册角色时，提供的公钥所对应的私钥，对步骤1拼接的字符串进行签名计算（签名算法：SHA256withRSA/PSS；生成密钥位数：RSA3072）。
@@ -49,58 +50,64 @@ content_hash: sha256:c2a30919a7973ef6e2f938b8c4528e121a2f2da181a9dbb10243f1807ff
 
 您可以参考如下代码生成签名，也可以自行生成签名。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+// 具体引用方法参考本示例代码底部说明
+import { AegRsaSign } from '@hw-agconnect/petal-aegis';
+
+const TAG: string = 'SignUtil';
+const SEPARATOR: string = '\u2063';
+
+export class SignUtil {
+    public static genSignContent(adTechId: string, campaignId: string, destinationId: string, mmpIds: string[],
+        serviceTag: string, nonce: string, timestamp: number) {
+        let content = SignUtil.addSeparator(adTechId) +
+            SignUtil.addSeparator(campaignId) +
+            SignUtil.addSeparator(destinationId) +
+            SignUtil.addSeparator(serviceTag) +
+            SignUtil.genMmpIds(mmpIds) +
+            SignUtil.addSeparator(nonce) +
+            timestamp;
+        hilog.info(0, TAG, `content = ${JSON.stringify(content)}`);
+        return content;
+    }
+
+    private static addSeparator(value: string | undefined): string {
+        return value ? value + SEPARATOR : '';
+    }
+
+    private static genMmpIds(mmpIds: string[]) {
+        let result: string = '';
+        for (let mmpId of mmpIds) {
+            if (mmpId) {
+                result += SignUtil.addSeparator(mmpId);
+            }
+        }
+        return result;
+    }
+
+    public static getSign(context: UIContext, content: string, privateKey: string): Promise<string> {
+        return new Promise<string>((resolve) => {
+            AegRsaSign.ohAegSignRSAWithPSSTextBase64(content, privateKey).then(async (sign: string) => {
+                hilog.info(0, TAG, 'getSign success.');
+                resolve(sign);
+            }).catch((error: BusinessError) => {
+                hilog.error(0, TAG, `getSign failed. code is ${error.code}, message is ${error.message}`);
+                let msg: string | undefined =
+                    context.getHostContext()?.resourceManager.getStringSync($r('app.string.gen_sign_failed').id);
+                if (msg) {
+                    context.getPromptAction().showToast({
+                        message: msg
+                    })
+                }
+            });
+        })
+    }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. // 具体引用方法参考本示例代码底部说明
-4. import {AegRsaSign} from "@hw-agconnect/petal-aegis";
 
-7. const TAG: string = 'SignUtil';
-8. const SEPARATOR: string = '\u2063';
-
-10. export class SignUtil {
-11. public static genSignContent(adTechId: string, campaignId: string, destinationId: string, mmpIds: string[], serviceTag: string, nonce: string, timestamp: number) {
-12. // mmpIdStr = mmpId1 + '\u2063' + mmpId2
-13. // signContent:string= adTechId+ '\u2063' + campaignId+ '\u2063'  + destinationId+ '\u2063' + serviceTag+ '\u2063' + mmpIdStr + '\u2063' + nonce + '\u2063' + timestamp
-14. let content = SignUtil.addSeparator(adTechId)
-15. + SignUtil.addSeparator(campaignId)
-16. + SignUtil.addSeparator(destinationId)
-17. + SignUtil.addSeparator(serviceTag)
-18. + SignUtil.genMmpIds(mmpIds)
-19. + SignUtil.addSeparator(nonce)
-20. + timestamp;
-21. hilog.info(0,TAG,`content = ${JSON.stringify(content)}`);
-22. return content;
-23. }
-
-25. private static addSeparator(value: string | undefined): string {
-26. return value ? value + SEPARATOR : '';
-27. }
-
-29. private static genMmpIds(mmpIds: string[]) {
-30. let result: string = '';
-31. for (let mmpId of mmpIds) {
-32. if (mmpId) {
-33. result += SignUtil.addSeparator(mmpId);
-34. }
-35. }
-36. return result;
-37. }
-
-39. public static getSign(content: string, privateKey: string): Promise<string> {
-40. return new Promise<string>((resolve) => {
-41. AegRsaSign.ohAegSignRSAWithPSSTextBase64(content, privateKey).then(async (sign: string) => {
-42. hilog.info(0, TAG, "getSign success.");
-43. resolve(sign);
-44. }).catch((error: BusinessError) => {
-45. hilog.error(0, TAG, `getSign failed. code is ${error.code}, message is ${error.message}`);
-46. });
-47. })
-48. }
-49. }
-```
-
-说明
+**说明** 
 
 其中import {AegRsaSign} from "@hw-agconnect/petal-aegis" ， 使用AegRsaSign.ohAegSignRSAWithPSSTextBase64生成签名，使用方法如下:
 

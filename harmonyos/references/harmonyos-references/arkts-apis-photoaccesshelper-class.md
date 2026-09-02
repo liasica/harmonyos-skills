@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Classes (其他)
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS API > @ohos.file.photoAccessHelper (相册管理模块) > Classes (其他)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:48d1a5b9c7310e73f138041ecaf57dea2719386b707df2090dafb76d6e4be334
+scraped_at: 2026-09-02T15:02:37+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:fe3f42793001365b88a0e4c88e00b09e99620657f15092a9c0d656372703a9e0
 ---
 
-说明
+**说明** 
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## RecommendationOptions11+
 
-PhonePC/2in1TabletTV
-
-图片推荐选项(基于图片数据分析结果，依赖设备适配)。
+图片推荐选项（基于图片数据分析结果，依赖设备适配）。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -26,8 +24,6 @@ PhonePC/2in1TabletTV
 | textContextInfo12+ | [TextContextInfo](arkts-apis-photoaccesshelper-i.md#textcontextinfo12) | 否 | 是 | 如果需要根据文本信息推荐相应的图片，则配置此参数（如果同时配置了recommendationType，则仅textContextInfo生效）。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 
 ## BaseSelectOptions
-
-PhonePC/2in1TabletTV
 
 图库选择选项基类。
 
@@ -41,7 +37,7 @@ PhonePC/2in1TabletTV
 | isSearchSupported11+ | boolean | 否 | 是 | 是否支持搜索，true表示支持，false表示不支持，默认为true。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | recommendationOptions11+ | [RecommendationOptions](arkts-apis-photoaccesshelper-class.md#recommendationoptions11) | 否 | 是 | 图片推荐相关配置参数。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | preselectedUris11+ | Array<string> | 否 | 是 | 预选择图片的uri数据。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| isPreviewForSingleSelectionSupported12+ | boolean | 否 | 是 | 单选模式下是否需要进大图预览，true表示需要，false表示不需要，默认为true。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| isPreviewForSingleSelectionSupported12+ | boolean | 否 | 是 | 单选模式下是否需要进入大图预览，true表示需要，false表示不需要，默认为true。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | singleSelectionMode18+ | [SingleSelectionMode](arkts-apis-photoaccesshelper-e.md#singleselectionmode18) | 否 | 是 | 单选模式类型。默认为大图预览模式（SingleSelectionMode.BROWSER\_MODE）。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | mimeTypeFilter19+ | [MimeTypeFilter](arkts-apis-photoaccesshelper-class.md#mimetypefilter19) | 否 | 是 | 文件类型的过滤配置，支持指定多个类型过滤。  当配置mimeTypeFilter参数时，MIMEType的配置自动失效。  配置该参数时，仅显示配置过滤类型对应的媒体文件，建议提示用户仅支持选择指定类型的图片/视频。  **元服务API：** 从API version 19开始，该接口支持在元服务中使用。 |
 | fileSizeFilter19+ | [FileSizeFilter](arkts-apis-photoaccesshelper-class.md#filesizefilter19) | 否 | 是 | 可选择媒体文件大小的过滤配置。  配置该参数时，仅显示配置文件大小范围的媒体文件，建议提示用户仅支持选择指定大小的图片/视频。  **元服务API：** 从API version 19开始，该接口支持在元服务中使用。 |
@@ -53,10 +49,11 @@ PhonePC/2in1TabletTV
 | autoPlayScenes23+ | Array<[AutoPlayScene](arkts-apis-photoaccesshelper-class.md#autoplayscene23)> | 否 | 是 | 设置动态照片播放模式。长度限制为2个，超出取前2个，多余的会自动忽略。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
 | globalMovingPhotoState23+ | [MovingPhotoBadgeStateType](arkts-apis-photoaccesshelper-e.md#movingphotobadgestatetype22) | 否 | 是 | 设置全局动态照片的效果，当前仅支持MOVING\_PHOTO\_ENABLED和MOVING\_PHOTO\_DISABLED。默认为MOVING\_PHOTO\_ENABLED。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
 | gridPinchMode23+ | [GridPinchMode](arkts-apis-photoaccesshelper-i.md#gridpinchmode23) | 否 | 是 | picker内宫格捏合模式。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
+| showDateOnScrollbar24+ | boolean | 否 | 是 | 是否在拖动滚动条时展示日期分组信息，true表示展示，false表示不展示，默认为false。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
+| assetCompatibleCapability24+ | [AssetCompatibleCapability](arkts-apis-photoaccesshelper-i.md#assetcompatiblecapability24) | 否 | 是 | 资产兼容性能力配置。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
+| preferredCompatibleMode | [PreferredCompatibleMode](arkts-apis-photoaccesshelper-e.md#preferredcompatiblemode) | 否 | 是 | 资产兼容性模式配置。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **起始版本：** 26.0.0 |
 
 ## PhotoSelectOptions
-
-PhonePC/2in1TabletTV
 
 PhotoSelectOptions extends BaseSelectOptions
 
@@ -75,10 +72,10 @@ PhotoSelectOptions extends BaseSelectOptions
 | maxPhotoSelectNumber23+ | number | 否 | 是 | 支持设置的图片最大的选择数量。单位：个。  受到最大选择总数的限制，最大值为500。默认为500。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API**：从API version 23开始，该接口支持在元服务中使用。 |
 | maxVideoSelectNumber23+ | number | 否 | 是 | 支持设置的视频最大的选择数量。单位：个。  受到系统中所有媒体文件最大选择总数的限制，最大值为500。默认为500。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
 | isReturnToPhotoBrowserEnabled23+ | boolean | 否 | 是 | 在单选模式下，拍完照是否能自动跳转到大图预览模式，true表示支持，false表示不支持，默认为false。  **注意：** 该参数配置为true时仅在[SingleSelectionMode](arkts-apis-photoaccesshelper-e.md#singleselectionmode18)为BROWSER\_MODE（大图预览模式）或者BROWSER\_AND\_SELECT\_MODE（兼容模式）并且[BaseSelectOptions.isPreviewForSingleSelectionSupported](arkts-apis-photoaccesshelper-class.md#baseselectoptions)参数为true时生效。  **模型约束**： 此接口仅可在Stage模型下使用。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
+| isSelectionNumberVisible | boolean | 否 | 是 | 是否支持选择序号。true表示支持，false表示不支持，默认值为false。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **起始版本：** 26.0.0 |
+| isSelectionOrderAdjustable | boolean | 否 | 是 | 是否支持调整选择顺序。true表示支持，false表示不支持，默认值为false。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **起始版本：** 26.0.0 |
 
 ## PhotoSelectResult
-
-PhonePC/2in1TabletTV
 
 返回图库选择后的结果集。
 
@@ -86,14 +83,12 @@ PhonePC/2in1TabletTV
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| photoUris | Array<string> | 否 | 否 | 返回图库选择后的媒体文件的URI数组。  此URI数组只能通过临时授权的方式调用[photoAccessHelper.getAssets](arkts-apis-photoaccesshelper-photoaccesshelper.md#getassets)接口去使用，具体使用方式请参考[媒体文件URI的使用方式](../harmonyos-guides/user-file-uri-intro.md#媒体文件uri的使用方式)。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| photoUris | Array<string> | 否 | 否 | 返回图库选择后的媒体文件的URI数组。  此URI数组只能通过临时授权的方式调用[photoAccessHelper.getAssets](arkts-apis-photoaccesshelper-photoaccesshelper.md#getassets)接口去使用，具体使用方式请参考[媒体文件URI的使用方式](../harmonyos-guides/user-file-uri-intro.md#媒体文件uri的使用方式)。  **注意：**  当资源为连拍照片类型时，则返回该连拍组的所有资源，判断是否为连拍图的方式请参考[通过URI判断连拍图资源](../harmonyos-guides/medialibrary-asset-judgment-faq.md#通过uri判断连拍图资源)。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | isOriginalPhoto | boolean | 否 | 否 | 返回图库选择后的媒体文件是否为原图。true表示是原图，false表示不是原图，默认值是false。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | contextRecoveryInfo21+ | [ContextRecoveryInfo](arkts-apis-photoaccesshelper-class.md#contextrecoveryinfo21) | 否 | 否 | 当用户完成选择时返回的photoSelectResult将包含退出picker的上下文信息contextRecoveryInfo，支持应用下次启动PhotoPicker时设置给PhotoSelectOptions用于上次退出时现场的恢复。  **元服务API：** 从API version 21开始，该接口支持在元服务中使用。 |
 | movingPhotoBadgeStates22+ | Array<[MovingPhotoBadgeStateType](arkts-apis-photoaccesshelper-e.md#movingphotobadgestatetype22)> | 否 | 否 | 返回图库选择的媒体文件动态照片状态数组。  当isMovingPhotoBadgeShown为true时，movingPhotoBadgeStates携带动态照片状态，反之为空。  **元服务API：** 从API version 22开始，该接口支持在元服务中使用。 |
 
 ## AutoPlayScene23+
-
-PhonePC/2in1TabletTV
 
 动态照片在不同场景中的播放模式。
 
@@ -108,8 +103,6 @@ PhonePC/2in1TabletTV
 
 ## MimeTypeFilter19+
 
-PhonePC/2in1TabletTV
-
 文件类型的过滤配置。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
@@ -121,8 +114,6 @@ PhonePC/2in1TabletTV
 | mimeTypeArray | Array<string> | 否 | 否 | PhotoPicker可供用户选择媒体文件的过滤类型。数组长度最大为10，因此支持最多十种指定类型。  过滤类型参考MIME类型定义，例如：“image/jpeg”、“video/mp4”等。 |
 
 ## FileSizeFilter19+
-
-PhonePC/2in1TabletTV
 
 可选择媒体文件大小的过滤配置。
 
@@ -138,8 +129,6 @@ PhonePC/2in1TabletTV
 
 ## VideoDurationFilter19+
 
-PhonePC/2in1TabletTV
-
 可选择媒体文件视频时长的过滤配置。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
@@ -154,8 +143,6 @@ PhonePC/2in1TabletTV
 
 ## RecentPhotoOptions20+
 
-PhonePC/2in1TabletTV
-
 最近图片配置选项。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
@@ -168,8 +155,6 @@ PhonePC/2in1TabletTV
 
 ## RecentPhotoInfo20+
 
-PhonePC/2in1TabletTV
-
 最近图片相关信息。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
@@ -180,8 +165,6 @@ PhonePC/2in1TabletTV
 | identifier | string | 否 | 是 | 最近图片/视频的名称hash值，用于辅助应用区分最新图片组件将要显示的图片/视频与之前曾显示过的图片/视频是否为同一个。  **元服务API**：从API version 20开始，该接口支持在元服务中使用。 |
 
 ## PhotoViewMimeTypeFileSizeFilter20+
-
-PhonePC/2in1TabletTV
 
 指定媒体文件类型和文件大小进行过滤。
 
@@ -196,8 +179,6 @@ PhonePC/2in1TabletTV
 
 ## ContextRecoveryInfo21+
 
-PhonePC/2in1TabletTV
-
 PhotoPicker退出界面的上下文信息，可以用于下次使用PhotoPicker时恢复上次退出时的现场。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
@@ -210,11 +191,11 @@ PhotoPicker退出界面的上下文信息，可以用于下次使用PhotoPicker�
 | recommendationType | number | 否 | 否 | 用户上次选择时设置的推荐内容枚举值，参考[RecommendationType](arkts-apis-photoaccesshelper-e.md#recommendationtype11)值定义。  上次选择时未设置推荐时，默认为0。  **元服务API：** 从API version 21开始，该接口支持在元服务中使用。 |
 | selectedRecommendationType | number | 否 | 否 | 用户上次选择时选中的推荐内容枚举值，参考[RecommendationType](arkts-apis-photoaccesshelper-e.md#recommendationtype11)值定义。  当上次选择未选中推荐项，选中"全部"时，默认为0。  **元服务API：** 从API version 21开始，该接口支持在元服务中使用。 |
 | version | number | 否 | 否 | 现场数据版本号，用于校验现场信息数据与现场恢复能力的匹配度。  版本号必须大于等于1.0。  **元服务API：** 从API version 21开始，该接口支持在元服务中使用。 |
-| gridLevel23+ | [GridLevel](arkts-apis-photoaccesshelper-e.md#gridlevel23) | 否 | 是 | 用户上次退出宫格时的档位。  **模型约束**：此接口仅可在Stage模型下使用。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
+| gridLevel23+ | [GridLevel](arkts-apis-photoaccesshelper-e.md#gridlevel23) | 否 | 是 | 用户上次退出宫格时的档位。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
+| sortRule24+ | string | 否 | 是 | 用户上次选择图片的宫格界面的排序规则，默认为空字符串。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
+| fileSize24+ | number | 否 | 是 | 用户上次选择图片的宫格界面中，左上角首张图片的文件大小，默认为0。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
 
 ## OperationItem22+
-
-PhonePC/2in1TabletTV
 
 选择媒体文件的过滤配置。
 
@@ -227,12 +208,10 @@ PhonePC/2in1TabletTV
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | operationType | [OperationType](arkts-apis-photoaccesshelper-e.md#operationtype22) | 否 | 否 | 各类谓词的枚举。 |
-| field | [PhotoKeys](arkts-apis-photoaccesshelper-e.md#photokeys) | 否 | 是 | 数据表中的列名。  当前仅支持如下关键字段：URI、PHOTO\_TYPE、DISPLAY\_NAME、SIZE、DURATION、WIDTH、HEIGHT、ORIENTATION、FAVORITE、TITLE、POSITION、PHOTO\_SUBTYPE、DYNAMIC\_RANGE\_TYPE、COVER\_POSITION、BURST\_KEY、LCD\_SIZE、THM\_SIZE、DETAIL\_TIME、MEDIA\_SUFFIX、OWNER\_ALBUM\_ID、ASPECT\_RATIO  通过[select](arkts-apis-photoaccesshelper-photoviewpicker.md#select)接口配置此参数时，输入非法字段会抛出错误码401；通过[PhotoPickerComponent (PhotoPicker组件)](ohos-file-photopickercomponent.md)配置此参数时，输入非法字段无onPickerControllerReady回调。  非条件谓词如and、or、beginWrap、endWrap等不涉及该字段。 |
+| field | [PhotoKeys](arkts-apis-photoaccesshelper-e.md#photokeys) | 否 | 是 | 数据表中的列名。  当前仅支持如下关键字段：URI、PHOTO\_TYPE、DISPLAY\_NAME、SIZE、DURATION、WIDTH、HEIGHT、ORIENTATION、FAVORITE、TITLE、POSITION、PHOTO\_SUBTYPE、DYNAMIC\_RANGE\_TYPE、COVER\_POSITION、BURST\_KEY、LCD\_SIZE、THM\_SIZE、DETAIL\_TIME、MEDIA\_SUFFIX、OWNER\_ALBUM\_ID、ASPECT\_RATIO、DATE\_TAKEN\_MS24+  通过[select](arkts-apis-photoaccesshelper-photoviewpicker.md#select)接口配置此参数时，输入非法字段会抛出错误码401；通过[PhotoPickerComponent (PhotoPicker组件)](ohos-file-photopickercomponent.md)配置此参数时，输入非法字段无onPickerControllerReady回调。  非条件谓词如and、or、beginWrap、endWrap等不涉及该字段。 |
 | value | Array<[OperationValueType](arkts-apis-photoaccesshelper-t.md#operationvaluetype22)> | 否 | 是 | 不同谓词所需匹配的值。  非条件谓词如and、or、beginWrap、endWrap等不涉及该字段。  限制最大长度为10，超出则取前10个值。 |
 
 ## RequestReadPermissionResult23+
-
-PhonePC/2in1TabletTV
 
 包含已授权的uri列表和无效的uri列表。
 

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-medi
 title: media_asset_capi.h
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > C API > 头文件 > media_asset_capi.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:21+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:cd1ec55812c5f9aa74225bae4bac6ad16eaf9d3e8936e061efe76f889c01fe5b
+scraped_at: 2026-09-02T15:02:38+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:54886df30f6ea43d7e65e485630ba6e124b1f1d9c484ae332ecf1ce1c7479424
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 定义与媒体资源相关的API。提供获取图像或视频信息的能力。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 函数
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -54,14 +48,10 @@ PhonePC/2in1TabletTV
 
 ## 函数说明
 
-PhonePC/2in1TabletTV
-
 ### OH\_MediaAsset\_GetUri()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAsset_GetUri(OH_MediaAsset* mediaAsset, const char** uri)
+```c
+MediaLibrary_ErrorCode OH_MediaAsset_GetUri(OH_MediaAsset* mediaAsset, const char** uri)
 ```
 
 **描述**
@@ -85,10 +75,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaAsset\_GetMediaType()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAsset_GetMediaType(OH_MediaAsset* mediaAsset, MediaLibrary_MediaType* mediaType)
+```c
+MediaLibrary_ErrorCode OH_MediaAsset_GetMediaType(OH_MediaAsset* mediaAsset, MediaLibrary_MediaType* mediaType)
 ```
 
 **描述**
@@ -112,10 +100,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaAsset\_GetMediaSubType()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAsset_GetMediaSubType(OH_MediaAsset* mediaAsset,MediaLibrary_MediaSubType* mediaSubType)
+```c
+MediaLibrary_ErrorCode OH_MediaAsset_GetMediaSubType(OH_MediaAsset* mediaAsset,MediaLibrary_MediaSubType* mediaSubType)
 ```
 
 **描述**
@@ -139,10 +125,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaAsset\_GetDisplayName()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAsset_GetDisplayName(OH_MediaAsset* mediaAsset, const char** displayName)
+```c
+MediaLibrary_ErrorCode OH_MediaAsset_GetDisplayName(OH_MediaAsset* mediaAsset, const char** displayName)
 ```
 
 **描述**
@@ -166,10 +150,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaAsset\_GetSize()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAsset_GetSize(OH_MediaAsset* mediaAsset, uint32_t* size)
+```c
+MediaLibrary_ErrorCode OH_MediaAsset_GetSize(OH_MediaAsset* mediaAsset, uint32_t* size)
 ```
 
 **描述**
@@ -193,10 +175,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaAsset\_GetDateAdded()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAsset_GetDateAdded(OH_MediaAsset* mediaAsset, uint32_t* dateAdded)
+```c
+MediaLibrary_ErrorCode OH_MediaAsset_GetDateAdded(OH_MediaAsset* mediaAsset, uint32_t* dateAdded)
 ```
 
 **描述**
@@ -210,7 +190,7 @@ PhonePC/2in1TabletTV
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_MediaAsset](capi-mediaassetmanager-oh-mediaasset.md)\* mediaAsset | [OH\_MediaAsset](capi-mediaassetmanager-oh-mediaasset.md)实例。 |
-| uint32\_t\* dateAdded | 资产添加日期。该值是添加文件时间距1970年1月1日的秒数值。 |
+| uint32\_t\* dateAdded | 资产添加日期。该值是添加文件时间距1970年1月1日的秒数值。单位：秒（s）。 |
 
 **返回：**
 
@@ -220,10 +200,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaAsset\_GetDateModified()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAsset_GetDateModified(OH_MediaAsset* mediaAsset, uint32_t* dateModified)
+```c
+MediaLibrary_ErrorCode OH_MediaAsset_GetDateModified(OH_MediaAsset* mediaAsset, uint32_t* dateModified)
 ```
 
 **描述**
@@ -247,10 +225,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaAsset\_GetDateTaken()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAsset_GetDateTaken(OH_MediaAsset* mediaAsset, uint32_t* dateTaken)
+```c
+MediaLibrary_ErrorCode OH_MediaAsset_GetDateTaken(OH_MediaAsset* mediaAsset, uint32_t* dateTaken)
 ```
 
 **描述**
@@ -274,10 +250,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaAsset\_GetDateAddedMs()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAsset_GetDateAddedMs(OH_MediaAsset* mediaAsset, uint32_t* dateAddedMs)
+```c
+MediaLibrary_ErrorCode OH_MediaAsset_GetDateAddedMs(OH_MediaAsset* mediaAsset, uint32_t* dateAddedMs)
 ```
 
 **描述**
@@ -301,10 +275,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaAsset\_GetDateModifiedMs()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAsset_GetDateModifiedMs(OH_MediaAsset* mediaAsset, uint32_t* dateModifiedMs)
+```c
+MediaLibrary_ErrorCode OH_MediaAsset_GetDateModifiedMs(OH_MediaAsset* mediaAsset, uint32_t* dateModifiedMs)
 ```
 
 **描述**
@@ -328,10 +300,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaAsset\_GetDuration()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAsset_GetDuration(OH_MediaAsset* mediaAsset, uint32_t* duration)
+```c
+MediaLibrary_ErrorCode OH_MediaAsset_GetDuration(OH_MediaAsset* mediaAsset, uint32_t* duration)
 ```
 
 **描述**
@@ -355,10 +325,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaAsset\_GetWidth()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAsset_GetWidth(OH_MediaAsset* mediaAsset, uint32_t* width)
+```c
+MediaLibrary_ErrorCode OH_MediaAsset_GetWidth(OH_MediaAsset* mediaAsset, uint32_t* width)
 ```
 
 **描述**
@@ -382,10 +350,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaAsset\_GetHeight()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAsset_GetHeight(OH_MediaAsset* mediaAsset, uint32_t* height)
+```c
+MediaLibrary_ErrorCode OH_MediaAsset_GetHeight(OH_MediaAsset* mediaAsset, uint32_t* height)
 ```
 
 **描述**
@@ -409,15 +375,13 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaAsset\_GetOrientation()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAsset_GetOrientation(OH_MediaAsset* mediaAsset, uint32_t* orientation)
+```c
+MediaLibrary_ErrorCode OH_MediaAsset_GetOrientation(OH_MediaAsset* mediaAsset, uint32_t* orientation)
 ```
 
 **描述**
 
-获取图像的旋转角度，单位为度。
+获取图像的旋转角度，单位为度（°）。
 
 **起始版本：** 12
 
@@ -426,7 +390,7 @@ PhonePC/2in1TabletTV
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_MediaAsset](capi-mediaassetmanager-oh-mediaasset.md)\* mediaAsset | [OH\_MediaAsset](capi-mediaassetmanager-oh-mediaasset.md)实例。 |
-| uint32\_t\* orientation | 图像的旋转角度，单位为度。 |
+| uint32\_t\* orientation | 图像的旋转角度，单位为度（°）。 |
 
 **返回：**
 
@@ -436,10 +400,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaAsset\_IsFavorite()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAsset_IsFavorite(OH_MediaAsset* mediaAsset, uint32_t* favorite)
+```c
+MediaLibrary_ErrorCode OH_MediaAsset_IsFavorite(OH_MediaAsset* mediaAsset, uint32_t* favorite)
 ```
 
 **描述**
@@ -463,10 +425,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaAsset\_GetTitle()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAsset_GetTitle(OH_MediaAsset* mediaAsset, const char** title)
+```c
+MediaLibrary_ErrorCode OH_MediaAsset_GetTitle(OH_MediaAsset* mediaAsset, const char** title)
 ```
 
 **描述**
@@ -490,10 +450,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaAsset\_Release()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAsset_Release(OH_MediaAsset* mediaAsset)
+```c
+MediaLibrary_ErrorCode OH_MediaAsset_Release(OH_MediaAsset* mediaAsset)
 ```
 
 **描述**

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-autom
 title: AutoMappingFn
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OpRegistrationData > AutoMappingFn
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:42:26+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6c88c5ad57d83223ee6626034c1d8f3b44c70f91699a48cf21c82fe2657ea1ad
+content_hash: sha256:ce826d65b7c72b068c4376c00c5484ee51146a6f33bea3d2b7f410036573286b
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:6c88c5ad57d83223ee6626034c1d8f3b44c70f91699a48cf21c82fe2657
 
 ## 函数原型
 
-```
-1. Status AutoMappingFn(const google::protobuf::Message *op_src, ge::Operator &op)
+```cpp
+Status AutoMappingFn(const google::protobuf::Message *op_src, ge::Operator &op)
 ```
 
 ## 参数说明

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-arkweb-6101
 title: ArkWeb
-breadcrumb: 版本说明 > HarmonyOS 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta1引入的变更 > ArkWeb
+breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta1引入的变更 > ArkWeb
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:25+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:16:21+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:892a2170221b51f57ac298359bd7787d00140e020bdd47e7b1b3910680301598
 ---
 

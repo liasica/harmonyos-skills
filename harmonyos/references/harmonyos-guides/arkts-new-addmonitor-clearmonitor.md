@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-add
 title: addMonitor/clearMonitor接口：动态添加/取消监听
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 辅助接口 > addMonitor/clearMonitor接口：动态添加/取消监听
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:24+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:1d7cfc6fa3dcaf4a223908af2aa3905708fe88b1ce57ddce6076dd367979f877
+scraped_at: 2026-09-02T14:59:15+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:67a3d12bc8b6f114ba8ccfc465329ef213fde951f4d91ec0f8d2aa1fedc8c901
 ---
 
 为了动态添加或删除状态管理V2的状态变量的监听函数，开发者可以使用[addMonitor](../harmonyos-references/js-apis-statemanagement.md#addmonitor20)或[clearMonitor](../harmonyos-references/js-apis-statemanagement.md#clearmonitor20)。
 
 在阅读本文档前，建议提前阅读：[@ObservedV2/@Trace](arkts-new-observedv2-and-trace.md)、[@Monitor](arkts-new-monitor.md)。
 
-说明
+**说明** 
 
 从API version 20开始，开发者可以使用UIUtils中的addMonitor/clearMonitor接口动态给状态管理V2的状态变量添加或删除监听函数。
 
@@ -24,8 +24,8 @@ content_hash: sha256:1d7cfc6fa3dcaf4a223908af2aa3905708fe88b1ce57ddce6076dd36797
 
 * 使用addMonitor/clearMonitor接口需要导入UIUtils工具。
 
-  ```
-  1. import { UIUtils } from '@kit.ArkUI';
+  ```ts
+  import { UIUtils } from '@kit.ArkUI';
   ```
 * 仅支持监听状态管理V2的状态变量的变化。
 * clearMonitor仅可以删除addMonitor添加的监听函数，无法删除@Monitor的监听函数。
@@ -34,156 +34,158 @@ content_hash: sha256:1d7cfc6fa3dcaf4a223908af2aa3905708fe88b1ce57ddce6076dd36797
 
 * addMonitor/clearMonitor可以传入数组一次性给多个状态变量添加或删除回调函数。
 
-```
-1. import { UIUtils } from '@kit.ArkUI';
+```typescript
+import { UIUtils } from '@kit.ArkUI';
 
-3. @ObservedV2
-4. class User {
-5. @Trace age: number = 0;
-6. @Trace name: string = 'Jack';
+@ObservedV2
+class User {
+  @Trace public age: number = 0;
+  @Trace public name: string = 'Jack';
 
-8. onChange1(mon: IMonitor) {
-9. mon.dirty.forEach((path: string) => {
-10. console.info(`onChange1: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
-11. });
-12. }
+  onChange1(mon: IMonitor) {
+    mon.dirty.forEach((path: string) => {
+      console.info(`onChange1: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
+    });
+  }
 
-14. constructor() {
-15. UIUtils.addMonitor(this, ['age', 'name'], this.onChange1);
-16. }
-17. }
+  constructor() {
+    UIUtils.addMonitor(this, ['age', 'name'], this.onChange1);
+  }
+}
 
-19. @Entry
-20. @ComponentV2
-21. struct Page {
-22. user: User = new User();
+@Entry
+@ComponentV2
+struct Page {
+  user: User = new User();
 
-24. build() {
-25. Column() {
-26. Text(`User name ${this.user.name}`)
-27. .fontSize(20)
-28. .onClick(() => {
-29. // 改变name，回调onChange1监听函数
-30. this.user.name += '!';
-31. })
-32. Text(`User age ${this.user.age}`)
-33. .fontSize(20)
-34. .onClick(() => {
-35. // age自增，回调onChange1监听函数
-36. this.user.age++;
-37. })
-38. Button('clear name and age monitor fun')
-39. .onClick(() => {
-40. // 删除age和name的onChange1监听函数
-41. // 再次点击Text组件改变name和age，无监听函数回调
-42. UIUtils.clearMonitor(this.user, ['age', 'name'], this.user.onChange1);
-43. })
-44. }
-45. }
-46. }
+  build() {
+    Column() {
+      Text(`User name ${this.user.name}`)
+        .fontSize(20)
+        .onClick(() => {
+          // 改变name，回调onChange1监听函数
+          this.user.name += '!';
+        })
+      Text(`User age ${this.user.age}`)
+        .fontSize(20)
+        .onClick(() => {
+          // age自增，回调onChange1监听函数
+          this.user.age++;
+        })
+      Button('clear name and age monitor fun')
+        .onClick(() => {
+          // 删除age和name的onChange1监听函数
+          // 再次点击Text组件改变name和age，无监听函数回调
+          UIUtils.clearMonitor(this.user, ['age', 'name'], this.user.onChange1);
+        })
+    }
+  }
+}
 ```
 
 * addMonitor可以给path对应的状态变量添加多个监听函数，但是需要注意，如果开发者添加同名的监听函数，则会添加失败，打印错误日志。
 
-```
-1. import { UIUtils } from '@kit.ArkUI';
+```typescript
+import { UIUtils } from '@kit.ArkUI';
 
-3. @ObservedV2
-4. class User {
-5. @Trace age: number = 0;
+@ObservedV2
+class User {
+  @Trace public age: number = 0;
 
-7. onChange1(mon: IMonitor) {
-8. mon.dirty.forEach((path: string) => {
-9. console.info(`onChange1: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
-10. });
-11. }
+  onChange1(mon: IMonitor) {
+    mon.dirty.forEach((path: string) => {
+      console.info(`onChange1: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
+    });
+  }
 
-13. onChange2(mon: IMonitor) {
-14. mon.dirty.forEach((path: string) => {
-15. console.info(`onChange2: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
-16. });
-17. }
+  onChange2(mon: IMonitor) {
+    mon.dirty.forEach((path: string) => {
+      console.info(`onChange2: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
+    });
+  }
 
-19. constructor() {
-20. // 正确用法，给age注册监听函数onChange1
-21. UIUtils.addMonitor(this, 'age', this.onChange1);
-22. // 正确用法，给age注册监听函数onChange2
-23. UIUtils.addMonitor(this, 'age', this.onChange2);
-24. }
-25. }
+  constructor() {
+    // 正确用法，给age注册监听函数onChange1
+    UIUtils.addMonitor(this, 'age', this.onChange1);
+    // 正确用法，给age注册监听函数onChange2
+    UIUtils.addMonitor(this, 'age', this.onChange2);
+  }
+}
 
-27. @Entry
-28. @ComponentV2
-29. struct Page {
-30. user: User = new User();
+@Entry
+@ComponentV2
+struct Page {
+  user: User = new User();
 
-32. onChange1(mon: IMonitor) {
-33. mon.dirty.forEach((path: string) => {
-34. console.info(`onChange1 in View: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
-35. });
-36. }
+  onChange1(mon: IMonitor) {
+    mon.dirty.forEach((path: string) => {
+      console.info(`onChange1 in View: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
+    });
+  }
 
-38. aboutToAppear(): void {
-39. // 错误用法，已经给age注册过方法名为onChange1的函数，无法重复注册相同函数名的监听函数
-40. // 打印错误日志提示添加失败：FIX THIS APPLICATION ERROR: AddMonitor 'onChange1' owned by 'User' path: 'age' - failed when adding duplicate path
-41. UIUtils.addMonitor(this.user, 'age', this.onChange1);
-42. }
+  aboutToAppear(): void {
+    // 错误用法，已经给age注册过方法名为onChange1的函数，无法重复注册相同函数名的监听函数
+    // 打印错误日志提示添加失败：FIX THIS APPLICATION ERROR: AddMonitor 'onChange1' owned
+    // by 'User' path: 'age' - failed when adding duplicate path
+    UIUtils.addMonitor(this.user, 'age', this.onChange1);
+  }
 
-44. build() {
-45. Column() {
-46. Text(`User age ${this.user.age}`)
-47. .fontSize(20)
-48. .onClick(() => {
-49. // age自增，回调User中的onChange1和onChange2方法
-50. this.user.age++;
-51. })
-52. }
-53. }
-54. }
+  build() {
+    Column() {
+      Text(`User age ${this.user.age}`)
+        .fontSize(20)
+        .onClick(() => {
+          // age自增，回调User中的onChange1和onChange2方法
+          this.user.age++;
+        })
+    }
+  }
+}
 ```
 
 * addMonitor设置[isSynchronous](../harmonyos-references/js-apis-statemanagement.md#monitoroptions20)仅第一次有效，即其不能被更改，如果开发者更改isSynchronous，则会打印错误日志。
 
-```
-1. import { UIUtils } from '@kit.ArkUI';
+```typescript
+import { UIUtils } from '@kit.ArkUI';
 
-3. @ObservedV2
-4. class User {
-5. @Trace age: number = 0;
+@ObservedV2
+class User {
+  @Trace public age: number = 0;
 
-7. onChange1(mon: IMonitor) {
-8. mon.dirty.forEach((path: string) => {
-9. console.info(`onChange1: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
-10. });
-11. }
+  onChange1(mon: IMonitor) {
+    mon.dirty.forEach((path: string) => {
+      console.info(`onChange1: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
+    });
+  }
 
-13. constructor() {
-14. // 正确用法，给a注册监听函数onChange1，没有设置options默认为异步监听回调
-15. UIUtils.addMonitor(this, 'age', this.onChange1);
-16. // 错误用法，不能改变this.onChange1的监听回调的方式
-17. // 打印错误日志提示： FIX THIS APPLICATION ERROR: addMonitor failed, current function onChange1 has already register as async, cannot change to sync anymore
-18. UIUtils.addMonitor(this, 'age', this.onChange1, { isSynchronous: true });
-19. }
-20. }
+  constructor() {
+    // 正确用法，给age注册监听函数onChange1，没有设置options默认为异步监听回调
+    UIUtils.addMonitor(this, 'age', this.onChange1);
+    // 错误用法，不能改变this.onChange1的监听回调的方式
+    // 打印错误日志提示： FIX THIS APPLICATION ERROR: addMonitor failed, current function
+    // onChange1 has already register as async, cannot change to sync anymore
+    UIUtils.addMonitor(this, 'age', this.onChange1, { isSynchronous: true });
+  }
+}
 
-22. @Entry
-23. @ComponentV2
-24. struct Page {
-25. user: User = new User();
+@Entry
+@ComponentV2
+struct Page {
+  user: User = new User();
 
-27. build() {
-28. Column() {
-29. Text(`User age ${this.user.age}`)
-30. .fontSize(20)
-31. .onClick(() => {
-32. // age自增，回调onChange1，回调方式为异步回调
-33. // 监听回调的日志：onChange1: User property age change from 0 to 2
-34. this.user.age++;
-35. this.user.age++;
-36. })
-37. }
-38. }
-39. }
+  build() {
+    Column() {
+      Text(`User age ${this.user.age}`)
+        .fontSize(20)
+        .onClick(() => {
+          // age自增，回调onChange1，回调方式为异步回调
+          // 监听回调的日志：onChange1: User property age change from 0 to 2
+          this.user.age++;
+          this.user.age++;
+        })
+    }
+  }
+}
 ```
 
 * clearMonitor可以删除path对应的状态变量的监听函数，开发者可以通过传入监听回调函数来指定删除具体的监听函数，也可以不指定具体的监听函数，删除当前path对应状态变量的所有监听回调函数。
@@ -192,70 +194,72 @@ content_hash: sha256:1d7cfc6fa3dcaf4a223908af2aa3905708fe88b1ce57ddce6076dd36797
 
   监听函数被删除后，状态变量的改变不会再回调对应的监听函数。
 
-```
-1. import { UIUtils } from '@kit.ArkUI';
+```typescript
+import { UIUtils } from '@kit.ArkUI';
 
-3. @ObservedV2
-4. class User {
-5. @Trace age: number = 0;
-6. @Trace name: string = 'Jack';
+@ObservedV2
+class User {
+  @Trace public age: number = 0;
+  @Trace public name: string = 'Jack';
 
-8. onChange1(mon: IMonitor) {
-9. mon.dirty.forEach((path: string) => {
-10. console.info(`onChange1: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
-11. });
-12. }
+  onChange1(mon: IMonitor) {
+    mon.dirty.forEach((path: string) => {
+      console.info(`onChange1: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
+    });
+  }
 
-14. onChange2(mon: IMonitor) {
-15. mon.dirty.forEach((path: string) => {
-16. console.info(`onChange2: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
-17. });
-18. }
+  onChange2(mon: IMonitor) {
+    mon.dirty.forEach((path: string) => {
+      console.info(`onChange2: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
+    });
+  }
 
-20. onChange3(mon: IMonitor) {
-21. mon.dirty.forEach((path: string) => {
-22. console.info(`onChange3: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
-23. });
-24. }
+  onChange3(mon: IMonitor) {
+    mon.dirty.forEach((path: string) => {
+      console.info(`onChange3: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
+    });
+  }
 
-26. constructor() {
-27. UIUtils.addMonitor(this, 'age', this.onChange1);
-28. UIUtils.addMonitor(this, 'age', this.onChange2);
-29. UIUtils.addMonitor(this, 'age', this.onChange3);
-30. }
-31. }
+  constructor() {
+    UIUtils.addMonitor(this, 'age', this.onChange1);
+    UIUtils.addMonitor(this, 'age', this.onChange2);
+    UIUtils.addMonitor(this, 'age', this.onChange3);
+  }
+}
 
-33. @Entry
-34. @ComponentV2
-35. struct Page {
-36. user: User = new User();
+@Entry
+@ComponentV2
+struct Page {
+  user: User = new User();
 
-38. build() {
-39. Column() {
-40. Text(`User age ${this.user.age}`)
-41. .fontSize(20)
-42. .onClick(() => {
-43. // step1：点击age，回调onChange1，onChange2，onChange3
-44. this.user.age++;
-45. })
-46. Button('clear age onChange1').onClick(() => {
-47. // step2：第一次点击该Button。删除onChange1，删除成功。此时点击User age，仅会回调onChange2，onChange3
-48. // step3：再次点击该Button。再次删除onChange1，onChange1已经被删除，此次删除失败
-49. // 打印错误日志：FIX THIS APPLICATION ERROR: cannot clear path age for onChange1 because it was never registered with addMonitor
-50. UIUtils.clearMonitor(this.user, 'age', this.user.onChange1);
-51. })
-52. Button('clear age monitors').onClick(() => {
-53. // step4：删除age所有添加的监听函数。再次点击User age，无监听函数回调
-54. UIUtils.clearMonitor(this.user, 'age');
-55. })
-56. Button('clear name monitors').onClick(() => {
-57. // step5：删除name添加的监听方法。因为name无任何监听回调，删除失败
-58. // 打印错误日志：FIX THIS APPLICATION ERROR: cannot clear path name for current target User because no Monitor function for this path was registered
-59. UIUtils.clearMonitor(this.user, 'name');
-60. })
-61. }
-62. }
-63. }
+  build() {
+    Column() {
+      Text(`User age ${this.user.age}`)
+        .fontSize(20)
+        .onClick(() => {
+          // step1：点击age，回调onChange1，onChange2，onChange3
+          this.user.age++;
+        })
+      Button('clear age onChange1').onClick(() => {
+        // step2：第一次点击该Button。删除onChange1，删除成功。此时点击User age，仅会回调onChange2，onChange3
+        // step3：再次点击该Button。再次删除onChange1，onChange1已经被删除，此次删除失败
+        // 打印错误日志：FIX THIS APPLICATION ERROR: cannot clear path age for onChange1
+        // because it was never registered with addMonitor
+        UIUtils.clearMonitor(this.user, 'age', this.user.onChange1);
+      })
+      Button('clear age monitors').onClick(() => {
+        // step4：删除age所有添加的监听函数。再次点击User age，无监听函数回调
+        UIUtils.clearMonitor(this.user, 'age');
+      })
+      Button('clear name monitors').onClick(() => {
+        // step5：删除name添加的监听方法。因为name无任何监听回调，删除失败
+        // 打印错误日志：FIX THIS APPLICATION ERROR: cannot clear path name for current target
+        // User because no Monitor function for this path was registered
+        UIUtils.clearMonitor(this.user, 'name');
+      })
+    }
+  }
+}
 ```
 
 ## 限制条件
@@ -264,148 +268,148 @@ content_hash: sha256:1d7cfc6fa3dcaf4a223908af2aa3905708fe88b1ce57ddce6076dd36797
 
   下面为addMonitor的例子，clearMonitor同理。
 
-  ```
-  1. import { UIUtils } from '@kit.ArkUI';
+  ```ts
+  import { UIUtils } from '@kit.ArkUI';
 
-  3. @ObservedV2
-  4. class A {
-  5. @Trace a: number = 0;
+  @ObservedV2
+  class A {
+    @Trace a: number = 0;
 
-  7. onChange(mon: IMonitor) {
-  8. mon.dirty.forEach((path: string) => {
-  9. console.info(`A property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
-  10. });
-  11. }
+    onChange(mon: IMonitor) {
+      mon.dirty.forEach((path: string) => {
+        console.info(`A property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
+      });
+    }
 
-  13. constructor() {
-  14. // 正确用法
-  15. UIUtils.addMonitor(this, 'a', this.onChange);
-  16. }
-  17. }
+    constructor() {
+      // 正确用法
+      UIUtils.addMonitor(this, 'a', this.onChange);
+    }
+  }
 
-  19. @Observed
-  20. class B {
-  21. @Track b: number = 0;
+  @Observed
+  class B {
+    @Track b: number = 0;
 
-  23. onChange(mon: IMonitor) {
-  24. mon.dirty.forEach((path: string) => {
-  25. console.info(`B property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
-  26. });
-  27. }
+    onChange(mon: IMonitor) {
+      mon.dirty.forEach((path: string) => {
+        console.info(`B property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
+      });
+    }
 
-  29. constructor() {
-  30. // 目标对象非法入参，当前this为@Observed装饰的对象
-  31. // Error code: 130000
-  32. UIUtils.addMonitor(this, 'b', this.onChange);
-  33. }
-  34. }
+    constructor() {
+      // 目标对象非法入参，当前this为@Observed装饰的对象
+      // Error code: 130000
+      UIUtils.addMonitor(this, 'b', this.onChange);
+    }
+  }
 
-  36. class C {
-  37. @Track c: number = 0;
+  class C {
+    @Track c: number = 0;
 
-  39. onChange(mon: IMonitor) {
-  40. mon.dirty.forEach((path: string) => {
-  41. console.info(`C property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
-  42. });
-  43. }
+    onChange(mon: IMonitor) {
+      mon.dirty.forEach((path: string) => {
+        console.info(`C property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
+      });
+    }
 
-  45. constructor() {
-  46. // 错误用法：目标对象非法入参，当前this为普通class
-  47. // Error code: 130000
-  48. UIUtils.addMonitor(this, 'c', this.onChange);
-  49. // 错误用法：目标对象非法入参undefined
-  50. // Error code: 130000
-  51. UIUtils.addMonitor(undefined, 'c', this.onChange);
-  52. }
-  53. }
+    constructor() {
+      // 错误用法：目标对象非法入参，当前this为普通class
+      // Error code: 130000
+      UIUtils.addMonitor(this, 'c', this.onChange);
+      // 错误用法：目标对象非法入参undefined
+      // Error code: 130000
+      UIUtils.addMonitor(undefined, 'c', this.onChange);
+    }
+  }
 
-  55. let a: A = new A();
-  56. let b: B = new B();
-  57. let c: C = new C();
+  let a: A = new A();
+  let b: B = new B();
+  let c: C = new C();
   ```
 * addMonitor/clearMonitor观察路径必须为string或者为数组，如果开发者传入不支持的类型，则会有运行时报错，错误码为130001。
 
   下面为addMonitor的例子，clearMonitor同理。
 
-  ```
-  1. import { UIUtils } from '@kit.ArkUI';
+  ```ts
+  import { UIUtils } from '@kit.ArkUI';
 
-  3. @ObservedV2
-  4. class A {
-  5. @Trace a: number = 0;
-  6. @Trace b: number = 0;
-  7. invalidPath: number | string = 0;
+  @ObservedV2
+  class A {
+    @Trace a: number = 0;
+    @Trace b: number = 0;
+    invalidPath: number | string = 0;
 
-  9. onChange(mon: IMonitor) {
-  10. mon.dirty.forEach((path: string) => {
-  11. console.info(`A property ${path} change from ${mon.value(path)?.before} to   ${mon.value(path)?.now}`);
-  12. });
-  13. }
+    onChange(mon: IMonitor) {
+      mon.dirty.forEach((path: string) => {
+        console.info(`A property ${path} change from ${mon.value(path)?.before} to   ${mon.value(path)?.now}`);
+      });
+    }
 
-  15. constructor() {
-  16. // 正确用法
-  17. UIUtils.addMonitor(this, 'a', this.onChange);
-  18. // 正确用法
-  19. UIUtils.addMonitor(this, ['a', 'b'], this.onChange);
-  20. // 错误用法，path必须为string或数组，会发生运行时校验，错误码为130001
-  21. UIUtils.addMonitor(this, this.invalidPath as string, this.onChange);
-  22. // 错误用法，path必须为string或数组，会发生运行时校验，错误码为130001
-  23. UIUtils.addMonitor(this, undefined, this.onChange);
-  24. }
-  25. }
+    constructor() {
+      // 正确用法
+      UIUtils.addMonitor(this, 'a', this.onChange);
+      // 正确用法
+      UIUtils.addMonitor(this, ['a', 'b'], this.onChange);
+      // 错误用法，path必须为string或数组，会发生运行时校验，错误码为130001
+      UIUtils.addMonitor(this, this.invalidPath as string, this.onChange);
+      // 错误用法，path必须为string或数组，会发生运行时校验，错误码为130001
+      UIUtils.addMonitor(this, undefined, this.onChange);
+    }
+  }
 
-  27. let a: A = new A();
+  let a: A = new A();
   ```
 * addMonitor的回调函数必须存在，类型必须为方法类型，且不能为匿名函数，如果开发者传入不支持的类型，则会有运行时报错，错误码为130002。
 
   clearMonitor开发者可以不设置回调函数，如果设置了，其类型必须为function类型，且不能为匿名函数。
 
-  ```
-  1. import { UIUtils } from '@kit.ArkUI';
+  ```ts
+  import { UIUtils } from '@kit.ArkUI';
 
-  3. @ObservedV2
-  4. class A {
-  5. @Trace a: number = 0;
-  6. @Trace b: number = 0;
-  7. invalidFunc: Function | number = 0;
+  @ObservedV2
+  class A {
+    @Trace a: number = 0;
+    @Trace b: number = 0;
+    invalidFunc: Function | number = 0;
 
-  9. onChange1(mon: IMonitor) {
-  10. mon.dirty.forEach((path: string) => {
-  11. console.info(`A property ${path} change from ${mon.value(path)?.before} to   ${mon.value(path)?.now}`);
-  12. });
-  13. }
+    onChange1(mon: IMonitor) {
+      mon.dirty.forEach((path: string) => {
+        console.info(`A property ${path} change from ${mon.value(path)?.before} to   ${mon.value(path)?.now}`);
+      });
+    }
 
-  15. onChange2(mon: IMonitor) {
-  16. mon.dirty.forEach((path: string) => {
-  17. console.info(`A property ${path} change from ${mon.value(path)?.before} to   ${mon.value(path)?.now}`);
-  18. });
-  19. }
+    onChange2(mon: IMonitor) {
+      mon.dirty.forEach((path: string) => {
+        console.info(`A property ${path} change from ${mon.value(path)?.before} to   ${mon.value(path)?.now}`);
+      });
+    }
 
-  21. constructor() {
-  22. // 正确用法，给变量a添加函数onChange1
-  23. UIUtils.addMonitor(this, 'a', this.onChange1);
-  24. // 正确用法，给变量a添加函数onChange2
-  25. UIUtils.addMonitor(this, 'a', this.onChange2);
-  26. // 正确用法，给变量b添加函数onChange1
-  27. UIUtils.addMonitor(this, 'b', this.onChange1);
-  28. // 错误用法。传入的回调函数为非function类型，错误码130002
-  29. UIUtils.addMonitor(this, 'a', undefined);
-  30. // 错误用法，传入的回调函数为匿名函数，错误码130002
-  31. UIUtils.addMonitor(this, 'a', (mon: IMonitor) => {});
-  32. // 错误用法，绕过编译器检查，传入的回调函数为非Function类型，错误码130002
-  33. UIUtils.addMonitor(this, 'a', this.invalidFunc as (mon: IMonitor) => void);
-  34. }
-  35. }
+    constructor() {
+      // 正确用法，给变量a添加函数onChange1
+      UIUtils.addMonitor(this, 'a', this.onChange1);
+      // 正确用法，给变量a添加函数onChange2
+      UIUtils.addMonitor(this, 'a', this.onChange2);
+      // 正确用法，给变量b添加函数onChange1
+      UIUtils.addMonitor(this, 'b', this.onChange1);
+      // 错误用法。传入的回调函数为非function类型，错误码130002
+      UIUtils.addMonitor(this, 'a', undefined);
+      // 错误用法，传入的回调函数为匿名函数，错误码130002
+      UIUtils.addMonitor(this, 'a', (mon: IMonitor) => {});
+      // 错误用法，绕过编译器检查，传入的回调函数为非Function类型，错误码130002
+      UIUtils.addMonitor(this, 'a', this.invalidFunc as (mon: IMonitor) => void);
+    }
+  }
 
-  37. let a: A = new A();
-  38. // 正确用法，删除a注册的监听函数onChange1
-  39. UIUtils.clearMonitor(a, 'a', a.onChange1);
-  40. // 正确用法，删除a所有的监听函数
-  41. UIUtils.clearMonitor(a, 'a');
-  42. // 正确用法。等于不传参数，删除b所有的监听函数
-  43. UIUtils.clearMonitor(a, 'a', undefined);
-  44. // 错误用法，传入的回调函数为匿名函数，错误码130002
-  45. UIUtils.clearMonitor(a, 'a', (mon: IMonitor) => {});
+  let a: A = new A();
+  // 正确用法，删除a注册的监听函数onChange1
+  UIUtils.clearMonitor(a, 'a', a.onChange1);
+  // 正确用法，删除a所有的监听函数
+  UIUtils.clearMonitor(a, 'a');
+  // 正确用法。等于不传参数，删除a所有的监听函数
+  UIUtils.clearMonitor(a, 'a', undefined);
+  // 错误用法，传入的回调函数为匿名函数，错误码130002
+  UIUtils.clearMonitor(a, 'a', (mon: IMonitor) => {});
   ```
 
 ## addMonitor监听变化的规则
@@ -417,12 +421,13 @@ addMonitor和装饰器[@Monitor](arkts-new-monitor.md)监听变化的主要规�
 | [监听@ObservedV2类中@Trace修饰属性的变化](arkts-new-addmonitor-clearmonitor.md#监听observedv2类中trace修饰属性和componentv2组件中状态变量的变化) | 支持 | 支持 |
 | [监听@ComponentV2组件中状态变量的变化](arkts-new-addmonitor-clearmonitor.md#监听observedv2类中trace修饰属性和componentv2组件中状态变量的变化) | 支持 | 支持 |
 | [监听数组类型状态变量的下标和length的变化](arkts-new-addmonitor-clearmonitor.md#监听数组类型状态变量的下标和length的变化) | 支持 | 支持 |
-| 监听Map、Set、Date类型状态变量变化 | 不支持 | 不支持 |
-| [独立监听path变化](arkts-new-addmonitor-clearmonitor.md#独立监听path) | 支持 | 不支持 |
-| [监听变量从可访问到不访问和从不可访问到可访问](arkts-new-addmonitor-clearmonitor.md#监听变量从可访问到不访问和从不可访问到可访问) | 支持 | 不支持 |
+| [监听内置类型状态变量API调用](arkts-new-addmonitor-clearmonitor.md#监听内置类型状态变量api调用) | 默认不支持，从API版本26.0.0开始，可通过配置项支持 | 默认不支持，从API版本26.0.0开始，可通过配置项支持 |
+| [独立监听path变化](arkts-new-addmonitor-clearmonitor.md#独立监听path) | 支持 | 默认不支持，从API版本26.0.0开始，可通过配置项支持 |
+| [监听变量从可访问到不可访问和从不可访问到可访问](arkts-new-addmonitor-clearmonitor.md#监听变量从可访问到不可访问和从不可访问到可访问) | 支持 | 默认不支持，从API版本26.0.0开始，可通过配置项支持 |
 | [配置同步监听函数](arkts-new-addmonitor-clearmonitor.md#配置同步监听函数) | 支持 | 不支持 |
 | [监听构造函数中同步修改的状态变量的变化](arkts-new-addmonitor-clearmonitor.md#监听构造函数中同步修改的状态变量的变化) | 支持 | 不支持 |
 | [动态取消@ObservedV2/@ComponentV2实例的监听](arkts-new-addmonitor-clearmonitor.md#动态取消observedv2componentv2实例的监听) | 支持 | 不支持 |
+| [使用包含通配符的路径](arkts-new-addmonitor-clearmonitor.md#使用包含通配符的路径) | 默认不支持，从API版本26.0.0开始，可通过配置项支持 | 默认不支持，从API版本26.0.0开始，可通过配置项支持 |
 
 ## 使用场景
 
@@ -436,128 +441,128 @@ addMonitor和装饰器[@Monitor](arkts-new-monitor.md)监听变化的主要规�
 * 点击Text(`User age ${this.user.age}`)，改变age的值，触发onChange方法。
 * 点击Text(`reset User`)，对user整体赋值，触发onChangeInView方法。
 
-```
-1. import { UIUtils } from '@kit.ArkUI';
+```typescript
+import { UIUtils } from '@kit.ArkUI';
 
-3. @ObservedV2
-4. class User {
-5. @Trace age: number = 0;
-6. @Trace name: string = 'Jack';
+@ObservedV2
+class User {
+  @Trace public age: number = 0;
+  @Trace public name: string = 'Jack';
 
-8. onChange(mon: IMonitor) {
-9. mon.dirty.forEach((path: string) => {
-10. console.info(`onChange: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
-11. });
-12. }
+  onChange(mon: IMonitor) {
+    mon.dirty.forEach((path: string) => {
+      console.info(`onChange: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
+    });
+  }
 
-14. constructor() {
-15. UIUtils.addMonitor(this, ['age', 'name'], this.onChange);
-16. }
-17. }
+  constructor() {
+    UIUtils.addMonitor(this, ['age', 'name'], this.onChange);
+  }
+}
 
-19. @Entry
-20. @ComponentV2
-21. struct Page {
-22. @Local user: User = new User();
+@Entry
+@ComponentV2
+struct Page {
+  @Local user: User = new User();
 
-24. onChangeInView(mon: IMonitor) {
-25. mon.dirty.forEach((path: string) => {
-26. console.info(`onChange in View: View property ${path} change from ${JSON.stringify(mon.value(path)?.before)} to ${JSON.stringify(mon.value(path)?.now)}`);
-27. });
-28. }
+  onChangeInView(mon: IMonitor) {
+    mon.dirty.forEach((path: string) => {
+      console.info(`onChange in View: View property ${path} change from ${JSON.stringify(mon.value(path)?.before)} to ${JSON.stringify(mon.value(path)?.now)}`);
+    });
+  }
 
-30. aboutToAppear(): void {
-31. UIUtils.addMonitor(this, 'user', this.onChangeInView);
-32. }
+  aboutToAppear(): void {
+    UIUtils.addMonitor(this, 'user', this.onChangeInView);
+  }
 
-34. build() {
-35. Column() {
-36. Text(`User name ${this.user.name}`)
-37. .fontSize(20)
-38. .onClick(() => {
-39. // 改变name，回调onChange监听函数
-40. this.user.name += '!';
-41. })
-42. Text(`User age ${this.user.age}`)
-43. .fontSize(20)
-44. .onClick(() => {
-45. // age自增，回调onChange监听函数
-46. this.user.age++;
-47. })
-48. Text(`reset User`)
-49. .fontSize(20)
-50. .onClick(() => {
-51. // user整体赋值，回调onChangeInView监听函数
-52. this.user = new User();
-53. })
-54. }
-55. }
-56. }
+  build() {
+    Column() {
+      Text(`User name ${this.user.name}`)
+        .fontSize(20)
+        .onClick(() => {
+          // 改变name，回调onChange监听函数
+          this.user.name += '!';
+        })
+      Text(`User age ${this.user.age}`)
+        .fontSize(20)
+        .onClick(() => {
+          // age自增，回调onChange监听函数
+          this.user.age++;
+        })
+      Text(`reset User`)
+        .fontSize(20)
+        .onClick(() => {
+          // user整体赋值，回调onChangeInView监听函数
+          this.user = new User();
+        })
+    }
+  }
+}
 ```
 
 ### 监听数组类型状态变量的下标和length的变化
 
 下面的例子展示了对Array数组下标和length的监听。
 
-```
-1. import { UIUtils } from '@kit.ArkUI';
+```typescript
+import { UIUtils } from '@kit.ArkUI';
 
-3. @Entry
-4. @ComponentV2
-5. struct Page {
-6. @Local arr: string[] = ['a', 'b', 'c']
+@Entry
+@ComponentV2
+struct Page {
+  @Local arr: string[] = ['a', 'b', 'c']
 
-8. onChange(mon: IMonitor) {
-9. mon.dirty.forEach((path: string) => {
-10. console.info(`onChange: View property ${path} change from ${JSON.stringify(mon.value(path)?.before)} to ${JSON.stringify(mon.value(path)?.now)}`);
-11. });
-12. }
+  onChange(mon: IMonitor) {
+    mon.dirty.forEach((path: string) => {
+      console.info(`onChange: View property ${path} change from ${JSON.stringify(mon.value(path)?.before)} to ${JSON.stringify(mon.value(path)?.now)}`);
+    });
+  }
 
-14. aboutToAppear(): void {
-15. // 添加对数组index为0,1,2和数组length的监听回调onChange
-16. UIUtils.addMonitor(this, ['arr.0', 'arr.1', 'arr.2', 'arr.length'], this.onChange);
-17. }
+  aboutToAppear(): void {
+    // 添加对数组index为0,1,2和数组length的监听回调onChange
+    UIUtils.addMonitor(this, ['arr.0', 'arr.1', 'arr.2', 'arr.length'], this.onChange);
+  }
 
-19. build() {
-20. Column() {
-21. Text(`len ${this.arr.length}`).fontSize(20)
-22. Text(`${this.arr[0]}`).fontSize(20).onClick(() => {
-23. // 改变数组index为0的数组项
-24. // onChange回调：onChange: View property arr.0 change from "a" to "az"
-25. this.arr[0] += 'z';
-26. })
-27. Text(`${this.arr[1]}`).fontSize(20).onClick(() => {
-28. // 改变数组index为1的数组项
-29. // onChange回调：onChange: View property arr.1 change from "b" to "bz"
-30. this.arr[1] += 'z';
-31. })
-32. Text(`${this.arr[2]}`).fontSize(20).onClick(() => {
-33. // 改变数组index为2的数组项
-34. // onChange回调：onChange: View property arr.2 change from "c" to "cz"
-35. this.arr[2] += 'z';
-36. })
-37. Text(`push`).fontSize(20).onClick(() => {
-38. // 在数组末尾push新数组项'd'，其index为4，index为4没有被监听
-39. // 数组长度改变，length被监听
-40. // onChange回调：onChange: View property arr.length change from 3 to 4
-41. this.arr.push('d');
-42. })
-43. Text(`shift`).fontSize(20).onClick(() => {
-44. // 删除数组第一个元素
-45. // 0: az -> bz
-46. // 1: bz -> cz
-47. // 2: cz -> d
-48. // length: 4 -> 3
-49. // onChange回调：
-50. // onChange: View property arr.0 change from "az" to "bz"
-51. // onChange: View property arr.1 change from "bz" to "cz"
-52. // onChange: View property arr.2 change from "cz" to "d"
-53. // onChange: View property arr.length change from 4 to 3
-54. this.arr.shift();
-55. })
-56. }
-57. }
-58. }
+  build() {
+    Column() {
+      Text(`len ${this.arr.length}`).fontSize(20)
+      Text(`${this.arr[0]}`).fontSize(20).onClick(() => {
+        // 改变数组index为0的数组项
+        // onChange回调：onChange: View property arr.0 change from "a" to "az"
+        this.arr[0] += 'z';
+      })
+      Text(`${this.arr[1]}`).fontSize(20).onClick(() => {
+        // 改变数组index为1的数组项
+        // onChange回调：onChange: View property arr.1 change from "b" to "bz"
+        this.arr[1] += 'z';
+      })
+      Text(`${this.arr[2]}`).fontSize(20).onClick(() => {
+        // 改变数组index为2的数组项
+        // onChange回调：onChange: View property arr.2 change from "c" to "cz"
+        this.arr[2] += 'z';
+      })
+      Text(`push`).fontSize(20).onClick(() => {
+        // 在数组末尾push新数组项'd'，其index为3，index为3没有被监听
+        // 数组长度改变，length被监听
+        // onChange回调：onChange: View property arr.length change from 3 to 4
+        this.arr.push('d');
+      })
+      Text(`shift`).fontSize(20).onClick(() => {
+        // 删除数组第一个元素
+        // 0: az -> bz
+        // 1: bz -> cz
+        // 2: cz -> d
+        // length: 4 -> 3
+        // onChange回调：
+        // onChange: View property arr.0 change from "az" to "bz"
+        // onChange: View property arr.1 change from "bz" to "cz"
+        // onChange: View property arr.2 change from "cz" to "d"
+        // onChange: View property arr.length change from 4 to 3
+        this.arr.shift();
+      })
+    }
+  }
+}
 ```
 
 ### 独立监听Path
@@ -566,175 +571,175 @@ addMonitor和装饰器[@Monitor](arkts-new-monitor.md)监听变化的主要规�
 
 对于addMonitor，对不同path采取了独立监听的机制，如下面的例子，点击Button('change age&name')，会输出以下日志：
 
-```
-1. property path:age change from 24 to 25
-```
-
-```
-1. import { UIUtils } from '@kit.ArkUI';
-
-3. @ObservedV2
-4. class Info {
-5. name: string = 'John';
-6. @Trace age: number = 24;
-
-8. onPropertyChange(monitor: IMonitor) {
-9. monitor.dirty.forEach((path: string) => {
-10. console.info(`property path:${path} change from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`);
-11. });
-12. }
-
-14. constructor() {
-15. UIUtils.addMonitor(this, ['age', 'name'], this.onPropertyChange);
-16. }
-17. }
-
-19. @Entry
-20. @ComponentV2
-21. struct Index {
-22. info: Info = new Info();
-23. build() {
-24. Column() {
-25. Button('change age&name')
-26. .onClick(() => {
-27. this.info.age = 25; // 同时改变状态变量age和非状态变量name
-28. this.info.name = 'Johny';
-29. })
-30. }
-31. }
-32. }
+```ts
+property path:age change from 24 to 25
 ```
 
-### 监听变量从可访问到不访问和从不可访问到可访问
+```typescript
+import { UIUtils } from '@kit.ArkUI';
 
-[@Monitor不会记录状态变量不可访问时的状态](arkts-new-monitor.md#无法监听变量从可访问变为不可访问和从不可访问变为可访问)，所以其无法监听变量从可访问到不访问和从不可访问到可访问。
+@ObservedV2
+class Info {
+  public name: string = 'John';
+  @Trace public age: number = 24;
 
-addMonitor会记录变量不可访问的状态，所以可以监听变量从可访问到不访问和从不可访问到可访问。例子如下。
+  onPropertyChange(monitor: IMonitor) {
+    monitor.dirty.forEach((path: string) => {
+      console.info(`property path:${path} change from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`);
+    });
+  }
 
+  constructor() {
+    UIUtils.addMonitor(this, ['age', 'name'], this.onPropertyChange);
+  }
+}
+
+@Entry
+@ComponentV2
+struct Index {
+  info: Info = new Info();
+  build() {
+    Column() {
+      Button('change age&name')
+        .onClick(() => {
+          this.info.age = 25; // 同时改变状态变量age和非状态变量name
+          this.info.name = 'Johny';
+        })
+    }
+  }
+}
 ```
-1. import { UIUtils } from '@kit.ArkUI';
 
-3. @ObservedV2
-4. class User {
-5. @Trace age: number = 10;
-6. }
+### 监听变量从可访问到不可访问和从不可访问到可访问
 
-8. @Entry
-9. @ComponentV2
-10. struct Page {
-11. @Local user: User | undefined | null = new User();
+[@Monitor不会记录状态变量不可访问时的状态](arkts-new-monitor.md#无法监听变量从可访问变为不可访问和从不可访问变为可访问)，所以其无法监听变量从可访问到不可访问和从不可访问到可访问。
 
-13. onChange(mon: IMonitor) {
-14. mon.dirty.forEach((path: string) => {
-15. console.info(`onChange: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
-16. });
-17. }
+addMonitor会记录变量不可访问的状态，所以可以监听变量从可访问到不可访问和从不可访问到可访问。例子如下。
 
-19. aboutToAppear() {
-20. UIUtils.addMonitor(this, ['user.age'], this.onChange);
-21. }
+```typescript
+import { UIUtils } from '@kit.ArkUI';
 
-23. build() {
-24. Column() {
-25. Text(`User age ${this.user?.age}`).fontSize(20)
-26. Button('set user to undefined').onClick(() => {
-27. // age可访问->不可访问
-28. // 触发onChange监听回调：onChange: User property user.age change from 10 to undefined
-29. this.user = undefined;
-30. })
-31. Button('set user to User').onClick(() => {
-32. // age不可访问->可访问
-33. // 触发onChange监听回调：onChange: User property user.age change from undefined to 10
-34. this.user = new User();
-35. })
-36. Button('set user to null').onClick(() => {
-37. // age可访问->不可访问
-38. // 触发onChange监听回调：onChange: User property user.age change from 10 to undefined
-39. this.user = null;
-40. })
-41. }
-42. }
-43. }
+@ObservedV2
+class User {
+  @Trace public age: number = 10;
+}
+
+@Entry
+@ComponentV2
+struct Page {
+  @Local user: User | undefined | null = new User();
+
+  onChange(mon: IMonitor) {
+    mon.dirty.forEach((path: string) => {
+      console.info(`onChange: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
+    });
+  }
+
+  aboutToAppear() {
+    UIUtils.addMonitor(this, ['user.age'], this.onChange);
+  }
+
+  build() {
+    Column() {
+      Text(`User age ${this.user?.age}`).fontSize(20)
+      Button('set user to undefined').onClick(() => {
+          // age可访问->不可访问
+          // 触发onChange监听回调：onChange: User property user.age change from 10 to undefined
+          this.user = undefined;
+        })
+      Button('set user to User').onClick(() => {
+        // age不可访问->可访问
+        // 触发onChange监听回调：onChange: User property user.age change from undefined to 10
+        this.user = new User();
+      })
+      Button('set user to null').onClick(() => {
+        // age可访问->不可访问
+        // 触发onChange监听回调：onChange: User property user.age change from 10 to undefined
+        this.user = null;
+      })
+    }
+  }
+}
 ```
 
 ### 配置同步监听函数
 
 和@Monitor仅支持异步监听不同，addMonitor可支持配置成同步监听函数，在下面的例子中，点击Text(`User age ${this.user.age}`)，触发两次age的自增，回调两次onChange函数，日志打印如下：
 
+```ts
+onChange: User property user.age change from 10 to 11
+onChange: User property user.age change from 11 to 12
 ```
-1. onChange: User property user.age change from 10 to 11
-2. onChange: User property user.age change from 11 to 12
-```
 
-```
-1. import { UIUtils } from '@kit.ArkUI';
+```typescript
+import { UIUtils } from '@kit.ArkUI';
 
-3. @ObservedV2
-4. class User {
-5. @Trace age: number = 10;
-6. }
+@ObservedV2
+class User {
+  @Trace public age: number = 10;
+}
 
-8. @Entry
-9. @ComponentV2
-10. struct Page {
-11. @Local user: User = new User();
+@Entry
+@ComponentV2
+struct Page {
+  @Local user: User = new User();
 
-13. onChange(mon: IMonitor) {
-14. mon.dirty.forEach((path: string) => {
-15. console.info(`onChange: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
-16. });
-17. }
+  onChange(mon: IMonitor) {
+    mon.dirty.forEach((path: string) => {
+      console.info(`onChange: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
+    });
+  }
 
-19. aboutToAppear(): void {
-20. // addMonitor支持配置成同步监听函数
-21. UIUtils.addMonitor(this, 'user.age', this.onChange, { isSynchronous: true })
-22. }
+  aboutToAppear(): void {
+    // addMonitor支持配置成同步监听函数
+    UIUtils.addMonitor(this, 'user.age', this.onChange, { isSynchronous: true })
+  }
 
-24. build() {
-25. Column() {
-26. Text(`User age ${this.user.age}`).fontSize(20).onClick(() => {
-27. this.user.age++;
-28. this.user.age++;
-29. })
-30. }
-31. }
-32. }
+  build() {
+    Column() {
+      Text(`User age ${this.user.age}`).fontSize(20).onClick(() => {
+        this.user.age++;
+        this.user.age++;
+      })
+    }
+  }
+}
 ```
 
 如果将上面的例子改成@Monitor，仅会打印一次回调，日志如下：
 
+```ts
+onChange: User property user.age change from 10 to 12
 ```
-1. onChange: User property user.age change from 10 to 12
-```
 
-```
-1. @ObservedV2
-2. class User {
-3. @Trace age: number = 10;
-4. }
+```typescript
+@ObservedV2
+class User {
+  @Trace public age: number = 10;
+}
 
-6. @Entry
-7. @ComponentV2
-8. struct Page {
-9. @Local user: User = new User();
+@Entry
+@ComponentV2
+struct Page {
+  @Local user: User = new User();
 
-11. // @Monitor仅支持异步监听
-12. @Monitor('user.age')
-13. onChange(mon: IMonitor) {
-14. mon.dirty.forEach((path: string) => {
-15. console.info(`onChange: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
-16. });
-17. }
+  // @Monitor仅支持异步监听
+  @Monitor('user.age')
+  onChange(mon: IMonitor) {
+    mon.dirty.forEach((path: string) => {
+      console.info(`onChange: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
+    });
+  }
 
-19. build() {
-20. Column() {
-21. Text(`User age ${this.user.age}`).fontSize(20).onClick(() => {
-22. this.user.age++;
-23. this.user.age++;
-24. })
-25. }
-26. }
-27. }
+  build() {
+    Column() {
+      Text(`User age ${this.user.age}`).fontSize(20).onClick(() => {
+        this.user.age++;
+        this.user.age++;
+      })
+    }
+  }
+}
 ```
 
 ### 监听构造函数中同步修改的状态变量的变化
@@ -746,125 +751,591 @@ addMonitor会记录变量不可访问的状态，所以可以监听变量从可�
 
 日志输出如下：
 
+```ts
+message change from not initialized to initialized
+message change from initialized to Index aboutToAppear
+message change from Index aboutToAppear to Index click to change message
 ```
-1. message change from not initialized to initialized
-2. message change from initialized to Index aboutToAppear
-3. message change from Index aboutToAppear to Index click to change message
-```
 
-```
-1. import { UIUtils } from '@kit.ArkUI';
+```typescript
+import { UIUtils } from '@kit.ArkUI';
 
-3. @ObservedV2
-4. class Info {
-5. @Trace message: string = 'not initialized';
+@ObservedV2
+class Info {
+  @Trace public message: string = 'not initialized';
 
-7. constructor() {
-8. // addMonitor可以监听构造函数中message的变化
-9. UIUtils.addMonitor(this, 'message', this.onMessageChange);
-10. this.message = 'initialized';
-11. }
-12. onMessageChange(monitor: IMonitor) {
-13. console.info(`message change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
-14. }
-15. }
+  constructor() {
+    // addMonitor可以监听构造函数中message的变化
+    UIUtils.addMonitor(this, 'message', this.onMessageChange);
+    this.message = 'initialized';
+  }
+  onMessageChange(monitor: IMonitor) {
+    console.info(`message change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
+  }
+}
 
-17. @Entry
-18. @ComponentV2
-19. struct Page {
-20. info: Info = new Info();
+@Entry
+@ComponentV2
+struct Page {
+  info: Info = new Info();
 
-22. aboutToAppear(): void {
-23. this.info.message = 'Index aboutToAppear';
-24. }
+  aboutToAppear(): void {
+    this.info.message = 'Index aboutToAppear';
+  }
 
-26. build() {
-27. Column() {
-28. Button('change message')
-29. .onClick(() => {
-30. this.info.message = 'Index click to change message';
-31. })
-32. }
-33. }
-34. }
+  build() {
+    Column() {
+      Button('change message')
+        .onClick(() => {
+          this.info.message = 'Index click to change message';
+        })
+    }
+  }
+}
 ```
 
 ### 动态取消@ObservedV2/@ComponentV2实例的监听
 
 和@Monitor不同，addMonitor/clearMonitor可以对不同的@ObservedV2/@ComponentV2实例动态添加监听函数。例子如下。
 
+```typescript
+import { UIUtils } from '@kit.ArkUI';
+
+@ObservedV2
+class User {
+  @Trace public age: number = 10;
+
+  onChange(mon: IMonitor) {
+    mon.dirty.forEach((path: string) => {
+      console.info(`onChange: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
+    });
+  }
+
+  constructor(needMonitor: boolean) {
+    if (needMonitor) {
+      UIUtils.addMonitor(this, 'age', this.onChange);
+    }
+  }
+}
+
+@Entry
+@ComponentV2
+struct Page {
+  @Local user1: User = new User(true);
+  @Local user2: User = new User(false);
+  @Local count: number = 10;
+
+  build() {
+    Column() {
+      Text(`user1 age ${this.user1.age}`).fontSize(20).onClick(() => {
+        // 有Monitor回调
+        this.user1.age++;
+      })
+      Text(`user2 age ${this.user2.age}`).fontSize(20).onClick(() => {
+        // 无Monitor回调
+        this.user2.age++;
+      })
+      Button(`remove user1 monitor`).onClick(() => {
+        UIUtils.clearMonitor(this.user1, 'age', this.user1.onChange);
+      })
+
+      Button(`change count`).onClick(() => {
+        this.count++;
+      })
+
+      Child({ needMonitor: true, count: this.count })
+      Child({ needMonitor: false, count: this.count })
+    }
+  }
+}
+
+@ComponentV2
+struct Child {
+  @Param needMonitor: boolean = false;
+  @Param count: number = 0;
+
+  onChange(mon: IMonitor) {
+    mon.dirty.forEach((path: string) => {
+      console.info(`Child needMonitor ${this.needMonitor} onChange: property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
+    });
+  }
+
+  aboutToAppear(): void {
+    if (this.needMonitor) {
+      UIUtils.addMonitor(this, 'count', this.onChange);
+    }
+  }
+
+  build() {
+    Column() {
+      Text(`${this.count}`).fontSize(20)
+    }
+  }
+}
 ```
-1. import { UIUtils } from '@kit.ArkUI';
 
-3. @ObservedV2
-4. class User {
-5. @Trace age: number = 10;
+### 使用包含通配符的路径
 
-7. onChange(mon: IMonitor) {
-8. mon.dirty.forEach((path: string) => {
-9. console.info(`onChange: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
-10. });
-11. }
+从API版本26.0.0开始，MonitorOptions新增enableWildcard配置项（默认值为false），当显式设置为true时，addMonitor可以支持使用通配符路径。当未配置enableWildcard为true，但使用通配符路径时，该路径被认为不合法，该次addMonitor的添加不会生效。
 
-13. constructor(needMonitor: boolean) {
-14. if (needMonitor) {
-15. UIUtils.addMonitor(this, 'age', this.onChange);
-16. }
-17. }
-18. }
+enableWildcard将在第一次为函数创建监听时生效，后续无法被更改。对enableWildcard值的检查发生在检测到路径中含有通配符时。当首次创建监听时，enableWildcard设置为true，后续路径中不含通配符时，将不会检查enableWildcard的值，因此即使此时传递enableWildcard为false，也会忽略该false，仍添加监听。当首次创建监听时，enableWildcard设置为false，若后续路径中含有通配符，无论enableWildcard是否传递为true，该路径都被认为不合法，该次addMonitor的添加不会生效。
 
-20. @Entry
-21. @ComponentV2
-22. struct Page {
-23. @Local user1: User = new User(true);
-24. @Local user2: User = new User(false);
-25. @Local count: number = 10;
+正确使用通配符的方式如下：
 
-27. build() {
-28. Column() {
-29. Text(`user1 age ${this.user1.age}`).fontSize(20).onClick(() => {
-30. // 有Monitor回调
-31. this.user1.age++;
-32. })
-33. Text(`user2 age ${this.user2.age}`).fontSize(20).onClick(() => {
-34. // 无Monitor回调
-35. this.user2.age++;
-36. })
-37. Button(`remove user1 monitor`).onClick(() => {
-38. UIUtils.clearMonitor(this.user1, 'age', this.user1.onChange);
-39. })
+```ts
+UIUtils.addMonitor(this, 'obj.*', this.onChange, { enableWildcard: true });
+```
 
-41. Button(`change count`).onClick(() => {
-42. this.count++;
-43. })
+以下写法将保持原有行为，不会生效：
 
-45. Child({ needMonitor: true, count: this.count })
-46. Child({ needMonitor: false, count: this.count })
-47. }
-48. }
-49. }
+```ts
+// enableWildcard未配置为true，路径不合法
+UIUtils.addMonitor(this, 'obj.*', this.onChange);
+```
 
-51. @ComponentV2
-52. struct Child {
-53. @Param needMonitor: boolean = false;
-54. @Param count: number = 0;
+通配符路径的使用规则可以参考@Monitor文档中对[监听包含通配符的路径](arkts-new-monitor.md#监听包含通配符的路径)的说明。
 
-56. onChange(mon: IMonitor) {
-57. mon.dirty.forEach((path: string) => {
-58. console.info(`Child needMonitor ${this.needMonitor} onChange: property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
-59. });
-60. }
+addMonitor使用通配符观察对象属性变化的用例如下。
 
-62. aboutToAppear(): void {
-63. if (this.needMonitor) {
-64. UIUtils.addMonitor(this, 'count', this.onChange);
-65. }
-66. }
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { UIUtils } from '@kit.ArkUI';
+@ObservedV2
+class ClassA {
+  @Trace public propA: number = 8;
+  @Trace public propB: number = 99;
 
-68. build() {
-69. Column() {
-70. Text(`${this.count}`).fontSize(20)
-71. }
-72. }
-73. }
+  constructor(a: number, b: number) {
+    this.propA = a;
+    this.propB = b;
+  }
+}
+
+@Entry
+@ComponentV2
+struct MonitorWildcardObject {
+  @Local cls: ClassA = new ClassA(100, 100);
+
+  onClsChanged(m: IMonitor) {
+    hilog.info(0xFF00, 'testTag', '%{public}s', `onClsChanged, dirty: ${m.dirty.toString()}`);
+  }
+
+  aboutToAppear(): void {
+    UIUtils.addMonitor(this, 'cls.*', this.onClsChanged, { enableWildcard: true });
+  }
+
+  build() {
+    Column() {
+      Button(`Change propA: ${this.cls.propA}`)
+        .onClick(() => {
+          this.cls.propA += 1; // 触发onClsChanged
+        })
+      Button(`Change propB: ${this.cls.propB}`)
+        .onClick(() => {
+          this.cls.propB += 1; // 触发onClsChanged
+        })
+      Button('Assign new object')
+        .onClick(() => {
+          this.cls = new ClassA(-200, -200); // 触发onClsChanged
+        })
+      Button('clearMonitor')
+        .onClick(() => {
+          UIUtils.clearMonitor(this, 'cls.*'); // 取消监听
+        })
+    }
+  }
+}
+```
+
+### 监听内置类型状态变量API调用
+
+从API版本26.0.0开始，可以通过配置使用通配符的方式，实现对Array、Map、Set、Date类型状态变量API调用的监听。
+
+**使用通配符监听Array对象的变化**
+
+使能通配符的addMonitor可以监听到数组的API调用。任意数组的方法被调用时，addMonitor注册的回调都会被执行，即使数组为空或并未实际修改数组的内容。API包括push、pop、shift、splice、unshift、copyWithin、fill、reverse、sort。
+
+```typescript
+import { UIUtils } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@ObservedV2
+class Person {
+  @Trace public firstName: string = 'first';
+  @Trace public lastName: string = 'last';
+  constructor(first: string = 'no first', last: string = 'no last') {
+    this.firstName = first;
+    this.lastName = last;
+  }
+}
+
+@ObservedV2
+class ArrayOfPerson extends Array<Person> {}
+
+@ObservedV2
+class TopArray extends Array<ArrayOfPerson> {}
+
+@Entry
+@ComponentV2
+struct DocAddMonitorAPIArrayOfArrays {
+  @Local topArray: TopArray = this.makeNewTopArray();
+
+  topArrayMonitor1Star(monitor: IMonitor) {
+    hilog.info(0xFF00, 'testTag', '%{public}s', `TopArray[1]: ${monitor.dirty.toString()}`);
+  }
+
+  topArrayMonitorStar(monitor: IMonitor) {
+    hilog.info(0xFF00, 'testTag', '%{public}s', `TopArray: ${monitor.dirty.toString()}`);
+  }
+
+  makeNewTopArray(): TopArray {
+    return new TopArray(
+      new ArrayOfPerson(new Person('Adrian'), new Person('Andrew'), new Person('Aaliyah'), new Person('Amir'), new Person('Angel')),
+      new ArrayOfPerson(new Person('Carter'), new Person('Charlie'), new Person('Cooper'), new Person('Cole'), new Person('Callie')),
+      new ArrayOfPerson(new Person('Daniel'), new Person('Daisy'), new Person('Dawson'), new Person('Dana'), new Person('Dalton'))
+    );
+  }
+
+  aboutToAppear(): void {
+    // 使能通配符
+    UIUtils.addMonitor(this, 'topArray.1.*', this.topArrayMonitor1Star, { enableWildcard: true });
+    UIUtils.addMonitor(this, 'topArray.*', this.topArrayMonitorStar, { enableWildcard: true });
+  }
+
+  build() {
+    Column() {
+      // topArrayMonitor1Star与topArrayMonitorStar回调均触发
+      Button('topArray = new TopArray')
+        .onClick(() => {
+          this.topArray = this.makeNewTopArray();
+        })
+
+      // 当topArray[1][0]存在时，topArrayMonitor1Star回调触发，topArrayMonitorStar回调不触发
+      Button('topArray[1][0] = new Person')
+        .onClick(() => {
+          if (this.topArray.length > 1 && this.topArray[1].length > 0) {
+            this.topArray[1][0] = new Person();
+          }
+        })
+
+      // 当topArray[0][1]存在时，topArrayMonitor1Star与topArrayMonitorStar回调均不触发
+      Button('topArray[0][1] = new Person')
+        .onClick(() => {
+          if (this.topArray.length > 0 && this.topArray[0].length > 1) {
+            this.topArray[0][1] = new Person();
+          }
+        })
+
+      // 当topArray[1]存在时，topArrayMonitor1Star回调触发，topArrayMonitorStar回调不触发
+      Button('topArray[1].push')
+        .onClick(() => {
+          if (this.topArray.length > 1 && this.topArray[1] instanceof ArrayOfPerson) {
+            this.topArray[1].push(new Person());
+          }
+        })
+
+      // 当topArray的length大于2时，topArrayMonitor1Star与topArrayMonitorStar回调均触发
+      Button('topArray.shift (length>2)')
+        .onClick(() => {
+          if (this.topArray.length > 2) {
+            this.topArray.shift();
+          }
+        })
+
+      // 当topArray[0]存在时，topArrayMonitor1Star回调不触发，topArrayMonitorStar回调触发
+      Button('topArray[0] = new ArrayOfPerson')
+        .onClick(() => {
+          if (this.topArray.length > 0) {
+            this.topArray[0] = new ArrayOfPerson(new Person(), new Person());
+          }
+        })
+
+      // 当topArray[1][0]存在时，topArrayMonitor1Star与topArrayMonitorStar回调均不触发
+      Button('topArray[1][0].last update')
+        .onClick(() => {
+          if (this.topArray.length > 1 && this.topArray[1].length > 0 && this.topArray[1][0] instanceof Person) {
+            this.topArray[1][0].lastName += '~';
+          }
+        })
+
+      // topArrayMonitor1Star回调不触发，topArrayMonitorStar回调触发
+      Button('topArray = new TopArray, keep [1]')
+        .onClick(() => {
+          let newTop = this.makeNewTopArray();
+          newTop[1] = this.topArray[1]; // topArray.1未改变，路径'topArray.1.*'中通配符前最后一个确定值未改变
+          this.topArray = newTop;
+        })
+
+      // topArrayMonitor1Star回调不触发，topArrayMonitorStar回调触发
+      Button('topArray.push')
+        .onClick(() => {
+          this.topArray.push(new ArrayOfPerson(new Person(), new Person()));
+        })
+
+      // 取消监听
+      Button('clearMonitor')
+        .onClick(() => {
+          UIUtils.clearMonitor(this, 'topArray.1.*');
+          UIUtils.clearMonitor(this, 'topArray.*');
+        })
+    }
+  }
+}
+```
+
+**使用通配符监听Date对象的变化**
+
+使用通配符可以监听Date对象的API调用。
+
+```ts
+UIUtils.addMonitor(target, 'dateInstance.*', callback, { enableWildcard: true });
+```
+
+addMonitor注册的监听会在以下情况回调：
+
+* dateInstance被赋新值。
+* 调用Date的任意API，包括setFullYear、setMonth、setDate、setHours、setMinutes、setSeconds、setMilliseconds、setTime、setUTCFullYear、setUTCMonth、setUTCDate、setUTCHours、setUTCMinutes、setUTCSeconds、setUTCMilliseconds。即使这些API未实际对Date的值产生更改，addMonitor注册的监听回调也会触发。
+
+使用通配符监听Date对象的示例如下。
+
+```typescript
+import { UIUtils } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@ComponentV2 struct DocAddMonitorAPIDate {
+  @Local date: Date = new Date();
+
+  onDateChanged(m: IMonitor) {
+    hilog.info(0xFF00, 'testTag', '%{public}s', `onDateChanged, dirty: ${m.dirty.toString()}`);
+  }
+
+  aboutToAppear(): void {
+    // 使能通配符
+    UIUtils.addMonitor(this, 'date.*', this.onDateChanged, { enableWildcard: true });
+  }
+
+  build() {
+    Column({ space: 5 }) {
+      // API调用触发onDateChanged
+      Button(`date.setMilliseconds(1000)`)
+        .onClick(() => {
+          this.date.setMilliseconds(1000);
+        })
+      // API调用触发onDateChanged
+      Button(`date.setTime(1000000)`)
+        .onClick(() => {
+          this.date.setTime(1000000);
+        })
+      // API调用触发onDateChanged
+      Button(`Assign new Date`)
+        .onClick(() => {
+          this.date = new Date();
+        })
+      // 整体赋相同值，不触发onDateChanged
+      Button(`Re-assign the same Date`)
+        .onClick(() => {
+          let sameDate = this.date;
+          this.date = sameDate;
+        })
+      // 取消监听
+      Button('clearMonitor')
+        .onClick(() => {
+          UIUtils.clearMonitor(this, 'date.*');
+        })
+    }
+  }
+}
+```
+
+**使用通配符监听Map对象的变化**
+
+使用通配符可以监听Map对象的API调用。
+
+```ts
+UIUtils.addMonitor(target, 'mapInstance.*', callback, { enableWildcard: true });
+```
+
+addMonitor注册的监听会在以下情况回调：
+
+* mapInstance被赋新值。
+* 调用Map的API，例如set、delete、clear时触发。与Array、Date不同的是，只有当变化真的发生时，回调才会触发。这意味着，当对空Map调用clear，对不存在的Map键值调用delete，以及不实际改变值的set调用都不会触发addMonitor注册的监听回调。
+
+与Array不同，addMonitor无法对Map的某一个key做监听。
+
+使用通配符监听Map对象的示例如下。
+
+```typescript
+import { UIUtils } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@ComponentV2
+struct DocAddMonitorAPIMap {
+  @Local map: Map<string, string> = new Map<string, string>();
+  cnt: number = 0;
+
+  onMapSizeChanged(m: IMonitor) {
+    hilog.info(0xFF00, 'testTag', '%{public}s', `onMapSizeChanged, size dirty: ${m.dirty.toString()}`);
+  }
+
+  onMapChanged(m: IMonitor) {
+    hilog.info(0xFF00, 'testTag', '%{public}s', `onMapChanged, dirty: ${m.dirty.toString()}`);
+  }
+
+  aboutToAppear(): void {
+    UIUtils.addMonitor(this, 'map.size', this.onMapSizeChanged);
+    // 使能通配符
+    UIUtils.addMonitor(this, 'map.*', this.onMapChanged, { enableWildcard: true });
+  }
+
+  build() {
+    Column({ space: 5 }) {
+      Text(`map.size: ${this.map.size}`)
+      Text(`map.get('one'): ${this.map.get('one')}`)
+      // 在首次点击时，onMapSizeChanged、onMapChanged回调都触发
+      Button(`Init, map.set('one', 'A'), map.set('two', 'B')`)
+        .onClick(() => {
+          this.map.set('one', 'A');
+          this.map.set('two', 'B');
+        })
+      // onMapSizeChanged、onMapChanged回调都触发
+      Button(`Add new, map.set('three' + this.cnt, 'C')`)
+        .onClick(() => {
+          this.cnt++;
+          this.map.set('three' + this.cnt, 'C')
+        })
+      // 当'one'不存在时，onMapSizeChanged、onMapChanged回调都不触发
+      // 当'one'存在时，onMapSizeChanged、onMapChanged回调都触发
+      Button(`Delete from map: map.delete('one')`)
+        .onClick(() => {
+          this.map.delete('one')
+        })
+      // 当map不为空时，onMapSizeChanged、onMapChanged回调都触发
+      // 当map为空时，onMapSizeChanged、onMapChanged回调都不触发
+      Button(`Clear map`)
+        .onClick(() => {
+          this.map.clear();
+        })
+      // 在首次点击且假设存在（'one' -> 'A'）时，仅onMapChanged回调触发
+      // 若已经设置过（'one' -> 'TWO'），则onMapSizeChanged、onMapChanged回调都不触发
+      Button(`Update one to 'TWO' - map.set('one', 'TWO')`)
+        .onClick(() => {
+          this.map.set('one', 'TWO');
+        })
+      // 当Map不存在'one'时，onMapSizeChanged、onMapChanged回调都触发
+      // 当Map存在'one'时，onMapSizeChanged、onMapChanged回调都不会触发
+      Button(`Update one to the same - map.set('one', sameval)`)
+        .onClick(() => {
+          const sameval = this.map.get('one') ?? 'one' ;
+          this.map.set('one', sameval);
+        })
+      // 当Map不存在'one'时，onMapSizeChanged、onMapChanged回调都触发
+      // 当Map存在'one'时，仅onMapChanged回调触发
+      Button(`Update one to new value - map.set('one', newval)`)
+        .onClick(() => {
+          let newval = 'x' + (++this.cnt);
+          this.map.set('one', newval);
+        })
+      // 当map为空时，仅onMapChanged回调触发
+      // 当map不为空时，onMapChanged、onMapSizeChanged回调都触发
+      Button(`new map`)
+        .onClick(() => {
+          this.map = new Map();
+        })
+      // 取消监听
+      Button('clearMonitor')
+        .onClick(() => {
+          UIUtils.clearMonitor(this, 'map.size');
+          UIUtils.clearMonitor(this, 'map.*');
+        })
+    }
+    .border({ style: BorderStyle.Solid, width: 2, color: Color.Green })
+  }
+}
+```
+
+**使用通配符监听Set对象的变化**
+
+使用通配符可以监听Set对象的API调用。
+
+```ts
+UIUtils.addMonitor(target, 'setInstance.*', callback, { enableWildcard: true });
+```
+
+addMonitor注册的监听会在以下情况回调：
+
+* setInstance被赋新值。
+* 调用Set的API，例如add、delete、clear时触发。与Array、Date不同的是，只有当变化真的发生时，回调才会触发。这意味着，当对空Set调用clear，对不存在的Set元素调用delete，以及不实际新增元素的add调用都不会触发addMonitor注册的监听回调。
+
+与Array不同，addMonitor无法对Set的某一个key做监听。
+
+使用通配符监听Set对象的示例如下。
+
+```typescript
+import { UIUtils } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@ComponentV2 struct DocAddMonitorAPISet {
+  @Local set: Set<string> = new Set<string>();
+  cnt: number = 0;
+
+  onSetChanged(m: IMonitor) {
+    hilog.info(0xFF00, 'testTag', '%{public}s', `onSetChanged, dirty: ${m.dirty.toString()}`);
+  }
+
+  onSetSizeChanged(m: IMonitor) {
+    hilog.info(0xFF00, 'testTag', '%{public}s', `onSetSizeChanged, size dirty: ${m.dirty.toString()}`);
+  }
+
+  aboutToAppear(): void {
+    // 使能通配符
+    UIUtils.addMonitor(this, 'set.*', this.onSetChanged, { enableWildcard: true });
+    UIUtils.addMonitor(this, 'set.size', this.onSetSizeChanged);
+    this.set.add('one');
+    this.set.add('two');
+  }
+
+  build() {
+    Column({ space: 5 }) {
+      // onSetChanged、onSetSizeChanged回调都触发
+      Button(`Add three<Num> to the set`)
+        .onClick(() => {
+          this.cnt++;
+          this.set.add('three' + this.cnt);
+        })
+      // 当元素不存在时，onSetChanged、onSetSizeChanged回调都不触发
+      // 当元素存在时，onSetChanged、onSetSizeChanged回调都触发
+      Button(`Delete 'three<Num>' from the set - set.delete(...)`)
+        .onClick(() => {
+          this.set.delete('three' + this.cnt);
+        })
+      // 当set不为空时，onSetChanged、onSetSizeChanged回调都触发
+      // 当set为空时，onSetChanged、onSetSizeChanged回调都不触发
+      Button(`Clear the set - set.clear()`)
+        .onClick(() => {
+          this.set.clear();
+        })
+      // 当set不为空时，onSetChanged、onSetSizeChanged回调都触发
+      // 当set为空时，仅onSetChanged回调触发
+      Button(`Assign new set`)
+        .onClick(() => {
+          this.set = new Set();
+        })
+      // 当set不包含'one'时，onSetChanged、onSetSizeChanged回调都触发
+      // 当set包含'one'时，onSetChanged、onSetSizeChanged回调都不触发
+      Button(`Add 'one' to the set`)
+        .onClick(() => {
+          this.set.add('one');
+        })
+      // 取消监听
+      Button('clearMonitor')
+        .onClick(() => {
+          UIUtils.clearMonitor(this, 'set.*');
+          UIUtils.clearMonitor(this, 'set.size');
+        })
+    }
+  }
+}
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-setbl
 title: SetBlockDim
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > TilingContext > SetBlockDim
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:71ee70651751211d59a3404b97171c7dbe8e48284ed23a75e018f33f6f5baab5
+scraped_at: 2026-09-02T14:50:40+08:00
+doc_updated_at: 2026-08-18
+content_hash: sha256:bbe8ef6ac2b32c2a0a28c7aad1b638dc3eea8586c7b064bb489a9a1458eb0283
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:71ee70651751211d59a3404b97171c7dbe8e48284ed23a75e018f33f6f5
 
 ## 函数原型
 
-```
-1. ge::graphStatus SetBlockDim(const uint32_t block_dim);
+```cpp
+ge::graphStatus SetBlockDim(const uint32_t block_dim);
 ```
 
 ## 参数说明
@@ -32,13 +32,13 @@ content_hash: sha256:71ee70651751211d59a3404b97171c7dbe8e48284ed23a75e018f33f6f5
 
 ## 约束说明
 
-当前支持的Kirin9020和KirinX90系列处理器是分离架构。
+当前支持的Kirin9020、Kirin9030和KirinX90系列处理器是分离架构。
 
 ## 调用示例
 
-```
-1. ge::graphStatus Tiling4XXX(TilingContext* context) {
-2. auto ret = context->SetBlockDim(32);
-3. // ...
-4. }
+```cpp
+ge::graphStatus Tiling4XXX(TilingContext* context) {
+  auto ret = context->SetBlockDim(32);
+  // ...
+}
 ```

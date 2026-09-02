@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-k
 title: "@ohos.multimodalInput.keyCode (键值)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.keyCode (键值)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:14+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:c3cd43d4c29ac33358f1300eb1f3c81029a43b1e5c7b724f8ee99e65e68edd24
+scraped_at: 2026-09-02T15:02:08+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f0497676cf26574e1e4a0b0eef0572ddbc2dee7dcde26edf0d50a8cb19053bda
 ---
 
 按键设备的键值，按键设备包括键盘、光盘、游戏手柄等。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { KeyCode } from '@kit.InputKit';
+```js
+import { KeyCode } from '@kit.InputKit';
 ```
 
 ## KeyCode
-
-PhonePC/2in1TabletTVWearable
 
 键值。
 
@@ -207,7 +203,7 @@ PhonePC/2in1TabletTVWearable
 | KEYCODE\_STOP | 2616 | 停止键。 |
 | KEYCODE\_AGAIN | 2617 | 重复键。 |
 | KEYCODE\_PROPS | 2618 | 道具键。 |
-| KEYCODE\_UNDO | 2619 | 撤消键。 |
+| KEYCODE\_UNDO | 2619 | 撤销键。 |
 | KEYCODE\_COPY | 2620 | 复制键。 |
 | KEYCODE\_OPEN | 2621 | 打开键。 |
 | KEYCODE\_PASTE | 2622 | 粘贴键。 |
@@ -293,7 +289,7 @@ PhonePC/2in1TabletTVWearable
 | KEYCODE\_SPREADSHEET | 2703 | 电子表格键。 |
 | KEYCODE\_GRAPHICSEDITOR | 2704 | 图形编辑器键。 |
 | KEYCODE\_PRESENTATION | 2705 | 演示文稿键。 |
-| KEYCODE\_DATABASE | 2706 | 数据库键标。 |
+| KEYCODE\_DATABASE | 2706 | 数据库键。 |
 | KEYCODE\_NEWS | 2707 | 新闻键。 |
 | KEYCODE\_VOICEMAIL | 2708 | 语音信箱。 |
 | KEYCODE\_ADDRESSBOOK | 2709 | 通讯簿。 |
@@ -319,6 +315,9 @@ PhonePC/2in1TabletTVWearable
 | KEYCODE\_KBDINPUTASSIST\_NEXTGROUP | 2729 | 键盘输入Assist\_Next，切换输入组中下一个输入法。 |
 | KEYCODE\_KBDINPUTASSIST\_ACCEPT | 2730 | 键盘输入Assist\_Accept。 |
 | KEYCODE\_KBDINPUTASSIST\_CANCEL | 2731 | 键盘输入Assist\_Cancel。 |
+| KEYCODE\_MOUSE\_ASSISTANT | 2732 | 鼠标AI助手键。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| KEYCODE\_MOUSE\_INTELLIGENCE\_SELECTION | 2733 | 鼠标智慧框选键。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| KEYCODE\_AOD\_SINGLE\_CLICK | 2740 | 手机触摸屏单击事件，在熄屏显示状态下使用。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | KEYCODE\_FRONT | 2800 | 挡风玻璃除雾器开关。 |
 | KEYCODE\_SETUP | 2801 | 设置键。 |
 | KEYCODE\_WAKEUP | 2802 | 唤醒键。 |
@@ -380,3 +379,6 @@ PhonePC/2in1TabletTVWearable
 | KEYCODE\_DAGGER\_DOUBLE\_CLICK18+ | 3212 | 智能手表智感窗按键双击。 |
 | KEYCODE\_DAGGER\_LONG\_PRESS18+ | 3213 | 智能手表智感窗按键长按。 |
 | KEYCODE\_DIV20+ | 3220 | 智能手表左按键。 |
+| KEYCODE\_XKEY | 3232 | 自定义快捷键。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| KEYCODE\_FINGERPRINT\_SLIDE\_UP | 3233 | 智控键上滑。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| KEYCODE\_FINGERPRINT\_SLIDE\_DOWN | 3234 | 智控键下滑。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |

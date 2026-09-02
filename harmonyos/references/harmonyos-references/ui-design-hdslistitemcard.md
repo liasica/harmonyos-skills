@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdslistitemcard
-title: HdsListItemCard
-breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsListItemCard
+title: HdsListItemCard (列表卡片)
+breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsListItemCard (列表卡片)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:57:14+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:a99c7d4131c11156e550fad6a53eca23221fa19dceb8a1c83dbaa2be0460e98c
+scraped_at: 2026-09-02T15:01:39+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:16f9e742a18ed950d7f2c071f44e6e48c2afa2333aa16580ddf69ec6557a3130
 ---
 
 本模块提供一个HdsListItemCard组件，提升视觉体验，统一组件风格样式，应用使用HdsListItemCard组件实现多设备上的系统列表样式。
@@ -14,15 +14,11 @@ content_hash: sha256:a99c7d4131c11156e550fad6a53eca23221fa19dceb8a1c83dbaa2be046
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { HdsListItemCard } from '@kit.UIDesignKit';
+```typescript
+import { HdsListItemCard } from '@kit.UIDesignKit';
 ```
 
 ## 接口
-
-PhonePC/2in1TabletTVWearable
 
 HdsListItemCard(options: HdsListItemCardOptions)
 
@@ -44,19 +40,15 @@ HdsListItemCard列表项组件。
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
 当前仅支持[通用属性](ts-component-general-attributes.md)。
 
-说明
+**说明** 
 
 1. 该通用属性针对的是HdsListItemCard组件，无法通过其设置组件内部的左侧元素，中间元素，右侧元素的属性。
 2. 对于[HdsListItemCardOptions](ui-design-hdslistitemcard.md#hdslistitemcardoptions)中已经有的列表项属性，比如的cardWidth，cardHeight，cardBackgroundColor，onClick，enable，cardId等，建议直接使用[HdsListItemCardOptions](ui-design-hdslistitemcard.md#hdslistitemcardoptions)进行属性设置，不要使用通用属性。否则，会出现混淆或者不生效。
 3. 不建议使用padding，margin，borderWidth，borderColor，scale等通用属性，会跟HdsListItemCard组件本身内置的属性相冲突，导致布局异常或者不生效。
 
 ## PrefixItem
-
-PhonePC/2in1TabletTVWearable
 
 定义PrefixItem类，HdsListItemCard列表项的A区（列表左侧）元素。
 
@@ -68,8 +60,6 @@ PhonePC/2in1TabletTVWearable
 
 ## PrefixImage
 
-PhonePC/2in1TabletTVWearable
-
 PrefixImage继承自父类[PrefixItem](ui-design-hdslistitemcard.md#prefixitem)，A区（列表左侧）Image元素，穿戴设备中Image大小不可修改，为固定值46vp\*46vp。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -79,8 +69,6 @@ PrefixImage继承自父类[PrefixItem](ui-design-hdslistitemcard.md#prefixitem)�
 **起始版本：** 6.0.0(20)
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -93,8 +81,6 @@ PhonePC/2in1TabletTVWearable
 | options | [ImageClickOptions](ui-design-hdslistitemcard.md#imageclickoptions) | 否 | 是 | A区（列表左侧）Image元素的配置项。 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(options?: ImageClickOptions)
 
@@ -114,8 +100,6 @@ PrefixImage的构造函数。
 
 ## PrefixIcon
 
-PhonePC/2in1TabletTVWearable
-
 PrefixIcon继承自父类[PrefixItem](ui-design-hdslistitemcard.md#prefixitem)，A区（列表左侧）Icon元素。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -125,8 +109,6 @@ PrefixIcon继承自父类[PrefixItem](ui-design-hdslistitemcard.md#prefixitem)�
 **起始版本：** 6.0.0(20)
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -139,8 +121,6 @@ PhonePC/2in1TabletTVWearable
 | options | [PrefixIconOptions](ui-design-hdslistitemcard.md#prefixiconoptions) | 否 | 是 | A区（列表左侧）Icon元素的配置项。 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(options?: PrefixIconOptions)
 
@@ -160,8 +140,6 @@ PrefixIcon的构造函数。
 
 ## PrefixBadge
 
-PhonePC/2in1TabletTVWearable
-
 PrefixBadge继承自父类[PrefixItem](ui-design-hdslistitemcard.md#prefixitem)，A区（列表左侧）Badge元素。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -171,8 +149,6 @@ PrefixBadge继承自父类[PrefixItem](ui-design-hdslistitemcard.md#prefixitem)�
 **起始版本：** 6.0.0(20)
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -185,8 +161,6 @@ PhonePC/2in1TabletTVWearable
 | options | [BadgeOptions](ui-design-hdslistitemcard.md#badgeoptions) | 否 | 是 | A区（列表左侧）Badge元素的配置项。 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(options?: BadgeOptions)
 
@@ -206,8 +180,6 @@ PrefixBadge的构造函数。
 
 ## PrefixSwitch
 
-PhonePC/2in1TabletTVWearable
-
 PrefixSwitch继承自父类[PrefixItem](ui-design-hdslistitemcard.md#prefixitem)，A区（列表左侧）Switch元素。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -217,8 +189,6 @@ PrefixSwitch继承自父类[PrefixItem](ui-design-hdslistitemcard.md#prefixitem)
 **起始版本：** 6.0.0(20)
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -231,8 +201,6 @@ PhonePC/2in1TabletTVWearable
 | options | [CheckOptions](ui-design-hdslistitemcard.md#checkoptions) | 否 | 是 | A区（列表左侧）Switch元素的配置项。 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(options?: CheckOptions)
 
@@ -252,8 +220,6 @@ PrefixSwitch的构造函数。
 
 ## PrefixToggleButton
 
-PhonePC/2in1TabletTVWearable
-
 PrefixToggleButton继承自父类[PrefixItem](ui-design-hdslistitemcard.md#prefixitem)，A区（列表左侧）ToggleButton元素。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -263,8 +229,6 @@ PrefixToggleButton继承自父类[PrefixItem](ui-design-hdslistitemcard.md#prefi
 **起始版本：** 6.0.0(20)
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -277,8 +241,6 @@ PhonePC/2in1TabletTVWearable
 | options | [ToggleButtonOptions](ui-design-hdslistitemcard.md#togglebuttonoptions) | 否 | 是 | A区（列表左侧）ToggleButton元素的配置项。 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(options?: ToggleButtonOptions)
 
@@ -298,8 +260,6 @@ PrefixToggleButton的构造函数。
 
 ## PrefixButton
 
-PhonePC/2in1TabletTVWearable
-
 PrefixButton继承自父类[PrefixItem](ui-design-hdslistitemcard.md#prefixitem)，A区（列表左侧）Button元素。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -309,8 +269,6 @@ PrefixButton继承自父类[PrefixItem](ui-design-hdslistitemcard.md#prefixitem)
 **起始版本：** 6.0.0(20)
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -323,8 +281,6 @@ PhonePC/2in1TabletTVWearable
 | options | [ButtonOptions](ui-design-hdslistitemcard.md#buttonoptions) | 否 | 是 | A区（列表左侧）Button元素的配置项。 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(options?: ButtonOptions)
 
@@ -344,8 +300,6 @@ PrefixButton的构造函数。
 
 ## PrefixCustomBuilder
 
-PhonePC/2in1TabletTVWearable
-
 PrefixCustomBuilder继承自父类[PrefixItem](ui-design-hdslistitemcard.md#prefixitem)，A区（列表左侧）自定义内容。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -355,8 +309,6 @@ PrefixCustomBuilder继承自父类[PrefixItem](ui-design-hdslistitemcard.md#pref
 **起始版本：** 6.0.0(20)
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -369,8 +321,6 @@ PhonePC/2in1TabletTVWearable
 | customBuilder | [CustomBuilder](ts-types.md#custombuilder8) | 否 | 是 | A区（列表左侧）自定义内容。 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(customBuilder?: CustomBuilder)
 
@@ -390,8 +340,6 @@ PrefixCustomBuilder的构造函数。
 
 ## SuffixItem
 
-PhonePC/2in1TabletTVWearable
-
 定义SuffixItem类，HdsListItemCard列表项的C区（列表右侧）元素。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -402,8 +350,6 @@ PhonePC/2in1TabletTVWearable
 
 ## SuffixText
 
-PhonePC/2in1TabletTVWearable
-
 SuffixText继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixitem)，C区（列表右侧）Text元素。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -413,8 +359,6 @@ SuffixText继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixitem)�
 **起始版本：** 6.0.0(20)
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -427,8 +371,6 @@ PhonePC/2in1TabletTVWearable
 | options | [TextOptions](ui-design-hdslistitemcard.md#textoptions) | 否 | 是 | C区（列表右侧）Text元素的配置项。 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(options?: TextOptions)
 
@@ -448,8 +390,6 @@ SuffixText的构造函数。
 
 ## SuffixImage
 
-PhonePC/2in1TabletTVWearable
-
 SuffixImage继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixitem)，C区（列表右侧）Image元素。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -459,8 +399,6 @@ SuffixImage继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixitem)�
 **起始版本：** 6.0.0(20)
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -473,8 +411,6 @@ PhonePC/2in1TabletTVWearable
 | options | [ImageClickOptions](ui-design-hdslistitemcard.md#imageclickoptions) | 否 | 是 | C区（列表右侧）Image元素的配置项。 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(options?: ImageClickOptions)
 
@@ -494,8 +430,6 @@ SuffixImage的构造函数。
 
 ## SuffixLoadingProgress
 
-PhonePC/2in1TabletTVWearable
-
 SuffixLoadingProgress继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixitem)，C区（列表右侧）LoadingProgress元素。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -505,8 +439,6 @@ SuffixLoadingProgress继承自父类[SuffixItem](ui-design-hdslistitemcard.md#su
 **起始版本：** 6.0.0(20)
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -519,8 +451,6 @@ PhonePC/2in1TabletTVWearable
 | options | [ColorOptions](ui-design-hdslistitemcard.md#coloroptions) | 否 | 是 | C区（列表右侧）LoadingProgress元素的配置项。 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(options?: ColorOptions)
 
@@ -540,8 +470,6 @@ SuffixLoadingProgress的构造函数。
 
 ## SuffixRadio
 
-PhonePC/2in1TabletTVWearable
-
 SuffixRadio继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixitem)，C区（列表右侧）Radio元素。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -551,8 +479,6 @@ SuffixRadio继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixitem)�
 **起始版本：** 6.0.0(20)
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -565,8 +491,6 @@ PhonePC/2in1TabletTVWearable
 | options | [CheckOptions](ui-design-hdslistitemcard.md#checkoptions) | 否 | 是 | C区（列表右侧）Radio元素的配置项。 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(options?: CheckOptions)
 
@@ -586,8 +510,6 @@ SuffixRadio的构造函数。
 
 ## SuffixCheckbox
 
-PhonePC/2in1TabletTVWearable
-
 SuffixCheckbox继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixitem)，C区（列表右侧）Checkbox元素。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -597,8 +519,6 @@ SuffixCheckbox继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixite
 **起始版本：** 6.0.0(20)
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -611,8 +531,6 @@ PhonePC/2in1TabletTVWearable
 | options | [CheckOptions](ui-design-hdslistitemcard.md#checkoptions) | 否 | 是 | C区（列表右侧）Checkbox元素的配置项。 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(options?: CheckOptions)
 
@@ -632,8 +550,6 @@ SuffixCheckbox的构造函数。
 
 ## SuffixSwitch
 
-PhonePC/2in1TabletTVWearable
-
 SuffixSwitch继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixitem)，C区（列表右侧）Switch元素。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -643,8 +559,6 @@ SuffixSwitch继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixitem)
 **起始版本：** 6.0.0(20)
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -657,8 +571,6 @@ PhonePC/2in1TabletTVWearable
 | options | [CheckOptions](ui-design-hdslistitemcard.md#checkoptions) | 否 | 是 | C区（列表右侧）Switch元素的配置项。 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(options?: CheckOptions)
 
@@ -678,8 +590,6 @@ SuffixSwitch的构造函数。
 
 ## SuffixArrow
 
-PhonePC/2in1TabletTVWearable
-
 SuffixArrow继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixitem)，C区（列表右侧）Arrow元素。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -689,8 +599,6 @@ SuffixArrow继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixitem)�
 **起始版本：** 6.0.0(20)
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -703,8 +611,6 @@ PhonePC/2in1TabletTVWearable
 | options | [ColorOptions](ui-design-hdslistitemcard.md#coloroptions) | 否 | 是 | C区（列表右侧）Arrow元素的配置项。 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(options?: ColorOptions)
 
@@ -724,8 +630,6 @@ SuffixArrow的构造函数。
 
 ## SuffixBadge
 
-PhonePC/2in1TabletTVWearable
-
 SuffixBadge继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixitem)，C区（列表右侧）Badge元素。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -735,8 +639,6 @@ SuffixBadge继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixitem)�
 **起始版本：** 6.0.0(20)
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -749,8 +651,6 @@ PhonePC/2in1TabletTVWearable
 | options | [BadgeOptions](ui-design-hdslistitemcard.md#badgeoptions) | 否 | 是 | C区（列表右侧）Badge元素的配置项。 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(options?: BadgeOptions)
 
@@ -770,8 +670,6 @@ SuffixBadge的构造函数。
 
 ## SuffixButton
 
-PhonePC/2in1TabletTVWearable
-
 SuffixButton继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixitem)，C区（列表右侧）Button元素。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -781,8 +679,6 @@ SuffixButton继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixitem)
 **起始版本：** 6.0.0(20)
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -795,8 +691,6 @@ PhonePC/2in1TabletTVWearable
 | options | [ButtonOptions](ui-design-hdslistitemcard.md#buttonoptions) | 否 | 是 | C区（列表右侧）Button元素的配置项。 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(options?: ButtonOptions)
 
@@ -816,8 +710,6 @@ SuffixButton的构造函数。
 
 ## SuffixIcon
 
-PhonePC/2in1TabletTVWearable
-
 SuffixIcon继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixitem)，C区（列表右侧）单个Icon元素。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -827,8 +719,6 @@ SuffixIcon继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixitem)�
 **起始版本：** 6.0.0(20)
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -841,8 +731,6 @@ PhonePC/2in1TabletTVWearable
 | options | [SuffixIconOptions](ui-design-hdslistitemcard.md#suffixiconoptions) | 否 | 是 | C区（列表右侧）单个Icon元素的配置项。 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(options?: SuffixIconOptions)
 
@@ -862,8 +750,6 @@ SuffixIcon的构造函数。
 
 ## SuffixSubIcon
 
-PhonePC/2in1TabletTVWearable
-
 SuffixSubIcon继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixitem)，C区（列表右侧）两个Icon元素。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -873,8 +759,6 @@ SuffixSubIcon继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixitem
 **起始版本：** 6.0.0(20)
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -888,8 +772,6 @@ PhonePC/2in1TabletTVWearable
 | subOptions | [SuffixIconOptions](ui-design-hdslistitemcard.md#suffixiconoptions) | 否 | 是 | C区（列表右侧）第二个Icon元素的配置项。 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(options?: SuffixIconOptions, subOptions?: SuffixIconOptions)
 
@@ -910,8 +792,6 @@ SuffixSubIcon的构造函数。
 
 ## SuffixSelect
 
-PhonePC/2in1TabletTVWearable
-
 SuffixSelect继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixitem)，C区（列表右侧）Select元素。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -921,8 +801,6 @@ SuffixSelect继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixitem)
 **起始版本：** 6.0.0(20)
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -935,8 +813,6 @@ PhonePC/2in1TabletTVWearable
 | options | [SelectStyle](ui-design-hdslistitemcard.md#selectstyle) | 否 | 是 | C区（列表右侧）Select元素的配置项。 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(options?: SelectStyle)
 
@@ -956,8 +832,6 @@ SuffixSelect的构造函数。
 
 ## SuffixToggleButton
 
-PhonePC/2in1TabletTVWearable
-
 SuffixToggleButton继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixitem)，C区（列表右侧）ToggleButton元素。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -967,8 +841,6 @@ SuffixToggleButton继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffi
 **起始版本：** 6.0.0(20)
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -981,8 +853,6 @@ PhonePC/2in1TabletTVWearable
 | options | [ToggleButtonOptions](ui-design-hdslistitemcard.md#togglebuttonoptions) | 否 | 是 | C区（列表右侧）ToggleButton的配置项。 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(options?: ToggleButtonOptions)
 
@@ -1002,8 +872,6 @@ SuffixToggleButton的构造函数。
 
 ## SuffixBadgeAndArrow
 
-PhonePC/2in1TabletTVWearable
-
 SuffixBadgeAndArrow继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixitem)，C区（列表右侧）Badge和Arrow组合元素。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1013,8 +881,6 @@ SuffixBadgeAndArrow继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suff
 **起始版本：** 6.0.0(20)
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -1028,8 +894,6 @@ PhonePC/2in1TabletTVWearable
 | arrowOptions | [ColorOptions](ui-design-hdslistitemcard.md#coloroptions) | 否 | 是 | C区（列表右侧）Badge和Arrow组合元素中Arrow的配置项。 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(badgeOptions?: BadgeOptions, arrowOptions?: ColorOptions)
 
@@ -1050,8 +914,6 @@ SuffixBadgeAndArrow的构造函数。
 
 ## SuffixTextAndArrow
 
-PhonePC/2in1TabletTVWearable
-
 SuffixTextAndArrow继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixitem)，C区（列表右侧）Text和Arrow组合元素。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1061,8 +923,6 @@ SuffixTextAndArrow继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffi
 **起始版本：** 6.0.0(20)
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -1076,8 +936,6 @@ PhonePC/2in1TabletTVWearable
 | arrowOptions | [ColorOptions](ui-design-hdslistitemcard.md#coloroptions) | 否 | 是 | C区（列表右侧）Text和Arrow组合元素中Arrow的配置项 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(textOptions?: TextOptions, arrowOptions?: ColorOptions)
 
@@ -1098,8 +956,6 @@ SuffixTextAndArrow的构造函数。
 
 ## SuffixArrowIconText
 
-PhonePC/2in1TabletTVWearable
-
 SuffixArrowIconText继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixitem)，C区（列表右侧）Arrow、Text和Arrow组合元素。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1109,8 +965,6 @@ SuffixArrowIconText继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suff
 **起始版本：** 6.0.0(20)
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -1123,8 +977,6 @@ PhonePC/2in1TabletTVWearable
 | options | [SuffixArrowIconTextOptions](ui-design-hdslistitemcard.md#suffixarrowicontextoptions) | 否 | 是 | C区（列表右侧）Text、Arrow和Icon组合元素的配置项。 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(options?: SuffixArrowIconTextOptions)
 
@@ -1144,8 +996,6 @@ SuffixArrowIconText的构造函数。
 
 ## SuffixCustomBuilder
 
-PhonePC/2in1TabletTVWearable
-
 SuffixCustomBuilder继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suffixitem)，C区（列表右侧）自定义内容。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1155,8 +1005,6 @@ SuffixCustomBuilder继承自父类[SuffixItem](ui-design-hdslistitemcard.md#suff
 **起始版本：** 6.0.0(20)
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -1169,8 +1017,6 @@ PhonePC/2in1TabletTVWearable
 | customBuilder | [CustomBuilder](ts-types.md#custombuilder8) | 否 | 是 | C区（列表右侧）自定义内容。 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(customBuilder?: CustomBuilder)
 
@@ -1190,8 +1036,6 @@ SuffixCustomBuilder的构造函数。
 
 ## HdsListItemCardOptions
 
-PhonePC/2in1TabletTVWearable
-
 HdsListItemCard列表项内元素配置选项。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1208,8 +1052,8 @@ HdsListItemCard列表项内元素配置选项。
 | textItem | [TextItemOptions](ui-design-hdslistitemcard.md#textitemoptions) | 否 | 是 | HdsListItemCard列表项的B区（中间）元素。 |
 | suffixItem | [SuffixItem](ui-design-hdslistitemcard.md#suffixitem) | 否 | 是 | HdsListItemCard列表项的C区（右侧）元素。 |
 | onClick | [OnClickCallback](ui-design-hdslistitemcard.md#onclickcallback) | 否 | 是 | HdsListItemCard列表项的点击回调。 |
-| cardHeight | [Dimension](ts-types.md#dimension10) | 否 | 是 | HdsListItemCard列表项的高度，目前不支持使用Percentage设置。 |
-| cardWidth | [Dimension](ts-types.md#dimension10) | 否 | 是 | HdsListItemCard列表项的宽度，目前不支持使用Percentage设置。 |
+| cardHeight | [Dimension](ts-types.md#dimension10) | 否 | 是 | HdsListItemCard列表项的高度，目前不支持使用[Percentage](ts-types.md#percentage10)设置。 |
+| cardWidth | [Dimension](ts-types.md#dimension10) | 否 | 是 | HdsListItemCard列表项的宽度，目前不支持使用[Percentage](ts-types.md#percentage10)设置。 |
 | cardBackgroundColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | HdsListItemCard列表项的背景颜色。 |
 | cardBorderRadius | [Dimension](ts-types.md#dimension10) | 否 | 是 | HdsListItemCard列表项的边框圆角。 |
 | cardPrefixMargin | [Dimension](ts-types.md#dimension10) | 否 | 是 | HdsListItemCard列表项距离屏幕左侧的边距。 |
@@ -1219,7 +1063,7 @@ HdsListItemCard列表项内元素配置选项。
 | cardId | string | 否 | 是 | HdsListItemCard列表项的Id。 |
 | accessibilityOptions | [AccessibilityOptions](ui-design-hdslistitemcard.md#accessibilityoptions) | 否 | 是 | HdsListItemCard列表项的无障碍播放能力选项。 |
 
-说明
+**说明** 
 
 从6.1.0(23)开始，若同时满足如下两个条件，焦点将默认组合聚焦播报：
 
@@ -1229,8 +1073,6 @@ HdsListItemCard列表项内元素配置选项。
 该功能是通过修改accessibilityOptions中isGroup， stateControllerId，actionControllerId的值来实现的，其中isGroup的值会被修改为true，stateControllerId和actionControllerId的值会被修改为可点击子组件的id。
 
 ## TextItemOptions
-
-PhonePC/2in1TabletTVWearable
 
 HdsListItemCard列表项的B区（列表中间）元素配置选项。
 
@@ -1260,13 +1102,11 @@ HdsListItemCard列表项的B区（列表中间）元素配置选项。
 | accessibilityOptions | [AccessibilityOptions](ui-design-hdslistitemcard.md#accessibilityoptions) | 否 | 是 | B区（列表中间）元素的无障碍播放能力选项。  **起始版本：** 6.1.0(23) |
 | customBuilder | [CustomBuilder](ts-types.md#custombuilder8) | 否 | 是 | B区（列表中间）自定义内容。 |
 
-说明
+**说明** 
 
 TextItemOptions中customBuilder优先级高于其它接口。
 
 ## AccessibilityOptions
-
-PhonePC/2in1TabletTVWearable
 
 HdsListItemCard无障碍播放能力选项。
 
@@ -1287,13 +1127,11 @@ HdsListItemCard无障碍播放能力选项。
 | accessibilityRole | [AccessibilityRoleType](ts-universal-attributes-accessibility.md#accessibilityroletype18枚举说明) | 否 | 是 | 设置无障碍节点的组件类型。特定组件类型有特定的朗读方式，可以根据应用诉求，修改组件类型，用于控制无障碍模式下对组件的朗读方式和朗读内容。不设置的时候，默认使用节点自身的组件类型。  **起始版本：** 6.1.0(23) |
 | onAccessibilityActionIntercept | [AccessibilityActionInterceptCallback](ts-universal-accessibility-event.md#accessibilityactioninterceptcallback20) | 否 | 是 | 注册onAccessibilityActionIntercept回调。该回调会在无障碍控制操作触发前调用，由注册方决定是否拦截该次无障碍动作，对不支持Click的组件注册也无法触发回调。  **起始版本：** 6.1.0(23) |
 
-说明
+**说明** 
 
 accessibilityChecked属性代表组件是多选模式，accessibilitySelected属性代表组件是单选模式。组件不能同时存在两种选择模式，会造成无障碍状态冲突，导致屏幕朗读等无障碍辅助应用无法正确识别选中状态。如使用accessibilityChecked设置组件为多选模式（设置为true、false），需要保证未设置accessibilitySelected属性，或已将accessibilitySelected属性值重置为undefined，反之亦然。
 
 ## AccessibilityGroupOptions
-
-PhonePC/2in1TabletTVWearable
 
 HdsListItemCard无障碍分组能力选项。
 
@@ -1310,15 +1148,13 @@ HdsListItemCard无障碍分组能力选项。
 
 ## AccessibilityGroupControllerOptions
 
-PhonePC/2in1TabletTVWearable
-
 HdsListItemCard无障碍播放能力选项。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.UIDesign.HDSComponent.Full
 
-**起始本：** 6.1.0(23)
+**起始版本：** 6.1.0(23)
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1329,8 +1165,6 @@ HdsListItemCard无障碍播放能力选项。
 | actionControllerId | string | 否 | 是 | 指定特定[唯一标识ID](ts-universal-attributes-component-id.md#id)的子组件。配置[AccessibilityGroupOptions](ui-design-hdslistitemcard.md#accessibilitygroupoptions)的容器组件进行无障碍聚合后，如果触发无障碍的控制操作时，会将操作转发给该特定标识的子组件。从而聚合屏幕朗读下的点击事件，避免需要对子组件单独进行聚焦。  **说明：**  如果聚合组件内有多个相同类型的子组件，则以组件树上该聚合组件下的第一个查找到的子组件为控制组件。  当前只支持无障碍点击操作。  如果与actionControllerRoleType同时配置，则优先匹配ID一致的组件。  不支持跨进程嵌入式组件内的特定类型，例如：卡片、EmbededUiextension。  默认值：无指定组件 |
 
 ## ImageOptions
-
-PhonePC/2in1TabletTVWearable
 
 HdsListItemCard中Image样式选项。
 
@@ -1346,8 +1180,6 @@ HdsListItemCard中Image样式选项。
 | modifier | [ImageModifier](ts-universal-attributes-attribute-modifier.md#自定义modifier) | 否 | 是 | Image属性样式修改器。 |
 
 ## ImageClickOptions
-
-PhonePC/2in1TabletTVWearable
 
 HdsListItemCard中支持点击的Image样式选项。
 
@@ -1367,8 +1199,6 @@ HdsListItemCard中支持点击的Image样式选项。
 
 ## SymbolGlyphOptions
 
-PhonePC/2in1TabletTVWearable
-
 HdsListItemCard中Symbol样式选项。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1382,8 +1212,6 @@ HdsListItemCard中Symbol样式选项。
 | symbol | [SymbolType](ui-design-hdslistitemcard.md#symboltype) | 否 | 是 | Symbol资源类型。 |
 
 ## TextSymbolGlyphOptions
-
-PhonePC/2in1TabletTVWearable
 
 HdsListItemCard中B区（列表中间）Text左右两侧的Symbol样式选项。
 
@@ -1402,8 +1230,6 @@ HdsListItemCard中B区（列表中间）Text左右两侧的Symbol样式选项。
 
 ## PrefixIconOptions
 
-PhonePC/2in1TabletTVWearable
-
 HdsListItemCard中A区（列表左侧）Icon样式选项。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1418,8 +1244,6 @@ HdsListItemCard中A区（列表左侧）Icon样式选项。
 | iconValue | [PrefixIconType](ui-design-hdslistitemcard.md#prefixicontype) | 否 | 是 | A区（列表左侧）Icon资源类型。 |
 
 ## BadgeOptions
-
-PhonePC/2in1TabletTVWearable
 
 HdsListItemCard中Badge样式选项。
 
@@ -1438,8 +1262,6 @@ HdsListItemCard中Badge样式选项。
 
 ## CheckOptions
 
-PhonePC/2in1TabletTVWearable
-
 HdsListItemCard中选择类元素样式选项。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1457,10 +1279,9 @@ HdsListItemCard中选择类元素样式选项。
 | enable | boolean | 否 | 是 | 选择类元素是否被启用。  true：选择类元素被启用。  false：选择类元素被禁用。  默认值：true。 |
 | checkId | string | 否 | 是 | 选择类元素的Id。 |
 | accessibilityOptions | [AccessibilityOptions](ui-design-hdslistitemcard.md#accessibilityoptions) | 否 | 是 | 选择类元素的无障碍播放能力选项。 |
+| radioStyle | [HdsRadioStyle](ui-design-hdslistitemcard.md#hdsradiostyle) | 否 | 是 | 单选框的样式。本参数仅对单选框生效。  **起始版本：** 26.0.0 |
 
 ## ToggleButtonOptions
-
-PhonePC/2in1TabletTVWearable
 
 HdsListItemCard中ToggleButton样式选项。
 
@@ -1482,8 +1303,6 @@ HdsListItemCard中ToggleButton样式选项。
 
 ## TextOptions
 
-PhonePC/2in1TabletTVWearable
-
 HdsListItemCard中Text样式选项。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1499,8 +1318,6 @@ HdsListItemCard中Text样式选项。
 
 ## ColorOptions
 
-PhonePC/2in1TabletTVWearable
-
 HdsListItemCard中Color样式选项。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1515,8 +1332,6 @@ HdsListItemCard中Color样式选项。
 | componentId | string | 否 | 是 | 对应元素的Id。 |
 
 ## ButtonOptions
-
-PhonePC/2in1TabletTVWearable
 
 HdsListItemCard中Button样式选项。
 
@@ -1539,8 +1354,6 @@ HdsListItemCard中Button样式选项。
 
 ## SuffixIconOptions
 
-PhonePC/2in1TabletTVWearable
-
 HdsListItemCard中C区（列表右侧）Icon样式选项。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1558,8 +1371,6 @@ HdsListItemCard中C区（列表右侧）Icon样式选项。
 
 ## SuffixArrowIconTextOptions
 
-PhonePC/2in1TabletTVWearable
-
 HdsListItemCard中C区（列表右侧）箭头图标文本选项 。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1575,8 +1386,6 @@ HdsListItemCard中C区（列表右侧）箭头图标文本选项 。
 | endArrow | [SuffixArrowIconOptions](ui-design-hdslistitemcard.md#suffixarrowiconoptions) | 否 | 是 | C区（列表右侧）结束箭头的选项。 |
 
 ## SuffixArrowIconOptions
-
-PhonePC/2in1TabletTVWearable
 
 HdsListItemCard中C区（列表右侧）箭头图标选项 。
 
@@ -1595,8 +1404,6 @@ HdsListItemCard中C区（列表右侧）箭头图标选项 。
 | accessibilityOptions | [AccessibilityOptions](ui-design-hdslistitemcard.md#accessibilityoptions) | 否 | 是 | C区（列表右侧）箭头的无障碍播放能力选项。 |
 
 ## SelectStyle
-
-PhonePC/2in1TabletTVWearable
 
 HdsListItemCard中下拉按钮样式选项。
 
@@ -1620,9 +1427,21 @@ HdsListItemCard中下拉按钮样式选项。
 | accessibilityOptions | [AccessibilityOptions](ui-design-hdslistitemcard.md#accessibilityoptions) | 否 | 是 | 下拉按钮的无障碍播放能力选项。 |
 | selected | number | 否 | 是 | 设置下拉菜单初始选项的索引，第一项的索引为0。当不设置selected属性或设置为异常值时，默认选中值为-1，菜单项不选中。  默认值：-1。  **起始版本：** 6.1.0(23) |
 
-## SymbolType
+## HdsRadioStyle
 
-PhonePC/2in1TabletTVWearable
+HdsListItemCard中单选框的样式选项。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.UIDesign.HDSComponent.Full
+
+**起始版本：** 26.0.0
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| indicatorType | [HdsRadioIndicatorType](ui-design-hdslistitemcard.md#hdsradioindicatortype) | 否 | 是 | 单选框的选中样式。  默认值：HdsIndicatorType.TICK。 |
+
+## SymbolType
 
 type SymbolType= ResourceStr | SymbolGlyphModifier
 
@@ -1643,8 +1462,6 @@ HdsListItemCard中支持Symbol图标资源类型。
 
 ## PrefixIconType
 
-PhonePC/2in1TabletTVWearable
-
 type PrefixIconType= ImageOptions | SymbolGlyphOptions
 
 HdsListItemCard中支持A区（列表左侧）Icon图标资源类型。
@@ -1663,8 +1480,6 @@ HdsListItemCard中支持A区（列表左侧）Icon图标资源类型。
 | [SymbolGlyphOptions](ui-design-hdslistitemcard.md#symbolglyphoptions) | SymbolGlyph类型。 |
 
 ## ImageType
-
-PhonePC/2in1TabletTVWearable
 
 type ImageType = ResourceStr | image.PixelMap
 
@@ -1685,8 +1500,6 @@ HdsListItemCard中支持Image资源类型。
 
 ## IconSize
 
-PhonePC/2in1TabletTVWearable
-
 PrefixIcon图标大小枚举。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1700,13 +1513,26 @@ PrefixIcon图标大小枚举。
 | SMALL\_ICON | 1 | A区（列表左侧）Icon图标类型：小图标类型，大小为16vp \* 16vp（穿戴设备上为28vp\*28vp）。 |
 | SYSTEM\_ICON | 2 | A区（列表左侧）Icon图标类型：系统图标类型，大小为24vp \* 24vp（穿戴设备上为32vp\*32vp）。 |
 
-说明
+**说明** 
 
 上述描述中所有左侧、中间、右侧均是在LTR模式下。
 
-## OnClickCallback
+## HdsRadioIndicatorType
 
-PhonePC/2in1TabletTVWearable
+单选框选中样式枚举。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.UIDesign.HDSComponent.Full
+
+**起始版本：** 26.0.0
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| TICK | 0 | 选中样式为系统默认TICK图标。即[Radio](ts-basic-components-radio.md)的默认选中样式。 |
+| CHECK\_MARK | 100 | 选中样式为$r('sys.symbol.checkmark')图标。图标默认颜色为$r('sys.color.icon\_primary')。 |
+
+## OnClickCallback
 
 type OnClickCallback = () => void
 
@@ -1719,8 +1545,6 @@ HdsListItemCard中的点击事件回调。
 **起始版本：** 6.0.0(20)
 
 ## OnChangeCallback
-
-PhonePC/2in1TabletTVWearable
 
 type OnChangeCallback = (isOn: boolean) => void
 
@@ -1739,8 +1563,6 @@ HdsListItemCard中的onChange事件回调。
 | isOn | boolean | 是 | HdsListItemCard中的Switch/CheckBox/Radio/ToggleButton选中状态。  - isOn为true时，表示从未选中变为选中。  - isOn为false时，表示从选中变为未选中。 |
 
 ## OnSelectCallback
-
-PhonePC/2in1TabletTVWearable
 
 type OnSelectCallback = (index: number, text: string) => void
 
@@ -1761,8 +1583,6 @@ HdsListItemCard中的onSelect事件回调。
 
 ## HdsListItemCardModifier
 
-PhonePC/2in1TabletTV
-
 动态设置HdsListItemCard组件的属性和样式，继承自[HdsListItemCardAttribute](ui-design-hdslistitemcard.md#属性)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1772,8 +1592,6 @@ PhonePC/2in1TabletTV
 **起始版本：** 6.1.0(23)
 
 ### applyNormalAttribute
-
-PhonePC/2in1TabletTV
 
 applyNormalAttribute?(instance: HdsListItemCardAttribute): void
 
@@ -1793,124 +1611,122 @@ applyNormalAttribute?(instance: HdsListItemCardAttribute): void
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 以设置简单的列表项为例
 
+```typescript
+import {
+  HdsListItemCard,
+  IconSize,
+  PrefixImage,
+  PrefixIcon,
+  SuffixIcon,
+  SuffixSwitch,
+  SuffixBadgeAndArrow
+} from '@kit.UIDesignKit';
+import { ImageModifier, TextModifier } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct HdsListItemCardExample {
+  private scroller: ListScroller = new ListScroller();
+
+  build() {
+    Column() {
+      List({ space: 5, scroller: this.scroller }) {
+        ListItem() {
+          HdsListItemCard({
+            prefixItem: new PrefixIcon({
+              iconSize: IconSize.SYSTEM_ICON,
+              iconValue: {
+                image: $r('app.media.startIcon')
+              }
+            }),
+            textItem: {
+              primaryText: {
+                text: 'Primary Text'
+              },
+              secondaryText: {
+                text: 'Secondary Text'
+              },
+              description: {
+                text: 'Description Text'
+              }
+            },
+            suffixItem: new SuffixIcon({
+              iconValue: {
+                symbol: $r('sys.symbol.circle_dashed')
+              },
+              onClick: () => {
+                console.info('onclick icon');
+              }
+            }),
+            onClick: () => {
+              console.info('onclick hdslistitem');
+            }
+          })
+        }
+
+        ListItem() {
+          HdsListItemCard({
+            prefixItem: new PrefixImage({
+              image: $r('app.media.startIcon'),
+              modifier: new ImageModifier().width(70).height(70).borderRadius(20)
+            }),
+            textItem: {
+              primaryText: {
+                text: 'Primary Text'
+              },
+              secondaryText: {
+                text: 'Secondary Text'
+              },
+              description: {
+                text: 'Description Text'
+              }
+            },
+            suffixItem: new SuffixSwitch({
+              isCheck: false,
+              selectColor: Color.Orange,
+              onChange: (num: boolean) => {
+                if (num) {
+                  console.info('switch is true');
+                } else {
+                  console.info('switch is false');
+                }
+              }
+            })
+          })
+        }
+
+        ListItem() {
+          HdsListItemCard({
+            prefixItem: new PrefixIcon({
+              iconSize: IconSize.SYSTEM_ICON,
+              iconValue: {
+                symbol: $r('sys.symbol.ohos_trash')
+              }
+            }),
+            textItem: {
+              primaryText: {
+                text: 'Primary Text',
+                modifier: new TextModifier().fontColor(Color.Pink)
+              }
+            },
+            suffixItem: new SuffixBadgeAndArrow({
+              badgeValue: 9,
+              badgeColor: Color.Orange,
+              textColor: Color.Blue
+            }, {
+              color: Color.Orange
+            })
+          })
+        }
+      }
+      .width('100%')
+      .height('100%')
+      .margin(10)
+    }.backgroundColor(0x1a0a59f7).height('100%')
+  }
+}
 ```
-1. import {
-2. HdsListItemCard,
-3. IconSize,
-4. PrefixImage,
-5. PrefixIcon,
-6. SuffixIcon,
-7. SuffixSwitch,
-8. SuffixBadgeAndArrow
-9. } from '@kit.UIDesignKit';
-10. import { promptAction, ImageModifier, TextModifier } from '@kit.ArkUI';
 
-12. @Entry
-13. @Component
-14. struct HdsListItemCardExample {
-15. private scroller: ListScroller = new ListScroller();
-
-17. build() {
-18. Column() {
-19. List({ space: 5, scroller: this.scroller }) {
-20. ListItem() {
-21. HdsListItemCard({
-22. prefixItem: new PrefixIcon({
-23. iconSize: IconSize.SYSTEM_ICON,
-24. iconValue: {
-25. image: $r('app.media.startIcon')
-26. },
-27. }),
-28. textItem: {
-29. primaryText: {
-30. text: 'Primary Text'
-31. },
-32. secondaryText: {
-33. text: 'Secondary Text'
-34. },
-35. description: {
-36. text: 'Description Text'
-37. },
-38. },
-39. suffixItem: new SuffixIcon({
-40. iconValue: {
-41. symbol: $r('sys.symbol.circle_dashed')
-42. },
-43. onClick: () => {
-44. promptAction.openToast({ message: 'onclick icon' });
-45. }
-46. }),
-47. onClick: () => {
-48. promptAction.openToast({ message: 'onclick hdslistitem' });
-49. },
-50. })
-51. }
-
-53. ListItem() {
-54. HdsListItemCard({
-55. prefixItem: new PrefixImage({
-56. image: $r('app.media.startIcon'),
-57. modifier: new ImageModifier().width(70).height(70).borderRadius(20)
-58. }),
-59. textItem: {
-60. primaryText: {
-61. text: 'Primary Text'
-62. },
-63. secondaryText: {
-64. text: 'Secondary Text'
-65. },
-66. description: {
-67. text: 'Description Text'
-68. },
-69. },
-70. suffixItem: new SuffixSwitch({
-71. isCheck: false,
-72. selectColor: Color.Orange,
-73. onChange: (num: boolean) => {
-74. if (num) {
-75. promptAction.openToast({ message: 'switch is true' });
-76. } else {
-77. promptAction.openToast({ message: 'switch is false' });
-78. }
-79. },
-80. })
-81. })
-82. }
-
-84. ListItem() {
-85. HdsListItemCard({
-86. prefixItem: new PrefixIcon({
-87. iconSize: IconSize.SYSTEM_ICON,
-88. iconValue: {
-89. symbol: $r('sys.symbol.ohos_trash')
-90. },
-91. }),
-92. textItem: {
-93. primaryText: {
-94. text: 'Primary Text',
-95. modifier: new TextModifier().fontColor(Color.Pink),
-96. }
-97. },
-98. suffixItem: new SuffixBadgeAndArrow({
-99. badgeValue: 9,
-100. badgeColor: Color.Orange,
-101. textColor: Color.Blue,
-102. }, {
-103. color: Color.Orange
-104. })
-105. })
-106. }
-107. }
-108. .width('100%')
-109. .height('100%')
-110. .margin(10)
-111. }.backgroundColor(0x1a0a59f7).height('100%')
-112. }
-113. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/jiAMp5sxSuCUIrXw2rKl9w/zh-cn_image_0000002589246865.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/xsV6CXl1QFmVYiYr-nYE1Q/zh-cn_image_0000002706676788.jpg)

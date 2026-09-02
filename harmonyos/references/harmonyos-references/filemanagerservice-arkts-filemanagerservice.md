@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/filemanag
 title: fileManagerService
 breadcrumb: API参考 > 应用服务 > File Manager Service Kit（文件管理服务） > ArkTS API > fileManagerService
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:38+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:58dea81a65be73278ac36630bc967da11173d7e6ca997a7b2980addff6e5c25b
+scraped_at: 2026-09-02T15:02:53+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:95aac0d490b3bf60a6c56640ef8f52b7f71ba3be39b38b02003d7eb65ee8bf46
 ---
 
 fileManagerService模块提供删除文件到回收站、获取文件图标及解析文件快捷方式的能力。
@@ -14,23 +14,21 @@ fileManagerService模块提供删除文件到回收站、获取文件图标及�
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { fileManagerService } from '@kit.FileManagerServiceKit';
+```typescript
+import { fileManagerService } from '@kit.FileManagerServiceKit';
 ```
 
 ## fileManagerService.deleteToTrash
-
-PhonePC/2in1Tablet
 
 deleteToTrash(uri: string): Promise<string>
 
 以异步方法删除文件到回收站，返回删除后路径。使用Promise异步回调。
 
-注意
+**注意** 
 
 此接口参数uri的具体使用方式参见用户文件uri介绍中的[文档类URI的使用方式](../harmonyos-guides/user-file-uri-intro.md#文档类uri)。
+
+**模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.FileManagement.FileManagerService.Core
 
@@ -46,7 +44,7 @@ deleteToTrash(uri: string): Promise<string>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<string> | 文件删除到回收站后的uri。使用Promise异步回调。 |
+| Promise<string> | Promise对象，返回文件删除到回收站后的uri。 |
 
 **错误码**：
 
@@ -54,7 +52,7 @@ deleteToTrash(uri: string): Promise<string>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| [401](errorcode-universal.md#section401-参数检查失败) | Parameter error. |
 | 1014000001 | Operation not permitted. |
 | 1014000002 | No such file or directory. |
 | 1014000003 | No space left on device. |
@@ -62,34 +60,34 @@ deleteToTrash(uri: string): Promise<string>
 
 **示例代码：**
 
-```
-1. import { fileManagerService } from '@kit.FileManagerServiceKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { fileManagerService } from '@kit.FileManagerServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. async function deleteFile() {
-5. // 以内置存储目录为例
-6. // 示例代码targetUri表示Download目录下文件
-7. // 开发者应根据自己实际获取的uri进行开发，并确保对该文件有读写权限
-8. let targetUri: string = "file://docs/storage/Users/currentUser/Download/1.txt";
-9. try {
-10. let trashUri: string = await fileManagerService.deleteToTrash(targetUri);
-11. console.info("trashUri: " + trashUri);
-12. } catch (err) {
-13. let error: BusinessError = err as BusinessError;
-14. console.error("delete failed, errCode:" + error.code + ", errMessage:" + error.message);
-15. }
-16. }
+async function deleteFile() {
+  // 以内置存储目录为例
+  // 示例代码targetUri表示Download目录下文件
+  // 开发者应根据自己实际获取的uri进行开发，并确保对该文件有读写权限
+  let targetUri: string = "file://docs/storage/Users/currentUser/Download/1.txt";
+  try {
+    let trashUri: string = await fileManagerService.deleteToTrash(targetUri);
+    console.info("trashUri: " + trashUri);
+  } catch (err) {
+    let error: BusinessError = err as BusinessError;
+    console.error("delete failed, errCode:" + error.code + ", errMessage:" + error.message);
+  }
+}
 ```
 
 ## fileManagerService.getFileIconSync
-
-PhonePC/2in1Tablet
 
 getFileIconSync(fileType: string): string | Resource
 
 根据文件类型获取文件图标。
 
 **需要权限**：ohos.permission.GET\_FILE\_ICON
+
+**模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.FileManagement.FileManagerService.Core
 
@@ -113,60 +111,62 @@ getFileIconSync(fileType: string): string | Resource
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| [201](errorcode-universal.md#section201-权限校验失败) | Permission denied. |
+| [401](errorcode-universal.md#section401-参数检查失败) | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
 | 1014000004 | System inner fail. |
 
 **示例代码：**
 
-```
-1. import { fileManagerService } from '@kit.FileManagerServiceKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { uniformTypeDescriptor } from '@kit.ArkData';
+```typescript
+import { fileManagerService } from '@kit.FileManagerServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { uniformTypeDescriptor } from '@kit.ArkData';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. @State fileIcon: string | Resource = '';
+@Entry
+@Component
+struct Index {
+  @State fileIcon: string | Resource = '';
 
-10. private getFileIconByFileExtension(filenameExtension: string): void {
-11. try {
-12. let typeId: string = uniformTypeDescriptor.getUniformDataTypeByFilenameExtension(filenameExtension);
-13. this.fileIcon = fileManagerService.getFileIconSync(typeId);
-14. } catch (error) {
-15. let err: BusinessError = error as BusinessError;
-16. console.error('getFileIconByFileExtension failed with err: ' + JSON.stringify(err));
-17. }
-18. }
+  private getFileIconByFileExtension(filenameExtension: string): void {
+    try {
+      // 1、根据文件的后缀名，获取后缀名对应文件类型的UTD-ID
+      let typeId: string = uniformTypeDescriptor.getUniformDataTypeByFilenameExtension(filenameExtension);
+      // 2、调用getFileIconSync方法，根据UTD-ID获取对应的文件图标
+      this.fileIcon = fileManagerService.getFileIconSync(typeId);
+    } catch (error) {
+      let err: BusinessError = error as BusinessError;
+      console.error('getFileIconByFileExtension failed with err: ' + JSON.stringify(err));
+    }
+  }
 
-20. build() {
-21. RelativeContainer() {
-22. Column() {
-23. Image(this.fileIcon)
-24. .height(88)
-25. .border({ width: 1, radius: 6 })
-26. Button('Update FileIcon')
-27. .onClick(() => {
-28. // 以txt格式为例
-29. this.getFileIconByFileExtension('.txt');
-30. })
-31. }
-32. }
-33. .height('100%')
-34. .width('100%')
-35. }
-36. }
+  build() {
+    RelativeContainer() {
+      Column() {
+        Image(this.fileIcon)
+          .height(88)
+          .border({ width: 1, radius: 6 })
+        Button('Update FileIcon')
+          .onClick(() => {
+            // 以txt格式为例
+            this.getFileIconByFileExtension('.txt');
+          })
+      }
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 ## fileManagerService.getFileIcon
-
-PhonePC/2in1Tablet
 
 getFileIcon(fileType: string): Promise<string | Resource>
 
 根据文件类型获取文件图标。使用Promise异步回调。
 
 **需要权限**：ohos.permission.GET\_FILE\_ICON
+
+**模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.FileManagement.FileManagerService.Core
 
@@ -182,7 +182,7 @@ getFileIcon(fileType: string): Promise<string | Resource>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<string | [Resource](ts-types.md#resource)> | 文件图标的Base64编码或资源对象。使用Promise异步回调。 |
+| Promise<string | [Resource](ts-types.md#resource)> | Promise对象，返回文件图标的Base64编码或资源对象。 |
 
 **错误码**：
 
@@ -190,61 +190,63 @@ getFileIcon(fileType: string): Promise<string | Resource>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| [201](errorcode-universal.md#section201-权限校验失败) | Permission denied. |
+| [401](errorcode-universal.md#section401-参数检查失败) | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
 | 1014000004 | System inner fail. |
 
 **示例代码：**
 
-```
-1. import { fileManagerService } from '@kit.FileManagerServiceKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { uniformTypeDescriptor } from '@kit.ArkData';
+```typescript
+import { fileManagerService } from '@kit.FileManagerServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { uniformTypeDescriptor } from '@kit.ArkData';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. @State fileIcon: string | Resource = '';
+@Entry
+@Component
+struct Index {
+  @State fileIcon: string | Resource = '';
 
-10. private getFileIconByFileExtension(filenameExtension: string): void {
-11. try {
-12. console.info('getFileIconByFileExtension');
-13. let typeId: string = uniformTypeDescriptor.getUniformDataTypeByFilenameExtension(filenameExtension);
-14. fileManagerService.getFileIcon(typeId).then((retIcon: string | Resource) => {
-15. this.fileIcon = retIcon;
-16. });
-17. } catch (error) {
-18. let err: BusinessError = error as BusinessError;
-19. console.error('getFileIconByFileExtension failed with err: ' + JSON.stringify(err));
-20. }
-21. }
+  private getFileIconByFileExtension(filenameExtension: string): void {
+    try {
+      console.info('getFileIconByFileExtension');
+      // 1、根据文件的后缀名，获取后缀名对应文件类型的UTD-ID
+      let typeId: string = uniformTypeDescriptor.getUniformDataTypeByFilenameExtension(filenameExtension);
+      // 2、调用getFileIcon方法，根据UTD-ID获取对应的文件图标
+      fileManagerService.getFileIcon(typeId).then((retIcon: string | Resource) => {
+        this.fileIcon = retIcon;
+      });
+    } catch (error) {
+      let err: BusinessError = error as BusinessError;
+      console.error('getFileIconByFileExtension failed with err: ' + JSON.stringify(err));
+    }
+  }
 
-23. build() {
-24. RelativeContainer() {
-25. Column() {
-26. Image(this.fileIcon)
-27. .height(88)
-28. .border({ width: 1, radius: 6 })
-29. Button('Update FileIcon')
-30. .onClick(() => {
-31. // 以txt格式为例
-32. this.getFileIconByFileExtension('.txt');
-33. })
-34. }
-35. }
-36. .height('100%')
-37. .width('100%')
-38. }
-39. }
+  build() {
+    RelativeContainer() {
+      Column() {
+        Image(this.fileIcon)
+          .height(88)
+          .border({ width: 1, radius: 6 })
+        Button('Update FileIcon')
+          .onClick(() => {
+            // 以txt格式为例
+            this.getFileIconByFileExtension('.txt');
+          })
+      }
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 ## fileManagerService.parseShortcut
 
-PhonePC/2in1Tablet
-
 parseShortcut(linkUri: string): Promise<string>
 
 根据快捷方式文件的URI解析出对应原文件的URI。使用Promise异步回调。
+
+**模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.FileManagement.FileManagerService.Core
 
@@ -260,7 +262,7 @@ parseShortcut(linkUri: string): Promise<string>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<string> | 对应原文件的URI。使用Promise异步回调。 |
+| Promise<string> | Promise对象，返回对应原文件的URI。 |
 
 **错误码**：
 
@@ -273,81 +275,81 @@ parseShortcut(linkUri: string): Promise<string>
 
 **示例代码**：
 
-```
-1. import fileManagerService from '@hms.filemanagement.fileManagerService';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { fileManagerService } from '@kit.FileManagerServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. @State linkUri: string = '';
-8. @State parseResult: string = '';
-9. private scroller: Scroller = new Scroller();
+@Entry
+@Component
+struct Index {
+  @State linkUri: string = '';
+  @State parseResult: string = '';
+  private scroller: Scroller = new Scroller();
 
-11. build() {
-12. Stack() {
-13. Column() {
-14. List({ scroller: this.scroller }) {
-15. ListItem() {
-16. Column() {
-17. Text("解析快捷方式")
-18. .fontSize('30fp')
-19. .fontWeight(FontWeight.Bold)
-20. .margin({ top: 20 })
-21. .alignRules({
-22. center: { anchor: '__container__', align: VerticalAlign.Center },
-23. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-24. })
-25. TextInput({
-26. placeholder: '请输入要解析快捷方式URI（例如：file://docs/storage/Users/currentUser/Documents/1.jpg.hlink）'
-27. })
-28. .width('90%')
-29. .margin({ top: 20 })
-30. .alignRules({
-31. center: { anchor: '__container__', align: VerticalAlign.Center },
-32. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-33. })
-34. .onChange((value: string) => {
-35. this.linkUri = value;
-36. })
-37. Button("解析快捷方式", { type: ButtonType.Normal })
-38. .backgroundColor(0x317aff)
-39. .width('90%')
-40. .height(40)
-41. .margin({ top: 20 })
-42. .onClick(async () => {
-43. const linkUri: string = this.linkUri;
-44. let targetUri: string = '';
-45. try {
-46. targetUri = await fileManagerService.parseShortcut(linkUri);
-47. console.info('parseShortcut success, linkUri:' + linkUri + ', targetUri:' + targetUri);
-48. this.parseResult = '解析快捷方式成功，目标原文件URI：' + targetUri;
-49. } catch (err) {
-50. let error: BusinessError = err as BusinessError;
-51. console.error('parseShortcut failed, errCode:' + error.code + ', errMessage:' + error.message);
-52. this.parseResult = 'errCode:' + error.code + ', errMessage:' + error.message;
-53. }
-54. })
-55. Row() {
-56. Text('解析结果：')
-57. .textAlign(TextAlign.Start)
-58. .margin({ top: 20 })
-59. .fontSize('25fp')
-60. Text(this.parseResult)
-61. .textAlign(TextAlign.Start)
-62. .margin({ top: 20 })
-63. .fontSize('25fp')
-64. }
-65. }
-66. }
-67. .width('100%')
-68. }
-69. .height('100%')
-70. .width('100%')
-71. .padding({left: 10, right: 10})
-72. }
-73. }
-74. .align(Alignment.BottomEnd)
-75. }
-76. }
+  build() {
+    Stack() {
+      Column() {
+        List({ scroller: this.scroller }) {
+          ListItem() {
+            Column() {
+              Text("解析快捷方式")
+                .fontSize('30fp')
+                .fontWeight(FontWeight.Bold)
+                .margin({ top: 20 })
+                .alignRules({
+                  center: { anchor: '__container__', align: VerticalAlign.Center },
+                  middle: { anchor: '__container__', align: HorizontalAlign.Center }
+                })
+              TextInput({
+                placeholder: '请输入要解析快捷方式URI（例如：file://docs/storage/Users/currentUser/Documents/1.jpg.hlink）'
+              })
+                .width('90%')
+                .margin({ top: 20 })
+                .alignRules({
+                  center: { anchor: '__container__', align: VerticalAlign.Center },
+                  middle: { anchor: '__container__', align: HorizontalAlign.Center }
+                })
+                .onChange((value: string) => {
+                  this.linkUri = value;
+                })
+              Button("解析快捷方式", { type: ButtonType.Normal })
+                .backgroundColor(0x317aff)
+                .width('90%')
+                .height(40)
+                .margin({ top: 20 })
+                .onClick(async () => {
+                  const linkUri: string = this.linkUri;
+                  let targetUri: string = '';
+                  try {
+                    targetUri = await fileManagerService.parseShortcut(linkUri);
+                    console.info('parseShortcut success, linkUri:' + linkUri + ', targetUri:' + targetUri);
+                    this.parseResult = '解析快捷方式成功，目标原文件URI：' + targetUri;
+                  } catch (err) {
+                    let error: BusinessError = err as BusinessError;
+                    console.error('parseShortcut failed, errCode:' + error.code + ', errMessage:' + error.message);
+                    this.parseResult = 'errCode:' + error.code + ', errMessage:' + error.message;
+                  }
+                })
+              Row() {
+                Text('解析结果：')
+                  .textAlign(TextAlign.Start)
+                  .margin({ top: 20 })
+                  .fontSize('25fp')
+                Text(this.parseResult)
+                  .textAlign(TextAlign.Start)
+                  .margin({ top: 20 })
+                  .fontSize('25fp')
+              }
+            }
+          }
+          .width('100%')
+        }
+        .height('100%')
+        .width('100%')
+        .padding({left: 10, right: 10})
+      }
+    }
+    .align(Alignment.BottomEnd)
+  }
+}
 ```

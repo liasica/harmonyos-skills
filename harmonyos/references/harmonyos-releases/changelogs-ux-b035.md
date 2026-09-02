@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-ux-b035
 title: UX样式或效果的变更
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Developer Beta3引入的接口行为变更 > UX样式或效果的变更
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Developer Beta3引入的接口行为变更 > UX样式或效果的变更
 category: harmonyos-releases
-scraped_at: 2026-04-29T13:24:11+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:4f78a7f0344354558dbe4c3df95a510207b5a30253913d01a0c2c2416c5fd278
+scraped_at: 2026-09-02T14:49:27+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:c78ec1c92e8382779f5e11e722bbde2880394accdbbe818720a16b71fc76bcc8
 ---
 
 ## bindContentCover动效参数变更
@@ -233,7 +233,7 @@ BindContextMenu上下文菜单选项过多会出现滚动条，此时手指快�
 
 变更后：上下文菜单选项没有滚动条时，手指快速滑动菜单选项会自动关闭菜单；上下文菜单选项过多出现滚动条时，手指快速滑动菜单选项只会上下滚动菜单选项，不再主动关闭菜单。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/6XTQgEojSm6pS4hcDqJDvg/zh-cn_image_0000001977570038.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/IuUcM45lRUuftaeXADf2Lw/zh-cn_image_0000001977570038.png)
 
 **起始API Level**
 
@@ -281,28 +281,28 @@ MenuItemGroup高度没有加上MenuItem的margin高度，布局错乱，变更�
 
 示例代码：
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. build() {
-5. Row() {
-6. Button("菜单1").bindMenu(this.TestMarginTop())
-7. }
-8. }
+```ts
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Button("菜单1").bindMenu(this.TestMarginTop())
+    }
+  }
 
-10. @Builder
-11. TestMarginTop() {
-12. Menu() {
-13. MenuItemGroup() {
-14. MenuItem({content:"第一个"}).margin({top:20, bottom:20}).borderWidth(2).borderColor(Color.Black)
-15. MenuItem({content:"第二个"}).margin({top:20}).borderWidth(2).borderColor(Color.Black)
-16. MenuItem({content:"第三个"}).margin({bottom:20}).borderWidth(2).borderColor(Color.Black)
-17. MenuItem({content:"第四个"}).borderWidth(2).borderColor(Color.Black)
-18. }
-19. }
-20. }
-21. }
+  @Builder
+  TestMarginTop() {
+    Menu() {
+      MenuItemGroup() {
+        MenuItem({content:"第一个"}).margin({top:20, bottom:20}).borderWidth(2).borderColor(Color.Black)
+        MenuItem({content:"第二个"}).margin({top:20}).borderWidth(2).borderColor(Color.Black)
+        MenuItem({content:"第三个"}).margin({bottom:20}).borderWidth(2).borderColor(Color.Black)
+        MenuItem({content:"第四个"}).borderWidth(2).borderColor(Color.Black)
+      }
+    }
+  }
+}
 ```
 
 | 变更前布局错乱 | 变更后布局正常 |
@@ -331,31 +331,31 @@ Menu中MenuItem全部设置margin后，左右边距不对称，变更后左右�
 
 示例代码：
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. build() {
-5. Column() {
-6. Text('click for Menu')
-7. .fontSize(20)
-8. .margin({ top: 20 })
-9. .bindMenu(this.TestMenuItemMarginLeftAndRight)
-10. }
-11. .height('100%')
-12. .width('100%')
-13. }
+```ts
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Text('click for Menu')
+        .fontSize(20)
+        .margin({ top: 20 })
+        .bindMenu(this.TestMenuItemMarginLeftAndRight)
+    }
+    .height('100%')
+    .width('100%')
+  }
 
-15. @Builder
-16. TestMenuItemMarginLeftAndRight() {
-17. Menu() {
-18. MenuItem({content:"这是menuitem1"}).margin(10).borderWidth(1)
-19. }
-20. .borderWidth(2)
-21. .borderColor(Color.Red)
-22. .width(200)
-23. }
-24. }
+  @Builder
+  TestMenuItemMarginLeftAndRight() {
+    Menu() {
+      MenuItem({content:"这是menuitem1"}).margin(10).borderWidth(1)
+    }
+    .borderWidth(2)
+    .borderColor(Color.Red)
+    .width(200)
+  }
+}
 ```
 
 | 变更前边距不对称 | 变更后左右对称 |
@@ -380,17 +380,17 @@ Menu组件。
 
 开发者在应用侧的module.json5中配置开启避让手机挖孔时，菜单未避让挖孔。
 
-```
-1. {
-2. "module": {
-3. "metadata": [
-4. {
-5. "name" : "avoid_cutout",
-6. "value": "true",
-7. }
-8. ]
-9. }
-10. }
+```json
+{
+    "module": {
+        "metadata": [
+            {
+                "name" : "avoid_cutout",
+                "value": "true",
+            }
+        ]
+    }
+}
 ```
 
 **变更影响**
@@ -401,7 +401,7 @@ Menu组件。
 
 变更后：竖屏时菜单默认避让挖孔；横屏时，应用配置开启避让手机挖孔，菜单会避让挖孔。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/ysQpc8KWSauD9YWxEe7eNw/zh-cn_image_0000002014049909.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/MQrX9ETeRUqdY3f68Gr7Pw/zh-cn_image_0000002014049909.png)
 
 **起始API Level**
 
@@ -492,7 +492,7 @@ MenuItem设置enable为false时, 组件将处于禁用状态，此时字体颜�
 
 变更后：MenuItem设置enable为false时，若开发者未设置字体颜色，则组件禁用状态下的字体颜色为默认字体颜色 \* 不透明度40%；若开发者设置了字体颜色，则组件禁用状态下的字体颜色为自定义字体颜色 \* 不透明度40%；
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/DpM81MoBSseUtfrs9Xh3qA/zh-cn_image_0000001977570050.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/LgGxzQqDSEGGP88At1eQuQ/zh-cn_image_0000001977570050.png)
 
 **起始API Level**
 
@@ -651,54 +651,54 @@ Tabs组件
 
 若希望关闭页签的默认切换动效，可设置Tabs组件的animationDuration属性值为0，但同时TabContent页面的默认切换动效也会被关闭。示例代码如下：
 
-```
-1. @Entry
-2. @Component
-3. struct TabsSample {
-4. @State currentIndex: number = 0;
+```ts
+@Entry
+@Component
+struct TabsSample {
+  @State currentIndex: number = 0;
 
-6. @Builder TabBuilder(index: number, name: string) {
-7. Text(name)
-8. .fontColor(this.currentIndex === index ? Color.White : Color.Black)
-9. .fontSize(this.currentIndex === index ? 18 : 16)
-10. .fontWeight(this.currentIndex === index ? 500 : 400)
-11. .textAlign(TextAlign.Center)
-12. .width(100)
-13. .height(48)
-14. .margin({ left: 4, right: 4 })
-15. .backgroundColor(this.currentIndex === index ? '#007DFF' : '#F1F3F5')
-16. .borderRadius(24)
-17. }
+  @Builder TabBuilder(index: number, name: string) {
+    Text(name)
+      .fontColor(this.currentIndex === index ? Color.White : Color.Black)
+      .fontSize(this.currentIndex === index ? 18 : 16)
+      .fontWeight(this.currentIndex === index ? 500 : 400)
+      .textAlign(TextAlign.Center)
+      .width(100)
+      .height(48)
+      .margin({ left: 4, right: 4 })
+      .backgroundColor(this.currentIndex === index ? '#007DFF' : '#F1F3F5')
+      .borderRadius(24)
+  }
 
-19. build() {
-20. Column() {
-21. Tabs({ index: this.currentIndex }) {
-22. TabContent() {
-23. Column().width('100%').height('100%').backgroundColor('#00CB87')
-24. }.tabBar(this.TabBuilder(0, 'green'))
+  build() {
+    Column() {
+      Tabs({ index: this.currentIndex }) {
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#00CB87')
+        }.tabBar(this.TabBuilder(0, 'green'))
 
-26. TabContent() {
-27. Column().width('100%').height('100%').backgroundColor('#007DFF')
-28. }.tabBar(this.TabBuilder(1, 'blue'))
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#007DFF')
+        }.tabBar(this.TabBuilder(1, 'blue'))
 
-30. TabContent() {
-31. Column().width('100%').height('100%').backgroundColor('#FFBF00')
-32. }.tabBar(this.TabBuilder(2, 'yellow'))
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#FFBF00')
+        }.tabBar(this.TabBuilder(2, 'yellow'))
 
-34. TabContent() {
-35. Column().width('100%').height('100%').backgroundColor('#E67C92')
-36. }.tabBar(this.TabBuilder(3, 'pink'))
-37. }
-38. .height(300)
-39. .barMode(BarMode.Scrollable, { margin: 16 })
-40. .fadingEdge(false)
-41. .animationDuration(0)
-42. .onChange((index: number) => {
-43. this.currentIndex = index
-44. })
-45. }.width('100%')
-46. }
-47. }
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#E67C92')
+        }.tabBar(this.TabBuilder(3, 'pink'))
+      }
+      .height(300)
+      .barMode(BarMode.Scrollable, { margin: 16 })
+      .fadingEdge(false)
+      .animationDuration(0)
+      .onChange((index: number) => {
+        this.currentIndex = index
+      })
+    }.width('100%')
+  }
+}
 ```
 
 ## Popup（气泡组件）UX样式变更
@@ -717,7 +717,7 @@ Popup（气泡组件）UX样式不符合规范
 
 2、按钮上方与文本下方间距不足8vp
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/SaONkqwXQ8WGAa3AxsIbaQ/zh-cn_image_0000002013930445.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/KsmbPQWES-ObFlx1zkTulg/zh-cn_image_0000002013930445.png)
 
 变更后：
 
@@ -725,7 +725,7 @@ Popup（气泡组件）UX样式不符合规范
 
 2、按钮上方与文本下方间距8vp
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/MJF2QWyvS_CuTrfZzyl8yw/zh-cn_image_0000002014049929.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/vuaOqYnxTvOp9HhqC4dYqg/zh-cn_image_0000002014049929.png)
 
 **起始API Level**
 

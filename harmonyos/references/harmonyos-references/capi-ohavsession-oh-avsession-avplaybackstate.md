@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohav
 title: OH_AVSession_AVPlaybackState
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > C API > 结构体 > OH_AVSession_AVPlaybackState
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:29+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e47d6de212c310b8ab8d959d296ba3d09a95114fd477b6b68c7c70edc4c7cf9a
+scraped_at: 2026-09-02T14:52:50+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:cd0e03e2259a862c921145266310b8d173a9bac72ca1eadc19da0b7d86c7fa62
 ---
 
-```
-1. typedef struct OH_AVSession_AVPlaybackState OH_AVSession_AVPlaybackState
+```c
+typedef struct OH_AVSession_AVPlaybackState OH_AVSession_AVPlaybackState
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-播控播放状态的对象。
+播放状态对象。
 
 **起始版本：** 23
 

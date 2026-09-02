@@ -1,14 +1,23 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/known-issues-baseline
 title: 已解决和已知的问题
-breadcrumb: 版本说明 > 已解决和已知的问题
+breadcrumb: 版本说明 > 更多版本 > 已解决和已知的问题
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:37:15+08:00
-doc_updated_at: 2026-02-13
-content_hash: sha256:c09fbc2d23fc581237471d78e26d1afbef4012242e30497d2ea118666c46fac2
+scraped_at: 2026-09-02T14:59:07+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:8ab8fd5d42685e3c4e4c5f504e9c960af7e2739ae539252233309dff16a7c499
 ---
 
 ## 已解决的问题
+
+**HarmonyOS开发者版本26.0.0 Beta2解决的问题：**
+
+* 修复OpenSSL CVE-2026-34180，解决了ASN.1解码器在64位平台上解析超2GB内容时整数截断导致堆越界读取的问题。修复后超2GB内容报错拒绝处理，消除堆越界读取风险。
+* 修复OpenSSL CVE-2026-34182，解决了CMS AuthEnvelopedData未校验内容加密算法OID和标签长度，允许非AEAD算法或1字节标签导致密钥等价获取和完整性绕过的问题。修复后仅允许AEAD算法，标签长度限定为4~16字节，消除密钥等价获取和完整性绕过风险。
+* 修复OpenSSL CVE-2026-42770，解决了DHX密钥交换子群校验使用对端q而非本地q，恶意对端可通过Lim-Lee小子群攻击恢复私钥的问题。修复后使用本地q并比对q值，不匹配时拒绝交换，消除私钥恢复风险。
+* 修复OpenSSL CVE-2026-9076，解决了CMS密码基础解密(PWRI密钥解包)未验证算法为分组密码，流密码使长度校验失效导致堆越界读取的问题。修复后仅允许分组密码用于密钥解包，消除堆越界读取风险。
+* 修复OpenSSL CVE-2026-7383，解决了`ASN1\_mbstring\_ncopy()`缓冲区大小计算整数溢出，超长输入时大小回绕为零导致堆越界写入的问题。修复后增加溢出检测报错拒绝处理，消除堆越界写入风险。
+* 修复OpenSSL CVE-2026-45446，解决了AES-SIV和AES-GCM-SIV解密空密文时预期标签保持全零不重新计算，攻击者可伪造空密文+全零标签通过认证的问题。修复后空密文场景正确计算预期标签，消除空密文消息认证绕过风险。
 
 **DevEco Studio 6.0.2 Release版本解决的问题：**
 
@@ -164,6 +173,22 @@ content_hash: sha256:c09fbc2d23fc581237471d78e26d1afbef4012242e30497d2ea118666c4
 * 解决了DevEco Profiler工具Concurrency并行并发模板中FFRT子泳道详情区无数据展示的问题。
 
 ## 已知的问题
+
+### hvigor-config.json5配置"ohos.sign.har": true启用HAR签名任务，编译过程中报错
+
+【问题现象】流水线构建或外部终端构建等脱离DevEco Studio构建的场景，hvigor-config.json5中配置开关"ohos.sign.har": true时，编译har报错"Remote sign har failed."。
+
+【引入版本】DevEco Studio 6.0.2 Release
+
+【解决措施】将JDK版本升级至21或以上。
+
+### Phone和Tablet设备的应用申请权限ohos.permissions.PRINTER\_DRIVER失败
+
+【问题现象】应用支持的设备类型存在Phone或Tablet时，因Phone和Tablet设备无法申请权限ohos.permissions.PRINTER\_DRIVER，调用添加打印机接口addPrinter时报错：编辑态报Error；编译态报WARN。
+
+【引入版本】HarmonyOS 6.1.1(24) Beta1
+
+【解决措施】该权限目前仅支持在PC/2in1设备申请，后续版本支持在Phone设备和Tablet设备申请使用。
 
 ### DevEco Studio中Effective URL字段的值在部分场景下展示为空
 

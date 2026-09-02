@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getin
 title: GetInputAttr
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator > GetInputAttr
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:47+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:bda1bee027e9aa47be14ba434fab95f182306ff1e7366804b165d5aa8a63c631
+content_hash: sha256:92c5827171890a04087478880cb09413cacc6dd45c051bdbc1dfee7ee97d695c
 ---
 
 ## 函数功能
@@ -14,31 +14,31 @@ content_hash: sha256:bda1bee027e9aa47be14ba434fab95f182306ff1e7366804b165d5aa8a6
 
 ## 函数原型
 
-```
-1. graphStatus GetInputAttr(const int32_t index, const char_t *name, AscendString &attr_value) const;
-2. graphStatus GetInputAttr(const char_t *dst_name, const char_t *name, AscendString &attr_value) const;
-3. graphStatus GetInputAttr(const int32_t index, const char_t *name, int64_t &attr_value) const;
-4. graphStatus GetInputAttr(const char_t *dst_name, const char_t *name, int64_t &attr_value) const;
-5. graphStatus GetInputAttr(const int32_t index, const char_t *name, int32_t &attr_value) const;
-6. graphStatus GetInputAttr(const char_t *dst_name, const char_t *name, int32_t &attr_value) const;
-7. graphStatus GetInputAttr(const int32_t index, const char_t *name, uint32_t &attr_value) const;
-8. graphStatus GetInputAttr(const char_t *dst_name, const char_t *name, uint32_t &attr_value) const;
-9. graphStatus GetInputAttr(const int32_t index, const char_t *name, bool &attr_value) const;
-10. graphStatus GetInputAttr(const char_t *dst_name, const char_t *name, bool &attr_value) const;
-11. graphStatus GetInputAttr(const int32_t index, const char_t *name, float32_t &attr_value) const;
-12. graphStatus GetInputAttr(const char_t *dst_name, const char_t *name, float32_t &attr_value) const;
-13. graphStatus GetInputAttr(const int32_t index, const char_t *name, std::vector<AscendString> &attr_value) const;
-14. graphStatus GetInputAttr(const char_t *dst_name, const char_t *name, std::vector<AscendString> &attr_value) const;
-15. graphStatus GetInputAttr(const int32_t index, const char_t *name, std::vector<int64_t> &attr_value) const;
-16. graphStatus GetInputAttr(const char_t *dst_name, const char_t *name, std::vector<int64_t> &attr_value) const;
-17. graphStatus GetInputAttr(const int32_t index, const char_t *name, std::vector<int32_t> &attr_value) const;
-18. graphStatus GetInputAttr(const char_t *dst_name, const char_t *name, std::vector<int32_t> &attr_value) const;
-19. graphStatus GetInputAttr(const int32_t index, const char_t *name, std::vector<uint32_t> &attr_value) const;
-20. graphStatus GetInputAttr(const char_t *dst_name, const char_t *name, std::vector<uint32_t> &attr_value) const;
-21. graphStatus GetInputAttr(const int32_t index, const char_t *name, std::vector<bool> &attr_value) const;
-22. graphStatus GetInputAttr(const char_t *dst_name, const char_t *name, std::vector<bool> &attr_value) const;
-23. graphStatus GetInputAttr(const int32_t index, const char_t *name, std::vector<float32_t> &attr_value) const;
-24. graphStatus GetInputAttr(const char_t *dst_name, const char_t *name, std::vector<float32_t> &attr_value) const;
+```cpp
+graphStatus GetInputAttr(const int32_t index, const char_t *name, AscendString &attr_value) const;
+graphStatus GetInputAttr(const char_t *dst_name, const char_t *name, AscendString &attr_value) const;
+graphStatus GetInputAttr(const int32_t index, const char_t *name, int64_t &attr_value) const;
+graphStatus GetInputAttr(const char_t *dst_name, const char_t *name, int64_t &attr_value) const;
+graphStatus GetInputAttr(const int32_t index, const char_t *name, int32_t &attr_value) const;
+graphStatus GetInputAttr(const char_t *dst_name, const char_t *name, int32_t &attr_value) const;
+graphStatus GetInputAttr(const int32_t index, const char_t *name, uint32_t &attr_value) const;
+graphStatus GetInputAttr(const char_t *dst_name, const char_t *name, uint32_t &attr_value) const;
+graphStatus GetInputAttr(const int32_t index, const char_t *name, bool &attr_value) const;
+graphStatus GetInputAttr(const char_t *dst_name, const char_t *name, bool &attr_value) const;
+graphStatus GetInputAttr(const int32_t index, const char_t *name, float32_t &attr_value) const;
+graphStatus GetInputAttr(const char_t *dst_name, const char_t *name, float32_t &attr_value) const;
+graphStatus GetInputAttr(const int32_t index, const char_t *name, std::vector<AscendString> &attr_value) const;
+graphStatus GetInputAttr(const char_t *dst_name, const char_t *name, std::vector<AscendString> &attr_value) const;
+graphStatus GetInputAttr(const int32_t index, const char_t *name, std::vector<int64_t> &attr_value) const;
+graphStatus GetInputAttr(const char_t *dst_name, const char_t *name, std::vector<int64_t> &attr_value) const;
+graphStatus GetInputAttr(const int32_t index, const char_t *name, std::vector<int32_t> &attr_value) const;
+graphStatus GetInputAttr(const char_t *dst_name, const char_t *name, std::vector<int32_t> &attr_value) const;
+graphStatus GetInputAttr(const int32_t index, const char_t *name, std::vector<uint32_t> &attr_value) const;
+graphStatus GetInputAttr(const char_t *dst_name, const char_t *name, std::vector<uint32_t> &attr_value) const;
+graphStatus GetInputAttr(const int32_t index, const char_t *name, std::vector<bool> &attr_value) const;
+graphStatus GetInputAttr(const char_t *dst_name, const char_t *name, std::vector<bool> &attr_value) const;
+graphStatus GetInputAttr(const int32_t index, const char_t *name, std::vector<float32_t> &attr_value) const;
+graphStatus GetInputAttr(const char_t *dst_name, const char_t *name, std::vector<float32_t> &attr_value) const;
 ```
 
 ## 参数说明

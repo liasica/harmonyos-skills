@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: 使用eglSwapBuffers API，eglSwapBuffers执行报错错误码：EGL_BAD_ALLOC。
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > 使用eglSwapBuffers API，eglSwapBuffers执行报错错误码：EGL_BAD_ALLOC。
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:49+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:07+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:747869a72d07082b7339d9e3310b69b57966788738119faad1eddeab3fbea254
 ---
 

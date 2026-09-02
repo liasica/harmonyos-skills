@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-presentin
 title: 显示地图
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 创建地图 > 显示地图
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:00+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:287063a15c8eeb577ab472b540a515209e58901d9dc2e0473b4d4dc3a1bdd0b2
+scraped_at: 2026-09-02T14:59:58+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:e558f27daf440ad8eba63eab2ff8b8f85838b295108b20708d793686989461bf
 ---
 
 ## 场景介绍
 
-从5.0.3(15)开始，支持Logo缩放功能和3D地球功能；从5.1.1(19)开始，支持室内图功能和设置比例尺单位功能；从6.0.0(20)开始，支持设置地图语言功能；从6.1.0(23)开始，支持设置3D地图城市灯光效果。
+从5.0.3(15)开始，支持Logo缩放功能和3D地球功能；从5.1.1(19)开始，支持室内图功能和设置比例尺单位功能；从6.0.0(20)开始，支持设置地图语言功能；从6.1.0(23)开始，支持设置3D地图城市灯光效果；从26.0.0开始，支持3D地球背景替换。
 
 本章节将向您介绍如何使用地图组件[MapComponent](../harmonyos-references/map-mapcomponent.md#mapcomponent)和[MapComponentController](../harmonyos-references/map-map-mapcomponentcontroller.md)呈现地图，效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/b5XLT0SgRfKK_9ab33Lwbw/zh-cn_image_0000002558765504.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/8yGHvebOQSm0rV99PtNMQg/zh-cn_image_0000002706835020.jpg "点击放大")
 
 ## 接口说明
 
@@ -32,9 +32,9 @@ content_hash: sha256:287063a15c8eeb577ab472b540a515209e58901d9dc2e0473b4d4dc3a1b
 
 1. 导入Map Kit相关模块。
 
-   ```
-   1. import { MapComponent, mapCommon, map } from '@kit.MapKit';
-   2. import { AsyncCallback } from '@kit.BasicServicesKit';
+   ```typescript
+   import { MapComponent, mapCommon, map } from '@kit.MapKit';
+   import { AsyncCallback } from '@kit.BasicServicesKit';
    ```
 2. 新建地图初始化参数mapOptions，设置地图中心点坐标及层级。
 
@@ -42,73 +42,77 @@ content_hash: sha256:287063a15c8eeb577ab472b540a515209e58901d9dc2e0473b4d4dc3a1b
 
    调用[MapComponent](../harmonyos-references/map-mapcomponent.md#mapcomponent)组件，传入mapOptions和mapCallback参数，初始化地图。
 
-   ```
-   1. @Entry
-   2. @Component
-   3. struct HuaweiMapDemo {
-   4. private TAG = "HuaweiMapDemo";
-   5. private mapOptions?: mapCommon.MapOptions;
-   6. private callback?: AsyncCallback<map.MapComponentController>;
-   7. private mapController?: map.MapComponentController;
-   8. private mapEventManager?: map.MapEventManager;
+   ```typescript
+   @Entry
+   @Component
+   struct MapPresentingDemo {
+     // ...
+     private TAG = 'MapPresentingDemo';
+     private mapOptions?: mapCommon.MapOptions;
+     private callback?: AsyncCallback<map.MapComponentController>;
+     private mapController?: map.MapComponentController;
+     private mapEventManager?: map.MapEventManager;
 
-   10. aboutToAppear(): void {
-   11. // 地图初始化参数，设置地图中心点坐标及层级
-   12. this.mapOptions = {
-   13. position: {
-   14. target: {
-   15. latitude: 39.9,
-   16. longitude: 116.4
-   17. },
-   18. zoom: 10
-   19. }
-   20. };
+     aboutToAppear(): void {
+       // 地图初始化参数，设置地图中心点坐标及层级
+       this.mapOptions = {
+         position: {
+           target: {
+             latitude: 39.9,
+             longitude: 116.4
+           },
+           zoom: 10
+         }
+       };
 
-   22. // 地图初始化的回调
-   23. this.callback = async (err, mapController) => {
-   24. if (!err) {
-   25. // 获取地图的控制器类，用来操作地图
-   26. this.mapController = mapController;
-   27. this.mapEventManager = this.mapController.getEventManager();
-   28. let callback = () => {
-   29. console.info(this.TAG, `on-mapLoad`);
-   30. }
-   31. this.mapEventManager.on("mapLoad", callback);
-   32. } else {
-   33. console.error(`Failed to initialize the map, code is：${err.code}, message is ${err.message}`);
-   34. }
-   35. };
-   36. }
+       // 地图初始化的回调
+       this.callback = async (err, mapController) => {
+         if (!err) {
+           // 获取地图的控制器类，用来操作地图
+           this.mapController = mapController;
+           this.mapEventManager = this.mapController.getEventManager();
+           let callback = () => {
+             console.info(this.TAG, `on-mapLoad`);
+           }
+           this.mapEventManager.on('mapLoad', callback);
+         } else {
+           console.error(`Failed to initialize the map, code is：${err.code}, message is ${err.message}`);
+         }
+       };
+     }
 
-   38. // 页面每次显示时触发一次，包括路由过程、应用进入前台等场景，仅@Entry装饰的自定义组件生效
-   39. onPageShow(): void {
-   40. // 将地图切换到前台
-   41. if (this.mapController) {
-   42. this.mapController.show();
-   43. }
-   44. }
+     // 页面每次显示时触发一次，包括路由过程、应用进入前台等场景，仅@Entry装饰的自定义组件生效
+     onPageShow(): void {
+       // 建议页面切换到前台，调用地图组件的show方法
+       if (this.mapController) {
+         this.mapController.show();
+       }
+     }
 
-   46. // 页面每次隐藏时触发一次，包括路由过程、应用进入后台等场景，仅@Entry装饰的自定义组件生效
-   47. onPageHide(): void {
-   48. // 将地图切换到后台
-   49. if (this.mapController) {
-   50. this.mapController.hide();
-   51. }
-   52. }
+     // 页面每次隐藏时触发一次，包括路由过程、应用进入后台等场景，仅@Entry装饰的自定义组件生效
+     onPageHide(): void {
+       // 建议页面切换到后台，调用地图组件的hide方法
+       if (this.mapController) {
+         this.mapController.hide();
+       }
+     }
 
-   54. build() {
-   55. Stack() {
-   56. // 调用MapComponent组件初始化地图
-   57. MapComponent({ mapOptions: this.mapOptions, mapCallback: this.callback }).width('100%').height('100%');
-   58. }.height('100%')
-   59. }
-   60. }
+     build() {
+       // ...
+         Stack() {
+           // 调用MapComponent组件初始化地图
+           MapComponent({ mapOptions: this.mapOptions, mapCallback: this.callback }).width('100%').height('100%');
+         }
+
+         // ...
+     }
+   }
    ```
 3. 运行您刚完成的工程就可以在您的APP中看到地图了，运行后的效果如下图所示。
 
    如果没有成功加载地图，请参见[地图不显示](map-faq-1.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/qdjNjwkwTICrfF9WKWTAHQ/zh-cn_image_0000002558605848.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/kneCJ2DcTyWEXlLIqhUjjw/zh-cn_image_0000002736314127.jpg "点击放大")
 
 ### 设置地图属性
 
@@ -141,54 +145,54 @@ content_hash: sha256:287063a15c8eeb577ab472b540a515209e58901d9dc2e0473b4d4dc3a1b
 1. 设置mapType，[切换地图类型](map-type.md)章节中有详细讲解。
 2. 设置myLocationControlsEnabled，展示我的位置按钮。
 
-   在mapOptions中设置myLocationControlsEnabled属性为true，可展示我的位置按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/j6cPSt5ASFqIzwDf4C2ZEQ/zh-cn_image_0000002589325375.png)，显示效果如下图所示。
+   在mapOptions中设置myLocationControlsEnabled属性为true，可展示我的位置按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/zZYlPqXxRR22MYi52DuwRQ/zh-cn_image_0000002706675084.png)，显示效果如下图所示。
 
    也可通过调用[MapComponentController](../harmonyos-references/map-map-mapcomponentcontroller.md)对象的方法展示我的位置按钮，详情见[显示我的位置](map-location.md)章节。
 
-   ```
-   1. this.mapOptions = {
-   2. position: {
-   3. target: {
-   4. latitude: 39.9,
-   5. longitude: 116.4
-   6. },
-   7. zoom: 10
-   8. },
-   9. myLocationControlsEnabled: true
-   10. };
+   ```typescript
+   this.mapOptions = {
+     position: {
+       target: {
+         latitude: 39.9,
+         longitude: 116.4
+       },
+       zoom: 10
+     },
+     myLocationControlsEnabled: true
+   };
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/S9vOpty6QYW6RfgGVSBdtw/zh-cn_image_0000002589245311.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/Y--z5NiJT3CVQ4kBwpXBxw/zh-cn_image_0000002736434173.jpg "点击放大")
 3. 展示比例尺。
 
    在mapOptions中设置scaleControlsEnabled属性为true，可展示比例尺，显示效果如下图所示。
 
-   ```
-   1. this.mapOptions = {
-   2. position: {
-   3. target: {
-   4. latitude: 39.9,
-   5. longitude: 116.4
-   6. },
-   7. zoom: 10
-   8. },
-   9. scaleControlsEnabled: true
-   10. };
+   ```typescript
+   this.mapOptions = {
+     position: {
+       target: {
+         latitude: 39.9,
+         longitude: 116.4
+       },
+       zoom: 10
+     },
+     scaleControlsEnabled: true
+   };
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/-8PB_xCLS4a8qWHUw5AcQQ/zh-cn_image_0000002558765506.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/0FteCAzdQtGqLpLYgBrCrw/zh-cn_image_0000002706835022.jpg "点击放大")
 
 ### 开启3D建筑图层
 
 调用[MapComponentController](../harmonyos-references/map-map-mapcomponentcontroller.md)对象的[setBuildingEnabled](../harmonyos-references/map-map-mapcomponentcontroller.md#setbuildingenabled)方法开启3D建筑图层，把缩放层级调整为16级或以上，将两个手指放在地图上，向上滑动倾斜地图可看到3D建筑图层的效果。
 
-```
-1. this.mapController.setBuildingEnabled(true);
+```typescript
+this.mapController.setBuildingEnabled(true);
 ```
 
 显示效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/0WapRCs5Tr2COF7IyoSp0Q/zh-cn_image_0000002558605850.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/ZrLQiwrARICjPxrp_KEPjw/zh-cn_image_0000002736314129.jpg "点击放大")
 
 ### 地图前后台切换
 
@@ -196,26 +200,26 @@ content_hash: sha256:287063a15c8eeb577ab472b540a515209e58901d9dc2e0473b4d4dc3a1b
 
 **地图切换至前台：**
 
-```
-1. // 页面每次显示时触发一次，包括路由过程、应用进入前台等场景，仅@Entry装饰的自定义组件生效
-2. onPageShow(): void {
-3. // 建议页面切换到前台，调用地图组件的show方法
-4. if (this.mapController) {
-5. this.mapController.show();
-6. }
-7. }
+```typescript
+// 页面每次显示时触发一次，包括路由过程、应用进入前台等场景，仅@Entry装饰的自定义组件生效
+onPageShow(): void {
+  // 建议页面切换到前台，调用地图组件的show方法
+  if (this.mapController) {
+    this.mapController.show();
+  }
+}
 ```
 
 **地图切换至后台：**
 
-```
-1. // 页面每次隐藏时触发一次，包括路由过程、应用进入后台等场景，仅@Entry装饰的自定义组件生效
-2. onPageHide(): void {
-3. // 建议页面切换到后台，调用地图组件的hide方法
-4. if (this.mapController) {
-5. this.mapController.hide();
-6. }
-7. }
+```typescript
+// 页面每次隐藏时触发一次，包括路由过程、应用进入后台等场景，仅@Entry装饰的自定义组件生效
+onPageHide(): void {
+  // 建议页面切换到后台，调用地图组件的hide方法
+  if (this.mapController) {
+    this.mapController.hide();
+  }
+}
 ```
 
 ### 深色模式
@@ -226,30 +230,30 @@ Map Kit提供2种方式设置地图的夜间模式：初始化地图时和创建
 
 在地图初始化参数中设置dayNightMode参数，参数可选值包括DAY（日间模式）、NIGHT（夜间模式）、AUTO（自动模式）。如果将参数值设置为AUTO，地图的深色模式会跟随系统，打开系统深色开关，显示夜间模式，否则显示日间模式。
 
-```
-1. this.mapOptions = {
-2. position: {
-3. target: {
-4. latitude: 39.9,
-5. longitude: 116.4
-6. },
-7. zoom: 10
-8. },
-9. myLocationControlsEnabled: true,
-10. // 设置地图为夜间模式
-11. dayNightMode: mapCommon.DayNightMode.NIGHT
-12. };
+```typescript
+this.mapOptions = {
+  position: {
+    target: {
+      latitude: 39.9,
+      longitude: 116.4
+    },
+    zoom: 10
+  },
+  myLocationControlsEnabled: true,
+  // 设置地图为夜间模式
+  dayNightMode: mapCommon.DayNightMode.NIGHT
+};
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/sGffMg6FT_6AYfU1m1WAmg/zh-cn_image_0000002589325377.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/ON5JC9gWRPmwrsklMyGH0w/zh-cn_image_0000002706675086.jpg "点击放大")
 
 方式二：创建地图后
 
 创建地图后，可调用[MapComponentController](../harmonyos-references/map-map-mapcomponentcontroller.md)对象的[setDayNightMode](../harmonyos-references/map-map-mapcomponentcontroller.md#setdaynightmode)方法设置夜间模式。下面的例子中将参数值设置为AUTO，在设置完之后，打开系统的深色开关，地图会自动变为夜间模式。
 
-```
-1. // 设置地图为自动模式
-2. this.mapController.setDayNightMode(mapCommon.DayNightMode.AUTO);
+```typescript
+// 设置地图为自动模式
+this.mapController.setDayNightMode(mapCommon.DayNightMode.AUTO);
 ```
 
 ### 室内图
@@ -262,54 +266,54 @@ Map Kit提供2种方式开启地图的室内图功能：初始化地图时和创
 
 在地图初始化参数中设置将[MapOptions](../harmonyos-references/map-common.md#mapoptions)中的indoorMapEnabled参数设置为true即可开启室内图功能，而且仅17级及以上地图层级可见室内图和楼层调节控件，通过左下角的楼层调节控件可以切换当前室内图楼层。
 
-```
-1. this.mapOptions = {
-2. position: {
-3. target: {
-4. latitude: 31.979227,
-5. longitude: 118.762245
-6. },
-7. zoom: 18
-8. },
-9. // 开启室内图功能
-10. indoorMapEnabled: true
-11. };
+```typescript
+this.mapOptions = {
+  position: {
+    target: {
+      latitude: 31.979227,
+      longitude: 118.762245
+    },
+    zoom: 18
+  },
+  // 开启室内图功能
+  indoorMapEnabled: true
+};
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/JrTrRNgYREqb4Q1ljBzKdA/zh-cn_image_0000002589245313.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/GBSuOsXdTeWLuU0n40HW1Q/zh-cn_image_0000002736434175.jpg "点击放大")
 
 方式二：创建地图后
 
 创建地图后，可调用[MapComponentController](../harmonyos-references/map-map-mapcomponentcontroller.md)对象的[setIndoorMapEnabled](../harmonyos-references/map-map-mapcomponentcontroller.md#setindoormapenabled)方法来开启或关闭室内图功能。下面的例子中将室内图开启后，调用[isIndoorMapEnabled](../harmonyos-references/map-map-mapcomponentcontroller.md#isindoormapenabled)方法来查询当前室内图功能的开启状态，调用[setFloorControlsPosition](../harmonyos-references/map-map-mapcomponentcontroller.md#setfloorcontrolsposition)方法可以设置楼层调节控件的位置。室内图功能还提供了[switchIndoorMapFloor](../harmonyos-references/map-map-mapcomponentcontroller.md#switchindoormapfloor)方法，可以切换到指定的室内建筑和指定的楼层。
 
-```
-1. // 开启室内图功能
-2. this.mapController.setIndoorMapEnabled(true);
-3. // 查询当前室内图开启状态
-4. let isIndoorMapEnabled: boolean = this.mapController.isIndoorMapEnabled();
-5. console.info('indoorMapEnabled is:' + isIndoorMapEnabled);
-6. // 设置楼层调节控件的位置
-7. this.mapController.setFloorControlsPosition({
-8. positionX: 500,
-9. positionY: 500
-10. });
-11. // 切换楼层,需要将第一个入参替换成用户需要的建筑物id，第二个参数替换成当前楼层，如'1F'、'B1'等等
-12. this.mapController.switchIndoorMapFloor('822588304363886720', '3F');
+```typescript
+// 开启室内图功能
+this.mapController.setIndoorMapEnabled(true);
+// 查询当前室内图开启状态
+let isIndoorMapEnabled: boolean = this.mapController.isIndoorMapEnabled();
+console.info('indoorMapEnabled is:' + isIndoorMapEnabled);
+// 设置楼层调节控件的位置
+this.mapController.setFloorControlsPosition({
+  positionX: 500,
+  positionY: 500
+});
+// 切换楼层,需要将第一个入参替换成用户需要的建筑物id，第二个参数替换成当前楼层，如'1F'、'B1'等等
+this.mapController.switchIndoorMapFloor('822588304363886720', '3F');
 ```
 
 通过调用[on('indoorMapEnter')](../harmonyos-references/map-map-mapeventmanager.md#onindoormapenter)方法和[on('indoorMapExit')](../harmonyos-references/map-map-mapeventmanager.md#onindoormapexit)可以分别设置进入和退出室内图的监听事件。
 
-```
-1. let callbackEnter = (indoorMapInfo: map.IndoorMapInfo) => {
-2. console.info(this.TAG, `on-indoorMapEnter`);
-3. };
-4. let callbackExit = () => {
-5. console.info(this.TAG, `on-indoorMapExit`);
-6. };
-7. // 进入室内图监听回调
-8. this.mapEventManager.on("indoorMapEnter", callbackEnter);
-9. // 退出室内图监听回调
-10. this.mapEventManager.on("indoorMapExit", callbackExit);
+```typescript
+let callbackEnter = (indoorMapInfo: map.IndoorMapInfo) => {
+  console.info(this.TAG, `on-indoorMapEnter`);
+};
+let callbackExit = () => {
+  console.info(this.TAG, `on-indoorMapExit`);
+};
+// 进入室内图监听回调
+this.mapEventManager.on('indoorMapEnter', callbackEnter);
+// 退出室内图监听回调
+this.mapEventManager.on('indoorMapExit', callbackExit);
 ```
 
 ### Logo缩放比例
@@ -320,34 +324,37 @@ Map Kit提供2种方式设置地图的Logo缩放比例：初始化地图时和�
 
 在地图初始化参数中设置logoScale参数，取值范围是[0.8, 1]，默认值是1。
 
-```
-1. this.mapOptions = {
-2. position: {
-3. target: {
-4. latitude: 39.9,
-5. longitude: 116.4
-6. },
-7. zoom: 10
-8. },
-9. myLocationControlsEnabled: true,
-10. // 设置logo缩放比例为0.9
-11. logoScale: 0.9
-12. };
+```typescript
+// 方式一：初始化地图时
+this.mapOptions = {
+  position: {
+    target: {
+      latitude: 39.9,
+      longitude: 116.4
+    },
+    zoom: 10
+  },
+  myLocationControlsEnabled: true,
+  // 设置logo缩放比例为0.9
+  logoScale: 0.9
+};
 ```
 
 方式二：创建地图后
 
 1. 创建地图后，调用[MapComponentController](../harmonyos-references/map-map-mapcomponentcontroller.md)对象的[setLogoScale](../harmonyos-references/map-map-mapcomponentcontroller.md#setlogoscale)方法设置Logo缩放比例。
 
-   ```
-   1. this.mapController.setLogoScale(0.9);
+   ```typescript
+   // 设置Logo缩放比例为0.9
+   this.mapController.setLogoScale(0.9);
    ```
 2. 获取Logo缩放比例。
 
    通过调用[MapComponentController](../harmonyos-references/map-map-mapcomponentcontroller.md)对象的[getLogoScale](../harmonyos-references/map-map-mapcomponentcontroller.md#getlogoscale)方法获取当前Logo缩放比例。
 
-   ```
-   1. let logoScale: number = this.mapController.getLogoScale();
+   ```typescript
+   // 获取Logo缩放比例
+   let logoScale: number = this.mapController.getLogoScale();
    ```
 
 ### 开启3D地球
@@ -360,37 +367,60 @@ Map Kit提供2种方式开启3D地球：初始化地图时和创建地图后。
 
 在地图初始化参数中设置3D地球的开启状态，默认值是false。
 
-```
-1. this.mapOptions = {
-2. position: {
-3. target: {
-4. latitude: 39.9,
-5. longitude: 116.4
-6. },
-7. zoom: 2
-8. },
-9. // 开启3D地球
-10. sphereEnabled: true
-11. };
+```typescript
+// 方式一：初始化地图时
+this.mapOptions = {
+  position: {
+    target: {
+      latitude: 39.9,
+      longitude: 116.4
+    },
+    zoom: 2
+  },
+  // 开启3D地球
+  sphereEnabled: true
+};
 ```
 
 方式二：创建地图后
 
 创建地图后，调用[MapComponentController](../harmonyos-references/map-map-mapcomponentcontroller.md)对象的[setSphereEnabled](../harmonyos-references/map-map-mapcomponentcontroller.md#setsphereenabled)方法开启3D地球，通过调用[MapComponentController](../harmonyos-references/map-map-mapcomponentcontroller.md)对象的[isSphereEnabled](../harmonyos-references/map-map-mapcomponentcontroller.md#issphereenabled)方法可获取3D地球的开启状态。
 
-```
-1. // 开启3D地球
-2. this.mapController.setSphereEnabled(true);
-3. // 获取3D地球的开启状态
-4. let result: boolean = this.mapController.isSphereEnabled();
+```typescript
+// 开启3D地球
+this.mapController.setSphereEnabled(true);
+// 获取3D地球的开启状态
+let result: boolean = this.mapController.isSphereEnabled();
 ```
 
 显示效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/lmAeOoPBSl6XhLrIr9MtQw/zh-cn_image_0000002558765508.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/aJPzz92KSlyVxBwEtYL6tQ/zh-cn_image_0000002706835024.jpg "点击放大")
 
-开启城市灯光效果
+### 开启城市灯光效果
 
 调用[MapComponentController](../harmonyos-references/map-map-mapcomponentcontroller.md)对象的[setSphereEnabled](../harmonyos-references/map-map-mapcomponentcontroller.md#setsphereenabled-2)(enabled: boolean, animateDuration: number, cityLight: boolean)方法开启城市灯光效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/IcAGukpqROWE7pi85XGhNA/zh-cn_image_0000002558605852.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/di4iF3GhTNW4ekH5qxthlw/zh-cn_image_0000002736314131.jpg "点击放大")
+
+### 3D地球背景替换
+
+3D地球背景替换可用于展示真实地球视角的全球航线、跨境路线、可视化国际物流路径等。
+
+```typescript
+let mSphereOptions: mapCommon.SphereParams =
+  {
+    // 开启球体太阳光
+    sunLightEnabled: true,
+    // 开启球体城市光
+    cityLightEnabled: true,
+    // 设置动画时长为1000ms
+    animateDuration: 1000,
+    // 图片需存放在resources/base/media目录下
+    backgroundImage: $r('app.media.bg_compress'),
+    coverageImage: $r('app.media.coverage_icon')
+  };
+await this.mapController.setSphereMapEnabled(true, mSphereOptions);
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/ST_V68qUTnGh0cspfFQT1g/zh-cn_image_0000002706675088.jpg "点击放大")

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-real-
 title: 人脸核身实人验证场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 用户身份验证服务 > 人脸核身实人验证场景
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:34+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:b13d45a99351c9d9a03d0feaf8a84b9ccdaa75f3ca7a9ff0f205e15d9b464c45
+scraped_at: 2026-09-02T14:59:59+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:35a7e94ad11fcbdfd3b470d3022e43ac968582d18bbe7c5590f9a17e8cd1918f
 ---
 
 ## 场景介绍
@@ -18,17 +18,13 @@ content_hash: sha256:b13d45a99351c9d9a03d0feaf8a84b9ccdaa75f3ca7a9ff0f205e15d9b4
 
 人脸核身实人验证页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/Hj9KL8QCQ76oH-ypUa_T1w/zh-cn_image_0000002558765596.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/yIbqRQr5SvasS1QM2Y7i2w/zh-cn_image_0000002706835118.png)
 
 ## 约束与限制
 
+人脸核身实人验证能力支持Phone、Tablet设备，从6.1.1(24)版本开始，新增支持PC/2in1设备。
+
 为确保人脸识别的准确性，必须在全屏模式下调用人脸核身实人验证功能。
-
-以下场景均不支持：
-
-1. 特殊显示模式：半模态、上下分屏、左右分屏、单手模式、分栏、悬浮窗、智慧多窗、自由多窗等。
-2. 设备模式：PC模式、直板机横屏模式。
-3. 折叠设备：上下折叠手机外屏、折叠电脑全展开状态。
 
 ## 接入流程
 
@@ -43,7 +39,7 @@ content_hash: sha256:b13d45a99351c9d9a03d0feaf8a84b9ccdaa75f3ca7a9ff0f205e15d9b4
 
 开发者通过接入人脸核身实人验证能力，可以简便快捷的实现用户信息验证及本人操作的验证。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/qWV9-_1hSv6bSLhFJl9MVQ/zh-cn_image_0000002558605940.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/CK__f1CpSUWdFydA4cNWUQ/zh-cn_image_0000002736314225.png)
 
 1. 开发者客户端收集用户实名信息加密后请求开发者服务端发起人脸核身实人预验证。
 2. 开发者服务端请求Payment Kit服务端[人脸核身实人预验证](../harmonyos-references/payment-api-common-face-verifactaion-preverify.md)接口获取预验证ID（preVerifyId）。
@@ -77,45 +73,45 @@ content_hash: sha256:b13d45a99351c9d9a03d0feaf8a84b9ccdaa75f3ca7a9ff0f205e15d9b4
 
 ### 拉起人脸核身实人验证（端侧开发）
 
-开发者客户端使用后端服务返回的预验证ID作为参数调用[startFaceVerification](../harmonyos-references/payment-realnameservice.md#startfaceverification)接口拉起用户人脸核身实人验证页面。当接口通过.then()方法返回时，则表示当前接口请求成功，通过.catch()方法返回表示接口请求失败。当此次请求有异常时，可通过**error.code**获取错误码，错误码相关信息请参见[错误码](../harmonyos-references/payment-error-code.md)。示例代码如下：
+开发者客户端使用后端服务返回的预验证ID作为参数调用[startFaceVerification](../harmonyos-references/payment-realnameservice.md#startfaceverification)接口拉起用户人脸核身实人验证页面。当接口通过.then()方法返回时，则表示当前接口请求成功，通过.catch()方法返回表示接口请求失败。当此次请求有异常时，可通过**error.code**获取错误码，错误码相关信息请参见[错误码](../harmonyos-references/errorcode-payment.md)。示例代码如下：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { realNameService } from '@kit.PaymentKit';
-3. import { common } from '@kit.AbilityKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { realNameService } from '@kit.PaymentKit';
+import { common } from '@kit.AbilityKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-9. requestStartFaceVerificationPromise() {
-10. // use your own preVerifyId
-11. let preVerifyId = '后端服务获取有效的预验证ID';
-12. realNameService.startFaceVerification(this.context, preVerifyId)
-13. .then((verifyResultId: string ) => {
-14. // face verification success
-15. console.info(`succeeded in face verifying, verifyResultId: ${verifyResultId}`);
-16. })
-17. .catch((error: BusinessError) => {
-18. // failed to face verification
-19. console.error(`failed to face verification, error.code: ${error.code}, error.message: ${error.message}`);
-20. });
-21. }
+@Entry
+@Component
+struct Index {
+  context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  requestStartFaceVerificationPromise() {
+    // 请使用开发者真实的预验证ID（preVerifyId）
+    let preVerifyId = '后端服务获取有效的预验证ID';
+    realNameService.startFaceVerification(this.context, preVerifyId)
+      .then((verifyResultId: string ) => {
+        // 人脸验证成功
+        console.info(`succeeded in face verifying, verifyResultId: ${verifyResultId}`);
+      })
+      .catch((error: BusinessError) => {
+        // 人脸验证失败
+        console.error(`failed to face verification, error.code: ${error.code}, error.message: ${error.message}`);
+      });
+  }
 
-23. build() {
-24. Column() {
-25. Button('requestStartFaceVerificationPromise')
-26. .type(ButtonType.Capsule)
-27. .width('50%')
-28. .margin(20)
-29. .onClick(() => {
-30. this.requestStartFaceVerificationPromise();
-31. })
-32. }
-33. .width('100%')
-34. .height('100%')
-35. }
-36. }
+  build() {
+    Column() {
+      Button('requestStartFaceVerificationPromise')
+        .type(ButtonType.Capsule)
+        .width('50%')
+        .margin(20)
+        .onClick(() => {
+          this.requestStartFaceVerificationPromise();
+        })
+      }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ### 查询人脸核身实人验证结果（服务器开发）

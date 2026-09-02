@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdsmaterial
-title: hdsMaterial
-breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS API > hdsMaterial
+title: hdsMaterial (hds沉浸光感材质)
+breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS API > hdsMaterial (hds沉浸光感材质)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:40+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:91b63b9dcaf44f19532a504157f637a0b48d2bcf752964c18b542f12c676ee37
+scraped_at: 2026-09-02T15:01:39+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3a2cf3fe7f39418fab0bcbdefb2bb6a59196c0c70f38c60f496d3029c6bcc5b2
 ---
 
 本模块提供材质效果能力，支持通过配置材质类型、等级等参数，实现多样化的材质表现。
@@ -14,15 +14,11 @@ content_hash: sha256:91b63b9dcaf44f19532a504157f637a0b48d2bcf752964c18b542f12c67
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { hdsMaterial } from '@kit.UIDesignKit';
+```typescript
+import { hdsMaterial } from '@kit.UIDesignKit';
 ```
 
 ## getSystemMaterialTypes
-
-PhonePC/2in1TabletTV
 
 getSystemMaterialTypes(): Array<MaterialType>
 
@@ -44,22 +40,20 @@ getSystemMaterialTypes(): Array<MaterialType>
 
 **示例：**
 
-```
-1. import { hdsMaterial } from '@kit.UIDesignKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { hdsMaterial } from '@kit.UIDesignKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. let materialTypes: Array<hdsMaterial.MaterialType> = hdsMaterial.getSystemMaterialTypes();
-6. } catch (err) {
-7. let message = (err as BusinessError).message;
-8. let code = (err as BusinessError).code;
-9. console.error(`getSystemMaterialTypes failed, code: ${code}, message: ${message}`);
-10. }
+try {
+  let materialTypes: Array<hdsMaterial.MaterialType> = hdsMaterial.getSystemMaterialTypes();
+} catch (err) {
+  let message = (err as BusinessError).message;
+  let code = (err as BusinessError).code;
+  console.error(`getSystemMaterialTypes failed, code: ${code}, message: ${message}`);
+}
 ```
 
 ## MaterialType
-
-PhonePC/2in1TabletTV
 
 材质类型枚举。
 
@@ -79,8 +73,6 @@ PhonePC/2in1TabletTV
 
 ## MaterialLevel
 
-PhonePC/2in1TabletTV
-
 材质等级枚举。各等级效果承载在支持配置材质属性的组件上，其中精美等级材质需要耗费的性能更多，流畅等级材质需要耗费的性能较少。
 
 **卡片能力：** 从6.1.0(23)开始，该接口支持在ArkTS卡片中使用。
@@ -98,7 +90,7 @@ PhonePC/2in1TabletTV
 | SMOOTH | 2 | 流畅。 |
 | ADAPTIVE | 10 | 材质生效策略由系统策略决定，系统根据设备性能自适应材质等级。 |
 
-说明
+**说明** 
 
 * **推荐使用默认值ADAPTIVE档位：** 该模式下，系统会根据当前设备的算力动态调整组件的材质效果，实现性能与显示效果的最佳平衡体验。
 * **若未采用系统自适应能力。** 请先调用[getSystemMaterialTypes()](ui-design-hdsmaterial.md#getsystemmaterialtypes)接口查询当前设备支持的材质能力，再根据查询结果选用相应的材质效果枚举：

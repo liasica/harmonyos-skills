@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-order
 title: 根据交易号查询订单状态信息
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API > 根据交易号查询订单状态信息
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:42861dc67ad6b7e1d4f4b1bfd7b47218e42bde6c6603126e55ffce8c91518405
+scraped_at: 2026-09-02T15:02:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:86a21b362d9a50fc857f0b7e4e6ffdf65c64f18bc3b59d214acca90210a14563
 ---
 
 ## 功能介绍
@@ -16,7 +16,7 @@ content_hash: sha256:42861dc67ad6b7e1d4f4b1bfd7b47218e42bde6c6603126e55ffce8c915
 
 当用户对订单存在疑问时，可以通过交易号向开发者寻求技术支持，开发者通过调用该接口查询对应的订单状态信息。
 
-说明
+**说明** 
 
 该接口仅支持查询一年内的订单。
 
@@ -52,14 +52,14 @@ content_hash: sha256:42861dc67ad6b7e1d4f4b1bfd7b47218e42bde6c6603126e55ffce8c915
 
 ## 请求示例
 
-```
-1. POST /harmony/v1/application/order/lookup
-2. Content-Type: application/json;charset=UTF-8
-3. Authorization: Bearer ***.***.***
-4. Accept: application/json
-5. {
-6. "orderNo": "******"
-7. }
+```javascript
+POST /harmony/v1/application/order/lookup
+Content-Type: application/json;charset=UTF-8
+Authorization: Bearer ***.***.***
+Accept: application/json
+{
+  "orderNo": "******"
+}
 ```
 
 ## 响应参数
@@ -81,13 +81,13 @@ content_hash: sha256:42861dc67ad6b7e1d4f4b1bfd7b47218e42bde6c6603126e55ffce8c915
 
 ## 响应示例
 
-```
-1. HTTP/1.2 200 OK
-2. Content-Type: application/json;charset=UTF-8
-3. {
-4. "responseCode": "0",
-5. "responseMessage": "success",
-6. "orderStatus": 1,
-7. "jwsPurchaseOrder": "***"
-8. }
+```javascript
+HTTP/1.2 200 OK
+Content-Type: application/json;charset=UTF-8
+{
+  "responseCode": "0",
+  "responseMessage": "success",
+  "orderStatus": 1,
+  "jwsPurchaseOrder": "***"
+}
 ```

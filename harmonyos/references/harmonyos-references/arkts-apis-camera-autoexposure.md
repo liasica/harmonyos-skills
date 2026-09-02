@@ -3,37 +3,33 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AutoExposure)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (AutoExposure)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:32+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:adf807ebeed8e882c8edab9ae20e60454b9faa095c33d530c54e09691c581d03
+scraped_at: 2026-09-02T15:02:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:36c5e984b7039c7a1072ff16100ca335318327aec8e33ab1fca14509f6b8529a
 ---
 
-AutoExposure 继承自 [AutoExposureQuery](arkts-apis-camera-autoexposurequery.md)。
+AutoExposure继承自[AutoExposureQuery](arkts-apis-camera-autoexposurequery.md)。
 
 自动曝光类，对设备自动曝光（AE）操作。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Interface首批接口从API version 11开始支持。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { camera } from '@kit.CameraKit';
+```ts
+import { camera } from '@kit.CameraKit';
 ```
 
 ## getExposureMode11+
-
-PhonePC/2in1TabletTVWearable
 
 getExposureMode(): ExposureMode
 
 获取当前曝光模式。
 
-说明
+**说明** 
 
 若未通过[setExposureMode](arkts-apis-camera-autoexposure.md#setexposuremode11)接口进行设置，直接调用该接口查询当前曝光模式，会返回无效值。
 
@@ -57,25 +53,23 @@ getExposureMode(): ExposureMode
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function getExposureMode(photoSession: camera.PhotoSession): camera.ExposureMode | undefined {
-4. let exposureMode: camera.ExposureMode | undefined = undefined;
-5. try {
-6. exposureMode = photoSession.getExposureMode();
-7. } catch (error) {
-8. // 失败返回错误码error.code并处理。
-9. let err = error as BusinessError;
-10. console.error(`The getExposureMode call failed. error code: ${err.code}`);
-11. }
-12. return exposureMode;
-13. }
+function getExposureMode(photoSession: camera.PhotoSession): camera.ExposureMode | undefined {
+  let exposureMode: camera.ExposureMode | undefined = undefined;
+  try {
+    exposureMode = photoSession.getExposureMode();
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The getExposureMode call failed. error code: ${err.code}`);
+  }
+  return exposureMode;
+}
 ```
 
 ## setExposureMode11+
-
-PhonePC/2in1TabletTVWearable
 
 setExposureMode(aeMode: ExposureMode): void
 
@@ -97,28 +91,26 @@ setExposureMode(aeMode: ExposureMode): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 7400102 | Operation not allowed. |
+| 7400102 | Operation not allowed.  适用版本：19+ |
 | 7400103 | Session not config. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function setExposureMode(photoSession: camera.PhotoSession): void {
-4. try {
-5. photoSession.setExposureMode(camera.ExposureMode.EXPOSURE_MODE_LOCKED);
-6. } catch (error) {
-7. // 失败返回错误码error.code并处理。
-8. let err = error as BusinessError;
-9. console.error(`The setExposureMode call failed. error code: ${err.code}`);
-10. }
-11. }
+function setExposureMode(photoSession: camera.PhotoSession): void {
+  try {
+    photoSession.setExposureMode(camera.ExposureMode.EXPOSURE_MODE_LOCKED);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The setExposureMode call failed. error code: ${err.code}`);
+  }
+}
 ```
 
 ## getMeteringPoint11+
-
-PhonePC/2in1TabletTVWearable
 
 getMeteringPoint(): Point
 
@@ -144,31 +136,29 @@ getMeteringPoint(): Point
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function getMeteringPoint(photoSession: camera.PhotoSession): camera.Point | undefined {
-4. let exposurePoint: camera.Point | undefined = undefined;
-5. try {
-6. exposurePoint = photoSession.getMeteringPoint();
-7. } catch (error) {
-8. // 失败返回错误码error.code并处理。
-9. let err = error as BusinessError;
-10. console.error(`The getMeteringPoint call failed. error code: ${err.code}`);
-11. }
-12. return exposurePoint;
-13. }
+function getMeteringPoint(photoSession: camera.PhotoSession): camera.Point | undefined {
+  let exposurePoint: camera.Point | undefined = undefined;
+  try {
+    exposurePoint = photoSession.getMeteringPoint();
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The getMeteringPoint call failed. error code: ${err.code}`);
+  }
+  return exposurePoint;
+}
 ```
 
 ## setMeteringPoint11+
 
-PhonePC/2in1TabletTVWearable
-
 setMeteringPoint(point: Point): void
 
-设置曝光区域中心点，曝光点应在0-1坐标系内，该坐标系左上角为{0，0}，右下角为{1，1}。
+设置曝光区域中心点，曝光点应在0-1坐标系内，该坐标系左上角为{0,0}，右下角为{1,1}。
 
-此坐标系是以设备充电口在右侧时的横向设备方向为基准的，例如应用的预览界面布局以设备充电口在下侧时的竖向方向为基准，布局宽高为{w，h}，且触摸点为{x，y}，则转换后的坐标点为{y/h，1-x/w}。
+此坐标系是以设备充电口在右侧时的横向设备方向为基准的，例如应用的预览界面布局以设备充电口在下侧时的竖向方向为基准，布局宽高为{w,h}，且触摸点为{x,y}，则转换后的坐标点为{y/h,1-x/w}。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
@@ -178,7 +168,7 @@ setMeteringPoint(point: Point): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| point | [Point](arkts-apis-camera-i.md#point) | 是 | 曝光点，x、y设置范围应在[0，1]之内，超过范围，如果小于0设置0，大于1设置1。 |
+| point | [Point](arkts-apis-camera-i.md#point) | 是 | 曝光点，x、y设置范围应在[0,1]之内，超过范围，如果小于0设置0，大于1设置1。 |
 
 **错误码：**
 
@@ -190,24 +180,22 @@ setMeteringPoint(point: Point): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function setMeteringPoint(photoSession: camera.PhotoSession): void {
-4. const point: camera.Point = {x: 1, y: 1};
-5. try {
-6. photoSession.setMeteringPoint(point);
-7. } catch (error) {
-8. // 失败返回错误码error.code并处理。
-9. let err = error as BusinessError;
-10. console.error(`The setMeteringPoint call failed. error code: ${err.code}`);
-11. }
-12. }
+function setMeteringPoint(photoSession: camera.PhotoSession): void {
+  const point: camera.Point = {x: 1, y: 1};
+  try {
+    photoSession.setMeteringPoint(point);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The setMeteringPoint call failed. error code: ${err.code}`);
+  }
+}
 ```
 
 ## setExposureBias11+
-
-PhonePC/2in1TabletTVWearable
 
 setExposureBias(exposureBias: number): void
 
@@ -231,31 +219,29 @@ setExposureBias(exposureBias: number): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 7400102 | Operation not allowed. |
+| 7400102 | Operation not allowed.  适用版本：12+ |
 | 7400103 | Session not config. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function setExposureBias(photoSession: camera.PhotoSession, biasRangeArray: Array<number>): void {
-4. if (biasRangeArray && biasRangeArray.length > 0) {
-5. let exposureBias = biasRangeArray[0];
-6. try {
-7. photoSession.setExposureBias(exposureBias);
-8. } catch (error) {
-9. // 失败返回错误码error.code并处理。
-10. let err = error as BusinessError;
-11. console.error(`The setExposureBias call failed. error code: ${err.code}`);
-12. }
-13. }
-14. }
+function setExposureBias(photoSession: camera.PhotoSession, biasRangeArray: Array<number>): void {
+  if (biasRangeArray && biasRangeArray.length > 0) {
+    let exposureBias = biasRangeArray[0];
+    try {
+      photoSession.setExposureBias(exposureBias);
+    } catch (error) {
+      // 失败返回错误码error.code并处理。
+      let err = error as BusinessError;
+      console.error(`The setExposureBias call failed. error code: ${err.code}`);
+    }
+  }
+}
 ```
 
 ## getExposureValue11+
-
-PhonePC/2in1TabletTVWearable
 
 getExposureValue(): number
 
@@ -281,19 +267,175 @@ getExposureValue(): number
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function getExposureValue(photoSession: camera.PhotoSession): number {
-4. const invalidValue: number = -1;
-5. let exposureValue: number = invalidValue;
-6. try {
-7. exposureValue = photoSession.getExposureValue();
-8. } catch (error) {
-9. // 失败返回错误码error.code并处理。
-10. let err = error as BusinessError;
-11. console.error(`The getExposureValue call failed. error code: ${err.code}`);
-12. }
-13. return exposureValue;
-14. }
+function getExposureValue(photoSession: camera.PhotoSession): number {
+  const invalidValue: number = -1;
+  let exposureValue: number = invalidValue;
+  try {
+    exposureValue = photoSession.getExposureValue();
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The getExposureValue call failed. error code: ${err.code}`);
+  }
+  return exposureValue;
+}
+```
+
+## getExposureMeteringMode24+
+
+getExposureMeteringMode(): ExposureMeteringMode
+
+获取当前曝光测光模式。
+
+**元服务API：** 从API version 24开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [ExposureMeteringMode](arkts-apis-camera-e.md#exposuremeteringmode24) | 当前曝光测光模式。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](errorcode-camera.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400102 | Operation not allowed, the inputDevice or the session is abnormal. |
+| 7400103 | Session not config, only throw in session usage. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function getExposureMeteringMode(photoSession: camera.PhotoSession): camera.ExposureMeteringMode {
+  let meteringMode: camera.ExposureMeteringMode = camera.ExposureMeteringMode.MATRIX;
+  try {
+    meteringMode = photoSession.getExposureMeteringMode();
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The getExposureMeteringMode call failed. error code: ${err.code}`);
+  }
+  return meteringMode;
+}
+```
+
+## setExposureMeteringMode24+
+
+setExposureMeteringMode(aeMeteringMode: ExposureMeteringMode): void
+
+设置曝光测光模式。
+
+**元服务API：** 从API version 24开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| aeMeteringMode | [ExposureMeteringMode](arkts-apis-camera-e.md#exposuremeteringmode24) | 是 | 曝光测光模式。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](errorcode-camera.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400102 | Operation not allowed, the inputDevice or the session is abnormal. |
+| 7400103 | Session not config, only throw in session usage. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function setExposureMeteringMode(photoSession: camera.PhotoSession, aeMeteringMode: camera.ExposureMeteringMode): void {
+  try {
+    photoSession.setExposureMeteringMode(aeMeteringMode);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The setExposureMeteringMode call failed. error code: ${err.code}`);
+  }
+}
+```
+
+## onExposureStateChange
+
+onExposureStateChange(callback: Callback<ExposureState>): void
+
+监听曝光状态事件变更。使用callback异步回调。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<[ExposureState](arkts-apis-camera-e.md#exposurestate)> | 是 | 回调函数，返回当前曝光状态。 |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function callback(exposureState: camera.ExposureState): void {
+  console.info(`exposureState: ${exposureState}`);
+}
+
+function registerPhotoOutputCaptureStart(captureSession: camera.PhotoSession): void {
+  captureSession.onExposureStateChange(callback);
+}
+```
+
+## offExposureStateChange
+
+offExposureStateChange(callback?: Callback<ExposureState>): void
+
+注销监听曝光状态事件变更。使用callback异步回调。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<[ExposureState](arkts-apis-camera-e.md#exposurestate)> | 否 | 回调函数，如果指定参数则取消对应callback，callback对象如果为空或为匿名函数，则取消所有callback。 |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function callback(exposureState: camera.ExposureState): void {
+  console.info(`exposureState: ${exposureState}`);
+}
+
+function unregisterPhotoOutputCaptureStart(captureSession: camera.PhotoSession): void {
+  captureSession.offExposureStateChange(callback);
+}
+
+function unregisterPhotoOutputCaptureStartWithoutParam(captureSession: camera.PhotoSession): void {
+  captureSession.offExposureStateChange();
+}
 ```

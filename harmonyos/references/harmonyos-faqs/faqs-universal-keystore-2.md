@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-universal-
 title: HUKS初始向量是否必须为随机数？对生成的密钥有什么影响
 breadcrumb: FAQ > 系统开发 > 安全 > 密钥管理（Universal Keystore） > HUKS初始向量是否必须为随机数？对生成的密钥有什么影响
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:01+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:57+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:db8843c30fcc3f07d5af9d1b6ba8351ebdb2bafbf2f52d5a215183c4ef8c3747
 ---
 

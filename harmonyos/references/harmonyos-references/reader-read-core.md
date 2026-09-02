@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/reader-re
 title: readerCore（阅读核心能力）
 breadcrumb: API参考 > 应用服务 > Reader Kit（阅读服务） > ArkTS API > readerCore（阅读核心能力）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:36+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6a19ef19084957e741b27a13a33b422ca99caa7024fe87b70da66852d5dc5c7d
+scraped_at: 2026-09-02T15:03:08+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ba0cf2edf1f2549d8bce456775aac01e463c683e813e4c47f3f08bada8a42469
 ---
 
 本模块为Reader Kit核心能力。提供阅读页面数据基础类、页面状态、内容分页信息、页面排版属性、组件控制器等能力。
@@ -14,17 +14,15 @@ content_hash: sha256:6a19ef19084957e741b27a13a33b422ca99caa7024fe87b70da66852d5d
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { readerCore } from '@kit.ReaderKit';
+```typescript
+import { readerCore } from '@kit.ReaderKit';
 ```
 
 ## PageDatabaseBean
 
-PhonePC/2in1Tablet
-
 页面数据基础类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.4(16)开始，该接口支持在元服务中使用。
 
@@ -39,11 +37,11 @@ PhonePC/2in1Tablet
 
 ### constructor
 
-PhonePC/2in1Tablet
-
 constructor(nodeType: string, nodeDataId: string)
 
 页面数据构造函数。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.4(16)开始，该接口支持在元服务中使用。
 
@@ -60,9 +58,9 @@ constructor(nodeType: string, nodeDataId: string)
 
 ## PageState
 
-PhonePC/2in1Tablet
-
 页面状态。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.4(16)开始，该接口支持在元服务中使用。
 
@@ -72,16 +70,16 @@ PhonePC/2in1Tablet
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| PAGE\_WAITING | 1 | 等待加载。 |
-| PAGE\_LOADING | 2 | 加载中。 |
-| PAGE\_ON\_SHOW | 3 | 加载成功。 |
-| OPEN\_BOOK\_FAIL | 4 | 加载失败。 |
+| PAGE\_WAITING | 1 | 初始化成功，正在等待排版引擎通知。 |
+| PAGE\_LOADING | 2 | 初始化成功，等待排版结果。 |
+| PAGE\_ON\_SHOW | 3 | 排版成功并显示阅读页面。 |
+| OPEN\_BOOK\_FAIL | 4 | 排版失败，未成功加载页面。 |
 
 ## PageDataInfo
 
-PhonePC/2in1Tablet
-
 内容分页信息，继承[PageDatabaseBean](reader-read-core.md#pagedatabasebean)。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.4(16)开始，该接口支持在元服务中使用。
 
@@ -103,11 +101,11 @@ PhonePC/2in1Tablet
 
 ### constructor
 
-PhonePC/2in1Tablet
-
 constructor(nodeType: string, nodeId: string)
 
 内容分页信息构造函数。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.4(16)开始，该接口支持在元服务中使用。
 
@@ -122,9 +120,9 @@ constructor(nodeType: string, nodeId: string)
 
 ## ReaderSetting
 
-PhonePC/2in1Tablet
-
 页面排版属性。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.4(16)开始，该接口支持在元服务中使用。
 
@@ -150,9 +148,9 @@ PhonePC/2in1Tablet
 
 ## ReaderComponentController
 
-PhonePC/2in1Tablet
-
 [ReadPageComponent](reader-api-readpagecomponent.md#readpagecomponent)组件控制器，需要配合ReadPageComponent组件一起使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.4(16)开始，该接口支持在元服务中使用。
 
@@ -162,15 +160,15 @@ PhonePC/2in1Tablet
 
 ### init
 
-PhonePC/2in1Tablet
-
 init(context: common.UIAbilityContext): Promise<void>
 
 初始化ReaderComponentController，使用Promise异步回调。
 
-说明
+**说明** 
 
 在集成ReaderComponentController时，初始化接口一定要优先于controller的其他接口之前执行。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.4(16)开始，该接口支持在元服务中使用。
 
@@ -199,51 +197,51 @@ init(context: common.UIAbilityContext): Promise<void>
 
 **示例：**
 
-```
-1. import { readerCore, ReadPageComponent } from '@kit.ReaderKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { common } from '@kit.AbilityKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { readerCore, ReadPageComponent } from '@kit.ReaderKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. @Entry
-7. @Component
-8. struct Reader {
-9. private readerComponentController: readerCore.ReaderComponentController = new readerCore.ReaderComponentController();
+@Entry
+@Component
+struct Reader {
+  private readerComponentController: readerCore.ReaderComponentController = new readerCore.ReaderComponentController();
 
-11. aboutToAppear(): void {
-12. this.init();
-13. }
+  aboutToAppear(): void {
+    this.init();
+  }
 
-15. private async init(){
-16. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-17. await this.readerComponentController.init(context);
-18. hilog.info(0x0000, 'testTag', `init succeeded`);
-19. }
+  private async init() {
+    let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    await this.readerComponentController.init(context);
+    hilog.info(0x0000, 'testTag', `init succeeded`);
+  }
 
-21. build() {
-22. Stack() {
-23. ReadPageComponent({
-24. controller: this.readerComponentController,
-25. readerCallback: (err: BusinessError, data: readerCore.ReaderComponentController) => {
-26. this.readerComponentController = data;
-27. }
-28. })
-29. }.width('100%').height('100%')
-30. }
-31. }
+  build() {
+    Stack() {
+      ReadPageComponent({
+        controller: this.readerComponentController,
+        readerCallback: (err: BusinessError, data: readerCore.ReaderComponentController) => {
+          this.readerComponentController = data;
+        }
+      })
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### registerBookParser
-
-PhonePC/2in1Tablet
 
 registerBookParser(bookParserHandler: bookParser.BookParserHandler): void
 
 注册书籍解析器。
 
-说明
+**说明** 
 
 registerBookParser接口需要在[startPlay](reader-read-core.md#startplay)接口之前调用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.4(16)开始，该接口支持在元服务中使用。
 
@@ -268,51 +266,51 @@ registerBookParser接口需要在[startPlay](reader-read-core.md#startplay)接�
 
 **示例：**
 
-```
-1. import { bookParser, readerCore, ReadPageComponent } from '@kit.ReaderKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { common } from '@kit.AbilityKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { bookParser, readerCore, ReadPageComponent } from '@kit.ReaderKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. @Entry
-7. @Component
-8. struct Reader {
-9. private readerComponentController: readerCore.ReaderComponentController = new readerCore.ReaderComponentController();
+@Entry
+@Component
+struct Reader {
+  private readerComponentController: readerCore.ReaderComponentController = new readerCore.ReaderComponentController();
 
-11. aboutToAppear(): void {
-12. this.registerBookParser();
-13. }
+  aboutToAppear(): void {
+    this.registerBookParser();
+  }
 
-15. private async registerBookParser(){
-16. // 通过提前导入到应用沙箱目录中的书籍文件，初始化书籍解析器
-17. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-18. let filePath: string = `${context.filesDir}/abc.epub`;
-19. let bookParserHandler: bookParser.BookParserHandler = await bookParser.getDefaultHandler(filePath);
-20. await this.readerComponentController.init(context);
-21. this.readerComponentController.registerBookParser(bookParserHandler);
-22. hilog.info(0x0000, 'testTag', `registerBookParser succeeded`);
-23. }
+  private async registerBookParser() {
+    // 通过提前导入到应用沙箱目录中的书籍文件，初始化书籍解析器
+    let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    let filePath: string = `${context.filesDir}/abc.epub`;
+    let bookParserHandler: bookParser.BookParserHandler = await bookParser.getDefaultHandler(filePath);
+    await this.readerComponentController.init(context);
+    this.readerComponentController.registerBookParser(bookParserHandler);
+    hilog.info(0x0000, 'testTag', `registerBookParser succeeded`);
+  }
 
-25. build() {
-26. Stack() {
-27. ReadPageComponent({
-28. controller: this.readerComponentController,
-29. readerCallback: (err: BusinessError, data: readerCore.ReaderComponentController) => {
-30. this.readerComponentController = data;
-31. }
-32. })
-33. }.width('100%').height('100%')
-34. }
-35. }
+  build() {
+    Stack() {
+      ReadPageComponent({
+        controller: this.readerComponentController,
+        readerCallback: (err: BusinessError, data: readerCore.ReaderComponentController) => {
+          this.readerComponentController = data;
+        }
+      })
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### setPageConfig
 
-PhonePC/2in1Tablet
-
 setPageConfig(pageConfig: ReaderSetting): void
 
 设置或者修改页面排版属性。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.4(16)开始，该接口支持在元服务中使用。
 
@@ -337,70 +335,70 @@ setPageConfig(pageConfig: ReaderSetting): void
 
 **示例：**
 
-```
-1. import { readerCore, ReadPageComponent } from '@kit.ReaderKit';
-2. import { common } from '@kit.AbilityKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { display } from '@kit.ArkUI';
-5. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { readerCore, ReadPageComponent } from '@kit.ReaderKit';
+import { common } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { display } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-7. @Entry
-8. @Component
-9. struct Reader {
-10. private readerComponentController: readerCore.ReaderComponentController = new readerCore.ReaderComponentController();
+@Entry
+@Component
+struct Reader {
+  private readerComponentController: readerCore.ReaderComponentController = new readerCore.ReaderComponentController();
 
-12. aboutToAppear(): void {
-13. this.setPageConfig();
-14. }
+  aboutToAppear(): void {
+    this.setPageConfig();
+  }
 
-16. private async setPageConfig(){
-17. let readerSetting: readerCore.ReaderSetting = {
-18. fontName: '系统字体',
-19. fontPath: '',
-20. fontSize: 18,
-21. fontColor: '#000000',
-22. fontWeight: 400,
-23. lineHeight: 1.9,
-24. nightMode: false,
-25. themeColor: 'rgba(248, 249, 250, 1)',
-26. themeBgImg: '',
-27. flipMode: '0',
-28. scaledDensity: display.getDefaultDisplaySync().scaledDensity > 0 ? display.getDefaultDisplaySync().scaledDensity :
-29. 1,
-30. viewPortWidth: 1260, // 视口宽度，需要根据设备实际情况获取，否则会导致阅读界面异常
-31. viewPortHeight: 2720, // 视口高度，需要根据设备实际情况获取，否则会导致阅读界面异常
-32. };
+  private async setPageConfig(){
+    let readerSetting: readerCore.ReaderSetting = {
+      fontName: '系统字体',
+      fontPath: '',
+      fontSize: 18,
+      fontColor: '#000000',
+      fontWeight: 400,
+      lineHeight: 1.9,
+      nightMode: false,
+      themeColor: 'rgba(248, 249, 250, 1)',
+      themeBgImg: '',
+      flipMode: '0',
+      scaledDensity: display.getDefaultDisplaySync().scaledDensity > 0 ? display.getDefaultDisplaySync().scaledDensity :
+        1,
+      viewPortWidth: 1260, // 视口宽度，需要根据设备实际情况获取，否则会导致阅读界面异常
+      viewPortHeight: 2720 // 视口高度，需要根据设备实际情况获取，否则会导致阅读界面异常
+    };
 
-34. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-35. await this.readerComponentController.init(context);
-36. this.readerComponentController.setPageConfig(readerSetting);
-37. hilog.info(0x0000, 'testTag', `setPageConfig succeeded`);
-38. }
+    let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    await this.readerComponentController.init(context);
+    this.readerComponentController.setPageConfig(readerSetting);
+    hilog.info(0x0000, 'testTag', `setPageConfig succeeded`);
+  }
 
-40. build() {
-41. Stack() {
-42. ReadPageComponent({
-43. controller: this.readerComponentController,
-44. readerCallback: (err: BusinessError, data: readerCore.ReaderComponentController) => {
-45. this.readerComponentController = data;
-46. }
-47. })
-48. }.width('100%').height('100%')
-49. }
-50. }
+  build() {
+    Stack() {
+      ReadPageComponent({
+        controller: this.readerComponentController,
+        readerCallback: (err: BusinessError, data: readerCore.ReaderComponentController) => {
+          this.readerComponentController = data;
+        }
+      })
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### startPlay
-
-PhonePC/2in1Tablet
 
 startPlay(spineIndex: number, domPos: string): Promise<void>
 
 以指定阅读进度打开书籍，使用Promise异步回调。
 
-说明
+**说明** 
 
 startPlay接口需在[registerBookParser](reader-read-core.md#registerbookparser)事件成功触发后，才能调用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.4(16)开始，该接口支持在元服务中使用。
 
@@ -435,57 +433,57 @@ startPlay接口需在[registerBookParser](reader-read-core.md#registerbookparser
 
 **示例：**
 
-```
-1. import { bookParser, readerCore, ReadPageComponent } from '@kit.ReaderKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { common } from '@kit.AbilityKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { bookParser, readerCore, ReadPageComponent } from '@kit.ReaderKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. @Entry
-7. @Component
-8. struct Reader {
-9. private readerComponentController: readerCore.ReaderComponentController = new readerCore.ReaderComponentController();
+@Entry
+@Component
+struct Reader {
+  private readerComponentController: readerCore.ReaderComponentController = new readerCore.ReaderComponentController();
 
-11. aboutToAppear(): void {
-12. this.startPlay();
-13. }
+  aboutToAppear(): void {
+    this.startPlay();
+  }
 
-15. private async startPlay() {
-16. // 通过提前导入到应用沙箱目录中的书籍文件，初始化书籍解析器
-17. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-18. let filePath: string = `${context.filesDir}/abc.epub`;
-19. let bookParserHandler: bookParser.BookParserHandler = await bookParser.getDefaultHandler(filePath);
-20. let spineList: bookParser.SpineItem[] = bookParserHandler.getSpineList();
-21. let spineIndex: number = spineList[0].index;
-22. let domPos: string = '';
+  private async startPlay() {
+    // 通过提前导入到应用沙箱目录中的书籍文件，初始化书籍解析器
+    let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    let filePath: string = `${context.filesDir}/abc.epub`;
+    let bookParserHandler: bookParser.BookParserHandler = await bookParser.getDefaultHandler(filePath);
+    let spineList: bookParser.SpineItem[] = bookParserHandler.getSpineList();
+    let spineIndex: number = spineList[0].index;
+    let domPos: string = '';
 
-24. await this.readerComponentController.init(context);
-25. this.readerComponentController.registerBookParser(bookParserHandler);
-26. // 调用startPlay接口初始化书籍内容显示
-27. this.readerComponentController.startPlay(spineIndex || 0, domPos);
-28. hilog.info(0x0000, 'testTag', `startPlay succeeded`);
-29. }
+    await this.readerComponentController.init(context);
+    this.readerComponentController.registerBookParser(bookParserHandler);
+    // 调用startPlay接口初始化书籍内容显示
+    await this.readerComponentController.startPlay(spineIndex || 0, domPos);
+    hilog.info(0x0000, 'testTag', `startPlay succeeded`);
+  }
 
-31. build() {
-32. Stack() {
-33. ReadPageComponent({
-34. controller: this.readerComponentController,
-35. readerCallback: (err: BusinessError, data: readerCore.ReaderComponentController) => {
-36. this.readerComponentController = data;
-37. }
-38. })
-39. }.width('100%').height('100%')
-40. }
-41. }
+  build() {
+    Stack() {
+      ReadPageComponent({
+        controller: this.readerComponentController,
+        readerCallback: (err: BusinessError, data: readerCore.ReaderComponentController) => {
+          this.readerComponentController = data;
+        }
+      })
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### flipPage
 
-PhonePC/2in1Tablet
-
 flipPage(isNext: boolean): void
 
 触发[ReadPageComponent](reader-api-readpagecomponent.md#readpagecomponent)组件进行翻页。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.4(16)开始，该接口支持在元服务中使用。
 
@@ -510,49 +508,49 @@ flipPage(isNext: boolean): void
 
 **示例：**
 
-```
-1. import { readerCore, ReadPageComponent } from '@kit.ReaderKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { common } from '@kit.AbilityKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { readerCore, ReadPageComponent } from '@kit.ReaderKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. @Entry
-7. @Component
-8. struct Reader {
-9. private readerComponentController: readerCore.ReaderComponentController = new readerCore.ReaderComponentController();
+@Entry
+@Component
+struct Reader {
+  private readerComponentController: readerCore.ReaderComponentController = new readerCore.ReaderComponentController();
 
-11. aboutToAppear(): void {
-12. this.flipPage();
-13. }
+  aboutToAppear(): void {
+    this.flipPage();
+  }
 
-15. private async flipPage(){
-16. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-17. await this.readerComponentController.init(context);
-18. // 翻下一页
-19. this.readerComponentController.flipPage(true);
-20. hilog.info(0x0000, 'testTag', `flipPage succeeded`);
-21. }
+  private async flipPage() {
+    let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    await this.readerComponentController.init(context);
+    // 翻下一页
+    this.readerComponentController.flipPage(true);
+    hilog.info(0x0000, 'testTag', `flipPage succeeded`);
+  }
 
-23. build() {
-24. Stack() {
-25. ReadPageComponent({
-26. controller: this.readerComponentController,
-27. readerCallback: (err: BusinessError, data: readerCore.ReaderComponentController) => {
-28. this.readerComponentController = data;
-29. }
-30. })
-31. }.width('100%').height('100%')
-32. }
-33. }
+  build() {
+    Stack() {
+      ReadPageComponent({
+        controller: this.readerComponentController,
+        readerCallback: (err: BusinessError, data: readerCore.ReaderComponentController) => {
+          this.readerComponentController = data;
+        }
+      })
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### releaseBook
 
-PhonePC/2in1Tablet
-
 releaseBook(): void
 
 释放书籍资源，在退出阅读器等释放资源场景时使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.4(16)开始，该接口支持在元服务中使用。
 
@@ -562,49 +560,49 @@ releaseBook(): void
 
 **示例：**
 
-```
-1. import { readerCore, ReadPageComponent } from '@kit.ReaderKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { common } from '@kit.AbilityKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { readerCore, ReadPageComponent } from '@kit.ReaderKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. @Entry
-7. @Component
-8. struct Reader {
-9. private readerComponentController: readerCore.ReaderComponentController = new readerCore.ReaderComponentController();
+@Entry
+@Component
+struct Reader {
+  private readerComponentController: readerCore.ReaderComponentController = new readerCore.ReaderComponentController();
 
-11. aboutToAppear(): void {
-12. this.releaseBook();
-13. }
+  aboutToAppear(): void {
+    this.releaseBook();
+  }
 
-15. private async releaseBook(){
-16. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-17. await this.readerComponentController.init(context);
-18. // 释放加载书籍时的资源
-19. this.readerComponentController.releaseBook();
-20. hilog.info(0x0000, 'testTag', `releaseBook succeeded`);
-21. }
+  private async releaseBook() {
+    let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    await this.readerComponentController.init(context);
+    // 释放加载书籍时的资源
+    this.readerComponentController.releaseBook();
+    hilog.info(0x0000, 'testTag', `releaseBook succeeded`);
+  }
 
-23. build() {
-24. Stack() {
-25. ReadPageComponent({
-26. controller: this.readerComponentController,
-27. readerCallback: (err: BusinessError, data: readerCore.ReaderComponentController) => {
-28. this.readerComponentController = data;
-29. }
-30. })
-31. }.width('100%').height('100%')
-32. }
-33. }
+  build() {
+    Stack() {
+      ReadPageComponent({
+        controller: this.readerComponentController,
+        readerCallback: (err: BusinessError, data: readerCore.ReaderComponentController) => {
+          this.readerComponentController = data;
+        }
+      })
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### on('pageShow')
 
-PhonePC/2in1Tablet
-
 on(type: 'pageShow', callback: Callback<PageDataInfo>): void
 
 注册页面展示的通知服务，该通知在页面排版成功展示后触发。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.4(16)开始，该接口支持在元服务中使用。
 
@@ -621,51 +619,51 @@ on(type: 'pageShow', callback: Callback<PageDataInfo>): void
 
 **示例：**
 
-```
-1. import { readerCore, ReadPageComponent } from '@kit.ReaderKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { common } from '@kit.AbilityKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { readerCore, ReadPageComponent } from '@kit.ReaderKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. @Entry
-7. @Component
-8. struct Reader {
-9. private readerComponentController: readerCore.ReaderComponentController = new readerCore.ReaderComponentController();
+@Entry
+@Component
+struct Reader {
+  private readerComponentController: readerCore.ReaderComponentController = new readerCore.ReaderComponentController();
 
-11. aboutToAppear(): void {
-12. this.registerListener();
-13. }
+  aboutToAppear(): void {
+    this.registerListener();
+  }
 
-15. private async registerListener(){
-16. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-17. await this.readerComponentController.init(context)
-18. // 此处只演示方法调用，实际触发回调，需要配合startPlay接口使用
-19. this.readerComponentController.on('pageShow', (data: readerCore.PageDataInfo): void => {
-20. // 开发者可在此保存内容分布排版数据，利用data.resourceIndex及data.startDomPos数据调用startPlay接口继续阅读
-21. hilog.info(0x0000, 'testTag', 'pageshow: data is: ' + JSON.stringify(data));
-22. });
-23. }
+  private async registerListener() {
+    let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    await this.readerComponentController.init(context)
+    // 此处只演示方法调用，实际触发回调，需要配合startPlay接口使用
+    this.readerComponentController.on('pageShow', (data: readerCore.PageDataInfo): void => {
+      // 开发者可在此保存内容分布排版数据，利用data.resourceIndex及data.startDomPos数据调用startPlay接口继续阅读
+      hilog.info(0x0000, 'testTag', 'pageshow: data is: ' + JSON.stringify(data));
+    });
+  }
 
-25. build() {
-26. Stack() {
-27. ReadPageComponent({
-28. controller: this.readerComponentController,
-29. readerCallback: (err: BusinessError, data: readerCore.ReaderComponentController) => {
-30. this.readerComponentController = data;
-31. }
-32. })
-33. }.width('100%').height('100%')
-34. }
-35. }
+  build() {
+    Stack() {
+      ReadPageComponent({
+        controller: this.readerComponentController,
+        readerCallback: (err: BusinessError, data: readerCore.ReaderComponentController) => {
+          this.readerComponentController = data;
+        }
+      })
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### off('pageShow')
 
-PhonePC/2in1Tablet
-
 off(type: 'pageShow', callback?: Callback<PageDataInfo>): void
 
 注销章节内容分页展示结果回调，可在页面销毁时调用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.4(16)开始，该接口支持在元服务中使用。
 
@@ -682,53 +680,53 @@ off(type: 'pageShow', callback?: Callback<PageDataInfo>): void
 
 **示例：**
 
-```
-1. import { readerCore, ReadPageComponent } from '@kit.ReaderKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { common } from '@kit.AbilityKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { readerCore, ReadPageComponent } from '@kit.ReaderKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. @Entry
-7. @Component
-8. struct Reader {
-9. private readerComponentController: readerCore.ReaderComponentController = new readerCore.ReaderComponentController();
+@Entry
+@Component
+struct Reader {
+  private readerComponentController: readerCore.ReaderComponentController = new readerCore.ReaderComponentController();
 
-11. aboutToAppear(): void {
-12. this.unregisterListener();
-13. }
+  aboutToAppear(): void {
+    this.unregisterListener();
+  }
 
-15. private async unregisterListener(){
-16. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-17. let readerComponentController: readerCore.ReaderComponentController = new readerCore.ReaderComponentController();
-18. await readerComponentController.init(context);
-19. readerComponentController.off('pageShow');
-20. hilog.info(0x0000, 'testTag', `offPageShow succeeded`);
-21. }
+  private async unregisterListener(){
+    let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    let readerComponentController: readerCore.ReaderComponentController = new readerCore.ReaderComponentController();
+    await readerComponentController.init(context);
+    readerComponentController.off('pageShow');
+    hilog.info(0x0000, 'testTag', `offPageShow succeeded`);
+  }
 
-23. build() {
-24. Stack() {
-25. ReadPageComponent({
-26. controller: this.readerComponentController,
-27. readerCallback: (err: BusinessError, data: readerCore.ReaderComponentController) => {
-28. this.readerComponentController = data;
-29. }
-30. })
-31. }.width('100%').height('100%')
-32. }
-33. }
+  build() {
+    Stack() {
+      ReadPageComponent({
+        controller: this.readerComponentController,
+        readerCallback: (err: BusinessError, data: readerCore.ReaderComponentController) => {
+          this.readerComponentController = data;
+        }
+      })
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### on('resourceRequest')
-
-PhonePC/2in1Tablet
 
 on(type: 'resourceRequest', callback: bookParser.CallbackRes<string, ArrayBuffer>): void
 
 注册资源请求回调，如果设置了自定义背景，字体时，排版引擎会通过此接口获取对应的资源ArrayBuffer。
 
-说明
+**说明** 
 
 注册多个资源请求回调时，只会生效最后一个。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.4(16)开始，该接口支持在元服务中使用。
 
@@ -745,72 +743,72 @@ on(type: 'resourceRequest', callback: bookParser.CallbackRes<string, ArrayBuffer
 
 **示例：**
 
-```
-1. import { bookParser, readerCore, ReadPageComponent } from '@kit.ReaderKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { common } from '@kit.AbilityKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { bookParser, readerCore, ReadPageComponent } from '@kit.ReaderKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. @Entry
-7. @Component
-8. struct Reader {
-9. private readerComponentController: readerCore.ReaderComponentController = new readerCore.ReaderComponentController();
-10. // 字体文件以实际文件名及路径为准
-11. private selectFontPath = 'fonts/SourceHanSerifCN-VF.ttf';
+@Entry
+@Component
+struct Reader {
+  private readerComponentController: readerCore.ReaderComponentController = new readerCore.ReaderComponentController();
+  // 字体文件以实际文件名及路径为准
+  private selectFontPath = 'fonts/SourceHanSerifCN-VF.ttf';
 
-13. aboutToAppear(): void {
-14. this.registerListener();
-15. }
+  aboutToAppear(): void {
+    this.registerListener();
+  }
 
-17. private async registerListener(){
-18. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-19. await this.readerComponentController.init(context);
-20. // 此处只演示方法调用，实际触发回调，需要配合startPlay接口使用
-21. this.readerComponentController.on('resourceRequest', this.resourceRequest);
-22. }
+  private async registerListener() {
+    let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    await this.readerComponentController.init(context);
+    // 此处只演示方法调用，实际触发回调，需要配合startPlay接口使用
+    this.readerComponentController.on('resourceRequest', this.resourceRequest);
+  }
 
-24. private resourceRequest: bookParser.CallbackRes<string,ArrayBuffer> = (fileName: string): ArrayBuffer => {
-25. if (this.isFont(fileName)) {
-26. let res = $rawfile(this.selectFontPath);
-27. let context = this.getUIContext().getHostContext();
-28. if (res && context) {
-29. // 获取资源路径下的字体数据
-30. let value: Uint8Array = context.resourceManager.getRawFileContentSync(this.selectFontPath);
-31. hilog.info(0x0000, 'testTag', 'resourceRequest : get success');
-32. return value.buffer as ArrayBuffer;
-33. }
-34. }
-35. return new ArrayBuffer(0);
-36. }
+  private resourceRequest: bookParser.CallbackRes<string, ArrayBuffer> = (fileName: string): ArrayBuffer => {
+    if (this.isFont(fileName)) {
+      let res = $rawfile(this.selectFontPath);
+      let context = this.getUIContext().getHostContext();
+      if (res && context) {
+        // 获取资源路径下的字体数据
+        let value: Uint8Array = context.resourceManager.getRawFileContentSync(this.selectFontPath);
+        hilog.info(0x0000, 'testTag', 'resourceRequest : get success');
+        return value.buffer as ArrayBuffer;
+      }
+    }
+    return new ArrayBuffer(0);
+  }
 
-38. private isFont(filePath: string): boolean {
-39. let options = [".ttf", ".woff2", ".otf"];
-40. let path = filePath.toLowerCase();
-41. let result = path.indexOf(options[0]) != -1 || path.indexOf(options[1]) != -1 || path.indexOf(options[2]) != -1;
-42. hilog.info(0x0000, 'testTag', 'isFont = ' + result);
-43. return result;
-44. }
+  private isFont(filePath: string): boolean {
+    let options = ['.ttf', '.woff2', '.otf'];
+    let path = filePath.toLowerCase();
+    let result = path.indexOf(options[0]) != -1 || path.indexOf(options[1]) != -1 || path.indexOf(options[2]) != -1;
+    hilog.info(0x0000, 'testTag', 'isFont = ' + result);
+    return result;
+  }
 
-46. build() {
-47. Stack() {
-48. ReadPageComponent({
-49. controller: this.readerComponentController,
-50. readerCallback: (err: BusinessError, data: readerCore.ReaderComponentController) => {
-51. this.readerComponentController = data;
-52. }
-53. })
-54. }.width('100%').height('100%')
-55. }
-56. }
+  build() {
+    Stack() {
+      ReadPageComponent({
+        controller: this.readerComponentController,
+        readerCallback: (err: BusinessError, data: readerCore.ReaderComponentController) => {
+          this.readerComponentController = data;
+        }
+      })
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### off('resourceRequest')
 
-PhonePC/2in1Tablet
-
 off(type: 'resourceRequest', callback?: bookParser.CallbackRes<string, ArrayBuffer>): void
 
 注销资源请求回调接口，可在页面销毁时调用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.4(16)开始，该接口支持在元服务中使用。
 
@@ -827,37 +825,37 @@ off(type: 'resourceRequest', callback?: bookParser.CallbackRes<string, ArrayBuff
 
 **示例：**
 
-```
-1. import { readerCore, ReadPageComponent } from '@kit.ReaderKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { common } from '@kit.AbilityKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { readerCore, ReadPageComponent } from '@kit.ReaderKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. @Entry
-7. @Component
-8. struct Reader {
-9. private readerComponentController: readerCore.ReaderComponentController = new readerCore.ReaderComponentController();
+@Entry
+@Component
+struct Reader {
+  private readerComponentController: readerCore.ReaderComponentController = new readerCore.ReaderComponentController();
 
-11. aboutToAppear(): void {
-12. this.unregisterListener();
-13. }
+  aboutToAppear(): void {
+    this.unregisterListener();
+  }
 
-15. private async unregisterListener(){
-16. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-17. await this.readerComponentController.init(context);
-18. this.readerComponentController.off('resourceRequest');
-19. hilog.info(0x0000, 'testTag', `offResourceRequest succeeded`);
-20. }
+  private async unregisterListener() {
+    let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    await this.readerComponentController.init(context);
+    this.readerComponentController.off('resourceRequest');
+    hilog.info(0x0000, 'testTag', `offResourceRequest succeeded`);
+  }
 
-22. build() {
-23. Stack() {
-24. ReadPageComponent({
-25. controller: this.readerComponentController,
-26. readerCallback: (err: BusinessError, data: readerCore.ReaderComponentController) => {
-27. this.readerComponentController = data;
-28. }
-29. })
-30. }.width('100%').height('100%')
-31. }
-32. }
+  build() {
+    Stack() {
+      ReadPageComponent({
+        controller: this.readerComponentController,
+        readerCallback: (err: BusinessError, data: readerCore.ReaderComponentController) => {
+          this.readerComponentController = data;
+        }
+      })
+    }.width('100%').height('100%')
+  }
+}
 ```

@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: Webview错误码
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > 错误码 > Webview错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:32+08:00
-doc_updated_at: 2026-04-13
-content_hash: sha256:7aeba77ae0b7538c586e336d1c05d438d5cd986643047eac814cce07f5642118
+scraped_at: 2026-09-02T15:01:29+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:cf4fdab149ccee9a50b5a87fb92eacdcce54b030367e479643e493497812bb1b
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 17100001 WebviewController没有和具体的Web组件关联
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -22,7 +20,7 @@ Init error. The WebviewController must be associated with a Web component.
 
 **错误描述**
 
-WebviewController还没有和具体的Web组件关联，无法进行相应的操作。
+WebviewController尚未与具体Web组件关联，无法进行相应操作。
 
 **可能原因**
 
@@ -30,11 +28,9 @@ WebviewController还没有和具体的Web组件关联。
 
 **处理步骤**
 
-请检查WebviewController对象是否已与Web组件关联，可以通过[onControllerAttached()](arkts-basic-components-web-events.md#oncontrollerattached10)接口进行检查。详情可以参考[Web组件调用WebviewController相关接口报17100001错误定位指南](../architecture-guides/educate-v1_1-ts_18-0000002334531357.md)。
+请检查WebviewController对象是否已与Web组件关联，可以通过[onControllerAttached()](arkts-basic-components-web-events.md#oncontrollerattached10)接口进行检查。详情可以参考[Web组件调用WebviewController相关接口报17100001错误](../harmonyos-faqs/faqs-arkweb-125.md)定位指南。
 
 ## 17100002 URL格式错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -54,11 +50,10 @@ URL错误，可能原因：
 
 **处理步骤**
 
-请检查输入的URL是否正确且URL长度不超过2\*1024\*1024。
+1. 请检查输入的URL是否正确且URL长度不超过2\*1024\*1024。
+2. 如报'No valid cookie found'错误，请检查指定URL对应的Cookie配置是否有效，必要时检查Cookie权限或重新设置Cookie。
 
 ## 17100003 resource路径错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -82,8 +77,6 @@ PhonePC/2in1TabletTVWearable
 
 ## 17100004 功能开关未打开
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Function not enabled.
@@ -102,8 +95,6 @@ Function not enabled.
 
 ## 17100005 cookie value格式错误
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The provided cookie value is invalid. It must follow the format specified in RFC 6265.
@@ -118,11 +109,9 @@ cookie value格式错误。
 
 **处理步骤**
 
-请检查输入的value是否正确。
+请检查输入的cookie value是否符合RFC 6265规范，确保不包含控制字符、分隔符等非法内容。
 
 ## 17100006 无法注册message port回调
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -142,8 +131,6 @@ port可能已经关闭。
 
 ## 17100008 删除不存在的JavaScriptProxy
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to delete JavaScriptProxy because it does not exist.
@@ -161,8 +148,6 @@ Failed to delete JavaScriptProxy because it does not exist.
 检查传入的JavaScriptProxy是否注册成功。
 
 ## 17100010 无法使用该端口发送消息
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -183,8 +168,6 @@ Failed to post messages through the port.
 
 ## 17100011 输入参数origin错误
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Invalid origin.The origin format must follow defined in RFC 6454.
@@ -203,8 +186,6 @@ Invalid origin.The origin format must follow defined in RFC 6454.
 检查输入的参数。
 
 ## 17100012 无可获取的webstorage源
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -225,8 +206,6 @@ Invalid web storage origin.
 
 ## 17100013 预连接时，输入socket数目无效
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The number of sockets to be preconnected is invalid.
@@ -244,8 +223,6 @@ The number of sockets to be preconnected is invalid.
 检查输入的socket的数目范围是否大于0且小于等于6。
 
 ## 17100014 类型和值不匹配
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -265,8 +242,6 @@ The type and value of the message do not match.
 
 ## 17100016 下载任务没有处于暂停状态
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The download task is not paused.
@@ -284,8 +259,6 @@ The download task is not paused.
 下载并没有被暂停，不需要恢复。
 
 ## 17100018 没有设置一个委托类来接收下载状态
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -305,8 +278,6 @@ No WebDownloadDelegate has been set yet.
 
 ## 17100019 下载还没开始
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The download task is not started yet.
@@ -325,8 +296,6 @@ The download task is not started yet.
 
 ## 17100020 注册自定义协议失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to register custom schemes.
@@ -344,8 +313,6 @@ Failed to register custom schemes.
 注册自定义协议需要在ArkWeb引擎初始化之前设置。
 
 ## 17100021 WebResourceHandler已经失效
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -369,8 +336,6 @@ WebResourceHandler已经失效。
 
 ## 17100022 WebHttpBodyStream初始化失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to initialize the HTTP body stream.
@@ -389,8 +354,6 @@ WebHttpBodyStream数据初始化失败。
 
 ## 17100023 使用了不被允许的端口号
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The port number is not within the allowed range.
@@ -407,9 +370,25 @@ The port number is not within the allowed range.
 
 检查使用的端口号是否在允许的取值范围内。
 
-## 17100101 使用了错误的网络错误码
+## 17100024 AIPageCommand格式错误
 
-PhonePC/2in1TabletTVWearable
+**错误信息**
+
+Command format error. The command parameter does not conform to the JSON format requirements.
+
+**错误描述**
+
+AIPageCommand参数格式错误。
+
+**可能原因**
+
+调用[WebviewController.executeAIPageCommand](arkts-apis-webview-webviewcontroller.md#executeaipagecommand)时，传入的command参数不是合法的JSON对象字符串，或命令字段不符合格式要求。
+
+**处理步骤**
+
+检查command参数是否为合法的JSON对象字符串，并确认JSON对象中包含字符串类型的method字段。
+
+## 17100101 使用了错误的网络错误码
 
 **错误信息**
 

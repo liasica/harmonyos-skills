@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pop-up-controls-focus
-title: 弹窗类控件走焦的场景
-breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 弹窗类控件走焦的场景
+title: 弹窗类控件走焦
+breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 弹窗类控件走焦
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:09+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:594206af46c5e66f78cbdf37c669a55e5ba1f27a7764999d0006ddc9f5db6930
+scraped_at: 2026-09-02T14:49:44+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9c835e0738289b8a54cffd82772eab39469a1794cdc077ca284f817bfabb4363
 ---
 
 ## 设计场景
@@ -17,102 +17,102 @@ content_hash: sha256:594206af46c5e66f78cbdf37c669a55e5ba1f27a7764999d0006ddc9f5d
 
 支持设置模态类型的弹窗控件包括[Popup](../harmonyos-references/ohos-arkui-advanced-popup.md)、[Menu](../harmonyos-references/ts-basic-components-menu.md)、[Diaglog](../harmonyos-references/ohos-arkui-advanced-dialog.md)、[bindSheet](../harmonyos-references/ts-universal-attributes-sheet-transition.md#bindsheet)。
 
-## 开发实例
+## 开发流程
 
 如下示例实现一个模态弹窗和一个非模态弹窗，可以通过点击不同的按钮打开：
 
-```
-1. @Entry
-2. @Component
-3. struct Rule_2_1_17 {
-4. title: string = 'Rule 2.1.17';
-5. // 模态对话框控制器
-6. private modelDialogController: CustomDialogController = this.createDialogController(true);
-7. // 非模态对话框控制器
-8. private nonModelDialogController: CustomDialogController = this.createDialogController(false);
+```typescript
+@Entry
+@Component
+export struct Rule_2_1_17 {
+  title: string = 'Rule 2.1.17';
+  // 模态对话框控制器。
+  private modelDialogController: CustomDialogController = this.createDialogController(true);
+  // 非模态对话框控制器。
+  private nonModelDialogController: CustomDialogController = this.createDialogController(false);
 
-10. /**
-11. * 创建对话框控制器
-12. * @param isModel 是否为模态对话框
-13. * @returns 返回创建的对话框控制器
-14. */
-15. private createDialogController(isModel: boolean): CustomDialogController {
-16. return new CustomDialogController({
-17. builder: CustomDialogExample({
-18. controller: isModel ? this.modelDialogController : this.nonModelDialogController,
-19. isModel: isModel,
-20. cancel: () => {
-21. if (isModel) {
-22. this.modelDialogController.close();
-23. } else {
-24. this.nonModelDialogController.close();
-25. }
-26. }
-27. }),
-28. autoCancel: true,
-29. isModal: isModel,
-30. onWillDismiss: (dismissDialogAction: DismissDialogAction) => {
-31. if (dismissDialogAction.reason == DismissReason.PRESS_BACK) {
-32. dismissDialogAction.dismiss();
-33. }
-34. if (dismissDialogAction.reason == DismissReason.TOUCH_OUTSIDE) {
-35. dismissDialogAction.dismiss();
-36. }
-37. },
-38. showInSubWindow: true,
-39. alignment: DialogAlignment.Center,
-40. width: 300,
-41. height: 250,
-42. })
-43. }
+  /**
+   * 创建对话框控制器
+   * @param isModal 是否为模态对话框
+   * @returns 返回创建的对话框控制器
+   */
+  private createDialogController(isModal: boolean): CustomDialogController {
+    return new CustomDialogController({
+      builder: CustomDialogExample({
+        controller: isModal ? this.modelDialogController : this.nonModelDialogController,
+        isModal: isModal,
+        cancel: () => {
+          if (isModal) {
+            this.modelDialogController.close();
+          } else {
+            this.nonModelDialogController.close();
+          }
+        }
+      }),
+      autoCancel: true,
+      isModal: isModal,
+      onWillDismiss: (dismissDialogAction: DismissDialogAction) => {
+        if (dismissDialogAction.reason == DismissReason.PRESS_BACK) {
+          dismissDialogAction.dismiss();
+        }
+        if (dismissDialogAction.reason == DismissReason.TOUCH_OUTSIDE) {
+          dismissDialogAction.dismiss();
+        }
+      },
+      showInSubWindow: true,
+      alignment: DialogAlignment.Center,
+      width: 300,
+      height: 250,
+    })
+  }
 
-45. build() {
-46. NavDestination() {
-47. Scroll() {
-48. Column() {
-49. // 模态对话框按钮
-50. Button('模态dialog')
-51. .margin({ bottom: 5 })
-52. .onClick(() => {
-53. this.modelDialogController.open();
-54. })
+  build() {
+    NavDestination() {
+      Scroll() {
+        Column() {
+          // 模态对话框按钮。
+          Button('模态dialog')
+            .margin({ bottom: 5 })
+            .onClick(() => {
+              this.modelDialogController.open();
+            })
 
-56. // 非模态对话框按钮
-57. Button('非模态dialog')
-58. .onClick(() => {
-59. this.nonModelDialogController.open();
-60. })
-61. }.margin({ bottom: 5 })
-62. }
-63. }.title(this.title)
-64. }
-65. }
+          // 非模态对话框按钮。
+          Button('非模态dialog')
+            .onClick(() => {
+              this.nonModelDialogController.open();
+            })
+        }.margin({ bottom: 5 })
+      }
+    }.title(this.title)
+  }
+}
 
-67. @CustomDialog
-68. struct CustomDialogExample {
-69. // 是否为模态对话框
-70. isModel?: boolean;
-71. // 对话框控制器
-72. controller?: CustomDialogController;
-73. // 关闭对话框的回调函数
-74. cancel: () => void = () => {};
+@CustomDialog
+struct CustomDialogExample {
+  // 是否为模态对话框。
+  isModal?: boolean;
+  // 对话框控制器。
+  controller?: CustomDialogController;
+  // 关闭对话框的回调函数。
+  cancel: () => void = () => {};
 
-76. build() {
-77. Column() {
-78. // 显示对话框的标题
-79. Text(this.isModel ? '模态弹窗' : '非模态弹窗')
-80. .fontSize(30)
-81. .height(100)
-82. Text('测试节点1')
-83. Text('测试节点2')
-84. Text('测试节点3')
-85. // 关闭对话框按钮
-86. Button('关闭')
-87. .onClick(() => {
-88. this.cancel?.();
-89. })
-90. .margin(20)
-91. }
-92. }
-93. }
+  build() {
+    Column() {
+      // 显示对话框的标题。
+      Text(this.isModal ? '模态弹窗' : '非模态弹窗')
+        .fontSize(30)
+        .height(100)
+      Text('测试节点1')
+      Text('测试节点2')
+      Text('测试节点3')
+      // 关闭对话框按钮。
+      Button('关闭')
+        .onClick(() => {
+          this.cancel?.();
+        })
+        .margin(20)
+    }
+  }
+}
 ```

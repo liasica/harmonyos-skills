@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/appgaller
 title: appInfoManager（应用元数据管理服务）
 breadcrumb: API参考 > 应用服务 > AppGallery Kit（应用市场服务） > ArkTS API > appInfoManager（应用元数据管理服务）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:21+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8d01cf293aa38e3581d0bbd01779b8d3d34d66c783c3aa17714de6447c88f773
+scraped_at: 2026-09-02T15:02:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a416745731f9cd586dd7be27fb003bad471a98e9c5b378a290d32bcccb70a48f
 ---
 
 提供查询动态图标信息、选择动态图标、禁用动态图标功能。
 
-说明
+**说明** 
 
 调用接口需捕获异常。
 
@@ -18,17 +18,15 @@ content_hash: sha256:8d01cf293aa38e3581d0bbd01779b8d3d34d66c783c3aa17714de6447c8
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { appInfoManager } from '@kit.AppGalleryKit';
+```typescript
+import { appInfoManager } from '@kit.AppGalleryKit';
 ```
 
 ## DynamicIconInfo
 
-PhonePC/2in1TabletTVWearable
-
 动态图标信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.AppGalleryService.AppInfoManager
 
@@ -42,11 +40,11 @@ PhonePC/2in1TabletTVWearable
 
 ## appInfoManager.queryDynamicIcons
 
-PhonePC/2in1TabletTVWearable
-
 queryDynamicIcons(): Promise<DynamicIconInfo[]>
 
-查询动态图标信息。通过Promise异步回调。
+查询动态图标信息。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.AppGalleryService.AppInfoManager
 
@@ -60,7 +58,7 @@ queryDynamicIcons(): Promise<DynamicIconInfo[]>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](store-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-appgallery.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -70,63 +68,63 @@ queryDynamicIcons(): Promise<DynamicIconInfo[]>
 
 **示例：**
 
-```
-1. import { appInfoManager } from '@kit.AppGalleryKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { appInfoManager } from '@kit.AppGalleryKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. const TAG: string = 'dynamicIconManager';
+const TAG: string = 'dynamicIconManager';
 
-7. @Entry
-8. @Component
-9. @Preview
-10. struct DynamicIconPage {
+@Entry
+@Component
+@Preview
+struct DynamicIconPage {
 
-12. scroller: Scroller = new Scroller();
-13. @State dynamicIconInfos: appInfoManager.DynamicIconInfo[] = [];
-14. @State message: string = '';
+  scroller: Scroller = new Scroller();
+  @State dynamicIconInfos: appInfoManager.DynamicIconInfo[] = [];
+  @State message: string = '';
 
-16. private queryDynamicIcon() {
-17. try {
-18. hilog.info(0, TAG, `queryDynamicIcon start.`);
-19. // 查询动态图标信息,返回动态图标信息
-20. appInfoManager.queryDynamicIcons().then((iconInfos: appInfoManager.DynamicIconInfo[]) => {
-21. hilog.info(0, TAG, `queryDynamicIcons success. iconInfos: ${JSON.stringify(iconInfos)}`);
-22. this.dynamicIconInfos = iconInfos;
-23. this.message = JSON.stringify(iconInfos);
-24. }).catch((error: BusinessError) => {
-25. this.message = `queryDynamicIcon failed: ${JSON.stringify(error)}`;
-26. hilog.error(0, TAG,
-27. `queryDynamicIcons failed, code: ${error.code}, exception message: ${error.message}`);
-28. })
-29. } catch (error) {
-30. this.message = `queryDynamicIcon exception: ${JSON.stringify(error)}`;
-31. hilog.error(0, TAG,
-32. `queryDynamicIcons exception, code: ${error.code}, exception message: ${error.message}`);
-33. }
-34. }
+  private queryDynamicIcon() {
+    try {
+      hilog.info(0, TAG, `queryDynamicIcon start.`);
+      // 查询动态图标信息,返回动态图标信息
+      appInfoManager.queryDynamicIcons().then((iconInfos: appInfoManager.DynamicIconInfo[]) => {
+        hilog.info(0, TAG, `queryDynamicIcons success. iconInfos: ${JSON.stringify(iconInfos)}`);
+        this.dynamicIconInfos = iconInfos;
+        this.message = JSON.stringify(iconInfos);
+      }).catch((error: BusinessError) => {
+        this.message = `queryDynamicIcon failed: ${JSON.stringify(error)}`;
+        hilog.error(0, TAG,
+          `queryDynamicIcons failed, code: ${error.code}, exception message: ${error.message}`);
+      })
+    } catch (error) {
+      this.message = `queryDynamicIcon exception: ${JSON.stringify(error)}`;
+      hilog.error(0, TAG,
+        `queryDynamicIcons exception, code: ${error.code}, exception message: ${error.message}`);
+    }
+  }
 
-36. build() {
-37. Scroll(this.scroller) {
-38. Column() {
-39. Row() {
-40. Button("queryDynamicIcons").onClick(() => {
-41. this.queryDynamicIcon();
-42. }).margin({ top: 4, bottom: 4 })
-43. }
-44. }
-45. }
-46. }
-47. }
+  build() {
+    Scroll(this.scroller) {
+      Column() {
+        Row() {
+          Button("queryDynamicIcons").onClick(() => {
+            this.queryDynamicIcon();
+          }).margin({ top: 4, bottom: 4 })
+        }
+      }
+    }
+  }
+}
 ```
 
 ## appInfoManager.selectDynamicIcon
 
-PhonePC/2in1TabletTVWearable
-
 selectDynamicIcon(iconId: string): Promise<void>
 
-选择动态图标。通过Promise异步回调。
+选择动态图标。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.AppGalleryService.AppInfoManager
 
@@ -146,45 +144,41 @@ selectDynamicIcon(iconId: string): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](store-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-appgallery.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
 | 1006800009 | System internal error. |
 | 1006800011 | Select dynamic icon failed. |
-| 1006800013 | Failed to switch to the custom icon because a custom theme icon is currently in use. |
-
-说明
-
-从版本6.0.0(20)开始，该接口支持返回1006800013错误码。
+| 1006800013 | Failed to switch to the custom icon because a custom theme icon is currently in use.  适用版本：6.0.0(20)+ |
 
 **示例：**
 
-```
-1. import { appInfoManager } from '@kit.AppGalleryKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { appInfoManager } from '@kit.AppGalleryKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. try {
-6. let iconId: string = 'iconId';
-7. appInfoManager.selectDynamicIcon(iconId).then(() => {
-8. hilog.info(0, 'TAG', "Succeeded in selecting dynamic icon");
-9. }).catch((error: BusinessError) => {
-10. hilog.error(0, 'TAG', "selectDynamicIcon failed, code: " + error.code + ", exception message: " + error.message);
-11. });
-12. } catch (error) {
-13. hilog.error(0, 'TAG', "selectDynamicIcon exception code: " + error.code + ", exception message: " + error.message);
-14. }
+try {
+  let iconId: string = 'iconId';
+  appInfoManager.selectDynamicIcon(iconId).then(() => {
+      hilog.info(0, 'TAG', "Succeeded in selecting dynamic icon");
+  }).catch((error: BusinessError) => {
+    hilog.error(0, 'TAG', "selectDynamicIcon failed, code: " + error.code + ", exception message: " + error.message);
+  });
+} catch (error) {
+  hilog.error(0, 'TAG', "selectDynamicIcon exception code: " + error.code + ", exception message: " + error.message);
+}
 ```
 
 ## appInfoManager.disableDynamicIcon
 
-PhonePC/2in1TabletTVWearable
-
 disableDynamicIcon(): Promise<void>
 
-禁用动态图标，恢复默认图标。通过Promise异步回调。
+禁用动态图标，恢复默认图标。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.AppGalleryService.AppInfoManager
 
@@ -198,7 +192,7 @@ disableDynamicIcon(): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](store-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-appgallery.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -207,18 +201,18 @@ disableDynamicIcon(): Promise<void>
 
 **示例：**
 
-```
-1. import { appInfoManager } from '@kit.AppGalleryKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { appInfoManager } from '@kit.AppGalleryKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. try {
-6. appInfoManager.disableDynamicIcon().then(() => {
-7. hilog.info(0, 'TAG', "Succeeded in disabling dynamic icon");
-8. }).catch((error: BusinessError) => {
-9. hilog.error(0, 'TAG', "disableDynamicIcon failed, code: " + error.code + ", exception message: " + error.message);
-10. });
-11. } catch (error) {
-12. hilog.error(0, 'TAG', "disableDynamicIcon exception code: " + error.code + ", exception message: " + error.message);
-13. }
+try {
+  appInfoManager.disableDynamicIcon().then(() => {
+      hilog.info(0, 'TAG', "Succeeded in disabling dynamic icon");
+  }).catch((error: BusinessError) => {
+    hilog.error(0, 'TAG', "disableDynamicIcon failed, code: " + error.code + ", exception message: " + error.message);
+  });
+} catch (error) {
+  hilog.error(0, 'TAG', "disableDynamicIcon exception code: " + error.code + ", exception message: " + error.message);
+}
 ```

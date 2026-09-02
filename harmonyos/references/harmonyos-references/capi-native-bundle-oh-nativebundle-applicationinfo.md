@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: OH_NativeBundle_ApplicationInfo
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > C API > 结构体 > OH_NativeBundle_ApplicationInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:02+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:2a5ebf15d87de46f5a880f52d625e738693dc27fb9ebc532948b0fb6d3f7c612
+scraped_at: 2026-09-02T15:00:37+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:52af4d75ee2a1e916aca0ae15518d329f645baaa6df1083d031c08365901b133
 ---
 
-```
-1. typedef struct {...} OH_NativeBundle_ApplicationInfo
+```c
+typedef struct {...} OH_NativeBundle_ApplicationInfo
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 应用包信息数据结构，包含应用包名和应用指纹信息。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

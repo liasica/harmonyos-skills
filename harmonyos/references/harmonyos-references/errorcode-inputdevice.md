@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 输入设备错误码
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > 错误码 > 输入设备错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:22+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8616b71d443cc52199adea2a2dc1963ffd0d2bb157119b7f3334e666f2b99b02
+scraped_at: 2026-09-02T15:02:09+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:977904c93ecc727b70ea0ceab2a05b31ad82a7b33cde007fa47aa06b1e28ce23
 ---
 
-说明
+**说明** 
 
-* 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
+* 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码](errorcode-universal.md)。
 
 ## 3900002 键盘设备没有连接
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -34,8 +32,6 @@ There is currently no keyboard device connected.
 
 ## 3900003 非输入法应用调用
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 It is prohibited for non-input applications.
@@ -54,8 +50,6 @@ It is prohibited for non-input applications.
 
 ## 3800001 多模输入服务内部错误
 
-PhoneTV
-
 **错误信息**
 
 Input service exception. Possible causes: 1. Memory allocation failure. 2. Thread busy. 3. Service terminated abnormally. 4. Other unexpected errors. Try again later.
@@ -66,7 +60,7 @@ Input service exception. Possible causes: 1. Memory allocation failure. 2. Threa
 
 **可能原因**
 
-内存分配失败，线程繁忙，服务异常退出等非预期错误。
+内存分配失败，线程繁忙，服务运行异常等非预期错误。
 
 **处理步骤**
 

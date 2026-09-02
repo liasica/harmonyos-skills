@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-gesture
 title: 使用Web组件的手势与应用交互
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 > 使用Web组件的手势与应用交互
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:20+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:99fc7d2dcc77c7e74ad7e19be8cd3afdc905e7f4a6f7c56ee59dfaef3e2b882f
+scraped_at: 2026-09-02T14:59:23+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d01476c8240cc8fb748e5d75670f83cce398d2994c60b75af5edfb124a7ed171
 ---
 
 在移动端或支持触控的Web应用中，用户通过触摸屏与页面交互，Web组件支持了常见的手势识别，例如长按、滑动、点击等，以支持丰富的用户交互体验。
@@ -41,58 +41,56 @@ ArkUI提供了[手势绑定](arkts-gesture-events-binding.md)，Web组件有独�
 * 在Web上使用双指捏合时，Web组件中的内容将会缩放。这是由于ArkWeb识别了Pinch事件并将其作用于网页上。
 * 使用三指捏合，Web组件本身会进行缩放。这是因为ArkWeb接收到ArkUI识别出的[PinchGesture](arkts-gesture-events-single-gesture.md#捏合手势pinchgesture)，执行绑定的回调函数。同时，ArkWeb支持scale方法，能够调整Web组件的缩放比例。
 
-说明
+**说明** 
 
 该示例仅用于说明ArkUI手势和ArkWeb手势的区别，不建议使用此方法进行Web组件的缩放。
 
+```typescript
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct Index {
+  @State scaleValue: number = 1;
+  @State pinchValue: number = 1;
+  controller: webview.WebviewController = new webview.WebviewController();
+
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+      // 在组件上绑定缩放比例，可以通过修改缩放比例来实现组件的缩小或者放大
+        .scale({ x: this.scaleValue, y: this.scaleValue, z: 1 })
+        .zoomAccess(true)
+        .gesture(
+          // 在组件上绑定三指触发的捏合手势
+          PinchGesture({ fingers: 3 })
+            .onActionStart((event: GestureEvent|undefined) => {
+              console.info('Pinch start');
+            })
+            // 当捏合手势触发时，可以通过回调函数获取缩放比例，从而修改组件的缩放比例
+            .onActionUpdate((event: GestureEvent|undefined) => {
+              if(event){
+                this.scaleValue = this.pinchValue * event.scale;
+                console.info(`Pinch update: ${this.scaleValue}`);
+              }
+            })
+            .onActionEnd(() => {
+              this.pinchValue = this.scaleValue;
+              console.info('Pinch end');
+            })
+        )
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. @State scaleValue: number = 1;
-7. @State pinchValue: number = 1;
-8. controller: webview.WebviewController = new webview.WebviewController();
-
-10. build() {
-11. Column() {
-12. Web({ src: 'www.example.com', controller: this.controller })
-13. // 在组件上绑定缩放比例，可以通过修改缩放比例来实现组件的缩小或者放大
-14. .scale({ x: this.scaleValue, y: this.scaleValue, z: 1 })
-15. .zoomAccess(true)
-16. .gesture(
-17. // 在组件上绑定三指触发的捏合手势
-18. PinchGesture({ fingers: 3 })
-19. .onActionStart((event: GestureEvent|undefined) => {
-20. console.info('Pinch start');
-21. })
-22. // 当捏合手势触发时，可以通过回调函数获取缩放比例，从而修改组件的缩放比例
-23. .onActionUpdate((event: GestureEvent|undefined) => {
-24. if(event){
-25. this.scaleValue = this.pinchValue * event.scale;
-26. console.info(`Pinch update: ${this.scaleValue}`);
-27. }
-28. })
-29. .onActionEnd(() => {
-30. this.pinchValue = this.scaleValue;
-31. console.info('Pinch end');
-32. })
-33. )
-34. }
-35. }
-36. }
-```
-
-[DistinguishTwoGesture.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/WebGestureInteraction/entry/src/main/ets/pages/DistinguishTwoGesture.ets#L15-L52)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/d127PP1JSSKON45lWQAVOA/zh-cn_image_0000002589324581.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/eFv3LAG6SiO4x2u38IwMyA/zh-cn_image_0000002706674126.gif)
 
 ## Web组件的手势拦截
 
 * ArkUI手势
 
-  ArkWeb会消费部分ArkUI手势，例如[滑动手势](arkts-gesture-events-single-gesture.md#滑动手势pangesture)，若希望自行处理这些手势而非由ArkWeb消费，可以参考ArkUI的[手势冲突处理](arkts-gesture-events-gesture-judge.md)。
+  ArkWeb会消费部分ArkUI手势，例如[滑动手势](arkts-gesture-events-single-gesture.md#滑动手势pangesture)，若希望自行处理这些手势而非由ArkWeb消费，可以参考ArkUI的[手势冲突处理](arkts-gesture-events-gesture-judge.md)，具体示例也可以参考[示例](../harmonyos-references/ts-gesture-customize-judge.md#示例)。
 * ArkWeb手势
 
   ArkWeb手势的生成需要Web组件接收触摸事件，有两种拦截方案：
@@ -114,63 +112,81 @@ Web组件提供了接口[zoomAccess](../harmonyos-references/arkts-basic-compone
 
 **示例代码**
 
+```typescript
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct Index {
+  controller: webview.WebviewController = new webview.WebviewController();
+
+  build() {
+    Column() {
+      Web({ src: 'https://www.example.com', controller: this.controller }) // 需要手动替换为真实网站
+    }
+  }
+
+  onBackPress() {
+    try {
+      // 当前页面是否可前进或者后退给定的step步(-1),正数代表前进，负数代表后退
+      if (this.controller.accessStep(-1)) {
+        this.controller.backward(); // 返回上一个Web页面
+        // 执行用户自定义返回逻辑
+        return true;
+      }
+    } catch (err) {
+      console.error(`onBackPress failed with error: ${err.code}, ${err.message}`);
+    }
+    // 执行系统默认返回逻辑，返回上一个页面
+    return false;
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-
-3. @Entry
-4. @Component
-5. struct Index {
-6. controller: webview.WebviewController = new webview.WebviewController();
-
-8. build() {
-9. Column() {
-10. Web({ src: 'https://www.example.com', controller: this.controller }) // 需要手动替换为真实网站
-11. }
-12. }
-
-14. onBackPress() {
-15. try {
-16. // 当前页面是否可前进或者后退给定的step步(-1),正数代表前进，负数代表后退
-17. if (this.controller.accessStep(-1)) {
-18. this.controller.backward(); // 返回上一个Web页面
-19. // 执行用户自定义返回逻辑
-20. return true;
-21. }
-22. } catch (err) {
-23. console.error(`copyUrlPicToDir failed with error: ${err.code}, ${err.message}`);
-24. }
-25. // 执行系统默认返回逻辑，返回上一个页面
-26. return false;
-27. }
-28. }
-```
-
-[ReturnLastWebPage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/WebGestureInteraction/entry/src/main/ets/pages/ReturnLastWebPage.ets#L15-L41)
 
 ### 为什么Web组件加载后网页无法交互？
 
-网页可能基于其他平台的User-Agent进行判断。为解决此问题，可以在Web组件中设置自定义User-Agent，例如：
+网页可能基于其他平台的User-Agent进行判断。为解决此问题，可以使用[setCustomUserAgent](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#setcustomuseragent10)在Web组件中设置自定义User-Agent，例如：
 
+```typescript
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct Index {
+  private webController: webview.WebviewController = new webview.WebviewController();
+  build(){
+    Column() {
+      Web({
+        src: 'https://www.example.com',
+        controller: this.webController,
+      }).onControllerAttached(() => {
+        // 自定义User-Agent
+        let customUA = 'Mozilla/5.0 (Phone; Android; HarmonyOS 5.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Mobile Safari/537.36';
+        this.webController.setCustomUserAgent(customUA);
+      })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. private webController: webview.WebviewController = new webview.WebviewController();
-7. build(){
-8. Column() {
-9. Web({
-10. src: 'https://www.example.com',
-11. controller: this.webController,
-12. }).onControllerAttached(() => {
-13. // 自定义User-Agent
-14. let customUA = 'Mozilla/5.0 (Phone; Android; HarmonyOS 5.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Mobile Safari/537.36';
-15. this.webController.setCustomUserAgent(customUA);
-16. })
-17. }
-18. }
-19. }
+### 抛滑过快导致页面白屏的处理方法
+
+Web组件扩展了viewport meta标签，新增了max-fling-speed-x和max-fling-speed-y两个属性，用于控制页面的抛滑速度，开发者可根据实际需求调整属性值。
+
+**说明** 
+
+max-fling-speed-x表示限制横向的抛滑速度，max-fling-speed-y表示限制纵向的抛滑速度，单位为vp/s。
+
+以下是HTML片段示例：
+
+```html
+  <meta name="viewport" content="width=device-width, initial-scale=1, max-fling-speed-y=4500">
 ```
 
-[SetUserAgent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/WebGestureInteraction/entry/src/main/ets/pages/SetUserAgent.ets#L15-L35)
+```html
+  <meta name="viewport" content="width=device-width, initial-scale=1, max-fling-speed-x=4500">
+```
+
+```html
+  <meta name="viewport" content="width=device-width, initial-scale=1, max-fling-speed-y=4500, max-fling-speed-x=4500">
+```

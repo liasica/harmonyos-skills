@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: Video组件错误码
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > 错误码 > UI界面 > Video组件错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:57+08:00
-doc_updated_at: 2026-03-27
-content_hash: sha256:b7ed0506ebc0cb4c7385940d5238df261183c09c0d4ebf9ae2b2874e16c7569f
+scraped_at: 2026-09-02T15:01:25+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:aff62f0aaeccd46f74087f4e3899e472c8aabd6a94243b524431e10132fdc821
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，媒体错误码请参考[Media错误码](errorcode-media.md)，通用错误码请参考[通用错误码](errorcode-universal.md)。
 

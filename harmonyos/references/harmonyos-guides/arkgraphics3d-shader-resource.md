@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d
 title: .shader资源文件格式要求
 breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkGraphics 3D资源创建以及使用 > .shader资源文件格式要求
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:22+08:00
+scraped_at: 2026-09-02T14:59:50+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:2200fc666cc65b19f99acaed6d7d4b3341f503f6a9353bbf92d5060cdc219540
+content_hash: sha256:aa37f43cb0e4d28a9e78595c993afd489c30a63b594499f722fbf9aa2eb536ca
 ---
 
 ArkGraphics 3D中支持的.shader文件基于JSON格式，书写.shader文件时需符合JSON语法要求。文件包含以下部分：
@@ -15,8 +15,8 @@ ArkGraphics 3D中支持的.shader文件基于JSON格式，书写.shader文件时
 * 类型：object
 * 说明：用于向引擎声明shader版本兼容性信息。统一使用如下字段：
 
-  ```
-  1. "compatibility_info": { "version": "22.00", "type": "shader" }
+  ```json
+  "compatibility_info": { "version": "22.00", "type": "shader" }
   ```
 
   表示这是引擎22.00版本下的shader描述文件。
@@ -27,13 +27,13 @@ ArkGraphics 3D中支持的.shader文件基于JSON格式，书写.shader文件时
 * 说明：指定使用该shader的DrawCall中使用的vertex shader文件。
 * 默认值：
 
-  ```
-  1. "vert": "3dshaders://shader/core3d_dm_fw.vert.spv"
+  ```json
+  "vert": "3dshaders://shader/core3d_dm_fw.vert.spv"
   ```
 * 自定义路径：
 
-  ```
-  1. "vert": "appshaders://yourDir/yourShader.vert.spv"
+  ```json
+  "vert": "appshaders://yourDir/yourShader.vert.spv"
   ```
 
   其中yourDir/yourShader.vert.spv是用户使用的shader文件在文件沙箱中的路径。
@@ -44,13 +44,13 @@ ArkGraphics 3D中支持的.shader文件基于JSON格式，书写.shader文件时
 * 说明：指定使用该shader的DrawCall中使用的fragment shader文件。
 * 默认值：
 
-  ```
-  1. "frag": "3dshaders://shader/core3d_dm_fw.frag.spv"
+  ```json
+  "frag": "3dshaders://shader/core3d_dm_fw.frag.spv"
   ```
 * 自定义路径：
 
-  ```
-  1. "frag": "appshaders://yourDir/yourShader.frag.spv"
+  ```json
+  "frag": "appshaders://yourDir/yourShader.frag.spv"
   ```
 
   其中yourDir/yourShader.frag.spv是用户使用的shader文件在文件沙箱中的路径。
@@ -62,8 +62,8 @@ ArkGraphics 3D中支持的.shader文件基于JSON格式，书写.shader文件时
 * 当前限制：渲染引擎暂不支持自定义attributes排布，保持默认值即可。
 * 默认值：
 
-  ```
-  1. "vertexInputDeclaration": "3dvertexinputdeclarations://core3d_dm_fw.shadervid"
+  ```json
+  "vertexInputDeclaration": "3dvertexinputdeclarations://core3d_dm_fw.shadervid"
   ```
 
 ## state
@@ -273,77 +273,77 @@ ArkGraphics 3D中支持的.shader文件基于JSON格式，书写.shader文件时
 
 ## 示例
 
-```
-1. {
-2. "compatibility_info" : { "version" : "22.00", "type" : "shader" },
-3. "vert": "3dshaders://shader/core3d_dm_fw.vert.spv",
-4. "frag": "appshaders://custom_shader/custom_material_sample.frag.spv",
-5. "vertexInputDeclaration": "3dvertexinputdeclarations://core3d_dm_fw.shadervid",
-6. "state": {
-7. "rasterizationState": {
-8. "enableDepthClamp": false,
-9. "enableDepthBias": false,
-10. "enableRasterizerDiscard": false,
-11. "polygonMode": "fill",
-12. "cullModeFlags": "back",
-13. "frontFace": "counter_clockwise"
-14. },
-15. "depthStencilState": {
-16. "enableDepthTest": true,
-17. "enableDepthWrite": true,
-18. "enableDepthBoundsTest": false,
-19. "enableStencilTest": false,
-20. "depthCompareOp": "less_or_equal"
-21. },
-22. "colorBlendState": {
-23. "colorAttachments": [
-24. {
-25. "enableBlend": true,
-26. "colorWriteMask": "r_bit|g_bit|b_bit|a_bit",
-27. "srcColorBlendFactor": "one",
-28. "dstColorBlendFactor": "one_minus_src_alpha",
-29. "colorBlendOp": "add",
-30. "srcAlphaBlendFactor": "one",
-31. "dstAlphaBlendFactor": "one_minus_src_alpha",
-32. "alphaBlendOp": "add"
-33. }
-34. ]
-35. }
-36. },
-37. "materialMetadata": [
-38. {
-39. "name": "MaterialComponent",
-40. "customProperties": [
-41. {
-42. "data": [
-43. {
-44. "name": "vec_1",
-45. "displayName": "Color",
-46. "type": "vec4",
-47. "value" : [1.0,1.0,1.0,1.0]
-48. },
-49. {
-50. "name": "time",
-51. "displayName": "Time",
-52. "type": "float",
-53. "value": 0.0
-54. },
-55. {
-56. "name": "dof",
-57. "displayName": "Dof",
-58. "type": "int",
-59. "value": 1
-60. },
-61. {
-62. "name": "motionblur",
-63. "displayName": "MotionBlur",
-64. "type": "int",
-65. "value": 1
-66. }
-67. ]
-68. }
-69. ]
-70. }
-71. ]
-72. }
+```json
+{
+    "compatibility_info" : { "version" : "22.00", "type" : "shader" },
+    "vert": "3dshaders://shader/core3d_dm_fw.vert.spv",
+    "frag": "appshaders://custom_shader/custom_material_sample.frag.spv",
+    "vertexInputDeclaration": "3dvertexinputdeclarations://core3d_dm_fw.shadervid",
+    "state": {
+        "rasterizationState": {
+            "enableDepthClamp": false,
+            "enableDepthBias": false,
+            "enableRasterizerDiscard": false,
+            "polygonMode": "fill",
+            "cullModeFlags": "back",
+            "frontFace": "counter_clockwise"
+        },
+        "depthStencilState": {
+            "enableDepthTest": true,
+            "enableDepthWrite": true,
+            "enableDepthBoundsTest": false,
+            "enableStencilTest": false,
+            "depthCompareOp": "less_or_equal"
+        },
+        "colorBlendState": {
+            "colorAttachments": [
+                {
+                    "enableBlend": true,
+                    "colorWriteMask": "r_bit|g_bit|b_bit|a_bit",
+                    "srcColorBlendFactor": "one",
+                    "dstColorBlendFactor": "one_minus_src_alpha",
+                    "colorBlendOp": "add",
+                    "srcAlphaBlendFactor": "one",
+                    "dstAlphaBlendFactor": "one_minus_src_alpha",
+                    "alphaBlendOp": "add"
+                }
+            ]
+        }
+    },
+    "materialMetadata": [
+        {
+            "name": "MaterialComponent",
+            "customProperties": [
+                {
+                    "data": [
+                        {
+                            "name": "vec_1",
+                            "displayName": "Color",
+                            "type": "vec4",
+                            "value" : [1.0,1.0,1.0,1.0]
+                        },
+                        {
+                            "name": "time",
+                            "displayName": "Time",
+                            "type": "float",
+                            "value": 0.0
+                        },
+                        {
+                            "name": "dof",
+                            "displayName": "Dof",
+                            "type": "int",
+                            "value": 1
+                        },
+                        {
+                            "name": "motionblur",
+                            "displayName": "MotionBlur",
+                            "type": "int",
+                            "value": 1
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
 ```

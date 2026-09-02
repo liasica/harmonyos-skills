@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: 数据迁移
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 数据迁移
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:44:50+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:a1135f1a873f4e49235278377c019bd8200ff065f5192925ce868545905f1c83
+scraped_at: 2026-09-02T15:00:18+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9430b97cccd4c74f6678b963f3c7e10ebf16a1f223c8fcc0d773b262f05fa573
 ---
 
 ohpm-repo**2.2.0**版本开始支持数据迁移功能。在ohpm-repo配置文件中，db是元数据存储的配置项，store是文件存储的配置项，db和store不能随意搭配，需要符合下面表格中的匹配规范。如果需要改变db和store的存储方式，需要进行数据迁移操作。
@@ -48,29 +48,29 @@ ohpm-repo**2.2.0**版本开始支持数据迁移功能。在ohpm-repo配置文�
    * validation\_config
    * system\_security
 
-   ```
-   1. ohpm-repo export_userinfo
+   ```screen
+   ohpm-repo export_userinfo
    ```
 
-   ```
-   1. PS D:\> ohpm-repo export_userinfo
-   2. [2025-08-09T19:14:16.721] [INFO] default - initialize "file database" successfully.
-   3. ...
-   4. [2025-08-09T19:14:16.734] [INFO] default - export the "system_security" table done.
-   5. [2025-08-09T19:14:16.761] [INFO] default - userinfo exported completed, save the .zip file to : "D:\export_userInfo_1754738056722.zip".
+   ```screen
+   PS D:\> ohpm-repo export_userinfo
+   [2025-08-09T19:14:16.721] [INFO] default - initialize "file database" successfully.
+   ...
+   [2025-08-09T19:14:16.734] [INFO] default - export the "system_security" table done.
+   [2025-08-09T19:14:16.761] [INFO] default - userinfo exported completed, save the .zip file to : "D:\export_userInfo_1754738056722.zip".
    ```
 2. 导出已上架的包列表
 
    使用[export\_pkginfo](ide-ohpm-repo-export-pkginfo.md)命令，导出已上架的包列表。
 
-   ```
-   1. ohpm-repo export_pkginfo
+   ```screen
+   ohpm-repo export_pkginfo
    ```
 
-   ```
-   1. PS D:\> ohpm-repo export_pkginfo
-   2. ...
-   3. [2025-08-09T17:56:15.319] [INFO] default - export matched packages success: save to "D:\pkgInfo_1754733375315.json".
+   ```screen
+   PS D:\> ohpm-repo export_pkginfo
+   ...
+   [2025-08-09T17:56:15.319] [INFO] default - export matched packages success: save to "D:\pkgInfo_1754733375315.json".
    ```
 3. 批量下载包文件
 
@@ -78,22 +78,22 @@ ohpm-repo**2.2.0**版本开始支持数据迁移功能。在ohpm-repo配置文�
 
    使用第2步生成的pkgInfo\_xxxx.json作为[batch\_download](ide-ohpm-repo-batch-download.md)命令参数，批量下载har或tgz包，在命令执行目录生成batch\_download\_xxx.zip文件。
 
-   注意
+   **注意** 
 
    如果不迁移所有的包，您可以在第2步生成的pkgInfo\_xxxx.json文件中删除掉不需要下载的包。
 
-   ```
-   1. ohpm-repo batch_download <pkgInfo_xxxx.json地址>
+   ```screen
+   ohpm-repo batch_download <pkgInfo_xxxx.json地址>
    ```
 
-   ```
-   1. PS D:\> ohpm-repo batch_download D:\pkgInfo_1754733375315.json
-   2. [2025-08-09T18:33:30.349] [INFO] default - download "@ohos/test@1.0.0" from repository "ohpm" successfully".
-   3. [2025-08-09T18:33:30.367] [INFO] default - download "@ohos/test-two@1.0.0" from repository "ohpm" successfully".
-   4. ...
-   5. [2025-08-09T18:33:30.466] [INFO] default - all "6" package(s) are successfully download.
-   6. [2025-08-09T18:33:30.466] [INFO] default - save the .zip file to : "D:\batch_download_1754735610304.zip".
-   7. [2025-08-09T18:33:30.467] [INFO] default - Clear the cache.
+   ```screen
+   PS D:\> ohpm-repo batch_download D:\pkgInfo_1754733375315.json
+   [2025-08-09T18:33:30.349] [INFO] default - download "@ohos/test@1.0.0" from repository "ohpm" successfully".
+   [2025-08-09T18:33:30.367] [INFO] default - download "@ohos/test-two@1.0.0" from repository "ohpm" successfully".
+   ...
+   [2025-08-09T18:33:30.466] [INFO] default - all "6" package(s) are successfully download.
+   [2025-08-09T18:33:30.466] [INFO] default - save the .zip file to : "D:\batch_download_1754735610304.zip".
+   [2025-08-09T18:33:30.467] [INFO] default - Clear the cache.
    ```
 
    batch\_download\_xxx.zip文件中以仓库名作为目录，每个仓库目录中存在pkgInfo.json文件，其中记录了每个包的**文件名**、**包名**、**组织**、**上传者**、**Tag标签**，用于在批量上传时准确指定ohpm-repo的数据库中某个用户为某个包的真实上传用户，同时将包的Tag标签一起上传。
@@ -101,43 +101,43 @@ ohpm-repo**2.2.0**版本开始支持数据迁移功能。在ohpm-repo配置文�
 
    ohpm-repo 5.4.0版本开始，支持使用[export\_pkgPermission](ide-ohpm-repo-export-pkgpermission.md)命令，导出包权限数据。
 
-   ```
-   1. ohpm-repo export_pkgPermission
+   ```screen
+   ohpm-repo export_pkgPermission
    ```
 
-   ```
-   1. PS D:\> ohpm-repo export_pkgPermission
-   2. ...
-   3. [2025-09-16T14:58:24.806] [INFO] default - successfully exported all package permissions: saved to "D:\packagePermission_1758005904806.json".
+   ```screen
+   PS D:\> ohpm-repo export_pkgPermission
+   ...
+   [2025-09-16T14:58:24.806] [INFO] default - successfully exported all package permissions: saved to "D:\packagePermission_1758005904806.json".
    ```
 
 ## 新存储方式重启ohpm-repo
 
 打开ohpm-repo压缩包解压根目录中配置文件config.yaml，修改db和store配置项，指定所需存储方式。
 
-注意
+**注意** 
 
 修改db和store配置项后，需要您在配置文件中同时配置新的<deploy\_root>目录。
 
 使用修改后的配置文件重新执行安装命令（这一步必须执行，初始化数据库和其他必要的配置）。
 
-```
-1. ohpm-repo install --config <配置文件路径>
+```screen
+ohpm-repo install --config <配置文件路径>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/dr2o1bUPTw-dMSLcWfBraQ/zh-cn_image_0000002561751511.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/9vObjxrBQpmyR-ojVC6Jvw/zh-cn_image_0000002701662634.png "点击放大")
 
 根据提示信息刷新环境变量，然后重新启动ohpm-repo。
 
-```
-1. ohpm-repo start
+```screen
+ohpm-repo start
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/C0jc4HlvTYOoKsbRgD02XQ/zh-cn_image_0000002530911568.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/AmxFQTB7QGK5omDw-XJqMQ/zh-cn_image_0000002731541829.png "点击放大")
 
 ## 使用迁移命令导入数据
 
-注意
+**注意** 
 
 * 若需要部署在新机器上，将上面ohpm-repo导出的**export\_userInfo\_xxx.zip**、**batch\_download\_xxx.zip****和****packagePermission\_xxx****.json**文件传到需要部署的机器中。
 * 需要先导入DB数据，再进行批量上传，避免上传时找不到对应的用户和组织而报错。
@@ -149,48 +149,48 @@ ohpm-repo**2.2.0**版本开始支持数据迁移功能。在ohpm-repo配置文�
 
    使用[import\_userinfo](ide-ohpm-repo-import-userinfo.md)命令将export\_userInfo\_xxx.zip中的数据导入数据库。
 
-   ```
-   1. ohpm-repo import_userinfo <zip_file> --clean-db
-   ```
-
-   ```
-   1. PS D:\> ohpm-repo import_userinfo D:\export_userInfo_1754738056722.zip --clean-db
-   2. [2025-08-09T19:19:31.623] [INFO] default - verifying the validity of the meta crypto component.
-   3. [2025-08-09T19:19:31.633] [INFO] default - the meta crypto component is verified successfully.
-   4. [2025-08-09T19:19:31.639] [INFO] default - initialize "file database" successfully.
-   5. [2025-08-09T19:19:31.660] [INFO] default - all database data has been cleaned.
-   6. [2025-08-09T19:19:31.660] [INFO] default - importing data in the 'user.json' file.
-   7. ...
-   8. [2025-08-09T19:19:31.673] [INFO] default - importing data in the 'system_security.json' file.
-   9. [2025-08-09T19:19:31.674] [INFO] default - data import finished.
+   ```screen
+   ohpm-repo import_userinfo <zip_file> --clean-db
    ```
 
-   说明
+   ```screen
+   PS D:\> ohpm-repo import_userinfo D:\export_userInfo_1754738056722.zip --clean-db
+   [2025-08-09T19:19:31.623] [INFO] default - verifying the validity of the meta crypto component.
+   [2025-08-09T19:19:31.633] [INFO] default - the meta crypto component is verified successfully.
+   [2025-08-09T19:19:31.639] [INFO] default - initialize "file database" successfully.
+   [2025-08-09T19:19:31.660] [INFO] default - all database data has been cleaned.
+   [2025-08-09T19:19:31.660] [INFO] default - importing data in the 'user.json' file.
+   ...
+   [2025-08-09T19:19:31.673] [INFO] default - importing data in the 'system_security.json' file.
+   [2025-08-09T19:19:31.674] [INFO] default - data import finished.
+   ```
+
+   **说明** 
 
    1. '--clean-db' 表示在导入数据前会清空所有表数据，包括启动ohpm-repo时默认生成的admin用户。
    2. 如果不配置 '--clean-db'，导入过程中可能存在相同数据，默认会以兼容的方式跳过该数据的导入。例如：存在相同的admin用户，数据库中原本存在的admin用户假设为A1，导入数据中的admin用户设为A2。默认保留A1，如果A2的id在其他待导入表数据中存在，将会提前替换为A1的id。要注意的是，之后需要使用A1的密码进行登录。
 
    数据导入成功后，可启动ohpm-repo服务并登录管理页验证。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/dR-vJ58fRn2f0_6SE0ObPQ/zh-cn_image_0000002530751574.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/9m562z-YS0O746XGKHPTfw/zh-cn_image_0000002731381855.png "点击放大")
 3. 批量上传包到ohpm-repo配置的store目录。
 
    使用[batch\_publish](ide-ohpm-repo-batch-publish.md)命令，将批量下载生成的batch\_download\_xxx.zip中的包依次发布到ohpm-repo。
 
-   ```
-   1. ohpm-repo batch_publish <zip_file>
+   ```screen
+   ohpm-repo batch_publish <zip_file>
    ```
 
-   ```
-   1. PS D:\> ohpm-repo batch_publish D:\batch_download_1754735610304.zip
-   2. ...
-   3. [2025-08-09T19:12:01.497] [INFO] default - all 6 package(s) are successfully published
-   4. [2025-08-09T19:12:01.497] [WARN] default - You are using "filedb" to store data. If you have already started a repository service, please run `ohpm-repo restart` to restart the service.
+   ```screen
+   PS D:\> ohpm-repo batch_publish D:\batch_download_1754735610304.zip
+   ...
+   [2025-08-09T19:12:01.497] [INFO] default - all 6 package(s) are successfully published
+   [2025-08-09T19:12:01.497] [WARN] default - You are using "filedb" to store data. If you have already started a repository service, please run `ohpm-repo restart` to restart the service.
    ```
 
    所有包发布成功，进入ohpm-repo网站查看包数量和包详情是否正确。
 
-   说明
+   **说明** 
 
    1. 在batch\_publish命令后面可以配置“--force”，如果进行批量上传时某个包的组织在ohpm-repo中不存在，将任意选取ohpm-repo中一位管理员用户作为组织负责人，自动创建组织。
 
@@ -199,9 +199,9 @@ ohpm-repo**2.2.0**版本开始支持数据迁移功能。在ohpm-repo配置文�
 
    ohpm-repo 5.4.0版本开始，支持使用[import\_pkgPermission](ide-ohpm-repo-import-pkgpermission.md)命令，导入包权限数据。导入时有[三种导入模式](ide-ohpm-repo-import-pkgpermission.md#section8679814134119)，请根据不同模式的处理规则选择适合的导入模式。
 
-   ```
-   1. PS D:\> ohpm-repo import_pkgPermission D:\packagePermission_1758008466123.json --mode override
-   2. ...
-   3. [2025-09-17T14:44:38.451] [INFO] default - > start importing package permissions to the "ohpm" repository.
-   4. [2025-09-17T14:44:38.459] [INFO] default - import package permissions completed.
+   ```screen
+   PS D:\> ohpm-repo import_pkgPermission D:\packagePermission_1758008466123.json --mode override
+   ...
+   [2025-09-17T14:44:38.451] [INFO] default - > start importing package permissions to the "ohpm" repository.
+   [2025-09-17T14:44:38.459] [INFO] default - import package permissions completed.
    ```

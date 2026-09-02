@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-command-li
 title: 如何使用ohpm引入三四方库
 breadcrumb: FAQ > DevEco Studio > 命令行工具 > 如何使用ohpm引入三四方库
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:24+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:8376dd3918b18c6aed35b01b802cc64c261dca427a4918d9030dd56ca80451a1
+scraped_at: 2026-09-02T14:54:58+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:ac4125174b12c457c422d9c5e34646cda77dd1a136ad7abf4db5e17fd8f4d8d7
 ---
 
 * 方式一：
@@ -22,13 +22,11 @@ content_hash: sha256:8376dd3918b18c6aed35b01b802cc64c261dca427a4918d9030dd56ca80
   1. 打开工程目录下的entry目录，找到该目录下的oh-package.json5文件。
   2. 在oh-package.json5文件中写入要安装的三方库，以dayjs为例，示例如下：
 
+     ```json
+     "dependencies": {
+       "dayjs": "^1.10.4",
+     } ,
      ```
-     1. "dependencies": {
-     2. "dayjs": "^1.10.4",
-     3. } ,
-     ```
-
-     [oh-package.json5](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/ScanKit/oh-package.json5#L24-L26)
   3. 打开Terminal窗口，通过如下指令进入到entry目录。
 
      cd entry

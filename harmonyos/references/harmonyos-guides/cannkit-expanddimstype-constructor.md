@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-expan
 title: 构造函数
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > ExpandDimsType > 构造函数
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:55+08:00
+scraped_at: 2026-09-02T14:50:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c12c6d7f450ae28cf5d98a6d1ca29715df89b742c1f300311b6c3987fee2680d
+content_hash: sha256:2fd8c9e954ffe83bb3e45b413fae745cc42181c12d6499b48eef6d77963fb640
 ---
 
 ## 函数功能
@@ -16,18 +16,18 @@ content_hash: sha256:c12c6d7f450ae28cf5d98a6d1ca29715df89b742c1f300311b6c3987fee
 
 * 构造的实例中，补维规则（mask\_）以及补维后的维度（size\_）均为0
 
-  ```
-  1. ExpandDimsType() : size_(0U), mask_(0U)
+  ```cpp
+  ExpandDimsType() : size_(0U), mask_(0U)
   ```
 * 通过字符串创建一个补维规则
 
-  ```
-  1. ExpandDimsType(const ge::char_t *const expand_dims_type)
+  ```cpp
+  ExpandDimsType(const ge::char_t *const expand_dims_type)
   ```
 * 通过int64\_t位域定义创建一个补维规则
 
-  ```
-  1. ExpandDimsType(const int64_t reshape_type_mask)
+  ```cpp
+  ExpandDimsType(const int64_t reshape_type_mask)
   ```
 
 ## 参数说明
@@ -55,6 +55,6 @@ content_hash: sha256:c12c6d7f450ae28cf5d98a6d1ca29715df89b742c1f300311b6c3987fee
 
 ## 调用示例
 
-```
-1. ExpandDimsType type("1001"); // 设置mask_为1001，size_为4
+```cpp
+ExpandDimsType type("1001"); // 设置mask_为1001，size_为4
 ```

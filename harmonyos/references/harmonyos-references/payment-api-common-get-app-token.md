@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-api-common-get-app-token
 title: 获取应用级凭证
+breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 通用接口 > 获取应用级凭证
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:11+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:9fd1e56c856cdacb073b228db6233e2f09b8a8be3ed431f76f770ae1d130c140
+scraped_at: 2026-09-02T14:53:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4c09eea23afec1386765151fdf266205c37ae8305f16471815631efadc41832c
 ---
 
 此接口用于获取访问token，该token相当于一个访问许可，部分接口请求时华为支付服务器会对其进行校验。
@@ -38,9 +39,9 @@ content_hash: sha256:9fd1e56c856cdacb073b228db6233e2f09b8a8be3ed431f76f770ae1d13
 
 ## 请求示例
 
-```
-1. POST /oauth2/v3/token?grant_type=client_credentials&client_id=<客户端ID>&client_secret=<客户端密钥> HTTP/1.1
-2. Content-Type: application/x-www-form-urlencoded
+```json
+POST /oauth2/v3/token?grant_type=client_credentials&client_id=<客户端ID>&client_secret=<客户端密钥> HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
 ```
 
 ## 响应参数
@@ -61,12 +62,12 @@ content_hash: sha256:9fd1e56c856cdacb073b228db6233e2f09b8a8be3ed431f76f770ae1d13
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json; charset=UTF-8
-3. {
-4. "access_token": "<返回的Access Token>",
-5. "expires_in": 3600,
-6. "token_type": "Bearer"
-7. }
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+{
+  "access_token": "<返回的Access Token>",
+  "expires_in": 3600,
+  "token_type": "Bearer"
+}
 ```

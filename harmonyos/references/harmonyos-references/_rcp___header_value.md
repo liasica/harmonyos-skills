@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___he
 title: Rcp_HeaderValue
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > C API > 结构体 > Rcp_HeaderValue
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:04+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ac53ee630d6ecec508800ef1d3d7f95ef01c398dc148dc1a0ac807af68bdea54
+scraped_at: 2026-09-02T15:01:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:80585a8777cc7973df7073a8355f33e0c8b457e84a7082ff5d4386ce5b703c9b
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 请求或响应的标头映射的值类型。
 
@@ -22,11 +20,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -35,14 +29,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTVWearable
-
 ### next
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. struct Rcp_HeaderValue* Rcp_HeaderValue::next
+```cpp
+struct Rcp_HeaderValue* Rcp_HeaderValue::next
 ```
 
 **描述**
@@ -51,10 +41,8 @@ PhonePC/2in1TabletTVWearable
 
 ### value
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. char* Rcp_HeaderValue::value
+```cpp
+char* Rcp_HeaderValue::value
 ```
 
 **描述**

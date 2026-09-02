@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: RichText
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > RichText
 category: harmonyos-references
-scraped_at: 2026-04-29T13:52:13+08:00
-doc_updated_at: 2026-04-08
-content_hash: sha256:f5807b8379ef796d322a22cace50a14ee8828c41c6b301af0ae47c7250c43a9b
+scraped_at: 2026-09-02T15:01:02+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e98132c47f5ac88a1186e2f8526616c1e670d7de9eb86c2f27c6f47878b2eeca
 ---
 
 富文本组件，解析并显示HTML格式文本。
@@ -18,8 +18,8 @@ content_hash: sha256:f5807b8379ef796d322a22cace50a14ee8828c41c6b301af0ae47c7250c
 
   移动设备的视口默认值大小为980px，默认值可以确保大部分网页在移动设备下可以正常浏览。如果RichText组件宽度低于这个值，content内部的HTML则可能会产生一个可以滑动的页面被RichText组件包裹。如果想替换默认值，可以在content中添加以下标签：
 
-  ```
-  1. <meta name="viewport" content="width=device-width">
+  ```html
+  <meta name="viewport" content="width=device-width">
   ```
 * 不适用场景：
 
@@ -27,7 +27,7 @@ content_hash: sha256:f5807b8379ef796d322a22cace50a14ee8828c41c6b301af0ae47c7250c
 
   RichText组件消耗较多内存资源，在List下循环重复使用RichText组件时，会出现卡顿、滑动响应迟缓等现象。
 
-说明
+**说明** 
 
 * 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 该组件无法根据内容自适应设置宽高属性，需要开发者设置显示布局。
@@ -35,13 +35,9 @@ content_hash: sha256:f5807b8379ef796d322a22cace50a14ee8828c41c6b301af0ae47c7250c
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 不包含子组件。
 
 ## 接口
-
-PhonePC/2in1TabletTVWearable
 
 RichText(content:string | Resource)
 
@@ -55,11 +51,7 @@ RichText(content:string | Resource)
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 ### onStart
-
-PhonePC/2in1TabletTVWearable
 
 onStart(callback: () => void)
 
@@ -73,8 +65,6 @@ onStart(callback: () => void)
 
 ### onComplete
 
-PhonePC/2in1TabletTVWearable
-
 onComplete(callback: () => void)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
@@ -87,13 +77,9 @@ onComplete(callback: () => void)
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
 只支持[通用属性](ts-component-general-attributes.md)中width，height，size，layoutWeight四个属性。由于padding，margin，constraintSize属性使用时与通用属性描述不符，暂不支持。
 
 ## 支持标签
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 | 示例 |
 | --- | --- | --- |
@@ -112,114 +98,112 @@ PhonePC/2in1TabletTVWearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct RichTextExample {
-5. @State data: string = '<h1 style="text-align: center;">h1标题</h1>' +
-6. '<h1 style="text-align: center;"><i>h1斜体</i></h1>' +
-7. '<h1 style="text-align: center;"><u>h1下划线</u></h1>' +
-8. '<h2 style="text-align: center;">h2标题</h2>' +
-9. '<h3 style="text-align: center;">h3标题</h3>' +
-10. '<p style="text-align: center;">p常规</p><hr/>' +
-11. '<div style="width: 500px;height: 500px;border: 1px solid;margin: 0 auto;">' +
-12. '<p style="font-size: 35px;text-align: center;font-weight: bold; color: rgb(24,78,228)">字体大小35px,行高45px</p>' +
-13. '<p style="background-color: #e5e5e5;line-height: 45px;font-size: 35px;text-indent: 2em;">' +
-14. '<p>这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字</p>';
+```ts
+// xxx.ets
+@Entry
+@Component
+struct RichTextExample {
+  @State data: string = '<h1 style="text-align: center;">h1标题</h1>' +
+  '<h1 style="text-align: center;"><i>h1斜体</i></h1>' +
+  '<h1 style="text-align: center;"><u>h1下划线</u></h1>' +
+  '<h2 style="text-align: center;">h2标题</h2>' +
+  '<h3 style="text-align: center;">h3标题</h3>' +
+  '<p style="text-align: center;">p常规</p><hr/>' +
+  '<div style="width: 500px;height: 500px;border: 1px solid;margin: 0 auto;">' +
+  '<p style="font-size: 35px;text-align: center;font-weight: bold; color: rgb(24,78,228)">字体大小35px,行高45px</p>' +
+  '<p style="background-color: #e5e5e5;line-height: 45px;font-size: 35px;text-indent: 2em;">' +
+  '<p>这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字</p>';
 
-16. build() {
-17. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center,
-18. justifyContent: FlexAlign.Center }) {
-19. RichText(this.data)
-20. .onStart(() => {
-21. console.info('RichText onStart');
-22. })
-23. .onComplete(() => {
-24. console.info('RichText onComplete');
-25. })
-26. .width(500)
-27. .height(500)
-28. .backgroundColor(0XBDDB69)
-29. RichText('layoutWeight(1)')
-30. .onStart(() => {
-31. console.info('RichText onStart');
-32. })
-33. .onComplete(() => {
-34. console.info('RichText onComplete');
-35. })
-36. .size({ width: '100%', height: 110 })
-37. .backgroundColor(0X92D6CC)
-38. .layoutWeight(1)
-39. RichText('layoutWeight(2)')
-40. .onStart(() => {
-41. console.info('RichText onStart');
-42. })
-43. .onComplete(() => {
-44. console.info('RichText onComplete');
-45. })
-46. .size({ width: '100%', height: 110 })
-47. .backgroundColor(0X92C48D)
-48. .layoutWeight(2)
-49. }
-50. }
-51. }
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center,
+      justifyContent: FlexAlign.Center }) {
+      RichText(this.data)
+        .onStart(() => {
+          console.info('RichText onStart');
+        })
+        .onComplete(() => {
+          console.info('RichText onComplete');
+        })
+        .width(500)
+        .height(500)
+        .backgroundColor(0XBDDB69)
+      RichText('layoutWeight(1)')
+        .onStart(() => {
+          console.info('RichText onStart');
+        })
+        .onComplete(() => {
+          console.info('RichText onComplete');
+        })
+        .size({ width: '100%', height: 110 })
+        .backgroundColor(0X92D6CC)
+        .layoutWeight(1)
+      RichText('layoutWeight(2)')
+        .onStart(() => {
+          console.info('RichText onStart');
+        })
+        .onComplete(() => {
+          console.info('RichText onComplete');
+        })
+        .size({ width: '100%', height: 110 })
+        .backgroundColor(0X92C48D)
+        .layoutWeight(2)
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/foE2p36lQoKPs0piV_IVZA/zh-cn_image_0000002589246151.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/qKWiqzIVTaWKhdF1DzogCw/zh-cn_image_0000002706835998.png)
 
 加载本地资源文件。
 
 通过$rawfile方式加载。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct RichTextComponent {
+```ts
+// xxx.ets
+@Entry
+@Component
+struct RichTextComponent {
 
-6. build() {
-7. Column() {
-8. // 通过$rawfile加载本地资源文件。
-9. RichText($rawfile("index.html"))
-10. }
-11. }
-12. }
+  build() {
+    Column() {
+      // 通过$rawfile加载本地资源文件。
+      RichText($rawfile("index.html"))
+    }
+  }
+}
 ```
 
-通过resources协议加载，适用Webview加载带有"#"路由的链接。
+通过resource协议加载，适用Webview加载带有"#"路由的链接。
 
 使用 resource://rawfile/ 协议前缀可以避免常规 $rawfile 方式在处理带有"#"路由链接时的局限性。当URL中包含"#"号时，"#"后面的内容会被视为锚点（fragment）。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct RichTextComponent {
+```ts
+// xxx.ets
+@Entry
+@Component
+struct RichTextComponent {
 
-6. build() {
-7. Column() {
-8. // 通过resource协议加载本地资源文件。
-9. RichText("resource://rawfile/index.html#home")
-10. }
-11. }
-12. }
+  build() {
+    Column() {
+      // 通过resource协议加载本地资源文件。
+      RichText("resource://rawfile/index.html#home")
+    }
+  }
+}
 ```
 
 在“src\main\resources\rawfile”文件夹下创建index.html：
 
 加载的html文件。
 
-```
-1. <!-- index.html -->
-2. <!DOCTYPE html>
-3. <html>
-4. <body>
-5. <p>Hello World</p>
-6. </body>
-7. </html>
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Hello World</p>
+    </body>
+</html>
 ```

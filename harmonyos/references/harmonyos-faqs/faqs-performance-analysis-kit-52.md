@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 如何通过hdc命令唤醒设备和查看屏幕状态
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > 如何通过hdc命令唤醒设备和查看屏幕状态
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:22+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:13+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:4d0abf61914f5a9d76957e8698e23499b4b5c99889e4108be2d70c4a2bca2f1e
 ---
 

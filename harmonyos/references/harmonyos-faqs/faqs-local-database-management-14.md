@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 用sqlite开发时，怎么保证数据库同一时间只能支持一个写操作？怎么创建索引
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 用sqlite开发时，怎么保证数据库同一时间只能支持一个写操作？怎么创建索引
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:13+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:e9a74647b8efbe018348035f6e7deb33009a1ce8c5cba4e1dc60ed0ebf3bb689
+scraped_at: 2026-09-02T14:54:29+08:00
+doc_updated_at: 2026-07-07
+content_hash: sha256:a1e1720327f93a2432c9b437eed863ba17c917799a5c8cd388b162a868f1c12a
 ---
 
-可以使用事务来确保数据库在同一时间只支持一个写操作。创建索引时，请参考SQLite的官方文档中的索引创建语法规范。。
+可以使用事务来确保数据库在同一时间只支持一个写操作。创建索引时，请参考SQLite的官方文档中的索引创建语法规范。
 
 1.定义SQL语句的常量
 

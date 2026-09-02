@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/source-obfusc
 title: ArkGuard混淆常见问题
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard源码混淆工具 > ArkGuard混淆常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:49+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:834032a724f08f37f6c1250f83b81a0fa600b764c35b38f1237b254a4d23b370
+scraped_at: 2026-09-02T14:59:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:dd5e16d19ff8475c6f8aa6e2bdc8e5fa28a8b97f875211a5cd852355e13013ec
 ---
 
 ## 如何排查功能异常
@@ -14,10 +14,10 @@ content_hash: sha256:834032a724f08f37f6c1250f83b81a0fa600b764c35b38f1237b254a4d2
 
 1. 在obfuscation-rules.txt中配置-disable-obfuscation选项关闭混淆，确认问题是否由混淆引起。
 2. 若确认开启混淆后功能出现异常，请先阅读文档，了解模块已配置的混淆规则的能力和需要配置白名单的语法场景，以确保应用功能正常。下文简要介绍默认开启的四项选项功能，详情请参阅对应选项的完整描述。
-   1. [-enable-toplevel-obfuscation](source-obfuscation.md#section-enable-toplevel-obfuscation)为顶层作用域名称混淆开关。
-   2. [-enable-property-obfuscation](source-obfuscation.md#section-enable-property-obfuscation)为属性混淆开关。配置白名单的主要场景包括网络数据访问、json字段访问、动态属性访问、调用so库接口等。需要使用[-keep-property-name](source-obfuscation.md#section-keep-property-name)来保留指定的属性名称。
-   3. [-enable-export-obfuscation](source-obfuscation.md#section-enable-export-obfuscation)为导入/导出名称混淆。一般与-enable-toplevel-obfuscation和-enable-property-obfuscation选项配合使用。配置白名单的主要场景为模块对外接口不能混淆。需要使用[-keep-global-name](source-obfuscation.md#section-keep-global-name)来保留指定的导出/导入名称。
-   4. [-enable-filename-obfuscation](source-obfuscation.md#section-enable-filename-obfuscation)为文件名混淆。配置白名单的主要场景为动态import或运行时直接加载的文件路径。需要使用[-keep-file-name](source-obfuscation.md#section-keep-file-name)来保留这些文件路径及名称。
+   1. [-enable-toplevel-obfuscation](source-obfuscation-rule-options.md#section-enable-toplevel-obfuscation)为顶层作用域名称混淆开关。
+   2. [-enable-property-obfuscation](source-obfuscation-rule-options.md#section-enable-property-obfuscation)为属性混淆开关。配置白名单的主要场景包括网络数据访问、json字段访问、动态属性访问、调用so库接口等。需要使用[-keep-property-name](source-obfuscation-keep-options.md#section-keep-property-name)来保留指定的属性名称。
+   3. [-enable-export-obfuscation](source-obfuscation-rule-options.md#section-enable-export-obfuscation)为导入/导出名称混淆。一般与-enable-toplevel-obfuscation和-enable-property-obfuscation选项配合使用。配置白名单的主要场景为模块对外接口不能混淆。需要使用[-keep-global-name](source-obfuscation-keep-options.md#section-keep-global-name)来保留指定的导出/导入名称。
+   4. [-enable-filename-obfuscation](source-obfuscation-rule-options.md#section-enable-filename-obfuscation)为文件名混淆。配置白名单的主要场景为动态import或运行时直接加载的文件路径。需要使用[-keep-file-name](source-obfuscation-keep-options.md#section-keep-file-name)来保留这些文件路径及名称。
 3. 排查需要配置的白名单场景时，推荐使用[混淆助手配置保留选项](ide-build-obfuscation.md#section19439175917123)，可以快速识别需要配置的保留选项和白名单字段。也可以参考以下典型报错案例，若遇到相似场景，可参照对应解决方法快速处理。
 4. 若以下报错案例中未找到相似场景，建议依据各项配置功能正向定位（若不需要相应功能，可删除对应配置项）。
 5. 应用运行时崩溃分析方法：
@@ -34,8 +34,6 @@ content_hash: sha256:834032a724f08f37f6c1250f83b81a0fa600b764c35b38f1237b254a4d2
 
 若出现预期外的混淆效果，检查是否由于依赖的本地模块或三方库开启了某些混淆选项。
 
-示例：
-
 假设当前模块未配置-compact，但混淆的中间产物中代码都被压缩成一行，可按照以下步骤排查混淆选项：
 
 1. 查看当前模块的oh-package.json5中的dependencies，此字段记录了当前模块的依赖信息。
@@ -45,7 +43,7 @@ content_hash: sha256:834032a724f08f37f6c1250f83b81a0fa600b764c35b38f1237b254a4d2
 
 从API version 18开始，主模块默认不合并三方库的obfuscation.txt文件中的混淆选项，保留选项仍然有效。
 
-说明
+**说明** 
 
 三方库中的consumer-rules.txt不建议配置以下开关选项。这些选项在主模块开启混淆时会生效，可能导致意外的混淆效果，甚至应用运行时崩溃。如果发现三方库的obfuscation.txt文件中包含以下开关选项，建议联系发布该三方库的团队删除这些选项并重新打包发布。
 
@@ -67,33 +65,33 @@ content_hash: sha256:834032a724f08f37f6c1250f83b81a0fa600b764c35b38f1237b254a4d2
 
 混淆规则配置如下所示：
 
-```
-1. -enable-property-obfuscation
+```text
+-enable-property-obfuscation
 ```
 
 示例代码如下：
 
-```
-1. // 示例JSON文件结构（ImportJson.json）：
-2. /*
-3. {
-4. "jsonObj": {
-5. "jsonProperty": "value"
-6. }
-7. }
-8. */
+```typescript
+// 示例JSON文件结构（ImportJson.json）：
+/*
+{
+  "jsonObj": {
+    "jsonProperty": "value"
+  }
+}
+ */
 
-10. // 混淆前
-11. import jsonData from './ImportJson.json';
-12. // ...
-13. let jsonProp = jsonData.jsonObj.jsonProperty;
+// 混淆前
+import jsonData from './ImportJson.json';
+// ...
+let jsonProp = jsonData.jsonObj.jsonProperty;
 ```
 
-```
-1. // 混淆后
-2. import jsonData from "./test.json";
+```typescript
+// 混淆后
+import jsonData from "./ImportJson.json";
 
-4. let jsonProp = jsonData.i.j;
+let jsonProp = jsonData.i.j;
 ```
 
 **问题原因**
@@ -102,12 +100,12 @@ content_hash: sha256:834032a724f08f37f6c1250f83b81a0fa600b764c35b38f1237b254a4d2
 
 **解决方案**
 
-将JSON文件中的字段配置到属性白名单中。示例如下：
+将JSON文件中的字段配置到属性白名单中。
 
-```
-1. -keep-property-name
-2. jsonObj
-3. jsonProperty
+```text
+-keep-property-name
+jsonObj
+jsonProperty
 ```
 
 ### 报错信息为：Error message: is not callable
@@ -118,39 +116,39 @@ content_hash: sha256:834032a724f08f37f6c1250f83b81a0fa600b764c35b38f1237b254a4d2
 
 混淆规则配置如下所示：
 
-```
-1. -enable-toplevel-obfuscation
-2. -enable-export-obfuscation
+```text
+-enable-toplevel-obfuscation
+-enable-export-obfuscation
 ```
 
 示例代码如下：
 
-```
-1. // 混淆前
-2. // ExportNs.ts
-3. export namespace NS {
-4. export function foo() { }
-5. }
-```
-
-```
-1. // import.ts
-2. import { NS } from './ExportNs';
-3. // ...
-4. NS.foo();
+```typescript
+// 混淆前
+// ExportNs.ts
+export namespace NS {
+  export function foo() { }
+}
 ```
 
+```typescript
+// Index.ets
+import { NS } from './ExportNs';
+  // ...
+  NS.foo();
 ```
-1. // 混淆后
-2. // export.ts
-3. export namespace i {
-4. export function j() {}
-5. }
 
-7. // import.ts
-8. import { i } from './export';
+```typescript
+// 混淆后
+// ExportNs.ts
+export namespace i {
+  export function j() {}
+}
 
-10. i.foo();
+// Index.ets
+import { i } from './ExportNs';
+
+i.foo();
 ```
 
 **问题原因**
@@ -161,11 +159,11 @@ namespace中的foo属于export元素，当通过NS.foo调用时被视为属性�
 
 方案一：开启-enable-property-obfuscation选项。
 
-方案二：使用-keep-global-name选项将namespace中导出的方法配置到白名单中。示例如下：
+方案二：使用-keep-global-name选项将namespace中导出的方法配置到白名单中。
 
-```
-1. -keep-global-name
-2. foo
+```text
+-keep-global-name
+foo
 ```
 
 **场景二：动态导入某个类，类定义处被混淆，调用时未被混淆**
@@ -174,70 +172,72 @@ namespace中的foo属于export元素，当通过NS.foo调用时被视为属性�
 
 混淆规则配置如下所示：
 
-```
-1. -enable-toplevel-obfuscation
-2. -enable-export-obfuscation
+```text
+-enable-toplevel-obfuscation
+-enable-export-obfuscation
 ```
 
 示例代码如下：
 
-```
-1. // 混淆前
-2. // ExportUtils.ts
-3. export function add(a: number, b: number): number {
-4. return a + b;
-5. }
-```
-
-```
-1. // main.ts
-2. async function loadAndUseAdd() {
-3. let result: number = 0;
-4. try {
-5. const mathUtils = await import('./ExportUtils');
-6. result = mathUtils.add(2, 3);
-7. console.info(`result = ${result}`);
-8. } catch (error) {
-9. console.error('Failure reason:', error);
-10. }
-11. }
-
-13. loadAndUseAdd();
+```typescript
+// 混淆前
+// ExportUtils.ts
+export function add(a: number, b: number): number {
+  return a + b;
+}
 ```
 
-```
-1. // 混淆后
-2. // utils.ts
-3. export function c1(d1: number, e1: number): number {
-4. return d1 + e1;
-5. }
+```typescript
+// Index.ets
+async function loadAndUseAdd() {
+  let result: number = 0;
+  try {
+    const mathUtils = await import('./ExportUtils');
+    result = mathUtils.add(2, 3);
+    console.info(`result = ${result}`);
+  } catch (error) {
+    console.error('Failure reason:', error);
+  }
+}
 
-7. // main.ts
-8. async function i() {
-9. try {
-10. const a1 = await import("@normalized:N&&&entry/src/main/ets/pages/utils&");
-11. const b1 = a1.addNum(2, 3);
-12. }
-13. catch (z) {
-14. console.error('Failure reason:', z);
-15. }
-16. }
-17. i();
+loadAndUseAdd();
+```
+
+```typescript
+// 混淆后
+// ExportUtils.ts
+export function c1(d1: number, e1: number): number {
+    return d1 + e1;
+}
+
+// Index.ets
+async function i() {
+    let b1: number = 0;
+    try {
+        const a1 = await import("@normalized:N&&&entry/src/main/ets/pages/ExportUtils&");
+        b1 = a1.add(2, 3);
+        console.info(`result = ${b1}`);
+    }
+    catch (z) {
+        console.error('Failure reason:', z);
+    }
+}
+i();
 ```
 
 **问题原因**
 
-函数addNum在定义时位于顶层作用域，但通过.addNum访问时被视为属性。由于未开启-enable-property-obfuscation选项，导致addNum被使用时未进行混淆。
+函数add在定义时位于顶层作用域，但通过.add访问时被视为属性。由于未开启-enable-property-obfuscation选项，导致add被使用时未进行混淆。
 
 **解决方案**
 
 方案一：开启-enable-property-obfuscation选项。
 
-方案二：使用-keep-global-name选项将add配置到白名单中。示例如下：
+方案二：使用-keep-global-name选项将add配置到白名单中。
 
-```
-1. -keep-global-name
-2. addNum
+```text
+-keep-global-name
+add
 ```
 
 **场景三：调用so库的方法后导致crash**
@@ -246,32 +246,32 @@ namespace中的foo属于export元素，当通过NS.foo调用时被视为属性�
 
 混淆规则配置如下所示：
 
-```
-1. -enable-property-obfuscation
-2. -enable-export-obfuscation
+```text
+-enable-property-obfuscation
+-enable-export-obfuscation
 ```
 
 示例代码如下：
 
-```
-1. // src/main/cpp/types/libentry/Index.d.ts
-2. export const addNum: (a: number, b: number) => number;
-```
-
-```
-1. // example.ets
-2. // 混淆前
-3. import testNapi from 'libentry.so';
-4. // ...
-5. let sun = testNapi.addNum(1, 2);
+```typescript
+// src/main/cpp/types/libentry/Index.d.ts
+export const addNum: (a: number, b: number) => number;
 ```
 
+```typescript
+// example.ets
+// 混淆前
+import testNapi from 'libentry.so';
+  // ...
+  let sun = testNapi.addNum(1, 2);
 ```
-1. // example.ets
-2. // 混淆后
-3. import testNapi from "@normalized:Y&&&libentry.so&";
 
-5. testNapi.m();
+```typescript
+// example.ets
+// 混淆后
+import testNapi from "@normalized:Y&&&libentry.so&";
+
+testNapi.m();
 ```
 
 **问题原因**
@@ -280,11 +280,11 @@ namespace中的foo属于export元素，当通过NS.foo调用时被视为属性�
 
 **解决方案**
 
-将so库导出的方法配置到属性白名单中。示例如下：
+将so库导出的方法配置到属性白名单中。
 
-```
-1. -keep-property-name
-2. addNum
+```text
+-keep-property-name
+addNum
 ```
 
 ### 报错信息为：'module1/file1' does not provide an export name 'x', which is imported by 'module2/file2'
@@ -293,41 +293,39 @@ namespace中的foo属于export元素，当通过NS.foo调用时被视为属性�
 
 主模块和HSP模块的混淆规则配置如下所示：
 
-```
-1. -enable-toplevel-obfuscation
-2. -enable-export-obfuscation
+```text
+-enable-toplevel-obfuscation
+-enable-export-obfuscation
 ```
 
 示例代码如下：
 
-```
-1. export function addNum(a: number, b: number) {
-2. return a + b;
-3. }
-```
-
-```
-1. // 混淆前。
-2. // hsp模块。
-3. export { addNum } from '../utils/Calc';
+```typescript
+// 混淆前
+// hsp模块
+export function addNum(a: number, b: number) {
+  return a + b;
+}
 ```
 
+```typescript
+// entry模块
+import { addNum } from 'sharedlibrary';
+
+addNum(1, 2);
 ```
-1. // entry模块
-2. import { addNum } from 'sharedlibrary';
 
-4. addNum(1, 2);
-```
+```typescript
+// 混淆后
+// hsp模块
+export function b(c: number, d: number): number {
+  return c + d;
+}
 
-```
-1. // 混淆后
-2. // hsp模块
-3. export function b() {}
+// entry模块
+import { n } from '@normalized:N&sharedlibrary&&sharedlibrary/Index&';
 
-5. // entry模块
-6. import { n } from '@normalized:N&myhsp&&myhsp/Index&';
-
-8. n();
+n(1, 2);
 ```
 
 **问题原因**
@@ -344,16 +342,16 @@ namespace中的foo属于export元素，当通过NS.foo调用时被视为属性�
 
 **解决方案**
 
-将HSP模块导出的方法配置到-keep-global-name下，并且需要在HSP的consumer-rules.txt和obfuscation-rules.txt文件中都进行对应配置。示例如下：
+将HSP模块导出的方法配置到-keep-global-name下，并且需要在HSP的consumer-rules.txt和obfuscation-rules.txt文件中都进行对应配置。
 
-```
-1. // consumer-rules.txt
-2. -keep-global-name
-3. addNum
+```text
+// consumer-rules.txt
+-keep-global-name
+addNum
 
-5. // obfuscation-rules.txt
-6. -keep-global-name
-7. addNum
+// obfuscation-rules.txt
+-keep-global-name
+addNum
 ```
 
 ## 应用运行后无crash信息，但功能异常的情况
@@ -366,30 +364,30 @@ parameters的类型为Record<string, Object>。开启属性混淆后，parameter
 
 示例代码如下：
 
-```
-1. // 混淆前
-2. import { Want } from '@kit.AbilityKit';
-3. // ...
-4. let petalMapWant: Want = {
-5. bundleName: 'com.example.myapplication',
-6. uri: 'maps://',
-7. parameters: {
-8. linkSource: 'com.other.app'
-9. }
-10. }
+```typescript
+// 混淆前
+import { Want } from '@kit.AbilityKit';
+  // ...
+  let petalMapWant: Want = {
+    bundleName: 'com.example.myapplication',
+    uri: 'maps://',
+    parameters: {
+      linkSource: 'com.other.app'
+    }
+  }
 ```
 
-```
-1. // 混淆后
-2. import type Want from "@ohos:app.ability.Want";
+```typescript
+// 混淆后
+import type Want from "@ohos:app.ability.Want";
 
-4. let petalMapWant: Want = {
-5. bundleName: 'com.example.myapplication',
-6. uri: 'maps://',
-7. parameters: {
-8. i: 'com.other.app'
-9. }
-10. };
+let petalMapWant: Want = {
+    bundleName: 'com.example.myapplication',
+    uri: 'maps://',
+    parameters: {
+        i: 'com.other.app'
+    }
+};
 ```
 
 **问题原因**
@@ -398,11 +396,11 @@ parameters的类型为Record<string, Object>。开启属性混淆后，parameter
 
 **解决方案**
 
-将混淆后会出现问题的属性名配置到属性白名单中，示例如下：
+将混淆后会出现问题的属性名配置到属性白名单中。
 
-```
-1. -keep-property-name
-2. linkSource
+```text
+-keep-property-name
+linkSource
 ```
 
 ### 跨文件调用某属性，该属性在一个文件中保留，在另一个文件中被混淆
@@ -411,104 +409,104 @@ parameters的类型为Record<string, Object>。开启属性混淆后，parameter
 
 混淆规则配置如下所示：
 
-```
-1. -enable-property-obfuscation
-2. -keep
-3. ./file1.ts
+```text
+-enable-property-obfuscation
+-keep
+./FileInside.ts
 ```
 
-在file2.ts中导入file1.ts的接口。该接口包含一个对象类型的属性。此对象属性在file1.ts中被保留，但在file2.ts中被混淆，导致调用时出现功能异常。
+在Index.ets中导入FileInside.ts的接口。该接口包含一个对象类型的属性。此对象属性在FileInside.ts中被保留，但在Index.ets中被混淆，导致调用时出现功能异常。
 
 示例代码如下：
 
-```
-1. // 混淆前
-2. // FileInside.ts
-3. export interface MyInfo {
-4. age: number;
-5. address: {
-6. city1: string;
-7. }
-8. }
-```
-
-```
-1. // FileOutside.ts
-2. import { MyInfo } from './FileInside';
-3. // ...
-4. const person: MyInfo = {
-5. age: 20,
-6. address: {
-7. city1: 'shanghai'
-8. }
-9. }
+```typescript
+// 混淆前
+// FileInside.ts
+export interface MyInfo {
+  age: number;
+  address: {
+    city1: string;
+  }
+}
 ```
 
+```typescript
+// Index.ets
+import { MyInfo } from './FileInside';
+  // ...
+  const person: MyInfo = {
+    age: 20,
+    address: {
+      city1: 'shanghai'
+    }
+  }
 ```
-1. // 混淆后
-2. // file1.ts
-3. export interface MyInfo {
-4. age: number;
-5. address: {
-6. city1: string;
-7. }
-8. }
 
-10. // file2.ts
-11. import { MyInfo } from './file1';
+```typescript
+// 混淆后
+// FileInside.ts
+export interface MyInfo {
+  age: number;
+  address: {
+    city1: string;
+  }
+}
 
-13. const person: MyInfo = {
-14. age: 20,
-15. address: {
-16. i: "shanghai"
-17. }
-18. }
+// Index.ets
+import { MyInfo } from './FileInside';
+
+const person: MyInfo = {
+  age: 20,
+  address: {
+    i: "shanghai"
+  }
+}
 ```
 
 **问题原因**
 
-使用-keep选项保留file1.ts文件时，该文件中的代码不会被混淆。导出属性（如address）所属类型内的属性不会自动加入白名单，因此在其他文件中使用时会被混淆。
+使用-keep选项保留FileInside.ts文件时，该文件中的代码不会被混淆。导出属性（如address）所属类型内的属性不会自动加入白名单，因此在其他文件中使用时会被混淆。
 
 **解决方案**
 
-方案一：使用interface定义该属性的类型，并使用export进行导出，这样该属性将被自动加入到属性白名单中。示例如下：
+方案一：使用interface定义该属性的类型，并使用export进行导出，这样该属性将被自动加入到属性白名单中。
 
-```
-1. // FileOutside.ts
-2. export interface AddressType {
-3. city1: string
-4. }
-5. export interface MyInfo2 {
-6. age: number;
-7. address: AddressType;
-8. }
+```typescript
+// FileOutside.ts
+export interface AddressType {
+  city1: string
+}
+export interface MyInfo2 {
+  age: number;
+  address: AddressType;
+}
 ```
 
-方案二：使用-keep-property-name选项，将未直接导出的类型内的属性配置到属性白名单中。示例如下：
+方案二：使用-keep-property-name选项，将未直接导出的类型内的属性配置到属性白名单中。
 
-```
-1. -keep-property-name
-2. city1
+```text
+-keep-property-name
+city1
 ```
 
 ### 未开启-enable-string-property-obfuscation，字符串字面量属性名却被混淆
 
 **问题现象**
 
-```
-1. // 混淆前
-2. const person = {
-3. myAge: 18
-4. }
-5. person["myAge"] = 20;
+```typescript
+// 混淆前
+const person = {
+  myAge: 18
+}
+person["myAge"] = 20;
 ```
 
-```
-1. // 混淆后
-2. const person = {
-3. myAge: 18
-4. }
-5. person["m"] = 20;
+```typescript
+// 混淆后
+const person = {
+  myAge: 18
+}
+person["m"] = 20;
 ```
 
 **问题原因**
@@ -527,7 +525,30 @@ parameters的类型为Record<string, Object>。开启属性混淆后，parameter
 
 **问题现象**
 
-HiLog日志中报错信息为：table Account has no column named a23 in 'INSERT INTO Account(a23)'。
+HiLog日志中报错信息为：table Account has no column named a1 in 'INSERT INTO Account(a1)'。
+
+```typescript
+import { ValuesBucket } from '@kit.ArkData';
+// ...
+const valueBucket: ValuesBucket = {
+  ID1: 'ID1', // ID1应该被保留
+  NAME1: 'jack', // NAME1应该被保留
+  AGE1: 20, // AGE1应该被保留
+  SALARY1: 100 // SALARY1应该被保留
+}
+```
+
+```typescript
+// 混淆后
+import { ValuesBucket } from '@kit.ArkData';
+// ...
+const valueBucket: ValuesBucket = {
+  a1: 'ID1',
+  b1: 'jack',
+  c1: 20,
+  d1: 100
+};
+```
 
 **问题原因**
 
@@ -536,3 +557,11 @@ HiLog日志中报错信息为：table Account has no column named a23 in 'INSERT
 **解决方案**
 
 使用-keep-property-name选项将使用到的数据库字段配置到白名单。
+
+```text
+-keep-property-name
+ID1
+NAME1
+AGE1
+SALARY1
+```

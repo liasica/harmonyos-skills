@@ -3,64 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 订阅通知类事件
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全审计 > 多客户端订阅场景（C/C++） > 订阅通知类事件
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:31:39+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a379a29dfd12d1d7f117cc7b8b1f0a2fe4d6211114077eef32b4a7e65e52cb0e
+scraped_at: 2026-09-02T14:59:30+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:f456e73bce893f9ceb202b076051c404b11a350ea64dc9a2a41912f2a7754216
 ---
 
 ## 场景介绍
 
-从6.0.0(20)开始，新增提供统一的安全审计数据多客户端订阅/取消订阅与添加/删除过滤条件接口，应用可以获取设备上的安全审计数据（如下表），并按需进行过滤，以支撑审计相关业务。
-
-| 审计事件ID | 说明 |
-| --- | --- |
-| 0x027000000 | 剪切板复制粘贴事件 |
-| 0x010000100 | 账号登录登出事件 |
-| 0x007000000 | 窗口截屏录屏投屏事件 |
-| 0x00F000000 | 移动存储插拔事件，如U盘、存储卡等具有存储功能的外设插拔事件 |
-| 0x02E000000 | 打印机事件 |
-| 0x01C000007 | 文件事件 |
-| 0x01C000008 | 进程创建退出事件 |
-| 0x01C000009 | 网络事件 |
-| 0x01C00000A | KIA文件拦截事件 |
-| 0x02D000000 | 相机事件 |
-| 0x010000000 | 应用事件 |
-| 0x011000000 | edm事件 |
-| 0x012003000 | 证书操作事件 |
-| 0x01C00000B | KIA文件新增事件 |
-| 0x01C00000C | KIA文件变种事件 |
-| 0x01C000012 | KIA文件读事件 |
-| 0x01C00000E | 网络流量事件 |
-| 0x01C00000F | 网络连接事件 |
-| 0x00B000000 | 应用权限变更事件 |
-| 0x003000001 | DNS审计事件 |
-| 0x01C001100 | 文件拦截事件 |
-| 0x018000100 | app安装拦截事件 |
-| 0x018000101 | app卸载拦截事件 |
-| 0x018000102 | app更新拦截事件 |
-| 0x018000103 | app恢复拦截事件 |
-| 0x018000104 | app启动拦截事件 |
-| 0x030000000 | USB访问拦截事件 |
-| 0x0F000001 | SMB(Samba)外发事件  **起始版本：** 6.1.0(23) |
-| 0x1C000014 | KIA文件秒开事件  **起始版本：** 6.1.0(23) |
-| 0x27000100 | HDC(HarmonyOS Device Connector)调测文件事件  **起始版本：** 6.1.0(23) |
-| 0x27000101 | HDC(HarmonyOS Device Connector)调测拦截事件  **起始版本：** 6.1.0(23) |
-| 0x2F000000 | 多用户空间数据互传事件  **起始版本：** 6.1.0(23) |
-| 0x2F000001 | 多用户空间互换审核策略事件  **起始版本：** 6.1.0(23) |
-| 0x30000100 | 串口访问审计事件  **起始版本：** 6.1.0(23) |
-| 0x03000002 | 网络拦截事件  **起始版本：** 6.1.0(23) |
-| 0x03000100 | WI-FI拦截事件  **起始版本：** 6.1.0(23) |
-| 0x2E000001 | 打印拦截事件  **起始版本：** 6.1.0(23) |
+从6.0.0(20)开始，新增提供统一的安全审计数据多客户端订阅/取消订阅与添加/删除过滤条件接口，应用可以获取设备上的安全审计数据（详见[API参考](../harmonyos-references/devicesecurity-capi-securityaudit.md#securityaudit_notify_event)），并按需进行过滤，以支撑审计相关业务。
 
 ## 约束与限制
 
-1. 当前能力仅支持2in1设备。
+1. 当前能力仅支持PC/2in1设备。
 2. 一个进程最大只允许创建2个客户端实例，当前设备最多只允许创建16个客户端实例。
 3. 一个客户端实例最大只允许设置256个Filter，每个Filter限制10条过滤value。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/TNCFgc0eSwC7MtNEbe4QyQ/zh-cn_image_0000002589244703.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/Q-kUbog3TJa7V5sF_cNXBA/zh-cn_image_0000002736433455.png)
 
 **流程说明：**
 
@@ -72,7 +32,7 @@ content_hash: sha256:a379a29dfd12d1d7f117cc7b8b1f0a2fe4d6211114077eef32b4a7e65e5
 6. 当开发者应用不需要过滤/使用该审计数据时，开发者可以使用1中创建的实例解除过滤条件，取消对应的订阅事件。
 7. 当开发者应用不需要使用当前实例时，开发者可以删除实例。
 
-   说明
+   **说明** 
 
    支持先设置过滤条件再订阅事件。
 
@@ -93,99 +53,101 @@ content_hash: sha256:a379a29dfd12d1d7f117cc7b8b1f0a2fe4d6211114077eef32b4a7e65e5
 
 ## 开发步骤
 
-说明
+**说明** 
 
 * 在开发准备过程中，需要申请权限：ohos.permission.QUERY\_AUDIT\_EVENT。
-* 只允许清单内的企业类应用申请该权限，申请方式请参考：[申请使用企业类应用可用权限](permissions-for-enterprise-apps.md)。
+* 只允许清单内的企业类应用申请该权限，申请方式请参考：[企业类应用可用权限](permissions-for-enterprise-apps.md)。
 
 1. 在CMakeLists.txt中导入安全审计共享库，并链接该库。
 
-   ```
-   1. find_library(dsm-lib libsecurityaudit_ndk.z.so)
-   2. target_link_libraries(entry PUBLIC libace_napi.z.so ${dsm-lib})
+   ```cmake
+   find_library(dsm-lib libsecurityaudit_ndk.z.so)
+   target_link_libraries(entry PUBLIC libace_napi.z.so ${dsm-lib})
    ```
 2. 导入安全审计的头文件。
 
    ```
-   1. #include <DeviceSecurityKit/security_audit.h>
-   2. #include <cstdio>
+   #include <cstdio>
+   #include "DeviceSecurityKit/security_audit.h"
    ```
 3. 全局范围定义通知类事件的回调函数。
 
-   ```
-   1. void Notify(const SecurityAudit_Event *events, uint64_t count)
-   2. {
-   3. if (events == nullptr) {
-   4. printf("events nullptr");
-   5. return;
-   6. }
-   7. for (uint64_t i = 0; i < count; i++) {
-   8. printf("event content = %s", events[i].content);
-   9. printf("event id = %ld", events[i].eventId);
-   10. }
-   11. }
+   ```cpp
+   void Notify(const SecurityAudit_Event *events, uint64_t count)
+   {
+       if (events == nullptr) {
+           printf("events nullptr");
+           return;
+       }
+       for (uint64_t i = 0; i < count; i++) {
+           printf("event content = %s", events[i].content);
+           printf("event id = %ld", events[i].eventId);
+       }
+   }
    ```
 4. 创建审计通知类事件客户端实例。
 
    ```
-   1. SecurityAudit_Client *client = NULL;
-   2. SecurityAudit_Handler handler = Notify;
-   3. HMS_SecurityAudit_NewClient(&client, handler);
-   4. if (client == nullptr) {
-   5. printf("client is null");
-   6. return 0;
-   7. }
+   SecurityAudit_Client *notifyClient = NULL;
+   // ...
+       SecurityAudit_Handler handler = Notify;
+       HMS_SecurityAudit_NewClient(&notifyClient, handler);
+       if (notifyClient == nullptr) {
+           printf("client is null");
+           return 0;
+       }
    ```
 5. 订阅审计通知类事件。
 
    ```
-   1. SecurityAudit_Notify_Event event[1] = {};
-   2. event[0] = SECURITY_AUDIT_NOTIFY_EVENT_KIA_READ;
-   3. int ret = HMS_SecurityAudit_Subscribe(client, event, 1);
-   4. if (ret != 0) {
-   5. printf("subscribe fail");
-   6. return;
-   7. }
+   SecurityAudit_Notify_Event event[1] = {SECURITY_AUDIT_NOTIFY_EVENT_KIA_READ};
+   int32_t ret = HMS_SecurityAudit_Subscribe(notifyClient, event, 1);
+   if (ret != 0) {
+       // ...
+       printf("subscribe fail");
+       return;
+   }
    ```
 6. 设置审计通知类事件过滤条件。
 
    ```
-   1. SecurityAudit_Filter filter = {};
-   2. filter.type = PROCESS_NAME_PREFIX;
-   3. const char* filterStr[1] = {};
-   4. filterStr[0] = "1";
-   5. filter.value = filterStr;
-   6. filter.valueCount = 1;
-   7. ret = HMS_SecurityAudit_AddFilter(client, SECURITY_AUDIT_NOTIFY_EVENT_KIA_READ, &filter);
-   8. if (ret != 0) {
-   9. printf("addfilter fail");
-   10. return;
-   11. }
+   SecurityAudit_Filter filter = {};
+   filter.type = PROCESS_NAME_PREFIX;
+   const char* filterStr[1] = {"1"};
+   filter.value = filterStr;
+   filter.valueCount = 1;
+   ret = HMS_SecurityAudit_AddFilter(notifyClient, SECURITY_AUDIT_NOTIFY_EVENT_KIA_READ, &filter);
+   if (ret != 0) {
+       // ...
+       printf("addfilter fail");
+       return;
+   }
    ```
 7. 解除审计通知类事件订阅。
 
    ```
-   1. ret = HMS_SecurityAudit_Unsubscribe(client, event, 1);
-   2. if (ret != 0) {
-   3. printf("unsubscribe fail");
-   4. return;
-   5. }
+   ret = HMS_SecurityAudit_Unsubscribe(notifyClient, event, 1);
+   if (ret != 0) {
+       // ...
+       printf("unsubscribe fail");
+       return;
+   }
    ```
 8. 解除审计通知类事件过滤条件。
 
    ```
-   1. ret = HMS_SecurityAudit_RemoveFilter(client, SECURITY_AUDIT_NOTIFY_EVENT_KIA_READ, &filter);
-   2. if (ret != 0) {
-   3. printf("removefilter fail");
-   4. return;
-   5. }
+   ret = HMS_SecurityAudit_RemoveFilter(notifyClient, SECURITY_AUDIT_NOTIFY_EVENT_KIA_READ, &filter);
+   if (ret != 0) {
+       // ...
+       printf("removefilter fail");
+       return;
+   }
    ```
 9. 删除审计通知类事件客户端实例。
 
-   ```
-   1. ret = HMS_SecurityAudit_DeleteClient(client);
-   2. if (ret != 0) {
-   3. printf("deleteclient fail");
-   4. return;
-   5. }
+   ```cpp
+   ret = HMS_SecurityAudit_DeleteClient(notifyClient);
+   if (ret != 0) {
+       printf("deleteclient fail");
+   }
    ```

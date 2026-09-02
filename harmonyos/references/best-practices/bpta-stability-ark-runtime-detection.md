@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 方舟运行时检测
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 方舟类问题检测 > 方舟运行时检测
 category: best-practices
-scraped_at: 2026-04-29T14:14:04+08:00
+scraped_at: 2026-09-02T15:03:23+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:02eddc7bd23d480c719b7a2decb743cab3bcdeee5a86bbdbaaa65f7e6bf562d5
+content_hash: sha256:94bd7ee15d280b1f32229075f56274c043f80e39aa266f891bcc4b54443cb5a2
 ---
 
 ## 方舟多线程检测
@@ -31,72 +31,72 @@ content_hash: sha256:02eddc7bd23d480c719b7a2decb743cab3bcdeee5a86bbdbaaa65f7e6bf
 
   非JavaScript线程尝试调用N-API接口，可能会导致未定义的行为或崩溃。
 
-  ```
-  1. // Index.ets
-  2. Text(this.message)
-  3. .fontSize($r('app.float.page_text_font_size'))
-  4. .fontWeight(FontWeight.Bold)
-  5. .onClick(() => {
-  6. testNapi.multiCheck();
-  7. })
+  ```screen
+  // Index.ets
+  Text(this.message)
+    .fontSize($r('app.float.page_text_font_size'))
+    .fontWeight(FontWeight.Bold)
+    .onClick(() => {
+      testNapi.multiCheck();
+    })
   ```
 
-  ```
-  1. // napi_init.cpp
-  2. static napi_value MultiCheck(napi_env env, napi_callback_info info)
-  3. {
-  4. std::thread([](napi_env env) {
-  5. napi_value obj = nullptr;
-  6. napi_create_object(env, &obj);
-  7. }, env).join();
+  ```screen
+  // napi_init.cpp
+  static napi_value MultiCheck(napi_env env, napi_callback_info info)
+  {
+      std::thread([](napi_env env) {
+          napi_value obj = nullptr;
+          napi_create_object(env, &obj);
+      }, env).join();
 
-  9. return nullptr;
-  10. }
+      return nullptr;
+  }
   ```
 
 * N-API接口使用其他线程的env
 
   一个线程尝试使用另一个线程创建的env（JavaScript环境），这也会导致多线程安全问题。
 
-  ```
-  1. // Index.ets
-  2. Text(this.message)
-  3. .fontSize($r('app.float.page_text_font_size'))
-  4. .fontWeight(FontWeight.Bold)
-  5. .onClick(() => {
-  6. testNapi.saveEnv();
-  7. const task = new taskpool.Task(createObject);
-  8. taskpool.execute(task);
-  9. })
+  ```screen
+  // Index.ets
+  Text(this.message)
+    .fontSize($r('app.float.page_text_font_size'))
+    .fontWeight(FontWeight.Bold)
+    .onClick(() => {
+      testNapi.saveEnv();
+      const task = new taskpool.Task(createObject);
+      taskpool.execute(task);
+    })
   ```
 
-  ```
-  1. // napi_init.cpp
-  2. napi_env env_ = nullptr;
-  3. static napi_value SaveEnv(napi_env env, napi_callback_info info)
-  4. {
-  5. env_ = env;
-  6. return nullptr;
-  7. }
-  8. static napi_value CreateObject(napi_env env, napi_callback_info info)
-  9. {
-  10. napi_value obj = nullptr;
-  11. napi_create_object(env_, &obj);
-  12. return nullptr;
-  13. }
+  ```screen
+  // napi_init.cpp
+  napi_env env_ = nullptr;
+  static napi_value SaveEnv(napi_env env, napi_callback_info info)
+  {
+      env_ = env;
+      return nullptr;
+  }
+  static napi_value CreateObject(napi_env env, napi_callback_info info)
+  {
+      napi_value obj = nullptr;
+      napi_create_object(env_, &obj);
+      return nullptr;
+  }
   ```
 
 **如何判断是否发生了多线程安全问题**
 
 如果在运行时遇到以下致命错误信息，这意味着已经发生了多线程安全问题：
 
-```
-1. Fatal: ecma_vm cannot run in multi-thread! thread:3096 currentThread:3550
+```screen
+Fatal: ecma_vm cannot run in multi-thread! thread:3096 currentThread:3550
 ```
 
 当前线程号为3550，而使用的JavaScript线程是由3096线程创建的，这表明虚拟机环境（vm/env）被跨线程使用，从而导致了多线程安全问题。
 
-说明
+**说明** 
 
 若未开启多线程检查开关，即使存在错误的多线程写法，运行时也不一定报错。
 
@@ -112,14 +112,14 @@ content_hash: sha256:02eddc7bd23d480c719b7a2decb743cab3bcdeee5a86bbdbaaa65f7e6bf
 
   点击**Run > Edit Configurations >** **Diagnostics**，勾选**Multi Thread Check**。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/AGGVkOlrQJqY4oDaRBj9_g/zh-cn_image_0000002404045317.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/T7yWrZP0TXq-VLqcWRCpUA/zh-cn_image_0000002404045317.png)
 
 * **方式二**
 
   通过命令行开启。
 
-  ```
-  1. hdc shell aa start -a {abilityName} -b {bundleName} -R
+  ```screen
+  hdc shell aa start -a {abilityName} -b {bundleName} -R
   ```
 
 ### 使用方舟多线程检测
@@ -131,4 +131,4 @@ content_hash: sha256:02eddc7bd23d480c719b7a2decb743cab3bcdeee5a86bbdbaaa65f7e6bf
 
 若fatal信息为Fatal: ecma\_vm cannot run in multi-thread! thread:20296 currentThread:19953，则发生了多线程安全问题，意为：当前线程号为19953，而使用的js thread是20296创建出来的，跨线程使用VM。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/g81gELANSRSfV3kF7j-9Pg/zh-cn_image_0000002504986012.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/gv7WYqqrSZOSVO-fwByDtw/zh-cn_image_0000002504986012.png)

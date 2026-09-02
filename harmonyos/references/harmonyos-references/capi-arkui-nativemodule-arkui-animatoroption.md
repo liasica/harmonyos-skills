@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_AnimatorOption
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_AnimatorOption
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:04+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:1f8a141800d3ecc57a1581697a848b95f9097cd995b0a5d5bd9a6e4d256e6392
+scraped_at: 2026-09-02T14:51:50+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d62fdbe43b3c9b3d9154adefb6eab794752b4af862ac011af1b61035a4370a2a
 ---
 
-```
-1. typedef struct ArkUI_AnimatorOption ArkUI_AnimatorOption
+```c
+typedef struct ArkUI_AnimatorOption ArkUI_AnimatorOption
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-定义animator动画参数对象。
+定义animator动画参数对象，用于创建animator动画时配置动画属性参数。
 
 **起始版本：** 12
 

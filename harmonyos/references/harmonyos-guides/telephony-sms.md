@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/telephony-sms
 title: 短信服务
 breadcrumb: 指南 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > 短信服务
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:14+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ac9e6b1ea003af224f06b6858debdff42c7c77bf0df5e4220717cb32d0086be9
+scraped_at: 2026-09-02T14:59:35+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:f2488a241fdb5232e363db507196d6efeaf1ffeb1db66d3977ec75d9acc266e4
 ---
 
 ## 场景介绍
@@ -38,9 +38,9 @@ content_hash: sha256:ac9e6b1ea003af224f06b6858debdff42c7c77bf0df5e4220717cb32d00
 
 ## 接口说明
 
-说明
+**说明** 
 
-为了保证应用的运行效率，大部分API调用都是异步的，对于异步调用的API均提供了callback和Promise两种方式，以下示例采用callback回调方式，其他调用方式请参考[API](../harmonyos-references/js-apis-sms.md)文档。
+为了保证应用的运行效率，大部分API调用都是异步的，对于异步调用的API均提供了callback和Promise两种方式，以下示例采用callback回调方式，其他调用方式请参考[@ohos.telephony.sms (短信服务)](../harmonyos-references/js-apis-sms.md)文档。
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -50,66 +50,66 @@ content_hash: sha256:ac9e6b1ea003af224f06b6858debdff42c7c77bf0df5e4220717cb32d00
 
 ## 应用内跳转到短信编辑界面
 
-发送短信的接口需要系统权限才可调用，三方应用如果有发送短信需求，需要在应用内实现跳转到短信编辑的功能，并且需要携带编辑内容和收件人号码，可以通过调用元能力startAbility接口指定号码并跳转到发送短信页面的方式实现。
+发送短信的接口需要系统权限才可调用，三方应用如果有发送短信需求，需要在应用内实现跳转到短信编辑的功能，并且需要携带编辑内容和收件人号码，可以通过调用元能力startAbility接口指定号码并跳转到发送短信页面的方式实现。开启[混淆](ide-build-obfuscation.md)后，contactsName和telephone可能被混淆，建议在-keep-property-name保留属性名称。
 
-```
-1. // 示例代码
-2. import { common, Want } from '@kit.AbilityKit';
+```ts
+// 示例代码
+import { common, Want } from '@kit.AbilityKit';
 
-4. const MMS_BUNDLE_NAME = "com.ohos.mms";
-5. const MMS_ABILITY_NAME = "com.ohos.mms.MainAbility";
-6. const MMS_ENTITIES = "entity.system.home";
+const MMS_BUNDLE_NAME = "com.ohos.mms";
+const MMS_ABILITY_NAME = "com.ohos.mms.MainAbility";
+const MMS_ENTITIES = "entity.system.home";
 
-8. export class Contact {
-9. contactsName: string;
-10. telephone: number;
+export class Contact {
+    contactsName: string;
+    telephone: number;
 
-12. constructor(contactsName: string, telephone: number) {
-13. this.contactsName = contactsName;
-14. this.telephone = telephone;
-15. }
-16. }
+    constructor(contactsName: string, telephone: number) {
+        this.contactsName = contactsName;
+        this.telephone = telephone;
+    }
+}
 
-18. @Entry
-19. @Component
-20. struct JumpMessage {
-21. private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+@Entry
+@Component
+struct JumpMessage {
+    private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
 
-23. startMMSAbilityExplicit() {
-24. // 这里完善联系人和号码；姓名主要是通过手机号来查询实际联系人名称，因此这种方式还是以手机号码为主。
-25. let params: Array<Object> = [new Contact("张三", 133XXXXXXXX)];
+    startMMSAbilityExplicit() {
+        // 这里完善联系人和号码；姓名主要是通过手机号来查询实际联系人名称，因此这种方式还是以手机号码为主。
+        let params: Array<Object> = [new Contact("张三", 133XXXXXXXX)];
 
-27. let want: Want = {
-28. bundleName: "com.ohos.mms",
-29. abilityName: "com.ohos.mms.MainAbility",
-30. parameters: {
-31. contactObjects: JSON.stringify(params),
-32. pageFlag: "conversation",
-33. // 这里填写短信内容。
-34. content: "我是短信具体内容"
-35. }
-36. };
+        let want: Want = {
+            bundleName: "com.ohos.mms",
+            abilityName: "com.ohos.mms.MainAbility",
+            parameters: {
+                contactObjects: JSON.stringify(params), // 开启混淆后，contactsName和telephone可能被混淆，建议在-keep-property-name保留属性名称
+                pageFlag: "conversation",
+                // 这里填写短信内容。
+                content: "我是短信具体内容"
+            }
+        };
 
-38. this.context.startAbilityForResult(want).then((data) => {
-39. console.info("Success" + JSON.stringify(data));
-40. }).catch(() => {
-41. console.error("error");
-42. });
-43. }
+        this.context.startAbilityForResult(want).then((data) => {
+            console.info("Success" + JSON.stringify(data));
+        }).catch(() => {
+            console.error("error");
+        });
+    }
 
-45. build() {
-46. Row() {
-47. Column() {
-48. Button('发送短信')
-49. .onClick(() => {
-50. this.startMMSAbilityExplicit();
-51. })
-52. }
-53. .width('100%')
-54. }
-55. .height('100%')
-56. }
-57. }
+    build() {
+        Row() {
+            Column() {
+                Button('发送短信')
+                  .onClick(() => {
+                      this.startMMSAbilityExplicit();
+                  })
+            }
+            .width('100%')
+        }
+        .height('100%')
+    }
+}
 ```
 
 ## sms方式跳转到短信编辑界面
@@ -122,8 +122,8 @@ content_hash: sha256:ac9e6b1ea003af224f06b6858debdff42c7c77bf0df5e4220717cb32d00
 
 sms协议标准格式如下：
 
-```
-1. sms:106XXXXXXXXXX?body=发送短信内容
+```txt
+sms:106XXXXXXXXXX?body=发送短信内容
 ```
 
 * sms:：sms scheme，必填。
@@ -137,8 +137,8 @@ sms协议标准格式如下：
 
 网页中的超链接需要满足sms协议。示例如下：
 
-```
-1. <a href="sms:106XXXXXXXXXX?body=%E5%8F%91%E9%80%81%E7%9F%AD%E4%BF%A1%E5%86%85%E5%AE%B9">发送短信</a>
+```txt
+<a href="sms:106XXXXXXXXXX?body=%E5%8F%91%E9%80%81%E7%9F%AD%E4%BF%A1%E5%86%85%E5%AE%B9">发送短信</a>
 ```
 
 实际开发时，需要将收件人号码替换为真实的号码，短信内容可以根据需要进行配置。
@@ -147,35 +147,35 @@ sms协议标准格式如下：
 
 保证sms字符串传入uri参数即可，在应用中page页面可通过 this.getUIContext().getHostContext() 获取context，在ability中可通过this.context获取context。
 
-```
-1. // 示例代码
-2. import { common, Want } from '@kit.AbilityKit';
+```ts
+// 示例代码
+import { common, Want } from '@kit.AbilityKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
+@Entry
+@Component
+struct Index {
 
-8. build() {
-9. Column() {
-10. Button('发送短信')
-11. .onClick(() => {
-12. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-13. let exampleUrl = "sms:106XXXXXXXXXX?body=%E5%8F%91%E9%80%81%E7%9F%AD%E4%BF%A1%E5%86%85%E5%AE%B9";
+  build() {
+    Column() {
+      Button('发送短信')
+        .onClick(() => {
+          let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+          let exampleUrl = "sms:106XXXXXXXXXX?body=%E5%8F%91%E9%80%81%E7%9F%AD%E4%BF%A1%E5%86%85%E5%AE%B9";
+        
+          let want: Want = {
+              bundleName: 'com.ohos.mms',
+              action: 'ohos.want.action.viewData',
+              uri:exampleUrl,
+            }
+        
+          context.startAbility(want).then((data) => {
+              console.info("Success" + JSON.stringify(data));
+          }).catch(() => {
+              console.error("error");
+          });
 
-15. let want: Want = {
-16. bundleName: 'com.ohos.mms',
-17. action: 'ohos.want.action.viewData',
-18. uri:exampleUrl,
-19. }
-
-21. context.startAbility(want).then((data) => {
-22. console.info("Success" + JSON.stringify(data));
-23. }).catch(() => {
-24. console.error("error");
-25. });
-
-27. })
-28. }
-29. }
-30. }
+        })
+    }
+  }
+}
 ```

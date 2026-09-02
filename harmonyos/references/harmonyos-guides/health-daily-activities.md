@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-daily-
 title: 日常活动
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 数据类型 > 采样数据 > 日常活动
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:15+08:00
+scraped_at: 2026-09-02T14:59:56+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:cc90832dafe5a974dd85b3d878fb55229b86e0b228eaf22593c79a0bda57a19f
+content_hash: sha256:eb1ffef2ac5492092805b2a03c09e3daa6b7fa496c9368a98eae74638700c36e
 ---
 
 此数据记录用户在一小段时间内的日常活动数据。
 
 * Harmony SDK类型常量：[samplePointHelper.dailyActivities.DATA\_TYPE](../harmonyos-references/health-api-samplepointhelper.md#常量-3)
 
-  说明
+  **说明** 
 
   Wearable设备暂不支持该数据类型。读取实时日常活动数据使用[读取实时三环数据](health-wearable-three-ring-read.md)接口。
 

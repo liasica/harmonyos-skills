@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-600
 title: OS平台行为变更说明
-breadcrumb: 版本说明 > HarmonyOS 6.0.0(20) > OS平台能力 > OS平台行为变更说明
+breadcrumb: 版本说明 > 更多版本 > 6.0.0(20) > OS平台能力 > OS平台行为变更说明
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:05+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:26+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:0ba871d3bac1e68b692f01becbc5a4a4ffed62141f564f4c0583fdef43e141d6
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 通用云开发模板
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 附录：云开发工程模板 > 通用云开发模板
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:45:06+08:00
-doc_updated_at: 2026-04-22
-content_hash: sha256:0e4144c02dfa9cecbdea2779b8b52d5e2d38e627ad2a080f0002eb0a287184b1
+scraped_at: 2026-09-02T15:00:19+08:00
+doc_updated_at: 2026-07-15
+content_hash: sha256:79c945d22bf05b352406ce92794ad8688f97a2c92aee65af04a81b8661e4a91a
 ---
 
 ## 适用范围
@@ -41,18 +41,18 @@ content_hash: sha256:0e4144c02dfa9cecbdea2779b8b52d5e2d38e627ad2a080f0002eb0a287
    3. 在左侧导航栏选择“云开发（Serverless） > 云存储”，进入云存储页面。
    4. 选择“安全”页签，在“配置策略”页面修改默认安全策略为始终可读写后，点击“发布”。
 
-      ```
-      1. agc.cloud.storage[
-      2. match: /{bucket}/{path=**} {
-      3. allow read, write: if true;
-      4. }
-      5. ]
+      ```screen
+      agc.cloud.storage[
+          match: /{bucket}/{path=**} {
+              allow read, write: if true;
+          }
+      ]
       ```
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/iyj7C-pcTDaxPomMZPXBvg/zh-cn_image_0000002492564672.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/SHMnelG4SdmU_LNyuc-Kew/zh-cn_image_0000002492564672.png)
 4. 将模板工程推包到手机上，在手机上开通应用访问数据权限，即可开始体验模板。
 
-   注意
+   **注意** 
 
    当前自动签名仅支持“[关联注册应用进行签名](ide-signing.md#section20943184413328)”方式。
 

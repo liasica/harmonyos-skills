@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: 开发准备
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:03+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:cbcfe1b69f6255bad54d573fb7d45a08825e5621817a8073d96158d6d4952be5
+scraped_at: 2026-09-02T14:59:34+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:95dbd7b83466d8cd7366b35393a544f40ac2d5bf68acad4ad4ca94e874c00359
 ---
 
 ## 申请权限
@@ -23,19 +23,21 @@ content_hash: sha256:cbcfe1b69f6255bad54d573fb7d45a08825e5621817a8073d96158d6d49
 
 需要在entry/src/main路径下的module.json5中配置所需申请的权限。示例代码如下所示：
 
-```
-1. {
-2. "module": {
-3. "requestPermissions": [
-4. {
-5. "name": "ohos.permission.INTERNET"
-6. },
-7. {
-8. "name": "ohos.permission.GET_NETWORK_INFO" // 如果使用PathPreference的'cellular'模式，则需要额外申请此权限
-9. }
-10. ]
-11. }
-12. }
+```json5
+{
+  "module": {
+    // ...
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.INTERNET"
+      },
+      {
+        "name": "ohos.permission.GET_NETWORK_INFO"
+      }
+    ],
+    "routerMap": "$profile:route_map"
+  }
+}
 ```
 
 ## C API开发准备
@@ -44,39 +46,39 @@ content_hash: sha256:cbcfe1b69f6255bad54d573fb7d45a08825e5621817a8073d96158d6d49
 
 如编译target为entry，则添加如下命令：
 
-```
-1. target_include_directories(entry PUBLIC ${HMOS_SDK_NATIVE}/sysroot/usr/include)
-2. target_link_directories(entry PUBLIC ${HMOS_SDK_NATIVE}/sysroot/usr/lib/aarch64-linux-ohos)
-3. target_link_libraries(entry PUBLIC librcp_c.so) # 链接librcp_c.so及其他依赖的so
+```cpp
+target_include_directories(entry PUBLIC ${HMOS_SDK_NATIVE}/sysroot/usr/include)
+target_link_directories(entry PUBLIC ${HMOS_SDK_NATIVE}/sysroot/usr/lib/aarch64-linux-ohos)
+target_link_libraries(entry PUBLIC librcp_c.so) # 链接librcp_c.so及其他依赖的so
 ```
 
 ## HTTP明文设置
 
 从6.1.0(23)开始，新增支持HTTP明文拦截配置。
 
-HTTP是明文传输协议，为保障数据安全，通常需禁用HTTP，仅允许HTTPS。可通过src/main/resources/base/profile/network\_config.json配置HTTP明文传输策略。相关配置可以参考[明文http访问权限配置说明](http-request.md#明文http访问权限配置说明)。
+HTTP是明文传输协议，为保障数据安全，通常需禁用HTTP，仅允许HTTPS。可通过src/main/resources/base/profile/network\_config.json（该文件不存在时可以手动创建）配置HTTP明文传输策略。相关配置可以参考[明文http访问权限配置说明](http-request.md#明文http访问权限配置说明)。
 
-以下示例配置全局允许明文传输，但禁止对 "example.com" 域名使用明文通信。在此设置下，Remote Communication Kit仅能通过HTTPS访问该域名；若尝试发起HTTP请求，将触发错误码[1007900201](../harmonyos-references/remote-communication-error-code.md#section1007900201-禁止明文传输)。
+以下示例配置全局允许明文传输，但禁止对 "example.com" 域名使用明文通信。在此设置下，Remote Communication Kit仅能通过HTTPS访问该域名；若尝试发起HTTP请求，将触发错误码[1007900201](../harmonyos-references/errorcode-remote-communication.md#section1007900201-禁止明文传输)。
 
-```
-1. {
-2. "network-security-config": {
-3. "base-config": {
-4. "cleartextTrafficPermitted": true
-5. },
-6. "domain-config": [
-7. {
-8. "domains": [
-9. {
-10. "name": "example.com"
-11. }
-12. ],
-13. "cleartextTrafficPermitted": false
-14. }
-15. ],
-16. "component-config": {
-17. "Remote Communication Kit": true
-18. }
-19. }
-20. }
+```json
+{
+  "network-security-config": {
+    "base-config": {
+      "cleartextTrafficPermitted": true
+    },
+    "domain-config": [
+      {
+        "domains": [
+          {
+            "name": "example.com"
+          }
+        ],
+        "cleartextTrafficPermitted": false
+      }
+    ],
+    "component-config": {
+      "Remote Communication Kit": true
+    }
+  }
+}
 ```

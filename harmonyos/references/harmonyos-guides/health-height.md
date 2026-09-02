@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-height
 title: 身高
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 数据类型 > 采样数据 > 身高
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:16+08:00
+scraped_at: 2026-09-02T14:59:56+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ea29d87df3a94aa0dbac14c7a2de983dbda55a7e999e39995177d22b5cc344f4
+content_hash: sha256:c87450fc15d3953b092cb08f8c8ccf9bc99a072fb650707f2cb0f2030184340d
 ---
 
 此数据记录用户在某时刻的身高数据。
 
 Harmony SDK类型常量：[samplePointHelper.height.DATA\_TYPE](../harmonyos-references/health-api-samplepointhelper.md#常量-7)
 
-说明
+**说明** 
 
 Wearable设备暂不支持该数据类型。
 

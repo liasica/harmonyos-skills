@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-devicecertificatekit-6011
 title: Device Certificate Kit
-breadcrumb: 版本说明 > HarmonyOS 6.0.1(21) > OS平台能力 > API变更清单 > 6.0.1(21) Beta1引入的API > Device Certificate Kit
+breadcrumb: 版本说明 > 更多版本 > 6.0.1(21) > OS平台能力 > API变更清单 > 6.0.1(21) Beta1引入的API > Device Certificate Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:58+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:26+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:e1919d2990d1e7ec2381b0e8a3d64ffe2cdbe530fcd20b92d6e0f4a3a13d4873
 ---
 

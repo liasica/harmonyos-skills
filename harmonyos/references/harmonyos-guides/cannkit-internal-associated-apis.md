@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-inter
 title: 内部关联接口
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > 内部关联接口
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:24+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:2b94a44e7c3b3d3c8204f01ca9688b1e94c65389848efec9cef7b485afa86081
+scraped_at: 2026-09-02T14:50:41+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:ce1249a262baac910f047e2f94d516488bf2481e13d34c585c9c12cacaee66e2
 ---
 
 在进行算子原型注册、Tiling实现、shape推导过程中，使用到的外部开放接口中会调用到一些辅助数据结构和接口，称之为**内部关联接口**。开发者不会直接调用内部关联接口，此处仅作简单介绍。
@@ -91,13 +91,13 @@ ContinuousBuffer类用于连续存储任意类型的数据，每个数据被转�
 
 ## TensorOperateType
 
-```
-1. enum TensorOperateType {
-2. kGetTensorAddress,  // < 获取Tensor的地址
-3. kFreeTensor,        // < 释放Tensor
-4. kPlusShareCount,    // < 共享Tensor
-5. kTensorOperateType
-6. };
+```cpp
+enum TensorOperateType {
+  kGetTensorAddress, // < 获取Tensor的地址
+  kFreeTensor, // < 释放Tensor
+  kPlusShareCount, // < 共享Tensor
+  kTensorOperateType
+};
 ```
 
 ## StructSizeInfoBase类
@@ -141,7 +141,7 @@ TilingDataStructBase的类，用于记录Tiling结构体构造过程信息。提
 
 **表9** OpExecuteContext类成员函数
 
-| 函数名称含义 | 含义 |
+| 函数名称 | 含义 |
 | --- | --- |
 | GetInputTensor | 获取指定索引输入的Tensor。 |
 | GetOptionalInputTensor | 获取指定索引的可选输入的Tensor。 |

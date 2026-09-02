@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-463
 title: customDialog里面页面跳转后，页面显示在弹窗下面，怎么调整
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > customDialog里面页面跳转后，页面显示在弹窗下面，怎么调整
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > customDialog里面页面跳转后，页面显示在弹窗下面，怎么调整
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:02+08:00
-doc_updated_at: 2026-04-27
+scraped_at: 2026-09-02T15:21:22+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:5ad50179f6ffe29f6f024665cc85b93ed98dd746705780f18c2802c9dad6fdb5
 ---
 

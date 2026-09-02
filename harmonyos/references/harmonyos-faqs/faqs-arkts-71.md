@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-71
 title: 如何实现AOP（代码插桩）能力
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 如何实现AOP（代码插桩）能力
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:03+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:14+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:accf5d8220262a1a930a7f67387d7fb74070bd4fede8ee95f6d0a0705ce5e313
 ---
 

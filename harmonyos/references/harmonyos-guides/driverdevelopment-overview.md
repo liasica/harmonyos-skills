@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/driverdevelop
 title: Driver Development Kit简介
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > Driver Development Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:33:30+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:64264a08f7a2b6d5e2dbdfcfe71be9e312497ae78ddabc217198f93223473d3c
+scraped_at: 2026-09-02T14:59:37+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:fdae64e129e13f39756b9639a366553411d8e23a11f4802481a028eca1ed36e2
 ---
 
 Driver Development Kit（驱动开发套件）为外设驱动开发者提供高效、安全、丰富的扩展外设驱动开发解决方案ArkTS-API和C-API，支持外设驱动开发者为消费者带来外设即插即用的极致体验。
@@ -46,7 +46,7 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 
 **图1** 扩展外设驱动原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/4nRT-hFAS4CeuQB4b6qe2w/zh-cn_image_0000002589244777.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/qLL1UNU6Tt-N10LxsA2tdQ/zh-cn_image_0000002706674468.png)
 
 ### 运作流程
 
@@ -54,13 +54,13 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 
 **图2** 非标外设与对应扩展外设驱动应用匹配的时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/T1wX5dG7Tz6rgzM9R78NTQ/zh-cn_image_0000002558764972.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/lWtX41FNTYmR7jhqojRNww/zh-cn_image_0000002736433557.png)
 
 用户使用扩展外设驱动客户端时，扩展外设驱动客户端与扩展外设驱动的绑定流程如图3所示。
 
 **图3** 扩展外设驱动客户端与扩展外设驱动绑定的时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/KOsFFcL_S2ykPrdwBknq7g/zh-cn_image_0000002558605316.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/xT9etL8tStSr48RdtLWxzA/zh-cn_image_0000002706834406.png)
 
 ## 约束与限制
 
@@ -75,6 +75,14 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 | C-API | HidDdk | ohos.permission.ACCESS\_DDK\_HID |
 | C-API | USBSerialDDK | ohos.permission.ACCESS\_DDK\_USB\_SERIAL |
 | C-API | ScsiPeripheralDDK | ohos.permission.ACCESS\_DDK\_SCSI\_PERIPHERAL |
+
+Driver Development Kit提供的C-API仅支持在DriverExtension进程中使用。在其他进程（包括子进程）中使用可能会出现功能异常，具体可参考[在子进程或非驱动ability中调用ddk的c-api失败](externaldevice-faqs.md#在子进程或非驱动ability中调用ddk的c-api失败)。
+
+## 模拟器支持情况
+
+本Kit不支持模拟器。
+
+针对 DriverExtensionAbility接口调用限制，详细请参考 API 中的[约束限制](../harmonyos-references/js-apis-app-ability-driverextensionability.md#约束限制)。
 
 ## 关联模块
 
@@ -105,12 +113,16 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 
 * ExtensionAbility是基于场景服务的扩展能力的统称，简称为扩展能力（例如用户态扩展驱动、卡片、输入法等）以便满足不同的使用场景。
 * 各类Extension的生命周期由各个SA管理，通过connectAbility启动Extension，并驱动定义的业务接口；业务结束，SA调用disconnectAbility接口断开Extension连接，AMS会根据该Extension是否有SA连接来决定是否销毁该Extension及进程。在用户态扩展驱动开发场景下，管理DriverExtensionAbility生命周期的系统SA为外设扩展服务SA。
+* DriverExtensionAbility的生命周期取决于外设的接入时间，具体来说表现为：
+  + 当DriverExtensionAbility配置的“VID + PID”设备列表中的某个外设接入时，其生命周期区间跟该外设接入的时间段一致。
+  + 当DriverExtensionAbility配置的“VID + PID”设备列表中的多个外设依次接入时，其生命周期区间从第一个外设的接入持续到最后一个外设的拔出。
+  + 接入的外设同时出现在多个DriverExtensionAbility配置的“VID + PID”列表中时，该外设只会影响最先安装的驱动Ability的生命周期，详见[多个驱动Ability配置了同一型号外设的情况下，插入该外设只会拉起一个驱动Ability](externaldevice-faqs.md#多个驱动ability配置了同一型号外设的情况下插入该外设只会拉起一个驱动ability)。
 
 4.在DriverExtensionAbility中API访问安全管控说明
 
 * 系统支持基于ExtensionAbility构建场景化扩展Ability，DriverExtensionAbility为支持开发用户态扩展驱动的一类Ability。
-* 在DriverExtensionAbility中仅支持访问DDK（[docs/zh-cn/application-dev/reference/apis-driverdevelopment-kit · HarmonyOS/docs - AtomGit | GitCode](https://gitcode.com/openharmony/docs/tree/master/zh-cn/application-dev/reference/apis-driverdevelopment-kit)）API，实现对非标外设进行访问控制和数据通信。
-* 基于驱动开发安全约束及驱动开发业务场景，在DriverExtensionAbility中不支持访问其它ArkTS API，以防止恶意行为和数据泄漏。
+* 在DriverExtensionAbility中仅支持访问DDK（Driver Development Kit）API，实现对非标外设进行访问控制和数据通信。
+* 基于驱动开发安全约束及驱动开发业务场景，在DriverExtensionAbility中不支持访问其它ArkTS API，以防止恶意行为和数据泄露。
 * DriverExtensionAbility受限访问ArkTS API方案说明：
   + ArkTS API受限原理：在初始化和创建Extension进程时，会根据Extension配置的受限访问ArkTS API名单加载系统模块。在运行时，如果在DriverExtensionAbility中调用受限ArkTS API，由于初始化和创建阶段未加载相应系统模块，API会调用失败。
 * DriverExtensionAbility具体受限ArkTS API名单，请参考[frameworks/native/ability/native/etc/extension\_blocklist\_config.json · HarmonyOS/ability\_ability\_runtime - AtomGit | GitCode](https://gitcode.com/openharmony/ability_ability_runtime/blob/master/frameworks/native/ability/native/etc/extension_blocklist_config.json)中DriverExtension配置。

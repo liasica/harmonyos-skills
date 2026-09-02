@@ -3,37 +3,33 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AudioStreamManager)
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > ArkTS API > @ohos.multimedia.audio (音频管理) > Interface (AudioStreamManager)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:41+08:00
-doc_updated_at: 2026-03-27
-content_hash: sha256:53b60779f93790246fc3443e65c93e1c5fcba804d50e9ae05631edbdcc8502a3
+scraped_at: 2026-09-02T15:02:18+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0b1b140695d13a0004e2703a7ec381eb77b6a4de89ba4cd4482b228b4bc67adf
 ---
 
-音频流管理。
+AudioStreamManager是音频系统中的音频流管理模块。本模块提供音频流生命周期管理能力，包括音频渲染器和采集器的信息查询、状态监听、音效模式管理等。当开发者需要实时掌握音频流状态变化以优化音频应用用户体验时，使用本模块接口完成相关操作。
 
 在使用AudioStreamManager的接口之前，需先通过[getStreamManager](arkts-apis-audio-audiomanager.md#getstreammanager9)获取AudioStreamManager实例。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Interface首批接口从API version 9开始支持。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { audio } from '@kit.AudioKit';
+```ts
+import { audio } from '@kit.AudioKit';
 ```
 
 ## getCurrentAudioRendererInfoArray9+
-
-PhonePC/2in1TabletTVWearable
 
 getCurrentAudioRendererInfoArray(callback: AsyncCallback<AudioRendererChangeInfoArray>): void
 
 获取当前音频渲染器的信息。使用callback异步回调。
 
-说明
+**说明** 
 
 该接口返回的音频渲染器信息，可能包含系统内部音频播放流，如蜂窝通话、超声波等。
 
@@ -43,31 +39,29 @@ getCurrentAudioRendererInfoArray(callback: AsyncCallback<AudioRendererChangeInfo
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<[AudioRendererChangeInfoArray](arkts-apis-audio-t.md#audiorendererchangeinfoarray9)> | 是 | 回调函数。当获取当前音频渲染器的信息成功，err为undefined，data为获取到的当前音频渲染器的信息；否则为错误对象。 |
+| callback | AsyncCallback<[AudioRendererChangeInfoArray](arkts-apis-audio-t.md#audiorendererchangeinfoarray9)> | 是 | 回调函数。当获取当前音频渲染器的信息成功，err为undefined，data为当前音频渲染器的信息；否则为错误对象。 |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioStreamManager.getCurrentAudioRendererInfoArray((err: BusinessError, audioRendererChangeInfoArray: audio.AudioRendererChangeInfoArray) => {
-4. if (err) {
-5. console.error(`Failed to get current audio renderer info array. Code: ${err.code}, message: ${err.message}`);
-6. } else {
-7. console.info(`Succeeded in getting current audio renderer info array, AudioRendererChangeInfoArray: ${JSON.stringify(audioRendererChangeInfoArray)}.`);
-8. }
-9. });
+audioStreamManager.getCurrentAudioRendererInfoArray((err: BusinessError, audioRendererChangeInfoArray: audio.AudioRendererChangeInfoArray) => {
+  if (err) {
+    console.error(`Failed to obtain current audio renderer info array. Code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info(`Succeeded in obtaining current audio renderer info array, audioRendererChangeInfoArray: ${JSON.stringify(audioRendererChangeInfoArray)}.`);
+});
 ```
 
 ## getCurrentAudioRendererInfoArray9+
-
-PhonePC/2in1TabletTVWearable
 
 getCurrentAudioRendererInfoArray(): Promise<AudioRendererChangeInfoArray>
 
 获取当前音频渲染器的信息。使用Promise异步回调。
 
-说明
+**说明** 
 
 该接口返回的音频渲染器信息，可能包含系统内部音频播放流，如蜂窝通话、超声波等。
 
@@ -81,25 +75,23 @@ getCurrentAudioRendererInfoArray(): Promise<AudioRendererChangeInfoArray>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioStreamManager.getCurrentAudioRendererInfoArray().then((audioRendererChangeInfoArray: audio.AudioRendererChangeInfoArray) => {
-4. console.info(`Succeeded in getting current audio renderer info array, AudioRendererChangeInfoArray: ${JSON.stringify(audioRendererChangeInfoArray)}.`);
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to get current audio renderer info array. Code: ${err.code}, message: ${err.message}`);
-7. });
+audioStreamManager.getCurrentAudioRendererInfoArray().then((audioRendererChangeInfoArray: audio.AudioRendererChangeInfoArray) => {
+  console.info(`Succeeded in obtaining current audio renderer info array, audioRendererChangeInfoArray: ${JSON.stringify(audioRendererChangeInfoArray)}.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to obtain current audio renderer info array. Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## getCurrentAudioRendererInfoArraySync10+
-
-PhonePC/2in1TabletTVWearable
 
 getCurrentAudioRendererInfoArraySync(): AudioRendererChangeInfoArray
 
 获取当前音频渲染器的信息。同步返回结果。
 
-说明
+**说明** 
 
 该接口返回的音频渲染器信息，可能包含系统内部音频播放流，如蜂窝通话、超声波等。
 
@@ -113,27 +105,25 @@ getCurrentAudioRendererInfoArraySync(): AudioRendererChangeInfoArray
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. let audioRendererChangeInfoArray: audio.AudioRendererChangeInfoArray = audioStreamManager.getCurrentAudioRendererInfoArraySync();
-5. console.info(`Succeeded in getting current audio renderer info array, AudioRendererChangeInfoArray: ${JSON.stringify(audioRendererChangeInfoArray)}.`);
-6. } catch (err) {
-7. let error = err as BusinessError;
-8. console.error(`Failed to get current audio renderer info array. Code: ${error.code}, message: ${error.message}`);
-9. }
+try {
+  let audioRendererChangeInfoArray: audio.AudioRendererChangeInfoArray = audioStreamManager.getCurrentAudioRendererInfoArraySync();
+  console.info(`Succeeded in obtaining current audio renderer info array, audioRendererChangeInfoArray: ${JSON.stringify(audioRendererChangeInfoArray)}.`);
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`Failed to obtain current audio renderer info array. Code: ${error.code}, message: ${error.message}`);
+}
 ```
 
 ## getCurrentAudioCapturerInfoArray9+
-
-PhonePC/2in1TabletTVWearable
 
 getCurrentAudioCapturerInfoArray(callback: AsyncCallback<AudioCapturerChangeInfoArray>): void
 
 获取当前音频采集器的信息。使用callback异步回调。
 
-说明
+**说明** 
 
 该接口返回的音频采集器信息，可能包含系统内部音频录制流，如语音唤醒、蜂窝通话等。
 
@@ -143,31 +133,29 @@ getCurrentAudioCapturerInfoArray(callback: AsyncCallback<AudioCapturerChangeInfo
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<[AudioCapturerChangeInfoArray](arkts-apis-audio-t.md#audiocapturerchangeinfoarray9)> | 是 | 回调函数。当获取当前音频采集器的信息成功，err为undefined，data为获取到的当前音频采集器的信息；否则为错误对象。 |
+| callback | AsyncCallback<[AudioCapturerChangeInfoArray](arkts-apis-audio-t.md#audiocapturerchangeinfoarray9)> | 是 | 回调函数。当获取当前音频采集器的信息成功，err为undefined，data为当前音频采集器的信息；否则为错误对象。 |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioStreamManager.getCurrentAudioCapturerInfoArray((err: BusinessError, audioCapturerChangeInfoArray: audio.AudioCapturerChangeInfoArray) => {
-4. if (err) {
-5. console.error(`Failed to get current audio capturer info array. Code: ${err.code}, message: ${err.message}`);
-6. } else {
-7. console.info(`Succeeded in getting current audio capturer info array, AudioCapturerChangeInfoArray: ${JSON.stringify(audioCapturerChangeInfoArray)}.`);
-8. }
-9. });
+audioStreamManager.getCurrentAudioCapturerInfoArray((err: BusinessError, audioCapturerChangeInfoArray: audio.AudioCapturerChangeInfoArray) => {
+  if (err) {
+    console.error(`Failed to obtain current audio capturer info array. Code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info(`Succeeded in obtaining current audio capturer info array, audioCapturerChangeInfoArray: ${JSON.stringify(audioCapturerChangeInfoArray)}.`);
+});
 ```
 
 ## getCurrentAudioCapturerInfoArray9+
-
-PhonePC/2in1TabletTVWearable
 
 getCurrentAudioCapturerInfoArray(): Promise<AudioCapturerChangeInfoArray>
 
 获取当前音频采集器的信息。使用Promise异步回调。
 
-说明
+**说明** 
 
 该接口返回的音频采集器信息，可能包含系统内部音频录制流，如语音唤醒、蜂窝通话等。
 
@@ -181,25 +169,23 @@ getCurrentAudioCapturerInfoArray(): Promise<AudioCapturerChangeInfoArray>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioStreamManager.getCurrentAudioCapturerInfoArray().then((audioCapturerChangeInfoArray: audio.AudioCapturerChangeInfoArray) => {
-4. console.info(`Succeeded in getting current audio capturer info array, AudioCapturerChangeInfoArray: ${JSON.stringify(audioCapturerChangeInfoArray)}.`);
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to get current audio capturer info array. Code: ${err.code}, message: ${err.message}`);
-7. });
+audioStreamManager.getCurrentAudioCapturerInfoArray().then((audioCapturerChangeInfoArray: audio.AudioCapturerChangeInfoArray) => {
+  console.info(`Succeeded in obtaining current audio capturer info array, audioCapturerChangeInfoArray: ${JSON.stringify(audioCapturerChangeInfoArray)}.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to obtain current audio capturer info array. Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## getCurrentAudioCapturerInfoArraySync10+
-
-PhonePC/2in1TabletTVWearable
 
 getCurrentAudioCapturerInfoArraySync(): AudioCapturerChangeInfoArray
 
 获取当前音频采集器的信息。同步返回结果。
 
-说明
+**说明** 
 
 该接口返回的音频采集器信息，可能包含系统内部音频录制流，如语音唤醒、蜂窝通话等。
 
@@ -213,27 +199,25 @@ getCurrentAudioCapturerInfoArraySync(): AudioCapturerChangeInfoArray
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. let audioCapturerChangeInfoArray = audioStreamManager.getCurrentAudioCapturerInfoArraySync();
-5. console.info(`Succeeded in getting current audio capturer info array, AudioCapturerChangeInfoArray: ${JSON.stringify(audioCapturerChangeInfoArray)}.`);
-6. } catch (err) {
-7. let error = err as BusinessError;
-8. console.error(`Failed to get current audio capturer info array. Code: ${error.code}, message: ${error.message}`);
-9. }
+try {
+  let audioCapturerChangeInfoArray = audioStreamManager.getCurrentAudioCapturerInfoArraySync();
+  console.info(`Succeeded in obtaining current audio capturer info array, audioCapturerChangeInfoArray: ${JSON.stringify(audioCapturerChangeInfoArray)}.`);
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`Failed to obtain current audio capturer info array. Code: ${error.code}, message: ${error.message}`);
+}
 ```
 
 ## on('audioRendererChange')9+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'audioRendererChange', callback: Callback<AudioRendererChangeInfoArray>): void
 
 监听音频渲染器更改事件（当音频播放流状态变化或设备变化时触发）。使用callback异步回调。
 
-说明
+**说明** 
 
 该接口返回的音频渲染器信息，可能包含系统内部音频播放流，如蜂窝通话、超声波等。
 
@@ -257,21 +241,19 @@ on(type: 'audioRendererChange', callback: Callback<AudioRendererChangeInfoArray>
 
 **示例：**
 
-```
-1. audioStreamManager.on('audioRendererChange',  (audioRendererChangeInfoArray: audio.AudioRendererChangeInfoArray) => {
-2. console.info(`Succeeded in using on function, AudioRendererChangeInfoArray: ${JSON.stringify(audioRendererChangeInfoArray)}.`);
-3. });
+```ts
+audioStreamManager.on('audioRendererChange', (audioRendererChangeInfoArray: audio.AudioRendererChangeInfoArray) => {
+  console.info(`Audio renderer changed, audioRendererChangeInfoArray: ${JSON.stringify(audioRendererChangeInfoArray)}.`);
+});
 ```
 
 ## off('audioRendererChange')9+
 
-PhonePC/2in1TabletTVWearable
-
 off(type: 'audioRendererChange', callback?: Callback<AudioRendererChangeInfoArray>): void
 
-取消监听音频渲染器更改事件。使用callback异步回调。
+取消监听音频渲染器更改事件。
 
-说明
+**说明** 
 
 该接口返回的音频渲染器信息，可能包含系统内部音频播放流，如蜂窝通话、超声波等。
 
@@ -281,8 +263,8 @@ off(type: 'audioRendererChange', callback?: Callback<AudioRendererChangeInfoArra
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'audioRendererChange'，当取消监听音频渲染器更改事件时，触发该事件。 |
-| callback18+ | Callback<[AudioRendererChangeInfoArray](arkts-apis-audio-t.md#audiorendererchangeinfoarray9)> | 否 | 回调函数，返回当前音频渲染器信息。 |
+| type | string | 是 | 事件回调类型，支持的事件为'audioRendererChange'。 |
+| callback18+ | Callback<[AudioRendererChangeInfoArray](arkts-apis-audio-t.md#audiorendererchangeinfoarray9)> | 否 | 回调函数。传入回调函数时，仅取消该回调对应的监听事件，需与[on('audioRendererChange')](arkts-apis-audio-audiostreammanager.md#onaudiorendererchange9)绑定同一回调函数；不传参数时，取消此事件类型下所有已订阅的监听事件。 |
 
 **错误码：**
 
@@ -294,27 +276,25 @@ off(type: 'audioRendererChange', callback?: Callback<AudioRendererChangeInfoArra
 
 **示例：**
 
-```
-1. // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
-2. // 当订阅了多个该事件的监听时，可通过 audioStreamManager.off('audioRendererChange'); 取消该事件的所有监听。
-3. let audioRendererChangeCallback = (audioRendererChangeInfoArray: audio.AudioRendererChangeInfoArray) => {
-4. console.info(`Succeeded in using on or off function, AudioRendererChangeInfoArray: ${JSON.stringify(audioRendererChangeInfoArray)}.`);
-5. };
+```ts
+// 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
+// 当订阅了多个该事件的监听时，可通过 audioStreamManager.off('audioRendererChange'); 取消该事件的所有监听。
+let audioRendererChangeCallback = (audioRendererChangeInfoArray: audio.AudioRendererChangeInfoArray) => {
+  console.info(`Audio renderer changed, audioRendererChangeInfoArray: ${JSON.stringify(audioRendererChangeInfoArray)}.`);
+};
 
-7. audioStreamManager.on('audioRendererChange', audioRendererChangeCallback);
+audioStreamManager.on('audioRendererChange', audioRendererChangeCallback);
 
-9. audioStreamManager.off('audioRendererChange', audioRendererChangeCallback);
+audioStreamManager.off('audioRendererChange', audioRendererChangeCallback);
 ```
 
 ## on('audioCapturerChange')9+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'audioCapturerChange', callback: Callback<AudioCapturerChangeInfoArray>): void
 
 监听音频采集器更改事件（当音频录制流状态变化或设备变化时触发）。使用callback异步回调。
 
-说明
+**说明** 
 
 该接口返回的音频采集器信息，可能包含系统内部音频录制流，如语音唤醒、蜂窝通话等。
 
@@ -338,21 +318,19 @@ on(type: 'audioCapturerChange', callback: Callback<AudioCapturerChangeInfoArray>
 
 **示例：**
 
-```
-1. audioStreamManager.on('audioCapturerChange', (audioCapturerChangeInfoArray: audio.AudioCapturerChangeInfoArray) =>  {
-2. console.info(`Succeeded in using on function, AudioCapturerChangeInfoArray: ${JSON.stringify(audioCapturerChangeInfoArray)}.`);
-3. });
+```ts
+audioStreamManager.on('audioCapturerChange', (audioCapturerChangeInfoArray: audio.AudioCapturerChangeInfoArray) => {
+  console.info(`Audio capturer changed, audioCapturerChangeInfoArray: ${JSON.stringify(audioCapturerChangeInfoArray)}.`);
+});
 ```
 
 ## off('audioCapturerChange')9+
 
-PhonePC/2in1TabletTVWearable
-
 off(type: 'audioCapturerChange', callback?: Callback<AudioCapturerChangeInfoArray>): void
 
-取消监听音频采集器更改事件。使用callback异步回调。
+取消监听音频采集器更改事件。
 
-说明
+**说明** 
 
 该接口返回的音频采集器信息，可能包含系统内部音频录制流，如语音唤醒、蜂窝通话等。
 
@@ -362,8 +340,8 @@ off(type: 'audioCapturerChange', callback?: Callback<AudioCapturerChangeInfoArra
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'audioCapturerChange'，当取消监听音频采集器更改事件时，触发该事件。 |
-| callback18+ | Callback<[AudioCapturerChangeInfoArray](arkts-apis-audio-t.md#audiocapturerchangeinfoarray9)> | 否 | 回调函数，返回当前音频采集器信息。 |
+| type | string | 是 | 事件回调类型，支持的事件为'audioCapturerChange'。 |
+| callback18+ | Callback<[AudioCapturerChangeInfoArray](arkts-apis-audio-t.md#audiocapturerchangeinfoarray9)> | 否 | 回调函数。传入回调函数时，仅取消该回调对应的监听事件，需与[on('audioCapturerChange')](arkts-apis-audio-audiostreammanager.md#onaudiocapturerchange9)绑定同一回调函数；不传参数时，取消此事件类型下所有已订阅的监听事件。 |
 
 **错误码：**
 
@@ -375,29 +353,27 @@ off(type: 'audioCapturerChange', callback?: Callback<AudioCapturerChangeInfoArra
 
 **示例：**
 
-```
-1. // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
-2. // 当订阅了多个该事件的监听时，可通过 audioStreamManager.off('audioCapturerChange'); 取消该事件的所有监听。
-3. let audioCapturerChangeCallback = (audioCapturerChangeInfoArray: audio.AudioCapturerChangeInfoArray) =>  {
-4. console.info(`Succeeded in using on or off function, AudioCapturerChangeInfoArray: ${JSON.stringify(audioCapturerChangeInfoArray)}.`);
-5. };
+```ts
+// 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
+// 当订阅了多个该事件的监听时，可通过 audioStreamManager.off('audioCapturerChange'); 取消该事件的所有监听。
+let audioCapturerChangeCallback = (audioCapturerChangeInfoArray: audio.AudioCapturerChangeInfoArray) => {
+  console.info(`Audio capturer changed, audioCapturerChangeInfoArray: ${JSON.stringify(audioCapturerChangeInfoArray)}.`);
+};
 
-7. audioStreamManager.on('audioCapturerChange', audioCapturerChangeCallback);
+audioStreamManager.on('audioCapturerChange', audioCapturerChangeCallback);
 
-9. audioStreamManager.off('audioCapturerChange', audioCapturerChangeCallback);
+audioStreamManager.off('audioCapturerChange', audioCapturerChangeCallback);
 ```
 
 ## isActive(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isActive(volumeType: AudioVolumeType, callback: AsyncCallback<boolean>): void
 
 获取指定音频流活跃状态。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 9开始支持，从API version 20开始废弃，建议使用[isStreamActive](arkts-apis-audio-audiostreammanager.md#isstreamactive20)替代。
+从API version 9开始支持，从API version 20开始废弃，建议使用[isStreamActive](arkts-apis-audio-audiostreammanager.md#isstreamactive20)替代。注意替代接口与原接口入参存在差异，例如[StreamUsage](arkts-apis-audio-e.md#streamusage)中提供了STREAM\_USAGE\_MUSIC、STREAM\_USAGE\_MOVIE、STREAM\_USAGE\_AUDIOBOOK、STREAM\_USAGE\_GAME等更细分的类型，而[AudioVolumeType](arkts-apis-audio-e.md#audiovolumetype)中这些类型统一归入MEDIA类型。具体映射关系请参考[音量控制](../harmonyos-guides/using-right-streamusage-for-playback.md#音量控制)中常见的播放流类型与音量类型的对应关系，迁移时根据实际业务场景选择对应的StreamUsage值。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
@@ -410,29 +386,27 @@ isActive(volumeType: AudioVolumeType, callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioStreamManager.isActive(audio.AudioVolumeType.MEDIA, (err: BusinessError, value: boolean) => {
-4. if (err) {
-5. console.error(`Failed to obtain the active status of the stream. ${err}`);
-6. return;
-7. }
-8. console.info(`Callback invoked to indicate that the active status of the stream is obtained ${value}.`);
-9. });
+audioStreamManager.isActive(audio.AudioVolumeType.MEDIA, (err: BusinessError, value: boolean) => {
+  if (err) {
+    console.error(`Failed to check whether the stream is active. Code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info(`Succeeded in checking whether the stream is active, isActive: ${value}.`);
+});
 ```
 
 ## isActive(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isActive(volumeType: AudioVolumeType): Promise<boolean>
 
 获取指定音频流是否为活跃状态。使用Promise异步回调。
 
-说明
+**说明** 
 
-从API version 9开始支持，从API version 20开始废弃，建议使用[isStreamActive](arkts-apis-audio-audiostreammanager.md#isstreamactive20)替代。
+从API version 9开始支持，从API version 20开始废弃，建议使用[isStreamActive](arkts-apis-audio-audiostreammanager.md#isstreamactive20)替代。注意替代接口与原接口入参存在差异，例如[StreamUsage](arkts-apis-audio-e.md#streamusage)中提供了STREAM\_USAGE\_MUSIC、STREAM\_USAGE\_MOVIE、STREAM\_USAGE\_AUDIOBOOK、STREAM\_USAGE\_GAME等更细分的类型，而[AudioVolumeType](arkts-apis-audio-e.md#audiovolumetype)中这些类型统一归入MEDIA类型。具体映射关系请参考[音量控制](../harmonyos-guides/using-right-streamusage-for-playback.md#音量控制)中常见的播放流类型与音量类型的对应关系，迁移时根据实际业务场景选择对应的StreamUsage值。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
@@ -450,23 +424,25 @@ isActive(volumeType: AudioVolumeType): Promise<boolean>
 
 **示例：**
 
-```
-1. audioStreamManager.isActive(audio.AudioVolumeType.MEDIA).then((value: boolean) => {
-2. console.info(`Promise returned to indicate that the active status of the stream is obtained ${value}.`);
-3. });
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+audioStreamManager.isActive(audio.AudioVolumeType.MEDIA).then((value: boolean) => {
+  console.info(`Succeeded in checking whether the stream is active, isActive: ${value}.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to check whether the stream is active. Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## isActiveSync(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isActiveSync(volumeType: AudioVolumeType): boolean
 
 获取指定音频流是否为活跃状态。同步返回结果。
 
-说明
+**说明** 
 
-从API version 10开始支持，从API version 20开始废弃，建议使用[isStreamActive](arkts-apis-audio-audiostreammanager.md#isstreamactive20)替代。
+从API version 10开始支持，从API version 20开始废弃，建议使用[isStreamActive](arkts-apis-audio-audiostreammanager.md#isstreamactive20)替代。注意替代接口与原接口入参存在差异，例如[StreamUsage](arkts-apis-audio-e.md#streamusage)中提供了STREAM\_USAGE\_MUSIC、STREAM\_USAGE\_MOVIE、STREAM\_USAGE\_AUDIOBOOK、STREAM\_USAGE\_GAME等更细分的类型，而[AudioVolumeType](arkts-apis-audio-e.md#audiovolumetype)中这些类型统一归入MEDIA类型。具体映射关系请参考[音量控制](../harmonyos-guides/using-right-streamusage-for-playback.md#音量控制)中常见的播放流类型与音量类型的对应关系，迁移时根据实际业务场景选择对应的StreamUsage值。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
@@ -493,21 +469,19 @@ isActiveSync(volumeType: AudioVolumeType): boolean
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. let value: boolean = audioStreamManager.isActiveSync(audio.AudioVolumeType.MEDIA);
-5. console.info(`Indicate that the active status of the stream is obtained ${value}.`);
-6. } catch (err) {
-7. let error = err as BusinessError;
-8. console.error(`Failed to obtain the active status of the stream ${error}.`);
-9. }
+try {
+  let value: boolean = audioStreamManager.isActiveSync(audio.AudioVolumeType.MEDIA);
+  console.info(`Succeeded in checking whether the stream is active, isActive: ${value}.`);
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`Failed to check whether the stream is active. Code: ${error.code}, message: ${error.message}`);
+}
 ```
 
 ## isStreamActive20+
-
-PhonePC/2in1TabletTVWearable
 
 isStreamActive(streamUsage: StreamUsage): boolean
 
@@ -519,7 +493,7 @@ isStreamActive(streamUsage: StreamUsage): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| streamUsage | [StreamUsage](arkts-apis-audio-e.md#streamusage) | 是 | 音频流使用类型。 |
+| streamUsage | [StreamUsage](arkts-apis-audio-e.md#streamusage) | 是 | 音频流类型。 |
 
 **返回值：**
 
@@ -537,21 +511,19 @@ isStreamActive(streamUsage: StreamUsage): boolean
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. let isStreamActive = audioStreamManager.isStreamActive(audio.StreamUsage.STREAM_USAGE_MUSIC);
-5. console.info(`Succeeded in using isStreamActive function, IsStreamActive: ${isStreamActive}.`);
-6. } catch (err) {
-7. let error = err as BusinessError;
-8. console.error(`Failed to use isStreamActive function. code: ${error.code}, message: ${error.message}`);
-9. }
+try {
+  let isStreamActive = audioStreamManager.isStreamActive(audio.StreamUsage.STREAM_USAGE_MUSIC);
+  console.info(`Succeeded in checking whether the stream is active, isStreamActive: ${isStreamActive}.`);
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`Failed to check whether the stream is active. Code: ${error.code}, message: ${error.message}`);
+}
 ```
 
 ## getAudioEffectInfoArray10+
-
-PhonePC/2in1TabletTVWearable
 
 getAudioEffectInfoArray(usage: StreamUsage, callback: AsyncCallback<AudioEffectInfoArray>): void
 
@@ -563,8 +535,8 @@ getAudioEffectInfoArray(usage: StreamUsage, callback: AsyncCallback<AudioEffectI
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| usage | [StreamUsage](arkts-apis-audio-e.md#streamusage) | 是 | 音频流使用类型。 |
-| callback | AsyncCallback<[AudioEffectInfoArray](arkts-apis-audio-audiostreammanager.md#getaudioeffectinfoarray10)> | 是 | 回调函数。当获取当前音效模式的信息成功，err为undefined，data为获取到的当前音效模式的信息；否则为错误对象。 |
+| usage | [StreamUsage](arkts-apis-audio-e.md#streamusage) | 是 | 音频流类型。 |
+| callback | AsyncCallback<[AudioEffectInfoArray](arkts-apis-audio-t.md#audioeffectinfoarray10)> | 是 | 回调函数。当获取当前音效模式的信息成功，err为undefined，data为当前音效模式的信息；否则为错误对象。 |
 
 **错误码：**
 
@@ -577,21 +549,19 @@ getAudioEffectInfoArray(usage: StreamUsage, callback: AsyncCallback<AudioEffectI
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioStreamManager.getAudioEffectInfoArray(audio.StreamUsage.STREAM_USAGE_MUSIC, (err: BusinessError, audioEffectInfoArray: audio.AudioEffectInfoArray) => {
-4. if (err) {
-5. console.error(`Failed to get audio effect info array. Code: ${err.code}, message: ${err.message}`);
-6. } else {
-7. console.info(`Succeeded in getting effect info array, AudioEffectInfoArray: ${JSON.stringify(audioEffectInfoArray)}.`);
-8. }
-9. });
+audioStreamManager.getAudioEffectInfoArray(audio.StreamUsage.STREAM_USAGE_MUSIC, (err: BusinessError, audioEffectInfoArray: audio.AudioEffectInfoArray) => {
+  if (err) {
+    console.error(`Failed to obtain the audio effect info array. Code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info(`Succeeded in obtaining the audio effect info array, audioEffectInfoArray: ${JSON.stringify(audioEffectInfoArray)}.`);
+});
 ```
 
 ## getAudioEffectInfoArray10+
-
-PhonePC/2in1TabletTVWearable
 
 getAudioEffectInfoArray(usage: StreamUsage): Promise<AudioEffectInfoArray>
 
@@ -603,13 +573,13 @@ getAudioEffectInfoArray(usage: StreamUsage): Promise<AudioEffectInfoArray>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| usage | [StreamUsage](arkts-apis-audio-e.md#streamusage) | 是 | 音频流使用类型。 |
+| usage | [StreamUsage](arkts-apis-audio-e.md#streamusage) | 是 | 音频流类型。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[AudioEffectInfoArray](arkts-apis-audio-audiostreammanager.md#getaudioeffectinfoarray10)> | Promise对象，返回当前音效模式的信息。 |
+| Promise<[AudioEffectInfoArray](arkts-apis-audio-t.md#audioeffectinfoarray10)> | Promise对象，返回当前音效模式的信息。 |
 
 **错误码：**
 
@@ -622,19 +592,17 @@ getAudioEffectInfoArray(usage: StreamUsage): Promise<AudioEffectInfoArray>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioStreamManager.getAudioEffectInfoArray(audio.StreamUsage.STREAM_USAGE_MUSIC).then((audioEffectInfoArray: audio.AudioEffectInfoArray) => {
-4. console.info(`Succeeded in getting effect info array, AudioEffectInfoArray: ${JSON.stringify(audioEffectInfoArray)}.`);
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to get audio effect info array. Code: ${err.code}, message: ${err.message}`);
-7. });
+audioStreamManager.getAudioEffectInfoArray(audio.StreamUsage.STREAM_USAGE_MUSIC).then((audioEffectInfoArray: audio.AudioEffectInfoArray) => {
+  console.info(`Succeeded in obtaining the audio effect info array, audioEffectInfoArray: ${JSON.stringify(audioEffectInfoArray)}.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to obtain the audio effect info array. Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## getAudioEffectInfoArraySync10+
-
-PhonePC/2in1TabletTVWearable
 
 getAudioEffectInfoArraySync(usage: StreamUsage): AudioEffectInfoArray
 
@@ -646,13 +614,13 @@ getAudioEffectInfoArraySync(usage: StreamUsage): AudioEffectInfoArray
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| usage | [StreamUsage](arkts-apis-audio-e.md#streamusage) | 是 | 音频流使用类型。 |
+| usage | [StreamUsage](arkts-apis-audio-e.md#streamusage) | 是 | 音频流类型。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [AudioEffectInfoArray](arkts-apis-audio-audiostreammanager.md#getaudioeffectinfoarray10) | 返回当前音效模式的信息。 |
+| [AudioEffectInfoArray](arkts-apis-audio-t.md#audioeffectinfoarray10) | 返回当前音效模式的信息。 |
 
 **错误码：**
 
@@ -665,25 +633,23 @@ getAudioEffectInfoArraySync(usage: StreamUsage): AudioEffectInfoArray
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. let audioEffectInfoArray = audioStreamManager.getAudioEffectInfoArraySync(audio.StreamUsage.STREAM_USAGE_MUSIC);
-5. console.info(`Succeeded in getting effect info array, AudioEffectInfoArray: ${JSON.stringify(audioEffectInfoArray)}.`);
-6. } catch (err) {
-7. let error = err as BusinessError;
-8. console.error(`Failed to get audio effect info array. Code: ${error.code}, message: ${error.message}`);
-9. }
+try {
+  let audioEffectInfoArray = audioStreamManager.getAudioEffectInfoArraySync(audio.StreamUsage.STREAM_USAGE_MUSIC);
+  console.info(`Succeeded in obtaining the audio effect info array, audioEffectInfoArray: ${JSON.stringify(audioEffectInfoArray)}.`);
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`Failed to obtain the audio effect info array. Code: ${error.code}, message: ${error.message}`);
+}
 ```
 
 ## isAcousticEchoCancelerSupported20+
 
-PhonePC/2in1TabletTVWearable
-
 isAcousticEchoCancelerSupported(sourceType: SourceType): boolean
 
-查询指定的source type是否支持回声消除。
+查询指定的音源类型是否支持回声消除。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
@@ -709,21 +675,19 @@ isAcousticEchoCancelerSupported(sourceType: SourceType): boolean
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. let isAcousticEchoCancelerSupported = audioStreamManager.isAcousticEchoCancelerSupported(audio.SourceType.SOURCE_TYPE_LIVE);
-5. console.info(`Succeeded in using isAcousticEchoCancelerSupported function, IsAcousticEchoCancelerSupported: ${isAcousticEchoCancelerSupported}.`);
-6. } catch (err) {
-7. let error = err as BusinessError;
-8. console.error(`Failed to use isAcousticEchoCancelerSupported function. code: ${error.code}, message: ${error.message}`);
-9. }
+try {
+  let isAcousticEchoCancelerSupported = audioStreamManager.isAcousticEchoCancelerSupported(audio.SourceType.SOURCE_TYPE_LIVE);
+  console.info(`Succeeded in checking whether acoustic echo canceler is supported, isAcousticEchoCancelerSupported: ${isAcousticEchoCancelerSupported}.`);
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`Failed to check whether acoustic echo canceler is supported. Code: ${error.code}, message: ${error.message}`);
+}
 ```
 
 ## isAudioLoopbackSupported20+
-
-PhonePC/2in1TabletTVWearable
 
 isAudioLoopbackSupported(mode: AudioLoopbackMode): boolean
 
@@ -753,21 +717,19 @@ isAudioLoopbackSupported(mode: AudioLoopbackMode): boolean
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. let isAudioLoopbackSupported = audioStreamManager.isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE);
-5. console.info(`Succeeded in using isAudioLoopbackSupported function, IsAudioLoopbackSupported: ${isAudioLoopbackSupported}.`);
-6. } catch (err) {
-7. let error = err as BusinessError;
-8. console.error(`Failed to use isAudioLoopbackSupported function. code: ${error.code}, message: ${error.message}`);
-9. }
+try {
+  let isAudioLoopbackSupported = audioStreamManager.isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE);
+  console.info(`Succeeded in checking whether audio loopback is supported, isAudioLoopbackSupported: ${isAudioLoopbackSupported}.`);
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`Failed to check whether audio loopback is supported. Code: ${error.code}, message: ${error.message}`);
+}
 ```
 
 ## isRecordingAvailable20+
-
-PhonePC/2in1TabletTVWearable
 
 isRecordingAvailable(capturerInfo: AudioCapturerInfo): boolean
 
@@ -797,45 +759,43 @@ isRecordingAvailable(capturerInfo: AudioCapturerInfo): boolean
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let audioStreamInfo: audio.AudioStreamInfo = {
-4. samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
-5. channels: audio.AudioChannel.CHANNEL_2,
-6. sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-7. encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
-8. };
+let audioStreamInfo: audio.AudioStreamInfo = {
+  samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+  channels: audio.AudioChannel.CHANNEL_2,
+  sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+  encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+};
 
-10. let audioCapturerInfo: audio.AudioCapturerInfo = {
-11. source: audio.SourceType.SOURCE_TYPE_MIC,
-12. capturerFlags: 0
-13. };
+let audioCapturerInfo: audio.AudioCapturerInfo = {
+  source: audio.SourceType.SOURCE_TYPE_MIC,
+  capturerFlags: 0
+};
 
-15. let audioCapturerOptions: audio.AudioCapturerOptions = {
-16. streamInfo: audioStreamInfo,
-17. capturerInfo: audioCapturerInfo
-18. };
+let audioCapturerOptions: audio.AudioCapturerOptions = {
+  streamInfo: audioStreamInfo,
+  capturerInfo: audioCapturerInfo
+};
 
-20. audio.createAudioCapturer(audioCapturerOptions, (err: BusinessError, audioCapturer: audio.AudioCapturer) => {
-21. if (err) {
-22. console.error(`Failed to create AudioCapturer. Code: ${err.code}, message: ${err.message}`);
-23. } else {
-24. console.info('Succeeded in creating AudioCapturer.');
-25. try {
-26. let isRecordingAvailable = audioStreamManager.isRecordingAvailable(audioCapturerInfo);
-27. console.info(`Succeeded in using isRecordingAvailable function, IsRecordingAvailable: ${isRecordingAvailable}.`);
-28. } catch (err) {
-29. let error = err as BusinessError;
-30. console.error(`Failed to use isRecordingAvailable function. code: ${error.code}, message: ${error.message}`);
-31. }
-32. }
-33. });
+audio.createAudioCapturer(audioCapturerOptions, (err: BusinessError, audioCapturer: audio.AudioCapturer) => {
+  if (err) {
+    console.error(`Failed to create AudioCapturer. Code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in creating AudioCapturer.');
+  try {
+    let isRecordingAvailable = audioStreamManager.isRecordingAvailable(audioCapturerInfo);
+    console.info(`Succeeded in checking whether recording is available, isRecordingAvailable: ${isRecordingAvailable}.`);
+  } catch (err) {
+    let error = err as BusinessError;
+    console.error(`Failed to check whether recording is available. Code: ${error.code}, message: ${error.message}`);
+  }
+});
 ```
 
 ## isIntelligentNoiseReductionEnabledForCurrentDevice21+
-
-PhonePC/2in1TabletTVWearable
 
 isIntelligentNoiseReductionEnabledForCurrentDevice(sourceType: SourceType): boolean
 
@@ -865,14 +825,249 @@ isIntelligentNoiseReductionEnabledForCurrentDevice(sourceType: SourceType): bool
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. let isSupport = audioStreamManager.isIntelligentNoiseReductionEnabledForCurrentDevice(audio.SourceType.SOURCE_TYPE_LIVE);
-5. console.info(`SourceType: ${audio.SourceType.SOURCE_TYPE_LIVE} intelligent noise reduction enabled is: ${isSupport}`);
-6. } catch (err) {
-7. let error = err as BusinessError;
-8. console.error(`isIntelligentNoiseReductionEnabledForCurrentDevice ERROR: ${error}`);
-9. }
+try {
+  let isSupport = audioStreamManager.isIntelligentNoiseReductionEnabledForCurrentDevice(audio.SourceType.SOURCE_TYPE_LIVE);
+  console.info(`Succeeded in checking whether intelligent noise reduction is enabled for the current device, isIntelligentNoiseReductionEnabled: ${isSupport}.`);
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`Failed to check whether intelligent noise reduction is enabled for the current device. Code: ${error.code}, message: ${error.message}`);
+}
+```
+
+## isFastPlaybackSupported
+
+isFastPlaybackSupported(streamInfo: AudioStreamInfo, usage: StreamUsage): boolean
+
+查询指定音频流信息和使用场景下是否支持低时延播放。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Audio.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| streamInfo | [AudioStreamInfo](arkts-apis-audio-i.md#audiostreaminfo8) | 是 | 音频流信息，用于描述基础音频格式。 |
+| usage | [StreamUsage](arkts-apis-audio-e.md#streamusage) | 是 | 音频流使用场景，用于决定音频设备和通路类型的选择结果。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 是否支持低时延播放。true表示支持，false表示不支持。 |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let streamInfo: audio.AudioStreamInfo = {
+  samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+  channels: audio.AudioChannel.CHANNEL_2,
+  sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+  encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW,
+  channelLayout: audio.AudioChannelLayout.CH_LAYOUT_STEREO
+};
+
+try {
+  let isSupported = audioStreamManager.isFastPlaybackSupported(streamInfo, audio.StreamUsage.STREAM_USAGE_MUSIC);
+  console.info(`Succeeded in checking whether fast playback is supported, isFastPlaybackSupported: ${isSupported}.`);
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`Failed to check whether fast playback is supported. Code: ${error.code}, message: ${error.message}`);
+}
+```
+
+## isOffloadPlaybackSupported
+
+isOffloadPlaybackSupported(streamInfo: AudioStreamInfo, usage: StreamUsage): boolean
+
+查询指定音频流信息和使用场景下是否支持低功耗通路播放。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Audio.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| streamInfo | [AudioStreamInfo](arkts-apis-audio-i.md#audiostreaminfo8) | 是 | 音频流信息，用于描述基础音频格式。 |
+| usage | [StreamUsage](arkts-apis-audio-e.md#streamusage) | 是 | 音频流使用场景，用于决定音频设备和通路类型的选择结果。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 是否支持低功耗通路播放。true表示支持，false表示不支持。 |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let streamInfo: audio.AudioStreamInfo = {
+  samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+  channels: audio.AudioChannel.CHANNEL_2,
+  sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+  encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW,
+  channelLayout: audio.AudioChannelLayout.CH_LAYOUT_STEREO
+};
+
+try {
+  let isSupported = audioStreamManager.isOffloadPlaybackSupported(streamInfo, audio.StreamUsage.STREAM_USAGE_MUSIC);
+  console.info(`Succeeded in checking whether offload playback is supported, isOffloadPlaybackSupported: ${isSupported}.`);
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`Failed to check whether offload playback is supported. Code: ${error.code}, message: ${error.message}`);
+}
+```
+
+## isDirectPlaybackSupported
+
+isDirectPlaybackSupported(streamInfo: AudioStreamInfo, usage: StreamUsage): boolean
+
+查询指定音频流信息和使用场景下是否支持直通播放。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Audio.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| streamInfo | [AudioStreamInfo](arkts-apis-audio-i.md#audiostreaminfo8) | 是 | 音频流信息，用于描述基础音频格式。 |
+| usage | [StreamUsage](arkts-apis-audio-e.md#streamusage) | 是 | 音频流使用场景，用于决定音频设备和通路类型的选择结果。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 是否支持直通播放。true表示支持，false表示不支持。 |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let streamInfo: audio.AudioStreamInfo = {
+  samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+  channels: audio.AudioChannel.CHANNEL_2,
+  sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+  encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW,
+  channelLayout: audio.AudioChannelLayout.CH_LAYOUT_STEREO
+};
+
+try {
+  let isSupported = audioStreamManager.isDirectPlaybackSupported(streamInfo, audio.StreamUsage.STREAM_USAGE_MUSIC);
+  console.info(`Succeeded in checking whether direct playback is supported, isDirectPlaybackSupported: ${isSupported}.`);
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`Failed to check whether direct playback is supported. Code: ${error.code}, message: ${error.message}`);
+}
+```
+
+## isFastRecordingSupported
+
+isFastRecordingSupported(streamInfo: AudioStreamInfo, source: SourceType): boolean
+
+查询指定音频流信息和音源类型下是否支持低时延录制。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Audio.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| streamInfo | [AudioStreamInfo](arkts-apis-audio-i.md#audiostreaminfo8) | 是 | 音频流信息，用于描述基础音频格式。 |
+| source | [SourceType](arkts-apis-audio-e.md#sourcetype8) | 是 | 音源类型，用于决定音频设备和通路类型的选择结果。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 是否支持低时延录制。true表示支持，false表示不支持。 |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let streamInfo: audio.AudioStreamInfo = {
+  samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+  channels: audio.AudioChannel.CHANNEL_2,
+  sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+  encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW,
+  channelLayout: audio.AudioChannelLayout.CH_LAYOUT_STEREO
+};
+
+try {
+  let isSupported = audioStreamManager.isFastRecordingSupported(streamInfo, audio.SourceType.SOURCE_TYPE_MIC);
+  console.info(`Succeeded in checking whether fast recording is supported, isFastRecordingSupported: ${isSupported}.`);
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`Failed to check whether fast recording is supported. Code: ${error.code}, message: ${error.message}`);
+}
+```
+
+## isMultichannelPlaybackSupported
+
+isMultichannelPlaybackSupported(streamInfo: AudioStreamInfo, usage: StreamUsage): boolean
+
+查询指定音频流信息和使用场景下是否支持多声道播放。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Audio.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| streamInfo | [AudioStreamInfo](arkts-apis-audio-i.md#audiostreaminfo8) | 是 | 音频流信息，用于描述基础音频格式。 |
+| usage | [StreamUsage](arkts-apis-audio-e.md#streamusage) | 是 | 音频流使用场景，用于决定音频设备和通路类型的选择结果。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 是否支持多声道播放。true表示支持，false表示不支持。 |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let streamInfo: audio.AudioStreamInfo = {
+  samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+  channels: audio.AudioChannel.CHANNEL_3,
+  sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+  encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW,
+  channelLayout: audio.AudioChannelLayout.CH_LAYOUT_2POINT1
+};
+
+try {
+  let isSupported = audioStreamManager.isMultichannelPlaybackSupported(streamInfo, audio.StreamUsage.STREAM_USAGE_MUSIC);
+  console.info(`Succeeded in checking whether multichannel playback is supported, isMultichannelPlaybackSupported: ${isSupported}.`);
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`Failed to check whether multichannel playback is supported. Code: ${error.code}, message: ${error.message}`);
+}
 ```

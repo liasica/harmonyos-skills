@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hp-arkui-
 title: "@performance/hp-arkui-suggest-cache-avplayer"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/hp-arkui-suggest-cache-avplayer
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:07+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:13efefe478a1a25c1e739b987fcc8fee64ffaa8b0dcc91c9b3c7e5dccca7796c
+scraped_at: 2026-09-02T14:50:52+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b141c4f068b58f4302bb64a0c1407ef8fee16e715db7481bc64ba400f6c343a3
 ---
 
 建议缓存AVPlayer实例减少起播时延。
@@ -14,126 +14,126 @@ content_hash: sha256:13efefe478a1a25c1e739b987fcc8fee64ffaa8b0dcc91c9b3c7e5dccca
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@performance/hp-arkui-suggest-cache-avplayer": "warn",
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@performance/hp-arkui-suggest-cache-avplayer": "warn",
+  }
+}
 ```
 
 ## 选项
 
-该规则无需配置额外选项。
+该规则无需配置选项。
 
 ## 正例
 
-```
-1. import media from '@ohos.multimedia.media';
+```screen
+import media from '@ohos.multimedia.media';
 
-3. @Entry
-4. @Component
-5. struct MyComponent{
-6. private avPlayer: media.AVPlayer | undefined = undefined;
-7. private avPlayerManager: AVPlayerManager = AVPlayerManager.getInstance();
+@Entry
+@Component
+struct MyComponent{
+  private avPlayer: media.AVPlayer | undefined = undefined;
+  private avPlayerManager: AVPlayerManager = AVPlayerManager.getInstance();
 
-9. aboutToAppear(): void {
-10. this.avPlayerManager.switchPlayer();
-11. this.avPlayer = this.avPlayerManager.getCurrentPlayer();
-12. }
+  aboutToAppear(): void {
+    this.avPlayerManager.switchPlayer();
+    this.avPlayer = this.avPlayerManager.getCurrentPlayer();
+  }
 
-14. aboutToDisappear(): void {
-15. this.avPlayerManager.resetCurrentPlayer();
-16. this.avPlayer = undefined;
-17. }
+  aboutToDisappear(): void {
+    this.avPlayerManager.resetCurrentPlayer();
+    this.avPlayer = undefined;
+  }
 
-19. build() {
-20. // 组件布局
-21. }
-22. }
+  build() {
+    // 组件布局
+  }
+}
 
-24. class AVPlayerManager {
-25. private static instance?: AVPlayerManager;
+class AVPlayerManager {
+  private static instance?: AVPlayerManager;
 
-27. private player1?: media.AVPlayer;
-28. private player2?: media.AVPlayer;
-29. private currentPlayer?: media.AVPlayer;
+  private player1?: media.AVPlayer;
+  private player2?: media.AVPlayer;
+  private currentPlayer?: media.AVPlayer;
 
-31. public static getInstance(): AVPlayerManager {
-32. if (!AVPlayerManager.instance) {
-33. AVPlayerManager.instance = new AVPlayerManager();
-34. }
-35. return AVPlayerManager.instance;
-36. }
+  public static getInstance(): AVPlayerManager {
+    if (!AVPlayerManager.instance) {
+      AVPlayerManager.instance = new AVPlayerManager();
+    }
+    return AVPlayerManager.instance;
+  }
 
-38. async AVPlayerManager() {
-39. this.player1 = await media.createAVPlayer();
-40. this.player2 = await media.createAVPlayer();
-41. }
+  async AVPlayerManager() {
+    this.player1 = await media.createAVPlayer();
+    this.player2 = await media.createAVPlayer();
+  }
 
-43. /**
-44. * 切换页面时切换AVPlayer实例
-45. */
-46. switchPlayer(): void {
-47. if (this.currentPlayer === this.player1) {
-48. this.currentPlayer = this.player2;
-49. } else {
-50. this.currentPlayer = this.player1;
-51. }
-52. }
+  /**
+   * 切换页面时切换AVPlayer实例
+   */
+  switchPlayer(): void {
+    if (this.currentPlayer === this.player1) {
+      this.currentPlayer = this.player2;
+    } else {
+      this.currentPlayer = this.player1;
+    }
+  }
 
-54. getCurrentPlayer(): media.AVPlayer | undefined {
-55. return this.currentPlayer;
-56. }
+  getCurrentPlayer(): media.AVPlayer | undefined {
+    return this.currentPlayer;
+  }
 
-58. /**
-59. * 使用reset方法重置AVPlayer实例
-60. */
-61. resetCurrentPlayer(): void {
-62. this.currentPlayer?.pause(() => {
-63. this.currentPlayer?.reset();
-64. });
-65. }
-66. }
+  /**
+   * 使用reset方法重置AVPlayer实例
+   */
+  resetCurrentPlayer(): void {
+    this.currentPlayer?.pause(() => {
+      this.currentPlayer?.reset();
+    });
+  }
+}
 ```
 
 ## 反例
 
-```
-1. import media from '@ohos.multimedia.media';
+```screen
+import media from '@ohos.multimedia.media';
 
-3. @Entry
-4. @Component
-5. struct MyComponent{
-6. private avPlayer: media.AVPlayer | undefined = undefined;
+@Entry
+@Component
+struct MyComponent{
+  private avPlayer: media.AVPlayer | undefined = undefined;
 
-8. aboutToAppear(): void {
-9. // 页面创建时初始化AVPlayer实例
-10. media.createAVPlayer().then((ret) => {
-11. this.avPlayer = ret;
-12. });
-13. }
+  aboutToAppear(): void {
+    // 页面创建时初始化AVPlayer实例
+    media.createAVPlayer().then((ret) => {
+      this.avPlayer = ret;
+    });
+  }
 
-15. aboutToDisappear(): void {
-16. // 离开页面时销毁AVPlayer实例
-17. if (this.avPlayer) {
-18. this.avPlayer.release();
-19. }
-20. this.avPlayer = undefined;
-21. }
+  aboutToDisappear(): void {
+    // 离开页面时销毁AVPlayer实例
+    if (this.avPlayer) {
+      this.avPlayer.release();
+    }
+    this.avPlayer = undefined;
+  }
 
-23. build() {
-24. // 组件布局
-25. }
-26. }
+  build() {
+    // 组件布局
+  }
+}
 ```
 
 ## 规则集
 
-```
-1. plugin:@performance/recommended
-2. plugin:@performance/all
+```screen
+plugin:@performance/recommended
+plugin:@performance/all
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

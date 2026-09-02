@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-vide
 title: video_processing.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > video_processing.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:56+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6c49cabf3739323d521cdd1c43ff2a85322dab215f8366b5ccacf9044734c2a3
+scraped_at: 2026-09-02T15:02:36+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:738039fff07e0c36e7089c8b45100c8bf5407e3cb785b1d5d644fd91d351e02c
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 声明视频处理函数。
 
@@ -28,16 +26,12 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 函数
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| [VideoProcessing\_ErrorCode OH\_VideoProcessing\_InitializeEnvironment(void)](capi-video-processing-h.md#oh_videoprocessing_initializeenvironment) | 初始化视频处理全局环境。  该函数是可选的。  该函数只在主进程启动时被调用一次，用于初始化视频处理全局环境，这样可以减少[OH\_VideoProcessing\_Create](capi-video-processing-h.md#oh_videoprocessing_create)的时间。 |
-| [VideoProcessing\_ErrorCode OH\_VideoProcessing\_DeinitializeEnvironment(void)](capi-video-processing-h.md#oh_videoprocessing_deinitializeenvironment) | 释放视频处理全局环境。  调用前，必须调用[OH\_VideoProcessing\_InitializeEnvironment](capi-video-processing-h.md#oh_videoprocessing_initializeenvironment)初始化。  通常在主进程即将退出时调用该函数来释放通过调用[OH\_VideoProcessing\_InitializeEnvironment](capi-video-processing-h.md#oh_videoprocessing_initializeenvironment)函数初始化的全局环境。  如果仍有视频处理的实例运行中，就不能调用该函数。 |
+| [VideoProcessing\_ErrorCode OH\_VideoProcessing\_InitializeEnvironment(void)](capi-video-processing-h.md#oh_videoprocessing_initializeenvironment) | 初始化视频处理全局环境。  该函数是可选的。  该函数只在主进程启动时被调用一次，这样可以减少[OH\_VideoProcessing\_Create](capi-video-processing-h.md#oh_videoprocessing_create)的时间。 |
+| [VideoProcessing\_ErrorCode OH\_VideoProcessing\_DeinitializeEnvironment(void)](capi-video-processing-h.md#oh_videoprocessing_deinitializeenvironment) | 释放视频处理全局环境。  调用前，必须调用[OH\_VideoProcessing\_InitializeEnvironment](capi-video-processing-h.md#oh_videoprocessing_initializeenvironment)初始化。  通常在主进程即将退出时调用该函数，以释放通过[OH\_VideoProcessing\_InitializeEnvironment](capi-video-processing-h.md#oh_videoprocessing_initializeenvironment)函数初始化的全局环境。  如果仍有视频处理的实例运行中，就不能调用该函数。 |
 | [bool OH\_VideoProcessing\_IsColorSpaceConversionSupported(const VideoProcessing\_ColorSpaceInfo\* sourceVideoInfo, const VideoProcessing\_ColorSpaceInfo\* destinationVideoInfo)](capi-video-processing-h.md#oh_videoprocessing_iscolorspaceconversionsupported) | 查询是否支持视频颜色空间转换。 |
 | [bool OH\_VideoProcessing\_IsMetadataGenerationSupported(const VideoProcessing\_ColorSpaceInfo\* sourceVideoInfo)](capi-video-processing-h.md#oh_videoprocessing_ismetadatagenerationsupported) | 查询是否支持视频元数据生成。 |
 | [VideoProcessing\_ErrorCode OH\_VideoProcessing\_Create(OH\_VideoProcessing\*\* videoProcessor, int type)](capi-video-processing-h.md#oh_videoprocessing_create) | 创建视频处理实例。 |
@@ -52,20 +46,16 @@ PhonePC/2in1TabletTV
 | [VideoProcessing\_ErrorCode OH\_VideoProcessing\_RenderOutputBuffer(OH\_VideoProcessing\* videoProcessor, uint32\_t index)](capi-video-processing-h.md#oh_videoprocessing_renderoutputbuffer) | 渲染处理并输出buffer。  如果设置了回调函数[OH\_VideoProcessingCallback\_OnNewOutputBuffer](capi-video-processing-types-h.md#oh_videoprocessingcallback_onnewoutputbuffer)，当输出buffer准备好之后会通过回调函数把buffer的索引返回给用户。 |
 | [VideoProcessing\_ErrorCode OH\_VideoProcessingCallback\_Create(VideoProcessing\_Callback\*\* callback)](capi-video-processing-h.md#oh_videoprocessingcallback_create) | 创建视频处理回调函数对象。 |
 | [VideoProcessing\_ErrorCode OH\_VideoProcessingCallback\_Destroy(VideoProcessing\_Callback\* callback)](capi-video-processing-h.md#oh_videoprocessingcallback_destroy) | 销毁回调对象。回调对象在注册之后就可以销毁。 |
-| [VideoProcessing\_ErrorCode OH\_VideoProcessingCallback\_BindOnError(VideoProcessing\_Callback\* callback,OH\_VideoProcessingCallback\_OnError onError)](capi-video-processing-h.md#oh_videoprocessingcallback_bindonerror) | 绑定回调函数[OH\_VideoProcessingCallback\_OnError](capi-video-processing-types-h.md#oh_videoprocessingcallback_onerror)到回调对象。 |
-| [VideoProcessing\_ErrorCode OH\_VideoProcessingCallback\_BindOnState(VideoProcessing\_Callback\* callback,OH\_VideoProcessingCallback\_OnState onState)](capi-video-processing-h.md#oh_videoprocessingcallback_bindonstate) | 绑定回调函数[OH\_VideoProcessingCallback\_OnState](capi-video-processing-types-h.md#oh_videoprocessingcallback_onstate)到回调对象。 |
-| [VideoProcessing\_ErrorCode OH\_VideoProcessingCallback\_BindOnNewOutputBuffer(VideoProcessing\_Callback\* callback,OH\_VideoProcessingCallback\_OnNewOutputBuffer onNewOutputBuffer)](capi-video-processing-h.md#oh_videoprocessingcallback_bindonnewoutputbuffer) | 绑定回调函数[OH\_VideoProcessingCallback\_OnNewOutputBuffer](capi-video-processing-types-h.md#oh_videoprocessingcallback_onnewoutputbuffer)到回调对象。 |
+| [VideoProcessing\_ErrorCode OH\_VideoProcessingCallback\_BindOnError(VideoProcessing\_Callback\* callback,OH\_VideoProcessingCallback\_OnError onError)](capi-video-processing-h.md#oh_videoprocessingcallback_bindonerror) | 绑定回调函数[OH\_VideoProcessingCallback\_OnError](capi-video-processing-types-h.md#oh_videoprocessingcallback_onerror)到回调对象。绑定完成之后，需要调用 [OH\_VideoProcessing\_RegisterCallback](capi-video-processing-h.md#oh_videoprocessing_registercallback)，将回调对象注册到视频处理实例，才能使其生效。 |
+| [VideoProcessing\_ErrorCode OH\_VideoProcessingCallback\_BindOnState(VideoProcessing\_Callback\* callback,OH\_VideoProcessingCallback\_OnState onState)](capi-video-processing-h.md#oh_videoprocessingcallback_bindonstate) | 绑定回调函数[OH\_VideoProcessingCallback\_OnState](capi-video-processing-types-h.md#oh_videoprocessingcallback_onstate)到回调对象。绑定完成之后，需要调用 [OH\_VideoProcessing\_RegisterCallback](capi-video-processing-h.md#oh_videoprocessing_registercallback)，将回调对象注册到视频处理实例，才能使其生效。 |
+| [VideoProcessing\_ErrorCode OH\_VideoProcessingCallback\_BindOnNewOutputBuffer(VideoProcessing\_Callback\* callback,OH\_VideoProcessingCallback\_OnNewOutputBuffer onNewOutputBuffer)](capi-video-processing-h.md#oh_videoprocessingcallback_bindonnewoutputbuffer) | 绑定回调函数[OH\_VideoProcessingCallback\_OnNewOutputBuffer](capi-video-processing-types-h.md#oh_videoprocessingcallback_onnewoutputbuffer)到回调对象。绑定完成之后，需要调用 [OH\_VideoProcessing\_RegisterCallback](capi-video-processing-h.md#oh_videoprocessing_registercallback)，将回调对象注册到视频处理实例，才能使其生效。 |
 
 ## 函数说明
 
-PhonePC/2in1TabletTV
-
 ### OH\_VideoProcessing\_InitializeEnvironment()
 
-PhonePC/2in1TabletTV
-
-```
-1. VideoProcessing_ErrorCode OH_VideoProcessing_InitializeEnvironment(void)
+```c
+VideoProcessing_ErrorCode OH_VideoProcessing_InitializeEnvironment(void)
 ```
 
 **描述**
@@ -90,10 +80,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_VideoProcessing\_DeinitializeEnvironment()
 
-PhonePC/2in1TabletTV
-
-```
-1. VideoProcessing_ErrorCode OH_VideoProcessing_DeinitializeEnvironment(void)
+```c
+VideoProcessing_ErrorCode OH_VideoProcessing_DeinitializeEnvironment(void)
 ```
 
 **描述**
@@ -116,10 +104,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_VideoProcessing\_IsColorSpaceConversionSupported()
 
-PhonePC/2in1TabletTV
-
-```
-1. bool OH_VideoProcessing_IsColorSpaceConversionSupported(const VideoProcessing_ColorSpaceInfo* sourceVideoInfo,const VideoProcessing_ColorSpaceInfo* destinationVideoInfo)
+```c
+bool OH_VideoProcessing_IsColorSpaceConversionSupported(const VideoProcessing_ColorSpaceInfo* sourceVideoInfo,const VideoProcessing_ColorSpaceInfo* destinationVideoInfo)
 ```
 
 **描述**
@@ -132,8 +118,8 @@ PhonePC/2in1TabletTV
 
 | 参数项 | 描述 |
 | --- | --- |
-| const [VideoProcessing\_ColorSpaceInfo](api-videoprocessing-videoprocessing-colorspaceinfo.md)\* sourceVideoInfo | 输入视频颜色空间信息。 |
-| const [VideoProcessing\_ColorSpaceInfo](api-videoprocessing-videoprocessing-colorspaceinfo.md)\* destinationVideoInfo | 输出视频颜色空间信息。 |
+| const [VideoProcessing\_ColorSpaceInfo](capi-videoprocessing-videoprocessing-colorspaceinfo.md)\* sourceVideoInfo | 输入视频颜色空间信息。 |
+| const [VideoProcessing\_ColorSpaceInfo](capi-videoprocessing-videoprocessing-colorspaceinfo.md)\* destinationVideoInfo | 输出视频颜色空间信息。 |
 
 **返回：**
 
@@ -143,10 +129,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_VideoProcessing\_IsMetadataGenerationSupported()
 
-PhonePC/2in1TabletTV
-
-```
-1. bool OH_VideoProcessing_IsMetadataGenerationSupported(const VideoProcessing_ColorSpaceInfo* sourceVideoInfo)
+```c
+bool OH_VideoProcessing_IsMetadataGenerationSupported(const VideoProcessing_ColorSpaceInfo* sourceVideoInfo)
 ```
 
 **描述**
@@ -159,7 +143,7 @@ PhonePC/2in1TabletTV
 
 | 参数项 | 描述 |
 | --- | --- |
-| const [VideoProcessing\_ColorSpaceInfo](api-videoprocessing-videoprocessing-colorspaceinfo.md)\* sourceVideoInfo | 输入视频颜色空间信息。 |
+| const [VideoProcessing\_ColorSpaceInfo](capi-videoprocessing-videoprocessing-colorspaceinfo.md)\* sourceVideoInfo | 输入视频颜色空间信息。 |
 
 **返回：**
 
@@ -169,10 +153,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_VideoProcessing\_Create()
 
-PhonePC/2in1TabletTV
-
-```
-1. VideoProcessing_ErrorCode OH_VideoProcessing_Create(OH_VideoProcessing** videoProcessor, int type)
+```c
+VideoProcessing_ErrorCode OH_VideoProcessing_Create(OH_VideoProcessing** videoProcessor, int type)
 ```
 
 **描述**
@@ -186,7 +168,7 @@ PhonePC/2in1TabletTV
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_VideoProcessing](capi-videoprocessing-oh-videoprocessing.md)\*\* videoProcessor | 输出参数。指向视频处理对象的指针的指针。输入前\*videoProcessor必须是空指针。 |
-| int type | 使用VIDEO\_PROCESSING\_TYPE\_XXX来指定处理类型。实例的处理类型不能改变。 |
+| int type | 使用视频处理实例常量来指定处理类型。实例的处理类型不能改变。 |
 
 **返回：**
 
@@ -196,10 +178,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_VideoProcessing\_Destroy()
 
-PhonePC/2in1TabletTV
-
-```
-1. VideoProcessing_ErrorCode OH_VideoProcessing_Destroy(OH_VideoProcessing* videoProcessor)
+```c
+VideoProcessing_ErrorCode OH_VideoProcessing_Destroy(OH_VideoProcessing* videoProcessor)
 ```
 
 **描述**
@@ -224,10 +204,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_VideoProcessing\_RegisterCallback()
 
-PhonePC/2in1TabletTV
-
-```
-1. VideoProcessing_ErrorCode OH_VideoProcessing_RegisterCallback(OH_VideoProcessing* videoProcessor,const VideoProcessing_Callback* callback, void* userData)
+```c
+VideoProcessing_ErrorCode OH_VideoProcessing_RegisterCallback(OH_VideoProcessing* videoProcessor,const VideoProcessing_Callback* callback, void* userData)
 ```
 
 **描述**
@@ -244,7 +222,7 @@ PhonePC/2in1TabletTV
 | --- | --- |
 | [OH\_VideoProcessing](capi-videoprocessing-oh-videoprocessing.md)\* videoProcessor | 指向视频处理实例的指针。 |
 | const [VideoProcessing\_Callback](capi-videoprocessing-videoprocessing-callback.md)\* callback | 回调函数指针。 |
-| void\* userData | 指向用户特定数据的指针。 |
+| void\* userData | 指向用户特定数据的指针，如this指针。 |
 
 **返回：**
 
@@ -254,10 +232,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_VideoProcessing\_SetSurface()
 
-PhonePC/2in1TabletTV
-
-```
-1. VideoProcessing_ErrorCode OH_VideoProcessing_SetSurface(OH_VideoProcessing* videoProcessor,const OHNativeWindow* window)
+```c
+VideoProcessing_ErrorCode OH_VideoProcessing_SetSurface(OH_VideoProcessing* videoProcessor,const OHNativeWindow* window)
 ```
 
 **描述**
@@ -283,10 +259,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_VideoProcessing\_GetSurface()
 
-PhonePC/2in1TabletTV
-
-```
-1. VideoProcessing_ErrorCode OH_VideoProcessing_GetSurface(OH_VideoProcessing* videoProcessor, OHNativeWindow** window)
+```c
+VideoProcessing_ErrorCode OH_VideoProcessing_GetSurface(OH_VideoProcessing* videoProcessor, OHNativeWindow** window)
 ```
 
 **描述**
@@ -308,14 +282,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| [VideoProcessing\_ErrorCode](capi-video-processing-types-h.md#videoprocessing_errorcode) | 如果执行成功，返回VIDEO\_PROCESSING\_SUCCESS。  如果实例为空或者不是一个视频处理实例，返回VIDEO\_PROCESSING\_ERROR\_INVALID\_INSTANCE。  如果window为空指针或指向window的指针不为空，返回VIDEO\_PROCESSING\_ERROR\_INVALID\_PARAMETER。  如果创建surface失败，或者输入surface已经创建，或者视频处理实例还在运行，返回VIDEO\_PROCESSING\_ERROR\_OPERATION\_NOT\_PERMITTED。 |
+| [VideoProcessing\_ErrorCode](capi-video-processing-types-h.md#videoprocessing_errorcode) | 如果执行成功，返回VIDEO\_PROCESSING\_SUCCESS。  如果实例为空或者不是一个视频处理实例，返回VIDEO\_PROCESSING\_ERROR\_INVALID\_INSTANCE。  如果window为空指针或指向window的指针为空，返回VIDEO\_PROCESSING\_ERROR\_INVALID\_PARAMETER。  如果创建surface失败，或者输入surface已经创建，或者视频处理实例还在运行，返回VIDEO\_PROCESSING\_ERROR\_OPERATION\_NOT\_PERMITTED。 |
 
 ### OH\_VideoProcessing\_SetParameter()
 
-PhonePC/2in1TabletTV
-
-```
-1. VideoProcessing_ErrorCode OH_VideoProcessing_SetParameter(OH_VideoProcessing* videoProcessor,const OH_AVFormat* parameter)
+```c
+VideoProcessing_ErrorCode OH_VideoProcessing_SetParameter(OH_VideoProcessing* videoProcessor,const OH_AVFormat* parameter)
 ```
 
 **描述**
@@ -329,7 +301,7 @@ PhonePC/2in1TabletTV
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_VideoProcessing](capi-videoprocessing-oh-videoprocessing.md)\* videoProcessor | 指向视频处理实例的指针。 |
-| const [OH\_AVFormat](capi-videoprocessing-oh-avformat.md)\* parameter | 指向视频处理参数实例的指针。 |
+| const [OH\_AVFormat](capi-videoprocessing-oh-avformat.md)\* parameter | 指向视频处理参数实例的指针，用于传入需设置的视频处理参数，例如视频宽度、高度、像素格式及编解码格式等。 |
 
 **返回：**
 
@@ -339,10 +311,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_VideoProcessing\_GetParameter()
 
-PhonePC/2in1TabletTV
-
-```
-1. VideoProcessing_ErrorCode OH_VideoProcessing_GetParameter(OH_VideoProcessing* videoProcessor, OH_AVFormat* parameter)
+```c
+VideoProcessing_ErrorCode OH_VideoProcessing_GetParameter(OH_VideoProcessing* videoProcessor, OH_AVFormat* parameter)
 ```
 
 **描述**
@@ -356,7 +326,7 @@ PhonePC/2in1TabletTV
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_VideoProcessing](capi-videoprocessing-oh-videoprocessing.md)\* videoProcessor | 指向视频处理实例的指针。 |
-| [OH\_AVFormat](capi-videoprocessing-oh-avformat.md)\* parameter | 指向视频处理参数实例的指针。 |
+| [OH\_AVFormat](capi-videoprocessing-oh-avformat.md)\* parameter | 指向视频处理参数实例的指针，用于获取当前视频处理的参数，比如视频宽度、高度、像素格式、编解码格式等。 |
 
 **返回：**
 
@@ -366,10 +336,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_VideoProcessing\_Start()
 
-PhonePC/2in1TabletTV
-
-```
-1. VideoProcessing_ErrorCode OH_VideoProcessing_Start(OH_VideoProcessing* videoProcessor)
+```c
+VideoProcessing_ErrorCode OH_VideoProcessing_Start(OH_VideoProcessing* videoProcessor)
 ```
 
 **描述**
@@ -394,10 +362,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_VideoProcessing\_Stop()
 
-PhonePC/2in1TabletTV
-
-```
-1. VideoProcessing_ErrorCode OH_VideoProcessing_Stop(OH_VideoProcessing* videoProcessor)
+```c
+VideoProcessing_ErrorCode OH_VideoProcessing_Stop(OH_VideoProcessing* videoProcessor)
 ```
 
 **描述**
@@ -422,10 +388,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_VideoProcessing\_RenderOutputBuffer()
 
-PhonePC/2in1TabletTV
-
-```
-1. VideoProcessing_ErrorCode OH_VideoProcessing_RenderOutputBuffer(OH_VideoProcessing* videoProcessor, uint32_t index)
+```c
+VideoProcessing_ErrorCode OH_VideoProcessing_RenderOutputBuffer(OH_VideoProcessing* videoProcessor, uint32_t index)
 ```
 
 **描述**
@@ -451,10 +415,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_VideoProcessingCallback\_Create()
 
-PhonePC/2in1TabletTV
-
-```
-1. VideoProcessing_ErrorCode OH_VideoProcessingCallback_Create(VideoProcessing_Callback** callback)
+```c
+VideoProcessing_ErrorCode OH_VideoProcessingCallback_Create(VideoProcessing_Callback** callback)
 ```
 
 **描述**
@@ -473,14 +435,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| [VideoProcessing\_ErrorCode](capi-video-processing-types-h.md#videoprocessing_errorcode) | 如果回调函数对象创建成功，返回VIDEO\_PROCESSING\_SUCCESS。  如果callback为空或者callback不为空，返回VIDEO\_PROCESSING\_ERROR\_INVALID\_PARAMETER。  如果内存不足，返回VIDEO\_PROCESSING\_ERROR\_NO\_MEMORY。 |
+| [VideoProcessing\_ErrorCode](capi-video-processing-types-h.md#videoprocessing_errorcode) | 如果回调函数对象创建成功，返回VIDEO\_PROCESSING\_SUCCESS。  如果callback为空，返回VIDEO\_PROCESSING\_ERROR\_INVALID\_PARAMETER。  如果内存不足，返回VIDEO\_PROCESSING\_ERROR\_NO\_MEMORY。 |
 
 ### OH\_VideoProcessingCallback\_Destroy()
 
-PhonePC/2in1TabletTV
-
-```
-1. VideoProcessing_ErrorCode OH_VideoProcessingCallback_Destroy(VideoProcessing_Callback* callback)
+```c
+VideoProcessing_ErrorCode OH_VideoProcessingCallback_Destroy(VideoProcessing_Callback* callback)
 ```
 
 **描述**
@@ -503,15 +463,13 @@ PhonePC/2in1TabletTV
 
 ### OH\_VideoProcessingCallback\_BindOnError()
 
-PhonePC/2in1TabletTV
-
-```
-1. VideoProcessing_ErrorCode OH_VideoProcessingCallback_BindOnError(VideoProcessing_Callback* callback,OH_VideoProcessingCallback_OnError onError)
+```c
+VideoProcessing_ErrorCode OH_VideoProcessingCallback_BindOnError(VideoProcessing_Callback* callback,OH_VideoProcessingCallback_OnError onError)
 ```
 
 **描述**
 
-绑定回调函数[OH\_VideoProcessingCallback\_OnError](capi-video-processing-types-h.md#oh_videoprocessingcallback_onerror)到回调对象。
+绑定回调函数[OH\_VideoProcessingCallback\_OnError](capi-video-processing-types-h.md#oh_videoprocessingcallback_onerror)到回调对象。绑定完成之后，需要调用 [OH\_VideoProcessing\_RegisterCallback](capi-video-processing-h.md#oh_videoprocessing_registercallback)，将回调对象注册到视频处理实例，才能使其生效。
 
 **起始版本：** 12
 
@@ -530,15 +488,13 @@ PhonePC/2in1TabletTV
 
 ### OH\_VideoProcessingCallback\_BindOnState()
 
-PhonePC/2in1TabletTV
-
-```
-1. VideoProcessing_ErrorCode OH_VideoProcessingCallback_BindOnState(VideoProcessing_Callback* callback,OH_VideoProcessingCallback_OnState onState)
+```c
+VideoProcessing_ErrorCode OH_VideoProcessingCallback_BindOnState(VideoProcessing_Callback* callback,OH_VideoProcessingCallback_OnState onState)
 ```
 
 **描述**
 
-绑定回调函数[OH\_VideoProcessingCallback\_OnState](capi-video-processing-types-h.md#oh_videoprocessingcallback_onstate)到回调对象。
+绑定回调函数[OH\_VideoProcessingCallback\_OnState](capi-video-processing-types-h.md#oh_videoprocessingcallback_onstate)到回调对象。绑定完成之后，需要调用 [OH\_VideoProcessing\_RegisterCallback](capi-video-processing-h.md#oh_videoprocessing_registercallback)，将回调对象注册到视频处理实例，才能使其生效。
 
 **起始版本：** 12
 
@@ -557,15 +513,13 @@ PhonePC/2in1TabletTV
 
 ### OH\_VideoProcessingCallback\_BindOnNewOutputBuffer()
 
-PhonePC/2in1TabletTV
-
-```
-1. VideoProcessing_ErrorCode OH_VideoProcessingCallback_BindOnNewOutputBuffer(VideoProcessing_Callback* callback,OH_VideoProcessingCallback_OnNewOutputBuffer onNewOutputBuffer)
+```c
+VideoProcessing_ErrorCode OH_VideoProcessingCallback_BindOnNewOutputBuffer(VideoProcessing_Callback* callback,OH_VideoProcessingCallback_OnNewOutputBuffer onNewOutputBuffer)
 ```
 
 **描述**
 
-绑定回调函数[OH\_VideoProcessingCallback\_OnNewOutputBuffer](capi-video-processing-types-h.md#oh_videoprocessingcallback_onnewoutputbuffer)到回调对象。
+绑定回调函数[OH\_VideoProcessingCallback\_OnNewOutputBuffer](capi-video-processing-types-h.md#oh_videoprocessingcallback_onnewoutputbuffer)到回调对象。绑定完成之后，需要调用 [OH\_VideoProcessing\_RegisterCallback](capi-video-processing-h.md#oh_videoprocessing_registercallback)，将回调对象注册到视频处理实例，才能使其生效。
 
 **起始版本：** 12
 

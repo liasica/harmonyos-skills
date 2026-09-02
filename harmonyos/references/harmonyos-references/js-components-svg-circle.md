@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: circle
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > circle
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:37+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:961bba769d0e1c50a3a042156c6605bde32d7bb2fb31310bc8f580e636296b20
+scraped_at: 2026-09-02T15:01:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:87d897eeb8225f30cbf67e147d5fa3170abed241c21ef958b630d806b0779ccf
 ---
 
-说明
+**说明** 
 
 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -16,19 +16,13 @@ content_hash: sha256:961bba769d0e1c50a3a042156c6605bde32d7bb2fb31310bc8f580e6362
 
 ## 权限列表
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 支持[animate](js-components-svg-animate.md)、[animateMotion](js-components-svg-animatemotion.md)、[animateTransform](js-components-svg-animatetransform.md)。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 支持Svg组件[通用属性](js-components-svg-common-attributes.md)和以下属性。
 
@@ -41,16 +35,14 @@ PhonePC/2in1TabletTVWearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <svg fill="white" width="400" height="400">
-4. <circle cx="60" cy="200" r="50" stroke-width="4" fill="red" stroke="blue"></circle>
-5. <circle cx="180" cy="200" r="50" stroke-width="10" stroke="red" stroke-dasharray="10 5" stroke-dashoffset="3"></circle>
-6. </svg>
-7. </div>
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <svg fill="white" width="400" height="400">
+    <circle cx="60" cy="200" r="50" stroke-width="4" fill="red" stroke="blue"></circle>
+    <circle cx="180" cy="200" r="50" stroke-width="10" stroke="red" stroke-dasharray="10 5" stroke-dashoffset="3"></circle>
+  </svg>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/m5Z5KIFPRL-JVZS9N037bg/zh-cn_image_0000002589246575.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/3oCeSnrNTCCvrXmkgRDcew/zh-cn_image_0000002706836432.png)

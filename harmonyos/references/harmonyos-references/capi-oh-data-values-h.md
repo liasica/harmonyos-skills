@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-d
 title: oh_data_values.h
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 头文件 > oh_data_values.h
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:29+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:672587f7c903a3d95f609123aa9b7c7829be51e37a84174585e2b26b266d4290
+scraped_at: 2026-09-02T15:00:42+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:bab49384ceb830634b0dc69a856cc629575648e787d357fe34df025cf2fe6afd
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供与多条数据值相关的函数和枚举。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,11 +32,9 @@ PhonePC/2in1TabletTVWearable
 
 ### 函数
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 描述 |
 | --- | --- |
-| [OH\_Data\_Values \*OH\_Values\_Create(void)](capi-oh-data-values-h.md#oh_values_create) | 创建[OH\_Data\_Values](capi-rdb-oh-data-values.md)实例，用于储存多条键值对数据。 |
+| [OH\_Data\_Values \*OH\_Values\_Create(void)](capi-oh-data-values-h.md#oh_values_create) | 创建[OH\_Data\_Values](capi-rdb-oh-data-values.md)实例，用于存储多个数据值。 |
 | [int OH\_Values\_Destroy(OH\_Data\_Values \*values)](capi-oh-data-values-h.md#oh_values_destroy) | 销毁[OH\_Data\_Values](capi-rdb-oh-data-values.md)对象。 |
 | [int OH\_Values\_Put(OH\_Data\_Values \*values, const OH\_Data\_Value \*val)](capi-oh-data-values-h.md#oh_values_put) | 添加OH\_Data\_Value类型数据给OH\_Data\_Values对象。 |
 | [int OH\_Values\_PutNull(OH\_Data\_Values \*values)](capi-oh-data-values-h.md#oh_values_putnull) | 添加空数据给OH\_Data\_Values对象。 |
@@ -72,19 +64,15 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Values\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Data_Values *OH_Values_Create(void)
+```c
+OH_Data_Values *OH_Values_Create(void)
 ```
 
 **描述**
 
-创建[OH\_Data\_Values](capi-rdb-oh-data-values.md)实例，用于储存多条键值对数据。
+创建[OH\_Data\_Values](capi-rdb-oh-data-values.md)实例，用于存储多个数据值。
 
 **起始版本：** 18
 
@@ -92,14 +80,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_Data\_Values](capi-rdb-oh-data-values.md) | 执行成功时返回指向[OH\_Data\_Values](capi-rdb-oh-data-values.md)实例的指针，否则返回nullptr。  使用完成后，必须通过[OH\_Values\_Destroy](capi-oh-data-values-h.md#oh_values_destroy)接口释放内存。 |
+| [OH\_Data\_Values](capi-rdb-oh-data-values.md) \* | 执行成功时返回指向[OH\_Data\_Values](capi-rdb-oh-data-values.md)实例的指针，否则返回nullptr。  使用完成后，必须通过[OH\_Values\_Destroy](capi-oh-data-values-h.md#oh_values_destroy)接口释放内存。 |
 
 ### OH\_Values\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Values_Destroy(OH_Data_Values *values)
+```c
+int OH_Values_Destroy(OH_Data_Values *values)
 ```
 
 **描述**
@@ -122,10 +108,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Values\_Put()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Values_Put(OH_Data_Values *values, const OH_Data_Value *val)
+```c
+int OH_Values_Put(OH_Data_Values *values, const OH_Data_Value *val)
 ```
 
 **描述**
@@ -149,10 +133,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Values\_PutNull()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Values_PutNull(OH_Data_Values *values)
+```c
+int OH_Values_PutNull(OH_Data_Values *values)
 ```
 
 **描述**
@@ -175,10 +157,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Values\_PutInt()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Values_PutInt(OH_Data_Values *values, int64_t val)
+```c
+int OH_Values_PutInt(OH_Data_Values *values, int64_t val)
 ```
 
 **描述**
@@ -202,10 +182,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Values\_PutReal()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Values_PutReal(OH_Data_Values *values, double val)
+```c
+int OH_Values_PutReal(OH_Data_Values *values, double val)
 ```
 
 **描述**
@@ -229,10 +207,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Values\_PutText()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Values_PutText(OH_Data_Values *values, const char *val)
+```c
+int OH_Values_PutText(OH_Data_Values *values, const char *val)
 ```
 
 **描述**
@@ -256,10 +232,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Values\_PutBlob()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Values_PutBlob(OH_Data_Values *values, const unsigned char *val, size_t length)
+```c
+int OH_Values_PutBlob(OH_Data_Values *values, const unsigned char *val, size_t length)
 ```
 
 **描述**
@@ -284,10 +258,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Values\_PutAsset()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Values_PutAsset(OH_Data_Values *values, const Data_Asset *val)
+```c
+int OH_Values_PutAsset(OH_Data_Values *values, const Data_Asset *val)
 ```
 
 **描述**
@@ -311,10 +283,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Values\_PutAssets()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Values_PutAssets(OH_Data_Values *values, const Data_Asset * const * val, size_t length)
+```c
+int OH_Values_PutAssets(OH_Data_Values *values, const Data_Asset * const * val, size_t length)
 ```
 
 **描述**
@@ -339,10 +309,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Values\_PutFloatVector()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Values_PutFloatVector(OH_Data_Values *values, const float *val, size_t length)
+```c
+int OH_Values_PutFloatVector(OH_Data_Values *values, const float *val, size_t length)
 ```
 
 **描述**
@@ -356,7 +324,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_Data\_Values](capi-rdb-oh-data-values.md) \*values | 表示指向[OH\_Data\_Values](capi-rdb-oh-data-values.md)实例的指针。 |
-| const float \*val | 表示指向float数组对象的指针。 |
+| const float \*val | 表示指向float数组的指针。 |
 | size\_t length | 该参数为输入参数，表示开发者传入的float数组的长度。 |
 
 **返回：**
@@ -367,10 +335,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Values\_PutUnlimitedInt()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Values_PutUnlimitedInt(OH_Data_Values *values, int sign, const uint64_t *trueForm, size_t length)
+```c
+int OH_Values_PutUnlimitedInt(OH_Data_Values *values, int sign, const uint64_t *trueForm, size_t length)
 ```
 
 **描述**
@@ -396,10 +362,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Values\_Count()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Values_Count(OH_Data_Values *values, size_t *count)
+```c
+int OH_Values_Count(OH_Data_Values *values, size_t *count)
 ```
 
 **描述**
@@ -423,10 +387,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Values\_GetType()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Values_GetType(OH_Data_Values *values, int index, OH_ColumnType *type)
+```c
+int OH_Values_GetType(OH_Data_Values *values, int index, OH_ColumnType *type)
 ```
 
 **描述**
@@ -451,10 +413,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Values\_Get()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Values_Get(OH_Data_Values *values, int index, OH_Data_Value **val)
+```c
+int OH_Values_Get(OH_Data_Values *values, int index, OH_Data_Value **val)
 ```
 
 **描述**
@@ -479,10 +439,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Values\_IsNull()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Values_IsNull(OH_Data_Values *values, int index, bool *val)
+```c
+int OH_Values_IsNull(OH_Data_Values *values, int index, bool *val)
 ```
 
 **描述**
@@ -507,10 +465,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Values\_GetInt()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Values_GetInt(OH_Data_Values *values, int index, int64_t *val)
+```c
+int OH_Values_GetInt(OH_Data_Values *values, int index, int64_t *val)
 ```
 
 **描述**
@@ -535,10 +491,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Values\_GetReal()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Values_GetReal(OH_Data_Values *values, int index, double *val)
+```c
+int OH_Values_GetReal(OH_Data_Values *values, int index, double *val)
 ```
 
 **描述**
@@ -563,10 +517,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Values\_GetText()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Values_GetText(OH_Data_Values *values, int index, const char **val)
+```c
+int OH_Values_GetText(OH_Data_Values *values, int index, const char **val)
 ```
 
 **描述**
@@ -591,10 +543,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Values\_GetBlob()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Values_GetBlob(OH_Data_Values *values, int index, const uint8_t **val, size_t *length)
+```c
+int OH_Values_GetBlob(OH_Data_Values *values, int index, const uint8_t **val, size_t *length)
 ```
 
 **描述**
@@ -620,10 +570,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Values\_GetAsset()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Values_GetAsset(OH_Data_Values *values, int index, Data_Asset *val)
+```c
+int OH_Values_GetAsset(OH_Data_Values *values, int index, Data_Asset *val)
 ```
 
 **描述**
@@ -648,10 +596,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Values\_GetAssetsCount()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Values_GetAssetsCount(OH_Data_Values *values, int index, size_t *length)
+```c
+int OH_Values_GetAssetsCount(OH_Data_Values *values, int index, size_t *length)
 ```
 
 **描述**
@@ -676,10 +622,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Values\_GetAssets()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Values_GetAssets(OH_Data_Values *values, int index, Data_Asset **val, size_t inLen, size_t *outLen)
+```c
+int OH_Values_GetAssets(OH_Data_Values *values, int index, Data_Asset **val, size_t inLen, size_t *outLen)
 ```
 
 **描述**
@@ -706,10 +650,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Values\_GetFloatVectorCount()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Values_GetFloatVectorCount(OH_Data_Values *values, int index, size_t *length)
+```c
+int OH_Values_GetFloatVectorCount(OH_Data_Values *values, int index, size_t *length)
 ```
 
 **描述**
@@ -734,10 +676,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Values\_GetFloatVector()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Values_GetFloatVector(OH_Data_Values *values, int index, float *val, size_t inLen, size_t *outLen)
+```c
+int OH_Values_GetFloatVector(OH_Data_Values *values, int index, float *val, size_t inLen, size_t *outLen)
 ```
 
 **描述**
@@ -764,10 +704,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Values\_GetUnlimitedIntBand()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Values_GetUnlimitedIntBand(OH_Data_Values *values, int index, size_t *length)
+```c
+int OH_Values_GetUnlimitedIntBand(OH_Data_Values *values, int index, size_t *length)
 ```
 
 **描述**
@@ -792,10 +730,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Values\_GetUnlimitedInt()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Values_GetUnlimitedInt(OH_Data_Values *values, int index, int *sign, uint64_t *trueForm, size_t inLen, size_t *outLen)
+```c
+int OH_Values_GetUnlimitedInt(OH_Data_Values *values, int index, int *sign, uint64_t *trueForm, size_t inLen, size_t *outLen)
 ```
 
 **描述**

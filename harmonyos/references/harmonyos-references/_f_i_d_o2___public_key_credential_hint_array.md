@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_i_d_o2
 title: FIDO2_PublicKeyCredentialHintArray
 breadcrumb: API参考 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > C API > 结构体 > FIDO2_PublicKeyCredentialHintArray
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:32+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:91b377f3fd60c59240a70d973c953fcd7738cd3ad31e96dd2ef34554165015b5
+scraped_at: 2026-09-02T15:01:45+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f73b3ca833ea5335576c0c1cf1cd7695bdbfc29d25004d7a0d05a0b3f0fc1d7f
 ---
 
 ## 概述
@@ -14,7 +14,9 @@ content_hash: sha256:91b377f3fd60c59240a70d973c953fcd7738cd3ad31e96dd2ef34554165
 
 **起始版本：** 6.0.0(20)
 
-**相关模块：** [FIDO2](passkey.md)
+**相关模块：** [FIDO2（通行密钥服务）](passkey.md)
+
+**所在头文件：** [fido2\_api.h](onlineauthentication_capi_header_fido2.md)
 
 ## 汇总
 
@@ -29,8 +31,8 @@ content_hash: sha256:91b377f3fd60c59240a70d973c953fcd7738cd3ad31e96dd2ef34554165
 
 ### hintNum
 
-```
-1. uint32_t FIDO2_PublicKeyCredentialHintArray::hintNum
+```cpp
+uint32_t FIDO2_PublicKeyCredentialHintArray::hintNum
 ```
 
 **描述**
@@ -39,8 +41,8 @@ content_hash: sha256:91b377f3fd60c59240a70d973c953fcd7738cd3ad31e96dd2ef34554165
 
 ### hints
 
-```
-1. FIDO2_PublicKeyCredentialHint* FIDO2_PublicKeyCredentialHintArray::hints
+```cpp
+FIDO2_PublicKeyCredentialHint* FIDO2_PublicKeyCredentialHintArray::hints
 ```
 
 **描述**

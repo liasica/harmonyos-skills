@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_strict-bo
 title: "@typescript-eslint/strict-boolean-expressions"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/strict-boolean-expressions
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:51+08:00
+scraped_at: 2026-09-02T14:50:51+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:328022258fa6cde46780c9dc266aff149f16db4d9c107fd7a4411a2fc15445f1
+content_hash: sha256:4d98cc93e4f0deba616fd98f38e5ccb412e83e51216ad8a111e7dca8f3651161
 ---
 
 不允许在布尔表达式中使用非布尔类型。
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@typescript-eslint/strict-boolean-expressions": "error"
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@typescript-eslint/strict-boolean-expressions": "error"
+  }
+}
 ```
 
 ## 选项
@@ -27,54 +27,54 @@ content_hash: sha256:328022258fa6cde46780c9dc266aff149f16db4d9c107fd7a4411a2fc15
 
 ## 正例
 
-```
-1. // nullable values should be checked explicitly against null or undefined
-2. function getNum(): number | undefined {
-3. return undefined;
-4. }
+```screen
+// nullable values should be checked explicitly against null or undefined
+function getNum(): number | undefined {
+  return undefined;
+}
 
-6. const num: number | undefined = getNum();
-7. if (num !== undefined) {
-8. console.log('num is defined');
-9. }
+const num: number | undefined = getNum();
+if (num !== undefined) {
+  console.log('num is defined');
+}
 
-11. function getStr(): string | null {
-12. return 'null';
-13. }
+function getStr(): string | null {
+  return 'null';
+}
 
-15. const str: string | null = getStr();
-16. if (str !== null) {
-17. console.log('str is not empty');
-18. }
+const str: string | null = getStr();
+if (str !== null) {
+  console.log('str is not empty');
+}
 ```
 
 ## 反例
 
-```
-1. // nullable values should be checked explicitly against null or undefined
-2. function getNum(): number | undefined {
-3. return undefined;
-4. }
+```screen
+// nullable values should be checked explicitly against null or undefined
+function getNum(): number | undefined {
+  return undefined;
+}
 
-6. const num: number | undefined = getNum();
-7. if (num) {
-8. console.log('num is defined');
-9. }
+const num: number | undefined = getNum();
+if (num) {
+  console.log('num is defined');
+}
 
-11. function getStr(): string | null {
-12. return 'null';
-13. }
+function getStr(): string | null {
+  return 'null';
+}
 
-15. const str: string | null = getStr();
-16. if (str) {
-17. console.log('str is not empty');
-18. }
+const str: string | null = getStr();
+if (str) {
+  console.log('str is not empty');
+}
 ```
 
 ## 规则集
 
-```
-1. plugin:@typescript-eslint/all
+```screen
+plugin:@typescript-eslint/all
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

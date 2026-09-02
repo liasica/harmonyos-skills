@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-profiler-1
 title: 如何解决体检工具诊断结果代码行跳转不准确的问题
 breadcrumb: FAQ > DevEco Studio > 性能分析 > 如何解决体检工具诊断结果代码行跳转不准确的问题
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:14+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:17+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:f6d036e0f9b66b405f0dc967302508f5307557388991971232f5ebef5d1aac30
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 初始化数据库访问
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 云数据库 > 初始化数据库访问
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a56bd51085d283caa112354ec46a0cb1f9fdb18b50c70b6d7c573a589452bf47
+scraped_at: 2026-09-02T14:59:54+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:21570ea636badd292fbdf7a701ee4b45c0939d510a0474e60f058a90dcc33729
 ---
 
 ## 约束与限制
@@ -22,37 +22,36 @@ content_hash: sha256:a56bd51085d283caa112354ec46a0cb1f9fdb18b50c70b6d7c573a58945
 
    在“entry/src/main/module.json5”文件中添加网络权限。
 
-   ```
-   1. "requestPermissions": [
-   2. {
-   3. "name": "ohos.permission.INTERNET"
-   4. }
-   5. ]
+   ```typescript
+   "requestPermissions": [
+     {
+       "name": "ohos.permission.INTERNET"
+     }
+   ]
    ```
 2. （可选）如果存在需要登录应用才能操作数据库的场景（如新增或删除数据），您需要执行如下操作：
 
    1. [通过AuthProvider获取用户凭据](../harmonyos-references/cloudfoundation-cloudcommon.md#authprovider)。
-   2. 调用[cloudCommon.init()](../harmonyos-references/cloudfoundation-cloudcommon.md#cloudcommoninit)方法进行初始化时，传入获取的凭据。
-3. 在业务代码中，使用AGC开发平台上创建的存储区“QuickStartDemo”类初始化DatabaseZone。
+   2. 调用[init()](../harmonyos-references/cloudfoundation-cloudcommon.md#init)方法进行初始化时，传入获取的凭据。
+3. 导入相关模块。
 
+   ```typescript
+   import { cloudDatabase } from '@kit.CloudFoundationKit';
+   import { BookInfo } from '../model/BookInfo';
    ```
-   1. import { cloudDatabase } from '@kit.CloudFoundationKit';
+4. 在业务代码中，使用AGC开发平台上创建的存储区“QuickStartDemo”初始化DatabaseZone。
 
-   3. let databaseZone = cloudDatabase.zone('QuickStartDemo');
+   ```typescript
+   let databaseZone = cloudDatabase.zone('QuickStartDemo');
    ```
 
-   说明
+   **说明** 
 
+   * 后续“databaseZone”都需要在每个查询中独立使用，可以参考此章节创建，下文代码中不再重复创建的操作。
    * cloudDatabase.zone方法接收的入参为“存储区名称”，即cloudDBZoneName，请参见[新增存储区](cloudfoundation-database-add-zone.md)章节。
    * 存储区最多创建4个，超过4个会导致云数据库访问失败。
-4. 如果需要使用数据库查询方法，可以使用类（此处以BookInfo为例）初始化DatabaseQuery。
+5. 如果需要使用数据库查询方法，可以使用类（此处以BookInfo为例）初始化DatabaseQuery。
 
+   ```typescript
+   let condition = new cloudDatabase.DatabaseQuery(BookInfo);
    ```
-   1. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的相对路径
-
-   3. let condition = new cloudDatabase.DatabaseQuery(BookInfo);
-   ```
-
-   说明
-
-   后续“databaseZone”、“condition”都需要在每个查询中独立使用，可以参考此章节创建，下文代码中不再重复创建的操作。

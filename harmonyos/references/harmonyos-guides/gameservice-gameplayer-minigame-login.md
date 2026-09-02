@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 小游戏登录（必选）
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 基础游戏服务（必选） > 小游戏 > 小游戏登录（必选）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:38:10+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:497265446a5a029437681d53293a8ce9bf6a921c1365ca6952419a0f26563259
+scraped_at: 2026-09-02T14:59:55+08:00
+doc_updated_at: 2026-07-03
+content_hash: sha256:d4e19df39f10b19cecd0d91d8639e02ddf511b19bf0c3e9c5a85060eac3b88d9
 ---
 
 小游戏接入基础游戏服务的小游戏登录API后，支持玩家使用华为账号快速进入游戏，且小游戏的华为账号实名认证、未成年人防沉迷功能由基础游戏服务实现。
@@ -16,7 +16,7 @@ content_hash: sha256:497265446a5a029437681d53293a8ce9bf6a921c1365ca6952419a0f265
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/Ub4BYN6rQsCFjw1NYtWRSw/zh-cn_image_0000002558765398.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/LdpF3OTRR26SRRx2wmhNyw/zh-cn_image_0000002706674980.png)
 
 1. 玩家启动小游戏。
 2. 小游戏调用[init](../harmonyos-references/gameservice-gameplayer.md#gameplayerinit-1)接口初始化Game Service Kit。初始化后，弹出华为隐私协议窗口，玩家确认同意后，可继续往下执行。
@@ -24,7 +24,7 @@ content_hash: sha256:497265446a5a029437681d53293a8ce9bf6a921c1365ca6952419a0f265
 4. 小游戏调用[miniGameLogin](../harmonyos-references/gameservice-gameplayer.md#gameplayerminigamelogin)接口。小游戏顶部弹出欢迎横幅，并向小游戏返回playerId、playerSign等信息。同时对玩家是否完成实名认证及是否成年进行校验。
 
    * 若玩家未完成实名认证，[miniGameLogin](../harmonyos-references/gameservice-gameplayer.md#gameplayerminigamelogin)接口自动弹出实名认证窗口要求玩家进行实名认证。
-   * 若玩家账号实名认证为未成年人，[miniGameLogin](../harmonyos-references/gameservice-gameplayer.md#gameplayerminigamelogin)接口将自动检测未成年人的游戏时间。若玩家不在指定时间内登录小游戏，将强制玩家退出小游戏并返回[1002000006](../harmonyos-references/gameservice-error-code.md#section1002000006-玩家未成年并且当前不在可游戏时间)错误码。
+   * 若玩家账号实名认证为未成年人，[miniGameLogin](../harmonyos-references/gameservice-gameplayer.md#gameplayerminigamelogin)接口将自动检测未成年人的游戏时间。若玩家不在指定时间内登录小游戏，将强制玩家退出小游戏并返回[1002000006](../harmonyos-references/errorcode-gameservice.md#section1002000006-玩家未成年并且当前不在可游戏时间)错误码。
 
 ## 接口说明
 
@@ -43,83 +43,87 @@ content_hash: sha256:497265446a5a029437681d53293a8ce9bf6a921c1365ca6952419a0f265
 
 导入Game Service Kit及公共模块。
 
-```
-1. import { gamePlayer } from '@kit.GameServiceKit';
-2. import { common } from '@kit.AbilityKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
-5. import { window } from '@kit.ArkUI';
+```typescript
+import { gamePlayer } from '@kit.GameServiceKit';
+import { common } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { window } from '@kit.ArkUI';
 ```
 
 ### 初始化
 
 调用[init](../harmonyos-references/gameservice-gameplayer.md#gameplayerinit-1)接口初始化Game Service Kit。
 
-```
-1. onWindowStageCreate(windowStage: window.WindowStage) {
-2. windowStage.loadContent("pages/index", (err, data) => {
-3. try {
-4. gamePlayer.init(this.context,()=>{
-5. hilog.info(0x0000, 'testTag', `Succeeded in initializing.`);
-6. });
-7. } catch (error) {
-8. let err = error as BusinessError;
-9. hilog.error(0x0000, 'testTag', `Failed to init. Code: ${err.code}, message: ${err.message}`);
-10. }
-11. });
-12. }
+```typescript
+onWindowStageCreate(windowStage: window.WindowStage) {
+  windowStage.loadContent('pages/index', (err, data) => {
+    try {
+      gamePlayer.init(this.context,()=>{
+        hilog.info(0x0000, 'testTag', `Succeeded in initializing.`);
+      });
+    } catch (error) {
+      let err = error as BusinessError;
+      hilog.error(0x0000, 'testTag', `Failed to init. Code: ${err.code}, message: ${err.message}`);
+    }
+  });
+}
 ```
 
 ### 监听小游戏防沉迷事件
 
 调用[on](../harmonyos-references/gameservice-gameplayer.md#gameplayeronminigameaddictionprevented)接口注册小游戏防沉迷事件监听。
 
-```
-1. private miniGameAddictionPreventedCallback(result: string) {
-2. // 退出小游戏
-3. }
-4. // ...
-5. // 调用on接口注册小游戏防沉迷事件监听
-6. try {
-7. gamePlayer.on('miniGameAddictionPrevented', this.miniGameAddictionPreventedCallback);
-8. } catch (error) {
-9. let err = error as BusinessError;
-10. hilog.error(0x0000, 'testTag', `Failed to register. Code: ${err.code}, message: ${err.message}`);
-11. }
+```typescript
+private miniGameAddictionPreventedCallback(result: string) {
+  // 退出小游戏
+}
+// ...
+// 调用on接口注册小游戏防沉迷事件监听
+try {
+  gamePlayer.on('miniGameAddictionPrevented', this.miniGameAddictionPreventedCallback);
+} catch (error) {
+  let err = error as BusinessError;
+  hilog.error(0x0000, 'testTag', `Failed to register. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ### 小游戏登录
 
 调用[miniGameLogin](../harmonyos-references/gameservice-gameplayer.md#gameplayerminigamelogin)接口登录小游戏。
 
-```
-1. let context = this.getUIContext()?.getHostContext() as common.UIAbilityContext;
-2. let request: gamePlayer.MiniGameLoginParam = {
-3. 'gameAppId': '123xxx', // 小游戏appId
-4. 'extraData': 'xxx' // 附加信息，要求JSON String格式
-5. };
-6. try {
-7. gamePlayer.miniGameLogin(context, request).then((result: gamePlayer.MiniGamePlayer) => {
-8. hilog.info(0x0000, 'testTag', `Succeeded in logging in`);
-9. }).catch((error: BusinessError) => {
-10. hilog.error(0x0000, 'testTag', `Failed to login. Code: ${error.code}, message: ${error.message}`);
-11. });
-12. } catch (error) {
-13. let err = error as BusinessError;
-14. hilog.error(0x0000, 'testTag', `Failed to login. Code: ${err.code}, message: ${err.message}`);
-15. }
+```typescript
+let context = this.getUIContext()?.getHostContext() as common.UIAbilityContext;
+let request: gamePlayer.MiniGameLoginParam = {
+  'gameAppId': '123xxx', // 小游戏appId
+  'extraData': 'xxx' // 附加信息，要求JSON String格式
+};
+try {
+  gamePlayer.miniGameLogin(context, request).then((result: gamePlayer.MiniGamePlayer) => {
+    if (result?.playerId) {
+      hilog.info(0x0000, 'testTag', `Succeeded in logging in`);
+    } else {
+      hilog.error(0x0000, 'testTag', `Failed to login.`);
+    }
+  }).catch((error: BusinessError) => {
+    hilog.error(0x0000, 'testTag', `Failed to login. Code: ${error.code}, message: ${error.message}`);
+  });
+} catch (error) {
+  let err = error as BusinessError;
+  hilog.error(0x0000, 'testTag', `Failed to login. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ### 取消监听小游戏防沉迷事件
 
 游戏退出时通过调用[off](../harmonyos-references/gameservice-gameplayer.md#gameplayeroffminigameaddictionprevented)接口取消监听状态。
 
-```
-1. // 取消miniGameAddictionPrevented事件的全部监听
-2. try {
-3. gamePlayer.off('miniGameAddictionPrevented');
-4. } catch (error) {
-5. let err = error as BusinessError;
-6. hilog.error(0x0000, 'testTag', `Failed to unregister. Code: ${err.code}, message: ${err.message}`);
-7. }
+```typescript
+// 取消miniGameAddictionPrevented事件的全部监听
+try {
+  gamePlayer.off('miniGameAddictionPrevented');
+} catch (error) {
+  let err = error as BusinessError;
+  hilog.error(0x0000, 'testTag', `Failed to unregister. Code: ${err.code}, message: ${err.message}`);
+}
 ```

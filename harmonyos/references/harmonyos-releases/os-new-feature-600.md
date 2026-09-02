@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-600
 title: OS新增和增强特性
-breadcrumb: 版本说明 > HarmonyOS 6.0.0(20) > OS平台能力 > OS新增和增强特性
+breadcrumb: 版本说明 > 更多版本 > 6.0.0(20) > OS平台能力 > OS新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:04+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:8f4b4057b76d7e9d90be947e96de2419813e4552d176f03041c75a889159504e
+scraped_at: 2026-09-02T14:58:39+08:00
+doc_updated_at: 2026-08-04
+content_hash: sha256:2eff9e39c85771cc95852ba77a9e1a797f607a322ccc311a373d96f3eaf023c7
 ---
 
 ## 6.0.0(20) Release
@@ -127,7 +127,7 @@ voip接口新增支持wearable设备。([指南](../harmonyos-guides/call-introd
 ### Desktop Extension Kit（原Status Bar Extension Kit）
 
 * Kit名称从Status Bar Extension Kit修改为Desktop Extension Kit，相关Kit API引用方式同步变更。（[指南](../harmonyos-guides/statusbar-extension-introduction.md)、[API参考](../harmonyos-references/statusbar-extension-manager.md)）
-* 新增支持点击状态栏图标展开二级菜单场景下，可加载动效。（[API参考](../harmonyos-references/statusbar-extension-manager.md#statusbarmanagerquickoperation)）
+* 新增支持点击状态栏图标展开二级菜单场景下，可加载动效。（[API参考](../harmonyos-references/statusbar-extension-manager.md#quickoperation)）
 
 ### Device Security Kit
 
@@ -138,11 +138,11 @@ voip接口新增支持wearable设备。([指南](../harmonyos-guides/call-introd
 
 ### Enterprise Data Guard Kit
 
-新增获取重置锁屏密码的企业恢复密钥。（[指南](../harmonyos-guides/recoverykey-getkeyforresetpin.md)、[API参考](../harmonyos-references/dataguard-recoverykey.md#getenterpriserecoverykeyforresettingpin)）
+新增获取重置锁屏密码的企业恢复密钥。（[指南](../harmonyos-guides/recoverykey-getkeyforresetpin.md)、[API参考](../harmonyos-references/dataguard-recoverykey.md#recoverykeygetenterpriserecoverykeyforresettingpin)）
 
 ### Enterprise Space Kit
 
-* 新增配置空间互传单双通策略的能力。（[指南](../harmonyos-guides/enterprisespace-policy-push.md)、[API参考](../harmonyos-references/enterprisespace-spacedatatransfer.md#policypush)）
+* 新增配置空间互传单双通策略的能力。（[指南](../harmonyos-guides/enterprisespace-file-transfer-control.md)、[API参考](../harmonyos-references/enterprisespace-spacedatatransfer.md#policypush)）
 * 新增提供空间管理服务，包括创建工作空间、移除工作空间、订阅空间事件等功能。（[指南](../harmonyos-guides/enterprisespace-spacemanager-guide.md)、[API参考](../harmonyos-references/enterprisespace-spacemanager.md)）
 
 ### Graphics Accelerate Kit
@@ -171,11 +171,11 @@ voip接口新增支持wearable设备。([指南](../harmonyos-guides/call-introd
 
 ### MDM Kit
 
-* 允许设置禁用/启用的特性新增短信（sms）、蜂窝数据（mobileData）、飞行模式（airplaneMode）、通知消息（notification）、NFC（nfc）。（[API参考](../harmonyos-references/js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicy)）
+* 允许设置禁用/启用的特性新增短信（sms）、蜂窝数据（mobileData）、飞行模式（airplaneMode）、通知消息（notification）、NFC（nfc）。（[API参考](../harmonyos-references/js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicydeprecated)）
 * 新增支持针对指定应用设置user\_grant权限的管理策略。（[API参考](../harmonyos-references/js-apis-enterprise-securitymanager.md#securitymanagersetpermissionmanagedstate20)）
 * 新增支持通过设备管理设置桌面壁纸。（[API参考](../harmonyos-references/js-apis-enterprise-devicesettings.md#devicesettingssethomewallpaper20)）
 * 针对PC/2in1设备，新增支持对无锁屏密码的设备设置重启后自动解锁。（[API参考](../harmonyos-references/js-apis-enterprise-systemmanager.md#systemmanagersetautounlockafterreboot20)）
-* 针对PC/2in1设备，新增支持多项用户行为限制策略，如禁止用户修改网卡IP地址、禁止用户修改设备名称、禁止用户修改锁屏密码等。（[API参考](../harmonyos-references/js-apis-enterprise-restrictions.md#restrictionssetuserrestriction20)）
+* 针对PC/2in1设备，新增支持多项用户行为限制策略，如禁止用户修改网卡IP地址、禁止用户修改设备名称、禁止用户修改锁屏密码等。（[API参考](../harmonyos-references/js-apis-enterprise-restrictions.md#restrictionssetuserrestrictiondeprecated)）
 
 ### Mechanic Kit
 
@@ -214,7 +214,7 @@ voip接口新增支持wearable设备。([指南](../harmonyos-guides/call-introd
 ### Performance Analysis Kit
 
 * 新增资源泄露的检测能力，支持对内存泄漏、句柄泄漏和线程泄漏进行故障检测。（[指南](../harmonyos-guides/resource-leak-guidelines.md)）
-* HiAppEvent的CPU高负载事件订阅新增返回Top5线程信息（threads属性）。具体操作可参见[订阅CPU高负载事件](../harmonyos-guides/hiappevent-watcher-cpu-usage-high-arkts.md)，订阅后可在Log窗口看到对系统事件数据的处理日志，日志中包含新增的[threads属性](../harmonyos-guides/hiappevent-watcher-cpu-usage-high-event.md#section667111164161)。
+* HiAppEvent的CPU高负载事件订阅新增返回Top5线程信息（threads属性）。具体操作可参见[订阅CPU高负载事件](../harmonyos-guides/hiappevent-watcher-cpu-usage-high-arkts.md)，订阅后可在Log窗口看到对系统事件数据的处理日志，日志中包含新增的[threads属性](../harmonyos-guides/hiappevent-watcher-cpu-usage-high-event.md#threads字段说明)。
 
 ### Share Kit
 
@@ -240,7 +240,7 @@ voip接口新增支持wearable设备。([指南](../harmonyos-guides/call-introd
 
 ### User Authentication Kit
 
-新增支持订阅用户认证的中间状态。（[API参考](../harmonyos-references/js-apis-useriam-userauth.md#on20)）
+新增支持订阅用户认证的中间状态。（[API参考](../harmonyos-references/js-apis-useriam-userauth.md#onauthtip20)）
 
 ### 标准库
 
@@ -381,7 +381,7 @@ UITest新增多个UI测试能力的接口，如：获取指定屏幕内的控件
 
 新增支持针对企业设备清除应用产生的所有数据。（[API参考](../harmonyos-references/js-apis-enterprise-applicationmanager.md#applicationmanagerclearupapplicationdata20)）
 
-新增支持将应用锁定在Kiosk模式（即通过系统层面限定设备只能运行单个应用或者一组应用）。（[API参考](../harmonyos-references/js-apis-enterpriseadminextensionability.md#enterpriseadminextensionabilityonkioskmodeentering20)）
+新增支持将应用锁定在Kiosk模式（即通过系统层面限定设备只能运行单个应用或者一组应用）。（[API参考](../harmonyos-references/js-apis-enterpriseadminextensionability.md#onkioskmodeentering20)）
 
 ### Media Kit
 
@@ -441,7 +441,7 @@ C API新增支持低功耗音视频播放的能力。（[API参考-低功耗音�
   + 文本组件的基础定义新增支持设置文本超长时的显示效果。（[API参考](../harmonyos-references/ts-text-common.md#maxlinesoptions20对象说明)）
   + 文本输入组件（TextInput、TextArea、Search）新增验证码类型的输入模式ONE\_TIME\_CODE。（[API参考-TextInput](../harmonyos-references/ts-basic-components-textinput.md#inputtype枚举说明)、[API参考-TextArea](../harmonyos-references/ts-basic-components-textarea.md#textareatype11枚举说明)、[API参考-Search](../harmonyos-references/ts-basic-components-search.md#searchtype11枚举说明)）
 
-    同时也对应提供的C API属性ARKUI\_TEXTINPUT\_TYPE\_ONE\_TIME\_CODE。（[API参考](../harmonyos-references/capi-native-type-h.md#arkui_textinputtype)）
+    同时也对应提供的C API属性ARKUI\_TEXTINPUT\_TYPE\_ONE\_TIME\_CODE。（[API参考](../harmonyos-references/capi-text-input-h.md#arkui_textinputtype)）
   + 文本组件新增文本描边样式，支持设置描述宽度和颜色。（[API参考-属性字符串](../harmonyos-references/ts-universal-styled-string.md#textstyleinterface对象说明)、[API参考-TextInput](../harmonyos-references/ts-basic-components-textinput.md#strokewidth20)、[API参考-TextArea](../harmonyos-references/ts-basic-components-textarea.md#strokewidth20)、[API参考-Search](../harmonyos-references/ts-basic-components-search.md#strokewidth20)）
   + 新增C API，支持统计文本组件中的文本行数（NODE\_TEXT\_LINE\_COUNT）。（[API参考](../harmonyos-references/capi-native-node-h.md#arkui_nodeattributetype)）
   + 新增C API，支持触发Span组件的长按事件（NODE\_TEXT\_SPAN\_ON\_LONG\_PRESS）。（[API参考](../harmonyos-references/capi-native-node-h.md#arkui_nodeeventtype)）
@@ -451,7 +451,7 @@ C API新增支持低功耗音视频播放的能力。（[API参考-低功耗音�
 * Swiper组件支持在显示区域上方或前方插入或删除数据时，设置是否保持可见内容的位置不变。（[API参考-ArkTS API](../harmonyos-references/ts-container-swiper.md#maintainvisiblecontentposition20)、[API参考-C API](../harmonyos-references/capi-native-node-h.md#arkui_nodeattributetype)）
 * 拖拽事件支持获取事件发生时所在的屏幕ID。（[API参考-ArkTS API](../harmonyos-references/ts-universal-events-drag-drop.md#getdisplayid20)、[API参考-C API](../harmonyos-references/capi-drag-and-drop-h.md#oh_arkui_dragevent_getdisplayid)）
 * 图形变化过程中，支持设置单个方向的旋转角。（[API参考](../harmonyos-references/ts-universal-attributes-transformation.md#rotate20)）
-* 自定弹窗支持获取初始化等弹窗状态。（[API参考](../harmonyos-references/js-apis-promptaction.md#getstate20)）
+* 自定义弹窗支持获取初始化等弹窗状态。（[API参考](../harmonyos-references/js-apis-promptaction.md#getstate20)）
 * 优化栅格布局断点，若未配置更小断点的栅格列数，系统取已配置的更大断点的栅格列数补全未配置的栅格列数。（[API参考](../harmonyos-references/ts-container-gridrow.md#gridrowcolumnoption)、[指南](../harmonyos-guides/arkts-layout-development-grid-layout.md)）
 * 新增ToolBarItem组件，支持为窗口标题栏添加工具栏项。（[API参考](../harmonyos-references/ts-basic-components-toolbaritem.md)）
 * 新增无障碍事件的相关能力，在系统开启无障碍模式后，提供拦截无障碍事件的能力。（[API参考](../harmonyos-references/ts-universal-accessibility-event.md#onaccessibilityactionintercept20)）
@@ -459,7 +459,7 @@ C API新增支持低功耗音视频播放的能力。（[API参考-低功耗音�
 * 支持查询当前ComponentContent对象是否已解除与后端实体节点的引用关系。（[API参考](../harmonyos-references/js-apis-arkui-componentcontent.md#isdisposed20)）
 * 新增C API，支持通过百分比或具体数值形式设置组件平移（NODE\_TRANSLATE\_WITH\_PERCENT）。（[API参考](../harmonyos-references/capi-native-node-h.md#arkui_nodeattributetype)）
 * 绘制类组件支持通过attributeModifier动态设置属性方法。（[API参考-Canvas](../harmonyos-references/ts-components-canvas-canvas.md)、[API参考-Shape](../harmonyos-references/ts-drawing-components-shape.md)）
-* CanvasRenderingContext2D支持绘制圆角矩形。（[API参考](../harmonyos-references/ts-offscreencanvasrenderingcontext2d.md#roundrect20)）
+* CanvasRenderingContext2D支持绘制圆角矩形。（[API参考](../harmonyos-references/ts-components-canvas-common-method.md#roundrect20)）
 
 ### ArkWeb
 
@@ -509,7 +509,7 @@ C API新增支持低功耗音视频播放的能力。（[API参考-低功耗音�
 ### MDM Kit
 
 * 新增支持禁用公网环境下升级的能力。（[API参考](../harmonyos-references/js-apis-enterprise-systemmanager.md#otaupdatepolicy)）
-* 允许设置禁用/启用的特性新增设备维修模式（maintenanceMode）、备份恢复能力（backupAndRestore）、收发彩信能力（mms）。（[API参考](../harmonyos-references/js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicy)）
+* 允许设置禁用/启用的特性新增设备维修模式（maintenanceMode）、备份恢复能力（backupAndRestore）、收发彩信能力（mms）。（[API参考](../harmonyos-references/js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicydeprecated)）
 
 ### Online Authentication Kit
 

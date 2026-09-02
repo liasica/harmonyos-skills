@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-114
 title: 混淆后的映射文件具体在哪个路径下
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 混淆后的映射文件具体在哪个路径下
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:14+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:15+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:be0bbbcc7ee8e02def0607fb70d7f172edb8a9cc3cc1a74cdd4d72ad41cd7f2e
 ---
 

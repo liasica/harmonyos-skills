@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-iap-dis
 title: 发放数字商品权益
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 数字商品服务 > 应用内分发数字商品 > 发放数字商品权益
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:16+08:00
+scraped_at: 2026-09-02T14:59:52+08:00
 doc_updated_at: 2026-04-20
 content_hash: sha256:0cc5c56faf1eb22e2a1730a3ad2fd88641dd0d4e23bd367bda69ab26bfe629ad
 ---

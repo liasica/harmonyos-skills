@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-camera-kit
 title: 相机开发（Camera）
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 相机开发（Camera）
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:25+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:cc72a8d1f21d0bc3b5b36094a3c35b9f4769a961cecab7d06199ee27e79780f0
+scraped_at: 2026-09-02T14:54:40+08:00
+doc_updated_at: 2026-08-19
+content_hash: sha256:eaf8c7806a882b8472a1a315fa169f3aa1f897e4334f07a9dfb336aa569d1e93
 ---
 
 * **[使用XComponent组件显示相机的预览输出流时，如何获取相机的帧数据](faqs-camera-1.md)**
@@ -25,3 +25,45 @@ content_hash: sha256:cc72a8d1f21d0bc3b5b36094a3c35b9f4769a961cecab7d06199ee27e79
 * **[如何实现拍照预览onPreviewFrame回调](faqs-camera-19.md)**
 * **[YUV数据相关格式](faqs-camera-22.md)**
 * **[如何实现前置镜头的录像镜像功能](faqs-camera-23.md)**
+* **[视频通话时，画面比例显示异常](faqs-camera-24.md)**
+* **[应用拍摄出现偏色如何解决](faqs-camera-25.md)**
+* **[调用preconfig接口发生报错7400201](faqs-camera-26.md)**
+* **[视频通话时切换摄像头，画面呈现异常颜色](faqs-camera-27.md)**
+* **[如何提升自定义相机拍摄照片的质感](faqs-camera-28.md)**
+* **[应用已同意相机授权，点击扫一扫按钮调不起相机](faqs-camera-29.md)**
+* **[应用内相机拍照后图片花屏](faqs-camera-30.md)**
+* **[应用打开前置摄像头拍摄，点击闪光灯应用闪退](faqs-camera-31.md)**
+* **[自定义相机如何切换前后摄像头](faqs-camera-32.md)**
+* **[如何正确关闭释放相机流](faqs-camera-33.md)**
+* **[如何处理相机旋转的相关问题](faqs-camera-34.md)**
+* **[如何解决自定义扫码界面创建的截图与预览流中不一致问题](faqs-camera-35.md)**
+* **[HarmonyOS是否可以限制拍摄的视频时长](faqs-camera-36.md)**
+* **[自定义相机预览界面有黑边](faqs-camera-37.md)**
+* **[打开摄像头后使用DevEco Testing测试功耗，手机温度上升过快](faqs-camera-38.md)**
+* **[自定义相机拍照如何自定义快门声音](faqs-camera-39.md)**
+* **[使用折叠屏手机进行相机预览，在展开态时黑屏](faqs-camera-40.md)**
+* **[应用频繁开关摄像头偶现AppFreeze](faqs-camera-41.md)**
+* **[相机连续两次调用拍照方法报错](faqs-camera-42.md)**
+* **[自定义相机在用户未授权的情况下，预览画面黑屏，用户点击拍照，应用闪退](faqs-camera-43.md)**
+* **[拉起相机时，预览界面花屏](faqs-camera-44.md)**
+* **[打开相机进行拍照时，拍照预览区域尺寸异常](faqs-camera-45.md)**
+* **[如何选用业务需要的摄像头](faqs-camera-46.md)**
+* **[自定义相机如何隔一段时间获取并保存预览帧的图像](faqs-camera-47.md)**
+* **[如何在相机预览界面绘制人脸跟踪框](faqs-camera-48.md)**
+* **[相机服务异常排查指南](faqs-camera-49.md)**
+* **[设备熄屏或者应用退后台能否继续维持相机录制状态](faqs-camera-50.md)**
+* **[使用部分视频配置信息项录制视频文件损坏](faqs-camera-51.md)**
+* **[配置参数异常排查须知](faqs-camera-52.md)**
+* **[初次授权后相机不显示图像](faqs-camera-53.md)**
+* **[如何实现自定义相机画面镜像效果](faqs-camera-54.md)**
+* **[组件宽高与Profile分辨率的关系](faqs-camera-55.md)**
+* **[相机对焦模式设置](faqs-camera-56.md)**
+* **[如何使自定义相机完成对焦后拍照](faqs-camera-57.md)**
+* **[CameraPicker拍摄的优势及常见问题](faqs-camera-58.md)**
+* **[视频录制时如何选择合适的Profile](faqs-camera-59.md)**
+* **[不拉起相机实现无感拍照](faqs-camera-60.md)**
+* **[帧率的选择和动态调整](faqs-camera-61.md)**
+* **[如何排查相机界面黑屏问题](faqs-camera-62.md)**
+* **[预览帧处理时如何选择format](faqs-camera-63.md)**
+* **[应用切换前置摄像头卡住](faqs-camera-64.md)**
+* **[如何使用CameraPicker拍摄HEIF图](faqs-camera-65.md)**

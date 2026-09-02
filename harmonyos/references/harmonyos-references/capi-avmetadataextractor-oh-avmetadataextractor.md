@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avme
 title: OH_AVMetadataExtractor
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 结构体 > OH_AVMetadataExtractor
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:58+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:fb282f9530feb8c0d364a1cab739eace150e7311106542c13de58e6d293e4be0
+scraped_at: 2026-09-02T14:53:00+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:91f5e90c791a1e75ae303896eb8fc99d5b56b6c530a938546b0061c8b3c6de15
 ---
 
-```
-1. typedef struct OH_AVMetadataExtractor OH_AVMetadataExtractor
+```c
+typedef struct OH_AVMetadataExtractor OH_AVMetadataExtractor
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义OH\_AVMetadataExtractor类型。
 

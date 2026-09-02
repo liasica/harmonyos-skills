@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-backgroundtaskskit-6002
 title: Background Tasks Kit
-breadcrumb: 版本说明 > HarmonyOS 6.0.0(20) > OS平台能力 > API变更清单 > 6.0.0(20) Beta2引入的API > Background Tasks Kit
+breadcrumb: 版本说明 > 更多版本 > 6.0.0(20) > OS平台能力 > API变更清单 > 6.0.0(20) Beta2引入的API > Background Tasks Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:26+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:29+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:71658ca3ecd29d30c9fa12a4522a3e062a88119dc746fea760a4c4e7ab645a0f
 ---
 

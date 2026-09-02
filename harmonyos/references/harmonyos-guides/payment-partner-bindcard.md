@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-partn
 title: 引导用户绑卡场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 引导用户绑卡场景
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:34+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:c70937a74a45ecb10f629245c08cdc4776fb3115aaced082ecb136639438e006
+scraped_at: 2026-09-02T14:59:59+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:80cdaf806e653ca1638239674278c6f89a47026f135f786861ea5fbd2c91d760
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:c70937a74a45ecb10f629245c08cdc4776fb3115aaced082ecb13663943
 
 引导用户绑卡页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/TKnycP6bSjKfOSTP1IwnZA/zh-cn_image_0000002558765594.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/J32KT-zYQHeOSevWAA5dkw/zh-cn_image_0000002706835116.png)
 
 ## 提供绑卡跳转应用信息
 
@@ -32,7 +32,7 @@ content_hash: sha256:c70937a74a45ecb10f629245c08cdc4776fb3115aaced082ecb13663943
 
 开发者接入引导用户绑卡，具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/DjZOGXGoSGqEfVSEuf2PRA/zh-cn_image_0000002558605938.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/DTWhXhZUSsyRp-ZCEC9N5A/zh-cn_image_0000002736314223.png)
 
 **场景1：用户取消绑卡**
 
@@ -66,43 +66,43 @@ content_hash: sha256:c70937a74a45ecb10f629245c08cdc4776fb3115aaced082ecb13663943
 
 商户客户端调用[requestBindCard](../harmonyos-references/payment-paymentservice.md#requestbindcard)接口拉起用户绑卡页面。
 
-当接口通过.then()方法返回结果，则表示接口请求成功，通过.catch()方法返回异常表示请求失败。当此次请求有异常时，可通过**error.code**获取错误码，错误码相关信息请参见[错误码](../harmonyos-references/payment-error-code.md)。
+当接口通过.then()方法返回结果，则表示接口请求成功，通过.catch()方法返回异常表示请求失败。当此次请求有异常时，可通过**error.code**获取错误码，错误码相关信息请参见[错误码](../harmonyos-references/errorcode-payment.md)。
 
 示例代码如下：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { paymentService } from '@kit.PaymentKit';
-3. import { common } from '@kit.AbilityKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { paymentService } from '@kit.PaymentKit';
+import { common } from '@kit.AbilityKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-9. requestBindCardPromise() {
-10. paymentService.requestBindCard(this.context)
-11. .then((bindCardResult: paymentService.BindCardResult) => {
-12. // succeeded in bind card
-13. console.info(`succeeded in binding card. result: ${bindCardResult}`);
-14. })
-15. .catch((error: BusinessError) => {
-16. // failed to bind card
-17. console.error(`failed to binding card, error.code: ${error.code}, error.message: ${error.message}`);
-18. });
-19. }
+@Entry
+@Component
+struct Index {
+  context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  requestBindCardPromise() {
+    paymentService.requestBindCard(this.context)
+      .then((bindCardResult: paymentService.BindCardResult) => {
+        // 绑卡成功
+          console.info(`succeeded in binding card. result: ${bindCardResult}`);
+      })
+      .catch((error: BusinessError) => {
+        // 绑卡失败
+        console.error(`failed to binding card, error.code: ${error.code}, error.message: ${error.message}`);
+      });
+  }
 
-21. build() {
-22. Column() {
-23. Button('requestBindCardPromise')
-24. .type(ButtonType.Capsule)
-25. .width('50%')
-26. .margin(20)
-27. .onClick(() => {
-28. this.requestBindCardPromise();
-29. })
-30. }
-31. .width('100%')
-32. .height('100%')
-33. }
-34. }
+  build() {
+    Column() {
+      Button('requestBindCardPromise')
+        .type(ButtonType.Capsule)
+        .width('50%')
+        .margin(20)
+        .onClick(() => {
+          this.requestBindCardPromise();
+        })
+      }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```

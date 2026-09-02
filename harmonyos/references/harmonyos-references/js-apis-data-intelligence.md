@@ -3,30 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.data.intelligence (智慧数据平台)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.intelligence (智慧数据平台)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:22+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e71962a0c77419daa1bc9da470d8c34f5fedc492dd06a74a3b0067ff867e2503
+scraped_at: 2026-09-02T15:00:39+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:636232ffc39b5e3f79e92c2aa10c2353933e33bc4cf17df8d18b635976839d28
 ---
 
 智慧数据平台（ArkData Intelligence Platform，AIP）提供端侧数据智慧化构建，使应用数据向量化，通过嵌入模型将非结构化的文本、图像等多模态数据，转换成具有语义的向量。
 
-说明
+**说明** 
 
 本模块首批接口从API version 15开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
-考虑到数据向量化处理的计算量和资源占用较大，当前仅支持在2in1设备上使用。
-
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { intelligence } from '@kit.ArkData';
+```ts
+import { intelligence } from '@kit.ArkData';
 ```
 
 ## intelligence.getTextEmbeddingModel
-
-PhonePC/2in1Tablet
 
 getTextEmbeddingModel(config: ModelConfig): Promise<TextEmbedding>
 
@@ -34,7 +28,7 @@ getTextEmbeddingModel(config: ModelConfig): Promise<TextEmbedding>
 
 **系统能力：** SystemCapability.DistributedDataManager.DataIntelligence.Core
 
-**设备行为差异：** 该接口在2in1设备中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 在API版本26.0.0之前，该接口在PC/2in1设备中可正常调用，在其他设备类型中返回801错误码；从API版本26.0.0开始，该接口在PC/2in1、Phone和Tablet设备中可正常调用，在其他设备类型中返回801错误码。
 
 **参数：**
 
@@ -60,29 +54,56 @@ getTextEmbeddingModel(config: ModelConfig): Promise<TextEmbedding>
 
 **示例：**
 
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let textConfig: intelligence.ModelConfig = {
+  version: intelligence.ModelVersion.BASIC_MODEL,
+  isNpuAvailable: false,
+  cachePath: "/data"
+}
+let textEmbedding: intelligence.TextEmbedding;
+
+intelligence.getTextEmbeddingModel(textConfig)
+  .then((data: intelligence.TextEmbedding) => {
+    console.info("Succeeded in getting TextModel");
+    textEmbedding = data;
+  })
+  .catch((err: BusinessError) => {
+    console.error("Failed to get TextModel and code is " + err.code);
+  })
 ```
-1. import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let textConfig: intelligence.ModelConfig = {
-4. version: intelligence.ModelVersion.BASIC_MODEL,
-5. isNpuAvailable: false,
-6. cachePath: "/data"
-7. }
-8. let textEmbedding: intelligence.TextEmbedding;
+## intelligence.getSupportedCloudModel
 
-10. intelligence.getTextEmbeddingModel(textConfig)
-11. .then((data: intelligence.TextEmbedding) => {
-12. console.info("Succeeded in getting TextModel");
-13. textEmbedding = data;
-14. })
-15. .catch((err: BusinessError) => {
-16. console.error("Failed to get TextModel and code is " + err.code);
-17. })
+getSupportedCloudModel(): Promise<Array<CloudModelInfo>>
+
+获取支持的云侧模型信息。使用Promise异步回调。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.DistributedDataManager.DataIntelligence.Core
+
+**设备行为差异：** 该接口在PC/2in1、Phone和Tablet设备中可正常调用，在其他设备类型中返回801错误码。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<[CloudModelInfo](js-apis-data-intelligence.md#cloudmodelinfo)>> | Promise对象，返回支持的云侧模型信息。 |
+
+**示例：**
+
+```ts
+intelligence.getSupportedCloudModel()
+  .then((info: Array<intelligence.CloudModelInfo>) => {
+    console.info("Succeeded in getting CloudModelInfo");
+  });
 ```
 
 ## intelligence.getImageEmbeddingModel
-
-PhonePC/2in1Tablet
 
 getImageEmbeddingModel(config: ModelConfig): Promise<ImageEmbedding>
 
@@ -90,7 +111,7 @@ getImageEmbeddingModel(config: ModelConfig): Promise<ImageEmbedding>
 
 **系统能力：** SystemCapability.DistributedDataManager.DataIntelligence.Core
 
-**设备行为差异：** 该接口在2in1设备中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在PC/2in1设备中可正常调用，在其他设备类型中返回801错误码。
 
 **参数：**
 
@@ -116,29 +137,27 @@ getImageEmbeddingModel(config: ModelConfig): Promise<ImageEmbedding>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let imageConfig: intelligence.ModelConfig = {
-4. version: intelligence.ModelVersion.BASIC_MODEL,
-5. isNpuAvailable: false,
-6. cachePath: "/data"
-7. }
-8. let imageEmbedding: intelligence.ImageEmbedding;
+let imageConfig: intelligence.ModelConfig = {
+  version: intelligence.ModelVersion.BASIC_MODEL,
+  isNpuAvailable: false,
+  cachePath: "/data"
+}
+let imageEmbedding: intelligence.ImageEmbedding;
 
-10. intelligence.getImageEmbeddingModel(imageConfig)
-11. .then((data: intelligence.ImageEmbedding) => {
-12. console.info("Succeeded in getting ImageModel");
-13. imageEmbedding = data;
-14. })
-15. .catch((err: BusinessError) => {
-16. console.error("Failed to get ImageModel and code is " + err.code);
-17. })
+intelligence.getImageEmbeddingModel(imageConfig)
+  .then((data: intelligence.ImageEmbedding) => {
+    console.info("Succeeded in getting ImageModel");
+    imageEmbedding = data;
+  })
+  .catch((err: BusinessError) => {
+    console.error("Failed to get ImageModel and code is " + err.code);
+  })
 ```
 
 ## intelligence.splitText
-
-PhonePC/2in1Tablet
 
 splitText(text: string, config: SplitConfig): Promise<Array<string>>
 
@@ -146,7 +165,7 @@ splitText(text: string, config: SplitConfig): Promise<Array<string>>
 
 **系统能力：** SystemCapability.DistributedDataManager.DataIntelligence.Core
 
-**设备行为差异：** 该接口在2in1设备中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在PC/2in1设备中可正常调用，在其他设备类型中返回801错误码。
 
 **参数：**
 
@@ -173,27 +192,25 @@ splitText(text: string, config: SplitConfig): Promise<Array<string>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let splitConfig: intelligence.SplitConfig = {
-4. size: 10,
-5. overlapRatio: 0.1
-6. }
-7. let splitText = 'text';
+let splitConfig: intelligence.SplitConfig = {
+  size: 10,
+  overlapRatio: 0.1
+}
+let splitText = 'text';
 
-9. intelligence.splitText(splitText, splitConfig)
-10. .then((data: Array<string>) => {
-11. console.info("Succeeded in splitting Text");
-12. })
-13. .catch((err: BusinessError) => {
-14. console.error("Failed to split Text and code is " + err.code);
-15. })
+intelligence.splitText(splitText, splitConfig)
+  .then((data: Array<string>) => {
+    console.info("Succeeded in splitting Text");
+  })
+  .catch((err: BusinessError) => {
+    console.error("Failed to split Text and code is " + err.code);
+  })
 ```
 
 ## ModelConfig
-
-PhonePC/2in1Tablet
 
 管理嵌入模型的配置信息。
 
@@ -204,10 +221,10 @@ PhonePC/2in1Tablet
 | version | [ModelVersion](js-apis-data-intelligence.md#modelversion) | 否 | 否 | 模型的版本。 |
 | isNpuAvailable | boolean | 否 | 否 | 指示是否使用NPU加速向量化过程，true表示使用，false表示不使用。如果设备不支持NPU，调用加载模型会失败，并抛出错误码31300000。 |
 | cachePath | string | 否 | 是 | 如果使用NPU进行加速，则需要本地路径进行模型缓存。格式为/xxx/xxx/xxx，xxx为路径地址，例如"/data"。长度上限为512个字符。默认值为""。 |
+| modelInfo | [CloudModelInfo](js-apis-data-intelligence.md#cloudmodelinfo) | 否 | 是 | 云侧模型类型和版本信息，在使用文本向量模型时配置，通过[getSupportedCloudModel](js-apis-data-intelligence.md#intelligencegetsupportedcloudmodel)接口获取支持的模型信息，默认值为空。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| networkPolicy | [NetworkPolicy](js-apis-data-intelligence.md#networkpolicy) | 否 | 是 | 下载云侧模型的网络策略，在使用文本向量模型时配置，默认值为WIFI\_ONLY。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## ModelVersion
-
-PhonePC/2in1Tablet
 
 模型版本枚举。
 
@@ -217,9 +234,37 @@ PhonePC/2in1Tablet
 | --- | --- | --- |
 | BASIC\_MODEL | 0 | 基本嵌入模型版本。 |
 
-## Image
+## CloudModelInfo
 
-PhonePC/2in1TabletTVWearable
+云侧模型的配置信息，在使用云侧文本向量模型时配置，可通过[getSupportedCloudModel](js-apis-data-intelligence.md#intelligencegetsupportedcloudmodel)接口获取当前设备支持的云侧模型信息。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.DistributedDataManager.DataIntelligence.Core
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| modelType | string | 否 | 否 | 模型类型名称。如：  “arkdata\_text\_embedding”：云侧文本向量模型。 |
+| modelVersionCode | string | 否 | 是 | 模型版本，默认值为空。 |
+
+## NetworkPolicy
+
+下载云侧模型的网络策略枚举。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.DistributedDataManager.DataIntelligence.Core
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| WIFI\_ONLY | 0 | 仅在wifi状态下下载模型。 |
+| WIFI\_AND\_CELLULAR | 1 | 在wifi和蜂窝网络状态下下载模型。 |
+
+## Image
 
 type Image = string
 
@@ -233,8 +278,6 @@ type Image = string
 
 ## SplitConfig
 
-PhonePC/2in1Tablet
-
 管理文本分块的配置信息。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataIntelligence.Core
@@ -246,17 +289,15 @@ PhonePC/2in1Tablet
 
 ## TextEmbedding
 
-PhonePC/2in1Tablet
-
 描述多模态嵌入模型的文本嵌入函数。
 
 下列接口都需先使用[intelligence.getTextEmbeddingModel](js-apis-data-intelligence.md#intelligencegettextembeddingmodel)获取到TextEmbedding实例，再通过此实例调用对应接口。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataIntelligence.Core
 
-### loadModel
+**设备行为差异：** 该接口在PC/2in1、Phone和Tablet设备中可正常调用，在其他设备类型中返回801错误码。
 
-PhonePC/2in1Tablet
+### loadModel
 
 loadModel(): Promise<void>
 
@@ -264,7 +305,7 @@ loadModel(): Promise<void>
 
 **系统能力：** SystemCapability.DistributedDataManager.DataIntelligence.Core
 
-**设备行为差异：** 该接口在2in1设备中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 在API版本26.0.0之前，该接口在PC/2in1设备中可正常调用，在其他设备类型中返回801错误码；从API版本26.0.0开始，该接口在PC/2in1、Phone和Tablet设备中可正常调用，在其他设备类型中返回801错误码。
 
 **返回值：**
 
@@ -283,21 +324,19 @@ loadModel(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. textEmbedding.loadModel()
-4. .then(() => {
-5. console.info("Succeeded in loading Model");
-6. })
-7. .catch((err: BusinessError) => {
-8. console.error("Failed to load Model and code is " + err.code);
-9. })
+textEmbedding.loadModel()
+  .then(() => {
+    console.info("Succeeded in loading Model");
+  })
+  .catch((err: BusinessError) => {
+    console.error("Failed to load Model and code is " + err.code);
+  })
 ```
 
 ### releaseModel
-
-PhonePC/2in1Tablet
 
 releaseModel(): Promise<void>
 
@@ -305,7 +344,7 @@ releaseModel(): Promise<void>
 
 **系统能力：** SystemCapability.DistributedDataManager.DataIntelligence.Core
 
-**设备行为差异：** 该接口在2in1设备中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 在API版本26.0.0之前，该接口在PC/2in1设备中可正常调用，在其他设备类型中返回801错误码；从API版本26.0.0开始，该接口在PC/2in1、Phone和Tablet设备中可正常调用，在其他设备类型中返回801错误码。
 
 **返回值：**
 
@@ -324,21 +363,19 @@ releaseModel(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. textEmbedding.releaseModel()
-4. .then(() => {
-5. console.info("Succeeded in releasing Model");
-6. })
-7. .catch((err: BusinessError) => {
-8. console.error("Failed to release Model and code is " + err.code);
-9. })
+textEmbedding.releaseModel()
+  .then(() => {
+    console.info("Succeeded in releasing Model");
+  })
+  .catch((err: BusinessError) => {
+    console.error("Failed to release Model and code is " + err.code);
+  })
 ```
 
 ### getEmbedding
-
-PhonePC/2in1Tablet
 
 getEmbedding(text: string): Promise<Array<number>>
 
@@ -348,7 +385,7 @@ getEmbedding(text: string): Promise<Array<number>>
 
 **系统能力：** SystemCapability.DistributedDataManager.DataIntelligence.Core
 
-**设备行为差异：** 该接口在2in1设备中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 在API版本26.0.0之前，该接口在PC/2in1设备中可正常调用，在其他设备类型中返回801错误码；从API版本26.0.0开始，该接口在PC/2in1、Phone和Tablet设备中可正常调用，在其他设备类型中返回801错误码。
 
 **参数：**
 
@@ -374,23 +411,21 @@ getEmbedding(text: string): Promise<Array<number>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. textEmbedding.loadModel();
-4. let text = 'text';
-5. textEmbedding.getEmbedding(text)
-6. .then((data: Array<number>) => {
-7. console.info("Succeeded in getting Embedding");
-8. })
-9. .catch((err: BusinessError) => {
-10. console.error("Failed to get Embedding and code is " + err.code);
-11. })
+textEmbedding.loadModel();
+let text = 'text';
+textEmbedding.getEmbedding(text)
+  .then((data: Array<number>) => {
+    console.info("Succeeded in getting Embedding");
+  })
+  .catch((err: BusinessError) => {
+    console.error("Failed to get Embedding and code is " + err.code);
+  })
 ```
 
 ### getEmbedding
-
-PhonePC/2in1Tablet
 
 getEmbedding(batchTexts: Array<string>): Promise<Array<Array<number>>>
 
@@ -400,7 +435,7 @@ getEmbedding(batchTexts: Array<string>): Promise<Array<Array<number>>>
 
 **系统能力：** SystemCapability.DistributedDataManager.DataIntelligence.Core
 
-**设备行为差异：** 该接口在2in1设备中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 在API版本26.0.0之前，该接口在PC/2in1设备中可正常调用，在其他设备类型中返回801错误码；从API版本26.0.0开始，该接口在PC/2in1、Phone和Tablet设备中可正常调用，在其他设备类型中返回801错误码。
 
 **参数：**
 
@@ -426,23 +461,21 @@ getEmbedding(batchTexts: Array<string>): Promise<Array<Array<number>>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. textEmbedding.loadModel();
-4. let batchTexts = ['text1', 'text2'];
-5. textEmbedding.getEmbedding(batchTexts)
-6. .then((data: Array<Array<number>>) => {
-7. console.info("Succeeded in getting Embedding");
-8. })
-9. .catch((err: BusinessError) => {
-10. console.error("Failed to get Embedding and code is " + err.code);
-11. })
+textEmbedding.loadModel();
+let batchTexts = ['text1', 'text2'];
+textEmbedding.getEmbedding(batchTexts)
+  .then((data: Array<Array<number>>) => {
+    console.info("Succeeded in getting Embedding");
+  })
+  .catch((err: BusinessError) => {
+    console.error("Failed to get Embedding and code is " + err.code);
+  })
 ```
 
 ## ImageEmbedding
-
-PhonePC/2in1Tablet
 
 描述多模态嵌入模型的图像嵌入函数。
 
@@ -452,15 +485,13 @@ PhonePC/2in1Tablet
 
 ### loadModel
 
-PhonePC/2in1Tablet
-
 loadModel(): Promise<void>
 
 加载图像嵌入模型。使用Promise异步回调。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataIntelligence.Core
 
-**设备行为差异：** 该接口在2in1设备中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在PC/2in1设备中可正常调用，在其他设备类型中返回801错误码。
 
 **返回值：**
 
@@ -479,21 +510,19 @@ loadModel(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. imageEmbedding.loadModel()
-4. .then(() => {
-5. console.info("Succeeded in loading Model");
-6. })
-7. .catch((err: BusinessError) => {
-8. console.error("Failed to load Model and code is " + err.code);
-9. })
+imageEmbedding.loadModel()
+  .then(() => {
+    console.info("Succeeded in loading Model");
+  })
+  .catch((err: BusinessError) => {
+    console.error("Failed to load Model and code is " + err.code);
+  })
 ```
 
 ### releaseModel
-
-PhonePC/2in1Tablet
 
 releaseModel(): Promise<void>
 
@@ -501,7 +530,7 @@ releaseModel(): Promise<void>
 
 **系统能力：** SystemCapability.DistributedDataManager.DataIntelligence.Core
 
-**设备行为差异：** 该接口在2in1设备中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在PC/2in1设备中可正常调用，在其他设备类型中返回801错误码。
 
 **返回值：**
 
@@ -520,21 +549,19 @@ releaseModel(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. imageEmbedding.releaseModel()
-4. .then(() => {
-5. console.info("Succeeded in releasing Model");
-6. })
-7. .catch((err: BusinessError) => {
-8. console.error("Failed to release Model and code is " + err.code);
-9. })
+imageEmbedding.releaseModel()
+  .then(() => {
+    console.info("Succeeded in releasing Model");
+  })
+  .catch((err: BusinessError) => {
+    console.error("Failed to release Model and code is " + err.code);
+  })
 ```
 
 ### getEmbedding
-
-PhonePC/2in1Tablet
 
 getEmbedding(image: Image): Promise<Array<number>>
 
@@ -544,13 +571,13 @@ getEmbedding(image: Image): Promise<Array<number>>
 
 **系统能力：** SystemCapability.DistributedDataManager.DataIntelligence.Core
 
-**设备行为差异：** 该接口在2in1设备中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在PC/2in1设备中可正常调用，在其他设备类型中返回801错误码。
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| image | [Image](js-apis-data-intelligence.md#image) | 是 | 嵌入模型的输入图像类型的URI地址。 |
+| image | [Image](js-apis-data-intelligence.md#image) | 是 | 嵌入模型输入图像的URI地址。 |
 
 **返回值：**
 
@@ -570,16 +597,16 @@ getEmbedding(image: Image): Promise<Array<number>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. imageEmbedding.loadModel();
-4. let image = 'file://<packageName>/data/storage/el2/base/haps/entry/files/xxx.jpg';
-5. imageEmbedding.getEmbedding(image)
-6. .then((data: Array<number>) => {
-7. console.info("Succeeded in getting Embedding");
-8. })
-9. .catch((err: BusinessError) => {
-10. console.error("Failed to get Embedding and code is " + err.code);
-11. })
+imageEmbedding.loadModel();
+let image = 'file://<packageName>/data/storage/el2/base/haps/entry/files/xxx.jpg';
+imageEmbedding.getEmbedding(image)
+  .then((data: Array<number>) => {
+    console.info("Succeeded in getting Embedding");
+  })
+  .catch((err: BusinessError) => {
+    console.error("Failed to get Embedding and code is " + err.code);
+  })
 ```

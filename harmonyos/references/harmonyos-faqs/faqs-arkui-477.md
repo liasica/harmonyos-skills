@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-477
 title: 组件内转场(transition)新增内容动画生效，但删除内容动画不生效的可能原因是什么
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 组件内转场(transition)新增内容动画生效，但删除内容动画不生效的可能原因是什么
+breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 组件内转场(transition)新增内容动画生效，但删除内容动画不生效的可能原因是什么
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:06+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:50+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:4a068c627cd0a31b49d33b230db6f6a4bc9cf1a18225223340a0eca92aa73f52
 ---
 

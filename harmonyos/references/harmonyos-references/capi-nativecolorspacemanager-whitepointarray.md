@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: WhitePointArray
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 结构体 > WhitePointArray
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:10+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:df1555a429870332b9539ede8736bd17bfbcc850c32da522bcef15a6ef694578
+scraped_at: 2026-09-02T15:02:45+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:fde7d70ecdc61c24ae9e225b73febfae2cc595c433d67a740a67cceb18d815d4
 ---
 
-```
-1. typedef struct WhitePointArray {...} WhitePointArray
+```c
+typedef struct {...} WhitePointArray
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-提供白点数组结构体，白点是指在当前色域中表示白色的坐标。
+提供白点数组结构体，白点是在当前色域中表示白色的坐标。
 
 **起始版本：** 13
 
@@ -26,12 +24,8 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
-| float arr[2] | 表示白点返回数组。 |
+| float arr[2] | 表示白点坐标数组。arr[0]表示x坐标，arr[1]表示y坐标，用于在色域空间中精确定义白色基准点，影响色域的显示效果和颜色准确性。 |

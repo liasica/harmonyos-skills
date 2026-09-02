@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getdy
 title: GetDynamicInputTensorRange
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > InferShapeRangeContext > GetDynamicInputTensorRange
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:02+08:00
+scraped_at: 2026-09-02T14:50:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:06772d1fec08aa3877171231093611d4ef0e8f5b959105b476400e7a3c6a1e54
+content_hash: sha256:7191974d65f0b163f473bb16599923a3c0aa57001edebfae49e1eb5a6aebd9eb
 ---
 
 ## 函数功能
@@ -14,9 +14,9 @@ content_hash: sha256:06772d1fec08aa3877171231093611d4ef0e8f5b959105b476400e7a3c6
 
 ## 函数原型
 
-```
-1. using TensorRange = Range<Tensor>
-2. const TensorRange *GetDynamicInputTensorRange(const size_t ir_index, const size_t relative_index) const
+```cpp
+using TensorRange = Range<Tensor>
+const TensorRange *GetDynamicInputTensorRange(const size_t ir_index, const size_t relative_index) const
 ```
 
 ## 参数说明
@@ -36,12 +36,12 @@ tensor range指针，ir\_index或relative\_index非法时，返回空指针。
 
 ## 调用示例
 
-```
-1. const auto infer_shape_range_func = [](gert::InferShapeRangeContext *context) -> graphStatus {
-2. auto input_shape_range = context->GetDynamicInputTensorRange(0U, 0U);
-3. auto output_shape_range = context->GetOutputShapeRange(0U);
-4. *output_shape_range->GetMin() = input_shape_range->GetMin()->GetStorageShape();
-5. *output_shape_range->GetMax() = input_shape_range->GetMax()->GetStorageShape();
-6. return GRAPH_SUCCESS;
-7. };
+```cpp
+const auto infer_shape_range_func = [](gert::InferShapeRangeContext *context) -> graphStatus {
+  auto input_shape_range = context->GetDynamicInputTensorRange(0U, 0U);
+  auto output_shape_range = context->GetOutputShapeRange(0U);
+  *output_shape_range->GetMin() = input_shape_range->GetMin()->GetStorageShape();
+  *output_shape_range->GetMax() = input_shape_range->GetMax()->GetStorageShape();
+  return GRAPH_SUCCESS;
+};
 ```

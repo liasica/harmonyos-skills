@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_explicit-
 title: "@typescript-eslint/explicit-function-return-type"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/explicit-function-return-type
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:26+08:00
+scraped_at: 2026-09-02T14:50:51+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:d9c3a509de744bf6c5d38870269f52ed192c6bbdf17e10cf238b13c6e8358edb
+content_hash: sha256:11ab95b3ad5542f21463f15d51afa01ffb70a928ee28922cdaa4dbd00027f72c
 ---
 
 函数和类方法需要显式的定义返回类型。
@@ -14,98 +14,98 @@ content_hash: sha256:d9c3a509de744bf6c5d38870269f52ed192c6bbdf17e10cf238b13c6e83
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@typescript-eslint/explicit-function-return-type": "error"
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": "error"
+  }
+}
 ```
 
 ## 选项
 
 该规则支持配置以下选项：
 
-```
-1. type Options = [
-2. {
-3. // 是否忽略.ets文件的检查，默认为false，不检查.ets文件
-4. allowArkTS?: boolean
-5. }
-6. ]
+```screen
+type Options = [
+  {
+    // 是否忽略.ets文件的检查，默认为false，不检查.ets文件
+    allowArkTS?: boolean
+  }
+]
 ```
 
 配置示例：
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@typescript-eslint/explicit-function-return-type": ["error", { "allowArkTS": true }]
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": ["error", { "allowArkTS": true }]
+  }
+}
 ```
 
 其余配置详情请参考[@typescript-eslint/explicit-function-return-type选项](https://typescript-eslint.nodejs.cn/rules/explicit-function-return-type/#options)。
 
 ## 正例
 
-```
-1. // No return value should be expected (void)
-2. function test(): void {
-3. return;
-4. }
+```screen
+// No return value should be expected (void)
+function test(): void {
+  return;
+}
 
-6. // A return value of type number
-7. const fn = function (): number {
-8. return Number.MAX_VALUE;
-9. };
+// A return value of type number
+const fn = function (): number {
+  return Number.MAX_VALUE;
+};
 
-11. // A return value of type string
-12. const arrowFn = (): string => 'test';
+// A return value of type string
+const arrowFn = (): string => 'test';
 
-14. class Test {
-15. // No return value should be expected (void)
-16. public method(): void {
-17. return;
-18. }
-19. }
+class Test {
+  // No return value should be expected (void)
+  public method(): void {
+    return;
+  }
+}
 
-21. export { test, fn, arrowFn, Test };
+export { test, fn, arrowFn, Test };
 ```
 
 ## 反例
 
-```
-1. // Should indicate that no value is returned (void)
-2. function test() {
-3. return;
-4. }
+```screen
+// Should indicate that no value is returned (void)
+function test() {
+  return;
+}
 
-6. // Should indicate that a number is returned
-7. const fn = function () {
-8. return Number.MAX_VALUE;
-9. };
+// Should indicate that a number is returned
+const fn = function () {
+  return Number.MAX_VALUE;
+};
 
-11. // Should indicate that a string is returned
-12. const arrowFn = () => 'test';
+// Should indicate that a string is returned
+const arrowFn = () => 'test';
 
-14. class Test {
-15. // Should indicate that no value is returned (void)
-16. public method() {
-17. return;
-18. }
-19. }
+class Test {
+  // Should indicate that no value is returned (void)
+  public method() {
+    return;
+  }
+}
 
-21. export { test, fn, arrowFn, Test };
+export { test, fn, arrowFn, Test };
 ```
 
 ## 规则集
 
-```
-1. plugin:@typescript-eslint/recommended
-2. plugin:@typescript-eslint/all
+```screen
+plugin:@typescript-eslint/recommended
+plugin:@typescript-eslint/all
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

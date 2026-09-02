@@ -3,14 +3,25 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.distributedsched.abilityConnectionManager (应用多端协同管理)"
 breadcrumb: API参考 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > ArkTS API > @ohos.distributedsched.abilityConnectionManager (应用多端协同管理)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:14+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c8a9ef7cd5bc619f4b4521c463e3edd1b2b7eae1ec97424269365b1901cfc6fa
+scraped_at: 2026-09-02T15:01:52+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c1631918ef81898082a38187142e8b71eec77bc434fd2b6433b0636fa7cc7e8d
 ---
 
-abilityConnectionManager模块提供了应用协同接口管理能力。设备组网成功（需登录同账号、双端打开蓝牙）后，系统应用和三方应用可以跨设备拉起同应用的一个[UIAbility](js-apis-app-ability-uiability.md)，拉起并连接成功后可实现跨设备数据传输（文本信息）。
+abilityConnectionManager模块提供了应用协同接口管理能力。设备组网成功后，系统应用和三方应用可以跨设备拉起同应用的一个[UIAbility](js-apis-app-ability-uiability.md)，拉起并连接成功后可实现跨设备数据传输（文本信息）。
 
-说明
+多端协同的逻辑分层架构视图如下：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/OCJiMJzzRc-tgBJ9kVnEZA/zh-cn_image_0000002706836728.png)
+
+逻辑分层架构视图的关键原理说明如下：
+
+1. **应用适配协同接口**：应用通过abilityConnectionManager适配协同接口，基于软总线实现秒级快速建立连接和会话，并在connect时自动拉起对端应用。
+2. **基于会话ID的数据传输**：连接建立后，双端应用基于sessionId直接通过软总线通道进行数据传输（sendMessage/sendData），点对点通信效率更高、更加安全。
+3. **对等协同框架**：设备A与设备B运行对称的协同框架层，统一管理会话全生命周期（创建→连接→传输→断开→销毁），双端接口配对调用（connect与acceptConnect）保证连接可靠性。
+4. **事件驱动通信**：通过on/off注册机制监听连接状态（connect/disconnect）和数据接收（receiveMessage/receiveData）事件，实现异步解耦的协同通信。
+
+**说明** 
 
 本模块首批接口从API version 18开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -18,25 +29,23 @@ abilityConnectionManager模块提供了应用协同接口管理能力。设备�
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { abilityConnectionManager } from '@kit.DistributedServiceKit';
+```js
+import { abilityConnectionManager } from '@kit.DistributedServiceKit';
 ```
 
 ## abilityConnectionManager.createAbilityConnectionSession
 
-PhonePC/2in1TabletTVWearable
+createAbilityConnectionSession(serviceName: string, context: Context, peerInfo: PeerInfo, connectOptions: ConnectOptions): number
 
-createAbilityConnectionSession(serviceName: string, context: Context, peerInfo: PeerInfo , connectOptions: ConnectOptions): number
-
-创建应用间的协同会话。
+创建应用间的协同会话。协同会话用于管理跨设备通信的连接状态，需要先在两端设备分别创建会话，然后通过connect建立连接。
 
 **需要权限**：ohos.permission.INTERNET、ohos.permission.GET\_NETWORK\_INFO、ohos.permission.SET\_NETWORK\_INFO和ohos.permission.DISTRIBUTED\_DATASYNC
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
+
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回801错误码。
 
 **参数：**
 
@@ -51,7 +60,7 @@ createAbilityConnectionSession(serviceName: string, context: Context, peerInfo: 
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 成功创建的协同会话ID。 |
+| number | 成功创建的协同会话ID，用于后续的connect、acceptConnect、sendMessage、sendData、disconnect等接口调用。取值范围是大于100的整数。 |
 
 **错误码：**
 
@@ -65,172 +74,172 @@ createAbilityConnectionSession(serviceName: string, context: Context, peerInfo: 
 
 **示例：**
 
-1. 在设备A上，应用需要主动调用createAbilityConnectionSession()接口创建协同会话并返回sessionId。
+1. 在设备A上，调用createAbilityConnectionSession()接口创建协同会话并返回sessionId。
 
-   ```
-   1. import { abilityConnectionManager, distributedDeviceManager } from '@kit.DistributedServiceKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```ts
+   import { abilityConnectionManager, distributedDeviceManager } from '@kit.DistributedServiceKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
 
-   4. let dmClass: distributedDeviceManager.DeviceManager;
+   let dmClass: distributedDeviceManager.DeviceManager;
 
-   6. function initDmClass(): void {
-   7. try {
-   8. dmClass = distributedDeviceManager.createDeviceManager('com.example.remotephotodemo');
-   9. } catch (err) {
-   10. hilog.error(0x0000, 'testTag', 'createDeviceManager err: ' + JSON.stringify(err));
-   11. }
-   12. }
+   function initDmClass(): void {
+     try {
+       dmClass = distributedDeviceManager.createDeviceManager('com.example.remotephotodemo');
+     } catch (err) {
+       hilog.error(0x0000, 'testTag', 'createDeviceManager err: ' + JSON.stringify(err));
+     }
+   }
 
-   14. function getRemoteDeviceId(): string | undefined {
-   15. initDmClass();
-   16. if (typeof dmClass === 'object' && dmClass !== null) {
-   17. hilog.info(0x0000, 'testTag', 'getRemoteDeviceId begin');
-   18. let list = dmClass.getAvailableDeviceListSync();
-   19. if (typeof (list) === 'undefined' || typeof (list.length) === 'undefined') {
-   20. hilog.info(0x0000, 'testTag', 'getRemoteDeviceId err: list is null');
-   21. return;
-   22. }
-   23. if (list.length === 0) {
-   24. hilog.info(0x0000, 'testTag', 'getRemoteDeviceId err: list is empty');
-   25. return;
-   26. }
-   27. return list[0].networkId;
-   28. } else {
-   29. hilog.info(0x0000, 'testTag', 'getRemoteDeviceId err: dmClass is null');
-   30. return;
-   31. }
-   32. }
+   function getRemoteDeviceId(): string | undefined {
+     initDmClass();
+     if (typeof dmClass === 'object' && dmClass !== null) {
+       hilog.info(0x0000, 'testTag', 'getRemoteDeviceId begin');
+       let list = dmClass.getAvailableDeviceListSync();
+       if (typeof (list) === 'undefined' || typeof (list.length) === 'undefined') {
+         hilog.info(0x0000, 'testTag', 'getRemoteDeviceId err: list is null');
+         return;
+       }
+       if (list.length === 0) {
+         hilog.info(0x0000, 'testTag', 'getRemoteDeviceId err: list is empty');
+         return;
+       }
+       return list[0].networkId;
+     } else {
+       hilog.info(0x0000, 'testTag', 'getRemoteDeviceId err: dmClass is null');
+       return;
+     }
+   }
 
-   34. @Entry
-   35. @Component
-   36. struct Index {
-   37. createSession(): void {
-   38. // 定义peer信息
-   39. const peerInfo: abilityConnectionManager.PeerInfo = {
-   40. deviceId: getRemoteDeviceId()!,
-   41. bundleName: 'com.example.remotephotodemo',
-   42. moduleName: 'entry',
-   43. abilityName: 'EntryAbility',
-   44. serviceName: 'collabTest'
-   45. };
-   46. const myRecord: Record<string, string> = {
-   47. "newKey1": "value1",
-   48. };
+   @Entry
+   @Component
+   struct Index {
+     createSession(): void {
+       // 定义peer信息
+       const peerInfo: abilityConnectionManager.PeerInfo = {
+         deviceId: getRemoteDeviceId()!,
+         bundleName: 'com.example.remotephotodemo',
+         moduleName: 'entry',
+         abilityName: 'EntryAbility',
+         serviceName: 'collabTest'
+       };
+        const myRecord: Record<string, string> = {
+          'newKey1': 'value1',
+        };
 
-   50. // 定义连接选项
-   51. const connectOptions: abilityConnectionManager.ConnectOptions = {
-   52. needSendData: true,
-   53. startOptions: abilityConnectionManager.StartOptionParams.START_IN_FOREGROUND,
-   54. parameters: myRecord
-   55. };
-   56. let context = this.getUIContext().getHostContext();
-   57. try {
-   58. let sessionId = abilityConnectionManager.createAbilityConnectionSession("collabTest", context, peerInfo, connectOptions);
-   59. hilog.info(0x0000, 'testTag', 'createSession sessionId is', sessionId);
-   60. } catch (error) {
-   61. hilog.error(0x0000, 'testTag', error);
-   62. }
-   63. }
+       // 定义连接选项
+       const connectOptions: abilityConnectionManager.ConnectOptions = {
+         needSendData: true,
+         startOptions: abilityConnectionManager.StartOptionParams.START_IN_FOREGROUND,
+         parameters: myRecord
+       };
+       let context = this.getUIContext().getHostContext();
+       try {
+         let sessionId = abilityConnectionManager.createAbilityConnectionSession("collabTest", context, peerInfo, connectOptions);
+         hilog.info(0x0000, 'testTag', 'createSession sessionId is', sessionId);
+       } catch (error) {
+         hilog.error(0x0000, 'testTag', error);
+       }
+     }
 
-   65. build() {
-   66. }
-   67. }
+     build() {
+     }
+   }
    ```
 2. 在设备B上，对于createAbilityConnectionSession接口的调用，可在应用被拉起后触发协同生命周期函数onCollaborate时，在onCollaborate内进行。
 
-   ```
-   1. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-   2. import { abilityConnectionManager } from '@kit.DistributedServiceKit';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-   5. export default class EntryAbility extends UIAbility {
-   6. onCollaborate(wantParam: Record<string, Object>): AbilityConstant.CollaborateResult {
-   7. hilog.info(0x0000, 'testTag', '%{public}s', 'on collaborate');
-   8. let param = wantParam["ohos.extra.param.key.supportCollaborateIndex"] as Record<string, Object>
-   9. this.onCollab(param);
-   10. return 0;
-   11. }
-
-   13. onCollab(collabParam: Record<string, Object>) {
-   14. const sessionId = this.createSessionFromWant(collabParam);
-   15. if (sessionId == -1) {
-   16. hilog.info(0x0000, 'testTag', 'Invalid session ID.');
-   17. return;
-   18. }
-   19. }
-
-   21. createSessionFromWant(collabParam: Record<string, Object>): number {
-   22. let sessionId = -1;
-   23. const peerInfo = collabParam["PeerInfo"] as abilityConnectionManager.PeerInfo;
-   24. if (peerInfo == undefined) {
-   25. return sessionId;
-   26. }
-
-   28. const options = collabParam["ConnectOption"] as abilityConnectionManager.ConnectOptions;
-   29. try {
-   30. sessionId = abilityConnectionManager.createAbilityConnectionSession("collabTest", this.context, peerInfo, options);
-   31. AppStorage.setOrCreate('sessionId', sessionId);
-   32. hilog.info(0x0000, 'testTag', 'createSession sessionId is' + sessionId);
-   33. } catch (error) {
-   34. hilog.error(0x0000, 'testTag', error);
-   35. }
-   36. return sessionId;
-   37. }
-   38. }
+   ```ts
+   import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+   import { abilityConnectionManager } from '@kit.DistributedServiceKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+    
+   export default class EntryAbility extends UIAbility {
+     onCollaborate(wantParam: Record<string, Object>): AbilityConstant.CollaborateResult {
+       hilog.info(0x0000, 'testTag', '%{public}s', 'on collaborate');
+       let param = wantParam["ohos.extra.param.key.supportCollaborateIndex"] as Record<string, Object>
+       this.onCollab(param);
+       return 0;
+     }
+    
+     onCollab(collabParam: Record<string, Object>) {
+       const sessionId = this.createSessionFromWant(collabParam);
+       if (sessionId == -1) {
+         hilog.info(0x0000, 'testTag', 'Invalid session ID.');
+         return;
+       }
+     }
+    
+     createSessionFromWant(collabParam: Record<string, Object>): number {
+       let sessionId = -1;
+       const peerInfo = collabParam["PeerInfo"] as abilityConnectionManager.PeerInfo;
+       if (peerInfo == undefined) {
+         return sessionId;
+       }
+    
+       const options = collabParam["ConnectOption"] as abilityConnectionManager.ConnectOptions;
+       try {
+         sessionId = abilityConnectionManager.createAbilityConnectionSession("collabTest", this.context, peerInfo, options);
+         AppStorage.setOrCreate('sessionId', sessionId);
+         hilog.info(0x0000, 'testTag', 'createSession sessionId is ' + sessionId);
+       } catch (error) {
+         hilog.error(0x0000, 'testTag', error);
+       }
+       return sessionId;
+     }
+   }
    ```
 
 ## abilityConnectionManager.destroyAbilityConnectionSession
 
-PhonePC/2in1TabletTVWearable
-
 destroyAbilityConnectionSession(sessionId: number): void
 
-销毁应用间的协同会话。
+销毁应用间的协同会话，与createAbilityConnectionSession配对使用用于释放会话资源。此接口需在成功创建协同会话后调用。销毁会话会释放相关资源，建议先调用disconnect断开连接后再销毁会话。不调用此方法会导致资源泄漏。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回401错误码。
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| sessionId | number | 是 | 待销毁的协同会话ID。 |
+| sessionId | number | 是 | 待销毁的协同会话ID。  取值范围是不小于100的整数。传入小于100的值或不存在的协同会话ID时返回错误码401。 |
 
 **示例：**
 
-```
-1. import { abilityConnectionManager } from '@kit.DistributedServiceKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { abilityConnectionManager } from '@kit.DistributedServiceKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. hilog.info(0x0000, 'testTag', 'destroyAbilityConnectionSession called');
-5. let sessionId = 100;
-6. abilityConnectionManager.destroyAbilityConnectionSession(sessionId);
+hilog.info(0x0000, 'testTag', 'destroyAbilityConnectionSession called');
+let sessionId = 100;
+abilityConnectionManager.destroyAbilityConnectionSession(sessionId);
 ```
 
 ## abilityConnectionManager.getPeerInfoById
 
-PhonePC/2in1TabletTVWearable
-
 getPeerInfoById(sessionId: number): PeerInfo | undefined
 
-获取指定会话中对端应用信息。
+获取指定会话中对端应用信息。此接口需在成功创建协同会话后调用。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回空值。
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| sessionId | number | 是 | 协同会话ID。 |
+| sessionId | number | 是 | 协同会话ID。由createAbilityConnectionSession接口返回。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [PeerInfo](js-apis-distributed-abilityconnectionmanager.md#peerinfo) | undefined | 若存在对应peerInfo，则返回接收端的协作应用信息。若sessionId未找到，则查询失败，返回undefined。 |
+| [PeerInfo](js-apis-distributed-abilityconnectionmanager.md#peerinfo) | undefined | 返回接收端的协作应用信息，若sessionId未找到则返回undefined。 |
 
 **错误码：**
 
@@ -242,38 +251,40 @@ getPeerInfoById(sessionId: number): PeerInfo | undefined
 
 **示例：**
 
-```
-1. import { abilityConnectionManager } from '@kit.DistributedServiceKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { abilityConnectionManager } from '@kit.DistributedServiceKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. hilog.info(0x0000, 'testTag', 'getPeerInfoById called');
-5. let sessionId = 100;
-6. const peerInfo = abilityConnectionManager.getPeerInfoById(sessionId);
+hilog.info(0x0000, 'testTag', 'getPeerInfoById called');
+// sessionId需通过createAbilityConnectionSession接口创建并获取，此处仅为示例
+let sessionId = 100;
+// 获取指定会话中对端应用信息
+const peerInfo = abilityConnectionManager.getPeerInfoById(sessionId);
 ```
 
 ## abilityConnectionManager.connect
 
-PhonePC/2in1TabletTVWearable
-
 connect(sessionId: number): Promise<ConnectResult>
 
-创建协同会话成功并获得会话ID后，设备A上可进行UIAbility的连接。使用Promise异步回调。
+创建协同会话成功并获得会话ID后，设备A上可进行UIAbility的连接。调用此接口前，需先在两端设备分别创建协同会话。connect接口通过底层分布式通信服务建立连接，必须与设备B的acceptConnect配合使用才能建立成功连接，调用connect会拉起设备B应用。连接过程会触发'connect'事件通知状态变化。使用Promise异步回调。连接失败时，返回的ConnectResult对象中的errorCode字段包含具体的错误信息，可参考ConnectErrorCode枚举了解错误原因。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回401错误码。
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| sessionId | number | 是 | 已创建的协同会话ID。 |
+| sessionId | number | 是 | 已创建的协同会话ID，由createAbilityConnectionSession接口返回。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<ConnectResult> | 以Promise形式返回[连接结果](js-apis-distributed-abilityconnectionmanager.md#connectresult)。 |
+| Promise<ConnectResult> | Promise对象，成功时resolve返回[ConnectResult](js-apis-distributed-abilityconnectionmanager.md#connectresult)（包含isConnected和errorCode字段），失败时reject返回错误对象。 |
 
 **错误码：**
 
@@ -285,47 +296,47 @@ connect(sessionId: number): Promise<ConnectResult>
 
 **示例：**
 
-设备A上的应用在创建协同会话成功并获得会话ID后，调用connect()方法启动UIAbility连接，并拉起设备B应用。
+设备A上创建协同会话成功并获得会话ID后，调用connect()方法启动UIAbility连接，并拉起设备B应用。
 
-```
-1. import { abilityConnectionManager } from '@kit.DistributedServiceKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { abilityConnectionManager } from '@kit.DistributedServiceKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. let sessionId = 100;
-5. abilityConnectionManager.connect(sessionId).then((ConnectResult) => {
-6. if (!ConnectResult.isConnected) {
-7. hilog.info(0x0000, 'testTag', 'connect failed');
-8. return;
-9. }
-10. }).catch(() => {
-11. hilog.error(0x0000, 'testTag', "connect failed");
-12. })
+let sessionId = 100;
+abilityConnectionManager.connect(sessionId).then((ConnectResult) => {
+  if (!ConnectResult.isConnected) {
+    hilog.info(0x0000, 'testTag', 'connect failed');
+    return;
+  }
+}).catch(() => {
+  hilog.error(0x0000, 'testTag', "connect failed");
+})
 ```
 
 ## abilityConnectionManager.acceptConnect
 
-PhonePC/2in1TabletTVWearable
-
 acceptConnect(sessionId: number, token: string): Promise<void>
 
-设备B上的应用，在创建协同会话成功并获得会话ID后，调用acceptConnect()方法接受连接。
+设备B上的应用在创建协同会话成功并获得会话ID后，调用acceptConnect()方法接受连接。调用此接口前，需先在两端设备分别创建协同会话。必须与设备A的connect方法配合使用：设备A调用connect会拉起设备B应用，设备B在onCollaborate生命周期中创建会话后调用acceptConnect。使用Promise异步回调。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
+
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回401错误码。
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sessionId | number | 是 | 已创建的协同会话ID。 |
-| token | string | 是 | 设备A应用传入的token值。 |
+| token | string | 是 | 设备A应用传入的token值，该值通过wantParam参数中'ohos.dms.collabToken'键获取（在应用被拉起后的onCollaborate生命周期方法的wantParam参数中获取）。当设备A调用connect方法时，系统会自动生成collabToken并通过want参数传递给设备B，设备B在onCollaborate生命周期回调中可以从wantParam参数获取此token。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -337,70 +348,70 @@ acceptConnect(sessionId: number, token: string): Promise<void>
 
 **示例：**
 
-设备B上的应用，在createAbilityConnectionSession接口调用并获取sessionId成功后，可调用acceptConnect接口来选择接受连接。
+在设备B上，createAbilityConnectionSession接口调用并获取sessionId成功后，调用acceptConnect接口选择接受连接。
 
-```
-1. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-2. import { abilityConnectionManager } from '@kit.DistributedServiceKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { abilityConnectionManager } from '@kit.DistributedServiceKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. export default class EntryAbility extends UIAbility {
-6. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-7. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-8. }
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+  }
 
-10. onCollaborate(wantParam: Record<string, Object>): AbilityConstant.CollaborateResult {
-11. hilog.info(0x0000, 'testTag', '%{public}s', 'on collaborate');
-12. let param = wantParam["ohos.extra.param.key.supportCollaborateIndex"] as Record<string, Object>
-13. this.onCollab(param);
-14. return 0;
-15. }
+  onCollaborate(wantParam: Record<string, Object>): AbilityConstant.CollaborateResult {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'on collaborate');
+    let param = wantParam["ohos.extra.param.key.supportCollaborateIndex"] as Record<string, Object>
+    this.onCollab(param);
+    return 0;
+  }
 
-17. onCollab(collabParam: Record<string, Object>) {
-18. const sessionId = this.createSessionFromWant(collabParam);
-19. if (sessionId == -1) {
-20. hilog.info(0x0000, 'testTag', 'Invalid session ID.');
-21. return;
-22. }
-23. const collabToken = collabParam["ohos.dms.collabToken"] as string;
-24. abilityConnectionManager.acceptConnect(sessionId, collabToken).then(() => {
-25. hilog.info(0x0000, 'testTag', 'acceptConnect success');
-26. }).catch(() => {
-27. hilog.error(0x0000, 'testTag', 'failed');
-28. })
-29. }
+  onCollab(collabParam: Record<string, Object>) {
+    const sessionId = this.createSessionFromWant(collabParam);
+    if (sessionId == -1) {
+      hilog.info(0x0000, 'testTag', 'Invalid session ID.');
+      return;
+    }
+    const collabToken = collabParam["ohos.dms.collabToken"] as string;
+    abilityConnectionManager.acceptConnect(sessionId, collabToken).then(() => {
+      hilog.info(0x0000, 'testTag', 'acceptConnect success');
+    }).catch(() => {
+      hilog.error(0x0000, 'testTag', 'failed');
+    })
+  }
 
-31. createSessionFromWant(collabParam: Record<string, Object>): number {
-32. let sessionId = -1;
-33. const peerInfo = collabParam["PeerInfo"] as abilityConnectionManager.PeerInfo;
-34. if (peerInfo == undefined) {
-35. return sessionId;
-36. }
+  createSessionFromWant(collabParam: Record<string, Object>): number {
+    let sessionId = -1;
+    const peerInfo = collabParam["PeerInfo"] as abilityConnectionManager.PeerInfo;
+    if (peerInfo == undefined) {
+      return sessionId;
+    }
 
-38. const options = collabParam["ConnectOption"] as abilityConnectionManager.ConnectOptions;
-39. try {
-40. sessionId = abilityConnectionManager.createAbilityConnectionSession("collabTest", this.context, peerInfo, options);
-41. AppStorage.setOrCreate('sessionId', sessionId);
-42. hilog.info(0x0000, 'testTag', 'createSession sessionId is' + sessionId);
-43. } catch (error) {
-44. hilog.error(0x0000, 'testTag', error);
-45. }
-46. return sessionId;
-47. }
-48. }
+    const options = collabParam["ConnectOption"] as abilityConnectionManager.ConnectOptions;
+    try {
+      sessionId = abilityConnectionManager.createAbilityConnectionSession("collabTest", this.context, peerInfo, options);
+      AppStorage.setOrCreate('sessionId', sessionId);
+      hilog.info(0x0000, 'testTag', 'createSession sessionId is ' + sessionId);
+    } catch (error) {
+      hilog.error(0x0000, 'testTag', error);
+    }
+    return sessionId;
+  }
+}
 ```
 
 ## abilityConnectionManager.disconnect
 
-PhonePC/2in1TabletTVWearable
-
 disconnect(sessionId: number): void
 
-当协同业务执行完毕后，协同双端的任意一台设备，应断开UIAbility的连接，结束协同状态。
+创建协同会话成功、应用连接成功、协同业务执行完毕后，协同双端的任意一台设备，应断开UIAbility的连接，结束协同状态。需在connect()建立连接后调用。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
+
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回401错误码。
 
 **参数：**
 
@@ -410,18 +421,16 @@ disconnect(sessionId: number): void
 
 **示例：**
 
-```
-1. import { abilityConnectionManager } from '@kit.DistributedServiceKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { abilityConnectionManager } from '@kit.DistributedServiceKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. hilog.info(0x0000, 'testTag', 'disconnectRemoteAbility begin');
-5. let sessionId = 100;
-6. abilityConnectionManager.disconnect(sessionId);
+hilog.info(0x0000, 'testTag', 'disconnectRemoteAbility begin');
+let sessionId = 100;
+abilityConnectionManager.disconnect(sessionId);
 ```
 
 ## abilityConnectionManager.reject
-
-PhonePC/2in1TabletTVWearable
 
 reject(token: string, reason: string): void;
 
@@ -430,6 +439,8 @@ reject(token: string, reason: string): void;
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
+
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回401错误码。
 
 **参数：**
 
@@ -448,35 +459,35 @@ reject(token: string, reason: string): void;
 
 **示例：**
 
-```
-1. import { AbilityConstant, UIAbility, Want} from '@kit.AbilityKit';
-2. import { abilityConnectionManager } from '@kit.DistributedServiceKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { abilityConnectionManager } from '@kit.DistributedServiceKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. export default class EntryAbility extends UIAbility {
-6. onCollaborate(wantParam: Record<string, Object>): AbilityConstant.CollaborateResult {
-7. hilog.info(0x0000, 'testTag', '%{public}s', 'on collaborate');
-8. let collabParam = wantParam["ohos.extra.param.key.supportCollaborateIndex"] as Record<string, Object>;
-9. const collabToken = collabParam["ohos.dms.collabToken"] as string;
-10. const reason = "test";
-11. hilog.info(0x0000, 'testTag', 'reject begin');
-12. abilityConnectionManager.reject(collabToken, reason);
-13. return AbilityConstant.CollaborateResult.REJECT;
-14. }
-15. }
+export default class EntryAbility extends UIAbility {
+    onCollaborate(wantParam: Record<string, Object>): AbilityConstant.CollaborateResult {
+      hilog.info(0x0000, 'testTag', '%{public}s', 'on collaborate');
+      let collabParam = wantParam["ohos.extra.param.key.supportCollaborateIndex"] as Record<string, Object>;
+      const collabToken = collabParam["ohos.dms.collabToken"] as string;
+      const reason = 'test';
+      hilog.info(0x0000, 'testTag', 'reject begin');
+      abilityConnectionManager.reject(collabToken, reason);
+      return AbilityConstant.CollaborateResult.REJECT;
+    }
+}
 ```
 
 ## abilityConnectionManager.on('connect')
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'connect', sessionId: number, callback: Callback<EventCallbackInfo>): void
 
-注册connect事件的回调监听。使用callback异步回调。
+注册connect事件的回调监听。当connect接口调用成功后会触发该事件。使用callback异步回调。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
+
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回401错误码。
 
 **参数：**
 
@@ -496,19 +507,18 @@ on(type: 'connect', sessionId: number, callback: Callback<EventCallbackInfo>): v
 
 **示例：**
 
-```
-1. import { abilityConnectionManager } from '@kit.DistributedServiceKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { abilityConnectionManager } from '@kit.DistributedServiceKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. let sessionId = 100;
-5. abilityConnectionManager.on("connect", sessionId,(callbackInfo) => {
-6. hilog.info(0x0000, 'testTag', 'session connect, sessionId is', callbackInfo.sessionId);
-7. });
+// sessionId需通过createAbilityConnectionSession接口创建并获取，此处仅为示例
+let sessionId = 100;
+abilityConnectionManager.on("connect", sessionId,(callbackInfo) => {
+  hilog.info(0x0000, 'testTag', 'session connect, sessionId is', callbackInfo.sessionId);
+});
 ```
 
 ## abilityConnectionManager.off('connect')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'connect', sessionId: number, callback?: Callback<EventCallbackInfo>): void
 
@@ -518,13 +528,15 @@ off(type: 'connect', sessionId: number, callback?: Callback<EventCallbackInfo>):
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回401错误码。
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'connect'。 |
+| type | string | 是 | 事件回调类型，支持的事件为'connect'，需通过[abilityConnectionManager.on('connect')](js-apis-distributed-abilityconnectionmanager.md#abilityconnectionmanageronconnect)注册后才能取消。 |
 | sessionId | number | 是 | 创建的协同会话ID。 |
-| callback | Callback<[EventCallbackInfo](js-apis-distributed-abilityconnectionmanager.md#eventcallbackinfo)> | 否 | 注册的回调函数。 |
+| callback | Callback<[EventCallbackInfo](js-apis-distributed-abilityconnectionmanager.md#eventcallbackinfo)> | 否 | 回调函数，不传则取消所有该事件的回调监听。 |
 
 **错误码：**
 
@@ -536,16 +548,15 @@ off(type: 'connect', sessionId: number, callback?: Callback<EventCallbackInfo>):
 
 **示例：**
 
-```
-1. import { abilityConnectionManager } from '@kit.DistributedServiceKit';
+```ts
+import { abilityConnectionManager } from '@kit.DistributedServiceKit';
 
-3. let sessionId = 100;
-4. abilityConnectionManager.off("connect", sessionId);
+// sessionId需通过createAbilityConnectionSession接口创建并获取，此处仅为示例
+let sessionId = 100;
+abilityConnectionManager.off("connect", sessionId);
 ```
 
 ## abilityConnectionManager.on('disconnect')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'disconnect', sessionId: number, callback: Callback<EventCallbackInfo>): void
 
@@ -554,6 +565,8 @@ on(type: 'disconnect', sessionId: number, callback: Callback<EventCallbackInfo>)
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
+
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回401错误码。
 
 **参数：**
 
@@ -573,19 +586,18 @@ on(type: 'disconnect', sessionId: number, callback: Callback<EventCallbackInfo>)
 
 **示例：**
 
-```
-1. import { abilityConnectionManager } from '@kit.DistributedServiceKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { abilityConnectionManager } from '@kit.DistributedServiceKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. let sessionId = 100;
-5. abilityConnectionManager.on("disconnect", sessionId,(callbackInfo) => {
-6. hilog.info(0x0000, 'testTag', 'session disconnect, sessionId is', callbackInfo.sessionId);
-7. });
+// sessionId需通过createAbilityConnectionSession接口创建并获取，此处仅为示例
+let sessionId = 100;
+abilityConnectionManager.on("disconnect", sessionId,(callbackInfo) => {
+  hilog.info(0x0000, 'testTag', 'session disconnect, sessionId is', callbackInfo.sessionId);
+});
 ```
 
 ## abilityConnectionManager.off('disconnect')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'disconnect', sessionId: number, callback?: Callback<EventCallbackInfo>): void
 
@@ -595,13 +607,15 @@ off(type: 'disconnect', sessionId: number, callback?: Callback<EventCallbackInfo
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回401错误码。
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'disconnect'。 |
+| type | string | 是 | 事件回调类型，支持的事件为'disconnect'，需通过[abilityConnectionManager.on('disconnect')](js-apis-distributed-abilityconnectionmanager.md#abilityconnectionmanagerondisconnect)注册后才能取消。 |
 | sessionId | number | 是 | 创建的协同会话ID。 |
-| callback | Callback<[EventCallbackInfo](js-apis-distributed-abilityconnectionmanager.md#eventcallbackinfo)> | 否 | 注册的回调函数。 |
+| callback | Callback<[EventCallbackInfo](js-apis-distributed-abilityconnectionmanager.md#eventcallbackinfo)> | 否 | 要取消的回调函数，不传则取消所有该事件的回调监听。 |
 
 **错误码：**
 
@@ -613,17 +627,16 @@ off(type: 'disconnect', sessionId: number, callback?: Callback<EventCallbackInfo
 
 **示例：**
 
-```
-1. import { abilityConnectionManager } from '@kit.DistributedServiceKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { abilityConnectionManager } from '@kit.DistributedServiceKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. let sessionId = 100;
-5. abilityConnectionManager.off("disconnect", sessionId);
+// sessionId需通过createAbilityConnectionSession接口创建并获取，此处仅为示例
+let sessionId = 101;
+abilityConnectionManager.off("disconnect", sessionId);
 ```
 
 ## abilityConnectionManager.on('receiveMessage')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'receiveMessage', sessionId: number, callback: Callback<EventCallbackInfo>): void
 
@@ -632,6 +645,8 @@ on(type: 'receiveMessage', sessionId: number, callback: Callback<EventCallbackIn
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
+
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回401错误码。
 
 **参数：**
 
@@ -651,19 +666,18 @@ on(type: 'receiveMessage', sessionId: number, callback: Callback<EventCallbackIn
 
 **示例：**
 
-```
-1. import { abilityConnectionManager } from '@kit.DistributedServiceKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { abilityConnectionManager } from '@kit.DistributedServiceKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. let sessionId = 100;
-5. abilityConnectionManager.on("receiveMessage", sessionId,(callbackInfo) => {
-6. hilog.info(0x0000, 'testTag', 'receiveMessage, sessionId is', callbackInfo.sessionId);
-7. });
+// sessionId需通过createAbilityConnectionSession接口创建并获取，此处仅为示例
+let sessionId = 100;
+abilityConnectionManager.on("receiveMessage", sessionId,(callbackInfo) => {
+  hilog.info(0x0000, 'testTag', 'receiveMessage, sessionId is', callbackInfo.sessionId);
+});
 ```
 
 ## abilityConnectionManager.off('receiveMessage')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'receiveMessage', sessionId: number, callback?: Callback<EventCallbackInfo>): void
 
@@ -673,13 +687,15 @@ off(type: 'receiveMessage', sessionId: number, callback?: Callback<EventCallback
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回401错误码。
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'receiveMessage'。 |
+| type | string | 是 | 事件回调类型，支持的事件为'receiveMessage'，需通过[abilityConnectionManager.on('receiveMessage')](js-apis-distributed-abilityconnectionmanager.md#abilityconnectionmanageronreceivemessage)注册后才能取消。 |
 | sessionId | number | 是 | 创建的协同会话ID。 |
-| callback | Callback<[EventCallbackInfo](js-apis-distributed-abilityconnectionmanager.md#eventcallbackinfo)> | 否 | 注册的回调函数。 |
+| callback | Callback<[EventCallbackInfo](js-apis-distributed-abilityconnectionmanager.md#eventcallbackinfo)> | 否 | 要取消的回调函数，不传则取消所有该事件的回调监听。 |
 
 **错误码：**
 
@@ -691,17 +707,16 @@ off(type: 'receiveMessage', sessionId: number, callback?: Callback<EventCallback
 
 **示例：**
 
-```
-1. import { abilityConnectionManager } from '@kit.DistributedServiceKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { abilityConnectionManager } from '@kit.DistributedServiceKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. let sessionId = 100;
-5. abilityConnectionManager.off("receiveMessage", sessionId);
+// sessionId需通过createAbilityConnectionSession接口创建并获取，此处仅为示例
+let sessionId = 100;
+abilityConnectionManager.off("receiveMessage", sessionId);
 ```
 
 ## abilityConnectionManager.on('receiveData')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'receiveData', sessionId: number, callback: Callback<EventCallbackInfo>): void
 
@@ -710,6 +725,8 @@ on(type: 'receiveData', sessionId: number, callback: Callback<EventCallbackInfo>
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
+
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回401错误码。
 
 **参数：**
 
@@ -729,19 +746,18 @@ on(type: 'receiveData', sessionId: number, callback: Callback<EventCallbackInfo>
 
 **示例：**
 
-```
-1. import { abilityConnectionManager } from '@kit.DistributedServiceKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { abilityConnectionManager } from '@kit.DistributedServiceKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. let sessionId = 100;
-5. abilityConnectionManager.on("receiveData", sessionId,(callbackInfo) => {
-6. hilog.info(0x0000, 'testTag', 'receiveData, sessionId is', callbackInfo.sessionId);
-7. });
+// sessionId需通过createAbilityConnectionSession接口创建并获取，此处仅为示例
+let sessionId = 100;
+abilityConnectionManager.on("receiveData", sessionId,(callbackInfo) => {
+  hilog.info(0x0000, 'testTag', 'receiveData, sessionId is', callbackInfo.sessionId);
+});
 ```
 
 ## abilityConnectionManager.off('receiveData')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'receiveData', sessionId: number, callback?: Callback<EventCallbackInfo>): void
 
@@ -751,13 +767,15 @@ off(type: 'receiveData', sessionId: number, callback?: Callback<EventCallbackInf
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回401错误码。
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'receiveData'，完成。 |
+| type | string | 是 | 事件回调类型，支持的事件为'receiveData'，需通过[abilityConnectionManager.on('receiveData')](js-apis-distributed-abilityconnectionmanager.md#abilityconnectionmanageronreceivedata)注册后才能取消。 |
 | sessionId | number | 是 | 创建的协同会话ID。 |
-| callback | Callback<[EventCallbackInfo](js-apis-distributed-abilityconnectionmanager.md#eventcallbackinfo)> | 否 | 注册的回调函数。 |
+| callback | Callback<[EventCallbackInfo](js-apis-distributed-abilityconnectionmanager.md#eventcallbackinfo)> | 否 | 要取消的回调函数，不传则取消所有该事件的回调监听。 |
 
 **错误码：**
 
@@ -769,38 +787,39 @@ off(type: 'receiveData', sessionId: number, callback?: Callback<EventCallbackInf
 
 **示例：**
 
-```
-1. import { abilityConnectionManager } from '@kit.DistributedServiceKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { abilityConnectionManager } from '@kit.DistributedServiceKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. let sessionId = 100;
-5. abilityConnectionManager.off("receiveData", sessionId);
+// sessionId需通过createAbilityConnectionSession接口创建并获取，此处仅为示例
+let sessionId = 100;
+abilityConnectionManager.off("receiveData", sessionId);
 ```
 
 ## abilityConnectionManager.sendMessage
 
-PhonePC/2in1TabletTVWearable
-
 sendMessage(sessionId: number, msg: string): Promise<void>
 
-应用连接成功后，设备A或设备B可向对端设备发送文本信息。
+创建协同会话成功并获得会话ID、调用connect接口建立连接成功后，设备A或设备B可向对端设备发送文本信息。使用Promise异步回调。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
 
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回401错误码。
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| sessionId | number | 是 | 协同会话ID。 |
-| msg | string | 是 | 文本信息内容（内容最大限制为1KB）。 |
+| sessionId | number | 是 | 协同会话ID。由createAbilityConnectionSession接口返回。 |
+| msg | string | 是 | 文本信息内容（内容最大限制为1KB）。超出长度限制时返回错误码401。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的promise对象。 |
+| Promise<void> | 无返回结果的Promise对象。消息发送成功时resolve，发送失败时reject。 |
 
 **错误码：**
 
@@ -812,29 +831,29 @@ sendMessage(sessionId: number, msg: string): Promise<void>
 
 **示例：**
 
-```
-1. import { abilityConnectionManager } from '@kit.DistributedServiceKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { abilityConnectionManager } from '@kit.DistributedServiceKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. let sessionId = 100;
-5. abilityConnectionManager.sendMessage(sessionId, "message send success").then(() => {
-6. hilog.info(0x0000, 'testTag', "sendMessage success");
-7. }).catch(() => {
-8. hilog.error(0x0000, 'testTag', "connect failed");
-9. })
+let sessionId = 100;
+abilityConnectionManager.sendMessage(sessionId, "message send success").then(() => {
+  hilog.info(0x0000, 'testTag', "sendMessage success");
+}).catch(() => {
+  hilog.error(0x0000, 'testTag', "sendMessage failed");
+})
 ```
 
 ## abilityConnectionManager.sendData
 
-PhonePC/2in1TabletTVWearable
-
 sendData(sessionId: number, data: ArrayBuffer): Promise<void>
 
-应用连接成功后，设备A或设备B可向对端设备发送[ArrayBuffer](../harmonyos-guides/arraybuffer-object.md)字节流。
+创建协同会话成功并获得会话ID、应用连接成功后，设备A或设备B可向对端设备发送[ArrayBuffer](../harmonyos-guides/arraybuffer-object.md)字节流。使用Promise异步回调。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
+
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回401错误码。
 
 **参数：**
 
@@ -847,7 +866,7 @@ sendData(sessionId: number, data: ArrayBuffer): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的promise对象。 |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **错误码：**
 
@@ -859,27 +878,27 @@ sendData(sessionId: number, data: ArrayBuffer): Promise<void>
 
 **示例：**
 
-```
-1. import { abilityConnectionManager } from '@kit.DistributedServiceKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { util } from '@kit.ArkTS';
+```ts
+import { abilityConnectionManager } from '@kit.DistributedServiceKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { util } from '@kit.ArkTS';
+ 
+let textEncoder = util.TextEncoder.create("utf-8");
+const arrayBuffer  = textEncoder.encodeInto("data send success");
 
-5. let textEncoder = util.TextEncoder.create("utf-8");
-6. const arrayBuffer  = textEncoder.encodeInto("data send success");
-
-8. let sessionId = 100;
-9. abilityConnectionManager.sendData(sessionId, arrayBuffer.buffer).then(() => {
-10. hilog.info(0x0000, 'testTag', "sendMessage success");
-11. }).catch(() => {
-12. hilog.info(0x0000, 'testTag', "sendMessage failed");
-13. })
+let sessionId = 100;
+abilityConnectionManager.sendData(sessionId, arrayBuffer.buffer).then(() => {
+  hilog.info(0x0000, 'testTag', "sendData success");
+}).catch(() => {
+  hilog.error(0x0000, 'testTag', "sendData failed");
+})
 ```
 
 ## PeerInfo
 
-PhonePC/2in1TabletTVWearable
-
 应用协同信息。
+
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回401错误码。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
@@ -887,17 +906,17 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| deviceId | string | 否 | 否 | 对端设备ID。 |
-| bundleName | string | 否 | 否 | 对端应用的包名。 |
-| moduleName | string | 否 | 否 | 对端应用的模块名。 |
-| abilityName | string | 否 | 否 | 对端应用的组件名。 |
-| serviceName | string | 否 | 是 | 应用设置的服务名称。 |
+| deviceId | string | 否 | 否 | 对端设备的网络ID，用于标识要连接的远程设备。可通过分布式设备管理接口getAvailableDeviceListSync获取。 |
+| bundleName | string | 否 | 否 | 对端应用的包名，用于唯一标识要连接的应用。需与对端应用的bundleName保持一致。 |
+| moduleName | string | 否 | 否 | 对端应用的模块名，用于标识要连接的应用模块。通常为'entry'或其他自定义模块名。 |
+| abilityName | string | 否 | 否 | 对端应用的组件名，用于标识要连接的UIAbility组件。需与对端应用的abilityName保持一致。 |
+| serviceName | string | 否 | 是 | 应用设置的服务名称。若设置此值，需与createAbilityConnectionSession接口的serviceName参数保持一致。不设置此值时，使用默认服务名称。 |
 
 ## ConnectOptions
 
-PhonePC/2in1TabletTVWearable
-
 应用连接时所需的连接选项。
+
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回401错误码。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
@@ -905,15 +924,15 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| needSendData | boolean | 否 | 是 | true代表需要传输数据，false代表不需要传输数据。 |
-| startOptions | [StartOptionParams](js-apis-distributed-abilityconnectionmanager.md#startoptionparams) | 否 | 是 | 配置应用启动选项。 |
-| parameters | Record<string, string> | 否 | 是 | 配置连接所需的额外信息。 |
+| needSendData | boolean | 否 | 是 | 是否需要传输数据。传入true表示需要传输数据（可调用sendMessage和sendData方法），传入false表示不需要传输数据。不传入时默认为false。 |
+| startOptions | [StartOptionParams](js-apis-distributed-abilityconnectionmanager.md#startoptionparams) | 否 | 是 | 应用启动选项。START\_IN\_FOREGROUND（值为0）表示将对端应用启动至前台，适合需要用户交互的场景。不传入时使用系统默认启动配置。 |
+| parameters | Record<string, string> | 否 | 是 | 配置连接所需的额外信息。当需要传递自定义参数到对端设备时传入此参数，例如身份标识、业务标识等。不传入时不传递额外信息。 |
 
 ## ConnectResult
 
-PhonePC/2in1TabletTVWearable
-
 连接的结果。
+
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回401错误码。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
@@ -921,15 +940,15 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| isConnected | boolean | 否 | 否 | true表示连接成功，false表示连接失败。 |
-| errorCode | [ConnectErrorCode](js-apis-distributed-abilityconnectionmanager.md#connecterrorcode) | 否 | 是 | 表示连接错误码。 |
-| reason | string | 否 | 是 | 表示拒绝连接的原因。 |
+| isConnected | boolean | 否 | 否 | true表示连接成功；false表示连接失败，具体原因请查看errorCode字段或reason字段。 |
+| errorCode | [ConnectErrorCode](js-apis-distributed-abilityconnectionmanager.md#connecterrorcode) | 否 | 是 | 表示连接错误码。连接失败时存在，用于标识具体的错误原因。连接成功时不存在。 |
+| reason | string | 否 | 是 | 表示拒绝连接的原因，仅在连接被拒绝时返回。该值为对端应用调用reject接口时传入的reason参数，用于告知本端拒绝的具体原因。连接成功或未被拒绝时无此字段。 |
 
 ## EventCallbackInfo
 
-PhonePC/2in1TabletTVWearable
-
 回调方法的接收信息。
+
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回401错误码。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
@@ -938,15 +957,15 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | sessionId | number | 否 | 否 | 表示当前事件对应的协同会话ID。 |
-| reason | [DisconnectReason](js-apis-distributed-abilityconnectionmanager.md#disconnectreason) | 否 | 是 | 表示断连原因。 |
-| msg | string | 否 | 是 | 表示接收的消息。 |
-| data | ArrayBuffer | 否 | 是 | 表示接收的字节流。 |
+| reason | [DisconnectReason](js-apis-distributed-abilityconnectionmanager.md#disconnectreason) | 否 | 是 | 表示断连原因。触发disconnect事件时存在，用于标识具体的断连原因。其他事件类型下不存在。 |
+| msg | string | 否 | 是 | 表示接收的消息。触发receiveMessage事件时存在，包含接收到的文本消息内容。其他事件类型下不存在。 |
+| data | ArrayBuffer | 否 | 是 | 表示接收的字节流。触发receiveData事件时存在，包含接收到的二进制数据。其他事件类型下不存在。 |
 
 ## CollaborateEventInfo
 
-PhonePC/2in1TabletTVWearable
-
 协同事件信息。
+
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回401错误码。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
@@ -954,14 +973,14 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| eventType | [CollaborateEventType](js-apis-distributed-abilityconnectionmanager.md#collaborateeventtype) | 否 | 否 | 表示协同事件的类型。 |
-| eventMsg | string | 否 | 是 | 表示协同事件的消息内容。 |
+| eventType | [CollaborateEventType](js-apis-distributed-abilityconnectionmanager.md#collaborateeventtype) | 否 | 否 | 表示协同事件的类型（0表示SEND\_FAILURE，1表示COLOR\_SPACE\_CONVERSION\_FAILURE）。 |
+| eventMsg | string | 否 | 是 | 表示协同事件的消息内容。eventType为SEND\_FAILURE或COLOR\_SPACE\_CONVERSION\_FAILURE时存在，包含事件相关的详细消息信息。 |
 
 ## ConnectErrorCode
 
-PhonePC/2in1TabletTVWearable
-
 连接的错误码。
+
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回401错误码。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
@@ -978,9 +997,9 @@ PhonePC/2in1TabletTVWearable
 
 ## StartOptionParams
 
-PhonePC/2in1TabletTVWearable
-
 启动选项参数的枚举。
+
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回401错误码。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
@@ -992,9 +1011,9 @@ PhonePC/2in1TabletTVWearable
 
 ## CollaborateEventType
 
-PhonePC/2in1TabletTVWearable
-
 协同事件类型的枚举。
+
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回401错误码。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
@@ -1002,14 +1021,14 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| SEND\_FAILURE | 0 | 表示任务发送失败。 |
-| COLOR\_SPACE\_CONVERSION\_FAILURE | 1 | 表示色彩空间转换失败。 |
+| SEND\_FAILURE | 0 | 表示任务发送失败。在跨设备协同过程中，当发送协作任务（如协作事件）失败时产生此事件，常见原因包括网络异常、对端设备不可达等。 |
+| COLOR\_SPACE\_CONVERSION\_FAILURE | 1 | 表示色彩空间转换失败。在跨设备图像协同场景下，当需要将图像数据从源设备色彩空间转换为目标设备色彩空间格式失败时产生此事件，常见原因包括色彩格式不支持或转换参数错误。 |
 
 ## DisconnectReason
 
-PhonePC/2in1TabletTVWearable
-
 当前断连原因的枚举。
+
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回401错误码。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
@@ -1023,9 +1042,9 @@ PhonePC/2in1TabletTVWearable
 
 ## CollaborationKeys
 
-PhonePC/2in1TabletTVWearable
+提供应用协作键值的枚举。
 
-应用协作键值的枚举。
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回401错误码。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
@@ -1039,7 +1058,7 @@ PhonePC/2in1TabletTVWearable
 
 ## CollaborationValues
 
-PhonePC/2in1TabletTVWearable
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备或被企业策略管控设备中调用会返回401错误码。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 

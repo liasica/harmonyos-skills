@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-accessibil
 title: 聚焦输入框，拉起小艺键盘输入时会重复朗读，比如输入“1”，会读“1 1”
 breadcrumb: FAQ > 应用框架开发 > 无障碍和本地化 > 无障碍开发（Accessibility） > 聚焦输入框，拉起小艺键盘输入时会重复朗读，比如输入“1”，会读“1 1”
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:33+08:00
-doc_updated_at: 2026-04-21
+scraped_at: 2026-09-02T15:21:53+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:bb073587835b562f4e1c89f66e1b51bd85fadf0caa8f9db2fdb41e47b91e743d
 ---
 

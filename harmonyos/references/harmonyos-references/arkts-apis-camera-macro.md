@@ -3,37 +3,33 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (Macro)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (Macro)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:36+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:79c2133c2c6a4b2508d749e11cd6a654c4840ac077ce629dc04ec6007b7c6af6
+scraped_at: 2026-09-02T15:02:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d4aa3a567bf187d0cf7799e00564d5e0bbd28df906ed0642beae3dc026b83270
 ---
 
-Macro 继承自 [MacroQuery](arkts-apis-camera-macroquery.md)。
+Macro继承自[MacroQuery](arkts-apis-camera-macroquery.md)。
 
 提供使能微距能力的接口。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Interface首批接口从API version 19开始支持。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { camera } from '@kit.CameraKit';
+```ts
+import { camera } from '@kit.CameraKit';
 ```
 
 ## enableMacro19+
-
-PhonePC/2in1TabletTVWearable
 
 enableMacro(enabled: boolean): void
 
 使能当前的微距能力。
 
-说明
+**说明** 
 
 使用该接口前，需要先通过[isMacroSupported](arkts-apis-camera-macroquery.md#ismacrosupported19)接口查询当前设备是否支持微距能力。
 
@@ -58,11 +54,11 @@ enableMacro(enabled: boolean): void
 
 **示例：**
 
-```
-1. function enableMacro(photoSession: camera.PhotoSession): void {
-2. let isSupported: boolean = photoSession.isMacroSupported();
-3. if (isSupported) {
-4. photoSession.enableMacro(true);
-5. }
-6. }
+```ts
+function enableMacro(photoSession: camera.PhotoSession): void {
+  let isSupported: boolean = photoSession.isMacroSupported();
+  if (isSupported) {
+    photoSession.enableMacro(true);
+  }
+}
 ```

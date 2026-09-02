@@ -3,16 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-tele
 title: telephony_radio_type.h
 breadcrumb: API参考 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > C API > 头文件 > telephony_radio_type.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:22+08:00
-doc_updated_at: 2026-03-19
-content_hash: sha256:494e583789ae9156139112f989fccf9e8a826d97a3845bfb0082db7302c2f56a
+scraped_at: 2026-09-02T15:02:00+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c2e7112906f6f49575665a6a397a9395325151a11561574fe12b9ef393592d6e
 ---
 
 ## 概述
 
-PhoneTabletWearable
-
-定义网络搜索模块的C接口需要的数据结构。
+定义网络搜索模块的C接口需要的数据结构。包括网络状态信息、网络注册状态、无线接入技术类型、NSA网络注册状态以及错误码类型等，适用于需要在应用中获取设备网络注册状态、无线接入技术信息并据此进行业务处理的场景。
 
 **引用文件：** <telephony/core\_service/telephony\_radio\_type.h>
 
@@ -26,11 +24,7 @@ PhoneTabletWearable
 
 ## 汇总
 
-PhoneTabletWearable
-
 ### 结构体
-
-PhoneTabletWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,18 +32,14 @@ PhoneTabletWearable
 
 ### 枚举
 
-PhoneTabletWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [Telephony\_RadioResult](capi-telephony-radio-type-h.md#telephony_radioresult) | Telephony\_RadioResult | 错误码类型枚举。 |
 | [Telephony\_RegState](capi-telephony-radio-type-h.md#telephony_regstate) | Telephony\_RegState | 设备的网络注册状态类型。 |
 | [Telephony\_RadioTechnology](capi-telephony-radio-type-h.md#telephony_radiotechnology) | Telephony\_RadioTechnology | 设备的无线接入技术类型。 |
-| [Telephony\_NsaState](capi-telephony-radio-type-h.md#telephony_nsastate) | Telephony\_NsaState | 设备的NSA网络注册状态类型。 |
+| [Telephony\_NsaState](capi-telephony-radio-type-h.md#telephony_nsastate) | Telephony\_NsaState | 设备的NSA（Non-Standalone，非独立组网）网络注册状态类型。 |
 
 ### 宏定义
-
-PhoneTabletWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -58,14 +48,10 @@ PhoneTabletWearable
 
 ## 枚举类型说明
 
-PhoneTabletWearable
-
 ### Telephony\_RadioResult
 
-PhoneTabletWearable
-
-```
-1. enum Telephony_RadioResult
+```c
+enum Telephony_RadioResult
 ```
 
 **描述**
@@ -85,10 +71,8 @@ PhoneTabletWearable
 
 ### Telephony\_RegState
 
-PhoneTabletWearable
-
-```
-1. enum Telephony_RegState
+```c
+enum Telephony_RegState
 ```
 
 **描述**
@@ -106,10 +90,8 @@ PhoneTabletWearable
 
 ### Telephony\_RadioTechnology
 
-PhoneTabletWearable
-
-```
-1. enum Telephony_RadioTechnology
+```c
+enum Telephony_RadioTechnology
 ```
 
 **描述**
@@ -125,26 +107,24 @@ PhoneTabletWearable
 | TEL\_RADIO\_TECHNOLOGY\_1XRTT = 2 | 无线接入技术1XRTT（Single-Carrier Radio Transmission Technology）。 |
 | TEL\_RADIO\_TECHNOLOGY\_WCDMA = 3 | 无线接入技术WCDMA（Wideband Code Division Multiple Access）。 |
 | TEL\_RADIO\_TECHNOLOGY\_HSPA = 4 | 无线接入技术HSPA（High Speed Packet Access）。 |
-| TEL\_RADIO\_TECHNOLOGY\_HSPAP = 5 | 无线接入技术HSPAP（High Speed Packet Access (HSPA+) ）。 |
+| TEL\_RADIO\_TECHNOLOGY\_HSPAP = 5 | 无线接入技术HSPAP（High Speed Packet Access PLUS）。 |
 | TEL\_RADIO\_TECHNOLOGY\_TD\_SCDMA = 6 | 无线接入技术TDSCDMA（Time Division-Synchronous Code Division Multiple Access）。 |
 | TEL\_RADIO\_TECHNOLOGY\_EVDO = 7 | 无线接入技术EVDO（Evolution Data Optimized）。 |
-| TEL\_RADIO\_TECHNOLOGY\_EHRPD = 8 | 无线接入技术EHRPD（Evolved High Rate Package Data）。 |
+| TEL\_RADIO\_TECHNOLOGY\_EHRPD = 8 | 无线接入技术EHRPD（Evolved High Rate Packet Data）。 |
 | TEL\_RADIO\_TECHNOLOGY\_LTE = 9 | 无线接入技术LTE（Long Term Evolution）。 |
 | TEL\_RADIO\_TECHNOLOGY\_LTE\_CA = 10 | 无线接入技术LTE\_CA（Long Term Evolution\_Carrier Aggregation）。 |
-| TEL\_RADIO\_TECHNOLOGY\_IWLAN = 11 | 无线接入技术IWLAN（Industrial Wireless LAN）。 |
+| TEL\_RADIO\_TECHNOLOGY\_IWLAN = 11 | 无线接入技术IWLAN（Interworking Wireless LAN）。 |
 | TEL\_RADIO\_TECHNOLOGY\_NR = 12 | 无线接入技术NR（New Radio）。 |
 
 ### Telephony\_NsaState
 
-PhoneTabletWearable
-
-```
-1. enum Telephony_NsaState
+```c
+enum Telephony_NsaState
 ```
 
 **描述**
 
-设备的NSA网络注册状态类型。
+设备的NSA（Non-Standalone，非独立组网）网络注册状态类型。
 
 **起始版本：** 13
 

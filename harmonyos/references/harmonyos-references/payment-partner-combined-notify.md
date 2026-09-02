@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-p
 title: 合单支付结果回调通知
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 平台类商户/服务商 > 合单支付（仅支持平台类商户） > 合单支付结果回调通知
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:08+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ec563a80484c072727c255b33234c8d29f0afded436bb93b792977caf6f120b5
+scraped_at: 2026-09-02T15:03:05+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e1dec3240a4b7c6a156d8181eb041a62ebabe5364f91d9c639a1f1479f1bfb32
 ---
 
 ## 功能介绍
 
-用户支付完成后，华为支付服务器调用此接口向商户服务器发送支付关键事件通知。
+用户合单支付完成后，华为支付服务器调用此接口向开发者服务器发送支付关键事件通知。
 
-说明
+**说明** 
 
 1. 为保证回调请求的可靠性，系统具备重试机制，所以可能出现重发的通知。
 2. 订单状态需根据orderStatus字段判断。
@@ -20,7 +20,7 @@ content_hash: sha256:ec563a80484c072727c255b33234c8d29f0afded436bb93b792977caf6f
 ## 接口原型
 
 * **承载协议：** HTTPS POST
-* **接口方向：** 开发者服务器 -> 华为支付服务器
+* **接口方向：** 华为支付服务器 -> 开发者服务器
 * **接口URL：** URL由开发者在请求预下单接口时传递的callbackUrl
 * **数据格式：**
 
@@ -43,7 +43,7 @@ content_hash: sha256:ec563a80484c072727c255b33234c8d29f0afded436bb93b792977caf6f
 | combinedMercNo | 否 | String | 商户号。 |
 | combinedAppId | 否 | String | 商户申请并关联的应用id。 |
 | combinedSysTransOrderNo | 是 | String | 华为支付合单支付主订单号。 |
-| combinedMercOrderNo | 是 | String | 商户合单支付主订单号。由商户生成。 |
+| combinedMercOrderNo | 是 | String | 合单支付商户主订单号，由商户在创建合单支付订单时生成，商户需保证订单信息唯一性。最大长度46。 |
 | orderStatus | 否 | String | 订单状态：  - TRX\_SUCCESS：交易成功  - TRX\_FAILED：交易失败 |
 | payload | 是 | String | 预留信息，如商户请求时传递该参数，此时会原样返回。 |
 | subOrders | 是 | List<[SubOrderResult](payment-model.md#suborderresult)> | 子单交易结果详情。 |
@@ -51,34 +51,32 @@ content_hash: sha256:ec563a80484c072727c255b33234c8d29f0afded436bb93b792977caf6f
 
 ## 请求示例
 
-```
-1. POST /hw/pay/callback HTTP/1.1
-2. Content-Type: application/json;charset=UTF-8
-3. {
-4. "callbackId": "124070308575300049145189***",
-5. "callbackTime": "2023-08-29 10:29:14",
-6. "dataType": "plain",
-7. "resultCode": "000000",
-8. "resultDesc": "Success.",
-9. "sign": "MEYCIQDOsSJ5gL9mcYKi9usz4********************hAOd2P+Gu77jclylTWJOTThPxOdJs+2zsDv3sg38UY/Wy",
-10. "signType": "SM2",
-11. "combinedSysTransOrderNo": "123112802273686342***",
-12. "payload": "example-payload",
-13. "combinedMercOrderNo": "czl00120240705***",
-14. "orderStatus": "TRX_SUCCESS",
-15. "subOrders": [
-16. {
-17. "sysTransOrderNo": "1231171178343***",
-18. "mercOrderNo": "czl00120240705***",
-19. "orderStatus": "TRX_SUCCESS",
-20. "payload": "example-payload",
-21. "currency": "CNY",
-22. "totalAmount": 40,
-23. "payerAmount": 1,
-24. "paymentTools": "AGMT"
-25. }
-26. ]
-27. }
+```json
+POST /hw/pay/callback HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+{
+    "callbackId": "124070308575300049145189***",
+    "callbackTime": "2023-08-29 10:29:14",
+    "dataType": "plain",
+    "sign": "MEYCIQDOsSJ5gL9mcYKi9usz4********************hAOd2P+Gu77jclylTWJOTThPxOdJs+2zsDv3sg38UY/Wy",
+    "signType": "SM2",
+    "combinedSysTransOrderNo": "123112802273686342***",
+    "payload": "example-payload",
+    "combinedMercOrderNo": "czl00120240705***",
+    "orderStatus": "TRX_SUCCESS",
+    "subOrders": [
+        {
+            "sysTransOrderNo": "1231171178343***",
+            "mercOrderNo": "czl00120240705***",
+            "orderStatus": "TRX_SUCCESS",
+            "payload": "example-payload",
+            "currency": "CNY",
+            "totalAmount": 40,
+            "payerAmount": 1,
+            "paymentTools": "AGMT"
+        }
+    ]
+}
 ```
 
 ## 响应参数
@@ -98,11 +96,11 @@ content_hash: sha256:ec563a80484c072727c255b33234c8d29f0afded436bb93b792977caf6f
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json; charset=UTF-8
-3. {
-4. "resultCode": "000000",
-5. "resultDesc": "Success."
-6. }
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+{
+  "resultCode": "000000",
+  "resultDesc": "Success."
+}
 ```

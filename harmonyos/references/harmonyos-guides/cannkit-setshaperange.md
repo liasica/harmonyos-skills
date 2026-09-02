@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-setsh
 title: SetShapeRange
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > TensorDesc > SetShapeRange
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:01+08:00
+scraped_at: 2026-09-02T14:50:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:65bddbaae36d036139a5451595ddecc16321df9a29a725e0d23c5563fc5be535
+content_hash: sha256:b9b8cdfa6b73df8b85c79b46b238bc6bc41179f2811f16179c1337bf36ca2660
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:65bddbaae36d036139a5451595ddecc16321df9a29a725e0d23c5563fc5
 
 ## 函数原型
 
-```
-1. graphStatus SetShapeRange(const std::vector<std::pair<int64_t,int64_t>> &range);
+```cpp
+graphStatus SetShapeRange(const std::vector<std::pair<int64_t,int64_t>> &range);
 ```
 
 ## 参数说明

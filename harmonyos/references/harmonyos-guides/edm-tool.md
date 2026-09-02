@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/edm-tool
 title: edm工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > edm工具
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:27+08:00
+scraped_at: 2026-09-02T14:59:41+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:4aa220d21129f43d0ea48b505b186a3b162b15b794ea7a4eee54e402e06a0d3f
+content_hash: sha256:71cacee2f4187e23e82cb45479e571bd383be5690e492203edac47e1d4a8fa76
 ---
 
 Enterprise Device Manager（企业设备管理工具，简称为edm），为设备管理应用提供调试和测试能力，例如激活企业设备管理拓展能力、解除激活企业设备管理拓展能力。
@@ -24,18 +24,18 @@ Enterprise Device Manager（企业设备管理工具，简称为edm），为设�
 
 ## 帮助命令（help）
 
-```
-1. # 显示帮助信息
-2. edm help
+```bash
+# 显示帮助信息
+edm help
 ```
 
 ## 激活命令（enable-admin）
 
-```
-1. # 显示帮助信息
-2. edm enable-admin -h
-3. # 激活
-4. edm enable-admin -n <bundleName> -a <abilityName> [-t <adminType>]
+```bash
+# 显示帮助信息
+edm enable-admin -h
+# 激活
+edm enable-admin -n <bundleName> -a <abilityName> [-t <adminType>]
 ```
 
 **激活命令参数列表**
@@ -49,20 +49,20 @@ Enterprise Device Manager（企业设备管理工具，简称为edm），为设�
 
 **示例**：
 
-```
-1. # 激活一个所在应用包名为com.example.mdmsample，类名为EnterpriseAdminAbility的EnterpriseAdminExtensionAbility。
-2. edm enable-admin -n com.example.mdmsample -a com.example.mdmsample.EnterpriseAdminAbility
-3. # 执行结果
-4. enable-admin success.
+```bash
+# 激活一个所在应用包名为com.example.mdmsample，类名为EnterpriseAdminAbility的EnterpriseAdminExtensionAbility。
+edm enable-admin -n com.example.mdmsample -a com.example.mdmsample.EnterpriseAdminAbility
+# 执行结果
+enable-admin success.
 ```
 
 ## 解除激活命令（disable-admin）
 
-```
-1. # 显示帮助信息
-2. edm disable-admin -h
-3. # 解除激活
-4. edm disable-admin -n <bundleName>
+```bash
+# 显示帮助信息
+edm disable-admin -h
+# 解除激活
+edm disable-admin -n <bundleName>
 ```
 
 **解除激活命令参数列表**
@@ -74,11 +74,11 @@ Enterprise Device Manager（企业设备管理工具，简称为edm），为设�
 
 **示例**：
 
-```
-1. # 解除激活所在应用包名为com.example.mdmsample的EnterpriseAdminExtensionAbility。
-2. edm disable-admin -n com.example.mdmsample
-3. # 执行结果
-4. disable-admin success.
+```bash
+# 解除激活所在应用包名为com.example.mdmsample的EnterpriseAdminExtensionAbility。
+edm disable-admin -n com.example.mdmsample
+# 执行结果
+disable-admin success.
 ```
 
 ## edm工具错误信息

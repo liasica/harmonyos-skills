@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-64
 title: 系统目前是否支持webrtc的功能，规格是什么
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 系统目前是否支持webrtc的功能，规格是什么
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:45+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:53+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:fee57ebb4a211bf7ef69ff7f55568456ade56f5581023e2d3b1e9fb54956eb91
 ---
 

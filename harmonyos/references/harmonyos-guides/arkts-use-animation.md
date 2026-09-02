@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-use-ani
 title: 使用动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:55+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:a0e15466dba9d57327383f397312a1b73d06a040a44ce7081a290bbdc9b12168
+scraped_at: 2026-09-02T14:49:51+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:d96fb6861bdb77eed985882bbe242323823e51e0c434aeeca592175ab8ba6cd4
 ---
 
 * **[动画概述](arkts-animation.md)**
@@ -17,3 +17,4 @@ content_hash: sha256:a0e15466dba9d57327383f397312a1b73d06a040a44ce7081a290bbdc9b
 * **[动画衔接](arkts-animation-smoothing.md)**
 * **[动画效果](arkts-animation-effects.md)**
 * **[帧动画（ohos.animator）](arkts-animator.md)**
+* **[优化动画性能](arkts-animation-usage-guide.md)**

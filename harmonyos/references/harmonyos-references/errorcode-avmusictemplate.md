@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 音频模板错误码
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > 错误码 > 音频模板错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:30+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7a0d40754ea478cf39d221142b9fd83aa81c2b71b1972a5b0ab4e349b567f0a0
+scraped_at: 2026-09-02T15:02:25+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8e40b36f94afff9a59816d7b2419e46aa46431043d5049e81f19f260f9d72b80
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码](errorcode-universal.md)。
 
@@ -28,7 +28,7 @@ Failed to create the AVMusicTemplate.
 
 **处理步骤**
 
-可以尝试重启设备。
+重启设备。
 
 ## 35000002 音频模板控制器创建失败
 
@@ -42,11 +42,12 @@ Failed to create the AVMusicTemplate controller.
 
 **可能原因**
 
-创建controller的参数sessionId不合法。
+创建AVMusicTemplateController的参数sessionId不合法。sessionId需为有效的字符串格式，且对应已创建的AVMusicTemplate实例。
 
 **处理步骤**
 
-检查sessionId是否为空或者是否有创建过该sessionId对应的AVMusicTemplate的应用。
+1. 检查sessionId是否为空、是否合法。一个应用进程内，一个sessionId对应一个AVMusicTemplateController。
+2. 是否有创建过该sessionId对应的AVMusicTemplate的应用。
 
 ## 35000003 模板监听未注册
 
@@ -65,7 +66,7 @@ Template listener not registered.
 **处理步骤**
 
 1. 检查应用是否正常创建AVMusicTemplate实例。
-2. 检查应用内其他核心功能是否出现了异常。
+2. 检查应用内音频模板相关功能是否出现了异常。如AVMusicTemplate创建、控制器注册等。
 
 ## 35000004 未注册模板控制器回调
 
@@ -79,7 +80,7 @@ Controller callback not registered.
 
 **可能原因**
 
-controller callback 注册失败。
+控制器回调注册失败。
 
 **处理步骤**
 
@@ -102,7 +103,7 @@ AVMusicTemplate does not exist.
 
 **处理步骤**
 
-1. 检查应用是否正常创建AVMusicTemplate实例。
+1. 检查sessionId是否为空，并确认是否已为该sessionId创建过对应的AVMusicTemplate实例。
 2. 检查应用内其他核心功能是否出现了异常。
 
 ## 35000006 模板控制器不存在
@@ -158,7 +159,7 @@ AVMusicTemplate Manager services do not exist.
 
 **处理步骤**
 
-可以尝试重启设备。
+重启设备。
 
 ## 35000009 音频模板管理服务异常
 
@@ -177,9 +178,9 @@ AVMusicTemplate Manager services exception.
 **处理步骤**
 
 1. 检查应用内其他核心功能是否出现了异常。
-2. 尝试重启设备。
+2. 重启设备。
 
-## 350000010 数据超过了允许的最大传输容量
+## 35000010 数据超过了允许的最大传输容量
 
 **错误信息**
 
@@ -191,13 +192,13 @@ The data exceeds the maximum allowable transmission capacity.
 
 **可能原因**
 
-传输的数据超过允许传输的1MB容量限制。
+通过AVMusicTemplate相关接口传输的元数据超过1MB容量限制。
 
 **处理步骤**
 
-针对超过1MB的数据采用分批传输。
+将超过1MB的数据分批传输。
 
-## 350000011 数据写入错误，数据无效
+## 35000011 数据写入错误，数据无效
 
 **错误信息**
 
@@ -205,7 +206,7 @@ The data write error, data is invalid.
 
 **错误描述**
 
-写数据失败，数据不可用。
+数据写入失败，数据无效。
 
 **可能原因**
 
@@ -215,7 +216,7 @@ The data write error, data is invalid.
 
 检查待传输的数据是否存在不合法的属性或者值。
 
-## 350000012 音频模板错误
+## 35000012 音频模板错误
 
 **错误信息**
 

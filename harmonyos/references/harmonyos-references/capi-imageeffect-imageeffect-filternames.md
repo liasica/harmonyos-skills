@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: ImageEffect_FilterNames
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 结构体 > ImageEffect_FilterNames
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:38+08:00
-doc_updated_at: 2026-04-10
-content_hash: sha256:b0fe197b82fc48ea41e7bcdca142c4114961e99bc7528446d9b545b5a9a704a6
+scraped_at: 2026-09-02T15:02:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:767de38df1f970eacaf55164342c83c81667818f559b08db1145a887125cd866
 ---
 
-```
-1. typedef struct ImageEffect_FilterNames {...} ImageEffect_FilterNames
+```c
+typedef struct ImageEffect_FilterNames {...} ImageEffect_FilterNames
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 滤镜名信息。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 成员变量
-
-PhonePC/2in1TabletTV
 
 **支持C++语言语法的声明如下：**
 
@@ -48,8 +42,6 @@ PhonePC/2in1TabletTV
 
 ### 成员函数
 
-PhonePC/2in1TabletTV
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [OH\_EffectFilterInfo \*OH\_EffectFilterInfo\_Create()](capi-imageeffect-imageeffect-filternames.md#oh_effectfilterinfo_create) | OH\_EffectFilterInfo\_Create() | 创建OH\_EffectFilterInfo实例，调用[OH\_EffectFilterInfo\_Release](capi-imageeffect-imageeffect-filternames.md#oh_effectfilterinfo_release)进行资源释放。  **起始版本：** 12  **系统能力：** SystemCapability.Multimedia.ImageEffect.Core |
@@ -63,14 +55,10 @@ PhonePC/2in1TabletTV
 
 ## 成员函数说明
 
-PhonePC/2in1TabletTV
-
 ### OH\_EffectFilterInfo\_Create()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_EffectFilterInfo *OH_EffectFilterInfo_Create()
+```c
+OH_EffectFilterInfo *OH_EffectFilterInfo_Create()
 ```
 
 **描述**
@@ -89,10 +77,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilterInfo\_SetFilterName()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectFilterInfo_SetFilterName(OH_EffectFilterInfo *info, const char *name)
+```c
+ImageEffect_ErrorCode OH_EffectFilterInfo_SetFilterName(OH_EffectFilterInfo *info, const char *name)
 ```
 
 **描述**
@@ -118,10 +104,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilterInfo\_GetFilterName()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectFilterInfo_GetFilterName(OH_EffectFilterInfo *info, char **name)
+```c
+ImageEffect_ErrorCode OH_EffectFilterInfo_GetFilterName(OH_EffectFilterInfo *info, char **name)
 ```
 
 **描述**
@@ -147,10 +131,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilterInfo\_SetSupportedBufferTypes()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectFilterInfo_SetSupportedBufferTypes(OH_EffectFilterInfo *info, uint32_t size,ImageEffect_BufferType *bufferTypeArray)
+```c
+ImageEffect_ErrorCode OH_EffectFilterInfo_SetSupportedBufferTypes(OH_EffectFilterInfo *info, uint32_t size,ImageEffect_BufferType *bufferTypeArray)
 ```
 
 **描述**
@@ -177,10 +159,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilterInfo\_GetSupportedBufferTypes()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectFilterInfo_GetSupportedBufferTypes(OH_EffectFilterInfo *info, uint32_t *size,ImageEffect_BufferType **bufferTypeArray)
+```c
+ImageEffect_ErrorCode OH_EffectFilterInfo_GetSupportedBufferTypes(OH_EffectFilterInfo *info, uint32_t *size,ImageEffect_BufferType **bufferTypeArray)
 ```
 
 **描述**
@@ -207,10 +187,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilterInfo\_SetSupportedFormats()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectFilterInfo_SetSupportedFormats(OH_EffectFilterInfo *info, uint32_t size,ImageEffect_Format *formatArray)
+```c
+ImageEffect_ErrorCode OH_EffectFilterInfo_SetSupportedFormats(OH_EffectFilterInfo *info, uint32_t size,ImageEffect_Format *formatArray)
 ```
 
 **描述**
@@ -237,10 +215,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilterInfo\_GetSupportedFormats()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectFilterInfo_GetSupportedFormats(OH_EffectFilterInfo *info, uint32_t *size,ImageEffect_Format **formatArray)
+```c
+ImageEffect_ErrorCode OH_EffectFilterInfo_GetSupportedFormats(OH_EffectFilterInfo *info, uint32_t *size,ImageEffect_Format **formatArray)
 ```
 
 **描述**
@@ -267,10 +243,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_EffectFilterInfo\_Release()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_EffectFilterInfo_Release(OH_EffectFilterInfo *info)
+```c
+ImageEffect_ErrorCode OH_EffectFilterInfo_Release(OH_EffectFilterInfo *info)
 ```
 
 **描述**

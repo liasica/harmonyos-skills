@@ -3,16 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_xcomponent_key_event.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_xcomponent_key_event.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:48+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:b814a6a41ddea59ae9e76eafffda6bbd7dcd9af304d7739b52e288a67afcbf68
+scraped_at: 2026-09-02T15:01:19+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6cec515e239a303b3d3daee9e1a48c74adfe13d112dda1f7c24d304cfacc7356
 ---
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-声明用于访问Native XComponent键盘事件所使用到的枚举类型。
+声明用于访问Native XComponent按键事件所使用到的枚举类型。
 
 **引用文件：** <ace/xcomponent/native\_xcomponent\_key\_event.h>
 
@@ -28,11 +26,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -41,14 +35,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_NativeXComponent\_KeyCode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_NativeXComponent_KeyCode
+```c
+enum OH_NativeXComponent_KeyCode
 ```
 
 **描述：**
@@ -129,8 +119,8 @@ PhonePC/2in1TabletTVWearable
 | KEY\_TAB = 2049 | Tab键。 |
 | KEY\_SPACE = 2050 | 空格键。 |
 | KEY\_SYM = 2051 | 符号修改器按键。 |
-| KEY\_EXPLORER = 2052 | 浏览器功能键，此键用于启动浏览器应用程序。 |
-| KEY\_ENVELOPE = 2053 | 电子邮件功能键，此键用于启动电子邮件应用程序。 |
+| KEY\_EXPLORER = 2052 | 浏览器功能键，用于启动浏览器应用程序。 |
+| KEY\_ENVELOPE = 2053 | 电子邮件功能键，用于启动电子邮件应用程序。 |
 | KEY\_ENTER = 2054 | 回车键。 |
 | KEY\_DEL = 2055 | 退格键。 |
 | KEY\_GRAVE = 2056 | 按键'`'。 |
@@ -140,7 +130,7 @@ PhonePC/2in1TabletTVWearable
 | KEY\_RIGHT\_BRACKET = 2060 | 按键']'。 |
 | KEY\_BACKSLASH = 2061 | 按键'\'。 |
 | KEY\_SEMICOLON = 2062 | 按键';'。 |
-| KEY\_APOSTROPHE = 2063 | 按键''' (单引号)。 |
+| KEY\_APOSTROPHE = 2063 | 按键'''（单引号）。 |
 | KEY\_SLASH = 2064 | 按键'/'。 |
 | KEY\_AT = 2065 | 按键'@'。 |
 | KEY\_PLUS = 2066 | 按键'+'。 |
@@ -203,24 +193,24 @@ PhonePC/2in1TabletTVWearable
 | KEY\_VIRTUAL\_MULTITASK = 2210 | 虚拟多任务键。 |
 | KEY\_SLEEP = 2600 | 睡眠键。 |
 | KEY\_ZENKAKU\_HANKAKU = 2601 | 日文全宽/半宽键。 |
-| KEY\_102ND = 2602 | 102nd按键。 |
+| KEY\_102ND = 2602 | 非美式键盘布局（102键）上的额外按键，通常位于左Shift键右侧（对应'<'、'>'或'|'、''字符）。 |
 | KEY\_RO = 2603 | 日文Ro键。 |
 | KEY\_KATAKANA = 2604 | 日文片假名键。 |
 | KEY\_HIRAGANA = 2605 | 日文平假名键。 |
 | KEY\_HENKAN = 2606 | 日文转换键。 |
-| KEY\_KATAKANA\_HIRAGANA = 2607 | 日语片假名/平假名键。 |
+| KEY\_KATAKANA\_HIRAGANA = 2607 | 日文片假名/平假名键。 |
 | KEY\_MUHENKAN = 2608 | 日文非转换键。 |
 | KEY\_LINEFEED = 2609 | 换行键。 |
 | KEY\_MACRO = 2610 | 宏键。 |
-| KEY\_NUMPAD\_PLUSMINUS = 2611 | 数字键盘上的加号/减号键。 |
-| KEY\_SCALE = 2612 | 扩展键。 |
-| KEY\_HANGUEL = 2613 | 日文韩语键。 |
-| KEY\_HANJA = 2614 | 日文汉语键。 |
+| KEY\_NUMPAD\_PLUSMINUS = 2611 | 小键盘加号/减号键。 |
+| KEY\_SCALE = 2612 | 缩放键。 |
+| KEY\_HANGUEL = 2613 | 韩语键。 |
+| KEY\_HANJA = 2614 | 韩语汉字键。 |
 | KEY\_YEN = 2615 | 日元键。 |
 | KEY\_STOP = 2616 | 停止键。 |
 | KEY\_AGAIN = 2617 | 重复键。 |
-| KEY\_PROPS = 2618 | 道具键。 |
-| KEY\_UNDO = 2619 | 撤消键。 |
+| KEY\_PROPS = 2618 | 属性键。 |
+| KEY\_UNDO = 2619 | 撤销键。 |
 | KEY\_COPY = 2620 | 复制键。 |
 | KEY\_OPEN = 2621 | 打开键。 |
 | KEY\_PASTE = 2622 | 粘贴键。 |
@@ -241,7 +231,7 @@ PhonePC/2in1TabletTVWearable
 | KEY\_SCROLLUP = 2638 | 向上滚动键。 |
 | KEY\_SCROLLDOWN = 2639 | 向下滚动键。 |
 | KEY\_NEW = 2640 | 新建键。 |
-| KEY\_REDO = 2641 | 恢复键。 |
+| KEY\_REDO = 2641 | 重做键。 |
 | KEY\_CLOSE = 2642 | 关闭键。 |
 | KEY\_PLAY = 2643 | 播放键。 |
 | KEY\_BASSBOOST = 2644 | 低音增强键。 |
@@ -250,13 +240,13 @@ PhonePC/2in1TabletTVWearable
 | KEY\_FINANCE = 2647 | 金融键。 |
 | KEY\_CANCEL = 2648 | 取消键。 |
 | KEY\_KBDILLUM\_TOGGLE = 2649 | 键盘灯光切换键。 |
-| KEY\_KBDILLUM\_DOWN = 2650 | 键盘灯光调亮键。 |
-| KEY\_KBDILLUM\_UP = 2651 | 键盘灯光调暗键。 |
+| KEY\_KBDILLUM\_DOWN = 2650 | 键盘灯光调暗键。 |
+| KEY\_KBDILLUM\_UP = 2651 | 键盘灯光调亮键。 |
 | KEY\_SEND = 2652 | 发送键。 |
 | KEY\_REPLY = 2653 | 答复键。 |
 | KEY\_FORWARDMAIL = 2654 | 邮件转发键。 |
 | KEY\_SAVE = 2655 | 保存键。 |
-| KEY\_DOCUMENTS = 2656 | 文件键。 |
+| KEY\_DOCUMENTS = 2656 | 文档键。 |
 | KEY\_VIDEO\_NEXT = 2657 | 下一个视频键。 |
 | KEY\_VIDEO\_PREV = 2658 | 上一个视频键。 |
 | KEY\_BRIGHTNESS\_CYCLE = 2659 | 背光渐变键。 |
@@ -266,17 +256,17 @@ PhonePC/2in1TabletTVWearable
 | KEY\_GOTO = 2663 | 进入键。 |
 | KEY\_INFO = 2664 | 信息查看键。 |
 | KEY\_PROGRAM = 2665 | 程序键。 |
-| KEY\_PVR = 2666 | 个人录像机(PVR)键。 |
+| KEY\_PVR = 2666 | 个人录像机（PVR）键。 |
 | KEY\_SUBTITLE = 2667 | 字幕键。 |
 | KEY\_FULL\_SCREEN = 2668 | 全屏键。 |
-| KEY\_KEYBOARD = 2669 | 键盘。 |
+| KEY\_KEYBOARD = 2669 | 键盘键，用于唤起或切换键盘功能键。 |
 | KEY\_ASPECT\_RATIO = 2670 | 屏幕纵横比调节键。 |
-| KEY\_PC = 2671 | 端口控制键。 |
+| KEY\_PC = 2671 | PC键。 |
 | KEY\_TV = 2672 | TV键。 |
 | KEY\_TV2 = 2673 | TV键2。 |
 | KEY\_VCR = 2674 | 录像机开启键。 |
 | KEY\_VCR2 = 2675 | 录像机开启键2。 |
-| KEY\_SAT = 2676 | SIM卡应用工具包（SAT）键。 |
+| KEY\_SAT = 2676 | 卫星键。 |
 | KEY\_CD = 2677 | CD键。 |
 | KEY\_TAPE = 2678 | 磁带键。 |
 | KEY\_TUNER = 2679 | 调谐器键。 |
@@ -286,10 +276,10 @@ PhonePC/2in1TabletTVWearable
 | KEY\_VIDEO = 2683 | 视频键。 |
 | KEY\_MEMO = 2684 | 备忘录键。 |
 | KEY\_CALENDAR = 2685 | 日历键。 |
-| KEY\_RED = 2686 | 红色指示器。 |
-| KEY\_GREEN = 2687 | 绿色指示器。 |
-| KEY\_YELLOW = 2688 | 黄色指示器。 |
-| KEY\_BLUE = 2689 | 蓝色指示器。 |
+| KEY\_RED = 2686 | 红色按键。 |
+| KEY\_GREEN = 2687 | 绿色按键。 |
+| KEY\_YELLOW = 2688 | 黄色按键。 |
+| KEY\_BLUE = 2689 | 蓝色按键。 |
 | KEY\_CHANNELUP = 2690 | 频道向上键。 |
 | KEY\_CHANNELDOWN = 2691 | 频道向下键。 |
 | KEY\_LAST = 2692 | 末尾键。 |
@@ -306,13 +296,13 @@ PhonePC/2in1TabletTVWearable
 | KEY\_SPREADSHEET = 2703 | 电子表格键。 |
 | KEY\_GRAPHICSEDITOR = 2704 | 图形编辑器键。 |
 | KEY\_PRESENTATION = 2705 | 演示文稿键。 |
-| KEY\_DATABASE = 2706 | 数据库键标。 |
+| KEY\_DATABASE = 2706 | 数据库键。 |
 | KEY\_NEWS = 2707 | 新闻键。 |
 | KEY\_VOICEMAIL = 2708 | 语音信箱。 |
 | KEY\_ADDRESSBOOK = 2709 | 通讯簿。 |
 | KEY\_MESSENGER = 2710 | 通信键。 |
 | KEY\_BRIGHTNESS\_TOGGLE = 2711 | 亮度切换键。 |
-| KEY\_SPELLCHECK = 2712 | AL拼写检查。 |
+| KEY\_SPELLCHECK = 2712 | 拼写检查键。 |
 | KEY\_COFFEE = 2713 | 终端锁/屏幕保护程序。 |
 | KEY\_MEDIA\_REPEAT = 2714 | 媒体循环键。 |
 | KEY\_IMAGES = 2715 | 图像键。 |
@@ -326,27 +316,27 @@ PhonePC/2in1TabletTVWearable
 | KEY\_KBD\_LAYOUT\_NEXT = 2723 | 下一个键盘布局键。 |
 | KEY\_BRIGHTNESS\_MIN = 2724 | 最小亮度键。 |
 | KEY\_BRIGHTNESS\_MAX = 2725 | 最大亮度键。 |
-| KEY\_KBDINPUTASSIST\_PREV = 2726 | 键盘输入Assist\_Previous。 |
-| KEY\_KBDINPUTASSIST\_NEXT = 2727 | 键盘输入Assist\_Next。 |
-| KEY\_KBDINPUTASSIST\_PREVGROUP = 2728 | 键盘输入Assist\_Previous。 |
-| KEY\_KBDINPUTASSIST\_NEXTGROUP = 2729 | 键盘输入Assist\_Next。 |
-| KEY\_KBDINPUTASSIST\_ACCEPT = 2730 | 键盘输入Assist\_Accept。 |
-| KEY\_KBDINPUTASSIST\_CANCEL = 2731 | 键盘输入Assist\_Cancel。 |
+| KEY\_KBDINPUTASSIST\_PREV = 2726 | 键盘输入辅助上一个候选。 |
+| KEY\_KBDINPUTASSIST\_NEXT = 2727 | 键盘输入辅助下一个候选。 |
+| KEY\_KBDINPUTASSIST\_PREVGROUP = 2728 | 键盘输入辅助上一个候选组。 |
+| KEY\_KBDINPUTASSIST\_NEXTGROUP = 2729 | 键盘输入辅助下一个候选组。 |
+| KEY\_KBDINPUTASSIST\_ACCEPT = 2730 | 键盘输入辅助接受。 |
+| KEY\_KBDINPUTASSIST\_CANCEL = 2731 | 键盘输入辅助取消。 |
 | KEY\_FRONT = 2800 | 挡风玻璃除雾器开关。 |
 | KEY\_SETUP = 2801 | 设置键。 |
 | KEY\_WAKEUP = 2802 | 唤醒键。 |
 | KEY\_SENDFILE = 2803 | 发送文件按键。 |
 | KEY\_DELETEFILE = 2804 | 删除文件按键。 |
-| KEY\_XFER = 2805 | 文件传输(XFER)按键。 |
+| KEY\_XFER = 2805 | 文件传输（XFER）按键。 |
 | KEY\_PROG1 = 2806 | 程序键1。 |
 | KEY\_PROG2 = 2807 | 程序键2。 |
 | KEY\_MSDOS = 2808 | MS-DOS键（微软磁盘操作系统）。 |
 | KEY\_SCREENLOCK = 2809 | 屏幕锁定键。 |
 | KEY\_DIRECTION\_ROTATE\_DISPLAY = 2810 | 方向旋转显示键。 |
 | KEY\_CYCLEWINDOWS = 2811 | Windows循环键。 |
-| KEY\_COMPUTER = 2812 | 按键。 |
+| KEY\_COMPUTER = 2812 | 计算机键。 |
 | KEY\_EJECTCLOSECD = 2813 | 弹出CD键。 |
-| KEY\_ISO = 2814 | ISO键。 |
+| KEY\_ISO = 2814 | ISO键盘布局标准定义的特殊功能键。 |
 | KEY\_MOVE = 2815 | 移动键。 |
 | KEY\_F13 = 2816 | 按键'F13'。 |
 | KEY\_F14 = 2817 | 按键'F14'。 |
@@ -362,23 +352,23 @@ PhonePC/2in1TabletTVWearable
 | KEY\_F24 = 2827 | 按键'F24'。 |
 | KEY\_PROG3 = 2828 | 程序键3。 |
 | KEY\_PROG4 = 2829 | 程序键4。 |
-| KEY\_DASHBOARD = 2830 | 仪表板。 |
+| KEY\_DASHBOARD = 2830 | 仪表板键，用于打开或切换到仪表板界面。 |
 | KEY\_SUSPEND = 2831 | 挂起键。 |
-| KEY\_HP = 2832 | 高阶路径键。 |
+| KEY\_HP = 2832 | HP功能键。 |
 | KEY\_SOUND = 2833 | 音量键。 |
 | KEY\_QUESTION = 2834 | 疑问按键。 |
 | KEY\_CONNECT = 2836 | 连接键。 |
 | KEY\_SPORT = 2837 | 运动按键。 |
 | KEY\_SHOP = 2838 | 商城键。 |
-| KEY\_ALTERASE = 2839 | 交替键。 |
-| KEY\_SWITCHVIDEOMODE = 2841 | 在可用视频之间循环输出（监视器/LCD/TV输出/等）。 |
+| KEY\_ALTERASE = 2839 | 交替擦除键。 |
+| KEY\_SWITCHVIDEOMODE = 2841 | 在可用视频之间循环输出（监视器/LCD/TV输出等）。 |
 | KEY\_BATTERY = 2842 | 电池按键。 |
 | KEY\_BLUETOOTH = 2843 | 蓝牙按键。 |
 | KEY\_WLAN = 2844 | 无线局域网。 |
 | KEY\_UWB = 2845 | 超宽带（UWB）。 |
 | KEY\_WWAN\_WIMAX = 2846 | WWAN WiMAX按键。 |
-| KEY\_RFKILL = 2847 | 控制所有收音机的键。 |
-| KEY\_CHANNEL = 3001 | 向上频道键。 |
+| KEY\_RFKILL = 2847 | 射频关闭键。 |
+| KEY\_CHANNEL = 3001 | 频道键。 |
 | KEY\_BTN\_0 = 3100 | 按键0。 |
 | KEY\_BTN\_1 = 3101 | 按键1。 |
 | KEY\_BTN\_2 = 3102 | 按键2。 |
@@ -392,10 +382,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeXComponent\_KeyAction
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_NativeXComponent_KeyAction
+```c
+enum OH_NativeXComponent_KeyAction
 ```
 
 **描述：**

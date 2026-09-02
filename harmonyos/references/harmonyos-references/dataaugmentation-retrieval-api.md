@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataaugme
 title: retrieval（智慧化数据平台）
 breadcrumb: API参考 > 应用框架 > Data Augmentation Kit（数据增强服务） > ArkTS API > retrieval（智慧化数据平台）
 category: harmonyos-references
-scraped_at: 2026-04-29T13:56:26+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:55cb478770f0265c5e26a63e5b71b1711f9a1d0118dac61a8f8bb313834a36ec
+scraped_at: 2026-09-02T15:01:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a4642b94123a29a689eb65b3e4677b044acd9c4450b377f86893f7403533abd2
 ---
 
 智慧数据平台（ArkData Intelligence Platform，AIP）提供端侧的数据智慧化能力，实现数据和AI智能在端侧闭环。作为端侧智慧化能力底座，将支持以下能力：
@@ -15,23 +15,21 @@ content_hash: sha256:55cb478770f0265c5e26a63e5b71b1711f9a1d0118dac61a8f8bb313834
 * 知识检索：逐步构建语义索引、知识图谱、召回、重排等功能，支持用户知识的语义化检索。
 * 知识生成与整理：基于用户文档、消息、电子邮件、照片、视频、日历事件、屏幕上下文等数据，支持高效数据整理与知识生成，实现数据到知识的转换。
 
-  **起始版本：** 6.0.0(20)
+**起始版本：** 6.0.0(20)
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { retrieval } from '@kit.DataAugmentationKit';
+```typescript
+import { retrieval } from '@kit.DataAugmentationKit';
 ```
 
 ## getRetriever
 
-PhonePC/2in1Tablet
-
 getRetriever(config: RetrievalConfig): Promise<Retriever>
 
 获取检索器，进行多路检索召回。使用promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -41,7 +39,7 @@ getRetriever(config: RetrievalConfig): Promise<Retriever>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| config | [RetrievalConfig](dataaugmentation-retrieval-api.md#retrievalconfig) | 是 | 检索器的配置信息。 |
+| config | [RetrievalConfig](dataaugmentation-retrieval-api.md#retrievalconfig) | 是 | 检索器的配置信息。该参数用于配置检索器的行为，包括不同检索回路的配置信息数组。其中，channelConfigs字段为必填项，表示不同检索回路的配置信息数组。 |
 
 **返回值：**
 
@@ -51,71 +49,71 @@ getRetriever(config: RetrievalConfig): Promise<Retriever>
 
 **示例：**
 
-```
-1. import { retrieval } from '@kit.DataAugmentationKit';
-2. import { relationalStore } from '@kit.ArkData';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { retrieval } from '@kit.DataAugmentationKit';
+import { relationalStore } from '@kit.ArkData';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct Page {
-8. async retrieve() {
-9. let vectorDBConfig:retrieval.DbConfig = {
-10. name:"vector_store_test.db",
-11. securityLevel:relationalStore.SecurityLevel.S3
-12. }
+@Entry
+@Component
+struct Page {
+  async retrieve() {
+    let vectorDBConfig:retrieval.DbConfig = {
+      name:"vector_store_test.db",
+      securityLevel:relationalStore.SecurityLevel.S3
+    }
 
-14. let invidxDBConfig:retrieval.DbConfig = {
-15. name:"invidx_store_test.db",
-16. securityLevel:relationalStore.SecurityLevel.S3
-17. }
-18. let context: Context | undefined = this.getUIContext().getHostContext();
-19. if (context == undefined) {
-20. console.info("getHostContext failed.");
-21. return;
-22. }
-23. let channelConfigVector:retrieval.ChannelConfig = {
-24. channelType:retrieval.ChannelType.VECTOR_DATABASE,
-25. context:context,
-26. dbConfig:vectorDBConfig
-27. }
+    let invidxDBConfig:retrieval.DbConfig = {
+      name:"invidx_store_test.db",
+      securityLevel:relationalStore.SecurityLevel.S3
+    }
+    let context: Context | undefined = this.getUIContext().getHostContext();
+    if (context == undefined) {
+      console.info("getHostContext failed.");
+      return;
+    }
+    let channelConfigVector:retrieval.ChannelConfig = {
+      channelType:retrieval.ChannelType.VECTOR_DATABASE,
+      context:context,
+      dbConfig:vectorDBConfig
+    }
 
-29. let channelConfigInvIdx:retrieval.ChannelConfig = {
-30. channelType:retrieval.ChannelType.INVERTED_INDEX_DATABASE,
-31. context:context,
-32. dbConfig:invidxDBConfig
-33. }
+    let channelConfigInvIdx:retrieval.ChannelConfig = {
+      channelType:retrieval.ChannelType.INVERTED_INDEX_DATABASE,
+      context:context,
+      dbConfig:invidxDBConfig
+    }
 
-35. let retrievalConfig:retrieval.RetrievalConfig = {
-36. channelConfigs:[channelConfigInvIdx, channelConfigVector]
-37. }
+    let retrievalConfig:retrieval.RetrievalConfig = {
+      channelConfigs:[channelConfigInvIdx, channelConfigVector]
+    }
 
-39. let globalRetriever:retrieval.Retriever | undefined;
-40. // 获取检索器
-41. await retrieval.getRetriever(retrievalConfig)
-42. .then((retriever:retrieval.Retriever) => {
-43. globalRetriever = retriever;
-44. console.info("globalRetriever is success");
-45. })
-46. .catch((err:BusinessError) => {
-47. globalRetriever = undefined;
-48. console.error("Failed to get Retriever and code is " + err.code);
-49. })
-50. }
+    let globalRetriever:retrieval.Retriever | undefined;
+    // 获取检索器
+    await retrieval.getRetriever(retrievalConfig)
+      .then((retriever:retrieval.Retriever) => {
+        globalRetriever = retriever;
+        console.info("globalRetriever is success");
+      })
+      .catch((err:BusinessError) => {
+        globalRetriever = undefined;
+        console.error("Failed to get Retriever and code is " + err.code);
+      })
+  }
 
-52. build() {
-53. Column() {
-54. Text('test')
-55. }
-56. }
-57. }
+  build() {
+    Column() {
+      Text('test')
+    }
+  }
+}
 ```
 
 ## RetrievalConfig
 
-PhonePC/2in1Tablet
-
 管理召回的配置
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -127,9 +125,9 @@ PhonePC/2in1Tablet
 
 ## ChannelConfig
 
-PhonePC/2in1Tablet
-
 管理每个检索回路的配置信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -143,9 +141,9 @@ PhonePC/2in1Tablet
 
 ## ChannelType
 
-PhonePC/2in1Tablet
-
 数据库类型枚举。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -158,11 +156,11 @@ PhonePC/2in1Tablet
 
 ## DbConfig
 
-PhonePC/2in1Tablet
-
 type DbConfig = relationalStore.StoreConfig
 
 数据库配置。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -174,11 +172,11 @@ type DbConfig = relationalStore.StoreConfig
 
 ## Retriever
 
-PhonePC/2in1Tablet
-
 检索器，用于多路检索召回。
 
 下列接口都需先使用[retrieval.getRetriever](dataaugmentation-retrieval-api.md#getretriever)获取到检索器实例，再通过此实例调用对应接口。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -186,11 +184,11 @@ PhonePC/2in1Tablet
 
 ### retrieveRdb
 
-PhonePC/2in1Tablet
-
 retrieveRdb(query: string, condition: RetrievalCondition): Promise<RdbRecords>
 
 给定检索条件（包含查询词分词、召回条件），从一个关系型数据库检索召回满足条件的数据，使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -211,269 +209,269 @@ retrieveRdb(query: string, condition: RetrievalCondition): Promise<RdbRecords>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](dataaugmentation-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-dataaugmentation.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| [1021200001](dataaugmentation-error-code.md#section1021200001-数据库文件损坏) | The database is corrupted. |
-| [1021200002](dataaugmentation-error-code.md#section1021200002-数据库或事务关闭) | The database is closed. |
-| [1021200003](dataaugmentation-error-code.md#section1021200003-数据库busy) | The database is busy. |
-| [1021200004](dataaugmentation-error-code.md#section1021200004-数据库内存不足) | The database is out of memory. |
-| [1021200100](dataaugmentation-error-code.md#section1021200100-sqlite-通用错误) | SQLite: Generic error. |
-| [1021200101](dataaugmentation-error-code.md#section1021200101-sqlite访问权限被拒绝) | SQLite: Access permission denied. |
-| [1021200102](dataaugmentation-error-code.md#section1021200102-sqlite数据库文件已锁定) | SQLite: The database file is locked. |
-| [1021200103](dataaugmentation-error-code.md#section1021200103-sqlite发生了某种磁盘io错误) | SQLite: Some kind of disk I/O error occurred. |
-| [1021200104](dataaugmentation-error-code.md#section1021200104-wal文件大小超过默认上限) | SQLite: The WAL file size exceeds the default limit. |
-| [1021200105](dataaugmentation-error-code.md#section1021200105-无法打开数据库文件) | SQLite: Unable to open the database file. |
-| [1021201000](dataaugmentation-error-code.md#section1021201000-retrieval-recall-error) | Retrieval: An error occurred during the reacall phase. |
-| [1021201001](dataaugmentation-error-code.md#section1021201001-retrieval-re-ranking-error) | Retrieval: An error occurred during the re-ranking phase. |
-| [1021201002](dataaugmentation-error-code.md#section1021201002-retrieval-numerical-parameter-out-of-range) | Retrieval: The value of the numerical parameter is outside the constrained range. |
-| [1021201003](dataaugmentation-error-code.md#section1021201003-retrieval-invalid-primary-keys) | Retrieval: There are invalid primary keys. |
-| [1021201004](dataaugmentation-error-code.md#section1021201004-retrieval-unsupport-composite-primary-key-in-re-ranking) | Retrieval: A re-ranking algorithm that does not support composite primary keys was used. |
-| [1021201005](dataaugmentation-error-code.md#section1021201005-retrieval-empty-string-field) | Retrieval: There are fields with empty strings. |
-| [1021201006](dataaugmentation-error-code.md#section1021201006-retrieval-illegal-filter-input) | Retrieval: The filter input is invalid. |
-| [1021201007](dataaugmentation-error-code.md#section1021201007-retrieval-invalid-recall-field-name) | Retrieval: There are invalid recall names in RecallCondition. |
-| [1021201008](dataaugmentation-error-code.md#section1021201008-retrieval-vector-similarity-threshold-too-high) | Retrieval: The vector similarity threshold in VectorQuery is higher than the tiered threshold in VectorRerankParameter. |
-| [1021201009](dataaugmentation-error-code.md#section1021201009-retrieval-rerankmethod-parameters-do-not-match-the-channel-type) | Retrieval: RerankMethod parameters do not match the channel type. |
-| [1021201010](dataaugmentation-error-code.md#section1021201010-retrieval-empty-parameter-value) | Retrieval: There exists a parameter value that should not be empty but is actually empty |
-| [1021200012](dataaugmentation-error-code.md#section1021200012-unable-to-generate-embeddings) | Unable to generate embeddings. |
+| [1021200001](errorcode-dataaugmentation.md#section1021200001-数据库文件损坏) | The database is corrupted. |
+| [1021200002](errorcode-dataaugmentation.md#section1021200002-数据库或事务关闭) | The database is closed. |
+| [1021200003](errorcode-dataaugmentation.md#section1021200003-数据库busy) | The database is busy. |
+| [1021200004](errorcode-dataaugmentation.md#section1021200004-数据库内存不足) | The database is out of memory. |
+| [1021200100](errorcode-dataaugmentation.md#section1021200100-sqlite-通用错误) | SQLite: Generic error. |
+| [1021200101](errorcode-dataaugmentation.md#section1021200101-sqlite访问权限被拒绝) | SQLite: Access permission denied. |
+| [1021200102](errorcode-dataaugmentation.md#section1021200102-sqlite数据库文件已锁定) | SQLite: The database file is locked. |
+| [1021200103](errorcode-dataaugmentation.md#section1021200103-sqlite发生了某种磁盘io错误) | SQLite: Some kind of disk I/O error occurred. |
+| [1021200104](errorcode-dataaugmentation.md#section1021200104-wal文件大小超过默认上限) | SQLite: The WAL file size exceeds the default limit. |
+| [1021200105](errorcode-dataaugmentation.md#section1021200105-无法打开数据库文件) | SQLite: Unable to open the database file. |
+| [1021201000](errorcode-dataaugmentation.md#section1021201000-retrieval-recall-error) | Retrieval: An error occurred during the reacall phase. |
+| [1021201001](errorcode-dataaugmentation.md#section1021201001-retrieval-re-ranking-error) | Retrieval: An error occurred during the re-ranking phase. |
+| [1021201002](errorcode-dataaugmentation.md#section1021201002-retrieval-numerical-parameter-out-of-range) | Retrieval: The value of the numerical parameter is outside the constrained range. |
+| [1021201003](errorcode-dataaugmentation.md#section1021201003-retrieval-invalid-primary-keys) | Retrieval: There are invalid primary keys. |
+| [1021201004](errorcode-dataaugmentation.md#section1021201004-retrieval-unsupport-composite-primary-key-in-re-ranking) | Retrieval: A re-ranking algorithm that does not support composite primary keys was used. |
+| [1021201005](errorcode-dataaugmentation.md#section1021201005-retrieval-empty-string-field) | Retrieval: There are fields with empty strings. |
+| [1021201006](errorcode-dataaugmentation.md#section1021201006-retrieval-illegal-filter-input) | Retrieval: The filter input is invalid. |
+| [1021201007](errorcode-dataaugmentation.md#section1021201007-retrieval-invalid-recall-field-name) | Retrieval: There are invalid recall names in RecallCondition. |
+| [1021201008](errorcode-dataaugmentation.md#section1021201008-retrieval-vector-similarity-threshold-too-high) | Retrieval: The vector similarity threshold in VectorQuery is higher than the tiered threshold in VectorRerankParameter. |
+| [1021201009](errorcode-dataaugmentation.md#section1021201009-retrieval-rerankmethod-parameters-do-not-match-the-channel-type) | Retrieval: RerankMethod parameters do not match the channel type. |
+| [1021201010](errorcode-dataaugmentation.md#section1021201010-retrieval-empty-parameter-value) | Retrieval: There exists a parameter value that should not be empty but is actually empty |
+| [1021200012](errorcode-dataaugmentation.md#section1021200012-unable-to-generate-embeddings) | Unable to generate embeddings. |
 
 **示例：**
 
-```
-1. import { retrieval } from '@kit.DataAugmentationKit';
-2. import { relationalStore } from '@kit.ArkData';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { retrieval } from '@kit.DataAugmentationKit';
+import { relationalStore } from '@kit.ArkData';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct Page {
+@Entry
+@Component
+struct Page {
+ 
+async retrieve() {
+    let vectorDBConfig:retrieval.DbConfig = {
+      name:"vector_test.db",
+      securityLevel:relationalStore.SecurityLevel.S3
+    }
 
-9. async retrieve() {
-10. let vectorDBConfig:retrieval.DbConfig = {
-11. name:"vector_test.db",
-12. securityLevel:relationalStore.SecurityLevel.S3
-13. }
+    let invidxDBConfig:retrieval.DbConfig = {
+      name:"files_test.db",
+      securityLevel:relationalStore.SecurityLevel.S3
+    }
+    let context: Context | undefined = this.getUIContext().getHostContext();
+    if (context == undefined) {
+      console.info("getHostContext failed.");
+      return;
+    }
+    let channelConfigVector:retrieval.ChannelConfig = {
+      channelType:retrieval.ChannelType.VECTOR_DATABASE,
+      context:context,
+      dbConfig:vectorDBConfig
+    }
 
-15. let invidxDBConfig:retrieval.DbConfig = {
-16. name:"files_test.db",
-17. securityLevel:relationalStore.SecurityLevel.S3
-18. }
-19. let context: Context | undefined = this.getUIContext().getHostContext();
-20. if (context == undefined) {
-21. console.info("getHostContext failed.");
-22. return;
-23. }
-24. let channelConfigVector:retrieval.ChannelConfig = {
-25. channelType:retrieval.ChannelType.VECTOR_DATABASE,
-26. context:context,
-27. dbConfig:vectorDBConfig
-28. }
+    let channelConfigInvIdx:retrieval.ChannelConfig = {
+      channelType:retrieval.ChannelType.INVERTED_INDEX_DATABASE,
+      context:context,
+      dbConfig:invidxDBConfig
+    }
 
-30. let channelConfigInvIdx:retrieval.ChannelConfig = {
-31. channelType:retrieval.ChannelType.INVERTED_INDEX_DATABASE,
-32. context:context,
-33. dbConfig:invidxDBConfig
-34. }
+    let retrievalConfig:retrieval.RetrievalConfig = {
+      channelConfigs:[channelConfigInvIdx, channelConfigVector]
+    }
 
-36. let retrievalConfig:retrieval.RetrievalConfig = {
-37. channelConfigs:[channelConfigInvIdx, channelConfigVector]
-38. }
+    let globalRetriever:retrieval.Retriever | undefined;
+    await retrieval.getRetriever(retrievalConfig)
+      .then((retriever:retrieval.Retriever) => {
+        globalRetriever = retriever;
+        console.info("globalRetriever is success");
+      })
+      .catch((err:BusinessError) => {
+        globalRetriever = undefined;
+        console.error("Failed to get Retriever and code is " + err.code);
+      })
 
-40. let globalRetriever:retrieval.Retriever | undefined;
-41. await retrieval.getRetriever(retrievalConfig)
-42. .then((retriever:retrieval.Retriever) => {
-43. globalRetriever = retriever;
-44. console.info("globalRetriever is success");
-45. })
-46. .catch((err:BusinessError) => {
-47. globalRetriever = undefined;
-48. console.error("Failed to get Retriever and code is " + err.code);
-49. })
+    let fieldWeight:Record<string, number> = {
+      "filename":4.0
+    }
 
-51. let fieldWeight:Record<string, number> = {
-52. "filename":4.0
-53. }
+    let fieldSlops:Record<string, number> = {
+      "filename":5
+    }
 
-55. let fieldSlops:Record<string, number> = {
-56. "filename":5
-57. }
+    let bm25Strategy:retrieval.Bm25Strategy = {
+      bm25Weight:1.5,
+      columnWeight:fieldWeight
+    }
 
-59. let bm25Strategy:retrieval.Bm25Strategy = {
-60. bm25Weight:1.5,
-61. columnWeight:fieldWeight
-62. }
+    let exactStrategy:retrieval.ExactMatchingStrategy = {
+      exactMatchingWeight:1.2,
+      columnWeight:fieldWeight
+    }
 
-64. let exactStrategy:retrieval.ExactMatchingStrategy = {
-65. exactMatchingWeight:1.2,
-66. columnWeight:fieldWeight
-67. }
+    let outOfOrderStrategy:retrieval.ProximityStrategy = {
+      proximityWeight:1.0,
+      columnWeight:fieldWeight,
+      columnSlops:fieldSlops
+    }
 
-69. let outOfOrderStrategy:retrieval.ProximityStrategy = {
-70. proximityWeight:1.0,
-71. columnWeight:fieldWeight,
-72. columnSlops:fieldSlops
-73. }
+    let invertedIndexStrategies:Array<retrieval.InvertedIndexStrategy> = [bm25Strategy, exactStrategy, outOfOrderStrategy]
 
-75. let invertedIndexStrategies:Array<retrieval.InvertedIndexStrategy> = [bm25Strategy, exactStrategy, outOfOrderStrategy]
+    let recallConditionInvIdx:retrieval.InvertedIndexRecallCondition ={
+      ftsTableName:"files",
+      primaryKey:["fileid"],
+      fromClause:"files",
+      responseColumns:["fileid", "filename", "keywords"],
+      deepSize:2,
+      invertedIndexStrategies:invertedIndexStrategies,
+      recallName:"invIdxRecall"
+    }
 
-77. let recallConditionInvIdx:retrieval.InvertedIndexRecallCondition ={
-78. ftsTableName:"files",
-79. primaryKey:["fileid"],
-80. fromClause:"files",
-81. responseColumns:["fileid", "filename", "keywords"],
-82. deepSize:2,
-83. invertedIndexStrategies:invertedIndexStrategies,
-84. recallName:"invIdxRecall"
-85. }
+    // 这里 floatArray 是输入的query的表征向量，根据实际情况需要修改。可通过向量化接口生成，也可由开发者自行提供
+    let floatArray = new Float32Array([0.006954, -0.079041, 0.046173, 0.157959, -0.017212, 0.037018, -0.072083, -0.028488, -0.099854, 0.044037, -0.008911, -0.063049, 0.035950, -0.105835, 0.057739, 0.060364, -0.062042, 0.044159, 0.143188, 0.123901, -0.069641, -0.061920, -0.086731, -0.092468, 0.092957, -0.027649, -0.005497, -0.039276, 0.017502, -0.046570, -0.115906, 0.081177, -0.153931, -0.040588, 0.123474, -0.099060, 0.062042, 0.026352, -0.041382, -0.099548, 0.071167, -0.120850, 0.082642, 0.026398, -0.035614, -0.008545, -0.076660, -0.031067, 0.192017, -0.052582, 0.005310, 0.052734, 0.199463, 0.075195, -0.070740, -0.035950, 0.073120, 0.089172, 0.075989, 0.003582, 0.050201, -0.012787, 0.016647, -0.053619, 0.001906, -0.060181, -0.068359, -0.114502, -0.045013, 0.004547, -0.004673, -0.148071, 0.126343, 0.019394, -0.063110, -0.055908, 0.071228, 0.002369, 0.041412, 0.126709, -0.053467, 0.127808, 0.055420, 0.206177, 0.002169, -0.001452, 0.095520, -0.042511, 0.099243, -0.164185, 0.093384, -0.014618, -0.129150, -0.238770, -0.085327, 0.051300, -0.020004, 0.010063, -0.084351, -0.003567, 0.064941, -0.205322, -0.158936, -0.074768, 0.104370, 0.197021, -0.080688, -0.066772, -0.036346, 0.034912, -0.019760, 0.110474, 0.128662, 0.094727, 0.024948, -0.033356, -0.081848, 0.054474, -0.065857, -0.156494, 0.002527, 0.097595, -0.027420, 0.039185, 0.063965, 0.220093, 0.029556, -0.115417]);
 
-87. // 这里 floatArray 时输入的 query 的表征向量，根据实际情况需要修改
-88. let floatArray = new Float32Array([0.006954, -0.079041, 0.046173, 0.157959, -0.017212, 0.037018, -0.072083, -0.028488, -0.099854, 0.044037, -0.008911, -0.063049, 0.035950, -0.105835, 0.057739, 0.060364, -0.062042, 0.044159, 0.143188, 0.123901, -0.069641, -0.061920, -0.086731, -0.092468, 0.092957, -0.027649, -0.005497, -0.039276, 0.017502, -0.046570, -0.115906, 0.081177, -0.153931, -0.040588, 0.123474, -0.099060, 0.062042, 0.026352, -0.041382, -0.099548, 0.071167, -0.120850, 0.082642, 0.026398, -0.035614, -0.008545, -0.076660, -0.031067, 0.192017, -0.052582, 0.005310, 0.052734, 0.199463, 0.075195, -0.070740, -0.035950, 0.073120, 0.089172, 0.075989, 0.003582, 0.050201, -0.012787, 0.016647, -0.053619, 0.001906, -0.060181, -0.068359, -0.114502, -0.045013, 0.004547, -0.004673, -0.148071, 0.126343, 0.019394, -0.063110, -0.055908, 0.071228, 0.002369, 0.041412, 0.126709, -0.053467, 0.127808, 0.055420, 0.206177, 0.002169, -0.001452, 0.095520, -0.042511, 0.099243, -0.164185, 0.093384, -0.014618, -0.129150, -0.238770, -0.085327, 0.051300, -0.020004, 0.010063, -0.084351, -0.003567, 0.064941, -0.205322, -0.158936, -0.074768, 0.104370, 0.197021, -0.080688, -0.066772, -0.036346, 0.034912, -0.019760, 0.110474, 0.128662, 0.094727, 0.024948, -0.033356, -0.081848, 0.054474, -0.065857, -0.156494, 0.002527, 0.097595, -0.027420, 0.039185, 0.063965, 0.220093, 0.029556, -0.115417]);
+    let vectorQuery:retrieval.VectorQuery = {
+      column:"keywords",
+      value:floatArray,
+      similarityThreshold:0.35
+    }
 
-90. let vectorQuery:retrieval.VectorQuery = {
-91. column:"keywords",
-92. value:floatArray,
-93. similarityThreshold:0.35
-94. }
+    let recallConditionVector:retrieval.VectorRecallCondition = {
+      vectorQuery:vectorQuery,
+      fromClause:"vector",
+      primaryKey:["fileid"],
+      responseColumns:["filename_text", "filename", "int64_value", "double_value", "bool_value", "blob_value"],
+      recallName:"vectorRecall",
+      deepSize:2
+    }
 
-96. let recallConditionVector:retrieval.VectorRecallCondition = {
-97. vectorQuery:vectorQuery,
-98. fromClause:"vector",
-99. primaryKey:["fileid"],
-100. responseColumns:["filename_text", "filename", "int64_value", "double_value", "bool_value", "blob_value"],
-101. recallName:"vectorRecall",
-102. deepSize:2
-103. }
+    let vectorWeights:Record<string, number> = {
+      "vectorRecall":0.5
+    }
 
-105. let vectorWeights:Record<string, number> = {
-106. "vectorRecall":0.5
-107. }
+    let invidxWeights:Record<string, number> = {
+      "vectorRecall":0.5
+    }
 
-109. let invidxWeights:Record<string, number> = {
-110. "vectorRecall":0.5
-111. }
+    let vectorRerankParameter:retrieval.VectorRerankParameter = {
+      vectorWeights:vectorWeights,
+      thresholds:[0.55, 0.45]
+    }
 
-113. let vectorRerankParameter:retrieval.VectorRerankParameter = {
-114. vectorWeights:vectorWeights,
-115. thresholds:[0.55, 0.45]
-116. }
+    let invidxRerankParameter:retrieval.InvertedIndexRerankParameter = {
+      invertedIndexWeights:invidxWeights,
+    }
 
-118. let invidxRerankParameter:retrieval.InvertedIndexRerankParameter = {
-119. invertedIndexWeights:invidxWeights,
-120. }
+    let parameters:Record<retrieval.ChannelType, retrieval.RerankParameter> = {
+      0:vectorRerankParameter,
+      1:invidxRerankParameter
+    }
 
-122. let parameters:Record<retrieval.ChannelType, retrieval.RerankParameter> = {
-123. 0:vectorRerankParameter,
-124. 1:invidxRerankParameter
-125. }
+    let rerankMethod:retrieval.RerankMethod = {
+      rerankType:retrieval.RerankType.RRF,
+      parameters:parameters,
+      isSoftmaxNormalized:true
+    }
 
-127. let rerankMethod:retrieval.RerankMethod = {
-128. rerankType:retrieval.RerankType.RRF,
-129. parameters:parameters,
-130. isSoftmaxNormalized:true
-131. }
+    let groundTruthIds: Array<string> = ['1','2', '3'];
+    let explain : retrieval.ExplanationConfig ={
+      groundTruths: groundTruthIds
+    }
 
-133. let groundTruthIds: Array<string> = ['1','2', '3'];
-134. let explain : retrieval.ExplanationConfig ={
-135. groundTruths: groundTruthIds
-136. }
+    let retrievalCondition:retrieval.RetrievalCondition = {
+      rerankMethod:rerankMethod,
+      recallConditions:[recallConditionInvIdx, recallConditionVector],
+      resultCount:2,
+      explanation:explain
+    }
 
-138. let retrievalCondition:retrieval.RetrievalCondition = {
-139. rerankMethod:rerankMethod,
-140. recallConditions:[recallConditionInvIdx, recallConditionVector],
-141. resultCount:2,
-142. explanation:explain
-143. }
+    if (globalRetriever != undefined) {
+      let query:string = "运动直播场景";
+      // 执行检索
+      globalRetriever.retrieveRdb(query, retrievalCondition)
+        .then((rdbdata:retrieval.RdbRecords) => {
 
-146. if (globalRetriever != undefined) {
-147. let query:string = "运动直播场景";
-148. // 执行检索
-149. globalRetriever.retrieveRdb(query, retrievalCondition)
-150. .then((rdbdata:retrieval.RdbRecords) => {
+          console.info(`#########  retrieval result ############`);
+          for (let i = 0; i < rdbdata.records.length; i++) {
+            console.info(` primaryKey is ${rdbdata.records[i].primaryKey}`);
+            Object.keys(rdbdata.records[i].columns).forEach((key) => {
+              if (rdbdata.records && rdbdata.records[i]) {
+                let value = rdbdata.records[i].columns[key];
+                console.info(`recall Scores Key: ${key}, Value: ${value}`);
+              }
+            });
+            console.info(`score is ${rdbdata.records[i].score}`);
 
-152. console.info(`#########  retrieval result ############`);
-153. for (let i = 0; i < rdbdata.records.length; i++) {
-154. console.info(` primaryKey is ${rdbdata.records[i].primaryKey}`);
-155. Object.keys(rdbdata.records[i].columns).forEach((key) => {
-156. if (rdbdata.records && rdbdata.records[i]) {
-157. let value = rdbdata.records[i].columns[key];
-158. console.info(`recall Scores Key: ${key}, Value: ${value}`);
-159. }
-160. });
-161. console.info(`score is ${rdbdata.records[i].score}`);
+            Object.keys(rdbdata.records[i].recallScores).forEach((channelType) => {
+              if (rdbdata.records) {
+                let scores:Record<string, retrieval.RecallScore>  = rdbdata.records[i].recallScores[channelType];
+                Object.keys(scores).forEach((key)=>{
+                  let value = scores[key];
+                  console.info(`recall Scores channelType is ${channelType}, Key: ${key}, score: ${value.score}`);
+                });
+              }
+            });
+            console.info("recall Scores", rdbdata.records[i].recallScores.toString());
+            Object.keys(rdbdata.records[i].features).forEach((key) => {
+              if (rdbdata.records && rdbdata.records[i]) {
+                let value = rdbdata.records[i].features[key];
+                console.info(`features Key: ${key}, Value: ${value}`);
+              }
+            });
+            console.info(`similarityLevel is ${rdbdata.records[i].similarityLevel}`);
 
-163. Object.keys(rdbdata.records[i].recallScores).forEach((channelType) => {
-164. if (rdbdata.records) {
-165. let scores:Record<string, retrieval.RecallScore>  = rdbdata.records[i].recallScores[channelType];
-166. Object.keys(scores).forEach((key)=>{
-167. let value = scores[key];
-168. console.info(`recall Scores channelType is ${channelType}, Key: ${key}, score: ${value.score}`);
-169. });
-170. }
-171. });
-172. console.info("recall Scores", rdbdata.records[i].recallScores.toString());
-173. Object.keys(rdbdata.records[i].features).forEach((key) => {
-174. if (rdbdata.records && rdbdata.records[i]) {
-175. let value = rdbdata.records[i].features[key];
-176. console.info(`features Key: ${key}, Value: ${value}`);
-177. }
-178. });
-179. console.info(`similarityLevel is ${rdbdata.records[i].similarityLevel}`);
+          }
 
-181. }
+          console.info(`#########  missdGroundTruthsPrimaryKey ############`);
+          if(rdbdata.missedGroundTruths != undefined && rdbdata.missedGroundTruths.length != 0){
+            for (let i = 0; i < rdbdata.missedGroundTruths.length; i++) {
+              console.info(`missdGroundTruthsPrimaryKey is ${rdbdata.missedGroundTruths[i].primaryKey}`);
+              Object.keys(rdbdata.missedGroundTruths[i].columns).forEach((key) => {
+                if (rdbdata.missedGroundTruths && rdbdata.missedGroundTruths[i]) {
+                  let value = rdbdata.missedGroundTruths[i].columns[key];
+                  console.info(`missdGroundTruths recall Scores Key: ${key}, Value: ${value}`);
+                }
+              });
+              console.info(` missdGroundTruths score is ${rdbdata.missedGroundTruths[i].score}`);
 
-183. console.info(`#########  missdGroundTruthsPrimaryKey ############`);
-184. if(rdbdata.missedGroundTruths != undefined && rdbdata.missedGroundTruths.length != 0){
-185. for (let i = 0; i < rdbdata.missedGroundTruths.length; i++) {
-186. console.info(`missdGroundTruthsPrimaryKey is ${rdbdata.missedGroundTruths[i].primaryKey}`);
-187. Object.keys(rdbdata.missedGroundTruths[i].columns).forEach((key) => {
-188. if (rdbdata.missedGroundTruths && rdbdata.missedGroundTruths[i]) {
-189. let value = rdbdata.missedGroundTruths[i].columns[key];
-190. console.info(`missdGroundTruths recall Scores Key: ${key}, Value: ${value}`);
-191. }
-192. });
-193. console.info(` missdGroundTruths score is ${rdbdata.missedGroundTruths[i].score}`);
+              Object.keys(rdbdata.missedGroundTruths[i].recallScores).forEach((channelType) => {
+                if (rdbdata.missedGroundTruths) {
+                  let scores:Record<string, retrieval.RecallScore>  = rdbdata.missedGroundTruths[i].recallScores[channelType];
+                  Object.keys(scores).forEach((key)=>{
+                    let value = scores[key];
+                    console.info(`missdGroundTruths recall Scores channelType is ${channelType}, Key: ${key}, score: ${value.score}`);
+                  });
+                }
+              });
+              console.info("missdGroundTruths recall Scores", rdbdata.missedGroundTruths[i].recallScores.toString());
+              Object.keys(rdbdata.missedGroundTruths[i].features).forEach((key) => {
+                if (rdbdata.missedGroundTruths && rdbdata.missedGroundTruths[i]) {
+                  let value = rdbdata.missedGroundTruths[i].features[key];
+                  console.info(`missdGroundTruths features Key: ${key}, Value: ${value}`);
+                }
+              });
+              console.info(`missdGroundTruths similarityLevel is ${rdbdata.missedGroundTruths[i].similarityLevel}`);
+            }
+          }
+          console.info("retrieval success.");
+        })
+        .catch((err:BusinessError) => {
+          console.error("Failure in retrieveRdb and code is " + err.code);
+        })
+    }
+  }
 
-195. Object.keys(rdbdata.missedGroundTruths[i].recallScores).forEach((channelType) => {
-196. if (rdbdata.missedGroundTruths) {
-197. let scores:Record<string, retrieval.RecallScore>  = rdbdata.missedGroundTruths[i].recallScores[channelType];
-198. Object.keys(scores).forEach((key)=>{
-199. let value = scores[key];
-200. console.info(`missdGroundTruths recall Scores channelType is ${channelType}, Key: ${key}, score: ${value.score}`);
-201. });
-202. }
-203. });
-204. console.info("missdGroundTruths recall Scores", rdbdata.missedGroundTruths[i].recallScores.toString());
-205. Object.keys(rdbdata.missedGroundTruths[i].features).forEach((key) => {
-206. if (rdbdata.missedGroundTruths && rdbdata.missedGroundTruths[i]) {
-207. let value = rdbdata.missedGroundTruths[i].features[key];
-208. console.info(`missdGroundTruths features Key: ${key}, Value: ${value}`);
-209. }
-210. });
-211. console.info(`missdGroundTruths similarityLevel is ${rdbdata.missedGroundTruths[i].similarityLevel}`);
-212. }
-213. }
-214. console.info("retrieval success.");
-215. })
-216. .catch((err:BusinessError) => {
-217. console.error("Failure in retrieveRdb and code is " + err.code);
-218. })
-219. }
-220. }
-
-222. build() {
-223. Column() {
-224. Text('test')
-225. }
-226. }
-227. }
+  build() {
+    Column() {
+      Text('test')
+    }
+  }
+}
 ```
 
 ## RetrievalCondition
 
-PhonePC/2in1Tablet
-
 检索条件。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -483,14 +481,14 @@ PhonePC/2in1Tablet
 | --- | --- | --- | --- | --- |
 | recallConditions | Array<[RecallCondition](dataaugmentation-retrieval-api.md#recallcondition)> | 否 | 否 | 召回的条件，数组中的每个元素对应一个召回操作。 |
 | rerankMethod | [RerankMethod](dataaugmentation-retrieval-api.md#rerankmethod) | 否 | 是 | 重排方法。其参数rerankType默认值为RRF算法，参数parameters默认值遵循[RecallCondition](dataaugmentation-retrieval-api.md#recallcondition)中相应检索回路的参数。 |
-| resultCount | number | 否 | 是 | 重排后允许返回结果的最大数量。默认值为500。必须为正整数。 |
+| resultCount | number | 否 | 是 | 重排后允许返回结果的最大数量。默认值为500。必须为大于等于1的正整数。 |
 | explanation | [ExplanationConfig](dataaugmentation-retrieval-api.md#explanationconfig) | 否 | 是 | 检索解释 |
 
 ## ExplanationConfig
 
-PhonePC/2in1Tablet
-
 检索解释配置
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -500,13 +498,13 @@ PhonePC/2in1Tablet
 | --- | --- | --- | --- | --- |
 | groundTruths | Array<string> | 否 | 否 | 待解释的文档id，为字符串类型可取任意值。 |
 
-## Recallcondition
-
-PhonePC/2in1Tablet
+## RecallCondition
 
 type RecallCondition = InvertedIndexRecallCondition | VectorRecallCondition
 
 召回操作的条件。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -519,9 +517,9 @@ type RecallCondition = InvertedIndexRecallCondition | VectorRecallCondition
 
 ## InvertedIndexRecallCondition
 
-PhonePC/2in1Tablet
-
 倒排检索的召回条件。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -540,11 +538,11 @@ PhonePC/2in1Tablet
 
 ## ColumnName
 
-PhonePC/2in1Tablet
-
 type ColumnName = string
 
 数据表的列名，类型为字符串。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -556,11 +554,11 @@ type ColumnName = string
 
 ## RecallName
 
-PhonePC/2in1Tablet
-
 type RecallName = string
 
 召回回路名称，类型为字符串，用于给倒排和向量两路召回取名。例如出现两路向量召回时，给两路向量取名做区分。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -572,9 +570,9 @@ type RecallName = string
 
 ## FilterInfo
 
-PhonePC/2in1Tablet
-
 过滤器信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -589,11 +587,11 @@ PhonePC/2in1Tablet
 
 ## FilterValue
 
-PhonePC/2in1Tablet
-
-type FilterValue = number | string | bigint
+type FilterValue = string | number | bigint
 
 过滤条件中的过滤值。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -601,15 +599,15 @@ type FilterValue = number | string | bigint
 
 | 类型 | 说明 |
 | --- | --- |
-| number | FilterValue 收到的类型为number则过滤条件为数字类型 |
 | string | FilterValue 收到的类型为string则过滤条件为字符串类型 |
+| number | FilterValue 收到的类型为number则过滤条件为数字类型 |
 | bigint | FilterValue 收到的类型为bigint则过滤条件为int64类型 |
 
 ## FilterRange
 
-PhonePC/2in1Tablet
-
 过滤条件中的过滤值范围。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -622,35 +620,35 @@ PhonePC/2in1Tablet
 
 ## Operator
 
-PhonePC/2in1Tablet
-
 过滤条件中的操作算子。column为数据库表中的字段名，filterValue为该字段的取值。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
 **起始版本：** 6.0.0(20)
 
-| 操作 | 说明 |
-| --- | --- |
-| OP\_EQ = '=' | <column>等于<filterValue>。 |
-| OP\_NE = '!=' | <column>不等于<filterValue>。 |
-| OP\_LT = '<' | <column>小于<filterValue>，其中<filterValue>为数值。 |
-| OP\_LE = '<=' | <column>小于等于<filterValue>，其中<filterValue>为数值。 |
-| OP\_GT = '>' | <column>大于<filterValue>，其中<filterValue>为数值。 |
-| OP\_GE = '>=' | <column>大于等于<filterValue>，其中<filterValue>为数值。 |
-| OP\_IN = 'IN' | <column> IN <filterValue>，其中<filterValue>为string且通过','组合。 |
-| OP\_NOT\_IN = 'NOT\_IN' | <column> NOT IN <filterValue>，其中<filterValue>为string且通过','拼接。 |
-| OP\_BETWEEN = 'BETWEEN' | <column>的值在 <filterRange.min> 和 <filterRange.max>之间。 |
-| OP\_LIKE = 'LIKE' | 通过LIKE匹配含有<filterValue>的<column> ,其中<filterValue>为string。 |
-| OP\_NOT\_LIKE = 'NOT\_LIKE' | <column> NOT LIKE <filterValue>，其中<filterValue>为string。 |
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| OP\_EQ | '=' | <column>等于<filterValue>。 |
+| OP\_NE | '!=' | <column>不等于<filterValue>。 |
+| OP\_LT | '<' | <column>小于<filterValue>，其中<filterValue>为数值。 |
+| OP\_LE | '<=' | <column>小于等于<filterValue>，其中<filterValue>为数值。 |
+| OP\_GT | '>' | <column>大于<filterValue>，其中<filterValue>为数值。 |
+| OP\_GE | '>=' | <column>大于等于<filterValue>，其中<filterValue>为数值。 |
+| OP\_IN | 'IN' | <column> IN <filterValue>，其中<filterValue>为string且通过','组合。 |
+| OP\_NOT\_IN | 'NOT\_IN' | <column> NOT IN <filterValue>，其中<filterValue>为string且通过','拼接。 |
+| OP\_BETWEEN | 'BETWEEN' | <column>的值在 <filterRange.min> 和 <filterRange.max>之间。 |
+| OP\_LIKE | 'LIKE' | 通过LIKE匹配含有<filterValue>的<column> ,其中<filterValue>为string。 |
+| OP\_NOT\_LIKE | 'NOT\_LIKE' | <column> NOT LIKE <filterValue>，其中<filterValue>为string。 |
 
 ## InvertedIndexStrategy
-
-PhonePC/2in1Tablet
 
 type InvertedIndexStrategy = Bm25Strategy | ExactMatchingStrategy | ProximityStrategy
 
 倒排召回策略。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -664,9 +662,9 @@ type InvertedIndexStrategy = Bm25Strategy | ExactMatchingStrategy | ProximityStr
 
 ## Bm25Strategy
 
-PhonePC/2in1Tablet
-
 倒排检索所用的bm25策略。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -679,9 +677,9 @@ PhonePC/2in1Tablet
 
 ## ExactMatchingStrategy
 
-PhonePC/2in1Tablet
-
 倒排检索所用的精确场景匹配策略。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -694,9 +692,9 @@ PhonePC/2in1Tablet
 
 ## ProximityStrategy
 
-PhonePC/2in1Tablet
-
 倒排检索所用的近似与乱序匹配策略。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -710,9 +708,9 @@ PhonePC/2in1Tablet
 
 ## VectorRecallCondition
 
-PhonePC/2in1Tablet
-
 向量检索的召回条件。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -730,9 +728,9 @@ PhonePC/2in1Tablet
 
 ## VectorQuery
 
-PhonePC/2in1Tablet
-
 根据查询词生成的向量。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -742,13 +740,13 @@ PhonePC/2in1Tablet
 | --- | --- | --- | --- | --- |
 | column | [ColumnName](dataaugmentation-retrieval-api.md#columnname) | 否 | 否 | 待匹配向量字段名。必须为指定的向量数据库中存在的向量类型字段。 |
 | value | Float32Array | 否 | 是 | 向量列的向量值。  如果未定义value字段，系统将尝试将原始query生成向量。目前在PC上支持自动生成。  从HarmonyOS 6.0.0 Beta2版本开始，此参数由“必填”变更为“可选”。 |
-| similarityThreshold | number | 否 | 是 | 向量阈值，用于过滤不相似向量的阈值。默认值为1，取值范围最小值为0，最大值为[VectorRerankParameter](dataaugmentation-retrieval-api.md#vectorrerankparameter)中有效thresholds的最小值。 |
+| similarityThreshold | number | 否 | 是 | 向量阈值，用于过滤不相似向量的阈值。默认值为1，取值范围为[0, [VectorRerankParameter](dataaugmentation-retrieval-api.md#vectorrerankparameter)中有效thresholds的最小值]，包含边界值。 |
 
 ## RerankMethod
 
-PhonePC/2in1Tablet
-
 重排策略的参数。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -762,26 +760,26 @@ PhonePC/2in1Tablet
 
 ## RerankType
 
-PhonePC/2in1Tablet
-
 重排算法的类型。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
 **起始版本：** 6.0.0(20)
 
-| 类型 | 值 | 说明 |
+| 名称 | 值 | 说明 |
 | --- | --- | --- |
 | RRF | 0 | Reciprocal Rank Fusion(RRF)方法。根据各路召回位置信息进行分档排序。  适用场景：对结果多样性要求较高的场景，希望每路结果平等输出。 |
 | FUSION\_SCORE | 1 | 基于得分的召回融合方法。根据各路相关性分数进行分档排序。适用场景：对相关性准确性要求高、召回分数可靠且注重结果的排序稳定性的场景。 |
 
 ## RerankParameter
 
-PhonePC/2in1Tablet
-
 type RerankParameter = InvertedIndexRerankParameter| VectorRerankParameter
 
 重排算法的参数配置。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -794,9 +792,9 @@ type RerankParameter = InvertedIndexRerankParameter| VectorRerankParameter
 
 ## InvertedIndexRerankParameter
 
-PhonePC/2in1Tablet
-
 用于倒排索引的重排算法的参数。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -808,9 +806,9 @@ PhonePC/2in1Tablet
 
 ## VectorRerankParameter
 
-PhonePC/2in1Tablet
-
 用于向量数据的重排算法的参数。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -824,9 +822,9 @@ PhonePC/2in1Tablet
 
 ## RdbRecords
 
-PhonePC/2in1Tablet
-
 检索结果。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -839,9 +837,9 @@ PhonePC/2in1Tablet
 
 ## ItemInfo
 
-PhonePC/2in1Tablet
-
 检索结果中每条数据的特定内容。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -853,14 +851,14 @@ PhonePC/2in1Tablet
 | columns | Record<string, [relationalStore.ValueType](arkts-apis-data-relationalstore-t.md#valuetype)> | 否 | 否 | 召回列及其内容。 |
 | score | number | 否 | 否 | 检索重排后的最终得分，其反映了重排记录与查询词之间的相似度。score取值大于等于0。 |
 | recallScores | Record<[ChannelType](dataaugmentation-retrieval-api.md#channeltype), Record<string, [RecallScore](dataaugmentation-retrieval-api.md#recallscore)>> | 否 | 否 | 每路召回的得分，其反映了每路召回对该结果的相关性评估。key为该路RecallCondition的scoreKey；  - 如果这里没有体现RetrievalCondition中的某一路RecallCondition的scoreKey，则代表该路召回认为该结果相关性过低不予召回。 |
-| features | Record<string, number> | 否 | 否 | 不同倒排策略的得分。目前支持的倒排策略及得分为：  - "exact\_phase"：文档字段精确命中查询语句的得分。  - "out\_of\_order\_phase"：文档字段命中近似乱序匹配策略的得分。  - "token\_bm25"：文档字段bm25策略得分。  - "core\_count"：文档单个匹配字段内核心词总数。 |
-| similarityLevel | [SimilarityLevel](dataaugmentation-retrieval-api.md#similaritylevel) | 否 | 否 | 根据语义向量距离以及文本匹配程度，对检索结果按照相关性分档，方便对结果进行进一步筛选并且过滤。 |
+| features | Record<string, number> | 否 | 否 | 不同倒排策略的得分，用于评估检索结果在不同策略下的表现。目前支持的倒排策略及得分为：  - "exact\_phase"：文档字段精确命中查询语句的得分。  - "out\_of\_order\_phase"：文档字段命中近似乱序匹配策略的得分。  - "token\_bm25"：文档字段bm25策略得分。  - "core\_count"：文档单个匹配字段内核心词总数。 |
+| similarityLevel | [SimilarityLevel](dataaugmentation-retrieval-api.md#similaritylevel) | 否 | 否 | 根据语义向量距离以及文本匹配程度，对检索结果按照相关性分档，方便对结果进行进一步筛选和过滤。取值包括NONE（保留值）、LOW（语义相似）、MEDIUM（语义中等）、HIGH（语义差异大）。 |
 
 ## RecallScore
 
-PhonePC/2in1Tablet
-
 召回过程的得分。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -869,13 +867,13 @@ PhonePC/2in1Tablet
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | score | number | 否 | 否 | 召回得分。 |
-| isReverseQuery | boolean | 否 | 否 | 表示得分是否来自反查过程。true表示来自反查过程，flase表示来自原始召回过程。 |
+| isReverseQuery | boolean | 否 | 否 | 表示得分是否来自反查过程。true表示来自反查过程，false表示来自原始召回过程。 |
 
 ## SimilarityLevel
 
-PhonePC/2in1Tablet
-
 根据语义向量距离以及文本匹配程度，对检索结果按照相关性的高中低分档，方便对结果进行进一步筛选并且过滤。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DataAugmentation.Retrieval
 
@@ -884,6 +882,6 @@ PhonePC/2in1Tablet
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 保留值，暂无特定含义。 |
-| LOW | 1 | 结果和Query的语义向量距离小，表示语义更相似。 |
-| MEDIUM | 2 | 结果和Query的语义向量距离中等，表示语义相似性中等。 |
-| HIGH | 3 | 结果和Query的语义向量距离大，表示语义差异较大，相关性低。 |
+| LOW | 1 | 结果和Query的语义向量距离小，表示语义更相似。该等级表示检索结果与查询词具有高度语义相关性。 |
+| MEDIUM | 2 | 结果和Query的语义向量距离中等，表示语义相似性中等。该等级表示检索结果与查询词具有中等语义相关性。 |
+| HIGH | 3 | 结果和Query的语义向量距离大，表示语义差异较大，相关性低。该等级表示检索结果与查询词具有较低语义相关性。 |

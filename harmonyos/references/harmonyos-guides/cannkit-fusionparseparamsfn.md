@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-fusio
 title: FusionParseParamsFn
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OpRegistrationData > FusionParseParamsFn
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:42:20+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d513ea6ededb7393a7521ed23da94e5eee56400a49f79d74d43e6860fd193a23
+content_hash: sha256:4c66911ecec8e23f2fb20e4b9f76a39f9db1af125d8d8f6d910b84b7c390e0e3
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:d513ea6ededb7393a7521ed23da94e5eee56400a49f79d74d43e6860fd1
 
 ## 函数原型
 
-```
-1. OpRegistrationData &FusionParseParamsFn(const FusionParseParamFunc &fusionParseParamFn)
+```cpp
+OpRegistrationData &FusionParseParamsFn(const FusionParseParamFunc &fusionParseParamFn)
 ```
 
 ## 参数说明
@@ -32,8 +32,8 @@ content_hash: sha256:d513ea6ededb7393a7521ed23da94e5eee56400a49f79d74d43e6860fd1
 
 开发者自定义并实现FusionParseParamFunc类函数，完成原始模型中属性到适配AI处理器的模型中属性的映射，将结果填入Operator类中。
 
-```
-1. Status FusionParseParamFunc(const  vector<const google::protobuf::Message *> &v_op_origin, ge::Operator  &op_dest)
+```cpp
+Status FusionParseParamFunc(const  vector<const google::protobuf::Message *> &v_op_origin, ge::Operator  &op_dest)
 ```
 
 **表1** 参数说明

@@ -3,34 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.sendableResourceManager (资源管理)"
 breadcrumb: API参考 > 应用框架 > Localization Kit（本地化开发服务） > ArkTS API > @ohos.sendableResourceManager (资源管理)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:30+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:63406a666c3d904009d9489c56dd2874d168d3b54bd90df794f8f57a2613a0bb
+scraped_at: 2026-09-02T15:01:37+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:582c278e33e79c13a12e40e2d4e51ecae3a2d0a1fc73bb453b80a6ce6b623914
 ---
 
-资源管理导入sendableResourceManager模块，通过调用[resourceToSendableResource](js-apis-sendable-resource-manager.md#sendableresourcemanagerresourcetosendableresource)和[sendableResourceToResource](js-apis-sendable-resource-manager.md#sendableresourcemanagersendableresourcetoresource)方法可以将[Resource](js-apis-sendable-resource-manager.md#resource)对象和[SendableResource](js-apis-sendable-resource-manager.md#sendableresource)对象进行互转。
+本模块提供[Resource](js-apis-sendable-resource-manager.md#resource)对象与[SendableResource](js-apis-sendable-resource-manager.md#sendableresource)对象之间的相互转换功能。SendableResource实现了[ISendable](../harmonyos-guides/arkts-sendable.md#isendable)接口，支持跨线程传输。跨线程传输后，SendableResource对象可以再转换为Resource对象，作为参数传递给[资源管理](js-apis-resource-manager.md)接口以获取资源。
 
-Resource对象通过转换为SendableResource对象后，可以被[Sendable类](../harmonyos-guides/arkts-sendable.md)持有。Sendable类在跨线程传输后，取出持有的SendableResource对象转为Resource对象，作为参数获取资源。
-
-说明
+**说明** 
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { sendableResourceManager } from '@kit.LocalizationKit';
+```js
+import { sendableResourceManager } from '@kit.LocalizationKit';
 ```
 
 ## sendableResourceManager.resourceToSendableResource
 
-PhonePC/2in1TabletTVWearable
-
 resourceToSendableResource(resource: Resource): SendableResource
 
-将Resource对象转换为SendableResource对象。
+将Resource对象转换为可用于跨线程传输的SendableResource对象。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -54,42 +48,40 @@ resourceToSendableResource(resource: Resource): SendableResource
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed. |
 
 **示例：**
 
-```
-1. // 资源文件路径: src/main/resources/base/element/string.json
-2. {
-3. "string": [
-4. {
-5. "name": "test",
-6. "value": "I'm a test string resource."
-7. }
-8. ]
-9. }
+```json5
+// 资源文件路径: src/main/resources/base/element/string.json
+{
+  "string": [
+    {
+      "name": "test",
+      "value": "I'm a test string resource."
+    }
+  ]
+}
 ```
 
-```
-1. import { sendableResourceManager } from '@kit.LocalizationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { sendableResourceManager } from '@kit.LocalizationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. let sendableResource: sendableResourceManager.SendableResource = sendableResourceManager.resourceToSendableResource($r('app.string.test'));
-6. } catch (error) {
-7. let code = (error as BusinessError).code;
-8. let message = (error as BusinessError).message;
-9. console.error(`resourceToSendableResource failed, error code: ${code}, message: ${message}.`);
-10. }
+try {
+    let sendableResource: sendableResourceManager.SendableResource = sendableResourceManager.resourceToSendableResource($r('app.string.test'));
+} catch (error) {
+    let code = (error as BusinessError).code;
+    let message = (error as BusinessError).message;
+    console.error(`resourceToSendableResource failed, error code: ${code}, message: ${message}.`);
+}
 ```
 
 ## sendableResourceManager.sendableResourceToResource
 
-PhonePC/2in1TabletTVWearable
-
 sendableResourceToResource(resource: SendableResource): Resource
 
-将SendableResource对象转换为Resource对象。
+将跨线程传输的SendableResource对象转换为Resource对象。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -113,40 +105,40 @@ sendableResourceToResource(resource: SendableResource): Resource
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | If the input parameter invalid. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed. |
 
 **示例：**
 
-```
-1. // 资源文件路径: src/main/resources/base/element/string.json
-2. {
-3. "string": [
-4. {
-5. "name": "test",
-6. "value": "I'm a test string resource."
-7. }
-8. ]
-9. }
+```json5
+// 资源文件路径: src/main/resources/base/element/string.json
+{
+  "string": [
+    {
+      "name": "test",
+      "value": "I'm a test string resource."
+    }
+  ]
+}
 ```
 
-```
-1. import { sendableResourceManager } from '@kit.LocalizationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { sendableResourceManager } from '@kit.LocalizationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. let resource: sendableResourceManager.Resource = sendableResourceManager.sendableResourceToResource(sendableResourceManager.resourceToSendableResource($r('app.string.test')));
-6. } catch (error) {
-7. let code = (error as BusinessError).code;
-8. let message = (error as BusinessError).message;
-9. console.error(`sendableResourceToResource failed, error code: ${code}, message: ${message}.`);
-10. }
+try {
+    let resource: sendableResourceManager.Resource = sendableResourceManager.sendableResourceToResource(sendableResourceManager.resourceToSendableResource($r('app.string.test')));
+} catch (error) {
+    let code = (error as BusinessError).code;
+    let message = (error as BusinessError).message;
+    console.error(`sendableResourceToResource failed, error code: ${code}, message: ${message}.`);
+}
 ```
 
 ## Resource
 
-PhonePC/2in1TabletTVWearable
-
 type Resource = \_Resource
+
+表示资源相关信息，包括应用包名、应用模块名、资源ID、资源类型和其他资源参数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -158,9 +150,9 @@ type Resource = \_Resource
 
 ## SendableResource
 
-PhonePC/2in1TabletTVWearable
-
 type SendableResource = \_SendableResource
+
+表示跨线程传输的Sendable资源相关信息，包括应用包名、应用模块名、资源ID、资源类型和其他资源参数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 

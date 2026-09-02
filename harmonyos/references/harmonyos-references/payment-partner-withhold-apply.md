@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-p
 title: 申请免密代扣
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 平台类商户/服务商 > 签约代扣 > 申请免密代扣
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:04+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a303408f3277389f6fa9189c6307d92c3fd16c8a9d8a8b35766b24f67ca0d730
+scraped_at: 2026-09-02T14:53:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c68d241369be85f18d993c48aa6378b23f49ae16d51fc3666b4c151e53ec068b
 ---
 
 ## 功能介绍
@@ -44,11 +44,11 @@ content_hash: sha256:a303408f3277389f6fa9189c6307d92c3fd16c8a9d8a8b35766b24f67ca
 
 | 参数 | 是否必选 | 类型 | 说明 |
 | --- | --- | --- | --- |
-| spAppId | 否 | String | 合作伙伴父商户关联的应用ID。 |
-| spMercNo | 是 | String | 合作伙伴父商户号。最大长度12。 |
-| subAppId | 否 | String | 合作伙伴子商户关联的应用ID。  **说明：** 平台子商户当前不支持绑定AppID，平台类商户请求传递该入参可能导致校验异常。 |
-| subMercNo | 是 | String | 合作伙伴子商户号。最大长度12。 |
-| mercOrderNo | 是 | String | 商户订单号，由商户自己生成，商户需保证订单信息唯一性。最大长度46。 |
+| spAppId | 否 | String | 平台类商户/服务商关联的应用ID。 |
+| spMercNo | 是 | String | 平台类商户/服务商商户号。最大长度12。 |
+| subAppId | 否 | String | 特约商户关联的应用ID。  **说明：** 平台子商户当前不支持绑定AppID，平台类商户请求传递该入参可能导致校验异常。 |
+| subMercNo | 是 | String | 平台子商户/特约商户商户号。最大长度12。 |
+| mercOrderNo | 是 | String | 商户订单号，由商户自己生成，商户需保证订单信息唯一性。最小长度为1，最大长度46。 |
 | tradeSummary | 是 | String | 交易的摘要。格式建议：“商户应用名称-商品描述”。最大长度128。 |
 | totalAmount | 是 | Long | 订单金额，必须为大于0的整数值，单位：分。 |
 | currency | 否 | String | 交易币种单位，最大长度为3。  CNY （默认，当前仅支持该币种单位） |
@@ -61,23 +61,23 @@ content_hash: sha256:a303408f3277389f6fa9189c6307d92c3fd16c8a9d8a8b35766b24f67ca
 
 ## 请求示例
 
-```
-1. POST /api/v1/partner/aggr/transactions/withhold HTTP/1.1
-2. Content-Type: application/json;charset=UTF-8
-3. PayMercAuth: {"callerId":"10132120***","traceId":"202305151026422776499","time":1684117602555,"authId":"120291744647139***","headerSign":"u+H1Oe3fXV9mGCES89XA7tSjp8+TELYgG4bKyECwrVGwwEYaq1jD*******************JH7rMv6SBj/z0UcN9wjEWJu5JyvY5KunSeE6DiKs=","bodySign":"yWDtXOBqDoItPgHmF57L6RQCzdGAz53wDkCR*******************E6KxPAHE0TIkTxHMcUWx7N6405QaszpiRT2aQDaqLGaxvta6J5UxIUmAp+wGdV/juGEvQ="}
-4. Accept: application/json
-5. {
-6. "spAppId": "5765880207853***",
-7. "contractId": "2024070914615843071097***",
-8. "spMercNo": "10132120***",
-9. "subMercNo": "10193600***",
-10. "mercOrderNo": "czl00120240705***",
-11. "allocationType": "DELAY_ORDER_ALLOCATION",
-12. "callbackUrl": "https://www.xxxxxx.com/hw/pay/callback",
-13. "currency": "CNY",
-14. "totalAmount": 2,
-15. "tradeSummary": "xx服务-杂志报刊"
-16. }
+```json
+POST /api/v1/partner/aggr/transactions/withhold HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+PayMercAuth: {"callerId":"10132120***","traceId":"202305151026422776499","time":1684117602555,"authId":"120291744647139***","headerSign":"u+H1Oe3fXV9mGCES89XA7tSjp8+TELYgG4bKyECwrVGwwEYaq1jD*******************JH7rMv6SBj/z0UcN9wjEWJu5JyvY5KunSeE6DiKs=","bodySign":"yWDtXOBqDoItPgHmF57L6RQCzdGAz53wDkCR*******************E6KxPAHE0TIkTxHMcUWx7N6405QaszpiRT2aQDaqLGaxvta6J5UxIUmAp+wGdV/juGEvQ="}
+Accept: application/json
+{
+  "spAppId": "5765880207853***",
+  "contractId": "2024070914615843071097***",
+  "spMercNo": "10132120***",
+  "subMercNo": "10193600***",
+  "mercOrderNo": "czl00120240705***",
+  "allocationType": "DELAY_ORDER_ALLOCATION",
+  "callbackUrl": "https://www.xxxxxx.com/hw/pay/callback",
+  "currency": "CNY",
+  "totalAmount": 2,
+  "tradeSummary": "xx服务-杂志报刊"
+}
 ```
 
 ## 响应参数
@@ -101,15 +101,15 @@ content_hash: sha256:a303408f3277389f6fa9189c6307d92c3fd16c8a9d8a8b35766b24f67ca
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json; charset=UTF-8
-3. {
-4. "resultCode": "000000",
-5. "resultDesc": "Success.",
-6. "sign": "MEQCIEIWzdpziRyTi8vhwWHFuDd********************er0YAMabeCgTDG77e+2XJItvq/ZkIcCN5/B20pQ==",
-7. "sysTransOrderNo": "12407030857530004914518***"
-8. }
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+{
+  "resultCode": "000000",
+  "resultDesc": "Success.",
+  "sign": "MEQCIEIWzdpziRyTi8vhwWHFuDd********************er0YAMabeCgTDG77e+2XJItvq/ZkIcCN5/B20pQ==",
+  "sysTransOrderNo": "12407030857530004914518***"
+}
 ```
 
 ## 错误码

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-skill
 title: 场景体验
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 技能调用方案 > 场景体验
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:43:36+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:cb48ff5786f5ec326c872f1a88b53776e593d0138545a584f174a72bfa724b26
+scraped_at: 2026-09-02T15:00:14+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:3d0fa4e4bc790c54ef03fd2b469d054c7db13ac43a7080c1a05bd48b551ce136
 ---
 
 用户通过小艺对话进行自然语言输入实现服务闭环和内容查询。主要场景分为两大类：任务执行和功能一步达。其中任务执行体验又分为两种：功能服务类和信息交互类。
@@ -13,7 +13,7 @@ content_hash: sha256:cb48ff5786f5ec326c872f1a88b53776e593d0138545a584f174a72bfa7
 1. 任务执行：
 
    * 功能服务类：端侧意图调用直接进入应用或元服务对应意图功能服务页面，可携带业务参数。
-   * 信息交互类：端侧或云侧意图调用进行内容查询后展示，用户点击进行端侧意图调用闭环（此场景请发送邮件至“hagservice@huawei.com”邮箱申请接入）。
+   * 信息交互类：端侧或云侧意图调用进行内容查询后展示，用户点击进行端侧意图调用闭环。
 2. 功能一步达：端侧意图调用直接进入应用功能页面，无需其他业务参数，开发者可自定义批量声明接入。
 
 ## 典型场景
@@ -33,4 +33,4 @@ content_hash: sha256:cb48ff5786f5ec326c872f1a88b53776e593d0138545a584f174a72bfa7
 
 开发者将应用内的功能声明接入意图框架后，用户可以通过小艺直接打开相应功能页面，比如“打开XX视频的会员中心”，可直接拉起对应页面，实现一步直达。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/d0iv4UXxQNypBI80HD-ecQ/zh-cn_image_0000002558765820.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/1P45BZjkTWSIuLrp96sdtg/zh-cn_image_0000002706835388.png)

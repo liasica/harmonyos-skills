@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___co
 title: Rcp_ConnectionConfiguration
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > C API > 结构体 > Rcp_ConnectionConfiguration
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:01+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:ef27063c986b44b58e9673936debc5790a85d0d8881275472abc6c6c38058501
+scraped_at: 2026-09-02T15:01:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3039813c00a61c64b48e79e267b8bfde5ebf3df630804b29c7d5a140c8c38d1b
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 连接配置。
 
@@ -22,11 +20,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -36,14 +30,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTVWearable
-
 ### maxCacheConnections
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. long Rcp_ConnectionConfiguration::maxCacheConnections
+```cpp
+long Rcp_ConnectionConfiguration::maxCacheConnections
 ```
 
 **描述**
@@ -52,10 +42,8 @@ PhonePC/2in1TabletTVWearable
 
 ### maxConnectionsPerHost
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. long Rcp_ConnectionConfiguration::maxConnectionsPerHost
+```cpp
+long Rcp_ConnectionConfiguration::maxConnectionsPerHost
 ```
 
 **描述**
@@ -64,10 +52,8 @@ PhonePC/2in1TabletTVWearable
 
 ### maxTotalConnections
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. long Rcp_ConnectionConfiguration::maxTotalConnections
+```cpp
+long Rcp_ConnectionConfiguration::maxTotalConnections
 ```
 
 **描述**

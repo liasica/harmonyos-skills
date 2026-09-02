@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/net-eap
 title: 扩展认证
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 管理网络 > 扩展认证
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:54+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f97645864120a555ee2fd1f98ab593dda860a80336e4a01f041a15936a029886
+scraped_at: 2026-09-02T14:59:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:fcab0f79accff4eec24c98249eeb32a725f2d8fd49518287632d3ae416a3bad7
 ---
 
 ## 简介
 
 部分企业用户的PC网络接入认证使用802.1X认证方式，认证客户端由第三方厂商提供。
 
-说明
+**说明** 
 
 扩展认证能力从API version 20开始支持。
 
@@ -47,12 +47,10 @@ content_hash: sha256:f97645864120a555ee2fd1f98ab593dda860a80336e4a01f041a15936a0
 
 1. 从@kit.NetworkKit中导入eap命名空间。
 
+   ```typescript
+   import { eap } from '@kit.NetworkKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
-   1. import { eap } from '@kit.NetworkKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
-   ```
-
-   [AccreditationProcess.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/NetWork_Kit/NetWorkKit_NetManager/NetEap_case/entry/src/main/ets/pages/AccreditationProcess.ets#L15-L18)
 2. 调用[regCustomEapHandler](../harmonyos-references/js-apis-net-eap.md#eapregcustomeaphandler)方法，注册所需监听的EAP报文类型。
 
    在802.1X认证过程中，系统会将符合条件的EAP报文传递至callback函数（如示例代码中的eapData函数）中，供企业应用获取。报文传递至callback函数后，802.1X认证流程会阻塞等待，用户能够获取到完整的报文内容。
@@ -65,131 +63,121 @@ content_hash: sha256:f97645864120a555ee2fd1f98ab593dda860a80336e4a01f041a15936a0
 
    以下注册服务器发送给客户端的报文类型（即eapCode=1，eapType=25）为例，若需注册其他类型，修改eapCode值后再调用[regCustomEapHandler](../harmonyos-references/js-apis-net-eap.md#eapregcustomeaphandler)方法即可。
 
-   ```
-   1. let netType = 1;
-   2. let eapCode= 1; // eap request
-   3. let eapType= 25; // EAP_PEAP
-   4. let result = 1;
+   ```typescript
+   let netType = 1;
+   let eapCode= 1; // eap request
+   let eapType= 25; // EAP_PEAP
+   let result = 1;
 
-   6. let eapData = (eapData:eap.EapData):void => {
-   7. hilog.info(0x0000, 'testTag', 'rsp result',JSON.stringify(eapData));
-   8. const newBuffer = new Uint8Array(eapData.bufferLen);
-   9. newBuffer.set(eapData.eapBuffer, 0);
-   10. let eapData2: eap.EapData = {
-   11. msgId: eapData.msgId,
-   12. eapBuffer: newBuffer,
-   13. bufferLen: newBuffer.length
-   14. }
-   15. try{
-   16. eap.replyCustomEapData(result, eapData2);
-   17. hilog.info(0x0000, 'testTag', 'replyCustomEapData success');
-   18. } catch (err) {
-   19. hilog.error(0x0000, 'testTag', 'errCode: ' + err.code + ' , errMessage: ' + err.message);
-   20. }
-   21. }
-   22. function serverReplyCustomEapData() {
-   23. try{
-   24. eap.regCustomEapHandler(netType, eapCode, eapType, eapData);
-   25. hilog.info(0x0000, 'testTag', 'regCustomEapHandler success');
-   26. // ...
-   27. } catch (err) {
-   28. hilog.error(0x0000, 'testTag', 'errCode: ' + err.code + 'errMessage: ' + err.message);
-   29. // ...
-   30. }
-   31. }
+   let eapData = (eapData:eap.EapData):void => {
+     hilog.info(0x0000, 'testTag', 'rsp result',JSON.stringify(eapData));
+     const newBuffer = new Uint8Array(eapData.bufferLen);
+     newBuffer.set(eapData.eapBuffer, 0);
+     let eapData2: eap.EapData = {
+       msgId: eapData.msgId,
+       eapBuffer: newBuffer,
+       bufferLen: newBuffer.length
+     }
+     try{
+       eap.replyCustomEapData(result, eapData2);
+       hilog.info(0x0000, 'testTag', 'replyCustomEapData success');
+     } catch (err) {
+       hilog.error(0x0000, 'testTag', 'errCode: ' + err.code + ' , errMessage: ' + err.message);
+     }
+   }
+   function serverReplyCustomEapData() {
+     try{
+       eap.regCustomEapHandler(netType, eapCode, eapType, eapData);
+       hilog.info(0x0000, 'testTag', 'regCustomEapHandler success');
+       // ...
+     } catch (err) {
+       hilog.error(0x0000, 'testTag', 'errCode: ' + err.code + 'errMessage: ' + err.message);
+       // ...
+     }
+   }
    ```
-
-   [AccreditationProcess.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/NetWork_Kit/NetWorkKit_NetManager/NetEap_case/entry/src/main/ets/pages/AccreditationProcess.ets#L26-L74)
 3. 若需取消定制化，可调用[unregCustomEapHandler](../harmonyos-references/js-apis-net-eap.md#eapunregcustomeaphandler)方法。
 
-   ```
-   1. let netType = 1;
-   2. let eapCode= 1; // eap request
-   3. let eapType= 25; // EAP_PEAP
-   4. let result = 1;
+   ```typescript
+   let netType = 1;
+   let eapCode= 1; // eap request
+   let eapType= 25; // EAP_PEAP
+   let result = 1;
 
-   6. let eapData = (eapData:eap.EapData):void => {
-   7. hilog.info(0x0000, 'testTag', 'rsp result',JSON.stringify(eapData));
-   8. const newBuffer = new Uint8Array(eapData.bufferLen);
-   9. newBuffer.set(eapData.eapBuffer, 0);
-   10. let eapData2: eap.EapData = {
-   11. msgId: eapData.msgId,
-   12. eapBuffer: newBuffer,
-   13. bufferLen: newBuffer.length
-   14. }
-   15. // ...
-   16. }
-   17. // ...
-   18. try {
-   19. eap.unregCustomEapHandler(netType, eapCode, eapType, eapData);
-   20. hilog.info(0x0000, 'testTag', 'unregCustomEapHandler success');
-   21. // ...
-   22. } catch (err) {
-   23. hilog.error(0x0000, 'testTag', 'errCode: ' + err.code + ', errMessage: ' + err.message);
-   24. // ...
-   25. }
+   let eapData = (eapData:eap.EapData):void => {
+     hilog.info(0x0000, 'testTag', 'rsp result',JSON.stringify(eapData));
+     const newBuffer = new Uint8Array(eapData.bufferLen);
+     newBuffer.set(eapData.eapBuffer, 0);
+     let eapData2: eap.EapData = {
+       msgId: eapData.msgId,
+       eapBuffer: newBuffer,
+       bufferLen: newBuffer.length
+     }
+     // ...
+   }
+   // ...
+     try {
+       eap.unregCustomEapHandler(netType, eapCode, eapType, eapData);
+       hilog.info(0x0000, 'testTag', 'unregCustomEapHandler success');
+       // ...
+     } catch (err) {
+       hilog.error(0x0000, 'testTag', 'errCode: ' + err.code + ', errMessage: ' + err.message);
+       // ...
+     }
    ```
-
-   [AccreditationProcess.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/NetWork_Kit/NetWorkKit_NetManager/NetEap_case/entry/src/main/ets/pages/AccreditationProcess.ets#L27-L98)
 
 ## 使用eth接口发起802.1X认证流程
 
 1. 设备通过硬件接口，插入网线。
 2. 从@kit.NetworkKit中导入eap命名空间。
 
+   ```typescript
+   import { eap } from '@kit.NetworkKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
-   1. import { eap } from '@kit.NetworkKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
-   ```
-
-   [EthInterface.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/NetWork_Kit/NetWorkKit_NetManager/NetEap_case/entry/src/main/ets/pages/EthInterface.ets#L15-L18)
 3. 当企业管理软件需要进行认证，调用[startEthEap](../harmonyos-references/js-apis-net-eap.md#eapstartetheap)方法时，会发起802.1X认证流程。
 
-   ```
-   1. const netId: number = 100;
-   2. // ...
-   3. let profile: eap.EthEapProfile = {
-   4. eapMethod: eap.EapMethod.EAP_TTLS,
-   5. phase2Method: eap.Phase2Method.PHASE2_AKA_PRIME,
-   6. identity: 'identity',
-   7. anonymousIdentity: 'anonymousIdentity',
-   8. password: 'password',
-   9. caCertAliases: 'caCertAliases',
-   10. caPath: 'caPath',
-   11. clientCertAliases: 'clientCertAliases',
-   12. certEntry: new Uint8Array([5,6,7,8,9,10]),
-   13. certPassword: 'certPassword',
-   14. altSubjectMatch: 'altSubjectMatch',
-   15. domainSuffixMatch: 'domainSuffixMatch',
-   16. realm: 'realm',
-   17. plmn: 'plmn',
-   18. eapSubId: 1
-   19. };
+   ```typescript
+   const netId: number = 100;
+   // ...
+     let profile: eap.EthEapProfile = {
+       eapMethod: eap.EapMethod.EAP_TTLS,
+       phase2Method: eap.Phase2Method.PHASE2_AKA_PRIME,
+       identity: 'identity',
+       anonymousIdentity: 'anonymousIdentity',
+       password: 'password',
+       caCertAliases: 'caCertAliases',
+       caPath: 'caPath',
+       clientCertAliases: 'clientCertAliases',
+       certEntry: new Uint8Array([5,6,7,8,9,10]),
+       certPassword: 'certPassword',
+       altSubjectMatch: 'altSubjectMatch',
+       domainSuffixMatch: 'domainSuffixMatch',
+       realm: 'realm',
+       plmn: 'plmn',
+       eapSubId: 1
+     };
 
-   21. try {
-   22. eap.startEthEap(netId, profile);
-   23. hilog.info(0x0000, 'testTag', 'startEthEap success');
-   24. // ...
-   25. } catch (err) {
-   26. // ...
-   27. hilog.error(0x0000, 'testTag', 'errCode: ' + err.code + ', errMessage: ' + err.message);
-   28. }
+     try {
+       eap.startEthEap(netId, profile);
+       hilog.info(0x0000, 'testTag', 'startEthEap success');
+       // ...
+     } catch (err) {
+       // ...
+       hilog.error(0x0000, 'testTag', 'errCode: ' + err.code + ', errMessage: ' + err.message);
+     }
    ```
-
-   [EthInterface.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/NetWork_Kit/NetWorkKit_NetManager/NetEap_case/entry/src/main/ets/pages/EthInterface.ets#L27-L71)
 4. 当企业管理软件需要退出认证状态，调用[logOffEthEap](../harmonyos-references/js-apis-net-eap.md#eaplogoffetheap)方法，即会发起802.1X取消认证流程。
 
+   ```typescript
+   const netId: number = 100;
+   // ...
+     try{
+       eap.logOffEthEap(netId);
+       hilog.error(0x0000, 'testTag', 'logOffEthEap success');
+       // ...
+     } catch (err) {
+       // ...
+       hilog.error(0x0000, 'testTag', 'errCode: ' + err.code + ', errMessage: ' + err.message);
+     }
    ```
-   1. const netId: number = 100;
-   2. // ...
-   3. try{
-   4. eap.logOffEthEap(netId);
-   5. hilog.error(0x0000, 'testTag', 'logOffEthEap success');
-   6. // ...
-   7. } catch (err) {
-   8. // ...
-   9. hilog.error(0x0000, 'testTag', 'errCode: ' + err.code + ', errMessage: ' + err.message);
-   10. }
-   ```
-
-   [EthInterface.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/NetWork_Kit/NetWorkKit_NetManager/NetEap_case/entry/src/main/ets/pages/EthInterface.ets#L26-L96)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-animato
 title: 帧动画（ohos.animator）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 帧动画（ohos.animator）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:16+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8d715c03d8c6da667f907f6046a96428fc87cf36996570d61a45cea5ae42c432
+scraped_at: 2026-09-02T14:49:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f9b4ec00a580fc78e0a3656cab57e3060c6c5e7e93828c19360e6080562989d4
 ---
 
 帧动画具备逐帧回调的特性，便于开发者在每一帧中处理需调整的属性。通过向应用提供[AnimatorResult](../harmonyos-references/js-apis-animator.md#animatorresult)的onFrame属性逐帧回调，帧动画使开发者能够在应用的每一帧设置属性值，从而实现组件属性值变化的自然过渡，营造出动画效果。帧动画接口详情可参考[@ohos.animator (动画)](../harmonyos-references/js-apis-animator.md)。
@@ -19,9 +19,9 @@ content_hash: sha256:8d715c03d8c6da667f907f6046a96428fc87cf36996570d61a45cea5ae4
 
 如图所示，帧动画在动画过程中即可实时响应，而属性动画按最终状态响应。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/bTVEPvziTPW40J6KbEeSDQ/zh-cn_image_0000002558764494.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/2xCDzphfS5eSpgBx7o7HkA/zh-cn_image_0000002736432965.gif)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/kP640CcuSNmft8r2V-A4IA/zh-cn_image_0000002558604838.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/NBtS7u4nRzuXpcCilKJd4Q/zh-cn_image_0000002706833810.gif)
 
 ## 使用帧动画实现动画效果
 
@@ -29,237 +29,217 @@ content_hash: sha256:8d715c03d8c6da667f907f6046a96428fc87cf36996570d61a45cea5ae4
 
 1. 引入相关依赖。
 
+   ```typescript
+   import { AnimatorOptions, AnimatorResult } from '@kit.ArkUI';
    ```
-   1. import { AnimatorOptions, AnimatorResult } from '@kit.ArkUI';
-   ```
-
-   [AnimatorPage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animator/template4/AnimatorPage.ets#L15-L17)
 2. 创建执行动画的对象。
 
-   ```
-   1. // 创建动画的初始参数
-   2. let options: AnimatorOptions = {
-   3. duration: 1500,
-   4. easing: 'friction',
-   5. delay: 0,
-   6. fill: 'forwards',
-   7. direction: 'normal',
-   8. iterations: 2,
-   9. // 动画onFrame 插值首帧值
-   10. begin: 200.0,
-   11. // 动画onFrame 插值尾帧值
-   12. end: 400.0
-   13. };
-   14. let result: AnimatorResult | undefined = this.getUIContext().createAnimator(options);
-   15. // 设置接收到帧时回调，动画播放过程中每帧会调用onFrame回调
-   16. result.onFrame = (value: number) => {
-   17. hilog.info(DOMAIN, TAG, 'current value is :' + value);
+   ```typescript
+   // 创建动画的初始参数
+   let options: AnimatorOptions = {
+     duration: 1500,
+     easing: 'friction',
+     delay: 0,
+     fill: 'forwards',
+     direction: 'normal',
+     iterations: 2,
+     // 动画onFrame 插值首帧值
+     begin: 200.0,
+     // 动画onFrame 插值尾帧值
+     end: 400.0
+   };
+   let result: AnimatorResult | undefined = this.getUIContext().createAnimator(options);
+   // 设置接收到帧时回调，动画播放过程中每帧会调用onFrame回调
+   result.onFrame = (value: number) => {
+     hilog.info(DOMAIN, TAG, 'current value is :' + value);
 
-   19. }
+   }
    ```
-
-   [AnimatorPage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animator/template4/AnimatorPage.ets#L34-L54)
 3. 播放动画。
 
+   ```typescript
+   // 播放动画
+   result.play();
    ```
-   1. // 播放动画
-   2. result.play();
-   ```
-
-   [AnimatorPage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animator/template4/AnimatorPage.ets#L56-L59)
 4. 动画执行完成后手动释放AnimatorResult对象。
 
+   ```typescript
+   // 释放动画对象
+   result = undefined;
    ```
-   1. // 释放动画对象
-   2. result = undefined;
-   ```
-
-   [AnimatorPage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animator/template4/AnimatorPage.ets#L61-L64)
 
 ## 使用帧动画实现小球抛物运动
 
 1. 引入相关依赖。
 
+   ```typescript
+   import { AnimatorOptions, AnimatorResult } from '@kit.ArkUI';
    ```
-   1. import { AnimatorOptions, AnimatorResult } from '@kit.ArkUI';
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animator/template4/Index.ets#L15-L17)
 2. 定义要做动画的组件。
 
+   ```typescript
+   Button()
+     .width(60)
+     .height(60)
+     .translate({ x: this.translateX, y: this.translateY })
    ```
-   1. Button()
-   2. .width(60)
-   3. .height(60)
-   4. .translate({ x: this.translateX, y: this.translateY })
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animator/template4/Index.ets#L109-L114)
 3. 在onPageShow中创建AnimatorResult对象。
 
+   ```typescript
+   onPageShow(): void {
+     // 创建animatorResult对象
+     this.animatorResult = this.getUIContext().createAnimator(this.animatorOption);
+     this.animatorResult.onFrame = (progress: number) => {
+       this.translateX = progress;
+       if (progress > this.topWidth && this.translateY < this.bottomHeight) {
+         this.translateY = Math.pow(progress - this.topWidth, 2) * this.g;
+       }
+     }
+     // 动画取消时执行方法
+     this.animatorResult.onCancel = () => {
+       // 请将$r('app.string.cancel')替换为实际资源文件，在本示例中该资源文件的value值为"取消"
+       this.animatorStatus = $r('app.string.cancel');
+     }
+     // 动画完成时执行方法
+     this.animatorResult.onFinish = () => {
+       // 请将$r('app.string.complete')替换为实际资源文件，在本示例中该资源文件的value值为"完成"
+       this.animatorStatus = $r('app.string.complete');
+     }
+     // 动画重复播放时执行方法
+     this.animatorResult.onRepeat = () => {
+       // 'repeat'资源文件中的value值为'动画重复播放'
+       hilog.info(DOMAIN, TAG, this.manager.getStringByNameSync('repeat'));
+     }
+   }
    ```
-   1. onPageShow(): void {
-   2. // 创建animatorResult对象
-   3. this.animatorResult = this.getUIContext().createAnimator(this.animatorOption);
-   4. this.animatorResult.onFrame = (progress: number) => {
-   5. this.translateX = progress;
-   6. if (progress > this.topWidth && this.translateY < this.bottomHeight) {
-   7. this.translateY = Math.pow(progress - this.topWidth, 2) * this.g;
-   8. }
-   9. }
-   10. // 动画取消时执行方法
-   11. this.animatorResult.onCancel = () => {
-   12. // 请将$r('app.string.cancel')替换为实际资源文件，在本示例中该资源文件的value值为"取消"
-   13. this.animatorStatus = $r('app.string.cancel');
-   14. }
-   15. // 动画完成时执行方法
-   16. this.animatorResult.onFinish = () => {
-   17. // 请将$r('app.string.complete')替换为实际资源文件，在本示例中该资源文件的value值为"完成"
-   18. this.animatorStatus = $r('app.string.complete');
-   19. }
-   20. // 动画重复播放时执行方法
-   21. this.animatorResult.onRepeat = () => {
-   22. // 'repeat'资源文件中的value值为'动画重复播放'
-   23. hilog.info(DOMAIN, TAG, this.manager.getStringByNameSync('repeat'));
-   24. }
-   25. }
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animator/template4/Index.ets#L50-L76)
 4. 定义动画播放，重置，暂停的按钮。
 
+   ```typescript
+   // 请将$r('app.string.play')替换为实际资源文件，在本示例中该资源文件的value值为"播放"
+   Button($r('app.string.play')).onClick(() => {
+     this.animatorResult?.play();
+     // 请将$r('app.string.playing')替换为实际资源文件，在本示例中该资源文件的value值为"播放中"
+     this.animatorStatus = $r('app.string.playing');
+   }).width(80).height(35)
+   // 请将$r('app.string.reset')替换为实际资源文件，在本示例中该资源文件的value值为"重置"
+   Button($r('app.string.reset')).onClick(() => {
+     this.translateX = 0;
+     this.translateY = 0;
+   }).width(80).height(35)
+   // 请将$r('app.string.pause')替换为实际资源文件，在本示例中该资源文件的value值为"暂停"
+   Button($r('app.string.pause')).onClick(() => {
+     this.animatorResult?.pause();
+     // 请将$r('app.string.pause')替换为实际资源文件，在本示例中该资源文件的value值为"暂停"
+     this.animatorStatus = $r('app.string.pause');
+   }).width(80).height(35)
    ```
-   1. // 请将$r('app.string.play')替换为实际资源文件，在本示例中该资源文件的value值为"播放"
-   2. Button($r('app.string.play')).onClick(() => {
-   3. this.animatorResult?.play();
-   4. // 请将$r('app.string.playing')替换为实际资源文件，在本示例中该资源文件的value值为"播放中"
-   5. this.animatorStatus = $r('app.string.playing');
-   6. }).width(80).height(35)
-   7. // 请将$r('app.string.reset')替换为实际资源文件，在本示例中该资源文件的value值为"重置"
-   8. Button($r('app.string.reset')).onClick(() => {
-   9. this.translateX = 0;
-   10. this.translateY = 0;
-   11. }).width(80).height(35)
-   12. // 请将$r('app.string.pause')替换为实际资源文件，在本示例中该资源文件的value值为"暂停"
-   13. Button($r('app.string.pause')).onClick(() => {
-   14. this.animatorResult?.pause();
-   15. // 请将$r('app.string.pause')替换为实际资源文件，在本示例中该资源文件的value值为"暂停"
-   16. this.animatorStatus = $r('app.string.pause');
-   17. }).width(80).height(35)
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animator/template4/Index.ets#L87-L105)
 5. 在页面隐藏或销毁的生命周期中释放动画对象，避免内存泄漏。
 
+   ```typescript
+   onPageHide(): void {
+     this.animatorResult = undefined;
+   }
    ```
-   1. onPageHide(): void {
-   2. this.animatorResult = undefined;
-   3. }
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animator/template4/Index.ets#L78-L82)
 
 完整示例如下。
 
+```typescript
+import { AnimatorOptions, AnimatorResult } from '@kit.ArkUI';
+import { common } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN = 0x0000;
+const TAG: string = '[AnimatorTest]';
+
+@Entry
+@Component
+struct Index {
+  private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  private manager = this.context.resourceManager;
+  @State animatorResult: AnimatorResult | undefined = undefined;
+  // 'create'资源文件中的value值为'创建'
+  @State animatorStatus: string = 'create';
+  begin: number = 0;
+  end: number = 300;
+  topWidth: number = 150;
+  bottomHeight: number = 100;
+  // 自由落体运动的加速度系数
+  g: number = 0.18;
+  animatorOption: AnimatorOptions = {
+    duration: 4000,
+    delay: 0,
+    easing: 'linear',
+    iterations: 1,
+    fill: "forwards",
+    direction: 'normal',
+    begin: this.begin,
+    end: this.end
+  };
+  @State translateX: number = 0;
+  @State translateY: number = 0;
+
+  onPageShow(): void {
+    this.animatorResult = this.getUIContext().createAnimator(this.animatorOption);
+    this.animatorResult.onFrame = (progress: number) => {
+      this.translateX = progress;
+      if (progress > this.topWidth && this.translateY < this.bottomHeight) {
+        this.translateY = Math.pow(progress - this.topWidth, 2) * this.g;
+      }
+    }
+    this.animatorResult.onCancel = () => {
+      // 'cancel'资源文件中的value值为'取消'
+      this.animatorStatus = 'cancel';
+    }
+    this.animatorResult.onFinish = () => {
+      // 'complete'资源文件中的value值为'完成'
+      this.animatorStatus = 'complete';
+    }
+    this.animatorResult.onRepeat = () => {
+      // 'repeat'资源文件中的value值为'动画重复播放'
+      hilog.info(DOMAIN, TAG, this.manager.getStringByNameSync('repeat'));
+    }
+  }
+
+  onPageHide(): void {
+    this.animatorResult = undefined;
+  }
+
+  build() {
+    Column() {
+      Column({ space: 30 }) {
+        // 请将$r('app.string.play')替换为实际资源文件，在本示例中该资源文件的value值为"播放"
+        Button($r('app.string.play')).onClick(() => {
+          this.animatorResult?.play();
+          // 'playing'资源文件中的value值为'播放中'
+          this.animatorStatus = 'playing';
+        }).width(80).height(35)
+        // 请将$r('app.string.reset')替换为实际资源文件，在本示例中该资源文件的value值为"重置"
+        Button($r('app.string.reset')).onClick(() => {
+          this.translateX = 0;
+          this.translateY = 0;
+        }).width(80).height(35)
+        // 请将$r('app.string.pause')替换为实际资源文件，在本示例中该资源文件的value值为"暂停"
+        Button($r('app.string.pause')).onClick(() => {
+          this.animatorResult?.pause();
+          // 'pause'资源文件中的value值为'暂停'
+          this.animatorStatus = 'pause';
+        }).width(80).height(35)
+      }.width('100%').height('25%')
+
+      Stack() {
+        Button()
+          .width(60)
+          .height(60)
+          .translate({ x: this.translateX, y: this.translateY })
+      }
+      .width('100%')
+      .height('45%')
+      .align(Alignment.Start)
+      // 'animatorStatus'资源文件中的value值为'当前动画状态为:'
+      Text(this.manager.getStringByNameSync('animatorStatus') + this.manager.getStringByNameSync(this.animatorStatus))
+    }.width('100%').height('100%')
+  }
+}
 ```
-1. import { AnimatorOptions, AnimatorResult } from '@kit.ArkUI';
-2. import { common } from '@kit.AbilityKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. const DOMAIN = 0x0000;
-6. const TAG: string = '[AnimatorTest]';
-
-8. @Entry
-9. @Component
-10. struct Index {
-11. private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-12. private manager = this.context.resourceManager;
-13. @State animatorResult: AnimatorResult | undefined = undefined;
-14. // 'create'资源文件中的value值为'创建'
-15. @State animatorStatus: string = 'create';
-16. begin: number = 0;
-17. end: number = 300;
-18. topWidth: number = 150;
-19. bottomHeight: number = 100;
-20. // 自由落体运动的加速度系数
-21. g: number = 0.18;
-22. animatorOption: AnimatorOptions = {
-23. duration: 4000,
-24. delay: 0,
-25. easing: 'linear',
-26. iterations: 1,
-27. fill: "forwards",
-28. direction: 'normal',
-29. begin: this.begin,
-30. end: this.end
-31. };
-32. @State translateX: number = 0;
-33. @State translateY: number = 0;
-
-35. onPageShow(): void {
-36. this.animatorResult = this.getUIContext().createAnimator(this.animatorOption);
-37. this.animatorResult.onFrame = (progress: number) => {
-38. this.translateX = progress;
-39. if (progress > this.topWidth && this.translateY < this.bottomHeight) {
-40. this.translateY = Math.pow(progress - this.topWidth, 2) * this.g;
-41. }
-42. }
-43. this.animatorResult.onCancel = () => {
-44. // 'cancel'资源文件中的value值为'取消'
-45. this.animatorStatus = 'cancel';
-46. }
-47. this.animatorResult.onFinish = () => {
-48. // 'complete'资源文件中的value值为'完成'
-49. this.animatorStatus = 'complete';
-50. }
-51. this.animatorResult.onRepeat = () => {
-52. // 'repeat'资源文件中的value值为'动画重复播放'
-53. hilog.info(DOMAIN, TAG, this.manager.getStringByNameSync('repeat'));
-54. }
-55. }
-
-57. onPageHide(): void {
-58. this.animatorResult = undefined;
-59. }
-
-61. build() {
-62. Column() {
-63. Column({ space: 30 }) {
-64. // 请将$r('app.string.play')替换为实际资源文件，在本示例中该资源文件的value值为"播放"
-65. Button($r('app.string.play')).onClick(() => {
-66. this.animatorResult?.play();
-67. // 'playing'资源文件中的value值为'播放中'
-68. this.animatorStatus = 'playing';
-69. }).width(80).height(35)
-70. // 请将$r('app.string.reset')替换为实际资源文件，在本示例中该资源文件的value值为"重置"
-71. Button($r('app.string.reset')).onClick(() => {
-72. this.translateX = 0;
-73. this.translateY = 0;
-74. }).width(80).height(35)
-75. // 请将$r('app.string.pause')替换为实际资源文件，在本示例中该资源文件的value值为"暂停"
-76. Button($r('app.string.pause')).onClick(() => {
-77. this.animatorResult?.pause();
-78. // 'pause'资源文件中的value值为'暂停'
-79. this.animatorStatus = 'pause';
-80. }).width(80).height(35)
-81. }.width('100%').height('25%')
-
-83. Stack() {
-84. Button()
-85. .width(60)
-86. .height(60)
-87. .translate({ x: this.translateX, y: this.translateY })
-88. }
-89. .width('100%')
-90. .height('45%')
-91. .align(Alignment.Start)
-92. // 'animatorStatus'资源文件中的value值为'当前动画状态为:'
-93. Text(this.manager.getStringByNameSync('animatorStatus') + this.manager.getStringByNameSync(this.animatorStatus))
-94. }.width('100%').height('100%')
-95. }
-96. }
-```
-
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animator/template3/Index.ets#L15-L112)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/tuePB_9DTx619XqIgoikcQ/zh-cn_image_0000002589324363.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/RLYu0ljRSXW473W8UFmKdw/zh-cn_image_0000002736312919.gif)

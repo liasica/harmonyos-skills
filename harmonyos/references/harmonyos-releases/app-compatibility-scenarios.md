@@ -1,12 +1,20 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/app-compatibility-scenarios
 title: 应用开发中的兼容性场景开发指导
-breadcrumb: 版本说明 > 应用兼容性说明 > 应用开发中的兼容性场景开发指导
+breadcrumb: 版本说明 > 应用升级适配与兼容性 > 应用兼容性说明 > 应用开发中的兼容性场景开发指导
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:37:17+08:00
-doc_updated_at: 2026-04-23
-content_hash: sha256:0e670b8d0f9c68243d7dd1db0d9a6d00684583461ed335f9ccbee466fa77da9d
+scraped_at: 2026-09-02T14:59:07+08:00
+doc_updated_at: 2026-07-06
+content_hash: sha256:779a6e1eb1488e05eca8f07a31df6a89a11bc2b5626b5973fe42165ef59ffac1
 ---
+
+**说明** 
+
+API版本号格式从26.0.0开始进行调整（详见[版本号格式调整说明](version-number-26.md)），不影响对API兼容性判断的基本逻辑，因此在文档的示意性描述中暂时仍保持旧版本格式的说明。
+
+近期API版本号的大小关系如下：
+
+26.0.0 > 6.1.1(24) > 6.1.0(23) > 6.0.2(22) > 6.0.1(21) > 6.0.0(20) > 5.1.1(19) > 5.1.0(18) > 5.0.5(17)
 
 构造以下场景对兼容性进行说明，以便更好地进行理解。
 
@@ -27,11 +35,12 @@ content_hash: sha256:0e670b8d0f9c68243d7dd1db0d9a6d00684583461ed335f9ccbee466fa7
 | **设备B**  API版本为：  5.0.1(13) | 可正常安装，正常运行。 | 可正常安装，正常运行。 | 可正常安装，正常运行。 | 可正常安装，正常运行。 |
 | **设备C**  API版本为：  5.0.2(14) | 可正常安装，正常运行。 | 可正常安装，正常运行。 | 可正常安装，但运行到API版本为5.0.2(14)的设备，发生行为变更的API逻辑功能可能会出现异常。  解决措施：应用在使用5.0.2(14)版本SDK时，按照变更说明中的适配指导进行应用适配。 | 可正常安装，虽然使用了在5.0.2(14)版本发生行为变更的API，但该API的行为变更进行了版本隔离且运行的目标版本targetSdkVersion设置为  5.0.1(13)，则当运行到该行为变更API相关逻辑时，系统会根据应用中targetSdkVersion的值5.0.1(13)决定呈现API变更前的行为，应用从而运行正常。 |
 
-说明
+**说明** 
 
 需要注意，通过应用分享功能将应用从高API版本的设备上分享到较低API版本的设备，并且该API版本已经低于应用设定的compatibleSdkVersion要求时，应用分享功能不直接分享应用包，而是会转换为一个链接，接收方点击链接会跳转应用商店搜索分发的对应自身ROM系统匹配的版本应用。
 
-* **[API兼容性保护](app-compatibility-apis-compatibility.md)**
+* **[API兼容性保护和告警屏蔽](app-compatibility-apis-compatibility.md)**
+* **[CAPI兼容性保护高阶用法](c-api-compatibility-warning.md)**
 * **[应用升级targetSDKVersion兼容低版本指导](app-compatibility-upgrade.md)**
 * **[应用集成三方库（har包）的兼容性指导](app-compatibility-third-har.md)**
 * **[应用集成“集成态hsp”的兼容性指导](app-compatibility-share-hsp.md)**

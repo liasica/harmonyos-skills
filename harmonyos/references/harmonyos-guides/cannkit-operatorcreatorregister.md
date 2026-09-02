@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-opera
 title: OperatorCreatorRegister
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OperatorCreatorRegister
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:37+08:00
+scraped_at: 2026-09-02T15:00:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4886ec216dd6dd76ad5683a3d1e6ba90ac09546536a6cc21c452eb26ebb68274
+content_hash: sha256:8e5e390eaefa0514d179e066007a45359b01df37137823468c0ce45d3586ef15
 ---
 
 ## 函数功能
@@ -14,14 +14,14 @@ OperatorCreatorRegister构造函数和析构函数。
 
 ## 函数原型
 
-说明
+**说明** 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 
-```
-1. OperatorCreatorRegister(const std::string &operator_type, OpCreator const &op_creator);
-2. OperatorCreatorRegister(const char_t *const operator_type, OpCreatorV2 const &op_creator);
-3. ~OperatorCreatorRegister() = default;
+```cpp
+OperatorCreatorRegister(const std::string &operator_type, OpCreator const &op_creator);
+OperatorCreatorRegister(const char_t *const operator_type, OpCreatorV2 const &op_creator);
+~OperatorCreatorRegister() = default;
 ```
 
 ## 参数说明

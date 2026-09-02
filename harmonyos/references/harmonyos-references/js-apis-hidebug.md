@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-h
 title: "@ohos.hidebug (Debug调试)"
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > ArkTS API > @ohos.hidebug (Debug调试)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:15+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5fc701b6a25ec4f84488be6cee5be7adffaa88071bc2f20962e44fe0859917b8
+scraped_at: 2026-09-02T15:02:16+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:421252a4947ac373cd9ed79f906decf33dff0ada3a3ad440527492f3d6defe5b
 ---
 
-为应用提供多种调试、调优的方法。包括但不限于内存、CPU、GPU、GC等相关数据的获取，进程trace、profiler采集，VM堆快照转储等。由于该模块的接口大多比较耗费性能，接口调用较为耗时，且基于HiDebug模块定义，该模块内的接口仅建议在应用调试、调优阶段使用。若需要在其他场景使用时，请认真评估所需调用的接口对应用性能的影响。
+为应用提供多种调试、调优的方法，帮助开发者定位性能瓶颈、优化应用性能。主要功能包括：内存数据分析、CPU使用率监控、trace采集、profiler采集、VM堆快照转储。由于该模块的接口大多比较耗费性能，接口调用较为耗时，且基于HiDebug模块定义，该模块内的接口仅建议在应用调试、调优阶段使用。若需要在其他场景使用时，请认真评估所需调用的接口对应用性能的影响。
 
-说明
+**说明** 
 
 本模块首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
 ```
 
 ## hidebug.getNativeHeapSize
-
-PhonePC/2in1TabletTVWearable
 
 getNativeHeapSize(): bigint
 
@@ -40,16 +36,14 @@ getNativeHeapSize(): bigint
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
 
-3. let nativeHeapSize: bigint = hidebug.getNativeHeapSize();
-4. console.info(`nativeHeapSize = ${nativeHeapSize}`);
+let nativeHeapSize: bigint = hidebug.getNativeHeapSize();
+console.info(`nativeHeapSize = ${nativeHeapSize}`);
 ```
 
 ## hidebug.getNativeHeapAllocatedSize
-
-PhonePC/2in1TabletTVWearable
 
 getNativeHeapAllocatedSize(): bigint
 
@@ -65,16 +59,14 @@ getNativeHeapAllocatedSize(): bigint
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
 
-3. let nativeHeapAllocatedSize: bigint = hidebug.getNativeHeapAllocatedSize();
-4. console.info(`nativeHeapAllocatedSize = ${nativeHeapAllocatedSize}`);
+let nativeHeapAllocatedSize: bigint = hidebug.getNativeHeapAllocatedSize();
+console.info(`nativeHeapAllocatedSize = ${nativeHeapAllocatedSize}`);
 ```
 
 ## hidebug.getNativeHeapFreeSize
-
-PhonePC/2in1TabletTVWearable
 
 getNativeHeapFreeSize(): bigint
 
@@ -90,22 +82,20 @@ getNativeHeapFreeSize(): bigint
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
 
-3. let nativeHeapFreeSize: bigint = hidebug.getNativeHeapFreeSize();
-4. console.info(`nativeHeapFreeSize = ${nativeHeapFreeSize}`);
+let nativeHeapFreeSize: bigint = hidebug.getNativeHeapFreeSize();
+console.info(`nativeHeapFreeSize = ${nativeHeapFreeSize}`);
 ```
 
 ## hidebug.getPss
-
-PhonePC/2in1TabletTVWearable
 
 getPss(): bigint
 
 获取应用进程实际使用的物理内存大小。接口实现方式：读取/proc/{pid}/smaps\_rollup节点中的Pss与SwapPss值并求和。
 
-注意
+**注意** 
 
 由于/proc/{pid}/smaps\_rollup的读取耗时较长，建议不要在主线程中使用该接口，可通过[@ohos.taskpool](js-apis-taskpool.md)或[@ohos.worker](js-apis-worker.md)开启异步线程以避免应用出现卡顿。
 
@@ -119,16 +109,14 @@ getPss(): bigint
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
 
-3. let pss: bigint = hidebug.getPss();
-4. console.info(`pss = ${pss}`);
+let pss: bigint = hidebug.getPss();
+console.info(`pss = ${pss}`);
 ```
 
 ## hidebug.getVss11+
-
-PhonePC/2in1TabletTVWearable
 
 getVss(): bigint
 
@@ -144,22 +132,20 @@ getVss(): bigint
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
 
-3. let vss: bigint = hidebug.getVss();
-4. console.info(`vss = ${vss}`);
+let vss: bigint = hidebug.getVss();
+console.info(`vss = ${vss}`);
 ```
 
 ## hidebug.getSharedDirty
-
-PhonePC/2in1TabletTVWearable
 
 getSharedDirty(): bigint
 
 获取进程的共享脏内存大小。接口实现方式：读取/proc/{pid}/smaps\_rollup节点中的Shared\_Dirty值。
 
-注意
+**注意** 
 
 由于/proc/{pid}/smaps\_rollup的读取耗时较长，建议不要在主线程中使用该接口，可通过[@ohos.taskpool](js-apis-taskpool.md)或[@ohos.worker](js-apis-worker.md)开启异步线程以避免应用出现卡顿。
 
@@ -173,22 +159,20 @@ getSharedDirty(): bigint
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
 
-3. let sharedDirty: bigint = hidebug.getSharedDirty();
-4. console.info(`sharedDirty = ${sharedDirty}`);
+let sharedDirty: bigint = hidebug.getSharedDirty();
+console.info(`sharedDirty = ${sharedDirty}`);
 ```
 
 ## hidebug.getPrivateDirty9+
-
-PhonePC/2in1TabletTVWearable
 
 getPrivateDirty(): bigint
 
 获取进程的私有脏内存大小。读取/proc/{pid}/smaps\_rollup中的Private\_Dirty值。
 
-注意
+**注意** 
 
 由于/proc/{pid}/smaps\_rollup的读取耗时较长，建议不要在主线程中使用该接口，可通过[@ohos.taskpool](js-apis-taskpool.md)或[@ohos.worker](js-apis-worker.md)开启异步线程以避免应用出现卡顿。
 
@@ -202,22 +186,20 @@ getPrivateDirty(): bigint
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
 
-3. let privateDirty: bigint = hidebug.getPrivateDirty();
-4. console.info(`privateDirty = ${privateDirty}`);
+let privateDirty: bigint = hidebug.getPrivateDirty();
+console.info(`privateDirty = ${privateDirty}`);
 ```
 
 ## hidebug.getCpuUsage9+
-
-PhonePC/2in1TabletTVWearable
 
 getCpuUsage(): number
 
 获取进程的CPU使用率。
 
-注意
+**注意** 
 
 由于该接口涉及跨进程通信，耗时较长，为了避免引入性能问题，建议不要在主线程中直接调用该接口。
 
@@ -231,16 +213,14 @@ getCpuUsage(): number
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
 
-3. let cpuUsage: number = hidebug.getCpuUsage();
-4. console.info(`cpuUsage = ${cpuUsage}`);
+let cpuUsage: number = hidebug.getCpuUsage();
+console.info(`cpuUsage = ${cpuUsage}`);
 ```
 
 ## hidebug.getServiceDump9+
-
-PhonePC/2in1TabletTVWearable
 
 getServiceDump(serviceid: number, fd: number, args: Array<string>): void
 
@@ -254,9 +234,9 @@ getServiceDump(serviceid: number, fd: number, args: Array<string>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| serviceid | number | 是 | 基于用户输入的service id获取系统服务信息。 |
-| fd | number | 是 | 文件描述符，接口会向该fd写入数据。 |
-| args | Array<string> | 是 | 系统服务的dump接口参数列表。string长度的最大值为254。超出部分将会被截断。 |
+| serviceid | number | 是 | 系统服务ID，用于标识要获取信息的系统服务。取值由系统定义，取值范围[0, 255]。传入无效值时返回错误码401。 |
+| fd | number | 是 | 文件描述符，接口会向该fd写入数据。传入无效文件描述符时返回错误码401。 |
+| args | Array<string> | 是 | 系统服务的dump接口参数列表。string长度的最大值为254，超出部分将会被截断。 |
 
 **错误码**：
 
@@ -264,37 +244,35 @@ getServiceDump(serviceid: number, fd: number, args: Array<string>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | the parameter check failed,Possible causes:1.the parameter type error 2.the args parameter is not string array. |
+| 401 | The parameter check failed,Possible causes:1.The parameter type error. 2.The args parameter is not string array. |
 | 11400101 | ServiceId invalid. The system ability does not exist. |
 
 **示例**：
 
-```
-1. import { fileIo } from '@kit.CoreFileKit';
-2. import { hidebug } from '@kit.PerformanceAnalysisKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { fileIo } from '@kit.CoreFileKit';
+import { hidebug } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let fileFd = -1;
-6. try {
-7. // 请在组件内获取context，确保this.getUiContext().getHostContext()返回结果为UIAbilityContext。
-8. let path: string = this.getUIContext().getHostContext()!.filesDir + "/serviceInfo.txt";
-9. console.info("output path: " + path);
-10. fileFd = fileIo.openSync(path, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE).fd;
-11. let serviceId: number = 10;
-12. let args: Array<string> = new Array("allInfo");
-13. hidebug.getServiceDump(serviceId, fileFd, args);
-14. } catch (error) {
-15. console.error(`error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
-16. }
+let fileFd = -1;
+try {
+  // 请在组件内获取context，确保this.getUiContext().getHostContext()返回结果为UIAbilityContext。
+  let path: string = this.getUIContext().getHostContext()!.filesDir + "/serviceInfo.txt";
+  console.info("output path: " + path);
+  fileFd = fileIo.openSync(path, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE).fd;
+  let serviceId: number = 10;
+  let args: Array<string> = new Array("allInfo");
+  hidebug.getServiceDump(serviceId, fileFd, args);
+} catch (error) {
+  console.error(`error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+}
 
-18. if (fileFd >= 0) {
-19. fileIo.closeSync(fileFd);
-20. }
+if (fileFd >= 0) {
+  fileIo.closeSync(fileFd);
+}
 ```
 
 ## hidebug.startJsCpuProfiling9+
-
-PhonePC/2in1TabletTVWearable
 
 startJsCpuProfiling(filename: string): void
 
@@ -314,26 +292,24 @@ startJsCpuProfiling(filename: string): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | the parameter check failed,Parameter type error. |
+| 401 | The parameter check failed,Parameter type error. |
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. hidebug.startJsCpuProfiling("cpu_profiling");
-6. // ...
-7. hidebug.stopJsCpuProfiling();
-8. } catch (error) {
-9. console.error(`error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
-10. }
+try {
+  hidebug.startJsCpuProfiling("cpu_profiling");
+  // ...
+  hidebug.stopJsCpuProfiling();
+} catch (error) {
+  console.error(`error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+}
 ```
 
 ## hidebug.stopJsCpuProfiling9+
-
-PhonePC/2in1TabletTVWearable
 
 stopJsCpuProfiling(): void
 
@@ -343,28 +319,26 @@ stopJsCpuProfiling(): void
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. hidebug.startJsCpuProfiling("cpu_profiling");
-6. // ...
-7. hidebug.stopJsCpuProfiling();
-8. } catch (error) {
-9. console.error(`error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
-10. }
+try {
+  hidebug.startJsCpuProfiling("cpu_profiling");
+  // ...
+  hidebug.stopJsCpuProfiling();
+} catch (error) {
+  console.error(`error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+}
 ```
 
 ## hidebug.dumpJsHeapData9+
-
-PhonePC/2in1TabletTVWearable
 
 dumpJsHeapData(filename: string): void
 
 虚拟机堆数据转储。
 
-注意
+**注意** 
 
 由于虚拟机堆导出极其耗时，且该接口为同步接口，建议不要在上架版本中调用该接口，以避免应用冻屏，影响用户体验。
 
@@ -374,7 +348,7 @@ dumpJsHeapData(filename: string): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| filename | string | 是 | 用户自定义的虚拟机堆数据转储输出的文件名，将在应用的files目录下生成以该参数命名的heapsnapshot文件。string长度的最大值为128。 |
+| filename | string | 是 | 用户自定义的虚拟机堆数据转储输出的文件名，将在应用的files目录下生成以该参数命名的heapsnapshot文件。string长度的最大值为128字节。 |
 
 **错误码**：
 
@@ -382,28 +356,62 @@ dumpJsHeapData(filename: string): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | the parameter check failed, Parameter type error. |
+| 401 | The parameter check failed, Parameter type error. |
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. hidebug.dumpJsHeapData("heapData");
-6. } catch (error) {
-7. console.error(`error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
-8. }
+try {
+  hidebug.dumpJsHeapData("heapData");
+} catch (error) {
+  console.error(`error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+}
+```
+
+## hidebug.dumpJsHeapData24+
+
+dumpJsHeapData(filename: string, needClean: boolean): void
+
+虚拟机堆数据转储，支持清除nodeId缓存。
+
+**注意** 
+
+由于虚拟机堆导出极其耗时，且该接口为同步接口，建议不要在上架版本中调用该接口，以避免应用冻屏，影响用户体验。
+
+**系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
+
+**元服务API**：从API version 24开始，该接口支持在元服务中使用。
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| filename | string | 是 | 用户自定义的虚拟机堆转储文件名，将在应用的files目录下生成fileName.heapsnapshot格式文件。string长度的最大值为128字节。 |
+| needClean | boolean | 是 | 转储堆快照前是否需要清除nodeId缓存。true：需要清除；false：不需要清除。 |
+
+**示例**：
+
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+try {
+  hidebug.dumpJsHeapData("heapData", true);
+} catch (error) {
+  console.error(`error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+}
 ```
 
 ## hidebug.startProfiling(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 startProfiling(filename: string): void
 
-说明
+**说明** 
 
 从API version 8支持，从API version 9开始废弃，建议使用[hidebug.startJsCpuProfiling](js-apis-hidebug.md#hidebugstartjscpuprofiling9)替代。
 
@@ -419,23 +427,21 @@ startProfiling(filename: string): void
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
 
-3. hidebug.startProfiling("cpuprofiler-20220216");
-4. // code block
-5. // ...
-6. // code block
-7. hidebug.stopProfiling();
+hidebug.startProfiling("cpuprofiler-20220216");
+// code block
+// ...
+// code block
+hidebug.stopProfiling();
 ```
 
 ## hidebug.stopProfiling(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 stopProfiling(): void
 
-说明
+**说明** 
 
 从API version 8支持，从API version 9开始废弃，建议使用[hidebug.stopJsCpuProfiling](js-apis-hidebug.md#hidebugstopjscpuprofiling9)替代。
 
@@ -445,23 +451,21 @@ stopProfiling(): void
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
 
-3. hidebug.startProfiling("cpuprofiler-20220216");
-4. // code block
-5. // ...
-6. // code block
-7. hidebug.stopProfiling();
+hidebug.startProfiling("cpuprofiler-20220216");
+// code block
+// ...
+// code block
+hidebug.stopProfiling();
 ```
 
 ## hidebug.dumpHeapData(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 dumpHeapData(filename: string): void
 
-说明
+**说明** 
 
 从API version 8支持，从API version 9开始废弃，建议使用[hidebug.dumpJsHeapData](js-apis-hidebug.md#hidebugdumpjsheapdata9)替代。
 
@@ -477,15 +481,13 @@ dumpHeapData(filename: string): void
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
 
-3. hidebug.dumpHeapData("heap-20220216");
+hidebug.dumpHeapData("heap-20220216");
 ```
 
 ## hidebug.getAppVMMemoryInfo12+
-
-PhonePC/2in1TabletTVWearable
 
 getAppVMMemoryInfo(): VMMemoryInfo
 
@@ -501,17 +503,15 @@ getAppVMMemoryInfo(): VMMemoryInfo
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
 
-3. let vmMemory: hidebug.VMMemoryInfo = hidebug.getAppVMMemoryInfo();
-4. console.info(`totalHeap = ${vmMemory.totalHeap}, heapUsed = ${vmMemory.heapUsed},` +
-5. `allArraySize = ${vmMemory.allArraySize}` );
+let vmMemory: hidebug.VMMemoryInfo = hidebug.getAppVMMemoryInfo();
+console.info(`totalHeap = ${vmMemory.totalHeap}, heapUsed = ${vmMemory.heapUsed},` +
+  `allArraySize = ${vmMemory.allArraySize}` );
 ```
 
 ## hidebug.getAppVMObjectUsedSize21+
-
-PhonePC/2in1TabletTVWearable
 
 getAppVMObjectUsedSize(): bigint
 
@@ -527,21 +527,19 @@ getAppVMObjectUsedSize(): bigint
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
 
-3. console.info(`getAppVMObjectUsedSize = ${hidebug.getAppVMObjectUsedSize()}`);
+console.info(`getAppVMObjectUsedSize = ${hidebug.getAppVMObjectUsedSize()}`);
 ```
 
 ## hidebug.getAppThreadCpuUsage12+
-
-PhonePC/2in1TabletTVWearable
 
 getAppThreadCpuUsage(): ThreadCpuUsage[]
 
 获取应用线程CPU使用情况。
 
-注意
+**注意** 
 
 由于该接口涉及跨进程通信，耗时较长，为了避免引入性能问题，建议不要在主线程中直接调用该接口。
 
@@ -555,18 +553,16 @@ getAppThreadCpuUsage(): ThreadCpuUsage[]
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
 
-3. let appThreadCpuUsage: hidebug.ThreadCpuUsage[] = hidebug.getAppThreadCpuUsage();
-4. for (let i = 0; i < appThreadCpuUsage.length; i++) {
-5. console.info(`threadId=${appThreadCpuUsage[i].threadId}, cpuUsage=${appThreadCpuUsage[i].cpuUsage}`);
-6. }
+let appThreadCpuUsage: hidebug.ThreadCpuUsage[] = hidebug.getAppThreadCpuUsage();
+for (let i = 0; i < appThreadCpuUsage.length; i++) {
+  console.info(`threadId=${appThreadCpuUsage[i].threadId}, cpuUsage=${appThreadCpuUsage[i].cpuUsage}`);
+}
 ```
 
 ## hidebug.startAppTraceCapture12+
-
-PhonePC/2in1TabletTVWearable
 
 startAppTraceCapture(tags: number[], flag: TraceFlag, limitSize: number): string
 
@@ -582,7 +578,7 @@ startAppTraceCapture()方法的调用需要与'[stopAppTraceCapture()](js-apis-h
 
 trace单位流量：应用每秒产生的trace大小，系统推荐值为300KB/s，建议开发者采用自身应用的实测值，单位KB/s。
 
-trace单位流量实测方法：limitSize设置为最大值500M，调用startAppTraceCapture接口，在应用上操作N秒后，调用stopAppTraceCapture停止采集，然后查看trace大小S（Kb）。那么trace单位流量 = S/N（Kb/s）。
+trace单位流量实测方法：limitSize设置为最大值500M，调用startAppTraceCapture接口，在应用上操作N秒后，调用stopAppTraceCapture停止采集，然后查看trace大小S（KB）。那么trace单位流量 = S/N（KB/s）。
 
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
 
@@ -590,9 +586,9 @@ trace单位流量实测方法：limitSize设置为最大值500M，调用startApp
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| tags | number[] | 是 | trace范围，详情请见[tags](js-apis-hidebug.md#hidebugtags12)。 |
+| tags | number[] | 是 | trace范围，详情请见[tags](js-apis-hidebug.md#tags12)。 |
 | flag | TraceFlag | 是 | 详情请见[TraceFlag](js-apis-hidebug.md#traceflag12)。 |
-| limitSize | number | 是 | 开启trace文件大小限制，单位为Byte，单个文件大小上限为500MB。 |
+| limitSize | number | 是 | 开启trace文件大小限制，单位为Byte，取值范围（0, 500MB]。超出范围时返回错误码401。 |
 
 **返回值**：
 
@@ -606,36 +602,34 @@ trace单位流量实测方法：limitSize设置为最大值500M，调用startApp
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid argument, Possible causes:1.The limit parameter is too small 2.The parameter is not within the enumeration type 3.The parameter type error or parameter order error. |
+| 401 | Invalid argument, Possible causes:1.The limit parameter is too small. 2.The parameter is not within the enumeration type. 3.The parameter type error or parameter order error. |
 | 11400102 | Capture trace already enabled. |
 | 11400103 | No write permission on the file. |
 | 11400104 | Abnormal trace status. |
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tags: number[] = [hidebug.tags.ABILITY_MANAGER, hidebug.tags.ARKUI];
-5. let flag: hidebug.TraceFlag = hidebug.TraceFlag.MAIN_THREAD;
-6. let limitSize: number = 1024 * 1024;
+let tags: number[] = [hidebug.tags.ABILITY_MANAGER, hidebug.tags.ARKUI];
+let flag: hidebug.TraceFlag = hidebug.TraceFlag.MAIN_THREAD;
+let limitSize: number = 1024 * 1024;
 
-8. try {
-9. let fileName: string = hidebug.startAppTraceCapture(tags, flag, limitSize);
-10. console.info(`fileName = ${fileName}`);
-11. // code block
-12. // ...
-13. // code block
-14. hidebug.stopAppTraceCapture();
-15. } catch (error) {
-16. console.error(`error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
-17. }
+try {
+  let fileName: string = hidebug.startAppTraceCapture(tags, flag, limitSize);
+  console.info(`fileName = ${fileName}`);
+  // code block
+  // ...
+  // code block
+  hidebug.stopAppTraceCapture();
+} catch (error) {
+  console.error(`error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+}
 ```
 
 ## hidebug.stopAppTraceCapture12+
-
-PhonePC/2in1TabletTVWearable
 
 stopAppTraceCapture(): void
 
@@ -656,28 +650,86 @@ stopAppTraceCapture(): void
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tags: number[] = [hidebug.tags.ABILITY_MANAGER, hidebug.tags.ARKUI];
-5. let flag: hidebug.TraceFlag = hidebug.TraceFlag.MAIN_THREAD;
-6. let limitSize: number = 1024 * 1024;
-7. try {
-8. let fileName: string = hidebug.startAppTraceCapture(tags, flag, limitSize);
-9. console.info(`fileName = ${fileName}`);
-10. // code block
-11. // ...
-12. // code block
-13. hidebug.stopAppTraceCapture();
-14. } catch (error) {
-15. console.error(`error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
-16. }
+let tags: number[] = [hidebug.tags.ABILITY_MANAGER, hidebug.tags.ARKUI];
+let flag: hidebug.TraceFlag = hidebug.TraceFlag.MAIN_THREAD;
+let limitSize: number = 1024 * 1024;
+try {
+  let fileName: string = hidebug.startAppTraceCapture(tags, flag, limitSize);
+  console.info(`fileName = ${fileName}`);
+  // code block
+  // ...
+  // code block
+  hidebug.stopAppTraceCapture();
+} catch (error) {
+  console.error(`error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+}
+```
+
+## hidebug.requestTrace24+
+
+requestTrace(config: RequestTraceConfig): Promise<string>
+
+获取当前进程的trace信息，包含应用tag、图像窗口tag、cpu调度和binder内核信息。使用Promise异步回调。
+
+采集trace返回的.sys文件在目录下最多存储3份，数量大于等于3份时再次调用接口会抛出错误码11400120。
+
+接口不支持在[输入法应用](../harmonyos-guides/ime-kit-intro.md)中使用。
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**元服务API**：从API version 24开始，该接口支持在元服务中使用。
+
+**系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| config | [RequestTraceConfig](js-apis-hidebug.md#requesttraceconfig24) | 是 | trace采集配置信息。 |
+
+**返回值**：
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象，返回以.sys作为后缀的trace文件的应用沙箱路径。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[HiDebug Trace错误码](errorcode-hiviewdfx-hidebug-trace.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 11400104 | Remote service exception. |
+| 11400120 | Trace storage limit reached. |
+| 11400302 | Resource unavailable. |
+
+**示例**：
+
+```ts
+import { hidebug, hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+try {
+  hidebug.requestTrace({
+    identifier: "trace_name",
+    bufferSizeKb: 1024,
+    durationMs: 1000,
+    reserved: 0,
+  }).then((tracePath: string) => {
+    hilog.info(0x0000, 'hidebug', `tracePath: ${tracePath}`)
+  }).catch((err: BusinessError) => {
+    hilog.error(0x0000, 'hidebug', `error code: ${err.code}, message: ${err.message}`)
+  })
+} catch (error) {
+  hilog.error(0x0000, 'hidebug', `error code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`)
+}
 ```
 
 ## hidebug.getAppMemoryLimit12+
-
-PhonePC/2in1TabletTVWearable
 
 getAppMemoryLimit(): MemoryLimit
 
@@ -693,23 +745,21 @@ getAppMemoryLimit(): MemoryLimit
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
 
-3. let appMemoryLimit:hidebug.MemoryLimit = hidebug.getAppMemoryLimit();
-4. console.info(`rssLimit: ${appMemoryLimit.rssLimit}, vssLimit: ${appMemoryLimit.vssLimit},` +
-5. `vmHeapLimit: ${appMemoryLimit.vmHeapLimit}, vmTotalHeapSize: ${appMemoryLimit.vmTotalHeapSize}`);
+let appMemoryLimit:hidebug.MemoryLimit = hidebug.getAppMemoryLimit();
+console.info(`rssLimit: ${appMemoryLimit.rssLimit}, vssLimit: ${appMemoryLimit.vssLimit},` +
+  `vmHeapLimit: ${appMemoryLimit.vmHeapLimit}, vmTotalHeapSize: ${appMemoryLimit.vmTotalHeapSize}`);
 ```
 
 ## hidebug.getSystemCpuUsage12+
-
-PhonePC/2in1TabletTVWearable
 
 getSystemCpuUsage(): number
 
 获取系统的CPU资源占用情况。
 
-注意
+**注意** 
 
 由于该接口涉及跨进程通信，耗时较长，为了避免引入性能问题，建议不要在主线程中直接调用该接口。
 
@@ -731,20 +781,18 @@ getSystemCpuUsage(): number
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. console.info(`getSystemCpuUsage: ${hidebug.getSystemCpuUsage()}`)
-6. } catch (error) {
-7. console.error(`error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
-8. }
+try {
+  console.info(`getSystemCpuUsage: ${hidebug.getSystemCpuUsage()}`)
+} catch (error) {
+  console.error(`error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+}
 ```
 
 ## hidebug.setAppResourceLimit12+
-
-PhonePC/2in1TabletTVWearable
 
 setAppResourceLimit(type: string, value: number, enableDebugLog: boolean): void
 
@@ -752,7 +800,7 @@ setAppResourceLimit(type: string, value: number, enableDebugLog: boolean): void
 
 主要应用场景在于构造内存泄漏故障，参见[订阅资源泄漏事件（ArkTS）](../harmonyos-guides/hiappevent-watcher-resourceleak-events-arkts.md)、[订阅资源泄漏事件（C/C++）](../harmonyos-guides/hiappevent-watcher-resourceleak-events-ndk.md)。
 
-注意
+**注意** 
 
 打开设置中的开发者选项后，在开发者选项列表中找到“系统资源泄漏日志”并启用，重启设备后接口生效。
 
@@ -774,28 +822,26 @@ setAppResourceLimit(type: string, value: number, enableDebugLog: boolean): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid argument, Possible causes:1.The limit parameter is too small 2.The parameter is not in the specified type 3.The parameter type error or parameter order error. |
+| 401 | Invalid argument, Possible causes:1.The limit parameter is too small. 2.The parameter is not in the specified type. 3.The parameter type error or parameter order error. |
 | 11400104 | Set limit failed due to remote exception. |
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let type: string = 'js_heap';
-5. let value: number = 85;
-6. let enableDebugLog: boolean = false;
-7. try {
-8. hidebug.setAppResourceLimit(type, value, enableDebugLog);
-9. } catch (error) {
-10. console.error(`error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
-11. }
+let type: string = 'js_heap';
+let value: number = 85;
+let enableDebugLog: boolean = false;
+try {
+  hidebug.setAppResourceLimit(type, value, enableDebugLog);
+} catch (error) {
+  console.error(`error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+}
 ```
 
 ## hidebug.getAppNativeMemInfo12+
-
-PhonePC/2in1TabletTVWearable
 
 getAppNativeMemInfo(): NativeMemInfo
 
@@ -803,9 +849,11 @@ getAppNativeMemInfo(): NativeMemInfo
 
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
 
-注意
+**注意** 
 
 由于读取/proc/{pid}/smaps\_rollup耗时较长，推荐使用异步接口[hidebug.getAppNativeMemInfoAsync](js-apis-hidebug.md#hidebuggetappnativememinfoasync20)，以避免应用丢帧或卡顿。
+
+推荐使用[hidebug.getRssInfo](js-apis-hidebug.md#hidebuggetrssinfo24)接口获取应用的rss使用信息
 
 **返回值**：
 
@@ -815,18 +863,16 @@ getAppNativeMemInfo(): NativeMemInfo
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
 
-3. let nativeMemInfo: hidebug.NativeMemInfo = hidebug.getAppNativeMemInfo();
-4. console.info(`pss: ${nativeMemInfo.pss}, vss: ${nativeMemInfo.vss}, rss: ${nativeMemInfo.rss}, ` +
-5. `sharedDirty: ${nativeMemInfo.sharedDirty}, privateDirty: ${nativeMemInfo.privateDirty}, ` +
-6. `sharedClean: ${nativeMemInfo.sharedClean}, privateClean: ${nativeMemInfo.privateClean}`);
+let nativeMemInfo: hidebug.NativeMemInfo = hidebug.getAppNativeMemInfo();
+console.info(`pss: ${nativeMemInfo.pss}, vss: ${nativeMemInfo.vss}, rss: ${nativeMemInfo.rss}, ` +
+  `sharedDirty: ${nativeMemInfo.sharedDirty}, privateDirty: ${nativeMemInfo.privateDirty}, ` +
+  `sharedClean: ${nativeMemInfo.sharedClean}, privateClean: ${nativeMemInfo.privateClean}`);
 ```
 
 ## hidebug.getAppNativeMemInfoAsync20+
-
-PhonePC/2in1TabletTVWearable
 
 getAppNativeMemInfoAsync(): Promise<NativeMemInfo>
 
@@ -842,23 +888,21 @@ getAppNativeMemInfoAsync(): Promise<NativeMemInfo>
 
 **示例**：
 
-```
-1. hidebug.getAppNativeMemInfoAsync().then((nativeMemInfo: hidebug.NativeMemInfo)=>{
-2. console.info(`pss: ${nativeMemInfo.pss}, vss: ${nativeMemInfo.vss}, rss: ${nativeMemInfo.rss}, ` +
-3. `sharedDirty: ${nativeMemInfo.sharedDirty}, privateDirty: ${nativeMemInfo.privateDirty}, ` +
-4. `sharedClean: ${nativeMemInfo.sharedClean}, privateClean: ${nativeMemInfo.privateClean}`);
-5. });
+```ts
+hidebug.getAppNativeMemInfoAsync().then((nativeMemInfo: hidebug.NativeMemInfo)=>{
+  console.info(`pss: ${nativeMemInfo.pss}, vss: ${nativeMemInfo.vss}, rss: ${nativeMemInfo.rss}, ` +
+    `sharedDirty: ${nativeMemInfo.sharedDirty}, privateDirty: ${nativeMemInfo.privateDirty}, ` +
+    `sharedClean: ${nativeMemInfo.sharedClean}, privateClean: ${nativeMemInfo.privateClean}`);
+});
 ```
 
 ## hidebug.getAppNativeMemInfoWithCache20+
-
-PhonePC/2in1TabletTVWearable
 
 getAppNativeMemInfoWithCache(forceRefresh?: boolean): NativeMemInfo
 
 获取应用进程内存信息。与getAppNativeMemInfo接口相比，该接口使用了缓存机制，以提高性能。缓存的有效期为5分钟。
 
-注意
+**注意** 
 
 由于读取 /proc/{pid}/smaps\_rollup 比较耗时，建议不在主线程中使用该接口。可以通过[@ohos.taskpool](js-apis-taskpool.md)或[@ohos.worker](js-apis-worker.md)开启异步线程，以避免应用卡顿。
 
@@ -878,16 +922,14 @@ getAppNativeMemInfoWithCache(forceRefresh?: boolean): NativeMemInfo
 
 **示例**：
 
-```
-1. let nativeMemInfo: hidebug.NativeMemInfo = hidebug.getAppNativeMemInfoWithCache();
-2. console.info(`pss: ${nativeMemInfo.pss}, vss: ${nativeMemInfo.vss}, rss: ${nativeMemInfo.rss}, ` +
-3. `sharedDirty: ${nativeMemInfo.sharedDirty}, privateDirty: ${nativeMemInfo.privateDirty}, ` +
-4. `sharedClean: ${nativeMemInfo.sharedClean}, privateClean: ${nativeMemInfo.privateClean}`);
+```ts
+let nativeMemInfo: hidebug.NativeMemInfo = hidebug.getAppNativeMemInfoWithCache();
+console.info(`pss: ${nativeMemInfo.pss}, vss: ${nativeMemInfo.vss}, rss: ${nativeMemInfo.rss}, ` +
+  `sharedDirty: ${nativeMemInfo.sharedDirty}, privateDirty: ${nativeMemInfo.privateDirty}, ` +
+  `sharedClean: ${nativeMemInfo.sharedClean}, privateClean: ${nativeMemInfo.privateClean}`);
 ```
 
 ## hidebug.getSystemMemInfo12+
-
-PhonePC/2in1TabletTVWearable
 
 getSystemMemInfo(): SystemMemInfo
 
@@ -903,18 +945,16 @@ getSystemMemInfo(): SystemMemInfo
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
 
-3. let systemMemInfo: hidebug.SystemMemInfo = hidebug.getSystemMemInfo();
+let systemMemInfo: hidebug.SystemMemInfo = hidebug.getSystemMemInfo();
 
-5. console.info(`totalMem: ${systemMemInfo.totalMem}, freeMem: ${systemMemInfo.freeMem}, ` +
-6. `availableMem: ${systemMemInfo.availableMem}`);
+console.info(`totalMem: ${systemMemInfo.totalMem}, freeMem: ${systemMemInfo.freeMem}, ` +
+  `availableMem: ${systemMemInfo.availableMem}`);
 ```
 
 ## hidebug.getVMRuntimeStats12+
-
-PhonePC/2in1TabletTVWearable
 
 getVMRuntimeStats(): GcStats
 
@@ -930,20 +970,18 @@ getVMRuntimeStats(): GcStats
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
 
-3. let vMRuntimeStats: hidebug.GcStats = hidebug.getVMRuntimeStats();
-4. console.info(`gc-count: ${vMRuntimeStats['ark.gc.gc-count']}`);
-5. console.info(`gc-time: ${vMRuntimeStats['ark.gc.gc-time']}`);
-6. console.info(`gc-bytes-allocated: ${vMRuntimeStats['ark.gc.gc-bytes-allocated']}`);
-7. console.info(`gc-bytes-freed: ${vMRuntimeStats['ark.gc.gc-bytes-freed']}`);
-8. console.info(`fullgc-longtime-count: ${vMRuntimeStats['ark.gc.fullgc-longtime-count']}`);
+let vMRuntimeStats: hidebug.GcStats = hidebug.getVMRuntimeStats();
+console.info(`gc-count: ${vMRuntimeStats['ark.gc.gc-count']}`);
+console.info(`gc-time: ${vMRuntimeStats['ark.gc.gc-time']}`);
+console.info(`gc-bytes-allocated: ${vMRuntimeStats['ark.gc.gc-bytes-allocated']}`);
+console.info(`gc-bytes-freed: ${vMRuntimeStats['ark.gc.gc-bytes-freed']}`);
+console.info(`fullgc-longtime-count: ${vMRuntimeStats['ark.gc.fullgc-longtime-count']}`);
 ```
 
 ## hidebug.getVMRuntimeStat12+
-
-PhonePC/2in1TabletTVWearable
 
 getVMRuntimeStat(item: string): number
 
@@ -969,28 +1007,26 @@ getVMRuntimeStat(item: string): number
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Possible causes:1. Invalid parameter, a string parameter required. 2. Invalid parameter, unknown property. |
+| 401 | Possible causes: 1. Invalid parameter, a string parameter required. 2. Invalid parameter, unknown property. |
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. console.info(`gc-count: ${hidebug.getVMRuntimeStat('ark.gc.gc-count')}`);
-6. console.info(`gc-time: ${hidebug.getVMRuntimeStat('ark.gc.gc-time')}`);
-7. console.info(`gc-bytes-allocated: ${hidebug.getVMRuntimeStat('ark.gc.gc-bytes-allocated')}`);
-8. console.info(`gc-bytes-freed: ${hidebug.getVMRuntimeStat('ark.gc.gc-bytes-freed')}`);
-9. console.info(`fullgc-longtime-count: ${hidebug.getVMRuntimeStat('ark.gc.fullgc-longtime-count')}`);
-10. } catch (error) {
-11. console.error(`error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
-12. }
+try {
+  console.info(`gc-count: ${hidebug.getVMRuntimeStat('ark.gc.gc-count')}`);
+  console.info(`gc-time: ${hidebug.getVMRuntimeStat('ark.gc.gc-time')}`);
+  console.info(`gc-bytes-allocated: ${hidebug.getVMRuntimeStat('ark.gc.gc-bytes-allocated')}`);
+  console.info(`gc-bytes-freed: ${hidebug.getVMRuntimeStat('ark.gc.gc-bytes-freed')}`);
+  console.info(`fullgc-longtime-count: ${hidebug.getVMRuntimeStat('ark.gc.fullgc-longtime-count')}`);
+} catch (error) {
+  console.error(`error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+}
 ```
 
 ## MemoryLimit12+
-
-PhonePC/2in1TabletTVWearable
 
 应用进程内存限制。
 
@@ -1005,8 +1041,6 @@ PhonePC/2in1TabletTVWearable
 
 ## VMMemoryInfo12+
 
-PhonePC/2in1TabletTVWearable
-
 VM内存信息。
 
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
@@ -1019,8 +1053,6 @@ VM内存信息。
 
 ## ThreadCpuUsage12+
 
-PhonePC/2in1TabletTVWearable
-
 线程的CPU使用情况。
 
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
@@ -1030,17 +1062,13 @@ PhonePC/2in1TabletTVWearable
 | threadId | number | 否 | 否 | 线程号。 |
 | cpuUsage | number | 否 | 否 | 线程CPU使用率。 |
 
-## hidebug.tags12+
-
-PhonePC/2in1TabletTVWearable
+## tags12+
 
 ### 常量
 
-PhonePC/2in1TabletTVWearable
-
 支持trace使用场景的标签，用户可通过[hitrace](../harmonyos-guides/hitrace.md)抓取指定标签的trace内容。
 
-注意
+**注意** 
 
 以下标签实际值由系统定义，可能随版本升级而发生改变，为避免升级后出现兼容性问题，在生产中应直接使用标签名称而非标签数值。
 
@@ -1083,8 +1111,6 @@ PhonePC/2in1TabletTVWearable
 
 ## NativeMemInfo12+
 
-PhonePC/2in1TabletTVWearable
-
 描述应用进程的内存信息。
 
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
@@ -1101,8 +1127,6 @@ PhonePC/2in1TabletTVWearable
 
 ## SystemMemInfo12+
 
-PhonePC/2in1TabletTVWearable
-
 描述系统内存信息，包括总内存、空闲内存和可用内存。
 
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
@@ -1115,8 +1139,6 @@ PhonePC/2in1TabletTVWearable
 
 ## TraceFlag12+
 
-PhonePC/2in1TabletTVWearable
-
 描述采集trace线程的类型，包括主线程和所有线程。
 
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
@@ -1127,8 +1149,6 @@ PhonePC/2in1TabletTVWearable
 | ALL\_THREADS | 2 | 采集当前应用下所有线程。 |
 
 ## GcStats12+
-
-PhonePC/2in1TabletTVWearable
 
 type GcStats = Record<string, number>
 
@@ -1141,8 +1161,6 @@ type GcStats = Record<string, number>
 | Record<string, number> | 用于存储GC统计信息的键值对。包含以下键值信息：  "ark.gc.gc-count"：当前线程的GC次数。  "ark.gc.gc-time"：当前线程触发的GC总耗时，以ms为单位。  "ark.gc.gc-bytes-allocated"：当前线程Ark虚拟机已分配的内存大小，以B为单位。  "ark.gc.gc-bytes-freed"：当前线程GC成功回收的内存，以B为单位。  "ark.gc.fullgc-longtime-count "：当前线程超长fullGC次数。 |
 
 ## JsRawHeapTrimLevel20+
-
-PhonePC/2in1TabletTVWearable
 
 转储堆快照的裁剪级别的枚举。
 
@@ -1157,9 +1175,37 @@ TRIM\_LEVEL\_2相比TRIM\_LEVEL\_1，裁剪时间更长。冻屏的阈值为6秒
 | TRIM\_LEVEL\_1 | 0 | LEVEL 1级别裁剪，主要裁剪字符串。 |
 | TRIM\_LEVEL\_2 | 1 | LEVEL 2级别裁剪，在TRIM\_LEVEL\_1的基础上，精简了对象地址标识的大小，从8个字节减少到4个字节。 |
 
-## hidebug.isDebugState12+
+## RssInfo24+
 
-PhonePC/2in1TabletTVWearable
+描述应用进程的物理内存信息。
+
+**元服务API**：从API version 24开始，该接口支持在元服务中使用。
+
+**系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| rss | bigint | 否 | 否 | 实际占用的物理内存大小（Resident Set Size），包含匿名页、文件映射页和共享内存页，以KB为单位，计算方式：/proc/{pid}/status: VmRss。 |
+| swapRss | bigint | 否 | 否 | 换出到交换分区的匿名私有页总大小，以KB为单位，计算方式：/proc/{pid}/status: VmSwap |
+
+## RequestTraceConfig24+
+
+提供trace采集的参数选项。
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**元服务API**：从API version 24开始，该接口支持在元服务中使用。
+
+**系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| identifier | string | 否 | 否 | 采集trace输出的文件名前缀。文件名前缀只取字符串前20个字符，超过部分将抛弃。前20个字符只包含大小写字母和下划线，若不符合则默认为空字符串。 |
+| bufferSizeKb | number | 否 | 否 | trace文件的缓存大小，以KB为单位。数值为32位无符号整型数字，超出有效范围将导致数值溢出。取值范围为[1024, 15360]，传入参数超过取值范围，参数将被设置为最近的边界值。 |
+| durationMs | number | 否 | 否 | trace采集时长，以ms为单位。数值为32位无符号整型数字，超出有效范围将导致数值溢出。取值范围为[1000, 15000]，传入参数超过取值范围，参数将被设置为最近的边界值。 |
+| reserved | number | 否 | 否 | 预留字段，可以设置为0。 |
+
+## hidebug.isDebugState12+
 
 isDebugState(): boolean
 
@@ -1175,15 +1221,13 @@ isDebugState(): boolean
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
 
-3. console.info(`isDebugState = ${hidebug.isDebugState()}`)
+console.info(`isDebugState = ${hidebug.isDebugState()}`)
 ```
 
 ## hidebug.getGraphicsMemory14+
-
-PhonePC/2in1TabletTVWearable
 
 getGraphicsMemory(): Promise<number>
 
@@ -1209,26 +1253,24 @@ getGraphicsMemory(): Promise<number>
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. hidebug.getGraphicsMemory().then((ret: number) => {
-5. console.info(`graphicsMemory: ${ret}`)
-6. }).catch((error: BusinessError) => {
-7. console.error(`error code: ${error.code}, error msg: ${error.message}`);
-8. })
+hidebug.getGraphicsMemory().then((ret: number) => {
+  console.info(`graphicsMemory: ${ret}`)
+}).catch((error: BusinessError) => {
+  console.error(`error code: ${error.code}, error msg: ${error.message}`);
+})
 ```
 
 ## hidebug.getGraphicsMemorySync14+
-
-PhonePC/2in1TabletTVWearable
 
 getGraphicsMemorySync(): number
 
 使用同步方式获取应用显存总大小（gl + graph）。
 
-注意
+**注意** 
 
 由于该接口涉及多次跨进程通信，其耗时可能达到秒级。为了避免引入性能问题，建议不要在主线程调用该接口，推荐使用异步接口getGraphicsMemory。
 
@@ -1252,20 +1294,18 @@ getGraphicsMemorySync(): number
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. console.info(`graphicsMemory: ${hidebug.getGraphicsMemorySync()}`)
-6. } catch (error) {
-7. console.error(`error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
-8. }
+try {
+  console.info(`graphicsMemory: ${hidebug.getGraphicsMemorySync()}`)
+} catch (error) {
+  console.error(`error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+}
 ```
 
 ## hidebug.getGraphicsMemorySummary21+
-
-PhonePC/2in1TabletTVWearable
 
 getGraphicsMemorySummary(interval?: number): Promise<GraphicsMemorySummary>
 
@@ -1297,30 +1337,28 @@ getGraphicsMemorySummary(interval?: number): Promise<GraphicsMemorySummary>
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. hidebug.getGraphicsMemorySummary().then((ret: hidebug.GraphicsMemorySummary) => {
-5. console.info(`get graphicsMemory gl: ${ret.gl} graph: ${ret.graph}.`)
-6. }).catch((error: BusinessError) => {
-7. console.error(`error code: ${error.code}, error msg: ${error.message}.`);
-8. })
+hidebug.getGraphicsMemorySummary().then((ret: hidebug.GraphicsMemorySummary) => {
+  console.info(`get graphicsMemory gl: ${ret.gl} graph: ${ret.graph}.`)
+}).catch((error: BusinessError) => {
+  console.error(`error code: ${error.code}, error msg: ${error.message}.`);
+})
 ```
 
 ## hidebug.dumpJsRawHeapData18+
 
-PhonePC/2in1TabletTVWearable
-
 dumpJsRawHeapData(needGC?: boolean): Promise<string>
 
-为当前线程转储虚拟机的原始堆快照，并生成的rawheap文件，该文件可通过[rawheap-translator工具](../harmonyos-guides/rawheap-translator.md)将所生成文件转化为heapsnapshot文件进行解析。生成的文件路径使用Promise进行异步回调。
+为当前线程转储虚拟机的原始堆快照，并生成的rawheap格式文件，使用Promise异步回调完成。该文件可通过[rawheap-translator工具](../harmonyos-guides/rawheap-translator.md)转化为heapsnapshot格式文件进行解析。
 
-注意
+**注意** 
 
-系统通过该接口转存快照会消耗大量资源，因此严格限制了调用频率和次数。处理完生成的文件后，请立即删除。
+系统通过该接口转储快照会消耗大量资源，因此严格限制了调用频率和次数。处理完生成的文件后，请立即删除。
 
-建议仅在应用的灰度版本中使用。在正式版本中不推荐使用，避免影响应用流畅性。
+建议在开发者模式下调用该接口，可免除调用配额限制，当设置的开发者选项开关打开并重启设备后即可生效。
 
 **元服务API**：从API version 18开始，该接口支持在元服务中使用。
 
@@ -1355,19 +1393,138 @@ dumpJsRawHeapData(needGC?: boolean): Promise<string>
 
 **示例**：
 
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+hidebug.dumpJsRawHeapData().then((filePath: string) => {
+  console.info(`dumpJsRawHeapData success and generated file path is ${filePath}`)
+}).catch((error: BusinessError) => {
+  console.error(`error code: ${error.code}, error msg: ${error.message}`);
+})
 ```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. hidebug.dumpJsRawHeapData().then((filePath: string) => {
-4. console.info(`dumpJsRawHeapData success and generated file path is ${filePath}`)
-5. }).catch((error: BusinessError) => {
-6. console.error(`error code: ${error.code}, error msg: ${error.message}`);
-7. })
+
+## hidebug.dumpJsRawHeapData24+
+
+dumpJsRawHeapData(needGC: boolean, needClean: boolean): Promise<string>
+
+为当前线程转储虚拟机的原始堆快照，并支持清除nodeId缓存。生成的文件为rawheap格式，使用Promise异步回调完成。该文件可通过[rawheap-translator工具](../harmonyos-guides/rawheap-translator.md)转化为heapsnapshot格式文件进行解析。
+
+**注意** 
+
+系统通过该接口转储快照会消耗大量资源，因此严格限制了调用频率和次数。处理完生成的文件后，请立即删除。
+
+建议在开发者模式下调用该接口，可免除调用配额限制，当设置的开发者选项开关打开并重启设备后即可生效。
+
+**系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
+
+**元服务API**：从API version 24开始，该接口支持在元服务中使用。
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| needGC | boolean | 是 | 转储堆快照前是否需要GC。true：需要GC；false：不需要GC。 |
+| needClean | boolean | 是 | 转储堆快照前是否需要清除nodeId。true：需要清除；false：不需要清除。 |
+
+**返回值**：
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象，返回生成的快照文件路径（[应用沙箱内路径](../harmonyos-guides/app-sandbox-directory.md#应用沙箱路径和真实物理路径的对应关系)）。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[HiDebug错误码](errorcode-hiviewdfx-hidebug.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 11400106 | Quota exceeded. |
+| 11400107 | Fork operation failed. |
+| 11400108 | Failed to wait for the child process to finish. |
+| 11400109 | Timeout while waiting for the child process to finish. |
+| 11400110 | Disk remaining space too low. |
+| 11400111 | Napi interface call exception. |
+| 11400112 | Repeated data dump. |
+| 11400113 | Failed to create dump file. |
+
+**示例**：
+
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+hidebug.dumpJsRawHeapData(true, true).then((filePath: string) => {
+  console.info(`dumpJsRawHeapData success and generated file path is ${filePath}`);
+}).catch((error: BusinessError) => {
+  console.error(`error code: ${error.code}, error msg: ${error.message}`);
+})
+```
+
+## hidebug.dumpJsRawHeapData
+
+dumpJsRawHeapData(needGC: boolean, needClean: boolean, processDump: boolean): Promise<Array<string>>
+
+为当前线程或其所属进程生成虚拟机的原始堆快照，并支持清除nodeId缓存，生成的文件为rawheap格式。使用Promise异步回调。文件可通过[rawheap-translator工具](../harmonyos-guides/rawheap-translator.md)转换为heapsnapshot格式文件进行解析。
+
+**注意** 
+
+系统通过该接口转储快照会消耗大量资源，因此严格限制了调用频率和次数。处理完生成的文件后，请立即删除。
+
+建议在开发者模式下调用该接口，可免除调用配额限制，当设置的开发者选项开关打开并重启设备后即可生效。
+
+**起始版本**：26.0.0
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**元服务API**：从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| needGC | boolean | 是 | 转储堆快照前是否需要GC。true：需要GC；false：不需要GC。 |
+| needClean | boolean | 是 | 转储堆快照前是否需要清除nodeId。true：需要清除；false：不需要清除。 |
+| processDump | boolean | 是 | 是否转储当前线程所属进程的原始堆快照。true：转储当前线程所属进程的原始堆快照。 |
+
+**返回值**：
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<string>> | Promise对象，返回生成的快照文件路径数组（[应用沙箱内路径](../harmonyos-guides/app-sandbox-directory.md#应用沙箱路径和真实物理路径的对应关系)）。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[HiDebug错误码](errorcode-hiviewdfx-hidebug.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 11400106 | Quota exceeded. |
+| 11400107 | Fork operation failed. |
+| 11400108 | Failed to wait for the child process to finish. |
+| 11400109 | Timeout while waiting for the child process to finish. |
+| 11400110 | Disk remaining space too low. |
+| 11400111 | Napi interface call exception. |
+| 11400112 | Repeated data dump. |
+| 11400113 | Failed to create dump file. |
+
+**示例**：
+
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+hidebug.dumpJsRawHeapData(true, true, true).then((filePathArray: Array<string>) => {
+  console.info(`dumpJsRawHeapData success and generated file path is ${JSON.stringify(filePathArray)}`);
+}).catch((error: BusinessError) => {
+  console.error(`error code: ${error.code}, error msg: ${error.message}`);
+})
 ```
 
 ## hidebug.enableGwpAsanGrayscale20+
-
-PhonePC/2in1TabletTVWearable
 
 enableGwpAsanGrayscale(options?: GwpAsanOptions, duration?: number): void
 
@@ -1377,10 +1534,11 @@ enableGwpAsanGrayscale(options?: GwpAsanOptions, duration?: number): void
 
 更多关于GWP-ASan的说明，请参见[使用GWP-ASan检测内存错误](../best-practices/bpta-stability-gwpasan-detection.md)。
 
-说明
+**说明** 
 
 1. 若设备运行期间通过本接口设置的GWP-ASan应用数量超过配额限制，调用该接口将会失败并抛出错误码。请使用try-catch捕获异常，以避免应用异常退出。
 2. 设备重启后，本接口设置的GWP-ASan参数将会失效。
+3. 由于该接口涉及跨进程通信，耗时较长，为了避免引入性能问题，建议不要在主线程中直接调用该接口。可以通过[@ohos.taskpool](js-apis-taskpool.md)或[@ohos.worker](js-apis-worker.md)开启异步线程，以避免应用卡顿。
 
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
 
@@ -1401,29 +1559,31 @@ enableGwpAsanGrayscale(options?: GwpAsanOptions, duration?: number): void
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
+import { taskpool } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let options: hidebug.GwpAsanOptions = {
-5. alwaysEnabled: true,
-6. sampleRate: 2500,
-7. maxSimutaneousAllocations: 5000,
-8. };
-9. let duration: number = 4;
+@Concurrent
+function enableGwpAsanTask(): void {
+  let options: hidebug.GwpAsanOptions = {
+    alwaysEnabled: true,
+    sampleRate: 2500,
+    maxSimutaneousAllocations: 5000,
+  };
+  let duration: number = 4;
+  hidebug.enableGwpAsanGrayscale(options, duration);
+}
 
-11. try {
-12. hidebug.enableGwpAsanGrayscale(options, duration);
-13. console.info(`Succeeded in enabling GWP-ASan.`);
-14. } catch (error) {
-15. const err: BusinessError = error as BusinessError;
-16. console.error(`Failed to enable GWP-ASan. Code: ${err.code}, message: ${err.message}`);
-17. }
+taskpool.execute(enableGwpAsanTask).then(() => {
+  console.info(`Succeeded in enabling GWP-ASan.`);
+}).catch((error: BusinessError) => {
+  const err: BusinessError = error as BusinessError;
+  console.error(`Failed to enable GWP-ASan. Code: ${err.code}, message: ${err.message}`);
+})
 ```
 
 ## GwpAsanOptions20+
-
-PhonePC/2in1TabletTVWearable
 
 GWP-ASan配置项。可用于配置是否使能、采样频率，以及最大分配的插槽数。
 
@@ -1434,32 +1594,44 @@ GWP-ASan配置项。可用于配置是否使能、采样频率，以及最大分
 | alwaysEnabled | boolean | 否 | 是 | true：100%使能GWP-ASan。  false：1/128概率使能GWP-ASan。  默认值：false。 |
 | sampleRate | number | 否 | 是 | GWP-ASan采样频率，默认值为2500，需要传入大于0的正整数，若传入小数则向上取整。  1/sampleRate的概率对分配的内存进行采样。  建议值：>=1000，过小会显著影响性能。 |
 | maxSimutaneousAllocations | number | 否 | 是 | 最大分配的插槽数，默认值为1000，需要传入大于0的正整数，若传入小数则向上取整。  当插槽用尽时，新分配的内存将不再受监控。  释放已使用的内存后，其占用的插槽将自动复用，以便于后续内存的监控。  建议值：<=20000，过大会可能导致VMA超限崩溃。 |
+| isRecover24+ | boolean | 否 | 是 | 用于控制应用以100%概率开启GWP-ASan时，是否以可恢复模式运行。  true：当GWP-ASan以100%概率开启时，应用以可恢复模式运行。在该模式下，系统检测到地址越界故障后，避免因检测机制本身导致进程崩溃；但对于已造成非法内存访问的错误，应用仍可能发生崩溃。  false：当GWP-ASan以100%概率开启时，应用以不可恢复模式运行。  默认值：false。  注意：该参数只在“以100%概率开启GWP-ASan”场景下生效；1/128概率开启场景下默认为可恢复，不受isRecover控制。  **模型约束**：此接口仅可在Stage模型下使用。 |
 
 ## hidebug.disableGwpAsanGrayscale20+
-
-PhonePC/2in1TabletTVWearable
 
 disableGwpAsanGrayscale(): void
 
 停止使能GWP-ASan。调用该接口将取消自定义配置，恢复默认参数[GwpAsanOptions](js-apis-hidebug.md#gwpasanoptions20)。
 
+**说明** 
+
+由于该接口涉及跨进程通信，耗时较长，为了避免引入性能问题，建议不要在主线程中直接调用该接口。可以通过[@ohos.taskpool](js-apis-taskpool.md)或[@ohos.worker](js-apis-worker.md)开启异步线程，以避免应用卡顿。
+
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
+import { taskpool } from '@kit.ArkTS';
 
-3. hidebug.disableGwpAsanGrayscale();
+@Concurrent
+function disableGwpAsanTask(): void {
+  hidebug.disableGwpAsanGrayscale();
+}
+taskpool.execute(disableGwpAsanTask).then(() => {
+  console.info(`Disable GWP-ASan succeeded.`);
+})
 ```
 
 ## hidebug.getGwpAsanGrayscaleState20+
 
-PhonePC/2in1TabletTVWearable
-
 getGwpAsanGrayscaleState(): number
 
 获取当前GWP-ASan剩余使能天数。
+
+**说明** 
+
+由于该接口涉及跨进程通信，耗时较长，为了避免引入性能问题，建议不要在主线程中直接调用该接口。可以通过[@ohos.taskpool](js-apis-taskpool.md)或[@ohos.worker](js-apis-worker.md)开启异步线程，以避免应用卡顿。
 
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
 
@@ -1471,22 +1643,26 @@ getGwpAsanGrayscaleState(): number
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
+import { taskpool } from '@kit.ArkTS';
 
-3. let remainDays: number = hidebug.getGwpAsanGrayscaleState();
-4. console.info(`remainDays: ${remainDays}`);
+@Concurrent
+function getGwpAsanStateTask(): number {
+  return hidebug.getGwpAsanGrayscaleState();
+}
+taskpool.execute(getGwpAsanStateTask).then((remainDays: Object) => {
+  console.info(`GWP-ASan remain days: ${remainDays as number}.`);
+})
 ```
 
 ## hidebug.setJsRawHeapTrimLevel20+
-
-PhonePC/2in1TabletTVWearable
 
 setJsRawHeapTrimLevel(level: JsRawHeapTrimLevel): void
 
 设置当前进程转储虚拟机原始堆快照的裁剪级别。使用该接口并传入参数TRIM\_LEVEL\_2，可以有效减少堆快照的文件大小。
 
-注意
+**注意** 
 
 默认裁剪级别是TRIM\_LEVEL\_1。如果设置了TRIM\_LEVEL\_2裁剪，需使用API version 20之后的[rawheap-translator](../harmonyos-guides/rawheap-translator.md)工具才能将.rawheap文件转换为.heapsnapshot文件，否则可能导致转换失败。
 
@@ -1502,15 +1678,13 @@ setJsRawHeapTrimLevel(level: JsRawHeapTrimLevel): void
 
 **示例**：
 
-```
-1. import { hidebug } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
 
-3. hidebug.setJsRawHeapTrimLevel(hidebug.JsRawHeapTrimLevel.TRIM_LEVEL_2);
+hidebug.setJsRawHeapTrimLevel(hidebug.JsRawHeapTrimLevel.TRIM_LEVEL_2);
 ```
 
 ## GraphicsMemorySummary21+
-
-PhonePC/2in1TabletTVWearable
 
 描述应用显存数据，包括gl和graph部分。
 
@@ -1522,3 +1696,66 @@ PhonePC/2in1TabletTVWearable
 | --- | --- | --- | --- | --- |
 | gl | number | 否 | 否 | gl显存大小，RenderService渲染进程加载所需资源占用的内存，例如图片、纹理等，以KB为单位。 |
 | graph | number | 否 | 否 | graph显存大小，进程统计的DMA内存占用，包括直接通过接口申请的DMA buffer和通过allocator\_host申请的DMA buffer，以KB为单位。 |
+
+## hidebug.setProcDumpInSharedOOM24+
+
+setProcDumpInSharedOOM(enable: boolean): void
+
+将转储的堆快照由线程级改为进程级。
+
+**注意** 
+
+要想转储进程级的堆快照，调用该接口并传参true、进程OOM时发生的是SharedHeap OOM，两个条件缺一不可。
+
+该接口不影响其他场景下转储的堆快照内容。如：不会影响[dumpJsRawHeapData](js-apis-hidebug.md#hidebugdumpjsrawheapdata18)的结果。
+
+该接口在应用的生命周期内可被多次调用，但仅最后一次调用的执行结果会生效。
+
+**元服务API**：从API version 24开始，该接口支持在元服务中使用。
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enable | boolean | 是 | 当进程发生SharedHeap OOM时，系统将依据该进程在其生命周期中最后一次调用该接口所记录的信息，转储相应级别的堆快照。  true：进程级。  false：线程级。  默认值：false。 |
+
+**示例**：
+
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
+
+hidebug.setProcDumpInSharedOOM(true);
+```
+
+## hidebug.getRssInfo24+
+
+getRssInfo(): RssInfo
+
+获取应用程序进程的物理内存使用信息。读取/proc/{pid}/status节点的数据。
+
+**元服务API**：从API version 24开始，该接口支持在元服务中使用。
+
+**系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
+
+**注意** 
+
+读取/proc/{pid}/status耗时很短，与[hidebug.getAppNativeMemInfo](js-apis-hidebug.md#hidebuggetappnativememinfo12)接口中获取的rss值相比存在一点误差，但该接口更加轻量，为避免应用丢帧或卡顿推荐使用该接口。
+
+**返回值**：
+
+| 类型 | 说明 |
+| --- | --- |
+| [RssInfo](js-apis-hidebug.md#rssinfo24) | 应用进程的物理内存信息。 |
+
+**示例**：
+
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
+
+let rssInfo: hidebug.RssInfo = hidebug.getRssInfo();
+console.info(`rss: ${rssInfo.rss}, swapRss: ${rssInfo.swapRss}`);
+```

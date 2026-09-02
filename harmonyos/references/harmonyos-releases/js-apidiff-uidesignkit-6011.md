@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-uidesignkit-6011
 title: UI Design Kit
-breadcrumb: 版本说明 > HarmonyOS 6.0.1(21) > OS平台能力 > API变更清单 > 6.0.1(21) Beta1引入的API > UI Design Kit
+breadcrumb: 版本说明 > 更多版本 > 6.0.1(21) > OS平台能力 > API变更清单 > 6.0.1(21) Beta1引入的API > UI Design Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:03+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:26+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:27251a36a3ff78f4a8129e586bb6a7bacb2857e7b2e732781dcbef2aa0f6817b
 ---
 

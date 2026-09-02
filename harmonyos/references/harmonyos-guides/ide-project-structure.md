@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-project-s
 title: 工程目录结构介绍
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 工程目录结构介绍
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:44:34+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:9ea13bc4ed2e2a96bd71694df20223fa34a285402b0e8546bc9bb29e0c0f6f7f
+scraped_at: 2026-09-02T14:50:48+08:00
+doc_updated_at: 2026-08-17
+content_hash: sha256:741c3a44885bdf58c691e6b643d8623b99469b836af63862f5bb2e8f46d815c5
 ---
 
 ## ArkTS工程目录结构（Stage模型）
 
 ArkTS Stage模型支持API Version 10及以上版本，其工程目录结构如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/cjDjse9iRqOzaGTP_7LH7Q/zh-cn_image_0000002583649849.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/n-FYWMtKRJq3OpSSTD2YFw/zh-cn_image_0000002701822846.png)
 
 * **AppScope > app.json5**：应用的全局配置信息。
 * **entry：**应用/元服务模块，编译构建生成一个HAP。
@@ -30,7 +30,7 @@ ArkTS Stage模型支持API Version 10及以上版本，其工程目录结构如�
   + **src > main > module.json5**：Stage模型模块配置文件，主要包含HAP的配置信息、应用在具体设备上的配置信息以及应用的全局配置信息。具体请参考[module.json5配置文件](module-configuration-file.md)。
   + **src > mock****：**配置测试框架的Mock能力。具体请参考[Mock能力](ide-test-mock.md)。
   + **src > ohosTest：**存放Instrument Test测试类。具体请参考[Instrument Test](ide-instrument-test.md)。
-  + **src > test：**存放Local Test创建测试类。具体请参考[Local Test](ide-local-test.md)。
+  + **src > test：**存放Local Test测试类。具体请参考[Local Test](ide-local-test.md)。
   + **build-profile.json5：**当前的模块信息、编译信息配置项，包括buildOption、targets配置等。
   + **hvigorfile.ts**：模块级编译构建任务脚本。
   + **obfuscation-rules.txt**：混淆规则文件。混淆开启后，在使用Release模式进行编译时，会对代码进行编译、混淆及压缩处理，保护代码资产。详见[混淆加固](ide-build-obfuscation.md)。
@@ -46,10 +46,11 @@ ArkTS Stage模型支持API Version 10及以上版本，其工程目录结构如�
 
 C++ Stage模型支持API Version 10以上版本，支持使用ArkTS和C++进行开发，其工程目录结构如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/LyCtuL38SQu1k2E4b4V8Mw/zh-cn_image_0000002561832763.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/68RQ1exXSgmJX7HUE-VOFA/zh-cn_image_0000002731542117.png)
 
 * **entry**：应用模块，编译构建生成一个HAP。
-  + **src > main > cpp > types**：用于存放C++的API接口描述文件
+  + **libs > {abi}**：用于存放.so文件，此目录下.so文件默认打包到产物包中。其中，{abi}为设备CPU架构类型（如arm64-v8a）。
+  + **src > main > cpp > types**：用于存放C++的API接口描述文件。
   + **src > main > cpp > types** **> libentry > index.d.ts**：描述C++ API接口行为，如接口名、入参、返回参数等。
   + **src > main > cpp > types** **> libentry> oh-package.json5**：配置.so三方包声明文件的入口及包名。
   + **src > main > cpp > CMakeLists.txt**：CMake配置文件，提供CMake构建脚本。
@@ -79,7 +80,7 @@ C++ Stage模型支持API Version 10以上版本，支持使用ArkTS和C++进行�
 
 JS工程只支持FA模型，其工程目录结构如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/ThQ6Xu4WROSuZNmIlROxhA/zh-cn_image_0000002561832761.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/gdzypkqmT8ifW4aN4xAwBA/zh-cn_image_0000002731382145.png)
 
 * **entry：**应用/元服务模块，编译构建生成一个HAP。
   + **src > main > js**：用于存放js源码。

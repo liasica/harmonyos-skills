@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: drawing_text_declaration.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > drawing_text_declaration.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:00+08:00
-doc_updated_at: 2026-04-13
-content_hash: sha256:8e04ed1a7e8371e6454838e3f930d75ff650fe6443e9e66700cfce62b78f239f
+scraped_at: 2026-09-02T15:02:44+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:806a0ae8b14f161275fbb9a4c47b945af67fff91c20cebb6553492828004e39a
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供2D绘制文本相关的数据结构声明。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -41,11 +35,13 @@ PhonePC/2in1TabletTVWearable
 | [OH\_Drawing\_LineTypography](capi-drawing-oh-drawing-linetypography.md) | OH\_Drawing\_LineTypography | 用于从一段文字中提取单行数据进行排版。 |
 | [OH\_Drawing\_TypographyCreate](capi-drawing-oh-drawing-typographycreate.md) | OH\_Drawing\_TypographyCreate | 用于创建[OH\_Drawing\_Typography](capi-drawing-oh-drawing-typography.md)。 |
 | [OH\_Drawing\_TextBox](capi-drawing-oh-drawing-textbox.md) | OH\_Drawing\_TextBox | 用于接收文本框的矩形大小、方向和数量大小。 |
-| [OH\_Drawing\_PositionAndAffinity](capi-drawing-oh-drawing-positionandaffinity.md) | OH\_Drawing\_PositionAndAffinity | 用于接收字体的位置和亲和性。 |
-| [OH\_Drawing\_Range](capi-drawing-oh-drawing-range.md) | OH\_Drawing\_Range | 用于接收字体的起始位置和结束位置。 |
+| [OH\_Drawing\_PositionAndAffinity](capi-drawing-oh-drawing-positionandaffinity.md) | OH\_Drawing\_PositionAndAffinity | 用于接收文本的位置和光标的亲和性。 |
+| [OH\_Drawing\_Range](capi-drawing-oh-drawing-range.md) | OH\_Drawing\_Range | 用于接收文本的起始位置和结束位置。 |
 | [OH\_Drawing\_TextShadow](capi-drawing-oh-drawing-textshadow.md) | OH\_Drawing\_TextShadow | 用于管理文本阴影。 |
-| [OH\_Drawing\_FontParser](capi-drawing-oh-drawing-fontparser.md) | OH\_Drawing\_FontParser | 用来解析系统字体文件。 |
+| [OH\_Drawing\_FontParser](capi-drawing-oh-drawing-fontparser.md) | OH\_Drawing\_FontParser | 用于解析系统字体文件。 |
 | [OH\_Drawing\_TextTab](capi-drawing-oh-drawing-texttab.md) | OH\_Drawing\_TextTab | 用于管理文本制表符。 |
 | [OH\_Drawing\_TextLine](capi-drawing-oh-drawing-textline.md) | OH\_Drawing\_TextLine | 用于管理文本行。 |
 | [OH\_Drawing\_Run](capi-drawing-oh-drawing-run.md) | OH\_Drawing\_Run | 用于管理文本渲染单元。 |
-| [OH\_Drawing\_FontFullDescriptor](capi-drawing-oh-drawing-fontfulldescriptor.md) | OH\_Drawing\_FontFullDescriptor | 用于描述字体的详细信息，即字体描述符。 |
+| [OH\_Drawing\_FontFullDescriptor](capi-drawing-oh-drawing-fontfulldescriptor.md) | OH\_Drawing\_FontFullDescriptor | 用于描述字体的详细信息。 |
+| [OH\_Drawing\_FontVariationAxis](capi-drawing-oh-drawing-fontvariationaxis.md) | OH\_Drawing\_FontVariationAxis | 用于描述字体可变轴。 |
+| [OH\_Drawing\_FontVariationInstance](capi-drawing-oh-drawing-fontvariationinstance.md) | OH\_Drawing\_FontVariationInstance | 用于描述字体可变实例，存放预设的可变字体样式信息。 |

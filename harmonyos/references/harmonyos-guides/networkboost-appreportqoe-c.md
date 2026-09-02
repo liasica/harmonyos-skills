@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-
 title: 应用传输体验反馈 (C/C++)
 breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务） > 网络质量 (C/C++) > 应用传输体验反馈 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:58+08:00
+scraped_at: 2026-09-02T14:50:06+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d1283d9fe64a6ccc1a91cc4d479f09c60633f2dee363ac31ff988cd9876bbdae
+content_hash: sha256:d997e1d3a6e88a2dea79c4abe32cdabfe894ffe322e53dbe47571a9365265b53
 ---
 
 ## 场景介绍
@@ -26,24 +26,24 @@ content_hash: sha256:d1283d9fe64a6ccc1a91cc4d479f09c60633f2dee363ac31ff988cd9876
 
 1. 导入Network Boost Kit模块。
 
-   ```
-   1. #include "NetworkBoostKit/network_boost_quality.h"
-   2. #include <cstdio>
+   ```cpp
+   #include "NetworkBoostKit/network_boost_quality.h"
+   #include <cstdio>
    ```
 2. CMakeLists.txt中添加以下lib，具体请见[C API开发准备](networkboost-preparations.md#c-api开发准备)。
 
-   ```
-   1. libnetwork_boost.so
+   ```cpp
+   libnetwork_boost.so
    ```
 3. 调用ReportQoe接口将应用传输体验信息通知给系统。
 
-   ```
-   1. int32_t ReportQoe()
-   2. {
-   3. NetworkBoost_ServiceType serviceType = NB_SERVICE_SHORT_VIDEO;
-   4. NetworkBoost_QoeType qoeType = NB_QOE_BAD_SERVER_ERROR;
-   5. int32_t ret = HMS_NetworkBoost_ReportQoe(serviceType, qoeType);
-   6. printf("传输体验反馈结果: %d\n", ret);
-   7. return ret;
-   8. }
+   ```cpp
+   int32_t ReportQoe()
+   {
+       NetworkBoost_ServiceType serviceType = NB_SERVICE_SHORT_VIDEO;
+       NetworkBoost_QoeType qoeType = NB_QOE_BAD_SERVER_ERROR;
+       int32_t ret = HMS_NetworkBoost_ReportQoe(serviceType, qoeType);
+       printf("传输体验反馈结果: %d\n", ret);
+       return ret;
+   }
    ```

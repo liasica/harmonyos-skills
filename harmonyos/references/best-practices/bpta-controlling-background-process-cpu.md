@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-controllin
 title: 控制后台进程CPU使用率
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 后台任务低功耗 > 后台硬件资源合理使用 > 控制后台进程CPU使用率
 category: best-practices
-scraped_at: 2026-04-29T14:13:53+08:00
+scraped_at: 2026-09-02T14:53:45+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:626362312a8af46daaa4d9b24996597c3b2f50adc1e1fc94031dbac5780c8326
+content_hash: sha256:bbeb79e292995fc168900454d3676672d8c1a2d960a43e3ff80b727679c59d82
 ---
 
 CPU使用率表示进程在CPU上的运行时间占总时间的百分比，计算公式为：CPU使用率 = 运行时间 / 总时间。单核CPU使用率的最大值为100%，多核CPU使用率的最大值为核数乘以100%。例如，8核CPU使用率的最大值为800%。
@@ -22,10 +22,10 @@ CPU使用率表示进程在CPU上的运行时间占总时间的百分比，计�
 
 1. 连接设备，打开命令行窗口，输入hdc shell进入设备。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/C_CA-tEQRIO-kUMmKWrbEA/zh-cn_image_0000002229450601.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/TU4JLjm8SICzWktgH_14tw/zh-cn_image_0000002229450601.png "点击放大")
 2. 输入ps -ef | grep bundleName，查询应用使用率的进程号。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/gb0mOdlcT4eVulLcpBq5Tw/zh-cn_image_0000002229336117.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/sn3SaM8wRFq7ajgw0CYGhw/zh-cn_image_0000002229336117.png "点击放大")
 3. 输入：top -p xxx，查看对应进程的使用率。查询结果中，CPU列显示进程的实时使用率。其中，xxx是进程ID(PID)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/f_K9HvqRRR6wqWAJ7iyFCQ/zh-cn_image_0000002194010320.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/WMz8yEzXR_CfdtplRi7buA/zh-cn_image_0000002194010320.png "点击放大")

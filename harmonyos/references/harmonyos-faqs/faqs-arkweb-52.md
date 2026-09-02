@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-52
 title: 动态创建web组件应该在什么场景下使用，性能如何
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 动态创建web组件应该在什么场景下使用，性能如何
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:42+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:53+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:278de5bfdaae5352e984963fc797890590539957343dd04ea0cd1a020f33aac5
 ---
 

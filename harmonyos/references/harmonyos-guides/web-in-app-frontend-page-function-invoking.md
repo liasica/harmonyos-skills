@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-in-app-fr
 title: 应用侧调用前端页面函数
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 在应用中使用前端页面JavaScript > 应用侧调用前端页面函数
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:54+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6b9a2ca961e042751b3b20ee58e2b0a75d0f16eb1a6935ca4e13df229666c24d
+scraped_at: 2026-09-02T14:49:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d6d77231b9f369f92f3b294ed79576b0b069d7d0d20d460b86294b48a4ba9c99
 ---
 
 应用侧可以通过[runJavaScript()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#runjavascript)和[runJavaScriptExt()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#runjavascriptext10)方法调用前端页面的JavaScript相关函数。
@@ -16,72 +16,70 @@ content_hash: sha256:6b9a2ca961e042751b3b20ee58e2b0a75d0f16eb1a6935ca4e13df22966
 
 * 前端页面代码。
 
-  ```
-  1. <!-- index.html -->
-  2. <!DOCTYPE html>
-  3. <html>
-  4. <head>
-  5. <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  6. </head>
-  7. <body>
-  8. <button type="button" onclick="callArkTS()">Click Me!</button>
-  9. <h1 id="text">这是一个测试信息，默认字体为黑色，调用runJavaScript方法后字体为黄色、调用runJavaScriptParam方法后字体为绿色、调用runJavaScriptCodePassed方法后字体为红色</h1>
-  10. <script>
-  11. // 有参函数。
-  12. var param = "param: JavaScript Hello World!";
-  13. function htmlTestParam(param) {
-  14. document.getElementById('text').style.color = 'green';
-  15. console.info(param);
-  16. }
-  17. // 无参函数。
-  18. function htmlTest() {
-  19. document.getElementById('text').style.color = 'yellow';
-  20. }
-  21. // 点击“Click Me！”按钮，触发前端页面callArkTS()函数执行JavaScript传递的代码。
-  22. function callArkTS() {
-  23. changeColor();
-  24. }
-  25. </script>
-  26. </body>
-  27. </html>
+  ```html
+  <!-- index.html -->
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+  <button type="button" onclick="callArkTS()">Click Me!</button>
+  <h1 id="text">这是一个测试信息，默认字体为黑色，调用runJavaScript方法后字体为黄色、调用runJavaScriptParam方法后字体为绿色、调用runJavaScriptCodePassed方法后字体为红色</h1>
+  <script>
+      // 有参函数。
+      var param = "param: JavaScript Hello World!";
+      function htmlTestParam(param) {
+          document.getElementById('text').style.color = 'green';
+          console.info(param);
+      }
+      // 无参函数。
+      function htmlTest() {
+          document.getElementById('text').style.color = 'yellow';
+      }
+      // 点击“Click Me！”按钮，触发前端页面callArkTS()函数执行JavaScript传递的代码。
+      function callArkTS() {
+          changeColor();
+      }
+  </script>
+  </body>
+  </html>
   ```
 * 应用侧代码。
 
+  ```typescript
+  import { webview } from '@kit.ArkWeb';
+
+  @Entry
+  @Component
+  struct WebComponent {
+    webviewController: webview.WebviewController = new webview.WebviewController();
+
+    aboutToAppear() {
+      // 配置Web开启调试模式
+      webview.WebviewController.setWebDebuggingAccess(true);
+    }
+
+    build() {
+      Column() {
+        Button('runJavaScriptParam')
+          .onClick(() => {
+            // 调用前端页面有参函数。
+            this.webviewController.runJavaScript('htmlTestParam(param)');
+          })
+        Button('runJavaScript')
+          .onClick(() => {
+            // 调用前端页面无参函数。
+            this.webviewController.runJavaScript('htmlTest()');
+          })
+        Button('runJavaScriptCodePassed')
+          .onClick(() => {
+            // 传递runJavaScript侧代码方法。
+            this.webviewController.runJavaScript(
+              `function changeColor(){document.getElementById('text').style.color = 'red'}`);
+          })
+        Web({ src: $rawfile('index.html'), controller: this.webviewController })
+      }
+    }
+  }
   ```
-  1. import { webview } from '@kit.ArkWeb';
-
-  3. @Entry
-  4. @Component
-  5. struct WebComponent {
-  6. webviewController: webview.WebviewController = new webview.WebviewController();
-
-  8. aboutToAppear() {
-  9. // 配置Web开启调试模式
-  10. webview.WebviewController.setWebDebuggingAccess(true);
-  11. }
-
-  13. build() {
-  14. Column() {
-  15. Button('runJavaScriptParam')
-  16. .onClick(() => {
-  17. // 调用前端页面有参函数。
-  18. this.webviewController.runJavaScript('htmlTestParam(param)');
-  19. })
-  20. Button('runJavaScript')
-  21. .onClick(() => {
-  22. // 调用前端页面无参函数。
-  23. this.webviewController.runJavaScript('htmlTest()');
-  24. })
-  25. Button('runJavaScriptCodePassed')
-  26. .onClick(() => {
-  27. // 传递runJavaScript侧代码方法。
-  28. this.webviewController.runJavaScript(
-  29. `function changeColor(){document.getElementById('text').style.color = 'red'}`);
-  30. })
-  31. Web({ src: $rawfile('index.html'), controller: this.webviewController })
-  32. }
-  33. }
-  34. }
-  ```
-
-  [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/UseFrontendJSApp/entry/src/main/ets/pages/Index.ets#L16-L51)

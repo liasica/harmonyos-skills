@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/network-b
 title: NetworkBoost
 breadcrumb: API参考 > 系统 > 网络 > Network Boost Kit（网络加速服务） > C API > 模块 > NetworkBoost
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:49+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e17b3c40d80c2dfe52ab63f8c2620450b600a6ba62f1179514b7f69bb52d06ee
+scraped_at: 2026-09-02T15:01:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ad1a14bda0211fa8aa3a080c2105ef7a6abc1d64270acaca77f15fa6762b76ac
 ---
 
 ## 概述
-
-PhonePC/2in1Tablet
 
 提供网络质量与网络连接迁移相关接口。
 
@@ -22,11 +20,7 @@ PhonePC/2in1Tablet
 
 ## 汇总
 
-PhonePC/2in1Tablet
-
 ### 文件
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
@@ -35,8 +29,6 @@ PhonePC/2in1Tablet
 | [network\_boost.h](network-boost-c-files-boost.md) | 声明用于网络加速的API。提供基本的函数，结构体和const定义。 |
 
 ### 结构体
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
@@ -58,8 +50,6 @@ PhonePC/2in1Tablet
 
 ### 宏定义
 
-PhonePC/2in1Tablet
-
 | 名称 | 描述 |
 | --- | --- |
 | [NETBOOST\_MAX\_PATH\_NUM](network-boost-c-overview.md#netboost_max_path_num) 4 | 网络质量变化信息的最大路径数量。 |
@@ -70,8 +60,6 @@ PhonePC/2in1Tablet
 | [NB\_TBPS](network-boost-c-overview.md#nb_tbps) 1000000000000 | 1tbps，请使用uint64\_t类型来避免溢出。 |
 
 ### 类型定义
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
@@ -103,8 +91,6 @@ PhonePC/2in1Tablet
 
 ### 枚举
 
-PhonePC/2in1Tablet
-
 | 名称 | 描述 |
 | --- | --- |
 | [NetworkBoost\_DataSpeedSimpleAction](network-boost-c-overview.md#networkboost_dataspeedsimpleaction-1) { NB\_SIMPLEACTION\_SUSPEND\_DATA = 1, NB\_SIMPLEACTION\_DECREASE\_DATA = 2, NB\_SIMPLEACTION\_INCREASE\_DATA = 3, NB\_SIMPLEACTION\_KEEP\_DATA = 4 } | 应用发包策略的建议。 |
@@ -114,18 +100,16 @@ PhonePC/2in1Tablet
 | [NetworkBoost\_RecommendedAction](network-boost-c-overview.md#networkboost_recommendedaction-1) {  NB\_ACTION\_DO\_CACHING = 0, NB\_ACTION\_SUSPEND\_DATA = 1, NB\_ACTION\_DECREASE\_DATA = 2, NB\_ACTION\_INCREASE\_DATA = 3,  NB\_ACTION\_KEEP\_DATA = 4  } | 应用数传策略建议。 |
 | [NetworkBoost\_PathType](network-boost-c-overview.md#networkboost_pathtype-1) { NB\_PATH\_CELLULAR\_PRIMARY = 0, NB\_PATH\_CELLULAR\_SECONDARY = 1, NB\_PATH\_WIFI\_PRIMARY = 2, NB\_PATH\_WIFI\_SECONDARY = 3 } | 数据路径类型，枚举值。 |
 | [NetworkBoost\_Scene](network-boost-c-overview.md#networkboost_scene-1) { NB\_SCENE\_NORMAL = 0, NB\_SCENE\_CONGESTION = 1, NB\_SCENE\_FREQUENT\_HANDOVER = 2, NB\_SCENE\_WEAK\_SIGNAL = 3 } | 网络场景类型。 |
-| [NetworkBoost\_ServiceType](network-boost-c-overview.md#networkboost_servicetype-1) {  NB\_SERVICE\_DEFAULT = 0, NB\_SERVICE\_BACKGROUND = 1, NB\_SERVICE\_REAL\_TIME\_VOICE = 2, NB\_SERVICE\_REAL\_TIME\_VIDEO = 3,  NB\_SERVICE\_CALL\_SIGNALING = 4, NB\_SERVICE\_REAL\_TIME\_GAME = 5, NB\_SERVICE\_NORMAL\_GAME = 6, NB\_SERVICE\_SHORT\_VIDEO = 7,  NB\_SERVICE\_LONG\_VIDEO = 8, NB\_SERVICE\_LIVE\_STREAMING\_ANCHOR = 9, NB\_SERVICE\_LIVE\_STREAMING\_WATCHER = 10, NB\_SERVICE\_DOWNLOAD = 11,  NB\_SERVICE\_UPLOAD = 12, NB\_SERVICE\_BROWSER = 13, NB\_SERVICE\_BROWSER = 13, NB\_SERVICE\_TRANSACTION = 14, NB\_SERVICE\_DETECTION = 15, NB\_SERVICE\_CLOUDSERVICE = 16, NB\_SERVICE\_VOICE\_CONFERENCE = 17, NB\_SERVICE\_VIDEO\_CONFERENCE = 18, NB\_SERVICE\_NAVIGATION = 19, NB\_SERVICE\_SECKILL\_SERVICE = 20, NB\_SERVICE\_LOGIN = 21, NB\_SERVICE\_AUDIO = 22, NB\_SERVICE\_SHOPPING = 23  } | 应用业务类型。 |
+| [NetworkBoost\_ServiceType](network-boost-c-overview.md#networkboost_servicetype-1) {  NB\_SERVICE\_DEFAULT = 0, NB\_SERVICE\_BACKGROUND = 1, NB\_SERVICE\_REAL\_TIME\_VOICE = 2, NB\_SERVICE\_REAL\_TIME\_VIDEO = 3,  NB\_SERVICE\_CALL\_SIGNALING = 4, NB\_SERVICE\_REAL\_TIME\_GAME = 5, NB\_SERVICE\_NORMAL\_GAME = 6, NB\_SERVICE\_SHORT\_VIDEO = 7,  NB\_SERVICE\_LONG\_VIDEO = 8, NB\_SERVICE\_LIVE\_STREAMING\_ANCHOR = 9, NB\_SERVICE\_LIVE\_STREAMING\_WATCHER = 10, NB\_SERVICE\_DOWNLOAD = 11,  NB\_SERVICE\_UPLOAD = 12, NB\_SERVICE\_BROWSER = 13, NB\_SERVICE\_TRANSACTION = 14, NB\_SERVICE\_DETECTION = 15, NB\_SERVICE\_CLOUDSERVICE = 16, NB\_SERVICE\_VOICE\_CONFERENCE = 17, NB\_SERVICE\_VIDEO\_CONFERENCE = 18, NB\_SERVICE\_NAVIGATION = 19, NB\_SERVICE\_SECKILL\_SERVICE = 20, NB\_SERVICE\_LOGIN = 21, NB\_SERVICE\_AUDIO = 22, NB\_SERVICE\_SHOPPING = 23  } | 应用业务类型。 |
 | [NetworkBoost\_QoeType](network-boost-c-overview.md#networkboost_qoetype-1) {  NB\_QOE\_GOOD = 0, NB\_QOE\_BAD\_UNKNOWN = 1, NB\_QOE\_BAD\_SERVER\_ERROR = 2, NB\_QOE\_BAD\_NO\_DATA = 3,  NB\_QOE\_BAD\_PACKET\_LOST = 4, NB\_QOE\_BAD\_PACKET\_OUT\_OF\_ORDER = 5, NB\_QOE\_BAD\_HIGH\_JITTER = 6, NB\_QOE\_BAD\_HIGH\_LATENCY = 7  } | 应用体验类型。 |
-| [NetworkBoost\_PathState](network-boost-c-overview.md#networkboost_pathstate) {  NB\_PATH\_IDLE = 0，NB\_PATH\_CONNECTED = 1，NB\_PATH\_SUSPENDED = 2  } | 多网链路状态的枚举。 |
-| [NetworkBoost\_MultiPathErrorResult](network-boost-c-overview.md#networkboost_multipatherrorresult) {  NB\_MULTIPATH\_ERROR\_NONE = 0，NB\_MULTIPATH\_ERROR\_NETWORK\_REFUSED = 1， NB\_MULTIPATH\_ERROR\_TIMEOUT = 2， NB\_MULTIPATH\_ERROR\_LOCAL = 3  } | 多网建立结果的枚举。 |
+| [NetworkBoost\_PathState](network-boost-c-overview.md#networkboost_pathstate) {  NB\_PATH\_IDLE = 0,NB\_PATH\_CONNECTED = 1,NB\_PATH\_SUSPENDED = 2  } | 多网链路状态的枚举。 |
+| [NetworkBoost\_MultiPathErrorResult](network-boost-c-overview.md#networkboost_multipatherrorresult) {  NB\_MULTIPATH\_ERROR\_NONE = 0,NB\_MULTIPATH\_ERROR\_NETWORK\_REFUSED = 1, NB\_MULTIPATH\_ERROR\_TIMEOUT = 2, NB\_MULTIPATH\_ERROR\_LOCAL = 3  } | 多网建立结果的枚举。 |
 | [NetworkBoost\_MultiPathChangeCause](network-boost-c-overview.md#networkboost_multipathchangecause) {  NB\_MULTIPATH\_CAUSE\_REQUEST\_NORMAL = 0, NB\_MULTIPATH\_CAUSE\_RELEASE\_NORMAL = 50, NB\_MULTIPATH\_CHANGE\_CAUSE\_RELEASE\_NETWORK = 51, NB\_MULTIPATH\_CHANGE\_CAUSE\_RELEASE\_USER\_REFUSED = 52, NB\_MULTIPATH\_CAUSE\_RELEASE\_NO\_QUOTA = 53, NB\_MULTIPATH\_CAUSE\_RELEASE\_POWER\_CONSUMPTION = 54, NB\_MULTIPATH\_CHANGE\_CAUSE\_RELEASE\_INSUFFICIENT\_TRAFFIC = 55, NB\_MULTIPATH\_CHANGE\_CAUSE\_RELEASE\_CONFLICT = 56, NB\_MULTIPATH\_CHANGE\_CAUSE\_RELEASE\_SYS\_FUSING = 57, NB\_MULTIPATH\_CHANGE\_CAUSE\_RELEASE\_SYS\_DEFAULT = 99, NB\_MULTIPATH\_CHANGE\_CAUSE\_SUSPEND\_ENTER = 100, NB\_MULTIPATH\_CHANGE\_CAUSE\_SUSPEND\_LEAVE = 101, NB\_MULTIPATH\_CHANGE\_CAUSE\_CONN\_PROPERTIES\_UPDATE = 102  } | 多网变化原因的枚举。 |
-| [NetworkBoost\_MultiPathState](network-boost-c-overview.md#networkboost_multipathstate) {  NB\_MULTIPATH\_IDLE = 0, NB\_MULTIPATH\_CREATEING = 1, NB\_MULTIPATH\_CREATED = 2, NB\_MULTIPATH\_RELEASING = 3  } | 多网状态的枚举。 |
-| [NetworkBoost\_MultiPathAction](network-boost-c-overview.md#networkboost_multipathaction) {  NB\_MULTIPATH\_ACTION\_REQUEST = 0， NB\_MULTIPATH\_ACTION\_RELEASE = 1  } | 多网推荐动作的枚举。 |
-| [NetworkBoost\_SceneEvent](network-boost-c-overview.md#networkboost_sceneevent) {  NB\_SCENE\_EVENT\_ENTER = 0， NB\_SCENE\_EVENT\_UPDATE = 1，NB\_SCENE\_EVENT\_LEAVE = 2  } | 业务事件枚举。 |
+| [NetworkBoost\_MultiPathState](network-boost-c-overview.md#networkboost_multipathstate) {  NB\_MULTIPATH\_IDLE = 0, NB\_MULTIPATH\_CREATING = 1, NB\_MULTIPATH\_CREATED = 2, NB\_MULTIPATH\_RELEASING = 3  } | 多网状态的枚举。 |
+| [NetworkBoost\_MultiPathAction](network-boost-c-overview.md#networkboost_multipathaction) {  NB\_MULTIPATH\_ACTION\_REQUEST = 0, NB\_MULTIPATH\_ACTION\_RELEASE = 1  } | 多网推荐动作的枚举。 |
+| [NetworkBoost\_SceneEvent](network-boost-c-overview.md#networkboost_sceneevent) {  NB\_SCENE\_EVENT\_ENTER = 0, NB\_SCENE\_EVENT\_UPDATE = 1,NB\_SCENE\_EVENT\_LEAVE = 2  } | 业务事件枚举。 |
 
 ### 函数
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
@@ -138,7 +122,7 @@ PhonePC/2in1Tablet
 | int32\_t [HMS\_NetworkBoost\_UnregisterNetSceneCallback](network-boost-c-overview.md#hms_networkboost_unregisternetscenecallback) (uint32\_t callbackId) | 取消注册网络场景变化回调。 |
 | int32\_t [HMS\_NetworkBoost\_ReportQoe](network-boost-c-overview.md#hms_networkboost_reportqoe) ([NetworkBoost\_ServiceType](network-boost-c-overview.md#networkboost_servicetype-1) serviceType, [NetworkBoost\_QoeType](network-boost-c-overview.md#networkboost_qoetype-1) qoeType) | 应用传输体验反馈。 |
 | int32\_t [HMS\_NetworkBoost\_GetMultiPathQuotaStats](network-boost-c-overview.md#hms_networkboost_getmultipathquotastats)([NetworkBoost\_MultiPathQuota](network-boost-c-struct-multipath_quota.md) \*quota) | 获取当前应用多网使用的配额，包括已使用的配额信息和剩余配额信息。 |
-| int32\_t [HMS\_NetworkBoost\_RequestMultiPath](network-boost-c-overview.md#hms_networkboost_requestmultipath)([HMS\_NetworkBoost\_OnMultiPathRequestResult](network-boost-c-struct-multipath_req_result.md) result) | 发起多网请求。 |
+| int32\_t [HMS\_NetworkBoost\_RequestMultiPath](network-boost-c-overview.md#hms_networkboost_requestmultipath)([HMS\_NetworkBoost\_OnMultiPathRequestResult](network-boost-c-overview.md#hms_networkboost_onmultipathrequestresult) result) | 发起多网请求。 |
 | int32\_t [HMS\_NetworkBoost\_ReleaseMultiPath](network-boost-c-overview.md#hms_networkboost_releasemultipath)() | 释放多网请求。 |
 | int32\_t [HMS\_NetworkBoost\_RegisterMultiPathStateChangeCallback](network-boost-c-overview.md#hms_networkboost_registermultipathstatechangecallback)([HMS\_NetworkBoost\_OnMultiPathStateChange](network-boost-c-overview.md#hms_networkboost_onmultipathstatechange) callback, uint32\_t\* callbackId) | 注册多网状态变化事件。 |
 | int32\_t [HMS\_NetworkBoost\_UnregisterMultiPathStateChangeCallback](network-boost-c-overview.md#hms_networkboost_unregistermultipathstatechangecallback)(uint32\_t callbackId) | 去注册多网状态变化事件。 |
@@ -148,70 +132,58 @@ PhonePC/2in1Tablet
 
 ## 宏定义说明
 
-PhonePC/2in1Tablet
-
 ### NB\_BPS
 
-PhonePC/2in1Tablet
-
-```
-1. #define NB_BPS   1
+```c
+#define NB_BPS 1
 ```
 
 **描述**
 
-1bps
+1bps。
 
 **起始版本：** 5.1.0(18)
 
 ### NB\_GBPS
 
-PhonePC/2in1Tablet
-
-```
-1. #define NB_GBPS   1000000000
+```c
+#define NB_GBPS 1000000000
 ```
 
 **描述**
 
-1gbps
+1gbps。
 
 **起始版本：** 5.1.0(18)
 
 ### NB\_KBPS
 
-PhonePC/2in1Tablet
-
-```
-1. #define NB_KBPS   1000
+```c
+#define NB_KBPS 1000
 ```
 
 **描述**
 
-1kbps
+1kbps。
 
 **起始版本：** 5.1.0(18)
 
 ### NB\_MBPS
 
-PhonePC/2in1Tablet
-
-```
-1. #define NB_MBPS   1000000
+```c
+#define NB_MBPS   1000000
 ```
 
 **描述**
 
-1mbps
+1mbps。
 
 **起始版本：** 5.1.0(18)
 
 ### NB\_TBPS
 
-PhonePC/2in1Tablet
-
-```
-1. #define NB_TBPS   1000000000000
+```c
+#define NB_TBPS 1000000000000
 ```
 
 **描述**
@@ -222,10 +194,8 @@ PhonePC/2in1Tablet
 
 ### NETBOOST\_MAX\_PATH\_NUM
 
-PhonePC/2in1Tablet
-
-```
-1. #define NETBOOST_MAX_PATH_NUM   4
+```c
+#define NETBOOST_MAX_PATH_NUM 4
 ```
 
 **描述**
@@ -236,14 +206,10 @@ PhonePC/2in1Tablet
 
 ## 类型定义说明
 
-PhonePC/2in1Tablet
-
 ### HMS\_NetworkBoost\_HandoverCallback
 
-PhonePC/2in1Tablet
-
-```
-1. typedef struct HMS_NetworkBoost_HandoverCallback HMS_NetworkBoost_HandoverCallback
+```c
+typedef struct HMS_NetworkBoost_HandoverCallback HMS_NetworkBoost_HandoverCallback
 ```
 
 **描述**
@@ -254,10 +220,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_NetworkBoost\_NetQosChange
 
-PhonePC/2in1Tablet
-
-```
-1. typedef void(* HMS_NetworkBoost_NetQosChange) (NetworkBoost_NetworkQosArray *networkQosArray)
+```c
+typedef void(* HMS_NetworkBoost_NetQosChange) (NetworkBoost_NetworkQosArray *networkQosArray)
 ```
 
 **描述**
@@ -270,14 +234,12 @@ PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
-| networkQosArray | 网络质量变化的详细信息 |
+| networkQosArray | 网络质量变化的详细信息。 |
 
 ### HMS\_NetworkBoost\_NetSceneChange
 
-PhonePC/2in1Tablet
-
-```
-1. typedef void(* HMS_NetworkBoost_NetSceneChange) (NetworkBoost_NetworkScene *networkScene)
+```c
+typedef void(* HMS_NetworkBoost_NetSceneChange) (NetworkBoost_NetworkScene *networkScene)
 ```
 
 **描述**
@@ -290,14 +252,12 @@ PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
-| networkScene | 网络场景变化的详细信息 |
+| networkScene | 网络场景变化的详细信息。 |
 
 ### HMS\_NetworkBoost\_OnHandoverComplete
 
-PhonePC/2in1Tablet
-
-```
-1. typedef void(* HMS_NetworkBoost_OnHandoverComplete) (NetworkBoost_HandoverComplete *handoverComplete)
+```c
+typedef void(* HMS_NetworkBoost_OnHandoverComplete) (NetworkBoost_HandoverComplete *handoverComplete)
 ```
 
 **描述**
@@ -310,14 +270,12 @@ PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
-| handoverComplete | 连接迁移完成的详细信息 |
+| handoverComplete | 连接迁移完成的详细信息。 |
 
 ### HMS\_NetworkBoost\_OnHandoverStart
 
-PhonePC/2in1Tablet
-
-```
-1. typedef void(* HMS_NetworkBoost_OnHandoverStart) (NetworkBoost_HandoverStart *handoverStart)
+```c
+typedef void(* HMS_NetworkBoost_OnHandoverStart) (NetworkBoost_HandoverStart *handoverStart)
 ```
 
 **描述**
@@ -334,10 +292,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_NetworkBoost\_OnMultiPathRequestResult
 
-PhonePC/2in1Tablet
-
-```
-1. typedef void (*HMS_NetworkBoost_OnMultiPathRequestResult)(NetworkBoost_MultiPathRequestResult* result)
+```c
+typedef void (*HMS_NetworkBoost_OnMultiPathRequestResult)(NetworkBoost_MultiPathRequestResult* result)
 ```
 
 **描述**
@@ -354,10 +310,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_NetworkBoost\_OnMultiPathStateChange
 
-PhonePC/2in1Tablet
-
-```
-1. typedef void (*HMS_NetworkBoost_OnMultiPathStateChange)(NetworkBoost_MultiPathStateChange* multiPathState)
+```c
+typedef void (*HMS_NetworkBoost_OnMultiPathStateChange)(NetworkBoost_MultiPathStateChange* multiPathState)
 ```
 
 **描述**
@@ -374,10 +328,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_NetworkBoost\_OnMultiPathRecommendation
 
-PhonePC/2in1Tablet
-
-```
-1. typedef void (*HMS_NetworkBoost_OnMultiPathRecommendation)(NetworkBoost_MultiPathRecommendation* recommendation)
+```c
+typedef void (*HMS_NetworkBoost_OnMultiPathRecommendation)(NetworkBoost_MultiPathRecommendation* recommendation)
 ```
 
 **描述**
@@ -394,10 +346,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_DataSpeedAction
 
-PhonePC/2in1Tablet
-
-```
-1. typedef struct NetworkBoost_DataSpeedAction NetworkBoost_DataSpeedAction
+```c
+typedef struct NetworkBoost_DataSpeedAction NetworkBoost_DataSpeedAction
 ```
 
 **描述**
@@ -408,10 +358,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_DataSpeedSimpleAction
 
-PhonePC/2in1Tablet
-
-```
-1. typedef enum NetworkBoost_DataSpeedSimpleAction NetworkBoost_DataSpeedSimpleAction
+```c
+typedef enum NetworkBoost_DataSpeedSimpleAction NetworkBoost_DataSpeedSimpleAction
 ```
 
 **描述**
@@ -422,10 +370,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_ErrorResult
 
-PhonePC/2in1Tablet
-
-```
-1. typedef enum NetworkBoost_ErrorResult NetworkBoost_ErrorResult
+```c
+typedef enum NetworkBoost_ErrorResult NetworkBoost_ErrorResult
 ```
 
 **描述**
@@ -436,10 +382,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_HandoverComplete
 
-PhonePC/2in1Tablet
-
-```
-1. typedef struct NetworkBoost_HandoverComplete NetworkBoost_HandoverComplete
+```c
+typedef struct NetworkBoost_HandoverComplete NetworkBoost_HandoverComplete
 ```
 
 **描述**
@@ -450,10 +394,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_HandoverMode
 
-PhonePC/2in1Tablet
-
-```
-1. typedef enum NetworkBoost_HandoverMode NetworkBoost_HandoverMode
+```c
+typedef enum NetworkBoost_HandoverMode NetworkBoost_HandoverMode
 ```
 
 **描述**
@@ -464,10 +406,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_HandoverStart
 
-PhonePC/2in1Tablet
-
-```
-1. typedef struct NetworkBoost_HandoverStart NetworkBoost_HandoverStart
+```c
+typedef struct NetworkBoost_HandoverStart NetworkBoost_HandoverStart
 ```
 
 **描述**
@@ -478,10 +418,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_NetHandle
 
-PhonePC/2in1Tablet
-
-```
-1. typedef struct NetworkBoost_NetHandle NetworkBoost_NetHandle
+```c
+typedef struct NetworkBoost_NetHandle NetworkBoost_NetHandle
 ```
 
 **描述**
@@ -492,10 +430,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_NetworkQos
 
-PhonePC/2in1Tablet
-
-```
-1. typedef struct NetworkBoost_NetworkQos NetworkBoost_NetworkQos
+```c
+typedef struct NetworkBoost_NetworkQos NetworkBoost_NetworkQos
 ```
 
 **描述**
@@ -506,10 +442,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_NetworkQosArray
 
-PhonePC/2in1Tablet
-
-```
-1. typedef struct NetworkBoost_NetworkQosArray NetworkBoost_NetworkQosArray
+```c
+typedef struct NetworkBoost_NetworkQosArray NetworkBoost_NetworkQosArray
 ```
 
 **描述**
@@ -520,10 +454,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_NetworkScene
 
-PhonePC/2in1Tablet
-
-```
-1. typedef struct NetworkBoost_NetworkScene NetworkBoost_NetworkScene
+```c
+typedef struct NetworkBoost_NetworkScene NetworkBoost_NetworkScene
 ```
 
 **描述**
@@ -534,10 +466,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_PathType
 
-PhonePC/2in1Tablet
-
-```
-1. typedef enum NetworkBoost_PathType NetworkBoost_PathType
+```c
+typedef enum NetworkBoost_PathType NetworkBoost_PathType
 ```
 
 **描述**
@@ -548,10 +478,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_QoeType
 
-PhonePC/2in1Tablet
-
-```
-1. typedef enum NetworkBoost_QoeType NetworkBoost_QoeType
+```c
+typedef enum NetworkBoost_QoeType NetworkBoost_QoeType
 ```
 
 **描述**
@@ -562,10 +490,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_RecommendedAction
 
-PhonePC/2in1Tablet
-
-```
-1. typedef enum NetworkBoost_RecommendedAction NetworkBoost_RecommendedAction
+```c
+typedef enum NetworkBoost_RecommendedAction NetworkBoost_RecommendedAction
 ```
 
 **描述**
@@ -576,10 +502,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_ReEstAction
 
-PhonePC/2in1Tablet
-
-```
-1. typedef enum NetworkBoost_ReEstAction NetworkBoost_ReEstAction
+```c
+typedef enum NetworkBoost_ReEstAction NetworkBoost_ReEstAction
 ```
 
 **描述**
@@ -590,10 +514,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_Scene
 
-PhonePC/2in1Tablet
-
-```
-1. typedef enum NetworkBoost_Scene NetworkBoost_Scene
+```c
+typedef enum NetworkBoost_Scene NetworkBoost_Scene
 ```
 
 **描述**
@@ -604,10 +526,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_ServiceType
 
-PhonePC/2in1Tablet
-
-```
-1. typedef enum NetworkBoost_ServiceType NetworkBoost_ServiceType
+```c
+typedef enum NetworkBoost_ServiceType NetworkBoost_ServiceType
 ```
 
 **描述**
@@ -618,10 +538,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_WeakSignalPrediction
 
-PhonePC/2in1Tablet
-
-```
-1. typedef struct NetworkBoost_WeakSignalPrediction NetworkBoost_WeakSignalPrediction
+```c
+typedef struct NetworkBoost_WeakSignalPrediction NetworkBoost_WeakSignalPrediction
 ```
 
 **描述**
@@ -632,14 +550,10 @@ PhonePC/2in1Tablet
 
 ## 枚举类型说明
 
-PhonePC/2in1Tablet
-
 ### NetworkBoost\_DataSpeedSimpleAction
 
-PhonePC/2in1Tablet
-
-```
-1. enum NetworkBoost_DataSpeedSimpleAction
+```c
+enum NetworkBoost_DataSpeedSimpleAction
 ```
 
 **描述**
@@ -657,10 +571,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_ErrorResult
 
-PhonePC/2in1Tablet
-
-```
-1. enum NetworkBoost_ErrorResult
+```c
+enum NetworkBoost_ErrorResult
 ```
 
 **描述**
@@ -678,10 +590,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_HandoverMode
 
-PhonePC/2in1Tablet
-
-```
-1. enum NetworkBoost_HandoverMode
+```c
+enum NetworkBoost_HandoverMode
 ```
 
 **描述**
@@ -697,10 +607,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_PathType
 
-PhonePC/2in1Tablet
-
-```
-1. enum NetworkBoost_PathType
+```c
+enum NetworkBoost_PathType
 ```
 
 **描述**
@@ -718,10 +626,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_QoeType
 
-PhonePC/2in1Tablet
-
-```
-1. enum NetworkBoost_QoeType
+```c
+enum NetworkBoost_QoeType
 ```
 
 **描述**
@@ -743,10 +649,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_RecommendedAction
 
-PhonePC/2in1Tablet
-
-```
-1. enum NetworkBoost_RecommendedAction
+```c
+enum NetworkBoost_RecommendedAction
 ```
 
 **描述**
@@ -765,10 +669,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_ReEstAction
 
-PhonePC/2in1Tablet
-
-```
-1. enum NetworkBoost_ReEstAction
+```c
+enum NetworkBoost_ReEstAction
 ```
 
 **描述**
@@ -787,10 +689,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_Scene
 
-PhonePC/2in1Tablet
-
-```
-1. enum NetworkBoost_Scene
+```c
+enum NetworkBoost_Scene
 ```
 
 **描述**
@@ -808,10 +708,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_ServiceType
 
-PhonePC/2in1Tablet
-
-```
-1. enum NetworkBoost_ServiceType
+```c
+enum NetworkBoost_ServiceType
 ```
 
 **描述**
@@ -849,10 +747,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_PathState
 
-PhonePC/2in1Tablet
-
-```
-1. enum NetworkBoost_PathState
+```c
+enum NetworkBoost_PathState
 ```
 
 **描述**
@@ -869,10 +765,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_MultiPathChangeCause
 
-PhonePC/2in1Tablet
-
-```
-1. enum NetworkBoost_MultiPathChangeCause
+```c
+enum NetworkBoost_MultiPathChangeCause
 ```
 
 **描述**
@@ -899,10 +793,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_MultiPathErrorResult
 
-PhonePC/2in1Tablet
-
-```
-1. enum NetworkBoost_MultiPathErrorResult
+```c
+enum NetworkBoost_MultiPathErrorResult
 ```
 
 **描述**
@@ -920,10 +812,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_MultiPathState
 
-PhonePC/2in1Tablet
-
-```
-1. enum NetworkBoost_MultiPathState
+```c
+enum NetworkBoost_MultiPathState
 ```
 
 **描述**
@@ -935,16 +825,14 @@ PhonePC/2in1Tablet
 | 枚举值 | 描述 |
 | --- | --- |
 | NB\_MULTIPATH\_IDLE | 多网处于空闲状态。 |
-| NB\_MULTIPATH\_CREATEING | 多网正在建立中。 |
+| NB\_MULTIPATH\_CREATING | 多网正在建立中。 |
 | NB\_MULTIPATH\_CREATED | 多网已建立。 |
 | NB\_MULTIPATH\_RELEASING | 多网正在释放中。 |
 
 ### NetworkBoost\_MultiPathAction
 
-PhonePC/2in1Tablet
-
-```
-1. enum NetworkBoost_MultiPathAction
+```c
+enum NetworkBoost_MultiPathAction
 ```
 
 **描述**
@@ -960,10 +848,8 @@ PhonePC/2in1Tablet
 
 ### NetworkBoost\_SceneEvent
 
-PhonePC/2in1Tablet
-
-```
-1. enum NetworkBoost_SceneEvent
+```c
+enum NetworkBoost_SceneEvent
 ```
 
 **描述**
@@ -980,14 +866,10 @@ PhonePC/2in1Tablet
 
 ## 函数说明
 
-PhonePC/2in1Tablet
-
 ### HMS\_NetworkBoost\_RegisterHandoverChangeCallback()
 
-PhonePC/2in1Tablet
-
-```
-1. int32_t HMS_NetworkBoost_RegisterHandoverChangeCallback (HMS_NetworkBoost_HandoverCallback * callback, uint32_t * callbackId )
+```c
+int32_t HMS_NetworkBoost_RegisterHandoverChangeCallback (HMS_NetworkBoost_HandoverCallback * callback, uint32_t * callbackId )
 ```
 
 **描述**
@@ -1025,10 +907,8 @@ ohos.permission.GET\_NETWORK\_INFO
 
 ### HMS\_NetworkBoost\_RegisterNetQosCallback()
 
-PhonePC/2in1Tablet
-
-```
-1. int32_t HMS_NetworkBoost_RegisterNetQosCallback (HMS_NetworkBoost_NetQosChange callback, uint32_t * callbackId )
+```c
+int32_t HMS_NetworkBoost_RegisterNetQosCallback (HMS_NetworkBoost_NetQosChange callback, uint32_t * callbackId )
 ```
 
 **描述**
@@ -1066,10 +946,8 @@ ohos.permission.GET\_NETWORK\_INFO
 
 ### HMS\_NetworkBoost\_RegisterNetSceneCallback()
 
-PhonePC/2in1Tablet
-
-```
-1. int32_t HMS_NetworkBoost_RegisterNetSceneCallback (HMS_NetworkBoost_NetSceneChange callback, uint32_t * callbackId )
+```c
+int32_t HMS_NetworkBoost_RegisterNetSceneCallback (HMS_NetworkBoost_NetSceneChange callback, uint32_t * callbackId )
 ```
 
 **描述**
@@ -1107,10 +985,8 @@ ohos.permission.GET\_NETWORK\_INFO
 
 ### HMS\_NetworkBoost\_ReportQoe()
 
-PhonePC/2in1Tablet
-
-```
-1. int32_t HMS_NetworkBoost_ReportQoe (NetworkBoost_ServiceType serviceType, NetworkBoost_QoeType qoeType )
+```c
+int32_t HMS_NetworkBoost_ReportQoe (NetworkBoost_ServiceType serviceType, NetworkBoost_QoeType qoeType )
 ```
 
 **描述**
@@ -1146,10 +1022,8 @@ ohos.permission.GET\_NETWORK\_INFO
 
 ### HMS\_NetworkBoost\_SetHandoverMode()
 
-PhonePC/2in1Tablet
-
-```
-1. int32_t HMS_NetworkBoost_SetHandoverMode (NetworkBoost_HandoverMode mode)
+```c
+int32_t HMS_NetworkBoost_SetHandoverMode (NetworkBoost_HandoverMode mode)
 ```
 
 **描述**
@@ -1184,10 +1058,8 @@ ohos.permission.GET\_NETWORK\_INFO
 
 ### HMS\_NetworkBoost\_UnregisterHandoverChangeCallback()
 
-PhonePC/2in1Tablet
-
-```
-1. int32_t HMS_NetworkBoost_UnregisterHandoverChangeCallback (uint32_t callbackId)
+```c
+int32_t HMS_NetworkBoost_UnregisterHandoverChangeCallback (uint32_t callbackId)
 ```
 
 **描述**
@@ -1222,10 +1094,8 @@ ohos.permission.GET\_NETWORK\_INFO
 
 ### HMS\_NetworkBoost\_UnregisterNetQosCallback()
 
-PhonePC/2in1Tablet
-
-```
-1. int32_t HMS_NetworkBoost_UnregisterNetQosCallback (uint32_t callbackId)
+```c
+int32_t HMS_NetworkBoost_UnregisterNetQosCallback (uint32_t callbackId)
 ```
 
 **描述**
@@ -1260,10 +1130,8 @@ ohos.permission.GET\_NETWORK\_INFO
 
 ### HMS\_NetworkBoost\_UnregisterNetSceneCallback()
 
-PhonePC/2in1Tablet
-
-```
-1. int32_t HMS_NetworkBoost_UnregisterNetSceneCallback (uint32_t callbackId)
+```c
+int32_t HMS_NetworkBoost_UnregisterNetSceneCallback (uint32_t callbackId)
 ```
 
 **描述**
@@ -1298,10 +1166,8 @@ ohos.permission.GET\_NETWORK\_INFO
 
 ### HMS\_NetworkBoost\_GetMultiPathQuotaStats()
 
-PhonePC/2in1Tablet
-
-```
-1. int32_t HMS_NetworkBoost_GetMultiPathQuotaStats(NetworkBoost_MultiPathQuota* quota)
+```c
+int32_t HMS_NetworkBoost_GetMultiPathQuotaStats(NetworkBoost_MultiPathQuota* quota)
 ```
 
 **描述**
@@ -1334,10 +1200,8 @@ ohos.permission.LINKTURBO
 
 ### HMS\_NetworkBoost\_RequestMultiPath()
 
-PhonePC/2in1Tablet
-
-```
-1. int32_t HMS_NetworkBoost_RequestMultiPath(HMS_NetworkBoost_OnMultiPathRequestResult result)
+```c
+int32_t HMS_NetworkBoost_RequestMultiPath(HMS_NetworkBoost_OnMultiPathRequestResult result)
 ```
 
 **描述**
@@ -1390,10 +1254,8 @@ ohos.permission.LINKTURBO
 
 ### HMS\_NetworkBoost\_ReleaseMultiPath()
 
-PhonePC/2in1Tablet
-
-```
-1. int32_t HMS_NetworkBoost_ReleaseMultiPath()
+```c
+int32_t HMS_NetworkBoost_ReleaseMultiPath()
 ```
 
 **描述**
@@ -1422,10 +1284,8 @@ ohos.permission.LINKTURBO
 
 ### HMS\_NetworkBoost\_RegisterMultiPathStateChangeCallback()
 
-PhonePC/2in1Tablet
-
-```
-1. int32_t HMS_NetworkBoost_RegisterMultiPathStateChangeCallback(HMS_NetworkBoost_OnMultiPathStateChange callback, uint32_t* callbackId)
+```c
+int32_t HMS_NetworkBoost_RegisterMultiPathStateChangeCallback(HMS_NetworkBoost_OnMultiPathStateChange callback, uint32_t* callbackId)
 ```
 
 **描述**
@@ -1459,10 +1319,8 @@ ohos.permission.LINKTURBO
 
 ### HMS\_NetworkBoost\_UnregisterMultiPathStateChangeCallback()
 
-PhonePC/2in1Tablet
-
-```
-1. int32_t HMS_NetworkBoost_UnregisterMultiPathStateChangeCallback(uint32_t callbackId)
+```c
+int32_t HMS_NetworkBoost_UnregisterMultiPathStateChangeCallback(uint32_t callbackId)
 ```
 
 **描述**
@@ -1493,10 +1351,8 @@ ohos.permission.LINKTURBO
 
 ### HMS\_NetworkBoost\_RegisterMultiPathRecommendationCallback()
 
-PhonePC/2in1Tablet
-
-```
-1. int32_t HMS_NetworkBoost_RegisterMultiPathRecommendationCallback(HMS_NetworkBoost_OnMultiPathRecommendation callback, uint32_t* callbackId)
+```c
+int32_t HMS_NetworkBoost_RegisterMultiPathRecommendationCallback(HMS_NetworkBoost_OnMultiPathRecommendation callback, uint32_t* callbackId)
 ```
 
 **描述**
@@ -1530,10 +1386,8 @@ ohos.permission.LINKTURBO
 
 ### HMS\_NetworkBoost\_UnregisterMultiPathRecommendationCallback()
 
-PhonePC/2in1Tablet
-
-```
-1. int32_t HMS_NetworkBoost_UnregisterMultiPathRecommendationCallback(uint32_t callbackId)
+```c
+int32_t HMS_NetworkBoost_UnregisterMultiPathRecommendationCallback(uint32_t callbackId)
 ```
 
 **描述**
@@ -1564,10 +1418,8 @@ ohos.permission.LINKTURBO
 
 ### HMS\_NetworkBoost\_SetSceneDesc()
 
-PhonePC/2in1Tablet
-
-```
-1. int32_t HMS_NetworkBoost_SetSceneDesc(NetworkBoost_SceneDesc sceneDesc)
+```c
+int32_t HMS_NetworkBoost_SetSceneDesc(NetworkBoost_SceneDesc sceneDesc)
 ```
 
 **描述**

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multiinstance
 title: 创建应用多实例
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 典型场景的开发指导 > 创建应用多实例
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:31+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:46753ebdddea48762653f0c8eed0e1521a6b7d83086ae1158728c85443b01e70
+scraped_at: 2026-09-02T14:49:41+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9aadb300181d2f0c999a4c54fe57d9e6841b597cff8cb569f8a26ed5cb74f4fd
 ---
 
 应用多实例允许一个应用同时运行多个进程，实现多个账号同时登录使用，且互不影响。主要应用场景包括社交账户多开和游戏大小号多开等，无需切换账号从而避免频繁登录的繁琐操作。
@@ -28,19 +28,17 @@ content_hash: sha256:46753ebdddea48762653f0c8eed0e1521a6b7d83086ae1158728c85443b
 
    在工程项目中对App/app.json5配置文件配置[multiAppMode](app-configuration-file.md#multiappmode标签)字段。具体配置如下：
 
+   ```json5
+   {
+     "app": {
+       // ...
+       "multiAppMode": {
+         "multiAppModeType": "multiInstance",
+         "maxCount": 5
+       }
+     }
+   }
    ```
-   1. {
-   2. "app": {
-   3. // ...
-   4. "multiAppMode": {
-   5. "multiAppModeType": "multiInstance",
-   6. "maxCount": 5
-   7. }
-   8. }
-   9. }
-   ```
-
-   [app.json5](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/bmsSample/Multiinstance/AppScope/app.json5#L16-L33)
 2. 创建应用多实例。
 
 * 将已配置好的工程编译打包安装到设备上。

@@ -3,10 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/test-kit-over
 title: Test Kit简介
 breadcrumb: 指南 > 系统 > 调测调优 > Test Kit（应用测试服务） > Test Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:22+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:2e006ed43e9254243bee9a3e1d989e6d734baae2e1d9ff97dbb1b76dbae5aa18
+scraped_at: 2026-09-02T14:50:12+08:00
+doc_updated_at: 2026-08-11
+content_hash: sha256:33011899b1d88e69bfc302e7b64f719f1b65b062057b1baeabf28285be5d9544
 ---
+
+## 能力范围
 
 Test Kit为开发者提供了自动化测试框架，框架提供单元、UI和性能测试能力，支持编写ArkTS语言的单元、UI和性能自动化测试脚本，并通过测试结果查看相应功能的实现效果。从API version 20开始，支持性能测试能力。
 
@@ -24,3 +26,13 @@ Test Kit为开发者提供了自动化测试框架，框架提供单元、UI和�
 * 性能测试能力：提供白盒性能自动化测试能力，测试脚本需基于单元测试框架开发，具体使用方法请参考[白盒性能测试框架使用指导](perftest-guideline.md)，主要能力如下：
   + 提供针对指定代码段执行过程的基础性能数据采集能力，包括执行耗时、执行CPU和内存占用数据等。
   + 提供对应用场景化性能数据的采集，包括应用启动时延、页面切换时延、列表滑动帧率等。
+* 辅助测试能力：提供命令行辅助测试工具，支持系统状态管理和环境模拟能力，搭载HarmonyOS 7.0.0及以上版本的设备支持此能力。具体使用方法请参考[辅助测试工具使用指导](testhelper-guidelines.md)。
+
+此外，Test Kit还为开发者提供了如下命令行工具。
+
+* HiSmartPerf Device性能功耗测试：支持FPS、CPU、GPU、RAM、Temp等指标的实时监测与可视化展示（Device hap端），以及通过Shell命令行方式进行无屏/有屏设备的数据采集与报告生成（Device daemon端），具体使用方法请参考[HiSmartPerf Device使用指导](smartperf-guidelines.md)。
+* wukong稳定性测试：支持Ability的随机事件注入、控件注入、异常捕获、报告生成和对Ability数据遍历截图等特性，具体使用方法请参考[wukong稳定性工具使用指导](wukong-guidelines.md)。
+
+## 模拟器支持情况
+
+本Kit支持模拟器。模拟器与真机存在通用差异，详情请参见[模拟器与真机的差异](ide-emulator-specification.md)。

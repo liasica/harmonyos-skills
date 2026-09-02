@@ -3,29 +3,25 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.statfs (statfs)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > 已停止维护的接口 > @ohos.statfs (statfs)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:47+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:53ebc2c404a91ab46af6510c25c59c0d4d88657b6d044a7f94f6f536da2b83cb
+scraped_at: 2026-09-02T15:01:31+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1568a944926ba42683b0caaebbf495200121f9b39f9c0dcce0a614f6c3d66ba7
 ---
 
 该模块提供文件系统相关存储信息的功能，向应用程序提供获取文件系统总字节数、空闲字节数的ArkTS接口。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本模块从API version 9开始废弃，建议使用[@ohos.file.statvfs](js-apis-file-statvfs.md)替代。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import statfs from '@ohos.statfs';
+```ts
+import statfs from '@ohos.statfs';
 ```
 
 ## Statfs.getFreeBytes
-
-PhonePC/2in1TabletTVWearable
 
 getFreeBytes(path:string):Promise<number>
 
@@ -47,19 +43,17 @@ getFreeBytes(path:string):Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let path = "/dev";
-3. statfs.getFreeBytes(path).then((number: number) => {
-4. console.info("getFreeBytes promise successfully:" + number);
-5. }).catch((err: BusinessError) => {
-6. console.error("getFreeBytes failed with error:" + JSON.stringify(err));
-7. });
+```ts
+import { BusinessError } from '@ohos.base';
+let path = "/dev";
+statfs.getFreeBytes(path).then((number: number) => {
+  console.info("getFreeBytes promise successfully:" + number);
+}).catch((err: BusinessError) => {
+  console.error("getFreeBytes failed with error:" + JSON.stringify(err));
+});
 ```
 
 ## Statfs.getFreeBytes
-
-PhonePC/2in1TabletTVWearable
 
 getFreeBytes(path:string, callback:AsyncCallback<number>): void
 
@@ -76,23 +70,21 @@ getFreeBytes(path:string, callback:AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import common from '@ohos.app.ability.common';
-2. import { BusinessError } from '@ohos.base';
-3. let context = getContext(this) as common.UIAbilityContext;
-4. let path = context.filesDir;
-5. statfs.getFreeBytes(path, (err: BusinessError, freeBytes:Number) => {
-6. if (err) {
-7. console.error('getFreeBytes callback failed');
-8. } else {
-9. console.info('getFreeBytes callback success' + freeBytes);
-10. }
-11. });
+```ts
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+let context = getContext(this) as common.UIAbilityContext;
+let path = context.filesDir;
+statfs.getFreeBytes(path, (err: BusinessError, freeBytes:Number) => {
+    if (err) {
+        console.error('getFreeBytes callback failed');
+    } else {
+        console.info('getFreeBytes callback success' + freeBytes);
+    }
+});
 ```
 
 ## Statfs.getTotalBytes
-
-PhonePC/2in1TabletTVWearable
 
 getTotalBytes(path: string): Promise<number>
 
@@ -114,19 +106,17 @@ getTotalBytes(path: string): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. let path = "/dev";
-3. statfs.getTotalBytes(path).then((number: number) => {
-4. console.info("getTotalBytes promise successfully:" + number);
-5. }).catch((err: BusinessError) => {
-6. console.error("getTotalBytes failed with error:" + JSON.stringify(err));
-7. });
+```ts
+import { BusinessError } from '@ohos.base';
+let path = "/dev";
+statfs.getTotalBytes(path).then((number: number) => {
+  console.info("getTotalBytes promise successfully:" + number);
+}).catch((err: BusinessError) => {
+  console.error("getTotalBytes failed with error:" + JSON.stringify(err));
+});
 ```
 
 ## Statfs.getTotalBytes
-
-PhonePC/2in1TabletTVWearable
 
 getTotalBytes(path: string, callback: AsyncCallback<number>): void
 
@@ -143,16 +133,16 @@ getTotalBytes(path: string, callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import common from '@ohos.app.ability.common';
-2. import { BusinessError } from '@ohos.base';
-3. let context = getContext(this) as common.UIAbilityContext;
-4. let path = context.filesDir;
-5. statfs.getTotalBytes(path, (err: BusinessError, totalBytes:Number) => {
-6. if (err) {
-7. console.error('getTotalBytes callback failed');
-8. } else {
-9. console.info('getTotalBytes callback success' + totalBytes);
-10. }
-11. });
+```ts
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+let context = getContext(this) as common.UIAbilityContext;
+let path = context.filesDir;
+statfs.getTotalBytes(path, (err: BusinessError, totalBytes:Number) => {
+    if (err) {
+        console.error('getTotalBytes callback failed');
+    } else {
+        console.info('getTotalBytes callback success' + totalBytes);
+    }
+});
 ```

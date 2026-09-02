@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/deveco-studio-new-features-503-release
 title: DevEco Studio
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.3(15) > DevEco Studio
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.3(15) > DevEco Studio
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:43+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:7794e94a8f5721b2bb94e67d1a5fb96ab0f04424c6680fb6e8040c438ab16603
+scraped_at: 2026-09-02T14:58:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:92c5a2bb94bb391ed5294f434a6e1ed3df1ba9d68b1d222ecdabc3d72a9c33ae
 ---
 
 ## DevEco Studio 5.0.3 Release（5.0.9.310）兼容性配套关系
@@ -81,7 +81,7 @@ DevEco Studio 5.0.9.300配套使用的命令行工具列表、支持的API范围
 * DevEco Studio支持开发API 15工程。
 * 新建工程时，将在AppScope/resource/base/media目录下自动生成分层图标配置文件layered\_image.json及前后背景图标foreground.png、background.png，并将app.json5中icon字段值设置为分层图标配置文件。具体请参考[app.json5](../harmonyos-guides/app-configuration-file.md#配置文件标签)中的icon标签。
 * AppAnalyzer的场景化体检新增支持三类场景：页面滑动、应用冷启动和页面内转场。具体请参考[体检场景](../harmonyos-guides/ide-app-analyzer-scenes.md)。
-* 新增部分ACL权限支持通过自动签名快速申请。具体请参考[支持ACL权限](../harmonyos-guides/ide-signing.md#section5301916183411)。
+* 新增部分ACL权限支持通过自动签名快速申请。具体请参考[支持ACL权限](../harmonyos-guides/ide-signing-auto.md#section5301916183411)。
 * 工程级和HAR模块的build-profile.json5中buildOption/arkOptions下新增branchElimination字段，用于指定是否启用代码分支裁剪，减少编译产物大小，开启后，在release编译模式下，不会被执行到的代码分支会被裁剪掉。具体请参考[build-profile.json5](../harmonyos-guides/ide-hvigor-build-profile.md)。
 * 工程级、模块级build-profile.json5中新增以下参数。具体请参考[build-profile.json5](../harmonyos-guides/ide-hvigor-build-profile.md)。
   + buildOption下新增removePermissions数组，用于指定编译时需要删除的依赖包中的冗余权限，模块本身的权限不会被删除，仅对HAP/HSP模块生效。

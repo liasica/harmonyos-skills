@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/isochronoustr
 title: USB实时传输
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB服务 > USB Host模式开发 > USB实时传输
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:40bb4a4c8bb155b2b4dd3bc72715df42d85b977fa480c4c87b8d31fbb18b089d
+scraped_at: 2026-09-02T14:59:36+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:34b8dc1fc33d4f7bfb0bb966951078bb3e49d4c5d217c9918cc4362d834dba40
 ---
 
 ## 场景介绍
@@ -48,223 +48,242 @@ content_hash: sha256:40bb4a4c8bb155b2b4dd3bc72715df42d85b977fa480c4c87b8d31fbb18
 
 主机（Host）连接设备（Device），通过usbSubmitTransfer接口进行数据传输。以下步骤描述了如何使用实时传输方式来传输数据：
 
-说明
+**说明** 
 
 以下示例代码只是使用实时传输方式来传输数据的必要流程，需要放入具体的方法中执行。在实际调用时，设备开发者需要遵循设备相关协议进行调用，确保数据的正确传输和设备的兼容性。
 
 1. 导入模块。
 
+   ```typescript
+   // 导入usbManager模块
+   import { usbManager } from '@kit.BasicServicesKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { JSON } from '@kit.ArkTS';
    ```
-   1. // 导入usbManager模块
-   2. import { usbManager } from '@kit.BasicServicesKit';
-   3. import { BusinessError } from '@kit.BasicServicesKit';
-   4. import { JSON } from '@kit.ArkTS';
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/USB/USBManagerSample/entry/src/main/ets/pages/Index.ets#L16-L22)
 2. 获取设备列表。
 
-   ```
-   1. // 获取设备列表。
-   2. let deviceList: usbManager.USBDevice[] = usbManager.getDevices();
-   3. console.info(`deviceList: ${deviceList}`);
-   4. this.logInfo_ += '\n[INFO] deviceList: ' + JSON.stringify(deviceList);
-   5. if (deviceList === undefined || deviceList.length === 0) {
-   6. console.error('deviceList is empty');
-   7. this.logInfo_ += '\n[ERROR] deviceList is empty';
-   8. return;
-   9. }
-   10. /*
-   11. deviceList结构示例
-   12. [
-   13. {
-   14. name: '1-1',
-   15. serial: '',
-   16. manufacturerName: '',
-   17. productName: '',
-   18. version: '',
-   19. vendorId: 7531,
-   20. productId: 2,
-   21. clazz: 9,
-   22. subClass: 0,
-   23. protocol: 1,
-   24. devAddress: 1,
-   25. busNum: 1,
-   26. configs: [
-   27. {
-   28. id: 1,
-   29. attributes: 224,
-   30. isRemoteWakeup: true,
-   31. isSelfPowered: true,
-   32. maxPower: 0,
-   33. name: '1-1',
-   34. interfaces: [
-   35. {
-   36. id: 0,
-   37. protocol: 0,
-   38. clazz: 9,
-   39. subClass: 0,
-   40. alternateSetting: 0,
-   41. name: '1-1',
-   42. endpoints: [
-   43. {
-   44. address: 129,
-   45. attributes: 3,
-   46. interval: 12,
-   47. maxPacketSize: 4,
-   48. direction: 128,
-   49. number: 1,
-   50. type: 3,
-   51. interfaceId: 0,
-   52. }
-   53. ]
-   54. }
-   55. ]
-   56. }
-   57. ]
-   58. }
-   59. ]
-   60. */
-   61. this.deviceList_ = deviceList;
-   ```
+   ```typescript
+   // 获取设备列表。
+   let deviceList: usbManager.USBDevice[] = [];
+   try {
+     deviceList = usbManager.getDevices();
+   } catch (error) {
+       console.error(`USB getDevices failed: ${error}`);
+       this.logInfo_ += '\n[ERROR] USB getDevices failed: ' + JSON.stringify(error);
+   }
 
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/USB/USBManagerSample/entry/src/main/ets/pages/Index.ets#L32-L94)
+   console.info(`deviceList: ${deviceList}`);
+   this.logInfo_ += '\n[INFO] deviceList: ' + JSON.stringify(deviceList);
+   if (deviceList === undefined || deviceList.length === 0) {
+     console.error('deviceList is empty');
+     this.logInfo_ += '\n[ERROR] deviceList is empty';
+     return;
+   }
+   /*
+     deviceList结构示例
+     [
+       {
+         name: '1-1',
+         serial: '',
+         manufacturerName: '',
+         productName: '',
+         version: '',
+         vendorId: 7531,
+         productId: 2,
+         clazz: 9,
+         subClass: 0,
+         protocol: 1,
+         devAddress: 1,
+         busNum: 1,
+         configs: [
+           {
+             id: 1,
+             attributes: 224,
+             isRemoteWakeup: true,
+             isSelfPowered: true,
+             maxPower: 0,
+             name: '1-1',
+             interfaces: [
+               {
+                 id: 0,
+                 protocol: 0,
+                 clazz: 9,
+                 subClass: 0,
+                 alternateSetting: 0,
+                 name: '1-1',
+                 endpoints: [
+                   {
+                     address: 129,
+                     attributes: 3,
+                     interval: 12,
+                     maxPacketSize: 4,
+                     direction: 128,
+                     number: 1,
+                     type: 3,
+                     interfaceId: 0,
+                   }
+                 ]
+               }
+             ]
+           }
+         ]
+       }
+     ]
+    */
+   this.deviceList_ = deviceList;
+   ```
 3. 获取设备操作权限。
 
+   ```typescript
+   if (this.deviceList_ === undefined || this.deviceList_.length === 0) {
+     console.error('deviceList is empty');
+     this.logInfo_ += '\n[ERROR] deviceList is empty';
+     return;
+   }
+   let deviceList: usbManager.USBDevice[] = this.deviceList_;
+   let deviceName: string = deviceList[0].name;
+   // 申请操作指定的device的操作权限。
+   usbManager.requestRight(deviceName).then((hasRight: boolean) => {
+     console.info('usb device request right result: ' + hasRight);
+     this.logInfo_ += '\n[INFO] usb device request right result: ' + JSON.stringify(hasRight);
+   }).catch((error: BusinessError) => {
+     console.error(`usb device request right failed : ${error}`);
+     this.logInfo_ += '\n[ERROR] usb device request right failed: ' + JSON.stringify(error);
+   });
    ```
-   1. if (this.deviceList_ === undefined || this.deviceList_.length === 0) {
-   2. console.error('deviceList is empty');
-   3. this.logInfo_ += '\n[ERROR] deviceList is empty';
-   4. return;
-   5. }
-   6. let deviceList: usbManager.USBDevice[] = this.deviceList_;
-   7. let deviceName: string = deviceList[0].name;
-   8. // 申请操作指定的device的操作权限。
-   9. usbManager.requestRight(deviceName).then((hasRight: boolean) => {
-   10. console.info('usb device request right result: ' + hasRight);
-   11. this.logInfo_ += '\n[INFO] usb device request right result: ' + JSON.stringify(hasRight);
-   12. }).catch((error: BusinessError) => {
-   13. console.error(`usb device request right failed : ${error}`);
-   14. this.logInfo_ += '\n[ERROR] usb device request right failed: ' + JSON.stringify(error);
-   15. });
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/USB/USBManagerSample/entry/src/main/ets/pages/Index.ets#L98-L114)
 4. 获取通过实时传输读取数据的端点。
 
-   ```
-   1. if (this.deviceList_ === undefined || this.deviceList_.length === 0) {
-   2. console.error('deviceList_ is empty');
-   3. this.logInfo_ += '\n[ERROR] deviceList_ is empty';
-   4. return;
-   5. }
-   6. let usbDevice: usbManager.USBDevice = this.deviceList_[0];
-   7. if (!usbManager.hasRight(usbDevice.name)) {
-   8. console.error('permission denied');
-   9. this.logInfo_ += '\n[ERROR] permission denied';
-   10. return;
-   11. }
-   12. let devicePipe: usbManager.USBDevicePipe = usbManager.connectDevice(usbDevice);
-   13. let usbConfigs: usbManager.USBConfiguration[] = usbDevice.configs;
-   14. let usbInterfaces: usbManager.USBInterface[] = [];
-   15. let usbInterface: usbManager.USBInterface | undefined = undefined;
-   16. let usbEndpoints: usbManager.USBEndpoint[] = [];
-   17. let usbEndpoint: usbManager.USBEndpoint | undefined = undefined;
-   18. for (let i = 0; i < usbConfigs?.length; i++) {
-   19. usbInterfaces = usbConfigs[i]?.interfaces;
-   20. for (let j = 0; j < usbInterfaces?.length; j++) {
-   21. usbEndpoints = usbInterfaces[j]?.endpoints;
-   22. usbEndpoint = usbEndpoints?.find((value) => {
-   23. // direction为请求方向，0表示写入数据，128表示读取数据
-   24. return value.direction === 128 && value.type === usbManager.UsbEndpointTransferType.TRANSFER_TYPE_ISOCHRONOUS;
-   25. })
-   26. if (usbEndpoint !== undefined) {
-   27. usbInterface = usbInterfaces[j];
-   28. break;
-   29. }
-   30. }
-   31. }
-   32. if (usbEndpoint === undefined) {
-   33. console.error(`get usbEndpoint error`);
-   34. this.logInfo_ += '\n[ERROR] get usbEndpoint error';
-   35. return;
-   36. }
-   ```
+   ```typescript
+   if (this.deviceList_ === undefined || this.deviceList_.length === 0) {
+     console.error('deviceList_ is empty');
+     this.logInfo_ += '\n[ERROR] deviceList_ is empty';
+     return;
+   }
+   let usbDevice: usbManager.USBDevice = this.deviceList_[0];
+   try {
+     if (!usbManager.hasRight(usbDevice.name)) {
+       console.error('permission denied');
+       this.logInfo_ += '\n[ERROR] permission denied';
+       return;
+     }
+   } catch (error) {
+     console.error(`USB hasRight failed: ${error}`);
+     this.logInfo_ += '\n[ERROR] USB hasRight failed: ' + JSON.stringify(error);
+     return;
+   }
 
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/USB/USBManagerSample/entry/src/main/ets/pages/Index.ets#L318-L355)
+   let devicePipe: usbManager.USBDevicePipe;
+   try {
+     devicePipe = usbManager.connectDevice(usbDevice);
+   } catch (error) {
+     console.error(`connectDevice failed ${error}`);
+     this.logInfo_ += '\n[ERROR] connectDevice: ' + JSON.stringify(error);
+     return
+   }
+   let usbConfigs: usbManager.USBConfiguration[] = usbDevice.configs;
+   let usbInterfaces: usbManager.USBInterface[] = [];
+   let usbInterface: usbManager.USBInterface | undefined = undefined;
+   let usbEndpoints: usbManager.USBEndpoint[] = [];
+   let usbEndpoint: usbManager.USBEndpoint | undefined = undefined;
+   for (let i = 0; i < usbConfigs?.length; i++) {
+     usbInterfaces = usbConfigs[i]?.interfaces;
+     for (let j = 0; j < usbInterfaces?.length; j++) {
+       usbEndpoints = usbInterfaces[j]?.endpoints;
+       usbEndpoint = usbEndpoints?.find((value) => {
+         // direction为请求方向，0表示写入数据，128表示读取数据
+         return value.direction === 128 && value.type === usbManager.UsbEndpointTransferType.TRANSFER_TYPE_ISOCHRONOUS;
+       })
+       if (usbEndpoint !== undefined) {
+         usbInterface = usbInterfaces[j];
+         break;
+       }
+     }
+   }
+   if (usbEndpoint === undefined) {
+     console.error(`get usbEndpoint error`);
+     this.logInfo_ += '\n[ERROR] get usbEndpoint error';
+     return;
+   }
+   ```
 5. 连接设备，注册通信接口。
 
-   ```
-   1. // 注册通信接口，注册成功返回0，注册失败返回其他错误码。
-   2. let claimInterfaceResult: number = usbManager.claimInterface(devicePipe, usbInterface, true);
-   3. if (claimInterfaceResult !== 0) {
-   4. console.error(`claimInterface error = ${claimInterfaceResult}`)
-   5. this.logInfo_ += '\n[ERROR] claimInterface error = ' + JSON.stringify(claimInterfaceResult);
-   6. return;
-   7. }
+   ```typescript
+   // 注册通信接口，注册成功返回0，注册失败返回其他错误码。
+   try {
+     let claimInterfaceResult: number = usbManager.claimInterface(devicePipe, usbInterface, true);
+     if (claimInterfaceResult !== 0) {
+       console.error(`claimInterface error = ${claimInterfaceResult}`)
+       this.logInfo_ += '\n[ERROR] claimInterface error = ' + JSON.stringify(claimInterfaceResult);
+       return;
+     }
+   } catch (error) {
+     console.error(`USB claimInterface failed: ${error}`);
+     this.logInfo_ += '\n[ERROR] USB claimInterface failed: ' + JSON.stringify(error);
+     return;
+   }
 
-   9. // 传输类型为“实时传输”时，需设置设备接口。设置成功返回0，注册失败返回其他错误码。
-   10. if (usbEndpoint.type === usbManager.UsbEndpointTransferType.TRANSFER_TYPE_ISOCHRONOUS) {
-   11. let setInterfaceResult = usbManager.setInterface(devicePipe, usbInterface);
-   12. if (setInterfaceResult !== 0) {
-   13. console.error(`setInterfaceResult error = ${setInterfaceResult}`)
-   14. this.logInfo_ += '\n[ERROR] setInterfaceResult error = ' + JSON.stringify(setInterfaceResult);
-   15. return;
-   16. }
-   17. }
+   // 传输类型为“实时传输”时，需设置设备接口。设置成功返回0，注册失败返回其他错误码。
+   if (usbEndpoint.type === usbManager.UsbEndpointTransferType.TRANSFER_TYPE_ISOCHRONOUS) {
+     try {
+       let setInterfaceResult = usbManager.setInterface(devicePipe, usbInterface);
+       if (setInterfaceResult !== 0) {
+         console.error(`setInterfaceResult error = ${setInterfaceResult}`)
+         this.logInfo_ += '\n[ERROR] setInterfaceResult error = ' + JSON.stringify(setInterfaceResult);
+         return;
+       }
+     } catch (error) {
+       console.error(`USB setInterface failed: ${error}`);
+       this.logInfo_ += '\n[ERROR] USB setInterface failed: ' + JSON.stringify(error);
+       return;
+     }
+   }
    ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/USB/USBManagerSample/entry/src/main/ets/pages/Index.ets#L356-L374)
 6. 传输数据。
 
-   ```
-   1. let transferParams: usbManager.UsbDataTransferParams | undefined = undefined;
-   2. try {
-   3. // 通信接口注册成功，传输数据
-   4. transferParams = {
-   5. devPipe: devicePipe,
-   6. flags: usbManager.UsbTransferFlags.USB_TRANSFER_SHORT_NOT_OK,
-   7. endpoint: usbEndpoint.address,
-   8. type: usbManager.UsbEndpointTransferType.TRANSFER_TYPE_ISOCHRONOUS,
-   9. timeout: 2000,
-   10. length: 10,
-   11. callback: () => {
-   12. },
-   13. userData: new Uint8Array(10),
-   14. buffer: new Uint8Array(10),
-   15. isoPacketCount: 2,
-   16. };
+   ```typescript
+   let transferParams: usbManager.UsbDataTransferParams | undefined = undefined;
+   try {
+     // 通信接口注册成功，传输数据
+     transferParams = {
+       devPipe: devicePipe,
+       flags: usbManager.UsbTransferFlags.USB_TRANSFER_SHORT_NOT_OK,
+       endpoint: usbEndpoint.address,
+       type: usbManager.UsbEndpointTransferType.TRANSFER_TYPE_ISOCHRONOUS,
+       timeout: 2000,
+       length: 10,
+       callback: () => {
+       },
+       userData: new Uint8Array(10),
+       buffer: new Uint8Array(10),
+       isoPacketCount: 2,
+     };
 
-   18. transferParams.callback = (err: Error, callBackData: usbManager.SubmitTransferCallback) => {
-   19. console.info(`callBackData = ${callBackData}`);
-   20. this.logInfo_ += '\n[INFO] callBackData = ' + JSON.stringify(callBackData);
-   21. console.info('transfer success,result = ' + transferParams?.buffer.toString());
-   22. this.logInfo_ += '\n[INFO] transfer success,result = ' + transferParams?.buffer.toString();
-   23. }
-   24. usbManager.usbSubmitTransfer(transferParams);
-   25. console.info('USB transfer request submitted.');
-   26. this.logInfo_ += '\n[INFO] USB transfer request submitted.';
-   27. } catch (error) {
-   28. console.error(`USB transfer failed: ${error}`);
-   29. this.logInfo_ += '\n[ERROR] USB transfer failed: ' + JSON.stringify(error);
-   30. }
+     transferParams.callback = (err: Error, callBackData: usbManager.SubmitTransferCallback) => {
+       console.info(`callBackData = ${callBackData}`);
+       this.logInfo_ += '\n[INFO] callBackData = ' + JSON.stringify(callBackData);
+       console.info('transfer success,result = ' + transferParams?.buffer.toString());
+       this.logInfo_ += '\n[INFO] transfer success,result = ' + transferParams?.buffer.toString();
+     }
+     usbManager.usbSubmitTransfer(transferParams);
+     console.info('USB transfer request submitted.');
+     this.logInfo_ += '\n[INFO] USB transfer request submitted.';
+   } catch (error) {
+     console.error(`USB transfer failed: ${error}`);
+     this.logInfo_ += '\n[ERROR] USB transfer failed: ' + JSON.stringify(error);
+   }
    ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/USB/USBManagerSample/entry/src/main/ets/pages/Index.ets#L375-L406)
 7. 取消传输，释放接口，关闭设备消息控制通道。
 
+   ```typescript
+   try {
+     usbManager.usbCancelTransfer(transferParams);
+     usbManager.releaseInterface(devicePipe, usbInterface);
+     usbManager.closePipe(devicePipe);
+   } catch (error) {
+     console.error(`release failed: ${error}`);
+     this.logInfo_ += '\n[ERROR] release failed: ' + JSON.stringify(error);
+   }
    ```
-   1. try {
-   2. usbManager.usbCancelTransfer(transferParams);
-   3. usbManager.releaseInterface(devicePipe, usbInterface);
-   4. usbManager.closePipe(devicePipe);
-   5. } catch (error) {
-   6. console.error(`release failed: ${error}`);
-   7. this.logInfo_ += '\n[ERROR] release failed: ' + JSON.stringify(error);
-   8. }
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/USB/USBManagerSample/entry/src/main/ets/pages/Index.ets#L407-L416)
 
 ### 调测验证
 

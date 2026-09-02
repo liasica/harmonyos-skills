@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/network-b
 title: NetworkBoost_MultiPathStateChange
 breadcrumb: API参考 > 系统 > 网络 > Network Boost Kit（网络加速服务） > C API > 结构体 > NetworkBoost_MultiPathStateChange
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:54+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a819eb18f8e11014e80306a72803ff462b67e8e214f48413f8adef3e463c98b2
+scraped_at: 2026-09-02T15:01:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4ee802fbf19353699f190c148c94be7e83ddc0aba05d6dcf1984cae6e9537ac3
 ---
 
 ## 概述
-
-PhonePC/2in1Tablet
 
 多网状态信息，用于注册多网状态变化事件回调后，系统多网状态发生变化的事件通知。
 
@@ -22,11 +20,7 @@ PhonePC/2in1Tablet
 
 ## 汇总
 
-PhonePC/2in1Tablet
-
 ### 成员变量
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
@@ -38,14 +32,10 @@ PhonePC/2in1Tablet
 
 ## 结构体成员变量说明
 
-PhonePC/2in1Tablet
-
 ## multiPathState
 
-PhonePC/2in1Tablet
-
-```
-1. NetworkBoost_MultiPathState NetworkBoost_MultiPathStateChange::multiPathState
+```c
+NetworkBoost_MultiPathState NetworkBoost_MultiPathStateChange::multiPathState
 ```
 
 **描述**
@@ -54,10 +44,8 @@ PhonePC/2in1Tablet
 
 ## changeCause
 
-PhonePC/2in1Tablet
-
-```
-1. NetworkBoost_MultiPathChangeCause NetworkBoost_MultiPathStateChange::changeCause
+```c
+NetworkBoost_MultiPathChangeCause NetworkBoost_MultiPathStateChange::changeCause
 ```
 
 **描述**
@@ -66,10 +54,8 @@ PhonePC/2in1Tablet
 
 ## netHandle
 
-PhonePC/2in1Tablet
-
-```
-1. NetworkBoost_NetHandle NetworkBoost_MultiPathStateChange::netHandle
+```c
+NetworkBoost_NetHandle NetworkBoost_MultiPathStateChange::netHandle
 ```
 
 **描述**
@@ -78,10 +64,8 @@ PhonePC/2in1Tablet
 
 ## pathState
 
-PhonePC/2in1Tablet
-
-```
-1. NetworkBoost_PathState NetworkBoost_MultiPathStateChange::pathState
+```c
+NetworkBoost_PathState NetworkBoost_MultiPathStateChange::pathState
 ```
 
 **描述**
@@ -90,10 +74,8 @@ PhonePC/2in1Tablet
 
 ## pathType
 
-PhonePC/2in1Tablet
-
-```
-1. NetworkBoost_PathType NetworkBoost_MultiPathStateChange::pathType
+```c
+NetworkBoost_PathType NetworkBoost_MultiPathStateChange::pathType
 ```
 
 **描述**

@@ -3,31 +3,27 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: LongPressGesture
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 基础手势 > LongPressGesture
 category: harmonyos-references
-scraped_at: 2026-04-29T13:51:35+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:6ea4ec404eada896e92548c6444078f8e9911f1dd7088005ce341d3a3e1afe43
+scraped_at: 2026-09-02T15:00:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3136469c63435139fbf4dcf399a02a6b31f2604e2c75ebb1c26be4dadb6dace0
 ---
 
-用于触发长按手势事件，触发长按手势的最少手指数为1，默认最短长按时间为500毫秒。可配置duration参数控制最短长按时长。
+用于触发长按手势事件，触发长按手势的最少手指数为1，默认最短长按时间为500毫秒。可配置duration参数控制最短长按时长，适用于需要通过用户长按操作触发组件交互的场景。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
-* 从API version 18开始，部分设备会优先响应系统的双指长按手势，导致应用的双指长按手势不生效。
+* 从API version 18开始，在优先响应系统双指长按手势的设备上，应用的双指长按手势不生效。
 
 ## 接口
 
-PhonePC/2in1TabletTVWearable
-
 ### LongPressGesture
-
-PhonePC/2in1TabletTVWearable
 
 LongPressGesture(value?: { fingers?: number; repeat?: boolean; duration?: number })
 
 创建长按手势对象。继承自[GestureInterface<T>](ts-gesture-common.md#gestureinterfacet11)。
 
-当组件默认支持可拖拽时，如Text、TextInput、TextArea、HyperLink、Image和RichEditor等组件。长按手势与拖拽会出现冲突，事件优先级如下：
+当组件默认支持可拖拽时，如Text、TextInput、TextArea、Hyperlink、Image和RichEditor等组件，长按手势与拖拽会出现冲突，事件优先级如下：
 
 当长按触发时间小于500毫秒时，系统优先响应长按事件而非拖拽事件。
 
@@ -45,13 +41,11 @@ LongPressGesture(value?: { fingers?: number; repeat?: boolean; duration?: number
 
 ### LongPressGesture15+
 
-PhonePC/2in1TabletTVWearable
-
 LongPressGesture(options?: LongPressGestureHandlerOptions)
 
 创建长按手势对象。与[LongPressGesture](ts-basic-gestures-longpressgesture.md#longpressgesture-1)相比，options参数新增了对isFingerCountLimited参数，表示是否检查触摸屏幕的手指数量。
 
-当组件默认支持可拖拽时，如Text、TextInput、TextArea、HyperLink、Image和RichEditor等组件。长按手势与拖拽会出现冲突，事件优先级如下：
+当组件默认支持可拖拽时，如Text、TextInput、TextArea、Hyperlink、Image和RichEditor等组件，长按手势与拖拽会出现冲突，事件优先级如下：
 
 当长按触发时间小于500毫秒时，系统优先响应长按事件而非拖拽事件。
 
@@ -59,26 +53,24 @@ LongPressGesture(options?: LongPressGestureHandlerOptions)
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [LongPressGestureHandlerOptions](ts-gesturehandler.md#longpressgesturehandleroptions) | 否 | 长按手势处理器配置参数。 |
+| options | [LongPressGestureHandlerOptions](ts-gesturehandler.md#longpressgesturehandleroptions) | 否 | 长按手势处理器配置参数。当需要自定义长按手势的处理器配置（如是否检查触摸屏幕的手指数量、手势识别参数等）时传入；不传入时，使用长按手势的默认处理器配置。 |
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
-说明
+**说明** 
 
 * 在[GestureEvent](ts-gesture-common.md#gestureevent对象说明)的fingerList元素中，手指索引编号与位置相对应，即fingerList[index]的id为index。对于先按下但未参与当前手势触发的手指，fingerList中对应的位置为空。建议优先使用fingerInfos。
-* 长按手势触发后，[GestureEvent](ts-gesture-common.md#gestureevent对象说明)中fingerList和fingerInfo的信息仅在有手指按下时才会更新，手指抬起时不会更新。
+* 长按手势触发后，[GestureEvent](ts-gesture-common.md#gestureevent对象说明)中fingerList和fingerInfos的信息仅在有手指按下时才会更新，手指抬起时不会更新。
 
 ### onAction
-
-PhonePC/2in1TabletTVWearable
 
 onAction(event: (event: GestureEvent) => void)
 
@@ -92,11 +84,9 @@ onAction(event: (event: GestureEvent) => void)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | (event: [GestureEvent](ts-gesture-common.md#gestureevent对象说明)) => void | 是 | 长按手势识别成功回调函数。 |
+| event | (event: [GestureEvent](ts-gesture-common.md#gestureevent对象说明)) => void | 是 | 长按手势识别成功回调函数，用于在长按手势识别成功时接收GestureEvent手势事件信息。 |
 
 ### onActionEnd
-
-PhonePC/2in1TabletTVWearable
 
 onActionEnd(event: (event: GestureEvent) => void)
 
@@ -110,11 +100,9 @@ onActionEnd(event: (event: GestureEvent) => void)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | (event: [GestureEvent](ts-gesture-common.md#gestureevent对象说明)) => void | 是 | 长按手势结束回调函数。 |
+| event | (event: [GestureEvent](ts-gesture-common.md#gestureevent对象说明)) => void | 是 | 长按手势结束回调函数，用于在长按手势识别成功后最后一根手指抬起时接收GestureEvent手势事件信息。 |
 
 ### onActionCancel
-
-PhonePC/2in1TabletTVWearable
 
 onActionCancel(event: () => void)
 
@@ -132,13 +120,13 @@ onActionCancel(event: () => void)
 
 ### onActionCancel18+
 
-PhonePC/2in1TabletTVWearable
-
 onActionCancel(event: Callback<GestureEvent>)
 
 设置长按手势取消回调。长按手势识别成功后，接收到触摸取消事件时触发回调。返回手势事件信息。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -146,47 +134,45 @@ onActionCancel(event: Callback<GestureEvent>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | Callback<[GestureEvent](ts-gesture-common.md#gestureevent对象说明)> | 是 | 长按手势取消回调函数。 |
+| event | Callback<[GestureEvent](ts-gesture-common.md#gestureevent对象说明)> | 是 | 长按手势取消回调函数，用于在长按手势识别成功后接收到触摸取消事件时接收GestureEvent手势事件信息。 |
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 该示例通过LongPressGesture实现了长按手势的识别。从API version 22开始，支持通过[LongPressGestureHandlerOptions](ts-gesturehandler.md#longpressgesturehandleroptions)的allowableMovement属性设置识别手势的最大移动距离。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct LongPressGestureExample {
-5. @State count: number = 0;
+```ts
+// xxx.ets
+@Entry
+@Component
+struct LongPressGestureExample {
+  @State count: number = 0;
 
-7. build() {
-8. Column() {
-9. Text('LongPress onAction:' + this.count).fontSize(28)
-10. // 单指长按文本触发该手势事件
-11. .gesture(
-12. // 设置长按手势识别器识别的手势的最大移动距离为200px
-13. LongPressGesture({ repeat: true, allowableMovement: 200 })
-14. // 由于repeat设置为true，长按动作存在时会连续触发，触发间隔为duration（默认值500ms）
-15. .onAction((event: GestureEvent) => {
-16. if (event && event.repeat) {
-17. this.count++
-18. }
-19. })
-20. // 长按动作一结束触发
-21. .onActionEnd((event: GestureEvent) => {
-22. this.count = 0
-23. })
-24. )
-25. }
-26. .height(200)
-27. .width(300)
-28. .padding(20)
-29. .border({ width: 3 })
-30. .margin(30)
-31. }
-32. }
+  build() {
+    Column() {
+      Text('LongPress onAction:' + this.count).fontSize(28)
+        // 单指长按文本触发该手势事件。
+        .gesture(
+        // 设置长按手势识别器识别的手势的最大移动距离为200px。
+        LongPressGesture({ repeat: true, allowableMovement: 200 })
+          // 由于repeat设置为true，长按动作存在时会连续触发，触发间隔为duration（默认值500ms）。
+          .onAction((event: GestureEvent) => {
+            if (event && event.repeat) {
+              this.count++;
+            }
+          })
+            // 长按动作一结束触发。
+          .onActionEnd(() => {
+            this.count = 0;
+          })
+        )
+    }
+    .height(200)
+    .width(300)
+    .padding(20)
+    .border({ width: 3 })
+    .margin(30)
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/IrFDUyHlRsSUnFA56dUOJQ/zh-cn_image_0000002589245913.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/5hL8W5DuS36GU3mvOnkUQQ/zh-cn_image_0000002736434875.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-calct
 title: CalcTschBlockDim
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > Host API > 平台信息获取PlatformAscendC > CalcTschBlockDim
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:39+08:00
+scraped_at: 2026-09-02T14:50:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a5cf24a949f9cd2c85b2352eeec0ad35f580591a75072f987984c731e3c59dcb
+content_hash: sha256:f95a5b1bf3060ece526dc4df448c7a108db7e8abca1a0a6cb0981dfd3b1d7d3a
 ---
 
 ## 函数功能
@@ -16,8 +16,8 @@ content_hash: sha256:a5cf24a949f9cd2c85b2352eeec0ad35f580591a75072f987984c731e3c
 
 ## 函数原型
 
-```
-1. uint32_t CalcTschBlockDim(uint32_t sliceNum, uint32_t aicCoreNum, uint32_t aivCoreNum) const;
+```cpp
+uint32_t CalcTschBlockDim(uint32_t sliceNum, uint32_t aicCoreNum, uint32_t aivCoreNum) const;
 ```
 
 ## 参数说明
@@ -38,14 +38,14 @@ content_hash: sha256:a5cf24a949f9cd2c85b2352eeec0ad35f580591a75072f987984c731e3c
 
 ## 调用示例
 
-```
-1. ge::graphStatus TilingXXX(gert::TilingContext* context) {
-2. auto ascendcPlatform = platform_ascendc::PlatformAscendC(context->GetPlatformInfo());
-3. auto aicNum = ascendcPlatform.GetCoreNumAic();
-4. auto aivNum = ascendcPlatform.GetCoreNumAiv();
-5. // ...按照aivNum切分数据，并进行计算
-6. uint32_t sliceNum = aivNum;
-7. context->SetBlockDim(ascendcPlatform.CalcTschBlockDim(sliceNum, aicNum, aivNum));
-8. return ge::GRAPH_SUCCESS;
-9. }
+```cpp
+ge::graphStatus TilingXXX(gert::TilingContext* context) {
+    auto ascendcPlatform = platform_ascendc::PlatformAscendC(context->GetPlatformInfo());
+    auto aicNum = ascendcPlatform.GetCoreNumAic();
+    auto aivNum = ascendcPlatform.GetCoreNumAiv();
+    // ...按照aivNum切分数据，并进行计算
+    uint32_t sliceNum = aivNum;
+    context->SetBlockDim(ascendcPlatform.CalcTschBlockDim(sliceNum, aicNum, aivNum));
+    return ge::GRAPH_SUCCESS;
+}
 ```

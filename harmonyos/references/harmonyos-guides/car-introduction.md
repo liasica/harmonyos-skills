@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/car-introduct
 title: Car Kit简介
 breadcrumb: 指南 > 系统 > 硬件 > Car Kit（车服务） > Car Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:33:28+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:81ca63b86d0dac53fceb59a5ea36900c834bba413679d6865cb97161a83def68
+scraped_at: 2026-09-02T14:59:37+08:00
+doc_updated_at: 2026-08-03
+content_hash: sha256:88368daefc71014d68ec8c493846753906e7453d94136134cf15abf8c612e5a1
 ---
 
 Car Kit（车服务）为开发者提供一套便捷接入出行服务的能力，开发者通过集成Car Kit，可以轻松实现在手机与鸿蒙智行车机之间无缝传递导航信息、通过超级桌面在鸿蒙智行车机上使用手机上的应用、通过HiCar在认证车机上使用手机上的应用等功能，为用户提供更加良好的出行体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/aZFDfC-AQEaw4hr7LuGFWw/zh-cn_image_0000002558605308.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/4eIXzGgqSp6-Z3AD1xt1YA/zh-cn_image_0000002706834398.png)
 
 ## 场景介绍
 
@@ -27,7 +27,7 @@ Car Kit为华为手机用户提供驾驶鸿蒙智行车辆的出行场景和驾�
 
 超级桌面：
 
-* 是华为为用户提供手机应用在鸿蒙座舱车机操作系统上使用，丰富鸿蒙智行生态的解决方案。
+* 是华为为用户提供手机应用在鸿蒙智行车机操作系统上使用，丰富鸿蒙智行生态的解决方案。
 * 应用接入Car Kit出行互联类接口，可根据超级桌面连接状态，获取车机的屏幕信息用于UI呈现，或使用车机摄像头优化业务交互等。
 
 ### 驾驶HiCar认证车辆的出行场景
@@ -39,7 +39,7 @@ Car Kit为华为手机用户提供驾驶鸿蒙智行车辆的出行场景和驾�
 
 ## 实现原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/27qhfet-SHCV4N_1K81UZw/zh-cn_image_0000002589324833.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/K3M5-7PoQAed8Wk1M9qSWw/zh-cn_image_0000002736313505.png)
 
 Car Kit处于HarmonyOS的框架层，作为生态应用和系统应用之间的桥梁。
 
@@ -55,7 +55,7 @@ Car Kit处于HarmonyOS的框架层，作为生态应用和系统应用之间的�
 
 ### 支持的设备
 
-本Kit从4.1.0(11)开始支持Phone设备，并且从6.1.0(23)版本开始，新增支持Tablet设备。
+本Kit支持Phone设备，并且从6.1.0(23)版本开始，新增支持Tablet设备。
 
 ## 模拟器支持情况
 

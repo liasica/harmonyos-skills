@@ -1,18 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-450
 title: TextInput、TextArea等组件如何禁止提示拍摄输入
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > TextInput、TextArea等组件如何禁止提示拍摄输入
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > TextInput、TextArea等组件如何禁止提示拍摄输入
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:17:56+08:00
-doc_updated_at: 2026-03-25
-content_hash: sha256:bbc7b72c05b451a4857422675964f38994e4283a7796cc150e07db4a96acd4b1
+scraped_at: 2026-09-02T14:54:00+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:dbcfcd4a66e29dc98d569c16b56a150be87acabf6fc409ca1c367e6d26770f66
 ---
 
 **问题描述**
 
 在使用TextInput、TextArea等文本输入类组件时，系统会默认生成编辑选项，如拍照输入、全选等气泡内容，如果希望隐藏该内容，如何实现？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/uHcHNkPkSKy8DYMsmafRoA/zh-cn_image_0000002414012249.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/cMJ4gJr1T4Gto3QzZod4Jw/zh-cn_image_0000002654835249.png)
 
 **解决措施**
 
@@ -23,71 +23,67 @@ content_hash: sha256:bbc7b72c05b451a4857422675964f38994e4283a7796cc150e07db4a96a
 
 示例代码如下：
 
+```ts
+@Entry
+@Component
+struct TextAreaExample {
+  @State text: string = 'TextArea editMenuOptions';
+
+  onCreateMenu(menuItems: Array<TextMenuItem>) {
+    menuItems = menuItems.filter((item) => item.content !== 'Photo Input'); // Can also choose to disable other menu options such as "Aelect All".
+    return menuItems;
+  }
+
+  build() {
+    Column() {
+      TextArea({ text: this.text })
+        .width('95%')
+        .height(56)
+        .editMenuOptions({
+          onCreateMenu: this.onCreateMenu,
+          onMenuItemClick: (menuItem: TextMenuItem, textRange: TextRange) => {
+            return false; // Return false, execute custom logic first, then execute system logic
+          }
+        })
+        .margin({ top: 100 })
+    }
+    .width('90%')
+    .margin('5%')
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct TextAreaExample {
-4. @State text: string = 'TextArea editMenuOptions';
-
-6. onCreateMenu(menuItems: Array<TextMenuItem>) {
-7. menuItems = menuItems.filter((item) => item.content !== 'Photo Input'); // Can also choose to disable other menu options such as "Aelect All".
-8. return menuItems;
-9. }
-
-11. build() {
-12. Column() {
-13. TextArea({ text: this.text })
-14. .width('95%')
-15. .height(56)
-16. .editMenuOptions({
-17. onCreateMenu: this.onCreateMenu,
-18. onMenuItemClick: (menuItem: TextMenuItem, textRange: TextRange) => {
-19. return false; // Return false, execute custom logic first, then execute system logic
-20. }
-21. })
-22. .margin({ top: 100 })
-23. }
-24. .width('90%')
-25. .margin('5%')
-26. }
-27. }
-```
-
-[EnterProhibitedPromptPlanOne.ets](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkUI/entry/src/main/ets/pages/EnterProhibitedPromptPlanOne.ets#L21-L47)
 
 实现效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/0P1YHppyR0STsAxPIqEdWg/zh-cn_image_0000002414026269.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/qMkUdVFUSrGZbxMh3f5G3Q/zh-cn_image_0000002654795311.png)
 
 方案二：如果想隐藏该组件上所有的弹出气泡，包括复制、粘贴、全选、拍摄输入等，可以利用selectionMenuHidden属性隐藏系统文本选择菜单，示例代码如下：
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. @State message: string = '';
+```typescript
+@Entry
+@Component
+struct Index {
+  @State message: string = '';
 
-6. build() {
-7. Column() {
-8. Text(`The input content：${this.message}`)
-9. .margin({
-10. top: 100,
-11. bottom: 30
-12. })
-13. TextInput({ placeholder: 'Please enter the content' })
-14. .borderRadius(0)
-15. .onChange((value: string) => {
-16. this.message = value;
-17. })
-18. .selectionMenuHidden(true)
-19. }
-20. .width('100%')
-21. .height('100%')
-22. }
-23. }
+  build() {
+    Column() {
+      Text(`The input content：${this.message}`)
+        .margin({
+          top: 100,
+          bottom: 30
+        })
+      TextInput({ placeholder: 'Please enter the content' })
+        .borderRadius(0)
+        .onChange((value: string) => {
+          this.message = value;
+        })
+        .selectionMenuHidden(true)
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
-
-[EnterProhibitedPromptPlanTwo.ets](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkUI/entry/src/main/ets/pages/EnterProhibitedPromptPlanTwo.ets#L21-L44)
 
 方案三：对于需要菜单都自定义实现的，可以拦截整个默认菜单并使用自定义bindContextMenu代替。可以参考：[长按弹出菜单的自定义预览样式](../harmonyos-references/ts-universal-attributes-menu.md#示例6长按弹出菜单的自定义预览样式)。
 

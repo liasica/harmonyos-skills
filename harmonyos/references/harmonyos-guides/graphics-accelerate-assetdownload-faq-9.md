@@ -1,9 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-accelerate-assetdownload-faq-9
-title: 是否可以申请长时任务，在游戏前台下载资源包过程中切后台时免冻结并继续下载资源包？
+title: 是否可以申请长时任务，在游戏前台下载资源包过程中切后台时免冻结并继续下载资源包
+breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > Graphics Accelerate Kit常见问题 > 游戏资源加速服务 > 是否可以申请长时任务，在游戏前台下载资源包过程中切后台时免冻结并继续下载资源包
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:47+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-02T15:17:37+08:00
+doc_updated_at: 2026-05-08
 content_hash: sha256:f409bcf4fd00bf57ea9738b9f4d03c9e40b1ddd50259e343bebe7b600837ea49
 ---
 

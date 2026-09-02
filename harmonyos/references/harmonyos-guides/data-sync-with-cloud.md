@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-sync-wit
 title: 端云数据同步云侧环境部署指导
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 同应用端云数据同步（分布式） > 端云数据同步云侧环境部署指导
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:26:20+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:601e32944bc20ed3c19285b1399dc72245b97c7d72cd0ec2c51cef1ade60a303
+scraped_at: 2026-09-02T14:59:12+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:330ad321d05e5debce5c7ced6b5cbfe635c1e6b2b2868678a568b858483b8f75
 ---
 
 ## 场景介绍
@@ -15,7 +15,7 @@ content_hash: sha256:601e32944bc20ed3c19285b1399dc72245b97c7d72cd0ec2c51cef1ade6
 * 数据安全备份：不会因应用卸载或设备丢失、设备损坏导致数据永久丢失，重新安装应用数据即可自动恢复。
 * 数据多端一致：登录同一华为账号的设备间数据自动、及时保持一致，多设备协同效率高，体验一致。
 
-说明
+**说明** 
 
 用户需在“设置-云空间”内打开同步功能开关，并确保华为云空间存储空间充足。
 
@@ -103,7 +103,7 @@ content_hash: sha256:601e32944bc20ed3c19285b1399dc72245b97c7d72cd0ec2c51cef1ade6
    | Double | DOUBLE |
    | Bytes | BLOB |
 
-   说明
+   **说明** 
 
    * 设置自定义字段的类型时，如果为String类型，支持选择加密字段（添加前缀Encrypted），以保护用户的数据隐私。
    * 添加为加密字段后，可能影响端云同步的性能和效率，建议开发者根据数据的安全等级合理选择加密字段。
@@ -115,7 +115,7 @@ content_hash: sha256:601e32944bc20ed3c19285b1399dc72245b97c7d72cd0ec2c51cef1ade6
 
    在云同步服务主页面，选择”数据记录调测”，在**数据类型**和**字段**下拉框选择要查看的数据类型和字段，点击**查询**按钮，可以查看云端个人数据。
 
-   说明
+   **说明** 
 
    * 该页面只能查询和修改开发者自身账号的数据，端侧调测如果使用其他账号，此处无法查询。如需使用该页面，客户端调测也请登录相同的开发者账号。
    * 无法在数据记录调测页面查看加密字段的具体内容，如需查看加密字段的具体内容请使用调测方案二。
@@ -145,18 +145,20 @@ content_hash: sha256:601e32944bc20ed3c19285b1399dc72245b97c7d72cd0ec2c51cef1ade6
 
    通过配置[app.json5](app-configuration-file.md)文件中app标签的cloudStructuredDataSyncEnabled字段来控制是否接入云同步能力，字段为true时，表示接入，在“设置-云空间”内即可看到应用开关。
 
-   ```
-   1. {
-   2. "app": {
-   3. "cloudStructuredDataSyncEnabled": true
-   4. }
-   5. }
+   ```json
+   {
+     "app": {
+       "cloudStructuredDataSyncEnabled": true
+     }
+   }
    ```
 2. 环境连接。
 
    云空间识别接入应用的证书类型为debug则连接开发环境，应用证书类型为release则连接生产环境。
 3. 开发流程具体请见[端云数据同步关系型数据库端侧开发指导](data-cloud-sync-of-rdb-store.md)。
 4. 体验设计建议。
+
+   当应用内设置同步开关时，请提示并引导用户跳转至云空间页面打开开关。
 
    用户数据是用户宝贵的数据资产，也是持续使用应用的重要原因之一，建议将同步状态显性化，让服务更透明，让用户使用更安心。
 
@@ -176,7 +178,7 @@ content_hash: sha256:601e32944bc20ed3c19285b1399dc72245b97c7d72cd0ec2c51cef1ade6
      | 6 | 云空间存储空间不足，请前往“设置-云空间”管理 |
      | 7 | 未连接WLAN，与云空间同步已暂停 |
 
-     说明
+     **说明** 
 
      前往“设置-云空间”管理，也可添加[Deeplink](deep-linking-startup.md)文字链，用户点击直接跳转至云空间首页，跳转uri为：hicloud://cloudDrive/getInfo?path=MainActivity。
 

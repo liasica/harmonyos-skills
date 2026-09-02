@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-m
 title: 组件内状态变量迁移
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1-V2迁移指导 > 状态管理V1向V2迁移场景 > 组件内状态变量迁移
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:26+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:61bfa12565fd15763a0066a63c800ea0d957b3ac710bd894c6520d809b1cbd52
+scraped_at: 2026-09-02T14:59:16+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:cef61e3929052e8e8cfd1b696cfbfef07385d3217734e674472ca3780e8baf65
 ---
 
 本文档主要介绍组件内的状态变量的迁移场景，包含以下场景：
@@ -15,7 +15,7 @@ content_hash: sha256:61bfa12565fd15763a0066a63c800ea0d957b3ac710bd894c6520d809b1
 | [@State](arkts-state.md) | 无外部初始化：[@Local](arkts-new-local.md)  外部初始化一次：[@Param](arkts-new-param.md)/[@Once](arkts-new-once.md) |
 | [@Prop](arkts-prop.md) | [@Param](arkts-new-param.md) |
 | [@Link](arkts-link.md) | [@Param](arkts-new-param.md)/[@Event](arkts-new-event.md) |
-| [@ObjectLink](arkts-observed-and-objectlink.md) | [@Param](arkts-new-param.md)/[@Event](arkts-new-event.md) |
+| [@ObjectLink](arkts-observed-and-objectlink.md) | [@Param](arkts-new-param.md) |
 | [@Provide](arkts-provide-and-consume.md) | [@Provider](arkts-new-provider-and-consumer.md) |
 | [@Consume](arkts-provide-and-consume.md) | [@Consumer](arkts-new-provider-and-consumer.md) |
 | [@Watch](arkts-watch.md) | [@Monitor](arkts-new-monitor.md) |
@@ -41,41 +41,51 @@ content_hash: sha256:61bfa12565fd15763a0066a63c800ea0d957b3ac710bd894c6520d809b1
 
 V1：
 
+```typescript
+const INITIAL_VALUE = 10;
+
+@Entry
+@Component
+struct Child {
+  // V1的@State装饰简单类型变量
+  @State val: number = INITIAL_VALUE;
+
+  build() {
+    Column() {
+      Text(this.val.toString())
+        .fontSize(20)
+        .margin(10)
+    }
+    .width('100%')
+  }
+}
 ```
-1. const INITIAL_VALUE = 10;
-
-3. @Entry
-4. @Component
-5. struct Child {
-6. // V1的@State装饰简单类型变量
-7. @State val: number = INITIAL_VALUE;
-
-9. build() {
-10. Text(this.val.toString())
-11. }
-12. }
-```
-
-[StateEasyV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/StateEasyV1.ets#L15-L27)
 
 V2迁移策略：直接替换。
 
+```typescript
+const INITIAL_VALUE = 10;
+
+@Entry
+@ComponentV2
+struct Child {
+  // V2的@Local装饰简单类型变量
+  @Local val: number = INITIAL_VALUE;
+
+  build() {
+    Column() {
+      Text(this.val.toString())
+        .fontSize(20)
+        .margin(10)
+    }
+    .width('100%')
+  }
+}
 ```
-1. const INITIAL_VALUE = 10;
 
-3. @Entry
-4. @ComponentV2
-5. struct Child {
-6. // V2的@Local装饰简单类型变量
-7. @Local val: number = INITIAL_VALUE;
+示例效果图：
 
-9. build() {
-10. Text(this.val.toString())
-11. }
-12. }
-```
-
-[StateEasyV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/StateEasyV2.ets#L16-L28)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/C2f9RQzaRGGjCe2f8XcZAQ/zh-cn_image_0000002706833300.png)
 
 **复杂类型**
 
@@ -83,62 +93,72 @@ V1的@State能够观察复杂对象的第一层属性变化，但V2的@Local无�
 
 V1：
 
+```typescript
+const INITIAL_VALUE = 10;
+
+class Child {
+  public value: number = INITIAL_VALUE;
+}
+
+@Component
+@Entry
+struct Example {
+  // @State可以观察第一层变化
+  @State child: Child = new Child();
+
+  build() {
+    Column() {
+      Text(this.child.value.toString())
+        .fontSize(20)
+        .margin(10)
+      Button('value+1')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.child.value++; // 修改对象属性，触发UI刷新
+        })
+    }
+    .width('100%')
+  }
+}
 ```
-1. const INITIAL_VALUE = 10;
-
-3. class Child {
-4. public value: number = INITIAL_VALUE;
-5. }
-
-7. @Component
-8. @Entry
-9. struct Example {
-10. @State child: Child = new Child();
-
-12. build() {
-13. Column() {
-14. Text(this.child.value.toString())
-15. // @State可以观察第一层变化
-16. Button('value+1')
-17. .onClick(() => {
-18. this.child.value++;
-19. })
-20. }
-21. }
-22. }
-```
-
-[StateComplexV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/StateComplexV1.ets#L15-L38)
 
 V2迁移策略：使用@ObservedV2和@Trace。
 
+```typescript
+const INITIAL_VALUE = 10;
+
+@ObservedV2
+class Child {
+  @Trace public value: number = INITIAL_VALUE;
+}
+
+@ComponentV2
+@Entry
+struct Example {
+  // @Local只能观察自身，需要给Child加上@ObservedV2和@Trace
+  @Local child: Child = new Child();
+
+  build() {
+    Column() {
+      Text(this.child.value.toString())
+        .fontSize(20)
+        .margin(10)
+      Button('value+1')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.child.value++; // 修改对象属性，触发UI刷新
+        })
+    }
+    .width('100%')
+  }
+}
 ```
-1. const INITIAL_VALUE = 10;
 
-3. @ObservedV2
-4. class Child {
-5. @Trace public value: number = INITIAL_VALUE;
-6. }
+示例效果图：
 
-8. @ComponentV2
-9. @Entry
-10. struct Example {
-11. // @Local只能观察自身，需要给Child加上@ObservedV2和@Trace
-12. @Local child: Child = new Child();
-
-14. build() {
-15. Column() {
-16. Text(this.child.value.toString())
-17. Button('value+1')
-18. .onClick(() => {
-19. this.child.value++;
-20. })
-21. }
-22. }
-23. }
-```
-
-[StateComplexV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/StateComplexV2.ets#L15-L39)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/LpF5TauGQT6kC931v8M4AA/zh-cn_image_0000002736312409.gif)
 
 **外部初始化状态变量**
 
@@ -146,55 +166,473 @@ V1的@State变量可以从外部初始化，V2的@Local禁止外部初始化。�
 
 V1实现：
 
+```typescript
+@Component
+struct Child {
+  @State value: number = 0;
+
+  build() {
+    Text(this.value.toString())
+      .fontSize(20)
+      .margin(10)
+  }
+}
+
+@Entry
+@Component
+struct Parent {
+  build() {
+    Column() {
+      // @State可以从外部初始化
+      Child({ value: 30 })
+    }
+    .width('100%')
+  }
+}
 ```
-1. @Component
-2. struct Child {
-3. @State value: number = 0;
-
-5. build() {
-6. Text(this.value.toString())
-7. }
-8. }
-
-10. @Entry
-11. @Component
-12. struct Parent {
-13. build() {
-14. Column() {
-15. // @State可以从外部初始化
-16. Child({ value: 30 })
-17. }
-18. }
-19. }
-```
-
-[StateExternalInitializationV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/StateExternalInitializationV1.ets#L15-L35)
 
 V2迁移策略：使用@Param和@Once。
 
+```typescript
+@ComponentV2
+struct Child {
+  @Param @Once value: number = 0;
+
+  build() {
+    Text(this.value.toString())
+      .fontSize(20)
+      .margin(10)
+  }
+}
+
+@Entry
+@ComponentV2
+struct Parent {
+  build() {
+    Column() {
+      // @Local禁止从外部初始化，可以用@Param和@Once替代实现
+      Child({ value: 30 })
+    }
+    .width('100%')
+  }
+}
 ```
-1. @ComponentV2
-2. struct Child {
-3. @Param @Once value: number = 0;
 
-5. build() {
-6. Text(this.value.toString())
-7. }
-8. }
+示例效果图：
 
-10. @Entry
-11. @ComponentV2
-12. struct Parent {
-13. build() {
-14. Column() {
-15. // @Local禁止从外部初始化，可以用@Param和@Once替代实现
-16. Child({ value: 30 })
-17. }
-18. }
-19. }
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/DFkRbOuFRGCFWjfbt4TGFA/zh-cn_image_0000002706673364.png)
+
+### @Prop -> @Param
+
+**迁移规则**
+
+在V1中，@Prop装饰器用于从父组件传递参数给子组件，这些参数在子组件中可以被直接修改。在V2中，@Param取代了@Prop的作用，但@Param是只读的，子组件不能直接修改参数的值。因此，根据场景的不同，有3种迁移策略：
+
+* 简单类型：对于简单类型的参数，将@Prop替换为@Param。
+* 复杂类型：如果传递的是复杂对象且需要严格的单向数据绑定，需要深拷贝对象，防止子组件修改父组件的数据。
+* 子组件修改变量：如果子组件需要修改传入的参数，使用@Param和@Once允许子组件在本地修改该变量。但需要注意，使用@Once装饰器后，当前子组件只会被初始化一次，后续无父组件到子组件的同步能力。
+
+**示例**
+
+**简单类型**
+
+对于简单类型变量，V1的@Prop可以直接替换为V2的@Param。
+
+V1实现：
+
+```typescript
+@Component
+struct Child {
+  // V1的@Prop装饰简单类型变量
+  @Prop value: number;
+
+  build() {
+    Text(this.value.toString())
+      .fontSize(20)
+      .margin(10)
+  }
+}
+
+@Entry
+@Component
+struct Parent {
+  build() {
+    Column() {
+      Child({ value: 30 })
+    }
+    .width('100%')
+  }
+}
 ```
 
-[StateExternalInitializationV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/StateExternalInitializationV2.ets#L15-L35)
+V2迁移策略：直接替换。
+
+```typescript
+@ComponentV2
+struct Child {
+  // V2的@Param装饰简单类型变量
+  @Param value: number = 0;
+
+  build() {
+    Text(this.value.toString())
+      .fontSize(20)
+      .margin(10)
+  }
+}
+
+@Entry
+@ComponentV2
+struct Parent {
+  build() {
+    Column() {
+      Child({ value: 30 })
+    }
+    .width('100%')
+  }
+}
+```
+
+示例效果图：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/K4it10BCSniIRQepA4qgnA/zh-cn_image_0000002736432455.png)
+
+**复杂类型的单向数据传递**
+
+在V2中，传递复杂类型时，如果希望实现严格的单向数据绑定，防止子组件修改父组件的数据，需要在使用@Param传递复杂对象时进行深拷贝以避免传递对象的引用。
+
+V1实现：
+
+```typescript
+const APPLE_INITIAL_COUNT = 5;
+const ORANGE_INITIAL_COUNT = 10;
+
+class Fruit {
+  public apple: number = APPLE_INITIAL_COUNT;
+  public orange: number = ORANGE_INITIAL_COUNT;
+}
+
+@Component
+struct Child {
+  // @Prop传递Fruit类，当子类修改属性，父类不受影响
+  @Prop fruit: Fruit;
+
+  build() {
+    Column() {
+      Text('child apple: ' + this.fruit.apple.toString())
+        .fontSize(20)
+        .margin(10)
+      Text('child orange: ' + this.fruit.orange.toString())
+        .fontSize(20)
+        .margin(10)
+      Button('apple+1')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.fruit.apple++; // 修改子组件@Prop对象，父组件不受影响
+        })
+      Button('orange+1')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.fruit.orange++;
+        })
+    }
+    .width('100%')
+  }
+}
+
+@Entry
+@Component
+struct Parent {
+  @State parentFruit: Fruit = new Fruit();
+
+  build() {
+    Column() {
+      Text('parent apple: ' + this.parentFruit.apple.toString())
+        .fontSize(20)
+        .margin(10)
+      Text('parent orange: ' + this.parentFruit.orange.toString())
+        .fontSize(20)
+        .margin(10)
+      Child({ fruit: this.parentFruit })
+    }
+    .width('100%')
+  }
+}
+```
+
+V2迁移策略：使用深拷贝。
+
+```typescript
+const APPLE_INITIAL_COUNT = 5;
+const ORANGE_INITIAL_COUNT = 10;
+
+@ObservedV2
+class Fruit {
+  @Trace public apple: number = APPLE_INITIAL_COUNT;
+  @Trace public orange: number = ORANGE_INITIAL_COUNT;
+
+  // 实现深拷贝，子组件不会修改父组件的数据
+  clone(): Fruit {
+    let newFruit: Fruit = new Fruit();
+    newFruit.apple = this.apple;
+    newFruit.orange = this.orange;
+    return newFruit;
+  }
+}
+
+@ComponentV2
+struct Child {
+  @Param fruit: Fruit = new Fruit();
+
+  build() {
+    Column() {
+      Text('child apple: ' + this.fruit.apple.toString())
+        .fontSize(20)
+        .margin(10)
+      Text('child orange: ' + this.fruit.orange.toString())
+        .fontSize(20)
+        .margin(10)
+      Button('apple+1')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.fruit.apple++; // 修改深拷贝对象，父组件不受影响
+        })
+      Button('orange+1')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.fruit.orange++;
+        })
+    }
+    .width('100%')
+  }
+}
+
+@Entry
+@ComponentV2
+struct Parent {
+  @Local parentFruit: Fruit = new Fruit();
+
+  build() {
+    Column() {
+      Text('parent apple: ' + this.parentFruit.apple.toString())
+        .fontSize(20)
+        .margin(10)
+      Text('parent orange: ' + this.parentFruit.orange.toString())
+        .fontSize(20)
+        .margin(10)
+      Child({ fruit: this.parentFruit.clone() })
+    }
+    .width('100%')
+  }
+}
+```
+
+示例效果图：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/xaTTiyxJTISmFu3Pv0pOkQ/zh-cn_image_0000002706833302.gif)
+
+**子组件修改变量**
+
+在V1中，子组件可以修改@Prop的变量，然而在V2中，@Param是只读的。如果子组件需要修改传入的值，可以使用@Param和@Once允许子组件在本地修改。
+
+V1实现：
+
+```typescript
+@Component
+struct Child {
+  // @Prop可以直接修改变量值
+  @Prop value: number;
+
+  build() {
+    Column() {
+      Text(this.value.toString())
+        .fontSize(20)
+        .margin(10)
+      Button('+1')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.value++; // 本地修改，不会同步回父组件
+        })
+    }
+    .width('100%')
+  }
+}
+
+@Entry
+@Component
+struct Parent {
+  build() {
+    Column() {
+      Child({ value: 30 })
+    }
+    .width('100%')
+  }
+}
+```
+
+V2迁移策略：使用@Param和@Once。
+
+```typescript
+@ComponentV2
+struct Child {
+  // @Param搭配@Once使用，可以在本地修改@Param变量
+  @Param @Once value: number = 0;
+
+  build() {
+    Column() {
+      Text(this.value.toString())
+        .fontSize(20)
+        .margin(10)
+      Button('+1')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.value++; // 本地修改，不会同步回父组件
+        })
+    }
+    .width('100%')
+  }
+}
+
+@Entry
+@ComponentV2
+struct Parent {
+  build() {
+    Column() {
+      Child({ value: 30 })
+    }
+    .width('100%')
+  }
+}
+```
+
+示例效果图：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/r8g7UcNCQK60DFya4PsMLA/zh-cn_image_0000002736312411.gif)
+
+在V1中，子组件可以修改@Prop的变量，且只会在本地更新，不会同步回父组件。父组件数据源更新时，会通知子组件更新，并覆写子组件本地@Prop的值。
+
+V1：
+
+* 改变子组件Child的localValue，不会同步回父组件Parent。
+* 父组件更新value，通知子组件Child更新，并覆写本地子组件localValue的值。
+
+```typescript
+const PARENT_INITIAL_STATE_VALUE = 10;
+
+@Component
+struct Child {
+  @Prop localValue: number = 0;
+
+  build() {
+    Column() {
+      Text(`${this.localValue}`)
+        .fontSize(20)
+        .margin(10)
+      Button('Child +100')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          // 改变localValue不会传递给父组件Parent
+          this.localValue += 100;
+        })
+    }
+    .width('100%')
+  }
+}
+
+@Entry
+@Component
+struct Parent {
+  @State value: number = PARENT_INITIAL_STATE_VALUE;
+
+  build() {
+    Column() {
+      Button('Parent +1')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          // 改变value的值，通知子组件Child value更新
+          this.value += 1;
+        })
+      Child({ localValue: this.value })
+    }
+    .width('100%')
+  }
+}
+```
+
+V2中，@Param本地不可写，与@Once搭配使用时只同步一次。若要实现子组件本地可写，且父组件后续更新仍能通知子组件，可借助@Monitor实现。
+
+V2实现：
+
+* 父组件Parent更新通知子组件value的刷新，并回调@Monitor修饰的onValueChange回调方法，onValueChange将更新后的值赋值给localValue。
+* 子组件Child改变localValue的值，不会同步给父组件Parent。
+* 父组件Parent中再次改变value，将会继续通知给子组件，并覆写子组件本地localValue的值。
+
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+const DOMAIN = 0xFF00;
+const TAG = '[Sample_StateMigration_App]';
+const PARENT_INITIAL_LOCAL_VALUE = 10;
+
+@ComponentV2
+struct Child {
+  @Param value: number = 0;
+  @Local localValue: number = this.value;
+
+  @Monitor('value')
+  onValueChange(mon: IMonitor) {
+    hilog.info(DOMAIN, TAG, `value has been changed from ${mon.value()?.before} to ${mon.value()?.now}`);
+    // 父组件value变化时，通知子组件value更新，回调Monitor函数，将更新的值覆写给本地的localValue
+    this.localValue = this.value;
+  }
+
+  build() {
+    Column() {
+      Text(`${this.localValue}`)
+        .fontSize(20)
+        .margin(10)
+      Button('Child +100')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          // 改变localValue不会传递给父组件Parent
+          this.localValue += 100;
+        })
+    }
+    .width('100%')
+  }
+}
+
+@Entry
+@ComponentV2
+struct Parent {
+  @Local value: number = PARENT_INITIAL_LOCAL_VALUE;
+
+  build() {
+    Column() {
+      Button('Parent +1')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          // 改变value的值，通知子组件Child value更新
+          this.value += 1;
+        })
+      Child({ value: this.value })
+    }
+    .width('100%')
+  }
+}
+```
+
+示例效果图：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/b9D7tgiPQrSZ-v2ovzeD6Q/zh-cn_image_0000002706673366.gif)
 
 ### @Link -> @Param/@Event
 
@@ -206,430 +644,224 @@ V2迁移策略：使用@Param和@Once。
 
 V1实现：
 
+```typescript
+const INITIAL_MYVAL = 10;
+
+@Component
+struct Child {
+  // @Link可以双向同步数据
+  @Link val: number;
+
+  build() {
+    Column() {
+      Text('child: ' + this.val.toString())
+        .fontSize(20)
+        .margin(10)
+      Button('+1')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.val++; // 子组件修改val，父子组件同步刷新
+        })
+    }
+    .width('100%')
+  }
+}
+
+@Entry
+@Component
+struct Parent {
+  @State myVal: number = INITIAL_MYVAL;
+
+  build() {
+    Column() {
+      Text('parent: ' + this.myVal.toString())
+        .fontSize(20)
+        .margin(10)
+      Child({ val: this.myVal }) // 通过@Link建立父子双向同步
+    }
+    .width('100%')
+  }
+}
 ```
-1. const INITIAL_MYVAL = 10;
-
-3. @Component
-4. struct Child {
-5. // @Link可以双向同步数据
-6. @Link val: number;
-
-8. build() {
-9. Column() {
-10. Text('child: ' + this.val.toString())
-11. Button('+1')
-12. .onClick(() => {
-13. this.val++;
-14. })
-15. }
-16. }
-17. }
-
-19. @Entry
-20. @Component
-21. struct Parent {
-22. @State myVal: number = INITIAL_MYVAL;
-
-24. build() {
-25. Column() {
-26. Text('parent: ' + this.myVal.toString())
-27. Child({ val: this.myVal })
-28. }
-29. }
-30. }
-```
-
-[LinkMiigrationV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/LinkMiigrationV1.ets#L15-L46)
 
 V2迁移策略：使用@Param和@Event。
 
+```typescript
+const INITIAL_MYVAL = 10;
+
+@ComponentV2
+struct Child {
+  // @Param搭配@Event回调实现数据双向同步
+  @Param val: number = 0;
+  @Event addOne: () => void;
+
+  build() {
+    Column() {
+      Text('child: ' + this.val.toString())
+        .fontSize(20)
+        .margin(10)
+      Button('+1')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.addOne(); // 通过@Event回调通知父组件更新
+        })
+    }
+    .width('100%')
+  }
+}
+
+@Entry
+@ComponentV2
+struct Parent {
+  @Local myVal: number = INITIAL_MYVAL;
+
+  build() {
+    Column() {
+      Text('parent: ' + this.myVal.toString())
+        .fontSize(20)
+        .margin(10)
+      Child({ val: this.myVal, addOne: () => this.myVal++ }) // @Param传递数据，@Event传递回调，实现双向同步
+    }
+    .width('100%')
+  }
+}
 ```
-1. const INITIAL_MYVAL = 10;
 
-3. @ComponentV2
-4. struct Child {
-5. // @Param搭配@Event回调实现数据双向同步
-6. @Param val: number = 0;
-7. @Event addOne: () => void;
+示例效果图：
 
-9. build() {
-10. Column() {
-11. Text('child: ' + this.val.toString())
-12. Button('+1')
-13. .onClick(() => {
-14. this.addOne();
-15. })
-16. }
-17. }
-18. }
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/jZ46oJ2QR3K7JTw9Z_TQeQ/zh-cn_image_0000002736432457.gif)
 
-20. @Entry
-21. @ComponentV2
-22. struct Parent {
-23. @Local myVal: number = INITIAL_MYVAL;
-
-25. build() {
-26. Column() {
-27. Text('parent: ' + this.myVal.toString())
-28. Child({ val: this.myVal, addOne: () => this.myVal++ })
-29. }
-30. }
-31. }
-```
-
-[LinkMiigrationV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/LinkMiigrationV2.ets#L15-L47)
-
-### @Prop -> @Param
+### @ObjectLink -> @Param
 
 **迁移规则**
 
-在V1中，@Prop装饰器用于从父组件传递参数给子组件，这些参数在子组件中可以被直接修改。在V2中，@Param取代了@Prop的作用，但@Param是只读的，子组件不能直接修改参数的值。因此，根据场景的不同，有3种迁移策略：
+在V1中，@ObjectLink用于接收父组件传递的@Observed装饰的类对象，实现嵌套对象的同步。父组件整体赋值会单向同步给子组件，子组件不允许整体赋值，但可以修改对象属性，属性变化在父子组件间双向同步。
 
-* 简单类型：对于简单类型的参数，将@Prop替换为@Param。
-* 复杂类型：如果传递的是复杂对象且需要严格的单向数据绑定，需要深拷贝对象，防止子组件修改父组件的数据。
-* 子组件修改变量：如果子组件需要修改传入的参数，使用@Once允许子组件在本地修改该变量。但需要注意，使用@Once修饰符后，当前子组件只会被初始化一次，后续无父组件到子组件的同步能力。
+迁移到V2时，子组件使用@Param接收对象，同步行为与@ObjectLink一致。
 
 **示例**
 
-**简单类型**
-
-对于简单类型变量，V1的@Prop可以直接替换为V2的@Param。
-
 V1实现：
 
-```
-1. @Component
-2. struct Child {
-3. // V1的@Prop装饰简单类型变量
-4. @Prop value: number;
+```typescript
+@Observed
+class Person {
+  public name: string;
+  public age: number;
 
-6. build() {
-7. Text(this.value.toString())
-8. }
-9. }
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+}
 
-11. @Entry
-12. @Component
-13. struct Parent {
-14. build() {
-15. Column() {
-16. Child({ value: 30 })
-17. }
-18. }
-19. }
-```
+@Component
+struct Child {
+  // @ObjectLink接收@Observed装饰的类对象，属性变化双向同步
+  @ObjectLink person: Person;
 
-[PropEasyV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/PropEasyV1.ets#L15-L34)
+  build() {
+    Column() {
+      Text(`Child name: ${this.person.name}`)
+        .fontSize(20)
+        .margin(10)
+      Text(`Child age: ${this.person.age}`)
+        .fontSize(20)
+        .margin(10)
+      Button('age+1')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.person.age++; // 子组件修改对象属性，父子组件同步刷新
+        })
+    }
+    .width('100%')
+  }
+}
 
-V2迁移策略：直接替换。
+@Entry
+@Component
+struct Parent {
+  @State person: Person = new Person('Alice', 20);
 
-```
-1. @ComponentV2
-2. struct Child {
-3. // V2的@Param装饰简单类型变量
-4. @Param value: number = 0;
-
-6. build() {
-7. Text(this.value.toString())
-8. }
-9. }
-
-11. @Entry
-12. @ComponentV2
-13. struct Parent {
-14. build() {
-15. Column() {
-16. Child({ value: 30 })
-17. }
-18. }
-19. }
-```
-
-[PropEasyV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/PropEasyV2.ets#L15-L34)
-
-**复杂类型的单向数据传递**
-
-在V2中，传递复杂类型时，如果希望实现严格的单向数据绑定，防止子组件修改父组件的数据，需要在使用@Param传递复杂对象时进行深拷贝以避免传递对象的引用。
-
-V1实现：
-
-```
-1. const APPLE_INITIAL_COUNT = 5;
-2. const ORANGE_INITIAL_COUNT = 10;
-
-4. class Fruit {
-5. public apple: number = APPLE_INITIAL_COUNT;
-6. public orange: number = ORANGE_INITIAL_COUNT;
-7. }
-
-9. @Component
-10. struct Child {
-11. // @Prop传递Fruit类，当子类修改属性，父类不受影响
-12. @Prop fruit: Fruit;
-
-14. build() {
-15. Column() {
-16. Text('child apple: ' + this.fruit.apple.toString())
-17. Text('child orange: ' + this.fruit.orange.toString())
-18. Button('apple+1')
-19. .onClick(() => {
-20. this.fruit.apple++;
-21. })
-22. Button('orange+1')
-23. .onClick(() => {
-24. this.fruit.orange++;
-25. })
-26. }
-27. }
-28. }
-
-30. @Entry
-31. @Component
-32. struct Parent {
-33. @State parentFruit: Fruit = new Fruit();
-
-35. build() {
-36. Column() {
-37. Text('parent apple: ' + this.parentFruit.apple.toString())
-38. Text('parent orange: ' + this.parentFruit.orange.toString())
-39. Child({ fruit: this.parentFruit })
-40. }
-41. }
-42. }
+  build() {
+    Column() {
+      Text(`Parent name: ${this.person.name}`)
+        .fontSize(20)
+        .margin(10)
+      Text(`Parent age: ${this.person.age}`)
+        .fontSize(20)
+        .margin(10)
+      Child({ person: this.person }) // 传递对象给子组件
+    }
+    .width('100%')
+  }
+}
 ```
 
-[PropComplexV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/PropComplexV1.ets#L15-L58)
+V2迁移策略：使用@Param接收对象。
 
-V2迁移策略：使用深拷贝。
+```typescript
+@ObservedV2
+class Person {
+  @Trace public name: string;
+  @Trace public age: number;
 
-```
-1. const APPLE_INITIAL_COUNT = 5;
-2. const ORANGE_INITIAL_COUNT = 10;
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+}
 
-4. @ObservedV2
-5. class Fruit {
-6. @Trace public apple: number = APPLE_INITIAL_COUNT;
-7. @Trace public orange: number = ORANGE_INITIAL_COUNT;
+@ComponentV2
+struct Child {
+  // @Param接收类对象，属性变化双向同步
+  @Param person: Person = new Person('', 0);
 
-9. // 实现深拷贝，子组件不会修改父组件的数据
-10. clone(): Fruit {
-11. let newFruit: Fruit = new Fruit();
-12. newFruit.apple = this.apple;
-13. newFruit.orange = this.orange;
-14. return newFruit;
-15. }
-16. }
+  build() {
+    Column() {
+      Text(`Child name: ${this.person.name}`)
+        .fontSize(20)
+        .margin(10)
+      Text(`Child age: ${this.person.age}`)
+        .fontSize(20)
+        .margin(10)
+      Button('age+1')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.person.age++; // 子组件修改对象属性，父子组件同步刷新
+        })
+    }
+    .width('100%')
+  }
+}
 
-18. @ComponentV2
-19. struct Child {
-20. @Param fruit: Fruit = new Fruit();
+@Entry
+@ComponentV2
+struct Parent {
+  @Local person: Person = new Person('Alice', 20);
 
-22. build() {
-23. Column() {
-24. Text('child')
-25. Text(this.fruit.apple.toString())
-26. Text(this.fruit.orange.toString())
-27. Button('apple+1')
-28. .onClick(() => {
-29. this.fruit.apple++;
-30. })
-31. Button('orange+1')
-32. .onClick(() => {
-33. this.fruit.orange++;
-34. })
-35. }
-36. }
-37. }
-
-39. @Entry
-40. @ComponentV2
-41. struct Parent {
-42. @Local parentFruit: Fruit = new Fruit();
-
-44. build() {
-45. Column() {
-46. Text('parent')
-47. Text(this.parentFruit.apple.toString())
-48. Text(this.parentFruit.orange.toString())
-49. Child({ fruit: this.parentFruit.clone() })
-50. }
-51. }
-52. }
-```
-
-[PropComplexV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/PropComplexV2.ets#L15-L68)
-
-**子组件修改变量**
-
-在V1中，子组件可以修改@Prop的变量，然而在V2中，@Param是只读的。如果子组件需要修改传入的值，可以使用@Param和@Once允许子组件在本地修改。
-
-V1实现：
-
-```
-1. @Component
-2. struct Child {
-3. // @Prop可以直接修改变量值
-4. @Prop value: number;
-
-6. build() {
-7. Column() {
-8. Text(this.value.toString())
-9. Button('+1')
-10. .onClick(() => {
-11. this.value++;
-12. })
-13. }
-14. }
-15. }
-
-17. @Entry
-18. @Component
-19. struct Parent {
-20. build() {
-21. Column() {
-22. Child({ value: 30 })
-23. }
-24. }
-25. }
+  build() {
+    Column() {
+      Text(`Parent name: ${this.person.name}`)
+        .fontSize(20)
+        .margin(10)
+      Text(`Parent age: ${this.person.age}`)
+        .fontSize(20)
+        .margin(10)
+      Child({ person: this.person }) // 传递对象给子组件
+    }
+    .width('100%')
+  }
+}
 ```
 
-[PropSubComponentUpdateVarV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/PropSubComponentUpdateVarV1.ets#L15-L41)
+示例效果图：
 
-V2迁移策略：使用@Param和@Once。
-
-```
-1. @ComponentV2
-2. struct Child {
-3. // @Param搭配@Once使用，可以在本地修改@Param变量
-4. @Param @Once value: number = 0;
-
-6. build() {
-7. Column() {
-8. Text(this.value.toString())
-9. Button('+1')
-10. .onClick(() => {
-11. this.value++;
-12. })
-13. }
-14. }
-15. }
-
-17. @Entry
-18. @ComponentV2
-19. struct Parent {
-20. build() {
-21. Column() {
-22. Child({ value: 30 })
-23. }
-24. }
-25. }
-```
-
-[PropSubComponentUpdateVarV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/PropSubComponentUpdateVarV2.ets#L15-L41)
-
-在V1中，子组件可以修改@Prop的变量，且只会在本地更新，不会同步回父组件。父组件数据源更新时，会通知子组件更新，并覆写子组件本地@Prop的值。
-
-V1：
-
-* 改变子组件Child的localValue，不会同步回父组件Parent。
-* 父组件更新value，通知子组件Child更新，并覆写本地子组件localValue的值。
-
-```
-1. const PARENT_INITIAL_STATE_VALUE = 10;
-
-3. @Component
-4. struct Child {
-5. @Prop localValue: number = 0;
-
-7. build() {
-8. Column() {
-9. Text(`${this.localValue}`).fontSize(25)
-10. Button('Child +100')
-11. .onClick(() => {
-12. // 改变localValue不会传递给父组件Parent
-13. this.localValue += 100;
-14. })
-15. }
-16. }
-17. }
-
-19. @Entry
-20. @Component
-21. struct Parent {
-22. @State value: number = PARENT_INITIAL_STATE_VALUE;
-
-24. build() {
-25. Column() {
-26. Button('Parent +1')
-27. .onClick(() => {
-28. // 改变value的值，通知子组件Child value更新
-29. this.value += 1;
-30. })
-31. Child({ localValue: this.value })
-32. }
-33. }
-34. }
-```
-
-[PropSubComponentUpdateVarLocalV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/PropSubComponentUpdateVarLocalV1.ets#L15-L50)
-
-V2中，@Param本地不可写，与@Once搭配使用时只同步一次。若要实现子组件本地可写，且父组件后续更新仍能通知子组件，可借助@Monitor实现。
-
-V2实现：
-
-* 父组件Parent更新通知子组件value的刷新，并回调@Monitor修饰的onValueChange回调方法，onValueChange将更新后的值赋值给localValue。
-* 子组件Child改变localValue的值，不会同步给父组件Parent。
-* 父组件Parent中再次改变value，将会继续通知给子组件，并覆写子组件本地localValue的值。
-
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. const DOMAIN = 0xFF00;
-3. const TAG = '[Sample_StateMigration_App]';
-4. const PARENT_INITIAL_LOCAL_VALUE = 10;
-
-6. @ComponentV2
-7. struct Child {
-8. @Local localValue: number = 0;
-9. @Param value: number = 0;
-
-11. @Monitor('value')
-12. onValueChange(mon: IMonitor) {
-13. hilog.info(DOMAIN, TAG, `value has been changed from ${mon.value()?.before} to ${mon.value()?.now}`);
-14. // 父组件value变化时，通知子组件value更新，回调Monitor函数，将更新的值覆写给本地的localValue
-15. this.localValue = this.value;
-16. }
-
-18. build() {
-19. Column() {
-20. Text(`${this.localValue}`).fontSize(25)
-21. Button('Child +100')
-22. .onClick(() => {
-23. // 改变localValue不会传递给父组件Parent
-24. this.localValue += 100;
-25. })
-26. }
-27. }
-28. }
-
-30. @Entry
-31. @ComponentV2
-32. struct Parent {
-33. @Local value: number = PARENT_INITIAL_LOCAL_VALUE;
-
-35. build() {
-36. Column() {
-37. Button('Parent +1')
-38. .onClick(() => {
-39. // 改变value的值，通知子组件Child value更新
-40. this.value += 1;
-41. })
-42. Child({ value: this.value })
-43. }
-44. }
-45. }
-```
-
-[PropSubComponentUpdateVarLocalV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/PropSubComponentUpdateVarLocalV2.ets#L15-L61)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/QuTi0U9xRAmvArQnh9GoSA/zh-cn_image_0000002706833304.gif)
 
 ### @Provide/@Consume -> @Provider/@Consumer
 
@@ -642,78 +874,90 @@ V1的@Provide和@Consume与V2的@Provider和@Consumer定位和作用类似，基
 * V1中@Provide和@Consume在没有指定alias的情况下，可以直接使用。V2中@Provider和@Consumer是标准装饰器，且参数可选，所以不管有无指定alias后面需要必须跟随“()”。
 * alias和属性名匹配规则：V1中，@Provide和@Consume可以通过alias或属性名匹配；V2中，alias是唯一的匹配key，指定alias后只能通过alias匹配。
 * 本地初始化支持：API version 20以前，@Consume不允许本地初始化，必须依赖父组件；从API version 20开始，@Consume支持本地初始化，当找不到对应的@Provide时使用本地默认值，详见[@Consume装饰的变量支持设置默认值](arkts-provide-and-consume.md#consume装饰的变量支持设置默认值)；V2中，@Consumer支持本地初始化，当找不到对应的@Provider时使用本地默认值。
-* 从父组件初始化：V1中，@Provide可以直接从父组件初始化；V2中，@Provider不支持外部初始化，需用@Param和@Once接受初始值并赋给@Provider。
+* 从父组件初始化：V1中，@Provide可以直接从父组件初始化；V2中，@Provider不支持外部初始化，需用@Param和@Once接收初始值并赋给@Provider。
 * 重载支持：V1中，@Provide默认不支持重载，需设置 allowOverride；V2中，@Provider默认支持重载，@Consumer会向上查找最近的@Provider。
 
 **示例**
 
 **alias和属性名匹配规则**
 
-在V1中，@Provide和@Consume的匹配既可以通过alias，也可以通过属性名。在V2中，alias成为唯一的key，如果在@Consumer中制定了alias，只能通过alias而非属性名进行匹配。
+在V1中，@Provide和@Consume的匹配既可以通过alias，也可以通过属性名。在V2中，alias成为唯一的key，如果在@Consumer中指定了alias，只能通过alias而非属性名进行匹配。
 
 V1实现：
 
+```typescript
+@Component
+struct Child {
+  // alias和属性名都为key，alias和属性名都可以匹配
+  @Consume('text') childMessage: string;
+  @Consume message: string;
+
+  build() {
+    Column() {
+      Text(this.childMessage)
+        .fontSize(20)
+        .margin(10)
+      Text(this.message)
+        .fontSize(20)
+        .margin(10)
+    }
+    .width('100%')
+  }
+}
+
+@Entry
+@Component
+struct Parent {
+  @Provide('text') message: string = 'Hello World';
+
+  build() {
+    Column() {
+      Child()
+    }
+    .width('100%')
+  }
+}
 ```
-1. @Component
-2. struct Child {
-3. // alias和属性名都为key，alias和属性名都可以匹配
-4. @Consume('text') childMessage: string;
-5. @Consume message: string;
-
-7. build() {
-8. Column() {
-9. Text(this.childMessage)
-10. Text(this.message) // Text是Hello World
-11. }
-12. }
-13. }
-
-15. @Entry
-16. @Component
-17. struct Parent {
-18. @Provide('text') message: string = 'Hello World';
-
-20. build() {
-21. Column() {
-22. Child()
-23. }
-24. }
-25. }
-```
-
-[ProvideAliasV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/ProvideAliasV1.ets#L15-L41)
 
 V2迁移策略：确保alias一致，没有指定alias的情况下，依赖属性名进行匹配。
 
+```typescript
+@ComponentV2
+struct Child {
+  @Consumer('text') childMessage: string = 'default'; // 指定alias时，通过alias匹配
+  @Consumer() message: string = 'default'; // 未指定alias时，通过属性名匹配
+
+  build() {
+    Column() {
+      Text(this.childMessage)
+        .fontSize(20)
+        .margin(10)
+      Text(this.message)
+        .fontSize(20)
+        .margin(10)
+    }
+    .width('100%')
+  }
+}
+
+@Entry
+@ComponentV2
+struct Parent {
+  @Provider('text') parentMessage: string = 'Hello World';
+  @Provider() message: string = 'Hello World';
+
+  build() {
+    Column() {
+      Child()
+    }
+    .width('100%')
+  }
+}
 ```
-1. @ComponentV2
-2. struct Child {
-3. // alias是唯一匹配的key，有alias情况下无法通过属性名匹配
-4. @Consumer('text') childMessage: string = 'default';
-5. @Consumer() message: string = 'default';
 
-7. build() {
-8. Column() {
-9. Text(this.childMessage)
-10. Text(this.message) // Text是default
-11. }
-12. }
-13. }
+示例效果图：
 
-15. @Entry
-16. @ComponentV2
-17. struct Parent {
-18. @Provider('text') message: string = 'Hello World';
-
-20. build() {
-21. Column() {
-22. Child()
-23. }
-24. }
-25. }
-```
-
-[ProvideAliasV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/ProvideAliasV2.ets#L15-L41)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/hBF-ufT3TFqfTWVBMgEy6Q/zh-cn_image_0000002736312413.png)
 
 **V1的@Consume不支持本地初始化，V2支持**
 
@@ -721,126 +965,140 @@ V1中，API version 20之前，@Consume不允许本地初始化变量，必须�
 
 V1实现：
 
+```typescript
+@Component
+struct Child {
+  // @Consume禁止本地初始化，当找不到对应的@Provide时抛出异常
+  @Consume message: string;
+
+  build() {
+    Text(this.message)
+      .fontSize(20)
+      .margin(10)
+  }
+}
+
+@Entry
+@Component
+struct Parent {
+  @Provide message: string = 'Hello World';
+
+  build() {
+    Column() {
+      Child()
+    }
+    .width('100%')
+  }
+}
 ```
-1. @Component
-2. struct Child {
-3. // @Consume禁止本地初始化，当找不到对应的@Provide时抛出异常
-4. @Consume message: string;
-
-6. build() {
-7. Text(this.message)
-8. }
-9. }
-
-11. @Entry
-12. @Component
-13. struct Parent {
-14. @Provide message: string = 'Hello World';
-
-16. build() {
-17. Column() {
-18. Child()
-19. }
-20. }
-21. }
-```
-
-[ProvideConsumeNoInitV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/ProvideConsumeNoInitV1.ets#L15-L37)
 
 V2迁移策略：@Consumer可以本地初始化。
 
+```typescript
+@ComponentV2
+struct Child {
+  // @Consumer允许本地初始化，当找不到@Provider的时候使用本地默认值
+  @Consumer() message: string = 'Hello World';
+
+  build() {
+    Text(this.message)
+      .fontSize(20)
+      .margin(10)
+  }
+}
+
+@Entry
+@ComponentV2
+struct Parent {
+  build() {
+    Column() {
+      Child()
+    }
+    .width('100%')
+  }
+}
 ```
-1. @ComponentV2
-2. struct Child {
-3. // @Consumer允许本地初始化，当找不到@Provider的时候使用本地默认值
-4. @Consumer() message: string = 'Hello World';
 
-6. build() {
-7. Text(this.message)
-8. }
-9. }
+示例效果图：
 
-11. @Entry
-12. @ComponentV2
-13. struct Parent {
-14. build() {
-15. Column() {
-16. Child()
-17. }
-18. }
-19. }
-```
-
-[ProvideConsumeInitV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/ProvideConsumeInitV2.ets#L15-L35)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/-7KNavONTqeofieLhARe2A/zh-cn_image_0000002706673368.png)
 
 **V1的@Provide可以从父组件初始化，V2不支持**
 
-在V1中，@Provide允许从父组件初始化，可以直接通过组件参数传递初始值。在V2中，@Provider禁止从外部初始化。为实现相同功能，可以在子组件中使用@Param @Once接受初始值，然后将其赋值给@Provider变量。
+在V1中，@Provide允许从父组件初始化，可以直接通过组件参数传递初始值。在V2中，@Provider禁止从外部初始化。为实现相同功能，可以在子组件中使用@Param @Once接收初始值，然后将其赋值给@Provider变量。
 
 V1实现：
 
-```
-1. const STATE_INITIAL_PARENT_VALUE = 42;
+```typescript
+const STATE_INITIAL_PARENT_VALUE = 42;
 
-3. @Entry
-4. @Component
-5. struct Parent {
-6. @State parentValue: number = STATE_INITIAL_PARENT_VALUE;
+@Entry
+@Component
+struct Parent {
+  @State parentValue: number = STATE_INITIAL_PARENT_VALUE;
 
-8. build() {
-9. Column() {
-10. // @Provide可以从父组件初始化
-11. Child({ childValue: this.parentValue })
-12. }
-13. }
-14. }
+  build() {
+    Column() {
+      // @Provide可以从父组件初始化
+      Child({ childValue: this.parentValue })
+    }
+    .width('100%')
+  }
+}
 
-16. @Component
-17. struct Child {
-18. @Provide childValue: number = 0;
+@Component
+struct Child {
+  @Provide childValue: number = 0;
 
-20. build() {
-21. Column() {
-22. Text(this.childValue.toString())
-23. }
-24. }
-25. }
-```
-
-[ProvideParentInitV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/ProvideParentInitV1.ets#L15-L41)
-
-V2迁移策略：使用@Param接受初始值，再赋值给@Provider。
-
-```
-1. const LOCAL_INITIAL_PARENT_VALUE = 42;
-
-3. @Entry
-4. @ComponentV2
-5. struct Parent {
-6. @Local parentValue: number = LOCAL_INITIAL_PARENT_VALUE;
-
-8. build() {
-9. Column() {
-10. // @Provider禁止从父组件初始化，替代方案为先用@Param接受，再赋值给@Provider
-11. Child({ initialValue: this.parentValue })
-12. }
-13. }
-14. }
-
-16. @ComponentV2
-17. struct Child {
-18. @Param @Once initialValue: number = 0;
-19. @Provider() childValue: number = this.initialValue;
-
-21. build() {
-22. Column() {
-23. Text(this.childValue.toString())
-24. }
-25. }
-26. }
+  build() {
+    Column() {
+      Text(this.childValue.toString())
+        .fontSize(20)
+        .margin(10)
+    }
+    .width('100%')
+  }
+}
 ```
 
-[ProvideParentNoInitV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/ProvideParentNoInitV2.ets#L15-L42)
+V2迁移策略：使用@Param和@Once接收初始值，再赋值给@Provider。
+
+```typescript
+const LOCAL_INITIAL_PARENT_VALUE = 42;
+
+@Entry
+@ComponentV2
+struct Parent {
+  @Local parentValue: number = LOCAL_INITIAL_PARENT_VALUE;
+
+  build() {
+    Column() {
+      // @Provider禁止从父组件初始化，替代方案为先用@Param接受，再赋值给@Provider
+      Child({ initialValue: this.parentValue })
+    }
+    .width('100%')
+  }
+}
+
+@ComponentV2
+struct Child {
+  @Param @Once initialValue: number = 0;
+  @Provider() childValue: number = this.initialValue;
+
+  build() {
+    Column() {
+      Text(this.childValue.toString())
+        .fontSize(20)
+        .margin(10)
+    }
+    .width('100%')
+  }
+}
+```
+
+示例效果图：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/SjLZ1WPqTFeqGK1umm3PHg/zh-cn_image_0000002736432459.png)
 
 **V1的@Provide默认不支持重载，V2默认支持**
 
@@ -848,83 +1106,89 @@ V2迁移策略：使用@Param接受初始值，再赋值给@Provider。
 
 V1实现：
 
+```typescript
+const GRANDPARENT_REVIEW_VOTES_INITIAL = 40;
+const PARENT_REVIEW_VOTES_INITIAL = 20;
+
+@Entry
+@Component
+struct GrandParent {
+  @Provide('reviewVotes') reviewVotes: number = GRANDPARENT_REVIEW_VOTES_INITIAL;
+
+  build() {
+    Column() {
+      Parent()
+    }
+    .width('100%')
+  }
+}
+
+@Component
+struct Parent {
+  // @Provide默认不支持重载，支持重载需设置allowOverride选项
+  @Provide({ allowOverride: 'reviewVotes' }) reviewVotes: number = PARENT_REVIEW_VOTES_INITIAL;
+
+  build() {
+    Child()
+  }
+}
+
+@Component
+struct Child {
+  @Consume('reviewVotes') reviewVotes: number;
+
+  build() {
+    Text(this.reviewVotes.toString())
+      .fontSize(20)
+      .margin(10)
+  }
+}
 ```
-1. const GRANDPARENT_REVIEW_VOTES_INITIAL = 40;
-2. const PARENT_REVIEW_VOTES_INITIAL = 20;
-
-4. @Entry
-5. @Component
-6. struct GrandParent {
-7. @Provide('reviewVotes') reviewVotes: number = GRANDPARENT_REVIEW_VOTES_INITIAL;
-
-9. build() {
-10. Column() {
-11. Parent()
-12. }
-13. }
-14. }
-
-16. @Component
-17. struct Parent {
-18. // @Provide默认不支持重载，支持重载需设置allowOverride函数
-19. @Provide({ allowOverride: 'reviewVotes' }) reviewVotes: number = PARENT_REVIEW_VOTES_INITIAL;
-
-21. build() {
-22. Child()
-23. }
-24. }
-
-26. @Component
-27. struct Child {
-28. @Consume('reviewVotes') reviewVotes: number;
-
-30. build() {
-31. Text(this.reviewVotes.toString()) // Text显示20
-32. }
-33. }
-```
-
-[ProvideNoAllowOverrideV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/ProvideNoAllowOverrideV1.ets#L15-L49)
 
 V2迁移策略：取消allowOverride设置。
 
+```typescript
+const GRANDPARENT_REVIEW_VOTES_INITIAL = 40;
+const PARENT_REVIEW_VOTES_INITIAL = 20;
+
+@Entry
+@ComponentV2
+struct GrandParent {
+  @Provider('reviewVotes') reviewVotes: number = GRANDPARENT_REVIEW_VOTES_INITIAL;
+
+  build() {
+    Column() {
+      Parent()
+    }
+    .width('100%')
+  }
+}
+
+@ComponentV2
+struct Parent {
+  // @Provider默认支持重载，@Consumer向上查找最近的@Provider
+  @Provider() reviewVotes: number = PARENT_REVIEW_VOTES_INITIAL;
+
+  build() {
+    Child()
+  }
+}
+
+@ComponentV2
+struct Child {
+  @Consumer() reviewVotes: number = 0;
+
+  build() {
+    Text(this.reviewVotes.toString())
+      .fontSize(20)
+      .margin(10)
+  }
+}
 ```
-1. const GRANDPARENT_REVIEW_VOTES_INITIAL = 40;
-2. const PARENT_REVIEW_VOTES_INITIAL = 20;
 
-4. @Entry
-5. @ComponentV2
-6. struct GrandParent {
-7. @Provider('reviewVotes') reviewVotes: number = GRANDPARENT_REVIEW_VOTES_INITIAL;
+示例效果图：
 
-9. build() {
-10. Column() {
-11. Parent()
-12. }
-13. }
-14. }
-
-16. @ComponentV2
-17. struct Parent {
-18. // @Provider默认支持重载，@Consumer向上查找最近的@Provider
-19. @Provider() reviewVotes: number = PARENT_REVIEW_VOTES_INITIAL;
-
-21. build() {
-22. Child()
-23. }
-24. }
-
-26. @ComponentV2
-27. struct Child {
-28. @Consumer() reviewVotes: number = 0;
-
-30. build() {
-31. Text(this.reviewVotes.toString()) // Text显示20
-32. }
-33. }
-```
-
-[ProvideAllowOverrideV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/ProvideAllowOverrideV2.ets#L15-L49)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/6pj7irO6Q8imE_iURHJVPQ/zh-cn_image_0000002706833306.png)
 
 ### @Watch -> @Monitor
 
@@ -943,68 +1207,78 @@ V2迁移策略：取消allowOverride设置。
 
 V1实现：
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN = 0xFF00;
+const TAG = '[Sample_StateMigration_App]';
+
+@Entry
+@Component
+struct WatchExample {
+  @State @Watch('onAppleChange') apple: number = 0;
+
+  onAppleChange(): void {
+    hilog.info(DOMAIN, TAG, 'apple count changed to ' + this.apple);
+  }
+
+  build() {
+    Column() {
+      Text(`apple count: ${this.apple}`)
+        .fontSize(20)
+        .margin(10)
+      // 点击Button累加apple，触发UI刷新
+      Button('add apple')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.apple++;
+        })
+    }
+    .width('100%')
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-3. const DOMAIN = 0xFF00;
-4. const TAG = '[Sample_StateMigration_App]';
-
-6. @Entry
-7. @Component
-8. struct WatchExample {
-9. @State @Watch('onAppleChange') apple: number = 0;
-
-11. onAppleChange(): void {
-12. hilog.info(DOMAIN, TAG, 'apple count changed to ' + this.apple);
-13. }
-
-15. build() {
-16. Column() {
-17. Text(`apple count: ${this.apple}`)
-18. // 点击Button累加apple，触发UI刷新
-19. Button('add apple')
-20. .onClick(() => {
-21. this.apple++;
-22. })
-23. }
-24. }
-25. }
-```
-
-[WatchSingleVarV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/WatchSingleVarV1.ets#L15-L40)
 
 V2迁移策略：直接替换。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN = 0xFF00;
+const TAG = '[Sample_StateMigration_App]';
+
+@Entry
+@ComponentV2
+struct MonitorExample {
+  @Local apple: number = 0;
+
+  @Monitor('apple')
+  onFruitChange(monitor: IMonitor) {
+    hilog.info(DOMAIN, TAG, `apple changed from ${monitor.value()?.before} to ${monitor.value()?.now}`);
+  }
+
+  build() {
+    Column() {
+      Text(`apple count: ${this.apple}`)
+        .fontSize(20)
+        .margin(10)
+      // 点击Button累加apple，触发UI刷新
+      Button('add apple')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.apple++;
+        })
+    }
+    .width('100%')
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. const DOMAIN = 0xFF00;
-4. const TAG = '[Sample_StateMigration_App]';
+示例效果图：
 
-6. @Entry
-7. @ComponentV2
-8. struct MonitorExample {
-9. @Local apple: number = 0;
-
-11. @Monitor('apple')
-12. onFruitChange(monitor: IMonitor) {
-13. hilog.info(DOMAIN, TAG, `apple changed from ${monitor.value()?.before} to ${monitor.value()?.now}`);
-14. }
-
-16. build() {
-17. Column() {
-18. Text(`apple count: ${this.apple}`)
-19. // 点击Button累加apple，触发UI刷新
-20. Button('add apple')
-21. .onClick(() => {
-22. this.apple++;
-23. })
-24. }
-25. }
-26. }
-```
-
-[WatchSingleVarV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/WatchSingleVarV2.ets#L15-L41)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/I-miDxzQSO6AEp7tdys_fg/zh-cn_image_0000002736312415.gif)
 
 **多变量监听**
 
@@ -1012,86 +1286,104 @@ V2迁移策略：直接替换。
 
 V1实现：
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN = 0xFF00;
+const TAG = '[Sample_StateMigration_App]';
+
+@Entry
+@Component
+struct WatchExample {
+  @State @Watch('onAppleChange') apple: number = 0;
+  @State @Watch('onOrangeChange') orange: number = 0;
+
+  // @Watch回调，只能监听单个变量，不能获取变化前的值
+  onAppleChange(): void {
+    hilog.info(DOMAIN, TAG, 'apple count changed to ' + this.apple);
+  }
+
+  onOrangeChange(): void {
+    hilog.info(DOMAIN, TAG, 'orange count changed to ' + this.orange);
+  }
+
+  build() {
+    Column() {
+      Text(`apple count: ${this.apple}`)
+        .fontSize(20)
+        .margin(10)
+      Text(`orange count: ${this.orange}`)
+        .fontSize(20)
+        .margin(10)
+      Button('add apple')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.apple++; // 点击触发onAppleChange回调
+        })
+      Button('add orange')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.orange++; // 点击触发onOrangeChange回调
+        })
+    }
+    .width('100%')
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-3. const DOMAIN = 0xFF00;
-4. const TAG = '[Sample_StateMigration_App]';
-
-6. @Entry
-7. @Component
-8. struct WatchExample {
-9. @State @Watch('onAppleChange') apple: number = 0;
-10. @State @Watch('onOrangeChange') orange: number = 0;
-
-12. // @Watch 回调，只能监听单个变量，不能获取变化前的值
-13. onAppleChange(): void {
-14. hilog.info(DOMAIN, TAG, 'apple count changed to ' + this.apple);
-15. }
-
-17. onOrangeChange(): void {
-18. hilog.info(DOMAIN, TAG, 'orange count changed to ' + this.orange);
-19. }
-
-21. build() {
-22. Column() {
-23. Text(`apple count: ${this.apple}`)
-24. Text(`orange count: ${this.orange}`)
-25. Button('add apple')
-26. .onClick(() => {
-27. this.apple++;
-28. })
-29. Button('add orange')
-30. .onClick(() => {
-31. this.orange++;
-32. })
-33. }
-34. }
-35. }
-```
-
-[WatchMoreVarV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/WatchMoreVarV1.ets#L15-L52)
 
 V2迁移策略：同时监听多个变量，以及获取变化前的值。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN = 0xFF00;
+const TAG = '[Sample_StateMigration_App]';
+
+@Entry
+@ComponentV2
+struct MonitorExample {
+  @Local apple: number = 0;
+  @Local orange: number = 0;
+
+  // @Monitor回调，支持监听多个变量，可以获取变化前的值
+  @Monitor('apple','orange')
+  onFruitChange(monitor: IMonitor) {
+    monitor.dirty.forEach((name: string) => {
+      hilog.info(DOMAIN, TAG, `${name} changed from ${monitor.value(name)?.before} to ${monitor.value(name)?.now}`);
+    });
+  }
+
+  build() {
+    Column() {
+      Text(`apple count: ${this.apple}`)
+        .fontSize(20)
+        .margin(10)
+      Text(`orange count: ${this.orange}`)
+        .fontSize(20)
+        .margin(10)
+      Button('add apple')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.apple++; // 点击触发onFruitChange回调
+        })
+      Button('add orange')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.orange++; // 点击触发onFruitChange回调
+        })
+    }
+    .width('100%')
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. const DOMAIN = 0xFF00;
-4. const TAG = '[Sample_StateMigration_App]';
+示例效果图：
 
-6. @Entry
-7. @ComponentV2
-8. struct MonitorExample {
-9. @Local apple: number = 0;
-10. @Local orange: number = 0;
-
-12. // @Monitor回调，支持监听多个变量，可以获取变化前的值
-13. @Monitor('apple','orange')
-14. onFruitChange(monitor: IMonitor) {
-15. monitor.dirty.forEach((name: string) => {
-16. hilog.info(DOMAIN, TAG, `${name} changed from ${monitor.value(name)?.before} to ${monitor.value(name)?.now}`);
-17. });
-18. }
-
-20. build() {
-21. Column() {
-22. Text(`apple count: ${this.apple}`)
-23. Text(`orange count: ${this.orange}`)
-24. Button('add apple')
-25. .onClick(() => {
-26. this.apple++;
-27. })
-28. Button('add orange')
-29. .onClick(() => {
-30. this.orange++;
-31. })
-32. }
-33. }
-34. }
-```
-
-[WatchMoreVarV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/WatchMoreVarV2.ets#L15-L50)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/q6wdPIt4TR-74nyKRUK-nw/zh-cn_image_0000002706673370.gif)
 
 ### 重复计算 -> @Computed计算属性
 
@@ -1103,65 +1395,80 @@ V1：
 
 在下面的示例中，每次改变lastName都会触发Text组件的刷新，每次Text组件的刷新，都需要重复计算this.lastName + ' ' + this.firstName。
 
+```typescript
+@Entry
+@Component
+struct Index {
+  @State firstName: string = 'Li';
+  @State lastName: string = 'Hua';
+
+  build() {
+    Column() {
+      Text(this.firstName + ' ' + this.lastName)
+        .fontSize(20)
+        .margin(10)
+      Text(this.firstName + ' ' + this.lastName)
+        .fontSize(20)
+        .margin(10)
+      // 每次改变lastName都会触发Text组件的刷新
+      Button('changed lastName')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.lastName += 'a';
+        })
+    }
+    .width('100%')
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct Index {
-4. @State firstName: string = 'Li';
-5. @State lastName: string = 'Hua';
-
-7. build() {
-8. Column() {
-9. Text(this.lastName + ' ' + this.firstName)
-10. Text(this.lastName + ' ' + this.firstName)
-11. // 每次改变lastName都会触发Text组件的刷新
-12. Button('changed lastName').onClick(() => {
-13. this.lastName += 'a';
-14. })
-
-16. }
-17. }
-18. }
-```
-
-[ComputedV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/ComputedV1.ets#L15-L33)
 
 V2:
 
 使用V2中的@Computed，每次改变lastName仅会触发一次计算。
 
+```typescript
+@Entry
+@ComponentV2
+struct Index {
+  @Local firstName: string = 'Li';
+  @Local lastName: string = 'Hua';
+
+  @Computed
+  get fullName() {
+    // 每次改变lastName仅会触发一次计算
+    return this.firstName + ' ' + this.lastName;
+  }
+
+  build() {
+    Column() {
+      Text(this.fullName)
+        .fontSize(20)
+        .margin(10)
+      Text(this.fullName)
+        .fontSize(20)
+        .margin(10)
+      Button('changed lastName')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.lastName += 'a';
+        })
+    }
+    .width('100%')
+  }
+}
 ```
-1. @Entry
-2. @ComponentV2
-3. struct Index {
-4. @Local firstName: string = 'Li';
-5. @Local lastName: string = 'Hua';
 
-7. @Computed
-8. get fullName() {
-9. // 每次改变lastName仅会触发一次计算
-10. return this.firstName + ' ' + this.lastName;
-11. }
+示例效果图：
 
-13. build() {
-14. Column() {
-15. Text(this.fullName)
-16. Text(this.fullName)
-17. Button('changed lastName').onClick(() => {
-18. this.lastName += 'a';
-19. })
-20. }
-21. }
-22. }
-```
-
-[ComputedV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMigrationProject/entry/src/main/ets/pages/componentstatemigration/ComputedV2.ets#L15-L37)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/ftFL49H9SgeQRweIqkRBUw/zh-cn_image_0000002736432461.gif)
 
 ### 双向绑定由$$迁移!!
 
 状态管理V1中，推荐使用[$$](arkts-two-way-sync.md)实现系统组件的双向绑定；在状态管理V2中，推荐使用[!!](arkts-new-binding.md)语法糖统一处理双向绑定。
 
-说明
+**说明** 
 
 !!语法从API version 12开始支持。
 
@@ -1171,54 +1478,60 @@ V2:
 
 V1实现：
 
+```typescript
+@Entry
+@Component
+struct TextInputExample {
+  @State text: string = '';
+  controller: TextInputController = new TextInputController();
+
+  build() {
+    Column({ space: 20 }) {
+      Text(this.text)
+        .fontSize(20)
+        .margin(10)
+      // $$运算符为系统组件提供TS变量的引用，使得TS变量和系统组件的内部状态保持同步
+      TextInput({ text: $$this.text, placeholder: 'input your word...', controller: this.controller })
+        .placeholderColor(Color.Grey)
+        .placeholderFont({ size: 14, weight: 400 })
+        .caretColor(Color.Blue)
+        .width(300)
+    }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct TextInputExample {
-4. @State text: string = '';
-5. controller: TextInputController = new TextInputController();
 
-7. build() {
-8. Column({ space: 20 }) {
-9. Text(this.text)
-10. // $$运算符为系统组件提供TS变量的引用，使得TS变量和系统组件的内部状态保持同步
-11. TextInput({ text: $$this.text, placeholder: 'input your word...', controller: this.controller })
-12. .placeholderColor(Color.Grey)
-13. .placeholderFont({ size: 14, weight: 400 })
-14. .caretColor(Color.Blue)
-15. .width(300)
-16. }
-17. .width('100%')
-18. .height('100%')
-19. .justifyContent(FlexAlign.Center)
-20. }
-21. }
+V2迁移策略：装饰器修改为V2的同时，$$直接替换为!!。
+
+```typescript
+@Entry
+@ComponentV2
+struct TextInputExampleV2 {
+  @Local text: string = '';
+  controller: TextInputController = new TextInputController();
+
+  build() {
+    Column({ space: 20 }) {
+      Text(this.text)
+        .fontSize(20)
+        .margin(10)
+      // V2中直接用!!替换$$
+      TextInput({ text: this.text!!, placeholder: 'input your word...', controller: this.controller })
+        .placeholderColor(Color.Grey)
+        .placeholderFont({ size: 14, weight: 400 })
+        .caretColor(Color.Blue)
+        .width(300)
+    }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
 
-[SyncUsageExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/syncStateManager/SyncUsageExample.ets#L30-L52)
+示例效果图：
 
-V2迁移策略：装饰器修改为V1的同时，$$直接替换为!!。
-
-```
-1. @Entry
-2. @ComponentV2
-3. struct TextInputExampleV2 {
-4. @Local text: string = '';
-5. controller: TextInputController = new TextInputController();
-
-7. build() {
-8. Column({ space: 20 }) {
-9. Text(this.text)
-10. // V2中直接用!!替换$$
-11. TextInput({ text: this.text!!, placeholder: 'input your word...', controller: this.controller })
-12. .placeholderColor(Color.Grey)
-13. .placeholderFont({ size: 14, weight: 400 })
-14. .caretColor(Color.Blue)
-15. .width(300)
-16. }
-17. .width('100%')
-18. .height('100%')
-19. .justifyContent(FlexAlign.Center)
-20. }
-21. }
-```
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/rV_bzuxmSL-Jv4TiqC4Kvw/zh-cn_image_0000002706833308.gif)

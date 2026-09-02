@@ -3,24 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: HapModuleInfo
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 已停止维护的接口 > bundle > HapModuleInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:53+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:e48eaaf25b89250fc376163b377a97aaa006dc1e2c5dc504373cd5294becb7c8
+scraped_at: 2026-09-02T15:00:36+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ab1afae490083627b2772f704d09abb8cb44e56c9eb8c1133e888630caaa3779
 ---
 
 Hap模块信息，未做特殊说明的属性，均通过[bundle.getBundleInfo](js-apis-bundle.md#bundlegetbundleinfodeprecated)获取。
 
-说明
+**说明** 
 
-本模块首批接口从API version 7 开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 从API version 9开始，该模块不再维护，建议使用[bundleManager-HapModuleInfo](js-apis-bundlemanager-hapmoduleinfo.md)替代。
 
 ## HapModuleInfo(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[bundleManager-HapModuleInfo](js-apis-bundlemanager-hapmoduleinfo.md#hapmoduleinfo-1)替代。
 

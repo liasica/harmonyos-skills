@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo deploy
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo deploy
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:44:39+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0d78aae513e1d7575c6f529ee01bc565a595dae833033b6089dcd9cd049c29d8
+scraped_at: 2026-09-02T15:00:18+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:d1bd8cb62dfcf140b5cc2bf09a42914c8d0b4da0f44c7ba807e6b8b57eaf4eca
 ---
 
 使用备份文件部署新的ohpm-repo实例。
@@ -16,8 +16,8 @@ content_hash: sha256:0d78aae513e1d7575c6f529ee01bc565a595dae833033b6089dcd9cd049
 
 ## 命令格式
 
-```
-1. ohpm-repo deploy <file_path> [options]
+```screen
+ohpm-repo deploy <file_path> [options]
 ```
 
 ## 功能描述
@@ -39,23 +39,23 @@ content_hash: sha256:0d78aae513e1d7575c6f529ee01bc565a595dae833033b6089dcd9cd049
 
 * windows系统默认值："~/AppData/Roaming/Huawei/ohpm-repo"
 * 其他系统默认值："~/ohpm-repo"
-* 类型： String
+* 类型：String
 
 可以在deploy命令后面配置--deploy\_root <string>参数，未配置将使用默认值。支持相对和绝对路径配置，当配置为相对路径时，以当前命令行工作路径为根目录。
 
 ### logs
 
-* 类型： String
+* 类型：String
 
 可以在deploy命令后面配置--logs <string>参数，指定log目录，优先级高于config.yaml中的配置，支持相对和绝对路径配置，当配置为相对路径时，以当前命令行工作路径为根目录。
 
 ### uplinkCachePath
 
-* 类型： String
+* 类型：String
 
 可以在deploy命令后面配置--uplinkCachePath <string>参数，指定远程包缓存路径，优先级高于config.yaml中的配置，支持相对和绝对路径配置，当配置为相对路径时，以当前命令行工作路径为根目录。
 
-说明
+**说明** 
 
 部署实例成功后，命令行所配置的deploy\_root，logs和uplinkCachePath会写入到运行时配置文件中，可从<deploy\_root>/conf目录中的配置文件config.yaml中查看。
 
@@ -67,7 +67,7 @@ content_hash: sha256:0d78aae513e1d7575c6f529ee01bc565a595dae833033b6089dcd9cd049
 
 在deploy命令后面配置-s或者--skip-db，指定是否跳过对mysql数据库中数据表的初始化；默认会读取ohpm-repo解压目录中的schema.sql文件，对mysql数据库中的表进行初始化。
 
-说明
+**说明** 
 
 1. 在ohpm-repo配置文件config.yaml中，配置项db.type只有为mysql时，此参数才生效。
 
@@ -77,10 +77,10 @@ content_hash: sha256:0d78aae513e1d7575c6f529ee01bc565a595dae833033b6089dcd9cd049
 
 执行以下命令：
 
-```
-1. ohpm-repo deploy D:\ohpm-repo\bin\pack_1695805599689.zip --deploy_root D:\new-ohpm-repo\ohpm-repo-deploy
+```screen
+ohpm-repo deploy D:\ohpm-repo\bin\pack_1695805599689.zip --deploy_root D:\new-ohpm-repo\ohpm-repo-deploy
 ```
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/2kgu3eknT-ytxdEh1Z263g/zh-cn_image_0000002561831199.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/w5UKY8Q3RZqKjv8Kwb4yug/zh-cn_image_0000002701822014.png "点击放大")

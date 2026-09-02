@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-activ
 title: Sigmoid
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 高阶API > 激活函数 > Sigmoid
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:32+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:33fc09cb1a1aa857a453f21e579020324a5fdcdad9166f4cbbcab57fe0d1396a
+scraped_at: 2026-09-02T14:50:38+08:00
+doc_updated_at: 2026-08-18
+content_hash: sha256:20f7d85c28d12105870525ab054f7f8ef4ed9660a00b02850611ef555b736de9
 ---
 
 ## 功能说明
 
 按元素做逻辑回归Sigmoid，计算公式如下，其中PAR表示矢量计算单元一个迭代能够处理的元素个数 ：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/FH-nvyi6SYqJ3cLVkjTueQ/zh-cn_image_0000002589245601.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/lqDTWLvBQmOQlZdA9psqRQ/zh-cn_image_0000002736434503.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/9ihHQZOoSwuOOGQtUPFZUA/zh-cn_image_0000002558765792.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/6MR60JKWRdiyA2y8_XVHKg/zh-cn_image_0000002706835356.png)
 
 ## 函数原型
 
@@ -22,29 +22,29 @@ content_hash: sha256:33fc09cb1a1aa857a453f21e579020324a5fdcdad9166f4cbbcab57fe0d
 
   + 源操作数Tensor全部/部分参与计算
 
-    ```
-    1. template <typename T, bool isReuseSource = false>
-    2. __aicore__ inline void Sigmoid(const LocalTensor<T>& dstTensor, const LocalTensor<T>& srcTensor, const LocalTensor<uint8_t>& sharedTmpBuffer, const uint32_t calCount)
+    ```cpp
+    template <typename T, bool isReuseSource = false>
+    __aicore__ inline void Sigmoid(const LocalTensor<T>& dstTensor, const LocalTensor<T>& srcTensor, const LocalTensor<uint8_t>& sharedTmpBuffer, const uint32_t calCount)
     ```
   + 源操作数Tensor全部参与计算
 
-    ```
-    1. template <typename T, bool isReuseSource = false>
-    2. __aicore__ inline void Sigmoid(const LocalTensor<T>& dstTensor, const LocalTensor<T>& srcTensor, const LocalTensor<uint8_t>& sharedTmpBuffer)
+    ```cpp
+    template <typename T, bool isReuseSource = false>
+    __aicore__ inline void Sigmoid(const LocalTensor<T>& dstTensor, const LocalTensor<T>& srcTensor, const LocalTensor<uint8_t>& sharedTmpBuffer)
     ```
 * 接口框架申请临时空间
 
   + 源操作数Tensor全部/部分参与计算
 
-    ```
-    1. template <typename T, bool isReuseSource = false>
-    2. __aicore__ inline void Sigmoid(const LocalTensor<T>& dstTensor, const LocalTensor<T>& srcTensor, const uint32_t calCount)
+    ```cpp
+    template <typename T, bool isReuseSource = false>
+    __aicore__ inline void Sigmoid(const LocalTensor<T>& dstTensor, const LocalTensor<T>& srcTensor, const uint32_t calCount)
     ```
   + 源操作数Tensor全部参与计算
 
-    ```
-    1. template <typename T, bool isReuseSource = false>
-    2. __aicore__ inline void Sigmoid(const LocalTensor<T>& dstTensor, const LocalTensor<T>& srcTensor)
+    ```cpp
+    template <typename T, bool isReuseSource = false>
+    __aicore__ inline void Sigmoid(const LocalTensor<T>& dstTensor, const LocalTensor<T>& srcTensor)
     ```
 
 由于该接口的内部实现中涉及复杂的数学计算，需要额外的临时空间来存储计算过程中的中间变量。临时空间支持开发者通过sharedTmpBuffer入参传入和接口框架申请两种方式。
@@ -67,9 +67,9 @@ content_hash: sha256:33fc09cb1a1aa857a453f21e579020324a5fdcdad9166f4cbbcab57fe0d
 
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
-| dstTensor | 输出 | 目的操作数。  类型为[LocalTensor](cannkit-localtensor.md)，支持的TPosition为VECIN/VECCALC/VECOUT。 |
-| srcTensor | 输入 | 源操作数。  类型为[LocalTensor](cannkit-localtensor.md)，支持的TPosition为VECIN/VECCALC/VECOUT。 |
-| sharedTmpBuffer | 输入 | 临时缓存。  类型为[LocalTensor](cannkit-localtensor.md)，支持的TPosition为VECIN/VECCALC/VECOUT。  用于Sigmoid内部复杂计算时存储中间变量，由开发者提供。 |
+| dstTensor | 输出 | 目的操作数。  类型为[LocalTensor](cannkit-localtensor.md)，支持的TPosition为VECIN、VECCALC、VECOUT。 |
+| srcTensor | 输入 | 源操作数。  类型为[LocalTensor](cannkit-localtensor.md)，支持的TPosition为VECIN、VECCALC、VECOUT。 |
+| sharedTmpBuffer | 输入 | 临时缓存。  类型为[LocalTensor](cannkit-localtensor.md)，支持的TPosition为VECIN、VECCALC、VECOUT。  用于Sigmoid内部复杂计算时存储中间变量，由开发者提供。 |
 | calCount | 输入 | 实际计算数据元素个数。 |
 
 ## 返回值
@@ -80,6 +80,8 @@ content_hash: sha256:33fc09cb1a1aa857a453f21e579020324a5fdcdad9166f4cbbcab57fe0d
 
 Kirin9020系列处理器
 
+Kirin9030系列处理器
+
 KirinX90系列处理器
 
 ## 约束说明
@@ -89,18 +91,18 @@ KirinX90系列处理器
 
 ## 调用示例
 
-```
-1. AscendC::TPipe pipe;
-2. AscendC::TQue<AscendC::TPosition::VECCALC, 1> tmpQue;
-3. pipe.InitBuffer(tmpQue, 1, bufferSize);  // bufferSize 通过Host侧tiling参数获取
-4. AscendC::LocalTensor<uint8_t> sharedTmpBuffer = tmpQue.AllocTensor<uint8_t>();
-5. // 输入shape信息为1024Bytes, 算子输入的数据类型为half, 实际计算个数为512Bytes
-6. AscendC::Sigmoid(dstLocal, srcLocal, sharedTmpBuffer, 512);
+```cpp
+AscendC::TPipe pipe;
+AscendC::TQue<AscendC::TPosition::VECCALC, 1> tmpQue;
+pipe.InitBuffer(tmpQue, 1, bufferSize); // bufferSize 通过Host侧tiling参数获取
+AscendC::LocalTensor<uint8_t> sharedTmpBuffer = tmpQue.AllocTensor<uint8_t>();
+// 输入shape信息为1024Bytes, 算子输入的数据类型为half, 实际计算个数为512
+AscendC::Sigmoid(dstLocal, srcLocal, sharedTmpBuffer, 512);
 ```
 
 结果示例如下：
 
-```
-1. 输入数据(srcLocal): [1.762616 7.9542747 ... 7.8306146 6.3167496]
-2. 输出数据(dstLocal):  [0.853537 0.996489 ... 0.996027 0.998197]
+```text
+输入数据(srcLocal): [1.762616 7.9542747 ... 7.8306146 6.3167496]
+输出数据(dstLocal):  [0.853537 0.996489 ... 0.996027 0.998197]
 ```

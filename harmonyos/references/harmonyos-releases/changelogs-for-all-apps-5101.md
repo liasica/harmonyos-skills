@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-for-all-apps-5101
 title: OS平台API行为的变更
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.1.0(18) > OS平台能力 > OS平台行为变更说明 > OS平台API行为的变更
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.0(18) > OS平台能力 > OS平台行为变更说明 > OS平台API行为的变更
 category: harmonyos-releases
-scraped_at: 2026-04-29T13:22:45+08:00
-doc_updated_at: 2026-02-09
-content_hash: sha256:d14e1ed4849f9141ed118c6fa4c8dc73fe6493b2451b4a4e9824421f67701c67
+scraped_at: 2026-09-02T14:58:46+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:ad0eb5ede905b83a5728ee7ac359a3a61155c53bfa1785176b74b6b37cb1fe49
 ---
 
 ## ArkTS
@@ -26,37 +26,37 @@ content_hash: sha256:d14e1ed4849f9141ed118c6fa4c8dc73fe6493b2451b4a4e9824421f677
 
 即如果当前模块、依赖的HAR模块、依赖的三方库中混淆配置如下：
 
-```
-1. // current-obfuscation-rules.txt
-2. -enable-toplevel-obfuscation
-3. -keep-global-name
-4. currentVar
+```screen
+// current-obfuscation-rules.txt
+-enable-toplevel-obfuscation
+-keep-global-name
+currentVar
 
-6. // dependencyHar-consumer-rule.txt
-7. -enable-property-obfuscation
-8. -keep-global-name
-9. harVar
-10. -keep-property-name
-11. harProp
+// dependencyHar-consumer-rule.txt
+-enable-property-obfuscation
+-keep-global-name
+harVar
+-keep-property-name
+harProp
 
-13. // dependencyThirdParty-obfuscation.txt
-14. -compact
-15. -keep-property-name
-16. thirdPartyProp
+// dependencyThirdParty-obfuscation.txt
+-compact
+-keep-property-name
+thirdPartyProp
 ```
 
 那么编译当前模块时生效的混淆规则为：
 
-```
-1. -enable-toplevel-obfuscation
-2. -enable-property-obfuscation
-3. -compact
-4. -keep-global-name
-5. currentVar
-6. harVar
-7. -keep-property-name
-8. harProp
-9. thirdPartyProp
+```screen
+-enable-toplevel-obfuscation
+-enable-property-obfuscation
+-compact
+-keep-global-name
+currentVar
+harVar
+-keep-property-name
+harProp
+thirdPartyProp
 ```
 
 变更后:
@@ -65,14 +65,14 @@ content_hash: sha256:d14e1ed4849f9141ed118c6fa4c8dc73fe6493b2451b4a4e9824421f677
 
 即对于上面的例子，编译当前模块时生效的混淆规则为：
 
-```
-1. -enable-toplevel-obfuscation
-2. -keep-global-name
-3. currentVar
-4. harVar
-5. -keep-property-name
-6. harProp
-7. thirdPartyProp
+```screen
+-enable-toplevel-obfuscation
+-keep-global-name
+currentVar
+harVar
+-keep-property-name
+harProp
+thirdPartyProp
 ```
 
 **起始API Level**
@@ -99,7 +99,7 @@ getKeyboardAvoidMode接口实际返回值为字符串，与文档描述返回值
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.1.0(18)时生效。
 
@@ -118,75 +118,75 @@ getKeyboardAvoidMode
 
 如下代码实现：
 
+```screen
+//EntryAbility.ets
+import { AbilityConstant, ConfigurationConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { window } from '@kit.ArkUI';
+import { KeyboardAvoidMode } from '@kit.ArkUI';
+
+const DOMAIN = 0x0000;
+
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onCreate');
+  }
+
+  onDestroy(): void {
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onDestroy');
+  }
+
+  onWindowStageCreate(windowStage: window.WindowStage): void {
+    // Main window is created, set main page for this ability
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+
+    windowStage.loadContent('pages/Index', (err) => {
+      let keyboardAvoidMode = windowStage.getMainWindowSync().getUIContext().getKeyboardAvoidMode();
+      hilog.info(0x0000, '========keyboardAvoidMode========: %{public}s', JSON.stringify(keyboardAvoidMode));
+      if (keyboardAvoidMode === KeyboardAvoidMode.OFFSET) {
+        windowStage.getMainWindowSync().getUIContext().setKeyboardAvoidMode(KeyboardAvoidMode.RESIZE)
+      }
+      let keyboardAvoidMode1 = windowStage.getMainWindowSync().getUIContext().getKeyboardAvoidMode();
+      hilog.info(0x0000, '========keyboardAvoidMode========: %{public}s', JSON.stringify(keyboardAvoidMode1));
+      if (err.code) {
+        hilog.error(DOMAIN, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err));
+        return;
+      }
+      hilog.info(DOMAIN, 'testTag', 'Succeeded in loading the content.');
+    });
+  }
+
+  onWindowStageDestroy(): void {
+    // Main window is destroyed, release UI related resources
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
+  }
+
+  onForeground(): void {
+    // Ability has brought to foreground
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onForeground');
+  }
+
+  onBackground(): void {
+    // Ability has back to background
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onBackground');
+  }
+}
 ```
-1. //EntryAbility.ets
-2. import { AbilityConstant, ConfigurationConstant, UIAbility, Want } from '@kit.AbilityKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { window } from '@kit.ArkUI';
-5. import { KeyboardAvoidMode } from '@kit.ArkUI';
 
-7. const DOMAIN = 0x0000;
-
-9. export default class EntryAbility extends UIAbility {
-10. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-11. this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
-12. hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onCreate');
-13. }
-
-15. onDestroy(): void {
-16. hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onDestroy');
-17. }
-
-19. onWindowStageCreate(windowStage: window.WindowStage): void {
-20. // Main window is created, set main page for this ability
-21. hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
-
-23. windowStage.loadContent('pages/Index', (err) => {
-24. let keyboardAvoidMode = windowStage.getMainWindowSync().getUIContext().getKeyboardAvoidMode();
-25. hilog.info(0x0000, '========keyboardAvoidMode========: %{public}s', JSON.stringify(keyboardAvoidMode));
-26. if (keyboardAvoidMode === KeyboardAvoidMode.OFFSET) {
-27. windowStage.getMainWindowSync().getUIContext().setKeyboardAvoidMode(KeyboardAvoidMode.RESIZE)
-28. }
-29. let keyboardAvoidMode1 = windowStage.getMainWindowSync().getUIContext().getKeyboardAvoidMode();
-30. hilog.info(0x0000, '========keyboardAvoidMode========: %{public}s', JSON.stringify(keyboardAvoidMode1));
-31. if (err.code) {
-32. hilog.error(DOMAIN, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err));
-33. return;
-34. }
-35. hilog.info(DOMAIN, 'testTag', 'Succeeded in loading the content.');
-36. });
-37. }
-
-39. onWindowStageDestroy(): void {
-40. // Main window is destroyed, release UI related resources
-41. hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
-42. }
-
-44. onForeground(): void {
-45. // Ability has brought to foreground
-46. hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onForeground');
-47. }
-
-49. onBackground(): void {
-50. // Ability has back to background
-51. hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onBackground');
-52. }
-53. }
-```
-
-```
-1. //Index.ets
-2. @Entry
-3. @Component
-4. struct KeyboardAvoidExample1 {
-5. build() {
-6. Column() {
-7. Row().height("30%").width("100%").backgroundColor(Color.Gray)
-8. TextArea().width("100%").borderWidth(1)
-9. Text("I can see the bottom of the page").width("100%").textAlign(TextAlign.Center).backgroundColor('rgb(179,217,235)').layoutWeight(1)
-10. }.width('100%').height("100%")
-11. }
-12. }
+```screen
+//Index.ets
+@Entry
+@Component
+struct KeyboardAvoidExample1 {
+  build() {
+    Column() {
+      Row().height("30%").width("100%").backgroundColor(Color.Gray)
+      TextArea().width("100%").borderWidth(1)
+      Text("I can see the bottom of the page").width("100%").textAlign(TextAlign.Center).backgroundColor('rgb(179,217,235)').layoutWeight(1)
+    }.width('100%').height("100%")
+  }
+}
 ```
 
 ### XComponent组件上使用renderFit接口显示效果变更
@@ -199,14 +199,14 @@ getKeyboardAvoidMode
 
 此变更要求涉及XComponent组件上使用renderFit接口的应用进行适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.1.0(18)时生效。
 
 * 变更前：在XComponent组件上使用renderFit接口，使用部分fit模式的显示效果不符合预期。
 * 变更后：XComponent组件上使用renderFit接口后，可以正确显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/GMd5rSfBT3yywGJPLEJsVQ/zh-cn_image_0000002295394565.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/BnI6mJPmSYSouV0mPug54g/zh-cn_image_0000002295394565.png)
 
 **起始API Level**
 
@@ -234,15 +234,15 @@ getKeyboardAvoidMode
 
 举例说明，执行以下用例：
 
-```
-1. @Entry
-2. @Component
-3. struct enableAnalyzer {
-4. build() {
-5. Canvas()
-6. .enableAnalyzer(true)
-7. }
-8. }
+```ts
+@Entry
+@Component
+struct enableAnalyzer {
+  build() {
+    Canvas()
+      .enableAnalyzer(true)
+  }
+}
 ```
 
 变更前：
@@ -253,7 +253,7 @@ getKeyboardAvoidMode
 
 在白名单的内置组件属性与自定义组件重名时，编译拦截报错。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/YcqoScOgSOC4uBnwOnSiVg/zh-cn_image_0000002260714460.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/G-3HBGkHREOOKlFqTe3Gpw/zh-cn_image_0000002260714460.png)
 
 **起始API Level**
 
@@ -271,30 +271,30 @@ ArkUI 内置组件属性API。
 
 自定义组件enableAnalyzer和Canvas的enableAnalyzer重名。
 
-```
-1. @Entry
-2. @Component
-3. struct enableAnalyzer {
-4. build() {
-5. Canvas()
-6. .enableAnalyzer(true)
-7. }
-8. }
+```ts
+@Entry
+@Component
+struct enableAnalyzer {
+  build() {
+    Canvas()
+      .enableAnalyzer(true)
+  }
+}
 ```
 
 修改后：
 
 将自定义组件名改为任意不和内置组件重名的名称，如EnableAnalyzerComp。
 
-```
-1. @Entry
-2. @Component
-3. struct EnableAnalyzerComp {
-4. build() {
-5. Canvas()
-6. .enableAnalyzer(true)
-7. }
-8. }
+```ts
+@Entry
+@Component
+struct EnableAnalyzerComp {
+  build() {
+    Canvas()
+      .enableAnalyzer(true)
+  }
+}
 ```
 
 ### CanvasRenderingContext2D方法传NaN和Infinity值后执行的其他绘制方法由不绘制变更为正常绘制
@@ -307,7 +307,7 @@ CanvasRenderingContext2D绘制路径时，若存在方法的number类型参数�
 
 此变更不涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.1.0(18)时生效。
 
@@ -365,7 +365,7 @@ Path2D
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.1.0(18)时生效。
 
@@ -393,35 +393,35 @@ CanvasRenderingContext2D的drawImage接口
 
 示例:
 
-```
-1. import { image } from '@kit.ImageKit'
+```ts
+import { image } from '@kit.ImageKit'
 
-3. @Entry
-4. @Component
-5. struct Demo {
-6. private settings: RenderingContextSettings = new RenderingContextSettings(true)
-7. private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings)
+@Entry
+@Component
+struct Demo {
+  private settings: RenderingContextSettings = new RenderingContextSettings(true)
+  private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings)
 
-9. build() {
-10. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-11. Canvas(this.context)
-12. .width('100%')
-13. .height('100%')
-14. .onReady(() => {
-15. let context = getContext(this)
-16. let imageSourceApi = image.createImageSource(context.filesDir + "/view.jpg")
-17. let pixelmap = imageSourceApi.createPixelMapSync();
-18. let imageInfo = pixelmap.getImageInfoSync()
-19. let width = px2vp(imageInfo.size.width)
-20. let height = px2vp(imageInfo.size.height)
-21. this.context.drawImage(pixelmap, 0, 0, width, height, 50, 50, 250, 200)
-22. this.context.drawImage(pixelmap, 0, 0, imageInfo.size.width, imageInfo.size.height, 50, 300, 250, 200)
-23. })
-24. }
-25. .width('100%')
-26. .height('100%')
-27. }
-28. }
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Canvas(this.context)
+        .width('100%')
+        .height('100%')
+        .onReady(() => {
+          let context = getContext(this)
+          let imageSourceApi = image.createImageSource(context.filesDir + "/view.jpg")
+          let pixelmap = imageSourceApi.createPixelMapSync();
+          let imageInfo = pixelmap.getImageInfoSync()
+          let width = px2vp(imageInfo.size.width)
+          let height = px2vp(imageInfo.size.height)
+          this.context.drawImage(pixelmap, 0, 0, width, height, 50, 50, 250, 200)
+          this.context.drawImage(pixelmap, 0, 0, imageInfo.size.width, imageInfo.size.height, 50, 300, 250, 200)
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ### 修复blendMode接口离屏模式会影响组件设置的不透明度的问题
@@ -434,7 +434,7 @@ blendMode离屏模式与不透明度属性（opacity）同时使用时，组件�
 
 此变更涉及应用适配，仅针对组件设置了blendMode离屏模式且具有不透明度的场景。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.1.0(18)时生效。
 
@@ -460,26 +460,26 @@ blendMode
 
 如果开发者希望在同时使用blendMode离屏模式和opacity接口时保持组件的不透明度不变，则需要手动调整原本设定的不透明度。例如，在下方示例代码中，在 Stack()上额外设置.opacity(0.5)，以确保实际的透明度为 0.5 \* 0.5。
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. build() {
-5. Column() {
-6. Stack() {
-7. }
-8. .height('50%')
-9. .width('50%')
-10. .backgroundColor(0x0A59F7)
-11. .blendMode(BlendMode.SRC_OVER, BlendApplyType.OFFSCREEN)
-12. .opacity(0.5)  // 变更后需要额外设置0.5的不透明度保证实际透明度为 0.5*0.5
-13. }
-14. .height('100%')
-15. .width('100%')
-16. .backgroundColor(0xFFFFFF)
-17. .opacity(0.5)
-18. }
-19. }
+```ts
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+       Stack() {
+       }
+       .height('50%')
+       .width('50%')
+       .backgroundColor(0x0A59F7)
+       .blendMode(BlendMode.SRC_OVER, BlendApplyType.OFFSCREEN)
+       .opacity(0.5)  // 变更后需要额外设置0.5的不透明度保证实际透明度为 0.5*0.5
+    }
+    .height('100%')
+    .width('100%')
+    .backgroundColor(0xFFFFFF)
+    .opacity(0.5)
+  }
+}
 ```
 
 ### XComponent设置为Texture模式使用blendMode接口的行为由不生效变更为正常生效
@@ -492,7 +492,7 @@ blendMode
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.1.0(18)时生效。
 
@@ -514,56 +514,56 @@ common.d.ts文件的blendMode接口。
 
 当应用使用XComponent组件并设置为Texture模式（type设置为XComponentType.TEXTURE）时，使用blendMode接口，可能会出现显示效果变更前后不一致的情况，以下是使用场景示意：
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. private contextOne: Record<string, () => void> = {};
-5. private contextTwo: Record<string, () => void> = {};
+```ts
+@Entry
+@Component
+struct Index {
+  private contextOne: Record<string, () => void> = {};
+  private contextTwo: Record<string, () => void> = {};
 
-7. build() {
-8. Column() {
-9. Stack() {
-10. XComponent({
-11. id: 'circle',
-12. type: XComponentType.TEXTURE,
-13. libraryname: 'nativerender'
-14. }).height(50)
-15. .backgroundColor(Color.Transparent)
-16. .onLoad((contextOne?: object | Record<string, () => void>) => {
-17. if (contextOne) {
-18. this.contextOne = contextOne as Record<string, () => void>;
-19. }
-20. })
+  build() {
+    Column() {
+      Stack() {
+        XComponent({
+          id: 'circle',
+          type: XComponentType.TEXTURE,
+          libraryname: 'nativerender'
+        }).height(50)
+          .backgroundColor(Color.Transparent)
+          .onLoad((contextOne?: object | Record<string, () => void>) => {
+            if (contextOne) {
+              this.contextOne = contextOne as Record<string, () => void>;
+            }
+          })
 
-22. XComponent({
-23. id: 'rect',
-24. type: XComponentType.TEXTURE,
-25. libraryname: 'nativerender'
-26. }).height(50)
-27. .backgroundColor(Color.Transparent)
-28. .onLoad((contextTwo?: object | Record<string, () => void>) => {
-29. if (contextTwo) {
-30. this.contextTwo = contextTwo as Record<string, () => void>;
-31. }
-32. })
-33. .blendMode(BlendMode.XOR) // 变更后生效，若需保持变更前行为，可使用BlendMode.None入参
-34. }
-35. .height(50)
-36. .onClick(() => {
-37. if (this.contextOne) {
-38. this.contextOne.drawCircle();
-39. }
-40. if (this.contextTwo) {
-41. this.contextTwo.drawRectangle();
-42. }
-43. })
-44. }
-45. .blendMode(BlendMode.SRC_OVER, BlendApplyType.OFFSCREEN)
-46. .width('100%')
-47. .height('100%')
-48. }
-49. }
+        XComponent({
+          id: 'rect',
+          type: XComponentType.TEXTURE,
+          libraryname: 'nativerender'
+        }).height(50)
+          .backgroundColor(Color.Transparent)
+          .onLoad((contextTwo?: object | Record<string, () => void>) => {
+            if (contextTwo) {
+              this.contextTwo = contextTwo as Record<string, () => void>;
+            }
+          })
+          .blendMode(BlendMode.XOR) // 变更后生效，若需保持变更前行为，可使用BlendMode.None入参
+      }
+      .height(50)
+      .onClick(() => {
+        if (this.contextOne) {
+          this.contextOne.drawCircle();
+        }
+        if (this.contextTwo) {
+          this.contextTwo.drawRectangle();
+        }
+      })
+    }
+    .blendMode(BlendMode.SRC_OVER, BlendApplyType.OFFSCREEN)
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 | 混合类型 | 变更前 | 变更后 |
@@ -609,7 +609,7 @@ List、Grid、Scroll和WaterFlow组件默认不支持点击状态栏回到顶部
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.1.0(18)时生效。
 
@@ -640,7 +640,7 @@ List、Grid、Scroll和WaterFlow组件默认不支持点击状态栏回到顶部
 
 此变更涉及应用适配（仅针对Router和Navigation页面默认的退出动画场景）。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.1.0(18)时生效。
 
@@ -669,7 +669,7 @@ List、Grid、Scroll和WaterFlow组件默认不支持点击状态栏回到顶部
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.1.0(18)时生效。
 
@@ -679,71 +679,71 @@ List、Grid、Scroll和WaterFlow组件默认不支持点击状态栏回到顶部
 
 举例说明，执行以下用例：
 
-```
-1. @Entry
-2. @ComponentV2
-3. struct RepeatVirtualScrollDemo {
-4. @Local simpleList: Array<string> = [];
-5. @Local bgColor: Color = Color.Pink;
+```ts
+@Entry
+@ComponentV2
+struct RepeatVirtualScrollDemo {
+  @Local simpleList: Array<string> = [];
+  @Local bgColor: Color = Color.Pink;
 
-7. aboutToAppear(): void {
-8. for (let i = 0; i < 7; i++) {
-9. this.simpleList.push(`item${i}`);
-10. }
-11. }
+  aboutToAppear(): void {
+    for (let i = 0; i < 7; i++) {
+      this.simpleList.push(`item${i}`);
+    }
+  }
 
-13. build() {
-14. Column() {
-15. Row() {
-16. Button(`Reduce length to 5`)
-17. .onClick(() => {
-18. this.simpleList = this.simpleList.slice(0, 5);
-19. })
-20. Button(`Change bgColor`)
-21. .onClick(() => {
-22. this.bgColor = this.bgColor == Color.Pink ? Color.Blue : Color.Pink;
-23. })
-24. }
+  build() {
+    Column() {
+      Row() {
+        Button(`Reduce length to 5`)
+          .onClick(() => {
+            this.simpleList = this.simpleList.slice(0, 5);
+          })
+        Button(`Change bgColor`)
+          .onClick(() => {
+            this.bgColor = this.bgColor == Color.Pink ? Color.Blue : Color.Pink;
+          })
+      }
 
-26. List() {
-27. Repeat(this.simpleList)
-28. .each((obj: RepeatItem<string>) => {
-29. })
-30. .key((item: string, index: number) => item)
-31. .virtualScroll({ totalCount: this.simpleList.length })
-32. .templateId(() => `a`)
-33. .template(`a`, (ri) => {
-34. ChildComponent({
-35. message: ri.item,
-36. bgColor: this.bgColor
-37. })
-38. }, { cachedCount: 2 })
-39. }
-40. .cachedCount(0)
-41. .height(500)
-42. }
-43. .height(`100%`)
-44. }
-45. }
+      List() {
+        Repeat(this.simpleList)
+          .each((obj: RepeatItem<string>) => {
+          })
+          .key((item: string, index: number) => item)
+          .virtualScroll({ totalCount: this.simpleList.length })
+          .templateId(() => `a`)
+          .template(`a`, (ri) => {
+            ChildComponent({
+              message: ri.item,
+              bgColor: this.bgColor
+            })
+          }, { cachedCount: 2 })
+      }
+      .cachedCount(0)
+      .height(500)
+    }
+    .height(`100%`)
+  }
+}
 
-47. @ComponentV2({ freezeWhenInactive: true })
-48. struct ChildComponent {
-49. @Param @Require message: string;
-50. @Param @Require bgColor: Color;
-51. // 支持后二级缓存中的组件不刷新，不会打印相应日志
-52. @Monitor(`bgColor`)
-53. onMessageChange(monitor: IMonitor) {
-54. monitor.dirty.forEach((path: string) => {
-55. console.log(`repeat---${path} change from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`)
-56. })
-57. }
+@ComponentV2({ freezeWhenInactive: true })
+struct ChildComponent {
+  @Param @Require message: string;
+  @Param @Require bgColor: Color;
+  // 支持后二级缓存中的组件不刷新，不会打印相应日志
+  @Monitor(`bgColor`)
+  onMessageChange(monitor: IMonitor) {
+    monitor.dirty.forEach((path: string) => {
+      console.log(`repeat---${path} change from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`)
+    })
+  }
 
-59. build() {
-60. Text(`[a]: ${this.message}`)
-61. .fontSize(50)
-62. .backgroundColor(this.bgColor)
-63. }
-64. }
+  build() {
+    Text(`[a]: ${this.message}`)
+      .fontSize(50)
+      .backgroundColor(this.bgColor)
+  }
+}
 ```
 
 **起始API Level**
@@ -758,26 +758,26 @@ freezeWhenInactive。
 
 展示效果不变，组件冻结生效后，@Monitor/@Watch将不再执行。如果需要刷新缓存中的数据，可以关闭组件冻结。
 
-```
-1. // 关闭组件冻结，freezeWhenInactive设置为false
-2. @ComponentV2({ freezeWhenInactive: false })
-3. struct ChildComponent {
-4. @Param @Require message: string;
-5. @Param @Require bgColor: Color;
-6. // 关闭冻结后，二级缓存中的组件会刷新，并打印相应日志
-7. @Monitor(`bgColor`)
-8. onMessageChange(monitor: IMonitor) {
-9. monitor.dirty.forEach((path: string) => {
-10. console.log(`repeat---${path} change from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`)
-11. })
-12. }
+```ts
+// 关闭组件冻结，freezeWhenInactive设置为false
+@ComponentV2({ freezeWhenInactive: false })
+struct ChildComponent {
+  @Param @Require message: string;
+  @Param @Require bgColor: Color;
+  // 关闭冻结后，二级缓存中的组件会刷新，并打印相应日志
+  @Monitor(`bgColor`)
+  onMessageChange(monitor: IMonitor) {
+    monitor.dirty.forEach((path: string) => {
+      console.log(`repeat---${path} change from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`)
+    })
+  }
 
-14. build() {
-15. Text(`[a]: ${this.message}`)
-16. .fontSize(50)
-17. .backgroundColor(this.bgColor)
-18. }
-19. }
+  build() {
+    Text(`[a]: ${this.message}`)
+      .fontSize(50)
+      .backgroundColor(this.bgColor)
+  }
+}
 ```
 
 示例中仅展示了Repeat VirtualScroll的复用场景，其他场景如下：
@@ -819,7 +819,7 @@ freezeWhenInactive。
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.1.0(18)时生效。
 
@@ -853,20 +853,20 @@ ArkTS API
 
 如应用对USB音频设备有特殊处理需求，现在不仅需要处理USB\_HEADSET类型的音频设备，还需将USB\_DEVICE类型也纳入到处理范围内。
 
-```
-1. // 针对usb音频设备做特殊处理
-2. if (devicetype == DeviceType.USB_HEADSET) {
-3. // do sth
-4. }
+```ts
+// 针对usb音频设备做特殊处理
+if (devicetype == DeviceType.USB_HEADSET) {
+  // do sth
+}
 ```
 
 变更后：如应用对USB音频设备有特殊处理需求，不仅要考虑USB\_HEADSET类型，也要考虑USB\_DEVICE类型的音频设备。
 
-```
-1. // 针对usb音频设备做特殊处理
-2. if (devicetype == DeviceType.USB_HEADSET || devicetype == DeviceType.USB_DEVICE) {
-3. // do sth
-4. }
+```ts
+// 针对usb音频设备做特殊处理
+if (devicetype == DeviceType.USB_HEADSET || devicetype == DeviceType.USB_DEVICE) {
+  // do sth
+}
 ```
 
 C API
@@ -875,20 +875,20 @@ C API
 
 变更前：如应用对USB音频设备有特殊处理需求，仅处理AUDIO\_DEVICE\_USB\_HEADSET类型的音频设备即可。
 
-```
-1. // 针对usb音频设备做特殊处理
-2. if (devicetype == OH_AudioDevice_Type.AUDIO_DEVICE_USB_HEADSET) {
-3. // do sth
-4. }
+```cpp
+// 针对usb音频设备做特殊处理
+if (devicetype == OH_AudioDevice_Type.AUDIO_DEVICE_USB_HEADSET) {
+  // do sth
+}
 ```
 
 变更后：如应用对USB音频设备有特殊处理需求，不仅要考虑AUDIO\_DEVICE\_USB\_HEADSET类型，也要考虑AUDIO\_DEVICE\_USB\_DEVICE类型的音频设备。
 
-```
-1. // 针对usb音频设备做特殊处理
-2. if (devicetype == OH_AudioDevice_Type.AUDIO_DEVICE_USB_HEADSET || devicetype == OH_AudioDevice_Type.AUDIO_DEVICE_USB_DEVICE) {
-3. // do sth
-4. }
+```cpp
+// 针对usb音频设备做特殊处理
+if (devicetype == OH_AudioDevice_Type.AUDIO_DEVICE_USB_HEADSET || devicetype == OH_AudioDevice_Type.AUDIO_DEVICE_USB_DEVICE) {
+  // do sth
+}
 ```
 
 ## Basic Services Kit
@@ -974,7 +974,7 @@ Device Security Kit优化错误码类型，新增更明细的错误码。
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.1.0(18)时生效。
 
@@ -995,21 +995,21 @@ Device Security Kit优化错误码类型，新增更明细的错误码。
 
 调用接口需要try...catch捕获异常，获取到异常时可以判断对应错误码信息，做对应的处理。
 
-```
-1. const TAG = "SafetyDetectJsTest";
-2. try {
-3. // 调用URL检测接口或者系统完整性检测接口
-4. } catch (err) {
-5. let e: BusinessError = err as BusinessError;
-6. hilog.error(0x0000, TAG, 'CheckSysIntegrity failed: %{public}d %{public}s', e.code, e.message);
-7. // 对不同错误码做处理：
-8. // 如果返回801，则该设备不支持当前API，不应再次调用该接口。
-9. // 如果返回401，则检查参数规格是否与资料规格一致。
-10. // 如果返回1010800005，则当前请求超出请求次数，过一天可恢复使用，此时不应重试。
-11. // 如果返回1010800006 ，则可延迟1秒后重试
-12. // 如果返回1010800008 ，则延迟5秒重试，如果重试再次失败，则每次以指数递增间隔重试。
-13. // 如果返回1010800007，则可重试处理。
-14. }
+```ts
+const TAG = "SafetyDetectJsTest";
+try {
+   // 调用URL检测接口或者系统完整性检测接口
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
+  hilog.error(0x0000, TAG, 'CheckSysIntegrity failed: %{public}d %{public}s', e.code, e.message);
+  // 对不同错误码做处理：
+  // 如果返回801，则该设备不支持当前API，不应再次调用该接口。
+  // 如果返回401，则检查参数规格是否与资料规格一致。
+  // 如果返回1010800005，则当前请求超出请求次数，过一天可恢复使用，此时不应重试。
+  // 如果返回1010800006 ，则可延迟1秒后重试
+  // 如果返回1010800008 ，则延迟5秒重试，如果重试再次失败，则每次以指数递增间隔重试。
+  // 如果返回1010800007，则可重试处理。
+}
 ```
 
 ## Form Kit
@@ -1098,31 +1098,31 @@ Device Security Kit优化错误码类型，新增更明细的错误码。
 
 * 原格式
 
-  ```
-  1. S|PID|H:name|taskId
+  ```text
+  S|PID|H:name|taskId
   ```
 * 新增args1和args2字段后格式
 
-  ```
-  1. S|PID|H:name|taskId|args1|args2
+  ```text
+  S|PID|H:name|taskId|args1|args2
   ```
 
   **特殊场景说明** ：因为后续新增字段并不是所有场景都会使用，所以实际字段值可能为空字符串，当有字段为空字符串时，trace格式变化如下所示：
 
   + args1为空字符串，args2不为空字符串
 
-    ```
-    1. S|PID|H:name|taskId||args2
+    ```text
+    S|PID|H:name|taskId||args2
     ```
   + args1不为空字符串，args2为空字符串
 
-    ```
-    1. S|PID|H:name|taskId|args1
+    ```text
+    S|PID|H:name|taskId|args1
     ```
   + args1和args2均为空字符串
 
-    ```
-    1. S|PID|H:name|taskId
+    ```text
+    S|PID|H:name|taskId
     ```
 
 详细的用户态trace格式说明参考文档[hitracemeter-view](../harmonyos-guides/hitracemeter-view.md)。
@@ -1163,7 +1163,7 @@ Device Security Kit优化错误码类型，新增更明细的错误码。
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.1.0(18)时生效。
 
@@ -1183,27 +1183,27 @@ fetch接口
 
 调用接口需要try ctach异常，获取到异常时可以判断对应错误码信息，如果是1007900986错误码，代表当前不满足拉起蜂窝条件（比如用户开启飞行模式、去激活SIM卡等场景）。
 
-```
-1. const session = rcp.createSession();
-2. let request = new rcp.Request("http://example.com/fetch"); // 请在使用中将其替换为实际的网址。
-3. request.configuration = {
-4. transfer: {
-5. pathPreference: 'cellular', // 系统自动决策是否使用蜂窝网络发送网络请求。
-6. }
-7. }
+```screen
+const session = rcp.createSession();
+let request = new rcp.Request("http://example.com/fetch"); // 请在使用中将其替换为实际的网址。
+request.configuration = {
+  transfer: {
+    pathPreference: 'cellular', // 系统自动决策是否使用蜂窝网络发送网络请求。
+  }
+}
 
-9. try {
-10. let response = await session.fetch(request);
-11. session.close();
-12. } catch (err) {
-13. let e: BusinessError = err as BusinessError;
-14. console.error("testRcpCellular err: " + JSON.stringify(e));
-15. session.close();
-16. // 对不同错误码做处理：
-17. // 如果返回201，可能是没有申请ohos.permission.GET_NETWORK_INFO权限。
-18. // 如果返回1007900986，代表该请求适合使用蜂窝网络，但未正确打开或配置蜂窝网络，可以提示用户进行检查。
-19. // 其他可能的网络错误。
-20. }
+try {
+  let response = await session.fetch(request);
+  session.close();
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
+  console.error("testRcpCellular err: " + JSON.stringify(e));
+  session.close();
+  // 对不同错误码做处理：
+  // 如果返回201，可能是没有申请ohos.permission.GET_NETWORK_INFO权限。
+  // 如果返回1007900986，代表该请求适合使用蜂窝网络，但未正确打开或配置蜂窝网络，可以提示用户进行检查。
+  // 其他可能的网络错误。
+}
 ```
 
 ## NDK开发
@@ -1244,7 +1244,7 @@ OH\_JSVM\_RunScript：无JIT权限执行wasm相关脚本会失败，在特定场
 
 新上架应用若期望使用JIT权限，需向应用市场（AppGallery Connect，简称AGC）提交ohos.permission.kernel.ALLOW\_EXECUTABLE\_FORT\_MEMORY受限ACL权限的申请， 并在附带材料中说明使用JSVM引擎JIT功能的具体场景。在权限审批通过后， 开发者可从AGC网站上更新profile证书， 并对应用重新打包上架。权限申请及适配流程可参考《[申请使用受限权限](../harmonyos-guides/declare-permissions-in-acl.md)》指导完成。
 
-说明
+**说明** 
 
 适配注意事项：
 

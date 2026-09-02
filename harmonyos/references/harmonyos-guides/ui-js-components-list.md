@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: list开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 容器组件 > list开发指导
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:45+08:00
+scraped_at: 2026-09-02T14:59:21+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:d05af6ba47a5cfcc506302162504001c1afb3df6d6e55592a8923afb6f0cfec9
+content_hash: sha256:daf6b442eb802810d7ef1ac9d0abbcd72b1c6c4a9c6536d3e411bebc00d64742
 ---
 
 list是用来显示列表的组件，包含一系列相同宽度的列表项，适合连续、多行地呈现同类数据。具体用法请参考[list API](../harmonyos-references/js-components-container-list.md)。
@@ -14,37 +14,37 @@ list是用来显示列表的组件，包含一系列相同宽度的列表项，�
 
 在pages/index目录下的hml文件中创建一个list组件。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <list>
-4. <list-item class="listItem"></list-item>
-5. <list-item class="listItem"></list-item>
-6. <list-item class="listItem"></list-item>
-7. <list-item class="listItem"></list-item>
-8. </list>
-9. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width:100%;
-4. height:100%;
-5. flex-direction: column;
-6. align-items: center;
-7. background-color: #F1F3F5;
-8. }
-9. .listItem{
-10. height: 20%;
-11. background-color:#d2e0e0;
-12. margin-top: 20px;
-13. }
+```html
+<!-- xxx.hml -->
+<div class="container"> 
+ <list>    
+   <list-item class="listItem"></list-item>
+   <list-item class="listItem"></list-item>
+   <list-item class="listItem"></list-item>
+   <list-item class="listItem"></list-item>
+ </list>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/EtJtINm6TnqBwmypQqjrDA/zh-cn_image_0000002558764576.png)
+```css
+/* xxx.css */
+.container {
+  width:100%;
+  height:100%;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F1F3F5;
+}
+.listItem{
+  height: 20%;
+  background-color:#d2e0e0;
+  margin-top: 20px;
+}
+```
 
-说明
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/ZRpaoDRcTMyWgnT-Xm7qGQ/zh-cn_image_0000002736433071.png)
+
+**说明** 
 
 * <list-item-group>是<list>的子组件，实现列表分组功能，不能再嵌套<list>，可以嵌套<list-item>。
 * <list-item>是<list>的子组件，展示列表的具体项。
@@ -53,69 +53,69 @@ list是用来显示列表的组件，包含一系列相同宽度的列表项，�
 
 设置scrollbar属性为on即可在屏幕右侧生成滚动条，实现长列表或者屏幕滚动等效果。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <list class="listCss" scrollbar="on" >
-4. <list-item class="listItem"></list-item>
-5. <list-item class="listItem"></list-item>
-6. <list-item class="listItem"></list-item>
-7. <list-item class="listItem"></list-item>
-8. <list-item class="listItem"></list-item>
-9. <list-item class="listItem"></list-item>
-10. </list>
-11. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. flex-direction: column;
-4. background-color: #F1F3F5;
-5. }
-6. .listItem{
-7. height: 20%;
-8. background-color:#d2e0e0;
-9. margin-top: 20px;
-10. }
-11. .listCss{
-12. height: 100%;
-13. scrollbar-color: #8e8b8b;
-14. scrollbar-width: 50px;
-15. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <list class="listCss" scrollbar="on" >
+    <list-item class="listItem"></list-item>
+    <list-item class="listItem"></list-item>
+    <list-item class="listItem"></list-item>
+    <list-item class="listItem"></list-item>
+    <list-item class="listItem"></list-item>
+    <list-item class="listItem"></list-item>
+ </list>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/3Qi1qrTbQxOZ35s1erEZVg/zh-cn_image_0000002558604920.gif)
+```css
+/* xxx.css */
+.container {
+  flex-direction: column;
+  background-color: #F1F3F5;
+}
+.listItem{
+  height: 20%;
+  background-color:#d2e0e0;
+  margin-top: 20px;
+}
+.listCss{
+  height: 100%;
+  scrollbar-color: #8e8b8b;
+  scrollbar-width: 50px;
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/_Il4O5noRTShrtyxGQ2_ww/zh-cn_image_0000002706833916.gif)
 
 ## 添加侧边索引栏
 
 设置indexer属性为自定义索引时，索引栏会显示在列表右边界处，indexer属性设置为true，默认为字母索引表。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <list class="listCss"  indexer="{{['#','1','2','3','4','5','6','7','8']}}" >
-4. <list-item class="listItem"  section="#" ></list-item>
-5. </list>
-6. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container{
-3. flex-direction: column;
-4. background-color: #F1F3F5;
-5. }
-6. .listCss{
-7. height: 100%;
-8. flex-direction: column;
-9. columns: 1
-10. }
+```html
+<!-- xxx.hml -->
+<div class="container">   
+  <list class="listCss"  indexer="{{['#','1','2','3','4','5','6','7','8']}}" >  
+    <list-item class="listItem"  section="#" ></list-item>   
+  </list>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/MsMS8D0FRXCmGFb_qMiUcg/zh-cn_image_0000002589324445.png)
+```css
+/* xxx.css */
+.container{
+  flex-direction: column;
+  background-color: #F1F3F5;
+ }
+.listCss{
+  height: 100%;
+  flex-direction: column;
+  columns: 1
+}
+```
 
-说明
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/pLrRQ1D2QEeOx1USxmG1rg/zh-cn_image_0000002736313023.png)
+
+**说明** 
 
 * indexer属性生效需要flex-direction属性配合设置为column，且columns属性设置为1。
 * indexer可以自定义索引表，自定义时"#"必须要存在。
@@ -124,80 +124,80 @@ list是用来显示列表的组件，包含一系列相同宽度的列表项，�
 
 为list组件添加groupcollapse和groupexpand事件实现列表的折叠和展开。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="doc-page">
-3. <list style="width: 100%;" id="mylist">
-4. <list-item-group for="listgroup in list" id="{{listgroup.value}}" ongroupcollapse="collapse" ongroupexpand="expand">
-5. <list-item type="item" style="background-color:#FFF0F5;height:95px;">
-6. <div class="item-group-child">
-7. <text>One---{{listgroup.value}}</text>
-8. </div>
-9. </list-item>
-10. <list-item type="item" style="background-color: #87CEFA;height:145px;" primary="true">
-11. <div class="item-group-child">
-12. <text>Primary---{{listgroup.value}}</text>
-13. </div>
-14. </list-item>
-15. </list-item-group>
-16. </list>
-17. </div>
-```
-
-```
-1. /* xxx.css */
-2. .doc-page {
-3. flex-direction: column;
-4. background-color: #F1F3F5;
-5. }
-6. .list-item {
-7. margin-top:30px;
-8. }
-9. .top-list-item {
-10. width:100%;
-11. background-color:#D4F2E7;
-12. }
-13. .item-group-child {
-14. justify-content: center;
-15. align-items: center;
-16. width:100%;
-17. }
+```html
+<!-- xxx.hml -->
+<div class="doc-page">
+  <list style="width: 100%;" id="mylist">
+    <list-item-group for="listgroup in list" id="{{listgroup.value}}" ongroupcollapse="collapse" ongroupexpand="expand">
+      <list-item type="item" style="background-color:#FFF0F5;height:95px;">
+        <div class="item-group-child">
+          <text>One---{{listgroup.value}}</text>
+        </div>
+      </list-item>
+      <list-item type="item" style="background-color: #87CEFA;height:145px;" primary="true">
+        <div class="item-group-child">
+          <text>Primary---{{listgroup.value}}</text>
+        </div>
+      </list-item>
+    </list-item-group>
+  </list>
+</div>
 ```
 
-```
-1. // xxx.js
-2. import promptAction from '@ohos.promptAction';
-3. export default {
-4. data: {
-5. direction: 'column',
-6. list: []
-7. },
-8. onInit() {
-9. this.list = []
-10. this.listAdd = []
-11. for (var i = 1; i <= 2; i++) {
-12. var dataItem = {
-13. value: 'GROUP' + i,
-14. };
-15. this.list.push(dataItem);
-16. }
-17. },
-18. collapse(e) {
-19. promptAction.showToast({
-20. message: 'Close ' + e.groupid
-21. })
-22. },
-23. expand(e) {
-24. promptAction.showToast({
-25. message: 'Open ' + e.groupid
-26. })
-27. }
-28. }
+```css
+/* xxx.css */
+.doc-page {
+  flex-direction: column;
+  background-color: #F1F3F5;
+}
+.list-item {
+  margin-top:30px;
+}
+.top-list-item {
+  width:100%;
+  background-color:#D4F2E7;
+}
+.item-group-child {
+  justify-content: center;
+  align-items: center;
+  width:100%;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/nKjwNLksRlmDpSptT750og/zh-cn_image_0000002589244385.gif)
+```js
+// xxx.js
+import promptAction from '@ohos.promptAction';
+export default {
+  data: {
+    direction: 'column',
+    list: []
+  },
+  onInit() {
+    this.list = []
+    this.listAdd = []
+    for (var i = 1; i <= 2; i++) {
+      var dataItem = {
+        value: 'GROUP' + i,
+      };
+        this.list.push(dataItem);
+    }
+  },
+  collapse(e) {
+    promptAction.showToast({
+      message: 'Close ' + e.groupid
+    })
+  },
+  expand(e) {
+    promptAction.showToast({
+    message: 'Open ' + e.groupid
+    })
+  }
+}
+```
 
-说明
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/7cAFhKKsSJ-ENL9W5S2iTA/zh-cn_image_0000002706673982.gif)
+
+**说明** 
 
 * groupcollapse和groupexpand事件仅支持list-item-group组件使用。
 
@@ -205,105 +205,105 @@ list是用来显示列表的组件，包含一系列相同宽度的列表项，�
 
 在本场景中，开发者可以根据字母索引表查找对应联系人。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="doc-page">
-3. <text style="font-size: 35px; font-weight: 500; text-align: center; margin-top: 20px; margin-bottom: 20px;">
-4. <span>Contacts</span>
-5. </text>
-6. <list class="list" indexer="true">
-7. <list-item class="item" for="{{namelist}}" type="{{$item.section}}" section="{{$item.section}}">
-8. <div class="container">
-9. <div class="in-container">
-10. <text class="name">{{$item.name}}</text>
-11. <text class="number">18888888888</text>
-12. </div>
-13. </div>
-14. </list-item>
-15. <list-item type="end" class="item">
-16. <div style="align-items:center;justify-content:center;width:750px;">
-17. <text style="text-align: center;">Total: 10</text>
-18. </div>
-19. </list-item>
-20. </list>
-21. </div>
-```
-
-```
-1. /* xxx.css */
-2. .doc-page {
-3. width: 100%;
-4. height: 100%;
-5. flex-direction: column;
-6. background-color: #F1F3F5;
-7. }
-8. .list {
-9. width: 100%;
-10. height: 90%;
-11. flex-grow: 1;
-12. }
-13. .item {
-14. height: 120px;
-15. padding-left: 10%;
-16. border-top: 1px solid #dcdcdc;
-17. }
-18. .name {
-19. color: #000000;
-20. font-size: 39px;
-21. }
-22. .number {
-23. color: black;
-24. font-size: 25px;
-25. }
-26. .container {
-27. flex-direction: row;
-28. align-items: center;
-29. }
-30. .in-container {
-31. flex-direction: column;
-32. justify-content: space-around;
-33. }
+```html
+<!-- xxx.hml -->
+<div class="doc-page"> 
+  <text style="font-size: 35px; font-weight: 500; text-align: center; margin-top: 20px; margin-bottom: 20px;"> 
+      <span>Contacts</span> 
+  </text> 
+  <list class="list" indexer="true"> 
+    <list-item class="item" for="{{namelist}}" type="{{$item.section}}" section="{{$item.section}}"> 
+      <div class="container"> 
+        <div class="in-container"> 
+          <text class="name">{{$item.name}}</text> 
+          <text class="number">18888888888</text> 
+        </div> 
+      </div> 
+    </list-item> 
+    <list-item type="end" class="item"> 
+      <div style="align-items:center;justify-content:center;width:750px;"> 
+        <text style="text-align: center;">Total: 10</text> 
+      </div> 
+    </list-item> 
+  </list> 
+</div>
 ```
 
-```
-1. // xxx.js
-2. export default {
-3. data: {
-4. namelist:[{
-5. name: 'Zoey',
-6. section:'Z'
-7. },{
-8. name: 'Quin',
-9. section:'Q'
-10. },{
-11. name:'Sam',
-12. section:'S'
-13. },{
-14. name:'Leo',
-15. section:'L'
-16. },{
-17. name:'Zach',
-18. section:'Z'
-19. },{
-20. name:'Wade',
-21. section:'W'
-22. },{
-23. name:'Zoe',
-24. section:'Z'
-25. },{
-26. name:'Warren',
-27. section:'W'
-28. },{
-29. name:'Kyle',
-30. section:'K'
-31. },{
-32. name:'Zaneta',
-33. section:'Z'
-34. }]
-35. },
-36. onInit() {
-37. }
-38. }
+```css
+/* xxx.css */
+.doc-page {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  background-color: #F1F3F5;
+}
+.list {
+  width: 100%;
+  height: 90%;
+  flex-grow: 1;
+}
+.item {
+  height: 120px;
+  padding-left: 10%;
+  border-top: 1px solid #dcdcdc;
+}
+.name {
+  color: #000000;
+  font-size: 39px;
+}
+.number {
+  color: black;
+  font-size: 25px;
+}
+.container {
+  flex-direction: row;
+  align-items: center;
+}
+.in-container {
+  flex-direction: column;
+  justify-content: space-around;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/F2lzmYT3RveZCVsUie3ytA/zh-cn_image_0000002558764578.gif)
+```js
+// xxx.js
+export default {
+   data: {
+     namelist:[{
+       name: 'Zoey',
+       section:'Z'
+     },{
+       name: 'Quin',
+       section:'Q'
+     },{
+       name:'Sam',
+       section:'S'
+     },{
+       name:'Leo',
+       section:'L'
+     },{
+       name:'Zach',
+       section:'Z'
+     },{
+       name:'Wade',
+       section:'W'
+     },{
+       name:'Zoe',
+       section:'Z'
+     },{
+        name:'Warren',
+        section:'W'
+     },{
+        name:'Kyle',
+        section:'K'
+     },{
+       name:'Zaneta',
+       section:'Z'
+     }]
+   },
+   onInit() {
+   }
+ }
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/GCDPvms8TX-Ee6VV5nLhkQ/zh-cn_image_0000002736433073.gif)

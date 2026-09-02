@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-scenario-b
 title: Can't find component with [BY.text('XXX')] 的报错是什么原因
 breadcrumb: FAQ > DevEco Testing > 专项测试 > 场景化性能测试 > Can't find component with [BY.text('XXX')] 的报错是什么原因
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:29+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:1f078661cccab0b52373457c4785b66c3da6a2ad6d9107c109a6f1ae71a258eb
 ---
 

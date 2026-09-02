@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 是否支持通过HDC命令安装.app文件
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > 是否支持通过HDC命令安装.app文件
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:22+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:13+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:e43a74c65b475630b3753e042bf8c290caa4a2791e378667dcfd09112edd39bb
 ---
 

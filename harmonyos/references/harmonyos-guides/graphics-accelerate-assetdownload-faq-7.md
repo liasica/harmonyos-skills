@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-accelerate-assetdownload-faq-7
-title: 接入资源包后台下载功能后如何使用指定测试设备进行自测？
-breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > Graphics Accelerate Kit常见问题 > 游戏资源加速服务 > 接入资源包后台下载功能后如何使用指定测试设备进行自测？
+title: 接入资源包后台下载功能后如何使用指定测试设备进行自测
+breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > Graphics Accelerate Kit常见问题 > 游戏资源加速服务 > 接入资源包后台下载功能后如何使用指定测试设备进行自测
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:47+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:17:37+08:00
+doc_updated_at: 2026-05-08
 content_hash: sha256:102d8f6572d951b8841891a9a18ed1c4c2a14a99c3347c87078bbbec07c1ad66
 ---
 

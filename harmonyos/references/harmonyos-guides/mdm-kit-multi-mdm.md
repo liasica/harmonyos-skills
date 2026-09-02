@@ -3,28 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi
 title: 多应用管控
 breadcrumb: 指南 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > 多应用管控
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:33+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:29c5b2c29b05dceff042a065be7752a348b4f80c7592db28fd93be94350fa5e6
+scraped_at: 2026-09-02T14:59:36+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ec7c0148d552c173253257a68b90b963689b633df13266f5890b0cef5c0919bb
 ---
 
 ## 概述
 
-在企业PC设备管理场景下，企业可以引入多家[EMM厂商](mdm-kit-term.md#emm厂商)来共同管理企业PC设备，分散管理权限，满足不同场景的管控诉求。在这种背景下，MDM Kit抽象出不同的设备管理员角色，用来支持多家EMM厂商在PC设备上同时部署自己的MDM业务。 由于这种场景下存在多个[MDM应用](mdm-kit-term.md#mdm应用设备管理应用)同时调用MDM管控接口的情况，建议企业与EMM厂商提前约定各自MDM应用的管控范围，避免管控策略冲突，[管控策略冲突](mdm-kit-multi-mdm.md#管控策略冲突)可能会导致企业管控失效，引发企业数据泄露等问题。
+在企业PC设备管理场景下，企业可以引入多家[EMM](mdm-kit-term.md#enterprise-mobility-management-emm企业移动管理)厂商来共同管理企业PC设备，分散管理权限，满足不同场景的管控诉求。在这种背景下，MDM Kit抽象出不同的设备管理员角色，用来支持多家EMM厂商在PC设备上同时部署自己的MDM业务。 由于这种场景下存在多个[MDM应用](mdm-kit-term.md#mdm应用)同时调用MDM管控接口的情况，建议企业与EMM厂商提前约定各自MDM应用的管控范围，避免管控策略冲突，[管控策略冲突](mdm-kit-multi-mdm.md#管控策略冲突)可能会导致企业管控失效，引发企业数据泄露等问题。
 
 ## Admin组件的激活角色
 
 Admin组件可以通过不同的方式激活，不同的激活方式，成为的角色也不同。
 
-1.通过[adminManager.enableDeviceAdmin](../harmonyos-references/js-apis-enterprise-adminmanager.md#adminmanagerenabledeviceadmin23)接口, 激活后成为[DA角色](mdm-kit-term.md#da)。
+1.通过[adminManager.enableDeviceAdmin](../harmonyos-references/js-apis-enterprise-adminmanager.md#adminmanagerenabledeviceadmin23)接口，激活后成为[DA角色](mdm-kit-term.md#device-admin-da普通设备管理员)。当MDM应用仅需对设备进行管控，无需管理其他DA应用时，可选择被激活为DA。
 
-2.通过[adminManager.startAdminProvision](../harmonyos-references/js-apis-enterprise-adminmanager.md#adminmanagerstartadminprovision15)接口, 激活后成为[BDA角色](mdm-kit-term.md#bda)。
+2.通过[adminManager.startAdminProvision](../harmonyos-references/js-apis-enterprise-adminmanager.md#adminmanagerstartadminprovision15)接口，激活后成为[BDA角色](mdm-kit-term.md#byod-device-admin-bdabyod设备管理员)。当MDM应用需要对员工使用的个人设备在特殊场景进行有限管控（如禁用拍照、录音等）时，可选择被激活为BDA。
 
 ## 管控策略冲突
 
 当单一设备上同时部署多个MDM应用时，各应用可能同时调用同一个MDM管控接口，传入的策略值各不相同，从而产生策略冲突。针对这类冲突，系统建立了策略冲突处理机制。根据不同的策略类型，可归纳为以下四条冲突规则。
 
-说明
+**说明** 
 
 MDM Kit不支持自定义策略冲突处理机制，如果现有策略冲突处理机制无法满足企业的管控场景，企业需要提前规划好多个MDM应用的管控边界，避免管控策略冲突，或仅使用一个MDM应用进行设备管控。
 
@@ -49,13 +49,13 @@ MDM Kit不支持自定义策略冲突处理机制，如果现有策略冲突处�
 
 * 设计原则：设备上的某些能力可能需要设置完全相反的管控策略，并且这些策略在其各自的使用场景均合理，系统无法识别哪种策略具有更高优先级，如果允许MDM应用随意变更策略则会使策略管控变得混乱，因此设计了独占规则。比如强制开启地理位置定位能力与禁用地理位置定位能力是完全相反的管控策略。
 * 策略生效逻辑：首个成功下发策略的MDM应用获得独占权，不允许后续其他MDM应用尝试下发同类策略，系统将报策略冲突。
-* 示例1：若MDM A先设置了[位置策略](../harmonyos-references/js-apis-enterprise-locationmanager.md#locationmanagersetlocationpolicy)-强制开启位置服务策略，则MDM B尝试再设置位置策略-禁用位置服务策略将报策略冲突。
-* 示例2：若MDM A先设置了[位置策略](../harmonyos-references/js-apis-enterprise-locationmanager.md#locationmanagersetlocationpolicy)-禁用位置服务策略，则MDM B尝试再设置位置策略-强制开启位置服务策略将报策略冲突。
+* 示例1：若MDM A先通过[setLocationPolicy](../harmonyos-references/js-apis-enterprise-locationmanager.md#locationmanagersetlocationpolicy)接口设置了位置策略-强制开启位置服务策略，则MDM B尝试再设置位置策略-禁用位置服务策略将报策略冲突。
+* 示例2：若MDM A先通过[setLocationPolicy](../harmonyos-references/js-apis-enterprise-locationmanager.md#locationmanagersetlocationpolicy)接口设置了位置策略-禁用位置服务策略，则MDM B尝试再设置位置策略-强制开启位置服务策略将报策略冲突。
 * Admin组件激活状态变更：Admin组件被取消激活或MDM应用被卸载时，无论设备上是否还有其他MDM应用，该策略立即失效，相关设备设置恢复至系统默认状态，其他MDM应用即可重新配置该策略。
 
 ### 规则3：配置
 
-* 设计原则：MDM kit提供了简化企业IT管理员管理设备的能力，一般用于代替用户手动输入或适应动态变化的环境和需求的场景。企业IT管理员可以后台批量配置企业设备信息，提升管理效率，这类能力一般通过配置规则来处理策略冲突。
+* 设计原则：MDM Kit提供了简化企业IT管理员管理设备的能力，一般用于代替用户手动输入或适应动态变化的环境和需求的场景。企业IT管理员可以后台批量配置企业设备信息，提升管理效率，这类能力一般通过配置规则来处理策略冲突。
 * 策略生效逻辑：系统仅保留后下发的策略或可能把多份策略都保留，但是实际生效的为最新的配置。
 * 示例1：
 
@@ -75,7 +75,7 @@ MDM Kit不支持自定义策略冲突处理机制，如果现有策略冲突处�
 
 ### 规则4：合并
 
-* 设计原则：对于很多管控策略本身就具有合集属性，允许一个MDM应用多次修改添加，对于这类管控策略冲突设计合并规格。允许多个MDM应用对于同一策略进行追加设置，多个应用设置的策略都能生效。
+* 设计原则：对于很多管控策略本身就具有合集属性，允许一个MDM应用多次修改添加，对于这类管控策略冲突设计合并规则。允许多个MDM应用对于同一策略进行追加设置，多个应用设置的策略都能生效。
 * 策略生效逻辑：系统合并所有MDM应用设置的数据集合，取并集后生效。只有当某一项数据从所有MDM应用的列表中被移除时，才会从最终名单中删除。
 * 示例：
 

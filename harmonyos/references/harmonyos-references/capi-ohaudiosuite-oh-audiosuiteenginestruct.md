@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohau
 title: OH_AudioSuiteEngineStruct
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 结构体 > OH_AudioSuiteEngineStruct
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:57+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:1be5f1f43bc629a9cb363ae016b7035a527c77693d1b178afd7faf711ecfb991
+scraped_at: 2026-09-02T14:52:46+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5e6970456fd3be28e2bf99eb24e79d3faf372fb1aaebd1941cbd92a208b637fa
 ---
 
-```
-1. typedef struct OH_AudioSuiteEngineStruct OH_AudioSuiteEngine
+```c
+typedef struct OH_AudioSuiteEngineStruct OH_AudioSuiteEngine
 ```
 
 ## 概述
-
-PhonePC/2in1Tablet
 
 声明音频编创引擎，用来管理音频编创管线。
 

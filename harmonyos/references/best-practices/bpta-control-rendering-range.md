@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-control-re
 title: 渲染范围控制
 breadcrumb: 最佳实践 > 性能 > 性能优化 > 渲染范围控制
 category: best-practices
-scraped_at: 2026-04-28T08:22:23+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:20194e4473fbc826febbdb15bbec8b83403dcc0f0fb9b9a3f8e210349ebbf03e
+scraped_at: 2026-09-02T14:53:44+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:2af9f0a0048f97c99fb0c5f81bf1188b7de2def1ef1f0a8027c35ca561f8348d
 ---
 
 在应用开发中，控制UI渲染范围，防止界面卡顿或掉帧。
 
 ## 合理控制元素显示与隐藏
 
-控制元素显示与隐藏是一种常见的场景，使用Visibility.None、if条件判断等都能够实现该效果。其中if条件判断控制的是组件的创建、布局阶段，visibility属性控制的是元素在布局阶段是否参与布局渲染。若使用方式不当，将引起性能问题。具体案例与实验数据请参阅[合理控制元素显示与隐藏](bpta-improve-layout-performance.md#section14111154271)。
+控制元素显示与隐藏是一种常见的场景，使用Visibility.None、if条件判断等都能够实现该效果。其中if条件判断控制的是组件的创建、布局阶段，visibility属性控制的是元素在布局阶段是否参与布局渲染。若使用方式不当，将引起性能问题。具体案例与实验数据请参阅[合理控制元素显示与隐藏](../harmonyos-guides/arkts-layout-optimization-guidance.md#合理控制元素显示与隐藏)。
 
 ## 懒加载
 

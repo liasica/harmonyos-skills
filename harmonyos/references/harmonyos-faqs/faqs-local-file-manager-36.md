@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: 应用安装后，HAP文件在哪个目录路径
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 应用安装后，HAP文件在哪个目录路径
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:29+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:52+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:ada852cfd7dc8f1e315016e41066964ef83929d85d6634a2c2ff106ca944f7a3
 ---
 

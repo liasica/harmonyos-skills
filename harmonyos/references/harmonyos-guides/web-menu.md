@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-menu
 title: 使用Web组件菜单处理网页内容
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 处理网页内容 > 使用Web组件菜单处理网页内容
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:31+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7e3524e5dbb8c1d4cf7ac997317d2cafcae07b64d9a963bf65106fed7cd0d8a1
+scraped_at: 2026-09-02T14:59:23+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c85e106a919b48ad451840418c970bf39c8b082d4b8183b292156063fe07d3f9
 ---
 
 菜单作为用户交互的关键组件，其作用是构建清晰的导航体系，通过结构化布局展示功能入口，使用户能够迅速找到目标内容或执行操作。作为人机交互的重要枢纽，它显著提升了Web组件的可访问性和用户体验，是应用设计中必不可少的部分。Web组件菜单类型包括[文本选中菜单](web-menu.md#文本选中菜单)、[上下文菜单](web-menu.md#上下文菜单)和[自定义菜单](web-menu.md#自定义菜单)，应用可根据具体需求灵活选择。
@@ -24,95 +24,91 @@ Web组件的文本选中菜单是一种通过自定义元素实现的上下文�
 2. 通过onMenuItemClick方法处理菜单项点击事件，当返回false时会执行系统默认逻辑。
 3. 创建一个[EditMenuOptions](../harmonyos-references/ts-text-common.md#editmenuoptions)对象，包含onCreateMenu和onMenuItemClick两个方法，通过Web组件的[editMenuOptions](../harmonyos-references/arkts-basic-components-web-attributes.md#editmenuoptions12)接口与Web组件绑定。
 
-```
-1. import { webview } from '@kit.ArkWeb';
+```typescript
+import { webview } from '@kit.ArkWeb';
 
-3. @Entry
-4. @Component
-5. struct WebComponent {
-6. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-8. onCreateMenu(menuItems: Array<TextMenuItem>): Array<TextMenuItem> {
-9. let items = menuItems.filter((menuItem) => {
-10. // 过滤用户需要的系统菜单项
-11. return (
-12. menuItem.id.equals(TextMenuItemId.CUT) ||
-13. menuItem.id.equals(TextMenuItemId.COPY) ||
-14. menuItem.id.equals(TextMenuItemId.PASTE)
-15. );
-16. });
-17. let customItem1: TextMenuItem = {
-18. content: 'customItem1',
-19. id: TextMenuItemId.of('customItem1'),
-20. // 请将$r('app.media.startIcon')替换为实际资源文件
-21. icon: $r('app.media.startIcon')
-22. };
-23. let customItem2: TextMenuItem = {
-24. // 请将$r('app.string.EntryAbility_label')替换为实际资源文件，在本示例中该资源文件的value值为"label"
-25. content: $r('app.string.EntryAbility_label'),
-26. id: TextMenuItemId.of('customItem2'),
-27. // 请将$r('app.media.startIcon')替换为实际资源文件
-28. icon: $r('app.media.startIcon')
-29. };
-30. items.push(customItem1); // 在选项列表后添加新选项
-31. items.unshift(customItem2); // 在选项列表前添加选项
-32. items.push(customItem1);
-33. items.push(customItem1);
-34. items.push(customItem1);
-35. items.push(customItem1);
-36. items.push(customItem1);
-37. return items;
-38. }
+  onCreateMenu(menuItems: Array<TextMenuItem>): Array<TextMenuItem> {
+    let items = menuItems.filter((menuItem) => {
+      // 过滤用户需要的系统菜单项
+      return (
+        menuItem.id.equals(TextMenuItemId.CUT) ||
+          menuItem.id.equals(TextMenuItemId.COPY) ||
+          menuItem.id.equals(TextMenuItemId.PASTE)
+      );
+    });
+    let customItem1: TextMenuItem = {
+      content: 'customItem1',
+      id: TextMenuItemId.of('customItem1'),
+      // 请将$r('app.media.startIcon')替换为实际资源文件
+      icon: $r('app.media.startIcon')
+    };
+    let customItem2: TextMenuItem = {
+      // 请将$r('app.string.EntryAbility_label')替换为实际资源文件，在本示例中该资源文件的value值为"label"
+      content: $r('app.string.EntryAbility_label'),
+      id: TextMenuItemId.of('customItem2'),
+      // 请将$r('app.media.startIcon')替换为实际资源文件
+      icon: $r('app.media.startIcon')
+    };
+    items.push(customItem1); // 在选项列表后添加新选项
+    items.unshift(customItem2); // 在选项列表前添加选项
+    for (let i = 0; i < 5; i++) {
+      items.push(customItem1); // 重复添加选项，以便支持显示更多菜单
+    }
+    return items;
+  }
 
-40. onMenuItemClick(menuItem: TextMenuItem, textRange: TextRange): boolean {
-41. if (menuItem.id.equals(TextMenuItemId.CUT)) {
-42. // 用户自定义行为
-43. console.info('intercept id：CUT')
-44. return true; // 返回true不执行系统回调
-45. } else if (menuItem.id.equals(TextMenuItemId.COPY)) {
-46. // 用户自定义行为
-47. console.info('Do not intercept id：COPY')
-48. return false; // 返回false执行系统回调
-49. } else if (menuItem.id.equals(TextMenuItemId.of('customItem1'))) {
-50. // 用户自定义行为
-51. console.info('intercept id：customItem1')
-52. return true; // 用户自定义菜单选项返回true时点击后不关闭菜单，返回false时关闭菜单
-53. } else if (menuItem.id.equals(TextMenuItemId.of('customItem2'))) {
-54. // 用户自定义行为
-55. console.info('intercept id：customItem2')
-56. return true;
-57. }
-58. return false; // 返回默认值false
-59. }
+  onMenuItemClick(menuItem: TextMenuItem, textRange: TextRange): boolean {
+    if (menuItem.id.equals(TextMenuItemId.CUT)) {
+      // 用户自定义行为
+      console.info('intercept id：CUT')
+      return true; // 返回true不执行系统回调
+    } else if (menuItem.id.equals(TextMenuItemId.COPY)) {
+      // 用户自定义行为
+      console.info('Do not intercept id：COPY')
+      return false; // 返回false执行系统回调
+    } else if (menuItem.id.equals(TextMenuItemId.of('customItem1'))) {
+      // 用户自定义行为
+      console.info('intercept id：customItem1')
+      return true; // 用户自定义菜单选项返回true时点击后不关闭菜单，返回false时关闭菜单
+    } else if (menuItem.id.equals(TextMenuItemId.of('customItem2'))) {
+      // 用户自定义行为
+      console.info('intercept id：customItem2')
+      return true;
+    }
+    return false; // 返回默认值false
+  }
 
-61. @State editMenuOptions: EditMenuOptions = { onCreateMenu: this.onCreateMenu, onMenuItemClick: this.onMenuItemClick }
+  @State editMenuOptions: EditMenuOptions = { onCreateMenu: this.onCreateMenu, onMenuItemClick: this.onMenuItemClick }
 
-63. build() {
-64. Column() {
-65. Web({ src: $rawfile('index.html'), controller: this.controller })
-66. .editMenuOptions(this.editMenuOptions)
-67. }
-68. }
-69. }
+  build() {
+    Column() {
+      Web({ src: $rawfile('index.html'), controller: this.controller })
+        .editMenuOptions(this.editMenuOptions)
+    }
+  }
+}
 ```
 
-[WebTextMenuItem.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ArkWebMenu/entry/src/main/ets/pages/WebTextMenuItem.ets#L15-L85)
-
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <title>测试网页</title>
-6. </head>
-7. <body>
-8. <h1>editMenuOptions Demo</h1>
-9. <span>edit menu options</span>
-10. </body>
-11. </html>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>测试网页</title>
+  </head>
+  <body>
+    <h1>editMenuOptions Demo</h1>
+    <span>edit menu options</span>
+  </body>
+</html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/SpEJL684To28qwIXE8dsbA/zh-cn_image_0000002558605072.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/pNRxCP75Qsa08xt-VqTfDw/zh-cn_image_0000002706674146.gif)
 
 ## 上下文菜单
 
@@ -122,147 +118,145 @@ Web组件的文本选中菜单是一种通过自定义元素实现的上下文�
 2. 使用bindPopup方法将Menu组件与Web组件绑定。当上下文菜单弹出时，将显示创建的Menu组件。
 3. 在onContextMenuShow回调中获取上下文菜单事件信息[onContextMenuShowEvent](../harmonyos-references/arkts-basic-components-web-i.md#oncontextmenushowevent12)。其中param为[WebContextMenuParam](../harmonyos-references/arkts-basic-components-web-webcontextmenuparam.md)类型，包含点击位置对应HTML元素信息和位置信息，result为[WebContextMenuResult](../harmonyos-references/arkts-basic-components-web-webcontextmenuresult.md)类型，提供常见的菜单能力。
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { pasteboard } from '@kit.BasicServicesKit';
+```typescript
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { pasteboard } from '@kit.BasicServicesKit';
 
-5. const TAG = 'ContextMenu';
+const TAG = 'ContextMenu';
 
-7. @Entry
-8. @Component
-9. struct WebComponent {
-10. controller: webview.WebviewController = new webview.WebviewController();
-11. private result: WebContextMenuResult | undefined = undefined;
-12. @State linkUrl: string = '';
-13. @State offsetX: number = 0;
-14. @State offsetY: number = 0;
-15. @State showMenu: boolean = false;
-16. uiContext: UIContext = this.getUIContext();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  private result: WebContextMenuResult | undefined = undefined;
+  @State linkUrl: string = '';
+  @State offsetX: number = 0;
+  @State offsetY: number = 0;
+  @State showMenu: boolean = false;
+  uiContext: UIContext = this.getUIContext();
 
-18. @Builder
-19. // 构建自定义菜单及触发功能接口
-20. MenuBuilder() {
-21. // 以垂直列表形式显示的菜单。
-22. Menu() {
-23. // 展示菜单Menu中具体的菜单项。
-24. MenuItem({
-25. content: 'Copy Image',
-26. })
-27. .width(100)
-28. .height(50)
-29. .onClick(() => {
-30. this.result?.copyImage();
-31. this.showMenu = false;
-32. })
-33. MenuItem({
-34. content: 'Cut',
-35. })
-36. .width(100)
-37. .height(50)
-38. .onClick(() => {
-39. this.result?.cut();
-40. this.showMenu = false;
-41. })
-42. MenuItem({
-43. content: 'Copy',
-44. })
-45. .width(100)
-46. .height(50)
-47. .onClick(() => {
-48. this.result?.copy();
-49. this.showMenu = false;
-50. })
-51. MenuItem({
-52. content: 'Paste',
-53. })
-54. .width(100)
-55. .height(50)
-56. .onClick(() => {
-57. this.result?.paste();
-58. this.showMenu = false;
-59. })
-60. MenuItem({
-61. content: 'Copy link',
-62. })
-63. .width(100)
-64. .height(50)
-65. .onClick(() => {
-66. let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, this.linkUrl);
-67. pasteboard.getSystemPasteboard().setData(pasteData, (error) => {
-68. if (error) {
-69. return;
-70. }
-71. })
-72. this.showMenu = false;
-73. })
-74. MenuItem({
-75. content: 'Select All',
-76. })
-77. .width(100)
-78. .height(50)
-79. .onClick(() => {
-80. this.result?.selectAll();
-81. this.showMenu = false;
-82. })
-83. }
-84. .width(150)
-85. .height(300)
-86. }
+  @Builder
+  // 构建自定义菜单及触发功能接口
+  MenuBuilder() {
+    // 以垂直列表形式显示的菜单。
+    Menu() {
+      // 展示菜单Menu中具体的菜单项。
+      MenuItem({
+        content: 'Copy Image',
+      })
+        .width(100)
+        .height(50)
+        .onClick(() => {
+          this.result?.copyImage();
+          this.showMenu = false;
+        })
+      MenuItem({
+        content: 'Cut',
+      })
+        .width(100)
+        .height(50)
+        .onClick(() => {
+          this.result?.cut();
+          this.showMenu = false;
+        })
+      MenuItem({
+        content: 'Copy',
+      })
+        .width(100)
+        .height(50)
+        .onClick(() => {
+          this.result?.copy();
+          this.showMenu = false;
+        })
+      MenuItem({
+        content: 'Paste',
+      })
+        .width(100)
+        .height(50)
+        .onClick(() => {
+          this.result?.paste();
+          this.showMenu = false;
+        })
+      MenuItem({
+        content: 'Copy link',
+      })
+        .width(100)
+        .height(50)
+        .onClick(() => {
+          let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, this.linkUrl);
+          pasteboard.getSystemPasteboard().setData(pasteData, (error) => {
+            if (error) {
+              return;
+            }
+          })
+          this.showMenu = false;
+        })
+      MenuItem({
+        content: 'Select All',
+      })
+        .width(100)
+        .height(50)
+        .onClick(() => {
+          this.result?.selectAll();
+          this.showMenu = false;
+        })
+    }
+    .width(150)
+    .height(300)
+  }
 
-88. build() {
-89. Column() {
-90. Web({ src: $rawfile('index1.html'), controller: this.controller })
-91. // 触发自定义弹窗
-92. .onContextMenuShow((event) => {
-93. if (event) {
-94. this.result = event.result
-95. console.info('x coord = ' + event.param.x());
-96. console.info('link url = ' + event.param.getLinkUrl());
-97. this.linkUrl = event.param.getLinkUrl();
-98. }
-99. console.info(TAG, `x: ${this.offsetX}, y: ${this.offsetY}`);
-100. this.showMenu = true;
-101. this.offsetX = 0;
-102. this.offsetY = Math.max(this.uiContext!.px2vp(event?.param.y() ?? 0) - 0, 0);
-103. return true;
-104. })
-105. .bindPopup(this.showMenu,
-106. {
-107. builder: this.MenuBuilder(),
-108. enableArrow: false,
-109. placement: Placement.LeftTop,
-110. offset: { x: this.offsetX, y: this.offsetY },
-111. mask: false,
-112. onStateChange: (e) => {
-113. if (!e.isVisible) {
-114. this.showMenu = false;
-115. this.result!.closeContextMenu();
-116. }
-117. }
-118. })
-119. }
-120. }
-121. }
-```
-
-[WebContextMenu.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ArkWebMenu/entry/src/main/ets/pages/WebContextMenu.ets#L15-L137)
-
-```
-1. <!-- index.html -->
-2. <!DOCTYPE html>
-3. <html lang="en">
-4. <body>
-5. <h1>onContextMenuShow</h1>
-6. <a href="http://www.example.com" style="font-size:27px">超链接www.example.com</a>
-7. <!--example.png为html同目录下图片-->
-8. <div><img src="example.png"></div>
-9. <p>选中文字鼠标右键弹出菜单</p>
-10. </body>
-11. </html>
+  build() {
+    Column() {
+      Web({ src: $rawfile('index1.html'), controller: this.controller })
+      // 触发自定义弹窗
+        .onContextMenuShow((event) => {
+          if (event) {
+            this.result = event.result
+            console.info('x coord = ' + event.param.x());
+            console.info('link url = ' + event.param.getLinkUrl());
+            this.linkUrl = event.param.getLinkUrl();
+          }
+          console.info(TAG, `x: ${this.offsetX}, y: ${this.offsetY}`);
+          this.showMenu = true;
+          this.offsetX = 0;
+          this.offsetY = Math.max(this.uiContext!.px2vp(event?.param.y() ?? 0) - 0, 0);
+          return true;
+        })
+        .bindPopup(this.showMenu,
+          {
+            builder: this.MenuBuilder(),
+            enableArrow: false,
+            placement: Placement.LeftTop,
+            offset: { x: this.offsetX, y: this.offsetY },
+            mask: false,
+            onStateChange: (e) => {
+              if (!e.isVisible) {
+                this.showMenu = false;
+                this.result!.closeContextMenu();
+              }
+            }
+          })
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/h5o6AxfXQ3eG-8niGQL6DQ/zh-cn_image_0000002589324597.gif)
+```html
+<!-- index1.html -->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <h1>onContextMenuShow</h1>
+  <a href="http://www.example.com" style="font-size:27px">超链接www.example.com</a>
+  <!--example.png为html同目录下图片-->
+  <div><img src="example.png"></div>
+  <p>选中文字鼠标右键弹出菜单</p>
+</body>
+</html>
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/nm1xkW86R76OcgW2-xaA6w/zh-cn_image_0000002736433237.gif)
 
 ## 自定义菜单
 
@@ -273,307 +267,302 @@ Web组件的文本选中菜单是一种通过自定义元素实现的上下文�
 1. 创建[Menu](../harmonyos-references/ts-basic-components-menu.md)组件作为菜单弹窗。
 2. 通过Web组件的[bindSelectionMenu](../harmonyos-references/arkts-basic-components-web-attributes.md#bindselectionmenu13)方法绑定MenuBuilder菜单弹窗。将[WebElementType](../harmonyos-references/arkts-basic-components-web-e.md#webelementtype13)设置为WebElementType.IMAGE，[responseType](../harmonyos-references/arkts-basic-components-web-e.md#webresponsetype13)设置为WebResponseType.LONG\_PRESS，表示长按图片时弹出菜单。在[options](../harmonyos-references/arkts-basic-components-web-i.md#selectionmenuoptionsext13)中定义菜单显示回调onAppear、菜单消失回调onDisappear、预览窗口preview和菜单类型menuType。
 
-```
-1. import { webview } from '@kit.ArkWeb';
+```typescript
+import { webview } from '@kit.ArkWeb';
 
-3. interface PreviewBuilderParam {
-4. previewImage: Resource | string | undefined;
-5. width: number;
-6. height: number;
-7. }
+interface PreviewBuilderParam {
+  previewImage: Resource | string | undefined;
+  width: number;
+  height: number;
+}
 
-9. @Builder function previewBuilderGlobal($$: PreviewBuilderParam) {
-10. Column() {
-11. Image($$.previewImage)
-12. .objectFit(ImageFit.Fill)
-13. .autoResize(true)
-14. }.width($$.width).height($$.height)
-15. }
+@Builder function previewBuilderGlobal($$: PreviewBuilderParam) {
+  Column() {
+    Image($$.previewImage)
+      .objectFit(ImageFit.Fill)
+      .autoResize(true)
+  }.width($$.width).height($$.height)
+}
 
-17. @Entry
-18. @Component
-19. struct WebComponent {
-20. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-22. private result: WebContextMenuResult | undefined = undefined;
-23. @State previewImage: Resource | string | undefined = undefined;
-24. @State previewWidth: number = 0;
-25. @State previewHeight: number = 0;
-26. uiContext: UIContext = this.getUIContext();
+  private result: WebContextMenuResult | undefined = undefined;
+  @State previewImage: Resource | string | undefined = undefined;
+  @State previewWidth: number = 0;
+  @State previewHeight: number = 0;
+  uiContext: UIContext = this.getUIContext();
 
-28. @Builder
-29. MenuBuilder() {
-30. Menu() {
-31. MenuItem({ content: 'Copy', })
-32. .onClick(() => {
-33. this.result?.copy();
-34. this.result?.closeContextMenu();
-35. })
-36. MenuItem({ content: 'Select All', })
-37. .onClick(() => {
-38. this.result?.selectAll();
-39. this.result?.closeContextMenu();
-40. })
-41. }
-42. }
-43. build() {
-44. Column() {
-45. Web({ src: $rawfile('index2.html'), controller: this.controller })
-46. .bindSelectionMenu(WebElementType.IMAGE, this.MenuBuilder, WebResponseType.LONG_PRESS,
-47. {
-48. onAppear: () => {},
-49. onDisappear: () => {
-50. this.result?.closeContextMenu();
-51. },
-52. preview: previewBuilderGlobal({
-53. previewImage: this.previewImage,
-54. width: this.previewWidth,
-55. height: this.previewHeight
-56. }),
-57. menuType: MenuType.PREVIEW_MENU
-58. })
-59. .onContextMenuShow((event) => {
-60. if (event) {
-61. this.result = event.result;
-62. if (event.param.getLinkUrl()) {
-63. return false;
-64. }
-65. this.previewWidth = this.uiContext!.px2vp(event.param.getPreviewWidth());
-66. this.previewHeight = this.uiContext!.px2vp(event.param.getPreviewHeight());
-67. if (event.param.getSourceUrl().indexOf('resource://rawfile/') == 0) {
-68. this.previewImage = $rawfile(event.param.getSourceUrl().substr(19));
-69. } else {
-70. this.previewImage = event.param.getSourceUrl();
-71. }
-72. return true;
-73. }
-74. return false;
-75. })
-76. }
-77. }
-78. }
-```
-
-[WebBindSelectionMenu.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ArkWebMenu/entry/src/main/ets/pages/WebBindSelectionMenu.ets#L15-L94)
-
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <title>测试网页</title>
-6. </head>
-7. <body>
-8. <h1>bindSelectionMenu Demo</h1>
-9. <!--img.png为html同目录下图片-->
-10. <img src="./img.png" >
-11. </body>
-12. </html>
+  @Builder
+  MenuBuilder() {
+    Menu() {
+      MenuItem({ content: 'Copy', })
+        .onClick(() => {
+          this.result?.copy();
+          this.result?.closeContextMenu();
+        })
+      MenuItem({ content: 'Select All', })
+        .onClick(() => {
+          this.result?.selectAll();
+          this.result?.closeContextMenu();
+        })
+    }
+  }
+  build() {
+    Column() {
+      Web({ src: $rawfile('index2.html'), controller: this.controller })
+        .bindSelectionMenu(WebElementType.IMAGE, this.MenuBuilder, WebResponseType.LONG_PRESS,
+          {
+            onAppear: () => {},
+            onDisappear: () => {
+              this.result?.closeContextMenu();
+            },
+            preview: previewBuilderGlobal({
+              previewImage: this.previewImage,
+              width: this.previewWidth,
+              height: this.previewHeight
+            }),
+            menuType: MenuType.PREVIEW_MENU
+          })
+        .onContextMenuShow((event) => {
+          if (event) {
+            this.result = event.result;
+            if (event.param.getLinkUrl()) {
+              return false;
+            }
+            this.previewWidth = this.uiContext!.px2vp(event.param.getPreviewWidth());
+            this.previewHeight = this.uiContext!.px2vp(event.param.getPreviewHeight());
+            if (event.param.getSourceUrl().indexOf('resource://rawfile/') == 0) {
+              this.previewImage = $rawfile(event.param.getSourceUrl().substr(19));
+            } else {
+              this.previewImage = event.param.getSourceUrl();
+            }
+            return true;
+          }
+          return false;
+        })
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/OpbVfQ0VRxOmcxdtUc4qyQ/zh-cn_image_0000002589244535.gif)
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>测试网页</title>
+  </head>
+  <body>
+    <h1>bindSelectionMenu Demo</h1>
+    <!--img.png为html同目录下图片-->
+    <img src="./img.png" >
+  </body>
+</html>
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/aH-g4CpqQi-ZTbdHW6W1pA/zh-cn_image_0000002706834082.gif)
 
 自API version 20起，支持绑定长按超链接菜单。可以为图片和链接绑定不同的自定义菜单。
 
 以下示例中，PreviewBuilder定义了超链接对应菜单的弹出内容，用Web组件加载了超链接内容（需要注意PreviewBuilder中的Web组件不会接收事件），使用[Progress组件](arkts-common-components-progress-indicator.md)展示了加载进度。
 
+```typescript
+import { webview } from '@kit.ArkWeb';
+import { pasteboard } from '@kit.BasicServicesKit';
+
+interface PreviewBuilderParam {
+  width: number;
+  height: number;
+  url:Resource | string | undefined;
+}
+
+interface PreviewBuilderParamForImage {
+  previewImage: Resource | string | undefined;
+  width: number;
+  height: number;
+}
+
+@Builder function previewBuilderGlobalForImage($$: PreviewBuilderParamForImage) {
+  Column() {
+    Image($$.previewImage)
+      .objectFit(ImageFit.Fill)
+      .autoResize(true)
+  }.width($$.width).height($$.height)
+}
+
+@Entry
+@Component
+struct SelectionMenuLongPress {
+  controller: webview.WebviewController = new webview.WebviewController();
+  previewController: webview.WebviewController = new webview.WebviewController();
+  @Builder PreviewBuilder($$: PreviewBuilderParam){
+    Column() {
+      Stack(){
+        Text('') // 可选择是否展示url
+          .padding(5)
+          .width('100%')
+          .textAlign(TextAlign.Start)
+          .backgroundColor(Color.White)
+          .copyOption(CopyOptions.LocalDevice)
+          .maxLines(1)
+          .textOverflow({overflow:TextOverflow.Ellipsis})
+        Progress({ value: this.progressValue, total: 100, type: ProgressType.Linear }) // 展示进度条
+          .style({ strokeWidth: 3, enableSmoothEffect: true })
+          .backgroundColor(Color.White)
+          .opacity(this.progressVisible?1:0)
+      }.alignContent(Alignment.Bottom)
+      Web({src:$$.url,controller: new webview.WebviewController()})
+        .javaScriptAccess(true)
+        .fileAccess(true)
+        .onlineImageAccess(true)
+        .imageAccess(true)
+        .domStorageAccess(true)
+        .onPageBegin(()=>{
+          this.progressValue = 0;
+          this.progressVisible = true;
+        })
+        .onProgressChange((event)=>{
+          this.progressValue = event.newProgress;
+        })
+        .onPageEnd(()=>{
+          this.progressVisible = false;
+        })
+        .hitTestBehavior(HitTestMode.None) // 使预览Web不响应手势
+    }.width($$.width).height($$.height) // 设置预览宽高
+  }
+
+  private result: WebContextMenuResult | undefined = undefined;
+  @State previewImage: Resource | string | undefined = undefined;
+  @State previewWidth: number = 1;
+  @State previewHeight: number = 1;
+  @State previewWidthImage: number = 1;
+  @State previewHeightImage: number = 1;
+  @State linkURL:string = '';
+  @State progressValue:number = 0;
+  @State progressVisible:boolean = true;
+  uiContext: UIContext = this.getUIContext();
+
+  @Builder
+  LinkMenuBuilder() {
+    Menu() {
+      MenuItem({ content: 'Copy link', })
+        .onClick(() => {
+          const pasteboardData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, this.linkURL);
+          const systemPasteboard = pasteboard.getSystemPasteboard();
+          systemPasteboard.setData(pasteboardData);
+        })
+      MenuItem({content:'Open the link'})
+        .onClick(()=>{
+          this.controller.loadUrl(this.linkURL);
+        })
+    }
+  }
+  @Builder
+  ImageMenuBuilder() {
+    Menu() {
+      MenuItem({ content: 'Copy Image', })
+        .onClick(() => {
+          this.result?.copyImage();
+          this.result?.closeContextMenu();
+        })
+    }
+  }
+  build() {
+    Column() {
+      Web({ src: $rawfile('index3.html'), controller: this.controller })
+        .javaScriptAccess(true)
+        .fileAccess(true)
+        .onlineImageAccess(true)
+        .imageAccess(true)
+        .domStorageAccess(true)
+        .bindSelectionMenu(WebElementType.LINK, this.LinkMenuBuilder, WebResponseType.LONG_PRESS,
+          {
+            onAppear: () => {},
+            onDisappear: () => {
+              this.result?.closeContextMenu();
+            },
+            preview: this.PreviewBuilder({
+              width: 500,
+              height: 400,
+              url:this.linkURL
+            }),
+            menuType: MenuType.PREVIEW_MENU,
+          })
+        .bindSelectionMenu(WebElementType.IMAGE, this.ImageMenuBuilder, WebResponseType.LONG_PRESS,
+          {
+            onAppear: () => {},
+            onDisappear: () => {
+              this.result?.closeContextMenu();
+            },
+            preview: previewBuilderGlobalForImage({
+              previewImage: this.previewImage,
+              width: this.previewWidthImage,
+              height: this.previewHeightImage,
+            }),
+            menuType: MenuType.PREVIEW_MENU,
+          })
+        .zoomAccess(true)
+        .onContextMenuShow((event) => {
+          if (event) {
+            this.result = event.result;
+            this.previewWidthImage = this.uiContext!.px2vp(event.param.getPreviewWidth());
+            this.previewHeightImage = this.uiContext!.px2vp(event.param.getPreviewHeight());
+            if (event.param.getSourceUrl().indexOf('resource://rawfile/') == 0) {
+              this.previewImage = $rawfile(event.param.getSourceUrl().substring(19));
+            } else {
+              this.previewImage = event.param.getSourceUrl();
+            }
+            this.linkURL = event.param.getLinkUrl()
+            return true;
+          }
+          return false;
+        })
+    }
+
+  }
+  // 侧滑返回
+  onBackPress(): boolean | void {
+    try {
+      if (this.controller.accessStep(-1)) {
+        this.controller.backward();
+        return true;
+      }
+    } catch (err) {
+      console.error(`onBackPress failed with error: ${err.code}, ${err.message}`);
+    }
+    return false;
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-2. import { pasteboard } from '@kit.BasicServicesKit';
-
-4. interface PreviewBuilderParam {
-5. width: number;
-6. height: number;
-7. url:Resource | string | undefined;
-8. }
-
-10. interface PreviewBuilderParamForImage {
-11. previewImage: Resource | string | undefined;
-12. width: number;
-13. height: number;
-14. }
-
-17. @Builder function previewBuilderGlobalForImage($$: PreviewBuilderParamForImage) {
-18. Column() {
-19. Image($$.previewImage)
-20. .objectFit(ImageFit.Fill)
-21. .autoResize(true)
-22. }.width($$.width).height($$.height)
-23. }
-
-25. @Entry
-26. @Component
-27. struct SelectionMenuLongPress {
-28. controller: webview.WebviewController = new webview.WebviewController();
-29. previewController: webview.WebviewController = new webview.WebviewController();
-30. @Builder PreviewBuilder($$: PreviewBuilderParam){
-31. Column() {
-32. Stack(){
-33. Text('') // 可选择是否展示url
-34. .padding(5)
-35. .width('100%')
-36. .textAlign(TextAlign.Start)
-37. .backgroundColor(Color.White)
-38. .copyOption(CopyOptions.LocalDevice)
-39. .maxLines(1)
-40. .textOverflow({overflow:TextOverflow.Ellipsis})
-41. Progress({ value: this.progressValue, total: 100, type: ProgressType.Linear }) // 展示进度条
-42. .style({ strokeWidth: 3, enableSmoothEffect: true })
-43. .backgroundColor(Color.White)
-44. .opacity(this.progressVisible?1:0)
-45. .backgroundColor(Color.White)
-46. }.alignContent(Alignment.Bottom)
-47. Web({src:$$.url,controller: new webview.WebviewController()})
-48. .javaScriptAccess(true)
-49. .fileAccess(true)
-50. .onlineImageAccess(true)
-51. .imageAccess(true)
-52. .domStorageAccess(true)
-53. .onPageBegin(()=>{
-54. this.progressValue = 0;
-55. this.progressVisible = true;
-56. })
-57. .onProgressChange((event)=>{
-58. this.progressValue = event.newProgress;
-59. })
-60. .onPageEnd(()=>{
-61. this.progressVisible = false;
-62. })
-63. .hitTestBehavior(HitTestMode.None) // 使预览Web不响应手势
-64. }.width($$.width).height($$.height) // 设置预览宽高
-65. }
-
-67. private result: WebContextMenuResult | undefined = undefined;
-68. @State previewImage: Resource | string | undefined = undefined;
-69. @State previewWidth: number = 1;
-70. @State previewHeight: number = 1;
-71. @State previewWidthImage: number = 1;
-72. @State previewHeightImage: number = 1;
-73. @State linkURL:string = '';
-74. @State progressValue:number = 0;
-75. @State progressVisible:boolean = true;
-76. uiContext: UIContext = this.getUIContext();
-
-78. @Builder
-79. LinkMenuBuilder() {
-80. Menu() {
-81. MenuItem({ content: 'Copy link', })
-82. .onClick(() => {
-83. const pasteboardData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, this.linkURL);
-84. const systemPasteboard = pasteboard.getSystemPasteboard();
-85. systemPasteboard.setData(pasteboardData);
-86. })
-87. MenuItem({content:'Open the link'})
-88. .onClick(()=>{
-89. this.controller.loadUrl(this.linkURL);
-90. })
-91. }
-92. }
-93. @Builder
-94. ImageMenuBuilder() {
-95. Menu() {
-96. MenuItem({ content: 'Copy Image', })
-97. .onClick(() => {
-98. this.result?.copyImage();
-99. this.result?.closeContextMenu();
-100. })
-101. }
-102. }
-103. build() {
-104. Column() {
-105. Web({ src: $rawfile('index3.html'), controller: this.controller })
-106. .javaScriptAccess(true)
-107. .fileAccess(true)
-108. .onlineImageAccess(true)
-109. .imageAccess(true)
-110. .domStorageAccess(true)
-111. .bindSelectionMenu(WebElementType.LINK, this.LinkMenuBuilder, WebResponseType.LONG_PRESS,
-112. {
-113. onAppear: () => {},
-114. onDisappear: () => {
-115. this.result?.closeContextMenu();
-116. },
-117. preview: this.PreviewBuilder({
-118. width: 500,
-119. height: 400,
-120. url:this.linkURL
-121. }),
-122. menuType: MenuType.PREVIEW_MENU,
-123. })
-124. .bindSelectionMenu(WebElementType.IMAGE, this.ImageMenuBuilder, WebResponseType.LONG_PRESS,
-125. {
-126. onAppear: () => {},
-127. onDisappear: () => {
-128. this.result?.closeContextMenu();
-129. },
-130. preview: previewBuilderGlobalForImage({
-131. previewImage: this.previewImage,
-132. width: this.previewWidthImage,
-133. height: this.previewHeightImage,
-134. }),
-135. menuType: MenuType.PREVIEW_MENU,
-136. })
-137. .zoomAccess(true)
-138. .onContextMenuShow((event) => {
-139. if (event) {
-140. this.result = event.result;
-141. this.previewWidthImage = this.uiContext!.px2vp(event.param.getPreviewWidth());
-142. this.previewHeightImage = this.uiContext!.px2vp(event.param.getPreviewHeight());
-143. if (event.param.getSourceUrl().indexOf('resource://rawfile/') == 0) {
-144. this.previewImage = $rawfile(event.param.getSourceUrl().substring(19));
-145. } else {
-146. this.previewImage = event.param.getSourceUrl();
-147. }
-148. this.linkURL = event.param.getLinkUrl()
-149. return true;
-150. }
-151. return false;
-152. })
-153. }
-
-155. }
-156. // 侧滑返回
-157. onBackPress(): boolean | void {
-158. try {
-159. if (this.controller.accessStep(-1)) {
-160. this.controller.backward();
-161. return true;
-162. }
-163. } catch (err) {
-164. console.error(`onBackPress failed with error: ${err.code}, ${err.message}`);
-165. }
-166. return false;
-167. }
-168. }
-```
-
-[WebPreviewBuilder.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ArkWebMenu/entry/src/main/ets/pages/WebPreviewBuilder.ets#L15-L181)
 
 html示例
 
-```
-1. <html lang="zh-CN"><head>
-2. <meta charset="UTF-8">
-3. <meta name="viewport" content="width=device-width, initial-scale=1.0">
-4. <title>综合信息页面</title>
-5. </head>
-6. <body>
-7. <div>
-8. <h1>综合信息与联系详情</h1>
-9. <section>
-10. <a href="https://www.example.com">EXAMPLE</a>
-11. <br>
-12. <a href="https://www.example1.com/">EXAMPLE1</a>
-13. </section>
-14. </div>
-15. <footer>
-16. <p>请注意，以上提供的所有网址仅供演示之用。</p>
-17. </footer>
-18. </body>
-19. </html>
+```html
+<html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>综合信息页面</title>
+</head>
+<body>
+<div>
+    <h1>综合信息与联系详情</h1>
+    <section>
+        <a href="https://www.example.com">EXAMPLE</a>
+        <br>
+        <a href="https://www.example1.com/">EXAMPLE1</a>
+    </section>
+</div>
+<footer>
+    <p>请注意，以上提供的所有网址仅供演示之用。</p>
+</footer>
+</body>
+</html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/fMaTnotCTV2PJ08RCkptPA/zh-cn_image_0000002558764730.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/uvwATUQJR7WSuB4hk6KXvg/zh-cn_image_0000002736313191.gif)
 
 ## Web菜单保存图片
 
@@ -581,152 +570,151 @@ html示例
 2. 在onContextMenuShow中获取图片url，通过copyLocalPicToDir或copyUrlPicToDir将图片保存至应用沙箱。
 3. 通过photoAccessHelper将应用沙箱中的图片保存至图库。
 
-```
-1. import { webview } from '@kit.ArkWeb';
-2. import { common } from '@kit.AbilityKit';
-3. import { fileIo } from '@kit.CoreFileKit';
-4. import { systemDateTime } from '@kit.BasicServicesKit';
-5. import { http } from '@kit.NetworkKit';
-6. import { photoAccessHelper } from '@kit.MediaLibraryKit';
+```typescript
+import { webview } from '@kit.ArkWeb';
+import { common } from '@kit.AbilityKit';
+import { fileIo } from '@kit.CoreFileKit';
+import { systemDateTime } from '@kit.BasicServicesKit';
+import { http } from '@kit.NetworkKit';
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
-8. @Entry
-9. @Component
-10. struct WebComponent {
-11. saveButtonOptions: SaveButtonOptions = {
-12. icon: SaveIconStyle.FULL_FILLED,
-13. text: SaveDescription.SAVE_IMAGE,
-14. buttonType: ButtonType.Capsule
-15. }
-16. controller: webview.WebviewController = new webview.WebviewController();
-17. @State showMenu: boolean = false;
-18. @State imgUrl: string = '';
-19. context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+@Entry
+@Component
+struct WebComponent {
+  saveButtonOptions: SaveButtonOptions = {
+    icon: SaveIconStyle.FULL_FILLED,
+    text: SaveDescription.SAVE_IMAGE,
+    buttonType: ButtonType.Capsule
+  }
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State showMenu: boolean = false;
+  @State imgUrl: string = '';
+  context = this.getUIContext().getHostContext() as common.UIAbilityContext;
 
-21. copyLocalPicToDir(rawfilePath: string, newFileName: string): string {
-22. try {
-23. let srcFileDes = this.context.resourceManager.getRawFdSync(rawfilePath);
-24. let dstPath = this.context.filesDir + '/' + newFileName;
-25. let dest: fileIo.File = fileIo.openSync(dstPath, fileIo.OpenMode.CREATE | fileIo.OpenMode.READ_WRITE);
-26. let bufsize = 4096;
-27. let buf = new ArrayBuffer(bufsize);
-28. let off = 0;
-29. let len = 0;
-30. let readedLen = 0;
-31. while ((len = fileIo.readSync(srcFileDes.fd, buf, { offset: srcFileDes.offset + off, length: bufsize })) != 0) {
-32. readedLen += len;
-33. fileIo.writeSync(dest.fd, buf, { offset: off, length: len });
-34. off = off + len;
-35. if ((srcFileDes.length - readedLen) < bufsize) {
-36. bufsize = srcFileDes.length - readedLen;
-37. }
-38. }
-39. fileIo.close(dest.fd);
-40. return dest.path;
-41. } catch (err) {
-42. console.error(`copyLocalPicToDir failed with error: ${err.code}, ${err.message}`);
-43. return '';
-44. }
-45. }
+  copyLocalPicToDir(rawfilePath: string, newFileName: string): string {
+    try {
+      let srcFileDes = this.context.resourceManager.getRawFdSync(rawfilePath);
+      let dstPath = this.context.filesDir + '/' + newFileName;
+      let dest: fileIo.File = fileIo.openSync(dstPath, fileIo.OpenMode.CREATE | fileIo.OpenMode.READ_WRITE);
+      let bufsize = 4096;
+      let buf = new ArrayBuffer(bufsize);
+      let off = 0;
+      let len = 0;
+      let readedLen = 0;
+      while ((len = fileIo.readSync(srcFileDes.fd, buf, { offset: srcFileDes.offset + off, length: bufsize })) != 0) {
+        readedLen += len;
+        fileIo.writeSync(dest.fd, buf, { offset: off, length: len });
+        off = off + len;
+        if ((srcFileDes.length - readedLen) < bufsize) {
+          bufsize = srcFileDes.length - readedLen;
+        }
+      }
+      fileIo.close(dest.fd);
+      fileIo.close(srcFileDes.fd)
+      return dest.path;
+    } catch (err) {
+      console.error(`copyLocalPicToDir failed with error: ${err.code}, ${err.message}`);
+      return '';
+    }
+  }
 
-47. async copyUrlPicToDir(picUrl: string, newFileName: string): Promise<string> {
-48. let uri = '';
-49. let httpRequest = http.createHttp();
-50. try {
-51. let data: http.HttpResponse = await (httpRequest.request(picUrl) as Promise<http.HttpResponse>);
-52. if (data?.responseCode == http.ResponseCode.OK) {
-53. let dstPath = this.context.filesDir + '/' + newFileName;
-54. let dest: fileIo.File = fileIo.openSync(dstPath, fileIo.OpenMode.CREATE | fileIo.OpenMode.READ_WRITE);
-55. let writeLen: number = fileIo.writeSync(dest.fd, data.result as ArrayBuffer);
-56. uri = dest.path;
-57. }
-58. } catch (err) {
-59. console.error(`copyUrlPicToDir failed with error: ${err.code}, ${err.message}`);
-60. } finally {
-61. httpRequest.destroy();
-62. }
-63. return uri;
-64. }
+  async copyUrlPicToDir(picUrl: string, newFileName: string): Promise<string> {
+    let uri = '';
+    let httpRequest = http.createHttp();
+    try {
+      let data: http.HttpResponse = await (httpRequest.request(picUrl) as Promise<http.HttpResponse>);
+      if (data?.responseCode == http.ResponseCode.OK) {
+        let dstPath = this.context.filesDir + '/' + newFileName;
+        let dest: fileIo.File = fileIo.openSync(dstPath, fileIo.OpenMode.CREATE | fileIo.OpenMode.READ_WRITE);
+        let writeLen: number = fileIo.writeSync(dest.fd, data.result as ArrayBuffer);
+        uri = dest.path;
+      }
+    } catch (err) {
+      console.error(`copyUrlPicToDir failed with error: ${err.code}, ${err.message}`);
+    } finally {
+      httpRequest.destroy();
+    }
+    return uri;
+  }
 
-66. @Builder
-67. MenuBuilder() {
-68. Column() {
-69. Row() {
-70. SaveButton(this.saveButtonOptions)
-71. .onClick(async (event, result: SaveButtonOnClickResult) => {
-72. if (result == SaveButtonOnClickResult.SUCCESS) {
-73. try {
-74. let context = this.context;
-75. let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
-76. let uri = '';
-77. if (this.imgUrl?.includes('rawfile')) {
-78. let rawFileName: string = this.imgUrl.substring(this.imgUrl.lastIndexOf('/') + 1);
-79. uri = this.copyLocalPicToDir(rawFileName, 'copyFile.png');
-80. } else if (this.imgUrl?.includes('http') || this.imgUrl?.includes('https')) {
-81. uri = await this.copyUrlPicToDir(this.imgUrl, `onlinePic${systemDateTime.getTime()}.png`);
-82. }
-83. let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
-84. photoAccessHelper.MediaAssetChangeRequest.createImageAssetRequest(context,  uri);
-85. await phAccessHelper.applyChanges(assetChangeRequest);
-86. } catch (err) {
-87. console.error(`create asset failed with error: ${err.code}, ${err.message}`);
-88. }
-89. } else {
-90. console.error(`SaveButtonOnClickResult create asset failed`);
-91. }
-92. this.showMenu = false;
-93. })
-94. }
-95. .margin({ top: 20, bottom: 20 })
-96. .justifyContent(FlexAlign.Center)
-97. }
-98. .width('80')
-99. .backgroundColor(Color.White)
-100. .borderRadius(10)
-101. }
+  @Builder
+  MenuBuilder() {
+    Column() {
+      Row() {
+        SaveButton(this.saveButtonOptions)
+          .onClick(async (event, result: SaveButtonOnClickResult) => {
+            if (result == SaveButtonOnClickResult.SUCCESS) {
+              try {
+                let context = this.context;
+                let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
+                let uri = '';
+                if (this.imgUrl?.includes('rawfile')) {
+                  let rawFileName: string = this.imgUrl.substring(this.imgUrl.lastIndexOf('/') + 1);
+                  uri = this.copyLocalPicToDir(rawFileName, 'copyFile.png');
+                } else if (this.imgUrl?.includes('http') || this.imgUrl?.includes('https')) {
+                  uri = await this.copyUrlPicToDir(this.imgUrl, `onlinePic${systemDateTime.getTime()}.png`);
+                }
+                let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
+                  photoAccessHelper.MediaAssetChangeRequest.createImageAssetRequest(context,  uri);
+                await phAccessHelper.applyChanges(assetChangeRequest);
+              } catch (err) {
+                console.error(`create asset failed with error: ${err.code}, ${err.message}`);
+              }
+            } else {
+              console.error(`SaveButtonOnClickResult create asset failed`);
+            }
+            this.showMenu = false;
+          })
+      }
+      .margin({ top: 20, bottom: 20 })
+      .justifyContent(FlexAlign.Center)
+    }
+    .width('80')
+    .backgroundColor(Color.White)
+    .borderRadius(10)
+  }
 
-103. build() {
-104. Column() {
-105. Web({src: $rawfile('index4.html'), controller: this.controller})
-106. .onContextMenuShow((event) => {
-107. if (event) {
-108. let hitValue = this.controller.getLastHitTest();
-109. this.imgUrl = hitValue.extra;
-110. }
-111. this.showMenu = true;
-112. return true;
-113. })
-114. .bindContextMenu(this.MenuBuilder, ResponseType.LongPress)
-115. .fileAccess(true)
-116. .javaScriptAccess(true)
-117. .domStorageAccess(true)
-118. }
-119. }
-120. }
-```
-
-[WebSaveImage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ArkWebMenu/entry/src/main/ets/pages/WebSaveImage.ets#L15-L125)
-
-```
-1. <!--index4.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <title>SavePicture</title>
-6. </head>
-7. <body>
-8. <h1>SavePicture</h1>
-9. <br>
-10. <br>
-11. <br>
-12. <br>
-13. <br>
-14. <!--startIcon.png为html同目录下图片-->
-15. <img src="./startIcon.png">
-16. </body>
-17. </html>
+  build() {
+    Column() {
+      Web({src: $rawfile('index4.html'), controller: this.controller})
+        .onContextMenuShow((event) => {
+          if (event) {
+            let hitValue = this.controller.getLastHitTest();
+            this.imgUrl = hitValue.extra;
+          }
+          this.showMenu = true;
+          return true;
+        })
+        .bindContextMenu(this.MenuBuilder, ResponseType.LongPress)
+        .fileAccess(true)
+        .javaScriptAccess(true)
+        .domStorageAccess(true)
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/vr9MrGAMQ7u0JTu-sviBRQ/zh-cn_image_0000002558605074.gif)
+```html
+<!--index4.html-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SavePicture</title>
+</head>
+<body>
+<h1>SavePicture</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!--startIcon.png为html同目录下图片-->
+<img src="./startIcon.png">
+</body>
+</html>
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/oCLMhYfCS8OsEvhmcG2WJA/zh-cn_image_0000002706674148.gif)
 
 ## Web菜单获取选中文本
 
@@ -735,97 +723,95 @@ Web组件的[editMenuOptions](../harmonyos-references/arkts-basic-components-web
 1. 创建SelectClass类，通过[javaScriptProxy](../harmonyos-references/arkts-basic-components-web-attributes.md#javascriptproxy)将SelectClass对象注册到Web组件中。
 2. 在HTML侧注册选区变更监听器，在选区变更时通过SelectClass对象将选区设置到ArkTS侧。
 
-```
-1. import { webview } from '@kit.ArkWeb';
-2. let selectText = '';
+```typescript
+import { webview } from '@kit.ArkWeb';
+let selectText = '';
 
-4. class SelectClass {
-5. constructor() {
-6. }
+class SelectClass {
+  constructor() {
+  }
 
-8. setSelectText(param: string) {
-9. selectText = param.toString();
-10. }
-11. }
+  setSelectText(param: string) {
+    selectText = param.toString();
+  }
+}
 
-13. @Entry
-14. @Component
-15. struct WebComponent {
-16. webController: webview.WebviewController = new webview.WebviewController();
-17. @State selectObj: SelectClass = new SelectClass();
-18. @State textStr: string = '';
+@Entry
+@Component
+struct WebComponent {
+  webController: webview.WebviewController = new webview.WebviewController();
+  @State selectObj: SelectClass = new SelectClass();
+  @State textStr: string = '';
 
-20. build() {
-21. Column() {
-22. Web({ src: $rawfile('index5.html'), controller: this.webController})
-23. .javaScriptProxy({
-24. object: this.selectObj,
-25. name: 'selectObjName',
-26. methodList: ['setSelectText'],
-27. controller: this.webController
-28. })
-29. .height('40%')
-30. Text('Click here to get the selected text.')
-31. .fontSize(20)
-32. .onClick(() => {
-33. this.textStr = selectText;
-34. })
-35. .height('10%')
-36. Text('Selected text is ' + this.textStr)
-37. .fontSize(20)
-38. .height('10%')
-39. }
-40. }
-41. }
-```
-
-[WebEditMenuOptions.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ArkWebMenu/entry/src/main/ets/pages/WebEditMenuOptions.ets#L15-L57)
-
-```
-1. <!DOCTYPE html>
-2. <html>
-3. <head>
-4. <title>Test Get Select</title>
-5. <style>
-6. body {
-7. margin: 40px;
-8. background-color: #f4f4f4;
-9. }
-10. .edit-container {
-11. padding: 20px;
-12. background-color: #fff;
-13. border-radius: 8px;
-14. box-shadow: 0 0 10px rgba(0,0,0,0.1);
-15. margin: auto;
-16. }
-17. textarea {
-18. width: 100%;
-19. height: 400px;
-20. font-size: 16px;
-21. padding: 10px;
-22. border: 1px solid #ccc;
-23. border-radius: 4px;
-24. }
-25. </style>
-26. </head>
-27. <body>
-28. <div class="edit-container">
-29. <textarea placeholder="Enter the text here and select it by long pressing."></textarea>
-30. </div>
-31. <script>
-32. document.addEventListener('selectionchange', () => {
-33. var selection = window.getSelection();
-34. if(selection.rangeCount > 0) {
-35. var selectedText = selection.toString();
-36. selectObjName.setSelectText(selectedText);
-37. }
-38. })
-39. </script>
-40. </body>
-41. </html>
+  build() {
+    Column() {
+      Web({ src: $rawfile('index5.html'), controller: this.webController})
+        .javaScriptProxy({
+          object: this.selectObj,
+          name: 'selectObjName',
+          methodList: ['setSelectText'],
+          controller: this.webController
+        })
+        .height('40%')
+      Text('Click here to get the selected text.')
+        .fontSize(20)
+        .onClick(() => {
+          this.textStr = selectText;
+        })
+        .height('10%')
+      Text('Selected text is ' + this.textStr)
+        .fontSize(20)
+        .height('10%')
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/Uj-V0eerRBex3IW4exxSxw/zh-cn_image_0000002589324599.gif)
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Get Select</title>
+    <style>
+        body {
+          margin: 40px;
+          background-color: #f4f4f4;
+        }
+        .edit-container {
+          padding: 20px;
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0,0,0,0.1);
+          margin: auto;
+        }
+        textarea {
+          width: 100%;
+          height: 400px;
+          font-size: 16px;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+<div class="edit-container">
+    <textarea placeholder="Enter the text here and select it by long pressing."></textarea>
+</div>
+<script>
+    document.addEventListener('selectionchange', () => {
+      var selection = window.getSelection();
+      if(selection.rangeCount > 0) {
+        var selectedText = selection.toString();
+        selectObjName.setSelectText(selectedText);
+      }
+    })
+</script>
+</body>
+</html>
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/rDzkotUQR-uMatQEYVF8aw/zh-cn_image_0000002736433239.gif)
 
 ## 常见问题
 
@@ -833,54 +819,52 @@ Web组件的[editMenuOptions](../harmonyos-references/arkts-basic-components-web
 
 可通过[editMenuOptions](../harmonyos-references/arkts-basic-components-web-attributes.md#editmenuoptions12)接口将系统默认菜单全部过滤，此时无菜单项，则不会显示菜单。
 
-```
-1. import { webview } from '@kit.ArkWeb';
+```typescript
+import { webview } from '@kit.ArkWeb';
 
-3. @Entry
-4. @Component
-5. struct WebComponent {
-6. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-8. onCreateMenu(menuItems: Array<TextMenuItem>): Array<TextMenuItem> {
-9. let items = menuItems.filter((menuItem) => {
-10. // 过滤用户需要的系统菜单项
-11. return false;
-12. });
-13. return items;
-14. }
+  onCreateMenu(menuItems: Array<TextMenuItem>): Array<TextMenuItem> {
+    let items = menuItems.filter((menuItem) => {
+      // 过滤用户需要的系统菜单项
+      return false;
+    });
+    return items;
+  }
 
-16. onMenuItemClick(menuItem: TextMenuItem, textRange: TextRange): boolean {
-17. return false; // 返回默认值false
-18. }
+  onMenuItemClick(menuItem: TextMenuItem, textRange: TextRange): boolean {
+    return false; // 返回默认值false
+  }
 
-20. @State editMenuOptions: EditMenuOptions = { onCreateMenu: this.onCreateMenu, onMenuItemClick: this.onMenuItemClick }
+  @State editMenuOptions: EditMenuOptions = { onCreateMenu: this.onCreateMenu, onMenuItemClick: this.onMenuItemClick }
 
-22. build() {
-23. Column() {
-24. Web({ src: $rawfile('index7.html'), controller: this.controller })
-25. .editMenuOptions(this.editMenuOptions)
-26. }
-27. }
-28. }
-```
-
-[WebDisableLongPress.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ArkWebMenu/entry/src/main/ets/pages/WebDisableLongPress.ets#L15-L44)
-
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <title>测试网页</title>
-6. </head>
-7. <body>
-8. <h1>editMenuOptions Demo</h1>
-9. <span>edit menu options</span>
-10. </body>
-11. </html>
+  build() {
+    Column() {
+      Web({ src: $rawfile('index7.html'), controller: this.controller })
+        .editMenuOptions(this.editMenuOptions)
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/wXrtQZeISDyaI03Zx8EmNA/zh-cn_image_0000002589244537.gif)
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>测试网页</title>
+  </head>
+  <body>
+    <h1>editMenuOptions Demo</h1>
+    <span>edit menu options</span>
+  </body>
+</html>
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/Ij2uE5AxQrGfQFSTSSuORw/zh-cn_image_0000002706834084.gif)
 
 ### 出现选区时手柄菜单不显示
 
@@ -892,142 +876,143 @@ Web组件的[editMenuOptions](../harmonyos-references/arkts-basic-components-web
 
 **示例代码**
 
-```
-1. import { webview } from '@kit.ArkWeb';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. clearSelection() {
-10. try {
-11. this.controller.runJavaScript(
-12. 'clearSelection()',
-13. (error, result) => {
-14. if (error) {
-15. console.error(`run clearSelection JavaScript error, ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-16. return;
-17. }
-18. if (result) {
-19. console.info(`The clearSelection() return value is: ${result}`);
-20. }
-21. });
-22. } catch (error) {
-23. console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-24. }
-25. }
+  clearSelection() {
+    try {
+      this.controller.runJavaScript(
+        'clearSelection()',
+        (error, result) => {
+          if (error) {
+            console.error(`run clearSelection JavaScript error, ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
+            return;
+          }
+          if (result) {
+            console.info(`The clearSelection() return value is: ${result}`);
+          }
+        });
+    } catch (error) {
+      console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
+    }
+  }
 
-27. @Builder
-28. TextMenuBuilder() {
-29. Menu() {
-30. MenuItem({ content: 'Copy', })
-31. .onClick(() => {
-32. try {
-33. this.controller.runJavaScript(
-34. 'copySelectedText()',
-35. (error, result) => {
-36. if (error) {
-37. console.error(`run copySelectedText JavaScript error, ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-38. return;
-39. }
-40. if (result) {
-41. console.info(`The copySelectedText() return value is: ${result}`);
-42. }
-43. });
-44. } catch (error) {
-45. console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-46. }
-47. this.clearSelection()
-48. }).backgroundColor(Color.Pink)
-49. }
-50. }
-51. build() {
-52. Column() {
-53. Web({ src: $rawfile('bindSelectionMenuText.html'), controller: this.controller })
-54. .javaScriptAccess(true)
-55. .fileAccess(true)
-56. .onlineImageAccess(true)
-57. .imageAccess(true)
-58. .domStorageAccess(true)
-59. .zoomAccess(true)
-60. .bindSelectionMenu(WebElementType.TEXT, this.TextMenuBuilder, WebResponseType.LONG_PRESS,
-61. {
-62. onAppear: () => {},
-63. onDisappear: () => {},
-64. menuType: MenuType.SELECTION_MENU,
-65. })
-66. }
-67. }
-68. onBackPress(): boolean | void {
-69. if (this.controller.accessStep(-1)) {
-70. this.controller.backward();
-71. return true;
-72. } else {
-73. return false;
-74. }
-75. }
-76. }
-```
-
-[WebBindSelectionMenuText.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ArkWebMenu/entry/src/main/ets/pages/WebBindSelectionMenuText.ets#L15-L92)
-
-```
-1. <!--bindSelectionMenuText.html-->
-2. <!DOCTYPE html>
-3. <html lang="zh-CN">
-4. <head>
-5. <meta charset="UTF-8">
-6. <meta name="viewport" content="width=device-width, initial-scale=1.0">
-7. <title>自定义文本菜单</title>
-8. <style>
-9. .container {
-10. background-color: white;
-11. padding: 30px;
-12. margin: 20px 0;
-13. }
-
-15. .context {
-16. line-height: 1.8;
-17. font-size: 18px;
-18. }
-
-20. .context span {
-21. border-radius: 8px;
-22. background-color: #f8f9fa;
-23. }
-24. </style>
-25. </head>
-26. <body>
-27. <div class="container">
-28. <div class="context">
-29. <span>在这个数字时代，文本复制功能变得日益重要。无论是引用名言、保存重要信息，还是分享有趣的内容，复制文本都是我们日常操作的  一部分。</span>
-30. </div>
-31. </div>
-
-33. <script>
-34. function copySelectedText() {
-35. const selectedText = window.getSelection().toString();
-36. if (selectedText.length > 0) {
-37. // 使用Clipboard API复制文本
-38. navigator.clipboard.writeText(selectedText)
-39. .then(() => {
-40. showNotification();
-41. })
-42. .catch(err => {
-43. console.error('copy failed:', err);
-44. });
-45. }
-46. }
-47. function clearSelection() {
-48. if (window.getSelection) {
-49. window.getSelection().removeAllRanges();
-50. }
-51. }
-52. </script>
-53. </body>
-54. </html>
+  @Builder
+  TextMenuBuilder() {
+    Menu() {
+      MenuItem({ content: 'Copy', })
+        .onClick(() => {
+          try {
+            this.controller.runJavaScript(
+              'copySelectedText()',
+              (error, result) => {
+                if (error) {
+                  console.error(`run copySelectedText JavaScript error, ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
+                  return;
+                }
+                if (result) {
+                  console.info(`The copySelectedText() return value is: ${result}`);
+                }
+              });
+          } catch (error) {
+            console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
+          }
+          this.clearSelection()
+        }).backgroundColor(Color.Pink)
+    }
+  }
+  build() {
+    Column() {
+      Web({ src: $rawfile('bindSelectionMenuText.html'), controller: this.controller })
+        .javaScriptAccess(true)
+        .fileAccess(true)
+        .onlineImageAccess(true)
+        .imageAccess(true)
+        .domStorageAccess(true)
+        .zoomAccess(true)
+        .bindSelectionMenu(WebElementType.TEXT, this.TextMenuBuilder, WebResponseType.LONG_PRESS,
+          {
+            onAppear: () => {},
+            onDisappear: () => {},
+            menuType: MenuType.SELECTION_MENU,
+          })
+    }
+  }
+  onBackPress(): boolean | void {
+    try {
+      if (this.controller.accessStep(-1)) {
+        this.controller.backward();
+        return true;
+      }
+    } catch (err) {
+      console.error(`onBackPress failed with error: ${err.code}, ${err.message}`);
+    }
+    return false;
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/28tLWEGfRO2MRbNZBHuH8g/zh-cn_image_0000002558764732.gif)
+```html
+<!--bindSelectionMenuText.html-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义文本菜单</title>
+    <style>
+        .container {
+            background-color: white;
+            padding: 30px;
+            margin: 20px 0;
+        }
+
+        .context {
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        .context span {
+            border-radius: 8px;
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="context">
+        <span>在这个数字时代，文本复制功能变得日益重要。无论是引用名言、保存重要信息，还是分享有趣的内容，复制文本都是我们日常操作的  一部分。</span>
+    </div>
+</div>
+
+<script>
+  function copySelectedText() {
+      const selectedText = window.getSelection().toString();
+      if (selectedText.length > 0) {
+          // 使用Clipboard API复制文本
+          navigator.clipboard.writeText(selectedText)
+              .then(() => {
+                  showNotification();
+              })
+              .catch(err => {
+                  console.error('copy failed:', err);
+              });
+      }
+  }
+  function clearSelection() {
+    if (window.getSelection) {
+      window.getSelection().removeAllRanges();
+    }
+  }
+</script>
+</body>
+</html>
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/0rfD-1QQSeSsLrgsNpBLIw/zh-cn_image_0000002736313193.gif)

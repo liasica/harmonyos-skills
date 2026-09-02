@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-mode
 title: model.h
 breadcrumb: API参考 > AI > MindSpore Lite Kit（昇思推理框架服务） > C API > 头文件 > model.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:03+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:bb27eaafab95b6c84bb768264c3d6b20b476671f7ce517fb16db1f3b210b2b03
+scraped_at: 2026-09-02T15:03:11+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:90fba90b5de33f5df3e86b3bf68972f7a41467cc6a39f50d831bc880389f0c9d
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供了模型相关接口，可以用于模型创建、模型推理等，该接口是非线程安全的。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -40,9 +34,13 @@ PhonePC/2in1TabletTVWearable
 | void \* | [OH\_AI\_ModelHandle](capi-mindspore-oh-ai-modelhandle.md) | 指向模型对象的指针。 |
 | void \* | [OH\_AI\_TrainCfgHandle](capi-mindspore-oh-ai-traincfghandle.md) | 指向训练配置对象的指针。 |
 
-### 函数
+### 宏定义
 
-PhonePC/2in1TabletTVWearable
+| 名称 | 描述 |
+| --- | --- |
+| OH\_AI\_MAX\_SHAPE\_NUM 32 | 张量最大维度数。  **起始版本：** 9 |
+
+### 函数
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -81,14 +79,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AI\_KernelCallBack()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef bool (*OH_AI_KernelCallBack)(const OH_AI_TensorHandleArray inputs, const OH_AI_TensorHandleArray outputs,const OH_AI_CallBackParam kernel_Info)
+```c
+typedef bool (*OH_AI_KernelCallBack)(const OH_AI_TensorHandleArray inputs, const OH_AI_TensorHandleArray outputs,const OH_AI_CallBackParam kernel_Info)
 ```
 
 **描述**
@@ -119,10 +113,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ModelCreate()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_ModelHandle OH_AI_ModelCreate(void)
+```c
+OH_AI_API OH_AI_ModelHandle OH_AI_ModelCreate(void)
 ```
 
 **描述**
@@ -139,10 +131,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ModelDestroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API void OH_AI_ModelDestroy(OH_AI_ModelHandle *model)
+```c
+OH_AI_API void OH_AI_ModelDestroy(OH_AI_ModelHandle *model)
 ```
 
 **描述**
@@ -159,10 +149,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ModelBuild()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_Status OH_AI_ModelBuild(OH_AI_ModelHandle model, const void *model_data, size_t data_size,OH_AI_ModelType model_type, const OH_AI_ContextHandle model_context)
+```c
+OH_AI_API OH_AI_Status OH_AI_ModelBuild(OH_AI_ModelHandle model, const void *model_data, size_t data_size,OH_AI_ModelType model_type, const OH_AI_ContextHandle model_context)
 ```
 
 **描述**
@@ -191,10 +179,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ModelBuildFromFile()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_Status OH_AI_ModelBuildFromFile(OH_AI_ModelHandle model, const char *model_path,OH_AI_ModelType model_type, const OH_AI_ContextHandle model_context)
+```c
+OH_AI_API OH_AI_Status OH_AI_ModelBuildFromFile(OH_AI_ModelHandle model, const char *model_path,OH_AI_ModelType model_type, const OH_AI_ContextHandle model_context)
 ```
 
 **描述**
@@ -222,10 +208,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ModelResize()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_Status OH_AI_ModelResize(OH_AI_ModelHandle model, const OH_AI_TensorHandleArray inputs,OH_AI_ShapeInfo *shape_infos, size_t shape_info_num)
+```c
+OH_AI_API OH_AI_Status OH_AI_ModelResize(OH_AI_ModelHandle model, const OH_AI_TensorHandleArray inputs,OH_AI_ShapeInfo *shape_infos, size_t shape_info_num)
 ```
 
 **描述**
@@ -251,10 +235,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ModelPredict()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_Status OH_AI_ModelPredict(OH_AI_ModelHandle model, const OH_AI_TensorHandleArray inputs,OH_AI_TensorHandleArray *outputs, const OH_AI_KernelCallBack before,const OH_AI_KernelCallBack after)
+```c
+OH_AI_API OH_AI_Status OH_AI_ModelPredict(OH_AI_ModelHandle model, const OH_AI_TensorHandleArray inputs,OH_AI_TensorHandleArray *outputs, const OH_AI_KernelCallBack before,const OH_AI_KernelCallBack after)
 ```
 
 **描述**
@@ -281,10 +263,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ModelGetInputs()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_TensorHandleArray OH_AI_ModelGetInputs(const OH_AI_ModelHandle model)
+```c
+OH_AI_API OH_AI_TensorHandleArray OH_AI_ModelGetInputs(const OH_AI_ModelHandle model)
 ```
 
 **描述**
@@ -307,10 +287,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ModelGetOutputs()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_TensorHandleArray OH_AI_ModelGetOutputs(const OH_AI_ModelHandle model)
+```c
+OH_AI_API OH_AI_TensorHandleArray OH_AI_ModelGetOutputs(const OH_AI_ModelHandle model)
 ```
 
 **描述**
@@ -333,10 +311,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ModelGetInputByTensorName()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_TensorHandle OH_AI_ModelGetInputByTensorName(const OH_AI_ModelHandle model, const char *tensor_name)
+```c
+OH_AI_API OH_AI_TensorHandle OH_AI_ModelGetInputByTensorName(const OH_AI_ModelHandle model, const char *tensor_name)
 ```
 
 **描述**
@@ -360,10 +336,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ModelGetOutputByTensorName()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_TensorHandle OH_AI_ModelGetOutputByTensorName(const OH_AI_ModelHandle model, const char *tensor_name)
+```c
+OH_AI_API OH_AI_TensorHandle OH_AI_ModelGetOutputByTensorName(const OH_AI_ModelHandle model, const char *tensor_name)
 ```
 
 **描述**
@@ -387,10 +361,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_TrainCfgCreate()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_TrainCfgHandle OH_AI_TrainCfgCreate()
+```c
+OH_AI_API OH_AI_TrainCfgHandle OH_AI_TrainCfgCreate()
 ```
 
 **描述**
@@ -407,10 +379,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_TrainCfgDestroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API void OH_AI_TrainCfgDestroy(OH_AI_TrainCfgHandle *train_cfg)
+```c
+OH_AI_API void OH_AI_TrainCfgDestroy(OH_AI_TrainCfgHandle *train_cfg)
 ```
 
 **描述**
@@ -427,10 +397,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_TrainCfgGetLossName()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API char **OH_AI_TrainCfgGetLossName(OH_AI_TrainCfgHandle train_cfg, size_t *num)
+```c
+OH_AI_API char **OH_AI_TrainCfgGetLossName(OH_AI_TrainCfgHandle train_cfg, size_t *num)
 ```
 
 **描述**
@@ -454,10 +422,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_TrainCfgSetLossName()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API void OH_AI_TrainCfgSetLossName(OH_AI_TrainCfgHandle train_cfg, const char **loss_name, size_t num)
+```c
+OH_AI_API void OH_AI_TrainCfgSetLossName(OH_AI_TrainCfgHandle train_cfg, const char **loss_name, size_t num)
 ```
 
 **描述**
@@ -476,10 +442,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_TrainCfgGetOptimizationLevel()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_OptimizationLevel OH_AI_TrainCfgGetOptimizationLevel(OH_AI_TrainCfgHandle train_cfg)
+```c
+OH_AI_API OH_AI_OptimizationLevel OH_AI_TrainCfgGetOptimizationLevel(OH_AI_TrainCfgHandle train_cfg)
 ```
 
 **描述**
@@ -502,10 +466,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_TrainCfgSetOptimizationLevel()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API void OH_AI_TrainCfgSetOptimizationLevel(OH_AI_TrainCfgHandle train_cfg, OH_AI_OptimizationLevel level)
+```c
+OH_AI_API void OH_AI_TrainCfgSetOptimizationLevel(OH_AI_TrainCfgHandle train_cfg, OH_AI_OptimizationLevel level)
 ```
 
 **描述**
@@ -523,10 +485,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_TrainModelBuild()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_Status OH_AI_TrainModelBuild(OH_AI_ModelHandle model, const void *model_data, size_t data_size,OH_AI_ModelType model_type, const OH_AI_ContextHandle model_context,const OH_AI_TrainCfgHandle train_cfg)
+```c
+OH_AI_API OH_AI_Status OH_AI_TrainModelBuild(OH_AI_ModelHandle model, const void *model_data, size_t data_size,OH_AI_ModelType model_type, const OH_AI_ContextHandle model_context,const OH_AI_TrainCfgHandle train_cfg)
 ```
 
 **描述**
@@ -554,10 +514,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_TrainModelBuildFromFile()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_Status OH_AI_TrainModelBuildFromFile(OH_AI_ModelHandle model, const char *model_path,OH_AI_ModelType model_type,const OH_AI_ContextHandle model_context,const OH_AI_TrainCfgHandle train_cfg)
+```c
+OH_AI_API OH_AI_Status OH_AI_TrainModelBuildFromFile(OH_AI_ModelHandle model, const char *model_path,OH_AI_ModelType model_type,const OH_AI_ContextHandle model_context,const OH_AI_TrainCfgHandle train_cfg)
 ```
 
 **描述**
@@ -584,10 +542,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_RunStep()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_Status OH_AI_RunStep(OH_AI_ModelHandle model, const OH_AI_KernelCallBack before,const OH_AI_KernelCallBack after)
+```c
+OH_AI_API OH_AI_Status OH_AI_RunStep(OH_AI_ModelHandle model, const OH_AI_KernelCallBack before,const OH_AI_KernelCallBack after)
 ```
 
 **描述**
@@ -612,10 +568,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ModelSetLearningRate()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_Status OH_AI_ModelSetLearningRate(OH_AI_ModelHandle model, float learning_rate)
+```c
+OH_AI_API OH_AI_Status OH_AI_ModelSetLearningRate(OH_AI_ModelHandle model, float learning_rate)
 ```
 
 **描述**
@@ -639,10 +593,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ModelGetLearningRate()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API float OH_AI_ModelGetLearningRate(OH_AI_ModelHandle model)
+```c
+OH_AI_API float OH_AI_ModelGetLearningRate(OH_AI_ModelHandle model)
 ```
 
 **描述**
@@ -665,10 +617,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ModelGetWeights()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_TensorHandleArray OH_AI_ModelGetWeights(OH_AI_ModelHandle model)
+```c
+OH_AI_API OH_AI_TensorHandleArray OH_AI_ModelGetWeights(OH_AI_ModelHandle model)
 ```
 
 **描述**
@@ -691,10 +641,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ModelUpdateWeights()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_Status OH_AI_ModelUpdateWeights(OH_AI_ModelHandle model, const OH_AI_TensorHandleArray new_weights)
+```c
+OH_AI_API OH_AI_Status OH_AI_ModelUpdateWeights(OH_AI_ModelHandle model, const OH_AI_TensorHandleArray new_weights)
 ```
 
 **描述**
@@ -718,10 +666,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ModelGetTrainMode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API bool OH_AI_ModelGetTrainMode(OH_AI_ModelHandle model)
+```c
+OH_AI_API bool OH_AI_ModelGetTrainMode(OH_AI_ModelHandle model)
 ```
 
 **描述**
@@ -744,10 +690,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ModelSetTrainMode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_Status OH_AI_ModelSetTrainMode(OH_AI_ModelHandle model, bool train)
+```c
+OH_AI_API OH_AI_Status OH_AI_ModelSetTrainMode(OH_AI_ModelHandle model, bool train)
 ```
 
 **描述**
@@ -771,10 +715,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ModelSetupVirtualBatch()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_Status OH_AI_ModelSetupVirtualBatch(OH_AI_ModelHandle model, int virtual_batch_multiplier, float lr,float momentum)
+```c
+OH_AI_API OH_AI_Status OH_AI_ModelSetupVirtualBatch(OH_AI_ModelHandle model, int virtual_batch_multiplier, float lr,float momentum)
 ```
 
 **描述**
@@ -800,10 +742,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ExportModel()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_Status OH_AI_ExportModel(OH_AI_ModelHandle model, OH_AI_ModelType model_type, const char *model_file,OH_AI_QuantizationType quantization_type, bool export_inference_only,char **output_tensor_name, size_t num)
+```c
+OH_AI_API OH_AI_Status OH_AI_ExportModel(OH_AI_ModelHandle model, OH_AI_ModelType model_type, const char *model_file,OH_AI_QuantizationType quantization_type, bool export_inference_only,char **output_tensor_name, size_t num)
 ```
 
 **描述**
@@ -832,10 +772,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ExportModelBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_Status OH_AI_ExportModelBuffer(OH_AI_ModelHandle model, OH_AI_ModelType model_type, void *model_data,size_t *data_size, OH_AI_QuantizationType quantization_type,bool export_inference_only, char **output_tensor_name, size_t num)
+```c
+OH_AI_API OH_AI_Status OH_AI_ExportModelBuffer(OH_AI_ModelHandle model, OH_AI_ModelType model_type, void *model_data,size_t *data_size, OH_AI_QuantizationType quantization_type,bool export_inference_only, char **output_tensor_name, size_t num)
 ```
 
 **描述**
@@ -865,10 +803,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ExportWeightsCollaborateWithMicro()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_Status OH_AI_ExportWeightsCollaborateWithMicro(OH_AI_ModelHandle model, OH_AI_ModelType model_type,const char *weight_file, bool is_inference,bool enable_fp16, char **changeable_weights_name,size_t num)
+```c
+OH_AI_API OH_AI_Status OH_AI_ExportWeightsCollaborateWithMicro(OH_AI_ModelHandle model, OH_AI_ModelType model_type,const char *weight_file, bool is_inference,bool enable_fp16, char **changeable_weights_name,size_t num)
 ```
 
 **描述**
@@ -897,10 +833,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ModelLoadConfig()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_Status OH_AI_ModelLoadConfig(OH_AI_ModelHandle model, const char *config_path);
+```c
+OH_AI_API OH_AI_Status OH_AI_ModelLoadConfig(OH_AI_ModelHandle model, const char *config_path);
 ```
 
 **描述**
@@ -924,10 +858,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ModelPredictWithConfig()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_Status OH_AI_ModelPredictWithConfig(OH_AI_ModelHandle model, const OH_AI_TensorHandleArray inputs, OH_AI_TensorHandleArray *outputs, const char *config, const OH_AI_KernelCallBack before, const OH_AI_KernelCallBack after)
+```c
+OH_AI_API OH_AI_Status OH_AI_ModelPredictWithConfig(OH_AI_ModelHandle model, const OH_AI_TensorHandleArray inputs, OH_AI_TensorHandleArray *outputs, const char *config, const OH_AI_KernelCallBack before, const OH_AI_KernelCallBack after)
 ```
 
 **描述**

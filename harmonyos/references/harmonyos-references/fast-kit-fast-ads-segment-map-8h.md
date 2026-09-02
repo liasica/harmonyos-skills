@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/fast-kit-
 title: fast_ads_segment_map.h
 breadcrumb: API参考 > 系统 > 基础功能 > FAST Kit（算法加速服务） > C API > 头文件和结构体 > 头文件 > fast_ads_segment_map.h
 category: harmonyos-references
-scraped_at: 2026-04-29T14:00:45+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:bf3ae211edeec5500840506850bea4b2a7066135a73f9d15757b4799acd4a77c
+scraped_at: 2026-09-02T15:02:07+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5bea01c63bbe20464962e3172c4672db5f7f9867d74c7500da50d798e6a78abe
 ---
 
 ## 概述
-
-PhonePC/2in1Tablet
 
 线段表相关数据结构及函数定义。
 
@@ -26,11 +24,7 @@ PhonePC/2in1Tablet
 
 ## 汇总
 
-PhonePC/2in1Tablet
-
 ### 类型定义
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
@@ -41,16 +35,12 @@ PhonePC/2in1Tablet
 
 ### 枚举
 
-PhonePC/2in1Tablet
-
 | 名称 | 描述 |
 | --- | --- |
 | [FAST\_SegmentMapQueryType](fast-kit-fast.md#fast_segmentmapquerytype-1) { [FAST\_SEGMENTMAP\_QUERY\_TYPE\_SUM](fast-kit-fast.md) = 0, [FAST\_SEGMENTMAP\_QUERY\_TYPE\_MIN](fast-kit-fast.md) = 1, [FAST\_SEGMENTMAP\_QUERY\_TYPE\_MAX](fast-kit-fast.md) = 2 } | 线段表支持的查询操作类型。 |
 | [FAST\_SegmentMapUpdateType](fast-kit-fast.md#fast_segmentmapupdatetype-1) { [FAST\_SEGMENTMAP\_UPDATE\_TYPE\_SET](fast-kit-fast.md) = 0, [FAST\_SEGMENTMAP\_UPDATE\_TYPE\_ADD](fast-kit-fast.md) = 1, [FAST\_SEGMENTMAP\_UPDATE\_TYPE\_SUB](fast-kit-fast.md) = 2 } | 线段表支持的更新操作类型。 |
 
 ### 函数
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |

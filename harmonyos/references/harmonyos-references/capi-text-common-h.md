@@ -1,0 +1,848 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-text-common-h
+title: text_common.h
+breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > text_common.h
+category: harmonyos-references
+scraped_at: 2026-09-02T15:01:20+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:13d68c1cc4623e1bbe666eaae671bd2a6223b9a8ac6191cb2df151a179c0bac5
+---
+
+## 概述
+
+定义文本类组件通用的枚举和接口，涵盖文本对齐、装饰线样式、复制粘贴、溢出处理、断行策略、菜单定制等多种能力，适用于文本输入框、文本显示等场景，帮助开发者灵活控制文本样式与交互行为，降低开发复杂度。
+
+**引用文件：** <arkui/node\_attributes/text\_common.h>
+
+**库：** libace\_ndk.z.so
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 12
+
+**相关模块：** [ArkUI\_NativeModule](capi-arkui-nativemodule.md)
+
+**相关示例：** [native\_type\_sample](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/ArkUISample/NativeType/native_type_sample)
+
+## 汇总
+
+### 结构体
+
+| 名称 | typedef关键字 | 描述 |
+| --- | --- | --- |
+| [ArkUI\_StyledString\_Descriptor](capi-arkui-nativemodule-arkui-styledstring-descriptor.md) | ArkUI\_StyledString\_Descriptor | 定义文本组件支持的属性字符串的数据对象，支持对文本内容进行样式设置与管理，适用于需要富文本展示、样式定制等场景。 |
+| [ArkUI\_ShowCounterConfig](capi-arkui-nativemodule-arkui-textshowcounterconfig.md) | ArkUI\_ShowCounterConfig | 定义文本输入框的计数器配置，用于管理字符计数。适用于需要对用户输入进行字符数限制与实时提示的场景，帮助用户了解输入进度，防止超出字符限制。 |
+| [ArkUI\_TextContentBaseController](capi-arkui-nativemodule-arkui-textcontentbasecontroller.md) | ArkUI\_TextContentBaseController | 定义文本内容基础控制器，为文本类组件提供内容控制能力，支持文本内容的获取、设置和更新等操作，适用于需要对文本组件进行动态内容管理和实时控制的场景，可帮助开发者更灵活地管理文本显示内容。 |
+| [ArkUI\_TextMenuItem](capi-arkui-nativemodule-arkui-textmenuitem.md) | ArkUI\_TextMenuItem | 定义文本菜单项，用于设置标题、图标、启用状态等属性，支持自定义文本选择菜单。 |
+| [ArkUI\_TextMenuItemArray](capi-arkui-nativemodule-arkui-textmenuitemarray.md) | ArkUI\_TextMenuItemArray | 定义文本菜单项数组结构体，用于在文本选择菜单或上下文菜单场景中承载多个文本菜单项数据。 |
+| [ArkUI\_TextEditMenuOptions](capi-arkui-nativemodule-arkui-texteditmenuoptions.md) | ArkUI\_TextEditMenuOptions | 定义可编辑文本菜单扩展项结构体类型，用于扩展文本编辑菜单的功能，适用于开发者需要自定义文本编辑菜单操作的场景。 |
+| [ArkUI\_TextSelectionMenuOptions](capi-arkui-nativemodule-arkui-textselectionmenuoptions.md) | ArkUI\_TextSelectionMenuOptions | 定义自定义文本选择菜单的选项配置，支持菜单内容、样式和行为等自定义配置，适用于需要定制文本选择菜单交互的场景。 |
+| [OH\_ArkUI\_DecorationStyleOptions](capi-arkui-nativemodule-oh-arkui-decorationstyleoptions.md) | OH\_ArkUI\_DecorationStyleOptions | 定义装饰线样式。 |
+
+### 枚举
+
+| 名称 | typedef关键字 | 描述 |
+| --- | --- | --- |
+| [ArkUI\_TextAlignment](capi-text-common-h.md#arkui_textalignment) | ArkUI\_TextAlignment | 定义文本水平对齐样式枚举值。 |
+| [ArkUI\_TextVerticalAlignment](capi-text-common-h.md#arkui_textverticalalignment) | ArkUI\_TextVerticalAlignment | 定义文本垂直对齐样式枚举值。 |
+| [ArkUI\_TextContentAlign](capi-text-common-h.md#arkui_textcontentalign) | ArkUI\_TextContentAlign | 定义文本内容区垂直对齐样式枚举值。 |
+| [ArkUI\_TextDirection](capi-text-common-h.md#arkui_textdirection) | ArkUI\_TextDirection | 定义文本排版方向枚举值。 |
+| [ArkUI\_EnterKeyType](capi-text-common-h.md#arkui_enterkeytype) | ArkUI\_EnterKeyType | 定义单行文本输入回车键类型枚举值。 |
+| [ArkUI\_TextDecorationType](capi-text-common-h.md#arkui_textdecorationtype) | ArkUI\_TextDecorationType | 定义装饰线类型枚举值。 |
+| [ArkUI\_TextDecorationStyle](capi-text-common-h.md#arkui_textdecorationstyle) | ArkUI\_TextDecorationStyle | 定义装饰线样式枚举值。 |
+| [ArkUI\_TextCase](capi-text-common-h.md#arkui_textcase) | ArkUI\_TextCase | 定义文本大小写枚举值。 |
+| [ArkUI\_TextCopyOptions](capi-text-common-h.md#arkui_textcopyoptions) | ArkUI\_TextCopyOptions | 定义组件支持设置文本是否可复制粘贴。 |
+| [ArkUI\_TextOverflow](capi-text-common-h.md#arkui_textoverflow) | ArkUI\_TextOverflow | 定义文本超长时的显示方式。 |
+| [ArkUI\_WordBreak](capi-text-common-h.md#arkui_wordbreak) | ArkUI\_WordBreak | 定义文本断行规则。 |
+| [ArkUI\_EllipsisMode](capi-text-common-h.md#arkui_ellipsismode) | ArkUI\_EllipsisMode | 定义文本省略位置。 |
+| [ArkUI\_KeyboardAppearance](capi-text-common-h.md#arkui_keyboardappearance) | ArkUI\_KeyboardAppearance | 定义输入框拉起的键盘样式。 |
+| [ArkUI\_TextMenuItemId](capi-text-common-h.md#arkui_textmenuitemid) | ArkUI\_TextMenuItemId | 文本菜单项id枚举。 |
+| [OH\_ArkUI\_LineBreakStrategy](capi-text-common-h.md#oh_arkui_linebreakstrategy) | OH\_ArkUI\_LineBreakStrategy | 换行策略类型枚举。 |
+| [ArkUI\_TextSpanType](capi-text-common-h.md#arkui_textspantype) | ArkUI\_TextSpanType | 自定义文本选择菜单的文本识别类型枚举。 |
+| [ArkUI\_TextResponseType](capi-text-common-h.md#arkui_textresponsetype) | ArkUI\_TextResponseType | 自定义文本选择菜单的响应类型枚举。 |
+
+### 函数
+
+| 名称 | 描述 |
+| --- | --- |
+| [typedef void (\*ArkUI\_TextCreateMenuCallback)(ArkUI\_TextMenuItemArray\* items, void\* userData)](capi-text-common-h.md#arkui_textcreatemenucallback) | 文本菜单创建事件回调函数，在文本菜单创建时会触发此回调函数，开发者可在此函数中设置菜单数据。 |
+| [typedef void (\*ArkUI\_TextPrepareMenuCallback)(ArkUI\_TextMenuItemArray\* items, void\* userData)](capi-text-common-h.md#arkui_textpreparemenucallback) | 文本菜单准备事件回调函数，当文本选择区域变化后显示菜单之前会触发此回调函数，开发者可在此函数中配置菜单数据。 |
+| [typedef bool (\*ArkUI\_TextMenuItemClickCallback)(const ArkUI\_TextMenuItem\* item, int32\_t start, int32\_t end, void\* userData)](capi-text-common-h.md#arkui_textmenuitemclickcallback) | 文本菜单项点击事件回调函数，在菜单项被点击时触发此回调函数，开发者可在此函数中对系统默认处理行为进行拦截。适用于需要在菜单项点击时执行自定义逻辑的场景，如：粘贴前校验剪贴板内容、复制时附加自定义信息、分享前记录操作日志等。 |
+| [ArkUI\_ShowCounterConfig\* OH\_ArkUI\_ShowCounterConfig\_Create()](capi-text-common-h.md#oh_arkui_showcounterconfig_create) | 创建文本输入框计数器的配置对象。当该对象不再使用时，请调用[OH\_ArkUI\_ShowCounterConfig\_Dispose](capi-text-common-h.md#oh_arkui_showcounterconfig_dispose)销毁。 |
+| [void OH\_ArkUI\_ShowCounterConfig\_Dispose(ArkUI\_ShowCounterConfig\* config)](capi-text-common-h.md#oh_arkui_showcounterconfig_dispose) | 销毁由[OH\_ArkUI\_ShowCounterConfig\_Create](capi-text-common-h.md#oh_arkui_showcounterconfig_create)创建的文本输入框计数器的配置对象。 |
+| [void OH\_ArkUI\_ShowCounterConfig\_SetCounterTextColor(ArkUI\_ShowCounterConfig\* config, uint32\_t color)](capi-text-common-h.md#oh_arkui_showcounterconfig_setcountertextcolor) | 设置文本输入框未达到最大字符数时计数器的颜色。 |
+| [void OH\_ArkUI\_ShowCounterConfig\_SetCounterTextOverflowColor(ArkUI\_ShowCounterConfig\* config, uint32\_t color)](capi-text-common-h.md#oh_arkui_showcounterconfig_setcountertextoverflowcolor) | 设置文本输入框超出最大字符数时计数器的颜色。 |
+| [uint32\_t OH\_ArkUI\_ShowCounterConfig\_GetCounterTextColor(ArkUI\_ShowCounterConfig\* config)](capi-text-common-h.md#oh_arkui_showcounterconfig_getcountertextcolor) | 获取文本输入框未达到最大字符数时计数器的颜色。 |
+| [uint32\_t OH\_ArkUI\_ShowCounterConfig\_GetCounterTextOverflowColor(ArkUI\_ShowCounterConfig\* config)](capi-text-common-h.md#oh_arkui_showcounterconfig_getcountertextoverflowcolor) | 获取文本输入框超出最大字符数时计数器的颜色。 |
+| [ArkUI\_TextMenuItem\* OH\_ArkUI\_TextMenuItem\_Create()](capi-text-common-h.md#oh_arkui_textmenuitem_create) | 创建文本菜单项对象，用于自定义文本选择菜单或扩展系统菜单。适用于需要添加自定义菜单项（如分享到特定平台、自定义编辑操作等）的场景。当该对象不再使用时，请调用[OH\_ArkUI\_TextMenuItem\_Dispose](capi-text-common-h.md#oh_arkui_textmenuitem_dispose)销毁。 |
+| [void OH\_ArkUI\_TextMenuItem\_Dispose(ArkUI\_TextMenuItem\* textMenuItem)](capi-text-common-h.md#oh_arkui_textmenuitem_dispose) | 销毁由[OH\_ArkUI\_TextMenuItem\_Create](capi-text-common-h.md#oh_arkui_textmenuitem_create)创建的文本菜单项对象。 |
+| [ArkUI\_TextEditMenuOptions\* OH\_ArkUI\_TextEditMenuOptions\_Create()](capi-text-common-h.md#oh_arkui_texteditmenuoptions_create) | 创建文本菜单扩展项对象，用于扩展文本编辑菜单功能。适用于需要为文本编辑组件添加自定义菜单项（如插入特殊字符、快速格式化等）的场景。当该对象不再使用时，请调用[OH\_ArkUI\_TextEditMenuOptions\_Dispose](capi-text-common-h.md#oh_arkui_texteditmenuoptions_dispose)销毁。 |
+| [void OH\_ArkUI\_TextEditMenuOptions\_Dispose(ArkUI\_TextEditMenuOptions\* editMenuOptions)](capi-text-common-h.md#oh_arkui_texteditmenuoptions_dispose) | 销毁由[OH\_ArkUI\_TextEditMenuOptions\_Create](capi-text-common-h.md#oh_arkui_texteditmenuoptions_create)创建的文本菜单扩展项对象。 |
+| [ArkUI\_TextSelectionMenuOptions\* OH\_ArkUI\_TextSelectionMenuOptions\_Create()](capi-text-common-h.md#oh_arkui_textselectionmenuoptions_create) | 创建自定义文本选择菜单对象，用于配置文本选择菜单的内容和行为。适用于需要完全自定义文本选择菜单（如替换默认菜单、添加应用专属操作）的场景。当该对象不再使用时，请调用[OH\_ArkUI\_TextSelectionMenuOptions\_Dispose](capi-text-common-h.md#oh_arkui_textselectionmenuoptions_dispose)销毁。 |
+| [void OH\_ArkUI\_TextSelectionMenuOptions\_Dispose(ArkUI\_TextSelectionMenuOptions\* selectionMenuOptions)](capi-text-common-h.md#oh_arkui_textselectionmenuoptions_dispose) | 销毁由[OH\_ArkUI\_TextSelectionMenuOptions\_Create](capi-text-common-h.md#oh_arkui_textselectionmenuoptions_create)创建的自定义文本选择菜单对象。 |
+| [ArkUI\_TextContentBaseController\* OH\_ArkUI\_TextContentBaseController\_Create()](capi-text-common-h.md#oh_arkui_textcontentbasecontroller_create) | 创建文本内容基础控制器对象。当该对象不再使用时，请调用[OH\_ArkUI\_TextContentBaseController\_Dispose](capi-text-common-h.md#oh_arkui_textcontentbasecontroller_dispose)销毁。 |
+| [void OH\_ArkUI\_TextContentBaseController\_Dispose(ArkUI\_TextContentBaseController\* controller)](capi-text-common-h.md#oh_arkui_textcontentbasecontroller_dispose) | 销毁由[OH\_ArkUI\_TextContentBaseController\_Create](capi-text-common-h.md#oh_arkui_textcontentbasecontroller_create)创建的文本内容基础控制器对象。 |
+| [void OH\_ArkUI\_TextContentBaseController\_DeleteBackward(ArkUI\_TextContentBaseController\* controller)](capi-text-common-h.md#oh_arkui_textcontentbasecontroller_deletebackward) | 在编辑态时删除光标前字符。其他状态删除输入框组件的最后一个字符。 |
+| [void OH\_ArkUI\_TextContentBaseController\_ScrollToVisible(ArkUI\_TextContentBaseController\* controller, int32\_t start, int32\_t end)](capi-text-common-h.md#oh_arkui_textcontentbasecontroller_scrolltovisible) | 将起始索引与结束索引传递给与其绑定的输入框组件，并将此范围内的文字滚动到可视区域。 |
+| [OH\_ArkUI\_DecorationStyleOptions\* OH\_ArkUI\_DecorationStyleOptions\_Create()](capi-text-common-h.md#oh_arkui_decorationstyleoptions_create) | 创建一个装饰线样式对象，用于设置文本装饰线的类型、样式和颜色。适用于需要为文本添加下划线、删除线等装饰效果的场景，如富文本编辑器、超链接文本、价格标记等。当该对象不再使用时，请调用[OH\_ArkUI\_DecorationStyleOptions\_Destroy](capi-text-common-h.md#oh_arkui_decorationstyleoptions_destroy)销毁。 |
+| [void OH\_ArkUI\_DecorationStyleOptions\_Destroy(OH\_ArkUI\_DecorationStyleOptions\* options)](capi-text-common-h.md#oh_arkui_decorationstyleoptions_destroy) | 销毁由[OH\_ArkUI\_DecorationStyleOptions\_Create](capi-text-common-h.md#oh_arkui_decorationstyleoptions_create)创建的装饰线样式对象。 |
+
+## 枚举类型说明
+
+### ArkUI\_TextAlignment
+
+```c
+enum ArkUI_TextAlignment
+```
+
+**描述**
+
+定义文本水平对齐样式枚举值。
+
+**起始版本：** 12
+
+| 枚举项 | 描述 |
+| --- | --- |
+| ARKUI\_TEXT\_ALIGNMENT\_START = 0 | 水平对齐首部。 |
+| ARKUI\_TEXT\_ALIGNMENT\_CENTER = 1 | 水平居中对齐。 |
+| ARKUI\_TEXT\_ALIGNMENT\_END = 2 | 水平对齐尾部。 |
+| ARKUI\_TEXT\_ALIGNMENT\_JUSTIFY = 3 | 双端对齐。 |
+| ARKUI\_TEXT\_ALIGNMENT\_LEFT\_TO\_RIGHT = 4 | 从左到右对齐。  **起始版本：** 23 |
+| ARKUI\_TEXT\_ALIGNMENT\_RIGHT\_TO\_LEFT = 5 | 从右到左对齐。  **起始版本：** 23 |
+
+### ArkUI\_TextVerticalAlignment
+
+```c
+enum ArkUI_TextVerticalAlignment
+```
+
+**描述**
+
+定义文本垂直对齐样式枚举值。
+
+**起始版本：** 20
+
+| 枚举项 | 描述 |
+| --- | --- |
+| ARKUI\_TEXT\_VERTICAL\_ALIGNMENT\_BASELINE = 0 | 基线对齐。 |
+| ARKUI\_TEXT\_VERTICAL\_ALIGNMENT\_BOTTOM = 1 | 底部对齐。 |
+| ARKUI\_TEXT\_VERTICAL\_ALIGNMENT\_CENTER = 2 | 居中对齐。 |
+| ARKUI\_TEXT\_VERTICAL\_ALIGNMENT\_TOP = 3 | 顶部对齐。 |
+
+### ArkUI\_TextContentAlign
+
+```c
+enum ArkUI_TextContentAlign
+```
+
+**描述**
+
+定义文本内容区垂直对齐样式枚举值。
+
+**起始版本：** 21
+
+| 枚举项 | 描述 |
+| --- | --- |
+| ARKUI\_TEXT\_CONTENT\_ALIGN\_TOP = 0 | 顶部对齐。 |
+| ARKUI\_TEXT\_CONTENT\_ALIGN\_CENTER = 1 | 居中对齐。 |
+| ARKUI\_TEXT\_CONTENT\_ALIGN\_BOTTOM = 2 | 底部对齐。 |
+
+### ArkUI\_TextDirection
+
+```c
+enum ArkUI_TextDirection
+```
+
+**描述**
+
+定义文本排版方向枚举值。
+
+**起始版本：** 23
+
+| 枚举项 | 描述 |
+| --- | --- |
+| ARKUI\_TEXT\_DIRECTION\_LTR = 0 | 文本排版方向从左到右。 |
+| ARKUI\_TEXT\_DIRECTION\_RTL = 1 | 文本排版方向从右到左。 |
+| ARKUI\_TEXT\_DIRECTION\_DEFAULT = 2 | 文本排版方向遵循组件布局。 |
+| ARKUI\_TEXT\_DIRECTION\_AUTO = 3 | 遵循自身实际文本内容的排版方向，如果文本为 RTL（Right-to-Left）类语言（如藏文、维吾尔文），文本排版方向为从右到左。如果为 LTR（Left-to-Right）类语言（如中文、英文），文本排版方向为从左到右。 |
+
+### ArkUI\_EnterKeyType
+
+```c
+enum ArkUI_EnterKeyType
+```
+
+**描述**
+
+定义单行文本输入回车键类型枚举值。
+
+**起始版本：** 12
+
+| 枚举项 | 描述 |
+| --- | --- |
+| ARKUI\_ENTER\_KEY\_TYPE\_GO = 2 | 显示为开始样式。 |
+| ARKUI\_ENTER\_KEY\_TYPE\_SEARCH = 3 | 显示为搜索样式。 |
+| ARKUI\_ENTER\_KEY\_TYPE\_SEND = 4 | 显示为发送样式。 |
+| ARKUI\_ENTER\_KEY\_TYPE\_NEXT = 5 | 显示为下一个样式。 |
+| ARKUI\_ENTER\_KEY\_TYPE\_DONE = 6 | 显示为完成样式。 |
+| ARKUI\_ENTER\_KEY\_TYPE\_PREVIOUS = 7 | 显示为上一个样式。 |
+| ARKUI\_ENTER\_KEY\_TYPE\_NEW\_LINE = 8 | 显示为换行样式。 |
+
+### ArkUI\_TextDecorationType
+
+```c
+enum ArkUI_TextDecorationType
+```
+
+**描述**
+
+定义装饰线类型枚举值。
+
+**起始版本：** 12
+
+| 枚举项 | 描述 |
+| --- | --- |
+| ARKUI\_TEXT\_DECORATION\_TYPE\_NONE = 0 | 不使用装饰线。 |
+| ARKUI\_TEXT\_DECORATION\_TYPE\_UNDERLINE = 1 | 文字下划线修饰。 |
+| ARKUI\_TEXT\_DECORATION\_TYPE\_OVERLINE = 2 | 文字上划线修饰。 |
+| ARKUI\_TEXT\_DECORATION\_TYPE\_LINE\_THROUGH = 3 | 穿过文本的修饰线。 |
+
+### ArkUI\_TextDecorationStyle
+
+```c
+enum ArkUI_TextDecorationStyle
+```
+
+**描述**
+
+定义装饰线样式枚举值。
+
+**起始版本：** 12
+
+| 枚举项 | 描述 |
+| --- | --- |
+| ARKUI\_TEXT\_DECORATION\_STYLE\_SOLID = 0 | 单实线。 |
+| ARKUI\_TEXT\_DECORATION\_STYLE\_DOUBLE = 1 | 双实线。 |
+| ARKUI\_TEXT\_DECORATION\_STYLE\_DOTTED = 2 | 点线。 |
+| ARKUI\_TEXT\_DECORATION\_STYLE\_DASHED = 3 | 虚线。 |
+| ARKUI\_TEXT\_DECORATION\_STYLE\_WAVY = 4 | 波浪线。 |
+
+### ArkUI\_TextCase
+
+```c
+enum ArkUI_TextCase
+```
+
+**描述**
+
+定义文本大小写枚举值。
+
+**起始版本：** 12
+
+| 枚举项 | 描述 |
+| --- | --- |
+| ARKUI\_TEXT\_CASE\_NORMAL = 0 | 保持原有大小写。 |
+| ARKUI\_TEXT\_CASE\_LOWER = 1 | 文本全小写。 |
+| ARKUI\_TEXT\_CASE\_UPPER = 2 | 文本全大写。 |
+
+### ArkUI\_TextCopyOptions
+
+```c
+enum ArkUI_TextCopyOptions
+```
+
+**描述**
+
+定义组件支持设置文本是否可复制粘贴。
+
+**起始版本：** 12
+
+| 枚举项 | 描述 |
+| --- | --- |
+| ARKUI\_TEXT\_COPY\_OPTIONS\_NONE = 0 | 不支持复制。 |
+| ARKUI\_TEXT\_COPY\_OPTIONS\_IN\_APP = 1 | 支持应用内复制。 |
+| ARKUI\_TEXT\_COPY\_OPTIONS\_LOCAL\_DEVICE = 2 | 支持设备内复制。 |
+| ARKUI\_TEXT\_COPY\_OPTIONS\_CROSS\_DEVICE = 3 | 支持跨设备复制。 |
+
+### ArkUI\_TextOverflow
+
+```c
+enum ArkUI_TextOverflow
+```
+
+**描述**
+
+定义文本超长时的显示方式。
+
+**起始版本：** 12
+
+| 枚举项 | 描述 |
+| --- | --- |
+| ARKUI\_TEXT\_OVERFLOW\_NONE = 0 | 文本超长时不裁剪显示。 |
+| ARKUI\_TEXT\_OVERFLOW\_CLIP = 1 | 文本超长时进行裁剪显示。 |
+| ARKUI\_TEXT\_OVERFLOW\_ELLIPSIS = 2 | 文本超长时显示不下的文本用省略号代替。 |
+| ARKUI\_TEXT\_OVERFLOW\_MARQUEE = 3 | 文本超长时以跑马灯的方式展示。 |
+
+### ArkUI\_WordBreak
+
+```c
+enum ArkUI_WordBreak
+```
+
+**描述**
+
+定义文本断行规则。
+
+**起始版本：** 12
+
+| 枚举项 | 描述 |
+| --- | --- |
+| ARKUI\_WORD\_BREAK\_NORMAL = 0 | CJK（中文、日文、韩文）文本可以在任意2个字符间断行，而Non-CJK文本（如英文等）只能在空白符处断行。适用于对断行控制要求不高的通用场景。 |
+| ARKUI\_WORD\_BREAK\_BREAK\_ALL = 1 | 对于Non-CJK的文本，可在任意2个字符间断行。CJK（中文、日文、韩文）文本可以在任意2个字符间断行。 |
+| ARKUI\_WORD\_BREAK\_BREAK\_WORD = 2 | 对于Non-CJK的文本可在任意2个字符间断行，一行文本中有断点（如空白符）时，优先按断点换行。对于CJK的文本，换行效果与NORMAL效果保持一致。 |
+| ARKUI\_WORD\_BREAK\_HYPHENATION = 3 | 对于Non-CJK的文本，可以按照音节断行。对于CJK的文本，换行效果与NORMAL效果保持一致。  **起始版本：** 18 |
+
+### ArkUI\_EllipsisMode
+
+```c
+enum ArkUI_EllipsisMode
+```
+
+**描述**
+
+定义文本省略位置。
+
+**起始版本：** 12
+
+| 枚举项 | 描述 |
+| --- | --- |
+| ARKUI\_ELLIPSIS\_MODE\_START = 0 | 省略行首内容。适用单行文本场景。 |
+| ARKUI\_ELLIPSIS\_MODE\_CENTER = 1 | 省略行中内容。适用单行文本场景。 |
+| ARKUI\_ELLIPSIS\_MODE\_END = 2 | 省略行末内容。适用单行文本和多行文本场景。 |
+| ARKUI\_ELLIPSIS\_MODE\_MULTILINE\_START = 3 | 省略行首内容。适用单行文本和多行文本场景。  **起始版本：** 24 |
+| ARKUI\_ELLIPSIS\_MODE\_MULTILINE\_CENTER = 4 | 省略行中内容。适用单行文本和多行文本场景。  **起始版本：** 24 |
+
+### ArkUI\_KeyboardAppearance
+
+```c
+enum ArkUI_KeyboardAppearance
+```
+
+**描述**
+
+定义输入框拉起的键盘样式。
+
+**起始版本：** 15
+
+| 枚举项 | 描述 |
+| --- | --- |
+| ARKUI\_KEYBOARD\_APPEARANCE\_NONE\_IMMERSIVE = 0 | 默认模式，不使用沉浸式样式。 |
+| ARKUI\_KEYBOARD\_APPEARANCE\_IMMERSIVE = 1 | 沉浸式模式，由系统决定采用的样式。 |
+| ARKUI\_KEYBOARD\_APPEARANCE\_LIGHT\_IMMERSIVE = 2 | 浅色沉浸式样式。 |
+| ARKUI\_KEYBOARD\_APPEARANCE\_DARK\_IMMERSIVE = 3 | 深色沉浸式样式。 |
+
+### ArkUI\_TextMenuItemId
+
+```c
+enum ArkUI_TextMenuItemId
+```
+
+**描述**
+
+文本菜单项id枚举。
+
+**起始版本：** 22
+
+| 枚举项 | 描述 |
+| --- | --- |
+| ARKUI\_TEXT\_MENU\_ITEM\_ID\_CUT = 0 | 剪切。 |
+| ARKUI\_TEXT\_MENU\_ITEM\_ID\_COPY = 1 | 复制。 |
+| ARKUI\_TEXT\_MENU\_ITEM\_ID\_PASTE = 2 | 粘贴。 |
+| ARKUI\_TEXT\_MENU\_ITEM\_ID\_SELECT\_ALL = 3 | 全选。 |
+| ARKUI\_TEXT\_MENU\_ITEM\_ID\_COLLABORATION\_SERVICE = 4 | 互通服务，提供跨设备交互能力，例如跨设备相机访问。 |
+| ARKUI\_TEXT\_MENU\_ITEM\_ID\_CAMERA\_INPUT = 5 | 拍摄输入。 |
+| ARKUI\_TEXT\_MENU\_ITEM\_ID\_AI\_WRITER = 6 | AI帮写。该菜单项依赖大模型能力才能生效。 |
+| ARKUI\_TEXT\_MENU\_ITEM\_ID\_TRANSLATE = 7 | 翻译。对选中的文本提供翻译服务。 |
+| ARKUI\_TEXT\_MENU\_ITEM\_ID\_SEARCH = 8 | 搜索。对选中的文本提供搜索服务，拉起浏览器搜索选中文本内容。 |
+| ARKUI\_TEXT\_MENU\_ITEM\_ID\_SHARE = 9 | 分享。对选中的文本提供分享服务，拉起分享窗口分享选中文本内容。 |
+| ARKUI\_TEXT\_MENU\_ITEM\_ID\_URL = 10 | 打开链接。对选中的URL提供跳转服务，拉起浏览器搜索或者应用页面。 |
+| ARKUI\_TEXT\_MENU\_ITEM\_ID\_EMAIL = 11 | 新建邮件。对选中的邮箱地址提供跳转服务，拉起邮箱应用。 |
+| ARKUI\_TEXT\_MENU\_ITEM\_ID\_PHONE\_NUMBER = 12 | 呼叫。对选中的电话号码跳转服务，拉起电话拨号页面。 |
+| ARKUI\_TEXT\_MENU\_ITEM\_ID\_ADDRESS = 13 | 导航前往。对选中的地址提供跳转服务，拉起地图应用。 |
+| ARKUI\_TEXT\_MENU\_ITEM\_ID\_DATA\_TIME = 14 | 新建日程。对选中的日期和时间提供跳转服务，拉起新建日程页面。 |
+| ARKUI\_TEXT\_MENU\_ITEM\_ID\_ASK\_AI = 15 | 问问AI。对选中的文本提供AI问询能力。该菜单项依赖大模型能力才能生效。 |
+| ARKUI\_TEXT\_MENU\_ITEM\_ID\_AUTO\_FILL = 16 | 自动填充。例如自动填充账号密码。  **起始版本：** 24 |
+| ARKUI\_TEXT\_MENU\_ITEM\_ID\_PASSWORD\_VAULT = 17 | 密码保险箱。  **起始版本：** 24 |
+| ARKUI\_TEXT\_MENU\_ITEM\_ID\_APP\_RESERVED\_BEGIN = 10000 | 应用自定义菜单项起始id，除了系统内置的菜单项id，应用还可以自定义菜单项id。 |
+| ARKUI\_TEXT\_MENU\_ITEM\_ID\_APP\_RESERVED\_END = 20000 | 应用自定义菜单项结束id，除了系统内置的菜单项id，应用还可以自定义菜单项id。 |
+
+### OH\_ArkUI\_LineBreakStrategy
+
+```c
+enum OH_ArkUI_LineBreakStrategy
+```
+
+**描述**
+
+换行策略类型枚举。
+
+**起始版本：** 24
+
+| 枚举项 | 描述 |
+| --- | --- |
+| OH\_ARKUI\_LINE\_BREAK\_STRATEGY\_GREEDY = 0 | 贪婪模式。  使每一行尽可能显示多的字符，直到这一行不能显示更多字符时进行折行。 |
+| OH\_ARKUI\_LINE\_BREAK\_STRATEGY\_HIGH\_QUALITY = 1 | 高质量模式。  在平衡模式的基础上，尽可能填满行，同时最后一行的权重较低，可能出现最后一行留白较多的情形。 |
+| OH\_ARKUI\_LINE\_BREAK\_STRATEGY\_BALANCE = 2 | 平衡模式。  在不拆词的情况下，尽量使一个段落中每一行的宽度相同。 |
+
+### ArkUI\_TextSpanType
+
+```c
+enum ArkUI_TextSpanType
+```
+
+**描述**
+
+自定义文本选择菜单的文本识别类型枚举。
+
+**起始版本：** 22
+
+| 枚举项 | 描述 |
+| --- | --- |
+| ARKUI\_TEXT\_SPAN\_TYPE\_TEXT = 0 | 选中文本内容为文字类型。 |
+| ARKUI\_TEXT\_SPAN\_TYPE\_IMAGE = 1 | 选中文本内容为图像类型。 |
+| ARKUI\_TEXT\_SPAN\_TYPE\_MIXED = 2 | 选中文本内容为图文混合类型。 |
+| ARKUI\_TEXT\_SPAN\_TYPE\_DEFAULT = 3 | 如果设置为此类型且设置了其他类型时，选中文本后会显示与选中文本内容类型对应的菜单。如果设置为此类型但其他类型未设置时，选中文本后会显示此类型对应的菜单。例如，同时设置了文本识别类型为ARKUI\_TEXT\_SPAN\_TYPE\_TEXT、ARKUI\_TEXT\_SPAN\_TYPE\_DEFAULT的两个菜单，此时选中文本内容为文字类型会触发ARKUI\_TEXT\_SPAN\_TYPE\_TEXT对应的菜单弹出，选中文本内容为图像类型则会触发ARKUI\_TEXT\_SPAN\_TYPE\_DEFAULT对应的菜单弹出。 |
+
+### ArkUI\_TextResponseType
+
+```c
+enum ArkUI_TextResponseType
+```
+
+**描述**
+
+自定义文本选择菜单的响应类型枚举。
+
+**起始版本：** 22
+
+| 枚举项 | 描述 |
+| --- | --- |
+| ARKUI\_TEXT\_RESPONSE\_TYPE\_RIGHT\_CLICK = 0 | 通过鼠标右键触发菜单弹出。 |
+| ARKUI\_TEXT\_RESPONSE\_TYPE\_LONG\_PRESS = 1 | 通过长按触发菜单弹出。 |
+| ARKUI\_TEXT\_RESPONSE\_TYPE\_SELECT = 2 | 通过鼠标选中触发菜单弹出。 |
+| ARKUI\_TEXT\_RESPONSE\_TYPE\_DEFAULT = 3 | 如果设置为此类型且设置了其他类型时，触发其他类型的操作会显示对应类型的菜单。如果设置为此类型但其他类型未设置时，触发其他类型的操作会显示此类型对应的菜单。例如，同时设置了响应类型为ARKUI\_TEXT\_RESPONSE\_TYPE\_RIGHT\_CLICK、ARKUI\_TEXT\_RESPONSE\_TYPE\_DEFAULT的两个菜单，此时通过鼠标右键会触发ARKUI\_TEXT\_RESPONSE\_TYPE\_RIGHT\_CLICK对应的菜单弹出，长按则会触发ARKUI\_TEXT\_RESPONSE\_TYPE\_DEFAULT对应的菜单弹出。 |
+
+## 函数说明
+
+### ArkUI\_TextCreateMenuCallback()
+
+```c
+typedef void (*ArkUI_TextCreateMenuCallback)(ArkUI_TextMenuItemArray* items, void* userData)
+```
+
+**描述**
+
+文本菜单创建事件回调函数，在文本菜单创建时会触发此回调函数，开发者可在此函数中设置菜单数据。
+
+**说明** 
+
+本回调与ArkUI\_TextPrepareMenuCallback均用于菜单数据设置，但触发时机不同：本回调在菜单创建时触发，ArkUI\_TextPrepareMenuCallback在文本选择区域变化后、菜单显示前触发。两者可同时注册，分别处理菜单初始化和选择变化场景。
+
+**起始版本：** 22
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [ArkUI\_TextMenuItemArray](capi-arkui-nativemodule-arkui-textmenuitemarray.md)\* items | 指向ArkUI\_TextMenuItemArray对象的指针，该数组对象由系统内部创建并释放，在回调函数中开发者可以调用[OH\_ArkUI\_TextMenuItemArray\_Insert](capi-native-type-h.md#oh_arkui_textmenuitemarray_insert)，[OH\_ArkUI\_TextMenuItemArray\_Erase](capi-native-type-h.md#oh_arkui_textmenuitemarray_erase)进行数组修改。 |
+| void\* userData | 用户自定义数据指针，由开发者在注册回调时传入，在回调触发时原样回传给开发者，用于在回调函数中获取上下文数据。传参为null表示不传递自定义数据。 |
+
+### ArkUI\_TextPrepareMenuCallback()
+
+```c
+typedef void (*ArkUI_TextPrepareMenuCallback)(ArkUI_TextMenuItemArray* items, void* userData)
+```
+
+**描述**
+
+文本菜单准备事件回调函数，当文本选择区域变化后显示菜单之前会触发此回调函数，开发者可在此函数中配置菜单数据。
+
+**起始版本：** 22
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [ArkUI\_TextMenuItemArray](capi-arkui-nativemodule-arkui-textmenuitemarray.md)\* items | 指向ArkUI\_TextMenuItemArray对象的指针，该数组对象由系统内部创建并释放，在回调函数中开发者可以调用[OH\_ArkUI\_TextMenuItemArray\_Insert](capi-native-type-h.md#oh_arkui_textmenuitemarray_insert)，[OH\_ArkUI\_TextMenuItemArray\_Erase](capi-native-type-h.md#oh_arkui_textmenuitemarray_erase)进行数组修改。 |
+| void\* userData | 用户自定义数据指针，由开发者在注册回调时传入，在回调触发时原样回传给开发者，用于在回调函数中获取上下文数据。传参为null表示不传递自定义数据。 |
+
+### ArkUI\_TextMenuItemClickCallback()
+
+```c
+typedef bool (*ArkUI_TextMenuItemClickCallback)(const ArkUI_TextMenuItem* item, int32_t start, int32_t end, void* userData)
+```
+
+**描述**
+
+文本菜单项点击事件回调函数，在菜单项被点击时触发此回调函数，开发者可在此函数中对系统默认处理行为进行拦截。适用于需要在菜单项点击时执行自定义逻辑的场景，如：粘贴前校验剪贴板内容、复制时附加自定义信息、分享前记录操作日志等。
+
+**起始版本：** 22
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| const [ArkUI\_TextMenuItem](capi-arkui-nativemodule-arkui-textmenuitem.md)\* item | 指向ArkUI\_TextMenuItem对象的指针，表示被点击的文本菜单项。 |
+| int32\_t start | 选中文本起始索引，由系统在触发回调时传入，表示被选中文本的起始位置。索引从0开始计数。 |
+| int32\_t end | 选中文本结束索引，由系统在触发回调时传入，表示被选中文本的结束位置。索引从0开始计数，结束索引大于等于起始索引。 |
+| void\* userData | 用户自定义数据指针，由开发者在注册回调时传入，在回调触发时原样回传给开发者，用于在回调函数中获取上下文数据。传参为null表示不传递自定义数据。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| bool | 是否拦截系统默认处理行为。  true：拦截系统默认处理行为，如点击"粘贴"、"复制"等文本菜单项时不再执行系统默认处理行为，仅执行开发者自定义处理行为。  false：不拦截系统默认处理行为，如点击"粘贴"、"复制"等文本菜单项时先执行开发者自定义处理行为，再执行系统默认处理行为。 |
+
+### OH\_ArkUI\_ShowCounterConfig\_Create()
+
+```c
+ArkUI_ShowCounterConfig* OH_ArkUI_ShowCounterConfig_Create()
+```
+
+**描述**
+
+创建文本输入框计数器的配置对象。当该对象不再使用时，请调用[OH\_ArkUI\_ShowCounterConfig\_Dispose](capi-text-common-h.md#oh_arkui_showcounterconfig_dispose)销毁。
+
+**起始版本：** 22
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [ArkUI\_ShowCounterConfig\*](capi-arkui-nativemodule-arkui-textshowcounterconfig.md) | 指向文本输入框计数器的配置对象的指针。 |
+
+### OH\_ArkUI\_ShowCounterConfig\_Dispose()
+
+```c
+void OH_ArkUI_ShowCounterConfig_Dispose(ArkUI_ShowCounterConfig* config)
+```
+
+**描述**
+
+销毁由[OH\_ArkUI\_ShowCounterConfig\_Create](capi-text-common-h.md#oh_arkui_showcounterconfig_create)创建的文本输入框计数器的配置对象。
+
+**起始版本：** 22
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [ArkUI\_ShowCounterConfig](capi-arkui-nativemodule-arkui-textshowcounterconfig.md)\* config | 指向待销毁的文本输入框计数器的配置对象的指针。 |
+
+### OH\_ArkUI\_ShowCounterConfig\_SetCounterTextColor()
+
+```c
+void OH_ArkUI_ShowCounterConfig_SetCounterTextColor(ArkUI_ShowCounterConfig* config, uint32_t color)
+```
+
+**描述**
+
+设置文本输入框未达到最大字符数时计数器的颜色。未通过该接口设置时，默认颜色为0x66182431，显示为灰色。
+
+**起始版本：** 22
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [ArkUI\_ShowCounterConfig](capi-arkui-nativemodule-arkui-textshowcounterconfig.md)\* config | 指向文本输入框计数器的配置对象指针。使用前需先通过OH\_ArkUI\_ShowCounterConfig\_Create()创建。 |
+| uint32\_t color | 文本输入框未达到最大字符数时计数器的颜色，格式为0xARGB。 |
+
+### OH\_ArkUI\_ShowCounterConfig\_SetCounterTextOverflowColor()
+
+```c
+void OH_ArkUI_ShowCounterConfig_SetCounterTextOverflowColor(ArkUI_ShowCounterConfig* config, uint32_t color)
+```
+
+**描述**
+
+设置文本输入框超出最大字符数时计数器的颜色。未通过该接口设置时，默认颜色为0x99FA2A2D，显示为红色。
+
+**起始版本：** 22
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [ArkUI\_ShowCounterConfig](capi-arkui-nativemodule-arkui-textshowcounterconfig.md)\* config | 指向文本输入框计数器的配置对象指针。 |
+| uint32\_t color | 文本输入框超出最大字符数时计数器的颜色，格式为0xARGB。 |
+
+### OH\_ArkUI\_ShowCounterConfig\_GetCounterTextColor()
+
+```c
+uint32_t OH_ArkUI_ShowCounterConfig_GetCounterTextColor(ArkUI_ShowCounterConfig* config)
+```
+
+**描述**
+
+获取文本输入框未达到最大字符数时计数器的颜色。
+
+**起始版本：** 22
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [ArkUI\_ShowCounterConfig](capi-arkui-nativemodule-arkui-textshowcounterconfig.md)\* config | 指向文本输入框计数器的配置对象指针。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| uint32\_t | 返回文本输入框未达到最大字符数时计数器的颜色，格式为0xARGB，如果未通过[OH\_ArkUI\_ShowCounterConfig\_SetCounterTextColor](capi-text-common-h.md#oh_arkui_showcounterconfig_setcountertextcolor)接口设置计数器颜色，则返回0；否则返回已设置的颜色值。 |
+
+### OH\_ArkUI\_ShowCounterConfig\_GetCounterTextOverflowColor()
+
+```c
+uint32_t OH_ArkUI_ShowCounterConfig_GetCounterTextOverflowColor(ArkUI_ShowCounterConfig* config)
+```
+
+**描述**
+
+获取文本输入框超出最大字符数时计数器的颜色。
+
+**起始版本：** 22
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [ArkUI\_ShowCounterConfig](capi-arkui-nativemodule-arkui-textshowcounterconfig.md)\* config | 指向文本输入框计数器的配置对象指针。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| uint32\_t | 返回文本输入框超出最大字符数时计数器的颜色，格式为0xARGB，如果未通过[OH\_ArkUI\_ShowCounterConfig\_SetCounterTextOverflowColor](capi-text-common-h.md#oh_arkui_showcounterconfig_setcountertextoverflowcolor)接口设置计数器颜色，则返回0；否则返回已设置的颜色值。 |
+
+### OH\_ArkUI\_TextMenuItem\_Create()
+
+```c
+ArkUI_TextMenuItem* OH_ArkUI_TextMenuItem_Create()
+```
+
+**描述**
+
+创建文本菜单项对象，用于自定义文本选择菜单或扩展系统菜单。适用于需要添加自定义菜单项（如分享到特定平台、自定义编辑操作等）的场景。当该对象不再使用时，请调用[OH\_ArkUI\_TextMenuItem\_Dispose](capi-text-common-h.md#oh_arkui_textmenuitem_dispose)销毁。
+
+**起始版本：** 22
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [ArkUI\_TextMenuItem\*](capi-arkui-nativemodule-arkui-textmenuitem.md) | 指向文本菜单项对象的指针，用于在文本选择菜单中表示单个菜单项。 |
+
+### OH\_ArkUI\_TextMenuItem\_Dispose()
+
+```c
+void OH_ArkUI_TextMenuItem_Dispose(ArkUI_TextMenuItem* textMenuItem)
+```
+
+**描述**
+
+销毁由[OH\_ArkUI\_TextMenuItem\_Create](capi-text-common-h.md#oh_arkui_textmenuitem_create)创建的文本菜单项对象。
+
+**起始版本：** 22
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [ArkUI\_TextMenuItem](capi-arkui-nativemodule-arkui-textmenuitem.md)\* textMenuItem | 指向ArkUI\_TextMenuItem对象的指针。 |
+
+### OH\_ArkUI\_TextEditMenuOptions\_Create()
+
+```c
+ArkUI_TextEditMenuOptions* OH_ArkUI_TextEditMenuOptions_Create()
+```
+
+**描述**
+
+创建文本菜单扩展项对象，用于扩展文本编辑菜单功能。适用于需要为文本编辑组件添加自定义菜单项（如插入特殊字符、快速格式化等）的场景。当该对象不再使用时，请调用[OH\_ArkUI\_TextEditMenuOptions\_Dispose](capi-text-common-h.md#oh_arkui_texteditmenuoptions_dispose)销毁。
+
+**起始版本：** 22
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [ArkUI\_TextEditMenuOptions\*](capi-arkui-nativemodule-arkui-texteditmenuoptions.md) | 指向文本菜单扩展项对象的指针，用于扩展文本编辑菜单的功能。 |
+
+### OH\_ArkUI\_TextEditMenuOptions\_Dispose()
+
+```c
+void OH_ArkUI_TextEditMenuOptions_Dispose(ArkUI_TextEditMenuOptions* editMenuOptions)
+```
+
+**描述**
+
+销毁由[OH\_ArkUI\_TextEditMenuOptions\_Create](capi-text-common-h.md#oh_arkui_texteditmenuoptions_create)创建的文本菜单扩展项对象。
+
+**起始版本：** 22
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [ArkUI\_TextEditMenuOptions](capi-arkui-nativemodule-arkui-texteditmenuoptions.md)\* editMenuOptions | 指向ArkUI\_TextEditMenuOptions对象的指针。 |
+
+### OH\_ArkUI\_TextSelectionMenuOptions\_Create()
+
+```c
+ArkUI_TextSelectionMenuOptions* OH_ArkUI_TextSelectionMenuOptions_Create()
+```
+
+**描述**
+
+创建自定义文本选择菜单对象，用于配置文本选择菜单的内容和行为。适用于需要完全自定义文本选择菜单（如替换默认菜单、添加应用专属操作）的场景。当该对象不再使用时，请调用[OH\_ArkUI\_TextSelectionMenuOptions\_Dispose](capi-text-common-h.md#oh_arkui_textselectionmenuoptions_dispose)销毁。
+
+**起始版本：** 22
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [ArkUI\_TextSelectionMenuOptions\*](capi-arkui-nativemodule-arkui-textselectionmenuoptions.md) | 指向自定义文本选择菜单对象的指针，用于菜单内容、样式和行为等自定义配置。 |
+
+### OH\_ArkUI\_TextSelectionMenuOptions\_Dispose()
+
+```c
+void OH_ArkUI_TextSelectionMenuOptions_Dispose(ArkUI_TextSelectionMenuOptions* selectionMenuOptions)
+```
+
+**描述**
+
+销毁由[OH\_ArkUI\_TextSelectionMenuOptions\_Create](capi-text-common-h.md#oh_arkui_textselectionmenuoptions_create)创建的自定义文本选择菜单对象。
+
+**起始版本：** 22
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [ArkUI\_TextSelectionMenuOptions](capi-arkui-nativemodule-arkui-textselectionmenuoptions.md)\* selectionMenuOptions | 指向ArkUI\_TextSelectionMenuOptions对象的指针。 |
+
+### OH\_ArkUI\_TextContentBaseController\_Create()
+
+```c
+ArkUI_TextContentBaseController* OH_ArkUI_TextContentBaseController_Create()
+```
+
+**描述**
+
+创建文本内容基础控制器对象。当该对象不再使用时，请调用[OH\_ArkUI\_TextContentBaseController\_Dispose](capi-text-common-h.md#oh_arkui_textcontentbasecontroller_dispose)销毁。
+
+**起始版本：** 23
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [ArkUI\_TextContentBaseController\*](capi-arkui-nativemodule-arkui-textcontentbasecontroller.md) | 指向文本内容基础控制器对象的指针，用于对文本组件进行内容控制，支持文本内容的获取、设置和更新等操作。 |
+
+### OH\_ArkUI\_TextContentBaseController\_Dispose()
+
+```c
+void OH_ArkUI_TextContentBaseController_Dispose(ArkUI_TextContentBaseController* controller)
+```
+
+**描述**
+
+销毁由[OH\_ArkUI\_TextContentBaseController\_Create](capi-text-common-h.md#oh_arkui_textcontentbasecontroller_create)创建的文本内容基础控制器对象。
+
+**起始版本：** 23
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [ArkUI\_TextContentBaseController](capi-arkui-nativemodule-arkui-textcontentbasecontroller.md)\* controller | 待销毁的文本内容基础控制器对象指针。 |
+
+### OH\_ArkUI\_TextContentBaseController\_DeleteBackward()
+
+```c
+void OH_ArkUI_TextContentBaseController_DeleteBackward(ArkUI_TextContentBaseController* controller)
+```
+
+**描述**
+
+在编辑态时删除光标前字符。其他状态删除输入框组件的最后一个字符。
+
+**说明** 
+
+使用前需确保控制器已绑定到输入框组件。
+
+**起始版本：** 23
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [ArkUI\_TextContentBaseController](capi-arkui-nativemodule-arkui-textcontentbasecontroller.md)\* controller | 文本内容基础控制器对象指针。使用前需先通过OH\_ArkUI\_TextContentBaseController\_Create()创建。 |
+
+### OH\_ArkUI\_TextContentBaseController\_ScrollToVisible()
+
+```c
+void OH_ArkUI_TextContentBaseController_ScrollToVisible(ArkUI_TextContentBaseController* controller, int32_t start, int32_t end)
+```
+
+**描述**
+
+将起始索引与结束索引传递给与其绑定的输入框组件，并将此范围内的文字滚动到可视区域。
+
+**起始版本：** 23
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [ArkUI\_TextContentBaseController](capi-arkui-nativemodule-arkui-textcontentbasecontroller.md)\* controller | 文本内容基础控制器对象指针，使用前需先通过OH\_ArkUI\_TextContentBaseController\_Create()创建。  通过此controller将起始索引与结束索引传递给与其绑定的输入框组件并进行滚动操作。 |
+| int32\_t start | 起始文字索引值。  起始索引应小于等于结束索引，否则接口调用无效。取值范围[0, 输入框文本总长度]，起始索引小于0视为0，大于总长度视为总长度。 |
+| int32\_t end | 结束文字索引值。  结束索引应大于等于起始索引，否则接口调用无效。取值范围[0, 输入框文本总长度]，结束索引小于0视为0，大于总长度视为总长度。 |
+
+### OH\_ArkUI\_DecorationStyleOptions\_Create()
+
+```c
+OH_ArkUI_DecorationStyleOptions* OH_ArkUI_DecorationStyleOptions_Create()
+```
+
+**描述**
+
+创建一个装饰线样式对象，用于设置文本装饰线的类型、样式和颜色。适用于需要为文本添加下划线、删除线等装饰效果的场景，如富文本编辑器、超链接文本、价格标记等。当该对象不再使用时，请调用[OH\_ArkUI\_DecorationStyleOptions\_Destroy](capi-text-common-h.md#oh_arkui_decorationstyleoptions_destroy)销毁。
+
+**起始版本：** 24
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [OH\_ArkUI\_DecorationStyleOptions\*](capi-arkui-nativemodule-oh-arkui-decorationstyleoptions.md) | 指向装饰线样式对象的指针，用于定义装饰线样式。 |
+
+### OH\_ArkUI\_DecorationStyleOptions\_Destroy()
+
+```c
+void OH_ArkUI_DecorationStyleOptions_Destroy(OH_ArkUI_DecorationStyleOptions* options)
+```
+
+**描述**
+
+销毁由[OH\_ArkUI\_DecorationStyleOptions\_Create](capi-text-common-h.md#oh_arkui_decorationstyleoptions_create)创建的装饰线样式对象。
+
+**起始版本：** 24
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_ArkUI\_DecorationStyleOptions](capi-arkui-nativemodule-oh-arkui-decorationstyleoptions.md)\* options | 指向待销毁的选项对象的指针。 |

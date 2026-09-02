@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-gameservicekit-6021
 title: Game Service Kit
-breadcrumb: 版本说明 > HarmonyOS 6.0.2(22) > OS平台能力 > API变更清单 > Game Service Kit
+breadcrumb: 版本说明 > 更多版本 > 6.0.2(22) > OS平台能力 > API变更清单 > Game Service Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:46+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:24+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:3c0db4414c54ade1085ac82821b3863d1a3a5f0166711deb4a4571d19fb7f736
 ---
 

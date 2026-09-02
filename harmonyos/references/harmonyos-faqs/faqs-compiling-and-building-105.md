@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“no such file or directory, realpath 'xxx'”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“no such file or directory, realpath 'xxx'”
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:20:42+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:6d88f40c51aa460b336e5d9f511211b9c0b3d9f4e0e69f99cd3874179a56106b
+scraped_at: 2026-09-02T14:54:54+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:a83be2adfbcdcf938118e6b8fdd41dce6b51c9ddac5811eeab317d3f73f26cdf
 ---
 
 **问题现象**
 
-DevEco Studio编译时出现错误，提示“no such file or directory, realpath 'xxx'”错误信息。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/gNbAz-BLRuOdk2ppG_YPgQ/zh-cn_image_0000002229758637.png)
+DevEco Studio编译时出现错误，提示“no such file or directory, realpath 'xxx'”错误信息。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/AYGlS9EUSCiD07D532Cstw/zh-cn_image_0000002654797901.png)
 
 **解决措施**
 

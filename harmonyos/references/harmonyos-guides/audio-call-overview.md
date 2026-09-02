@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-call-ov
 title: 音频通话开发概述
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频通话 > 音频通话开发概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:38+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:f0b8b9f5c81025084df48cdca65a6f2e4a138be7c30af1301111dd3d5edbb217
+scraped_at: 2026-09-02T14:50:14+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:1ae628bf88df448a8d6ab3de35cec8f2d0f19a3803ce31b2724b3fbe4392303a
 ---
 
 常用的音频通话模式包括VoIP通话和蜂窝通话。
 
 * VoIP通话：
 
-  VoIP（Voice over Internet Protocol）通话是指基于互联网协议（IP）进行通讯的一种语音通话技术。VoIP通话会将通话信息打包成数据包，通过网络进行传输，因此VoIP通话对网络要求较高，通话质量与网络连接速度紧密相关。
+  VoIP（Voice over Internet Protocol）通话是指基于互联网协议（IP）进行通讯的一种语音通话技术。VoIP通话会将音频数据打包成数据包，通过网络进行传输，因此VoIP通话对网络要求较高，通话质量与网络连接速度紧密相关。
 * 蜂窝通话（仅对系统应用开放）：
 
   蜂窝通话是指传统的电话功能，由运营商提供服务，目前仅对系统应用开放，未向第三方应用提供开发接口。
@@ -23,7 +23,7 @@ content_hash: sha256:f0b8b9f5c81025084df48cdca65a6f2e4a138be7c30af1301111dd3d5ed
 
 应用使用音频通话相关功能时，系统会切换至与通话相关的音频场景模式（[AudioScene](../harmonyos-references/arkts-apis-audio-e.md#audioscene8)），当前预置了多种音频场景，包括响铃、通话、语音聊天等，在不同的场景下，系统会采用不同的策略来处理音频。
 
-如在通话场景中会更注重人声的清晰度。系统会使用3A算法对音频数据进行预处理，抑制通话回声，消除背景噪音，调整音量范围，从而达到清晰人声的效果。3A算法，指声学回声消除（Acoustic Echo Cancellation, AEC）、背景噪声抑制（Active Noise Control, ANC）、自动增益控制（Automatic Gain Control, AGC）三种音频处理算法。
+如在通话场景中会更注重人声的清晰度。系统会使用3A算法对音频数据进行预处理，抑制通话回声，消除背景噪声，调整音量范围，从而达到清晰人声的效果。3A算法，指声学回声消除（Acoustic Echo Cancellation, AEC）、背景噪声抑制（Active Noise Suppression, ANS）、自动增益控制（Automatic Gain Control, AGC）三种音频处理算法。
 
 当前预置的音频场景：
 
@@ -34,7 +34,7 @@ content_hash: sha256:f0b8b9f5c81025084df48cdca65a6f2e4a138be7c30af1301111dd3d5ed
 
 ## 铃声模式
 
-在用户进入到音频通话时，应用可以使用铃声或振动来提示用户。系统通过调整铃声模式（[AudioRingMode](../harmonyos-references/arkts-apis-audio-e.md#audioringmode)），实现便捷地管理铃声音量，并调整设备的振动模式。
+在用户进入到音频通话时，应用可以使用铃声或振动来提示用户。系统通过调整铃声模式（[AudioRingMode](../harmonyos-references/arkts-apis-audio-e.md#audioringmode)），便捷地管理铃声音量，并调整设备的振动模式。
 
 当前预置的三种铃声模式：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-asyn
 title: 使用Node-API接口进行异步任务开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景 > 使用Node-API接口进行异步任务开发
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:44:04+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d7828e9445ab30f1e910770eaa9f9b3fdb6b7adb3a8f2fc722dd57a986730ceb
+scraped_at: 2026-09-02T15:00:16+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4753b0b3ed85b31e46ba53793cf02f58cecd6e21f35c495c54ff0d817490b8b6
 ---
 
 ## 场景介绍
@@ -21,251 +21,251 @@ napi\_queue\_async\_work接口使用uv\_queue\_work能力，并管理回调中na
 
 异步调用支持callback和Promise两种方式，选择哪种方式由开发者决定。以下是两种方式的示例代码：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/YgjiPm8GTbqMrFRodIUGPg/zh-cn_image_0000002558606216.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/G8reWmTiRw2664y3KJH86A/zh-cn_image_0000002706675516.png)
 
 ## 使用Promise方式示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/36VPtzhiQmGFZvjPKKeJ2w/zh-cn_image_0000002589325743.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/810CWz7sRX--Mq2J05J9jQ/zh-cn_image_0000002736434603.png)
 
 1. CMakeLists.txt配置
 
-   ```
-   1. # the minimum version of CMake.
-   2. cmake_minimum_required(VERSION 3.5.0)
-   3. project(NodeAPIAsynchronousTask)
+   ```txt
+   # the minimum version of CMake.
+   cmake_minimum_required(VERSION 3.5.0)
+   project(NodeAPIAsynchronousTask)
 
-   5. set(NATIVERENDER_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR})
+   set(NATIVERENDER_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR})
 
-   7. if(DEFINED PACKAGE_FIND_FILE)
-   8. include(${PACKAGE_FIND_FILE})
-   9. endif()
+   if(DEFINED PACKAGE_FIND_FILE)
+       include(${PACKAGE_FIND_FILE})
+   endif()
 
-   11. include_directories(${NATIVERENDER_ROOT_PATH}
-   12. ${NATIVERENDER_ROOT_PATH}/include)
+   include_directories(${NATIVERENDER_ROOT_PATH}
+                       ${NATIVERENDER_ROOT_PATH}/include)
 
-   14. add_library(entry SHARED napi_init.cpp)
-   15. target_link_libraries(entry PUBLIC libace_napi.z.so)
+   add_library(entry SHARED napi_init.cpp)
+   target_link_libraries(entry PUBLIC libace_napi.z.so)
 
-   17. add_library(entry1 SHARED callback.cpp)
-   18. target_link_libraries(entry1 PUBLIC libace_napi.z.so)
+   add_library(entry1 SHARED callback.cpp)
+   target_link_libraries(entry1 PUBLIC libace_napi.z.so)
    ```
 2. 使用napi\_create\_async\_work创建异步任务，使用napi\_queue\_async\_work将任务加入队列，等待执行。
 
    ```
-   1. #include "napi/native_api.h"
-   2. // 调用方提供的data context，该数据会传递给execute和complete函数
-   3. struct CallbackData {
-   4. napi_async_work asyncWork = nullptr;
-   5. napi_deferred deferred = nullptr;
-   6. napi_ref callback = nullptr;
-   7. double args = 0;
-   8. double result = 0;
-   9. };
+   #include "napi/native_api.h"
+   // 调用方提供的data context，该数据会传递给execute和complete函数
+   struct CallbackData {
+       napi_async_work asyncWork = nullptr;
+       napi_deferred deferred = nullptr;
+       napi_ref callback = nullptr;
+       double args = 0;
+       double result = 0;
+   };
 
-   11. // ...
+   // ...
 
-   13. static napi_value AsyncWork(napi_env env, napi_callback_info info)
-   14. {
-   15. size_t argc = 1;
-   16. napi_value args[1];
-   17. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+   static napi_value AsyncWork(napi_env env, napi_callback_info info)
+   {
+       size_t argc = 1;
+       napi_value args[1];
+       napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
-   19. napi_value promise = nullptr;
-   20. napi_deferred deferred = nullptr;
-   21. napi_create_promise(env, &deferred, &promise);
+       napi_value promise = nullptr;
+       napi_deferred deferred = nullptr;
+       napi_create_promise(env, &deferred, &promise);
 
-   23. auto callbackData = new CallbackData();
-   24. callbackData->deferred = deferred;
-   25. napi_get_value_double(env, args[0], &callbackData->args);
+       auto callbackData = new CallbackData();
+       callbackData->deferred = deferred;
+       napi_get_value_double(env, args[0], &callbackData->args);
 
-   27. napi_value resourceName = nullptr;
-   28. napi_create_string_utf8(env, "AsyncCallback", NAPI_AUTO_LENGTH, &resourceName);
-   29. // 创建异步任务
-   30. napi_create_async_work(env, nullptr, resourceName, ExecuteCB, CompleteCB, callbackData, &callbackData->asyncWork);
-   31. // 将异步任务加入队列
-   32. napi_queue_async_work(env, callbackData->asyncWork);
+       napi_value resourceName = nullptr;
+       napi_create_string_utf8(env, "AsyncCallback", NAPI_AUTO_LENGTH, &resourceName);
+       // 创建异步任务
+       napi_create_async_work(env, nullptr, resourceName, ExecuteCB, CompleteCB, callbackData, &callbackData->asyncWork);
+       // 将异步任务加入队列
+       napi_queue_async_work(env, callbackData->asyncWork);
 
-   34. return promise;
-   35. }
+       return promise;
+   }
    ```
 3. 定义异步任务的第一个回调函数，该函数在工作线程中执行，处理具体的业务逻辑。
 
    ```
-   1. static void ExecuteCB(napi_env env, void *data)
-   2. {
-   3. CallbackData *callbackData = reinterpret_cast<CallbackData *>(data);
-   4. callbackData->result = callbackData->args;
-   5. }
+   static void ExecuteCB(napi_env env, void *data)
+   {
+       CallbackData *callbackData = reinterpret_cast<CallbackData *>(data);
+       callbackData->result = callbackData->args;
+   }
    ```
 4. 定义异步任务的第二个回调函数，该函数在主线程执行，将结果传递给ArkTS侧。
 
    ```
-   1. static void CompleteCB(napi_env env, napi_status status, void *data)
-   2. {
-   3. CallbackData *callbackData = reinterpret_cast<CallbackData *>(data);
-   4. napi_value result = nullptr;
-   5. napi_create_double(env, callbackData->result, &result);
-   6. if (callbackData->result > 0) {
-   7. napi_resolve_deferred(env, callbackData->deferred, result);
-   8. } else {
-   9. napi_reject_deferred(env, callbackData->deferred, result);
-   10. }
+   static void CompleteCB(napi_env env, napi_status status, void *data)
+   {
+       CallbackData *callbackData = reinterpret_cast<CallbackData *>(data);
+       napi_value result = nullptr;
+       napi_create_double(env, callbackData->result, &result);
+       if (callbackData->result > 0) {
+           napi_resolve_deferred(env, callbackData->deferred, result);
+       } else {
+           napi_reject_deferred(env, callbackData->deferred, result);
+       }
 
-   12. napi_delete_async_work(env, callbackData->asyncWork);
-   13. delete callbackData;
-   14. callbackData = nullptr;
-   15. }
+       napi_delete_async_work(env, callbackData->asyncWork);
+       delete callbackData;
+       callbackData = nullptr;
+   }
    ```
 5. 模块注册及ArkTS侧调用接口。
 
    ```
-   1. // 模块初始化
-   2. static napi_value Init(napi_env env, napi_value exports)
-   3. {
-   4. napi_property_descriptor desc[] = {
-   5. { "asyncWork", nullptr, AsyncWork, nullptr, nullptr, nullptr, napi_default, nullptr }
-   6. };
-   7. napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
-   8. return exports;
-   9. }
+   // 模块初始化
+   static napi_value Init(napi_env env, napi_value exports)
+   {
+       napi_property_descriptor desc[] = {
+           { "asyncWork", nullptr, AsyncWork, nullptr, nullptr, nullptr, napi_default, nullptr }
+       };
+       napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+       return exports;
+   }
    ```
 
    接口对应的.d.ts描述。
 
-   ```
-   1. // index.d.ts
-   2. export const asyncWork: (data: number) => Promise<number>;
+   ```typescript
+   // index.d.ts
+   export const asyncWork: (data: number) => Promise<number>;
    ```
 
    ArkTS侧调用接口。
 
-   ```
-   1. import { hilog } from '@kit.PerformanceAnalysisKit';
-   2. import testNapi from 'libentry.so';
-   ```
-
-   ```
-   1. testNapi.asyncWork(1024).then((result: number) => {
-   2. hilog.info(0x0000, 'XXX', 'result is %{public}d', result);
-   3. });
+   ```ts
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import testNapi from 'libentry.so';
    ```
 
+   ```typescript
+   testNapi.asyncWork(1024).then((result: number) => {
+     hilog.info(0x0000, 'XXX', 'result is %{public}d', result);
+   });
    ```
-   1. 运行结果：result is 1024
+
+   ```txt
+   运行结果：result is 1024
    ```
 
 ## 使用callback方式示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/fGCoShzpREet-WgvuSE68A/zh-cn_image_0000002589245683.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/WaGoWmu0TOetTZydVUmpbA/zh-cn_image_0000002706835456.png)
 
 1. 使用napi\_create\_async\_work创建异步任务，并使用napi\_queue\_async\_work将异步任务加入队列，等待执行。
 
    ```
-   1. #include "napi/native_api.h"
+   #include "napi/native_api.h"
 
-   3. static constexpr int INT_ARGS_2 = 2; // 入参索引
+   static constexpr int INT_ARGS_2 = 2; // 入参索引
 
-   5. // 调用方提供的data context，该数据会传递给execute和complete函数
-   6. struct CallbackData {
-   7. napi_async_work asyncWork = nullptr;
-   8. napi_ref callbackRef = nullptr;
-   9. double args[2] = {0};
-   10. double result = 0;
-   11. };
+   // 调用方提供的data context，该数据会传递给execute和complete函数
+   struct CallbackData {
+       napi_async_work asyncWork = nullptr;
+       napi_ref callbackRef = nullptr;
+       double args[2] = {0};
+       double result = 0;
+   };
 
-   13. // ...
-   14. napi_value AsyncWork(napi_env env, napi_callback_info info)
-   15. {
-   16. size_t argc = 3;
-   17. napi_value args[3];
-   18. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-   19. auto asyncContext = new CallbackData();
-   20. // 将接收到的参数保存到callbackData
-   21. napi_get_value_double(env, args[0], &asyncContext->args[0]);
-   22. napi_get_value_double(env, args[1], &asyncContext->args[1]);
-   23. // 将传入的callback转换为napi_ref延长其生命周期，防止被GC掉
-   24. napi_create_reference(env, args[INT_ARGS_2], 1, &asyncContext->callbackRef);
-   25. napi_value resourceName = nullptr;
-   26. napi_create_string_utf8(env, "asyncWorkCallback", NAPI_AUTO_LENGTH, &resourceName);
-   27. // 创建异步任务
-   28. napi_create_async_work(env, nullptr, resourceName, ExecuteCB, CompleteCB,
-   29. asyncContext, &asyncContext->asyncWork);
-   30. // 将异步任务加入队列
-   31. napi_queue_async_work(env, asyncContext->asyncWork);
-   32. return nullptr;
-   33. }
+   // ...
+   napi_value AsyncWork(napi_env env, napi_callback_info info)
+   {
+       size_t argc = 3;
+       napi_value args[3];
+       napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+       auto asyncContext = new CallbackData();
+       // 将接收到的参数保存到callbackData
+       napi_get_value_double(env, args[0], &asyncContext->args[0]);
+       napi_get_value_double(env, args[1], &asyncContext->args[1]);
+       // 将传入的callback转换为napi_ref延长其生命周期，防止被GC掉
+       napi_create_reference(env, args[INT_ARGS_2], 1, &asyncContext->callbackRef);
+       napi_value resourceName = nullptr;
+       napi_create_string_utf8(env, "asyncWorkCallback", NAPI_AUTO_LENGTH, &resourceName);
+       // 创建异步任务
+       napi_create_async_work(env, nullptr, resourceName, ExecuteCB, CompleteCB,
+                              asyncContext, &asyncContext->asyncWork);
+       // 将异步任务加入队列
+       napi_queue_async_work(env, asyncContext->asyncWork);
+       return nullptr;
+   }
    ```
 2. 定义异步任务的第一个回调函数，该函数在工作线程中执行，处理具体的业务逻辑。
 
    ```
-   1. static void ExecuteCB(napi_env env, void *data)
-   2. {
-   3. CallbackData *callbackData = reinterpret_cast<CallbackData *>(data);
-   4. callbackData->result = callbackData->args[0] + callbackData->args[1];
-   5. }
+   static void ExecuteCB(napi_env env, void *data)
+   {
+       CallbackData *callbackData = reinterpret_cast<CallbackData *>(data);
+       callbackData->result = callbackData->args[0] + callbackData->args[1];
+   }
    ```
 3. 定义异步任务的第二个回调函数，该函数在主线程执行，将结果传递给ArkTS侧。
 
    ```
-   1. static void CompleteCB(napi_env env, napi_status status, void *data)
-   2. {
-   3. CallbackData *callbackData = reinterpret_cast<CallbackData *>(data);
-   4. napi_value callbackArg[1] = {nullptr};
-   5. napi_create_double(env, callbackData->result, &callbackArg[0]);
-   6. napi_value callback = nullptr;
-   7. napi_get_reference_value(env, callbackData->callbackRef, &callback);
-   8. // 执行回调函数
-   9. napi_value result;
-   10. napi_value undefined;
-   11. napi_get_undefined(env, &undefined);
-   12. napi_call_function(env, undefined, callback, 1, callbackArg, &result);
-   13. // 删除napi_ref对象以及异步任务
-   14. napi_delete_reference(env, callbackData->callbackRef);
-   15. napi_delete_async_work(env, callbackData->asyncWork);
-   16. delete callbackData;
-   17. callbackData = nullptr;
-   18. }
+   static void CompleteCB(napi_env env, napi_status status, void *data)
+   {
+       CallbackData *callbackData = reinterpret_cast<CallbackData *>(data);
+       napi_value callbackArg[1] = {nullptr};
+       napi_create_double(env, callbackData->result, &callbackArg[0]);
+       napi_value callback = nullptr;
+       napi_get_reference_value(env, callbackData->callbackRef, &callback);
+       // 执行回调函数
+       napi_value result;
+       napi_value undefined;
+       napi_get_undefined(env, &undefined);
+       napi_call_function(env, undefined, callback, 1, callbackArg, &result);
+       // 删除napi_ref对象以及异步任务
+       napi_delete_reference(env, callbackData->callbackRef);
+       napi_delete_async_work(env, callbackData->asyncWork);
+       delete callbackData;
+       callbackData = nullptr;
+   }
    ```
 4. 模块注册以及ArkTS侧调用接口。
 
    导出方法名与上面一致，可直接复用模块注册的代码。
 
    ```
-   1. // 模块初始化
-   2. static napi_value Init(napi_env env, napi_value exports)
-   3. {
-   4. napi_property_descriptor desc[] = {
-   5. { "asyncWork", nullptr, AsyncWork, nullptr, nullptr, nullptr, napi_default, nullptr }
-   6. };
-   7. napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
-   8. return exports;
-   9. }
+   // 模块初始化
+   static napi_value Init(napi_env env, napi_value exports)
+   {
+       napi_property_descriptor desc[] = {
+           { "asyncWork", nullptr, AsyncWork, nullptr, nullptr, nullptr, napi_default, nullptr }
+       };
+       napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+       return exports;
+   }
    ```
 
    接口对应的.d.ts描述。
 
-   ```
-   1. export const asyncWork: (arg1: number, arg2: number, callback: (result: number) => void) => void;
+   ```typescript
+   export const asyncWork: (arg1: number, arg2: number, callback: (result: number) => void) => void;
    ```
 
    ArkTS侧调用接口。
 
-   ```
-   1. import { hilog } from '@kit.PerformanceAnalysisKit';
-   2. import nativeModule from 'libentry1.so';
+   ```ts
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import nativeModule from 'libentry1.so';
 
-   4. let num1: number = 123;
-   5. let num2: number = 456;
-   ```
-
-   ```
-   1. nativeModule.asyncWork(num1, num2, (result: number) => {
-   2. hilog.info(0x0000, 'XXX', 'result is %{public}d', result);
-   3. });
+   let num1: number = 123;
+   let num2: number = 456;
    ```
 
+   ```typescript
+   nativeModule.asyncWork(num1, num2, (result: number) => {
+     hilog.info(0x0000, 'XXX', 'result is %{public}d', result);
+   });
    ```
-   1. 运行结果：result is 579
+
+   ```txt
+   运行结果：result is 579
    ```
 
 ## 子线程交互场景介绍
@@ -278,93 +278,93 @@ napi\_queue\_async\_work接口使用uv\_queue\_work能力，并管理回调中na
 
 1. Worker配置。
 
-   ```
-   1. "buildOption": {
-   2. "sourceOption": {
-   3. "workers": [
-   4. "./src/main/ets/workers/Worker.ets"
-   5. ]
-   6. },
-   7. }
+   ```json5
+   "buildOption": {
+     "sourceOption": {
+       "workers": [
+         "./src/main/ets/workers/Worker.ets"
+        ]
+     },
+   }
    ```
 2. Worker线程示例代码。
 
-   ```
-   1. // entry/src/main/ets/workers/Worker.ets
+   ```typescript
+   // entry/src/main/ets/workers/Worker.ets
 
-   3. import nativeModule from 'libentry1.so';
-   4. import { worker, MessageEvents } from '@kit.ArkTS';
+   import nativeModule from 'libentry1.so';
+   import { worker, MessageEvents } from '@kit.ArkTS';
 
-   6. const port = worker.workerPort;
+   const port = worker.workerPort;
 
-   8. port.onmessage = (e : MessageEvents) => {
-   9. console.info('Worker thread received data:', e.data.num1 + '、' + e.data.num2);
-   10. nativeModule.asyncWork(e.data.num1, e.data.num2, (result: number) => {
-   11. port.postMessage(result);
-   12. });
-   13. }
+   port.onmessage = (e : MessageEvents) => {
+       console.info('Worker thread received data:', e.data.num1 + '、' + e.data.num2);
+       nativeModule.asyncWork(e.data.num1, e.data.num2, (result: number) => {
+           port.postMessage(result);
+       });
+   }
    ```
 3. ArkTS线程代码。
 
-   ```
-   1. import { hilog } from '@kit.PerformanceAnalysisKit';
-   2. import { worker } from '@kit.ArkTS';
-   3. let num1: number = 123;
-   4. let num2: number = 456;
-   ```
-
-   ```
-   1. const wk = new worker.ThreadWorker('entry/ets/workers/Worker.ets');
-   2. wk.postMessage({num1, num2});
-   3. wk.onmessage = (msg) => {
-   4. console.info('result is:', msg.data);
-   5. wk.terminate();
-   6. }
+   ```ts
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { worker } from '@kit.ArkTS';
+   let num1: number = 123;
+   let num2: number = 456;
    ```
 
+   ```typescript
+   const wk = new worker.ThreadWorker('entry/ets/workers/Worker.ets');
+   wk.postMessage({num1, num2});
+   wk.onmessage = (msg) => {
+     console.info('result is:', msg.data);
+     wk.terminate();
+   }
    ```
-   1. 运行结果：
-   2. Worker thread received data: 123、456
-   3. result is 579
+
+   ```txt
+   运行结果：
+   Worker thread received data: 123、456
+   result is 579
    ```
 
 ### 基于[Taskpool](taskpool-introduction.md)实现的C++子线程与ArkTS子线程交互场景
 
 1. ArkTS线程代码。
 
-   ```
-   1. import { hilog } from '@kit.PerformanceAnalysisKit';
-   2. import { taskpool } from '@kit.ArkTS';
-   3. import nativeModule from 'libentry1.so';
-   4. let num1: number = 123;
-   5. let num2: number = 456;
+   ```ts
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { taskpool } from '@kit.ArkTS';
+   import nativeModule from 'libentry1.so';
+   let num1: number = 123;
+   let num2: number = 456;
 
-   7. @Concurrent
-   8. function nativeCall(num1 : number, num2 : number): void {
-   9. console.info('Taskpool thread received data:', + num1 + '、' + num2);
-   10. nativeModule.asyncWork(num1, num2, (result: number) => {
-   11. hilog.info(0x0000, 'XXX', 'result is: %{public}d', result);
-   12. });
-   13. }
+   @Concurrent
+   function nativeCall(num1 : number, num2 : number): void {
+     console.info('Taskpool thread received data:', + num1 + '、' + num2);
+     nativeModule.asyncWork(num1, num2, (result: number) => {
+       hilog.info(0x0000, 'XXX', 'result is: %{public}d', result);
+     });
+   }
 
-   15. async function testTaskpool() : Promise<void> {
-   16. try {
-   17. const task = new taskpool.Task(nativeCall, num1, num2);
-   18. await taskpool.execute(task);
-   19. } catch (e) {
-   20. console.error(`Taskpool execute error: ${e}`);
-   21. }
-   22. }
-   ```
-
-   ```
-   1. testTaskpool();
+   async function testTaskpool() : Promise<void> {
+     try {
+       const task = new taskpool.Task(nativeCall, num1, num2);
+       await taskpool.execute(task);
+     } catch (e) {
+       console.error(`Taskpool execute error: ${e}`);
+     }
+   }
    ```
 
+   ```typescript
+   testTaskpool();
    ```
-   1. 运行结果：
-   2. Taskpool thread received data: 123、456
-   3. result is 579
+
+   ```txt
+   运行结果：
+   Taskpool thread received data: 123、456
+   result is 579
    ```
 
 ## 注意事项

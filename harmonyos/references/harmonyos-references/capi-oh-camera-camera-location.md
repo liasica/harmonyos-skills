@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: Camera_Location
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 结构体 > Camera_Location
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:49+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:19bdb4f3f194860fa02c2c41b55878474b9bffe3861260acb87f7cac058d8b94
+scraped_at: 2026-09-02T15:02:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c0cdac5598e3cd632107d61d7aa7222b4929b73483027f376619683cb0688487
 ---
 
-```
-1. typedef struct Camera_Location {...} Camera_Location
+```c
+typedef struct Camera_Location {...} Camera_Location
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 拍照位置。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

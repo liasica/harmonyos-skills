@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 在HAP中调用createModuleContext方法获取的Context是什么层级
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 在HAP中调用createModuleContext方法获取的Context是什么层级
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:30+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:13+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:1bcbcc12958791b2f2369847d39783a92ea1b86ca5e21e205ed4695c36618f65
 ---
 

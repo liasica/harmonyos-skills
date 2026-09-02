@@ -3,17 +3,17 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-root
 title: ohpm root
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm root
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:47:52+08:00
-doc_updated_at: 2026-04-22
-content_hash: sha256:61a7492cac471fe42472f0cad6857cabec74b34cadb8b0afd812201cd7980955
+scraped_at: 2026-09-02T15:00:29+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:8552ae5f2394cab85f242d79b59472bf5c9e133f4f65d219850d89a3d8d2c8b5
 ---
 
 在标准输出中打印有效的 oh\_modules 目录路径信息。
 
 ## 命令格式
 
-```
-1. ohpm root
+```screen
+ohpm root
 ```
 
 ## 功能描述
@@ -25,21 +25,21 @@ content_hash: sha256:61a7492cac471fe42472f0cad6857cabec74b34cadb8b0afd812201cd79
 ### prefix
 
 * 默认值：""
-* 类型： string
+* 类型：string
 
 可以在 root 命令后面配置 --prefix <string> 参数，用来指定包的根目录，该目录下必须存在 oh-package.json5 文件，将会打印该根目录中有效的 oh\_modules 目录路径信息。
 
 ### log\_level
 
 * 默认值：无
-* 类型： String
+* 类型：String
 
 从ohpm 6.0.2.636版本开始，可以在 root 命令后配置--log\_level <string>参数，指定执行当前命令的日志级别（info、debug、warn、error），如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
 ### debug
 
 * 默认值：false
-* 类型： Boolean
+* 类型：Boolean
 
 从ohpm 6.0.2.636版本开始，可以在命令后配置--debug参数，指定执行当前命令的日志级别为debug，该配置仅在当前命令行生效，不修改.ohpmrc中的日志级别，如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
@@ -47,14 +47,14 @@ content_hash: sha256:61a7492cac471fe42472f0cad6857cabec74b34cadb8b0afd812201cd79
 
 项目结构为：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/vMnpEzIZRPSRd7z1whcZJA/zh-cn_image_0000002561752639.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/j4fWjXwTQTy1FnTElVrzFw/zh-cn_image_0000002701822560.png)
 
 在entry模块的src目录下执行：
 
-```
-1. ohpm root
+```screen
+ohpm root
 ```
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/krbvOxoDQr2A0xu9FN1nUg/zh-cn_image_0000002530752698.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/crLqndj5S3-fX20C9D3MIQ/zh-cn_image_0000002701662642.png)

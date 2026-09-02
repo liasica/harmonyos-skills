@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅音频卡顿事件（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 音频卡顿事件 > 订阅音频卡顿事件（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:13+08:00
+scraped_at: 2026-09-02T14:50:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:fd2f30a5bb30156a3e0c827ed12572580c76254295d0f77329d723a70b9c9c1d
+content_hash: sha256:66b9bdae84fae29e6f8e3ba6ae80b98cec22194ebe41ee23b6415dce99a644eb
 ---
 
 ## 接口说明
@@ -23,76 +23,76 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
 
 1. 编辑工程中的“entry > src > main > ets > entryability > EntryAbility.ets”文件，添加系统事件的订阅。
 
-   ```
-   1. import { hiAppEvent, hilog } from '@kit.PerformanceAnalysisKit';
+   ```ts
+   import { hiAppEvent, hilog } from '@kit.PerformanceAnalysisKit';
 
-   3. hiAppEvent.addWatcher({
-   4. // 开发者可以自定义观察者名称，系统会使用名称来标识不同的观察者
-   5. name: "watcher",
-   6. // 开发者可以订阅感兴趣的系统事件，此处是订阅了应用音频卡顿事件
-   7. appEventFilters: [
-   8. {
-   9. domain: hiAppEvent.domain.OS,
-   10. names: [hiAppEvent.event.AUDIO_JANK_FRAME]
-   11. }
-   12. ],
-   13. // 开发者可以自行实现订阅实时回调函数，以便对订阅获取到的事件数据进行自定义处理
-   14. onReceive: (domain: string, appEventGroups: Array<hiAppEvent.AppEventGroup>) => {
-   15. hilog.info(0x0000, 'testTag', `HiAppEvent onReceive: domain=${domain}`);
-   16. for (const eventGroup of appEventGroups) {
-   17. // 开发者可以根据事件集合中的事件名称区分不同的系统事件
-   18. hilog.info(0x0000, 'testTag', `HiAppEvent eventName=${eventGroup.name}`);
-   19. for (const eventInfo of eventGroup.appEventInfos) {
-   20. // 开发者可以对事件集合中的事件数据进行自定义处理，此处是将事件数据打印在日志中
-   21. hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo=${JSON.stringify(eventInfo)}`);
-   22. }
-   23. }
-   24. }
-   25. });
+   hiAppEvent.addWatcher({
+      // 开发者可以自定义观察者名称，系统会使用名称来标识不同的观察者
+      name: "watcher",
+      // 开发者可以订阅感兴趣的系统事件，此处是订阅了应用音频卡顿事件
+      appEventFilters: [
+        {
+          domain: hiAppEvent.domain.OS,
+          names: [hiAppEvent.event.AUDIO_JANK_FRAME]
+        }
+      ],
+      // 开发者可以自行实现订阅实时回调函数，以便对订阅获取到的事件数据进行自定义处理
+      onReceive: (domain: string, appEventGroups: Array<hiAppEvent.AppEventGroup>) => {
+        hilog.info(0x0000, 'testTag', `HiAppEvent onReceive: domain=${domain}`);
+        for (const eventGroup of appEventGroups) {
+          // 开发者可以根据事件集合中的事件名称区分不同的系统事件
+          hilog.info(0x0000, 'testTag', `HiAppEvent eventName=${eventGroup.name}`);
+          for (const eventInfo of eventGroup.appEventInfos) {
+            // 开发者可以对事件集合中的事件数据进行自定义处理，此处是将事件数据打印在日志中
+            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo=${JSON.stringify(eventInfo)}`);
+          }
+        }
+      }
+    });
    ```
 2. 编辑工程中的“entry > src > main > ets > pages > Index.ets”文件，添加一个模拟写入音频数据的回调函数normalCallback，在该回调中模拟卡顿主动返回INVALID（不送数据）来触发卡顿故障事件。
 
-   ```
-   1. import { audio } from '@kit.AudioKit';
-   2. let g_invalidCount = 0;
-   3. function normalCallback(buffer: ArrayBuffer) {
-   4. if (g_invalidCount > 0) {
-   5. g_invalidCount--;
-   6. return audio.AudioDataCallbackResult.INVALID;
-   7. }
-   8. //在此添加写数据逻辑
-   9. return audio.AudioDataCallbackResult.VALID;
-   10. }
+   ```ts
+   import { audio } from '@kit.AudioKit';
+   let g_invalidCount = 0;
+   function normalCallback(buffer: ArrayBuffer) {
+     if (g_invalidCount > 0) {
+       g_invalidCount--;
+       return audio.AudioDataCallbackResult.INVALID;
+     }
+     //在此添加写数据逻辑
+     return audio.AudioDataCallbackResult.VALID;
+   }
    ```
 3. 编辑工程中的“entry > src > main > ets > pages > Index.ets”文件，添加一个卡顿触发按钮，改变INVALID返回次数，模拟相应音频卡顿。
 
-   ```
-   1. Row() {
-   2. Button("卡顿").onClick(async () => {
-   3. g_invalidCount = 30;
-   4. })
-   5. }
+   ```ts
+   Row() {
+     Button("卡顿").onClick(async () => {
+       g_invalidCount = 30;
+     })
+   }
    ```
 4. 编辑工程中的“entry > src > main > ets > pages > Index.ets”文件，在创建AudioRender实例时，进行耗时操作回调
 
-   ```
-   1. audio.createAudioRenderer(audioRendererOptions, (err, renderer) => { // 创建AudioRenderer实例
-   2. if (!err) {
-   3. console.info(`${TAG}: creating AudioRenderer success`);
-   4. this.renderModel = renderer;
-   5. if (this.renderModel !== undefined) {
-   6. this.renderModel.on('writeData', normalCallback);
-   7. }
-   8. } else {
-   9. console.info(`${TAG}: creating AudioRenderer failed, error: ${err.message}`);
-   10. }
-   11. });
+   ```ts
+   audio.createAudioRenderer(audioRendererOptions, (err, renderer) => { // 创建AudioRenderer实例
+     if (!err) {
+       console.info(`${TAG}: creating AudioRenderer success`);
+       this.renderModel = renderer;
+       if (this.renderModel !== undefined) {
+         this.renderModel.on('writeData', normalCallback);
+       }
+     } else {
+       console.info(`${TAG}: creating AudioRenderer failed, error: ${err.message}`);
+     }
+   });
    ```
 5. AudioRender正常播放时，点击卡顿按钮，即可触发耗时回调，触发音频卡顿事件。
 6. 每次音频卡顿触发后，可以在Log窗口看到对系统事件数据的处理日志。
 
-   ```
-   1. HiAppEvent onReceive: domain=OS
-   2. HiAppEvent eventName=AUDIO_JANK_FRAME
-   3. HiAppEvent eventInfo={"domain":"OS","name":"AUDIO_JANK_FRAME","eventType":1,"params":{"bundle_name":"com.samples.audio","bundle_version":"1.0.0","fault_type":"application","happen_time":3240511783,"max_frame_time":260,"process_name":"","time":1755587168818}}
+   ```text
+   HiAppEvent onReceive: domain=OS
+   HiAppEvent eventName=AUDIO_JANK_FRAME
+   HiAppEvent eventInfo={"domain":"OS","name":"AUDIO_JANK_FRAME","eventType":1,"params":{"bundle_name":"com.samples.audio","bundle_version":"1.0.0","fault_type":"application","happen_time":3240511783,"max_frame_time":260,"process_name":"","time":1755587168818}}
    ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-get-t
 title: GET_TILING_DATA
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > Kernel Tiling > GET_TILING_DATA
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:44+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:41c7ed96e8eaa66359161988e04645240ca69ec718d4462bd9dd093616664344
+scraped_at: 2026-09-02T14:50:37+08:00
+doc_updated_at: 2026-08-18
+content_hash: sha256:17e3e7e34f817882848117254ba9be52e34a2aec18b91436acdc571b9df431cc
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:41c7ed96e8eaa66359161988e04645240ca69ec718d4462bd9dd0936166
 
 ## 函数原型
 
-```
-1. GET_TILING_DATA(tiling_data, tiling_arg)
+```cpp
+GET_TILING_DATA(tiling_data, tiling_arg)
 ```
 
 ## 参数说明
@@ -29,6 +29,8 @@ content_hash: sha256:41c7ed96e8eaa66359161988e04645240ca69ec718d4462bd9dd0936166
 
 Kirin9020系列处理器
 
+Kirin9030系列处理器
+
 KirinX90系列处理器
 
 ## 约束说明
@@ -38,12 +40,12 @@ KirinX90系列处理器
 
 ## 调用示例
 
-```
-1. extern "C" __global__ __aicore__ void add_custom(__gm__ uint8_t *x, __gm__ uint8_t *y, __gm__ uint8_t *z, __gm__ uint8_t *tiling)
-2. {
-3. GET_TILING_DATA(tilingData, tiling);
-4. KernelAdd op;
-5. op.Init(x, y, z, tilingData.blkDim, tilingData.totalSize, tilingData.splitTile);
-6. op.Process();
-7. }
+```cpp
+extern "C" __global__ __aicore__ void add_custom(__gm__ uint8_t *x, __gm__ uint8_t *y, __gm__ uint8_t *z, __gm__ uint8_t *tiling)
+{
+    GET_TILING_DATA(tilingData, tiling);
+    KernelAdd op;
+    op.Init(x, y, z, tilingData.blkDim, tilingData.totalSize, tilingData.splitTile);
+    op.Process();
+}
 ```

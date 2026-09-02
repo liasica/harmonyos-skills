@@ -3,29 +3,27 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AVScreenCaptureRecorder)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Interface (AVScreenCaptureRecorder)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:43+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5503c64c785c0316cb5a2c03a15ab4918d395f9b8abc350045e646f0800570fe
+scraped_at: 2026-09-02T15:02:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0ea56ca819c5d1e48b9c76610d2a9802f67f8fe468541748fa74085624b6f548
 ---
 
-屏幕录制管理类，用于进行屏幕录制。在调用AVScreenCaptureRecorder的方法前，需要先通过[createAVScreenCaptureRecorder()](arkts-apis-media-f.md#mediacreateavscreencapturerecorder12)创建一个AVScreenCaptureRecorder实例。
+屏幕录制管理类，用于进行屏幕录制，支持录屏初始化、开始/暂停/恢复/停止录制、添加水印、隐私窗口豁免、麦克风开关控制、Picker模式选择和内容自动旋转等功能。适用于需要在应用内完成屏幕录制流程控制的场景，可帮助开发者灵活管理录屏生命周期、保护用户隐私并自定义录制输出。在调用AVScreenCaptureRecorder的方法前，需要先通过[createAVScreenCaptureRecorder()](arkts-apis-media-f.md#mediacreateavscreencapturerecorder12)创建一个AVScreenCaptureRecorder实例。
 
-说明
+典型使用流程：createAVScreenCaptureRecorder → init → startRecording → pauseRecording/resumeRecording → stopRecording → release。
+
+**说明** 
 
 * 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Interface首批接口从API version 12开始支持。
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { media } from '@kit.MediaKit';
+```typescript
+import { media } from '@kit.MediaKit';
 ```
 
 ## init12+
-
-PhonePC/2in1TabletTV
 
 init(config: AVScreenCaptureRecordConfig): Promise<void>
 
@@ -37,7 +35,7 @@ init(config: AVScreenCaptureRecordConfig): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| config | [AVScreenCaptureRecordConfig](arkts-apis-media-i.md#avscreencapturerecordconfig12) | 是 | 配置屏幕录制的相关参数。 |
+| config | [AVScreenCaptureRecordConfig](arkts-apis-media-i.md#avscreencapturerecordconfig12) | 是 | 配置录屏的相关参数。关键配置项包括：fd（文件描述符）、frameWidth（视频宽度）、frameHeight（视频高度）等。详细配置说明请参考[AVScreenCaptureRecordConfig](arkts-apis-media-i.md#avscreencapturerecordconfig12)。文件（通常是MP4）需要先由开发者创建，并赋予写权限，再将文件fd传给此参数。 |
 
 **返回值：**
 
@@ -51,53 +49,44 @@ init(config: AVScreenCaptureRecordConfig): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. Return by promise. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. Return by promise. |
 | 5400103 | IO error. Return by promise. |
 | 5400105 | Service died. Return by promise. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import fileIo from '@ohos.file.fs';
-3. import { media } from '@kit.MediaKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { media } from '@kit.MediaKit';
+import { fileIo } from '@kit.CoreFileKit';
 
-5. // 初始化avScreenCaptureRecorder。
-6. let avScreenCaptureRecorder: media.AVScreenCaptureRecorder | undefined;
-7. media.createAVScreenCaptureRecorder().then((captureRecorder: media.AVScreenCaptureRecorder) => {
-8. if (captureRecorder != null) {
-9. avScreenCaptureRecorder = captureRecorder;
-10. console.info('Succeeded in creating avScreenCaptureRecorder');
-11. } else {
-12. console.error('Failed to create avScreenCaptureRecorder');
-13. }
-14. }).catch((error: BusinessError) => {
-15. console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
-16. });
+async function testInit() {
+  // 创建录屏实例。
+  let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
 
-18. // 创建文件。
-19. let filesDir = '/data/storage/el2/base/haps';
-20. let file = fileIo.openSync(filesDir + '/screenCapture.mp4', fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+  // 创建文件。
+  let filesDir = '/data/storage/el2/base/haps';
+  let file = fileIo.openSync(filesDir + '/screenCapture.mp4', fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
 
-22. let avCaptureConfig: media.AVScreenCaptureRecordConfig = {
-23. fd: file.fd, // 文件需要先由调用者创建，通常是MP4文件，赋予写权限，将文件fd传给此参数。
-24. frameWidth: 640,
-25. frameHeight: 480
-26. // 补充其他参数。
-27. };
+  let avCaptureConfig: media.AVScreenCaptureRecordConfig = {
+      fd: file.fd, // 文件需要先由调用者创建，通常是MP4文件，赋予写权限，将文件fd传给此参数。
+      frameWidth: 640,
+      frameHeight: 480
+      // 补充其他参数。
+  };
 
-29. if (avScreenCaptureRecorder != undefined) {
-30. avScreenCaptureRecorder.init(avCaptureConfig).then(() => {
-31. console.info('Succeeded in initializing avScreenCaptureRecorder');
-32. }).catch((err: BusinessError) => {
-33. console.error(`Failed to init avScreenCaptureRecorder. Code: ${err.code}, message: ${err.message}`);
-34. });
-35. }
+  // 调用init方法。
+  if (avScreenCaptureRecorder) {
+    avScreenCaptureRecorder.init(avCaptureConfig).then(() => {
+      console.info('Succeeded in initializing avScreenCaptureRecorder');
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to init avScreenCaptureRecorder. Code: ${err.code}, message: ${err.message}`);
+    });
+  }
+}
 ```
 
 ## startRecording12+
-
-PhonePC/2in1TabletTV
 
 startRecording(): Promise<void>
 
@@ -122,37 +111,28 @@ startRecording(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { media } from '@kit.MediaKit';
 
-3. // 初始化avScreenCaptureRecorder。
-4. let avScreenCaptureRecorder: media.AVScreenCaptureRecorder | undefined;
-5. media.createAVScreenCaptureRecorder().then((captureRecorder: media.AVScreenCaptureRecorder) => {
-6. if (captureRecorder != null) {
-7. avScreenCaptureRecorder = captureRecorder;
-8. console.info('Succeeded in creating avScreenCaptureRecorder');
-9. } else {
-10. console.error('Failed to create avScreenCaptureRecorder');
-11. }
-12. }).catch((error: BusinessError) => {
-13. console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
-14. });
+async function testStartRecording() {
+  // 创建录屏实例。
+  let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
 
-16. // 其余流程。
+  // 其余流程。
 
-18. // 调用startRecording方法。
-19. if (avScreenCaptureRecorder != undefined) {
-20. avScreenCaptureRecorder.startRecording().then(() => {
-21. console.info('Succeeded in starting avScreenCaptureRecorder');
-22. }).catch((err: BusinessError) => {
-23. console.error(`Failed to start avScreenCaptureRecorder. Code: ${err.code}, message: ${err.message}`);
-24. });
-25. }
+  // 调用startRecording方法。
+  if (avScreenCaptureRecorder) {
+    avScreenCaptureRecorder.startRecording().then(() => {
+      console.info('Succeeded in starting avScreenCaptureRecorder');
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to start avScreenCaptureRecorder. Code: ${err.code}, message: ${err.message}`);
+    });
+  }
+}
 ```
 
 ## stopRecording12+
-
-PhonePC/2in1TabletTV
 
 stopRecording(): Promise<void>
 
@@ -177,37 +157,202 @@ stopRecording(): Promise<void>
 
 **示例：**
 
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { media } from '@kit.MediaKit';
+
+async function testStopRecording() {
+  // 创建录屏实例。
+  let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
+
+  // 其余流程。
+
+  // 调用stopRecording方法。
+  if (avScreenCaptureRecorder) {
+    avScreenCaptureRecorder.stopRecording().then(() => {
+      console.info('Succeeded in stopping avScreenCaptureRecorder');
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to stop avScreenCaptureRecorder. Code: ${err.code}, message: ${err.message}`);
+    });
+  }
+}
 ```
-1. import { BusinessError } from '@kit.BasicServicesKit';
 
-3. // 初始化avScreenCaptureRecorder。
-4. let avScreenCaptureRecorder: media.AVScreenCaptureRecorder | undefined;
-5. media.createAVScreenCaptureRecorder().then((captureRecorder: media.AVScreenCaptureRecorder) => {
-6. if (captureRecorder != null) {
-7. avScreenCaptureRecorder = captureRecorder;
-8. console.info('Succeeded in creating avScreenCaptureRecorder');
-9. } else {
-10. console.error('Failed to create avScreenCaptureRecorder');
-11. }
-12. }).catch((error: BusinessError) => {
-13. console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
-14. });
+## pauseRecording
 
-16. // 其余流程。
+pauseRecording(): Promise<void>
 
-18. // 调用stopRecording方法。
-19. if (avScreenCaptureRecorder != undefined) {
-20. avScreenCaptureRecorder.stopRecording().then(() => {
-21. console.info('Succeeded in stopping avScreenCaptureRecorder');
-22. }).catch((err: BusinessError) => {
-23. console.error(`Failed to stop avScreenCaptureRecorder. Code: ${err.code}, message: ${err.message}`);
-24. });
-25. }
+暂停录屏。使用Promise异步回调。在录制过程中需要临时中断录制时调用此接口，例如用户临时离开或需要切换应用时。
+
+在使用前需要先调用[startRecording](arkts-apis-media-avscreencapturerecorder.md#startrecording12)接口且录屏需处于录制状态。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVScreenCapture
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Media错误码](errorcode-media.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400102 | Operation not be permitted. Return by promise. |
+| 5400103 | IO error. Return by promise. |
+| 5400105 | Service died. Return by promise. |
+
+**示例：**
+
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { media } from '@kit.MediaKit';
+
+async function testPauseRecording() {
+  // 创建录屏实例。
+  let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
+
+  // 其余流程。
+
+  // 调用pauseRecording方法。
+  if (avScreenCaptureRecorder) {
+    avScreenCaptureRecorder.pauseRecording().then(() => {
+      console.info('Succeeded in pausing avScreenCaptureRecorder');
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to pause avScreenCaptureRecorder. Code: ${err.code}, message: ${err.message}`);
+    });
+  }
+}
+```
+
+## resumeRecording
+
+resumeRecording(): Promise<void>
+
+恢复录屏。使用Promise异步回调。
+
+在使用前需要先调用[pauseRecording](arkts-apis-media-avscreencapturerecorder.md#pauserecording)接口且录屏需处于暂停状态。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVScreenCapture
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Media错误码](errorcode-media.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400102 | Operation not be permitted. Return by promise. |
+| 5400103 | IO error. Return by promise. |
+| 5400105 | Service died. Return by promise. |
+
+**示例：**
+
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { media } from '@kit.MediaKit';
+
+async function testResumeRecording() {
+  // 创建录屏实例。
+  let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
+
+  // 其余流程。
+
+  // 调用resumeRecording方法。
+  if (avScreenCaptureRecorder) {
+    avScreenCaptureRecorder.resumeRecording().then(() => {
+      console.info('Succeeded in resuming avScreenCaptureRecorder');
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to resume avScreenCaptureRecorder. Code: ${err.code}, message: ${err.message}`);
+    });
+  }
+}
+```
+
+## addWatermark
+
+addWatermark(watermark: image.PixelMap, config: WatermarkConfiguration): Promise<number>
+
+在录制的视频中添加自定义水印图像。使用Promise异步回调。
+
+**说明** 
+
+* 应用最多可添加5个水印。
+* 需在[startRecording](arkts-apis-media-avscreencapturerecorder.md#startrecording12)接口调用前调用addWatermark接口。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVScreenCapture
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| watermark | [image.PixelMap](arkts-apis-image-pixelmap.md) | 是 | 水印图像，取值原则：PixelMap对象不能为空。支持透明度设置。图像格式和尺寸要求请参考[image.PixelMap](arkts-apis-image-pixelmap.md)。 |
+| config | [WatermarkConfiguration](arkts-apis-media-i.md#watermarkconfiguration) | 是 | 配置视频录制水印的相关参数。各字段取值范围请参考WatermarkConfiguration定义。需在调用startRecording接口前设置。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回所添加水印的编号ID表示添加水印成功，失败时返回错误码。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Media错误码](errorcode-media.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400102 | Operation not allowed. Return by promise. |
+| 5400103 | IO error. Return by promise. |
+| 5400105 | Service died. Return by promise. |
+| 5400108 | The parameter check failed, parameter value out of range. |
+
+**示例：**
+
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { image } from '@kit.ImageKit';
+import { media } from '@kit.MediaKit';
+
+async function testAddWaterMark() {
+  // 创建录屏实例。
+  let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
+
+  // 其余流程。
+
+  let watermark: image.PixelMap | undefined = undefined; // 可以通过获取本地资源文件并转换为PixelMap，水印图像不能为空。
+  let watermarkConfig: media.WatermarkConfiguration = { top: 100, left: 100, width: 100, height: 100 };
+
+  if (watermark && avScreenCaptureRecorder) {
+    avScreenCaptureRecorder.addWatermark(watermark, watermarkConfig).then((num: number) => {
+      console.info(`Succeeded in adding watermark, watermarkNum is ${num}`);
+    })
+    .catch((error: BusinessError) => {
+      console.error(`Failed to add watermark and catch error is: Code: ${error.code}, message: ${error.message}`);
+    });
+  }
+}
 ```
 
 ## skipPrivacyMode12+
-
-PhonePC/2in1TabletTV
 
 skipPrivacyMode(windowIDs: Array<number>): Promise<void>
 
@@ -240,42 +385,37 @@ skipPrivacyMode(windowIDs: Array<number>): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { media } from '@kit.MediaKit';
 
-3. // 初始化avScreenCaptureRecorder。
-4. let avScreenCaptureRecorder: media.AVScreenCaptureRecorder | undefined;
-5. media.createAVScreenCaptureRecorder().then((captureRecorder: media.AVScreenCaptureRecorder) => {
-6. if (captureRecorder != null) {
-7. avScreenCaptureRecorder = captureRecorder;
-8. console.info('Succeeded in creating avScreenCaptureRecorder');
-9. } else {
-10. console.error('Failed to create avScreenCaptureRecorder');
-11. }
-12. }).catch((error: BusinessError) => {
-13. console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
-14. });
+async function testSkipPrivacyMode() {
+  // 创建录屏实例。
+  let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
 
-16. // 其余流程。
+  // 其余流程。
 
-18. // 调用skipPrivacyMode方法。
-19. if (avScreenCaptureRecorder != undefined) {
-20. let windowIDs = [];
-21. avScreenCaptureRecorder.skipPrivacyMode(windowIDs).then(() => {
-22. console.info('Succeeded in skipping privacy mode');
-23. }).catch((err: BusinessError) => {
-24. console.error(`Failed to skip privacy mode. Code: ${err.code}, message: ${err.message}`);
-25. });
-26. }
+  // 调用skipPrivacyMode方法。
+  if (avScreenCaptureRecorder) {
+    let windowIDs = [];
+    avScreenCaptureRecorder.skipPrivacyMode(windowIDs).then(() => {
+      console.info('Succeeded in skipping privacy mode');
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to skip privacy mode. Code: ${err.code}, message: ${err.message}`);
+    });
+  }
+}
 ```
 
 ## setMicEnabled12+
 
-PhonePC/2in1TabletTV
-
 setMicEnabled(enable: boolean): Promise<void>
 
 设置麦克风开关。使用Promise异步回调。
+
+**说明** 
+
+* 在需要录制或静音麦克风音频时调用此接口，例如用户需要临时关闭麦克风或重新开启麦克风录制。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVScreenCapture
 
@@ -302,41 +442,34 @@ setMicEnabled(enable: boolean): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { media } from '@kit.MediaKit';
 
-3. // 初始化avScreenCaptureRecorder。
-4. let avScreenCaptureRecorder: media.AVScreenCaptureRecorder | undefined;
-5. media.createAVScreenCaptureRecorder().then((captureRecorder: media.AVScreenCaptureRecorder) => {
-6. if (captureRecorder != null) {
-7. avScreenCaptureRecorder = captureRecorder;
-8. console.info('Succeeded in creating avScreenCaptureRecorder');
-9. } else {
-10. console.error('Failed to create avScreenCaptureRecorder');
-11. }
-12. }).catch((error: BusinessError) => {
-13. console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
-14. });
+async function testSetMicEnable() {
+  // 创建录屏实例。
+  let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
 
-16. // 其余流程。
+  // 其余流程。
 
-18. // 调用setMicEnabled方法。
-19. if (avScreenCaptureRecorder != undefined) {
-20. avScreenCaptureRecorder.setMicEnabled(true).then(() => {
-21. console.info('Succeeded in setting microphone enabled.');
-22. }).catch((err: BusinessError) => {
-23. console.error(`Failed to set microphone enabled. Code: ${err.code}, message: ${err.message}`);
-24. });
-25. }
+  // 调用setMicEnabled方法。
+  if (avScreenCaptureRecorder) {
+    avScreenCaptureRecorder.setMicEnabled(true).then(() => {
+      console.info('Succeeded in setting microphone enabled.');
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to set microphone enabled. Code: ${err.code}, message: ${err.message}`);
+    });
+  }
+}
 ```
 
 ## setPickerMode22+
 
-PhonePC/2in1TabletTV
-
 setPickerMode(pickerMode: PickerMode): Promise<void>
 
 设置Picker显示模式，在下一次显示Picker时生效。使用Promise异步回调。
+
+可根据录制需求选择不同模式。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVScreenCapture
 
@@ -344,7 +477,7 @@ setPickerMode(pickerMode: PickerMode): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| pickerMode | [PickerMode](arkts-apis-media-e.md#pickermode22) | 是 | 选择Picker模式。  定义了在Picker中显示的内容类型：  - SCREEN\_ONLY：仅显示屏幕列表。  - WINDOW\_ONLY：仅显示窗口列表。  - SCREEN\_AND\_WINDOW：同时显示屏幕列表和窗口列表（默认值）。 |
+| pickerMode | [PickerMode](arkts-apis-media-e.md#pickermode22) | 是 | 选择Picker模式。 |
 
 **返回值：**
 
@@ -364,41 +497,34 @@ setPickerMode(pickerMode: PickerMode): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { media } from '@kit.MediaKit';
 
-3. // 初始化avScreenCaptureRecorder。
-4. let avScreenCaptureRecorder: media.AVScreenCaptureRecorder | undefined;
-5. media.createAVScreenCaptureRecorder().then((captureRecorder: media.AVScreenCaptureRecorder) => {
-6. if (captureRecorder != null) {
-7. avScreenCaptureRecorder = captureRecorder;
-8. console.info('Succeeded in creating avScreenCaptureRecorder');
-9. } else {
-10. console.error('Failed to create avScreenCaptureRecorder');
-11. }
-12. }).catch((error: BusinessError) => {
-13. console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
-14. });
+async function testSetPickerMode() {
+  // 创建录屏实例。
+  let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
 
-16. // 其余流程。
+  // 其余流程。
 
-18. // 调用setPickerMode方法。
-19. if (avScreenCaptureRecorder != undefined) {
-20. avScreenCaptureRecorder.setPickerMode(media.PickerMode.WINDOW_ONLY).then(() => {
-21. console.info('Succeeded in setting picker mode.');
-22. }).catch((err: BusinessError) => {
-23. console.error(`Failed to set picker mode. Code: ${err.code}, message: ${err.message}`);
-24. });
-25. }
+  // 调用setPickerMode方法。
+  if (avScreenCaptureRecorder) {
+    avScreenCaptureRecorder.setPickerMode(media.PickerMode.WINDOW_ONLY).then(() => {
+      console.info('Succeeded in setting picker mode.');
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to set picker mode. Code: ${err.code}, message: ${err.message}`);
+    });
+  }
+}
 ```
 
 ## excludePickerWindows22+
 
-PhonePC/2in1TabletTV
-
 excludePickerWindows(excludedWindows: Array<number>): Promise<void>
 
 设置在Picker中隐藏的窗口列表，在下一次显示Picker时生效。使用Promise异步回调。
+
+在需要排除特定窗口不被用户选择时调用此接口，例如隐藏应用自身窗口、隐私窗口或不相关的后台窗口。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVScreenCapture
 
@@ -426,48 +552,41 @@ excludePickerWindows(excludedWindows: Array<number>): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { media } from '@kit.MediaKit';
 
-3. let excludedWindows: Array<number> = [101, 102, 103];
+async function testExcludePickerWindows() {
+  let excludedWindows: number[] = [101, 102, 103];
+  
+  // 创建录屏实例。
+  let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
 
-5. // 初始化avScreenCaptureRecorder。
-6. let avScreenCaptureRecorder: media.AVScreenCaptureRecorder | undefined;
-7. media.createAVScreenCaptureRecorder().then((captureRecorder: media.AVScreenCaptureRecorder) => {
-8. if (captureRecorder != null) {
-9. avScreenCaptureRecorder = captureRecorder;
-10. console.info('Succeeded in creating avScreenCaptureRecorder');
-11. } else {
-12. console.error('Failed to create avScreenCaptureRecorder');
-13. }
-14. }).catch((error: BusinessError) => {
-15. console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
-16. });
+  // 其余流程。
 
-18. // 其余流程。
-
-20. // 调用excludePickerWindows方法。
-21. if (avScreenCaptureRecorder != undefined) {
-22. avScreenCaptureRecorder.excludePickerWindows(excludedWindows).then(() => {
-23. console.info('Succeeded in excluding picker windows.');
-24. }).catch((err: BusinessError) => {
-25. console.error(`Failed to exclude picker windows. Code: ${err.code}, message: ${err.message}`);
-26. });
-27. }
+  // 调用excludePickerWindows方法。
+  if (avScreenCaptureRecorder) {
+    avScreenCaptureRecorder.excludePickerWindows(excludedWindows).then(() => {
+      console.info('Succeeded in excluding picker windows.');
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to exclude picker windows. Code: ${err.code}, message: ${err.message}`);
+    });
+  }
+}
 ```
 
 ## presentPicker22+
-
-PhonePC/2in1TabletTV
 
 presentPicker(): Promise<void>
 
 录屏开始后，调用该接口再次弹出Picker，可动态更新录制源（窗口、屏幕）。使用Promise异步回调。
 
-说明
+使用前需要先调用[startRecording](arkts-apis-media-avscreencapturerecorder.md#startrecording12)接口。
+
+**说明** 
 
 * 更新录制源过程中，原录制流程不中断。
-* 通过picker动态更新录制源后，按照新的录制源进行录制。
+* 通过Picker动态更新录制源后，按照新的录制源进行录制。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVScreenCapture
 
@@ -489,41 +608,94 @@ presentPicker(): Promise<void>
 
 **示例：**
 
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { media } from '@kit.MediaKit';
+
+async function testPresentPicker() {
+  // 创建录屏实例。
+  let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
+
+  // 其余流程。
+
+  // 调用presentPicker方法。
+  if (avScreenCaptureRecorder) {
+    avScreenCaptureRecorder.presentPicker().then(() => {
+      console.info('Succeeded in presenting picker avScreenCaptureRecorder.');
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to present picker avScreenCaptureRecorder. Code: ${err.code}, message: ${err.message}`);
+    });
+  }
+}
 ```
-1. import { BusinessError } from '@kit.BasicServicesKit';
 
-3. // 初始化avScreenCaptureRecorder。
-4. let avScreenCaptureRecorder: media.AVScreenCaptureRecorder | undefined;
-5. media.createAVScreenCaptureRecorder().then((captureRecorder: media.AVScreenCaptureRecorder) => {
-6. if (captureRecorder != null) {
-7. avScreenCaptureRecorder = captureRecorder;
-8. console.info('Succeeded in creating avScreenCaptureRecorder');
-9. } else {
-10. console.error('Failed to create avScreenCaptureRecorder');
-11. }
-12. }).catch((error: BusinessError) => {
-13. console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
-14. });
+## setContentAutoRotation
 
-16. // 其余流程。
+setContentAutoRotation(enable: boolean): Promise<void>
 
-18. // 调用presentPicker方法。
-19. if (avScreenCaptureRecorder != undefined) {
-20. avScreenCaptureRecorder.presentPicker().then(() => {
-21. console.info('Succeeded in presenting picker avScreenCaptureRecorder.');
-22. }).catch((err: BusinessError) => {
-23. console.error(`Failed to present picker avScreenCaptureRecorder. Code: ${err.code}, message: ${err.message}`);
-24. });
-25. }
+设置捕获的屏幕内容是否自动旋转以保持图像直立。使用Promise异步回调。
+
+**说明** 
+
+需在[startRecording](arkts-apis-media-avscreencapturerecorder.md#startrecording12)接口调用前调用此接口。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVScreenCapture
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enable | boolean | 是 | 表示是否启用自动旋转，默认值为false。true表示启用自动旋转，输出帧中的图像内容将自动保持直立。false表示不启用自动旋转，输出帧中的图像内容将不自动保持直立。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[Media错误码](errorcode-media.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400102 | Operation not allowed. Return by promise. |
+| 5400105 | Service died. Return by promise. |
+
+**示例：**
+
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { media } from '@kit.MediaKit';
+
+async function testSetContentAutoRotation() {
+  // 创建录屏实例。
+  let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
+
+  // 其余流程。
+
+  // 调用setContentAutoRotation方法。
+  if (avScreenCaptureRecorder) {
+    avScreenCaptureRecorder.setContentAutoRotation(true).then(() => {
+      console.info('Succeeded in enabling setContentAutoRotation.');
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to enable setContentAutoRotation. Code: ${err.code}, message: ${err.message}`);
+    });
+  }
+}
 ```
 
 ## release12+
 
-PhonePC/2in1TabletTV
-
 release(): Promise<void>
 
 释放录屏。使用Promise异步回调。
+
+在录屏功能不再使用时调用此接口释放资源，例如应用退出或录屏功能模块卸载时。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVScreenCapture
 
@@ -544,41 +716,32 @@ release(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { media } from '@kit.MediaKit';
 
-3. // 初始化avScreenCaptureRecorder。
-4. let avScreenCaptureRecorder: media.AVScreenCaptureRecorder | undefined;
-5. media.createAVScreenCaptureRecorder().then((captureRecorder: media.AVScreenCaptureRecorder) => {
-6. if (captureRecorder != null) {
-7. avScreenCaptureRecorder = captureRecorder;
-8. console.info('Succeeded in creating avScreenCaptureRecorder');
-9. } else {
-10. console.error('Failed to create avScreenCaptureRecorder');
-11. }
-12. }).catch((error: BusinessError) => {
-13. console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
-14. });
+async function testRelease() {
+  // 创建录屏实例。
+  let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
 
-16. // 其余流程。
+  // 其余流程。
 
-18. // 调用release方法。
-19. if (avScreenCaptureRecorder != undefined) {
-20. avScreenCaptureRecorder.release().then(() => {
-21. console.info('Succeeded in releasing avScreenCaptureRecorder');
-22. }).catch((err: BusinessError) => {
-23. console.error(`Failed to release avScreenCaptureRecorder. Code: ${err.code}, message: ${err.message}`);
-24. });
-25. }
+  // 调用release方法。
+  if (avScreenCaptureRecorder) {
+    avScreenCaptureRecorder.release().then(() => {
+      console.info('Succeeded in releasing avScreenCaptureRecorder');
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to release avScreenCaptureRecorder. Code: ${err.code}, message: ${err.message}`);
+    });
+  }
+}
 ```
 
 ## on('stateChange')12+
 
-PhonePC/2in1TabletTV
-
 on(type: 'stateChange', callback: Callback<AVScreenCaptureStateCode>): void
 
-订阅录屏状态切换的事件，当状态发生的时候，会通过订阅的回调通知用户。用户只能订阅一个状态切换的回调方法，重复订阅时，以最后一次订阅的回调接口为准。
+订阅录屏状态切换的事件，当状态发生变化时，会通过订阅的回调通知用户。用户只能订阅一个状态切换的回调方法，重复订阅时，以最后一次订阅的回调方法为准。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVScreenCapture
 
@@ -591,39 +754,29 @@ on(type: 'stateChange', callback: Callback<AVScreenCaptureStateCode>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { media } from '@kit.MediaKit';
 
-3. // 初始化avScreenCaptureRecorder。
-4. let avScreenCaptureRecorder: media.AVScreenCaptureRecorder | undefined;
-5. media.createAVScreenCaptureRecorder().then((captureRecorder: media.AVScreenCaptureRecorder) => {
-6. if (captureRecorder != null) {
-7. avScreenCaptureRecorder = captureRecorder;
-8. console.info('Succeeded in creating avScreenCaptureRecorder');
-9. } else {
-10. console.error('Failed to create avScreenCaptureRecorder');
-11. }
-12. }).catch((error: BusinessError) => {
-13. console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
-14. });
+async function testOnStateChange() {
+  // 创建录屏实例。
+  let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
 
-16. // 其余流程。
+  // 其余流程。
 
-18. // 调用on方法。
-19. if (avScreenCaptureRecorder != undefined) {
-20. avScreenCaptureRecorder.on('stateChange', (state: media.AVScreenCaptureStateCode) => {
-21. console.info('avScreenCaptureRecorder stateChange to ' + state);
-22. });
-23. }
+  // 调用on方法。
+  if (avScreenCaptureRecorder) {
+    avScreenCaptureRecorder.on('stateChange', (state: media.AVScreenCaptureStateCode) => {
+        console.info('avScreenCaptureRecorder stateChange to ' + state);
+    });
+  }
+}
 ```
 
 ## on('error')12+
 
-PhonePC/2in1TabletTV
-
 on(type: 'error', callback: ErrorCallback): void
 
-订阅AVScreenCaptureRecorder的错误事件，用户可以根据应用自身逻辑对错误事件进行处理。用户只能订阅一个错误事件的回调方法，重复订阅时，以最后一次订阅的回调接口为准。
+订阅AVScreenCaptureRecorder的错误事件，用户可以根据应用自身逻辑对错误事件进行处理。用户只能订阅一个错误事件的回调方法，重复订阅时，以最后一次订阅的回调方法为准。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVScreenCapture
 
@@ -646,35 +799,26 @@ on(type: 'error', callback: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { media } from '@kit.MediaKit';
 
-3. // 初始化avScreenCaptureRecorder。
-4. let avScreenCaptureRecorder: media.AVScreenCaptureRecorder | undefined;
-5. media.createAVScreenCaptureRecorder().then((captureRecorder: media.AVScreenCaptureRecorder) => {
-6. if (captureRecorder != null) {
-7. avScreenCaptureRecorder = captureRecorder;
-8. console.info('Succeeded in creating avScreenCaptureRecorder');
-9. } else {
-10. console.error('Failed to create avScreenCaptureRecorder');
-11. }
-12. }).catch((error: BusinessError) => {
-13. console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
-14. });
+async function testOnError() {
+  // 创建录屏实例。
+  let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
 
-16. // 其余流程。
+  // 其余流程。
 
-18. // 调用on方法。
-19. if (avScreenCaptureRecorder != undefined) {
-20. avScreenCaptureRecorder.on('error', (err: BusinessError) => {
-21. console.error(`avScreenCaptureRecorder error: Code: ${err.code}, message: ${err.message}`);
-22. });
-23. }
+  // 调用on方法。
+  if (avScreenCaptureRecorder) {
+    avScreenCaptureRecorder.on('error', (err: BusinessError) => {
+      console.error(`avScreenCaptureRecorder error: Code: ${err.code}, message: ${err.message}`);
+    });
+  }
+}
 ```
 
 ## off('stateChange')12+
-
-PhonePC/2in1TabletTV
 
 off(type: 'stateChange', callback?: Callback<AVScreenCaptureStateCode>): void
 
@@ -691,33 +835,23 @@ off(type: 'stateChange', callback?: Callback<AVScreenCaptureStateCode>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { media } from '@kit.MediaKit';
 
-3. // 初始化avScreenCaptureRecorder。
-4. let avScreenCaptureRecorder: media.AVScreenCaptureRecorder | undefined;
-5. media.createAVScreenCaptureRecorder().then((captureRecorder: media.AVScreenCaptureRecorder) => {
-6. if (captureRecorder != null) {
-7. avScreenCaptureRecorder = captureRecorder;
-8. console.info('Succeeded in creating avScreenCaptureRecorder');
-9. } else {
-10. console.error('Failed to create avScreenCaptureRecorder');
-11. }
-12. }).catch((error: BusinessError) => {
-13. console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
-14. });
+async function testOffStateChange() {
+  // 创建录屏实例。
+  let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
 
-16. // 其余流程。
+  // 其余流程。
 
-18. // 调用off方法。
-19. if (avScreenCaptureRecorder != undefined) {
-20. avScreenCaptureRecorder.off('stateChange');
-21. }
+  // 调用off方法。
+  if (avScreenCaptureRecorder) {
+    avScreenCaptureRecorder.off('stateChange');
+  }
+}
 ```
 
 ## off('error')12+
-
-PhonePC/2in1TabletTV
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -729,31 +863,23 @@ off(type: 'error', callback?: ErrorCallback): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 状态切换事件回调类型，支持的事件：'error'。 |
+| type | string | 是 | 错误事件回调类型，支持的事件：'error'。 |
 | callback | [ErrorCallback](js-apis-base.md#errorcallback) | 否 | 录屏错误事件回调方法，不填此参数则会取消最后一次订阅事件。 |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { media } from '@kit.MediaKit';
 
-3. // 初始化avScreenCaptureRecorder。
-4. let avScreenCaptureRecorder: media.AVScreenCaptureRecorder | undefined;
-5. media.createAVScreenCaptureRecorder().then((captureRecorder: media.AVScreenCaptureRecorder) => {
-6. if (captureRecorder != null) {
-7. avScreenCaptureRecorder = captureRecorder;
-8. console.info('Succeeded in creating avScreenCaptureRecorder');
-9. } else {
-10. console.error('Failed to create avScreenCaptureRecorder');
-11. }
-12. }).catch((error: BusinessError) => {
-13. console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
-14. });
+async function testOffError() {
+  // 创建录屏实例。
+  let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
 
-16. // 其余流程。
+  // 其余流程。
 
-18. // 调用off方法。
-19. if (avScreenCaptureRecorder != undefined) {
-20. avScreenCaptureRecorder.off('error');
-21. }
+  // 调用off方法。
+  if (avScreenCaptureRecorder) {
+    avScreenCaptureRecorder.off('error');
+  }
+}
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dataaugmentat
 title: Data Augmentation Kit简介
 breadcrumb: 指南 > 应用框架 > Data Augmentation Kit（数据增强服务） > Data Augmentation Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:21+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c9508927fcb3096caee9a9c649691d48763bc38df4719a881e51f718677793eb
+scraped_at: 2026-09-02T14:59:24+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:53e675fed10641fba564ca38d341e3719b121f9950db263c5908503e78f34df6
 ---
 
 Data Augmentation Kit（数据增强套件）提供知识库、知识检索、RAG（检索增强生成）、端侧问答模型能力，打造个性化智慧数据平台，实现个性化智慧体验。
@@ -16,7 +16,7 @@ Data Augmentation Kit提供以下能力：
 
 * [RAG（检索增强生成）](data-augmentation-rag-overview.md)：提供一种结合检索与生成技术的自然语言处理技术，通过动态从外部知识库中检索相关信息，辅助生成更准确、可靠的文本内容。其核心目标是弥补传统生成模型依赖静态知识的不足，实现“知识实时调用”与“内容灵活生成”的融合。
 * [智慧化数据检索](dataaugmentation-retrieval.md)：基于多路召回和重排序，提供了一套知识检索框架。在提供基于倒排索引的传统文本检索的同时，也提供了基于向量索引的语义检索能力。
-* [端侧问答模型](dataaugmentation-localchatmodel.md)：提供接入端侧模型问答的方法，以及使用鸿蒙AI模型管家对接LLM，对用户问题进行处理的过程，实现数据不出端智能问答的效果。
+* [端侧问答模型](dataaugmentation-localchatmodel.md)：提供接入端侧模型问答的方法，以及使用AI模型管家对接LLM，对用户问题进行处理的过程，实现数据本地化智能问答的效果。
 
 ## 优势/亮点
 
@@ -35,7 +35,7 @@ Data Augmentation Kit提供以下能力：
 
 ### 接入端侧问答模型
 
-* 接入端侧问答模型：应用可以选择使用端侧问答模型，可实现数据处理不出端，用户安全隐私有保障。
+* 接入端侧问答模型：应用可以选择使用端侧问答模型，实现数据本地化处理，有效保障用户隐私安全。
 
 ## 基本概念
 

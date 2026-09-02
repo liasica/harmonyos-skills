@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-netc
 title: NetConn_NetHandleList
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 结构体 > NetConn_NetHandleList
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:36+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:2fd1034f398f666971167873eaf9a2e2dda38128a19c3f9b15620b944172cba8
+scraped_at: 2026-09-02T15:01:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d9d523b2e0e66b0a54f8fca5fa5759019554e5d7851d28fbde2dc7f220243b4d
 ---
 
-```
-1. typedef struct NetConn_NetHandleList {...} NetConn_NetHandleList
+```c
+typedef struct NetConn_NetHandleList {...} NetConn_NetHandleList
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 网络列表。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

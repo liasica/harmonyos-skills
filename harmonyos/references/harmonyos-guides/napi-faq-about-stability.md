@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-faq-abou
 title: 稳定性相关问题汇总
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API常见问题汇总 > 稳定性相关问题汇总
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:44:09+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:88630291503d5ecdd28443c614c23683d75c0120e7c0280996f863d90aef1d76
+scraped_at: 2026-09-02T14:50:46+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:f54d7d218b345a69d6f5bf817b9bf8d6b3797b69fa8ad5037da5539de4c645a7
 ---
 
 ## 应用运行过程中出现高概率闪退怎么进行定位解决
@@ -16,15 +16,15 @@ content_hash: sha256:88630291503d5ecdd28443c614c23683d75c0120e7c0280996f863d90ae
 
 * 崩溃信息如下：
 
-```
-1. Reason:Signal:SIGSEGV(SEGV_MAPERR)@0x00000136 probably caus
-2. Fault thread info:
-3. Tid:15894, Name:e.myapplication
-4. #00 pc 002b8dd4 /system/lib/platformsdk/libark_jsruntime.so
-5. #01 pc 0024d3e1 /system/lib/platformsdk/libark_jsruntime.so
-6. #02 pc 0024d0d9 /system/lib/platformsdk/libark_jsruntime.so
-7. #03 pc 002eac5d /system/lib/platformsdk/libark_jsruntime.so
-8. #04 pc 00428d0f /system/lib/platformsdk/libark_jsruntime.so
+```sh
+Reason:Signal:SIGSEGV(SEGV_MAPERR)@0x00000136 probably caus
+Fault thread info:
+Tid:15894, Name:e.myapplication
+#00 pc 002b8dd4 /system/lib/platformsdk/libark_jsruntime.so
+#01 pc 0024d3e1 /system/lib/platformsdk/libark_jsruntime.so
+#02 pc 0024d0d9 /system/lib/platformsdk/libark_jsruntime.so
+#03 pc 002eac5d /system/lib/platformsdk/libark_jsruntime.so
+#04 pc 00428d0f /system/lib/platformsdk/libark_jsruntime.so
 ```
 
 * 定位问题：
@@ -41,18 +41,18 @@ content_hash: sha256:88630291503d5ecdd28443c614c23683d75c0120e7c0280996f863d90ae
 
    DevEco Studio开关：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/Vrn5b8_DRjCCj--ZwqZPew/zh-cn_image_0000002558606218.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/3JqOPPCASGWZHJNSrB3ssA/zh-cn_image_0000002706675518.png)
 2. 使用Node-API接口时入参非法导致。
 
 * 这种情况一般是崩溃栈上的so会很浅，so调用了某个具体的Node-API接口，比如调用了napi\_call\_function之类的接口，然后Node-API又调到了libark\_jsruntime的so，然后直接崩溃在libark\_jsruntime里面。
 
 示例栈结构如下。
 
-```
-1. #01 /system/lib/platformsdk/libark_jsruntime.so
-2. #02 /system/lib/platformsdk/libark_jsruntime.so
-3. #03 /system/lib/platformsdk/libace_napi.z.so(napi_set_named_property+170) -- Node-API的so，该位置显示具体调用报错的接口
-4. #04 /data/storage/el1/bundle/libs/arm/libentry.so -- 你的so
+```sh
+#01 /system/lib/platformsdk/libark_jsruntime.so
+#02 /system/lib/platformsdk/libark_jsruntime.so
+#03 /system/lib/platformsdk/libace_napi.z.so(napi_set_named_property+170) -- Node-API的so，该位置显示具体调用报错的接口
+#04 /data/storage/el1/bundle/libs/arm/libentry.so -- 你的so
 ```
 
 * 如果是入参问题，一般so在崩溃栈上的位置比较浅（不会跑到#10这种离栈顶很远的位置），不过也可以按照这个思路进行排查。
@@ -101,11 +101,11 @@ b. 排查有没有在这个易错API列表里面找到相应的篇章。
 
 * 具体描述：Native 层在较深的调用层级中需调用 ArkTS 方法，无法逐层传递 napi\_env，直接缓存会导致崩溃。
 
-```
-1. #00 /system/lib/platformsdk/libark_jsruntime.so(panda::JSValueRef::IsFunction)
-2. #01 /system/lib/platformsdk/libace_napi.z.so(napi_call_function)
-3. #02 /data/storage/el1/bundle/libs/arm/libentry.so
-4. ...
+```sh
+#00 /system/lib/platformsdk/libark_jsruntime.so(panda::JSValueRef::IsFunction)
+#01 /system/lib/platformsdk/libace_napi.z.so(napi_call_function)
+#02 /data/storage/el1/bundle/libs/arm/libentry.so
+...
 ```
 
 * 参考方案：
@@ -151,21 +151,21 @@ napi\_add\_env\_cleanup\_hook 和 napi\_remove\_env\_cleanup\_hook 调用报错�
 常见错误场景示例如下：
 
 ```
-1. void AddEnvCleanupHook(napi_env env)
-2. {
-3. napi_add_env_cleanup_hook(env, [](void* args) -> void {
-4. // cleanup function回调
-5. }, env); // env是个通用的数据，即使此处没有重复注册，可能会被其它地方所提前注册，导致该处注册失败。
-6. }
+void AddEnvCleanupHook(napi_env env)
+{
+    napi_add_env_cleanup_hook(env, [](void* args) -> void {
+        // cleanup function回调
+    }, env); // env是个通用的数据，即使此处没有重复注册，可能会被其它地方所提前注册，导致该处注册失败。
+}
 
-8. static napi_value Test(napi_env env, napi_callback_info info)
-9. {
-10. //第一次注册
-11. AddEnvCleanupHook(env);
-12. //第二次重复注册
-13. AddEnvCleanupHook(env);
-14. return nullptr;
-15. }
+static napi_value Test(napi_env env, napi_callback_info info)
+{
+    // 第一次注册
+    AddEnvCleanupHook(env);
+    // 第二次重复注册
+    AddEnvCleanupHook(env);
+    return nullptr;
+}
 ```
 
 * 修复建议：
@@ -192,97 +192,97 @@ napi\_open\_handle\_scope 和 napi\_close\_handle\_scope 调用出现稳定性�
 
 常见错误场景示例如下：
 
-```
-1. #include "napi/native_api.h"
-2. #include <hilog/log.h>
+```cpp
+#include "napi/native_api.h"
+#include <hilog/log.h>
 
-4. // 1. 全局Scope
-5. static napi_handle_scope g_globalScope = nullptr;
+// 1. 全局Scope
+static napi_handle_scope g_globalScope = nullptr;
 
-7. static napi_value CallFunction(napi_env env, napi_callback_info info) {
-8. size_t argc = 1;
-9. napi_value argv[1] = {nullptr};
-10. napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+static napi_value CallFunction(napi_env env, napi_callback_info info) {
+    size_t argc = 1;
+    napi_value argv[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+    
+    napi_valuetype type = napi_undefined;
+    if (argv[0] == nullptr || napi_typeof(env, argv[0], &type) != napi_ok || type != napi_function) {
+        OH_LOG_INFO(LOG_APP, "JS函数参数非法");
+        napi_value errRet = nullptr;
+        napi_create_int32(env, -1, &errRet);
+        return errRet;
+    }
 
-12. napi_valuetype type = napi_undefined;
-13. if (argv[0] == nullptr || napi_typeof(env, argv[0], &type) != napi_ok || type != napi_function) {
-14. OH_LOG_INFO(LOG_APP, "JS函数参数非法");
-15. napi_value errRet = nullptr;
-16. napi_create_int32(env, -1, &errRet);
-17. return errRet;
-18. }
-
-20. if (!g_globalScope) {
-21. OH_LOG_INFO(LOG_APP, "【首次调用】全局Scope为空，执行open");
-22. napi_open_handle_scope(env, &g_globalScope);
-23. // 首次调用：执行JS函数
-24. napi_value global = nullptr;
-25. napi_get_global(env, &global);
-26. napi_value result = nullptr;
-27. napi_call_function(env, global, argv[0], argc, argv, &result);
-28. return result; // 首次调用直接返回，不执行后续close逻辑
-29. } else {
-30. // 重入调用：直接返回固定值 + 关闭Scope
-31. napi_value result = nullptr;
-32. napi_create_int32(env, 10, &result);
-33. OH_LOG_INFO(LOG_APP, "【重入调用】全局Scope非空，执行close");
-34. napi_close_handle_scope(env, g_globalScope);
-35. g_globalScope = nullptr;
-36. return result;
-37. }
-38. }
+    if (!g_globalScope) {
+        OH_LOG_INFO(LOG_APP, "【首次调用】全局Scope为空，执行open");
+        napi_open_handle_scope(env, &g_globalScope);
+        // 首次调用：执行JS函数
+        napi_value global = nullptr;
+        napi_get_global(env, &global);
+        napi_value result = nullptr;
+        napi_call_function(env, global, argv[0], argc, argv, &result);
+        return result; // 首次调用直接返回，不执行后续close逻辑
+    } else {
+        // 重入调用：直接返回固定值 + 关闭Scope
+        napi_value result = nullptr;
+        napi_create_int32(env, 10, &result);
+        OH_LOG_INFO(LOG_APP, "【重入调用】全局Scope非空，执行close");
+        napi_close_handle_scope(env, g_globalScope);
+        g_globalScope = nullptr;
+        return result;
+    }
+}
 ```
 
 接口声明
 
-```
-1. // index.d.ts
-2. export const callFunction : (func : Function) => void;
+```ts
+// index.d.ts
+export const callFunction : (func : Function) => void;
 ```
 
 ArkTS侧示例代码
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import testNapi from 'libentry.so';
+```ts
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import testNapi from 'libentry.so';
 
-4. function reenterFunc(count = 1) : void{
-5. hilog.info(0x0000, 'testTag', `【JS侧】递归`);
-6. if (count <= 0) {
-7. return;
-8. }
-9. testNapi.callFunction(() => reenterFunc(count - 1));
-10. hilog.info(0x0000, 'testTag', `【JS侧】重入调用`);
-11. return;
-12. }
+function reenterFunc(count = 1) : void{
+  hilog.info(0x0000, 'testTag', `【JS侧】递归`);
+  if (count <= 0) {
+    return;
+  }
+  testNapi.callFunction(() => reenterFunc(count - 1));
+  hilog.info(0x0000, 'testTag', `【JS侧】重入调用`);
+  return;
+}
 
-14. try {
-15. testNapi.callFunction(reenterFunc);
-16. hilog.info(0x0000, 'testTag', '【执行完成】');
-17. } catch (error) {
-18. hilog.error(0x0000, 'testTag', `调用错误：${error.message}`);
-19. }
+try {
+  testNapi.callFunction(reenterFunc);
+  hilog.info(0x0000, 'testTag', '【执行完成】');
+} catch (error) {
+  hilog.error(0x0000, 'testTag', `调用错误：${error.message}`);
+}
 ```
 
 CMakeLists.txt
 
-```
-1. cmake_minimum_required(VERSION 3.5.0)
-2. project(Test)
+```text
+cmake_minimum_required(VERSION 3.5.0)
+project(Test)
 
-4. set(NATIVERENDER_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR})
+set(NATIVERENDER_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR})
 
-6. if(DEFINED PACKAGE_FIND_FILE)
-7. include(${PACKAGE_FIND_FILE})
-8. endif()
+if(DEFINED PACKAGE_FIND_FILE)
+    include(${PACKAGE_FIND_FILE})
+endif()
 
-10. include_directories(${NATIVERENDER_ROOT_PATH}
-11. ${NATIVERENDER_ROOT_PATH}/include)
+include_directories(${NATIVERENDER_ROOT_PATH}
+                    ${NATIVERENDER_ROOT_PATH}/include)
 
-13. add_library(entry SHARED napi_init.cpp)
-14. add_definitions( "-DLOG_DOMAIN=0xd0d0" )
-15. add_definitions( "-DLOG_TAG=\"testTag\"" )
-16. target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
+add_library(entry SHARED napi_init.cpp)
+add_definitions( "-DLOG_DOMAIN=0xd0d0" )
+add_definitions( "-DLOG_TAG=\"testTag\"" )
+target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
 ```
 
 * 修复建议：
@@ -293,4 +293,4 @@ CMakeLists.txt
 
 相关参考资料链接：
 
-[使用Node-API接口进行生命周期相关开发](use-napi-life-cycle.md#napi_open_handle_scopenapi_close_handle_scope)。
+[使用Node-API接口进行生命周期相关开发](use-napi-life-cycle.md#napi_open_handle_scopenapi_close_handle_scope)

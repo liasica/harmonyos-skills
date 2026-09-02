@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/apply-custom-authentication
 title: 切换自定义认证
-breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 用户身份认证开发指导 > 切换自定义认证
+breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 切换自定义认证
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:32:25+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:6f0ca7ea8d19645dcbcfbb822152325a86a4e91676ee6df71c554cc3eb2ee31d
+scraped_at: 2026-09-02T14:59:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ed751dbd8c5d8cbd2899581905c4a48dbcb296f196138c84c5e1830839961655
 ---
 
 若开发者定义了自定义认证方式，则用户进行生物认证失败点击导航按钮时，统一用户认证框架会结束系统认证流程并通知调用者拉起自定义认证界面。
@@ -16,23 +16,23 @@ content_hash: sha256:6f0ca7ea8d19645dcbcfbb822152325a86a4e91676ee6df71c554cc3eb2
 
 当用户点击该按钮，发起认证的业务应用便会收到统一用户认证框架返回的一个特殊认证结果，提示业务系统认证结束，需要拉起业务自定义的认证界面。这样，用户在点击“使用支付密码”按钮后，便会看到系统认证控件消失，显示出业务自定义的支付密码认证界面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/w3n6neZsQ2K61tM4Te4vdw/zh-cn_image_0000002558605260.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/9gylrefpSRWGe0oi3p_AnA/zh-cn_image_0000002736433479.png)
 
 如图所示，框选区域为WidgetParam.navigationButtonText字段。开发者可配置此字段，引导用户从生物认证切换到应用自定义的业务密码认证。
 
-说明
+**说明** 
 
 锁屏口令认证与业务自定义认证只能二选一，不能同时存在。
 
 | 认证类型 | 支持切换业务自定义认证方式。  （√表示支持，x表示不支持。） |
 | --- | --- |
-| 锁屏口令认证 | × |
+| 锁屏口令认证 | x |
 | 人脸认证 | √ |
 | 指纹认证 | √ |
 | 人脸+指纹18+ | √ |
-| 人脸+锁屏口令认证 | × |
-| 指纹+锁屏口令认证 | × |
-| 人脸+指纹+锁屏口令认证 | × |
+| 人脸+锁屏口令认证 | x |
+| 指纹+锁屏口令认证 | x |
+| 人脸+指纹+锁屏口令认证 | x |
 
 ## 开发示例
 
@@ -40,62 +40,60 @@ content_hash: sha256:6f0ca7ea8d19645dcbcfbb822152325a86a4e91676ee6df71c554cc3eb2
 
 当前示例仅展示如何配置界面和选择切换到自定义认证界面。具体拉起的页面及对应页面的实现，请开发者自行实现，代码插入位置可参考注释提示。
 
-```
-1. handleCustomAuthResult(userAuthInstance: userAuth.UserAuthInstance, exampleNumber: number) {
-2. // ...
-3. userAuthInstance.on('result', {
-4. onResult: (result: userAuth.UserAuthResult) => {
-5. // ...
-6. Logger.info('userAuthInstance callback');
-7. // ...
-8. if (result.result == userAuth.UserAuthResultCode.CANCELED_FROM_WIDGET ||
-9. result.result == userAuth.UserAuthResultCode.NOT_ENROLLED) {
-10. // 请开发者自行完成拉起自定义认证界面的实现
-11. // ...
-12. }
-13. // ...
-14. }
-15. });
-16. // 启动认证
-17. userAuthInstance.start();
-18. Logger.info('auth start successfully.');
-19. // ...
-20. }
+```typescript
+handleCustomAuthResult(userAuthInstance: userAuth.UserAuthInstance, exampleNumber: number) {
+  // ...
+    userAuthInstance.on('result', {
+      onResult: (result: userAuth.UserAuthResult) => {
+        // ...
+          Logger.info('userAuthInstance callback');
+          // ...
+          if (result.result == userAuth.UserAuthResultCode.CANCELED_FROM_WIDGET ||
+            result.result == userAuth.UserAuthResultCode.NOT_ENROLLED) {
+            // 请开发者自行完成拉起自定义认证界面的实现
+            // ...
+          }
+          // ...
+      }
+    });
+    // 启动认证
+    userAuthInstance.start();
+    Logger.info('auth start successfully.');
+    // ...
+}
 
-22. /*
-23. * apply-custom-authentication.md
-24. * 当前示例仅展示如何配置界面、选择切换到自定义认证界面，具体拉起的页面及对应页面的实现，请开发者自行实现
-25. * */
-26. applyingCustomAuthentication() {
-27. try {
-28. const randData = getRandData();
-29. if (!randData) {
-30. return;
-31. }
-32. const authParam: userAuth.AuthParam = {
-33. challenge: randData,
-34. authType: [userAuth.UserAuthType.FACE],
-35. authTrustLevel: userAuth.AuthTrustLevel.ATL3,
-36. };
-37. // 配置自定义认证，需设置导航键文本
-38. const widgetParam: userAuth.WidgetParam = {
-39. title: resourceToString($r('app.string.title')),
-40. navigationButtonText: resourceToString($r('app.string.navigationButtonText'))
-41. };
-42. // 获取认证对象
-43. const userAuthInstance = userAuth.getUserAuthInstance(authParam, widgetParam);
-44. Logger.info('get userAuth instance successfully.');
-45. // 订阅认证结果
-46. this.handleCustomAuthResult(userAuthInstance, ResultIndex.CUSTOMIZE);
-47. } catch (error) {
-48. const err: BusinessError = error as BusinessError;
-49. Logger.error(`auth failed, code is ${err?.code}, message is ${err?.message}`);
-50. }
-51. }
+/*
+ * apply-custom-authentication.md
+ * 当前示例仅展示如何配置界面、选择切换到自定义认证界面，具体拉起的页面及对应页面的实现，请开发者自行实现
+ * */
+applyingCustomAuthentication() {
+  try {
+    const randData = getRandData();
+    if (!randData) {
+      return;
+    }
+    const authParam: userAuth.AuthParam = {
+      challenge: randData,
+      authType: [userAuth.UserAuthType.FACE],
+      authTrustLevel: userAuth.AuthTrustLevel.ATL3,
+    };
+    // 配置自定义认证，需设置导航键文本
+    const widgetParam: userAuth.WidgetParam = {
+      title: resourceToString($r('app.string.title')),
+      navigationButtonText: resourceToString($r('app.string.navigationButtonText'))
+    };
+    // 获取认证对象
+    const userAuthInstance = userAuth.getUserAuthInstance(authParam, widgetParam);
+    Logger.info('get userAuth instance successfully.');
+    // 订阅认证结果
+    this.handleCustomAuthResult(userAuthInstance, ResultIndex.CUSTOMIZE);
+  } catch (error) {
+    const err: BusinessError = error as BusinessError;
+    Logger.error(`auth failed, code is ${err?.code}, message is ${err?.message}`);
+  }
+}
 ```
-
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/UserAuthentication/entry/src/main/ets/pages/Index.ets#L457-L540)
 
 ## 示例代码
 
-* [切换自定义认证](https://gitcode.com/openharmony/applications_app_samples/blob/master/code/DocsSample/UserAuthentication)
+* [切换自定义认证](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/UserAuthentication)

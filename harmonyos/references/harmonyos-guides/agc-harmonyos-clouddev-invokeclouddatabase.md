@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 在端侧访问云数据库
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发端侧工程 > 在端侧调用云侧代码 > 在端侧访问云数据库
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:45:04+08:00
+scraped_at: 2026-09-02T15:00:19+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:259a490013251e40e7efc0d8d89eb139d8a97b40084e33f27a7b1ff3ed934f87
+content_hash: sha256:7be4b8d538b9978221319d86f3fb532d823f3aa8c32ec9700e2dd683996c117d
 ---
 
 ## 前提条件
@@ -13,7 +13,7 @@ content_hash: sha256:259a490013251e40e7efc0d8d89eb139d8a97b40084e33f27a7b1ff3ed9
 * 请确保[云数据库已正确开发并部署](agc-harmonyos-clouddev-deploydatabase.md)。
 * 请确保“AppScope/resources/rawfile/schema.json”文件已存在。
 
-  注意
+  **注意** 
 
   云数据库部署成功后，DevEco Studio将自动从云侧下载云数据库的schema文件至“AppScope/resources/rawfile/schema.json”路径，该文件是云数据库端侧API必须引入的配置文件。
 
@@ -27,7 +27,7 @@ content_hash: sha256:259a490013251e40e7efc0d8d89eb139d8a97b40084e33f27a7b1ff3ed9
 
 参考[生成Client Model](agc-harmonyos-clouddev-modelclass.md#section1037851593420)生成云数据库对象类型的端侧模型，如下图初始化代码中的Client Model示例“ets/pages/CloudDb/Post.ts”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/d5yA_-2_QDqo83BwgvPzrQ/zh-cn_image_0000002295988348.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/zzUaSjfbToqi7exdiNVYpQ/zh-cn_image_0000002295988348.png)
 
 ## 访问数据库
 

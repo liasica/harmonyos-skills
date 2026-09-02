@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-119
 title: 弹窗弹出时，输入框如何用代码设置全选
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 弹窗弹出时，输入框如何用代码设置全选
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 弹窗弹出时，输入框如何用代码设置全选
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:25:32+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:20+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:d1457a06c8a9a3a0ec1daf80b981f04e94fc5a46f5963e409f3e4cf4c1b77168
 ---
 

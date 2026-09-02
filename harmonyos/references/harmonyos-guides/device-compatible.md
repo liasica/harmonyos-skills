@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/device-compat
 title: 设备兼容
 breadcrumb: 指南 > 应用体验建议 > 应用基础功能和兼容性体验建议 > 基础兼容性 > 设备兼容
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:58:00+08:00
-doc_updated_at: 2026-01-30
-content_hash: sha256:b15ff6e48ca4723c200e2e94c8489d46670e6cee5f6524d54e553e22ad6959d6
+scraped_at: 2026-09-02T14:51:00+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:e20f4f9aae3d0739b480b5b2f68e46afc9a42afcc3d61baa985f9cec8e3cc33e
 ---
 
 |  |  |
@@ -22,7 +22,7 @@ content_hash: sha256:b15ff6e48ca4723c200e2e94c8489d46670e6cee5f6524d54e553e22ad6
 | **类型** | 规则 |
 | **适用设备** | 折叠屏 |
 | **应用形态适用性** | 鸿蒙应用，鸿蒙元服务 |
-| **说明** | [折叠屏设计](../design-guides/folding-screen-0000001929865346.md)  展开态不应出现操作步骤增加，操作更复杂等体验下降的情况。  不应破坏应用内原有的沉浸式体验，避免仅仅为了扩充内容或强制应用分屏而过度改变用户体验和用户习惯。  在折叠态和展开态之间切换时，需要保证当前任务的连续性。  参考：[折叠屏应用开发-手机-多端设备体验提升](../best-practices/bpta-foldable-guide.md#section152264061715) |
+| **说明** | [折叠屏设计](../design-guides/folding-screen-0000001929865346.md)  展开态不应出现操作步骤增加，操作更复杂等体验下降的情况。  不应破坏应用内原有的沉浸式体验，避免仅仅为了扩充内容或强制应用分屏而过度改变用户体验和用户习惯。  在折叠态和展开态之间切换时，需要保证当前任务的连续性。  参考：[折叠屏应用开发-手机-多端设备体验提升](../best-practices/bpta-cell-phone.md) |
 
 |  |  |
 | --- | --- |
@@ -38,7 +38,7 @@ content_hash: sha256:b15ff6e48ca4723c200e2e94c8489d46670e6cee5f6524d54e553e22ad6
 | **类型** | 规则 |
 | **适用设备** | 折叠屏，折叠PC |
 | **应用形态适用性** | 鸿蒙应用，鸿蒙元服务 |
-| **说明** | [折叠屏设计-悬停态](../best-practices/bpta-foldable-guide.md#section1223242181220) |
+| **说明** | [折叠屏设计-悬停态](../best-practices/bpta-folded-hover.md) |
 
 |  |  |
 | --- | --- |

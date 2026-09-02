@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Lattice)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (Lattice)
 category: harmonyos-references
-scraped_at: 2026-04-29T14:05:16+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:2e52f793b980e8c4e51866290220a949cebfb13dff311f090fd3b8466c6ebc4b
+scraped_at: 2026-09-02T15:02:41+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:30c608d80349c5ec60deb369807f7a94fa6c91eefd8005c85b28de43aad54466
 ---
 
-矩形网格对象。该对象用于将图片按照矩形网格进行划分。
+矩形网格对象。该对象用于将图像按照矩形网格进行划分，支持固定指定网格区域、缩放其余网格实现局部拉伸、自定义网格绘制类型、网格颜色填充以及指定绘制边界矩形等能力。创建Lattice对象后，需配合[Canvas.drawImageLattice](arkts-apis-graphics-drawing-canvas.md#drawimagelattice18)方法使用以实现图像的局部拉伸绘制。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Class首批接口从API version 12开始支持。
@@ -19,19 +19,15 @@ content_hash: sha256:2e52f793b980e8c4e51866290220a949cebfb13dff311f090fd3b8466c6
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 ```
 
 ## createImageLattice12+
 
-PhonePC/2in1TabletTVWearable
-
 static createImageLattice(xDivs: Array<number>, yDivs: Array<number>, fXCount: number, fYCount: number, fBounds?: common2D.Rect | null, fRectTypes?: Array<RectType> | null, fColors?: Array<common2D.Color> | null): Lattice
 
-创建矩形网格对象。将图像划分为矩形网格，同时处于偶数列和偶数行上的网格是固定的，如果目标网格足够大，则这些固定网格以其原始大小进行绘制。如果目标网格太小，无法容纳这些固定网格，则所有固定网格都会按比例缩小以适应目标网格。其余网格将进行缩放，来适应剩余的空间。
+创建矩形网格对象。将图像划分为矩形网格，同时处于偶数列和偶数行上的网格是固定的，如果目标网格足够大，则这些固定网格以其原始大小进行绘制，其余网格将进行缩放，来适应剩余的空间。如果目标网格太小，无法容纳这些固定网格，则所有固定网格都会按比例缩小以适应目标网格。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
@@ -39,19 +35,19 @@ static createImageLattice(xDivs: Array<number>, yDivs: Array<number>, fXCount: n
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| xDivs | Array<number> | 是 | 用于划分图像的X坐标值数组。该参数为整数。 |
-| yDivs | Array<number> | 是 | 用于划分图像的Y坐标值数组。该参数为整数。 |
-| fXCount | number | 是 | X坐标值数组的大小。基于功能和性能的考虑，取值范围为[0, 5]。 |
-| fYCount | number | 是 | Y坐标值数组的大小。基于功能和性能的考虑，取值范围为[0, 5]。 |
-| fBounds | [common2D.Rect](js-apis-graphics-common2d.md#rect) | null | 否 | 可选，要绘制的原始边界矩形，矩形参数须为整数，默认为原始图像矩形大小（若矩形参数为小数，会直接舍弃小数部分，转为整数）。 |
-| fRectTypes | Array<[RectType](arkts-apis-graphics-drawing-e.md#recttype12)> | null | 否 | 可选，填充网格类型的数组，默认为空。如果设置，大小必须为(fXCount + 1) \* (fYCount + 1)。 |
-| fColors | Array<[common2D.Color](js-apis-graphics-common2d.md#color)> | null | 否 | 可选，填充网格的颜色数组，默认为空。如果设置，大小必须为(fXCount + 1) \* (fYCount + 1)。 |
+| xDivs | Array<number> | 是 | 用于划分图像的X坐标值数组，单位为物理像素px。数组元素需为整数。若传入小数，会直接舍弃小数部分，转为整数。 |
+| yDivs | Array<number> | 是 | 用于划分图像的Y坐标值数组，单位为物理像素px。数组元素需为整数。若传入小数，会直接舍弃小数部分，转为整数。 |
+| fXCount | number | 是 | X坐标值数组的元素个数，需与xDivs数组的长度一致。基于功能和性能的考虑，取值范围为[0, 5]。 |
+| fYCount | number | 是 | Y坐标值数组的元素个数，需与yDivs数组的长度一致。基于功能和性能的考虑，取值范围为[0, 5]。 |
+| fBounds | [common2D.Rect](js-apis-graphics-common2d.md#rect) | null | 否 | 要绘制的原始边界矩形。当仅需绘制图像的局部区域时传入此参数，不传入时默认为原始图像矩形大小。矩形参数需为整数，单位为物理像素px（若矩形参数为小数，会直接舍弃小数部分，转为整数）。 |
+| fRectTypes | Array<[RectType](arkts-apis-graphics-drawing-e.md#recttype12)> | null | 否 | 填充矩形网格类型的数组，用于指定每个矩形网格的绘制类型，默认为空。如果设置，大小必须为(fXCount + 1) \* (fYCount + 1)。 |
+| fColors | Array<[common2D.Color](js-apis-graphics-common2d.md#color)> | null | 否 | 填充网格的颜色数组，用于为每个网格单元格指定填充颜色，设置后对应网格区域将以指定颜色进行纯色填充，替换原有图像内容。不传入时默认为空（网格不使用自定义颜色填充，保留原始图像内容）。如果设置，大小必须为(fXCount + 1) \* (fYCount + 1)。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [Lattice](arkts-apis-graphics-drawing-lattice.md) | 返回创建的矩形网格对象。 |
+| [Lattice](arkts-apis-graphics-drawing-lattice.md) | 返回创建的矩形网格对象，该对象可传入绘制接口以实现图像局部拉伸——固定网格保持原始大小、其余网格自适应缩放填充剩余空间。 |
 
 **错误码：**
 
@@ -63,28 +59,26 @@ static createImageLattice(xDivs: Array<number>, yDivs: Array<number>, fXCount: n
 
 **示例：**
 
-```
-1. import { RenderNode } from '@kit.ArkUI';
-2. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { RenderNode, DrawContext } from '@kit.ArkUI';
+import { drawing } from '@kit.ArkGraphics2D';
 
-4. class DrawingRenderNode extends RenderNode {
-5. draw(context : DrawContext) {
-6. let xDivs : Array<number> = [1, 2, 4];
-7. let yDivs : Array<number> = [1, 2, 4];
-8. let lattice = drawing.Lattice.createImageLattice(xDivs, yDivs, 3, 3); // 划分(3+1)*(3+1)的网格，下图蓝色填充矩形为固定网格
-9. }
-10. }
+class DrawingRenderNode extends RenderNode {
+  draw(context: DrawContext) {
+    let xDivs: Array<number> = [1, 2, 4];
+    let yDivs: Array<number> = [1, 2, 4];
+    let lattice = drawing.Lattice.createImageLattice(xDivs, yDivs, 3, 3); // 划分(3+1)*(3+1)的网格，下图蓝色填充矩形为固定网格
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/NbMVN0OkRA6yaDH53HPtcQ/zh-cn_image_0000002589247197.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/dnZ5gmMVRHCJoVqIMmRNfw/zh-cn_image_0000002706837066.png)
 
 ## createImageLattice18+
 
-PhonePC/2in1TabletTVWearable
-
 static createImageLattice(xDivs: Array<number>, yDivs: Array<number>, fXCount: number, fYCount: number, fBounds?: common2D.Rect | null, fRectTypes?: Array<RectType> | null, fColors?: Array<number> | null): Lattice
 
-创建矩形网格对象。将图像划分为矩形网格，同时处于偶数列和偶数行上的网格是固定的，如果目标网格足够大，则这些固定网格以其原始大小进行绘制。如果目标网格太小，无法容纳这些固定网格，则所有固定网格都会按比例缩小以适应目标网格。其余网格将进行缩放，来适应剩余的空间。
+创建矩形网格对象。将图像划分为矩形网格，同时处于偶数列和偶数行上的网格是固定的，如果目标网格足够大，则这些固定网格以其原始大小进行绘制，其余网格将进行缩放，以适应剩余的空间。如果目标网格太小，无法容纳这些固定网格，则所有固定网格都会按比例缩小以适应目标网格。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
@@ -92,19 +86,19 @@ static createImageLattice(xDivs: Array<number>, yDivs: Array<number>, fXCount: n
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| xDivs | Array<number> | 是 | 用于划分图像的X坐标值数组。该参数为整数。 |
-| yDivs | Array<number> | 是 | 用于划分图像的Y坐标值数组。该参数为整数。 |
-| fXCount | number | 是 | X坐标值数组的大小。基于功能和性能的考虑，取值范围为[0, 5]。 |
-| fYCount | number | 是 | Y坐标值数组的大小。基于功能和性能的考虑，取值范围为[0, 5]。 |
-| fBounds | [common2D.Rect](js-apis-graphics-common2d.md#rect) | null | 否 | 可选，要绘制的原始边界矩形，矩形参数须为整数，默认为原始图像矩形大小（若矩形参数为小数，会直接舍弃小数部分，转为整数）。 |
-| fRectTypes | Array<[RectType](arkts-apis-graphics-drawing-e.md#recttype12)> | null | 否 | 可选，填充网格类型的数组，默认为空。如果设置，大小必须为(fXCount + 1) \* (fYCount + 1)。 |
-| fColors | Array<number> | null | 否 | 可选，填充网格的颜色数组，颜色用16进制ARGB格式的32位无符号整数表示，参数默认为空。如果设置，大小必须为(fXCount + 1) \* (fYCount + 1)。 |
+| xDivs | Array<number> | 是 | 用于划分图像的X坐标值数组，单位为物理像素px。数组元素需为整数。若传入小数，会直接舍弃小数部分，转为整数。 |
+| yDivs | Array<number> | 是 | 用于划分图像的Y坐标值数组，单位为物理像素px。数组元素需为整数。若传入小数，会直接舍弃小数部分，转为整数。 |
+| fXCount | number | 是 | X坐标值数组的元素个数，需与xDivs数组的长度一致。基于功能和性能的考虑，取值范围为[0, 5]。 |
+| fYCount | number | 是 | Y坐标值数组的元素个数，需与yDivs数组的长度一致。基于功能和性能的考虑，取值范围为[0, 5]。 |
+| fBounds | [common2D.Rect](js-apis-graphics-common2d.md#rect) | null | 否 | 要绘制的原始边界矩形。当仅需绘制图像的局部区域时传入此参数，不传入时默认为原始图像矩形大小。矩形参数需为整数，单位为物理像素px（若矩形参数为小数，会直接舍弃小数部分，转为整数）。 |
+| fRectTypes | Array<[RectType](arkts-apis-graphics-drawing-e.md#recttype12)> | null | 否 | 填充矩形网格类型的数组，用于指定每个矩形网格的绘制类型，默认为空。如果设置，大小必须为(fXCount + 1) \* (fYCount + 1)。 |
+| fColors | Array<number> | null | 否 | 填充网格的颜色数组，用于为每个网格单元格指定填充颜色，设置后对应网格区域将以指定颜色进行纯色填充，替换原有图像内容。颜色用16进制ARGB格式的32位无符号整数表示，取值范围[0, 4294967295]。不传入时默认为空（网格不使用自定义颜色填充，保留原始图像内容）。如果设置，大小必须为(fXCount + 1) \* (fYCount + 1)。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [Lattice](arkts-apis-graphics-drawing-lattice.md) | 返回创建的矩形网格对象。 |
+| [Lattice](arkts-apis-graphics-drawing-lattice.md) | 返回创建的矩形网格对象，该对象可传入绘制接口以实现图像局部拉伸——固定网格保持原始大小、其余网格自适应缩放填充剩余空间。 |
 
 **错误码：**
 
@@ -116,16 +110,16 @@ static createImageLattice(xDivs: Array<number>, yDivs: Array<number>, fXCount: n
 
 **示例：**
 
-```
-1. import { RenderNode } from '@kit.ArkUI';
-2. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { RenderNode, DrawContext } from '@kit.ArkUI';
+import { drawing } from '@kit.ArkGraphics2D';
 
-4. class DrawingRenderNode extends RenderNode {
-5. draw(context : DrawContext) {
-6. let xDivs : Array<number> = [1, 2, 4];
-7. let yDivs : Array<number> = [1, 2, 4];
-8. let colorArray :Array<number>=[0xffffffff,0x44444444,0x99999999,0xffffffff,0x44444444,0x99999999,0xffffffff,0x44444444,0x99999999,0x44444444,0x99999999,0xffffffff,0x44444444,0x99999999,0xffffffff,0x44444444];
-9. let lattice = drawing.Lattice.createImageLattice(xDivs, yDivs, 3, 3,null,null,colorArray);
-10. }
-11. }
+class DrawingRenderNode extends RenderNode {
+  draw(context: DrawContext) {
+    let xDivs: Array<number> = [1, 2, 4];
+    let yDivs: Array<number> = [1, 2, 4];
+    let colorArray: Array<number> = [0xffffffff, 0x44444444, 0x99999999, 0xffffffff, 0x44444444, 0x99999999, 0xffffffff, 0x44444444, 0x99999999, 0x44444444, 0x99999999, 0xffffffff, 0x44444444, 0x99999999, 0xffffffff, 0x44444444];
+    let lattice = drawing.Lattice.createImageLattice(xDivs, yDivs, 3, 3, null, null, colorArray);
+  }
+}
 ```

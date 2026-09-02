@@ -3,42 +3,39 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: UIPickerComponent
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > UIPickerComponent
 category: harmonyos-references
-scraped_at: 2026-04-29T13:51:59+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:7a14b25039e94b7e9936ad7033106c92e652edd1fe405b47631f57b347af9b5e
+scraped_at: 2026-09-02T15:01:01+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:878f2671c2d123d86a6b29a2c274ec00bd8a0740d96fca52d3a506828ce22751
 ---
 
-UIPickerComponent容器是用于实现用户选择操作的组件。它支持从一组有限的选项中让用户进行单选，可应用于时间选择、日期选择、地区选择、状态选择等多种场景。UIPickerComponent容器的显示效果为立体滚轮样式，支持选项按需定制，包括文本类型、图片类型和图文组合类型。
+UIPickerComponent容器是用于实现用户选择操作的组件。它支持从一组有限的选项中让用户进行单选，采用立体滚轮样式提供直观的视觉反馈和流畅的滑动体验。该组件支持选项按需定制，包括文本类型、图片类型和图文组合类型，可根据业务需求提供更丰富的信息展示，可广泛应用于时间选择、日期选择、地区选择、状态选择等多种场景。
 
-说明
+**说明** 
 
-* 该组件从API version 22开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-* UIPickerComponent容器的选项行高固定为40vp，最多可显示7个选项。由于显示效果为立体滚轮样式，因此除选中项外的其他选项会进行不同角度的旋转，实际的可视高度会小于40vp。
-* UIPickerComponent容器的[height](ts-universal-attributes-size.md#height)建议设置为200vp。当设置的高度大于等于该建议值时，可完全显示7个选项；小于该建议值时，显示范围会从上下边缘向中间裁剪，可显示的选项数量也会相应减少，始终保持选中项垂直居中。
+* 本模块首批接口从API version 22开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+* UIPickerComponent容器默认选项行高为40vp，默认显示7个选项。可通过[itemHeight](ts-container-ui-picker-component.md#itemheight)和[displayedItemCount](ts-container-ui-picker-component.md#displayeditemcount)属性进行配置。由于显示效果为立体滚轮样式，因此除选中项外的其他选项会进行不同角度的旋转，实际的可视高度会小于选项行高。
+* UIPickerComponent容器的[height](ts-universal-attributes-size.md#height)建议设置为200vp。当设置的高度大于等于该建议值时，可完整显示默认的7个选项；若通过[displayedItemCount](ts-container-ui-picker-component.md#displayeditemcount)或[itemHeight](ts-container-ui-picker-component.md#itemheight)配置了更多可见项或更大选项高度，建议相应增大组件高度。设置高度小于建议值时，显示范围会从上下边缘向中间裁剪，可显示的选项数量也会相应减少，始终保持选中项垂直居中。
 * 当UIPickerComponent容器未设置[width](ts-universal-attributes-size.md#width)时，取当前视图中可见子组件的最大宽度作为容器宽度。建议为UIPickerComponent容器设置宽度，或为每个子组件设置相同宽度，以避免滑动过程中容器宽度动态发生变化，影响显示效果。
 * UIPickerComponent容器的子组件的对齐方式固定为居中对齐，不支持通过[align](ts-universal-attributes-location.md#align)属性改变子组件的对齐方式。
-* UIPickerComponent容器当前不支持智能手表设备。
+* UIPickerComponent容器当前不支持智能手表设备。开发者可通过deviceInfo.deviceType获取设备类型，判断是否为智能手表设备。
+* 该组件从API版本26.0.0开始支持[WithTheme](ts-container-with-theme.md)。
 
 ## 子组件
-
-PhonePC/2in1TabletTVWearable
 
 * 支持多个子组件。
 * 支持子组件类型：[Text](ts-basic-components-text.md)、[Image](ts-basic-components-image.md)、[Row](ts-container-row.md)和[SymbolGlyph](ts-basic-components-symbolglyph.md)。
 * 支持渲染控制类型：[if/else](../harmonyos-guides/arkts-rendering-control-ifelse.md)和[ForEach](../harmonyos-guides/arkts-rendering-control-foreach.md)。
 
-说明
+**说明** 
 
 * 开发者在使用Row容器作为子组件时，Row容器中仅支持包含Text、Image、SymbolGlyph基础组件，包含其他容器组件可能会影响显示效果或滑动功能异常。
 * 统计子组件的个数时，不包含Row容器内的子组件，Row容器及其子组件共同视为1个子组件。
-* 子组件为Text、Image、SymbolGlyph时，[height](ts-universal-attributes-size.md#height)属性不生效，固定为40vp。
-* 子组件为Row容器时，Row容器的[height](ts-universal-attributes-size.md#height)属性不生效，固定为40vp，Row容器内的子组件[height](ts-universal-attributes-size.md#height)属性能正常生效，最终显示效果由Row容器决定。
+* 子组件为Text、Image、SymbolGlyph时，[height](ts-universal-attributes-size.md#height)属性不生效，实际高度由[itemHeight](ts-container-ui-picker-component.md#itemheight)属性决定（默认40vp）。子组件内容会在选项区域内显示。
+* 子组件为Row容器时，Row容器的[height](ts-universal-attributes-size.md#height)属性不生效，实际高度由[itemHeight](ts-container-ui-picker-component.md#itemheight)属性决定（默认40vp）。Row容器内的子组件[height](ts-universal-attributes-size.md#height)属性能正常生效，最终显示效果由Row容器决定。
 * 图文组合类型选项需要使用Row容器包含图片和文本组件。使用图文组合类型选项时，建议将图片的[height](ts-universal-attributes-size.md#height)设置为40vp及以下，避免图片较大时被裁剪。
 * UIPickerComponent容器内所有文本组件（包括Row容器内的文本组件）的fontSize属性默认为20fp。用户设置将覆盖默认值，设置异常值时以文本组件[fontSize](ts-basic-components-text.md#fontsize)处理的结果为准。建议统一设置或不设置fontSize以保证良好的显示效果。
 
 ## 接口
-
-PhonePC/2in1TabletTVWearable
 
 UIPickerComponent(options?: UIPickerComponentOptions)
 
@@ -54,11 +51,9 @@ UIPickerComponent(options?: UIPickerComponentOptions)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [UIPickerComponentOptions](ts-container-ui-picker-component.md#uipickercomponentoptions对象说明) | 否 | 配置UIPickerComponent容器的参数。 |
+| options | [UIPickerComponentOptions](ts-container-ui-picker-component.md#uipickercomponentoptions对象说明) | 否 | 配置UIPickerComponent容器的参数，用于自定义初始选中项等配置。参数缺省时组件占位，但内容显示为空。当需要设置初始选中项时传入此参数。 |
 
 ## UIPickerComponentOptions对象说明
-
-PhonePC/2in1TabletTVWearable
 
 UIPickerComponent容器的参数说明。
 
@@ -70,21 +65,17 @@ UIPickerComponent容器的参数说明。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| selectedIndex | number | 否 | 是 | 选中项的索引值。  取值范围：[0, 子组件的个数-1]内的整数。不在取值范围内时，使用默认值；设置小数时，使用向下取整后的整数。  默认值：0  **说明：**  统计子组件的个数时，不包含Row容器内的子组件，Row容器及其子组件共同视为1个子组件。 |
+| selectedIndex | number | 否 | 是 | 选中项的索引值，用于指定初始选中的选项。  取值范围：[0, 子组件的个数-1]内的整数。不在取值范围内时，使用默认值；设置小数时，使用向下取整后的整数。  默认值：0。当需要组件初始显示特定选项时传入此参数。  **说明：**  统计子组件的个数时，不包含Row容器内的子组件，Row容器及其子组件共同视为1个子组件。 |
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](ts-component-general-attributes.md)外，还支持以下属性：
 
 ### canLoop
 
-PhonePC/2in1TabletTVWearable
-
 canLoop(isLoop: Optional<boolean>)
 
-设置选项列是否可循环滚动。
+设置选项列是否可循环滚动。选项数量较多且需要无限滚动浏览时，可开启循环；选项较少或需要限制选择范围时，可关闭循环。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -96,24 +87,22 @@ canLoop(isLoop: Optional<boolean>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| isLoop | [Optional](ts-universal-attributes-custom-property.md#optionalt)<boolean> | 是 | 是否可循环滚动。  - true：可循环滚动。  - false：不可循环滚动。  默认值：true  当isLoop的值为undefined时，使用默认值。  如果子组件的个数小于8个，无论isLoop设置为true还是false，都不会循环滚动。 |
+| isLoop | [Optional](ts-universal-attributes-custom-property.md#optionalt)<boolean> | 是 | 是否可循环滚动。  - true：可循环滚动。  - false：不可循环滚动。  默认值：true  当isLoop的值为undefined时，使用默认值。  当子组件个数小于或等于可见选项数量（由[displayedItemCount](ts-container-ui-picker-component.md#displayeditemcount)设置，默认为7）时，无论isLoop设置为true还是false，都不会循环滚动。 |
 
 ### enableHapticFeedback
 
-PhonePC/2in1TabletTVWearable
-
 enableHapticFeedback(enable: Optional<boolean>)
 
-设置是否开启触控反馈。
+设置是否开启触控反馈。在需要增强用户交互体验的场景可开启触控反馈。
 
 开启触控反馈时，需要在工程的src/main/module.json5文件的"module"内配置requestPermissions字段开启振动权限，配置如下：
 
-```
-1. "requestPermissions": [
-2. {
-3. "name": "ohos.permission.VIBRATE",
-4. }
-5. ]
+```json
+"requestPermissions": [
+   {
+      "name": "ohos.permission.VIBRATE"
+   }
+]
 ```
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -130,11 +119,9 @@ enableHapticFeedback(enable: Optional<boolean>)
 
 ### selectionIndicator
 
-PhonePC/2in1TabletTVWearable
-
 selectionIndicator(style: Optional<PickerIndicatorStyle>)
 
-设置选中项指示器的样式。
+设置选中项指示器的样式。需要突出显示选中区域时使用背景指示器，需要简洁轻量标识时使用分割线指示器。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -148,21 +135,57 @@ selectionIndicator(style: Optional<PickerIndicatorStyle>)
 | --- | --- | --- | --- |
 | style | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[PickerIndicatorStyle](ts-container-ui-picker-component.md#pickerindicatorstyle对象说明)> | 是 | 选中项指示器的样式。  默认值：  {  type: PickerIndicatorType.BACKGROUND,  borderRadius: {  value:12,  unit:LengthUnit.vp  },  backgroundColor: 'sys.color.comp\_background\_tertiary'  }  当style的值为undefined时，使用默认值。 |
 
-## 事件
+### itemHeight
 
-PhonePC/2in1TabletTVWearable
+itemHeight(height: Optional<LengthMetrics>)
+
+设置UIPickerComponent容器每个选项的高度。未通过该接口设置时，每个选项的高度为40vp。选项内容较多或需要更大字体显示时可增大高度以避免内容裁剪，选项内容简洁或需要紧凑显示时可减小高度。此属性与[displayedItemCount](ts-container-ui-picker-component.md#displayeditemcount)共同影响组件的显示效果，建议结合组件[height](ts-universal-attributes-size.md#height)属性进行调整以保证完整显示。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| height | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12)> | 是 | 选项高度。  单位：与[LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12)一致。  取值范围：[40vp, 64vp]  设置小于40vp或大于64vp时，使用默认值40vp。  当height的值为undefined时，使用默认值40vp。  不支持“百分比”类型。 |
+
+### displayedItemCount
+
+displayedItemCount(count: Optional<number>)
+
+设置UIPickerComponent容器可见选项的数量。未通过该接口设置时，可见选项的数量为7行。需要节省空间时减少可见项数量，需要提供更多预览信息时增加可见项数量。此属性与[itemHeight](ts-container-ui-picker-component.md#itemheight)共同影响组件的显示效果，建议结合组件[height](ts-universal-attributes-size.md#height)属性进行调整以保证完整显示。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| count | [Optional](ts-universal-attributes-custom-property.md#optionalt)<number> | 是 | 可见选项数量。  取值范围：[2, 9]内的整数。  设置小数时，使用向下取整后的整数。  设置偶数时，自动转为大于该值的奇数（例如2变为3、8变为9）。  设置不在取值范围内时，使用默认值7行。  当count的值为undefined时，使用默认值7行。 |
+
+## 事件
 
 除支持[通用事件](ts-component-general-events.md)外，还支持以下事件：
 
 ### onChange
 
-PhonePC/2in1TabletTVWearable
-
 onChange(callback: Optional<OnUIPickerComponentCallback>)
 
-滑动选择器选项时，若选中项发生变化，触发该事件。
+滑动选择器选项时，若选中项发生变化，触发该事件。适用于需要在选中项变化时实时更新界面、加载对应数据或执行相关逻辑的场景。
 
-说明
+**说明** 
 
 如果某个选项有一半以上的区域进入选中项区域内，则该选项成为选中项。
 
@@ -182,11 +205,18 @@ onChange(callback: Optional<OnUIPickerComponentCallback>)
 
 ### onScrollStop
 
-PhonePC/2in1TabletTVWearable
-
 onScrollStop(callback: Optional<OnUIPickerComponentCallback>)
 
-选择器滑动停止时，触发该事件。选择器滑动停止指某次行为触发的滑动动画完全结束。如果某次滑动动画还未结束时又触发了新的滑动动画，则不属于滑动停止。
+选择器滑动停止时，触发该事件。选择器滑动停止指某次行为触发的滑动动画完全结束。如果某次滑动动画还未结束时又触发了新的滑动动画，则不属于滑动停止。适用于需要在滑动结束后提交最终选择结果、停止加载动画或执行一次性回调的场景。
+
+**说明** 
+
+**onChange与onScrollStop的差异：**
+
+* **触发时机**：onChange在选中项发生变化时立即触发；onScrollStop在滑动动画完全停止后触发。
+* **触发频率**：连续滑动过程中，onChange可能多次触发（每次选中项变化都会触发）；onScrollStop只在滑动停止时触发一次。
+* **使用场景**：onChange适用于需要实时响应的场景（如实时显示选中内容、联动更新其他组件）；onScrollStop适用于需要最终确认的场景（如提交最终选择结果、保存数据）。
+* **两者关系**：一次完整的滑动操作可能先后触发这两个事件，可根据实际需求同时使用或选择使用。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -198,11 +228,9 @@ onScrollStop(callback: Optional<OnUIPickerComponentCallback>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[OnUIPickerComponentCallback](ts-container-ui-picker-component.md#onuipickercomponentcallback)> | 是 | 当选择器滑动停止时触发的回调函数。  当callback的值为undefined时，不使用回调函数。 |
+| callback | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[OnUIPickerComponentCallback](ts-container-ui-picker-component.md#onuipickercomponentcallback)> | 是 | 当选择器滑动停止时触发的回调函数。当callback的值为undefined时，不使用回调函数。 |
 
 ## PickerIndicatorStyle对象说明
-
-PhonePC/2in1TabletTVWearable
 
 选中项指示器样式的参数说明。
 
@@ -215,7 +243,7 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | [PickerIndicatorType](ts-container-ui-picker-component.md#pickerindicatortype枚举说明) | 否 | 否 | 选中项指示器的类型。  默认值：PickerIndicatorType.BACKGROUND  当type的值为小数时，使用向下取整后的整数；当type的值不在PickerIndicatorType枚举范围内时，使用默认值。 |
-| strokeWidth | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 分割线的线宽。  默认值：2.0px  单位：与LengthMetrics一致。  取值范围：[0, 选中项高度的一半（即20vp）]。strokeWidth小于0或大于选中项高度的一半时使用默认值。不支持“百分比”类型。  **说明：**  1. 当type为PickerIndicatorType.DIVIDER时生效。  2. 通过LengthMetrics.resource方式设置时，使用非长度属性的值会按照0vp处理。 |
+| strokeWidth | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 分割线的线宽。  默认值：{ value: 2.0, unit: LengthUnit.px }  单位：与LengthMetrics一致。  取值范围：[0, 选中项高度的一半]。strokeWidth小于0或大于选中项高度的一半时使用默认值。注：选中项高度可通过itemHeight属性设置，默认为40vp，此时取值范围上限为20vp；当itemHeight设置为其他值时，上限相应变化。不支持“百分比”类型。  **说明：**  1. 当type为PickerIndicatorType.DIVIDER时生效。  2. 通过LengthMetrics.resource方式设置时，使用非长度属性的值会按照0vp处理。 |
 | dividerColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 分割线的颜色。  默认值：'sys.color.comp\_divider'  **说明：**  当type为PickerIndicatorType.DIVIDER时生效。 |
 | startMargin | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 分割线与UIPickerComponent容器侧边起始端的距离。  默认值：0  单位：与LengthMetrics一致。  取值范围：startMargin与endMargin之和不得超过UIPickerComponent容器的宽度。设置小于0或startMargin与endMargin之和超过UIPickerComponent容器的宽度时，使用默认值。不支持“百分比”类型。  **说明：**  当type为PickerIndicatorType.DIVIDER时生效。 |
 | endMargin | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 分割线与UIPickerComponent容器侧边结束端的距离。  默认值：0  单位：与LengthMetrics一致。  取值范围：startMargin与endMargin之和不得超过UIPickerComponent容器的宽度。设置小于0或startMargin与endMargin之和超过UIPickerComponent容器的宽度时，使用默认值。不支持“百分比”类型。  **说明：**  当type为PickerIndicatorType.DIVIDER时生效。 |
@@ -223,8 +251,6 @@ PhonePC/2in1TabletTVWearable
 | borderRadius | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | [BorderRadiuses](ts-types.md#borderradiuses9) | [LocalizedBorderRadiuses](ts-types.md#localizedborderradiuses12) | 否 | 是 | 选中项背景的边框圆角半径。  默认值：{ value:12, unit:LengthUnit.vp }，即四个圆角半径均为12vp。  取值范围：取选中项的宽和高之中较小的边长为x，最大不超过x的一半。当取值小于0时，使用默认值；当取值大于最大值时，使用最大值。  **说明：**  1. 当type为PickerIndicatorType.BACKGROUND时生效。  2. [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12)：统一设置四个圆角半径的大小和单位。  3. [BorderRadiuses](ts-types.md#borderradiuses9)：单独设置四个圆角半径的大小（单位为vp）。  4. [LocalizedBorderRadiuses](ts-types.md#localizedborderradiuses12)：单独设置四个圆角半径的大小和单位。 |
 
 ## PickerIndicatorType枚举说明
-
-PhonePC/2in1TabletTVWearable
 
 设置选中项指示器的类型。
 
@@ -240,8 +266,6 @@ PhonePC/2in1TabletTVWearable
 | DIVIDER | 1 | 通过在选中项的上下边缘添加分割线，标识选中项。 |
 
 ## OnUIPickerComponentCallback
-
-PhonePC/2in1TabletTVWearable
 
 type OnUIPickerComponentCallback = (selectedIndex: number) => void
 
@@ -261,1191 +285,1337 @@ type OnUIPickerComponentCallback = (selectedIndex: number) => void
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 ### 示例1（切换循环滚动和开关触控反馈）
 
 从API version 22开始，该示例通过点击按钮的方式实现切换UIPickerComponent容器的循环滚动和开启/关闭触控反馈功能。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct UIPickerComponentAttrsExample {
+  private dataArray: string[] = [];
+  @State loop: boolean = true;
+  @State hapticFeedback: boolean = true;
+
+  aboutToAppear(): void {
+    // 构造选项数据
+    for (let i = 1; i <= 10; i++) {
+      this.dataArray.push(i.toString())
+    }
+  }
+
+  build() {
+    Column() {
+      Row() {
+        UIPickerComponent() {
+          ForEach(this.dataArray, (item: string) => {
+            Text(item)
+          })
+        }
+        // 配置选项列表循环
+        .canLoop(this.loop)
+        // 配置触控反馈
+        .enableHapticFeedback(this.hapticFeedback)
+        .width('70%')
+      }
+
+      Column() {
+        Row() {
+          Toggle({ type: ToggleType.Switch, isOn: true })
+            .onChange((isOn: boolean) => {
+              this.loop = isOn;
+            })
+          Text('canLoop').fontSize(20)
+        }
+        .width('70%')
+
+        Row() {
+          Toggle({ type: ToggleType.Switch, isOn: true })
+            .onChange((isOn: boolean) => {
+              this.hapticFeedback = isOn;
+            })
+          Text('enableHapticFeedback').fontSize(20)
+        }
+        .width('70%')
+      }
+
+    }
+    .width('100%')
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct UIPickerComponentAttrsExample {
-5. private dataArray: string[] = [];
-6. @State loop: boolean = true;
-7. @State hapticFeedback: boolean = true;
 
-9. aboutToAppear(): void {
-10. // 构造选项数据
-11. for (let i = 1; i <= 10; i++) {
-12. this.dataArray.push(i.toString())
-13. }
-14. }
-
-16. build() {
-17. Column() {
-18. Row() {
-19. UIPickerComponent() {
-20. ForEach(this.dataArray, (item: string) => {
-21. Text(item)
-22. })
-23. }
-24. // 配置选项列表循环
-25. .canLoop(this.loop)
-26. // 配置触控音振反馈
-27. .enableHapticFeedback(this.hapticFeedback)
-28. .width('70%')
-29. }
-
-31. Column() {
-32. Row() {
-33. Toggle({ type: ToggleType.Switch, isOn: true })
-34. .onChange((isOn: boolean) => {
-35. this.loop = isOn;
-36. })
-37. Text('canLoop').fontSize(20)
-38. }
-39. .width('70%')
-
-41. Row() {
-42. Toggle({ type: ToggleType.Switch, isOn: true })
-43. .onChange((isOn: boolean) => {
-44. this.hapticFeedback = isOn;
-45. })
-46. Text('enableHapticFeedback').fontSize(20)
-47. }
-48. .width('70%')
-49. }
-
-51. }
-52. .width('100%')
-53. }
-54. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/cco0on7ASGSSbtOFeOkbFw/zh-cn_image_0000002558606566.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/GPPXYkGOSEGQWKiVslKlAA/zh-cn_image_0000002706835862.gif)
 
 ### 示例2（设置事件回调）
 
-从API version 22开始，该示例基于状态选择，实现了UIPickerComponent容器的onChange和onScrollStop事件回调。
+从API version 22开始，该示例基于状态选择实现UIPickerComponent容器的onChange和onScrollStop事件回调。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct UIPickerComponentEventsExample {
+  // 构造状态选项数据
+  private dataArray: string[] = ['待办', '进行中', '已完成'];
+  @State onChangeDesc: string = '';
+  @State onScrollStopDesc: string = '';
+  @State index: number = 0;
+
+  build() {
+    Column() {
+      Row() {
+        UIPickerComponent({
+          selectedIndex: this.index
+        }) {
+          ForEach(this.dataArray, (item: string) => {
+            Text(item)
+          })
+        }
+        // 配置onChange事件回调
+        .onChange((selectedIndex: number) => {
+          this.index = selectedIndex;
+          this.onChangeDesc = 'on change: ' + selectedIndex;
+        })
+        // 配置onScrollStop事件回调
+        .onScrollStop((selectedIndex: number) => {
+          this.onScrollStopDesc = 'on scroll stop: ' + selectedIndex;
+        })
+        .width('70%')
+      }
+
+      Column() {
+        Text(this.onChangeDesc)
+        Text(this.onScrollStopDesc)
+      }
+
+    }
+    .width('100%')
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct UIPickerComponentEventsExample {
-5. // 构造状态选项数据
-6. private dataArray: string[] = ['待办', '进行中', '已完成'];
-7. @State onChangeDesc: string = '';
-8. @State onScrollStopDesc: string = '';
 
-10. build() {
-11. Column() {
-12. Row() {
-13. UIPickerComponent() {
-14. ForEach(this.dataArray, (item: string) => {
-15. Text(item)
-16. })
-17. }
-18. // 配置onChange事件回调
-19. .onChange((selectedIndex: number) => {
-20. this.onChangeDesc = 'on change: ' + selectedIndex
-21. })
-22. // 配置onScrollStop事件回调
-23. .onScrollStop((selectedIndex: number) => {
-24. this.onScrollStopDesc = 'on scroll stop: ' + selectedIndex
-25. })
-26. .width('70%')
-27. }
-
-29. Column() {
-30. Text(this.onChangeDesc)
-31. Text(this.onScrollStopDesc)
-32. }
-
-34. }
-35. .width('100%')
-36. }
-37. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/ssDGVodLSuapy_A3C-bhDQ/zh-cn_image_0000002589326093.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/yJaNGkl1TTOuzti_Zy_59A/zh-cn_image_0000002736314967.gif)
 
 ### 示例3（设置选中项索引值）
 
 从API version 22开始，该示例实现了设置UIPickerComponent容器的选中项索引值。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct UIPickerComponentSelectedIndexExample {
+  private dataArray: string[] = [];
+  @State selectedIndex: number = 0;
+
+  aboutToAppear(): void {
+    // 构造选项数据
+    for (let i = 1; i <= 10; i++) {
+      this.dataArray.push(i.toString())
+    }
+  }
+
+  build() {
+    Column() {
+      Row() {
+        UIPickerComponent({
+          // 配置选中项索引值
+          selectedIndex: this.selectedIndex
+        }) {
+          ForEach(this.dataArray, (item: string) => {
+            Text(item)
+          })
+        }
+        .onChange((selectedIndex: number) => {
+          this.selectedIndex = selectedIndex;
+        })
+        .onScrollStop((selectedIndex: number) => {
+          this.selectedIndex = selectedIndex;
+        })
+        .width('70%')
+      }
+
+      Column() {
+        Text('selectedIndex: ' + this.selectedIndex)
+      }
+
+    }
+    .width('100%')
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct UIPickerComponentSelectedIndexExample {
-5. private dataArray: string[] = [];
-6. @State selectedIndex: number = 0;
 
-8. aboutToAppear(): void {
-9. // 构造选项数据
-10. for (let i = 1; i <= 10; i++) {
-11. this.dataArray.push(i.toString())
-12. }
-13. }
-
-15. build() {
-16. Column() {
-17. Row() {
-18. UIPickerComponent({
-19. // 配置选中项索引值
-20. selectedIndex: this.selectedIndex
-21. }) {
-22. ForEach(this.dataArray, (item: string) => {
-23. Text(item)
-24. })
-25. }
-26. .onChange((selectedIndex: number) => {
-27. this.selectedIndex = selectedIndex
-28. })
-29. .onScrollStop((selectedIndex: number) => {
-30. this.selectedIndex = selectedIndex
-31. })
-32. .width('70%')
-33. }
-
-35. Column() {
-36. Text('selectedIndex: ' + this.selectedIndex)
-37. }
-
-39. }
-40. .width('100%')
-41. }
-42. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/gnuch8VyTKu2rJDJmEQ69A/zh-cn_image_0000002589246035.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/OeGBHo4bTvGsJCU2MXwQVw/zh-cn_image_0000002706675924.gif)
 
 ### 示例4（设置选中项指示器）
 
-从API version 22开始，该示例实现了设置UIPickerComponent容器的选中项指示器。具体包括：在使用背景指示器时，设置背景颜色、背景圆角；在使用分割线指示器时，设置分割线颜色、分割线宽度、起始侧边距、结束侧边距。
+从API version 22开始，该示例实现了设置UIPickerComponent容器的选中项指示器。具体包括：在使用背景指示器时，设置[PickerIndicatorStyle](ts-container-ui-picker-component.md#pickerindicatorstyle对象说明)的backgroundColor、borderRadius；在使用分割线指示器时，设置[PickerIndicatorStyle](ts-container-ui-picker-component.md#pickerindicatorstyle对象说明)的strokeWidth、dividerColor、startMargin、endMargin。
 
+```ts
+// xxx.ets
+import { LengthMetrics } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct UIPickerComponentIndicatorExample {
+  private dataArray: string[] = [];
+  @State indicatorType: Optional<PickerIndicatorType> = undefined;
+  @State bgColor: Color | undefined = undefined;
+  @State dividerColor: Color | undefined = undefined;
+  @State strokeWidth: LengthMetrics = LengthMetrics.px(2);
+  @State startMargin: LengthMetrics = LengthMetrics.px(2);
+  @State endMargin: LengthMetrics = LengthMetrics.px(2);
+  @State selectIndicator: PickerIndicatorStyle | undefined = undefined;
+  @State bgBorderRadius: LengthMetrics | BorderRadiuses | LocalizedBorderRadiuses | undefined = undefined
+  bgBorderRadiuses1: LengthMetrics = LengthMetrics.vp(10)
+  bgBorderRadiuses2: BorderRadiuses = {
+    topLeft: 10,
+    bottomLeft: 0,
+    topRight: 10,
+    bottomRight: 0,
+  }
+  bgBorderRadiuses3: LocalizedBorderRadiuses = {
+    topStart: LengthMetrics.vp(0),
+    bottomStart: LengthMetrics.vp(10),
+    topEnd: LengthMetrics.vp(0),
+    bottomEnd: LengthMetrics.vp(10)
+  }
+  private controller: TabsController = new TabsController();
+  @State curTabIndex: number = 0;
+
+  @Builder
+  dividerBuilder() {
+    Column() {
+      Row() {
+        Text('分割线线宽')
+      }.margin(2)
+
+      Row() {
+        Button('0')
+          .onClick(() => {
+            this.strokeWidth = LengthMetrics.px(0)
+          })
+          .fontSize(12)
+          .height(30)
+          .width(100)
+          .margin(2)
+        Button('10px')
+          .onClick(() => {
+            this.strokeWidth = LengthMetrics.px(10)
+          })
+          .fontSize(12)
+          .height(30)
+          .width(100)
+          .margin(2)
+        Button('10vp')
+          .onClick(() => {
+            this.strokeWidth = LengthMetrics.vp(10)
+          })
+          .fontSize(12)
+          .height(30)
+          .width(100)
+          .margin(2)
+      }
+
+      Row() {
+        Text('起始侧边距')
+      }.margin(2)
+
+      Row() {
+        Button('0')
+          .onClick(() => {
+            this.startMargin = LengthMetrics.px(0)
+          })
+          .fontSize(12)
+          .height(30)
+          .width(100)
+          .margin(2)
+        Button('10px')
+          .onClick(() => {
+            this.startMargin = LengthMetrics.px(10)
+          })
+          .fontSize(12)
+          .height(30)
+          .width(100)
+          .margin(2)
+        Button('10vp')
+          .onClick(() => {
+            this.startMargin = LengthMetrics.vp(10)
+          })
+          .fontSize(12)
+          .height(30)
+          .width(100)
+          .margin(2)
+      }
+
+      Row() {
+        Text('结束侧边距')
+      }.margin(2)
+
+      Row() {
+        Button('0')
+          .onClick(() => {
+            this.endMargin = LengthMetrics.px(0)
+          })
+          .fontSize(12)
+          .height(30)
+          .width(100)
+          .margin(2)
+        Button('10px')
+          .onClick(() => {
+            this.endMargin = LengthMetrics.px(10)
+          })
+          .fontSize(12)
+          .height(30)
+          .width(100)
+          .margin(2)
+        Button('10vp')
+          .onClick(() => {
+            this.endMargin = LengthMetrics.vp(10)
+          })
+          .fontSize(12)
+          .height(30)
+          .width(100)
+          .margin(2)
+      }
+
+      Row() {
+        Text('分割线颜色')
+      }
+
+      Row() {
+        Button('蓝色')
+          .onClick(() => {
+            this.dividerColor = Color.Blue
+          })
+          .fontSize(12)
+          .height(30)
+          .width(73)
+          .margin(2)
+        Button('黑色')
+          .onClick(() => {
+            this.dividerColor = Color.Black
+          })
+          .fontSize(12)
+          .height(30)
+          .width(73)
+          .margin(2)
+      }
+
+      Row() {
+        Button('不使用自定义设置')
+          .onClick(() => {
+            this.dividerColor = undefined
+          })
+          .fontSize(12)
+          .height(30)
+          .width(150)
+          .margin(2)
+      }
+    }
+  }
+
+  @Builder
+  backgroundBuilder() {
+    Column() {
+      Row() {
+        Text('圆角设置')
+      }.margin(2)
+
+      Column() {
+        Button('使用LengthMetrics，实现统一圆角')
+          .onClick(() => {
+            this.bgBorderRadius = this.bgBorderRadiuses1
+          })
+          .fontSize(12)
+          .height(30)
+          .width(300)
+          .margin(2)
+        Button('使用BorderRadiuses，实现上圆下方')
+          .onClick(() => {
+            this.bgBorderRadius = this.bgBorderRadiuses2
+          })
+          .fontSize(12)
+          .height(30)
+          .width(300)
+          .margin(2)
+        Button('使用LocalizedBorderRadiuses，实现上方下圆')
+          .onClick(() => {
+            this.bgBorderRadius = this.bgBorderRadiuses3
+          })
+          .fontSize(12)
+          .height(30)
+          .width(300)
+          .margin(2)
+      }.margin(2)
+
+      Row() {
+        Text('背景色设置')
+      }.margin(2)
+
+      Row() {
+        Button('蓝色')
+          .onClick(() => {
+            this.bgColor = Color.Blue
+          })
+          .fontSize(12)
+          .height(30)
+          .width(73)
+          .margin(2)
+        Button('绿色')
+          .onClick(() => {
+            this.bgColor = Color.Green
+          })
+          .fontSize(12)
+          .height(30)
+          .width(73)
+          .margin(2)
+      }
+
+      Row() {
+        Button('不使用自定义设置')
+          .onClick(() => {
+            this.bgColor = undefined
+          })
+          .fontSize(12)
+          .height(30)
+          .width(150)
+          .margin(2)
+      }
+    }
+  }
+
+  aboutToAppear(): void {
+    // 构造选项数据
+    for (let i = 1; i <= 10; i++) {
+      this.dataArray.push(i.toString())
+    }
+  }
+
+  build() {
+    Column() {
+      Row() {
+        UIPickerComponent() {
+          ForEach(this.dataArray, (item: string) => {
+            Text(item)
+          })
+        }
+        // 配置选中项指示器
+        .selectionIndicator({
+          type: this.indicatorType,
+          strokeWidth: this.strokeWidth,
+          dividerColor: this.dividerColor,
+          startMargin: this.startMargin,
+          endMargin: this.endMargin,
+          backgroundColor: this.bgColor,
+          borderRadius: this.bgBorderRadius
+        })
+        .width('70%')
+      }
+      Tabs({ barPosition: BarPosition.Start, index: this.curTabIndex, controller: this.controller }) {
+        TabContent() {
+          this.backgroundBuilder()
+        }.tabBar('背景指示器')
+
+        TabContent() {
+          this.dividerBuilder()
+        }.tabBar('分割线指示器')
+      }
+      .vertical(false)
+      .barMode(BarMode.Fixed)
+      .barWidth(360)
+      .barHeight(56)
+      .animationDuration(400)
+      .onChange((index: number) => {
+        this.curTabIndex = index
+        if (this.curTabIndex == 1) {
+          this.indicatorType = PickerIndicatorType.DIVIDER
+        } else {
+          this.indicatorType = PickerIndicatorType.BACKGROUND
+        }
+      })
+      .height(LayoutPolicy.wrapContent)
+      .divider({ strokeWidth: 2 })
+      .margin({ top: 20 })
+      .backgroundColor('#F1F3F5')
+    }
+    .width('100%')
+  }
+}
 ```
-1. // xxx.ets
-2. import { LengthMetrics } from '@kit.ArkUI';
 
-4. @Entry
-5. @Component
-6. struct UIPickerComponentIndicatorExample {
-7. private dataArray: string[] = [];
-8. @State indicatorType: PickerIndicatorType | undefined = undefined;
-9. @State bgColor: Color | undefined = undefined;
-10. @State dividerColor: Color | undefined = undefined;
-11. @State strokeWidth: LengthMetrics = LengthMetrics.px(2);
-12. @State startMargin: LengthMetrics = LengthMetrics.px(2);
-13. @State endMargin: LengthMetrics = LengthMetrics.px(2);
-14. @State selectIndicator: PickerIndicatorStyle | undefined = undefined;
-15. @State bgBorderRadius: LengthMetrics | BorderRadiuses | LocalizedBorderRadiuses | undefined = undefined
-16. bgBorderRadiuses1: LengthMetrics = LengthMetrics.vp(10)
-17. bgBorderRadiuses2: BorderRadiuses = {
-18. topLeft: 10,
-19. bottomLeft: 0,
-20. topRight: 10,
-21. bottomRight: 0,
-22. }
-23. bgBorderRadiuses3: LocalizedBorderRadiuses = {
-24. topStart: LengthMetrics.vp(0),
-25. bottomStart: LengthMetrics.vp(10),
-26. topEnd: LengthMetrics.vp(0),
-27. bottomEnd: LengthMetrics.vp(10)
-28. }
-29. private controller: TabsController = new TabsController();
-30. @State curTabIndex: number = 0;
-
-32. @Builder
-33. dividerBuilder() {
-34. Column() {
-35. Row() {
-36. Text('分割线线宽')
-37. }.margin(2)
-
-39. Row() {
-40. Button('0')
-41. .onClick(() => {
-42. this.strokeWidth = LengthMetrics.px(0)
-43. })
-44. .fontSize(12)
-45. .height(30)
-46. .width(100)
-47. .margin(2)
-48. Button('10px')
-49. .onClick(() => {
-50. this.strokeWidth = LengthMetrics.px(10)
-51. })
-52. .fontSize(12)
-53. .height(30)
-54. .width(100)
-55. .margin(2)
-56. Button('10vp')
-57. .onClick(() => {
-58. this.strokeWidth = LengthMetrics.vp(10)
-59. })
-60. .fontSize(12)
-61. .height(30)
-62. .width(100)
-63. .margin(2)
-64. }
-
-66. Row() {
-67. Text('起始侧边距')
-68. }.margin(2)
-
-70. Row() {
-71. Button('0')
-72. .onClick(() => {
-73. this.startMargin = LengthMetrics.px(0)
-74. })
-75. .fontSize(12)
-76. .height(30)
-77. .width(100)
-78. .margin(2)
-79. Button('10px')
-80. .onClick(() => {
-81. this.startMargin = LengthMetrics.px(10)
-82. })
-83. .fontSize(12)
-84. .height(30)
-85. .width(100)
-86. .margin(2)
-87. Button('10vp')
-88. .onClick(() => {
-89. this.startMargin = LengthMetrics.vp(10)
-90. })
-91. .fontSize(12)
-92. .height(30)
-93. .width(100)
-94. .margin(2)
-95. }
-
-97. Row() {
-98. Text('结束侧边距')
-99. }.margin(2)
-
-101. Row() {
-102. Button('0')
-103. .onClick(() => {
-104. this.endMargin = LengthMetrics.px(0)
-105. })
-106. .fontSize(12)
-107. .height(30)
-108. .width(100)
-109. .margin(2)
-110. Button('10px')
-111. .onClick(() => {
-112. this.endMargin = LengthMetrics.px(10)
-113. })
-114. .fontSize(12)
-115. .height(30)
-116. .width(100)
-117. .margin(2)
-118. Button('10vp')
-119. .onClick(() => {
-120. this.endMargin = LengthMetrics.vp(10)
-121. })
-122. .fontSize(12)
-123. .height(30)
-124. .width(100)
-125. .margin(2)
-126. }
-
-128. Row() {
-129. Text('分割线颜色')
-130. }
-
-132. Row() {
-133. Button('蓝色')
-134. .onClick(() => {
-135. this.dividerColor = Color.Blue
-136. })
-137. .fontSize(12)
-138. .height(30)
-139. .width(73)
-140. .margin(2)
-141. Button('黑色')
-142. .onClick(() => {
-143. this.dividerColor = Color.Black
-144. })
-145. .fontSize(12)
-146. .height(30)
-147. .width(73)
-148. .margin(2)
-149. }
-
-151. Row() {
-152. Button('不使用自定义设置')
-153. .onClick(() => {
-154. this.dividerColor = undefined
-155. })
-156. .fontSize(12)
-157. .height(30)
-158. .width(150)
-159. .margin(2)
-160. }
-161. }
-162. }
-
-164. @Builder
-165. backgroundBuilder() {
-166. Column() {
-167. Row() {
-168. Text('圆角设置')
-169. }.margin(2)
-
-171. Column() {
-172. Button('使用LengthMetrics，实现统一圆角')
-173. .onClick(() => {
-174. this.bgBorderRadius = this.bgBorderRadiuses1
-175. })
-176. .fontSize(12)
-177. .height(30)
-178. .width(300)
-179. .margin(2)
-180. Button('使用BorderRadiuses，实现上圆下方')
-181. .onClick(() => {
-182. this.bgBorderRadius = this.bgBorderRadiuses2
-183. })
-184. .fontSize(12)
-185. .height(30)
-186. .width(300)
-187. .margin(2)
-188. Button('使用LocalizedBorderRadiuses，实现上方下圆')
-189. .onClick(() => {
-190. this.bgBorderRadius = this.bgBorderRadiuses3
-191. })
-192. .fontSize(12)
-193. .height(30)
-194. .width(300)
-195. .margin(2)
-196. }.margin(2)
-
-198. Row() {
-199. Text('背景色设置')
-200. }.margin(2)
-
-202. Row() {
-203. Button('蓝色')
-204. .onClick(() => {
-205. this.bgColor = Color.Blue
-206. })
-207. .fontSize(12)
-208. .height(30)
-209. .width(73)
-210. .margin(2)
-211. Button('绿色')
-212. .onClick(() => {
-213. this.bgColor = Color.Green
-214. })
-215. .fontSize(12)
-216. .height(30)
-217. .width(73)
-218. .margin(2)
-219. }
-
-221. Row() {
-222. Button('不使用自定义设置')
-223. .onClick(() => {
-224. this.bgColor = undefined
-225. })
-226. .fontSize(12)
-227. .height(30)
-228. .width(150)
-229. .margin(2)
-230. }
-231. }
-232. }
-
-234. aboutToAppear(): void {
-235. // 构造选项数据
-236. for (let i = 1; i <= 10; i++) {
-237. this.dataArray.push(i.toString())
-238. }
-239. }
-
-241. build() {
-242. Column() {
-243. Row() {
-244. UIPickerComponent() {
-245. ForEach(this.dataArray, (item: string) => {
-246. Text(item)
-247. })
-248. }
-249. // 配置选中项指示器
-250. .selectionIndicator({
-251. type: this.indicatorType,
-252. strokeWidth: this.strokeWidth,
-253. dividerColor: this.dividerColor,
-254. startMargin: this.startMargin,
-255. endMargin: this.endMargin,
-256. backgroundColor: this.bgColor,
-257. borderRadius: this.bgBorderRadius
-258. })
-259. .width('70%')
-260. }
-261. Tabs({ barPosition: BarPosition.Start, index: this.curTabIndex, controller: this.controller }) {
-262. TabContent() {
-263. this.backgroundBuilder()
-264. }.tabBar('背景指示器')
-
-266. TabContent() {
-267. this.dividerBuilder()
-268. }.tabBar('分割线指示器')
-269. }
-270. .vertical(false)
-271. .barMode(BarMode.Fixed)
-272. .barWidth(360)
-273. .barHeight(56)
-274. .animationDuration(400)
-275. .onChange((index: number) => {
-276. this.curTabIndex = index
-277. if (this.curTabIndex == 1) {
-278. this.indicatorType = PickerIndicatorType.DIVIDER
-279. } else {
-280. this.indicatorType = PickerIndicatorType.BACKGROUND
-281. }
-282. })
-283. .height(LayoutPolicy.wrapContent)
-284. .divider({ strokeWidth: 2 })
-285. .margin({ top: 20 })
-286. .backgroundColor('#F1F3F5')
-287. }
-288. .width('100%')
-289. }
-290. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/q6hAHQFoSeawU4LxGOWMQA/zh-cn_image_0000002558766226.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/Ri1D6SF8Ql-9OUyYOTEe0Q/zh-cn_image_0000002736435011.gif)
 
 ### 示例5（自定义月份选择器）
 
 从API version 22开始，该示例使用UIPickerComponent容器嵌套文本子组件的方式实现月份选择器。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct MonthUIPickerComponentExample {
+  private fontSize: number | string | Resource = '20vp';
+  private monthArray: string[] = [];
+
+  aboutToAppear(): void {
+    // 构造选项数据
+    for (let i = 1; i <= 12; i++) {
+      this.monthArray.push(i + '月')
+    }
+  }
+
+  build() {
+    Column() {
+      UIPickerComponent() {
+        ForEach(this.monthArray, (item: string) => {
+          Text(item)
+            .fontSize(this.fontSize)
+            .textAlign(TextAlign.Center)
+            .fontColor(Color.Black)
+        })
+      }
+      .width('70%')
+      // 配置选项列表循环
+      .canLoop(true)
+      // 配置触控反馈为关闭
+      .enableHapticFeedback(false)
+      // 配置选中项的指示器标识为分割线
+      .selectionIndicator({ type: PickerIndicatorType.DIVIDER })
+      // 订阅选中项改变事件
+      .onChange((idx: number) => {
+        console.info('UIPickerComponent item changed: ' + this.monthArray[idx]);
+      })
+      // 订阅滑动停止事件
+      .onScrollStop((idx: number) => {
+        console.info('UIPickerComponent scroll stopped: ' + this.monthArray[idx]);
+      })
+    }
+    .width('100%')
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct MonthUIPickerComponentExample {
-5. private fontSize: number | string | Resource = '20vp';
-6. private monthArray: string[] = [];
 
-8. aboutToAppear(): void {
-9. // 构造选项数据
-10. for (let i = 1; i <= 12; i++) {
-11. this.monthArray.push(i + '月')
-12. }
-13. }
-
-15. build() {
-16. Column() {
-17. UIPickerComponent() {
-18. ForEach(this.monthArray, (item: string) => {
-19. Text(item)
-20. .fontSize(this.fontSize)
-21. .textAlign(TextAlign.Center)
-22. .fontColor(Color.Black)
-23. })
-24. }
-25. .width('70%')
-26. // 配置选项列表循环
-27. .canLoop(true)
-28. // 配置触控音振反馈为关闭
-29. .enableHapticFeedback(false)
-30. // 配置选中项的指示器标识为分割线
-31. .selectionIndicator({ type: PickerIndicatorType.DIVIDER })
-32. // 订阅选中项改变事件
-33. .onChange((idx: number) => {
-34. console.info('UIPickerComponent item changed: ' + this.monthArray[idx])
-35. })
-36. // 订阅滑动停止事件
-37. .onScrollStop((idx: number) => {
-38. console.info('UIPickerComponent scroll stopped: ' + this.monthArray[idx])
-39. })
-40. }
-41. .width('100%')
-42. }
-43. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/2NO8XibiQoG99m7jUVBw7g/zh-cn_image_0000002558606568.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/OD-o1wMSSoy3_y5XFIflpg/zh-cn_image_0000002706835864.gif)
 
 ### 示例6（自定义地区选择器）
 
 从API version 22开始，该示例使用多列UIPickerComponent容器组合实现地区选择器。
 
+```ts
+// xxx.ets
+
+type RegionDict = Record<string, Record<string, Array<string>>>;
+// 定义地区字典
+let regionData: RegionDict = {
+  '辽宁省': {
+    '沈阳市': ['沈河区', '和平区', '浑南区'],
+    '大连市': ['中山区', '金州区', '长海县']
+  },
+  '吉林省': {
+    '长春市': ['南关区', '宽城区', '朝阳区'],
+    '四平市': ['铁西区', '铁东区', '梨树县']
+  },
+  '黑龙江省': {
+    '哈尔滨市': ['道里区', '道外区', '南岗区'],
+    '牡丹江市': ['东安区', '西安区', '爱民区']
+  },
+};
+
+@Entry
+@Component
+struct RegionUIPickerComponentExample {
+  @State provinceIndex: number = 0;
+  @State cityIndex: number = 0;
+  @State countyIndex: number = 0;
+  @State provinces: Array<string> = [];
+  @State cities: Array<string> = [];
+  @State counties: Array<string> = [];
+
+  aboutToAppear(): void {
+    this.provinces = Object.keys(regionData);
+    this.flushCityColumn()
+  }
+
+  flushCityColumn() {
+    let currentProvince = this.provinces[this.provinceIndex]
+    this.cities = Object.keys(regionData[currentProvince]);
+    this.cityIndex = 0;
+    this.flushCountyColumn()
+  }
+
+  flushCountyColumn() {
+    let currentProvince = this.provinces[this.provinceIndex]
+    let currentCity = this.cities[this.cityIndex]
+    this.counties = regionData[currentProvince][currentCity];
+    this.countyIndex = 0;
+  }
+
+  build() {
+    Column() {
+      Row() {
+        // 省级
+        UIPickerComponent({
+          selectedIndex: this.provinceIndex
+        }) {
+          ForEach(this.provinces, (province: string) => {
+            Text(province)
+          })
+        }
+        .onChange((selectedIndex: number) => {
+          this.provinceIndex = selectedIndex;
+          this.flushCityColumn()
+
+        })
+        .onScrollStop((selectedIndex: number) => {
+          this.provinceIndex = selectedIndex;
+        })
+        .selectionIndicator({ type: PickerIndicatorType.DIVIDER })
+        .width('25%')
+
+        // 地级
+        UIPickerComponent({
+          selectedIndex: this.cityIndex
+        }) {
+          ForEach(this.cities, (city: string) => {
+            Text(city)
+          })
+        }
+        .onChange((selectedIndex: number) => {
+          this.cityIndex = selectedIndex;
+          this.flushCountyColumn()
+        })
+        .onScrollStop((selectedIndex: number) => {
+          this.cityIndex = selectedIndex;
+        })
+        .selectionIndicator({ type: PickerIndicatorType.DIVIDER })
+        .width('25%')
+
+        // 县级
+        UIPickerComponent({
+          selectedIndex: this.countyIndex
+        }) {
+          ForEach(this.counties, (county: string) => {
+            Text(county)
+          })
+        }
+        .onChange((selectedIndex: number) => {
+          this.countyIndex = selectedIndex;
+        })
+        .onScrollStop((selectedIndex: number) => {
+          this.countyIndex = selectedIndex;
+        })
+        .selectionIndicator({ type: PickerIndicatorType.DIVIDER })
+        .width('25%')
+      }
+    }
+    .width('100%')
+  }
+}
 ```
-1. // xxx.ets
 
-3. type RegionDict = Record<string, Record<string, Array<string>>>;
-4. // 定义地区字典
-5. let regionData: RegionDict = {
-6. '辽宁省': {
-7. '沈阳市': ['沈河区', '和平区', '浑南区'],
-8. '大连市': ['中山区', '金州区', '长海县']
-9. },
-10. '吉林省': {
-11. '长春市': ['南关区', '宽城区', '朝阳区'],
-12. '四平市': ['铁西区', '铁东区', '梨树县']
-13. },
-14. '黑龙江省': {
-15. '哈尔滨市': ['道里区', '道外区', '南岗区'],
-16. '牡丹江市': ['东安区', '西安区', '爱民区']
-17. },
-18. };
-
-20. @Entry
-21. @Component
-22. struct RegionUIPickerComponentExample {
-23. @State provinceIndex: number = 0;
-24. @State cityIndex: number = 0;
-25. @State countyIndex: number = 0;
-26. @State provinces: Array<string> = [];
-27. @State cities: Array<string> = [];
-28. @State counties: Array<string> = [];
-
-30. aboutToAppear(): void {
-31. this.provinces = Object.keys(regionData);
-32. this.flushCityColumn()
-33. }
-
-35. flushCityColumn() {
-36. let currentProvince = this.provinces[this.provinceIndex]
-37. this.cities = Object.keys(regionData[currentProvince])
-38. this.cityIndex = 0
-39. this.flushCountyColumn()
-40. }
-
-42. flushCountyColumn() {
-43. let currentProvince = this.provinces[this.provinceIndex]
-44. let currentCity = this.cities[this.cityIndex]
-45. this.counties = regionData[currentProvince][currentCity]
-46. this.countyIndex = 0
-47. }
-
-49. build() {
-50. Column() {
-51. Row() {
-52. // 省级
-53. UIPickerComponent({
-54. selectedIndex: this.provinceIndex
-55. }) {
-56. ForEach(this.provinces, (province: string) => {
-57. Text(province)
-58. })
-59. }
-60. .onChange((selectedIndex: number) => {
-61. this.provinceIndex = selectedIndex
-62. this.flushCityColumn()
-
-64. })
-65. .onScrollStop((selectedIndex: number) => {
-66. this.provinceIndex = selectedIndex
-67. })
-68. .selectionIndicator({ type: PickerIndicatorType.DIVIDER })
-69. .width('25%')
-
-71. // 地级
-72. UIPickerComponent({
-73. selectedIndex: this.cityIndex
-74. }) {
-75. ForEach(this.cities, (city: string) => {
-76. Text(city)
-77. })
-78. }
-79. .onChange((selectedIndex: number) => {
-80. this.cityIndex = selectedIndex
-81. this.flushCountyColumn()
-82. })
-83. .onScrollStop((selectedIndex: number) => {
-84. this.cityIndex = selectedIndex
-85. })
-86. .selectionIndicator({ type: PickerIndicatorType.DIVIDER })
-87. .width('25%')
-
-89. // 县级
-90. UIPickerComponent({
-91. selectedIndex: this.countyIndex
-92. }) {
-93. ForEach(this.counties, (county: string) => {
-94. Text(county)
-95. })
-96. }
-97. .onChange((selectedIndex: number) => {
-98. this.countyIndex = selectedIndex
-99. })
-100. .onScrollStop((selectedIndex: number) => {
-101. this.countyIndex = selectedIndex
-102. })
-103. .selectionIndicator({ type: PickerIndicatorType.DIVIDER })
-104. .width('25%')
-105. }
-106. }
-107. .width('100%')
-108. }
-109. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/okmCn2KnSUGb1ABZlPtuxg/zh-cn_image_0000002589326095.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/rTBqrsyST5yqBDhAZdd8Tg/zh-cn_image_0000002736314969.gif)
 
 ### 示例7（自定义选项类型）
 
 从API version 22开始，该示例使用UIPickerComponent容器实现不同选项类型的选择器，包含文本选择器、图片选择器、图文组合选择器。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct UIPickerComponentExample {
+  @State textList: string[] =
+    ['text1', 'text2', 'text3', 'text4', 'text5', 'text6', 'text7', 'text8'];
+  // 以下$r('sys.media.*')资源文件需要替换为开发者所需的图像资源文件。
+  @State imageList: Resource[] =
+    [$r('sys.media.ohos_ic_normal_white_grid_audio'), $r('sys.media.ohos_ic_normal_white_grid_calendar'),
+      $r('sys.media.ohos_ic_normal_white_grid_compress'), $r('sys.media.ohos_ic_normal_white_grid_doc'),
+      $r('sys.media.ohos_ic_normal_white_grid_flac'), $r('sys.media.ohos_ic_normal_white_grid_folder'),
+      $r('sys.media.ohos_ic_normal_white_grid_html'), $r('sys.media.ohos_ic_normal_white_grid_image')];
+  // 以下$r('sys.symbol.*')资源文件需要替换为开发者所需的图像资源文件。
+  @State symbolList: Resource[] =
+    [$r('sys.symbol.calendar_01'), $r('sys.symbol.calendar_02'), $r('sys.symbol.calendar_03'),
+      $r('sys.symbol.calendar_04'), $r('sys.symbol.calendar_05'), $r('sys.symbol.calendar_06'),
+      $r('sys.symbol.calendar_07'), $r('sys.symbol.calendar_08')];
+  private controller: TabsController = new TabsController();
+  @State curTabIndex: number = 0;
+
+  @Builder
+  ImagePicker() {
+    Column() {
+      UIPickerComponent() {
+        ForEach(this.imageList, (item: Resource) => {
+          Image(item)
+        })
+      }
+      .margin(20)
+      .width(200)
+    }
+  }
+
+  @Builder
+  TextPicker() {
+    Column() {
+      UIPickerComponent() {
+        ForEach(this.textList, (item: string) => {
+          Text(item)
+        })
+      }
+      .margin(20)
+      .width(200)
+    }
+  }
+
+  @Builder
+  HybridPicker() {
+    Column() {
+      UIPickerComponent() {
+        ForEach(this.symbolList, (item: Resource, index: number) => {
+          Row() {
+            SymbolGlyph(item)
+              .height('20vp')
+            Text(this.textList[index])
+          }
+        })
+      }
+      .margin(20)
+      .width(200)
+    }
+  }
+
+  build() {
+    Column() {
+      Tabs({ barPosition: BarPosition.Start, index: this.curTabIndex, controller: this.controller }) {
+        TabContent() {
+          this.TextPicker()
+        }.tabBar('文本选择器')
+
+        TabContent() {
+          this.ImagePicker()
+        }.tabBar('图片选择器')
+
+        TabContent() {
+          this.HybridPicker()
+        }.tabBar('图文组合选择器')
+      }
+      .vertical(true)
+      .divider({ strokeWidth: 1 })
+      .barMode(BarMode.Fixed)
+      .barWidth(140)
+      .barHeight(230)
+      .height(230)
+      .animationDuration(400)
+    }
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct UIPickerComponentExample {
-5. @State textList: string[] =
-6. ['text1', 'text2', 'text3', 'text4', 'text5', 'text6', 'text7', 'text8'];
-7. // 以下$r('sys.media.*')资源文件需要替换为开发者所需的图像资源文件。
-8. @State imageList: Resource[] =
-9. [$r('sys.media.ohos_ic_normal_white_grid_audio'), $r('sys.media.ohos_ic_normal_white_grid_calendar'),
-10. $r('sys.media.ohos_ic_normal_white_grid_compress'), $r('sys.media.ohos_ic_normal_white_grid_doc'),
-11. $r('sys.media.ohos_ic_normal_white_grid_flac'), $r('sys.media.ohos_ic_normal_white_grid_folder'),
-12. $r('sys.media.ohos_ic_normal_white_grid_html'), $r('sys.media.ohos_ic_normal_white_grid_image')];
-13. // 以下$r('sys.symbol.*')资源文件需要替换为开发者所需的图像资源文件。
-14. @State symbolList: Resource[] =
-15. [$r('sys.symbol.calendar_01'), $r('sys.symbol.calendar_02'), $r('sys.symbol.calendar_03'),
-16. $r('sys.symbol.calendar_04'), $r('sys.symbol.calendar_05'), $r('sys.symbol.calendar_06'),
-17. $r('sys.symbol.calendar_07'), $r('sys.symbol.calendar_08')];
-18. private controller: TabsController = new TabsController();
-19. @State curTabIndex: number = 0;
 
-21. @Builder
-22. ImagePicker() {
-23. Column() {
-24. UIPickerComponent() {
-25. ForEach(this.imageList, (item: Resource) => {
-26. Image(item)
-27. })
-28. }
-29. .margin(20)
-30. .width(200)
-31. }
-32. }
-
-34. @Builder
-35. TextPicker() {
-36. Column() {
-37. UIPickerComponent() {
-38. ForEach(this.textList, (item: string) => {
-39. Text(item)
-40. })
-41. }
-42. .margin(20)
-43. .width(200)
-44. }
-45. }
-
-47. @Builder
-48. HybridPicker() {
-49. Column() {
-50. UIPickerComponent() {
-51. ForEach(this.symbolList, (item: Resource, index: number) => {
-52. Row() {
-53. SymbolGlyph(item)
-54. .height('20vp')
-55. Text(this.textList[index])
-56. }
-57. })
-58. }
-59. .margin(20)
-60. .width(200)
-61. }
-62. }
-
-64. build() {
-65. Column() {
-66. Tabs({ barPosition: BarPosition.Start, index: this.curTabIndex, controller: this.controller }) {
-67. TabContent() {
-68. this.TextPicker()
-69. }.tabBar('文本选择器')
-
-71. TabContent() {
-72. this.ImagePicker()
-73. }.tabBar('图片选择器')
-
-75. TabContent() {
-76. this.HybridPicker()
-77. }.tabBar('图文组合选择器')
-78. }
-79. .vertical(true)
-80. .divider({ strokeWidth: 1 })
-81. .barMode(BarMode.Fixed)
-82. .barWidth(140)
-83. .barHeight(230)
-84. .height(230)
-85. .animationDuration(400)
-86. }
-87. }
-88. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/krJH3xWXT0GbPQjIWFVKOw/zh-cn_image_0000002589246037.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/LiUiRl0MSaOvPxENP6hKBQ/zh-cn_image_0000002706675926.gif)
 
 ### 示例8（自定义时间选择器）
 
 从API version 22开始，该示例实现了一个时间选择器，功能包含设置切换是否循环滚动、切换是否显示秒数、切换是否使用24小时制、切换是否显示前导0，还可按照当前系统语言显示对应语言的内容，并根据语言习惯调整各列的显示顺序。
 
-说明
+**说明** 
 
 * 该示例中，时间选择器的各列内容根据系统语言显示对应语言的内容，例如：英文系统显示AM/PM，中文系统显示上午/下午。
 * 该示例中，时间选择器的各列根据系统语言调整显示顺序，例如：英文系统显示时/分/秒/AMPM，中文系统显示上下午/时/分/秒。
 
-为实现"上下午"随系统语言切换，需要在工程的resource目录下添加对应语言的翻译，例如：
+为实现“上午/下午”随系统语言切换，需要在工程的resource目录下添加对应语言的翻译，例如：
 
 * 中文（默认）：在resource目录下创建base目录，在base目录下创建element目录，在element目录添加string.json文件（若文件已存在，请在文件中追加以下"name"-"value"键值对，请勿直接覆盖原文件）。文件内容如下：
 
-  ```
-  1. {
-  2. "string": [
-  3. {
-  4. "name": "app_name",
-  5. "value": "timePicker"
-  6. },
-  7. {
-  8. "name": "am",
-  9. "value": "上午"
-  10. },
-  11. {
-  12. "name": "pm",
-  13. "value": "下午"
-  14. }
-  15. ]
-  16. }
+  ```json
+  {
+    "string": [
+      {
+        "name": "app_name",
+        "value": "timePicker"
+      },
+      {
+        "name": "am",
+        "value": "上午"
+      },
+      {
+        "name": "pm",
+        "value": "下午"
+      }
+    ]
+  }
   ```
 * 英文：在resource目录下创建en目录，在en目录下创建element目录，在element目录添加string.json文件（若文件已存在，请在文件中追加以下"name"-"value"键值对，请勿直接覆盖原文件）。文件内容如下：
 
-  ```
-  1. {
-  2. "string": [
-  3. {
-  4. "name": "app_name",
-  5. "value": "timePicker"
-  6. },
-  7. {
-  8. "name": "am",
-  9. "value": "AM"
-  10. },
-  11. {
-  12. "name": "pm",
-  13. "value": "PM"
-  14. }
-  15. ]
-  16. }
+  ```json
+  {
+    "string": [
+      {
+        "name": "app_name",
+        "value": "timePicker"
+      },
+      {
+        "name": "am",
+        "value": "AM"
+      },
+      {
+        "name": "pm",
+        "value": "PM"
+      }
+    ]
+  }
   ```
 * 阿拉伯语：在resource目录下创建ar目录，在ar目录下创建element目录，在element目录下添加string.json文件（若文件已存在，请在文件中追加以下"name"-"value"键值对，请勿直接覆盖原文件）。文件内容如下：
 
-  ```
-  1. {
-  2. "string": [
-  3. {
-  4. "name": "app_name",
-  5. "value": "timePicker"
-  6. },
-  7. {
-  8. "name": "am",
-  9. "value": "ص"
-  10. },
-  11. {
-  12. "name": "pm",
-  13. "value": "م"
-  14. }
-  15. ]
-  16. }
+  ```json
+  {
+    "string": [
+      {
+        "name": "app_name",
+        "value": "timePicker"
+      },
+      {
+        "name": "am",
+        "value": "ص"
+      },
+      {
+        "name": "pm",
+        "value": "م"
+      }
+    ]
+  }
   ```
 * 其他语言依此类推。
 
 示例代码如下：
 
+```ts
+// xxx.ets
+import { LengthMetrics } from '@kit.ArkUI';
+import { i18n, intl } from '@kit.LocalizationKit';
+import { commonEventManager } from '@kit.BasicServicesKit';
+
+@Entry
+@Component
+struct TimeUIPickerComponentExample {
+  @State showSecond: boolean = false;
+  @State useMilitary: boolean = false;
+  @State zeroPrefix: boolean = true;
+  @State loop: boolean = true;
+  @State amPmAtLast: boolean = false
+  @State isRtl: boolean = false;
+
+  startBorderStyle: LocalizedBorderRadiuses = {
+    topStart: LengthMetrics.px(40),
+    bottomStart: LengthMetrics.px(40),
+    topEnd: LengthMetrics.px(0),
+    bottomEnd: LengthMetrics.px(0)
+  }
+  centerBorderStyle: LengthMetrics = LengthMetrics.px(0)
+  endBorderStyle: LocalizedBorderRadiuses = {
+    topStart: LengthMetrics.px(0),
+    bottomStart: LengthMetrics.px(0),
+    topEnd: LengthMetrics.px(40),
+    bottomEnd: LengthMetrics.px(40)
+  }
+  @State amPmBorder: LengthMetrics | LocalizedBorderRadiuses = this.startBorderStyle;
+  @State hourBorder: LengthMetrics | LocalizedBorderRadiuses = this.startBorderStyle;
+  @State minBorder: LengthMetrics | LocalizedBorderRadiuses = this.endBorderStyle;
+  @State secBorder: LengthMetrics | LocalizedBorderRadiuses = this.endBorderStyle;
+
+  @State amPmIndex: number = 0;
+  @State hourIndex: number = 0;
+  @State minIndex: number = 0;
+  @State secIndex: number = 0;
+
+  @State amPmArr: Array<string| undefined> = []
+  @State hourArr: Array<string> = []
+  @State minSecArr: Array<string> = []
+
+  @State currentTime: string = '';
+
+  sysLanguageChanged: boolean = false
+  zero: string = '0'
+  systemLanguage: string = i18n.System.getSystemLanguage();
+  // 使用系统当前区域ID创建NumberFormat对象
+  formatter: intl.NumberFormat = new intl.NumberFormat();
+  private subscriber: commonEventManager.CommonEventSubscriber | undefined = undefined;
+
+  aboutToAppear(): void {
+    this.zero = this.formatter.format(0)
+    this.flushAmPmColumn()
+    this.flushHourColumn()
+    this.flushMinSecColumn()
+    this.flushCurrentTime()
+    this.flushBorderStyle()
+    let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+      events: [commonEventManager.Support.COMMON_EVENT_LOCALE_CHANGED]
+    };
+    // 创建订阅者，监听系统语言变化
+    commonEventManager.createSubscriber(subscribeInfo)
+      .then((commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
+        console.info("CreateSubscriber");
+        this.subscriber = commonEventSubscriber;
+        commonEventManager.subscribe(this.subscriber, (err, data) => {
+          if (err) {
+            console.error(`Failed to subscribe common event. error code: ${err.code}, message: ${err.message}.`);
+            return;
+          }
+          this.formatter = new intl.NumberFormat();
+          this.zero = this.formatter.format(0);
+          this.sysLanguageChanged = true;
+          this.systemLanguage = i18n.System.getSystemLanguage();
+          this.flushAmPmColumn()
+          this.flushHourColumn()
+          this.flushMinSecColumn()
+          this.flushCurrentTime()
+          this.flushBorderStyle()
+        })
+      })
+      .catch((err: BusinessError) => {
+        console.error(`CreateSubscriber failed, code is ${err.code}, message is ${err.message}`);
+      });
+  }
+
+  // 系统语言变化后刷新UI状态
+  aboutToDisappear(): void {
+    if (this.subscriber) {
+      commonEventManager.unsubscribe(this.subscriber, (err) => {
+        if (err) {
+          console.error(`Failed to unsubscribe common event. error code: ${err.code}, message: ${err.message}.`);
+        }
+      });
+    }
+  }
+
+  onPageShow(): void {
+    if (this.sysLanguageChanged) {
+      this.flushAmPmColumn()
+      this.flushCurrentTime()
+      this.flushBorderStyle()
+      this.sysLanguageChanged = false
+    }
+  }
+
+  buildColumnOptions(start: number, end: number, isHour: boolean = false) : string[] {
+    let newOptions: string[] = []
+    for (let i = start; i <= end; i++) {
+      if (isHour && i == 0 && !this.useMilitary) {
+        newOptions.push(this.formatter.format(12))
+        continue
+      }
+      if (this.zeroPrefix) {
+        newOptions.push(this.formatTime(i))
+      } else {
+        newOptions.push(this.formatter.format(i))
+      }
+    }
+    return newOptions
+  }
+
+  flushAmPmColumn() {
+    // 根据语言习惯设置amPm列是否放在最后
+    if (this.systemLanguage.startsWith('en') || this.systemLanguage == 'ug') {
+      this.amPmAtLast = true
+    } else {
+      this.amPmAtLast = false
+    }
+    this.amPmArr = [];
+    this.amPmArr[0] = this.getUIContext().getHostContext()?.resourceManager.getStringSync($r('app.string.am').id)
+    this.amPmArr[1] = this.getUIContext().getHostContext()?.resourceManager.getStringSync($r('app.string.pm').id)
+  }
+
+  flushHourColumn() {
+    if (this.useMilitary) {
+      this.hourArr = this.buildColumnOptions(0, 23)
+    } else {
+      this.hourArr = this.buildColumnOptions(0, 11, true)
+    }
+  }
+
+  flushMinSecColumn() {
+    this.minSecArr = this.buildColumnOptions(0, 59)
+  }
+
+  flushBorderStyle() {
+    let realStartBorder = this.startBorderStyle
+    let realEndBorder = this.endBorderStyle
+    // 根据语言习惯设置镜像语言的时间顺序
+    if (this.systemLanguage == 'ar' || this.systemLanguage == 'ug') {
+      this.isRtl = true
+      realStartBorder = this.endBorderStyle
+      realEndBorder = this.startBorderStyle
+    } else {
+      this.isRtl = false
+    }
+    if (!this.useMilitary) {
+      if (this.amPmAtLast) {
+        this.amPmBorder = realEndBorder
+        this.hourBorder = realStartBorder
+        this.minBorder = this.centerBorderStyle
+        this.secBorder = this.centerBorderStyle
+      } else {
+        this.amPmBorder = realStartBorder
+        this.hourBorder = this.centerBorderStyle
+        if (this.showSecond) {
+          this.minBorder = this.centerBorderStyle
+        } else {
+          this.minBorder = realEndBorder
+        }
+        this.secBorder = realEndBorder
+      }
+    } else {
+      this.hourBorder = realStartBorder
+      if (this.showSecond) {
+        this.minBorder = this.centerBorderStyle
+      } else {
+        this.minBorder = realEndBorder
+      }
+      this.secBorder = realEndBorder
+    }
+  }
+
+  formatTime(time: number): string {
+    if (time < 10) {
+      return this.zero + this.formatter.format(time)
+    }
+    return this.formatter.format(time)
+  }
+
+  @Builder
+  buildAmPmColumn() {
+    UIPickerComponent({ selectedIndex: this.amPmIndex }) {
+      ForEach(this.amPmArr, (amPm: string | undefined) => {
+        Text(amPm ?? '')
+      })
+    }
+    .width('200px')
+    .canLoop(this.loop)
+    .selectionIndicator({
+      type: PickerIndicatorType.BACKGROUND,
+      borderRadius: this.amPmBorder
+    })
+    .onChange((selectedIndex: number) => {
+      this.amPmIndex = selectedIndex
+      this.flushCurrentTime()
+    })
+    .onScrollStop((selectedIndex: number) => {
+      this.amPmIndex = selectedIndex
+      this.flushCurrentTime()
+    })
+  }
+
+  @Builder
+  buildHourColumn() {
+    UIPickerComponent({ selectedIndex: this.hourIndex }) {
+      ForEach(this.hourArr, (hour: string) => {
+        Text(hour)
+      })
+    }
+    .width('200px')
+    .canLoop(this.loop)
+    .selectionIndicator({
+      type: PickerIndicatorType.BACKGROUND,
+      borderRadius: this.hourBorder
+    })
+    .onChange((selectedIndex: number) => {
+      this.hourIndex = selectedIndex
+      this.flushCurrentTime()
+    })
+    .onScrollStop((selectedIndex: number) => {
+      this.hourIndex = selectedIndex
+      this.flushCurrentTime()
+    })
+  }
+
+  @Builder
+  buildMinColumn() {
+    UIPickerComponent({ selectedIndex: this.minIndex }) {
+      ForEach(this.minSecArr, (min: string) => {
+        Text(min)
+      })
+    }
+    .width('200px')
+    .canLoop(this.loop)
+    .selectionIndicator({
+      type: PickerIndicatorType.BACKGROUND,
+      borderRadius: this.minBorder
+    })
+    .onChange((selectedIndex: number) => {
+      this.minIndex = selectedIndex
+      this.flushCurrentTime()
+    })
+    .onScrollStop((selectedIndex: number) => {
+      this.minIndex = selectedIndex
+      this.flushCurrentTime()
+    })
+  }
+
+  @Builder
+  buildSecColumn() {
+    UIPickerComponent({ selectedIndex: this.secIndex }) {
+      ForEach(this.minSecArr, (sec: string) => {
+        Text(sec)
+      })
+    }
+    .width('200px')
+    .canLoop(this.loop)
+    .selectionIndicator({
+      type: PickerIndicatorType.BACKGROUND,
+      borderRadius: this.secBorder
+    })
+    .onChange((selectedIndex: number) => {
+      this.secIndex = selectedIndex
+      this.flushCurrentTime()
+    })
+    .onScrollStop((selectedIndex: number) => {
+      this.secIndex = selectedIndex
+      this.flushCurrentTime()
+    })
+  }
+
+  flushCurrentTime() {
+    this.currentTime = ''
+    if (!this.useMilitary) {
+      this.currentTime += this.amPmArr[this.amPmIndex] + ' ';
+    }
+    this.currentTime += this.hourArr[this.hourIndex] + ':' + this.minSecArr[this.minIndex];
+    if (this.showSecond) {
+      this.currentTime += ':' + this.minSecArr[this.secIndex];
+    }
+  }
+
+  build() {
+    Column() {
+      Row() {
+        // 根据镜像语言显示顺序创建column
+        if (!this.isRtl) {
+          if (!this.useMilitary && !this.amPmAtLast) {
+            this.buildAmPmColumn()
+            this.buildHourColumn()
+          } else {
+            this.buildHourColumn()
+          }
+          this.buildMinColumn()
+          if (this.showSecond) {
+            this.buildSecColumn()
+          }
+          if (!this.useMilitary && this.amPmAtLast) {
+            this.buildAmPmColumn()
+          }
+        } else {
+          if (!this.useMilitary && this.amPmAtLast) {
+            this.buildAmPmColumn()
+          }
+          if (this.showSecond) {
+            this.buildSecColumn()
+          }
+          this.buildMinColumn()
+          if (!this.useMilitary && !this.amPmAtLast) {
+            this.buildHourColumn()
+            this.buildAmPmColumn()
+          } else {
+            this.buildHourColumn()
+          }
+        }
+      }
+
+      Row() {
+        Text('selected time: ' + this.currentTime)
+          .margin(5)
+          .width("80%")
+          .textAlign(TextAlign.Center)
+      }
+      .border({ width: 1 })
+      .margin(5)
+
+      Column() {
+        Row() {
+          Toggle({ type: ToggleType.Switch, isOn: true })
+            .onChange((isOn: boolean) => {
+              this.loop = isOn;
+            })
+          Text('loop').fontSize(20)
+        }.width(200).margin(5)
+        Row() {
+          Toggle({ type: ToggleType.Switch, isOn: false })
+            .onChange((isOn: boolean) => {
+              this.showSecond = isOn
+              this.flushCurrentTime()
+              this.flushBorderStyle()
+            })
+          Text('show second').fontSize(20)
+        }.width(200).margin(5)
+        Row() {
+          Toggle({ type: ToggleType.Switch, isOn: false })
+            .onChange((isOn: boolean) => {
+              this.useMilitary = isOn
+              if (this.useMilitary) {
+                if (this.amPmIndex) {
+                  this.hourIndex += 12;
+                }
+              } else {
+                if (this.hourIndex >= 12) {
+                  this.amPmIndex = 1;
+                  this.hourIndex -= 12;
+                } else {
+                  this.amPmIndex = 0;
+                }
+              }
+              this.flushBorderStyle()
+              this.flushHourColumn()
+              this.flushCurrentTime()
+            })
+          Text('use military').fontSize(20)
+        }.width(200).margin(5)
+        Row() {
+          Toggle({ type: ToggleType.Switch, isOn: true })
+            .onChange((isOn: boolean) => {
+              this.zeroPrefix = isOn
+              this.flushHourColumn()
+              this.flushMinSecColumn()
+              this.flushCurrentTime()
+            })
+          Text('2-digits').fontSize(20)
+        }.width(200).margin(5)
+      }
+    }
+    .width('100%')
+  }
+}
 ```
-1. // xxx.ets
-2. import { LengthMetrics } from '@kit.ArkUI';
-3. import { i18n, intl } from '@kit.LocalizationKit';
-4. import { commonEventManager } from '@kit.BasicServicesKit';
 
-6. @Entry
-7. @Component
-8. struct TimeUIPickerComponentExample {
-9. @State showSecond: boolean = false;
-10. @State useMilitary: boolean = false;
-11. @State zeroPrefix: boolean = true;
-12. @State loop: boolean = true;
-13. @State amPmAtLast: boolean = false
-14. @State isRtl: boolean = false;
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/crYgxUUZR8SU-nkUczpgEw/zh-cn_image_0000002736435013.gif)
 
-16. startBorderStyle: LocalizedBorderRadiuses = {
-17. topStart: LengthMetrics.px(40),
-18. bottomStart: LengthMetrics.px(40),
-19. topEnd: LengthMetrics.px(0),
-20. bottomEnd: LengthMetrics.px(0)
-21. }
-22. centerBorderStyle: LengthMetrics = LengthMetrics.px(0)
-23. endBorderStyle: LocalizedBorderRadiuses = {
-24. topStart: LengthMetrics.px(0),
-25. bottomStart: LengthMetrics.px(0),
-26. topEnd: LengthMetrics.px(40),
-27. bottomEnd: LengthMetrics.px(40)
-28. }
-29. @State amPmBorder: LengthMetrics | LocalizedBorderRadiuses = this.startBorderStyle;
-30. @State hourBorder: LengthMetrics | LocalizedBorderRadiuses = this.startBorderStyle;
-31. @State minBorder: LengthMetrics | LocalizedBorderRadiuses = this.endBorderStyle;
-32. @State secBorder: LengthMetrics | LocalizedBorderRadiuses = this.endBorderStyle;
+### 示例9（设置选项高度）
 
-34. @State amPmIndex: number = 0;
-35. @State hourIndex: number = 0;
-36. @State minIndex: number = 0;
-37. @State secIndex: number = 0;
+该示例通过[itemHeight](ts-container-ui-picker-component.md#itemheight)设置UIPickerComponent容器的选项高度。
 
-39. @State amPmArr: Array<string| undefined> = []
-40. @State hourArr: Array<string> = []
-41. @State minSecArr: Array<string> = []
+从API版本26.0.0开始，新增[itemHeight](ts-container-ui-picker-component.md#itemheight)属性。
 
-43. @State currentTime: string = '';
+```ts
+// xxx.ets
+import { LengthMetrics } from '@kit.ArkUI';
 
-45. sysLanguageChanged: boolean = false
-46. zero: string = '0'
-47. systemLanguage: string = i18n.System.getSystemLanguage();
-48. // 使用系统当前区域ID创建NumberFormat对象
-49. formatter: intl.NumberFormat = new intl.NumberFormat();
+@Entry
+@Component
+struct UIPickerComponentItemHeightExample {
+  private dataArray: string[] = [];
+  @State pickerItemHeight: LengthMetrics | undefined = undefined;
+  @State selectedIndex: number = 0;
 
-51. aboutToAppear(): void {
-52. this.zero = this.formatter.format(0)
-53. this.flushAmPmColumn()
-54. this.flushHourColumn()
-55. this.flushMinSecColumn()
-56. this.flushCurrentTime()
-57. this.flushBorderStyle()
-58. let subscriber: commonEventManager.CommonEventSubscriber;
-59. let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-60. events: [commonEventManager.Support.COMMON_EVENT_LOCALE_CHANGED]
-61. };
-62. // 创建订阅者，监听系统语言变化
-63. commonEventManager.createSubscriber(subscribeInfo)
-64. .then((commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
-65. console.info("CreateSubscriber");
-66. subscriber = commonEventSubscriber;
-67. commonEventManager.subscribe(subscriber, (err, data) => {
-68. if (err) {
-69. console.error(`Failed to subscribe common event. error code: ${err.code}, message: ${err.message}.`);
-70. return;
-71. }
-72. this.formatter = new intl.NumberFormat();
-73. this.zero = this.formatter.format(0)
-74. this.sysLanguageChanged = true
-75. this.systemLanguage = i18n.System.getSystemLanguage();
-76. this.flushAmPmColumn()
-77. this.flushHourColumn()
-78. this.flushMinSecColumn()
-79. this.flushCurrentTime()
-80. this.flushBorderStyle()
-81. })
-82. })
-83. .catch((err: BusinessError) => {
-84. console.error(`CreateSubscriber failed, code is ${err.code}, message is ${err.message}`);
-85. });
-86. }
+  aboutToAppear(): void {
+    for (let i = 1; i <= 10; i++) {
+      this.dataArray.push('选项' + i)
+    }
+  }
 
-88. onPageShow(): void {
-89. if (this.sysLanguageChanged) {
-90. this.flushAmPmColumn()
-91. this.flushCurrentTime()
-92. this.flushBorderStyle()
-93. this.sysLanguageChanged = false
-94. }
-95. }
+  build() {
+    Column({ space: 12 }) {
+      Text('当前itemHeight：' + (this.pickerItemHeight ? this.pickerItemHeight.value + 'vp' : '默认值(40vp)'))
+        .fontSize(16)
 
-97. buildColumnOptions(start: number, end: number, isHour: boolean = false) : string[] {
-98. let newOptions: string[] = []
-99. for (let i = start; i <= end; i++) {
-100. if (isHour && i == 0 && !this.useMilitary) {
-101. newOptions.push(this.formatter.format(12))
-102. continue
-103. }
-104. if (this.zeroPrefix) {
-105. newOptions.push(this.formatTime(i))
-106. } else {
-107. newOptions.push(this.formatter.format(i))
-108. }
-109. }
-110. return newOptions
-111. }
+      UIPickerComponent({
+        selectedIndex: this.selectedIndex
+      }) {
+        ForEach(this.dataArray, (item: string) => {
+          Text(item)
+        })
+      }
+      .width('70%')
+      .itemHeight(this.pickerItemHeight)
+      .onChange((selectedIndex: number) => {
+        this.selectedIndex = selectedIndex
+      })
 
-113. flushAmPmColumn() {
-114. // 根据语言习惯设置amPm列是否放在最后
-115. if (this.systemLanguage.startsWith('en') || this.systemLanguage == 'ug') {
-116. this.amPmAtLast = true
-117. } else {
-118. this.amPmAtLast = false
-119. }
-120. this.amPmArr[0] = this.getUIContext().getHostContext()?.resourceManager.getStringSync($r('app.string.am').id)
-121. this.amPmArr[1] = this.getUIContext().getHostContext()?.resourceManager.getStringSync($r('app.string.pm').id)
-122. }
-
-124. flushHourColumn() {
-125. if (this.useMilitary) {
-126. this.hourArr = this.buildColumnOptions(0, 23)
-127. } else {
-128. this.hourArr = this.buildColumnOptions(0, 11, true)
-129. }
-130. }
-
-132. flushMinSecColumn() {
-133. this.minSecArr = this.buildColumnOptions(0, 59)
-134. }
-
-136. flushBorderStyle() {
-137. let realStartBorder = this.startBorderStyle
-138. let realEndBorder = this.endBorderStyle
-139. // 根据语言习惯设置镜像语言的时间顺序
-140. if (this.systemLanguage == 'ar' || this.systemLanguage == 'ug') {
-141. this.isRtl = true
-142. realStartBorder = this.endBorderStyle
-143. realEndBorder = this.startBorderStyle
-144. } else {
-145. this.isRtl = false
-146. }
-147. if (!this.useMilitary) {
-148. if (this.amPmAtLast) {
-149. this.amPmBorder = realEndBorder
-150. this.hourBorder = realStartBorder
-151. this.minBorder = this.centerBorderStyle
-152. this.secBorder = this.centerBorderStyle
-153. } else {
-154. this.amPmBorder = realStartBorder
-155. this.hourBorder = this.centerBorderStyle
-156. if (this.showSecond) {
-157. this.minBorder = this.centerBorderStyle
-158. } else {
-159. this.minBorder = realEndBorder
-160. }
-161. this.secBorder = realEndBorder
-162. }
-163. } else {
-164. this.hourBorder = realStartBorder
-165. if (this.showSecond) {
-166. this.minBorder = this.centerBorderStyle
-167. } else {
-168. this.minBorder = realEndBorder
-169. }
-170. this.secBorder = realEndBorder
-171. }
-172. }
-
-174. formatTime(time: number): string {
-175. if (time < 10) {
-176. return this.zero + this.formatter.format(time)
-177. }
-178. return this.formatter.format(time)
-179. }
-
-181. @Builder
-182. buildAmPmColumn() {
-183. UIPickerComponent({ selectedIndex: this.amPmIndex }) {
-184. ForEach(this.amPmArr, (amPm: string) => {
-185. Text(amPm)
-186. })
-187. }
-188. .width('200px')
-189. .canLoop(this.loop)
-190. .selectionIndicator({
-191. type: PickerIndicatorType.BACKGROUND,
-192. borderRadius: this.amPmBorder
-193. })
-194. .onChange((selectedIndex: number) => {
-195. this.amPmIndex = selectedIndex
-196. this.flushCurrentTime()
-197. })
-198. .onScrollStop((selectedIndex: number) => {
-199. this.amPmIndex = selectedIndex
-200. this.flushCurrentTime()
-201. })
-202. }
-
-204. @Builder
-205. buildHourColumn() {
-206. UIPickerComponent({ selectedIndex: this.hourIndex }) {
-207. ForEach(this.hourArr, (hour: string) => {
-208. Text(hour)
-209. })
-210. }
-211. .width('200px')
-212. .canLoop(this.loop)
-213. .selectionIndicator({
-214. type: PickerIndicatorType.BACKGROUND,
-215. borderRadius: this.hourBorder
-216. })
-217. .onChange((selectedIndex: number) => {
-218. this.hourIndex = selectedIndex
-219. this.flushCurrentTime()
-220. })
-221. .onScrollStop((selectedIndex: number) => {
-222. this.hourIndex = selectedIndex
-223. this.flushCurrentTime()
-224. })
-225. }
-
-227. @Builder
-228. buildMinColumn() {
-229. UIPickerComponent({ selectedIndex: this.minIndex }) {
-230. ForEach(this.minSecArr, (min: string) => {
-231. Text(min)
-232. })
-233. }
-234. .width('200px')
-235. .canLoop(this.loop)
-236. .selectionIndicator({
-237. type: PickerIndicatorType.BACKGROUND,
-238. borderRadius: this.minBorder
-239. })
-240. .onChange((selectedIndex: number) => {
-241. this.minIndex = selectedIndex
-242. this.flushCurrentTime()
-243. })
-244. .onScrollStop((selectedIndex: number) => {
-245. this.minIndex = selectedIndex
-246. this.flushCurrentTime()
-247. })
-248. }
-
-250. @Builder
-251. buildSecColumn() {
-252. UIPickerComponent({ selectedIndex: this.secIndex }) {
-253. ForEach(this.minSecArr, (sec: string) => {
-254. Text(sec)
-255. })
-256. }
-257. .width('200px')
-258. .canLoop(this.loop)
-259. .selectionIndicator({
-260. type: PickerIndicatorType.BACKGROUND,
-261. borderRadius: this.secBorder
-262. })
-263. .onChange((selectedIndex: number) => {
-264. this.secIndex = selectedIndex
-265. this.flushCurrentTime()
-266. })
-267. .onScrollStop((selectedIndex: number) => {
-268. this.secIndex = selectedIndex
-269. this.flushCurrentTime()
-270. })
-271. }
-
-273. flushCurrentTime() {
-274. this.currentTime = ''
-275. if (!this.useMilitary) {
-276. this.currentTime += this.amPmArr[this.amPmIndex] + ' '
-277. }
-278. this.currentTime += this.hourArr[this.hourIndex] + ':' + this.minSecArr[this.minIndex]
-279. if (this.showSecond) {
-280. this.currentTime += ':' + this.minSecArr[this.secIndex]
-281. }
-282. }
-
-284. build() {
-285. Column() {
-286. Row() {
-287. // 根据镜像语言显示顺序创建column
-288. if (!this.isRtl) {
-289. if (!this.useMilitary && !this.amPmAtLast) {
-290. this.buildAmPmColumn()
-291. this.buildHourColumn()
-292. } else {
-293. this.buildHourColumn()
-294. }
-295. this.buildMinColumn()
-296. if (this.showSecond) {
-297. this.buildSecColumn()
-298. }
-299. if (!this.useMilitary && this.amPmAtLast) {
-300. this.buildAmPmColumn()
-301. }
-302. } else {
-303. if (!this.useMilitary && this.amPmAtLast) {
-304. this.buildAmPmColumn()
-305. }
-306. if (this.showSecond) {
-307. this.buildSecColumn()
-308. }
-309. this.buildMinColumn()
-310. if (!this.useMilitary && !this.amPmAtLast) {
-311. this.buildHourColumn()
-312. this.buildAmPmColumn()
-313. } else {
-314. this.buildHourColumn()
-315. }
-316. }
-317. }
-
-319. Row() {
-320. Text('selected time: ' + this.currentTime)
-321. .margin(5)
-322. .width("80%")
-323. .textAlign(TextAlign.Center)
-324. }
-325. .border({ width: 1 })
-326. .margin(5)
-
-328. Column() {
-329. Row() {
-330. Toggle({ type: ToggleType.Switch, isOn: true })
-331. .onChange((isOn: boolean) => {
-332. this.loop = isOn;
-333. })
-334. Text('loop').fontSize(20)
-335. }.width(200).margin(5)
-336. Row() {
-337. Toggle({ type: ToggleType.Switch, isOn: false })
-338. .onChange((isOn: boolean) => {
-339. this.showSecond = isOn
-340. this.flushCurrentTime()
-341. this.flushBorderStyle()
-342. })
-343. Text('show second').fontSize(20)
-344. }.width(200).margin(5)
-345. Row() {
-346. Toggle({ type: ToggleType.Switch, isOn: false })
-347. .onChange((isOn: boolean) => {
-348. this.useMilitary = isOn
-349. if (this.useMilitary) {
-350. if (this.amPmIndex) {
-351. this.hourIndex += 12
-352. }
-353. } else {
-354. if (this.hourIndex >= 12) {
-355. this.amPmIndex = 1
-356. this.hourIndex -= 12
-357. } else {
-358. this.amPmIndex = 0
-359. }
-360. }
-361. this.flushBorderStyle()
-362. this.flushHourColumn()
-363. this.flushCurrentTime()
-364. })
-365. Text('use military').fontSize(20)
-366. }.width(200).margin(5)
-367. Row() {
-368. Toggle({ type: ToggleType.Switch, isOn: true })
-369. .onChange((isOn: boolean) => {
-370. this.zeroPrefix = isOn
-371. this.flushHourColumn()
-372. this.flushMinSecColumn()
-373. this.flushCurrentTime()
-374. })
-375. Text('2-digits').fontSize(20)
-376. }.width(200).margin(5)
-377. }
-378. }
-379. .width('100%')
-380. }
-381. }
+      Row({ space: 12 }) {
+        Button('40vp')
+          .onClick(() => {
+            this.pickerItemHeight = LengthMetrics.vp(40)
+          })
+        Button('50vp')
+          .onClick(() => {
+            this.pickerItemHeight = LengthMetrics.vp(50)
+          })
+        Button('64vp')
+          .onClick(() => {
+            this.pickerItemHeight = LengthMetrics.vp(64)
+          })
+      }
+    }
+    .width('100%')
+    .padding(16)
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/58Y8XxfsRHenWZQFfDu5zw/zh-cn_image_0000002558766228.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/iYk_vjYwRwaGDZG-JvVQNQ/zh-cn_image_0000002706835866.jpg)
+
+### 示例10（设置可见选项数量）
+
+该示例通过[displayedItemCount](ts-container-ui-picker-component.md#displayeditemcount)设置UIPickerComponent容器的可见选项数量。
+
+从API版本26.0.0开始，新增[displayedItemCount](ts-container-ui-picker-component.md#displayeditemcount)属性。
+
+```ts
+// xxx.ets
+@Entry
+@Component
+struct UIPickerComponentDisplayedCountExample {
+  private dataArray: string[] = [];
+  @State visibleCount: number = 7;
+  @State selectedIndex: number = 0;
+
+  aboutToAppear(): void {
+    for (let i = 1; i <= 12; i++) {
+      this.dataArray.push('第' + i + '项')
+    }
+  }
+
+  build() {
+    Column({ space: 12 }) {
+      Text('displayedItemCount: ' + this.visibleCount)
+        .fontSize(16)
+
+      UIPickerComponent({
+        selectedIndex: this.selectedIndex
+      }) {
+        ForEach(this.dataArray, (item: string) => {
+          Text(item)
+        })
+      }
+      .onChange((selectedIndex: number) => {
+        this.selectedIndex = selectedIndex
+      })
+      .width('70%')
+      .displayedItemCount(this.visibleCount)
+
+      Row({ space: 12 }) {
+        Button('3项')
+          .width(120)
+          .height(40)
+          .onClick(() => {
+            this.visibleCount = 3
+          })
+        Button('5项')
+          .width(120)
+          .height(40)
+          .onClick(() => {
+            this.visibleCount = 5
+          })
+        Button('8项(自动变9)')
+          .width(120)
+          .height(40)
+          .onClick(() => {
+            this.visibleCount = 8
+          })
+      }
+    }
+    .width('100%')
+    .padding(16)
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/Xp3zMgtTQVGVGp1UST-1Bw/zh-cn_image_0000002736314971.jpg)

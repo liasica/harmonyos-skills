@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/vision-imagea
 title: AI识图
 breadcrumb: 指南 > AI > Vision Kit（场景化视觉服务） > AI识图
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:43:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:2815dde908cf54cab6d0bb233b75d48724967c16fe8b4b0721cfce411f46514c
+scraped_at: 2026-09-02T15:00:15+08:00
+doc_updated_at: 2026-04-29
+content_hash: sha256:c9a6170d72445ce7c92ba184f0c281e5a997c8267e2b4d2f401146f0199da728
 ---
 
 ## 场景介绍
@@ -34,7 +34,7 @@ AI识图是通过聚合OCR（Optical Character Recognition）、主体分割、�
 
 **图1** AI识图示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/QWrhkEZcQNqaDj74QkSyoA/zh-cn_image_0000002589325725.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/YaU1Yh5mTQaospIMhUEg_w/zh-cn_image_0000002736314537.png)
 
 ## 约束与限制
 
@@ -48,161 +48,160 @@ AI识图是通过聚合OCR（Optical Character Recognition）、主体分割、�
 
   若返回“SupportTypes: []”，则说明当前设备不支持AI识图能力；若返回其他值，则说明当前设备支持AI识图能力。
 
-  ```
-  1. import { visionImageAnalyzer } from '@kit.VisionKit';
+  ```typescript
+  import { visionImageAnalyzer } from '@kit.VisionKit';
 
-  3. @Entry
-  4. @Component
-  5. struct Index {
-  6. private aiController: visionImageAnalyzer.VisionImageAnalyzerController = new visionImageAnalyzer.VisionImageAnalyzerController()
+  @Entry
+  @Component
+  struct Index {
+    private aiController: visionImageAnalyzer.VisionImageAnalyzerController = new visionImageAnalyzer.VisionImageAnalyzerController();
 
-  8. build() {
-  9. Row() {
-  10. Button('getTypes')
-  11. .onClick(() => {
-  12. let SupportTypes = this.aiController.getImageAnalyzerSupportTypes()
-  13. console.info(`SupportTypes: ${JSON.stringify(SupportTypes)}`)
-  14. })
-  15. }
-  16. }
-  17. }
+    build() {
+      Row() {
+        Button('getTypes')
+          .onClick(() => {
+            let supportTypes = this.aiController.getImageAnalyzerSupportTypes();
+            console.info(`supportTypes: ${JSON.stringify(supportTypes)}`);
+          })
+      }
+    }
+  }
   ```
 
 ## 开发步骤
 
 1. 将AI识图控件相关的类添加。
 
-   ```
-   1. import { visionImageAnalyzer } from '@kit.VisionKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { visionImageAnalyzer } from '@kit.VisionKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 初始化[VisionImageAnalyzerController](../harmonyos-references/vision-image-analyzer.md#visionimageanalyzercontroller)对象。
 
+   ```typescript
+   private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController = new visionImageAnalyzer.VisionImageAnalyzerController();
+   private isSupportImageAnalyzer: boolean = false;
    ```
-   1. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController = new visionImageAnalyzer.VisionImageAnalyzerController();
-   2. private isSupportImageAnalyzer: boolean = false;
-   ```
-3. 判断设备是否支持AI识图相关功能，若支持，添加订阅事件。
+3. 判断设备是否支持AI识图相关功能，若支持，添加订阅事件和取消事件监听方法。
 
-   ```
-   1. aboutToAppear(): void {
-   2. let supportTypes = this.visionImageAnalyzerController.getImageAnalyzerSupportTypes();
-   3. if (supportTypes.length > 0) {
-   4. this.isSupportImageAnalyzer = true;
-   5. this.registerListener();
-   6. }
-   7. }
+   ```typescript
+   aboutToAppear(): void {
+     let supportTypes = this.visionImageAnalyzerController.getImageAnalyzerSupportTypes();
+     if (supportTypes.length > 0) {
+       this.isSupportImageAnalyzer = true;
+       this.registerListener();
+     }
+   }
 
-   9. registerListener(){
-   10. this.visionImageAnalyzerController.on('imageAnalyzerVisibilityChange', (visibility: visionImageAnalyzer.ImageAnalyzerVisibility) => {
-   11. console.info("DEMO_TAG", `imageAnalyzerVisibilityChange result: ${JSON.stringify(visibility)}`)
-   12. })
-   13. this.visionImageAnalyzerController.on('textAnalysis', (text: string) => {
-   14. console.info("DEMO_TAG", `textAnalysis result: ${JSON.stringify(text)}`)
-   15. })
-   16. this.visionImageAnalyzerController.on('selectedTextChange', (selectedText: string) => {
-   17. console.info("DEMO_TAG", `selectedTextChange result: ${JSON.stringify(selectedText)}`)
-   18. })
-   19. this.visionImageAnalyzerController.on('subjectAnalysis', (subjects: visionImageAnalyzer.Subject[]) => {
-   20. console.info("DEMO_TAG", `subjectAnalysis result: ${JSON.stringify(subjects)}`)
-   21. })
-   22. this.visionImageAnalyzerController.on('selectedSubjectsChange', (subjects: visionImageAnalyzer.Subject[]) => {
-   23. console.info("DEMO_TAG", `selectedSubjectsChange result: ${JSON.stringify(subjects)}`)
-   24. })
-   25. this.visionImageAnalyzerController.on('analyzerFailed', (error: BusinessError) => {
-   26. console.error("DEMO_TAG", `analyzerFailed result: ${JSON.stringify(error)}`)
-   27. })
-   28. }
+   registerListener(){
+     this.visionImageAnalyzerController.on('imageAnalyzerVisibilityChange', (visibility: visionImageAnalyzer.ImageAnalyzerVisibility) => {
+       console.info('DEMO_TAG', `imageAnalyzerVisibilityChange result: ${JSON.stringify(visibility)}`)
+     });
+     this.visionImageAnalyzerController.on('textAnalysis', (text: string) => {
+       console.info('DEMO_TAG', `textAnalysis result: ${JSON.stringify(text)}`);
+     });
+     this.visionImageAnalyzerController.on('selectedTextChange', (selectedText: string) => {
+       console.info('DEMO_TAG', `selectedTextChange result: ${JSON.stringify(selectedText)}`);
+     });
+     this.visionImageAnalyzerController.on('subjectAnalysis', (subjects: visionImageAnalyzer.Subject[]) => {
+       console.info('DEMO_TAG', `subjectAnalysis result: ${JSON.stringify(subjects)}`);
+     });
+     this.visionImageAnalyzerController.on('selectedSubjectsChange', (subjects: visionImageAnalyzer.Subject[]) => {
+       console.info('DEMO_TAG', `selectedSubjectsChange result: ${JSON.stringify(subjects)}`);
+     });
+     this.visionImageAnalyzerController.on('analyzerFailed', (error: BusinessError) => {
+       console.error('DEMO_TAG', `analyzerFailed result: ${JSON.stringify(error)}`);
+     });
+   }
+
+   aboutToDisappear(): void {
+     this.visionImageAnalyzerController.off('imageAnalyzerVisibilityChange');
+     this.visionImageAnalyzerController.off('textAnalysis');
+     this.visionImageAnalyzerController.off('selectedTextChange');
+     this.visionImageAnalyzerController.off('subjectAnalysis');
+     this.visionImageAnalyzerController.off('selectedSubjectsChange');
+     this.visionImageAnalyzerController.off('analyzerFailed');
+   }
    ```
 4. 绑定[VisionImageAnalyzerController](../harmonyos-references/vision-image-analyzer.md#visionimageanalyzercontroller)对象，可以控制识图相关的交互。
 
-   ```
-   1. build() {
-   2. Stack() {
-   3. // 需要替换您自己的资源图片，存放在resources/base/media目录下,设置的types参数必须是上一步supportTypes里包含的
-   4. Image($r('app.media.img'), {
-   5. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-   6. aiController: this.visionImageAnalyzerController
-   7. })
-   8. .width('100%')
-   9. .height('100%')
-   10. .enableAnalyzer(this.isSupportImageAnalyzer ? true: false)
-   11. .objectFit(ImageFit.Contain)
-   12. }.width('100%').height('100%')
-   13. }
-   ```
-5. 取消订阅事件。
-
-   ```
-   1. aboutToDisappear(): void {
-   2. this.visionImageAnalyzerController.off('imageAnalyzerVisibilityChange')
-   3. this.visionImageAnalyzerController.off('textAnalysis')
-   4. this.visionImageAnalyzerController.off('selectedTextChange')
-   5. this.visionImageAnalyzerController.off('subjectAnalysis')
-   6. this.visionImageAnalyzerController.off('selectedSubjectsChange')
-   7. this.visionImageAnalyzerController.off('analyzerFailed')
-   8. }
+   ```typescript
+   build() {
+     Stack() {
+       // 需要替换您自己的资源图片，存放在resources/base/media目录下，设置的types参数必须是上一步supportTypes里包含的。
+       Image($r('app.media.img'), {
+         types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+         aiController: this.visionImageAnalyzerController
+       })
+         .width('100%')
+         .height('100%')
+         .enableAnalyzer(this.isSupportImageAnalyzer ? true: false)
+         .objectFit(ImageFit.Contain)
+     }.width('100%').height('100%')
+   }
    ```
 
 ## 开发实例
 
 ### Index.ets
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
-2. import { BusinessError } from '@kit.BasicServicesKit'
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController = new visionImageAnalyzer.VisionImageAnalyzerController()
-7. private isSupportImageAnalyzer: boolean = false;
-8. aboutToAppear(): void {
-9. let supportTypes = this.visionImageAnalyzerController.getImageAnalyzerSupportTypes();
-10. if (supportTypes.length > 0) {
-11. this.isSupportImageAnalyzer = true;
-12. this.registerListener();
-13. }
-14. }
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController = new visionImageAnalyzer.VisionImageAnalyzerController();
+  private isSupportImageAnalyzer: boolean = false;
+  aboutToAppear(): void {
+    let supportTypes = this.visionImageAnalyzerController.getImageAnalyzerSupportTypes();
+    if (supportTypes.length > 0) {
+      this.isSupportImageAnalyzer = true;
+      this.registerListener();
+    }
+  }
 
-16. registerListener(){
-17. this.visionImageAnalyzerController.on('imageAnalyzerVisibilityChange', (visibility: visionImageAnalyzer.ImageAnalyzerVisibility) => {
-18. console.info("DEMO_TAG", `imageAnalyzerVisibilityChange result: ${JSON.stringify(visibility)}`)
-19. })
-20. this.visionImageAnalyzerController.on('textAnalysis', (text: string) => {
-21. console.info("DEMO_TAG", `textAnalysis result: ${JSON.stringify(text)}`)
-22. })
-23. this.visionImageAnalyzerController.on('selectedTextChange', (selectedText: string) => {
-24. console.info("DEMO_TAG", `selectedTextChange result: ${JSON.stringify(selectedText)}`)
-25. })
-26. this.visionImageAnalyzerController.on('subjectAnalysis', (subjects: visionImageAnalyzer.Subject[]) => {
-27. console.info("DEMO_TAG", `subjectAnalysis result: ${JSON.stringify(subjects)}`)
-28. })
-29. this.visionImageAnalyzerController.on('selectedSubjectsChange', (subjects: visionImageAnalyzer.Subject[]) => {
-30. console.info("DEMO_TAG", `selectedSubjectsChange result: ${JSON.stringify(subjects)}`)
-31. })
-32. this.visionImageAnalyzerController.on('analyzerFailed', (error: BusinessError) => {
-33. console.error("DEMO_TAG", `analyzerFailed result: ${JSON.stringify(error)}`)
-34. })
-35. }
-36. build() {
-37. Stack() {
-38. Image($r('app.media.img'), {
-39. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-40. aiController: this.visionImageAnalyzerController
-41. })
-42. .width('100%')
-43. .height('100%')
-44. .enableAnalyzer(this.isSupportImageAnalyzer ? true : false)
-45. .objectFit(ImageFit.Contain)
-46. }.width('100%').height('100%')
-47. }
-48. aboutToDisappear(): void {
-49. this.visionImageAnalyzerController.off('imageAnalyzerVisibilityChange')
-50. this.visionImageAnalyzerController.off('textAnalysis')
-51. this.visionImageAnalyzerController.off('selectedTextChange')
-52. this.visionImageAnalyzerController.off('subjectAnalysis')
-53. this.visionImageAnalyzerController.off('selectedSubjectsChange')
-54. this.visionImageAnalyzerController.off('analyzerFailed')
-55. }
-56. }
+  registerListener(){
+    this.visionImageAnalyzerController.on('imageAnalyzerVisibilityChange', (visibility: visionImageAnalyzer.ImageAnalyzerVisibility) => {
+      console.info('DEMO_TAG', `imageAnalyzerVisibilityChange result: ${JSON.stringify(visibility)}`)
+    });
+    this.visionImageAnalyzerController.on('textAnalysis', (text: string) => {
+      console.info('DEMO_TAG', `textAnalysis result: ${JSON.stringify(text)}`);
+    });
+    this.visionImageAnalyzerController.on('selectedTextChange', (selectedText: string) => {
+      console.info('DEMO_TAG', `selectedTextChange result: ${JSON.stringify(selectedText)}`);
+    });
+    this.visionImageAnalyzerController.on('subjectAnalysis', (subjects: visionImageAnalyzer.Subject[]) => {
+      console.info('DEMO_TAG', `subjectAnalysis result: ${JSON.stringify(subjects)}`);
+    });
+    this.visionImageAnalyzerController.on('selectedSubjectsChange', (subjects: visionImageAnalyzer.Subject[]) => {
+      console.info('DEMO_TAG', `selectedSubjectsChange result: ${JSON.stringify(subjects)}`);
+    });
+    this.visionImageAnalyzerController.on('analyzerFailed', (error: BusinessError) => {
+      console.error('DEMO_TAG', `analyzerFailed result: ${JSON.stringify(error)}`);
+    });
+  }
+
+  aboutToDisappear(): void {
+    this.visionImageAnalyzerController.off('imageAnalyzerVisibilityChange');
+    this.visionImageAnalyzerController.off('textAnalysis');
+    this.visionImageAnalyzerController.off('selectedTextChange');
+    this.visionImageAnalyzerController.off('subjectAnalysis');
+    this.visionImageAnalyzerController.off('selectedSubjectsChange');
+    this.visionImageAnalyzerController.off('analyzerFailed');
+  }
+
+  build() {
+    Stack() {
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(this.isSupportImageAnalyzer ? true : false)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/intents-r
 title: 事件撤销
 breadcrumb: API参考 > AI > Intents Kit（意图框架服务） > REST API > 事件撤销
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:57f3b0b362d3725254e2d589dd4fbb942141cb852315984efe3d82db2bc3222f
+scraped_at: 2026-09-02T14:53:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9a32c67f0c4ee1939c5d9078886b91b48353b0b56cdafa7178cc0529f132086a
 ---
 
 ## 功能介绍
@@ -24,7 +24,7 @@ content_hash: sha256:57f3b0b362d3725254e2d589dd4fbb942141cb852315984efe3d82db2bc
 
 **接口方向：** 开发者服务器->Intents Kit服务器
 
-\*\*接口URL：\*\*https://hag.cloud.huawei.com/open-ability/v2/service-events/revoke
+**接口URL：** https://hag.cloud.huawei.com/open-ability/v2/service-events/revoke
 
 **数据格式：** 请求：Content-Type: application/json，响应：Content-Type: application/json
 
@@ -36,7 +36,7 @@ content_hash: sha256:57f3b0b362d3725254e2d589dd4fbb942141cb852315984efe3d82db2bc
 | --- | --- | --- | --- |
 | x-appid | 是 | String | 开发者在华为开发者联盟注册的应用编号，可从应用服务>AppGallery Connect（应用市场）>我的项目>选中应用后查看，x-appid即选项的Client ID。 |
 | Authorization | 是 | String | 应用级AccessToken，前面需要加上Bearer，通过调用Oauth2.0的接口获得，接口请求https://oauth-login.cloud.huawei.com/oauth2/v3/token。 |
-| Content-Type | 是 | String | 固定值，填application/json。 |
+| Content-Type | 是 | String | 固定值，填application/json。  **说明：**  Request Body传参，请务必遵循此请求头格式，否则可能导致请求失败。 |
 | Accept | 是 | String | 固定值，填application/json。 |
 | x-event-type | 是 | String | 事件类型，USER表示用户事件，COMMON表示通用事件。 |
 
@@ -50,11 +50,11 @@ content_hash: sha256:57f3b0b362d3725254e2d589dd4fbb942141cb852315984efe3d82db2bc
 
 | **参数** | **是否必选** | **类型** | **描述** |
 | --- | --- | --- | --- |
-| requestTime | 是 | String | 接口请求UTC时间戳，格式yyyymmddhhmmssSSS。 |
+| requestTime | 是 | String | 接口请求UTC时间戳，格式yyyyMMddhhmmssSSS。 |
 | revokeBy | 否 | String | 默认值为REQUEST\_ID，调用方可不带。 |
 | identifier | 是 | String | 请求ID，标识唯一数据。 |
 | eventName | 否 | String | 默认按REQUEST\_ID方式撤销时可不带该字段。 |
-| openId | 否 | String | 华为分配的openId，openid推送的事件需要填openid——openId与sid不可同时为空，至少填入一项。 |
+| openId | 否 | String | 华为分配的openId，openId推送的事件需要填openId——openId与sid不可同时为空，至少填入一项。 |
 | sid | 否 | String | 华为分配的sid，sid推送的事件需要填sid——openId与sid不可同时为空，至少填入一项。 |
 | abilityId | 是 | String | 上架服务的服务标识。 |
 
@@ -62,15 +62,13 @@ content_hash: sha256:57f3b0b362d3725254e2d589dd4fbb942141cb852315984efe3d82db2bc
 
 **x-appid**是来自于[AppGallery Connect网站](https://developer.huawei.com/consumer/cn/console/service/AppService)，可从应用服务>AppGallery Connect（应用市场）>我的项目>选中应用后查看，**x-appid**即Client ID。
 
-**Authorization**通过调用Oauth2.0的接口获得，需要请求如下接口：
-
-https://oauth-login.cloud.huawei.com/oauth2/v3/token。
+**Authorization**通过调用Oauth2.0的接口获得，接口地址为：https://oauth-login.cloud.huawei.com/oauth2/v3/token。
 
 **Request Header**
 
 | **参数** | **是否必选** | **类型** | **描述** |
 | --- | --- | --- | --- |
-| Content-Type | 是 | String | 固定值，填application/x-www-form-urlencoded。 |
+| Content-Type | 是 | String | 固定值，填application/x-www-form-urlencoded。  **说明：**  Request Body传参，请务必遵循此请求头格式，否则可能导致请求失败。 |
 
 **Request Body**
 
@@ -86,30 +84,36 @@ https://oauth-login.cloud.huawei.com/oauth2/v3/token。
 
 完整的请求头样例如下：
 
-```
-1. Content-Type:application/json
-2. Authorization:Bearer DQEBAGf5Mtm9rZl3W1W8sACVmWo0WhGUE3ANb/+KgRHjvmJqacjI3aF++jLEqbZsJ4H472MknoysUMaQrr8FgAHKPCU1YY4EKxUhsA==
-3. x-appid:100012345 //
-4. Accept:application/json
-5. x-event-type:USER
+```yaml
+POST /open-ability/v2/service-events/revoke HTTP/1.1
+Host: hag.cloud.huawei.com
+Content-Type: application/json
+Authorization: Bearer DQEBAGf5Mtm9rZl3W1W8sACVmWo0WhGUE3ANb/+KgRHjvmJqacjI3aF++jLEqbZsJ4H472MknoysUMaQrr8FgAHKPCU1YY4EKxUhsA==
+x-appid: 1***12345
+Accept: application/json
+x-event-type: USER
 ```
 
 完整的请求体样例如下：
 
-```
-1. {
-2. "events": [
-3. {
-4. "requestTime": "请求时间戳",
-5. "revokeBy": "REQUEST_ID",
-6. "identifier": "推送事件时的identifier", //推送接口中的identifier
-7. "eventName": "事件名", //按REQUEST_ID方式撤销时可不填
-8. "openId": "openid", //openid推送的事件需要填openid
-9. "sid": "0bda3b89e3f44a44940eaad6b863dcc6", //sid推送的事件需要填sid
-10. "abilityId": "389ccb86317f41c19c2aa8762345069c" //上架服务的服务标识
-11. }
-12. ]
-13. }
+```json5
+POST /open-ability/v2/service-events/revoke HTTP/1.1
+Host: hag.cloud.huawei.com
+Content-Type: application/json
+
+{
+  "events": [
+    {
+      "requestTime": "请求时间戳",
+      "revokeBy": "REQUEST_ID",
+      "identifier": "推送事件时的identifier", // 推送接口中的identifier
+      "eventName": "事件名", // 按REQUEST_ID方式撤销时可不填
+      "openId": "openid", // openid推送的事件需要填openid
+      "sid": "0bda3b89e3f44a44940eaad6b863dcc6", // sid推送的事件需要填sid
+      "abilityId": "389ccb86317f41c19c2aa8762345069c" // 上架服务的服务标识
+    }
+  ]
+}
 ```
 
 ## 响应参数
@@ -145,30 +149,36 @@ https://oauth-login.cloud.huawei.com/oauth2/v3/token。
 * 调用成功，响应码为200，响应体为空。
 * 调用失败，响应码为400，以未携带必填字段为例，响应体格式如下：
 
-  ```
-  1. {
-  2. "errorEvents": [{
-  3. "requestId": "02240416001",
-  4. "resultInfo": {
-  5. "code": "invalidParam",
-  6. "desc": "openId and sid can not both be blank"
-  7. }
-  8. }]
-  9. }
+  ```json
+  HTTP/1.1 400 Bad Request
+  Content-Type: application/json
+
+  {
+    "errorEvents": [{
+      "requestId": "02240416001",
+      "resultInfo": {
+        "code": "invalidParam",
+        "desc": "openId and sid can not both be blank"
+      }
+    }]
+  }
   ```
 
   + 调用出错（鉴权信息无效或过期），响应码为401，响应体为空。
   + 调用出错（网关验证开发者权限失败），响应码为403，响应体为空。
   + 调用失败，响应码为404，表示外部推送的sid没有获取到对应的uid，响应体格式如下：
 
-    ```
-    1. {
-    2. "errorEvents": [{
-    3. "requestId": "02240416001",
-    4. "resultInfo": {
-    5. "code": "userNotFound",
-    6. "desc": "User is not found"
-    7. }
-    8. }]
-    9. }
+    ```json
+    HTTP/1.1 404 Bad Request
+    Content-Type: application/json
+
+    {
+      "errorEvents": [{
+        "requestId": "02240416001",
+        "resultInfo": {
+          "code": "userNotFound",
+          "desc": "User is not found"
+        }
+      }]
+    }
     ```

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-98
 title: 网络问题导致image组件加载在线图片失败
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 网络问题导致image组件加载在线图片失败
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:51+08:00
-doc_updated_at: 2026-04-27
+scraped_at: 2026-09-02T15:21:54+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:fc856b2f23eda0a2d4f61f8f77e1586e823728675c249fccc5f0379dd6f6de2b
 ---
 

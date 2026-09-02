@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-app-fil
 title: 应用文件分享
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用文件分享
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:12+08:00
+scraped_at: 2026-09-02T14:59:24+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0b878955c2be89e4a40ebe2412cd96d355872c84007e1d5c42dade5ab4a7d2ca
+content_hash: sha256:a466b0f225092453b38621b920cf75db9b1bfa1c58a09a57246607e714541ce5
 ---
 
 应用文件分享是应用之间通过分享URI（Uniform Resource Identifier）进行文件共享的过程。
@@ -32,7 +32,7 @@ content_hash: sha256:0b878955c2be89e4a40ebe2412cd96d355872c84007e1d5c42dade5ab4a
 * bundleName：该文件资源的属主。
 * path：文件资源在应用沙箱中的路径。
 
-注意
+**注意** 
 
 1. 因URI处理涉及编解码，系统无法保证应用自行拼接的URI地址的可用性。
 2. 推荐使用系统提供的接口获取URI，如[getUriFromPath接口](../harmonyos-references/js-apis-file-fileuri.md#fileurigeturifrompath)。

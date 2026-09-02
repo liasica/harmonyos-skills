@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: slider
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > slider
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:27+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:905bf190c8eb9853ffcf24b0e6e3a47d504c3599242a8d196ad8f0e9c8669af5
+scraped_at: 2026-09-02T15:01:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:66f7e6fb914a5a630c6693d3b7d960a9c3ceb210203805279ecca3e2cbb3f49a
 ---
 
-说明
+**说明** 
 
 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -16,29 +16,23 @@ content_hash: sha256:905bf190c8eb9853ffcf24b0e6e3a47d504c3599242a8d196ad8f0e9c86
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 不支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-components-common-attributes.md)外，还支持以下属性：
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
-| min | number | 0 | 否 | 滑动选择器的最小值。 |
-| max | number | 100 | 否 | 滑动选择器的最大值。 |
+| min | number | 0 | 否 | 滑动条的最小值。 |
+| max | number | 100 | 否 | 滑动条的最大值。 |
 | step | number | 1 | 否 | 每次滑动的步长。 |
-| value | number | 0 | 否 | 滑动选择器的初始值。 |
+| value | number | 0 | 否 | 滑动条的初始值。 |
 | mode5+ | string | outset | 否 | 滑动条样式：  - outset：滑块在滑杆上；  - inset：滑块在滑杆内。 |
 | showsteps5+ | boolean | false | 否 | 是否显示步长标识。true表示显示步长标识，false表示不显示步长标识。 |
 | showtips5+ | boolean | false | 否 | 滑动时是否有气泡提示百分比。true表示有气泡提示百分比，false表示没有气泡提示百分比。 |
 
 ## 样式
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用样式](js-components-common-styles.md)外，还支持如下样式：
 
@@ -50,8 +44,6 @@ PhonePC/2in1TabletTVWearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用事件](js-components-common-events.md)外，还支持如下事件：
 
 | 名称 | 参数 | 描述 |
@@ -62,32 +54,30 @@ PhonePC/2in1TabletTVWearable
 
 | 属性 | 类型 | 说明 |
 | --- | --- | --- |
-| value5+ | number | 当前slider的进度值。 |
-| mode5+ | string | 当前change事件的类型，可选值为：  - start：slider的值开始改变。  - move：slider的值跟随手指拖动中。  - end：slider的值结束改变。  - click：slider的值在点击进度条后改变。 |
+| value5+ | number | 当前滑动条的进度值。 |
+| mode5+ | string | 当前change事件的类型，可选值为：  - start：滑动条的值开始改变。  - move：滑动条的值跟随手指拖动中。  - end：滑动条的值结束改变。  - click：滑动条的值在点击进度条后改变。 |
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <slider min="0" max="100" value="{{ value }}" mode="outset" showtips="true"></slider>
-4. <slider class="slider" min="0" max="100" value="{{ value }}" step="20" mode="inset"  showtips="true"></slider>
-5. <slider class="slider" min="0" max="100" value="{{ value }}" showsteps="true" step="20" mode="inset"  showtips="false"></slider>
-6. </div>
+```html
+<!-- xxx.hml -->
+<div class="container">
+    <slider min="0" max="100" value="{{ value }}" mode="outset" showtips="true"></slider>
+    <slider class="slider" min="0" max="100" value="{{ value }}" step="20" mode="inset"  showtips="true"></slider>
+    <slider class="slider" min="0" max="100" value="{{ value }}" showsteps="true" step="20" mode="inset"  showtips="false"></slider>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .container {
-3. flex-direction: column;
-4. justify-content: center;
-5. align-items: center;
-6. }
-7. .slider{
-8. margin-top: 100px;
-9. }
+```css
+/* xxx.css */
+.container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.slider{
+    margin-top: 100px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/M8XNHvhTQRS83H-FGqoh-A/zh-cn_image_0000002558607066.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/yqrI62YDRUetp23t-XK80Q/zh-cn_image_0000002706676456.png)

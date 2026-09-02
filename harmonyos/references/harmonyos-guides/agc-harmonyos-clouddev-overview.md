@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 业务介绍
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 业务介绍
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:58+08:00
+scraped_at: 2026-09-02T15:00:19+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:148f890ff9c42be47facbf407d60aefb4634fbb9e81ba7b164b2ce1f6c366eed
+content_hash: sha256:4f7b2c3cfb810a7aae916c6e66c352208ee459e2813db725c3a00ba980325521
 ---
 
 ## 什么是端云一体化开发
@@ -48,7 +48,7 @@ DevEco Studio支持开发者在本地完成云侧服务资源的开发与部署�
 1. 选择云开发工程模板，根据工程向导[创建端云一体化开发工程](agc-harmonyos-clouddev-devproject.md)。
 2. 分别为Cloud Foundation Kit提供的各个服务完成端云代码的开发、调试和部署。
 
-   说明
+   **说明** 
 
    云侧与端侧工程的代码可并行开发，一般无先后顺序。但若需在端侧代码中调用云侧代码，云侧代码必须先部署到AGC云端，因此建议您先完成云侧代码的开发、调试与部署，再进行端侧代码开发与调试。
 

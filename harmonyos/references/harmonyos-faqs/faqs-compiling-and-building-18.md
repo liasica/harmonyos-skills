@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“No available entry module found”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“No available entry module found”
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:10+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:14+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:9044a4a96cec3e9e9b5925a3e6d65c2e7b04ecf00c16fe8540b7913b7230a0f6
 ---
 

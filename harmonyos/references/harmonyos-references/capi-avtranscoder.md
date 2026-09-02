@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avtr
 title: AVTranscoder
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 模块 > AVTranscoder
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:51+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:521661c60bd6e91770ae57c8771ed00e5e24e13b5a1a4cc9137db76d341bc928
+scraped_at: 2026-09-02T14:52:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d46ca01778732ac869091d483a08a45eec52cd898fceefcf64b05d496e58d32f
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 提供请求转码能力的API。
 
@@ -21,8 +19,6 @@ PhonePC/2in1TabletTV
 **起始版本：** 20
 
 ## 文件汇总
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |

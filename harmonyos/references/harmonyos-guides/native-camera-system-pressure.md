@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 压力管控(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 压力管控(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:08+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:cb6422c1f94722d8ea776de15a69401d55e4cd1c69bb3df432de723fcf656974
+scraped_at: 2026-09-02T14:50:16+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:fe4594c312f8411a93123c6317bc0a64c5f9f622157a9cd8e3dcea9caf4e3559
 ---
 
 从API version 20开始，相机框架提供对系统压力等级的监听。
@@ -21,22 +21,20 @@ content_hash: sha256:cb6422c1f94722d8ea776de15a69401d55e4cd1c69bb3df432de723fcf6
 参数的具体内容可参考相机管理器回调接口实例[Camera\_SystemPressureLevel](../harmonyos-references/capi-camera-h.md#camera_systempressurelevel)。
 
 ```
-1. void SystemPressureLevelChangeCallback(Camera_CaptureSession *captureSession,
-2. Camera_SystemPressureLevel systemPressureLevel)
-3. {
-4. OH_LOG_INFO(LOG_APP, "SystemPressureLevelChangeCallback level: %{public}d", systemPressureLevel);
-5. }
+void SystemPressureLevelChangeCallback(Camera_CaptureSession *captureSession,
+    Camera_SystemPressureLevel systemPressureLevel)
+{
+    OH_LOG_INFO(LOG_APP, "SystemPressureLevelChangeCallback level: %{public}d", systemPressureLevel);
+}
 
-7. Camera_ErrorCode NDKCamera::RegisterSystemPressureCallback()
-8. {
-9. Camera_ErrorCode ret = OH_CaptureSession_RegisterSystemPressureLevelChangeCallback(
-10. captureSession_, SystemPressureLevelChangeCallback);
-11. if (ret != CAMERA_OK) {
-12. OH_LOG_ERROR(LOG_APP,
-13. "OH_CaptureSession_RegisterSystemPressureLevelChangeCallback failed.");
-14. }
-15. return ret;
-16. }
+Camera_ErrorCode NDKCamera::RegisterSystemPressureCallback()
+{
+    Camera_ErrorCode ret = OH_CaptureSession_RegisterSystemPressureLevelChangeCallback(
+        captureSession_, SystemPressureLevelChangeCallback);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP,
+            "OH_CaptureSession_RegisterSystemPressureLevelChangeCallback failed.");
+    }
+    return ret;
+}
 ```
-
-[camera\_manager.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Media/Camera/NDKPhotoVideoSample/entry/src/main/cpp/camera_manager.cpp#L1544-L1561)

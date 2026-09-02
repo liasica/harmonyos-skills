@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/concurrency-f
 title: 并发常见问题
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:43+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e5143210b97e2a0e2960bb106da15834b98f230fc8e27666c0675cb751c9f5ee
+scraped_at: 2026-09-02T14:59:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e0d6c22562ebe6285e7dd311f81c6d52dabf87839f0351fb3cac8ddbed912aad
 ---
 
 ## TaskPool任务不执行快速定位指导
@@ -14,52 +14,52 @@ content_hash: sha256:e5143210b97e2a0e2960bb106da15834b98f230fc8e27666c0675cb751c
 
 1. **taskpool.execute接口是否调用**。
 
-   taskpool.execute被调用时，Hilog会打印TaskPool调用态日志（Task Allocation: taskId:）。
+   taskpool.execute被调用时，hilog会打印TaskPool调用态日志（Task Allocation: taskId:）。
 
    如果发现没有该维测日志表明taskpool.execute实际未调用，应用需排查taskpool.execute之前的其他业务逻辑是否执行完成。
 
-   ```
-   1. import { taskpool } from '@kit.ArkTS';
+   ```typescript
+   import { taskpool } from '@kit.ArkTS';
 
-   3. @Concurrent
-   4. function createTask(a: number, b: number): number {
-   5. let sum = a + b;
-   6. return sum;
-   7. }
+   @Concurrent
+   function createTask(a: number, b: number): number {
+     let sum = a + b;
+     return sum;
+   }
 
-   9. @Entry
-   10. @Component
-   11. struct Index {
-   12. @State message: string = 'Hello World';
+   @Entry
+   @Component
+   struct Index {
+     @State message: string = 'Hello World';
 
-   14. build() {
-   15. Row() {
-   16. Column() {
-   17. Text(this.message)
-   18. .fontSize(50)
-   19. .fontWeight(FontWeight.Bold)
-   20. .onClick(() => {
-   21. console.info('test start');
-   22. // 其他业务逻辑
-   23. // ...
-   24. let task: taskpool.Task = new taskpool.Task(createTask, 1, 2);
-   25. taskpool.execute(task);
-   26. // ...
-   27. })
-   28. }
-   29. .width('100%')
-   30. }
-   31. .height('100%')
-   32. }
-   33. }
+     build() {
+       Row() {
+         Column() {
+           Text(this.message)
+             .fontSize(50)
+             .fontWeight(FontWeight.Bold)
+             .onClick(() => {
+               console.info(`test start`);
+               // 其他业务逻辑
+               // ...
+               let task: taskpool.Task = new taskpool.Task(createTask, 1, 2);
+               taskpool.execute(task);
+               // ...
+             })
+         }
+         .width('100%')
+       }
+       .height('100%')
+     }
+   }
 
-   35. // 如果test start在控制台打印，但是并未出现Task Allocation: taskId:的日志，则taskpool.execute没有执行，应用需要排查其他业务逻辑
+   // 如果test start在控制台打印，但是并未出现Task Allocation: taskId:的日志，则taskpool.execute没有执行，应用需要排查其他业务逻辑
    ```
 2. **TaskPool任务是否被执行**。
 
    调用taskpool.execute接口会打印TaskPool**调用态日志**（Task Allocation: taskId:）。
 
-   **日志输出格式可能与示例有差异, 重点关注日志信息中taskId参数。**
+   **日志输出格式可能与示例有差异，重点关注日志信息中taskId参数。**
 
    定位到目标任务对应的Task Allocation: taskId日志后，在日志中搜索Task Allocation:后跟随的Id号，正常情况会打印**执行态日志**（Task Perform: name）和**结束态日志**（Task PerformTask End: taskId）。
 
@@ -70,70 +70,70 @@ content_hash: sha256:e5143210b97e2a0e2960bb106da15834b98f230fc8e27666c0675cb751c
       1. 查看是否发生大量TaskPool任务堆积未执行的情况。如果在较短时间内执行大量任务（出现大量调用态日志），后执行的任务需要等待前置任务执行完。此时可以检查TaskPool的扩容情况，如果在调用态日志打印之前，TaskPool工作线程数量已扩容到接近上限（上限数量为日志片段log2中的maxNum值），则可能是短时间内任务数量太多导致，应用可以通过合理设置优先级将重要任务和有时效要求的任务优先执行。
       2. 查看前置执行的TaskPool任务是否本身耗时较长或者发生阻塞。如果前置任务本身耗时较长，应用可以通过合理设置优先级解决。如果前置任务发生了意料之外的阻塞（一段时间后阻塞解除），应用需要排查自身业务逻辑。
 
-   ```
-   1. // hilog 日志片段（模拟），格式如下，具体数值由应用运行时决定
-   2. // log1： 大量任务提交
-   3. // 其中taskId为可变值表示任务id，priority为可变值表示优先级，以实际程序打印为准。
-   4. taskpool:: Task Allocation: taskId, priority
-   5. taskpool:: Task Allocation: taskId, priority
-   6. taskpool:: Task Allocation: taskId, priority
-   7. taskpool:: Task Allocation: taskId, priority
-   8. taskpool:: Task Allocation: taskId, priority
-   9. ...
-   10. // log2: 扩容日志
-   11. // 其中 maxNum为可变值表示最大支持的taskpool线程数，createNum为可变值表示当前创建的taskpool线程数，totalNum为可变值表示当前创建出来的taskpool线程总数，以实际程序打印为准。不同版本因为日志限流优化等原因，日志会进行细微调整，可能呈现的日志如下：
-   12. 版本1: taskpool:: maxThreads: maxNum, created num: createNum, total num: totalNum
-   13. 版本2: taskpool:: max: maxNum, create: createNum, total: totalNum
-   14. // log3: 执行态日志
-   15. // 其中name为可变值表示执行的函数名，taskId为可变值表示任务id，runningLoopId为可变值表示线程创建出来的loop的id，以实际程序打印为准。
-   16. taskpool:: Task Perform: name, taskId, runningLoop: runningLoopId
+   ```ts
+   // hilog 日志片段（模拟），格式如下，具体数值由应用运行时决定
+   // log1： 大量任务提交
+   // 其中taskId为可变值表示任务id，priority为可变值表示优先级，以实际程序打印为准。
+   taskpool:: Task Allocation: taskId, priority
+   taskpool:: Task Allocation: taskId, priority
+   taskpool:: Task Allocation: taskId, priority
+   taskpool:: Task Allocation: taskId, priority
+   taskpool:: Task Allocation: taskId, priority
+   ...
+   // log2: 扩容日志
+   // 其中 maxNum为可变值表示最大支持的taskpool线程数，createNum为可变值表示当前创建的taskpool线程数，totalNum为可变值表示当前创建出来的taskpool线程总数，以实际程序打印为准。不同版本因为日志限流优化等原因，日志会进行细微调整，可能呈现的日志如下：
+   版本1: taskpool:: maxThreads: maxNum, created num: createNum, total num: totalNum
+   版本2: taskpool:: max: maxNum, create: createNum, total: totalNum
+   // log3: 执行态日志
+   // 其中name为可变值表示执行的函数名，taskId为可变值表示任务id，runningLoopId为可变值表示线程创建出来的loop的id，以实际程序打印为准。
+   taskpool:: Task Perform: name, taskId, runningLoop: runningLoopId
    ```
 3. **TaskPool任务执行时是否发生异常**。
 
    1. 如果在执行TaskPool任务过程中发生JS异常，TaskPool会捕获该JS异常并通过taskpool.execute().catch((e:Error)=>{})将异常信息返回，应用需要查看异常信息并修复。
 
-      ```
-      1. import { taskpool } from '@kit.ArkTS';
+      ```typescript
+      import { taskpool } from '@kit.ArkTS';
 
-      3. @Concurrent
-      4. function createTask(a: number, b: number): number {
-      5. let sum = a + b;
-      6. return sum;
-      7. }
+      @Concurrent
+      function createTask(a: number, b: number): number {
+        let sum = a + b;
+        return sum;
+      }
 
-      9. @Entry
-      10. @Component
-      11. struct Index {
-      12. @State message: string | ResourceStr = $r('app.string.Button_label'); // 加载资源，可根据项目实际资源自定义
+      @Entry
+      @Component
+      struct Index {
+        @State message: string | ResourceStr = $r('app.string.Button_label'); // 加载资源，可根据项目实际资源自定义
 
-      14. build() {
-      15. Row() {
-      16. Column() {
-      17. Text(this.message)
-      18. .fontSize(50)
-      19. .fontWeight(FontWeight.Bold)
-      20. .onClick(() => {
-      21. console.info('test start');
-      22. // 其他业务逻辑
-      23. // ...
-      24. let task: taskpool.Task = new taskpool.Task(createTask, 1, 2);
-      25. taskpool.execute(task).then((res: object) => {
-      26. // 任务执行完处理结果
-      27. this.message = '任务执行结果:'+ res;
-      28. // ...
-      29. }).catch((e: Error) => {
-      30. // 任务发生异常后处理异常
-      31. // ...
-      32. })
-      33. })
-      34. }
-      35. .width('100%')
-      36. }
-      37. .height('100%')
-      38. }
-      39. }
+        build() {
+          Row() {
+            Column() {
+              Text(this.message)
+                .fontSize(50)
+                .fontWeight(FontWeight.Bold)
+                .onClick(() => {
+                  console.info(`test start`);
+                  // 其他业务逻辑
+                  // ...
+                  let task: taskpool.Task = new taskpool.Task(createTask, 1, 2);
+                  taskpool.execute(task).then((res: Object) => {
+                    // 任务执行完处理结果
+                    this.message = '任务执行结果: '+ res;
+                    // ...
+                  }).catch((e: Error) => {
+                    // 任务发生异常后处理异常
+                    // ...
+                  })
+                })
+            }
+            .width('100%')
+          }
+          .height('100%')
+        }
+      }
 
-      41. // 如果test start在控制台打印，但是并未出现Task Allocation: taskId:的日志，则taskpool.execute没有执行，应用需要排查其他业务逻辑
+      // 如果test start在控制台打印，但是并未出现Task Allocation: taskId:的日志，则taskpool.execute没有执行，应用需要排查其他业务逻辑
       ```
    2. 如果.catch分支无异常信息返回，但是应用通过TaskPool任务实现的功能发生问题，应用需要查看TaskPool任务逻辑是否发生阻塞，导致功能异常。
 
@@ -157,7 +157,9 @@ content_hash: sha256:e5143210b97e2a0e2960bb106da15834b98f230fc8e27666c0675cb751c
 
 **解决方案**
 
-1.分析其他任务执行耗时3s/5s是否合理；2.调整taskA优先级。
+1.分析其他任务执行耗时3s/5s是否合理；
+
+2.调整taskA优先级。
 
 ### 排查方向：晚执行的TaskPool任务是串行任务或者依赖其他任务
 
@@ -165,27 +167,27 @@ content_hash: sha256:e5143210b97e2a0e2960bb106da15834b98f230fc8e27666c0675cb751c
 
 如果问题场景对应的TaskPool任务是串行队列任务，查看该串行队列内前面任务的执行情况。如日志片段1所示该串行队列有四个任务，问题场景对应的是第四个任务，查看日志片段2发现第二个任务执行了2s，对于应用业务逻辑是不正常的。
 
-```
-1. // hilog 日志片段1（模拟）
-2. // seqRunner共有四个任务
-3. // 其中389508780288为可变值表示任务id，393913878464为可变值表示seqRunner的id，以实际程序打印为准。
-4. taskpool:: taskId 389508780288 in seqRunner 393913878464 immediately.
-5. // 其中394062838784为可变值表示任务id，393913878464为可变值表示seqRunner的id，以实际程序打印为准。
-6. taskpool:: add taskId: 394062838784 to seqRunner 393913878464
-7. // 其中393918679936为可变值表示任务id，393913878464为可变值表示seqRunner的id，以实际程序打印为准。
-8. taskpool:: add taskId: 393918679936 to seqRunner 393913878464
-9. // 其中393918673408为可变值表示任务id，393913878464为可变值表示seqRunner的id，以实际程序打印为准。
-10. taskpool:: add taskId: 393918673408 to seqRunner 393913878464
+```ts
+// hilog 日志片段1（模拟）
+// seqRunner共有四个任务
+// 其中389508780288为可变值表示任务id，393913878464为可变值表示seqRunner的id，以实际程序打印为准。
+taskpool:: taskId 389508780288 in seqRunner 393913878464 immediately.
+// 其中394062838784为可变值表示任务id，393913878464为可变值表示seqRunner的id，以实际程序打印为准。
+taskpool:: add taskId: 394062838784 to seqRunner 393913878464
+// 其中393918679936为可变值表示任务id，393913878464为可变值表示seqRunner的id，以实际程序打印为准。
+taskpool:: add taskId: 393918679936 to seqRunner 393913878464
+// 其中393918673408为可变值表示任务id，393913878464为可变值表示seqRunner的id，以实际程序打印为准。
+taskpool:: add taskId: 393918673408 to seqRunner 393913878464
 
-12. // hilog 日志片段2（模拟）
-13. // 查看第二个任务, 发现任务执行到执行结束间隔2s
-14. // 其中394062838784为可变值表示任务id，393913878464为可变值表示seqRunner的id，以实际程序打印为准。
-15. 18:28:28.223 taskpool:: taskId 394062838784 in seqRunner 393913878464 immediately.
-16. // 其中name为可变值表示执行的函数名, 394062838784为可变值表示任务id，3959344048为可变值表示线程创建出来的loop的id，以实际程序打印为准。
-17. 18:28:28.224 taskpool:: Task Perform: name, 394062838784, runningLoop: 3959344048
-18. // 其中394062838784为可变值表示任务id，12为可变值表示日期 18:28:28.240为可变值表示时间，以实际程序打印为准。不同版本因为日志限流优化等原因，日志会进行细微调整，可能呈现的日志如下：
-19. 版本1: 18:28:30.243 taskpool:: Task Perform End: 394062838784
-20. 版本2: 18:28:30.243 taskpool:: Task Perform End: 394062838784, 12 18:28:28.240
+// hilog 日志片段2（模拟）
+// 查看第二个任务, 发现任务执行到执行结束间隔2s
+// 其中394062838784为可变值表示任务id，393913878464为可变值表示seqRunner的id，以实际程序打印为准。
+18:28:28.223 taskpool:: taskId 394062838784 in seqRunner 393913878464 immediately.
+// 其中name为可变值表示执行的函数名, 394062838784为可变值表示任务id，3959344048为可变值表示线程创建出来的loop的id，以实际程序打印为准。
+18:28:28.224 taskpool:: Task Perform: name, 394062838784, runningLoop: 3959344048
+// 其中394062838784为可变值表示任务id，12为可变值表示日期 18:28:28.240为可变值表示时间，以实际程序打印为准。不同版本因为日志限流优化等原因，日志会进行细微调整，可能呈现的日志如下：
+版本1: 18:28:30.243 taskpool:: Task Perform End: 394062838784
+版本2: 18:28:30.243 taskpool:: Task Perform End: 394062838784, 12 18:28:28.240
 ```
 
 **解决方案**
@@ -210,117 +212,117 @@ TaskPool第一次执行任务慢，间隔几百毫秒，原因是子线程反序
 
    入参序列化失败
 
-   ```
-   1. // API version 20之前版本
-   2. Error message:An exception occurred during serialization, taskpool: failed to serialize arguments.
+   ```ts
+   // API version 20之前版本
+   Error message:An exception occurred during serialization, taskpool: failed to serialize arguments.
 
-   4. // API version 20及之后版本
-   5. Error message:An exception occurred during serialization, taskpool: failed to serialize arguments.
-   6. Serialize error: Serialize don't support object type:
+   // API version 20及之后版本
+   Error message:An exception occurred during serialization, taskpool: failed to serialize arguments.
+   Serialize error: Serialize don't support object type:
    ```
 
    返回结果序列化失败
 
-   ```
-   1. // API version 20之前版本
-   2. Error message:An exception occurred during serialization, taskpool: failed to serialize result.
+   ```ts
+   // API version 20之前版本
+   Error message:An exception occurred during serialization, taskpool: failed to serialize result.
 
-   4. // API version 20及之后版本
-   5. Error message:An exception occurred during serialization, taskpool: failed to serialize result.
-   6. Serialize error: Serialize don't support object type:
+   // API version 20及之后版本
+   Error message:An exception occurred during serialization, taskpool: failed to serialize result.
+   Serialize error: Serialize don't support object type:
    ```
-2. Hilog错误日志
+2. hilog错误日志
 
-   ```
-   1. // API version 20之前版本
-   2. [ecmascript] Unsupported serialize object type:
-   3. [ecmascript] ValueSerialize: serialize data is incomplete
+   ```ts
+   // API version 20之前版本
+   [ecmascript] Unsupported serialize object type:
+   [ecmascript] ValueSerialize: serialize data is incomplete
 
-   5. // API version 20及之后版本
-   6. [ecmascript] Serialize don't support object type:
-   7. [ecmascript] ValueSerialize: serialize data is incomplete
+   // API version 20及之后版本
+   [ecmascript] Serialize don't support object type:
+   [ecmascript] ValueSerialize: serialize data is incomplete
    ```
 
 **问题原因**
 
-TaskPool实现任务的函数（Concurrent函数）入参和返回结果需满足线程间通信支持的对象类型，详情请查看[线程间通信对象](../harmonyos-references/js-apis-taskpool.md#序列化支持类型)。当Concurrent函数的入参或返回结果是线程间通信不支持的对象类型时，会出现上述现象。应用可以结合Hilog日志中打印的对象类型进一步排查通信对象是否符合要求。
+TaskPool实现任务的函数（Concurrent函数）入参和返回结果需满足线程间通信支持的对象类型，详情请查看[序列化支持类型](../harmonyos-references/js-apis-taskpool.md#序列化支持类型)。当Concurrent函数的入参或返回结果是线程间通信不支持的对象类型时，会出现上述现象。应用可以结合hilog日志中打印的对象类型进一步排查通信对象是否符合要求。
 
 **场景示例**
 
 1. 应用在启动TaskPool任务时，在Concurrent函数中传入线程间通信不支持的对象类型，导致抛出入参序列化失败异常。
 
-   **解决方案**：应用需要查看[线程间通信对象](../harmonyos-references/js-apis-taskpool.md#序列化支持类型)排查Concurrent函数入参。
-2. 应用在启动TaskPool任务时，抛出入参序列化失败异常，同时Hilog打印错误日志Unsupported serialize object type: Proxy（API version 20及之后版本打印错误日志：Serialize error: Serialize don't support object type: Proxy）。基于错误日志可知应用在Concurrent函数中传入代理对象，排查代码发现入参使用了@State装饰器，导致原对象实际上变为Proxy代理对象，代理对象不属于线程间通信支持的对象类型。
+   **解决方案**：应用需要查看[序列化支持类型](../harmonyos-references/js-apis-taskpool.md#序列化支持类型)排查Concurrent函数入参。
+2. 应用在启动TaskPool任务时，抛出入参序列化失败异常，同时hilog打印错误日志Unsupported serialize object type: Proxy（API version 20及之后版本打印错误日志：Serialize error: Serialize don't support object type: Proxy）。基于错误日志可知应用在Concurrent函数中传入代理对象，排查代码发现入参使用了@State装饰器，导致原对象实际上变为Proxy代理对象，代理对象不属于线程间通信支持的对象类型。
 
    **解决方案**：TaskPool不支持@State、@Prop等装饰器修饰的复杂类型，具体内容可见[TaskPool注意事项](taskpool-introduction.md#taskpool注意事项)。应用需要去掉@State装饰器。
 3. 应用执行TaskPool任务时，抛出返回结果序列化失败异常，排查代码发现Concurrent函数返回结果是不支持的序列化类型。
 
-   ```
-   1. // utils.ets
-   2. @Concurrent
-   3. export function printArgs(args: number) {
-   4. return args;
-   5. }
+   ```typescript
+   // utils.ets
+   @Concurrent
+   export function printArgs(args: number) {
+     return args;
+   }
    ```
 
-   ```
-   1. // ExecuteFailedTask.ets
-   2. import { taskpool } from '@kit.ArkTS'
-   3. import { BusinessError } from '@kit.BasicServicesKit'
-   4. import { printArgs} from './utils'
+   ```typescript
+   // ExecuteFailedTask.ets
+   import { taskpool } from '@kit.ArkTS'
+   import { BusinessError } from '@kit.BasicServicesKit'
+   import { printArgs} from './utils'
 
-   6. @Concurrent
-   7. function createTask(a: number, b: number) {
-   8. let sum = a + b;
-   9. // task1: 不支持的序列化类型
-   10. let task1: taskpool.Task = new taskpool.Task(printArgs, sum);
-   11. return task1;
-   12. }
+   @Concurrent
+   function createTask(a: number, b: number) {
+     let sum = a + b;
+     // task1: 不支持的序列化类型
+     let task1: taskpool.Task = new taskpool.Task(printArgs, sum);
+     return task1;
+   }
 
-   14. function executeTask() {
-   15. // task
-   16. let task: taskpool.Task = new taskpool.Task(createTask, 1, 2);
-   17. taskpool.execute(task).then((res) => {
-   18. }).catch((e: BusinessError) => {
-   19. // 打印“返回结果序列化失败”异常信息
-   20. console.error('execute task failed ' + e.message);
-   21. })
-   22. }
+   function executeTask() {
+     // task
+     let task: taskpool.Task = new taskpool.Task(createTask, 1, 2);
+     taskpool.execute(task).then((res) => {
+     }).catch((e: BusinessError) => {
+       // 打印“返回结果序列化失败”异常信息
+       console.error(`execute task failed ${e.message}`);
+     })
+   }
    ```
 
    **解决方案**：task1在.then中创建执行，Concurrent函数的返回结果设置为可序列化的类型。
 
-   ```
-   1. // utils.ets
-   2. @Concurrent
-   3. export function printArgs(args: number) {
-   4. return args;
-   5. }
+   ```typescript
+   // utils.ets
+   @Concurrent
+   export function printArgs(args: number) {
+     return args;
+   }
    ```
 
-   ```
-   1. // ExecuteSupportTask.ets
-   2. import { taskpool } from '@kit.ArkTS'
-   3. import { BusinessError } from '@kit.BasicServicesKit'
-   4. import { printArgs} from './utils'
+   ```typescript
+   // ExecuteSupportTask.ets
+   import { taskpool } from '@kit.ArkTS'
+   import { BusinessError } from '@kit.BasicServicesKit'
+   import { printArgs} from './utils'
 
-   6. @Concurrent
-   7. function createTask(a: number, b: number) {
-   8. // 支持的序列化类型
-   9. let sum = a + b;
-   10. return sum;
-   11. }
+   @Concurrent
+   function createTask(a: number, b: number) {
+     // 支持的序列化类型
+     let sum = a + b;
+     return sum;
+   }
 
-   13. function executeTask() {
-   14. // task
-   15. let task: taskpool.Task = new taskpool.Task(createTask, 1, 2);
-   16. taskpool.execute(task).then((res) => {
-   17. // task1
-   18. let task1: taskpool.Task = new taskpool.Task(printArgs, res);
-   19. }).catch((e: BusinessError) => {
-   20. console.error('execute task failed ' + e.message);
-   21. })
-   22. }
+   function executeTask() {
+     // task
+     let task: taskpool.Task = new taskpool.Task(createTask, 1, 2);
+     taskpool.execute(task).then((res) => {
+       // task1
+       let task1: taskpool.Task = new taskpool.Task(printArgs, res);
+     }).catch((e: BusinessError) => {
+       console.error(`execute task failed ${e.message}`);
+     })
+   }
    ```
 
 ## Sendable类A的实例对象a传递到子线程后，使用a instanceof A判断返回false
@@ -329,59 +331,59 @@ TaskPool实现任务的函数（Concurrent函数）入参和返回结果需满�
 
 **代码示例**
 
-```
-1. // pages/TestInstancof.ets
-2. import { worker, ErrorEvent } from '@kit.ArkTS'
-3. import { A } from './Sendable'
+```typescript
+// pages/TestInstanceof.ets
+import { worker, ErrorEvent } from '@kit.ArkTS'
+import { A } from './Sendable'
 
-5. const workerInstance = new worker.ThreadWorker('../workers/Worker.ets');
+const workerInstance = new worker.ThreadWorker('../workers/Worker.ets');
 
-7. function testInstanceof() {
-8. let a = new A();
-9. if (a instanceof A) {
-10. // 打印test instanceof in main thread success
-11. console.info('test instanceof in main thread success');
-12. } else {
-13. console.info('test instanceof in main thread failed');
-14. }
-15. workerInstance.postMessageWithSharedSendable(a);
-16. workerInstance.onerror = (err: ErrorEvent) => {
-17. console.error('worker err :' + err.message);
-18. }
-19. }
+function testInstanceof() {
+  let a = new A();
+  if (a instanceof A) {
+    // 打印test instanceof in main thread success
+    console.info('test instanceof in main thread success');
+  } else {
+    console.error('test instanceof in main thread failed');
+  }
+  workerInstance.postMessageWithSharedSendable(a);
+  workerInstance.onerror = (err: ErrorEvent) => {
+    console.error('worker err :' + err.message);
+  }
+}
 
-21. testInstanceof();
-```
-
-```
-1. // pages/Sendable.ets
-2. 'use shared'
-
-4. @Sendable
-5. export class A {
-6. public name: string = 'name';
-
-8. printName(): string {
-9. return this.name;
-10. }
-11. }
+testInstanceof();
 ```
 
-```
-1. // workers/Worker.ets
-2. import { A } from '../pages/Sendable'
-3. import { worker, ThreadWorkerGlobalScope, MessageEvents } from '@kit.ArkTS'
+```typescript
+// pages/Sendable.ets
+'use shared'
 
-5. const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
-6. workerPort.onmessage = (e: MessageEvents) => {
-7. let a: A = e.data as A;
-8. if (a instanceof A) {
-9. // 打印test instanceof in worker thread success
-10. console.info('test instanceof in worker thread success');
-11. } else {
-12. console.info('test instanceof in worker thread failed');
-13. }
-14. }
+@Sendable
+export class A {
+  public name: string = 'name';
+
+  printName(): string {
+    return this.name;
+  }
+}
+```
+
+```typescript
+// workers/Worker.ets
+import { A } from '../pages/Sendable'
+import { worker, ThreadWorkerGlobalScope, MessageEvents } from '@kit.ArkTS'
+
+const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
+workerPort.onmessage = (e: MessageEvents) => {
+  let a: A = e.data as A;
+  if (a instanceof A) {
+    // 打印test instanceof in worker thread success
+    console.info(`test instanceof in worker thread success`);
+  } else {
+    console.error(`test instanceof in worker thread failed`);
+  }
+}
 ```
 
 ## 使用Sendable特性抛JS异常排查指导
@@ -392,8 +394,8 @@ TaskPool实现任务的函数（Concurrent函数）入参和返回结果需满�
 
 **问题现象**
 
-```
-1. JS异常：TypeError: Cannot set sendable property with mismatched type
+```ts
+JS异常：TypeError: Cannot set sendable property with mismatched type
 ```
 
 **问题原因与解决方案**
@@ -406,72 +408,72 @@ TaskPool实现任务的函数（Concurrent函数）入参和返回结果需满�
 
    **解决方案** ： 应用当前模块将其他模块传递的数据使用Sendable类重新封装。
 
-   ```
-   1. @Sendable
-   2. export class B {
-   3. constructor() {}
-   4. }
+   ```typescript
+   @Sendable
+   export class B {
+     constructor() {}
+   }
 
-   6. @Sendable
-   7. export class A {
-   8. constructor(b: B) {
-   9. this.b = b;
-   10. }
+   @Sendable
+   export class A {
+     constructor(b: B) {
+       this.b = b;
+     }
 
-   12. public b: B | undefined = undefined;
-   13. }
+     public b: B | undefined = undefined;
+   }
    ```
 2. 应用查看JS异常栈发现运行this.g = g赋值语句时，抛出类型不一致异常。排查代码后发现属性g使用了@State装饰器，导致原对象变为Proxy代理对象，造成定义类型与传入类型不一致。
 
    **解决方案**：去掉@State装饰器
 3. 自定义Sendable类继承collections.Array，并重写构造函数。在实例化该类后调用slice函数时，抛出类型不一致异常。原因是调用slice函数时，collections.Array内部会创建新的SendableArray。构造函数的入参是新数组长度，类型为number。由于ans是string类型，而在构造函数中使用number类型的入参对ans赋值，在Sendable类中不允许使用number类型对string类型赋值，因此抛出异常。
 
-   ```
-   1. // SoluteMismatchTypeTwo.ets
-   2. import { collections } from '@kit.ArkTS'
+   ```typescript
+   // pages/SolveMismatchTypeTwo.ets
+   import { collections } from '@kit.ArkTS'
 
-   4. @Sendable
-   5. export class CollectionsArray extends collections.Array<string> {
-   6. public ans: string = 'test';
-   7. constructor(heldValue: string) {
-   8. super();
-   9. this.ans = heldValue;
-   10. }
-   11. }
-   12. let arr = new CollectionsArray('test');
-   13. arr.slice(1);
+   @Sendable
+   export class CollectionsArray extends collections.Array<string> {
+     public ans: string = 'test';
+     constructor(heldValue: string) {
+       super();
+       this.ans = heldValue;
+     }
+   }
+   let arr = new CollectionsArray('test');
+   arr.slice(1);
    ```
 
    **解决方案**： 对属性的赋值使用独立接口。
 
-   ```
-   1. // SoluteMismatchTypeThree.ets
-   2. import { collections } from '@kit.ArkTS'
+   ```typescript
+   // pages/SolveMismatchTypeThree.ets
+   import { collections } from '@kit.ArkTS'
 
-   4. @Sendable
-   5. export class CollectionsArray extends collections.Array<string> {
-   6. public ans: string = 'test';
+   @Sendable
+   export class CollectionsArray extends collections.Array<string> {
+     public ans: string = 'test';
 
-   8. constructor() {
-   9. super();
-   10. }
+     constructor() {
+       super();
+     }
 
-   12. set(str: string) {
-   13. this.ans = str;
-   14. }
-   15. }
+     set(str: string) {
+       this.ans = str;
+     }
+   }
 
-   17. let arr = new CollectionsArray();
-   18. arr.slice(1);
-   19. arr.set('success');
+   let arr = new CollectionsArray();
+   arr.slice(1);
+   arr.set('success');
    ```
 
 ### 新增属性异常
 
 **问题现象**
 
-```
-1. JS异常：TypeError: Cannot add property in prevent extensions
+```ts
+JS异常：TypeError: Cannot add property in prevent extensions
 ```
 
 **问题原因与解决方案**
@@ -500,6 +502,13 @@ TaskPool执行的任务函数必须使用@Concurrent装饰器修饰，由于Conc
 
 因此，TaskPool线程目前不支持执行普通的JS闭包函数。如果有相关诉求，开发者可以根据业务需要使用[Worker](worker-introduction.md)并发能力进行业务改造。
 
+## @Concurrent修饰的函数与async函数异同点是什么
+
+1. Concurrent函数常与taskpool配合使用以完成异步并发任务；async是用于处理异步操作的Promise语法糖，async函数返回Promise对象，实现异步操作。此两类函数的constructor.name属性均为'AsyncFunction'，通过[isAsyncFunction](../harmonyos-references/js-apis-util.md#isasyncfunction8)的异步函数类型检查的结果均为true。
+2. async函数会将返回值自动封装成Promise；Concurrent函数的返回值与被修饰函数保持一致，不会被自动封装。
+3. Concurrent函数不能访问闭包，函数内不可调用当前文件的其他普通函数；async函数无此限制。
+4. 使用[errorManager](../harmonyos-references/js-apis-app-ability-errormanager.md)进行异常捕获时，@Concurrent修饰符不会改变被修饰函数的异常捕获行为；async函数会被[globalUnhandledRejectionDetected](../harmonyos-references/js-apis-app-ability-errormanager.md#errormanageronglobalunhandledrejectiondetected18)和[unhandledRejection](../harmonyos-references/js-apis-app-ability-errormanager.md#errormanageronunhandledrejection12)捕获。
+
 ## TaskPool任务执行后的结果如何保存到自定义的数据结构
 
 **问题描述**
@@ -511,43 +520,43 @@ TaskPool的任务执行函数Concurrent函数只能使用局部变量和函数�
 1. 自定义Sendable类。[Sendable对象](arkts-sendable.md)可以在不同的子线程中共享，开发者可以将任务执行后的结果保存到Sendable对象上。
 2. TaskPool任务执行后的结果可以在.then中返回，需要保存的数据如果仅在当前线程使用，可以在.then中将执行结果保存到自定义的数据结构中。
 
+   ```typescript
+   // Sendable.ets，与Index.ets在同级目录下
+   @Sendable
+   export class TestClass {
+     public name: string = 'test';
+
+     setName(name: string) {
+       this.name = name;
+     }
+
+     getName(): string {
+       return this.name;
+     }
+   }
    ```
-   1. // Sendable.ets，与Index.ets在同级目录下
-   2. @Sendable
-   3. export class TestClass {
-   4. public name: string = 'test';
 
-   6. setName(name: string) {
-   7. this.name = name;
-   8. }
+   ```typescript
+   // SaveResult.ets
+   import { taskpool } from '@kit.ArkTS'
+   import { BusinessError } from '@kit.BasicServicesKit'
+   import { TestClass } from './Sendable'
 
-   10. getName(): string {
-   11. return this.name;
-   12. }
-   13. }
-   ```
+   @Concurrent
+   function createTask(a: number): string {
+     return `test${a}`;
+   }
 
-   ```
-   1. // SaveResult.ets
-   2. import { taskpool } from '@kit.ArkTS'
-   3. import { BusinessError } from '@kit.BasicServicesKit'
-   4. import { TestClass } from './Sendable'
-
-   6. @Concurrent
-   7. function createTask(a: number): string {
-   8. return `test${a}`;
-   9. }
-
-   11. function executeTask() {
-   12. let testObject: TestClass = new TestClass();
-   13. let task: taskpool.Task = new taskpool.Task(createTask, 1)
-   14. taskpool.execute(task).then((res) => {
-   15. testObject.setName(res as string);
-   16. console.info('execute task success, name is ' + testObject.getName());
-   17. }).catch((e: BusinessError) => {
-   18. console.error('execute task error: ' + e.message);
-   19. })
-   20. }
+   function executeTask() {
+     let testObject: TestClass = new TestClass();
+     let task: taskpool.Task = new taskpool.Task(createTask, 1)
+     taskpool.execute(task).then((res) => {
+       testObject.setName(res as string);
+       console.info(`execute task success, name is ${testObject.getName()}`);
+     }).catch((e: BusinessError) => {
+       console.error(`execute task error: ${e.message}`);
+     })
+   }
    ```
 
 ## Sendable类在子线程无法加载
@@ -556,40 +565,40 @@ TaskPool的任务执行函数Concurrent函数只能使用局部变量和函数�
 
 Sendable装饰器修饰的类与Observed装饰器修饰的类定义在同一个ets文件中，在TaskPool子线程加载Sendable类时捕获到错误信息：SendableItem is not initialized。
 
+```typescript
+// pages/SolveItemInitialized.ets
+import { taskpool } from '@kit.ArkTS'
+import { BusinessError } from '@kit.BasicServicesKit'
+import { SendableItem } from './Sendable'
+
+@Concurrent
+function createTask() {
+  let data = new SendableItem();
+}
+
+function executeTask() {
+  let task = new taskpool.Task(createTask);
+  taskpool.execute(task).then((res) => {
+    console.info(`execute task success`);
+  }).catch((e: BusinessError) => {
+    console.error(`execute task error: ${e.message}`);
+  })
+}
+
+executeTask();
 ```
-1. // SoluteItemInitialized.ets
-2. import { taskpool } from '@kit.ArkTS'
-3. import { BusinessError } from '@kit.BasicServicesKit'
-4. import { SendableItem } from './Sendable'
 
-6. @Concurrent
-7. function createTask() {
-8. let data = new SendableItem();
-9. }
+```ts
+// sendable.ets
+@Observed
+export class NormalItem {
+  age: number = 0;
+}
 
-11. function executeTask() {
-12. let task = new taskpool.Task(createTask);
-13. taskpool.execute(task).then((res) => {
-14. console.info('execute task success');
-15. }).catch((e: BusinessError) => {
-16. console.error('execute task error: ' + e.message);
-17. })
-18. }
-
-20. executeTask();
-```
-
-```
-1. // sendable.ets
-2. @Observed
-3. export class NormalItem {
-4. age: number = 0;
-5. }
-
-7. @Sendable
-8. export class SendableItem {
-9. name: string = '';
-10. }
+@Sendable
+export class SendableItem {
+  name: string = '';
+}
 ```
 
 **根因分析**
@@ -600,41 +609,41 @@ Observed装饰器仅支持在UI线程使用，不能在子线程、Worker、Task
 
 将Observed装饰器修饰的类NormalItem剥离到单独的ets文件后，TaskPool子线程再去加载Sendable类SendableItem，应用运行符合预期。
 
-```
-1. // SoluteItemInitialized.ets
-2. import { taskpool } from '@kit.ArkTS'
-3. import { BusinessError } from '@kit.BasicServicesKit'
-4. import { SendableItem } from './Sendable'
+```typescript
+// pages/SolveItemInitialized.ets
+import { taskpool } from '@kit.ArkTS'
+import { BusinessError } from '@kit.BasicServicesKit'
+import { SendableItem } from './Sendable'
 
-6. @Concurrent
-7. function createTask() {
-8. let data = new SendableItem();
-9. }
+@Concurrent
+function createTask() {
+  let data = new SendableItem();
+}
 
-11. function executeTask() {
-12. let task = new taskpool.Task(createTask);
-13. taskpool.execute(task).then((res) => {
-14. console.info('execute task success');
-15. }).catch((e: BusinessError) => {
-16. console.error('execute task error: ' + e.message);
-17. })
-18. }
+function executeTask() {
+  let task = new taskpool.Task(createTask);
+  taskpool.execute(task).then((res) => {
+    console.info(`execute task success`);
+  }).catch((e: BusinessError) => {
+    console.error(`execute task error: ${e.message}`);
+  })
+}
 
-20. executeTask();
-```
-
-```
-1. // Sendable.ets
-2. @Sendable
-3. export class SendableItem {
-4. public name: string = '';
-5. }
+executeTask();
 ```
 
+```typescript
+// Sendable.ets
+@Sendable
+export class SendableItem {
+  public name: string = '';
+}
 ```
-1. // ui.ets
-2. @Observed
-3. export class NormalItem {
-4. public age: number = 0;
-5. }
+
+```typescript
+// ui.ets
+@Observed
+export class NormalItem {
+  public age: number = 0;
+}
 ```

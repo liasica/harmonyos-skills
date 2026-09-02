@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/icu4c-sym
 title: Native api中导出的ICU4C符号列表
 breadcrumb: API参考 > 标准库 > 附录 > Native api中导出的ICU4C符号列表
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:40+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:6e7874f95fb60ec9ad7d78eaa30adf4e3bcb4018dda29c1dca52742dc2ebb163
+scraped_at: 2026-09-02T14:53:38+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:2c604f4d45b1f544ca977626c5f2717ba8bd0264cf0911b8b04a0ff5c2f509b9
 ---
 
 | 符号类型 | 符号名 | API version起始版本 |
@@ -556,3 +556,10 @@ content_hash: sha256:6e7874f95fb60ec9ad7d78eaa30adf4e3bcb4018dda29c1dca52742dc2e
 | FUNC | utf8\_back1SafeBody | 22 |
 | FUNC | utf8\_prevCharSafeBody | 22 |
 | FUNC | utrans\_transIncrementalUChars | 22 |
+| FUNC | UCNV\_FROM\_U\_CALLBACK\_STOP | 26.0.0 |
+| FUNC | UCNV\_TO\_U\_CALLBACK\_STOP | 26.0.0 |
+| FUNC | UCNV\_FROM\_U\_CALLBACK\_SKIP | 26.0.0 |
+| FUNC | UCNV\_FROM\_U\_CALLBACK\_SUBSTITUTE | 26.0.0 |
+| FUNC | UCNV\_FROM\_U\_CALLBACK\_ESCAPE | 26.0.0 |
+| FUNC | UCNV\_TO\_U\_CALLBACK\_SKIP | 26.0.0 |
+| FUNC | UCNV\_TO\_U\_CALLBACK\_SUBSTITUTE | 26.0.0 |

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-90
 title: ArkWeb组件是否支持深拷贝
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > ArkWeb组件是否支持深拷贝
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:50+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:54+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:dd2f64973b9e5a06a4a68b59afa115cde2bd698cc00c13fce635b69d357a81a2
 ---
 

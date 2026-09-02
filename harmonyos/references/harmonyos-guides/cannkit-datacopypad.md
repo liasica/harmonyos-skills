@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-datac
 title: DataCopyPad
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 数据搬运 > DataCopyPad
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:25+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4d5add8a5b0729946e013616e5382e753cc1b816b9d48bf86314b44a7415bce5
+scraped_at: 2026-09-02T14:50:37+08:00
+doc_updated_at: 2026-08-18
+content_hash: sha256:86ce37d98db39d644639a0b415ed124a6695263a2778077d6a974eeb169fb396
 ---
 
 ## 功能说明
@@ -25,28 +25,28 @@ content_hash: sha256:4d5add8a5b0729946e013616e5382e753cc1b816b9d48bf86314b44a741
   + 通路：GM->VECIN/VECOUT
 
     ```
-    1. template <typename T>
-    2. __aicore__ inline  void DataCopyPad(const LocalTensor<T> &dstLocal, const GlobalTensor<T> &srcGlobal, const DataCopyExtParams &dataCopyParams, const DataCopyPadExtParams<T> &padParams)
+    template <typename T>
+    __aicore__ inline  void DataCopyPad(const LocalTensor<T> &dstLocal, const GlobalTensor<T> &srcGlobal, const DataCopyExtParams &dataCopyParams, const DataCopyPadExtParams<T> &padParams)
     ```
   + 通路：VECIN/VECOUT->GM
 
     ```
-    1. template <typename T>
-    2. __aicore__ inline  void DataCopyPad(const GlobalTensor<T> &dstGlobal, const LocalTensor<T> &srcLocal, const DataCopyExtParams &dataCopyParams)
+    template <typename T>
+    __aicore__ inline  void DataCopyPad(const GlobalTensor<T> &dstGlobal, const LocalTensor<T> &srcLocal, const DataCopyExtParams &dataCopyParams)
     ```
 * dataCopyParams为DataCopyParams类型
 
   + 通路：GM->VECIN/VECOUT
 
-    ```
-    1. template<typename T>
-    2. __aicore__ inline void DataCopyPad(const LocalTensor<T>& dstLocal, const GlobalTensor<T>& srcGlobal, const DataCopyParams& dataCopyParams, const DataCopyPadParams& padParams)
+    ```cpp
+    template<typename T>
+    __aicore__ inline void DataCopyPad(const LocalTensor<T>& dstLocal, const GlobalTensor<T>& srcGlobal, const DataCopyParams& dataCopyParams, const DataCopyPadParams& padParams)
     ```
   + 通路：VECIN/VECOUT->GM
 
-    ```
-    1. template<typename T>
-    2. __aicore__ inline void DataCopyPad(const GlobalTensor<T>& dstGlobal, const LocalTensor<T>& srcLocal,const DataCopyParams& dataCopyParams)
+    ```cpp
+    template<typename T>
+    __aicore__ inline void DataCopyPad(const GlobalTensor<T>& dstGlobal, const LocalTensor<T>& srcLocal,const DataCopyParams& dataCopyParams)
     ```
 
 ## 参数说明
@@ -55,7 +55,7 @@ content_hash: sha256:4d5add8a5b0729946e013616e5382e753cc1b816b9d48bf86314b44a741
 
 | 参数名 | 描述 |
 | --- | --- |
-| T | 操作数以及paddingValue（待填充数据值）的数据类型。  Kirin9020系列处理器，支持的数据类型为：int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float  KirinX90系列处理器，支持的数据类型为：int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
+| T | 操作数以及paddingValue（待填充数据值）的数据类型。  Kirin9020系列处理器、Kirin9030系列处理器、KirinX90系列处理器，支持的数据类型为：int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float。 |
 
 **表2** 接口参数说明
 
@@ -73,7 +73,7 @@ content_hash: sha256:4d5add8a5b0729946e013616e5382e753cc1b816b9d48bf86314b44a741
 | --- | --- |
 | blockCount | 指定该指令包含的连续传输数据块个数，数据类型为uint16\_t，取值范围：blockCount∈[1, 4095]。 |
 | blockLen | 指定该指令每个连续传输数据块长度，**该指令支持非对齐搬运**，**每个连续传输数据块长度单位为Byte**。数据类型为uint32\_t，blockLen不要超出该数据类型的取值范围。 |
-| srcStride | 源操作数，相邻连续数据块的间隔（前面一个数据块的尾与后面数据块的头的间隔），**如果源操作数的逻辑位置为VECIN/VECOUT，则单位为dataBlock(32Bytes), 如果源操作数的逻辑位置为GM,则单位为Byte**。数据类型为uint32\_t，srcStride不要超出该数据类型的取值范围。 |
+| srcStride | 源操作数，相邻连续数据块的间隔（前面一个数据块的尾与后面数据块的头的间隔），**如果源操作数的逻辑位置为VECIN/VECOUT，则单位为dataBlock(32Bytes)，如果源操作数的逻辑位置为GM，则单位为Byte**。数据类型为uint32\_t，srcStride不要超出该数据类型的取值范围。 |
 | dstStride | 目的操作数，相邻连续数据块间的间隔（前面一个数据块的尾与后面数据块的头的间隔），**如果目的操作数的逻辑位置为VECIN/VECOUT，则单位为dataBlock(32Bytes)，如果目的操作数的逻辑位置为GM，则单位为Byte**。数据类型为uint32\_t，dstStride不要超出该数据类型的取值范围。 |
 | rsv | 保留字段。 |
 
@@ -83,7 +83,7 @@ content_hash: sha256:4d5add8a5b0729946e013616e5382e753cc1b816b9d48bf86314b44a741
 | --- | --- |
 | blockCount | 指定该指令包含的连续传输数据块个数，数据类型为uint16\_t，取值范围：blockCount∈[1, 4095]。 |
 | blockLen | 指定该指令每个连续传输数据块长度，**该指令支持非对齐搬运**，**每个连续传输数据块长度单位为Byte**。数据类型为uint16\_t，blockLen不要超出该数据类型的取值范围。 |
-| srcStride | 源操作数，相邻连续数据块的间隔（前面一个数据块的尾与后面数据块的头的间隔），**如果源操作数的逻辑位置为VECIN/VECOUT，则单位为dataBlock(32Bytes), 如果源操作数的逻辑位置为GM,则单位为Byte**。数据类型为uint16\_t，srcStride不要超出该数据类型的取值范围。 |
+| srcStride | 源操作数，相邻连续数据块的间隔（前面一个数据块的尾与后面数据块的头的间隔），**如果源操作数的逻辑位置为VECIN/VECOUT，则单位为dataBlock(32Bytes)，如果源操作数的逻辑位置为GM，则单位为Byte**。数据类型为uint16\_t，srcStride不要超出该数据类型的取值范围。 |
 | dstStride | 目的操作数，相邻连续数据块间的间隔（前面一个数据块的尾与后面数据块的头的间隔），**如果目的操作数的逻辑位置为VECIN/VECOUT，则单位为dataBlock(32Bytes)，如果目的操作数的逻辑位置为GM，则单位为Byte**。数据类型为uint16\_t，dstStride不要超出该数据类型的取值范围。 |
 
 **表5** DataCopyPadExtParams结构体参数定义
@@ -108,7 +108,7 @@ content_hash: sha256:4d5add8a5b0729946e013616e5382e753cc1b816b9d48bf86314b44a741
   + blockLen+leftPadding+rightPadding满足32字节对齐，isPad为false，左右两侧填充的数据值会默认为随机值，否则为paddingValue。此处示例中，leftPadding、rightPadding均为0，则不填充。
   + blockLen+leftPadding+rightPadding不满足32字节对齐时，框架会填充一些假数据dummy，保证左右填充的数据和blockLen、假数据为32字节对齐。leftPadding/rightPadding不为0：若isPad为false，左右两侧填充的数据值和dummy值均为随机值，否则为paddingValue。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/lXWvkPB_Qea-wYKF4bxzBw/zh-cn_image_0000002558765780.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/s1XwsJHLRM-TWInUdX9V9A/zh-cn_image_0000002706835344.png)
 
   **配置示例2：**
 
@@ -116,29 +116,29 @@ content_hash: sha256:4d5add8a5b0729946e013616e5382e753cc1b816b9d48bf86314b44a741
   + blockLen+leftPadding+rightPadding不满足32字节对齐，leftPadding、rightPadding均为0：dummy会默认填充待搬运数据块的第一个元素值。
   + blockLen+leftPadding+rightPadding不满足32字节对齐，leftPadding/rightPadding不为0：若isPad为false，左右两侧填充的数据值和dummy值均为随机值，否则为paddingValue。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/ftOLqUqaSWGTGNDbnItE1Q/zh-cn_image_0000002558606124.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/v1iFaznkTH26eXzjYCWlZw/zh-cn_image_0000002736314449.png)
 * **VECIN/VECOUT**->**GM**
 
   当每个连续传输数据块长度blockLen为32字节对齐时，下图呈现了需要传入的DataCopyParams示例，blockLen为64，每个连续传输数据块包含64Bytes；srcStride为1，因为源操作数的逻辑位置为VECIN/VECOUT，srcStride的单位为dataBlock(32Bytes)，也就是说源操作数相邻数据块之间间隔1个dataBlock；dstStride为1，因为目的操作数的逻辑位置为GM，dstStride的单位为Byte，也就是说目的操作数相邻数据块之间间隔1Byte。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/aaaILJCnQgO-EBNBNTKAXg/zh-cn_image_0000002589325651.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/Vueu5UFsSKaHlyOjUjxYAg/zh-cn_image_0000002706675406.png)
 
   当每个连续传输数据块长度blockLen不满足32字节对齐，由于Unified Buffer要求32字节对齐，框架在搬出时会自动补充一些假数据来保证对齐，但在当搬到GM时会自动将填充的假数据丢弃掉。下图呈现了该场景下需要传入的DataCopyParams示例和假数据补齐的原理。blockLen为47，每个连续传输数据块包含47Bytes，不满足32字节对齐；srcStride为1，表示源操作数相邻数据块之间间隔1个dataBlock；dstStride为1，表示目的操作数相邻数据块之间间隔1Byte。框架在搬出时会自动补充17Bytes的假数据来保证对齐，搬到GM时再自动将填充的假数据丢弃掉。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/UPiPvQBVSKC6Mq4JRho9KQ/zh-cn_image_0000002589245591.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/82tw1xu2QHS8maWDutWCIA/zh-cn_image_0000002736434493.png)
 * **VECIN/VECOUT->TSCM**
 
   内部实现涉及AIC和AIV之间的通信，实际搬运路径为VECIN/VECOUT->GM->TSCM，**发送通信消息会有开销，性能会受到影响**。
 
   如下图所示，展示了从VECIN/VECOUT搬运到GM，再搬运到TSCM的过程：示例中数据类型为half，单个datablock（32B）含有16个half元素，源操作数中的 A1~A6、B1~B6、C1~C6为需要进行搬运的数据。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/3kAATfaDTWWtvB-wz6jLFg/zh-cn_image_0000002558765782.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/UYbNSlO0QaKhfYLQ6zmlww/zh-cn_image_0000002706835346.png)
 
   从VECIN/VECOUT->GM的搬运，数据存储格式没有发生转变，依然是ND。
 
   + **blockCount**为需要搬运的连续传输数据块个数，设置为3。
   + **blockLen**为一个连续传输数据块的大小(单位为Byte)，设置为6 \* 32 = 192。
-  + **srcStride**为源操作数相邻连续数据块的间隔（前面一个数据块的尾与后面数据块的头的间隔），源操作数逻辑位置为VECIN/VECOUT，其单位为datablock, 两个连续传输数据块（A1~A6、B1~B6）中间相隔1个A7，因此srcStride设置为1。
+  + **srcStride**为源操作数相邻连续数据块的间隔（前面一个数据块的尾与后面数据块的头的间隔），源操作数逻辑位置为VECIN/VECOUT，其单位为datablock，两个连续传输数据块（A1~A6、B1~B6）中间相隔1个A7，因此srcStride设置为1。
   + **dstStride**为目的操作数，相邻连续数据块间的间隔（前面一个数据块的尾与后面数据块的头的间隔），目的操作数逻辑位置为GM，其单位为Byte，两个连续传输数据块（A1~A6、B1~B6）中间相隔2个空白的datablock，因此dstStride设置为64Byte。
 
   从GM->TSCM的搬运，数据存储格式由ND转换为NZ。
@@ -158,7 +158,9 @@ content_hash: sha256:4d5add8a5b0729946e013616e5382e753cc1b816b9d48bf86314b44a741
 
 ## 支持的型号
 
-Kirin9020系列处理器。
+Kirin9020系列处理器
+
+Kirin9030系列处理器
 
 KirinX90系列处理器
 
@@ -170,71 +172,71 @@ leftPadding、rightPadding的字节数均不能超过32Bytes。
 
 本示例实现了GM->VECIN->GM的非对齐搬运过程。
 
-```
-1. #include "kernel_operator.h"
+```cpp
+#include "kernel_operator.h"
 
-3. class TestDataCopyPad {
-4. public:
-5. __aicore__ inline TestDataCopyPad() {}
-6. __aicore__ inline void Init(__gm__ uint8_t* srcGm, __gm__ uint8_t* dstGm)
-7. {
-8. srcGlobal.SetGlobalBuffer((__gm__ half *)srcGm);
-9. dstGlobal.SetGlobalBuffer((__gm__ half *)dstGm);
-10. pipe.InitBuffer(inQueueSrc, 1, 32 * sizeof(half));
-11. pipe.InitBuffer(outQueueDst, 1, 32 * sizeof(half));
-12. }
-13. __aicore__ inline void Process()
-14. {
-15. CopyIn();
-16. Compute();
-17. CopyOut();
-18. }
-19. private:
-20. __aicore__ inline void CopyIn()
-21. {
-22. AscendC::LocalTensor<half> srcLocal = inQueueSrc.AllocTensor<half>();
-23. AscendC::DataCopyExtParams copyParams{1, 20 * sizeof(half), 0, 0, 0}; // 结构体DataCopyExtParams最后一个参数是rsv保留位
-24. AscendC::DataCopyPadExtParams<half> padParams{true, 0, 2, 0};
-25. AscendC::DataCopyPad(srcLocal, srcGlobal, copyParams, padParams); // 从GM->VECIN搬运40Bytes
-26. inQueueSrc.EnQue<half>(srcLocal);
-27. }
-28. __aicore__ inline void Compute()
-29. {
-30. AscendC::LocalTensor<half> srcLocal = inQueueSrc.DeQue<half>();
-31. AscendC::LocalTensor<half> dstLocal = outQueueDst.AllocTensor<half>();
-32. AscendC::Adds(dstLocal, srcLocal, scalar, 20);
-33. outQueueDst.EnQue(dstLocal);
-34. inQueueSrc.FreeTensor(srcLocal);
-35. }
-36. __aicore__ inline void CopyOut()
-37. {
-38. AscendC::LocalTensor<half> dstLocal = outQueueDst.DeQue<half>();
-39. AscendC::DataCopyExtParams copyParams{1, 20 * sizeof(half), 0, 0, 0};
-40. AscendC::DataCopyPad(dstGlobal, dstLocal, copyParams); // 从VECIN->GM搬运40Bytes
-41. outQueueDst.FreeTensor(dstLocal);
-42. }
-43. private:
-44. AscendC::TPipe pipe;
-45. AscendC::TQue<AscendC::QuePosition::VECIN, 1> inQueueSrc;
-46. AscendC::TQue<AscendC::QuePosition::VECOUT, 1> outQueueDst;
-47. AscendC::GlobalTensor<half> srcGlobal;
-48. AscendC::GlobalTensor<half> dstGlobal;
-49. AscendC::DataCopyPadExtParams<half> padParams;
-50. AscendC::DataCopyExtParams copyParams;
-51. half scalar = 0;
-52. };
+class TestDataCopyPad {
+public:
+    __aicore__ inline TestDataCopyPad() {}
+    __aicore__ inline void Init(__gm__ uint8_t* srcGm, __gm__ uint8_t* dstGm)
+    {
+        srcGlobal.SetGlobalBuffer((__gm__ half *)srcGm);
+        dstGlobal.SetGlobalBuffer((__gm__ half *)dstGm);
+        pipe.InitBuffer(inQueueSrc, 1, 32 * sizeof(half));
+        pipe.InitBuffer(outQueueDst, 1, 32 * sizeof(half));
+    }
+    __aicore__ inline void Process()
+    {
+        CopyIn();
+        Compute();
+        CopyOut();
+    }
+private:
+    __aicore__ inline void CopyIn()
+    {
+        AscendC::LocalTensor<half> srcLocal = inQueueSrc.AllocTensor<half>();
+        AscendC::DataCopyExtParams copyParams{1, 20 * sizeof(half), 0, 0, 0}; // 结构体DataCopyExtParams最后一个参数是rsv保留位
+        AscendC::DataCopyPadExtParams<half> padParams{true, 0, 2, 0};
+        AscendC::DataCopyPad(srcLocal, srcGlobal, copyParams, padParams); // 从GM->VECIN搬运40Bytes
+        inQueueSrc.EnQue<half>(srcLocal);
+    }
+    __aicore__ inline void Compute()
+    {
+        AscendC::LocalTensor<half> srcLocal = inQueueSrc.DeQue<half>();
+        AscendC::LocalTensor<half> dstLocal = outQueueDst.AllocTensor<half>();
+        AscendC::Adds(dstLocal, srcLocal, scalar, 20);
+        outQueueDst.EnQue(dstLocal);
+        inQueueSrc.FreeTensor(srcLocal);
+    }
+    __aicore__ inline void CopyOut()
+    {
+        AscendC::LocalTensor<half> dstLocal = outQueueDst.DeQue<half>();
+        AscendC::DataCopyExtParams copyParams{1, 20 * sizeof(half), 0, 0, 0};
+        AscendC::DataCopyPad(dstGlobal, dstLocal, copyParams); // 从VECIN->GM搬运40Bytes
+        outQueueDst.FreeTensor(dstLocal);
+    }
+private:
+    AscendC::TPipe pipe;
+    AscendC::TQue<AscendC::QuePosition::VECIN, 1> inQueueSrc;
+    AscendC::TQue<AscendC::QuePosition::VECOUT, 1> outQueueDst;
+    AscendC::GlobalTensor<half> srcGlobal;
+    AscendC::GlobalTensor<half> dstGlobal;
+    AscendC::DataCopyPadExtParams<half> padParams;
+    AscendC::DataCopyExtParams copyParams;
+    half scalar = 0;
+};
 
-54. extern "C" __global__ __aicore__ void kernel_data_copy_pad_kernel(__gm__ uint8_t* src_gm, __gm__ uint8_t* dst_gm)
-55. {
-56. TestDataCopyPad op;
-57. op.Init(src_gm, dst_gm);
-58. op.Process();
-59. }
+extern "C" __global__ __aicore__ void kernel_data_copy_pad_kernel(__gm__ uint8_t* src_gm, __gm__ uint8_t* dst_gm)
+{
+    TestDataCopyPad op;
+    op.Init(src_gm, dst_gm);
+    op.Process();
+}
 ```
 
 结果示例：
 
-```
-1. 输入数据(src0Global): [1 2 3 ... 32]
-2. 输出数据(dstGlobal):[1 2 3 ... 20]
+```plaintext
+输入数据(src0Global): [1 2 3 ... 32]
+输出数据(dstGlobal):[1 2 3 ... 20]
 ```

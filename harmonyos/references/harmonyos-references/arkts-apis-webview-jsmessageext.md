@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (JsMessageExt)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (JsMessageExt)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:01+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:14c203971841911f7013c2ef841d02e3333baee56e3a0bd1d6d5bdc730cb3486
+scraped_at: 2026-09-02T15:01:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1cf86741fd21ccbd7be375ffa76ca58ab4b6057c878e5ca36f96d36c69dfb932
 ---
 
-[runJavaScriptExt](arkts-apis-webview-webviewcontroller.md#runjavascriptext10)接口执行脚本返回的数据对象。
+JsMessageExt是ArkWeb框架中用于封装[runJavaScriptExt](arkts-apis-webview-webviewcontroller.md#runjavascriptext10)接口执行JavaScript脚本后返回结果的数据类。与常规的runJavaScript接口不同，runJavaScriptExt支持更丰富的返回值类型，JsMessageExt则为这些多样化的返回结果提供了类型安全的访问方式。开发者通过JsMessageExt的getType方法先获取数据类型，再调用对应的get方法获取具体值。
 
-说明
+JsMessageExt支持多种JavaScript返回值类型的解析：字符串（getString）、数值（getNumber）、布尔值（getBoolean）、原始二进制数据（getArrayBuffer）、数组（getArray）等。当获取的数据类型与实际存储类型不匹配时（例如对数值类型调用getString），会抛出错误码17100014。从API version 22开始，JsMessageExt还提供了getErrorDescription方法，用于获取JavaScript执行过程中的异常信息，如果返回值为object类型则统一格式化为描述字符串。
+
+**说明** 
 
 * 本模块首批接口从API version 9开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 本Class首批接口从API version 10开始支持。
 * 示例效果请以真机运行为准。
 
 ## getType10+
-
-PhonePC/2in1TabletTVWearable
 
 getType(): JsMessageType
 
@@ -34,8 +34,6 @@ getType(): JsMessageType
 
 ## getString10+
 
-PhonePC/2in1TabletTVWearable
-
 getString(): string
 
 获取数据对象的字符串类型数据。完整示例代码参考[runJavaScriptExt](arkts-apis-webview-webviewcontroller.md#runjavascriptext10)。
@@ -46,7 +44,7 @@ getString(): string
 
 | 类型 | 说明 |
 | --- | --- |
-| string | 返回字符串类型的数据。 |
+| string | 返回runJavaScriptExt接口脚本执行后得到的字符串类型的数据。 |
 
 **错误码：**
 
@@ -58,8 +56,6 @@ getString(): string
 
 ## getNumber10+
 
-PhonePC/2in1TabletTVWearable
-
 getNumber(): number
 
 获取数据对象的数值类型数据。完整示例代码参考[runJavaScriptExt](arkts-apis-webview-webviewcontroller.md#runjavascriptext10)。
@@ -70,7 +66,7 @@ getNumber(): number
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 返回数值类型的数据。 |
+| number | 返回runJavaScriptExt接口脚本执行后得到的数值类型的数据。 |
 
 **错误码：**
 
@@ -82,8 +78,6 @@ getNumber(): number
 
 ## getBoolean10+
 
-PhonePC/2in1TabletTVWearable
-
 getBoolean(): boolean
 
 获取数据对象的布尔类型数据。完整示例代码参考[runJavaScriptExt](arkts-apis-webview-webviewcontroller.md#runjavascriptext10)。
@@ -94,7 +88,7 @@ getBoolean(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 返回布尔类型的数据。 |
+| boolean | 返回runJavaScriptExt接口脚本执行后得到的布尔类型的数据。 |
 
 **错误码：**
 
@@ -106,8 +100,6 @@ getBoolean(): boolean
 
 ## getArrayBuffer10+
 
-PhonePC/2in1TabletTVWearable
-
 getArrayBuffer(): ArrayBuffer
 
 获取数据对象的原始二进制数据。完整示例代码参考[runJavaScriptExt](arkts-apis-webview-webviewcontroller.md#runjavascriptext10)。
@@ -118,7 +110,7 @@ getArrayBuffer(): ArrayBuffer
 
 | 类型 | 说明 |
 | --- | --- |
-| ArrayBuffer | 返回原始二进制数据。 |
+| ArrayBuffer | 返回runJavaScriptExt接口脚本执行后得到的原始二进制数据。 |
 
 **错误码：**
 
@@ -130,8 +122,6 @@ getArrayBuffer(): ArrayBuffer
 
 ## getArray10+
 
-PhonePC/2in1TabletTVWearable
-
 getArray(): Array<string | number | boolean>
 
 获取数据对象的数组类型数据。完整示例代码参考[runJavaScriptExt](arkts-apis-webview-webviewcontroller.md#runjavascriptext10)。
@@ -142,7 +132,7 @@ getArray(): Array<string | number | boolean>
 
 | 类型 | 说明 |
 | --- | --- |
-| Array<string | number | boolean> | 返回数组类型的数据。 |
+| Array<string | number | boolean> | 返回runJavaScriptExt接口脚本执行后得到的数组类型的数据。 |
 
 **错误码：**
 
@@ -154,11 +144,9 @@ getArray(): Array<string | number | boolean>
 
 ## getErrorDescription22+
 
-PhonePC/2in1TabletTVWearable
-
 getErrorDescription(): string | null
 
-获取JS执行的异常信息。完整示例代码参考[runJavaScriptExt](arkts-apis-webview-webviewcontroller.md#runjavascriptext10)。
+获取JavaScript执行的异常信息。完整示例代码参考[runJavaScriptExt](arkts-apis-webview-webviewcontroller.md#runjavascriptext10)。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -166,4 +154,4 @@ getErrorDescription(): string | null
 
 | 类型 | 说明 |
 | --- | --- |
-| string | null | 若JavaScript脚本执行过程中发生异常，或返回值为object类型，系统会将其格式化为"Not support type: <{exception|object}>"字符串返回，该字符串长度不超过2048个字符，超长部分将被截断；若object对象中包含callback类型的成员，则序列化时将自动忽略该成员；其余情况，接口均返回null。 |
+| string | null | 若JavaScript脚本执行过程中发生异常，或返回值为object类型，系统会将异常信息或object对象格式化为"Not support type: <{exception | object}>"字符串返回，该字符串长度不超过2048个字符，超长部分将被截断；若object对象中包含callback类型的成员，则序列化时将自动忽略该成员；其余情况，接口均返回null。 |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getpr
 title: GetPrimaryFormat
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > GetPrimaryFormat
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:14+08:00
+scraped_at: 2026-09-02T14:50:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:01b75190dd4bd1aea38fcbda854946abf6d6bbc5a527f4d460c50a26381d12bd
+content_hash: sha256:7dab202a2bc7c86354c4f40961508d23e1e7204eabec20f5d3717b49de3fc0f9
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:01b75190dd4bd1aea38fcbda854946abf6d6bbc5a527f4d460c50a26381
 
 ## 函数原型
 
-```
-1. inline int32_t GetPrimaryFormat(int32_t format)
+```cpp
+inline int32_t GetPrimaryFormat(int32_t format)
 ```
 
 ## 参数说明

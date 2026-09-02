@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-p
 title: 通过sysTransOrderNo查询订单信息
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 直连商户 > 支付并签约 > 查询支付订单 > 通过sysTransOrderNo查询订单信息
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:47+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e198ec5f3a1dc81cc8e88e67d80a7e15e80cc70764d4f43ee3eda5b327a2601b
+scraped_at: 2026-09-02T15:03:03+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8e912c0edd17366219a0fdb65503fab54bf03498b51dc285f8f38f00cbe8126b
 ---
 
 ## 功能介绍
 
 开发者可以调用此接口来查询所有通过华为支付方式支付且已成功创建交易订单的订单详细信息。
 
-说明
+**说明** 
 
 resultCode返回“000000”表示查询支付订单成功，不代表支付订单成功，订单状态需根据orderStatus字段判断。
 
@@ -45,17 +45,17 @@ resultCode返回“000000”表示查询支付订单成功，不代表支付订�
 
 **Request Path**
 
-| 参数 | 是否必填 | 参数类型 | 描述 |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | sysTransOrderNo | 是 | String | 华为支付系统订单号。  用户支付成功后通过支付结果回调通知返回给商户或通过mercOrderNo查询订单信息接口查询获取。 |
 
 ## 请求示例
 
-```
-1. GET /api/v2/aggr/transactions/orders/{sysTransOrderNo} HTTP/1.1
-2. Content-Type: application/json;charset=UTF-8
-3. PayMercAuth:
-4. {"callerId":"10132120***","traceId":"202305151047588466083","time":1684118878350,"authId":"120291744647139***","headerSign":"OaLyLiENHhYxXwZ+XhKKiYnzWsX/HJf+02A60A42fjh********************znmsDJOALXgvh/RKeReQBbc4lXZp5wnyZmdwTesmPGdszSNP/s=","bodySign":"kf9AZmVjBSGUI2MldsIFShO+Ak00qpPKaXgJo+K********************7gdghaJShhzAsNjt8DE9ulUIlQ0Q95/dZt2jEHcXyLfGNVzDNfFPhvF08NnnGM4="}
+```json
+GET /api/v2/aggr/transactions/orders/{sysTransOrderNo} HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+PayMercAuth:
+{"callerId":"10132120***","traceId":"202305151047588466083","time":1684118878350,"authId":"120291744647139***","headerSign":"OaLyLiENHhYxXwZ+XhKKiYnzWsX/HJf+02A60A42fjh********************znmsDJOALXgvh/RKeReQBbc4lXZp5wnyZmdwTesmPGdszSNP/s=","bodySign":"kf9AZmVjBSGUI2MldsIFShO+Ak00qpPKaXgJo+K********************7gdghaJShhzAsNjt8DE9ulUIlQ0Q95/dZt2jEHcXyLfGNVzDNfFPhvF08NnnGM4="}
 ```
 
 ## 响应参数
@@ -79,7 +79,7 @@ resultCode返回“000000”表示查询支付订单成功，不代表支付订�
 | appId | 否 | String | 应用ID。获取方式请参见[AppID管理及关联](../pay-docs/hwzf-appidguanli-0000001757041165.md)。 |
 | sysTransOrderNo | 否 | String | 华为支付系统订单号。 |
 | mercOrderNo | 是 | String | 商户订单号，由商户自己生成，商户需保证订单信息唯一性。最大长度46。 |
-| orderStatus | 是 | String | 订单状态。  - TRX\_SUCCESS：交易成功  - TRX\_FAILED：交易失败  - TRX\_APPLY：交易处理中  - TRX\_PROC：交易处理中 |
+| orderStatus | 是 | String | 订单状态。  - TRX\_SUCCESS：交易成功  - TRX\_FAILED：交易失败  - TRX\_APPLY：交易处理中 |
 | payload | 否 | String | 预留信息，如商户请求时传递该参数，此时会原样返回。 |
 | currency | 是 | String | 交易币种单位，最大长度为3。  CNY （默认，当前仅支持该币种单位） |
 | totalAmount | 是 | Long | 订单总金额，单位：分。 |
@@ -92,26 +92,26 @@ resultCode返回“000000”表示查询支付订单成功，不代表支付订�
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json; charset=UTF-8
-3. {
-4. "resultCode": "000000",
-5. "resultDesc": "Success.",
-6. "sign": "MEUCIQCO8t5lbWmI+94L1DCah********************2XmM05x1SmFAIrepM9Pg=",
-7. "currency": "CNY",
-8. "finishTime": "2023-02-23T10:02:04.000+0800",
-9. "mercOrderNo": "czl00120240705***",
-10. "appId": "5765880207853***",
-11. "mercNo": "10132120***",
-12. "orderStatus": "TRX_SUCCESS",
-13. "payerAmount": 10000,
-14. "payload": "example-payload",
-15. "paymentTools": "AGMT",
-16. "promotionAmount": 0,
-17. "sysTransOrderNo": "12407030857530004914518***",
-18. "totalAmount": 10000
-19. }
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+{
+  "resultCode": "000000",
+  "resultDesc": "Success.",
+  "sign": "MEUCIQCO8t5lbWmI+94L1DCah********************2XmM05x1SmFAIrepM9Pg=",
+  "currency": "CNY",
+  "finishTime": "2023-02-23T10:02:04.000+0800",
+  "mercOrderNo": "czl00120240705***",
+  "appId": "5765880207853***",
+  "mercNo": "10132120***",
+  "orderStatus": "TRX_SUCCESS",
+  "payerAmount": 10000,
+  "payload": "example-payload",
+  "paymentTools": "AGMT",
+  "promotionAmount": 0,
+  "sysTransOrderNo": "12407030857530004914518***",
+  "totalAmount": 10000
+}
 ```
 
 ## 错误码

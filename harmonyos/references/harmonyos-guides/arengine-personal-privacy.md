@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-pers
 title: 个人数据处理说明
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 个人数据处理说明
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:00+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:17:35+08:00
+doc_updated_at: 2026-08-29
 content_hash: sha256:488bc5da7aca8f3fefb38f0ff20dd04f21db53adcd4636db877349c498e82bd4
 ---
 

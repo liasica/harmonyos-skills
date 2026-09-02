@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: text
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > text
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:38+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:6785a4ab1f8a22dcf2a2e662417be16eb22498c84d074b20bece4e198ec43cef
+scraped_at: 2026-09-02T15:01:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8ab0616ec5130c04ca86b267781f54046f875a7f2b80c7f7500c29d2cf0ecb18
 ---
 
 文本，用于呈现一段信息。
 
-说明
+**说明** 
 
 * 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 文本的展示内容需要写在元素标签内，可嵌套tspan子元素标签分段，可嵌套textPath子元素标签按指定路径绘制。
@@ -19,19 +19,13 @@ content_hash: sha256:6785a4ab1f8a22dcf2a2e662417be16eb22498c84d074b20bece4e198ec
 
 ## 权限列表
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 支持[tspan](js-components-svg-tspan.md)、[textPath](js-components-svg-textpath.md)、[animate](js-components-svg-animate.md)、[animateTransform](js-components-svg-animatetransform.md)。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 支持以下表格中的属性。
 
@@ -42,109 +36,107 @@ PhonePC/2in1TabletTVWearable
 | y | <length>|<percentage> | 0 | 否 | 设置组件左上角y轴坐标。 |
 | dx | <length>|<percentage> | 0 | 否 | 设置文本x轴偏移。 |
 | dy | <length>|<percentage> | 0 | 否 | 设置文本y轴偏移。 |
-| rotate | number | 0 | 否 | 字体以左下角为圆心旋转角度，正数顺时针，负数逆时针。 |
+| rotate | number | 0 | 否 | 文本以左下角为圆心旋转角度，正数顺时针，负数逆时针。 |
 | font-size | <length> | 30px | 否 | 设置文本的尺寸。 |
-| fill | <color> | black | 否 | 字体填充颜色。 |
-| fill-opacity | number | 1.0 | 否 | 字体填充透明度。 |
+| fill | <color> | black | 否 | 文本填充颜色。 |
+| fill-opacity | number | 1.0 | 否 | 文本填充透明度。 |
 | opacity | number | 1 | 否 | 元素的透明度，取值范围为0到1，1表示为不透明，0表示为完全透明。支持属性动画。 |
-| stroke | <color> | black | 否 | 绘制字体边框并指定颜色。 |
-| stroke-width | number | 1 | 否 | 字体边框宽度。  默认单位：px |
-| stroke-opacity | number | 1.0 | 否 | 字体边框透明度。 |
+| stroke | <color> | black | 否 | 绘制文本描边并指定颜色。 |
+| stroke-width | number | 1 | 否 | 文本描边宽度。  默认单位：px |
+| stroke-opacity | number | 1.0 | 否 | 文本描边透明度。 |
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. /* xxx.css */
-2. .container {
-3. flex-direction: row;
-4. justify-content: flex-start;
-5. align-items: flex-start;
-6. height: 1000px;
-7. width: 1080px;
-8. }
+```css
+/* xxx.css */
+.container {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 1000px;
+    width: 1080px;
+}
 ```
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <svg>
-4. <text x="20px" y="0px" font-size="30" fill="blue">test x|y</text>
-5. <text x="150" y="15" font-size="30" fill="blue">test x|y</text>
-6. <text x="300" y="30" font-size="30" fill="blue" opacity="0.1">test opacity</text>
-7. <text dx="20" y="30" dy="50" fill="blue" font-size="30">test dx|dy|fill|font-size</text>
-8. <text x="20" y="150" fill="blue" font-size="30" fill-opacity="0.2">test fill-opacity</text>
-9. <text x="20" y="200" fill="red" font-size="40">test 0123456789</text>
-10. <text x="20" y="250" fill="red" font-size="40" fill-opacity="0.2">test 中文</text>
-11. <text x="20" y="300" rotate="30" fill="red" font-size="40">test rotate</text>
-12. <text x="20" y="350" fill="blue" font-size="40" stroke="red" stroke-width="2">test stroke</text>
-13. <text x="20" y="400" fill="white" font-size="40" stroke="red" stroke-width="2" stroke-opacity="0.5">test stroke-opacity</text>
-14. </svg>
-15. </div>
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <svg>
+    <text x="20px" y="0px" font-size="30" fill="blue">test x|y</text>
+    <text x="150" y="15" font-size="30" fill="blue">test x|y</text>
+    <text x="300" y="30" font-size="30" fill="blue" opacity="0.1">test opacity</text>
+    <text dx="20" y="30" dy="50" fill="blue" font-size="30">test dx|dy|fill|font-size</text>
+    <text x="20" y="150" fill="blue" font-size="30" fill-opacity="0.2">test fill-opacity</text>
+    <text x="20" y="200" fill="red" font-size="40">test 0123456789</text>
+    <text x="20" y="250" fill="red" font-size="40" fill-opacity="0.2">test 中文</text>
+    <text x="20" y="300" rotate="30" fill="red" font-size="40">test rotate</text>
+    <text x="20" y="350" fill="blue" font-size="40" stroke="red" stroke-width="2">test stroke</text>
+    <text x="20" y="400" fill="white" font-size="40" stroke="red" stroke-width="2" stroke-opacity="0.5">test stroke-opacity</text>
+  </svg>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/SfZ2oJNgQta6WpcP9ighsA/zh-cn_image_0000002558607110.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/PFbCZotKRsqiXoZ_gkTszg/zh-cn_image_0000002706676500.png)
 
 属性动画示例
 
-```
-1. /* xxx.css  */
-2. .container {
-3. flex-direction: row;
-4. justify-content: flex-start;
-5. align-items: flex-start;
-6. height: 3000px;
-7. width: 1080px;
-8. }
-```
-
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <svg>
-4. <text y="50" font-size="30" fill="blue">
-5. text attribute x|opacity|rotate
-6. <animate attributeName="x" from="100" by="400" dur="3s" repeatCount="indefinite"></animate>
-7. <animate attributeName="opacity" from="0.01" to="0.99" dur="3s" repeatCount="indefinite"></animate>
-8. <animate attributeName="rotate" from="0" to="360" dur="3s" repeatCount="indefinite"></animate>
-9. </text>
-10. </svg>
-11. </div>
+```css
+/* xxx.css  */
+.container {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 3000px;
+    width: 1080px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/_GOWzBVJRw-Hpdd-dDVz0A/zh-cn_image_0000002589326637.gif)
-
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <svg>
-4. <text x="20" y="200" fill="blue">
-5. text attribute font-size
-6. <animate attributeName="font-size" from="10" to="50" dur="3s" repeatCount="indefinite">
-7. </animate>
-8. </text>
-9. </svg>
-10. </div>
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/ZGfRZhn6TTODJm_JXaeZbg/zh-cn_image_0000002589246579.gif)
-
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <svg>
-4. <text x="20" y="250" font-size="25" fill="blue" stroke="red">
-5. text attribute stroke
-6. <animate attributeName="stroke" from="red" to="#00FF00" dur="3s" repeatCount="indefinite"></animate>
-7. </text>
-8. <text x="300" y="250" font-size="25" fill="white" stroke="red">
-9. text attribute stroke-width-opacity
-10. <animate attributeName="stroke-width" from="1" to="5" dur="3s" repeatCount="indefinite"></animate>
-11. <animate attributeName="stroke-opacity" from="0.01" to="0.99" dur="3s" repeatCount="indefinite"></animate>
-12. </text>
-13. </svg>
-14. </div>
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <svg>
+    <text y="50" font-size="30" fill="blue">
+        text attribute x|opacity|rotate
+      <animate attributeName="x" from="100" by="400" dur="3s" repeatCount="indefinite"></animate>
+      <animate attributeName="opacity" from="0.01" to="0.99" dur="3s" repeatCount="indefinite"></animate>
+      <animate attributeName="rotate" from="0" to="360" dur="3s" repeatCount="indefinite"></animate>
+    </text>
+  </svg>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/u9IaZXXGRM2_PnnMUhIg9w/zh-cn_image_0000002558766772.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/uYSF_yxrQ5aonlBcxZiXJg/zh-cn_image_0000002736435587.gif)
+
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <svg>
+    <text x="20" y="200" fill="blue">
+      text attribute font-size
+      <animate attributeName="font-size" from="10" to="50" dur="3s" repeatCount="indefinite">
+      </animate>
+    </text>
+  </svg>
+</div>
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/xudSM9pxRhiiAAwewdXd9Q/zh-cn_image_0000002706836436.gif)
+
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <svg>
+    <text x="20" y="250" font-size="25" fill="blue" stroke="red">
+      text attribute stroke
+      <animate attributeName="stroke" from="red" to="#00FF00" dur="3s" repeatCount="indefinite"></animate>
+    </text>
+    <text x="300" y="250" font-size="25" fill="white" stroke="red">
+      text attribute stroke-width-opacity
+      <animate attributeName="stroke-width" from="1" to="5" dur="3s" repeatCount="indefinite"></animate>
+      <animate attributeName="stroke-opacity" from="0.01" to="0.99" dur="3s" repeatCount="indefinite"></animate>
+    </text>
+  </svg>
+</div>
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/8D_nDIvQTaegTYjDsxO0oA/zh-cn_image_0000002736315541.gif)

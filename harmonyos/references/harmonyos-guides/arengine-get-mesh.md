@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-get-
 title: 获取网格扫描信息（ArkTS）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 环境Mesh识别 > 获取网格扫描信息（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:35:54+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:90fff194084c3a50cdded67a53ee174f396839be39e75894f51e51f3f84ed614
+scraped_at: 2026-09-02T14:59:48+08:00
+doc_updated_at: 2026-08-14
+content_hash: sha256:0363afdfd931aaaad7728953d5a1393f4f9704bddaf5df18d99c43b4820e5c01
 ---
 
 本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/HarmonyOS_Samples/arengine_samplecode_clientdemo_arkts)。
 
 ## 约束与限制
 
-获取网格扫描信息能力支持部分Phone、部分Tablet设备。请参考[硬件要求](arengine-preparations.md#硬件要求)判断设备是否支持运动跟踪及平面识别特性（[ARENGINE\_FEATURE\_TYPE\_MESH](../harmonyos-references/arengine-api-arengine.md#arfeaturetype)）。
+从5.1.0(18)开始，获取网格扫描信息能力支持部分Phone、部分Tablet设备。请参考[硬件要求](arengine-preparations.md#硬件要求)判断设备是否支持环境Mesh识别特性（[ARENGINE\_FEATURE\_TYPE\_MESH](../harmonyos-references/arengine-api-arengine.md#arfeaturetype)）。
 
 ## 接口说明
 
@@ -42,206 +42,205 @@ AR Engine仅输出识别到的平面数据。为便于用户观察，可使用AG
 
 网格扫描能力所需要导入的模块如下：
 
-```
-1. import { arEngine, ARView, arViewController } from '@kit.AREngine';
-2. import { Node, Scene, Vec3 } from '@kit.ArkGraphics3D';
-3. import { window } from '@kit.ArkUI';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { arEngine, ARView, arViewController } from '@kit.AREngine';
+import {CubeGeometry, CustomGeometry, Geometry, Material, MaterialType, MeshResource, Node,
+  PrimitiveTopology, Scene, SceneResourceFactory, Shader, ShaderMaterial, Vec3} from '@kit.ArkGraphics3D';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { logger } from '../utils/Logger';
+import { arrayBufferFloat32ToNumber, arrayBufferInt32ToNumber, arrayToVec3, getStatusBarHeight } from '../utils/Utils';
 ```
 
 ### 定义变量
 
 定义变量hitAnchorList存储放置物体处的锚点信息、hitPoseList存储放置物体处的位姿信息和statusBarHeight设备状态栏高度。
 
-用户点击设备的坐标和显示预览流的坐标不一致，预览流的窗口略小于设备屏幕，因此需要减去设备状态栏高度以获取准确的点击坐标。
-
-```
-1. let frame: arEngine.ARFrame;
-2. let hitAnchorList: arEngine.ARAnchor[] = [];
-3. let hitPoseList: Vec3[] = [];
-4. let statusBarHeight: number = 0;
+```typescript
+let frame: arEngine.ARFrame;
+let hitAnchorList: arEngine.ARAnchor[] = [];
+let hitPoseList: Vec3[] = [];
 ```
 
 ### 显示预览流
 
 首先初始化AR会话和AR场景，可以参考[初始化AR会话和AR场景](arengine-arsession.md#初始化ar会话和ar场景)章节。
 
-```
-1. @Builder
-2. export function ARMeshBuilder(): void {
-3. ARMesh();
-4. }
+```typescript
+@Builder
+export function ARMeshBuilder(): void {
+  ARMesh();
+}
+// ...
+@Component
+struct ARMesh {
+  @State arContext?: arViewController.ARViewContext = undefined;
+  @State context: Context = this.getUIContext().getHostContext() as Context;
+  @State statusBarHeight: number = 0;
 
-6. @Component
-7. struct ARMesh {
-8. @State arContext?: arViewController.ARViewContext = undefined;
-9. @State context: Context = this.getUIContext().getHostContext() as Context;
+  async aboutToAppear(): Promise<void> {
+    this.statusBarHeight = await getStatusBarHeight(this.context);
+  }
 
-11. build(): void {
-12. NavDestination() {
-13. RelativeContainer() {
-14. if (this.arContext) {
-15. ARView({ context: this.arContext })
-16. .height('100%')
-17. .width('100%')
-18. .alignRules({
-19. center: { anchor: '__container__', align: VerticalAlign.Center },
-20. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-21. })
-22. .onClick((event) => {
-23. this.objectCollisionDetection(event);
-24. })
-25. }
-26. }
-27. }
-28. .onAppear(() => {
-29. this.initARView();
-30. this.getAvoidArea();
-31. })
-32. .onWillDisappear(() => {
-33. this.stopARView();
-34. })
-35. .onShown(() => {
-36. this.resumeARView();
-37. })
-38. .onHidden(() => {
-39. this.pauseARView();
-40. })
-41. .hideTitleBar(true)
-42. .hideBackButton(true)
-43. .hideToolBar(true)
-44. }
+  build(): void {
+    NavDestination() {
+      RelativeContainer() {
+        if (this.arContext) {
+          ARView({ context: this.arContext })
+            .height('100%')
+            .width('100%')
+            .alignRules({
+              center: { anchor: '__container__', align: VerticalAlign.Center },
+              middle: { anchor: '__container__', align: HorizontalAlign.Center }
+            })
+            .onClick((event) => {
+              this.objectCollisionDetection(event);
+            })
+        }
+      }
+    }
+    .onAppear(() => {
+      this.initARView();
+    })
+    .onWillDisappear(async () => {
+      await this.stopARView();
+    })
+    .onShown(() => {
+      this.resumeARView();
+    })
+    .onHidden(() => {
+      this.pauseARView();
+    })
+    .hideTitleBar(true)
+    .hideBackButton(true)
+    .hideToolBar(true)
+  }
 
-46. // 获取用户点击坐标，获取碰撞检测结果
-47. private objectCollisionDetection(event: ClickEvent): void {
-48. let x: number = this.getUIContext().vp2px(event.windowX);
-49. let y: number = this.getUIContext().vp2px(event.windowY) - statusBarHeight;
-50. console.info(`Get onclick position, x: ${x} y: ${y}.`);
+  private objectCollisionDetection(event: ClickEvent): void {
+    let x: number = this.getUIContext().vp2px(event.windowX);
+    let y: number = this.getUIContext().vp2px(event.windowY) - this.statusBarHeight;
+    logger.info(`Get onclick position, x: ${x} y: ${y}.`);
 
-52. try {
-53. let result: arEngine.ARHitResult[] = frame.hitTest(x, y);
-54. console.info(`The hitResult size is: ${result.length}.`);
-55. if (!result) {
-56. return;
-57. }
+    try {
+      let result: arEngine.ARHitResult[] = frame.hitTest(x, y);
+      logger.info(`The hitresult size is: ${result.length}.`);
+      if (!result) {
+        return;
+      }
 
-59. for (let i = 0; i < result.length; i++) {
-60. let hitResult: arEngine.ARHitResult = result[i];
-61. let distance: number = hitResult.distance;
+      for (let i = 0; i < result.length; i++) {
+        let hitResult: arEngine.ARHitResult = result[i];
+        let distance: number = hitResult.distance;
+        logger.info(`The hitresult distance is: ${distance}.`);
 
-63. if (distance <= 0) {
-64. continue;
-65. }
+        if (distance <= 0) {
+          continue;
+        }
 
-67. let hitAnchor: arEngine.ARAnchor = hitResult.createAnchor();
-68. let pos: Vec3 = hitAnchor.getPose().translation;
+        let hitAnchor: arEngine.ARAnchor = hitResult.createAnchor();
+        let pos: Vec3 = hitAnchor.getPose().translation;
 
-70. hitPoseList.push(pos);
-71. hitAnchorList.push(hitAnchor);
+        hitPoseList.push(pos);
+        hitAnchorList.push(hitAnchor);
 
-73. }
-74. console.info('Succeeded in getting hit result.'); // 成功获取碰撞目标
-75. } catch (error) {
-76. const err: BusinessError = error as BusinessError;
-77. console.error(`Failed to get hitResults. Code is ${err.code}, message is ${err.message}`);
-78. }
-79. }
+        if (hitPoseList.length > 10) {
+          hitPoseList.splice(0, 1);
+          hitAnchorList.splice(0, 1);
+        }
+      }
+      logger.info('Succeeded in getting hit result.');
+    } catch (error) {
+      const err: BusinessError = error as BusinessError;
+      logger.error(`Failed to get hitResults. Code is ${err.code}, message is ${err.message}`);
+    }
+  }
 
-81. private initARView(): void {
-82. Scene.load().then((scene: Scene) => {
-83. let viewContext: arViewController.ARViewContext = new arViewController.ARViewContext();
-84. viewContext.scene = scene;
-85. viewContext.callback = new ARViewCallbackImpl();
-86. viewContext.config = {
-87. type: arEngine.ARType.WORLD,
-88. planeFindingMode: arEngine.ARPlaneFindingMode.HORIZONTAL_AND_VERTICAL,
-89. powerMode: arEngine.ARPowerMode.NORMAL,
-90. semanticMode: arEngine.ARSemanticMode.NONE,
-91. poseMode: arEngine.ARPoseMode.GRAVITY,
-92. depthMode: arEngine.ARDepthMode.AUTOMATIC,
-93. meshMode: arEngine.ARMeshMode.ENABLE, // 开启mesh
-94. focusMode: arEngine.ARFocusMode.AUTO
-95. };
-96. viewContext.init().then(() => {
-97. this.arContext = viewContext;
-98. console.info('Succeeded in initializing ARView.');
-99. }).catch((err: BusinessError) => {
-100. console.error(`Failed to init ARView. Code is ${err.code}, message is ${err.message}.`);
-101. });
-102. });
-103. }
+  private initARView(): void {
+    Scene.load().then(async (scene: Scene) => {
+      let viewContext: arViewController.ARViewContext = new arViewController.ARViewContext();
+      viewContext.scene = scene;
+      viewContext.callback = new ARViewCallbackImpl();
+      viewContext.config = {
+        type: arEngine.ARType.WORLD,
+        planeFindingMode: arEngine.ARPlaneFindingMode.HORIZONTAL_AND_VERTICAL,
+        powerMode: arEngine.ARPowerMode.NORMAL,
+        semanticMode: arEngine.ARSemanticMode.NONE,
+        poseMode: arEngine.ARPoseMode.GRAVITY,
+        depthMode: arEngine.ARDepthMode.AUTOMATIC,
+        meshMode: arEngine.ARMeshMode.ENABLE,
+        focusMode: arEngine.ARFocusMode.AUTO
+      }
+      viewContext.init().then(() => {
+        this.arContext = viewContext;
+        logger.info('Succeeded in initting ARView.');
+      }).catch((err: BusinessError) => {
+        logger.error(`Failed to init ARView. Code is ${err.code}, message is ${err.message}.`);
+      })
+    })
+  }
 
-105. // 获取屏幕上减去状态栏的真实高度（预览流高度）
-106. private getAvoidArea(): void {
-107. let avoidAreaType: window.AvoidAreaType = window.AvoidAreaType.TYPE_SYSTEM;
-108. window.getLastWindow(this.context).then((data) => {
-109. // 获取顶部状态栏高度
-110. let avoidArea1: window.AvoidArea = data.getWindowAvoidArea(avoidAreaType);
-111. statusBarHeight = avoidArea1.topRect.height;
-112. console.info(`The statusBarHeight is ${statusBarHeight}.`);
-113. }).catch((err: BusinessError) => {
-114. console.error(`Failed to obtain the window. Code is ${err.code}, message is ${err.message}.`);
-115. })
-116. }
+  private async stopARView(): Promise<void> {
+    // ...
+  }
 
-118. private stopARView(): void {
-119. // ...
-120. }
-121. private resumeARView(): void {
-122. // ...
-123. }
-124. private pauseARView(): void {
-125. // ...
-126. }
-127. }
+  private resumeARView(): void {
+    // ...
+  }
+
+  private pauseARView(): void {
+    // ...
+  }
+}
 ```
 
 ### 获取mesh网格数据
 
 调用[ARViewCallback](../harmonyos-references/arengine-api-arviewcontroller.md#arviewcallback)，使用其中的[onFrameUpdate](../harmonyos-references/arengine-api-arviewcontroller.md#arviewcallbackonframeupdate)方法进行帧数据更新，获取mesh网格数据。
 
-```
-1. class ARViewCallbackImpl extends arViewController.ARViewCallback {
-2. onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
-3. // ...
-4. }
+```typescript
+class ARViewCallbackImpl extends arViewController.ARViewCallback {
+  // ...
+  onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
+  }
 
-6. onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
-7. // ...
-8. }
+  onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
+  }
 
-10. onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): void {
-11. let planeVertices: number[] = [];
-12. let vertexNormals: number[] = [];
-13. let triangleIndices: number[] = [];
+  async onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): Promise<void> {
+    if (!ctx.session) {
+      return;
+    }
 
-15. if (!ctx.session) {
-16. return;
-17. }
+    let session: arEngine.ARSession | undefined = ctx.session;
 
-19. let session: arEngine.ARSession | undefined = ctx.session;
+    // 网格颜色由mesh.shader文件控制。
+    let rf: SceneResourceFactory = ctx.scene.getResourceFactory();
+    this.material = await rf.createMaterial({ name: 'CustomMaterial' }, MaterialType.SHADER);
+    this.shader = await rf.createShader({ name: 'CustomShader', uri: $rawfile('shaders/custom_shader/mesh.shader') });
+    this.material.colorShader = this.shader;
+    (this.material as CustomerMaterial).blend = { enabled: true };
 
-21. try {
-22. frame = session.getFrame();
-23. let camera: arEngine.ARCamera = frame.getCamera();
-24. let sceneMesh: arEngine.ARSceneMesh = frame.acquireSceneMesh();
+    try {
+      frame = session.getFrame();
+      let camera: arEngine.ARCamera = frame.getCamera();
 
-26. if (camera.state === arEngine.ARTrackingState.TRACKING) {
-27. planeVertices = arrayBufferFloat32ToNumber(sceneMesh.getVertices());
-28. triangleIndices = arrayBufferInt32ToNumber(sceneMesh.getTriangleIndices());
-29. vertexNormals = arrayBufferFloat32ToNumber(sceneMesh.getVertexNormals());
-
-31. // 输出mesh数据
-32. console.info(`The mesh data planeVertices is: ${planeVertices}, triangleIndices is: ${triangleIndices},
-33. vertexNormals is: ${vertexNormals}.`);
-34. }
-
-36. } catch (error) {
-37. const err: BusinessError = error as BusinessError;
-38. console.error(`Failed to acquire depth information. Code is ${err.code}, message is ${err.message}.`);
-39. }
-40. }
-41. }
+      if (camera.state === arEngine.ARTrackingState.TRACKING) {
+        planeVertices = arrayBufferFloat32ToNumber(frame.acquireSceneMesh().getVertices());
+        triangleIndices = arrayBufferInt32ToNumber(frame.acquireSceneMesh().getTriangleIndices());
+        vertexNormals = arrayBufferFloat32ToNumber(frame.acquireSceneMesh().getVertexNormals());
+        isDisplayCube = true;
+      } else {
+        planeVertices = [];
+        triangleIndices = [];
+        vertexNormals = [];
+        isDisplayCube = false;
+      }
+      // ...
+    } catch (error) {
+      const err: BusinessError = error as BusinessError;
+      logger.error(`Failed to acquire depth information. Code is ${err.code}, message is ${err.message}.`);
+    }
+  }
+}
 ```
 
 ### 获取网格扫描信息的自定义方法

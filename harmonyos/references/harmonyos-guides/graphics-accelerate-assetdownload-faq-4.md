@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-accelerate-assetdownload-faq-4
-title: 游戏资源加速ExtensionAbility方法中使用static静态变量为什么不生效？
-breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > Graphics Accelerate Kit常见问题 > 游戏资源加速服务 > 游戏资源加速ExtensionAbility方法中使用static静态变量为什么不生效？
+title: 游戏资源加速ExtensionAbility方法中使用static静态变量为什么不生效
+breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > Graphics Accelerate Kit常见问题 > 游戏资源加速服务 > 游戏资源加速ExtensionAbility方法中使用static静态变量为什么不生效
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:46+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-02T15:17:37+08:00
+doc_updated_at: 2026-05-08
 content_hash: sha256:0b33c25d80fac446358428096e66227eb453ff242bc2411344c95be311157113
 ---
 

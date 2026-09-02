@@ -3,30 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: GridCol
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 栅格与分栏 > GridCol
 category: harmonyos-references
-scraped_at: 2026-04-29T13:51:40+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:99576df62ef28808e8bd0666eec46f5d8eb17fb95b62656977daab4810a5c3a2
+scraped_at: 2026-09-02T15:00:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7f70ef9390c7d4d037aec93b0d4ee5eb5e85044898dbceccff8c862d6df63f63
 ---
 
-栅格子组件，必须作为栅格容器组件([GridRow](ts-container-gridrow.md))的子组件使用。
+栅格布局系统中的列组件，必须作为栅格容器组件([GridRow](ts-container-gridrow.md))的子组件使用。适用于响应式布局、多设备适配等需要动态调整列宽的场景。支持响应式断点配置、跨列布局、偏移和排序功能。使用GridCol组件可以快速实现响应式布局，简化多设备适配的开发工作。
 
-说明
+**说明** 
 
-该组件从API version 9开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+该组件从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 子组件
-
-PhonePC/2in1TabletTVWearable
 
 可以包含单个子组件。
 
 ## 接口
 
-PhonePC/2in1TabletTVWearable
-
 GridCol(option?: GridColOptions)
 
-栅格列布局组件。
+栅格列布局组件。创建成功后，可根据配置的span、offset、order属性进行栅格布局，作为GridRow的子组件参与栅格系统的布局计算。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -38,11 +34,9 @@ GridCol(option?: GridColOptions)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| option | [GridColOptions](ts-container-gridcol.md#gridcoloptions对象说明) | 否 | 栅格布局子组件参数。 |
+| option | [GridColOptions](ts-container-gridcol.md#gridcoloptions对象说明) | 否 | 栅格布局子组件配置选项，可配置span（占用列数）、offset（偏移列数）、order（排序序号）。当需要自定义栅格布局行为（如响应式列宽、固定偏移位置、指定渲染顺序）时传入此参数；当使用默认栅格布局时可不传入。不传入时使用默认配置。 |
 
 ## GridColOptions对象说明
-
-PhonePC/2in1TabletTVWearable
 
 设置栅格列布局组件布局选项。
 
@@ -54,27 +48,23 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| span | number | [GridColColumnOption](ts-container-gridcol.md#gridcolcolumnoption) | 否 | 是 | 栅格子组件占用栅格容器组件的列数。span为0表示该元素不参与布局计算，即不会被渲染。  取值为非负整数，默认值为1  非法值：按默认值处理。 |
-| offset | number | [GridColColumnOption](ts-container-gridcol.md#gridcolcolumnoption) | 否 | 是 | 栅格子组件相对于原本位置偏移的列数。  取值为非负整数，默认值为0  非法值：按默认值处理。 |
+| span | number | [GridColColumnOption](ts-container-gridcol.md#gridcolcolumnoption) | 否 | 是 | 栅格子组件占用栅格容器组件的列数。span为0表示该元素不参与布局计算，即不会被渲染。  取值为非负整数，默认值为1。  非法值：按默认值处理。 |
+| offset | number | [GridColColumnOption](ts-container-gridcol.md#gridcolcolumnoption) | 否 | 是 | 栅格子组件相对于原本位置偏移的列数。offset为0表示不偏移。  取值为非负整数，默认值为0。  非法值：按默认值处理。 |
 | order | number | [GridColColumnOption](ts-container-gridcol.md#gridcolcolumnoption) | 否 | 是 | 元素的序号，根据栅格子组件的序号，从小到大对栅格子组件做排序。  取值为非负整数，默认值为0。  非法值：按默认值处理。  **说明：**  当子组件不设置order或者设置相同的order，子组件按照代码顺序展示。  当子组件部分设置order，部分不设置order时，未设置order的子组件依次排序靠前，设置了order的子组件按照数值从小到大排列。 |
 
 span、offset、order属性按照xs、sm、md、lg、xl、xxl的顺序具有“继承性”，未设置值的断点将会从前一个断点取值。
 
-API version 20之后，span的继承规则见[GridColColumnOption](ts-container-gridcol.md#gridcolcolumnoption)。
+API version 20之后，span的继承规则见[GridColColumnOption](ts-container-gridcol.md#gridcolcolumnoption)，offset和order的继承规则保持不变。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](ts-component-general-attributes.md)外，还支持以下属性：
 
 ### span
 
-PhonePC/2in1TabletTVWearable
-
 span(value: number | GridColColumnOption)
 
-设置占用列数。span为0，意味着该元素不参与布局计算，即不会被渲染。
+设置栅格子组件占用列数。调用成功后，栅格子组件将按照设置的列数占据相应宽度的栅格区域。span为0表示该元素不参与布局计算，即不会被渲染。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -86,15 +76,13 @@ span(value: number | GridColColumnOption)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | [GridColColumnOption](ts-container-gridcol.md#gridcolcolumnoption) | 是 | 占用列数。  取值为非负整数，默认值为1。  非法值：按默认值处理。 |
+| value | number | [GridColColumnOption](ts-container-gridcol.md#gridcolcolumnoption) | 是 | 占用列数。span为0表示该元素不参与布局计算，即不会被渲染。  取值为非负整数，默认值为1。  非法值：按默认值处理。  **说明：** 该属性具有断点继承性，详见[GridColOptions对象说明](ts-container-gridcol.md#gridcoloptions对象说明)。API version 20之后，默认值继承规则有变化，详见[GridColColumnOption](ts-container-gridcol.md#gridcolcolumnoption)。 |
 
 ### gridColOffset
 
-PhonePC/2in1TabletTVWearable
-
 gridColOffset(value: number | GridColColumnOption)
 
-设置相对于前一个栅格子组件偏移的列数。
+设置栅格子组件相对于原本位置偏移的列数。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -106,11 +94,9 @@ gridColOffset(value: number | GridColColumnOption)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | [GridColColumnOption](ts-container-gridcol.md#gridcolcolumnoption) | 是 | 相对于前一个栅格子组件偏移的列数。  取值为非负整数，默认值：0  非法值：按默认值处理。 |
+| value | number | [GridColColumnOption](ts-container-gridcol.md#gridcolcolumnoption) | 是 | 相对于原本位置偏移的列数。gridColOffset为0表示不偏移。  取值为非负整数，默认值为0。  非法值：按默认值处理。  **说明：** 该属性具有断点继承性，详见[GridColOptions对象说明](ts-container-gridcol.md#gridcoloptions对象说明)。 |
 
 ### order
-
-PhonePC/2in1TabletTVWearable
 
 order(value: number | GridColColumnOption)
 
@@ -126,25 +112,23 @@ order(value: number | GridColColumnOption)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | [GridColColumnOption](ts-container-gridcol.md#gridcolcolumnoption) | 是 | 元素的序号，根据栅格子组件的序号，从小到大对栅格子组件做排序。  取值为非负整数，默认值：0  非法值：按默认值处理。 |
+| value | number | [GridColColumnOption](ts-container-gridcol.md#gridcolcolumnoption) | 是 | 元素序号，根据栅格子组件的序号从小到大排序。  取值为非负整数，默认值为0。  非法值：按默认值处理。  **说明：** 该属性具有断点继承性，详见[GridColOptions对象说明](ts-container-gridcol.md#gridcoloptions对象说明)。 |
 
 ## GridColColumnOption
-
-PhonePC/2in1TabletTVWearable
 
 用于自定义指定在不同宽度设备类型上，栅格子组件占据的栅格数量单位。
 
 * API version 20之前，仅配置部分断点下GridCol组件所占列数，取已配置的更小断点的列数补全未配置的列数。若未配置更小断点的列数，取默认值1。
 
-  ```
-  1. span: {xs:2, md:4, lg:8} // 等于配置 span: {xs:2, sm:2, md:4, lg:8, xl:8, xxl:8}
-  2. span: {md:4, lg:8} // 等于配置 span: {xs:1, sm:1, md:4, lg:8, xl:8, xxl:8}
+  ```ts
+  span: {xs:2, md:4, lg:8} // 等于配置 span: {xs:2, sm:2, md:4, lg:8, xl:8, xxl:8}
+  span: {md:4, lg:8} // 等于配置 span: {xs:1, sm:1, md:4, lg:8, xl:8, xxl:8}
   ```
 * API version 20及以后，仅配置部分断点下GridCol组件所占列数，取已配置的更小断点的列数补全未配置的列数。若未配置更小断点的列数，取已配置的更大断点的列数补全未配置的列数。
 
-  ```
-  1. span: {xs:2, md:4, lg:8} // 等于配置 span: {xs:2, sm:2, md:4, lg:8, xl:8, xxl:8}
-  2. span: {md:4, lg:8} // 等于配置 span: {xs:4, sm:4, md:4, lg:8, xl:8, xxl:8}
+  ```ts
+  span: {xs:2, md:4, lg:8} // 等于配置 span: {xs:2, sm:2, md:4, lg:8, xl:8, xxl:8}
+  span: {md:4, lg:8} // 等于配置 span: {xs:4, sm:4, md:4, lg:8, xl:8, xxl:8}
   ```
 * 建议手动配置不同断点下GridCol组件所占列数，避免默认补全列数的布局效果不符合预期。
 
@@ -156,62 +140,61 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| xs | number | 否 | 是 | 在栅格大小为xs的设备上，栅格容器组件的栅格列数。 |
-| sm | number | 否 | 是 | 在栅格大小为sm的设备上，栅格容器组件的栅格列数。 |
-| md | number | 否 | 是 | 在栅格大小为md的设备上，栅格容器组件的栅格列数。 |
-| lg | number | 否 | 是 | 在栅格大小为lg的设备上，栅格容器组件的栅格列数。 |
-| xl | number | 否 | 是 | 在栅格大小为xl的设备上，栅格容器组件的栅格列数。 |
-| xxl | number | 否 | 是 | 在栅格大小为xxl的设备上，栅格容器组件的栅格列数。 |
+| xs | number | 否 | 是 | 在最小宽度类型设备上，栅格子组件占据的栅格列数。取值为非负整数。默认值为1。非法值：按默认值处理。 |
+| sm | number | 否 | 是 | 在小宽度类型设备上，栅格子组件占据的栅格列数。取值为非负整数。默认值为1。非法值：按默认值处理。 |
+| md | number | 否 | 是 | 在中等宽度类型设备上，栅格子组件占据的栅格列数。取值为非负整数。默认值为1。非法值：按默认值处理。 |
+| lg | number | 否 | 是 | 在大宽度类型设备上，栅格子组件占据的栅格列数。取值为非负整数。默认值为1。非法值：按默认值处理。 |
+| xl | number | 否 | 是 | 在特大宽度类型设备上，栅格子组件占据的栅格列数。取值为非负整数。默认值为1。非法值：按默认值处理。 |
+| xxl | number | 否 | 是 | 在超大宽度类型设备上，栅格子组件占据的栅格列数。取值为非负整数。默认值为1。非法值：按默认值处理。 |
 
 ## 事件
-
-PhonePC/2in1TabletTVWearable
 
 支持[通用事件](ts-component-general-events.md)。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 GridCol的基本用法示例。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct GridColExample {
-5. @State bgColors: Color[] =
-6. [Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink, Color.Grey, Color.Blue, Color.Brown]
-7. @State currentBp: string = 'unknown'
+```ts
+// xxx.ets
+@Entry
+@Component
+struct GridColExample {
+  @State bgColors: Color[] =
+    [Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink, Color.Grey, Color.Blue, Color.Brown]
+  @State currentBp: string = 'unknown'
 
-9. build() {
-10. Column() {
-11. GridRow({
-12. columns: 5,
-13. gutter: { x: 5, y: 10 },
-14. breakpoints: {
-15. value: ['400vp', '600vp', '800vp'],
-16. reference: BreakpointsReference.WindowSize
-17. },
-18. direction: GridRowDirection.Row
-19. }) {
-20. ForEach(this.bgColors, (color: Color) => {
-21. GridCol({
-22. span: { xs: 1, sm: 2, md: 3, lg: 4 },
-23. offset: 0,
-24. order: 0
-25. }) {
-26. Row().width('100%').height('20vp')
-27. }.borderColor(color).borderWidth(2)
-28. })
-29. }.width('100%').height('100%')
-30. .onBreakpointChange((breakpoint) => {
-31. this.currentBp = breakpoint
-32. })
-33. }.width('80%').margin({ left: 10, top: 5, bottom: 5 }).height(200)
-34. .border({ color: '#880606', width: 2 })
-35. }
-36. }
+  build() {
+    Column() {
+      // 创建栅格容器，配置列数、间距和响应式断点
+      GridRow({
+        columns: 5,
+        gutter: { x: 5, y: 10 },
+        // 设置响应式断点，基于窗口尺寸判断
+        breakpoints: {
+          value: ['400vp', '600vp', '800vp'],
+          reference: BreakpointsReference.WindowSize
+        },
+        direction: GridRowDirection.Row
+      }) {
+        ForEach(this.bgColors, (color: Color) => {
+          // 配置不同断点下的span值，实现响应式布局
+          GridCol({
+            span: { xs: 1, sm: 2, md: 3, lg: 4 },
+            offset: 0,
+            order: 0
+          }) {
+            Row().width('100%').height('20vp')
+          }.borderColor(color).borderWidth(2)
+        })
+      }.width('100%').height('100%')
+      .onBreakpointChange((breakpoint) => {
+        this.currentBp = breakpoint
+      })
+    }.width('80%').margin({ left: 10, top: 5, bottom: 5 }).height(200)
+    .border({ color: '#880606', width: 2 })
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/vIzja-QiQpWxU00Pmz2sQQ/zh-cn_image_0000002589245933.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/OGzsFgAVQv65pbxhyTkg9Q/zh-cn_image_0000002706675812.png)

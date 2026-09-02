@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-rcp
-title: rcp
-breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > ArkTS API > rcp
+title: rcp（数据请求）
+breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > ArkTS API > rcp（数据请求）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:57+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:fd3b5f129f534c39a33a348fbeaac0f6b20713922bba14393e94b2a4a5729be9
+scraped_at: 2026-09-02T15:01:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1082f22ff61e98025ca717ddd8bff46b523c89791144baa572c3bd6cb34877f9
 ---
 
 本模块提供HTTP数据请求功能。应用程序可通过HTTP发起数据请求。常见的HTTP方法包括GET、POST、HEAD、PUT、DELETE、PATCH、OPTIONS等。
@@ -16,23 +16,15 @@ content_hash: sha256:fd3b5f129f534c39a33a348fbeaac0f6b20713922bba14393e94b2a4a57
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 ```
 
 ## createSession
 
-PhonePC/2in1TabletTVWearable
-
 createSession(sessionConfiguration?: SessionConfiguration): Session
 
 创建HTTP会话。这是启动HTTP交互的主要方法。开发者可以使用此API与[SessionConfiguration](remote-communication-rcp.md#sessionconfiguration)一起创建会话。
-
-说明
-
-自5.1.0(18)版本开始变更为最多可创建1024个session实例，应用在通过创建的session实例访问完网络请求后，应及时关闭session，保证资源合理利用。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -50,26 +42,24 @@ createSession(sessionConfiguration?: SessionConfiguration): Session
 
 | 类型 | 说明 |
 | --- | --- |
-| [Session](remote-communication-rcp.md#session) | 代表一个会话，用于发送HTTP请求并管理其配置、取消和关闭的生命周期。 |
+| [Session](remote-communication-rcp.md#session) | 代表一个会话，用于发送HTTP请求并管理其配置、取消和关闭的生命周期。自5.1.0(18)版本开始变更为最多可创建1024个session实例，应用在通过创建的session实例访问完网络请求后，应及时关闭session，保证资源合理利用。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | [401](errorcode-universal.md#section401-参数检查失败) | Parameter error. |
-| [1007900994](remote-communication-error-code.md#section1007900994-会话数达到限制) | Sessions number reached limit. |
+| [1007900994](errorcode-remote-communication.md#section1007900994-会话数达到限制) | Sessions number reached limit. |
 
 **示例：**
 
-```
-1. const session = rcp.createSession();
+```typescript
+const session = rcp.createSession();
 ```
 
 ## Session
-
-PhonePC/2in1TabletTVWearable
 
 Session类表示可用于发出HTTP请求的通信会话。它提供了各种HTTP方法（FETCH、GET、POST、PUT、HEAD、DELETE、CANCEL、CLOSE）。
 
@@ -88,11 +78,9 @@ Session类表示可用于发出HTTP请求的通信会话。它提供了各种HTT
 
 ### fetch
 
-PhonePC/2in1TabletTVWearable
-
 fetch(request: Request): Promise<Response>
 
-发送一个HTTP请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
+发送HTTP请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
 
 **需要权限：** ohos.permission.INTERNET（如果使用[PathPreference](remote-communication-rcp.md#pathpreference)的'cellular'模式，则额外需要ohos.permission.GET\_NETWORK\_INFO）
 
@@ -106,7 +94,7 @@ fetch(request: Request): Promise<Response>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| request | [Request](remote-communication-rcp.md#request) | 是 | 要发送的请求。 |
+| request | [Request](remote-communication-rcp.md#request) | 是 | 待发送的请求。 |
 
 **返回值：**
 
@@ -116,30 +104,28 @@ fetch(request: Request): Promise<Response>
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-4. const session = rcp.createSession();
-5. let req = new rcp.Request("http://example.com/fetch", "POST");
-6. session.fetch(req).then((response) => {
-7. console.info(`Succeeded in getting the response ${response}`);
-8. }).catch((err: BusinessError) => {
-9. console.error(`err: error code is ${err.code}, error data is ${err.data}`);
-10. });
+const session = rcp.createSession();
+let req = new rcp.Request('http://example.com/fetch', 'POST');
+session.fetch(req).then((response) => {
+  console.info(`Succeeded in getting the response ${response}`);
+}).catch((err: BusinessError) => {
+  console.error(`err: error code is ${err.code}, error data is ${err.data}`);
+});
 ```
 
 ### fetchForSendable
 
-PhonePC/2in1TabletTVWearable
-
 fetchForSendable(request: Request): Promise<ResponseSendable>
 
-发送一个HTTP请求，并返回服务器的HTTP响应，该响应消息支持Sendable。使用Promise异步回调。
+发送HTTP请求，并返回服务器的HTTP响应，该响应消息支持[Sendable](../HarmonyOS-Guides/arkts-sendable.md)。使用Promise异步回调。
 
 **需要权限：** ohos.permission.INTERNET（如果使用[PathPreference](remote-communication-rcp.md#pathpreference)的'cellular'模式，则额外需要ohos.permission.GET\_NETWORK\_INFO）
 
@@ -163,52 +149,50 @@ fetchForSendable(request: Request): Promise<ResponseSendable>
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
-2. import { ArkTSUtils, collections, taskpool, util } from '@kit.ArkTS';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
+import { ArkTSUtils, collections, taskpool, util } from '@kit.ArkTS';
 
-4. @Concurrent
-5. async function taskFunc(sendableResponse: rcp.ResponseSendable) {
-6. console.info(`sendableResponse: ${ArkTSUtils.ASON.stringify(sendableResponse)}`);
-7. // 打印Sendable类型的body数据
-8. if (ArkTSUtils.isSendable(sendableResponse.body) && sendableResponse.body != undefined) {
-9. const decoder = util.TextDecoder.create('utf-8');
-10. let arr: collections.Uint8Array = new collections.Uint8Array(sendableResponse.body);
-11. let str = decoder.decodeToString(arr as Object as Uint8Array).trim();
-12. console.info(`body:${ArkTSUtils.ASON.stringify(str)}`);
-13. }
-14. }
+@Concurrent
+async function taskFunc(sendableResponse: rcp.ResponseSendable) {
+  console.info(`sendableResponse: ${ArkTSUtils.ASON.stringify(sendableResponse)}`);
+  // 打印Sendable类型的body数据
+  if (ArkTSUtils.isSendable(sendableResponse.body) && sendableResponse.body != undefined) {
+    const decoder = util.TextDecoder.create('utf-8');
+    let arr: collections.Uint8Array = new collections.Uint8Array(sendableResponse.body);
+    let str = decoder.decodeToString(arr as Object as Uint8Array).trim();
+    console.info(`body:${ArkTSUtils.ASON.stringify(str)}`);
+  }
+}
 
-16. async function test() {
-17. try {
-18. const session = rcp.createSession();
-19. let request = new rcp.Request('https://www.example.com'); // 请在使用中将其替换为真实的网址。
-20. let sendableResponse = await session.fetchForSendable(request);
-21. let isSendable = ArkTSUtils.isSendable(sendableResponse);
-22. if (isSendable) {
-23. console.info(`Succeeded in getting the response, the response is sendable`);
-24. } else {
-25. console.info(`Succeeded in getting the response, the response is not sendable`);
-26. }
-27. let task: taskpool.Task = new taskpool.Task(taskFunc, sendableResponse);
-28. await taskpool.execute(task);
-29. } catch (err) {
-30. console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
-31. }
-32. }
+async function test() {
+  try {
+    const session = rcp.createSession();
+    let request = new rcp.Request('https://www.example.com'); // 请在使用中将其替换为真实的网址。
+    let sendableResponse = await session.fetchForSendable(request);
+    let isSendable = ArkTSUtils.isSendable(sendableResponse);
+    if (isSendable) {
+      console.info(`Succeeded in getting the response, the response is sendable`);
+    } else {
+      console.info(`Succeeded in getting the response, the response is not sendable`);
+    }
+    let task: taskpool.Task = new taskpool.Task(taskFunc, sendableResponse);
+    await taskpool.execute(task);
+  } catch (err) {
+    console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
+  }
+}
 ```
 
 ### get
 
-PhonePC/2in1TabletTVWearable
-
 get(url: URLOrString, destination?: ResponseBodyDestination): Promise<Response>
 
-发送一个带有默认HTTP参数的HTTP GET请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
+发送带有默认HTTP参数的HTTP GET请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
 
 **需要权限：** ohos.permission.INTERNET（如果使用[PathPreference](remote-communication-rcp.md#pathpreference)的'cellular'模式，则额外需要ohos.permission.GET\_NETWORK\_INFO）
 
@@ -233,29 +217,27 @@ get(url: URLOrString, destination?: ResponseBodyDestination): Promise<Response>
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-4. const session = rcp.createSession();
-5. session.get("http://example.com/get").then((response) => {
-6. console.info(`Succeeded in getting the response ${response}`);
-7. }).catch((err: BusinessError) => {
-8. console.error(`err: error code is ${err.code}, error data is ${err.data}`);
-9. });
+const session = rcp.createSession();
+session.get('http://example.com/get').then((response) => {
+  console.info(`Succeeded in getting the response ${response}`);
+}).catch((err: BusinessError) => {
+  console.error(`err: error code is ${err.code}, error data is ${err.data}`);
+});
 ```
 
 ### post
 
-PhonePC/2in1TabletTVWearable
-
 post(url: URLOrString, content?: RequestContent, destination?: ResponseBodyDestination): Promise<Response>
 
-发送一个带有默认HTTP参数的HTTP POST请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
+发送带有默认HTTP参数的HTTP POST请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
 
 **需要权限：** ohos.permission.INTERNET（如果使用[PathPreference](remote-communication-rcp.md#pathpreference)的'cellular'模式，则额外需要ohos.permission.GET\_NETWORK\_INFO）
 
@@ -281,29 +263,27 @@ post(url: URLOrString, content?: RequestContent, destination?: ResponseBodyDesti
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-4. const session = rcp.createSession();
-5. session.post("http://example.com/post", "data to send").then((response) => {
-6. console.info(`Succeeded in getting the response ${response}`);
-7. }).catch((err: BusinessError) => {
-8. console.error(`err: error code is ${err.code}, error data is ${err.data}`);
-9. });
+const session = rcp.createSession();
+session.post('http://example.com/post', 'data to send').then((response) => {
+  console.info(`Succeeded in getting the response ${response}`);
+}).catch((err: BusinessError) => {
+  console.error(`err: error code is ${err.code}, error data is ${err.data}`);
+});
 ```
 
 ### put
 
-PhonePC/2in1TabletTVWearable
-
 put(url: URLOrString, content?: RequestContent, destination?: ResponseBodyDestination): Promise<Response>
 
-发送一个带有默认HTTP参数的HTTP PUT请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
+发送带有默认HTTP参数的HTTP PUT请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
 
 **需要权限：** ohos.permission.INTERNET（如果使用[PathPreference](remote-communication-rcp.md#pathpreference)的'cellular'模式，则额外需要ohos.permission.GET\_NETWORK\_INFO）
 
@@ -318,7 +298,7 @@ put(url: URLOrString, content?: RequestContent, destination?: ResponseBodyDestin
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | [URLOrString](remote-communication-rcp.md#urlorstring) | 是 | HTTP PUT请求资源的URL。 |
-| content | [RequestContent](remote-communication-rcp.md#requestcontent) | 否 | 请求正文发送的内容。默认为undefined。 |
+| content | [RequestContent](remote-communication-rcp.md#requestcontent) | 否 | 请求的正文内容。默认为undefined。 |
 | destination | [ResponseBodyDestination](remote-communication-rcp.md#responsebodydestination) | 否 | HTTP响应的目标位置或目的地。  **起始版本：** 5.0.0(12) |
 
 **返回值：**
@@ -329,29 +309,27 @@ put(url: URLOrString, content?: RequestContent, destination?: ResponseBodyDestin
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-4. const session = rcp.createSession();
-5. session.put("http://example.com/put", "data to send").then((response) => {
-6. console.info(`Succeeded in getting the response ${response.toString()}`);
-7. }).catch((err: BusinessError) => {
-8. console.error(`err: error code is ${err.code}, error data is ${err.data}`);
-9. });
+const session = rcp.createSession();
+session.put('http://example.com/put', 'data to send').then((response) => {
+  console.info(`Succeeded in getting the response ${response.toString()}`);
+}).catch((err: BusinessError) => {
+  console.error(`err: error code is ${err.code}, error data is ${err.data}`);
+});
 ```
 
 ### downloadToFile
 
-PhonePC/2in1TabletTVWearable
-
 downloadToFile(url: URLOrString, downloadTo: DownloadToFile): Promise<Response>
 
-发送一个带有默认HTTP参数的HTTP DOWNLOADTOFILE请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
+发送带有默认HTTP参数的HTTP DOWNLOADTOFILE请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
 
 **需要权限：** ohos.permission.INTERNET（如果使用[PathPreference](remote-communication-rcp.md#pathpreference)的'cellular'模式，则额外需要ohos.permission.GET\_NETWORK\_INFO）
 
@@ -366,7 +344,7 @@ downloadToFile(url: URLOrString, downloadTo: DownloadToFile): Promise<Response>
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | [URLOrString](remote-communication-rcp.md#urlorstring) | 是 | HTTP DOWNLOADTOFILE请求资源的URL。 |
-| downloadTo | [DownloadToFile](remote-communication-rcp.md#downloadtofile) | 是 | HTTP中用于将服务器上下载的文件保存到本地文件系统中的指定位置。 |
+| downloadTo | [DownloadToFile](remote-communication-rcp.md#downloadtofile) | 是 | 将服务器上下载的文件保存到本地文件系统中的指定位置。 |
 
 **返回值：**
 
@@ -376,33 +354,31 @@ downloadToFile(url: URLOrString, downloadTo: DownloadToFile): Promise<Response>
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-4. let downloadToFile: rcp.DownloadToFile = {
-5. kind: 'folder',
-6. path: "/path/dir" // 请根据自身业务选择合适的路径
-7. } as rcp.DownloadToFile
-8. const session = rcp.createSession();
-9. session.downloadToFile("http://www.example.com", downloadToFile).then((response) => {
-10. console.info(`Succeeded in getting the response ${response.toString()}`);
-11. }).catch((err: BusinessError) => {
-12. console.error(`DownloadToFile failed, the error code is ${err.code}, error data is ${err.data}`);
-13. });
+let downloadToFile: rcp.DownloadToFile = {
+  kind: 'folder',
+  path: '/path/dir' // 请根据自身业务选择合适的路径
+} as rcp.DownloadToFile
+const session = rcp.createSession();
+session.downloadToFile('http://www.example.com', downloadToFile).then((response) => {
+  console.info(`Succeeded in getting the response ${response.toString()}`);
+}).catch((err: BusinessError) => {
+  console.error(`DownloadToFile failed, the error code is ${err.code}, error data is ${err.data}`);
+});
 ```
 
 ### uploadFromFile
 
-PhonePC/2in1TabletTVWearable
-
 uploadFromFile(url: URLOrString, uploadFrom: UploadFromFile): Promise<Response>
 
-发送一个带有默认HTTP参数的HTTP UPLOADFROMFILE请求，完成上传文件功能，并返回来自服务器的HTTP响应。使用Promise异步回调。
+发送带有默认HTTP参数的HTTP UPLOADFROMFILE请求，完成上传文件功能，并返回来自服务器的HTTP响应。使用Promise异步回调。
 
 **需要权限：** ohos.permission.INTERNET（如果使用[PathPreference](remote-communication-rcp.md#pathpreference)的'cellular'模式，则额外需要ohos.permission.GET\_NETWORK\_INFO）
 
@@ -417,7 +393,7 @@ uploadFromFile(url: URLOrString, uploadFrom: UploadFromFile): Promise<Response>
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | [URLOrString](remote-communication-rcp.md#urlorstring) | 是 | HTTP UPLOADFROMFILE请求资源的URL。 |
-| uploadFrom | [UploadFromFile](remote-communication-rcp.md#uploadfromfile) | 是 | HTTP中从本地计算机上传文件到服务器的请求。 |
+| uploadFrom | [UploadFromFile](remote-communication-rcp.md#uploadfromfile) | 是 | 从本地计算机上传文件到服务器的请求。 |
 
 **返回值：**
 
@@ -427,29 +403,27 @@ uploadFromFile(url: URLOrString, uploadFrom: UploadFromFile): Promise<Response>
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-4. let fileDir = "/path/dir/"; // 请根据自身业务定义此路径
-5. let uploadFromFile: rcp.UploadFromFile = {
-6. fileOrPath: fileDir
-7. };
-8. const session = rcp.createSession();
-9. session.uploadFromFile("http://example.com/head", uploadFromFile).then((response) => {
-10. console.info(`Succeeded in getting the response ${response.toString()}`);
-11. }).catch((err: BusinessError) => {
-12. console.error(`err: error code is ${err.code}, error data is ${err.data}`);
-13. });
+let fileDir = '/path/dir/'; // 请根据自身业务定义此路径
+let uploadFromFile: rcp.UploadFromFile = {
+  fileOrPath: fileDir
+};
+const session = rcp.createSession();
+session.uploadFromFile('http://example.com/head', uploadFromFile).then((response) => {
+  console.info(`Succeeded in getting the response ${response.toString()}`);
+}).catch((err: BusinessError) => {
+  console.error(`err: error code is ${err.code}, error data is ${err.data}`);
+});
 ```
 
 ### downloadToStream
-
-PhonePC/2in1TabletTVWearable
 
 downloadToStream(url: URLOrString, downloadTo: DownloadToStream): Promise<Response>
 
@@ -468,7 +442,7 @@ downloadToStream(url: URLOrString, downloadTo: DownloadToStream): Promise<Respon
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | [URLOrString](remote-communication-rcp.md#urlorstring) | 是 | HTTP DOWNLOADTOSTREAM请求资源的URL。 |
-| downloadTo | [DownloadToStream](remote-communication-rcp.md#downloadtostream-2) | 是 | HTTP中将请求文件从服务器下载到客户端，并将其写入到一个数据流中。 |
+| downloadTo | [DownloadToStream](remote-communication-rcp.md#downloadtostream-2) | 是 | 将请求文件从服务器下载到客户端，并将其写入到一个数据流中。 |
 
 **返回值：**
 
@@ -478,35 +452,33 @@ downloadToStream(url: URLOrString, downloadTo: DownloadToStream): Promise<Respon
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit'
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. const streamData: rcp.WriteStream = {
-5. write(buffer: ArrayBuffer): Promise<void | number> {
-6. return Promise.resolve(buffer.byteLength)
-7. }
-8. };
+const streamData: rcp.WriteStream = {
+  write(buffer: ArrayBuffer): Promise<void | number> {
+    return Promise.resolve(buffer.byteLength)
+  }
+};
 
-10. let downloadToStream: rcp.DownloadToStream = {
-11. kind: 'stream',
-12. stream: streamData
-13. }
-14. const session = rcp.createSession();
-15. session.downloadToStream("http://example.com/head", downloadToStream).then((response) => {
-16. console.info(`Succeeded in getting the response ${response}`);
-17. }).catch((err: BusinessError) => {
-18. console.error(`err: error code is ${err.code}, error data is ${err.data}`);
-19. });
+let downloadToStream: rcp.DownloadToStream = {
+  kind: 'stream',
+  stream: streamData
+}
+const session = rcp.createSession();
+session.downloadToStream('http://example.com/head', downloadToStream).then((response) => {
+  console.info(`Succeeded in getting the response ${response}`);
+}).catch((err: BusinessError) => {
+  console.error(`err: error code is ${err.code}, error data is ${err.data}`);
+});
 ```
 
 ### uploadFromStream
-
-PhonePC/2in1TabletTVWearable
 
 uploadFromStream(url: URLOrString, uploadFrom: UploadFromStream): Promise<Response>
 
@@ -525,7 +497,7 @@ uploadFromStream(url: URLOrString, uploadFrom: UploadFromStream): Promise<Respon
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | [URLOrString](remote-communication-rcp.md#urlorstring) | 是 | HTTP UPLOADFROMSTREAM请求资源的URL。 |
-| uploadFrom | [UploadFromStream](remote-communication-rcp.md#uploadfromstream-2) | 是 | HTTP中从一个输入流中上传数据到服务器的请求。 |
+| uploadFrom | [UploadFromStream](remote-communication-rcp.md#uploadfromstream-2) | 是 | 从一个输入流中上传数据到服务器的请求。 |
 
 **返回值：**
 
@@ -535,32 +507,30 @@ uploadFromStream(url: URLOrString, uploadFrom: UploadFromStream): Promise<Respon
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-4. let uploadFromStream: rcp.UploadFromStream = {
-5. stream: object // 此处请自行定义类型为Stream、ReadStream、SyncReadStream的对象
-6. }
-7. const session = rcp.createSession();
-8. session.uploadFromStream("http://example.com/head", uploadFromStream).then((response) => {
-9. console.info(`Succeeded in getting the response ${response}`);
-10. }).catch((err: BusinessError) => {
-11. console.error(`err: error code is ${err.code}, error data is ${err.data}`);
-12. });
+let uploadFromStream: rcp.UploadFromStream = {
+  stream: object // 此处请自行定义类型为Stream、ReadStream、SyncReadStream的对象
+}
+const session = rcp.createSession();
+session.uploadFromStream('http://example.com/head', uploadFromStream).then((response) => {
+  console.info(`Succeeded in getting the response ${response}`);
+}).catch((err: BusinessError) => {
+  console.error(`err: error code is ${err.code}, error data is ${err.data}`);
+});
 ```
 
 ### head
 
-PhonePC/2in1TabletTVWearable
-
 head(url: URLOrString): Promise<Response>
 
-发送一个带有默认HTTP参数的HTTP HEAD请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
+发送带有默认HTTP参数的HTTP HEAD请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
 
 **需要权限：** ohos.permission.INTERNET（如果使用[PathPreference](remote-communication-rcp.md#pathpreference)的'cellular'模式，则额外需要ohos.permission.GET\_NETWORK\_INFO）
 
@@ -584,29 +554,27 @@ head(url: URLOrString): Promise<Response>
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-4. const session = rcp.createSession();
-5. session.head("http://example.com/head").then((response) => {
-6. console.info(`Succeeded in getting the response ${response}`);
-7. }).catch((err: BusinessError) => {
-8. console.error(`err: error code is ${err.code}, error data is ${err.data}`);
-9. });
+const session = rcp.createSession();
+session.head('http://example.com/head').then((response) => {
+  console.info(`Succeeded in getting the response ${response}`);
+}).catch((err: BusinessError) => {
+  console.error(`err: error code is ${err.code}, error data is ${err.data}`);
+});
 ```
 
 ### delete
 
-PhonePC/2in1TabletTVWearable
-
 delete(url: URLOrString): Promise<Response>
 
-发送一个带有默认HTTP参数的HTTP DELETE请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
+发送带有默认HTTP参数的HTTP DELETE请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
 
 **需要权限：** ohos.permission.INTERNET（如果使用[PathPreference](remote-communication-rcp.md#pathpreference)的'cellular'模式，则额外需要ohos.permission.GET\_NETWORK\_INFO）
 
@@ -630,29 +598,27 @@ delete(url: URLOrString): Promise<Response>
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-4. const session = rcp.createSession();
-5. session.delete("http://example.com/delete").then((response) => {
-6. console.info(`Succeeded in getting the response ${response}`);
-7. }).catch((err: BusinessError) => {
-8. console.error(`err: error code is ${err.code}, error data is ${err.data}`);
-9. });
+const session = rcp.createSession();
+session.delete('http://example.com/delete').then((response) => {
+  console.info(`Succeeded in getting the response ${response}`);
+}).catch((err: BusinessError) => {
+  console.error(`err: error code is ${err.code}, error data is ${err.data}`);
+});
 ```
 
 ### cancel
 
-PhonePC/2in1TabletTVWearable
-
 cancel(requestToCancel?: Request | Request[]): void
 
-取消指定或正在进行的会话请求。
+取消指定或所有正在进行的会话请求。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -664,11 +630,11 @@ cancel(requestToCancel?: Request | Request[]): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| requestToCancel | [Request](remote-communication-rcp.md#request) | [Request](remote-communication-rcp.md#request)[] | 否 | 要取消的请求或请求数组。在不指定[Request](remote-communication-rcp.md#request)情况下，默认取消所有请求。 |
+| requestToCancel | [Request](remote-communication-rcp.md#request) | [Request](remote-communication-rcp.md#request)[] | 否 | 待取消的请求或请求数组。在不指定[Request](remote-communication-rcp.md#request)情况下，默认取消所有请求。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -676,23 +642,21 @@ cancel(requestToCancel?: Request | Request[]): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-4. const session = rcp.createSession();
-5. let req = new rcp.Request("http://example.com/fetch", "GET");
-6. session.fetch(req).then((response) => {
-7. console.info(`Succeeded in getting the response ${response}`);
-8. session.cancel(req);
-9. }).catch((err: BusinessError) => {
-10. console.error(`err: error code is ${err.code}, error data is ${err.data}`);
-11. });
+const session = rcp.createSession();
+let req = new rcp.Request('http://example.com/fetch', 'GET');
+session.fetch(req).then((response) => {
+  console.info(`Succeeded in getting the response ${response}`);
+  session.cancel(req);
+}).catch((err: BusinessError) => {
+  console.error(`err: error code is ${err.code}, error data is ${err.data}`);
+});
 ```
 
 ### close
-
-PhonePC/2in1TabletTVWearable
 
 close(): void
 
@@ -706,24 +670,22 @@ close(): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-4. const session = rcp.createSession();
-5. let req = new rcp.Request("http://example.com/fetch", "GET");
-6. session.fetch(req).then((response) => {
-7. console.info(`Succeeded in getting the response ${response}`);
-8. session.close();
-9. }).catch((err: BusinessError) => {
-10. console.error(`err: error code is ${err.code}, error data is ${err.data}`);
-11. session.close();
-12. });
+const session = rcp.createSession();
+let req = new rcp.Request('http://example.com/fetch', 'GET');
+session.fetch(req).then((response) => {
+  console.info(`Succeeded in getting the response ${response}`);
+  session.close();
+}).catch((err: BusinessError) => {
+  console.error(`err: error code is ${err.code}, error data is ${err.data}`);
+  session.close();
+});
 ```
 
 ## getDefaultSession
-
-PhonePC/2in1TabletTVWearable
 
 getDefaultSession(): DefaultSession
 
@@ -743,15 +705,13 @@ getDefaultSession(): DefaultSession
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. const defaultSession = rcp.getDefaultSession();
+const defaultSession = rcp.getDefaultSession();
 ```
 
 ## DefaultSession
-
-PhonePC/2in1TabletTVWearable
 
 DefaultSession类表示一个默认的通信会话，可用于发送HTTP请求。如果不需要定制Session的配置，可以使用DefaultSession便捷地发起网络请求。
 
@@ -763,11 +723,9 @@ DefaultSession类表示一个默认的通信会话，可用于发送HTTP请求�
 
 ### fetch
 
-PhonePC/2in1TabletTVWearable
-
 fetch(request: Request): Promise<Response>
 
-发送一个HTTP请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
+发送HTTP请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
 
 **需要权限：** ohos.permission.INTERNET（如果使用[PathPreference](remote-communication-rcp.md#pathpreference)的'cellular'模式，则额外需要ohos.permission.GET\_NETWORK\_INFO）
 
@@ -781,7 +739,7 @@ fetch(request: Request): Promise<Response>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| request | [Request](remote-communication-rcp.md#request) | 是 | 要发送的请求。 |
+| request | [Request](remote-communication-rcp.md#request) | 是 | 待发送的请求。 |
 
 **返回值：**
 
@@ -791,30 +749,28 @@ fetch(request: Request): Promise<Response>
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-4. const defaultSession = rcp.getDefaultSession();
-5. let req = new rcp.Request("http://example.com/fetch", "POST");
-6. defaultSession.fetch(req).then((response) => {
-7. console.info(`Succeeded in getting the response ${response}`);
-8. }).catch((err: BusinessError) => {
-9. console.error(`err: error code is ${err.code}, error data is ${err.data}`);
-10. });
+const defaultSession = rcp.getDefaultSession();
+let req = new rcp.Request('http://example.com/fetch', 'POST');
+defaultSession.fetch(req).then((response) => {
+  console.info(`Succeeded in getting the response ${response}`);
+}).catch((err: BusinessError) => {
+  console.error(`err: error code is ${err.code}, error data is ${err.data}`);
+});
 ```
 
 ### fetchForSendable
 
-PhonePC/2in1TabletTVWearable
-
 fetchForSendable(request: Request): Promise<ResponseSendable>
 
-发送一个HTTP请求，并返回服务器的HTTP响应，该响应消息支持Sendable。使用Promise异步回调。
+发送HTTP请求，并返回服务器的HTTP响应，该响应消息支持[Sendable](../HarmonyOS-Guides/arkts-sendable.md)。使用Promise异步回调。
 
 **需要权限：** ohos.permission.INTERNET（如果使用[PathPreference](remote-communication-rcp.md#pathpreference)的'cellular'模式，则额外需要ohos.permission.GET\_NETWORK\_INFO）
 
@@ -838,52 +794,50 @@ fetchForSendable(request: Request): Promise<ResponseSendable>
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
-2. import { ArkTSUtils, collections, taskpool, util } from '@kit.ArkTS';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
+import { ArkTSUtils, collections, taskpool, util } from '@kit.ArkTS';
 
-4. @Concurrent
-5. async function taskFunc(sendableResponse: rcp.ResponseSendable) {
-6. console.info(`sendableResponse: ${ArkTSUtils.ASON.stringify(sendableResponse)}`);
-7. // 打印Sendable类型的body数据
-8. if (ArkTSUtils.isSendable(sendableResponse.body) && sendableResponse.body != undefined) {
-9. const decoder = util.TextDecoder.create('utf-8');
-10. let arr: collections.Uint8Array = new collections.Uint8Array(sendableResponse.body);
-11. let str = decoder.decodeToString(arr as Object as Uint8Array).trim();
-12. console.info(`body:${ArkTSUtils.ASON.stringify(str)}`);
-13. }
-14. }
+@Concurrent
+async function taskFunc(sendableResponse: rcp.ResponseSendable) {
+  console.info(`sendableResponse: ${ArkTSUtils.ASON.stringify(sendableResponse)}`);
+  // 打印Sendable类型的body数据
+  if (ArkTSUtils.isSendable(sendableResponse.body) && sendableResponse.body != undefined) {
+    const decoder = util.TextDecoder.create('utf-8');
+    let arr: collections.Uint8Array = new collections.Uint8Array(sendableResponse.body);
+    let str = decoder.decodeToString(arr as Object as Uint8Array).trim();
+    console.info(`body:${ArkTSUtils.ASON.stringify(str)}`);
+  }
+}
 
-16. async function test() {
-17. try {
-18. const defaultSession = rcp.getDefaultSession();
-19. let request = new rcp.Request('https://www.example.com'); // 请在使用中将其替换为真实的网址。
-20. let sendableResponse = await defaultSession.fetchForSendable(request);
-21. let isSendable = ArkTSUtils.isSendable(sendableResponse);
-22. if (isSendable) {
-23. console.info(`Succeeded in getting the response, the response is sendable`);
-24. } else {
-25. console.info(`Succeeded in getting the response, the response is not sendable`);
-26. }
-27. let task: taskpool.Task = new taskpool.Task(taskFunc, sendableResponse);
-28. await taskpool.execute(task);
-29. } catch (err) {
-30. console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
-31. }
-32. }
+async function test() {
+  try {
+    const defaultSession = rcp.getDefaultSession();
+    let request = new rcp.Request('https://www.example.com'); // 请在使用中将其替换为真实的网址。
+    let sendableResponse = await defaultSession.fetchForSendable(request);
+    let isSendable = ArkTSUtils.isSendable(sendableResponse);
+    if (isSendable) {
+      console.info(`Succeeded in getting the response, the response is sendable`);
+    } else {
+      console.info(`Succeeded in getting the response, the response is not sendable`);
+    }
+    let task: taskpool.Task = new taskpool.Task(taskFunc, sendableResponse);
+    await taskpool.execute(task);
+  } catch (err) {
+    console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
+  }
+}
 ```
 
 ### get
 
-PhonePC/2in1TabletTVWearable
-
 get(url: URLOrString, destination?: ResponseBodyDestination): Promise<Response>
 
-发送一个带有默认HTTP参数的HTTP GET请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
+发送带有默认HTTP参数的HTTP GET请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
 
 **需要权限：** ohos.permission.INTERNET（如果使用[PathPreference](remote-communication-rcp.md#pathpreference)的'cellular'模式，则额外需要ohos.permission.GET\_NETWORK\_INFO）
 
@@ -908,29 +862,27 @@ get(url: URLOrString, destination?: ResponseBodyDestination): Promise<Response>
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-4. const defaultSession = rcp.getDefaultSession();
-5. defaultSession.get("http://example.com/get").then((response) => {
-6. console.info(`Succeeded in getting the response ${response}`);
-7. }).catch((err: BusinessError) => {
-8. console.error(`err: error code is ${err.code}, error data is ${err.data}`);
-9. });
+const defaultSession = rcp.getDefaultSession();
+defaultSession.get('http://example.com/get').then((response) => {
+  console.info(`Succeeded in getting the response ${response}`);
+}).catch((err: BusinessError) => {
+  console.error(`err: error code is ${err.code}, error data is ${err.data}`);
+});
 ```
 
 ### post
 
-PhonePC/2in1TabletTVWearable
-
 post(url: URLOrString, content?: RequestContent, destination?: ResponseBodyDestination): Promise<Response>
 
-发送一个带有默认HTTP参数的HTTP POST请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
+发送带有默认HTTP参数的HTTP POST请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
 
 **需要权限：** ohos.permission.INTERNET（如果使用[PathPreference](remote-communication-rcp.md#pathpreference)的'cellular'模式，则额外需要ohos.permission.GET\_NETWORK\_INFO）
 
@@ -956,29 +908,27 @@ post(url: URLOrString, content?: RequestContent, destination?: ResponseBodyDesti
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-4. const defaultSession = rcp.getDefaultSession();
-5. defaultSession.post("http://example.com/post", "data to send").then((response) => {
-6. console.info(`Succeeded in getting the response ${response}`);
-7. }).catch((err: BusinessError) => {
-8. console.error(`err: error code is ${err.code}, error data is ${err.data}`);
-9. });
+const defaultSession = rcp.getDefaultSession();
+defaultSession.post('http://example.com/post', 'data to send').then((response) => {
+  console.info(`Succeeded in getting the response ${response}`);
+}).catch((err: BusinessError) => {
+  console.error(`err: error code is ${err.code}, error data is ${err.data}`);
+});
 ```
 
 ### put
 
-PhonePC/2in1TabletTVWearable
-
 put(url: URLOrString, content?: RequestContent, destination?: ResponseBodyDestination): Promise<Response>
 
-发送一个带有默认HTTP参数的HTTP PUT请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
+发送带有默认HTTP参数的HTTP PUT请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
 
 **需要权限：** ohos.permission.INTERNET（如果使用[PathPreference](remote-communication-rcp.md#pathpreference)的'cellular'模式，则额外需要ohos.permission.GET\_NETWORK\_INFO）
 
@@ -993,7 +943,7 @@ put(url: URLOrString, content?: RequestContent, destination?: ResponseBodyDestin
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | [URLOrString](remote-communication-rcp.md#urlorstring) | 是 | HTTP PUT请求资源的URL。 |
-| content | [RequestContent](remote-communication-rcp.md#requestcontent) | 否 | 请求正文发送的内容。默认为undefined。 |
+| content | [RequestContent](remote-communication-rcp.md#requestcontent) | 否 | 请求的正文内容。默认为undefined。 |
 | destination | [ResponseBodyDestination](remote-communication-rcp.md#responsebodydestination) | 否 | HTTP响应的目标位置或目的地。 |
 
 **返回值：**
@@ -1004,29 +954,27 @@ put(url: URLOrString, content?: RequestContent, destination?: ResponseBodyDestin
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-4. const defaultSession = rcp.getDefaultSession();
-5. defaultSession.put("http://example.com/put", "data to send").then((response) => {
-6. console.info(`Succeeded in getting the response ${response}`);
-7. }).catch((err: BusinessError) => {
-8. console.error(`err: error code is ${err.code}, error data is ${err.data}`);
-9. });
+const defaultSession = rcp.getDefaultSession();
+defaultSession.put('http://example.com/put', 'data to send').then((response) => {
+  console.info(`Succeeded in getting the response ${response}`);
+}).catch((err: BusinessError) => {
+  console.error(`err: error code is ${err.code}, error data is ${err.data}`);
+});
 ```
 
 ### downloadToFile
 
-PhonePC/2in1TabletTVWearable
-
 downloadToFile(url: URLOrString, downloadTo: DownloadToFile): Promise<Response>
 
-发送一个带有默认HTTP参数的HTTP DOWNLOADTOFILE请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
+发送带有默认HTTP参数的HTTP DOWNLOADTOFILE请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
 
 **需要权限：** ohos.permission.INTERNET（如果使用[PathPreference](remote-communication-rcp.md#pathpreference)的'cellular'模式，则额外需要ohos.permission.GET\_NETWORK\_INFO）
 
@@ -1041,7 +989,7 @@ downloadToFile(url: URLOrString, downloadTo: DownloadToFile): Promise<Response>
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | [URLOrString](remote-communication-rcp.md#urlorstring) | 是 | HTTP DOWNLOADTOFILE请求资源的URL。 |
-| downloadTo | [DownloadToFile](remote-communication-rcp.md#downloadtofile) | 是 | HTTP中用于将服务器上下载的文件保存到本地文件系统中的指定位置。 |
+| downloadTo | [DownloadToFile](remote-communication-rcp.md#downloadtofile) | 是 | 将服务器上下载的文件保存到本地文件系统中的指定位置。 |
 
 **返回值：**
 
@@ -1051,33 +999,31 @@ downloadToFile(url: URLOrString, downloadTo: DownloadToFile): Promise<Response>
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-4. let downloadToFile: rcp.DownloadToFile = {
-5. kind: 'folder',
-6. path: "/path/dir" // 请根据自身业务选择合适的路径
-7. } as rcp.DownloadToFile
-8. const defaultSession = rcp.getDefaultSession();
-9. defaultSession.downloadToFile("http://www.example.com", downloadToFile).then((response) => {
-10. console.info(`Succeeded in getting the response ${response}`);
-11. }).catch((err: BusinessError) => {
-12. console.error(`DownloadToFile failed, the error code is ${err.code}, error data is ${err.data}`);
-13. });
+let downloadToFile: rcp.DownloadToFile = {
+  kind: 'folder',
+  path: '/path/dir' // 请根据自身业务选择合适的路径
+} as rcp.DownloadToFile
+const defaultSession = rcp.getDefaultSession();
+defaultSession.downloadToFile('http://www.example.com', downloadToFile).then((response) => {
+  console.info(`Succeeded in getting the response ${response}`);
+}).catch((err: BusinessError) => {
+  console.error(`DownloadToFile failed, the error code is ${err.code}, error data is ${err.data}`);
+});
 ```
 
 ### uploadFromFile
 
-PhonePC/2in1TabletTVWearable
-
 uploadFromFile(url: URLOrString, uploadFrom: UploadFromFile): Promise<Response>
 
-发送一个带有默认HTTP参数的HTTP UPLOADFROMFILE请求，完成上传文件功能，并返回来自服务器的HTTP响应。使用Promise异步回调。
+发送带有默认HTTP参数的HTTP UPLOADFROMFILE请求，完成上传文件功能，并返回来自服务器的HTTP响应。使用Promise异步回调。
 
 **需要权限：** ohos.permission.INTERNET（如果使用[PathPreference](remote-communication-rcp.md#pathpreference)的'cellular'模式，则额外需要ohos.permission.GET\_NETWORK\_INFO）
 
@@ -1092,7 +1038,7 @@ uploadFromFile(url: URLOrString, uploadFrom: UploadFromFile): Promise<Response>
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | [URLOrString](remote-communication-rcp.md#urlorstring) | 是 | HTTP UPLOADFROMFILE请求资源的URL。 |
-| uploadFrom | [UploadFromFile](remote-communication-rcp.md#uploadfromfile) | 是 | HTTP中从本地计算机上传文件到服务器的请求。 |
+| uploadFrom | [UploadFromFile](remote-communication-rcp.md#uploadfromfile) | 是 | 从本地计算机上传文件到服务器的请求。 |
 
 **返回值：**
 
@@ -1102,29 +1048,27 @@ uploadFromFile(url: URLOrString, uploadFrom: UploadFromFile): Promise<Response>
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-4. let fileDir = "/path/dir/"; // 请根据自身业务定义此路径
-5. let uploadFromFile: rcp.UploadFromFile = {
-6. fileOrPath: fileDir
-7. };
-8. const defaultSession = rcp.getDefaultSession();
-9. defaultSession.uploadFromFile("http://example.com/head", uploadFromFile).then((response) => {
-10. console.info(`Succeeded in getting the response ${response}`);
-11. }).catch((err: BusinessError) => {
-12. console.error(`err: error code is ${err.code}, error data is ${err.data}`);
-13. });
+let fileDir = '/path/dir/'; // 请根据自身业务定义此路径
+let uploadFromFile: rcp.UploadFromFile = {
+  fileOrPath: fileDir
+};
+const defaultSession = rcp.getDefaultSession();
+defaultSession.uploadFromFile('http://example.com/head', uploadFromFile).then((response) => {
+  console.info(`Succeeded in getting the response ${response}`);
+}).catch((err: BusinessError) => {
+  console.error(`err: error code is ${err.code}, error data is ${err.data}`);
+});
 ```
 
 ### downloadToStream
-
-PhonePC/2in1TabletTVWearable
 
 downloadToStream(url: URLOrString, downloadTo: DownloadToStream): Promise<Response>
 
@@ -1143,7 +1087,7 @@ downloadToStream(url: URLOrString, downloadTo: DownloadToStream): Promise<Respon
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | [URLOrString](remote-communication-rcp.md#urlorstring) | 是 | HTTP DOWNLOADTOSTREAM请求资源的URL。 |
-| downloadTo | [DownloadToStream](remote-communication-rcp.md#downloadtostream) | 是 | HTTP中将请求文件从服务器下载到客户端，并将其写入到一个数据流中。 |
+| downloadTo | [DownloadToStream](remote-communication-rcp.md#downloadtostream) | 是 | 将请求文件从服务器下载到客户端，并将其写入到一个数据流中。 |
 
 **返回值：**
 
@@ -1153,35 +1097,33 @@ downloadToStream(url: URLOrString, downloadTo: DownloadToStream): Promise<Respon
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit'
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
+import { BusinessError } from '@kit.BasicServicesKit'
 
-4. const streamData: rcp.WriteStream = {
-5. write(buffer: ArrayBuffer): Promise<void | number> {
-6. return Promise.resolve(buffer.byteLength)
-7. }
-8. };
+const streamData: rcp.WriteStream = {
+  write(buffer: ArrayBuffer): Promise<void | number> {
+    return Promise.resolve(buffer.byteLength)
+  }
+};
 
-10. let downloadToStream: rcp.DownloadToStream = {
-11. kind: 'stream',
-12. stream: streamData
-13. }
-14. const defaultSession = rcp.getDefaultSession();
-15. defaultSession.downloadToStream("http://example.com/head", downloadToStream).then((response) => {
-16. console.info(`Succeeded in getting the response ${response}`);
-17. }).catch((err: BusinessError) => {
-18. console.error(`err: error code is ${err.code}, error data is ${err.data}`);
-19. });
+let downloadToStream: rcp.DownloadToStream = {
+  kind: 'stream',
+  stream: streamData
+}
+const defaultSession = rcp.getDefaultSession();
+defaultSession.downloadToStream('http://example.com/head', downloadToStream).then((response) => {
+  console.info(`Succeeded in getting the response ${response}`);
+}).catch((err: BusinessError) => {
+  console.error(`err: error code is ${err.code}, error data is ${err.data}`);
+});
 ```
 
 ### uploadFromStream
-
-PhonePC/2in1TabletTVWearable
 
 uploadFromStream(url: URLOrString, uploadFrom: UploadFromStream): Promise<Response>
 
@@ -1200,7 +1142,7 @@ uploadFromStream(url: URLOrString, uploadFrom: UploadFromStream): Promise<Respon
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | [URLOrString](remote-communication-rcp.md#urlorstring) | 是 | HTTP UPLOADFROMSTREAM请求资源的URL。 |
-| uploadFrom | [UploadFromStream](remote-communication-rcp.md#uploadfromstream) | 是 | HTTP中从一个输入流中上传数据到服务器的请求。 |
+| uploadFrom | [UploadFromStream](remote-communication-rcp.md#uploadfromstream) | 是 | 从一个输入流中上传数据到服务器的请求。 |
 
 **返回值：**
 
@@ -1210,32 +1152,30 @@ uploadFromStream(url: URLOrString, uploadFrom: UploadFromStream): Promise<Respon
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-4. let uploadFromStream: rcp.UploadFromStream = {
-5. stream: object // 此处请自行定义类型为Stream、ReadStream、SyncReadStream的对象
-6. }
-7. const defaultSession = rcp.getDefaultSession();
-8. defaultSession.uploadFromStream("http://example.com/head", uploadFromStream).then((response) => {
-9. console.info(`Succeeded in getting the response ${response}`);
-10. }).catch((err: BusinessError) => {
-11. console.error(`err: error code is ${err.code}, error data is ${err.data}`);
-12. });
+let uploadFromStream: rcp.UploadFromStream = {
+  stream: object // 此处请自行定义类型为Stream、ReadStream、SyncReadStream的对象
+}
+const defaultSession = rcp.getDefaultSession();
+defaultSession.uploadFromStream('http://example.com/head', uploadFromStream).then((response) => {
+  console.info(`Succeeded in getting the response ${response}`);
+}).catch((err: BusinessError) => {
+  console.error(`err: error code is ${err.code}, error data is ${err.data}`);
+});
 ```
 
 ### head
 
-PhonePC/2in1TabletTVWearable
-
 head(url: URLOrString): Promise<Response>
 
-发送一个带有默认HTTP参数的HTTP HEAD请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
+发送带有默认HTTP参数的HTTP HEAD请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
 
 **需要权限：** ohos.permission.INTERNET（如果使用[PathPreference](remote-communication-rcp.md#pathpreference)的'cellular'模式，则额外需要ohos.permission.GET\_NETWORK\_INFO）
 
@@ -1259,29 +1199,27 @@ head(url: URLOrString): Promise<Response>
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-4. const defaultSession = rcp.getDefaultSession();
-5. defaultSession.head("http://example.com/head").then((response) => {
-6. console.info(`Succeeded in getting the response ${response}`);
-7. }).catch((err: BusinessError) => {
-8. console.error(`err: error code is ${err.code}, error data is ${err.data}`);
-9. });
+const defaultSession = rcp.getDefaultSession();
+defaultSession.head('http://example.com/head').then((response) => {
+  console.info(`Succeeded in getting the response ${response}`);
+}).catch((err: BusinessError) => {
+  console.error(`err: error code is ${err.code}, error data is ${err.data}`);
+});
 ```
 
 ### delete
 
-PhonePC/2in1TabletTVWearable
-
 delete(url: URLOrString): Promise<Response>
 
-发送一个带有默认HTTP参数的HTTP DELETE请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
+发送带有默认HTTP参数的HTTP DELETE请求，并返回来自服务器的HTTP响应。使用Promise异步回调。
 
 **需要权限：** ohos.permission.INTERNET（如果使用[PathPreference](remote-communication-rcp.md#pathpreference)的'cellular'模式，则额外需要ohos.permission.GET\_NETWORK\_INFO）
 
@@ -1305,29 +1243,27 @@ delete(url: URLOrString): Promise<Response>
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-4. const defaultSession = rcp.getDefaultSession();
-5. defaultSession.delete("http://example.com/delete").then((response) => {
-6. console.info(`Succeeded in getting the response ${response}`);
-7. }).catch((err: BusinessError) => {
-8. console.error(`err: error code is ${err.code}, error data is ${err.data}`);
-9. });
+const defaultSession = rcp.getDefaultSession();
+defaultSession.delete('http://example.com/delete').then((response) => {
+  console.info(`Succeeded in getting the response ${response}`);
+}).catch((err: BusinessError) => {
+  console.error(`err: error code is ${err.code}, error data is ${err.data}`);
+});
 ```
 
 ### cancel
 
-PhonePC/2in1TabletTVWearable
-
 cancel(requestToCancel?: Request | Request[]): void
 
-取消指定或正在进行的会话请求。
+取消指定或所有正在进行的会话请求。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -1339,31 +1275,29 @@ cancel(requestToCancel?: Request | Request[]): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| requestToCancel | [Request](remote-communication-rcp.md#request) | [Request](remote-communication-rcp.md#request)[] | 否 | 要取消的请求或请求数组。在不指定[Request](remote-communication-rcp.md#request)情况下，默认取消所有请求。 |
+| requestToCancel | [Request](remote-communication-rcp.md#request) | [Request](remote-communication-rcp.md#request)[] | 否 | 待取消的请求或请求数组。在不指定[Request](remote-communication-rcp.md#request)情况下，默认取消所有请求。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-4. const defaultSession = rcp.getDefaultSession();
-5. let req = new rcp.Request("http://example.com/fetch", "GET");
-6. defaultSession.fetch(req).then((response) => {
-7. console.info(`Succeeded in getting the response ${response}`);
-8. defaultSession.cancel(req);
-9. }).catch((err: BusinessError) => {
-10. console.error(`err: error code is ${err.code}, error data is ${err.data}`);
-11. });
+const defaultSession = rcp.getDefaultSession();
+let req = new rcp.Request('http://example.com/fetch', 'GET');
+defaultSession.fetch(req).then((response) => {
+  console.info(`Succeeded in getting the response ${response}`);
+  defaultSession.cancel(req);
+}).catch((err: BusinessError) => {
+  console.error(`err: error code is ${err.code}, error data is ${err.data}`);
+});
 ```
 
 ## RequestHandler
-
-PhonePC/2in1TabletTVWearable
 
 拦截器的请求处理器。
 
@@ -1375,15 +1309,11 @@ PhonePC/2in1TabletTVWearable
 
 ### handle
 
-PhonePC/2in1TabletTVWearable
-
 handle(context: RequestContext): Promise<Response>
 
-远场通信框架会预置两种处理器，一种会调用拦截器的[intercept](remote-communication-rcp.md#intercept)函数，一种会调用系统的fetchInternal使用系统能力发起请求，使用promise异步回调。
+请求处理器的入口函数。每一层拦截器通过调用下一层[RequestHandler](remote-communication-rcp.md#requesthandler)的[handle](remote-communication-rcp.md#handle)方法，触发下一层拦截器的[intercept](remote-communication-rcp.md#intercept)函数，最终触发向服务器发起请求。使用promise异步回调。
 
-比如，拦截器：[A, B, C, D]会被构造成：
-
-A {handler->B{handler->C{handler-D{handler->系统能力}}}}
+比如，拦截器[A, B, C, D]会被构造成：A {handler->B{handler->C{handler-D{handler->系统能力}}}}。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -1395,7 +1325,7 @@ A {handler->B{handler->C{handler-D{handler->系统能力}}}}
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| context | [RequestContext](remote-communication-rcp.md#requestcontext) | 是 | 请求上下文 |
+| context | [RequestContext](remote-communication-rcp.md#requestcontext) | 是 | 请求上下文。 |
 
 **返回值：**
 
@@ -1405,29 +1335,9 @@ A {handler->B{handler->C{handler-D{handler->系统能力}}}}
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
-
-3. class RequestHandler implements rcp.RequestHandler {
-4. handle(context: rcp.RequestContext): Promise<rcp.Response> {
-5. let handlerRequest = new rcp.Request("https://www.example.com", 'GET');
-6. let handlerSession = rcp.createSession();
-7. context.request = handlerRequest;
-8. context.session = handlerSession;
-9. return new Promise<rcp.Response>((resolve, reject) => {
-10. handlerSession.get("https://www.example.com").then((response: rcp.Response) => {
-11. resolve(response);
-12. }).catch((error: Error) => {
-13. reject(error);
-14. })
-15. });
-16. }
-17. }
-```
+请参考[Interceptor](remote-communication-rcp.md#interceptor)的代码示例。
 
 ## RequestContext
-
-PhonePC/2in1TabletTVWearable
 
 拦截器请求上下文。
 
@@ -1439,12 +1349,10 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| request | [Request](remote-communication-rcp.md#request) | 否 | 否 | HTTP请求 |
-| session | [Session](remote-communication-rcp.md#session) | 否 | 否 | 持有此拦截器的会话 |
+| request | [Request](remote-communication-rcp.md#request) | 否 | 否 | HTTP请求。 |
+| session | [Session](remote-communication-rcp.md#session) | 否 | 否 | 持有此拦截器的会话。 |
 
 ## Interceptor
-
-PhonePC/2in1TabletTVWearable
 
 拦截器。
 
@@ -1455,8 +1363,6 @@ PhonePC/2in1TabletTVWearable
 **起始版本：** 5.0.0(12)
 
 ### intercept
-
-PhonePC/2in1TabletTVWearable
 
 intercept(context: RequestContext, next: RequestHandler): Promise<Response>
 
@@ -1472,8 +1378,8 @@ intercept(context: RequestContext, next: RequestHandler): Promise<Response>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| context | [RequestContext](remote-communication-rcp.md#requestcontext) | 是 | 请求上下文 |
-| next | [RequestHandler](remote-communication-rcp.md#requesthandler) | 是 | 下一个请求处理器 |
+| context | [RequestContext](remote-communication-rcp.md#requestcontext) | 是 | 请求上下文。 |
+| next | [RequestHandler](remote-communication-rcp.md#requesthandler) | 是 | 下一个请求处理器。 |
 
 **返回值：**
 
@@ -1483,71 +1389,69 @@ intercept(context: RequestContext, next: RequestHandler): Promise<Response>
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. class ResponseCache {
-5. private readonly cache: Record<string, rcp.Response> = {};
+class ResponseCache {
+  private readonly cache: Record<string, rcp.Response> = {};
 
-7. getResponse(url: string): rcp.Response {
-8. return this.cache[url];
-9. }
+  getResponse(url: string): rcp.Response {
+    return this.cache[url];
+  }
 
-11. setResponse(url: string, response: rcp.Response): void {
-12. this.cache[url] = response;
-13. }
-14. }
+  setResponse(url: string, response: rcp.Response): void {
+    this.cache[url] = response;
+  }
+}
 
-16. class ResponseCachingInterceptor implements rcp.Interceptor {
-17. private readonly cache: ResponseCache;
+class ResponseCachingInterceptor implements rcp.Interceptor {
+  private readonly cache: ResponseCache;
 
-19. constructor(cache: ResponseCache) {
-20. this.cache = cache;
-21. }
+  constructor(cache: ResponseCache) {
+    this.cache = cache;
+  }
 
-23. async intercept(context: rcp.RequestContext, next: rcp.RequestHandler): Promise<rcp.Response> {
-24. const url = context.request.url.href;
-25. const responseFromCache = this.cache.getResponse(url);
-26. if (responseFromCache) {
-27. return Promise.resolve(responseFromCache);
-28. }
-29. const promise = next.handle(context);
-30. promise.then((resp) => {
-31. resp.statusCode;
-32. cache.setResponse(url, resp);
-33. });
-34. return promise;
-35. }
-36. }
+  async intercept(context: rcp.RequestContext, next: rcp.RequestHandler): Promise<rcp.Response> {
+    const url = context.request.url.href;
+    const responseFromCache = this.cache.getResponse(url);
+    if (responseFromCache) {
+      return Promise.resolve(responseFromCache);
+    }
+    const promise = next.handle(context);
+    promise.then((resp) => {
+      resp.statusCode;
+      cache.setResponse(url, resp);
+    });
+    return promise;
+  }
+}
 
-38. const cache = new ResponseCache();
+const cache = new ResponseCache();
 
-40. function testInterceptor() {
-41. const session = rcp.createSession({
-42. interceptors: [new ResponseCachingInterceptor(cache)]
-43. });
+function testInterceptor() {
+  const session = rcp.createSession({
+    interceptors: [new ResponseCachingInterceptor(cache)]
+  });
 
-45. session.get('https://www.example.com').then((response: rcp.Response) => {
-46. console.info(`Response succeeded. The statusCode of the response is ${response.statusCode}`);
-47. }).catch((err: BusinessError) => {
-48. console.error(`Response failed: error code is ${err.code}, error data is ${err.data}`);
-49. });
+  session.get('https://www.example.com').then((response: rcp.Response) => {
+    console.info(`Succeeded in getting the response. The statusCode of the response is ${response.statusCode}`);
+  }).catch((err: BusinessError) => {
+    console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
+  });
 
-51. let request = new rcp.Request("https://www.example.com", 'GET');
-52. session.fetch(request).then((response: rcp.Response) => {
-53. console.info(`Response succeeded. The statusCode of the response is ${response.statusCode}`);
-54. }).catch((err: BusinessError) => {
-55. console.error(`Response failed: error code is ${err.code}, error data is ${err.data}`);
-56. });
-57. }
+  let request = new rcp.Request('https://www.example.com', 'GET');
+  session.fetch(request).then((response: rcp.Response) => {
+    console.info(`Succeeded in fetching the response. The statusCode of the response is ${response.statusCode}`);
+  }).catch((err: BusinessError) => {
+    console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
+  });
+}
 ```
 
 ## SessionConfiguration
 
-PhonePC/2in1TabletTVWearable
-
-SessionConfiguration接口定义了会话的配置参数，为开发者提供了对HTTP会话各个方面的详细控制。
+定义会话的配置参数，为开发者提供了对HTTP会话各个方面的详细控制。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -1559,117 +1463,116 @@ SessionConfiguration接口定义了会话的配置参数，为开发者提供了
 | --- | --- | --- | --- | --- |
 | interceptors | [Interceptor](remote-communication-rcp.md#interceptor)[] | 否 | 是 | 请求/响应拦截器。  **起始版本：** 5.0.0(12) |
 | requestConfiguration | [Configuration](remote-communication-rcp.md#configuration) | 否 | 是 | 指定与会话关联的HTTP请求的配置。包括transfer、proxy、DNS、connection和security configurations。 |
-| baseAddress | [URLOrString](remote-communication-rcp.md#urlorstring) | 否 | 是 | 设置会话中URL的基地址。这允许开发者为会话中的多个请求定义一个通用的基本URL。如果请求URL不是绝对URL，则把基地址预制在请求URL的前面。例如，"https://example.com?name=value"，"https://example.com"为基地址，"?name=value"为请求URL。 |
+| baseAddress | [URLOrString](remote-communication-rcp.md#urlorstring) | 否 | 是 | 设置会话中URL的基地址。这允许开发者为会话中的多个请求定义一个通用的基本URL。如果请求URL不是绝对URL，则把基地址预制在请求URL的前面。例如，'https://example.com?name=value'，'https://example.com'为基地址，'?name=value'为请求URL。 |
 | headers | [RequestHeaders](remote-communication-rcp.md#requestheaders) | 否 | 是 | 为Session发出的HTTP请求定义headers（可自定义）。开发者可以根据他们的需求定制的特定headers。 |
 | cookies | [RequestCookies](remote-communication-rcp.md#requestcookies) | 否 | 是 | 提供在与会话关联的HTTP请求中包含自定义cookie的方法。适用于需要将某些cookie附加到每个请求的场景。需要手动设置cookie，携带cookie为用户行为。 |
 | sessionListener | [SessionListener](remote-communication-rcp.md#sessionlistener) | 否 | 是 | 允许开发者将侦听器附加到会话，接收会话取消或关闭等事件的通知，更好地处理应用程序中与会话相关的事件。 |
 | connectionConfiguration | [ConnectionConfiguration](remote-communication-rcp.md#connectionconfiguration) | 否 | 是 | 连接配置。用于指定此会话中允许的并发TCP连接总数以及单个主机所允许的最大并发TCP 连接数。  **起始版本：** 5.0.0(12) |
 | cacheControl | [CacheControl](remote-communication-rcp.md#cachecontrol) | 否 | 是 | 缓存控制配置。用于主动控制会话中缓存验证策略，影响服务器或中间代理如何响应请求。  **起始版本：** 6.0.0(20) |
 | cookieRepository | [CookieRepository](remote-communication-rcp.md#cookierepository) | 否 | 是 | cookie仓库。会话中的所有请求会共享cookie仓库。如果配置此项，那么此[Session](remote-communication-rcp.md#session)上的请求实际上都会由[DefaultSession](remote-communication-rcp.md#defaultsession)处理。  **起始版本：** 6.1.0(23) |
+| sessionPathPreference | [SessionPathPreference](remote-communication-rcp.md#sessionpathpreference) | 否 | 是 | 会话路径偏好配置。默认值为'auto'，表示使用系统默认的路径。会话路径偏好配置不能和请求路径偏好配置冲突：若本参数非'auto'，且会话内请求的[pathPreference](remote-communication-rcp.md#pathpreference)也非'auto'，则发起请求时将抛出错误[1007900401](errorcode-remote-communication.md#section1007900401-接口参数错误)。  **起始版本：** 26.0.0 |
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. let cookieRepository = rcp.CookieRepository.create();
-4. const sessionConfig: rcp.SessionConfiguration = {
-5. requestConfiguration: {
-6. transfer: {
-7. autoRedirect: true,
-8. timeout: {
-9. connectMs: 5000,
-10. transferMs: 10000
-11. }
-12. },
-13. tracing: {
-14. verbose: true
-15. }
-16. },
-17. baseAddress: "http://api.example.com",
-18. headers: {
-19. "Authorization": "Bearer YOUR_ACCESS_TOKEN",
-20. "Content-Type": "application/json"
-21. },
-22. cookies: {
-23. "user": "john_doe",
-24. "session_id": "abc123"
-25. },
-26. sessionListener: {
-27. onCanceled: () => console.info("Session was cancelled"),
-28. onClosed: () => console.info("Session was closed")
-29. },
-30. cookieRepository: cookieRepository,
-31. // ...
-32. };
+let cookieRepository = rcp.CookieRepository.create();
+const sessionConfig: rcp.SessionConfiguration = {
+  requestConfiguration: {
+    transfer: {
+      autoRedirect: true,
+      timeout: {
+        connectMs: 5000,
+        transferMs: 10000
+      }
+    },
+    tracing: {
+      verbose: true
+    }
+  },
+  baseAddress: 'http://api.example.com',
+  headers: {
+    'Authorization': 'Bearer YOUR_ACCESS_TOKEN',
+    'Content-Type': 'application/json'
+  },
+  cookies: {
+    'user': 'john_doe',
+    'session_id': 'abc123'
+  },
+  sessionListener: {
+    onCanceled: () => console.info('Session was cancelled'),
+    onClosed: () => console.info('Session was closed')
+  },
+  cookieRepository: cookieRepository,
+  // ...
+};
 
-34. const session = rcp.createSession(sessionConfig);
+const session = rcp.createSession(sessionConfig);
 ```
 
 **interceptors属性示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. class ResponseCache {
-5. private readonly cache: Record<string, rcp.Response> = {};
+class ResponseCache {
+  private readonly cache: Record<string, rcp.Response> = {};
 
-7. getResponse(url: string): rcp.Response {
-8. return this.cache[url];
-9. }
+  getResponse(url: string): rcp.Response {
+    return this.cache[url];
+  }
 
-11. setResponse(url: string, response: rcp.Response): void {
-12. this.cache[url] = response;
-13. }
-14. }
+  setResponse(url: string, response: rcp.Response): void {
+    this.cache[url] = response;
+  }
+}
 
-16. class ResponseCachingInterceptor implements rcp.Interceptor {
-17. private readonly cache: ResponseCache;
+class ResponseCachingInterceptor implements rcp.Interceptor {
+  private readonly cache: ResponseCache;
 
-19. constructor(cache: ResponseCache) {
-20. this.cache = cache;
-21. }
+  constructor(cache: ResponseCache) {
+    this.cache = cache;
+  }
 
-23. async intercept(context: rcp.RequestContext, next: rcp.RequestHandler): Promise<rcp.Response> {
-24. const url = context.request.url.href;
-25. const responseFromCache = this.cache.getResponse(url);
-26. if (responseFromCache) {
-27. return Promise.resolve(responseFromCache);
-28. }
-29. const promise = next.handle(context);
-30. promise.then((resp) => {
-31. this.cache.setResponse(url, resp);
-32. });
-33. return promise;
-34. }
-35. }
+  async intercept(context: rcp.RequestContext, next: rcp.RequestHandler): Promise<rcp.Response> {
+    const url = context.request.url.href;
+    const responseFromCache = this.cache.getResponse(url);
+    if (responseFromCache) {
+      return Promise.resolve(responseFromCache);
+    }
+    const promise = next.handle(context);
+    promise.then((resp) => {
+      this.cache.setResponse(url, resp);
+    });
+    return promise;
+  }
+}
 
-37. const cache = new ResponseCache();
+const cache = new ResponseCache();
 
-39. function testInterceptor() {
-40. const session = rcp.createSession({
-41. interceptors: [new ResponseCachingInterceptor(cache)]
-42. });
+function testInterceptor() {
+  const session = rcp.createSession({
+    interceptors: [new ResponseCachingInterceptor(cache)]
+  });
 
-44. session.get('https://www.example.com').then((response: rcp.Response) => {
-45. console.info(`Response succeeded. The statusCode of the response is ${response.statusCode}`);
-46. }).catch((err: BusinessError) => {
-47. console.error(`Response failed: error code is ${err.code}, error data is ${err.data}`);
-48. });
+  session.get('https://www.example.com').then((response: rcp.Response) => {
+    console.info(`Succeeded in getting the response. The statusCode of the response is ${response.statusCode}`);
+  }).catch((err: BusinessError) => {
+    console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
+  });
 
-50. let request = new rcp.Request("https://www.example.com", 'GET');
-51. session.fetch(request).then((response: rcp.Response) => {
-52. console.info(`Response succeeded. The statusCode of the response is ${response.statusCode}`);
-53. }).catch((err: BusinessError) => {
-54. console.error(`Response failed: error code is ${err.code}, error data is ${err.data}`);
-55. });
-56. }
+  let request = new rcp.Request('https://www.example.com', 'GET');
+  session.fetch(request).then((response: rcp.Response) => {
+    console.info(`Succeeded in fetching the response. The statusCode of the response is ${response.statusCode}`);
+  }).catch((err: BusinessError) => {
+    console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
+  });
+}
 ```
 
 ## Configuration
-
-PhonePC/2in1TabletTVWearable
 
 Configuration接口包含一组配置参数，开发者可以利用这些参数来微调会话中HTTP请求的行为。这包括传输、跟踪、代理、DNS和安全配置的设置。
 
@@ -1691,60 +1594,58 @@ Configuration接口包含一组配置参数，开发者可以利用这些参数�
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. const cache: rcp.ResponseCache = new rcp.ResponseCache({
-4. persistent: {
-5. kind: 'file-system',
-6. pathToFolder: "/path/dir/" // 请根据自身业务指定缓存路径
-7. }
-8. });
-9. const requestConfig: rcp.Configuration = {
-10. transfer: {
-11. autoRedirect: true,
-12. timeout: {
-13. connectMs: 5000,
-14. transferMs: 10000
-15. },
-16. assumesHTTP3Capable: true,
-17. pathPreference: "cellular"
-18. },
-19. tracing: {
-20. verbose: true
-21. },
-22. proxy: "system",
-23. dns: {
-24. dnsRules: [
-25. { host: "https://example.com", port: 443, ipAddresses: ["192.168.1.1", "192.168.1.2"] }
-26. ]
-27. },
+const cache: rcp.ResponseCache = new rcp.ResponseCache({
+  persistent: {
+    kind: 'file-system',
+    pathToFolder: '/path/dir/' // 请根据自身业务指定缓存路径
+  }
+});
+const requestConfig: rcp.Configuration = {
+  transfer: {
+    autoRedirect: true,
+    timeout: {
+      connectMs: 5000,
+      transferMs: 10000
+    },
+    assumesHTTP3Capable: true,
+    pathPreference: 'cellular'
+  },
+  tracing: {
+    verbose: true
+  },
+  proxy: 'system',
+  dns: {
+    dnsRules: [
+      { host: 'https://example.com', port: 443, ipAddresses: ['192.168.1.1', '192.168.1.2'] }
+    ]
+  },
 
-29. security: {
-30. certificate: {
-31. content: "-----BEGIN CERTIFICATE-----\n...",
-32. type: "PEM",
-33. key: "/path/dir/", // 请根据自身业务对key进行修改
-34. keyPassword: "your-password"
-35. },
-36. serverAuthentication: {
-37. credential: {
-38. username: "your-username",
-39. password: "your-password"
-40. },
-41. authenticationType: "basic"
-42. }
-43. },
-44. cache: cache
-45. };
+  security: {
+    certificate: {
+      content: '-----BEGIN CERTIFICATE-----\n...',
+      type: 'PEM',
+      key: '/path/dir/', // 请根据自身业务对key进行修改
+      keyPassword: 'your-password'
+    },
+    serverAuthentication: {
+      credential: {
+        username: 'your-username',
+        password: 'your-password'
+      },
+      authenticationType: 'basic'
+    }
+  },
+  cache: cache
+};
 
-47. // Use the configuration in the session creation
-48. const session = rcp.createSession({ requestConfiguration: requestConfig });
+// 使用配置创建Session
+const session = rcp.createSession({ requestConfiguration: requestConfig });
 ```
 
 ## ConnectionConfiguration
-
-PhonePC/2in1TabletTVWearable
 
 ConnectionConfiguration接口包含两个参数，开发者可以调整最大并发TCP的连接数也可以对单个主机或此次会话中的TCP最大连接数进行调整。
 
@@ -1756,24 +1657,22 @@ ConnectionConfiguration接口包含两个参数，开发者可以调整最大并
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| maxConnectionsPerHost | number | 是 | 是 | 单个主机允许的最大并发 TCP 连接数（主机与主机名+端口号对相同）。  取值范围：1~2147483647。  默认值：6。 |
-| maxTotalConnections | number | 是 | 是 | 此会话中允许的最大同时 TCP 连接总数。  取值范围：1~2147483647。  默认值为 64。 |
+| maxConnectionsPerHost | number | 是 | 是 | 单个主机允许的最大并发 TCP 连接数（主机与主机名+端口号对相同）。  取值范围：[1~2147483647]。  默认值：6。 |
+| maxTotalConnections | number | 是 | 是 | 此会话中允许的最大同时 TCP 连接总数。  取值范围：[1~2147483647]。  默认值为 64。 |
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit'
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. const connectionConfig: rcp.ConnectionConfiguration = {
-4. maxConnectionsPerHost: 6,
-5. maxTotalConnections: 64
-6. }
-7. const session = rcp.createSession({ connectionConfiguration: connectionConfig });
+const connectionConfig: rcp.ConnectionConfiguration = {
+  maxConnectionsPerHost: 6,
+  maxTotalConnections: 64
+}
+const session = rcp.createSession({ connectionConfiguration: connectionConfig });
 ```
 
 ## TcpConfiguration
-
-PhonePC/2in1TabletTVWearable
 
 TcpConfiguration接口为开发者提供设置TCP选项的能力。
 
@@ -1787,42 +1686,40 @@ TcpConfiguration接口为开发者提供设置TCP选项的能力。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| keepIdleSec | number | 否 | 是 | 该参数设置一个计时器，TCP连接将在计时器触发时发送探测报文。  单位：s。  取值范围：1~7200。  默认值：7200。 |
-| userTimeoutMs | number | 否 | 是 | 该参数设置一个超时时间。若传输的数据在超时时间内未收到服务器的确认报文，TCP连接将被断开。  单位：ms。  取值范围：1~3600000。  默认值：和[Timeout](remote-communication-rcp.md#timeout).transferMs保持一致。 |
-| keepCnt | number | 否 | 是 | 该参数设置发送探测报文的次数。  单位：次。  取值范围：1~9。  默认值：9。 |
-| keepIntervalSec | number | 否 | 是 | 该参数设置每个探测报文之间的时间间隔。  单位：s。  取值范围：1~75。  默认值：75。 |
+| keepIdleSec | number | 否 | 是 | 该参数设置一个计时器，TCP连接将在计时器触发时发送探测报文。  单位：s。  取值范围：[1~7200]。  默认值：7200。 |
+| userTimeoutMs | number | 否 | 是 | 该参数设置一个超时时间。若传输的数据在超时时间内未收到服务器的确认报文，TCP连接将被断开。  单位：ms。  取值范围：[1~3600000]。  默认值：和[Timeout](remote-communication-rcp.md#timeout).transferMs保持一致。 |
+| keepCnt | number | 否 | 是 | 该参数设置发送探测报文的次数。  单位：次。  取值范围：[1~9]。  默认值：9。 |
+| keepIntervalSec | number | 否 | 是 | 该参数设置每个探测报文之间的时间间隔。  单位：s。  取值范围：[1~75]。  默认值：75。 |
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. const transferConfig: rcp.TransferConfiguration = {
-4. tcp: {
-5. keepIdleSec: 20,
-6. userTimeoutMs: 3000,
-7. keepCnt: 6,
-8. keepIntervalSec: 30,
-9. }
-10. };
+const transferConfig: rcp.TransferConfiguration = {
+  tcp: {
+    keepIdleSec: 20,
+    userTimeoutMs: 3000,
+    keepCnt: 6,
+    keepIntervalSec: 30,
+  }
+};
 
-12. // Use the configuration in the session creation.
-13. const session = rcp.createSession({
-14. requestConfiguration: {
-15. transfer: transferConfig
-16. }
-17. });
+// 使用配置创建Session
+const session = rcp.createSession({
+  requestConfiguration: {
+    transfer: transferConfig
+  }
+});
 
-19. // Use the configuration in the request.
-20. const request = new rcp.Request('https://example.com');
-21. request.configuration = {
-22. transfer: transferConfig
-23. };
+// 使用配置创建请求
+const request = new rcp.Request('https://example.com');
+request.configuration = {
+  transfer: transferConfig
+};
 ```
 
 ## CookieRepository
-
-PhonePC/2in1TabletTVWearable
 
 cookie仓库。cookie仓库能够自动存储HTTP响应中的cookie，自动在HTTP请求中携带cookie，也支持手动管理仓库中的cookie。cookie仓库约每30秒将现有的cookie存储到本地，也可以使用[setCookies](remote-communication-rcp.md#setcookies)主动将cookie存储到本地。使用cookie仓库的[Session](remote-communication-rcp.md#session)实际上都会通过[DefaultSession](remote-communication-rcp.md#defaultsession)处理请求。
 
@@ -1833,8 +1730,6 @@ cookie仓库。cookie仓库能够自动存储HTTP响应中的cookie，自动在H
 **起始版本：** 6.1.0(23)
 
 ### create
-
-PhonePC/2in1TabletTVWearable
 
 static create(identifier?: string): CookieRepository
 
@@ -1850,7 +1745,7 @@ static create(identifier?: string): CookieRepository
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| identifier | string | 否 | cookie仓库标识。只能包含大写字母、小写字母和下划线。  传入undefined、null或空字符串时默认为'default'。  传入其他字符时抛出[1007900401](remote-communication-error-code.md#section1007900401-接口参数错误)错误。  具有同样标识的cookie仓库共享cookie信息（即具有同样标识的cookie仓库实例使用起来如同同一个实例）。 |
+| identifier | string | 否 | cookie仓库标识。只能包含大写字母、小写字母和下划线。  传入undefined、null或空字符串时默认为'default'。  传入其他字符时抛出[1007900401](errorcode-remote-communication.md#section1007900401-接口参数错误)错误。  具有同样标识的cookie仓库共享cookie信息（即具有同样标识的cookie仓库实例使用起来如同同一个实例）。 |
 
 **返回值：**
 
@@ -1860,27 +1755,25 @@ static create(identifier?: string): CookieRepository
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| [1007900401](remote-communication-error-code.md#section1007900401-接口参数错误) | Parameter error. |
+| [1007900401](errorcode-remote-communication.md#section1007900401-接口参数错误) | Parameter error. |
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. try {
-4. rcp.CookieRepository.create('myRepo');
-5. } catch (err) {
-6. console.error(`create error, error code is ${err.code}, error data is ${err.data}`);
-7. }
+try {
+  rcp.CookieRepository.create('myRepo');
+} catch (err) {
+  console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
+}
 ```
 
 ### setCookies
-
-PhonePC/2in1TabletTVWearable
 
 setCookies(cookies: ResponseCookie | ResponseCookie[]): Promise<void>
 
@@ -1896,7 +1789,7 @@ setCookies(cookies: ResponseCookie | ResponseCookie[]): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| cookies | [ResponseCookie](remote-communication-rcp.md#responsecookie) | [ResponseCookie](remote-communication-rcp.md#responsecookie)[] | 是 | 传入cookie仓库的cookie。cookie仓库里实际会存如下7项数据：domain、httpOnly、path、isSecure、expires、name和value。当两个cookie的name、domain、path三项完全相同时，视为同一个cookie。  path默认为'/'。  domain不设置或者设置为空字符串时抛出[1007900401](remote-communication-error-code.md#section1007900401-接口参数错误)错误。  maxAge会转化为expires。maxAge和expires都设置时，使用maxAge。  expires应是符合[RFC 7231](https://www.rfc-editor.org/rfc/rfc7231.html)协议，并且是GMT时间的字符串，精确到秒，例如：'Wed, 21 Oct 2025 07:28:00 GMT'。当expires字段传入无效字符串时抛出[1007900401](remote-communication-error-code.md#section1007900401-接口参数错误)错误。  系统会不定期清除expires过期的cookie。传入空数组时，仅将cookie仓库中现有的cookie存储到本地。 |
+| cookies | [ResponseCookie](remote-communication-rcp.md#responsecookie) | [ResponseCookie](remote-communication-rcp.md#responsecookie)[] | 是 | 传入cookie仓库的cookie。cookie仓库里实际会存如下7项数据：domain、httpOnly、path、isSecure、expires、name和value。当两个cookie的name、domain、path三项完全相同时，视为同一个cookie。  path默认为'/'。  domain不设置或者设置为空字符串时抛出[1007900401](errorcode-remote-communication.md#section1007900401-接口参数错误)错误。  maxAge会转化为expires。maxAge和expires都设置时，使用maxAge。  expires应是符合[RFC 7231](https://www.rfc-editor.org/rfc/rfc7231.html)协议，并且是GMT时间的字符串，精确到秒，例如：'Wed, 21 Oct 2025 07:28:00 GMT'。当expires字段传入无效字符串时抛出[1007900401](errorcode-remote-communication.md#section1007900401-接口参数错误)错误。  系统会不定期清除expires过期的cookie。传入空数组时，仅将cookie仓库中现有的cookie存储到本地。 |
 
 **返回值：**
 
@@ -1906,37 +1799,35 @@ setCookies(cookies: ResponseCookie | ResponseCookie[]): Promise<void>
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| [1007900401](remote-communication-error-code.md#section1007900401-接口参数错误) | Parameter error. |
-| [1007900999](remote-communication-error-code.md#section1007900999-内部错误) | Internal Error. |
+| [1007900401](errorcode-remote-communication.md#section1007900401-接口参数错误) | Parameter error. |
+| [1007900999](errorcode-remote-communication.md#section1007900999-内部错误) | Internal Error. |
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let cookieRepository = rcp.CookieRepository.create('myRepo');
-5. let cookie: rcp.ResponseCookie = {
-6. name:'session_1',
-7. value:'10001',
-8. domain:'www.example.com', // 域名请根据实际业务配置
-9. maxAge: 60,
-10. isSecure: true
-11. }
-12. cookieRepository.setCookies(cookie).then(() => {
-13. console.info('setCookies success.');
-14. }).catch((err: BusinessError) => {
-15. console.error(`setCookies error, error code is ${err.code}, error data is ${err.data}`);
-16. })
+let cookieRepository = rcp.CookieRepository.create('myRepo');
+let cookie: rcp.ResponseCookie = {
+   name:'session_1',
+   value:'10001',
+   domain:'www.example.com', // 域名请根据实际业务配置
+   maxAge: 60,
+   isSecure: true
+}
+cookieRepository.setCookies(cookie).then(() => {
+  console.info('Succeeded in setting cookies.');
+}).catch((err: BusinessError) => {
+  console.error(`setCookies error, error code is ${err.code}, error data is ${err.data}`);
+})
 ```
 
 ### getAllCookies
-
-PhonePC/2in1TabletTVWearable
 
 getAllCookies(): Promise<ResponseCookie[]>
 
@@ -1956,29 +1847,27 @@ getAllCookies(): Promise<ResponseCookie[]>
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| [1007900999](remote-communication-error-code.md#section1007900999-内部错误) | Internal Error. |
+| [1007900999](errorcode-remote-communication.md#section1007900999-内部错误) | Internal Error. |
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let cookieRepository = rcp.CookieRepository.create('myRepo');
-5. cookieRepository.getAllCookies().then((cookies) => {
-6. console.info(`cookies num: ${cookies.length}`);
-7. }).catch((err: BusinessError) => {
-8. console.error(`getAllCookies error, error code is ${err.code}, error data is ${err.data}`);
-9. })
+let cookieRepository = rcp.CookieRepository.create('myRepo');
+cookieRepository.getAllCookies().then((cookies) => {
+  console.info(`Succeeded in getting all cookies, cookies num: ${cookies.length}`);
+}).catch((err: BusinessError) => {
+  console.error(`getAllCookies error, error code is ${err.code}, error data is ${err.data}`);
+})
 ```
 
 ### getCookiesByUrl
-
-PhonePC/2in1TabletTVWearable
 
 getCookiesByUrl(url: URL): Promise<ResponseCookie[]>
 
@@ -2004,30 +1893,28 @@ getCookiesByUrl(url: URL): Promise<ResponseCookie[]>
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| [1007900999](remote-communication-error-code.md#section1007900999-内部错误) | Internal Error. |
+| [1007900999](errorcode-remote-communication.md#section1007900999-内部错误) | Internal Error. |
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { url } from '@kit.ArkTS';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { url } from '@kit.ArkTS';
 
-5. let cookieRepository = rcp.CookieRepository.create('myRepo');
-6. cookieRepository.getCookiesByUrl(url.URL.parseURL('https://www.example.com')).then((cookies) => {
-7. console.info(`cookies num: ${cookies.length}`);
-8. }).catch((err: BusinessError) => {
-9. console.error(`getCookiesByUrl error, error code is ${err.code}, error data is ${err.data}`);
-10. })
+let cookieRepository = rcp.CookieRepository.create('myRepo');
+cookieRepository.getCookiesByUrl(url.URL.parseURL('https://www.example.com')).then((cookies) => {
+  console.info(`Succeeded in getting cookies by URL, cookies num: ${cookies.length}`);
+}).catch((err: BusinessError) => {
+  console.error(`getCookiesByUrl error, error code is ${err.code}, error data is ${err.data}`);
+})
 ```
 
 ### deleteCookies
-
-PhonePC/2in1TabletTVWearable
 
 deleteCookies(cookies?: ResponseCookie | ResponseCookie[]): Promise<void>
 
@@ -2053,37 +1940,35 @@ deleteCookies(cookies?: ResponseCookie | ResponseCookie[]): Promise<void>
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| [1007900401](remote-communication-error-code.md#section1007900401-接口参数错误) | Parameter error. |
-| [1007900999](remote-communication-error-code.md#section1007900999-内部错误) | Internal Error. |
+| [1007900401](errorcode-remote-communication.md#section1007900401-接口参数错误) | Parameter error. |
+| [1007900999](errorcode-remote-communication.md#section1007900999-内部错误) | Internal Error. |
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let cookieRepository = rcp.CookieRepository.create('myRepo');
-5. let cookie: rcp.ResponseCookie = {
-6. name:'session_1',
-7. value:'10001',
-8. domain:'www.example.com', // 域名请根据实际业务配置
-9. maxAge: 60,
-10. isSecure: true
-11. }
-12. cookieRepository.deleteCookies(cookie).then(() => {
-13. console.info('deleteCookies success.');
-14. }).catch((err: BusinessError) => {
-15. console.error(`deleteCookies error, error code is ${err.code}, error data is ${err.data}`);
-16. })
+let cookieRepository = rcp.CookieRepository.create('myRepo');
+let cookie: rcp.ResponseCookie = {
+   name:'session_1',
+   value:'10001',
+   domain:'www.example.com', // 域名请根据实际业务配置
+   maxAge: 60,
+   isSecure: true
+}
+cookieRepository.deleteCookies(cookie).then(() => {
+  console.info('Succeeded in deleting cookies.');
+}).catch((err: BusinessError) => {
+  console.error(`deleteCookies error, error code is ${err.code}, error data is ${err.data}`);
+})
 ```
 
 ### deleteCookiesByUrl
-
-PhonePC/2in1TabletTVWearable
 
 deleteCookiesByUrl(url: URL): Promise<void>
 
@@ -2109,30 +1994,28 @@ deleteCookiesByUrl(url: URL): Promise<void>
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| [1007900999](remote-communication-error-code.md#section1007900999-内部错误) | Internal Error. |
+| [1007900999](errorcode-remote-communication.md#section1007900999-内部错误) | Internal Error. |
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { url } from '@kit.ArkTS';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { url } from '@kit.ArkTS';
 
-5. let cookieRepository = rcp.CookieRepository.create('myRepo');
-6. cookieRepository.deleteCookiesByUrl(url.URL.parseURL('https://www.example.com')).then(() => {
-7. console.info('deleteCookiesByUrl success.');
-8. }).catch((err: BusinessError) => {
-9. console.error(`deleteCookiesByUrl error, error code is ${err.code}, error data is ${err.data}`);
-10. })
+let cookieRepository = rcp.CookieRepository.create('myRepo');
+cookieRepository.deleteCookiesByUrl(url.URL.parseURL('https://www.example.com')).then(() => {
+  console.info('Succeeded in deleting cookies by URL.');
+}).catch((err: BusinessError) => {
+  console.error(`deleteCookiesByUrl error, error code is ${err.code}, error data is ${err.data}`);
+})
 ```
 
 ### identifier
-
-PhonePC/2in1TabletTVWearable
 
 get identifier(): string
 
@@ -2152,17 +2035,33 @@ get identifier(): string
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. let cookieRepository = rcp.CookieRepository.create('myRepo');
-4. let identifier = cookieRepository.identifier;
-5. console.info(`identifier is: ${identifier}`);
+let cookieRepository = rcp.CookieRepository.create('myRepo');
+let identifier = cookieRepository.identifier;
+console.info(`identifier is: ${identifier}`);
 ```
+
+## SessionPathPreference
+
+type SessionPathPreference = 'auto' | 'cellular-if-could' | 'mptcp'
+
+会话路径偏好设置。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Collaboration.RemoteCommunication
+
+**起始版本：** 26.0.0
+
+| 类型 | 说明 |
+| --- | --- |
+| 'auto' | 表示没有配置会话路径偏好，系统自动选择路径。 |
+| 'cellular-if-could' | 表示蜂窝网络可用时，优先使用蜂窝网络。需要配置ohos.permission.GET\_NETWORK\_INFO才能生效。如何激活蜂窝网络，请参考[网络连接管理文档](js-apis-net-connection.md#connectioncreatenetconnection)。 |
+| 'mptcp' | 表示使用多路传输控制协议（MPTCP），请参考[RFC 8684](https://www.rfc-editor.org/rfc/rfc8684.html)。 |
 
 ## TransferConfiguration
-
-PhonePC/2in1TabletTVWearable
 
 TransferConfiguration接口为开发者提供了一组选项，用于调整会话中HTTP请求期间的数据传输行为。这包括与自动重定向和超时配置相关的设置。
 
@@ -2174,39 +2073,42 @@ TransferConfiguration接口为开发者提供了一组选项，用于调整会�
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| autoRedirect | boolean | 否 | 是 | 指定HTTP客户端是否应自动遵循重定向。如果设置为true，客户端将自动遵循HTTP重定向；否则，不会自动重定向。默认值为true。 |
-| maxAutoRedirects | number | 否 | 是 | 请求要遵循的最大重定向次数，如果 autoRedirect 属性为 true，则需要对其设置。默认值为50，最大值为2147483647。  **起始版本：** 5.0.0(12) |
+| autoRedirect | boolean | 否 | 是 | HTTP请求是否开启自动重定向。true表示开启自动重定向，false表示不开启自动重定向。默认值为true。 |
+| maxAutoRedirects | number | 否 | 是 | 最大重定向次数，在autoRedirect为true时生效。  取值范围：[1~2147483647]。  默认值为50。  **起始版本：** 5.0.0(12) |
 | timeout | [Timeout](remote-communication-rcp.md#timeout) | 否 | 是 | 配置HTTP请求的超时值，允许开发者定义连接和传输数据所允许的最长时间。如果未设置，则使用默认时间。 |
-| assumesHTTP3Capable | boolean | 否 | 是 | 指定连接是否具有HTTP/3功能，true代表连接具有HTTP/3功能，false代表没有，默认为false。 |
-| pathPreference | [PathPreference](remote-communication-rcp.md#pathpreference) | 否 | 是 | HTTP请求路径首选项，此处配置的为建议路径，在实际使用过程中，系统会决定使用哪个路径。可以是'自动'或'蜂窝'路径。默认为'自动'路径。 |
+| assumesHTTP3Capable | boolean | 否 | 是 | 指定本次请求是否尝试升级为HTTP/3版本。true表示尝试升级，系统会根据客户端/服务端平台能力、网络质量等因素决定此次请求是否升级为HTTP/3版本，false表示不升级。默认为false。如需指定HTTP版本，请使用httpVersionSelectCallback。 |
+| pathPreference | [PathPreference](remote-communication-rcp.md#pathpreference) | 否 | 是 | HTTP请求路径首选项，此处配置的为建议路径，在实际使用过程中，设备的系统会决定使用哪个路径。可以是'auto'或'cellular'路径。默认为'auto'路径。 |
 | serviceType | [ServiceType](remote-communication-rcp.md#servicetype) | 否 | 是 | 服务类型。默认为undefined。 |
 | pausePolicy | [PausePolicy](remote-communication-rcp.md#pausepolicy) | 否 | 是 | 请求暂停策略。  **起始版本：** 5.0.0(12) |
 | tcp | [TcpConfiguration](remote-communication-rcp.md#tcpconfiguration) | 否 | 是 | TCP连接的相关配置。  **起始版本：** 6.0.0(20) |
 | connectionReusePolicy | [ConnectionReusePolicy](remote-communication-rcp.md#connectionreusepolicy) | 否 | 是 | HTTP连接复用方式。默认是'naive'。  **起始版本：** 6.1.0(23) |
+| throwErrorWhenEnableCellularFailed | boolean | 否 | 是 | 配置当请求的pathPreference为'cellular'且蜂窝网络启用失败时是否抛出错误码。true表示抛出蜂窝连接超时错误码[1007900986](errorcode-remote-communication.md#section1007900986-建立蜂窝链接超时)，false表示不抛错误码，使用其他可用网络（如Wi-Fi）发送请求。默认值为false。  **起始版本：** 6.1.1(24) |
+| httpVersionSelectCallback | [HttpVersionSelectCallback](remote-communication-rcp.md#httpversionselectcallback) | 否 | 是 | 选择HTTP版本的回调函数，返回值[HttpVersion](remote-communication-rcp.md#httpversion)。  **起始版本：** 26.0.0 |
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. const transferConfig: rcp.TransferConfiguration = {
-4. autoRedirect: true,
-5. timeout: {
-6. connectMs: 5000,
-7. transferMs: 10000
-8. },
-9. assumesHTTP3Capable: true,
-10. pathPreference: "cellular",
-11. connectionReusePolicy: "balanced"
-12. };
+const transferConfig: rcp.TransferConfiguration = {
+  autoRedirect: true,
+  timeout: {
+    connectMs: 5000,
+    transferMs: 10000
+  },
+  assumesHTTP3Capable: true,
+  pathPreference: 'cellular',
+  connectionReusePolicy: 'balanced',
+  httpVersionSelectCallback: (url: rcp.URL): rcp.HttpVersion => {
+    return '2';
+  },
+};
 
-14. // Use the configuration in the session creation
-15. const session = rcp.createSession({ requestConfiguration: { transfer: transferConfig } });
+// 使用配置创建Session
+const session = rcp.createSession({ requestConfiguration: { transfer: transferConfig } });
 ```
 
 ## TracingConfiguration
-
-PhonePC/2in1TabletTVWearable
 
 TracingConfiguration接口使开发者能够在会话中的HTTP请求期间捕获详细的跟踪信息。跟踪有助于调试、性能分析和深入了解通信过程中的数据流。
 
@@ -2219,74 +2121,73 @@ TracingConfiguration接口使开发者能够在会话中的HTTP请求期间捕�
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | verbose | boolean | 否 | 是 | 启用详细跟踪，捕获有关HTTP请求/响应流的大量信息。默认值为false，true表示开启捕获，false表示不开启。 |
-| infoToCollect | [InfoToCollect](remote-communication-rcp.md#infotocollect) | 否 | 是 | 配置要收集的特定类型的信息事件。默认无事件需要收集。 |
+| infoToCollect | [InfoToCollect](remote-communication-rcp.md#infotocollect) | 否 | 是 | 配置需要收集的特定类型的信息事件。默认无事件需要收集。 |
 | collectTimeInfo | boolean | 否 | 是 | 指示在跟踪过程中是否应收集与时间相关的信息，true代表收集，false代表不收集，默认值为false。 |
 | httpEventsHandler | [HttpEventsHandler](remote-communication-rcp.md#httpeventshandler) | 否 | 是 | 为HTTP请求/响应过程中的特定操作定义响应处理程序的回调。默认值为undefined。 |
+| plaintextInException | boolean | 否 | 是 | 抛出异常时是否在异常信息中显示明文内容。true表示显示，false表示不显示，默认值为false。  **起始版本：** 26.0.0 |
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. // Define a custom response handler
-4. const customHttpEventsHandler: rcp.HttpEventsHandler = {
-5. onDataReceive: (incomingData: ArrayBuffer) => {
-6. // Custom logic for handling incoming data
-7. console.info(`Received data length: ${incomingData.byteLength}`);
-8. return incomingData.byteLength;
-9. },
-10. onUploadProgress: (totalSize: number, transferredSize: number) => {
-11. // Custom logic for handling upload progress
-12. console.info(`Upload progress: ${transferredSize} of ${totalSize}`);
-13. },
-14. onDownloadProgress: (totalSize: number, transferredSize: number) => {
-15. // Custom logic for handling download progress
-16. console.info(`Download progress: ${transferredSize} of ${totalSize}`);
-17. },
-18. onHeaderReceive: (headers: rcp.ResponseHeaders) => {
-19. // Custom logic for handling response headers
-20. console.info(`Received headers: ${JSON.stringify(headers)}`);
-21. },
-22. onDataEnd: () => {
-23. // Custom logic for handling data transfer completion
-24. console.info("Data transfer complete");
-25. },
-26. onCanceled: () => {
-27. // Custom logic for handling cancellation
-28. console.info("Request/response canceled");
-29. },
-30. onStatusCodeReceive: (statusCode: number, request?: rcp.Request) => {
-31. // Custom logic for handling statusCode
-32. console.info(`Received statusCode: ${statusCode}`);
-33. }
-34. };
+// 定义自定义响应处理器
+const customHttpEventsHandler: rcp.HttpEventsHandler = {
+  onDataReceive: (incomingData: ArrayBuffer) => {
+    // 用于处理传入数据的自定义逻辑
+    console.info(`Received data length: ${incomingData.byteLength}`);
+    return incomingData.byteLength;
+  },
+  onUploadProgress: (totalSize: number, transferredSize: number) => {
+    // 用于处理上传进度的自定义逻辑
+    console.info(`Upload progress: ${transferredSize} of ${totalSize}`);
+  },
+  onDownloadProgress: (totalSize: number, transferredSize: number) => {
+    // 用于处理下载进度的自定义逻辑
+    console.info(`Download progress: ${transferredSize} of ${totalSize}`);
+  },
+  onHeaderReceive: (headers: rcp.ResponseHeaders) => {
+    // 用于处理响应头的自定义逻辑
+    console.info(`Received headers: ${JSON.stringify(headers)}`);
+  },
+  onDataEnd: () => {
+    // 用于处理数据传输完成的自定义逻辑。
+    console.info('Data transfer complete');
+  },
+  onCanceled: () => {
+    // 处理取消操作的自定义逻辑
+    console.info('Request/response canceled');
+  },
+  onStatusCodeReceive: (statusCode: number, request?: rcp.Request) => {
+    // 用于处理 statusCode 的自定义逻辑。
+    console.info(`Received statusCode: ${statusCode}`);
+  }
+};
 
-36. // Configure tracing settings
-37. const tracingConfig: rcp.TracingConfiguration = {
-38. verbose: true,
-39. infoToCollect: {
-40. textual: true,
-41. incomingHeader: true,
-42. outgoingHeader: true,
-43. incomingData: true,
-44. outgoingData: true,
-45. incomingSslData: true,
-46. outgoingSslData: true
-47. },
-48. collectTimeInfo: true,
-49. httpEventsHandler: customHttpEventsHandler
-50. };
+// 配置跟踪设置
+const tracingConfig: rcp.TracingConfiguration = {
+  verbose: true,
+  infoToCollect: {
+    textual: true,
+    incomingHeader: true,
+    outgoingHeader: true,
+    incomingData: true,
+    outgoingData: true,
+    incomingSslData: true,
+    outgoingSslData: true
+  },
+  collectTimeInfo: true,
+  httpEventsHandler: customHttpEventsHandler
+};
 
-52. // Use the configuration in the session creation
-53. const session = rcp.createSession({requestConfiguration: {tracing: tracingConfig}});
-54. console.info(`session id: ${session.id}`);
+// 使用配置创建Session
+const session = rcp.createSession({requestConfiguration: {tracing: tracingConfig}});
+console.info(`session id: ${session.id}`);
 ```
 
 ## ProxyConfiguration
 
-PhonePC/2in1TabletTVWearable
-
-type ProxyConfiguration = 'system' | 'no-proxy' | [WebProxy](remote-communication-rcp.md#webproxy)
+type ProxyConfiguration = 'system' | 'no-proxy' | WebProxy
 
 ProxyConfiguration接口允许开发者为会话中的HTTP请求配置代理设置，从而提供在系统、自定义或无代理之间进行选择的灵活性。
 
@@ -2304,51 +2205,49 @@ ProxyConfiguration接口允许开发者为会话中的HTTP请求配置代理设�
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. // Configure system proxy (default)
-4. const systemProxyConfig = "system";
+// 配置系统代理（默认）
+const systemProxyConfig = 'system';
 
-6. // Configure custom proxy
-7. const customProxyConfig: rcp.WebProxy = {
-8. url: "http://custom-proxy.example.com",
-9. createTunnel: "always",
-10. exclusions: ["http://exclude.example.com"],
-11. security: {
-12. certificate: {
-13. content: "-----BEGIN CERTIFICATE-----\n...",
-14. type: "PEM",
-15. key: "-----BEGIN PRIVATE KEY-----\n...", // 请根据实际业务选择合适的key
-16. keyPassword: "your-password"
-17. },
-18. serverAuthentication: {
-19. credential: {
-20. username: "proxy-username",
-21. password: "proxy-password"
-22. },
-23. authenticationType: "basic"
-24. }
-25. }
-26. };
+// 配置自定义代理
+const customProxyConfig: rcp.WebProxy = {
+  url: 'http://custom-proxy.example.com',
+  createTunnel: 'always',
+  exclusions: ['http://exclude.example.com'],
+  security: {
+    certificate: {
+      content: '-----BEGIN CERTIFICATE-----\n...',
+      type: 'PEM',
+      key: '-----BEGIN PRIVATE KEY-----\n...', // 请根据实际业务选择合适的key
+      keyPassword: 'your-password'
+    },
+    serverAuthentication: {
+      credential: {
+        username: 'proxy-username',
+        password: 'proxy-password'
+      },
+      authenticationType: 'basic'
+    }
+  }
+};
 
-28. // Configure no proxy
-29. const noProxyConfig = "no-proxy";
+// 配置无代理模式
+const noProxyConfig = 'no-proxy';
 
-31. // Use the proxy configuration in the session creation
-32. const sessionWithSystemProxy = rcp.createSession({ requestConfiguration: { proxy: systemProxyConfig } });
-33. console.info(`sessionWithSystemProxy id: ${sessionWithSystemProxy.id}`);
+// 在会话创建中使用代理配置。
+const sessionWithSystemProxy = rcp.createSession({ requestConfiguration: { proxy: systemProxyConfig } });
+console.info(`sessionWithSystemProxy id: ${sessionWithSystemProxy.id}`);
 
-35. const sessionWithCustomProxy = rcp.createSession({ requestConfiguration: { proxy: customProxyConfig } });
-36. console.info(`sessionWithCustomProxy id: ${sessionWithCustomProxy.id}`);
+const sessionWithCustomProxy = rcp.createSession({ requestConfiguration: { proxy: customProxyConfig } });
+console.info(`sessionWithCustomProxy id: ${sessionWithCustomProxy.id}`);
 
-38. const sessionWithNoProxy = rcp.createSession({ requestConfiguration: { proxy: noProxyConfig } });
-39. console.info(`sessionWithNoProxy id: ${sessionWithNoProxy.id}`);
+const sessionWithNoProxy = rcp.createSession({ requestConfiguration: { proxy: noProxyConfig } });
+console.info(`sessionWithNoProxy id: ${sessionWithNoProxy.id}`);
 ```
 
 ## DnsConfiguration
-
-PhonePC/2in1TabletTVWearable
 
 允许开发者为会话中的HTTP请求配置域名系统（DNS）设置。它提供了指定DNS规则的灵活性，包括自定义DNS服务器或静态DNS规则。
 
@@ -2366,63 +2265,61 @@ PhonePC/2in1TabletTVWearable
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. // Configure custom DNS servers
-4. const customDnsServers: rcp.DnsServers = [
-5. { ip: "8.8.8.8" },
-6. { ip: "8.8.4.4", port: 53 }
-7. ];
+// 配置自定义DNS服务器，下面IP地址仅作为示意。
+const customDnsServers: rcp.DnsServers = [
+  { ip: '192.168.1.1' },
+  { ip: '192.168.1.2', port: 53 }
+];
 
-9. // Configure static DNS rules
-10. const staticDnsRules: rcp.StaticDnsRules = [
-11. { host: "example.com", port: 80, ipAddresses: ["192.168.1.1", "192.168.1.2"] },
-12. { host: "sub.example.com", port: 443, ipAddresses: ["192.168.2.1"] }
-13. ];
+// 配置静态DNS规则，下面IP地址仅作为示意。
+const staticDnsRules: rcp.StaticDnsRules = [
+  { host: 'example.com', port: 80, ipAddresses: ['192.168.1.1', '192.168.1.2'] },
+  { host: 'sub.example.com', port: 443, ipAddresses: ['192.168.2.1'] }
+];
 
-15. // Configure DNS over HTTPS
-16. const dohConfig: rcp.DnsOverHttpsConfiguration = {
-17. url: "https://dns.example.com/dns-query",
-18. skipCertificatesValidation: true
-19. };
+// 配置通过 HTTPS 的 DNS
+const dohConfig: rcp.DnsOverHttpsConfiguration = {
+  url: 'https://dns.example.com/dns-query',
+  skipCertificatesValidation: true
+};
 
-21. // Use DNS configuration in the session creation.
-22. const sessionWithCustomDns = rcp.createSession({ requestConfiguration: { dns: { dnsRules: customDnsServers } } });
-23. const sessionWithStaticDns = rcp.createSession({
-24. requestConfiguration: {
-25. dns: {
-26. // for example.com, '192.168.1.2' is effective.
-27. // for sub.example.com, '192.168.2.1' is effective.
-28. dnsRules: staticDnsRules,
-29. }
-30. }
-31. });
-32. const sessionWithDoh = rcp.createSession({ requestConfiguration: { dns: { dnsOverHttps: dohConfig } } });
+// 在会话创建中使用DNS配置
+const sessionWithCustomDns = rcp.createSession({ requestConfiguration: { dns: { dnsRules: customDnsServers } } });
+const sessionWithStaticDns = rcp.createSession({
+  requestConfiguration: {
+    dns: {
+      // 例如对于 example.com，'192.168.1.2' 是有效的。
+      // 对于 sub.example.com，'192.168.2.1' 是有效的。
+      dnsRules: staticDnsRules,
+    }
+  }
+});
+const sessionWithDoh = rcp.createSession({ requestConfiguration: { dns: { dnsOverHttps: dohConfig } } });
 
-34. // Enable happy eyeball in the session creation when dns rules is set.
-35. const sessionWithStaticDnsRulesAndHappyEyeball = rcp.createSession({
-36. requestConfiguration: {
-37. dns: {
-38. dnsRules: staticDnsRules, // Set dns rules here.
-39. happyEyeballOnDnsRule: true, // Enable happy eyeball here.
-40. }
-41. }
-42. });
+// 在创建会话时，若设置了DNS规则，则启用happyEyeballOnDnsRule
+const sessionWithStaticDnsRulesAndHappyEyeball = rcp.createSession({
+  requestConfiguration: {
+    dns: {
+      dnsRules: staticDnsRules, // 在此设置DNS规则
+      happyEyeballOnDnsRule: true, // 在此启用happyEyeballOnDnsRule
+    }
+  }
+});
 
-44. // Enable happy eyeball in the request configuration when dns rules is set.
-45. const request = new rcp.Request('https://example.com');
-46. request.configuration = {
-47. dns: {
-48. dnsRules: staticDnsRules, // Set dns rule here.
-49. happyEyeballOnDnsRule: true, // Enable happy eyeball here.
-50. }
-51. };
+// 在DNS规则设置时，在请求配置中启用happyEyeballOnDnsRule
+const request = new rcp.Request('https://example.com');
+request.configuration = {
+  dns: {
+    dnsRules: staticDnsRules, // 在此设置DNS规则
+    happyEyeballOnDnsRule: true, // 在此启用happyEyeballOnDnsRule
+  }
+};
 ```
 
 ## DnsOverHttpsConfiguration
-
-PhonePC/2in1TabletTVWearable
 
 允许开发者配置HTTPS上的DNS（DOH）设置，从而通过HTTPS端点实现安全的DNS解析。
 
@@ -2439,22 +2336,20 @@ PhonePC/2in1TabletTVWearable
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. // Configure DNS over HTTPS settings
-4. const dohConfig: rcp.DnsOverHttpsConfiguration = {
-5. url: "https://dns.example.com/dns-query",
-6. skipCertificatesValidation: true
-7. };
+// 配置 DNS over HTTPS 设置
+const dohConfig: rcp.DnsOverHttpsConfiguration = {
+  url: 'https://dns.example.com/dns-query',
+  skipCertificatesValidation: true
+};
 
-9. // Use the DNS over HTTPS configuration in the session creation
-10. const sessionWithDoh = rcp.createSession({ requestConfiguration: { dns: { dnsOverHttps: dohConfig } } });
+// 在会话创建中使用 DNS over HTTPS 配置
+const sessionWithDoh = rcp.createSession({ requestConfiguration: { dns: { dnsOverHttps: dohConfig } } });
 ```
 
 ## SecurityConfiguration
-
-PhonePC/2in1TabletTVWearable
 
 SecurityConfiguration接口允许开发者在会话中配置与安全相关的设置，包括证书和服务器身份验证。
 
@@ -2468,42 +2363,47 @@ SecurityConfiguration接口允许开发者在会话中配置与安全相关的�
 | --- | --- | --- | --- | --- |
 | remoteValidation | 'system' | 'skip' | [CertificateAuthority](remote-communication-rcp.md#certificateauthority) | [ValidationCallback](remote-communication-rcp.md#validationcallback) | 否 | 是 | 证书颁发机构（CA），用于验证远程服务器的身份。默认值为'system'。  如果未设置此字段，系统CA将被用于验证远程服务器的标识。  'system'：表示使用系统CA配置。  'skip'：跳过验证。  CertificateAuthority：证书颁发机构（CA）验证。  ValidationCallback：自定义证书校验。  **说明：** 从5.0.0(12)版本开始，新增支持ValidationCallback类型。 |
 | certificate | [ClientCertificate](remote-communication-rcp.md#clientcertificate) | 否 | 是 | 发送到远程服务器的客户端证书，用于远程服务器使用其验证委托人的身份证明。默认值为undefined，表示服务器不需要验证客户端。 |
+| certificateEnc | [ClientCertificate](remote-communication-rcp.md#clientcertificate) | 否 | 是 | 客户端加密证书，用于发送给远程[TLCP](https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=778097598DA2761E94A5FF3F77BD66DA)服务器以验证客户端身份。仅在securityLayerType为'tlcp'时生效。默认值为undefined，表示服务器无需验证客户端的加密证书。  **起始版本：** 26.0.0 |
 | tlsOptions | 'system' | [CipherSuite](remote-communication-rcp.md#ciphersuite)[] | [TlsV13Option](remote-communication-rcp.md#tlsv13option) | [TlsV12Option](remote-communication-rcp.md#tlsv12option)| [TlsV11Option](remote-communication-rcp.md#tlsv11option) | [TlsV10Option](remote-communication-rcp.md#tlsv10option) | 否 | 是 | TLS版本选择器，用于选择TLS的版本，默认为'system'。  'system'：表示使用系统的TLS版本。  [CipherSuite](remote-communication-rcp.md#ciphersuite)[]：用来声明加密套件的类型的数组。  [TlsV13Option](remote-communication-rcp.md#tlsv13option)：表示使用TLS1.3版本。  [TlsV12Option](remote-communication-rcp.md#tlsv12option)：表示使用TLS1.2版本。  [TlsV11Option](remote-communication-rcp.md#tlsv11option)：表示使用TLS1.1版本。  [TlsV10Option](remote-communication-rcp.md#tlsv10option)：表示使用TLS1.0版本。  **起始版本：** 5.0.0(12) |
 | tlsRange | [TlsVersionRangeOptions](remote-communication-rcp.md#tlsversionrangeoptions) | 否 | 是 | TLS版本范围配置器，用于设置客户端可使用TLS版本的范围，默认不配置。  **起始版本：** 6.0.0(20) |
 | serverAuthentication | [ServerAuthentication](remote-communication-rcp.md#serverauthentication) | 否 | 是 | 安全连接期间的服务器身份验证配置。默认不认证。 |
 | certificatePinning | [CertificatePinning](remote-communication-rcp.md#certificatepinning)| [CertificatePinning](remote-communication-rcp.md#certificatepinning)[] | 否 | 是 | 证书锁定配置。  **起始版本：** 5.0.0(12) |
 | challenge | [OnAuthenticationChallenge](remote-communication-rcp.md#onauthenticationchallenge) | 否 | 是 | 自定义认证挑战。  **起始版本：** 6.1.0(23) |
+| securityLayerType | [SecurityLayerType](remote-communication-rcp.md#securitylayertype) | 否 | 是 | 安全层协议类型。默认值为'ssl-tls'。如果设置为'tlcp'，遵循以下规则：  1. 不支持模拟器。在模拟器上使用'tlcp'发起请求时抛出[804](errorcode-universal.md#section804-模拟器不支持此api)错误。  2. 不支持作为代理服务器类型。[WebProxy](remote-communication-rcp.md#webproxy)的security.securityLayerType配置为'tlcp'，发起请求时抛出[1007900401](errorcode-remote-communication.md#section1007900401-接口参数错误)错误。  3. remoteValidation仅支持配置为'skip'、[CertificateAuthority](remote-communication-rcp.md#certificateauthority)或[ValidationCallback](remote-communication-rcp.md#validationcallback)。配置为[CertificateAuthority](remote-communication-rcp.md#certificateauthority)时，仅支持传入filePath。其他情况在请求时抛出[1007900401](errorcode-remote-communication.md#section1007900401-接口参数错误)错误。  4. certificate和certificateEnc不支持传入content，否则在请求时抛出[1007900401](errorcode-remote-communication.md#section1007900401-接口参数错误)错误。  5. certificate和certificateEnc的type只支持'PEM'类型，否则在请求时抛出[1007900401](errorcode-remote-communication.md#section1007900401-接口参数错误)错误。  6. 不支持配置tlsOptions、tlsRange和certificatePinning，否则在请求时抛出[1007900401](errorcode-remote-communication.md#section1007900401-接口参数错误)错误。  **起始版本：** 26.0.0 |
+| certificateDecompress | [CertificateDecompress](remote-communication-rcp.md#certificatedecompress)| [CertificateDecompress](remote-communication-rcp.md#certificatedecompress)[] | 否 | 是 | TLS1.3扩展协议证书解压缩配置。建议同时将[SecurityConfiguration](remote-communication-rcp.md#securityconfiguration)的tlsOptions配置为[TlsV13Option](remote-communication-rcp.md#tlsv13option)类型参数。配置项仅Phone设备生效，在其他设备上设置无效。  **起始版本：** 26.0.0 |
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. // Configure security settings
-4. const securityConfig: rcp.SecurityConfiguration = {
-5. remoteValidation: "system",
-6. certificate: {
-7. content: "-----BEGIN CERTIFICATE-----\n...",
-8. type: "PEM",
-9. key: "-----BEGIN PRIVATE KEY-----\n...", // 请根据自身业务选择合适的key
-10. keyPassword: "your-password"
-11. },
-12. serverAuthentication: {
-13. credential: {
-14. username: "exampleUser",
-15. password: "examplePassword"
-16. },
-17. authenticationType: "basic"
-18. }
-19. };
+// 配置安全设置
+const securityConfig: rcp.SecurityConfiguration = {
+  remoteValidation: 'system',
+  certificate: {
+    content: '-----BEGIN CERTIFICATE-----\n...',
+    type: 'PEM',
+    key: '-----BEGIN PRIVATE KEY-----\n...', // 请根据自身业务选择合适的key
+    keyPassword: 'your-password'
+  },
+  serverAuthentication: {
+    credential: {
+      username: 'exampleUser',
+      password: 'examplePassword'
+    },
+    authenticationType: 'basic'
+  },
+  tlsOptions: {
+    tlsVersion: 'TlsV1.3',
+  },
+  certificateDecompress: 'zlib',
+};
 
-21. // Use the security configuration in the session creation
-22. const sessionWithSecurityConfig = rcp.createSession({ requestConfiguration: { security: securityConfig } });
+// 在会话创建中使用安全配置
+const sessionWithSecurityConfig = rcp.createSession({ requestConfiguration: { security: securityConfig } });
 ```
 
 ## CertificateAuthority
-
-PhonePC/2in1TabletTVWearable
 
 证书颁发机构（CA）用于验证远程服务器的身份。
 
@@ -2515,15 +2415,13 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| content | string | ArrayBuffer | 否 | 是 | 用于验证对等方的证书颁发机构证书捆绑包。是PEM格式。 |
+| content | string | ArrayBuffer | 否 | 是 | 用于验证对等方的证书颁发机构证书捆绑包。内容应为PEM格式。 |
 | filePath | string | 否 | 是 | 用于验证对等方的证书颁发机构证书文件的路径。该文件应为PEM格式。 |
 | folderPath | string | 否 | 是 | 用于验证对等方包含多个CA证书目录的路径。此目录中的文件应为PEM格式。 |
 
 ## ClientCertificate
 
-PhonePC/2in1TabletTVWearable
-
-ClientCertificate接口允许开发者为会话中的安全连接配置与证书相关的设置。
+客户端证书。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -2541,8 +2439,6 @@ ClientCertificate接口允许开发者为会话中的安全连接配置与证书
 
 ## ServerAuthentication
 
-PhonePC/2in1TabletTVWearable
-
 HTTP服务器身份验证。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -2558,9 +2454,7 @@ HTTP服务器身份验证。
 
 ## TlsVersionRangeOptions
 
-PhonePC/2in1TabletTVWearable
-
-TLS版本可用范围配置属性，开发者能够设置安全相关TLS版本的上限和下限，并指定该范围内加密套件列表。
+TLS版本可用范围配置属性，开发者能够设置安全相关TLS版本的上限和下限，并指定该范围内加密套件列表。如果最小版本大于最大版本，发起请求时抛出[401](errorcode-universal.md#section401-参数检查失败)错误。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -2574,17 +2468,7 @@ TLS版本可用范围配置属性，开发者能够设置安全相关TLS版本�
 | max | [TlsVersion](remote-communication-rcp.md#tlsversion) | 否 | 是 | TLS可用最大版本，默认不设置，由系统选择。 |
 | cipherSuite | [CipherSuite](remote-communication-rcp.md#ciphersuite)[] | 否 | 是 | TLS可用版本范围内的加密套件列表，默认不设置，由系统选择。 |
 
-**错误码：**
-
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| [401](errorcode-universal.md#section401-参数检查失败) | 当开发者设置TLS最小版本大于最大版本时，系统将抛出该参数错误码。表示Parameter error. |
-
 ## OnAuthenticationChallenge
-
-PhonePC/2in1TabletTVWearable
 
 type OnAuthenticationChallenge = (info: AuthenticationChallengeInfo[], response: Response, challengeCount: number) => ServerAuthentication | null
 
@@ -2610,9 +2494,41 @@ type OnAuthenticationChallenge = (info: AuthenticationChallengeInfo[], response:
 | --- | --- |
 | [ServerAuthentication](remote-communication-rcp.md#serverauthentication) | null | 返回类型为HTTP服务器的身份验证信息或null。若返回验证信息，系统将使用用户提供的信息进行认证挑战；若返回null，则放弃认证挑战。 |
 
-## AuthenticationChallengeInfo
+## SecurityLayerType
 
-PhonePC/2in1TabletTVWearable
+type SecurityLayerType = 'ssl-tls' | 'tlcp'
+
+安全层协议类型。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Collaboration.RemoteCommunication
+
+**起始版本：** 26.0.0
+
+| 类型 | 说明 |
+| --- | --- |
+| 'ssl-tls' | 表示安全层使用TLS协议。 |
+| 'tlcp' | 表示安全层使用国密[TLCP](https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=778097598DA2761E94A5FF3F77BD66DA)协议。 |
+
+## CertificateDecompress
+
+type CertificateDecompress = 'zlib' | 'brotli'
+
+证书解压缩算法。请参考[RFC 8879](https://www.rfc-editor.org/rfc/rfc8879.html)。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Collaboration.RemoteCommunication
+
+**起始版本：** 26.0.0
+
+| 类型 | 说明 |
+| --- | --- |
+| 'zlib' | 表示使用zlib算法解压缩。 |
+| 'brotli' | 表示使用brotli算法解压缩。 |
+
+## AuthenticationChallengeInfo
 
 type AuthenticationChallengeInfo = Record<string, string>
 
@@ -2630,8 +2546,6 @@ type AuthenticationChallengeInfo = Record<string, string>
 
 ## Request
 
-PhonePC/2in1TabletTVWearable
-
 HTTP请求。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -2644,7 +2558,7 @@ HTTP请求。
 | --- | --- | --- | --- | --- |
 | id | string | 是 | 否 | 请求对象的唯一标识符。由系统生成。 |
 | url | [URL](remote-communication-rcp.md#url) | 否 | 否 | HTTP请求的URL。 |
-| method | [HttpMethod](remote-communication-rcp.md#httpmethod) | 否 | 否 | 要使用的HTTP方法。默认值为'GET'。 |
+| method | [HttpMethod](remote-communication-rcp.md#httpmethod) | 否 | 否 | HTTP方法。默认值为'GET'。 |
 | headers | [RequestHeaders](remote-communication-rcp.md#requestheaders) | 否 | 是 | HTTP请求头。默认值为undefined。 |
 | content | [RequestContent](remote-communication-rcp.md#requestcontent) | 否 | 是 | HTTP请求内容。默认值为undefined。 |
 | cookies | [RequestCookies](remote-communication-rcp.md#requestcookies) | 否 | 是 | HTTP请求的Cookie。将设置转换为HTTP Cookies标头。默认值为undefined。 |
@@ -2652,10 +2566,9 @@ HTTP请求。
 | configuration | [Configuration](remote-communication-rcp.md#configuration) | 否 | 是 | HTTP请求配置。用于覆盖默认或会话范围的设置。默认值为undefined。 |
 | destination | [ResponseBodyDestination](remote-communication-rcp.md#responsebodydestination) | 否 | 是 | HTTP响应体放置位置。  **起始版本：** 5.0.0(12) |
 | cacheControl | [CacheControl](remote-communication-rcp.md#cachecontrol) | 否 | 是 | HTTP请求缓存控制配置。若配置，则[SessionConfiguration](remote-communication-rcp.md#sessionconfiguration)中的配置的缓存控制不生效。默认值为undefined。  **起始版本：** 6.0.0(20) |
+| connectOnly | boolean | 否 | 是 | 此选项用于确定请求是否仅用于建立连接。如果设置为true，则表示本次请求仅用于建立连接；如果设置为false，则表示本次请求可以传输数据。默认值为false。  **起始版本：** 6.1.1(24) |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(url: URLOrString, method?: HttpMethod, headers?: RequestHeaders, content?: RequestContent, cookies?: RequestCookies, transferRange?: TransferRange | TransferRange[], configuration?: Configuration)
 
@@ -2681,26 +2594,24 @@ constructor(url: URLOrString, method?: HttpMethod, headers?: RequestHeaders, con
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. let headers: rcp.RequestHeaders = {
-4. "accept": "application/json"
-5. };
-6. let content = "data to send";
-7. let configuration: rcp.Configuration = {
-8. transfer: {
-9. timeout: { connectMs: 60000, transferMs: 60000 }
-10. }
-11. };
-12. let cookies: rcp.RequestCookies = { 'name1': 'value1', 'name2': 'value2' };
-13. let transferRange: rcp.TransferRange = { from: 100, to: 200 };
-14. let req = new rcp.Request("http://example.com", "POST", headers, content, cookies, transferRange, configuration);
+let headers: rcp.RequestHeaders = {
+  'accept': 'application/json'
+};
+let content = 'data to send';
+let configuration: rcp.Configuration = {
+  transfer: {
+    timeout: { connectMs: 60000, transferMs: 60000 }
+  }
+};
+let cookies: rcp.RequestCookies = { 'name1': 'value1', 'name2': 'value2' };
+let transferRange: rcp.TransferRange = { from: 100, to: 200 };
+let req = new rcp.Request('http://example.com', 'POST', headers, content, cookies, transferRange, configuration);
 ```
 
 ## URL
-
-PhonePC/2in1TabletTVWearable
 
 type URL = url.URL
 
@@ -2718,13 +2629,9 @@ type URL = url.URL
 
 ## X509Cert
 
-PhonePC/2in1TabletTVWearable
-
 type X509Cert = cert.X509Cert
 
 提供 x509 证书类型，链接到@[ohos.security.cert](js-apis-cert.md)中的X509Cert。
-
-取值范围请见下表。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -2737,8 +2644,6 @@ type X509Cert = cert.X509Cert
 | cert.X509Cert | 表示值的类型为@ohos.security.cert.X509Cert，可取任意值。 |
 
 ## File
-
-PhonePC/2in1TabletTVWearable
 
 type File = fs.File
 
@@ -2756,8 +2661,6 @@ type File = fs.File
 
 ## RandomAccessFile
 
-PhonePC/2in1TabletTVWearable
-
 type RandomAccessFile = fs.RandomAccessFile
 
 可以随机访问的文件，链接到@[ohos.file.fs](js-apis-file-fs.md)中的RandomAccessFile。
@@ -2774,8 +2677,6 @@ type RandomAccessFile = fs.RandomAccessFile
 
 ## Stream
 
-PhonePC/2in1TabletTVWearable
-
 type Stream = fs.Stream
 
 提供数据流的形式，链接到@[ohos.file.fs](js-apis-file-fs.md)中的Stream。
@@ -2791,8 +2692,6 @@ type Stream = fs.Stream
 | fs.Stream | 表示值的类型为@ohos.file.fs.Stream，可取任意值。 |
 
 ## RawDataContent
-
-PhonePC/2in1TabletTVWearable
 
 type RawDataContent = string | ArrayBuffer | object
 
@@ -2812,8 +2711,6 @@ ArkTs的基本类型数据。
 
 ## FileDescriptor
 
-PhonePC/2in1TabletTVWearable
-
 type FileDescriptor = number
 
 文件的描述符，用于访问文件或者I/O设备的抽象表示。
@@ -2830,9 +2727,7 @@ type FileDescriptor = number
 
 ## LocalFile
 
-PhonePC/2in1TabletTVWearable
-
-type LocalFile = [FileDescriptor](remote-communication-rcp.md#filedescriptor) | [File](remote-communication-rcp.md#file) | [RandomAccessFile](remote-communication-rcp.md#randomaccessfile)
+type LocalFile = FileDescriptor | File | RandomAccessFile
 
 具有文件特性的对象，允许用户使用不同类型的文件描述符或文件对象进行操作。
 
@@ -2850,8 +2745,6 @@ type LocalFile = [FileDescriptor](remote-communication-rcp.md#filedescriptor) | 
 
 ## WriteFile
 
-PhonePC/2in1TabletTVWearable
-
 提供向文件写入数据的函数。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -2861,8 +2754,6 @@ PhonePC/2in1TabletTVWearable
 **起始版本：** 5.0.0(12)
 
 ### write
-
-PhonePC/2in1TabletTVWearable
 
 write(buffer: ArrayBuffer): Promise<void | number>
 
@@ -2884,11 +2775,9 @@ write(buffer: ArrayBuffer): Promise<void | number>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void | number> | Promise对象。无返回结果，或者返回写入的number类型数据。 |
+| Promise<void | number> | Promise对象。无返回结果，或者返回写入的字节数。 |
 
 ## ReadFile
-
-PhonePC/2in1TabletTVWearable
 
 提供从文件中读取数据的函数。
 
@@ -2899,8 +2788,6 @@ PhonePC/2in1TabletTVWearable
 **起始版本：** 5.0.0(12)
 
 ### read
-
-PhonePC/2in1TabletTVWearable
 
 read(buffer: ArrayBuffer): Promise<number>
 
@@ -2922,11 +2809,9 @@ read(buffer: ArrayBuffer): Promise<number>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<number> | Promise对象，返回从文件中读取到的数据，类型为number。 |
+| Promise<number> | 使用Promise异步回调，返回读取的字节数。 |
 
 ## WriteStream
-
-PhonePC/2in1TabletTVWearable
 
 提供将数据写入流中的函数。
 
@@ -2937,8 +2822,6 @@ PhonePC/2in1TabletTVWearable
 **起始版本：** 5.0.0(12)
 
 ### write
-
-PhonePC/2in1TabletTVWearable
 
 write(buffer: ArrayBuffer): Promise<void | number>
 
@@ -2954,17 +2837,15 @@ write(buffer: ArrayBuffer): Promise<void | number>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| buffer | ArrayBuffer | 是 | 需要写入流中的数据。 |
+| buffer | ArrayBuffer | 是 | 缓冲区，用于存储读取到的数据。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void | number> | Promise对象。无返回结果，或者返回写入的number类型数据。 |
+| Promise<void | number> | Promise对象。无返回结果，或者返回写入的字节数。 |
 
 ## SyncWriteStream
-
-PhonePC/2in1TabletTVWearable
 
 提供同步将数据写入流中的函数。
 
@@ -2975,8 +2856,6 @@ PhonePC/2in1TabletTVWearable
 **起始版本：** 5.0.0(12)
 
 ### writeSync
-
-PhonePC/2in1TabletTVWearable
 
 writeSync(buffer: ArrayBuffer): void | number
 
@@ -2992,18 +2871,15 @@ writeSync(buffer: ArrayBuffer): void | number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| buffer | ArrayBuffer | 是 | 需要写入流中的数据。 |
+| buffer | ArrayBuffer | 是 | 缓冲区，用于存储读取到的数据。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| void | 无返回值。 |
-| number | 返回写入的number类型数据。 |
+| void | number | 无返回值；或者返回写入的字节数。 |
 
 ## ReadStream
-
-PhonePC/2in1TabletTVWearable
 
 提供从流中读取数据的函数。
 
@@ -3014,8 +2890,6 @@ PhonePC/2in1TabletTVWearable
 **起始版本：** 5.0.0(12)
 
 ### read
-
-PhonePC/2in1TabletTVWearable
 
 read(buffer: ArrayBuffer): Promise<number>
 
@@ -3031,17 +2905,15 @@ read(buffer: ArrayBuffer): Promise<number>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| buffer | ArrayBuffer | 是 | 需要写入流中的数据。 |
+| buffer | ArrayBuffer | 是 | 缓冲区，用于存储读取到的数据。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<number> | Promise对象，返回从文件中读取到的数据，类型为number。 |
+| Promise<number> | 使用Promise异步回调，返回读取的字节数。 |
 
 ## SyncReadStream
-
-PhonePC/2in1TabletTVWearable
 
 提供同步从流中读取数据的函数。
 
@@ -3052,8 +2924,6 @@ PhonePC/2in1TabletTVWearable
 **起始版本：** 5.0.0(12)
 
 ### readSync
-
-PhonePC/2in1TabletTVWearable
 
 readSync(buffer: ArrayBuffer): number
 
@@ -3069,17 +2939,15 @@ readSync(buffer: ArrayBuffer): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| buffer | ArrayBuffer | 是 | 需要写入流中的数据。 |
+| buffer | ArrayBuffer | 是 | 缓冲区，用于存储读取到的数据。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 返回写入的number类型数据。 |
+| number | 返回读取的字节数。 |
 
 ## DownloadedTo
-
-PhonePC/2in1TabletTVWearable
 
 用户在发起请求时通过[DownloadToFile](remote-communication-rcp.md#downloadtofile)指定的路径。
 
@@ -3092,11 +2960,9 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | path | [Path](remote-communication-rcp.md#path) | 否 | 否 | 如果请求目标（[Request.destination](remote-communication-rcp.md#request)）是下载到文件时，path表示文件保存的路径。 |
-| requestSkipped | true | 否 | 是 | 当前仅支持true，若配置时选择此项则默认跳过请求，若不想跳过则不必选择此项。 |
+| requestSkipped | true | 否 | 是 | 是否跳过该请求。设置为true表示跳过该请求，不设置表示不跳过请求。 |
 
 ## TargetFile
-
-PhonePC/2in1TabletTVWearable
 
 下载后的数据存放在本地设备的指定目录中，通常是下载文件夹或指定的默认存储位置。
 
@@ -3113,9 +2979,7 @@ PhonePC/2in1TabletTVWearable
 
 ## TargetFileCallback
 
-PhonePC/2in1TabletTVWearable
-
-type TargetFileCallback = (request: [Request](remote-communication-rcp.md#request), suggestedPath: [Path](remote-communication-rcp.md#path)) => [TargetFile](remote-communication-rcp.md#targetfile) | Promise<[TargetFile](remote-communication-rcp.md#targetfile)>
+type TargetFileCallback = (request: Request, suggestedPath: Path) => TargetFile | Promise<TargetFile>
 
 [TargetFile](remote-communication-rcp.md#targetfile)回调函数，返回一个[TargetFile](remote-communication-rcp.md#targetfile)对象，可以使用Promise异步回调。
 
@@ -3136,12 +3000,9 @@ type TargetFileCallback = (request: [Request](remote-communication-rcp.md#reques
 
 | 类型 | 说明 |
 | --- | --- |
-| [TargetFile](remote-communication-rcp.md#targetfile) | 回调函数，返回[TargetFile](remote-communication-rcp.md#targetfile)对象。 |
-| Promise<[TargetFile](remote-communication-rcp.md#targetfile)> | Promise对象，返回[TargetFile](remote-communication-rcp.md#targetfile)对象，表示下载数据的存放位置。 |
+| [TargetFile](remote-communication-rcp.md#targetfile) | Promise<[TargetFile](remote-communication-rcp.md#targetfile)> | 回调函数，返回[TargetFile](remote-communication-rcp.md#targetfile)对象；或者Promise对象，返回[TargetFile](remote-communication-rcp.md#targetfile)对象，表示下载数据的存放位置。 |
 
 ## IncomingDataCallback
-
-PhonePC/2in1TabletTVWearable
 
 type IncomingDataCallback = (incomingData: ArrayBuffer) => void | Promise<void>
 
@@ -3163,12 +3024,9 @@ type IncomingDataCallback = (incomingData: ArrayBuffer) => void | Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| void | 回调函数，无返回值。 |
-| Promise<void> | Promise对象，无返回结果。 |
+| void | Promise<void> | 回调函数，无返回值； 或者Promise对象，无返回结果。 |
 
 ## UploadFromFile
-
-PhonePC/2in1TabletTVWearable
 
 UploadFromFile表示一种文件上传的方式，允许客户端将本地计算机上的文件上传到服务器。
 
@@ -3183,8 +3041,6 @@ UploadFromFile表示一种文件上传的方式，允许客户端将本地计算
 | fileOrPath | [Path](remote-communication-rcp.md#path) | [LocalFile](remote-communication-rcp.md#localfile) | [ReadFile](remote-communication-rcp.md#readfile) | 是 | 否 | 表示需要上传的文件或者上传文件的路径，参考[应用文件](../harmonyos-guides/app-file.md)。 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(fileOrPath: Path | LocalFile | ReadFile)
 
@@ -3204,8 +3060,6 @@ constructor(fileOrPath: Path | LocalFile | ReadFile)
 
 ## UploadFromStream
 
-PhonePC/2in1TabletTVWearable
-
 UploadFromStream表示以流的形式进行上传操作。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -3219,8 +3073,6 @@ UploadFromStream表示以流的形式进行上传操作。
 | stream | [Stream](remote-communication-rcp.md#stream) | [ReadStream](remote-communication-rcp.md#readstream) | [SyncReadStream](remote-communication-rcp.md#syncreadstream) | 是 | 否 | 表示需要上传的流。 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(stream: Stream | ReadStream | SyncReadStream)
 
@@ -3240,11 +3092,9 @@ constructor(stream: Stream | ReadStream | SyncReadStream)
 
 ## DownloadToFile
 
-PhonePC/2in1TabletTVWearable
-
 type DownloadToFile = { kind: 'file'; file: TargetFileCallback; } | { kind: 'file'; file: Path; keepLocal?: boolean; } | { kind: 'file'; file: LocalFile | WriteFile; } | { kind: 'folder'; path: Path; keepLocal?: boolean; }
 
-将文件下载到文件夹或文件中。如果下载到文件夹，文件名将与服务器中的文件名相同。取值范围为以下表中类型的并集。其中，kind 用于指定想要下载到文件或目录，file 指的是具体要下载到的目标文件或目录（参考[应用文件](../harmonyos-guides/app-file.md)）。
+将文件下载到文件夹或文件中。如果下载到文件夹，文件名将与服务器中的文件名相同。取值范围为以下表中类型的并集。其中，kind 用于指定想要下载到文件或目录，file 指的是具体需要下载到的目标文件或目录（参考[应用文件](../harmonyos-guides/app-file.md)）。
 
 取值范围为以下表中类型的并集。
 
@@ -3256,14 +3106,12 @@ type DownloadToFile = { kind: 'file'; file: TargetFileCallback; } | { kind: 'fil
 
 | 类型 | 说明 |
 | --- | --- |
-| { kind: 'file'; file: [TargetFileCallback](remote-communication-rcp.md#targetfilecallback); } | 表示键kind的键值为'file'，键file的键值为[TargetFileCallback](remote-communication-rcp.md#targetfilecallback)。 |
-| { kind: 'file'; file: [Path](remote-communication-rcp.md#path); keepLocal?: boolean; } | 表示键kind的值为'file'，键file的值为[Path](remote-communication-rcp.md#path)对象，其中keepLocal为可选参数值，当本地文件名和下载的文件名相同时，不会重复下载。 |
-| { kind: 'file'; file: [LocalFile](remote-communication-rcp.md#localfile)| [WriteFile](remote-communication-rcp.md#writefile); } | 表示键kind的值为'file'，键file的值为[LocalFile](remote-communication-rcp.md#localfile)或[WriteFile](remote-communication-rcp.md#writefile)对象。 |
-| { kind: 'folder'; path: [Path](remote-communication-rcp.md#path); keepLocal?: boolean; } | 键kind的值为'folder'，键path的值为[Path](remote-communication-rcp.md#path)对象，其中keepLocal为可选参数值，当本地文件夹名和下载的文件夹名相同时，不会重复下载。 |
+| { kind: 'file'; file: [TargetFileCallback](remote-communication-rcp.md#targetfilecallback); } | 表示以回调的方式返回下载结果。键kind为'file'，键file为[TargetFileCallback](remote-communication-rcp.md#targetfilecallback)。 |
+| { kind: 'file'; file: [Path](remote-communication-rcp.md#path); keepLocal?: boolean; } | 表示下载到路径。键kind为'file'，键file为目标路径，键keepLocal为是否保留本地同名文件，true表示保留，false表示不保留，默认值为false。 |
+| { kind: 'file'; file: [LocalFile](remote-communication-rcp.md#localfile) | [WriteFile](remote-communication-rcp.md#writefile); } | 表示下载到文件。键kind为'file'，键file为[LocalFile](remote-communication-rcp.md#localfile)或[WriteFile](remote-communication-rcp.md#writefile)对象。 |
+| { kind: 'folder'; path: [Path](remote-communication-rcp.md#path); keepLocal?: boolean; } | 表示下载到文件夹。键kind为'folder'，键path为目标路径，键keepLocal为是否保留本地同名文件，true表示保留，false表示不保留，默认值为false。 |
 
 ## DownloadToStream
-
-PhonePC/2in1TabletTVWearable
 
 type DownloadToStream = { kind: 'stream'; stream: Stream | WriteStream | SyncWriteStream; }
 
@@ -3281,8 +3129,6 @@ type DownloadToStream = { kind: 'stream'; stream: Stream | WriteStream | SyncWri
 
 ## PausePolicy
 
-PhonePC/2in1TabletTVWearable
-
 请求的暂停策略。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -3298,8 +3144,6 @@ PhonePC/2in1TabletTVWearable
 
 ## ReceivingPauseByTimeout
 
-PhonePC/2in1TabletTVWearable
-
 暂停接收流程的按超时的策略。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -3311,11 +3155,9 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | kind | 'timeout' | 否 | 否 | 策略类型。用来表示这是按超时暂停接收流程的策略。 |
-| timeoutMs | number | 否 | 否 | 超时时间，如果超过了该时间，框架还没从服务端收到数据，就会暂停请求。单位为毫秒。  取值范围：1~1000。  默认值为 0。 |
+| timeoutMs | number | 否 | 否 | 超时时间。如果超过了该时间，框架还没从服务端收到数据，就会暂停请求。单位：ms。  取值范围：[1~1000]。  默认值为 0。 |
 
 ## ReceivingPauseByCache
-
-PhonePC/2in1TabletTVWearable
 
 暂停接收流程的按缓存的策略。
 
@@ -3331,8 +3173,6 @@ PhonePC/2in1TabletTVWearable
 | size | number | 否 | 否 | 缓存策略的最大值，框架缓存的数据超过该值，应用一直不处理，就会暂停请求。取值范围[0, 1048576]。 |
 
 ## ReceivingPausePolicy
-
-PhonePC/2in1TabletTVWearable
 
 type ReceivingPausePolicy = ReceivingPauseByCache | ReceivingPauseByTimeout
 
@@ -3351,11 +3191,9 @@ type ReceivingPausePolicy = ReceivingPauseByCache | ReceivingPauseByTimeout
 
 ## NetworkOutputQueue
 
-PhonePC/2in1TabletTVWearable
-
 const NetworkOutputQueue: NetworkOutputQueueConstructor
 
-通过 new NetworkInputQueue()来创建一个[INetworkOutputQueue](remote-communication-rcp.md#inetworkoutputqueue)。
+通过new NetworkInputQueue()来创建一个[INetworkOutputQueue](remote-communication-rcp.md#inetworkoutputqueue)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -3364,8 +3202,6 @@ const NetworkOutputQueue: NetworkOutputQueueConstructor
 **起始版本：** 5.0.0(12)
 
 ## NetworkOutputQueueConstructor
-
-PhonePC/2in1TabletTVWearable
 
 NetworkOutputQueueConstructor是一个[INetworkOutputQueue](remote-communication-rcp.md#inetworkoutputqueue)的构造函数。
 
@@ -3376,8 +3212,6 @@ NetworkOutputQueueConstructor是一个[INetworkOutputQueue](remote-communication
 **起始版本：** 5.0.0(12)
 
 ### new
-
-PhonePC/2in1TabletTVWearable
 
 new (): INetworkOutputQueue
 
@@ -3396,8 +3230,6 @@ new (): INetworkOutputQueue
 | [INetworkOutputQueue](remote-communication-rcp.md#inetworkoutputqueue) | 返回一个同步读队列对象。 |
 
 ### new
-
-PhonePC/2in1TabletTVWearable
 
 new (maxSize: number): INetworkOutputQueue
 
@@ -3422,8 +3254,6 @@ new (maxSize: number): INetworkOutputQueue
 | [INetworkOutputQueue](remote-communication-rcp.md#inetworkoutputqueue) | 返回一个同步读队列对象。 |
 
 ### new
-
-PhonePC/2in1TabletTVWearable
 
 new (maxSize: number, pausePolicyOverride: ReceivingPausePolicy): INetworkOutputQueue
 
@@ -3450,8 +3280,6 @@ new (maxSize: number, pausePolicyOverride: ReceivingPausePolicy): INetworkOutput
 
 ## INetworkOutputQueue
 
-PhonePC/2in1TabletTVWearable
-
 INetworkOutputQueue是用读响应体的同步读队列。通过new [NetworkOutputQueue](remote-communication-rcp.md#networkoutputqueue)()来构造。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -3461,8 +3289,6 @@ INetworkOutputQueue是用读响应体的同步读队列。通过new [NetworkOutp
 **起始版本：** 5.0.0(12)
 
 ### read
-
-PhonePC/2in1TabletTVWearable
 
 read(maxBytesToRead: number): ArrayBuffer
 
@@ -3478,7 +3304,7 @@ read(maxBytesToRead: number): ArrayBuffer
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| maxBytesToRead | number | 是 | 读取到的数据的最大字节数。 |
+| maxBytesToRead | number | 是 | 从队列中读取数据的最大字节数。 |
 
 **返回值：**
 
@@ -3488,15 +3314,13 @@ read(maxBytesToRead: number): ArrayBuffer
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| [1007900990](remote-communication-error-code.md#section1007900990-内存不足) | Out of memory. |
+| [1007900990](errorcode-remote-communication.md#section1007900990-内存不足) | Out of memory. |
 
 ### readInto
-
-PhonePC/2in1TabletTVWearable
 
 readInto(buffer: ArrayBuffer): number
 
@@ -3522,15 +3346,13 @@ readInto(buffer: ArrayBuffer): number
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| [1007900990](remote-communication-error-code.md#section1007900990-内存不足) | Out of memory. |
+| [1007900990](errorcode-remote-communication.md#section1007900990-内存不足) | Out of memory. |
 
 ### getStoredBytes
-
-PhonePC/2in1TabletTVWearable
 
 getStoredBytes(): number
 
@@ -3546,11 +3368,9 @@ getStoredBytes(): number
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 获取队列中的数据的大小。 |
+| number | 获取队列中的数据的大小。单位：byte。 |
 
 ## ResponseBodyDestination
-
-PhonePC/2in1TabletTVWearable
 
 type ResponseBodyDestination = 'array-buffer'| IncomingDataCallback | DownloadToFile | DownloadToStream | INetworkOutputQueue
 
@@ -3572,9 +3392,7 @@ ResponseBodyDestination类型指定了响应的目标位置或目的地，指示
 
 ## URLOrString
 
-PhonePC/2in1TabletTVWearable
-
-type URLOrString = [URL](remote-communication-rcp.md#url) | string
+type URLOrString = URL | string
 
 URLOrString类型是表示URL对象或表示URL的字符串的并集类型。可以作为HTTP/HTTPS地址的入参。
 
@@ -3586,16 +3404,14 @@ URLOrString类型是表示URL对象或表示URL的字符串的并集类型。可
 
 | 类型 | 说明 |
 | --- | --- |
-| [URL](remote-communication-rcp.md#url) | URL对象，可以作为HTTP/HTTPS地址的入参 |
-| string | URL的字符串，可以作为HTTP/HTTPS地址的入参 |
+| [URL](remote-communication-rcp.md#url) | URL对象，可以作为HTTP/HTTPS地址的入参。 |
+| string | URL的字符串，可以作为HTTP/HTTPS地址的入参。 |
 
 ## PathPreference
 
-PhonePC/2in1TabletTVWearable
-
 type PathPreference = 'auto' | 'cellular'
 
-HTTP请求路径偏好设置。此设置仅为开发者的建议，实际使用路径由系统决定。
+HTTP请求路径偏好配置。此配置仅为开发者的建议，实际使用路径由设备的系统决定。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -3609,8 +3425,6 @@ HTTP请求路径偏好设置。此设置仅为开发者的建议，实际使用�
 | 'cellular' | 表示蜂窝网络路径。 |
 
 ## ConnectionReusePolicy
-
-PhonePC/2in1TabletTVWearable
 
 type ConnectionReusePolicy = 'balanced' | 'forbidden' | 'naive'
 
@@ -3628,9 +3442,31 @@ HTTP连接复用方式。
 | 'forbidden' | 表示禁止连接复用。每次请求都会创建新的HTTP连接。 |
 | 'naive' | 表示使用简易的连接复用方式。系统会选择找到的第一个可用的HTTP连接。 |
 
-## IpAddress
+## HttpVersionSelectCallback
 
-PhonePC/2in1TabletTVWearable
+type HttpVersionSelectCallback = (url: URL) => HttpVersion
+
+选择HTTP版本的回调函数。在请求发起前执行这个函数，如果回调函数返回的不是'unknown'，则使用返回的HTTP版本，且assumesHTTP3Capable不生效。如果客户端或服务端不支持开发者指定的版本，请求可能会自动降级至较低版本，或直接导致请求失败。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Collaboration.RemoteCommunication
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| url | [URL](remote-communication-rcp.md#url) | 是 | HTTP 请求资源的URL。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [HttpVersion](remote-communication-rcp.md#httpversion) | 选择的HTTP版本。 |
+
+## IpAddress
 
 type IpAddress = string
 
@@ -3648,8 +3484,6 @@ IP地址类型。
 
 ## DnsServers
 
-PhonePC/2in1TabletTVWearable
-
 type DnsServers = IpAndPort[]
 
 DnsServers接口允许开发者在DnsConfiguration中配置DNS设置时，指定自定义DNS服务器。它提供了一种灵活的方式来定义IP地址和相关端口的列表。
@@ -3666,8 +3500,6 @@ DnsServers接口允许开发者在DnsConfiguration中配置DNS设置时，指定
 
 ## IpAndPort
 
-PhonePC/2in1TabletTVWearable
-
 IpAndPort接口允许开发者定义IP地址和可选端口号。它通常用于需要同时指定IP地址和端口的情况，例如在DnsServers接口中配置自定义DNS服务器时。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -3678,12 +3510,10 @@ IpAndPort接口允许开发者定义IP地址和可选端口号。它通常用于
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| ip | [IpAddress](remote-communication-rcp.md#ipaddress) | 否 | 否 | 要关联的IP地址。IPv4或IPv6地址。 |
+| ip | [IpAddress](remote-communication-rcp.md#ipaddress) | 否 | 否 | IP地址。类型是IPv4或IPv6地址。 |
 | port | number | 否 | 是 | 可选端口号。取值范围[0, 65535]，默认值为53。 |
 
 ## ServiceType
-
-PhonePC/2in1TabletTVWearable
 
 type ServiceType = 'default' | 'background' | 'realtimeVoice' | 'realtimeVideo' | 'callSignaling' | 'realtimeGame' | 'normalGame' | 'shortVideo' | 'longVideo' | 'livestreamingAnchor' | 'livestreamingWatcher' | 'download' | 'upload' | 'browser'
 
@@ -3714,11 +3544,9 @@ type ServiceType = 'default' | 'background' | 'realtimeVoice' | 'realtimeVideo' 
 
 ## HttpMethod
 
-PhonePC/2in1TabletTVWearable
-
 type HttpMethod = 'GET' | 'POST' | 'HEAD' | 'PUT' | 'DELETE' | 'PATCH' | 'OPTIONS' | (string & NonNullable<unknown>)
 
-HttpMethod是HTTP库中的一种类型，代表网络请求中使用的各种HTTP方法。HTTP方法定义了要对给定资源执行的操作。
+HttpMethod是HTTP库中的一种类型，代表网络请求中使用的各种HTTP方法。HTTP方法定义了需要对给定资源执行的操作。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -3739,8 +3567,6 @@ HttpMethod是HTTP库中的一种类型，代表网络请求中使用的各种HTT
 
 ## RequestHeaders
 
-PhonePC/2in1TabletTVWearable
-
 type RequestHeaders = { [k: string]: string | string[] | undefined; 'authorization'?: string; 'accept'?: ContentType | ContentType[]; 'accept-charset'?: string | string[]; 'accept-encoding'?: ContentCoding | ContentCoding[]; 'accept-language'?: string | string[]; 'cache-control'?: string | string[]; 'cookie'?: string | string[]; 'range'?: string | string[]; 'upgrade'?: string | string[]; 'user-agent'?: string; 'content-type'?: ContentType; }
 
 定义请求头类型。
@@ -3757,8 +3583,6 @@ type RequestHeaders = { [k: string]: string | string[] | undefined; 'authorizati
 
 ## SendingPausePolicy
 
-PhonePC/2in1TabletTVWearable
-
 暂停发送流程的策略。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -3770,15 +3594,13 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | kind | 'timeout' | 否 | 否 | 策略类型。用来表示这是暂停发送流程的策略。 |
-| timeoutMs | number | 否 | 否 | 超时时间，如果超过了该时间，应用还没有给框架数据，就会暂停请求，单位为毫秒。  取值范围：1~1000。  默认值为 0。 |
+| timeoutMs | number | 否 | 否 | 超时时间。如果超过了该时间，应用还没有给框架数据，就会暂停请求，单位：ms。  取值范围：[1~1000]。  默认值为 0。 |
 
 ## NetworkInputQueue
 
-PhonePC/2in1TabletTVWearable
-
 const NetworkInputQueue: NetworkInputQueueConstructor
 
-通过 new NetworkInputQueue()来创建一个[INetworkInputQueue](remote-communication-rcp.md#inetworkinputqueue)。
+通过new NetworkInputQueue()来创建一个[INetworkInputQueue](remote-communication-rcp.md#inetworkinputqueue)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -3787,8 +3609,6 @@ const NetworkInputQueue: NetworkInputQueueConstructor
 **起始版本：** 5.0.0(12)
 
 ## NetworkInputQueueConstructor
-
-PhonePC/2in1TabletTVWearable
 
 NetworkInputQueueConstructor是一个[INetworkInputQueue](remote-communication-rcp.md#inetworkinputqueue)的构造函数。
 
@@ -3799,8 +3619,6 @@ NetworkInputQueueConstructor是一个[INetworkInputQueue](remote-communication-r
 **起始版本：** 5.0.0(12)
 
 ### new
-
-PhonePC/2in1TabletTVWearable
 
 new (): INetworkInputQueue
 
@@ -3819,8 +3637,6 @@ new (): INetworkInputQueue
 | [INetworkInputQueue](remote-communication-rcp.md#inetworkinputqueue) | 返回一个同步写队列对象。 |
 
 ### new
-
-PhonePC/2in1TabletTVWearable
 
 new (maxSize: number): INetworkInputQueue
 
@@ -3845,8 +3661,6 @@ new (maxSize: number): INetworkInputQueue
 | [INetworkInputQueue](remote-communication-rcp.md#inetworkinputqueue) | 返回一个同步写队列对象。 |
 
 ### new
-
-PhonePC/2in1TabletTVWearable
 
 new (maxSize: number, pausePolicyOverride: SendingPausePolicy): INetworkInputQueue
 
@@ -3873,8 +3687,6 @@ new (maxSize: number, pausePolicyOverride: SendingPausePolicy): INetworkInputQue
 
 ## INetworkInputQueue
 
-PhonePC/2in1TabletTVWearable
-
 INetworkInputQueue是用于写请求体的同步写队列。通过new [NetworkInputQueue](remote-communication-rcp.md#networkinputqueue)()来构造。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -3884,8 +3696,6 @@ INetworkInputQueue是用于写请求体的同步写队列。通过new [NetworkIn
 **起始版本：** 5.0.0(12)
 
 ### write
-
-PhonePC/2in1TabletTVWearable
 
 write(buffer: string | ArrayBuffer): void
 
@@ -3901,19 +3711,17 @@ write(buffer: string | ArrayBuffer): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| buffer | string | ArrayBuffer | 是 | 要发送的请求。 |
+| buffer | string | ArrayBuffer | 是 | 待发送的数据。 |
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| [1007900990](remote-communication-error-code.md#section1007900990-内存不足) | Out of memory. |
+| [1007900990](errorcode-remote-communication.md#section1007900990-内存不足) | Out of memory. |
 
 ### close
-
-PhonePC/2in1TabletTVWearable
 
 close(): void
 
@@ -3926,8 +3734,6 @@ close(): void
 **起始版本：** 5.0.0(12)
 
 ### getFreeSpace
-
-PhonePC/2in1TabletTVWearable
 
 getFreeSpace(): number
 
@@ -3947,11 +3753,9 @@ getFreeSpace(): number
 
 ## RequestContent
 
-PhonePC/2in1TabletTVWearable
-
 type RequestContent = RawDataContent | Form | MultipartForm | GetDataCallback | UploadFromFile | UploadFromStream | INetworkInputQueue
 
-RequestContent是HTTP模块中的一种类型，代表HTTP请求的内容。它可以有多种形式，可以灵活指定请求中要发送的数据。
+RequestContent是HTTP模块中的一种类型，代表HTTP请求的内容。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -3971,8 +3775,6 @@ RequestContent是HTTP模块中的一种类型，代表HTTP请求的内容。它�
 
 ## Form
 
-PhonePC/2in1TabletTVWearable
-
 HTTP简单的表格数据。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -3989,8 +3791,6 @@ HTTP简单的表格数据。
 | keys | string[] | 否 | 是 | 指定表单中key的发送顺序。  指定后按keys列表的先后顺序发送（不在列表中的key不发送）；不指定默认按各个key的hash顺序发送。  **起始版本：** 6.0.1(21) |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(fields: FormFields)
 
@@ -4010,32 +3810,30 @@ constructor(fields: FormFields)
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. let headers: rcp.RequestHeaders = {
-4. "accept": "application/json"
-5. };
-6. let configuration: rcp.Configuration = {
-7. transfer: {
-8. timeout: { connectMs: 60000, transferMs: 60000 }
-9. }
-10. };
-11. let cookies: rcp.RequestCookies = { 'name1': 'value1', 'name2': 'value2' };
-12. let transferRange: rcp.TransferRange = { from: 100, to: 200 };
+let headers: rcp.RequestHeaders = {
+  'accept': 'application/json'
+};
+let configuration: rcp.Configuration = {
+  transfer: {
+    timeout: { connectMs: 60000, transferMs: 60000 }
+  }
+};
+let cookies: rcp.RequestCookies = { 'name1': 'value1', 'name2': 'value2' };
+let transferRange: rcp.TransferRange = { from: 100, to: 200 };
 
-14. const simpleForm = new rcp.Form({
-15. "key1": "value1",
-16. "key2": ["valueList0", "valueList1"],
-17. });
-18. simpleForm.keys = ["key2", "key1"];
-19. let req = new rcp.Request("http://example.com", "POST", headers, simpleForm, cookies, transferRange, configuration);
-20. req.content = simpleForm;
+const simpleForm = new rcp.Form({
+  'key1': 'value1',
+  'key2': ['valueList0', 'valueList1'],
+});
+simpleForm.keys = ['key2', 'key1'];
+let req = new rcp.Request('http://example.com', 'POST', headers, simpleForm, cookies, transferRange, configuration);
+req.content = simpleForm;
 ```
 
 ## MultipartForm
-
-PhonePC/2in1TabletTVWearable
 
 HTTP多部分表格数据。
 
@@ -4055,15 +3853,13 @@ HTTP多部分表格数据。
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | [401](errorcode-universal.md#section401-参数检查失败) | Parameter error. |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(fields: MultipartFormFields)
 
@@ -4083,37 +3879,35 @@ constructor(fields: MultipartFormFields)
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. let headers: rcp.RequestHeaders = {
-4. "accept": "application/json"
-5. };
-6. let configuration: rcp.Configuration = {
-7. transfer: {
-8. timeout: { connectMs: 60000, transferMs: 60000 }
-9. }
-10. };
-11. let cookies: rcp.RequestCookies = { 'name1': 'value1', 'name2': 'value2' };
-12. let transferRange: rcp.TransferRange = { from: 100, to: 200 };
+let headers: rcp.RequestHeaders = {
+  'accept': 'application/json'
+};
+let configuration: rcp.Configuration = {
+  transfer: {
+    timeout: { connectMs: 60000, transferMs: 60000 }
+  }
+};
+let cookies: rcp.RequestCookies = { 'name1': 'value1', 'name2': 'value2' };
+let transferRange: rcp.TransferRange = { from: 100, to: 200 };
 
-14. const multiForm = new rcp.MultipartForm({
-15. "key1": "value1",
-16. "key2": ["valueList0", "valueList1"],
-17. "key3": {
-18. contentType: "text/plain",
-19. remoteFileName: "RemoteFileName",
-20. contentOrPath: "/file/to/Path",
-21. },
-22. });
-23. multiForm.keys = ["key3", "key1", "key2"];
-24. let req = new rcp.Request("http://example.com", "POST", headers, multiForm, cookies, transferRange, configuration);
-25. req.content = multiForm;
+const multiForm = new rcp.MultipartForm({
+  'key1': 'value1',
+  'key2': ['valueList0', 'valueList1'],
+  'key3': {
+    contentType: 'text/plain',
+    remoteFileName: 'RemoteFileName',
+    contentOrPath: '/file/to/Path',
+  },
+});
+multiForm.keys = ['key3', 'key1', 'key2'];
+let req = new rcp.Request('http://example.com', 'POST', headers, multiForm, cookies, transferRange, configuration);
+req.content = multiForm;
 ```
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(fields: MultipartFormFields, boundary: string)
 
@@ -4134,39 +3928,37 @@ constructor(fields: MultipartFormFields, boundary: string)
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. let headers: rcp.RequestHeaders = {
-4. "accept": "application/json"
-5. };
-6. let configuration: rcp.Configuration = {
-7. transfer: {
-8. timeout: { connectMs: 60000, transferMs: 60000 }
-9. }
-10. };
-11. let cookies: rcp.RequestCookies = { 'name1': 'value1', 'name2': 'value2' };
-12. let transferRange: rcp.TransferRange = { from: 100, to: 200 };
-13. let Boundary: string = "--MULTIPARTFORM BEGIN AND END BOUNDARY"
+let headers: rcp.RequestHeaders = {
+  'accept': 'application/json'
+};
+let configuration: rcp.Configuration = {
+  transfer: {
+    timeout: { connectMs: 60000, transferMs: 60000 }
+  }
+};
+let cookies: rcp.RequestCookies = { 'name1': 'value1', 'name2': 'value2' };
+let transferRange: rcp.TransferRange = { from: 100, to: 200 };
+let Boundary: string = '--MULTIPARTFORM BEGIN AND END BOUNDARY'
 
-15. const multiForm = new rcp.MultipartForm({
-16. "key1": "value1",
-17. "key2": ["valueList0", "valueList1"],
-18. "key3": {
-19. contentType: "text/plain",
-20. remoteFileName: "RemoteFileName",
-21. contentOrPath: "/file/to/Path",
-22. },
-23. }, Boundary)
-24. multiForm.keys = ["key3", "key1", "key2"];
+const multiForm = new rcp.MultipartForm({
+  'key1': 'value1',
+  'key2': ['valueList0', 'valueList1'],
+  'key3': {
+    contentType: 'text/plain',
+    remoteFileName: 'RemoteFileName',
+    contentOrPath: '/file/to/Path',
+  },
+}, Boundary)
+multiForm.keys = ['key3', 'key1', 'key2'];
 
-26. let req = new rcp.Request("http://example.com", "POST", headers, multiForm, cookies, transferRange, configuration);
-27. req.content = multiForm;
+let req = new rcp.Request('http://example.com', 'POST', headers, multiForm, cookies, transferRange, configuration);
+req.content = multiForm;
 ```
 
 ## MultipartFormFields
-
-PhonePC/2in1TabletTVWearable
 
 type MultipartFormFields = { [k: string]: MultipartFormFieldValue | MultipartFormFieldValue[]; }
 
@@ -4183,8 +3975,6 @@ HTTP多部分表单数据字段。
 | { [k: string]: [MultipartFormFieldValue](remote-communication-rcp.md#multipartformfieldvalue) | [MultipartFormFieldValue](remote-communication-rcp.md#multipartformfieldvalue)[] } | 表示值的类型为一个或者多个多部分表单数据字段值，值的类型为[MultipartFormFieldValue](remote-communication-rcp.md#multipartformfieldvalue)或[MultipartFormFieldValue](remote-communication-rcp.md#multipartformfieldvalue)的数组，可取任意值。 |
 
 ## MultipartFormFieldValue
-
-PhonePC/2in1TabletTVWearable
 
 type MultipartFormFieldValue = FormFieldValue | FormFieldFileValue
 
@@ -4203,8 +3993,6 @@ HTTP多部分表单数据字段值。
 
 ## FormFields
 
-PhonePC/2in1TabletTVWearable
-
 type FormFields = { [k: string]: FormFieldValue | FormFieldValue[]; }
 
 HTTP简单表单数据字段。
@@ -4217,22 +4005,20 @@ HTTP简单表单数据字段。
 
 | 类型 | 说明 |
 | --- | --- |
-| { [k: string]: [FormFieldValue](remote-communication-rcp.md#formfieldvalue) | [FormFieldValue](remote-communication-rcp.md#formfieldvalue)[] } | 表示值的类型为简单表单字段或对应数组。 |
+| { [k: string]: [FormFieldValue](remote-communication-rcp.md#formfieldvalue) | [FormFieldValue](remote-communication-rcp.md#formfieldvalue)[] } | 表示值的类型为一个或者多个多部分表单数据字段值，值的类型为[FormFieldValue](remote-communication-rcp.md#formfieldvalue)或[FormFieldValue](remote-communication-rcp.md#formfieldvalue)的数组，可取任意值。 |
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. const simpleForm: rcp.FormFields = {
-4. "key1": "value1",
-5. "key2": ["valueList0", "valueList1"],
-6. };
+const simpleForm: rcp.FormFields = {
+  'key1': 'value1',
+  'key2': ['valueList0', 'valueList1'],
+};
 ```
 
 ## FormFieldValue
-
-PhonePC/2in1TabletTVWearable
 
 type FormFieldValue = string | number | boolean | bigint
 
@@ -4253,8 +4039,6 @@ HTTP简单表单数据字段值。
 
 ## Path
 
-PhonePC/2in1TabletTVWearable
-
 type Path = string
 
 HTTP表单数据内容中的文件路径类型。
@@ -4271,8 +4055,6 @@ HTTP表单数据内容中的文件路径类型。
 
 ## FileContent
 
-PhonePC/2in1TabletTVWearable
-
 HTTP表单数据内容中的文件内容类型。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -4283,11 +4065,9 @@ HTTP表单数据内容中的文件内容类型。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| content | string | ArrayBuffer | 否 | 否 | 要发送到远程服务器的内容，可取任意值。 |
+| content | string | ArrayBuffer | 否 | 否 | 待发送到远程服务器的内容，可取任意值。 |
 
 ## FormFieldFileValue
-
-PhonePC/2in1TabletTVWearable
 
 文件表单数据接口。
 
@@ -4301,23 +4081,21 @@ PhonePC/2in1TabletTVWearable
 | --- | --- | --- | --- | --- |
 | contentType | [ContentType](remote-communication-rcp.md#contenttype) | 否 | 是 | HTTP多部分表单数据内容类型。默认值为undefined。 |
 | remoteFileName | string | 否 | 是 | 保存到远程服务器的文件名。默认值为undefined。 |
-| contentOrPath | [Path](remote-communication-rcp.md#path) | [FileContent](remote-communication-rcp.md#filecontent) | [GetDataCallback](remote-communication-rcp.md#getdatacallback) | 否 | 否 | 要发送到远程服务器的内容或文件路径。具体允许的类型见链接。 |
+| contentOrPath | [Path](remote-communication-rcp.md#path) | [FileContent](remote-communication-rcp.md#filecontent) | [GetDataCallback](remote-communication-rcp.md#getdatacallback) | 否 | 否 | 待发送到远程服务器的内容或文件路径。服务器支持HTTP2、支持重定向的情况下，[GetDataCallback](remote-communication-rcp.md#getdatacallback)无法使用，请使用[FileContent](remote-communication-rcp.md#filecontent)或者[Path](remote-communication-rcp.md#path)。 |
 
 **示例**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. const formFieldFileValue: rcp.FormFieldFileValue = {
-4. contentType: "image/png",
-5. remoteFileName: "remoteFile1",
-6. contentOrPath: "/path/to/file",
-7. };
+const formFieldFileValue: rcp.FormFieldFileValue = {
+  contentType: 'image/png',
+  remoteFileName: 'remoteFile1',
+  contentOrPath: '/path/to/file',
+};
 ```
 
 ## RequestCookies
-
-PhonePC/2in1TabletTVWearable
 
 RequestCookies是HTTP模块中的一个接口，用于表示HTTP请求中包含的cookie。
 
@@ -4333,19 +4111,17 @@ RequestCookies是HTTP模块中的一个接口，用于表示HTTP请求中包含�
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. const cookies: rcp.RequestCookies = {
-4. "sessionID": "abc123",
-5. "userToken": "xyz789",
-6. // Additional cookies can be added here
-7. };
+const cookies: rcp.RequestCookies = {
+  'sessionID': 'abc123',
+  'userToken': 'xyz789',
+  // 可以在此处添加额外的cookies
+};
 ```
 
 ## TransferRange
-
-PhonePC/2in1TabletTVWearable
 
 设置传输数据范围。HTTP范围请求要求服务器只将HTTP消息的一部分发回客户端。
 
@@ -4361,8 +4137,6 @@ PhonePC/2in1TabletTVWearable
 | to | number | 否 | 是 | 用于设置传输数据的结束字节。默认值为undefined。 |
 
 ## Response
-
-PhonePC/2in1TabletTVWearable
 
 HTTP请求的响应数据。
 
@@ -4391,37 +4165,35 @@ HTTP请求的响应数据。
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. // 以下为如何修改response，仅供参考
-4. interface ChangeableResponse {
-5. request: rcp.Request;
-6. statusCode: number;
-7. headers: rcp.ResponseHeaders;
-8. effectiveUrl?: rcp.URL;
-9. body?: ArrayBuffer;
-10. downloadedTo?: rcp.DownloadedTo;
-11. debugInfo?: rcp.DebugInfo[];
-12. timeInfo?: rcp.TimeInfo;
-13. cookies?: rcp.ResponseCookie[];
-14. httpVersion?: rcp.HttpVersion;
-15. reasonPhrase?: string;
-16. cacheInfo?: rcp.CacheInfo;
-17. }
+// 以下为如何修改response，仅供参考
+interface ChangeableResponse {
+  request: rcp.Request;
+  statusCode: number;
+  headers: rcp.ResponseHeaders;
+  effectiveUrl?: rcp.URL;
+  body?: ArrayBuffer;
+  downloadedTo?: rcp.DownloadedTo;
+  debugInfo?: rcp.DebugInfo[];
+  timeInfo?: rcp.TimeInfo;
+  cookies?: rcp.ResponseCookie[];
+  httpVersion?: rcp.HttpVersion;
+  reasonPhrase?: string;
+  cacheInfo?: rcp.CacheInfo;
+}
 
-19. async function TestRcp() {
-20. const session = rcp.createSession();
-21. const resp = await session.get('https://www.example.com');
-22. const changeableResponse = resp as ChangeableResponse;
-23. changeableResponse.headers = HEADERS // 此处请自行定义
-24. changeableResponse.statusCode = STATUSCODE // 此处请自行定义
-25. }
+async function TestRcp() {
+  const session = rcp.createSession();
+  const resp = await session.get('https://www.example.com');
+  const changeableResponse = resp as ChangeableResponse;
+  changeableResponse.headers = HEADERS // 此处请自行定义
+  changeableResponse.statusCode = STATUSCODE // 此处请自行定义
+}
 ```
 
 ### toString
-
-PhonePC/2in1TabletTVWearable
 
 toString(): string | null
 
@@ -4441,24 +4213,22 @@ toString(): string | null
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-4. const session = rcp.createSession();
-5. const request = new rcp.Request("https://www.example.com");
-6. session.fetch(request).then((response: rcp.Response) => {
-7. if (response) {
-8. console.info(`response: ${response.toString()}`);
-9. }
-10. }).catch((err: BusinessError) => {
-11. console.error(`err: error code is ${err.code}, error data is ${err.data}`);
-12. });
+const session = rcp.createSession();
+const request = new rcp.Request('https://www.example.com');
+session.fetch(request).then((response: rcp.Response) => {
+  if (response) {
+    console.info(`Succeeded in fetching the response, response: ${response.toString()}`);
+  }
+}).catch((err: BusinessError) => {
+  console.error(`err: error code is ${err.code}, error data is ${err.data}`);
+});
 ```
 
 ### toJSON
-
-PhonePC/2in1TabletTVWearable
 
 toJSON(): object | null
 
@@ -4478,24 +4248,23 @@ toJSON(): object | null
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-4. const session = rcp.createSession();
-5. const request = new rcp.Request("https://www.example.com");
-6. session.fetch(request).then((response: rcp.Response) => {
-7. if (response) {
-8. console.info(`response: ${response.toJSON()}`);
-9. }
-10. }).catch((err: BusinessError) => {
-11. console.error(`err: error code is ${err.code}, error data is ${err.data}`);
-12. });
+const session = rcp.createSession();
+const request = new rcp.Request('https://www.example.com');
+session.fetch(request).then((response: rcp.Response) => {
+  if (response) {
+    let resJson = response.toJSON();
+    console.info(`Succeeded in fetching the response, response: ${JSON.stringify(resJson)}`);
+  }
+}).catch((err: BusinessError) => {
+  console.error(`err: error code is ${err.code}, error data is ${err.data}`);
+});
 ```
 
 ### toJSON
-
-PhonePC/2in1TabletTVWearable
 
 toJSON(param: json.ParseOptions): object | null
 
@@ -4521,28 +4290,26 @@ toJSON(param: json.ParseOptions): object | null
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
-2. import { JSON } from '@kit.ArkTS';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
+import { JSON } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. const session = rcp.createSession();
-6. const request = new rcp.Request("https://www.example.com");
-7. session.fetch(request).then((response: rcp.Response) => {
-8. if (response) {
-9. const obj = response.toJSON({ bigIntMode: JSON.BigIntMode.PARSE_AS_BIGINT }); // 此处仅为示意，实际response的body应为JSON格式，且可能包含大整型数据
-10. console.info(`response json result: ${JSON.stringify(obj)}`);
-11. }
-12. }).catch((err: BusinessError) => {
-13. console.error(`err: error code is ${err.code}, error data is ${err.data}`);
-14. });
+const session = rcp.createSession();
+const request = new rcp.Request('https://www.example.com');
+session.fetch(request).then((response: rcp.Response) => {
+  if (response) {
+    const obj = response.toJSON({ bigIntMode: JSON.BigIntMode.PARSE_AS_BIGINT }); // 此处仅为示意，实际response的body应为JSON格式，且可能包含大整型数据
+    console.info(`Succeeded in fetching the response, response json result: ${JSON.stringify(obj)}`);
+  }
+}).catch((err: BusinessError) => {
+  console.error(`err: error code is ${err.code}, error data is ${err.data}`);
+});
 ```
 
 ## ResponseSendable
 
-PhonePC/2in1TabletTVWearable
-
-HTTP请求的响应数据，该响应数据支持Sendable。
+HTTP请求的响应数据，该响应数据支持[Sendable](../HarmonyOS-Guides/arkts-sendable.md)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -4567,8 +4334,6 @@ HTTP请求的响应数据，该响应数据支持Sendable。
 
 ## ResponseHeaders
 
-PhonePC/2in1TabletTVWearable
-
 type ResponseHeaders = { [k: string]: string | string[] | undefined; 'accept-ranges'?: 'none' | 'bytes' | (string & NonNullable<unknown>); 'allow'?: HttpMethod | HttpMethod[]; 'cache-control'?: string | string[]; 'content-encoding'?: ContentCoding; 'content-range'?: string; 'content-type'?: ContentType; 'date'?: string; 'etag'?: string; 'expires'?: string; 'location'?: string; 'retry-after'?: string; 'set-cookie'?: string | string[]; 'server'?: string; 'www-authenticate'?: string | string[]; }
 
 定义响应头类型。
@@ -4584,8 +4349,6 @@ type ResponseHeaders = { [k: string]: string | string[] | undefined; 'accept-ran
 | { [k: string]: string | string[] | undefined;  'accept-ranges'?: 'none' | 'bytes' | (string & NonNullable<unknown>);  'allow'?: HttpMethod | HttpMethod[];  'cache-control'?: string | string[];  'content-encoding'?: ContentCoding;  'content-range'?: string;  'content-type'?: ContentType;  'date'?: string;  'etag'?: string;  'expires'?: string;  'location'?: string;  'retry-after'?: string;  'set-cookie'?: string | string[];  'server'?: string;  'www-authenticate'?: string | string[]; } | 若键取值为[k: string]: string | string[] | undefined，表示值类型为一个包含一个或多个键值对的对象，其键的类型为字符，可取任意值，其值的类型为字符、字符数组或undefined。  'accept-ranges'表示响应头accept-ranges数据。  若键的值为'allow'，值的类型为HttpMethod或者HttpMethod[]，可取任意值。  若键取值为'cache-control'，值的类型为字符串或字符串数组，可取任意值。  若键的值为'content-encoding'，值的类型为ContentCoding，可取任意值。  若键的值为'content-range'，值的类型为字符串，可取任意值。  若键的值为'content-type'，值的类型为ContentType，可取任意值。  若键的值为'date'，值的类型为字符串，可取任意值。  若键的值为'etag'，值的类型为字符串，可取任意值。  若键的值为'expires'，值的类型为字符串，可取任意值。  若键的值为'location'，值的类型为字符串，可取任意值。  若键的值为'retry-after'，值的类型为字符串，可取任意值。  若键的值为'set-cookie'，值的类型为字符串或字符串数组，可取任意值。  若键的值为'server'，值的类型为字符串，可取任意值。  若键的值为'www-authenticate'，值的类型为字符串或字符串数组，可取任意值。 |
 
 ## ResponseCookie
-
-PhonePC/2in1TabletTVWearable
 
 HTTP响应的cookie接口。
 
@@ -4603,15 +4366,13 @@ HTTP响应的cookie接口。
 | path | string | 否 | 是 | cookie的路径。 |
 | expires | string | 否 | 是 | cookie的过期日期。 |
 | maxAge | number | 否 | 是 | cookie的最大保存时间，单位为秒。 |
-| isSecure | true | 否 | 是 | 指定cookie是否只能通过安全连接发送。默认值为true。 |
-| httpOnly | true | 否 | 是 | 指定cookie是否只能通过HTTP请求访问。默认值为true。 |
+| isSecure | true | 否 | 是 | 是否只能通过安全连接发送cookie。设置为true表示只能通过安全连接发送cookie，不设置表示可以通过不安全连接发送cookie。默认值为true。 |
+| httpOnly | true | 否 | 是 | 页面脚本等活动内容是否可访问cookie。设置为true表示页面脚本等活动内容不可访问cookie，不设置表示页面脚本等活动内容可以访问cookie。默认值为true。 |
 | sameSite | string | 否 | 是 | sameSite属性，指定何时在跨站请求中发送cookie。 |
 | rawSize | number | 否 | 是 | cookie的大小。 |
 | cookieAttributes | [CookieAttributes](remote-communication-rcp.md#cookieattributes) | 否 | 是 | 响应cookie中的所有属性。 |
 
 ## DebugInfo
-
-PhonePC/2in1TabletTVWearable
 
 请求/响应处理调试信息的接口。
 
@@ -4623,12 +4384,10 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| type | [DebugEvent](remote-communication-rcp.md#debugevent) | 否 | 否 | 调试信息的类型。具体类型值见类型链接。 |
+| type | [DebugEvent](remote-communication-rcp.md#debugevent) | 否 | 否 | 调试信息的类型。 |
 | data | ArrayBuffer | 否 | 否 | 调试信息的数据。 |
 
 ## HttpVersion
-
-PhonePC/2in1TabletTVWearable
 
 type HttpVersion = '1.0' | '1.1' | '2' | '3' | 'unknown'
 
@@ -4650,8 +4409,6 @@ HTTP的版本。
 
 ## TimeInfo
 
-PhonePC/2in1TabletTVWearable
-
 HTTP请求各阶段相关的时间信息的接口。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -4670,7 +4427,7 @@ HTTP请求各阶段相关的时间信息的接口。
 | totalTimeMs | number | 否 | 否 | 请求总耗时，单位为毫秒。 |
 | redirectTimeMs | number | 否 | 否 | 重定向所需的时间，单位为毫秒。 |
 
-说明
+**说明** 
 
 TimeInfo时间线：请求开始 （0时刻） -> nameLookupTimeMs（DNS解析）-> connectTimeMs（建立连接）-> tlsHandshakeTimeMs（TLS握手）-> preTransferTimeMs（请求业务数据发送到服务器的时间点） -> startTransferTimeMs（从服务器接收到首包数据的时间点），各时间节点所显示的时间均相对于0时刻，即从0时刻开始计时的时间。例如tlsHandshakeTimeMs为150.1ms，指从发起请求时间0开始，直到TLS握手结束所花费的时间为150.1ms。
 
@@ -4682,47 +4439,45 @@ TimeInfo时间线：请求开始 （0时刻） -> nameLookupTimeMs（DNS解析�
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 1、创建session、requestURL
-5. const session = rcp.createSession();
-6. const requestURL = "https://www.example.com";
+// 1. 创建session、requestURL
+const session = rcp.createSession();
+const requestURL = 'https://www.example.com';
 
-8. // 2、在需要跟踪分析请求过程中各个时间段消耗的时间，请将此开关打开
-9. const configuration: rcp.Configuration = {
-10. tracing: {
-11. collectTimeInfo: true
-12. }
-13. }
+// 2. 在需要跟踪分析请求过程中各个时间段消耗的时间，请将此开关打开
+const configuration: rcp.Configuration = {
+  tracing: {
+    collectTimeInfo: true
+  }
+}
 
-15. // 3、创建请求
-16. const request = new rcp.Request(requestURL, "GET");
-17. request.configuration = configuration;
+// 3. 创建请求
+const request = new rcp.Request(requestURL, 'GET');
+request.configuration = configuration;
 
-19. // 4、使用fetch发起网络请求，request中携带上面配置好的configuration
-20. session.fetch(request).then((response: rcp.Response) => {
-21. // 由于timeInfo中各个参数有可能为undefined，所以需要在两个时间段做运算前添加判空操作
-22. if (!response.timeInfo) {
-23. console.error(`TimeInfo is undefined ${response.timeInfo}`);
-24. return;
-25. }
-26. let remainderDataTime = response.timeInfo?.totalTimeMs - response.timeInfo?.startTransferTimeMs;
-27. let firstPackageTime = response.timeInfo?.startTransferTimeMs - response.timeInfo?.preTransferTimeMs;
-28. let TLSTime = response.timeInfo?.tlsHandshakeTimeMs - response.timeInfo?.connectTimeMs;
-
-30. console.info(`首包耗时${firstPackageTime}`);
-31. console.info(`TLS握手（不包含建连时间）耗时${TLSTime}`);
-32. console.info(`接收剩余数据的耗时${remainderDataTime}`);
-33. }).catch((err: BusinessError) => {
-34. console.error(`Response err, the error code is ${err.code}, error data is ${err.data}`);
-35. })
+// 4. 使用fetch发起网络请求，request中携带上面配置好的configuration
+session.fetch(request).then((response: rcp.Response) => {
+  // 由于timeInfo中各个参数有可能为undefined，所以需要在两个时间段做运算前添加判空操作
+  if (!response.timeInfo) {
+    console.error(`TimeInfo is undefined ${response.timeInfo}`);
+    return;
+  }
+  let remainderDataTime = response.timeInfo?.totalTimeMs - response.timeInfo?.startTransferTimeMs;
+  let firstPackageTime = response.timeInfo?.startTransferTimeMs - response.timeInfo?.preTransferTimeMs;
+  let TLSTime = response.timeInfo?.tlsHandshakeTimeMs - response.timeInfo?.connectTimeMs;
+  
+  console.info(`首包耗时${firstPackageTime}`);
+  console.info(`TLS握手（不包含建连时间）耗时${TLSTime}`);
+  console.info(`接收剩余数据的耗时${remainderDataTime}`);
+}).catch((err: BusinessError) => {
+  console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
+})
 ```
 
 ## CookieAttributes
-
-PhonePC/2in1TabletTVWearable
 
 type CookieAttributes = { [k: string]: string | undefined; }
 
@@ -4739,8 +4494,6 @@ Cookie属性类型。
 | { [k: string]: string | undefined; } | 表示值的类型为一个包含一个或多个键值对的对象。其中键的类型为字符，可取任意值，值的类型为字符或者undefined，可取任意值。 |
 
 ## ContentType
-
-PhonePC/2in1TabletTVWearable
 
 type ContentType = 'application/json' | 'text/plain' | 'multipart/form-data' | 'application/octet-stream' | 'application/x-www-form-urlencoded' | (string & NonNullable<unknown>)
 
@@ -4763,8 +4516,6 @@ type ContentType = 'application/json' | 'text/plain' | 'multipart/form-data' | '
 
 ## ValidationContext
 
-PhonePC/2in1TabletTVWearable
-
 证书上下文。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -4781,8 +4532,6 @@ PhonePC/2in1TabletTVWearable
 | ip | string | 否 | 否 | 建立连接的服务器的IP地址。 |
 
 ## ValidationCallback
-
-PhonePC/2in1TabletTVWearable
 
 type ValidationCallback = (context: ValidationContext) => boolean | Promise<boolean>
 
@@ -4802,14 +4551,11 @@ type ValidationCallback = (context: ValidationContext) => boolean | Promise<bool
 
 **返回值：**
 
-| 取值范围 | 说明 |
+| 类型 | 说明 |
 | --- | --- |
-| boolean | 回调函数。返回true表示校验成功；返回false表示校验失败。 |
-| Promise<boolean> | Promise对象。返回true表示校验成功；返回false表示校验失败。 |
+| boolean | Promise<boolean> | 回调函数，返回true表示校验成功，返回false表示校验失败；或者Promise对象，返回true表示校验成功，返回false表示校验失败。 |
 
 ## TlsV13SpecificCipherSuite
-
-PhonePC/2in1TabletTVWearable
 
 type TlsV13SpecificCipherSuite = 'TLS\_AES\_128\_GCM\_SHA256' | 'TLS\_AES\_256\_GCM\_SHA384' | 'TLS\_CHACHA20\_POLY1305\_SHA256'
 
@@ -4829,9 +4575,7 @@ TLS1.3及以上版本支持的加密套件。本框架有内置的优先顺序�
 
 ## TlsV12SpecificCipherSuite
 
-PhonePC/2in1TabletTVWearable
-
-type TlsV12SpecificCipherSuite = 'TLS\_ECDHE\_ECDSA\_WITH\_AES\_128\_GCM\_SHA256' | 'TLS\_ECDHE\_RSA\_WITH\_AES\_128\_GCM\_SHA256' | 'TLS\_ECDHE\_ECDSA\_WITH\_AES\_256\_GCM\_SHA384' | 'TLS\_ECDHE\_RSA\_WITH\_AES\_256\_GCM\_SHA384' | 'TLS\_ECDHE\_ECDSA\_WITH\_CHACHA20\_POLY1305\_SHA256' | 'TLS\_ECDHE\_RSA\_WITH\_CHACHA20\_POLY1305\_SHA256' | 'TLS\_RSA\_WITH\_AES\_128\_GCM\_SHA256' | 'TLS\_RSA\_WITH\_AES\_256\_GCM\_SHA384';
+type TlsV12SpecificCipherSuite = 'TLS\_ECDHE\_ECDSA\_WITH\_AES\_128\_GCM\_SHA256' | 'TLS\_ECDHE\_RSA\_WITH\_AES\_128\_GCM\_SHA256' | 'TLS\_ECDHE\_ECDSA\_WITH\_AES\_256\_GCM\_SHA384' | 'TLS\_ECDHE\_RSA\_WITH\_AES\_256\_GCM\_SHA384' | 'TLS\_ECDHE\_ECDSA\_WITH\_CHACHA20\_POLY1305\_SHA256' | 'TLS\_ECDHE\_RSA\_WITH\_CHACHA20\_POLY1305\_SHA256' | 'TLS\_RSA\_WITH\_AES\_128\_GCM\_SHA256' | 'TLS\_RSA\_WITH\_AES\_256\_GCM\_SHA384'
 
 TLS1.2及以上版本支持的加密套件。
 
@@ -4853,8 +4597,6 @@ TLS1.2及以上版本支持的加密套件。
 | 'TLS\_RSA\_WITH\_AES\_256\_GCM\_SHA384' | 表示值的类型为字符串，可取'TLS\_RSA\_WITH\_AES\_256\_GCM\_SHA384'。 |
 
 ## TlsV10SpecificCipherSuite
-
-PhonePC/2in1TabletTVWearable
 
 type TlsV10SpecificCipherSuite = 'TLS\_ECDHE\_ECDSA\_WITH\_AES\_128\_CBC\_SHA' | 'TLS\_ECDHE\_RSA\_WITH\_AES\_128\_CBC\_SHA' | 'TLS\_ECDHE\_ECDSA\_WITH\_AES\_256\_CBC\_SHA' | 'TLS\_ECDHE\_RSA\_WITH\_AES\_256\_CBC\_SHA' | 'TLS\_RSA\_WITH\_AES\_128\_CBC\_SHA' | 'TLS\_RSA\_WITH\_AES\_256\_CBC\_SHA' | 'TLS\_RSA\_WITH\_3DES\_EDE\_CBC\_SHA'
 
@@ -4878,8 +4620,6 @@ TLS1.0及以上版本支持的加密套件。
 
 ## CipherSuite
 
-PhonePC/2in1TabletTVWearable
-
 type CipherSuite = TlsV13CipherSuite
 
 加密套件声明函数。
@@ -4895,8 +4635,6 @@ type CipherSuite = TlsV13CipherSuite
 | [TlsV13CipherSuite](remote-communication-rcp.md#tlsv13ciphersuite) | 表示值的类型为[TlsV13CipherSuite](remote-communication-rcp.md#tlsv13ciphersuite)。 |
 
 ## TlsV13CipherSuite
-
-PhonePC/2in1TabletTVWearable
 
 type TlsV13CipherSuite = TlsV12CipherSuite | TlsV13SpecificCipherSuite
 
@@ -4915,8 +4653,6 @@ TLS1.3的加密套件声明函数，支持TLS1.3版本，兼容TLS1.2版本。
 
 ## TlsV12CipherSuite
 
-PhonePC/2in1TabletTVWearable
-
 type TlsV12CipherSuite = TlsV11CipherSuite | TlsV12SpecificCipherSuite
 
 TLS1.2的加密套件声明函数，支持TLS1.2版本，兼容TLS1.1版本。
@@ -4934,8 +4670,6 @@ TLS1.2的加密套件声明函数，支持TLS1.2版本，兼容TLS1.1版本。
 
 ## TlsV11CipherSuite
 
-PhonePC/2in1TabletTVWearable
-
 type TlsV11CipherSuite = TlsV10CipherSuite
 
 TLS1.1的加密套件声明函数，与TLS1.0相同。
@@ -4951,8 +4685,6 @@ TLS1.1的加密套件声明函数，与TLS1.0相同。
 | [TlsV10CipherSuite](remote-communication-rcp.md#tlsv10ciphersuite) | 表示值的类型为[TlsV10CipherSuite](remote-communication-rcp.md#tlsv10ciphersuite)。 |
 
 ## TlsV10CipherSuite
-
-PhonePC/2in1TabletTVWearable
 
 type TlsV10CipherSuite = TlsV10SpecificCipherSuite
 
@@ -4970,8 +4702,6 @@ TLS1.0的加密套件声明函数。
 
 ## TlsV13Option
 
-PhonePC/2in1TabletTVWearable
-
 TLS1.3选择器，用来选择Tls的使用版本，以及配套加密套件。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -4982,12 +4712,10 @@ TLS1.3选择器，用来选择Tls的使用版本，以及配套加密套件。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| tlsVersion | 'TlsV1.3' | 否 | 否 | TLS版本为"TlsV1.3"。 |
+| tlsVersion | 'TlsV1.3' | 否 | 否 | TLS版本为'TlsV1.3'。 |
 | cipherSuite | [TlsV13CipherSuite](remote-communication-rcp.md#tlsv13ciphersuite)[] | 否 | 是 | TLS1.3版本对应的加密套件。 |
 
 ## TlsV12Option
-
-PhonePC/2in1TabletTVWearable
 
 TLS1.2选择器，用来选择Tls的使用版本，以及配套加密套件。
 
@@ -5004,8 +4732,6 @@ TLS1.2选择器，用来选择Tls的使用版本，以及配套加密套件。
 
 ## TlsV11Option
 
-PhonePC/2in1TabletTVWearable
-
 TLS1.1选择器，用来选择Tls的使用版本，以及配套加密套件。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -5020,8 +4746,6 @@ TLS1.1选择器，用来选择Tls的使用版本，以及配套加密套件。
 | cipherSuite | [TlsV11CipherSuite](remote-communication-rcp.md#tlsv11ciphersuite)[] | 否 | 是 | TLS1.1版本对应的加密套件。 |
 
 ## TlsV10Option
-
-PhonePC/2in1TabletTVWearable
 
 TLS1.0选择器，用来选择Tls的使用版本，以及配套加密套件。
 
@@ -5038,8 +4762,6 @@ TLS1.0选择器，用来选择Tls的使用版本，以及配套加密套件。
 
 ## ContentCoding
 
-PhonePC/2in1TabletTVWearable
-
 type ContentCoding = 'aes128gcm' | 'br' | 'compress' | 'deflate' | 'exi' | 'gzip' | 'pack200-gzip' | 'x-compress' | 'x-gzip' | 'zstd' | (string & NonNullable<unknown>)
 
 预定义内容编码类型。
@@ -5050,7 +4772,7 @@ type ContentCoding = 'aes128gcm' | 'br' | 'compress' | 'deflate' | 'exi' | 'gzip
 
 **起始版本：** 4.1.0(11)
 
-| 取值范围 | 说明 |
+| 类型 | 说明 |
 | --- | --- |
 | 'aes128gcm' | 表示使用AES-128-GCM加密算法对内容进行编码，用于对称加密。 |
 | 'br' | 表示使用Brotli算法对内容进行编码，适用于需要高压缩比的场景，如网页、文档等。 |
@@ -5065,8 +4787,6 @@ type ContentCoding = 'aes128gcm' | 'br' | 'compress' | 'deflate' | 'exi' | 'gzip
 | (string & NonNullable<unknown>) | 用以确保ContentCoding类型的值必须是非空字符串。 |
 
 ## ResponseValidationCallback
-
-PhonePC/2in1TabletTVWearable
 
 type ResponseValidationCallback = (response: Response) => boolean | Promise<boolean>
 
@@ -5088,12 +4808,9 @@ type ResponseValidationCallback = (response: Response) => boolean | Promise<bool
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 回调函数。返回true表示校验成功；返回false表示校验失败。 |
-| Promise<boolean> | Promise对象。返回true表示校验成功；返回false表示校验失败。 |
+| boolean | Promise<boolean> | 回调函数，返回true表示校验成功，返回false表示校验失败；或者Promise对象，返回true表示校验成功，返回false表示校验失败。 |
 
 ## ProcessingConfiguration
-
-PhonePC/2in1TabletTVWearable
 
 请求处理配置。
 
@@ -5108,8 +4825,6 @@ PhonePC/2in1TabletTVWearable
 | validateResponse | 'default' | [ResponseValidationCallback](remote-communication-rcp.md#responsevalidationcallback) | 否 | 是 | 默认不处理。或者使用[ResponseValidationCallback](remote-communication-rcp.md#responsevalidationcallback)对响应进行校验。 |
 
 ## GetDataCallback
-
-PhonePC/2in1TabletTVWearable
 
 type GetDataCallback = (maxSize: number) => ArrayBuffer | Promise<ArrayBuffer>
 
@@ -5131,16 +4846,55 @@ type GetDataCallback = (maxSize: number) => ArrayBuffer | Promise<ArrayBuffer>
 
 | 类型 | 说明 |
 | --- | --- |
-| ArrayBuffer | 回调函数，返回用于发送的数据。 |
-| Promise<ArrayBuffer> | Promise对象，返回用于发送的数据。  **说明：** 5.0.0(12)新增返回值Promise<ArrayBuffer>。 |
+| ArrayBuffer | 回调函数，返回用于发送的数据。  **适用版本：** 4.1.0(11) |
+| ArrayBuffer | Promise<ArrayBuffer> | 回调函数，返回用于发送的数据；或者Promise对象，返回用于发送的数据。  **适用版本：** 5.0.0(12)+ |
+
+**示例：**
+
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { util } from '@kit.ArkTS';
+
+let read = false;
+
+function testGetDataCallback() {
+  try {
+    const session = rcp.createSession();
+    const request = new rcp.Request('https://www.example.com');
+    // 创建getDataCallback对象。
+    const getDataCallback: rcp.GetDataCallback = (maxSize: number) => {
+      if (read) {
+        return Promise.resolve(new ArrayBuffer(0));
+      }
+      read = true;
+      // 将字符串类型的测试数据转换为ArrayBuffer，并作为GetDataCallback的返回值。
+      const data = "Hello World";
+      const buffer = new ArrayBuffer(data.length);
+      const uint8Array = new Uint8Array(buffer);
+      new util.TextEncoder().encodeIntoUint8Array(data, uint8Array);
+      return Promise.resolve(buffer);
+    }
+    // 将getDataCallback对象赋值给request.content。
+    request.content = getDataCallback;
+    session.fetch(request).then((response) => {
+      console.info(`Succeeded in fetch the response ${response.toString()}`);
+      session.close();
+    }).catch((error: BusinessError) => {
+      console.error(`Error: error code is ${error.code}, error data is ${error.data}`);
+      session.close();
+    });
+  } catch (error) {
+    console.error(`Error: error code is ${error.code}, error data is ${error.data}`);
+  }
+}
+```
 
 ## DynamicExclusionRule
 
-PhonePC/2in1TabletTVWearable
-
 type DynamicExclusionRule = (url: URLOrString) => boolean
 
-返回是否要从代理中排除入参的URL的回调函数类型。
+返回是否需要从代理中排除入参的URL的回调函数类型。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -5162,8 +4916,6 @@ type DynamicExclusionRule = (url: URLOrString) => boolean
 
 ## StaticDnsRule
 
-PhonePC/2in1TabletTVWearable
-
 StaticDnsRule接口表示一个单独的静态DNS规则，将特定的IP地址与主机名和端口相关联。此配置是StaticDnsRule接口的一部分，用于自定义DNS映射。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -5176,11 +4928,9 @@ StaticDnsRule接口表示一个单独的静态DNS规则，将特定的IP地址�
 | --- | --- | --- | --- | --- |
 | host | string | 否 | 否 | 应用静态DNS规则的主机名。 |
 | port | number | 否 | 否 | 应用静态DNS规则的端口号。范围是[0, 65535]。 |
-| ipAddresses | [IpAddress](remote-communication-rcp.md#ipaddress)[] | 否 | 否 | 要与指定的主机名和端口关联的IP地址阵列。 |
+| ipAddresses | [IpAddress](remote-communication-rcp.md#ipaddress)[] | 否 | 否 | 与指定的主机名和端口关联的IP地址数组。 |
 
 ## StaticDnsRules
-
-PhonePC/2in1TabletTVWearable
 
 type StaticDnsRules = StaticDnsRule[]
 
@@ -5197,8 +4947,6 @@ type StaticDnsRules = StaticDnsRule[]
 | [StaticDnsRule](remote-communication-rcp.md#staticdnsrule)[] | 表示值的类型为[StaticDnsRule](remote-communication-rcp.md#staticdnsrule)数组。 |
 
 ## DynamicDnsRule
-
-PhonePC/2in1TabletTVWearable
 
 type DynamicDnsRule = (host: string, port: number) => IpAddress[]
 
@@ -5225,8 +4973,6 @@ type DynamicDnsRule = (host: string, port: number) => IpAddress[]
 
 ## WebProxy
 
-PhonePC/2in1TabletTVWearable
-
 WebProxy接口使开发者能够在[ProxyConfiguration](remote-communication-rcp.md#proxyconfiguration)中配置自定义代理时定义自定义代理设置。它允许指定代理URL、排除和其他安全配置。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -5239,14 +4985,12 @@ WebProxy接口使开发者能够在[ProxyConfiguration](remote-communication-rcp
 | --- | --- | --- | --- | --- |
 | url | [URLOrString](remote-communication-rcp.md#urlorstring) | 否 | 否 | 自定义代理的URL。 |
 | createTunnel | 'auto' | 'always' | 否 | 是 | 用于控制何时创建代理隧道。隧道是指将HTTP CONNECT请求发送到代理，要求其连接到一个特定端口号上的远程主机，然后流量通过代理。默认值为'auto'。  'auto'表示为HTTPS创建隧道，而不是为HTTP创建。  'always'表示始终创建隧道。 |
-| exclusions | [URLOrString](remote-communication-rcp.md#urlorstring) | [URLOrString](remote-communication-rcp.md#urlorstring)[] | [DynamicExclusionRule](remote-communication-rcp.md#dynamicexclusionrule) | 否 | 是 | 要从代理中排除的URL （例如："http://exclude.example.com"或["http://exclude1.com", "http://exclude2.com"]）。默认值为undefined。 |
+| exclusions | [URLOrString](remote-communication-rcp.md#urlorstring) | [URLOrString](remote-communication-rcp.md#urlorstring)[] | [DynamicExclusionRule](remote-communication-rcp.md#dynamicexclusionrule) | 否 | 是 | 需要从代理中排除的URL （例如：'http://exclude.example.com'或['http://exclude1.com', 'http://exclude2.com']）。默认值为undefined。 |
 | security | [SecurityConfiguration](remote-communication-rcp.md#securityconfiguration) | 否 | 是 | 设置代理安全配置。默认值为undefined。 |
 
 ## InfoToCollect
 
-PhonePC/2in1TabletTVWearable
-
-InfoToCollect接口可以帮助开发者收集信息事件。收集到的信息事件会在[Response](remote-communication-rcp.md#response)的debugInfo字段中返回。
+InfoToCollect接口可以帮助开发者收集信息事件。收集到的信息事件会在[Response](remote-communication-rcp.md#response)的debugInfo字段中返回。InfoToCollect开启后会占用内存，建议仅在开发调试阶段使用。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -5256,24 +5000,18 @@ InfoToCollect接口可以帮助开发者收集信息事件。收集到的信息�
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| textual | boolean | 否 | 是 | 是否收集文本信息事件。默认值为false。 |
-| incomingHeader | boolean | 否 | 是 | 是否收集传入的header信息事件。默认值为false。 |
-| outgoingHeader | boolean | 否 | 是 | 是否收集传出的header信息事件。默认值为false。 |
-| incomingData | boolean | 否 | 是 | 是否收集传入的数据信息事件。默认值为false。 |
-| outgoingData | boolean | 否 | 是 | 是否收集传出数据信息事件。默认值为false。 |
-| incomingSslData | boolean | 否 | 是 | 是否收集传入的SSL/TLS数据信息事件。默认值为false。 |
-| outgoingSslData | boolean | 否 | 是 | 是否收集传出的SSL/TLS数据信息事件。默认值为false。 |
+| textual | boolean | 否 | 是 | 是否收集文本信息事件。true代表收集文本信息事件，false代表不收集文本信息事件。默认值为false。 |
+| incomingHeader | boolean | 否 | 是 | 是否收集传入的header信息事件。true代表收集传入的header信息事件，false代表不收集传入的header信息事件。默认值为false。 |
+| outgoingHeader | boolean | 否 | 是 | 是否收集传出的header信息事件。true代表收集传出的header信息事件，false代表不收集传出的header信息事件。默认值为false。 |
+| incomingData | boolean | 否 | 是 | 是否收集传入的数据信息事件。true代表收集传入的数据信息事件，false代表不收集传入的数据信息事件。默认值为false。 |
+| outgoingData | boolean | 否 | 是 | 是否收集传出的数据信息事件。true代表收集传出的数据信息事件，false代表不收集传出的数据信息事件。默认值为false。 |
+| incomingSslData | boolean | 否 | 是 | 是否收集传入的SSL/TLS数据信息事件。true代表收集传入的SSL/TLS数据信息事件，false代表不收集传入的SSL/TLS数据信息事件。默认值为false。 |
+| outgoingSslData | boolean | 否 | 是 | 是否收集传出的SSL/TLS数据信息事件。true代表收集传出的SSL/TLS数据信息事件，false代表不收集传出的SSL/TLS数据信息事件。默认值为false。 |
 | srcAddr | boolean | 否 | 是 | 客户端地址。  true：收集客户端地址及端口号。  false：不收集客户端地址及端口号。  默认值是false。  **起始版本：** 6.0.0(20) |
 | dstAddr | boolean | 否 | 是 | 服务器地址。  true：收集服务器地址及端口号。  false：不收集服务器地址及端口号。  默认值是false。  **起始版本：** 6.0.0(20) |
 | redirectCount | boolean | 否 | 是 | 是否收集重定向次数。  true：收集重定向次数。  false：不收集重定向次数。  默认值为false。  **起始版本：** 6.1.0(23) |
 
-说明
-
-此项开启后会占用内存，建议仅在开发调试阶段使用。
-
 ## HttpEventsHandler
-
-PhonePC/2in1TabletTVWearable
 
 HttpEventsHandler接口使开发者能够定义自定义逻辑，用于处理会话中HTTP请求/响应过程中的各种操作。
 
@@ -5296,8 +5034,6 @@ HttpEventsHandler接口使开发者能够定义自定义逻辑，用于处理会
 
 ## Timeout
 
-PhonePC/2in1TabletTVWearable
-
 配置HTTP请求的超时值，允许开发者定义连接和传输数据所允许的最长时间。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -5313,8 +5049,6 @@ PhonePC/2in1TabletTVWearable
 | inactivityMs | number | 否 | 是 | 允许在没有数据传输或连接活动的情况下，允许的最长时间。用于在从服务器接收数据或向服务器发送数据的时间间隔不能超过这个值的情况下，防止长时间的空闲连接。默认情况下，超时值没有设置，即不限制时间间隔。  **起始版本：** 5.0.0(12) |
 
 ## CertificatePinning
-
-PhonePC/2in1TabletTVWearable
 
 证书锁定是校验服务器的证书的公钥SHA-256哈希值是否与设置的值匹配。
 
@@ -5332,8 +5066,6 @@ PhonePC/2in1TabletTVWearable
 
 ## SessionListener
 
-PhonePC/2in1TabletTVWearable
-
 定义会话监听器。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -5348,8 +5080,6 @@ PhonePC/2in1TabletTVWearable
 | onClosed | [OnClosed](remote-communication-rcp.md#onclosed) | 否 | 是 | 会话关闭事件回调。会话关闭时调用。默认为undefined。 |
 
 ## Credential
-
-PhonePC/2in1TabletTVWearable
 
 凭据接口表示会话中服务器身份验证设置中使用的身份验证凭据，包括用户名和密码。
 
@@ -5366,8 +5096,6 @@ PhonePC/2in1TabletTVWearable
 
 ## TlsVersion
 
-PhonePC/2in1TabletTVWearable
-
 type TlsVersion = 'TlsV1.0' | 'TlsV1.1' | 'TlsV1.2' | 'TlsV1.3'
 
 安全配置项TLS允许设置的版本，可选择TLS的使用版本。
@@ -5378,7 +5106,7 @@ type TlsVersion = 'TlsV1.0' | 'TlsV1.1' | 'TlsV1.2' | 'TlsV1.3'
 
 **起始版本：** 6.0.0(20)
 
-| 取值范围 | 说明 |
+| 类型 | 说明 |
 | --- | --- |
 | 'TlsV1.0' | 表示使用TLS1.0版本。 |
 | 'TlsV1.1' | 表示使用TLS1.1版本。 |
@@ -5386,8 +5114,6 @@ type TlsVersion = 'TlsV1.0' | 'TlsV1.1' | 'TlsV1.2' | 'TlsV1.3'
 | 'TlsV1.3' | 表示使用TLS1.3版本。 |
 
 ## DebugEvent
-
-PhonePC/2in1TabletTVWearable
 
 type DebugEvent = 'text' | 'headerIn' | 'headerOut' | 'dataIn' | 'dataOut' | 'sslDataIn' | 'sslDataOut' | 'srcAddr' | 'dstAddr' | 'redirectCount'
 
@@ -5414,8 +5140,6 @@ type DebugEvent = 'text' | 'headerIn' | 'headerOut' | 'dataIn' | 'dataOut' | 'ss
 
 ## AuthenticationType
 
-PhonePC/2in1TabletTVWearable
-
 type AuthenticationType = 'basic' | 'ntlm' | 'digest'
 
 此类型表示可以在会话中的服务器身份验证设置中使用的不同身份验证机制。
@@ -5433,8 +5157,6 @@ type AuthenticationType = 'basic' | 'ntlm' | 'digest'
 | 'digest' | 表示使用HTTP摘要身份验证，通过将用户名、密码和其他信息进行哈希运算来生成认证信息。 |
 
 ## OnCanceled
-
-PhonePC/2in1TabletTVWearable
 
 type OnCanceled = (request?: Request) => void
 
@@ -5454,8 +5176,6 @@ type OnCanceled = (request?: Request) => void
 
 ## OnClosed
 
-PhonePC/2in1TabletTVWearable
-
 type OnClosed = () => void
 
 此类型表示会话关闭时的回调。
@@ -5467,8 +5187,6 @@ type OnClosed = () => void
 **起始版本：** 4.1.0(11)
 
 ## OnDataReceive
-
-PhonePC/2in1TabletTVWearable
 
 type OnDataReceive = (incomingData: ArrayBuffer, request?: Request) => number | void | Promise<void>
 
@@ -5491,17 +5209,14 @@ type OnDataReceive = (incomingData: ArrayBuffer, request?: Request) => number | 
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 回调函数，返回number类型数据，表示处理的字节数。 |
-| void | 回调函数，无返回值。  **说明：** 5.0.0(12)版本上新增返回值void。 |
-| Promise<void> | Promise对象，无返回结果。  **说明：** 5.0.0(12)版本上新增返回值Promise<void>。 |
+| number | 回调函数，返回number类型数据，表示处理的字节数。  **适用版本：** 4.1.0(11) |
+| number | void | Promise<void> | 回调函数，返回number类型数据，表示处理的字节数；或者回调函数，无返回值；或者Promise对象，无返回结果。  **适用版本：** 5.0.0(12)+ |
 
 ## OnUploadProgress
 
-PhonePC/2in1TabletTVWearable
-
 type OnUploadProgress = (totalSize: number, transferredSize: number, request?: Request) => void
 
-此类型表示上传进度时的回调。
+此类型表示上传进度时的回调。如果无法获知总大小，此回调可能无法触发。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -5519,11 +5234,9 @@ type OnUploadProgress = (totalSize: number, transferredSize: number, request?: R
 
 ## OnDownloadProgress
 
-PhonePC/2in1TabletTVWearable
-
 type OnDownloadProgress = (totalSize: number, transferredSize: number, request?: Request) => void
 
-此类型表示显示下载进度的回调。
+此类型表示显示下载进度的回调。如果无法获知总大小，此回调可能无法触发。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -5540,8 +5253,6 @@ type OnDownloadProgress = (totalSize: number, transferredSize: number, request?:
 | request | [Request](remote-communication-rcp.md#request) | 否 | 触发回调的HTTP请求。  **起始版本：** 6.0.0(20) |
 
 ## OnHeaderReceive
-
-PhonePC/2in1TabletTVWearable
 
 type OnHeaderReceive = (headers: ResponseHeaders, request?: Request) => void
 
@@ -5562,8 +5273,6 @@ type OnHeaderReceive = (headers: ResponseHeaders, request?: Request) => void
 
 ## OnDataEnd
 
-PhonePC/2in1TabletTVWearable
-
 type OnDataEnd = (request?: Request) => void
 
 此类型表示HTTP传输结束时的回调。
@@ -5581,8 +5290,6 @@ type OnDataEnd = (request?: Request) => void
 | request | [Request](remote-communication-rcp.md#request) | 否 | 触发回调的HTTP请求。  **起始版本：** 6.0.0(20) |
 
 ## OnTimeInfo
-
-PhonePC/2in1TabletTVWearable
 
 type OnTimeInfo = (timeInfo: TimeInfo, request?: Request) => void
 
@@ -5603,45 +5310,43 @@ type OnTimeInfo = (timeInfo: TimeInfo, request?: Request) => void
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 1、创建session、requestURL和request。
-5. const session = rcp.createSession();
-6. const requestURL = "https://www.example.com";
-7. const request = new rcp.Request(requestURL);
+// 1. 创建session、requestURL和request。
+const session = rcp.createSession();
+const requestURL = 'https://www.example.com';
+const request = new rcp.Request(requestURL);
 
-9. // 2、配置请求的configuration，设置onTimeInfo回调函数以获取网络请求相关的时间信息
-10. request.configuration = {
-11. tracing: {
-12. httpEventsHandler: {
-13. onTimeInfo: (timeInfo: rcp.TimeInfo) => {
-14. console.info(`Time information for each phase in the HTTP request. ${JSON.stringify(timeInfo)}`);
-15. let remainderDataTime = timeInfo?.totalTimeMs - timeInfo?.startTransferTimeMs;
-16. let firstPackageTime = timeInfo?.startTransferTimeMs - timeInfo?.preTransferTimeMs;
-17. let TLSTime = timeInfo?.tlsHandshakeTimeMs - timeInfo?.connectTimeMs;
-18. console.info(`首包耗时${firstPackageTime}`);
-19. console.info(`TLS握手（不包含建连时间）耗时${TLSTime}`);
-20. console.info(`接收剩余数据的耗时${remainderDataTime}`);
-21. },
-22. },
-23. },
-24. };
-25. // 3、使用 fetch 发起网络请求，请求中携带上述配置好的 configuration。
-26. session.fetch(request).then((response) => {
-27. if (response) {
-28. console.info(`The request was successful. The statusCode of the response is ${response.statusCode}`);
-29. session.close();
-30. }
-31. }).catch((err: BusinessError) => {
-32. console.error(`Response err, the error code is ${err.code}, error data is ${err.data}`);
-33. })
+// 2. 配置请求的configuration，设置onTimeInfo回调函数以获取网络请求相关的时间信息
+request.configuration = {
+  tracing: {
+    httpEventsHandler: {
+      onTimeInfo: (timeInfo: rcp.TimeInfo) => {
+        console.info(`Time information for each phase in the HTTP request. ${JSON.stringify(timeInfo)}`);
+        let remainderDataTime = timeInfo?.totalTimeMs - timeInfo?.startTransferTimeMs;
+        let firstPackageTime = timeInfo?.startTransferTimeMs - timeInfo?.preTransferTimeMs;
+        let TLSTime = timeInfo?.tlsHandshakeTimeMs - timeInfo?.connectTimeMs;
+        console.info(`首包耗时${firstPackageTime}`);
+        console.info(`TLS握手（不包含建连时间）耗时${TLSTime}`);
+        console.info(`接收剩余数据的耗时${remainderDataTime}`);
+      },
+    },
+  },
+};
+// 3. 使用 fetch 发起网络请求，请求中携带上述配置好的 configuration。
+session.fetch(request).then((response) => {
+  if (response) {
+    console.info(`Succeeded in fetching the response. The statusCode of the response is ${response.statusCode}`);
+    session.close();
+  }
+}).catch((err: BusinessError) => {
+  console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
+})
 ```
 
 ## OnStatusCodeReceive
-
-PhonePC/2in1TabletTVWearable
 
 type OnStatusCodeReceive = (statusCode: number, request?: Request) => void
 
@@ -5662,9 +5367,7 @@ type OnStatusCodeReceive = (statusCode: number, request?: Request) => void
 
 ## CacheControl
 
-PhonePC/2in1TabletTVWearable
-
-CacheControl 接口提供了一系列配置参数，开发者可通过这些参数精准控制会话中 HTTP 请求的缓存行为，包括资源缓存策略、更新机制及存储规则等。
+缓存控制，用于配置HTTP缓存行为和策略，包括资源缓存策略、更新机制及存储规则等。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -5675,18 +5378,16 @@ CacheControl 接口提供了一系列配置参数，开发者可通过这些参�
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | expirationPolicy | [TimeLimitedExpirationPolicy](remote-communication-rcp.md#timelimitedexpirationpolicy) | 否 | 是 | 为HTTP请求所创建的缓存配置过期策略。如果设置该属性，则会覆盖HTTP响应过期策略。 |
-| keepCache | boolean | 否 | 是 | 是否需要保留缓存，默认为false。该参数为true时，使用不安全的 HTTP 方法的请求（PUT，POST，或者DELETE）不会使缓存记录失效。 |
-| noCache | boolean | 否 | 是 | 是否在请求头中添加no-cache，默认为false。该参数为true时，则会强制客户端在使用缓存前必须向服务器验证资源有效性（即使缓存存在）。 |
-| noStore | boolean | 否 | 是 | 是否在请求头中添加no-store，默认为false。该参数为true时，则会严格禁止任何缓存存储请求或响应的内容，确保敏感数据不会被持久化。 |
+| keepCache | boolean | 否 | 是 | 是否需要保留缓存，true表示保留，false表示不保留，默认值为false。该参数为true时，使用不安全的 HTTP 方法的请求（PUT，POST，或者DELETE）不会使缓存记录失效。 |
+| noCache | boolean | 否 | 是 | 是否在请求头中添加no-cache，true表示添加，false表示不添加，默认值为false。该参数为true时，则会强制客户端在使用缓存前必须向服务器验证资源有效性（即使缓存存在）。 |
+| noStore | boolean | 否 | 是 | 是否在请求头中添加no-store，true表示添加，false表示不添加，默认值为false。该参数为true时，则会严格禁止任何缓存存储请求或响应的内容，确保敏感数据不会被持久化。 |
 | maxAge | [TimeInterval](remote-communication-rcp.md#timeinterval) | 否 | 是 | 该属性指定缓存资源的有效时长，在此期间客户端可直接使用缓存而无需请求服务器。 |
 | maxStale | [TimeInterval](remote-communication-rcp.md#timeinterval) | 否 | 是 | 该属性允许客户端接受已过期但未超过指定时间的缓存资源，提升数据可用性。 |
 | minFresh | [TimeInterval](remote-communication-rcp.md#timeinterval) | 否 | 是 | 该属性要求服务器返回的响应在指定时间内保持新鲜，确保资源短期内不过期。 |
-| noTransform | boolean | 否 | 是 | 是否在请求头中添加no-transform，默认为false。该参数为true时，则会禁止缓存服务器对响应内容进行任何转换（如压缩），保证内容与原始响应一致。 |
-| onlyIfCached | boolean | 否 | 是 | 是否在请求头中添加only-if-cached，默认为false。该参数为true时，则会强制客户端仅使用缓存资源，若缓存不存在则直接失败（不发起网络请求）。 |
+| noTransform | boolean | 否 | 是 | 是否在请求头中添加no-transform，true表示添加，false表示不添加，默认值为false。该参数为true时，则会禁止缓存服务器对响应内容进行任何转换（如压缩），保证内容与原始响应一致。 |
+| onlyIfCached | boolean | 否 | 是 | 是否在请求头中添加only-if-cached，true表示添加，false表示不添加，默认值为false。该参数为true时，则会强制客户端仅使用缓存资源，若缓存不存在则直接失败（不发起网络请求）。 |
 
 ## CacheInfo
-
-PhonePC/2in1TabletTVWearable
 
 缓存信息，包含该缓存对应的原始HTTP请求ID和已存在时长。
 
@@ -5702,8 +5403,6 @@ PhonePC/2in1TabletTVWearable
 | age | [TimeInterval](remote-communication-rcp.md#timeinterval) | 否 | 否 | 缓存已存在时长。 |
 
 ## ExpirationPolicy
-
-PhonePC/2in1TabletTVWearable
 
 type ExpirationPolicy = NeverExpirationPolicy | TimeLimitedExpirationPolicy
 
@@ -5722,8 +5421,6 @@ type ExpirationPolicy = NeverExpirationPolicy | TimeLimitedExpirationPolicy
 
 ## NeverExpirationPolicy
 
-PhonePC/2in1TabletTVWearable
-
 缓存记录永不过期的过期策略。缓存记录会一直停留在缓存中，直到超过缓存大小限制。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -5737,8 +5434,6 @@ PhonePC/2in1TabletTVWearable
 | kind | 'never' | 否 | 否 | 策略类型。用来表示这是永不过期的过期策略。 |
 
 ## TimeLimitedExpirationPolicy
-
-PhonePC/2in1TabletTVWearable
 
 type TimeLimitedExpirationPolicy = AbsoluteTimeExpirationPolicy | RelativeTimeExpirationPolicy | SlidingTimeExpirationPolicy
 
@@ -5758,8 +5453,6 @@ type TimeLimitedExpirationPolicy = AbsoluteTimeExpirationPolicy | RelativeTimeEx
 
 ## AbsoluteTimeExpirationPolicy
 
-PhonePC/2in1TabletTVWearable
-
 绝对时间过期策略。到达指定时间，该缓存记录过期。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -5774,8 +5467,6 @@ PhonePC/2in1TabletTVWearable
 | time | Date | 否 | 否 | 指定缓存过期时间。 |
 
 ## RelativeTimeExpirationPolicy
-
-PhonePC/2in1TabletTVWearable
 
 相对时间过期策略。经过指定的时间间隔后，该缓存记录过期。
 
@@ -5792,8 +5483,6 @@ PhonePC/2in1TabletTVWearable
 
 ## SlidingTimeExpirationPolicy
 
-PhonePC/2in1TabletTVWearable
-
 滑动时间过期策略。指定的时间间隔期间，若无任何访问，该缓存记录过期；若有访问，则重置过期时间。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -5809,8 +5498,6 @@ PhonePC/2in1TabletTVWearable
 
 ## TimeInterval
 
-PhonePC/2in1TabletTVWearable
-
 时间间隔。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -5825,8 +5512,6 @@ PhonePC/2in1TabletTVWearable
 | value | number | 否 | 否 | 时间长度。 |
 
 ## TimeIntervalUnits
-
-PhonePC/2in1TabletTVWearable
 
 type TimeIntervalUnits = 'seconds' | 'minutes' | 'hours' | 'days'
 
@@ -5846,8 +5531,6 @@ type TimeIntervalUnits = 'seconds' | 'minutes' | 'hours' | 'days'
 | 'days' | 时间单位：天。 |
 
 ## CachedResponse
-
-PhonePC/2in1TabletTVWearable
 
 缓存中存储的HTTP响应数据。
 
@@ -5871,8 +5554,6 @@ PhonePC/2in1TabletTVWearable
 
 ## ResponseCacheKey
 
-PhonePC/2in1TabletTVWearable
-
 标识HTTP响应缓存记录的键。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -5884,12 +5565,10 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | url | [URLOrString](remote-communication-rcp.md#urlorstring) | 否 | 否 | 请求URL。 |
-| method | [HttpMethod](remote-communication-rcp.md#httpmethod) | 否 | 否 | HTTP方法 |
+| method | [HttpMethod](remote-communication-rcp.md#httpmethod) | 否 | 否 | HTTP方法。 |
 | extra | string | 否 | 是 | 附加信息。该属性允许相同的URL和HTTP方法存储多条响应缓存记录。例如，开发者可以尝试放置语言类型字符串，用以匹配对应语言的响应内容。 |
 
 ## ResponseCacheRecord
-
-PhonePC/2in1TabletTVWearable
 
 缓存记录。
 
@@ -5906,8 +5585,6 @@ PhonePC/2in1TabletTVWearable
 | key | [ResponseCacheKey](remote-communication-rcp.md#responsecachekey) | 否 | 否 | 缓存响应对应的缓存键。 |
 
 ## CacheConfiguration
-
-PhonePC/2in1TabletTVWearable
 
 缓存配置。开发者可以通过该接口控制缓存行为，包括内存和磁盘缓存配置、缓存内存和条数上限、默认过期策略等。
 
@@ -5927,8 +5604,6 @@ PhonePC/2in1TabletTVWearable
 
 ## PersistentStorageConfiguration
 
-PhonePC/2in1TabletTVWearable
-
 type PersistentStorageConfiguration = FileSystemStorageConfiguration
 
 持久化缓存存储配置。
@@ -5945,8 +5620,6 @@ type PersistentStorageConfiguration = FileSystemStorageConfiguration
 
 ## FileSystemStorageConfiguration
 
-PhonePC/2in1TabletTVWearable
-
 基于文件系统的缓存存储配置。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -5962,8 +5635,6 @@ PhonePC/2in1TabletTVWearable
 
 ## InMemoryCacheConfiguration
 
-PhonePC/2in1TabletTVWearable
-
 基于内存的缓存存储配置。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -5978,8 +5649,6 @@ PhonePC/2in1TabletTVWearable
 | maxSize | number | 否 | 是 | 指定内存缓存所占用内存上限。若设置，则[CacheConfiguration](remote-communication-rcp.md#cacheconfiguration)中配置的maxSize对内存缓存存储不生效。  单位：MB。  默认值：10。 |
 
 ## CacheState
-
-PhonePC/2in1TabletTVWearable
 
 缓存状态信息。包含当前缓存条数、缓存大小和缓存命中数。
 
@@ -5997,9 +5666,7 @@ PhonePC/2in1TabletTVWearable
 
 ## ResponseCache
 
-PhonePC/2in1TabletTVWearable
-
-HTTP响应缓存，为开发者提供了记录和操作HTTP缓存的能力。
+HTTP响应缓存，为开发者提供了记录和操作HTTP缓存的能力。Remote Communication Kit不为HTTP响应缓存加密，开发者应结合自身需要选择是否使用HTTP响应缓存功能。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -6008,8 +5675,6 @@ HTTP响应缓存，为开发者提供了记录和操作HTTP缓存的能力。
 **起始版本：** 6.0.0(20)
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(configuration: CacheConfiguration)
 
@@ -6029,24 +5694,22 @@ constructor(configuration: CacheConfiguration)
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. const cache = new rcp.ResponseCache({
-4. persistent: {
-5. kind: 'file-system',
-6. pathToFolder: "/path/dir" // 请根据自身业务选择合适的路径
-7. }
-8. });
+const cache = new rcp.ResponseCache({
+  persistent: {
+    kind: 'file-system',
+    pathToFolder: '/path/dir' // 请根据自身业务选择合适的路径
+  }
+});
 ```
 
 ### close
-
-PhonePC/2in1TabletTVWearable
 
 close(): Promise<void>
 
@@ -6066,33 +5729,31 @@ close(): Promise<void>
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| [1007900985](remote-communication-error-code.md#section1007900985-文件系统io错误) | File system IO error. |
+| [1007900985](errorcode-remote-communication.md#section1007900985-文件系统io错误) | File system IO error. |
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. try {
-4. const cache = new rcp.ResponseCache({
-5. persistent: {
-6. kind: 'file-system',
-7. pathToFolder: "/path/dir" // 请根据自身业务选择合适的路径
-8. }
-9. });
-10. await cache.close();
-11. } catch (err) {
-12. console.error(`Error: error code is ${err.code}, error message is ${err.data}`);
-13. }
+try {
+  const cache = new rcp.ResponseCache({
+    persistent: {
+      kind: 'file-system',
+      pathToFolder: '/path/dir' // 请根据自身业务选择合适的路径
+    }
+  });
+  await cache.close();
+} catch (err) {
+  console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
+}
 ```
 
 ### set
-
-PhonePC/2in1TabletTVWearable
 
 set(key: ResponseCacheKey, response: CachedResponse, expirationPolicy?: ExpirationPolicy): Promise<void>
 
@@ -6120,53 +5781,50 @@ set(key: ResponseCacheKey, response: CachedResponse, expirationPolicy?: Expirati
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| [1007900401](remote-communication-error-code.md#section1007900401-接口参数错误) | Parameter error. |
-| [1007900985](remote-communication-error-code.md#section1007900985-文件系统io错误) | File system IO error. |
+| [1007900401](errorcode-remote-communication.md#section1007900401-接口参数错误) | Parameter error. |
+| [1007900985](errorcode-remote-communication.md#section1007900985-文件系统io错误) | File system IO error. |
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. try {
-4. const cache = new rcp.ResponseCache({
-5. persistent: {
-6. kind: 'file-system',
-7. pathToFolder: "/path/dir" // 请根据自身业务选择合适的路径
-8. }
-9. });
-10. const session: rcp.Session = rcp.createSession({
-11. requestConfiguration: {
-12. cache: cache
-13. }
-14. });
-15. const key: rcp.ResponseCacheKey = {
-16. url: 'https://www.example.com',
-17. method: 'GET'
-18. };
-19. const response = await session.get('https://www.example.com');
-20. const cachedRecord = rcp.createCachedResponse(response);
-21. const policy: rcp.TimeLimitedExpirationPolicy = {
-22. kind: 'relative',
-23. time: {
-24. units: 'seconds',
-25. value: 3
-26. }
-27. };
-28. cache.set(key, cachedRecord, policy).then(() => {
-29. })
-30. } catch (err) {
-31. console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
-32. }
+try {
+  const cache = new rcp.ResponseCache({
+    persistent: {
+      kind: 'file-system',
+      pathToFolder: '/path/dir' // 请根据自身业务选择合适的路径
+    }
+  });
+  const session: rcp.Session = rcp.createSession({
+    requestConfiguration: {
+      cache: cache
+    }
+  });
+  const key: rcp.ResponseCacheKey = {
+    url: 'https://www.example.com',
+    method: 'GET'
+  };
+  const response = await session.get('https://www.example.com');
+  const cachedRecord = rcp.createCachedResponse(response);
+  const policy: rcp.TimeLimitedExpirationPolicy = {
+    kind: 'relative',
+    time: {
+      units: 'seconds',
+      value: 3
+    }
+  };
+  await cache.set(key, cachedRecord, policy);
+} catch (err) {
+  console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
+}
 ```
 
 ### get
-
-PhonePC/2in1TabletTVWearable
 
 get(key: ResponseCacheKey): Promise<ResponseCacheRecord>
 
@@ -6192,37 +5850,35 @@ get(key: ResponseCacheKey): Promise<ResponseCacheRecord>
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| [1007900401](remote-communication-error-code.md#section1007900401-接口参数错误) | Parameter error. |
-| [1007900985](remote-communication-error-code.md#section1007900985-文件系统io错误) | File system IO error. |
+| [1007900401](errorcode-remote-communication.md#section1007900401-接口参数错误) | Parameter error. |
+| [1007900985](errorcode-remote-communication.md#section1007900985-文件系统io错误) | File system IO error. |
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. try {
-4. const cache = new rcp.ResponseCache({
-5. persistent: {
-6. kind: 'file-system',
-7. pathToFolder: "/path/dir" // 请根据自身业务选择合适的路径
-8. }
-9. });
-10. const record = await cache.get({
-11. url: 'https://www.example.com',
-12. method: 'GET'
-13. });
-14. } catch (err) {
-15. console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
-16. }
+try {
+  const cache = new rcp.ResponseCache({
+    persistent: {
+      kind: 'file-system',
+      pathToFolder: '/path/dir' // 请根据自身业务选择合适的路径
+    }
+  });
+  const record = await cache.get({
+    url: 'https://www.example.com',
+    method: 'GET'
+  });
+} catch (err) {
+  console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
+}
 ```
 
 ### clear
-
-PhonePC/2in1TabletTVWearable
 
 clear(): Promise<void>
 
@@ -6242,33 +5898,31 @@ clear(): Promise<void>
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| [1007900985](remote-communication-error-code.md#section1007900985-文件系统io错误) | File system IO error. |
+| [1007900985](errorcode-remote-communication.md#section1007900985-文件系统io错误) | File system IO error. |
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. try {
-4. const cache = new rcp.ResponseCache({
-5. persistent: {
-6. kind: 'file-system',
-7. pathToFolder: "/path/dir" // 请根据自身业务选择合适的路径
-8. }
-9. });
-10. await cache.clear();
-11. } catch (err) {
-12. console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
-13. }
+try {
+  const cache = new rcp.ResponseCache({
+    persistent: {
+      kind: 'file-system',
+      pathToFolder: '/path/dir' // 请根据自身业务选择合适的路径
+    }
+  });
+  await cache.clear();
+} catch (err) {
+  console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
+}
 ```
 
 ### getState
-
-PhonePC/2in1TabletTVWearable
 
 getState(): Promise<CacheState>
 
@@ -6288,33 +5942,31 @@ getState(): Promise<CacheState>
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| [1007900985](remote-communication-error-code.md#section1007900985-文件系统io错误) | File system IO error. |
+| [1007900985](errorcode-remote-communication.md#section1007900985-文件系统io错误) | File system IO error. |
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. try {
-4. const cache = new rcp.ResponseCache({
-5. persistent: {
-6. kind: 'file-system',
-7. pathToFolder: "/path/dir" // 请根据自身业务选择合适的路径
-8. }
-9. });
-10. const cacheState = await cache.getState();
-11. } catch (err) {
-12. console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
-13. }
+try {
+  const cache = new rcp.ResponseCache({
+    persistent: {
+      kind: 'file-system',
+      pathToFolder: '/path/dir' // 请根据自身业务选择合适的路径
+    }
+  });
+  const cacheState = await cache.getState();
+} catch (err) {
+  console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
+}
 ```
 
 ### remove
-
-PhonePC/2in1TabletTVWearable
 
 remove(key: ResponseCacheKey): Promise<boolean>
 
@@ -6340,38 +5992,36 @@ remove(key: ResponseCacheKey): Promise<boolean>
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| [1007900401](remote-communication-error-code.md#section1007900401-接口参数错误) | Parameter error. |
-| [1007900985](remote-communication-error-code.md#section1007900985-文件系统io错误) | File system IO error. |
+| [1007900401](errorcode-remote-communication.md#section1007900401-接口参数错误) | Parameter error. |
+| [1007900985](errorcode-remote-communication.md#section1007900985-文件系统io错误) | File system IO error. |
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. try {
-4. const cache = new rcp.ResponseCache({
-5. persistent: {
-6. kind: 'file-system',
-7. pathToFolder: "/path/dir" // 请根据自身业务选择合适的路径
-8. }
-9. });
-10. const key: rcp.ResponseCacheKey = {
-11. url: 'https://www.example.com',
-12. method: 'GET'
-13. };
-14. const result = await cache.remove(key);
-15. } catch (err) {
-16. console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
-17. }
+try {
+  const cache = new rcp.ResponseCache({
+    persistent: {
+      kind: 'file-system',
+      pathToFolder: '/path/dir' // 请根据自身业务选择合适的路径
+    }
+  });
+  const key: rcp.ResponseCacheKey = {
+    url: 'https://www.example.com',
+    method: 'GET'
+  };
+  const result = await cache.remove(key);
+} catch (err) {
+  console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
+}
 ```
 
 ### removeMultiple
-
-PhonePC/2in1TabletTVWearable
 
 removeMultiple(url: URLOrString, matchKind: URLMatchKind, method?: HttpMethod): Promise<boolean>
 
@@ -6399,34 +6049,32 @@ removeMultiple(url: URLOrString, matchKind: URLMatchKind, method?: HttpMethod): 
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| [1007900401](remote-communication-error-code.md#section1007900401-接口参数错误) | Parameter error. |
-| [1007900985](remote-communication-error-code.md#section1007900985-文件系统io错误) | File system IO error. |
+| [1007900401](errorcode-remote-communication.md#section1007900401-接口参数错误) | Parameter error. |
+| [1007900985](errorcode-remote-communication.md#section1007900985-文件系统io错误) | File system IO error. |
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. try {
-4. const cache = new rcp.ResponseCache({
-5. persistent: {
-6. kind: 'file-system',
-7. pathToFolder: "/path/dir" // 请根据自身业务选择合适的路径
-8. }
-9. });
-10. const result = await cache.removeMultiple('https://www.example.com', 'exact', 'GET');
-11. } catch (err) {
-12. console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
-13. }
+try {
+  const cache = new rcp.ResponseCache({
+    persistent: {
+      kind: 'file-system',
+      pathToFolder: '/path/dir' // 请根据自身业务选择合适的路径
+    }
+  });
+  const result = await cache.removeMultiple('https://www.example.com', 'exact', 'GET');
+} catch (err) {
+  console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
+}
 ```
 
 ## URLMatchKind
-
-PhonePC/2in1TabletTVWearable
 
 type URLMatchKind = 'exact' | 'as-substring'
 
@@ -6445,8 +6093,6 @@ URL匹配类型。
 
 ## createResponse
 
-PhonePC/2in1TabletTVWearable
-
 createResponse(request: Request, cachedResponse: CachedResponse, currentTime: Date): Response
 
 根据HTTP响应缓存创建HTTP响应。
@@ -6461,7 +6107,7 @@ createResponse(request: Request, cachedResponse: CachedResponse, currentTime: Da
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| request | [Request](remote-communication-rcp.md#request) | 是 | 要创建响应的HTTP请求。 |
+| request | [Request](remote-communication-rcp.md#request) | 是 | 待创建响应的HTTP请求。 |
 | cachedResponse | [CachedResponse](remote-communication-rcp.md#cachedresponse) | 是 | 缓存中存储的HTTP响应缓存。 |
 | currentTime | Date | 是 | 当前时间。 |
 
@@ -6473,39 +6119,37 @@ createResponse(request: Request, cachedResponse: CachedResponse, currentTime: Da
 
 **错误码：**
 
-错误码的详细介绍请参见[API错误码](remote-communication-error-code.md)。
+错误码的详细介绍请参见[API错误码](errorcode-remote-communication.md)。
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. try {
-4. const cache = new rcp.ResponseCache({
-5. persistent: {
-6. kind: 'file-system',
-7. pathToFolder: "/path/dir" // 请根据自身业务选择合适的路径
-8. }
-9. });
-10. const request = new rcp.Request('https://www.example.com', 'GET');
-11. const key: rcp.ResponseCacheKey = {
-12. url: request.url,
-13. method: request.method,
-14. };
-15. // 获取HTTP响应缓存结果。
-16. const responseInCache = await cache.get(key);
-17. if (responseInCache) {
-18. // 根据HTTP响应缓存得到HTTP响应。
-19. const response = rcp.createResponse(request, responseInCache.response, new Date());
-20. }
-21. } catch (err) {
-22. console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
-23. }
+try {
+  const cache = new rcp.ResponseCache({
+    persistent: {
+      kind: 'file-system',
+      pathToFolder: '/path/dir' // 请根据自身业务选择合适的路径
+    }
+  });
+  const request = new rcp.Request('https://www.example.com', 'GET');
+  const key: rcp.ResponseCacheKey = {
+    url: request.url,
+    method: request.method,
+  };
+  // 获取HTTP响应缓存结果。
+  const responseInCache = await cache.get(key);
+  if (responseInCache) {
+    // 根据HTTP响应缓存得到HTTP响应。
+    const response = rcp.createResponse(request, responseInCache.response, new Date());
+  }
+} catch (err) {
+  console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
+}
 ```
 
 ## createCachedResponse
-
-PhonePC/2in1TabletTVWearable
 
 createCachedResponse(response: Response, timeStamp?: Date): CachedResponse
 
@@ -6532,26 +6176,17 @@ createCachedResponse(response: Response, timeStamp?: Date): CachedResponse
 
 **示例：**
 
-```
-1. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-3. try {
-4. const cache = new rcp.ResponseCache({
-5. persistent: {
-6. kind: 'file-system',
-7. pathToFolder: "/path/dir", // 请根据自身业务选择合适的路径
-8. }
-9. });
-10. const session = rcp.createSession();
-11. const key: rcp.ResponseCacheKey = {
-12. url: 'https://www.example.com',
-13. method: 'GET'
-14. };
-15. // 获取HTTP响应。
-16. const response = await session.get('https://www.example.com');
-17. // 根据HTTP响应创建HTTP响应缓存。
-18. const cachedRecord = rcp.createCachedResponse(response);
-19. } catch (err) {
-20. console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
-21. }
+try {
+  const session = rcp.createSession();
+  // 获取HTTP响应。
+  const response = await session.get('https://www.example.com');
+  // 根据HTTP响应创建HTTP响应缓存。
+  const cachedRecord = rcp.createCachedResponse(response);
+  console.info(`Succeeded in creating CachedResponse, result is ${JSON.stringify(cachedRecord)}`);
+} catch (err) {
+  console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
+}
 ```

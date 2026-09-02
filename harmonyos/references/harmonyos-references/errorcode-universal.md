@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 通用错误码
 breadcrumb: API参考 > API参考概述 > 通用错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:11+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7c7e9e6a480c2aab8838f36be905245670c7b0af4ec1ce09e73df3df2073d3da
+scraped_at: 2026-09-02T14:51:01+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:56b3e9940b81d95438b87983b25e469b2edeb76e7ce57d1d2be678a15ce5addd
 ---
 
 ## 201 权限校验失败
@@ -60,7 +60,7 @@ This function is prohibited by enterprise management policies.
 
 **处理步骤**
 
-请使用[getDisallowedPolicy](js-apis-enterprise-restrictions.md#restrictionsgetdisallowedpolicy)接口检查该系统功能是否被禁用，并使用[setDisallowedPolicy](js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicy)接口解除禁用状态。
+请使用[getDisallowedPolicy](js-apis-enterprise-restrictions.md#restrictionsgetdisallowedpolicydeprecated)接口检查该系统功能是否被禁用，并使用[setDisallowedPolicy](js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicydeprecated)接口解除禁用状态。
 
 ## 401 参数检查失败
 

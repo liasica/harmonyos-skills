@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-runnin
 title: 如何增加模拟器运行内存
 breadcrumb: FAQ > DevEco Studio > 应用运行 > 如何增加模拟器运行内存
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:59+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:17+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:ceee19e2a86878f019cd4d03519a803c5fbd7cf1a9a1961eb7637ad8a251fdef
 ---
 

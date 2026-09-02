@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-k
 title: "@ohos.multimodalInput.keyEvent (按键输入事件)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.keyEvent (按键输入事件)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:14+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:65c04e092773e5a1ab129c82f06f1d967d1dffde412d3443ceb0030970681c73
+scraped_at: 2026-09-02T15:02:08+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d0692085e55b907cb9578716f44122de405dfc5c58fb75658986c0e168bd9378
 ---
 
 设备上报的按键事件，继承自[InputEvent](js-apis-inputevent.md)。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { Action, Key, KeyEvent } from '@kit.InputKit';
+```js
+import { Action, Key, KeyEvent } from '@kit.InputKit';
 ```
 
 ## Action
-
-PhonePC/2in1TabletTVWearable
 
 按键事件类型。
 
@@ -40,8 +36,6 @@ PhonePC/2in1TabletTVWearable
 
 ## Key
 
-PhonePC/2in1TabletTVWearable
-
 按键。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -51,12 +45,10 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | code | [KeyCode](js-apis-keycode.md#keycode) | 否 | 否 | 键值。 |
-| pressedTime | number | 否 | 否 | 按键按下时间，单位：μs。 |
+| pressedTime | number | 否 | 否 | 按键按下时间，表示系统启动运行至今逝去的微秒数，单位为微秒（μs）。 |
 | deviceId | number | 否 | 否 | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
 
 ## KeyEvent
-
-PhonePC/2in1TabletTVWearable
 
 按键事件。
 
@@ -69,7 +61,7 @@ PhonePC/2in1TabletTVWearable
 | action | [Action](js-apis-keyevent.md#action) | 否 | 否 | 按键事件类型。 |
 | key | [Key](js-apis-keyevent.md#key) | 否 | 否 | 按键。 |
 | unicodeChar | number | 否 | 否 | 按键对应的unicode字符。 |
-| keys | [Key](js-apis-keyevent.md#key) [] | 否 | 否 | 当前处于按下状态的按键列表。 |
+| keys | [Key](js-apis-keyevent.md#key)[] | 否 | 否 | 当前处于按下状态的按键列表。 |
 | ctrlKey | boolean | 否 | 否 | 当前ctrlKey是否处于按下状态。  true表示处于按下状态，false表示处于抬起状态。 |
 | altKey | boolean | 否 | 否 | 当前altKey是否处于按下状态。  true表示处于按下状态，false表示处于抬起状态。 |
 | shiftKey | boolean | 否 | 否 | 当前shiftKey是否处于按下状态。  true表示处于按下状态，false表示处于抬起状态。 |

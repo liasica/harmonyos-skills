@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“Failed to obtain the module type.”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“Failed to obtain the module type.”
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:20:59+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:7cbfe6b69cb0b148859588298d9757c6563e764f289d47cc6f53fbfba715f28d
+scraped_at: 2026-09-02T14:54:55+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:c6d08db2c0ee8e42ec7dbfed3e4dcc18ae5f47f9519ffcf4158eb00a94841f7b
 ---
 
 **错误描述**
@@ -16,7 +16,7 @@ content_hash: sha256:7cbfe6b69cb0b148859588298d9757c6563e764f289d47cc6f53fbfba71
 
 在FA模型中，config.json文件中的module/distro/moduleType字段缺失或配置错误。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/zd7I9Wb-QzyfDrQSSXIhLw/zh-cn_image_0000002229604177.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/xZrWUTH-QzOZCbSmXs_hww/zh-cn_image_0000002654798001.png)
 
 **解决措施**
 

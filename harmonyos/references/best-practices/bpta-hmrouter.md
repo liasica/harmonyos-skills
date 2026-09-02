@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-hmrouter
 title: 基于HMRouter的页面跳转
 breadcrumb: 最佳实践 > 手势与导航 > 基于HMRouter的页面跳转
 category: best-practices
-scraped_at: 2026-04-29T14:10:39+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:880f8ffb265d85b572b6375f05a71d85efcce9edd66a0c6b81e3e84b83c1fff8
+scraped_at: 2026-09-02T15:03:16+08:00
+doc_updated_at: 2026-08-10
+content_hash: sha256:06a6f2fc97497f98d5dd237c2c22960e12f886e6e3d3dee9773d8d9ed476f2db
 ---
 
 ## 概述
@@ -28,77 +28,66 @@ HMRouter提供了基于自定义注解的页面跳转与返回功能，使用步
 
 1. 为需要跳转的页面添加@HMRouter注解，并配置其中的pageUrl参数，例如此处配置为ProductContent。
 
+   ```screen
+   @HMRouter({ pageUrl: 'ProductContent' })
+   @Component
+   export struct ProductContent {
+     // ...
+     @State param: ParamsType | null = null;
+
+     aboutToAppear(): void {
+       this.param = HMRouterMgr.getCurrentParam() as ParamsType;
+     }
+
+     // ...
+   }
    ```
-   1. @HMRouter({ pageUrl: 'ProductContent' })
-   2. @Component
-   3. export struct ProductContent {
-   4. // ...
-   5. @State param: ParamsType | null = null;
+2. 在需要进行页面跳转的位置，使用HMRouterMgr提供的to()方法进行页面跳转，在参数中配置目标页面的页面地址，如需传参可配置withParam参数。此外，也可以配置页面栈唯一标识navigationId，当使用多个HMNavigation时建议开发者手动指定navigationId，当使用单个HMNavigation时，开发者可以不传递navigationId参数，系统会默认处理。onResult参数可用于配置当从其他页面返回到当前页面时的回调函数，在回调函数内可以通过参数的srcPageInfo.name属性获取由哪个页面跳转到当前页，还可以通过参数的result属性获取返回当前页面时携带的参数。
 
-   7. aboutToAppear(): void {
-   8. this.param = HMRouterMgr.getCurrentParam() as ParamsType;
-   9. }
-
-   11. // ...
-   12. }
+   ```screen
+   HMRouterMgr.to('ProductContent')
+     .withNavigation('mainNavigationId')
+     .withParam({ a: 1, b: 2 })
+     .onResult((popInfo: HMPopInfo) => {
+       const pageName = popInfo.srcPageInfo.name;
+       const params = popInfo.result;
+     })
+     .pushAsync();
    ```
-
-   [ProductContent.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/component/product/ProductContent.ets#L28-L69)
-2. 在需要进行页面跳转的位置，使用HMRouterMgr提供的to方法进行页面跳转，在参数中配置目标页面的页面地址，如需传参可配置withParam参数。此外，也可以配置页面栈唯一标识navigationId，当使用多个HMNavigation时建议开发者手动指定navigationId，当使用单个HMNavigation时，开发者可以不传递navigationId参数，系统会默认处理。onResult参数可用于配置当从其他页面返回到当前页面时的回调函数，在回调函数内可以通过参数的srcPageInfo.name属性获取由哪个页面跳转到当前页，还可以通过参数的result属性获取返回当前页面时携带的参数。
-
-   ```
-   1. HMRouterMgr.to('ProductContent')
-   2. .withNavigation('mainNavigationId')
-   3. .withParam({ a: 1, b: 2 })
-   4. .onResult((popInfo: HMPopInfo) => {
-   5. const pageName = popInfo.srcPageInfo.name;
-   6. const params = popInfo.result;
-   7. console.log(`page name is ${pageName}, params is ${JSON.stringify(params)}`);
-   8. })
-   9. .pushAsync()
-   ```
-
-   [HomeContent.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/component/home/HomeContent.ets#L257-L265)
 3. 在跳转的目标页面使用HMRouterMgr.getCurrentParam()获取到传递的页面参数。
 
+   ```screen
+   @Component
+   export struct ProductContent {
+     // ...
+     @State param: ParamsType | null = null;
+
+     aboutToAppear(): void {
+       this.param = HMRouterMgr.getCurrentParam() as ParamsType;
+     }
+
+     // ...
+   }
    ```
-   1. @Component
-   2. export struct ProductContent {
-   3. // ...
-   4. @State param: ParamsType | null = null;
+4. 如需使用页面返回功能，在对应的业务逻辑位置使用HMRouterMgr提供的pop()方法实现页面返回，同样的pop()方法支持传入navigationId，同时HMRouter还支持在返回时通过配置param参数向其所返回的页面传递参数。
 
-   6. aboutToAppear(): void {
-   7. this.param = HMRouterMgr.getCurrentParam() as ParamsType;
-   8. }
-
-   10. // ...
-   11. }
+   ```screen
+   HMRouterMgr.pop({ navigationId: 'mainNavigationId', param: this.param });
    ```
-
-   [ProductContent.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/component/product/elements/ProductContent.ets#L7-L22)
-4. 如需使用页面返回功能，在对应的业务逻辑位置使用HMRouterMgr提供的pop方法实现页面返回，同样的pop方法支持传入navigationId，同时HMRouter还支持在返回时通过配置param参数向其所返回的页面传递参数。
-
-   ```
-   1. HMRouterMgr.pop({ navigationId: 'mainNavigationId', param: this.param })
-   ```
-
-   [segment1.ets](https://gitcode.com/HarmonyOS_Samples/HMRouter/blob/master/entry/src/main/ets/segment/segment1.ets#L33-L33)
 
 ### 多次页面跳转，返回指定页面
 
-当页面跳转路径如HomePage->PageA->PageB->PageC，开发者希望在PageC的页面逻辑中直接返回到HomePage并携带参数，开发者仅需使用HMRouterMgr提供的to方法，并传入需要返回的目标页面的地址以及携带的参数，即可直接带参返回到指定页面。
+当页面跳转路径如HomePage->PageA->PageB->PageC，开发者希望在PageC的页面逻辑中直接返回到HomePage并携带参数，开发者仅需使用HMRouterMgr提供的to()方法，并传入需要返回的目标页面的地址以及携带的参数，即可直接带参返回到指定页面。
 
+```screen
+HMRouterMgr.to('MainPage')
+  .withNavigation('mainNavigationId')
+  .withParam(0)
+  .pushAsync();
 ```
-1. HMRouterMgr.to('MainPage')
-2. .withNavigation('mainNavigationId')
-3. .withParam(0)
-4. .pushAsync()
-```
-
-[PaySuccessPageComponent.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/component/pay/PaySuccessPageComponent.ets#L94-L97)
 
 **图1** 返回指定页面示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/fABt8azrQgCyzytINCrRTA/zh-cn_image_0000002505304640.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/u6eOLXscTVC0Fr7KZtWj0w/zh-cn_image_0000002505304640.png "点击放大")
 
 ### 应用未登录，点击跳转登录页的校验场景
 
@@ -110,53 +99,49 @@ HMRouter提供了基于自定义注解的页面跳转与返回功能，使用步
    1. 当用户已登录，通过执行chain.onContinue()，正常执行后续页面跳转逻辑。
    2. 当用户未登录，通过Toast弹窗向用户提示登录，然后跳转到登录页面，最后通过执行chain.onIntercept()来拦截此次跳转请求。
 
+      ```screen
+      @HMInterceptor({ interceptorName: 'LoginCheckInterceptor' })
+      export class LoginCheckInterceptor implements IHMInterceptor {
+        async intercept(chain: IHMInterceptorChain): Promise<void> {
+          const info = chain.getRouterInfo();
+          const context = chain.getContext();
+          // ...
+            if (!!AppStorage.get('isLogin')) {
+              await chain.onContinue();
+            } else {
+              info.context.getPromptAction().showToast({ message: '请先登录' });
+              HMRouterMgr.push({
+                pageUrl: 'loginPage',
+                skipAllInterceptor: true
+              });
+              await chain.onIntercept();
+            }
+            // ...
+        }
+      }
       ```
-      1. @HMInterceptor({ interceptorName: 'LoginCheckInterceptor' })
-      2. export class LoginCheckInterceptor implements IHMInterceptor {
-      3. async intercept(chain: IHMInterceptorChain): Promise<void> {
-      4. const info = chain.getRouterInfo();
-      5. const context = chain.getContext();
-      6. // ...
-      7. if (!!AppStorage.get('isLogin')) {
-      8. await chain.onContinue()
-      9. } else {
-      10. info.context.getPromptAction().showToast({ message: '请先登录' });
-      11. HMRouterMgr.push({
-      12. pageUrl: 'loginPage',
-      13. skipAllInterceptor: true
-      14. });
-      15. await chain.onIntercept();
-      16. }
-      17. // ...
-      18. }
-      19. }
-      ```
-
-      [LoginCheckInterceptor.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/interceptor/LoginCheckInterceptor.ets#L25-L60)
 4. 在需要进行拦截的页面中配置@HMRouter的interceptors参数即可，由于一个页面可以配置多个拦截器，所以需要将关联的拦截器名称封装为一个数组进行传入。
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/j1vwVnTBQyuNCnloeRUG6w/zh-cn_image_0000002229450657.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/9zO1BkWkRcCnxNmuP2e47A/zh-cn_image_0000002229450657.gif "点击放大")
 
 ### 实现单例页面的跳转
 
 当应用中存在初始化加载资源消耗大且有复用需求的页面时，就可以使用单例页面。典型的业务场景如视频类应用中的视频播放页面，此类页面通常需要加载视频解码器资源并对其初始化，且该页面在视频类应用中会频繁出现。实现上开发者只需要配置@HMRouter注解参数中的singleton参数为true即可。
 
+```screen
+@HMRouter({
+  pageUrl: 'liveHome',
+  singleton: true,
+  animator: 'liveInteractiveAnimator',
+  lifecycle: 'liveHomeLifecycle'
+})
+@Component
+export struct LiveHome {
+  // ...
+}
 ```
-1. @HMRouter({
-2. pageUrl: 'liveHome',
-3. singleton: true,
-4. animator: 'liveInteractiveAnimator',
-5. lifecycle: 'liveHomeLifecycle'
-6. })
-7. @Component
-8. export struct LiveHome {
-9. // ...
-10. }
-```
-
-[LiveHome.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/component/live/LiveHome.ets#L162-L198)
 
 ## 弹窗提示场景
 
@@ -164,19 +149,17 @@ HMRouter提供了基于自定义注解的页面跳转与返回功能，使用步
 
 在HMRouter路由框架中，开发者只需要设置@HMRouter注解的dialog配置为true即可将当前页面作为弹窗使用。
 
+```screen
+@HMRouter({
+  pageUrl: PageConstant.PRIVACY_DIALOG_DETAIL,
+  dialog: true,
+  // ...
+})
+@Component
+export struct PrivacyDialogDetail {
+  // ...
+}
 ```
-1. @HMRouter({
-2. pageUrl: PageConstant.PRIVACY_DIALOG_DETAIL,
-3. dialog: true,
-4. // ...
-5. })
-6. @Component
-7. export struct PrivacyDialogDetail {
-8. // ...
-9. }
-```
-
-[PrivacyDialogDetail.ets](https://gitcode.com/HarmonyOS_Samples/HMRouter/blob/master/entry/src/main/ets/component/privacy/PrivacyDialogDetail.ets#L33-L127)
 
 ### 返回时弹窗，提示用户是否确认返回
 
@@ -184,80 +167,74 @@ HMRouter提供了基于自定义注解的页面跳转与返回功能，使用步
 
 1. 开发者首先需要根据自己的业务需求，来进行自定义弹窗的开发。
 
+   ```screen
+   @HMRouter({ pageUrl: 'PayCancel', dialog: true, animator:'PayCancelDialog' })
+   @Component
+   export struct PayCancel {
+     // ...
+     build() {
+       Stack({ alignContent: Alignment.Center }) {
+         ConfirmDialog({
+           title: PayConstants.PAY_CANCEL_TITLE,
+           content: PayConstants.PAY_CANCEL_CONTENT,
+           leftButtonName: PayConstants.PAY_CANCEL_BUTTON1,
+           rightButtonName: PayConstants.PAY_CANCEL_TITLE,
+           leftButtonFunc: () => {
+             HMRouterMgr.popAsync({
+               navigationId: this.queryNavigationInfo()?.navigationId
+             });
+           },
+           rightButtonFunc: () => {
+             // ...
+           }
+         });
+       }
+       .width('100%')
+       .height('100%')
+       .position({
+         x: '50%',
+         y: '50%'
+       })
+       .markAnchor({
+         x: '50%',
+         y: '50%'
+       });
+     }
+   }
    ```
-   1. @HMRouter({ pageUrl: 'PayCancel', dialog: true,animator:'PayCancelDialog' })
-   2. @Component
-   3. export struct PayCancel {
-   4. // ...
-   5. build() {
-   6. Stack({ alignContent: Alignment.Center }) {
-   7. ConfirmDialog({
-   8. title: '取消订单',
-   9. content: '您确认要取消此订单吗?',
-   10. leftButtonName: '再看看',
-   11. rightButtonName: '取消订单',
-   12. leftButtonFunc: () => {
-   13. HMRouterMgr.popAsync({
-   14. navigationId: this.queryNavigationInfo()?.navigationId
-   15. });
-   16. },
-   17. rightButtonFunc: () => {
-   18. // ...
-   19. }
-   20. });
-   21. }
-   22. .width('100%')
-   23. .height('100%')
-   24. .position({
-   25. x: '50%',
-   26. y: '50%'
-   27. })
-   28. .markAnchor({
-   29. x: '50%',
-   30. y: '50%'
-   31. });
-   32. }
-   33. }
-   ```
-
-   [PayCancel.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/component/pay/PayCancel.ets#L61-L104)
 2. 定义ExitPayLifecycle类来实现IHMLifecycle接口，为ExitPayLifecycle加上@HMLifecycle注解，传入生命周期名称ExitPayLifecycle，在类的内部，重写onBackPressed回调函数，当用户执行返回操作时，该回调函数触发，弹出刚刚定义的PayCancel弹窗。
 
-   ```
-   1. @HMLifecycle({ lifecycleName: 'ExitPayLifecycle' })
-   2. export class ExitPayLifecycle implements IHMLifecycle {
-   3. model: ObservedModel = new ObservedModel();
+   ```screen
+   @HMLifecycle({ lifecycleName: 'ExitPayLifecycle' })
+   export class ExitPayLifecycle implements IHMLifecycle {
+     public model: ObservedModel = new ObservedModel();
 
-   5. onBackPressed(): boolean {
-   6. HMRouterMgr.to('PayCancel')
-   7. .withParam(this.model.pageUrl)
-   8. .pushAsync()
-   9. return true;
-   10. }
-   11. }
+     onBackPressed(): boolean {
+       HMRouterMgr.to('PayCancel')
+         .withParam(this.model.pageUrl)
+         .pushAsync();
+       return true;
+     }
+   }
    ```
-
-   [PayDialogContent.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/component/pay/PayDialogContent.ets#L169-L180)
 3. 将定义的生命周期与支付页面绑定，只需要将刚刚定义的生命周期传入对应组件@HMRouter注解的lifecycle参数即可。
 
+   ```screen
+   @HMRouter({
+     pageUrl: 'PayDialogContent',
+     dialog: true,
+     lifecycle: 'ExitPayDialog',
+     interceptors: ['LoginCheckInterceptor']
+   })
+   @Component
+   export struct PayDialogContent {
+     // ...
+   }
    ```
-   1. @HMRouter({
-   2. pageUrl: 'PayDialogContent',
-   3. dialog: true,
-   4. lifecycle: 'ExitPayDialog',
-   5. interceptors: ['LoginCheckInterceptor']
-   6. })
-   7. @Component
-   8. export struct PayDialogContent {
-   9. // ...
-   10. }
-   ```
-
-   [PayDialogContent.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/component/pay/PayDialogContent.ets#L78-L152)
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/cAraqQvAQ2uKOHmKqSQG8w/zh-cn_image_0000002193850796.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/c1GAe8AKTRuSKkxr0IwJpA/zh-cn_image_0000002193850796.gif "点击放大")
 
 ### 首页两次返回退出应用
 
@@ -265,37 +242,35 @@ HMRouter提供了基于自定义注解的页面跳转与返回功能，使用步
 
 1. 定义一个生命周期类ExitAppLifecycle实现IHMLifecycle接口。
 2. 使用@HMLifecycle注解传入生命周期名称参数lifecycleName为ExitAppLifecycle。
-3. 重写其中的onBackPressed方法（此处是由于上述业务场景需要，实际开发中根据实际业务场景按需重写方法），通过判断上次返回操作与当前返回操作的时间间隔，按如下逻辑处理：
+3. 重写其中的onBackPressed()方法（此处是由于上述业务场景需要，实际开发中根据实际业务场景按需重写方法），通过判断上次返回操作与当前返回操作的时间间隔，按如下逻辑处理：
    1. 当两次返回操作的时间间隔大于设置值时（此处为1000ms），重新弹窗对用户进行提示，此处返回true，表示不执行默认返回逻辑。
    2. 当两次返回操作的时间间隔小于设置值时（此处为1000ms），返回为false表示执行默认返回逻辑，退出应用。
 
-      ```
-      1. @HMLifecycle({ lifecycleName: 'ExitAppLifecycle' })
-      2. export class ExitAppLifecycle implements IHMLifecycle {
-      3. private lastTime: number = 0;
+      ```screen
+      @HMLifecycle({ lifecycleName: 'ExitAppLifecycle' })
+      export class ExitAppLifecycle implements IHMLifecycle {
+        private lastTime: number = 0;
 
-      5. onBackPressed(ctx: HMLifecycleContext): boolean {
-      6. let time = new Date().getTime();
-      7. if (time - this.lastTime > 1000) {
-      8. this.lastTime = time;
-      9. ctx.uiContext.getPromptAction().showToast({
-      10. message: '再次返回退出应用',
-      11. duration: 1000
-      12. });
-      13. return true;
-      14. } else {
-      15. return false;
-      16. }
-      17. }
-      18. }
+        onBackPressed(ctx: HMLifecycleContext): boolean {
+          let time = new Date().getTime();
+          if (time - this.lastTime > 1000) {
+            this.lastTime = time;
+            ctx.uiContext.getPromptAction().showToast({
+              message: '再次返回退出应用',
+              duration: 1000
+            });
+            return true;
+          } else {
+            return false;
+          }
+        }
+      }
       ```
-
-      [ExitAppLifecycle.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/lifecycle/ExitAppLifecycle.ets#L24-L42)
 4. 将定义好的生命周期类与页面进行关联，开发者只需在@HMRouter注解中配置lifecycle为要关联的生命周期名称即可。
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/jRw7XXayRKa0GgOpf9HPFw/zh-cn_image_0000002193850804.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/2XBzbcy0TOWlVwAvGAcAhQ/zh-cn_image_0000002193850804.gif "点击放大")
 
 ## 转场动效场景
 
@@ -303,100 +278,96 @@ HMRouter提供了基于自定义注解的页面跳转与返回功能，使用步
 
 * 定义全局页面转场效果。开发者只需要创建出IHMAnimator.Effect实例，在参数中按照业务需求对动画方向direction，透明度opacity，横纵方向页面缩放效果scale进行配置即可。
 
+  ```screen
+  const globalPageTransitionEffect: IHMAnimator.Effect = new IHMAnimator.Effect({
+    direction: IHMAnimator.Direction.BOTTOM_TO_TOP,
+    opacity: { opacity: 0.5 },
+    scale: { x: 0.5, y: 0.2 }
+  });
   ```
-  1. const globalPageTransitionEffect: IHMAnimator.Effect = new IHMAnimator.Effect({
-  2. direction: IHMAnimator.Direction.BOTTOM_TO_TOP,
-  3. opacity: { opacity: 0.5 },
-  4. scale: { x: 0.5, y: 0.2 }
-  5. })
-  ```
-
-  [DialogAnimator.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/component/live/DialogAnimator.ets#L24-L29)
 
   定义完成后，只需要将实例传入HMNavigation组件的dialogAnimator参数即可。
 
+  ```screen
+  HMNavigation({
+    navigationId: 'mainNavigationId', homePageUrl: 'HomeContent', options: {
+      dialogAnimator: globalPageTransitionEffect,
+    }
+  });
   ```
-  1. HMNavigation({
-  2. navigationId: 'mainNavigationId', homePageUrl: 'HomeContent', options: {
-  3. dialogAnimator: globalPageTransitionEffect,
-  4. }
-  5. })
-  ```
-
-  [DialogAnimator.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/component/live/DialogAnimator.ets#L38-L42)
 * 定义全局弹窗效果。同样的，开发者也只需要按照业务需求创建出对应的IHMAnimator.Effect实例，代码示例如下。
 
+  ```screen
+  const globalPageTransitionEffect: IHMAnimator.Effect = new IHMAnimator.Effect({
+    direction: IHMAnimator.Direction.BOTTOM_TO_TOP,
+    opacity: { opacity: 0.5 },
+    scale: { x: 0.5, y: 0.2 }
+  });
   ```
-  1. const globalPageTransitionEffect: IHMAnimator.Effect = new IHMAnimator.Effect({
-  2. direction: IHMAnimator.Direction.BOTTOM_TO_TOP,
-  3. opacity: { opacity: 0.5 },
-  4. scale: { x: 0.5, y: 0.2 }
-  5. })
-  ```
-
-  [DialogAnimator.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/component/live/DialogAnimator.ets#L24-L29)
 
   将创建好的实例作为dialogAnimator的参数进行传入即可。
 
+  ```screen
+  HMNavigation({
+    navigationId: 'mainNavigationId', homePageUrl: 'HomeContent', options: {
+      dialogAnimator: globalPageTransitionEffect,
+    }
+  });
   ```
-  1. HMNavigation({
-  2. navigationId: 'mainNavigationId', homePageUrl: 'HomeContent', options: {
-  3. dialogAnimator: globalPageTransitionEffect,
-  4. }
-  5. })
-  ```
-
-  [DialogAnimator.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/component/live/DialogAnimator.ets#L38-L42)
 
 ### 特定页面设置自定义转场
 
-开发者可以自定义动画类并实现IHMAnimator接口中的effect方法，该方法会将页面进出场的效果对象enterHandle与exitHandle作为参数传入，可通过参数对象上的start、finish方法，设置对应效果的起止状态，支持设置的常用属性还有：
+开发者可以自定义动画类并实现IHMAnimator接口中的effect()方法，该方法会将页面进出场的效果对象enterHandle与exitHandle作为参数传入，可通过参数对象上的start、finish方法，设置对应效果的起止状态，支持设置的常用属性还有：
 
 * curve：设置动画速度曲线，支持通过Curve枚举传入值，默认Curve.EaseInOut。
 * duration：动画持续时长，单位ms。
 
 以下代码示例表示入场时由屏幕底部以线性速度向屏幕顶部运动，入场动画持续时长为400ms。出场时从屏幕顶部以线性速度向屏幕底部运动，出场动画持续时长也为400ms。
 
-```
-1. @HMAnimator({ animatorName: 'CustomAnimator' })
-2. export class CustomAnimator implements IHMAnimator {
-3. effect(enterHandle: HMAnimatorHandle, exitHandle: HMAnimatorHandle): void {
-4. // to animator
-5. enterHandle.start((modifier: AttributeUpdater<NavDestinationAttribute>) => {
-6. modifier.attribute?.translate({ y: '100%' }).scale({ x: 0.7 }).opacity(0.3)
-7. }).finish((modifier: AttributeUpdater<NavDestinationAttribute>) => {
-8. modifier.attribute?.translate({ y: '0' }).scale({ x: 1 }).opacity(1)
-9. })
-10. enterHandle.duration = 400;
-11. enterHandle.curve = Curve.Linear;
+```screen
+@HMAnimator({ animatorName: 'CustomAnimator' })
+export class CustomAnimator implements IHMAnimator {
+  effect(enterHandle: HMAnimatorHandle, exitHandle: HMAnimatorHandle): void {
+    // to animator
+    enterHandle.start((modifier: AttributeUpdater<NavDestinationAttribute>) => {
+      modifier.attribute?.translate({ y: ANIMATOR_TRANSLATE_Y_START })
+        .scale({ x: ANIMATOR_SCALE_X })
+        .opacity(ANIMATOR_OPACITY_START);
+    }).finish((modifier: AttributeUpdater<NavDestinationAttribute>) => {
+      modifier.attribute?.translate({ y: ANIMATOR_TRANSLATE_Y_END })
+        .scale({ x: 1 })
+        .opacity(ANIMATOR_OPACITY_END);
+    });
+    enterHandle.duration = ANIMATOR_DURATION;
+    enterHandle.curve = Curve.Linear;
 
-13. // cut animator
-14. exitHandle.start((modifier: AttributeUpdater<NavDestinationAttribute>) => {
-15. modifier.attribute?.translate({ y: '0' }).scale({ x: 1 }).opacity(1)
-16. }).finish((modifier: AttributeUpdater<NavDestinationAttribute>) => {
-17. modifier.attribute?.translate({ y: '100%' }).scale({ x: 0.7 }).opacity(0.3)
-18. })
-19. exitHandle.duration = 400;
-20. enterHandle.curve = Curve.Linear;
-21. }
-22. }
+    // cut animator
+    exitHandle.start((modifier: AttributeUpdater<NavDestinationAttribute>) => {
+      modifier.attribute?.translate({ y: ANIMATOR_TRANSLATE_Y_END })
+        .scale({ x: 1 })
+        .opacity(ANIMATOR_OPACITY_END);
+    }).finish((modifier: AttributeUpdater<NavDestinationAttribute>) => {
+      modifier.attribute?.translate({ y: ANIMATOR_TRANSLATE_Y_START })
+        .scale({ x: ANIMATOR_SCALE_X })
+        .opacity(ANIMATOR_OPACITY_START);
+    });
+    exitHandle.duration = ANIMATOR_DURATION;
+    enterHandle.curve = Curve.Linear;
+  }
+}
 ```
-
-[CustomCutToAnimator.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/animation/CustomCutToAnimator.ets#L29-L52)
 
 自定义动画定义完成后，其实例可以作为新版链式API跳转方法的animator参数进行传入。
 
+```screen
+HMRouterMgr.to('ProductContent')
+  .withAnimator(new CustomAnimator())
+  .pushAsync();
 ```
-1. HMRouterMgr.to('ProductContent')
-2. .withAnimator(new CustomAnimator())
-3. .pushAsync()
-```
-
-[CustomCutToAnimator.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/animation/CustomCutToAnimator.ets#L58-L60)
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/DTrRSd6USDGWjl-N1T1pYA/zh-cn_image_0000002194010372.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/pT5Fba6LSzuglug6-x40EQ/zh-cn_image_0000002194010372.gif "点击放大")
 
 ### 根据条件呈现不同转场动效
 
@@ -407,157 +378,149 @@ HMRouter提供了基于自定义注解的页面跳转与返回功能，使用步
 
 此处以评论区组件打开的视角进行动画定义，定义竖屏播放时评论区进出场动画如下：
 
-```
-1. @HMAnimator({ animatorName: 'myAnimator1' })
-2. export class MyAnimator1 implements IHMAnimator {
-3. effect(enterHandle: HMAnimatorHandle, exitHandle: HMAnimatorHandle): void {
-4. enterHandle.start((modifier: AttributeUpdater<NavDestinationAttribute>) => {
-5. modifier.attribute?.translate({ y: '100%' })
-6. }).finish((modifier: AttributeUpdater<NavDestinationAttribute>) => {
-7. modifier.attribute?.translate({ y: '0' })
-8. })
+```screen
+@HMAnimator({ animatorName: 'myAnimator1' })
+export class MyAnimator1 implements IHMAnimator {
+  effect(enterHandle: HMAnimatorHandle, exitHandle: HMAnimatorHandle): void {
+    enterHandle.start((modifier: AttributeUpdater<NavDestinationAttribute>) => {
+      modifier.attribute?.translate({ y: ANIMATOR_TRANSLATE_START });
+    }).finish((modifier: AttributeUpdater<NavDestinationAttribute>) => {
+      modifier.attribute?.translate({ y: ANIMATOR_TRANSLATE_END });
+    });
 
-10. exitHandle.start((modifier: AttributeUpdater<NavDestinationAttribute>) => {
-11. modifier.attribute?.translate({ y: '0' })
-12. }).finish((modifier: AttributeUpdater<NavDestinationAttribute>) => {
-13. modifier.attribute?.translate({ y: '100%' })
-14. })
-15. }
-16. }
+    exitHandle.start((modifier: AttributeUpdater<NavDestinationAttribute>) => {
+      modifier.attribute?.translate({ y: ANIMATOR_TRANSLATE_END });
+    }).finish((modifier: AttributeUpdater<NavDestinationAttribute>) => {
+      modifier.attribute?.translate({ y: ANIMATOR_TRANSLATE_START });
+    });
+  }
+}
 ```
-
-[CustomDifferentTransition.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/animation/CustomDifferentTransition.ets#L29-L45)
 
 定义短视频横屏播放时评论区进出场动画如下：
 
-```
-1. @HMAnimator({ animatorName: 'myAnimator2' })
-2. export class MyAnimator2 implements IHMAnimator {
-3. effect(enterHandle: HMAnimatorHandle, exitHandle: HMAnimatorHandle): void {
-4. enterHandle.start((modifier: AttributeUpdater<NavDestinationAttribute>) => {
-5. modifier.attribute?.translate({ x: '100%', y: '0' })
-6. }).finish((modifier: AttributeUpdater<NavDestinationAttribute>) => {
-7. modifier.attribute?.translate({ x: 0 })
-8. })
-9. enterHandle.duration = 500;
+```screen
+@HMAnimator({ animatorName: 'myAnimator2' })
+export class MyAnimator2 implements IHMAnimator {
+  effect(enterHandle: HMAnimatorHandle, exitHandle: HMAnimatorHandle): void {
+    enterHandle.start((modifier: AttributeUpdater<NavDestinationAttribute>) => {
+      modifier.attribute?.translate({ x: ANIMATOR_TRANSLATE_START, y: ANIMATOR_TRANSLATE_END });
+    }).finish((modifier: AttributeUpdater<NavDestinationAttribute>) => {
+      modifier.attribute?.translate({ x: 0 });
+    });
+    enterHandle.duration = ANIMATOR_DURATION;
 
-11. exitHandle.start((modifier: AttributeUpdater<NavDestinationAttribute>) => {
-12. modifier.attribute?.translate({ x: '0' })
-13. }).finish((modifier: AttributeUpdater<NavDestinationAttribute>) => {
-14. modifier.attribute?.translate({ x: '100%' })
-15. })
-16. exitHandle.duration = 500;
-17. }
-18. }
+    exitHandle.start((modifier: AttributeUpdater<NavDestinationAttribute>) => {
+      modifier.attribute?.translate({ x: ANIMATOR_TRANSLATE_END });
+    }).finish((modifier: AttributeUpdater<NavDestinationAttribute>) => {
+      modifier.attribute?.translate({ x: ANIMATOR_TRANSLATE_START });
+    });
+    exitHandle.duration = ANIMATOR_DURATION;
+  }
+}
 ```
-
-[CustomDifferentTransition.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/animation/CustomDifferentTransition.ets#L49-L67)
 
 最后根据条件选择不同的动效，例如此处根据视频播放方向是否为横向，在页面跳转时使用不同的animator值。
 
-```
-1. @Component
-2. export struct CommentInput {
-3. // ...
+```screen
+@Component
+export struct CommentInput {
+  // ...
 
-5. build() {
-6. Row() {
-7. Image($r('app.media.icon_comments'))
-8. .width(24)
-9. .height(24)
-10. .margin({ right: 16 })
-11. .onClick(() => {
-12. if (this.isLandscape) {
-13. HMRouterMgr.to('liveComments')
-14. .withNavigation(this.queryNavigationInfo()?.navigationId)
-15. .withParam({commentRenderNode: ''})
-16. .withAnimator(new MyAnimator2())
-17. .onResult((paramInfo: PopInfo)=>{
-18. this.videoWidth = '100%';
-19. })
-20. .pushAsync()
-21. this.videoWidth = '50%';
-22. } else {
-23. HMRouterMgr.to('liveComments')
-24. .withNavigation(this.queryNavigationInfo()?.navigationId)
-25. .withParam({commentRenderNode: ''})
-26. .withAnimator(new MyAnimator1())
-27. .onResult((paramInfo: PopInfo)=>{
-28. this.videoHeight = '100%';
-29. })
-30. .pushAsync()
-31. this.videoHeight = '30%'
-32. }
-33. });
-34. }
-35. }
-36. }
+  build() {
+    Row() {
+      Image($r('app.media.icon_comments'))
+        .width(IMAGE_WIDTH_AND_HEIGHT)
+        .height(IMAGE_WIDTH_AND_HEIGHT)
+        .margin({ right: IMAGE_MARGIN_RIGHT })
+        .onClick(() => {
+          if (this.isLandscape) {
+            HMRouterMgr.to('liveComments')
+              .withNavigation(this.queryNavigationInfo()?.navigationId)
+              .withParam({commentRenderNode: ''})
+              .withAnimator(new MyAnimator2())
+              .onResult((paramInfo: PopInfo)=>{
+                this.videoWidth = VIDEO_WIDTH_FULL;
+              })
+              .pushAsync();
+            this.videoWidth = VIDEO_WIDTH_HALF;
+          } else {
+            HMRouterMgr.to('liveComments')
+              .withNavigation(this.queryNavigationInfo()?.navigationId)
+              .withParam({commentRenderNode: ''})
+              .withAnimator(new MyAnimator1())
+              .onResult((paramInfo: PopInfo)=>{
+                this.videoHeight = VIDEO_HEIGHT_FULL;
+              })
+              .pushAsync();
+            this.videoHeight = VIDEO_HEIGHT_MINI;
+          }
+        });
+    };
+  }
+}
 ```
-
-[CustomDifferentTransition.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/animation/CustomDifferentTransition.ets#L71-L112)
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/ZQqem70SSoW8Le8mMImdKA/zh-cn_image_0000002194010392.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/IBnHSMDfTiGC2-m0RKtMrg/zh-cn_image_0000002194010392.gif "点击放大")
 
 ### 交互式转场
 
 当应用中有页面的进出场效果与用户手势操作同步的诉求时，即当用户手指在屏幕上移动时，页面跟随用户手势移动，可以参考以下实现，通过IHMAnimator的interactive函数控制动画播放进度，在actionStart中判断向右移动执行页面返回操作，在updateProgress更新动画进度，在actionEnd中获取到动画的最终状态，根据最终状态判断是继续执行动画与页面返回还是关闭动画取消页面返回。
 
-```
-1. @HMAnimator({ animatorName: 'liveInteractiveAnimator' })
-2. export class LiveInteractiveAnimator implements IHMAnimator {
-3. effect(enterHandle: HMAnimatorHandle, exitHandle: HMAnimatorHandle): void {
-4. // ...
-5. }
+```screen
+@HMAnimator({ animatorName: 'liveInteractiveAnimator' })
+export class LiveInteractiveAnimator implements IHMAnimator {
+  effect(enterHandle: HMAnimatorHandle, exitHandle: HMAnimatorHandle): void {
+    // ...
+  }
 
-7. interactive(handle: HMAnimatorHandle): void {
-8. handle.actionStart((event: GestureEvent) => {
-9. if (event.offsetX > 0) {
-10. HMRouterMgr.popAsync();
-11. }
-12. handle.startOffset = event.fingerList[0].localX;
-13. });
-14. handle.updateProgress((event, proxy, operation, startOffset) => {
-15. if (!proxy?.updateTransition || !startOffset) {
-16. return;
-17. }
-18. let offset = 0;
-19. if (event.fingerList[0]) {
-20. offset = Math.abs(event.fingerList[0].localX - startOffset);
-21. }
-22. if (offset < 0) {
-23. proxy?.updateTransition(0);
-24. return;
-25. }
-26. let rectWidth = event.target.area.width as number;
-27. let rate = offset / rectWidth;
-28. proxy?.updateTransition(rate);
-29. });
-30. handle.actionEnd((event, proxy, operation, startOffset) => {
-31. if (!startOffset) {
-32. return;
-33. }
-34. let rectWidth = event.target.area.width as number;
-35. let rate = 0;
-36. if (event.fingerList[0]) {
-37. rate = Math.abs(event.fingerList[0].localX - startOffset) / rectWidth;
-38. }
-39. if (rate > 0.4) {
-40. proxy?.finishTransition();
-41. } else {
-42. proxy?.cancelTransition?.();
-43. }
-44. });
-45. }
-46. }
+  interactive(handle: HMAnimatorHandle): void {
+    handle.actionStart((event: GestureEvent) => {
+      if (event.offsetX > 0) {
+        HMRouterMgr.popAsync();
+      }
+      handle.startOffset = event.fingerList[0].localX;
+    });
+    handle.updateProgress((event, proxy, operation, startOffset) => {
+      if (!proxy?.updateTransition || !startOffset) {
+        return;
+      }
+      let offset = 0;
+      if (event.fingerList[0]) {
+        offset = Math.abs(event.fingerList[0].localX - startOffset);
+      }
+      if (offset < 0) {
+        proxy?.updateTransition(0);
+        return;
+      }
+      let rectWidth = event.target.area.width as number;
+      let rate = offset / rectWidth;
+      proxy?.updateTransition(rate);
+    });
+    handle.actionEnd((event, proxy, operation, startOffset) => {
+      if (!startOffset) {
+        return;
+      }
+      let rectWidth = event.target.area.width as number;
+      let rate = 0;
+      if (event.fingerList[0]) {
+        rate = Math.abs(event.fingerList[0].localX - startOffset) / rectWidth;
+      }
+      if (rate > 0.4) {
+        proxy?.finishTransition();
+      } else {
+        proxy?.cancelTransition?.();
+      }
+    });
+  }
+}
 ```
-
-[LiveHome.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/component/live/LiveHome.ets#L96-L158)
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/F0UE_fo0RHqi9Ahh3Y7P3g/zh-cn_image_0000002194010388.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/5h6jEuKDSY2Y7G-wQZanow/zh-cn_image_0000002194010388.gif "点击放大")
 
 ## 数据加载场景
 
@@ -565,40 +528,34 @@ HMRouter提供了基于自定义注解的页面跳转与返回功能，使用步
 
 该场景下，开发者希望提前网络请求的位置并在其他线程中执行网络请求而不阻塞主线程，代码实现参考如下步骤。
 
-1. 定义网络请求函数，可使用[TaskPool](../harmonyos-guides/taskpool-introduction.md)在其他线程执行网络请求并返回请求结果。
+1. 定义网络请求函数，可使用[TaskPool简介](../harmonyos-guides/taskpool-introduction.md)在其他线程执行网络请求并返回请求结果。
 
+   ```screen
+   @Concurrent
+   async function networkRequest(lifecycle: string): Promise<string> {
+     // ...
+   }
    ```
-   1. @Concurrent
-   2. async function networkRequest(lifecycle: string): Promise<string> {
-   3. // ...
-   4. }
-   ```
-
-   [ShoppingBagContent.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/component/shoppingBag/ShoppingBagContent.ets#L36-L46)
 2. 定义生命周期，在onPrepare回调函数中，执行对应的网络请求函数，该回调触发时机为拦截器执行后，路由栈真正push前。
 
+   ```screen
+   @HMLifecycle({ lifecycleName: 'requestLifecycle' })
+   export class ExampleLifecycle implements IHMLifecycle {
+     private requestModel: RequestModel = new RequestModel();
+
+     onPrepare(): void {
+       let task: taskpool.Task = new taskpool.Task(networkRequest, 'onPrepare');
+       taskpool.execute(task).then((res: object) => {
+       });
+     }
+
+     // ...
+   }
    ```
-   1. @HMLifecycle({ lifecycleName: 'requestLifecycle' })
-   2. export class ExampleLifecycle implements IHMLifecycle {
-   3. private requestModel: RequestModel = new RequestModel();
-
-   5. onPrepare(): void {
-   6. console.log(this.requestModel.data);
-   7. let task: taskpool.Task = new taskpool.Task(networkRequest, 'onPrepare');
-   8. taskpool.execute(task).then((res: Object) => {
-   9. console.log(res + '');
-   10. });
-   11. }
-
-   13. // ...
-   14. }
-   ```
-
-   [ShoppingBagContent.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/component/shoppingBag/ShoppingBagContent.ets#L50-L70)
 3. 关联生命周期与对应组件。将生命周期的lifecycleName作为@HMRouter注解的lifecycle参数进行传入完成关联。
 
 **图2** 数据请求预加载流程  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/6SDs-uO1STCKWl5SropPlA/zh-cn_image_0000002428190130.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/mpox1MwPTuyiQDvH3nfmdw/zh-cn_image_0000002428190130.png "点击放大")
 
 ### 页面重开数据恢复
 
@@ -606,77 +563,71 @@ HMRouter提供了基于自定义注解的页面跳转与返回功能，使用步
 
 1. 使用[BuilderNode](../harmonyos-guides/arkts-user-defined-arktsnode-buildernode.md)构造出评论区组件，在makeNode函数中，若评论区不存在则创建，存在便直接返回。
 
+   ```screen
+   @Builder
+   function buildComment(liveComments: LiveCommentsProduct[]) {
+     // ...
+   }
+
+   export class CommentNodeController extends NodeController {
+     public commentList: BuilderNode<[LiveCommentsProduct[]]> | null = null;
+     public commentListData: LiveCommentsProduct[] = new LiveCommentsModel().getLiveCommentsList();
+
+     constructor() {
+       super();
+     }
+
+     makeNode(context: UIContext): FrameNode | null {
+       if (this.commentList === null) {
+         this.nodeBuild(context);
+       }
+       return this.commentList!.getFrameNode();
+     }
+
+     nodeBuild(context: UIContext): void {
+       this.commentList = new BuilderNode(context);
+       if (this.commentList !== null) {
+         this.commentList.build(wrapBuilder<[LiveCommentsProduct[]]>(buildComment), this.commentListData);
+       }
+     }
+
+     dispose(): void {
+       if (this.commentList !== null) {
+         this.commentList.dispose();
+       }
+     }
+   }
    ```
-   1. @Builder
-   2. function buildComment(liveComments: LiveCommentsProduct[]) {
-   3. // ...
-   4. }
-
-   6. export class CommentNodeController extends NodeController {
-   7. commentList: BuilderNode<[LiveCommentsProduct[]]> | null = null;
-   8. commentListData: LiveCommentsProduct[] = new LiveCommentsModel().getLiveCommentsList();
-
-   10. constructor() {
-   11. super();
-   12. }
-
-   14. makeNode(context: UIContext): FrameNode | null {
-   15. if (this.commentList === null) {
-   16. this.nodeBuild(context);
-   17. }
-   18. return this.commentList!.getFrameNode();
-   19. }
-
-   21. nodeBuild(context: UIContext) {
-   22. this.commentList = new BuilderNode(context);
-   23. if (this.commentList !== null) {
-   24. this.commentList.build(wrapBuilder<[LiveCommentsProduct[]]>(buildComment), this.commentListData);
-   25. }
-   26. }
-
-   28. dispose() {
-   29. if (this.commentList !== null) {
-   30. this.commentList.dispose();
-   31. }
-   32. }
-   33. }
-   ```
-
-   [CommentInput.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/component/live/CommentInput.ets#L134-L200)
 2. 通过在@HMLifecycle生命周期中，将CommentNodeController类的实例跟随视频播放页面的生命周期创建与释放，而非跟随评论区组件的生命周期创建与释放，使得当用户处在视频播放页时，内存中保存着评论区组件的BuilderNode，从而达成当用户关闭评论区再打开，浏览进度与关闭前一致的诉求。
 
-   ```
-   1. @HMLifecycle({ lifecycleName: 'liveHomeLifecycle' })
-   2. export class LiveHomeLifecycle implements IHMLifecycle {
-   3. commentRenderNode: CommentNodeController = new CommentNodeController();
-   4. // ...
-   5. onAppear(ctx: HMLifecycleContext): void {
-   6. this.commentRenderNode.makeNode(ctx.uiContext);
-   7. }
+   ```screen
+   @HMLifecycle({ lifecycleName: 'liveHomeLifecycle' })
+   export class LiveHomeLifecycle implements IHMLifecycle {
+     public commentRenderNode: CommentNodeController = new CommentNodeController();
+     // ...
+     onAppear(ctx: HMLifecycleContext): void {
+       this.commentRenderNode.makeNode(ctx.uiContext);
+     }
 
-   9. onDisAppear(ctx: HMLifecycleContext): void {
-   10. this.commentRenderNode.dispose();
-   11. }
-   12. }
+     onDisAppear(ctx: HMLifecycleContext): void {
+       this.commentRenderNode.dispose();
+     }
+   }
    ```
-
-   [LiveHome.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/component/live/LiveHome.ets#L53-L92)
 3. 在对应的UI组件处获取到生命周期内的commentRenderNode，并在后续业务逻辑中使用NodeContainer进行挂载。
 
-   ```
-   1. @Component
-   2. export struct CommentInput {
-   3. @StorageLink('changeVideoHeight') videoHeight: string | number = CommonConstants.FULL_PERCENT;
-   4. commentRenderNode: CommentNodeController = new CommentNodeController();
+   ```screen
+   @Component
+   export struct CommentInput {
+     @StorageLink('changeVideoHeight') videoHeight: string | number = CommonConstants.FULL_PERCENT;
+     commentRenderNode: CommentNodeController = new CommentNodeController();
 
-   6. // ...
-   7. }
+     // ...
+     }
    ```
-
-   [CommentInput.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/component/live/CommentInput.ets#L52-L129)
 
 **图3** 页面重开数据恢复流程  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/GOy2R7FBQl69eB_QTPVllQ/zh-cn_image_0000002461709833.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/20EDKbMvSgWyKMxPug_uOQ/zh-cn_image_0000002461709833.png "点击放大")
 
 ## 维测场景
 
@@ -688,27 +639,24 @@ HMRouter提供了基于自定义注解的页面跳转与返回功能，使用步
 2. 为该类添加@HMLifecycle注解，并配置global为true，将该生命周期配置到全局，所有页面都会执行该生命周期。
 3. 在页面显示时（onShown）记录当前的时间戳，在页面隐藏时（onHidden）计算页面停留时长。
 
+   ```screen
+   @HMLifecycle({ lifecycleName: 'PageDurationLifecycle', global: true })
+   export class PageDurationLifecycle implements IHMLifecycle {
+     private time: number = 0;
+
+     onShown(): void {
+       this.time = new Date().getTime();
+     }
+
+     onHidden(ctx: HMLifecycleContext): void {
+       const duration = new Date().getTime() - this.time;
+     }
+   }
    ```
-   1. @HMLifecycle({ lifecycleName: 'PageDurationLifecycle', global: true })
-   2. export class PageDurationLifecycle implements IHMLifecycle {
-   3. private time: number = 0;
-
-   5. onShown(): void {
-   6. this.time = new Date().getTime();
-   7. }
-
-   9. onHidden(ctx: HMLifecycleContext): void {
-   10. const duration = new Date().getTime() - this.time;
-   11. console.log(`Page ${ctx.navContext?.pathInfo.name} stay ${duration}`);
-   12. }
-   13. }
-   ```
-
-   [PageDurationLifecycle.ets](https://gitcode.com/harmonyos_samples/HMRouter/blob/master/entry/src/main/ets/lifecycle/PageDurationLifecycle.ets#L23-L36)
 
 **图4** 页面埋点日志记录
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/w03tFmeMT7WOchafA1my6Q/zh-cn_image_0000002194010384.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/yUQZ-J27Qpm9d8sVH_9GOw/zh-cn_image_0000002194010384.png "点击放大")
 
 ## 示例代码
 

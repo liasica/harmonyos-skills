@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-get-t
 title: GET_TILING_DATA_WITH_STRUCT
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > Kernel Tiling > GET_TILING_DATA_WITH_STRUCT
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:44+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:46e69a7df61b0f7570203a51ec9cf49623a10e07d75adeab22c16474b7096d8a
+scraped_at: 2026-09-02T14:50:37+08:00
+doc_updated_at: 2026-08-18
+content_hash: sha256:355142ba01ebe69e5824d8b37b9f80fb740649c75b7cea372e8b0fc8ffdbe46b
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:46e69a7df61b0f7570203a51ec9cf49623a10e07d75adeab22c16474b70
 
 ## 函数原型
 
-```
-1. GET_TILING_DATA_WITH_STRUCT(struct_name, tiling_data, tiling_arg)
+```cpp
+GET_TILING_DATA_WITH_STRUCT(struct_name, tiling_data, tiling_arg)
 ```
 
 ## 参数说明
@@ -30,6 +30,8 @@ content_hash: sha256:46e69a7df61b0f7570203a51ec9cf49623a10e07d75adeab22c16474b70
 
 Kirin9020系列处理器
 
+Kirin9030系列处理器
+
 KirinX90系列处理器
 
 ## 约束说明
@@ -39,23 +41,23 @@ KirinX90系列处理器
 
 ## 调用示例
 
-```
-1. extern "C" __global__ __aicore__ void add_custom(__gm__ uint8_t *x, __gm__ uint8_t *y, __gm__ uint8_t *z, __gm__ uint8_t *tiling)
-2. {
-3. KernelAdd op;
-4. if (TILING_KEY_IS(1)) {
-5. GET_TILING_DATA_WITH_STRUCT(Add_Struct_Special, tilingData, tiling); // 使用算子指定注册的结构体
-6. op.Init(x, y, z, tilingData.totalLengthSpecial, tilingData.tileNumSpecial);
-7. } else {
-8. GET_TILING_DATA(tilingData, tiling);   // 使用算子默认注册的结构体
-9. op.Init(x, y, z, tilingData.totalLength, tilingData.tileNum);
-10. }
-11. if (TILING_KEY_IS(1)) {
-12. op.Process();
-13. }  else  if (TILING_KEY_IS(2)) {
-14. op.Process();
-15. } else  if (TILING_KEY_IS(3)) {
-16. op.Process();
-17. }
-18. }
+```cpp
+extern "C" __global__ __aicore__ void add_custom(__gm__ uint8_t *x, __gm__ uint8_t *y, __gm__ uint8_t *z, __gm__ uint8_t *tiling)
+{
+    KernelAdd op;
+    if (TILING_KEY_IS(1)) {
+        GET_TILING_DATA_WITH_STRUCT(Add_Struct_Special, tilingData, tiling); // 使用算子指定注册的结构体
+    op.Init(x, y, z, tilingData.totalLengthSpecial, tilingData.tileNumSpecial);
+    } else {
+        GET_TILING_DATA(tilingData, tiling); // 使用算子默认注册的结构体
+    op.Init(x, y, z, tilingData.totalLength, tilingData.tileNum);
+    }
+    if (TILING_KEY_IS(1)) {
+        op.Process();
+    }  else  if (TILING_KEY_IS(2)) {
+        op.Process();
+    } else  if (TILING_KEY_IS(3)) {
+        op.Process();
+    }
+}
 ```

@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Types
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Types
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:45+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:931591055dfd56866eb326d53ebbda5feadfb14726a354a844b1205af78fd25a
+scraped_at: 2026-09-02T15:02:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a2a61ef2e4df750e6828c6d21875a7b92fe336b966c3d7c1b3f58be615f976ce
 ---
 
-说明
+**说明** 
 
 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## SoundPool10+
-
-PhonePC/2in1TabletTVWearable
 
 type SoundPool = \_SoundPool
 
@@ -28,8 +26,6 @@ type SoundPool = \_SoundPool
 
 ## PlayParameters10+
 
-PhonePC/2in1TabletTVWearable
-
 type PlayParameters = \_PlayParameters
 
 表示音频池播放参数设置。
@@ -41,8 +37,6 @@ type PlayParameters = \_PlayParameters
 | [\_PlayParameters](js-apis-inner-multimedia-soundpool.md#playparameters) | 表示音频池播放参数设置。 |
 
 ## AVPlayerState9+
-
-PhonePC/2in1TabletTVWearable
 
 type AVPlayerState = 'idle' | 'initialized' | 'prepared' | 'playing' | 'paused' | 'completed' | 'stopped' | 'released' | 'error'
 
@@ -66,8 +60,6 @@ type AVPlayerState = 'idle' | 'initialized' | 'prepared' | 'playing' | 'paused' 
 
 ## OnTrackChangeHandler12+
 
-PhonePC/2in1TabletTVWearable
-
 type OnTrackChangeHandler = (index: number, isSelected: boolean) => void
 
 track变更事件回调方法。
@@ -84,8 +76,6 @@ track变更事件回调方法。
 | isSelected | boolean | 是 | 当前变更的track索引是否被选中。true表示处于选中状态，false表示处于非选中状态。 |
 
 ## OnAVPlayerStateChangeHandle12+
-
-PhonePC/2in1TabletTVWearable
 
 type OnAVPlayerStateChangeHandle = (state: AVPlayerState, reason: StateChangeReason) => void
 
@@ -104,8 +94,6 @@ type OnAVPlayerStateChangeHandle = (state: AVPlayerState, reason: StateChangeRea
 
 ## OnBufferingUpdateHandler12+
 
-PhonePC/2in1TabletTVWearable
-
 type OnBufferingUpdateHandler = (infoType: BufferingInfoType, value: number) => void
 
 播放缓存事件回调方法。
@@ -123,8 +111,6 @@ type OnBufferingUpdateHandler = (infoType: BufferingInfoType, value: number) => 
 
 ## OnVideoSizeChangeHandler12+
 
-PhonePC/2in1TabletTVWearable
-
 type OnVideoSizeChangeHandler = (width: number, height: number) => void
 
 视频播放宽高变化事件回调方法。
@@ -141,8 +127,6 @@ type OnVideoSizeChangeHandler = (width: number, height: number) => void
 | height | number | 是 | 视频高度，单位为像素（px）。 |
 
 ## OnSuperResolutionChanged 18+
-
-PhonePC/2in1TabletTVWearable
 
 type OnSuperResolutionChanged = (enabled: boolean) => void
 
@@ -165,8 +149,6 @@ type OnSuperResolutionChanged = (enabled: boolean) => void
 
 ## OnSeiMessageHandle18+
 
-PhonePC/2in1TabletTVWearable
-
 type OnSeiMessageHandle = (messages: Array<SeiMessage>, playbackPosition?: number) => void
 
 获取SEI信息，使用场景：订阅SEI信息事件，回调返回SEI详细信息。
@@ -184,8 +166,6 @@ type OnSeiMessageHandle = (messages: Array<SeiMessage>, playbackPosition?: numbe
 
 ## OnPlaybackRateDone20+
 
-PhonePC/2in1TabletTVWearable
-
 type OnPlaybackRateDone = (rate: number) => void
 
 播放速率设置完成事件回调方法。
@@ -201,8 +181,6 @@ type OnPlaybackRateDone = (rate: number) => void
 | rate | number | 是 | 播放速率。 |
 
 ## OnFrameFetched23+
-
-PhonePC/2in1TabletTVWearable
 
 type OnFrameFetched = (frameInfo: FrameInfo, err?: BusinessError<void>) => void
 
@@ -221,8 +199,6 @@ type OnFrameFetched = (frameInfo: FrameInfo, err?: BusinessError<void>) => void
 
 ## AVRecorderState9+
 
-PhonePC/2in1TabletTVWearable
-
 type AVRecorderState = 'idle' | 'prepared' | 'started' | 'paused' | 'stopped' | 'released' | 'error'
 
 音视频录制的状态机。可通过state属性获取当前状态。
@@ -239,11 +215,9 @@ type AVRecorderState = 'idle' | 'prepared' | 'started' | 'paused' | 'stopped' | 
 | 'paused' | 录制暂停。此时可以调用[AVRecorder.resume()](arkts-apis-media-avrecorder.md#resume9)方法继续录制，进入started状态。也可以调用[AVRecorder.stop()](arkts-apis-media-avrecorder.md#stop9)方法结束录制，进入stopped状态。 |
 | 'stopped' | 录制停止。此时可以调用[AVRecorder.prepare()](arkts-apis-media-avrecorder.md#prepare9)方法设置录制参数，重新进入prepared状态。 |
 | 'released' | 录制资源释放。此时不能再进行任何操作。在任何其他状态下，均可以通过调用[AVRecorder.release()](arkts-apis-media-avrecorder.md#release9)方法进入released状态。 |
-| 'error' | 错误状态。当AVRecorder实例发生不可逆错误，会转换至当前状态。切换至error状态时会伴随[AVRecorder.on('error')事件](arkts-apis-media-avrecorder.md#onerror9)，该事件会上报详细错误原因。在error状态时，用户需要调用[AVRecorder.reset()](arkts-apis-media-avrecorder.md#reset9)方法重置AVRecorder实例，或者调用[AVRecorder.release()](arkts-apis-media-avrecorder.md#release9)方法释放资源。 |
+| 'error' | 错误状态。当AVRecorder实例发生不可逆错误，会转换至当前状态。切换至error状态时会伴随[AVRecorder.on('error')](arkts-apis-media-avrecorder.md#onerror9)，该事件会上报详细错误原因。在error状态时，用户需要调用[AVRecorder.reset()](arkts-apis-media-avrecorder.md#reset9)方法重置AVRecorder实例，或者调用[AVRecorder.release()](arkts-apis-media-avrecorder.md#release9)方法释放资源。 |
 
 ## OnAVRecorderStateChangeHandler12+
-
-PhonePC/2in1TabletTVWearable
 
 type OnAVRecorderStateChangeHandler = (state: AVRecorderState, reason: StateChangeReason) => void
 
@@ -262,13 +236,11 @@ type OnAVRecorderStateChangeHandler = (state: AVRecorderState, reason: StateChan
 
 ## SourceOpenCallback18+
 
-PhonePC/2in1TabletTVWearable
-
 type SourceOpenCallback = (request: MediaSourceLoadingRequest) => number
 
 由应用实现此回调函数，应用需处理传入的资源打开请求，并返回所打开资源对应的唯一句柄。
 
-注意
+**注意** 
 
 客户端在处理完请求后应立刻返回。
 
@@ -290,31 +262,29 @@ type SourceOpenCallback = (request: MediaSourceLoadingRequest) => number
 
 **示例：**
 
-```
-1. import { HashMap } from '@kit.ArkTS';
-2. import { media } from '@kit.MediaKit';
+```ts
+import { HashMap } from '@kit.ArkTS';
+import { media } from '@kit.MediaKit';
 
-4. let uuid: number = 1;
-5. let requests: HashMap<number, media.MediaSourceLoadingRequest> = new HashMap();
+let uuid: number = 1;
+let requests: HashMap<number, media.MediaSourceLoadingRequest> = new HashMap();
 
-7. let sourceOpenCallback: media.SourceOpenCallback = (request: media.MediaSourceLoadingRequest) => {
-8. console.info(`Opening resource: ${request.url}`);
-9. // 成功打开资源，返回唯一的句柄, 保证uuid和request对应。
-10. uuid += 1;
-11. requests.set(uuid, request);
-12. return uuid;
-13. };
+let sourceOpenCallback: media.SourceOpenCallback = (request: media.MediaSourceLoadingRequest) => {
+  console.info(`Opening resource: ${request.url}`);
+  // 成功打开资源，返回唯一的句柄, 保证uuid和request对应。
+  uuid += 1;
+  requests.set(uuid, request);
+  return uuid;
+};
 ```
 
 ## SourceReadCallback18+
-
-PhonePC/2in1TabletTVWearable
 
 type SourceReadCallback = (uuid: number, requestedOffset: number, requestedLength: number) => void
 
 由应用实现此回调函数，应用需记录读取请求，并在数据充足时通过对应的MediaSourceLoadingRequest对象的[respondData](arkts-apis-media-mediasourceloadingrequest.md#responddata18)方法推送数据。
 
-注意
+**注意** 
 
 客户端在处理完请求后应立刻返回。
 
@@ -332,22 +302,20 @@ type SourceReadCallback = (uuid: number, requestedOffset: number, requestedLengt
 
 **示例：**
 
-```
-1. let sourceReadCallback: media.SourceReadCallback = (uuid: number, requestedOffset: number, requestedLength: number) => {
-2. console.info(`Reading resource with handle ${uuid}, offset: ${requestedOffset}, length: ${requestedLength}`);
-3. // 判断uuid是否合法、存储read请求，不要在read请求阻塞去推送数据和头信息。
-4. };
+```ts
+let sourceReadCallback: media.SourceReadCallback = (uuid: number, requestedOffset: number, requestedLength: number) => {
+  console.info(`Reading resource with handle ${uuid}, offset: ${requestedOffset}, length: ${requestedLength}`);
+  // 判断uuid是否合法、存储read请求，不要在read请求阻塞去推送数据和头信息。
+};
 ```
 
 ## SourceCloseCallback18+
-
-PhonePC/2in1TabletTVWearable
 
 type SourceCloseCallback = (uuid: number) => void
 
 由应用实现此回调函数，应用应释放相关资源。
 
-注意
+**注意** 
 
 客户端在处理完请求后应立刻返回。
 
@@ -363,21 +331,19 @@ type SourceCloseCallback = (uuid: number) => void
 
 **示例：**
 
-```
-1. import { HashMap } from '@kit.ArkTS';
+```ts
+import { HashMap } from '@kit.ArkTS';
 
-3. let requests: HashMap<number, media.MediaSourceLoadingRequest> = new HashMap();
+let requests: HashMap<number, media.MediaSourceLoadingRequest> = new HashMap();
 
-5. let sourceCloseCallback: media.SourceCloseCallback = (uuid: number) => {
-6. console.info(`Closing resource with handle ${uuid}`);
-7. // 清除当前uuid相关资源。
-8. requests.remove(uuid);
-9. };
+let sourceCloseCallback: media.SourceCloseCallback = (uuid: number) => {
+  console.info(`Closing resource with handle ${uuid}`);
+  // 清除当前uuid相关资源。
+  requests.remove(uuid);
+};
 ```
 
 ## PlaybackMetrics23+
-
-PhonePC/2in1TabletTVWearable
 
 type PlaybackMetrics = Record<PlaybackMetricsKey, Object>
 
@@ -391,13 +357,11 @@ type PlaybackMetrics = Record<PlaybackMetricsKey, Object>
 
 ## AudioState(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 type AudioState = 'idle' | 'playing' | 'paused' | 'stopped' | 'error'
 
 音频播放的状态机。可通过state属性获取当前状态。
 
-说明
+**说明** 
 
 从API version 6开始支持，从API version 9开始废弃，建议使用[AVPlayerState](arkts-apis-media-t.md#avplayerstate9)替代。
 
@@ -413,13 +377,11 @@ type AudioState = 'idle' | 'playing' | 'paused' | 'stopped' | 'error'
 
 ## VideoPlayState(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 type VideoPlayState = 'idle' | 'prepared' | 'playing' | 'paused' | 'stopped' | 'error'
 
 视频播放的状态机，可通过state属性获取当前状态。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayerState](arkts-apis-media-t.md#avplayerstate9)替代。
 
@@ -433,3 +395,101 @@ type VideoPlayState = 'idle' | 'prepared' | 'playing' | 'paused' | 'stopped' | '
 | 'paused' | 视频暂停播放。 |
 | 'stopped' | 视频播放停止。 |
 | 'error' | 错误状态。 |
+
+## AVDownloadTaskState
+
+type AVDownloadTaskState = 'init' | 'queued' | 'running' | 'completed' | 'paused' | 'removing' | 'error'
+
+离线下载任务状态枚举。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.Core
+
+| 类型 | 说明 |
+| --- | --- |
+| 'init' | 下载任务初始化。 |
+| 'queued' | 下载任务排队等待。 |
+| 'running' | 下载任务正在运行。 |
+| 'completed' | 下载任务已完成。 |
+| 'paused' | 下载任务已暂停。 |
+| 'removing' | 下载任务正在移除。 |
+| 'error' | 下载任务出错。 |
+
+## OnAVDownloadTaskStateHandle
+
+type OnAVDownloadTaskStateHandle = (taskId: string, state: AVDownloadTaskState) => void
+
+离线下载任务状态变化事件回调方法。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| taskId | string | 是 | 状态变化的离线下载任务ID。 |
+| state | [AVDownloadTaskState](arkts-apis-media-t.md#avdownloadtaskstate) | 是 | 任务的新状态。 |
+
+## OnAVDownloadProgressChangeHandle
+
+type OnAVDownloadProgressChangeHandle = (taskId: string, progress: number) => void
+
+离线下载任务进度变化事件回调方法。当下载进度相比上次变化超过1%，且距上次触发时间超过500ms时，触发该事件。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| taskId | string | 是 | 离线下载任务ID。 |
+| progress | number | 是 | 下载进度值。  取值范围：[0.0, 1.0]  若值为-1，表示资源大小未知。 |
+
+## OnAdsEventLoadingErrorHandle
+
+type OnAdsEventLoadingErrorHandle = (adsId: string, reason: BusinessError) => void
+
+广告媒体资源加载失败事件回调方法。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVPlayer
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| adsId | string | 是 | 加载失败的广告资源ID。 |
+| reason | BusinessError | 是 | 加载失败的原因。 |
+
+## OnAdsEventAdsStartedHandle
+
+type OnAdsEventAdsStartedHandle = (adsId: string, duration: number) => void
+
+广告内容播放开始事件回调方法。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVPlayer
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| adsId | string | 是 | 正在播放的广告资源ID。 |
+| duration | number | 是 | 广告的播放时长，单位为毫秒。  取值限定为整数。 |

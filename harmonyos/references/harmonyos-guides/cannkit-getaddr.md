@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getad
 title: GetAddr
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > TensorData > GetAddr
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:12+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e3c9acdc73387449ee9ecd4c2029ec5e0fd8f1c30178e7149edab02c7e8ace3a
+scraped_at: 2026-09-02T14:50:40+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:3ebd87a324b0579217ecd3f96d9ccdeab63c71209196e29ed070a2fc6b4d7d42
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:e3c9acdc73387449ee9ecd4c2029ec5e0fd8f1c30178e7149edab02c7e8
 
 ## 函数原型
 
-```
-1. TensorAddress GetAddr() const
+```cpp
+TensorAddress GetAddr() const
 ```
 
 ## 参数说明
@@ -32,8 +32,8 @@ tensor地址。
 
 ## 调用示例
 
-```
-1. auto addr0 = reinterpret_cast<void *>(0x10);
-2. TensorData td(addr, nullptr);
-3. auto addr1 = td.GetAddr(); // 0x10
+```cpp
+auto addr0 = reinterpret_cast<void *>(0x10);
+TensorData td(addr0, nullptr);
+auto addr1 = td.GetAddr(); // 0x10
 ```

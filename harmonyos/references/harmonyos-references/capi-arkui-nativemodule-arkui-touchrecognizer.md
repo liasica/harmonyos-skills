@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_TouchRecognizer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_TouchRecognizer
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:11+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:05f92c73abffd3fd8c6ce9b58ae3c2f2bf9282acadc4ab8c99afd8622c7577d0
+scraped_at: 2026-09-02T14:51:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d5b3d4fad36d81f4e4335caf2f96e23988149b4de458c9c0edc3b28f06cb1f1b
 ---
 
-```
-1. typedef struct ArkUI_TouchRecognizer ArkUI_TouchRecognizer
+```c
+typedef struct ArkUI_TouchRecognizer ArkUI_TouchRecognizer
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-定义触摸识别器。
+定义触摸识别器。触摸识别器是底层触摸事件的识别单元，负责检测和处理触摸按下、移动、抬起等原始触摸事件。
 
 **起始版本：** 15
 

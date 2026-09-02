@@ -3,11 +3,11 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 网络游戏登录
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 基础游戏服务（必选） > 游戏登录 > 网络游戏登录
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:03+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:d59c428bd6e824b9338787931eba0a0461d153d97d55e1abb275c71c709efd12
+scraped_at: 2026-09-02T14:50:26+08:00
+doc_updated_at: 2026-07-03
+content_hash: sha256:1ce59986da0c3b7718cae75a33760966fdef3c7f5781ef1df8291d24e337f4d2
 ---
 
 * **[网络游戏登录概述](gameservice-network-introduction.md)**
-* **[使用华为账号登录（必选）](gameservice-gameplayer-huawei.md)**
-* **[使用游戏官方账号登录](gameservice-gameplayer-official.md)**
+* **[接入华为账号登录（必选）](gameservice-gameplayer-huawei.md)**
+* **[接入游戏官方账号登录](gameservice-gameplayer-official.md)**

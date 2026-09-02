@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/networkbo
 title: netQuality（网络质量）
 breadcrumb: API参考 > 系统 > 网络 > Network Boost Kit（网络加速服务） > ArkTS API > netQuality（网络质量）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:48+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b7d930dec0a075f1206cc69a107e5272866aa504cce256e376b4108ea0e892d5
+scraped_at: 2026-09-02T14:52:22+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:40c4f3b9193ee6df5fa63cdca7ec3138d1cd58bcd4f7c79cc43fcf170261601c
 ---
 
 本模块提供网络质量实时评估、网络场景识别以及弱信号预测等能力，以便应用针对弱网等环境下实现网络自适应，包括缓存、码率、帧率、分辨率等策略的调整。应用也可以通过网络质量中的应用传输体验反馈接口，触发系统进行网络加速。
@@ -14,25 +14,25 @@ content_hash: sha256:b7d930dec0a075f1206cc69a107e5272866aa504cce256e376b4108ea0e
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { netQuality } from '@kit.NetworkBoostKit';
+```typescript
+import { netQuality } from '@kit.NetworkBoostKit';
 ```
 
-## netQuality.on( 'netQosChange')
-
-PhonePC/2in1Tablet
+## netQuality.on('netQosChange')
 
 on(type: 'netQosChange', callback: Callback<Array<NetworkQos>>): void
 
 订阅网络质量信息。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **需要权限：** ohos.permission.GET\_NETWORK\_INFO
 
-**系统能力:** SystemCapability.Communication.NetworkBoost.Core
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
-**起始版本:** 5.0.0(12)
+**系统能力：** SystemCapability.Communication.NetworkBoost.Core
+
+**起始版本：** 5.0.0(12)
 
 **参数：**
 
@@ -43,42 +43,44 @@ on(type: 'netQosChange', callback: Callback<Array<NetworkQos>>): void
 
 **错误码**：
 
-涉及错误码均为通用错误码，[通用错误码详细描述查看](errorcode-universal.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 401 | Parameter error. |
+| 401 | Invalid parameter. |
 | 801 | Capability not supported. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { netQuality } from '@kit.NetworkBoostKit';
-3. try {
-4. netQuality.on('netQosChange', (list: Array<netQuality.NetworkQos>) => {
-5. if (list.length > 0) {
-6. list.forEach((qos) => {
-7. // 回调信息处理
-8. console.info(`Succeeded receive netQosChange info`);
-9. });
-10. }
-11. });
-12. } catch (err) {
-13. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-14. }
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { netQuality } from '@kit.NetworkBoostKit';
+try {
+  netQuality.on('netQosChange', (list: Array<netQuality.NetworkQos>) => {
+    if (list.length > 0) {
+      list.forEach((qos) => {
+        // 回调信息处理
+        console.info('Succeeded receive netQosChange info qos=' + qos);
+      });
+    }
+  });
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
-## netQuality.off( 'netQosChange')
-
-PhonePC/2in1Tablet
+## netQuality.off('netQosChange')
 
 off(type: 'netQosChange', callback?: Callback<Array<NetworkQos>>): void
 
 取消订阅网络质量信息。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **需要权限：** ohos.permission.GET\_NETWORK\_INFO
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -93,39 +95,41 @@ off(type: 'netQosChange', callback?: Callback<Array<NetworkQos>>): void
 
 **错误码：**
 
-涉及错误码均为通用错误码，[通用错误码详细描述查看](errorcode-universal.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 401 | Parameter error. |
+| 401 | Invalid parameter. |
 | 801 | Capability not supported. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { netQuality } from '@kit.NetworkBoostKit';
-3. try {
-4. netQuality.off('netQosChange');
-5. } catch (err) {
-6. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-7. }
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { netQuality } from '@kit.NetworkBoostKit';
+try {
+  netQuality.off('netQosChange');
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
-## netQuality.on( 'netSceneChange')
-
-PhonePC/2in1Tablet
+## netQuality.on('netSceneChange')
 
 on(type: 'netSceneChange', callback: Callback<Array<NetworkScene>>): void
 
 订阅网络场景信息。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **需要权限：** ohos.permission.GET\_NETWORK\_INFO
 
-**系统能力:** SystemCapability.Communication.NetworkBoost.Core
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
-**起始版本:** 5.0.0(12)
+**系统能力：** SystemCapability.Communication.NetworkBoost.Core
+
+**起始版本：** 5.0.0(12)
 
 **参数：**
 
@@ -136,45 +140,47 @@ on(type: 'netSceneChange', callback: Callback<Array<NetworkScene>>): void
 
 **错误码：**
 
-涉及错误码均为通用错误码，[通用错误码详细描述查看](errorcode-universal.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 401 | Parameter error. |
+| 401 | Invalid parameter. |
 | 801 | Capability not supported. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { netQuality } from '@kit.NetworkBoostKit';
-3. try {
-4. netQuality.on('netSceneChange', (list: Array<netQuality.NetworkScene>) => {
-5. if (list.length > 0) {
-6. list.forEach((scene) => {
-7. // 回调信息处理
-8. console.info(`Succeeded receive netSceneChange info`);
-9. if (scene.weakSignalPrediction) {
-10. // 弱信号预测处理
-11. }
-12. });
-13. }
-14. });
-15. } catch (err) {
-16. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-17. }
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { netQuality } from '@kit.NetworkBoostKit';
+try {
+  netQuality.on('netSceneChange', (list: Array<netQuality.NetworkScene>) => {
+    if (list.length > 0) {
+      list.forEach((scene) => {
+        // 回调信息处理
+        console.info(`Succeeded receive netSceneChange info`);
+        if (scene.weakSignalPrediction) {
+          // 弱信号预测处理
+        }
+      });
+    }
+  });
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
-## netQuality.off( 'netSceneChange')
-
-PhonePC/2in1Tablet
+## netQuality.off('netSceneChange')
 
 off(type: 'netSceneChange', callback?: Callback<Array<NetworkScene>>): void
 
 取消订阅网络场景信息。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **需要权限：** ohos.permission.GET\_NETWORK\_INFO
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -189,35 +195,37 @@ off(type: 'netSceneChange', callback?: Callback<Array<NetworkScene>>): void
 
 **错误码：**
 
-涉及错误码均为通用错误码，[通用错误码详细描述查看](errorcode-universal.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 401 | Parameter error. |
+| 401 | Invalid parameter. |
 | 801 | Capability not supported. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { netQuality } from '@kit.NetworkBoostKit';
-3. try {
-4. netQuality.off('netSceneChange');
-5. } catch (err) {
-6. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-7. }
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { netQuality } from '@kit.NetworkBoostKit';
+try {
+  netQuality.off('netSceneChange');
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## netQuality.reportQoe
-
-PhonePC/2in1Tablet
 
 reportQoe(appQoe: AppQoe): void
 
 应用传输体验反馈，上报失败，接口会抛出异常。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **需要权限：** ohos.permission.GET\_NETWORK\_INFO
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -231,37 +239,39 @@ reportQoe(appQoe: AppQoe): void
 
 **错误码：**
 
-涉及错误码均为通用错误码，[通用错误码详细描述查看](errorcode-universal.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
+| 201 | Permission verify error. |
 | 401 | Parameter error. |
 | 801 | Capability not supported. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { netQuality } from '@kit.NetworkBoostKit';
-3. try {
-4. let serviceType: netQuality.ServiceType = 'shortVideo';
-5. let qoeType: netQuality.BadQoeCause = 'serverErr';
-6. let appQoe: netQuality.AppQoe = {
-7. serviceType,
-8. qoeType
-9. };
-10. netQuality.reportQoe(appQoe);
-11. } catch (err) {
-12. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-13. }
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { netQuality } from '@kit.NetworkBoostKit';
+try {
+  let serviceType: netQuality.ServiceType = 'shortVideo';
+  let qoeType: netQuality.BadQoeCause = 'serverErr';
+  let appQoe: netQuality.AppQoe = {
+    serviceType,
+    qoeType
+  };
+  netQuality.reportQoe(appQoe);
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## AppQoe
 
-PhonePC/2in1Tablet
-
 应用传输体验信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -274,9 +284,11 @@ PhonePC/2in1Tablet
 
 ## NetworkQos
 
-PhonePC/2in1Tablet
-
 网络质量回调信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -287,17 +299,19 @@ PhonePC/2in1Tablet
 | pathType | [PathType](networkboost-netquality.md#pathtype) | 否 | 否 | 表明相应的数据路径上的网络质量信息。 |
 | linkUpBandwidth | [RateBps](networkboost-netquality.md#ratebps) | 否 | 否 | 上行带宽信息，单位为bps。 |
 | linkDownBandwidth | [RateBps](networkboost-netquality.md#ratebps) | 否 | 否 | 下行带宽信息，单位为bps。 |
-| linkUpRate | [RateBps](networkboost-netquality.md#ratebps) | 否 | 否 | 上行速率，单位为bps。 |
+| linkUpRate | [RateBps](networkboost-netquality.md#ratebps) | 否 | 否 | 上行速率，单位为bps |
 | linkDownRate | [RateBps](networkboost-netquality.md#ratebps) | 否 | 否 | 下行速率，单位为bps。 |
-| rttMs | number | 否 | 否 | RTT时延，表示统计时间间隔内，pathType对应数据路径上，所有的TCP上下行数据包的平均往返时延。取值范围为0或任意正数，单位：毫秒（ms）。  如果在统计时间间隔内没有收到某次TCP请求的回复，则该次的RTT时延不会被计入该统计时间间隔内。因此，在完全不可上网的场景下，由于无法收到TCP的回复，回调中的RTT时延值会比较小，与实际状态不一致。针对完全不可上网的场景，建议结合[on('netCapabilitiesChange')](js-apis-net-connection.md#onnetcapabilitieschange)方法进行综合判断。 |
+| rttMs | number | 否 | 否 | RTT时延，表示统计时间间隔内，pathType对应数据路径上，所有的TCP上下行数据包的平均往返时延。取值范围为0或任意正数，单位：ms。  如果在统计时间间隔内没有收到某次TCP请求的回复，则该次的RTT时延不会被计入该统计时间间隔内。因此，在完全不可上网的场景下，由于无法收到TCP的回复，回调中的RTT时延值会比较小，与实际状态不一致。针对完全不可上网的场景，建议结合[on('netCapabilitiesChange')](js-apis-net-connection.md#onnetcapabilitieschange)方法进行综合判断。 |
 | linkUpBufferDelayMs | number | 否 | 否 | 上行发送空口缓冲时延，取值范围是任意正数。 |
 | linkUpBufferCongestionPercent | number | 否 | 是 | 上行发送空口缓冲时延占总缓冲时间的比例，取值范围[0, 100]。 |
 
 ## PathType
 
-PhonePC/2in1Tablet
-
 数据路径类型，枚举值。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -312,11 +326,13 @@ PhonePC/2in1Tablet
 
 ## RateBps
 
-PhonePC/2in1Tablet
-
 type RateBps = number
 
 带宽或速率的抽象表示。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -328,11 +344,13 @@ type RateBps = number
 
 ## ServiceType
 
-PhonePC/2in1Tablet
-
 type ServiceType = 'default' | 'background' | 'realtimeVoice' | 'realtimeVideo' | 'callSignaling' | 'realtimeGame' | 'normalGame' | 'shortVideo' | 'longVideo' | 'livestreamingAnchor' | 'livestreamingWatcher' | 'download' | 'upload' | 'browser' | 'transaction' | 'shopping' | 'detection' | 'cloudService' | 'voiceConference' | 'videoConference' | 'audio' | 'navigation' | 'seckillService' | 'login'
 
 应用业务类型。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -367,11 +385,13 @@ type ServiceType = 'default' | 'background' | 'realtimeVoice' | 'realtimeVideo' 
 
 ## QoeType
 
-PhonePC/2in1Tablet
-
 type QoeType = 'good' | BadQoeCause
 
 应用体验类型。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -384,11 +404,13 @@ type QoeType = 'good' | BadQoeCause
 
 ## BadQoeCause
 
-PhonePC/2in1Tablet
-
 type BadQoeCause = 'unknown' | 'serverErr' | 'noData' | 'packetLost' | 'packetOutOfOrder' | 'highJitter' | 'highLatency'
 
 应用体验差类型。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -406,9 +428,11 @@ type BadQoeCause = 'unknown' | 'serverErr' | 'noData' | 'packetLost' | 'packetOu
 
 ## 速率带宽级别
 
-PhonePC/2in1Tablet
-
 定义了多个速率或带宽的常量值。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -424,9 +448,11 @@ PhonePC/2in1Tablet
 
 ## NetworkScene
 
-PhonePC/2in1Tablet
-
 网络场景状态变更回调信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -441,9 +467,11 @@ PhonePC/2in1Tablet
 
 ## WeakSignalPrediction
 
-PhonePC/2in1Tablet
-
 弱信号预测相关信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -452,16 +480,18 @@ PhonePC/2in1Tablet
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | isLastPredictionValid | boolean | 否 | 否 | 最近一次的弱信号预测是否有效，true表示最近一次的弱信号预测依旧有效，false表示最近一次的弱信号预测失效，此时startTime和duration参数忽略。 |
-| startTime | number | 否 | 否 | 预计多长时间进入弱信号（单位：秒），取值范围为0和任意正数。 |
-| duration | number | 否 | 否 | 预计在弱信号区域停留时长（单位：秒），取任意正数。取值0，此次预测结果无效。 |
+| startTime | number | 否 | 否 | 预计多长时间进入弱信号（单位：s），取值范围为0和任意正数。 |
+| duration | number | 否 | 否 | 预计在弱信号区域停留时长（单位：s），取任意正数。取值0，此次预测结果无效。 |
 
 ## Scene
-
-PhonePC/2in1Tablet
 
 type Scene = 'normal' | 'congestion' | 'frequentHandover' | 'weakSignal'
 
 场景类型。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -476,11 +506,13 @@ type Scene = 'normal' | 'congestion' | 'frequentHandover' | 'weakSignal'
 
 ## DataSpeedSimpleAction
 
-PhonePC/2in1Tablet
-
 type DataSpeedSimpleAction = 'suspendData' | 'decreaseData' | 'increaseData' | 'keepData'
 
 应用发包策略的简单建议。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -495,11 +527,13 @@ type DataSpeedSimpleAction = 'suspendData' | 'decreaseData' | 'increaseData' | '
 
 ## RecommendedAction
 
-PhonePC/2in1Tablet
-
 type RecommendedAction = 'doCaching' | DataSpeedSimpleAction
 
 应用数传策略建议。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 业务概述
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏渲染加速服务 > 业务概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:24+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6109f5f2a56ffff602887dd0243d9a06f9660373b237901872d3c448e83d7b7d
+scraped_at: 2026-09-02T14:50:21+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:cb706d55d006b07176fe2ef0d815038f8ca7fdccba4781bdaca881a2d5083b8d
 ---
 
 ## 约束与限制
@@ -56,7 +56,7 @@ content_hash: sha256:6109f5f2a56ffff602887dd0243d9a06f9660373b237901872d3c448e83
     | 运动估计模式 | 开发准备 | 场景约束 |
     | --- | --- | --- |
     | 基础模式 | - | 适用于相机或场景中物体静止以及慢速运动的游戏场景。在高速运动目标场景及复杂粒子特效场景可能引入拖影和鬼影。 |
-    | 增强模式 | 需要开发者对绘制顶点的draw call进行标记。相比基础模式，增强模式利用三维场景中的顶点信息进行更精准的运动估计，超帧效果更优。 | 对于相机或物体慢速和快速运动场景均具有较好超帧效果，较基础模式能有效优化运动拖影现象。但在复杂粒子特效场景可能引入鬼影。 |
+    | 增强模式 | 需要开发者对绘制顶点的Draw Call进行标记。相比基础模式，增强模式利用三维场景中的顶点信息进行更精准的运动估计，超帧效果更优。 | 对于相机或物体慢速和快速运动场景均具有较好超帧效果，较基础模式能有效优化运动拖影现象。但在复杂粒子特效场景可能引入鬼影。 |
   + 超帧API不支持并发调用。
 * ABR
 

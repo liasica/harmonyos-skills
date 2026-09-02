@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-book-i
 title: 获取书籍信息
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容解析 > 获取书籍信息
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:40:02+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3c5b501f50fd861889c7c99fa9fb553776d05bb055a629809824e5ba09d6c182
+scraped_at: 2026-09-02T14:50:31+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:deeaaef0f1c259ff285c73ce9666b33164d1118a42580db6edd678b0423507c9
 ---
 
 在导入本地书籍到书架时，开发者需通过[DocumentViewPicker](../harmonyos-references/js-apis-file-picker.md#documentviewpicker)先将书籍文件导入到[应用沙箱目录](app-sandbox-directory.md)，然后利用解析能力获取书籍信息，包括书封、书名及作者等，以完成书架内容的展示。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/prLOxflVSXKJ_rw2VQ9fLQ/zh-cn_image_0000002589245451.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/j1fnYWBAQMm7TIuvi0fW_w/zh-cn_image_0000002706835168.png)
 
 ## 接口说明
 
@@ -28,80 +28,79 @@ content_hash: sha256:3c5b501f50fd861889c7c99fa9fb553776d05bb055a629809824e5ba09d
 
 1. 导入相关模块。
 
-   ```
-   1. import { common } from '@kit.AbilityKit';
-   2. import { bookParser } from '@kit.ReaderKit';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
-   4. import { image } from '@kit.ImageKit';
+   ```typescript
+   import { common } from '@kit.AbilityKit';
+   import { bookParser } from '@kit.ReaderKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { image } from '@kit.ImageKit';
    ```
 2. 通过提前导入到[应用沙箱目录](app-sandbox-directory.md)中的书籍文件，初始化书籍解析器。
 
-   ```
-   1. private defaultHandler: bookParser.BookParserHandler | null = null;
+   ```typescript
+   private defaultHandler: bookParser.BookParserHandler | null = null;
 
-   3. aboutToAppear(): void {
-   4. this.init().then(() => {
-   5. });
-   6. }
+   aboutToAppear(): void {
+     this.init().then(() => {
+     });
+   }
 
-   8. private async init() {
-   9. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-   10. let path: string = `${context.filesDir}/abc.epub`;
-   11. try {
-   12. this.defaultHandler = await bookParser.getDefaultHandler(path);
-   13. } catch (error) {
-   14. hilog.error(0x0000, "testTAG", `getDefaultHandler failed, Code: ${error.code}, message: ${error.message}`);
-   15. }
-   16. }
+   private async init() {
+     let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+     let path: string = `${context.filesDir}/abc.epub`;
+     try {
+       this.defaultHandler = await bookParser.getDefaultHandler(path);
+     } catch (error) {
+       hilog.error(0x0000, "testTAG", `getDefaultHandler failed, Code: ${error.code}, message: ${error.message}`);
+     }
+   }
    ```
 3. 获取书名、作者、书封信息并进行展示。
 
-   ```
-   1. @State bookCover: PixelMap | null = null;
-   2. @State bookTitle: string = '';
-   3. @State author: string = '';
+   ```typescript
+   @State bookCover: PixelMap | null = null;
+   @State bookTitle: string = '';
+   @State author: string = '';
 
-   5. aboutToAppear(): void {
-   6. this.init().then(() => {
-   7. this.getBookInfo();
-   8. });
-   9. }
+   aboutToAppear(): void {
+     this.init().then(() => {
+       this.getBookInfo();
+     });
+   }
 
-   11. private async getBookInfo() {
-   12. try {
-   13. let bookInfo: bookParser.BookInfo | undefined = this.defaultHandler?.getBookInfo();
-   14. if (bookInfo) {
-   15. this.bookTitle = bookInfo.bookTitle || '';
-   16. this.author = bookInfo?.bookCreator || '';
-   17. // SpineIndex is not required for obtaining the book cover.
-   18. let buffer = this.defaultHandler?.getResourceContent(-1, bookInfo.bookCoverImage);
-   19. let imageSource: image.ImageSource = image.createImageSource(buffer);
-   20. this.bookCover = await imageSource.createPixelMap();
-   21. imageSource.release();
-   22. }
-   23. hilog.info(0x0000, 'testTAG', 'getBookInfo bookInfo is: ' + JSON.stringify(bookInfo));
-   24. } catch (error) {
-   25. hilog.error(0x0000, 'testTAG', `getBookInfo failed, Code: ${error.code}, message: ${error.message}`);
-   26. }
-   27. }
+   private async getBookInfo() {
+     try {
+       let bookInfo: bookParser.BookInfo | undefined = this.defaultHandler?.getBookInfo();
+       if (bookInfo) {
+         this.bookTitle = bookInfo.bookTitle || '';
+         this.author = bookInfo?.bookCreator || '';
+         let buffer = this.defaultHandler?.getResourceContent(-1, bookInfo.bookCoverImage);
+         let imageSource: image.ImageSource = image.createImageSource(buffer);
+         this.bookCover = await imageSource.createPixelMap();
+         imageSource.release();
+       }
+       hilog.info(0x0000, 'testTAG', 'getBookInfo bookInfo is: ' + JSON.stringify(bookInfo));
+     } catch (error) {
+       hilog.error(0x0000, 'testTAG', `getBookInfo failed, Code: ${error.code}, message: ${error.message}`);
+     }
+   }
 
-   29. build() {
-   30. Column() {
-   31. Text('书名：' + this.bookTitle)
-   32. .fontSize(20)
-   33. .fontColor("#E6000000")
-   34. .margin({ top: 50 })
-   35. Text('作者：' + this.author)
-   36. .fontSize(20)
-   37. .fontColor("#E6000000")
-   38. .margin({ top: 10 })
-   39. Image(this.bookCover)
-   40. .width(200)
-   41. .aspectRatio(3 / 4)
-   42. .borderRadius(5)
-   43. .margin({ top: 10 })
-   44. }
-   45. .alignItems(HorizontalAlign.Start)
-   46. .margin({ left: 10, right: 10 })
-   47. }
+   build() {
+     Column() {
+       Text('书名：' + this.bookTitle)
+         .fontSize(20)
+         .fontColor("#E6000000")
+         .margin({ top: 50 })
+       Text('作者：' + this.author)
+         .fontSize(20)
+         .fontColor("#E6000000")
+         .margin({ top: 10 })
+       Image(this.bookCover)
+         .width(200)
+         .aspectRatio(3 / 4)
+         .borderRadius(5)
+         .margin({ top: 10 })
+     }
+     .alignItems(HorizontalAlign.Start)
+     .margin({ left: 10, right: 10 })
+   }
    ```

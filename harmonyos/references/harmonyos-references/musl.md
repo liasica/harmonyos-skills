@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/musl
 title: libc标准库
 breadcrumb: API参考 > 标准库 > libc标准库
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:30+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:b674ec9ba6359ff10a13c687e304625a5fe6e220ea293e42acc1d47b80454b44
+scraped_at: 2026-09-02T15:03:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:99b311ee39d0a4a5b62953f9b4d1cd1da8bec740c1a4552741c964b05afdc889
 ---
 
 ## 简介
@@ -36,9 +36,9 @@ libdl：dlopen等动态链接器接口，当前在HarmonyOS中是一个链接，
 
 ## 支持的能力
 
-提供兼容C99、C11、POSIX标准的头文件，以及库函数接口，但不是完全兼容；支持armv7a、arm64、x86\_64三种架构的支持；
+提供兼容C99、C11、POSIX标准的头文件，以及库函数接口，但不是完全兼容；目前提供armv7a、arm64、x86\_64三种架构的支持；
 
-为了更好的适配HarmonyOS设备的高性能、低内存、高安全、轻量化、支持多种形态设备的基本特征；在musl开源库的基础上进行了优化，增强，对不适用嵌入式设备的接口进行了裁剪。
+为了更好地适配HarmonyOS设备的高性能、低内存、高安全、轻量化、支持多种形态设备的基本特征；在musl开源库的基础上进行了优化，增强，对不适用嵌入式设备的接口进行了裁剪。
 
 ### 新增能力
 
@@ -46,22 +46,35 @@ libdl：dlopen等动态链接器接口，当前在HarmonyOS中是一个链接，
 2. 支持dlclose真实卸载动态库能力，musl的开源版本不支持。
 3. 支持symbol-versioning功能。
 4. dlopen支持直接加载zip包中未压缩的文件。
+5. 支持C API兼容性版本保护。
+
+## APIAVAILABLE 兼容性版本保护
+
+**注意** 
+
+使用APIAVAILABLE特性，需要对强符号、弱符号、弱库等机制非常熟悉，而且要严格按照指导书步骤操作，否则可能存在运行期崩溃现象。
+
+易用性在优化中，在优化完成前，建议还是使用dlopen、dlsym的方式来解决兼容性问题。
+
+| 宏定义名称 | 说明 |
+| --- | --- |
+| APIAVAILABLE(maj, min, patch) | 需与编译器配合使用，用于保障应用在不同系统版本间的兼容性与稳定性，通过编译时和运行时的条件检查，防止在低版本系统上调用不存在的接口导致崩溃。使用高于目标分发版本（compatibleSdkVersion）的接口时，须使用该宏进行兼容性保护并提供合理的降级方案。入参**maj**为主版本号（取值范围0-99），**min**为次版本号（取值范围0-99），**patch**为补丁版本号（取值范围0-99）。  **起始版本：** 22。 |
 
 ## musl 差异规格接口说明
 
 | 接口名称 | 说明 |
 | --- | --- |
-| epoll\_create | 在HarmonyOS5.0 上 该接口逻辑与1.2.3版本保持一致，不会对入参进行判断，不区分入参小于等于0的情况，预计下版本更新此接口逻辑与社区1.2.5保持一致，增加入参逻辑判断，入参小于等于0时创建失败，并返回错误码EINVAL。 |
+| epoll\_create | 当前 HarmonyOS musl 仓中的 epoll\_create 未对 size 入参进行有效性校验，不区分 size 是否小于等于 0。实际表现为：当 size <= 0 时，调用仍可能创建 epoll实例成功。该行为与 musl 社区 v1.2.5 及之后版本存在差异。musl 社区要求 size 必须大于 0，接口表现为：当 size <= 0 时，epoll\_create 应创建失败，返回 -1，并设置 errno 为 EINVAL。开发者如需兼容 musl 社区 v1.2.5+ 行为，建议在调用 epoll\_create 前自行保证 size > 0，或优先使用 epoll\_create1。 |
 
 ## ICONV支持的字符集编码格式
 
 musl支持的字符集编码格式，以及受支持的别名。
 
-注意
+**注意** 
 
 在进行字符集编码格式转换时，请使用正确的源字符集编码格式，且目标字符集编码格式必须支持这些受转换的字符，否则转换失败。
 
-在musl里不支持将源字符集编码格式转换成这五种目标字符集编码格式：gb18030，gbk，gb2312，big5和euckr。
+在musl里不支持将源字符集编码格式转换成这两种目标字符集编码格式：big5,euckr。
 
 | 编码格式 | 别名 | musl支持情况 |
 | --- | --- | --- |
@@ -116,10 +129,10 @@ musl支持的字符集编码格式，以及受支持的别名。
 | cp866 |  | 支持 |
 | cp1047 | ibm1047 | 支持 |
 
-## musl不支持接口列表。
+## musl不支持接口列表
 
 [native api中没有导出的符号列表](musl-peculiar-symbol.md)
 
-[NDK musl-libc接口受权限影响的说明](nce-on-ndk-libc-interfaces-affected-by-permissions.md)
+[NDK musl-libc接口受权限影响的说明](guidance-on-ndk-libc-interfaces-affected-by-permissions.md)
 
 [NDK musl-libc补充api文档](https://gitcode.com/openharmony/third_party_musl/tree/master/docs)

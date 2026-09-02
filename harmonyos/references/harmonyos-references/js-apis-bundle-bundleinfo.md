@@ -3,24 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: BundleInfo
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 已停止维护的接口 > bundle > BundleInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:53+08:00
-doc_updated_at: 2026-03-30
-content_hash: sha256:ea972007340ec1e15ba36a91e3d91b264da87c04aee16c0550356dce764e4a6b
+scraped_at: 2026-09-02T15:00:36+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5038064316eda7baa92939a83f0af146f188aacfbf6243fde5b9e2cb45a36916
 ---
 
 应用包的信息，通过[bundle.getBundleInfo](js-apis-bundle.md#bundlegetbundleinfodeprecated)获取。
 
-说明
+**说明** 
 
-本模块首批接口从API version 7 开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 从API version 9开始，该模块不再维护，建议使用[bundleManager-BundleInfo](js-apis-bundlemanager-bundleinfo.md)替代。
 
 ## BundleInfo(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[bundleManager-BundleInfo](js-apis-bundlemanager-bundleinfo.md#bundleinfo-1)替代。
 
@@ -54,9 +52,7 @@ PhonePC/2in1TabletTVWearable
 
 ## ReqPermissionDetail(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[ReqPermissionDetail](js-apis-bundlemanager-bundleinfo.md#reqpermissiondetail)替代。
 
@@ -72,9 +68,7 @@ PhonePC/2in1TabletTVWearable
 
 ## UsedScene(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[UsedScene](js-apis-bundlemanager-bundleinfo.md#usedscene)替代。
 

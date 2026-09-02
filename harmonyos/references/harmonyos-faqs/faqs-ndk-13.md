@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-13
 title: 如何在Native侧区分ArkTS侧创建的ArrayBuffer和Uint8Array对象
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何在Native侧区分ArkTS侧创建的ArrayBuffer和Uint8Array对象
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:31+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:18+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:1dd6bfac0791bc0cda1c759f90dad6970a05dfb70bdeb36c7c01fdfa12b2657b
 ---
 

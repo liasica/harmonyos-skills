@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-dynamic
 title: 图片动态元数据生成
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(C/C++) > 图片编辑和处理 > 使用ImageProcessing处理图片 > 图片动态元数据生成
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:35:17+08:00
+scraped_at: 2026-09-02T14:59:46+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3f5559481e528bdd0287161dedcb1d93de60f98317f9e08a873a807eb431713a
+content_hash: sha256:c1d34afba42ed2ae7c7d4c049da24cc90a1eebb2c32d8a22fc77a6092008adef
 ---
 
 调用者可以调用本模块提供的[C API接口](../harmonyos-references/capi-imageprocessing.md)，实现HDR图片动态元数据生成。
 
 该能力常用于图片编辑中，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/VjjruabaQq-kAqH3t01qTw/zh-cn_image_0000002558765090.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/FZxDc7tXSriU9rdGOVSRtg/zh-cn_image_0000002706674630.png)
 
 ## 规格说明
 
@@ -43,75 +43,75 @@ content_hash: sha256:3f5559481e528bdd0287161dedcb1d93de60f98317f9e08a873a807eb43
 
 ### 在 CMake 脚本中链接动态库
 
-```
-1. add_library(entry SHARED napi_init.cpp ImageProcessing/ImageProcessing.cpp)
-2. target_link_libraries(entry PUBLIC ${BASE_LIBRARY})
+```screen
+add_library(entry SHARED napi_init.cpp ImageProcessing/ImageProcessing.cpp)
+target_link_libraries(entry PUBLIC ${BASE_LIBRARY})
 ```
 
 ### ArkTS侧调用的开发步骤
 
 1. 通过解码器获取10 bit的PixelMap。
 
-   ```
-   1. const photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
-   2. photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
-   3. photoSelectOptions.maxSelectNumber = 1;
-   4. const photoViewPicker = new photoAccessHelper.PhotoViewPicker();
-   5. photoViewPicker.select(photoSelectOptions)
-   6. .then((photoSelectResult: photoAccessHelper.PhotoSelectResult) => {
-   7. let fd = fileIo.openSync(photoSelectResult.photoUris[0], fileIo.OpenMode.READ_ONLY);
-   8. const imageSource = image.createImageSource(fd.fd);
-   9. let option: image.DecodingOptions = {};
-   10. option.index = 0;
-   11. option.desiredDynamicRange = image.DecodingDynamicRange.AUTO;
-   12. this.pixelMapSrc = imageSource.createPixelMapSync(option);
-   13. this.getColorSpace();
-   14. this.hasPhoto = true;
-   15. })
+   ```ts
+   const photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
+   photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
+   photoSelectOptions.maxSelectNumber = 1;
+   const photoViewPicker = new photoAccessHelper.PhotoViewPicker();
+   photoViewPicker.select(photoSelectOptions)
+     .then((photoSelectResult: photoAccessHelper.PhotoSelectResult) => {
+       let fd = fileIo.openSync(photoSelectResult.photoUris[0], fileIo.OpenMode.READ_ONLY);
+       const imageSource = image.createImageSource(fd.fd);
+       let option: image.DecodingOptions = {};
+       option.index = 0;
+       option.desiredDynamicRange = image.DecodingDynamicRange.AUTO;
+       this.pixelMapSrc = imageSource.createPixelMapSync(option);
+       this.getColorSpace();
+       this.hasPhoto = true;
+     })
    ```
 2. 配置色彩框架和元数据信息。
 
-   ```
-   1. let colorSpaceBT2020_HLG : colorSpaceManager.ColorSpaceManager = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT2020_HLG);
-   2. hdrpixelMap.setColorSpace(colorSpaceBT2020_HLG);
-   3. hdrpixelMap.setMetadata(image.HdrMetadataKey.HDR_METADATA_TYPE, image.HdrMetadataType.ALTERNATE);
+   ```ts
+   let colorSpaceBT2020_HLG : colorSpaceManager.ColorSpaceManager = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT2020_HLG);
+   hdrpixelMap.setColorSpace(colorSpaceBT2020_HLG);
+   hdrpixelMap.setMetadata(image.HdrMetadataKey.HDR_METADATA_TYPE, image.HdrMetadataType.ALTERNATE);
    ```
 
 ### Native侧调用的开发步骤
 
 1. 添加头文件。
 
-   ```
-   1. #include <multimedia/image_framework/image_mdk_common.h>
-   2. #include <multimedia/image_framework/image_pixel_map_mdk.h>
-   3. #include <multimedia/image_framework/image/pixelmap_native.h>
-   4. #include <multimedia/video_processing_engine/image_processing.h>
-   5. #include <multimedia/video_processing_engine/image_processing_types.h>
-   6. #include <native_color_space_manager/native_color_space_manager.h>
+   ```cpp
+   #include <multimedia/image_framework/image_mdk_common.h>
+   #include <multimedia/image_framework/image_pixel_map_mdk.h>
+   #include <multimedia/image_framework/image/pixelmap_native.h>
+   #include <multimedia/video_processing_engine/image_processing.h>
+   #include <multimedia/video_processing_engine/image_processing_types.h>
+   #include <native_color_space_manager/native_color_space_manager.h>
    ```
 2. （可选）初始化环境。
 
    一般在进程内第一次使用时调用，可提前完成部分耗时操作。
 
-   ```
-   1. ImageProcessing_ErrorCode ret =  OH_ImageProcessing_InitializeEnvironment();
+   ```cpp
+   ImageProcessing_ErrorCode ret =  OH_ImageProcessing_InitializeEnvironment();
    ```
 3. （可选）查询能力支持。建议在使用对应能力前调用。
 
-   ```
-   1. //输入格式
-   2. ImageProcessing_ColorSpaceInfo SRC_INFO;
-   3. SRC_INFO.colorSpace = BT2020_HLG;
-   4. SRC_INFO.metadataType = HDR_METADATA_TYPE_ALTERNATE;
-   5. SRC_INFO.pixelFormat = PIXEL_FORMAT_RGBA_1010102;
-   6. //能力查询
-   7. bool flag = OH_ImageProcessing_IsMetadataGenerationSupported(&SRC_INFO);
+   ```cpp
+   //输入格式
+   ImageProcessing_ColorSpaceInfo SRC_INFO;
+   SRC_INFO.colorSpace = BT2020_HLG;
+   SRC_INFO.metadataType = HDR_METADATA_TYPE_ALTERNATE;
+   SRC_INFO.pixelFormat = PIXEL_FORMAT_RGBA_1010102;
+   //能力查询
+   bool flag = OH_ImageProcessing_IsMetadataGenerationSupported(&SRC_INFO);
    ```
 4. 将ArkTS中的PixelMap转换为C++的PixelMap。
 
-   ```
-   1. OH_PixelmapNative* hdr = nullptr;
-   2. OH_PixelmapNative_ConvertPixelmapNativeFromNapi(env, argValue[0], &hdr);
+   ```cpp
+   OH_PixelmapNative* hdr = nullptr;
+   OH_PixelmapNative_ConvertPixelmapNativeFromNapi(env, argValue[0], &hdr);
    ```
 5. 创建图片元数据生成模块。
 6. 应用可以通过图片处理引擎模块类型来创建图片元数据生成模块。示例中的变量说明如下：
@@ -122,25 +122,25 @@ content_hash: sha256:3f5559481e528bdd0287161dedcb1d93de60f98317f9e08a873a807eb43
 
    预期返回值：IMAGE\_PROCESSING\_SUCCESS
 
-   ```
-   1. OH_ImageProcessing* instance = nullptr;
-   2. ret = OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_METADATA_GENERATION);
+   ```cpp
+   OH_ImageProcessing* instance = nullptr;
+   ret = OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_METADATA_GENERATION);
    ```
 7. 执行算法。
 
-   ```
-   1. ret = OH_ImageProcessing_GenerateMetadata(instance, hdr);
+   ```cpp
+   ret = OH_ImageProcessing_GenerateMetadata(instance, hdr);
    ```
 8. 释放实例资源。
 
-   ```
-   1. ret = OH_ImageProcessing_Destroy(instance);
-   2. instance = nullptr;
+   ```cpp
+   ret = OH_ImageProcessing_Destroy(instance);
+   instance = nullptr;
    ```
 9. 释放初始化环境资源。
 
-   ```
-   1. ret = OH_ImageProcessing_DeinitializeEnvironment();
+   ```cpp
+   ret = OH_ImageProcessing_DeinitializeEnvironment();
    ```
 
 ## 完整示例代码

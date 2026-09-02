@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-ringtonekit-b035
 title: Ringtone Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Developer Beta3引入的API > Ringtone Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Developer Beta3引入的API > Ringtone Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:36:33+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:43+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:a013624673e67aaa826b7293d10bcb7692fd07f925bb41d58c9e3f80ea1d0b4c
 ---
 

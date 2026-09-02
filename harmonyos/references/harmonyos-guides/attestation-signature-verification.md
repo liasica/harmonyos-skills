@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/attestation-s
 title: 签名验签识别真实请求
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 应用真实性证明 > 签名验签识别真实请求
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:32:10+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a566f2f838a95b0c95e9d3220cd125ef42a36f0f933e9140fad91167f20c3604
+scraped_at: 2026-09-02T14:59:32+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:839843fe5359d0f6099e472df42c4858fd494ea26721b89fc2aeda72aa3b62b6
 ---
 
 ## 概述
@@ -16,17 +16,17 @@ content_hash: sha256:a566f2f838a95b0c95e9d3220cd125ef42a36f0f933e9140fad91167f20
 
 **图1** 签名验签识别真实请求流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/G4kzU5coRwmkcH2l9Y0Jcg/zh-cn_image_0000002589244719.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/Q8bDeUwDQTynCzwClCCbpw/zh-cn_image_0000002736433475.png)
 
 ### 签名验签识别真实请求流程
 
-使用保存在应用服务器中的应用公钥对业务请求进行验证，业务请求中请勿携带密钥证明证书链。
+使用保存在应用服务器中的应用公钥对业务请求进行验证，业务请求中不需要携带密钥证明证书链。
 
-说明
+**说明** 
 
-华为服务器可能会限制来自特定应用的认证流量，以避免单个应用的流量过大出现过载，从而导致其他应用处理失败，因此请勿在每次业务请求时都对应用公钥和应用ID进行证明。
+华为服务器可能会限制来自特定应用的密钥证明请求流量，以避免单个应用的流量过大出现过载，从而导致其他应用处理失败，因此请勿在每次业务请求时都调用在线密钥证明接口对应用公钥和应用ID进行证明。
 
-当密钥证明接口由于流量过载或其他原因不可用时，应用需要考虑异常处理方案，避免出现应用基本功能不可用。
+当在线密钥证明接口由于流量过载或其他原因不可用时，应用需要考虑异常处理方案，避免出现应用基本功能不可用。
 
 具体的步骤如下：
 

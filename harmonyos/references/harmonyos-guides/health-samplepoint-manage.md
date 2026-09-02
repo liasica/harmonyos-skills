@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-sample
 title: 运动健康采样数据
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > Phone/Tablet应用开发 > 管理运动健康数据 > 运动健康采样数据
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:12+08:00
+scraped_at: 2026-09-02T14:59:56+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6a195bda31c7b3a7ea72cb2731ba82cc0ec279837e6bf18d9fc67e79f8f04f3f
+content_hash: sha256:b956a19c3e7849ba327cf941e584e17064a0a2aef59bbeec8e8809a95723b3e5
 ---
 
 ## 场景介绍
@@ -22,7 +22,7 @@ content_hash: sha256:6a195bda31c7b3a7ea72cb2731ba82cc0ec279837e6bf18d9fc67e79f8f
 | [deleteData](../harmonyos-references/health-api-healthstore.md#healthstoredeletedata)(request: [SamplePointDeleteRequest](../harmonyos-references/health-api-healthstore.md#samplepointdeleterequest) | [SamplePointDeleteRequest](../harmonyos-references/health-api-healthstore.md#samplepointdeleterequest)[]): Promise<void> | 删除运动健康采样数据，按[SamplePointDeleteRequest](../harmonyos-references/health-api-healthstore.md#samplepointdeleterequest)条件删除，可设置数据类型、时间范围、数据源等删除条件。 |
 | [aggregateData](../harmonyos-references/health-api-healthstore.md#healthstoreaggregatedata)<T extends [AggregateResult](../harmonyos-references/health-api-healthstore.md#aggregateresult)>(request: [AggregateRequest](../harmonyos-references/health-api-healthstore.md#aggregaterequest) | [AggregateRequest](../harmonyos-references/health-api-healthstore.md#aggregaterequest)[]): Promise<T[]> | 聚合查询运动健康采样数据，通过[AggregateRequest](../harmonyos-references/health-api-healthstore.md#aggregaterequest)设置查询的数据类型、聚合策略。 |
 
-说明
+**说明** 
 
 aggregateData接口读取今日日常活动数据，数据上报存在延时，读取实时日常活动数据建议使用[读取实时三环数据](health-three-ring-read.md)接口。
 
@@ -39,174 +39,174 @@ aggregateData接口读取今日日常活动数据，数据上报存在延时，�
 
 1. 导入运动健康服务功能模块及相关公共模块。
 
-   ```
-   1. import { healthStore } from '@kit.HealthServiceKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { healthStore } from '@kit.HealthServiceKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 获取dataSourceId，参考[管理数据源](health-datasource-manage.md)，插入一个新的数据源或读取已有数据源。
 3. 创建运动健康采样数据。
 
-   ```
-   1. let samplePoint: healthStore.samplePointHelper.bodyTemperature.Model = {
-   2. dataType: healthStore.samplePointHelper.bodyTemperature.DATA_TYPE,
-   3. startTime: 1698633801000,
-   4. endTime: 1698633801000,
-   5. localDate: '10/30/2023',
-   6. timeZone: '+0800',
-   7. modifiedTime: 1698633801000,
-   8. // insertDataSource插入数据源接口返回的dataSourceId，或读取已有数据源的dataSourceId
-   9. dataSourceId: 'xxx',
-   10. fields: {
-   11. bodyTemperature: 39
-   12. }
-   13. }
+   ```typescript
+   let samplePoint: healthStore.samplePointHelper.bodyTemperature.Model = {
+     dataType: healthStore.samplePointHelper.bodyTemperature.DATA_TYPE,
+     startTime: 1698633801000,
+     endTime: 1698633801000,
+     localDate: '10/30/2023',
+     timeZone: '+0800',
+     modifiedTime: 1698633801000,
+     // insertDataSource插入数据源接口返回的dataSourceId，或读取已有数据源的dataSourceId
+     dataSourceId: 'xxx',
+     fields: {
+       bodyTemperature: 39
+     }
+   }
    ```
 4. 调用[saveData](../harmonyos-references/health-api-healthstore.md#healthstoresavedata)方法执行保存数据请求，并处理返回结果。
 
-   ```
-   1. try {
-   2. await healthStore.saveData(samplePoint);
-   3. hilog.info(0x0000, 'testTag', 'Succeeded in saving data.');
-   4. } catch (err) {
-   5. hilog.error(0x0000, 'testTag', `Failed to save data. Code: ${err.code}, message: ${err.message}`);
-   6. }
+   ```typescript
+   try {
+     await healthStore.saveData(samplePoint);
+     hilog.info(0x0000, 'testTag', 'Succeeded in saving data.');
+   } catch (err) {
+     hilog.error(0x0000, 'testTag', `Failed to save data. Code: ${err.code}, message: ${err.message}`);
+   }
    ```
 
 ### 读取用户的运动健康数据
 
 1. 导入运动健康服务功能模块及相关公共模块。
 
-   ```
-   1. import { healthStore } from '@kit.HealthServiceKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { healthStore } from '@kit.HealthServiceKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 创建查询请求。
 
-   ```
-   1. let samplePointReadRequest: healthStore.SamplePointReadRequest = {
-   2. samplePointDataType: healthStore.samplePointHelper.bodyTemperature.DATA_TYPE,
-   3. startTime: 1698633801000,
-   4. endTime: 1698633801000,
-   5. fields: {
-   6. bodyTemperature: 39
-   7. }
-   8. }
+   ```typescript
+   let samplePointReadRequest: healthStore.SamplePointReadRequest = {
+     samplePointDataType: healthStore.samplePointHelper.bodyTemperature.DATA_TYPE,
+     startTime: 1698633801000,
+     endTime: 1698633801000,
+     fields: {
+       bodyTemperature: 39
+     }
+   }
    ```
 3. 调用[readData](../harmonyos-references/health-api-healthstore.md#healthstorereaddata)方法执行查询请求，并处理返回结果。
 
-   ```
-   1. try {
-   2. let samplePoints = await healthStore.readData(samplePointReadRequest);
-   3. samplePoints.forEach((samplePoint) => {
-   4. hilog.info(0x0000, 'testTag', `Succeeded in reading data, the bodyTemperature is ${samplePoint.fields.bodyTemperature}.`);
-   5. });
-   6. } catch (err) {
-   7. hilog.error(0x0000, 'testTag', `Failed to read data. Code: ${err.code}, message: ${err.message}`);
-   8. }
+   ```typescript
+   try {
+     let samplePoints = await healthStore.readData(samplePointReadRequest);
+     samplePoints.forEach((samplePoint) => {
+       hilog.info(0x0000, 'testTag', `Succeeded in reading data, the bodyTemperature is ${samplePoint.fields.bodyTemperature}.`);
+     });
+   } catch (err) {
+     hilog.error(0x0000, 'testTag', `Failed to read data. Code: ${err.code}, message: ${err.message}`);
+   }
    ```
 
 ### 删除指定的运动健康采样数据
 
 1. 导入运动健康服务功能模块及相关公共模块。
 
-   ```
-   1. import { healthStore } from '@kit.HealthServiceKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { healthStore } from '@kit.HealthServiceKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 查询待删除的运动健康采样数据。
 
-   ```
-   1. let samplePointReadRequest: healthStore.SamplePointReadRequest = {
-   2. samplePointDataType: healthStore.samplePointHelper.bodyTemperature.DATA_TYPE,
-   3. startTime: 1698633801000,
-   4. endTime: 1698633801000
-   5. }
-   6. let samplePoints: healthStore.SamplePoint[] = await healthStore.readData(samplePointReadRequest);
+   ```typescript
+   let samplePointReadRequest: healthStore.SamplePointReadRequest = {
+     samplePointDataType: healthStore.samplePointHelper.bodyTemperature.DATA_TYPE,
+     startTime: 1698633801000,
+     endTime: 1698633801000
+   }
+   let samplePoints: healthStore.SamplePoint[] = await healthStore.readData(samplePointReadRequest);
    ```
 3. 调用[deleteData](../harmonyos-references/health-api-healthstore.md#healthstoredeletedata-3)方法执行删除请求，并处理返回结果。
 
-   ```
-   1. try {
-   2. for (let index = 0; index < samplePoints.length; index++) {
-   3. const samplePoint = samplePoints[index];
-   4. await healthStore.deleteData(samplePoint);
-   5. }
-   6. hilog.info(0x0000, 'testTag', 'Succeeded in deleting data.');
-   7. } catch (err) {
-   8. hilog.error(0x0000, 'testTag', `Failed to delete data. Code: ${err.code}, message: ${err.message}`);
-   9. }
+   ```typescript
+   try {
+     for (let index = 0; index < samplePoints.length; index++) {
+       const samplePoint = samplePoints[index];
+       await healthStore.deleteData(samplePoint);
+     }
+     hilog.info(0x0000, 'testTag', 'Succeeded in deleting data.');
+   } catch (err) {
+     hilog.error(0x0000, 'testTag', `Failed to delete data. Code: ${err.code}, message: ${err.message}`);
+   }
    ```
 
 ### 根据请求删除用户运动健康数据
 
 1. 导入运动健康服务功能模块及相关公共模块。
 
-   ```
-   1. import { healthStore } from '@kit.HealthServiceKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { healthStore } from '@kit.HealthServiceKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 创建删除请求。
 
-   ```
-   1. let samplePointDeleteRequest: healthStore.SamplePointDeleteRequest = {
-   2. dataType: healthStore.samplePointHelper.bodyTemperature.DATA_TYPE,
-   3. startTime: 1698633801000,
-   4. endTime: 1698633801000
-   5. }
+   ```typescript
+   let samplePointDeleteRequest: healthStore.SamplePointDeleteRequest = {
+     dataType: healthStore.samplePointHelper.bodyTemperature.DATA_TYPE,
+     startTime: 1698633801000,
+     endTime: 1698633801000
+   }
    ```
 3. 调用[deleteData](../harmonyos-references/health-api-healthstore.md#healthstoredeletedata-3)方法执行删除请求，并处理返回结果。
 
-   ```
-   1. try {
-   2. await healthStore.deleteData(samplePointDeleteRequest);
-   3. hilog.info(0x0000, 'testTag', 'Succeeded in deleting data.');
-   4. } catch (err) {
-   5. hilog.error(0x0000, 'testTag', `Failed to delete data. Code: ${err.code}, message: ${err.message}`);
-   6. }
+   ```typescript
+   try {
+     await healthStore.deleteData(samplePointDeleteRequest);
+     hilog.info(0x0000, 'testTag', 'Succeeded in deleting data.');
+   } catch (err) {
+     hilog.error(0x0000, 'testTag', `Failed to delete data. Code: ${err.code}, message: ${err.message}`);
+   }
    ```
 
 ### 聚合查询
 
 1. 导入运动健康服务功能模块及相关公共模块。
 
-   ```
-   1. import { healthStore } from '@kit.HealthServiceKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { healthStore } from '@kit.HealthServiceKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 创建聚合查询请求。
 
-   ```
-   1. let aggregateRequest: healthStore.AggregateRequest<healthStore.samplePointHelper.dailyActivities.AggregateFields> = {
-   2. dataType: healthStore.samplePointHelper.dailyActivities.DATA_TYPE,
-   3. metrics: {
-   4. step: ['sum'],
-   5. calorie: ['sum'],
-   6. distance: ['sum'],
-   7. climbHighAltitude:['sum'],
-   8. isIntensity: ['sum'],
-   9. isStand: ['sum']
-   10. },
-   11. groupBy: {
-   12. unitType: healthStore.GroupUnitType.DAY
-   13. },
-   14. startLocalDate: '10/30/2023',
-   15. endLocalDate: '10/30/2023'
-   16. }
+   ```typescript
+   let aggregateRequest: healthStore.AggregateRequest<healthStore.samplePointHelper.dailyActivities.AggregateFields> = {
+     dataType: healthStore.samplePointHelper.dailyActivities.DATA_TYPE,
+     metrics: {
+       step: ['sum'],
+       calorie: ['sum'],
+       distance: ['sum'],
+       climbHighAltitude:['sum'],
+       isIntensity: ['sum'],
+       isStand: ['sum']
+    },
+     groupBy: {
+       unitType: healthStore.GroupUnitType.DAY
+     },
+     startLocalDate: '10/30/2023',
+     endLocalDate: '10/30/2023'
+   }
    ```
 3. 调用[aggregateData](../harmonyos-references/health-api-healthstore.md#healthstoreaggregatedata)方法执行查询请求，并处理返回结果。
 
-   ```
-   1. try {
-   2. const aggregateResults = await healthStore.aggregateData<healthStore.samplePointHelper.dailyActivities.AggregateResult>(aggregateRequest);
-   3. hilog.info(0x0000, 'testTag', 'Succeeded in reading data.');
-   4. aggregateResults.forEach((aggregateResult) => {
-   5. hilog.info(0x0000, 'testTag', `the start time is ${aggregateResult.startTime}.`);
-   6. hilog.info(0x0000, 'testTag', `the end time is ${aggregateResult.endTime}.`);
-   7. Object.keys(aggregateResult.fields).forEach((fieldName) => {
-   8. hilog.info(0x0000, 'testTag', `the sum of ${fieldName} is ${aggregateResult.fields[fieldName].sum}.`);
-   9. });
-   10. });
-   11. } catch (err) {
-   12. hilog.error(0x0000, 'testTag', `Failed to read data. Code: ${err.code}, message: ${err.message}`);
-   13. }
+   ```typescript
+   try {
+     const aggregateResults = await healthStore.aggregateData<healthStore.samplePointHelper.dailyActivities.AggregateResult>(aggregateRequest);
+     hilog.info(0x0000, 'testTag', 'Succeeded in reading data.');
+     aggregateResults.forEach((aggregateResult) => {
+       hilog.info(0x0000, 'testTag', `the start time is ${aggregateResult.startTime}.`);
+       hilog.info(0x0000, 'testTag', `the end time is ${aggregateResult.endTime}.`);
+       Object.keys(aggregateResult.fields).forEach((fieldName) => {
+         hilog.info(0x0000, 'testTag', `the sum of ${fieldName} is ${aggregateResult.fields[fieldName].sum}.`);
+       });
+     });
+   } catch (err) {
+     hilog.error(0x0000, 'testTag', `Failed to read data. Code: ${err.code}, message: ${err.message}`);
+   }
    ```

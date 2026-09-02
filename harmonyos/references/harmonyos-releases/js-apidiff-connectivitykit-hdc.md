@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-connectivitykit-hdc
 title: Connectivity Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Developer Beta1引入的API > Connectivity Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Developer Beta1引入的API > Connectivity Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:36:59+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:51+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:808efab372536cce121f27ec9979fa7f9415101b8908b5f4d9527f0ca10e34d7
 ---
 

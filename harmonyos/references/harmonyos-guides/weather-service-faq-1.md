@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/weather-service-faq-1
-title: 如何获取指定城市的天气数据？
-breadcrumb: 指南 > 应用服务 > Weather Service Kit（天气服务） > Weather Service Kit 常见问题 > 如何获取指定城市的天气数据？
+title: 如何获取指定城市的天气数据
+breadcrumb: 指南 > 应用服务 > Weather Service Kit（天气服务） > Weather Service Kit 常见问题 > 如何获取指定城市的天气数据
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:13+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:17:50+08:00
+doc_updated_at: 2026-04-28
 content_hash: sha256:6a8b3de0ee851313d7ed925643e311a96a5e8ac6dffbf915f1fc666e7f595c4f
 ---
 

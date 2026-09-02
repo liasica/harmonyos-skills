@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-net-
 title: net_http.h
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 头文件 > net_http.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:34+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:1fee0719477870f04b617706d87d0b712b6eb149520744edf89e716737976e0c
+scraped_at: 2026-09-02T15:01:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e13d4ed7b3695f843ae096b806d04d0263cfbe732c20489069506d60a446f097
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义HTTP请求模块的接口。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -46,21 +40,17 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Http\_CreateHeaders()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Http_Headers *OH_Http_CreateHeaders(void)
+```c
+Http_Headers *OH_Http_CreateHeaders(void)
 ```
 
 **描述**
 
 创建HTTP请求或者响应的头。
 
-说明
+**说明** 
 
 建议在本次HTTP请求结束后，及时调用[OH\_Http\_DestroyHeaders](capi-net-http-h.md#oh_http_destroyheaders)销毁HTTP请求或者响应的头，执行资源清理等操作。
 
@@ -76,10 +66,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Http\_DestroyHeaders()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Http_DestroyHeaders(Http_Headers **headers)
+```c
+void OH_Http_DestroyHeaders(Http_Headers **headers)
 ```
 
 **描述**
@@ -98,10 +86,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Http\_SetHeaderValue()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. uint32_t OH_Http_SetHeaderValue(struct Http_Headers *headers, const char *name, const char *value)
+```c
+uint32_t OH_Http_SetHeaderValue(struct Http_Headers *headers, const char *name, const char *value)
 ```
 
 **描述**
@@ -128,10 +114,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Http\_GetHeaderValue()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Http_HeaderValue *OH_Http_GetHeaderValue(Http_Headers *headers, const char *name)
+```c
+Http_HeaderValue *OH_Http_GetHeaderValue(Http_Headers *headers, const char *name)
 ```
 
 **描述**
@@ -157,10 +141,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Http\_GetHeaderEntries()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Http_HeaderEntry *OH_Http_GetHeaderEntries(Http_Headers *headers)
+```c
+Http_HeaderEntry *OH_Http_GetHeaderEntries(Http_Headers *headers)
 ```
 
 **描述**
@@ -185,10 +167,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Http\_DestroyHeaderEntries()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Http_DestroyHeaderEntries(Http_HeaderEntry **headerEntry)
+```c
+void OH_Http_DestroyHeaderEntries(Http_HeaderEntry **headerEntry)
 ```
 
 **描述**
@@ -207,10 +187,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Http\_CreateRequest()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Http_Request *OH_Http_CreateRequest(const char *url)
+```c
+Http_Request *OH_Http_CreateRequest(const char *url)
 ```
 
 **描述**
@@ -235,17 +213,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Http\_Request()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Http_Request(Http_Request *request, Http_ResponseCallback callback, Http_EventsHandler handler)
+```c
+int OH_Http_Request(Http_Request *request, Http_ResponseCallback callback, Http_EventsHandler handler)
 ```
 
 **描述**
 
 发起HTTP请求。
 
-说明
+**说明** 
 
 建议在本次HTTP请求收到响应并处理完毕后，及时调用[OH\_Http\_Destroy](capi-net-http-h.md#oh_http_destroy)中断HTTP请求。
 
@@ -271,10 +247,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Http\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Http_Destroy(struct Http_Request **request)
+```c
+void OH_Http_Destroy(struct Http_Request **request)
 ```
 
 **描述**

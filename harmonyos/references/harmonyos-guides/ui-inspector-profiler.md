@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-inspector-
 title: UI调优
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI调优
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:59+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:a2a2ff913a0fbddc8bad46f088d9d93a37819c72485d1b1c9a6f1d18235a4de4
+scraped_at: 2026-09-02T14:59:21+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:20e3a4ceb84289dd7a8cf418da6fb483cf887baf23e9649d959fcd055fc08b59
 ---
 
 本章节主要介绍UI的dump和调优能力，用于提高开发效率和优化开发者体验。
@@ -18,63 +18,68 @@ content_hash: sha256:a2a2ff913a0fbddc8bad46f088d9d93a37819c72485d1b1c9a6f1d18235
 
 状态管理接入[hidumper](hidumper.md)，支持通过-jsdump获取状态变量关联的组件、自定义组件树等信息，方便开发者了解状态变量影响的UI范围，写出高性能应用代码。
 
-下面介绍dump状态变量每个参数的含义：
+下面介绍-jsdump每个参数的含义：
 
-* jsdump：请求状态管理中的dump信息。
-* viewHierarchy：打印自定义组件树信息，默认只打印根自定义组件。
-* r：递归从根节点打印，自定义组件和其拥有组件的elementId。默认值打印根节点信息。
-* viewId：打印指定viewId的自定义组件的信息。
-* stateVariable：打印状态变量及关联的组件和同步对象的信息。当前命令不支持r递归dump。
-* registeredElementIds：打印当前自定义组件拥有的elementId。
+* -viewHierarchy：打印自定义组件树信息，默认只打印根自定义组件。
+* -stateVariable：打印状态变量及关联的组件和同步对象的信息。不支持-r递归dump。
+* -registeredElementIds：打印当前自定义组件拥有的elementId。
+* -inactiveComponents：[组件冻结](arkts-custom-components-freeze.md)场景下非激活的组件列表。
+* -dumpAll：打印自定义组件树、状态变量和自定义组件的子组件和脏节点列表。
+* -h：打印帮助信息。
+
+除上述命令外，开发者可以额外输入以下命令选择递归打印或指定打印某一个组件id的信息，如果没有指定，则默认打印页面的根节点的信息。
+
+* -r：递归从根节点打印，自定义组件和其拥有组件的elementId。默认值打印根节点信息。
+* -viewId：打印指定viewId的自定义组件的信息。
 
 具体例子如下：
 
 下面的例子为嵌套两层子组件的典型示例，使用了装饰器[@State](arkts-state.md)和 [@Link](arkts-link.md)。开发者可组合使用上述命令，展示前端组件树、状态变量和其影响的组件等信息。
 
-```
-1. @Entry
-2. @Component
-3. struct Page {
-4. @State message: string = 'hello world';
+```typescript
+@Entry
+@Component
+struct Page {
+  @State message: string = 'hello world';
 
-6. build() {
-7. Column() {
-8. Text('Parent:' + this.message).fontSize(20).onClick(() => {
-9. this.message += '1';
-10. })
-11. Child({ message: this.message })
-12. }
-13. }
-14. }
+  build() {
+    Column() {
+      Text('Parent:' + this.message).fontSize(20).onClick(() => {
+        this.message += '1';
+      })
+      Child({ message: this.message })
+    }
+  }
+}
 
-16. @Component
-17. struct Child {
-18. @Link message: string;
+@Component
+struct Child {
+  @Link message: string;
 
-20. build() {
-21. Column() {
-22. Text('Child:' + this.message).fontSize(20)
-23. GrandChild({ message: this.message })
-24. }
-25. }
-26. }
+  build() {
+    Column() {
+      Text('Child:' + this.message).fontSize(20)
+      GrandChild({ message: this.message })
+    }
+  }
+}
 
-28. @Component
-29. struct GrandChild {
-30. @Link message: string;
+@Component
+struct GrandChild {
+  @Link message: string;
 
-32. build() {
-33. Column() {
-34. Text('GrandChild: ' + this.message).fontSize(20)
-35. }
-36. }
-37. }
+  build() {
+    Column() {
+      Text('GrandChild: ' + this.message).fontSize(20)
+    }
+  }
+}
 ```
 
 步骤1：获取当前激活窗口的id。
 
-```
-1. hdc shell hidumper -s WindowManagerService -a '-a'
+```shell
+hdc shell hidumper -s WindowManagerService -a '-a'
 ```
 
 步骤2：执行打印状态变量dump信息的命令。
@@ -83,8 +88,8 @@ content_hash: sha256:a2a2ff913a0fbddc8bad46f088d9d93a37819c72485d1b1c9a6f1d18235
 
 * 命令1：递归打印所有自定义组件和根节点的状态变量信息：
 
-  ```
-  1. hdc shell hidumper -s WindowManagerService -a '-w 90 -jsdump -dumpAll -r'
+  ```shell
+  hdc shell hidumper -s WindowManagerService -a '-w 90 -jsdump -dumpAll -r'
   ```
 
   执行上述命令后，dump信息代表的含义如下：
@@ -93,7 +98,7 @@ content_hash: sha256:a2a2ff913a0fbddc8bad46f088d9d93a37819c72485d1b1c9a6f1d18235
   + View Hierarchy：前端自定义组件树结构信息。
   + State variables：根节点状态变量。从下面的信息可以看到Page下有状态变量@State 'message'[0]的具体信息：
     - [0]代表状态变量id。
-    - Owned by @Component 'Page'[4]：当前状态变量属于组件'Page'[4],[4]为自定义组件id。
+    - Owned by @Component 'Page'[4]：当前状态变量属于组件'Page'[4]，[4]为自定义组件id。
     - Sync peers：当前状态变量的同步对象，即@State message改变会通知@Link 'message'[-1] <@Component 'Child'[7]>刷新。
     - dependencies：
       * variable assignment affects elmtIds：状态变量改变会触发的组件的刷新。例如，@State message的改变会触发Text[6]的刷新。
@@ -101,99 +106,101 @@ content_hash: sha256:a2a2ff913a0fbddc8bad46f088d9d93a37819c72485d1b1c9a6f1d18235
   + Registered Element IDs：自定义组件和build()方法下声明的组件。
   + Dirty Registered Element IDs：自定义组件下未更新的脏节点列表。状态变量变化后，会标记其关联节点为脏节点，并请求在下一帧更新。在下一帧中更新脏节点并清空脏节点列表。手动执行dump时，Dirty Registered Element IDs通常为空。因为以目前大多数设备的帧间隔，开发者难以在两帧之间dump出脏节点列表。
 
-  ```
-  1. --------------------ViewPUInfo--------------------
-  2. [-dumpAll, viewId=4, isRecursive=true]
+  输出结果：
 
-  4. @Component
-  5. Page[4]
+  ```text
+  --------------------ViewPUInfo--------------------
+  [-dumpAll, viewId=4, isRecursive=true]
 
-  7. View Hierarchy:
+  @Component
+  Page[4]
 
-  9. |--Page[4]ViewPU {isViewActive: true, isDeleting_: false}
-  10. |--Child[7]ViewPU {isViewActive: true, isDeleting_: false}
-  11. |--GrandChild[10]ViewPU {isViewActive: true, isDeleting_: false}
+  View Hierarchy:
 
-  13. State variables:
-  14. |--Page[4]
-  15. @State 'message'[0]
-  16. |--Owned by @Component 'Page'[4]
-  17. |--Sync peers: {
-  18. @Link 'message'[-1] <@Component 'Child'[7]>
-  19. }
-  20. dependencies: variable assignment affects elmtIds: Text[6]
-  21. |--Dependent elements: Text[6]; @Component 'Child'[7], Text[9]; @Component 'GrandChild'[10], Text[12]
+  |--Page[4]ViewPU {isViewActive: true, isDeleting_: false}
+    |--Child[7]ViewPU {isViewActive: true, isDeleting_: false}
+      |--GrandChild[10]ViewPU {isViewActive: true, isDeleting_: false}
 
-  23. Registered Element IDs:
+  State variables:
+  |--Page[4]
+    @State 'message'[0]
+    |--Owned by @Component 'Page'[4]
+    |--Sync peers: {
+      @Link 'message'[-1] <@Component 'Child'[7]>
+    }
+    dependencies: variable assignment affects elmtIds: Text[6]
+    |--Dependent elements: Text[6]; @Component 'Child'[7], Text[9]; @Component 'GrandChild'[10], Text[12]
 
-  25. |--Page[4]: {
-  26. Column[5]
-  27. Text[6]
-  28. Child[7]
-  29. }[3]
-  30. |--Child[7]: {
-  31. Column[8]
-  32. Text[9]
-  33. GrandChild[10]
-  34. }[3]
-  35. |--GrandChild[10]: {
-  36. Column[11]
-  37. Text[12]
-  38. }[2]
-  39. Total: 8
+  Registered Element IDs:
 
-  41. Dirty Registered Element IDs:
+  |--Page[4]: {
+      Column[5]
+      Text[6]
+      Child[7]
+    }[3]
+    |--Child[7]: {
+        Column[8]
+        Text[9]
+        GrandChild[10]
+      }[3]
+      |--GrandChild[10]: {
+          Column[11]
+          Text[12]
+        }[2]
+  Total: 8
 
-  43. |--Page[4]: {
-  44. }[0]
-  45. |--Child[7]: {
-  46. }[0]
-  47. |--GrandChild[10]: {
-  48. }[0]
-  49. Total: 0
+  Dirty Registered Element IDs:
+
+  |--Page[4]: {
+    }[0]
+    |--Child[7]: {
+      }[0]
+      |--GrandChild[10]: {
+        }[0]
+  Total: 0
   ```
 * 命令2：打印指定自定义组件的状态变量信息。例如，dump组件id为7的状态变量，可执行如下命令：
 
+  ```shell
+  hdc shell hidumper -s WindowManagerService -a '-w 90 -jsdump -dumpAll -viewId=7'
   ```
-  1. hdc shell hidumper -s WindowManagerService -a '-w 90 -jsdump -dumpAll -viewId=7'
-  ```
 
-  输出信息如下。
+  输出结果：
 
-  ```
-  1. --------------------ViewPUInfo--------------------
-  2. [-dumpAll, viewId=7, isRecursive=false]
+  ```text
+  --------------------ViewPUInfo--------------------
+  [-dumpAll, viewId=7, isRecursive=false]
 
-  4. @Component
-  5. Child[7]
+  @Component
+  Child[7]
 
-  7. View Hierarchy:
+  View Hierarchy:
 
-  9. |--Child[7]ViewPU {isViewActive: true, isDeleting_: false}
-  10. |--GrandChild[10]ViewPU {isViewActive: true, isDeleting_: false}
+  |--Child[7]ViewPU {isViewActive: true, isDeleting_: false}
+    |--GrandChild[10]ViewPU {isViewActive: true, isDeleting_: false}
 
-  12. State variables:
-  13. |--Child[7]
-  14. @Link 'message'[-1]
-  15. |--Owned by @Component 'Child'[7]
-  16. |--Sync peers: {
-  17. @Link 'message'[-2] <@Component 'GrandChild'[10]>
-  18. }
-  19. dependencies: variable assignment affects elmtIds: Text[9]
-  20. |--Dependent elements: Text[9]; @Component 'GrandChild'[10], Text[12]
+  State variables:
+  |--Child[7]
+    @Link 'message'[-1]
+    |--Owned by @Component 'Child'[7]
+    |--Sync peers: {
+      @Link 'message'[-2] <@Component 'GrandChild'[10]>
+    }
+    dependencies: variable assignment affects elmtIds: Text[9]
+    |--Dependent elements: Text[9]; @Component 'GrandChild'[10], Text[12]
 
-  22. Registered Element IDs:
+  Registered Element IDs:
 
-  24. |--Child[7]: {
-  25. Column[8]
-  26. Text[9]
-  27. GrandChild[10]
-  28. }[3]
+  |--Child[7]: {
+      Column[8]
+      Text[9]
+      GrandChild[10]
+    }[3]
 
-  30. Dirty Registered Element IDs:
+  Dirty Registered Element IDs:
 
-  32. |--Child[7]: {
-  33. }[0]
+  |--Child[7]: {
+    }[0]
   ```
 
 ### 状态管理Profiler调优能力
@@ -219,15 +226,15 @@ DevEco Studio的Profiler工具可抓取状态变量的变化打点。在Profiler
 
 **图1** 录制ArkUI State泳道流程示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/CeqAY5lWSMeCHBKlDdBrDQ/zh-cn_image_0000002558764652.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/b4PWcvEGRkek9uAb9h58fw/zh-cn_image_0000002706674056.gif)
 
 步骤3：选中状态变量变化的打点，将显示当前状态变量更新触发了哪些组件的刷新，以及对应组件的创建、测量和布局的耗时。
 
 **图2** ArkUI State泳道图示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/zg4gCtb8QFCu_90HWYsc9g/zh-cn_image_0000002558604996.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/1Ff1gsDSTmy1nQcdV6Gd7Q/zh-cn_image_0000002736433147.png)
 
-说明
+**说明** 
 
 由于隐私安全政策，已上架应用市场的应用不支持录制ArkUI State泳道。
 
@@ -248,9 +255,9 @@ DevEco Studio的ArkUI Inspector可以显示当前页面自定义组件内的状�
 
 **图3** ArkUI Inspector显示状态变量相关信息
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/Efqwvf8KQPaAkwDurVaZbw/zh-cn_image_0000002589324523.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/pWDYWhIRQjaesUHj8EDK-g/zh-cn_image_0000002706833992.png)
 
-说明
+**说明** 
 
 由于隐私安全政策，已上架应用市场的应用不支持使用ArkUI Inspector。
 

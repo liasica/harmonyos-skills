@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicedebug-t
 title: devicedebug工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > 命令行工具 > devicedebug工具
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:28+08:00
+scraped_at: 2026-09-02T14:59:42+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:30a451076a8f0dba65f2ee8acdbe21f6d6a8b8117a1f44de4c584f55bed5b9a9
+content_hash: sha256:717142a65d2cb3a78f322125c0c6fd412699b1f722b2482bb13da8b66ecea01b
 ---
 
 devicedebug工具向开发者提供对调试应用发送信号的能力，目前仅支持向AMS管理的debug类型的应用进程的pid发送signal信号，达到终止对应pid进程的能力。
 
-说明
+**说明** 
 
 在使用本工具前，开发者需要先获取hdc工具，执行hdc shell。
 
@@ -23,8 +23,8 @@ devicedebug工具向开发者提供对调试应用发送信号的能力，目前
 
 ## 帮助命令
 
-```
-1. devicedebug help
+```bash
+devicedebug help
 ```
 
 **表2** help命令列表
@@ -35,15 +35,15 @@ devicedebug工具向开发者提供对调试应用发送信号的能力，目前
 
 示例：
 
-```
-1. # 显示帮助信息。
-2. devicedebug help
+```bash
+# 显示帮助信息。
+devicedebug help
 ```
 
 ## 终止进程命令
 
-```
-1. devicedebug kill
+```bash
+devicedebug kill
 ```
 
 用于向debug类型的应用进程发送signal（1-64）信号，应用进程接收到信号后终止对应pid进程。
@@ -61,7 +61,7 @@ devicedebug工具向开发者提供对调试应用发送信号的能力，目前
 
 示例：
 
-```
-1. # 以终止12111进程，signal信号9为例。
-2. devicedebug kill -9 12111
+```bash
+# 以终止12111进程，signal信号9为例。
+devicedebug kill -9 12111
 ```

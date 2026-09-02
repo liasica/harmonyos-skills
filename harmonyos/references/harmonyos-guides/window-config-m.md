@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-config
 title: 窗口元数据配置
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口元数据配置
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:42+08:00
-doc_updated_at: 2026-03-20
-content_hash: sha256:5d25baa2aba9b9ba761ab3a90c69ce9e72494cd9653b1f54b456b36417cede0e
+scraped_at: 2026-09-02T14:49:54+08:00
+doc_updated_at: 2026-08-24
+content_hash: sha256:353a98905c2842387b416a5a636ebcfda4c86ccb835d48b90db3a2fb94fc740a
 ---
 
 ## metadata标签
@@ -34,72 +34,72 @@ content_hash: sha256:5d25baa2aba9b9ba761ab3a90c69ce9e72494cd9653b1f54b456b36417c
    * 该配置项仅在PC/2in1设备上生效。
    * 若使用[startOptions](../harmonyos-references/js-apis-app-ability-startoptions.md)的supportWindowModes属性，需要配置FULL\_SCREEN选项，此时使用metadata标签配置主窗口最大化启动生效，否则不生效。
    * 若使用[module.json5](module-configuration-file.md#abilities标签)的supportWindowMode属性，需要配置fullscreen选项，此时使用metadata标签配置主窗口最大化启动生效，否则不生效。
-   * 主窗显示设置优先级排序为：全屏显示 > 使用[startOptions](../harmonyos-references/js-apis-app-ability-startoptions.md)接口指定大小和位置 > 使用[setWindowRectAutoSave()](../harmonyos-references/arkts-apis-window-windowstage.md#setwindowrectautosave14)方法开启窗口尺寸记忆 > 使用metadata标签配置最大化 > 使用metadata标签配置大小和位置。全屏显示配置方法包括如下三种：
+   * 主窗口显示设置优先级排序为：全屏显示 > 使用[startOptions](../harmonyos-references/js-apis-app-ability-startoptions.md)接口指定大小和位置 > 使用[setWindowRectAutoSave()](../harmonyos-references/arkts-apis-window-windowstage.md#setwindowrectautosave14)方法开启窗口尺寸记忆 > 使用metadata标签配置最大化 > 使用metadata标签配置大小和位置。全屏显示配置方法包括如下三种：
      1. 使用[startOptions](../harmonyos-references/js-apis-app-ability-startoptions.md)的windowMode属性并将其配置为WINDOW\_MODE\_FULLSCREEN。
      2. 使用[startOptions](../harmonyos-references/js-apis-app-ability-startoptions.md)的supportWindowModes属性，且只配置FULL\_SCREEN选项。
      3. 使用[module.json5](module-configuration-file.md#abilities标签)的supportWindowMode属性，且只配置fullscreen选项。
-4. 使用metadata配置[自由多窗](../design-guides/pad-0000001823654157.md#section1768267204717)下的可支持窗口模式。配置项为：name为ohos.ability.window.supportWindowModeInFreeMultiWindow，value取值为：fullscreen（表示全屏模式）、split（表示分屏模式）、floating（表示悬浮窗模式）。value取值为字符串，可以配置多种模式，每个模式之间用逗号分隔开，不区分顺序，不添加空格，例如：fullscreen,split。仅在支持并处于[自由窗口](window-terminology.md#自由窗口)状态的设备上生效；在支持但不处于[自由窗口](window-terminology.md#自由窗口)状态的设备及不支持[自由窗口](window-terminology.md#自由窗口)状态的设备上配置不生效也不报错。
+4. 使用metadata配置[自由窗口](window-terminology.md#freeform-window自由窗口)下的可支持窗口模式。配置项为：name为ohos.ability.window.supportWindowModeInFreeMultiWindow，value取值为：fullscreen（表示全屏模式）、split（表示分屏模式）、floating（表示自由悬浮窗口模式）。value取值为字符串，可以配置多种模式，每个模式之间用逗号分隔开，不区分顺序，不添加空格，例如：fullscreen,split。仅在支持并处于[自由窗口](window-terminology.md#freeform-window自由窗口)状态的设备上生效；在支持但不处于[自由窗口](window-terminology.md#freeform-window自由窗口)状态的设备及不支持[自由窗口](window-terminology.md#freeform-window自由窗口)状态的设备上配置不生效也不报错。
 
-   自由多窗下的可支持窗口模式可以采用多种方法进行配置，配置优先级为：通过[SetSupportedWindowModes](../harmonyos-references/arkts-apis-window-windowstage.md#setsupportedwindowmodes15)接口配置 > 通过StartAbility配置[StartOption](../harmonyos-references/js-apis-app-ability-startoptions.md#startoptions)中的SupportWindowMode > 使用metadata配置 > 配置module.json5中[abilities](module-configuration-file.md#abilities标签)标签下的SupportWindowMode属性。
+   自由多窗下的可支持窗口模式可以采用多种方法进行配置，配置优先级为：通过[SetSupportedWindowModes](../harmonyos-references/arkts-apis-window-windowstage.md#setsupportedwindowmodes15)接口配置 > 通过StartAbility配置[StartOptions](../harmonyos-references/js-apis-app-ability-startoptions.md#startoptions)中的SupportWindowMode > 使用metadata配置 > 配置module.json5中[abilities](module-configuration-file.md#abilities标签)标签下的SupportWindowMode属性。
 
    非自由多窗模式下只能通过配置module.json5中abilities标签下的SupportWindowMode属性配置窗口支持模式，其他配置方式均不生效。
 
-```
-1. {
-2. "module": {
-3. "abilities": [{
-4. "metadata": [{
-5. "name": "ability_metadata",
-6. "value": "a test demo for ability",
-7. "resource": "$profile:config_file"
-8. },
-9. {
-10. "name": "ability_metadata_2",
-11. "value": "a string test",
-12. "resource": "$profile:config_file"
-13. },
-14. {
-15. "name": "ohos.ability.window.height",
-16. "value": "987"
-17. },
-18. {
-19. "name": "ohos.ability.window.width",
-20. "value": "1300"
-21. },
-22. {
-23. "name": "ohos.ability.window.left",
-24. "value": "right-50"
-25. },
-26. {
-27. "name": "ohos.ability.window.top",
-28. "value": "center+50"
-29. },
-30. {
-31. "name": "ohos.ability.window.isMaximize",
-32. "value": "true"
-33. },
-34. {
-35. "name": "enable.remove.starting.window",
-36. "value": "true"
-37. }
-38. {
-39. "name": "ohos.ability.window.supportWindowModeInFreeMultiWindow",
-40. "value": "fullscreen,split,floating",
-41. }],
-42. }],
+```json5
+{
+  "module": {
+    "abilities": [{
+      "metadata": [{
+        "name": "ability_metadata",
+        "value": "a test demo for ability",
+        "resource": "$profile:config_file"
+      },
+      {
+        "name": "ability_metadata_2",
+        "value": "a string test",
+        "resource": "$profile:config_file"
+      },
+      {
+        "name": "ohos.ability.window.height",
+        "value": "987"
+      },
+      {
+        "name": "ohos.ability.window.width",
+        "value": "1300"
+      },
+      {
+        "name": "ohos.ability.window.left",
+        "value": "right-50"
+      },
+      {
+        "name": "ohos.ability.window.top",
+        "value": "center+50"
+      },
+      {
+        "name": "ohos.ability.window.isMaximize",
+        "value": "true"
+      },
+      {
+        "name": "enable.remove.starting.window",
+        "value": "true"
+      },
+      {
+        "name": "ohos.ability.window.supportWindowModeInFreeMultiWindow",
+        "value": "fullscreen,split,floating",
+      }],
+    }],
 
-44. "extensionAbilities": [{
-45. "metadata": [{
-46. "name": "extensionAbility_metadata",
-47. "value": "a test for extensionAbility",
-48. "resource": "$profile:config_file"
-49. },
-50. {
-51. "name": "extensionAbility_metadata_2",
-52. "value": "a string test",
-53. "resource": "$profile:config_file"
-54. }],
-55. }]
-56. }
-57. }
+    "extensionAbilities": [{
+      "metadata": [{
+        "name": "extensionAbility_metadata",
+        "value": "a test for extensionAbility",
+        "resource": "$profile:config_file"
+      },
+      {
+        "name": "extensionAbility_metadata_2",
+        "value": "a string test",
+        "resource": "$profile:config_file"
+      }],
+    }]
+  }
+}
 ```

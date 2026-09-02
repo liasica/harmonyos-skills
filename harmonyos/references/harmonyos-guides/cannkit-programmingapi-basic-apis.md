@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-progr
 title: 基础API
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 基本概念 > 编程API > 基础API
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:27+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7e043858de9d4cd6c77929b9dc46d5f753b69d45823da1f0350893f09ea2241b
+scraped_at: 2026-09-02T14:50:35+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:5d481ff9b3ae73ead748f5e5af7e4b37e29021e5fe412872ba601fc47b5996f7
 ---
 
 ## 数据搬运
@@ -25,5 +25,5 @@ AscendC提供一组内存管理与同步控制API，开发者使用这一组API�
 
 * AllocTensor：从Queue中分配Tensor，Tensor所占大小为InitBuffer时设置的每块内存长度。
 * FreeTensor：释放Queue中的指定Tensor，供Queue后续使用。
-* EnQue：将Tensor push到队列Queue。
+* EnQue：将Tensor添加到队列Queue。
 * DeQue：将Tensor从队列Queue中取出，用于后续处理。

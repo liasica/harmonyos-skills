@@ -3,14 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (ProxyController)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (ProxyController)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:05+08:00
-doc_updated_at: 2026-04-17
-content_hash: sha256:f4fc5fc61daf49120489459a13f49e7de7ee87c5b78524644cee140474dc0a20
+scraped_at: 2026-09-02T15:01:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f2316e267884881e916c53a6554567fabef276553eaefa5b454b1bb3db4d54cd
 ---
 
-此类用于为应用程序设置代理。
+ProxyController是ArkWeb框架中用于管理应用中所有Web组件代理配置的静态类。通过ProxyController，开发者可以统一为应用中的所有Web请求设置或移除代理配置，适用于需要将Web流量路由到特定代理服务器的场景（如企业网络环境、内容过滤、流量监控等）。
 
-说明
+ProxyController提供两个核心方法：applyProxyOverride用于应用代理配置，接受一个[ProxyConfig](arkts-apis-webview-proxyconfig.md)对象和代理设置成功的回调函数；removeProxyOverride用于移除当前代理配置，恢复为默认网络连接方式。需要注意的是，代理设置或移除后不会立即生效，在加载页面之前需等待回调函数触发，该回调函数会在UI线程上被调用。
+
+**说明** 
 
 * 本模块首批接口从API version 9开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 本Class首批接口从API version 15开始支持。
@@ -18,19 +20,15 @@ content_hash: sha256:f4fc5fc61daf49120489459a13f49e7de7ee87c5b78524644cee140474d
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { webview } from '@kit.ArkWeb';
+```ts
+import { webview } from '@kit.ArkWeb';
 ```
 
 ## applyProxyOverride15+
 
-PhonePC/2in1TabletTVWearable
-
 static applyProxyOverride(proxyConfig: ProxyConfig, callback: OnProxyConfigChangeCallback): void
 
-设置应用中所有Web使用的代理配置，与[insertBypassRule](arkts-apis-webview-proxyconfig.md#insertbypassrule15)中插入的bypass规则匹配的URL将不会使用代理，而是直接向URL指定的源地址发起请求。代理设置成功后，不保证网络连接后会立即使用新的代理设置，在加载页面之前请等待监听器触发，这个监听器将在UI线程上被调用。
+设置应用中所有Web使用的代理配置，与[insertBypassRule](arkts-apis-webview-proxyconfig.md#insertbypassrule15)中插入的bypass规则匹配的URL将不会使用代理，而是直接向URL指定的源地址发起请求。代理设置成功后，不保证网络连接后会立即使用新的代理配置，在加载页面之前请等待回调函数触发，该回调函数将在UI线程上被调用。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -39,7 +37,7 @@ static applyProxyOverride(proxyConfig: ProxyConfig, callback: OnProxyConfigChang
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | proxyConfig | [ProxyConfig](arkts-apis-webview-proxyconfig.md) | 是 | 对代理的配置。 |
-| callback | [OnProxyConfigChangeCallback](arkts-apis-webview-t.md#onproxyconfigchangecallback15) | 是 | 代理设置成功的回调。 |
+| callback | [OnProxyConfigChangeCallback](arkts-apis-webview-t.md#onproxyconfigchangecallback15) | 是 | 代理配置变更的回调。 |
 
 **错误码：**
 
@@ -55,11 +53,9 @@ static applyProxyOverride(proxyConfig: ProxyConfig, callback: OnProxyConfigChang
 
 ## removeProxyOverride15+
 
-PhonePC/2in1TabletTVWearable
-
 static removeProxyOverride(callback: OnProxyConfigChangeCallback): void
 
-移除代理配置。移除代理配置后，不保证网络连接后会立即使用新的代理设置，在加载页面之前等待监听器，这个监听器将在UI线程上被调用。
+移除代理配置。移除代理配置后，不保证网络连接后会立即恢复为默认网络连接方式，在加载页面之前等待回调函数触发，该回调函数将在UI线程上被调用。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -79,85 +75,85 @@ static removeProxyOverride(callback: OnProxyConfigChangeCallback): void
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct WebComponent {
-8. controller: webview.WebviewController = new webview.WebviewController();
-9. proxyRules: webview.ProxyRule[] = [];
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  proxyRules: webview.ProxyRule[] = [];
 
-11. build() {
-12. Row() {
-13. Column() {
-14. Button("applyProxyOverride").onClick(()=>{
-15. let proxyConfig:webview.ProxyConfig = new webview.ProxyConfig();
-16. //优先使用第一个代理配置https://proxy.XXX.com
-17. //代理失败后会回落到直连服务器insertDirectRule
-18. try {
-19. proxyConfig.insertProxyRule("https://proxy.XXX.com", webview.ProxySchemeFilter.MATCH_ALL_SCHEMES);
-20. } catch (error) {
-21. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-22. }
-23. try {
-24. proxyConfig.insertDirectRule(webview.ProxySchemeFilter.MATCH_HTTP);
-25. } catch (error) {
-26. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-27. }
-28. try {
-29. proxyConfig.insertBypassRule("*.example.com");
-30. } catch (error) {
-31. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-32. }
-33. proxyConfig.clearImplicitRules();
-34. proxyConfig.bypassHostnamesWithoutPeriod();
-35. try {
-36. proxyConfig.enableReverseBypass(true);
-37. } catch (error) {
-38. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-39. }
-40. let bypassRules = proxyConfig.getBypassRules();
-41. for (let i = 0; i < bypassRules.length; i++) {
-42. console.info("bypassRules: " + bypassRules[i]);
-43. }
-44. this.proxyRules = proxyConfig.getProxyRules();
-45. for (let i = 0; i < this.proxyRules.length; i++) {
-46. console.info("SchemeFilter: " + this.proxyRules[i].getSchemeFilter());
-47. console.info("Url: " + this.proxyRules[i].getUrl());
-48. }
-49. let isReverseBypassRule = proxyConfig.isReverseBypassEnabled();
-50. console.info("isReverseBypassRules: " + isReverseBypassRule);
-51. try {
-52. webview.ProxyController.applyProxyOverride(proxyConfig, () => {
-53. console.info("PROXYCONTROLLER proxy changed");
-54. });
-55. } catch (error) {
-56. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-57. }
-58. })
-59. Button("loadUrl-https").onClick(()=>{
-60. this.controller.loadUrl("https://www.example.com")
-61. })
-62. Button("loadUrl-http").onClick(()=>{
-63. this.controller.loadUrl("http://www.example.com")
-64. })
-65. Button("removeProxyOverride").onClick(()=>{
-66. try {
-67. webview.ProxyController.removeProxyOverride(() => {
-68. console.info("PROXYCONTROLLER proxy changed");
-69. });
-70. } catch (error) {
-71. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-72. }
-73. })
-74. Web({ src: 'www.example.com', controller: this.controller})
-75. }
-76. .width('100%')
-77. }
-78. .height('100%')
-79. }
-80. }
+  build() {
+    Row() {
+      Column() {
+        Button("applyProxyOverride").onClick(()=>{
+          let proxyConfig:webview.ProxyConfig = new webview.ProxyConfig();
+          // 优先使用第一个代理配置https://proxy.XXX.com
+          // 代理失败后会回落到直连服务器insertDirectRule
+          try {
+            proxyConfig.insertProxyRule("https://proxy.XXX.com", webview.ProxySchemeFilter.MATCH_ALL_SCHEMES);
+          } catch (error) {
+            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+          }
+          try {
+            proxyConfig.insertDirectRule(webview.ProxySchemeFilter.MATCH_HTTP);
+          } catch (error) {
+            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+          }
+          try {
+            proxyConfig.insertBypassRule("*.example.com");
+          } catch (error) {
+            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+          }
+          proxyConfig.clearImplicitRules();
+          proxyConfig.bypassHostnamesWithoutPeriod();
+          try {
+            proxyConfig.enableReverseBypass(true);
+          } catch (error) {
+            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+          }
+          let bypassRules = proxyConfig.getBypassRules();
+          for (let i = 0; i < bypassRules.length; i++) {
+            console.info("bypassRules: " + bypassRules[i]);
+          }
+          this.proxyRules = proxyConfig.getProxyRules();
+          for (let i = 0; i < this.proxyRules.length; i++) {
+            console.info("SchemeFilter: " + this.proxyRules[i].getSchemeFilter());
+            console.info("Url: " + this.proxyRules[i].getUrl());
+          }
+          let isReverseBypassRule = proxyConfig.isReverseBypassEnabled();
+          console.info("isReverseBypassRules: " + isReverseBypassRule);
+          try {
+            webview.ProxyController.applyProxyOverride(proxyConfig, () => {
+              console.info("PROXYCONTROLLER proxy changed");
+            });
+          } catch (error) {
+            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+          }
+        })
+        Button("loadUrl-https").onClick(()=>{
+          this.controller.loadUrl("https://www.example.com")
+        })
+        Button("loadUrl-http").onClick(()=>{
+          this.controller.loadUrl("http://www.example.com")
+        })
+        Button("removeProxyOverride").onClick(()=>{
+          try {
+            webview.ProxyController.removeProxyOverride(() => {
+            console.info("PROXYCONTROLLER proxy changed");
+          });
+          } catch (error) {
+            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+          }
+        })
+        Web({ src: 'www.example.com', controller: this.controller})
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```

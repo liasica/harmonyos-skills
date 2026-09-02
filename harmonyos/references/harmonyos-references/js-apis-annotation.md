@@ -3,32 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.annotation (注解)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 其他 > @ohos.annotation (注解)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:39+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ce184aa9528122998bdeec831d5d59302ff7b262bebd9ec9f5d25216086b7ba5
+scraped_at: 2026-09-02T15:02:04+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6e436e7524a1c9fcea3c09f50c29b31c785e6ccc12623bc6bbf1d59efefe0118
 ---
 
-本模块定义了HarmonyOS ArkTS API的注解类型，如生命周期最小可用版本等。
+本模块定义了HarmonyOS ArkTS API的注解类型，如生命周期最小可用版本、API告警屏蔽等，用于帮助开发者标识和管理API的兼容性、告警抑制等特性。该模块解决了开发者在跨版本开发、第三方SDK集成等场景中遇到的版本兼容性告警、权限告警、多设备适配告警等问题，通过注解方式抑制不必要的告警干扰，提高代码的可维护性和开发效率。
 
-说明
+**说明** 
 
-* 本模块首批接口从 API version 22 开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+* 本模块首批接口从 API version 22 开始支持。后续版本的新增接口，采用上角标单独标记起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
-```
-1. import { Available, SuppressWarnings, SuppressWarningsType } from '@kit.BasicServicesKit';
+```typescript
+import { Available, SuppressWarnings, SuppressWarningsType } from '@kit.BasicServicesKit';
 ```
 
 ## Available
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 @interface Available { minApiVersion: string = '' }
 
-系统提供的API注解能力，可用于标记API支持的最低可用版本。此注解可以标注在类、接口、变量、类型、模块、枚举上。在源码定义处添加注解后，编译工具会在使用处检查潜在的兼容性问题。当minApiVersion大于build-profile.json5中指定的compatibleSDKVersion字段，会生成兼容性警告。
+提供API注解能力，用于标记API支持的最低可用版本。此注解可以标注在类、接口、函数、变量、类型、模块、枚举上。在源码定义处添加注解后，编译工具会在使用处检查潜在的兼容性问题。当minApiVersion大于build-profile.json5中指定的compatibleSdkVersion字段，会生成兼容性警告。
 
 **卡片能力：** 从API version 22开始，该接口支持在ArkTS卡片中使用。
 
@@ -44,35 +40,33 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 **示例：**
 
-```
-1. import { Available, deviceInfo } from '@kit.BasicServicesKit';
+```typescript
+import { Available, deviceInfo } from '@kit.BasicServicesKit';
 
-3. @Available({minApiVersion: 'HarmonyOS 6.0.2'}) // 标记函数最低可用版本
-4. function myFunc() {}
+@Available({minApiVersion: 'HarmonyOS 6.0.2'}) // 标记函数最低可用版本
+function myFunc() {}
 
-6. @Available({minApiVersion: 'HarmonyOS 6.0.2'}) // 标记类最低可用版本
-7. class MyClass {}
+@Available({minApiVersion: 'HarmonyOS 6.0.2'}) // 标记类最低可用版本
+class MyClass {}
 
-9. // 不建议写法：如果工程根目录下build-profile.json5文件设置的compatibleSdkVersion值小于 6.0.2，直接调用myFunc方法且没有做版本判断处理，编译器会在myFunc方法调用处抛出告警，提示该方法可能在低版本设备上运行失败
-10. myFunc();
+// 不建议写法：如果工程根目录下build-profile.json5文件设置的compatibleSdkVersion值小于 6.0.2，直接调用myFunc方法且没有做版本判断处理，编译器会在myFunc方法调用处抛出告警，提示该方法可能在低版本设备上运行失败
+myFunc();
 
-12. // 建议写法1：使用deviceInfo.distributionOSApiVersion获取发行版系统API版本进行判断，可以避免低版本设备运行异常，消除编译告警
-13. if (deviceInfo.distributionOSApiVersion >= 60002) {
-14. myFunc();
-15. } else {
-16. // 根据业务逻辑选择低版本可用方法
-17. }
+// 建议写法1：使用deviceInfo.distributionOSApiVersion获取发行版系统API版本进行判断，可以避免低版本设备运行异常，消除编译告警
+if (deviceInfo.distributionOSApiVersion >= 60002) {
+  myFunc();
+} else {
+  // 根据业务逻辑选择低版本可用方法
+}
 
-19. // 建议写法2：在myFunc调用处的父级函数（或类）上，标记@Available起始版本信息，当新标记的版本号不低于 myFunc的最低可用版本, 消除编译告警
-20. @Available({minApiVersion: 'HarmonyOS 6.0.2'})
-21. function myNewFunc() {
-22. myFunc();
-23. }
+// 建议写法2：在myFunc调用处的父级函数（或类）上，标记@Available起始版本信息，当新标记的版本号不低于 myFunc的最低可用版本, 消除编译告警
+@Available({minApiVersion: 'HarmonyOS 6.0.2'})
+function myNewFunc() {
+  myFunc();
+}
 ```
 
 ## SuppressWarnings23+
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 @interface SuppressWarnings {
 
@@ -80,7 +74,7 @@ rules: Array<SuppressWarningsType>;
 
 }
 
-系统提供的API告警屏蔽功能，允许开发者通过注解的方式来抑制API调用时产生的告警。该功能可应用于类、函数、变量、类型、接口等API元素上。在源码中添加相应标注后，编译器会根据预设规则自动屏蔽对应的告警信息。
+系统提供的API告警屏蔽功能，允许开发者通过注解的方式抑制API调用时产生的告警。该功能可应用于类、函数、变量、类型、接口等API元素上。在源码中添加相应标注后，编译器会根据预设规则自动屏蔽对应的告警信息。适用于需要在特定场景下暂时忽略某些告警、避免编译器产生干扰性警告的情况，帮助开发者专注于关键问题，提高开发效率。
 
 **卡片能力：** 从API version 23开始，该接口支持在ArkTS卡片中使用。
 
@@ -92,58 +86,111 @@ rules: Array<SuppressWarningsType>;
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| rules | Array<[SuppressWarningsType](js-apis-annotation.md#suppresswarningstype23)> | 否 | 否 | 支持告警消除的规则集合 |
+| rules | Array<[SuppressWarningsType](js-apis-annotation.md#suppresswarningstype23)> | 否 | 否 | 支持告警消除的规则集合，用于指定需要抑制的告警类型。可通过数组传入多个规则同时抑制多种告警。可选取值参见[SuppressWarningsType](js-apis-annotation.md#suppresswarningstype23)。 |
 
 **注解使用示例：**
 
-预置条件：工程根目录下build-profile.json5文件设置的compatibleSdkVersion值为20。
+兼容性告警消除预置条件：HarmonyOS工程根目录下build-profile.json5文件设置的compatibleSdkVersion值为6.0.0(20)。
 
-```
-1. import { Available, SuppressWarnings, SuppressWarningsType } from '@kit.BasicServicesKit';
-2. import { wifiManager } from '@kit.ConnectivityKit';
-3. wifiManager.startScan();  // 该接口起始版本为21，直接调用会生成兼容性告警。
-4. // The 'startScan' API is supported since SDK version 21. However, the current compatible SDK version is 20.
+权限告警消除预置条件：module.json5配置文件的requestPermissions标签中没有申请权限。
 
-6. @SuppressWarnings({rules: [SuppressWarningsType.COMPATIBILITY]})
-7. function myFunc() {
-8. wifiManager.startScan(); // 使用@SuppressWarnings注解后，告警被抑制。
-9. }
+**说明** 
 
-11. @SuppressWarnings({rules: [SuppressWarningsType.COMPATIBILITY]})
-12. class MyClass {
-13. wifiScanResult = wifiManager.startScan(); // 使用@SuppressWarnings注解后，告警被抑制。
-14. }
+用于容器节点时，会屏蔽节点下子节点产生的告警。
+
+重复规则屏蔽时，仅生效代码位置上距离最近且符合规则的屏蔽类型。当多个不同类型的抑制实例同时存在时，各类型独立生效。
+
+```typescript
+import { SuppressWarnings, SuppressWarningsType, systemDateTime } from '@kit.BasicServicesKit';
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
+import { common } from '@kit.AbilityKit';
+// 兼容性告警消除部分
+systemDateTime.getAutoTimeStatus();  // 该接口起始版本为21，直接调用会生成兼容性告警。
+// The 'getAutoTimeStatus' API is supported since SDK version 21. However, the current compatible SDK version is 20.
+
+@SuppressWarnings({rules: [SuppressWarningsType.COMPATIBILITY]})
+function myFunc() {
+  systemDateTime.getAutoTimeStatus(); // 使用@SuppressWarnings注解后，兼容性告警被抑制。用于myFunc()容器节点时，子节点的兼容性告警也被抑制。
+}
+
+@SuppressWarnings({rules: [SuppressWarningsType.COMPATIBILITY]})
+class MyClass {
+  status = systemDateTime.getAutoTimeStatus(); // 使用@SuppressWarnings注解后，兼容性告警被抑制。
+}
+
+// 权限告警消除部分
+async function savePhotoToGallery(context: common.UIAbilityContext) {
+  let helper = photoAccessHelper.getPhotoAccessHelper(context);
+  let uri = await helper.createAsset(photoAccessHelper.PhotoType.IMAGE, 'jpg');
+  // To use this API, you need to apply for the permissions: ohos.permission.WRITE_IMAGEVIDEO
+}
+
+@SuppressWarnings({rules: [SuppressWarningsType.PERMISSION]})
+async function savePhotoToGallerySuppressCompatibility(context: common.UIAbilityContext) {
+  let helper = photoAccessHelper.getPhotoAccessHelper(context);
+  @SuppressWarnings({rules: [SuppressWarningsType.COMPATIBILITY]}) // 如果同时存在两种屏蔽内容，仅生效最近的抑制类型。（兼容性告警被抑制，权限告警仍然存在）
+  let uri = await helper.createAsset(photoAccessHelper.PhotoType.IMAGE, 'jpg'); // 使用@SuppressWarnings注解后，兼容性告警被抑制，权限告警仍然存在。
+}
+
+@SuppressWarnings({rules: [SuppressWarningsType.PERMISSION]})
+async function savePhotoToGallerySuppress(context: common.UIAbilityContext) {
+  let helper = photoAccessHelper.getPhotoAccessHelper(context);
+  let uri = await helper.createAsset(photoAccessHelper.PhotoType.IMAGE, 'jpg'); // 使用@SuppressWarnings注解后，权限告警被抑制。
+}
 ```
 
 // @SuppressWarnings <SuppressWarningsType>
 
-本功能支持以单行注释形式快速抑制告警。添加注释后，编译器将根据规则自动屏蔽对应的告警信息。
+本功能支持以单行注释形式快速抑制告警。在触发告警的代码行上方添加注释后，编译器将根据规则自动屏蔽对应的告警信息。注释中的标识符与SuppressWarningsType枚举值对应（如compatibility对应COMPATIBILITY），仅对紧随其后的代码行生效。
 
-说明
+**说明** 
 
 仅支持单行注释(//)格式，示例：// @SuppressWarnings compatibility
 
 不支持多行注释(/\*\*/)格式，示例：/\* @SuppressWarnings compatibility \*/
 
+不支持屏蔽容器节点下的子节点
+
 **注释使用示例：**
 
-预置条件：工程根目录下build-profile.json5文件设置的compatibleSdkVersion值为20。
+兼容性告警消除预置条件：HarmonyOS工程根目录下build-profile.json5文件设置的compatibleSdkVersion值为6.0.0(20)。
 
-```
-1. import { Available } from '@kit.BasicServicesKit';
-2. import { wifiManager } from '@kit.ConnectivityKit';
-3. wifiManager.startScan();  // 该接口起始版本为21，直接调用会生成兼容性告警。
-4. // The 'startScan' API is supported since SDK version 21. However, the current compatible SDK version is 20.
+权限告警消除预置条件：module.json5配置文件的requestPermissions标签中没有申请权限。
 
-6. // @SuppressWarnings compatibility
-7. wifiManager.startScan(); // 使用@SuppressWarnings注释后，告警被抑制。
+```typescript
+import { systemDateTime } from '@kit.BasicServicesKit';
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
+import { common } from '@kit.AbilityKit';
+// 兼容性告警消除部分
+systemDateTime.getAutoTimeStatus();  // 该接口起始版本为21，直接调用会生成兼容性告警。
+// The 'getAutoTimeStatus' API is supported since SDK version 21. However, the current compatible SDK version is 20.
+
+// @SuppressWarnings compatibility
+systemDateTime.getAutoTimeStatus();  // 使用@SuppressWarnings注释后，兼容性告警被抑制。
+
+// 权限告警消除部分
+async function savePhotoToGallery(context: common.UIAbilityContext) {
+  let helper = photoAccessHelper.getPhotoAccessHelper(context);
+  let uri = await helper.createAsset(photoAccessHelper.PhotoType.IMAGE, 'jpg');
+  // To use this API, you need to apply for the permissions: ohos.permission.WRITE_IMAGEVIDEO
+}
+// @SuppressWarnings permission
+async function savePhotoToGallerySuppressNoUse(context: common.UIAbilityContext) {
+  let helper = photoAccessHelper.getPhotoAccessHelper(context);
+  let uri = await helper.createAsset(photoAccessHelper.PhotoType.IMAGE, 'jpg'); // 使用注释后，容器内子节点的告警不支持消除，仍会产生告警
+  // To use this API, you need to apply for the permissions: ohos.permission.WRITE_IMAGEVIDEO
+}
+
+async function savePhotoToGallerySuppress(context: common.UIAbilityContext) {
+  let helper = photoAccessHelper.getPhotoAccessHelper(context);
+  // @SuppressWarnings permission
+  let uri = await helper.createAsset(photoAccessHelper.PhotoType.IMAGE, 'jpg'); // 使用@SuppressWarnings注释后，权限告警被抑制。
+}
 ```
 
 ## SuppressWarningsType23+
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
-支持消除告警的规则。
+支持消除告警的规则。帮助开发者根据实际需求选择性地屏蔽兼容性告警、多设备告警、权限告警等，在确保代码质量的同时减少不必要的告警干扰，提升开发体验。
 
 **卡片能力：** 从API version 23开始，该接口支持在ArkTS卡片中使用。
 
@@ -155,5 +202,6 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| COMPATIBILITY | compatibility | 支持消除兼容性告警。 |
-| SYSCAP | syscap | 支持消除多设备告警。 |
+| COMPATIBILITY | compatibility | 支持消除兼容性告警。当调用API的起始版本高于工程设置的兼容SDK版本时产生的告警。建议在已做版本判断或兼容性处理时使用，避免盲目抑制告警导致低版本设备运行异常。 |
+| SYSCAP | syscap | 支持消除多设备告警。当调用API的系统能力在目标设备上不支持时产生的告警。 |
+| PERMISSION | permission | 支持消除权限告警。当调用需要权限的API但未在配置文件中声明相应权限时产生的告警。  **起始版本：** 26.0.0 |

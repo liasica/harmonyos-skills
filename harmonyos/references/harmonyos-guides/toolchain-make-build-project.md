@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/toolchain-mak
 title: Make构建工程配置HarmonyOS编译工具链
 breadcrumb: 指南 > NDK开发 > 编译工具链 > Make构建工程配置HarmonyOS编译工具链
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:44:30+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:91f6a2942f06bec3cf0e6ad5effdb4e1bbcb6bdaaa6c667e43b552e4dcbc7de5
+scraped_at: 2026-09-02T14:50:47+08:00
+doc_updated_at: 2026-05-07
+content_hash: sha256:b4ad00506316a3466a6952a04e31230bddf68033cc247b11c1bc797d83579d60
 ---
 
 ## 概述
@@ -27,16 +27,16 @@ Makefile是Make工具的配置文件，用于描述项目的构建规则和依�
 1. Linux编译环境及HarmonyOS SDK下载请参考：[环境准备](toolchain-cmake-build-project.md#环境准备)。
 2. 获取三方库源码（“/mnt/e/make-makefile”中make-makefile表示创建的文件夹名称，用于存放三方库源码文件，开发者可自行选择创建与否）。
 
-   ```
-   1. owner@ubuntu:/mnt/e/make-makefile$ wget https://sourceforge.net/projects/bzip2/files/bzip2-1.0.6.tar.gz
+   ```bash
+   owner@ubuntu:/mnt/e/make-makefile$ wget https://sourceforge.net/projects/bzip2/files/bzip2-1.0.6.tar.gz
    ```
 3. 解压源码包。
 
-   ```
-   1. owner@ubuntu:/mnt/e/make-makefile$ tar -zxf bzip2-1.0.6.tar.gz                    # 解压源码包
-   2. owner@ubuntu:/mnt/e/make-makefile$
-   3. owner@ubuntu:/mnt/e/make-makefile$ cd bzip2-1.0.6/                                # 进入到bzip2源码目录
-   4. owner@ubuntu:/mnt/e/make-makefile/bzip2-1.0.6$
+   ```bash
+   owner@ubuntu:/mnt/e/make-makefile$ tar -zxf bzip2-1.0.6.tar.gz                    # 解压源码包
+   owner@ubuntu:/mnt/e/make-makefile$
+   owner@ubuntu:/mnt/e/make-makefile$ cd bzip2-1.0.6/                                # 进入到bzip2源码目录
+   owner@ubuntu:/mnt/e/make-makefile/bzip2-1.0.6$
    ```
 
 ## 编译三方库
@@ -47,15 +47,15 @@ Makefile是Make工具的配置文件，用于描述项目的构建规则和依�
 
    通过分析源库的Makefile文件可知，以下几个内容需要进行重新配置：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/Q9S1n4X_QOeJZ20mVl6RZQ/zh-cn_image_0000002589245717.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/9L-h9wyUR2SeJFhkehMxNQ/zh-cn_image_0000002706675548.png)
 
    **a. 编译命令配置。**
 
-   ```
-   1. # To assist in cross-compiling
-   2. CC=gcc
-   3. AR=ar
-   4. RANLIB=ranlib
+   ```bash
+   # To assist in cross-compiling
+   CC=gcc
+   AR=ar
+   RANLIB=ranlib
    ```
 
    环境变量作用：
@@ -68,9 +68,9 @@ Makefile是Make工具的配置文件，用于描述项目的构建规则和依�
 
    **b. 安装路径配置。**
 
-   ```
-   1. # Where you want it installed when you do 'make install'
-   2. PREFIX=/usr/local
+   ```bash
+   # Where you want it installed when you do 'make install'
+   PREFIX=/usr/local
    ```
 
    PREFIX：用于指定安装路径的前缀。
@@ -80,18 +80,18 @@ Makefile是Make工具的配置文件，用于描述项目的构建规则和依�
 
    分析完Makefile后，即可配置交叉编译命令进行编译（xxx需要改为自己的文件路径）。
 
-   ```
-   1. owner@ubuntu:/mnt/e/make-makefile/bzip2-1.0.6$ make CC="xxx/ohos-sdk/linux/native/llvm/bin/clang --target=aarch64-linux-ohos" AR=xxx/ohos-sdk/linux/native/llvm/bin/llvm-ar RANLIB=xxx/ohos-sdk/linux/native/llvm/bin/llvm-ranlib -j4 libbz2.a bzip2 bzip2recover
-   2. xxx/ohos-sdk/linux/native/llvm/bin/clang --target=aarch64-linux-ohos -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -c huffman.c
-   3. xxx/ohos-sdk/linux/native/llvm/bin/clang --target=aarch64-linux-ohos -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -c crctable.c
-   4. ...
-   5. # 省略部分make信息
-   6. ...
-   7. xxx/ohos-sdk/linux/native/llvm/bin/llvm-ar cq libbz2.a blocksort.o huffman.o crctable.o randtable.o compress.o decompress.o bzlib.o
-   8. ranlib libbz2.a
-   9. 1 warning generated.
-   10. xxx/ohos-sdk/linux/native/llvm/bin/clang --target=aarch64-linux-ohos -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64  -o bzip2 bzip2.o -L. -lbz2
-   11. owner@ubuntu:~/workspace/bzip2-1.0.6$
+   ```bash
+   owner@ubuntu:/mnt/e/make-makefile/bzip2-1.0.6$ make CC="xxx/ohos-sdk/linux/native/llvm/bin/clang --target=aarch64-linux-ohos" AR=xxx/ohos-sdk/linux/native/llvm/bin/llvm-ar RANLIB=xxx/ohos-sdk/linux/native/llvm/bin/llvm-ranlib -j4 libbz2.a bzip2 bzip2recover
+   xxx/ohos-sdk/linux/native/llvm/bin/clang --target=aarch64-linux-ohos -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -c huffman.c
+   xxx/ohos-sdk/linux/native/llvm/bin/clang --target=aarch64-linux-ohos -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64 -c crctable.c
+   ...
+   # 省略部分make信息
+   ...
+   xxx/ohos-sdk/linux/native/llvm/bin/llvm-ar cq libbz2.a blocksort.o huffman.o crctable.o randtable.o compress.o decompress.o bzlib.o
+   ranlib libbz2.a
+   1 warning generated.
+   xxx/ohos-sdk/linux/native/llvm/bin/clang --target=aarch64-linux-ohos -Wall -Winline -O2 -g -D_FILE_OFFSET_BITS=64  -o bzip2 bzip2.o -L. -lbz2
+   owner@ubuntu:~/workspace/bzip2-1.0.6$
    ```
 
    参数说明：
@@ -104,10 +104,10 @@ Makefile是Make工具的配置文件，用于描述项目的构建规则和依�
    注：CC配置时，除了配置为交叉编译的clang外，还需要配置target的架构，即配置成aarch64位，按此配置编译出来的文件才能在64位设备上运行，如若需要编译32位的文件，则target配置成arm-linux-ohos即可。
 3. 通过file bzip2查看编译成功后的文件。
 
-   ```
-   1. owner@ubuntu:/mnt/e/make-makefile/bzip2-1.0.6$ file bzip2             # 使用file查看生成的文件属性
-   2. bzip2: ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-musl-aarch64.so.1, with debug_info, not stripped
-   3. owner@ubuntu:/mnt/e/make-makefile/bzip2-1.0.6$
+   ```bash
+   owner@ubuntu:/mnt/e/make-makefile/bzip2-1.0.6$ file bzip2             # 使用file查看生成的文件属性
+   bzip2: ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-musl-aarch64.so.1, with debug_info, not stripped
+   owner@ubuntu:/mnt/e/make-makefile/bzip2-1.0.6$
    ```
 
    编译时配置了aarch64-linux-ohos，因此生成的文件属性为ARM aarch64，交叉编译成功。
@@ -115,29 +115,29 @@ Makefile是Make工具的配置文件，用于描述项目的构建规则和依�
 
    通过之前分析Makefile可以知道，在安装时需要配置PREFIX这个安装路径的变量：
 
-   ```
-   1. owner@ubuntu:/mnt/e/make-makefile/bzip2-1.0.6$ make install PREFIX=xxx/bzip/                   # 执行make install安装
-   2. if ( test ! -d /mnt/e/make-makefile/bzip2-1.0.6/bzip/bin ) ; then mkdir -p /mnt/e/make-makefile/bzip2-1.0.6/bzip/bin ; fi
-   3. if ( test ! -d /mnt/e/make-makefile/bzip2-1.0.6/bzip/lib ) ; then mkdir -p /mnt/e/make-makefile/bzip2-1.0.6/bzip/lib ; fi
-   4. if ( test ! -d /mnt/e/make-makefile/bzip2-1.0.6/bzip/man ) ; then mkdir -p /mnt/e/make-makefile/bzip2-1.0.6/bzip/man ; fi
-   5. if ( test ! -d /mnt/e/make-makefile/bzip2-1.0.6/bzip/man/man1 ) ; then mkdir -p /mnt/e/make-makefile/bzip2-1.0.6/bzip/man/man1 ; fi
-   6. if ( test ! -d /mnt/e/make-makefile/bzip2-1.0.6/bzip/include ) ; then mkdir -p /mnt/e/make-makefile/bzip2-1.0.6/bzip/include ; fi
-   7. ...
-   8. # 省略部分make install信息
-   9. ...
-   10. cp -f bzgrep.1 bzmore.1 bzdiff.1 /mnt/e/make-makefile/bzip2-1.0.6/bzip/man/man1
-   11. chmod a+r /mnt/e/make-makefile/bzip2-1.0.6/bzip/man/man1/bzgrep.1
-   12. chmod a+r /mnt/e/make-makefile/bzip2-1.0.6/bzip/man/man1/bzmore.1
-   13. chmod a+r /mnt/e/make-makefile/bzip2-1.0.6/bzip/man/man1/bzdiff.1
-   14. echo ".so man1/bzgrep.1" > /mnt/e/make-makefile/bzip2-1.0.6/bzip/man/man1/bzegrep.1
-   15. echo ".so man1/bzgrep.1" > /mnt/e/make-makefile/bzip2-1.0.6/bzip/man/man1/bzfgrep.1
-   16. echo ".so man1/bzmore.1" > /mnt/e/make-makefile/bzip2-1.0.6/bzip/man/man1/bzless.1
-   17. echo ".so man1/bzdiff.1" > /mnt/e/make-makefile/bzip2-1.0.6/bzip/man/man1/bzcmp.1
+   ```bash
+   owner@ubuntu:/mnt/e/make-makefile/bzip2-1.0.6$ make install PREFIX=xxx/bzip/                   # 执行make install安装
+   if ( test ! -d /mnt/e/make-makefile/bzip2-1.0.6/bzip/bin ) ; then mkdir -p /mnt/e/make-makefile/bzip2-1.0.6/bzip/bin ; fi
+   if ( test ! -d /mnt/e/make-makefile/bzip2-1.0.6/bzip/lib ) ; then mkdir -p /mnt/e/make-makefile/bzip2-1.0.6/bzip/lib ; fi
+   if ( test ! -d /mnt/e/make-makefile/bzip2-1.0.6/bzip/man ) ; then mkdir -p /mnt/e/make-makefile/bzip2-1.0.6/bzip/man ; fi
+   if ( test ! -d /mnt/e/make-makefile/bzip2-1.0.6/bzip/man/man1 ) ; then mkdir -p /mnt/e/make-makefile/bzip2-1.0.6/bzip/man/man1 ; fi
+   if ( test ! -d /mnt/e/make-makefile/bzip2-1.0.6/bzip/include ) ; then mkdir -p /mnt/e/make-makefile/bzip2-1.0.6/bzip/include ; fi
+   ...
+   # 省略部分make install信息
+   ...
+   cp -f bzgrep.1 bzmore.1 bzdiff.1 /mnt/e/make-makefile/bzip2-1.0.6/bzip/man/man1
+   chmod a+r /mnt/e/make-makefile/bzip2-1.0.6/bzip/man/man1/bzgrep.1
+   chmod a+r /mnt/e/make-makefile/bzip2-1.0.6/bzip/man/man1/bzmore.1
+   chmod a+r /mnt/e/make-makefile/bzip2-1.0.6/bzip/man/man1/bzdiff.1
+   echo ".so man1/bzgrep.1" > /mnt/e/make-makefile/bzip2-1.0.6/bzip/man/man1/bzegrep.1
+   echo ".so man1/bzgrep.1" > /mnt/e/make-makefile/bzip2-1.0.6/bzip/man/man1/bzfgrep.1
+   echo ".so man1/bzmore.1" > /mnt/e/make-makefile/bzip2-1.0.6/bzip/man/man1/bzless.1
+   echo ".so man1/bzdiff.1" > /mnt/e/make-makefile/bzip2-1.0.6/bzip/man/man1/bzcmp.1
    ```
 
-   ```
-   1. owner@ubuntu:/mnt/e/make-makefile/bzip2-1.0.6$ ls xxx/bzip/                                    # 查看安装文件
-   2. bin  include  lib  man
+   ```bash
+   owner@ubuntu:/mnt/e/make-makefile/bzip2-1.0.6$ ls xxx/bzip/                                    # 查看安装文件
+   bin  include  lib  man
    ```
 5. 安装成功后，即使用Make工具通过ohos sdk编译bzip2三方库源码完成。
 

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-localizationkit-5111
 title: Localization Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.1.1(19) > OS平台能力 > API变更清单 > 5.1.1(19) Beta1引入的API > Localization Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.1(19) > OS平台能力 > API变更清单 > 5.1.1(19) Beta1引入的API > Localization Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:54+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:33+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:04b2e820a8cd4d0653cbc8006aca75dd2b5d722922cfb303a8b9d92e2d432716
 ---
 

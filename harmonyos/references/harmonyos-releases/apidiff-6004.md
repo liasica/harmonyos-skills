@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/apidiff-6004
 title: 6.0.0(20) Beta5引入的API
-breadcrumb: 版本说明 > HarmonyOS 6.0.0(20) > OS平台能力 > API变更清单 > 6.0.0(20) Beta5引入的API
+breadcrumb: 版本说明 > 更多版本 > 6.0.0(20) > OS平台能力 > API变更清单 > 6.0.0(20) Beta5引入的API
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:07+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:26+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:a27c22cd48e864a2b136e631c64d54c36b76b757afa1f6461838c1fff3503720
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/vision-do
 title: DocumentScanner（文档扫描控件）
 breadcrumb: API参考 > AI > Vision Kit（场景化视觉服务） > ArkTS组件 > DocumentScanner（文档扫描控件）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:15+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3e47f064606d80487e4cde10f6efbf878628db77eda2f705168dc06b0113d977
+scraped_at: 2026-09-02T15:03:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4f16a356ec85b8c88f68c0fe581091fadb7172dfe168a6d7c84140fe6e5876bd
 ---
 
 文档扫描控件提供拍摄文档并转换为高清扫描件的服务。仅需使用手机拍摄文档，即可自动裁剪和优化，并支持jpeg图片、PDF格式保存和分享；同时支持拍摄拍照或图片识别表格，生成表格文档。
@@ -14,15 +14,11 @@ content_hash: sha256:3e47f064606d80487e4cde10f6efbf878628db77eda2f705168dc06b011
 
 ## 导入模块
 
-PhoneTablet
-
-```
-1. import { DocType, DocumentScanner, DocumentScannerConfig, SaveOption, FilterId, ShootingMode, EditTab, DocumentScannerResultCallback } from "@kit.VisionKit";
+```typescript
+import { DocType, DocumentScanner, DocumentScannerConfig, SaveOption, FilterId, ShootingMode, EditTab, DocumentScannerResultCallback, DocumentScannerController } from '@kit.VisionKit';
 ```
 
 ## DocumentScanner
-
-PhoneTablet
 
 文档扫描控件，集成此控件可以实现文档扫描。
 
@@ -31,6 +27,8 @@ PhoneTablet
 **装饰器类型：** [@Component](../harmonyos-guides/arkts-create-custom-components.md#component)
 
 **系统能力：** SystemCapability.AI.Component.DocScan
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -41,9 +39,21 @@ PhoneTablet
 | scannerConfig | [DocumentScannerConfig](vision-document-scanner.md#documentscannerconfig) | 是 | - | 文档扫描能力配置。 |
 | onResult | [DocumentScannerResultCallback](vision-document-scanner.md#documentscannerresultcallback) | 是 | - | 文档扫描结果回调。 |
 
-## DocumentScannerConfig
+### build
 
-PhoneTablet
+build(): void
+
+用于创建[DocumentScanner](vision-document-scanner.md#documentscanner)对象的构造函数，开发者无需调用此方法。
+
+**元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.AI.Component.DocScan
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**起始版本：** 5.0.0(12)
+
+## DocumentScannerConfig
 
 文档扫描配置项。
 
@@ -51,12 +61,14 @@ PhoneTablet
 
 **系统能力：** SystemCapability.AI.Component.DocScan
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **起始版本：** 5.0.0(12)
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | maxShotCount | number | 否 | 是 | 文档扫描最大支持张数。默认值1，最大值50。  取值范围：[1,50]的整数。 |
-| supportType | [DocType](vision-document-scanner.md#doctype)[] | 否 | 否 | 支持识别的文件类型。默认值：[DocType.DOC]。  **设备行为差异：** 部分机型仅支持配置[DocType.DOC]。若设备配置不支持的属性，此属性将采用默认值。 |
+| supportType | [DocType](vision-document-scanner.md#doctype)[] | 否 | 否 | 支持识别的文件类型。默认值：[DocType.DOC]。  **设备行为差异：** 部分机型不支持配置[DocType.SHEET]，可使用[isSheetDetectionSupported](vision-document-scanner.md#issheetdetectionsupported)查询当前设备是否支持表格提取功能。若设备配置不支持的属性，此属性将采用默认值。 |
 | isGallerySupported | boolean | 否 | 是 | 是否支持从图库进行选图。true：支持。false：不支持。默认值：true。 |
 | defaultFilterId | [FilterId](vision-document-scanner.md#filterid) | 否 | 是 | 初始滤镜效果。默认增强。 |
 | editTabs | [EditTab](vision-document-scanner.md#edittab)[] | 否 | 是 | Tab栏中展示的功能按钮。默认全部显示。 |
@@ -67,13 +79,13 @@ PhoneTablet
 
 ## DocType
 
-PhoneTablet
-
 支持识别的文件类型枚举。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.AI.Component.DocScan
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -84,13 +96,13 @@ PhoneTablet
 
 ## FilterId
 
-PhoneTablet
-
 给图片添加的滤镜枚举。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.AI.Component.DocScan
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -102,13 +114,13 @@ PhoneTablet
 
 ## ShootingMode
 
-PhoneTablet
-
 拍照模式枚举。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.AI.Component.DocScan
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -119,13 +131,13 @@ PhoneTablet
 
 ## EditTab
 
-PhoneTablet
-
 Tab栏按钮枚举。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.AI.Component.DocScan
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -137,13 +149,13 @@ Tab栏按钮枚举。
 
 ## SaveOption
 
-PhoneTablet
-
 保存选项枚举。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.AI.Component.DocScan
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -155,8 +167,6 @@ PhoneTablet
 
 ## DocumentScannerResultCallback
 
-PhoneTablet
-
 type DocumentScannerResultCallback = (code: number, saveType: SaveOption, uris: string[]) => void
 
 文档扫描结果回调。
@@ -164,6 +174,8 @@ type DocumentScannerResultCallback = (code: number, saveType: SaveOption, uris: 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.AI.Component.DocScan
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -174,3 +186,45 @@ type DocumentScannerResultCallback = (code: number, saveType: SaveOption, uris: 
 | code | number | 是 | 返回的结果码：  -1：无结果返回  200：识别成功  1008601001：uris无效  **说明：**  从5.0.5(17)开始支持状态码1008601001 |
 | saveType | [SaveOption](vision-document-scanner.md#saveoption) | 是 | 结果保存格式。 |
 | uris | string[] | 是 | 文档uri列表。 |
+
+## DocumentScannerController
+
+文档扫描控制器，用于控制交互。
+
+**元服务API：** 从版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.AI.Component.DocScan
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**起始版本：** 26.0.0
+
+### isSheetDetectionSupported
+
+isSheetDetectionSupported(): boolean
+
+查询当前设备是否支持表格提取功能。
+
+**元服务API：** 从版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.AI.Component.DocScan
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**起始版本：** 26.0.0
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果当前设备支持表格提取功能，则返回true；否则返回false。 |
+
+**示例：**
+
+```typescript
+import { DocumentScannerController } from '@kit.VisionKit';
+
+let documentScannerController: DocumentScannerController = new DocumentScannerController();
+let isSheetSupported = documentScannerController.isSheetDetectionSupported();
+console.info(`isSheetSupported: ${isSheetSupported}`);
+```

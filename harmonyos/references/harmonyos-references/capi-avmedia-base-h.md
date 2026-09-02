@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avme
 title: avmedia_base.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > avmedia_base.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:57+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fee7c39ec3d8a3057eda326325bf09cccfb05346b7f62cb591e2a083edb6c684
+scraped_at: 2026-09-02T15:02:36+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:bb3a2bba74d6985cc33d70399286351a5193f073cd84e0a9bfc21bdf84c80610
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义AVMedia的结构体和枚举类型。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,14 +32,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AVMedia\_SeekMode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AVMedia_SeekMode
+```c
+enum OH_AVMedia_SeekMode
 ```
 
 **描述**

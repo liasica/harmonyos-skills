@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“Local dependency in parameterFile does not exist”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“Local dependency in parameterFile does not exist”
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:20:54+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:36748ca91965b640360539781a716f2d47fc6de88cfaf17f1301449317fa571f
+scraped_at: 2026-09-02T14:54:55+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:255dc9b5afeb5ebda6b6997a3aab15a8c093f3a9682eb7e51f7f04d82248f8df
 ---
 
 **错误描述**
@@ -16,7 +16,7 @@ parameterFile 中的本地依赖项不存在。
 
 parameterFile中定义的值不存在。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/v2FLSODtRK6QI_smT59lnQ/zh-cn_image_0000002194318024.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/-9KyFmwdQYitluQDjQ5IwA/zh-cn_image_0000002624638536.png)
 
 **解决措施**
 

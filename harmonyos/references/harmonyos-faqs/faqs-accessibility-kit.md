@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-accessibil
 title: 无障碍开发（Accessibility）
 breadcrumb: FAQ > 应用框架开发 > 无障碍和本地化 > 无障碍开发（Accessibility）
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:32+08:00
-doc_updated_at: 2026-04-21
+scraped_at: 2026-09-02T15:21:53+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:d70569336dca57463ab3431de06da6430945b7296ae9077e785870bbc3f63bcb
 ---
 

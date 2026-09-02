@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-date-
 title: 延迟订阅续订日期
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API > 延迟订阅续订日期
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:53efa592c49125c7ff44e552f9f3a1fd4780b94a63a33225a43e9dc76f87a111
+scraped_at: 2026-09-02T15:02:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:95b90b88ba0da57b329aebd589dcbeb1dda1bedfaaaf3bdccf3a0fae3c18721d
 ---
 
 ## 功能介绍
 
 此接口用于将自动续期订阅商品的下一个续订日期延迟。
 
-说明
+**说明** 
 
 开发者延迟订阅续订日期后，建议使用电子邮件或应用通知用户，让用户知道自己的续订日期已被延迟（发生更改）。
 
@@ -67,18 +67,18 @@ content_hash: sha256:53efa592c49125c7ff44e552f9f3a1fd4780b94a63a33225a43e9dc76f8
 
 ## 请求示例
 
-```
-1. POST /subscription/harmony/v1/application/subscription/renewal/modify
-2. Content-Type: application/json;charset=UTF-8
-3. Authorization: Bearer ***.***.***
-4. Accept: application/json
-5. {
-6. "purchaseToken": "***.*.***",
-7. "purchaseOrderId": "***.***",
-8. "requestId": "******",
-9. "modifyReason": 0,
-10. "extendByDays": 10
-11. }
+```javascript
+POST /subscription/harmony/v1/application/subscription/renewal/modify
+Content-Type: application/json;charset=UTF-8
+Authorization: Bearer ***.***.***
+Accept: application/json
+{
+  "purchaseToken": "***.*.***",
+  "purchaseOrderId": "***.*.***",
+  "requestId": "******",
+  "modifyReason": 0,
+  "extendByDays": 10
+}
 ```
 
 ## 响应参数
@@ -99,12 +99,12 @@ content_hash: sha256:53efa592c49125c7ff44e552f9f3a1fd4780b94a63a33225a43e9dc76f8
 
 ## 响应示例
 
-```
-1. HTTP/1.2 200 OK
-2. Content-Type: application/json; charset=UTF-8
-3. Content-Length: 68
-4. {
-5. "responseCode": "0",
-6. "newExpirationTime": 1597679570777
-7. }
+```javascript
+HTTP/1.2 200 OK
+Content-Type: application/json; charset=UTF-8
+Content-Length: 68
+{
+  "responseCode": "0",
+  "newExpirationTime": 1597679570777
+}
 ```

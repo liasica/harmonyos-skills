@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 响应式布局
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 界面布局响应式变化 > 响应式布局
 category: best-practices
-scraped_at: 2026-04-29T14:11:55+08:00
-doc_updated_at: 2026-04-07
-content_hash: sha256:4c3642570b6213ef3209a3f8f01c1e95f372bac876808a70f11c1a11863a9e71
+scraped_at: 2026-09-02T15:03:18+08:00
+doc_updated_at: 2026-08-17
+content_hash: sha256:d34914a55593717c0115f1f1d5ff99335d641f8aa7a9031f54d0464d98fd8cd8
 ---
 
 ## 概述
@@ -17,10 +17,10 @@ content_hash: sha256:4c3642570b6213ef3209a3f8f01c1e95f372bac876808a70f11c1a11863
 响应式布局是基于响应式设计方法论进行布局的方法，核心思想是页面根据不同屏幕尺寸自动调整布局，提供更舒适的界面和更好的用户体验。响应式布局页面的效果图如下：
 
 **图1** 响应式布局示意图1  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/LGSQIbx9QpiIDFyzcNqG-w/zh-cn_image_0000002355146009.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/Q2wkdAgoREeEpP_5Ca0Ecg/zh-cn_image_0000002355146009.png "点击放大")
 
 **图2** 响应式布局示意图2  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/MzJbKbdCSH-TJuRA0znzLw/zh-cn_image_0000002321147306.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/SZ_4K5I2QFm0_-Tijuwoxg/zh-cn_image_0000002321147306.png "点击放大")
 
 本文将详细介绍实现响应式布局的四种响应式布局能力，帮助开发者实现响应式布局效果。
 
@@ -71,18 +71,16 @@ content_hash: sha256:4c3642570b6213ef3209a3f8f01c1e95f372bac876808a70f11c1a11863
 | md | [0.8, 1.2) |
 | lg | [1.2, +∞) |
 
-下图为HarmonyOS常用设备断点区间表：
+**图3** HarmonyOS常用设备断点区间表  
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/3xDFVqdmSEatSlFy1NuuCQ/zh-cn_image_0000002583460597.png "点击放大")
 
-**图3** HarmonyOS常用设备断点区间表
+**说明** 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/5KeJBRs5SACnEEtSmVykfw/zh-cn_image_0000002321553558.png "点击放大")
-
-说明
-
-1. 断点面向窗口而非设备类型，相同断点区间的窗口展示相同的页面布局。同一设备上的不同窗口形态（例如全屏显示、分屏显示、自由窗口等）可能落入不同的断点区间，展示不同布局。
-2. 部分手机、小折叠屏机型横屏/反向横屏时横向断点会落入lg，包括Pura70 Pro和Pocket2。
-3. 开发者可以根据实际使用场景决定适配哪些断点。如xs断点对应的一般是智能穿戴类设备，如果确定某页面不会在智能穿戴设备上显示，则可以不适配xs断点。
-4. 可以根据实际业务场景需要在lg断点后面新增xl、xxl等断点。
+1. 由于官网无法涵盖所有产品的断点区间，说明中提供补充方法：开发者可在应用全屏时通过window模块的[getWindowProperties()](../harmonyos-references/arkts-apis-window-window.md#getwindowproperties9)接口获取窗口的宽高属性，根据建议的断点区间自行判断当前设备所属的横纵断点区间。针对个别设备，系统已通过产品化配置方案对断点阈值进行适配调整。
+2. 断点面向窗口而非设备类型，相同断点区间的窗口展示相同的页面布局。同一设备上的不同窗口形态（例如全屏显示、分屏显示、自由窗口等）可能落入不同的断点区间，展示不同布局。
+3. 部分手机、小折叠屏机型横屏/反向横屏时横向断点会落入lg，如Pura70 Pro/Ultra、Pocket 2 系列、nova Flip/Filp S和Mate 70 Air等机型。横向断点根据设备实际窗口宽度（vp）进行取值，开发者可参考说明1及横向断点定义进行验证。
+4. 开发者可以根据实际使用场景决定适配哪些断点。如xs断点对应的一般是智能穿戴类设备，如果确定某页面不会在智能穿戴设备上显示，则可以不适配xs断点。
+5. 可以根据实际业务场景需要在lg断点后面新增xl、xxl等断点。
 
 当前HarmonyOS主流设备窗口全屏时尺寸和横纵断点区间如下表所示。
 
@@ -91,6 +89,8 @@ content_hash: sha256:4c3642570b6213ef3209a3f8f01c1e95f372bac876808a70f11c1a11863
 | 手机（竖屏/反向竖屏） | Mate60、Mate60 Pro、Mate70、Mate70 Pro、Pura60、Pura60 Pro、Pura70、Pura70 Pro | 827 \* 374 | sm | lg |
 | 阔折叠 | Pura X | 内屏（竖屏/反向竖屏）：707 \* 440 | 内屏：sm | 内屏：lg |
 | 外屏（反向横屏）：326 \* 326 | 外屏：sm | 外屏：md |
+| Pura X Max | 内屏（横屏/反向横屏）：939 \* 664 | 内屏：lg | 内屏：sm |
+| 外屏（竖屏）：459 \* 672 | 外屏：sm | 外屏：lg |
 | 小折叠 | Pocket 2 | 内屏（竖屏/反向竖屏）：860 \* 364 | 内屏：sm | 内屏：lg |
 | 外屏：/ | 外屏：/ | 外屏：/ |
 | 双折叠 | Mate X5、Mate X6 | 内屏（竖屏/反向竖屏）：798 \* 711 | 内屏：md | 内屏：md |
@@ -120,122 +120,112 @@ content_hash: sha256:4c3642570b6213ef3209a3f8f01c1e95f372bac876808a70f11c1a11863
 
 1. 使用自定义窗口信息类WindowInfo保存窗口断点信息。
 
+   ```screen
+   @Observed
+   export class WindowInfo {
+     // ...
+     // Width/height breakpoint.
+     public widthBp: WidthBreakpoint = WidthBreakpoint.WIDTH_XS;
+     public heightBp: HeightBreakpoint = HeightBreakpoint.HEIGHT_SM;
+     // ...
+   }
    ```
-   1. @Observed
-   2. export class WindowInfo {
-   3. // ...
-   4. // Width/height breakpoint.
-   5. public widthBp: WidthBreakpoint = WidthBreakpoint.WIDTH_XS;
-   6. public heightBp: HeightBreakpoint = HeightBreakpoint.HEIGHT_SM;
-   7. // ...
-   8. }
-   ```
-
-   [WindowUtil.ets](https://gitcode.com/HarmonyOS_Samples/ResponsiveLayout/blob/master/entry/src/main/ets/utils/WindowUtil.ets#L362-L385)
 2. WindowUtil类中创建窗口信息类对象，使用[getWindowWidthBreakpoint()](../harmonyos-references/arkts-apis-uicontext-uicontext.md#getwindowwidthbreakpoint13)与[getWindowHeightBreakpoint()](../harmonyos-references/arkts-apis-uicontext-uicontext.md#getwindowheightbreakpoint13)获取当前窗口横向断点与纵向断点。通过[on('windowSizeChange')](../harmonyos-references/arkts-apis-window-window.md#onwindowsizechange7)开启窗口尺寸变化的监听，并在监听回调中重新获取断点。
 
+   ```screen
+   export class WindowUtil {
+     // ...
+     public mainWindowInfo: WindowInfo = new WindowInfo();
+     // ...
+     public onWindowSizeChange: (windowSize: window.Size) => void = (windowSize: window.Size) => {
+       this.mainWindowInfo.windowSize = windowSize;
+       this.mainWindowInfo.widthBp = this.uiContext!.getWindowWidthBreakpoint();
+       this.mainWindowInfo.heightBp = this.uiContext!.getWindowHeightBreakpoint();
+     };
+     // ...
+     updateWindowInfo(): void {
+       try {
+         // ...
+         // First time get width/height breakpoint.
+         this.mainWindowInfo.widthBp = this.uiContext!.getWindowWidthBreakpoint();
+         this.mainWindowInfo.heightBp = this.uiContext!.getWindowHeightBreakpoint();
+         // Register for window size change monitoring, update window size and width/height breakpoint.
+         this.mainWindow.on('windowSizeChange', this.onWindowSizeChange);
+         // ...
+       } catch (error) {
+         let err = error as BusinessError;
+         hilog.error(0x0000, `TestLog`, `Failed to update window info. Code: ${err.code}, message: ${err.message}`);
+       }
+     }
+     // ...
+   }
    ```
-   1. export class WindowUtil {
-   2. // ...
-   3. public mainWindowInfo: WindowInfo = new WindowInfo();
-   4. // ...
-   5. public onWindowSizeChange: (windowSize: window.Size) => void = (windowSize: window.Size) => {
-   6. this.mainWindowInfo.windowSize = windowSize;
-   7. this.mainWindowInfo.widthBp = this.uiContext!.getWindowWidthBreakpoint();
-   8. this.mainWindowInfo.heightBp = this.uiContext!.getWindowHeightBreakpoint();
-   9. };
-   10. // ...
-   11. updateWindowInfo(): void {
-   12. try {
-   13. // ...
-   14. // First time get width/height breakpoint.
-   15. this.mainWindowInfo.widthBp = this.uiContext!.getWindowWidthBreakpoint();
-   16. this.mainWindowInfo.heightBp = this.uiContext!.getWindowHeightBreakpoint();
-   17. // Register for window size change monitoring, update window size and width/height breakpoint.
-   18. this.mainWindow.on('windowSizeChange', this.onWindowSizeChange);
-   19. // ...
-   20. } catch (error) {
-   21. let err = error as BusinessError;
-   22. hilog.error(0x0000, `TestLog`, `Failed to update window info. Code: ${err.code}, message: ${err.message}`);
-   23. }
-   24. }
-   25. // ...
-   26. }
-   ```
-
-   [WindowUtil.ets](https://gitcode.com/HarmonyOS_Samples/ResponsiveLayout/blob/master/entry/src/main/ets/utils/WindowUtil.ets#L31-L358)
 3. 在EntryAbility的onWindowStageCreate()生命周期中，获取应用窗口实例，对WindowUtil进行初始化操作，并保存至AppStorage中。在loadContent加载完页面后，完成断点监听注册、断点更新等操作。完成上述步骤后，当窗口尺寸发生变化时，更新横纵断点。
 
-   ```
-   1. onWindowStageCreate(windowStage: window.WindowStage): void {
-   2. // ...
-   3. try {
-   4. this.windowUtil = new WindowUtil(windowStage.getMainWindowSync());
-   5. } catch (error) {
-   6. let err = error as BusinessError;
-   7. hilog.error(0x0000, 'TestLog', `Failed to get main window. Code: ${err.code}, message: ${err.message}`);
-   8. }
-   9. AppStorage.setOrCreate('windowUtil', this.windowUtil);
+   ```screen
+   onWindowStageCreate(windowStage: window.WindowStage): void {
+     // ...
+     try {
+       this.windowUtil = new WindowUtil(windowStage.getMainWindowSync());
+     } catch (error) {
+       let err = error as BusinessError;
+       hilog.error(0x0000, 'TestLog', `Failed to get main window. Code: ${err.code}, message: ${err.message}`);
+     }
+     AppStorage.setOrCreate('windowUtil', this.windowUtil);
 
-   11. windowStage.loadContent('pages/Index', (err) => {
-   12. // ...
-   13. this.windowUtil!.setUIContext();
-   14. this.windowUtil!.setImmersiveType(ImmersiveType.IMMERSIVE);
-   15. this.windowUtil!.updateWindowInfo();
-   16. });
-   17. }
+     windowStage.loadContent('pages/Index', (err) => {
+       // ...
+       this.windowUtil!.setUIContext();
+       this.windowUtil!.setImmersiveType(ImmersiveType.IMMERSIVE);
+       this.windowUtil!.updateWindowInfo();
+     });
+   }
    ```
-
-   [EntryAbility.ets](https://gitcode.com/HarmonyOS_Samples/ResponsiveLayout/blob/master/entry/src/main/ets/entryability/EntryAbility.ets#L42-L72)
 4. 使用@StorageLink装饰器获取窗口管理类WindowUtil对象，子组件初始化时传递窗口信息类对象，使子组件可以获取当前窗口的断点信息。
 
-   ```
-   1. @Component
-   2. export struct GridLayout {
-   3. @StorageLink('windowUtil') windowUtil: WindowUtil | undefined = undefined;
-   4. pageInfos: NavPathStack = new NavPathStack();
+   ```screen
+   @Component
+   export struct GridLayout {
+     @StorageLink('windowUtil') windowUtil: WindowUtil | undefined = undefined;
+     pageInfos: NavPathStack = new NavPathStack();
 
-   6. build() {
-   7. NavDestination() {
-   8. GridView({
-   9. mainWindowInfo: this.windowUtil?.mainWindowInfo,
-   10. pageInfos: this.pageInfos
-   11. })
-   12. }
-   13. // ...
-   14. }
-   15. }
+     build() {
+       NavDestination() {
+         GridView({
+           mainWindowInfo: this.windowUtil?.mainWindowInfo,
+           pageInfos: this.pageInfos
+         })
+       }
+       // ...
+     }
+   }
    ```
-
-   [GridLayout.ets](https://gitcode.com/HarmonyOS_Samples/ResponsiveLayout/blob/master/entry/src/main/ets/pages/GridLayout.ets#L25-L46)
 5. 使用@ObjectLink装饰器接收窗口信息类对象，根据获取的窗口信息，对不同断点区间进行针对性布局。如下示例代码完成了在不同断点下，Grid组件显示不同数量列的功能。
 
-   ```
-   1. @Component
-   2. export struct GridView {
-   3. @ObjectLink mainWindowInfo: WindowInfo;
-   4. // ...
+   ```screen
+   @Component
+   export struct GridView {
+     @ObjectLink mainWindowInfo: WindowInfo;
+     // ...
 
-   6. build() {
-   7. Scroll() {
-   8. Column() {
-   9. // ...
-   10. Grid() {
-   11. // ...
-   12. }
-   13. .width('100%')
-   14. .columnsTemplate(`repeat(${new WidthBreakpointType(2, 3, 4, 4).getValue(this.mainWindowInfo.widthBp)}, 1fr)`)
-   15. .columnsGap(12)
-   16. .rowsGap(12)
-   17. }
-   18. // ...
-   19. }
-   20. // ...
-   21. }
-   22. }
+     build() {
+       Scroll() {
+         Column() {
+           // ...
+           Grid() {
+             // ...
+           }
+           .width('100%')
+           .columnsTemplate(`repeat(${new WidthBreakpointType(2, 3, 4, 4).getValue(this.mainWindowInfo.widthBp)}, 1fr)`)
+           .columnsGap(12)
+           .rowsGap(12)
+         }
+         // ...
+       }
+       // ...
+     }
+   }
    ```
-
-   [GridView.ets](https://gitcode.com/HarmonyOS_Samples/ResponsiveLayout/blob/master/entry/src/main/ets/views/GridView.ets#L21-L92)
 
 ### 横向断点的使用案例
 
@@ -249,55 +239,49 @@ content_hash: sha256:4c3642570b6213ef3209a3f8f01c1e95f372bac876808a70f11c1a11863
 
 在实际应用开发中，可能不会涉及到全部的横向断点。开发者可以根据应用的实际需求，灵活选用并整理工具类，为响应式布局的属性赋值。例如，如果应用仅需适配手机、双折叠和平板设备，可以设计工具类 “WidthBreakpointType”，覆盖三个横向断点下的成员变量，从而实现具体的响应式布局。
 
+```typescript
+export class WidthBreakpointType<T> {
+  sm: T;
+  md: T;
+  lg: T;
+  xl: T;
+
+  constructor(sm: T, md: T, lg: T, xl: T) {
+    this.sm = sm;
+    this.md = md;
+    this.lg = lg;
+    this.xl = xl
+  }
+
+  getValue(widthBp: WidthBreakpoint): T {
+    if (widthBp === WidthBreakpoint.WIDTH_XS || widthBp === WidthBreakpoint.WIDTH_SM) {
+      return this.sm;
+    }
+    if (widthBp === WidthBreakpoint.WIDTH_MD) {
+      return this.md;
+    }
+    if (widthBp === WidthBreakpoint.WIDTH_LG) {
+      return this.lg;
+    } else {
+      return this.xl;
+    }
+  }
+}
 ```
-1. export class WidthBreakpointType<T> {
-2. sm: T;
-3. md: T;
-4. lg: T;
-5. xl: T;
-
-7. constructor(sm: T, md: T, lg: T, xl: T) {
-8. this.sm = sm;
-9. this.md = md;
-10. this.lg = lg;
-11. this.xl = xl
-12. }
-
-14. getValue(widthBp: WidthBreakpoint): T {
-15. if (widthBp === WidthBreakpoint.WIDTH_XS || widthBp === WidthBreakpoint.WIDTH_SM) {
-16. return this.sm;
-17. }
-18. if (widthBp === WidthBreakpoint.WIDTH_MD) {
-19. return this.md;
-20. }
-21. if (widthBp === WidthBreakpoint.WIDTH_LG) {
-22. return this.lg;
-23. } else {
-24. return this.xl;
-25. }
-26. }
-27. }
-```
-
-[WidthBreakpointType.ets](https://gitcode.com/harmonyos_samples/ResponsiveLayout/blob/master/entry/src/main/ets/utils/WidthBreakpointType.ets#L17-L43)
 
 在实际开发中，设置不同断点下的字体大小。例如，在sm、md、lg横向断点下，字体大小分别为14fp、16fp、18fp，通过工具类BreakpointType为属性赋值。
 
+```screen
+Text('Test')
+  .fontSize(new BreakpointType('14fp', '16fp', '18fp').getValue(this.currentWidthBreakpoint))
 ```
-1. Text('Test')
-2. .fontSize(new BreakpointType('14fp', '16fp', '18fp').getValue(this.currentWidthBreakpoint))
-```
-
-[VideoExample.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/ResponsiveLayout/entry/src/main/ets/pages/VideoExample.ets#L87-L88)
 
 在sm和md横向断点下，字体大小为14fp；在lg断点下，字体大小为16fp。使用三元表达式结合横向断点为属性赋值。
 
+```typescript
+Text('Test')
+  .fontSize(this.currentWidthBreakpoint === WidthBreakpoint.WIDTH_LG ? '16fp' : '14fp')
 ```
-1. Text('Test')
-2. .fontSize(this.currentWidthBreakpoint === WidthBreakpoint.WIDTH_LG ? '16fp' : '14fp')
-```
-
-[UpdateWidthExample.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/ResponsiveLayout/entry/src/main/ets/pages/UpdateWidthExample.ets#L23-L24)
 
 ### 纵向断点的使用案例
 
@@ -310,49 +294,24 @@ content_hash: sha256:4c3642570b6213ef3209a3f8f01c1e95f372bac876808a70f11c1a11863
 | 效果图 |  |  |
 | 判断条件 | 纵向断点为sm或窗口高宽比小于0.8 | 纵向断点为md或窗口高宽比在[0.8, 1.2)之间 |
 
+```screen
+// Judgment of the horizontal window. (The actual application may need to be combined with other conditions, for example, determine the horizontal breakpoint)
+if (this.currentHeightBreakpoint === HeightBreakpoint.HEIGHT_SM &&
+  this.currentWidthBreakpoint === WidthBreakpoint.WIDTH_MD) {
+  // Horizontal window page layout.
+}
+// Judgment of the square window. (The actual use may need to be combined with other conditions, such as determining horizontal breakpoints)
+if (this.currentHeightBreakpoint === HeightBreakpoint.HEIGHT_MD &&
+  this.currentWidthBreakpoint === WidthBreakpoint.WIDTH_SM) {
+  // Square-like window page layout.
+}
 ```
-1. // Judgment of the horizontal window. (The actual application may need to be combined with other conditions, for example, determine the horizontal breakpoint)
-2. if (this.currentHeightBreakpoint === HeightBreakpoint.HEIGHT_SM &&
-3. this.currentWidthBreakpoint === WidthBreakpoint.WIDTH_MD) {
-4. // Horizontal window page layout.
-5. }
-6. // Judgment of the square window. (The actual use may need to be combined with other conditions, such as determining horizontal breakpoints)
-7. if (this.currentHeightBreakpoint === HeightBreakpoint.HEIGHT_MD &&
-8. this.currentWidthBreakpoint === WidthBreakpoint.WIDTH_SM) {
-9. // Square-like window page layout.
-10. }
-```
-
-[VideoExample.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/ResponsiveLayout/entry/src/main/ets/pages/VideoExample.ets#L39-L48)
 
 **独特的小窗口布局**
 
-为了提供独特的用户体验，类方形小窗口设计为独特布局。常见场景为手机上下1:1分屏或Pura X外屏，可使用横向断点为sm，纵向断点为md进行区分，示意图如下。更多详情和示例代码请参考[Pura X阔折叠应用开发](bpta-purax-guide.md)。
+为了提供独特的用户体验，类方形小窗口设计为独特布局。常见场景为手机上下1:1分屏或小方形屏（如Pura X系列产品的外屏），可使用横向断点为sm，纵向断点为md进行区分，示意图如下。更多详情和示例代码请参考[阔折叠应用开发](bpta-purax-guide.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/EW7Y5wnJTHmOggycGJO74A/zh-cn_image_0000002355146073.png)
-
-**类方屏旋转方案**
-
-在Mate X5内屏等类方屏窗口场景中，设计应用窗口支持旋转，以满足不同用户的体验需求。
-
-判断纵向断点为md时，通过[window.setPreferredOrientation()](../harmonyos-references/arkts-apis-window-window.md#setpreferredorientation9-1)设置窗口支持旋转。
-
-```
-1. let currentHeightBreakpoint: HeightBreakpoint | undefined = AppStorage.get('currentHeightBreakpoint');
-2. if (currentHeightBreakpoint === HeightBreakpoint.HEIGHT_MD) {
-3. this.mainWindowClass?.setPreferredOrientation(window.Orientation.AUTO_ROTATION_RESTRICTED).catch((error: BusinessError) => {
-4. hilog.error(0x0000, 'VideoExample',
-5. `setPreferredOrientation failed. code=${error.code}, message = ${error.message}`);
-6. });
-7. }
-```
-
-[VideoExample.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/ResponsiveLayout/entry/src/main/ets/pages/VideoExample.ets#L52-L58)
-
-说明
-
-* 应用设置窗口旋转方案需要结合多种条件一起判断，详情可参考[为多设备配置旋转策略](bpta-multi-device-window-direction.md#section189311691213)。
-* Pura X外屏默认不支持窗口旋转。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/cawKO62LT-msUhE-mwRmUQ/zh-cn_image_0000002355146073.png)
 
 **其他特殊场景**
 
@@ -360,43 +319,41 @@ content_hash: sha256:4c3642570b6213ef3209a3f8f01c1e95f372bac876808a70f11c1a11863
 
 本章节以视频类应用的全屏播放页为例。在手机横屏时，不支持旋转；在双折叠展开态和平板竖屏时，支持旋转。由于这三种场景的横向断点都在md范围内，无法区分，因此需要结合横向断点和纵向断点进行区分，以兼容多种设备的全屏播放窗口旋转方案。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/niUEvoplQkSKKdm3hbPPFA/zh-cn_image_0000002321147370.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/2qIdXgSUTp2yoSTiA41rSg/zh-cn_image_0000002321147370.jpg "点击放大")
 
-1. 确保已完成[通过断点刷新UI](bpta-multi-device-responsive-layout.md#section175001836203617)中步骤5和步骤6的初始化操作。
+1. 确保已完成[通过断点刷新UI](bpta-multi-device-responsive-layout.md#section175001836203617)中的初始化操作。
 2. 使用@Watch装饰器监听状态变量isFullScreen的变化，以判断视频是否全屏播放，并在显示或隐藏时同步修改窗口方向。全屏播放时，未使用断点的窗口设置逻辑如下：需要将窗口设置为AUTO\_ROTATION\_LANDSCAPE属性的情况包括手机、双折叠屏（X 系列）的折叠态与半折态。
 
    **图4** **手机效果图**  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/mLNfJIeiSUihssd9JP435Q/zh-cn_image_0000002355265933.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/njD68r8FSRGYtCP3tkAxew/zh-cn_image_0000002355265933.jpg "点击放大")
 
    **图5** **双折叠屏（X系列）半折态**  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/ZtWxUVVSQjOrgYHwQSo0yQ/zh-cn_image_0000002321307226.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/fDROL2HVQ1K6N9pv-1V4mQ/zh-cn_image_0000002321307226.jpg "点击放大")
 
    **反例：**
 
+   ```screen
+   if (this.isFullScreen) {
+     if (deviceInfo.deviceType !== '2in1') {
+       this.windowUtil!.disableWindowSystemBar();
+     }
+     try {
+       if ((!display.isFoldable() && deviceInfo.deviceType === 'phone') ||
+         display.getFoldStatus() === display.FoldStatus.FOLD_STATUS_FOLDED) {
+         this.windowUtil!.setMainWindowOrientation(window.Orientation.AUTO_ROTATION_LANDSCAPE);
+       }
+       if (display.isFoldable()) {
+         if (this.isHalfFolded) {
+           this.windowUtil!.setMainWindowOrientation(window.Orientation.AUTO_ROTATION_LANDSCAPE);
+         }
+       }
+     } catch (error) {
+       let err = error as BusinessError
+       hilog.error(0x0000, 'VideoExample',
+         `setMainWindowOrientation failed. code=${err.code}, message = ${err.message}`);
+     }
+   }
    ```
-   1. if (this.isFullScreen) {
-   2. if (deviceInfo.deviceType !== '2in1') {
-   3. this.windowUtil!.disableWindowSystemBar();
-   4. }
-   5. try {
-   6. if ((!display.isFoldable() && deviceInfo.deviceType === 'phone') ||
-   7. display.getFoldStatus() === display.FoldStatus.FOLD_STATUS_FOLDED) {
-   8. this.windowUtil!.setMainWindowOrientation(window.Orientation.AUTO_ROTATION_LANDSCAPE);
-   9. }
-   10. if (display.isFoldable()) {
-   11. if (this.isHalfFolded) {
-   12. this.windowUtil!.setMainWindowOrientation(window.Orientation.AUTO_ROTATION_LANDSCAPE);
-   13. }
-   14. }
-   15. } catch (error) {
-   16. let err = error as BusinessError
-   17. hilog.error(0x0000, 'VideoExample',
-   18. `setMainWindowOrientation failed. code=${err.code}, message = ${err.message}`);
-   19. }
-   20. }
-   ```
-
-   [VideoExample.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/ResponsiveLayout/entry/src/main/ets/pages/VideoExample.ets#L61-L80)
 
    在进入全屏页时，通过isFoldable、deviceType和getFoldStatus三个值共同判断，这种方式可读性和维护性较差。随着鸿蒙生态的拓展，不同设备上可能会出现各种异常情况。
 
@@ -406,48 +363,46 @@ content_hash: sha256:4c3642570b6213ef3209a3f8f01c1e95f372bac876808a70f11c1a11863
    * 手机与双折叠屏（X系列）折叠态竖屏时的横向断点为sm，纵向断点为lg，全屏播放时支持横向旋转。将窗口显示方向设置为AUTO\_ROTATION\_LANDSCAPE\_RESTRICTED。
    * 手机与双折叠屏（X系列）折叠态横屏时的横向断点为md，纵向断点为sm，此时如果退出全屏播放，则竖屏展示布局。将窗口显示方向设置为PORTRAIT。
 
-     说明
+     **说明** 
 
      本案例未覆盖部分手机（如Pocket 2、Pura 70Pro）横屏时横向断点落入lg的情况。
 
+     ```screen
+       // entry/src/main/ets/page/VideoExample.ets
+       private onFullScreenChange(): void {
+         // Large folding screen (X series) in unfolded state and tablet state, supporting rotation && large folding screen (X series) in hover state requires landscape display and does not support rotation.
+         if (((this.currentWidthBreakpoint === WidthBreakpoint.WIDTH_MD && this.currentHeightBreakpoint !==
+         HeightBreakpoint.HEIGHT_SM) || this.currentWidthBreakpoint === WidthBreakpoint.WIDTH_LG) &&
+           !this.isHalfFolded) {
+           this.windowUtil?.setMainWindowOrientation(window.Orientation.AUTO_ROTATION_RESTRICTED);
+         }
+         // Phone and large folding screen (X series) in portrait mode.
+         else if (this.currentWidthBreakpoint === WidthBreakpoint.WIDTH_SM && this.currentHeightBreakpoint ===
+         HeightBreakpoint.HEIGHT_LG) {
+           // In full-screen mode, the layout is displayed in landscape mode. Otherwise, the layout is displayed in portrait mode.
+           if (this.isFullScreen) {
+             this.windowUtil?.setMainWindowOrientation(window.Orientation.AUTO_ROTATION_LANDSCAPE_RESTRICTED);
+           } else {
+             this.windowUtil?.setMainWindowOrientation(window.Orientation.PORTRAIT);
+           }
+         }
+         // When the mobile phone and large folding screen (X series) are folded in landscape mode and the playback is not in full screen mode, the vertical display layout is displayed.
+         else if (this.currentWidthBreakpoint === WidthBreakpoint.WIDTH_MD && this.currentHeightBreakpoint ===
+         HeightBreakpoint.HEIGHT_SM && !this.isFullScreen) {
+           this.windowUtil?.setMainWindowOrientation(window.Orientation.PORTRAIT);
+         }
+         // The navigation bar is not hidden on a 2in1 device.
+         if (deviceInfo.deviceType !== '2in1') {
+           // The navigation bar is hidden in full-screen playback. Otherwise, the navigation bar is displayed.
+           if (this.isFullScreen) {
+             this.windowUtil!.disableWindowSystemBar();
+           } else {
+             this.windowUtil!.enableWindowSystemBar();
+           }
+         }
+       }
+     }
      ```
-     1. // entry/src/main/ets/page/VideoExample.ets
-     2. private onFullScreenChange(): void {
-     3. // Large folding screen (X series) in unfolded state and tablet state, supporting rotation && large folding screen (X series) in hover state requires landscape display and does not support rotation.
-     4. if (((this.currentWidthBreakpoint === WidthBreakpoint.WIDTH_MD && this.currentHeightBreakpoint !==
-     5. HeightBreakpoint.HEIGHT_SM) || this.currentWidthBreakpoint === WidthBreakpoint.WIDTH_LG) &&
-     6. !this.isHalfFolded) {
-     7. this.windowUtil?.setMainWindowOrientation(window.Orientation.AUTO_ROTATION_RESTRICTED);
-     8. }
-     9. // Phone and large folding screen (X series) in portrait mode.
-     10. else if (this.currentWidthBreakpoint === WidthBreakpoint.WIDTH_SM && this.currentHeightBreakpoint ===
-     11. HeightBreakpoint.HEIGHT_LG) {
-     12. // In full-screen mode, the layout is displayed in landscape mode. Otherwise, the layout is displayed in portrait mode.
-     13. if (this.isFullScreen) {
-     14. this.windowUtil?.setMainWindowOrientation(window.Orientation.AUTO_ROTATION_LANDSCAPE_RESTRICTED);
-     15. } else {
-     16. this.windowUtil?.setMainWindowOrientation(window.Orientation.PORTRAIT);
-     17. }
-     18. }
-     19. // When the mobile phone and large folding screen (X series) are folded in landscape mode and the playback is not in full screen mode, the vertical display layout is displayed.
-     20. else if (this.currentWidthBreakpoint === WidthBreakpoint.WIDTH_MD && this.currentHeightBreakpoint ===
-     21. HeightBreakpoint.HEIGHT_SM && !this.isFullScreen) {
-     22. this.windowUtil?.setMainWindowOrientation(window.Orientation.PORTRAIT);
-     23. }
-     24. // The navigation bar is not hidden on a 2in1 device.
-     25. if (deviceInfo.deviceType !== '2in1') {
-     26. // The navigation bar is hidden in full-screen playback. Otherwise, the navigation bar is displayed.
-     27. if (this.isFullScreen) {
-     28. this.windowUtil!.disableWindowSystemBar();
-     29. } else {
-     30. this.windowUtil!.enableWindowSystemBar();
-     31. }
-     32. }
-     33. }
-     34. }
-     ```
-
-     [VideoExample.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/ResponsiveLayout/entry/src/main/ets/pages/VideoExample.ets#L120-L156)
 
 通过纵向和横向断点替换之前的逻辑，开发者只需维护一套方案。这实现了“全屏播放”页在多设备上的兼容。在实际开发中，多设备兼容均可采用此方案进行适配。
 
@@ -467,170 +422,166 @@ content_hash: sha256:4c3642570b6213ef3209a3f8f01c1e95f372bac876808a70f11c1a11863
 
 1. 对通过媒体查询监听[断点](bpta-multi-device-responsive-layout.md#section1532120147301)的功能做简单的封装，方便后续使用。
 
+   ```screen
+   import { mediaquery } from '@kit.ArkUI';
+
+   export type BreakpointType = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+
+   export interface Breakpoint {
+     name: BreakpointType
+     size: number
+     mediaQueryListener?: mediaquery.MediaQueryListener
+   }
+
+   export class BreakpointSystem {
+     private static instance: BreakpointSystem;
+     private readonly breakpoints: Breakpoint[] = [
+       { name: 'xs', size: 0 },
+       { name: 'sm', size: 320 },
+       { name: 'md', size: 600 },
+       { name: 'lg', size: 840 }
+     ]
+     private states: Set<BreakpointState<Object>>;
+
+     private constructor() {
+       this.states = new Set();
+     }
+
+     public static getInstance(): BreakpointSystem {
+       if (!BreakpointSystem.instance) {
+         BreakpointSystem.instance = new BreakpointSystem();
+       }
+       return BreakpointSystem.instance;
+     }
+
+     public attach(state: BreakpointState<Object>): void {
+       this.states.add(state);
+     }
+
+     public detach(state: BreakpointState<Object>): void {
+       this.states.delete(state);
+     }
+
+     public start() {
+       this.breakpoints.forEach((breakpoint: Breakpoint, index) => {
+         let condition: string;
+         if (index === this.breakpoints.length - 1) {
+           condition = `(${breakpoint.size}vp<=width)`;
+         } else {
+           condition = `(${breakpoint.size}vp<=width<${this.breakpoints[index + 1].size}vp)`;
+         }
+         let uiContext = AppStorage.get('uiContext') as UIContext;
+         breakpoint.mediaQueryListener = uiContext.getMediaQuery().matchMediaSync(condition);
+         if (breakpoint.mediaQueryListener.matches) {
+           this.updateAllState(breakpoint.name);
+         }
+         breakpoint.mediaQueryListener.on('change', (mediaQueryResult) => {
+           if (mediaQueryResult.matches) {
+             this.updateAllState(breakpoint.name);
+           }
+         });
+       })
+     }
+
+     private updateAllState(type: BreakpointType): void {
+       this.states.forEach(state => state.update(type));
+     }
+
+     public stop() {
+       this.breakpoints.forEach((breakpoint: Breakpoint) => {
+         if (breakpoint.mediaQueryListener) {
+           breakpoint.mediaQueryListener.off('change');
+         }
+       })
+       this.states.clear();
+     }
+   }
+
+   export interface BreakpointOptions<T> {
+     xs?: T;
+     sm?: T;
+     md?: T;
+     lg?: T;
+     xl?: T;
+     xxl?: T;
+   }
+
+   export class BreakpointState<T extends Object> {
+     public value: T | undefined = undefined;
+     private options: BreakpointOptions<T>;
+
+     constructor(options: BreakpointOptions<T>) {
+       this.options = options;
+     }
+
+     static of<T extends Object>(options: BreakpointOptions<T>): BreakpointState<T> {
+       return new BreakpointState(options);
+     }
+
+     public update(type: BreakpointType): void {
+       if (type === 'xs') {
+         this.value = this.options.xs;
+       } else if (type === 'sm') {
+         this.value = this.options.sm;
+       } else if (type === 'md') {
+         this.value = this.options.md;
+       } else if (type === 'lg') {
+         this.value = this.options.lg;
+       } else if (type === 'xl') {
+         this.value = this.options.xl;
+       } else if (type === 'xxl') {
+         this.value = this.options.xxl;
+       } else {
+         this.value = undefined;
+       }
+     }
+   }
    ```
-   1. import { mediaquery } from '@kit.ArkUI';
-
-   3. export type BreakpointType = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
-
-   5. export interface Breakpoint {
-   6. name: BreakpointType
-   7. size: number
-   8. mediaQueryListener?: mediaquery.MediaQueryListener
-   9. }
-
-   11. export class BreakpointSystem {
-   12. private static instance: BreakpointSystem;
-   13. private readonly breakpoints: Breakpoint[] = [
-   14. { name: 'xs', size: 0 },
-   15. { name: 'sm', size: 320 },
-   16. { name: 'md', size: 600 },
-   17. { name: 'lg', size: 840 }
-   18. ]
-   19. private states: Set<BreakpointState<Object>>;
-
-   21. private constructor() {
-   22. this.states = new Set();
-   23. }
-
-   25. public static getInstance(): BreakpointSystem {
-   26. if (!BreakpointSystem.instance) {
-   27. BreakpointSystem.instance = new BreakpointSystem();
-   28. }
-   29. return BreakpointSystem.instance;
-   30. }
-
-   32. public attach(state: BreakpointState<Object>): void {
-   33. this.states.add(state);
-   34. }
-
-   36. public detach(state: BreakpointState<Object>): void {
-   37. this.states.delete(state);
-   38. }
-
-   40. public start() {
-   41. this.breakpoints.forEach((breakpoint: Breakpoint, index) => {
-   42. let condition: string;
-   43. if (index === this.breakpoints.length - 1) {
-   44. condition = `(${breakpoint.size}vp<=width)`;
-   45. } else {
-   46. condition = `(${breakpoint.size}vp<=width<${this.breakpoints[index + 1].size}vp)`;
-   47. }
-   48. let uiContext = AppStorage.get('uiContext') as UIContext;
-   49. breakpoint.mediaQueryListener = uiContext.getMediaQuery().matchMediaSync(condition);
-   50. if (breakpoint.mediaQueryListener.matches) {
-   51. this.updateAllState(breakpoint.name);
-   52. }
-   53. breakpoint.mediaQueryListener.on('change', (mediaQueryResult) => {
-   54. if (mediaQueryResult.matches) {
-   55. this.updateAllState(breakpoint.name);
-   56. }
-   57. });
-   58. })
-   59. }
-
-   61. private updateAllState(type: BreakpointType): void {
-   62. this.states.forEach(state => state.update(type));
-   63. }
-
-   65. public stop() {
-   66. this.breakpoints.forEach((breakpoint: Breakpoint) => {
-   67. if (breakpoint.mediaQueryListener) {
-   68. breakpoint.mediaQueryListener.off('change');
-   69. }
-   70. })
-   71. this.states.clear();
-   72. }
-   73. }
-
-   75. export interface BreakpointOptions<T> {
-   76. xs?: T;
-   77. sm?: T;
-   78. md?: T;
-   79. lg?: T;
-   80. xl?: T;
-   81. xxl?: T;
-   82. }
-
-   84. export class BreakpointState<T extends Object> {
-   85. public value: T | undefined = undefined;
-   86. private options: BreakpointOptions<T>;
-
-   88. constructor(options: BreakpointOptions<T>) {
-   89. this.options = options;
-   90. }
-
-   92. static of<T extends Object>(options: BreakpointOptions<T>): BreakpointState<T> {
-   93. return new BreakpointState(options);
-   94. }
-
-   96. public update(type: BreakpointType): void {
-   97. if (type === 'xs') {
-   98. this.value = this.options.xs;
-   99. } else if (type === 'sm') {
-   100. this.value = this.options.sm;
-   101. } else if (type === 'md') {
-   102. this.value = this.options.md;
-   103. } else if (type === 'lg') {
-   104. this.value = this.options.lg;
-   105. } else if (type === 'xl') {
-   106. this.value = this.options.xl;
-   107. } else if (type === 'xxl') {
-   108. this.value = this.options.xxl;
-   109. } else {
-   110. this.value = undefined;
-   111. }
-   112. }
-   113. }
-   ```
-
-   [Breakpoint.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AdaptiveCapabilities/entry/src/main/ets/pages/responsiveLayout/breakpoint/Breakpoint.ets#L17-L129)
 2. 在页面中，通过媒体查询，监听应用窗口宽度变化，获取当前应用所处的断点值。
 
+   ```screen
+   import { BreakpointSystem, BreakpointState } from './Breakpoint';
+
+   @Entry
+   @Component
+   struct BreakpointSample {
+     @State compStr: BreakpointState<string> = BreakpointState.of({ sm: 'sm', md: 'md', lg: 'lg' })
+     @State compImg: BreakpointState<Resource> = BreakpointState.of({
+       sm: $r('app.media.sm_new'),
+       md: $r('app.media.md_new'),
+       lg: $r('app.media.lg_new')
+     });
+
+     aboutToAppear() {
+       BreakpointSystem.getInstance().attach(this.compStr);
+       BreakpointSystem.getInstance().attach(this.compImg);
+       BreakpointSystem.getInstance().start();
+     }
+
+     aboutToDisappear() {
+       BreakpointSystem.getInstance().detach(this.compStr);
+       BreakpointSystem.getInstance().detach(this.compImg);
+       BreakpointSystem.getInstance().stop();
+     }
+
+     build() {
+       Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+         Column()
+           .height(100)
+           .width(100)
+           .backgroundImage(this.compImg.value)
+           .backgroundImagePosition(Alignment.Center)
+           .backgroundImageSize(ImageSize.Contain)
+
+         Text(this.compStr.value)
+           .fontSize(24)
+           .margin(10)
+       }
+       .width('100%')
+       .height('100%')
+     }
+   }
    ```
-   1. import { BreakpointSystem, BreakpointState } from './Breakpoint';
-
-   3. @Entry
-   4. @Component
-   5. struct BreakpointSample {
-   6. @State compStr: BreakpointState<string> = BreakpointState.of({ sm: 'sm', md: 'md', lg: 'lg' })
-   7. @State compImg: BreakpointState<Resource> = BreakpointState.of({
-   8. sm: $r('app.media.sm_new'),
-   9. md: $r('app.media.md_new'),
-   10. lg: $r('app.media.lg_new')
-   11. });
-
-   13. aboutToAppear() {
-   14. BreakpointSystem.getInstance().attach(this.compStr);
-   15. BreakpointSystem.getInstance().attach(this.compImg);
-   16. BreakpointSystem.getInstance().start();
-   17. }
-
-   19. aboutToDisappear() {
-   20. BreakpointSystem.getInstance().detach(this.compStr);
-   21. BreakpointSystem.getInstance().detach(this.compImg);
-   22. BreakpointSystem.getInstance().stop();
-   23. }
-
-   25. build() {
-   26. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-   27. Column()
-   28. .height(100)
-   29. .width(100)
-   30. .backgroundImage(this.compImg.value)
-   31. .backgroundImagePosition(Alignment.Center)
-   32. .backgroundImageSize(ImageSize.Contain)
-
-   34. Text(this.compStr.value)
-   35. .fontSize(24)
-   36. .margin(10)
-   37. }
-   38. .width('100%')
-   39. .height('100%')
-   40. }
-   41. }
-   ```
-
-   [BreakpointSample.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/AdaptiveCapabilities/entry/src/main/ets/pages/responsiveLayout/breakpoint/BreakpointSample.ets#L17-L57)
 
 ## 栅格
 
@@ -646,7 +597,7 @@ HarmonyOS的栅格系统采用了12列设计，因为12可以被2、3、4、6整
 4. 自动换行和自适应：栅格布局可以完成一对多布局的自动换行和自适应。当页面元素的数量超出了一行或一列的容量时，他们会自动换到下一行或下一列，并且在不同的设备上自适应排版，使得页面布局更加灵活和适应性强。
 
 **图6** 栅格示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/30WhVdaWQLC2cBXDFQTF_w/zh-cn_image_0000002461092273.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/8EBT_T0vSp-OhpJv1ufSDQ/zh-cn_image_0000002461092273.png "点击放大")
 
 栅格的样式由Margin、Gutter、Columns三个属性决定。
 
@@ -695,7 +646,7 @@ Gutter： 24vp
 | --- | --- |
 |  |  |
 
-说明
+**说明** 
 
 * ArkUI在API version 9对栅格组件做了重构，推出了新的栅格组件[GridRow](../harmonyos-references/ts-container-gridrow.md)和[GridCol](../harmonyos-references/ts-container-gridcol.md)，同时原有的[GridContainer组件](../harmonyos-references/ts-container-gridcontainer.md)及[栅格设置](../harmonyos-references/ts-universal-attributes-grid.md)已经废弃。
 * 本文中提到的栅格组件，如无特别说明，都是指GridRow和GridCol组件。
@@ -709,7 +660,7 @@ Gutter： 24vp
 * 基于本文断点小节介绍的推荐值，栅格组件默认提供xs、sm、md、lg四个断点。
 * 栅格组件支持开发者修改断点的取值范围，除了默认的四个断点，还支持开发者启用xl和xxl两个额外的断点。
 
-  说明
+  **说明** 
 
   断点并非越多越好，通常每个断点都需要开发者“精心适配”以达到最佳显示效果。
 
@@ -719,45 +670,43 @@ Gutter： 24vp
 
 图片左下角显示了当前设备屏幕的尺寸（即应用窗口尺寸），可以看到随着窗口尺寸发生变化，栅格的断点也相应发生了改变（为了便于理解，下图中将设备的DPI设置为160，此时1vp=1px）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/mXEV2SEZSRCuxTUNSXQSUw/zh-cn_image_0000002355265993.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/vgfZbUOYSguNJ76gO3poCA/zh-cn_image_0000002355265993.gif "点击放大")
 
+```screen
+@Entry
+@Preview
+@Component
+struct GridRowSample1 {
+  @State currentBreakpoint: string = 'md';
+
+  build() {
+    GridRow({ breakpoints: { value: ['320vp', '600vp', '840vp', '1440vp'] } }) {
+      GridCol({
+        span: {
+          xs: 12,
+          sm: 12,
+          md: 12,
+          lg: 12,
+          xl: 12
+        }
+      }) {
+        Row() {
+          Text(this.currentBreakpoint)
+            .fontSize(100)
+            .fontWeight(FontWeight.Bolder)
+        }
+        .width('100%')
+        .height('100%')
+        .alignItems(VerticalAlign.Center)
+        .justifyContent(FlexAlign.Center)
+      }
+    }
+    .onBreakpointChange((breakPoint: string) => {
+      this.currentBreakpoint = breakPoint;
+    })
+  }
+}
 ```
-1. @Entry
-2. @Preview
-3. @Component
-4. struct GridRowSample1 {
-5. @State currentBreakpoint: string = 'md';
-
-7. build() {
-8. GridRow({ breakpoints: { value: ['320vp', '600vp', '840vp', '1440vp'] } }) {
-9. GridCol({
-10. span: {
-11. xs: 12,
-12. sm: 12,
-13. md: 12,
-14. lg: 12,
-15. xl: 12
-16. }
-17. }) {
-18. Row() {
-19. Text(this.currentBreakpoint)
-20. .fontSize(100)
-21. .fontWeight(FontWeight.Bolder)
-22. }
-23. .width('100%')
-24. .height('100%')
-25. .alignItems(VerticalAlign.Center)
-26. .justifyContent(FlexAlign.Center)
-27. }
-28. }
-29. .onBreakpointChange((breakPoint: string) => {
-30. this.currentBreakpoint = breakPoint;
-31. })
-32. }
-33. }
-```
-
-[GridRowSample1.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AdaptiveCapabilities/entry/src/main/ets/pages/gridRow/gridRow/GridRowSample1.ets#L17-L49)
 
 **（二）栅格断点默认以窗口宽度为参照物，同时还允许开发者配置为以栅格组件本身的宽度为参照物。**
 
@@ -769,65 +718,63 @@ Gutter： 24vp
 
 为了便于理解，可将自定义预览器的设备屏幕宽度设置为650vp。示例代码中将侧边栏的变化范围控制在[100vp, 600vp]，那么右侧的栅格组件宽度相对应在[550vp, 50vp]之间变化。根据代码中对栅格断点的配置，栅格组件宽度发生变化时，其断点相应的发生改变。
 
+```screen
+@Entry
+@Component
+struct GridRowSample2 {
+  @State currentBreakpoint: string = 'md';
+
+  build() {
+    // Users can adjust the width of the sidebar and content area by dragging the divider in the sidebar component.
+    SideBarContainer(SideBarContainerType.Embed) {
+      // Sidebar, with a resizable range of [100vp, 600vp].
+      Column() {
+      }
+      .width('100%')
+      .backgroundColor($r('sys.color.comp_background_secondary'))
+
+       // Content area.
+      GridRow({
+        breakpoints: {
+          value: ['320vp', '600vp', '840vp', '1440vp'],
+          reference: BreakpointsReference.ComponentSize
+        }
+      }) {
+        GridCol({
+          span: {
+            xs: 12,
+            sm: 12,
+            md: 12,
+            lg: 12,
+            xl: 12
+          }
+        }) {
+          Row() {
+            Text(this.currentBreakpoint)
+              .fontSize(50)
+              .fontWeight(FontWeight.Bolder)
+          }
+          .width('100%')
+          .height('100%')
+          .justifyContent(FlexAlign.Center)
+          .alignItems(VerticalAlign.Center)
+        }
+      }
+      .onBreakpointChange((currentBreakpoint: string) => {
+        this.currentBreakpoint = currentBreakpoint;
+      })
+      .width('100%')
+    }
+    // The sidebar does not auto-hide when dragged to its minimum width.
+    .autoHide(false)
+    .sideBarWidth(100)
+    // Minimum width of the sidebar.
+    .minSideBarWidth(100)
+    // Maximum width of the sidebar.
+    .maxSideBarWidth(600)
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct GridRowSample2 {
-4. @State currentBreakpoint: string = 'md';
-
-6. build() {
-7. // Users can adjust the width of the sidebar and content area by dragging the divider in the sidebar component.
-8. SideBarContainer(SideBarContainerType.Embed) {
-9. // Sidebar, with a resizable range of [100vp, 600vp].
-10. Column() {
-11. }
-12. .width('100%')
-13. .backgroundColor($r('sys.color.comp_background_secondary'))
-
-15. // Content area.
-16. GridRow({
-17. breakpoints: {
-18. value: ['320vp', '600vp', '840vp', '1440vp'],
-19. reference: BreakpointsReference.ComponentSize
-20. }
-21. }) {
-22. GridCol({
-23. span: {
-24. xs: 12,
-25. sm: 12,
-26. md: 12,
-27. lg: 12,
-28. xl: 12
-29. }
-30. }) {
-31. Row() {
-32. Text(this.currentBreakpoint)
-33. .fontSize(50)
-34. .fontWeight(FontWeight.Bolder)
-35. }
-36. .width('100%')
-37. .height('100%')
-38. .justifyContent(FlexAlign.Center)
-39. .alignItems(VerticalAlign.Center)
-40. }
-41. }
-42. .onBreakpointChange((currentBreakpoint: string) => {
-43. this.currentBreakpoint = currentBreakpoint;
-44. })
-45. .width('100%')
-46. }
-47. // The sidebar does not auto-hide when dragged to its minimum width.
-48. .autoHide(false)
-49. .sideBarWidth(100)
-50. // Minimum width of the sidebar.
-51. .minSideBarWidth(100)
-52. // Maximum width of the sidebar.
-53. .maxSideBarWidth(600)
-54. }
-55. }
-```
-
-[GridRowSample2.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AdaptiveCapabilities/entry/src/main/ets/pages/gridRow/gridRow/GridRowSample2.ets#L17-L71)
 
 **（三）栅格组件的断点发生变化时，会通过onBreakPointChange事件通知开发者。**
 
@@ -852,124 +799,120 @@ Gutter： 24vp
 | --- | --- | --- |
 |  |  |  |
 
-```
-1. @Entry
-2. @Component
-3. struct GridRowSample3 {
-4. private bgColors: ResourceColor[] = [
-5. $r('sys.color.ohos_id_color_palette_aux1'),
-6. $r('sys.color.ohos_id_color_palette_aux2'),
-7. $r('sys.color.ohos_id_color_palette_aux3'),
-8. $r('sys.color.ohos_id_color_palette_aux4'),
-9. $r('sys.color.ohos_id_color_palette_aux5'),
-10. $r('sys.color.ohos_id_color_palette_aux6')
-11. ];
+```screen
+@Entry
+@Component
+struct GridRowSample3 {
+  private bgColors: ResourceColor[] = [
+    $r('sys.color.ohos_id_color_palette_aux1'),
+    $r('sys.color.ohos_id_color_palette_aux2'),
+    $r('sys.color.ohos_id_color_palette_aux3'),
+    $r('sys.color.ohos_id_color_palette_aux4'),
+    $r('sys.color.ohos_id_color_palette_aux5'),
+    $r('sys.color.ohos_id_color_palette_aux6')
+  ];
 
-13. build() {
-14. // Config the values of columns and gutter at different breakpoints.
-15. GridRow({
-16. columns: { sm: 4, md: 8, lg: 12 },
-17. gutter: {
-18. x: { sm: 8, md: 16, lg: 24 },
-19. y: { sm: 8, md: 16, lg: 24 }
-20. }
-21. }) {
-22. ForEach(this.bgColors, (bgColor: ResourceColor) => {
-23. GridCol({ span: { sm: 2, md: 2, lg: 2 } }) {
-24. Row()
-25. .width('100%')
-26. .backgroundColor(bgColor)
-27. .height(30)
-28. }
-29. }, (bgColor: ResourceColor) => bgColor.toString())
-30. }
-31. }
-32. }
+  build() {
+    // Config the values of columns and gutter at different breakpoints.
+    GridRow({
+      columns: { sm: 4, md: 8, lg: 12 },
+      gutter: {
+        x: { sm: 8, md: 16, lg: 24 },
+        y: { sm: 8, md: 16, lg: 24 }
+      }
+    }) {
+      ForEach(this.bgColors, (bgColor: ResourceColor) => {
+        GridCol({ span: { sm: 2, md: 2, lg: 2 } }) {
+          Row()
+            .width('100%')
+            .backgroundColor(bgColor)
+            .height(30)
+        }
+      }, (bgColor: ResourceColor) => bgColor.toString())
+    }
+  }
+}
 ```
-
-[GridRowSample3.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AdaptiveCapabilities/entry/src/main/ets/pages/gridRow/gridRow/GridRowSample3.ets#L17-L48)
 
 **示例4：**
 
 通过通用属性margin或者padding，均可以控制栅格组件与其父容器左右两侧的距离，但padding区域计算在栅格组件内而margin区域计算在栅格组件外。此外，借助onBreakpointChange事件，还可以改变不同断点下margin或padding值。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/5_uFwIiLS8emRBOSc-W9CQ/zh-cn_image_0000002355266017.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/lZ_UKvL9QzO2H68FBlkqig/zh-cn_image_0000002355266017.png "点击放大")
 
+```screen
+@Entry
+@Component
+struct GridRowSample4 {
+  @State gridMargin: number = 0;
+
+  build() {
+    Column() {
+      Row()
+        .width('100%')
+        .height(30)
+
+      // Control the left and right spacing of the grid using padding.
+      GridRow() {
+        GridCol({ span: { sm: 12, md: 12, lg: 12 } }) {
+          Row() {
+            Text('padding')
+              .fontSize(24)
+              .fontWeight(FontWeight.Medium)
+          }
+          .width('100%')
+          .height('100%')
+          .alignItems(VerticalAlign.Center)
+          .justifyContent(FlexAlign.Center)
+          .backgroundColor($r('sys.color.comp_background_secondary'))
+        }
+      }
+      .height(50)
+      .borderWidth(2)
+      .borderColor('#F1CCB8')
+      .padding({
+        left: this.gridMargin,
+        right: this.gridMargin
+      })
+      // Configure the left and right spacing values of grid components at different breakpoints using breakpoint change events.
+      .onBreakpointChange((currentBreakpoint: string) => {
+        if (currentBreakpoint === 'xs' || currentBreakpoint === 'sm') {
+          this.gridMargin = 12;
+        } else {
+          this.gridMargin = 24;
+        }
+      })
+
+      Row()
+        .width('100%')
+        .height(30)
+
+      // Control the left and right spacing of the grid using margin.
+      GridRow() {
+        GridCol({ span: { sm: 12, md: 12, lg: 12 } }) {
+          Row() {
+            Text('margin')
+              .fontSize(24)
+              .fontWeight(FontWeight.Medium)
+          }
+          .width('100%')
+          .height('100%')
+          .alignItems(VerticalAlign.Center)
+          .justifyContent(FlexAlign.Center)
+          .backgroundColor($r('sys.color.comp_background_secondary'))
+        }
+      }
+      .height(50)
+      .borderWidth(2)
+      .borderColor('#F1CCB8')
+      .margin({
+        left: this.gridMargin,
+        right: this.gridMargin
+      })
+    }
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct GridRowSample4 {
-4. @State gridMargin: number = 0;
-
-6. build() {
-7. Column() {
-8. Row()
-9. .width('100%')
-10. .height(30)
-
-12. // Control the left and right spacing of the grid using padding.
-13. GridRow() {
-14. GridCol({ span: { sm: 12, md: 12, lg: 12 } }) {
-15. Row() {
-16. Text('padding')
-17. .fontSize(24)
-18. .fontWeight(FontWeight.Medium)
-19. }
-20. .width('100%')
-21. .height('100%')
-22. .alignItems(VerticalAlign.Center)
-23. .justifyContent(FlexAlign.Center)
-24. .backgroundColor($r('sys.color.comp_background_secondary'))
-25. }
-26. }
-27. .height(50)
-28. .borderWidth(2)
-29. .borderColor('#F1CCB8')
-30. .padding({
-31. left: this.gridMargin,
-32. right: this.gridMargin
-33. })
-34. // Configure the left and right spacing values of grid components at different breakpoints using breakpoint change events.
-35. .onBreakpointChange((currentBreakpoint: string) => {
-36. if (currentBreakpoint === 'xs' || currentBreakpoint === 'sm') {
-37. this.gridMargin = 12;
-38. } else {
-39. this.gridMargin = 24;
-40. }
-41. })
-
-43. Row()
-44. .width('100%')
-45. .height(30)
-
-47. // Control the left and right spacing of the grid using margin.
-48. GridRow() {
-49. GridCol({ span: { sm: 12, md: 12, lg: 12 } }) {
-50. Row() {
-51. Text('margin')
-52. .fontSize(24)
-53. .fontWeight(FontWeight.Medium)
-54. }
-55. .width('100%')
-56. .height('100%')
-57. .alignItems(VerticalAlign.Center)
-58. .justifyContent(FlexAlign.Center)
-59. .backgroundColor($r('sys.color.comp_background_secondary'))
-60. }
-61. }
-62. .height(50)
-63. .borderWidth(2)
-64. .borderColor('#F1CCB8')
-65. .margin({
-66. left: this.gridMargin,
-67. right: this.gridMargin
-68. })
-69. }
-70. }
-71. }
-```
-
-[GridRowSample4.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AdaptiveCapabilities/entry/src/main/ets/pages/gridRow/gridRow/GridRowSample4.ets#L17-L87)
 
 ### 栅格组件的span、offset和order
 
@@ -989,39 +932,37 @@ Gutter： 24vp
 | --- | --- | --- |
 |  |  |  |
 
-```
-1. @Entry
-2. @Component
-3. struct GridRowSample5 {
-4. private elements: ColorArr[] = [
-5. { index: 1, color: $r('sys.color.ohos_id_color_palette_aux1') },
-6. { index: 2, color: $r('sys.color.ohos_id_color_palette_aux2') },
-7. { index: 3, color: $r('sys.color.ohos_id_color_palette_aux3') },
-8. { index: 4, color: $r('sys.color.ohos_id_color_palette_aux4') },
-9. { index: 5, color: $r('sys.color.ohos_id_color_palette_aux5') },
-10. { index: 6, color: $r('sys.color.ohos_id_color_palette_aux6') }
-11. ];
+```screen
+@Entry
+@Component
+struct GridRowSample5 {
+  private elements: ColorArr[] = [
+    { index: 1, color: $r('sys.color.ohos_id_color_palette_aux1') },
+    { index: 2, color: $r('sys.color.ohos_id_color_palette_aux2') },
+    { index: 3, color: $r('sys.color.ohos_id_color_palette_aux3') },
+    { index: 4, color: $r('sys.color.ohos_id_color_palette_aux4') },
+    { index: 5, color: $r('sys.color.ohos_id_color_palette_aux5') },
+    { index: 6, color: $r('sys.color.ohos_id_color_palette_aux6') }
+  ];
 
-13. build() {
-14. GridRow({ columns: { sm: 12, md: 12, lg: 12 } }) {
-15. ForEach(this.elements, (item: ColorArr) => {
-16. GridCol({ span: { sm: 6, md: item.index % 3 === 0 ? 0 : 4, lg: 3 } }) {
-17. Row() {
-18. Text(`${item.index}`)
-19. .fontSize(24)
-20. }
-21. .justifyContent(FlexAlign.Center)
-22. .backgroundColor(item.color)
-23. .height(30)
-24. .width('100%')
-25. }
-26. }, (item: ColorArr, index: number) => (item.index + index).toString())
-27. }
-28. }
-29. }
+  build() {
+    GridRow({ columns: { sm: 12, md: 12, lg: 12 } }) {
+      ForEach(this.elements, (item: ColorArr) => {
+        GridCol({ span: { sm: 6, md: item.index % 3 === 0 ? 0 : 4, lg: 3 } }) {
+          Row() {
+            Text(`${item.index}`)
+              .fontSize(24)
+          }
+          .justifyContent(FlexAlign.Center)
+          .backgroundColor(item.color)
+          .height(30)
+          .width('100%')
+        }
+      }, (item: ColorArr, index: number) => (item.index + index).toString())
+    }
+  }
+}
 ```
-
-[GridRowSample5.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AdaptiveCapabilities/entry/src/main/ets/pages/gridRow/gridRow/GridRowSample5.ets#L19-L47)
 
 **示例6：**
 
@@ -1031,42 +972,40 @@ Gutter： 24vp
 | --- | --- | --- |
 |  |  |  |
 
-```
-1. @Entry
-2. @Component
-3. struct GridRowSample6 {
-4. private elements: ColorArr[] = [
-5. { index: 1, color: $r('sys.color.ohos_id_color_palette_aux1') },
-6. { index: 2, color: $r('sys.color.ohos_id_color_palette_aux2') },
-7. { index: 3, color: $r('sys.color.ohos_id_color_palette_aux3') },
-8. { index: 4, color: $r('sys.color.ohos_id_color_palette_aux4') },
-9. { index: 5, color: $r('sys.color.ohos_id_color_palette_aux5') },
-10. { index: 6, color: $r('sys.color.ohos_id_color_palette_aux6') }
-11. ];
+```screen
+@Entry
+@Component
+struct GridRowSample6 {
+  private elements: ColorArr[] = [
+    { index: 1, color: $r('sys.color.ohos_id_color_palette_aux1') },
+    { index: 2, color: $r('sys.color.ohos_id_color_palette_aux2') },
+    { index: 3, color: $r('sys.color.ohos_id_color_palette_aux3') },
+    { index: 4, color: $r('sys.color.ohos_id_color_palette_aux4') },
+    { index: 5, color: $r('sys.color.ohos_id_color_palette_aux5') },
+    { index: 6, color: $r('sys.color.ohos_id_color_palette_aux6') }
+  ];
 
-13. build() {
-14. GridRow({ columns: { sm: 12, md: 12, lg: 12 } }) {
-15. ForEach(this.elements, (item: ColorArr) => {
-16. GridCol({
-17. span: { sm: 6, md: 4, lg: 3 },
-18. offset: { sm: 0, md: 2, lg: 1 }
-19. }) {
-20. Row() {
-21. Text(`${item.index}`)
-22. .fontSize(24)
-23. }
-24. .justifyContent(FlexAlign.Center)
-25. .backgroundColor(item.color)
-26. .height(30)
-27. .width('100%')
-28. }
-29. }, (item: ColorArr, index: number) => (item.index + index).toString())
-30. }
-31. }
-32. }
+  build() {
+    GridRow({ columns: { sm: 12, md: 12, lg: 12 } }) {
+      ForEach(this.elements, (item: ColorArr) => {
+        GridCol({
+          span: { sm: 6, md: 4, lg: 3 },
+          offset: { sm: 0, md: 2, lg: 1 }
+        }) {
+          Row() {
+            Text(`${item.index}`)
+              .fontSize(24)
+          }
+          .justifyContent(FlexAlign.Center)
+          .backgroundColor(item.color)
+          .height(30)
+          .width('100%')
+        }
+      }, (item: ColorArr, index: number) => (item.index + index).toString())
+    }
+  }
+}
 ```
-
-[GridRowSample6.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AdaptiveCapabilities/entry/src/main/ets/pages/gridRow/gridRow/GridRowSample6.ets#L19-L50)
 
 **示例7：**
 
@@ -1076,42 +1015,40 @@ Gutter： 24vp
 | --- | --- | --- |
 |  |  |  |
 
-```
-1. @Entry
-2. @Component
-3. struct GridRowSample7 {
-4. private elements: ColorArr[] = [
-5. { index: 1, color: $r('sys.color.ohos_id_color_palette_aux1') },
-6. { index: 2, color: $r('sys.color.ohos_id_color_palette_aux2') },
-7. { index: 3, color: $r('sys.color.ohos_id_color_palette_aux3') },
-8. { index: 4, color: $r('sys.color.ohos_id_color_palette_aux4') },
-9. { index: 5, color: $r('sys.color.ohos_id_color_palette_aux5') },
-10. { index: 6, color: $r('sys.color.ohos_id_color_palette_aux6') }
-11. ];
+```screen
+@Entry
+@Component
+struct GridRowSample7 {
+  private elements: ColorArr[] = [
+    { index: 1, color: $r('sys.color.ohos_id_color_palette_aux1') },
+    { index: 2, color: $r('sys.color.ohos_id_color_palette_aux2') },
+    { index: 3, color: $r('sys.color.ohos_id_color_palette_aux3') },
+    { index: 4, color: $r('sys.color.ohos_id_color_palette_aux4') },
+    { index: 5, color: $r('sys.color.ohos_id_color_palette_aux5') },
+    { index: 6, color: $r('sys.color.ohos_id_color_palette_aux6') }
+  ];
 
-13. build() {
-14. GridRow({ columns: { sm: 12, md: 12, lg: 12 } }) {
-15. ForEach(this.elements, (item: ColorArr) => {
-16. GridCol({
-17. span: { sm: 6, md: 4, lg: 3 },
-18. order: { lg: (6 - item.index) }
-19. }) {
-20. Row() {
-21. Text(`${item.index}`)
-22. .fontSize(24)
-23. }
-24. .justifyContent(FlexAlign.Center)
-25. .backgroundColor(item.color)
-26. .height(30)
-27. .width('100%')
-28. }
-29. }, (item: ColorArr, index: number) => (item.index + index).toString())
-30. }
-31. }
-32. }
+  build() {
+    GridRow({ columns: { sm: 12, md: 12, lg: 12 } }) {
+      ForEach(this.elements, (item: ColorArr) => {
+        GridCol({
+          span: { sm: 6, md: 4, lg: 3 },
+          order: { lg: (6 - item.index) }
+        }) {
+          Row() {
+            Text(`${item.index}`)
+              .fontSize(24)
+          }
+          .justifyContent(FlexAlign.Center)
+          .backgroundColor(item.color)
+          .height(30)
+          .width('100%')
+        }
+      }, (item: ColorArr, index: number) => (item.index + index).toString())
+    }
+  }
+}
 ```
-
-[GridRowSample7.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AdaptiveCapabilities/entry/src/main/ets/pages/gridRow/gridRow/GridRowSample7.ets#L19-L50)
 
 **示例8：**
 
@@ -1121,44 +1058,42 @@ Gutter： 24vp
 | --- | --- | --- |
 |  |  |  |
 
-```
-1. @Entry
-2. @Component
-3. struct GridRowSample8 {
-4. private elements: ColorArr[] = [
-5. { index: 1, color: $r('sys.color.ohos_id_color_palette_aux1') },
-6. { index: 2, color: $r('sys.color.ohos_id_color_palette_aux2') },
-7. { index: 3, color: $r('sys.color.ohos_id_color_palette_aux3') },
-8. { index: 4, color: $r('sys.color.ohos_id_color_palette_aux4') },
-9. { index: 5, color: $r('sys.color.ohos_id_color_palette_aux5') },
-10. { index: 6, color: $r('sys.color.ohos_id_color_palette_aux6') }
-11. ];
+```screen
+@Entry
+@Component
+struct GridRowSample8 {
+  private elements: ColorArr[] = [
+    { index: 1, color: $r('sys.color.ohos_id_color_palette_aux1') },
+    { index: 2, color: $r('sys.color.ohos_id_color_palette_aux2') },
+    { index: 3, color: $r('sys.color.ohos_id_color_palette_aux3') },
+    { index: 4, color: $r('sys.color.ohos_id_color_palette_aux4') },
+    { index: 5, color: $r('sys.color.ohos_id_color_palette_aux5') },
+    { index: 6, color: $r('sys.color.ohos_id_color_palette_aux6') }
+  ];
 
-13. build() {
-14. GridRow({ columns: { sm: 12, md: 12, lg: 12 } }) {
-15. ForEach(this.elements, (item: ColorArr) => {
-16. // If the values of the three parameters are not configured at the md breakpoint, they will inherit the values from the sm breakpoint.
-17. GridCol({
-18. span: { sm: 4, lg: 3 },
-19. offset: { sm: 2, lg: 1 },
-20. order: { sm: (6 - item.index), lg: item.index }
-21. }) {
-22. Row() {
-23. Text(`${item.index}`)
-24. .fontSize(24)
-25. }
-26. .justifyContent(FlexAlign.Center)
-27. .backgroundColor(item.color)
-28. .height(30)
-29. .width('100%')
-30. }
-31. }, (item: ColorArr, index: number) => (item.index + index).toString())
-32. }
-33. }
-34. }
+  build() {
+    GridRow({ columns: { sm: 12, md: 12, lg: 12 } }) {
+      ForEach(this.elements, (item: ColorArr) => {
+        // If the values of the three parameters are not configured at the md breakpoint, they will inherit the values from the sm breakpoint.
+        GridCol({
+          span: { sm: 4, lg: 3 },
+          offset: { sm: 2, lg: 1 },
+          order: { sm: (6 - item.index), lg: item.index }
+        }) {
+          Row() {
+            Text(`${item.index}`)
+              .fontSize(24)
+          }
+          .justifyContent(FlexAlign.Center)
+          .backgroundColor(item.color)
+          .height(30)
+          .width('100%')
+        }
+      }, (item: ColorArr, index: number) => (item.index + index).toString())
+    }
+  }
+}
 ```
-
-[GridRowSample8.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AdaptiveCapabilities/entry/src/main/ets/pages/gridRow/gridRow/GridRowSample8.ets#L19-L52)
 
 ### 栅格组件的嵌套使用
 
@@ -1170,54 +1105,52 @@ Gutter： 24vp
 | --- | --- | --- |
 |  |  |  |
 
-```
-1. @Entry
-2. @Component
-3. struct GridRowSample9 {
-4. private elements: ColorArr[] = [
-5. { index: 1, color: $r('sys.color.ohos_id_color_palette_aux1') },
-6. { index: 2, color: $r('sys.color.ohos_id_color_palette_aux2') },
-7. { index: 3, color: $r('sys.color.ohos_id_color_palette_aux3') },
-8. { index: 4, color: $r('sys.color.ohos_id_color_palette_aux4') },
-9. { index: 5, color: $r('sys.color.ohos_id_color_palette_aux5') },
-10. { index: 6, color: $r('sys.color.ohos_id_color_palette_aux6') }
-11. ];
+```screen
+@Entry
+@Component
+struct GridRowSample9 {
+  private elements: ColorArr[] = [
+    { index: 1, color: $r('sys.color.ohos_id_color_palette_aux1') },
+    { index: 2, color: $r('sys.color.ohos_id_color_palette_aux2') },
+    { index: 3, color: $r('sys.color.ohos_id_color_palette_aux3') },
+    { index: 4, color: $r('sys.color.ohos_id_color_palette_aux4') },
+    { index: 5, color: $r('sys.color.ohos_id_color_palette_aux5') },
+    { index: 6, color: $r('sys.color.ohos_id_color_palette_aux6') }
+  ];
 
-13. build() {
-14. GridRow({ columns: { sm: 12, md: 12, lg: 12 } }) {
-15. GridCol({
-16. span: { sm: 12, md: 10, lg: 8 },
-17. offset: { sm: 0, md: 1, lg: 2 }
-18. }) {
-19. GridRow({ columns: { sm: 12, md: 12, lg: 12 } }) {
-20. ForEach(this.elements, (item: ColorArr) => {
-21. GridCol({ span: { sm: 6, md: 4, lg: 3 } }) {
-22. Row() {
-23. Text(`${item.index}`)
-24. .fontSize(24)
-25. }
-26. .justifyContent(FlexAlign.Center)
-27. .backgroundColor(item.color)
-28. .height(30)
-29. .width('100%')
-30. }
-31. }, (item: ColorArr, index: number) => JSON.stringify(item) + index)
-32. }
-33. .backgroundColor($r('sys.color.comp_background_secondary'))
-34. .height('100%')
-35. }
-36. }
-37. }
-38. }
+  build() {
+    GridRow({ columns: { sm: 12, md: 12, lg: 12 } }) {
+      GridCol({
+        span: { sm: 12, md: 10, lg: 8 },
+        offset: { sm: 0, md: 1, lg: 2 }
+      }) {
+        GridRow({ columns: { sm: 12, md: 12, lg: 12 } }) {
+          ForEach(this.elements, (item: ColorArr) => {
+            GridCol({ span: { sm: 6, md: 4, lg: 3 } }) {
+              Row() {
+                Text(`${item.index}`)
+                  .fontSize(24)
+              }
+              .justifyContent(FlexAlign.Center)
+              .backgroundColor(item.color)
+              .height(30)
+              .width('100%')
+            }
+          }, (item: ColorArr, index: number) => JSON.stringify(item) + index)
+        }
+        .backgroundColor($r('sys.color.comp_background_secondary'))
+        .height('100%')
+      }
+    }
+  }
+}
 ```
-
-[GridRowSample9.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AdaptiveCapabilities/entry/src/main/ets/pages/gridRow/gridRow/GridRowSample9.ets#L19-L56)
 
 ## 响应式组件
 
 HarmonyOS提供的一些组件支持响应式布局，例如： Tabs、Swiper、Grid、List、GridRow，通过断点设置可以实现不同的展示效果。
 
-说明
+**说明** 
 
 响应式组件的实现原理与开发步骤，可参考[组件布局场景](bpta-multi-device-component-layout.md)。
 
@@ -1231,7 +1164,7 @@ HarmonyOS提供的一些组件支持响应式布局，例如： Tabs、Swiper、
 
 当横向vp大于等于600vp时，显示分栏布局。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/SOLxg0aSS8-xoCnsggWENg/zh-cn_image_0000002427564766.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/i7J3pbIzTu2oCSnZW005MA/zh-cn_image_0000002427564766.png "点击放大")
 
 ### 重复布局
 
@@ -1239,7 +1172,7 @@ HarmonyOS提供的一些组件支持响应式布局，例如： Tabs、Swiper、
 
 重复布局适用于对宽高比敏感的图片和组合内容，当内容放大以后导致原图放大超过150%的场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/UVMRW7QKRACUD1Wq7zPgYg/zh-cn_image_0000002460966061.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/kVUa_UxIReWpc1Uz7Zh_iQ/zh-cn_image_0000002460966061.png "点击放大")
 
 ### 挪移布局
 
@@ -1249,7 +1182,7 @@ HarmonyOS提供的一些组件支持响应式布局，例如： Tabs、Swiper、
 
 例如上下布局的插画和文字，横屏后左右布局。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/vK2tplw3TZCkTBgf_m6_rw/zh-cn_image_0000002427408746.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/9O4AJYvmQhqk7QekumbbwQ/zh-cn_image_0000002427408746.png "点击放大")
 
 ### 缩进布局
 
@@ -1257,11 +1190,11 @@ HarmonyOS提供的一些组件支持响应式布局，例如： Tabs、Swiper、
 
 缩进布局适用于纯段落文本/上图下段落文本/卡片的布局结构的场景，在其对应的栅格规格下，缩进的规则占用栅格数量进行布局。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/u_6ej50MRJSfm1JZZLX4HA/zh-cn_image_0000002321147530.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/Vh4Hs3lPTzC2tE5TQ3YFIg/zh-cn_image_0000002321147530.png "点击放大")
 
 当栅格为8 columns或12 columns时可以使用6 columns和8 columns的缩进布局。
 
-说明
+**说明** 
 
 关于响应式布局样式的UX设计，可参考[响应式布局方法](../design-guides/design-responsive-layout-method-0000001795698449.md)。
 
@@ -1336,6 +1269,6 @@ vp具体计算公式为：vp= px/（DPI/160）
 
 * 手机/折叠屏/平板/电脑设备，可参考[断点的定义](bpta-multi-device-responsive-layout.md#section186821126131515)中HarmonyOS常用设备断点区间表进行区分。
 
-* 智慧屏设备，可参考[如何判断当前设备是智慧屏](bpta-matetv-guide.md#section6168122172416)进行区分。
+* 智慧屏设备，可参考智慧屏应用开发[包管理策略](bpta-matetv-guide.md#section19671566267)进行区分。
 
-* 智能穿戴设备，可参考[一多应用中如何区分智能穿戴设备](bpta-smartwatch.md#section1748314426272)进行区分。
+* 智能穿戴设备，可参考智能穿戴应用开发[包管理策略](bpta-smartwatch.md#section63321846192414)进行区分。

@@ -1,14 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/thread-model-stage
 title: 线程模型
-breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > 线程模型
+breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 线程模型
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:25:54+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:1f0dd17da49e6ac2a412fb15ad872e35c85e70a6c09f3fd8d36b2857aca82655
+scraped_at: 2026-09-02T14:59:10+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5a5f184039863c3606f73d8d3c8e5d265ee579de8c93b5661fd142724bad0c7d
 ---
 
-线程是操作系统进行运算调度的基本单位，是[进程](process-model-stage.md)中的执行流，共享进程的资源。一个进程可以包含多个线程。
+线程是操作系统进行运算调度的基本单位，是[进程](process-model-overview.md)中的执行流，共享进程的资源。一个进程可以包含多个线程。
 
 ## 线程类型
 
@@ -21,20 +21,20 @@ content_hash: sha256:1f0dd17da49e6ac2a412fb15ad872e35c85e70a6c09f3fd8d36b2857aca
   + 分发交互事件。
   + 处理应用代码的回调，包括事件处理和生命周期管理。
   + 接收TaskPool以及Worker线程发送的消息。
-* [TaskPool线程](../harmonyos-references/js-apis-taskpool.md)
+* TaskPool线程（[@ohos.taskpool](../harmonyos-references/js-apis-taskpool.md)）
   + 用于执行耗时操作，支持设置调度优先级、负载均衡等功能，推荐使用。
-* [Worker线程](../harmonyos-references/js-apis-worker.md)
+* Worker线程（[@ohos.worker](../harmonyos-references/js-apis-worker.md)）
   + 用于执行耗时操作，支持线程间通信。
 
     TaskPool与Worker的运作机制、通信手段和使用方法可以参考[TaskPool和Worker的对比](taskpool-vs-worker.md)。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/GxvOs3eFQVilo75AehRx6g/zh-cn_image_0000002558764002.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/00RiSpUhQEKwNR-24QihTQ/zh-cn_image_0000002736432175.png)
 
-说明
+**说明** 
 
 * TaskPool自行管理线程数量，其生命周期由TaskPool统一管理。[Worker](worker-introduction.md)线程的生命周期由开发者自行维护。
 * 同一线程中存在多个组件，例如UIAbility组件和UI组件都存在于主线程中。在Stage模型中目前主要使用[EventHub](thread-model-stage.md#使用eventhub进行线程内通信)进行数据通信。
-* 执行hdc shell命令，进入设备的shell命令行。在shell命令行中，执行ps -p <pid> -T命令，可以查看指定应用进程的线程信息。其中，<pid>为需要指定的应用进程的[进程ID](process-model-stage.md)。
+* 执行hdc shell命令，进入设备的shell命令行。在shell命令行中，执行ps -p <pid> -T命令，可以查看指定应用进程的线程信息。其中，<pid>为需要指定的应用进程的[进程ID](process-model-overview.md)。
 
 ## 使用EventHub进行线程内通信
 

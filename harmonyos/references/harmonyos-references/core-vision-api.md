@@ -3,10 +3,10 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/core-visi
 title: Core Vision Kit（基础视觉服务）
 breadcrumb: API参考 > AI > Core Vision Kit（基础视觉服务）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:53+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:bf57c4846e7fa597d88225f52875f6913548fa531cfd32ef7ba5588e769978b5
+scraped_at: 2026-09-02T14:53:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6641f75f1947f431d519b89f5149d95e313f608aa7e5f42390ee5a5e7fe3d38a
 ---
 
 * **[ArkTS API](core-vision-arkts.md)**
-* **[ArkTS API错误码](core-vision-error-code.md)**
+* **[ArkTS API错误码](errorcode-core-vision.md)**

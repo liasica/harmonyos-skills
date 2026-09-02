@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-buildin
 title: 手势事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 构建用户界面 > 手势事件
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:44+08:00
+scraped_at: 2026-09-02T14:49:53+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:4c120110c8df9575620ea66204cac2a71795e3347269f0da90e3127f5243bfc4
+content_hash: sha256:4a327356a71700a898937ba51fbe6a56c2f91b8c4c12d301b7a9e2b3df532b81
 ---
 
 手势表示由单个或多个事件识别的语义动作（例如：触摸、点击和长按）。一个完整的手势也可能由多个事件组成，对应手势的生命周期。支持的事件有：
@@ -27,89 +27,89 @@ longpress：用户在相同位置长时间保持与屏幕接触。
 
 具体的使用示例如下：
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <div class="text-container" onclick="click">
-4. <text class="text-style">{{onClick}}</text>
-5. </div>
-6. <div class="text-container" ontouchstart="touchStart">
-7. <text class="text-style">{{touchstart}}</text>
-8. </div>
-9. <div class="text-container" ontouchmove="touchMove">
-10. <text class="text-style">{{touchmove}}</text>
-11. </div>
-12. <div class="text-container" ontouchend="touchEnd">
-13. <text class="text-style">{{touchend}}</text>
-14. </div>
-15. <div class="text-container" ontouchcancel="touchCancel">
-16. <text class="text-style">{{touchcancel}}</text>
-17. </div>
-18. <div class="text-container" onlongpress="longPress">
-19. <text class="text-style">{{onLongPress}}</text>
-20. </div>
-21. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width: 100%;
-4. height: 100%;
-5. flex-direction: column;
-6. justify-content: center;
-7. align-items: center;
-8. }
-9. .text-container {
-10. margin-top: 30px;
-11. flex-direction: column;
-12. width: 600px;
-13. height: 70px;
-14. background-color: #0000FF;
-15. }
-16. .text-style {
-17. width: 100%;
-18. line-height: 50px;
-19. text-align: center;
-20. font-size: 24px;
-21. color: #ffffff;
-22. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <div class="text-container" onclick="click">
+    <text class="text-style">{{onClick}}</text>
+  </div>
+  <div class="text-container" ontouchstart="touchStart">
+    <text class="text-style">{{touchstart}}</text>
+  </div>
+  <div class="text-container" ontouchmove="touchMove">
+    <text class="text-style">{{touchmove}}</text>
+  </div>
+  <div class="text-container" ontouchend="touchEnd">
+    <text class="text-style">{{touchend}}</text>
+  </div>
+  <div class="text-container" ontouchcancel="touchCancel">
+    <text class="text-style">{{touchcancel}}</text>
+  </div>
+  <div class="text-container" onlongpress="longPress">
+    <text class="text-style">{{onLongPress}}</text>
+  </div>
+</div>
 ```
 
-```
-1. // xxx.js
-2. export default {
-3. data: {
-4. touchstart: 'touchstart',
-5. touchmove: 'touchmove',
-6. touchend: 'touchend',
-7. touchcancel: 'touchcancel',
-8. onClick: 'onclick',
-9. onLongPress: 'onLongPress',
-10. },
-11. touchCancel: function (event) {
-12. console.info('event is', JSON.stringify(event));
-13. this.touchcancel = 'canceled';
-14. },
-15. touchEnd: function(event) {
-16. console.info('event is', JSON.stringify(event));
-17. this.touchend = 'ended';
-18. },
-19. touchMove: function(event) {
-20. console.info('event is', JSON.stringify(event));
-21. this.touchmove = 'moved';
-22. },
-23. touchStart: function(event) {
-24. console.info('event is', JSON.stringify(event));
-25. this.touchstart = 'touched';
-26. },
-27. longPress: function() {
-28. this.onLongPress = 'longPressed';
-29. },
-30. click: function() {
-31. this.onClick = 'clicked';
-32. },
-33. }
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.text-container {
+  margin-top: 30px;
+  flex-direction: column;
+  width: 600px;
+  height: 70px;
+  background-color: #0000FF;
+}
+.text-style {
+  width: 100%;
+  line-height: 50px;
+  text-align: center;
+  font-size: 24px;
+  color: #ffffff;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/odfCeEC3Q42jCzeow_fBbw/zh-cn_image_0000002589324443.gif)
+```js
+// xxx.js
+export default {
+    data: {
+        touchstart: 'touchstart',
+        touchmove: 'touchmove',
+        touchend: 'touchend',
+        touchcancel: 'touchcancel',
+        onClick: 'onclick',
+        onLongPress: 'onLongPress',
+    },
+    touchCancel: function (event) {
+        console.info('event is', JSON.stringify(event));
+        this.touchcancel = 'canceled';
+    },
+    touchEnd: function(event) {
+        console.info('event is', JSON.stringify(event));
+        this.touchend = 'ended';
+    },
+    touchMove: function(event) {
+        console.info('event is', JSON.stringify(event));
+        this.touchmove = 'moved';
+    },
+    touchStart: function(event) {
+        console.info('event is', JSON.stringify(event));
+        this.touchstart = 'touched';
+    },
+    longPress: function() {
+        this.onLongPress = 'longPressed';
+    },
+    click: function() {
+        this.onClick = 'clicked';
+    },
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/Vq-WbwrOQqWZCgVkJY0C7g/zh-cn_image_0000002736313021.gif)

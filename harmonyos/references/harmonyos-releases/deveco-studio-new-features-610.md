@@ -1,20 +1,104 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/deveco-studio-new-features-610
 title: 新增和增强特性
-breadcrumb: 版本说明 > HarmonyOS 6.1.0(23) > DevEco Studio > 新增和增强特性
+breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > DevEco Studio > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:39+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:be665743439713d5f8057d3f502abe84a3f0f4064e228d544ec41557ece5769c
+scraped_at: 2026-09-02T14:58:36+08:00
+doc_updated_at: 2026-08-06
+content_hash: sha256:1113192d3c758de6a220eca4bb14eaf0bc55b214e25f7e7d131fc35a7a50c747
 ---
 
-当前为DevEco Studio最新版本说明文档，如需查看DevEco Studio其它历史版本的功能新增、变更情况，请在左侧文档目录中选择相应版本。
+## DevEco Studio 6.1.0 Release（6.1.0.860）
 
-## DevEco Studio 6.1.0 Release（6.1.0.830）兼容性配套关系
+### 兼容性配套关系
+
+DevEco Studio 6.1.0.860携带的工具列表、支持的API范围及开发态版本号信息如下：
+
+**表1** DevEco Studio
+
+| 组件 | 版本 | 说明 |
+| --- | --- | --- |
+| HarmonyOS SDK | HarmonyOS 6.1.0 Release SDK | - |
+| HarmonyOS Emulator | 6.1.0.500 | 模拟器。 |
+| Hvigor | 6.23.7 | 编译构建工具DevEco Hvigor（以下简称Hvigor），适用于API 10及以上的工程。 |
+| ohpm | 6.1.1.830 | OpenHarmony三方库的包管理工具。 |
+| Node.js | 18.20.1 | Hvigor、ohpm等工具的运行时环境。 |
+| modelVersion | 6.1.0 | 开发态版本号。 |
+| [compatibleSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 最低兼容版本：4.0.0(10) | 标识应用/元服务运行所需兼容的最低SDK版本。 |
+| [compileSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 6.1.0(23) | 标识编译应用/元服务所使用的SDK版本。 |
+| [targetSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 4.0.0(10)~6.1.0(23) | 标识应用/元服务运行所需目标SDK版本，介于compatibleSdkVersion和compileSdkVersion之间。 |
+
+DevEco Studio 6.1.0.860配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
+
+**表2** 命令行工具
+
+| 组件 | 版本 | 说明 |
+| --- | --- | --- |
+| Command Line | 6.1.0.860 | 命令行工具集版本。 |
+| codelinter | 6.0.240 | 执行代码检查与修复的工具。 |
+| hstack | 5.1.0 | 将release应用混淆后的crash堆栈还原为源码对应堆栈的工具。 |
+| hvigorw | 6.23.7 | 编译构建工具DevEco Hvigor（以下简称Hvigor），适用于API 10及以上的工程。 |
+| ohpm | 6.1.1.830 | OpenHarmony三方库的包管理工具。 |
+| Node.js | 18.20.1 | codelinter、hvigorw、hstack、ohpm等工具的运行时环境。 |
+| sdk | HarmonyOS 6.1.0 Release SDK | - |
+| modelVersion | 6.1.0 | 开发态版本号。 |
+| [compatibleSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 最低兼容版本：4.0.0(10) | 标识应用/元服务运行所需兼容的最低SDK版本。 |
+| [compileSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 6.1.0(23) | 标识编译应用/元服务所使用的SDK版本。 |
+| [targetSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 4.0.0(10)~6.1.0(23) | 标识应用/元服务运行所需目标SDK版本，介于compatibleSdkVersion和compileSdkVersion之间。 |
+
+### 新增和增强特性
+
+无新增和增强特性。
+
+## DevEco Studio 6.1.0 Release（6.1.0.850）
+
+### 兼容性配套关系
+
+DevEco Studio 6.1.0.850携带的工具列表、支持的API范围及开发态版本号信息如下：
+
+**表3** DevEco Studio
+
+| 组件 | 版本 | 说明 |
+| --- | --- | --- |
+| HarmonyOS SDK | HarmonyOS 6.1.0 Release SDK | - |
+| HarmonyOS Emulator | 6.1.0.450 | 模拟器。 |
+| Hvigor | 6.23.6 | 编译构建工具DevEco Hvigor（以下简称Hvigor），适用于API 10及以上的工程。 |
+| ohpm | 6.1.1.830 | OpenHarmony三方库的包管理工具。 |
+| Node.js | 18.20.1 | Hvigor、ohpm等工具的运行时环境。 |
+| modelVersion | 6.1.0 | 开发态版本号。 |
+| [compatibleSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 最低兼容版本：4.0.0(10) | 标识应用/元服务运行所需兼容的最低SDK版本。 |
+| [compileSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 6.1.0(23) | 标识编译应用/元服务所使用的SDK版本。 |
+| [targetSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 4.0.0(10)~6.1.0(23) | 标识应用/元服务运行所需目标SDK版本，介于compatibleSdkVersion和compileSdkVersion之间。 |
+
+DevEco Studio 6.1.0.850配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
+
+**表4** 命令行工具
+
+| 组件 | 版本 | 说明 |
+| --- | --- | --- |
+| Command Line | 6.1.0.850 | 命令行工具集版本。 |
+| codelinter | 6.0.240 | 执行代码检查与修复的工具。 |
+| hstack | 5.1.0 | 将release应用混淆后的crash堆栈还原为源码对应堆栈的工具。 |
+| hvigorw | 6.23.6 | 编译构建工具DevEco Hvigor（以下简称Hvigor），适用于API 10及以上的工程。 |
+| ohpm | 6.1.1.830 | OpenHarmony三方库的包管理工具。 |
+| Node.js | 18.20.1 | codelinter、hvigorw、hstack、ohpm等工具的运行时环境。 |
+| sdk | HarmonyOS 6.1.0 Release SDK | - |
+| modelVersion | 6.1.0 | 开发态版本号。 |
+| [compatibleSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 最低兼容版本：4.0.0(10) | 标识应用/元服务运行所需兼容的最低SDK版本。 |
+| [compileSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 6.1.0(23) | 标识编译应用/元服务所使用的SDK版本。 |
+| [targetSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 4.0.0(10)~6.1.0(23) | 标识应用/元服务运行所需目标SDK版本，介于compatibleSdkVersion和compileSdkVersion之间。 |
+
+### 新增和增强特性
+
+无新增和增强特性。
+
+## DevEco Studio 6.1.0 Release（6.1.0.830）
+
+### 兼容性配套关系
 
 DevEco Studio 6.1.0.830携带的工具列表、支持的API范围及开发态版本号信息如下：
 
-**表1** DevEco Studio
+**表5** DevEco Studio
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -22,6 +106,7 @@ DevEco Studio 6.1.0.830携带的工具列表、支持的API范围及开发态版
 | HarmonyOS Emulator | 6.1.0.410 | 模拟器。 |
 | Hvigor | 6.23.5 | 编译构建工具DevEco Hvigor（以下简称Hvigor），适用于API 10及以上的工程。 |
 | ohpm | 6.1.1.830 | OpenHarmony三方库的包管理工具。 |
+| Node.js | 18.20.1 | Hvigor、ohpm等工具的运行时环境。 |
 | modelVersion | 6.1.0 | 开发态版本号。 |
 | [compatibleSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 最低兼容版本：4.0.0(10) | 标识应用/元服务运行所需兼容的最低SDK版本。 |
 | [compileSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 6.1.0(23) | 标识编译应用/元服务所使用的SDK版本。 |
@@ -29,7 +114,7 @@ DevEco Studio 6.1.0.830携带的工具列表、支持的API范围及开发态版
 
 DevEco Studio 6.1.0.830配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
 
-**表2** 命令行工具
+**表6** 命令行工具
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -45,21 +130,24 @@ DevEco Studio 6.1.0.830配套使用的命令行工具列表、支持的API范围
 | [compileSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 6.1.0(23) | 标识编译应用/元服务所使用的SDK版本。 |
 | [targetSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 4.0.0(10)~6.1.0(23) | 标识应用/元服务运行所需目标SDK版本，介于compatibleSdkVersion和compileSdkVersion之间。 |
 
-## DevEco Studio 6.1.0 Release（6.1.0.830）新增和增强特性
+### 新增和增强特性
 
 阔折叠品类下新增Pura X Max模拟器。
 
-## DevEco Studio 6.1.0 Release（6.1.0.818）兼容性配套关系
+## DevEco Studio 6.1.0 Release（6.1.0.818）
+
+### 兼容性配套关系
 
 DevEco Studio 6.1.0.818携带的工具列表、支持的API范围及开发态版本号信息如下：
 
-**表3** DevEco Studio
+**表7** DevEco Studio
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
 | HarmonyOS Emulator | 6.1.0.400 | 模拟器。 |
 | Hvigor | 6.23.4 | 编译构建工具DevEco Hvigor（以下简称Hvigor），适用于API 10及以上的工程。 |
 | ohpm | 6.1.1.816 | OpenHarmony三方库的包管理工具。 |
+| Node.js | 18.20.1 | Hvigor、ohpm等工具的运行时环境。 |
 | modelVersion | 6.1.0 | 开发态版本号。 |
 | [compatibleSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 最低兼容版本：4.0.0(10) | 标识应用/元服务运行所需兼容的最低SDK版本。 |
 | [compileSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 6.1.0(23) | 标识编译应用/元服务所使用的SDK版本。 |
@@ -67,7 +155,7 @@ DevEco Studio 6.1.0.818携带的工具列表、支持的API范围及开发态版
 
 DevEco Studio 6.1.0.818配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
 
-**表4** 命令行工具
+**表8** 命令行工具
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -82,21 +170,24 @@ DevEco Studio 6.1.0.818配套使用的命令行工具列表、支持的API范围
 | [compileSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 6.1.0(23) | 标识编译应用/元服务所使用的SDK版本。 |
 | [targetSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 4.0.0(10)~6.1.0(23) | 标识应用/元服务运行所需目标SDK版本，介于compatibleSdkVersion和compileSdkVersion之间。 |
 
-## DevEco Studio 6.1.0 Release（6.1.0.818）新增和增强特性
+### 新增和增强特性
 
 AppAnalyzer支持导出、导入体检报告。具体请参考[管理体检报告](../harmonyos-guides/ide-app-analyzer-history-reports.md)。
 
-## DevEco Studio 6.1.0 Beta2（6.1.0.816）兼容性配套关系
+## DevEco Studio 6.1.0 Beta2（6.1.0.816）
+
+### 兼容性配套关系
 
 DevEco Studio 6.1.0.816携带的工具列表、支持的API范围及开发态版本号信息如下：
 
-**表5** DevEco Studio
+**表9** DevEco Studio
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
 | HarmonyOS Emulator | 6.1.0.300 | 模拟器。 |
 | Hvigor | 6.23.3 | 编译构建工具DevEco Hvigor（以下简称Hvigor），适用于API 10及以上的工程。 |
 | ohpm | 6.1.1.816 | OpenHarmony三方库的包管理工具。 |
+| Node.js | 18.20.1 | Hvigor、ohpm等工具的运行时环境。 |
 | modelVersion | 6.1.0 | 开发态版本号。 |
 | [compatibleSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 最低兼容版本：4.0.0(10) | 标识应用/元服务运行所需兼容的最低SDK版本。 |
 | [compileSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 6.1.0(23) | 标识编译应用/元服务所使用的SDK版本。 |
@@ -104,7 +195,7 @@ DevEco Studio 6.1.0.816携带的工具列表、支持的API范围及开发态版
 
 DevEco Studio 6.1.0.816配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
 
-**表6** 命令行工具
+**表10** 命令行工具
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -119,7 +210,7 @@ DevEco Studio 6.1.0.816配套使用的命令行工具列表、支持的API范围
 | [compileSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 6.1.0(23) | 标识编译应用/元服务所使用的SDK版本。 |
 | [targetSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 4.0.0(10)~6.1.0(23) | 标识应用/元服务运行所需目标SDK版本，介于compatibleSdkVersion和compileSdkVersion之间。 |
 
-## DevEco Studio 6.1.0 Beta2（6.1.0.816）新增和增强特性
+### 新增和增强特性
 
 **开发环境搭建**
 
@@ -149,17 +240,20 @@ DevEco Studio 6.1.0.816配套使用的命令行工具列表、支持的API范围
 
 * 模块级oh-package.json5新增oh-exports字段，通过该字段控制导出模块中文件，实现包的可见性控制。具体请参考[oh-package.json5](../harmonyos-guides/ide-oh-package-json5.md)。
 
-## DevEco Studio 6.1.0 Beta1（6.1.0.609）兼容性配套关系
+## DevEco Studio 6.1.0 Beta1（6.1.0.609）
+
+### 兼容性配套关系
 
 DevEco Studio 6.1.0.609携带的工具列表、支持的API范围及开发态版本号信息如下：
 
-**表7** DevEco Studio
+**表11** DevEco Studio
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
 | HarmonyOS Emulator | 6.1.0.200 | 模拟器。 |
 | Hvigor | 6.23.2 | 编译构建工具DevEco Hvigor（以下简称Hvigor），适用于API 10及以上的工程。 |
 | ohpm | 6.1.1 | OpenHarmony三方库的包管理工具。 |
+| Node.js | 18.20.1 | Hvigor、ohpm等工具的运行时环境。 |
 | modelVersion | 6.1.0 | 开发态版本号。 |
 | [compatibleSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 最低兼容版本：4.0.0(10) | 标识应用/元服务运行所需兼容的最低SDK版本。 |
 | [compileSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 6.1.0(23) | 标识编译应用/元服务所使用的SDK版本。 |
@@ -167,7 +261,7 @@ DevEco Studio 6.1.0.609携带的工具列表、支持的API范围及开发态版
 
 DevEco Studio 6.1.0.609配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
 
-**表8** 命令行工具
+**表12** 命令行工具
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -182,7 +276,7 @@ DevEco Studio 6.1.0.609配套使用的命令行工具列表、支持的API范围
 | [compileSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 6.1.0(23) | 标识编译应用/元服务所使用的SDK版本。 |
 | [targetSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 4.0.0(10)~6.1.0(23) | 标识应用/元服务运行所需目标SDK版本，介于compatibleSdkVersion和compileSdkVersion之间。 |
 
-## DevEco Studio 6.1.0 Beta1（6.1.0.609）新增和增强特性
+### 新增和增强特性
 
 **开发环境搭建**
 
@@ -216,7 +310,7 @@ DevEco Studio 6.1.0.609配套使用的命令行工具列表、支持的API范围
 **优化应用性能**
 
 * 支持进行无线调优。具体请参考[性能问题定界：实时监控](../harmonyos-guides/realtime-monitor.md)。
-* Frame场景分析新增查看Session中Frame页面布局信息的开关。具体请参考[Frame分析](../harmonyos-guides/ide-insight-session-frame.md#section58691959194312)。
+* Frame场景分析新增查看Session中Frame页面布局信息的开关。具体请参考[Frame分析](../harmonyos-guides/ide-insight-session-frame.md)。
 * Energy Anomaly泳道支持查看能耗异常信息和能耗异常原因。具体请参考[能耗诊断：Energy分析](../harmonyos-guides/ide-profiler-energy.md)。
 * Allocation分析任务支持录制All Heap & Anonymous VM泳道，不支持录制Native Allocation泳道。具体请参考[内存分析介绍](../harmonyos-guides/ide-insight-session-allocations-memory.md)。
 

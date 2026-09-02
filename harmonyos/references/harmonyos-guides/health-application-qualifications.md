@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-applic
 title: 应用开发者申请资质说明
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 应用开发者申请资质说明
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:09+08:00
+scraped_at: 2026-09-02T14:59:55+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:bdf7a7d6b33f6bf0e6e8029da887806f423dbc8f410ef42c28c62bade0e94177
+content_hash: sha256:e3cd04ebbf91d57c5965584d6f16d8a98e6ebc2645621895252b0e6dbcc9ad61
 ---
 
 ## 个人开发者接入资质审核要求
@@ -19,7 +19,7 @@ content_hash: sha256:bdf7a7d6b33f6bf0e6e8029da887806f423dbc8f410ef42c28c62bade0e
 * 事业单位/政府机构申请资质要求：如果申请主体为事业单位或政府机构，可免除资金和成立年限要求。事业单位或政府机构委托的企业，需遵循企业申请资质要求。
 * 社会团体申请资质要求：社会团体以活动资金（注册资本）为准，申请访问开放等级为基础的用户数据，活动资金不低于50万元；申请访问开放等级为高阶的用户数据，活动资金不低于500万元。申请主体存续且成立时间需1年以上。
 
-说明
+**说明** 
 
 * 以上企业实缴注册资本数据以[国家企业信用信息公示系统](https://shiming.gsxt.gov.cn/socialuser-use-rllogin.html)中最新年报数据为准。
 * 若企业实缴注册资本与社会团体活动资金不符合要求，请参见对应[解决方案](health-apply.md#企业事业单位政府机构社会团体实缴注册资本不符合审核要求)。
@@ -29,7 +29,7 @@ content_hash: sha256:bdf7a7d6b33f6bf0e6e8029da887806f423dbc8f410ef42c28c62bade0e
 
 为保障用户隐私和数据安全，运动健康服务需要开发者提交相关材料和信息，以确保应用向用户请求数据权限是合理的。请根据**提交应用信息页面**中的**开发者申请材料清单样例**，准备并准确填写相应内容。
 
-说明
+**说明** 
 
 * 请在提交材料前先阅读[申请被驳回的常见问题](health-apply.md#申请被驳回的常见问题)，以避免在您的申请材料中出现同类问题。
 * 若您的应用需要申请[应用转移](../app/agc-help-maintain-transfer-0000002236494390.md)，运动健康服务需要对转入方开发者资质进行审核，确保新的应用主体符合资质要求。请将上述申请资料清单以及您的应用ID、应用名称、应用转入开发者ID、更新后的应用隐私政策发送到hihealth@huawei.com邮箱，相关资质评审通过后，方可进行应用转移。

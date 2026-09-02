@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-m
 title: 内置对象的迁移
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1-V2迁移指导 > 状态管理V1向V2迁移场景 > 内置对象的迁移
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:27+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:eb90019c75b9bdc17cd0bcb65b539a46bed977ce037b315afea331bbbb44bf9f
+scraped_at: 2026-09-02T14:59:16+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a16cf1011ba4ca8b1fc3f81e50aa1149c53922710e86b72c1fd9356f69c7aa06
 ---
 
 本文档主要介绍组件内置对象从V1向V2的迁移，涉及如下装饰器。
@@ -27,43 +27,41 @@ V1：
 
 具体示例如下：
 
+```typescript
+@Entry
+@Component
+struct ListExample {
+  private arr: Array<number> = new Array(10).fill(0);
+  private scroller: ListScroller = new ListScroller();
+  @State listSpace: number = 10;
+  @State listChildrenSize: ChildrenMainSize = new ChildrenMainSize(100);
+
+  build() {
+    Column() {
+      Button('change Default').onClick(() => {
+        this.listChildrenSize.childDefaultSize += 10;
+      })
+
+      Button('splice 5').onClick(() => {
+        this.listChildrenSize.splice(0, 5, [100, 100, 100, 100, 100]);
+      })
+
+      Button('update 5').onClick(() => {
+        this.listChildrenSize.update(0, 200);
+      })
+
+      List({ space: this.listSpace, scroller: this.scroller }) {
+        ForEach(this.arr, (item: number) => {
+          ListItem() {
+            Text(`item-` + item)
+          }.backgroundColor(Color.Pink)
+        })
+      }
+      .childrenMainSize(this.listChildrenSize)
+    }
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct ListExample {
-4. private arr: Array<number> = new Array(10).fill(0);
-5. private scroller: ListScroller = new ListScroller();
-6. @State listSpace: number = 10;
-7. @State listChildrenSize: ChildrenMainSize = new ChildrenMainSize(100);
-
-9. build() {
-10. Column() {
-11. Button('change Default').onClick(() => {
-12. this.listChildrenSize.childDefaultSize += 10;
-13. })
-
-15. Button('splice 5').onClick(() => {
-16. this.listChildrenSize.splice(0, 5, [100, 100, 100, 100, 100]);
-17. })
-
-19. Button('update 5').onClick(() => {
-20. this.listChildrenSize.update(0, 200);
-21. })
-
-23. List({ space: this.listSpace, scroller: this.scroller }) {
-24. ForEach(this.arr, (item: number) => {
-25. ListItem() {
-26. Text(`item-` + item)
-27. }.backgroundColor(Color.Pink)
-28. })
-29. }
-30. .childrenMainSize(this.listChildrenSize) // 10
-31. }
-32. }
-33. }
-```
-
-[InternalOtherMigrationsListV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/internalmigrate/InternalOtherMigrationsListV1.ets#L15-L49)
 
 V2：
 
@@ -71,46 +69,44 @@ V2：
 
 具体示例如下：
 
+```typescript
+import { UIUtils } from '@kit.ArkUI';
+
+@Entry
+@ComponentV2
+struct ListExample {
+  private arr: Array<number> = new Array(10).fill(0);
+  private scroller: ListScroller = new ListScroller();
+  listSpace: number = 10;
+  // 使用makeObserved的能力来观测ChildrenMainSize
+  listChildrenSize: ChildrenMainSize = UIUtils.makeObserved(new ChildrenMainSize(100));
+
+  build() {
+    Column() {
+      Button('change Default').onClick(() => {
+        this.listChildrenSize.childDefaultSize += 10;
+      })
+
+      Button('splice 5').onClick(() => {
+        this.listChildrenSize.splice(0, 5, [100, 100, 100, 100, 100]);
+      })
+
+      Button('update 5').onClick(() => {
+        this.listChildrenSize.update(0, 200);
+      })
+
+      List({ space: this.listSpace, scroller: this.scroller }) {
+        ForEach(this.arr, (item: number) => {
+          ListItem() {
+            Text(`item-` + item)
+          }.backgroundColor(Color.Pink)
+        })
+      }
+      .childrenMainSize(this.listChildrenSize)
+    }
+  }
+}
 ```
-1. import { UIUtils } from '@kit.ArkUI';
-
-3. @Entry
-4. @ComponentV2
-5. struct ListExample {
-6. private arr: Array<number> = new Array(10).fill(0);
-7. private scroller: ListScroller = new ListScroller();
-8. listSpace: number = 10;
-9. // 使用makeObserved的能力来观测ChildrenMainSize
-10. listChildrenSize: ChildrenMainSize = UIUtils.makeObserved(new ChildrenMainSize(100));
-
-12. build() {
-13. Column() {
-14. Button('change Default').onClick(() => {
-15. this.listChildrenSize.childDefaultSize += 10;
-16. })
-
-18. Button('splice 5').onClick(() => {
-19. this.listChildrenSize.splice(0, 5, [100, 100, 100, 100, 100]);
-20. })
-
-22. Button('update 5').onClick(() => {
-23. this.listChildrenSize.update(0, 200);
-24. })
-
-26. List({ space: this.listSpace, scroller: this.scroller }) {
-27. ForEach(this.arr, (item: number) => {
-28. ListItem() {
-29. Text(`item-` + item)
-30. }.backgroundColor(Color.Pink)
-31. })
-32. }
-33. .childrenMainSize(this.listChildrenSize) // 10
-34. }
-35. }
-36. }
-```
-
-[InternalOtherMigrationsListV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/internalmigrate/InternalOtherMigrationsListV2.ets#L15-L52)
 
 ### WaterFlow
 
@@ -126,83 +122,81 @@ V1：
 
 具体示例如下：
 
+```typescript
+@Entry
+@Component
+struct WaterFlowSample {
+  @State colors: Color[] = [Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Pink];
+  @State sections: WaterFlowSections = new WaterFlowSections();
+  scroller: Scroller = new Scroller();
+  @State private arr: Array<number> = new Array(9).fill(0);
+  oneColumnSection: SectionOptions = {
+    itemsCount: 4,
+    crossCount: 1,
+    columnsGap: '5vp',
+    rowsGap: 10,
+  };
+  twoColumnSection: SectionOptions = {
+    itemsCount: 2,
+    crossCount: 2,
+  };
+  lastSection: SectionOptions = {
+    itemsCount: 3,
+    crossCount: 3,
+  };
+
+  aboutToAppear(): void {
+    let sectionOptions: SectionOptions[] = [this.oneColumnSection, this.twoColumnSection, this.lastSection];
+    this.sections.splice(0, 0, sectionOptions);
+  }
+
+  build() {
+    Column() {
+      Text(`${this.arr.length}`)
+
+      // @State装饰sections，可以观察到调用WaterFlowSections接口带来的变化
+      Button('push option').onClick(() => {
+        let section: SectionOptions = {
+          itemsCount: 1,
+          crossCount: 1,
+        };
+        this.sections.push(section);
+        this.arr.push(100);
+      })
+
+      Button('splice option').onClick(() => {
+        let section: SectionOptions = {
+          itemsCount: 8,
+          crossCount: 2,
+        };
+        this.sections.splice(0, this.arr.length, [section]);
+        this.arr = new Array(8).fill(10);
+      })
+
+      Button('update option').onClick(() => {
+        let section: SectionOptions = {
+          itemsCount: 8,
+          crossCount: 2,
+        };
+        this.sections.update(1, section);
+        this.arr = new Array(16).fill(1);
+      })
+
+      WaterFlow({ scroller: this.scroller, sections: this.sections }) {
+        ForEach(this.arr, (item: number) => {
+          FlowItem() {
+            Text(`${item}`)
+              .border({ width: 1 })
+              .backgroundColor(this.colors[item % 6])
+              .height(30)
+              .width(50)
+          }
+        })
+      }
+    }
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct WaterFlowSample {
-4. @State colors: Color[] = [Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Pink];
-5. @State sections: WaterFlowSections = new WaterFlowSections();
-6. scroller: Scroller = new Scroller();
-7. @State private arr: Array<number> = new Array(9).fill(0);
-8. oneColumnSection: SectionOptions = {
-9. itemsCount: 4,
-10. crossCount: 1,
-11. columnsGap: '5vp',
-12. rowsGap: 10,
-13. };
-14. twoColumnSection: SectionOptions = {
-15. itemsCount: 2,
-16. crossCount: 2,
-17. };
-18. lastSection: SectionOptions = {
-19. itemsCount: 3,
-20. crossCount: 3,
-21. };
-
-23. aboutToAppear(): void {
-24. let sectionOptions: SectionOptions[] = [this.oneColumnSection, this.twoColumnSection, this.lastSection];
-25. this.sections.splice(0, 0, sectionOptions);
-26. }
-
-28. build() {
-29. Column() {
-30. Text(`${this.arr.length}`)
-
-32. // @State装饰sections，可以观察到调用WaterFlowSections接口带来的变化
-33. Button('push option').onClick(() => {
-34. let section: SectionOptions = {
-35. itemsCount: 1,
-36. crossCount: 1,
-37. };
-38. this.sections.push(section);
-39. this.arr.push(100);
-40. })
-
-42. Button('splice option').onClick(() => {
-43. let section: SectionOptions = {
-44. itemsCount: 8,
-45. crossCount: 2,
-46. };
-47. this.sections.splice(0, this.arr.length, [section]);
-48. this.arr = new Array(8).fill(10);
-49. })
-
-51. Button('update option').onClick(() => {
-52. let section: SectionOptions = {
-53. itemsCount: 8,
-54. crossCount: 2,
-55. };
-56. this.sections.update(1, section);
-57. this.arr = new Array(16).fill(1);
-58. })
-
-60. WaterFlow({ scroller: this.scroller, sections: this.sections }) {
-61. ForEach(this.arr, (item: number) => {
-62. FlowItem() {
-63. Text(`${item}`)
-64. .border({ width: 1 })
-65. .backgroundColor(this.colors[item % 6])
-66. .height(30)
-67. .width(50)
-68. }
-69. })
-70. }
-71. }
-72. }
-73. }
-```
-
-[InternalOtherMigrationsWaterFlowV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/internalmigrate/InternalOtherMigrationsWaterFlowV1.ets#L15-L88)
 
 V2：
 
@@ -210,85 +204,83 @@ V2：
 
 具体示例如下：
 
+```typescript
+import { UIUtils } from '@kit.ArkUI';
+
+@Entry
+@ComponentV2
+struct WaterFlowSample {
+  colors: Color[] = [Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Pink];
+  // 使用makeObserved的能力来观测WaterFlowSections
+  sections: WaterFlowSections = UIUtils.makeObserved(new WaterFlowSections());
+  scroller: Scroller = new Scroller();
+  @Local private arr: Array<number> = new Array(9).fill(0);
+  oneColumnSection: SectionOptions = {
+    itemsCount: 4,
+    crossCount: 1,
+    columnsGap: '5vp',
+    rowsGap: 10,
+  };
+  twoColumnSection: SectionOptions = {
+    itemsCount: 2,
+    crossCount: 2,
+  };
+  lastSection: SectionOptions = {
+    itemsCount: 3,
+    crossCount: 3,
+  };
+
+  aboutToAppear(): void {
+    let sectionOptions: SectionOptions[] = [this.oneColumnSection, this.twoColumnSection, this.lastSection];
+    this.sections.splice(0, 0, sectionOptions);
+  }
+
+  build() {
+    Column() {
+      Text(`${this.arr.length}`)
+
+      Button('push option').onClick(() => {
+        let section: SectionOptions = {
+          itemsCount: 1,
+          crossCount: 1,
+        };
+        this.sections.push(section);
+        this.arr.push(100);
+      })
+
+      Button('splice option').onClick(() => {
+        let section: SectionOptions = {
+          itemsCount: 8,
+          crossCount: 2,
+        };
+        this.sections.splice(0, this.arr.length, [section]);
+        this.arr = new Array(8).fill(10);
+      })
+
+      Button('update option').onClick(() => {
+        let section: SectionOptions = {
+          itemsCount: 8,
+          crossCount: 2,
+        };
+        this.sections.update(1, section);
+        this.arr = new Array(16).fill(1);
+      })
+
+      WaterFlow({ scroller: this.scroller, sections: this.sections }) {
+        ForEach(this.arr, (item: number) => {
+          FlowItem() {
+            Text(`${item}`)
+              .border({ width: 1 })
+              .backgroundColor(this.colors[item % 6])
+              .height(30)
+              .width(50)
+          }
+        })
+      }
+    }
+  }
+}
 ```
-1. import { UIUtils } from '@kit.ArkUI';
-
-3. @Entry
-4. @ComponentV2
-5. struct WaterFlowSample {
-6. colors: Color[] = [Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Pink];
-7. // 使用makeObserved的能力来观测WaterFlowSections
-8. sections: WaterFlowSections = UIUtils.makeObserved(new WaterFlowSections());
-9. scroller: Scroller = new Scroller();
-10. @Local private arr: Array<number> = new Array(9).fill(0);
-11. oneColumnSection: SectionOptions = {
-12. itemsCount: 4,
-13. crossCount: 1,
-14. columnsGap: '5vp',
-15. rowsGap: 10,
-16. };
-17. twoColumnSection: SectionOptions = {
-18. itemsCount: 2,
-19. crossCount: 2,
-20. };
-21. lastSection: SectionOptions = {
-22. itemsCount: 3,
-23. crossCount: 3,
-24. };
-
-26. aboutToAppear(): void {
-27. let sectionOptions: SectionOptions[] = [this.oneColumnSection, this.twoColumnSection, this.lastSection];
-28. this.sections.splice(0, 0, sectionOptions);
-29. }
-
-31. build() {
-32. Column() {
-33. Text(`${this.arr.length}`)
-
-35. Button('push option').onClick(() => {
-36. let section: SectionOptions = {
-37. itemsCount: 1,
-38. crossCount: 1,
-39. };
-40. this.sections.push(section);
-41. this.arr.push(100);
-42. })
-
-44. Button('splice option').onClick(() => {
-45. let section: SectionOptions = {
-46. itemsCount: 8,
-47. crossCount: 2,
-48. };
-49. this.sections.splice(0, this.arr.length, [section]);
-50. this.arr = new Array(8).fill(10);
-51. })
-
-53. Button('update option').onClick(() => {
-54. let section: SectionOptions = {
-55. itemsCount: 8,
-56. crossCount: 2,
-57. };
-58. this.sections.update(1, section);
-59. this.arr = new Array(16).fill(1);
-60. })
-
-62. WaterFlow({ scroller: this.scroller, sections: this.sections }) {
-63. ForEach(this.arr, (item: number) => {
-64. FlowItem() {
-65. Text(`${item}`)
-66. .border({ width: 1 })
-67. .backgroundColor(this.colors[item % 6])
-68. .height(30)
-69. .width(50)
-70. }
-71. })
-72. }
-73. }
-74. }
-75. }
-```
-
-[InternalOtherMigrationsWaterFlowV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/internalmigrate/InternalOtherMigrationsWaterFlowV2.ets#L15-L91)
 
 ## Modifier
 
@@ -302,42 +294,40 @@ V1：
 
 具体示例如下：
 
+```typescript
+class MyButtonModifier implements AttributeModifier<ButtonAttribute> {
+  public isDark: boolean = false;
+
+  applyNormalAttribute(instance: ButtonAttribute): void {
+    if (this.isDark) {
+      instance.backgroundColor(Color.Black);
+    } else {
+      instance.backgroundColor(Color.Red);
+    }
+  }
+}
+
+@Entry
+@Component
+struct AttributeDemo {
+  @State modifier: MyButtonModifier = new MyButtonModifier();
+
+  build() {
+    Row() {
+      Column() {
+        Button('Button')
+          .attributeModifier(this.modifier)
+          .onClick(() => {
+            // 在状态管理V1中，可以通过@State装饰观察modifier的变化
+            this.modifier.isDark = !this.modifier.isDark;
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-1. class MyButtonModifier implements AttributeModifier<ButtonAttribute> {
-2. public isDark: boolean = false;
-
-4. applyNormalAttribute(instance: ButtonAttribute): void {
-5. if (this.isDark) {
-6. instance.backgroundColor(Color.Black);
-7. } else {
-8. instance.backgroundColor(Color.Red);
-9. }
-10. }
-11. }
-
-13. @Entry
-14. @Component
-15. struct AttributeDemo {
-16. @State modifier: MyButtonModifier = new MyButtonModifier();
-
-18. build() {
-19. Row() {
-20. Column() {
-21. Button('Button')
-22. .attributeModifier(this.modifier)
-23. .onClick(() => {
-24. // 在状态管理V1中，可以通过@State装饰观察modifier的变化
-25. this.modifier.isDark = !this.modifier.isDark;
-26. })
-27. }
-28. .width('100%')
-29. }
-30. .height('100%')
-31. }
-32. }
-```
-
-[InternalattributeModifierV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/internalmigrate/InternalattributeModifierV1.ets#L15-L47)
 
 V2：
 
@@ -345,48 +335,46 @@ V2：
 
 具体示例如下：
 
+```typescript
+import { UIUtils } from '@kit.ArkUI';
+
+class MyButtonModifier implements AttributeModifier<ButtonAttribute> {
+  public isDark: boolean = false;
+
+  applyNormalAttribute(instance: ButtonAttribute): void {
+    if (this.isDark) {
+      instance.backgroundColor(Color.Black);
+    } else {
+      instance.backgroundColor(Color.Red);
+    }
+  }
+}
+
+@Entry
+@ComponentV2
+struct AttributeDemo {
+  // 使用makeObserved的能力观测attributeModifier的属性this.modifier
+  modifier: MyButtonModifier = UIUtils.makeObserved(new MyButtonModifier());
+
+  build() {
+    Row() {
+      Column() {
+        Button('Button')
+          .attributeModifier(this.modifier)
+          .onClick(() => {
+            this.modifier.isDark = !this.modifier.isDark;
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-1. import { UIUtils } from '@kit.ArkUI';
-
-3. class MyButtonModifier implements AttributeModifier<ButtonAttribute> {
-4. public isDark: boolean = false;
-
-6. applyNormalAttribute(instance: ButtonAttribute): void {
-7. if (this.isDark) {
-8. instance.backgroundColor(Color.Black);
-9. } else {
-10. instance.backgroundColor(Color.Red);
-11. }
-12. }
-13. }
-
-15. @Entry
-16. @ComponentV2
-17. struct AttributeDemo {
-18. // 使用makeObserved的能力观测attributeModifier的属性this.modifier
-19. modifier: MyButtonModifier = UIUtils.makeObserved(new MyButtonModifier());
-
-21. build() {
-22. Row() {
-23. Column() {
-24. Button('Button')
-25. .attributeModifier(this.modifier)
-26. .onClick(() => {
-27. this.modifier.isDark = !this.modifier.isDark;
-28. })
-29. }
-30. .width('100%')
-31. }
-32. .height('100%')
-33. }
-34. }
-```
-
-[InternalattributeModifierV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/internalmigrate/InternalattributeModifierV2.ets#L15-L50)
 
 ### CommonModifier
 
-动态设置组件的属性类。以[CommonModifier](../harmonyos-references/ts-universal-attributes-attribute-modifier.md#自定义modifier)为例。
+动态设置组件的属性类。以[自定义Modifier](../harmonyos-references/ts-universal-attributes-attribute-modifier.md#自定义modifier)为例。
 
 V1：
 
@@ -394,140 +382,136 @@ V1：
 
 具体实例如下：
 
+```typescript
+import { CommonModifier } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN = 0x0000;
+
+class MyModifier extends CommonModifier {
+  applyNormalAttribute(instance: CommonAttribute): void {
+    super.applyNormalAttribute?.(instance);
+  }
+
+  public setGroup1(): void {
+    this.borderStyle(BorderStyle.Dotted);
+    this.borderWidth(8);
+  }
+
+  public setGroup2(): void {
+    this.borderStyle(BorderStyle.Dashed);
+    this.borderWidth(8);
+  }
+}
+
+@Component
+struct MyImage1 {
+  @Link modifier: CommonModifier;
+
+  build() {
+    // 此处'app.media.app_icon'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
+    Image($r('app.media.app_icon'))
+      .attributeModifier(this.modifier as MyModifier)
+  }
+}
+
+@Entry
+@Component
+struct Index {
+  @State myModifier: CommonModifier = new MyModifier().width(100).height(100).margin(10);
+  index: number = 0;
+
+  build() {
+    Column() {
+      Button($r('app.string.EntryAbility_label'))
+        .margin(10)
+        .onClick(() => {
+          hilog.info(DOMAIN, 'testTag', 'Modifier', 'onClick');
+          this.index++;
+          if (this.index % 2 === 1) {
+            (this.myModifier as MyModifier).setGroup1();
+            hilog.info(DOMAIN, 'testTag', 'Modifier', 'setGroup1');
+          } else {
+            (this.myModifier as MyModifier).setGroup2();
+            hilog.info(DOMAIN, 'testTag', 'Modifier', 'setGroup2');
+          }
+        })
+
+      MyImage1({ modifier: this.myModifier })
+    }
+    .width('100%')
+  }
+}
 ```
-1. import { CommonModifier } from '@kit.ArkUI';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-4. const DOMAIN = 0x0000;
-
-6. class MyModifier extends CommonModifier {
-7. applyNormalAttribute(instance: CommonAttribute): void {
-8. super.applyNormalAttribute?.(instance);
-9. }
-
-11. public setGroup1(): void {
-12. this.borderStyle(BorderStyle.Dotted);
-13. this.borderWidth(8);
-14. }
-
-16. public setGroup2(): void {
-17. this.borderStyle(BorderStyle.Dashed);
-18. this.borderWidth(8);
-19. }
-20. }
-
-22. @Component
-23. struct MyImage1 {
-24. @Link modifier: CommonModifier;
-
-26. build() {
-27. // 此处'app.media.app_icon'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
-28. Image($r('app.media.app_icon'))
-29. .attributeModifier(this.modifier as MyModifier)
-30. }
-31. }
-
-33. @Entry
-34. @Component
-35. struct Index {
-36. @State myModifier: CommonModifier = new MyModifier().width(100).height(100).margin(10);
-37. index: number = 0;
-
-39. build() {
-40. Column() {
-41. Button($r('app.string.EntryAbility_label'))
-42. .margin(10)
-43. .onClick(() => {
-44. hilog.info(DOMAIN, 'testTag', 'Modifier', 'onClick');
-45. this.index++;
-46. if (this.index % 2 === 1) {
-47. (this.myModifier as MyModifier).setGroup1();
-48. hilog.info(DOMAIN, 'testTag', 'Modifier', 'setGroup1');
-49. } else {
-50. (this.myModifier as MyModifier).setGroup2();
-51. hilog.info(DOMAIN, 'testTag', 'Modifier', 'setGroup2');
-52. }
-53. })
-
-55. MyImage1({ modifier: this.myModifier })
-56. }
-57. .width('100%')
-58. }
-59. }
-```
-
-[InternalCommonModifierV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/internalmigrate/InternalCommonModifierV1.ets#L15-L75)
 
 V2：
 
-在状态管理V2中，[@Local](arkts-new-local.md)只能观察本身的变化，无法观察第一层的变化，又因为[CommonModifier](../harmonyos-references/ts-universal-attributes-attribute-modifier.md#自定义modifier)在框架内是通过其属性触发刷新，此时可以使用[makeObserved](arkts-new-makeobserved.md)替代。
+在状态管理V2中，[@Local](arkts-new-local.md)只能观察本身的变化，无法观察第一层的变化，又因为[自定义Modifier](../harmonyos-references/ts-universal-attributes-attribute-modifier.md#自定义modifier)在框架内是通过其属性触发刷新，此时可以使用[makeObserved](arkts-new-makeobserved.md)替代。
 
 具体示例如下：
 
+```typescript
+import { UIUtils, CommonModifier } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN = 0x0000;
+
+class MyModifier extends CommonModifier {
+  applyNormalAttribute(instance: CommonAttribute): void {
+    super.applyNormalAttribute?.(instance);
+  }
+
+  public setGroup1(): void {
+    this.borderStyle(BorderStyle.Dotted);
+    this.borderWidth(8);
+  }
+
+  public setGroup2(): void {
+    this.borderStyle(BorderStyle.Dashed);
+    this.borderWidth(8);
+  }
+}
+
+@ComponentV2
+struct MyImage1 {
+  @Param @Require modifier: CommonModifier;
+
+  build() {
+    // 此处'app.media.app_icon'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
+    Image($r('app.media.app_icon'))
+      .attributeModifier(this.modifier as MyModifier)
+  }
+}
+
+@Entry
+@ComponentV2
+struct Index {
+  // 使用makeObserved的能力来观测CommonModifier
+  @Local myModifier: CommonModifier = UIUtils.makeObserved(new MyModifier().width(100).height(100).margin(10));
+  index: number = 0;
+
+  build() {
+    Column() {
+      Button($r('app.string.EntryAbility_label'))
+        .margin(10)
+        .onClick(() => {
+          hilog.info(DOMAIN, 'testTag', 'Modifier', 'onClick');
+          this.index++;
+          if (this.index % 2 === 1) {
+            (this.myModifier as MyModifier).setGroup1();
+            hilog.info(DOMAIN, 'testTag', 'Modifier', 'setGroup1');
+          } else {
+            (this.myModifier as MyModifier).setGroup2();
+            hilog.info(DOMAIN, 'testTag', 'Modifier', 'setGroup2');
+          }
+        })
+
+      MyImage1({ modifier: this.myModifier })
+    }
+    .width('100%')
+  }
+}
 ```
-1. import { UIUtils, CommonModifier } from '@kit.ArkUI';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-4. const DOMAIN = 0x0000;
-
-6. class MyModifier extends CommonModifier {
-7. applyNormalAttribute(instance: CommonAttribute): void {
-8. super.applyNormalAttribute?.(instance);
-9. }
-
-11. public setGroup1(): void {
-12. this.borderStyle(BorderStyle.Dotted);
-13. this.borderWidth(8);
-14. }
-
-16. public setGroup2(): void {
-17. this.borderStyle(BorderStyle.Dashed);
-18. this.borderWidth(8);
-19. }
-20. }
-
-22. @ComponentV2
-23. struct MyImage1 {
-24. @Param @Require modifier: CommonModifier;
-
-26. build() {
-27. // 此处'app.media.app_icon'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
-28. Image($r('app.media.app_icon'))
-29. .attributeModifier(this.modifier as MyModifier)
-30. }
-31. }
-
-33. @Entry
-34. @ComponentV2
-35. struct Index {
-36. // 使用makeObserved的能力来观测CommonModifier
-37. @Local myModifier: CommonModifier = UIUtils.makeObserved(new MyModifier().width(100).height(100).margin(10));
-38. index: number = 0;
-
-40. build() {
-41. Column() {
-42. Button($r('app.string.EntryAbility_label'))
-43. .margin(10)
-44. .onClick(() => {
-45. hilog.info(DOMAIN, 'testTag', 'Modifier', 'onClick');
-46. this.index++;
-47. if (this.index % 2 === 1) {
-48. (this.myModifier as MyModifier).setGroup1();
-49. hilog.info(DOMAIN, 'testTag', 'Modifier', 'setGroup1');
-50. } else {
-51. (this.myModifier as MyModifier).setGroup2();
-52. hilog.info(DOMAIN, 'testTag', 'Modifier', 'setGroup2');
-53. }
-54. })
-
-56. MyImage1({ modifier: this.myModifier })
-57. }
-58. .width('100%')
-59. }
-60. }
-```
-
-[InternalCommonModifierV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/internalmigrate/InternalCommonModifierV2.ets#L15-L76)
 
 ### 组件Modifier
 
@@ -539,78 +523,76 @@ V1：
 
 具体示例如下：
 
+```typescript
+import { TextModifier } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN = 0x0000;
+
+class MyModifier extends TextModifier {
+  applyNormalAttribute(instance: TextAttribute): void {
+    super.applyNormalAttribute?.(instance);
+  }
+
+  public setGroup1(): void {
+    this.fontSize(50);
+    this.fontColor(Color.Pink);
+  }
+
+  public setGroup2(): void {
+    this.fontSize(50);
+    this.fontColor(Color.Gray);
+  }
+}
+
+@Component
+struct MyImage1 {
+  @Link modifier: TextModifier;
+  index: number = 0;
+
+  build() {
+    Column() {
+      Text('Test')
+        .attributeModifier(this.modifier as MyModifier)
+
+      Button($r('app.string.EntryAbility_label'))
+        .margin(10)
+        .onClick(() => {
+          // 通过点击改变index数值，动态设置Text的属性类
+          hilog.info(DOMAIN, 'testTag', 'Modifier', 'onClick');
+          this.index++;
+          if (this.index % 2 === 1) {
+            (this.modifier as MyModifier).setGroup1();
+            hilog.info(DOMAIN, 'testTag', 'Modifier', 'setGroup1');
+          } else {
+            (this.modifier as MyModifier).setGroup2();
+            hilog.info(DOMAIN, 'testTag', 'Modifier', 'setGroup2');
+          }
+        })
+    }
+  }
+}
+
+@Entry
+@Component
+struct Index {
+  @State myModifier: TextModifier = new MyModifier().width(100).height(100).margin(10);
+  index: number = 0;
+
+  build() {
+    Column() {
+      MyImage1({ modifier: this.myModifier })
+
+      Button('replace whole')
+        .margin(10)
+        .onClick(() => {
+          this.myModifier = new MyModifier().backgroundColor(Color.Orange);
+        })
+    }
+    .width('100%')
+  }
+}
 ```
-1. import { TextModifier } from '@kit.ArkUI';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-4. const DOMAIN = 0x0000;
-
-6. class MyModifier extends TextModifier {
-7. applyNormalAttribute(instance: TextModifier): void {
-8. super.applyNormalAttribute?.(instance);
-9. }
-
-11. public setGroup1(): void {
-12. this.fontSize(50);
-13. this.fontColor(Color.Pink);
-14. }
-
-16. public setGroup2(): void {
-17. this.fontSize(50);
-18. this.fontColor(Color.Gray);
-19. }
-20. }
-
-22. @Component
-23. struct MyImage1 {
-24. @Link modifier: TextModifier;
-25. index: number = 0;
-
-27. build() {
-28. Column() {
-29. Text('Test')
-30. .attributeModifier(this.modifier as MyModifier)
-
-32. Button($r('app.string.EntryAbility_label'))
-33. .margin(10)
-34. .onClick(() => {
-35. // 通过点击改变index数值，动态设置Text的属性类
-36. hilog.info(DOMAIN, 'testTag', 'Modifier', 'onClick');
-37. this.index++;
-38. if (this.index % 2 === 1) {
-39. (this.modifier as MyModifier).setGroup1();
-40. hilog.info(DOMAIN, 'testTag', 'Modifier', 'setGroup1');
-41. } else {
-42. (this.modifier as MyModifier).setGroup2();
-43. hilog.info(DOMAIN, 'testTag', 'Modifier', 'setGroup2');
-44. }
-45. })
-46. }
-47. }
-48. }
-
-50. @Entry
-51. @Component
-52. struct Index {
-53. @State myModifier: TextModifier = new MyModifier().width(100).height(100).margin(10);
-54. index: number = 0;
-
-56. build() {
-57. Column() {
-58. MyImage1({ modifier: this.myModifier })
-
-60. Button('replace whole')
-61. .margin(10)
-62. .onClick(() => {
-63. this.myModifier = new MyModifier().backgroundColor(Color.Orange);
-64. })
-65. }
-66. .width('100%')
-67. }
-68. }
-```
-
-[InternalModuleModifierV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/internalmigrate/InternalModuleModifierV1.ets#L15-L83)
 
 V2：
 
@@ -618,78 +600,76 @@ V2：
 
 具体示例如下：
 
+```typescript
+import { UIUtils, TextModifier } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN = 0x0000;
+
+class MyModifier extends TextModifier {
+  applyNormalAttribute(instance: TextAttribute): void {
+    super.applyNormalAttribute?.(instance);
+  }
+
+  public setGroup1(): void {
+    this.fontSize(50);
+    this.fontColor(Color.Pink);
+  }
+
+  public setGroup2(): void {
+    this.fontSize(50);
+    this.fontColor(Color.Gray);
+  }
+}
+
+@ComponentV2
+struct MyImage1 {
+  @Param @Require modifier: TextModifier;
+  index: number = 0;
+
+  build() {
+    Column() {
+      Text('Test')
+        .attributeModifier(this.modifier as MyModifier)
+
+      Button($r('app.string.EntryAbility_label'))
+        .margin(10)
+        .onClick(() => {
+          hilog.info(DOMAIN, 'testTag', 'Modifier', 'onClick');
+          this.index++;
+          if (this.index % 2 === 1) {
+            (this.modifier as MyModifier).setGroup1();
+            hilog.info(DOMAIN, 'testTag', 'Modifier', 'setGroup1');
+          } else {
+            (this.modifier as MyModifier).setGroup2();
+            hilog.info(DOMAIN, 'testTag', 'Modifier', 'setGroup2');
+          }
+        })
+    }
+  }
+}
+
+@Entry
+@ComponentV2
+struct Index {
+  // 使用makeObserved的能力观测TextModifier
+  @Local myModifier: TextModifier = UIUtils.makeObserved(new MyModifier().width(100).height(100).margin(10));
+  index: number = 0;
+
+  build() {
+    Column() {
+      MyImage1({ modifier: this.myModifier })
+
+      Button('replace whole')
+        .margin(10)
+        .onClick(() => {
+          this.myModifier = UIUtils.makeObserved(new MyModifier().backgroundColor(Color.Orange));
+        })
+    }
+    .width('100%')
+  }
+}
 ```
-1. import { UIUtils, TextModifier } from '@kit.ArkUI';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-4. const DOMAIN = 0x0000;
-
-6. class MyModifier extends TextModifier {
-7. applyNormalAttribute(instance: TextModifier): void {
-8. super.applyNormalAttribute?.(instance);
-9. }
-
-11. public setGroup1(): void {
-12. this.fontSize(50);
-13. this.fontColor(Color.Pink);
-14. }
-
-16. public setGroup2(): void {
-17. this.fontSize(50);
-18. this.fontColor(Color.Gray);
-19. }
-20. }
-
-22. @ComponentV2
-23. struct MyImage1 {
-24. @Param @Require modifier: TextModifier;
-25. index: number = 0;
-
-27. build() {
-28. Column() {
-29. Text('Test')
-30. .attributeModifier(this.modifier as MyModifier)
-
-32. Button($r('app.string.EntryAbility_label'))
-33. .margin(10)
-34. .onClick(() => {
-35. hilog.info(DOMAIN, 'testTag', 'Modifier', 'onClick');
-36. this.index++;
-37. if (this.index % 2 === 1) {
-38. (this.modifier as MyModifier).setGroup1();
-39. hilog.info(DOMAIN, 'testTag', 'Modifier', 'setGroup1');
-40. } else {
-41. (this.modifier as MyModifier).setGroup2();
-42. hilog.info(DOMAIN, 'testTag', 'Modifier', 'setGroup2');
-43. }
-44. })
-45. }
-46. }
-47. }
-
-49. @Entry
-50. @ComponentV2
-51. struct Index {
-52. // 使用makeObserved的能力观测TextModifier
-53. @Local myModifier: TextModifier = UIUtils.makeObserved(new MyModifier().width(100).height(100).margin(10));
-54. index: number = 0;
-
-56. build() {
-57. Column() {
-58. MyImage1({ modifier: this.myModifier })
-
-60. Button('replace whole')
-61. .margin(10)
-62. .onClick(() => {
-63. this.myModifier = UIUtils.makeObserved(new MyModifier().backgroundColor(Color.Orange));
-64. })
-65. }
-66. .width('100%')
-67. }
-68. }
-```
-
-[InternalModuleModifierV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/internalmigrate/InternalModuleModifierV2.ets#L15-L84)
 
 ### AttributeUpdater
 
@@ -699,102 +679,98 @@ V1：
 
 在状态管理V1中，开发者希望通过修改MyButtonModifier的flag来改变绑定在Button上的属性。由于状态管理V1的@State装饰器支持自身及第一层对象属性的观察能力，因此只需用@State装饰AttributeUpdater，即可监听其变化并触发属性更新。
 
+```typescript
+// xxx.ets
+import { AttributeUpdater } from '@kit.ArkUI';
+
+class MyButtonModifier extends AttributeUpdater<ButtonAttribute> {
+  public flag: boolean = false;
+
+  initializeModifier(instance: ButtonAttribute): void {
+    instance.backgroundColor('#ff2787d9')
+      .width('50%')
+      .height(30)
+  }
+
+  applyNormalAttribute(instance: ButtonAttribute): void {
+    if (this.flag) {
+      instance.borderWidth(2);
+    } else {
+      instance.borderWidth(10);
+    }
+  }
+}
+
+@Entry
+@Component
+struct Index {
+  @State modifier: MyButtonModifier = new MyButtonModifier();
+
+  build() {
+    Row() {
+      Column() {
+        Button('Button')
+          .attributeModifier(this.modifier)
+        Button('Update')
+          .onClick(() => {
+            this.modifier.flag = !this.modifier.flag;
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-1. // xxx.ets
-2. import { AttributeUpdater } from '@kit.ArkUI';
-
-4. class MyButtonModifier extends AttributeUpdater<ButtonAttribute> {
-5. public flag: boolean = false;
-
-7. initializeModifier(instance: ButtonAttribute): void {
-8. instance.backgroundColor('#ff2787d9')
-9. .width('50%')
-10. .height(30)
-11. }
-
-13. applyNormalAttribute(instance: ButtonAttribute): void {
-14. if (this.flag) {
-15. instance.borderWidth(2);
-16. } else {
-17. instance.borderWidth(10);
-18. }
-19. }
-20. }
-
-22. @Entry
-23. @Component
-24. struct Index {
-25. @State modifier: MyButtonModifier = new MyButtonModifier();
-
-27. build() {
-28. Row() {
-29. Column() {
-30. Button('Button')
-31. .attributeModifier(this.modifier)
-32. Button('Update')
-33. .onClick(() => {
-34. this.modifier.flag = !this.modifier.flag;
-35. })
-36. }
-37. .width('100%')
-38. }
-39. .height('100%')
-40. }
-41. }
-```
-
-[InternalAttributeUpdaterV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/internalmigrate/InternalAttributeUpdaterV1.ets#L15-L57)
 
 V2：
 
 与状态管理V1不同，状态管理V2的@Local仅观察自身变化，因此MyButtonModifier需添加@ObservedV2装饰器，flag需要被@Trace装饰，并且需要在组件创建过程中读取flag以建立其与Button组件的联系。在AttributeUpdater场景中，需在initializeModifier中读取flag（如示例所示），否则无法建立关联。
 
+```typescript
+// xxx.ets
+import { AttributeUpdater } from '@kit.ArkUI';
+
+@ObservedV2
+class MyButtonModifier extends AttributeUpdater<ButtonAttribute> {
+  @Trace public flag: boolean = false;
+
+  initializeModifier(instance: ButtonAttribute): void {
+    // initializeModifier会在组件初始化阶段回调，需要在这个地方触发下flag的读，使其建立Button组件的关联。
+    this.flag;
+    instance.backgroundColor('#ff2787d9')
+      .width('50%')
+      .height(30)
+  }
+
+  applyNormalAttribute(instance: ButtonAttribute): void {
+    if (this.flag) {
+      instance.borderWidth(2);
+    } else {
+      instance.borderWidth(10);
+    }
+  }
+}
+
+@Entry
+@ComponentV2
+struct Index {
+  // 状态管理V2装饰器仅观察本层，即当前可以观察到modifier整体赋值的变化。
+  @Local modifier: MyButtonModifier = new MyButtonModifier();
+
+  build() {
+    Row() {
+      Column() {
+        Button('Button')
+          .attributeModifier(this.modifier)
+        Button('Update')
+          .onClick(() => {
+            this.modifier.flag = !this.modifier.flag;
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-1. // xxx.ets
-2. import { AttributeUpdater } from '@kit.ArkUI';
-
-4. @ObservedV2
-5. class MyButtonModifier extends AttributeUpdater<ButtonAttribute> {
-6. @Trace public flag: boolean = false;
-
-8. initializeModifier(instance: ButtonAttribute): void {
-9. // initializeModifier会在组件初始化阶段回调，需要在这个地方触发下flag的读，使其建立Button组件的关联。
-10. this.flag;
-11. instance.backgroundColor('#ff2787d9')
-12. .width('50%')
-13. .height(30)
-14. }
-
-16. applyNormalAttribute(instance: ButtonAttribute): void {
-17. if (this.flag) {
-18. instance.borderWidth(2);
-19. } else {
-20. instance.borderWidth(10);
-21. }
-22. }
-23. }
-
-25. @Entry
-26. @ComponentV2
-27. struct Index {
-28. // 状态管理V2装饰器仅观察本层，即当前可以观察到modifier整体赋值的变化。
-29. @Local modifier: MyButtonModifier = new MyButtonModifier();
-
-31. build() {
-32. Row() {
-33. Column() {
-34. Button('Button')
-35. .attributeModifier(this.modifier)
-36. Button('Update')
-37. .onClick(() => {
-38. this.modifier.flag = !this.modifier.flag;
-39. })
-40. }
-41. .width('100%')
-42. }
-43. .height('100%')
-44. }
-45. }
-```
-
-[InternalAttributeUpdaterV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/internalmigrate/InternalAttributeUpdaterV2.ets#L15-L61)

@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm
 title: JSVM_Script__*
 breadcrumb: API参考 > 公共基础能力 > C API > 结构体 > JSVM_Script__*
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:26+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:ce07c74298826ec53462f64977d1da9212f881ad32434be45c086a7f3adf4101
+scraped_at: 2026-09-02T14:53:37+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3389bce64b2a23096deafde883447392bda1b400a5847af895c5f0a47e3dc23d
 ---
 
-```
-1. typedef struct JSVM_Script__* JSVM_Script
+```c
+typedef struct JSVM_Script__* JSVM_Script
 ```
 
 ## 概述
 
-PhonePC/2in1TabletWearable
-
 表示一段JavaScript代码。
+
+**系统能力：** SystemCapability.ArkCompiler.JSVM
 
 **起始版本：** 11
 

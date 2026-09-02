@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_ban-ts-co
 title: "@typescript-eslint/ban-ts-comment"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/ban-ts-comment
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:23+08:00
+scraped_at: 2026-09-02T14:50:50+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:9e2bf0a429748ef2b3d00ead2e3e3719301fab01e92e4774caba10f61d174203
+content_hash: sha256:3735e8da43c915ac8656d13942b0a75c872e82d283d73e7f6232e500833e304e
 ---
 
 不允许使用`@ts-<directional>`格式的注释，或要求在注释后进行补充说明。
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@typescript-eslint/ban-ts-comment": "error"
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@typescript-eslint/ban-ts-comment": "error"
+  }
+}
 ```
 
 ## 选项
@@ -27,24 +27,24 @@ content_hash: sha256:9e2bf0a429748ef2b3d00ead2e3e3719301fab01e92e4774caba10f61d1
 
 ## 正例
 
-```
-1. console.log('hello');
+```screen
+console.log('hello');
 ```
 
 ## 反例
 
-```
-1. // @ts-expect-error
-2. console.log('hello');
+```screen
+// @ts-expect-error
+console.log('hello');
 
-4. /* @ts-expect-error */
-5. console.log('hello');
+/* @ts-expect-error */
+console.log('hello');
 ```
 
 ## 规则集
 
-```
-1. plugin:@typescript-eslint/all
+```screen
+plugin:@typescript-eslint/all
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

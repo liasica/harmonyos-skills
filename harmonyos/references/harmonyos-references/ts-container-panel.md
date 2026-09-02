@@ -3,36 +3,36 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Panel
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 已停止维护的组件与接口 > Panel
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:12+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:eeb29452789ffbeeb3dfefeb7b8f901e29971447bbb1ceaa8e6e8ce51efcdce7
+scraped_at: 2026-09-02T15:01:11+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:cb0187ed496431a4b21414ccd831c2cdc6015770f142f1bc8f03bc2ee0ea2678
 ---
 
 可滑动面板，提供一种轻量的内容展示窗口，方便在不同尺寸中切换。
 
-说明
+**说明** 
 
-从API version 12开始，该组件不再维护，推荐使用通用属性[bindSheet](ts-universal-attributes-sheet-transition.md)。
+从API version 12开始，该组件不再维护，推荐使用通用属性[bindSheet](ts-universal-attributes-sheet-transition.md#bindsheet)。
 
 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 可以包含子组件。
 
-说明
+**说明** 
 
 子组件类型：系统组件和自定义组件，支持渲染控制类型（[if/else](../harmonyos-guides/arkts-rendering-control-ifelse.md)、[ForEach](../harmonyos-guides/arkts-rendering-control-foreach.md)和[LazyForEach](../harmonyos-guides/arkts-rendering-control-lazyforeach.md)）。
 
 ## 接口
 
-PhonePC/2in1TabletTVWearable
-
 Panel(show: boolean)
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+滑动面板组件。
+
+**说明** 
+
+从API version 7开始支持，从API version 12开始废弃。建议使用[bindSheet](ts-universal-attributes-sheet-transition.md#bindsheet)替代。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -42,23 +42,21 @@ Panel(show: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| show | boolean | 是 | 控制Panel显示或隐藏。  **说明：**  如果设置为false时，则不占位隐藏。[Visible.None](ts-universal-attributes-visibility.md)或者show之间有一个生效时，都会生效不占位隐藏。 |
+| show | boolean | 是 | 控制Panel显示或隐藏，true表示显示面板，false表示隐藏面板。  **说明：**  如果设置为false时，则不占位隐藏。[Visibility](ts-appendix-enums.md#visibility).None或show之间有一个生效时，都会生效不占位隐藏。  属性show的优先级高于此参数，当属性show被设置时，本参数可能不生效。 |
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](ts-component-general-attributes.md)外，还支持以下属性：
 
 ### type
 
-PhonePC/2in1TabletTVWearable
-
 type(value: PanelType)
 
-可滑动面板的类型。
+可滑动面板的类型。type属性值制约其他属性的使用：当type为Minibar时，PanelMode.Half不生效；当type为Temporary时，PanelMode.Mini不生效；当type为CUSTOM时，不支持尺寸切换效果，需配合customHeight属性使用；当type为Foldable时，所有PanelMode值均可用，可配合fullHeight、halfHeight、miniHeight属性设置各状态高度。
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+**说明** 
+
+从API version 7开始支持，从API version 12开始废弃。建议使用[SheetOptions](ts-universal-attributes-sheet-transition.md#sheetoptions)中的preferType替代。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -72,13 +70,13 @@ type(value: PanelType)
 
 ### mode
 
-PhonePC/2in1TabletTVWearable
-
 mode(value: PanelMode)
 
 可滑动面板的初始状态。
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+**说明** 
+
+从API version 7开始支持，从API version 12开始废弃。建议使用[SheetOptions](ts-universal-attributes-sheet-transition.md#sheetoptions)中的preferType替代。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -92,13 +90,13 @@ mode(value: PanelMode)
 
 ### dragBar
 
-PhonePC/2in1TabletTVWearable
-
 dragBar(value: boolean)
 
 设置是否存在控制条。
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+**说明** 
+
+从API version 7开始支持，从API version 12开始废弃。建议使用[SheetOptions](ts-universal-attributes-sheet-transition.md#sheetoptions)中的dragBar替代。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -112,13 +110,13 @@ dragBar(value: boolean)
 
 ### customHeight10+
 
-PhonePC/2in1TabletTVWearable
-
 customHeight(value: Dimension | PanelHeight)
 
-指定PanelType.CUSTOM状态下的高度。
+指定PanelType.CUSTOM状态下的高度。此属性仅在[type](ts-container-panel.md#type)设置为PanelType.CUSTOM时生效，使用PanelHeight.WRAP\_CONTENT时高度自适应内容，使用Dimension值时设置固定高度。
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+**说明** 
+
+从API version 10开始支持，从API version 12开始废弃。建议使用[SheetOptions](ts-universal-attributes-sheet-transition.md#sheetoptions)中的height替代。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -128,17 +126,17 @@ customHeight(value: Dimension | PanelHeight)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Dimension](ts-types.md#dimension10) | [PanelHeight](ts-container-panel.md#panelheight10枚举说明) | 是 | 指定PanelType.CUSTOM状态下的高度。  默认值：0  **说明：**  不支持设置百分比。 |
+| value | [Dimension](ts-types.md#dimension10) | [PanelHeight](ts-container-panel.md#panelheight10枚举说明) | 是 | 指定PanelType.CUSTOM状态下的高度。  默认值：0  **说明：**  不支持设置百分比，传入百分比时不生效。传入负数时不生效。 |
 
 ### fullHeight
 
-PhonePC/2in1TabletTVWearable
-
 fullHeight(value: number | string)
 
-指定PanelType.Full状态下的高度。
+指定PanelMode.Full状态下的高度。
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+**说明** 
+
+从API version 7开始支持，从API version 12开始废弃。建议使用[SheetOptions](ts-universal-attributes-sheet-transition.md#sheetoptions)中的height替代。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -148,17 +146,19 @@ fullHeight(value: number | string)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | string | 是 | 指定PanelMode.Full状态下的高度。  默认值：当前组件主轴大小减去8vp空白区  **说明：**  不支持设置百分比。 |
+| value | number | string | 是 | 指定PanelMode.Full状态下的高度。  默认值：当前组件主轴大小减去8vp空白区  单位：vp  **说明：**  不支持设置百分比。 |
 
 ### halfHeight
-
-PhonePC/2in1TabletTVWearable
 
 halfHeight(value: number | string)
 
 指定PanelMode.Half状态下的高度。
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+**说明** 
+
+此属性仅在type为Foldable或Temporary时生效。当type为Minibar时，Half模式不生效，halfHeight设置无效。
+
+从API version 7开始支持，从API version 12开始废弃。建议使用[SheetOptions](ts-universal-attributes-sheet-transition.md#sheetoptions)中的height替代。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -168,17 +168,19 @@ halfHeight(value: number | string)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | string | 是 | 指定PanelMode.Half状态下的高度。  默认值：当前组件主轴大小的一半。  **说明：**  不支持设置百分比。 |
+| value | number | string | 是 | 指定PanelMode.Half状态下的高度。  默认值：当前组件主轴大小的一半。  单位：vp  **说明：**  不支持设置百分比。 |
 
 ### miniHeight
-
-PhonePC/2in1TabletTVWearable
 
 miniHeight(value: number | string)
 
 指定PanelMode.Mini状态下的高度。
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+**说明** 
+
+此属性仅在type为Minibar或Foldable时生效。当type为Temporary时，Mini模式不生效，miniHeight设置无效。
+
+从API version 7开始支持，从API version 12开始废弃。建议使用[SheetOptions](ts-universal-attributes-sheet-transition.md#sheetoptions)中的height替代。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -192,13 +194,13 @@ miniHeight(value: number | string)
 
 ### show
 
-PhonePC/2in1TabletTVWearable
-
 show(value: boolean)
 
 当滑动面板弹出时调用。
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+**说明** 
+
+从API version 7开始支持，从API version 12开始废弃。建议使用[SheetOptions](ts-universal-attributes-sheet-transition.md#bindsheet)中的isShow替代。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -212,13 +214,13 @@ show(value: boolean)
 
 ### backgroundMask9+
 
-PhonePC/2in1TabletTVWearable
-
 backgroundMask(color: ResourceColor)
 
 指定Panel的背景蒙层。
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+**说明** 
+
+从API version 9开始支持，从API version 12开始废弃。建议使用[SheetOptions](ts-universal-attributes-sheet-transition.md#sheetoptions)中的maskColor替代。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -232,13 +234,13 @@ backgroundMask(color: ResourceColor)
 
 ### showCloseIcon10+
 
-PhonePC/2in1TabletTVWearable
-
 showCloseIcon(value: boolean)
 
 设置是否显示关闭图标。
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+**说明** 
+
+从API version 10开始支持，从API version 12开始废弃。建议使用[SheetOptions](ts-universal-attributes-sheet-transition.md#sheetoptions)中的showClose替代。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -252,26 +254,9 @@ showCloseIcon(value: boolean)
 
 ## PanelType枚举说明
 
-PhonePC/2in1TabletTVWearable
+**说明** 
 
-**模型约束：** 此接口仅可在Stage模型下使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-| 名称 | 说明 |
-| --- | --- |
-| Minibar | 提供minibar和类全屏展示切换效果。 |
-| Foldable | 内容永久展示类，提供大（类全屏）、中（类半屏）、小三种尺寸展示切换效果。 |
-| Temporary | 内容临时展示区，提供大（类全屏）、中（类半屏）两种尺寸展示切换效果。 |
-| CUSTOM10+ | 配置自适应内容高度，不支持尺寸切换效果。 |
-
-## PanelMode枚举说明
-
-PhonePC/2in1TabletTVWearable
-
-**模型约束：** 此接口仅可在Stage模型下使用。
+从API version 7开始支持，从API version 12开始废弃。建议使用[SheetSize](ts-universal-attributes-sheet-transition.md#sheetsize枚举说明)替代。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -279,39 +264,54 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| Mini | 0 | 类型为minibar和foldable时，为最小状态；类型为temporary，则不生效。 |
-| Half | 1 | 类型为foldable和temporary时，为类半屏状态；类型为minibar，则不生效。 |
-| Full | 2 | 类全屏状态。 |
+| Minibar | 0 | 提供Minibar和类全屏展示切换效果。 |
+| Foldable | 1 | 内容始终展示，提供大（类全屏）、中（类半屏）、小三种尺寸展示切换效果。 |
+| Temporary | 2 | 内容临时展示，提供大（类全屏）、中（类半屏）两种尺寸展示切换效果。 |
+| CUSTOM10+ | 3 | 配置自适应内容高度，不支持尺寸切换效果。 |
 
-## PanelHeight10+枚举说明
+## PanelMode枚举说明
 
-PhonePC/2in1TabletTVWearable
+**说明** 
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+从API version 7开始支持，从API version 12开始废弃。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-| 名称 | 说明 |
-| --- | --- |
-| WRAP\_CONTENT | 类型为CUSTOM时，自适应内容高度。 |
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| Mini | 0 | 类型为Minibar和Foldable时，为最小状态；类型为Temporary，则不生效。 |
+| Half | 1 | 类型为Foldable和Temporary时，为类半屏状态；类型为Minibar，则不生效。 |
+| Full | 2 | 类型为Minibar、Foldable和Temporary时，为类全屏状态；类型为CUSTOM，则不生效。 |
+
+## PanelHeight10+枚举说明
+
+**说明** 
+
+从API version 10开始支持，从API version 12开始废弃。建议使用[SheetSize](ts-universal-attributes-sheet-transition.md#sheetsize枚举说明)替代。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| WRAP\_CONTENT | 'wrapContent' | [PanelType](ts-container-panel.md#paneltype枚举说明)的类型为CUSTOM时，自适应内容高度。 |
 
 ## 事件
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用事件](ts-component-general-events.md)外，还支持以下事件：
 
 ### onChange
 
-PhonePC/2in1TabletTVWearable
-
 onChange(event: (width: number, height: number, mode: PanelMode) => void)
 
-当可滑动面板发生状态变化时触发。
+当可滑动面板发生状态变化时触发。与onHeightChange的区别：onChange在面板模式切换时触发，返回宽高和模式信息；onHeightChange在面板高度变化时触发，仅返回高度值。需要感知模式切换时使用onChange，仅需感知高度变化时使用onHeightChange。
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+**说明** 
+
+从API version 7开始支持，从API version 12开始废弃。建议使用[SheetOptions](ts-universal-attributes-sheet-transition.md#sheetoptions)中的onTypeDidChange替代。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -321,19 +321,19 @@ onChange(event: (width: number, height: number, mode: PanelMode) => void)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| width | number | 是 | 内容区的宽度值。 |
-| height | number | 是 | 内容区的高度值。  当dragBar属性为true时，panel本身的高度值为dragBar高度加上内容区高度。 |
-| mode | PanelMode | 是 | 面板的状态。 |
+| width | number | 是 | 内容区的宽度值，单位：vp。 |
+| height | number | 是 | 内容区的高度值，单位：vp。  当dragBar属性为true时，Panel本身的高度值为dragBar高度加上内容区高度。 |
+| mode | [PanelMode](ts-container-panel.md#panelmode枚举说明) | 是 | 面板的状态。 |
 
 ### onHeightChange9+
-
-PhonePC/2in1TabletTVWearable
 
 onHeightChange(callback: (value: number) => void)
 
 当可滑动面板发生高度变化时触发。
 
-**模型约束：** 此接口仅可在Stage模型下使用。
+**说明** 
+
+从API version 9开始支持，从API version 12开始废弃。建议使用[SheetOptions](ts-universal-attributes-sheet-transition.md#sheetoptions)中的onHeightDidChange替代。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -343,48 +343,46 @@ onHeightChange(callback: (value: number) => void)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | 是 | 内容区的高度值，默认返回值单位为px。  当dragBar属性为true时，panel本身的高度值为dragBar高度加上内容区高度。  因用户体验设计原因，panel最高只能滑到 fullHeight-8vp。 |
+| value | number | 是 | 内容区的高度值，默认返回值单位为px。  当dragBar属性为true时，Panel本身的高度值为dragBar高度加上内容区高度。  因用户体验设计原因，Panel最高只能滑到fullHeight-8vp。 |
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
+```ts
+// xxx.ets
+@Entry
+@Component
+struct PanelExample {
+  @State show: boolean = false
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct PanelExample {
-5. @State show: boolean = false
-
-7. build() {
-8. Column() {
-9. Text('2021-09-30    Today Calendar: 1.afternoon......Click for details')
-10. .width('90%')
-11. .height(50)
-12. .borderRadius(10)
-13. .backgroundColor(0xFFFFFF)
-14. .padding({ left: 20 })
-15. .onClick(() => {
-16. this.show = !this.show
-17. })
-18. Panel(this.show) { // 展示日程
-19. Column() {
-20. Text('Today Calendar')
-21. Divider()
-22. Text('1. afternoon 4:00 The project meeting')
-23. }
-24. }
-25. .type(PanelType.Foldable)
-26. .mode(PanelMode.Half)
-27. .dragBar(true) // 默认开启
-28. .halfHeight(500) // 默认一半
-29. .showCloseIcon(true) // 显示关闭图标
-30. .onChange((width: number, height: number, mode: PanelMode) => {
-31. console.info(`width:${width},height:${height},mode:${mode}`)
-32. })
-33. }.width('100%').height('100%').backgroundColor(0xDCDCDC).padding({ top: 5 })
-34. }
-35. }
+  build() {
+    Column() {
+      Text('2021-09-30    Today Calendar: 1.afternoon......Click for details')
+        .width('90%')
+        .height(50)
+        .borderRadius(10)
+        .backgroundColor(0xFFFFFF)
+        .padding({ left: 20 })
+        .onClick(() => {
+          this.show = !this.show;
+        })
+      Panel(this.show) { // 展示日程
+        Column() {
+          Text('Today Calendar')
+          Divider()
+          Text('1. afternoon 4:00 The project meeting')
+        }
+      }
+      .type(PanelType.Foldable)
+      .mode(PanelMode.Half)
+      .dragBar(true) // 默认开启
+      .halfHeight(500) // 设置半屏高度为500，默认为当前组件主轴大小的一半
+      .showCloseIcon(true) // 显示关闭图标
+      .onChange((width: number, height: number, mode: PanelMode) => {
+        console.info(`width:${width},height:${height},mode:${mode}`);
+      })
+    }.width('100%').height('100%').backgroundColor(0xDCDCDC).padding({ top: 5 })
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/qEoeltmvRx6u58Bpe2uLFA/zh-cn_image_0000002589326557.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/ujc2rBXaSxiMgFf-4PzgOg/zh-cn_image_0000002736435507.gif)

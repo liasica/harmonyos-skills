@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-n
 title: 概述
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏近场快传（可选） > 概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:05+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:429c8ec7456b145a807407bbaf4a300bf825e994da6494e252518e307ececd27
+scraped_at: 2026-09-02T14:59:55+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:e7e7bc48fcdebbc0cd50f1e49b4bc54299d02657518e3df36bc30ddcf6b32df1
 ---
 
 ## 功能说明
 
-从5.1.0(18)版本开始，新增游戏近场快传服务。从6.1.0(23)版本开始，近场快传服务支持安装包传输。
+从5.1.0(18)版本开始，新增游戏近场快传服务。从6.1.0(23)版本开始，近场快传服务支持安装包传输。从26.0.0版本开始，近场快传服务支持免集成Game Service Kit传输安装包。
 
 游戏近场快传服务支持设备在彼此靠近的情况下进行游戏数据交换。
 

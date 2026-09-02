@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hide
 title: HiDebug_GraphicsMemorySummary
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > C API > 结构体 > HiDebug_GraphicsMemorySummary
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:28+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:3f8309e1c86acce5cda4d64a3bf1fd0ccca93da30152afb05b79510ab9ae597f
+scraped_at: 2026-09-02T15:02:17+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:bc3fa38e72f59b5c05bfea470c297b0d49bcc5e3f2441785aafda34a906e53ce
 ---
 
-```
-1. typedef struct HiDebug_GraphicsMemorySummary {...} HiDebug_GraphicsMemorySummary
+```c
+typedef struct HiDebug_GraphicsMemorySummary {...} HiDebug_GraphicsMemorySummary
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 应用图形显存占用详情的结构定义。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 记忆链接错误码
 breadcrumb: API参考 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > 错误码 > 记忆链接错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:56+08:00
-doc_updated_at: 2026-04-08
-content_hash: sha256:426d1ed62a555a9a2da7e4f68c64deb86ee4ba870b04044c0dcac4bd2a5bbf0b
+scraped_at: 2026-09-02T15:02:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ebc658f3d75840ffcc38552d85436a87ffb15cd822c39e22fd1158a172601763
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码](errorcode-universal.md)说明文档。
 
 ## 32100001 文件创建失败
-
-PhoneTablet
 
 **错误信息**
 
@@ -22,7 +20,7 @@ Internal handling failed.
 
 **错误描述**
 
-当调用记忆链接模块接口时，若服务异常，会报此错误码。
+当调用记忆链接模块接口时，若文件创建失败，会报此错误码。
 
 **可能原因**
 
@@ -35,11 +33,9 @@ Internal handling failed.
 
 ## 32100004 订阅失败
 
-PhoneTablet
-
 **错误信息**
 
-Subscription failed. Possible causes: 1. Abnormal system capability; 2. IPC exception; 3. Algorithm loading exception.
+Subscription Failed. Possible causes: 1. Abnormal system capability. 2. IPC communication abnormality. 3. Algorithm loading exception.
 
 **错误描述**
 
@@ -56,11 +52,9 @@ Subscription failed. Possible causes: 1. Abnormal system capability; 2. IPC exce
 
 ## 32100005 取消订阅失败
 
-PhoneTablet
-
 **错误信息**
 
-Unsubscription failed. Possible causes: 1. Abnormal system capability; 2. IPC exception.
+Unsubscription Failed. Possible causes: 1. Abnormal system capability. 2. IPC communication abnormality.
 
 **错误描述**
 

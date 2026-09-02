@@ -3,35 +3,35 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_ban-types
 title: "@typescript-eslint/ban-types"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/ban-types
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:23+08:00
+scraped_at: 2026-09-02T14:50:50+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:451d6f18988a782d5aea406e69524dc2f87474b8839878bc61a2b9840f807e37
+content_hash: sha256:9cfa99c9727f47d3b9493cb80f902898e00dbaaf8ec4cca856fb8e16a472a260
 ---
 
 不允许使用某些类型。
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@typescript-eslint/ban-types": "error"
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@typescript-eslint/ban-types": "error"
+  }
+}
 ```
 
 ## 选项
 
 支持配置以下选项：
 
-```
-1. type Options = {
-2. types: {
-3. [key: string]: boolean | string | { message: string, fixWith: string } | null;
-4. };
-5. extendDefaults: boolean;
-6. }
+```screen
+type Options = {
+  types: {
+    [key: string]: boolean | string | { message: string, fixWith: string } | null;
+  };
+  extendDefaults: boolean;
+}
 ```
 
 * types：对象类型，配置需要检查的类型信息。属性名是一个字符串，表示要检查的类型名称，属性值支持配置为以下类型：
@@ -44,58 +44,58 @@ content_hash: sha256:451d6f18988a782d5aea406e69524dc2f87474b8839878bc61a2b9840f8
 
 示例：
 
-```
-1. "@typescript-eslint/ban-types": [
-2. "error",
-3. {
-4. "types": {
-5. "String": true,
-6. "Number": false,
-7. "MyType": "Do not use 'MyType'",
-8. "MyTypeWithFix": {
-9. "message": "Do not use 'MyTypeWithFix', use 'MyType' instead",
-10. "fixWith": "MyType"
-11. }
-12. },
-13. "extendDefaults": true
-14. },
-15. ]
+```screen
+"@typescript-eslint/ban-types": [
+  "error",
+  {
+    "types": {
+      "String": true,   
+      "Number": false,  
+      "MyType": "Do not use 'MyType'",  
+      "MyTypeWithFix": {
+        "message": "Do not use 'MyTypeWithFix', use 'MyType' instead",
+        "fixWith": "MyType"
+      }
+    },
+    "extendDefaults": true
+  },
+]
 ```
 
 ## 正例
 
-```
-1. // 类型小写保持一致
-2. const str: string = 'foo';
-3. const bool: boolean = true;
-4. const num: number = 1;
-5. const bigInt: bigint = 1n;
+```screen
+// 类型小写保持一致
+const str: string = 'foo';
+const bool: boolean = true;
+const num: number = 1;
+const bigInt: bigint = 1n;
 
-7. // 使用正确的函数类型
-8. const func: () => string = () => 'hello';
+// 使用正确的函数类型
+const func: () => string = () => 'hello';
 
-10. export { str, bool, num, bigInt, func };
+export { str, bool, num, bigInt, func };
 ```
 
 ## 反例
 
-```
-1. // 类型小写保持一致
-2. const str: String = 'foo';
-3. const bool: Boolean = true;
-4. const num: Number = 1;
-5. const bigInt: BigInt = 1n;
+```screen
+// 类型小写保持一致
+const str: String = 'foo';
+const bool: Boolean = true;
+const num: Number = 1;
+const bigInt: BigInt = 1n;
 
-7. // 使用正确的函数类型
-8. const func: Function = () => 'hello';
+// 使用正确的函数类型
+const func: Function = () => 'hello';
 
-10. export { str, bool, num, bigInt, func };
+export { str, bool, num, bigInt, func };
 ```
 
 ## 规则集
 
-```
-1. plugin:@typescript-eslint/all
+```screen
+plugin:@typescript-eslint/all
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

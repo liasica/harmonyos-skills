@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-602
 title: 版本概览
-breadcrumb: 版本说明 > HarmonyOS 6.0.2(22) > 版本概览
+breadcrumb: 版本说明 > 更多版本 > 6.0.2(22) > 版本概览
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:39+08:00
-doc_updated_at: 2026-04-27
-content_hash: sha256:e44279b3f3b7c8a68fde7703c19549f91c240362edd79e8e738e4c0ecd13db25
+scraped_at: 2026-09-02T14:58:37+08:00
+doc_updated_at: 2026-08-31
+content_hash: sha256:5a7f60b9ec0499e1898aedc2c8ad0cd7c2a3edf85567bf62de1dc1884e9e2418
 ---
 
 6.0.2(22)在6.0.1(21)的基础上，开发能力得到进一步增强：ArkUI增强了滚动组件相关能力，支持更多可配置和自定义的属性；Ability Kit增强了UIAbilityContext管理应用自身UIAbility的能力；ArkWeb增强了与终端用户交互的能力，提升Web页面的交互体验；Connectivity Kit的蓝牙模块增强了获取套接字链路信息的能力；Test Kit的UITest模块增强了模拟交互操作的能力；新增了FAST Kit（算法加速服务），提供高性能算法和数据结构等加速服务，等等。更多详情可参见[OS平台新增和增强特性](os-new-feature-602.md)。
@@ -14,7 +14,7 @@ DevEco Studio进一步增强AI智能辅助编程的能力和Code Linter静态检
 
 ## 版本信息
 
-说明
+**说明** 
 
 使用正确的配套关系进行应用开发可以获得更流畅的开发体验。
 
@@ -25,17 +25,18 @@ DevEco Studio进一步增强AI智能辅助编程的能力和Code Linter静态检
 | **软件包** | **发布类型** | **版本号** | **发布时间** |
 | --- | --- | --- | --- |
 | API版本 | Release | 6.0.2(22)  *\***注意**：设备系统支持的API能力范围请以**API版本****为准。* | 2026/01/21 |
-| DevEco Studio | Release | DevEco Studio 6.0.2 Release（6.0.2.650）  （Patch版本） | 2026/03/30 |
+| DevEco Studio | Release | DevEco Studio 6.0.2 Release（6.0.2.670）  （Patch版本） | 2026/08/31 |
+| DevEco Studio 6.0.2 Release（6.0.2.660）  （Patch版本） | 2026/05/12 |
+| DevEco Studio 6.0.2 Release（6.0.2.650）  （Patch版本） | 2026/03/30 |
 | DevEco Studio 6.0.2 Release（6.0.2.642）  （Patch版本） | 2026/03/06 |
 | DevEco Studio 6.0.2 Release（6.0.2.640） | 2026/01/21 |
 | SDK | Release | HarmonyOS 6.0.2 Release SDK  基于OpenHarmony SDK Ohos\_sdk\_public 6.0.2.130 (API 22 Release) | 2026/01/21 |
 
-说明
+**说明** 
 
-* 该版本需通过[开发者招募活动](https://developer.huawei.com/consumer/cn/activity/111766987539455127)进行申请，申请通过后可获得对应设备的ROM版本推送。
 * **API版本**请在设备的“设置”中点击设备名称，进入“**关于本机**”进行查询。
 
-* DevEco Studio版本请从DevEco Studio界面菜单选择“Help > About DevEco Studio”进行查询。
+* DevEco Studio版本请从DevEco Studio界面菜单选择“Help > About DevEco Studio”进行查询。请[点击此处](https://developer.huawei.com/consumer/cn/deveco-studio/)获取最新的DevEco Studio软件版本。
 * SDK内置在DevEco Studio，安装DevEco Studio时自动安装配套版本SDK。具体版本请从DevEco Studio界面菜单选择“Help > About HarmonyOS SDK”进行查询。
 
 ## 应用工程版本信息配置建议

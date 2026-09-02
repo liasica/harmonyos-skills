@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (ConcatArray)
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @arkts.collections (ArkTS容器集) > Interface (ConcatArray)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:56+08:00
-doc_updated_at: 2026-04-10
-content_hash: sha256:6f73a4b46072d3163a711dacc9db3a4fbb8f1b06edb342651bf6732d60acfec2
+scraped_at: 2026-09-02T15:00:45+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4f437c6226b1ebacd5d10015b4449c4f08d69f8aa06203390a9ef30fd853bf9e
 ---
 
 该接口定义了支持数组连接操作的对象，并继承了ISendable接口，使其兼具高效数组拼接和跨线程传递能力。
 
-说明
+**说明** 
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -22,15 +22,11 @@ content_hash: sha256:6f73a4b46072d3163a711dacc9db3a4fbb8f1b06edb342651bf6732d60a
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { collections } from '@kit.ArkTS';
+```ts
+import { collections } from '@kit.ArkTS';
 ```
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -41,8 +37,6 @@ PhonePC/2in1TabletTVWearable
 | length | number | 是 | 否 | ConcatArray的元素个数。 |
 
 ## [index: number]
-
-PhonePC/2in1TabletTVWearable
 
 readonly [index: number]: T
 
@@ -64,23 +58,20 @@ readonly [index: number]: T
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Illegal index. |
 | 10200001 | The value of index is out of range. |
 
 **示例：**
 
-```
-1. let concatArray : collections.ConcatArray<number> = new collections.Array<number>(1, 2, 4);
-2. console.info("Element at index 1: ", concatArray[1]);
+```ts
+let concatArray: collections.ConcatArray<number> = new collections.Array<number>(1, 2, 4);
+console.info("Element at index 1: ", concatArray[1]);
 ```
 
 ## join
-
-PhonePC/2in1TabletTVWearable
 
 join(separator?: string): string
 
@@ -102,24 +93,14 @@ join(separator?: string): string
 | --- | --- |
 | string | 包含所有ConcatArray元素连接成的字符串。如果ConcatArray为空，则返回空字符串。 |
 
-**错误码**：
-
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Invalid separator. |
-
 **示例：**
 
-```
-1. let concatArray : collections.ConcatArray<string> = new collections.Array<string>('a', 'b', 'c');
-2. let joinedString = concatArray.join('-'); // 返回 "a-b-c"
+```ts
+let concatArray: collections.ConcatArray<string> = new collections.Array<string>('a', 'b', 'c');
+let joinedString = concatArray.join('-'); // 返回 "a-b-c"
 ```
 
 ## slice
-
-PhonePC/2in1TabletTVWearable
 
 slice(start?: number, end?: number): ConcatArray<T>
 
@@ -133,8 +114,8 @@ slice(start?: number, end?: number): ConcatArray<T>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| start | number | 否 | 开始索引。如果start < 0，则会从start + array.length位置开始。默认值为0。 |
-| end | number | 否 | 结束索引（不包括该元素）。如果end < 0，则会到end + array.length位置结束。默认为ArkTS Array的长度。 |
+| start | number | 否 | 开始索引。如果start < 0，则会从start + ConcatArray.length位置开始。默认值为0。 |
+| end | number | 否 | 结束索引（不包括该元素）。如果end < 0，则会到end + ConcatArray.length位置结束。默认为ArkTS ConcatArray的长度。 |
 
 **返回值：**
 
@@ -142,17 +123,9 @@ slice(start?: number, end?: number): ConcatArray<T>
 | --- | --- |
 | ConcatArray<T> | 包含原始ConcatArray切片的新ConcatArray。 |
 
-**错误码**：
-
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Invalid `start` or `end` parameters. |
-
 **示例：**
 
-```
-1. let concatArray : collections.ConcatArray<number> = new collections.Array<number>(1, 2, 3, 4, 5);
-2. let slicedArray = concatArray.slice(1, 3); // 返回[2, 3]，原Array保持不变
+```ts
+let concatArray: collections.ConcatArray<number> = new collections.Array<number>(1, 2, 3, 4, 5);
+let slicedArray = concatArray.slice(1, 3); // 返回[2, 3]，原ConcatArray保持不变
 ```

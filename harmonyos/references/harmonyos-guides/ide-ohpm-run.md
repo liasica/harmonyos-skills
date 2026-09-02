@@ -3,17 +3,17 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-run
 title: ohpm run
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm run
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:47:54+08:00
-doc_updated_at: 2026-04-22
-content_hash: sha256:96afdeae3a95ef4ba94f6d41487f26a9e2bb201dae2d0e737b1797508dcd56d3
+scraped_at: 2026-09-02T15:00:29+08:00
+doc_updated_at: 2026-07-15
+content_hash: sha256:7e1694ff5f09d2239b2f91790f83e51653a793a80f3115e635349d433faf2a11
 ---
 
 执行用户自定义脚本。
 
 ## 命令格式
 
-```
-1. ohpm run [options] <script_name> [-- <args...>]
+```screen
+ohpm run [options] <script_name> [-- <args...>]
 ```
 
 ## 功能描述
@@ -24,15 +24,15 @@ content_hash: sha256:96afdeae3a95ef4ba94f6d41487f26a9e2bb201dae2d0e737b1797508dc
 
   oh-package.json5中scripts配置示例：
 
-  ```
-  1. {
-  2. "scripts": {
-  3. "scriptName1": "echo hello",
-  4. "scriptName2": "ohpm run scriptName1",
-  5. // 标识符"--"后可以通过'-p'或'--p'形式指定参数key, 可以通过' '或'='连接参数值
-  6. "scriptName3": "node test.js -- -paramKey1 paramValue1 -paramKey2=paramValue2 --paramKey3 paramValue3"
-  7. }
-  8. }
+  ```screen
+  {               
+    "scripts": {
+      "scriptName1": "echo hello",
+      "scriptName2": "ohpm run scriptName1",
+      // 标识符"--"后可以通过'-p'或'--p'形式指定参数key, 可以通过' '或'='连接参数值
+      "scriptName3": "node test.js -- -paramKey1 paramValue1 -paramKey2=paramValue2 --paramKey3 paramValue3"
+    }
+  }
   ```
 * 脚本内容中可以用ohpm run引用同一个 oh-package.json5 文件中其它脚本别名，如scriptName2；ohpm run 引用关系是一个有向无环图，不支持递归或循环引用。
 * 在解析脚本内容出错时，ohpm run命令将直接提示相应错误。比如，脚本内容中引用了一个在同一oh-package.json5文件中不存在的脚本别名；或在执行ohpm run时，发现脚本别名引用关系存在环的情况。
@@ -41,8 +41,8 @@ content_hash: sha256:96afdeae3a95ef4ba94f6d41487f26a9e2bb201dae2d0e737b1797508dc
 
 * ohpm run命令可以通过标识符“--”覆盖被引用脚本的参数或为被引用脚本传递额外的参数，如：
 
-  ```
-  1. ohpm run scriptName3 -- -paramKey1 newValue -paramKey4 paramValue4
+  ```screen
+  ohpm run scriptName3 -- -paramKey1 newValue -paramKey4 paramValue4
   ```
 
   该示例表明，脚本scriptName3的参数paramKey1会被替换为newValue, 并新增一个参数paramKey4。
@@ -66,21 +66,21 @@ content_hash: sha256:96afdeae3a95ef4ba94f6d41487f26a9e2bb201dae2d0e737b1797508dc
 
 可以通过 --prefix 指定包的根目录，该目录下必须存在 oh-package.json5 文件。不支持通过这种方式调用依赖包中的脚本别名。
 
-```
-1. ohpm run --prefix <path> <脚本别名>
+```screen
+ohpm run --prefix <path> <脚本别名>
 ```
 
 ### log\_level
 
 * 默认值：无
-* 类型： String
+* 类型：String
 
 从ohpm 6.0.2.636版本开始，可以在命令后配置--log\_level <string>参数，指定执行当前命令的日志级别（info、debug、warn、error），如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
 ### debug
 
 * 默认值：false
-* 类型： Boolean
+* 类型：Boolean
 
 从ohpm 6.0.2.636版本开始，可以在命令后配置--debug参数，指定执行当前命令的日志级别为debug，该配置仅在当前命令行生效，不修改.ohpmrc中的日志级别，如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
@@ -88,27 +88,27 @@ content_hash: sha256:96afdeae3a95ef4ba94f6d41487f26a9e2bb201dae2d0e737b1797508dc
 
 下列所有示例的scripts配置均来自如下oh-package.json5：
 
-```
-1. {
-2. "name": "example",
-3. "version": "1.0.0",
-4. "description": "this is an example for ohpm run.",
-5. "main": "./src/index.ets",
-6. "author": "oh",
-7. "license": "ISC",
-8. "scripts": {
-9. "testLogic": "ohpm run testFail || ohpm run testSuc && ohpm run testSuc",
-10. "testFail": "test1",
-11. "testSuc": "echo hello"
-12. }
-13. ...
-14. }
+```screen
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "this is an example for ohpm run.",
+  "main": "./src/index.ets",
+  "author": "oh",
+  "license": "ISC",
+  "scripts": {
+    "testLogic": "ohpm run testFail || ohpm run testSuc && ohpm run testSuc",
+    "testFail": "test1",
+    "testSuc": "echo hello"
+  }
+  ...
+}
 ```
 
 ### 参数传递的使用示例
 
-```
-1. ohpm run script_name -- -arg1=1 --arg2=2 -arg3 3 --arg4 4
+```screen
+ohpm run script_name -- -arg1=1 --arg2=2 -arg3 3 --arg4 4
 ```
 
 运行 script\_name 的脚本，并指定脚本中参数arg1，arg2，arg3，arg4，取值分别为1，2，3，4，以上四种参数传递的方法均可生效。
@@ -117,34 +117,34 @@ content_hash: sha256:96afdeae3a95ef4ba94f6d41487f26a9e2bb201dae2d0e737b1797508dc
 
 执行脚本testSuc，如下所示：
 
-```
-1. ohpm run testSuc
+```screen
+ohpm run testSuc
 ```
 
 执行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/Oanp0VfySRKjtOUbJStHLA/zh-cn_image_0000002530913100.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/QAqDqtIkRKmBz2lY-vVMHA/zh-cn_image_0000002731382585.png "点击放大")
 
 ### 失败示例
 
 执行脚本testFail，如下所示：
 
-```
-1. ohpm run testFail
+```screen
+ohpm run testFail
 ```
 
 执行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/59HOtoD3TlGDZjrGuimYkA/zh-cn_image_0000002530753106.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/zGm9pvqxQD-wX0NNL5JrdQ/zh-cn_image_0000002701663362.png "点击放大")
 
 ### 逻辑符(&&、||)使用示例
 
 执行脚本testLogic，如下所示：
 
-```
-1. ohpm run testLogic
+```screen
+ohpm run testLogic
 ```
 
 执行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/E9is5ljCSb-GNqK5WLGtXw/zh-cn_image_0000002561833025.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/Zc-74ZnJSSCy_pyauUWz0w/zh-cn_image_0000002731542555.png "点击放大")

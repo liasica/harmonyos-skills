@@ -3,36 +3,34 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-bas
 title: Class (JsGeolocation)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS 组件 > Web > Class (JsGeolocation)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:55:48+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:6299ee05d1f38f8e109dff4dc5b400061c373374f6160f63c80bc8d3bcd6d6a8
+scraped_at: 2026-09-02T15:01:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:01ab3b37e4aedf0ce3683b4cb76bf06194d1a025187bbed2821606badef2e094
 ---
 
-Web组件返回授权或拒绝权限功能的对象。示例代码参考[onGeolocationShow事件](arkts-basic-components-web-events.md#ongeolocationshow)。
+JsGeolocation是Web组件在收到网页地理位置权限请求时，提供给应用的授权响应对象。当网页通过JavaScript调用地理位置接口（如navigator.geolocation）请求获取设备位置信息时，应用需要决定是否授权该请求。JsGeolocation通过invoke方法允许应用对指定源的网页授予或拒绝地理位置权限，同时可选择将该权限决策保存到系统中，避免后续同一源再次请求时重复弹出授权提示。
 
-说明
+JsGeolocation适用于Web组件中网页主动请求地理位置权限的场景。应用需先注册[onGeolocationShow事件](arkts-basic-components-web-events.md#ongeolocationshow)，当网页发起地理位置权限请求时，该事件回调会将JsGeolocation对象传递给应用，应用在回调中调用invoke方法完成授权响应。使用时还需配置"ohos.permission.LOCATION"、"ohos.permission.APPROXIMATELY\_LOCATION"权限。
 
-* 该组件首批接口从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-* 本Class首批接口从API version 8开始支持。
+**说明** 
+
+* 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 本Class从API version 8开始支持。
 * 示例效果请以真机运行为准。
 
 ## constructor
 
-PhonePC/2in1TabletTVWearable
-
 constructor()
 
-JsGeolocation的构造函数。
+JsGeolocation的构造函数。构造函数本身不直接被应用调用，通常通过[onGeolocationShow事件](arkts-basic-components-web-events.md#ongeolocationshow)回调获取JsGeolocation实例。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 ## invoke
 
-PhonePC/2in1TabletTVWearable
-
 invoke(origin: string, allow: boolean, retain: boolean): void
 
-设置网页地理位置权限状态。
+设置网页地理位置权限状态。该方法需在[onGeolocationShow事件](arkts-basic-components-web-events.md#ongeolocationshow)回调中调用，用于对发起地理位置权限请求的网页进行授权响应。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -40,6 +38,6 @@ invoke(origin: string, allow: boolean, retain: boolean): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| origin | string | 是 | 指定源的字符串。 |
+| origin | string | 是 | 发起地理位置权限请求的网页源，用于标识特定网站的地理位置请求来源。  origin格式必须遵循RFC 6454中定义的格式。 |
 | allow | boolean | 是 | 设置的地理位置权限状态。  true表示开启地理位置权限，false表示不开启地理位置权限。 |
-| retain | boolean | 是 | 是否允许将地理位置权限状态保存到系统中。可通过[GeolocationPermissions9+](arkts-apis-webview-geolocationpermissions.md)接口管理保存到系统的地理位置权限。  true表示允许将地理位置权限状态保存到系统中，false表示不允许将地理位置权限状态保存到系统中。 |
+| retain | boolean | 是 | 是否允许将地理位置权限状态保存到系统中。可通过[GeolocationPermissions](arkts-apis-webview-geolocationpermissions.md)接口管理保存到系统的地理位置权限。  true表示保存地理位置权限状态到系统，false表示不保存到系统。 |

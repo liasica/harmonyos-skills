@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-transfo
 title: 图像变换
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(依赖JS对象)(不再推荐) > 图像变换
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:23+08:00
-doc_updated_at: 2026-03-20
-content_hash: sha256:a32c8002f131a75bf392d041ead50723a999f5ae4ecbfcbd7512c03094207c65
+scraped_at: 2026-09-02T14:59:46+08:00
+doc_updated_at: 2026-08-07
+content_hash: sha256:be8356791da39f681b19c49f943304cf19aeec8b481dcd580d408175eb1d475b
 ---
 
-说明
+**说明** 
 
 当前开发指导使用的接口为[Image](../harmonyos-references/capi-image.md)模块下的C API，可完成图片编解码，图片接收器，处理图像数据等功能。这部分API在API version 11之前发布，在后续的版本不再增加新功能，**不再推荐使用**。
 
@@ -24,8 +24,8 @@ content_hash: sha256:a32c8002f131a75bf392d041ead50723a999f5ae4ecbfcbd7512c030942
 
 在进行应用开发之前，开发者需要打开native工程的src/main/cpp/CMakeLists.txt，在target\_link\_libraries依赖中添加image的libace\_napi.z.so、libpixelmap\_ndk.z.so以及日志依赖libhilog\_ndk.z.so。
 
-```
-1. target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so libpixelmap_ndk.z.so)
+```txt
+target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so libpixelmap_ndk.z.so)
 ```
 
 **添加接口映射**
@@ -33,19 +33,19 @@ content_hash: sha256:a32c8002f131a75bf392d041ead50723a999f5ae4ecbfcbd7512c030942
 打开src/main/cpp/hello.cpp文件，在Init函数中添加接口映射如下：
 
 ```
-1. EXTERN_C_START
-2. static napi_value Init(napi_env env, napi_value exports)
-3. {
-4. napi_property_descriptor desc[] = {
-5. { "testGetImageInfo", nullptr, TestGetImageInfo, nullptr, nullptr, nullptr, napi_default, nullptr },
-6. { "testAccessPixels", nullptr, TestAccessPixels, nullptr, nullptr, nullptr, napi_default, nullptr },
-7. { "testUnAccessPixels", nullptr, TestUnAccessPixels, nullptr, nullptr, nullptr, napi_default, nullptr },
-8. };
+EXTERN_C_START
+static napi_value Init(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {
+        { "testGetImageInfo", nullptr, TestGetImageInfo, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testAccessPixels", nullptr, TestAccessPixels, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testUnAccessPixels", nullptr, TestUnAccessPixels, nullptr, nullptr, nullptr, napi_default, nullptr },
+    };
 
-10. napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
-11. return exports;
-12. }
-13. EXTERN_C_END
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    return exports;
+}
+EXTERN_C_END
 ```
 
 **Native接口调用**
@@ -57,116 +57,122 @@ content_hash: sha256:a32c8002f131a75bf392d041ead50723a999f5ae4ecbfcbd7512c030942
 打开src/main/cpp/hello.cpp，添加引用文件。
 
 ```
-1. #include<multimedia/image_framework/image_pixel_map_napi.h>
+#include<multimedia/image_framework/image_pixel_map_napi.h>
 ```
 
 1. 获取**PixelMap**的信息，并记录信息到**OhosPixelMapInfo**结构中。
 
    ```
-   1. static napi_value TestGetImageInfo(napi_env env, napi_callback_info info)
-   2. {
-   3. napi_value result = nullptr;
-   4. napi_get_undefined(env, &result);
+   static napi_value TestGetImageInfo(napi_env env, napi_callback_info info)
+    {
+        napi_value result = nullptr;
+        napi_get_undefined(env, &result);
 
-   6. napi_value thisVar = nullptr;
-   7. napi_value argValue[1] = {0};
-   8. size_t argCount = 1;
+        napi_value thisVar = nullptr;
+        napi_value argValue[1] = {0};
+        size_t argCount = 1;
 
-   10. napi_get_cb_info(env, info, &argCount, argValue, &thisVar, nullptr);
-
-   12. OHOS::Media::OhosPixelMapInfo pixelMapInfo;
-   13. OHOS::Media::OH_GetImageInfo(env, argValue[0], &pixelMapInfo);
-   14. return result;
-   15. }
+        napi_get_cb_info(env, info, &argCount, argValue, &thisVar, nullptr);
+        
+        OHOS::Media::OhosPixelMapInfo pixelMapInfo;
+        OHOS::Media::OH_GetImageInfo(env, argValue[0], &pixelMapInfo);
+        return result;
+    }
    ```
 2. 获取**PixelMap**对象数据的内存地址，并锁定该内存。
 
    ```
-   1. static napi_value TestAccessPixels(napi_env env, napi_callback_info info)
-   2. {
-   3. napi_value result = nullptr;
-   4. napi_get_undefined(env, &result);
+   static napi_value TestAccessPixels(napi_env env, napi_callback_info info)
+   {
+       napi_value result = nullptr;
+       napi_get_undefined(env, &result);
 
-   6. napi_value thisVar = nullptr;
-   7. napi_value argValue[1] = {0};
-   8. size_t argCount = 1;
+       napi_value thisVar = nullptr;
+       napi_value argValue[1] = {0};
+       size_t argCount = 1;
 
-   10. napi_get_cb_info(env, info, &argCount, argValue, &thisVar, nullptr);
+       napi_get_cb_info(env, info, &argCount, argValue, &thisVar, nullptr);
 
-   12. void* addrPtr = nullptr;
-   13. OHOS::Media::OH_AccessPixels(env, argValue[0], &addrPtr);
-   14. return result;
-   15. }
+       void* addrPtr = nullptr;
+       OHOS::Media::OH_AccessPixels(env, argValue[0], &addrPtr);
+       return result;
+   }
    ```
 3. 释放**PixelMap**对象数据的内存锁。
 
    ```
-   1. static napi_value TestUnAccessPixels(napi_env env, napi_callback_info info)
-   2. {
-   3. napi_value result = nullptr;
-   4. napi_get_undefined(env, &result);
+   static napi_value TestUnAccessPixels(napi_env env, napi_callback_info info)
+   {
+       napi_value result = nullptr;
+       napi_get_undefined(env, &result);
 
-   6. napi_value thisVar = nullptr;
-   7. napi_value argValue[1] = {0};
-   8. size_t argCount = 1;
+       napi_value thisVar = nullptr;
+       napi_value argValue[1] = {0};
+       size_t argCount = 1;
 
-   10. napi_get_cb_info(env, info, &argCount, argValue, &thisVar, nullptr);
+       napi_get_cb_info(env, info, &argCount, argValue, &thisVar, nullptr);
 
-   12. OHOS::Media::OH_UnAccessPixels(env, argValue[0]);
-   13. return result;
-   14. }
+       OHOS::Media::OH_UnAccessPixels(env, argValue[0]);
+       return result;
+   }
    ```
 
 **JS侧调用**
 
 1. 打开src\main\cpp\types\libentry\index.d.ts(其中libentry根据工程名生成)，导入如下引用文件：
 
+   ```js
+   import { image } from '@kit.ImageKit';
+   export const add:(a: number, b: number) => image.PixelMap;
+   export const transform: (a: image.PixelMap) => image.PixelMap;
+   export const testGetImageInfo: (a: image.PixelMap) => image.PixelMap;
+   export const testAccessPixels: (a: image.PixelMap) => image.PixelMap;
+   export const testUnAccessPixels: (a: image.PixelMap) => image.PixelMap;
    ```
-   1. import { image } from '@kit.ImageKit';
-   2. export const add:(a: number, b: number) => image.PixelMap;
-   3. export const transform: (a: image.PixelMap) => image.PixelMap;
-   4. export const testGetImageInfo: (a: image.PixelMap) => image.PixelMap;
-   5. export const testAccessPixels: (a: image.PixelMap) => image.PixelMap;
-   6. export const testUnAccessPixels: (a: image.PixelMap) => image.PixelMap;
-   ```
-2. 打开src\main\ets\pages\index.ets, 导入"libentry.so"(根据工程名生成)；调用Native接口，传入JS的资源对象。示例如下：
+2. 打开src\main\ets\pages\index.ets，导入"libentry.so"(根据工程名生成)；调用Native接口，传入JS的资源对象。示例如下：
 
-   ```
-   1. import testNapi from 'libentry.so';
-   2. import { image } from '@kit.ImageKit';
+   ```js
+   import testNapi from 'libentry.so';
+   import { image } from '@kit.ImageKit';
 
-   4. @Entry
-   5. @Component
-   6. struct Index {
-   7. @State message: string = 'IMAGE';
-   8. @State _PixelMap : image.PixelMap | undefined = undefined;
+   @Entry
+   @Component
+   struct Index {
+     @State message: string = 'IMAGE';
+     @State _PixelMap: image.PixelMap | undefined = undefined;
 
-   10. build() {
-   11. Row() {
-   12. Column() {
-   13. Button(this.message)
-   14. .fontSize(50)
-   15. .fontWeight(FontWeight.Bold)
-   16. .onClick(() => {
-   17. const color : ArrayBuffer = new ArrayBuffer(96);
-   18. let opts: image.InitializationOptions = { alphaType: 0, editable: true, pixelFormat: 4, scaleMode: 1, size: { height: 4, width: 6 } };
-   19. image.createPixelMap(color, opts)
-   20. .then( (pixelmap : image.PixelMap) => {
-   21. this._PixelMap = pixelmap;
-   22. testNapi.testGetImageInfo(this._PixelMap);
-   23. console.info("Test GetImageInfo success");
+     build() {
+       Row() {
+         Column() {
+           Button(this.message)
+             .fontSize(50)
+             .fontWeight(FontWeight.Bold)
+             .onClick(() => {
+               const color: ArrayBuffer = new ArrayBuffer(96);
+               let opts: image.InitializationOptions = {
+                 editable: true,
+                 pixelFormat: image.PixelMapFormat.BGRA_8888,
+                 size: { height: 4, width: 6 }
+               };
+               image.createPixelMap(color, opts)
+                 .then((pixelmap: image.PixelMap) => {
+                   this._PixelMap = pixelmap;
+                   testNapi.testGetImageInfo(this._PixelMap);
+                   console.info("Test GetImageInfo success");
 
-   25. testNapi.testAccessPixels(this._PixelMap);
-   26. console.info("Test AccessPixels success");
+                   testNapi.testAccessPixels(this._PixelMap);
+                   console.info("Test AccessPixels success");
 
-   28. testNapi.testUnAccessPixels(this._PixelMap);
-   29. console.info("Test UnAccessPixels success");
-   30. })
-   31. })
-   32. }
-   33. .width('100%')
-   34. }
-   35. .height('100%')
-   36. }
-   37. }
+                   testNapi.testUnAccessPixels(this._PixelMap);
+                   console.info("Test UnAccessPixels success");
+                 });
+             })
+         }
+         .width('100%')
+         Image(this._PixelMap)
+           .width('100%')
+       }
+       .height('100%')
+     }
+   }
    ```

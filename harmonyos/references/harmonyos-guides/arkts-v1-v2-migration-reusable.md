@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-m
 title: 组件复用迁移
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1-V2迁移指导 > 状态管理V1向V2迁移场景 > 组件复用迁移
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:28+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:55405a82ad6f4682765425f2708a0fe580a9be8463de577357d42a42b245ede3
+scraped_at: 2026-09-02T14:59:16+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f897d2bbe0d11615cdbed262d6c22933daf0aa61af1a051bb1d0cd6cc03e0b1d
 ---
 
 本文档主要介绍组件复用从V1向V2的迁移，涉及如下装饰器。
@@ -31,53 +31,53 @@ content_hash: sha256:55405a82ad6f4682765425f2708a0fe580a9be8463de577357d42a42b24
 * [aboutToRecycle](../harmonyos-references/ts-custom-component-lifecycle.md#abouttorecycle10)生命周期无需改动，可保留原实现。
 * [aboutToReuse](../harmonyos-references/ts-custom-component-lifecycle.md#abouttoreuse18)生命周期在组件复用V2中进行了优化，去除了参数的同时，在复用前会自动重置各状态变量（详情参考[复用前的组件内状态变量重置](arkts-new-reusablev2.md#复用前的组件内状态变量重置)），无需开发者在aboutToReuse中手动赋值回初始值。
 
-```
-1. // V1原组件
-2. @Reusable
-3. @Component
-4. struct ReusableComponent {
-5. // 存在外部传值的可能性，可迁移为@Local或@Param @Once
-6. @State val: string = 'Hello World';
-7. aboutToRecycle(): void {
-8. // 这里可以释放比较占内存的内容或其他非必要资源引用，避免一直占用内存
-9. console.info('ReusableComponent aboutToRecycle called');
-10. }
-11. aboutToReuse(params: ESObject): void {
-12. console.info('ReusableComponent aboutToReuse called');
-13. this.val = params.val ?? 'Hello World'; // 对@State变量重新赋值
-14. }
-15. build() {
-16. Column() {
-17. Text(`val: ${this.val}`)
-18. }
-19. }
-20. }
+```typescript
+// V1原组件
+@Reusable
+@Component
+struct ReusableComponent {
+  // 存在外部传值的可能性，可迁移为@Local或@Param @Once
+  @State val: string = 'Hello World';
+  aboutToRecycle(): void {
+    // 这里可以释放比较占内存的内容或其他非必要资源引用，避免一直占用内存
+    console.info('ReusableComponent aboutToRecycle called');
+  }
+  aboutToReuse(params: ESObject): void {
+    console.info('ReusableComponent aboutToReuse called');
+    this.val = params.val ?? 'Hello World'; // 对@State变量重新赋值
+  }
+  build() {
+    Column() {
+      Text(`val: ${this.val}`)
+    }
+  }
+}
 
-22. // V2迁移后组件
-23. @ReusableV2
-24. @ComponentV2
-25. struct ReusableV2Component {
-26. // 当不存在外部传入值时，可迁移为@Local
-27. @Local val: string = 'Hello World';
-28. // 当存在外部传入值时，可迁移为@Param @Once
-29. @Require @Param @Once param: string;
-30. aboutToRecycle(): void {
-31. // aboutToRecycle无需改动
-32. console.info('ReusableComponent aboutToRecycle called');
-33. }
-34. aboutToReuse(): void { // aboutToReuse不再有参数
-35. // aboutToReuse执行时@Local已重置回'Hello World'，@Param @Once已经重置回外部传入值
-36. console.info('ReusableComponent aboutToReuse called');
-37. this.val = 'Hello ArkUI'; // 可以在复用阶段修改为其他值
-38. this.param = 'Hello ArkUI'; // @Param @Once可本地修改
-39. }
-40. build() {
-41. Column() {
-42. Text(`val: ${this.val}`)
-43. Text(`param: ${this.param}`)
-44. }
-45. }
-46. }
+// V2迁移后组件
+@ReusableV2
+@ComponentV2
+struct ReusableV2Component {
+  // 当不存在外部传入值时，可迁移为@Local
+  @Local val: string = 'Hello World';
+  // 当存在外部传入值时，可迁移为@Param @Once
+  @Require @Param @Once param: string;
+  aboutToRecycle(): void {
+    // aboutToRecycle无需改动
+    console.info('ReusableV2Component aboutToRecycle called');
+  }
+  aboutToReuse(): void { // aboutToReuse不再有参数
+    // aboutToReuse执行时@Local已重置回'Hello World'，@Param @Once已经重置回外部传入值
+    console.info('ReusableV2Component aboutToReuse called');
+    this.val = 'Hello ArkUI'; // 可以在复用阶段修改为其他值
+    this.param = 'Hello ArkUI'; // @Param @Once可本地修改
+  }
+  build() {
+    Column() {
+      Text(`val: ${this.val}`)
+      Text(`param: ${this.param}`)
+    }
+  }
+}
 ```
 
 ### reuseId->reuse
@@ -86,18 +86,18 @@ content_hash: sha256:55405a82ad6f4682765425f2708a0fe580a9be8463de577357d42a42b24
 
 在组件复用V1中，使用[reuseId](../harmonyos-references/ts-universal-attributes-reuse-id.md#reuseid)属性标记组件的复用组。迁移到组件复用V2后，需更换使用[reuse](../harmonyos-references/ts-universal-attributes-reuse.md#reuse)属性。
 
-```
-1. // V1原写法
-2. ReusableComponent().reuseId('groupA')
-3. // V2迁移后写法
-4. ReusableV2Component().reuse({reuseId: () => 'groupA'})
+```typescript
+// V1原写法
+ReusableComponent().reuseId('groupA')
+// V2迁移后写法
+ReusableV2Component().reuse({reuseId: () => 'groupA'})
 ```
 
 ### 组件冻结
 
 **迁移规则**
 
-组件复用V1中，当开发者打开复用组件的冻结开关freezeWhenInactive时，才会冻结复用池中的组件，详细规则参考[自定义组件冻结功能](arkts-custom-components-freeze.md)。而在组件复用V2中，会自动开启冻结，详细规则参考[复用阶段的冻结](arkts-new-reusablev2.md#复用阶段的冻结)。
+组件复用V1中，当开发者打开复用组件的冻结开关freezeWhenInactive时，才会冻结复用池中的组件，详细规则参考[自定义组件冻结](arkts-custom-components-freeze.md)。而在组件复用V2中，会自动开启冻结，详细规则参考[复用阶段的冻结](arkts-new-reusablev2.md#复用阶段的冻结)。
 
 ### LazyForEach->Repeat
 
@@ -113,64 +113,71 @@ content_hash: sha256:55405a82ad6f4682765425f2708a0fe580a9be8463de577357d42a42b24
 
 @ReusableV2的if使用场景示例代码如下：
 
+```typescript
+// 数据模型，使用@ObservedV2和@Trace实现深度观察
+@ObservedV2
+class Message {
+  // 使用@Trace装饰需要观察变化的属性
+  @Trace public value: string | undefined;
+
+  constructor(value: string) {
+    this.value = value;
+  }
+}
+
+@Entry
+@ComponentV2
+struct ReusableIfScene {
+  // 控制子组件显示与隐藏的开关
+  @Local isSwitch: boolean = true;
+
+  build() {
+    Column() {
+      // 点击按钮切换子组件的显示与隐藏，触发组件的创建与复用
+      Button('Hello')
+        .fontSize(24)
+        .fontWeight(FontWeight.Bold)
+        .onClick(() => {
+          this.isSwitch = !this.isSwitch;
+        })
+      if (this.isSwitch) {
+        // 如果只有一个复用的组件，可以不用设置reuse
+        Child({ message: new Message('Child') })
+          .reuse({ reuseId: () => 'Child' })
+      }
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
+
+// 复用组件
+@ReusableV2
+@ComponentV2
+struct Child {
+  // @Param @Once接收外部传入值，仅初始化时同步一次
+  @Require @Param @Once message: Message = new Message('AboutToReuse');
+
+  // 组件复用时回调，如无需对状态变量做额外修改可移除
+  aboutToReuse() {
+    console.info('Recycle====Child==');
+  }
+
+  build() {
+    Column() {
+      // 显示当前消息内容
+      Text(this.message.value)
+        .fontSize(30)
+        .margin(20)
+    }
+    .borderWidth(1)
+    .margin({ top: 10 })
+    .height(100)
+  }
+}
 ```
-1. @ObservedV2
-2. class Message {
-3. @Trace value: string | undefined;
 
-5. constructor(value: string) {
-6. this.value = value;
-7. }
-8. }
-
-10. @Entry
-11. @ComponentV2
-12. struct Index {
-13. @Local switch: boolean = true;
-
-15. build() {
-16. Column() {
-17. Button('Hello')
-18. .fontSize(24)
-19. .fontWeight(FontWeight.Bold)
-20. .onClick(() => {
-21. this.switch = !this.switch;
-22. })
-23. if (this.switch) {
-24. // 如果只有一个复用的组件，可以不用设置reuse
-25. Child({ message: new Message('Child') })
-26. .reuse({ reuseId: () => 'Child' })
-27. }
-28. }
-29. .height('100%')
-30. .width('100%')
-31. }
-32. }
-
-34. @ReusableV2
-35. @ComponentV2
-36. struct Child {
-37. @Require @Param @Once message: Message = new Message('AboutToReuse');
-
-39. aboutToReuse() {
-40. // 如无需对状态变量做额外修改，aboutToReuse回调可移除
-41. console.info('Recycle====Child==');
-42. }
-
-44. build() {
-45. Column() {
-46. Text(this.message.value)
-47. .fontSize(30)
-48. .margin(20)
-49. }
-50. .borderWidth(1)
-51. .margin({ top: 10 })
-52. .height(100)
-53. }
-54. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/ANhTizsGSgG5MspEYHbD7w/zh-cn_image_0000002558764114.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/1SGR79Q5TVOxS1xT6pNzUA/zh-cn_image_0000002736312417.gif)
 
 ### 列表滚动-Repeat使用场景
 
@@ -178,56 +185,80 @@ content_hash: sha256:55405a82ad6f4682765425f2708a0fe580a9be8463de577357d42a42b24
 
 @ReusableV2的列表滚动-Repeat使用场景示例代码如下：
 
+```typescript
+@Entry
+@ComponentV2
+struct ReuseV2Demo {
+  // 列表数据源
+  private data: string[] = [];
+
+  // 初始化列表数据
+  aboutToAppear() {
+    for (let i = 1; i < 1000; i++) {
+      this.data.push(i + '');
+    }
+  }
+
+  build() {
+    Column() {
+      List({ space: 10 }) {
+        // 使用Repeat的virtualScroll模式实现懒加载，配合复用组件提升滚动性能
+        Repeat(this.data)
+          .virtualScroll()
+          .each((ri) => {
+            ListItem() {
+              CardViewV2({ item: ri.item })
+            }
+          })
+      }
+      .width('100%')
+      .height('100%')
+      .padding(10)
+    }
+  }
+}
+
+// 复用组件
+@ReusableV2
+@ComponentV2
+export struct CardViewV2 {
+  // 使用@Param接收外部传入变量并观察变化
+  @Param item: string = '';
+
+  // Repeat自身能够进行复用，不会走到自定义组件复用的生命周期
+  aboutToReuse(): void {
+  }
+
+  build() {
+    Row() {
+      // 显示当前列表项序号
+      Text(`#${this.item}`)
+        .fontSize(20)
+        .fontColor('#007dffa')
+        .fontWeight(FontWeight.Bold)
+
+      // 显示列表项内容
+      Text(`Item ${this.item}`)
+        .fontSize(18)
+        .fontColor('#333333')
+        .margin({ left: 10 })
+    }
+    .width('100%')
+    .height(80)
+    .padding({ left: 20, right: 20 })
+    .borderRadius(12)
+    .backgroundColor('#ffffff')
+    .shadow({
+      radius: 4,
+      color: '#1a000000',
+      offsetX: 0,
+      offsetY: 2
+    })
+  }
+}
 ```
-1. @Entry
-2. @ComponentV2
-3. struct ReuseV2Demo {
-4. private data: string[] = [];
 
-6. aboutToAppear() {
-7. for (let i = 1; i < 1000; i++) {
-8. this.data.push(i + '');
-9. }
-10. }
-
-12. build() {
-13. Column() {
-14. List() {
-15. Repeat(this.data)
-16. .virtualScroll()
-17. .each((ri) => {
-18. ListItem() {
-19. CardViewV2({ item: ri.item })
-20. }
-21. })
-22. }
-23. }
-24. }
-25. }
-
-27. // 复用组件
-28. @ReusableV2
-29. @ComponentV2
-30. export struct CardViewV2 {
-31. // 使用@Param @Once接收外部传入变量并观察变化
-32. @Param @Once item: string = '';
-
-34. aboutToReuse(): void {
-35. // Repeat自身能够进行复用，不会走到自定义组件复用的生命周期
-36. }
-
-38. build() {
-39. Column() {
-40. Text(this.item)
-41. .fontSize(30)
-42. }
-43. .borderWidth(1)
-44. .height(100)
-45. }
-46. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/laMngh0zQ1ecTJ54AgspvA/zh-cn_image_0000002558604458.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/-cJOesC1RauO6s80qWV5rw/zh-cn_image_0000002706673372.gif)
 
 ### 列表滚动-if使用场景
 
@@ -235,91 +266,106 @@ content_hash: sha256:55405a82ad6f4682765425f2708a0fe580a9be8463de577357d42a42b24
 
 @ReusableV2的列表滚动-if使用场景示例代码如下：
 
+```typescript
+@Entry
+@ComponentV2
+struct ReusableListIfScene {
+  // 列表数据源
+  private dataSource: FriendMoment[] = [];
+
+  // 初始化数据源，包含有图片和无图片两种类型
+  aboutToAppear(): void {
+    for (let i = 0; i < 20; i++) {
+      let title = i + 1 + 'test_if';
+      // 开发者可自行替换显示图片的内容，此处以app.media.startIcon为例
+      this.dataSource.push(new FriendMoment(i.toString(), title, 'app.media.startIcon'));
+    }
+
+    for (let i = 0; i < 50; i++) {
+      let title = i + 1 + 'test_if';
+      this.dataSource.push(new FriendMoment(i.toString(), title, ''));
+    }
+  }
+
+  build() {
+    Column() {
+      List({ space: 3 }) {
+        Repeat(this.dataSource)
+          .virtualScroll()
+          .each((ri) => {
+            ListItem() {
+              // 根据是否有图片选择不同的复用组
+              if (ri.item.image) {
+                OneMoment({ moment: ri.item })
+                  .reuse({ reuseId: () => 'withImage' })
+              } else {
+                OneMoment({ moment: ri.item })
+                  .reuse({ reuseId: () => 'noImage' })
+              }
+            }
+          })
+      }
+      .cachedCount(0)
+    }
+  }
+}
+
+// 数据模型
+@ObservedV2
+class FriendMoment {
+  @Trace public id: string = '';
+  @Trace public text: string = '';
+  @Trace public title: string = '';
+  @Trace public image: string = '';
+  @Trace public answers: Array<ResourceStr> = [];
+
+  constructor(id: string, title: string, image: string) {
+    this.text = id;
+    this.title = title;
+    this.image = image;
+  }
+}
+
+// 复用组件
+@ReusableV2
+@ComponentV2
+export struct OneMoment {
+  // 接收外部传入的数据对象
+  @Require @Param moment: FriendMoment;
+
+  // 复用id相同的组件才能触发复用，如无需对状态变量做额外修改可移除
+  aboutToReuse(): void {
+    console.info(`=====aboutToReuse====OneMoment==复用了==${this.moment.text}`);
+  }
+
+  build() {
+    Column() {
+      // 显示文本内容
+      Text(this.moment.text)
+      // if分支判断，有图片时显示图片区域
+      if (this.moment.image !== '') {
+        // 使用Flex包裹实现自动换行布局
+        Flex({ wrap: FlexWrap.Wrap }) {
+          Image($r(this.moment.image))
+            .height(50)
+            .width(50)
+          Image($r(this.moment.image))
+            .height(50)
+            .width(50)
+          Image($r(this.moment.image))
+            .height(50)
+            .width(50)
+          Image($r(this.moment.image))
+            .height(50)
+            .width(50)
+        }
+      }
+    }
+  }
+}
 ```
-1. @Entry
-2. @ComponentV2
-3. struct Index {
-4. private dataSource: FriendMoment[] = new Array<FriendMoment>();
 
-6. aboutToAppear(): void {
-7. for (let i = 0; i < 20; i++) {
-8. let title = i + 1 + 'test_if';
-9. // 开发者可自行替换显示图片的内容，此处以app.media.startIcon为例
-10. this.dataSource.push(new FriendMoment(i.toString(), title, 'app.media.startIcon'));
-11. }
-
-13. for (let i = 0; i < 50; i++) {
-14. let title = i + 1 + 'test_if';
-15. this.dataSource.push(new FriendMoment(i.toString(), title, ''));
-16. }
-17. }
-
-19. build() {
-20. Column() {
-21. List({ space: 3 }) {
-22. Repeat(this.dataSource)
-23. .virtualScroll()
-24. .each((ri) => {
-25. ListItem() {
-26. if (ri.item.image) {
-27. OneMoment({ moment: ri.item })
-28. .reuse({ reuseId: () => 'withImage' })
-29. } else {
-30. OneMoment({ moment: ri.item })
-31. .reuse({ reuseId: () => 'noImage' })
-32. }
-33. }
-34. })
-35. }
-36. .cachedCount(0)
-37. }
-38. }
-39. }
-
-41. @ObservedV2
-42. class FriendMoment {
-43. @Trace id: string = '';
-44. @Trace text: string = '';
-45. @Trace title: string = '';
-46. @Trace image: string = '';
-47. @Trace answers: Array<ResourceStr> = [];
-
-49. constructor(id: string, title: string, image: string) {
-50. this.text = id;
-51. this.title = title;
-52. this.image = image;
-53. }
-54. }
-
-56. @ReusableV2
-57. @ComponentV2
-58. export struct OneMoment {
-59. @Require @Param moment: FriendMoment;
-
-61. // 复用id相同的组件才能触发复用
-62. aboutToReuse(): void {
-63. // 如无需对状态变量做额外修改，aboutToReuse回调可移除
-64. console.info(`=====aboutToReuse====OneMoment==复用了==${this.moment.text}`);
-65. }
-
-67. build() {
-68. Column() {
-69. Text(this.moment.text)
-70. // if分支判断。
-71. if (this.moment.image !== '') {
-72. Flex({ wrap: FlexWrap.Wrap }) {
-73. Image($r(this.moment.image)).height(50).width(50)
-74. Image($r(this.moment.image)).height(50).width(50)
-75. Image($r(this.moment.image)).height(50).width(50)
-76. Image($r(this.moment.image)).height(50).width(50)
-77. }
-78. }
-79. }
-80. }
-81. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/Gz4fJdhtSv2ysrxMIN6pXg/zh-cn_image_0000002589323983.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/ehfVxihJQRa9jmKDbVXHOA/zh-cn_image_0000002736432463.gif)
 
 ### 列表滚动-Repeat全量加载使用场景
 
@@ -329,102 +375,118 @@ content_hash: sha256:55405a82ad6f4682765425f2708a0fe580a9be8463de577357d42a42b24
 
 @ReusableV2的列表滚动-Repeat全量加载使用场景示例代码如下：
 
+```typescript
+// xxx.ets
+@Entry
+@ComponentV2
+struct ReusableRepeatAllLoadScene {
+  // 列表数据源
+  @Local dataSource: ListItemObject[] = [];
+
+  build() {
+    Column() {
+      Row() {
+        // 点击clear清空列表数据，触发组件销毁
+        Button('clear')
+          .onClick(() => {
+            for (let i = 1; i < 50; i++) {
+              this.dataSource.pop();
+            }
+          })
+          .height(40)
+
+        // 点击update重新填充数据，触发组件创建或复用
+        Button('update')
+          .onClick(() => {
+            for (let i = 1; i < 50; i++) {
+              let obj = new ListItemObject();
+              obj.id = i;
+              obj.uuid = Math.random().toString();
+              obj.isExpand = false;
+              this.dataSource.push(obj);
+            }
+          })
+          .height(40)
+      }
+
+      List({ space: 10 }) {
+        // 不使用virtualScroll，采用Repeat全量加载模式
+        Repeat(this.dataSource)
+          .each((ri) => {
+            ListItem() {
+              ListItemView({
+                obj: ri.item
+              })
+            }
+          })
+      }
+      .cachedCount(0)
+      .width('100%')
+      .height('100%')
+    }
+  }
+}
+
+// 复用组件
+@ReusableV2
+@ComponentV2
+struct ListItemView {
+  // 接收外部传入的数据对象
+  @Require @Param obj: ListItemObject;
+
+  // 首次创建时回调
+  aboutToAppear(): void {
+    // 点击update，首次进入，上下滑动，由于Repeat全量加载属性，无法复用
+    console.info('=====aboutToAppear=====ListItemView==创建了==');
+  }
+
+  // 组件复用时回调
+  aboutToReuse() {
+    // 点击clear，再次update，复用成功
+    // 符合一帧内重复创建多个已被销毁的自定义组件
+    // 如无需对状态变量做额外修改可移除
+    console.info('=====aboutToReuse====ListItemView==复用了==');
+  }
+
+  build() {
+    Column({ space: 10 }) {
+      // 显示标题文本
+      Text(`${this.obj.id}.标题`)
+        .fontSize(16)
+        .fontColor('#000000')
+        .padding({
+          top: 20,
+          bottom: 20,
+        })
+
+      // 根据展开状态显示额外内容
+      if (this.obj.isExpand) {
+        Text('expand')
+          .fontSize(14)
+          .fontColor('#999999')
+      }
+    }
+    .width('100%')
+    .borderRadius(10)
+    .backgroundColor(Color.White)
+    .padding(15)
+    // 点击切换展开/折叠状态
+    .onClick(() => {
+      this.obj.isExpand = !this.obj.isExpand;
+    })
+  }
+}
+
+// 数据模型
+@ObservedV2
+class ListItemObject {
+  @Trace public uuid: string = '';
+  @Trace public id: number = 0;
+  @Trace public isExpand: boolean = false;
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @ComponentV2
-4. struct Index {
-5. @Local isShow: boolean = true;
-6. @Local dataSource: ListItemObject[] = [];
 
-8. build() {
-9. Column() {
-10. Row() {
-11. Button('clear').onClick(() => {
-12. for (let i = 1; i < 50; i++) {
-13. this.dataSource.pop();
-14. }
-15. }).height(40)
-
-17. Button('update').onClick(() => {
-18. for (let i = 1; i < 50; i++) {
-19. let obj = new ListItemObject();
-20. obj.id = i;
-21. obj.uuid = Math.random().toString();
-22. obj.isExpand = false;
-23. this.dataSource.push(obj);
-24. }
-25. }).height(40)
-26. }
-
-28. List({ space: 10 }) {
-29. Repeat(this.dataSource)
-30. .each((ri) => {
-31. ListItem() {
-32. ListItemView({
-33. obj: ri.item
-34. })
-35. }
-36. })
-37. }.cachedCount(0)
-38. .width('100%')
-39. .height('100%')
-40. }
-41. }
-42. }
-
-44. @ReusableV2
-45. @ComponentV2
-46. struct ListItemView {
-47. @Require @Param obj: ListItemObject;
-
-49. aboutToAppear(): void {
-50. // 点击 update，首次进入，上下滑动，由于ForEach全展开属性，无法复用
-51. console.info('=====aboutToAppear=====ListItemView==创建了==');
-52. }
-
-54. aboutToReuse() {
-55. // 点击clear，再次update，复用成功
-56. // 符合一帧内重复创建多个已被销毁的自定义组件
-57. // 如无需对状态变量做额外修改，aboutToReuse回调可移除
-58. console.info('=====aboutToReuse====ListItemView==复用了==');
-59. }
-
-61. build() {
-62. Column({ space: 10 }) {
-63. Text(`${this.obj.id}.标题`)
-64. .fontSize(16)
-65. .fontColor('#000000')
-66. .padding({
-67. top: 20,
-68. bottom: 20,
-69. })
-
-71. if (this.obj.isExpand) {
-72. Text('expand')
-73. .fontSize(14)
-74. .fontColor('#999999')
-75. }
-76. }
-77. .width('100%')
-78. .borderRadius(10)
-79. .backgroundColor(Color.White)
-80. .padding(15)
-81. .onClick(() => {
-82. this.obj.isExpand = !this.obj.isExpand;
-83. })
-84. }
-85. }
-
-87. @ObservedV2
-88. class ListItemObject {
-89. @Trace uuid: string = '';
-90. @Trace id: number = 0;
-91. @Trace isExpand: boolean = false;
-92. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/lJAnQLG6QRSR1rh-ZsCpjg/zh-cn_image_0000002589243923.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/SPB_DIfsSPmqMbqOm6ACvw/zh-cn_image_0000002706833310.gif)
 
 ### Grid使用场景
 
@@ -432,67 +494,69 @@ content_hash: sha256:55405a82ad6f4682765425f2708a0fe580a9be8463de577357d42a42b24
 
 @ReusableV2的Grid使用场景示例代码如下：
 
+```typescript
+@Entry
+@ComponentV2
+struct MyComponent {
+  // 数据源
+  @Local data: number[] = [];
+
+  // 初始化网格数据
+  aboutToAppear() {
+    for (let i = 1; i < 1000; i++) {
+      this.data.push(i);
+    }
+  }
+
+  build() {
+    Column({ space: 5 }) {
+      Grid() {
+        // 使用Repeat的virtualScroll模式配合Grid实现懒加载
+        Repeat(this.data)
+          .virtualScroll()
+          .each((ri) => {
+            GridItem() {
+              ReusableV2ChildComponent({ item: ri.item })
+            }
+          })
+      }
+      .cachedCount(2) // 设置GridItem的缓存数量
+      .columnsTemplate('1fr 1fr 1fr') // 三列等宽布局
+      .columnsGap(10)
+      .rowsGap(10)
+      .margin(10)
+      .height(500)
+      .backgroundColor(0xFAEEE0)
+    }
+  }
+}
+
+// 复用组件
+@ReusableV2
+@ComponentV2
+struct ReusableV2ChildComponent {
+  // 接收外部传入的序号
+  @Param item: number = 0;
+
+  build() {
+    Column() {
+      // 开发者可自行替换显示图片的内容，此处以app.media.startIcon为例
+      Image($r('app.media.startIcon'))
+        .objectFit(ImageFit.Fill)
+        .layoutWeight(1)
+      // 显示图片序号
+      Text(`图片${this.item}`)
+        .fontSize(16)
+        .textAlign(TextAlign.Center)
+    }
+    .width('100%')
+    .height(120)
+    .backgroundColor(0xF9CF93)
+  }
+}
 ```
-1. @Entry
-2. @ComponentV2
-3. struct MyComponent {
-4. // 数据源。
-5. @Local data: number[] = [];
 
-7. aboutToAppear() {
-8. for (let i = 1; i < 1000; i++) {
-9. this.data.push(i);
-10. }
-11. }
-
-13. build() {
-14. Column({ space: 5 }) {
-15. Grid() {
-16. Repeat(this.data)
-17. .virtualScroll()
-18. .each((ri) => {
-19. GridItem() {
-20. ReusableV2ChildComponent({ item: ri.item })
-21. }
-22. })
-23. }
-24. .cachedCount(2) // 设置GridItem的缓存数量。
-25. .columnsTemplate('1fr 1fr 1fr')
-26. .columnsGap(10)
-27. .rowsGap(10)
-28. .margin(10)
-29. .height(500)
-30. .backgroundColor(0xFAEEE0)
-31. }
-32. }
-33. }
-
-35. @ReusableV2
-36. @ComponentV2
-37. struct ReusableV2ChildComponent {
-38. @Param item: number = 0;
-
-40. aboutToAppear() {
-41. }
-
-43. build() {
-44. Column() {
-45. // 开发者可自行替换显示图片的内容，此处以app.media.startIcon为例
-46. Image($r('app.media.startIcon'))
-47. .objectFit(ImageFit.Fill)
-48. .layoutWeight(1)
-49. Text(`图片${this.item}`)
-50. .fontSize(16)
-51. .textAlign(TextAlign.Center)
-52. }
-53. .width('100%')
-54. .height(120)
-55. .backgroundColor(0xF9CF93)
-56. }
-57. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/86oq1cFPTSm4zGU0Eeiubw/zh-cn_image_0000002558764116.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/8BYAma-oQlC2zik4WhKWtA/zh-cn_image_0000002736312419.png)
 
 ### WaterFlow使用场景
 
@@ -500,88 +564,104 @@ content_hash: sha256:55405a82ad6f4682765425f2708a0fe580a9be8463de577357d42a42b24
 
 @ReusableV2的WaterFlow使用场景示例代码如下：
 
+```typescript
+// 复用组件
+@ReusableV2
+@ComponentV2
+struct ReusableV2FlowItem {
+  // 接收外部传入的序号
+  @Param item: number = 0;
+
+  build() {
+    Column() {
+      // 显示瀑布流子项序号
+      Text('N' + this.item)
+        .fontSize(24)
+        .height(26)
+        .margin(10)
+      // 开发者可自行替换显示图片的内容，此处以app.media.startIcon为例
+      Image($r('app.media.startIcon'))
+        .objectFit(ImageFit.Cover)
+        .width(50)
+        .height(50)
+    }
+  }
+}
+
+@Entry
+@ComponentV2
+struct ReusableWaterFlowScene {
+  // 流式布局子项最小尺寸
+  @Local minSize: number = 50;
+  // 流式布局子项最大尺寸
+  @Local maxSize: number = 80;
+  @Local fontSize: number = 24;
+  @Local colors: number[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F];
+  // 瀑布流滚动控制器
+  scroller: Scroller = new Scroller();
+  // 瀑布流数据源
+  @Local dataSource: number[] = [];
+  private itemWidthArray: number[] = [];
+  private itemHeightArray: number[] = [];
+
+  // 计算flow item宽/高
+  getSize() {
+    let ret = Math.floor(Math.random() * this.maxSize);
+    return (ret > this.minSize ? ret : this.minSize);
+  }
+
+  // 保存flow item宽/高
+  getItemSizeArray() {
+    for (let i = 0; i < 100; i++) {
+      this.itemWidthArray.push(this.getSize());
+      this.itemHeightArray.push(this.getSize());
+    }
+  }
+
+  // 初始化瀑布流数据
+  aboutToAppear() {
+    for (let i = 0; i <= 60; i++) {
+      this.dataSource.push(i);
+    }
+    this.getItemSizeArray();
+  }
+
+  build() {
+    Stack({ alignContent: Alignment.TopStart }) {
+      Column({ space: 2 }) {
+        // 点击按钮回到瀑布流顶部
+        Button('back top')
+          .height('5%')
+          .onClick(() => {
+            // 点击后回到顶部
+            this.scroller.scrollEdge(Edge.Top);
+          })
+        WaterFlow({ scroller: this.scroller }) {
+          // 使用Repeat的virtualScroll模式配合WaterFlow实现懒加载
+          Repeat(this.dataSource)
+            .virtualScroll()
+            .each((ri) => {
+              FlowItem() {
+                ReusableV2FlowItem({ item: ri.item })
+              }
+              .onAppear(() => {
+                // 滚动到底部时加载更多数据
+                if (ri.item + 20 == this.dataSource.length) {
+                  for (let i = 0; i < 50; i++) {
+                    this.dataSource.splice(this.dataSource.length, 0, this.dataSource.length);
+                  }
+                }
+              })
+            })
+        }
+        .margin({ left: 160, top: 10 })
+      }
+    }
+  }
+}
 ```
-1. @ReusableV2
-2. @ComponentV2
-3. struct ReusableV2FlowItem {
-4. @Param item: number = 0;
 
-6. build() {
-7. Column() {
-8. Text('N' + this.item).fontSize(24).height(26).margin(10)
-9. // 开发者可自行替换显示图片的内容，此处以app.media.startIcon为例
-10. Image($r('app.media.startIcon'))
-11. .objectFit(ImageFit.Cover)
-12. .width(50)
-13. .height(50)
-14. }
-15. }
-16. }
-
-18. @Entry
-19. @ComponentV2
-20. struct Index {
-21. @Local minSize: number = 50;
-22. @Local maxSize: number = 80;
-23. @Local fontSize: number = 24;
-24. @Local colors: number[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F];
-25. scroller: Scroller = new Scroller();
-26. @Local dataSource: number[] = [];
-27. private itemWidthArray: number[] = [];
-28. private itemHeightArray: number[] = [];
-
-30. // 计算flow item宽/高。
-31. getSize() {
-32. let ret = Math.floor(Math.random() * this.maxSize);
-33. return (ret > this.minSize ? ret : this.minSize);
-34. }
-
-36. // 保存flow item宽/高。
-37. getItemSizeArray() {
-38. for (let i = 0; i < 100; i++) {
-39. this.itemWidthArray.push(this.getSize());
-40. this.itemHeightArray.push(this.getSize());
-41. }
-42. }
-
-44. aboutToAppear() {
-45. for (let i = 0; i <= 60; i++) {
-46. this.dataSource.push(i);
-47. }
-48. this.getItemSizeArray();
-49. }
-
-51. build() {
-52. Stack({ alignContent: Alignment.TopStart }) {
-53. Column({ space: 2 }) {
-54. Button('back top')
-55. .height('5%')
-56. .onClick(() => {
-57. // 点击后回到顶部。
-58. this.scroller.scrollEdge(Edge.Top);
-59. })
-60. WaterFlow({ scroller: this.scroller }) {
-61. Repeat(this.dataSource)
-62. .virtualScroll()
-63. .each((ri) => {
-64. FlowItem() {
-65. ReusableV2FlowItem({ item: ri.item })
-66. }.onAppear(() => {
-67. if (ri.item + 20 == this.dataSource.length) {
-68. for (let i = 0; i < 50; i++) {
-69. this.dataSource.splice(this.dataSource.length, 0, this.dataSource.length);
-70. }
-71. }
-72. })
-73. })
-74. }.margin({ left: 160, top: 10 })
-75. }
-76. }
-77. }
-78. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/E786HvH4QLyjKbYPiSJr8w/zh-cn_image_0000002558604460.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/iM3pBHx2Qmm8StlF-uu1Ow/zh-cn_image_0000002706673374.gif)
 
 ### Swiper使用场景
 
@@ -589,97 +669,106 @@ content_hash: sha256:55405a82ad6f4682765425f2708a0fe580a9be8463de577357d42a42b24
 
 @ReusableV2的Swiper使用场景示例代码如下：
 
+```typescript
+@Entry
+@ComponentV2
+struct ReusableSwiperScene {
+  // 轮播数据源
+  private dataSource: Question[] = [];
+
+  // 初始化轮播数据
+  aboutToAppear(): void {
+    for (let i = 0; i < 1000; i++) {
+      let title = i + 1 + 'test_swiper';
+      let answers = ['test1', 'test2', 'test3', 'test4'];
+      // 开发者可自行替换显示图片的内容，此处以app.media.startIcon为例
+      this.dataSource.push(new Question(i.toString(), title, $r('app.media.startIcon'), answers));
+    }
+  }
+
+  build() {
+    Column({ space: 5 }) {
+      Swiper() {
+        // 使用Repeat的virtualScroll模式配合Swiper实现懒加载
+        Repeat(this.dataSource)
+          .virtualScroll()
+          .each((ri) => {
+            QuestionSwiperItem({ itemData: ri.item })
+          })
+      }
+    }
+    .width('100%')
+    .margin({ top: 5 })
+  }
+}
+
+// 数据模型
+@ObservedV2
+class Question {
+  @Trace public id: string = '';
+  @Trace public title: ResourceStr = '';
+  @Trace public image: ResourceStr = '';
+  @Trace public answers: Array<ResourceStr> = [];
+
+  constructor(id: string, title: ResourceStr, image: ResourceStr, answers: Array<ResourceStr>) {
+    this.id = id;
+    this.title = title;
+    this.image = image;
+    this.answers = answers;
+  }
+}
+
+// 复用组件
+@ReusableV2
+@ComponentV2
+struct QuestionSwiperItem {
+  // 接收外部传入的题目数据
+  @Param itemData: Question | null = null;
+
+  build() {
+    Column() {
+      // 显示题目标题
+      Text(this.itemData?.title)
+        .fontSize(18)
+        .fontColor($r('sys.color.ohos_id_color_primary'))
+        .alignSelf(ItemAlign.Start)
+        .margin({
+          top: 10,
+          bottom: 16
+        })
+      // 显示题目图片
+      Image(this.itemData?.image)
+        .width('100%')
+        .borderRadius(12)
+        .objectFit(ImageFit.Contain)
+        .margin({
+          bottom: 16
+        })
+        .height(80)
+        .width(80)
+
+      // 使用Repeat遍历显示选项列表
+      Column({ space: 16 }) {
+        Repeat(this.itemData?.answers)
+          .each((ri) => {
+            Text(ri.item)
+              .fontSize(16)
+              .fontColor($r('sys.color.ohos_id_color_primary'))
+          })
+      }
+      .width('100%')
+      .alignItems(HorizontalAlign.Start)
+    }
+    .width('100%')
+    .padding({
+      left: 16,
+      right: 16
+    })
+  }
+}
 ```
-1. @Entry
-2. @ComponentV2
-3. struct Index {
-4. private dataSource: Question[] = new Array<Question>();
 
-6. aboutToAppear(): void {
-7. for (let i = 0; i < 1000; i++) {
-8. let title = i + 1 + 'test_swiper';
-9. let answers = ['test1', 'test2', 'test3', 'test4'];
-10. // 开发者可自行替换显示图片的内容，此处以app.media.startIcon为例
-11. this.dataSource.push(new Question(i.toString(), title, $r('app.media.startIcon'), answers));
-12. }
-13. }
-
-15. build() {
-16. Column({ space: 5 }) {
-17. Swiper() {
-18. Repeat(this.dataSource)
-19. .virtualScroll()
-20. .each((ri) => {
-21. QuestionSwiperItem({ itemData: ri.item })
-22. })
-23. }
-24. }
-25. .width('100%')
-26. .margin({ top: 5 })
-27. }
-28. }
-
-30. @ObservedV2
-31. class Question {
-32. @Trace id: string = '';
-33. @Trace title: ResourceStr = '';
-34. @Trace image: ResourceStr = '';
-35. @Trace answers: Array<ResourceStr> = [];
-
-37. constructor(id: string, title: ResourceStr, image: ResourceStr, answers: Array<ResourceStr>) {
-38. this.id = id;
-39. this.title = title;
-40. this.image = image;
-41. this.answers = answers;
-42. }
-43. }
-
-45. @ReusableV2
-46. @ComponentV2
-47. struct QuestionSwiperItem {
-48. @Param itemData: Question | null = null;
-
-50. build() {
-51. Column() {
-52. Text(this.itemData?.title)
-53. .fontSize(18)
-54. .fontColor($r('sys.color.ohos_id_color_primary'))
-55. .alignSelf(ItemAlign.Start)
-56. .margin({
-57. top: 10,
-58. bottom: 16
-59. })
-60. Image(this.itemData?.image)
-61. .width('100%')
-62. .borderRadius(12)
-63. .objectFit(ImageFit.Contain)
-64. .margin({
-65. bottom: 16
-66. })
-67. .height(80)
-68. .width(80)
-
-70. Column({ space: 16 }) {
-71. Repeat(this.itemData?.answers)
-72. .each((ri) => {
-73. Text(ri.item)
-74. .fontSize(16)
-75. .fontColor($r('sys.color.ohos_id_color_primary'))
-76. })
-77. }
-78. .width('100%')
-79. .alignItems(HorizontalAlign.Start)
-80. }
-81. .width('100%')
-82. .padding({
-83. left: 16,
-84. right: 16
-85. })
-86. }
-87. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/Odjo2gN0SOilLDZ-ObMZWA/zh-cn_image_0000002589323985.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/s0oamKQ_QDuRSr0QntU2rg/zh-cn_image_0000002736432465.gif)
 
 ### 列表滚动-ListItemGroup使用场景
 
@@ -687,71 +776,80 @@ content_hash: sha256:55405a82ad6f4682765425f2708a0fe580a9be8463de577357d42a42b24
 
 @ReusableV2的列表滚动-ListItemGroup使用场景示例代码如下：
 
+```typescript
+@Entry
+@ComponentV2
+struct ListItemGroupAndReusable {
+  // 列表分组数据源
+  private dataSource: DataSrc[] = [];
+
+  // 列表分组头部构建器
+  @Builder
+  itemHead(text: string) {
+    Text(text)
+      .fontSize(20)
+      .backgroundColor(0xff519db4)
+      .width('100%')
+      .padding(10)
+  }
+
+  // 初始化分组数据
+  aboutToAppear() {
+    for (let i = 0; i < 10000; i++) { // 循环10000次
+      let data = new DataSrc();
+      for (let j = 0; j < 12; j++) { // 每组12条数据
+        data.dataScr1.push(`测试条目数据: ${i} - ${j}`);
+      }
+      this.dataSource.push(data);
+    }
+  }
+
+  build() {
+    Stack() {
+      List() {
+        // 外层Repeat遍历分组数据
+        Repeat(this.dataSource)
+          .virtualScroll()
+          .each((ri) => {
+            ListItemGroup({ header: this.itemHead(ri.index.toString()) }) {
+              // 内层Repeat遍历每组中的子项数据
+              Repeat(ri.item.dataScr1)
+                .virtualScroll()
+                .each((ri) => {
+                  ListItem() {
+                    Inner({ str: ri.item })
+                  }
+                })
+            }
+          })
+      }
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
+
+// 复用组件
+@ReusableV2
+@ComponentV2
+struct Inner {
+  // 接收外部传入的文本内容
+  @Param str: string = '';
+
+  build() {
+    // 显示文本内容
+    Text(this.str)
+  }
+}
+
+// 分组数据模型
+@ObservedV2
+class DataSrc {
+  @Trace public dataScr1: string[] = [];
+}
 ```
-1. @Entry
-2. @ComponentV2
-3. struct ListItemGroupAndReusable {
-4. dataSource: DataSrc[] = new Array<DataSrc>();
 
-6. @Builder
-7. itemHead(text: string) {
-8. Text(text)
-9. .fontSize(20)
-10. .backgroundColor(0xff519db4)
-11. .width('100%')
-12. .padding(10)
-13. }
-
-15. aboutToAppear() {
-16. for (let i = 0; i < 10000; i++) { // 循环10000次
-17. let data = new DataSrc();
-18. for (let j = 0; j < 12; j++) { // 循环12次
-19. data.dataScr1.push(`测试条目数据: ${i} - ${j}`);
-20. }
-21. this.dataSource.push(data);
-22. }
-23. }
-
-25. build() {
-26. Stack() {
-27. List() {
-28. Repeat(this.dataSource)
-29. .virtualScroll()
-30. .each((ri) => {
-31. ListItemGroup({ header: this.itemHead(ri.index.toString()) }) {
-32. Repeat(ri.item.dataScr1)
-33. .virtualScroll()
-34. .each((ri) => {
-35. ListItem() {
-36. Inner({ str: ri.item })
-37. }
-38. })
-39. }
-40. })
-41. }
-42. }
-43. .width('100%')
-44. .height('100%')
-45. }
-46. }
-
-48. @ReusableV2
-49. @ComponentV2
-50. struct Inner {
-51. @Param str: string = '';
-
-53. build() {
-54. Text(this.str)
-55. }
-56. }
-
-58. @ObservedV2
-59. class DataSrc {
-60. @Trace dataScr1: string[] = [];
-61. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/ZfpNTUJPRienifL41tBprA/zh-cn_image_0000002589243925.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/NTUOf8PHQLSOGtOtNFhzRQ/zh-cn_image_0000002706833312.gif)
 
 ### 多种条目类型使用场景
 
@@ -767,219 +865,250 @@ content_hash: sha256:55405a82ad6f4682765425f2708a0fe580a9be8463de577357d42a42b24
 
 复用组件间存在差异，但类型有限。例如，可以通过显式设置两个reuse选项或使用两个自定义组件来实现复用。
 
+```typescript
+@Entry
+@ComponentV2
+struct ReusableLimitTypeScene {
+  // 列表数据源
+  private data: number[] = [];
+
+  // 初始化列表数据
+  aboutToAppear() {
+    for (let i = 0; i < 1000; i++) {
+      this.data.push(i);
+    }
+  }
+
+  build() {
+    Column() {
+      List({ space: 10 }) {
+        Repeat(this.data)
+          .virtualScroll()
+          .each((ri) => {
+            ListItem() {
+              // 根据奇偶性选择不同的复用组
+              if (ri.item % 2 === 0) {
+                // 偶数项使用ReusableV2ComponentOne复用组
+                ReusableV2Component({ item: ri.item })
+                  .reuse({ reuseId: () => 'ReusableV2ComponentOne' })
+              } else {
+                ReusableV2Component({ item: ri.item })
+                  .reuse({ reuseId: () => 'ReusableV2ComponentTwo' })
+              }
+            }
+          })
+      }
+      .cachedCount(2)
+    }
+  }
+}
+
+// 复用组件
+@ReusableV2
+@ComponentV2
+struct ReusableV2Component {
+  // 接收外部传入的序号
+  @Param item: number = 0;
+
+  // 组件复用时回调，如无需对状态变量做额外修改可移除
+  aboutToReuse() {
+    console.info(`ReusableComponent aboutToReuse called${this.item}`);
+  }
+
+  build() {
+    Column() {
+      // 组件内部根据类型差异渲染不同内容
+      if (this.item % 2 === 0) {
+        // 偶数项渲染样式一
+        Text(`Item ${this.item} ReusableComponentOne`)
+          .fontSize(20)
+          .margin({ left: 10 })
+      } else {
+        // 奇数项渲染样式二
+        Text(`Item ${this.item} ReusableComponentTwo`)
+          .fontSize(20)
+          .margin({ left: 10 })
+      }
+    }
+    .margin({ left: 10, right: 10 })
+  }
+}
 ```
-1. @Entry
-2. @ComponentV2
-3. struct Index {
-4. private data: number[] = [];
 
-6. aboutToAppear() {
-7. for (let i = 0; i < 1000; i++) {
-8. this.data.push(i);
-9. }
-10. }
-
-12. build() {
-13. Column() {
-14. List({ space: 10 }) {
-15. Repeat(this.data)
-16. .virtualScroll()
-17. .each((ri) => {
-18. ListItem() {
-19. if (ri.item % 2 === 0 ) {
-20. ReusableV2Component({ item: ri.item }).reuse({reuseId: () => 'ReusableV2ComponentOne'})
-21. } else {
-22. ReusableV2Component({ item: ri.item }).reuse({reuseId: () => 'ReusableV2ComponentTwo'})
-23. }
-24. }
-25. })
-26. }
-27. .cachedCount(2)
-28. }
-29. }
-30. }
-
-32. @ReusableV2
-33. @ComponentV2
-34. struct ReusableV2Component {
-35. @Param item: number = 0;
-
-37. aboutToReuse() {
-38. // 如无需对状态变量做额外修改，aboutToReuse回调可移除
-39. console.info(`ReusableComponent aboutToReuse called${this.item}`)
-40. }
-
-42. build() {
-43. Column() {
-44. // 组件内部根据类型差异渲染
-45. if (this.item % 2 === 0) {
-46. Text(`Item ${this.item} ReusableComponentOne`)
-47. .fontSize(20)
-48. .margin({ left: 10 })
-49. } else {
-50. Text(`Item ${this.item} ReusableComponentTwo`)
-51. .fontSize(20)
-52. .margin({ left: 10 })
-53. }
-54. }.margin({ left: 10, right: 10 })
-55. }
-56. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/qSouScKLT0eLw_LTL75fcg/zh-cn_image_0000002558764118.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/n8OOHAADQayyY7sFRrUEwg/zh-cn_image_0000002736312421.png)
 
 **组合型**
 
 复用组件间存在多种差异，但通常具备共同的子组件。将三种复用组件以组合型方式转换为[@Builder](arkts-builder.md)函数后，内部的共享子组件将统一置于父组件MyComponentV2之下。复用这些子组件时，缓存池在父组件层面实现共享，减少组件创建过程中的资源消耗。
 
+```typescript
+@Entry
+@ComponentV2
+struct MyComponentV2 {
+  // 列表数据源
+  private data: string[] = [];
+
+  // 初始化列表数据
+  aboutToAppear() {
+    for (let i = 0; i < 1000; i++) {
+      this.data.push(i.toString());
+    }
+  }
+
+  // itemBuilderOne作为复用组件的写法未展示，以下为转为Builder之后的写法
+  // 组合一：包含子组件A、B、C
+  @Builder
+  itemBuilderOne(item: string) {
+    Column() {
+      ChildComponentA({ item: item })
+      ChildComponentB({ item: item })
+      ChildComponentC({ item: item })
+    }
+  }
+
+  // itemBuilderTwo转为Builder之后的写法
+  // 组合二：包含子组件A、C、D
+  @Builder
+  itemBuilderTwo(item: string) {
+    Column() {
+      ChildComponentA({ item: item })
+      ChildComponentC({ item: item })
+      ChildComponentD({ item: item })
+    }
+  }
+
+  // itemBuilderThree转为Builder之后的写法
+  // 组合三：包含子组件A、B、D
+  @Builder
+  itemBuilderThree(item: string) {
+    Column() {
+      ChildComponentA({ item: item })
+      ChildComponentB({ item: item })
+      ChildComponentD({ item: item })
+    }
+  }
+
+  build() {
+    List({ space: 40 }) {
+      Repeat(this.data)
+        .virtualScroll()
+        .each((ri) => {
+          ListItem() {
+            // 根据索引选择不同的组合型布局
+            if (ri.index % 3 === 0) {
+              this.itemBuilderOne(ri.item)
+            } else if (ri.index % 5 === 0) {
+              this.itemBuilderTwo(ri.item)
+            } else {
+              this.itemBuilderThree(ri.item)
+            }
+          }
+        })
+    }
+    .width('100%')
+    .height('100%')
+    .cachedCount(0)
+  }
+}
+
+// 复用组件A，包含文本和图片网格
+@ReusableV2
+@ComponentV2
+struct ChildComponentA {
+  // 接收外部传入的序号
+  @Param item: string = '';
+
+  // 组件复用时回调，如无需对状态变量做额外修改可移除
+  aboutToReuse() {
+    console.info(`ChildComponentA Reuse ${this.item}`);
+  }
+
+  // 组件被回收时回调
+  aboutToRecycle(): void {
+    console.info(`ChildComponentA ${this.item} Recycle`);
+  }
+
+  build() {
+    Column() {
+      // 显示组件标识文本
+      Text(`Item ${this.item} Child Component A`)
+        .fontSize(20)
+        .margin({ left: 10 })
+        .fontColor(Color.Blue)
+      // 使用网格展示多张图片
+      Grid() {
+        ForEach((new Array(20)).fill(''), (item: string, index: number) => {
+          GridItem() {
+            // 开发者可自行替换显示图片的内容，此处以app.media.startIcon为例
+            Image($r('app.media.startIcon'))
+              .height(20)
+          }
+        })
+      }
+      .columnsTemplate('1fr 1fr 1fr 1fr 1fr') // 五列等宽布局
+      .rowsTemplate('1fr 1fr 1fr 1fr') // 四行等高布局
+      .columnsGap(10)
+      .width('90%')
+      .height(160)
+    }
+    .margin({ left: 10, right: 10 })
+    .backgroundColor(0xFAEEE0)
+  }
+}
+
+// 复用组件B，显示红色文本
+@ReusableV2
+@ComponentV2
+struct ChildComponentB {
+  // 接收外部传入的序号
+  @Param item: string = '';
+
+  build() {
+    Row() {
+      Text(`Item ${this.item} Child Component B`)
+        .fontSize(20)
+        .margin({ left: 10 })
+        .fontColor(Color.Red)
+    }
+    .margin({ left: 10, right: 10 })
+  }
+}
+
+// 复用组件C，显示绿色文本
+@ReusableV2
+@ComponentV2
+struct ChildComponentC {
+  // 接收外部传入的序号
+  @Param item: string = '';
+
+  build() {
+    Row() {
+      Text(`Item ${this.item} Child Component C`)
+        .fontSize(20)
+        .margin({ left: 10 })
+        .fontColor(Color.Green)
+    }
+    .margin({ left: 10, right: 10 })
+  }
+}
+
+// 复用组件D，显示橙色文本
+@ReusableV2
+@ComponentV2
+struct ChildComponentD {
+  // 接收外部传入的序号
+  @Param item: string = '';
+
+  build() {
+    Row() {
+      Text(`Item ${this.item} Child Component D`)
+        .fontSize(20)
+        .margin({ left: 10 })
+        .fontColor(Color.Orange)
+    }
+    .margin({ left: 10, right: 10 })
+  }
+}
 ```
-1. @Entry
-2. @ComponentV2
-3. struct MyComponentV2 {
-4. private data: string[] = [];
 
-6. aboutToAppear() {
-7. for (let i = 0; i < 1000; i++) {
-8. this.data.push(i.toString());
-9. }
-10. }
-
-12. // itemBuilderOne作为复用组件的写法未展示，以下为转为Builder之后的写法。
-13. @Builder
-14. itemBuilderOne(item: string) {
-15. Column() {
-16. ChildComponentA({ item: item })
-17. ChildComponentB({ item: item })
-18. ChildComponentC({ item: item })
-19. }
-20. }
-
-22. // itemBuilderTwo转为Builder之后的写法。
-23. @Builder
-24. itemBuilderTwo(item: string) {
-25. Column() {
-26. ChildComponentA({ item: item })
-27. ChildComponentC({ item: item })
-28. ChildComponentD({ item: item })
-29. }
-30. }
-
-32. // itemBuilderThree转为Builder之后的写法。
-33. @Builder
-34. itemBuilderThree(item: string) {
-35. Column() {
-36. ChildComponentA({ item: item })
-37. ChildComponentB({ item: item })
-38. ChildComponentD({ item: item })
-39. }
-40. }
-
-42. build() {
-43. List({ space: 40 }) {
-44. Repeat(this.data)
-45. .virtualScroll()
-46. .each((ri) => {
-47. ListItem() {
-48. if (ri.index % 3 === 0) {
-49. this.itemBuilderOne(ri.item)
-50. } else if (ri.index % 5 === 0) {
-51. this.itemBuilderTwo(ri.item)
-52. } else {
-53. this.itemBuilderThree(ri.item)
-54. }
-55. }
-56. })
-57. }
-58. .width('100%')
-59. .height('100%')
-60. .cachedCount(0)
-61. }
-62. }
-
-64. @ReusableV2
-65. @ComponentV2
-66. struct ChildComponentA {
-67. @Param item: string = '';
-
-69. aboutToReuse() {
-70. // 如无需对状态变量做额外修改，aboutToReuse回调可移除
-71. console.info(`ChildComponentA Reuse ${this.item}`);
-72. }
-
-74. aboutToRecycle(): void {
-75. console.info(`ChildComponentA ${this.item} Recycle`);
-76. }
-
-78. build() {
-79. Column() {
-80. Text(`Item ${this.item} Child Component A`)
-81. .fontSize(20)
-82. .margin({ left: 10 })
-83. .fontColor(Color.Blue)
-84. Grid() {
-85. ForEach((new Array(20)).fill(''), (item: string, index: number) => {
-86. GridItem() {
-87. // 开发者可自行替换显示图片的内容，此处以app.media.startIcon为例
-88. Image($r('app.media.startIcon'))
-89. .height(20)
-90. }
-91. })
-92. }
-93. .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
-94. .rowsTemplate('1fr 1fr 1fr 1fr')
-95. .columnsGap(10)
-96. .width('90%')
-97. .height(160)
-98. }
-99. .margin({ left: 10, right: 10 })
-100. .backgroundColor(0xFAEEE0)
-101. }
-102. }
-
-104. @ReusableV2
-105. @ComponentV2
-106. struct ChildComponentB {
-107. @Param item: string = '';
-
-109. build() {
-110. Row() {
-111. Text(`Item ${this.item} Child Component B`)
-112. .fontSize(20)
-113. .margin({ left: 10 })
-114. .fontColor(Color.Red)
-115. }.margin({ left: 10, right: 10 })
-116. }
-117. }
-
-119. @ReusableV2
-120. @ComponentV2
-121. struct ChildComponentC {
-122. @Param item: string = '';
-
-124. build() {
-125. Row() {
-126. Text(`Item ${this.item} Child Component C`)
-127. .fontSize(20)
-128. .margin({ left: 10 })
-129. .fontColor(Color.Green)
-130. }.margin({ left: 10, right: 10 })
-131. }
-132. }
-
-134. @ReusableV2
-135. @ComponentV2
-136. struct ChildComponentD {
-137. @Param item: string = '';
-
-139. build() {
-140. Row() {
-141. Text(`Item ${this.item} Child Component D`)
-142. .fontSize(20)
-143. .margin({ left: 10 })
-144. .fontColor(Color.Orange)
-145. }.margin({ left: 10, right: 10 })
-146. }
-147. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/LJFS8OeiRc-FOYBy1SzqeA/zh-cn_image_0000002558604462.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/0XcEnfg3RGixXrEY1SmmNg/zh-cn_image_0000002706673376.png)

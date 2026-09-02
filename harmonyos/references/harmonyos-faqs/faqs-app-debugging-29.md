@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: 应用自动签名失败，提示“calibrate the system time and sign again”
 breadcrumb: FAQ > DevEco Studio > 应用调试 > 应用自动签名失败，提示“calibrate the system time and sign again”
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:21:26+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:c2e9f174d9f07e5efef31e86185107684774fb7b3a6967d26c0bd6a01cf36cb8
+scraped_at: 2026-09-02T14:54:56+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:69bac2aa28cc1716795194df9386838a0e3983c00a405f0d3ec0e64d211771d8
 ---
 
 **问题现象**
 
 应用在进行自动签名时，签名失败，提示“The signature does not take effect or has expired. The current system time may be inaccurate. Please calibrate the system time and sign again.”
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/2lKOcEg1SMiZQTeTlMd6qQ/zh-cn_image_0000002229758773.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/bWEAKCfmTx2HBYM2sL1PgQ/zh-cn_image_0000002654798165.png "点击放大")
 
 **解决措施**
 
@@ -27,7 +27,7 @@ Windows：
 
 macOS：
 
-1. 在桌面点击左上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/_H3taI_rQgyl8RpwhIUuIA/zh-cn_image_0000002347874002.png)菜单，选择“系统设置”。
+1. 在桌面点击左上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/iBlnVGj2TW62sKkgMJ7SNA/zh-cn_image_0000002624638706.png "点击放大")菜单，选择“系统设置”。
 2. 在侧边栏点击“通用”> “日期与时间”。
 3. 点击时间旁边的“设置”按钮，手动输入日期和时间。
 

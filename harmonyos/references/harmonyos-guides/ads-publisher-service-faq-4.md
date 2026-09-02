@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ads-publisher
 title: 展示广告时显示白屏
 breadcrumb: 指南 > 应用服务 > Ads Kit（广告服务） > 流量变现服务开发 > 流量变现服务常见问题 > 展示广告时显示白屏
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:37:05+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:17:39+08:00
+doc_updated_at: 2026-08-21
 content_hash: sha256:910f4d4400bcd8574b4dad9095e0f41827dd95278299e4979bf38fe2613a28e3
 ---
 

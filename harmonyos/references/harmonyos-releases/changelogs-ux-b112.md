@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-ux-b112
 title: UX样式或效果的变更
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.1(13) > OS平台能力 > OS平台行为变更说明 > HarmonyOS 5.0.1(13) Release引入的行为变更 > UX样式或效果的变更
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.1(13) > OS平台能力 > OS平台行为变更说明 > HarmonyOS 5.0.1(13) Release引入的行为变更 > UX样式或效果的变更
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:57+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:33567fd70eddfedb6ca46210cf9bdf7f4e5c6bd5af86f683aa77a7adde198bdc
+scraped_at: 2026-09-02T14:58:52+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:479ba2a7a8863052e9e65ee4d8400354ff58ceb7de3363ed8d4387b0d891ddac
 ---
 
 ## Tabs组件底部页签默认高度由52vp变更为48vp
@@ -40,27 +40,27 @@ barHeight
 
 若组件高度发生变化，开发者期望保持原有高度样式。示例如下：
 
-```
-1. @Entry
-2. @Component
-3. struct barHeightTest {
-4. build() {
-5. Column() {
-6. Tabs() {
-7. TabContent() {
-8. Column().width('100%').width('100%').height('100%').backgroundColor(Color.Pink)
-9. }
-10. .tabBar(new BottomTabBarStyle($r('sys.media.ohos_app_icon'), "Pink"))
+```screen
+@Entry
+@Component
+struct barHeightTest {
+  build() {
+    Column() {
+      Tabs() {
+        TabContent() {
+          Column().width('100%').width('100%').height('100%').backgroundColor(Color.Pink)
+        }
+        .tabBar(new BottomTabBarStyle($r('sys.media.ohos_app_icon'), "Pink"))
 
-12. TabContent() {
-13. Column().width('100%').width('100%').height('100%').backgroundColor(Color.Green)
-14. }
-15. .tabBar(new BottomTabBarStyle($r('sys.media.ohos_app_icon'), "Green"))
-16. }
-17. .barHeight(52)
-18. }
-19. }
-20. }
+        TabContent() {
+          Column().width('100%').width('100%').height('100%').backgroundColor(Color.Green)
+        }
+        .tabBar(new BottomTabBarStyle($r('sys.media.ohos_app_icon'), "Green"))
+      }
+      .barHeight(52)
+    }
+  }
+}
 ```
 
 ## 画布组件在绘制文本时设置globalCompositeOperation、fillStyle和globalAlpha属性的效果变更
@@ -71,7 +71,7 @@ barHeight
 
 **变更影响**
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.1(13)时生效。
 
@@ -99,42 +99,42 @@ CanvasRenderingContext2D和OffscreenCanvasRenderingContext2D的fillText和stroke
 
 示例：
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct FillText {
-5. private settings: RenderingContextSettings = new RenderingContextSettings(true)
-6. private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings)
-7. private img:ImageBitmap = new ImageBitmap("common/images/icon.jpg")
-8. build() {
-9. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-10. Canvas(this.context)
-11. .width('100%')
-12. .height('100%')
-13. .onReady(() =>{
-14. this.context.font = '30vp sans-serif'
-15. this.context.fillStyle = 'rgb(227, 248, 249)'
-16. this.context.fillRect(0, 0, 150, 150)
-17. this.context.fillStyle = 'rgb(39, 135, 217)'
-18. this.context.globalCompositeOperation = 'xor' // 设置globalCompositeOperation为'xor'模式
-19. this.context.fillText('Hello World', 50, 50) // 生效'xor'模式
-20. this.context.globalCompositeOperation = 'source-over' // 设置globalCompositeOperation为默认值
-21. this.context.fillText('Hello World', 50, 150) // 生效'source-over'模式
-22. let pattern = this.context.createPattern(this.img, 'repeat')
-23. if (pattern) {
-24. this.context.fillStyle = pattern // 设置fillStyle为pattern样式
-25. }
-26. this.context.fillText('Hello World', 50, 250) // 生效pattern样式
-27. this.context.fillStyle = '#88FF0000' // 设置fillStyle为带透明度颜色
-28. this.context.globalAlpha = 0.5 // 设置画布透明度
-29. this.context.fillText('Hello World', 50, 350) // 透明度为颜色透明度×globalAlpha
-30. })
-31. }
-32. .width('100%')
-33. .height('100%')
-34. }
-35. }
+```screen
+// xxx.ets
+@Entry
+@Component
+struct FillText {
+  private settings: RenderingContextSettings = new RenderingContextSettings(true)
+  private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings)
+  private img:ImageBitmap = new ImageBitmap("common/images/icon.jpg")
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Canvas(this.context)
+        .width('100%')
+        .height('100%')
+        .onReady(() =>{
+          this.context.font = '30vp sans-serif'
+          this.context.fillStyle = 'rgb(227, 248, 249)'
+          this.context.fillRect(0, 0, 150, 150)
+          this.context.fillStyle = 'rgb(39, 135, 217)'
+          this.context.globalCompositeOperation = 'xor' // 设置globalCompositeOperation为'xor'模式
+          this.context.fillText('Hello World', 50, 50) // 生效'xor'模式
+          this.context.globalCompositeOperation = 'source-over' // 设置globalCompositeOperation为默认值
+          this.context.fillText('Hello World', 50, 150) // 生效'source-over'模式
+          let pattern = this.context.createPattern(this.img, 'repeat')
+          if (pattern) {
+            this.context.fillStyle = pattern // 设置fillStyle为pattern样式
+          }
+          this.context.fillText('Hello World', 50, 250) // 生效pattern样式
+          this.context.fillStyle = '#88FF0000' // 设置fillStyle为带透明度颜色
+          this.context.globalAlpha = 0.5 // 设置画布透明度
+          this.context.fillText('Hello World', 50, 350) // 透明度为颜色透明度×globalAlpha
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## NavDestination的Dialog模式默认支持系统动画
@@ -145,7 +145,7 @@ NavDestination的Dialog模式支持系统动画。
 
 **变更影响**
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.1(13)时生效。
 
@@ -171,52 +171,52 @@ NavDestination
 
 示例：
 
-```
-1. @Entry
-2. @Component
+```screen
+@Entry
+@Component
 
-4. struct NavigationDemo {
-5. @State pageInfos: NavPathStack = new NavPathStack();
+struct NavigationDemo {
+	@State pageInfos: NavPathStack = new NavPathStack();
 
-7. @Builder
-8. pageOneTmp() {
-9. NavDestination() {
-10. Text("This is a sample")
-11. .fontSize(50)
-12. }
-13. .title("PageOne")
-14. .mode(NavDestinationMode.DIALOG)
-15. .backgroundColor(Color.Blue)
-16. }
+	@Builder
+	pageOneTmp() {
+		NavDestination() {
+          Text("This is a sample")
+            .fontSize(50)
+		}
+		.title("PageOne")
+		.mode(NavDestinationMode.DIALOG)
+    .backgroundColor(Color.Blue)
+	}
 
-18. @Builder
-19. PageMap(name: string, param: object) {
-20. if (name === 'pageOne') {
-21. this.pageOneTmp()
-22. }
-23. }
+	@Builder
+	PageMap(name: string, param: object) {
+		if (name === 'pageOne') {
+			this.pageOneTmp()
+		}
+	}
 
-25. build() {
-26. Column({ space: 10 }) {
-27. Button('Pop Dialog')
-28. .onClick(() => {
-29. // Set true to enable system animations, or set false to disable system animations.
-30. this.pageInfos.pop(true)
-31. })
-32. Button('Push Dialog')
-33. .onClick(() => {
-34. // Set true to enable system animations, or set false to disable system animations.
-35. this.pageInfos.pushPath({ name: 'pageOne' }, true)
-36. })
-37. Navigation(this.pageInfos) {
-38. Column({ space: 10 }) {
-39. Text("This is navigation").fontSize(60).align(Alignment.Center)
-40. }
-41. }
-42. .height(500)
-43. .backgroundColor(Color.Grey)
-44. .navDestination(this.PageMap)
-45. }.height(50)
-46. }
-47. }
+	build() {
+		Column({ space: 10 }) {
+			Button('Pop Dialog')
+			.onClick(() => {
+				// Set true to enable system animations, or set false to disable system animations.
+				this.pageInfos.pop(true)
+			})
+			Button('Push Dialog')
+			.onClick(() => {
+				// Set true to enable system animations, or set false to disable system animations.
+				this.pageInfos.pushPath({ name: 'pageOne' }, true)
+			})
+			Navigation(this.pageInfos) {
+				Column({ space: 10 }) {
+					Text("This is navigation").fontSize(60).align(Alignment.Center)
+				}
+			}
+			.height(500)
+			.backgroundColor(Color.Grey)
+			.navDestination(this.PageMap)
+		}.height(50)
+	}
+}
 ```

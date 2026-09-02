@@ -1,18 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-draw
 title: 自定义绘制
-breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 自定义绘制
+breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 使用自定义能力 > 自定义绘制
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:36+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fff32a6721cd88d2f8e553440db42f386d40d9c870cd227f2b463d616fa18313
+scraped_at: 2026-09-02T14:59:20+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:521baa8294e59c209bc9d652867163e228bd2f2f1304c0dde239a5a7e47898cc
 ---
 
 ## 概述
 
 当某些组件本身的绘制内容不满足需求时，可使用组件自定义绘制功能，在原有组件基础上部分绘制、或者全部自行绘制，以达到预期效果。例如：独特的按钮形状、文字和图像混合的图标等。NDK提供了自定义绘制节点的能力，通过自定义绘制事件，开发者可以实现基于NDK侧[ArkUI\_NodeType](../harmonyos-references/capi-native-node-h.md#arkui_nodetype)中ARKUI\_NODE\_CUSTOM类型节点的自绘制能力。
 
-说明
+**说明** 
 
 * ArkTS的自定义绘制能力和示例请参考[自定义绘制修改器 (DrawModifier)](arkts-user-defined-extension-drawmodifier.md)。
 
@@ -20,9 +20,9 @@ content_hash: sha256:fff32a6721cd88d2f8e553440db42f386d40d9c870cd227f2b463d616fa
 
 自定义绘制提供了五个绘制层级，从低到高依次为：内容背景层（drawBehind）、内容层（drawContent）、内容前景层（drawFront）、前景层（drawForeground）和浮层（drawOverlay）。开发者可以根据需求选择合适的层级进行绘制。自定义绘制层级图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/4VUOOl4BSy29-E87vB-Oow/zh-cn_image_0000002558764516.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/hXaHy7TDRX-ItYWD5eFuiA/zh-cn_image_0000002706673914.png)
 
-开发者可以通过注册相应的事件类型来实现不同层级的自定义绘制，不同层级对应的枚举如下，NDK接口支持的事件类型范围请参考[ArkUI\_NodeCustomEventType](../harmonyos-references/capi-native-node-h.md#arkui_nodecustomeventtype)枚举值。
+开发者可以通过注册相应的事件类型来实现不同层级的自定义绘制，不同层级对应的枚举如下，NDK接口支持的事件类型范围请参考[ArkUI\_NodeCustomEventType](../harmonyos-references/capi-native-node-node-attributes-custom-attributes-h.md#arkui_nodecustomeventtype)枚举值。
 
 | 事件类型 | 说明 |
 | --- | --- |
@@ -38,666 +38,728 @@ content_hash: sha256:fff32a6721cd88d2f8e553440db42f386d40d9c870cd227f2b463d616fa
 
 以下场景基于[接入ArkTS页面](ndk-access-the-arkts-page.md)章节，创建前置工程。内容绘制的完整示例请参考[NativeDrawPageSample](https://gitcode.com/HarmonyOS_Samples/guide-snippets/tree/master/ArkUISample/NativeType/NativeDrawPageSample)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/BaGeuQeZRP60VEje0zPU3Q/zh-cn_image_0000002589324429.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/IXEwWIYrQZKUm6vX9losmw/zh-cn_image_0000002706673966.jpg)
 
-1. 通过[ArkUI\_NativeNodeAPI\_1](../harmonyos-references/capi-arkui-nativemodule-arkui-nativenodeapi-1.md)的[createNode](../harmonyos-references/capi-arkui-nativemodule-arkui-nativenodeapi-1.md#createnode)接口，传入[ArkUI\_NodeType](../harmonyos-references/capi-native-node-h.md#arkui_nodecustomeventtype)中的ARKUI\_NODE\_CUSTOM枚举值创建自定义节点。
+1. 通过[ArkUI\_NativeNodeAPI\_1](../harmonyos-references/capi-arkui-nativemodule-arkui-nativenodeapi-1.md)的[createNode](../harmonyos-references/capi-arkui-nativemodule-arkui-nativenodeapi-1.md#createnode)接口，传入[ArkUI\_NodeType](../harmonyos-references/capi-native-node-h.md#arkui_nodetype)中的ARKUI\_NODE\_CUSTOM枚举值创建自定义节点。
 
+   ```c
+   auto customNode = nodeAPI->createNode(ARKUI_NODE_CUSTOM);
    ```
-   1. auto customNode = nodeAPI->createNode(ARKUI_NODE_CUSTOM);
-   ```
-
-   [Drawing.h](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NativeType/NativeDrawPageSample/entry/src/main/cpp/Drawing.h#L39-L41)
 2. 事件注册时将自定义节点、事件类型、事件ID和UserData作为参数传入。
 
+   ```c
+   // UserData
+   struct A {
+       int32_t a = 6;
+       bool flag = true;
+       ArkUI_NodeHandle node;
+   };
+   A *a = new A;
+   a->node = customNode;
+   // ...
+   nodeAPI->registerNodeCustomEvent(customNode, ARKUI_NODE_CUSTOM_EVENT_ON_FOREGROUND_DRAW, 1, a);
+   // 事件回调函数的编写
+   nodeAPI->registerNodeCustomEventReceiver([](ArkUI_NodeCustomEvent *event) {
+       // 事件回调函数逻辑
+       // ...
+   });
    ```
-   1. // UserData
-   2. struct A {
-   3. int32_t a = 6;
-   4. bool flag = true;
-   5. ArkUI_NodeHandle node;
-   6. };
-   7. A *a = new A;
-   8. a->node = customNode;
-   9. // ...
-   10. nodeAPI->registerNodeCustomEvent(customNode, ARKUI_NODE_CUSTOM_EVENT_ON_FOREGROUND_DRAW, 1, a);
-   11. // 事件回调函数的编写
-   12. nodeAPI->registerNodeCustomEventReceiver([](ArkUI_NodeCustomEvent *event) {
-   13. // 事件回调函数逻辑
-   14. // ...
-   15. });
-   ```
-
-   [Drawing.h](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NativeType/NativeDrawPageSample/entry/src/main/cpp/Drawing.h#L54-L108)
 3. 在回调函数中，通过[OH\_ArkUI\_NodeCustomEvent\_GetEventType](../harmonyos-references/capi-native-node-h.md#oh_arkui_nodecustomevent_geteventtype)获取自定义事件的事件类型，通过[OH\_ArkUI\_NodeCustomEvent\_GetEventTargetId](../harmonyos-references/capi-native-node-h.md#oh_arkui_nodecustomevent_geteventtargetid)获取事件ID，通过[OH\_ArkUI\_NodeCustomEvent\_GetUserData](../harmonyos-references/capi-native-node-h.md#oh_arkui_nodecustomevent_getuserdata)获取UserData，再根据事件类型和事件ID判断当前触发的是哪个绘制事件，从而执行对应的逻辑。
 
+   ```c
+   auto type = OH_ArkUI_NodeCustomEvent_GetEventType(event);
+   auto targetId = OH_ArkUI_NodeCustomEvent_GetEventTargetId(event);
+   auto userData = reinterpret_cast<A *>(OH_ArkUI_NodeCustomEvent_GetUserData(event));
    ```
-   1. auto type = OH_ArkUI_NodeCustomEvent_GetEventType(event);
-   2. auto targetId = OH_ArkUI_NodeCustomEvent_GetEventTargetId(event);
-   3. auto userData = reinterpret_cast<A *>(OH_ArkUI_NodeCustomEvent_GetUserData(event));
-   ```
-
-   [Drawing.h](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NativeType/NativeDrawPageSample/entry/src/main/cpp/Drawing.h#L81-L79)
 4. [OH\_ArkUI\_NodeCustomEvent\_GetDrawContextInDraw](../harmonyos-references/capi-native-node-h.md#oh_arkui_nodecustomevent_getdrawcontextindraw)通过自定义组件事件获取绘制上下文，并将其传入[OH\_ArkUI\_DrawContext\_GetCanvas](../harmonyos-references/capi-native-type-h.md#oh_arkui_drawcontext_getcanvas)以获取Canvas画布指针，该指针随后将转换为[OH\_Drawing\_Canvas](../harmonyos-references/capi-drawing-oh-drawing-canvas.md)指针进行绘制。
 
+   ```c
+   // 获取自定义事件绘制的上下文。
+   auto *drawContext = OH_ArkUI_NodeCustomEvent_GetDrawContextInDraw(event);
+   // 获取Canvas指针。
+   auto *canvas1 = OH_ArkUI_DrawContext_GetCanvas(drawContext);
+   // 转换为OH_Drawing_Canvas指针进行绘制。
+   OH_Drawing_Canvas *canvas = reinterpret_cast<OH_Drawing_Canvas *>(canvas1);
+   // 绘制逻辑。
+   int32_t width = SIZE_1000;  // SIZE_1000 = 1000
+   int32_t height = SIZE_1000; // SIZE_1000 = 1000
+   auto path = OH_Drawing_PathCreate();
+   OH_Drawing_PathMoveTo(path, width / SIZE_4, height / SIZE_4);                   // SIZE_4 = 4
+   OH_Drawing_PathLineTo(path, width * SIZE_3 / SIZE_4, height * SIZE_3 / SIZE_4); // SIZE_3 = 3,SIZE_4 = 4
+   OH_Drawing_PathClose(path);
+   auto pen = OH_Drawing_PenCreate();
+   OH_Drawing_PenSetWidth(pen, SIZE_10); // SIZE_10 = 10
+   OH_Drawing_PenSetColor(pen, OH_Drawing_ColorSetArgb(0xFF, 0x00, 0x4A, 0x4F));
+   OH_Drawing_CanvasAttachPen(canvas, pen);
+   OH_Drawing_CanvasDrawPath(canvas, path);
    ```
-   1. // 获取自定义事件绘制的上下文。
-   2. auto *drawContext = OH_ArkUI_NodeCustomEvent_GetDrawContextInDraw(event);
-   3. // 获取Canvas指针。
-   4. auto *canvas1 = OH_ArkUI_DrawContext_GetCanvas(drawContext);
-   5. // 转换为OH_Drawing_Canvas指针进行绘制。
-   6. OH_Drawing_Canvas *canvas = reinterpret_cast<OH_Drawing_Canvas *>(canvas1);
-   7. // 绘制逻辑。
-   8. int32_t width = SIZE_1000;  // SIZE_1000 = 1000
-   9. int32_t height = SIZE_1000; // SIZE_1000 = 1000
-   10. auto path = OH_Drawing_PathCreate();
-   11. OH_Drawing_PathMoveTo(path, width / SIZE_4, height / SIZE_4);                   // SIZE_4 = 4
-   12. OH_Drawing_PathLineTo(path, width * SIZE_3 / SIZE_4, height * SIZE_3 / SIZE_4); // SIZE_3 = 3,SIZE_4 = 4
-   13. OH_Drawing_PathClose(path);
-   14. auto pen = OH_Drawing_PenCreate();
-   15. OH_Drawing_PenSetWidth(pen, SIZE_10); // SIZE_10 = 10
-   16. OH_Drawing_PenSetColor(pen, OH_Drawing_ColorSetArgb(0xFF, 0x00, 0x4A, 0x4F));
-   17. OH_Drawing_CanvasAttachPen(canvas, pen);
-   18. OH_Drawing_CanvasDrawPath(canvas, path);
-   ```
-
-   [Drawing.h](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NativeType/NativeDrawPageSample/entry/src/main/cpp/Drawing.h#L82-L79)
 
 ### 多层级绘制示例
 
 以下示例创建了一个自定义绘制组件，实现自定义矩形绘制、自定义绘制内容前景层和内容背景层，并支持使用[自定义布局容器](ndk-build-custom-components.md#自定义布局容器)进行布局排布。完整示例请参考[NativeNodeUtilsSample](https://gitcode.com/HarmonyOS_Samples/guide-snippets/tree/master/ArkUISample/NativeType/NativeNodeUtilsSample)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/eh6eT1G-Qg-n1lsmsl9c5g/zh-cn_image_0000002589244369.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/0hVzJchwQ9SClmG_dLxc2A/zh-cn_image_0000002736433057.jpg)
 
 图中深蓝矩形为drawFront内容前景层，浅蓝色矩形为drawContent内容层，白色矩形为drawBehind内容背景层。三层的叠加关系用于验证多层级绘制顺序是否符合预期。
 
 1. 按照[自定义布局容器](ndk-build-custom-components.md#自定义布局容器)章节准备前置工程。
 2. 创建自定义绘制组件封装对象。
 
+   ```c
+   #ifndef MYAPPLICATION_ARKUICUSTOMNODE_H
+   #define MYAPPLICATION_ARKUICUSTOMNODE_H
+
+   #include <native_drawing/drawing_brush.h>
+   #include <native_drawing/drawing_canvas.h>
+   #include <native_drawing/drawing_path.h>
+
+   #include "ArkUINode.h"
+
+   namespace NativeModule {
+   class ArkUICustomNode : public ArkUINode {
+   public:
+       // 使用自定义组件类型ARKUI_NODE_CUSTOM创建组件。
+       ArkUICustomNode()
+           : ArkUINode((NativeModuleInstance::GetInstance()->GetNativeNodeAPI())->createNode(ARKUI_NODE_CUSTOM))
+       {
+           // 注册自定义事件监听器。
+           nativeModule_->addNodeCustomEventReceiver(handle_, OnStaticCustomEvent);
+           // 声明自定义事件并传递自身作为自定义数据。
+           nativeModule_->registerNodeCustomEvent(handle_, ARKUI_NODE_CUSTOM_EVENT_ON_DRAW_FRONT, 0, this);
+           nativeModule_->registerNodeCustomEvent(handle_, ARKUI_NODE_CUSTOM_EVENT_ON_DRAW, 0, this);
+           nativeModule_->registerNodeCustomEvent(handle_, ARKUI_NODE_CUSTOM_EVENT_ON_DRAW_BEHIND, 0, this);
+           // 绘制完成事件通知。
+           OH_ArkUI_RegisterDrawCallbackOnNodeHandle(handle_, nullptr, [](void* userData) {});
+       }
+
+       ~ArkUICustomNode() override
+       {
+           // 反注册自定义事件监听器。
+           nativeModule_->removeNodeCustomEventReceiver(handle_, OnStaticCustomEvent);
+           // 取消声明自定义事件。
+           nativeModule_->unregisterNodeCustomEvent(handle_, ARKUI_NODE_CUSTOM_EVENT_ON_DRAW_FRONT);
+           nativeModule_->unregisterNodeCustomEvent(handle_, ARKUI_NODE_CUSTOM_EVENT_ON_DRAW);
+           nativeModule_->unregisterNodeCustomEvent(handle_, ARKUI_NODE_CUSTOM_EVENT_ON_DRAW_BEHIND);
+           OH_ArkUI_UnregisterDrawCallbackOnNodeHandle(handle_);
+       }
+
+   private:
+       int32_t NUM_2 = 2;
+       int32_t NUM_3 = 3;
+       int32_t NUM_4 = 4;
+       int32_t NUM_5 = 5;
+       static void OnStaticCustomEvent(ArkUI_NodeCustomEvent *event)
+       {
+           // 获取组件实例对象，调用相关实例方法。
+           // ...
+           auto customNode = reinterpret_cast<ArkUICustomNode *>(OH_ArkUI_NodeCustomEvent_GetUserData(event));
+           auto type = OH_ArkUI_NodeCustomEvent_GetEventType(event);
+           switch (type) {
+               // 绘制层级由低到高。
+               case ARKUI_NODE_CUSTOM_EVENT_ON_DRAW_BEHIND:
+                   customNode->OnDrawBehind(event);
+                   break;
+               case ARKUI_NODE_CUSTOM_EVENT_ON_DRAW:
+                   customNode->OnDraw(event);
+                   break;
+               case ARKUI_NODE_CUSTOM_EVENT_ON_DRAW_FRONT:
+                   customNode->OnDrawFront(event);
+                   break;
+               // ...
+               default:
+                   break;
+           }
+       }
+
+       // 自定义绘制逻辑。
+       void OnDrawBehind(ArkUI_NodeCustomEvent *event)
+       {
+           auto drawContext = OH_ArkUI_NodeCustomEvent_GetDrawContextInDraw(event);
+           // 获取图形绘制对象。
+           auto drawCanvas = reinterpret_cast<OH_Drawing_Canvas *>(OH_ArkUI_DrawContext_GetCanvas(drawContext));
+           // 获取组件大小。
+           auto size = OH_ArkUI_DrawContext_GetSize(drawContext);
+           // 绘制自定义内容。
+           auto path = OH_Drawing_PathCreate();
+           OH_Drawing_PathMoveTo(path, size.width / NUM_5, size.height / NUM_5);
+           OH_Drawing_PathLineTo(path, size.width * NUM_4 / NUM_5, size.height / NUM_5);
+           OH_Drawing_PathLineTo(path, size.width * NUM_4 / NUM_5, size.height * NUM_4 / NUM_5);
+           OH_Drawing_PathLineTo(path, size.width / NUM_5, size.height * NUM_4 / NUM_5);
+           OH_Drawing_PathLineTo(path, size.width / NUM_5, size.height / NUM_5);
+           OH_Drawing_PathClose(path);
+           auto brush = OH_Drawing_BrushCreate();
+           OH_Drawing_BrushSetColor(brush, 0xFFF0FAFF); // 蓝白色
+           OH_Drawing_CanvasAttachBrush(drawCanvas, brush);
+           OH_Drawing_CanvasDrawPath(drawCanvas, path);
+           // 释放资源
+           OH_Drawing_BrushDestroy(brush);
+           OH_Drawing_PathDestroy(path);
+       }
+
+       void OnDraw(ArkUI_NodeCustomEvent *event)
+       {
+           auto drawContext = OH_ArkUI_NodeCustomEvent_GetDrawContextInDraw(event);
+           // 获取图形绘制对象。
+           auto drawCanvas = reinterpret_cast<OH_Drawing_Canvas *>(OH_ArkUI_DrawContext_GetCanvas(drawContext));
+           // 获取组件大小。
+           auto size = OH_ArkUI_DrawContext_GetSize(drawContext);
+           // 绘制自定义内容。
+           auto path = OH_Drawing_PathCreate();
+           OH_Drawing_PathMoveTo(path, size.width / NUM_4, size.height / NUM_4);
+           OH_Drawing_PathLineTo(path, size.width * NUM_3 / NUM_4, size.height / NUM_4);
+           OH_Drawing_PathLineTo(path, size.width * NUM_3 / NUM_4, size.height * NUM_3 / NUM_4);
+           OH_Drawing_PathLineTo(path, size.width / NUM_4, size.height * NUM_3 / NUM_4);
+           OH_Drawing_PathLineTo(path, size.width / NUM_4, size.height / NUM_4);
+           OH_Drawing_PathClose(path);
+           auto brush = OH_Drawing_BrushCreate();
+           OH_Drawing_BrushSetColor(brush, 0xff2787D9); // 浅蓝色
+           OH_Drawing_CanvasAttachBrush(drawCanvas, brush);
+           OH_Drawing_CanvasDrawPath(drawCanvas, path);
+           // 释放资源
+           OH_Drawing_BrushDestroy(brush);
+           OH_Drawing_PathDestroy(path);
+       }
+
+       void OnDrawFront(ArkUI_NodeCustomEvent *event)
+       {
+           auto drawContext = OH_ArkUI_NodeCustomEvent_GetDrawContextInDraw(event);
+           // 获取图形绘制对象。
+           auto drawCanvas = reinterpret_cast<OH_Drawing_Canvas *>(OH_ArkUI_DrawContext_GetCanvas(drawContext));
+           // 获取组件大小。
+           auto size = OH_ArkUI_DrawContext_GetSize(drawContext);
+           // 绘制自定义内容。
+           auto path = OH_Drawing_PathCreate();
+           OH_Drawing_PathMoveTo(path, size.width / NUM_3, size.height / NUM_3);
+           OH_Drawing_PathLineTo(path, size.width * NUM_2 / NUM_3, size.height / NUM_3);
+           OH_Drawing_PathLineTo(path, size.width * NUM_2 / NUM_3, size.height * NUM_2 / NUM_3);
+           OH_Drawing_PathLineTo(path, size.width / NUM_3, size.height * NUM_2 / NUM_3);
+           OH_Drawing_PathLineTo(path, size.width / NUM_3, size.height / NUM_3);
+           OH_Drawing_PathClose(path);
+           auto brush = OH_Drawing_BrushCreate();
+           OH_Drawing_BrushSetColor(brush, 0xFF004AAF); // 深蓝色
+           OH_Drawing_CanvasAttachBrush(drawCanvas, brush);
+           OH_Drawing_CanvasDrawPath(drawCanvas, path);
+           // 释放资源
+           OH_Drawing_BrushDestroy(brush);
+           OH_Drawing_PathDestroy(path);
+       }
+       // ...
+   };
+
+   } // namespace NativeModule
+
+   #endif // MYAPPLICATION_ARKUICUSTOMNODE_H
    ```
-   1. #ifndef MYAPPLICATION_ARKUICUSTOMNODE_H
-   2. #define MYAPPLICATION_ARKUICUSTOMNODE_H
-
-   4. #include <native_drawing/drawing_brush.h>
-   5. #include <native_drawing/drawing_canvas.h>
-   6. #include <native_drawing/drawing_path.h>
-
-   8. #include "ArkUINode.h"
-
-   10. namespace NativeModule {
-   11. class ArkUICustomNode : public ArkUINode {
-   12. public:
-   13. // 使用自定义组件类型ARKUI_NODE_CUSTOM创建组件。
-   14. ArkUICustomNode()
-   15. : ArkUINode((NativeModuleInstance::GetInstance()->GetNativeNodeAPI())->createNode(ARKUI_NODE_CUSTOM))
-   16. {
-   17. // 注册自定义事件监听器。
-   18. nativeModule_->addNodeCustomEventReceiver(handle_, OnStaticCustomEvent);
-   19. // 声明自定义事件并转递自身作为自定义数据。
-   20. nativeModule_->registerNodeCustomEvent(handle_, ARKUI_NODE_CUSTOM_EVENT_ON_DRAW_FRONT, 0, this);
-   21. nativeModule_->registerNodeCustomEvent(handle_, ARKUI_NODE_CUSTOM_EVENT_ON_DRAW, 0, this);
-   22. nativeModule_->registerNodeCustomEvent(handle_, ARKUI_NODE_CUSTOM_EVENT_ON_DRAW_BEHIND, 0, this);
-   23. // 绘制完成事件通知。
-   24. OH_ArkUI_RegisterDrawCallbackOnNodeHandle(handle_, nullptr, [](void* userData) {});
-   25. }
-
-   27. ~ArkUICustomNode() override
-   28. {
-   29. // 反注册自定义事件监听器。
-   30. nativeModule_->removeNodeCustomEventReceiver(handle_, OnStaticCustomEvent);
-   31. // 取消声明自定义事件。
-   32. nativeModule_->unregisterNodeCustomEvent(handle_, ARKUI_NODE_CUSTOM_EVENT_ON_DRAW_FRONT);
-   33. nativeModule_->unregisterNodeCustomEvent(handle_, ARKUI_NODE_CUSTOM_EVENT_ON_DRAW);
-   34. nativeModule_->unregisterNodeCustomEvent(handle_, ARKUI_NODE_CUSTOM_EVENT_ON_DRAW_BEHIND);
-   35. OH_ArkUI_UnregisterDrawCallbackOnNodeHandle(handle_);
-   36. }
-
-   38. private:
-   39. int32_t NUM_2 = 2;
-   40. int32_t NUM_3 = 3;
-   41. int32_t NUM_4 = 4;
-   42. int32_t NUM_5 = 5;
-   43. static void OnStaticCustomEvent(ArkUI_NodeCustomEvent *event)
-   44. {
-   45. // 获取组件实例对象，调用相关实例方法。
-   46. // ...
-   47. auto customNode = reinterpret_cast<ArkUICustomNode *>(OH_ArkUI_NodeCustomEvent_GetUserData(event));
-   48. auto type = OH_ArkUI_NodeCustomEvent_GetEventType(event);
-   49. switch (type) {
-   50. // 绘制层级由低到高。
-   51. case ARKUI_NODE_CUSTOM_EVENT_ON_DRAW_BEHIND:
-   52. customNode->OnDrawBehind(event);
-   53. break;
-   54. case ARKUI_NODE_CUSTOM_EVENT_ON_DRAW:
-   55. customNode->OnDraw(event);
-   56. break;
-   57. case ARKUI_NODE_CUSTOM_EVENT_ON_DRAW_FRONT:
-   58. customNode->OnDrawFront(event);
-   59. break;
-   60. // ...
-   61. default:
-   62. break;
-   63. }
-   64. }
-
-   66. // 自定义绘制逻辑。
-   67. void OnDrawBehind(ArkUI_NodeCustomEvent *event)
-   68. {
-   69. auto drawContext = OH_ArkUI_NodeCustomEvent_GetDrawContextInDraw(event);
-   70. // 获取图形绘制对象。
-   71. auto drawCanvas = reinterpret_cast<OH_Drawing_Canvas *>(OH_ArkUI_DrawContext_GetCanvas(drawContext));
-   72. // 获取组件大小。
-   73. auto size = OH_ArkUI_DrawContext_GetSize(drawContext);
-   74. // 绘制自定义内容。
-   75. auto path = OH_Drawing_PathCreate();
-   76. OH_Drawing_PathMoveTo(path, size.width / NUM_5, size.height / NUM_5);
-   77. OH_Drawing_PathLineTo(path, size.width * NUM_4 / NUM_5, size.height / NUM_5);
-   78. OH_Drawing_PathLineTo(path, size.width * NUM_4 / NUM_5, size.height * NUM_4 / NUM_5);
-   79. OH_Drawing_PathLineTo(path, size.width / NUM_5, size.height * NUM_4 / NUM_5);
-   80. OH_Drawing_PathLineTo(path, size.width / NUM_5, size.height / NUM_5);
-   81. OH_Drawing_PathClose(path);
-   82. auto brush = OH_Drawing_BrushCreate();
-   83. OH_Drawing_BrushSetColor(brush, 0xFFF0FAFF); // 蓝白色
-   84. OH_Drawing_CanvasAttachBrush(drawCanvas, brush);
-   85. OH_Drawing_CanvasDrawPath(drawCanvas, path);
-   86. // 释放资源
-   87. OH_Drawing_BrushDestroy(brush);
-   88. OH_Drawing_PathDestroy(path);
-   89. }
-
-   91. void OnDraw(ArkUI_NodeCustomEvent *event)
-   92. {
-   93. auto drawContext = OH_ArkUI_NodeCustomEvent_GetDrawContextInDraw(event);
-   94. // 获取图形绘制对象。
-   95. auto drawCanvas = reinterpret_cast<OH_Drawing_Canvas *>(OH_ArkUI_DrawContext_GetCanvas(drawContext));
-   96. // 获取组件大小。
-   97. auto size = OH_ArkUI_DrawContext_GetSize(drawContext);
-   98. // 绘制自定义内容。
-   99. auto path = OH_Drawing_PathCreate();
-   100. OH_Drawing_PathMoveTo(path, size.width / NUM_4, size.height / NUM_4);
-   101. OH_Drawing_PathLineTo(path, size.width * NUM_3 / NUM_4, size.height / NUM_4);
-   102. OH_Drawing_PathLineTo(path, size.width * NUM_3 / NUM_4, size.height * NUM_3 / NUM_4);
-   103. OH_Drawing_PathLineTo(path, size.width / NUM_4, size.height * NUM_3 / NUM_4);
-   104. OH_Drawing_PathLineTo(path, size.width / NUM_4, size.height / NUM_4);
-   105. OH_Drawing_PathClose(path);
-   106. auto brush = OH_Drawing_BrushCreate();
-   107. OH_Drawing_BrushSetColor(brush, 0xff2787D9); // 浅蓝色
-   108. OH_Drawing_CanvasAttachBrush(drawCanvas, brush);
-   109. OH_Drawing_CanvasDrawPath(drawCanvas, path);
-   110. // 释放资源
-   111. OH_Drawing_BrushDestroy(brush);
-   112. OH_Drawing_PathDestroy(path);
-   113. }
-
-   115. void OnDrawFront(ArkUI_NodeCustomEvent *event)
-   116. {
-   117. auto drawContext = OH_ArkUI_NodeCustomEvent_GetDrawContextInDraw(event);
-   118. // 获取图形绘制对象。
-   119. auto drawCanvas = reinterpret_cast<OH_Drawing_Canvas *>(OH_ArkUI_DrawContext_GetCanvas(drawContext));
-   120. // 获取组件大小。
-   121. auto size = OH_ArkUI_DrawContext_GetSize(drawContext);
-   122. // 绘制自定义内容。
-   123. auto path = OH_Drawing_PathCreate();
-   124. OH_Drawing_PathMoveTo(path, size.width / NUM_3, size.height / NUM_3);
-   125. OH_Drawing_PathLineTo(path, size.width * NUM_2 / NUM_3, size.height / NUM_3);
-   126. OH_Drawing_PathLineTo(path, size.width * NUM_2 / NUM_3, size.height * NUM_2 / NUM_3);
-   127. OH_Drawing_PathLineTo(path, size.width / NUM_3, size.height * NUM_2 / NUM_3);
-   128. OH_Drawing_PathLineTo(path, size.width / NUM_3, size.height / NUM_3);
-   129. OH_Drawing_PathClose(path);
-   130. auto brush = OH_Drawing_BrushCreate();
-   131. OH_Drawing_BrushSetColor(brush, 0xFF004AAF); // 深蓝色
-   132. OH_Drawing_CanvasAttachBrush(drawCanvas, brush);
-   133. OH_Drawing_CanvasDrawPath(drawCanvas, path);
-   134. // 释放资源
-   135. OH_Drawing_BrushDestroy(brush);
-   136. OH_Drawing_PathDestroy(path);
-   137. }
-   138. // ...
-   139. };
-
-   141. } // namespace NativeModule
-
-   143. #endif // MYAPPLICATION_ARKUICUSTOMNODE_H
-   ```
-
-   [ArkUICustomNode.h](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NativeType/NativeNodeUtilsSample/entry/src/main/cpp/ArkUICustomNode.h#L17-L219)
 3. 使用自定义绘制组件和自定义容器创建示例界面。
 
    ```
-   1. #include <arkui/native_node_napi.h>
-   2. #include <arkui/native_type.h>
-   3. #include <js_native_api.h>
+   #include <arkui/native_node_napi.h>
+   #include <arkui/native_type.h>
+   #include <js_native_api.h>
 
-   5. #include "NativeEntry.h"
-   6. #include "ArkUICustomContainerNode.h"
-   7. #include "ArkUICustomNode.h"
-   8. #include "ArkUIMessageMaskNode.h"
+   #include "NativeEntry.h"
+   #include "ArkUICustomContainerNode.h"
+   #include "ArkUICustomNode.h"
+   #include "ArkUIMessageMaskNode.h"
 
-   10. // 全局环境变量声明
-   11. static napi_env g_env = nullptr;
-   12. // ...
-   13. namespace NativeModule {
-   14. // ...
-   15. #define SIZE_150 150
-   16. // ...
-   17. napi_value CreateNativeRoot(napi_env env, napi_callback_info info)
-   18. {
-   19. size_t argc = 1;
-   20. napi_value args[1] = {nullptr};
+   // 全局环境变量声明
+   static napi_env g_env = nullptr;
+   // ...
+   namespace NativeModule {
+   // ...
+   #define SIZE_150 150
+   // ...
+   napi_value CreateNativeRoot(napi_env env, napi_callback_info info)
+   {
+       size_t argc = 1;
+       napi_value args[1] = {nullptr};
 
-   22. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+       napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
-   24. // 获取NodeContent。
-   25. ArkUI_NodeContentHandle contentHandle;
-   26. OH_ArkUI_GetNodeContentFromNapiValue(env, args[0], &contentHandle);
-   27. NativeEntry::GetInstance()->SetContentHandle(contentHandle);
+       // 获取NodeContent。
+       ArkUI_NodeContentHandle contentHandle;
+       OH_ArkUI_GetNodeContentFromNapiValue(env, args[0], &contentHandle);
+       NativeEntry::GetInstance()->SetContentHandle(contentHandle);
 
-   29. // 创建自定义容器和自定义绘制组件。
-   30. auto node = std::make_shared<ArkUICustomContainerNode>();
-   31. node->SetBackgroundColor(0xFFD5D5D5); // 浅灰色。
-   32. auto customNode = std::make_shared<ArkUICustomNode>();
-   33. customNode->SetBackgroundColor(0xFF707070); // 深灰色。
-   34. customNode->SetWidth(SIZE_150);
-   35. customNode->SetHeight(SIZE_150);
-   36. node->AddChild(customNode);
+       // 创建自定义容器和自定义绘制组件。
+       auto node = std::make_shared<ArkUICustomContainerNode>();
+       node->SetBackgroundColor(0xFFD5D5D5); // 浅灰色。
+       auto customNode = std::make_shared<ArkUICustomNode>();
+       customNode->SetBackgroundColor(0xFF707070); // 深灰色。
+       customNode->SetWidth(SIZE_150);
+       customNode->SetHeight(SIZE_150);
+       node->AddChild(customNode);
 
-   38. // 保持Native侧对象到管理类中，维护生命周期。
-   39. NativeEntry::GetInstance()->SetRootNode(node);
-   40. g_env = env;
-   41. return nullptr;
-   42. }
+       // 保持Native侧对象到管理类中，维护生命周期。
+       NativeEntry::GetInstance()->SetRootNode(node);
+       g_env = env;
+       return nullptr;
+   }
+   napi_value CreateNativeMessageRoot(napi_env env, napi_callback_info info)
+   {
+       constexpr int32_t messageMaskWidth = 400;
+       constexpr int32_t messageMaskHeight = 200;
 
-   44. napi_value DestroyNativeRoot(napi_env env, napi_callback_info info)
-   45. {
-   46. // 从管理类中释放Native侧对象。
-   47. NativeEntry::GetInstance()->DisposeRootNode();
-   48. return nullptr;
-   49. }
-   50. } // namespace NativeModule
+       size_t argc = 1;
+       napi_value args[1] = {nullptr};
+
+       napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+       // 避免重复创建导致的重复挂载
+       NativeEntry::GetInstance()->DisposeRootNode();
+
+       // 获取NodeContent
+       ArkUI_NodeContentHandle contentHandle;
+       OH_ArkUI_GetNodeContentFromNapiValue(env, args[0], &contentHandle);
+       NativeEntry::GetInstance()->SetContentHandle(contentHandle);
+
+       auto nodeAPI = NativeModuleInstance::GetInstance()->GetNativeNodeAPI();
+       auto rootColumn = std::make_shared<ArkUIColumnNode>();
+       auto rootColumnHandle = rootColumn->GetHandle();
+       
+       // 设置根容器样式
+       ArkUI_NumberValue paddingValue[] = {{.f32 = 20.0f}};
+       ArkUI_AttributeItem paddingItem = {paddingValue, 1};
+       nodeAPI->setAttribute(rootColumnHandle, NODE_PADDING, &paddingItem);
+
+       ArkUI_NumberValue bgColorValue[] = {{.u32 = 0xFFFFFFFF}};
+       ArkUI_AttributeItem bgColorItem = {bgColorValue, 1};
+       nodeAPI->setAttribute(rootColumnHandle, NODE_BACKGROUND_COLOR, &bgColorItem);
+       
+       // 创建消息气泡组件
+       auto maskNode = std::make_shared<ArkUIMessageMaskNode>();
+       maskNode->SetWidth(messageMaskWidth);
+       maskNode->SetHeight(messageMaskHeight);
+       maskNode->SetMessage("您有一条新消息");
+       maskNode->SetMaskVisible(false);  // 初始不显示蒙层
+       
+       // 创建按钮用于切换蒙层效果
+       auto buttonNode = std::make_shared<ArkUINode>(nodeAPI->createNode(ARKUI_NODE_BUTTON));
+       auto buttonHandle = buttonNode->GetHandle();
+       
+       // 设置按钮文本
+       ArkUI_AttributeItem labelItem;
+       const char* buttonLabel = "切换蒙层效果";
+       labelItem.string = buttonLabel;
+       nodeAPI->setAttribute(buttonHandle, NODE_BUTTON_LABEL, &labelItem);
+       
+       // 设置按钮样式
+       ArkUI_NumberValue marginValue[] = {{.f32 = 20.0f}};
+       ArkUI_AttributeItem marginItem = {marginValue, 1};
+       nodeAPI->setAttribute(buttonHandle, NODE_MARGIN, &marginItem);
+       
+       ArkUI_NumberValue btnBgColorValue[] = {{.u32 = 0xFF2787D9}};
+       ArkUI_AttributeItem btnBgColorItem = {btnBgColorValue, 1};
+       nodeAPI->setAttribute(buttonHandle, NODE_BACKGROUND_COLOR, &btnBgColorItem);
+
+       // 设置按钮点击事件
+       auto onClick = [](ArkUI_NodeEvent *event) {
+           auto maskNode = (ArkUIMessageMaskNode *)OH_ArkUI_NodeEvent_GetUserData(event);
+           static bool highlighted = false;
+           highlighted = !highlighted;
+           maskNode->SetMaskVisible(highlighted);
+       };
+       buttonNode->RegisterOnClick(onClick, maskNode.get());
+       
+       // 将组件添加到根容器
+       rootColumn->AddChild(buttonNode);
+       rootColumn->AddChild(maskNode);
+
+       // 保持Native侧对象到管理类中，维护生命周期
+       NativeEntry::GetInstance()->SetRootNode(rootColumn);
+       return nullptr;
+   }
+
+   napi_value DestroyNativeRoot(napi_env env, napi_callback_info info)
+   {
+       // 从管理类中释放Native侧对象。
+       NativeEntry::GetInstance()->DisposeRootNode();
+       return nullptr;
+   }
+   } // namespace NativeModule
    ```
-
-   [NativeEntry.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NativeType/NativeNodeUtilsSample/entry/src/main/cpp/NativeEntry.cpp#L28-L668)
 
 ## 通过前景绘制实现消息蒙层
 
 以下示例创建了一个消息提示组件，通过内容层绘制消息气泡与文本，并在前景层叠加星标装饰，实现消息高亮提示效果，常用于消息提醒和引导标记等场景。完整示例请参考[NativeNodeUtilsSample](https://gitcode.com/HarmonyOS_Samples/guide-snippets/tree/master/ArkUISample/NativeType/NativeNodeUtilsSample)。
 
-未添加消息蒙层，未添加蒙层，没有前景层叠加星标装饰效果：
+未添加消息蒙层，没有前景层叠加星标装饰效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/NniRVB13ROS5wJvRgSTVfg/zh-cn_image_0000002558764562.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/kpoR1e-3S4-N9r1L2KgGiw/zh-cn_image_0000002706833902.jpg)
 
 添加消息蒙层，添加后有前景层叠加星标装饰效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/AlOYIQwxRDic9ZnLa3PokQ/zh-cn_image_0000002558604906.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/olQlS_LdTWCgnwuOlpm5OA/zh-cn_image_0000002736313009.jpg)
 
 1. 按照[多层级绘制示例](arkts-user-defined-draw.md#多层级绘制示例)章节准备前置工程。
 2. 创建消息蒙层组件封装对象。
 
-   ```
-   1. #ifndef MYAPPLICATION_ARKUIMESSAGEMASKNODE_H
-   2. #define MYAPPLICATION_ARKUIMESSAGEMASKNODE_H
+   ```c
+   #ifndef MYAPPLICATION_ARKUIMESSAGEMASKNODE_H
+   #define MYAPPLICATION_ARKUIMESSAGEMASKNODE_H
 
-   4. #include <cmath>
-   5. #include <native_drawing/drawing_brush.h>
-   6. #include <native_drawing/drawing_canvas.h>
-   7. #include <native_drawing/drawing_color_filter.h>
-   8. #include <native_drawing/drawing_font.h>
-   9. #include <native_drawing/drawing_font_collection.h>
-   10. #include <native_drawing/drawing_path.h>
-   11. #include <native_drawing/drawing_pen.h>
-   12. #include <native_drawing/drawing_point.h>
-   13. #include <native_drawing/drawing_rect.h>
-   14. #include <native_drawing/drawing_round_rect.h>
-   15. #include <native_drawing/drawing_text_typography.h>
+   #include <cmath>
+   #include <native_drawing/drawing_brush.h>
+   #include <native_drawing/drawing_canvas.h>
+   #include <native_drawing/drawing_color_filter.h>
+   #include <native_drawing/drawing_font.h>
+   #include <native_drawing/drawing_font_collection.h>
+   #include <native_drawing/drawing_path.h>
+   #include <native_drawing/drawing_pen.h>
+   #include <native_drawing/drawing_point.h>
+   #include <native_drawing/drawing_rect.h>
+   #include <native_drawing/drawing_round_rect.h>
+   #include <native_drawing/drawing_text_typography.h>
 
-   17. #include <string>
+   #include <string>
 
-   19. #include "ArkUINode.h"
+   #include "ArkUINode.h"
 
-   21. namespace NativeModule {
-   22. class ArkUIMessageMaskNode : public ArkUINode {
-   23. public:
-   24. // 使用自定义组件类型ARKUI_NODE_CUSTOM创建组件
-   25. ArkUIMessageMaskNode()
-   26. : ArkUINode(
-   27. (NativeModuleInstance::GetInstance()->GetNativeNodeAPI())->createNode(ARKUI_NODE_CUSTOM))
-   28. {
-   29. // 注册自定义事件监听器
-   30. nativeModule_->addNodeCustomEventReceiver(handle_, OnStaticCustomEvent);
-   31. // 声明自定义事件并转递自身作为自定义数据
-   32. nativeModule_->registerNodeCustomEvent(handle_, ARKUI_NODE_CUSTOM_EVENT_ON_DRAW_FRONT, 0, this);
-   33. nativeModule_->registerNodeCustomEvent(handle_, ARKUI_NODE_CUSTOM_EVENT_ON_DRAW, 0, this);
-   34. nativeModule_->registerNodeCustomEvent(handle_, ARKUI_NODE_CUSTOM_EVENT_ON_DRAW_BEHIND, 0, this);
-   35. }
+   namespace NativeModule {
+   class ArkUIMessageMaskNode : public ArkUINode {
+   public:
+       // 使用自定义组件类型ARKUI_NODE_CUSTOM创建组件
+       ArkUIMessageMaskNode()
+           : ArkUINode(
+                 (NativeModuleInstance::GetInstance()->GetNativeNodeAPI())->createNode(ARKUI_NODE_CUSTOM))
+       {
+           // 注册自定义事件监听器
+           nativeModule_->addNodeCustomEventReceiver(handle_, OnStaticCustomEvent);
+           // 声明自定义事件并传递自身作为自定义数据
+           nativeModule_->registerNodeCustomEvent(handle_, ARKUI_NODE_CUSTOM_EVENT_ON_DRAW_FRONT, 0, this);
+           nativeModule_->registerNodeCustomEvent(handle_, ARKUI_NODE_CUSTOM_EVENT_ON_DRAW, 0, this);
+           nativeModule_->registerNodeCustomEvent(handle_, ARKUI_NODE_CUSTOM_EVENT_ON_DRAW_BEHIND, 0, this);
+       }
 
-   37. ~ArkUIMessageMaskNode() override
-   38. {
-   39. // 反注册自定义事件监听器
-   40. nativeModule_->removeNodeCustomEventReceiver(handle_, OnStaticCustomEvent);
-   41. // 取消声明自定义事件
-   42. nativeModule_->unregisterNodeCustomEvent(handle_, ARKUI_NODE_CUSTOM_EVENT_ON_DRAW_FRONT);
-   43. nativeModule_->unregisterNodeCustomEvent(handle_, ARKUI_NODE_CUSTOM_EVENT_ON_DRAW);
-   44. nativeModule_->unregisterNodeCustomEvent(handle_, ARKUI_NODE_CUSTOM_EVENT_ON_DRAW_BEHIND);
-   45. }
+       ~ArkUIMessageMaskNode() override
+       {
+           // 反注册自定义事件监听器
+           nativeModule_->removeNodeCustomEventReceiver(handle_, OnStaticCustomEvent);
+           // 取消声明自定义事件
+           nativeModule_->unregisterNodeCustomEvent(handle_, ARKUI_NODE_CUSTOM_EVENT_ON_DRAW_FRONT);
+           nativeModule_->unregisterNodeCustomEvent(handle_, ARKUI_NODE_CUSTOM_EVENT_ON_DRAW);
+           nativeModule_->unregisterNodeCustomEvent(handle_, ARKUI_NODE_CUSTOM_EVENT_ON_DRAW_BEHIND);
+       }
 
-   47. // 设置消息文本
-   48. void SetMessage(const std::string& message)
-   49. {
-   50. message_ = message;
-   51. nativeModule_->markDirty(handle_, NODE_NEED_RENDER);
-   52. }
+       // 设置消息文本
+       void SetMessage(const std::string& message)
+       {
+           message_ = message;
+           nativeModule_->markDirty(handle_, NODE_NEED_RENDER);
+       }
 
-   54. // 设置是否显示蒙层
-   55. void SetMaskVisible(bool visible)
-   56. {
-   57. maskVisible_ = visible;
-   58. nativeModule_->markDirty(handle_, NODE_NEED_RENDER);
-   59. }
+       // 设置是否显示蒙层
+       void SetMaskVisible(bool visible)
+       {
+           maskVisible_ = visible;
+           nativeModule_->markDirty(handle_, NODE_NEED_RENDER);
+       }
 
-   61. private:
-   62. static constexpr int starDecorationCount = 3;
-   63. static constexpr int starPointCount = 5;
-   64. static constexpr float starStartAngleDegrees = -90.0f;
-   65. static constexpr float starAngleStepDegrees = 72.0f;
-   66. static constexpr float starInnerAngleOffsetDegrees = 36.0f;
-   67. static constexpr float starInnerRadiusRatio = 0.4f;
-   68. static constexpr float degreeToRadian = 3.14159265f / 180.0f;
-   69. static constexpr float messageTextFontSize = 23.0f;
+   private:
+       static constexpr int starDecorationCount = 3;
+       static constexpr int starPointCount = 5;
+       static constexpr float starStartAngleDegrees = -90.0f;
+       static constexpr float starAngleStepDegrees = 72.0f;
+       static constexpr float starInnerAngleOffsetDegrees = 36.0f;
+       static constexpr float starInnerRadiusRatio = 0.4f;
+       static constexpr float degreeToRadian = 3.14159265f / 180.0f;
+       static constexpr float messageTextFontSize = 23.0f;
 
-   71. static void OnStaticCustomEvent(ArkUI_NodeCustomEvent* event)
-   72. {
-   73. auto customNode = reinterpret_cast<ArkUIMessageMaskNode*>(OH_ArkUI_NodeCustomEvent_GetUserData(event));
-   74. auto type = OH_ArkUI_NodeCustomEvent_GetEventType(event);
-   75. switch (type) {
-   76. case ARKUI_NODE_CUSTOM_EVENT_ON_DRAW_BEHIND:
-   77. customNode->OnDrawBehind(event);
-   78. break;
-   79. case ARKUI_NODE_CUSTOM_EVENT_ON_DRAW:
-   80. customNode->OnDraw(event);
-   81. break;
-   82. case ARKUI_NODE_CUSTOM_EVENT_ON_DRAW_FRONT:
-   83. customNode->OnDrawFront(event);
-   84. break;
-   85. default:
-   86. break;
-   87. }
-   88. }
+       static void OnStaticCustomEvent(ArkUI_NodeCustomEvent* event)
+       {
+           auto customNode = reinterpret_cast<ArkUIMessageMaskNode*>(OH_ArkUI_NodeCustomEvent_GetUserData(event));
+           auto type = OH_ArkUI_NodeCustomEvent_GetEventType(event);
+           switch (type) {
+               case ARKUI_NODE_CUSTOM_EVENT_ON_DRAW_BEHIND:
+                   customNode->OnDrawBehind(event);
+                   break;
+               case ARKUI_NODE_CUSTOM_EVENT_ON_DRAW:
+                   customNode->OnDraw(event);
+                   break;
+               case ARKUI_NODE_CUSTOM_EVENT_ON_DRAW_FRONT:
+                   customNode->OnDrawFront(event);
+                   break;
+               default:
+                   break;
+           }
+       }
 
-   90. // 自定义内容背景层：绘制聊天界面背景
-   91. void OnDrawBehind(ArkUI_NodeCustomEvent* event)
-   92. {
-   93. auto drawContext = OH_ArkUI_NodeCustomEvent_GetDrawContextInDraw(event);
-   94. auto canvas = reinterpret_cast<OH_Drawing_Canvas*>(OH_ArkUI_DrawContext_GetCanvas(drawContext));
-   95. auto size = OH_ArkUI_DrawContext_GetSize(drawContext);
+       // 自定义内容层背景：绘制聊天界面背景
+       void OnDrawBehind(ArkUI_NodeCustomEvent* event)
+       {
+           auto drawContext = OH_ArkUI_NodeCustomEvent_GetDrawContextInDraw(event);
+           auto canvas = reinterpret_cast<OH_Drawing_Canvas*>(OH_ArkUI_DrawContext_GetCanvas(drawContext));
+           auto size = OH_ArkUI_DrawContext_GetSize(drawContext);
 
-   97. // 绘制浅灰色背景
-   98. auto bgRect = OH_Drawing_RectCreate(0, 0, size.width, size.height);
-   99. auto brush = OH_Drawing_BrushCreate();
-   100. OH_Drawing_BrushSetColor(brush, 0xFFF5F5F5);
-   101. OH_Drawing_CanvasAttachBrush(canvas, brush);
-   102. OH_Drawing_CanvasDrawRect(canvas, bgRect);
-   103. OH_Drawing_CanvasDetachBrush(canvas);
-   104. OH_Drawing_BrushDestroy(brush);
-   105. OH_Drawing_RectDestroy(bgRect);
-   106. }
+           // 绘制浅灰色背景
+           auto bgRect = OH_Drawing_RectCreate(0, 0, size.width, size.height);
+           auto brush = OH_Drawing_BrushCreate();
+           OH_Drawing_BrushSetColor(brush, 0xFFF5F5F5);
+           OH_Drawing_CanvasAttachBrush(canvas, brush);
+           OH_Drawing_CanvasDrawRect(canvas, bgRect);
+           OH_Drawing_CanvasDetachBrush(canvas);
+           OH_Drawing_BrushDestroy(brush);
+           OH_Drawing_RectDestroy(bgRect);
+       }
 
-   108. // 自定义内容层
-   109. void OnDraw(ArkUI_NodeCustomEvent* event)
-   110. {
-   111. auto drawContext = OH_ArkUI_NodeCustomEvent_GetDrawContextInDraw(event);
-   112. auto canvas = reinterpret_cast<OH_Drawing_Canvas*>(OH_ArkUI_DrawContext_GetCanvas(drawContext));
-   113. auto size = OH_ArkUI_DrawContext_GetSize(drawContext);
+       // 自定义内容层
+       void OnDraw(ArkUI_NodeCustomEvent* event)
+       {
+           auto drawContext = OH_ArkUI_NodeCustomEvent_GetDrawContextInDraw(event);
+           auto canvas = reinterpret_cast<OH_Drawing_Canvas*>(OH_ArkUI_DrawContext_GetCanvas(drawContext));
+           auto size = OH_ArkUI_DrawContext_GetSize(drawContext);
 
-   115. float padding = 50.0f;
-   116. float bubbleWidth = size.width - 2 * padding;
-   117. float bubbleHeight = size.height - 2 * padding;
-   118. float cornerRadius = 8.0f;
-   119. float textX = padding + 15.0f;
-   120. float textY = padding + 20.0f;
-   121. float textMaxWidth = bubbleWidth - 30.0f;
+           float padding = 50.0f;
+           float bubbleWidth = size.width - 2 * padding;
+           float bubbleHeight = size.height - 2 * padding;
+           float cornerRadius = 8.0f;
+           float textX = padding + 15.0f;
+           float textY = padding + 20.0f;
+           float textMaxWidth = bubbleWidth - 30.0f;
 
-   123. // 绘制气泡阴影
-   124. auto shadowRect = OH_Drawing_RectCreate(
-   125. padding + 2, padding + 2, padding + bubbleWidth + 2, padding + bubbleHeight + 2);
-   126. auto* shadowRoundRect = OH_Drawing_RoundRectCreate(shadowRect, cornerRadius, cornerRadius);
-   127. auto shadowBrush = OH_Drawing_BrushCreate();
-   128. OH_Drawing_BrushSetColor(shadowBrush, 0x30000000);
-   129. OH_Drawing_CanvasAttachBrush(canvas, shadowBrush);
-   130. OH_Drawing_CanvasDrawRoundRect(canvas, shadowRoundRect);
-   131. OH_Drawing_CanvasDetachBrush(canvas);
-   132. OH_Drawing_BrushDestroy(shadowBrush);
-   133. OH_Drawing_RoundRectDestroy(shadowRoundRect);
-   134. OH_Drawing_RectDestroy(shadowRect);
+           // 绘制气泡阴影
+           auto shadowRect = OH_Drawing_RectCreate(
+               padding + 2, padding + 2, padding + bubbleWidth + 2, padding + bubbleHeight + 2);
+           auto* shadowRoundRect = OH_Drawing_RoundRectCreate(shadowRect, cornerRadius, cornerRadius);
+           auto shadowBrush = OH_Drawing_BrushCreate();
+           OH_Drawing_BrushSetColor(shadowBrush, 0x30000000);
+           OH_Drawing_CanvasAttachBrush(canvas, shadowBrush);
+           OH_Drawing_CanvasDrawRoundRect(canvas, shadowRoundRect);
+           OH_Drawing_CanvasDetachBrush(canvas);
+           OH_Drawing_BrushDestroy(shadowBrush);
+           OH_Drawing_RoundRectDestroy(shadowRoundRect);
+           OH_Drawing_RectDestroy(shadowRect);
 
-   136. // 绘制绿色气泡背景
-   137. auto bubbleRect = OH_Drawing_RectCreate(padding, padding, padding + bubbleWidth, padding + bubbleHeight);
-   138. auto* bubbleRoundRect = OH_Drawing_RoundRectCreate(bubbleRect, cornerRadius, cornerRadius);
-   139. auto bubbleBrush = OH_Drawing_BrushCreate();
-   140. OH_Drawing_BrushSetColor(bubbleBrush, 0xFF95EC69);
-   141. OH_Drawing_CanvasAttachBrush(canvas, bubbleBrush);
-   142. OH_Drawing_CanvasDrawRoundRect(canvas, bubbleRoundRect);
-   143. OH_Drawing_CanvasDetachBrush(canvas);
-   144. OH_Drawing_BrushDestroy(bubbleBrush);
+           // 绘制绿色气泡背景
+           auto bubbleRect = OH_Drawing_RectCreate(padding, padding, padding + bubbleWidth, padding + bubbleHeight);
+           auto* bubbleRoundRect = OH_Drawing_RoundRectCreate(bubbleRect, cornerRadius, cornerRadius);
+           auto bubbleBrush = OH_Drawing_BrushCreate();
+           OH_Drawing_BrushSetColor(bubbleBrush, 0xFF95EC69);
+           OH_Drawing_CanvasAttachBrush(canvas, bubbleBrush);
+           OH_Drawing_CanvasDrawRoundRect(canvas, bubbleRoundRect);
+           OH_Drawing_CanvasDetachBrush(canvas);
+           OH_Drawing_BrushDestroy(bubbleBrush);
 
-   146. // 绘制气泡边框
-   147. auto pen = OH_Drawing_PenCreate();
-   148. OH_Drawing_PenSetWidth(pen, 1.0f);
-   149. OH_Drawing_PenSetColor(pen, 0xFF7FD65A);
-   150. OH_Drawing_CanvasAttachPen(canvas, pen);
-   151. OH_Drawing_CanvasDrawRoundRect(canvas, bubbleRoundRect);
-   152. OH_Drawing_CanvasDetachPen(canvas);
-   153. OH_Drawing_PenDestroy(pen);
-   154. OH_Drawing_RoundRectDestroy(bubbleRoundRect);
-   155. OH_Drawing_RectDestroy(bubbleRect);
+           // 绘制气泡边框
+           auto pen = OH_Drawing_PenCreate();
+           OH_Drawing_PenSetWidth(pen, 1.0f);
+           OH_Drawing_PenSetColor(pen, 0xFF7FD65A);
+           OH_Drawing_CanvasAttachPen(canvas, pen);
+           OH_Drawing_CanvasDrawRoundRect(canvas, bubbleRoundRect);
+           OH_Drawing_CanvasDetachPen(canvas);
+           OH_Drawing_PenDestroy(pen);
+           OH_Drawing_RoundRectDestroy(bubbleRoundRect);
+           OH_Drawing_RectDestroy(bubbleRect);
 
-   157. // 绘制消息文本
-   158. DrawMessageText(canvas, textX, textY, textMaxWidth);
-   159. }
+           // 绘制消息文本
+           DrawMessageText(canvas, textX, textY, textMaxWidth);
+       }
 
-   161. // 自定义内容前景层：绘制装饰性蒙层
-   162. void OnDrawFront(ArkUI_NodeCustomEvent* event)
-   163. {
-   164. if (!maskVisible_) {
-   165. return;
-   166. }
+       // 自定义内容前景层：绘制装饰性蒙层
+       void OnDrawFront(ArkUI_NodeCustomEvent* event)
+       {
+           if (!maskVisible_) {
+               return;
+           }
 
-   168. auto drawContext = OH_ArkUI_NodeCustomEvent_GetDrawContextInDraw(event);
-   169. auto canvas = reinterpret_cast<OH_Drawing_Canvas*>(OH_ArkUI_DrawContext_GetCanvas(drawContext));
+           auto drawContext = OH_ArkUI_NodeCustomEvent_GetDrawContextInDraw(event);
+           auto canvas = reinterpret_cast<OH_Drawing_Canvas*>(OH_ArkUI_DrawContext_GetCanvas(drawContext));
 
-   171. float padding = 50.0f;
+           float padding = 50.0f;
 
-   173. auto starBrush = OH_Drawing_BrushCreate();
-   174. OH_Drawing_BrushSetColor(starBrush, 0x88FFFFFF);
-   175. OH_Drawing_CanvasAttachBrush(canvas, starBrush);
+           auto starBrush = OH_Drawing_BrushCreate();
+           OH_Drawing_BrushSetColor(starBrush, 0x88FFFFFF);
+           OH_Drawing_CanvasAttachBrush(canvas, starBrush);
 
-   177. const float starRadius = 13.0f;
-   178. const float textLeftX = padding + 26.0f;
-   179. const float textRightX = padding + 146.0f;
-   180. const float starBottomY = padding + 50.0f;
-   181. const float starTopY = padding + 10.0f;
-   182. for (int i = 0; i < starDecorationCount; ++i) {
-   183. float t = static_cast<float>(i) / static_cast<float>(starDecorationCount - 1);
-   184. float starX = textLeftX + (textRightX - textLeftX) * t;
-   185. float starY = starBottomY + (starTopY - starBottomY) * t;
-   186. DrawStar(canvas, starX, starY, starRadius);
-   187. }
+           const float starRadius = 13.0f;
+           const float textLeftX = padding + 26.0f;
+           const float textRightX = padding + 146.0f;
+           const float starBottomY = padding + 50.0f;
+           const float starTopY = padding + 10.0f;
+           for (int i = 0; i < starDecorationCount; ++i) {
+               float t = static_cast<float>(i) / static_cast<float>(starDecorationCount - 1);
+               float starX = textLeftX + (textRightX - textLeftX) * t;
+               float starY = starBottomY + (starTopY - starBottomY) * t;
+               DrawStar(canvas, starX, starY, starRadius);
+           }
 
-   189. OH_Drawing_CanvasDetachBrush(canvas);
-   190. OH_Drawing_BrushDestroy(starBrush);
-   191. }
+           OH_Drawing_CanvasDetachBrush(canvas);
+           OH_Drawing_BrushDestroy(starBrush);
+       }
 
-   193. // 绘制五角星
-   194. void DrawStar(OH_Drawing_Canvas* canvas, float cx, float cy, float radius)
-   195. {
-   196. auto path = OH_Drawing_PathCreate();
-   197. for (int i = 0; i < starPointCount; ++i) {
-   198. float angle = starStartAngleDegrees + i * starAngleStepDegrees;
-   199. float rad = angle * degreeToRadian;
-   200. float x = cx + radius * std::cos(rad);
-   201. float y = cy + radius * std::sin(rad);
-   202. if (i == 0) {
-   203. OH_Drawing_PathMoveTo(path, x, y);
-   204. } else {
-   205. OH_Drawing_PathLineTo(path, x, y);
-   206. }
+       // 绘制五角星
+       void DrawStar(OH_Drawing_Canvas* canvas, float cx, float cy, float radius)
+       {
+           auto path = OH_Drawing_PathCreate();
+           for (int i = 0; i < starPointCount; ++i) {
+               float angle = starStartAngleDegrees + i * starAngleStepDegrees;
+               float rad = angle * degreeToRadian;
+               float x = cx + radius * std::cos(rad);
+               float y = cy + radius * std::sin(rad);
+               if (i == 0) {
+                   OH_Drawing_PathMoveTo(path, x, y);
+               } else {
+                   OH_Drawing_PathLineTo(path, x, y);
+               }
 
-   208. // 内角点
-   209. float innerAngle = angle + starInnerAngleOffsetDegrees;
-   210. float innerRad = innerAngle * degreeToRadian;
-   211. float innerX = cx + radius * starInnerRadiusRatio * std::cos(innerRad);
-   212. float innerY = cy + radius * starInnerRadiusRatio * std::sin(innerRad);
-   213. OH_Drawing_PathLineTo(path, innerX, innerY);
-   214. }
+               // 内角点
+               float innerAngle = angle + starInnerAngleOffsetDegrees;
+               float innerRad = innerAngle * degreeToRadian;
+               float innerX = cx + radius * starInnerRadiusRatio * std::cos(innerRad);
+               float innerY = cy + radius * starInnerRadiusRatio * std::sin(innerRad);
+               OH_Drawing_PathLineTo(path, innerX, innerY);
+           }
 
-   216. OH_Drawing_PathClose(path);
-   217. OH_Drawing_CanvasDrawPath(canvas, path);
-   218. OH_Drawing_PathDestroy(path);
-   219. }
+           OH_Drawing_PathClose(path);
+           OH_Drawing_CanvasDrawPath(canvas, path);
+           OH_Drawing_PathDestroy(path);
+       }
 
-   221. // 绘制消息文本
-   222. void DrawMessageText(OH_Drawing_Canvas* canvas, float x, float y, float maxWidth)
-   223. {
-   224. // 创建字体集合
-   225. auto* fontCollection = OH_Drawing_CreateFontCollection();
+       // 绘制消息文本
+       void DrawMessageText(OH_Drawing_Canvas* canvas, float x, float y, float maxWidth)
+       {
+           // 创建字体集合
+           auto* fontCollection = OH_Drawing_CreateFontCollection();
 
-   227. // 创建排版样式
-   228. auto* typographyStyle = OH_Drawing_CreateTypographyStyle();
-   229. OH_Drawing_SetTypographyTextAlign(typographyStyle, TEXT_ALIGN_LEFT);
+           // 创建排版样式
+           auto* typographyStyle = OH_Drawing_CreateTypographyStyle();
+           OH_Drawing_SetTypographyTextAlign(typographyStyle, TEXT_ALIGN_LEFT);
 
-   231. // 创建排版处理器
-   232. auto* typographyHandler = OH_Drawing_CreateTypographyHandler(typographyStyle, fontCollection);
+           // 创建排版处理器
+           auto* typographyHandler = OH_Drawing_CreateTypographyHandler(typographyStyle, fontCollection);
 
-   234. // 创建文本样式
-   235. auto* textStyle = OH_Drawing_CreateTextStyle();
-   236. OH_Drawing_SetTextStyleColor(textStyle, 0xFF000000); // 纯黑
-   237. OH_Drawing_SetTextStyleFontSize(textStyle, messageTextFontSize);
-   238. OH_Drawing_SetTextStyleFontWeight(textStyle, FONT_WEIGHT_400);
-   239. auto textBrush = OH_Drawing_BrushCreate();
-   240. OH_Drawing_BrushSetColor(textBrush, 0xFF000000);
-   241. OH_Drawing_SetTextStyleForegroundBrush(textStyle, textBrush);
+           // 创建文本样式
+           auto* textStyle = OH_Drawing_CreateTextStyle();
+           OH_Drawing_SetTextStyleColor(textStyle, 0xFF000000); // 纯黑
+           OH_Drawing_SetTextStyleFontSize(textStyle, messageTextFontSize);
+           OH_Drawing_SetTextStyleFontWeight(textStyle, FONT_WEIGHT_400);
+           auto textBrush = OH_Drawing_BrushCreate();
+           OH_Drawing_BrushSetColor(textBrush, 0xFF000000);
+           OH_Drawing_SetTextStyleForegroundBrush(textStyle, textBrush);
 
-   243. // 添加文本
-   244. OH_Drawing_TypographyHandlerPushTextStyle(typographyHandler, textStyle);
-   245. OH_Drawing_TypographyHandlerAddText(typographyHandler, message_.c_str());
-   246. OH_Drawing_TypographyHandlerPopTextStyle(typographyHandler);
+           // 添加文本
+           OH_Drawing_TypographyHandlerPushTextStyle(typographyHandler, textStyle);
+           OH_Drawing_TypographyHandlerAddText(typographyHandler, message_.c_str());
+           OH_Drawing_TypographyHandlerPopTextStyle(typographyHandler);
 
-   248. // 创建排版对象并绘制
-   249. auto* typography = OH_Drawing_CreateTypography(typographyHandler);
-   250. OH_Drawing_TypographyLayout(typography, maxWidth);
-   251. OH_Drawing_TypographyPaint(typography, canvas, x, y);
+           // 创建排版对象并绘制
+           auto* typography = OH_Drawing_CreateTypography(typographyHandler);
+           OH_Drawing_TypographyLayout(typography, maxWidth);
+           OH_Drawing_TypographyPaint(typography, canvas, x, y);
 
-   253. // 释放资源
-   254. OH_Drawing_DestroyTextStyle(textStyle);
-   255. OH_Drawing_DestroyTypography(typography);
-   256. OH_Drawing_DestroyTypographyHandler(typographyHandler);
-   257. OH_Drawing_DestroyTypographyStyle(typographyStyle);
-   258. OH_Drawing_DestroyFontCollection(fontCollection);
-   259. OH_Drawing_BrushDestroy(textBrush);
-   260. }
+           // 释放资源
+           OH_Drawing_DestroyTextStyle(textStyle);
+           OH_Drawing_DestroyTypography(typography);
+           OH_Drawing_DestroyTypographyHandler(typographyHandler);
+           OH_Drawing_DestroyTypographyStyle(typographyStyle);
+           OH_Drawing_DestroyFontCollection(fontCollection);
+           OH_Drawing_BrushDestroy(textBrush);
+       }
 
-   262. std::string message_ = "";
-   263. bool maskVisible_ = false;
-   264. };
-   265. } // namespace NativeModule
+       std::string message_ = "这是一条消息提示";
+       bool maskVisible_ = false;
+   };
+   } // namespace NativeModule
 
-   267. #endif // MYAPPLICATION_ARKUIMESSAGEMASKNODE_H
+   #endif // MYAPPLICATION_ARKUIMESSAGEMASKNODE_H
    ```
 3. 使用消息蒙层组件创建示例界面。
 
    ```
-   1. #include <arkui/native_node_napi.h>
-   2. #include <arkui/native_type.h>
-   3. #include <js_native_api.h>
+   #include <arkui/native_node_napi.h>
+   #include <arkui/native_type.h>
+   #include <js_native_api.h>
 
-   5. #include "NativeEntry.h"
-   6. #include "ArkUICustomContainerNode.h"
-   7. #include "ArkUICustomNode.h"
-   8. #include "ArkUIMessageMaskNode.h"
+   #include "NativeEntry.h"
+   #include "ArkUICustomContainerNode.h"
+   #include "ArkUICustomNode.h"
+   #include "ArkUIMessageMaskNode.h"
 
-   10. // 全局环境变量声明
-   11. static napi_env g_env = nullptr;
-   12. // ...
-   13. namespace NativeModule {
-   14. // ...
-   15. napi_value CreateNativeMessageRoot(napi_env env, napi_callback_info info)
-   16. {
-   17. constexpr int32_t messageMaskWidth = 400;
-   18. constexpr int32_t messageMaskHeight = 200;
+   // 全局环境变量声明
+   static napi_env g_env = nullptr;
+   // ...
+   namespace NativeModule {
+   // ...
+   napi_value CreateNativeMessageRoot(napi_env env, napi_callback_info info)
+   {
+       constexpr int32_t messageMaskWidth = 400;
+       constexpr int32_t messageMaskHeight = 200;
 
-   20. size_t argc = 1;
-   21. napi_value args[1] = {nullptr};
+       size_t argc = 1;
+       napi_value args[1] = {nullptr};
 
-   23. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+       napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
-   25. // 避免重复创建导致的重复挂载
-   26. NativeEntry::GetInstance()->DisposeRootNode();
+       // 避免重复创建导致的重复挂载
+       NativeEntry::GetInstance()->DisposeRootNode();
 
-   28. // 获取NodeContent
-   29. ArkUI_NodeContentHandle contentHandle;
-   30. OH_ArkUI_GetNodeContentFromNapiValue(env, args[0], &contentHandle);
-   31. NativeEntry::GetInstance()->SetContentHandle(contentHandle);
+       // 获取NodeContent
+       ArkUI_NodeContentHandle contentHandle;
+       OH_ArkUI_GetNodeContentFromNapiValue(env, args[0], &contentHandle);
+       NativeEntry::GetInstance()->SetContentHandle(contentHandle);
 
-   33. auto nodeAPI = NativeModuleInstance::GetInstance()->GetNativeNodeAPI();
-   34. auto rootColumn = std::make_shared<ArkUIColumnNode>();
-   35. auto rootColumnHandle = rootColumn->GetHandle();
+       auto nodeAPI = NativeModuleInstance::GetInstance()->GetNativeNodeAPI();
+       auto rootColumn = std::make_shared<ArkUIColumnNode>();
+       auto rootColumnHandle = rootColumn->GetHandle();
+       
+       // 设置根容器样式
+       ArkUI_NumberValue paddingValue[] = {{.f32 = 20.0f}};
+       ArkUI_AttributeItem paddingItem = {paddingValue, 1};
+       nodeAPI->setAttribute(rootColumnHandle, NODE_PADDING, &paddingItem);
 
-   37. // 设置根容器样式
-   38. ArkUI_NumberValue paddingValue[] = {{.f32 = 20.0f}};
-   39. ArkUI_AttributeItem paddingItem = {paddingValue, 1};
-   40. nodeAPI->setAttribute(rootColumnHandle, NODE_PADDING, &paddingItem);
+       ArkUI_NumberValue bgColorValue[] = {{.u32 = 0xFFFFFFFF}};
+       ArkUI_AttributeItem bgColorItem = {bgColorValue, 1};
+       nodeAPI->setAttribute(rootColumnHandle, NODE_BACKGROUND_COLOR, &bgColorItem);
+       
+       // 创建消息气泡组件
+       auto maskNode = std::make_shared<ArkUIMessageMaskNode>();
+       maskNode->SetWidth(messageMaskWidth);
+       maskNode->SetHeight(messageMaskHeight);
+       maskNode->SetMessage("您有一条新消息");
+       maskNode->SetMaskVisible(false);  // 初始不显示蒙层
+       
+       // 创建按钮用于切换蒙层效果
+       auto buttonNode = std::make_shared<ArkUINode>(nodeAPI->createNode(ARKUI_NODE_BUTTON));
+       auto buttonHandle = buttonNode->GetHandle();
+       
+       // 设置按钮文本
+       ArkUI_AttributeItem labelItem;
+       const char* buttonLabel = "切换蒙层效果";
+       labelItem.string = buttonLabel;
+       nodeAPI->setAttribute(buttonHandle, NODE_BUTTON_LABEL, &labelItem);
+       
+       // 设置按钮样式
+       ArkUI_NumberValue marginValue[] = {{.f32 = 20.0f}};
+       ArkUI_AttributeItem marginItem = {marginValue, 1};
+       nodeAPI->setAttribute(buttonHandle, NODE_MARGIN, &marginItem);
+       
+       ArkUI_NumberValue btnBgColorValue[] = {{.u32 = 0xFF2787D9}};
+       ArkUI_AttributeItem btnBgColorItem = {btnBgColorValue, 1};
+       nodeAPI->setAttribute(buttonHandle, NODE_BACKGROUND_COLOR, &btnBgColorItem);
 
-   42. ArkUI_NumberValue bgColorValue[] = {{.u32 = 0xFFFFFFFF}};
-   43. ArkUI_AttributeItem bgColorItem = {bgColorValue, 1};
-   44. nodeAPI->setAttribute(rootColumnHandle, NODE_BACKGROUND_COLOR, &bgColorItem);
+       // 设置按钮点击事件
+       auto onClick = [](ArkUI_NodeEvent *event) {
+           auto maskNode = (ArkUIMessageMaskNode *)OH_ArkUI_NodeEvent_GetUserData(event);
+           static bool highlighted = false;
+           highlighted = !highlighted;
+           maskNode->SetMaskVisible(highlighted);
+       };
+       buttonNode->RegisterOnClick(onClick, maskNode.get());
+       
+       // 将组件添加到根容器
+       rootColumn->AddChild(buttonNode);
+       rootColumn->AddChild(maskNode);
 
-   46. // 创建消息气泡组件
-   47. auto maskNode = std::make_shared<ArkUIMessageMaskNode>();
-   48. maskNode->SetWidth(messageMaskWidth);
-   49. maskNode->SetHeight(messageMaskHeight);
-   50. maskNode->SetMessage("您有一条新消息");
-   51. maskNode->SetMaskVisible(false);  // 初始不显示蒙层
+       // 保持Native侧对象到管理类中，维护生命周期
+       NativeEntry::GetInstance()->SetRootNode(rootColumn);
+       return nullptr;
+   }
 
-   53. // 创建按钮用于切换蒙层效果
-   54. auto buttonNode = std::make_shared<ArkUINode>(nodeAPI->createNode(ARKUI_NODE_BUTTON));
-   55. auto buttonHandle = buttonNode->GetHandle();
-
-   57. // 设置按钮文本
-   58. ArkUI_AttributeItem labelItem;
-   59. const char* buttonLabel = "切换蒙层效果";
-   60. labelItem.string = buttonLabel;
-   61. nodeAPI->setAttribute(buttonHandle, NODE_BUTTON_LABEL, &labelItem);
-
-   63. // 设置按钮样式
-   64. ArkUI_NumberValue marginValue[] = {{.f32 = 20.0f}};
-   65. ArkUI_AttributeItem marginItem = {marginValue, 1};
-   66. nodeAPI->setAttribute(buttonHandle, NODE_MARGIN, &marginItem);
-
-   68. ArkUI_NumberValue btnBgColorValue[] = {{.u32 = 0xFF2787D9}};
-   69. ArkUI_AttributeItem btnBgColorItem = {btnBgColorValue, 1};
-   70. nodeAPI->setAttribute(buttonHandle, NODE_BACKGROUND_COLOR, &btnBgColorItem);
-
-   72. // 设置按钮点击事件
-   73. auto onClick = [](ArkUI_NodeEvent *event) {
-   74. auto maskNode = (ArkUIMessageMaskNode *)OH_ArkUI_NodeEvent_GetUserData(event);
-   75. static bool highlighted = false;
-   76. highlighted = !highlighted;
-   77. maskNode->SetMaskVisible(highlighted);
-   78. };
-   79. buttonNode->RegisterOnClick(onClick, maskNode.get());
-
-   81. // 将组件添加到根容器
-   82. rootColumn->AddChild(buttonNode);
-   83. rootColumn->AddChild(maskNode);
-
-   85. // 保持Native侧对象到管理类中，维护生命周期
-   86. NativeEntry::GetInstance()->SetRootNode(rootColumn);
-   87. return nullptr;
-   88. }
-
-   90. napi_value DestroyNativeRoot(napi_env env, napi_callback_info info)
-   91. {
-   92. // 从管理类中释放Native侧对象。
-   93. NativeEntry::GetInstance()->DisposeRootNode();
-   94. return nullptr;
-   95. }
-   96. } // namespace NativeModule
+   napi_value DestroyNativeRoot(napi_env env, napi_callback_info info)
+   {
+       // 从管理类中释放Native侧对象。
+       NativeEntry::GetInstance()->DisposeRootNode();
+       return nullptr;
+   }
+   } // namespace NativeModule
    ```

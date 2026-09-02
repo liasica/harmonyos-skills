@@ -3,21 +3,21 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-print
 title: 使用Web组件打印前端页面
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 处理网页内容 > 使用Web组件打印前端页面
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:28+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:99d446d6940d75517bcb80946fc8e9155f9fa9d859cd26c6065a996ca5b729eb
+scraped_at: 2026-09-02T14:49:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:162cbfcb9e064d8e2dc3afb48374ab31fe38a044ac8e138cdd3edae6762ceab3
 ---
 
 Web组件打印HTML页面时可通过W3C标准协议接口和应用接口两种方式实现。
 
 使用打印功能前，请在module.json5中配置相关权限，添加方法请参考[在配置文件中声明权限](declare-permissions.md#在配置文件中声明权限)。
 
-```
-1. "requestPermissions":[
-2. {
-3. "name" : "ohos.permission.PRINT"
-4. }
-5. ]
+```json
+"requestPermissions":[
+    {
+      "name" : "ohos.permission.PRINT"
+    }
+  ]
 ```
 
 ## 使用W3C标准协议接口拉起打印
@@ -30,140 +30,136 @@ Web组件打印HTML页面时可通过W3C标准协议接口和应用接口两种�
 
   示例一：
 
-  ```
-  1. <!DOCTYPE html>
-  2. <html>
+  ```html
+  <!DOCTYPE html>
+  <html>
 
-  4. <head>
-  5. <meta charset="utf-8">
-  6. <title>printTest</title>
-  7. <style>
-  8. @media print {
-  9. h1 {
-  10. display: none;
-  11. }
-  12. }
-  13. </style>
-  14. </head>
+  <head>
+      <meta charset="utf-8">
+      <title>printTest</title>
+      <style>
+          @media print {
+              h1 {
+                  display: none;
+              }
+          }
+      </style>
+  </head>
 
-  16. <body>
-  17. <div>
-  18. <h1><b>
-  19. <p style="text-align: center;">This is a test page for printing</p>
-  20. </b>
-  21. <hr color="#00cc00" width="95%">
-  22. </h1>
-  23. <button class="Button Button--outline" onclick="window.print();">Print</button>
-  24. <p> content content content </p>
-  25. <div id="printableTable">
-  26. <table>
-  27. <thead>
-  28. <tr>
-  29. <td>Thing</td>
-  30. <td>Chairs</td>
-  31. </tr>
-  32. </thead>
-  33. <tbody>
-  34. <tr>
-  35. <td>1</td>
-  36. <td>blue</td>
-  37. </tr>
-  38. <tr>
-  39. <td>2</td>
-  40. <td>green</td>
-  41. </tr>
-  42. </tbody>
-  43. </table>
-  44. </div>
-  45. <p> content content content </p>
-  46. <p> content content content </p>
-  47. </div>
-  48. </body>
+  <body>
+      <div>
+          <h1><b>
+                  <p style="text-align: center;">This is a test page for printing</p>
+              </b>
+              <hr color="#00cc00" width="95%">
+          </h1>
+          <button class="Button Button--outline" onclick="window.print();">Print</button>
+          <p> content content content </p>
+          <div id="printableTable">
+              <table>
+                  <thead>
+                      <tr>
+                          <td>Thing</td>
+                          <td>Chairs</td>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>1</td>
+                          <td>blue</td>
+                      </tr>
+                      <tr>
+                          <td>2</td>
+                          <td>green</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+          <p> content content content </p>
+          <p> content content content </p>
+      </div>
+  </body>
   ```
 
   示例二（iframe嵌套页面的方式）：
 
-  ```
-  1. <!DOCTYPE html>
-  2. <html lang="en">
-  3. <head>
-  4. <meta charset="UTF-8">
-  5. <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  6. <title>iframe嵌套页面打印</title>
-  7. </head>
-  8. <body>
-  9. <button id="printIframe">打印iframe嵌套页面</button>
-  10. <iframe id="contentIframe" hidden></iframe>
+  ```html
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>iframe嵌套页面打印</title>
+  </head>
+  <body>
+      <button id="printIframe">打印iframe嵌套页面</button>
+      <iframe id="contentIframe" hidden></iframe>
 
-  12. <script>
-  13. document.getElementById("printIframe").addEventListener("click", () => {
-  14. var ctIframe = document.getElementById("contentIframe");
-  15. if(!ctIframe.contentWindow || !ctIframe.contentWindow.document) {
-  16. console.error("iframe页面初始化失败");
-  17. return;
-  18. }
-  19. var ctIframeDoc = ctIframe.contentWindow.document;
-  20. ctIframeDoc.write("嵌套页面");
-  21. ctIframeDoc.close();
-  22. ctIframe.contentWindow.print();
-  23. });
-  24. </script>
-  25. </body>
-  26. </html>
+      <script>
+          document.getElementById("printIframe").addEventListener("click", () => {
+              var ctIframe = document.getElementById("contentIframe");
+              if(!ctIframe.contentWindow || !ctIframe.contentWindow.document) {
+                console.error("iframe页面初始化失败");
+                return;
+              }
+              var ctIframeDoc = ctIframe.contentWindow.document;
+              ctIframeDoc.write("嵌套页面");
+              ctIframeDoc.close();
+              ctIframe.contentWindow.print();
+          });
+      </script>
+  </body>
+  </html>
   ```
 * 应用侧代码。
 
+  ```typescript
+  import { webview } from '@kit.ArkWeb';
+
+  @Entry
+  @Component
+  struct Index {
+    controller: webview.WebviewController = new webview.WebviewController();
+
+    build() {
+      Row() {
+        Column() {
+          Web({ src: $rawfile('print.html'), controller: this.controller })
+            .javaScriptAccess(true)
+        }
+        .width('100%')
+      }
+      .height('100%')
+    }
+  }
   ```
-  1. import { webview } from '@kit.ArkWeb';
-
-  3. @Entry
-  4. @Component
-  5. struct Index {
-  6. controller: webview.WebviewController = new webview.WebviewController();
-
-  8. build() {
-  9. Row() {
-  10. Column() {
-  11. Web({ src: $rawfile('print.html'), controller: this.controller })
-  12. .javaScriptAccess(true)
-  13. }
-  14. .width('100%')
-  15. }
-  16. .height('100%')
-  17. }
-  18. }
-  ```
-
-  [InitiatePrintW3CAPI.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ProcessWebPageCont/entry/src/main/ets/pages/InitiatePrintW3CAPI.ets#L16-L35)
 
 ## 通过调用应用侧接口拉起打印
 
 应用侧通过调用[createWebPrintDocumentAdapter](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#createwebprintdocumentadapter11)创建打印适配器，通过将适配器传入打印的print接口调起打印。
 
+```typescript
+import { webview } from '@kit.ArkWeb';
+import { BusinessError, print } from '@kit.BasicServicesKit';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+
+  build() {
+    Column() {
+      Button('createWebPrintDocumentAdapter')
+        .onClick(() => {
+          try {
+            let webPrintDocAdapter = this.controller.createWebPrintDocumentAdapter('example.pdf');
+            print.print('example_job_id', webPrintDocAdapter, null, this.getUIContext().getHostContext());
+          } catch (error) {
+            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+          }
+        })
+      Web({ src: 'www.example.com', controller: this.controller });
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-2. import { BusinessError, print } from '@kit.BasicServicesKit';
-
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-
-9. build() {
-10. Column() {
-11. Button('createWebPrintDocumentAdapter')
-12. .onClick(() => {
-13. try {
-14. let webPrintDocadapter = this.controller.createWebPrintDocumentAdapter('example.pdf');
-15. print.print('example_job_id', webPrintDocadapter, null, this.getUIContext().getHostContext());
-16. } catch (error) {
-17. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-18. }
-19. })
-20. Web({ src: 'www.example.com', controller: this.controller });
-21. }
-22. }
-23. }
-```
-
-[InitiatePrintAppAPI.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ProcessWebPageCont/entry/src/main/ets/pages/InitiatePrintAppAPI.ets#L16-L40)

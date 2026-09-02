@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-cach
 title: ohpm cache clean错误码
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm cache clean错误码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:49+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:150a75cef649b19210669cae44ace462e7f20287689312e3a5a86f9e863aa95c
+scraped_at: 2026-09-02T14:50:59+08:00
+doc_updated_at: 2026-07-21
+content_hash: sha256:236d37e7e69cc3a3f8f29a1ff02387904ff5677f4f8e55dd7a4a57e4787c2e19
 ---
 
 ## 00601001 缓存子命令为空
@@ -56,7 +56,8 @@ Invalid Cache Package.
 
 **可能原因**
 
-因缺少依赖等，导致缓存包不完整/无效。
+* 缓存包被修改，导致缓存包损坏/不完整。
+* 网络问题，使从仓库中下载的包在本地校验失败。
 
 **处理步骤**
 

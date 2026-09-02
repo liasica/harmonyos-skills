@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-134
-title: 对于@ohos.net.http模块是否需要使用TaskPool处理
-breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 对于@ohos.net.http模块是否需要使用TaskPool处理
+title: 对于@ohos.net.http网络框架是否需要使用TaskPool处理
+breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 对于@ohos.net.http网络框架是否需要使用TaskPool处理
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:16+08:00
-doc_updated_at: 2026-03-17
+scraped_at: 2026-09-02T15:21:15+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:91ebe5e80715efa6e22c64b90ff4fe21f38c708d19bbc48f8c5a11affc368af2
 ---
 

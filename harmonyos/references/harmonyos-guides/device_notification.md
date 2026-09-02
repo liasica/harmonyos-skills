@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/device_notifi
 title: 穿戴设备模板化通知
 breadcrumb: 指南 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > 手机侧应用开发 > 应用开发 > 穿戴设备模板化通知
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:33:46+08:00
+scraped_at: 2026-09-02T14:59:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f8a03f2ae8dfc834599ab9587506d1b519156cef638fbab55119cd2cc72ce945
+content_hash: sha256:a8e9e9666bb2c50ede547d83f862f82f2ade166ddb352d743baaec9cf8288f61
 ---
 
 手机侧应用向穿戴设备发送通知，并在穿戴设备上按模板显示，支持穿戴设备收到通知后同步振动或响铃（跟随穿戴设备系统设置）。执行成功后，穿戴设备上会显示下图所示通知界面。
 
 该接口无需用户授权，仅需要确保应用已申请消息通知权限（参见[申请接入Wear Engine服务](wearengine_apply.md)），否则接口将调用失败。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/nktrZ4hEQyeFbozMmx3rxQ/zh-cn_image_0000002558605332.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/M2pKWOtwQmCRmbcM_F3miA/zh-cn_image_0000002736313529.png)
 
-说明
+**说明** 
 
 * 穿戴设备侧无对应的应用也可以显示模板化通知。
 * 请确保穿戴设备和华为运动健康App处于连接状态。用户可进入App“设备”界面查看设备是否在线。开发者可调用[getConnectedDevices](../harmonyos-references/wearengine_api.md#getconnecteddevices)方法了解设备是否在线，如果返回列表中不包含目标设备，则提醒用户重新连接该设备。
@@ -30,7 +30,7 @@ content_hash: sha256:f8a03f2ae8dfc834599ab9587506d1b519156cef638fbab55119cd2cc72
 
 ## 向穿戴设备侧发送通知
 
-说明
+**说明** 
 
 该接口的调用需要在开发者联盟申请消息通知权限（请参考[申请接入Wear Engine服务](wearengine_apply.md)）。
 
@@ -40,36 +40,36 @@ content_hash: sha256:f8a03f2ae8dfc834599ab9587506d1b519156cef638fbab55119cd2cc72
 4. 定义[NotificationOptions](../harmonyos-references/wearengine_api.md#notificationoptions)配置参数类。
 5. 调用[notify](../harmonyos-references/wearengine_api.md#notify)方法，从手机上的应用发送通知到穿戴设备侧。
 
-   ```
-   1. // 步骤3 获取NotifyClient对象
-   2. let notifyClient: wearEngine.NotifyClient = wearEngine.getNotifyClient(this.getUIContext().getHostContext());
+   ```typescript
+   // 步骤3 获取NotifyClient对象
+   let notifyClient: wearEngine.NotifyClient = wearEngine.getNotifyClient(this.getUIContext().getHostContext());
 
-   4. // 步骤4 构造NotificationOptions对象
-   5. let button1: wearEngine.NotificationButton = {
-   6. buttonId: wearEngine.ButtonId.FIRST_BUTTON,
-   7. // 按钮内容最大长度为12字节
-   8. content: 'button_1'
-   9. }
-   10. let type1Notification: wearEngine.Notification = {
-   11. type: wearEngine.NotificationType.NOTIFICATION_WITH_ONE_BUTTON,
-   12. // 包名与标题的最大长度为28字节
-   13. bundleName: 'bundleName',
-   14. title: 'title',
-   15. // 消息内容最大长度为400字节
-   16. text: 'text',
-   17. buttons: [button1]
-   18. }
-   19. let options: wearEngine.NotificationOptions = {
-   20. notification: type1Notification,
-   21. onAction: (feedback: wearEngine.NotificationFeedback) => {
-   22. console.info(`one button notify get feedback is ${feedback.action ? feedback.action : feedback.errorCode}`);
-   23. }
-   24. }
+   // 步骤4 构造NotificationOptions对象
+   let button1: wearEngine.NotificationButton = {
+     buttonId: wearEngine.ButtonId.FIRST_BUTTON,
+     // 按钮内容最大长度为12字节
+     content: 'button_1'
+   }
+   let type1Notification: wearEngine.Notification = {
+     type: wearEngine.NotificationType.NOTIFICATION_WITH_ONE_BUTTON,
+     // 包名与标题的最大长度为28字节
+     bundleName: 'bundleName',
+     title: 'title',
+     // 消息内容最大长度为400字节
+     text: 'text',
+     buttons: [button1]
+   }
+   let options: wearEngine.NotificationOptions = {
+     notification: type1Notification,
+     onAction: (feedback: wearEngine.NotificationFeedback) => {
+       console.info(`one button notify get feedback is ${feedback.action ? feedback.action : feedback.errorCode}`);
+     }
+   }
 
-   26. // 步骤5 发送模板化通知至设备侧
-   27. notifyClient.notify(targetDevice.randomId, options).then(result => {
-   28. console.info(`Succeeded in sending notification.`);
-   29. }).catch((error: BusinessError) => {
-   30. console.error(`Failed to send notification. Code is ${error.code}, message is ${error.message}`);
-   31. })
+   // 步骤5 发送模板化通知至设备侧
+   notifyClient.notify(targetDevice.randomId, options).then(result => {
+     console.info(`Succeeded in sending notification.`);
+   }).catch((error: BusinessError) => {
+     console.error(`Failed to send notification. Code is ${error.code}, message is ${error.message}`);
+   })
    ```

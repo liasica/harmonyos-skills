@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-project-ma
 title: 如何将HSP（动态共享包）转为HAR（静态共享包）
 breadcrumb: FAQ > DevEco Studio > 工程管理 > 如何将HSP（动态共享包）转为HAR（静态共享包）
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:56+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:13+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:9ce2bbfe846a059bbcf5a76568a399bef8990f784a00ec6a8e2eb8cf4b2ab8b0
 ---
 

@@ -1,14 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-multiwindowentryinapp-api
-title: MultiWindowEntryInAPP
-breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > MultiWindowEntryInAPP
+title: MultiWindowEntryInAPP (应用内多窗)
+breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > MultiWindowEntryInAPP (应用内多窗)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:57:14+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:97014fada42993a0655326399a77067a32aa94e8739266e682225f8944b04d20
+scraped_at: 2026-09-02T15:01:39+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:dbfc77ef3bd4e7dcf145bc0076b1eb31ae584a0e3b472151647a522e0a2b1757
 ---
 
-说明
+**说明** 
 
 依赖全景多窗特性，只有当前设备及屏幕状态支持全景多窗，才支持设置此功能。目前支持全景多窗的设备形态有：
 
@@ -26,34 +26,28 @@ MultiWindowEntryInAPP组件承载单应用多窗口并行逻辑的实现，应�
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-说明
+**说明** 
 
 * MultiWindowEntryInAPPAttribute是用于配置MultiWindowEntryInAPP组件属性的关键接口。6.0.1(21)及之前版本，导入MultiWindowEntryInAPP组件后需要开发者手动导入MultiWindowEntryInAPPAttribute，否则会编译报错。从6.0.2(22)版本开始，编译工具链识别到导入MultiWindowEntryInAPP组件后，会自动导入MultiWindowEntryInAPPAttribute，无需开发者手动导入。
 * 如果开发者手动导入MultiWindowEntryInAPPAttribute，DevEco Studio会显示置灰，6.0.1(21)及之前版本删除会编译报错，从6.0.2(22)版本开始，删除对功能无影响。
 
 6.0.1(21)及之前版本：
 
-```
-1. import { MultiWindowEntryInAPP, MultiWindowEntryInAPPParams, MultiWindowEntryInAPPIconOptions, MultiWindowEntryInAPPSubtitleOptions, MultiWindowEntryInAPPAttribute } from '@kit.UIDesignKit';
+```typescript
+import { MultiWindowEntryInAPP, MultiWindowEntryInAPPParams, MultiWindowEntryInAPPIconOptions, MultiWindowEntryInAPPSubtitleOptions, MultiWindowEntryInAPPAttribute } from '@kit.UIDesignKit';
 ```
 
 6.0.2(22)及之后版本：
 
-```
-1. import { MultiWindowEntryInAPP, MultiWindowEntryInAPPParams, MultiWindowEntryInAPPIconOptions, MultiWindowEntryInAPPSubtitleOptions } from '@kit.UIDesignKit';
+```typescript
+import { MultiWindowEntryInAPP, MultiWindowEntryInAPPParams, MultiWindowEntryInAPPIconOptions, MultiWindowEntryInAPPSubtitleOptions } from '@kit.UIDesignKit';
 ```
 
 ## 子组件
 
-PhonePC/2in1TabletTV
-
 无
 
 ## 接口
-
-PhonePC/2in1TabletTV
 
 MultiWindowEntryInAPP(params: MultiWindowEntryInAPPParams)
 
@@ -70,8 +64,6 @@ MultiWindowEntryInAPP(params: MultiWindowEntryInAPPParams)
 | params | [MultiWindowEntryInAPPParams](ui-design-multiwindowentryinapp-api.md#multiwindowentryinappparams) | 是 | 应用内多窗组件参数。 |
 
 ## MultiWindowEntryInAPPParams
-
-PhonePC/2in1TabletTV
 
 MultiWindowEntryInAPP组件参数。
 
@@ -91,8 +83,6 @@ MultiWindowEntryInAPP组件参数。
 
 ## MultiWindowEntryInAPPStyle
 
-PhonePC/2in1TabletTV
-
 MultiWindowEntryInAPP组件风格参数。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -109,8 +99,6 @@ MultiWindowEntryInAPP组件风格参数。
 | subtitleOptions | [MultiWindowEntryInAPPSubtitleOptions](ui-design-multiwindowentryinapp-api.md#multiwindowentryinappsubtitleoptions) | 否 | 是 | 组件文本标题参数。 |
 
 ## MultiWindowEntryInAPPIconOptions
-
-PhonePC/2in1TabletTV
 
 MultiWindowEntryInAPP组件图标参数。
 
@@ -131,8 +119,6 @@ MultiWindowEntryInAPP组件图标参数。
 
 ## MultiWindowEntryInAPPSubtitleOptions
 
-PhonePC/2in1TabletTV
-
 MultiWindowEntryInAPP组件标题文本参数。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -149,11 +135,9 @@ MultiWindowEntryInAPP组件标题文本参数。
 
 ## 属性
 
-PhonePC/2in1TabletTV
-
 支持大部分[通用属性](ts-component-general-attributes.md)。
 
-说明
+**说明** 
 
 width、height、size属性暂不支持百分比。
 
@@ -161,57 +145,53 @@ width、height、size属性暂不支持百分比。
 
 ## 事件
 
-PhonePC/2in1TabletTV
-
 支持大部分[通用事件](ts-component-general-events.md)。
 
-说明
+**说明** 
 
 该组件暂不支持onClick事件，如要监听点击请使用onTouch事件。
 
 ## 示例
 
-PhonePC/2in1TabletTV
-
 集成应用内多窗组件，用户点击按钮后可与应用内的其他UIAbility组成分屏或进入全景多窗。
 
+```typescript
+// 从6.0.2(22)版本开始，无需手动导入MultiWindowEntryInAPPAttribute。具体请参考MultiWindowEntryInAPP的导入模块说明。
+import { MultiWindowEntryInAPP, MultiWindowEntryInAPPAttribute } from '@kit.UIDesignKit';
+import { Want } from '@kit.AbilityKit';
+import { TextModifier } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct MultiWindowEntryInAPPTest {
+  @State textModifier: TextModifier = new TextModifier();
+  private want: Want = {
+    // 修改为当前应用的bundleName、moduleName、abilityName，启动应用内的UIAbility
+    bundleName: "com.example.myapplication",
+    moduleName: "entry",
+    abilityName: "FuncAbility",
+  };
+
+  build() {
+    Row() {
+      MultiWindowEntryInAPP({
+        want: this.want, isShowSubtitle: true, multiWindowEntryInAPPStyle: {
+          iconOptions: {
+            iconSize: 24,
+            iconColor: $r('sys.color.font_primary'),
+            iconWeight: FontWeight.Normal,
+            backgroundColor: $r('sys.color.comp_background_tertiary')
+          },
+          subtitleOptions: {
+            modifier: this.textModifier.fontColor(Color.Black)
+          }
+        }
+      })
+        .size({ width: 48, height: 48 })
+        .position({ x: 400, y: 30 })
+    }
+  }
+}
 ```
-1. // 从6.0.2(22)版本开始，无需手动导入MultiWindowEntryInAPPAttribute。具体请参考MultiWindowEntryInAPP的导入模块说明。
-2. import { MultiWindowEntryInAPP, MultiWindowEntryInAPPAttribute } from '@kit.UIDesignKit';
-3. import { Want } from '@kit.AbilityKit';
-4. import { TextModifier } from '@kit.ArkUI';
 
-6. @Entry
-7. @Component
-8. struct MultiWindowEntryInAPPTest {
-9. @State textModifier: TextModifier = new TextModifier();
-10. private want: Want = {
-11. // 修改为当前应用的bundleName、moduleName、abilityName，启动应用内的UIAbility
-12. bundleName: "com.example.myapplication",
-13. moduleName: "entry",
-14. abilityName: "FuncAbility",
-15. };
-
-17. build() {
-18. Row() {
-19. MultiWindowEntryInAPP({
-20. want: this.want, isShowSubtitle: true, multiWindowEntryInAPPStyle: {
-21. iconOptions: {
-22. iconSize: 24,
-23. iconColor: $r('sys.color.font_primary'),
-24. iconWeight: FontWeight.Normal,
-25. backgroundColor: $r('sys.color.comp_background_tertiary')
-26. },
-27. subtitleOptions: {
-28. modifier: this.textModifier.fontColor(Color.Black)
-29. }
-30. }
-31. })
-32. .size({ width: 48, height: 48 })
-33. .position({ x: 400, y: 30 })
-34. }
-35. }
-36. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/xXetDIE4RHOhw76UbJSufQ/zh-cn_image_0000002558607398.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/SsAT1ZTNQoyhsGX8Z1Cn8Q/zh-cn_image_0000002706836724.jpg)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-function-f
 title: 任务并发调度（Function Flow Runtime）
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > 任务并发调度（Function Flow Runtime）
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:54+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:6b396b807ed3bdcb38aa3546303c3febca19d545720e77d37f1b3d645ca1f8cf
+scraped_at: 2026-09-02T14:53:57+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:cf2426ab33049102d57690bc2e34fcd825fa40e0d2a9df0e978a468a93c9a50e
 ---
 
 * **[如何在Native侧C++子线程直接调用ArkTS接口，不用通过ArkTS侧触发回调](faqs-ndk-8.md)**
@@ -18,3 +18,7 @@ content_hash: sha256:6b396b807ed3bdcb38aa3546303c3febca19d545720e77d37f1b3d645ca
 * **[Native如何创建子线程，有什么约束，与主线程如何通信](faqs-ndk-68.md)**
 * **[如何利用worker子线程调用napi实现loop改写变量](faqs-ndk-76.md)**
 * **[Native侧的napi\_env是否支持延迟调用或者异步调用](faqs-ndk-75.md)**
+* **[下载任务切换到后台下载中断](faqs-function-flow-runtime-1.md)**
+* **[是否有让进程睡眠的API](faqs-function-flow-runtime-2.md)**
+* **[NAPI使用线程安全函数相关问题](faqs-function-flow-runtime-3.md)**
+* **[线程安全函数使用问题汇总](faqs-function-flow-runtime-4.md)**

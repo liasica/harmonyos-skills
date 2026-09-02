@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sta-developme
 title: STA模式开发指南
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > WLAN > STA模式开发指南
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:43+08:00
+scraped_at: 2026-09-02T14:59:33+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:c779748ae1087676dc4986d3b59a969d7d4f5eae761d55a1da28b10209679659
+content_hash: sha256:bb0dff8e2d7981ff92228a56300f1fbf776586af64b26b3123dcf7964ca59068
 ---
 
 ## 简介
@@ -46,48 +46,48 @@ Wi-Fi STA模式（Station Mode，站点模式）是无线设备作为客户端�
 4. 开启设备Wi-Fi。
 5. 示例代码：
 
-   ```
-   1. import { wifiManager } from '@kit.ConnectivityKit';
+   ```ts
+   import { wifiManager } from '@kit.ConnectivityKit';
 
-   3. let recvPowerNotifyFunc: (result: number) => void = (result: number) => {
-   4. let wifiState = "";
-   5. switch (result) {
-   6. case 0:
-   7. wifiState += 'DISABLED';
-   8. break;
-   9. case 1:
-   10. wifiState += 'ENABLED';
-   11. break;
-   12. case 2:
-   13. wifiState += 'ENABLING';
-   14. break;
-   15. case 3:
-   16. wifiState += 'DISABLING';
-   17. break;
-   18. default:
-   19. wifiState += 'UNKNOWN STATUS';
-   20. break;
-   21. }
-   22. console.info(`Wi-Fi state changed: ${wifiState}`);
-   23. };
-   24. try {
-   25. wifiManager.on("wifiStateChange", recvPowerNotifyFunc);
-   26. let isWifiActive = wifiManager.isWifiActive();
-   27. if (!isWifiActive) {
-   28. console.info("Wi-Fi not enabled. Skipping monitor.");
-   29. } else {
-   30. console.info("Wi-Fi is enabled. Starting monitor...");
-   31. }
-   32. } catch (error) {
-   33. console.error(`WiFi state monitor failed: ${error.message}`);
-   34. } finally {
-   35. try {
-   36. wifiManager.off("wifiStateChange", recvPowerNotifyFunc);
-   37. console.info("Wi-Fi monitor off: listener removed.");
-   38. } catch (e) {
-   39. console.error(`WiFi state monitor failed. ${e.message}`);
-   40. }
-   41. }
+   let recvPowerNotifyFunc: (result: number) => void = (result: number) => {
+     let wifiState = "";
+     switch (result) {
+       case 0:
+         wifiState += 'DISABLED';
+         break;
+       case 1:
+         wifiState += 'ENABLED';
+         break;
+       case 2:
+         wifiState += 'ENABLING';
+         break;
+       case 3:
+         wifiState += 'DISABLING';
+         break;
+       default:
+         wifiState += 'UNKNOWN STATUS';
+         break;
+     }
+     console.info(`Wi-Fi state changed: ${wifiState}`);
+   };
+   try {
+     wifiManager.on("wifiStateChange", recvPowerNotifyFunc);
+     let isWifiActive = wifiManager.isWifiActive();
+     if (!isWifiActive) {
+       console.info("Wi-Fi not enabled. Skipping monitor.");
+     } else {
+       console.info("Wi-Fi is enabled. Starting monitor...");
+     }
+   } catch (error) {
+     console.error(`WiFi state monitor failed: ${error.message}`);
+   } finally {
+     try {
+       wifiManager.off("wifiStateChange", recvPowerNotifyFunc);
+       console.info("Wi-Fi monitor off: listener removed.");
+     } catch (e) {
+        console.error(`WiFi state monitor failed. ${e.message}`);
+     }
+   }
    ```
 
 ### 建立Wi-Fi连接
@@ -98,47 +98,47 @@ Wi-Fi STA模式（Station Mode，站点模式）是无线设备作为客户端�
 4. 需要申请权限ohos.permission.GET\_WIFI\_INFO，ohos.permission.SET\_WIFI\_INFO。
 5. 示例代码：
 
-   ```
-   1. import { wifiManager } from '@kit.ConnectivityKit';
+   ```ts
+   import { wifiManager } from '@kit.ConnectivityKit';
 
-   3. try {
-   4. let recvWifiConnectionChangeFunc = (result: number) => {
-   5. console.info("Receive wifi connection change event: " + result);
-   6. }
+   try {
+     let recvWifiConnectionChangeFunc = (result: number) => {
+       console.info("Receive wifi connection change event: " + result);
+     }
 
-   8. let config: wifiManager.WifiDeviceConfig = {
-   9. ssid: "****",
-   10. bssid: "****",
-   11. preSharedKey: "****",
-   12. securityType: 0
-   13. }
+     let config: wifiManager.WifiDeviceConfig = {
+       ssid: "****",
+       bssid: "****",
+       preSharedKey: "****",
+       securityType: 0
+     }
 
-   15. // 更新当前Wi-Fi连接状态
-   16. wifiManager.on("wifiConnectionChange", recvWifiConnectionChangeFunc);
-   17. // 添加候选网络配置
-   18. wifiManager.addCandidateConfig(config).then(result => {
-   19. // 连接指定网络
-   20. wifiManager.connectToCandidateConfig(result);
-   21. });
+     // 更新当前Wi-Fi连接状态
+     wifiManager.on("wifiConnectionChange", recvWifiConnectionChangeFunc);
+     // 添加候选网络配置
+     wifiManager.addCandidateConfig(config).then(result => {
+       // 连接指定网络
+       wifiManager.connectToCandidateConfig(result);
+     });
 
-   23. if (!wifiManager.isConnected()) {
-   24. console.info("Wi-Fi not connected");
-   25. }
-   26. // 获取连接信息
-   27. wifiManager.getLinkedInfo().then(data => {
-   28. console.info("get Wi-Fi linked info: " + JSON.stringify(data));
-   29. })
-   30. // 查询信号强度
-   31. let rssi = -88;
-   32. let band = 1;
-   33. let level = wifiManager.getSignalLevel(rssi, band);
-   34. console.info("level:" + JSON.stringify(level));
+     if (!wifiManager.isConnected()) {
+       console.info("Wi-Fi not connected");
+     }
+     // 获取连接信息
+     wifiManager.getLinkedInfo().then(data => {
+       console.info("get Wi-Fi linked info: " + JSON.stringify(data));
+     })
+     // 查询信号强度
+     let rssi = -88;
+     let band = 1;
+     let level = wifiManager.getSignalLevel(rssi, band);
+     console.info("level:" + JSON.stringify(level));
 
-   36. // 取消注册，停止更新当前Wi-Fi连接状态
-   37. wifiManager.off("wifiConnectionChange", recvWifiConnectionChangeFunc);
-   38. } catch (error) {
-   39. console.error(`WiFi Connection failed. ${error.message}`);
-   40. }
+     // 取消注册，停止更新当前Wi-Fi连接状态
+     wifiManager.off("wifiConnectionChange", recvWifiConnectionChangeFunc);
+   } catch (error) {
+     console.error(`WiFi Connection failed. ${error.message}`);
+   }
    ```
 6. Wi-Fi连接状态值，详情请参考[ConnState](../harmonyos-references/js-apis-wifimanager.md#connstate)。
 7. 错误码详情请参见[WIFI错误码](../harmonyos-references/errorcode-wifi.md)。

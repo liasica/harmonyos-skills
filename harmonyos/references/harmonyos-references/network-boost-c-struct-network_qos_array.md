@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/network-b
 title: NetworkBoost_NetworkQosArray
 breadcrumb: API参考 > 系统 > 网络 > Network Boost Kit（网络加速服务） > C API > 结构体 > NetworkBoost_NetworkQosArray
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:52+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ab483cd3be6d419f41d9e1229a0cb15e5e6fa9e3b12cf7fe2050904b2708ed28
+scraped_at: 2026-09-02T15:01:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0414705d8201e08ffb6bbc6465012e8a4b14cf841e7b9ce811113ade66b3ddd4
 ---
 
 ## 概述
-
-PhonePC/2in1Tablet
 
 网络质量变化的详细信息。
 
@@ -22,11 +20,7 @@ PhonePC/2in1Tablet
 
 ## 汇总
 
-PhonePC/2in1Tablet
-
 ### 成员变量
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
@@ -35,14 +29,10 @@ PhonePC/2in1Tablet
 
 ## 结构体成员变量说明
 
-PhonePC/2in1Tablet
-
 ### networkQos
 
-PhonePC/2in1Tablet
-
-```
-1. NetworkBoost_NetworkQos NetworkBoost_NetworkQosArray::networkQos[NETBOOST_MAX_PATH_NUM]
+```c
+NetworkBoost_NetworkQos NetworkBoost_NetworkQosArray::networkQos[NETBOOST_MAX_PATH_NUM]
 ```
 
 **描述**
@@ -51,10 +41,8 @@ PhonePC/2in1Tablet
 
 ### pathNum
 
-PhonePC/2in1Tablet
-
-```
-1. uint32_t NetworkBoost_NetworkQosArray::pathNum
+```c
+uint32_t NetworkBoost_NetworkQosArray::pathNum
 ```
 
 **描述**

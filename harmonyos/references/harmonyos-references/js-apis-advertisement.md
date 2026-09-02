@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: Advertisement (请求的广告内容)
 breadcrumb: API参考 > 应用服务 > Ads Kit（广告服务） > ArkTS API > advertisement > Advertisement (请求的广告内容)
 category: harmonyos-references
-scraped_at: 2026-04-29T14:06:56+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:79e215016d50b10f9152fc204324c5e93db1bb5a2b2d76812e523a0d9547a94f
+scraped_at: 2026-09-02T15:02:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0e7d043a8556d4d43de473ae57e0c4bf3dd824ff4fa71ccb5ad7f818a0fcab50
 ---
 
 本模块为请求的广告内容。
 
-说明
+**说明** 
 
 本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { advertising } from '@kit.AdsKit';
+```typescript
+import { advertising } from '@kit.AdsKit';
 ```
 
 ## Advertisement
-
-PhonePC/2in1Tablet
 
 请求的广告内容。
 

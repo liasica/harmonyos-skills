@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 模拟点击检测
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 业务风险检测 > 模拟点击检测
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:31:41+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3b1ba593cb8c01dd70814609d8a21b342eeb868023b8869e564a0963f34cc7fc
+scraped_at: 2026-09-02T14:59:30+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:87694348598ffab09ebdea4396c3f9af8f0d4b3c8fac49772ab1999a450424f4
 ---
 
 ## 场景介绍
 
 从6.0.0(20) 版本开始，新增支持模拟点击检测。
 
-应用通过调用Device Security Kit的detectSimulatedClickRisk接口，获取模拟点击检测结果，用于自动化点击、设备墙等作弊行为检测。
+应用通过调用Device Security Kit的detectSimulatedClickRisk接口，获取模拟点击检测结果，用于检测自动化点击、设备农场等作弊行为。
 
 应用可以根据检测结果评估如何进行业务操作。
 
@@ -22,7 +22,7 @@ content_hash: sha256:3b1ba593cb8c01dd70814609d8a21b342eeb868023b8869e564a0963f34
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/8BMpAeW4QI2-IZncJJ1CKg/zh-cn_image_0000002558764900.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/c2DG6lVCSqqif29IDX7Gsw/zh-cn_image_0000002706674370.png)
 
 **流程说明：**
 
@@ -43,46 +43,53 @@ content_hash: sha256:3b1ba593cb8c01dd70814609d8a21b342eeb868023b8869e564a0963f34
 
 1. 导入Device Security Kit模块及相关公共模块。
 
-   ```
-   1. import { businessRiskIntelligentDetection } from '@kit.DeviceSecurityKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { businessRiskIntelligentDetection } from '@kit.DeviceSecurityKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 调用detectSimulatedClickRisk接口获取模拟点击检测结果。
 
-   ```
-   1. const TAG = "BusinessRiskIntelligentDetectionJsTest";
+   ```typescript
+   const TAG: string = '[SimulatedClickRiskDetectModel]';
 
-   3. let params = {
-   4. version: 1
-   5. } as businessRiskIntelligentDetection.SimulatedClickDetectionRequest;
-   6. try {
-   7. hilog.info(0x0000, TAG, 'Detect simulated click risk begin.');
-   8. businessRiskIntelligentDetection.detectSimulatedClickRisk(params).then((result: string) => {
-   9. hilog.info(0x0000, TAG, 'Detect simulated click risk success: %{public}s', result);
-   10. }).catch((error: Error) => {
-   11. let e: BusinessError = error as BusinessError;
-   12. hilog.error(0x0000, TAG, 'Detect simulated click risk failed: %{public}d %{public}s', e.code, e.message);
-   13. });
-   14. } catch (error) {
-   15. let e: BusinessError = error as BusinessError;
-   16. hilog.error(0x0000, TAG, 'Detect simulated click risk failed: %{public}d %{public}s', e.code, e.message);
-   17. }
+   function  simulatedClickRiskDetectPromise(): Promise<String> {
+     return new Promise(async (resolve: Function, reject: Function) => {
+       let params = {
+         version: 1
+       } as businessRiskIntelligentDetection.SimulatedClickDetectionRequest;
+       try {
+         hilog.info(0x0000, TAG, 'Detect simulated click risk begin.');
+         businessRiskIntelligentDetection.detectSimulatedClickRisk(params).then((result: string) => {
+           hilog.info(0x0000, TAG, 'Detect simulated click risk success: %{public}s', result);
+           resolve(result);
+         }).catch((error: Error) => {
+           let e: BusinessError = error as BusinessError;
+           hilog.error(0x0000, TAG, 'Detect simulated click risk failed: %{public}d %{public}s', e.code, e.message);
+           reject(error);
+         });
+       } catch (error) {
+         let e: BusinessError = error as BusinessError;
+         hilog.error(0x0000, TAG, 'Detect simulated click risk failed: %{public}d %{public}s', e.code, e.message);
+         reject(error);
+       }
+     });
+   }
    ```
 3. 开发者应用可以根据模拟点击检测结果进行业务处理。
 
    模拟点击检测结果是一个格式为JSON格式的字符串，内容示例如下
 
-   ```
-   1. {
-   2. "timestampMs": 9860437986543,
-   3. "version": 1,
-   4. "riskDecision": "fake",
-   5. "tags": ["AbnormalTap"]
-   6. }
+   ```json
+   {
+     "timestampMs": 9860437986543,
+     "version": 1,
+     "riskDecision": "fake",
+     "tags": ["AbnormalTap"]
+   }
    ```
 
-   说明
+   **说明** 
 
    * timestampMs：发起请求时生成的时间戳。
    * riskDecision：风险检测结果。
@@ -97,6 +104,6 @@ content_hash: sha256:3b1ba593cb8c01dd70814609d8a21b342eeb868023b8869e564a0963f34
 
    | riskDecision值 | 含义 |
    | --- | --- |
-   | fake | 当前设备存在作弊风险行为。存在自动化操控行为或设备墙作弊行为，详情见tags。 |
+   | fake | 当前设备存在作弊风险行为。详情见上方tags表格。 |
    | likelyReal | 当前操作设备的是真人用户的可能性较高。 |
    | unknown | 未知。未检测到明显特征，无法识别。 |

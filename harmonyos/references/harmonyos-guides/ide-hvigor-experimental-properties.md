@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-experimental-properties
-title: 性能优化实验特性
-breadcrumb: 指南 > 构建应用 > 提升构建效率 > 性能优化实验特性
+title: 实验特性
+breadcrumb: 指南 > 构建应用 > 提升构建效率 > 实验特性
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:47:20+08:00
-doc_updated_at: 2026-04-22
-content_hash: sha256:48051779c245d0bfef1296309ea9f16f706ce5bcad60d7d02058413cbb1bed8a
+scraped_at: 2026-09-02T15:00:27+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:19a50ddaa24f4dc8782a0c8e1b7b1a5e7a7651fe1514acda274acfe7e17b733e
 ---
 
 为了打造更敏捷流畅的使用体验，新版本的Hvigor带来了一系列的编译构建性能优化实验特性，这些优化特性将显著提高工程的编译速度，降低峰值内存占用等。由于部分优化方案仍处于试验性阶段，您可能在这些特性中体验到效率的提升，也可能在特定场景中遇到待完善的问题，因此，这些特性提供了开关，用户可以根据业务需求开启后使用。
@@ -21,10 +21,10 @@ content_hash: sha256:48051779c245d0bfef1296309ea9f16f706ce5bcad60d7d02058413cbb1
 
 **开启方式：**在hvigor-config.json5中添加以下字段，开启任务增量判断优化。从DevEco Studio 5.1.1 Beta1版本开始支持。
 
-```
-1. "properties": {
-2. "hvigor.incremental.optimization": true
-3. }
+```json5
+"properties": {
+  "hvigor.incremental.optimization": true
+}
 ```
 
 **可能影响：**如果用户在自定义任务的增量输入/输出判断中引用了全局变量，在任务执行时这些变量可能会改变，如果改变，会导致下一次构建时，相关任务增量判断失效，任务重新执行。
@@ -40,10 +40,10 @@ content_hash: sha256:48051779c245d0bfef1296309ea9f16f706ce5bcad60d7d02058413cbb1
 
 **开启方式：**在hvigor-config.json5中添加以下字段，开启任务调度优化。从DevEco Studio 5.1.1 Beta1版本开始支持。
 
-```
-1. "properties": {
-2. "hvigor.task.schedule.optimization": true
-3. }
+```json5
+"properties": {
+  "hvigor.task.schedule.optimization": true
+}
 ```
 
 **可能影响：**无影响。
@@ -59,15 +59,15 @@ content_hash: sha256:48051779c245d0bfef1296309ea9f16f706ce5bcad60d7d02058413cbb1
 
 **开启方式：**在hvigor-config.json5中添加以下字段开启。
 
-```
-1. "properties": {
-2. "ohos.arkCompile.singleFileEmit": true
-3. }
+```json5
+"properties": {
+  "ohos.arkCompile.singleFileEmit": true
+}
 ```
 
 **可能影响：**单文件解析后写入磁盘的时序被提前，可能导致用户自定义源码插桩插件在文件写入磁盘后执行，无法生效。
 
-说明
+**说明** 
 
 * 仅在debug模式下生效。
 * 当进行代码覆盖率编译时，该字段不生效。
@@ -83,15 +83,15 @@ content_hash: sha256:48051779c245d0bfef1296309ea9f16f706ce5bcad60d7d02058413cbb1
 
 **开启方式：**在hvigor-config.json5中添加以下字段开启。
 
-```
-1. "properties": {
-2. "ohos.arkCompile.noEmitJs": true
-3. }
+```json5
+"properties": {
+  "ohos.arkCompile.noEmitJs": true
+}
 ```
 
 **可能影响：**无影响。
 
-说明
+**说明** 
 
 以下场景均不支持该字段，配置后也会生成中间态的js代码：
 
@@ -102,11 +102,11 @@ content_hash: sha256:48051779c245d0bfef1296309ea9f16f706ce5bcad60d7d02058413cbb1
 
 ## 增量判断模块级跳过
 
-**使用场景**
+**使用场景****：**
 
 从DevEco Studio 6.0.0 Beta3版本开始，如果有频繁修改代码进行增量构建的需求，可开启开关优化增量编译速度。
 
-**使用约束**
+**使用约束****：**
 
 * 开启开关前，需要进行一次全量构建，确保构建产物build目录存在。
 * 开启开关后，仅支持修改模块src目录下的内容，如果修改src目录以外的其他内容，可能导致修改不生效或编译问题。
@@ -136,25 +136,25 @@ content_hash: sha256:48051779c245d0bfef1296309ea9f16f706ce5bcad60d7d02058413cbb1
 1. 按照以上方式开启开关**Enable ohpm execution by hvigor**。
 2. 在工程级build-profile.json5的module字段下，添加工程中不存在的模块，如testModule。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/3a1eJOx1Q8SoS-TGha25ew/zh-cn_image_0000002561752967.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/FSx9I5N0Rk6XsCdea2sR5A/zh-cn_image_0000002731542069.png)
 3. 调用excludeNodeByName方法，排除不存在的模块testModule。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/4qeZjMP6SFeSjlx0j0XGPA/zh-cn_image_0000002530753032.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/R4d7zSpzQkGIKMgrKXlKUg/zh-cn_image_0000002701822798.png)
 4. 执行构建成功。
 
 **使用场景二**
 
 调用[setDependenciesOpt](ide-build-expanding-context.md#section18789410129)、[setOverrides](ide-build-expanding-context.md#section469812496459)等方法动态修改oh-package.json5中的依赖信息后，执行sync或build等操作时，DevEco Studio会执行两次ohpm install操作，开启开关后，Hvigor仅执行一次ohpm install，可提升构建的效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/339NbAuFQEeiQnKktmSt6w/zh-cn_image_0000002561832949.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/CvCu8jsRTFCGxEe7cVq5-g/zh-cn_image_0000002701662876.png)
 
 ## 通过IClang提升C++增量编译效率
 
-**使用场景**
+**使用场景：**
 
 从DevEco Studio 6.0.1 Beta1版本开始，如果需要频繁修改某个cpp源文件，可开启IClang相关的开关，提升C++增量编译效率。IClang是一项C++函数级增量编译优化技术，详细介绍请参考[毕昇编译器](bisheng-compiler.md#主要编译优化特性)。
 
-**使用约束**
+**使用约束****：**
 
 * 仅支持在debug编译模式下使用。
 * 需要使用毕昇编译器进行编译，即工程级build-profile.json5的nativeCompiler配置为BiSheng。
@@ -166,13 +166,48 @@ content_hash: sha256:48051779c245d0bfef1296309ea9f16f706ce5bcad60d7d02058413cbb1
 * 方式一：点击**File >** **Settings**（macOS为**DevEco Studio > Preferences/Settings**） **> Build, Execution, Deployment > Build Tools > Hvigor**，勾选**Enable C++ function level incremental compilation**。
 * 方式二：模块级build-profile.json5的cppFlags、cFlags配置"-iclang"参数。
 
-  ```
-  1. "buildOption": {
-  2. "externalNativeOptions": {
-  3. "cppFlags": "-iclang",
-  4. "cFlags": "-iclang",
-  5. }
-  6. }
+  ```json5
+  "buildOption": {
+    "externalNativeOptions": {
+      "cppFlags": "-iclang",
+      "cFlags": "-iclang",
+    }
+  }
   ```
 
 **可能影响：**build-profile.json5文件会纳入项目版本管理，在该文件中增加-iclang参数后，项目其他开发人员会被动开启该实验特性。因此请在充分验证功能正确性后，再通过配置文件上传到代码仓。
+
+## 通过enableIncrementalSoCompress提升so文件增量编译效率
+
+**使用场景****：**
+
+从DevEco Studio 6.1.0 Beta1版本开始，如果工程中包含大量so文件并开启了压缩so体积的配置开关（module.json5的compressNativeLibs或hvigor-config.json5的ohos.pack.compressLevel），可开启enableIncrementalSoCompress开关，提升增量编译效率。开启开关后，如果so文件内容未改变，构建HAP/HSP时会复用上一次构建已经压缩好的so，加快打包速度。
+
+**开启方式：**
+
+工程级build-profile.json5中，在buildOption中将enableIncrementalSoCompress参数配置为true。
+
+```json5
+"buildOption": {
+  "packOptions": {
+    "enableIncrementalSoCompress": true
+  }
+}
+```
+
+## 通过syncNative提升sync阶段C++编译效率
+
+**使用场景****：**
+
+从26.0.0版本开始，如果工程中有较多Native模块且频繁sync的需求，可开启开关优化sync阶段编译速度。
+
+**优化方案****：**
+
+* 优化前：sync阶段执行compileNative任务，多个模块之间是串行编译，构建窗口中有多个compileNative的Tab页，分别对应不同模块的编译日志。
+* 优化后：sync阶段执行syncNative任务，多个模块之间是并行编译，构建窗口中只有一个syncNative的Tab页，对应了多个模块的编译日志。
+
+**优化结果：**提升sync阶段C++编译效率。
+
+**开启方式**：点击**File > Settings**（macOS为**DevEco Studio > Preferences/Settings**） **> Build, Execution, Deployment > Build Tools > Hvigor**，勾选**Enable C++ syncNative compilation**。
+
+**可能影响**：如果在hvigorfile.ts脚本的compileNative任务阶段有自定义插件或任务，开启开关后，由于compileNative任务不会被执行，会导致自定义插件或任务未执行。

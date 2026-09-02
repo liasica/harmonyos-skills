@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uniform-data-
 title: UTD预置列表
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 标准化数据定义 > UTD预置列表
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:15+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:c0d0fdca845b09f55654ba7f93e4a9c13a71c04c70d5b97146fbf02ea6e2b0dd
+scraped_at: 2026-09-02T14:49:44+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:03c5134e09f35b23dc236bf30e582c913223203d313bef6122b5bcdf846bab46
 ---
 
 标准化数据类型（Uniform Type Descriptor，简称UTD）用于解决系统中的类型模糊问题，即针对同一种数据类型，存在不同的类型描述方式：MIME Type、文件扩展名等。例如描述jpg/jpeg类型图片时，可以使用image/jpeg、.jpg、.jpeg或image/picture等方式进行描述，详情可见[UTD基础类型](uniform-data-type-list.md#基础类型)表格。
@@ -16,7 +16,7 @@ content_hash: sha256:c0d0fdca845b09f55654ba7f93e4a9c13a71c04c70d5b97146fbf02ea6e
 
 ## 基础类型
 
-基础类型表示通用数据类型，进行跨应用、跨设备设置跨平台交互时，能够被绝大多数应用、设备以及平台识别，标识UTD-ID为general.xxx。当前系统中预定义的通用类型列表如下：
+基础类型表示通用数据类型，进行跨应用、跨设备、跨平台交互时，能够被绝大多数应用、设备以及平台识别，标识UTD-ID为general.xxx。当前系统中预定义的通用类型列表如下：
 
 | **UTD-ID** | **BelongingTo类型** | **后缀名** | **MIMEType类型** | **说明** |
 | --- | --- | --- | --- | --- |
@@ -47,7 +47,7 @@ content_hash: sha256:c0d0fdca845b09f55654ba7f93e4a9c13a71c04c70d5b97146fbf02ea6e
 | general.rgb-image | general.image | .rgb | image/x-rgb | RGB位图类型。 |
 | general.svg-image | general.image | .svg,.svgz | image/svg+xml | 可扩展矢量图形类型。 |
 | general.wbmp-image | general.image | .wbmp | image/vnd.wap.wbmp | 无线位图类型。 |
-| general.xpixmap-image | general.image | .xpm | image/x-xpixmap | XMP图片类型。 |
+| general.xpixmap-image | general.image | .xpm | image/x-xpixmap | XPM图片类型。 |
 | general.xwindowdump-image | general.image | .xwd | image/x-xwindowdump | XWD图片类型。 |
 | general.heif | general.image | .heif, .heifs, .hif | image/heif | 高效图像文件格式。 |
 | general.heic | general.image | .heic, .heics | image/heic | 高效容器图像文件格式。 |
@@ -78,7 +78,7 @@ content_hash: sha256:c0d0fdca845b09f55654ba7f93e4a9c13a71c04c70d5b97146fbf02ea6e
 | general.pcm | general.audio | .pcm | audio/pcm | PCM音频类型。 |
 | general.flac | general.audio | .flac | audio/flac | FLAC音频类型。 |
 | general.alac | general.audio | .alac | audio/alac | ALAC音频类型。 |
-| general.mp3 | general.audio | .mp3 | audio/mp3 | MPEG-3音频类型。 |
+| general.mp3 | general.audio | .mp3 | audio/mp3 | MPEG-1 Audio Layer 3音频类型。 |
 | general.aac | general.audio | .aac | audio/aac | AAC音频类型。 |
 | general.au-audio | general.audio | .au, .snd | audio/basic, audio/au, audio/snd | Au音频类型。 |
 | general.aifc-audio | general.audio | .aifc, .aif, .aiff | audio/x-aiff | 音频交换文件格式。 |
@@ -142,8 +142,8 @@ content_hash: sha256:c0d0fdca845b09f55654ba7f93e4a9c13a71c04c70d5b97146fbf02ea6e
 | general.pem | general.text | .pem | application/x-pem-file | 增强私隐邮件证书文件类型。 |
 | general.log | general.text | .log | text/plain | 日志文件类型。 |
 | general.tel | general.text | .tel | - | 包含器件封装、网络拓扑、编码信息等的原理图信息文件类型。 |
-| general.ion | general.text | .ion | text/plain | 文件内容描述类型。 |
-| general.conf | general.text | .conf | text/plain | 通用配置文件类型。 |
+| general.ion | general.text | .ion | - | 文件内容描述类型。 |
+| general.conf | general.text | .conf | - | 通用配置文件类型。 |
 | general.calendar | general.text | - | - | 所有日程类数据的基类型。 |
 | general.vcs | general.calendar | .vcs | text/calendar | VCalendar日历数据类型。 |
 | general.ics | general.calendar | .ics | text/calendar | ICalendar日历数据类型。 |
@@ -218,6 +218,8 @@ content_hash: sha256:c0d0fdca845b09f55654ba7f93e4a9c13a71c04c70d5b97146fbf02ea6e
 | com.apple.iwork.keynote.key | general.composite-object,com.apple.iwork | .key | application/vnd.apple.keynote | iWork Keynote演示文稿文件。从HarmonyOS 6.0.2开始支持此类型。 |
 | com.apple.iwork.numbers.numbers | general.composite-object,com.apple.iwork | .numbers | application/vnd.apple.numbers | iWork Numbers电子表格文件。从HarmonyOS 6.0.2开始支持此类型。 |
 | com.apple.iwork.pages.pages | general.composite-object,com.apple.iwork | .pages | application/vnd.apple.pages | iWork Pages文档文件。从HarmonyOS 6.0.2开始支持此类型。 |
+| com.huawei.hmos.musiccreate.gofile | general.archive | .gomusic | - | musiccreate文件格式。从HarmonyOS 6.1.0开始支持此类型。 |
+| com.apple.coreaudio-format | general.audio | .caf | audio/x-caf | CAF音频数据文件。从HarmonyOS 6.1.0开始支持此类型。 |
 
 ## 系统关联类型
 
@@ -384,7 +386,7 @@ content_hash: sha256:c0d0fdca845b09f55654ba7f93e4a9c13a71c04c70d5b97146fbf02ea6e
 | com.sun.java-class | general.executable | .class | - | Java类文件类型。 |
 | com.sun.java-archive | general.archive,general.executable | .jar | application/java-archive | JAVA存档文件类型。 |
 | com.sun.raster | general.image | .ras | image/x-cmu-raster | Sun Raster图像格式。 |
-| org.gnu.gnu-tar-archive | general.archive | .gtar | application/x-gtar | GUN存档文件类型。 |
+| org.gnu.gnu-tar-archive | general.archive | .gtar | application/x-gtar | GNU存档文件类型。 |
 | org.gnu.gnu-zip-archive | general.archive | .gz, .gzip | application/x-gzip, application/gzip | GZIP存档文件类型。 |
 | org.gnu.gnu-zip-tar-archive | general.archive | .tgz | application/x-gtar | GZIP TAR存档文件类型。 |
 | org.gnu.texinfo | general.source-code | .texinfo,.texi | application/x-texinfo | GNU Texinfo源文件类型。 |
@@ -393,7 +395,7 @@ content_hash: sha256:c0d0fdca845b09f55654ba7f93e4a9c13a71c04c70d5b97146fbf02ea6e
 | com.amazon.azw3 | general.ebook | .azw3 | application/vnd.amazon.mobi8-ebook, application/x-mobi8-ebook | AZW3电子书文件格式类型。 |
 | com.amazon.kfx | general.ebook | .kfx | - | KFX电子书文件格式类型。 |
 | com.autodesk.dwg | general.composite-object | .dwg | image/vnd.dwg | AutoCAD绘图保存格式。 |
-| com.autodesk.dxf | general.composite-object | .dxf | image/vnd.dxf | AutoCAD绘图交换交流格式。 |
+| com.autodesk.dxf | general.composite-object | .dxf | image/vnd.dxf | AutoCAD绘图交换格式。 |
 | com.autodesk.dws | general.composite-object | .dws | - | AutoCAD绘图标准文件模板格式。 |
 | com.autodesk.dwt | general.composite-object | .dwt | - | AutoCAD绘图模板文件。 |
 | com.autodesk.dwf | general.composite-object | .dwf | model/vnd.dwf | AutoCAD网络文件格式。 |
@@ -504,7 +506,7 @@ content_hash: sha256:c0d0fdca845b09f55654ba7f93e4a9c13a71c04c70d5b97146fbf02ea6e
 | com.microsoft.vbscript | general.script | .vbs | application/x-vbs | VBScript脚本类型。 |
 | com.microsoft.sys | general.object | .sys | - | Windows系统文件类型。 |
 | com.microsoft.powershell-script | general.script | .ps1 | - | Windows PowerShell脚本类型。 |
-| com.microsoft.registry | general.database | .reg | - | DOS批处理文件类型。 |
-| com.microsoft.dos-batch | general.script | .bat | application/x-bat | Windows注册表类型。 |
+| com.microsoft.registry | general.database | .reg | - | Windows注册表类型。 |
+| com.microsoft.dos-batch | general.script | .bat | application/x-bat | DOS批处理文件类型。 |
 | com.microsoft.inf | general.text | .inf | text/plain | 安装信息文件。 |
 | com.microsoft.sccd | general.xml | .sccd | - | 签名自定义功能描述符。 |

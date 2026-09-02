@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/share-sys
 title: systemShare（分享）
 breadcrumb: API参考 > 应用服务 > Share Kit（分享服务） > ArkTS API > systemShare（分享）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:43+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a4f5ae820a62a26023c579d133d4bf2fb71f18fb2404e45046d2214e70fbfd1e
+scraped_at: 2026-09-02T15:03:09+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:bf16c62f7a8a1e4856eb14432e0e566542ee4cf064b21156f1ff30c67175b54e
 ---
 
 本模块提供分享数据创建及分享面板拉起的功能，提供多种系统标准分享服务，例如分享数据给其他应用、复制、打印等。
@@ -19,15 +19,11 @@ content_hash: sha256:a4f5ae820a62a26023c579d133d4bf2fb71f18fb2404e45046d2214e70f
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { systemShare } from '@kit.ShareKit';
+```typescript
+import { systemShare } from '@kit.ShareKit';
 ```
 
 ## SharedRecord
-
-PhonePC/2in1TabletTV
 
 用于构造一条分享数据记录。包含数据类型、数据内容及描述等信息。
 
@@ -45,14 +41,12 @@ PhonePC/2in1TabletTV
 | description | string | 否 | 是 | 数据记录的描述。缺省为空字符串。 |
 | thumbnail | Uint8Array | 否 | 是 | 数据记录缩略图。缺省时使用与分享内容类型匹配的图标作为缩略图。  建议开发者传入符合数据记录的缩略图，如无，可传入应用图标。  **说明：** 限制图片大小：32KB以下。过大的图片可能导致want数据超限无法拉起分享，可使用[ImagePacker.packToData](arkts-apis-image-imagepacker.md#packtodata13)压缩图片质量。 |
 | thumbnailUri | string | 否 | 是 | 数据记录缩略图的uri。缺省时使用与分享内容类型匹配的图标作为缩略图。支持的uri类型：  应用文件URI，参见：[应用文件分享](../harmonyos-guides/share-app-file.md)  用户文件URI，参见：[用户文件URI介绍](../harmonyos-guides/user-file-uri-intro.md)  **起始版本：** 5.0.0(12)。  **说明：** 与thumbnail字段同时存在时，优先使用thumbnail字段。 |
-| uri | string | 否 | 是 | 数据记录的uri。支持的uri类型：  应用文件URI，参见：[应用文件分享](../harmonyos-guides/share-app-file.md)  用户文件URI，参见：[用户文件URI介绍](../harmonyos-guides/user-file-uri-intro.md)  **说明：** 沙箱路径可通过[fileUri.getUriFromPath](js-apis-file-fileuri.md#fileurigeturifrompath)方法获取文件URI。content和uri二者至少有一个不为空。 |
-| content | string | 否 | 是 | 数据记录内容。链接（包含App Linking）、文本类型的内容通过该字段传递。  **说明：** content和uri二者至少有一个不为空。 |
+| uri | string | 否 | 是 | 数据记录的uri。支持的uri类型：  应用文件URI，参见：[应用文件分享](../harmonyos-guides/share-app-file.md)  用户文件URI，参见：[用户文件URI介绍](../harmonyos-guides/user-file-uri-intro.md)  **说明：** 沙箱路径可通过[fileUri.getUriFromPath](js-apis-file-fileuri.md#fileurigeturifrompath)方法获取文件URI。content和uri二者至少有一个不为空，否则会导致分享失败。 |
+| content | string | 否 | 是 | 数据记录内容。链接（包含App Linking）、文本类型的内容通过该字段传递。  **说明：** content和uri二者至少有一个不为空，否则会导致分享失败。 |
 | extraData | Record<string, string | number | boolean | Array<string | number | boolean>> | 否 | 是 | 扩展数据，用于向目标应用/设备分享自定义的扩展内容。 |
 | revisitShareRecordData | [RevisitShareRecordData](share-system-share.md#revisitsharerecorddata) | 否 | 是 | 通过该字段生成二维码复访分享图。支持类型见[RevisitShareRecordType](share-system-share.md#revisitsharerecordtype)。  **起始版本：** 6.1.0(23)。 |
 
 ## ShareControllerOptions
-
-PhonePC/2in1TabletTV
 
 分享控制器配置项。用于配置分享预览模式，选择模式等，决定了分享面板的显示样式。
 
@@ -66,19 +60,17 @@ PhonePC/2in1TabletTV
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| anchor | [ShareControllerAnchor](share-system-share.md#sharecontrolleranchor) | string | 否 | 是 | 类型为string时，表示分享面板关联的控件ID（[ArkUI组件常规属性的id值](js-components-common-attributes.md#常规属性)）。  类型为ShareControllerAnchor时，表示锚点位置。  不传此参数时，面板会显示在默认位置(居中)。 |
+| anchor | [ShareControllerAnchor](share-system-share.md#sharecontrolleranchor) | string | 否 | 是 | 类型为string时，表示分享面板关联的控件ID（[ArkUI组件常规属性的id值](js-components-common-attributes.md#常规属性)）。  类型为ShareControllerAnchor时，表示锚点位置。  不传此参数时，面板会显示在默认位置（居中）。 |
 | previewMode | [SharePreviewMode](share-system-share.md#sharepreviewmode) | 否 | 是 | 预览的模式，缺省为卡片模式。 |
 | selectionMode | [SelectionMode](share-system-share.md#selectionmode) | 否 | 是 | 选择的模式，缺省为单选模式。 |
 | excludedAbilities | Array<[ShareAbilityType](share-system-share.md#shareabilitytype)> | 否 | 是 | 操作区不需要显示的能力列表。  **起始版本：** 5.0.0(12)。 |
-| appLaunchTrustInfo | Array<string> | 否 | 是 | 通过配置[应用唯一标识符](js-apis-bundlemanager-bundleinfo.md#signatureinfo)（appIdentifier字段）列表，指定可分享的目标应用名单。仅取前50个配置项，超出部分不生效。需申请权限ohos.permission.SET\_SYSTEMSHARE\_APPLAUNCHTRUSTLIST，该能力受限开放，仅支持企业应用限制内部数据分享到企业集团信任的应用。  **起始版本：** 6.0.1(21)。 |
+| appLaunchTrustInfo | Array<string> | 否 | 是 | 通过配置[应用唯一标识符](js-apis-bundlemanager-bundleinfo.md#signatureinfo)（appIdentifier字段）列表，指定可分享的目标应用名单，系统仅读取前50个配置项，超出部分将不生效。调用此功能需申请ohos.permission.SET\_SYSTEMSHARE\_APPLAUNCHTRUSTLIST权限。该能力属于受限开放范围，仅限企业应用用于限制内部数据分享至集团信任的应用列表。  **起始版本：** 6.0.1(21)。 |
 
 ## ShareControllerAnchor
 
-PhonePC/2in1TabletTV
-
 分享悬浮窗视图依附锚点，分享面板会根据屏幕大小选择是否在指定的位置显示悬浮窗。
 
-说明
+**说明** 
 
 设备屏幕宽度较小时，不会以悬浮形态展示，而是以模态形式/弹窗形式显示。
 
@@ -90,12 +82,10 @@ PhonePC/2in1TabletTV
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| windowOffset | [Offset](share-system-share.md#offset) | 否 | 否 | 相对锚点的窗体偏移值。 |
+| windowOffset | [Offset](share-system-share.md#offset) | 否 | 否 | 表示共享控制器的窗口偏移量，推荐设置组件左上角顶点的坐标。 |
 | size | [Size](share-system-share.md#size) | 否 | 是 | 锚点矩形的尺寸，缺省时，锚点是一个点，即宽高都为0。 |
 
 ## Offset
-
-PhonePC/2in1TabletTV
 
 可以设置的相对锚点的窗口偏移值。
 
@@ -112,8 +102,6 @@ PhonePC/2in1TabletTV
 
 ## Size
 
-PhonePC/2in1TabletTV
-
 锚点矩形的尺寸，缺省时，锚点是一个点，即宽高都为0。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -129,8 +117,6 @@ PhonePC/2in1TabletTV
 
 ## ShareOperationResult
 
-PhonePC/2in1TabletTV
-
 shareCompleted事件的返回值，用于获知用户分享渠道信息。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -141,11 +127,9 @@ shareCompleted事件的返回值，用于获知用户分享渠道信息。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| targetAbilityInfo | [ShareAbilityInfo](share-system-share.md#shareabilityinfo) | 是 | 否 | 用户分享渠道的信息。 |
+| targetAbilityInfo | [ShareAbilityInfo](share-system-share.md#shareabilityinfo) | 否 | 否 | 用户分享渠道的信息。 |
 
 ## ShareAbilityInfo
-
-PhonePC/2in1TabletTV
 
 用户分享渠道的信息。
 
@@ -157,13 +141,13 @@ PhonePC/2in1TabletTV
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| name | string | 否 | 否 | 分享渠道的名称。  - 系统操作有固定名称。请参见：[ShareAbilityName](share-system-share.md#shareabilityname)。  - 非系统操作采用'[bundleName]#[moduleName]#[abilityName]'格式拼接。 |
+| name | string | 否 | 否 | 分享渠道的名称。  - 系统操作有固定名称。请参见：[ShareAbilityName](share-system-share.md#shareabilityname)枚举值。  - 非系统操作采用'[bundleName]#[moduleName]#[abilityName]'格式拼接。 |
 
 ## ContactInfo
 
-PhonePC/2in1TabletTV
-
 意图框架推荐联系人的信息。当分享到推荐联系人时，携带此参数用于区分。
+
+数据捐献参考：[共享联系人信息到分享推荐区](../harmonyos-guides/share-intents-share.md)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -177,8 +161,6 @@ PhonePC/2in1TabletTV
 | contactId | string | 否 | 否 | 联系人ID：取值来源应用向意图捐赠数据中的entityId字段。 |
 
 ## RevisitShareRecordData
-
-PhonePC/2in1TabletTV
 
 复访分享数据。
 
@@ -196,8 +178,6 @@ PhonePC/2in1TabletTV
 | generatedImageUri | string | 否 | 否 | 生成的分享图uri路径 (应用文件URI)，用于写入绘图结果或预览。开发者需要在该路径下创建一个空的图片文件，支持的图片文件类型包括PNG、JPG。  应用文件URI，参见：[应用文件分享](../harmonyos-guides/share-app-file.md)  **说明：** 沙箱路径可通过[fileUri.getUriFromPath](js-apis-file-fileuri.md#fileurigeturifrompath)方法获取文件URI。 |
 
 ## ReadingExtendedShareRecordData
-
-PhonePC/2in1TabletTV
 
 阅读分享拓展数据记录，ReadingExtendedShareRecordData继承自RevisitShareRecordData。
 
@@ -228,8 +208,6 @@ PhonePC/2in1TabletTV
 
 ## SharePreviewMode
 
-PhonePC/2in1TabletTV
-
 分享预览模式。图片、视频等格式推荐使用详细预览图模式。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -245,8 +223,6 @@ PhonePC/2in1TabletTV
 
 ## SelectionMode
 
-PhonePC/2in1TabletTV
-
 分享面板选择模式。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -261,8 +237,6 @@ PhonePC/2in1TabletTV
 | BATCH | 1 | 批量模式，分享全部数据记录。 |
 
 ## ShareAbilityType
-
-PhonePC/2in1TabletTV
 
 系统能力类型定义。用于排除操作区的系统能力。
 
@@ -282,8 +256,6 @@ PhonePC/2in1TabletTV
 
 ## ShareAbilityResultCode
 
-PhonePC/2in1TabletTV
-
 从UIExtensionAbility返回的Code值。可控制分享面板的行为。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -300,8 +272,6 @@ PhonePC/2in1TabletTV
 
 ## ShareAbilityName
 
-PhonePC/2in1TabletTV
-
 系统操作的名称，用于返回分享结果数据。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -312,18 +282,16 @@ PhonePC/2in1TabletTV
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| COPY\_TO\_PASTEBOARD | SystemShare\_CopyToPasteboard | 复制 |
-| SAVE\_TO\_MEDIA\_ASSET | SystemShare\_SaveToMediaAsset | 保存至图库 |
-| SAVE\_AS\_FILE | SystemShare\_SaveAsFile | 另存为 |
-| PRINT | SystemShare\_Print | 打印 |
-| SAVE\_TO\_SUPERHUB | SystemShare\_Superhub | 添加至中转站 |
-| COLLECTION | SystemShare\_Collection | 小艺知识空间 |
-| HARMONYSHARE | SystemShare\_HarmonyShare | 华为分享 |
-| ENCRYPT | SystemShare\_Encrypt | 加密分享 |
+| COPY\_TO\_PASTEBOARD | 'SystemShare\_CopyToPasteboard' | 复制 |
+| SAVE\_TO\_MEDIA\_ASSET | 'SystemShare\_SaveToMediaAsset' | 保存至图库 |
+| SAVE\_AS\_FILE | 'SystemShare\_SaveAsFile' | 另存为 |
+| PRINT | 'SystemShare\_Print' | 打印 |
+| SAVE\_TO\_SUPERHUB | 'SystemShare\_Superhub' | 添加至中转站 |
+| COLLECTION | 'SystemShare\_Collection' | 小艺知识空间 |
+| HARMONYSHARE | 'SystemShare\_HarmonyShare' | 华为分享 |
+| ENCRYPT | 'SystemShare\_Encrypt' | 加密分享 |
 
 ## RevisitShareRecordType
-
-PhonePC/2in1TabletTV
 
 定义复访分享的类型。
 
@@ -338,8 +306,6 @@ PhonePC/2in1TabletTV
 | READING\_SHARE | 1 | 阅读分享数据类型。 |
 
 ## ReadingShareRecordStyle
-
-PhonePC/2in1TabletTV
 
 阅读分享场景显示模版类型。
 
@@ -356,15 +322,13 @@ PhonePC/2in1TabletTV
 
 ## SharedData
 
-PhonePC/2in1TabletTV
-
 表示分享数据对象，提供封装一组数据记录的方法。
 
 一个分享数据对象至少存在一条记录，开发者需要在SharedData实例化过程中，通过构造器第一个参数传入；当分享数据包含多条数据记录时，则需要使用addRecord(record: SharedRecord)方法追加记录。
 
-说明
+**说明** 
 
-数据记录当前最大可支持500条，且需同时满足数据总大小不超过IPC传输上限200KB。
+数据记录当前最大可支持500条，且需同时满足数据总大小不超过[IPC](../harmonyos-guides/ipc-rpc-overview.md#基本概念)传输上限200KB。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -373,8 +337,6 @@ PhonePC/2in1TabletTV
 **起始版本：** 4.1.0(11)
 
 ### constructor
-
-PhonePC/2in1TabletTV
 
 constructor(record: SharedRecord)
 
@@ -402,19 +364,14 @@ constructor(record: SharedRecord)
 
 **示例：**
 
-```
-1. import { systemShare } from '@kit.ShareKit';
-2. import { uniformTypeDescriptor as utd } from '@kit.ArkData';
-
-4. let data: systemShare.SharedData = new systemShare.SharedData({
-5. utd: utd.UniformDataType.PLAIN_TEXT,
-6. content: 'Hello HarmonyOS'
-7. });
+```typescript
+let data: systemShare.SharedData = new systemShare.SharedData({
+  utd: utd.UniformDataType.PLAIN_TEXT,
+  content: 'Hello HarmonyOS'
+});
 ```
 
 ### addRecord
-
-PhonePC/2in1TabletTV
 
 addRecord(record: SharedRecord): void
 
@@ -443,24 +400,30 @@ addRecord(record: SharedRecord): void
 
 **示例：**
 
-```
-1. import { systemShare } from '@kit.ShareKit';
-2. import { uniformTypeDescriptor as utd } from '@kit.ArkData';
+```typescript
+let shareData: systemShare.SharedData = new systemShare.SharedData({
+  utd: utd.UniformDataType.IMAGE,
+  // ...
+  title: 'Picture Title',
+  description: 'Picture Description',
+  label: 'Poster'
+});
 
-4. let data: systemShare.SharedData = new systemShare.SharedData({
-5. utd: utd.UniformDataType.PLAIN_TEXT,
-6. content: 'Hello HarmonyOS'
-7. });
-
-9. data.addRecord({
-10. utd: utd.UniformDataType.PNG,
-11. uri: 'file://.../test.png'
-12. });
+try {
+  shareData.addRecord({
+    utd: utd.UniformDataType.HYPERLINK,
+    content: 'https://www.vmall.com/index.html?cid=128688',
+    title: 'Huawei Vmall',
+    description: 'Phone',
+    label: 'Huawei Vmall',
+    // ...
+  });
+} catch (error) {
+  hilog.error(DOMAIN, 'testTag', `addRecord error. Code: ${error?.code}, message: ${error?.message}`);
+}
 ```
 
 ### getRecords
-
-PhonePC/2in1TabletTV
 
 getRecords(): Array<SharedRecord>
 
@@ -480,29 +443,25 @@ getRecords(): Array<SharedRecord>
 
 **示例：**
 
-```
-1. import { systemShare } from '@kit.ShareKit';
-2. import { uniformTypeDescriptor as utd } from '@kit.ArkData';
-
-4. let data: systemShare.SharedData = new systemShare.SharedData({
-5. utd: utd.UniformDataType.PLAIN_TEXT,
-6. content: 'Hello HarmonyOS'
-7. });
-
-9. let records: systemShare.SharedRecord[] = data.getRecords();
-10. records.forEach((record: systemShare.SharedRecord) => {
-11. // To do things.
-12. });
+```typescript
+aboutToAppear(): void {
+  systemShare.getSharedData(this.want).then((data: systemShare.SharedData) => {
+    let records: systemShare.SharedRecord[] = data.getRecords();
+    records.forEach(async (record: systemShare.SharedRecord) => {
+      // ...
+    });
+  }).catch((error: BusinessError) => {
+    hilog.error(DOMAIN, 'testTag', `getSharedData error. Code: ${error?.code}, message: ${error?.message}`);
+  });
+}
 ```
 
 ## ShareController
 
-PhonePC/2in1TabletTV
-
 分享面板在不同设备下有不同的展示形式，根据屏幕规格&参数为应用提供不同的预览形式以及分享方式。
 
-* 例如手机设备中，分享以模态显示；横屏/折叠屏展开状态时，分享面板以对话框形式显示；
-* 而2in1设备及tablet，需要传入锚点信息并且以悬浮窗（Popup）形式显示。
+* 例如手机和TV设备中，分享以模态显示；横屏/折叠屏展开状态时，分享面板以对话框形式显示；
+* 而PC/2in1设备及Tablet，需要传入锚点信息并且以悬浮窗（Popup）形式显示。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -511,8 +470,6 @@ PhonePC/2in1TabletTV
 **起始版本：** 4.1.0(11)
 
 ### constructor
-
-PhonePC/2in1TabletTV
 
 constructor(data: SharedData)
 
@@ -540,21 +497,18 @@ constructor(data: SharedData)
 
 **示例：**
 
-```
-1. import { systemShare } from '@kit.ShareKit';
-2. import { uniformTypeDescriptor as utd } from '@kit.ArkData';
+```typescript
+let shareData: systemShare.SharedData = new systemShare.SharedData({
+  utd: utd.UniformDataType.HYPERLINK,
+  content: 'https://www.vmall.com/index.html?cid=128688',
+  title: 'Huawei Vmall',
+  description: 'Phone',
+});
 
-4. let data: systemShare.SharedData = new systemShare.SharedData({
-5. utd: utd.UniformDataType.PLAIN_TEXT,
-6. content: 'Hello HarmonyOS'
-7. });
-
-9. let controller: systemShare.ShareController = new systemShare.ShareController(data);
+let controller: systemShare.ShareController = new systemShare.ShareController(shareData);
 ```
 
 ### show
-
-PhonePC/2in1TabletTV
 
 show(context: common.UIAbilityContext, options: ShareControllerOptions): Promise<void>
 
@@ -586,51 +540,44 @@ show(context: common.UIAbilityContext, options: ShareControllerOptions): Promise
 | 错误码ID | 错误信息 |
 | --- | --- |
 | [401](errorcode-universal.md#section401-参数检查失败) | Parameter error. |
-| [1003702001](share-error-code.md#section1003702001-数据记录格式非法类型不支持) | Record types are not support.(The batch and multiple selection modes support { @link UDMF.File } type records only.) |
+| [1003702001](share-error-code.md#section1003702001-数据记录格式非法类型不支持) | Record types are not support. (The batch and multiple selection modes support { @link UDMF.File } type records only.) |
 | [1003702002](share-error-code.md#section1003702002-跨进程传输数据量超过上限) | IPC data is oversized. |
 
 **示例：**
 
-```
-1. import { systemShare } from '@kit.ShareKit';
-2. import { uniformTypeDescriptor as utd } from '@kit.ArkData';
-3. import { common } from '@kit.AbilityKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+@Component
+export default struct LinkScenario {
 
-6. @Component
-7. export struct ShareUtdText {
-8. build() {
-9. }
+  private async share() {
+    let shareData: systemShare.SharedData = new systemShare.SharedData({
+      utd: utd.UniformDataType.HYPERLINK,
+      content: 'https://www.vmall.com/index.html?cid=128688',
+      title: 'Huawei Vmall',
+      description: 'Phone',
+    });
 
-11. private share() {
-12. // 构造ShareData，需配置一条有效数据信息
-13. let shareData: systemShare.SharedData = new systemShare.SharedData({
-14. utd: utd.UniformDataType.TEXT,
-15. content: '这是一段文本内容'
-16. });
-17. // 进行分享面板显示
-18. let controller: systemShare.ShareController = new systemShare.ShareController(shareData);
-19. let uiContext: UIContext = this.getUIContext();
-20. let context: common.UIAbilityContext = uiContext.getHostContext() as common.UIAbilityContext;
-21. controller.show(context, {
-22. selectionMode: systemShare.SelectionMode.SINGLE,
-23. previewMode: systemShare.SharePreviewMode.DETAIL,
-24. }).then(() => {
-25. console.info('ShareController show success.');
-26. }).catch((error: BusinessError) => {
-27. console.error(`ShareController show error. code: ${error.code}, message: ${error.message}`);
-28. });
-29. }
-30. }
+    let controller: systemShare.ShareController = new systemShare.ShareController(shareData);
+    const uiContext: UIContext = this.getUIContext();
+    const context: common.UIAbilityContext = uiContext.getHostContext() as common.UIAbilityContext;
+    controller.show(context, {
+      selectionMode: systemShare.SelectionMode.SINGLE,
+      previewMode: systemShare.SharePreviewMode.DEFAULT,
+    }).then(() => {
+      hilog.info(DOMAIN, 'testTag', 'ShareController show success.');
+    }).catch((error: BusinessError) => {
+      hilog.error(DOMAIN, 'testTag', `ShareController show error. code: ${error?.code}, message: ${error?.message}`);
+    });
+  }
+  // ...
+}
 ```
 
 ### on('dismiss')
 
-PhonePC/2in1TabletTV
-
 on(event: 'dismiss', callback: () => void): void
 
-注册分享面板关闭事件监听。
+注册分享面板关闭事件监听。使用callback异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -655,32 +602,41 @@ on(event: 'dismiss', callback: () => void): void
 
 **示例：**
 
-```
-1. import { systemShare } from '@kit.ShareKit';
-2. import { uniformTypeDescriptor as utd } from '@kit.ArkData';
+```typescript
+private async handelShareDismiss(): Promise<void> {
+  const uiContext: UIContext = this.getUIContext();
+  let shareData: systemShare.SharedData = new systemShare.SharedData({
+    utd: utd.UniformDataType.PLAIN_TEXT,
+    content: 'Hello HarmonyOS',
+  });
+  let controller: systemShare.ShareController = new systemShare.ShareController(shareData);
+  const context: common.UIAbilityContext = uiContext.getHostContext() as common.UIAbilityContext;
+  const callback = () => {
+    try {
+      hilog.info(DOMAIN, 'testTag', 'HuaweiShare_ dismiss invoked.');
+      uiContext.getPromptAction().showToast({ message: 'dismiss' });
+    } catch (error) {
+      hilog.error(DOMAIN, 'testTag', `showToast error. Code: ${error?.code}, message: ${error?.message}`);
+    }
+  };
+  controller.on('dismiss', callback);
 
-4. let data: systemShare.SharedData = new systemShare.SharedData({
-5. utd: utd.UniformDataType.PLAIN_TEXT,
-6. content: 'Hello HarmonyOS'
-7. });
-8. data.addRecord({
-9. utd: utd.UniformDataType.PNG,
-10. uri: 'file://.../test.png'
-11. });
-
-13. let controller: systemShare.ShareController = new systemShare.ShareController(data);
-14. controller.on('dismiss', () => {
-15. console.info('Share panel closed');
-16. });
+  controller.show(context, {
+    previewMode: systemShare.SharePreviewMode.DEFAULT,
+    selectionMode: systemShare.SelectionMode.SINGLE,
+  }).then(() => {
+    hilog.info(DOMAIN, 'testTag', 'HuaweiShare_ show');
+  }).catch((error: BusinessError) => {
+    hilog.error(DOMAIN, 'testTag', `HuaweiShare_ show error. Code: ${error?.code}, message: ${error?.message}`);
+  });
+}
 ```
 
 ### off('dismiss')
 
-PhonePC/2in1TabletTV
-
 off(event: 'dismiss', callback: () => void): void
 
-取消分享面板关闭事件监听。
+取消分享面板关闭事件监听。使用callback异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -705,40 +661,37 @@ off(event: 'dismiss', callback: () => void): void
 
 **示例：**
 
-```
-1. import { systemShare } from '@kit.ShareKit';
-2. import { uniformTypeDescriptor as utd } from '@kit.ArkData';
-
-4. let data: systemShare.SharedData = new systemShare.SharedData({
-5. utd: utd.UniformDataType.PLAIN_TEXT,
-6. content: 'Hello HarmonyOS'
-7. });
-8. data.addRecord({
-9. utd: utd.UniformDataType.PNG,
-10. uri: 'file://.../test.png'
-11. });
-
-13. let controller: systemShare.ShareController = new systemShare.ShareController(data);
-14. let callback = () => {
-15. console.info('Share panel closed');
-16. };
-17. controller.on('dismiss', callback);
-18. controller.off('dismiss', callback);
+```typescript
+private async handelShareDisableDismiss(): Promise<void> {
+  const uiContext: UIContext = this.getUIContext();
+  let shareData: systemShare.SharedData = new systemShare.SharedData({
+    utd: utd.UniformDataType.PLAIN_TEXT,
+    content: 'Hello HarmonyOS',
+  });
+  let controller: systemShare.ShareController = new systemShare.ShareController(shareData);
+  const context: common.UIAbilityContext = uiContext.getHostContext() as common.UIAbilityContext;
+  const callback = () => {
+    try {
+      hilog.info(DOMAIN, 'testTag', 'HuaweiShare_ dismiss invoked.');
+      uiContext.getPromptAction().showToast({ message: 'dismiss' });
+    } catch (error) {
+      hilog.error(DOMAIN, 'testTag', `showToast error. Code: ${error?.code}, message: ${error?.message}`);
+    }
+  };
+  controller.on('dismiss', callback);
+  controller.off('dismiss', callback);
+}
 ```
 
 ### on('shareCompleted')
 
-PhonePC/2in1TabletTV
-
 on(type: 'shareCompleted', callback: Callback<ShareOperationResult>): void
 
-注册用户完成分享事件监听。返回用户分享渠道，可用于数据统计等。
+注册用户完成分享事件监听。返回用户分享渠道，可用于数据统计等。使用callback异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Collaboration.SystemShare
-
-**设备行为差异：** 该接口在TV中无效果，在其他设备类型中可正常调用。
 
 **起始版本：** 5.1.0(18)
 
@@ -747,7 +700,7 @@ on(type: 'shareCompleted', callback: Callback<ShareOperationResult>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'shareCompleted'，当用户完成分享时，触发该事件。 |
-| callback | Callback<[ShareOperationResult](share-system-share.md#shareoperationresult)> | 是 | 事件回调。 |
+| callback | Callback<[ShareOperationResult](share-system-share.md#shareoperationresult)> | 是 | 事件回调，可通过回调参数获取分享渠道。 |
 
 **错误码：**
 
@@ -759,34 +712,44 @@ on(type: 'shareCompleted', callback: Callback<ShareOperationResult>): void
 
 **示例：**
 
-```
-1. import { systemShare } from '@kit.ShareKit';
-2. import { uniformTypeDescriptor as utd } from '@kit.ArkData';
-
-4. let data: systemShare.SharedData = new systemShare.SharedData({
-5. utd: utd.UniformDataType.PLAIN_TEXT,
-6. content: 'Hello HarmonyOS'
-7. });
-
-9. let controller: systemShare.ShareController = new systemShare.ShareController(data);
-10. controller.on('shareCompleted', (result: systemShare.ShareOperationResult) => {
-11. console.info('shareCompleted name:', result.targetAbilityInfo.name);
-12. });
+```typescript
+private async handelShareCompleted(): Promise<void> {
+  const uiContext: UIContext = this.getUIContext();
+  const contextFaker: Context = uiContext.getHostContext() as Context;
+  let filePath = contextFaker.filesDir + '/exampleImage.jpg';
+  let utdTypeId = utd.getUniformDataTypeByFilenameExtension('.jpg', utd.UniformDataType.IMAGE);
+  let shareData: systemShare.SharedData = new systemShare.SharedData({
+    utd: utdTypeId,
+    uri: fileUri.getUriFromPath(filePath),
+    title: 'Picture Title',
+    description: 'Picture Description',
+  });
+  let controller: systemShare.ShareController = new systemShare.ShareController(shareData);
+  const context: common.UIAbilityContext = uiContext.getHostContext() as common.UIAbilityContext;
+  const callback = (result: systemShare.ShareOperationResult) => {
+    hilog.info(DOMAIN, 'testTag', `HuaweiShare_ shareCompleted invoked. result: ${result.targetAbilityInfo.name}`);
+  };
+  controller.on('shareCompleted', callback);
+  controller.show(context, {
+    previewMode: systemShare.SharePreviewMode.DETAIL,
+    selectionMode: systemShare.SelectionMode.SINGLE,
+  }).then(() => {
+    hilog.info(DOMAIN, 'testTag', 'HuaweiShare_ show');
+  }).catch((error: BusinessError) => {
+    hilog.error(DOMAIN, 'testTag', `HuaweiShare_ show error. Code: ${error?.code}, message: ${error?.message}`);
+  });
+}
 ```
 
 ### off('shareCompleted')
 
-PhonePC/2in1TabletTV
-
 off(type: 'shareCompleted', callback?: Callback<ShareOperationResult>): void
 
-取消用户完成分享事件监听。
+取消用户完成分享事件监听。使用callback异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Collaboration.SystemShare
-
-**设备行为差异：** 该接口在TV中无效果，在其他设备类型中可正常调用。
 
 **起始版本：** 5.1.0(18)
 
@@ -807,26 +770,29 @@ off(type: 'shareCompleted', callback?: Callback<ShareOperationResult>): void
 
 **示例：**
 
-```
-1. import { systemShare } from '@kit.ShareKit';
-2. import { uniformTypeDescriptor as utd } from '@kit.ArkData';
-
-4. let data: systemShare.SharedData = new systemShare.SharedData({
-5. utd: utd.UniformDataType.PLAIN_TEXT,
-6. content: 'Hello HarmonyOS'
-7. });
-
-9. let controller: systemShare.ShareController = new systemShare.ShareController(data);
-10. let callback = (result: systemShare.ShareOperationResult) => {
-11. console.info('shareCompleted name:', result.targetAbilityInfo.name);
-12. };
-13. controller.on('shareCompleted', callback);
-14. controller.off('shareCompleted', callback);
+```typescript
+private async handelShareDisableCompleted(): Promise<void> {
+  const uiContext: UIContext = this.getUIContext();
+  const contextFaker: Context = uiContext.getHostContext() as Context;
+  let filePath = contextFaker.filesDir + '/exampleImage.jpg';
+  let utdTypeId = utd.getUniformDataTypeByFilenameExtension('.jpg', utd.UniformDataType.IMAGE);
+  let shareData: systemShare.SharedData = new systemShare.SharedData({
+    utd: utdTypeId,
+    uri: fileUri.getUriFromPath(filePath),
+    title: 'Picture Title',
+    description: 'Picture Description',
+  });
+  let controller: systemShare.ShareController = new systemShare.ShareController(shareData);
+  const context: common.UIAbilityContext = uiContext.getHostContext() as common.UIAbilityContext;
+  const callback = (result: systemShare.ShareOperationResult) => {
+    hilog.info(DOMAIN, 'testTag', `HuaweiShare_ shareCompleted invoked. result: ${result.targetAbilityInfo.name}`);
+  };
+  controller.on('shareCompleted', callback);
+  controller.off('shareCompleted', callback);
+}
 ```
 
 ## getSharedData
-
-PhonePC/2in1TabletTV
 
 getSharedData(want: Want): Promise<SharedData>
 
@@ -861,31 +827,26 @@ getSharedData(want: Want): Promise<SharedData>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { Want, ShareExtensionAbility, UIExtensionContentSession } from '@kit.AbilityKit';
-3. import { systemShare } from '@kit.ShareKit';
-
-5. export default class TestShareAbility extends ShareExtensionAbility {
-6. onSessionCreate(want: Want, session: UIExtensionContentSession) {
-7. systemShare.getSharedData(want)
-8. .then((data: systemShare.SharedData) => {
-9. data.getRecords().forEach((record: systemShare.SharedRecord) => {
-10. // 处理分享数据
-11. });
-12. session.loadContent('pages/Index');
-13. })
-14. .catch((error: BusinessError) => {
-15. console.error(`Failed to getSharedData. Code: ${error.code}, message: ${error.message}`);
-16. session.terminateSelf();
-17. });
-18. }
-19. }
+```typescript
+aboutToAppear(): void {
+  systemShare.getSharedData(this.want).then((data: systemShare.SharedData) => {
+    let records: systemShare.SharedRecord[] = data.getRecords();
+    records.forEach(async (record: systemShare.SharedRecord) => {
+      switch (true) {
+        case this.belongsToImage(record.utd):
+          record.uri && (this.imageUri = record.uri);
+          break;
+        default:
+          break;
+      }
+    });
+  }).catch((error: BusinessError) => {
+    hilog.error(DOMAIN, 'testTag', `getSharedData error. Code: ${error?.code}, message: ${error?.message}`);
+  });
+}
 ```
 
 ## getContactInfo
-
-PhonePC/2in1TabletTV
 
 getContactInfo(want: Want): Promise<ContactInfo>
 
@@ -920,37 +881,23 @@ getContactInfo(want: Want): Promise<ContactInfo>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { Want, ShareExtensionAbility, UIExtensionContentSession } from '@kit.AbilityKit';
-3. import { systemShare } from '@kit.ShareKit';
-
-5. export default class TestShareAbility extends ShareExtensionAbility {
-6. onSessionCreate(want: Want, session: UIExtensionContentSession) {
-7. systemShare.getContactInfo(want)
-8. .then(async (contact: systemShare.ContactInfo) => {
-9. // 处理联系人信息，可通过联系人类型（如：个人，群组等），联系人ID，进行指定用户分享。
-10. // 获取分享数据
-11. let data = await systemShare.getSharedData(want);
-12. })
-13. .catch((error: BusinessError) => {
-14. console.error(`Failed to getContactInfo. Code: ${error.code}, message: ${error.message}`);
-15. // 联系人不存在或数据获取异常
-16. session.terminateSelf();
-17. });
-18. }
-19. }
+```typescript
+aboutToAppear(): void {
+  systemShare.getContactInfo(this.want).then(async (contact: systemShare.ContactInfo) => {
+    let data = await systemShare.getSharedData(this.want);
+  }).catch((error: BusinessError) => {
+    hilog.error(DOMAIN, 'testTag', `getContactInfo error. Code: ${error?.code}, message: ${error?.message}`);
+  });
+}
 ```
 
 ## getWant
-
-PhonePC/2in1TabletTV
 
 getWant(data: SharedData, options?: ShareControllerOptions): Promise<Want>
 
 基于SharedData和预览模式构造want数据，使用Promise异步回调。
 
-说明
+**说明** 
 
 请勿随意修改返回值want数据中的参数，可能会导致未知的错误。
 
@@ -986,76 +933,48 @@ getWant(data: SharedData, options?: ShareControllerOptions): Promise<Want>
 
 不配置预览模式
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { Want, ShareExtensionAbility, UIExtensionContentSession } from '@kit.AbilityKit';
-3. import { uniformTypeDescriptor as utd } from '@kit.ArkData';
-4. import { systemShare } from '@kit.ShareKit';
+```typescript
+onSessionCreate(): void {
+  let data: systemShare.SharedData = new systemShare.SharedData({
+    utd: utd.UniformDataType.PLAIN_TEXT,
+    content: 'Hello HarmonyOS'
+  });
 
-6. export default class TestShareAbility extends ShareExtensionAbility {
-7. onSessionCreate(want: Want, session: UIExtensionContentSession) {
-8. // 处理分享数据
-9. // To do things.
-10. // 准备返回数据
-11. let data: systemShare.SharedData = new systemShare.SharedData({
-12. utd: utd.UniformDataType.PLAIN_TEXT,
-13. content: 'Hello HarmonyOS'
-14. });
-15. data.addRecord({
-16. utd: utd.UniformDataType.PNG,
-17. uri: 'file://.../test.png'
-18. });
-19. systemShare.getWant(data)
-20. .then((want) => {
-21. console.info('want = ', JSON.stringify(want));
-22. session!.terminateSelfWithResult({
-23. resultCode: 2,
-24. want: want
-25. })
-26. })
-27. .catch((error: BusinessError) => {
-28. console.error(`Failed to getWant. Code: ${error.code}, message: ${error.message}`);
-29. });
-30. }
-31. }
+  data.addRecord({
+    utd: utd.UniformDataType.PNG,
+    uri: 'file://.../test.png'
+  });
+
+  systemShare.getWant(data)
+    .then((want) => {
+    })
+    .catch((error: BusinessError) => {
+      hilog.error(DOMAIN, 'testTag', `Failed to getWant. Code: ${error?.code}, message: ${error?.message}`);
+  });
+}
 ```
 
 配置预览模式
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { uniformTypeDescriptor as utd } from '@kit.ArkData';
-3. import { Want, ShareExtensionAbility, UIExtensionContentSession } from '@kit.AbilityKit';
-4. import { systemShare } from '@kit.ShareKit';
-
-6. export default class TestShareAbility extends ShareExtensionAbility {
-7. onSessionCreate(want: Want, session: UIExtensionContentSession) {
-8. // 处理分享数据
-9. // To do things.
-10. // 准备返回数据
-11. let data: systemShare.SharedData = new systemShare.SharedData({
-12. utd: utd.UniformDataType.PLAIN_TEXT,
-13. content: 'Hello HarmonyOS'
-14. });
-15. data.addRecord({
-16. utd: utd.UniformDataType.PNG,
-17. uri: 'file://.../test.png'
-18. });
-19. let options : systemShare.ShareControllerOptions = {
-20. previewMode: systemShare.SharePreviewMode.DETAIL,
-21. selectionMode: systemShare.SelectionMode.SINGLE
-22. };
-23. systemShare.getWant(data,options)
-24. .then((want) => {
-25. console.info('want = ', JSON.stringify(want));
-26. session!.terminateSelfWithResult({
-27. resultCode: 2,
-28. want: want
-29. })
-30. })
-31. .catch((error: BusinessError) => {
-32. console.error(`Failed to getWant. Code: ${error.code}, message: ${error.message}`);
-33. });
-34. }
-35. }
+```typescript
+onSessionCreatePreview(): void {
+  let data: systemShare.SharedData = new systemShare.SharedData({
+    utd: utd.UniformDataType.PLAIN_TEXT,
+    content: 'Hello HarmonyOS'
+  });
+  data.addRecord({
+    utd: utd.UniformDataType.PNG,
+    uri: 'file://.../test.png'
+  });
+  let options : systemShare.ShareControllerOptions = {
+    previewMode: systemShare.SharePreviewMode.DETAIL,
+    selectionMode: systemShare.SelectionMode.SINGLE
+  };
+  systemShare.getWant(data, options)
+    .then((want) => {
+    })
+    .catch((error: BusinessError) => {
+      hilog.error(DOMAIN, 'testTag', `Failed to getWant. Code: ${error?.code}, message: ${error?.message}`);
+    });
+}
 ```

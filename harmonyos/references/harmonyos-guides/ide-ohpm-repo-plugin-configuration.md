@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: 自定义存储插件配置
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 自定义存储插件 > 自定义存储插件配置
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:54+08:00
-doc_updated_at: 2026-03-11
-content_hash: sha256:c6dda6e0417ac96d5c2a9e3eea355fd3310be86fae6dc411bfb32a8f984bc526
+scraped_at: 2026-09-02T15:00:18+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:504c117b47314b5304de0a6ebac7630600af8775648a181b01a0ca5774aaf4dd
 ---
 
 ohpm-repo从2.2.0版本开始支持自定义存储插件（需要配套使用1.7.0及以上版本ohpm命令行工具），允许您开发定制化的存储插件来对接您自己的存储系统，您希望将ohpm-repo下的三方包文件存储在华为云OBS或者其他云存储平台，可以按照如下步骤来实现自定义存储插件。
-
-注意
 
 当您使用自定义存储插件对接自己的存储系统时，如果存在网络通信，建议使用https协议，确保信息安全传输。
 
@@ -22,49 +20,48 @@ ohpm-repo从2.2.0版本开始支持自定义存储插件（需要配套使用1.7
 
 ## 编辑CustomStorage.ts文件，实现存储插件接口StoragePlugin
 
-注意
+打开CustomStorage.ts模板文件，需要编写代码实现接口类StoragePlugin，实现init, save, delete, download和getDownloadUrl五个基础函数，实现类CustomStorage的名字可自定义。
 
-* 打开CustomStorage.ts模板文件，需要编写代码实现接口类StoragePlugin，实现init, save, delete, download和getDownloadUrl五个基础函数，实现类CustomStorage的名字可自定义修改。
-* 当使用自定义存储插件时，db存储位置必须为**MySQL**。
+当使用自定义存储插件时，db存储位置必须为**MySQL**。
 
 接口类StoragePlugin中包含如下五个函数，需要在实现类中完成功能的实现。
 
-```
-1. // 存储插件接口类定义如下
-2. export interface StoragePlugin {
+```screen
+// 存储插件接口类定义如下
+export interface StoragePlugin {
+ 
+  /**
+   * 初始化插件
+   */
+  init(): Promise<void>;
+ 
+  /**
+   * 上传文件
+   * @param srcPath 上传文件的本地路径
+   * @param packageInfo: 待上传包的详细信息，包括包名（含组织名）和包版本号两部分，包名：packageInfo.packageName，包版本：packageInfo.version.
+   * @returns 响应的返回信息
+   */
+  save(srcPath: string, packageInfo: any): Promise<string>; 
+  /**
+   * 删除文件
+   * @param savedResponse 上传文件的响应值
+   * @returns 删除的结果：true表示删除成功
+   */
+  delete(savedResponse: string): Promise<boolean>;
+ 
+  /**
+   * 获取已上传文件的数据
+   * @param savedResponse 上传文件的响应值
+   * @returns 获取文件的内容，数据格式为 Buffer
+   */
+  download(savedResponse: string): Promise<Buffer>;
 
-4. /**
-5. * 初始化插件
-6. */
-7. init(): Promise<void>;
-
-9. /**
-10. * 上传文件
-11. * @param srcPath 上传文件的本地路径
-12. * @param packageInfo: 待上传包的详细信息，包括包名（含组织名）和包版本号两部分，包名：packageInfo.packageName，包版本：packageInfo.version.
-13. * @returns 响应的返回信息
-14. */
-15. save(srcPath: string, packageInfo: any): Promise<string>;
-16. /**
-17. * 删除文件
-18. * @param savedResponse 上传文件的响应值
-19. * @returns 删除的结果：true表示删除成功
-20. */
-21. delete(savedResponse: string): Promise<boolean>;
-
-23. /**
-24. * 获取已上传文件的数据
-25. * @param savedResponse 上传文件的响应值
-26. * @returns 获取文件的内容，数据格式为 Buffer
-27. */
-28. download(savedResponse: string): Promise<Buffer>;
-
-30. /**
-31. * 根据保存文件生成的结果字符串，获取文件下载url
-32. * @param savedResponse 保存文件的结果字符串
-33. */
-34. getDownloadUrl(savedResponse: string): Promise<string>;
-35. }
+   /**
+   * 根据保存文件生成的结果字符串，获取文件下载url
+   * @param savedResponse 保存文件的结果字符串
+   */
+  getDownloadUrl(savedResponse: string): Promise<string>;
+}
 ```
 
 1. init
@@ -91,7 +88,7 @@ ohpm-repo从2.2.0版本开始支持自定义存储插件（需要配套使用1.7
 
    实现已上传文件下载URL的获取。函数入参为savedResponse：上传文件save后的返回信息，通过入参信息定位已上传文件，进行文件内容读取；返回所读取到文件的下载URL，数据类型为String。
 
-注意
+**须知** 
 
 1. 在实现上述五个函数时，插件文件CustomStorage.ts需要引用：StoragePlugin接口类和getStorageConfigInfo方法，故需要根据当前插件文件CustomStorage.ts所在位置，正确地书写引用地址，被引用的接口类和方法地址如下：
    * getStorageConfigInfo方法所在文件的位置：ohpm-repo解压根目录/libs/common/getStorageConfigInfo
@@ -106,44 +103,44 @@ ohpm-repo从2.2.0版本开始支持自定义存储插件（需要配套使用1.7
 
    安装typescript包，编译ts文件为js文件。
 
-   ```
-   1. $ npm i typescript -g
+   ```screen
+   $ npm i typescript -g
    ```
 2. 编译插件文件
 
    * 如果CustomStorage.ts存放在ohpm-repo安装根目录的plugins文件夹中，在ohpm-repo安装根目录下执行编译命令。
 
-     ```
-     1. $ tsc
+     ```screen
+     $ tsc
      ```
    * 命令成功执行后会在ohpm-repo解压目录的plugins/outDir文件夹中生成编译后的文件CustomStorage.js。
 
-     说明
+     **说明** 
 
      如果CustomStorage.ts没有存放在plugins内，请先修改[tsconfig.json](ide-ohpm-repo-template-file.md#section14188258114612)文件include和outDir参数，前者指定待编译插件代码的存储目录，后者指定编译完成后文件的输出位置，然后再在ohpm-repo解压根目录执行编译命令tsc。
 
-     ```
-     1. // tsconfig.json 文件中的默认配置
-     2. // 默认值：插件存放在 ./plugins 中，编译后的文件存放在./plugins/outDir中
-     3. "include": "plugins/*"          // 插件文件的位置
-     4. "outDir": "./plugins/outDir"    // 编译后文件的存放位置
+     ```screen
+     // tsconfig.json 文件中的默认配置
+     // 默认值：插件存放在 ./plugins 中，编译后的文件存放在./plugins/outDir中
+     "include": "plugins/*"          // 插件文件的位置
+     "outDir": "./plugins/outDir"    // 编译后文件的存放位置
      ```
 3. 编译后文件存放指定位置
 
    编译后获得的CustomStorage.js需要与CustomStorage.ts保持在同一级目录中，否则会运行出错，默认输出在./plugins/outDir 内，需要把CustomStorage.js拷贝到CustomStorage.ts同级目录./plugins中（ohpm-repo成功启动后可删除CustomStorage.ts文件）。
 4. 编辑配置文件
 
-   为了保证ohpm-repo能够正确加载自定义存储插件，需要修改配置文件config.yaml，主要涉及store处内容修改。
+   为了保证ohpm-repo能够正确加载自定义存储插件，需要修改配置文件config.yaml，主要涉及store配置项的修改。
 
-   ```
-   1. // 配置文件中 store 项的格式参考
-   2. store:
-   3. type: custom
-   4. config:
-   5. export_name: CustomStorage
-   6. plugin_path: plugins/CustomStorage.js
-   7. custom_field: "test"
-   8. #server: http://localhost:8088
+   ```screen
+   // 配置文件中 store 项的格式参考
+   store:
+     type: custom    
+     config:        
+       export_name: CustomStorage         
+       plugin_path: plugins/CustomStorage.js    
+       custom_field: "test" 
+       #server: http://localhost:8088
    ```
 
    **参数说明****：**

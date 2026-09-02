@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nets
 title: WebSocket_CloseOption
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 结构体 > WebSocket_CloseOption
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:38+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:175f5b584b9d43b5ba4f9cb3db55d608fad290302e486fa2ef6d1403cd2193ab
+scraped_at: 2026-09-02T15:01:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:fdfd361211c0718762d6b428069e3c235e7a69e8f2fa19aa9bf15f2529453e21
 ---
 
-```
-1. struct WebSocket_CloseOption {...}
+```c
+struct WebSocket_CloseOption {...}
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-websocket客户端主动关闭的参数。
+WebSocket客户端主动关闭的参数。
 
 **起始版本：** 11
 
@@ -26,11 +24,7 @@ websocket客户端主动关闭的参数。
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

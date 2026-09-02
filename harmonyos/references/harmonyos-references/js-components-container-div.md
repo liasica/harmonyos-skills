@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: div
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 容器组件 > div
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:17+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:6e132b99a9da8206d0d97de5bf6861e65f22d7c8f70d41710d6869e89b66553c
+scraped_at: 2026-09-02T15:01:11+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9e3cdab2fadad03ba8a12b8ec4c99fb3b8629cc9221e12b3922611870c449d02
 ---
 
-说明
+**说明** 
 
 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -16,25 +16,17 @@ content_hash: sha256:6e132b99a9da8206d0d97de5bf6861e65f22d7c8f70d41710d6869e89b6
 
 ## 权限列表
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## 子组件
-
-PhonePC/2in1TabletTVWearable
 
 支持。
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用属性](js-components-common-attributes.md)。
 
 ## 样式
-
-PhonePC/2in1TabletTVWearable
 
 除支持组件[通用样式](js-components-common-styles.md)外，还支持如下样式：
 
@@ -45,7 +37,7 @@ PhonePC/2in1TabletTVWearable
 | justify-content | string | flex-start | 否 | flex容器当前行的主轴对齐格式。可选项有：  - flex-start：项目位于容器的开头。  - flex-end：项目位于容器的结尾。  - center：项目位于容器的中心。  - space-between：项目位于各行之间留有空白的容器内。  - space-around：项目位于各行之前、之间、之后都留有空白的容器内。  - space-evenly5+: 均匀排列每个元素，每个元素之间的间隔相等。 |
 | align-items | string | stretch | 否 | flex容器当前行的交叉轴对齐格式，可选值为：  - stretch：弹性元素在交叉轴方向被拉伸到与容器相同的高度或宽度。  - flex-start：元素向交叉轴起点对齐。  - flex-end：元素向交叉轴终点对齐。  - center：元素在交叉轴居中。  - baseline：如Flex布局纵向排列，则该值与’flex-start‘等效。横向布局时，内容元素存在文本时按照文本基线对齐，否则底部对齐。 |
 | align-content | string | flex-start | 否 | 交叉轴中有额外的空间时，多行内容对齐格式，可选值为：  - flex-start：所有行从交叉轴起点开始填充。第一行的交叉轴起点边和容器的交叉轴起点边对齐。接下来的每一行紧跟前一行。  - flex-end：所有行从交叉轴末尾开始填充。最后一行的交叉轴终点和容器的交叉轴终点对齐。同时所有后续行与前一个对齐。  - center：所有行朝向容器的中心填充。每行互相紧挨，相对于容器居中对齐。容器的交叉轴起点边和第一行的距离相等于容器的交叉轴终点边和最后一行的距离。  - space-between：所有行在容器中平均分布。相邻两行间距相等。容器的交叉轴起点边和终点边分别与第一行和最后一行的边对齐。  - space-around：所有行在容器中平均分布，相邻两行间距相等。容器的交叉轴起点边和终点边分别与第一行和最后一行的距离是相邻两行间距的一半。 |
-| grid-template-[columns | rows] | string | 1行1列 | 否 | 用于设置当前网格布局行和列的数量，不设置时默认1行1列，仅当display为grid时生效。  示例：如设置grid-template-columns为：  - 50px 100px 60px：分三列，第一列50px，第二列100px，第三列60px；  - 1fr 1fr 2fr：分三列，将父组件允许的宽分为4等份，第一列占1份，第二列占一份，第三列占2份；  - 30% 20% 50%：分三列，将父组件允许的宽为基准，第一列占30%，第二列占20%，第三列占50%；  - repeat(2,100px)：分两列，第一列100px，第二列100px；  - repeat(auto-fill,100px)5+：按照每列100px的大小和交叉轴大小计算最大正整数重复次数，按照该重复次数布满交叉轴；  - auto 1fr 1fr：分三列，第一列自适应内部子组件所需宽度，剩余空间分为两等份，第二列占一份，第三列占一份。 |
+| grid-template-[columns | rows] | string | 1行1列 | 否 | 用于设置当前网格布局行和列的数量，不设置时默认1行1列，仅当display为grid时生效。  示例：如设置grid-template-columns为：  - 50px 100px 60px：分三列，第一列50px，第二列100px，第三列60px；  - 1fr 1fr 2fr：分三列，将父组件允许的宽分为4等份，第一列占1份，第二列占一份，第三列占2份；  - 30% 20% 50%：分三列，以父组件允许的宽为基准，第一列占30%，第二列占20%，第三列占50%；  - repeat(2,100px)：分两列，第一列100px，第二列100px；  - repeat(auto-fill,100px)5+：按照每列100px的大小和交叉轴大小计算最大正整数重复次数，按照该重复次数布满交叉轴；  - auto 1fr 1fr：分三列，第一列自适应内部子组件所需宽度，剩余空间分为两等份，第二列占一份，第三列占一份。 |
 | grid-[columns | rows]-gap | <length> | 0 | 否 | 用于设置行与行的间距或者列与列的间距，也可以支持通过grid-gap设置相同的行列间距，仅当display为grid时生效。 |
 | grid-row-[start | end] | number | - | 否 | 用于设置当前元素在网格布局中的起止行号，仅当父组件display样式为grid时生效（仅div支持display样式设置为grid）。 |
 | grid-column-[start | end] | number | - | 否 | 用于设置当前元素在网格布局中的起止列号，仅当父组件display样式为grid时生效（仅div支持display样式设置为grid）。 |
@@ -58,8 +50,6 @@ PhonePC/2in1TabletTVWearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用事件](js-components-common-events.md)外，还支持如下事件：
 
 | 名称 | 参数 | 描述 |
@@ -70,8 +60,6 @@ PhonePC/2in1TabletTVWearable
 | reachbottom6+ | - | 当页面滑动到最下部的点时触发的事件回调，需要设置flex-direction为column时才会触发。 |
 
 ## 方法
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用方法](js-components-common-methods.md)外，还支持如下方法：
 
@@ -97,332 +85,330 @@ PhonePC/2in1TabletTVWearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 1. Flex样式
 
-   ```
-   1. <!-- xxx.hml -->
-   2. <div class="container">
-   3. <div class="flex-box">
-   4. <div class="flex-item color-primary"></div>
-   5. <div class="flex-item color-warning"></div>
-   6. <div class="flex-item color-success"></div>
-   7. </div>
-   8. </div>
-   ```
-
-   ```
-   1. /* xxx.css */
-   2. .container {
-   3. flex-direction: column;
-   4. justify-content: center;
-   5. align-items: center;
-   6. width: 454px;
-   7. height: 454px;
-   8. }
-   9. .flex-box {
-   10. justify-content: space-around;
-   11. align-items: center;
-   12. width: 400px;
-   13. height: 140px;
-   14. background-color: #ffffff;
-   15. }
-   16. .flex-item {
-   17. width: 120px;
-   18. height: 120px;
-   19. border-radius: 16px;
-   20. }
-   21. .color-primary {
-   22. background-color: #007dff;
-   23. }
-   24. .color-warning {
-   25. background-color: #ff7500;
-   26. }
-   27. .color-success {
-   28. background-color: #41ba41;
-   29. }
+   ```html
+   <!-- xxx.hml -->
+   <div class="container">
+     <div class="flex-box">
+       <div class="flex-item color-primary"></div>
+       <div class="flex-item color-warning"></div>
+       <div class="flex-item color-success"></div>
+     </div>
+   </div>
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/AXA5YTiDQwyRdGgishPUAA/zh-cn_image_0000002589326571.png)
+   ```css
+   /* xxx.css */
+   .container {
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     width: 454px;
+     height: 454px;
+   }
+   .flex-box {
+     justify-content: space-around;
+     align-items: center;
+     width: 400px;
+     height: 140px;
+     background-color: #ffffff;
+   }
+   .flex-item {
+     width: 120px;
+     height: 120px;
+     border-radius: 16px;
+   }
+   .color-primary {
+     background-color: #007dff;
+   }
+   .color-warning {
+     background-color: #ff7500;
+   }
+   .color-success {
+     background-color: #41ba41;
+   }
+   ```
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/3E7mf7UpS-GIjLNh6LGGew/zh-cn_image_0000002736435521.png)
 2. Flex Wrap样式
 
-   ```
-   1. <!-- xxx.hml -->
-   2. <div class="container">
-   3. <div class="flex-box">
-   4. <div class="flex-item color-primary"></div>
-   5. <div class="flex-item color-warning"></div>
-   6. <div class="flex-item color-success"></div>
-   7. </div>
-   8. </div>
-   ```
-
-   ```
-   1. /* xxx.css */
-   2. .container {
-   3. flex-direction: column;
-   4. justify-content: center;
-   5. align-items: center;
-   6. width: 454px;
-   7. height: 454px;
-   8. }
-   9. .flex-box {
-   10. justify-content: space-around;
-   11. align-items: center;
-   12. flex-wrap: wrap;
-   13. width: 300px;
-   14. height: 250px;
-   15. background-color: #ffffff;
-   16. }
-   17. .flex-item {
-   18. width: 120px;
-   19. height: 120px;
-   20. border-radius: 16px;
-   21. }
-   22. .color-primary {
-   23. background-color: #007dff;
-   24. }
-   25. .color-warning {
-   26. background-color: #ff7500;
-   27. }
-   28. .color-success {
-   29. background-color: #41ba41;
-   30. }
+   ```html
+   <!-- xxx.hml -->
+   <div class="container">
+     <div class="flex-box">
+       <div class="flex-item color-primary"></div>
+       <div class="flex-item color-warning"></div>
+       <div class="flex-item color-success"></div>
+     </div>
+   </div>
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/sUfJyyePRXOv1JkPt_zG5g/zh-cn_image_0000002589246513.png)
+   ```css
+   /* xxx.css */
+   .container {
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     width: 454px;
+     height: 454px;
+   }
+   .flex-box {
+     justify-content: space-around;
+     align-items: center;
+     flex-wrap: wrap;
+     width: 300px;
+     height: 250px;
+     background-color: #ffffff;
+   }
+   .flex-item {
+     width: 120px;
+     height: 120px;
+     border-radius: 16px;
+   }
+   .color-primary {
+     background-color: #007dff;
+   }
+   .color-warning {
+     background-color: #ff7500;
+   }
+   .color-success {
+     background-color: #41ba41;
+   }
+   ```
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/pgA1vZXgSAulTXezT9LXlA/zh-cn_image_0000002706836370.png)
 3. Grid样式
 
-   ```
-   1. <!-- xxx.hml -->
-   2. <div class="common grid-parent">
-   3. <div class="grid-child grid-left-top"></div>
-   4. <div class="grid-child grid-left-bottom"></div>
-   5. <div class="grid-child grid-right-top"></div>
-   6. <div class="grid-child grid-right-bottom"></div>
-   7. </div>
-   ```
-
-   ```
-   1. /* xxx.css */
-   2. .common {
-   3. width: 400px;
-   4. height: 400px;
-   5. background-color: #ffffff;
-   6. align-items: center;
-   7. justify-content: center;
-   8. margin: 24px;
-   9. }
-   10. .grid-parent {
-   11. display: grid;
-   12. grid-template-columns: 35% 35%;
-   13. grid-columns-gap: 24px;
-   14. grid-rows-gap: 24px;
-   15. grid-template-rows: 35% 35%;
-   16. }
-   17. .grid-child {
-   18. width: 100%;
-   19. height: 100%;
-   20. border-radius: 8px;
-   21. }
-   22. .grid-left-top {
-   23. grid-row-start: 0;
-   24. grid-column-start: 0;
-   25. grid-row-end: 0;
-   26. grid-column-end: 0;
-   27. background-color: #3f56ea;
-   28. }
-   29. .grid-left-bottom {
-   30. grid-row-start: 1;
-   31. grid-column-start: 0;
-   32. grid-row-end: 1;
-   33. grid-column-end: 0;
-   34. background-color: #00aaee;
-   35. }
-   36. .grid-right-top {
-   37. grid-row-start: 0;
-   38. grid-column-start: 1;
-   39. grid-row-end: 0;
-   40. grid-column-end: 1;
-   41. background-color: #00bfc9;
-   42. }
-   43. .grid-right-bottom {
-   44. grid-row-start: 1;
-   45. grid-column-start: 1;
-   46. grid-row-end: 1;
-   47. grid-column-end: 1;
-   48. background-color: #47cc47;
-   49. }
+   ```html
+   <!-- xxx.hml -->
+   <div class="common grid-parent">
+     <div class="grid-child grid-left-top"></div>
+     <div class="grid-child grid-left-bottom"></div>
+     <div class="grid-child grid-right-top"></div>
+     <div class="grid-child grid-right-bottom"></div>
+   </div>
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/GmyLNvirSjaVorLHvS95Gw/zh-cn_image_0000002558766706.png)
+   ```css
+   /* xxx.css */
+   .common {
+     width: 400px;
+     height: 400px;
+     background-color: #ffffff;
+     align-items: center;
+     justify-content: center;
+     margin: 24px;
+   }
+   .grid-parent {
+     display: grid;
+     grid-template-columns: 35% 35%;
+     grid-columns-gap: 24px;
+     grid-rows-gap: 24px;
+     grid-template-rows: 35% 35%;
+   }
+   .grid-child {
+     width: 100%;
+     height: 100%;
+     border-radius: 8px;
+   }
+   .grid-left-top {
+     grid-row-start: 0;
+     grid-column-start: 0;
+     grid-row-end: 0;
+     grid-column-end: 0;
+     background-color: #3f56ea;
+   }
+   .grid-left-bottom {
+     grid-row-start: 1;
+     grid-column-start: 0;
+     grid-row-end: 1;
+     grid-column-end: 0;
+     background-color: #00aaee;
+   }
+   .grid-right-top {
+     grid-row-start: 0;
+     grid-column-start: 1;
+     grid-row-end: 0;
+     grid-column-end: 1;
+     background-color: #00bfc9;
+   }
+   .grid-right-bottom {
+     grid-row-start: 1;
+     grid-column-start: 1;
+     grid-row-end: 1;
+     grid-column-end: 1;
+     background-color: #47cc47;
+   }
+   ```
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/mU8889e9QNOFzgdksBxDHg/zh-cn_image_0000002736315475.png)
 4. 拖拽7+
 
-   ```
-   1. <!-- xxx.hml -->
-   2. <div class="container">
-   3. <div class="content" ondragstart="dragstart" ondrag="drag" ondragend="dragend" style="position: absolute;left: {{left}};top: {{top}};">
-   4. </div>
-   5. </div>
-   ```
-
-   ```
-   1. /* xxx.css */
-   2. .container {
-   3. flex-direction: column;
-   4. width: 100%;
-   5. height: 100%;
-   6. }
-   7. .content {
-   8. width: 200px;
-   9. height: 200px;
-   10. background-color: red;
-   11. }
+   ```html
+   <!-- xxx.hml -->
+   <div class="container">
+     <div class="content" ondragstart="dragstart" ondrag="drag" ondragend="dragend" style="position: absolute;left: {{left}};top: {{top}};">
+     </div>
+   </div>
    ```
 
-   ```
-   1. // xxx.js
-   2. import promptAction from '@ohos.promptAction';
-   3. export default {
-   4. data:{
-   5. left:0,
-   6. top:0,
-   7. },
-   8. dragstart(e){
-   9. promptAction.showToast({
-   10. message: 'Start to be dragged'
-   11. })
-   12. },
-   13. drag(e){
-   14. this.left = e.globalX;
-   15. this.top = e.globalY;
-   16. },
-   17. dragend(e){
-   18. promptAction.showToast({
-   19. message: 'End Drag'
-   20. })
-   21. }
-   22. }
+   ```css
+    /* xxx.css */
+    .container {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    }
+    .content {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/59NWQUebRlGc5bAEC-JRZw/zh-cn_image_0000002558607046.gif)
-
-   ```
-   1. <!-- xxx.hml -->
-   2. <div class="container">
-   3. <div class="content" ondrag="drag" style="position: absolute;left: {{left}};top: {{top}};"></div>
-   4. <div style="width: 500px; height: 500px; background-color: yellow; position: fixed; left: 15%; top: 30%; opacity:0.3"
-   5. ondragenter="dragenter" ondragover="dragover" ondragleave="dragleave" ondrop="drop">
-   6. </div>
-   7. </div>
-   ```
-
-   ```
-   1. /* xxx.css */
-   2. .container {
-   3. flex-direction: column;
-   4. width: 100%;
-   5. position: relative;
-   6. max-width: 100%;
-   7. }
-   8. .content{
-   9. width: 200px;
-   10. height: 200px;
-   11. background-color: red;
-   12. position: absolute;
-   13. }
+   ```js
+   // xxx.js
+   import promptAction from '@ohos.promptAction';
+   export default {
+     data:{
+       left:0,
+       top:0,
+     },
+     dragstart(e){
+       promptAction.showToast({
+         message: 'Start to be dragged'
+       })
+     },
+     drag(e){
+       this.left = e.globalX;
+       this.top = e.globalY;
+     },
+     dragend(e){
+       promptAction.showToast({
+         message: 'End Drag'
+       })
+     }
+   }
    ```
 
-   ```
-   1. // xxx.js
-   2. import promptAction from '@ohos.promptAction';
-   3. export default {
-   4. data:{
-   5. left:0,
-   6. top:0,
-   7. },
-   8. drag(e){
-   9. this.left = e.globalX;
-   10. this.top = e.globalY;
-   11. },
-   12. dragenter(e){
-   13. promptAction.showToast({
-   14. message: 'enter'
-   15. })
-   16. },
-   17. dragover(e){
-   18. promptAction.showToast({
-   19. message: 'over'
-   20. })
-   21. },
-   22. dragleave(e){
-   23. promptAction.showToast({
-   24. message: 'leave'
-   25. })
-   26. },
-   27. drop(e){
-   28. promptAction.showToast({
-   29. message: 'drop'
-   30. })
-   31. }
-   32. }
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/KC9NPmXbRTGFFoAeFSCJcg/zh-cn_image_0000002706676436.gif)
+
+   ```html
+   <!-- xxx.hml -->
+   <div class="container">
+     <div class="content" ondrag="drag" style="position: absolute;left: {{left}};top: {{top}};"></div>
+     <div style="width: 500px; height: 500px; background-color: yellow; position: fixed; left: 15%; top: 30%; opacity:0.3"
+       ondragenter="dragenter" ondragover="dragover" ondragleave="dragleave" ondrop="drop">
+     </div>
+   </div>
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/A4xaheajT_aarGFp7u8ZqQ/zh-cn_image_0000002589326573.gif)
+   ```css
+   /* xxx.css */
+   .container {
+     flex-direction: column;
+     width: 100%;
+     position: relative;
+     max-width: 100%;
+   }
+   .content{
+     width: 200px;
+     height: 200px;
+     background-color: red;
+     position: absolute;
+   }
+   ```
+
+   ```js
+   // xxx.js
+   import promptAction from '@ohos.promptAction';
+   export default {
+     data:{
+       left:0,
+       top:0,
+     },
+     drag(e){
+       this.left = e.globalX;
+       this.top = e.globalY;
+     },
+     dragenter(e){
+       promptAction.showToast({
+         message: 'enter'
+       })
+     },
+     dragover(e){
+       promptAction.showToast({
+         message: 'over'
+       })
+     },
+     dragleave(e){
+       promptAction.showToast({
+         message: 'leave'
+       })
+     },
+     drop(e){
+       promptAction.showToast({
+         message: 'drop'
+       })
+     }
+   }
+   ```
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/AfoTZ-yYT5KcBI_sR_7fVw/zh-cn_image_0000002736435523.gif)
 5. 手指捏合7+
 
-   ```
-   1. <!-- xxx.hml -->
-   2. <div class="container">
-   3. <div class="content" onpinchstart="pinchstart" onpinchend="pinchend" onpinchupdate="pinchupdate"
-   4. onpinchcancel="pinchcancel">
-   5. </div>
-   6. </div>
-   ```
-
-   ```
-   1. /* xxx.css */
-   2. .container {
-   3. flex-direction: column;
-   4. justify-content: center;
-   5. align-items: center;
-   6. width: 454px;
-   7. height: 454px;
-   8. }
-   9. .content {
-   10. width: 400px;
-   11. height: 400px;
-   12. background-color: aqua;
-   13. margin: 30px;
-   14. }
+   ```html
+   <!-- xxx.hml -->
+   <div class="container">
+     <div class="content" onpinchstart="pinchstart" onpinchend="pinchend" onpinchupdate="pinchupdate"
+       onpinchcancel="pinchcancel"> 
+     </div>
+   </div>
    ```
 
-   ```
-   1. // xxx.js
-   2. import promptAction from '@ohos.promptAction';
-   3. export default {
-   4. pinchstart(e){
-   5. promptAction.showToast({
-   6. message: 'pinchstart!!!'
-   7. })
-   8. },
-   9. pinchupdate(e){
-   10. promptAction.showToast({
-   11. message: 'Two-finger pinch update'
-   12. })
-   13. },
-   14. pinchend(e){
-   15. promptAction.showToast({
-   16. message: 'Finished with two fingers pinching'
-   17. })
-   18. },
-   19. pinchcancel(e){
-   20. promptAction.showToast({
-   21. message: 'Finger pinching is interrupted'
-   22. })
-   23. }
-   24. }
+   ```css
+   /* xxx.css */
+   .container {
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     width: 454px;
+     height: 454px;
+   }
+   .content {
+     width: 400px;
+     height: 400px;
+     background-color: aqua;
+     margin: 30px;
+   }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/Zt9_mstZRXivHxz8uWQGZw/zh-cn_image_0000002589246515.gif)
+   ```js
+   // xxx.js
+   import promptAction from '@ohos.promptAction';
+   export default {
+     pinchstart(e){
+       promptAction.showToast({
+         message: 'pinchstart!!!'
+       })
+     },
+     pinchupdate(e){
+       promptAction.showToast({
+         message: 'Two-finger pinch update'
+       })
+     },
+     pinchend(e){
+       promptAction.showToast({
+         message: 'Finished with two fingers pinching'
+       })
+     },
+     pinchcancel(e){
+       promptAction.showToast({
+         message: 'Finger pinching is interrupted'
+       })
+     }
+   }
+   ```
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/5wJUdHGbR3-0k_1-SoY10A/zh-cn_image_0000002706836372.gif)

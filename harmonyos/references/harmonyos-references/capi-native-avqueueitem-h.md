@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_avqueueitem.h
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > C API > 头文件 > native_avqueueitem.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:25+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:346aa8e29ada9cdb71a089386a88911198333fdc6ba666564e503397e0931290
+scraped_at: 2026-09-02T15:02:25+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a46a3a3a629f233f4701334866cfceace86c7f8eb98938ebd0557856e9bb062e
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供音视频队列元素的定义。
 
@@ -26,21 +24,15 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [OH\_AVSession\_AVQueueItem](capi-ohavsession-oh-avsession-avqueueitem.md) | OH\_AVSession\_AVQueueItem | 音视频队列元素的定义。 |
 | [OH\_AVSession\_AVMediaDescription](capi-ohavsession-oh-avsession-avmediadescription.md) | OH\_AVSession\_AVMediaDescription | AVMediaDescription的声明。应用为当前资源设置的音视频媒体描述实例。 |
-| [OH\_AVSession\_AVMediaDescriptionBuilder](ohavsession-oh-avsession-avmediadescriptionbuilder.md) | OH\_AVSession\_AVMediaDescriptionBuilder | 音视频媒体描述构建器的声明。构建器的实例用于创建媒体描述信息。 |
+| [OH\_AVSession\_AVMediaDescriptionBuilder](capi-ohavsession-oh-avsession-avmediadescriptionbuilder.md) | OH\_AVSession\_AVMediaDescriptionBuilder | 音视频媒体描述构建器的声明。构建器的实例用于创建媒体描述信息。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -77,14 +69,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AVSession\_AVMediaDescriptionBuilder\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_Create(OH_AVSession_AVMediaDescriptionBuilder** builder)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_Create(OH_AVSession_AVMediaDescriptionBuilder** builder)
 ```
 
 **描述**
@@ -97,7 +85,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AVSession\_AVMediaDescriptionBuilder](ohavsession-oh-avsession-avmediadescriptionbuilder.md)\*\* builder | 指向创建结果的构建器对象。 |
+| [OH\_AVSession\_AVMediaDescriptionBuilder](capi-ohavsession-oh-avsession-avmediadescriptionbuilder.md)\*\* builder | 用于接收创建结果的构建器对象指针。 |
 
 **返回：**
 
@@ -107,10 +95,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescriptionBuilder\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_Destroy(OH_AVSession_AVMediaDescriptionBuilder* builder)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_Destroy(OH_AVSession_AVMediaDescriptionBuilder* builder)
 ```
 
 **描述**
@@ -123,7 +109,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AVSession\_AVMediaDescriptionBuilder](ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
+| [OH\_AVSession\_AVMediaDescriptionBuilder](capi-ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
 
 **返回：**
 
@@ -133,10 +119,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescriptionBuilder\_SetAssetId()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetAssetId(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* assetId)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetAssetId(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* assetId)
 ```
 
 **描述**
@@ -149,7 +133,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AVSession\_AVMediaDescriptionBuilder](ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
+| [OH\_AVSession\_AVMediaDescriptionBuilder](capi-ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
 | const char\* assetId | 媒体资源的当前资产ID。 |
 
 **返回：**
@@ -160,10 +144,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescriptionBuilder\_SetTitle()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetTitle(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* title)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetTitle(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* title)
 ```
 
 **描述**
@@ -176,7 +158,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AVSession\_AVMediaDescriptionBuilder](ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
+| [OH\_AVSession\_AVMediaDescriptionBuilder](capi-ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
 | const char\* title | 媒体资源的标题。 |
 
 **返回：**
@@ -187,10 +169,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescriptionBuilder\_SetSubTitle()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetSubTitle(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* subtitle)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetSubTitle(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* subtitle)
 ```
 
 **描述**
@@ -203,7 +183,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AVSession\_AVMediaDescriptionBuilder](ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
+| [OH\_AVSession\_AVMediaDescriptionBuilder](capi-ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
 | const char\* subtitle | 媒体资源的副标题。 |
 
 **返回：**
@@ -214,10 +194,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescriptionBuilder\_SetArtist()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetArtist(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* artist)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetArtist(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* artist)
 ```
 
 **描述**
@@ -230,7 +208,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AVSession\_AVMediaDescriptionBuilder](ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
+| [OH\_AVSession\_AVMediaDescriptionBuilder](capi-ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
 | const char\* artist | 媒体资源的艺术家。 |
 
 **返回：**
@@ -241,10 +219,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescriptionBuilder\_SetAlbumCoverUri()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetAlbumCoverUri(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* albumCoverUri)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetAlbumCoverUri(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* albumCoverUri)
 ```
 
 **描述**
@@ -257,7 +233,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AVSession\_AVMediaDescriptionBuilder](ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
+| [OH\_AVSession\_AVMediaDescriptionBuilder](capi-ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
 | const char\* albumCoverUri | 在媒体中心显示的资源的图像URL。 |
 
 **返回：**
@@ -268,10 +244,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescriptionBuilder\_SetMediaType()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetMediaType(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* mediaType)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetMediaType(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* mediaType)
 ```
 
 **描述**
@@ -284,7 +258,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AVSession\_AVMediaDescriptionBuilder](ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
+| [OH\_AVSession\_AVMediaDescriptionBuilder](capi-ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
 | const char\* mediaType | 媒体资源的媒体类型。如VIDEO或AUDIO。 |
 
 **返回：**
@@ -295,10 +269,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescriptionBuilder\_SetLyricContent()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetLyricContent(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* lyricContent)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetLyricContent(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* lyricContent)
 ```
 
 **描述**
@@ -311,8 +283,8 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AVSession\_AVMediaDescriptionBuilder](ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
-| const char\* lyricContent | 媒体资源的歌词内容。为LRC（Lyric Reduced Codec）格式。 |
+| [OH\_AVSession\_AVMediaDescriptionBuilder](capi-ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
+| const char\* lyricContent | 媒体资源的歌词内容，为LRC（Lyric Reduced Codec）格式，需符合标准LRC歌词格式规范。 |
 
 **返回：**
 
@@ -322,10 +294,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescriptionBuilder\_SetDuration()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetDuration(OH_AVSession_AVMediaDescriptionBuilder* builder, const int32_t duration)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetDuration(OH_AVSession_AVMediaDescriptionBuilder* builder, const int32_t duration)
 ```
 
 **描述**
@@ -338,8 +308,8 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AVSession\_AVMediaDescriptionBuilder](ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
-| const int32\_t duration | 媒体资源的持续时间。单位为毫秒。 |
+| [OH\_AVSession\_AVMediaDescriptionBuilder](capi-ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
+| const int32\_t duration | 媒体资源的持续时间。单位为毫秒（ms）。 |
 
 **返回：**
 
@@ -349,10 +319,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescriptionBuilder\_SetMediaUri()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetMediaUri(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* mediaUri)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetMediaUri(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* mediaUri)
 ```
 
 **描述**
@@ -365,7 +333,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AVSession\_AVMediaDescriptionBuilder](ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
+| [OH\_AVSession\_AVMediaDescriptionBuilder](capi-ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
 | const char\* mediaUri | 媒体资源的URI。 |
 
 **返回：**
@@ -376,10 +344,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescriptionBuilder\_SetStartPosition()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetStartPosition(OH_AVSession_AVMediaDescriptionBuilder* builder, const int32_t startPosition)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetStartPosition(OH_AVSession_AVMediaDescriptionBuilder* builder, const int32_t startPosition)
 ```
 
 **描述**
@@ -392,8 +358,8 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AVSession\_AVMediaDescriptionBuilder](ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
-| const int32\_t startPosition | 媒体资源的起始位置。 |
+| [OH\_AVSession\_AVMediaDescriptionBuilder](capi-ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
+| const int32\_t startPosition | 媒体资源的起始位置。单位为毫秒（ms）。 |
 
 **返回：**
 
@@ -403,10 +369,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescriptionBuilder\_SetMediaSize()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetMediaSize(OH_AVSession_AVMediaDescriptionBuilder* builder, const int32_t mediaSize)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetMediaSize(OH_AVSession_AVMediaDescriptionBuilder* builder, const int32_t mediaSize)
 ```
 
 **描述**
@@ -419,7 +383,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AVSession\_AVMediaDescriptionBuilder](ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
+| [OH\_AVSession\_AVMediaDescriptionBuilder](capi-ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
 | const int32\_t mediaSize | 媒体资源的大小。 |
 
 **返回：**
@@ -430,10 +394,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescriptionBuilder\_SetAlbumTitle()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetAlbumTitle(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* albumTitle)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetAlbumTitle(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* albumTitle)
 ```
 
 **描述**
@@ -446,7 +408,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AVSession\_AVMediaDescriptionBuilder](ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
+| [OH\_AVSession\_AVMediaDescriptionBuilder](capi-ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
 | const char\* albumTitle | 媒体资源的专辑标题。 |
 
 **返回：**
@@ -457,10 +419,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescriptionBuilder\_SetAppName()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetAppName(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* appName)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetAppName(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* appName)
 ```
 
 **描述**
@@ -473,7 +433,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AVSession\_AVMediaDescriptionBuilder](ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
+| [OH\_AVSession\_AVMediaDescriptionBuilder](capi-ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
 | const char\* appName | 媒体资源来源的应用名称。 |
 
 **返回：**
@@ -484,10 +444,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescription\_GetAssetId()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescription_GetAssetId(OH_AVSession_AVMediaDescription* description, char** assetId)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescription_GetAssetId(OH_AVSession_AVMediaDescription* description, char** assetId)
 ```
 
 **描述**
@@ -501,7 +459,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AVSession\_AVMediaDescription](capi-ohavsession-oh-avsession-avmediadescription.md)\* description | 表示音视频媒体描述实例指针。 |
-| char\*\* assetId | 指针变量将返回媒体资源的当前资产ID。 |
+| char\*\* assetId | 指针变量，用于接收媒体资源的当前资产ID。 |
 
 **返回：**
 
@@ -511,10 +469,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescription\_GetTitle()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescription_GetTitle(OH_AVSession_AVMediaDescription* description, char** title)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescription_GetTitle(OH_AVSession_AVMediaDescription* description, char** title)
 ```
 
 **描述**
@@ -538,10 +494,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescription\_GetSubtitle()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescription_GetSubtitle(OH_AVSession_AVMediaDescription* description, char** subtitle)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescription_GetSubtitle(OH_AVSession_AVMediaDescription* description, char** subtitle)
 ```
 
 **描述**
@@ -565,10 +519,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescription\_GetArtist()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescription_GetArtist(OH_AVSession_AVMediaDescription* description, char** artist)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescription_GetArtist(OH_AVSession_AVMediaDescription* description, char** artist)
 ```
 
 **描述**
@@ -592,10 +544,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescription\_GetAlbumCoverUri()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescription_GetAlbumCoverUri(OH_AVSession_AVMediaDescription* description, char** albumCoverUri)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescription_GetAlbumCoverUri(OH_AVSession_AVMediaDescription* description, char** albumCoverUri)
 ```
 
 **描述**
@@ -619,10 +569,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescription\_GetMediaType()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescription_GetMediaType(OH_AVSession_AVMediaDescription* description, char** mediaType)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescription_GetMediaType(OH_AVSession_AVMediaDescription* description, char** mediaType)
 ```
 
 **描述**
@@ -646,10 +594,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescription\_GetLyricContent()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescription_GetLyricContent(OH_AVSession_AVMediaDescription* description, char** lyricContent)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescription_GetLyricContent(OH_AVSession_AVMediaDescription* description, char** lyricContent)
 ```
 
 **描述**
@@ -673,10 +619,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescription\_GetDuration()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescription_GetDuration(OH_AVSession_AVMediaDescription* description, int32_t* duration)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescription_GetDuration(OH_AVSession_AVMediaDescription* description, int32_t* duration)
 ```
 
 **描述**
@@ -690,7 +634,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AVSession\_AVMediaDescription](capi-ohavsession-oh-avsession-avmediadescription.md)\* description | 表示音视频媒体描述实例指针。 |
-| int32\_t\* duration | 指针变量将返回当前媒体资源的总时长。 |
+| int32\_t\* duration | 指针变量将返回当前媒体资源的总时长。单位为毫秒（ms）。 |
 
 **返回：**
 
@@ -700,10 +644,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescription\_GetMediaUri()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescription_GetMediaUri(OH_AVSession_AVMediaDescription* description, char** mediaUri)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescription_GetMediaUri(OH_AVSession_AVMediaDescription* description, char** mediaUri)
 ```
 
 **描述**
@@ -727,10 +669,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescription\_GetStartPosition()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescription_GetStartPosition(OH_AVSession_AVMediaDescription* description, int32_t* startPosition)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescription_GetStartPosition(OH_AVSession_AVMediaDescription* description, int32_t* startPosition)
 ```
 
 **描述**
@@ -744,7 +684,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AVSession\_AVMediaDescription](capi-ohavsession-oh-avsession-avmediadescription.md)\* description | 表示音视频媒体描述实例指针。 |
-| int32\_t\* startPosition | 指针变量将返回当前媒体资源开始的位置。 |
+| int32\_t\* startPosition | 指针变量将返回当前媒体资源开始的位置。单位为毫秒（ms）。 |
 
 **返回：**
 
@@ -754,10 +694,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescription\_GetMediaSize()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescription_GetMediaSize(OH_AVSession_AVMediaDescription* description, int32_t* mediaSize)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescription_GetMediaSize(OH_AVSession_AVMediaDescription* description, int32_t* mediaSize)
 ```
 
 **描述**
@@ -781,10 +719,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescription\_GetAlbumTitle()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescription_GetAlbumTitle(OH_AVSession_AVMediaDescription* description, char** albumTitle)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescription_GetAlbumTitle(OH_AVSession_AVMediaDescription* description, char** albumTitle)
 ```
 
 **描述**
@@ -808,10 +744,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescription\_GetAppName()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescription_GetAppName(OH_AVSession_AVMediaDescription* description, char** appName)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescription_GetAppName(OH_AVSession_AVMediaDescription* description, char** appName)
 ```
 
 **描述**
@@ -835,10 +769,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescriptionBuilder\_GenerateAVMediaDescription()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_GenerateAVMediaDescription(OH_AVSession_AVMediaDescriptionBuilder* builder, OH_AVSession_AVMediaDescription** avMediaDescription)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_GenerateAVMediaDescription(OH_AVSession_AVMediaDescriptionBuilder* builder, OH_AVSession_AVMediaDescription** avMediaDescription)
 ```
 
 **描述**
@@ -851,7 +783,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AVSession\_AVMediaDescriptionBuilder](ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
+| [OH\_AVSession\_AVMediaDescriptionBuilder](capi-ohavsession-oh-avsession-avmediadescriptionbuilder.md)\* builder | 表示音视频媒体描述构建器实例指针。 |
 | [OH\_AVSession\_AVMediaDescription](capi-ohavsession-oh-avsession-avmediadescription.md)\*\* avMediaDescription | 指向用于接收avMediaDescription对象的指针变量。 |
 
 **返回：**
@@ -862,10 +794,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AVMediaDescription\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVQueueItem_Result OH_AVSession_AVMediaDescription_Destroy(OH_AVSession_AVMediaDescription* avMediaDescription)
+```c
+AVQueueItem_Result OH_AVSession_AVMediaDescription_Destroy(OH_AVSession_AVMediaDescription* avMediaDescription)
 ```
 
 **描述**
@@ -878,7 +808,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AVSession\_AVMediaDescription](capi-ohavsession-oh-avsession-avmediadescription.md)\* avMediaDescription | 指向用于接收avMediaDescription对象的指针变量。 |
+| [OH\_AVSession\_AVMediaDescription](capi-ohavsession-oh-avsession-avmediadescription.md)\* avMediaDescription | 指向要释放的avMediaDescription对象。 |
 
 **返回：**
 

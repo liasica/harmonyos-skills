@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avca
 title: OH_AVRange
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 结构体 > OH_AVRange
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:06+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:277c15ade80ddd061f8f3d369dab42ccf729a18407d07ac2b7527a253667b342
+scraped_at: 2026-09-02T15:02:22+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9da22bffb3cfc899679397257e1192ae00616ef33d946c6416931dfc751fdf4f
 ---
 
-```
-1. typedef struct OH_AVRange {...} OH_AVRange
+```c
+typedef struct OH_AVRange {...} OH_AVRange
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 范围包含最小值和最大值。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

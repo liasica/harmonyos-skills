@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tenso
 title: GetOriginShape
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > TensorDesc > GetOriginShape
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:57+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1f857a92c8138894de99f3cc68c6b7a6b39e758ea0bd55a8c622a05f8b31cd57
+content_hash: sha256:8aab6aefa638e1f32e894ddbb1726d3b0643e212338ef16f20a37d83eb06c40d
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:1f857a92c8138894de99f3cc68c6b7a6b39e758ea0bd55a8c622a05f8b3
 
 ## 函数原型
 
-```
-1. Shape GetOriginShape() const;
+```cpp
+Shape GetOriginShape() const;
 ```
 
 ## 参数说明

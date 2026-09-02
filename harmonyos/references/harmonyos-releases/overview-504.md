@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-504
 title: 版本概览
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.4(16) > 版本概览
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.4(16) > 版本概览
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:21+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:448c241e852db801563e24e8b52d1faeb010f75ff29e07832a3d57f582ea0656
+scraped_at: 2026-09-02T14:58:49+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:27c09e873dbab2ca188f6237e80f8d4a0734ef29f3e3acf59b61a3c76cdd5bb2
 ---
 
 HarmonyOS 5.0.4(16)在此前发布的HarmonyOS 5.0.3(15)的基础上，新增了Reader Kit以及少量接口，并对配套软件进行Release状态的发布。
@@ -14,7 +14,7 @@ HarmonyOS 5.0.4(16)在此前发布的HarmonyOS 5.0.3(15)的基础上，新增了
 
 ## 版本信息
 
-说明
+**说明** 
 
 使用正确的配套关系进行应用开发可以获得更流畅的开发体验。
 
@@ -29,7 +29,7 @@ HarmonyOS 5.0.4(16)在此前发布的HarmonyOS 5.0.3(15)的基础上，新增了
 | 5.0.11.110 | 2025/05/14 |
 | SDK | Release | HarmonyOS 5.0.4 Release SDK | 基于OpenHarmony SDK Ohos\_sdk\_public 5.0.4.150(API 16 Release) | 2025/03/29 |
 
-说明
+**说明** 
 
 * **API版本**请在设备的“设置”中点击设备名称，进入“**关于本机**”进行查询。
 

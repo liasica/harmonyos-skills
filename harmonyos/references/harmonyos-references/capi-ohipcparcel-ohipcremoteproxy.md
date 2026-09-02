@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohip
 title: OHIPCRemoteProxy
 breadcrumb: API参考 > 应用框架 > IPC Kit（进程间通信服务） > C API > 结构体 > OHIPCRemoteProxy
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:23+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:9e6707b82e1c03485fc0dfb9b814f3f70983de214c41e8ea621378b50a6864e7
+scraped_at: 2026-09-02T14:52:03+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:669ab1825939f0d99f02342176497633b18e7d6fc1ee6d6b9e77834496407356
 ---
 
-```
-1. typedef struct OHIPCRemoteProxy OHIPCRemoteProxy
+```c
+typedef struct OHIPCRemoteProxy OHIPCRemoteProxy
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-IPC远端代理对象。
+IPC（进程间通信）远端代理对象，用于在客户端代理远端服务的能力，实现跨进程通信。该对象封装了远端服务的引用，支持向远端服务发送请求和接收响应。适用于需要跨进程调用服务能力的场景，例如跨进程服务调用、系统服务访问、跨应用数据共享等典型应用。使用该对象可以简化跨进程通信的实现，提高开发效率。
 
 **起始版本：** 12
 

@@ -3,16 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-b
 title: oh_bluetooth.h
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > C API > 头文件 > oh_bluetooth.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:06+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:3ba47b3fec2a328a23bacae50102d538b3cea133808c155d1e4e3fd28642f67e
+scraped_at: 2026-09-02T15:01:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2314dd9015b98d283cf628ab7321f4245b36dfd9a73c1d2414f317a245f07606
 ---
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-定义查询蓝牙开关状态的接口。
+提供查询蓝牙开关状态的接口。支持获取蓝牙的开关、打开中、关闭中、BLE only模式等多种状态，适用于需要感知蓝牙当前开关状态以进行相应业务处理的场景。
 
 **引用文件：** <ConnectivityKit/bluetooth/oh\_bluetooth.h>
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -39,22 +33,16 @@ PhonePC/2in1TabletTVWearable
 
 ### 函数
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 描述 |
 | --- | --- |
 | [Bluetooth\_ResultCode OH\_Bluetooth\_GetBluetoothSwitchState(Bluetooth\_SwitchState \*state)](capi-oh-bluetooth-h.md#oh_bluetooth_getbluetoothswitchstate) | 获取蓝牙开关状态。 |
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### Bluetooth\_SwitchState
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Bluetooth_SwitchState
+```c
+enum Bluetooth_SwitchState
 ```
 
 **描述**
@@ -75,10 +63,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Bluetooth\_ResultCode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Bluetooth_ResultCode
+```c
+enum Bluetooth_ResultCode
 ```
 
 **描述**
@@ -94,14 +80,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Bluetooth\_GetBluetoothSwitchState()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Bluetooth_ResultCode OH_Bluetooth_GetBluetoothSwitchState(Bluetooth_SwitchState *state)
+```c
+Bluetooth_ResultCode OH_Bluetooth_GetBluetoothSwitchState(Bluetooth_SwitchState *state)
 ```
 
 **描述**

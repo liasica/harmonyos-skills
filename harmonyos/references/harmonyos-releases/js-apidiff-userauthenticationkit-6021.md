@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-userauthenticationkit-6021
 title: User Authentication Kit
-breadcrumb: 版本说明 > HarmonyOS 6.0.2(22) > OS平台能力 > API变更清单 > User Authentication Kit
+breadcrumb: 版本说明 > 更多版本 > 6.0.2(22) > OS平台能力 > API变更清单 > User Authentication Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:50+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:25+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:eefea863ee10c1285c84279a210cd8617eb334e2cd4d45584d8dc5aa2fa9c33b
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-imple
 title: IMPLEMT_VERIFIER
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > IMPLEMT_VERIFIER
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:18+08:00
+scraped_at: 2026-09-02T14:50:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8832e1e5998917b242bf401070666aae5eb1bb41daf6d9344f84a84a56874d01
+content_hash: sha256:ac2ccff6de7f2e8fe215026753665d2aef9c26005bc9f0630dda8e6ade94275b
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:8832e1e5998917b242bf401070666aae5eb1bb41daf6d9344f84a84a568
 
 ## 函数原型
 
-```
-1. IMPLEMT_VERIFIER(op_name, func_name)
+```cpp
+IMPLEMT_VERIFIER(op_name, func_name)
 ```
 
 ## 约束说明

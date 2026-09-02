@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-stri
 title: 使用JSVM-API判断给定的两个JS value是否严格相等
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API判断给定的两个JS value是否严格相等
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:23+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:54f9c91edc0a326d00afd3c61a7d50e99a4b857c2c2f4232808e1cc877108bb6
+scraped_at: 2026-09-02T15:00:17+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:882149cd274e5550d2178ef8405f414d830437d9aaaf056a2a43ece53edef1d3
 ---
 
 ## 简介
@@ -20,7 +20,7 @@ JSVM-API 中的函数用于判断两个 JavaScript 值是否严格相等，类�
 
 | 接口 | 功能说明 |
 | --- | --- |
-| OH\_JSVM\_StrictEquals | 判断两个JSVM\_Value对象是否相等 |
+| OH\_JSVM\_StrictEquals | 判断两个JSVM\_Value对象是否严格相等 |
 
 ## 使用示例
 
@@ -33,44 +33,44 @@ JSVM-API接口开发流程参考[使用JSVM-API实现JS与C/C++语言交互开�
 cpp部分代码：
 
 ```
-1. // hello.cpp
-2. #include "napi/native_api.h"
-3. #include "ark_runtime/jsvm.h"
-4. #include <hilog/log.h>
-5. // OH_JSVM_StrictEquals的样例方法
-6. static JSVM_Value IsStrictEquals(JSVM_Env env, JSVM_CallbackInfo info)
-7. {
-8. // 接受两个入参
-9. size_t argc = 2;
-10. JSVM_Value args[2] = {nullptr};
-11. OH_JSVM_GetCbInfo(env, info, &argc, args, nullptr, nullptr);
-12. // 调用OH_JSVM_StrictEquals接口判断给定的两个JavaScript value是否严格相等
-13. bool result = false;
-14. JSVM_Status status = OH_JSVM_StrictEquals(env, args[0], args[1], &result);
-15. if (status != JSVM_OK) {
-16. OH_LOG_ERROR(LOG_APP, "JSVM OH_JSVM_StrictEquals: failed");
-17. } else {
-18. OH_LOG_INFO(LOG_APP, "JSVM OH_JSVM_StrictEquals: success: %{public}d", result);
-19. }
-20. JSVM_Value isStrictEqual = nullptr;
-21. OH_JSVM_GetBoolean(env, result, &isStrictEqual);
-22. return isStrictEqual;
-23. }
-24. // IsStrictEquals注册回调
-25. static JSVM_CallbackStruct param[] = {
-26. {.data = nullptr, .callback = IsStrictEquals},
-27. };
-28. static JSVM_CallbackStruct *method = param;
-29. // IsStrictEquals方法别名，供JS调用
-30. static JSVM_PropertyDescriptor descriptor[] = {
-31. {"isStrictEquals", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
-32. };
-33. // 样例测试js
-34. const char* srcCallNative = R"JS(data = '123';value = '123';isStrictEquals(data,value);)JS";
+#include "napi/native_api.h"
+#include "ark_runtime/jsvm.h"
+#include "hilog/log.h"
+// ...
+// OH_JSVM_StrictEquals的样例方法
+static JSVM_Value IsStrictEquals(JSVM_Env env, JSVM_CallbackInfo info)
+{
+    // 接收两个入参
+    size_t argc = 2;
+    JSVM_Value args[2] = {nullptr};
+    OH_JSVM_GetCbInfo(env, info, &argc, args, nullptr, nullptr);
+    // 调用OH_JSVM_StrictEquals接口判断给定的两个JavaScript value是否严格相等
+    bool result = false;
+    JSVM_Status status = OH_JSVM_StrictEquals(env, args[0], args[1], &result);
+    if (status != JSVM_OK) {
+        OH_LOG_ERROR(LOG_APP, "JSVM OH_JSVM_StrictEquals: failed");
+    } else {
+        OH_LOG_INFO(LOG_APP, "JSVM OH_JSVM_StrictEquals: success: %{public}d", result);
+    }
+    JSVM_Value isStrictEqual = nullptr;
+    OH_JSVM_GetBoolean(env, result, &isStrictEqual);
+    return isStrictEqual;
+}
+// IsStrictEquals注册回调
+static JSVM_CallbackStruct param[] = {
+    {.data = nullptr, .callback = IsStrictEquals},
+};
+static JSVM_CallbackStruct *method = param;
+// IsStrictEquals方法别名，供JS调用
+static JSVM_PropertyDescriptor descriptor[] = {
+    {"isStrictEquals", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
+};
+// 样例测试js
+const char* SRC_CALL_NATIVE = R"JS(data = '123';value = '123';isStrictEquals(data,value);)JS";
 ```
 
 预期的输出结果：
 
-```
-1. JSVM OH_JSVM_StrictEquals: success: 1
+```ts
+JSVM OH_JSVM_StrictEquals: success: 1
 ```

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-runnin
 title: 模拟器在后台放置一段时间后会卡在加载状态，CPU占用率高
 breadcrumb: FAQ > DevEco Studio > 应用运行 > 模拟器在后台放置一段时间后会卡在加载状态，CPU占用率高
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:21:14+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:67a2f0be1505620337b69daeebd8deba5acc218d07fe6eeac5348ce8b4930636
+scraped_at: 2026-09-02T14:54:56+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:5c4842641479e660703650f26557284e70294e398333aeac5d915334b0de66da
 ---
 
 **问题描述**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/Yq9TCNm9QDy5xMSHoYJZ6Q/zh-cn_image_0000002229603801.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/-FNXf_mVRyakoYMYH6cfKA/zh-cn_image_0000002654798119.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/LW7FPmZnRAiGLwdsW1E-pw/zh-cn_image_0000002194318016.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/vBQmbFOwTZatTKmzvjXovw/zh-cn_image_0000002624638666.png)
 
 打开活动检测器，发现模拟器的CPU占用率为80%。
 
@@ -20,18 +20,18 @@ content_hash: sha256:67a2f0be1505620337b69daeebd8deba5acc218d07fe6eeac5348ce8b49
 
 1.打开模拟器设备管理页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/NdjcNgEVQN2qJwPY_4uXRg/zh-cn_image_0000002229603789.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/5gmvG1NrTfaWbo3xvQB44Q/zh-cn_image_0000002654838069.png)
 
 2.选择“新建模拟器”弹窗。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/SrerHbDGTNG3dimJLbBIVg/zh-cn_image_0000002194158400.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/19YR_tGsT9yPYMJt8fwdQg/zh-cn_image_0000002624478756.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/GUd1BCKfT3mpXVDaVMFYsw/zh-cn_image_0000002229758273.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/O1Bvc7sMSeeTN2HxqNzo7w/zh-cn_image_0000002654798121.png)
 
 3.复制路径并用文件夹打开system-image\HarmonyOS-NEXT-DB1\phone\_x86。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/EYQoXLKdQjaOJntefOhhWA/zh-cn_image_0000002229758269.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/aAV4-5LbTWeClSf_TENGKQ/zh-cn_image_0000002624638668.png)
 
 4.打开features.ini文件，将bootanimation.feature.key的值改为true，保存后重启模拟器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/xe5zEyHjRWaA1lCbrRdTxA/zh-cn_image_0000002194158396.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/2jjNuPbPTN2eVX5UzimkKQ/zh-cn_image_0000002654838073.png)

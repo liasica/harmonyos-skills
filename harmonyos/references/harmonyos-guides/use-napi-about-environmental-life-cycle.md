@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API接口关联数据，使其生命周期与当前环境的生命周期相关联
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口关联数据，使其生命周期与当前环境的生命周期相关联
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:03+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8a46cc25fc700ca629741060dd2469d1ec0a6d8f26651018c04285332018ea12
+scraped_at: 2026-09-02T15:00:16+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d84d691f5ee8386479f52c128a67fd35b028cf2297a877d68e5f06e7466bd095
 ---
 
 ## 简介
@@ -36,60 +36,60 @@ Node-API接口开发流程参考[使用Node-API实现跨语言交互开发流程
 cpp部分代码
 
 ```
-1. #include "napi/native_api.h"
+#include "napi/native_api.h"
 
-3. // 定义一个结构来存储实例数据
-4. struct InstanceData {
-5. int32_t value;
-6. };
+// 定义一个结构来存储实例数据
+struct InstanceData {
+    int32_t value;
+};
 
-8. // 对象被释放时的回调函数，用于清理实例数据
-9. void FinalizeCallback(napi_env env, void *finalizeData, void *finalizeHint)
-10. {
-11. if (finalizeData) {
-12. InstanceData *data = reinterpret_cast<InstanceData *>(finalizeData);
-13. // 释放内存，清除指针指向地址
-14. delete (data);
-15. }
-16. }
+// 对象被释放时的回调函数，用于清理实例数据
+void FinalizeCallback(napi_env env, void *finalizeData, void *finalizeHint)
+{
+    if (finalizeData) {
+        InstanceData *data = reinterpret_cast<InstanceData *>(finalizeData);
+        // 释放内存，清除指针指向地址
+        delete (data);
+    }
+}
 
-18. // napi_set_instance_data
-19. static napi_value SetInstanceData(napi_env env, napi_callback_info info)
-20. {
-21. size_t argc = 1;
-22. napi_value argv[1];
-23. napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
-24. int32_t instanceDataValue;
-25. napi_get_value_int32(env, argv[0], &instanceDataValue);
-26. InstanceData *instanceData = new InstanceData;
-27. instanceData->value = instanceDataValue;
-28. // 调用napi_set_instance_data将实例数据关联到Node-API环境，并指定FinalizeCallback函数
-29. napi_status status = napi_set_instance_data(env, instanceData, FinalizeCallback, nullptr);
-30. if (status != napi_ok) {
-31. delete instanceData;
-32. napi_throw_error(env, nullptr, "Test Node-API napi_set_instance_data failed");
-33. return nullptr;
-34. }
-35. bool success = true;
-36. napi_value result = nullptr;
-37. napi_get_boolean(env, success, &result);
-38. return result;
-39. }
+// napi_set_instance_data
+static napi_value SetInstanceData(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value argv[1];
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+    int32_t instanceDataValue;
+    napi_get_value_int32(env, argv[0], &instanceDataValue);
+    InstanceData *instanceData = new InstanceData;
+    instanceData->value = instanceDataValue;
+    // 调用napi_set_instance_data将实例数据关联到Node-API环境，并指定FinalizeCallback函数
+    napi_status status = napi_set_instance_data(env, instanceData, FinalizeCallback, nullptr);
+    if (status != napi_ok) {
+        delete instanceData;
+        napi_throw_error(env, nullptr, "Test Node-API napi_set_instance_data failed");
+        return nullptr;
+    }
+    bool success = true;
+    napi_value result = nullptr;
+    napi_get_boolean(env, success, &result);
+    return result;
+}
 ```
 
 接口声明
 
-```
-1. export const setInstanceData: (data: number) => boolean | undefined; // napi_set_instance_data
+```typescript
+export const setInstanceData: (data: number) => boolean | undefined; // napi_set_instance_data
 ```
 
 ArkTS侧示例代码
 
-```
-1. // napi_set_instance_data
-2. let data = 5;
-3. let value = testNapi.setInstanceData(data);
-4. hilog.info(0x0000, 'testTag', 'Test Node-API napi_set_instance_data:%{public}s', value);
+```typescript
+// napi_set_instance_data
+let data = 5;
+let value = testNapi.setInstanceData(data);
+hilog.info(0x0000, 'testTag', 'Test Node-API napi_set_instance_data:%{public}s', value);
 ```
 
 ### napi\_get\_instance\_data
@@ -99,47 +99,52 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. // napi_get_instance_data
-2. static napi_value GetInstanceData(napi_env env, napi_callback_info info)
-3. {
-4. InstanceData *resData = nullptr;
-5. // napi_get_instance_data获取之前相关联的数据项
-6. napi_status status = napi_get_instance_data(env, (void **)&resData);
-7. if (status != napi_ok) {
-8. return nullptr;
-9. }
+// napi_get_instance_data
+static napi_value GetInstanceData(napi_env env, napi_callback_info info)
+{
+    InstanceData *resData = nullptr;
+    // napi_get_instance_data获取之前相关联的数据项
+    napi_status status = napi_get_instance_data(env, (void **)&resData);
+    if (status != napi_ok) {
+        return nullptr;
+    }
 
-11. if (resData == nullptr) {
-12. napi_throw_error(env, nullptr, "Instance data not set or already freed");
-13. return nullptr;
-14. }
-15. napi_value result = nullptr;
-16. napi_create_int32(env, resData->value, &result);
-17. return result;
-18. }
+    if (resData == nullptr) {
+        napi_throw_error(env, nullptr, "Instance data not set or already freed");
+        return nullptr;
+    }
+    napi_value result = nullptr;
+    napi_create_int32(env, resData->value, &result);
+    return result;
+}
 ```
 
 接口声明
 
-```
-1. export const getInstanceData: () => number | undefined; // napi_get_instance_data
+```typescript
+export const getInstanceData: () => number | undefined; // napi_get_instance_data
 ```
 
 ArkTS侧示例代码
 
-```
-1. // napi_get_instance_data
-2. let data = 5;
-3. testNapi.setInstanceData(data);
-4. let value = testNapi.getInstanceData();
-5. hilog.info(0x0000, 'testTag', 'Test Node-API napi_set_instance_data:%{public}d', value);
+```typescript
+// napi_get_instance_data
+let data = 5;
+testNapi.setInstanceData(data);
+let value = testNapi.getInstanceData();
+hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_instance_data:%{public}d', value);
 ```
 
 以上代码如果要在native cpp中打印日志，需在CMakeLists.txt文件中添加以下配置信息（并添加头文件：#include "hilog/log.h"）：
 
+```text
+// CMakeLists.txt
+add_definitions( "-DLOG_DOMAIN=0xd0d0" )
+add_definitions( "-DLOG_TAG=\"testTag\"" )
+target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
 ```
-1. // CMakeLists.txt
-2. add_definitions( "-DLOG_DOMAIN=0xd0d0" )
-3. add_definitions( "-DLOG_TAG=\"testTag\"" )
-4. target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
-```
+
+## 注意事项
+
+1. 当在同一个运行时环境调用第二次napi\_set\_instance\_data时，第一次调用时注册的FinalizeCallback回调将会被执行，原先的instance\_data数据已经释放并失效。
+2. 运行时环境销毁过程中会执行通过napi\_set\_instance\_data接口注册的FinalizeCallback回调，此时运行时环境已不再有效，应避免在该回调中访问ArkTS对象，如napi\_ref、napi\_value等。

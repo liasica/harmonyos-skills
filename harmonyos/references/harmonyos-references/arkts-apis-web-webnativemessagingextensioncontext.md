@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: "@ohos.web.WebNativeMessagingExtensionContext (Web Native Messaging Extension Context)"
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.WebNativeMessagingExtensionContext (Web Native Messaging Extension Context)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:12+08:00
-doc_updated_at: 2026-04-13
-content_hash: sha256:9d39f52b23625d88a91c90e94f66292392cb6858ccf7751709c54c81757e9199
+scraped_at: 2026-09-02T15:01:27+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:24af6c8fdfec1cd62594ecc24f11beccbfbdcad1ab683f0fd801b30c787c1c04
 ---
 
-WebNativeMessagingExtensionContext是Web原生消息扩展的上下文，继承自ExtensionContext。它提供了与WebNativeMessagingExtension通信消息的交互能力。
+WebNativeMessagingExtensionContext是Web原生消息扩展（[WebNativeMessagingExtensionAbility](arkts-apis-web-webnativemessagingextensionability.md)）的运行上下文，继承自ExtensionContext，为扩展Ability提供生命周期管理、Ability启动以及原生消息连接控制能力。开发者可在继承WebNativeMessagingExtensionAbility的扩展中通过this.context获取该上下文，进而调用[startAbility](arkts-apis-web-webnativemessagingextensioncontext.md#startability)启动其他Ability、调用[startAbilityForResult](arkts-apis-web-webnativemessagingextensioncontext.md#startabilityforresult)启动UIAbility并接收返回结果、调用[terminateSelf](arkts-apis-web-webnativemessagingextensioncontext.md#terminateself)结束当前扩展，或调用[stopNativeConnection](arkts-apis-web-webnativemessagingextensioncontext.md#stopnativeconnection)停止指定的Web原生消息连接。
 
-说明
+**说明** 
 
 本模块首批接口从API version 21开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -18,25 +18,21 @@ WebNativeMessagingExtensionContext是Web原生消息扩展的上下文，继承�
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { WebNativeMessagingExtensionAbility, ConnectionInfo } from '@kit.ArkWeb';
+```ts
+import { WebNativeMessagingExtensionAbility, ConnectionInfo } from '@kit.ArkWeb';
 ```
 
 ## WebNativeMessagingExtensionContext
 
-PhonePC/2in1TabletTVWearable
-
 WebNativeMessagingExtensionContext是Web原生消息扩展的上下文，包含所需交互能力。
+
+**系统能力:** SystemCapability.Web.Webview.Core
 
 ### startAbility
 
-PhonePC/2in1TabletTVWearable
-
 startAbility(want: Want, options?: StartOptions): Promise<void>
 
-使用Promise异步回调启动Ability。
+使用Promise异步回调启动Ability。如需获取启动的UIAbility退出时的返回结果，可以使用[startAbilityForResult](arkts-apis-web-webnativemessagingextensioncontext.md#startabilityforresult)。
 
 **系统能力:** SystemCapability.Web.Webview.Core
 
@@ -46,8 +42,8 @@ startAbility(want: Want, options?: StartOptions): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| want | [Want](js-apis-app-ability-want.md) | 是 | 表示需要启动的Ability的信息。 |
-| options | [StartOptions](js-apis-app-ability-startoptions.md) | 否 | 启动选项。 |
+| want | [Want](js-apis-app-ability-want.md) | 是 | 表示需要启动的Ability的信息，包含bundleName、abilityName等属性，用于指定要启动的目标Ability。 |
+| options | [StartOptions](js-apis-app-ability-startoptions.md) | 否 | 启动选项，用于指定目标UIAbility启动时的选项，包括但不局限于窗口模式、目标UIAbility启动时所在的屏幕等。当需要自定义启动配置时传入，不传入时使用系统默认启动配置。 |
 
 **返回值:**
 
@@ -86,34 +82,130 @@ startAbility(want: Want, options?: StartOptions): Promise<void>
 
 **示例:**
 
-```
-1. import { WebNativeMessagingExtensionAbility, ConnectionInfo } from '@kit.ArkWeb';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { WebNativeMessagingExtensionAbility, ConnectionInfo } from '@kit.ArkWeb';
+import { Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAbility {
-5. onConnectNative(info: ConnectionInfo): void {
-6. const abilityWant: Want = {
-7. bundleName: 'com.example.mybundle',
-8. abilityName: 'MainAbility'
-9. };
-10. try {
-11. const context = this.context; // 获取 WebNativeMessagingExtensionContext 实例
-12. context.startAbility(abilityWant);
-13. console.info('Ability started successfully');
-14. } catch (err) {
-15. console.error(`Failed to start ability. Code: ${err.code}, Message: ${err.message}`);
-16. }
-17. }
-18. }
+export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAbility {
+  onConnectNative(info: ConnectionInfo): void {
+    const abilityWant: Want = {
+      bundleName: 'com.example.mybundle',
+      abilityName: 'MainAbility'
+    };
+    try {
+      const context = this.context; // 获取 WebNativeMessagingExtensionContext 实例
+      context.startAbility(abilityWant).then(() => {
+        console.info('Ability started successfully');
+      }).catch((err: BusinessError) => {
+        console.error(`Failed to start ability. Code: ${err.code},
+          Message: ${err.message}`);
+      });
+    } catch (err) {
+      console.error(`Failed to start ability. Code: ${(err as BusinessError).code},
+      Message: ${(err as BusinessError).message}`);
+    }
+  }
+}
+```
+
+### startAbilityForResult
+
+startAbilityForResult(want: Want, options?: StartOptions): Promise<AbilityResult>
+
+启动一个UIAbility，使用Promise异步回调接收被拉起的UIAbility退出时的返回结果。
+
+UIAbility被启动后，有如下情况：
+
+* 正常情况下可通过调用[terminateSelfWithResult](js-apis-inner-application-uiabilitycontext.md#terminateselfwithresult)接口使之终止并且返回结果给调用方。
+* 异常情况下比如销毁UIAbility会返回异常信息给调用方，异常信息中resultCode为-1。
+* 只支持拉起自己应用的UIAbility。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数:**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| want | [Want](js-apis-app-ability-want.md) | 是 | 表示需要启动的UIAbility的信息，包含bundleName、abilityName等属性，用于指定要启动的目标UIAbility。 |
+| options | [StartOptions](js-apis-app-ability-startoptions.md) | 否 | 启动选项，用于配置UIAbility的窗口模式等。当需要自定义启动配置时传入，不传入时使用系统默认启动配置。各字段默认值参考[StartOptions](js-apis-app-ability-startoptions.md)说明。 |
+
+**返回值:**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[AbilityResult](js-apis-inner-ability-abilityresult.md)> | Promise对象，返回被启动方退出时的结果码和数据。 |
+
+**错误码:**
+
+以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[元能力子系统错误码](errorcode-ability.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | The application does not have permission to call the interface. |
+| 16000001 | The specified ability does not exist. |
+| 16000002 | Incorrect ability type. |
+| 16000004 | Cannot start an invisible component. |
+| 16000005 | The specified process does not have the permission. |
+| 16000008 | The crowdtesting application expires. |
+| 16000009 | An ability cannot be started or stopped in Wukong mode. |
+| 16000010 | The call with the continuation and prepare continuation flag is forbidden. |
+| 16000011 | The context does not exist. |
+| 16000012 | The application is controlled by the AppGallery and cannot be started. |
+| 16000013 | The application is controlled by Enterprise Device Manager and cannot be started. |
+| 16000019 | No matching ability is found. |
+| 16000050 | Internal error. Possible causes: 1. Failed to connect to the system service; 2. The system service failed to communicate with dependency module. |
+| 16000055 | Installation-free timed out. |
+| 16000071 | The application does not support appClone mode in multiAppMode. |
+| 16000072 | The application does not support appClone and multi-instance mode in multiAppMode. |
+| 16000073 | The app clone index is invalid. |
+| 16000076 | The app instance key is invalid. |
+| 16000077 | The number of app instances reaches the limit. |
+| 16000078 | The application does not support multiple instances. |
+| 16000079 | The APP\_INSTANCE\_KEY cannot be specified. |
+| 16000080 | Instances cannot be created for other applications during inter-application startup. |
+
+**示例:**
+
+```ts
+import { WebNativeMessagingExtensionAbility, ConnectionInfo } from '@kit.ArkWeb';
+import { Want, common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAbility {
+  onConnectNative(info: ConnectionInfo): void {
+    const abilityWant: Want = {
+      bundleName: 'com.example.mybundle', // 请开发者替换为实际的 bundleName
+      abilityName: 'MainAbility' // 请开发者替换为实际的 abilityName
+    };
+    try {
+      const context = this.context; // 获取 WebNativeMessagingExtensionContext 实例
+      context.startAbilityForResult(abilityWant).then((result: common.AbilityResult) => {
+        console.info(`Ability started successfully, result code: ${result.resultCode}`);
+        if (result.want) {
+          console.info(`Result data: ${JSON.stringify(result.want)}`);
+        }
+      }).catch((err: BusinessError) => {
+        console.error(`Failed to start ability. Code: ${(err as BusinessError).code},
+        Message: ${(err as BusinessError).message}`);
+      });
+    } catch (err) {
+      console.error(`Failed to start ability. Code: ${(err as BusinessError).code},
+      Message: ${(err as BusinessError).message}`);
+    }
+  }
+}
 ```
 
 ### terminateSelf
 
-PhonePC/2in1TabletTVWearable
-
 terminateSelf(): Promise<void>
 
-销毁当前Web原生消息扩展。该方法返回一个Promise对象用于异步处理。
+销毁当前Web原生消息扩展。该方法返回一个Promise对象用于异步处理，调用此方法会自动停止所有Web原生消息连接，无需再调用stopNativeConnection。
 
 **系统能力:** SystemCapability.Web.Webview.Core
 
@@ -137,29 +229,33 @@ terminateSelf(): Promise<void>
 
 **示例:**
 
-```
-1. import { WebNativeMessagingExtensionAbility, ConnectionInfo } from '@kit.ArkWeb';
+```ts
+import { WebNativeMessagingExtensionAbility, ConnectionInfo } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAbility {
-4. onConnectNative(info: ConnectionInfo): void {
-5. try {
-6. const context = this.context; // 获取 WebNativeMessagingExtensionContext 实例
-7. context.terminateSelf();
-8. console.info('Extension terminated successfully');
-9. } catch (err) {
-10. console.error(`Failed to terminate extension. Code: ${err.code}, Message: ${err.message}`);
-11. }
-12. }
-13. }
+export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAbility {
+  onConnectNative(info: ConnectionInfo): void {
+    try {
+        const context = this.context; // 获取 WebNativeMessagingExtensionContext 实例
+        context.terminateSelf().then(() => {
+          console.info('Extension terminated successfully');
+        }).catch((err: BusinessError) => {
+          console.error(`Failed to terminate extension. Code: ${err.code},
+          Message: ${err.message}`);
+        });
+    } catch (err) {
+        console.error(`Failed to terminate extension. Code: ${(err as BusinessError).code},
+        Message: ${(err as BusinessError).message}`);
+    }
+  }
+}
 ```
 
 ### stopNativeConnection
 
-PhonePC/2in1TabletTVWearable
-
 stopNativeConnection(connectionId: number): Promise<void>
 
-停止指定的本地连接。使用Promise进行异步回调。
+停止指定的本地连接。使用Promise异步回调。
 
 **系统能力:** SystemCapability.Web.Webview.Core
 
@@ -189,19 +285,25 @@ stopNativeConnection(connectionId: number): Promise<void>
 
 **示例:**
 
-```
-1. import { WebNativeMessagingExtensionAbility, ConnectionInfo } from '@kit.ArkWeb';
+```ts
+import { WebNativeMessagingExtensionAbility, ConnectionInfo } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAbility {
-4. onConnectNative(info: ConnectionInfo): void {
-5. const CONNECTION_ID = 12345; // 实际的连接 ID
-6. try {
-7. const context = this.context;// 获取 WebNativeMessagingExtensionContext 实例
-8. context.stopNativeConnection(CONNECTION_ID);
-9. console.info('Native connection stopped successfully');
-10. } catch (err) {
-11. console.error(`Failed to stop native connection. Code: ${err.code}, Message: ${err.message}`);
-12. }
-13. }
-14. }
+export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAbility {
+  onConnectNative(info: ConnectionInfo): void {
+    const CONNECTION_ID = 12345; // 实际的连接 ID
+    try {
+        const context = this.context;// 获取 WebNativeMessagingExtensionContext 实例
+        context.stopNativeConnection(CONNECTION_ID).then(() => {
+          console.info('Native connection stopped successfully');
+        }).catch((err: BusinessError) => {
+          console.error(`Failed to stop native connection. Code: ${err.code},
+          Message: ${err.message}`);
+        })
+    } catch (err) {
+        console.error(`Failed to stop native connection. Code: ${(err as BusinessError).code},
+        Message: ${(err as BusinessError).message}`);
+    }
+  }
+}
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-pay-a
 title: 支付并签约场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 免密支付接入 > 支付并签约场景
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:31+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:73fd304705d9fc51ba062065e4e8ff5251263f8221c91483193f27a09b21e49f
+scraped_at: 2026-09-02T14:59:59+08:00
+doc_updated_at: 2026-06-13
+content_hash: sha256:3700120e03269b913f90a9602d5f2bfb73b52960fd1a2b958d53112dec847e45
 ---
 
 ## 场景介绍
@@ -14,17 +14,17 @@ content_hash: sha256:73fd304705d9fc51ba062065e4e8ff5251263f8221c91483193f27a09b2
 
 用户在商户APP应用/元服务选购完不同的商品确认订单后，跳转至用户支付并签约确认页面，用户完成支付并签约后，后续再次购买商品时，商户可以直接发起代扣，减少用户拉起收银台、输入支付密码等相关操作。
 
-支持商户模型：直连商户、服务商
+支持商户模型：直连商户、服务商、平台类商户
 
 华为支付支付并签约页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/uG_VVv0vS0O9ZETS3vUz3Q/zh-cn_image_0000002558605932.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/x7UMwhb5Rfea03N2TxE9HQ/zh-cn_image_0000002736314217.png)
 
 ## 业务流程
 
 开发者通过接入Payment Kit 提供的支付并签约能力，可以让用户在支付完成后快速与商户建立签约代扣的关系。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/1ZTNID0gSVmsddnmwJyWeQ/zh-cn_image_0000002589325459.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/oMzFknXLRfa9YO5uay2lGw/zh-cn_image_0000002706675174.png)
 
 1. 商户客户端请求商户服务端创建商品订单。
 2. 商户服务端调用Payment Kit服务端[直连商户预下单](../harmonyos-references/payment-pas-prepay.md)或[服务商预下单](../harmonyos-references/payment-partner-pas-prepay.md)接口。
@@ -69,9 +69,9 @@ content_hash: sha256:73fd304705d9fc51ba062065e4e8ff5251263f8221c91483193f27a09b2
 
 商户在构建[直连商户预下单](../harmonyos-references/payment-pas-prepay.md)或[服务商预下单](../harmonyos-references/payment-partner-pas-prepay.md)请求参数时，传入一个callbackUrl。在完成支付并签约后，华为支付服务器将以POST方式调用callbackUrl，将支付并签约的结果返回给商户服务器。
 
-说明
+**说明** 
 
-* 如果用户没有提前登录，系统会自动拉起华为账号登录页面让用户登录。
+* 如果用户未提前登录，系统会自动拉起华为账号登录页面让用户登录。若用户取消登录或登录失败，则签约流程将中断。
 * 支付并签约接口请求成功不代表支付或签约成功，建议不要以客户端签约收银台返回作为用户支付并签约的最终结果，需以服务器接收到的结果通知或者查询API返回为准。
 
 为保证信息合法性，商户服务器需要对返回的支付信息进行[SM2验签](../harmonyos-references/payment-rest-overview.md#验签规则)，验签注意事项：

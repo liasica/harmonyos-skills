@@ -3,17 +3,17 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: 环境中配置使用JDK25，打包失败报错，错误码：00303153 Configuration Error
 breadcrumb: FAQ > DevEco Studio > 环境准备 > 环境中配置使用JDK25，打包失败报错，错误码：00303153 Configuration Error
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:55+08:00
-doc_updated_at: 2026-04-08
-content_hash: sha256:db471053336f80335e716ed1353868498a545ec1257b339dae86c90c082701cd
+scraped_at: 2026-09-02T14:54:52+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:01c951f22e35c254854f9febdce2d145b8a0c965f33c78ee275ea77b09f9f453
 ---
 
 **问题现象**
 
 在使用6.0.2.640版本的DevEco Studio和Command Line Tools时，若系统环境中配置使用JDK25，在命令行中执行打包命令会导致打包失败，报错信息如下图所示：
 
-```
-1. ERROR： 00303153 Configuration Error
+```screen
+ERROR： 00303153 Configuration Error
 ```
 
 **问题原因**

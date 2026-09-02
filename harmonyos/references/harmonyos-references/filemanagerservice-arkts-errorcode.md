@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/filemanag
 title: ArkTS API错误码
 breadcrumb: API参考 > 应用服务 > File Manager Service Kit（文件管理服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:37+08:00
+scraped_at: 2026-09-02T15:02:53+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:637696e07941ef23c26b23886d22c55449595aed424fcd09fc0c618f5209721e
+content_hash: sha256:223bd95b0f8267f2508bbda8dd44b2d9081e3354170c149538725cd25152b6ac
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参见[通用错误码](errorcode-universal.md)。
 
 ## 1014000001 操作不允许
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -35,8 +33,6 @@ Operation not permitted
 2、通过程序访问控制机制，[向用户申请授权](../harmonyos-guides/request-user-authorization.md)从而获取目录权限。
 
 ## 1014000002 没有该文件或目录
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -60,8 +56,6 @@ No such file or directory
 
 ## 1014000003 存储空间不足
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
 No space left on device
@@ -80,8 +74,6 @@ No space left on device
 
 ## 1014000004 系统内部错误
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
 System inner fail
@@ -99,8 +91,6 @@ System inner fail
 重启设备，或请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
 
 ## 1014000005 无效的快捷方式文件
-
-PhonePC/2in1Tablet
 
 **错误信息**
 

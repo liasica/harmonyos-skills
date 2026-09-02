@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-k
 title: XEG_RTShadowAODescription
 breadcrumb: API参考 > 图形 > XEngine Kit（GPU加速引擎服务） > C API > 头文件和结构体 > 结构体 > XEG_RTShadowAODescription
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:03+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:12cfa8a4b044541710f7de428f9eac35b642fcfe79a21168a5089e49456b0b71
+scraped_at: 2026-09-02T15:02:49+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:042d0addd19718fe91864baab8713c943ad71c156b31a35a39bde2ee4a768302
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 此结构体描述光线追踪阴影和环境光遮蔽算法渲染命令的输入信息。
 
@@ -22,11 +20,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 成员变量
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -37,26 +31,22 @@ PhonePC/2in1TabletTV
 | VkImageView [inputMotionVectorImage](xengine-kit-xeg-rtshadowaodescription.md#inputmotionvectorimage) | 运动矢量图像，可以为空。运动矢量的计算方式为当前渲染像素的NDC坐标的XY值减去其上一帧的NDC坐标的XY值。图像格式需要是VK\_FORMAT\_R16G16\_SFLOAT或更高精度。保留字段，暂不支持。 |
 | VkImageView [outputShadowAOImage](xengine-kit-xeg-rtshadowaodescription.md#outputshadowaoimage) | 输出的阴影和环境光遮蔽图像，不能为空，格式必须为VK\_FORMAT\_R8G8\_UNORM。阴影值将写入R通道，环境光遮蔽值将写入G通道。 |
 | VkAccelerationStructureKHR [accelerationStructure](xengine-kit-xeg-rtshadowaodescription.md#accelerationstructure) | 场景的光线追踪加速结构。 |
-| bool [isAsInTranslatedSpace](xengine-kit-xeg-rtshadowaodescription.md#isasintranslatedspace) | 光线追踪加速结构是否在Translated世界空间构建。true表示在Translated世界空间构建，false表示在绝对世界空间构建。默认值为false。 |
-| float [translatedViewMatrix](xengine-kit-xeg-rtshadowaodescription.md#translatedviewmatrix) | 相机Translated观察矩阵，必须是4\*4列主序矩阵。当isAsInTranslatedSpace值为false时可以不赋值。 |
+| bool [isAsInTranslatedSpace](xengine-kit-xeg-rtshadowaodescription.md#isasintranslatedspace) = false | 光线追踪加速结构是否在Translated世界空间构建。true表示在Translated世界空间构建，false表示在绝对世界空间构建。默认值为false。 |
+| float [translatedViewMatrix](xengine-kit-xeg-rtshadowaodescription.md#translatedviewmatrix) [16] | 相机Translated观察矩阵，必须是4\*4列主序矩阵。当isAsInTranslatedSpace值为false时可以不赋值。 |
 | float [viewMatrix](xengine-kit-xeg-rtshadowaodescription.md#viewmatrix) [16] | 相机观察矩阵，必须是4\*4列主序矩阵。 |
 | float [projectionMatrix](xengine-kit-xeg-rtshadowaodescription.md#projectionmatrix) [16] | 相机投影矩阵，必须是4\*4列主序矩阵。 |
 | float [worldCameraOrigin](xengine-kit-xeg-rtshadowaodescription.md#worldcameraorigin) [3] | 相机在世界空间中的位置坐标。 |
-| bool [ndcFilpY](xengine-kit-xeg-rtshadowaodescription.md#ndcfilpy) | 标识NDC空间与世界空间是否存在Y轴翻转关系。true表示翻转，false表示不翻转。默认值为false。 |
+| bool [ndcFlipY](xengine-kit-xeg-rtshadowaodescription.md#ndcflipy) = false | 标识NDC空间与世界空间是否存在Y轴翻转关系。true表示翻转，false表示不翻转。默认值为false。 |
 | const [XEG\_RTShadowParameters](xengine-kit-xeg-rtshadowparameters.md) \* [pRtShadowParameters](xengine-kit-xeg-rtshadowaodescription.md#prtshadowparameters) | 光线追踪阴影算法参数，当XEG\_RTShadowAOCreateInfo::enableRTShadow=true时不能为空。 |
 | const [XEG\_RTAOParameters](xengine-kit-xeg-rtaoparameters.md) \* [pRtAOParameters](xengine-kit-xeg-rtshadowaodescription.md#prtaoparameters) | 光线追踪环境光算法参数，当XEG\_RTShadowAOCreateInfo::enableRTAO=true时不能为空。 |
 | const [XEG\_RTShadowAODenoiserParameters](xengine-kit-xeg-rtshadowaodenoiserparameters.md) \* [pRtShadowAODenoiserParameters](xengine-kit-xeg-rtshadowaodescription.md#prtshadowaodenoiserparameters) | 去噪参数，不能为空。光线追踪阴影和环境光遮蔽使用相同的去噪参数。 |
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTV
-
 ### accelerationStructure
 
-PhonePC/2in1TabletTV
-
-```
-1. VkAccelerationStructureKHR XEG_RTShadowAODescription::accelerationStructure
+```cpp
+VkAccelerationStructureKHR XEG_RTShadowAODescription::accelerationStructure
 ```
 
 **描述**
@@ -65,10 +55,8 @@ PhonePC/2in1TabletTV
 
 ### inputDepthImage
 
-PhonePC/2in1TabletTV
-
-```
-1. VkImageView XEG_RTShadowAODescription::inputDepthImage
+```cpp
+VkImageView XEG_RTShadowAODescription::inputDepthImage
 ```
 
 **描述**
@@ -77,10 +65,8 @@ PhonePC/2in1TabletTV
 
 ### inputMotionVectorImage
 
-PhonePC/2in1TabletTV
-
-```
-1. VkImageView XEG_RTShadowAODescription::inputMotionVectorImage
+```cpp
+VkImageView XEG_RTShadowAODescription::inputMotionVectorImage
 ```
 
 **描述**
@@ -89,10 +75,8 @@ PhonePC/2in1TabletTV
 
 ### inputNormalImage
 
-PhonePC/2in1TabletTV
-
-```
-1. VkImageView XEG_RTShadowAODescription::inputNormalImage
+```cpp
+VkImageView XEG_RTShadowAODescription::inputNormalImage
 ```
 
 **描述**
@@ -101,10 +85,8 @@ PhonePC/2in1TabletTV
 
 ### outputShadowAOImage
 
-PhonePC/2in1TabletTV
-
-```
-1. VkImageView XEG_RTShadowAODescription::outputShadowAOImage
+```cpp
+VkImageView XEG_RTShadowAODescription::outputShadowAOImage
 ```
 
 **描述**
@@ -113,10 +95,8 @@ PhonePC/2in1TabletTV
 
 ### pNext
 
-PhonePC/2in1TabletTV
-
-```
-1. const void* XEG_RTShadowAODescription::pNext
+```cpp
+const void* XEG_RTShadowAODescription::pNext
 ```
 
 **描述**
@@ -125,10 +105,8 @@ PhonePC/2in1TabletTV
 
 ### projectionMatrix
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_RTShadowAODescription::projectionMatrix[16]
+```cpp
+float XEG_RTShadowAODescription::projectionMatrix[16]
 ```
 
 **描述**
@@ -137,10 +115,8 @@ PhonePC/2in1TabletTV
 
 ### pRtAOParameters
 
-PhonePC/2in1TabletTV
-
-```
-1. const XEG_RTAOParameters* XEG_RTShadowAODescription::pRtAOParameters
+```cpp
+const XEG_RTAOParameters* XEG_RTShadowAODescription::pRtAOParameters
 ```
 
 **描述**
@@ -149,10 +125,8 @@ PhonePC/2in1TabletTV
 
 ### pRtShadowAODenoiserParameters
 
-PhonePC/2in1TabletTV
-
-```
-1. const XEG_RTShadowAODenoiserParameters* XEG_RTShadowAODescription::pRtShadowAODenoiserParameters
+```cpp
+const XEG_RTShadowAODenoiserParameters* XEG_RTShadowAODescription::pRtShadowAODenoiserParameters
 ```
 
 **描述**
@@ -161,10 +135,8 @@ PhonePC/2in1TabletTV
 
 ### pRtShadowParameters
 
-PhonePC/2in1TabletTV
-
-```
-1. const XEG_RTShadowParameters* XEG_RTShadowAODescription::pRtShadowParameters
+```cpp
+const XEG_RTShadowParameters* XEG_RTShadowAODescription::pRtShadowParameters
 ```
 
 **描述**
@@ -173,10 +145,8 @@ PhonePC/2in1TabletTV
 
 ### sType
 
-PhonePC/2in1TabletTV
-
-```
-1. XEG_StructureType XEG_RTShadowAODescription::sType
+```cpp
+XEG_StructureType XEG_RTShadowAODescription::sType
 ```
 
 **描述**
@@ -185,10 +155,8 @@ PhonePC/2in1TabletTV
 
 ### viewMatrix
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_RTShadowAODescription::viewMatrix[16]
+```cpp
+float XEG_RTShadowAODescription::viewMatrix[16]
 ```
 
 **描述**
@@ -197,10 +165,8 @@ PhonePC/2in1TabletTV
 
 ### worldCameraOrigin
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_RTShadowAODescription::worldCameraOrigin[3]
+```cpp
+float XEG_RTShadowAODescription::worldCameraOrigin[3]
 ```
 
 **描述**
@@ -209,10 +175,8 @@ PhonePC/2in1TabletTV
 
 ### isAsInTranslatedSpace
 
-PhonePC/2in1TabletTV
-
-```
-1. bool XEG_RTShadowAODescription::isAsInTranslatedSpace = false;
+```cpp
+bool XEG_RTShadowAODescription::isAsInTranslatedSpace = false;
 ```
 
 **描述**
@@ -221,22 +185,18 @@ PhonePC/2in1TabletTV
 
 ### translatedViewMatrix
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_RTShadowAODescription::translatedViewMatrix[16];
+```cpp
+float XEG_RTShadowAODescription::translatedViewMatrix[16];
 ```
 
 **描述**
 
 相机Translated观察矩阵，必须是4\*4列主序矩阵。当isAsInTranslatedSpace值为false时可以不赋值。
 
-### ndcFilpY
+### ndcFlipY
 
-PhonePC/2in1TabletTV
-
-```
-1. bool XEG_RTShadowAODescription::ndcFilpY  = false;
+```cpp
+bool XEG_RTShadowAODescription::ndcFlipY  = false;
 ```
 
 **描述**

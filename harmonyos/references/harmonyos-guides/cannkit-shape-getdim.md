@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-shape
 title: GetDim
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Shape > GetDim
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:52+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4be040fc7cc1bd9c2568b7a9da9697996014198c11e83e4e9c96a0d83c76f03c
+content_hash: sha256:858db9e6aaa65e337c6e0e610abb6a11b8c6a3f543abf7ccb7f899683d8d6a83
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:4be040fc7cc1bd9c2568b7a9da9697996014198c11e83e4e9c96a0d83c7
 
 ## 函数原型
 
-```
-1. int64_t GetDim(size_t idx) const;
+```cpp
+int64_t GetDim(size_t idx) const;
 ```
 
 ## 参数说明

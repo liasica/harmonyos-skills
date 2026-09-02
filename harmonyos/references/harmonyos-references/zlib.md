@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/zlib
 title: zlib
 breadcrumb: API参考 > 标准库 > zlib
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:32+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:aa7b49f4fcf141425b6e3720aa37b5dccb76354768343d33e248c39e5ad6a7cc
+scraped_at: 2026-09-02T14:53:37+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:866637b67e2347f5c815d0c98e796eaf873c57ebffec1cb4676c5aa843aa47ca
 ---
 
 ## 简介
@@ -24,14 +24,14 @@ Zlib库解码器会检查压缩数据的一致性，因此即使在输入损坏�
 
 如果开发者需要使用zlib相关功能，首先请添加头文件：
 
-```
-1. #include <zlib.h>
+```c
+#include <zlib.h>
 ```
 
 其次在CMakeLists.txt中添加以下动态链接库：
 
-```
-1. libz.so
+```screen
+libz.so
 ```
 
 ## 接口列表

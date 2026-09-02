@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-er
 title: ArkTS编译错误码
 breadcrumb: 指南 > 构建应用 > 构建报错排查 > 编译构建错误码 > ArkTS编译错误码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:29+08:00
-doc_updated_at: 2026-03-11
-content_hash: sha256:945256ebb4d95c9d1c9854e68c86eb90c250f1b6020de3907417c32940df3b6d
+scraped_at: 2026-09-02T14:50:57+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:38db8b41e3ac567e36009e60f7d952c885c036dae28f10bbfbc5da34ba2823aa
 ---
 
 ## 00309001 禁止使用相对路径导入模块以外的文件
@@ -61,5 +61,5 @@ Cannot resolve import statement XXX.
 
 **处理步骤**
 
-* 将import文件夹改为import具体的文件，如果要import文件夹，确保文件夹中存在index.ets或index.ts（小写i）。
+* 将import的文件夹改为具体的文件，如果要import文件夹，确保文件夹中存在index.ets或index.ts（小写i）。
 * 确保import的文件和实际的文件名大小写一致。

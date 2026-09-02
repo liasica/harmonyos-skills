@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API进行class相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API进行class相关开发
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:03+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8fa48528e4d184e5a616f3f6ed0589ac9a454b052185f1e858a17cabf7d67d8e
+scraped_at: 2026-09-02T15:00:15+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:35636312dccd91a73473c00e57490da49d227d9a3c0847eb7ad2bf6a1cde1b0b
 ---
 
 ## 简介
@@ -22,7 +22,7 @@ content_hash: sha256:8fa48528e4d184e5a616f3f6ed0589ac9a454b052185f1e858a17cabf7d
 
 ## 场景和功能介绍
 
-以下Node-API接口主要用于处理class。他们的使用场景如下：
+以下Node-API接口主要用于处理class。它们的使用场景如下：
 
 | 接口 | 描述 |
 | --- | --- |
@@ -41,51 +41,51 @@ Node-API接口开发流程参考[使用Node-API实现跨语言交互开发流程
 
 通过给定的构造函数实例化一个对象，将这个对象返回ArkTS侧使用。
 
-说明
+**说明** 
 
 参数constructor不是function类型则返回napi\_function\_expected。
 
 cpp部分代码
 
 ```
-1. // napi_new_instance
-2. static napi_value NewInstance(napi_env env, napi_callback_info info)
-3. {
-4. // 传入并解析参数，第一个参数为传入的构造函数，第二个参数为需要传入构造函数的参数
-5. size_t argc = 2;
-6. napi_value args[2] = {nullptr};
-7. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-8. // 调用napi_new_instance接口，实例化一个对象，将这个对象返回
-9. napi_value result = nullptr;
-10. napi_new_instance(env, args[0], 1, &args[1], &result);
-11. return result;
-12. }
+// napi_new_instance
+static napi_value NewInstance(napi_env env, napi_callback_info info)
+{
+    // 传入并解析参数，第一个参数为传入的构造函数，第二个参数为需要传入构造函数的参数
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 调用napi_new_instance接口，实例化一个对象，将这个对象返回
+    napi_value result = nullptr;
+    napi_new_instance(env, args[0], 1, &args[1], &result);
+    return result;
+}
 ```
 
 接口声明
 
-```
-1. export const newInstance: (obj: Object, param: string) => Object; // napi_new_instance
+```typescript
+export const newInstance: (obj: Object, param: string) => Object; // napi_new_instance
 ```
 
 ArkTS侧示例代码
 
-```
-1. class Fruit {
-2. name: string;
+```typescript
+class Fruit {
+  name: string;
 
-4. constructor(name: string) {
-5. this.name = name;
-6. }
-7. }
+  constructor(name: string) {
+    this.name = name;
+  }
+}
 ```
 
-```
-1. // napi_new_instance
-2. // 调用函数，用变量obj接收函数返回的实例化对象
-3. let obj = testNapi.newInstance(Fruit, 'test');
-4. // 打印实例化对象obj的信息
-5. hilog.info(0x0000, 'Node-API', 'napi_new_instance %{public}s', JSON.stringify(obj));
+```typescript
+// napi_new_instance
+// 调用函数，用变量obj接收函数返回的实例化对象
+let obj = testNapi.newInstance(Fruit, 'test');
+// 打印实例化对象obj的信息
+hilog.info(0x0000, 'Node-API', 'napi_new_instance %{public}s', JSON.stringify(obj));
 ```
 
 ### napi\_get\_new\_target
@@ -108,7 +108,7 @@ ArkTS侧示例代码
 
 在ArkTS object上绑定一个native对象实例。
 
-说明
+**说明** 
 
 参数js\_object不为object类型或function类型时返回napi\_object\_expected。
 
@@ -116,7 +116,7 @@ ArkTS侧示例代码
 
 从一个被包装的对象中获取与之关联的数据指针。
 
-说明
+**说明** 
 
 参数js\_object不为object类型或function类型时返回napi\_object\_expected。
 
@@ -124,125 +124,127 @@ ArkTS侧示例代码
 
 从ArkTS object上获取先前绑定的native对象实例，并解除绑定。
 
-说明
+**说明** 
 
 参数js\_object不为object类型或function类型时返回napi\_object\_expected。
+
+如果封装中关联有finalize回调，本接口将在移除封装前调用它。
 
 cpp部分代码
 
 ```
-1. struct Object {
-2. std::string name;
-3. int32_t age;
-4. };
+struct Object {
+    std::string name;
+    int32_t age;
+};
 
-6. static void DerefItem(napi_env env, void *data, void *hint)
-7. {
-8. // 可选的原生回调，用于在ArkTS对象被垃圾回收时释放原生实例
-9. OH_LOG_INFO(LOG_APP, "Node-API DerefItem");
-10. Object *obj = reinterpret_cast<Object *>(data);
-11. if (obj != nullptr) {
-12. delete obj;
-13. }
-14. }
+static void DerefItem(napi_env env, void *data, void *hint)
+{
+    // 可选的原生回调，用于在ArkTS对象被垃圾回收时释放原生实例
+    OH_LOG_INFO(LOG_APP, "Node-API DerefItem");
+    Object *obj = reinterpret_cast<Object *>(data);
+    if (obj != nullptr) {
+        delete obj;
+    }
+}
 
-16. // napi_wrap
-17. static napi_value Wrap(napi_env env, napi_callback_info info)
-18. {
-19. OH_LOG_INFO(LOG_APP, "Node-API wrap");
-20. // 初始化Node-API模块的object
-21. struct Object *obj = new struct Object();
-22. obj->name = "liLei";
-23. obj->age = INT_ARG_18;
-24. size_t argc = 1;
-25. napi_value toWrap;
-26. // 调用napi_wrap将Node-API模块的object绑定到ArkTS object上
-27. napi_status status_cb = napi_get_cb_info(env, info, &argc, &toWrap, NULL, NULL);
-28. if (status_cb != napi_ok) {
-29. OH_LOG_ERROR(LOG_APP, "napi_get_cb_info failed");
-30. delete obj;
-31. return nullptr;
-32. }
-33. napi_status status = napi_wrap(env, toWrap, reinterpret_cast<void *>(obj), DerefItem, NULL, NULL);
-34. if (status != napi_ok) {
-35. // 主动释放内存
-36. delete obj;
-37. }
+// napi_wrap
+static napi_value Wrap(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "Node-API wrap");
+    // 初始化Node-API模块的object
+    struct Object *obj = new struct Object();
+    obj->name = "liLei";
+    obj->age = INT_ARG_18;
+    size_t argc = 1;
+    napi_value toWrap;
+    // 调用napi_wrap将Node-API模块的object绑定到ArkTS object上
+    napi_status status_cb = napi_get_cb_info(env, info, &argc, &toWrap, NULL, NULL);
+    if (status_cb != napi_ok) {
+        OH_LOG_ERROR(LOG_APP, "napi_get_cb_info failed");
+        delete obj;
+        return nullptr;
+    }
+    napi_status status = napi_wrap(env, toWrap, reinterpret_cast<void *>(obj), DerefItem, NULL, NULL);
+    if (status != napi_ok) {
+        // 主动释放内存
+        delete obj;
+    }
 
-39. return toWrap;
-40. }
+    return toWrap;
+}
 
-42. // napi_remove_wrap
-43. static napi_value RemoveWrap(napi_env env, napi_callback_info info)
-44. {
-45. OH_LOG_INFO(LOG_APP, "Node-API removeWrap");
-46. size_t argc = 1;
-47. napi_value wrapped = nullptr;
-48. void *data = nullptr;
-49. // 调用napi_remove_wrap从一个被包装的对象中解除包装
-50. napi_get_cb_info(env, info, &argc, &wrapped, nullptr, nullptr);
-51. napi_status status = napi_remove_wrap(env, wrapped, &data);
-52. if (status != napi_ok || data == nullptr) {
-53. OH_LOG_ERROR(LOG_APP, "Node-API napi_remove_wrap failed or data is nullptr");
-54. return nullptr;
-55. }
+// napi_remove_wrap
+static napi_value RemoveWrap(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "Node-API removeWrap");
+    size_t argc = 1;
+    napi_value wrapped = nullptr;
+    void *data = nullptr;
+    // 调用napi_remove_wrap从一个被包装的对象中解除包装
+    napi_get_cb_info(env, info, &argc, &wrapped, nullptr, nullptr);
+    napi_status status = napi_remove_wrap(env, wrapped, &data);
+    if (status != napi_ok || data == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "Node-API napi_remove_wrap failed or data is nullptr");
+        return nullptr;
+    }
 
-57. return nullptr;
-58. }
+    return nullptr;
+}
 
-60. // napi_unwrap
-61. static napi_value UnWrap(napi_env env, napi_callback_info info)
-62. {
-63. OH_LOG_INFO(LOG_APP, "Node-API unWrap");
-64. size_t argc = 1;
-65. napi_value wrapped = nullptr;
-66. napi_get_cb_info(env, info, &argc, &wrapped, nullptr, nullptr);
-67. // 调用napi_unwrap取出绑定在ArkTS object中的数据并打印
-68. struct Object *data = nullptr;
-69. napi_status status = napi_unwrap(env, wrapped, reinterpret_cast<void **>(&data));
-70. if (status != napi_ok || data == nullptr) {
-71. OH_LOG_ERROR(LOG_APP, "Node-API napi_unwrap failed or data is nullptr");
-72. return nullptr;
-73. }
-74. OH_LOG_INFO(LOG_APP, "Node-API name: %{public}s", data->name.c_str());
-75. OH_LOG_INFO(LOG_APP, "Node-API age: %{public}d", data->age);
-76. return nullptr;
-77. }
+// napi_unwrap
+static napi_value UnWrap(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "Node-API unWrap");
+    size_t argc = 1;
+    napi_value wrapped = nullptr;
+    napi_get_cb_info(env, info, &argc, &wrapped, nullptr, nullptr);
+    // 调用napi_unwrap取出绑定在ArkTS object中的数据并打印
+    struct Object *data = nullptr;
+    napi_status status = napi_unwrap(env, wrapped, reinterpret_cast<void **>(&data));
+    if (status != napi_ok || data == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "Node-API napi_unwrap failed or data is nullptr");
+        return nullptr;
+    }
+    OH_LOG_INFO(LOG_APP, "Node-API name: %{public}s", data->name.c_str());
+    OH_LOG_INFO(LOG_APP, "Node-API age: %{public}d", data->age);
+    return nullptr;
+}
 ```
 
 接口声明
 
-```
-1. export const wrap: (obj: Object) => Object; // napi_wrap
+```typescript
+export const wrap: (obj: Object) => Object; // napi_wrap
 
-3. export const unWrap: (obj: Object) => void; // napi_unwrap
+export const unWrap: (obj: Object) => void; // napi_unwrap
 
-5. export const removeWrap: (obj: Object) => void; // napi_remove_wrap
+export const removeWrap: (obj: Object) => void; // napi_remove_wrap
 ```
 
 ArkTS侧示例代码
 
-```
-1. try {
-2. class Obj {
-3. }
+```typescript
+try {
+  class Obj {
+  }
 
-5. let obj: Obj = {};
-6. testNapi.wrap(obj); // napi_wrap
-7. testNapi.unWrap(obj); // napi_unwrap
-8. testNapi.removeWrap(obj); // napi_remove_wrap
-9. // ...
-10. } catch (error) {
-11. hilog.error(0x0000, 'testTag', 'Test Node-API error: %{public}s', error.message);
-12. // ...
-13. }
+  let obj: Obj = {};
+  testNapi.wrap(obj); // napi_wrap
+  testNapi.unWrap(obj); // napi_unwrap
+  testNapi.removeWrap(obj); // napi_remove_wrap
+  // ...
+} catch (error) {
+  hilog.error(0x0000, 'testTag', 'Test Node-API error: %{public}s', error.message);
+  // ...
+}
 ```
 
 以上代码如果要在native cpp中打印日志，需在CMakeLists.txt文件中添加以下配置信息（并添加头文件：#include "hilog/log.h"）：
 
-```
-1. // CMakeLists.txt
-2. add_definitions( "-DLOG_DOMAIN=0xd0d0" )
-3. add_definitions( "-DLOG_TAG=\"testTag\"" )
-4. target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
+```text
+// CMakeLists.txt
+add_definitions( "-DLOG_DOMAIN=0xd0d0" )
+add_definitions( "-DLOG_TAG=\"testTag\"" )
+target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
 ```

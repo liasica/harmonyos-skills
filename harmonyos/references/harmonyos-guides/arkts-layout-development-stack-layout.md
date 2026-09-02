@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 层叠布局 (Stack)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 组件布局 > 构建布局 > 层叠布局 (Stack)
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:40+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6183678d5b7b04ee1441b6fb7864bac18ae2fc6ebcc238cae19bb376d6078e19
+scraped_at: 2026-09-02T14:59:17+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:66c247bb4ee2656b22bd345a8bcced9f3754d30354addcd2a53b116a3fcf61cf
 ---
 
 ## 概述
 
-层叠布局（StackLayout）用于在屏幕上预留一块区域来显示组件中的元素，提供元素可以重叠的布局。层叠布局通过[Stack](../harmonyos-references/ts-container-stack.md)容器组件实现位置的固定定位与层叠，容器中的子元素依次入栈，后一个子元素覆盖前一个子元素，子元素可以叠加，也可以设置位置。
+层叠布局（Stack）用于在屏幕上预留一块区域来显示组件中的元素，提供元素可以重叠的布局。层叠布局通过[Stack](../harmonyos-references/ts-container-stack.md)容器组件实现位置的固定定位与层叠，容器中的子元素依次入栈，后一个子元素覆盖前一个子元素，子元素可以叠加，也可以设置位置。
 
 层叠布局具有较强的页面层叠、位置定位能力，其使用场景有广告、卡片层叠效果等。
 
@@ -18,9 +18,9 @@ content_hash: sha256:6183678d5b7b04ee1441b6fb7864bac18ae2fc6ebcc238cae19bb376d60
 
 **图1** 层叠布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/MhCg7vp3RciQ26Z8CvhRLg/zh-cn_image_0000002558604546.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/XqW9CUQrTQuCHYE4ARBCIw/zh-cn_image_0000002736432567.png)
 
-说明
+**说明** 
 
 过多的嵌套组件数会导致性能劣化。在部分场景中，直接使用组件属性或借助系统API的能力可以替代层叠布局的效果，减少了嵌套组件数进而优化性能。最佳实践请参考[组件嵌套优化-优先使用组件属性代替嵌套组件](../best-practices/bpta-component-nesting-optimization.md#section78181114123811)。
 
@@ -28,28 +28,26 @@ content_hash: sha256:6183678d5b7b04ee1441b6fb7864bac18ae2fc6ebcc238cae19bb376d60
 
 Stack组件为容器组件，容器内可包含各种子元素。其中子元素默认进行居中堆叠。子元素被约束在Stack下，进行自己的样式定义以及排列。
 
+```typescript
+// xxx.ets
+let mTop:Record<string,number> = { 'top': 50 }
+
+@Entry
+@Component
+struct StackLayoutExample {
+  build() {
+    Column(){
+      Stack({ }) {
+        Column(){}.width('90%').height('100%').backgroundColor('#ff58b87c')
+        Text('text').width('60%').height('60%').backgroundColor('#ffc3f6aa')
+        Button('button').width('30%').height('30%').backgroundColor('#ff8ff3eb').fontColor('#000')
+      }.width('100%').height(150).margin(mTop)
+    }
+  }
+}
 ```
-1. // xxx.ets
-2. let mTop:Record<string,number> = { 'top': 50 }
 
-4. @Entry
-5. @Component
-6. struct StackLayoutExample {
-7. build() {
-8. Column(){
-9. Stack({ }) {
-10. Column(){}.width('90%').height('100%').backgroundColor('#ff58b87c')
-11. Text('text').width('60%').height('60%').backgroundColor('#ffc3f6aa')
-12. Button('button').width('30%').height('30%').backgroundColor('#ff8ff3eb').fontColor('#000')
-13. }.width('100%').height(150).margin(mTop)
-14. }
-15. }
-16. }
-```
-
-[StackLayoutExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/stacklayout/StackLayoutExample.ets#L15-L32)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/GSZ0HvukRimR2nfuYqHaNg/zh-cn_image_0000002589324071.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/umQLgG8PTYqUA6mYE8fukQ/zh-cn_image_0000002706833414.png)
 
 ## 对齐方式
 
@@ -57,24 +55,22 @@ Stack组件通过[alignContent参数](../harmonyos-references/ts-container-stack
 
 **图2** Stack容器内元素的对齐方式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/qfhX9XxwQNS58LobTlDvtw/zh-cn_image_0000002589244011.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/31lPR4dqT4Snn47C1gmz7A/zh-cn_image_0000002736312523.png)
 
+```typescript
+// xxx.ets
+@Entry
+@Component
+struct StackAlignContentExample {
+  build() {
+    Stack({ alignContent: Alignment.TopStart }) {
+      Text('Stack').width('90%').height('100%').backgroundColor('#e1dede').align(Alignment.BottomEnd)
+      Text('Item 1').width('70%').height('80%').backgroundColor(0xd2cab3).align(Alignment.BottomEnd)
+      Text('Item 2').width('50%').height('60%').backgroundColor(0xc1cbac).align(Alignment.BottomEnd)
+    }.width('100%').height(150).margin({ top: 5 })
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct StackAlignContentExample {
-5. build() {
-6. Stack({ alignContent: Alignment.TopStart }) {
-7. Text('Stack').width('90%').height('100%').backgroundColor('#e1dede').align(Alignment.BottomEnd)
-8. Text('Item 1').width('70%').height('80%').backgroundColor(0xd2cab3).align(Alignment.BottomEnd)
-9. Text('Item 2').width('50%').height('60%').backgroundColor(0xc1cbac).align(Alignment.BottomEnd)
-10. }.width('100%').height(150).margin({ top: 5 })
-11. }
-12. }
-```
-
-[StackLayoutAlignContent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/stacklayout/StackLayoutAlignContent.ets#L15-L28)
 
 ## Z序控制
 
@@ -82,100 +78,94 @@ Stack容器中兄弟组件显示层级关系可以通过[Z序控制](../harmonyo
 
 在层叠布局中，如果后面子元素尺寸大于前面子元素尺寸，则前面子元素完全隐藏。
 
+```typescript
+Stack({ alignContent: Alignment.BottomStart }) {
+  Column() {
+    // 请将$r('app.string.stack_num1')替换为实际资源文件，在本示例中该资源文件的value值为"Stack子元素1"
+    Text($r('app.string.stack_num1')).textAlign(TextAlign.End).fontSize(20)
+  }.width(100).height(100).backgroundColor(0xffd306)
+
+  Column() {
+    // 请将$r('app.string.stack_num2')替换为实际资源文件，在本示例中该资源文件的value值为"Stack子元素2"
+    Text($r('app.string.stack_num2')).fontSize(20)
+  }.width(150).height(150).backgroundColor(Color.Pink)
+
+  Column() {
+    // 请将$r('app.string.stack_num3')替换为实际资源文件，在本示例中该资源文件的value值为"Stack子元素3"
+    Text($r('app.string.stack_num3')).fontSize(20)
+  }.width(200).height(200).backgroundColor(Color.Grey)
+}.width(350).height(350).backgroundColor(0xe0e0e0)
 ```
-1. Stack({ alignContent: Alignment.BottomStart }) {
-2. Column() {
-3. // 请将$r('app.string.stack_num1')替换为实际资源文件，在本示例中该资源文件的value值为"Stack子元素1"
-4. Text($r('app.string.stack_num1')).textAlign(TextAlign.End).fontSize(20)
-5. }.width(100).height(100).backgroundColor(0xffd306)
 
-7. Column() {
-8. // 请将$r('app.string.stack_num2')替换为实际资源文件，在本示例中该资源文件的value值为"Stack子元素2"
-9. Text($r('app.string.stack_num2')).fontSize(20)
-10. }.width(150).height(150).backgroundColor(Color.Pink)
-
-12. Column() {
-13. // 请将$r('app.string.stack_num3')替换为实际资源文件，在本示例中该资源文件的value值为"Stack子元素3"
-14. Text($r('app.string.stack_num3')).fontSize(20)
-15. }.width(200).height(200).backgroundColor(Color.Grey)
-16. }.width(350).height(350).backgroundColor(0xe0e0e0)
-```
-
-[StackLayoutNozIndex.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/stacklayout/StackLayoutNozIndex.ets#L20-L37)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/jQItktHJQYqiYapa-9kKtA/zh-cn_image_0000002558764204.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/Vd_7ZiYfRBi035reCyZVxw/zh-cn_image_0000002706673480.png)
 
 上图中，最后的子元素3的尺寸大于前面的所有子元素，所以，前面两个元素完全隐藏。改变子元素1、子元素2的zIndex属性后，可以将元素展示出来。
 
+```typescript
+Stack({ alignContent: Alignment.BottomStart }) {
+  Column() {
+    // 请将$r('app.string.stack_num1')替换为实际资源文件，在本示例中该资源文件的value值为"Stack子元素1"
+    Text($r('app.string.stack_num1')).fontSize(20)
+  }.width(100).height(100).backgroundColor(0xffd306).zIndex(2)
+
+  Column() {
+    // 请将$r('app.string.stack_num2')替换为实际资源文件，在本示例中该资源文件的value值为"Stack子元素2"
+    Text($r('app.string.stack_num2')).fontSize(20)
+  }.width(150).height(150).backgroundColor(Color.Pink).zIndex(1)
+
+  Column() {
+    // 请将$r('app.string.stack_num3')替换为实际资源文件，在本示例中该资源文件的value值为"Stack子元素3"
+    Text($r('app.string.stack_num3')).fontSize(20)
+  }.width(200).height(200).backgroundColor(Color.Grey)
+}.width(350).height(350).backgroundColor(0xe0e0e0)
 ```
-1. Stack({ alignContent: Alignment.BottomStart }) {
-2. Column() {
-3. // 请将$r('app.string.stack_num1')替换为实际资源文件，在本示例中该资源文件的value值为"Stack子元素1"
-4. Text($r('app.string.stack_num1')).fontSize(20)
-5. }.width(100).height(100).backgroundColor(0xffd306).zIndex(2)
 
-7. Column() {
-8. // 请将$r('app.string.stack_num2')替换为实际资源文件，在本示例中该资源文件的value值为"Stack子元素2"
-9. Text($r('app.string.stack_num2')).fontSize(20)
-10. }.width(150).height(150).backgroundColor(Color.Pink).zIndex(1)
-
-12. Column() {
-13. // 请将$r('app.string.stack_num3')替换为实际资源文件，在本示例中该资源文件的value值为"Stack子元素3"
-14. Text($r('app.string.stack_num3')).fontSize(20)
-15. }.width(200).height(200).backgroundColor(Color.Grey)
-16. }.width(350).height(350).backgroundColor(0xe0e0e0)
-```
-
-[StackLayoutzIndex.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/stacklayout/StackLayoutzIndex.ets#L20-L37)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/OfFBirEtQQuW-7BFdgFBTQ/zh-cn_image_0000002558604548.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/cIOSFrzJR-i6_W6l4Ubvsw/zh-cn_image_0000002736432569.png)
 
 ## 场景示例
 
 使用层叠布局快速搭建页面。
 
+```typescript
+@Entry
+@Component
+struct StackSample {
+  private arr: string[] = ['APP1', 'APP2', 'APP3', 'APP4', 'APP5', 'APP6', 'APP7', 'APP8'];
+
+  build() {
+    Stack({ alignContent: Alignment.Bottom }) {
+      Flex({ wrap: FlexWrap.Wrap }) {
+        ForEach(this.arr, (item:string) => {
+          Text(item)
+            .width(100)
+            .height(100)
+            .fontSize(16)
+            .margin(10)
+            .textAlign(TextAlign.Center)
+            .borderRadius(10)
+            .backgroundColor(0xFFFFFF)
+        }, (item:string):string => item)
+      }.width('100%').height('100%')
+
+      Flex({ justifyContent: FlexAlign.SpaceAround, alignItems: ItemAlign.Center }) {
+        // 请将$r('app.string.contacts')替换为实际资源文件，在本示例中该资源文件的value值为"联系人"
+        Text($r('app.string.contacts')).fontSize(16)
+        // 请将$r('app.string.setting')替换为实际资源文件，在本示例中该资源文件的value值为"设置"
+        Text($r('app.string.setting')).fontSize(16)
+        // 请将$r('app.string.text_message')替换为实际资源文件，在本示例中该资源文件的value值为"短信"
+        Text($r('app.string.text_message')).fontSize(16)
+      }
+      .width('50%')
+      .height(50)
+      .backgroundColor('#16302e2e')
+      .margin({ bottom: 15 })
+      .borderRadius(15)
+    }.width('100%').height('100%').backgroundColor('#CFD0CF')
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct StackSample {
-4. private arr: string[] = ['APP1', 'APP2', 'APP3', 'APP4', 'APP5', 'APP6', 'APP7', 'APP8'];
 
-6. build() {
-7. Stack({ alignContent: Alignment.Bottom }) {
-8. Flex({ wrap: FlexWrap.Wrap }) {
-9. ForEach(this.arr, (item:string) => {
-10. Text(item)
-11. .width(100)
-12. .height(100)
-13. .fontSize(16)
-14. .margin(10)
-15. .textAlign(TextAlign.Center)
-16. .borderRadius(10)
-17. .backgroundColor(0xFFFFFF)
-18. }, (item:string):string => item)
-19. }.width('100%').height('100%')
-
-21. Flex({ justifyContent: FlexAlign.SpaceAround, alignItems: ItemAlign.Center }) {
-22. // 请将$r('app.string.contacts')替换为实际资源文件，在本示例中该资源文件的value值为"联系人"
-23. Text($r('app.string.contacts')).fontSize(16)
-24. // 请将$r('app.string.setting')替换为实际资源文件，在本示例中该资源文件的value值为"设置"
-25. Text($r('app.string.setting')).fontSize(16)
-26. // 请将$r('app.string.text_message')替换为实际资源文件，在本示例中该资源文件的value值为"短信"
-27. Text($r('app.string.text_message')).fontSize(16)
-28. }
-29. .width('50%')
-30. .height(50)
-31. .backgroundColor('#16302e2e')
-32. .margin({ bottom: 15 })
-33. .borderRadius(15)
-34. }.width('100%').height('100%').backgroundColor('#CFD0CF')
-35. }
-36. }
-```
-
-[StackLayoutSceneExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/stacklayout/StackLayoutSceneExample.ets#L15-L52)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/qswuW_2STjazFp42z5yYtg/zh-cn_image_0000002589324073.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/qtjGWw3eS7GsYH5SYsdsJg/zh-cn_image_0000002706833416.png)
 
 ## 示例代码
 

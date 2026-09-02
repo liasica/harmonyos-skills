@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-content-s
 title: Web页面显示内容滚动
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 > Web页面显示内容滚动
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3c2c4fce717247ea33581265a0ef12c60511ff1b99d2589e60bd53f8b729aca8
+scraped_at: 2026-09-02T14:49:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1f67710debeeca962743da12f2019d995ab38a87b5d4ca595a549820a30b1ec6
 ---
 
 当Web页面的内容高度或宽度超过可视区域时，页面才能滚动。Web页面滚动有多种方式，包括使用外接设备、ArkTS侧接口调用和JS侧接口调用。
@@ -16,7 +16,7 @@ content_hash: sha256:3c2c4fce717247ea33581265a0ef12c60511ff1b99d2589e60bd53f8b72
 
 * 通过触屏控制Web页面滚动：支持在触摸屏上单指上下左右滑动可以控制页面滚动。
 * 通过触摸板控制Web页面滚动：支持在笔记本触摸板或者外接触摸板双指上下左右滑动，可以控制页面滚动。
-* 通过鼠标滚轮控制Web页面滚动：支持用鼠标滚轮上下滑动来控制页面滚动。
+* 通过鼠标滚轮控制Web页面滚动：支持用鼠标滚轮上下滚动来控制页面滚动。
 
 ## 调用ArkTS侧接口控制Web页面滚动
 
@@ -24,11 +24,9 @@ content_hash: sha256:3c2c4fce717247ea33581265a0ef12c60511ff1b99d2589e60bd53f8b72
 
   返回页面顶部。
 
+  ```typescript
+  this.webController.scrollTo(0, 0);
   ```
-  1. this.webController.scrollTo(0, 0);
-  ```
-
-  [WebScrollDemo.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/WebScrollDemo/entry/src/main/ets/pages/WebScrollDemo.ets#L76-L78)
 * [scrollBy](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#scrollby)：在指定时间内将页面滚动指定的偏移量。
 
   可以作为Web组件嵌套滚动中，控制Web组件滚动的接口，详见[滚动偏移量由滚动父组件统一派发](web-nested-scrolling.md#滚动偏移量由滚动父组件统一派发)。
@@ -39,33 +37,33 @@ content_hash: sha256:3c2c4fce717247ea33581265a0ef12c60511ff1b99d2589e60bd53f8b72
 
 * scrollBy：相对当前滚动位置滚动一定距离（正数向下/右，负数向上/左）。
 
-  ```
-  1. window.scrollBy(deltaX, deltaY);// deltaX是元素要在横轴上滚动的距离，deltaY是元素要在纵轴上滚动的距离。
+  ```javascript
+  window.scrollBy(deltaX, deltaY);// deltaX是元素要在横轴上滚动的距离，deltaY是元素要在纵轴上滚动的距离。
   ```
 
   渐进式滚动（如“阅读更多”按钮）。
 
-  ```
-  1. document.getElementById("read-more").addEventListener("click", ()=>{
-  2. window.scrollBy(0, 300);
-  3. })
+  ```javascript
+  document.getElementById("read-more").addEventListener("click", ()=>{
+    window.scrollBy(0, 300);
+  })
   ```
 * scrollTo：将页面滚动到绝对坐标位置。
 
-  ```
-  1. window.scrollTo(x, y);// X是你想要显示在左上角的元素沿水平轴的像素，Y是你想要显示在左上角的元素沿垂直轴的像素。
+  ```javascript
+  window.scrollTo(x, y);// x是滚动后窗口左上角的水平坐标（像素），y是滚动后窗口左上角的垂直坐标（像素）。
   ```
 
   (1) 返回页面顶部。
 
-  ```
-  1. window.scrollTo(0, 0);
+  ```javascript
+  window.scrollTo(0, 0);
   ```
 
   (2) 跳转到页面特定位置。
 
-  ```
-  1. window.scrollTo(0, 500); // 滚动到某个固定像素位置（如：500px）
+  ```javascript
+  window.scrollTo(0, 500); // 滚动到某个固定像素位置（如：500px）
   ```
 
 ## 点击状态栏回顶
@@ -74,60 +72,60 @@ content_hash: sha256:3c2c4fce717247ea33581265a0ef12c60511ff1b99d2589e60bd53f8b72
 
 * 示例代码：
 
-  ```
-  1. // xxx.ets
-  2. import { webview } from '@kit.ArkWeb';
+  ```ts
+  // xxx.ets
+  import { webview } from '@kit.ArkWeb';
 
-  4. @Entry
-  5. @Component
-  6. struct WebComponent {
-  7. controller: webview.WebviewController = new webview.WebviewController();
+  @Entry
+  @Component
+  struct WebComponent {
+    controller: webview.WebviewController = new webview.WebviewController();
 
-  9. build() {
-  10. Column() {
-  11. Web({ src: $rawfile("index.html"), controller: this.controller })
-  12. .backToTop(true)
-  13. }
-  14. }
-  15. }
+    build() {
+      Column() {
+        Web({ src: $rawfile("index.html"), controller: this.controller })
+          .backToTop(true)
+      }
+    }
+  }
   ```
 
   加载的HTML文件：
 
-  ```
-  1. <!-- index.html -->
-  2. <!DOCTYPE html>
-  3. <html>
-  4. <head>
-  5. <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0">
-  6. <style>
-  7. .blue {
-  8. background-color: lightblue;
-  9. }
-  10. .green {
-  11. background-color: lightgreen;
-  12. }
-  13. .blue, .green {
-  14. font-size:16px;
-  15. height:200px;
-  16. text-align: center;       /* 水平居中 */
-  17. line-height: 200px;       /* 垂直居中（值等于容器高度） */
-  18. }
-  19. </style>
-  20. </head>
-  21. <body>
-  22. <div class="blue" >webArea</div>
-  23. <div class="green">webArea</div>
-  24. <div class="blue">webArea</div>
-  25. <div class="green">webArea</div>
-  26. <div class="blue">webArea</div>
-  27. <div class="green">webArea</div>
-  28. <div class="blue">webArea</div>
-  29. <div class="green">webArea</div>
-  30. <div class="blue">webArea</div>
-  31. </body>
-  32. </html>
+  ```html
+  <!-- index.html -->
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+          .blue {
+            background-color: lightblue;
+          }
+          .green {
+            background-color: lightgreen;
+          }
+          .blue, .green {
+           font-size:16px;
+           height:200px;
+           text-align: center;       /* 水平居中 */
+           line-height: 200px;       /* 垂直居中（值等于容器高度） */
+          }
+      </style>
+  </head>
+  <body>
+  <div class="blue" >webArea</div>
+  <div class="green">webArea</div>
+  <div class="blue">webArea</div>
+  <div class="green">webArea</div>
+  <div class="blue">webArea</div>
+  <div class="green">webArea</div>
+  <div class="blue">webArea</div>
+  <div class="green">webArea</div>
+  <div class="blue">webArea</div>
+  </body>
+  </html>
   ```
 * 效果展示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/00qQG4goQ7KgcSwrHOyPdg/zh-cn_image_0000002558605052.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/qGo77Z5QTOWBapegiyt94w/zh-cn_image_0000002736313165.gif)

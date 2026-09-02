@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: 模块描述
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.image (图片处理) > 模块描述
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:08+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e4856839bc02a03fc21afcbbaf8c45a82baa6c2791f26383350ba07a4aa02679
+scraped_at: 2026-09-02T15:02:29+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ee90e663208fe1744d2edecbfd22509c85458e2629631a94844def2299a23dd0
 ---
 
 本模块提供图片的解码、编码、编辑、元数据处理和图片接收等能力。
@@ -21,16 +21,22 @@ content_hash: sha256:e4856839bc02a03fc21afcbbaf8c45a82baa6c2791f26383350ba07a4aa
 * [ExifMetadata](arkts-apis-image-exifmetadata.md)类，以Key-Value的形式存储图像的Exif元数据。Exif元数据的Key可参考[PropertyKey](arkts-apis-image-e.md#propertykey7)。
 * [MakerNoteHuaweiMetadata](arkts-apis-image-makernotehuaweimetadata.md)类，以Key-Value的形式存储图像Huawei相机定义的照片元数据。Huawei相机定义的照片元数据的Key可参考[PropertyKey](arkts-apis-image-e.md#propertykey7)。
 * [HeifsMetadata](arkts-apis-image-heifsmetadata.md)类，以Key-Value的形式存储图像的HEIF序列图像元数据。HEIF序列图像元数据的Key可参考[HeifsPropertyKey](arkts-apis-image-e.md#heifspropertykey23)。
+* [WebPMetadata](arkts-apis-image-webpmetadata.md)类，以Key-Value的形式存储图像的WebP图像元数据。WebP图像元数据的Key可参考[WebPPropertyKey](arkts-apis-image-e.md#webppropertykey24)。
+* [GifMetadata](arkts-apis-image-gifmetadata.md)类，以Key-Value的形式存储图像的GIF图像元数据。GIF图像元数据的Key可参考[GifPropertyKey](arkts-apis-image-e.md#gifpropertykey20)。
+* [JfifMetadata](arkts-apis-image-jfifmetadata.md)类，以Key-Value的形式存储图像的JFIF图像元数据。JFIF图像元数据的Key可参考[JfifPropertyKey](arkts-apis-image-e.md#jfifpropertykey)。
+* [TiffMetadata](arkts-apis-image-tiffmetadata.md)类，以Key-Value的形式存储图像的TIFF图像元数据。TIFF图像元数据的Key可参考[TiffPropertyKey](arkts-apis-image-e.md#tiffpropertykey)。
+* [PngMetadata](arkts-apis-image-pngmetadata.md)类，以Key-Value的形式存储图像的PNG图像元数据。PNG图像元数据的Key可参考[PngPropertyKey](arkts-apis-image-e.md#pngpropertykey)。
+* [AvisMetadata](arkts-apis-image-avismetadata.md)类，以Key-Value的形式存储图像的AVIS图像元数据。AVIS图像元数据的Key可参考[AvisPropertyKey](arkts-apis-image-e.md#avispropertykey)。
 * [ImageReceiver](arkts-apis-image-imagereceiver.md)类，作为图片的消费者，用于从Surface中接收、读取图片。
 * [ImageCreator](arkts-apis-image-imagecreator.md)类，作为图片的生产者，用于将图片写入到Surface中。
 * [Image](arkts-apis-image-image.md)类，供ImageReceiver和ImageCreator使用，用于传输图片对象，其实际内容由生产者决定。如相机预览流提供的Image对象存储了YUV数据、相机拍照提供的Image对象存储了JPEG文件。
 
-说明
+**说明** 
 
 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-```
-1. import { image } from '@kit.ImageKit';
+```ts
+import { image } from '@kit.ImageKit';
 ```

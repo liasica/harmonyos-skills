@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_hp-arkui-
 title: "@performance/hp-arkui-use-local-var-to-replace-state-var"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/hp-arkui-use-local-var-to-replace-state-var
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:09+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:953577a2f6b7926d4dc8fde6a6923271b6221745f81544645b3dc86958fd6550
+scraped_at: 2026-09-02T14:50:52+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:836016bd30b375033a3a79e9a0ce62eb4dda3af5d2ba78c936ae64c253f38ad4
 ---
 
 建议使用临时变量替换状态变量。
@@ -14,62 +14,62 @@ content_hash: sha256:953577a2f6b7926d4dc8fde6a6923271b6221745f81544645b3dc86958f
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@performance/hp-arkui-use-local-var-to-replace-state-var": "warn",
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@performance/hp-arkui-use-local-var-to-replace-state-var": "warn",
+  }
+}
 ```
 
 ## 选项
 
-该规则无需配置额外选项。
+该规则无需配置选项。
 
 ## 正例
 
-```
-1. @Entry
-2. @Component
-3. struct MyComponent {
-4. @State message: string = '';
-5. appendMsg(newMsg: string) {
-6. let message = this.message;
-7. message += newMsg;
-8. message += ";";
-9. message += "<br/>";
-10. this.message = message;
-11. }
-12. build() {
-13. // 业务代码...
-14. }
-15. }
+```screen
+@Entry
+@Component
+struct MyComponent {
+  @State message: string = '';
+  appendMsg(newMsg: string) {
+      let message = this.message;
+      message += newMsg;
+      message += ";";
+      message += "<br/>";
+      this.message = message;
+  }
+  build() {
+    // 业务代码...
+  }
+}
 ```
 
 ## 反例
 
-```
-1. @Entry
-2. @Component
-3. struct MyComponent {
-4. @State message: string = '';
-5. appendMsg(newMsg: string) {
-6. this.message += newMsg;
-7. this.message += ";";
-8. this.message += "<br/>";
-9. }
-10. build() {
-11. // 业务代码...
-12. }
-13. }
+```screen
+@Entry
+@Component
+struct MyComponent {
+  @State message: string = '';
+  appendMsg(newMsg: string) {
+      this.message += newMsg;
+      this.message += ";";
+      this.message += "<br/>";
+  }
+  build() {
+    // 业务代码...
+  }
+}
 ```
 
 ## 规则集
 
-```
-1. plugin:@performance/recommended
-2. plugin:@performance/all
+```screen
+plugin:@performance/recommended
+plugin:@performance/all
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_i_d_o2
 title: FIDO2_CredentialCreationOptionArray
 breadcrumb: API参考 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > C API > 结构体 > FIDO2_CredentialCreationOptionArray
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:30+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:02059b2a45c3ba11c84f1cf23bccdececc21235c010d712a1a9d63a8efdc07ef
+scraped_at: 2026-09-02T15:01:45+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:52f1a9da1080488c4cae2df919866cb56b0050b2b584345fb8923bfcfadcf4ea
 ---
 
 ## 概述
@@ -14,7 +14,9 @@ content_hash: sha256:02059b2a45c3ba11c84f1cf23bccdececc21235c010d712a1a9d63a8efd
 
 **起始版本：** 6.0.0(20)
 
-**相关模块：** [FIDO2](passkey.md)
+**相关模块：** [FIDO2（通行密钥服务）](passkey.md)
+
+**所在头文件：** [fido2\_api.h](onlineauthentication_capi_header_fido2.md)
 
 ## 汇总
 
@@ -29,8 +31,8 @@ content_hash: sha256:02059b2a45c3ba11c84f1cf23bccdececc21235c010d712a1a9d63a8efd
 
 ### pubKeyCredParamNum
 
-```
-1. uint32_t FIDO2_CredentialCreationOptionArray::pubKeyCredParamNum
+```cpp
+uint32_t FIDO2_CredentialCreationOptionArray::pubKeyCredParamNum
 ```
 
 **描述**
@@ -39,8 +41,8 @@ PubKeyCredParam参数数目。
 
 ### pubKeyCredParams
 
-```
-1. FIDO2_PublicKeyCredentialParameters* FIDO2_CredentialCreationOptionArray::pubKeyCredParams
+```cpp
+FIDO2_PublicKeyCredentialParameters* FIDO2_CredentialCreationOptionArray::pubKeyCredParams
 ```
 
 **描述**

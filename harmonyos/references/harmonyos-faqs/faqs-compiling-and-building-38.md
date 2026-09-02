@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“The reason and usedScene attributes are mandatory for user_grant permissions”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“The reason and usedScene attributes are mandatory for user_grant permissions”
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:20:28+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:5abe8eeeddb291f9806ab076803f7b207d5674d2ef006efb2491b23aaf7118a0
+scraped_at: 2026-09-02T14:54:54+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:0d8277ddd39fd287311daec5e4e111feaa1e62ca02e9f2b88174ec3187f3a5c6
 ---
 
 **问题现象**
 
 DevEco Studio编译失败，提示“The reason and usedScene attributes are mandatory for user\_grant permissions”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/2o8W9s83SZez8LAuptbE2A/zh-cn_image_0000002194158568.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/7OLeVk07SJeR1DPa4NQvFw/zh-cn_image_0000002654797867.png "点击放大")
 
 **问题原因**
 
@@ -22,19 +22,17 @@ DevEco Studio编译失败，提示“The reason and usedScene attributes are man
 
 进入对应module.json5文件中，补齐requestPermissions字段下的reason和usedScene字段。如以下示例：
 
+```json
+"requestPermissions": [
+  {
+    "name": "ohos.permission.READ_IMAGEVIDEO",
+    "reason": "$string:module_desc",
+    "usedScene": {
+      "abilities": [
+        "EntryAbility"
+      ],
+      "when": "inuse"
+    }
+  }
+],
 ```
-1. "requestPermissions": [
-2. {
-3. "name": "ohos.permission.READ_IMAGEVIDEO",
-4. "reason": "$string:module_desc",
-5. "usedScene": {
-6. "abilities": [
-7. "EntryAbility"
-8. ],
-9. "when": "inuse"
-10. }
-11. }
-12. ],
-```
-
-[module.json5](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/CompilingAndBuilding/entry/src/main/module.json5#L56-L67)

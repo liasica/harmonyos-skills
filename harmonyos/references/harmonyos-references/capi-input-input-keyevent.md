@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-inpu
 title: Input_KeyEvent
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > C API > 结构体 > Input_KeyEvent
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:19+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:71ea9e80902dbb1cdb1e93745fd65cdad843e21fa3489650d7cfe6c2132ea01b
+scraped_at: 2026-09-02T14:52:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:03a48d63f04c0172caba75a9cb6ca37ccc4a85e05a3a66fa10314e6eefd7af12
 ---
 
-```
-1. typedef struct Input_KeyEvent Input_KeyEvent
+```c
+typedef struct Input_KeyEvent Input_KeyEvent
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-按键事件对象。
+按键事件对象，用于表示用户按键操作产生的输入事件，包含按键码、按键状态等信息，可用于处理键盘输入和实现按键响应功能。
 
 **起始版本：** 12
 

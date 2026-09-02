@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getop
 title: GetOptionalInputShape
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > TilingContext > GetOptionalInputShape
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:18+08:00
+scraped_at: 2026-09-02T14:50:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d680c3a23d6a575c8fa034d2e9bbd5abaf73dceb24bcf5c556efa6312dad8abe
+content_hash: sha256:d3f77ff87fee924f52dac89c30464ee8a4de014795557a97622551c7477de33b
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:d680c3a23d6a575c8fa034d2e9bbd5abaf73dceb24bcf5c556efa6312da
 
 ## 函数原型
 
-```
-1. const StorageShape *GetOptionalInputShape(const size_t ir_index) const;
+```cpp
+const StorageShape *GetOptionalInputShape(const size_t ir_index) const;
 ```
 
 ## 参数说明
@@ -36,9 +36,9 @@ content_hash: sha256:d680c3a23d6a575c8fa034d2e9bbd5abaf73dceb24bcf5c556efa6312da
 
 ## 调用示例
 
-```
-1. ge::graphStatus Tiling4ConcatD(TilingContext* context) {
-2. const StorageShape *shape_bias = context->GetOptionalInputShape(kBatchMatMulBiasIdx);
-3. // ...
-4. }
+```cpp
+ge::graphStatus Tiling4ConcatD(TilingContext* context) {
+  const StorageShape *shape_bias = context->GetOptionalInputShape(kBatchMatMulBiasIdx);
+  // ...
+}
 ```

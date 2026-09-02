@@ -1,16 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataaugmentation-aip-retrieval
 title: aip_retrieval.h
-breadcrumb: API参考 > 应用框架 > Data Augmentation Kit（数据增强服务） > C API > 头文件和结构体 > aip_retrieval.h
+breadcrumb: API参考 > 应用框架 > Data Augmentation Kit（数据增强服务） > C API > 头文件 > aip_retrieval.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fc4236883fb7f7d8120e9187c0474f9cb2376f7edb15909dab7ebdedbc84695a
+scraped_at: 2026-09-02T15:01:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:65e47d8f0508cd0b437aeaa20d174fae14240a8ee94af30b90dca54967727492
 ---
 
 ## 概述
-
-PhonePC/2in1Tablet
 
 提供知识检索相关的接口。
 
@@ -25,8 +23,6 @@ PhonePC/2in1Tablet
 **相关模块：** [Retrieval](dataaugmentation-capi-retrieval.md)
 
 ## 汇总
-
-PhonePC/2in1Tablet
 
 ### 类型定义
 

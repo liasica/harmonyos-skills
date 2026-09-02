@@ -1,37 +1,35 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-57
 title: 如何获取Text组件中文字的宽度
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 如何获取Text组件中文字的宽度
+breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何获取Text组件中文字的宽度
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:25:20+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:56b76a3a9377d1cf8acd400f5d629e1aac01177398205b3f7e5438560c8f9fb1
+scraped_at: 2026-09-02T14:54:27+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:393681b55e65e54975bed6dc8f98b55e2cc1416015ffd6205bf99dbf9146bc81
 ---
 
 使用@ohos.measure中的measureText()方法计算指定文本单行布局下的宽度。具体可参考如下代码：
 
-```
-1. @Entry
-2. @Component
-3. struct IndexTest {
-4. @State textWidth: number = this.getUIContext().getMeasureUtils().measureText({
-5. textContent: "Hello World",
-6. fontSize: '50px'
-7. })
+```typescript
+@Entry
+@Component
+struct IndexTest {
+  @State textWidth: number = this.getUIContext().getMeasureUtils().measureText({
+    textContent: "Hello World",
+    fontSize: '50px'
+  })
 
-9. build() {
-10. Row() {
-11. Column() {
-12. Text(`The width of 'Hello World': ${this.textWidth}`)
-13. }
-14. .width('100%')
-15. }
-16. .height('100%')
-17. }
-18. }
+  build() {
+    Row() {
+      Column() {
+        Text(`The width of 'Hello World': ${this.textWidth}`)
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-
-[GetTextWidth.ets](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkUI/entry/src/main/ets/pages/GetTextWidth.ets#L21-L38)
 
 **参考链接**
 

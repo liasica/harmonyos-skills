@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-file-uploa
 title: 文件上传下载优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 资源与存储优化 > 文件上传下载优化
 category: best-practices
-scraped_at: 2026-04-29T14:13:38+08:00
+scraped_at: 2026-09-02T15:03:21+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:7de536c57e3c497fc334edf362e1938f50af946e4a832a15a075e9f3dac75c47
+content_hash: sha256:8558c522b0174f581e50cce1d782a4d46f3daebf76dfefa86bbc31c7125c8c73
 ---
 
 ## 概述
@@ -34,7 +34,7 @@ content_hash: sha256:7de536c57e3c497fc334edf362e1938f50af946e4a832a15a075e9f3dac
 使用request模块执行下载的任务，具有四种运行状态：初始任务、就绪任务、挂起任务、待网任务。可以通过create()创建任务，start()开始任务，pause()挂起任务，resume()恢复任务，remove()移除任务，stop()停止任务，任务结果有final-failed任务失败，final-completed下载完成，recoverable-failed重试失败，并支持查询任务状态，具体流程如下图所示：
 
 **图1** 模块流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/XokroGxVRj-RQRsmXO_OAA/zh-cn_image_0000002229451197.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/bxip1Q3OTOSB4k9YUFE7uA/zh-cn_image_0000002229451197.png "点击放大")
 
 ## 常见场景和解决方案
 
@@ -70,7 +70,7 @@ content_hash: sha256:7de536c57e3c497fc334edf362e1938f50af946e4a832a15a075e9f3dac
 | 100 | 5276 | 3906 |
 
 **图2** 上传数量和耗时对比图表  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/5-15CJeJSS6fYyvPQ7GyYg/zh-cn_image_0000002193851324.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/fxLWbrA_QBWi-_kZFg_2kg/zh-cn_image_0000002193851324.png "点击放大")
 
 由于上传耗时受网络状态影响较大，结果取多次测量的最小值。尽管如此，数据仍显示优化前的耗时呈线性增长，而压缩优化后的耗时在上传文件数量较少时变化不明显，甚至因额外的压缩处理而增加耗时。然而，随着上传照片数量的增加，优化后的耗时与优化前的差距逐渐增大，优化效果更加显著。
 
@@ -78,62 +78,56 @@ content_hash: sha256:7de536c57e3c497fc334edf362e1938f50af946e4a832a15a075e9f3dac
 
 1. 导入相关模块:
 
+   ```typescript
+   import { common } from '@kit.AbilityKit';
+   import { fileIo } from '@kit.CoreFileKit';
+   import { BusinessError, zlib } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
-   1. import { common } from '@kit.AbilityKit';
-   2. import { fileIo } from '@kit.CoreFileKit';
-   3. import { BusinessError, zlib } from '@kit.BasicServicesKit';
-   4. import { hilog } from '@kit.PerformanceAnalysisKit';
-   ```
-
-   [ZipUploadPage.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/FileUploadAndDownloadSlow/entry/src/main/ets/pages/ZipUploadPage.ets#L17-L21)
 2. 创建压缩上传相关类:
 
+   ```typescript
+   class ZipUpload {
+     // Uri stored before creating the task
+     private waitList: Array<string> = [];
+     // Files that need to be uploaded uri
+     private fileUris: Array<string> = [];
+     // ...
+   }
    ```
-   1. class ZipUpload {
-   2. // Uri stored before creating the task
-   3. private waitList: Array<string> = [];
-   4. // Files that need to be uploaded uri
-   5. private fileUris: Array<string> = [];
-   6. // ...
-   7. }
-   ```
-
-   [ZipUploadPage.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/FileUploadAndDownloadSlow/entry/src/main/ets/pages/ZipUploadPage.ets#L25-L31)
 3. 建立用于接收图库图片的临时文件夹，并将整个临时文件夹打包添加到待上传list内:
 
+   ```typescript
+   // Data compression processing
+   async zipUploadFiles(fileUris: Array<string>): Promise<void> {
+     try {
+       this.context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+       let cacheDir = this.context.cacheDir;
+       let tempDir = fileIo.mkdtempSync(`${cacheDir}/XXXXXX`);
+       // Put the uri obtained from the library picture into fileUris and copy it to the temporary folder.
+       for (let i = 0; i < fileUris.length; i++) {
+         let fileName = fileUris[i].split('/').pop();
+         let resourceFile: fileIo.File = fileIo.openSync(fileUris[i], fileIo.OpenMode.READ_ONLY);
+         fileIo.copyFileSync(resourceFile.fd, `${tempDir}/${fileName}`, 0);
+         fileIo.closeSync(resourceFile);
+       }
+       // File compression, package the previously generated temporary folder into test.zip
+       let options: zlib.Options = {
+         level: zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION,
+         memLevel: zlib.MemLevel.MEM_LEVEL_DEFAULT,
+         strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY
+       };
+       let data = await zlib.compressFile(tempDir, `${cacheDir}/test.zip`, options);
+       // Delete temporary folders
+       fileIo.rmdirSync(tempDir);
+       // Put the generated zip package into the transmission queue.
+       this.waitList.push(`${cacheDir}/test.zip`);
+     } catch (err) {
+       let error = err as BusinessError;
+       hilog.error(0x0000, 'FileUploadAndDownloadSlow', `zipUploadFiles error ${error.code} ${error.message}`);
+     }
+   }
    ```
-   1. // Data compression processing
-   2. async zipUploadFiles(fileUris: Array<string>): Promise<void> {
-   3. try {
-   4. this.context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-   5. let cacheDir = this.context.cacheDir;
-   6. let tempDir = fileIo.mkdtempSync(`${cacheDir}/XXXXXX`);
-   7. // Put the uri obtained from the library picture into fileUris and copy it to the temporary folder.
-   8. for (let i = 0; i < fileUris.length; i++) {
-   9. let fileName = fileUris[i].split('/').pop();
-   10. let resourceFile: fileIo.File = fileIo.openSync(fileUris[i], fileIo.OpenMode.READ_ONLY);
-   11. fileIo.copyFileSync(resourceFile.fd, `${tempDir}/${fileName}`, 0);
-   12. fileIo.closeSync(resourceFile);
-   13. }
-   14. // File compression, package the previously generated temporary folder into test.zip
-   15. let options: zlib.Options = {
-   16. level: zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION,
-   17. memLevel: zlib.MemLevel.MEM_LEVEL_DEFAULT,
-   18. strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY
-   19. };
-   20. let data = await zlib.compressFile(tempDir, `${cacheDir}/test.zip`, options);
-   21. // Delete temporary folders
-   22. fileIo.rmdirSync(tempDir);
-   23. // Put the generated zip package into the transmission queue.
-   24. this.waitList.push(`${cacheDir}/test.zip`);
-   25. } catch (err) {
-   26. let error = err as BusinessError;
-   27. hilog.error(0x0000, 'FileUploadAndDownloadSlow', `zipUploadFiles error ${error.code} ${error.message}`);
-   28. }
-   29. }
-   ```
-
-   [ZipUploadPage.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/FileUploadAndDownloadSlow/entry/src/main/ets/pages/ZipUploadPage.ets#L42-L70)
 
 ### 断点续传
 
@@ -159,111 +153,99 @@ content_hash: sha256:7de536c57e3c497fc334edf362e1938f50af946e4a832a15a075e9f3dac
 本文使用request模块中的**request.agent****()**任务托管接口，自动实现暂停、继续、重试等操作，无需手动分片和记录分片信息。流程图如下：
 
 **图3** 断点续传上传流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/rlkNpHtyRriydcPEA6-0xA/zh-cn_image_0000002193851312.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/97s8asaxREmPqvSVPAq3OQ/zh-cn_image_0000002193851312.png "点击放大")
 
 1. 导入相关模块:
 
+   ```typescript
+   import { common } from '@kit.AbilityKit';
+   import { BusinessError, request } from '@kit.BasicServicesKit';
    ```
-   1. import { common } from '@kit.AbilityKit';
-   2. import { BusinessError, request } from '@kit.BasicServicesKit';
-   ```
-
-   [RequestUpload.ets](https://gitcode.com/harmonyos_samples/upload-and-down-load/blob/master/features/uploadanddownload/src/main/ets/upload/RequestUpload.ets#L17-L18)
 2. 创建相关上传类:
 
+   ```typescript
+   class Upload {
+     // ...
+     private backgroundTask: request.agent.Task | undefined = undefined;
+     private waitList: Array<string> = [];
+     // ...
+   }
    ```
-   1. class Upload {
-   2. // ...
-   3. private backgroundTask: request.agent.Task | undefined = undefined;
-   4. private waitList: Array<string> = [];
-   5. // ...
-   6. }
-   ```
-
-   [RequestUpload.ets](https://gitcode.com/harmonyos_samples/upload-and-down-load/blob/master/features/uploadanddownload/src/main/ets/upload/RequestUpload.ets#L30-L295)
 3. 配置Config，创建后台上传任务:
 
-   ```
-   1. private config: request.agent.Config = {
-   2. action: request.agent.Action.UPLOAD,
-   3. headers: HEADER,
-   4. url: '',
-   5. mode: request.agent.Mode.FOREGROUND,
-   6. method: 'POST',
-   7. title: 'upload',
-   8. network: request.agent.Network.ANY,
-   9. data: [],
-   10. token: UPLOAD_TOKEN
-   11. }
-   12. // ...
-   13. async createBackgroundTask(fileUris: Array<string>) {
-   14. if (this.context === undefined) {
-   15. return;
-   16. }
-   17. this.config.url = await urlUtils.getUrl(this.context);
-   18. this.config.data = await this.getFilesAndData(this.context.cacheDir, fileUris);
-   19. this.config.mode = request.agent.Mode.BACKGROUND;
-   20. try {
-   21. this.backgroundTask = await request.agent.create(this.context, this.config);
-   22. await this.backgroundTask.start();
-   23. let state = AppStorage.get<number>('backTaskState');
-   24. if (state === BackgroundTaskState.PAUSE) {
-   25. await this.backgroundTask.pause();
-   26. }
-   27. logger.info(TAG, `createBackgroundTask success`);
-   28. } catch (err) {
-   29. logger.error(TAG, `task  err, err  = ${JSON.stringify(err)}`);
-   30. }
-   31. }
+   ```typescript
+   private config: request.agent.Config = {
+     action: request.agent.Action.UPLOAD,
+     headers: HEADER,
+     url: '',
+     mode: request.agent.Mode.FOREGROUND,
+     method: 'POST',
+     title: 'upload',
+     network: request.agent.Network.ANY,
+     data: [],
+     token: UPLOAD_TOKEN
+   }
+   // ...
+   async createBackgroundTask(fileUris: Array<string>) {
+     if (this.context === undefined) {
+       return;
+     }
+     this.config.url = await urlUtils.getUrl(this.context);
+     this.config.data = await this.getFilesAndData(this.context.cacheDir, fileUris);
+     this.config.mode = request.agent.Mode.BACKGROUND;
+     try {
+       this.backgroundTask = await request.agent.create(this.context, this.config);
+       await this.backgroundTask.start();
+       let state = AppStorage.get<number>('backTaskState');
+       if (state === BackgroundTaskState.PAUSE) {
+         await this.backgroundTask.pause();
+       }
+       logger.info(TAG, `createBackgroundTask success`);
+     } catch (err) {
+       logger.error(TAG, `task  err, err  = ${JSON.stringify(err)}`);
+     }
+   }
 
-   33. // ...
-   34. private async getFilesAndData(cacheDir: string, fileUris: Array<string>): Promise<Array<request.agent.FormItem>> {
-   35. // ...
-   36. }
+   // ...
+   private async getFilesAndData(cacheDir: string, fileUris: Array<string>): Promise<Array<request.agent.FormItem>> {
+     // ...
+   }
    ```
-
-   [RequestUpload.ets](https://gitcode.com/harmonyos_samples/upload-and-down-load/blob/master/features/uploadanddownload/src/main/ets/upload/RequestUpload.ets#L35-L290)
 4. 任务开始:
 
+   ```typescript
+   await this.backgroundTask.start();
    ```
-   1. await this.backgroundTask.start();
-   ```
-
-   [RequestUpload.ets](https://gitcode.com/harmonyos_samples/upload-and-down-load/blob/master/features/uploadanddownload/src/main/ets/upload/RequestUpload.ets#L118-L118)
 5. 任务暂停，可以暂停正在等待/正在运行/正在重试的任务:
 
+   ```typescript
+   async pause() {
+     logger.info(TAG, 'pause');
+     if (this.backgroundTask === undefined) {
+       return;
+     }
+     try {
+       await this.backgroundTask.pause();
+     } catch (err) {
+       logger.error(TAG, `pause fail,err= ${JSON.stringify(err)}`);
+     }
+   }
    ```
-   1. async pause() {
-   2. logger.info(TAG, 'pause');
-   3. if (this.backgroundTask === undefined) {
-   4. return;
-   5. }
-   6. try {
-   7. await this.backgroundTask.pause();
-   8. } catch (err) {
-   9. logger.error(TAG, `pause fail,err= ${JSON.stringify(err)}`);
-   10. }
-   11. }
-   ```
-
-   [RequestUpload.ets](https://gitcode.com/harmonyos_samples/upload-and-down-load/blob/master/features/uploadanddownload/src/main/ets/upload/RequestUpload.ets#L234-L247)
 6. 任务继续，已暂停的任务可被resume恢复:
 
+   ```typescript
+   async resume() {
+     logger.info(TAG, 'resume');
+     if (this.backgroundTask === undefined) {
+       return;
+     }
+     try {
+       await this.backgroundTask.resume();
+     } catch (err) {
+       logger.error(TAG, `resume fail,err= ${JSON.stringify(err)}`);
+     }
+   }
    ```
-   1. async resume() {
-   2. logger.info(TAG, 'resume');
-   3. if (this.backgroundTask === undefined) {
-   4. return;
-   5. }
-   6. try {
-   7. await this.backgroundTask.resume();
-   8. } catch (err) {
-   9. logger.error(TAG, `resume fail,err= ${JSON.stringify(err)}`);
-   10. }
-   11. }
-   ```
-
-   [RequestUpload.ets](https://gitcode.com/harmonyos_samples/upload-and-down-load/blob/master/features/uploadanddownload/src/main/ets/upload/RequestUpload.ets#L251-L264)
 
 ### 文件下载
 
@@ -277,16 +259,16 @@ Range的格式通常是Range: <unit>=<start>-<end>，其中<unit>表示范围所
 
 Range语法如下:
 
-```
-1. // Indicates from range-start to the end of the file.
-2. Range: <unit>=<range-start>-
-3. // Indicates from range-start to range-end.
-4. Range: <unit>=<range-start>-<range-end>
-5. // You can select multiple segments simultaneously, separated by commas.
-6. Range: <unit>=<range-start>-<range-end>, <range-start>-<range-end>
+```screen
+// Indicates from range-start to the end of the file.
+Range: <unit>=<range-start>-
+// Indicates from range-start to range-end.
+Range: <unit>=<range-start>-<range-end>
+// You can select multiple segments simultaneously, separated by commas.
+Range: <unit>=<range-start>-<range-end>, <range-start>-<range-end>
 
-8. // Example: Indicates the file after returning 1024 bytes.
-9. Range: bytes=1024-
+// Example: Indicates the file after returning 1024 bytes.
+Range: bytes=1024-
 ```
 
 服务器收到请求后，正确处理会回复206 Partial Content，未正常处理则回复其他响应码。下表列出服务器回复的常见响应码：
@@ -303,66 +285,58 @@ Range语法如下:
 
 1. 导入模块:
 
+   ```typescript
+   import { common } from '@kit.AbilityKit';
+   import { BusinessError, request } from '@kit.BasicServicesKit';
    ```
-   1. import { common } from '@kit.AbilityKit';
-   2. import { BusinessError, request } from '@kit.BasicServicesKit';
-   ```
-
-   [RequestDownload.ets](https://gitcode.com/harmonyos_samples/upload-and-down-load/blob/master/features/uploadanddownload/src/main/ets/download/RequestDownload.ets#L17-L18)
 2. 创建下载类:
 
+   ```typescript
+   class RequestDownload {
+     // ...
+     private waitList: Array<string[]> = [];
+     private downloadTask: request.agent.Task | undefined = undefined;
+     // ...
+   }
    ```
-   1. class RequestDownload {
-   2. // ...
-   3. private waitList: Array<string[]> = [];
-   4. private downloadTask: request.agent.Task | undefined = undefined;
-   5. // ...
-   6. }
-   ```
-
-   [RequestDownload.ets](https://gitcode.com/harmonyos_samples/upload-and-down-load/blob/master/features/uploadanddownload/src/main/ets/download/RequestDownload.ets#L35-L260)
 3. 配置Config，创建后台下载任务:
 
+   ```typescript
+   async createBackgroundTask(downloadList: Array<string[]>) {
+     if (this.context === undefined) {
+       return;
+     }
+     for (let i = 0; i < downloadList.length; i++) {
+       try {
+         let splitUrl = downloadList[i][1].split('//')[1].split('/');
+         let downloadConfig: request.agent.Config = {
+           action: request.agent.Action.DOWNLOAD,
+           url: downloadList[i][1],
+           method: 'POST',
+           title: 'download',
+           mode: request.agent.Mode.BACKGROUND,
+           network: request.agent.Network.ANY,
+           saveas: `./${downloadList[i][0]}/${splitUrl[splitUrl.length-1]}`,
+           overwrite: true,
+           gauge: true
+         }
+         let downTask = await request.agent.create(this.context, downloadConfig);
+         await downTask.start();
+       } catch (error) {
+         let err = error as BusinessError;
+         logger.error(TAG, `task  err code=${err.code}, message=${err.message}`);
+         this.waitList.push(downloadList[i]);
+       }
+     }
+   }
    ```
-   1. async createBackgroundTask(downloadList: Array<string[]>) {
-   2. if (this.context === undefined) {
-   3. return;
-   4. }
-   5. for (let i = 0; i < downloadList.length; i++) {
-   6. try {
-   7. let splitUrl = downloadList[i][1].split('//')[1].split('/');
-   8. let downloadConfig: request.agent.Config = {
-   9. action: request.agent.Action.DOWNLOAD,
-   10. url: downloadList[i][1],
-   11. method: 'POST',
-   12. title: 'download',
-   13. mode: request.agent.Mode.BACKGROUND,
-   14. network: request.agent.Network.ANY,
-   15. saveas: `./${downloadList[i][0]}/${splitUrl[splitUrl.length-1]}`,
-   16. overwrite: true,
-   17. gauge: true
-   18. }
-   19. let downTask = await request.agent.create(this.context, downloadConfig);
-   20. await downTask.start();
-   21. } catch (error) {
-   22. let err = error as BusinessError;
-   23. logger.error(TAG, `task  err code=${err.code}, message=${err.message}`);
-   24. this.waitList.push(downloadList[i]);
-   25. }
-   26. }
-   27. }
-   ```
-
-   [RequestDownload.ets](https://gitcode.com/harmonyos_samples/upload-and-down-load/blob/master/features/uploadanddownload/src/main/ets/download/RequestDownload.ets#L88-L116)
 4. 任务开始:
 
-   ```
-   1. await downTask.start();
+   ```typescript
+   await downTask.start();
    ```
 
-   [RequestDownload.ets](https://gitcode.com/harmonyos_samples/upload-and-down-load/blob/master/features/uploadanddownload/src/main/ets/download/RequestDownload.ets#L108-L108)
-
-说明
+**说明** 
 
 对文件进行上传下载过程中，若在错误的任务状态下调用了不应使用的接口，在不支持的状态上操作任务，任务分组不存在或已移除等情况，均会导致无法正常停止、恢复文件的上传下载任务。具体可参考[上传下载错误码](../harmonyos-references/errorcode-request.md)。
 
@@ -372,7 +346,7 @@ Range语法如下:
 
 以具体场景为例，下图是常见的多文件下载列表：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/1_KB7mDARg-FaGSq9mXlEA/zh-cn_image_0000002229451201.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/ooCoCtE1S3aGuHLOnmZefA/zh-cn_image_0000002229451201.png "点击放大")
 
 进入页面后，点击“全部开始”按钮，启动所有文件的下载任务。点击“全部暂停”按钮，暂停所有文件的下载任务。再次点击“全部开始”按钮，可重新启动未完成的下载任务。下载完成的文件将保存在应用的缓存路径下。如果下载失败，通常是因为网络不稳定，点击“全部开始”按钮可重新下载。
 
@@ -380,141 +354,129 @@ Range语法如下:
 
 1. 配置下载参数。下载任务需对应配置一套下载参数request.agent.Config。本例中使用downloadConfig方法配置下载文件的URL，实际业务中按需调整。
 
+   ```typescript
+   function downloadConfig(downloadUrl: string): request.agent.Config {
+     const config: request.agent.Config = {
+       action: request.agent.Action.DOWNLOAD,
+       url: downloadUrl,
+       overwrite: true,
+       method: 'GET',
+       saveas: './',
+       mode: request.agent.Mode.BACKGROUND,
+       gauge: true,
+       retry: false
+     };
+     return config;
+   }
    ```
-   1. function downloadConfig(downloadUrl: string): request.agent.Config {
-   2. const config: request.agent.Config = {
-   3. action: request.agent.Action.DOWNLOAD,
-   4. url: downloadUrl,
-   5. overwrite: true,
-   6. method: 'GET',
-   7. saveas: './',
-   8. mode: request.agent.Mode.BACKGROUND,
-   9. gauge: true,
-   10. retry: false
-   11. };
-   12. return config;
-   13. }
-   ```
-
-   [Index.ets](https://gitcode.com/harmonyos_samples/multi-file-download/blob/master/entry/src/main/ets/pages/Index.ets#L29-L41)
 2. 创建多个文件下载监听实例。每个文件下载监听需配置下载参数，创建下载任务，注册任务监听，启动下载任务。多文件下载监听中，每个下载任务需注册独立的监听回调。示例中，通过封装自定义组件FileDownloadItem，在每个FileDownloadItem中创建各自的下载任务和监听回调，实现多文件下载监听。
 
+   ```typescript
+   ForEach(this.downloadConfigArray, (item: request.agent.Config) => {
+     ListItem() {
+       FileDownloadItem({
+         downloadConfig: item,
+         isStartAllDownload: this.isStartAllDownload,
+         downloadCount: this.downloadCount,
+         downloadFailCount: this.downloadFailCount
+       })
+     }
+   }, (item: request.agent.Config) => JSON.stringify(item))
    ```
-   1. ForEach(this.downloadConfigArray, (item: request.agent.Config) => {
-   2. ListItem() {
-   3. FileDownloadItem({
-   4. downloadConfig: item,
-   5. isStartAllDownload: this.isStartAllDownload,
-   6. downloadCount: this.downloadCount,
-   7. downloadFailCount: this.downloadFailCount
-   8. })
-   9. }
-   10. }, (item: request.agent.Config) => JSON.stringify(item))
-   ```
-
-   [Index.ets](https://gitcode.com/harmonyos_samples/multi-file-download/blob/master/entry/src/main/ets/pages/Index.ets#L157-L166)
 3. 创建下载任务并注册相关监听。本例中，在每个 `FileDownloadItem` 中使用 `request.agent.create()` 创建下载任务。下载任务创建成功后，注册以下回调：下载完成、下载失败、进度更新、暂停、重新启动以及响应头数据。在相应的回调中，获取当前文件的下载状态等数据。
 
-   ```
-   1. request.agent.create(context, this.downloadConfig).then((task: request.agent.Task) => {
-   2. task.on('completed', this.completedCallback);
-   3. task.on('failed', this.failedCallback);
-   4. task.on('pause', this.pauseCallback);
-   5. task.on('resume', this.resumeCallback);
-   6. task.on('progress', this.progressCallback);
-   7. task.on('response', this.responseCallback);
+   ```typescript
+   request.agent.create(context, this.downloadConfig).then((task: request.agent.Task) => {
+     task.on('completed', this.completedCallback);
+     task.on('failed', this.failedCallback);
+     task.on('pause', this.pauseCallback);
+     task.on('resume', this.resumeCallback);
+     task.on('progress', this.progressCallback);
+     task.on('response', this.responseCallback);
 
-   9. task.start().then(() => {
-   10. this.downloadTask = task;
-   11. }).catch((err: Error) => {
-   12. hilog.error(0x0000, TAG, 'task start error:', err);
-   13. })
-   14. }).catch((err: Error) => {
-   15. hilog.error(0x0000, TAG, 'create error:', err);
-   16. });
-   ```
-
-   [FileDownloadItem.ets](https://gitcode.com/harmonyos_samples/multi-file-download/blob/master/entry/src/main/ets/view/FileDownloadItem.ets#L155-L172)
-
-   ```
-   1. private completedCallback = (progress: request.agent.Progress) => {
-   2. this.textState = $r("app.string.download_completed");
-   3. if (this.sFileSize === -1) {
-   4. this.sFileSize = this.sCurrentDownloadSize
-   5. this.nCurrentDownloadSize = 1;
-   6. }
-   7. this.downloadCount--;
-   8. }
+     task.start().then(() => {
+       this.downloadTask = task;
+     }).catch((err: Error) => {
+       hilog.error(0x0000, TAG, 'task start error:', err);
+     })
+   }).catch((err: Error) => {
+     hilog.error(0x0000, TAG, 'create error:', err);
+   });
    ```
 
-   [FileDownloadItem.ets](https://gitcode.com/harmonyos_samples/multi-file-download/blob/master/entry/src/main/ets/view/FileDownloadItem.ets#L56-L63)
+   ```typescript
+   private completedCallback = (progress: request.agent.Progress) => {
+     this.textState = $r("app.string.download_completed");
+     if (this.sFileSize === -1) {
+       this.sFileSize = this.sCurrentDownloadSize
+       this.nCurrentDownloadSize = 1;
+     }
+     this.downloadCount--;
+   }
+   ```
 4. 启动下载任务。本例在每个FileDownloadItem中使用task.start()方法启动各自的下载任务。此外，start()方法也可以启动一个已失败或已停止的下载任务，从上次的进度开始续传。
 
+   ```typescript
+   task.start().then(() => {
+     this.downloadTask = task;
+   }).catch((err: Error) => {
+     hilog.error(0x0000, TAG, 'task start error:', err);
+   })
    ```
-   1. task.start().then(() => {
-   2. this.downloadTask = task;
-   3. }).catch((err: Error) => {
-   4. hilog.error(0x0000, TAG, 'task start error:', err);
-   5. })
-   ```
-
-   [FileDownloadItem.ets](https://gitcode.com/harmonyos_samples/multi-file-download/blob/master/entry/src/main/ets/view/FileDownloadItem.ets#L164-L168)
 5. 管理下载任务。在每个FileDownloadItem中，根据下载任务的状态，使用task.pause()和task.resume()方法分别控制任务的暂停和恢复。
 
+   ```typescript
+   pauseOrResumeDownload(): void {
+     if (this.downloadTask) {
+       request.agent.show(this.downloadTask.tid, (err: Error, taskInfo: request.agent.TaskInfo) => {
+         if (err) {
+           hilog.error(0x0000, TAG, 'agent show error:', err);
+           return;
+         }
+         if (taskInfo.progress.state === request.agent.State.PAUSED) {
+           this.resumeDownload();
+         } else {
+           this.pauseDownload();
+         }
+       });
+     }
+   }
+
+   pauseDownload(): void {
+     if (this.downloadTask) {
+       request.agent.show(this.downloadTask.tid, (err: Error, taskInfo: request.agent.TaskInfo) => {
+         if (err) {
+           hilog.error(0x0000, TAG, 'agent show error:', err);
+           return;
+         }
+         if (this.downloadTask && (taskInfo.progress.state === request.agent.State.WAITING || taskInfo.progress.state
+           === request.agent.State.RUNNING || taskInfo.progress.state === request.agent.State.RETRYING)) {
+           this.downloadTask.pause().then(() => {
+           }).catch((err: Error) => {
+             hilog.error(0x0000, TAG, 'task pause error:', err);
+           });
+         }
+       });
+     }
+   }
+
+   resumeDownload(): void {
+     if (this.downloadTask) {
+       request.agent.show(this.downloadTask.tid, (err: Error, taskInfo: request.agent.TaskInfo) => {
+         if (err) {
+           hilog.error(0x0000, TAG, 'agent show error:', err);
+           return;
+         }
+         if (this.downloadTask && taskInfo.progress.state === request.agent.State.PAUSED) {
+           this.downloadTask.resume().then(() => {
+           }).catch((err: Error) => {
+             hilog.error(0x0000, TAG, 'task resume error:', err);
+           });
+         }
+       });
+     }
+   }
    ```
-   1. pauseOrResumeDownload(): void {
-   2. if (this.downloadTask) {
-   3. request.agent.show(this.downloadTask.tid, (err: Error, taskInfo: request.agent.TaskInfo) => {
-   4. if (err) {
-   5. hilog.error(0x0000, TAG, 'agent show error:', err);
-   6. return;
-   7. }
-   8. if (taskInfo.progress.state === request.agent.State.PAUSED) {
-   9. this.resumeDownload();
-   10. } else {
-   11. this.pauseDownload();
-   12. }
-   13. });
-   14. }
-   15. }
-
-   17. pauseDownload(): void {
-   18. if (this.downloadTask) {
-   19. request.agent.show(this.downloadTask.tid, (err: Error, taskInfo: request.agent.TaskInfo) => {
-   20. if (err) {
-   21. hilog.error(0x0000, TAG, 'agent show error:', err);
-   22. return;
-   23. }
-   24. if (this.downloadTask && (taskInfo.progress.state === request.agent.State.WAITING || taskInfo.progress.state
-   25. === request.agent.State.RUNNING || taskInfo.progress.state === request.agent.State.RETRYING)) {
-   26. this.downloadTask.pause().then(() => {
-   27. }).catch((err: Error) => {
-   28. hilog.error(0x0000, TAG, 'task pause error:', err);
-   29. });
-   30. }
-   31. });
-   32. }
-   33. }
-
-   35. resumeDownload(): void {
-   36. if (this.downloadTask) {
-   37. request.agent.show(this.downloadTask.tid, (err: Error, taskInfo: request.agent.TaskInfo) => {
-   38. if (err) {
-   39. hilog.error(0x0000, TAG, 'agent show error:', err);
-   40. return;
-   41. }
-   42. if (this.downloadTask && taskInfo.progress.state === request.agent.State.PAUSED) {
-   43. this.downloadTask.resume().then(() => {
-   44. }).catch((err: Error) => {
-   45. hilog.error(0x0000, TAG, 'task resume error:', err);
-   46. });
-   47. }
-   48. });
-   49. }
-   50. }
-   ```
-
-   [FileDownloadItem.ets](https://gitcode.com/harmonyos_samples/multi-file-download/blob/master/entry/src/main/ets/view/FileDownloadItem.ets#L180-L229)
 
 ## 示例代码
 

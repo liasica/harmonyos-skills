@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: StartAbilityParameter
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > FA模型能力的接口 > ability > StartAbilityParameter
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:27+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:c21406bc483a52380f2ac1d2c4e1f96c3fd9c9efbc7408ed598b0a0d28fb34f4
+scraped_at: 2026-09-02T15:00:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ce61da3db633dbfabd9a6f1e2d82c4e5384dbf5f65b166dc13409ced195e14ac
 ---
 
 定义启动Ability参数，可以作为入参，调用[startAbility](js-apis-ability-featureability.md#featureabilitystartability)启动指定的Ability。
 
-说明
+**说明** 
 
 本接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -18,15 +18,11 @@ content_hash: sha256:c21406bc483a52380f2ac1d2c4e1f96c3fd9c9efbc7408ed598b0a0d28f
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import ability from '@ohos.ability.ability';
+```ts
+import ability from '@ohos.ability.ability';
 ```
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
 
@@ -38,35 +34,35 @@ PhonePC/2in1TabletTVWearable
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
-3. import Want from '@ohos.app.ability.Want';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
+import Want from '@ohos.app.ability.Want';
 
-5. let want: Want = {
-6. bundleName: 'com.example.abilityStartSettingApp2',
-7. abilityName: 'com.example.abilityStartSettingApp.EntryAbility',
-8. };
+let want: Want = {
+    bundleName: 'com.example.abilityStartSettingApp2',
+    abilityName: 'com.example.abilityStartSettingApp.EntryAbility',
+};
 
-10. let startAbilityParameter: ability.StartAbilityParameter = {
-11. want : want,
-12. abilityStartSettings : {
-13. abilityBounds : [100,200,300,400],
-14. windowMode :
-15. featureAbility.AbilityWindowConfiguration.WINDOW_MODE_UNDEFINED,
-16. displayId : 1,
-17. }
-18. };
+let startAbilityParameter: ability.StartAbilityParameter = {
+    want : want,
+    abilityStartSettings : {
+        abilityBounds : [100,200,300,400],
+        windowMode :
+        featureAbility.AbilityWindowConfiguration.WINDOW_MODE_UNDEFINED,
+        displayId : 1,
+    }
+};
 
-20. try {
-21. featureAbility.startAbility(startAbilityParameter, (error, data) => {
-22. if (error && error.code !== 0) {
-23. console.error(`startAbility fail, error: ${JSON.stringify(error)}`);
-24. } else {
-25. console.info(`startAbility success, data: ${JSON.stringify(data)}`);
-26. }
-27. });
-28. } catch(error) {
-29. console.error(`startAbility error: ${JSON.stringify(error)}`);
-30. }
+try {
+    featureAbility.startAbility(startAbilityParameter, (error, data) => {
+        if (error && error.code !== 0) {
+            console.error(`startAbility fail, error: ${JSON.stringify(error)}`);
+        } else {
+            console.info(`startAbility success, data: ${JSON.stringify(data)}`);
+        }
+    });
+} catch(error) {
+    console.error(`startAbility error: ${JSON.stringify(error)}`);
+}
 ```

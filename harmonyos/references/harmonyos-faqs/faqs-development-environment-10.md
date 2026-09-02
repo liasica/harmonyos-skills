@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: 环境检查时显示ohpm registry access不通过
 breadcrumb: FAQ > DevEco Studio > 环境准备 > 环境检查时显示ohpm registry access不通过
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:20:06+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:879f8ff1808352abb7d0ad2ac5a2b1219d9d120f55f4524e58e0377c33120f60
+scraped_at: 2026-09-02T15:04:31+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:be1dd1851196fc7877a7afc4a5bd222d320f3133f0dbbe896a912a855fe47a6c
 ---
 
 ohpm registry access不通过可能有以下几种情况：
@@ -14,7 +14,7 @@ ohpm registry access不通过可能有以下几种情况：
 
 registry地址校验连接不通过，详细信息提示“check whether the ohpm repository is correctly set”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/8yTX2egOReCPj8iWsPjKTQ/zh-cn_image_0000002324320444.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/TW0QK3_RRLWuBO1ca99VdA/zh-cn_image_0000002624638314.png)
 
 **解决措施**
 
@@ -30,12 +30,12 @@ registry地址校验连接不通过，详细信息提示“check whether the ohp
   1. 进入*C:\Users\用户名*目录\.ohpm，打开**.ohpmrc**文件。如果该目录下没有**.ohpmrc**文件，请新建一个。
   2. 修改ohpm代理信息，在http\_proxy和https\_proxy中，增加user和password字段，具体取值请以实际代理信息为准。示例如下所示：
 
-     ```
-     1. http_proxy=http://user:password@proxy.server.com:80
-     2. https_proxy=http://user:password@proxy.server.com:80
+     ```powershell
+     http_proxy=http://user:password@proxy.server.com:80
+     https_proxy=http://user:password@proxy.server.com:80
      ```
 
-     说明
+     **说明** 
 
      1. 如果password中存在特殊字符，如@、#、\*等符号，可能导致配置不生效，建议将特殊字符替换为ASCII码，并在ASCII码前加百分号%。常用符号替换为ASCII码对照表如下：
      + !：%21
@@ -46,19 +46,19 @@ registry地址校验连接不通过，详细信息提示“check whether the ohp
      + \*：%2A
   3. 代理配置完成后，打开命令行工具，执行如下命令验证网络是否正常。
 
-     ```
-     1. ohpm info @ohos/lottie
+     ```powershell
+     ohpm info @ohos/lottie
      ```
 
      执行结果如下图所示，则说明代理设置成功。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/_xw4MEIyTKGdTJvSJixspA/zh-cn_image_0000002358358913.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/oxLEoHTPRY6Phe2AZAoqJQ/zh-cn_image_0000002654837725.png)
 
 **问题现象****2**
 
 registry证书地址校验不通过，详细信息提示“UNABLE\_TO\_VERIFY\_LEAF\_SIGNATURE”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/7dvCMQBXQSG5gvxL9moJvA/zh-cn_image_0000002358279041.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/pipLuxQ7QN26yOnbRWx_mg/zh-cn_image_0000002624478412.png)
 
 **解决措施**
 
@@ -68,15 +68,15 @@ registry证书地址校验不通过，详细信息提示“UNABLE\_TO\_VERIFY\_L
 
 * 将registry对应的证书地址，配置在ca\_files字段中（多个证书路径采用英文逗号分隔）
 
-  ```
-  1. ca_files=your_ca_files_path
+  ```powershell
+  ca_files=your_ca_files_path
   ```
 * 或者配置strict\_ssl=false，暂时屏蔽证书校验
 
-  ```
-  1. strict_ssl=false
+  ```powershell
+  strict_ssl=false
   ```
 
-  说明
+  **说明** 
 
   屏蔽证书校验，可能会带来安全风险，请确认屏蔽证书校验风险后再修改配置，建议使用完成后及时开启。开启方法：将该配置中的false修改为true即可。

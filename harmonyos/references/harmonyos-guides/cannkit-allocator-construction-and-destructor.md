@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-alloc
 title: 构造函数和析构函数
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Allocator > 构造函数和析构函数
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:25+08:00
+scraped_at: 2026-09-02T14:50:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8e8cb6353f60dcd52951d089ab2c75663bc34388262d5266b727abffe0dbc5f7
+content_hash: sha256:9237ce396a6b7c3665d9b7d857bf7e1154277bd8c775a92198dfdf9507bb627f
 ---
 
 ## 函数功能
@@ -14,11 +14,11 @@ Allocator构造函数和析构函数。
 
 ## 函数原型
 
-```
-1. Allocator() = default;
-2. virtual ~Allocator() = default;
-3. Allocator(const Allocator &) = delete;
-4. Allocator &operator=(const Allocator &) = delete;
+```cpp
+Allocator() = default;
+virtual ~Allocator() = default;
+Allocator(const Allocator &) = delete;
+Allocator &operator=(const Allocator &) = delete;
 ```
 
 ## 参数说明

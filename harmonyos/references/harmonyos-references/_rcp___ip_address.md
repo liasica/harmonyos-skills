@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___ip
 title: Rcp_IpAddress
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > C API > 结构体 > Rcp_IpAddress
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:05+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:14617d01a19d18f4b76a14ca91e90fe0fe88695a4b491ea20c18926c0a0505cb
+scraped_at: 2026-09-02T15:01:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1cc8e70a2264fdfce75ea743637282b06aeae3e182b0f52627a7d98da17971e9
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 指定静态DNS规则使用的IP地址组。用于[Rcp\_StaticDnsRuleItem](_rcp___static_dns_rule_item.md)。
 
@@ -22,11 +20,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -35,14 +29,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTVWearable
-
 ### ipAddress
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. char Rcp_IpAddress::ipAddress[RCP_IP_MAX_LEN]
+```cpp
+char Rcp_IpAddress::ipAddress[RCP_IP_MAX_LEN]
 ```
 
 **描述**
@@ -51,10 +41,8 @@ ip地址。
 
 ### next
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. struct Rcp_IpAddress* Rcp_IpAddress::next
+```cpp
+struct Rcp_IpAddress* Rcp_IpAddress::next
 ```
 
 **描述**

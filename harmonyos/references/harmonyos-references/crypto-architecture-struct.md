@@ -3,21 +3,21 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/crypto-ar
 title: 结构体
 breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:00+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:41e08bb7822179fea16e4e4133aebd2ea9ee1beba6d014785da6cb58a8f40258
+scraped_at: 2026-09-02T14:52:08+08:00
+doc_updated_at: 2026-06-03
+content_hash: sha256:8f60dbd52bdc59ce3db1ce11cd435022192ee6e2065f209f3500a96c1a47d5ed
 ---
 
 * **[Crypto\_DataBlob](capi-cryptocommonapi-crypto-datablob.md)**
 * **[OH\_CryptoAsymCipher](capi-cryptoasymcipherapi-oh-cryptoasymcipher.md)**
-* **[OH\_CryptoSm2CiphertextSpec](api-cryptoasymcipherapi-oh-cryptosm2ciphertextspec.md)**
+* **[OH\_CryptoSm2CiphertextSpec](capi-cryptoasymcipherapi-oh-cryptosm2ciphertextspec.md)**
 * **[OH\_CryptoKeyPair](capi-cryptoasymkeyapi-oh-cryptokeypair.md)**
 * **[OH\_CryptoPubKey](capi-cryptoasymkeyapi-oh-cryptopubkey.md)**
 * **[OH\_CryptoPrivKey](capi-cryptoasymkeyapi-oh-cryptoprivkey.md)**
 * **[OH\_CryptoAsymKeyGenerator](capi-cryptoasymkeyapi-oh-cryptoasymkeygenerator.md)**
-* **[OH\_CryptoPrivKeyEncodingParams](pi-cryptoasymkeyapi-oh-cryptoprivkeyencodingparams.md)**
+* **[OH\_CryptoPrivKeyEncodingParams](capi-cryptoasymkeyapi-oh-cryptoprivkeyencodingparams.md)**
 * **[OH\_CryptoAsymKeySpec](capi-cryptoasymkeyapi-oh-cryptoasymkeyspec.md)**
-* **[OH\_CryptoAsymKeyGeneratorWithSpec](cryptoasymkeyapi-oh-cryptoasymkeygeneratorwithspec.md)**
+* **[OH\_CryptoAsymKeyGeneratorWithSpec](capi-cryptoasymkeyapi-oh-cryptoasymkeygeneratorwithspec.md)**
 * **[OH\_CryptoEcPoint](capi-cryptoasymkeyapi-oh-cryptoecpoint.md)**
 * **[OH\_CryptoDigest](capi-cryptodigestapi-oh-cryptodigest.md)**
 * **[OH\_CryptoKdf](capi-cryptokdfapi-oh-cryptokdf.md)**

@@ -1,9 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-enterprisedataguardkit-5032
 title: Enterprise DataGuard Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.3(15) > OS平台能力 > API变更清单 > HarmonyOS 5.0.3(15) Beta2引入的API > Enterprise DataGuard Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:35+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:37+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:f411d1edb9470232f5e3dbac1c9632dfbe54f375a12229939dde5807ed29dc96
 ---
 

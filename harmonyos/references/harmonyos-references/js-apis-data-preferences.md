@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.data.preferences (用户首选项)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.preferences (用户首选项)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:49:24+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:786fd4ea6e088a1b6d4d1aff53581875c1adb43433bb3c5eb7c2bcd9c5b18dce
+scraped_at: 2026-09-02T15:00:39+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1f5ba375ac57eaa40b81bb7318bafa4844ecc79bf87e9c79f82720b4f9030b8a
 ---
 
 用户首选项为应用提供Key-Value键值型的数据处理能力，支持应用持久化轻量级数据，并对其修改和查询。
 
-数据存储采用键值对形式，键为字符串类型，值可为数字、字符串、布尔类型及其对应的数组。
+数据存储采用键值对形式，键为字符串类型，值可为数字、字符串、布尔类型、数组、Uint8Array、object或bigint。
 
 用户首选项的持久化文件存储在[preferencesDir](../harmonyos-guides/application-context-stage.md#获取应用文件路径)路径下，创建preferences对象前，需要保证preferencesDir路径可读写。持久化文件存储路径中的[加密等级](js-apis-app-ability-contextconstant.md#areamode)会影响文件的可读写状态，路径访问限制详见[应用文件目录与应用文件路径](../harmonyos-guides/app-sandbox-directory.md#应用文件目录与应用文件路径)。
 
-说明
+**说明** 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -22,15 +22,11 @@ content_hash: sha256:786fd4ea6e088a1b6d4d1aff53581875c1adb43433bb3c5eb7c2bcd9c5b
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { preferences } from '@kit.ArkData';
+```ts
+import { preferences } from '@kit.ArkData';
 ```
 
 ## 常量
-
-PhonePC/2in1TabletTVWearable
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -43,11 +39,11 @@ PhonePC/2in1TabletTVWearable
 
 ## preferences.getPreferences
 
-PhonePC/2in1TabletTVWearable
-
 getPreferences(context: Context, name: string, callback: AsyncCallback<Preferences>): void
 
-获取Preferences实例，使用callback异步回调。
+获取Preferences实例，通过name进行参数设置，使用callback异步回调。
+
+应用首次调用该接口获取某个Preferences实例后，该实例会被缓存起来，后续再次调用时不会再次从持久化文件中读取，直接从缓存中获取Preferences实例。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -68,59 +64,59 @@ getPreferences(context: Context, name: string, callback: AsyncCallback<Preferenc
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 
 **示例：**
 
 FA模型示例：
 
-```
-1. import { featureAbility } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { featureAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let context = featureAbility.getContext();
-5. let dataPreferences: preferences.Preferences | null = null;
+let context = featureAbility.getContext();
+let dataPreferences: preferences.Preferences | null = null;
 
-7. preferences.getPreferences(context, 'myStore', (err: BusinessError, val: preferences.Preferences) => {
-8. if (err) {
-9. console.error("Failed to get preferences. code =" + err.code + ", message =" + err.message);
-10. return;
-11. }
-12. dataPreferences = val;
-13. console.info("Succeeded in getting preferences.");
-14. })
+preferences.getPreferences(context, 'myStore', (err: BusinessError, val: preferences.Preferences) => {
+  if (err) {
+    console.error("Failed to get preferences. Code = " + err.code + ", message = " + err.message);
+    return;
+  }
+  dataPreferences = val;
+  console.info("Succeeded in getting preferences.");
+})
 ```
 
 Stage模型示例：
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { window } from '@kit.ArkUI';
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { window } from '@kit.ArkUI';
 
-5. let dataPreferences: preferences.Preferences | null = null;
+let dataPreferences: preferences.Preferences | null = null;
 
-7. class EntryAbility extends UIAbility {
-8. onWindowStageCreate(windowStage: window.WindowStage) {
-9. preferences.getPreferences(this.context, 'myStore', (err: BusinessError, val: preferences.Preferences) => {
-10. if (err) {
-11. console.error("Failed to get preferences. code =" + err.code + ", message =" + err.message);
-12. return;
-13. }
-14. dataPreferences = val;
-15. console.info("Succeeded in getting preferences.");
-16. })
-17. }
-18. }
+class EntryAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    preferences.getPreferences(this.context, 'myStore', (err: BusinessError, val: preferences.Preferences) => {
+      if (err) {
+        console.error("Failed to get preferences. Code = " + err.code + ", message = " + err.message);
+        return;
+      }
+      dataPreferences = val;
+      console.info("Succeeded in getting preferences.");
+    })
+  }
+}
 ```
 
 ## preferences.getPreferences
 
-PhonePC/2in1TabletTVWearable
-
 getPreferences(context: Context, name: string): Promise<Preferences>
 
-获取Preferences实例，使用Promise异步回调。
+获取Preferences实例，通过name进行参数设置，使用Promise异步回调。
+
+应用首次调用该接口获取某个Preferences实例后，该实例会被缓存起来，后续再次调用时不会再次从持久化文件中读取，直接从缓存中获取Preferences实例。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -146,58 +142,58 @@ getPreferences(context: Context, name: string): Promise<Preferences>
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 
 **示例：**
 
 FA模型示例：
 
-```
-1. // 获取context
-2. import { featureAbility } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// 获取context
+import { featureAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let context = featureAbility.getContext();
+let context = featureAbility.getContext();
 
-7. let dataPreferences: preferences.Preferences | null = null;
-8. let promise = preferences.getPreferences(context, 'myStore');
-9. promise.then((object: preferences.Preferences) => {
-10. dataPreferences = object;
-11. console.info("Succeeded in getting preferences.");
-12. }).catch((err: BusinessError) => {
-13. console.error("Failed to get preferences. code =" + err.code + ", message =" + err.message);
-14. })
+let dataPreferences: preferences.Preferences | null = null;
+let sp = preferences.getPreferences(context, 'myStore');
+sp.then((object: preferences.Preferences) => {
+  dataPreferences = object;
+  console.info("Succeeded in getting preferences.");
+}).catch((err: BusinessError) => {
+  console.error("Failed to get preferences. Code = " + err.code + ", message = " + err.message);
+})
 ```
 
 Stage模型示例：
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { window } from '@kit.ArkUI';
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { window } from '@kit.ArkUI';
 
-5. let dataPreferences: preferences.Preferences | null = null;
+let dataPreferences: preferences.Preferences | null = null;
 
-7. class EntryAbility extends UIAbility {
-8. onWindowStageCreate(windowStage: window.WindowStage) {
-9. let promise = preferences.getPreferences(this.context, 'myStore');
-10. promise.then((object: preferences.Preferences) => {
-11. dataPreferences = object;
-12. console.info("Succeeded in getting preferences.");
-13. }).catch((err: BusinessError) => {
-14. console.error("Failed to get preferences. code =" + err.code + ", message =" + err.message);
-15. })
-16. }
-17. }
+class EntryAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    let sp = preferences.getPreferences(this.context, 'myStore');
+    sp.then((object: preferences.Preferences) => {
+      dataPreferences = object;
+      console.info("Succeeded in getting preferences.");
+    }).catch((err: BusinessError) => {
+      console.error("Failed to get preferences. Code = " + err.code + ", message = " + err.message);
+    })
+  }
+}
 ```
 
 ## preferences.getPreferences10+
 
-PhonePC/2in1TabletTVWearable
-
 getPreferences(context: Context, options: Options, callback: AsyncCallback<Preferences>): void
 
-获取Preferences实例，使用callback异步回调。
+获取Preferences实例，通过Options进行参数设置，使用callback异步回调。
+
+应用首次调用该接口获取某个Preferences实例后，该实例会被缓存起来，后续再次调用时不会再次从持久化文件中读取，直接从缓存中获取Preferences实例。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -208,7 +204,7 @@ getPreferences(context: Context, options: Options, callback: AsyncCallback<Prefe
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文。  FA模型的应用Context定义见[Context](js-apis-inner-app-context.md)。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
-| options | [Options](js-apis-data-preferences.md#options10) | 是 | 与Preferences实例相关的配置选项。 |
+| options | [Options](js-apis-data-preferences.md#options10) | 是 | 与Preferences实例相关的配置选项。name字段为必填字段，名称长度需大于零且小于等于255字节，名称中不能包含'/'且不能以'/'结尾。dataGroupId和storageType为可选字段。 |
 | callback | AsyncCallback<[Preferences](js-apis-data-preferences.md#preferences)> | 是 | 回调函数。当获取Preferences实例成功，err为undefined，返回Preferences实例；否则err为错误对象。 |
 
 **错误码：**
@@ -219,7 +215,7 @@ getPreferences(context: Context, options: Options, callback: AsyncCallback<Prefe
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 | 801 | Capability not supported. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 | 15501001 | The operations is supported in stage mode only. |
 | 15501002 | Invalid dataGroupId. |
 
@@ -227,56 +223,56 @@ getPreferences(context: Context, options: Options, callback: AsyncCallback<Prefe
 
 FA模型示例：
 
-```
-1. // 获取context
-2. import { featureAbility } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// 获取context
+import { featureAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let context = featureAbility.getContext();
-6. let dataPreferences: preferences.Preferences | null = null;
+let context = featureAbility.getContext();
+let dataPreferences: preferences.Preferences | null = null;
 
-8. let options: preferences.Options = { name: 'myStore' };
-9. preferences.getPreferences(context, options, (err: BusinessError, val: preferences.Preferences) => {
-10. if (err) {
-11. console.error("Failed to get preferences. code =" + err.code + ", message =" + err.message);
-12. return;
-13. }
-14. dataPreferences = val;
-15. console.info("Succeeded in getting preferences.");
-16. })
+let options: preferences.Options = { name: 'myStore' };
+preferences.getPreferences(context, options, (err: BusinessError, val: preferences.Preferences) => {
+  if (err) {
+    console.error("Failed to get preferences. Code = " + err.code + ", message = " + err.message);
+    return;
+  }
+  dataPreferences = val;
+  console.info("Succeeded in getting preferences.");
+})
 ```
 
 Stage模型示例：
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { window } from '@kit.ArkUI';
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { window } from '@kit.ArkUI';
 
-5. let dataPreferences: preferences.Preferences | null = null;
+let dataPreferences: preferences.Preferences | null = null;
 
-7. class EntryAbility extends UIAbility {
-8. onWindowStageCreate(windowStage: window.WindowStage) {
-9. let options: preferences.Options = { name: 'myStore' };
-10. preferences.getPreferences(this.context, options, (err: BusinessError, val: preferences.Preferences) => {
-11. if (err) {
-12. console.error("Failed to get preferences. code =" + err.code + ", message =" + err.message);
-13. return;
-14. }
-15. dataPreferences = val;
-16. console.info("Succeeded in getting preferences.");
-17. })
-18. }
-19. }
+class EntryAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    let options: preferences.Options = { name: 'myStore' };
+    preferences.getPreferences(this.context, options, (err: BusinessError, val: preferences.Preferences) => {
+      if (err) {
+        console.error("Failed to get preferences. Code = " + err.code + ", message = " + err.message);
+        return;
+      }
+      dataPreferences = val;
+      console.info("Succeeded in getting preferences.");
+    })
+  }
+}
 ```
 
 ## preferences.getPreferences10+
 
-PhonePC/2in1TabletTVWearable
-
 getPreferences(context: Context, options: Options): Promise<Preferences>
 
-获取Preferences实例，使用Promise异步回调。
+获取Preferences实例，通过Options进行参数设置，使用Promise异步回调。
+
+应用首次调用该接口获取某个Preferences实例后，该实例会被缓存起来，后续再次调用时不会再次从持久化文件中读取，直接从缓存中获取Preferences实例。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -303,7 +299,7 @@ getPreferences(context: Context, options: Options): Promise<Preferences>
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 | 801 | Capability not supported. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 | 15501001 | The operations is supported in stage mode only. |
 | 15501002 | Invalid dataGroupId. |
 
@@ -311,54 +307,54 @@ getPreferences(context: Context, options: Options): Promise<Preferences>
 
 FA模型示例：
 
-```
-1. // 获取context
-2. import { featureAbility } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// 获取context
+import { featureAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let context = featureAbility.getContext();
+let context = featureAbility.getContext();
 
-7. let dataPreferences: preferences.Preferences | null = null;
-8. let options: preferences.Options = { name: 'myStore' };
-9. let promise = preferences.getPreferences(context, options);
-10. promise.then((object: preferences.Preferences) => {
-11. dataPreferences = object;
-12. console.info("Succeeded in getting preferences.");
-13. }).catch((err: BusinessError) => {
-14. console.error("Failed to get preferences. code =" + err.code + ", message =" + err.message);
-15. })
+let dataPreferences: preferences.Preferences | null = null;
+let options: preferences.Options = { name: 'myStore' };
+let sp = preferences.getPreferences(context, options);
+sp.then((object: preferences.Preferences) => {
+  dataPreferences = object;
+  console.info("Succeeded in getting preferences.");
+}).catch((err: BusinessError) => {
+  console.error("Failed to get preferences. Code = " + err.code + ", message = " + err.message);
+})
 ```
 
 Stage模型示例：
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { window } from '@kit.ArkUI';
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { window } from '@kit.ArkUI';
 
-5. let dataPreferences: preferences.Preferences | null = null;
+let dataPreferences: preferences.Preferences | null = null;
 
-7. class EntryAbility extends UIAbility {
-8. onWindowStageCreate(windowStage: window.WindowStage) {
-9. let options: preferences.Options = { name: 'myStore' };
-10. let promise = preferences.getPreferences(this.context, options);
-11. promise.then((object: preferences.Preferences) => {
-12. dataPreferences = object;
-13. console.info("Succeeded in getting preferences.");
-14. }).catch((err: BusinessError) => {
-15. console.error("Failed to get preferences. code =" + err.code + ", message =" + err.message);
-16. })
-17. }
-18. }
+class EntryAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    let options: preferences.Options = { name: 'myStore' };
+    let sp = preferences.getPreferences(this.context, options);
+    sp.then((object: preferences.Preferences) => {
+      dataPreferences = object;
+      console.info("Succeeded in getting preferences.");
+    }).catch((err: BusinessError) => {
+      console.error("Failed to get preferences. Code = " + err.code + ", message = " + err.message);
+    })
+  }
+}
 ```
 
 ## preferences.getPreferencesSync10+
 
-PhonePC/2in1TabletTVWearable
-
 getPreferencesSync(context: Context, options: Options): Preferences
 
 获取Preferences实例，此为同步接口。
+
+应用首次调用该接口获取某个Preferences实例后，该实例会被缓存起来，后续再次调用时不会再次从持久化文件中读取，直接从缓存中获取Preferences实例。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -385,7 +381,7 @@ getPreferencesSync(context: Context, options: Options): Preferences
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 | 801 | Capability not supported. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 | 15501001 | The operations is supported in stage mode only. |
 | 15501002 | Invalid dataGroupId. |
 
@@ -393,40 +389,38 @@ getPreferencesSync(context: Context, options: Options): Preferences
 
 FA模型示例：
 
-```
-1. // 获取context
-2. import { featureAbility } from '@kit.AbilityKit';
+```ts
+// 获取context
+import { featureAbility } from '@kit.AbilityKit';
 
-4. let context = featureAbility.getContext();
-5. let dataPreferences: preferences.Preferences | null = null;
+let context = featureAbility.getContext();
+let dataPreferences: preferences.Preferences | null = null;
 
-7. let options: preferences.Options = { name: 'myStore' };
-8. dataPreferences = preferences.getPreferencesSync(context, options);
+let options: preferences.Options = { name: 'myStore' };
+dataPreferences = preferences.getPreferencesSync(context, options);
 ```
 
 Stage模型示例：
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { window } from '@kit.ArkUI';
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
 
-4. let dataPreferences: preferences.Preferences | null = null;
+let dataPreferences: preferences.Preferences | null = null;
 
-6. class EntryAbility extends UIAbility {
-7. onWindowStageCreate(windowStage: window.WindowStage) {
-8. let options: preferences.Options = { name: 'myStore' };
-9. dataPreferences = preferences.getPreferencesSync(this.context, options);
-10. }
-11. }
+class EntryAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    let options: preferences.Options = { name: 'myStore' };
+    dataPreferences = preferences.getPreferencesSync(this.context, options);
+  }
+}
 ```
 
 ## preferences.deletePreferences
-
-PhonePC/2in1TabletTVWearable
 
 deletePreferences(context: Context, name: string, callback: AsyncCallback<void>): void
 
-从缓存中删除指定的Preferences实例，若Preferences实例有对应的持久化文件，则同时删除其持久化文件。使用callback异步回调。
+从缓存中删除指定的Preferences实例，若Preferences实例有对应的持久化文件，则同时删除其持久化文件。通过name进行参数设置，使用callback异步回调。
 
 调用该接口后，不建议再使用旧的Preferences实例进行数据操作，否则会导致数据一致性问题，应将Preferences实例置为null，系统会统一回收。
 
@@ -451,56 +445,54 @@ deletePreferences(context: Context, name: string, callback: AsyncCallback<void>)
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 | 15500010 | Failed to delete the user preferences persistence file. |
 
 **示例：**
 
 FA模型示例：
 
-```
-1. // 获取context
-2. import { featureAbility } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// 获取context
+import { featureAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let context = featureAbility.getContext();
+let context = featureAbility.getContext();
 
-7. preferences.deletePreferences(context, 'myStore', (err: BusinessError) => {
-8. if (err) {
-9. console.error("Failed to delete preferences. code =" + err.code + ", message =" + err.message);
-10. return;
-11. }
-12. console.info("Succeeded in deleting preferences.");
-13. })
+preferences.deletePreferences(context, 'myStore', (err: BusinessError) => {
+  if (err) {
+    console.error("Failed to delete preferences. Code = " + err.code + ", message = " + err.message);
+    return;
+  }
+  console.info("Succeeded in deleting preferences.");
+})
 ```
 
 Stage模型示例：
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { window } from '@kit.ArkUI';
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { window } from '@kit.ArkUI';
 
-5. class EntryAbility extends UIAbility {
-6. onWindowStageCreate(windowStage: window.WindowStage) {
-7. preferences.deletePreferences(this.context, 'myStore', (err: BusinessError) => {
-8. if (err) {
-9. console.error("Failed to delete preferences. code =" + err.code + ", message =" + err.message);
-10. return;
-11. }
-12. console.info("Succeeded in deleting preferences.");
-13. })
-14. }
-15. }
+class EntryAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    preferences.deletePreferences(this.context, 'myStore', (err: BusinessError) => {
+      if (err) {
+        console.error("Failed to delete preferences. Code = " + err.code + ", message = " + err.message);
+        return;
+      }
+      console.info("Succeeded in deleting preferences.");
+    })
+  }
+}
 ```
 
 ## preferences.deletePreferences
 
-PhonePC/2in1TabletTVWearable
-
 deletePreferences(context: Context, name: string): Promise<void>
 
-从缓存中删除指定的Preferences实例，若Preferences实例有对应的持久化文件，则同时删除其持久化文件。使用Promise异步回调。
+从缓存中删除指定的Preferences实例，若Preferences实例有对应的持久化文件，则同时删除其持久化文件。通过name进行参数设置，使用Promise异步回调。
 
 调用该接口后，不建议再使用旧的Preferences实例进行数据操作，否则会导致数据一致性问题，应将Preferences实例置为null，系统会统一回收。
 
@@ -530,54 +522,52 @@ deletePreferences(context: Context, name: string): Promise<void>
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 | 15500010 | Failed to delete the user preferences persistence file. |
 
 **示例：**
 
 FA模型示例：
 
-```
-1. // 获取context
-2. import { featureAbility } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// 获取context
+import { featureAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let context = featureAbility.getContext();
+let context = featureAbility.getContext();
 
-7. let promise = preferences.deletePreferences(context, 'myStore');
-8. promise.then(() => {
-9. console.info("Succeeded in deleting preferences.");
-10. }).catch((err: BusinessError) => {
-11. console.error("Failed to delete preferences. code =" + err.code + ", message =" + err.message);
-12. })
+let sp = preferences.deletePreferences(context, 'myStore');
+sp.then(() => {
+  console.info("Succeeded in deleting preferences.");
+}).catch((err: BusinessError) => {
+  console.error("Failed to delete preferences. Code = " + err.code + ", message = " + err.message);
+})
 ```
 
 Stage模型示例：
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { window } from '@kit.ArkUI';
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { window } from '@kit.ArkUI';
 
-5. class EntryAbility extends UIAbility {
-6. onWindowStageCreate(windowStage: window.WindowStage) {
-7. let promise = preferences.deletePreferences(this.context, 'myStore');
-8. promise.then(() => {
-9. console.info("Succeeded in deleting preferences.");
-10. }).catch((err: BusinessError) => {
-11. console.error("Failed to delete preferences. code =" + err.code + ", message =" + err.message);
-12. })
-13. }
-14. }
+class EntryAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    let sp = preferences.deletePreferences(this.context, 'myStore');
+    sp.then(() => {
+      console.info("Succeeded in deleting preferences.");
+    }).catch((err: BusinessError) => {
+      console.error("Failed to delete preferences. code =" + err.code + ", message = " + err.message);
+    })
+  }
+}
 ```
 
 ## preferences.deletePreferences10+
-
-PhonePC/2in1TabletTVWearable
 
 deletePreferences(context: Context, options: Options, callback: AsyncCallback<void>): void
 
-从缓存中删除指定的Preferences实例，若Preferences实例有对应的持久化文件，则同时删除其持久化文件。使用callback异步回调。
+从缓存中删除指定的Preferences实例，若Preferences实例有对应的持久化文件，则同时删除其持久化文件。通过Options进行参数设置，使用callback异步回调。
 
 调用该接口后，不建议再使用旧的Preferences实例进行数据操作，否则会导致数据一致性问题，应将Preferences实例置为null，系统会统一回收。
 
@@ -603,7 +593,7 @@ deletePreferences(context: Context, options: Options, callback: AsyncCallback<vo
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 | 801 | Capability not supported. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 | 15500010 | Failed to delete the user preferences persistence file. |
 | 15501001 | The operations is supported in stage mode only. |
 | 15501002 | Invalid dataGroupId. |
@@ -612,51 +602,49 @@ deletePreferences(context: Context, options: Options, callback: AsyncCallback<vo
 
 FA模型示例：
 
-```
-1. // 获取context
-2. import { featureAbility } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// 获取context
+import { featureAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let context = featureAbility.getContext();
+let context = featureAbility.getContext();
 
-7. let options: preferences.Options = { name: 'myStore' };
-8. preferences.deletePreferences(context, options, (err: BusinessError) => {
-9. if (err) {
-10. console.error("Failed to delete preferences. code =" + err.code + ", message =" + err.message);
-11. return;
-12. }
-13. console.info("Succeeded in deleting preferences.");
-14. })
+let options: preferences.Options = { name: 'myStore' };
+preferences.deletePreferences(context, options, (err: BusinessError) => {
+  if (err) {
+    console.error("Failed to delete preferences. code =" + err.code + ", message = " + err.message);
+    return;
+  }
+  console.info("Succeeded in deleting preferences.");
+})
 ```
 
 Stage模型示例：
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { window } from '@kit.ArkUI';
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { window } from '@kit.ArkUI';
 
-5. class EntryAbility extends UIAbility {
-6. onWindowStageCreate(windowStage: window.WindowStage) {
-7. let options: preferences.Options = { name: 'myStore' };
-8. preferences.deletePreferences(this.context, options, (err: BusinessError) => {
-9. if (err) {
-10. console.error("Failed to delete preferences. code =" + err.code + ", message =" + err.message);
-11. return;
-12. }
-13. console.info("Succeeded in deleting preferences.");
-14. })
-15. }
-16. }
+class EntryAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    let options: preferences.Options = { name: 'myStore' };
+    preferences.deletePreferences(this.context, options, (err: BusinessError) => {
+      if (err) {
+        console.error("Failed to delete preferences. code =" + err.code + ", message = " + err.message);
+        return;
+      }
+      console.info("Succeeded in deleting preferences.");
+    })
+  }
+}
 ```
 
 ## preferences.deletePreferences10+
 
-PhonePC/2in1TabletTVWearable
-
 deletePreferences(context: Context, options: Options): Promise<void>
 
-从缓存中删除指定的Preferences实例，若Preferences实例有对应的持久化文件，则同时删除其持久化文件。使用Promise异步回调。
+从缓存中删除指定的Preferences实例，若Preferences实例有对应的持久化文件，则同时删除其持久化文件。通过Options进行参数设置，使用Promise异步回调。
 
 调用该接口后，不建议再使用旧的Preferences实例进行数据操作，否则会导致数据一致性问题，应将Preferences实例置为null，系统会统一回收。
 
@@ -687,7 +675,7 @@ deletePreferences(context: Context, options: Options): Promise<void>
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 | 801 | Capability not supported. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 | 15500010 | Failed to delete the user preferences persistence file. |
 | 15501001 | The operations is supported in stage mode only. |
 | 15501002 | Invalid dataGroupId. |
@@ -696,49 +684,47 @@ deletePreferences(context: Context, options: Options): Promise<void>
 
 FA模型示例：
 
-```
-1. // 获取context
-2. import { featureAbility } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// 获取context
+import { featureAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let context = featureAbility.getContext();
+let context = featureAbility.getContext();
 
-7. let options: preferences.Options = { name: 'myStore' };
-8. let promise = preferences.deletePreferences(context, options);
-9. promise.then(() => {
-10. console.info("Succeeded in deleting preferences.");
-11. }).catch((err: BusinessError) => {
-12. console.error("Failed to delete preferences. code =" + err.code + ", message =" + err.message);
-13. })
+let options: preferences.Options = { name: 'myStore' };
+let sp = preferences.deletePreferences(context, options);
+sp.then(() => {
+  console.info("Succeeded in deleting preferences.");
+}).catch((err: BusinessError) => {
+  console.error("Failed to delete preferences. code =" + err.code + ", message = " + err.message);
+})
 ```
 
 Stage模型示例：
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { window } from '@kit.ArkUI';
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { window } from '@kit.ArkUI';
 
-5. class EntryAbility extends UIAbility {
-6. onWindowStageCreate(windowStage: window.WindowStage) {
-7. let options: preferences.Options = { name: 'myStore' };
-8. let promise = preferences.deletePreferences(this.context, options);
-9. promise.then(() => {
-10. console.info("Succeeded in deleting preferences.");
-11. }).catch((err: BusinessError) => {
-12. console.error("Failed to delete preferences. code =" + err.code + ", message =" + err.message);
-13. })
-14. }
-15. }
+class EntryAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    let options: preferences.Options = { name: 'myStore' };
+    let sp = preferences.deletePreferences(this.context, options);
+    sp.then(() => {
+      console.info("Succeeded in deleting preferences.");
+    }).catch((err: BusinessError) => {
+      console.error("Failed to delete preferences. code =" + err.code + ", message = " + err.message);
+    })
+  }
+}
 ```
 
 ## preferences.removePreferencesFromCache
-
-PhonePC/2in1TabletTVWearable
 
 removePreferencesFromCache(context: Context, name: string, callback: AsyncCallback<void>): void
 
-从缓存中移除指定的Preferences实例，使用callback异步回调。
+从缓存中移除指定的Preferences实例，通过name进行参数设置，使用callback异步回调。
 
 应用首次调用[getPreferences](js-apis-data-preferences.md#preferencesgetpreferences)接口获取某个Preferences实例后，该实例会被缓存起来，后续调用[getPreferences](js-apis-data-preferences.md#preferencesgetpreferences)时不会再次从持久化文件中读取，直接从缓存中获取Preferences实例。调用此接口移除缓存中的实例之后，再次getPreferences将会重新读取持久化文件，生成新的Preferences实例。
 
@@ -765,54 +751,52 @@ removePreferencesFromCache(context: Context, name: string, callback: AsyncCallba
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 
 **示例：**
 
 FA模型示例：
 
-```
-1. // 获取context
-2. import { featureAbility } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// 获取context
+import { featureAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let context = featureAbility.getContext();
-6. preferences.removePreferencesFromCache(context, 'myStore', (err: BusinessError) => {
-7. if (err) {
-8. console.error("Failed to remove preferences. code =" + err.code + ", message =" + err.message);
-9. return;
-10. }
-11. console.info("Succeeded in removing preferences.");
-12. })
+let context = featureAbility.getContext();
+preferences.removePreferencesFromCache(context, 'myStore', (err: BusinessError) => {
+  if (err) {
+    console.error("Failed to remove preferences. code =" + err.code + ", message = " + err.message);
+    return;
+  }
+  console.info("Succeeded in removing preferences.");
+})
 ```
 
 Stage模型示例：
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { window } from '@kit.ArkUI';
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { window } from '@kit.ArkUI';
 
-5. class EntryAbility extends UIAbility {
-6. onWindowStageCreate(windowStage: window.WindowStage) {
-7. preferences.removePreferencesFromCache(this.context, 'myStore', (err: BusinessError) => {
-8. if (err) {
-9. console.error("Failed to remove preferences. code =" + err.code + ", message =" + err.message);
-10. return;
-11. }
-12. console.info("Succeeded in removing preferences.");
-13. })
-14. }
-15. }
+class EntryAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    preferences.removePreferencesFromCache(this.context, 'myStore', (err: BusinessError) => {
+      if (err) {
+        console.error("Failed to remove preferences. code =" + err.code + ", message = " + err.message);
+        return;
+      }
+      console.info("Succeeded in removing preferences.");
+    })
+  }
+}
 ```
 
 ## preferences.removePreferencesFromCache
 
-PhonePC/2in1TabletTVWearable
-
 removePreferencesFromCache(context: Context, name: string): Promise<void>
 
-从缓存中移除指定的Preferences实例，使用Promise异步回调。
+从缓存中移除指定的Preferences实例，通过name进行参数设置，使用Promise异步回调。
 
 应用首次调用[getPreferences](js-apis-data-preferences.md#preferencesgetpreferences)接口获取某个Preferences实例后，该实例会被缓存起来，后续调用[getPreferences](js-apis-data-preferences.md#preferencesgetpreferences)时不会再次从持久化文件中读取，直接从缓存中获取Preferences实例。调用此接口移除缓存中的实例之后，再次getPreferences将会重新读取持久化文件，生成新的Preferences实例。
 
@@ -844,52 +828,50 @@ removePreferencesFromCache(context: Context, name: string): Promise<void>
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 
 **示例：**
 
 FA模型示例：
 
-```
-1. // 获取context
-2. import { featureAbility } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// 获取context
+import { featureAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let context = featureAbility.getContext();
-6. let promise = preferences.removePreferencesFromCache(context, 'myStore');
-7. promise.then(() => {
-8. console.info("Succeeded in removing preferences.");
-9. }).catch((err: BusinessError) => {
-10. console.error("Failed to remove preferences. code =" + err.code + ", message =" + err.message);
-11. })
+let context = featureAbility.getContext();
+let sp = preferences.removePreferencesFromCache(context, 'myStore');
+sp.then(() => {
+  console.info("Succeeded in removing preferences.");
+}).catch((err: BusinessError) => {
+  console.error("Failed to remove preferences. code =" + err.code + ", message = " + err.message);
+})
 ```
 
 Stage模型示例：
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { window } from '@kit.ArkUI';
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { window } from '@kit.ArkUI';
 
-5. class EntryAbility extends UIAbility {
-6. onWindowStageCreate(windowStage: window.WindowStage) {
-7. let promise = preferences.removePreferencesFromCache(this.context, 'myStore');
-8. promise.then(() => {
-9. console.info("Succeeded in removing preferences.");
-10. }).catch((err: BusinessError) => {
-11. console.error("Failed to remove preferences. code =" + err.code + ", message =" + err.message);
-12. })
-13. }
-14. }
+class EntryAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    let sp = preferences.removePreferencesFromCache(this.context, 'myStore');
+    sp.then(() => {
+      console.info("Succeeded in removing preferences.");
+    }).catch((err: BusinessError) => {
+      console.error("Failed to remove preferences. code =" + err.code + ", message = " + err.message);
+    })
+  }
+}
 ```
 
 ## preferences.removePreferencesFromCacheSync10+
 
-PhonePC/2in1TabletTVWearable
-
 removePreferencesFromCacheSync(context: Context, name: string): void
 
-从缓存中移除指定的Preferences实例，此为同步接口。
+从缓存中移除指定的Preferences实例，通过name进行参数设置，此为同步接口。
 
 应用首次调用[getPreferences](js-apis-data-preferences.md#preferencesgetpreferences)接口获取某个Preferences实例后，该实例会被缓存起来，后续调用[getPreferences](js-apis-data-preferences.md#preferencesgetpreferences)时不会再次从持久化文件中读取，直接从缓存中获取Preferences实例。调用此接口移除缓存中的实例之后，再次getPreferences将会重新读取持久化文件，生成新的Preferences实例。
 
@@ -915,39 +897,38 @@ removePreferencesFromCacheSync(context: Context, name: string): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 
 **示例：**
 
 FA模型示例：
 
-```
-1. // 获取context
-2. import { featureAbility } from '@kit.AbilityKit';
-3. let context = featureAbility.getContext();
-4. preferences.removePreferencesFromCacheSync(context, 'myStore');
+```ts
+// 获取context
+import { featureAbility } from '@kit.AbilityKit';
+
+let context = featureAbility.getContext();
+preferences.removePreferencesFromCacheSync(context, 'myStore');
 ```
 
 Stage模型示例：
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { window } from '@kit.ArkUI';
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
 
-4. class EntryAbility extends UIAbility {
-5. onWindowStageCreate(windowStage: window.WindowStage) {
-6. preferences.removePreferencesFromCacheSync(this.context, 'myStore');
-7. }
-8. }
+class EntryAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    preferences.removePreferencesFromCacheSync(this.context, 'myStore');
+  }
+}
 ```
 
 ## preferences.removePreferencesFromCache10+
 
-PhonePC/2in1TabletTVWearable
-
 removePreferencesFromCache(context: Context, options: Options, callback: AsyncCallback<void>): void
 
-从缓存中移除指定的Preferences实例，使用callback异步回调。
+从缓存中移除指定的Preferences实例，通过Options进行参数设置，使用callback异步回调。
 
 应用首次调用[getPreferences](js-apis-data-preferences.md#preferencesgetpreferences)接口获取某个Preferences实例后，该实例会被缓存起来，后续调用[getPreferences](js-apis-data-preferences.md#preferencesgetpreferences)时不会再次从持久化文件中读取，直接从缓存中获取Preferences实例。调用此接口移除缓存中的实例之后，再次getPreferences将会重新读取持久化文件，生成新的Preferences实例。
 
@@ -975,7 +956,7 @@ removePreferencesFromCache(context: Context, options: Options, callback: AsyncCa
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 | 801 | Capability not supported. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 | 15501001 | The operations is supported in stage mode only. |
 | 15501002 | Invalid dataGroupId. |
 
@@ -983,50 +964,48 @@ removePreferencesFromCache(context: Context, options: Options, callback: AsyncCa
 
 FA模型示例：
 
-```
-1. // 获取context
-2. import { featureAbility } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// 获取context
+import { featureAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let context = featureAbility.getContext();
-6. let options: preferences.Options = { name: 'myStore' };
-7. preferences.removePreferencesFromCache(context, options, (err: BusinessError) => {
-8. if (err) {
-9. console.error("Failed to remove preferences. code =" + err.code + ", message =" + err.message);
-10. return;
-11. }
-12. console.info("Succeeded in removing preferences.");
-13. })
+let context = featureAbility.getContext();
+let options: preferences.Options = { name: 'myStore' };
+preferences.removePreferencesFromCache(context, options, (err: BusinessError) => {
+  if (err) {
+    console.error("Failed to remove preferences. code =" + err.code + ", message = " + err.message);
+    return;
+  }
+  console.info("Succeeded in removing preferences.");
+})
 ```
 
 Stage模型示例：
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { window } from '@kit.ArkUI';
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { window } from '@kit.ArkUI';
 
-5. class EntryAbility extends UIAbility {
-6. onWindowStageCreate(windowStage: window.WindowStage) {
-7. let options: preferences.Options = { name: 'myStore' };
-8. preferences.removePreferencesFromCache(this.context, options, (err: BusinessError) => {
-9. if (err) {
-10. console.error("Failed to remove preferences. code =" + err.code + ", message =" + err.message);
-11. return;
-12. }
-13. console.info("Succeeded in removing preferences.");
-14. })
-15. }
-16. }
+class EntryAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    let options: preferences.Options = { name: 'myStore' };
+    preferences.removePreferencesFromCache(this.context, options, (err: BusinessError) => {
+      if (err) {
+        console.error("Failed to remove preferences. code =" + err.code + ", message = " + err.message);
+        return;
+      }
+      console.info("Succeeded in removing preferences.");
+    })
+  }
+}
 ```
 
 ## preferences.removePreferencesFromCache10+
 
-PhonePC/2in1TabletTVWearable
-
 removePreferencesFromCache(context: Context, options: Options): Promise<void>
 
-从缓存中移除指定的Preferences实例，使用Promise异步回调。
+从缓存中移除指定的Preferences实例，通过Options进行参数设置，使用Promise异步回调。
 
 应用首次调用[getPreferences](js-apis-data-preferences.md#preferencesgetpreferences)接口获取某个Preferences实例后，该实例会被缓存起来，后续调用[getPreferences](js-apis-data-preferences.md#preferencesgetpreferences)时不会再次从持久化文件中读取，直接从缓存中获取Preferences实例。调用此接口移除缓存中的实例之后，再次getPreferences将会重新读取持久化文件，生成新的Preferences实例。
 
@@ -1059,7 +1038,7 @@ removePreferencesFromCache(context: Context, options: Options): Promise<void>
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 | 801 | Capability not supported. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 | 15501001 | The operations is supported in stage mode only. |
 | 15501002 | Invalid dataGroupId. |
 
@@ -1067,48 +1046,46 @@ removePreferencesFromCache(context: Context, options: Options): Promise<void>
 
 FA模型示例：
 
-```
-1. // 获取context
-2. import { featureAbility } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// 获取context
+import { featureAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let context = featureAbility.getContext();
-6. let options: preferences.Options = { name: 'myStore' };
-7. let promise = preferences.removePreferencesFromCache(context, options);
-8. promise.then(() => {
-9. console.info("Succeeded in removing preferences.");
-10. }).catch((err: BusinessError) => {
-11. console.error("Failed to remove preferences. code =" + err.code + ", message =" + err.message);
-12. })
+let context = featureAbility.getContext();
+let options: preferences.Options = { name: 'myStore' };
+let sp = preferences.removePreferencesFromCache(context, options);
+sp.then(() => {
+  console.info("Succeeded in removing preferences.");
+}).catch((err: BusinessError) => {
+  console.error("Failed to remove preferences. code =" + err.code + ", message = " + err.message);
+})
 ```
 
 Stage模型示例：
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { window } from '@kit.ArkUI';
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { window } from '@kit.ArkUI';
 
-5. class EntryAbility extends UIAbility {
-6. onWindowStageCreate(windowStage: window.WindowStage) {
-7. let options: preferences.Options = { name: 'myStore' };
-8. let promise = preferences.removePreferencesFromCache(this.context, options);
-9. promise.then(() => {
-10. console.info("Succeeded in removing preferences.");
-11. }).catch((err: BusinessError) => {
-12. console.error("Failed to remove preferences. code =" + err.code + ", message =" + err.message);
-13. })
-14. }
-15. }
+class EntryAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    let options: preferences.Options = { name: 'myStore' };
+    let sp = preferences.removePreferencesFromCache(this.context, options);
+    sp.then(() => {
+      console.info("Succeeded in removing preferences.");
+    }).catch((err: BusinessError) => {
+      console.error("Failed to remove preferences. code =" + err.code + ", message = " + err.message);
+    })
+  }
+}
 ```
 
 ## preferences.removePreferencesFromCacheSync10+
 
-PhonePC/2in1TabletTVWearable
+removePreferencesFromCacheSync(context: Context, options: Options): void
 
-removePreferencesFromCacheSync(context: Context, options: Options):void
-
-从缓存中移除指定的Preferences实例，此为同步接口。
+从缓存中移除指定的Preferences实例，通过Options进行参数设置，此为同步接口。
 
 应用首次调用[getPreferences](js-apis-data-preferences.md#preferencesgetpreferences)接口获取某个Preferences实例后，该实例会被缓存起来，后续调用[getPreferences](js-apis-data-preferences.md#preferencesgetpreferences)时不会再次从持久化文件中读取，直接从缓存中获取Preferences实例。调用此接口移除缓存中的实例之后，再次getPreferences将会重新读取持久化文件，生成新的Preferences实例。
 
@@ -1135,7 +1112,7 @@ removePreferencesFromCacheSync(context: Context, options: Options):void
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 | 801 | Capability not supported. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 | 15501001 | The operations is supported in stage mode only. |
 | 15501002 | Invalid dataGroupId. |
 
@@ -1143,31 +1120,30 @@ removePreferencesFromCacheSync(context: Context, options: Options):void
 
 FA模型示例：
 
-```
-1. // 获取context
-2. import { featureAbility } from '@kit.AbilityKit';
-3. let context = featureAbility.getContext();
-4. let options: preferences.Options = { name: 'myStore' };
-5. preferences.removePreferencesFromCacheSync(context, options);
+```ts
+// 获取context
+import { featureAbility } from '@kit.AbilityKit';
+
+let context = featureAbility.getContext();
+let options: preferences.Options = { name: 'myStore' };
+preferences.removePreferencesFromCacheSync(context, options);
 ```
 
 Stage模型示例：
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { window } from '@kit.ArkUI';
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
 
-4. class EntryAbility extends UIAbility {
-5. onWindowStageCreate(windowStage: window.WindowStage) {
-6. let options: preferences.Options = { name: 'myStore' };
-7. preferences.removePreferencesFromCacheSync(this.context, options);
-8. }
-9. }
+class EntryAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    let options: preferences.Options = { name: 'myStore' };
+    preferences.removePreferencesFromCacheSync(this.context, options);
+  }
+}
 ```
 
 ## StorageType18+
-
-PhonePC/2in1TabletTVWearable
 
 Preferences的存储模式枚举。
 
@@ -1177,19 +1153,17 @@ Preferences的存储模式枚举。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| XML | 0 | 表示[XML存储模式](../harmonyos-guides/data-persistence-by-preferences.md#xml存储)，这是Preferences的默认存储模式。  **特点：** 数据XML格式进行存储。对数据的操作发生在内存中，需要调用flush接口进行落盘。 |
-| GSKV | 1 | 表示[GSKV存储模式](../harmonyos-guides/data-persistence-by-preferences.md#gskv存储)。  **特点：** 数据以GSKV数据库模式进行存储。对数据的操作实时落盘，无需调用flush接口对数据进行落盘。 |
+| XML | 0 | 表示[XML存储模式](../harmonyos-guides/data-persistence-by-preferences.md#xml存储)，这是Preferences的默认存储模式。  **特点：** 数据以XML格式进行存储。对数据的操作发生在内存中，需要调用[flush](js-apis-data-preferences.md#flush)接口进行落盘。 |
+| GSKV | 1 | 表示[GSKV存储模式](../harmonyos-guides/data-persistence-by-preferences.md#gskv存储)。  **特点：** 数据以GSKV数据库模式进行存储。对数据的操作实时落盘，无需调用[flush](js-apis-data-preferences.md#flush)接口对数据进行落盘。 |
 
-说明
+**说明** 
 
-* 在选择存储模式前，建议调用isStorageTypeSupported检查当前平台是否支持对应存储模式。
-* 当选择某一模式通过getPreferences接口获取实例后，不允许中途切换模式。
+* 在选择存储模式前，建议调用[isStorageTypeSupported](js-apis-data-preferences.md#preferencesisstoragetypesupported18)检查当前平台是否支持对应存储模式。
+* 当选择某一模式通过[preferences.getPreferences](js-apis-data-preferences.md#preferencesgetpreferences)接口获取实例后，不允许中途切换模式。
 * 首选项不支持不同模式间数据的迁移，若需将数据从一种模式切换至另一种模式，需通过读写首选项的形式进行数据迁移。
 * 若需要变更首选项的存储路径，不能通过移动或覆盖文件的方式进行，需通过读写首选项的形式进行数据迁移。
 
 ## preferences.isStorageTypeSupported18+
-
-PhonePC/2in1TabletTVWearable
 
 isStorageTypeSupported(type: StorageType): boolean
 
@@ -1221,18 +1195,16 @@ isStorageTypeSupported(type: StorageType): boolean
 
 **示例：**
 
-```
-1. let xmlType = preferences.StorageType.XML;
-2. let gskvType = preferences.StorageType.GSKV;
-3. let isXmlSupported = preferences.isStorageTypeSupported(xmlType);
-4. let isGskvSupported = preferences.isStorageTypeSupported(gskvType);
-5. console.info("Is xml supported in current platform: " + isXmlSupported);
-6. console.info("Is gskv supported in current platform: " + isGskvSupported);
+```ts
+let xmlType = preferences.StorageType.XML;
+let gskvType = preferences.StorageType.GSKV;
+let isXmlSupported = preferences.isStorageTypeSupported(xmlType);
+let isGskvSupported = preferences.isStorageTypeSupported(gskvType);
+console.info("Is xml supported in current platform: " + isXmlSupported);
+console.info("Is gskv supported in current platform: " + isGskvSupported);
 ```
 
 ## Options10+
-
-PhonePC/2in1TabletTVWearable
 
 Preferences实例配置选项。
 
@@ -1241,20 +1213,16 @@ Preferences实例配置选项。
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | string | 否 | 否 | Preferences实例的名称。名称长度需大于零且小于等于255字节，名称中不能包含'/'且不能以'/'结尾。  **元服务API：** 从API version 11开始，该参数支持在元服务中使用。 |
-| dataGroupId | string|null|undefined | 否 | 是 | 应用组ID，需要向应用市场获取，详见[dataGroupId申请流程](../harmonyos-guides/ime-kit-security.md#共享沙箱介绍)。基于dataGroupId的数据共享支持两种场景：1.同一应用的不同进程间共享，只支持三方应用中输入法和输入法的扩展场景使用；2.不同应用间的数据共享，只支持系统应用使用。  为可选参数。指定在此dataGroupId对应的沙箱路径下创建Preferences实例。当此参数不填时，默认在本应用沙箱目录下创建Preferences实例。  **模型约束：** 此属性仅在Stage模型下可用。  **元服务API：** 从API version 11开始，该参数支持在元服务中使用。 |
-| storageType18+ | [StorageType](js-apis-data-preferences.md#storagetype18)|null|undefined | 否 | 是 | 存储模式，为可选参数。表示当前Preferences实例需要使用的存储模式。当此参数不填时，默认使用XML存储模式。当选择某种存储模式创建Preferences后，不支持中途切换存储模式。  **元服务API：** 从API version 18开始，该参数支持在元服务中使用。 |
+| dataGroupId | string | null | undefined | 否 | 是 | 应用组ID，需要向应用市场获取，详见[dataGroupId申请流程](../harmonyos-guides/ime-kit-security.md#共享沙箱介绍)。基于dataGroupId的数据共享支持两种场景：1.同一应用的不同进程间共享，只支持三方应用中输入法和输入法的扩展场景使用；2.不同应用间的数据共享，只支持系统应用使用。  为可选参数。指定在此dataGroupId对应的沙箱路径下创建Preferences实例。当此参数不填时，默认在本应用沙箱目录下创建Preferences实例。  **模型约束：** 此属性仅在Stage模型下可用。  **元服务API：** 从API version 11开始，该参数支持在元服务中使用。 |
+| storageType18+ | [StorageType](js-apis-data-preferences.md#storagetype18) | null | undefined | 否 | 是 | 存储模式，为可选参数。表示当前Preferences实例需要使用的存储模式。当此参数不填时，默认使用XML存储模式。当选择某种存储模式创建Preferences后，不支持中途切换存储模式。  **元服务API：** 从API version 18开始，该参数支持在元服务中使用。 |
 
 ## Preferences
-
-PhonePC/2in1TabletTVWearable
 
 首选项实例，提供获取和修改存储数据的接口。
 
 下列接口都需先使用[preferences.getPreferences](js-apis-data-preferences.md#preferencesgetpreferences)获取到Preferences实例，再通过此实例调用对应接口。
 
 ### get
-
-PhonePC/2in1TabletTVWearable
 
 get(key: string, defValue: ValueType, callback: AsyncCallback<ValueType>): void
 
@@ -1279,25 +1247,23 @@ get(key: string, defValue: ValueType, callback: AsyncCallback<ValueType>): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. dataPreferences.get('startup', 'default', (err: BusinessError, val: preferences.ValueType) => {
-4. if (err) {
-5. console.error("Failed to get value of 'startup'. code =" + err.code + ", message =" + err.message);
-6. return;
-7. }
-8. console.info("Succeeded in getting value of 'startup'. val： " + val);
-9. })
+dataPreferences.get('startup', 'default', (err: BusinessError, val: preferences.ValueType) => {
+  if (err) {
+    console.error("Failed to get value of 'startup'. code =" + err.code + ", message = " + err.message);
+    return;
+  }
+  console.info("Succeeded in getting value of 'startup'. val: " + val);
+})
 ```
 
 ### get
-
-PhonePC/2in1TabletTVWearable
 
 get(key: string, defValue: ValueType): Promise<ValueType>
 
@@ -1327,24 +1293,22 @@ get(key: string, defValue: ValueType): Promise<ValueType>
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let promise = dataPreferences.get('startup', 'default');
-4. promise.then((data: preferences.ValueType) => {
-5. console.info("Succeeded in getting value of 'startup'. Data: " + data);
-6. }).catch((err: BusinessError) => {
-7. console.error("Failed to get value of 'startup'. code =" + err.code + ", message =" + err.message);
-8. })
+let data = dataPreferences.get('startup', 'default');
+data.then((data: preferences.ValueType) => {
+  console.info("Succeeded in getting value of 'startup'. Data: " + data);
+}).catch((err: BusinessError) => {
+  console.error("Failed to get value of 'startup'. code =" + err.code + ", message = " + err.message);
+})
 ```
 
 ### getSync10+
-
-PhonePC/2in1TabletTVWearable
 
 getSync(key: string, defValue: ValueType): ValueType
 
@@ -1374,17 +1338,15 @@ getSync(key: string, defValue: ValueType): ValueType
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 
 **示例：**
 
-```
-1. let value: preferences.ValueType = dataPreferences.getSync('startup', 'default');
+```ts
+let value: preferences.ValueType = dataPreferences.getSync('startup', 'default');
 ```
 
 ### getAll
-
-PhonePC/2in1TabletTVWearable
 
 getAll(callback: AsyncCallback<Object>): void
 
@@ -1407,38 +1369,36 @@ getAll(callback: AsyncCallback<Object>): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Mandatory parameters are left unspecified. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. // 由于ArkTS中无Object.keys，且无法使用for..in...
-4. // 若报ArkTS问题，请将此方法单独抽离至一个ts文件中并暴露，在需要用到的ets文件中引入使用
-5. function getObjKeys(obj: Object): string[] {
-6. let keys = Object.keys(obj);
-7. return keys;
-8. }
+// 由于ArkTS中无Object.keys，且无法使用for..in...
+// 若报ArkTS问题，请将此方法单独抽离至一个ts文件中并暴露，在需要用到的ets文件中引入使用
+function getObjKeys(obj: Object): string[] {
+  let keys = Object.keys(obj);
+  return keys;
+}
 
-10. dataPreferences.getAll((err: BusinessError, value: Object) => {
-11. if (err) {
-12. console.error("Failed to get all key-values. code =" + err.code + ", message =" + err.message);
-13. return;
-14. }
-15. let allKeys = getObjKeys(value);
-16. console.info("getAll keys = " + allKeys);
-17. console.info("getAll object = " + JSON.stringify(value));
-18. })
+dataPreferences.getAll((err: BusinessError, value: Object) => {
+  if (err) {
+    console.error("Failed to get all key-values. code =" + err.code + ", message = " + err.message);
+    return;
+  }
+  let allKeys = getObjKeys(value);
+  console.info("getAll keys = " + allKeys);
+  console.info("getAll object = " + JSON.stringify(value));
+})
 ```
 
 ### getAll
 
-PhonePC/2in1TabletTVWearable
-
 getAll(): Promise<Object>
 
-获取缓存的Preferences实例中的所有键值数据。
+获取缓存的Preferences实例中的所有键值数据，使用Promise异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1456,33 +1416,31 @@ getAll(): Promise<Object>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. // 由于ArkTS中无Object.keys，且无法使用for..in...
-4. // 若报ArkTS问题，请将此方法单独抽离至一个ts文件中并暴露，在需要用到的ets文件中引入使用
-5. function getObjKeys(obj: Object): string[] {
-6. let keys = Object.keys(obj);
-7. return keys;
-8. }
+// 由于ArkTS中无Object.keys，且无法使用for..in...
+// 若报ArkTS问题，请将此方法单独抽离至一个ts文件中并暴露，在需要用到的ets文件中引入使用
+function getObjKeys(obj: Object): string[] {
+  let keys = Object.keys(obj);
+  return keys;
+}
 
-10. let promise = dataPreferences.getAll();
-11. promise.then((value: Object) => {
-12. let allKeys = getObjKeys(value);
-13. console.info('getAll keys = ' + allKeys);
-14. console.info("getAll object = " + JSON.stringify(value));
-15. }).catch((err: BusinessError) => {
-16. console.error("Failed to get all key-values. code =" + err.code + ", message =" + err.message);
-17. })
+let allData = dataPreferences.getAll();
+allData.then((value: Object) => {
+  let allKeys = getObjKeys(value);
+  console.info('getAll keys = ' + allKeys);
+  console.info("getAll object = " + JSON.stringify(value));
+}).catch((err: BusinessError) => {
+  console.error("Failed to get all key-values. code =" + err.code + ", message = " + err.message);
+})
 ```
 
 ### getAllSync10+
-
-PhonePC/2in1TabletTVWearable
 
 getAllSync(): Object
 
@@ -1504,33 +1462,31 @@ getAllSync(): Object
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 
 **示例：**
 
-```
-1. // 由于ArkTS中无Object.keys，且无法使用for..in...
-2. // 若报ArkTS问题，请将此方法单独抽离至一个ts文件中并暴露，在需要用到的ets文件中引入使用
-3. function getObjKeys(obj: Object): string[] {
-4. let keys = Object.keys(obj);
-5. return keys;
-6. }
+```ts
+// 由于ArkTS中无Object.keys，且无法使用for..in...
+// 若报ArkTS问题，请将此方法单独抽离至一个ts文件中并暴露，在需要用到的ets文件中引入使用
+function getObjKeys(obj: Object): string[] {
+  let keys = Object.keys(obj);
+  return keys;
+}
 
-8. let value = dataPreferences.getAllSync();
-9. let allKeys = getObjKeys(value);
-10. console.info('getAll keys = ' + allKeys);
-11. console.info("getAll object = " + JSON.stringify(value));
+let value = dataPreferences.getAllSync();
+let allKeys = getObjKeys(value);
+console.info('getAll keys = ' + allKeys);
+console.info("getAll object = " + JSON.stringify(value));
 ```
 
 ### put
-
-PhonePC/2in1TabletTVWearable
 
 put(key: string, value: ValueType, callback: AsyncCallback<void>): void
 
 将数据写入缓存的Preferences实例中，可通过[flush](js-apis-data-preferences.md#flush)将Preferences实例持久化，使用callback异步回调。
 
-说明
+**说明** 
 
 当value中包含非UTF-8格式的字符串时，请使用Uint8Array类型存储，否则会造成持久化文件出现格式错误造成文件损坏。
 
@@ -1555,31 +1511,29 @@ put(key: string, value: ValueType, callback: AsyncCallback<void>): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. dataPreferences.put('startup', 'auto', (err: BusinessError) => {
-4. if (err) {
-5. console.error("Failed to put value of 'startup'. code =" + err.code + ", message =" + err.message);
-6. return;
-7. }
-8. console.info("Succeeded in putting value of 'startup'.");
-9. })
+dataPreferences.put('startup', 'auto', (err: BusinessError) => {
+  if (err) {
+    console.error("Failed to put value of 'startup'. code =" + err.code + ", message = " + err.message);
+    return;
+  }
+  console.info("Succeeded in putting value of 'startup'.");
+})
 ```
 
 ### put
-
-PhonePC/2in1TabletTVWearable
 
 put(key: string, value: ValueType): Promise<void>
 
 将数据写入缓存的Preferences实例中，可通过[flush](js-apis-data-preferences.md#flush)将Preferences实例持久化，使用Promise异步回调。
 
-说明
+**说明** 
 
 当value中包含非UTF-8格式的字符串时，请使用Uint8Array类型存储，否则会造成持久化文件出现格式错误造成文件损坏。
 
@@ -1609,30 +1563,28 @@ put(key: string, value: ValueType): Promise<void>
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let promise = dataPreferences.put('startup', 'auto');
-4. promise.then(() => {
-5. console.info("Succeeded in putting value of 'startup'.");
-6. }).catch((err: BusinessError) => {
-7. console.error("Failed to put value of 'startup'. code =" + err.code + ", message =" + err.message);
-8. })
+let putStartupPref = dataPreferences.put('startup', 'auto');
+putStartupPref.then(() => {
+  console.info("Succeeded in putting value of 'startup'.");
+}).catch((err: BusinessError) => {
+  console.error("Failed to put value of 'startup'. code =" + err.code + ", message = " + err.message);
+})
 ```
 
 ### putSync10+
-
-PhonePC/2in1TabletTVWearable
 
 putSync(key: string, value: ValueType): void
 
 将数据写入缓存的Preferences实例中，可通过[flush](js-apis-data-preferences.md#flush)将Preferences实例持久化，此为同步接口。
 
-说明
+**说明** 
 
 当value中包含非UTF-8格式的字符串时，请使用Uint8Array类型存储，否则会造成持久化文件出现格式错误造成文件损坏。
 
@@ -1656,17 +1608,15 @@ putSync(key: string, value: ValueType): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 
 **示例：**
 
-```
-1. dataPreferences.putSync('startup', 'auto');
+```ts
+dataPreferences.putSync('startup', 'auto');
 ```
 
 ### has
-
-PhonePC/2in1TabletTVWearable
 
 has(key: string, callback: AsyncCallback<boolean>): void
 
@@ -1680,8 +1630,8 @@ has(key: string, callback: AsyncCallback<boolean>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| key | string | 是 | 要检查的存储key名称，不能为空，最大长度限制为[MAX\_KEY\_LENGTH](js-apis-data-preferences.md#常量)。 |
-| callback | AsyncCallback<boolean> | 是 | 回调函数。返回Preferences实例是否包含给定key的存储键值对，true表示存在，false表示不存在。 |
+| key | string | 是 | 要检查的存储Key名称，不能为空，最大长度限制为[MAX\_KEY\_LENGTH](js-apis-data-preferences.md#常量)。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。返回Preferences实例是否包含给定Key的存储键值对，true表示存在，false表示不存在。 |
 
 **错误码：**
 
@@ -1690,29 +1640,27 @@ has(key: string, callback: AsyncCallback<boolean>): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. dataPreferences.has('startup', (err: BusinessError, val: boolean) => {
-4. if (err) {
-5. console.error("Failed to check the key 'startup'. code =" + err.code + ", message =" + err.message);
-6. return;
-7. }
-8. if (val) {
-9. console.info("The key 'startup' is contained.");
-10. } else {
-11. console.info("The key 'startup' is not contained.");
-12. }
-13. })
+dataPreferences.has('startup', (err: BusinessError, val: boolean) => {
+  if (err) {
+    console.error("Failed to check the key 'startup'. code =" + err.code + ", message = " + err.message);
+    return;
+  }
+  if (val) {
+    console.info("The key 'startup' is contained.");
+  } else {
+    console.info("The key 'startup' is not contained.");
+  }
+})
 ```
 
 ### has
-
-PhonePC/2in1TabletTVWearable
 
 has(key: string): Promise<boolean>
 
@@ -1726,13 +1674,13 @@ has(key: string): Promise<boolean>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| key | string | 是 | 要检查的存储key名称，不能为空，最大长度限制为[MAX\_KEY\_LENGTH](js-apis-data-preferences.md#常量)。 |
+| key | string | 是 | 要检查的存储Key名称，不能为空，最大长度限制为[MAX\_KEY\_LENGTH](js-apis-data-preferences.md#常量)。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<boolean> | Promise对象。返回Preferences实例是否包含给定key的存储键值对，true表示存在，false表示不存在。 |
+| Promise<boolean> | Promise对象。返回Preferences实例是否包含给定Key的存储键值对，true表示存在，false表示不存在。 |
 
 **错误码：**
 
@@ -1741,28 +1689,26 @@ has(key: string): Promise<boolean>
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let promise = dataPreferences.has('startup');
-4. promise.then((val: boolean) => {
-5. if (val) {
-6. console.info("The key 'startup' is contained.");
-7. } else {
-8. console.info("The key 'startup' does not contain.");
-9. }
-10. }).catch((err: BusinessError) => {
-11. console.error("Failed to check the key 'startup'. code =" + err.code + ", message =" + err.message);
-12. })
+let isStartupSet = dataPreferences.has('startup');
+isStartupSet.then((val: boolean) => {
+  if (val) {
+    console.info("The key 'startup' is contained.");
+  } else {
+    console.info("The key 'startup' does not contain.");
+  }
+}).catch((err: BusinessError) => {
+  console.error("Failed to check the key 'startup'. code =" + err.code + ", message = " + err.message);
+})
 ```
 
 ### hasSync10+
-
-PhonePC/2in1TabletTVWearable
 
 hasSync(key: string): boolean
 
@@ -1776,13 +1722,13 @@ hasSync(key: string): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| key | string | 是 | 要检查的存储key名称，不能为空，最大长度限制为[MAX\_KEY\_LENGTH](js-apis-data-preferences.md#常量)。 |
+| key | string | 是 | 要检查的存储Key名称，不能为空，最大长度限制为[MAX\_KEY\_LENGTH](js-apis-data-preferences.md#常量)。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 返回Preferences实例是否包含给定key的存储键值对，true表示存在，false表示不存在。 |
+| boolean | 返回Preferences实例是否包含给定Key的存储键值对，true表示存在，false表示不存在。 |
 
 **错误码：**
 
@@ -1791,22 +1737,20 @@ hasSync(key: string): boolean
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 
 **示例：**
 
-```
-1. let isExist: boolean = dataPreferences.hasSync('startup');
-2. if (isExist) {
-3. console.info("The key 'startup' is contained.");
-4. } else {
-5. console.info("The key 'startup' does not contain.");
-6. }
+```ts
+let isExist: boolean = dataPreferences.hasSync('startup');
+if (isExist) {
+  console.info("The key 'startup' is contained.");
+} else {
+  console.info("The key 'startup' does not contain.");
+}
 ```
 
 ### delete
-
-PhonePC/2in1TabletTVWearable
 
 delete(key: string, callback: AsyncCallback<void>): void
 
@@ -1830,25 +1774,23 @@ delete(key: string, callback: AsyncCallback<void>): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. dataPreferences.delete('startup', (err: BusinessError) => {
-4. if (err) {
-5. console.error("Failed to delete the key 'startup'. code =" + err.code + ", message =" + err.message);
-6. return;
-7. }
-8. console.info("Succeeded in deleting the key 'startup'.");
-9. })
+dataPreferences.delete('startup', (err: BusinessError) => {
+  if (err) {
+    console.error("Failed to delete the key 'startup'. code =" + err.code + ", message = " + err.message);
+    return;
+  }
+  console.info("Succeeded in deleting the key 'startup'.");
+})
 ```
 
 ### delete
-
-PhonePC/2in1TabletTVWearable
 
 delete(key: string): Promise<void>
 
@@ -1862,7 +1804,7 @@ delete(key: string): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| key | string | 是 | 要删除的存储key名称，不能为空，最大长度限制为[MAX\_KEY\_LENGTH](js-apis-data-preferences.md#常量)。 |
+| key | string | 是 | 要删除的存储Key名称，不能为空，最大长度限制为[MAX\_KEY\_LENGTH](js-apis-data-preferences.md#常量)。 |
 
 **返回值：**
 
@@ -1877,24 +1819,22 @@ delete(key: string): Promise<void>
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let promise = dataPreferences.delete('startup');
-4. promise.then(() => {
-5. console.info("Succeeded in deleting the key 'startup'.");
-6. }).catch((err: BusinessError) => {
-7. console.error("Failed to delete the key 'startup'. code =" + err.code +", message =" + err.message);
-8. })
+let deleteStartupPromise = dataPreferences.delete('startup');
+deleteStartupPromise.then(() => {
+  console.info("Succeeded in deleting the key 'startup'.");
+}).catch((err: BusinessError) => {
+  console.error("Failed to delete the key 'startup'. code =" + err.code +", message = " + err.message);
+})
 ```
 
 ### deleteSync10+
-
-PhonePC/2in1TabletTVWearable
 
 deleteSync(key: string): void
 
@@ -1908,7 +1848,7 @@ deleteSync(key: string): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| key | string | 是 | 要删除的存储key名称，不能为空，最大长度限制为[MAX\_KEY\_LENGTH](js-apis-data-preferences.md#常量)。 |
+| key | string | 是 | 要删除的存储Key名称，不能为空，最大长度限制为[MAX\_KEY\_LENGTH](js-apis-data-preferences.md#常量)。 |
 
 **错误码：**
 
@@ -1917,23 +1857,21 @@ deleteSync(key: string): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 
 **示例：**
 
-```
-1. dataPreferences.deleteSync('startup');
+```ts
+dataPreferences.deleteSync('startup');
 ```
 
 ### flush
-
-PhonePC/2in1TabletTVWearable
 
 flush(callback: AsyncCallback<void>): void
 
 将缓存的Preferences实例中的数据异步存储到用户首选项的持久化文件中，使用callback异步回调。
 
-说明
+**说明** 
 
 当数据未修改或修改后的数据与缓存数据一致时，不会刷新持久化文件。
 
@@ -1956,31 +1894,29 @@ flush(callback: AsyncCallback<void>): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Mandatory parameters are left unspecified. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. dataPreferences.flush((err: BusinessError) => {
-4. if (err) {
-5. console.error("Failed to flush. code =" + err.code + ", message =" + err.message);
-6. return;
-7. }
-8. console.info("Succeeded in flushing.");
-9. })
+dataPreferences.flush((err: BusinessError) => {
+  if (err) {
+    console.error("Failed to flush. code =" + err.code + ", message = " + err.message);
+    return;
+  }
+  console.info("Succeeded in flushing.");
+})
 ```
 
 ### flush
-
-PhonePC/2in1TabletTVWearable
 
 flush(): Promise<void>
 
 将缓存的Preferences实例中的数据异步存储到用户首选项的持久化文件中，使用Promise异步回调。
 
-说明
+**说明** 
 
 当数据未修改或修改后的数据与缓存数据一致时，不会刷新持久化文件。
 
@@ -2002,30 +1938,28 @@ flush(): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let promise = dataPreferences.flush();
-4. promise.then(() => {
-5. console.info("Succeeded in flushing.");
-6. }).catch((err: BusinessError) => {
-7. console.error("Failed to flush. code =" + err.code + ", message =" + err.message);
-8. })
+let flushResult = dataPreferences.flush();
+flushResult.then(() => {
+  console.info("Succeeded in flushing.");
+}).catch((err: BusinessError) => {
+  console.error("Failed to flush. code =" + err.code + ", message = " + err.message);
+})
 ```
 
 ### flushSync14+
-
-PhonePC/2in1TabletTVWearable
 
 flushSync(): void
 
 将缓存的Preferences实例中的数据存储到用户首选项的持久化文件中。
 
-说明
+**说明** 
 
 当数据未修改或修改后的数据与缓存数据一致时，不会刷新持久化文件。
 
@@ -2043,13 +1977,11 @@ flushSync(): void
 
 **示例：**
 
-```
-1. dataPreferences.flushSync();
+```ts
+dataPreferences.flushSync();
 ```
 
 ### clear
-
-PhonePC/2in1TabletTVWearable
 
 clear(callback: AsyncCallback<void>): void
 
@@ -2072,25 +2004,23 @@ clear(callback: AsyncCallback<void>): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Mandatory parameters are left unspecified. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. dataPreferences.clear((err: BusinessError) =>{
-4. if (err) {
-5. console.error("Failed to clear. code =" + err.code + ", message =" + err.message);
-6. return;
-7. }
-8. console.info("Succeeded in clearing.");
-9. })
+dataPreferences.clear((err: BusinessError) =>{
+  if (err) {
+    console.error("Failed to clear. code =" + err.code + ", message = " + err.message);
+    return;
+  }
+  console.info("Succeeded in clearing.");
+})
 ```
 
 ### clear
-
-PhonePC/2in1TabletTVWearable
 
 clear(): Promise<void>
 
@@ -2112,24 +2042,22 @@ clear(): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let promise = dataPreferences.clear();
-4. promise.then(() => {
-5. console.info("Succeeded in clearing.");
-6. }).catch((err: BusinessError) => {
-7. console.error("Failed to clear. code =" + err.code + ", message =" + err.message);
-8. })
+let promise = dataPreferences.clear();
+promise.then(() => {
+  console.info("Succeeded in clearing.");
+}).catch((err: BusinessError) => {
+  console.error("Failed to clear. code =" + err.code + ", message = " + err.message);
+})
 ```
 
 ### clearSync10+
-
-PhonePC/2in1TabletTVWearable
 
 clearSync(): void
 
@@ -2141,19 +2069,25 @@ clearSync(): void
 
 **示例：**
 
-```
-1. dataPreferences.clearSync();
+```ts
+dataPreferences.clearSync();
 ```
 
 ### on('change')
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'change', callback: Callback<string>): void
 
-订阅数据变更，订阅的Key的值发生变更后，在执行[flush](js-apis-data-preferences.md#flush)方法后，触发callback回调。
+订阅数据变更，订阅的Key的值发生变更后，并且在执行[flush](js-apis-data-preferences.md#flush)方法后，触发callback回调。
 
-说明
+**不同订阅方法的对比：**
+
+* on('change')：订阅所有Key变化，适合全局数据变化感知需求。
+* on('dataChange')：精确订阅指定Key的变化，适合关注特定数据场景，可回调返回具体值。
+* on('multiProcessChange')：订阅多进程数据变化，适合多进程共享同一首选项文件的场景。
+
+**选取建议：** 单进程应用推荐使用on('change')或on('dataChange')；多进程数据同步时使用on('multiProcessChange')；需要精确知道特定Key变化并获取新值时使用on('dataChange')。
+
+**说明** 
 
 当调用[removePreferencesFromCache](js-apis-data-preferences.md#preferencesremovepreferencesfromcache)或[deletePreferences](js-apis-data-preferences.md#preferencesdeletepreferences)后，订阅的数据变更会主动取消订阅，在重新[getPreferences](js-apis-data-preferences.md#preferencesgetpreferences)后需要重新订阅数据变更。
 
@@ -2166,7 +2100,7 @@ on(type: 'change', callback: Callback<string>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定值'change'，表示数据变更。 |
-| callback | Callback<string> | 是 | 回调函数。 |
+| callback | Callback<string> | 是 | 回调函数，用于接收数据变更通知，回调参数为Key字符串，表示发生变更的键名称。 |
 
 **错误码：**
 
@@ -2175,40 +2109,38 @@ on(type: 'change', callback: Callback<string>): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let observer = (key: string) => {
-4. console.info("The key " + key + " changed.");
-5. }
-6. dataPreferences.on('change', observer);
-7. dataPreferences.putSync('startup', 'manual');
-8. dataPreferences.flush((err: BusinessError) => {
-9. if (err) {
-10. console.error("Failed to flush. Cause: " + err);
-11. return;
-12. }
-13. console.info("Succeeded in flushing.");
-14. })
+let observer = (key: string) => {
+  console.info("The key " + key + " changed.");
+}
+dataPreferences.on('change', observer);
+dataPreferences.putSync('startup', 'manual');
+dataPreferences.flush((err: BusinessError) => {
+  if (err) {
+    console.error("Failed to flush. code =" + err.code + ", message = " + err.message);
+    return;
+  }
+  console.info("Succeeded in flushing.");
+})
 ```
 
 ### on('multiProcessChange')10+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'multiProcessChange', callback: Callback<string>): void
 
 订阅进程间数据变更，多个进程持有同一个首选项文件时，在任意一个进程（包括本进程）执行[flush](js-apis-data-preferences.md#flush)方法，持久化文件发生变更后，触发callback回调。
 
-本接口提供给申请了[dataGroupId](js-apis-data-preferences.md#options10)的应用进行使用，未申请的应用不推荐使用，多进程操作可能会损坏持久化文件，导致数据丢失。
+本接口提供给申请了[dataGroupId](js-apis-data-preferences.md#options10)的应用进行使用，未申请的应用不推荐使用（监听不到数据变更），多进程操作可能会损坏持久化文件，导致数据丢失。
 
-说明
+**说明** 
 
-同一持久化文件在当前进程订阅进程间数据变更的最大数量为50次，超过最大限制后会订阅失败。建议在触发callback回调后及时取消订阅。
+同一持久化文件在当前进程对多进程数据变更订阅的最大数量为50次，超过最大限制后订阅会失败。建议在触发callback回调后及时取消订阅。
 
 当调用[removePreferencesFromCache](js-apis-data-preferences.md#preferencesremovepreferencesfromcache)或[deletePreferences](js-apis-data-preferences.md#preferencesdeletepreferences)后，订阅的数据变更会主动取消订阅，在重新[getPreferences](js-apis-data-preferences.md#preferencesgetpreferences)后需要重新订阅数据变更。
 
@@ -2221,7 +2153,7 @@ on(type: 'multiProcessChange', callback: Callback<string>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定值'multiProcessChange'，表示多进程间的数据变更。 |
-| callback | Callback<string> | 是 | 回调函数。 |
+| callback | Callback<string> | 是 | 多进程间数据变更时触发的回调函数，回调参数为发生变更的Key字符串。 |
 
 **错误码：**
 
@@ -2230,37 +2162,35 @@ on(type: 'multiProcessChange', callback: Callback<string>): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 | 15500019 | Failed to obtain the subscription service. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let observer = (key: string) => {
-4. console.info("The key " + key + " changed.");
-5. }
-6. dataPreferences.on('multiProcessChange', observer);
-7. dataPreferences.putSync('startup', 'manual');
-8. dataPreferences.flush((err: BusinessError) => {
-9. if (err) {
-10. console.error("Failed to flush. Cause: " + err);
-11. return;
-12. }
-13. console.info("Succeeded in flushing.");
-14. })
+let observer = (key: string) => {
+  console.info("The key " + key + " changed.");
+}
+dataPreferences.on('multiProcessChange', observer);
+dataPreferences.putSync('startup', 'manual');
+dataPreferences.flush((err: BusinessError) => {
+  if (err) {
+    console.error("Failed to flush. code =" + err.code + ", message = " + err.message);
+    return;
+  }
+  console.info("Succeeded in flushing.");
+})
 ```
 
 ### on('dataChange')12+
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'dataChange', keys: Array<string>, callback: Callback<Record<string, ValueType>>): void
 
-精确订阅数据变更，只有被订阅的key值发生变更后，在执行[flush](js-apis-data-preferences.md#flush)方法后，触发callback回调。
+精确订阅数据变更，只有被订阅的Key值发生变更后，在执行[flush](js-apis-data-preferences.md#flush)方法后，触发callback回调。
 
-说明
+**说明** 
 
 当调用[removePreferencesFromCache](js-apis-data-preferences.md#preferencesremovepreferencesfromcache)或[deletePreferences](js-apis-data-preferences.md#preferencesdeletepreferences)后，订阅的数据变更会主动取消订阅，在重新[getPreferences](js-apis-data-preferences.md#preferencesgetpreferences)后需要重新订阅数据变更。
 
@@ -2273,8 +2203,8 @@ on(type: 'dataChange', keys: Array<string>, callback: Callback<Record<string, Va
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定值'dataChange'，表示精确的数据变更。 |
-| keys | Array<string> | 是 | 需要订阅的key集合。 |
-| callback | Callback<Record<string, [ValueType](js-apis-data-preferences.md#valuetype)>> | 是 | 回调函数。回调支持返回多个键值对，其中键为发生变更的订阅key，值为变更后的数据：支持number、string、boolean、Array<number>、Array<string>、Array<boolean>、Uint8Array、object类型。 |
+| keys | Array<string> | 是 | 需要订阅的Key集合。 |
+| callback | Callback<Record<string, [ValueType](js-apis-data-preferences.md#valuetype)>> | 是 | 回调函数。回调支持返回多个键值对，其中键为发生变更的订阅Key，类型为string；值为变更后的数据，类型为[ValueType](js-apis-data-preferences.md#valuetype)。 |
 
 **错误码：**
 
@@ -2287,31 +2217,29 @@ on(type: 'dataChange', keys: Array<string>, callback: Callback<Record<string, Va
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let observer = (data: Record<string, preferences.ValueType>) => {
-4. for (const keyValue of Object.entries(data)) {
-5. console.info(`observer : ${keyValue}`);
-6. }
-7. console.info("The observer called.");
-8. }
-9. let keys = ['name', 'age'];
-10. dataPreferences.on('dataChange', keys, observer);
-11. dataPreferences.putSync('name', 'xiaohong');
-12. dataPreferences.putSync('weight', 125);
-13. dataPreferences.flush((err: BusinessError) => {
-14. if (err) {
-15. console.error("Failed to flush. Cause: " + err);
-16. return;
-17. }
-18. console.info("Succeeded in flushing.");
-19. })
+let observer = (data: Record<string, preferences.ValueType>) => {
+  for (const keyValue of Object.entries(data)) {
+    console.info(`observer : ${keyValue}`);
+  }
+  console.info("The observer called.");
+}
+let keys = ['name', 'age'];
+dataPreferences.on('dataChange', keys, observer);
+dataPreferences.putSync('name', 'xiaohong');
+dataPreferences.putSync('weight', 125);
+dataPreferences.flush((err: BusinessError) => {
+  if (err) {
+    console.error("Failed to flush. code =" + err.code + ", message = " + err.message);
+    return;
+  }
+  console.info("Succeeded in flushing.");
+})
 ```
 
 ### off('change')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'change', callback?: Callback<string>): void
 
@@ -2326,7 +2254,7 @@ off(type: 'change', callback?: Callback<string>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定值'change'，表示数据变更。 |
-| callback | Callback<string> | 否 | 需要取消的回调函数，不填写则全部取消。 |
+| callback | Callback<string> | 否 | 需要取消的回调函数，若不填写，表示取消所有已注册的回调函数；若填写，表示只取消指定的回调函数。 |
 
 **错误码：**
 
@@ -2335,37 +2263,35 @@ off(type: 'change', callback?: Callback<string>): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let observer = (key: string) => {
-4. console.info("The key " + key + " changed.");
-5. }
-6. dataPreferences.on('change', observer);
-7. dataPreferences.putSync('startup', 'auto');
-8. dataPreferences.flush((err: BusinessError) => {
-9. if (err) {
-10. console.error("Failed to flush. Cause: " + err);
-11. return;
-12. }
-13. console.info("Succeeded in flushing.");
-14. })
-15. dataPreferences.off('change', observer);
+let observer = (key: string) => {
+  console.info("The key " + key + " changed.");
+}
+dataPreferences.on('change', observer);
+dataPreferences.putSync('startup', 'auto');
+dataPreferences.flush((err: BusinessError) => {
+  if (err) {
+    console.error("Failed to flush. code =" + err.code + ", message = " + err.message);
+    return;
+  }
+  console.info("Succeeded in flushing.");
+})
+dataPreferences.off('change', observer);
 ```
 
 ### off('multiProcessChange')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'multiProcessChange', callback?: Callback<string>): void
 
 取消订阅进程间数据变更。
 
-本接口提供给申请了[dataGroupId](js-apis-data-preferences.md#options10)的应用进行使用，未申请的应用不推荐使用，多进程操作可能会损坏持久化文件，导致数据丢失。
+本接口提供给申请了[dataGroupId](js-apis-data-preferences.md#options10)的应用进行使用，未申请的应用不推荐使用（监听不到数据变更），多进程操作可能会损坏持久化文件，导致数据丢失。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -2376,7 +2302,7 @@ off(type: 'multiProcessChange', callback?: Callback<string>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定值'multiProcessChange'，表示多进程间的数据变更。 |
-| callback | Callback<string> | 否 | 需要取消的回调函数，不填写则全部取消。 |
+| callback | Callback<string> | 否 | 需要取消的回调函数，若不填写，表示取消所有已注册的回调函数；若填写，表示只取消指定的回调函数。 |
 
 **错误码：**
 
@@ -2385,35 +2311,38 @@ off(type: 'multiProcessChange', callback?: Callback<string>): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
-| 15500000 | Inner error. |
+| 15500000 | Inner error.  适用版本：11+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let observer = (key: string) => {
-4. console.info("The key " + key + " changed.");
-5. }
-6. dataPreferences.on('multiProcessChange', observer);
-7. dataPreferences.putSync('startup', 'auto');
-8. dataPreferences.flush((err: BusinessError) => {
-9. if (err) {
-10. console.error("Failed to flush. Cause: " + err);
-11. return;
-12. }
-13. console.info("Succeeded in flushing.");
-14. })
-15. dataPreferences.off('multiProcessChange', observer);
+let observer = (key: string) => {
+  console.info("The key " + key + " changed.");
+}
+dataPreferences.on('multiProcessChange', observer);
+dataPreferences.putSync('startup', 'auto');
+dataPreferences.flush((err: BusinessError) => {
+  if (err) {
+    console.error("Failed to flush. code =" + err.code + ", message = " + err.message);
+    return;
+  }
+  console.info("Succeeded in flushing.");
+})
+dataPreferences.off('multiProcessChange', observer);
 ```
 
 ### off('dataChange')12+
 
-PhonePC/2in1TabletTVWearable
-
 off(type: 'dataChange', keys: Array<string>, callback?: Callback<Record<string, ValueType>>): void
 
 取消精确订阅数据变更。
+
+**配对调用：**
+
+* 与[on('dataChange')](js-apis-data-preferences.md#ondatachange12)成对使用，用于取消精确数据变更订阅。
+* 如果不需要监听特定Key的数据变更，建议及时调用off取消订阅。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2424,8 +2353,8 @@ off(type: 'dataChange', keys: Array<string>, callback?: Callback<Record<string, 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定值'dataChange'，表示精确的数据变更。 |
-| keys | Array<string> | 是 | 需要取消订阅的key集合，当keys为空数组时，表示取消订阅全部key；当keys为非空数组时，表示只取消订阅key集合中的key。 |
-| callback | Callback<Record<string, [ValueType](js-apis-data-preferences.md#valuetype)>> | 否 | 需要取消的回调函数，若callback不填写，表示所有的callback都需要处理；若callback填写，表示只处理该callback。 |
+| keys | Array<string> | 是 | 需要取消订阅的Key集合，当Keys为空数组时，表示取消订阅全部Key；当Keys为非空数组时，表示只取消订阅Key集合中的Key。 |
+| callback | Callback<Record<string, [ValueType](js-apis-data-preferences.md#valuetype)>> | 否 | 需要取消的回调函数，若不填写，表示取消所有已注册的回调函数；若填写，表示只取消指定的回调函数。 |
 
 **错误码：**
 
@@ -2438,32 +2367,30 @@ off(type: 'dataChange', keys: Array<string>, callback?: Callback<Record<string, 
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let observer = (data: Record<string, preferences.ValueType>) => {
-4. for (const keyValue of Object.entries(data)) {
-5. console.info(`observer : ${keyValue}`);
-6. }
-7. console.info("The observer called.");
-8. }
-9. let keys = ['name', 'age'];
-10. dataPreferences.on('dataChange', keys, observer);
-11. dataPreferences.putSync('name', 'xiaohong');
-12. dataPreferences.putSync('weight', 125);
-13. dataPreferences.flush((err: BusinessError) => {
-14. if (err) {
-15. console.error("Failed to flush. Cause: " + err);
-16. return;
-17. }
-18. console.info("Succeeded in flushing.");
-19. })
-20. dataPreferences.off('dataChange', keys, observer);
+let observer = (data: Record<string, preferences.ValueType>) => {
+  for (const keyValue of Object.entries(data)) {
+    console.info(`observer : ${keyValue}`);
+  }
+  console.info("The observer called.");
+}
+let keys = ['name', 'age'];
+dataPreferences.on('dataChange', keys, observer);
+dataPreferences.putSync('name', 'xiaohong');
+dataPreferences.putSync('weight', 125);
+dataPreferences.flush((err: BusinessError) => {
+  if (err) {
+    console.error("Failed to flush. code =" + err.code + ", message = " + err.message);
+    return;
+  }
+  console.info("Succeeded in flushing.");
+})
+dataPreferences.off('dataChange', keys, observer);
 ```
 
 ## ValueType
-
-PhonePC/2in1TabletTVWearable
 
 type ValueType = number | string | boolean | Array<number> | Array<string> | Array<boolean> | Uint8Array | object | bigint
 

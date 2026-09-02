@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 设备状态感知错误码
 breadcrumb: API参考 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > 错误码 > 设备状态感知错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:57+08:00
-doc_updated_at: 2026-04-03
-content_hash: sha256:d7988984a3a00b2c06e59de1932c3ef4e3be6a73834bcf7c4e16950686f52fb9
+scraped_at: 2026-09-02T15:02:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:aa12dfa09e534531117c92fcc4c4502d1bc7b94a5b7083c4bf0fbbb5b0cbd070
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码](errorcode-universal.md)说明文档。
 
 ## 32500001 服务异常
-
-Phone
 
 **错误信息**
 
@@ -35,8 +33,6 @@ Service exception.
 
 ## 32500002 订阅失败
 
-Phone
-
 **错误信息**
 
 Subscription failed.
@@ -55,8 +51,6 @@ Subscription failed.
 2. 连续重试3次不可用则停止尝试。
 
 ## 32500003 取消订阅失败
-
-Phone
 
 **错误信息**
 

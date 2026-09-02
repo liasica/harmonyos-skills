@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui
 title: ArkTS卡片开发（推荐）
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:24+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:56109272a964f6966148d37a620e9dedeaa6c00ecd555cb783404ed063437b47
+scraped_at: 2026-09-02T14:49:57+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:04de3529a376623414108e0eb17f403cc4ab9db9ea80ff2ec1a853c47e2a34c3
 ---
 
 * **[ArkTS卡片概述](arkts-form-overview.md)**
@@ -15,4 +15,5 @@ content_hash: sha256:56109272a964f6966148d37a620e9dedeaa6c00ecd555cb783404ed0634
 * **[ArkTS卡片进程模型](arkts-ui-widget-process.md)**
 * **[ArkTS卡片提供方开发指导](arkts-ui-widget.md)**
 * **[互动卡片开发](arkts-ui-liveform.md)**
+* **[ArkTS卡片最佳实践](arkts-ui-best-practice.md)**
 * **[ArkTS卡片适配常见问题](arkts-ui-widget-adapt-faq.md)**

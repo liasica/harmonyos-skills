@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-avsession-
 title: 如何将图片合成视频
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频编解码（AVCodec） > 如何将图片合成视频
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:45+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:06+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:38bef282e61068c9892cd9560efb74f886c47b6e9d3024298ff5c303e8dddf56
 ---
 

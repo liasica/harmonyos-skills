@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-m
 title: "@ohos.multimodalInput.mouseEvent (鼠标输入事件)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.mouseEvent (鼠标输入事件)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:14+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:1091304778e594dcc004cb605cf1c206490a1762453958e80d8f4fcb51bff47a
+scraped_at: 2026-09-02T15:02:08+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7e8279ba4f171853aff5bad620276e60bf978523a1399fbfd05bc9e7592a079a
 ---
 
 设备上报的鼠标事件，继承自[InputEvent](js-apis-inputevent.md)。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { Action, Button, Axis, AxisValue, MouseEvent } from '@kit.InputKit';
+```js
+import { MouseAction, Button, Axis, AxisValue, MouseToolType, MouseEvent } from '@kit.InputKit';
 ```
 
 ## Action
-
-PhonePC/2in1TabletTVWearable
 
 鼠标事件类型。
 
@@ -44,8 +40,6 @@ PhonePC/2in1TabletTVWearable
 
 ## Button
 
-PhonePC/2in1TabletTVWearable
-
 鼠标按键。
 
 **系统能力：** SystemCapability.MultimodalInput.Input.Core
@@ -63,8 +57,6 @@ PhonePC/2in1TabletTVWearable
 
 ## Axis
 
-PhonePC/2in1TabletTVWearable
-
 鼠标轴类型。
 
 **系统能力：** SystemCapability.MultimodalInput.Input.Core
@@ -77,8 +69,6 @@ PhonePC/2in1TabletTVWearable
 
 ## AxisValue
 
-PhonePC/2in1TabletTVWearable
-
 鼠标轴类型和轴的值。
 
 **系统能力：** SystemCapability.MultimodalInput.Input.Core
@@ -89,8 +79,6 @@ PhonePC/2in1TabletTVWearable
 | value | number | 否 | 否 | 鼠标轴的值。 |
 
 ## ToolType11+
-
-PhonePC/2in1TabletTVWearable
 
 工具类型。
 
@@ -105,8 +93,6 @@ PhonePC/2in1TabletTVWearable
 
 ## MouseEvent
 
-PhonePC/2in1TabletTVWearable
-
 鼠标事件。
 
 **系统能力：** SystemCapability.MultimodalInput.Input.Core
@@ -114,12 +100,12 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | action | [Action](js-apis-mouseevent.md#action) | 否 | 否 | 鼠标事件类型。 |
-| screenX | number | 否 | 否 | 该鼠标事件以指定屏幕左上角为原点的相对坐标系的X坐标。当前仅支持整数。 |
-| screenY | number | 否 | 否 | 该鼠标事件以指定屏幕左上角为原点的相对坐标系的Y坐标。当前仅支持整数。 |
-| windowX | number | 否 | 否 | 鼠标所在窗口左上角为原点的相对坐标系的X坐标。当前仅支持整数。 |
-| windowY | number | 否 | 否 | 鼠标所在窗口左上角为原点的相对坐标系的Y坐标。当前仅支持整数。 |
-| rawDeltaX | number | 否 | 否 | 鼠标当前事件相对于上次事件的X坐标偏移值。当前仅支持整数。 |
-| rawDeltaY | number | 否 | 否 | 鼠标当前事件相对于上次事件的Y坐标偏移值。当前仅支持整数。 |
+| screenX | number | 否 | 否 | 该鼠标事件以指定屏幕左上角为原点的相对坐标系的X坐标。当前仅支持整数，单位为像素（px）。 |
+| screenY | number | 否 | 否 | 该鼠标事件以指定屏幕左上角为原点的相对坐标系的Y坐标。当前仅支持整数，单位为像素（px）。 |
+| windowX | number | 否 | 否 | 鼠标所在窗口左上角为原点的相对坐标系的X坐标。当前仅支持整数，单位为像素（px）。 |
+| windowY | number | 否 | 否 | 鼠标所在窗口左上角为原点的相对坐标系的Y坐标。当前仅支持整数，单位为像素（px）。 |
+| rawDeltaX | number | 否 | 否 | 鼠标当前事件相对于上次事件的X坐标偏移值。当前仅支持整数，单位为像素（px）。 |
+| rawDeltaY | number | 否 | 否 | 鼠标当前事件相对于上次事件的Y坐标偏移值。当前仅支持整数，单位为像素（px）。 |
 | button | [Button](js-apis-mouseevent.md#button) | 否 | 否 | 鼠标按键。 |
 | pressedButtons | [Button](js-apis-mouseevent.md#button)[] | 否 | 否 | 当前处于按下状态的鼠标按键。 |
 | axes | [AxisValue](js-apis-mouseevent.md#axisvalue)[] | 否 | 否 | 鼠标轴类型和轴的值。 |
@@ -133,5 +119,5 @@ PhonePC/2in1TabletTVWearable
 | numLock | boolean | 否 | 否 | 当前numLock是否处于使能状态。  true表示使能状态，false表示处于未使能状态。 |
 | scrollLock | boolean | 否 | 否 | 当前scrollLock是否处于使能状态。  true表示使能状态，false表示处于未使能状态。 |
 | toolType11+ | [ToolType](js-apis-mouseevent.md#tooltype11) | 否 | 否 | 工具类型。 |
-| globalX20+ | number | 否 | 是 | 该鼠标事件以主屏左上角为原点的全局坐标系的X坐标。作为出参时，由系统上报。 |
-| globalY20+ | number | 否 | 是 | 该鼠标事件以主屏左上角为原点的全局坐标系的Y坐标。作为出参时，由系统上报。 |
+| globalX20+ | number | 否 | 是 | 该鼠标事件以主屏左上角为原点的全局坐标系的X坐标，单位为像素（px）。作为出参时，由系统上报。 |
+| globalY20+ | number | 否 | 是 | 该鼠标事件以主屏左上角为原点的全局坐标系的Y坐标，单位为像素（px）。作为出参时，由系统上报。 |

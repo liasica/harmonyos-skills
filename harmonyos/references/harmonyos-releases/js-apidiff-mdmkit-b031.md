@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-mdmkit-b031
 title: MDM Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Developer Beta2引入的API > MDM Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Developer Beta2引入的API > MDM Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:36:41+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:44+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:21f709d507fa1054a1926e73d2721338f30a2b4e66847bf395aee23a69a032be
 ---
 

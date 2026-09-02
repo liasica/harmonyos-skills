@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ohos-abi
 title: HarmonyOS ABI
 breadcrumb: 指南 > NDK开发 > 硬件兼容性 > HarmonyOS ABI
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:33+08:00
+scraped_at: 2026-09-02T15:00:18+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:34981fa5ae740c2fd313fe6a31801fc1a35590e9a2f1a5033a2c57931d744219
+content_hash: sha256:2b3addbce0ed8c717bd51858cf35cd1a15916087e7c4fb6f766b8e304d74129b
 ---
 
 HarmonyOS系统支持丰富的设备形态，支持多种架构指令集，支持多种操作系统内核；HarmonyOS遵循“OHOS”ABI定义，保持与社区ABI的一致性。
@@ -72,19 +72,19 @@ HarmonyOS系统采用ELF文件格式作为全系统的二进制文件格式，�
 
 在HarmonyOS的C++工程中，找到C++代码所在项目build-profile.json5文件buildOption/externalNativeOptions字段，添加abiFilters字段：
 
-```
-1. {
-2. "apiType": "stageMode",
-3. "buildOption": {
-4. "externalNativeOptions": {
-5. "path": "./src/main/cpp/CMakeLists.txt",
-6. "arguments": "",
-7. "abiFilters": [
-8. "arm64-v8a"
-9. ]
-10. }
-11. }
-12. }
+```json
+{
+    "apiType": "stageMode",
+    "buildOption": {
+        "externalNativeOptions": {
+            "path": "./src/main/cpp/CMakeLists.txt",
+            "arguments": "",
+            "abiFilters": [
+                "arm64-v8a"
+            ]
+        }
+    }
+}
 ```
 
 **注意**：如果DevEco Studio中不设置abiFilters字段，则默认配置的指定架构为：arm64-v8a。

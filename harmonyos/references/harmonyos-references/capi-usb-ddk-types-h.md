@@ -3,16 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-usb-
 title: usb_ddk_types.h
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 头文件 > usb_ddk_types.h
 category: harmonyos-references
-scraped_at: 2026-04-29T14:01:24+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:9945fc3b3ea076fcb76ca6738af22641cfd014c71ccaa9266eab4eb1fad804fb
+scraped_at: 2026-09-02T15:02:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c0303347503518ae599847171dad09d17612df94fdf6c5f1de22cc310cf17f3a
 ---
 
 ## 概述
 
-PC/2in1
-
-提供USB DDK中的枚举变量、结构体定义与宏定义。
+提供USB DDK中的枚举类型与结构体定义，包括USB设备描述、控制传输、请求管道等核心数据结构，帮助开发者便捷地进行驱动开发。
 
 **引用文件：** <usb/usb\_ddk\_types.h>
 
@@ -26,30 +24,25 @@ PC/2in1
 
 ## 汇总
 
-PC/2in1
-
 ### 结构体
-
-PC/2in1
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| [UsbControlRequestSetup](capi-usbddk-usbcontrolrequestsetup.md) | \_\_attribute\_\_((aligned(8))) UsbControlRequestSetup | 控制传输setup包，对应USB协议中的Setup Data。 |
-| [UsbDeviceDescriptor](capi-usbddk-usbdevicedescriptor.md) | \_\_attribute\_\_((aligned(8))) UsbDeviceDescriptor | 标准设备描述符，对应USB协议中Standard Device Descriptor。 |
-| [UsbConfigDescriptor](capi-usbddk-usbconfigdescriptor.md) | \_\_attribute\_\_((packed)) UsbConfigDescriptor | 标准配置描述符，对应USB协议中Standard Configuration Descriptor。 |
-| [UsbInterfaceDescriptor](capi-usbddk-usbinterfacedescriptor.md) | \_\_attribute\_\_((packed)) UsbInterfaceDescriptor | 标准接口描述符，对应USB协议中Standard Interface Descriptor。 |
-| [UsbEndpointDescriptor](capi-usbddk-usbendpointdescriptor.md) | \_\_attribute\_\_((packed)) UsbEndpointDescriptor | 标准端点描述符，对应USB协议中Standard Endpoint Descriptor。 |
-| [UsbDdkEndpointDescriptor](capi-usbddk-usbddkendpointdescriptor.md) | UsbDdkEndpointDescriptor | 端点描述符。 |
-| [UsbDdkInterfaceDescriptor](capi-usbddk-usbddkinterfacedescriptor.md) | UsbDdkInterfaceDescriptor | 接口描述符。 |
+| [UsbControlRequestSetup](capi-usbddk-usbcontrolrequestsetup.md) | UsbControlRequestSetup | 控制传输setup包，对应USB协议中的Setup Data。 |
+| [UsbDeviceDescriptor](capi-usbddk-usbdevicedescriptor.md) | UsbDeviceDescriptor | 标准设备描述符，对应USB协议中Standard Device Descriptor。 |
+| [UsbConfigDescriptor](capi-usbddk-usbconfigdescriptor.md) | UsbConfigDescriptor | 标准配置描述符，对应USB协议中Standard Configuration Descriptor。 |
+| [UsbInterfaceDescriptor](capi-usbddk-usbinterfacedescriptor.md) | UsbInterfaceDescriptor | 标准接口描述符，对应USB协议中Standard Interface Descriptor。 |
+| [UsbEndpointDescriptor](capi-usbddk-usbendpointdescriptor.md) | UsbEndpointDescriptor | 标准端点描述符，对应USB协议中Standard Endpoint Descriptor。 |
+| [UsbDdkEndpointDescriptor](capi-usbddk-usbddkendpointdescriptor.md) | UsbDdkEndpointDescriptor | 端点描述符，包含标准端点描述符和未做解析的描述符信息。 |
+| [UsbDdkInterfaceDescriptor](capi-usbddk-usbddkinterfacedescriptor.md) | UsbDdkInterfaceDescriptor | 接口描述符，包含标准接口描述符和端点描述符等信息。 |
 | [UsbDdkInterface](capi-usbddk-usbddkinterface.md) | UsbDdkInterface | USB接口，是特定接口下备用设置的集合。 |
-| [UsbDdkConfigDescriptor](capi-usbddk-usbddkconfigdescriptor.md) | UsbDdkConfigDescriptor | 配置描述符。 |
-| [UsbRequestPipe](capi-usbddk-usbrequestpipe.md) | \_\_attribute\_\_((aligned(8))) UsbRequestPipe | 请求管道。 |
-| [UsbDeviceMemMap](capi-usbddk-usbdevicememmap.md) | UsbDeviceMemMap | 设备内存映射，通过[OH\_Usb\_CreateDeviceMemMap](capi-usb-ddk-api-h.md#oh_usb_createdevicememmap)创建设备内存映射，使用内存映射后的缓冲区，获得更好的性能。 |
-| [Usb\_DeviceArray](capi-usbddk-usb-devicearray.md) | Usb\_DeviceArray | 设备ID清单，用于存放[OH\_Usb\_GetDevices](capi-usb-ddk-api-h.md#oh_usb_getdevices)接口获取到的设备ID列表和设备数量。 |
+| [UsbDdkConfigDescriptor](capi-usbddk-usbddkconfigdescriptor.md) | UsbDdkConfigDescriptor | 配置描述符，包含标准配置描述符和接口描述符等信息。 |
+| [UsbRequestPipe](capi-usbddk-usbrequestpipe.md) | UsbRequestPipe | 请求管道，是USB数据传输请求的抽象，用于描述USB数据传输的基本配置参数，包括接口句柄、端点地址和超时时间。适用于需要进行USB数据传输的场景。 |
+| [UsbDeviceMemMap](capi-usbddk-usbdevicememmap.md) | UsbDeviceMemMap | 设备内存映射，通过[OH\_Usb\_CreateDeviceMemMap](capi-usb-ddk-api-h.md#oh_usb_createdevicememmap)创建，使用映射后的缓冲区可提升数据传输性能。 |
+| [Usb\_DeviceArray](capi-usbddk-usb-devicearray.md) | Usb\_DeviceArray | 设备ID数组，用于存放[OH\_Usb\_GetDevices](capi-usb-ddk-api-h.md#oh_usb_getdevices)接口获取到的设备ID列表和设备数量。开发者申请设备ID数组，使用完结构体后需释放申请的内存，否则会造成资源泄漏。 |
+| [Usb\_NonRootHubArray](capi-usbddk-usb-nonroothubarray.md) | Usb\_NonRootHubArray | 非根集线器数组，用于存放[OH\_Usb\_GetNonRootHubs](capi-usb-ddk-api-h.md#oh_usb_getnonroothubs)接口获取到的非根集线器设备ID数组和数量。开发者申请非根集线器ID数组，使用完结构体后需释放申请的内存，否则会造成资源泄漏。 |
 
 ### 枚举
-
-PC/2in1
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -57,14 +50,10 @@ PC/2in1
 
 ## 枚举类型说明
 
-PC/2in1
-
 ### UsbDdkErrCode
 
-PC/2in1
-
-```
-1. enum UsbDdkErrCode
+```c
+enum UsbDdkErrCode
 ```
 
 **描述**
@@ -77,11 +66,11 @@ USB DDK 错误码定义。
 | --- | --- |
 | USB\_DDK\_SUCCESS = 0 | 操作成功。 |
 | USB\_DDK\_FAILED = -1 | 操作失败。  **废弃版本：** 16 |
-| USB\_DDK\_NO\_PERM = 201 | 没有权限。  **起始版本：** 14 |
-| USB\_DDK\_INVALID\_PARAMETER = 401 | 非法参数，在API version 16之前值为-2。 |
-| USB\_DDK\_MEMORY\_ERROR = 27400001 | 内存相关的错误，包括：内存不足、内存数据拷贝失败、内存申请失败等，在API version 16之前值为-3。 |
-| USB\_DDK\_INVALID\_OPERATION = 27400002 | 非法操作，在API version 16之前值为-4。 |
-| USB\_DDK\_NULL\_PTR = -5 | 空指针异常。  **废弃版本：** 16 |
-| USB\_DDK\_DEVICE\_BUSY = -6 | 设备忙。  **废弃版本：** 16 |
-| USB\_DDK\_IO\_FAILED = 27400003 | 设备I/O操作失败。  **起始版本：** 14 |
-| USB\_DDK\_TIMEOUT = 27400004 | 传输超时，在API version 16之前值为-7。 |
+| USB\_DDK\_NO\_PERM = 201 | 没有权限。请检查确保应用已获取ohos.permission.ACCESS\_DDK\_USB权限。  **起始版本：** 14 |
+| USB\_DDK\_INVALID\_PARAMETER = 401 | 非法参数。请检查传入参数的有效性，包括指针是否为空、数值范围是否合法等，在API version 16之前值为-2。 |
+| USB\_DDK\_MEMORY\_ERROR = 27400001 | 内存相关的错误，包括：内存不足、内存数据拷贝失败、内存申请失败等。请检查系统可用内存是否充足、内存操作参数是否正确，在API version 16之前值为-3。 |
+| USB\_DDK\_INVALID\_OPERATION = 27400002 | 非法操作，如在设备未初始化时调用接口、在错误状态下执行操作等。请检查DDK是否已初始化、接口句柄是否有效等，在API version 16之前值为-4。 |
+| USB\_DDK\_NULL\_PTR = -5 | 空指针异常，如传入的指针参数为空。请检查传入的指针参数是否有效。  **废弃版本：** 16 |
+| USB\_DDK\_DEVICE\_BUSY = -6 | 设备忙，如设备正在执行其他操作或设备资源被占用。请等待设备空闲后重试，或释放已占用的设备资源。  **废弃版本：** 16 |
+| USB\_DDK\_IO\_FAILED = 27400003 | 设备I/O操作失败。请检查设备连接是否正常、设备是否支持该操作。  **起始版本：** 14 |
+| USB\_DDK\_TIMEOUT = 27400004 | 传输超时。请检查设备响应是否正常或适当增加超时时间，在API version 16之前值为-7。 |

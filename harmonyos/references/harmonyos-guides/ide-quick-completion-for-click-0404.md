@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-quick-com
 title: 点击操作完成快
 breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 附录 > 体检规则 > 点击操作完成快
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:47:03+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ad7e6de4a5bf0378adf3f02429f41ce767c0d428d94a3b04816d0958fad61c32
+scraped_at: 2026-09-02T15:00:26+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:a0adf091f9777e26481e313cb8d17a61c03e7b8cb75227aa3022b92a12dd477d
 ---
 
 ## DevEco Studio 6.0.1 Beta1及以上版本
 
 ### 规则详情
 
-应用内点击操作完成时延应≤ 900毫秒；时间起点：点击离手；时间终点：转场页面所有占位符加载完成。
+应用内点击操作完成时延应≤900ms；时间起点：点击离手；时间终点：转场页面所有占位符加载完成。
 
 ### 检测逻辑
 
@@ -21,7 +21,7 @@ content_hash: sha256:ad7e6de4a5bf0378adf3f02429f41ce767c0d428d94a3b04816d0958fad
 1. 利用光流法对下次操作前的多张截图进行检测，判断出轮播区与视频区。
 2. 检测非轮播区与非视频区是否加载完成：默认下一次操作前页面已经加载完成，并以下次操作前的最后一张截图为目标图片，利用二分法在缓存的图片中搜索。
 
-   说明
+   **说明** 
 
    若页面出现第二次刷新行为时，将以第二次刷新后呈现的页面作为加载完成页面（即目标图片），首次刷新结果不作为参考。
 
@@ -38,13 +38,13 @@ content_hash: sha256:ad7e6de4a5bf0378adf3f02429f41ce767c0d428d94a3b04816d0958fad
 
 ### 规则详情
 
-时间起点：点击离手；时间终点：转场页面所有占位符加载完成；应用/元服务内点击操作完成时延应≤ 1600毫秒。
+时间起点：点击离手；时间终点：转场页面所有占位符加载完成；应用/元服务内点击操作完成时延应≤ 1600ms。
 
 ### 检测逻辑
 
 点击后，经过1600ms后截图，检测图片是否存在白块。白块检测逻辑为：AppAnalyzer通过真实应用训练的白块检测AI模型，进行页面白块识别。例如：如下左图输入到白块检测AI模型后，可以识别到白块位置，如下右图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/QM6uChpqQ2aHqR5LSiZ3qw/zh-cn_image_0000002530753280.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/foDWcpv1QB2O5OAfhc838w/zh-cn_image_0000002561833195.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/iReeMqBLSS6gfrQlvcMGPw/zh-cn_image_0000002731542447.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/zk0aAQPoQMiAH9PUoWfqcg/zh-cn_image_0000002731382471.png)
 
 ### 计算逻辑
 

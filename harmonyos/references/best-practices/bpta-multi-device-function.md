@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 多设备功能开发
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备功能开发 > 多设备功能开发
 category: best-practices
-scraped_at: 2026-04-28T08:21:33+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:eee35aac2c87a7a485b327cb04e781252e4f0d524f6d1a401ce88fca3f418110
+scraped_at: 2026-09-02T15:03:19+08:00
+doc_updated_at: 2026-08-17
+content_hash: sha256:39b2862f0f0cbd17c8c181d2bcbab86b3ab90dc8e3f8b1dd237d088a56d2d1e2
 ---
 
 应用开发至少包含两部分工作： UI页面开发和底层功能开发（部分需要联网的应用还会涉及服务端开发）。前面章节介绍了如何解决页面适配的问题，本章节主要介绍应用如何解决设备系统能力差异的兼容问题。
@@ -20,7 +20,7 @@ content_hash: sha256:eee35aac2c87a7a485b327cb04e781252e4f0d524f6d1a401ce88fca3f4
 * **要求能力集**：应用需要的系统能力集合，在应用配置文件中配置。
 * **联想能力集**：开发应用时DevEco Studio可联想的API所在的系统能力集合，在应用配置文件中配置。
 
-说明
+**说明** 
 
 * 只有当应用要求能力集是设备支持能力集的子集的时候，应用才可以在该设备上分发、安装和运行。
 * 系统能力使用可参考[系统能力SystemCapability使用指南](../harmonyos-references/syscap.md)。
@@ -36,43 +36,17 @@ content_hash: sha256:eee35aac2c87a7a485b327cb04e781252e4f0d524f6d1a401ce88fca3f4
 
 如果某个系统能力没有写入应用的要求能力集中，那么在使用前需要判断设备是否支持该系统能力。
 
-* 方法1：canIUse()接口帮助开发者来判断该设备是否支持某个特定的syscap。
+* [canIUse()](../harmonyos-references/js-apis-syscap.md#caniuse)接口帮助开发者来判断该设备是否支持某个特定的syscap。
 
-  ```
-  1. if (canIUse('SystemCapability.Communication.NFC.Core')) {
-  2. hilog.info(0x0000, 'Index', `该设备支持SystemCapability.Communication.NFC.Core`);
-  3. } else {
-  4. hilog.error(0x0000, 'Index', `该设备不支持SystemCapability.Communication.NFC.Core`);
-  5. }
-  ```
-
-  [Index.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkUI/orientationDevelopment/entry/src/main/ets/pages/Index.ets#L33-L37)
-* 方法2：开发者可通过import的方式将模块导入，若当前设备不支持该模块，import的结果为undefined，开发者在使用其API时，需要判断其是否存在。
-
-  ```
-  1. import { nfcController } from '@kit.ConnectivityKit';
-  2. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-  4. @Entry
-  5. @Component
-  6. struct Index {
-  7. // ...
-
-  9. canIUseNfc(): void {
-  10. if (canIUse('SystemCapability.Communication.NFC.Core')) {
-  11. hilog.info(0x0000, 'Index', `该设备支持SystemCapability.Communication.NFC.Core`);
-  12. } else {
-  13. hilog.error(0x0000, 'Index', `该设备不支持SystemCapability.Communication.NFC.Core`);
-  14. }
-  15. // ...
-  16. }
-  17. // ...
-  18. }
+  ```typescript
+  if (canIUse('SystemCapability.Communication.NFC.Core')) {
+    hilog.info(0x0000, 'Index', `该设备支持SystemCapability.Communication.NFC.Core`);
+  } else {
+    hilog.error(0x0000, 'Index', `该设备不支持SystemCapability.Communication.NFC.Core`);
+  }
   ```
 
-  [Index.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkUI/orientationDevelopment/entry/src/main/ets/pages/Index.ets#L17-L70)
-
-说明
+**说明** 
 
 * 如果某系统能力是应用运行必须的，则要将其写入到应用的要求能力集中，以确保应用不会分发和安装到不符合要求的设备上。
 * 如果某系统能力不是应用运行必须的，则可以在运行时做动态判断，这样可以最大程度扩大应用的适用范围。
@@ -81,35 +55,35 @@ content_hash: sha256:eee35aac2c87a7a485b327cb04e781252e4f0d524f6d1a401ce88fca3f4
 
 DevEco Studio会根据创建的工程所支持的设备自动配置联想能力集和要求能力集，同时也支持开发者修改。
 
-```
-1. // syscap.json
-2. {
-3. "devices": {
-4. "general": [
-5. "default",
-6. "tablet"
-7. ],
-8. "custom": [
-9. {
-10. "Custom Device": [
-11. "SystemCapability.Communication.SoftBus.Core"
-12. ]
-13. }
-14. ]
-15. },
-16. "development": {
-17. "addedSysCaps": [
-18. "SystemCapability.Communication.NFC.Core"
-19. ]
-20. },
-21. "production": {
-22. "addedSysCaps": [],
-23. "removedSysCaps": []
-24. }
-25. }
+```json
+// syscap.json
+{
+    "devices": {
+        "general": [            
+            "default",
+            "tablet"
+        ],
+        "custom": [            
+            {
+                "Custom Device": [
+                    "SystemCapability.Communication.SoftBus.Core"
+                ]
+            }
+        ]
+    },
+    "development": {             
+        "addedSysCaps": [
+            "SystemCapability.Communication.NFC.Core"
+        ]
+    },
+    "production": {              
+        "addedSysCaps": [],      
+        "removedSysCaps": []     
+    }
+}
 ```
 
-说明
+**说明** 
 
 * 对于要求能力集，开发者修改时要十分慎重，修改不当会导致应用无法分发和安装到目标设备上。
 * 对于联想能力集，通过增加系统能力可以扩大DevEco Studio可联想的API范围。但要注意这些API可能在某些设备上不支持，使用前需要判断。

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-runnin
 title: 应用运行
 breadcrumb: FAQ > DevEco Studio > 应用运行
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:55+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:16+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:df58bde81c39a28a6a77bff301129b9a9dffa319d01726d38269ee219b021943
 ---
 

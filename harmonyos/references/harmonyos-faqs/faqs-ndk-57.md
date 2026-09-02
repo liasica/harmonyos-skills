@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-57
 title: HarmonyOS编译构建时如何指定编译架构信息
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > HarmonyOS编译构建时如何指定编译架构信息
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:39+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:18+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:930435ae2c7f89c167039a0ced6d35c19a5d7c4e91ace239056a265eddae5466
 ---
 

@@ -3,26 +3,23 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Counter
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > Counter
 category: harmonyos-references
-scraped_at: 2026-04-29T13:52:20+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:2ea32cb4cf87abaa4db5d0c7e8762bdb26f518ef436d947ae30bedf4dfafda24
+scraped_at: 2026-09-02T15:01:04+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9cc5116a12b2f8b31fe22e6788d47db39f9992f223ccc947d5a265ecf5e3928a
 ---
 
-计数器组件，提供相应的增加或者减少的计数操作。
+计数器组件，提供增加或减少的计数操作。适用于商品数量选择、参数调整等需要频繁修改数值的场景，帮助用户快速直观地调整数值。
 
-说明
+**说明** 
 
-该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 该组件从API版本26.0.0开始支持[WithTheme](ts-container-with-theme.md)。
 
 ## 子组件
-
-PhonePC/2in1TabletTVWearable
 
 可以包含子组件。
 
 ## 接口
-
-PhonePC/2in1TabletTVWearable
 
 Counter()
 
@@ -34,19 +31,17 @@ Counter()
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用属性](ts-component-general-attributes.md)外，还支持以下属性。
 
 ### enableInc10+
-
-PhonePC/2in1TabletTVWearable
 
 enableInc(value: boolean)
 
 设置“增加”按钮的禁用或使能。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -58,13 +53,13 @@ enableInc(value: boolean)
 
 ### enableDec10+
 
-PhonePC/2in1TabletTVWearable
-
 enableDec(value: boolean)
 
 设置“减少”按钮的禁用或使能。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -76,13 +71,9 @@ enableDec(value: boolean)
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用事件](ts-component-general-events.md)外，还支持以下事件：
 
 ### onInc
-
-PhonePC/2in1TabletTVWearable
 
 onInc(event: VoidCallback)
 
@@ -98,11 +89,9 @@ onInc(event: VoidCallback)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | [VoidCallback](ts-types.md#voidcallback12) | 是 | Counter数值增加的回调函数。 |
+| event | [VoidCallback](ts-types.md#voidcallback12) | 是 | Counter 数值增加的回调函数。 |
 
 ### onDec
-
-PhonePC/2in1TabletTVWearable
 
 onDec(event: VoidCallback)
 
@@ -118,51 +107,49 @@ onDec(event: VoidCallback)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | [VoidCallback](ts-types.md#voidcallback12) | 是 | Counter数值减少的回调函数。 |
+| event | [VoidCallback](ts-types.md#voidcallback12) | 是 | Counter 数值减少的回调函数。 |
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
+该示例展示了Counter组件的基本使用方法。点击+、-按钮可以修改计数器的数值。
 
-该示例展示了Counter组件的基本使用方法。点击+、-按钮可以修改value值。
+```ts
+// xxx.ets
+@Entry
+@Component
+struct CounterExample {
+  @State counterValue1: number = 0;
+  @State counterValue2: number = 0;
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct CounterExample {
-5. @State value1: number = 0;
-6. @State value2: number = 0;
+  build() {
+    Column({ space: 50 }) {
+      Counter() {
+        Text(this.counterValue1.toString())
+      }
+      .onInc(() => {
+        this.counterValue1++;
+      })
+      .onDec(() => {
+        this.counterValue1--;
+      })
 
-8. build() {
-9. Column({ space: 50 }) {
-10. Counter() {
-11. Text(this.value1.toString())
-12. }
-13. .onInc(() => {
-14. this.value1++;
-15. })
-16. .onDec(() => {
-17. this.value1--;
-18. })
-
-20. Counter() {
-21. Text(this.value2.toString())
-22. }
-23. .onInc(() => {
-24. this.value2++;
-25. })
-26. .onDec(() => {
-27. this.value2--;
-28. })
-29. .enableInc(true)
-30. .enableDec(false)
-31. }
-32. .width('100%')
-33. .height('100%')
-34. .justifyContent(FlexAlign.Center)
-35. }
-36. }
+      Counter() {
+        Text(this.counterValue2.toString())
+      }
+      .onInc(() => {
+        this.counterValue2++;
+      })
+      .onDec(() => {
+        this.counterValue2--;
+      })
+      .enableInc(true)
+      .enableDec(false)
+    }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/goDz_BeAQkO-o7B5FHAffA/zh-cn_image_0000002558606768.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/Zi0XjcfDSeilleCgEmSAwg/zh-cn_image_0000002706836084.gif)

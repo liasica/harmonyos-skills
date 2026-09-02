@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_g___re
 title: FG_ResolutionInfo
 breadcrumb: API参考 > 图形 > Graphics Accelerate Kit（图形加速服务） > C API > 头文件和结构体 > 结构体 > FG_ResolutionInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:47+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:0bf4238053ae728de7a5aafb52739ebed74f85aab60c92abbfc2df08a39a6a4c
+scraped_at: 2026-09-02T15:02:48+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4e6e8a250fa707f36bcce1659aaa5c80a6ff4c82b213f389553b3e626eb5fffd
 ---
 
 ## 概述
-
-PhoneTabletTV
 
 此结构体描述超帧输入输出图像的分辨率。
 
@@ -22,11 +20,7 @@ PhoneTabletTV
 
 ## 汇总
 
-PhoneTabletTV
-
 ### 成员变量
-
-PhoneTabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -36,14 +30,10 @@ PhoneTabletTV
 
 ## 结构体成员变量说明
 
-PhoneTabletTV
-
 ### inputColorResolution
 
-PhoneTabletTV
-
-```
-1. FG_Dimension2D FG_ResolutionInfo::inputColorResolution
+```c
+FG_Dimension2D FG_ResolutionInfo::inputColorResolution
 ```
 
 **描述**
@@ -52,10 +42,8 @@ PhoneTabletTV
 
 ### inputDepthStencilResolution
 
-PhoneTabletTV
-
-```
-1. FG_Dimension2D FG_ResolutionInfo::inputDepthStencilResolution
+```c
+FG_Dimension2D FG_ResolutionInfo::inputDepthStencilResolution
 ```
 
 **描述**
@@ -64,10 +52,8 @@ PhoneTabletTV
 
 ### outputColorResolution
 
-PhoneTabletTV
-
-```
-1. FG_Dimension2D FG_ResolutionInfo::outputColorResolution
+```c
+FG_Dimension2D FG_ResolutionInfo::outputColorResolution
 ```
 
 **描述**

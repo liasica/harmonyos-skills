@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-
 title: 使用环境
 breadcrumb: 指南 > 编写与调试应用 > 使用模拟器运行应用 > 概述 > 使用环境
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:39+08:00
-doc_updated_at: 2026-03-31
-content_hash: sha256:1838ef5867e7a351a0df2aac6e9ff6cff12af8f08ea45634fced655c61316e9d
+scraped_at: 2026-09-02T14:50:54+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:017526f69431b3c7c5bb12b7f775e5782e6c1d92bb11e7e2595997eea804d258
 ---
 
-模拟器在本地计算机上创建和运行，在运行和调试应用/元服务时可以保持良好的流畅性和稳定性，但是需要耗费一定的计算机资源，具体的运行环境要求如下。
+模拟器在本地计算机上创建和运行，能够在运行和调试应用/元服务时保持良好的流畅性和稳定性，但会占用一定的计算机资源，请确保预留充足的系统CPU和内存资源，具体的运行环境要求如下。
 
 Windows运行环境：
 

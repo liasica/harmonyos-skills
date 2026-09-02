@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: input开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > input开发指导
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:48+08:00
+scraped_at: 2026-09-02T14:59:21+08:00
 doc_updated_at: 2026-04-13
-content_hash: sha256:c278aacaf1a21f5acb5a156eeffa9cc2f603d878f92f46d68c401e3ca115743d
+content_hash: sha256:8791905a9f3a5e65dd52b796d437b53e5a455aedc3953fc26c3cf0e07cbbf77c
 ---
 
 input是交互式组件，用于接收用户数据。其类型可设置为日期、多选框和按钮等。具体用法请参考[input API](../harmonyos-references/js-components-basic-input.md)。
@@ -14,99 +14,99 @@ input是交互式组件，用于接收用户数据。其类型可设置为日期
 
 在pages/index目录下的hml文件中创建一个input组件。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <input type="text">
-4. Please enter the content
-5. </input>
-6. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width: 100%;
-4. height: 100%;
-5. flex-direction: column;
-6. justify-content: center;
-7. align-items: center;
-8. background-color: #F1F3F5;
-9. }
+```html
+<!-- xxx.hml -->
+<div class="container">       
+  <input type="text">             
+     Please enter the content
+  </input>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/noeFV2nHR1-b3DyepkEX2A/zh-cn_image_0000002558764592.png)
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F1F3F5;
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/SWrltlJ5SeyRmdmZG6i2hA/zh-cn_image_0000002736433087.png)
 
 ## 设置input类型
 
 通过设置type属性来定义input类型，如将input设置为button、date等。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <div class="div-button">
-4. <dialog class="dialogClass" id="dialogId">
-5. <div class="content">
-6. <text>this is a dialog</text>
-7. </div>
-8. </dialog>
-9. <input class="button" type="button" value="click" onclick="btnclick"></input>
-10. </div>
-11. <div class="content">
-12. <input onchange="checkboxOnChange" checked="true" type="checkbox"></input>
-13. </div>
-14. <div class="content">
-15. <input type="date" class="flex" placeholder="Enter date"></input>
-16. </div>
-17. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width: 100%;
-4. height: 100%;
-5. align-items: center;
-6. flex-direction: column;
-7. justify-content: center;
-8. background-color: #F1F3F5 ;
-9. }
-10. .div-button {
-11. flex-direction: column;
-12. align-items: center;
-13. }
-14. .dialogClass{
-15. width:80%;
-16. height: 200px;
-17. }
-18. .button {
-19. margin-top: 30px;
-20. width: 50%;
-21. }
-22. .content{
-23. width: 90%;
-24. height: 150px;
-25. align-items: center;
-26. justify-content: center;
-27. }
-28. .flex {
-29. width: 80%;
-30. margin-bottom:40px;
-31. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <div class="div-button">
+    <dialog class="dialogClass" id="dialogId">
+      <div class="content">
+        <text>this is a dialog</text>
+      </div>
+    </dialog>
+    <input class="button" type="button" value="click" onclick="btnclick"></input>
+  </div>
+  <div class="content">
+    <input onchange="checkboxOnChange" checked="true" type="checkbox"></input>
+  </div>
+  <div class="content">
+    <input type="date" class="flex" placeholder="Enter date"></input>
+  </div>
+</div>
 ```
 
-```
-1. // xxx.js
-2. export default {
-3. btnclick(){
-4. this.$element('dialogId').show()
-5. },
-6. }
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #F1F3F5 ;
+}
+.div-button {
+  flex-direction: column;
+  align-items: center;
+}
+.dialogClass{
+  width:80%;
+  height: 200px;
+}
+.button {
+  margin-top: 30px;
+  width: 50%;
+}
+.content{
+  width: 90%;
+  height: 150px;
+  align-items: center;
+  justify-content: center;
+}
+.flex {
+  width: 80%;
+  margin-bottom:40px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/PQeRvPbaTJC-JcDQwPSMDA/zh-cn_image_0000002558604936.gif)
+```js
+// xxx.js
+export default {
+  btnclick(){
+    this.$element('dialogId').show()
+  },
+}
+```
 
-说明
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/PCHyZnlRTmOGQCga2DwiIg/zh-cn_image_0000002706833932.gif)
+
+**说明** 
 
 仅当input类型为checkbox或radio时，当前组件选中的属性是checked才生效，默认值为false。
 
@@ -114,122 +114,122 @@ input是交互式组件，用于接收用户数据。其类型可设置为日期
 
 向input组件添加translate事件。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="content">
-3. <text style="margin-left: -7px;">
-4. <span>Enter text and then touch and hold what you've entered</span>
-5. </text>
-6. <input class="input" type="text" ontranslate="translate" placeholder="translate"> </input>
-7. </div>
-```
-
-```
-1. /* xxx.css */
-2. .content {
-3. width: 100%;
-4. height: 100%;
-5. flex-direction: column;
-6. align-items: center;
-7. justify-content: center;
-8. background-color: #F1F3F5;
-9. }
-10. .input {
-11. margin-top: 50px;
-12. width: 60%;
-13. placeholder-color: gray;
-14. }
-15. text{
-16. width:100%;
-17. font-size:25px;
-18. text-align:center;
-19. }
+```html
+<!-- xxx.hml -->
+<div class="content">
+    <text style="margin-left: -7px;">
+        <span>Enter text and then touch and hold what you've entered</span>
+    </text>
+    <input class="input" type="text" ontranslate="translate" placeholder="translate"> </input>
+</div>
 ```
 
+```css
+/* xxx.css */
+.content {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #F1F3F5;
+}
+.input {
+  margin-top: 50px;
+  width: 60%;
+  placeholder-color: gray;
+}
+text{
+  width:100%;
+  font-size:25px;
+  text-align:center;
+}
 ```
-1. // xxx.js
-2. import promptAction from '@ohos.promptAction'
 
-4. export default {
-5. translate(e) {
-6. promptAction.showToast({
-7. message: e.value,
-8. duration: 3000,
-9. });
-10. }
-11. }
+```js
+// xxx.js
+import promptAction from '@ohos.promptAction'
+
+export default {
+    translate(e) {
+        promptAction.showToast({
+            message: e.value,
+            duration: 3000,
+        });
+    }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/jx3AA7gMQeO4EHB3PMHpww/zh-cn_image_0000002589324461.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/oCXcBuxhSCmhzzjm0lZpPg/zh-cn_image_0000002736313039.gif)
 
 ## 设置输入提示
 
 通过对input组件添加showError方法来提示输入的错误原因。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="content">
-3. <input id="input" class="input" type="text"  maxlength="20" placeholder="Please input text" onchange="change">
-4. </input>
-5. <input class="button" type="button" value="Submit" onclick="buttonClick"></input>
-6. </div>
-```
-
-```
-1. /* xxx.css */
-2. .content {
-3. width: 100%;
-4. height: 100%;
-5. flex-direction: column;
-6. align-items: center;
-7. justify-content: center;
-8. background-color: #F1F3F5;
-9. }
-10. .input {
-11. width: 80%;
-12. placeholder-color: gray;
-13. }
-14. .button {
-15. width: 30%;
-16. margin-top: 50px;
-17. }
+```html
+<!-- xxx.hml -->
+<div class="content">
+  <input id="input" class="input" type="text"  maxlength="20" placeholder="Please input text" onchange="change">
+  </input>
+  <input class="button" type="button" value="Submit" onclick="buttonClick"></input>
+</div>
 ```
 
-```
-1. // xxx.js
-2. import promptAction from '@ohos.promptAction'
-3. export default {
-4. data:{
-5. value:'',
-6. },
-7. change(e){
-8. this.value = e.value;
-9. promptAction.showToast({
-10. message: "value: " + this.value,
-11. duration: 3000,
-12. });
-13. },
-14. buttonClick(e){
-15. if(this.value.length > 6){
-16. this.$element("input").showError({
-17. error:  'Up to 6 characters are allowed.'
-18. });
-19. }else if(this.value.length == 0){
-20. this.$element("input").showError({
-21. error:this.value + 'This field cannot be left empty.'
-22. });
-23. }else{
-24. promptAction.showToast({
-25. message: "success "
-26. });
-27. }
-28. },
-29. }
+```css
+/* xxx.css */
+.content {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #F1F3F5;
+}
+.input {
+  width: 80%;
+  placeholder-color: gray;
+}
+.button {
+  width: 30%;
+  margin-top: 50px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/p2k61_y4T8u_3xGQDcpCZA/zh-cn_image_0000002589244401.gif)
+```js
+// xxx.js
+import promptAction from '@ohos.promptAction'
+ export default {
+   data:{
+     value:'',
+   },
+   change(e){
+     this.value = e.value;
+     promptAction.showToast({
+     message: "value: " + this.value,
+       duration: 3000,
+      });
+   },
+   buttonClick(e){
+     if(this.value.length > 6){
+       this.$element("input").showError({
+         error:  'Up to 6 characters are allowed.'
+       });
+      }else if(this.value.length == 0){
+        this.$element("input").showError({
+          error:this.value + 'This field cannot be left empty.'
+        });
+      }else{
+        promptAction.showToast({
+          message: "success "
+        });
+      }
+   },
+ }
+```
 
-说明
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/REWmwfCsR2uG07T44zf6yA/zh-cn_image_0000002706673998.gif)
+
+**说明** 
 
 showError方法仅在input类型为text、email、date、time、number和password时生效。
 
@@ -237,76 +237,76 @@ showError方法仅在input类型为text、email、date、time、number和passwor
 
 根据场景选择不同类型的input输入框，完成信息录入。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <div class="label-item">
-4. <label>memorandum</label>
-5. </div>
-6. <div class="label-item">
-7. <label class="lab" target="input1">content:</label>
-8. <input class="flex" id="input1" placeholder="Enter content" />
-9. </div>
-10. <div class="label-item">
-11. <label class="lab" target="input3">date:</label>
-12. <input class="flex" id="input3" type="date" placeholder="Enter date" />
-13. </div>
-14. <div class="label-item">
-15. <label class="lab" target="input4">time:</label>
-16. <input class="flex" id="input4" type="time" placeholder="Enter time" />
-17. </div>
-18. <div class="label-item">
-19. <label class="lab" target="checkbox1">Complete:</label>
-20. <input class="flex" type="checkbox" id="checkbox1" style="width: 100px;height: 100px;" />
-21. </div>
-22. <div class="label-item">
-23. <input class="flex" type="button" id="button" value="save" onclick="btnclick"/>
-24. </div>
-25. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. flex-direction: column;
-4. background-color: #F1F3F5;
-5. }
-6. .label-item {
-7. align-items: center;
-8. border-bottom-width: 1px;border-color: #dddddd;
-9. }
-10. .lab {
-11. width: 400px;}
-12. label {
-13. padding: 30px;
-14. font-size: 30px;
-15. width: 320px;
-16. font-family: serif;
-17. color: #9370d8;
-18. font-weight: bold;
-19. }
-20. .flex {
-21. flex: 1;
-22. }
-23. .textareaPadding {
-24. padding-left: 100px;
-25. }
+```html
+<!-- xxx.hml -->
+<div class="container">    
+  <div class="label-item"> 
+    <label>memorandum</label>   
+  </div>    
+  <div class="label-item">        
+    <label class="lab" target="input1">content:</label>        
+    <input class="flex" id="input1" placeholder="Enter content" />    
+  </div>    
+  <div class="label-item">        
+    <label class="lab" target="input3">date:</label>        
+    <input class="flex" id="input3" type="date" placeholder="Enter date" />    
+  </div>    
+  <div class="label-item">        
+    <label class="lab" target="input4">time:</label>        
+    <input class="flex" id="input4" type="time" placeholder="Enter time" />    
+  </div>   
+  <div class="label-item">        
+    <label class="lab" target="checkbox1">Complete:</label>        
+    <input class="flex" type="checkbox" id="checkbox1" style="width: 100px;height: 100px;" />    
+  </div>    
+  <div class="label-item">        
+    <input class="flex" type="button" id="button" value="save" onclick="btnclick"/>    
+  </div>
+</div>
 ```
 
-```
-1. // xxx.js
-2. import promptAction from '@ohos.promptAction';
-3. export default {
-4. data: {
-5. },
-6. onInit() {
-7. },
-8. btnclick(e) {
-9. promptAction.showToast({
-10. message:'Saved successfully!'
-11. })
-12. }
-13. }
+```css
+/* xxx.css */
+.container {
+  flex-direction: column;
+  background-color: #F1F3F5;
+}
+.label-item {
+  align-items: center;
+  border-bottom-width: 1px;border-color: #dddddd;
+}
+.lab {
+  width: 400px;}
+label {
+  padding: 30px;
+  font-size: 30px;
+  width: 320px;
+  font-family: serif;
+  color: #9370d8;
+  font-weight: bold;
+}
+.flex {
+  flex: 1;
+}
+.textareaPadding {
+  padding-left: 100px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/JNLfFaV2TYCifsNDaUD2lw/zh-cn_image_0000002558764594.gif)
+```js
+// xxx.js
+import promptAction from '@ohos.promptAction';
+export default {
+  data: {
+  },
+  onInit() {
+  },
+  btnclick(e) {
+    promptAction.showToast({
+      message:'Saved successfully!'
+    })
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/iZV22s8HSTKhtxRppggCqw/zh-cn_image_0000002736433089.gif)

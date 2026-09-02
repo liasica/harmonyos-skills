@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-explor
 title: 应用中嵌入了Web窗口，能进行应用探索测试吗
 breadcrumb: FAQ > DevEco Testing > 探索测试 > 应用探索测试 > 应用中嵌入了Web窗口，能进行应用探索测试吗
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:37+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:c49685027629f5f111d36de02e8cbd37a7a3f3c7c5e796e27888b62f9cab3033
 ---
 

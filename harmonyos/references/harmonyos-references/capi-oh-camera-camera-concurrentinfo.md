@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: Camera_ConcurrentInfo
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 结构体 > Camera_ConcurrentInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:53+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:27ff697f3dae21ccfe96485fc7b3e98269353dd950bb2d756de134656a9dc1c1
+scraped_at: 2026-09-02T15:02:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:26285645ba07eeff96e2d28480d57300ac2f80a7f72291975f609450e9750e98
 ---
 
-```
-1. typedef struct Camera_ConcurrentInfo {...} Camera_ConcurrentInfo
+```c
+typedef struct Camera_ConcurrentInfo {...} Camera_ConcurrentInfo
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 相机并发能力信息。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

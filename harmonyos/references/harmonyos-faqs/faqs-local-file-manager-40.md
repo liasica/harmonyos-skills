@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: 如何获取文件的扩展名
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 如何获取文件的扩展名
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:30+08:00
-doc_updated_at: 2026-04-21
+scraped_at: 2026-09-02T15:21:52+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:f4e7b4c9077b792da34d50c9f751c976aaaa6c0b60b3c17bfd8cacd99c7ac4f4
 ---
 

@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-rdb-
 title: OH_Predicates
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 结构体 > OH_Predicates
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:36+08:00
-doc_updated_at: 2026-03-20
-content_hash: sha256:2bb5511959de174bde9d72ad77655b3511c7519a0b91aff7d63eb6c3e9acbce4
+scraped_at: 2026-09-02T15:00:43+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5deda8b711f48ec92b658884b4f6f9c04d15803f86e1cb0bd0230b8762ec17df
 ---
 
-```
-1. typedef struct {...} OH_Predicates
+```c
+typedef struct {...} OH_Predicates
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 表示谓词。
 
@@ -26,15 +24,11 @@ PhonePC/2in1TabletTVWearable
 
 ### 成员变量
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 描述 |
 | --- | --- |
 | int64\_t id | OH\_Predicates结构体的唯一标识符。 |
 
 ### 成员函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -48,7 +42,7 @@ PhonePC/2in1TabletTVWearable
 | [OH\_Predicates \*(\*isNotNull)(OH\_Predicates \*predicates, const char \*field)](capi-rdb-oh-predicates.md#isnotnull) | 函数指针，配置谓词以匹配值不为null的指定字段。  该方法等同于SQL语句中的“IS NOT NULL”。 |
 | [OH\_Predicates \*(\*like)(OH\_Predicates \*predicates, const char \*field, OH\_VObject \*valueObject)](capi-rdb-oh-predicates.md#like) | 函数指针，配置谓词以匹配数据字段为field且值类似于指定字符串的字段。  该方法等同于SQL语句中的“LIKE”。 |
 | [OH\_Predicates \*(\*between)(OH\_Predicates \*predicates, const char \*field, OH\_VObject \*valueObject)](capi-rdb-oh-predicates.md#between) | 函数指针，将谓词配置为匹配数据字段为field且其值在给定范围内的指定字段。  该方法等同于SQL语句中的“BETWEEN”。 |
-| [OH\_Predicates \*(\*notBetween)(OH\_Predicates \*predicates, const char \*field, OH\_VObject \*valueObject)](capi-rdb-oh-predicates.md#notbetween) | 函数指针，将谓词配置为匹配数据字段为field且其值超出给定范围内的指定字段。  该方法等同于SQL语句中的“NOT BETWEEN”。 |
+| [OH\_Predicates \*(\*notBetween)(OH\_Predicates \*predicates, const char \*field, OH\_VObject \*valueObject)](capi-rdb-oh-predicates.md#notbetween) | 函数指针，配置谓词以匹配数据字段为field且其值不在给定范围内的指定字段。  该方法等同于SQL语句中的“NOT BETWEEN”。 |
 | [OH\_Predicates \*(\*greaterThan)(OH\_Predicates \*predicates, const char \*field, OH\_VObject \*valueObject)](capi-rdb-oh-predicates.md#greaterthan) | 函数指针，配置谓词以匹配数据字段为field且值大于指定值valueObject的字段。  该方法等同于SQL语句中的“>”。 |
 | [OH\_Predicates \*(\*lessThan)(OH\_Predicates \*predicates, const char \*field, OH\_VObject \*valueObject)](capi-rdb-oh-predicates.md#lessthan) | 函数指针，配置谓词以匹配数据字段为field且值小于指定值valueObject的字段。  该方法等同于SQL语句中的“<”。 |
 | [OH\_Predicates \*(\*greaterThanOrEqualTo)(OH\_Predicates \*predicates, const char \*field, OH\_VObject \*valueObject)](capi-rdb-oh-predicates.md#greaterthanorequalto) | 函数指针，配置谓词以匹配数据字段为field且值大于或等于指定值valueObject的字段。  该方法等同于SQL语句中的“>=”。 |
@@ -57,22 +51,18 @@ PhonePC/2in1TabletTVWearable
 | [OH\_Predicates \*(\*distinct)(OH\_Predicates \*predicates)](capi-rdb-oh-predicates.md#distinct) | 函数指针，配置谓词以过滤重复记录并仅保留其中一个。  该方法等同于SQL语句中的“DISTINCT”。 |
 | [OH\_Predicates \*(\*limit)(OH\_Predicates \*predicates, unsigned int value)](capi-rdb-oh-predicates.md#limit) | 函数指针，设置最大数据记录数的谓词。  该方法等同于SQL语句中的“LIMIT”。 |
 | [OH\_Predicates \*(\*offset)(OH\_Predicates \*predicates, unsigned int rowOffset)](capi-rdb-oh-predicates.md#offset) | 函数指针，配置谓词以指定返回结果的起始位置。  该方法等同于SQL语句中的“OFFSET”。 |
-| [OH\_Predicates \*(\*groupBy)(OH\_Predicates \*predicates, char const \*const \*fields, int length)](capi-rdb-oh-predicates.md#groupby) | 函数指针，配置R谓词按指定列分组查询结果。  该方法等同于SQL语句中的“GROUP BY”。 |
-| [OH\_Predicates \*(\*in)(OH\_Predicates \*predicates, const char \*field, OH\_VObject \*valueObject)](capi-rdb-oh-predicates.md#in) | 函数指针，配置谓词以匹配数据字段为field且值在给定范围内的指定字段。  该方法等同于SQL语句中的“IN”。 |
-| [OH\_Predicates \*(\*notIn)(OH\_Predicates \*predicates, const char \*field, OH\_VObject \*valueObject)](capi-rdb-oh-predicates.md#notin) | 函数指针，配置谓词以匹配数据字段为field且值超出给定范围内的指定字段。  该方法等同于SQL语句中的“NOT IN”。 |
+| [OH\_Predicates \*(\*groupBy)(OH\_Predicates \*predicates, char const \*const \*fields, int length)](capi-rdb-oh-predicates.md#groupby) | 函数指针，配置谓词按指定列分组查询结果。  该方法等同于SQL语句中的“GROUP BY”。 |
+| [OH\_Predicates \*(\*in)(OH\_Predicates \*predicates, const char \*field, OH\_VObject \*valueObject)](capi-rdb-oh-predicates.md#in) | 函数指针，配置谓词以匹配数据字段为field且其值在给定集合内的指定字段。  该方法等同于SQL语句中的“IN”。 |
+| [OH\_Predicates \*(\*notIn)(OH\_Predicates \*predicates, const char \*field, OH\_VObject \*valueObject)](capi-rdb-oh-predicates.md#notin) | 函数指针，配置谓词以匹配数据字段为field且其值不在给定集合内的指定字段。  该方法等同于SQL语句中的“NOT IN”。 |
 | [OH\_Predicates \*(\*clear)(OH\_Predicates \*predicates)](capi-rdb-oh-predicates.md#clear) | 函数指针，清空谓词。 |
 | [int (\*destroy)(OH\_Predicates \*predicates)](capi-rdb-oh-predicates.md#destroy) | 销毁OH\_Predicates对象，并回收该对象占用的内存。 |
 
 ## 成员函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### equalTo()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Predicates *(*equalTo)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
+```c
+OH_Predicates *(*equalTo)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
 ```
 
 **描述**
@@ -86,8 +76,8 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | OH\_Predicates \*predicates | 表示指向OH\_Predicates实例的指针。 |
-| const char \*field | 数据库表中的列名 |
-| [OH\_VObject](capi-rdb-oh-vobject.md) \*valueObject | 表示指向[OH\_VObject](capi-rdb-oh-vobject.md)实例的指针，指示要与谓词匹配的值。 |
+| const char \*field | 数据库表中的列名，不能为空指针。 |
+| OH\_VObject \*valueObject | 表示指向[OH\_VObject](capi-rdb-oh-vobject.md)实例的指针，指示要与谓词匹配的值。 |
 
 **返回：**
 
@@ -97,10 +87,8 @@ PhonePC/2in1TabletTVWearable
 
 ### notEqualTo()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Predicates *(*notEqualTo)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
+```c
+OH_Predicates *(*notEqualTo)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
 ```
 
 **描述**
@@ -116,7 +104,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | OH\_Predicates \*predicates | 表示指向OH\_Predicates实例的指针。 |
-| const char \*field | 数据库表中的列名。 |
+| const char \*field | 数据库表中的列名，不能为空指针。 |
 | [OH\_VObject](capi-rdb-oh-vobject.md) \*valueObject | 表示指向[OH\_VObject](capi-rdb-oh-vobject.md)实例的指针，指示要与谓词匹配的值。 |
 
 **返回：**
@@ -127,10 +115,8 @@ PhonePC/2in1TabletTVWearable
 
 ### beginWrap()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Predicates *(*beginWrap)(OH_Predicates *predicates)
+```c
+OH_Predicates *(*beginWrap)(OH_Predicates *predicates)
 ```
 
 **描述**
@@ -155,10 +141,8 @@ PhonePC/2in1TabletTVWearable
 
 ### endWrap()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Predicates *(*endWrap)(OH_Predicates *predicates)
+```c
+OH_Predicates *(*endWrap)(OH_Predicates *predicates)
 ```
 
 **描述**
@@ -183,10 +167,8 @@ PhonePC/2in1TabletTVWearable
 
 ### orOperate()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Predicates *(*orOperate)(OH_Predicates *predicates)
+```c
+OH_Predicates *(*orOperate)(OH_Predicates *predicates)
 ```
 
 **描述**
@@ -211,10 +193,8 @@ PhonePC/2in1TabletTVWearable
 
 ### andOperate()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Predicates *(*andOperate)(OH_Predicates *predicates)
+```c
+OH_Predicates *(*andOperate)(OH_Predicates *predicates)
 ```
 
 **描述**
@@ -239,10 +219,8 @@ PhonePC/2in1TabletTVWearable
 
 ### isNull()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Predicates *(*isNull)(OH_Predicates *predicates, const char *field)
+```c
+OH_Predicates *(*isNull)(OH_Predicates *predicates, const char *field)
 ```
 
 **描述**
@@ -258,7 +236,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | OH\_Predicates \*predicates | 表示指向OH\_Predicates实例的指针。 |
-| const char \*field | 数据库表中的列名。 |
+| const char \*field | 数据库表中的列名，不能为空指针。 |
 
 **返回：**
 
@@ -268,10 +246,8 @@ PhonePC/2in1TabletTVWearable
 
 ### isNotNull()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Predicates *(*isNotNull)(OH_Predicates *predicates, const char *field)
+```c
+OH_Predicates *(*isNotNull)(OH_Predicates *predicates, const char *field)
 ```
 
 **描述**
@@ -287,7 +263,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | OH\_Predicates \*predicates | 表示指向OH\_Predicates实例的指针。 |
-| const char \*field | 数据库表中的列名。 |
+| const char \*field | 数据库表中的列名，不能为空指针。 |
 
 **返回：**
 
@@ -297,10 +273,8 @@ PhonePC/2in1TabletTVWearable
 
 ### like()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Predicates *(*like)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
+```c
+OH_Predicates *(*like)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
 ```
 
 **描述**
@@ -316,7 +290,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | OH\_Predicates \*predicates | 表示指向OH\_Predicates实例的指针。 |
-| const char \*field | 数据库表中的列名。 |
+| const char \*field | 数据库表中的列名，不能为空指针。 |
 | [OH\_VObject](capi-rdb-oh-vobject.md) \*valueObject | 表示指向[OH\_VObject](capi-rdb-oh-vobject.md)实例的指针，指示要与谓词匹配的值。 |
 
 **返回：**
@@ -327,10 +301,8 @@ PhonePC/2in1TabletTVWearable
 
 ### between()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Predicates *(*between)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
+```c
+OH_Predicates *(*between)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
 ```
 
 **描述**
@@ -346,7 +318,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | OH\_Predicates \*predicates | 表示指向OH\_Predicates实例的指针。 |
-| const char \*field | 数据库表中的列名。 |
+| const char \*field | 数据库表中的列名，不能为空指针。 |
 | [OH\_VObject](capi-rdb-oh-vobject.md) \*valueObject | 表示指向[OH\_VObject](capi-rdb-oh-vobject.md)实例的指针，指示要与谓词匹配的值。 |
 
 **返回：**
@@ -357,15 +329,13 @@ PhonePC/2in1TabletTVWearable
 
 ### notBetween()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Predicates *(*notBetween)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
+```c
+OH_Predicates *(*notBetween)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
 ```
 
 **描述**
 
-函数指针，将谓词配置为匹配数据字段为field且其值超出给定范围内的指定字段。
+函数指针，配置谓词以匹配数据字段为field且其值不在给定范围内的指定字段。
 
 该方法等同于SQL语句中的“NOT BETWEEN”。
 
@@ -376,7 +346,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | OH\_Predicates \*predicates | 表示指向OH\_Predicates实例的指针。 |
-| const char \*field | 数据库表中的列名。 |
+| const char \*field | 数据库表中的列名，不能为空指针。 |
 | [OH\_VObject](capi-rdb-oh-vobject.md) \*valueObject | 表示指向[OH\_VObject](capi-rdb-oh-vobject.md)实例的指针，指示要与谓词匹配的值。 |
 
 **返回：**
@@ -387,10 +357,8 @@ PhonePC/2in1TabletTVWearable
 
 ### greaterThan()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Predicates *(*greaterThan)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
+```c
+OH_Predicates *(*greaterThan)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
 ```
 
 **描述**
@@ -406,7 +374,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | OH\_Predicates \*predicates | 表示指向OH\_Predicates实例的指针。 |
-| const char \*field | 数据库表中的列名。 |
+| const char \*field | 数据库表中的列名，不能为空指针。 |
 | [OH\_VObject](capi-rdb-oh-vobject.md) \*valueObject | 表示指向[OH\_VObject](capi-rdb-oh-vobject.md)实例的指针，指示要与谓词匹配的值。 |
 
 **返回：**
@@ -417,10 +385,8 @@ PhonePC/2in1TabletTVWearable
 
 ### lessThan()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Predicates *(*lessThan)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
+```c
+OH_Predicates *(*lessThan)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
 ```
 
 **描述**
@@ -436,7 +402,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | OH\_Predicates \*predicates | 表示指向OH\_Predicates实例的指针。 |
-| const char \*field | 数据库表中的列名。 |
+| const char \*field | 数据库表中的列名，不能为空指针。 |
 | [OH\_VObject](capi-rdb-oh-vobject.md) \*valueObject | 表示指向[OH\_VObject](capi-rdb-oh-vobject.md)实例的指针，指示要与谓词匹配的值。 |
 
 **返回：**
@@ -447,10 +413,8 @@ PhonePC/2in1TabletTVWearable
 
 ### greaterThanOrEqualTo()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Predicates *(*greaterThanOrEqualTo)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
+```c
+OH_Predicates *(*greaterThanOrEqualTo)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
 ```
 
 **描述**
@@ -466,7 +430,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | OH\_Predicates \*predicates | 表示指向OH\_Predicates实例的指针。 |
-| const char \*field | 数据库表中的列名。 |
+| const char \*field | 数据库表中的列名，不能为空指针。 |
 | [OH\_VObject](capi-rdb-oh-vobject.md) \*valueObject | 表示指向[OH\_VObject](capi-rdb-oh-vobject.md)实例的指针，指示要与谓词匹配的值。 |
 
 **返回：**
@@ -477,10 +441,8 @@ PhonePC/2in1TabletTVWearable
 
 ### lessThanOrEqualTo()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Predicates *(*lessThanOrEqualTo)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
+```c
+OH_Predicates *(*lessThanOrEqualTo)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
 ```
 
 **描述**
@@ -496,8 +458,8 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | OH\_Predicates \*predicates | 表示指向OH\_Predicates实例的指针。 |
-| const char \*field | 数据库表中的列名。 |
-| OH\_VObject \*valueObject | 表示指向[OH\_VObject](capi-rdb-oh-vobject.md)实例的指针，指示要与谓词匹配的值。 |
+| const char \*field | 数据库表中的列名，不能为空指针。 |
+| [OH\_VObject](capi-rdb-oh-vobject.md) \*valueObject | 表示指向[OH\_VObject](capi-rdb-oh-vobject.md)实例的指针，指示要与谓词匹配的值。 |
 
 **返回：**
 
@@ -507,10 +469,8 @@ PhonePC/2in1TabletTVWearable
 
 ### orderBy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Predicates *(*orderBy)(OH_Predicates *predicates, const char *field, OH_OrderType type)
+```c
+OH_Predicates *(*orderBy)(OH_Predicates *predicates, const char *field, OH_OrderType type)
 ```
 
 **描述**
@@ -526,8 +486,8 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | OH\_Predicates \*predicates | 表示指向OH\_Predicates实例的指针。 |
-| const char \*field | 数据库表中的列名。 |
-| [OH\_VObject](capi-rdb-oh-vobject.md) type | 表示排序类型[OH\_VObject](capi-rdb-oh-vobject.md)。 |
+| const char \*field | 数据库表中的列名，不能为空指针。 |
+| [OH\_OrderType](capi-oh-predicates-h.md#oh_ordertype) type | 排序类型。 |
 
 **返回：**
 
@@ -537,10 +497,8 @@ PhonePC/2in1TabletTVWearable
 
 ### distinct()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Predicates *(*distinct)(OH_Predicates *predicates)
+```c
+OH_Predicates *(*distinct)(OH_Predicates *predicates)
 ```
 
 **描述**
@@ -565,10 +523,8 @@ PhonePC/2in1TabletTVWearable
 
 ### limit()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Predicates *(*limit)(OH_Predicates *predicates, unsigned int value)
+```c
+OH_Predicates *(*limit)(OH_Predicates *predicates, unsigned int value)
 ```
 
 **描述**
@@ -594,10 +550,8 @@ PhonePC/2in1TabletTVWearable
 
 ### offset()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Predicates *(*offset)(OH_Predicates *predicates, unsigned int rowOffset)
+```c
+OH_Predicates *(*offset)(OH_Predicates *predicates, unsigned int rowOffset)
 ```
 
 **描述**
@@ -623,15 +577,13 @@ PhonePC/2in1TabletTVWearable
 
 ### groupBy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Predicates *(*groupBy)(OH_Predicates *predicates, char const *const *fields, int length)
+```c
+OH_Predicates *(*groupBy)(OH_Predicates *predicates, char const *const *fields, int length)
 ```
 
 **描述**
 
-函数指针，配置R谓词按指定列分组查询结果。
+函数指针，配置谓词按指定列分组查询结果。
 
 该方法等同于SQL语句中的“GROUP BY”。
 
@@ -642,8 +594,8 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | OH\_Predicates \*predicates | 表示指向OH\_Predicates实例的指针。 |
-| char const \*const \*fields | 指定分组依赖的列名。 |
-| int length | 该参数为输入参数，表示开发者传入的fields数值的长度。 |
+| char const \*const \*fields | 指定分组依赖的列名，不能为空指针。 |
+| int length | 该参数为输入参数，表示fields数组的长度。 |
 
 **返回：**
 
@@ -653,15 +605,13 @@ PhonePC/2in1TabletTVWearable
 
 ### in()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Predicates *(*in)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
+```c
+OH_Predicates *(*in)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
 ```
 
 **描述**
 
-函数指针，配置谓词以匹配数据字段为field且值在给定范围内的指定字段。
+函数指针，配置谓词以匹配数据字段为field且其值在给定集合内的指定字段。
 
 该方法等同于SQL语句中的“IN”。
 
@@ -672,7 +622,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | OH\_Predicates \*predicates | 表示指向OH\_Predicates实例的指针。 |
-| const char \*field | 表示数据库表中的列名。 |
+| const char \*field | 表示数据库表中的列名，不能为空指针。 |
 | [OH\_VObject](capi-rdb-oh-vobject.md) \*valueObject | 表示指向[OH\_VObject](capi-rdb-oh-vobject.md)实例的指针，指示要与谓词匹配的值。 |
 
 **返回：**
@@ -683,15 +633,13 @@ PhonePC/2in1TabletTVWearable
 
 ### notIn()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Predicates *(*notIn)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
+```c
+OH_Predicates *(*notIn)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
 ```
 
 **描述**
 
-函数指针，配置谓词以匹配数据字段为field且值超出给定范围内的指定字段。
+函数指针，配置谓词以匹配数据字段为field且其值不在给定集合内的指定字段。
 
 该方法等同于SQL语句中的“NOT IN”。
 
@@ -702,7 +650,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | OH\_Predicates \*predicates | 表示指向OH\_Predicates实例的指针。 |
-| const char \*field | 表示数据库表中的列名。 |
+| const char \*field | 表示数据库表中的列名，不能为空指针。 |
 | [OH\_VObject](capi-rdb-oh-vobject.md) \*valueObject | 表示指向[OH\_VObject](capi-rdb-oh-vobject.md)实例的指针，指示要与谓词匹配的值。 |
 
 **返回：**
@@ -713,10 +661,8 @@ PhonePC/2in1TabletTVWearable
 
 ### clear()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Predicates *(*clear)(OH_Predicates *predicates)
+```c
+OH_Predicates *(*clear)(OH_Predicates *predicates)
 ```
 
 **描述**
@@ -739,10 +685,8 @@ PhonePC/2in1TabletTVWearable
 
 ### destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int (*destroy)(OH_Predicates *predicates)
+```c
+int (*destroy)(OH_Predicates *predicates)
 ```
 
 **描述**
@@ -761,4 +705,4 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回操作是否成功，出错时返回对应的错误码。 |
+| int | 返回操作是否成功，出错时返回对应的错误码。详细信息请参阅[OH\_Rdb\_ErrCode](capi-relational-store-error-code-h.md#oh_rdb_errcode)。 |

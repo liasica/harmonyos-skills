@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getc0
 title: GetC0Value
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > GetC0Value
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:13+08:00
+scraped_at: 2026-09-02T14:50:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:245ea7251b0ac3358cb6f02ce9cf288099347f8b898c75383ef7db9d3d04eaac
+content_hash: sha256:cef9ab6bf88713e687bd5b199366c4d96f4e7407c3796d02acee24bf22a177d7
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:245ea7251b0ac3358cb6f02ce9cf288099347f8b898c75383ef7db9d3d0
 
 ## 函数原型
 
-```
-1. inline int64_t GetC0Value(int32_t format)
+```cpp
+inline int64_t GetC0Value(int32_t format)
 ```
 
 ## 参数说明

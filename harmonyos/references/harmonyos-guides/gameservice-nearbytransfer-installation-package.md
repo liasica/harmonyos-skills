@@ -3,20 +3,40 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-n
 title: 传输安装包
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏近场快传（可选） > 开发指导 > 传输安装包
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:38:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e67ff7929b75676472711583991e3c7313ecc0210707c3f146c309140f705c83
+scraped_at: 2026-09-02T14:59:55+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:63953fe639bf10c006a1d0506047818447d4d506a40e645d2f7543fe27d36bd7
 ---
 
 游戏近场快传支持已安装游戏的玩家通过碰一碰或隔空传送将游戏安装包传输给未安装游戏的玩家，实现游戏传播效率的提升。
 
-说明
+当前版本近场快传提供免集成Game Service Kit实现安装包传输和集成Game Service Kit实现安装包传输两种方式。
 
-付费游戏不支持使用近场快传传输安装包。
+**说明** 
 
-## 业务流程
+* 付费游戏、测试游戏及内测游戏不支持使用近场快传传输安装包。
+* 当前版本免集成Game Service Kit实现安装包传输仅支持在手机上使用碰一碰传输，若使用的手机版本不支持免集成传输安装包，碰一碰后将无响应，无法进行传输。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/B1AcRglwSXalc4RBNvOKXg/zh-cn_image_0000002558605748.png)
+## 免集成Game Service Kit实现安装包传输
+
+从26.0.0版本开始，游戏近场快传服务支持在开发者不集成传输安装包相关能力的情况下，玩家仍可以在手机上通过碰一碰的方式传输游戏安装包给未安装游戏的玩家。
+
+### 用户体验
+
+1. 发送端设备打开游戏后在任意游戏界面与接收端设备通过[碰一碰](knock-share-between-phones-overview.md)触发安装包传输。
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/2Avqc5-UQcOUb_ceLcI4Rg/zh-cn_image_0000002736314027.png)
+2. 若当前接收端已安装该游戏，则会打开该游戏。
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/Hs6ABRmVQMOx5dUXUt_KJQ/zh-cn_image_0000002706674984.png)
+
+## 集成Game Service Kit实现安装包传输
+
+从6.1.0(23)版本开始，近场快传服务支持开发者通过集成安装包传输相关能力的方式，实现玩家可以通过碰一碰/隔空传送的方式传输游戏安装包给未安装游戏的玩家。
+
+### 业务流程
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/r7Uwqt4-TaKcHxBBLxhEHA/zh-cn_image_0000002736434073.png)
 
 1. 发送端设备打开游戏后与接收端设备通过[碰一碰](knock-share-between-phones-overview.md)或[隔空传送](gestures-share-overview.md)触发安装包传输。
 2. 发送端调用[create](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)创建安装包传输任务。
@@ -38,12 +58,12 @@ content_hash: sha256:e67ff7929b75676472711583991e3c7313ecc0210707c3f146c309140f7
 
      发送端调用[destroy](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferdestroy)销毁服务，并确认是否进行资源包传输。若确认进行资源包传输，则发送端创建资源包传输任务，详情请参见[传输资源包](gameservice-nearbytransfer-resource-package.md)。接收端打开已安装的游戏。
 
-   说明
+   **说明** 
 
    * destroy接口会清除已接收数据，请确保对已接收数据做好处理或转移后再调用该接口。
    * 发送端或接收端每次调用[create](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)接口都会自动清理自身历史数据。
 
-## 接口说明
+### 接口说明
 
 具体API说明详见[接口文档](../harmonyos-references/gameservice-nearbytransfer.md)。
 
@@ -54,139 +74,125 @@ content_hash: sha256:e67ff7929b75676472711583991e3c7313ecc0210707c3f146c309140f7
 | [offRemoteInstallationInfoNotify](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferoffremoteinstallationinfonotify)(callback?: Callback<RemoteInstallationInfo>): void | 取消订阅远程安装信息事件。 |
 | [destroy](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferdestroy)(): Promise<void> | 销毁游戏近场快传服务。 |
 
-## 接入步骤
+### 接入步骤
 
-### 导入模块
+1. 导入Game Service Kit、Share Kit及公共模块。
 
-导入Game Service Kit、Share Kit及公共模块。
+   ```typescript
+   import { uniformTypeDescriptor } from '@kit.ArkData';
+   import { systemShare, harmonyShare } from '@kit.ShareKit';
+   import { fileUri } from '@kit.CoreFileKit';
+   import { gameNearbyTransfer } from '@kit.GameServiceKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { common } from '@kit.AbilityKit';
+   ```
+2. 定义触发碰一碰/隔空传送分享事件监听方法和取消监听回调（收到隔空传送分享事件回调后，建议3秒内调用[sharableTarget.share()](../harmonyos-references/share-harmony-share.md#share)方法发起分享，否则可能导致超时失败）。
 
-```
-1. import { uniformTypeDescriptor as utd } from '@kit.ArkData';
-2. import { systemShare, harmonyShare } from '@kit.ShareKit';
-3. import { fileUri } from '@kit.CoreFileKit';
-4. import { gameNearbyTransfer } from '@kit.GameServiceKit';
-5. import { hilog } from '@kit.PerformanceAnalysisKit';
-6. import { common } from '@kit.AbilityKit';
-```
+   ```typescript
+   private immersiveListening() {
+     harmonyShare.on('knockShare', this.immersiveCallback);
+     harmonyShare.on('gesturesShare', this.immersiveCallback);
+   }
 
-### 定义碰一碰/隔空传送分享事件监听和取消监听回调
+   private immersiveDisablingListening() {
+     harmonyShare.off('knockShare', this.immersiveCallback);
+     harmonyShare.off('gesturesShare', this.immersiveCallback);
+   }
 
-定义触发碰一碰/隔空传送分享事件监听方法和取消监听回调（收到隔空传送分享事件回调后，建议3秒内调用[sharableTarget.share()](../harmonyos-references/share-harmony-share.md#share)方法发起分享，否则可能导致超时失败）。
+   private immersiveCallback = async (sharableTarget: harmonyShare.SharableTarget) => {
+     try {
+       let result = await this.create();
+       if (!result) {
+         sharableTarget?.reject(harmonyShare.SharableErrorCode.NO_CONTENT_ERROR);
+         return;
+       }
+       let uiContext: UIContext = this.getUIContext();
+       let contextFaker: Context = uiContext.getHostContext() as Context;
+       let filePath = contextFaker.filesDir + '/exampleKnock1.jpg'; // 仅为示例 请替换正确的文件路径
+       // 构造分享数据
+       let shareData: systemShare.SharedData = new systemShare.SharedData({
+         utd: uniformTypeDescriptor.UniformDataType.HYPERLINK,
+         content: result,
+         thumbnailUri: fileUri.getUriFromPath(filePath),
+         title: '近场快传',
+         description: '用于进行安装包传输'
+       });
+       // 发起分享
+       sharableTarget?.share(shareData);
+     } catch (err) {
+       sharableTarget?.reject(harmonyShare.SharableErrorCode.NO_CONTENT_ERROR);
+       hilog.error(0x0000, '[nearby]', `Failed to share the installation package ${err}`);
+     }
+   };
+   ```
+3. 收到碰一碰/隔空传送分享事件回调后，调用[create](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)接口创建安装包传输任务，然后注册[onRemoteInstallationInfoNotify](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferonremoteinstallationinfonotify)回调事件。
 
-```
-1. private immersiveListening() {
-2. harmonyShare.on('knockShare', this.immersiveCallback);
-3. harmonyShare.on('gesturesShare', this.immersiveCallback);
-4. }
+   **说明** 
 
-6. private immersiveDisablingListening() {
-7. harmonyShare.off('knockShare', this.immersiveCallback);
-8. harmonyShare.off('gesturesShare', this.immersiveCallback);
-9. }
+   [create](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)接口是调用其他接口的前提，如果未创建游戏近场快传服务或创建失败，将无法调用其他接口。
 
-11. private immersiveCallback = async (sharableTarget: harmonyShare.SharableTarget) => {
-12. try {
-13. let result = await this.create();
-14. if (!result) {
-15. sharableTarget?.reject(harmonyShare.SharableErrorCode.NO_CONTENT_ERROR);
-16. return;
-17. }
-18. let uiContext: UIContext = this.getUIContext();
-19. let contextFaker: Context = uiContext.getHostContext() as Context;
-20. let filePath = contextFaker.filesDir + '/exampleKnock1.jpg'; // 仅为示例 请替换正确的文件路径
-21. // 构造分享数据
-22. let shareData: systemShare.SharedData = new systemShare.SharedData({
-23. utd: utd.UniformDataType.HYPERLINK,
-24. content: result,
-25. thumbnailUri: fileUri.getUriFromPath(filePath),
-26. title: '近场快传',
-27. description: '用于进行安装包传输'
-28. });
-29. // 发起分享
-30. sharableTarget?.share(shareData);
-31. } catch (err) {
-32. sharableTarget?.reject(harmonyShare.SharableErrorCode.NO_CONTENT_ERROR);
-33. hilog.error(0x0000, '[nearby]', '%{public}s', `Failed to share the installation package ${err}`);
-34. }
-35. }
-```
+   ```typescript
+   public async create(): Promise<string | undefined> {
+     let uiAbilityContext = this.getUIContext()?.getHostContext() as common.UIAbilityContext;
+     let initParam: gameNearbyTransfer.CreateParameters = {
+       abilityName: uiAbilityContext.abilityInfo.name,
+       moduleName: uiAbilityContext.abilityInfo.moduleName,
+       contentType: gameNearbyTransfer.ContentType.INSTALLATION_PACKAGE, // 指定传输类型为安装包
+       gameLinking: 'nearbytransfer://com.huawei.nearbytransferdemo?type=nearbyTransfer' // 安装包场景需要传入游戏deeplink
+     };
+     try {
+       let createResult = await gameNearbyTransfer.create(initParam);
+       try {
+         gameNearbyTransfer.onRemoteInstallationInfoNotify(remoteCallBack);
+       } catch (error) {
+         let err = error as BusinessError;
+         hilog.error(0x0000, 'nearby',
+           `Failed to subscribe offRemoteInstallationInfoNotify error. Code: ${err.code}, message: ${err.message}`);
+       }
+       hilog.info(0x0000, '[nearby]', `create success linking: ${createResult.linkingForInstallation}`);
+       return createResult.linkingForInstallation;
+     } catch (error) {
+       let err = error as BusinessError;
+       hilog.error(0x0000, 'nearby', `create failed. Code: ${err.code}, message: ${err.message}`);
+       return undefined;
+     }
+   }
 
-### 创建游戏安装包传输任务并注册相关回调
+   function remoteCallBack(callback: gameNearbyTransfer.RemoteInstallationInfo) {
+     // 对端是否已安装
+     hilog.info(0x0000, 'nearby', `remoteInstallationInfoNotify ${callback.installed}`);
+   }
+   ```
+4. 进入可分享页面时，注册碰一碰/隔空传送分享监听事件；离开可分享页面（包括游戏退至后台等场景）时，取消碰一碰/隔空传送分享监听事件。
 
-收到碰一碰/隔空传送分享事件回调后，调用[create](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)接口创建安装包传输任务，然后注册[onRemoteInstallationInfoNotify](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferonremoteinstallationinfonotify)回调事件。
+   ```typescript
+   onPageShow(): void {
+     this.immersiveListening();
+   }
 
-说明
+   onPageHide(): void {
+     this.immersiveDisablingListening();
+   }
+   ```
+5. 接收端完成安装包的接收后，发送端调用[destroy](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferdestroy)接口销毁服务。若服务销毁后再次使用近场快传服务，需重新[发送端注册相关回调](gameservice-nearbytransfer-resource-package.md#发送端注册相关回调)。
 
-[create](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)接口是调用其他接口的前提，如果未创建游戏近场快传服务或创建失败，将无法调用其他接口。
+   ```typescript
+   public destroy(): void {
+     try {
+       gameNearbyTransfer.offRemoteInstallationInfoNotify(remoteCallBack);
+       gameNearbyTransfer.destroy().then(() => {
+         hilog.info(0x0000, 'nearby', `destroy success`);
+       }).catch((err: BusinessError) => {
+         hilog.error(0x0000, 'nearby', `destroy failed. Code: ${err.code}, message: ${err.message}`);
+       });
+     } catch (error) {
+       let err = error as BusinessError;
+       hilog.error(0x0000, 'nearby', `destroy exception. Code: ${err.code}, message: ${err.message}`);
+     }
+   }
 
-```
-1. public async create(): Promise<string | undefined> {
-2. let uiAbilityContext = this.getUIContext()?.getHostContext() as common.UIAbilityContext;
-3. let initParam: gameNearbyTransfer.CreateParameters = {
-4. abilityName: uiAbilityContext.abilityInfo.name,
-5. moduleName: uiAbilityContext.abilityInfo.moduleName,
-6. contentType: gameNearbyTransfer.ContentType.INSTALLATION_PACKAGE, // 指定传输类型为安装包
-7. gameLinking: "nearbytransfer://com.huawei.nearbytransferdemo?type=nearbyTransfer" // 安装包场景需要传入游戏deeplink
-8. };
-9. try {
-10. let createResult = await gameNearbyTransfer.create(initParam);
-11. try {
-12. gameNearbyTransfer.onRemoteInstallationInfoNotify(remoteCallBack);
-13. } catch (error) {
-14. let err = error as BusinessError;
-15. hilog.error(0x0000, 'nearby',
-16. `Failed to subscribe offRemoteInstallationInfoNotify error. Code: ${err.code}, message: ${err.message}`);
-17. }
-18. hilog.info(0x0000, '[nearby]', `create success linking: ${createResult.linkingForInstallation}`);
-19. return createResult.linkingForInstallation;
-20. } catch (error) {
-21. let err = error as BusinessError;
-22. hilog.error(0x0000, 'nearby', `create failed. Code: ${err.code}, message: ${err.message}`);
-23. return undefined;
-24. }
-25. }
-
-27. function remoteCallBack(callback: gameNearbyTransfer.RemoteInstallationInfo) {
-28. // 对端是否已安装
-29. hilog.info(0x0000, 'nearby', `remoteInstallationInfoNotify ${callback.installed}`);
-30. }
-```
-
-### 注册和取消碰一碰/隔空传送分享监听事件
-
-进入可分享页面时，注册碰一碰/隔空传送分享监听事件；离开可分享页面（包括游戏退至后台等场景）时，取消碰一碰/隔空传送分享监听事件。
-
-```
-1. onPageShow(): void {
-2. this.immersiveListening();
-3. }
-
-5. onPageHide(): void {
-6. this.immersiveDisablingListening();
-7. }
-```
-
-### 发送端销毁服务
-
-接收端完成安装包的接收后，发送端调用[destroy](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferdestroy)接口销毁服务。若服务销毁后再次使用近场快传服务，需重新[创建游戏近场快传服务并注册相关回调](gameservice-nearbytransfer-resource-package.md#创建游戏近场快传服务并注册相关回调)。
-
-```
-1. public destroy(): void {
-2. try {
-3. gameNearbyTransfer.offRemoteInstallationInfoNotify(remoteCallBack);
-4. gameNearbyTransfer.destroy().then(() => {
-5. hilog.info(0x0000, 'nearby', `destroy success`);
-6. }).catch((err: BusinessError) => {
-7. hilog.error(0x0000, 'nearby', `destroy failed. Code: ${err.code}, message: ${err.message}`);
-8. });
-9. } catch (error) {
-10. let err = error as BusinessError;
-11. hilog.error(0x0000, 'nearby', `destroy exception. Code: ${err.code}, message: ${err.message}`);
-12. }
-13. }
-
-15. function remoteCallBack(callback: gameNearbyTransfer.RemoteInstallationInfo) {
-16. // 对端是否已安装
-17. hilog.info(0x0000, 'nearby', `remoteInstallationInfoNotify ${callback.installed}`);
-18. }
-```
+   function remoteCallBack(callback: gameNearbyTransfer.RemoteInstallationInfo) {
+     // 对端是否已安装
+     hilog.info(0x0000, 'nearby', `remoteInstallationInfoNotify ${callback.installed}`);
+   }
+   ```

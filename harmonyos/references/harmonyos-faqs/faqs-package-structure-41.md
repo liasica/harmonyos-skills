@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 应用安装、卸载时是否有数据上报
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 应用安装、卸载时是否有数据上报
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:34+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:14+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:1128d6dbb5e1758381b80c43f89ca6c11d25d62d2c33c23101d185465a436f42
 ---
 

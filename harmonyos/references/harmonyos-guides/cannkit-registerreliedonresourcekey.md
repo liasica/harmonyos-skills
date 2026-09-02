@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-regis
 title: RegisterReliedOnResourceKey
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > InferenceContext > RegisterReliedOnResourceKey
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:33+08:00
+scraped_at: 2026-09-02T14:50:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:cd62468c0bf4cd9ba56089b285b8a99e709c3e0354362d1b1a79791ea818aafb
+content_hash: sha256:03241f32c153ad9d737bcd995fa2b2db28e7547d796022dfdf6da9f6cedf9f3f
 ---
 
 ## 函数功能
@@ -18,8 +18,8 @@ content_hash: sha256:cd62468c0bf4cd9ba56089b285b8a99e709c3e0354362d1b1a79791ea81
 
 ## 函数原型
 
-```
-1. graphStatus RegisterReliedOnResourceKey(const ge::AscendString &key)
+```cpp
+graphStatus RegisterReliedOnResourceKey(const ge::AscendString &key)
 ```
 
 ## 参数说明

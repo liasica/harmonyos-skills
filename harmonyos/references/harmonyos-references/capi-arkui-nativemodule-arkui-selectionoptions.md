@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_SelectionOptions
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_SelectionOptions
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:33+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:79fe71d5636c72e61f1070016d81a9ca040e2c718b9d6d1668acf905c43b6d02
+scraped_at: 2026-09-02T14:51:52+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:868a21e52a55872739531a03267ba3ee9652576dd0a0b7a2e11b732a5ce8e3b6
 ---
 
-```
-1. typedef struct ArkUI_SelectionOptions ArkUI_SelectionOptions
+```c
+typedef struct ArkUI_SelectionOptions ArkUI_SelectionOptions
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-定义选择操作的相关选项。
+定义ArkUI中选择操作的配置选项，适用于应用内需要进行选择交互的场景，为开发者提供选择行为的定制能力。
 
 **起始版本：** 23
 

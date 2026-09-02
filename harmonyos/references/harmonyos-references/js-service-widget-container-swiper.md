@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: swiper
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 容器组件 > swiper
 category: harmonyos-references
-scraped_at: 2026-04-29T13:54:00+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:a5df2f6adfa3b273004070762858c6dd040a0ed239fa3e77458c5727e72526d5
+scraped_at: 2026-09-02T15:01:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:367867e7cfa08e9b4afa50d97b5531a0b222825bf04d157b0ecb40886ae03ba2
 ---
 
 滑动容器，提供切换子组件显示的能力。
 
-说明
+**说明** 
 
 从API version 8 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-service-widget-common-attributes.md)外，还支持如下属性：
 
@@ -31,8 +29,6 @@ PhonePC/2in1TabletTVWearable
 
 ## 样式
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用样式](js-service-widget-common-styles.md)外，还支持如下样式：
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
@@ -44,62 +40,58 @@ PhonePC/2in1TabletTVWearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用事件](js-service-widget-common-events.md)。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <swiper class="container" index="{{index}}">
-3. <div class="swiper-item primary-item">
-4. <text>1</text>
-5. </div>
-6. <div class="swiper-item warning-item">
-7. <text>2</text>
-8. </div>
-9. <div class="swiper-item success-item">
-10. <text>3</text>
-11. </div>
-12. </swiper>
+```html
+<!-- xxx.hml -->
+<swiper class="container" index="{{index}}">
+  <div class="swiper-item primary-item">
+    <text>1</text>
+  </div>
+  <div class="swiper-item warning-item">
+    <text>2</text>
+  </div>
+  <div class="swiper-item success-item">
+    <text>3</text>
+  </div>
+</swiper>
 ```
 
-```
-1. /* xxx.css */
-2. .container {
-3. left: 0px;
-4. top: 0px;
-5. width: 454px;
-6. height: 454px;
-7. }
-8. .swiper-item {
-9. width: 454px;
-10. height: 454px;
-11. justify-content: center;
-12. align-items: center;
-13. }
-14. .primary-item {
-15. background-color: #007dff;
-16. }
-17. .warning-item {
-18. background-color: #ff7500;
-19. }
-20. .success-item {
-21. background-color: #41ba41;
-22. }
+```css
+/* xxx.css */
+.container {
+  left: 0px;
+  top: 0px;
+  width: 454px;
+  height: 454px;
+}
+.swiper-item {
+  width: 454px;
+  height: 454px;
+  justify-content: center;
+  align-items: center;
+}
+.primary-item {
+  background-color: #007dff;
+}
+.warning-item {
+  background-color: #ff7500;
+}
+.success-item {
+  background-color: #41ba41;
+}
 ```
 
-```
-1. {
-2. "data": {
-3. "index": 1
-4. }
-5. }
+```json
+{
+  "data": {
+    "index": 1
+  }
+}
 ```
 
 **4×4卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/62FGAtS1TYOJl32JN9BdoA/zh-cn_image_0000002589326821.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/A5anXBqlTLSWtoj_C-4EIA/zh-cn_image_0000002706676682.png)

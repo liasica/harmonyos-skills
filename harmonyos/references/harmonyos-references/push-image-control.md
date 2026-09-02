@@ -3,16 +3,10 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-imag
 title: 图片风控
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 图片风控
 category: harmonyos-references
-scraped_at: 2026-04-29T14:09:09+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:3bc8f8888461f7b5060393dc0f4a252bc21223434a9822a5a67a442d9ac9b16f
+scraped_at: 2026-09-02T15:03:07+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6e0ef7bfb783c8853fd767b5b33057aaf481a25c0693999de501287ba85540f7
 ---
-
-说明
-
-为了更安全的网络访问，华为Push Kit于2022年11月30日关闭Push相关域名的TLS1.0、TLS1.1协议及规定之外的加密套件，当前应用使用TLS1.2以下协议或使用规定外的加密套件将无法正常推送消息。
-
-若您的应用访问Push相关域名使用协议是TLS1.0或TLS1.1，可能无法正常发送消息，请您务必升级到TLS1.2及以上版本。
 
 ## 功能介绍
 
@@ -22,7 +16,7 @@ content_hash: sha256:3bc8f8888461f7b5060393dc0f4a252bc21223434a9822a5a67a442d9ac
 
 接口最大调用频率限制单个应用每分钟60次，超过此限制会返回错误码[83010002](push-image-control.md#section83010002-超出流控阈值)。
 
-说明
+**说明** 
 
 本接口仅用于Push消息推送场景，不得用于其他用途。通过风控校验的图片不得修改，否则会导致通知消息无法正常显示。
 
@@ -36,7 +30,7 @@ content_hash: sha256:3bc8f8888461f7b5060393dc0f4a252bc21223434a9822a5a67a442d9ac
 
   响应消息：Content-Type: application/json
 
-说明
+**说明** 
 
 * **[clientId]** ：OAuth 2.0客户端ID（凭据），登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“开发与服务”，在项目列表中选择对应的项目，左侧导航栏选择“项目设置”，在该页面获取。
 * **[projectId]** ：项目ID，登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“开发与服务”，在项目列表中选择对应的项目，左侧导航栏选择“项目设置”，在该页面获取。
@@ -59,10 +53,10 @@ content_hash: sha256:3bc8f8888461f7b5060393dc0f4a252bc21223434a9822a5a67a442d9ac
 
 ## 请求示例
 
-```
-1. {
-2. "imageUrl": "https://example.com/image.png"
-3. }
+```json5
+{
+    "imageUrl": "https://example.com/image.png"
+}
 ```
 
 ## 响应参数
@@ -74,31 +68,31 @@ content_hash: sha256:3bc8f8888461f7b5060393dc0f4a252bc21223434a9822a5a67a442d9ac
 | code | 是 | String | 响应码。 |
 | msg | 是 | String | 响应码描述。 |
 | requestId | 否 | String | 请求标识。 |
-| downloadUrl | 否 | String | 验证通过的图片地址（本接口成功时才返回）。 |
-| expireTime | 否 | String | 图片风控验证有效截止时间，以Unix时间戳表示，单位为秒（本接口成功时才返回）。 |
+| downloadUrl | 否 | String | 验证通过的图片地址（本接口成功时才返回）。由华为Push服务器在原始URL的基础上拼接风控校验Key生成，确保图片来源合法且未被篡改，可作为通知右侧大图标（对应[Notification](push-scenariozed-api-request-param.md#notification)的image参数）、服务卡片图片（对应[FormImage](push-scenariozed-api-request-param.md#formimage)的url参数）等场景的图片地址。 |
+| expireTime | 否 | String | 图片风控验证有效截止时间，以Unix时间戳表示，单位：s（本接口成功时才返回）。 |
 
 ## 响应示例
 
 **响应成功示例：**
 
-```
-1. {
-2. "code": "83010000",
-3. "msg": "Verify success",
-4. "requestId": "1631***********0101",
-5. "downloadUrl": "https://**.png?verifyKey=MEUCIQDzfYMReU*****************fdCOX9KToGq7o%3D",
-6. "expireTime": "1689911616"
-7. }
+```json5
+{
+    "code": "83010000",
+    "msg": "Verify success",
+    "requestId": "1631***********0101",
+    "downloadUrl": "https://**.png?verifyKey=MEUCIQDzfYMReU*****************fdCOX9KToGq7o%3D",
+    "expireTime": "1689911616"
+}
 ```
 
 **响应失败示例：**
 
-```
-1. {
-2. "code": "83010005",
-3. "msg": "Download picture failed",
-4. "requestId": "1691***********1501"
-5. }
+```json5
+{
+    "code": "83010005",
+    "msg": "Download picture failed",
+    "requestId": "1691***********1501"
+}
 ```
 
 ## HTTP响应码
@@ -108,7 +102,7 @@ content_hash: sha256:3bc8f8888461f7b5060393dc0f4a252bc21223434a9822a5a67a442d9ac
 | 200 | 成功。 | - |
 | 400 | 参数错误。 | 请检查业务响应码并根据业务响应码进一步排查问题。 |
 | 401 | 鉴权失败。 | 请检查HTTP请求头中Authorization参数里面的JWT。 |
-| 404 | 找不到服务。 | 请检查请求URI是否正确。 |
+| 404 | 找不到服务。 | 请检查请求URL是否正确。 |
 | 500 | 服务内部错误。 | 请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 502 | 请求连接异常，常见于网络状况不稳定。 | 建议稍后重试，或通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 
@@ -171,7 +165,7 @@ Authentication Error.
 请根据响应消息中的提示，排查请求头中Authorization参数鉴权失败是否存在以下情况：
 
 1. 请检查发送消息时是否添加Authorization参数或Authorization的值为空。
-2. 请参考[鉴权令牌生成步骤](../harmonyos-guides/push-jwt-token.md#开发步骤)中的步骤二，检查推送请求URL（https://push-api.cloud.huawei.com/**v3**/[projectId]/messages:send）中的projectId，确保与您当前应用所属的项目保持一致。
+2. 请参考[鉴权令牌生成步骤](../harmonyos-guides/push-jwt-token.md#开发步骤)中的步骤二，检查推送请求URL（https://push-api.cloud.huawei.com/**v2**/[projectId]/images:verify）中的projectId，确保与您当前应用所属的项目保持一致。
 3. 请检查Authorization参数中的JWT Token与实际应用是否匹配，详情参见[基于服务账号生成鉴权令牌](../harmonyos-guides/push-jwt-token.md)。
 
 重新生成JWT Token后再发送请求。

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___re
 title: Rcp_RequestCookieEntry
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > C API > 结构体 > Rcp_RequestCookieEntry
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:07+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0d7391b3cb81b41cbaec94600a8d3669f02d4a100fa19039c8986661344e9850
+scraped_at: 2026-09-02T15:01:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5a7ca9c10773212f35148ebd9ab8c8abb7311abe21e4712be4c0918b7700b44a
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 描述请求的所有Cookie键值对。
 
@@ -22,11 +20,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -36,14 +30,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTVWearable
-
 ### key
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. char* Rcp_RequestCookieEntry::key
+```cpp
+char* Rcp_RequestCookieEntry::key
 ```
 
 **描述**
@@ -52,10 +42,8 @@ PhonePC/2in1TabletTVWearable
 
 ### next
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. struct Rcp_RequestCookieEntry* Rcp_RequestCookieEntry::next
+```cpp
+struct Rcp_RequestCookieEntry* Rcp_RequestCookieEntry::next
 ```
 
 **描述**
@@ -64,10 +52,8 @@ PhonePC/2in1TabletTVWearable
 
 ### value
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. char* Rcp_RequestCookieEntry::value
+```cpp
+char* Rcp_RequestCookieEntry::value
 ```
 
 **描述**

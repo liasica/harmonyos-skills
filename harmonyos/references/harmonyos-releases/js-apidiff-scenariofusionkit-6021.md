@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-scenariofusionkit-6021
 title: Scenario Fusion Kit
-breadcrumb: 版本说明 > HarmonyOS 6.0.2(22) > OS平台能力 > API变更清单 > Scenario Fusion Kit
+breadcrumb: 版本说明 > 更多版本 > 6.0.2(22) > OS平台能力 > API变更清单 > Scenario Fusion Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:48+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:25+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:7a63abfc78ddbe8d028af4846237cb954d5aedb9c4cefb5573a2393aa1368964
 ---
 

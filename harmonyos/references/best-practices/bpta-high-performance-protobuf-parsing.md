@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-high-perfo
 title: 高性能Protobuf解析
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 对象序列化性能优化 > 高性能Protobuf解析
 category: best-practices
-scraped_at: 2026-04-28T08:22:35+08:00
-doc_updated_at: 2026-03-19
-content_hash: sha256:aae7b719ed494173f7f9f958429088ed74e1cadf173abd43e2f9ea57f64e400f
+scraped_at: 2026-09-02T15:03:22+08:00
+doc_updated_at: 2026-08-26
+content_hash: sha256:c138865ff2d9a62d6412c27fcc5f6972b14747aba825f2896bdbdb63f1989ebc
 ---
 
 ## 概述
@@ -13,7 +13,7 @@ content_hash: sha256:aae7b719ed494173f7f9f958429088ed74e1cadf173abd43e2f9ea57f64
 在跨语言通信场景中，[Protocol Buffers](https://protobuf.dev/)通过序列化和反序列化机制实现结构化数据的高效交互。[TurboTransProtobuf](https://gitcode.com/openharmony-sig/turbo_trans/tree/turbo_trans_protobuf)是基于ArkTS的高性能Protocol Buffers解析方案，针对现有的[protobufjs](https://ohpm.openharmony.cn/#/cn/detail/@ohos%2Fprotobufjs)方案进行了多维度优化：
 
 * 全量类型支持：完整兼容.proto定义中的所有数据类型（包括map、oneof、any、数组等），同时适配singular、optional、required等关键字。
-* 系统生态兼容：原生支持Sendable类型，可无缝适配hvigor插件的代码生成流程，确保工程构建与运行的一致性。
+* 系统生态兼容：原生支持[Sendable](../harmonyos-guides/arkts-sendable.md)类型，可无缝适配hvigor插件的代码生成流程，确保工程构建与运行的一致性。
 * 双协议兼容：无需额外配置，原生兼容proto2与proto3两种Protocol Buffers协议版本。
 * 高性能优化：核心序列化/反序列化逻辑通过Native层实现，与protobufjs实现方案相比，性能提升超过20%。
 
@@ -34,84 +34,74 @@ TurboTransProtobuf通过Native层优化与代码生成实现高性能反序列�
    * TurboTransProtobufPlugin在编译期解析.proto文件，收集字段信息并校验合法性。
 2. 代码生成
    * 基于 .proto 结构生成高效的encode()/decode()方法，支持[@Sendable装饰器](../harmonyos-guides/arkts-sendable.md#sendable装饰器)以避免跨线程传输时的内存拷贝。
-3. 路径绑定
-   * 插件在编译期间自动生成对应的ArkTS代码(.ets文件)，并同步更新项目中对.proto类的引用路径。
+3. 代码输出
+   * 插件在编译期间自动生成对应的ArkTS代码(.ets文件)，开发者直接引用生成的.ets文件中的类型即可。
 
 ### 开发步骤
 
 1. 引入TurboTransProtobufPlugin和TurboTransProtobuf三方库。
    * 插件引入，在工程根目录下的 hvigor/hvigor-config.json5 文件内加入如下配置：
 
+     ```screen
+     "dependencies": {
+       // ...
+       "@hadss/turbo-trans-protobuf-plugin": "latest"
+     },
      ```
-     1. "dependencies": {
-     2. // ...
-     3. "@hadss/turbo-trans-protobuf-plugin": "latest"
-     4. },
-     ```
-
-     [hvigor-config.json5](https://gitcode.com/HarmonyOS_Samples/turbo-trans-protobuf/blob/master/hvigor/hvigor-config.json5#L4-L9)
    * 三方库引入，在工程目录或者模块下使用ohpm方式安装：
 
-     ```
-     1. ohpm install @hadss/turbo-trans-protobuf
+     ```shell
+     ohpm install @hadss/turbo-trans-protobuf
      ```
 2. 插件生效还需在工程根目录的 hvigorfile.ts 文件中添加相关插件配置，参考如下：
 
-   ```
-   1. import { turboTransProtobufPlugin } from "@hadss/turbo-trans-protobuf-plugin";
+   ```screen
+   import { turboTransProtobufPlugin } from '@hadss/turbo-trans-protobuf-plugin';
 
-   3. export default {
-   4. system: appTasks,
-   5. plugins: [
-   6. // ...
-   7. turboTransProtobufPlugin({
-   8. saveDir: 'src/main/ets/model',   // Save directory for generated code
-   9. scanDir: ['protofile'],          // Directories to scan for .proto files
-   10. sendable: true,                  // Whether to enable @Sendable support
-   11. }),
-   12. ]
-   13. }
+   export default {
+     system: appTasks,
+     plugins: [
+       // ...
+       turboTransProtobufPlugin({
+         saveDir: 'src/main/ets/model', // Save directory for generated code
+         scanDir: ['protofile'], // Directories to scan for .proto files
+         sendable: true, // Whether to enable @Sendable support
+       }),
+     ],
+   };
    ```
-
-   [hvigorfile.ts](https://gitcode.com/HarmonyOS_Samples/turbo-trans-protobuf/blob/master/hvigorfile.ts#L20-L34)
 3. 依据Protocol Buffers规范编写.proto文件，并将其保存在模块路径中，对应示例代码工程根目录下的 entry/protofile/UserProfile.proto 文件。
 
-   ```
-   1. syntax = "proto2";
-   2. message UserProfile {
-   3. required int32 age = 1;
-   4. optional string name = 2;
-   5. optional int64 birth_year = 3;
-   6. optional fixed32 height = 4;
-   7. required bool is_student = 5;
-   8. }
+   ```screen
+   syntax = "proto2";
+   message UserProfile {
+    required int32 age = 1;
+    optional string name = 2;
+    optional int64 birth_year = 3;
+    optional fixed32 height = 4;
+    required bool is_student = 5;
+   }
    ```
 
-   [UserProfile.proto](https://gitcode.com/HarmonyOS_Samples/turbo-trans-protobuf/blob/master/entry/protofile/UserProfile.proto#L17-L24)
-
-   插件将基于步骤2完成的配置项，在编译阶段自动生成ets代码，生成结果将按照 hvigorfile.ts 中saveDir配置的路径存储。在示例代码工程中，对应的生成文件路径为entry/src/main/ets/model/UserProfile.ets（位于工程根目录下）。
+   插件将基于步骤2完成的配置项，在编译阶段自动生成ets代码，生成结果将按照 hvigorfile.ts 中saveDir配置的路径存储。在示例代码工程中，对应的生成文件路径为entry/src/main/ets/model/UserProfile.ets（位于entry模块目录下）。
 4. 通过[@Concurrent装饰器](../harmonyos-guides/taskpool-introduction.md#concurrent装饰器)定义子线程任务，在任务内部调用步骤3中插件自动生成代码中暴露的静态方法decode()，以完成相应的数据处理逻辑。
 
+   ```typescript
+   @Concurrent
+   function decodeUser(buf: ArrayBuffer): UserProfile | undefined {
+     try {
+       return UserProfile.decode(buf);
+     } catch (error) {
+       Logger.error(`UserProfile decode error: ${JSON.stringify(error)}`);
+       return undefined;
+     }
+   }
    ```
-   1. @Concurrent
-   2. function decodeUser(buf: ArrayBuffer): UserProfile | undefined {
-   3. try {
-   4. return UserProfile.decode(buf);
-   5. } catch (error) {
-   6. Logger.error(`UserProfile decode error: ${JSON.stringify(error)}`);
-   7. return undefined;
-   8. }
-   9. }
-   ```
+5. 通过[taskpool](../harmonyos-guides/taskpool-introduction.md).execute()调度子线程将二进制格式数据反序列化为业务对象。
 
-   [DecodeBusinessTypePage.ets](https://gitcode.com/HarmonyOS_Samples/turbo-trans-protobuf/blob/master/entry/src/main/ets/pages/DecodeBusinessTypePage.ets#L24-L33)
-5. 通过taskpool.execute()调度子线程将二进制格式数据反序列化为业务对象。
-
+   ```typescript
+   let res = await taskpool.execute(decodeUser, encodeBuf) as UserProfile | undefined;
    ```
-   1. let res = await taskpool.execute(decodeUser, encodeBuf) as UserProfile | undefined;
-   ```
-
-   [DecodeBusinessTypePage.ets](https://gitcode.com/HarmonyOS_Samples/turbo-trans-protobuf/blob/master/entry/src/main/ets/pages/DecodeBusinessTypePage.ets#L61-L61)
 
 ## 跨线程数据传输
 
@@ -129,59 +119,53 @@ TurboTransProtobuf在跨线程数据传输方面采用了以下优化策略：
 
 1. 配置[插件和第三方库](bpta-high-performance-protobuf-parsing.md#li139972026192313)依赖后，确保在工程根目录下的 hvigorfile.ts 文件内将sendable属性设置为true：
 
-   ```
-   1. import { turboTransProtobufPlugin } from "@hadss/turbo-trans-protobuf-plugin";
+   ```screen
+   import { turboTransProtobufPlugin } from '@hadss/turbo-trans-protobuf-plugin';
 
-   3. export default {
-   4. system: appTasks,
-   5. plugins: [
-   6. // ...
-   7. turboTransProtobufPlugin({
-   8. saveDir: 'src/main/ets/model',   // Save directory for generated code
-   9. scanDir: ['protofile'],          // Directories to scan for .proto files
-   10. sendable: true,                  // Whether to enable @Sendable support
-   11. }),
-   12. ]
-   13. }
+   export default {
+     system: appTasks,
+     plugins: [
+       // ...
+       turboTransProtobufPlugin({
+         saveDir: 'src/main/ets/model', // Save directory for generated code
+         scanDir: ['protofile'], // Directories to scan for .proto files
+         sendable: true, // Whether to enable @Sendable support
+       }),
+     ],
+   };
    ```
-
-   [hvigorfile.ts](https://gitcode.com/HarmonyOS_Samples/turbo-trans-protobuf/blob/master/hvigorfile.ts#L20-L34)
 
    使用DevEco Studio编译或者使用hvigorw命令编译后，将生成带有@Sendable装饰器的类。
 2. 通过@Concurrent装饰器定义子线程任务，在任务内部调用步骤1中插件自动生成代码中暴露的静态方法encode()，以完成相应的数据处理逻辑。
 
+   ```screen
+   @Concurrent
+   function encodeUser(obj: UserProfile): ArrayBuffer | undefined {
+     try {
+       return UserProfile.encode(obj);
+     } catch (error) {
+       Logger.error(`UserProfile encode error: ${JSON.stringify(error)}`);
+       return undefined;
+     }
+   }
    ```
-   1. @Concurrent
-   2. function encodeUser(obj: UserProfile): ArrayBuffer | undefined {
-   3. try {
-   4. return UserProfile.encode(obj);
-   5. } catch (error) {
-   6. Logger.error(`UserProfile encode error: ${JSON.stringify(error)}`);
-   7. return undefined;
-   8. }
-   9. }
-   ```
-
-   [CrossThreadTransferPage.ets](https://gitcode.com/HarmonyOS_Samples/turbo-trans-protobuf/blob/master/entry/src/main/ets/pages/CrossThreadTransferPage.ets#L24-L32)
 3. 通过TurboTransProtobuf生成的代码创建的业务对象天然支持Sendable特性。此类对象在跨线程传输时，系统将以内存共享方式传递数据，避免跨线程拷贝导致的性能损耗。
 
+   ```screen
+   let messageSimple = new UserProfile();
+   messageSimple.age = 25;
+   messageSimple.name = 'Alice';
+   messageSimple.birth_year = 1999;
+   messageSimple.height = 175;
+   messageSimple.is_student = true;
+   let res = await taskpool.execute(encodeUser, messageSimple) as ArrayBuffer | undefined;
    ```
-   1. let message_simple = new UserProfile();
-   2. message_simple.age = 25;
-   3. message_simple.name = 'Alice';
-   4. message_simple.birth_year = 1999;
-   5. message_simple.height = 175;
-   6. message_simple.is_student = true;
-   7. let res = await taskpool.execute(encodeUser, message_simple) as ArrayBuffer | undefined;
-   ```
-
-   [CrossThreadTransferPage.ets](https://gitcode.com/HarmonyOS_Samples/turbo-trans-protobuf/blob/master/entry/src/main/ets/pages/CrossThreadTransferPage.ets#L52-L58)
 
 ## Protobuf大数据解析
 
 ### 使用场景
 
-在大数据处理场景中，处理通过网络传输的大型Protocol Buffers数据（几十MB至一百MB）是常见的性能挑战。在主线程直接解析此类数据可能导致应用卡顿，甚至导致AppFreeze，严重影响用户体验。典型应用场景包括：
+在大数据处理场景中，处理通过网络传输的大型Protocol Buffers数据（几十MB至一百MB）是常见的性能挑战。在主线程直接解析此类数据可能导致应用卡顿，甚至引发AppFreeze，严重影响用户体验。典型应用场景包括：
 
 * 弹幕数据处理：在直播场景中实时接收海量弹幕消息（如百万条弹幕/分钟），通过Protocol Buffers格式解析并渲染至界面。
 * 实时日志分析：电商平台实时接收用户行为日志，单次请求可能包含百万条记录。
@@ -194,87 +178,81 @@ TurboTransProtobuf在跨线程数据传输方面采用了以下优化策略：
 
 在Protobuf大数据解析场景中，服务端生成大数据后，在子线程中通过分片处理将数据拆分为可并行传输的片段，利用异步传输机制发送至客户端。客户端接收分片数据后，在子线程中重组合并数据，待所有分片接收完成后，统一进行反序列化操作。TurboTransProtobuf通过以下机制优化大数据解析性能：
 
-* Native层性能优化：核心反序列化逻辑通过Native层实现，相比纯JavaScript方案（如ProtobufJS）性能提升超过20%。在创建对象时，直接通过Native创建sendable对象，确保反序列化结果可直接跨线程传输，避免内存拷贝。
-* 子线程解析：利用HarmonyOS的[worker](../harmonyos-guides/worker-introduction.md)功能，将大数据解析任务调度至子线程执行，防止主线程阻塞。
+* Native层性能优化：核心反序列化逻辑通过Native层实现，相比纯JavaScript方案（如ProtobufJS）性能提升超过20%。在创建对象时，直接通过Native创建Sendable对象，确保反序列化结果可直接跨线程传输，避免内存拷贝。
+* 子线程解析：利用HarmonyOS的[Worker](../harmonyos-guides/worker-introduction.md)机制，将大数据解析任务调度至子线程执行，防止主线程阻塞。
 
 ### 开发步骤
 
 1. 配置插件和第三方库依赖后，确保在工程根目录下的 hvigorfile.ts 文件内将sendable属性设置为true：
 
-   ```
-   1. import { turboTransProtobufPlugin } from "@hadss/turbo-trans-protobuf-plugin";
+   ```screen
+   import { turboTransProtobufPlugin } from '@hadss/turbo-trans-protobuf-plugin';
 
-   3. export default {
-   4. system: appTasks,
-   5. plugins: [
-   6. // ...
-   7. turboTransProtobufPlugin({
-   8. saveDir: 'src/main/ets/model',   // Save directory for generated code
-   9. scanDir: ['protofile'],          // Directories to scan for .proto files
-   10. sendable: true,                  // Whether to enable @Sendable support
-   11. }),
-   12. ]
-   13. }
+   export default {
+     system: appTasks,
+     plugins: [
+       // ...
+       turboTransProtobufPlugin({
+         saveDir: 'src/main/ets/model', // Save directory for generated code
+         scanDir: ['protofile'], // Directories to scan for .proto files
+         sendable: true, // Whether to enable @Sendable support
+       }),
+     ],
+   };
    ```
-
-   [hvigorfile.ts](https://gitcode.com/HarmonyOS_Samples/turbo-trans-protobuf/blob/master/hvigorfile.ts#L20-L34)
 
    使用DevEco Studio编译或者使用hvigorw命令编译后，将生成带有@Sendable装饰器的类。
 2. 服务端生成数据后，在子线程中进行序列化操作，并通过分片处理将数据拆分为可并行传输的片段，随后将数据分片发送至客户端。
 
+   ```screen
+   private workerInstance = new worker.ThreadWorker('entry/ets/workers/ServerWorker.ets');
+   // ...
+           let arrayBuffer: ArrayBuffer | undefined;
+           // ...
+             arrayBuffer = await taskpool.execute(encodeBulletBatch,
+               DataGenerateUtil.generateBulletBatch(res.data)) as ArrayBuffer | undefined;
+             // ...
+           if (arrayBuffer) {
+             try {
+               this.workerInstance.postMessage(arrayBuffer);
+             } catch (err) {
+               Logger.error(`Failed to post message to worker: ${JSON.stringify(err)}`);
+             }
+             this.workerInstance.onmessage = (e: MessageEvents): void => {
+               let data: ArrayBuffer = e.data;
+               this.sendBigData(client, data);
+             };
+           }
    ```
-   1. workerInstance = new worker.ThreadWorker('entry/ets/workers/ServerWorker.ets');
-   2. // ...
-   3. let arrayBuffer: ArrayBuffer | undefined;
-   4. // ...
-   5. arrayBuffer = await taskpool.execute(encodeBulletBatch,
-   6. DataGenerateUtil.generateBulletBatch(res.data)) as ArrayBuffer | undefined;
-   7. // ...
-   8. if (arrayBuffer) {
-   9. try {
-   10. this.workerInstance.postMessage(arrayBuffer);
-   11. } catch (err) {
-   12. Logger.error(`Failed to post message to worker: ${JSON.stringify(err)}`);
-   13. }
-   14. this.workerInstance.onmessage = (e: MessageEvents) => {
-   15. let data: ArrayBuffer = e.data;
-   16. this.sendBigData(client, data);
-   17. };
-   18. }
-   ```
-
-   [TcpServerUtil.ets](https://gitcode.com/HarmonyOS_Samples/turbo-trans-protobuf/blob/master/entry/src/main/ets/utils/TcpServerUtil.ets#L34-L125)
 3. 客户端接收到分片数据后，在子线程中通过重组合并数据，待所有分片接收完成后，统一进行反序列化操作。生成的Sendable对象无需拷贝，通过内存共享机制直接传递至主线程。
 
-   ```
-   1. workerPort.onmessage = (event: MessageEvents) => {
-   2. const data: ArrayBuffer = event.data;
-   3. const unpackedChunk = unpackArrayBuffer(data);
-   4. // ...
-   5. workerPort.postMessage(unpackedChunk.chunkIndex);
-   6. // ...
+   ```screen
+   workerPort.onmessage = (event: MessageEvents): void => {
+     const data: ArrayBuffer = event.data;
+     const unpackedChunk = unpackArrayBuffer(data);
+     // ...
+       workerPort.postMessage(unpackedChunk.chunkIndex);
+       // ...
 
-   8. // Reassemble fragmented data in worker thread
-   9. const reassembledBuffer = ArrayBufferAssemblerUtil.receiveChunk(
-   10. unpackedChunk.dataId,
-   11. unpackedChunk.chunkIndex,
-   12. unpackedChunk.totalChunks,
-   13. unpackedChunk.chunkData
-   14. );
-   15. if (reassembledBuffer) {
-   16. ArrayBufferAssemblerUtil.clean();
-   17. // Transfer Sendable object to main thread via memory sharing
-   18. let res: BulletBatch | null | undefined = null;
-   19. // Deserialize and send in single operation
-   20. // ...
-   21. res = BulletBatch.decode(reassembledBuffer);
-   22. workerPort.postMessageWithSharedSendable(res);
-   23. // ...
-   24. }
-   25. };
+     // Reassemble fragmented data in worker thread
+     const reassembledBuffer = ArrayBufferAssemblerUtil.receiveChunk(
+       unpackedChunk.dataId,
+       unpackedChunk.chunkIndex,
+       unpackedChunk.totalChunks,
+       unpackedChunk.chunkData
+     );
+     if (reassembledBuffer) {
+       ArrayBufferAssemblerUtil.clean();
+       // Transfer Sendable object to main thread via memory sharing
+       let res: BulletBatch | null | undefined = null;
+       // Deserialize and send in single operation
+       // ...
+         res = BulletBatch.decode(reassembledBuffer);
+         workerPort.postMessageWithSharedSendable(res);
+         // ...
+     }
+   };
    ```
-
-   [ClientWorker.ets](https://gitcode.com/HarmonyOS_Samples/turbo-trans-protobuf/blob/master/entry/src/main/ets/workers/ClientWorker.ets#L32-L68)
 
 ## 示例代码
 

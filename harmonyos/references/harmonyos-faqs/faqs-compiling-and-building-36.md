@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错 “Unknown resource name”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错 “Unknown resource name”
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:20:29+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:9954ab1276f5adacf0f41a56aba9f6a25cd559191a751556f5a014eb25602711
+scraped_at: 2026-09-02T14:54:54+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:129a34417c1d74973e19ca156128c38f1f06c460c6b7207c1b1d75840cd0cdaa
 ---
 
 **场景一：**
@@ -14,7 +14,7 @@ content_hash: sha256:9954ab1276f5adacf0f41a56aba9f6a25cd559191a751556f5a014eb256
 
 工程中模块A引用了模块B，编译模块A时出现错误，提示 "Unknown resource name 'xxxx'"，找不到模块B的资源。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/ZZqvfcioTjKQaTGcqb9z9A/zh-cn_image_0000002229603765.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/v5ZQVnkeTDyLlEyVjSu6oQ/zh-cn_image_0000002624478506.png)
 
 **解决措施**
 
@@ -30,7 +30,7 @@ content_hash: sha256:9954ab1276f5adacf0f41a56aba9f6a25cd559191a751556f5a014eb256
 
 引用模块的方式不正确，如果引用的是其他模块的代码，也会导致资源未找到的错误。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/kw6ssAz9QDmSQGUVUQTg_A/zh-cn_image_0000002194158372.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/ksuQvZCrQqOPyT8-l0NyNQ/zh-cn_image_0000002229603773.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/3i02iTsYTKKIv7yb4DX0eA/zh-cn_image_0000002654797865.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/cq_RC5u6TqiHmEXcBoYZjA/zh-cn_image_0000002624638408.png)
 
 **解决措施**
 
@@ -38,7 +38,7 @@ content_hash: sha256:9954ab1276f5adacf0f41a56aba9f6a25cd559191a751556f5a014eb256
 
 如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/pRcfsCP4RoiDcLIiDVmCkQ/zh-cn_image_0000002194317992.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/PABXcJB9SUOM7SdXb1clqw/zh-cn_image_0000002654837817.png)
 
 **场景三：**
 

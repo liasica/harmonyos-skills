@@ -3,27 +3,27 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-onnx-
 title: ONNX框架
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子部署 > AI框架算子适配 > ONNX框架
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:34+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:17519c30aed7969ac998cbe9e6ca711dabf12685335f494696ce9e55e995b84d
+scraped_at: 2026-09-02T15:00:05+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:5276ba13a8acc4cf747b9af2064c562ca0006d38068cbcfa0ec3ff59aaf8c560
 ---
 
 ## 适配插件开发
 
 开发者可以参考本章节进行算子适配插件的开发，将ONNX框架的算子映射成适配Kirin AI处理器的算子（下文简称AscendC算子），从而完成从ONNX框架调用AscendC自定义算子的过程。如下样例展示了一个基础的开发流程：
 
-```
-1. #include "register/register.h"
-2. #include "nlohmann/json.hpp"
-3. namespace domi {
-4. Status ParseParamByOpFunc(const ge::Operator& op_src, ge::Operator& op_dest) {
-5. // ...
-6. }
-7. REGISTER_CUSTOM_OP("OpType")    // 映射的自定义算子类型
-8. .FrameworkType(ONNX)
-9. .OriginOpType("OriginOpType")  // ONNX模型中的算子类型
-10. .ParseParamsByOperatorFn(ParseParamByOpFunc);   // 用来注册解析算子属性的函数
-11. }
+```cpp
+#include "register/register.h"
+#include "nlohmann/json.hpp"
+namespace domi {
+    Status ParseParamByOpFunc(const ge::Operator& op_src, ge::Operator& op_dest) {
+        // ...
+    }
+    REGISTER_CUSTOM_OP("OpType") // 映射的自定义算子类型
+        .FrameworkType(ONNX)
+        .OriginOpType("OriginOpType") // ONNX模型中的算子类型
+        .ParseParamsByOperatorFn(ParseParamByOpFunc); // 用来注册解析算子属性的函数
+   }
 ```
 
 1. 包含所需头文件。
@@ -31,12 +31,12 @@ content_hash: sha256:17519c30aed7969ac998cbe9e6ca711dabf12685335f494696ce9e55e99
    * register.h，存储在DDK软件安装后文件存储路径的"ddk/ai\_ddk\_lib/include/register"目录下，包含该头文件，可使用算子注册相关类，调用算子注册相关的接口。
    * json.hpp，用于进行ONNX数据定义的解析，将String类型的算子参数定义转换为json格式。若样例工程中未提供"json.hpp"文件，开发者可以自行下载，并将"json.hpp"放在工程可以找到的任意路径下，然后包含此头文件即可，推荐放在DDK安装目录的"tools/tools\_ascendc/json-develop"下，按如下目录放置。下载路径可参见[json.hpp](https://github.com/nlohmann/json/blob/develop/single_include/nlohmann/json.hpp)。
 
-     ```
-     1. json-develop
-     2. ├── include
-     3. │   └── nlohmann
-     4. │       └── json.hpp
-     5. └── README.md
+     ```text
+     json-develop
+     ├── include
+     │   └── nlohmann
+     │       └── json.hpp
+     └── README.md
      ```
 2. 使用REGISTER\_CUSTOM\_OP宏，完成DDK算子和ONNX框架的算子映射关系注册。使用方法如下。
 
@@ -46,8 +46,8 @@ content_hash: sha256:17519c30aed7969ac998cbe9e6ca711dabf12685335f494696ce9e55e99
    * [ParseParamsByOperatorFn](cannkit-parseparamsbyoperatorfn.md)(ParseParamByOpFunc)：用来注册解析算子参数实现映射关系的回调函数，需要开发者自定义实现[ParseParamsByOperatorFn](cannkit-parseparamsbyoperatorfn.md)。具体实现方式参考步骤3。
 3. 实现回调函数ParseParamByOpFunc。其函数声明如下所示：
 
-   ```
-   1. Status ParseParamByOpFunc(const ge::Operator& op_src, ge::Operator& op_dest)
+   ```cpp
+   Status ParseParamByOpFunc(const ge::Operator& op_src, ge::Operator& op_dest)
    ```
 
    * ParseParamByOpFunc：函数名称，开发者自定义。
@@ -60,36 +60,36 @@ content_hash: sha256:17519c30aed7969ac998cbe9e6ca711dabf12685335f494696ce9e55e99
 
    实现如下所示：
 
-   ```
-   1. SStatus ParseParamAddCustom(const ge::Operator& op_src, ge::Operator& op_dest) {
-   2. ge::AscendString attrs_string;
-   3. // 使用固定属性名称“attribute”获取ONNX算子中的属性，并赋值给AscendString类型对象
-   4. if (ge::GRAPH_SUCCESS == op_src.GetAttr("attribute", attrs_string)) {
-   5. nlohmann::json attrs = nlohmann::json::parse(attrs_string.GetString());
-   6. for (nlohmann::json attr : attrs["attribute"]) {
-   7. if (attr["name"] == "bias") {
-   8. int64_t bias  = attr["i"];
-   9. op_dest.SetAttr("bias", bias);
-   10. }
-   11. }
-   12. }
-   13. return SUCCESS;
-   14. }
+   ```cpp
+   Status ParseParamAddCustom(const ge::Operator& op_src, ge::Operator& op_dest) {
+   ge::AscendString attrs_string;
+   // 使用固定属性名称“attribute”获取ONNX算子中的属性，并赋值给AscendString类型对象
+       if (ge::GRAPH_SUCCESS == op_src.GetAttr("attribute", attrs_string)) {
+           nlohmann::json attrs = nlohmann::json::parse(attrs_string.GetString());
+           for (nlohmann::json attr : attrs["attribute"]) {
+               if (attr["name"] == "bias") {
+                   int64_t bias  = attr["i"];
+                   op_dest.SetAttr("bias", bias);
+               }
+           }
+       }
+       return SUCCESS;
+   }
    ```
 
    开发者也可以使用自动解析和映射的回调函数AutoMappingByOpFn，使用方式如下。
 
-   ```
-   1. #include "register/register.h"
-   2. namespace domi {
-   3. REGISTER_CUSTOM_OP("OpType")
-   4. .FrameworkType(ONNX)
-   5. .OriginOpType("OriginOpType")
-   6. .ParseParamsByOperatorFn(AutoMappingByOpFn);   // 用来注册解析算子属性的函数
-   7. }
+   ```cpp
+   #include "register/register.h"
+   namespace domi {
+       REGISTER_CUSTOM_OP("OpType")
+           .FrameworkType(ONNX)
+           .OriginOpType("OriginOpType")
+           .ParseParamsByOperatorFn(AutoMappingByOpFn); // 用来注册解析算子属性的函数
+   }
    ```
 
-   说明
+   **说明** 
 
    * 当前版本GetAttr与SetAttr接口不支持对原始文件中数据类型为double和uint64的字段进行解析。
    * 使用omg工具执行模型转换时，对属性的获取情况不会进行强校验。所以进行算子适配插件实现时，若开发者调用GetAttr失败，建议根据算子实际情况增加相应的处理逻辑，例如，针对必选属性，可返回失败，针对可选属性，可设置默认值。
@@ -103,49 +103,49 @@ content_hash: sha256:17519c30aed7969ac998cbe9e6ca711dabf12685335f494696ce9e55e99
 
 完整样例请参考[AddCustom算子实现](https://gitcode.com/HarmonyOS_Samples/cannkit_samplecode_add_custom_cpp)和[ONNX框架调用示例](https://gitcode.com/HarmonyOS_Samples/cannkit_samplecode_add_custom_cpp/blob/master/FrameworkLaunch/Onnx/create_addcustom_onnx.py) 。
 
-1. 通过pytorch代码生成该自定义算子。
+1. 通过python代码生成该自定义算子。
 
-   ```
-   1. import os
-   2. import numpy as np
-   3. import onnx
-   4. from onnx import helper
-   5. from onnx import TensorProto
+   ```python
+   import os
+   import numpy as np
+   import onnx
+   from onnx import helper
+   from onnx import TensorProto
 
-   8. def create_model():
-   9. AddCustom = helper.make_node(
-   10. "AddCustom",
-   11. inputs = ["input1", "input2"],
-   12. outputs = ["output"],
-   13. name = "add",
-   14. bias = 1
-   15. )
+   def create_model():
+       AddCustom = helper.make_node(
+           "AddCustom",
+           inputs = ["input1", "input2"],
+           outputs = ["output"],
+           name = "add",
+           bias = 1
+       )
 
-   17. input1_input = helper.make_tensor_value_info("input1", TensorProto.FLOAT, [8, 2048])
-   18. input2_input = helper.make_tensor_value_info("input2", TensorProto.FLOAT, [8, 2048])
-   19. add_output = helper.make_tensor_value_info('output', TensorProto.FLOAT, [8, 2048])
+       input1_input = helper.make_tensor_value_info("input1", TensorProto.FLOAT, [8, 2048])
+       input2_input = helper.make_tensor_value_info("input2", TensorProto.FLOAT, [8, 2048])
+       add_output = helper.make_tensor_value_info("output", TensorProto.FLOAT, [8, 2048])
 
-   21. graph = helper.make_graph(
-   22. nodes = [AddCustom],
-   23. name = 'custom_graph',
-   24. inputs = [input1_input, input2_input],
-   25. outputs = [add_output]
-   26. )
+       graph = helper.make_graph(
+           nodes = [AddCustom],
+           name = "custom_graph",
+           inputs = [input1_input, input2_input],
+           outputs = [add_output]
+       )
 
-   28. model = helper.make_model(graph, producer_name='onnx-example')
-   29. model.opset_import[0].version = 11
-   30. model.ir_version = 6
+       model = helper.make_model(graph, producer_name="onnx-example")
+       model.opset_import[0].version = 11
+       model.ir_version = 6
 
-   32. return model
+       return model
 
-   34. model = create_model()
-   35. print(onnx.helper.printable_graph(model.graph))
-   36. onnx.save(model, "./add_custom.onnx")
+   model = create_model()
+   print(onnx.helper.printable_graph(model.graph))
+   onnx.save(model, "./add_custom.onnx")
    ```
 2. 在%{DDK\_INSTALL\_PATH}/tools/tools\_omg执行如下命令生成离线模型。（如下命令中使用的目录以及文件均为样例，请以实际为准）
 
-   ```
-   1. ./omg --model ./add_custom.onnx --framework 5 --output out/custom_graph --target=omc
+   ```shell
+   ./omg --model ./add_custom.onnx --framework 5 --output out/custom_graph --target=omc --platform kirin9020
    ```
 
    关键参数的解释如下。
@@ -156,16 +156,16 @@ content_hash: sha256:17519c30aed7969ac998cbe9e6ca711dabf12685335f494696ce9e55e99
    * --target：转换后的模型类型，自定义算子场景仅支持omc。
    * --platform：omc模型为硬件相关模型，指定omc模型运行的芯片平台。
 
-     说明
+     **说明** 
 
      模型转换命令相关参数参考[离线模型转换](../hiai-Guides/offline-model-conversion-0000001053807006.md)。
 3. 若提示有出现如下信息，则说明进入了AscendC自定义算子编译流程且模型转换成功。
 
-   ```
-   1. // ...
-   2. "the node AddCustom is custom node"
-   3. // ...
-   4. "OMG generate offline model success."
+   ```text
+   // ...
+   "the node AddCustom is custom node"
+   // ...
+   "OMG generate offline model success."
    ```
 
    成功执行命令后，在--output参数指定的路径下，可查看离线模型（如：leaky\_relu.om）。

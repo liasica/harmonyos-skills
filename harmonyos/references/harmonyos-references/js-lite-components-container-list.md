@@ -3,26 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: list
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 容器组件 > list
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:51+08:00
-doc_updated_at: 2026-03-20
-content_hash: sha256:22f1d079feb9d105b02084e7027ab13f503caa773a13714b82aae2893bb44c4f
+scraped_at: 2026-09-02T15:01:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c2500c7d26cb2a088571c4ac5e18d0b2e87683d1a2fd34f25d55f565ce39a264
 ---
 
 列表包含一系列相同宽度的列表项。适合连续、多行呈现同类数据，例如图片和文本。
 
-说明
+**说明** 
 
 该组件从API version 4 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 仅支持<[list-item](js-lite-components-container-list-item.md)>。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
@@ -33,20 +29,16 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | scrollend | - | 列表滑动已经结束。 |
 | click | - | 点击动作触发该事件。 |
 | longpress | - | 长按动作触发该事件。 |
-| swipe5+ | [SwipeEvent](js-lite-common-events.md) | 组件上快速滑动后触发。 |
+| swipe5+ | [SwipeEvent](js-lite-common-events.md#swipeevent) | 组件上快速滑动后触发。 |
 | scrolltop8+ | - | 当前列表已滑动到顶部位置。 |
 | scrollbottom8+ | - | 当前列表已滑动到底部位置。 |
 
 ## 样式
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
@@ -55,7 +47,7 @@ PhonePC/2in1TabletTVWearableLite Wearable
 | height | <length> | <percentage>5+ | - | 否 | 设置组件自身的高度。  未设置时组件高度默认为0。 |
 | padding | <length> | 0 | 否 | 使用简写属性设置所有的内边距属性。  该属性可以有1到4个值：  - 指定一个值时，该值指定四个边的内边距。  - 指定两个值时，第一个值指定上下两边的内边距，第二个指定左右两边的内边距。  - 指定三个值时，第一个指定上边的内边距，第二个指定左右两边的内边距，第三个指定下边的内边距。  - 指定四个值时分别为上、右、下、左边的内边距（顺时针顺序）。 |
 | padding-[left|top|right|bottom] | <length> | 0 | 否 | 设置左、上、右、下内边距属性。 |
-| margin | <length> | <percentage>5+ | 0 | 否 | 使用简写属性设置所有的外边距属性，该属性可以有1到4个值。  - 只有一个值时，这个值会被指定给全部的四个边。  - 两个值时，第一个值被匹配给上和下，第二个值被匹配给左和右。  - 三个值时，第一个值被匹配给上, 第二个值被匹配给左和右，第三个值被匹配给下。  - 四个值时，会依次按上、右、下、左的顺序匹配 (即顺时针顺序)。 |
+| margin | <length> | <percentage>5+ | 0 | 否 | 使用简写属性设置所有的外边距属性，该属性可以有1到4个值。  - 只有一个值时，这个值会被指定给全部的四个边。  - 两个值时，第一个值被匹配给上和下，第二个值被匹配给左和右。  - 三个值时，第一个值被匹配给上，第二个值被匹配给左和右，第三个值被匹配给下。  - 四个值时，会依次按上、右、下、左的顺序匹配 (即顺时针顺序)。 |
 | margin-[left|top|right|bottom] | <length> | <percentage>5+ | 0 | 否 | 设置左、上、右、下外边距属性。 |
 | border-width | <length> | 0 | 否 | 使用简写属性设置元素的所有边框宽度。 |
 | border-color | <color> | black | 否 | 使用简写属性设置元素的所有边框颜色。 |
@@ -67,8 +59,6 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 ## 方法
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | scrollTo | { index: number(指定位置) } | list滑动到指定index的item位置。 |
@@ -76,77 +66,78 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
-```
-1. <!-- index.hml -->
-2. <div class="container">
-3. <list class="todo-wrapper" ref="listObj">
-4. <list-item for="{{todolist}}" class="todo-item">
-5. <div style="flex-direction: column;align-items: center;justify-content: center;">
-6. <text class="todo-title">{{$item.title}}</text>
-7. <text class="todo-title">{{$item.date}}</text>
-8. </div>
-9. </list-item>
-10. </list>
-11. </div>
+```html
+<!-- index.hml -->
+<div class="container">
+    <list class="todo-wrapper" ref="listObj">
+        <list-item for="{{todolist}}" class="todo-item">
+            <div style="width: 454px;height: 80px;flex-direction: column;align-items: center;justify-content: center;">
+                <text class="todo-title">{{$item.title}}</text>
+                <text class="todo-title">{{$item.date}}</text>
+            </div>
+        </list-item>
+    </list>
+</div>
 ```
 
-```
-1. // index.js
-2. export default {
-3. data: {
-4. todolist: [{
-5. title: '刷题',
-6. date: '2021-12-31 10:00:00',
-7. }, {
-8. title: '看电影',
-9. date: '2021-12-31 20:00:00',
-10. }
-11. , {
-12. title: '看书',
-13. date: '2021-12-31 21:00:00',
-14. },
-15. {
-16. title: '洗澡',
-17. date: '2021-12-31 22:00:00',
-18. },
-19. {
-20. title: '睡觉',
-21. date: '2021-12-31 23:00:00',
-22. }],
-23. },
-24. onShow() {
-25. this.$refs.listObj.rotation({focus: true})
-26. }
-27. }
-```
-
-```
-1. /* index.css */
-2. .container {
-3. display: flex;
-4. justify-content: center;
-5. align-items: center;
-6. left: 0px;
-7. top: 0px;
-8. width: 454px;
-9. height: 454px;
-10. }
-11. .todo-wrapper {
-12. width: 454px;
-13. height: 500px;
-14. }
-15. .todo-item {
-16. width: 454px;
-17. height: 80px;
-18. flex-direction: column;
-19. }
-20. .todo-title {
-21. width: 454px;
-22. height: 40px;
-23. text-align: center;
-24. }
+```js
+// index.js
+export default {
+    data: {
+        todolist: [{
+            title: '刷题',
+            date: '2021-12-31 10:00:00',
+        }, {
+            title: '看电影',
+            date: '2021-12-31 20:00:00',
+        }
+        , {
+            title: '看书',
+            date: '2021-12-31 21:00:00',
+        },
+        {
+            title: '洗澡',
+            date: '2021-12-31 22:00:00',
+        },
+        {
+            title: '睡觉',
+            date: '2021-12-31 23:00:00',
+        }],
+    },
+    onShow() {
+        this.$refs.listObj.rotation({focus: true})
+    },
+    onHide() {
+        this.$refs.listObj.rotation({focus: false})
+    }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/BzGoNXcCT_icgXZh-ypLAQ/zh-cn_image_0000002558766932.png)
+```css
+/* index.css */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0px;
+  top: 0px;
+  width: 454px;
+  height: 454px;
+}
+.todo-wrapper {
+  width: 454px;
+  height: 500px;
+}
+.todo-item {
+  width: 454px;
+  height: 80px;
+  flex-direction: column;
+}
+.todo-title {
+  width: 454px;
+  height: 40px;
+  text-align: center;
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/maeN_s3ZSuKY72xMsjNhiQ/zh-cn_image_0000002706836596.png)

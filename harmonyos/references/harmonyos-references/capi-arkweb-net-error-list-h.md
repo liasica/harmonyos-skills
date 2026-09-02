@@ -3,16 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkw
 title: arkweb_net_error_list.h
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > C API > 头文件 > arkweb_net_error_list.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:26+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:d2639e921631200b856edc8c97f00120aaf344f6b697fd4a144ad287ea7ef23d
+scraped_at: 2026-09-02T15:01:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b3a817b74398645e1a364e0de7a7b26805f490373ad0197bdbe14881f882ca2f
 ---
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-声明ArkWeb网络协议栈错误码。
+声明ArkWeb网络协议栈错误码。该枚举定义了ArkWeb网络协议栈中可能出现的各种错误类型，覆盖网络连接、SSL/TLS、证书验证、HTTP/2、QUIC、缓存等多个方面的错误场景。开发者可以通过这些错误码快速定位网络请求失败的原因，便于进行故障诊断和错误处理。
 
 **引用文件：** <web/arkweb\_net\_error\_list.h>
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,14 +32,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### ArkWeb\_NetError
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum ArkWeb_NetError
+```c
+enum ArkWeb_NetError
 ```
 
 **描述：**
@@ -87,7 +77,7 @@ PhonePC/2in1TabletTVWearable
 | ARKWEB\_ERR\_BLOCKED\_BY\_RESPONSE = -27 | 请求失败，因为响应不满足要求（例如“X-Frame-Options”和“Content Security Policy”检查以及“Cross Origin Resource Policy”）。 |
 | ARKWEB\_ERR\_CLEARTEXT\_NOT\_PERMITTED = -29 | 由于系统策略禁止某些或所有明文请求，请求被阻止。 |
 | ARKWEB\_ERR\_BLOCKED\_BY\_CSP = -30 | 请求被内容安全策略阻止。 |
-| ARKWEB\_ERR\_H2\_OR\_QUIC\_REQUIRED = -31 | 由于没有H/2或QUIC会话，请求被阻止。 |
+| ARKWEB\_ERR\_H2\_OR\_QUIC\_REQUIRED = -31 | 由于没有HTTP/2或QUIC会话，请求被阻止。 |
 | ARKWEB\_ERR\_BLOCKED\_BY\_ORB = -32 | 请求被CORB或ORB阻止。 |
 | ARKWEB\_ERR\_CONNECTION\_CLOSED = -100 | 连接已关闭（对应于TCP FIN）。 |
 | ARKWEB\_ERR\_CONNECTION\_RESET = -101 | 连接被重置（对应于TCP RST）。 |
@@ -107,7 +97,7 @@ PhonePC/2in1TabletTVWearable
 | ARKWEB\_ERR\_PROXY\_AUTH\_UNSUPPORTED = -115 | 代理请求进行身份验证（用于建立隧道，但使用的方法不受支持）。 |
 | ARKWEB\_ERR\_BAD\_SSL\_CLIENT\_AUTH\_CERT = -117 | SSL握手未能成功，原因是客户端证书不正确或缺失。 |
 | ARKWEB\_ERR\_CONNECTION\_TIMED\_OUT = -118 | 连接尝试超时。 |
-| ARKWEB\_ERR\_HOST\_RESOLVER\_QUEUE\_TOO\_LARGE = -119 | 有太多待处理的DNS解析，因此队列中的一个请求被中止了。 |
+| ARKWEB\_ERR\_HOST\_RESOLVER\_QUEUE\_TOO\_LARGE = -119 | DNS解析队列已满，无法接受新的解析请求。 |
 | ARKWEB\_ERR\_SOCKS\_CONNECTION\_FAILED = -120 | 为目标主机建立到SOCKS代理服务器的连接失败。 |
 | ARKWEB\_ERR\_SOCKS\_CONNECTION\_HOST\_UNREACHABLE = -121 | SOCKS代理服务器无法建立与目标主机的连接，因为该主机无法访问。 |
 | ARKWEB\_ERR\_ALPN\_NEGOTIATION\_FAILED = -122 | 协商备用协议的请求失败。 |
@@ -123,12 +113,12 @@ PhonePC/2in1TabletTVWearable
 | ARKWEB\_ERR\_SSL\_CLIENT\_AUTH\_CERT\_NO\_PRIVATE\_KEY = -135 | SSL客户端证书没有私钥。 |
 | ARKWEB\_ERR\_PROXY\_CERTIFICATE\_INVALID = -136 | HTTPS代理提供的证书无效。 |
 | ARKWEB\_ERR\_NAME\_RESOLUTION\_FAILED = -137 | 在尝试进行域名解析（DNS）时发生错误。 |
-| ARKWEB\_ERR\_NETWORK\_ACCESS\_DENIED = -138 | 访问网络的权限被拒绝。这用于区分很可能是由防火墙导致的错误和其他访问被拒绝的错误。另请参阅ERR\_ACCESS\_DENIED。 |
+| ARKWEB\_ERR\_NETWORK\_ACCESS\_DENIED = -138 | 访问网络的权限被拒绝。这用于区分很可能是由防火墙导致的错误和其他访问被拒绝的错误。另请参阅ARKWEB\_ERR\_ACCESS\_DENIED。 |
 | ARKWEB\_ERR\_TEMPORARILY\_THROTTLED = -139 | 请求节流模块取消了此请求，以避免DDOS攻击。 |
 | ARKWEB\_ERR\_HTTPS\_PROXY\_TUNNEL\_RESPONSE\_REDIRECT = -140 | 通过HTTPS代理创建SSL隧道连接的请求收到了302（临时重定向）响应。响应体可能包含请求失败原因的说明。 |
 | ARKWEB\_ERR\_SSL\_CLIENT\_AUTH\_SIGNATURE\_FAILED = -141 | 我们无法使用客户端证书的私钥签署SSL客户端身份验证握手的CertificateVerify数据。 |
 | ARKWEB\_ERR\_MSG\_TOO\_BIG = -142 | 消息对于传输来说太大了。（例如，UDP消息超过了大小阈值）。 |
-| ARKWEB\_ERR\_WS\_PROTOCOL\_ERROR = -145 | Websocket协议错误。表示由于帧格式错误或其他协议违规，我们正在终止连接。 |
+| ARKWEB\_ERR\_WS\_PROTOCOL\_ERROR = -145 | WebSocket协议错误。表示由于帧格式错误或其他协议违规，我们正在终止连接。 |
 | ARKWEB\_ERR\_ADDRESS\_IN\_USE = -147 | 当尝试绑定已使用的地址时返回。 |
 | ARKWEB\_ERR\_SSL\_HANDSHAKE\_NOT\_COMPLETED = -148 | 由于SSL握手尚未完成，操作失败。 |
 | ARKWEB\_ERR\_SSL\_BAD\_PEER\_PUBLIC\_KEY = -149 | SSL对等方的公钥无效。 |
@@ -215,7 +205,7 @@ PhonePC/2in1TabletTVWearable
 | ARKWEB\_ERR\_PAC\_NOT\_IN\_DHCP = -348 | 无法从DHCP检索PAC URL配置。这可能表明检索DHCP配置失败，或者在DHCP中没有配置PAC URL。 |
 | ARKWEB\_ERR\_RESPONSE\_HEADERS\_MULTIPLE\_CONTENT\_DISPOSITION = -349 | HTTP响应包含多个Content-Disposition响应头。 |
 | ARKWEB\_ERR\_RESPONSE\_HEADERS\_MULTIPLE\_LOCATION = -350 | HTTP响应包含了多个Location响应头。 |
-| ARKWEB\_ERR\_HTTP2\_SERVER\_REFUSED\_STREAM = -351 | HTTP/2服务器在未处理请求的情况下拒绝了请求，并发送了带有错误代码NO\_ERROR和低于与请求对应的流ID的Last-Stream-ID的GOAWAY帧， |
+| ARKWEB\_ERR\_HTTP2\_SERVER\_REFUSED\_STREAM = -351 | HTTP/2服务器在未处理请求的情况下拒绝了请求，并发送了带有错误代码NO\_ERROR和低于与请求对应的流ID的Last-Stream-ID的GOAWAY帧。 |
 | ARKWEB\_ERR\_HTTP2\_PING\_FAILED = -352 | HTTP/2服务器未响应PING消息。 |
 | ARKWEB\_ERR\_CONTENT\_LENGTH\_MISMATCH = -354 | 当连接关闭时，HTTP响应主体传输的字节数少于Content-Length头中公布的字节数。 |
 | ARKWEB\_ERR\_INCOMPLETE\_CHUNKED\_ENCODING = -355 | HTTP响应体使用分块编码传输，但在连接关闭时，终止的零长度区块从未被发送。 |
@@ -295,6 +285,6 @@ PhonePC/2in1TabletTVWearable
 | ARKWEB\_ERR\_DNS\_SEARCH\_EMPTY = -805 | 后缀搜索列表规则阻止了给定主机名的解析。 |
 | ARKWEB\_ERR\_DNS\_SORT\_ERROR = -806 | 未能根据RFC3484对地址进行排序。 |
 | ARKWEB\_ERR\_DNS\_SECURE\_RESOLVER\_HOSTNAME\_RESOLUTION\_FAILED = -808 | 未能解析DNS-over-HTTPS服务器的主机名。 |
-| ARKWEB\_ERR\_DNS\_NAME\_HTTPS\_ONLY = -809 | DNS已识别请求因不安全的连接（http/ws）而被禁止。应用程序应该像处理HTTP重定向一样处理这个错误，将连接重定向到安全的https或wss。 |
+| ARKWEB\_ERR\_DNS\_NAME\_HTTPS\_ONLY = -809 | DNS已识别请求因不安全的连接（HTTP/WS）而被禁止。应用程序应该像处理HTTP重定向一样处理这个错误，将连接重定向到安全的HTTPS或WSS。 |
 | ARKWEB\_ERR\_DNS\_REQUEST\_CANCELED = -810 | 与此任务相关的所有DNS请求已被取消。 |
 | ARKWEB\_ERR\_DNS\_NO\_MATCHING\_SUPPORTED\_ALPN = -811 | HTTPS记录的主机名解析预期未能使用受支持协议的ALPN值进行解析。 |

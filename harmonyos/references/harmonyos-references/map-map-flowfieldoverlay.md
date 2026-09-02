@@ -1,24 +1,20 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-flowfieldoverlay
-title: FlowFieldOverlay
-breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > FlowFieldOverlay
+title: Interface (FlowFieldOverlay)
+breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (FlowFieldOverlay)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:20+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:963ca869a1004afb914d43f3fe39f7983d32e677c5d30f416d273f23b0b327f8
+scraped_at: 2026-09-02T15:02:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4aa961509d468c86d1d3aea2500ac1bca0fdd9c49fceff4da6e538f613a743b4
 ---
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { map, mapCommon } from '@kit.MapKit';
+```typescript
+import { map, mapCommon } from '@kit.MapKit';
 ```
 
 ## FlowFieldOverlay
-
-PhonePC/2in1Tablet
 
 流场图层管理对象。在调用map.[MapComponentController](map-map-mapcomponentcontroller.md)类的[addFlowFieldOverlay](map-map-mapcomponentcontroller.md#addflowfieldoverlay)方法时会返回该类型的实例，继承[BaseOverlay](map-map-baseoverlay.md)。
 
@@ -32,17 +28,15 @@ PhonePC/2in1Tablet
 
 **示例：**
 
-```
-1. let params: mapCommon.FlowFieldOverlayParams = {
-2. // data为GRIB2规范的json数据，需开发者自行传输，可参考流场数据格式参考
-3. data: 'xxx'
-4. };
-5. let fieldOverlay = await mapController.addFlowFieldOverlay(params);
+```typescript
+let params: mapCommon.FlowFieldOverlayParams = {
+  // data为GRIB2规范的json数据，需开发者自行传输，可参考流场数据格式参考
+  data: 'xxx'
+};
+let fieldOverlay = await mapController.addFlowFieldOverlay(params);
 ```
 
 ### setStyle
-
-PhonePC/2in1Tablet
 
 setStyle(style: mapCommon.ParticleStyle): void
 
@@ -64,19 +58,17 @@ setStyle(style: mapCommon.ParticleStyle): void
 
 **示例：**
 
-```
-1. let style: mapCommon.ParticleStyle = {
-2. count: 200,
-3. color: 0xff009575,
-4. maxSpeed: 60,
-5. speedFactor: 0.3
-6. };
-7. fieldOverlay.setStyle(style);
+```typescript
+let style: mapCommon.ParticleStyle = {
+  count: 200,
+  color: 0xff009575,
+  maxSpeed: 60,
+  speedFactor: 0.3
+};
+fieldOverlay.setStyle(style);
 ```
 
 ### getStyle
-
-PhonePC/2in1Tablet
 
 getStyle(): mapCommon.ParticleStyle
 
@@ -98,6 +90,6 @@ getStyle(): mapCommon.ParticleStyle
 
 **示例：**
 
-```
-1. let style: mapCommon.ParticleStyle = fieldOverlay.getStyle();
+```typescript
+let style: mapCommon.ParticleStyle = fieldOverlay.getStyle();
 ```

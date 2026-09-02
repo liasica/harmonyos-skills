@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-basics-serv
 title: OAID、AAID和ODID分别是什么，如何获取设备的唯一标识
 breadcrumb: FAQ > 系统开发 > 基础功能 > 基础服务（Basics Service） > OAID、AAID和ODID分别是什么，如何获取设备的唯一标识
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:22+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:00+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:b328035767a08a21793e9dd302822497a4f6f6626b7ce87f7ae4f35a2d4d4177
 ---
 

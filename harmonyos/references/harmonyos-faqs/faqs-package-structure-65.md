@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: "使用发布证书进行调试时出现安装错误: Install Failed: error: failed to install bundle."
 breadcrumb: "FAQ > 应用框架开发 > 程序包结构 > 使用发布证书进行调试时出现安装错误: Install Failed: error: failed to install bundle."
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:38+08:00
-doc_updated_at: 2026-03-17
+scraped_at: 2026-09-02T15:21:14+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:0454844a9fb32c566c1357bef049e9a2fcfec1a5b2c460c5c737073fcf035059
 ---
 

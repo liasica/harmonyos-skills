@@ -3,26 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: canvas组件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 画布组件 > canvas组件
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:30+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:91d391cac7f87c54ec59de4173275405ec8c65602849fcc7731e774e48a4cb08
+scraped_at: 2026-09-02T15:01:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7ba43132664d421f12b73bd5c30f7ab93ccc714790a1945c09e1d41634bb1268
 ---
 
 提供画布组件。用于自定义绘制图形。
 
-说明
+**说明** 
 
 该组件从API version 5 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 不支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
@@ -33,24 +29,20 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | click | - | 点击动作触发该事件。 |
 | longpress | - | 长按动作触发该事件。 |
-| swipe5+ | [SwipeEvent](js-lite-common-events.md) | 组件上快速滑动后触发。 |
+| swipe5+ | [SwipeEvent](js-lite-common-events.md#swipeevent) | 组件上快速滑动后触发。 |
 
 ## 样式
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | width | <length> | <percentage>5+ | - | 否 | 设置组件自身的宽度。  未设置时组件宽度默认为0。 |
 | height | <length> | <percentage>5+ | - | 否 | 设置组件自身的高度。  未设置时组件高度默认为0。 |
 | padding | <length> | 0 | 否 | 使用简写属性设置所有的内边距属性。  该属性可以有1到4个值：  - 指定一个值时，该值指定四个边的内边距。  - 指定两个值时，第一个值指定上下两边的内边距，第二个指定左右两边的内边距。  - 指定三个值时，第一个指定上边的内边距，第二个指定左右两边的内边距，第三个指定下边的内边距。  - 指定四个值时分别为上、右、下、左边的内边距（顺时针顺序）。 |
-| margin | <length> | <percentage>5+ | 0 | 否 | 使用简写属性设置所有的外边距属性，该属性可以有1到4个值。  - 只有一个值时，这个值会被指定给全部的四个边。  - 两个值时，第一个值被匹配给上和下，第二个值被匹配给左和右。  - 三个值时，第一个值被匹配给上, 第二个值被匹配给左和右，第三个值被匹配给下。  - 四个值时，会依次按上、右、下、左的顺序匹配 (即顺时针顺序)。 |
+| margin | <length> | <percentage>5+ | 0 | 否 | 使用简写属性设置所有的外边距属性，该属性可以有1到4个值。  - 只有一个值时，这个值会被指定给全部的四个边。  - 两个值时，第一个值被匹配给上和下，第二个值被匹配给左和右。  - 三个值时，第一个值被匹配给上，第二个值被匹配给左和右，第三个值被匹配给下。  - 四个值时，会依次按上、右、下、左的顺序匹配（即顺时针顺序）。 |
 | margin-[left|top|right|bottom] | <length> | <percentage>5+ | 0 | 否 | 设置左、上、右、下外边距属性。 |
 | border-width | <length> | 0 | 否 | 使用简写属性设置元素的所有边框宽度。 |
 | border-color | <color> | black | 否 | 使用简写属性设置元素的所有边框颜色。 |
@@ -60,8 +52,6 @@ PhonePC/2in1TabletTVWearableLite Wearable
 | [left|top] | <length> | <percentage>6+ | - | 否 | left|top确定元素的偏移位置。  - left属性规定元素的左边缘。该属性定义了定位元素左外边距边界与其包含块左边界之间的偏移。  - top属性规定元素的顶部边缘。该属性定义了一个定位元素的上外边距边界与其包含块上边界之间的偏移。 |
 
 ## 方法
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |

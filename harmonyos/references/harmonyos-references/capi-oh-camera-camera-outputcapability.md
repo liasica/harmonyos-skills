@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: Camera_OutputCapability
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 结构体 > Camera_OutputCapability
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:48+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:151025387fc86daeebf68c5d8510b20a77ebf9b004829f2b5a27e5df6a93f37c
+scraped_at: 2026-09-02T15:02:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b28fbcfe79473297e6c5aeeb63847a6d39e5553b6541e469da30c9a25f9e8d92
 ---
 
-```
-1. typedef struct Camera_OutputCapability {...} Camera_OutputCapability
+```c
+typedef struct Camera_OutputCapability {...} Camera_OutputCapability
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 相机输出能力。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“This project is in the stage model and does not allow for dependencies of modules in the FA model.”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“This project is in the stage model and does not allow for dependencies of modules in the FA model.”
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:42+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:15+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:0de490bd5702b45e735ab2a2465e31a009232f8281c46f23a12ecf9ebbfbcd8c
 ---
 

@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 通用方法
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 通用方法
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:15+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:e5c078149b8c24a46321e581dc30fa5b3a72ae5bf098a3fd734bc559e017d652
+scraped_at: 2026-09-02T15:01:11+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0409c3e127363f0cb8cb326717b878e053b76387c7cb6488b7b0def28d89b591
 ---
 
-说明
+**说明** 
 
 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -16,11 +16,9 @@ content_hash: sha256:e5c078149b8c24a46321e581dc30fa5b3a72ae5bf098a3fd734bc559e01
 
 ## animate
 
-PhonePC/2in1TabletTVWearable
-
 animate( keyframes: Keyframes, options: Options)：void
 
-设置动画样式和动画属性的对象列表。
+通过传入关键帧样式和动画参数，在组件上创建动画效果，返回animation对象用于控制动画的播放、暂停等操作。
 
 **参数：**
 
@@ -45,7 +43,7 @@ animate( keyframes: Keyframes, options: Options)：void
 | opacity | number | 1 | 设置到组件上的透明度，取值范围在0到1之间。 |
 | backgroundPosition | string | - | 格式为"x y"，单位为百分号或者px。  第一个值是水平位置，第二个值是垂直位置。  如果仅规定了一个值，另一个值为 50%。 |
 | transformOrigin | string | 'center center' | 变换对象的中心点。  第一个参数表示x轴的值，可以设置为left、center、right、长度值或百分比值。  第二个参数表示y轴的值，可以设置为top、center、bottom、长度值或百分比值。 |
-| transform | [Transform](js-components-common-animation.md) | - | 设置到变换对象上的类型。 |
+| transform | [Transform](js-components-common-animation.md#属性) | - | 设置到变换对象上的类型。 |
 | offset | number | - | - offset值（如果提供）必须在0.0到1.0（含）之间，并以升序排列。  - 若仅有两帧，offset参数可省略。  - 若超过两帧，offset必填。 |
 
 **表3** Options说明
@@ -68,7 +66,7 @@ animate( keyframes: Keyframes, options: Options)：void
 | ease-out | 动画速度先快后慢，cubic-bezier(0.0, 0.0, 0.58, 1.0)。 |
 | ease-in-out | 动画先加速后减速，cubic-bezier(0.42, 0.0, 0.58, 1.0)。 |
 | friction | 阻尼曲线，cubic-bezier(0.2, 0.0, 0.2, 1.0)。 |
-| extreme-deceleration | 急缓曲线，cubic-bezier(0.0, 0.0, 0.0, 1.0)。 |
+| extreme-deceleration | 极缓曲线，cubic-bezier(0.0, 0.0, 0.0, 1.0)。 |
 | sharp | 锐利曲线，cubic-bezier(0.33, 0.0, 0.67, 1.0)。 |
 | rhythm | 节奏曲线，cubic-bezier(0.7, 0.0, 0.2, 1.0)。 |
 | smooth | 平滑曲线，cubic-bezier(0.4, 0.0, 0.4, 1.0)。 |
@@ -107,95 +105,93 @@ animation对象事件：
 
 **示例：**
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <div id="idName" class="box"></div>
-4. <div class="buttonBox">
-5. <button @click="start">
-6. start
-7. </button>
-8. <button @click="cancel">
-9. cancel
-10. </button>
-11. </div>
-12. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. flex-direction: column;
-4. justify-content: center;
-5. align-items: center;
-6. width: 100%;
-7. }
-8. .box{
-9. width: 200px;
-10. height: 200px;
-11. background-color: #ff0000;
-12. margin-top: 30px;
-13. }
-14. .buttonBox{
-15. margin-top: 30px;
-16. width: 250px;
-17. justify-content: space-between;
-18. }
-19. button{
-20. background-color: #8e8b89;
-21. color: white;
-22. width: 100px;
-23. height: 40px;
-24. font-size: 24px;
-25. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <div id="animBox" class="box"></div>
+  <div class="buttonBox">
+    <button @click="start">
+      start
+    </button>
+    <button @click="cancel">
+      cancel
+    </button>
+  </div>
+</div>
 ```
 
-```
-1. // xxx.js
-2. export default {
-3. data: {
-4. animation: '',
-5. options: {},
-6. frames: {}
-7. },
-8. onInit() {
-9. this.options = {
-10. duration: 1500,
-11. easing: 'friction',
-12. delay: 500,
-13. fill: 'forwards',
-14. iterations: 2,
-15. direction: 'normal',
-16. };
-17. this.frames = [
-18. {
-19. transform: {
-20. translate: '-120px -0px'
-21. }, opacity: 0.1, offset: 0.0
-22. },
-23. {
-24. transform: {
-25. translate: '120px 0px'
-26. }, opacity: 1.0, offset: 1.0
-27. }
-28. ];
-29. },
-
-31. start() {
-32. this.animation = this.$element('idName').animate(this.frames, this.options);
-33. this.animation.play();
-34. },
-35. cancel() {
-36. this.animation.cancel();
-37. }
-38. }
+```css
+/* xxx.css */
+.container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.box{
+  width: 200px;
+  height: 200px;
+  background-color: #ff0000;
+  margin-top: 30px;
+}
+.buttonBox{
+  margin-top: 30px;
+  width: 250px;
+  justify-content: space-between;
+}
+button{
+  background-color: #8e8b89;
+  color: white;
+  width: 100px;
+  height: 40px;
+  font-size: 24px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/L_fr0AZ9SimahjRdCksJ0Q/zh-cn_image_0000002589326563.gif)
+```js
+// xxx.js
+export default {
+    data: {
+        animation: '',
+        options: {},
+        frames: {}
+    },
+    onInit() {
+        this.options = {
+            duration: 1500,
+            easing: 'friction',
+            delay: 500,
+            fill: 'forwards',
+            iterations: 2,
+            direction: 'normal',
+        };
+        this.frames = [
+            {
+                transform: {
+                    translate: '-120px -0px'
+                }, opacity: 0.1, offset: 0.0
+            },
+            {
+                transform: {
+                    translate: '120px 0px'
+                }, opacity: 1.0, offset: 1.0
+            }
+        ];
+    },
+
+    start() {
+        this.animation = this.$element('animBox').animate(this.frames, this.options);
+        this.animation.play();
+    },
+    cancel() {
+        this.animation.cancel();
+    }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/5zpS1edwTh-f0l98bTH7pg/zh-cn_image_0000002736435513.gif)
 
 ## getBoundingClientRect
-
-PhonePC/2in1TabletTVWearable
 
 getBoundingClientRect(): <Rect>
 
@@ -214,19 +210,17 @@ getBoundingClientRect(): <Rect>
 
 **示例：**
 
-```
-1. // xxx.js
-2. var rect = this.$element('id').getBoundingClientRect();
-3. console.info(`current element position is ${rect.left}, ${rect.top}`);
+```js
+// xxx.js
+var rect = this.$element('id').getBoundingClientRect();
+console.info(`current element position is ${rect.left}, ${rect.top}`);
 ```
 
 ## createIntersectionObserver
 
-PhonePC/2in1TabletTVWearable
-
 createIntersectionObserver(param?: ObserverParam): Observer
 
-监听元素在当前页面的可见范围。
+创建一个交叉观察器，通过设置阈值，监听元素在当前页面可见区域与交叉区域的比例变化。
 
 **参数：**
 
@@ -251,15 +245,15 @@ createIntersectionObserver(param?: ObserverParam): Observer
 
 **示例：**
 
-```
-1. // xxx.js
-2. let observer = this.$element('broad').createIntersectionObserver({
-3. ratios: [0.2, 0.5], // number
-4. });
+```js
+// xxx.js
+let observer = this.$element('broad').createIntersectionObserver({
+  ratios: [0.2, 0.5], // number
+});
 
-6. observer.observe((isVisible, ratio)=> {
-7. console.info('this element is ' + isVisible + 'ratio is ' + ratio)
-8. })
+observer.observe((isVisible, ratio)=> {
+    console.info('this element is ' + isVisible + 'ratio is ' + ratio)
+})
 
-10. observer.unobserve()
+observer.unobserve()
 ```

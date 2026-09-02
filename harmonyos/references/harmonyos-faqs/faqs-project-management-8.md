@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-project-ma
 title: 打印超过1000行的日志内容时，DevEco Studio控制台如何设置
 breadcrumb: FAQ > DevEco Studio > 工程管理 > 打印超过1000行的日志内容时，DevEco Studio控制台如何设置
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:57+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:14+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:f0bc2d5e5fa8c2915d3eae5718a092c7d362ff024e735b9daebfb7b114f2ce8c
 ---
 

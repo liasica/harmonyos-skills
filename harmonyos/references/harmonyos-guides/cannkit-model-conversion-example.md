@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-model
 title: 模型转换示例
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型转换 > 离线模型转换 > 模型转换示例
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:40:57+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0c001ae3707f67c887f8e4c0ce48a9a874a079b504b4bb5161bd69d05d8c05e5
+scraped_at: 2026-09-02T15:00:04+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4d32dfd26a009ba125aacd5f9f4a1de5d8579393216ea9ebdd3b7b1323599e8e
 ---
 
-使用CANN Kit SDK时，可以预先使用OMG工具将Caffe、TensorFlow、ONNX、MindSpore模型转换为OM离线模型，移动端AI程序直接读取离线模型进行推理。OMG工具位于[Tools下载](cannkit-preparations.md#tools下载)的tools/tools\_omg下，可运行在64位Linux平台上。
+使用CANN Kit工具时，可以预先使用OMG工具将Caffe、TensorFlow、ONNX、MindSpore模型转换为OM离线模型，移动端AI程序直接读取离线模型进行推理。OMG工具位于[Tools下载](cannkit-preparations.md#tools下载)的tools/tools\_omg下，可运行在64位Linux平台上。
 
 ## Caffe模型转换
 
@@ -16,17 +16,17 @@ content_hash: sha256:0c001ae3707f67c887f8e4c0ce48a9a874a079b504b4bb5161bd69d05d8
 
 命令行中的参数说明请参见[OMG参数](cannkit-overall-parameter.md)，转换命令：
 
-```
-1. ./omg --model xxx.prototxt --weight yyy.caffemodel --framework 0 --output ./modelname
+```shell
+./omg --model xxx.prototxt --weight yyy.caffemodel --framework 0 --output ./modelname
 ```
 
 转换示例：
 
-```
-1. ./omg --model deploy.prototxt --weight squeezenet_v1.1.caffemodel --framework 0 --output ./squeezenet
+```shell
+./omg --model deploy.prototxt --weight squeezenet_v1.1.caffemodel --framework 0 --output ./squeezenet
 ```
 
-当看到OMG generate offline model success时，则说明转换成功，会在当前目录下生成squeezenet.om。
+当看到“OMG generate offline model success”时，则说明转换成功，会在当前目录下生成squeezenet.om。
 
 ## TensorFlow模型转换
 
@@ -34,17 +34,17 @@ content_hash: sha256:0c001ae3707f67c887f8e4c0ce48a9a874a079b504b4bb5161bd69d05d8
 
 命令行中的参数说明请参见[OMG参数](cannkit-overall-parameter.md)，转换命令：
 
-```
-1. ./omg --model xxx.pb --framework 3 --output ./modelname --input_shape "xxx:n,h,w,c" --out_nodes "node_name1:0"
+```shell
+./omg --model xxx.pb --framework 3 --output ./modelname --input_shape "xxx:n,h,w,c" --out_nodes "node_name1:0"
 ```
 
 转换示例：
 
-```
-1. ./omg --model mobilenet_v2_1.0_224_frozen.pb --framework 3 --output ./mobilenet_v2 --input_shape "input:1,224,224,3" --out_nodes "MobilenetV2/Predictions/Reshape_1:0"
+```shell
+./omg --model mobilenet_v2_1.0_224_frozen.pb --framework 3 --output ./mobilenet_v2 --input_shape "input:1,224,224,3" --out_nodes "MobilenetV2/Predictions/Reshape_1:0"
 ```
 
-当看到OMG generate offline model success时，则说明转换成功，会在当前目录下生成mobilenet\_v2.om。
+当看到“OMG generate offline model success”时，则说明转换成功，会在当前目录下生成mobilenet\_v2.om。
 
 ## ONNX模型转换
 
@@ -52,19 +52,17 @@ content_hash: sha256:0c001ae3707f67c887f8e4c0ce48a9a874a079b504b4bb5161bd69d05d8
 
 命令行中的参数说明请参见[OMG参数](cannkit-overall-parameter.md)，转换命令：
 
-```
-1. ./omg --model xxx.onnx --framework 5 --output ./modelname
+```shell
+./omg --model xxx.onnx --framework 5 --output ./modelname
 ```
 
 转换示例:
 
-```
-1. ./omg --model resnet18.onnx --framework 5 --output ./resnet18
+```shell
+./omg --model resnet18.onnx --framework 5 --output ./resnet18
 ```
 
-当看到如下log时，则说明转换成功，会在当前目录下生成resnet18.om。
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/tTeW9L03RcOeBXQHKyaWyA/zh-cn_image_0000002589245525.png)
+当看到“OMG generate offline model success”时，则说明转换成功，会在当前目录下生成resnet18.om。
 
 ## 量化模型转换（以Caffe模型为例）
 
@@ -74,17 +72,17 @@ content_hash: sha256:0c001ae3707f67c887f8e4c0ce48a9a874a079b504b4bb5161bd69d05d8
 
 命令行中的参数说明请参见[OMG参数](cannkit-overall-parameter.md)，转换命令：
 
-```
-1. ./omg --model xxx.prototxt --weight xxx.caffemodel --framework 0 --output ./modelname  --compress_conf=param
+```shell
+./omg --model xxx.prototxt --weight xxx.caffemodel --framework 0 --output ./modelname  --compress_conf=param
 ```
 
 转换示例：
 
-```
-1. ./omg --model deploy.prototxt --weight squeezenet_v1.1.caffemodel --framework 0 --output ./squeezenet --compress_conf=param
+```shell
+./omg --model deploy.prototxt --weight squeezenet_v1.1.caffemodel --framework 0 --output ./squeezenet --compress_conf=param
 ```
 
-当看到OMG generate offline model success时，说明模型量化成功，会在当前目录下生成量化模型squeezenet.om。
+当看到“OMG generate offline model success”时，说明模型量化成功，会在当前目录下生成量化模型squeezenet.om。
 
 ## 推理前可变Shape模型转换（以ONNX模型为例）
 
@@ -96,11 +94,11 @@ content_hash: sha256:0c001ae3707f67c887f8e4c0ce48a9a874a079b504b4bb5161bd69d05d8
 
 转换示例：
 
-```
-1. ./omg --model=./1batch.onnx --input_shape="inputName:-1,3,128,128" --dynamic_dims="1;2;5" --framework=5 --output=./FlexibleShapeModelName
+```shell
+./omg --model=./1batch.onnx --input_shape="inputName:-1,3,128,128" --dynamic_dims="1;2;5" --framework=5 --output=./FlexibleShapeModelName
 ```
 
-说明
+**说明** 
 
 不同shape输入对应的不同输出shape，可在模型转换日志中，通过 "Graph:" 关键字查找对应的shape信息，方便在模型推理时指定对应的输出描述。
 
@@ -114,18 +112,42 @@ MindSpore支持的算子数量有限，建议通过[TensorFlow模型转换](cann
 
 命令行中的参数说明请参见[OMG参数](cannkit-overall-parameter.md)，转换命令：
 
-```
-1. ./omg --model xxx.prototxt --weight xxx.caffemodel --framework 0 --insert_op_conf aipp_conf_static.cfg --output ./modelname
+```shell
+./omg --model xxx.prototxt --weight xxx.caffemodel --framework 0 --insert_op_conf aipp_conf_static.cfg --output ./modelname
 ```
 
 转换示例：
 
-```
-1. ./omg --model deploy.prototxt --weight squeezenet_v1.1.caffemodel --framework 0 --insert_op_conf aipp_conf_static.cfg --output ./squeezenet
+```shell
+./omg --model deploy.prototxt --weight squeezenet_v1.1.caffemodel --framework 0 --insert_op_conf aipp_conf_static.cfg --output ./squeezenet
 ```
 
-当出现OMG generate offline model success时，说明AIPP模型转换成功，会在当前目录下生成AIPP squeezenet.om模型。
+当出现“OMG generate offline model success”时，说明AIPP模型转换成功，会在当前目录下生成AIPP squeezenet.om模型。
 
-说明
+**说明** 
 
 aipp\_conf\_static.cfg是AIPP的配置文件，位置存放在"tools/tools\_omg/sample"文件夹中，具体说明参见[AIPP配置文件说明](cannkit-aipp-configuration-file.md)。
+
+## OMC模型转换（以ONNX模型为例）
+
+OMC模型：硬件强相关Davinci模型，仅可在--platform指定的平台部署。
+
+适用场景：适用于编译耗时长，占用资源大的模型，可离线完成编译，免除在线编译耗时。
+
+若想编译omc模型，需要先参考[环境准备](cannkit-environment-preparation.md)完成环境配置，再进行转换命令。
+
+命令行中的参数说明请参见[OMG参数](cannkit-overall-parameter.md)，转换命令：
+
+```shell
+./omg --model xxx.onnx --platform=kirinxxxx --target=omc --framework 5 --output ./modelname
+```
+
+其中，platform选择对应的芯片平台，包括kirin9030、kirin9020、kirinx90。
+
+转换示例：
+
+```shell
+./omg --model resnet18.onnx --platform=kirin9030 --target=omc --framework 5 --output ./resnet18
+```
+
+当看到“OMG generate offline model success”时，则说明转换成功，会在当前目录下生成resnet18.omc，可在对应kirin9030平台执行。

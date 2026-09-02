@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-accelerate-launch-faq-10
-title: 游戏接入秒级启动后无法热更应该如何处理？
-breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > Graphics Accelerate Kit常见问题 > 游戏启动加速服务 > 游戏接入秒级启动后无法热更应该如何处理？
+title: 游戏接入秒级启动后无法热更应该如何处理
+breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > Graphics Accelerate Kit常见问题 > 游戏启动加速服务 > 游戏接入秒级启动后无法热更应该如何处理
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:50+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:17:37+08:00
+doc_updated_at: 2026-05-08
 content_hash: sha256:47ebba634269ad0b19f376210b5591b033ddbd130be57521b32d426ddfae98a0
 ---
 

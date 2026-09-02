@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/toolchain-cma
 title: CMake构建工程配置HarmonyOS编译工具链
 breadcrumb: 指南 > NDK开发 > 编译工具链 > CMake构建工程配置HarmonyOS编译工具链
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:44:30+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:b2d7694e799cca198be704b290986292094cc71b1f1c405afbe7bd815f4f9511
+scraped_at: 2026-09-02T15:00:17+08:00
+doc_updated_at: 2026-06-03
+content_hash: sha256:068cf4376f3afa00d17844d7af05e72130e7eb46dc43b42b9e57e1443238e284
 ---
 
 ## 概述
@@ -27,54 +27,54 @@ CMake构建过程可分为以下三个主要步骤：
 1. 首先需要Linux编译环境。
 
    开发者可以选择熟悉的发行版来进行环境搭建，这里以Ubuntu为例，Ubuntu目前主要支持Ubuntu18.04和Ubuntu20.04。
-2. HarmonyOS SDK镜像下载：通过[下载中心](https://developer.huawei.com/consumer/cn/download/)，下载Command Line Tools获取，或通过[CI平台](https://ci.HarmonyOS.cn/workbench/cicd/dailybuild/dailylist)进行下载。
+2. HarmonyOS SDK镜像下载：通过[下载中心](https://developer.huawei.com/consumer/cn/download/)，下载Command Line Tools获取。
 3. 进入SDK文件所在目录，使用tar -zxvf解压SDK文件。
 
    随着版本更新，SDK版本可能会有变动，开发者可自行下载最新版本，此处以4.0.10.5版本为例。
 
-   ```
-   1. owner@ubuntu:/mnt/e/ohosSDK$ tar -zxvf version-Master_Version-HarmonyOS_4.0.10.5-20230824_120921-ohos-sdk-public_monthly.tar.gz
+   ```bash
+   owner@ubuntu:/mnt/e/ohosSDK$ tar -zxvf version-Master_Version-HarmonyOS_4.0.10.5-20230824_120921-ohos-sdk-public_monthly.tar.gz
    ```
 4. 进入到SDK的linux目录，解压工具包。
 
-   ```
-   1. owner@ubuntu:/mnt/e/ohosSDK$ cd ohos-sdk/linux
-   2. owner@ubuntu:/mnt/e/ohosSDK/ohos-sdk/linux$ for i in *.zip;do unzip ${i};done                  # 通过for循环一次解压所有的工具包
-   3. owner@ubuntu:/mnt/e/ohosSDK/ohos-sdk/linux$ ls
-   4. ets                                 native                                    toolchains
-   5. ets-linux-x64-4.0.10.5-Release.zip  native-linux-x64-4.0.10.5-Release.zip     toolchains-linux-x64-4.0.10.5-Release.zip
-   6. js                                  previewer
-   7. js-linux-x64-4.0.10.5-Release.zip   previewer-linux-x64-4.0.10.5-Release.zip
+   ```bash
+   owner@ubuntu:/mnt/e/ohosSDK$ cd ohos-sdk/linux
+   owner@ubuntu:/mnt/e/ohosSDK/ohos-sdk/linux$ for i in *.zip;do unzip ${i};done                  # 通过for循环一次解压所有的工具包
+   owner@ubuntu:/mnt/e/ohosSDK/ohos-sdk/linux$ ls
+   ets                                 native                                    toolchains
+   ets-linux-x64-4.0.10.5-Release.zip  native-linux-x64-4.0.10.5-Release.zip     toolchains-linux-x64-4.0.10.5-Release.zip
+   js                                  previewer
+   js-linux-x64-4.0.10.5-Release.zip   previewer-linux-x64-4.0.10.5-Release.zip
    ```
 
-   说明
+   **说明** 
 
    若通过Command Line Tools获取SDK，Linux工具存放路径一般在xxx/command-line-tools/sdk/default/openharmony/native目录下。但随着SDK更新，工具存放位置可能会有所变化。
 5. 获取三方库源码，适配三方库如果没有指定版本，一般取三方库最新版本（/mnt/e/cmake中cmake表示创建的文件夹名称，用于存放三方库源码文件，开发者可自行选择创建与否）。
 
-   ```
-   1. owner@ubuntu:/mnt/e/cmake$ git clone https://github.com/DaveGamble/cJSON.git -b v1.7.18
-   2. Cloning into 'cJSON'...
-   3. remote: Enumerating objects: 4545, done.
-   4. remote: Total 4545 (delta 0), reused 0 (delta 0), pack-reused 4545
-   5. Receiving objects: 100% (4545/4545), 2.45 MiB | 1.65 MiB/s, done.
-   6. Resolving deltas: 100% (3026/3026), done.
-   7. Note: switching to 'd348621ca93571343a56862df7de4ff3bc9b5667'.
+   ```bash
+   owner@ubuntu:/mnt/e/cmake$ git clone https://github.com/DaveGamble/cJSON.git -b v1.7.18
+   Cloning into 'cJSON'...
+   remote: Enumerating objects: 4545, done.
+   remote: Total 4545 (delta 0), reused 0 (delta 0), pack-reused 4545
+   Receiving objects: 100% (4545/4545), 2.45 MiB | 1.65 MiB/s, done.
+   Resolving deltas: 100% (3026/3026), done.
+   Note: switching to 'd348621ca93571343a56862df7de4ff3bc9b5667'.
 
-   9. You are in 'detached HEAD' state. You can look around, make experimental
-   10. changes and commit them, and you can discard any commits you make in this
-   11. state without impacting any branches by switching back to a branch.
+   You are in 'detached HEAD' state. You can look around, make experimental
+   changes and commit them, and you can discard any commits you make in this
+   state without impacting any branches by switching back to a branch.
 
-   13. If you want to create a new branch to retain commits you create, you may
-   14. do so (now or later) by using -c with the switch command. Example:
+   If you want to create a new branch to retain commits you create, you may
+   do so (now or later) by using -c with the switch command. Example:
 
-   16. git switch -c <new-branch-name>
+     git switch -c <new-branch-name>
 
-   18. Or undo this operation with:
+   Or undo this operation with:
 
-   20. git switch -
+     git switch -
 
-   22. Turn off this advice by setting config variable advice.detachedHead to false
+   Turn off this advice by setting config variable advice.detachedHead to false
    ```
 
 ## 编译三方库
@@ -85,28 +85,28 @@ CMake构建过程可分为以下三个主要步骤：
 
    本用例中在cJSON目录下新建一个build目录：
 
-   ```
-   1. owner@ubuntu:/mnt/e/cmake$ cd cJSON-1.7.18                                   # 进入cJSON目录
-   2. owner@ubuntu:/mnt/e/cmake/cJSON-1.7.18$ mkdir build && cd build              # 创建编译目录并进入到编译目录
-   3. owner@ubuntu:/mnt/e/cmake/cJSON-1.7.18/build$
+   ```bash
+   owner@ubuntu:/mnt/e/cmake$ cd cJSON-1.7.18                                   # 进入cJSON目录
+   owner@ubuntu:/mnt/e/cmake/cJSON-1.7.18$ mkdir build && cd build              # 创建编译目录并进入到编译目录
+   owner@ubuntu:/mnt/e/cmake/cJSON-1.7.18/build$
    ```
 2. 执行cmake编译命令，配置交叉编译参数，生成Makefile。
 
-   ```
-   1. owner@ubuntu:/mnt/e/cmake/cJSON-1.7.18/build$ /xxx/ohos-sdk/linux/native/build-tools/cmake/bin/cmake -DCMAKE_TOOLCHAIN_FILE=/xxx/ohos-sdk/linux/native/build/cmake/ohos.toolchain.cmake -DCMAKE_INSTALL_PREFIX=/xxx/cJSON -DOHOS_ARCH=arm64-v8a .. -L                                                   # 执行cmake命令
-   2. -- The C compiler identification is Clang 12.0.1
-   3. -- Check for working C compiler: /mnt/e/ohosSDK/ohos-sdk/linux/native/llvm/bin/clang   # 采用sdk内的编译器
-   4. -- Check for working C compiler: /mnt/e/ohosSDK/ohos-sdk/linux/native/llvm/bin/clang -- works
-   5. ...
-   6. # 省略部分cmake信息
-   7. ...
-   8. ENABLE_PUBLIC_SYMBOLS:BOOL=ON
-   9. ENABLE_SAFE_STACK:BOOL=OFF
-   10. ENABLE_SANITIZERS:BOOL=OFF
-   11. ENABLE_TARGET_EXPORT:BOOL=ON
-   12. ENABLE_VALGRIND:BOOL=OFF
-   13. owner@ubuntu:/mnt/e/cmake/cJSON-1.7.18/build$ ls                             # 执行完cmake成功后在当前目录生成Makefile文件
-   14. cJSONConfig.cmake  cJSONConfigVersion.cmake  CMakeCache.txt  CMakeFiles  cmake_install.cmake  CTestTestfile.cmake  fuzzing  libcjson.pc  Makefile  tests
+   ```bash
+   owner@ubuntu:/mnt/e/cmake/cJSON-1.7.18/build$ /xxx/ohos-sdk/linux/native/build-tools/cmake/bin/cmake -DCMAKE_TOOLCHAIN_FILE=/xxx/ohos-sdk/linux/native/build/cmake/ohos.toolchain.cmake -DCMAKE_INSTALL_PREFIX=/xxx/cJSON -DOHOS_ARCH=arm64-v8a .. -L                                                   # 执行cmake命令
+   -- The C compiler identification is Clang 12.0.1
+   -- Check for working C compiler: /mnt/e/ohosSDK/ohos-sdk/linux/native/llvm/bin/clang   # 采用sdk内的编译器
+   -- Check for working C compiler: /mnt/e/ohosSDK/ohos-sdk/linux/native/llvm/bin/clang -- works
+   ...
+   # 省略部分cmake信息
+   ...
+   ENABLE_PUBLIC_SYMBOLS:BOOL=ON
+   ENABLE_SAFE_STACK:BOOL=OFF
+   ENABLE_SANITIZERS:BOOL=OFF
+   ENABLE_TARGET_EXPORT:BOOL=ON
+   ENABLE_VALGRIND:BOOL=OFF
+   owner@ubuntu:/mnt/e/cmake/cJSON-1.7.18/build$ ls                             # 执行完cmake成功后在当前目录生成Makefile文件
+   cJSONConfig.cmake  cJSONConfigVersion.cmake  CMakeCache.txt  CMakeFiles  cmake_install.cmake  CTestTestfile.cmake  fuzzing  libcjson.pc  Makefile  tests
    ```
 
    参数说明：
@@ -116,7 +116,7 @@ CMake构建过程可分为以下三个主要步骤：
    * OHOS\_ARCH: 配置交叉编译的CPU架构，一般为arm64-v8a（编译64位的三方库）或armeabi-v7a（编译32位的三方库），本示例中设置编译为64位的cJSON库。
    * -L: 显示cmake中可配置项目。
 
-   说明
+   **说明** 
 
    ohos.toolchain.cmake中CMAKE\_FIND\_ROOT\_PATH\_MODE\_XXX变量可设置如下值：
 
@@ -137,50 +137,50 @@ CMake构建过程可分为以下三个主要步骤：
 
    执行make对cJSON进行编译：
 
-   ```
-   1. owner@ubuntu:/mnt/e/cmake/cJSON-1.7.18/build$ make                  # 执行make命令进行编译
-   2. Scanning dependencies of target cjson
-   3. [  2%] Building C object CMakeFiles/cjson.dir/cJSON.c.o
-   4. clang: warning: argument unused during compilation: '--gcc-toolchain=/mnt/e/ohosSDK/ohos-sdk/linux/native/llvm' [-Wunused-command-line-argument]
-   5. /mnt/e/cmake/cJSON-1.7.18/cJSON.c:561:9: warning: 'long long' is an extension when C99 mode is not enabled [-Wlong-long]
-   6. ...
-   7. # 省略部分make信息
-   8. ...
-   9. clang: warning: argument unused during compilation: '--gcc-toolchain=/mnt/e/ohosSDK/ohos-sdk/linux/native/llvm' [-Wunused-command-line-argument]
-   10. [ 97%] Building C object fuzzing/CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.o
-   11. clang: warning: argument unused during compilation: '--gcc-toolchain=/mnt/e/ohosSDK/ohos-sdk/linux/native/llvm' [-Wunused-command-line-argument]
-   12. [100%] Linking C executable fuzz_main
-   13. [100%] Built target fuzz_main
+   ```bash
+   owner@ubuntu:/mnt/e/cmake/cJSON-1.7.18/build$ make                  # 执行make命令进行编译
+   Scanning dependencies of target cjson
+   [  2%] Building C object CMakeFiles/cjson.dir/cJSON.c.o
+   clang: warning: argument unused during compilation: '--gcc-toolchain=/mnt/e/ohosSDK/ohos-sdk/linux/native/llvm' [-Wunused-command-line-argument]
+     /mnt/e/cmake/cJSON-1.7.18/cJSON.c:561:9: warning: 'long long' is an extension when C99 mode is not enabled [-Wlong-long]
+   ...
+   # 省略部分make信息
+   ...
+   clang: warning: argument unused during compilation: '--gcc-toolchain=/mnt/e/ohosSDK/ohos-sdk/linux/native/llvm' [-Wunused-command-line-argument]
+   [ 97%] Building C object fuzzing/CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.o
+   clang: warning: argument unused during compilation: '--gcc-toolchain=/mnt/e/ohosSDK/ohos-sdk/linux/native/llvm' [-Wunused-command-line-argument]
+   [100%] Linking C executable fuzz_main
+   [100%] Built target fuzz_main
    ```
 4. 获取编译完成后的文件。
 
    编译成功后开发者可以通过file命令查看文件的属性，以此判断交叉编译是否成功，如下信息显示libcjson.so为aarch64架构文件，即交叉编译成功：
 
-   ```
-   1. owner@ubuntu:/mnt/e/cmake/cJSON-1.7.18/cJSON/build$ file libcjson.so.1.7.18                     # 查看文件属性命令
-   2. libcjson.so.1.7.18: ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, BuildID[sha1]=a79e4b52a332702b4853f2d6cac2fcd7dff95023, with debug_info, not stripped
+   ```bash
+   owner@ubuntu:/mnt/e/cmake/cJSON-1.7.18/build$ file libcjson.so.1.7.18                     # 查看文件属性命令
+   libcjson.so.1.7.18: ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, BuildID[sha1]=a79e4b52a332702b4853f2d6cac2fcd7dff95023, with debug_info, not stripped
    ```
 5. 执行安装命令。
 
    编译成功后，执行make install将编译好的二进制文件以及头文件安装到cmake配置的安装路径下：
 
-   ```
-   1. owner@ubuntu:/mnt/e/cmake/cJSON-1.7.18/cJSON/build$ make install                                # 执行安装命令
-   2. [  4%] Built target cjson
-   3. [  8%] Built target cJSON_test
-   4. ...
-   5. # 省略部分make install信息
-   6. ...
-   7. -- Installing: /mnt/e/cmake/cJSON-1.7.18/cJSON/lib/cmake/cJSON/cJSONConfig.cmake
-   8. -- Installing: /mnt/e/cmake/cJSON-1.7.18/cJSON/lib/cmake/cJSON/cJSONConfigVersion.cmake
-   9. owner@ubuntu:/mnt/e/cmake/cJSON-1.7.18/cJSON/build$
+   ```bash
+   owner@ubuntu:/mnt/e/cmake/cJSON-1.7.18/build$ make install                                # 执行安装命令
+   [  4%] Built target cjson
+   [  8%] Built target cJSON_test
+   ...
+   # 省略部分make install信息
+   ...
+   -- Installing: /mnt/e/cmake/cJSON-1.7.18/lib/cmake/cJSON/cJSONConfig.cmake
+   -- Installing: /mnt/e/cmake/cJSON-1.7.18/lib/cmake/cJSON/cJSONConfigVersion.cmake
+   owner@ubuntu:/mnt/e/cmake/cJSON-1.7.18/build$
    ```
 
-   ```
-   1. owner@ubuntu:/mnt/e/cmake/cJSON-1.7.18/build$ ls /mnt/e/cmake/cJSON-1.7.18/cJSON                # 查看安装文件
-   2. include  lib
-   3. owner@ubuntu:/mnt/e/cmake/cJSON-1.7.18/build$ ls /mnt/e/cmake/cJSON-1.7.18/cJSON/lib
-   4. cmake  libcjson.so  libcjson.so.1  libcjson.so.1.7.18  pkgconfig
+   ```bash
+   owner@ubuntu:/mnt/e/cmake/cJSON-1.7.18/build$ ls /mnt/e/cmake/cJSON-1.7.18                # 查看安装文件
+   include  lib
+   owner@ubuntu:/mnt/e/cmake/cJSON-1.7.18/build$ ls /mnt/e/cmake/cJSON-1.7.18/lib
+   cmake  libcjson.so  libcjson.so.1  libcjson.so.1.7.18  pkgconfig
    ```
 6. 安装成功后，即使用CMake构建工具通过ohos sdk编译cJSON三方库源码完成。
 

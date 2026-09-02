@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-err
 title: hdc命令失败错误码
 breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 调试错误码 > hdc命令失败错误码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:57+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:58a2a9efff7c88882a8f3712037bbbdd096170e7922623fbbbacd81c00a11051
+scraped_at: 2026-09-02T14:50:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:cd797604f474ea7ee5dc9369da0988500cb33a08353593c0d43b92ca47a0fd7c
 ---
 
 ## 00404035 安装hap包超时
@@ -24,7 +24,7 @@ Install hap timeout.
 
 **处理步骤**
 
-重新拔插下设备，或者执行hdc kill -r命令再重新运行。
+重新连接设备，或者执行hdc kill -r命令再重新运行。
 
 ## 00404036 删除临时目录超时
 
@@ -42,7 +42,7 @@ Remove Directory Timeout: XXX.
 
 **处理步骤**
 
-重新拔插下设备，或者执行hdc kill -r命令再重新运行。
+重新连接设备，或者执行hdc kill -r命令再重新运行。
 
 ## 00404037 创建临时目录超时
 
@@ -60,7 +60,7 @@ Create Directory Timeout.
 
 **处理步骤**
 
-重新拔插下设备，或者执行hdc kill -r命令再重新运行。
+重新连接设备，或者执行hdc kill -r命令再重新运行。
 
 ## 00404038 构建打包信息为空
 
@@ -96,7 +96,7 @@ Failed to create temporary directory during hap push operation.
 
 **处理步骤**
 
-重新拔插下设备，或者执行hdc kill -r命令再重新运行。
+重新连接设备，或者执行hdc kill -r命令再重新运行。
 
 ## 00404040 推包超时
 
@@ -186,7 +186,7 @@ Waiting for the debug command times out.
 
 **处理步骤**
 
-重新拔插下设备，或者执行hdc kill -r命令再重试。
+重新连接设备，或者执行hdc kill -r命令再重试。
 
 ## 00404055 应用没安装或者不是debug签名
 
@@ -206,4 +206,4 @@ This app is not installed or not signed with a debug signature.
 **处理步骤**
 
 1. 检查应用是否已安装，应用签名是否使用debug签名；
-2. 检查设备连接是否正常，可以尝试拔插设备重新连接，再重新启动等待调试。
+2. 检查设备连接是否正常，可以尝试重新连接设备，再启动等待调试。

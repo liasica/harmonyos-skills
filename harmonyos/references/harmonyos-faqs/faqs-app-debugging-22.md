@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: 安装HAP时提示“compatibleSdkVersion and releaseType of the app do not match the apiVersion and releaseType on the device.”
 breadcrumb: FAQ > DevEco Studio > 应用调试 > 安装HAP时提示“compatibleSdkVersion and releaseType of the app do not match the apiVersion and releaseType on the device.”
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:21:23+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:e5a87e0a0396a94e394096dbf761d10d2b991176d632dec544fdc96e7cf2e350
+scraped_at: 2026-09-02T15:04:35+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:4bff12ff80fd29558fbadc49b94e501b67255e0a955c08b976924d215d8f7da7
 ---
 
 **问题现象**
 
 在启动调试或运行应用/服务时，安装HAP出现错误，提示“compatibleSdkVersion和releaseType与设备上的apiVersion和releaseType不匹配。”
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/A1WziN9GQjmxigO1dbrNFQ/zh-cn_image_0000002247307937.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/PF7yOQKyS36FqddTYLiGCw/zh-cn_image_0000002624638688.png)
 
 **解决措施**
 
@@ -22,11 +22,11 @@ content_hash: sha256:e5a87e0a0396a94e394096dbf761d10d2b991176d632dec544fdc96e7cf
 
 方法一：请升级设备镜像版本以匹配当前工程版本。在系统设置界面升级设备系统。
 
-方法二：降低工程的API版本，点击DevEco Studio右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/D0sg94cxT1Gf2jMkoDDdfw/zh-cn_image_0000002489396138.png)，Compatible SDK选择更低的版本号，以兼容设备的API版本。
+方法二：降低工程的API版本，点击DevEco Studio右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/bqBHTJk4S1invc3kdK_AUQ/zh-cn_image_0000002654838097.png)，Compatible SDK选择更低的版本号，以兼容设备的API版本。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/j0RGDgzjTO6Grphq-ecCYg/zh-cn_image_0000002521676021.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/bu8UqZYwT4Sbt9mx7HbJQg/zh-cn_image_0000002624478780.png)
 
-说明
+**说明** 
 
 * 如果执行命令后返回“[Fail]ExecuteCommand need connect-key? please confirm a device by help info”，可能是连接了多台调试设备，或者模拟器和真机同时使用。
   + 如果同时连接了模拟器和真机，请断开模拟器。

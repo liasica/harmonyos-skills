@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way
 title: $$语法：系统组件双向同步
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 语法糖 > $$语法：系统组件双向同步
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:24+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4145a6ee324f8b2cf20325b3fc742a1cc273d9868384b3617b8aad8ff7f97773
+scraped_at: 2026-09-02T14:49:48+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1bddccc8599fd50fd921baa22012fab75b6bc2a751fa3fa9a7f522480d7a90ed
 ---
 
 $$运算符为系统组件提供TS变量的引用，使得TS变量和系统组件的内部状态保持同步。
@@ -47,32 +47,32 @@ $$运算符为系统组件提供TS变量的引用，使得TS变量和系统组�
 
 ## 使用示例
 
-以[TextInput](../harmonyos-references/ts-basic-components-textinput.md)方法的text参数为例：
+以[TextInput](../harmonyos-references/ts-basic-components-textinput.md)组件的text参数为例：
 
+```typescript
+@Entry
+@Component
+struct TextInputExample {
+  @State text: string = '';
+  controller: TextInputController = new TextInputController();
+
+  build() {
+    Column({ space: 20 }) {
+      Text(this.text)
+        .fontSize(20)
+        .margin(10)
+      // $$运算符为系统组件提供TS变量的引用，使得TS变量和系统组件的内部状态保持同步
+      TextInput({ text: $$this.text, placeholder: 'input your word...', controller: this.controller })
+        .placeholderColor(Color.Grey)
+        .placeholderFont({ size: 14, weight: 400 })
+        .caretColor(Color.Blue)
+        .width(300)
+    }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TextInputExample {
-5. @State text: string = '';
-6. controller: TextInputController = new TextInputController();
 
-8. build() {
-9. Column({ space: 20 }) {
-10. Text(this.text)
-11. TextInput({ text: $$this.text, placeholder: 'input your word...', controller: this.controller })
-12. .placeholderColor(Color.Grey)
-13. .placeholderFont({ size: 14, weight: 400 })
-14. .caretColor(Color.Blue)
-15. .width(300)
-16. }
-17. .width('100%')
-18. .height('100%')
-19. .justifyContent(FlexAlign.Center)
-20. }
-21. }
-```
-
-[SyncUsageExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/syncStateManager/SyncUsageExample.ets#L30-L52)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/_5WdgyJKSjCZdU8gQEqBSA/zh-cn_image_0000002589323981.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/KudkworJSXq-beSw1tZFMA/zh-cn_image_0000002706673362.gif)

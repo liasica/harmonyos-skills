@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/apidiff-510
 title: API变更清单
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.1.0(18) > OS平台能力 > API变更清单
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.0(18) > OS平台能力 > API变更清单
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:00+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:16:33+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:d32147c681c6ee954e2ce271f4b507df47aca6ff306ebcaf9501172ae8453de9
 ---
 

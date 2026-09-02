@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: OhosPixelMapInfos
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 结构体 > OhosPixelMapInfos
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:31+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:c6ae3c129fb6b1a4258ef18c152d7003147747f0dc0a57d5efda69e028e12072
+scraped_at: 2026-09-02T15:02:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b3848b0a64e74287f4c0fffd95c4ddb26b4f477d3803a4614d6cfe04a9ae491c
 ---
 
-```
-1. typedef struct OhosPixelMapInfos {...} OhosPixelMapInfos
+```c
+typedef struct OhosPixelMapInfos {...} OhosPixelMapInfos
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-用于定义PixelMap的相关信息。
+用于描述PixelMap的基本属性信息，包括图片宽高、内存行字节数和像素格式。开发者在调用PixelMap属性查询相关接口时，可通过该结构体获取PixelMap的宽、高、行字节数及像素格式等信息，便于统一读取和管理图片属性。适用于需要查询并使用PixelMap属性信息的场景。
 
 **起始版本：** 10
 
@@ -26,15 +24,11 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
-| uint32\_t width | 图片的宽，用pixels表示。 |
-| uint32\_t height | 图片的高，用pixels表示。 |
-| uint32\_t rowSize | 图片在内存中，每行所占的字节数。  DMA内存为图片的宽 \* 每个像素字节数 + 每行末尾填充字节数；其他内存为图片的宽 \* 每个像素字节数。 |
-| int32\_t pixelFormat | Pixel的格式。 |
+| uint32\_t width | 图片的宽，单位：像素（px）。 |
+| uint32\_t height | 图片的高，单位：像素（px）。 |
+| uint32\_t rowSize | 图片在内存中每行所占的字节数。  DMA内存为图片的宽 \* 每个像素的字节数 + 每行末尾填充字节数；其他内存（非DMA内存）为图片的宽 \* 每个像素的字节数。具体内存类型取决于PixelMap的创建方式，详情可参考PixelMap创建相关接口的说明。 |
+| int32\_t pixelFormat | 图片像素的格式，取值范围：  0：未知格式。  2：格式为RGB\_565。  3：格式为RGBA\_8888。  4：格式为BGRA\_8888。  5：格式为RGB\_888。  6：格式为ALPHA\_8。  7：格式为RGBA\_F16。  8：格式为NV21。  9：格式为NV12。 |

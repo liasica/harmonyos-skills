@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: CameraManager_Callbacks
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 结构体 > CameraManager_Callbacks
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:52+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f693b6ca16e8703742da68640520ea30f77c0ab53e9921f1c2762092240f3541
+scraped_at: 2026-09-02T15:02:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2567954a1e984bc246542c586f2b02ca580a7367a39ca1f6f57655f157ea2748
 ---
 
-```
-1. typedef struct CameraManager_Callbacks {...} CameraManager_Callbacks
+```c
+typedef struct CameraManager_Callbacks {...} CameraManager_Callbacks
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 相机设备状态的回调。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

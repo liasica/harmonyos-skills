@@ -3,32 +3,29 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Text
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > Text
 category: harmonyos-references
-scraped_at: 2026-04-29T13:52:05+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:a76b7222a348add96a0d12ce65b8075bf6a281c2497dbcf5af98c4e1747a12d4
+scraped_at: 2026-09-02T15:01:02+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:000ac9835cd13b178d772f257ab45c97a2c54a943168c2b48cd891a194059682
 ---
 
-显示一段文本的组件。
+Text组件用于显示文本内容，支持设置字体样式、文本对齐、行高、装饰线等属性，支持图文混排、文本选择、文本识别等功能，适用于需要展示文本信息的各类应用场景。
 
-说明
+**说明** 
 
-该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 该组件从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+* 如需设置触摸文本组件外部时是否清除文本选中和手柄，可使用[setTextSelectionClearPolicy](arkts-apis-uicontext-uicontext.md#settextselectionclearpolicy)接口。
 
 文本在组件区域显示效果与字体资源相关，默认字体排印可见[字体排印视觉指引](../design-guides/font-0000001828772001.md)。
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 可以包含[Span](ts-basic-components-span.md)、[ImageSpan](ts-basic-components-imagespan.md)、[SymbolSpan](ts-basic-components-symbolspan.md)和[ContainerSpan](ts-basic-components-containerspan.md)子组件。
 
-说明
+**说明** 
 
 使用[子组件](ts-basic-components-text.md#子组件)实现[图文混排](../harmonyos-guides/arkts-text-image-layout.md)场景。
 
 ## 接口
-
-PhonePC/2in1TabletTVWearable
 
 Text(content?: string | Resource , value?: TextOptions)
 
@@ -42,12 +39,10 @@ Text(content?: string | Resource , value?: TextOptions)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| content | string | [Resource](ts-types.md#resource) | 否 | 文本内容。当不包含子组件[Span](ts-basic-components-span.md)和未设置[属性字符串](ts-universal-styled-string.md)时该参数生效。  默认值：' '  **说明：**  显示内容的优先级：属性字符串>Span>Text的文本内容。 |
-| value11+ | [TextOptions](ts-basic-components-text.md#textoptions11) | 否 | 文本组件初始化选项。 |
+| content | string | [Resource](ts-types.md#resource) | 否 | 文本内容。当需要直接显示文本内容时传入此参数。包含子组件[Span](ts-basic-components-span.md)或设置了[属性字符串](ts-universal-styled-string.md)时，该参数不生效。  默认值：' '  **说明：**  显示内容的优先级：属性字符串>Span>Text的文本内容。 |
+| value11+ | [TextOptions](ts-basic-components-text.md#textoptions11) | 否 | 文本组件初始化选项，用于配置文本控制器。当需要使用TextController的功能控制文本内容和选择时，传入此参数。  默认值：不设置时，不使用文本控制器。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](ts-component-general-attributes.md)，还支持以下属性：
 
@@ -56,8 +51,8 @@ PhonePC/2in1TabletTVWearable
 | 属性 | 说明 |
 | --- | --- |
 | baselineOffset | 设置文本基线的偏移量。 |
-| halfLeading12+ | 设置文本是否垂直居中。 |
-| textAlign | 设置文本段落在水平方向的对齐方式。 |
+| halfLeading12+ | 设置文本是否垂直居中。与[textVerticalAlign](ts-basic-components-text.md#textverticalalign20)同时配置时，halfLeading不生效。 |
+| textAlign | 设置文本段落在水平方向的对齐方式。当[textOverflow](ts-basic-components-text.md#textoverflow)设置为TextOverflow.MARQUEE且文本可滚动时，textAlign属性不生效。 |
 | textContentAlign21+ | 设置文本内容区在组件内的垂直对齐方式。 |
 | textVerticalAlign20+ | 设置文本段落在垂直方向的对齐方式。 |
 
@@ -71,10 +66,11 @@ PhonePC/2in1TabletTVWearable
 | fontColor | 设置字体颜色。 |
 | fontFamily | 设置字体族。 |
 | fontFeature12+ | 设置文字特性效果，比如数字等宽的特性。 |
-| fontSize | 设置字体大小。 |
+| fontSize | 设置字体大小。自适应字号生效时，fontSize设置不生效。 |
 | fontStyle | 设置字体样式。 |
 | fontWeight | 设置文本的字体粗细。 |
 | fontWeight12+ | 设置文本字重，支持设置字体配置项。 |
+| fontVariations | 设置可变字体的属性。**起始版本：** 26.0.0 |
 | letterSpacing | 设置文本字符间距。 |
 | shaderStyle20+ | 设置文本渐变或纯色效果。 |
 | textCase | 设置文本大小写。 |
@@ -89,22 +85,24 @@ PhonePC/2in1TabletTVWearable
 | marqueeOptions18+ | 设置文本跑马灯模式的配置项。 |
 | textOverflow | 设置文本超长时的显示方式。 |
 | wordBreak11+ | 设置断行规则。 |
+| punctuationOverflow | 设置是否启用行尾标点符号悬挂。  **起始版本：** 26.0.0 |
 
 **行与段落**
 
 | 属性 | 说明 |
 | --- | --- |
 | enableAutoSpacing20+ | 设置是否开启中文与西文的自动间距。 |
-| lineHeight | 设置文本的文本行高。 |
+| lineHeight | 设置文本的行高。 |
 | lineHeightMultiple22+ | 设置文本的行高倍数。 |
 | lineSpacing12+ | 设置文本的行间距。 |
-| lineSpacing20+ | 设置文本的行间距。当不配置LineSpacingOptions时，首行上方和尾行下方默认会有行间距。 |
+| lineSpacing20+ | 设置文本的行间距。当不配置LineSpacingOptions时，首行上方和尾行下方默认会有行间距。当与lineHeightMultiple同时设置且lineHeightMultiple使用有效值时，仅lineHeightMultiple生效。 |
 | maxLineHeight22+ | 设置文本的最大行高。 |
 | maxLines | 设置文本的最大行数。 |
 | minLineHeight22+ | 设置文本的最小行高。 |
 | minLines22+ | 设置文本显示的最小行数。 |
 | optimizeTrailingSpace20+ | 优化行尾空格。 |
 | textIndent10+ | 设置首行文本缩进。 |
+| tailIndents | 设置文本尾部缩进。  **起始版本：** 26.0.0 |
 
 **字体自适应**
 
@@ -120,7 +118,7 @@ PhonePC/2in1TabletTVWearable
 
 | 属性 | 说明 |
 | --- | --- |
-| caretColor14+ | 设置文本框选中区域手柄颜色。 |
+| caretColor14+ | 设置文本组件选中区域手柄颜色。 |
 | copyOption9+ | 设置组件是否支持文本可复制粘贴。 |
 | draggable9+ | 设置选中文本拖拽效果。 |
 | selectedBackgroundColor14+ | 设置文本选中底板颜色。 |
@@ -132,7 +130,7 @@ PhonePC/2in1TabletTVWearable
 | 属性 | 说明 |
 | --- | --- |
 | dataDetectorConfig11+ | 设置文本识别配置。 |
-| enableDataDetector11+ | 设置是否进行文本特殊实体识别。 |
+| enableDataDetector11+ | 设置是否进行文本实体识别，可自动识别电话号码、网址、邮箱、地址、日期等。 |
 | enableSelectedDataDetector22+ | 设置是否对选中文本进行实体识别。 |
 
 **自定义菜单**
@@ -148,19 +146,16 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | contentTransition20+ | 文本动效属性。 |
 | enableHapticFeedback13+ | 设置是否开启触控反馈。 |
+| incrementalUpdatePolicy | 设置文本渲染的增量更新策略。  **起始版本：** 26.0.0 |
 | privacySensitive12+ | 设置是否支持卡片敏感隐私信息。 |
 
 以下是详细的接口说明：
 
 ### baselineOffset
 
-PhonePC/2in1TabletTVWearable
-
 baselineOffset(value: number | ResourceStr)
 
-设置文本基线的偏移量。
-
-设置该值为百分比时，按默认值显示。
+设置文本基线的偏移量，可用于调整文本与其他元素（如图片、图标）的基线对齐，或在图文混排、数学公式、化学公式等需要精确垂直对齐的特殊排版场景中使用。未通过该接口设置时，默认偏移量为0。
 
 正数内容向上偏移，负数向下偏移。
 
@@ -174,21 +169,25 @@ baselineOffset(value: number | ResourceStr)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | [ResourceStr](ts-types.md#resourcestr) | 是 | 文本基线的偏移量。  默认值：0  从API version 20开始，支持[Resource](ts-types.md#resource)类型。 |
+| value | number | [ResourceStr](ts-types.md#resourcestr) | 是 | 文本基线的偏移量。设置该值为百分比时，按0显示。  单位：fp  从API version 20开始，支持[Resource](ts-types.md#resource)类型。 |
 
 ### bindSelectionMenu11+
 
-PhonePC/2in1TabletTVWearable
-
 bindSelectionMenu(spanType: TextSpanType, content: CustomBuilder, responseType: TextResponseType, options?: SelectionMenuOptions)
 
-设置自定义选择菜单。
+设置自定义选择菜单。未通过该接口设置时，默认菜单类型为TextSpanType.TEXT，响应类型为TextResponseType.LONG\_PRESS。
 
 bindSelectionMenu的长按响应时长为600ms，[bindContextMenu](ts-universal-attributes-menu.md#bindcontextmenu8)的长按响应时长为800ms，当两者同时绑定且触发方式均为长按时，优先响应bindSelectionMenu。
 
 自定义菜单超长时，建议内部嵌套使用[Scroll](ts-container-scroll.md)组件，避免键盘被遮挡。
 
-说明
+从API版本26.0.0开始，文本组件调用该接口时，options中的menuType属性传入MenuType.PREVIEW\_MENU，设置图片预览菜单的能力生效。
+
+如果要使用图片预览菜单，需要同时把spanType设置为TextSpanType.IMAGE，responseType设置为TextResponseType.LONG\_PRESS，options中的menuType设置为MenuType.PREVIEW\_MENU才会生效。
+
+当[copyOption](ts-basic-components-text.md#copyoption9)为CopyOptions.None时，设置图片预览菜单将不会生效。
+
+**说明** 
 
 该接口不支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
@@ -198,26 +197,28 @@ bindSelectionMenu的长按响应时长为600ms，[bindContextMenu](ts-universal-
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| spanType | [TextSpanType](ts-basic-components-text.md#textspantype11枚举说明) | 是 | 选择菜单的类型。  默认值：TextSpanType.TEXT |
+| spanType | [TextSpanType](ts-basic-components-text.md#textspantype11枚举说明) | 是 | 选择菜单的类型。 |
 | content | [CustomBuilder](ts-types.md#custombuilder8) | 是 | 选择菜单的内容。 |
-| responseType | [TextResponseType](ts-basic-components-text.md#textresponsetype11枚举说明) | 是 | 选择菜单的响应类型。  默认值：TextResponseType.LONG\_PRESS |
-| options | [SelectionMenuOptions](ts-basic-components-richeditor.md#selectionmenuoptions) | 否 | 选择菜单的选项。 |
+| responseType | [TextResponseType](ts-basic-components-text.md#textresponsetype11枚举说明) | 是 | 选择菜单的响应类型。 |
+| options | [SelectionMenuOptions](ts-basic-components-richeditor.md#selectionmenuoptions) | 否 | 选择菜单的配置选项，用于自定义选择菜单的行为。包含菜单出现、消失、显示、隐藏等回调配置项。  默认值：不设置时，使用系统默认的选择菜单配置。 |
 
 ### caretColor14+
 
-PhonePC/2in1TabletTVWearable
-
 caretColor(color: ResourceColor)
 
-设置文本框选中区域手柄颜色。
+设置文本组件选中区域手柄颜色。未通过该接口设置时，默认选中手柄颜色为'#007DFF'（蓝色）。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -225,11 +226,9 @@ caretColor(color: ResourceColor)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| color | [ResourceColor](ts-types.md#resourcecolor) | 是 | 文本选中手柄颜色。  默认值：'#007DFF' |
+| color | [ResourceColor](ts-types.md#resourcecolor) | 是 | 文本选中手柄颜色。 |
 
 ### contentTransition20+
-
-PhonePC/2in1TabletTVWearable
 
 contentTransition(transition: Optional<ContentTransition>)
 
@@ -237,21 +236,23 @@ contentTransition(transition: Optional<ContentTransition>)
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| transition | Optional<[ContentTransition](ts-text-common.md#contenttransition20)> | 是 | 文本动效属性。 |
+| transition | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[ContentTransition](ts-text-common.md#contenttransition20)> | 是 | 文本动效属性，用于配置文本内容变化时的过渡动画效果。可设置为数字翻牌动效[NumericTextTransition](ts-text-common.md#numerictexttransition20)，实现数字变化时的翻牌动画效果。  值为undefined时，无翻牌效果。 |
 
 ### copyOption9+
 
-PhonePC/2in1TabletTVWearable
-
 copyOption(value: CopyOptions)
 
-设置组件是否支持文本可复制粘贴。
+设置组件是否支持文本可复制粘贴。未通过该接口设置时，默认值为CopyOptions.None，不支持文本可复制粘贴。
+
+多个属性的功能依赖copyOption的设置，包括[selection](ts-basic-components-text.md#selection11)、[setTextSelection](ts-basic-components-text.md#settextselection23)、[draggable](ts-basic-components-text.md#draggable9)、[enableSelectedDataDetector](ts-basic-components-text.md#enableselecteddatadetector22)、[textSelectable](ts-basic-components-text.md#textselectable12)等，具体依赖条件请参考各属性说明。
 
 从API version 20开始，当Text组件执行复制操作时，会将HTML格式的内容添加到剪贴板中。
 
@@ -264,7 +265,7 @@ copyOption(value: CopyOptions)
 * 默认情况下，长按选中文本可拖拽。若要取消此功能，可将 draggable 设置为 false。
 * 若需要支持Ctrl+C复制，需同时设置[textSelectable](ts-basic-components-text.md#textselectable12)为TextSelectableMode.SELECTABLE\_FOCUSABLE。
 
-此时Text会监听onClick事件，手势事件为非冒泡事件，若需要点击Text组件区域响应父组件的点击手势事件，建议在父组件上使用[parallelGesture](ts-gesture-settings.md#parallelgesture)绑定手势识别，也可参考[示例7设置文本识别](ts-basic-components-text.md#示例7设置文本识别)。
+此时Text会监听onClick事件，手势事件为非冒泡事件，若需要点击Text组件区域响应父组件的点击手势事件，建议在父组件上使用[parallelGesture](ts-gesture-settings.md#parallelgesture)绑定手势识别，也可参考[示例7（设置文本识别）](ts-basic-components-text.md#示例7设置文本识别)。
 
 由于卡片没有长按事件，此场景下长按文本，不会弹出文本选择菜单。
 
@@ -278,11 +279,9 @@ copyOption(value: CopyOptions)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [CopyOptions](ts-appendix-enums.md#copyoptions9) | 是 | 组件是否支持文本可复制粘贴。  默认值：CopyOptions.None |
+| value | [CopyOptions](ts-appendix-enums.md#copyoptions9) | 是 | 组件是否支持文本可复制粘贴。 |
 
 ### dataDetectorConfig11+
-
-PhonePC/2in1TabletTVWearable
 
 dataDetectorConfig(config: TextDataDetectorConfig)
 
@@ -292,27 +291,37 @@ dataDetectorConfig(config: TextDataDetectorConfig)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| config | [TextDataDetectorConfig](ts-text-common.md#textdatadetectorconfig11对象说明) | 是 | 文本识别配置。 |
+| config | [TextDataDetectorConfig](ts-text-common.md#textdatadetectorconfig11对象说明) | 是 | 文本识别配置对象，用于配置文本识别的具体行为。可配置识别类型（如电话号码、网址、邮箱、地址、日期等）、实体显示样式，以及是否开启长按预览等。需配合[enableDataDetector](ts-basic-components-text.md#enabledatadetector11)一起使用。 |
 
 ### decoration
 
-PhonePC/2in1TabletTVWearable
-
 decoration(value: DecorationStyleInterface)
 
-设置文本装饰线样式及其颜色。
+设置文本装饰线样式及其颜色。未通过该接口设置时，默认文本装饰线样式为：
 
-说明
+{
+
+type: TextDecorationType.None,
+
+color: Color.Black,
+
+style: TextDecorationStyle.SOLID
+
+}
+
+**说明** 
 
 当文字的下边缘轮廓与装饰线位置相交时，会触发下划线避让规则，下划线将在这些字符处避让文字。常见"gjyqp"等英文字符。
 
-当文本装饰线的颜色设置为Color.Transparent时，装饰线颜色设置为跟随每行第一个字的字体颜色。当文本装饰线的颜色设置为透明色16进制对应值"#00FFFFFF"时，装饰线颜色设置为透明色。
+当装饰线颜色设置为Color.Transparent时，装饰线会显示为每行第一个字的字体颜色。设置为透明色16进制值"#00FFFFFF"时，装饰线会显示为透明色。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -324,15 +333,13 @@ decoration(value: DecorationStyleInterface)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [DecorationStyleInterface12+](ts-universal-styled-string.md#decorationstyleinterface) | 是 | 文本装饰线样式对象。  默认值：  {  type: TextDecorationType.None,  color: Color.Black,  style: TextDecorationStyle.SOLID  }  **说明：**  style参数不支持卡片能力。 |
+| value | [DecorationStyleInterface12+](ts-universal-styled-string.md#decorationstyleinterface) | 是 | 文本装饰线样式对象。  **说明：**  style参数不支持卡片能力。 |
 
 ### draggable9+
 
-PhonePC/2in1TabletTVWearable
-
 draggable(value: boolean)
 
-设置选中文本拖拽效果。
+设置选中文本拖拽效果。未通过该接口设置时，默认选中文本不可拖拽。
 
 不能和[onDragStart](ts-universal-events-drag-drop.md#ondragstart)事件同时使用。
 
@@ -346,11 +353,9 @@ draggable(value: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | boolean | 是 | 选中文本拖拽效果。  true表示选中文本可拖拽，false表示不可拖拽。  默认值：false |
+| value | boolean | 是 | 选中文本拖拽效果。  true表示选中文本可拖拽，false表示不可拖拽。 |
 
 ### editMenuOptions12+
-
-PhonePC/2in1TabletTVWearable
 
 editMenuOptions(editMenu: EditMenuOptions)
 
@@ -358,7 +363,7 @@ editMenuOptions(editMenu: EditMenuOptions)
 
 调用[disableMenuItems](arkts-apis-uicontext-textmenucontroller.md#disablemenuitems20)或[disableSystemServiceMenuItems](arkts-apis-uicontext-textmenucontroller.md#disablesystemservicemenuitems20)接口屏蔽文本选择菜单内的系统服务菜单项时，editMenuOptions接口内回调方法[onCreateMenu](ts-text-common.md#oncreatemenu12)的入参列表中不包含被屏蔽的菜单选项。
 
-说明
+**说明** 
 
 通过[editMenuOptions](ts-basic-components-text.md#editmenuoptions12)设置文本选择菜单时，保留系统默认的风格，触发菜单弹出的条件不变。
 
@@ -366,45 +371,47 @@ editMenuOptions(editMenu: EditMenuOptions)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| editMenu | [EditMenuOptions](ts-text-common.md#editmenuoptions) | 是 | 扩展菜单选项。 |
+| editMenu | [EditMenuOptions](ts-text-common.md#editmenuoptions) | 是 | 扩展菜单选项，用于自定义文本选择菜单的扩展项。可设置扩展项的文本内容、图标、回调方法等配置，允许开发者添加自定义菜单项。 |
 
 ### ellipsisMode11+
 
-PhonePC/2in1TabletTVWearable
-
 ellipsisMode(value: EllipsisMode)
 
-设置省略位置。
+设置省略位置。未通过该接口设置时，默认在行尾省略（EllipsisMode.END）。
 
-ellipsisMode属性需要与overflow设置为TextOverflow.Ellipsis以及maxLines使用，单独设置ellipsisMode属性不生效。
+ellipsisMode属性需要与overflow设置为TextOverflow.Ellipsis以及maxLines属性一起使用，单独设置ellipsisMode属性不生效。
 
-EllipsisMode.START和EllipsisMode.CENTER仅在单行超长文本生效。
+EllipsisMode.START和EllipsisMode.CENTER仅在单行文本超长时生效。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [EllipsisMode](ts-appendix-enums.md#ellipsismode11) | 是 | 省略位置。  默认值：EllipsisMode.END |
+| value | [EllipsisMode](ts-appendix-enums.md#ellipsismode11) | 是 | 省略位置。 |
 
 ### enableAutoSpacing20+
 
-PhonePC/2in1TabletTVWearable
-
 enableAutoSpacing(enabled: Optional<boolean>)
 
-设置是否开启中文与西文的自动间距。
+设置是否开启中文与西文的自动间距。未通过该接口设置时，默认不开启中文与西文的自动间距。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -412,28 +419,26 @@ enableAutoSpacing(enabled: Optional<boolean>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| enabled | [Optional](ts-universal-attributes-custom-property.md#optionalt)<boolean> | 是 | 是否开启中文与西文的自动间距。  true为开启自动间距，false为不开启。  默认值：false |
+| enabled | [Optional](ts-universal-attributes-custom-property.md#optionalt)<boolean> | 是 | 是否开启中文与西文的自动间距。  true为开启自动间距，false为不开启。  值为undefined时，不开启中文与西文的自动间距。 |
 
 ### enableDataDetector11+
 
-PhonePC/2in1TabletTVWearable
-
 enableDataDetector(enable: boolean)
 
-设置是否进行文本特殊实体识别。当enableDataDetector设置为true时，识别特殊实体。
+设置是否进行文本特殊实体识别，可自动识别文本中的电话号码、网址、邮箱、地址、日期等实体信息，适用于聊天消息、评论内容、文章正文等需要智能识别和交互的场景。未通过该接口设置时，默认不进行文本特殊实体识别。当enableDataDetector设置为true时，识别特殊实体。
 
 所识别实体的样式如下，即字体颜色改为蓝色、并添加蓝色下划线。
 
-```
-1. color: '#ff007dff'
-2. decoration:{
-3. type: TextDecorationType.Underline,
-4. color: '#ff007dff',
-5. style: TextDecorationStyle.SOLID
-6. }
+```ts
+color: '#ff007dff'
+decoration:{
+  type: TextDecorationType.Underline,
+  color: '#ff007dff',
+  style: TextDecorationStyle.SOLID
+}
 ```
 
-说明
+**说明** 
 
 * 设备底层需要具备文本识别能力，该接口才能生效。
 * 当[textOverflow](ts-basic-components-text.md#textoverflow)设置为TextOverflow.MARQUEE时，不进行文本特殊实体识别。
@@ -450,59 +455,67 @@ enableDataDetector(enable: boolean)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| enable | boolean | 是 | 使能文本识别。  true表示文本可实体识别，false表示不可识别。  默认值：false |
+| enable | boolean | 是 | 是否可进行文本特殊实体识别。  true表示可识别，false表示不可识别。 |
 
 ### enableHapticFeedback13+
 
-PhonePC/2in1TabletTVWearable
-
 enableHapticFeedback(isEnabled: boolean)
 
-设置是否开启触控反馈。
+设置是否开启触控反馈。未通过该接口设置时，默认开启触控反馈。
 
 开启触控反馈时，需要在工程的[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中配置requestPermissions字段开启振动权限，配置如下：
 
-```
-1. "requestPermissions": [
-2. {
-3. "name": "ohos.permission.VIBRATE",
-4. }
-5. ]
+```json
+"requestPermissions": [
+  {
+    "name": "ohos.permission.VIBRATE"
+  }
+]
 ```
 
-说明
+**说明** 
 
 从API version 18开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| isEnabled | boolean | 是 | 是否开启触控反馈。  true表示开启，false表示不开启。  默认值：true |
+| isEnabled | boolean | 是 | 是否开启触控反馈。  true表示开启，false表示不开启。 |
 
 ### enableSelectedDataDetector22+
 
-PhonePC/2in1TabletTVWearable
-
 enableSelectedDataDetector(enable: boolean | undefined)
 
-设置是否对选中文本进行实体识别。该接口依赖设备底层应具有文本识别能力，否则设置不会生效。
+设置是否对选中文本进行实体识别。该接口依赖设备底层应具有文本识别能力，否则设置不会生效。未通过该接口设置时，默认对选中文本进行实体识别。
 
-当enableSelectedDataDetector设置为true时，默认识别所有类型的实体。
+启用后可识别选区中的邮件、电话、网址、日期、地址等，并在文本选择菜单中展示对应的AI菜单项。默认启用AI菜单功能。
+
+AI菜单功能启用时，在组件中选中文本后，文本选择菜单能够展示对应的AI菜单项，包括[TextMenuItemId](ts-text-common.md#textmenuitemid12)中的url（打开链接）、email（新建邮件）、phoneNumber（呼叫）、address（导航前往）、dateTime（新建日程）。
+
+AI菜单生效时，选中范围内需包括且仅包括一个完整的AI实体，才能展示对应的选项。该菜单项与[TextMenuItemId](ts-text-common.md#textmenuitemid12)中的askAI菜单项不同时出现。
 
 需要[CopyOptions](ts-appendix-enums.md#copyoptions9)为CopyOptions.LocalDevice或CopyOptions.CROSS\_DEVICE时，本功能生效。
 
+在[SelectionContainer](ts-basic-components-selectioncontainer.md)跨节点选中场景中该属性无效，在文本选择菜单中不会展示对应的AI菜单项。
+
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -510,19 +523,21 @@ enableSelectedDataDetector(enable: boolean | undefined)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| enable | boolean | undefined | 是 | 开启选中词文本识别。  true：开启识别，false：关闭识别。默认值为：true。 |
+| enable | boolean | undefined | 是 | 是否对选中文本进行实体识别。  true：开启识别，false：关闭识别。默认值为：true。  取值为undefined时，按默认值处理。 |
 
 ### font10+
 
-PhonePC/2in1TabletTVWearable
-
 font(value: Font)
 
-设置文本样式。
+设置文本样式。未通过该接口设置时，使用系统默认字体样式配置。
 
 包括字体大小、字体粗细、字体族和字体风格。
 
+仅Text组件生效，其子组件不生效。
+
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -534,8 +549,6 @@ font(value: Font)
 
 ### font12+
 
-PhonePC/2in1TabletTVWearable
-
 font(fontValue: Font, options?: FontSettingOptions)
 
 设置文本样式，支持设置字体配置项。
@@ -546,6 +559,8 @@ font(fontValue: Font, options?: FontSettingOptions)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -553,15 +568,13 @@ font(fontValue: Font, options?: FontSettingOptions)
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fontValue | [Font](ts-types.md#font) | 是 | 设置文本样式。 |
-| options | [FontSettingOptions](ts-text-common.md#fontsettingoptions12对象说明) | 否 | 设置字体配置项。 |
+| options | [FontSettingOptions](ts-text-common.md#fontsettingoptions12对象说明) | 否 | 设置字体配置项。  默认值：不设置时，使用默认字体配置，详见FontSettingOptions。 |
 
 ### fontColor
 
-PhonePC/2in1TabletTVWearable
-
 fontColor(value: ResourceColor)
 
-设置字体颜色。
+设置字体颜色。未通过该接口设置时，默认字体颜色为'#e6182431'（深灰色，不透明度为90%）。Wearable设备上默认字体颜色为'#c5ffffff'（白色，不透明度为77%）。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -573,17 +586,15 @@ fontColor(value: ResourceColor)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [ResourceColor](ts-types.md#resourcecolor) | 是 | 字体颜色。  默认值：'#e6182431'  Wearable设备上默认值为：'#c5ffffff' |
+| value | [ResourceColor](ts-types.md#resourcecolor) | 是 | 字体颜色。 |
 
 ### fontFamily
 
-PhonePC/2in1TabletTVWearable
-
 fontFamily(value: string | Resource)
 
-设置字体族。
+设置字体族。未通过该接口设置时，默认字体为'HarmonyOS Sans'。Wearable设备上默认字体也为'HarmonyOS Sans'。
 
-说明
+**说明** 
 
 可以使用[loadFontSync](js-apis-graphics-text.md#loadfontsync)注册自定义字体。
 
@@ -597,11 +608,9 @@ fontFamily(value: string | Resource)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | string | [Resource](ts-types.md#resource) | 是 | 字体族。默认字体'HarmonyOS Sans'。  使用多个字体时，请用逗号','分隔，字体的优先级按顺序生效。例如：'Arial,HarmonyOS Sans'。 |
+| value | string | [Resource](ts-types.md#resource) | 是 | 字体族。使用多个字体时，请用逗号','分隔，字体的优先级按顺序生效。例如：'Arial,HarmonyOS Sans'。 |
 
 ### fontFeature12+
-
-PhonePC/2in1TabletTVWearable
 
 fontFeature(value: string)
 
@@ -615,7 +624,7 @@ fontFeature(value: string)
 
 例如，使用等宽数字的输入格式为："ss01" on。
 
-说明
+**说明** 
 
 不支持Text内同时存在文本内容和Span或ImageSpan子组件。如果同时存在，只显示Span或ImageSpan内的内容。
 
@@ -625,11 +634,13 @@ fontFeature(value: string)
 
 系统默认字体支持的liga连字：Th fb ff fb ffb ffh ffi ffk ffl fh fi fk fl rf rt rv rx ry。常导致Span、属性字符串的效果不符合预期，关闭liga连字特性可以规避。
 
-文字特性效果与使用的字体文件密切相关。例如，8标点挤压功能在当前系统默认字体中仅对左侧标点符号生效，而右侧标点符号及感叹号、顿号、问号均不生效。
+文字特性效果与使用的字体文件密切相关。例如，8标点挤压功能需要字体文件中字符支持"ss08"特性，否则无法压缩，在当前系统默认字体中右侧标点符号及感叹号、顿号、问号均不生效。
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -637,11 +648,11 @@ fontFeature(value: string)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | string | 是 | 文字特性效果。 |
+| value | string | 是 | 文字特性效果，格式为：normal | <feature-tag-value>。<feature-tag-value>的格式为：<string> [<integer> | on | off]，多个之间用','隔开。例如："ss01" on。 |
 
 fontFeature属性列表：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/sB_CzIG1RvuV9Xe9bTB1sA/zh-cn_image_0000002589326123.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/4dIf4SQCTIiveI3hE9ExJA/zh-cn_image_0000002736435043.png)
 
 设置fontFeature属性，fontFeature是OpenType字体的高级排版能力，如支持连字、数字等宽等特性，一般用在自定义字体中，其能力需要字体本身支持。
 
@@ -649,11 +660,13 @@ fontFeature属性列表：
 
 ### fontSize
 
-PhonePC/2in1TabletTVWearable
-
 fontSize(value: number | string | Resource)
 
-设置字体大小。
+设置字体大小。未通过该接口设置时，默认字体大小为16fp。Wearable设备上默认字体大小为15fp。
+
+**说明** 
+
+自适应字号生效时，fontSize设置不生效。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -665,15 +678,13 @@ fontSize(value: number | string | Resource)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | string | [Resource](ts-types.md#resource) | 是 | 字体大小。fontSize为number类型时，使用fp单位。不支持设置百分比字符串。  默认值：16fp  Wearable设备上默认值为：15fp |
+| value | number | string | [Resource](ts-types.md#resource) | 是 | 字体大小。fontSize为number类型时，使用fp单位。string类型支持number类型取值的字符串形式，可以附带单位，例如"10"、"10fp"。不支持设置百分比字符串。 |
 
 ### fontStyle
 
-PhonePC/2in1TabletTVWearable
-
 fontStyle(value: FontStyle)
 
-设置字体样式。
+设置字体样式。未通过该接口设置时，默认字体样式为FontStyle.Normal。Wearable设备上默认字体样式也为FontStyle.Normal。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -685,15 +696,15 @@ fontStyle(value: FontStyle)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [FontStyle](ts-appendix-enums.md#fontstyle) | 是 | 字体样式。  默认值：FontStyle.Normal |
+| value | [FontStyle](ts-appendix-enums.md#fontstyle) | 是 | 字体样式。 |
 
 ### fontWeight
 
-PhonePC/2in1TabletTVWearable
-
 fontWeight(value: number | FontWeight | ResourceStr)
 
-设置文本的字体粗细，设置过大可能会在不同字体下有截断。
+设置文本的字体粗细，设置过大可能会在不同字体下有截断。未通过该接口设置时，默认字体粗细为FontWeight.Normal。Wearable设备上默认字体粗细为FontWeight.Regular。
+
+仅Text组件生效，其子组件不生效。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -705,15 +716,13 @@ fontWeight(value: number | FontWeight | ResourceStr)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | [FontWeight](ts-appendix-enums.md#fontweight) | [ResourceStr](ts-types.md#resourcestr) | 是 | 文本的字体粗细，number类型取值[100, 900]，取值间隔为100，默认为400，取值越大，字体越粗。string类型仅支持number类型取值的字符串形式，例如"400"，以及"bold"、"bolder"、"lighter"、"regular"、"medium"，分别对应FontWeight中相应的枚举值。  默认值：FontWeight.Normal  Wearable设备上默认值为：FontWeight.Regular  从API version 20开始，支持[Resource](ts-types.md#resource)类型。 |
+| value | number | [FontWeight](ts-appendix-enums.md#fontweight) | [ResourceStr](ts-types.md#resourcestr) | 是 | 文本的字体粗细。  number类型取值[100, 900]，取值间隔为100，默认为400，取值越大，字体越粗。string类型仅支持number类型取值的字符串形式，例如“400”，以及“bold”、“bolder”、“lighter”、“regular”、“medium”，分别对应FontWeight中相应的枚举值。设置过大可能会在不同字体下有截断。传入超出取值范围或不符合间隔要求的值时取默认值。  从API version 20开始，支持[Resource](ts-types.md#resource)类型。 |
 
 ### fontWeight12+
 
-PhonePC/2in1TabletTVWearable
-
 fontWeight(weight: number | FontWeight | ResourceStr, options?: FontSettingOptions)
 
-设置文本字重，支持设置字体配置项。
+设置文本字重，支持设置字体配置项。设置过大可能会在不同字体下有截断。[fontVariations](ts-basic-components-text.md#fontvariations)属性的优先级高于本属性，同时设置时以fontVariations的值为准。未通过该接口设置时，默认文本字重为FontWeight.Normal。Wearable设备上默认文本字重为FontWeight.Regular。
 
 仅Text组件生效，其子组件不生效。常见问题参考[设置enableVariableFontWeight为true后字重不能跟随设置调节](../harmonyos-guides/arkts-text-faq.md#设置enablevariablefontweight为true后字重不能跟随设置调节)。
 
@@ -721,24 +730,50 @@ fontWeight(weight: number | FontWeight | ResourceStr, options?: FontSettingOptio
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| weight | number | [FontWeight](ts-appendix-enums.md#fontweight) | [ResourceStr](ts-types.md#resourcestr) | 是 | 设置文本字重。number类型取值[100, 900]，取值间隔为100，默认为400，取值越大，字体越粗。string类型仅支持number类型取值的字符串形式，例如"400"，以及"bold"、"bolder"、"lighter"、"regular"、"medium"，分别对应FontWeight中相应的枚举值。  从API version 20开始，支持[Resource](ts-types.md#resource)类型。 |
-| options | [FontSettingOptions](ts-text-common.md#fontsettingoptions12对象说明) | 否 | 设置字体配置项。  当options的参数enableVariableFontWeight取值false时，禁用可变字重调节，weight取值为[100, 900]范围内的整百数值时，字重取值为weight。weight是非整百数值时，字重取默认值400。  当options的参数enableVariableFontWeight取值true时，启用可变字重调节，weight取值为[100, 900]范围内任意整数时，字重取值为weight。 |
+| weight | number | [FontWeight](ts-appendix-enums.md#fontweight) | [ResourceStr](ts-types.md#resourcestr) | 是 | 设置文本字重  number类型取值[100, 900]，取值间隔为100，默认为400，取值越大，字体越粗。string类型仅支持number类型取值的字符串形式，例如“400”，以及“bold”、“bolder”、“lighter”、“regular”、“medium”，分别对应FontWeight中相应的枚举值。设置过大可能会在不同字体下有截断。  传入超出取值范围的值时取默认值。传入不符合间隔要求的值时，若设置fontWeightConfigs的enableVariableFontWeight为true，使用传入值；若设置为false，使用默认值。  从API version 20开始，支持[Resource](ts-types.md#resource)类型。 |
+| options | [FontSettingOptions](ts-text-common.md#fontsettingoptions12对象说明) | 否 | 设置字体配置项，用于启用可变字重调节功能。当需要使用可变字体的字重属性进行精细调节时传入此参数（设置enableVariableFontWeight为true）。不传入时使用默认字体配置（禁用可变字重调节，仅支持整百字重值）。  enableVariableFontWeight为false时禁用可变字重调节，weight取整百值时字重为weight，非整百值时字重为400；enableVariableFontWeight为true时启用可变字重调节，weight取任意整数时字重为weight。 |
+
+### fontVariations
+
+fontVariations(fontVariations: Array<FontVariation>)
+
+设置可变字体的属性。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| fontVariations | Array<[FontVariation](js-apis-graphics-text.md#fontvariation)> | 是 | 可变字体的属性数组，数组成员为可变字体的各种属性。fontVariations属性的优先级高于[fontWeight](ts-basic-components-text.md#fontweight12)。 |
 
 ### halfLeading12+
 
-PhonePC/2in1TabletTVWearable
-
 halfLeading(halfLeading: boolean)
 
-设置文本是否垂直居中。
+设置文本是否垂直居中。未通过该接口设置时，默认文本不平分至行的顶部与底部。
+
+**说明** 
+
+与[textVerticalAlign](ts-basic-components-text.md#textverticalalign20)同时配置时，halfLeading不生效。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -746,17 +781,35 @@ halfLeading(halfLeading: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| halfLeading | boolean | 是 | 设置文本是否垂直居中。  true表示将行间距平分至行的顶部与底部，false则不平分。  默认值：false |
+| halfLeading | boolean | 是 | 设置文本是否垂直居中。与[textVerticalAlign](ts-basic-components-text.md#textverticalalign20)同时配置时，halfLeading不生效。  true表示将行间距平分至行的顶部与底部，false则不平分。 |
 
 ### heightAdaptivePolicy10+
 
-PhonePC/2in1TabletTVWearable
-
 heightAdaptivePolicy(value: TextHeightAdaptivePolicy)
 
-设置文本自适应布局调整字号的方式。
+设置文本自适应布局调整字号的方式。未通过该接口设置时，默认文本自适应高度的方式为TextHeightAdaptivePolicy.MAX\_LINES\_FIRST。
 
 规则如下：
+
+```mermaid
+graph TD
+  A[文本自适应布局] --> B{模式选择}
+  B -->|MAX_LINES_FIRST| C[优先用maxLines调整高度]
+  C --> D{布局是否超过约束?}
+  D -->|是| E[在minFontSize~maxFontSize范围内缩小字体以显示更多文本]
+  D -->|否| F[保持当前布局]
+  B -->|MIN_FONT_SIZE_FIRST| G[优先用minFontSize调整高度]
+  G --> H{能否一行显示?}
+  H -->|是| I[在minFontSize~maxFontSize范围内增大字体至最大]
+  H -->|否| J[按minFontSize显示]
+  B -->|LAYOUT_CONSTRAINT_FIRST| K[优先用布局约束调整高度]
+  K --> L{布局是否超过约束?}
+  L -->|是| M[缩小字体以满足约束]
+  M --> N{缩小到minFontSize后仍超约束?}
+  N -->|是| O[删除超过布局约束的行]
+  N -->|否| F
+  L -->|否| F
+```
 
 * MAX\_LINES\_FIRST模式：优先使用[maxLines](ts-basic-components-text.md#maxlines)属性来调整文本高度。如果使用maxLines属性的布局大小超过了布局约束，则尝试在[minFontSize](ts-basic-components-text.md#minfontsize)和[maxFontSize](ts-basic-components-text.md#maxfontsize)的范围内缩小字体以显示更多文本。
 * MIN\_FONT\_SIZE\_FIRST模式：优先使用minFontSize属性来调整文本高度。如果使用minFontSize属性可以将文本布局在一行中，则尝试在minFontSize和maxFontSize的范围内增大字体并使用最大限度的字体大小在一行内显示，否则按minFontSize显示。
@@ -764,21 +817,43 @@ heightAdaptivePolicy(value: TextHeightAdaptivePolicy)
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [TextHeightAdaptivePolicy](ts-appendix-enums.md#textheightadaptivepolicy10) | 是 | 文本自适应高度的方式。  默认值：TextHeightAdaptivePolicy.MAX\_LINES\_FIRST |
+| value | [TextHeightAdaptivePolicy](ts-appendix-enums.md#textheightadaptivepolicy10) | 是 | 文本自适应高度的方式。 |
+
+### incrementalUpdatePolicy
+
+incrementalUpdatePolicy(policy: IncrementalUpdatePolicy | undefined)
+
+设置文本渲染的增量更新策略。未通过该接口设置时，默认为IncrementalUpdatePolicy.NONE。
+
+该接口仅在Text内容包含属性字符串（StyledString）时生效。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| policy | [IncrementalUpdatePolicy](ts-text-common.md#incrementalupdatepolicy) | undefined | 是 | 文本渲染的增量更新策略。  设置为undefined时，按IncrementalUpdatePolicy.NONE处理。 |
 
 ### letterSpacing
 
-PhonePC/2in1TabletTVWearable
-
 letterSpacing(value: number | ResourceStr)
 
-设置文本字符间距。
+设置文本字符间距。未通过该接口设置时，默认文本字符间距为0。
 
 设置该值为百分比时，按默认值显示。设置该值为0时，按默认值显示。string类型支持number类型取值的字符串形式，可以附带单位，例如"10"、"10fp"。
 
@@ -796,17 +871,17 @@ letterSpacing(value: number | ResourceStr)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | [ResourceStr](ts-types.md#resourcestr) | 是 | 文本字符间距。  默认值：0  单位：[fp](ts-pixel-units.md)  从API version 20开始，支持[Resource](ts-types.md#resource)类型。 |
+| value | number | [ResourceStr](ts-types.md#resourcestr) | 是 | 文本字符间距。  单位：[fp](ts-pixel-units.md#基本像素单位)  从API version 20开始，支持[Resource](ts-types.md#resource)类型。 |
 
 ### lineBreakStrategy12+
 
-PhonePC/2in1TabletTVWearable
-
 lineBreakStrategy(strategy: LineBreakStrategy)
 
-设置折行规则。该属性在[wordBreak](ts-basic-components-text.md#wordbreak11)不等于WordBreak.BREAK\_ALL的时候生效，且不支持连词符。
+设置折行规则。该属性在[wordBreak](ts-basic-components-text.md#wordbreak11)不等于WordBreak.BREAK\_ALL的时候生效，且不支持连词符。未通过该接口设置时，默认折行规则为LineBreakStrategy.GREEDY。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -814,19 +889,19 @@ lineBreakStrategy(strategy: LineBreakStrategy)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| strategy | [LineBreakStrategy](ts-appendix-enums.md#linebreakstrategy12) | 是 | 文本的折行规则。  默认值：LineBreakStrategy.GREEDY |
+| strategy | [LineBreakStrategy](ts-appendix-enums.md#linebreakstrategy12) | 是 | 文本的折行规则。具体值及其说明请参考LineBreakStrategy。 |
 
 ### lineHeight
 
-PhonePC/2in1TabletTVWearable
-
 lineHeight(value: number | string | Resource)
 
-设置文本的文本行高。
+设置文本行高。
+
+当与[lineHeightMultiple](ts-basic-components-text.md#lineheightmultiple22)同时设置且lineHeightMultiple使用有效值时，lineHeight的设置不生效，以lineHeightMultiple为准。
 
 设置值不大于0时，不限制文本行高，自适应字体大小，number类型时单位为fp。string类型支持number类型取值的字符串形式，可以附带单位，例如"10"、"10fp"。
 
-说明
+**说明** 
 
 特殊字符字体高度远超出同行的其他字符高度时，文本框出现截断、遮挡、内容相对位置发生变化等不符合预期的显示异常，需要开发者调整组件高度、行高等属性，修改对应的页面布局。
 
@@ -840,11 +915,9 @@ lineHeight(value: number | string | Resource)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | string | [Resource](ts-types.md#resource) | 是 | 文本的文本行高。 |
+| value | number | string | [Resource](ts-types.md#resource) | 是 | 文本行高。number类型时单位为fp。 |
 
 ### lineHeightMultiple22+
-
-PhonePC/2in1TabletTVWearable
 
 lineHeightMultiple(value: number | undefined)
 
@@ -852,7 +925,7 @@ lineHeightMultiple(value: number | undefined)
 
 设置行高为入参（value）与字高（fontHeight）的乘积。
 
-说明
+**说明** 
 
 当lineHeightMultiple使用有效值和[lineHeight](ts-basic-components-text.md#lineheight)或[lineSpacing](ts-basic-components-text.md#linespacing12)同时设置时，仅lineHeightMultiple生效。lineHeightMultiple小于0时，lineHeightMultiple不生效，使用[lineHeight](ts-basic-components-text.md#lineheight)和[lineSpacing](ts-basic-components-text.md#linespacing12)设置行高和行间距。
 
@@ -860,23 +933,27 @@ lineHeightMultiple(value: number | undefined)
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | undefined | 是 | 使用行高的倍数数值。  取值范围：[0, +∞)  **说明：**  - 设置的值小于0时，lineHeightMultiple不生效。  - 设置的值等于0时，等效于设置为1，表现为行高没有变化。  - 支持小数输入。 |
+| value | number | undefined | 是 | 使用行高的倍数数值。  取值范围：[0, +∞)  **说明：**  - 设置的值小于0时，lineHeightMultiple不生效。  - 设置的值等于0时，等效于设置为1，表现为行高没有变化。  - 支持小数输入。  - 值为undefined时，使用默认行高高度。 |
 
 ### lineSpacing12+
 
-PhonePC/2in1TabletTVWearable
-
 lineSpacing(value: LengthMetrics)
 
-设置文本的行间距，设置值不大于0时，取默认值0。
+设置文本的行间距，设置值小于0时，取默认值0。未通过该接口设置时，默认行间距为0。
+
+当与[lineHeightMultiple](ts-basic-components-text.md#lineheightmultiple22)同时设置且lineHeightMultiple使用有效值时，lineSpacing的设置不生效，以lineHeightMultiple为准。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -884,17 +961,19 @@ lineSpacing(value: LengthMetrics)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 是 | 文本的行间距。默认值：0 |
+| value | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 是 | 文本的行间距。  取值范围：[0, +∞)。设置值小于0时，取默认值0。 |
 
 ### lineSpacing20+
-
-PhonePC/2in1TabletTVWearable
 
 lineSpacing(value: LengthMetrics, options?: LineSpacingOptions)
 
 设置文本的行间距。当不配置LineSpacingOptions时，首行上方和尾行下方默认会有行间距。
 
+当与[lineHeightMultiple](ts-basic-components-text.md#lineheightmultiple22)同时设置且lineHeightMultiple使用有效值时，lineSpacing的设置不生效，以lineHeightMultiple为准。
+
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -907,8 +986,6 @@ lineSpacing(value: LengthMetrics, options?: LineSpacingOptions)
 
 ### marqueeOptions18+
 
-PhonePC/2in1TabletTVWearable
-
 marqueeOptions(options: Optional<TextMarqueeOptions>)
 
 设置文本跑马灯模式的配置项。
@@ -917,23 +994,25 @@ marqueeOptions(options: Optional<TextMarqueeOptions>)
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[TextMarqueeOptions](ts-basic-components-text.md#textmarqueeoptions18对象说明)> | 是 | 当Text组件的textOverflow属性设置为MARQUEE时，可通过marqueeOptions设置跑马灯动效具体的属性，如开关、步长、循环次数、方向等。 |
+| options | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[TextMarqueeOptions](ts-basic-components-text.md#textmarqueeoptions18对象说明)> | 是 | 当Text组件的textOverflow属性设置为MARQUEE时，可通过marqueeOptions设置跑马灯动效具体的属性，如开关、步长、循环次数、方向等。  取值为undefined时，按[TextMarqueeOptions](ts-basic-components-text.md#textmarqueeoptions18对象说明)中的默认值处理。 |
 
 ### maxFontScale12+
-
-PhonePC/2in1TabletTVWearable
 
 maxFontScale(scale: number | Resource)
 
 设置文本最大的字体缩放倍数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -944,8 +1023,6 @@ maxFontScale(scale: number | Resource)
 | scale | number | [Resource](ts-types.md#resource) | 是 | 文本最大的字体缩放倍数。  取值范围：[1, +∞)  **说明：**  设置的值小于1时，按值为1处理，其余异常值默认不生效。 |
 
 ### maxFontSize
-
-PhonePC/2in1TabletTVWearable
 
 maxFontSize(value: number | string | Resource)
 
@@ -971,15 +1048,13 @@ maxFontSize小于等于0或者maxFontSize小于minFontSize时，自适应字号�
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | string | [Resource](ts-types.md#resource) | 是 | 文本最大显示字号。  单位：[fp](ts-pixel-units.md) |
+| value | number | string | [Resource](ts-types.md#resource) | 是 | 文本最大显示字号。  取值范围：大于0且大于等于minFontSize。  单位：[fp](ts-pixel-units.md#基本像素单位)  **说明：**  设置的值≤0或小于minFontSize时，自适应字号不生效，此时按照fontSize属性的值生效。 |
 
 ### maxLineHeight22+
 
-PhonePC/2in1TabletTVWearable
-
 maxLineHeight(value: LengthMetrics | undefined)
 
-设置文本的最大行高，设置值不大于0时，最大行高不受限制。
+设置文本的最大行高，设置值不大于0时，最大行高不受限制。未通过该接口设置时，最大行高不受限制（值为undefined）。
 
 maxLineHeight小于minLineHeight时，maxLineHeight按照minLineHeight属性的值生效。
 
@@ -987,23 +1062,25 @@ maxLineHeight小于minLineHeight时，maxLineHeight按照minLineHeight属性的�
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | undefined | 是 | 文本的最大行高，不支持百分比。  设置的值不大于0时按0处理，设置为0时，最大行高不受限制。 |
+| value | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | undefined | 是 | 文本的最大行高，不支持百分比。  设置的值不大于0时按0处理，设置为0时，最大行高不受限制。  取值为undefined时，不生效。 |
 
 ### selectedDragPreviewStyle23+
-
-PhonePC/2in1TabletTVWearable
 
 selectedDragPreviewStyle(value: SelectedDragPreviewStyle | undefined)
 
 设置文本拖拽时的背板样式。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1015,11 +1092,9 @@ selectedDragPreviewStyle(value: SelectedDragPreviewStyle | undefined)
 
 ### maxLines
 
-PhonePC/2in1TabletTVWearable
-
 maxLines(value: number)
 
-设置文本的最大行数。
+设置文本的最大行数。与[minLines](ts-basic-components-text.md#minlines22)同时配置时，最小行数显示范围不会超过maxLines设置的限制。
 
 默认情况下，文本是自动折行的，如果指定此属性，则文本最多不会超过指定的行数。如果有多余的文本，可以通过[textOverflow](ts-basic-components-text.md#textoverflow)来指定截断方式。
 
@@ -1037,13 +1112,13 @@ maxLines(value: number)
 
 ### minFontScale12+
 
-PhonePC/2in1TabletTVWearable
-
 minFontScale(scale: number | Resource)
 
 设置文本最小的字体缩放倍数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1054,8 +1129,6 @@ minFontScale(scale: number | Resource)
 | scale | number | [Resource](ts-types.md#resource) | 是 | 文本最小的字体缩放倍数。  取值范围：[0, 1]  **说明：**  设置的值小于0时按0处理，大于1时按1处理，其余异常值默认不生效。 |
 
 ### minFontSize
-
-PhonePC/2in1TabletTVWearable
 
 minFontSize(value: number | string | Resource)
 
@@ -1081,19 +1154,19 @@ minFontSize小于或等于0时，自适应字号不生效，此时按照[fontSiz
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | string | [Resource](ts-types.md#resource) | 是 | 文本最小显示字号。  单位：[fp](ts-pixel-units.md) |
+| value | number | string | [Resource](ts-types.md#resource) | 是 | 文本最小显示字号。  取值范围：大于0。  单位：[fp](ts-pixel-units.md#基本像素单位)  **说明：**  设置的值≤0时，自适应字号不生效，此时按照fontSize属性的值生效。 |
 
 ### minLineHeight22+
 
-PhonePC/2in1TabletTVWearable
-
 minLineHeight(value: LengthMetrics | undefined)
 
-设置文本的最小行高，设置值不大于0时，取默认值0。
+设置文本的最小行高，设置值不大于0时，取默认值0。当[maxLineHeight](ts-basic-components-text.md#maxlineheight22)的设置值小于minLineHeight时，maxLineHeight会按照minLineHeight的值生效。
 
 **卡片能力：** 从API version 22开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1101,11 +1174,9 @@ minLineHeight(value: LengthMetrics | undefined)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | undefined | 是 | 文本的最小行高，不支持百分比。  设置的值不大于0时按0处理。 |
+| value | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | undefined | 是 | 文本的最小行高，不支持百分比。  设置的值不大于0时按0处理。  取值为undefined时，不生效。 |
 
 ### minLines22+
-
-PhonePC/2in1TabletTVWearable
 
 minLines(minLines: Optional<number>)
 
@@ -1113,7 +1184,7 @@ minLines(minLines: Optional<number>)
 
 如果实际文本高度小于最小行数对应的高度，最后显示高度为最小行数对应的高度。
 
-与[maxLines](ts-basic-components-text.md#maxlines)同时配置时，最小行高显示范围不会超过最大行高限制。
+与[maxLines](ts-basic-components-text.md#maxlines)同时配置时，最小行数对应的显示高度不会超过最大行数对应的高度限制。
 
 如果文本设置了[constraintSize](ts-universal-attributes-size.md#constraintsize)，那么组件最后显示高度会在[constraintSize](ts-universal-attributes-size.md#constraintsize)约束内。
 
@@ -1121,17 +1192,17 @@ minLines(minLines: Optional<number>)
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| minLines | [Optional](ts-universal-attributes-custom-property.md#optionalt)<number> | 是 | 文本最小行数。  取值范围：[0, INT32\_MAX]  设置的值小于0时按0处理。 |
+| minLines | [Optional](ts-universal-attributes-custom-property.md#optionalt)<number> | 是 | 文本最小行数。  取值范围：[0, INT32\_MAX]  设置的值小于0时按0处理。  值为undefined时，最小行数无限制。  **说明：**  与[maxLines](ts-basic-components-text.md#maxlines)同时配置时，最小行数对应的显示高度不会超过最大行数对应的高度限制。 |
 
 ### includeFontPadding23+
-
-PhonePC/2in1TabletTVWearable
 
 includeFontPadding(include: Optional<boolean>)
 
@@ -1139,17 +1210,17 @@ includeFontPadding(include: Optional<boolean>)
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| include | [Optional](ts-universal-attributes-custom-property.md#optionalt)<boolean> | 是 | 是否在首行和尾行增加间距以避免文字截断。  true表示在首行和尾行增加间距；false表示在首行和尾行不增加间距。 |
+| include | [Optional](ts-universal-attributes-custom-property.md#optionalt)<boolean> | 是 | 是否在首行和尾行增加间距以避免文字截断。  true表示在首行和尾行增加间距；false表示在首行和尾行不增加间距。  undefined表示在首行和尾行不增加间距。 |
 
 ### fallbackLineSpacing23+
-
-PhonePC/2in1TabletTVWearable
 
 fallbackLineSpacing(enabled: Optional<boolean>)
 
@@ -1157,21 +1228,21 @@ fallbackLineSpacing(enabled: Optional<boolean>)
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| enabled | [Optional](ts-universal-attributes-custom-property.md#optionalt)<boolean> | 是 | 行高是否基于文字实际高度自适应。  true表示行高基于文字实际高度自适应；false表示行高不基于文字实际高度自适应。 |
+| enabled | [Optional](ts-universal-attributes-custom-property.md#optionalt)<boolean> | 是 | 行高是否基于文字实际高度自适应。  true表示行高基于文字实际高度自适应；false表示行高不基于文字实际高度自适应。  undefined表示行高不基于文字实际高度自适应。 |
 
 ### optimizeTrailingSpace20+
 
-PhonePC/2in1TabletTVWearable
-
 optimizeTrailingSpace(optimize: Optional<boolean>)
 
-设置是否在文本布局过程中优化每行末尾的空格，可解决行尾空格影响对齐显示效果问题。
+设置是否在文本布局过程中优化每行末尾的空格，可解决行尾空格影响对齐显示效果问题。未通过该接口设置时，默认不优化每行末尾的空格。
 
 设置Text.optimizeTrailingSpace为true时：
 
@@ -1183,66 +1254,110 @@ optimizeTrailingSpace(optimize: Optional<boolean>)
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| optimize | [Optional](ts-universal-attributes-custom-property.md#optionalt)<boolean> | 是 | 是否优化每行末尾的空格。  true表示优化末尾空格，false则不优化。  默认值：false |
+| optimize | [Optional](ts-universal-attributes-custom-property.md#optionalt)<boolean> | 是 | 是否优化每行末尾的空格。  true表示优化末尾空格，false则不优化。  值为undefined时，不优化末尾空格。 |
 
 ### compressLeadingPunctuation23+
-
-PhonePC/2in1TabletTVWearable
 
 compressLeadingPunctuation(enabled: Optional<boolean>)
 
 设置是否开启行首标点符号压缩。
 
-说明
+**说明** 
 
 * 行首标点符号默认不压缩。
 * 支持压缩的标点符号，请参考[ParagraphStyle](js-apis-graphics-text.md#paragraphstyle)的行首压缩的标点范围。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| enabled | [Optional](ts-universal-attributes-custom-property.md#optionalt)<boolean> | 是 | 是否开启行首标点符号压缩。  true表示开启行首标点符号压缩；false表示不开启行首标点符号压缩。 |
+| enabled | [Optional](ts-universal-attributes-custom-property.md#optionalt)<boolean> | 是 | 是否开启行首标点符号压缩。  true表示开启行首标点符号压缩；false表示不开启行首标点符号压缩；undefined表示不开启。 |
+
+### orphanCharOptimization
+
+orphanCharOptimization(enabled: Optional<boolean>)
+
+设置文本排版时是否使能孤字优化。不通过该接口设置，默认不使能孤字优化。
+
+孤字优化通过更高效地处理孤立字符（段落尾行首字符）来改善文本布局。使能后，它会调整换行点以尽可能避免孤立字符。孤字优化特性需在[wordBreak](ts-basic-components-text.md#wordbreak11)为非BREAK\_ALL并且待排版文本首个[TextStyle](js-apis-graphics-text.md#textstyle)的[locale](js-apis-graphics-text.md#textstyle)为“zh-Hans”或“zh-Hant”时生效。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enabled | [Optional](ts-universal-attributes-custom-property.md#optionalt)<boolean> | 是 | 段落最后一行是否使能孤字优化。  true表示使能孤字优化，false表示不使能孤字优化。  值为undefined或null时，不使能孤字优化。 |
 
 ### privacySensitive12+
 
-PhonePC/2in1TabletTVWearable
-
 privacySensitive(supported: boolean)
 
-设置是否支持卡片敏感隐私信息。
+设置是否支持卡片敏感隐私信息。未通过该接口设置时，默认不支持卡片敏感隐私信息。
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| supported | boolean | 是 | 是否支持卡片敏感隐私信息。  默认值为false，当设置为true时，隐私模式下文字将被遮罩为横杠“-”样式。  **说明：**  设置为null则表示不敏感。  进入隐私模式需要卡片框架支持。隐私遮罩的类型可以通过[obscured](ts-universal-attributes-obscured.md#obscured)配置。 |
+| supported | boolean | 是 | 是否支持卡片敏感隐私信息。  true表示支持卡片敏感隐私信息，隐私模式下文字将被遮罩为横杠"-"样式；false表示不支持卡片敏感隐私信息，隐私模式下文字正常显示。  **说明：**  设置为null则表示不敏感。  进入隐私模式需要卡片框架支持。隐私遮罩的类型可以通过[obscured](ts-universal-attributes-obscured.md#obscured)配置。 |
+
+### punctuationOverflow
+
+punctuationOverflow(enabled: Optional<boolean>)
+
+设置是否启用行尾标点符号悬挂。不通过该接口设置，默认标点符号不悬挂。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enabled | [Optional](ts-universal-attributes-custom-property.md#optionalt)<boolean> | 是 | 是否启用行尾标点符号悬挂。  true表示启用行尾标点符号悬挂，false表示不启用行尾标点符号悬挂。设置为undefined或null时，不启用标点符号悬挂。 |
 
 ### selectedBackgroundColor14+
 
-PhonePC/2in1TabletTVWearable
-
 selectedBackgroundColor(color: ResourceColor)
 
-设置文本选中底板颜色。如果未设置不透明度，默认为20%不透明度。
+设置文本选中底板颜色。如果未设置不透明度，默认不透明度为20%。未通过该接口设置时，默认文本选中底板颜色为'#007DFF'（蓝色）。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1250,15 +1365,13 @@ selectedBackgroundColor(color: ResourceColor)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| color | [ResourceColor](ts-types.md#resourcecolor) | 是 | 文本选中底板颜色。  默认值：'#007DFF' |
+| color | [ResourceColor](ts-types.md#resourcecolor) | 是 | 文本选中底板颜色。 |
 
 ### selection11+
 
-PhonePC/2in1TabletTVWearable
-
 selection(selectionStart: number, selectionEnd: number)
 
-设置选中区域。
+设置选中区域。未通过该接口设置时，默认不设置选中区域（selectionStart和selectionEnd均为-1）。
 
 选中区域高亮且显示手柄和文本选择菜单。
 
@@ -1274,24 +1387,26 @@ selection(selectionStart: number, selectionEnd: number)
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| selectionStart | number | 是 | 所选文本的起始位置。  默认值：-1 |
-| selectionEnd | number | 是 | 所选文本的结束位置。  默认值：-1 |
+| selectionStart | number | 是 | 所选文本的起始位置。  取值范围：[0, textSize]，其中textSize为文本内容最大字符数。入参小于0时处理为0，大于textSize时处理为textSize。 |
+| selectionEnd | number | 是 | 所选文本的结束位置。  取值范围：[0, textSize]，其中textSize为文本内容最大字符数。入参小于0时处理为0，大于textSize时处理为textSize。 |
 
 ### shaderStyle20+
 
-PhonePC/2in1TabletTVWearable
-
 shaderStyle(shader: ShaderStyle)
 
-可以显示为径向渐变[RadialGradientStyle](ts-text-common.md#radialgradientstyle20)或线性渐变[LinearGradientStyle](ts-text-common.md#lineargradientstyle20)或纯色[ColorShaderStyle](ts-text-common.md#colorshaderstyle20)的效果，shaderStyle的优先级高于[fontColor](ts-basic-components-symbolspan.md#fontcolor)和AI识别，纯色建议使用[fontColor](ts-basic-components-symbolspan.md#fontcolor)。
+可以显示为径向渐变[RadialGradientStyle](ts-text-common.md#radialgradientstyle20)或线性渐变[LinearGradientStyle](ts-text-common.md#lineargradientstyle20)或纯色[ColorShaderStyle](ts-text-common.md#colorshaderstyle20)的效果，shaderStyle的优先级高于[fontColor](ts-basic-components-text.md#fontcolor)和AI识别，纯色建议使用[fontColor](ts-basic-components-text.md#fontcolor)。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1303,11 +1418,11 @@ shaderStyle(shader: ShaderStyle)
 
 ### textAlign
 
-PhonePC/2in1TabletTVWearable
-
 textAlign(value: TextAlign)
 
-设置文本段落在水平方向的对齐方式。
+设置文本段落在水平方向的对齐方式。未通过该接口设置时，默认文本段落在水平方向的对齐方式为TextAlign.Start。Wearable设备上默认为TextAlign.Center。
+
+当[textOverflow](ts-basic-components-text.md#textoverflow)设置为TextOverflow.MARQUEE且文本可滚动时，textAlign属性不生效。
 
 文本段落宽度占满Text组件宽度。
 
@@ -1319,7 +1434,7 @@ textAlign(value: TextAlign)
 
 当textAlign属性设置为TextAlign.JUSTIFY时，需要根据文本内容设置[wordBreak](ts-basic-components-text.md#wordbreak11)属性，且最后一行文本水平对齐首部，不参与两端对齐。
 
-说明
+**说明** 
 
 textAlign只能调整文本整体的布局，不影响字符的显示顺序。若需要调整字符的显示顺序，请参考[镜像状态字符对齐](../harmonyos-guides/arkts-internationalization.md#镜像状态字符对齐)。
 
@@ -1333,15 +1448,13 @@ textAlign只能调整文本整体的布局，不影响字符的显示顺序。�
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [TextAlign](ts-appendix-enums.md#textalign) | 是 | 文本段落在水平方向的对齐方式。  默认值：TextAlign.Start  Wearable设备上默认值为：TextAlign.Center |
+| value | [TextAlign](ts-appendix-enums.md#textalign) | 是 | 文本段落在水平方向的对齐方式。  **说明：**  当设置为TextAlign.JUSTIFY时，需要根据文本内容设置[wordBreak](ts-basic-components-text.md#wordbreak11)属性，且最后一行文本水平对齐首部，不参与两端对齐。 |
 
 ### textCase
 
-PhonePC/2in1TabletTVWearable
-
 textCase(value: TextCase)
 
-设置文本大小写。
+设置文本大小写。未通过该接口设置时，默认文本大小写行为为TextCase.Normal。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -1353,11 +1466,9 @@ textCase(value: TextCase)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [TextCase](ts-appendix-enums.md#textcase) | 是 | 文本大小写。  默认值：TextCase.Normal |
+| value | [TextCase](ts-appendix-enums.md#textcase) | 是 | 文本大小写。 |
 
 ### textContentAlign21+
-
-PhonePC/2in1TabletTVWearable
 
 textContentAlign(textContentAlign: Optional<TextContentAlign>)
 
@@ -1367,23 +1478,25 @@ textContentAlign(textContentAlign: Optional<TextContentAlign>)
 
 **元服务API：** 从API version 21开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| textContentAlign | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[TextContentAlign](ts-text-common.md#textcontentalign21)> | 是 | 文本段落在垂直方向的对齐方式。  默认(undefined和异常值情况下)和align属性设置为Center效果一致。 |
+| textContentAlign | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[TextContentAlign](ts-text-common.md#textcontentalign21)> | 是 | 文本内容区在组件内的垂直对齐方式。  默认(undefined和异常值情况下)和align属性设置为Center效果一致。 |
 
 ### textDirection23+
-
-PhonePC/2in1TabletTVWearable
 
 textDirection(direction: TextDirection | undefined)
 
 指定文本排版方向，未通过该接口设置时，默认文本排版方向遵循组件布局方向。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1395,13 +1508,13 @@ textDirection(direction: TextDirection | undefined)
 
 ### textIndent10+
 
-PhonePC/2in1TabletTVWearable
-
 textIndent(value: Length)
 
-设置首行文本缩进。
+设置首行文本缩进。未通过该接口设置时，默认首行文本缩进为0。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1409,11 +1522,29 @@ textIndent(value: Length)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Length](ts-types.md#length) | 是 | 首行文本缩进。  默认值：0  单位：[fp](ts-pixel-units.md) |
+| value | [Length](ts-types.md#length) | 是 | 首行文本缩进。  单位：[fp](ts-pixel-units.md#基本像素单位)  取值范围：大于等于0。设置负数时，按默认值处理。 |
+
+### tailIndents
+
+tailIndents(value: Optional<LengthMetrics | Array<LengthMetrics>>)
+
+设置文本尾部缩进。未通过该接口设置时，文本尾部缩进为0fp。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | Array<[LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12)>> | 是 | 指定文本每一行尾部缩进。当提供一个单独的LengthMetrics值时，所有行共享相同的尾部缩进；当提供一个数组时，第i个元素指定第i行的尾部缩进；如果文本行数超过数组长度，则数组中的最后一个元素将用于剩余的行。不支持百分比。  取值范围：大于等于0。设置负数时，按默认值处理。 |
 
 ### textOverflow
-
-PhonePC/2in1TabletTVWearable
 
 textOverflow(options: TextOverflowOptions)
 
@@ -1422,16 +1553,16 @@ textOverflow(options: TextOverflowOptions)
 当[TextOverflowOptions](ts-basic-components-text.md#textoverflowoptions18对象说明)设置为TextOverflow.None、TextOverflow.Clip或TextOverflow.Ellipsis时：
 
 * 设置为TextOverflow.None、TextOverflow.Clip，文本超长时按最大行截断显示。
-* 设置为TextOverflow.Ellipsis，文本超长时显示不下的文本用省略号代替。
+* 设置为TextOverflow.Ellipsis，文本超长时超出显示区域的文本用省略号代替。
 * 需配合[maxLines](ts-basic-components-text.md#maxlines)使用，单独设置不生效。
 * 断行规则参考[wordBreak](ts-basic-components-text.md#wordbreak11)。默认情况下参考WordBreak.BREAK\_WORD的截断方式，文本截断按字进行。例如，英文以单词为最小单位进行截断。若需要以字母为单位进行截断，可设置wordBreak属性为WordBreak.BREAK\_ALL。
 * 折行规则参考[lineBreakStrategy](ts-basic-components-text.md#linebreakstrategy12)。该属性在[wordBreak](ts-basic-components-text.md#wordbreak11)不等于WordBreak.BREAK\_ALL的时候生效，不支持连词符。
-* 从API version 11开始，建议优先组合[textOverflow](ts-basic-components-text.md#textoverflow)和[wordBreak](ts-basic-components-text.md#wordbreak11)属性来设置截断方式，具体详见[示例4设置文本断行及折行](ts-basic-components-text.md#示例4设置文本断行及折行)、[如何解决Text组件文本为中文、数字、英文混合时显示省略号截断异常的问题](../harmonyos-faqs/faqs-arkui-347.md)。
+* 从API version 11开始，建议优先组合[textOverflow](ts-basic-components-text.md#textoverflow)和[wordBreak](ts-basic-components-text.md#wordbreak11)属性来设置截断方式，具体详见[示例4（设置文本断行及折行）](ts-basic-components-text.md#示例4设置文本断行及折行)、[如何解决Text组件文本为中文、数字、英文混合时显示省略号截断异常的问题](../harmonyos-faqs/faqs-arkui-347.md)。
 
 当TextOverflowOptions设置为TextOverflow.MARQUEE时：
 
 * 文本在一行内滚动显示。
-* 设置[maxLines](ts-basic-components-text.md#maxlines)及[copyOption](ts-basic-components-text.md#copyoption9)属性均不生效。
+* 设置[maxLines](ts-basic-components-text.md#maxlines)、[copyOption](ts-basic-components-text.md#copyoption9)、[selection](ts-basic-components-text.md#selection11)属性均不生效，且不能进行文本特殊实体识别（即[enableDataDetector](ts-basic-components-text.md#enabledatadetector11)设置enable为true时不生效）。
 * Text组件[clip](ts-universal-attributes-sharp-clipping.md#clip12)属性默认为true。
 * 属性字符串的[CustomSpan](ts-universal-styled-string.md#customspan)不支持跑马灯模式。
 * [textAlign](ts-basic-components-text.md#textalign)属性的生效规则：当文本不可滚动时，textAlign属性生效；当文本可滚动时，textAlign属性不生效。
@@ -1447,19 +1578,19 @@ textOverflow(options: TextOverflowOptions)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [TextOverflowOptions](ts-basic-components-text.md#textoverflowoptions18对象说明) | 是 | 文本超长显示方式对象 |
+| options | [TextOverflowOptions](ts-basic-components-text.md#textoverflowoptions18对象说明) | 是 | 文本超长显示方式配置对象，用于配置文本超长时的显示方式，包含overflow属性指定截断、省略号或跑马灯等显示行为。 |
 
 ### textSelectable12+
 
-PhonePC/2in1TabletTVWearable
-
 textSelectable(mode: TextSelectableMode)
 
-设置是否支持文本可选择、可获焦。
+设置是否支持文本可选择、可获焦。未通过该接口设置时，默认文本可选择、不可获焦（TextSelectableMode.SELECTABLE\_UNFOCUSABLE）。
 
-需配合[copyOption](ts-basic-components-text.md#copyoption9)使用。
+需配合[copyOption](ts-basic-components-text.md#copyoption9)使用。当copyOption设置为CopyOptions.None时，设置textSelectable属性不生效。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1467,11 +1598,9 @@ textSelectable(mode: TextSelectableMode)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| mode | [TextSelectableMode](ts-appendix-enums.md#textselectablemode12) | 是 | 文本是否支持可选择、可获焦。  默认值：TextSelectableMode.SELECTABLE\_UNFOCUSABLE |
+| mode | [TextSelectableMode](ts-appendix-enums.md#textselectablemode12) | 是 | 文本是否支持可选择、可获焦。 |
 
 ### textShadow10+
-
-PhonePC/2in1TabletTVWearable
 
 textShadow(value: ShadowOptions | Array<ShadowOptions>)
 
@@ -1485,44 +1614,44 @@ textShadow(value: ShadowOptions | Array<ShadowOptions>)
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [ShadowOptions](ts-universal-attributes-image-effect.md#shadowoptions对象说明) | Array<[ShadowOptions](ts-universal-attributes-image-effect.md#shadowoptions对象说明)>11+ | 是 | 文字阴影效果。 |
+| value | [ShadowOptions](ts-universal-attributes-image-effect.md#shadowoptions对象说明) | Array<[ShadowOptions](ts-universal-attributes-image-effect.md#shadowoptions对象说明)>11+ | 是 | 文字阴影效果，用于配置文字阴影的视觉表现。ShadowOptions包含radius（阴影半径）、color（阴影颜色）、offsetX（水平偏移）、offsetY（垂直偏移）等配置项。不支持type、fill字段和color字段的智能取色模式。从API version 11开始支持以数组形式入参，实现多重文字阴影。 |
 
 ### textVerticalAlign20+
 
-PhonePC/2in1TabletTVWearable
-
 textVerticalAlign(textVerticalAlign: Optional<TextVerticalAlign>)
 
-设置文本段落在垂直方向的对齐方式。
+设置文本段落在垂直方向的对齐方式。未通过该接口设置时，默认文本段落在垂直方向的对齐方式为TextVerticalAlign.BASELINE。
 
-说明
+**说明** 
 
 * 与[halfLeading](ts-basic-components-text.md#halfleading12)同时配置时，halfLeading不生效。
 * 一个段落下使用同一字号必须同时设置行高[lineHeight](ts-basic-components-text.md#lineheight)或者同一个段落不同字号文本混排时才有效果差异，否则设置了该属性任意枚举值和未设置该属性都是一样的排版效果。属性字符串[TextStyle](ts-universal-styled-string.md#textstyle)中的SuperscriptStyle上下角标样式仅在[TextVerticalAlign](ts-text-common.md#textverticalalign20)属性值为TextVerticalAlign.BASELINE时生效，其余垂直对齐方式下上下角标文本和普通文本表现一致，无上下角标效果。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| textVerticalAlign | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[TextVerticalAlign](ts-text-common.md#textverticalalign20)> | 是 | 文本段落在垂直方向的对齐方式。  默认值：TextVerticalAlign.BASELINE |
+| textVerticalAlign | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[TextVerticalAlign](ts-text-common.md#textverticalalign20)> | 是 | 文本段落在垂直方向的对齐方式。  默认值：TextVerticalAlign.BASELINE  取值为undefined时，按照TextVerticalAlign.BASELINE处理，对齐文本基线。 |
 
 ### wordBreak11+
 
-PhonePC/2in1TabletTVWearable
-
 wordBreak(value: WordBreak)
 
-设置断行规则。
+设置断行规则。未通过该接口设置时，默认断行规则为WordBreak.BREAK\_WORD。
 
 默认情况下，不调用wordBreak或者设置WordBreak.BREAK\_WORD时，文本截断按字进行。例如，英文以单词为最小单位进行截断。
 
@@ -1530,19 +1659,21 @@ WordBreak.BREAK\_ALL与{overflow: TextOverflow.Ellipsis}、maxLines组合使用�
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [WordBreak](ts-appendix-enums.md#wordbreak11) | 是 | 断行规则。  默认值：WordBreak.BREAK\_WORD |
+| value | [WordBreak](ts-appendix-enums.md#wordbreak11) | 是 | 断行规则。 |
 
 ## TextSpanType11+枚举说明
 
-PhonePC/2in1TabletTVWearable
-
 [Span](ts-basic-components-span.md)类型信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1553,7 +1684,7 @@ PhonePC/2in1TabletTVWearable
 | MIXED | 2 | Span为图文混合类型。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | DEFAULT15+ | 3 | 注册此类型菜单但未注册TEXT、IMAGE、MIXED菜单时，文字类型、图片类型、图文混合类型都会触发并显示此类型对应的菜单。  **元服务API：** 从API version 15开始，该接口支持在元服务中使用。 |
 
-说明
+**说明** 
 
 菜单类型的匹配顺序如下。例如，用户长按文本时，根据以下规则查找：
 
@@ -1564,9 +1695,9 @@ PhonePC/2in1TabletTVWearable
 
 ## TextResponseType11+枚举说明
 
-PhonePC/2in1TabletTVWearable
-
 选择菜单的响应类型。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1577,7 +1708,7 @@ PhonePC/2in1TabletTVWearable
 | SELECT | 2 | 通过鼠标选中触发菜单弹出。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | DEFAULT15+ | 3 | 注册此类型的菜单，但未注册RIGHT\_CLICK、LONG\_PRESS、SELECT时，右键、长按、鼠标、[selection](ts-basic-components-text.md#selection11)选中均会触发并显示此类型对应的菜单。  **元服务API：** 从API version 15开始，该接口支持在元服务中使用。 |
 
-说明
+**说明** 
 
 菜单类型的匹配顺序如下。例如，用户长按文本时，根据以下规则查找：
 
@@ -1588,17 +1719,17 @@ PhonePC/2in1TabletTVWearable
 
 ## TextOverflowOptions18+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 文本超长显示方式对象。
 
-说明
+**说明** 
 
 为规范匿名对象的定义，API 18版本修改了此处的元素定义。其中，保留了历史匿名对象的起始版本信息，会出现外层元素@since版本号高于内层元素版本号的情况，但这不影响接口的使用。
 
 **卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1608,19 +1739,17 @@ PhonePC/2in1TabletTVWearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用事件](ts-component-general-events.md)外，还支持以下事件：
 
 ### onCopy11+
-
-PhonePC/2in1TabletTVWearable
 
 onCopy(callback:(value: string) => void)
 
 长按文本内部区域弹出剪贴板后，点击剪贴板复制按钮，触发该回调。目前只有文本可以复制。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1630,15 +1759,43 @@ onCopy(callback:(value: string) => void)
 | --- | --- | --- | --- |
 | value | string | 是 | 复制的文本内容。 |
 
-### onTextSelectionChange11+
+### onWillCopy
 
-PhonePC/2in1TabletTVWearable
+onWillCopy(callback: Callback<string, boolean>)
+
+在进行复制操作前，触发该回调。
+
+**说明** 
+
+onWillCopy和onCopy形成will/did时序模式：
+
+* onWillCopy在复制操作前触发，可通过返回false拦截复制操作；返回true则允许复制，随后触发onCopy。
+* onCopy在复制操作完成后触发，无法拦截。
+* 两者可以同时使用，onWillCopy用于拦截控制，onCopy用于获取复制结果。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<string, boolean> | 是 | string为将要被复制的文本内容；boolean表示当前文本是否允许被复制，true：允许文本被复制；false：不允许文本被复制。 |
+
+### onTextSelectionChange11+
 
 onTextSelectionChange(callback: (selectionStart: number, selectionEnd: number) => void)
 
 文本选择的位置发生变化时，触发该回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1651,13 +1808,13 @@ onTextSelectionChange(callback: (selectionStart: number, selectionEnd: number) =
 
 ### onMarqueeStateChange18+
 
-PhonePC/2in1TabletTVWearable
-
 onMarqueeStateChange(callback: Callback<MarqueeState>)
 
 跑马灯动画进行到特定的阶段时，触发该回调。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1665,15 +1822,15 @@ onMarqueeStateChange(callback: Callback<MarqueeState>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | Callback<[MarqueeState](ts-basic-components-text.md#marqueestate18枚举说明)> | 是 | 通过callback参数指定触发回调的状态，状态由MarqueeState枚举定义，例如开始滚动、滚动一次、滚动完成。 |
+| callback | Callback<[MarqueeState](ts-basic-components-text.md#marqueestate18枚举说明)> | 是 | 通过callback参数指定触发回调的状态，状态由MarqueeState枚举定义，例如开始滚动、完成一次滚动、滚动完成或停止滚动。 |
 
 ## TextOptions11+
-
-PhonePC/2in1TabletTVWearable
 
 Text初始化参数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1683,23 +1840,21 @@ Text初始化参数。
 
 ## TextController11+
 
-PhonePC/2in1TabletTVWearable
-
 Text组件的控制器。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ### 导入对象
 
-```
-1. controller: TextController = new TextController()
+```ts
+controller: TextController = new TextController()
 ```
 
 ### closeSelectionMenu11+
-
-PhonePC/2in1TabletTVWearable
 
 closeSelectionMenu(): void
 
@@ -1707,17 +1862,19 @@ closeSelectionMenu(): void
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ### setStyledString12+
-
-PhonePC/2in1TabletTVWearable
 
 setStyledString(value: StyledString): void
 
 触发绑定或更新属性字符串。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1727,7 +1884,7 @@ setStyledString(value: StyledString): void
 | --- | --- | --- | --- |
 | value | [StyledString](ts-universal-styled-string.md#styledstring) | 是 | 属性字符串。  **说明：**  StyledString的子类[MutableStyledString](ts-universal-styled-string.md#mutablestyledstring)也可以作为入参值。 |
 
-说明
+**说明** 
 
 多次调用setStyledString，会用新的入参覆盖已绑定的属性字符串，而不是叠加新的入参。
 
@@ -1741,13 +1898,13 @@ setStyledString(value: StyledString): void
 
 ### getLayoutManager12+
 
-PhonePC/2in1TabletTVWearable
-
 getLayoutManager(): LayoutManager
 
 获取布局管理器对象。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1755,17 +1912,15 @@ getLayoutManager(): LayoutManager
 
 | 类型 | 说明 |
 | --- | --- |
-| [LayoutManager](ts-text-common.md#layoutmanager12) | 布局管理器对象。 |
+| [LayoutManager](ts-text-common.md#layoutmanager12) | 布局管理器对象，用于获取文本布局信息，包括行数、字形位置、行信息、字符绘制区域等。  **说明：**  当TextController还未绑定Text组件，或绑定的Text组件已被销毁/卸载时，会返回undefined。 |
 
 ### setTextSelection23+
-
-PhonePC/2in1TabletTVWearable
 
 setTextSelection(selectionStart: number | undefined, selectionEnd: number | undefined, options?: SelectionOptions): void
 
 设置文本选择区域并高亮显示。
 
-说明
+**说明** 
 
 当[copyOption](ts-basic-components-text.md#copyoption9)设置为CopyOptions.None时，设置setTextSelection不生效。
 
@@ -1773,13 +1928,15 @@ setTextSelection(selectionStart: number | undefined, selectionEnd: number | unde
 
 当selectionStart大于等于selectionEnd时不选中。可选范围为[0, textSize]，其中textSize为文本内容最大字符数，入参小于0时处理为0，大于textSize时处理为textSize。
 
-当selectionStart或selectionEnd位于截断的不可见区域时，文本不选中。截断为false时，超出父组件的文本选中区域生效。
+当selectionStart或selectionEnd位于截断的不可见区域时，文本不选中。clip设置为false时，超出父组件的文本选中区域生效。
 
 如果设备为PC/2in1，即使options被赋值为MenuPolicy.SHOW，调用setTextSelection也不弹出菜单。
 
 当emoji表情被选中区域截断时，若表情的起始位置包含在设置的文本选中区域内，该表情就会被选中。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1793,31 +1950,31 @@ setTextSelection(selectionStart: number | undefined, selectionEnd: number | unde
 
 ## TextMarqueeOptions18+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 Marquee初始化参数。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | start | boolean | 否 | 否 | 控制跑马灯进入播放状态。  true表示播放，false表示不播放。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| step | number | 否 | 是 | 滚动动画文本滚动步长。  默认值：4.0vp  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| spacing23+ | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 两轮跑马灯之间的间距。如果LengthMetrics的unit值是PERCENT，当前设置不生效，按默认值处理。  默认值：48.0vp  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
+| step | number | 否 | 是 | 滚动动画文本滚动步长。  单位：vp  取值范围：(0, 文本宽度]。设置小于等于0的值时按默认值处理。  默认值：4.0vp  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| spacing23+ | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 两轮跑马灯之间的间距。单位：vp。当LengthMetrics对象的unit属性为LengthUnit.PERCENT时，当前设置不生效，按默认值处理。  默认值：48.0vp  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
 | loop | number | 否 | 是 | 设置重复滚动的次数，小于等于零时无限循环。  默认值：-1  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | fromStart | boolean | 否 | 是 | 设置文本从头开始滚动或反向滚动。  true表示从头开始滚动，false表示反向滚动。  默认值：true  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| delay | number | 否 | 是 | 设置每次滚动的时间间隔。  默认值：0  单位：毫秒  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| delay | number | 否 | 是 | 设置每次滚动的时间间隔。  取值范围：[0, +∞)。设置负数时按默认值处理。  默认值：0  单位：毫秒  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | fadeout | boolean | 否 | 是 | 设置文字超长时的渐隐效果。  true表示支持渐隐效果，false表示不支持渐隐效果。  当Text内容超出显示范围时，未完全展现的文字边缘将应用渐隐效果。若两端均有文字未完全显示，则两端同时应用渐隐效果。在渐隐效果开启状态下，clip属性将自动锁定为true，不允许设置为false。  默认值：false  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | marqueeStartPolicy | [MarqueeStartPolicy](ts-basic-components-text.md#marqueestartpolicy18枚举说明) | 否 | 是 | 设置跑马灯启动策略，该属性值生效需将start设置为true。  默认值：TV设备上默认值为MarqueeStartPolicy.ON\_FOCUS，其他设备默认值为MarqueeStartPolicy.DEFAULT  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | marqueeUpdatePolicy23+ | [MarqueeUpdatePolicy](ts-basic-components-text.md#marqueeupdatepolicy23枚举说明) | 否 | 是 | 跑马灯组件属性更新后，跑马灯的滚动策略。  当跑马灯为播放状态，且文本内容宽度超过跑马灯组件宽度时，该属性生效。  默认值：MarqueeUpdatePolicy.DEFAULT  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
 
 ## MarqueeStartPolicy18+枚举说明
 
-PhonePC/2in1TabletTVWearable
-
 Marquee的滚动方式，可选择默认持续滚动或条件触发滚动。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1828,11 +1985,11 @@ Marquee的滚动方式，可选择默认持续滚动或条件触发滚动。
 
 ## MarqueeUpdatePolicy23+枚举说明
 
-PhonePC/2in1TabletTVWearable
-
 跑马灯组件属性更新后，跑马灯的滚动策略。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1843,11 +2000,11 @@ PhonePC/2in1TabletTVWearable
 
 ## MarqueeState18+枚举说明
 
-PhonePC/2in1TabletTVWearable
-
 Marquee状态回调的返回值。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1855,1317 +2012,1358 @@ Marquee状态回调的返回值。
 | --- | --- | --- |
 | START | 0 | 跑马灯滚动开始。 |
 | BOUNCE | 1 | 完成一次跑马灯滚动，如果循环次数不是1，将会多次返回。 |
-| FINISH | 2 | 跑马灯全部循环次数完成。 |
+| FINISH | 2 | 跑马灯全部循环次数完成或跑马灯停止滚动（例如[TextMarqueeOptions](ts-basic-components-text.md#textmarqueeoptions18对象说明)中start被设置为false）。 |
 
 ## 示例
-
-PhonePC/2in1TabletTVWearable
 
 ### 示例1（设置文本布局）
 
 该示例通过[textAlign](ts-basic-components-text.md#textalign)、[lineHeight](ts-basic-components-text.md#lineheight)、[baselineOffset](ts-basic-components-text.md#baselineoffset)、[halfLeading](ts-basic-components-text.md#halfleading12)（从API version 12开始）属性展示了文本布局的效果。
 
+```ts
+// xxx.ets
+@Extend(Text)
+function style(textAlign: TextAlign) {
+  .textAlign(textAlign)
+  .fontSize(12)
+  .border({ width: 1 })
+  .padding(10)
+  .width('100%')
+  .margin(5)
+}
+
+@Entry
+@Component
+struct TextExample1 {
+  @State changeTextAlignIndex: number = 0;
+  @State textAlign: TextAlign[] = [TextAlign.Start, TextAlign.Center, TextAlign.End];
+  @State textAlignStr: string[] = ['Start', 'Center', 'End'];
+
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center }) {
+      // 设置文本水平方向对齐方式
+      // 单行文本
+      Text('textAlign').fontSize(9).fontColor(0xCCCCCC)
+      Text(`TextAlign set to ${this.textAlignStr[this.changeTextAlignIndex]}.`)
+        .style(this.textAlign[this.changeTextAlignIndex])
+
+      // 多行文本
+      Text(`This is the text content with textAlign set to ${this.textAlignStr[this.changeTextAlignIndex]}.`)
+        .style(this.textAlign[this.changeTextAlignIndex])
+        .margin(5)
+
+      Row() {
+        Button('当前TextAlign类型：' + this.textAlignStr[this.changeTextAlignIndex]).onClick(() => {
+          this.changeTextAlignIndex++;
+          if (this.changeTextAlignIndex > (this.textAlignStr.length - 1)) {
+            this.changeTextAlignIndex = 0;
+          }
+        })
+      }.justifyContent(FlexAlign.Center).width('100%')
+
+      // 设置文本行高
+      Text('lineHeight').fontSize(9).fontColor(0xCCCCCC)
+      Text('This is the text with the line height set. This is the text with the line height set.')
+        .style(TextAlign.Start)
+      Text('This is the text with the line height set. This is the text with the line height set.')
+        .style(TextAlign.Start)
+        .lineHeight(20)
+
+      // 设置文本基线偏移
+      Text('baselineOffset').fontSize(9).fontColor(0xCCCCCC)
+      Text('This is the text content with baselineOffset 0.')
+        .baselineOffset(0)
+        .style(TextAlign.Start)
+      Text('This is the text content with baselineOffset 30.')
+        .baselineOffset(30)
+        .style(TextAlign.Start)
+      Text('This is the text content with baselineOffset -20.')
+        .baselineOffset(-20)
+        .style(TextAlign.Start)
+
+      // 设置文本是否居中对齐
+      Text('halfLeading').fontSize(9).fontColor(0xCCCCCC)
+      Text('This is the text with the halfLeading set.')
+        .lineHeight(60)
+        .halfLeading(true)
+        .style(TextAlign.Start)
+      Text('This is the text without the halfLeading set.')
+        .lineHeight(60)
+        .halfLeading(false)
+        .style(TextAlign.Start)
+    }.height(600).width('100%').padding({ left: 35, right: 35, top: 35 })
+  }
+}
 ```
-1. // xxx.ets
-2. @Extend(Text)
-3. function style(TextAlign: TextAlign) {
-4. .textAlign(TextAlign)
-5. .fontSize(12)
-6. .border({ width: 1 })
-7. .padding(10)
-8. .width('100%')
-9. .margin(5)
-10. }
 
-12. @Entry
-13. @Component
-14. struct TextExample1 {
-15. @State changeTextAlignIndex: number = 0;
-16. @State changeDecorationIndex: number = 0;
-17. @State textAlign: TextAlign[] = [TextAlign.Start, TextAlign.Center, TextAlign.End];
-18. @State textAlignStr: string[] = ['Start', 'Center', 'End'];
-
-20. build() {
-21. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center }) {
-22. // 设置文本水平方向对齐方式
-23. // 单行文本
-24. Text('textAlign').fontSize(9).fontColor(0xCCCCCC)
-25. Text(`TextAlign set to ${this.textAlignStr[this.changeTextAlignIndex]}.`)
-26. .style(this.textAlign[this.changeTextAlignIndex])
-
-28. // 多行文本
-29. Text(`This is the text content with textAlign set to ${this.textAlignStr[this.changeTextAlignIndex]}.`)
-30. .style(this.textAlign[this.changeTextAlignIndex])
-31. .margin(5)
-
-33. Row() {
-34. Button('当前TextAlign类型：' + this.textAlignStr[this.changeTextAlignIndex]).onClick(() => {
-35. this.changeTextAlignIndex++;
-36. if (this.changeTextAlignIndex > (this.textAlignStr.length - 1)) {
-37. this.changeTextAlignIndex = 0;
-38. }
-39. })
-40. }.justifyContent(FlexAlign.Center).width('100%')
-
-42. // 设置文本行高
-43. Text('lineHeight').fontSize(9).fontColor(0xCCCCCC)
-44. Text('This is the text with the line height set. This is the text with the line height set.')
-45. .style(TextAlign.Start)
-46. Text('This is the text with the line height set. This is the text with the line height set.')
-47. .style(TextAlign.Start)
-48. .lineHeight(20)
-
-50. // 设置文本基线偏移
-51. Text('baselineOffset').fontSize(9).fontColor(0xCCCCCC)
-52. Text('This is the text content with baselineOffset 0.')
-53. .baselineOffset(0)
-54. .style(TextAlign.Start)
-55. Text('This is the text content with baselineOffset 30.')
-56. .baselineOffset(30)
-57. .style(TextAlign.Start)
-58. Text('This is the text content with baselineOffset -20.')
-59. .baselineOffset(-20)
-60. .style(TextAlign.Start)
-
-62. // 设置文本是否居中对齐
-63. Text('halfLeading').fontSize(9).fontColor(0xCCCCCC)
-64. Text("This is the text with the halfLeading set.")
-65. .lineHeight(60)
-66. .halfLeading(true)
-67. .style(TextAlign.Start)
-68. Text("This is the text without the halfLeading set.")
-69. .lineHeight(60)
-70. .halfLeading(false)
-71. .style(TextAlign.Start)
-72. }.height(600).width('100%').padding({ left: 35, right: 35, top: 35 })
-73. }
-74. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/gdPf1uzBSDG-CiwXgvDrpA/zh-cn_image_0000002589246065.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/gi7Orb2WTpSL_gWgXnY_Gg/zh-cn_image_0000002706835896.gif)
 
 ### 示例2（设置文本样式）
 
-该示例通过[decoration](ts-basic-components-text.md#decoration)、[letterSpacing](ts-basic-components-text.md#letterspacing)、[textCase](ts-basic-components-text.md#textcase)、[fontFamily](ts-basic-components-text.md#fontfamily)、[textShadow](ts-basic-components-text.md#textshadow10)（从API version 10开始）、fontStyle、[textIndent](ts-basic-components-text.md#textindent10)（从API version 10开始）、[fontWeight](ts-basic-components-text.md#fontweight12)（从API version 12开始，支持设置字重无极调节配置项）属性展示了不同样式的文本效果。
+该示例通过[decoration](ts-basic-components-text.md#decoration)、[letterSpacing](ts-basic-components-text.md#letterspacing)、[textCase](ts-basic-components-text.md#textcase)、[fontFamily](ts-basic-components-text.md#fontfamily)、[textShadow](ts-basic-components-text.md#textshadow10)（从API version 10开始）、[fontStyle](ts-basic-components-text.md#fontstyle)、[textIndent](ts-basic-components-text.md#textindent10)（从API version 10开始）、[fontWeight](ts-basic-components-text.md#fontweight12)（从API version 12开始，支持设置字重无极调节配置项）属性展示了不同样式的文本效果。
 
+```ts
+// xxx.ets
+@Extend(Text)
+function style() {
+  .font({ size: 12 }, { enableVariableFontWeight: true })
+  .border({ width: 1 })
+  .padding(10)
+  .width('100%')
+  .margin(5)
+}
+
+@Entry
+@Component
+struct TextExample2 {
+  @State changeDecorationIndex: number = 0;
+  @State textDecorationType: TextDecorationType[] =
+    [TextDecorationType.LineThrough, TextDecorationType.Overline, TextDecorationType.Underline];
+  @State textDecorationTypeStr: string[] = ['LineThrough', 'Overline', 'Underline'];
+  @State textDecorationStyle: TextDecorationStyle[] =
+    [TextDecorationStyle.SOLID, TextDecorationStyle.DOTTED, TextDecorationStyle.WAVY];
+  @State textDecorationStyleStr: string[] = ['SOLID', 'DOTTED', 'WAVY'];
+
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center }) {
+      Text('decoration').fontSize(9).fontColor(0xCCCCCC)
+      Text('This is the text content with the decoration set to LineThrough and the color set to Red.')
+        .decoration({
+          type: this.textDecorationType[this.changeDecorationIndex],
+          color: Color.Red,
+          style: this.textDecorationStyle[this.changeDecorationIndex]
+        })
+        .style()
+        .margin(5)
+
+      Row() {
+        Button('decoration type：' + this.textDecorationTypeStr[this.changeDecorationIndex] + ' & ' +
+        this.textDecorationStyleStr[this.changeDecorationIndex]).onClick(() => {
+          this.changeDecorationIndex++;
+          if (this.changeDecorationIndex > (this.textDecorationTypeStr.length - 1)) {
+            this.changeDecorationIndex = 0;
+          }
+        })
+      }.justifyContent(FlexAlign.Center).width('100%')
+
+      // 文本字符间距
+      Text('letterSpacing').fontSize(9).fontColor(0xCCCCCC)
+      Text('This is the text content with letterSpacing 0.')
+        .letterSpacing(0)
+        .style()
+      Text('This is the text content with letterSpacing 3.')
+        .letterSpacing(3)
+        .style()
+      Text('This is the text content with letterSpacing -1.')
+        .letterSpacing(-1)
+        .style()
+
+      Text('textCase').fontSize(9).fontColor(0xCCCCCC)
+      Text('This is the text content with textCase set to Normal.')
+        .textCase(TextCase.Normal)
+        .style()
+      // 文本全小写展示
+      Text('This is the text content with textCase set to LowerCase.')
+        .textCase(TextCase.LowerCase)
+        .style()
+      // 文本全大写展示
+      Text('This is the text content with textCase set to UpperCase.')
+        .textCase(TextCase.UpperCase)
+        .style()
+
+      Text('fontFamily').fontSize(9).fontColor(0xCCCCCC)
+      // 设置字体列表
+      Text('This is the text content with fontFamily')
+        .style()
+        .fontFamily('HarmonyOS Sans')
+
+      Text('textShadow').fontSize(9).fontColor(0xCCCCCC)
+      // 设置文字阴影效果
+      Text('textShadow')
+        .style()
+        .textAlign(TextAlign.Center)
+        .fontSize(40)
+        .textShadow({
+          radius: 10,
+          color: Color.Black,
+          offsetX: 0,
+          offsetY: 0
+        })
+
+      Text('fontStyle').fontSize(9).fontColor(0xCCCCCC)
+      // 设置字体样式
+      Text('This is the text content with fontStyle set to Italic')
+        .style()
+        .fontStyle(FontStyle.Italic)
+      Text('This is the text content with fontStyle set to Normal')
+        .style()
+        .fontStyle(FontStyle.Normal)
+
+      Text('textIndent').fontSize(9).fontColor(0xCCCCCC)
+      // 设置文字缩进
+      Text('This is the text content with textIndent 30')
+        .style()
+        .textIndent(30)
+
+      Text('fontWeight').fontSize(9).fontColor(0xCCCCCC)
+      // 设置文本的字体粗细
+      Text('This is the text content with fontWeight 800')
+        .style()
+        .fontWeight('800', { enableVariableFontWeight: true })
+
+    }.width('100%').padding({ left: 35, right: 35 })
+  }
+}
 ```
-1. // xxx.ets
-2. @Extend(Text)
-3. function style() {
-4. .font({ size: 12 }, { enableVariableFontWeight: true })
-5. .border({ width: 1 })
-6. .padding(10)
-7. .width('100%')
-8. .margin(5)
-9. }
 
-11. @Entry
-12. @Component
-13. struct TextExample2 {
-14. @State changeDecorationIndex: number = 0;
-15. @State textDecorationType: TextDecorationType[] =
-16. [TextDecorationType.LineThrough, TextDecorationType.Overline, TextDecorationType.Underline];
-17. @State textDecorationTypeStr: string[] = ['LineThrough', 'Overline', 'Underline'];
-18. @State textDecorationStyle: TextDecorationStyle[] =
-19. [TextDecorationStyle.SOLID, TextDecorationStyle.DOTTED, TextDecorationStyle.WAVY];
-20. @State textDecorationStyleStr: string[] = ['SOLID', 'DOTTED', 'WAVY'];
-
-22. build() {
-23. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center }) {
-24. Text('decoration').fontSize(9).fontColor(0xCCCCCC)
-25. Text('This is the text content with the decoration set to LineThrough and the color set to Red.')
-26. .decoration({
-27. type: this.textDecorationType[this.changeDecorationIndex],
-28. color: Color.Red,
-29. style: this.textDecorationStyle[this.changeDecorationIndex]
-30. })
-31. .style()
-32. .margin(5)
-
-34. Row() {
-35. Button('decoration type：' + this.textDecorationTypeStr[this.changeDecorationIndex] + ' & ' +
-36. this.textDecorationStyleStr[this.changeDecorationIndex]).onClick(() => {
-37. this.changeDecorationIndex++;
-38. if (this.changeDecorationIndex > (this.textDecorationTypeStr.length - 1)) {
-39. this.changeDecorationIndex = 0;
-40. }
-41. })
-42. }.justifyContent(FlexAlign.Center).width('100%')
-
-44. // 文本字符间距
-45. Text('letterSpacing').fontSize(9).fontColor(0xCCCCCC)
-46. Text('This is the text content with letterSpacing 0.')
-47. .letterSpacing(0)
-48. .style()
-49. Text('This is the text content with letterSpacing 3.')
-50. .letterSpacing(3)
-51. .style()
-52. Text('This is the text content with letterSpacing -1.')
-53. .letterSpacing(-1)
-54. .style()
-
-56. Text('textCase').fontSize(9).fontColor(0xCCCCCC)
-57. Text('This is the text content with textCase set to Normal.')
-58. .textCase(TextCase.Normal)
-59. .style()
-60. // 文本全小写展示
-61. Text('This is the text content with textCase set to LowerCase.')
-62. .textCase(TextCase.LowerCase)
-63. .style()
-64. // 文本全大写展示
-65. Text('This is the text content with textCase set to UpperCase.')
-66. .textCase(TextCase.UpperCase)
-67. .style()
-
-69. Text('fontFamily').fontSize(9).fontColor(0xCCCCCC)
-70. // 设置字体列表
-71. Text('This is the text content with fontFamily')
-72. .style()
-73. .fontFamily('HarmonyOS Sans')
-
-75. Text('textShadow').fontSize(9).fontColor(0xCCCCCC)
-76. // 设置文字阴影效果
-77. Text('textShadow')
-78. .style()
-79. .textAlign(TextAlign.Center)
-80. .fontSize(40)
-81. .textShadow({
-82. radius: 10,
-83. color: Color.Black,
-84. offsetX: 0,
-85. offsetY: 0
-86. })
-
-88. Text('fontStyle').fontSize(9).fontColor(0xCCCCCC)
-89. // 设置字体样式
-90. Text('This is the text content with fontStyle set to Italic')
-91. .style()
-92. .fontStyle(FontStyle.Italic)
-93. Text('This is the text content with fontStyle set to Normal')
-94. .style()
-95. .fontStyle(FontStyle.Normal)
-
-97. Text('textIndent').fontSize(9).fontColor(0xCCCCCC)
-98. // 设置文字缩进
-99. Text('This is the text content with textIndent 30')
-100. .style()
-101. .textIndent(30)
-
-103. Text('fontWeight').fontSize(9).fontColor(0xCCCCCC)
-104. // 设置文本的字体粗细
-105. Text('This is the text content with fontWeight 800')
-106. .style()
-107. .fontWeight('800', { enableVariableFontWeight: true })
-
-109. }.width('100%').padding({ left: 35, right: 35 })
-110. }
-111. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/tgyiYISATMymnzTgnSgEmQ/zh-cn_image_0000002558766256.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/k7hrHJAmRYia3c669BCdSw/zh-cn_image_0000002736315001.gif)
 
 ### 示例3（设置文本超长省略）
 
-该示例通过[maxLines](ts-basic-components-text.md#maxlines)、[textOverflow](ts-basic-components-text.md#textoverflow)、[ellipsisMode](ts-basic-components-text.md#ellipsismode11)（从API version 11开始）属性展示了文本超长省略以及调整省略位置的效果，同时，可以通过[marqueeOptions](ts-basic-components-text.md#marqueeoptions18)（从API version 18开始）配置跑马灯模式下的配置项以及跑马灯动画进行到特定的阶段时，触发的回调[onMarqueeStateChange](ts-basic-components-text.md#onmarqueestatechange18)（从API version 18开始）。
+该示例通过[maxLines](ts-basic-components-text.md#maxlines)、[textOverflow](ts-basic-components-text.md#textoverflow)、[ellipsisMode](ts-basic-components-text.md#ellipsismode11)属性展示了文本超长省略以及调整省略位置的效果，通过MULTILINE\_START和MULTILINE\_CENTER两种类型实现了单行文本和多行文本场景下的省略号在行首和行中的效果。同时，可以通过[marqueeOptions](ts-basic-components-text.md#marqueeoptions18)配置跑马灯模式下的配置项以及跑马灯动画进行到特定的阶段时，触发的回调[onMarqueeStateChange](ts-basic-components-text.md#onmarqueestatechange18)。
 
+从API version 11开始，通过[ellipsisMode](ts-basic-components-text.md#ellipsismode11)属性设置文本超长时的显示方式。
+
+从API version 18开始，新增[marqueeOptions](ts-basic-components-text.md#marqueeoptions18)属性设置跑马灯模式下的配置项，同时新增回调[onMarqueeStateChange](ts-basic-components-text.md#onmarqueestatechange18)。
+
+从API version 24开始，[EllipsisMode](ts-appendix-enums.md#ellipsismode11)新增了MULTILINE\_START和MULTILINE\_CENTER枚举。
+
+```ts
+// xxx.ets
+import { LengthMetrics } from '@kit.ArkUI';
+
+@Extend(Text)
+function style() {
+  .textAlign(TextAlign.Center)
+  .fontSize(15)
+  .border({ width: 1 })
+  .padding(10)
+  .width('100%')
+  .margin(5)
+}
+
+@Entry
+@Component
+struct TextExample3 {
+  @State text: string =
+    'The text component is used to display a piece of textual information.' +
+      'Support universal attributes and universal text attributes.' +
+      'The text component is used to display a piece of textual information.' +
+      'Support universal attributes and universal text attributes.';
+  @State ellipsisModeIndex: number = 0;
+  @State ellipsisMode: EllipsisMode[] =
+    [EllipsisMode.START, EllipsisMode.CENTER, EllipsisMode.END, EllipsisMode.MULTILINE_START,
+      EllipsisMode.MULTILINE_CENTER]; // 从API version 24开始新增MULTILINE_START和MULTILINE_CENTER
+  @State ellipsisModeStr: string[] = ['START', 'CENTER', 'END', 'MULTILINE_START',
+    'MULTILINE_CENTER'];
+
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center }) {
+      // 文本超长时显示方式
+      Text('TextOverflow+maxLines').fontSize(12).fontColor(Color.Black)
+      // 超出maxLines截断内容展示
+      Text('This is the setting of textOverflow to Clip text content This is the setting of textOverflow to None text content. This is the setting of textOverflow to Clip text content This is the setting of textOverflow to None text content.')
+        .textOverflow({ overflow: TextOverflow.Clip })
+        .maxLines(1)
+        .style()
+
+      // 超出maxLines展示省略号
+      Text('This is set textOverflow to Ellipsis text content This is set textOverflow to Ellipsis text content.')
+        .textOverflow({ overflow: TextOverflow.Ellipsis })
+        .maxLines(1)
+        .style()
+
+      Text('marquee').fontSize(12).fontColor(Color.Black)
+      // 设置文本超长时以跑马灯的方式展示
+      Text('This is the text with the text overflow set marquee')
+        .textOverflow({ overflow: TextOverflow.MARQUEE })
+        .style()
+        .marqueeOptions({
+          start: true,
+          fromStart: true,
+          step: 6,
+          spacing: LengthMetrics.vp(48), // 从API version 23开始新增
+          loop: -1,
+          delay: 0,
+          fadeout: false,
+          marqueeStartPolicy: MarqueeStartPolicy.DEFAULT,
+          marqueeUpdatePolicy: MarqueeUpdatePolicy.DEFAULT // 从API version 23开始新增
+        })
+        .onMarqueeStateChange((state: MarqueeState) => {
+          if (state == MarqueeState.START) {
+            // "收到状态: START";
+          } else if (state == MarqueeState.BOUNCE) {
+            // "收到状态: BOUNCE";
+          } else if (state == MarqueeState.FINISH) {
+            // "收到状态: FINISH";
+          }
+        })
+
+      // 设置文本超长时省略号的位置
+      Text('ellipsisMode(单行文本)').fontSize(12).fontColor(Color.Black)
+      Text(this.text)
+        .textOverflow({ overflow: TextOverflow.Ellipsis })
+        .ellipsisMode(this.ellipsisMode[this.ellipsisModeIndex])
+        .maxLines(1)
+        .style()
+      Text('ellipsisMode(多行文本)').fontSize(12).fontColor(Color.Black)
+      Text(this.text)
+        .textOverflow({ overflow: TextOverflow.Ellipsis })
+        .ellipsisMode(this.ellipsisMode[this.ellipsisModeIndex])
+        .maxLines(3)
+        .style()
+
+      Row() {
+        Button('更改省略号位置：' + this.ellipsisModeStr[this.ellipsisModeIndex]).onClick(() => {
+          this.ellipsisModeIndex++;
+          if (this.ellipsisModeIndex > (this.ellipsisModeStr.length - 1)) {
+            this.ellipsisModeIndex = 0;
+          }
+        })
+      }
+    }.height(600).width('100%').padding({ left: 35, right: 35, top: 35 })
+  }
+}
 ```
-1. // xxx.ets
-2. import { LengthMetrics } from '@kit.ArkUI';
 
-4. @Extend(Text)
-5. function style() {
-6. .textAlign(TextAlign.Center)
-7. .fontSize(12)
-8. .border({ width: 1 })
-9. .padding(10)
-10. .width('100%')
-11. .margin(5)
-12. }
-
-14. @Entry
-15. @Component
-16. struct TextExample3 {
-17. @State text: string =
-18. 'The text component is used to display a piece of textual information.Support universal attributes and universal text attributes.';
-19. @State ellipsisModeIndex: number = 0;
-20. @State ellipsisMode: EllipsisMode[] = [EllipsisMode.START, EllipsisMode.CENTER, EllipsisMode.END];
-21. @State ellipsisModeStr: string[] = ['START', 'CENTER', 'END'];
-
-23. build() {
-24. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center }) {
-25. // 文本超长时显示方式
-26. Text('TextOverflow+maxLines').fontSize(9).fontColor(0xCCCCCC)
-27. // 超出maxLines截断内容展示
-28. Text('This is the setting of textOverflow to Clip text content This is the setting of textOverflow to None text content. This is the setting of textOverflow to Clip text content This is the setting of textOverflow to None text content.')
-29. .textOverflow({ overflow: TextOverflow.Clip })
-30. .maxLines(1)
-31. .style()
-
-33. // 超出maxLines展示省略号
-34. Text('This is set textOverflow to Ellipsis text content This is set textOverflow to Ellipsis text content.')
-35. .textOverflow({ overflow: TextOverflow.Ellipsis })
-36. .maxLines(1)
-37. .style()
-
-39. Text('marquee').fontSize(9).fontColor(0xCCCCCC)
-40. // 设置文本超长时以跑马灯的方式展示
-41. Text('This is the text with the text overflow set marquee')
-42. .textOverflow({ overflow: TextOverflow.MARQUEE })
-43. .style()
-44. .marqueeOptions({
-45. start: true,
-46. fromStart: true,
-47. step: 6,
-48. spacing: LengthMetrics.vp(48), // 从API version 23开始新增
-49. loop: -1,
-50. delay: 0,
-51. fadeout: false,
-52. marqueeStartPolicy: MarqueeStartPolicy.DEFAULT,
-53. marqueeUpdatePolicy: MarqueeUpdatePolicy.DEFAULT // 从API version 23开始新增
-54. })
-55. .onMarqueeStateChange((state: MarqueeState) => {
-56. if (state == MarqueeState.START) {
-57. // "收到状态: START";
-58. } else if (state == MarqueeState.BOUNCE) {
-59. // "收到状态: BOUNCE";
-60. } else if (state == MarqueeState.FINISH) {
-61. // "收到状态: FINISH";
-62. }
-63. })
-
-65. Text('ellipsisMode').fontSize(9).fontColor(0xCCCCCC)
-66. // 设置文本超长时省略号的位置
-67. Text(this.text)
-68. .textOverflow({ overflow: TextOverflow.Ellipsis })
-69. .ellipsisMode(this.ellipsisMode[this.ellipsisModeIndex])
-70. .maxLines(1)
-71. .style()
-
-73. Row() {
-74. Button('更改省略号位置：' + this.ellipsisModeStr[this.ellipsisModeIndex]).onClick(() => {
-75. this.ellipsisModeIndex++;
-76. if (this.ellipsisModeIndex > (this.ellipsisModeStr.length - 1)) {
-77. this.ellipsisModeIndex = 0;
-78. }
-79. })
-80. }
-81. }.height(600).width('100%').padding({ left: 35, right: 35, top: 35 })
-82. }
-83. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/GXKlNMXlSvGHL2j3lMZboQ/zh-cn_image_0000002558606598.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/QUi7ENNRREqEFiiwtJp7ig/zh-cn_image_0000002706675958.gif)
 
 ### 示例4（设置文本断行及折行）
 
 该示例通过[wordBreak](ts-basic-components-text.md#wordbreak11)（从API version 11开始）、[lineBreakStrategy](ts-basic-components-text.md#linebreakstrategy12)（从API version 12开始）、[clip](ts-universal-attributes-sharp-clipping.md#clip12)属性展示了文本在不同断行、折行规则下的效果以及文本超长时是否截断。
 
+```ts
+// xxx.ets
+@Extend(Text)
+function style() {
+  .fontSize(12)
+  .border({ width: 1 })
+  .padding(10)
+  .width('100%')
+  .margin(5)
+}
+
+@Entry
+@Component
+struct TextExample4 {
+  @State text: string =
+    'The text component is used to display a piece of textual information.Support universal attributes and universal text attributes.';
+  @State longText: string =
+    'They can be classified as built-in components–those directly provided by the ArkUI framework and custom components – those defined by developers' +
+      'The built-in components include buttons radio buttons progress indicators and text You can set the rendering effect of these components in method chaining mode,' +
+      'page components are divided into independent UI units to implement independent creation development and reuse of different units on pages making pages more engineering-oriented.';
+  @State textClip: boolean = false;
+  @State wordBreakIndex: number = 0;
+  @State wordBreak: WordBreak[] = [WordBreak.NORMAL, WordBreak.BREAK_ALL, WordBreak.BREAK_WORD];
+  @State wordBreakStr: string[] = ['NORMAL', 'BREAK_ALL', 'BREAK_WORD'];
+  @State lineBreakStrategyIndex: number = 0;
+  @State lineBreakStrategy: LineBreakStrategy[] =
+    [LineBreakStrategy.GREEDY, LineBreakStrategy.HIGH_QUALITY, LineBreakStrategy.BALANCED];
+  @State lineBreakStrategyStr: string[] = ['GREEDY', 'HIGH_QUALITY', 'BALANCED'];
+
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center }) {
+      Text('wordBreak').fontSize(9).fontColor(0xCCCCCC)
+      // 设置文本断行规则
+      Text(this.text)
+        .maxLines(2)
+        .textOverflow({ overflow: TextOverflow.Ellipsis })
+        .wordBreak(this.wordBreak[this.wordBreakIndex])
+        .style()
+
+      Row() {
+        Button('当前wordBreak模式：' + this.wordBreakStr[this.wordBreakIndex]).onClick(() => {
+          this.wordBreakIndex++;
+          if (this.wordBreakIndex > (this.wordBreakStr.length - 1)) {
+            this.wordBreakIndex = 0;
+          }
+        })
+      }
+
+      Text('clip').fontSize(9).fontColor(0xCCCCCC)
+      // 设置文本是否超长截断
+      Text('This is set wordBreak to WordBreak text Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu.')
+        .wordBreak(WordBreak.NORMAL)
+        .maxLines(2)
+        .clip(this.textClip)
+        .style()
+      Row() {
+        Button('切换clip：' + this.textClip).onClick(() => {
+          this.textClip = !this.textClip;
+        })
+      }
+
+      Text('lineBreakStrategy').fontSize(9).fontColor(0xCCCCCC)
+      // 设置文本折行规则
+      Text(this.longText)
+        .lineBreakStrategy(this.lineBreakStrategy[this.lineBreakStrategyIndex])
+        .style()
+      Row() {
+        Button('当前lineBreakStrategy模式：' + this.lineBreakStrategyStr[this.lineBreakStrategyIndex]).onClick(() => {
+          this.lineBreakStrategyIndex++;
+          if (this.lineBreakStrategyIndex > (this.lineBreakStrategyStr.length - 1)) {
+            this.lineBreakStrategyIndex = 0;
+          }
+        })
+      }
+    }.height(600).width('100%').padding({ left: 35, right: 35, top: 35 })
+  }
+}
 ```
-1. // xxx.ets
-2. @Extend(Text)
-3. function style() {
-4. .fontSize(12)
-5. .border({ width: 1 })
-6. .padding(10)
-7. .width('100%')
-8. .margin(5)
-9. }
 
-11. @Entry
-12. @Component
-13. struct TextExample4 {
-14. @State text: string =
-15. 'The text component is used to display a piece of textual information.Support universal attributes and universal text attributes.';
-16. @State text2: string =
-17. "They can be classified as built-in components–those directly provided by the ArkUI framework and custom components – those defined by developers" +
-18. "The built-in components include buttons radio buttons progress indicators and text You can set the rendering effect of these components in method chaining mode," +
-19. "page components are divided into independent UI units to implement independent creation development and reuse of different units on pages making pages more engineering-oriented.";
-20. @State textClip: boolean = false;
-21. @State wordBreakIndex: number = 0;
-22. @State wordBreak: WordBreak[] = [WordBreak.NORMAL, WordBreak.BREAK_ALL, WordBreak.BREAK_WORD];
-23. @State wordBreakStr: string[] = ['NORMAL', 'BREAK_ALL', 'BREAK_WORD'];
-24. @State lineBreakStrategyIndex: number = 0;
-25. @State lineBreakStrategy: LineBreakStrategy[] =
-26. [LineBreakStrategy.GREEDY, LineBreakStrategy.HIGH_QUALITY, LineBreakStrategy.BALANCED];
-27. @State lineBreakStrategyStr: string[] = ['GREEDY', 'HIGH_QUALITY', 'BALANCED'];
-
-29. build() {
-30. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center }) {
-31. Text('wordBreak').fontSize(9).fontColor(0xCCCCCC)
-32. // 设置文本断行规则
-33. Text(this.text)
-34. .maxLines(2)
-35. .textOverflow({ overflow: TextOverflow.Ellipsis })
-36. .wordBreak(this.wordBreak[this.wordBreakIndex])
-37. .style()
-
-39. Row() {
-40. Button('当前wordBreak模式：' + this.wordBreakStr[this.wordBreakIndex]).onClick(() => {
-41. this.wordBreakIndex++;
-42. if (this.wordBreakIndex > (this.wordBreakStr.length - 1)) {
-43. this.wordBreakIndex = 0;
-44. }
-45. })
-46. }
-
-48. Text('clip').fontSize(9).fontColor(0xCCCCCC)
-49. // 设置文本是否超长截断
-50. Text('This is set wordBreak to WordBreak text Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu.')
-51. .wordBreak(WordBreak.NORMAL)
-52. .maxLines(2)
-53. .clip(this.textClip)
-54. .style()
-55. Row() {
-56. Button('切换clip：' + this.textClip).onClick(() => {
-57. this.textClip = !this.textClip;
-58. })
-59. }
-
-61. Text('lineBreakStrategy').fontSize(9).fontColor(0xCCCCCC)
-62. // 设置文本折行规则
-63. Text(this.text2)
-64. .lineBreakStrategy(this.lineBreakStrategy[this.lineBreakStrategyIndex])
-65. .style()
-66. Row() {
-67. Button('当前lineBreakStrategy模式：' + this.lineBreakStrategyStr[this.lineBreakStrategyIndex]).onClick(() => {
-68. this.lineBreakStrategyIndex++;
-69. if (this.lineBreakStrategyIndex > (this.lineBreakStrategyStr.length - 1)) {
-70. this.lineBreakStrategyIndex = 0;
-71. }
-72. })
-73. }
-74. }.height(600).width('100%').padding({ left: 35, right: 35, top: 35 })
-75. }
-76. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/bNZgG60yS6aOzuA44pZUEg/zh-cn_image_0000002589326125.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/mowqF2qfTIOexDRzJqA3ww/zh-cn_image_0000002736435045.gif)
 
 ### 示例5（设置文本选中和复制）
 
-该示例通过[selection](ts-basic-components-text.md#selection11)（从API version 11开始）、[onCopy](ts-basic-components-text.md#oncopy11)（从API version 11开始）、[draggable](ts-basic-components-text.md#draggable9)（从API version 9开始）、[caretColor](ts-basic-components-text.md#caretcolor14)（从API version 14开始）、[selectedBackgroundColor](ts-basic-components-text.md#selectedbackgroundcolor14)（从API version 14开始）接口展示了文本选中、触发复制回调、设置文本选中可拖拽以及修改手柄和选中颜色的效果。
+该示例通过[selection](ts-basic-components-text.md#selection11)（从API version 11开始）、[onCopy](ts-basic-components-text.md#oncopy11)（从API version 11开始）、[draggable](ts-basic-components-text.md#draggable9)（从API version 9开始）、[caretColor](ts-basic-components-text.md#caretcolor14)（从API version 14开始）、[selectedBackgroundColor](ts-basic-components-text.md#selectedbackgroundcolor14)（从API version 14开始）、[onWillCopy](ts-basic-components-text.md#onwillcopy)接口展示了文本选中、触发复制回调、设置文本选中可拖拽、修改手柄和选中颜色的效果以及如何拦截系统复制。
 
+从API版本26.0.0开始，新增[onWillCopy](ts-basic-components-text.md#onwillcopy)接口。
+
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TextExample5 {
+  @State onCopy: string = '';
+  @State text: string =
+    'This is set selection to Selection text content This is set selection to Selection text content.';
+  @State start: number = 0;
+  @State end: number = 20;
+
+  build() {
+    Column() {
+      Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Start }) {
+        Text(this.text)
+          .fontSize(12)
+          .border({ width: 1 })
+          .lineHeight(20)
+          .margin(30)
+          .copyOption(CopyOptions.InApp)
+          .selection(this.start, this.end)
+          .onCopy((value: string) => {
+            this.onCopy = value;
+          })
+          // 从API版本26.0.0开始支持onWillCopy
+          .onWillCopy((value: string) => {
+            // 根据业务逻辑判断是否允许复制
+            return true; // 允许复制时返回true，随后onCopy会被触发
+          })
+          .draggable(true)
+          .caretColor(Color.Red)
+          .selectedBackgroundColor(Color.Grey)
+          .enableHapticFeedback(true)
+        Button('Set text selection')
+          .onClick(() => {
+            // 变更文本选中起始点、终点
+            this.start = 10;
+            this.end = 30;
+          })
+        Text(this.onCopy).fontSize(12).margin(10).key('copy')
+      }.height(600).width(335).padding({ left: 35, right: 35, top: 35 })
+    }.width('100%')
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TextExample5 {
-5. @State onCopy: string = '';
-6. @State text: string =
-7. 'This is set selection to Selection text content This is set selection to Selection text content.';
-8. @State start: number = 0;
-9. @State end: number = 20;
 
-11. build() {
-12. Column() {
-13. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Start }) {
-14. Text(this.text)
-15. .fontSize(12)
-16. .border({ width: 1 })
-17. .lineHeight(20)
-18. .margin(30)
-19. .copyOption(CopyOptions.InApp)
-20. .selection(this.start, this.end)
-21. .onCopy((value: string) => {
-22. this.onCopy = value;
-23. })
-24. .draggable(true)
-25. .caretColor(Color.Red)
-26. .selectedBackgroundColor(Color.Grey)
-27. .enableHapticFeedback(true)
-28. Button('Set text selection')
-29. .onClick(() => {
-30. // 变更文本选中起始点、终点
-31. this.start = 10;
-32. this.end = 30;
-33. })
-34. Text(this.onCopy).fontSize(12).margin(10).key('copy')
-35. }.height(600).width(335).padding({ left: 35, right: 35, top: 35 })
-36. }.width('100%')
-37. }
-38. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/1KnVL4QtRMupwVuWOCp95Q/zh-cn_image_0000002589246067.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/u_PTrIl_Qke_b5ToflP93g/zh-cn_image_0000002706835898.gif)
 
 ### 示例6（设置文本自适应和缩放倍数限制范围）
 
 该示例通过[heightAdaptivePolicy](ts-basic-components-text.md#heightadaptivepolicy10)（从API version 10开始）属性展示文本自适应效果以及通过[minFontScale](ts-basic-components-text.md#minfontscale12)（从API version 12开始）、[maxFontScale](ts-basic-components-text.md#maxfontscale12)（从API version 12开始）展示设置字体缩放倍数限制范围。
 
+```ts
+// xxx.ets
+@Extend(Text)
+function style(heightAdaptivePolicy: TextHeightAdaptivePolicy) {
+  .width('80%')
+  .height(90)
+  .borderWidth(1)
+  .minFontSize(10)
+  .maxFontSize(30)
+  .maxLines(2)
+  .margin(5)
+  .textOverflow({ overflow: TextOverflow.Ellipsis })
+  .heightAdaptivePolicy(heightAdaptivePolicy)
+}
+
+@Entry
+@Component
+struct TextExample6 {
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center }) {
+      // 设置文本自适应高度的方式
+      Text('heightAdaptivePolicy').fontSize(9).fontColor(0xCCCCCC)
+      Text('This is the text with the height adaptive policy set.')
+        .style(TextHeightAdaptivePolicy.MAX_LINES_FIRST)
+      Text('This is the text with the height adaptive policy set.')
+        .style(TextHeightAdaptivePolicy.MIN_FONT_SIZE_FIRST)
+      Text('This is the text with the height adaptive policy set.')
+        .style(TextHeightAdaptivePolicy.LAYOUT_CONSTRAINT_FIRST)
+
+      Text('fontScale').fontSize(9).fontColor(0xCCCCCC)
+      Text('This is the text content with minFontScale set to 1 and maxFontScale set to 1.2')
+        .style(TextHeightAdaptivePolicy.MAX_LINES_FIRST)
+        .minFontScale(1)
+        .maxFontScale(1.2)
+    }.height(600).width('100%').padding({ left: 35, right: 35, top: 35 })
+  }
+}
 ```
-1. // xxx.ets
-2. @Extend(Text)
-3. function style(HeightAdaptivePolicy: TextHeightAdaptivePolicy) {
-4. .width('80%')
-5. .height(90)
-6. .borderWidth(1)
-7. .minFontSize(10)
-8. .maxFontSize(30)
-9. .maxLines(2)
-10. .margin(5)
-11. .textOverflow({ overflow: TextOverflow.Ellipsis })
-12. .heightAdaptivePolicy(HeightAdaptivePolicy)
-13. }
 
-15. @Entry
-16. @Component
-17. struct TextExample6 {
-18. build() {
-19. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center }) {
-20. // 设置文本自适应高度的方式
-21. Text('heightAdaptivePolicy').fontSize(9).fontColor(0xCCCCCC)
-22. Text('This is the text with the height adaptive policy set.')
-23. .style(TextHeightAdaptivePolicy.MAX_LINES_FIRST)
-24. Text('This is the text with the height adaptive policy set.')
-25. .style(TextHeightAdaptivePolicy.MIN_FONT_SIZE_FIRST)
-26. Text('This is the text with the height adaptive policy set.')
-27. .style(TextHeightAdaptivePolicy.LAYOUT_CONSTRAINT_FIRST)
-
-29. Text('fontScale').fontSize(9).fontColor(0xCCCCCC)
-30. Text('This is the text content with minFontScale set to 1 and maxFontScale set to 1.2')
-31. .style(TextHeightAdaptivePolicy.MAX_LINES_FIRST)
-32. .minFontScale(1)
-33. .maxFontScale(1.2)
-34. }.height(600).width('100%').padding({ left: 35, right: 35, top: 35 })
-35. }
-36. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/JARGevqBRYOAjl9BETRb5w/zh-cn_image_0000002558766258.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/Qi4kefd_TC2Vb2YTsM9cnw/zh-cn_image_0000002736315003.png)
 
 ### 示例7（设置文本识别）
 
 从API version 11开始，该示例通过[enableDataDetector](ts-basic-components-text.md#enabledatadetector11)、[dataDetectorConfig](ts-basic-components-text.md#datadetectorconfig11)接口实现了文本识别的功能。当[enableDataDetector](ts-basic-components-text.md#enabledatadetector11)设为true且不设置[dataDetectorConfig](ts-basic-components-text.md#datadetectorconfig11)时，系统会识别所有实体类型，并将识别实体的字体颜色改为蓝色、添加蓝色下划线。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TextExample7 {
-5. @State phoneNumber: string = '(86) (755) ********';
-6. @State url: string = 'www.********.com';
-7. @State email: string = '***@example.com';
-8. @State address: string = 'XX省XX市XX区XXXX';
-9. @State datetime: string = 'XX年XX月XX日XXXX';
-10. @State enableDataDetector: boolean = true;
-11. @State types: TextDataDetectorType[] = [];
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TextExample7 {
+  @State phoneNumber: string = '(86) (755) ********';
+  @State url: string = 'www.********.com';
+  @State email: string = '***@example.com';
+  @State address: string = 'XX省XX市XX区XXXX';
+  @State datetime: string = 'XX年XX月XX日XXXX';
+  @State enableDataDetector: boolean = true;
+  @State types: TextDataDetectorType[] = [];
 
-13. build() {
-14. Row() {
-15. Column() {
-16. Text(
-17. '电话号码：' + this.phoneNumber + '\n' +
-18. '链接：' + this.url + '\n' +
-19. '邮箱：' + this.email + '\n' +
-20. '地址：' + this.address + '\n' +
-21. '时间：' + this.datetime
-22. )
-23. .fontSize(16)
-24. .copyOption(CopyOptions.InApp)
-25. .enableDataDetector(this.enableDataDetector)
-26. .dataDetectorConfig({
-27. types: this.types, onDetectResultUpdate: (result: string) => {
-28. }
-29. })
-30. .textAlign(TextAlign.Center)
-31. .borderWidth(1)
-32. .padding(10)
-33. .width('100%')
-34. Text(
-35. '电话号码：' + this.phoneNumber + '\n' +
-36. '时间：' + this.datetime
-37. )
-38. .fontSize(16)
-39. .copyOption(CopyOptions.LocalDevice)
-40. .textAlign(TextAlign.Center)
-41. .borderWidth(1)
-42. .padding(10)
-43. .width('100%')
-44. TextInput({ text: 'TextInput这个是输入框内容' })
-45. .copyOption(CopyOptions.LocalDevice)
-46. TextArea({ text: 'TextArea这个是输入框内容' })
-47. .copyOption(CopyOptions.LocalDevice)
-48. Search()
-49. .copyOption(CopyOptions.LocalDevice)
-50. }
-51. .width('100%')
-52. // 使用parallelGesture中的TapGesture替代onClick属性，达到非冒泡事件类似冒泡
-53. // 的效果，点击Text组件区域Column上的点击事件正常响应
-54. .parallelGesture(TapGesture().onAction((event: GestureEvent) => {
-55. console.info('test column onClick timestamp:' + event.timestamp);
-56. }), GestureMask.Normal)
-57. }
-58. .height('100%')
-59. }
-60. }
+  build() {
+    Row() {
+      Column() {
+        Text(
+          '电话号码：' + this.phoneNumber + '\n' +
+            '链接：' + this.url + '\n' +
+            '邮箱：' + this.email + '\n' +
+            '地址：' + this.address + '\n' +
+            '时间：' + this.datetime
+        )
+          .fontSize(16)
+          .copyOption(CopyOptions.InApp)
+          .enableDataDetector(this.enableDataDetector)
+          .dataDetectorConfig({
+            types: this.types, onDetectResultUpdate: (result: string) => {
+            }
+          })
+          .textAlign(TextAlign.Center)
+          .borderWidth(1)
+          .padding(10)
+          .width('100%')
+      }
+      .width('100%')
+      // 使用parallelGesture中的TapGesture替代onClick属性，达到非冒泡事件类似冒泡
+      // 的效果，点击Text组件区域Column上的点击事件正常响应
+      .parallelGesture(TapGesture().onAction((event: GestureEvent) => {
+        console.info('test column onClick timestamp:' + event.timestamp);
+      }), GestureMask.Normal)
+    }
+    .height('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/Uu1rlZstQvO-1Uf3lGHx3g/zh-cn_image_0000002558606600.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/Sb4SuOBtRVOr0b8oupmCgw/zh-cn_image_0000002706675960.png)
 
 ### 示例8（文本绑定自定义菜单）
 
 从API version 11开始，该示例通过[bindSelectionMenu](ts-basic-components-text.md#bindselectionmenu11)、[onTextSelectionChange](ts-basic-components-text.md#ontextselectionchange11)、[closeSelectionMenu](ts-basic-components-text.md#closeselectionmenu11)接口实现了文本绑定自定义菜单的功能。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TextExample8 {
+  controller: TextController = new TextController();
+  options: TextOptions = { controller: this.controller };
+
+  build() {
+    Column() {
+      Column() {
+        Text(undefined, this.options) {
+          Span('Hello World')
+          // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
+          ImageSpan($r('app.media.startIcon'))
+            .width(50)
+            .height(50)
+            .objectFit(ImageFit.Fill)
+            .verticalAlign(ImageSpanAlignment.CENTER)
+        }
+        .copyOption(CopyOptions.InApp)
+        .bindSelectionMenu(TextSpanType.IMAGE, this.LongPressImageCustomMenu, TextResponseType.LONG_PRESS, {
+          onDisappear: () => {
+            console.info(`自定义选择菜单关闭时回调`);
+          },
+          onAppear: () => {
+            console.info(`自定义选择菜单弹出时回调`);
+          },
+          onMenuShow: () => {
+            console.info(`自定义选择菜单显示时回调`);
+          },
+          onMenuHide: () => {
+            console.info(`自定义选择菜单隐藏时回调`);
+          }
+        })
+        .bindSelectionMenu(TextSpanType.TEXT, this.RightClickTextCustomMenu, TextResponseType.RIGHT_CLICK)
+        .bindSelectionMenu(TextSpanType.MIXED, this.SelectMixCustomMenu, TextResponseType.SELECT)
+        .onTextSelectionChange((selectionStart: number, selectionEnd: number) => {
+          console.info(`文本选中区域变化回调, selectionStart: ${selectionStart}, selectionEnd: ${selectionEnd}`);
+        })
+        .borderWidth(1)
+        .borderColor(Color.Red)
+        .width(200)
+        .height(100)
+      }
+      .width('100%')
+      .backgroundColor(Color.White)
+      .alignItems(HorizontalAlign.Start)
+      .padding(25)
+    }
+    .height('100%')
+  }
+
+  @Builder
+  RightClickTextCustomMenu() {
+    Column() {
+      Menu() {
+        MenuItemGroup() {
+          // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
+          MenuItem({ startIcon: $r('app.media.startIcon'), content: 'Right Click Menu 1', labelInfo: '' })
+            .onClick((event) => {
+              this.controller.closeSelectionMenu();
+            })
+          MenuItem({ startIcon: $r('app.media.startIcon'), content: 'Right Click Menu 2', labelInfo: '' })
+          MenuItem({ startIcon: $r('app.media.startIcon'), content: 'Right Click Menu 3', labelInfo: '' })
+        }
+      }
+      .MenuStyles()
+    }
+  }
+
+  @Builder
+  LongPressImageCustomMenu() {
+    Column() {
+      Menu() {
+        MenuItemGroup() {
+          // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
+          MenuItem({ startIcon: $r('app.media.startIcon'), content: 'Long Press Image Menu 1', labelInfo: '' })
+            .onClick((event) => {
+              this.controller.closeSelectionMenu();
+            })
+          MenuItem({ startIcon: $r('app.media.startIcon'), content: 'Long Press Image Menu 2', labelInfo: '' })
+          MenuItem({ startIcon: $r('app.media.startIcon'), content: 'Long Press Image Menu 3', labelInfo: '' })
+        }
+      }
+      .MenuStyles()
+    }
+  }
+
+  @Builder
+  SelectMixCustomMenu() {
+    Column() {
+      Menu() {
+        MenuItemGroup() {
+          // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
+          MenuItem({ startIcon: $r('app.media.startIcon'), content: 'Select Mixed Menu 1', labelInfo: '' })
+            .onClick((event) => {
+              this.controller.closeSelectionMenu();
+            })
+          MenuItem({ startIcon: $r('app.media.startIcon'), content: 'Select Mixed Menu 2', labelInfo: '' })
+          MenuItem({ startIcon: $r('app.media.startIcon'), content: 'Select Mixed Menu 3', labelInfo: '' })
+        }
+      }
+      .MenuStyles()
+    }
+  }
+}
+
+@Extend(Menu)
+function MenuStyles() {
+  .radius($r('sys.float.ohos_id_corner_radius_card'))
+  .clip(true)
+  .backgroundColor('#F0F0F0')
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TextExample8 {
-5. controller: TextController = new TextController();
-6. options: TextOptions = { controller: this.controller };
 
-8. build() {
-9. Column() {
-10. Column() {
-11. Text(undefined, this.options) {
-12. Span('Hello World')
-13. // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
-14. ImageSpan($r('app.media.startIcon'))
-15. .width(50)
-16. .height(50)
-17. .objectFit(ImageFit.Fill)
-18. .verticalAlign(ImageSpanAlignment.CENTER)
-19. }
-20. .copyOption(CopyOptions.InApp)
-21. .bindSelectionMenu(TextSpanType.IMAGE, this.LongPressImageCustomMenu, TextResponseType.LONG_PRESS, {
-22. onDisappear: () => {
-23. console.info(`自定义选择菜单关闭时回调`);
-24. },
-25. onAppear: () => {
-26. console.info(`自定义选择菜单弹出时回调`);
-27. },
-28. onMenuShow: () => {
-29. console.info(`自定义选择菜单显示时回调`);
-30. },
-31. onMenuHide: () => {
-32. console.info(`自定义选择菜单隐藏时回调`);
-33. }
-34. })
-35. .bindSelectionMenu(TextSpanType.TEXT, this.RightClickTextCustomMenu, TextResponseType.RIGHT_CLICK)
-36. .bindSelectionMenu(TextSpanType.MIXED, this.SelectMixCustomMenu, TextResponseType.SELECT)
-37. .onTextSelectionChange((selectionStart: number, selectionEnd: number) => {
-38. console.info(`文本选中区域变化回调, selectionStart: ${selectionStart}, selectionEnd: ${selectionEnd}`);
-39. })
-40. .borderWidth(1)
-41. .borderColor(Color.Red)
-42. .width(200)
-43. .height(100)
-44. }
-45. .width('100%')
-46. .backgroundColor(Color.White)
-47. .alignItems(HorizontalAlign.Start)
-48. .padding(25)
-49. }
-50. .height('100%')
-51. }
-
-53. @Builder
-54. RightClickTextCustomMenu() {
-55. Column() {
-56. Menu() {
-57. MenuItemGroup() {
-58. // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
-59. MenuItem({ startIcon: $r('app.media.startIcon'), content: "Right Click Menu 1", labelInfo: "" })
-60. .onClick((event) => {
-61. this.controller.closeSelectionMenu();
-62. })
-63. MenuItem({ startIcon: $r('app.media.startIcon'), content: "Right Click Menu 2", labelInfo: "" })
-64. MenuItem({ startIcon: $r('app.media.startIcon'), content: "Right Click Menu 3", labelInfo: "" })
-65. }
-66. }
-67. .MenuStyles()
-68. }
-69. }
-
-71. @Builder
-72. LongPressImageCustomMenu() {
-73. Column() {
-74. Menu() {
-75. MenuItemGroup() {
-76. // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
-77. MenuItem({ startIcon: $r('app.media.startIcon'), content: "Long Press Image Menu 1", labelInfo: "" })
-78. .onClick((event) => {
-79. this.controller.closeSelectionMenu();
-80. })
-81. MenuItem({ startIcon: $r('app.media.startIcon'), content: "Long Press Image Menu 2", labelInfo: "" })
-82. MenuItem({ startIcon: $r('app.media.startIcon'), content: "Long Press Image Menu 3", labelInfo: "" })
-83. }
-84. }
-85. .MenuStyles()
-86. }
-87. }
-
-89. @Builder
-90. SelectMixCustomMenu() {
-91. Column() {
-92. Menu() {
-93. MenuItemGroup() {
-94. // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
-95. MenuItem({ startIcon: $r('app.media.startIcon'), content: "Select Mixed Menu 1", labelInfo: "" })
-96. .onClick((event) => {
-97. this.controller.closeSelectionMenu();
-98. })
-99. MenuItem({ startIcon: $r('app.media.startIcon'), content: "Select Mixed Menu 2", labelInfo: "" })
-100. MenuItem({ startIcon: $r('app.media.startIcon'), content: "Select Mixed Menu 3", labelInfo: "" })
-101. }
-102. }
-103. .MenuStyles()
-104. }
-105. }
-106. }
-
-108. @Extend(Menu)
-109. function MenuStyles() {
-110. .radius($r('sys.float.ohos_id_corner_radius_card'))
-111. .clip(true)
-112. .backgroundColor('#F0F0F0')
-113. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/GTs_AkrjTtipMfmQlUtVJQ/zh-cn_image_0000002589326127.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/RUbHHZm3TqGJ_ZaTd6j7tA/zh-cn_image_0000002736435047.gif)
 
 ### 示例9（设置文本特性与行间距）
 
 从API version 12开始，该示例通过[fontFeature](ts-basic-components-text.md#fontfeature12)、[lineSpacing](ts-basic-components-text.md#linespacing12)接口展示了设置文本特性与行间距的效果，同时，配置[LineSpacingOptions](ts-text-common.md#linespacingoptions20对象说明)中的onlyBetweenLines（从API version 20开始）属性，可以设置文本的行间距，是否仅在行与行之间生效。
 
+```ts
+// xxx.ets
+import { LengthMetrics } from '@kit.ArkUI';
+
+@Extend(Text)
+function style() {
+  .fontSize(12)
+  .border({ width: 1 })
+  .width('100%')
+}
+
+@Entry
+@Component
+struct TextExample9 {
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
+      Text('lineSpacing').fontSize(9).fontColor(0xCCCCCC)
+      // 设置文本行间距
+      Text('This is a context with no lineSpacing set.')
+        .lineSpacing(undefined)
+        .style()
+      Text('This is a context with lineSpacing set to 20_px.')
+        .lineSpacing(LengthMetrics.px(20))
+        .style()
+      Text('This is the context with lineSpacing set to 20_vp.')
+        .lineSpacing(LengthMetrics.vp(20))
+        .style()
+      Text('This is the context with lineSpacing set to 20_fp.')
+        .lineSpacing(LengthMetrics.fp(20))
+        .style()
+      Text('This is the context with lineSpacing set to 20_lpx.')
+        .lineSpacing(LengthMetrics.lpx(20))
+        .style()
+      Text('This is the context with lineSpacing set to 100%.')
+        .lineSpacing(LengthMetrics.percent(1))
+        .style()
+      Text('The line spacing of this context is set to 20_px, and the spacing is effective only between the lines.')
+        .lineSpacing(LengthMetrics.px(20), { onlyBetweenLines: true })
+        .style()
+
+      Text('fontFeature').fontSize(9).fontColor(0xCCCCCC)
+      // 设置文本特性
+      Text('This is frac on : 1/2 2/3 3/4')
+        .fontFeature('"frac" on')
+        .style()
+      Text('This is frac off: 1/2 2/3 3/4')
+        .fontFeature('"frac" off')
+        .style()
+    }.height(300).width(350).padding({ left: 35, right: 35, top: 35 })
+  }
+}
 ```
-1. // xxx.ets
-2. import { LengthMetrics } from '@kit.ArkUI';
 
-4. @Extend(Text)
-5. function style() {
-6. .fontSize(12)
-7. .border({ width: 1 })
-8. .width('100%')
-9. }
-
-11. @Entry
-12. @Component
-13. struct TextExample9 {
-14. build() {
-15. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
-16. Text('lineSpacing').fontSize(9).fontColor(0xCCCCCC)
-17. // 设置文本行间距
-18. Text('This is a context with no lineSpacing set.')
-19. .lineSpacing(undefined)
-20. .style()
-21. Text('This is a context with lineSpacing set to 20_px.')
-22. .lineSpacing(LengthMetrics.px(20))
-23. .style()
-24. Text('This is the context with lineSpacing set to 20_vp.')
-25. .lineSpacing(LengthMetrics.vp(20))
-26. .style()
-27. Text('This is the context with lineSpacing set to 20_fp.')
-28. .lineSpacing(LengthMetrics.fp(20))
-29. .style()
-30. Text('This is the context with lineSpacing set to 20_lpx.')
-31. .lineSpacing(LengthMetrics.lpx(20))
-32. .style()
-33. Text('This is the context with lineSpacing set to 100%.')
-34. .lineSpacing(LengthMetrics.percent(1))
-35. .style()
-36. Text('The line spacing of this context is set to 20_px, and the spacing is effective only between the lines.')
-37. .lineSpacing(LengthMetrics.px(20), { onlyBetweenLines: true })
-38. .style()
-
-40. Text('fontFeature').fontSize(9).fontColor(0xCCCCCC)
-41. // 设置文本特性
-42. Text('This is frac on : 1/2 2/3 3/4')
-43. .fontFeature("\"frac\" on")
-44. .style()
-45. Text('This is frac off: 1/2 2/3 3/4')
-46. .fontFeature("\"frac\" off")
-47. .style()
-48. }.height(300).width(350).padding({ left: 35, right: 35, top: 35 })
-49. }
-50. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/hSiXR--QR6au4v5E--W1DQ/zh-cn_image_0000002589246069.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/-ttEWAPjSNyYX4LltG17_g/zh-cn_image_0000002706835900.png)
 
 ### 示例10（获取文本信息）
 
-从API version 12开始，该示例通过[getLayoutManager](ts-basic-components-text.md#getlayoutmanager12)接口调用文本的布局管理对象获取文本信息，同时，[LayoutManager](ts-text-common.md#layoutmanager12)中的[getRectsForRange](ts-text-common.md#getrectsforrange14)（从API version 14开始）接口可以获取指定矩形宽度和高度下，文本中任意区间范围内字符或占位符的绘制区域信息。
+从API version 12开始，该示例通过[getLayoutManager](ts-basic-components-text.md#getlayoutmanager12)接口调用文本的布局管理对象获取文本信息，同时，[LayoutManager](ts-text-common.md#layoutmanager12)中的[getRectsForRange](ts-text-common.md#getrectsforrange14)（从API version 14开始）接口可以获取指定矩形宽度样式和高度样式下，文本中任意区间范围内字符或占位符的绘制区域信息。
 
+```ts
+// xxx.ets
+import { text } from '@kit.ArkGraphics2D';
+
+@Entry
+@Component
+struct TextExample10 {
+  @State lineCount: string = "";
+  @State glyphPositionAtCoordinate: string = "";
+  @State lineMetrics: string = "";
+  @State rectsForRangeStr: string = "";
+  controller: TextController = new TextController();
+  @State textStr: string =
+    'Hello World! 您好，世界！';
+
+  build() {
+    Scroll() {
+      Column() {
+        Text('Text组件getLayoutManager接口获取段落相对组件的信息')
+          .fontSize(15)
+          .fontColor(0xCCCCCC)
+          .width('90%')
+          .padding(10)
+        Text(this.textStr, { controller: this.controller })
+          .fontSize(25)
+          .borderWidth(1)
+          .onAreaChange(() => {
+            // getLayoutManager在TextController未绑定Text或Text被销毁时会返回undefined，使用时需做判空处理
+            let layoutManager: LayoutManager = this.controller.getLayoutManager();
+            if (!layoutManager) {
+              return;
+            }
+            this.lineCount = 'LineCount: ' + layoutManager.getLineCount();
+          })
+
+        Text('LineCount').fontSize(15).fontColor(0xCCCCCC).width('90%').padding(10)
+        Text(this.lineCount)
+
+        Text('GlyphPositionAtCoordinate').fontSize(15).fontColor(0xCCCCCC).width('90%').padding(10)
+        Button("相对组件坐标[150,50]字形信息")
+          .onClick(() => {
+            let layoutManager: LayoutManager = this.controller.getLayoutManager();
+            if (!layoutManager) {
+              return;
+            }
+            let position: PositionWithAffinity = layoutManager.getGlyphPositionAtCoordinate(150, 50);
+            this.glyphPositionAtCoordinate =
+              '相对组件坐标[150,50] glyphPositionAtCoordinate position: ' + position.position + ' affinity: ' +
+              position.affinity;
+          })
+          .margin({ bottom: 20, top: 10 })
+        Text(this.glyphPositionAtCoordinate)
+
+        Text('LineMetrics').fontSize(15).fontColor(0xCCCCCC).width('90%').padding(10)
+        Button('首行行信息、文本样式信息、以及字体属性信息')
+          .onClick(() => {
+            let layoutManager: LayoutManager = this.controller.getLayoutManager();
+            if (!layoutManager) {
+              return;
+            }
+            let lineMetrics: LineMetrics = layoutManager.getLineMetrics(0);
+            this.lineMetrics = 'lineMetrics is ' + JSON.stringify(lineMetrics) + '\n\n';
+            let runMetrics = lineMetrics.runMetrics;
+            runMetrics.forEach((value, key) => {
+              this.lineMetrics += 'runMetrics key is ' + key + ' ' + JSON.stringify(value) + '\n\n';
+            })
+          })
+          .margin({ bottom: 20, top: 10 })
+        Text(this.lineMetrics)
+
+        Text('getRectsForRange').fontSize(15).fontColor(0xCCCCCC).width('90%').padding(10)
+        Button('获取指定矩形宽度样式和高度样式下，文本中任意区间范围内字符或占位符的绘制区域信息')
+          .onClick(() => {
+            let layoutManager: LayoutManager = this.controller.getLayoutManager();
+            if (!layoutManager) {
+              return;
+            }
+            let range: TextRange = { start: 0, end: 1 };
+            let rectsForRangeInfo: text.TextBox[] =
+              layoutManager.getRectsForRange(range, text.RectWidthStyle.TIGHT, text.RectHeightStyle.TIGHT);
+            this.rectsForRangeStr = 'getRectsForRange result is ' + '\n\n';
+            rectsForRangeInfo.forEach((value, key) => {
+              this.rectsForRangeStr += 'rectsForRange key is ' + key + ' ' + JSON.stringify(value) + '\n\n';
+            })
+          })
+          .margin({ bottom: 20, top: 10 })
+        Text(this.rectsForRangeStr)
+      }
+      .margin({ top: 100, left: 8, right: 8 })
+    }
+  }
+}
 ```
-1. // xxx.ets
-2. import { text } from '@kit.ArkGraphics2D';
 
-4. @Entry
-5. @Component
-6. struct TextExample10 {
-7. @State lineCount: string = "";
-8. @State glyphPositionAtCoordinate: string = "";
-9. @State lineMetrics: string = "";
-10. @State rectsForRangeStr: string = "";
-11. controller: TextController = new TextController();
-12. @State textStr: string =
-13. 'Hello World! 您好，世界！';
-
-15. build() {
-16. Scroll() {
-17. Column() {
-18. Text('Text组件getLayoutManager接口获取段落相对组件的信息')
-19. .fontSize(15)
-20. .fontColor(0xCCCCCC)
-21. .width('90%')
-22. .padding(10)
-23. Text(this.textStr, { controller: this.controller })
-24. .fontSize(25)
-25. .borderWidth(1)
-26. .onAreaChange(() => {
-27. let layoutManager: LayoutManager = this.controller.getLayoutManager();
-28. this.lineCount = "LineCount: " + layoutManager.getLineCount();
-29. })
-
-31. Text('LineCount').fontSize(15).fontColor(0xCCCCCC).width('90%').padding(10)
-32. Text(this.lineCount)
-
-34. Text('GlyphPositionAtCoordinate').fontSize(15).fontColor(0xCCCCCC).width('90%').padding(10)
-35. Button("相对组件坐标[150,50]字形信息")
-36. .onClick(() => {
-37. let layoutManager: LayoutManager = this.controller.getLayoutManager();
-38. let position: PositionWithAffinity = layoutManager.getGlyphPositionAtCoordinate(150, 50);
-39. this.glyphPositionAtCoordinate =
-40. "相对组件坐标[150,50] glyphPositionAtCoordinate position: " + position.position + " affinity: " +
-41. position.affinity;
-42. })
-43. .margin({ bottom: 20, top: 10 })
-44. Text(this.glyphPositionAtCoordinate)
-
-46. Text('LineMetrics').fontSize(15).fontColor(0xCCCCCC).width('90%').padding(10)
-47. Button("首行行信息、文本样式信息、以及字体属性信息")
-48. .onClick(() => {
-49. let layoutManager: LayoutManager = this.controller.getLayoutManager();
-50. let lineMetrics: LineMetrics = layoutManager.getLineMetrics(0);
-51. this.lineMetrics = "lineMetrics is " + JSON.stringify(lineMetrics) + "\n\n";
-52. let runMetrics = lineMetrics.runMetrics;
-53. runMetrics.forEach((value, key) => {
-54. this.lineMetrics += "runMetrics key is " + key + " " + JSON.stringify(value) + "\n\n";
-55. })
-56. })
-57. .margin({ bottom: 20, top: 10 })
-58. Text(this.lineMetrics)
-
-60. Text('getRectsForRange').fontSize(15).fontColor(0xCCCCCC).width('90%').padding(10)
-61. Button("获取指定矩形宽度和高度下，文本中任意区间范围内字符或占位符的绘制区域信息")
-62. .onClick(() => {
-63. let layoutManager: LayoutManager = this.controller.getLayoutManager();
-64. let range: TextRange = { start: 0, end: 1 };
-65. let rectsForRangeInfo: text.TextBox[] =
-66. layoutManager.getRectsForRange(range, text.RectWidthStyle.TIGHT, text.RectHeightStyle.TIGHT);
-67. this.rectsForRangeStr = "getRectsForRange result is " + "\n\n";
-68. rectsForRangeInfo.forEach((value, key) => {
-69. this.rectsForRangeStr += "rectsForRange key is " + key + " " + JSON.stringify(value) + "\n\n";
-70. })
-71. })
-72. .margin({ bottom: 20, top: 10 })
-73. Text(this.rectsForRangeStr)
-74. }
-75. .margin({ top: 100, left: 8, right: 8 })
-76. }
-77. }
-78. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/-ygiNYEwQHGcD9d3j3_F6w/zh-cn_image_0000002558766260.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/tpRr14SiQAeHZHwtEpO6AQ/zh-cn_image_0000002736315005.gif)
 
 ### 示例11（实现键盘框选文本）
 
 从API version 12开始，该示例通过[textSelectable](ts-basic-components-text.md#textselectable12)属性实现了设置TextSelectMode.SELECTABLE\_FOCUSABLE时能够触发键盘框选文本功能。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TextExample11 {
-5. @State message: string =
-6. 'TextTextTextTextTextTextTextText' + 'TextTextTextTextTextTextTextTextTextTextTextTextTextTextTextText';
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TextExample11 {
+  @State message: string =
+    'TextTextTextTextTextTextTextText' + 'TextTextTextTextTextTextTextTextTextTextTextTextTextTextTextText';
 
-8. build() {
-9. Column() {
-10. Text(this.message)
-11. .width(300)
-12. .height(100)
-13. .maxLines(5)
-14. .fontColor(Color.Black)
-15. .copyOption(CopyOptions.InApp)
-16. .selection(3, 8)
-17. .textSelectable(TextSelectableMode.SELECTABLE_FOCUSABLE)
-18. }.width('100%').margin({ top: 100 })
-19. }
-20. }
+  build() {
+    Column() {
+      Text(this.message)
+        .width(300)
+        .height(100)
+        .maxLines(5)
+        .fontColor(Color.Black)
+        .copyOption(CopyOptions.InApp)
+        .selection(3, 8)
+        .textSelectable(TextSelectableMode.SELECTABLE_FOCUSABLE)
+    }.width('100%').margin({ top: 100 })
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/woWdFJJIT-CaClp-MOlNHA/zh-cn_image_0000002558606602.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/AmiC9xAFRj67almlHi7Vag/zh-cn_image_0000002706675962.gif)
 
 ### 示例12（文本扩展自定义菜单）
 
 从API version 12开始，该示例通过[editMenuOptions](ts-basic-components-text.md#editmenuoptions12)接口实现了文本设置自定义菜单扩展项的文本内容、图标以及回调的功能，同时，可以在[onPrepareMenu](ts-text-common.md#属性-1)（从API version 20开始）回调中，进行菜单数据的设置。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TextExample12 {
-5. @State text: string = 'Text editMenuOptions'
-6. @State endIndex: number = 0;
-7. onCreateMenu = (menuItems: Array<TextMenuItem>) => {
-8. // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
-9. let item1: TextMenuItem = {
-10. content: 'create1',
-11. icon: $r('app.media.startIcon'),
-12. id: TextMenuItemId.of('create1'),
-13. };
-14. let item2: TextMenuItem = {
-15. content: 'create2',
-16. id: TextMenuItemId.of('create2'),
-17. icon: $r('app.media.startIcon'),
-18. };
-19. menuItems.push(item1);
-20. menuItems.unshift(item2);
-21. let targetIndex = menuItems.findIndex(item => item.id.equals(TextMenuItemId.askAI));
-22. if (targetIndex !== -1) {
-23. menuItems.splice(targetIndex, 1); // 从目标索引删除1个元素
-24. }
-25. targetIndex = menuItems.findIndex(item => item.id.equals(TextMenuItemId.TRANSLATE));
-26. if (targetIndex !== -1) {
-27. menuItems.splice(targetIndex, 1);
-28. }
-29. return menuItems;
-30. }
-31. onMenuItemClick = (menuItem: TextMenuItem, textRange: TextRange) => {
-32. if (menuItem.id.equals(TextMenuItemId.of("create2"))) {
-33. console.info("拦截 id: create2 start:" + textRange.start + "; end:" + textRange.end);
-34. return true;
-35. }
-36. if (menuItem.id.equals(TextMenuItemId.of("prepare1"))) {
-37. console.info("拦截 id: prepare1 start:" + textRange.start + "; end:" + textRange.end);
-38. return true;
-39. }
-40. if (menuItem.id.equals(TextMenuItemId.COPY)) {
-41. console.info("拦截 COPY start:" + textRange.start + "; end:" + textRange.end);
-42. return true;
-43. }
-44. if (menuItem.id.equals(TextMenuItemId.SELECT_ALL)) {
-45. console.info("不拦截 SELECT_ALL start:" + textRange.start + "; end:" + textRange.end);
-46. return false;
-47. }
-48. return false;
-49. }
-50. // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
-51. onPrepareMenu = (menuItems: Array<TextMenuItem>) => {
-52. let item1: TextMenuItem = {
-53. content: 'prepare1_' + this.endIndex,
-54. icon: $r('app.media.startIcon'),
-55. id: TextMenuItemId.of('prepare1'),
-56. };
-57. menuItems.unshift(item1);
-58. return menuItems;
-59. }
-60. @State editMenuOptions: EditMenuOptions = {
-61. onCreateMenu: this.onCreateMenu,
-62. onMenuItemClick: this.onMenuItemClick,
-63. onPrepareMenu: this.onPrepareMenu
-64. };
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TextExample12 {
+  @State text: string = 'Text editMenuOptions'
+  @State endIndex: number = 0;
+  onCreateMenu = (menuItems: Array<TextMenuItem>) => {
+    // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
+    let item1: TextMenuItem = {
+      content: 'create1',
+      icon: $r('app.media.startIcon'),
+      id: TextMenuItemId.of('create1'),
+    };
+    let item2: TextMenuItem = {
+      content: 'create2',
+      id: TextMenuItemId.of('create2'),
+      icon: $r('app.media.startIcon'),
+    };
+    menuItems.push(item1);
+    menuItems.unshift(item2);
+    let targetIndex = menuItems.findIndex(item => item.id.equals(TextMenuItemId.askAI));
+    if (targetIndex !== -1) {
+      menuItems.splice(targetIndex, 1); // 从目标索引删除1个元素
+    }
+    targetIndex = menuItems.findIndex(item => item.id.equals(TextMenuItemId.TRANSLATE));
+    if (targetIndex !== -1) {
+      menuItems.splice(targetIndex, 1);
+    }
+    return menuItems;
+  }
+  onMenuItemClick = (menuItem: TextMenuItem, textRange: TextRange) => {
+    if (menuItem.id.equals(TextMenuItemId.of("create2"))) {
+      console.info('拦截 id: create2 start:' + textRange.start + '; end:' + textRange.end);
+      return true;
+    }
+    if (menuItem.id.equals(TextMenuItemId.of("prepare1"))) {
+      console.info('拦截 id: prepare1 start:' + textRange.start + '; end:' + textRange.end);
+      return true;
+    }
+    if (menuItem.id.equals(TextMenuItemId.COPY)) {
+      console.info('拦截 COPY start:' + textRange.start + '; end:' + textRange.end);
+      return true;
+    }
+    if (menuItem.id.equals(TextMenuItemId.SELECT_ALL)) {
+      console.info('不拦截 SELECT_ALL start:' + textRange.start + '; end:' + textRange.end);
+      return false;
+    }
+    return false;
+  }
+  // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
+  onPrepareMenu = (menuItems: Array<TextMenuItem>) => {
+    let item1: TextMenuItem = {
+      content: 'prepare1_' + this.endIndex,
+      icon: $r('app.media.startIcon'),
+      id: TextMenuItemId.of('prepare1'),
+    };
+    menuItems.unshift(item1);
+    return menuItems;
+  }
+  @State editMenuOptions: EditMenuOptions = {
+    onCreateMenu: this.onCreateMenu,
+    onMenuItemClick: this.onMenuItemClick,
+    onPrepareMenu: this.onPrepareMenu
+  };
 
-66. build() {
-67. Column() {
-68. Text(this.text)
-69. .fontSize(20)
-70. .copyOption(CopyOptions.LocalDevice)
-71. .editMenuOptions(this.editMenuOptions)
-72. .margin({ top: 100 })
-73. .onTextSelectionChange((selectionStart: number, selectionEnd: number) => {
-74. this.endIndex = selectionEnd;
-75. })
-76. }
-77. .width("90%")
-78. .margin("5%")
-79. }
-80. }
+  build() {
+    Column() {
+      Text(this.text)
+        .fontSize(20)
+        .copyOption(CopyOptions.LocalDevice)
+        .editMenuOptions(this.editMenuOptions)
+        .margin({ top: 100 })
+        .onTextSelectionChange((selectionStart: number, selectionEnd: number) => {
+          this.endIndex = selectionEnd;
+        })
+    }
+    .width('90%')
+    .margin('5%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/6kKJbaeHRRWntX0TGyTvFg/zh-cn_image_0000002589326129.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/fO5V6R2TSymCmn8h39-QEA/zh-cn_image_0000002736435049.gif)
 
 ### 示例13（配置隐私隐藏）
 
 从API version 12开始，该示例通过[privacySensitive](ts-basic-components-text.md#privacysensitive12)属性展示了文本如何配置隐私隐藏的效果，实际显示需要卡片框架支持。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TextExample13 {
-5. build() {
-6. Column({ space: 10 }) {
-7. Text("privacySensitive")
-8. .privacySensitive(true)
-9. .margin({ top: 30 })
-10. }
-11. .alignItems(HorizontalAlign.Center)
-12. .width("100%")
-13. }
-14. }
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TextExample13 {
+  build() {
+    Column({ space: 10 }) {
+      Text('privacySensitive')
+        .privacySensitive(true)
+        .margin({ top: 30 })
+    }
+    .alignItems(HorizontalAlign.Center)
+    .width('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/4gn_hZePT9-lOud5cKTICg/zh-cn_image_0000002589246071.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/pVOccBWYRKSUQR7Wgdo9fg/zh-cn_image_0000002706835902.gif)
 
 ### 示例14（设置中西文自动间距）
 
 从API version 20开始，该示例通过[enableAutoSpacing](ts-basic-components-text.md#enableautospacing20)属性设置中西文自动间距。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TextExample {
-5. build() {
-6. Row() {
-7. Column() {
-8. Text('开启中西文自动间距').margin(5)
-9. Text('中西文Auto Spacing自动间距')
-10. .enableAutoSpacing(true)
-11. Text('关闭中西文自动间距').margin(5)
-12. Text('中西文Auto Spacing自动间距')
-13. .enableAutoSpacing(false)
-14. }.height('100%')
-15. }
-16. .width('60%')
-17. }
-18. }
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TextExample {
+  build() {
+    Row() {
+      Column() {
+        Text('开启中西文自动间距').margin(5)
+        Text('中西文Auto Spacing自动间距')
+          .enableAutoSpacing(true)
+        Text('关闭中西文自动间距').margin(5)
+        Text('中西文Auto Spacing自动间距')
+          .enableAutoSpacing(false)
+      }.height('100%')
+    }
+    .width('60%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/9eUSP5AlRVi6pSs-hSOREg/zh-cn_image_0000002558766262.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/3Y0QG25fSNSftZ4RLr7Qtw/zh-cn_image_0000002736315007.png)
 
 ### 示例15（文本颜色按线性或径向渐变）
 
 从API version 20开始，该示例通过[shaderStyle](ts-basic-components-text.md#shaderstyle20)接口实现了对Text组件显示为渐变色和纯色的功能。
 
-```
-1. @Entry
-2. @Component
-3. struct ShaderColorStyle {
-4. @State message: string = 'Hello World';
-5. @State linearGradientOptions1: LinearGradientOptions =
-6. {
-7. angle: 45,
-8. colors: [[Color.Red, 0.0], [Color.Blue, 0.3], [Color.Green, 0.5]]
-9. };
-10. @State linearGradientOptions2: LinearGradientOptions =
-11. {
-12. direction: GradientDirection.LeftTop,
-13. colors: [[Color.Red, 0.0], [Color.Blue, 0.3], [Color.Green, 0.5]],
-14. repeating: true,
-15. };
-16. @State radialGradientOptions: RadialGradientOptions =
-17. {
-18. center: [50, 50],
-19. radius: 20,
-20. colors: [[Color.Red, 0.0], [Color.Blue, 0.3], [Color.Green, 0.5]],
-21. repeating: true,
-22. };
-23. @State colorShaderStyle: ColorShaderStyle =
-24. {
-25. color: Color.Blue
-26. };
-27. build() {
-28. Column({ space: 5 }) {
-29. Text('angle为45°的线性渐变').fontSize(18).width('90%').fontColor(0xCCCCCC)
-30. .margin({ top: 40, left: 40 })
-31. Text(this.message)
-32. .fontSize(50)
-33. .width('80%')
-34. .height(50)
-35. .shaderStyle(this.linearGradientOptions1)
-36. Text('direction为LeftTop的线性渐变').fontSize(18).width('90%').fontColor(0xCCCCCC)
-37. .margin({ top: 40, left: 40 })
-38. Text(this.message)
-39. .fontSize(50)
-40. .width('80%')
-41. .height(50)
-42. .shaderStyle(this.linearGradientOptions2)
-43. Text('径向渐变').fontSize(18).width('90%').fontColor(0xCCCCCC)
-44. .margin({ top: 40, left: 40 })
-45. Text(this.message)
-46. .fontSize(50)
-47. .width('80%')
-48. .height(50)
-49. .shaderStyle(this.radialGradientOptions)
-50. Text('纯色').fontSize(18).width('90%').fontColor(0xCCCCCC)
-51. .margin({ top: 40, left: 40 })
-52. Text(this.message)
-53. .fontSize(50)
-54. .width('80%')
-55. .height(50)
-56. .shaderStyle(this.colorShaderStyle)
-57. }
-58. }
-59. }
+```ts
+@Entry
+@Component
+struct ShaderColorStyle {
+  @State message: string = 'Hello World';
+  @State linearGradientOptionsAngle: LinearGradientOptions =
+    {
+      angle: 45,
+      colors: [[Color.Red, 0.0], [Color.Blue, 0.3], [Color.Green, 0.5]]
+    };
+  @State linearGradientOptionsDirection: LinearGradientOptions =
+    {
+      direction: GradientDirection.LeftTop,
+      colors: [[Color.Red, 0.0], [Color.Blue, 0.3], [Color.Green, 0.5]],
+      repeating: true,
+    };
+  @State radialGradientOptions: RadialGradientOptions =
+    {
+      center: [50, 50],
+      radius: 20,
+      colors: [[Color.Red, 0.0], [Color.Blue, 0.3], [Color.Green, 0.5]],
+      repeating: true,
+    };
+  @State colorShaderStyle: ColorShaderStyle =
+    {
+      color: Color.Blue
+    };
+  build() {
+    Column({ space: 5 }) {
+      Text('angle为45°的线性渐变').fontSize(18).width('90%').fontColor(0xCCCCCC)
+        .margin({ top: 40, left: 40 })
+      Text(this.message)
+        .fontSize(50)
+        .width('80%')
+        .height(50)
+        .shaderStyle(this.linearGradientOptionsAngle)
+      Text('direction为LeftTop的线性渐变').fontSize(18).width('90%').fontColor(0xCCCCCC)
+        .margin({ top: 40, left: 40 })
+      Text(this.message)
+        .fontSize(50)
+        .width('80%')
+        .height(50)
+        .shaderStyle(this.linearGradientOptionsDirection)
+      Text('径向渐变').fontSize(18).width('90%').fontColor(0xCCCCCC)
+        .margin({ top: 40, left: 40 })
+      Text(this.message)
+        .fontSize(50)
+        .width('80%')
+        .height(50)
+        .shaderStyle(this.radialGradientOptions)
+      Text('纯色').fontSize(18).width('90%').fontColor(0xCCCCCC)
+        .margin({ top: 40, left: 40 })
+      Text(this.message)
+        .fontSize(50)
+        .width('80%')
+        .height(50)
+        .shaderStyle(this.colorShaderStyle)
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/Pt3a9-vTT9eccDJsA0Z3iQ/zh-cn_image_0000002558606604.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/f2u0L0YVRyuiYUO08iI7Sg/zh-cn_image_0000002706675964.png)
 
 ### 示例16（配置除去行尾空格）
 
 从API version 20开始，该示例通过[optimizeTrailingSpace](ts-basic-components-text.md#optimizetrailingspace20)属性展示了文本如何配置除去行尾空格的效果，一般需要与对齐功能搭配使用，实际显示需要字体引擎支持。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TextExample16 {
-5. build() {
-6. Column() {
-7. Text("Trimmed space enabled     ")
-8. .fontSize(30)
-9. .fontWeight(FontWeight.Bold)
-10. .margin({ top: 20 })
-11. .optimizeTrailingSpace(true)
-12. .textAlign(TextAlign.Center)
-13. Text("Trimmed space disabled     ")
-14. .fontSize(30)
-15. .fontWeight(FontWeight.Bold)
-16. .margin({ top: 20 })
-17. .optimizeTrailingSpace(false)
-18. .textAlign(TextAlign.Center)
-19. }
-20. .width("100%")
-21. }
-22. }
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TextExample16 {
+  build() {
+    Column() {
+      Text('Trimmed space enabled     ')
+        .fontSize(30)
+        .fontWeight(FontWeight.Bold)
+        .margin({ top: 20 })
+        .optimizeTrailingSpace(true)
+        .textAlign(TextAlign.Center)
+      Text('Trimmed space disabled     ')
+        .fontSize(30)
+        .fontWeight(FontWeight.Bold)
+        .margin({ top: 20 })
+        .optimizeTrailingSpace(false)
+        .textAlign(TextAlign.Center)
+    }
+    .width("100%")
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/W2BLtqS4TXK-USZFDD5dDA/zh-cn_image_0000002589326131.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/xvCWM0Q9SMmoWPEayzIrvA/zh-cn_image_0000002736435051.png)
 
 ### 示例17（文本垂直对齐）
 
 从API version 20开始，该示例通过[textVerticalAlign](ts-basic-components-text.md#textverticalalign20)属性展示了文本如何设置文本垂直对齐效果。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TextExample14 {
-5. build() {
-6. Column({ space: 10 }) {
-7. Text() {
-8. Span("Hello")
-9. .fontSize(50)
-10. // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
-11. ImageSpan($r('app.media.startIcon'))
-12. .width(30).height(30)
-13. .verticalAlign(ImageSpanAlignment.FOLLOW_PARAGRAPH)// 从API version 20开始，支持ImageSpanAlignment.FOLLOW_PARAGRAPH
-14. Span("World")
-15. }
-16. .textVerticalAlign(TextVerticalAlign.CENTER)
-17. .borderWidth(1)
-18. }
-19. .alignItems(HorizontalAlign.Center)
-20. .width("100%")
-21. }
-22. }
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TextExample14 {
+  build() {
+    Column({ space: 10 }) {
+      Text() {
+        Span('Hello')
+          .fontSize(50)
+        // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
+        ImageSpan($r('app.media.startIcon'))
+          .width(30).height(30)
+          .verticalAlign(ImageSpanAlignment.FOLLOW_PARAGRAPH)// 从API version 20开始，支持ImageSpanAlignment.FOLLOW_PARAGRAPH
+        Span('World')
+      }
+      .textVerticalAlign(TextVerticalAlign.CENTER)
+      .borderWidth(1)
+    }
+    .alignItems(HorizontalAlign.Center)
+    .width('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/wymcDnR0SKaXdyTtiSSWvw/zh-cn_image_0000002589246073.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/wp-lsEUQRySrLk69B7m6SA/zh-cn_image_0000002706835904.png)
 
 ### 示例18（文本翻牌动效）
 
 从API version 20开始，该示例通过[contentTransition](ts-basic-components-text.md#contenttransition20)属性展示了数字翻牌效果。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TextNumberTransition {
-5. @State number: number = 98;
-6. @State numberTransition: NumericTextTransition =
-7. new NumericTextTransition({ flipDirection: FlipDirection.DOWN, enableBlur: false });
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TextNumberTransition {
+  @State number: number = 98;
+  @State numberTransition: NumericTextTransition =
+    new NumericTextTransition({ flipDirection: FlipDirection.DOWN, enableBlur: false });
 
-9. build() {
-10. Column() {
-11. Text(this.number + "")
-12. .borderWidth(1)
-13. .fontSize(40)
-14. .contentTransition(this.numberTransition)
-15. Button("change number")
-16. .onClick(() => {
-17. this.number++;
-18. })
-19. .margin(10)
-20. }
-21. .justifyContent(FlexAlign.Center)
-22. .height('100%')
-23. .width('100%')
-24. }
-25. }
+  build() {
+    Column() {
+      Text(this.number + '')
+        .borderWidth(1)
+        .fontSize(40)
+        .contentTransition(this.numberTransition)
+      Button('change number')
+        .onClick(() => {
+          this.number++;
+        })
+        .margin(10)
+    }
+    .justifyContent(FlexAlign.Center)
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/qN9JUBB6RAiudiD1Gi4Xyg/zh-cn_image_0000002558766264.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/l9cT9_U_RbGnEa4IsUdjow/zh-cn_image_0000002736315009.gif)
 
 ### 示例19（文本内容区垂直对齐）
 
 从API version 21开始，该示例通过[textContentAlign](ts-basic-components-text.md#textcontentalign21)属性展示了当文本内容区高度大于组件高度时文本内容区的垂直对齐。
 
-```
-1. @Entry
-2. @Component
-3. struct TextContentAlignExample {
+```ts
+@Entry
+@Component
+struct TextContentAlignExample {
 
-5. build() {
-6. Column() {
-7. Row() {
-8. Text('这是一段展示文字')
-9. .fontSize(30)
-10. .backgroundColor(Color.Gray)
-11. .width('80%')
-12. .height(20)
-13. .textContentAlign(TextContentAlign.CENTER)
-14. }.height('60%')
-15. }
-16. }
-17. }
+  build() {
+    Column() {
+      Row() {
+        Text('这是一段展示文字')
+          .fontSize(30)
+          .backgroundColor(Color.Gray)
+          .width('80%')
+          .height(20)
+          .textContentAlign(TextContentAlign.CENTER)
+      }.height('60%')
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/fk9dP8KFSwS3KDVwbvX-1w/zh-cn_image_0000002558606606.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/_2WO18_cQBGk_LML5e8OqQ/zh-cn_image_0000002706675966.png)
 
 ### 示例20（倍数行高和最大最小行高）
 
 从API version 22开始，该示例通过[lineHeightMultiple](ts-basic-components-text.md#lineheightmultiple22)属性展示了使用倍数模式设置行高，同时通过[minLineHeight](ts-basic-components-text.md#minlineheight22)和[maxLineHeight](ts-basic-components-text.md#maxlineheight22)来设置最小和最大行高值。
 
+```ts
+import { LengthUnit } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'hello';
+
+  build() {
+    Scroll() {
+      Column() {
+        Row() {
+          Text(this.message)
+            .lineHeight(176)
+            .backgroundColor(0xffc0c0c0)
+            .fontSize(50)
+          Text(this.message)
+            .lineHeightMultiple(3)
+            .backgroundColor(0xffc0c0c0)
+            .fontSize(50)
+          Text(this.message)
+            .lineHeight(300)
+            .maxLineHeight({value:176,unit:LengthUnit.FP})
+            .backgroundColor(0xffc0c0c0)
+            .fontSize(50)
+          Text(this.message)
+            .lineHeight(10)
+            .minLineHeight({value:176,unit:LengthUnit.FP})
+            .backgroundColor(0xffc0c0c0)
+            .fontSize(50)
+        }
+      }
+    }.height('100%')
+    .width('100%')
+  }
+}
 ```
-1. import { LengthUnit } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. @State message: string = 'hello';
-
-8. build() {
-9. Scroll() {
-10. Column() {
-11. Row() {
-12. Text(this.message)
-13. .lineHeight(176)
-14. .backgroundColor(0xffc0c0c0)
-15. .fontSize(50)
-16. Text(this.message)
-17. .lineHeightMultiple(3)
-18. .backgroundColor(0xffc0c0c0)
-19. .fontSize(50)
-20. Text(this.message)
-21. .lineHeight(300)
-22. .maxLineHeight({value:176,unit:LengthUnit.FP})
-23. .backgroundColor(0xffc0c0c0)
-24. .fontSize(50)
-25. Text(this.message)
-26. .lineHeight(10)
-27. .minLineHeight({value:176,unit:LengthUnit.FP})
-28. .backgroundColor(0xffc0c0c0)
-29. .fontSize(50)
-30. }
-31. }
-32. }.height('100%')
-33. .width('100%')
-34. }
-35. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/kqusV0LASN-Z6i9a8Py87w/zh-cn_image_0000002589326133.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/k0PB5ecmTOKdAaOa8ya9uw/zh-cn_image_0000002736435053.png)
 
 ### 示例21（文本设置显示最小行数）
 
 从API version 22开始，该示例使用[minLines](ts-basic-components-text.md#minlines22)属性设置文本显示的最小行数。
 
-```
-1. @Entry
-2. @Component
-3. struct TextExample1 {
-4. @State message1: string = 'Hello world!';
-5. @State message2: string = 'The minimum number of lines displayed for this text setting is 1';
+```ts
+@Entry
+@Component
+struct TextExample1 {
+  @State shortMessage: string = 'Hello world!';
+  @State longMessage: string = 'The minimum number of lines displayed for this text setting is 1';
 
-7. build() {
-8. Column() {
-9. Text(this.message1)
-10. .minLines(3)
-11. .fontSize(20)
-12. .margin(10)
-13. .width('95%')
-14. .border({ width: 1 })
-15. Text(this.message2)
-16. .minLines(1)
-17. .fontSize(20)
-18. .margin(10)
-19. .width('95%')
-20. .border({ width: 1 })
-21. }.height(100).width('90%').margin(10)
-22. }
-23. }
+  build() {
+    Column() {
+      Text(this.shortMessage)
+        .minLines(3)
+        .fontSize(20)
+        .margin(10)
+        .width('95%')
+        .border({ width: 1 })
+      Text(this.longMessage)
+        .minLines(1)
+        .fontSize(20)
+        .margin(10)
+        .width('95%')
+        .border({ width: 1 })
+    }.height(100).width('90%').margin(10)
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/QsLtaN_GQoeuhI998J3vRQ/zh-cn_image_0000002589246075.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/aJMX3fglTZ6fapD4bHXk1A/zh-cn_image_0000002706835906.png)
 
 ### 示例22（设置文本选择区域并高亮显示）
 
 从API version 23开始，该示例使用[TextController](ts-basic-components-text.md#textcontroller11)中的[setTextSelection](ts-basic-components-text.md#settextselection23)设置文本选择区域并高亮显示。
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. controller: TextController = new TextController();
-5. @State textStr: string = 'Hello World! 你好，世界！';
+```ts
+@Entry
+@Component
+struct Index {
+  controller: TextController = new TextController();
+  @State textStr: string = 'Hello World! 你好，世界！';
 
-7. build() {
-8. Scroll() {
-9. Column() {
-10. Text(this.textStr, { controller: this.controller })
-11. .fontSize(25)
-12. .borderWidth(1)
-13. .copyOption(CopyOptions.LocalDevice)
-14. Button("setTextSelection")
-15. .onClick(() => {
-16. this.controller.setTextSelection(1, 6, { menuPolicy: MenuPolicy.HIDE })
-17. })
-18. .margin({ bottom: 20, top: 10 } as Margin)
-19. }
-20. .margin({ top: 100, left: 8, right: 8 } as Margin)
-21. }
-22. }
-23. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/BI4KXfdLSqqqa6MAYbEd7A/zh-cn_image_0000002558766266.gif)
-
-### 示例23（设置行首标点压缩）
-
-该示例通过[compressLeadingPunctuation](ts-basic-components-text.md#compressleadingpunctuation23)接口设置行首标点压缩，左侧有间距的标点符号位于行首时，标点会直接压缩间距至左侧边界。
-
-从API version 23开始，支持compressLeadingPunctuation接口。
-
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct Index {
-5. build() {
-6. Column(){
-7. Text("\u300C行首标点压缩打开")
-8. .compressLeadingPunctuation(true)
-9. .margin(5)
-10. .border({ width: 1 })
-11. .fontSize(30)
-12. .width("90%")
-13. Text("\u300C行首标点压缩关闭")
-14. .compressLeadingPunctuation(false)
-15. .border({ width: 1 })
-16. .fontSize(30)
-17. .width("90%")
-18. }
-19. }
-20. }
+  build() {
+    Scroll() {
+      Column() {
+        Text(this.textStr, { controller: this.controller })
+          .fontSize(25)
+          .borderWidth(1)
+          .copyOption(CopyOptions.LocalDevice)
+        Button('setTextSelection')
+          .onClick(() => {
+            this.controller.setTextSelection(1, 6, { menuPolicy: MenuPolicy.HIDE })
+          })
+          .margin({ bottom: 20, top: 10 } as Margin)
+      }
+      .margin({ top: 100, left: 8, right: 8 } as Margin)
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/Ym9GY6FdRrWlzCMG5g7lgQ/zh-cn_image_0000002558606608.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/ewLFE9iASou5O6NXa0c1lw/zh-cn_image_0000002736315011.gif)
+
+### 示例23（设置行首标点符号压缩和行尾标点符号悬挂）
+
+本示例通过[compressLeadingPunctuation](ts-basic-components-text.md#compressleadingpunctuation23)接口设置行首标点符号压缩，通过[punctuationOverflow](ts-basic-components-text.md#punctuationoverflow)设置行尾标点符号悬挂。
+
+左侧有间距的标点符号位于行首时，标点会直接压缩间距至左侧边界。
+
+文本自动换行后，剩余内容（含标点符号）需要能够放入上一行，标点符号悬挂才生效。
+
+从API版本23开始，新增compressLeadingPunctuation接口。
+
+从API版本26.0.0开始，新增punctuationOverflow接口。
+
+```ts
+@Entry
+@Component
+struct PunctuationDemo {
+  @State compressLeadingPunctuation: boolean = false;
+  @State punctuationOverflow: boolean = false;
+  @State text: string = '「0123456789！\n『0123456789：\n（0123456789；\n《0123456789）\n〈0123456789】';
+
+  build() {
+    Column() {
+      Text(this.text)
+        .compressLeadingPunctuation(this.compressLeadingPunctuation)
+        .punctuationOverflow(this.punctuationOverflow)
+        .border({ width: 1, color: Color.Black })
+        .copyOption(CopyOptions.LocalDevice)
+        .fontSize('20fp')
+        .align(Alignment.Center)
+        .height('35%')
+        .width('40%')
+
+      Column() {
+        Button('开启行首标点符号压缩').onClick(() => {
+          this.compressLeadingPunctuation = true
+        }).margin(5)
+        Button('关闭行首标点符号压缩').onClick(() => {
+          this.compressLeadingPunctuation = false
+        }).margin(5)
+        Button('开启行尾标点符号悬挂').onClick(() => {
+          this.punctuationOverflow = true
+        }).margin(5)
+        Button('关闭行尾标点符号悬挂').onClick(() => {
+          this.punctuationOverflow = false
+        }).margin(5)
+      }
+    }.width('100%').padding(20)
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/0hZAgeBMSXqgjVc9oPpr8w/zh-cn_image_0000002706675968.gif)
 
 ### 示例24（设置自适应间距）
 
@@ -3173,63 +3371,63 @@ PhonePC/2in1TabletTVWearable
 
 从API version 23开始，新增[includeFontPadding](ts-basic-components-text.md#includefontpadding23)和[fallbackLineSpacing](ts-basic-components-text.md#fallbacklinespacing23)接口。
 
+```ts
+// xxx.ets
+
+const UYGHUR_TEXT: string = 'ياخشىمۇسەنياخشىمۇسەنياخشىمۇسەنياخشىمۇسەنياخشىمۇسەنياخشىمۇسەنياخشىمۇسەن';
+@Entry
+@Component
+struct Index {
+  @State include: boolean | null | undefined = false;
+  @State fallback: boolean | null | undefined = false;
+  @State displayText: string = UYGHUR_TEXT;
+
+  build() {
+    Column() {
+      Text(this.displayText)
+        .includeFontPadding(this.include)
+        .fallbackLineSpacing(this.fallback)
+        .lineHeight(5)
+        .width('100%')
+        .height(100)
+        .backgroundColor('#eee')
+        .borderWidth(1)
+        .borderColor('#dddddd')
+
+      Scroll() {
+        Column() {
+          // --- IncludeFontPadding相关按钮 ---
+          Button('设置includePadding: ' + this.include)
+            .onClick(() => {
+              this.include = this.include === false ? true : false;
+            })
+            .margin({ bottom: 10 })
+
+          // --- FallbackLineSpacing相关按钮 ---
+          Button('设置fallbackLineSpacing: ' + this.fallback)
+            .onClick(() => {
+              this.fallback = this.fallback === false ? true : false;
+            })
+            .margin({ bottom: 10 })
+
+        }
+        .width('100%')
+        .padding(5)
+      }
+      .height(250)
+      .backgroundColor('transparent')
+      .scrollBarWidth(2)
+      .scrollBarColor('#888')
+
+    }
+    .width('100%')
+    .height('100%')
+    .padding(20)
+  }
+}
 ```
-1. // xxx.ets
 
-3. const UYGHUR_TEXT: string = 'ياخشىمۇسەنياخشىمۇسەنياخشىمۇسەنياخشىمۇسەنياخشىمۇسەنياخشىمۇسەنياخشىمۇسەن';
-4. @Entry
-5. @Component
-6. struct Index {
-7. @State include: boolean | null | undefined = false;
-8. @State fallback: boolean | null | undefined = false;
-9. @State displayText: string = UYGHUR_TEXT;
-
-11. build() {
-12. Column() {
-13. Text(this.displayText)
-14. .includeFontPadding(this.include)
-15. .fallbackLineSpacing(this.fallback)
-16. .lineHeight(5)
-17. .width('100%')
-18. .height(100)
-19. .backgroundColor('#eee')
-20. .borderWidth(1)
-21. .borderColor('#dddddd')
-
-23. Scroll() {
-24. Column() {
-25. // --- IncludeFontPadding相关按钮 ---
-26. Button('设置includePadding: ' + this.include)
-27. .onClick(() => {
-28. this.include = this.include === false ? true : false;
-29. })
-30. .margin({ bottom: 10 })
-
-32. // --- FallbackLineSpacing相关按钮 ---
-33. Button('设置fallbackLineSpacing: ' + this.fallback)
-34. .onClick(() => {
-35. this.fallback = this.fallback === false ? true : false;
-36. })
-37. .margin({ bottom: 10 })
-
-39. }
-40. .width('100%')
-41. .padding(5)
-42. }
-43. .height(250)
-44. .backgroundColor('transparent')
-45. .scrollBarWidth(2)
-46. .scrollBarColor('#888')
-
-48. }
-49. .width('100%')
-50. .height('100%')
-51. .padding(20)
-52. }
-53. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/YuKYY5xZQIuoIUz71_d0Zg/zh-cn_image_0000002589326135.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/Ui9NNCq3Rd-o3Ld-BDFYAA/zh-cn_image_0000002736435055.gif)
 
 ### 示例25（设置文本拖拽时的背板样式）
 
@@ -3237,26 +3435,26 @@ PhonePC/2in1TabletTVWearable
 
 从API version 23开始，新增selectedDragPreviewStyle接口。
 
-```
-1. @Entry
-2. @Component
-3. struct TextTest {
-4. build() {
-5. Column() {
-6. Text('This is drag text')
-7. .copyOption(CopyOptions.InApp)
-8. .width(200)
-9. .height(100)
-10. .margin(150)
-11. .draggable(true)
-12. .selectedDragPreviewStyle({color: 'rgba(227, 248, 249, 1)'})
-13. }
-14. .height('100%')
-15. }
-16. }
+```ts
+@Entry
+@Component
+struct TextTest {
+  build() {
+    Column() {
+      Text('This is drag text')
+        .copyOption(CopyOptions.InApp)
+        .width(200)
+        .height(100)
+        .margin(150)
+        .draggable(true)
+        .selectedDragPreviewStyle({color: 'rgba(227, 248, 249, 1)'})
+    }
+    .height('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/VbZ0fOodR2S0IHhgVeuHVA/zh-cn_image_0000002589246077.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/muBl-oNgQaiHnmE1zXm-4w/zh-cn_image_0000002706835908.png)
 
 ### 示例26（设置文本排版方向）
 
@@ -3264,38 +3462,569 @@ PhonePC/2in1TabletTVWearable
 
 从API version 23开始，新增textDirection接口。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TextExample {
-5. @State text: string = 'Text文本排版方向示例';
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TextExample {
+  @State text: string = 'Text文本排版方向示例';
 
-7. build() {
-8. Column({ space: 3 }) {
-9. Text('Text文本排版方向DEFAULT')
-10. .fontSize(12).width('90%').margin(5)
-11. Text(this.text)
-12. .width('95%')
-13. .borderWidth(1)
-14. Text('Text文本排版方向RTL')
-15. .fontSize(12).width('90%').margin(5)
-16. Text(this.text)
-17. .width('95%')
-18. .borderWidth(1)
-19. .textDirection(TextDirection.RTL)
-20. Text('Text文本排版方向RTL，文本水平方向对齐方式LEFT')
-21. .fontSize(12).width('90%').margin(5)
-22. Text(this.text)
-23. .width('95%')
-24. .borderWidth(1)
-25. .textDirection(TextDirection.RTL)
-26. .textAlign(TextAlign.LEFT)
-27. }
-28. .width('100%')
-29. .height('100%')
-30. }
-31. }
+  build() {
+    Column({ space: 3 }) {
+      Text('Text文本排版方向DEFAULT')
+        .fontSize(12).width('90%').margin(5)
+      Text(this.text)
+        .width('95%')
+        .borderWidth(1)
+      Text('Text文本排版方向RTL')
+        .fontSize(12).width('90%').margin(5)
+      Text(this.text)
+        .width('95%')
+        .borderWidth(1)
+        .textDirection(TextDirection.RTL)
+      Text('Text文本排版方向RTL，文本水平方向对齐方式LEFT')
+        .fontSize(12).width('90%').margin(5)
+      Text(this.text)
+        .width('95%')
+        .borderWidth(1)
+        .textDirection(TextDirection.RTL)
+        .textAlign(TextAlign.LEFT)
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/SEEPB-N7QYSsK5lHZHlqhw/zh-cn_image_0000002558766268.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/DeWZ_qqCTNi4mVoP_VrFEQ/zh-cn_image_0000002736315013.png)
+
+### 示例27（获取指定坐标和范围对应的文本信息）
+
+从API version 24开始，支持[getCharacterPositionAtCoordinate](ts-text-common.md#getcharacterpositionatcoordinate24)，[getGlyphRangeForCharacterRange](ts-text-common.md#getglyphrangeforcharacterrange24)，[getCharacterRangeForGlyphRange](ts-text-common.md#getcharacterrangeforglyphrange24)接口。该示例通过[getLayoutManager](ts-basic-components-text.md#getlayoutmanager12)接口调用文本的布局管理对象获取文本信息，通过[LayoutManager](ts-text-common.md#layoutmanager12)中的[getCharacterPositionAtCoordinate](ts-text-common.md#getcharacterpositionatcoordinate24)获取坐标字符的位置信息，通过[getGlyphRangeForCharacterRange](ts-text-common.md#getglyphrangeforcharacterrange24)根据字符索引范围获取字形索引范围和实际的字符索引范围，通过[getCharacterRangeForGlyphRange](ts-text-common.md#getcharacterrangeforglyphrange24)根据字形索引范围获取字符索引范围和实际的字形索引范围。
+
+```ts
+// xxx.ets
+import { LengthMetrics } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct TextExample10 {
+  @State start: number = 10;
+  @State end: number = 20;
+  textController: TextController = new TextController();
+  textStr: string = 'Hello World! 您好，世界!';
+  @State str1: string = ''
+  @State str2: string = ''
+  @State str3: string = ''
+  @State str4: string = ''
+  titleParagraphStyleAttr: ParagraphStyle =
+    new ParagraphStyle({ paragraphSpacing: LengthMetrics.px(50), textIndent: LengthMetrics.vp(15) });
+  mutableStyledString: MutableStyledString =
+    new MutableStyledString('属性字符串TextStyle测试\n属性字符串测试\n属性字符串TextStyle测试');
+
+  build() {
+    Column() {
+      Text(this.textStr, { controller: this.textController }) {
+        Span('Hello World 123 \n')
+        Span('Hello World 456 \n')
+        Span('Hello World 789 \n')
+      }
+      .fontSize(25)
+      .borderWidth(1)
+
+      Text(this.str1)
+      Text(this.str2)
+      Text(this.str3)
+      Text(this.str4)
+
+      Button('点击可增加属性字符串').onClick(() => {
+        this.textController.setStyledString(this.mutableStyledString)
+      })
+
+      Button('相对组件坐标[150,50]字形信息')
+        .onClick(() => {
+          // getLayoutManager在TextController未绑定Text或Text被销毁时会返回undefined，使用时需做判空处理
+          let layoutManager: LayoutManager = this.textController.getLayoutManager();
+          if (!layoutManager) {
+            return;
+          }
+          let position1: PositionWithAffinity = layoutManager.getGlyphPositionAtCoordinate(150, 50);
+          this.str1 = '相对组件坐标[150,50] glyphPosition position: ' + position1.position +
+            ' affinity: ' +
+          position1.affinity;
+
+          let position2: PositionWithAffinity =
+            layoutManager.getCharacterPositionAtCoordinate(150, 50) as PositionWithAffinity;
+          this.str2 = '相对组件坐标[150,50] characterPosition position: ' + position2.position +
+            ' affinity: ' +
+          position2.affinity;
+
+          let range1: TextRange = { start: this.start, end: this.end };
+          let ranges1: Array<TextRange> = layoutManager.getGlyphRangeForCharacterRange(range1) as Array<TextRange>
+          this.str3 = 'getGlyphRangeForCharacterRange 字形数 ' + ranges1[0].start + ' ' + ranges1[0].end + '\n' +
+            'getGlyphRangeForCharacterRange 实际字符数 ' + ranges1[1].start + ' ' + ranges1[1].end
+
+          let range2: TextRange = { start: this.start, end: this.end };
+          let ranges2: Array<TextRange> = layoutManager.getCharacterRangeForGlyphRange(range2) as Array<TextRange>
+          this.str4 = 'getCharacterRangeForGlyphRange 字符数 ' + ranges2[0].start + ' ' + ranges2[0].end + '\n' +
+            'getCharacterRangeForGlyphRange 实际字形数 ' + ranges2[1].start + ' ' + ranges2[1].end
+        })
+        .margin({ bottom: 20, top: 10 })
+    }.justifyContent(FlexAlign.Center).width('100%').height('100%')
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/G7vR1MqzQjivblDsG3ymfg/zh-cn_image_0000002706675970.gif)
+
+### 示例28（设置文本排版时是否使能孤字优化）
+
+该示例通过[orphanCharOptimization](ts-basic-components-text.md#orphancharoptimization)接口设置使能孤字优化，确保段落最后一行不出现孤字。
+
+从API版本26.0.0开始，新增orphanCharOptimization接口。
+
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TextExample {
+  @State text: string = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa文本aaaaaaaaaaaaa';
+
+  build() {
+    Column({ space: 3 }) {
+      Text('Text不使能孤字优化')
+        .fontSize(12).width('90%').margin(5)
+      Text(this.text)
+        .fontSize(20)
+        .width('456')
+        .borderWidth(1)
+      Text('Text使能孤字优化')
+        .fontSize(12).width('90%').margin(5)
+      Text(this.text)
+        .fontSize(20)
+        .width('456')
+        .borderWidth(1)
+        .orphanCharOptimization(true)
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
+```
+
+该效果图会因设备尺寸差异有显示区别，仅供参考。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/xKiX7bDLRS-MZxaKdiFv-g/zh-cn_image_0000002736435057.png)
+
+### 示例29（设置可变字体的属性）
+
+该示例通过[fontVariations](ts-basic-components-text.md#fontvariations)接口设置可变字体的属性。
+
+从API版本26.0.0开始，新增[fontVariations](ts-basic-components-text.md#fontvariations)接口。
+
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TextExample {
+  @State weightValue: number = 400;
+
+  build() {
+    Column() {
+      Text('Hello World !')
+        // wght代表可变字体的字重属性
+        .fontVariations([{ axis: 'wght', value: this.weightValue }])
+      Button('字重: ' + this.weightValue)
+        .margin(10)
+        .onClick(() => {
+          this.weightValue += 100;
+        })
+    }.width('100%')
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/qVgD8wYQQCSdt380b3N9rg/zh-cn_image_0000002706835910.gif)
+
+### 示例30（设置图片预览菜单）
+
+该示例通过[bindSelectionMenu](ts-basic-components-text.md#bindselectionmenu11)接口实现了文本设置图片预览菜单的功能。
+
+从API版本26.0.0开始，文本组件调用该接口时，options中的menuType属性传入MenuType.PREVIEW\_MENU，设置图片预览菜单的能力生效。
+
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TextExample {
+  @Builder
+  panel() {
+    Column() {
+      Text('abc').backgroundColor('#F0F0F0')
+    }.width(256)
+  }
+
+  build() {
+    Column() {
+      Column() {
+        Text() {
+          Span('Hello')
+            .fontSize(50)
+          // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
+          ImageSpan($r('app.media.startIcon'))
+            .width(30).height(30)
+            .verticalAlign(ImageSpanAlignment.FOLLOW_PARAGRAPH)// 从API version 20开始，支持ImageSpanAlignment.FOLLOW_PARAGRAPH
+          Span('World')
+        }
+        .textVerticalAlign(TextVerticalAlign.CENTER)
+        .borderWidth(1)
+        .copyOption(CopyOptions.InApp)
+        .bindSelectionMenu(TextSpanType.IMAGE, this.panel, TextResponseType.LONG_PRESS, {
+          menuType : MenuType.PREVIEW_MENU,
+          previewMenuOptions : {
+            hapticFeedbackMode : HapticFeedbackMode.ENABLED
+          }
+        })
+      }.width('100%').backgroundColor(Color.White)
+    }.height('100%')
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/WFk2T_3nTyy8nmL2wopMbQ/zh-cn_image_0000002736315015.gif)
+
+### 示例31（设置属性字符串段落缓存策略）
+
+该示例通过[incrementalUpdatePolicy](ts-basic-components-text.md#incrementalupdatepolicy)接口设置文本渲染的增量更新策略，使用段落级缓存优化渲染性能。
+
+从API版本26.0.0开始，新增incrementalUpdatePolicy属性。
+
+```ts
+// xxx.ets
+import { LengthMetrics } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct StyledStringAppend {
+  textController: TextController = new TextController();
+  scroller: Scroller = new Scroller();
+  @State index: number = 0
+  // 段落标题样式：居中、加粗
+  titleParagraphStyle: ParagraphStyle = new ParagraphStyle({ textAlign: TextAlign.Center });
+  // 第一段落样式：首行缩进20vp
+  paragraphStyleAttr1: ParagraphStyle = new ParagraphStyle({ textIndent: LengthMetrics.vp(20) });
+  // 第二段落样式：左对齐、首行缩进20vp
+  paragraphStyleAttr2: ParagraphStyle =
+    new ParagraphStyle({ textAlign: TextAlign.Start, textIndent: LengthMetrics.vp(20) });
+  // 行高样式
+  lineHeightStyle: LineHeightStyle = new LineHeightStyle(new LengthMetrics(30));
+  str: string = '属性字符串段落缓存示例'
+  styledString1: MutableStyledString = new MutableStyledString(this.str, [{
+    start: 0,
+    length: this.str.length,
+    styledKey: StyledStringKey.PARAGRAPH_STYLE,
+    styledValue: this.titleParagraphStyle
+  }, {
+    start: 0,
+    length: this.str.length,
+    styledKey: StyledStringKey.LINE_HEIGHT,
+    styledValue: this.lineHeightStyle
+  }, {
+    start: 0,
+    length: this.str.length,
+    styledKey: StyledStringKey.FONT,
+    styledValue: new TextStyle({
+      fontColor: Color.Blue,
+      fontWeight: FontWeight.Bolder
+    })
+  }]);
+
+  aboutToAppear() {
+    // 追加初始段落内容，设置段落缩进和行高
+    let str1: string = '\n首段落：'
+    let str2: string = '属性字符串支持段落样式缓存，单击下方按钮追加新段落，验证段落缓存效果。'
+    let paragraph1: StyledString =
+      new StyledString(str1 + str2, [{
+        start: 0,
+        length: str1.length,
+        styledKey: StyledStringKey.PARAGRAPH_STYLE,
+        styledValue: this.paragraphStyleAttr1
+      }, {
+        start: 0,
+        length: str1.length,
+        styledKey: StyledStringKey.FONT,
+        styledValue: new TextStyle({
+          fontColor: Color.Blue,
+          fontWeight: FontWeight.Bold
+        })
+      }, {
+        start: 0,
+        length: str1.length + str2.length,
+        styledKey: StyledStringKey.LINE_HEIGHT,
+        styledValue: this.lineHeightStyle
+      }]);
+    this.styledString1.appendStyledString(paragraph1);
+    this.textController.setStyledString(this.styledString1);
+  }
+
+  build() {
+    Column() {
+      Scroll(this.scroller) {
+        Column() {
+          Text('示例：属性字符串段落缓存\n单击"追加文本"追加新段落，后端走段落缓存\n')
+            .fontSize(16)
+            .fontColor(Color.Gray)
+            .margin({ bottom: 5 })
+            .width("100%")
+
+          Text(undefined, { controller: this.textController })
+            .width('100%')
+            .borderWidth(1)
+            .padding(10)
+            .copyOption(CopyOptions.InApp)
+            .incrementalUpdatePolicy(IncrementalUpdatePolicy.PARAGRAPH_CACHE)
+        }
+        .width('100%')
+        .padding({ left: 20, right: 20 })
+      }
+      .width('100%')
+
+      Button("追加文本")
+        .width('80%')
+        .margin({ top: 10, bottom: 15 })
+        .onClick(() => {
+          this.index++;
+          // 追加新段落，每个段落带有段落缩进样式，触发后端段落缓存
+          let str1: string = '\n第' + this.index + '段落：'
+          let str2: string = '这是追加的文本内容，用于验证段落缓存机制。'
+          let newParagraph: StyledString = new StyledString(
+            str1 + str2,
+            [{
+              start: 0,
+              length: str1.length,
+              styledKey: StyledStringKey.PARAGRAPH_STYLE,
+              styledValue: this.paragraphStyleAttr2
+            }, {
+              start: 0,
+              length: str1.length + str2.length,
+              styledKey: StyledStringKey.LINE_HEIGHT,
+              styledValue: this.lineHeightStyle
+            }, {
+              start: 0,
+              length: str1.length,
+              styledKey: StyledStringKey.FONT,
+              styledValue: new TextStyle({
+                fontColor: Color.Blue,
+                fontWeight: FontWeight.Bold
+              })
+            }]);
+          this.styledString1.appendStyledString(newParagraph);
+          this.textController.setStyledString(this.styledString1);
+        })
+    }
+    .width('100%')
+    .height('70%')
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/RbpPq_ymT2G7CEaDx7iiDA/zh-cn_image_0000002706675972.png)
+
+### 示例32（设置文本尾部缩进）
+
+该示例通过[tailIndents](ts-basic-components-text.md#tailindents)接口实现了文本尾部缩进的功能。
+
+从API版本26.0.0开始，通过tailIndents属性设置文本尾部缩进。
+
+```ts
+import { LengthMetrics } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct TailIndentsExample {
+  build() {
+    Column() {
+      Text('未设置tailIndents\n未设置tailIndents\n未设置tailIndents\n未设置tailIndents\n未设置tailIndents')
+        .fontSize(20)
+        .borderWidth(1)
+        .borderColor(Color.Blue)
+        .textAlign(TextAlign.End)
+        .width('100%')
+
+      Text('设置tailIndents单值\n设置tailIndents单值\n设置tailIndents单值\n设置tailIndents单值\n设置tailIndents单值')
+        .fontSize(20)
+        .borderWidth(1)
+        .borderColor(Color.Blue)
+        .textAlign(TextAlign.End)
+        .width('100%')
+        .tailIndents(LengthMetrics.vp(100))
+
+      Text('设置tailIndents数组\n设置tailIndents数组\n设置tailIndents数组\n设置tailIndents数组\n设置tailIndents数组')
+        .fontSize(20)
+        .borderWidth(1)
+        .borderColor(Color.Blue)
+        .textAlign(TextAlign.End)
+        .width('100%')
+        .tailIndents([LengthMetrics.vp(100), LengthMetrics.vp(50), LengthMetrics.vp(20)])
+
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/0vE3xancTKCXPS3h8PsvXQ/zh-cn_image_0000002736435059.png)
+
+### 示例33（设置文本选择的AI菜单）
+
+该示例通过[enableSelectedDataDetector](ts-basic-components-text.md#enableselecteddatadetector22)，配置文本选择AI菜单功能。
+
+从API version 22开始，新增enableSelectedDataDetector。
+
+```ts
+@Entry
+@Component
+struct DataDetectorDemo {
+  exampleText: string = '示例网址：www.example.com';
+
+  build() {
+    Column() {
+      Row(){
+        Text(this.exampleText)
+          .copyOption(CopyOptions.LocalDevice)
+          .enableSelectedDataDetector(true)
+          .border({ width: 1, color: Color.Black })
+          .padding(10)
+          .margin(10)
+      }
+    }.width('100%')
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/Ebr_uetpQz6PjbvTwTMcgA/zh-cn_image_0000002706835912.gif)
+
+### 示例34（长按含表情符号文本绘制渐变高亮背景）
+
+该示例通过[getLayoutManager](ts-basic-components-text.md#getlayoutmanager12)接口获取文本的布局管理对象，使用[LayoutManager](ts-text-common.md#layoutmanager12)中以UTF-16编码查询的[getCharacterPositionAtCoordinate](ts-text-common.md#getcharacterpositionatcoordinate)根据长按坐标获取字符位置与亲和性，再通过[getGlyphRangeForCharacterRange](ts-text-common.md#getglyphrangeforcharacterrange)获取对应的字形索引范围与实际字符范围，最后通过[getRectsForRange](ts-text-common.md#getrectsforrange14)获取文本矩形区域，并在[Canvas](ts-components-canvas-canvas.md)上绘制渐变背景，实现对包含表情符号（字形簇）文本的高亮。
+
+从API版本26.0.0开始，新增带编码类型参数的getCharacterPositionAtCoordinate、getGlyphRangeForCharacterRange、getCharacterRangeForGlyphRange接口重载，以及TextEncoding枚举。
+
+```ts
+// xxx.ets
+import { LengthMetrics } from '@kit.ArkUI';
+import { text } from '@kit.ArkGraphics2D';
+
+const TEXT_CONTENT: string =
+  '这是一段包含表情符号的测试文本\u{1F60A}。长按文字可查看渐变高亮效果\u{1F389}。\n' +
+  '复杂表情符号\u{1F468}\u{200D}\u{1F469}\u{200D}\u{1F467}\u{200D}\u{1F466}也会被正确处理' +
+  '\u{1F3F3}\u{FE0F}\u{200D}\u{1F308}，再来一些emoji\u{1F680}\u{1F31F}\u{1F4BB}和中文混排。\n' +
+  '第三行：可以长按不同位置试试各种字符\u{1F600}\u{1F431}\u{1F409}。';
+
+@Entry
+@Component
+struct Utf16GlyphHighlightPage {
+  private textController: TextController = new TextController();
+  private canvasContext: CanvasRenderingContext2D = new CanvasRenderingContext2D(new RenderingContextSettings(true));
+  @State isCanvasReady: boolean = false;
+  @State resultInfo: string = '长按下方文字（含表情符号）查看渐变背景高亮效果';
+
+  aboutToAppear(): void {
+    const styledString = new MutableStyledString(TEXT_CONTENT, [{
+      start: 0, length: TEXT_CONTENT.length,
+      styledKey: StyledStringKey.FONT,
+      styledValue: new TextStyle({ fontSize: LengthMetrics.vp(24) })
+    }]);
+    this.textController.setStyledString(styledString);
+  }
+
+  build() {
+    Column() {
+      Text(this.resultInfo)
+        .fontSize(13).fontColor('#666666')
+        .padding({ left: 16, right: 16, top: 12, bottom: 8 })
+        .margin({ left: 12, right: 12, top: 12 })
+        .width('100%').height(110)
+      Stack({ alignContent: Alignment.TopStart }) {
+        Canvas(this.canvasContext).width('100%').height('100%')
+          .onReady(() => { this.isCanvasReady = true; })
+        Text(undefined, { controller: this.textController })
+          .gesture(LongPressGesture({ repeat: false, duration: 500 })
+            .onAction((event: GestureEvent) => { this.handleLongPress(event); }))
+      }
+      .layoutWeight(1).width('100%')
+      .padding({ left: 16, right: 16, top: 12 })
+      .margin({ left: 12, right: 12, bottom: 12 }).clip(true)
+    }.height('100%').width('100%')
+  }
+
+  private handleLongPress(event: GestureEvent): void {
+    // 处理流程：坐标转px -> getCharacterPositionAtCoordinate获取字符位置与亲和性 ->
+    //           依亲和性确定字符范围 -> getGlyphRangeForCharacterRange获取字形范围与实际字符范围 ->
+    //           getRectsForRange获取矩形区域 -> Canvas绘制渐变背景
+    if (!this.isCanvasReady) { this.resultInfo = 'Canvas 尚未就绪，请稍后重试'; return; }
+    const uiContext = this.getUIContext();
+    // 获取文本布局管理对象，用于后续的字符位置/字形范围/矩形区域查询
+    const layoutManager = this.textController.getLayoutManager();
+    if (!layoutManager) { this.resultInfo = 'LayoutManager 不可用'; return; }
+    const finger = event.fingerList[0];
+    if (!finger) { this.resultInfo = '未获取到手指信息'; return; }
+    // 将长按坐标从vp转换为px，供布局查询接口使用
+    const localXPx = uiContext.vp2px(finger.localX);
+    const localYPx = uiContext.vp2px(finger.localY);
+    // 以UTF-16编码查询距离长按坐标最近的字符位置及亲和性
+    const posAffinity = layoutManager.getCharacterPositionAtCoordinate(localXPx, localYPx, TextEncoding.TEXT_ENCODING_UTF16);
+    if (!posAffinity) { this.resultInfo = 'getCharacterPositionAtCoordinate 返回 undefined'; return; }
+    const index = posAffinity.position;
+    const affinity = posAffinity.affinity;
+    let charStart: number, charEnd: number;
+    if (affinity === text.Affinity.UPSTREAM) {
+      charStart = Math.max(0, index - 1); charEnd = index;
+    } else {
+      charStart = index; charEnd = index + 1;
+    }
+    // 根据字符范围查询对应的字形范围与实际字符范围（UTF-16编码）
+    const glyphRanges = layoutManager.getGlyphRangeForCharacterRange(
+      { start: charStart, end: charEnd }, TextEncoding.TEXT_ENCODING_UTF16);
+    if (!glyphRanges || glyphRanges.length === 0) {
+      this.resultInfo = `getGlyphRangeForCharacterRange 返回空, index=${index}, affinity=${affinity}`; return;
+    }
+    const actualRange: TextRange = glyphRanges.length >= 2 ? glyphRanges[1] : { start: charStart, end: charEnd };
+    // 根据实际字符范围获取文本矩形区域，用于绘制高亮背景
+    const textBoxes = layoutManager.getRectsForRange(actualRange, text.RectWidthStyle.TIGHT, text.RectHeightStyle.TIGHT);
+    if (!textBoxes || textBoxes.length === 0) {
+      this.resultInfo = `getRectsForRange 返回空, range=[${actualRange.start}, ${actualRange.end}]`; return;
+    }
+    this.drawGradientBackground(uiContext, textBoxes);
+    const affinityStr = affinity === text.Affinity.UPSTREAM ? 'UPSTREAM(0)' : 'DOWNSTREAM(1)';
+    this.resultInfo =
+      `坐标: (${finger.localX.toFixed(1)}, ${finger.localY.toFixed(1)})vp\n` +
+      `UTF16偏移: ${index}, 亲和性: ${affinityStr}\n` +
+      `传入范围: [${charStart}, ${charEnd}] -> 实际字符范围: [${actualRange.start}, ${actualRange.end}]\n` +
+      `矩形数: ${textBoxes.length}`;
+  }
+
+  private drawGradientBackground(uiContext: UIContext, textBoxes: TextBox[]): void {
+    const ctx = this.canvasContext;
+    ctx.clearRect(0, 0, 5000, 5000);
+    for (const box of textBoxes) {
+      const r = box.rect;
+      const l = uiContext.px2vp(r.left), t = uiContext.px2vp(r.top);
+      const w = uiContext.px2vp(r.right) - l, h = uiContext.px2vp(r.bottom) - t;
+      if (w <= 0 || h <= 0) continue;
+      const g = ctx.createLinearGradient(l, t, l + w, t + h);
+      g.addColorStop(0, 'rgba(187, 153, 255, 0.66)');
+      g.addColorStop(1, 'rgba(129, 229, 255, 0.66)');
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.roundRect(l, t, w, h, 4);
+      ctx.fill();
+    }
+  }
+}
+```
+
+该效果图会因设备尺寸差异有显示区别，仅供参考。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/k9FnLLBMTaOxgCZ1xymoBA/zh-cn_image_0000002736315017.gif)

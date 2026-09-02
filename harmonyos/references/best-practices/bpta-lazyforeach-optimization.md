@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-lazyforeac
 title: 懒加载优化性能
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > 懒加载优化性能
 category: best-practices
-scraped_at: 2026-04-29T14:13:29+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:4fd8ccc35a0c6fe9cccf13b788524800be3819bf045470586da4910e32a3ec32
+scraped_at: 2026-09-02T15:03:21+08:00
+doc_updated_at: 2026-08-26
+content_hash: sha256:6491c6053467bf58ebdd68dbf7f6379ebae10d12ea83ea75eaec8c33c14f2125
 ---
 
 ## 概述
@@ -28,8 +28,8 @@ content_hash: sha256:4fd8ccc35a0c6fe9cccf13b788524800be3819bf045470586da4910e32a
 
   其数据加载、组件树挂载、页面渲染的示意图如下所示：
 
-  **图1** ForEach渲染过程示意图   
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/c35F0DmaQ3GOFBEbQ2tr1g/zh-cn_image_0000002194010368.png "点击放大")
+  **图1** ForEach渲染过程示意图  
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/X8580yEoSt6ensQ3XZ8Xtw/zh-cn_image_0000002194010368.png "点击放大")
 
   如果列表数据较少，数据一次性全量加载不是性能瓶颈时，可以直接使用ForEach；但是当数据量大、组件结构复杂的情况下ForEach会出现性能瓶颈。这是因为要一次性加载所有的列表数据，创建所有组件节点并完成组件树的构建，在数据量大时会非常耗时，从而导致页面启动时间过长。另外，屏幕可视区外的组件虽然不会显示在屏幕上，但是仍然会占用内存。在系统处于高负载的情况下，更容易出现性能问题，极限情况下甚至会导致应用异常退出。
 * 数据懒加载
@@ -44,19 +44,19 @@ content_hash: sha256:4fd8ccc35a0c6fe9cccf13b788524800be3819bf045470586da4910e32a
 
   **图2** LazyForEach渲染过程示意图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/BIB13ioLSBKKJBdDNUKxzQ/zh-cn_image_0000002229450649.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/btYKVs_SRg-WD0Z3LKngrw/zh-cn_image_0000002229450649.png "点击放大")
 
 LazyForEach实现了按需加载，针对列表数据量大、列表组件复杂的场景，减少了页面首次启动时一次性加载数据的时间消耗，减少了内存峰值。不过在长列表滑动的过程中，因为需要根据用户的滑动行为不断地加载新的内容，这需要进行额外的数据请求和处理，会增加滑动时的计算量，从而对性能产生一定的影响。然而，合理使用LazyForEach的按需加载能力，通过在滑动停止或达到某个阈值时才进行加载，可以减少不必要的计算和请求，从而提高性能，给用户带来更好的体验。总之，在实现按需加载的场景中，需要综合考虑性能和用户体验的平衡，合理地优化加载逻辑和渲染方式，以提升整体的性能表现。
 
 ### 键值生成规则和组件创建规则
 
-说明
+**说明** 
 
-建议开发者优先使用[Code Linter扫描工具](../harmonyos-guides/ide-code-linter.md)进行代码检查，重点关注[@performance/hp-arkui-no-stringify-in-lazyforeach-key-generator](../harmonyos-guides/ide_hp-arkui-no-stringify-lazyforeach-key.md)规则。若扫描结果中出现该规则相关问题，可参考本章节提供的优化建议进行调整。
+建议开发者优先使用[Code Linter代码检查](../harmonyos-guides/ide-code-linter.md)进行代码检查，重点关注[@performance/hp-arkui-no-stringify-in-lazyforeach-key-generator](../harmonyos-guides/ide_hp-arkui-no-stringify-lazyforeach-key.md)规则。若扫描结果中出现该规则相关问题，可参考本章节提供的优化建议进行调整。
 
 在使用LazyForEach时，我们需要分别实现数据源dataSource、键值生成函数keyGenerator、子组件生成函数itemGenerator。其中，数据源为[IDataSource](../harmonyos-references/ts-rendering-control-lazyforeach.md#idatasource)类型，需要开发者实现该接口。keyGenerator是一个函数，用于为每个item生成一个唯一且持久的键值以标识对应的组件，开发者可以通过它自定义键值的生成规则，关于键值生成规则，详情可参考[键值生成规则](../harmonyos-guides/arkts-rendering-control-lazyforeach.md#键值生成规则)。LazyForEach的itemGenerator函数会根据键值生成规则为数据源的每个数组项创建组件，组件的创建分为首次渲染和非首次渲染两种情况，详情可参考[组件创建规则](../harmonyos-guides/arkts-rendering-control-lazyforeach.md#组件创建规则)。
 
-说明
+**说明** 
 
 在使用LazyForEach进行组件复用时，键值生成函数keyGenerator中不推荐使用stringify。在复杂的业务场景中，使用stringify会对item对象进行序列化，最终把item转换成字符串，这过程需要消耗大量的时间和计算资源，从而导致页面性能降低。
 
@@ -70,19 +70,27 @@ LazyForEach作为常见的渲染控制的方式之一，常用的使用场景有
 
 虽然，按需加载列表项可以优化长列表性能，但在快速滑动长列表的场景下，可能会来不及加载需要显示的列表项，导致出现白块的现象，从而影响用户体验。而在ArkUI中，List容器提供了[cachedCount](../harmonyos-references/ts-container-list.md#cachedcount)属性，LazyForEach可以结合cachedCount属性一起使用，能够避免白块的现象。cachedCount可以设置列表中ListItem/ListItemGroup的预加载数量，并且只在LazyForEach中生效，即cachedCount只能与LazyForEach一起使用。除了List容器，其他容器Grid、Swiper以及WaterFlow也都包含cachedCount属性。cachedCount的使用方法如下所示。
 
-```
-1. List() {
-2. // ...
-3. }.cachedCount(3)
+```screen
+List() {
+  // ...
+}.cachedCount(3)
 ```
 
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/ArkUI/Lazy_Loading_Optimizes_Performance/entry/src/main/ets/pages/Index.ets#L12-L14)
-
-此外，HarmonyOS应用框架提供了组件复用能力，可以结合LazyForEach一起使用，进一步优化长列表的性能。组件复用会把组件树上将要移除的组件进行回收，回收的组件会进入到一个回收缓存区。后续创建新组件节点时，会复用缓存区中的节点，节约组件重新创建的时间。关于组件复用的详细原理可以参考[组件复用](bpta-component-reuse.md)。针对长列表加载的性能优化，可以参考[优化长列表加载慢丢帧问题](bpta-best-practices-long-list.md)。
+此外，HarmonyOS应用框架提供了组件复用能力，可以结合LazyForEach一起使用，进一步优化长列表的性能。组件复用会把组件树上将要移除的组件进行回收，回收的组件会进入到一个回收缓存区。后续创建新组件节点时，会复用缓存区中的节点，节约组件重新创建的时间。关于组件复用的详细原理可以参考[自定义组件复用开发实践](../harmonyos-guides/arkts-component_reuse.md)。针对长列表加载的性能优化，可以参考[长列表加载丢帧优化](bpta-best-practices-long-list.md)。
 
 ### 无限瀑布流
 
 瀑布流的内容呈现方式类似瀑布流一样，从上往下依次排列，每一列的高度不一定相同，整体呈现出瀑布流的视觉效果。在瀑布流中，经常使用LazyForEach实现数据按需加载，同时，结合onReachEnd、onScrollIndex方法实现无限瀑布流，关于瀑布流的优化详情可以参考[优化瀑布流加载慢丢帧问题](bpta-waterflow-performance-optimization.md)。
+
+### 混合布局列表
+
+在混合布局中，容器内部包含不同的组件树。这种场景常见于电商首页、社交媒体等复杂应用，其中可能同时存在图片卡片、视频卡片、文本列表等多种异构组件类型。它们的渲染逻辑、数据结构和交互方式各不相同，对性能优化提出了更高要求。
+
+1.针对多组件的快速滑动的场景，滑动过程中可能出现上一次渲染内容的“残影”问题。建议在自定义组件上标记@Reusable（参考：[@ReusableV2装饰器：V2组件复用](../harmonyos-guides/arkts-new-reusablev2.md)）以启用组件复用机制，同时需要在[aboutToReuse](../harmonyos-references/ts-custom-component-new-lifecycle.md#abouttoreuse)生命周期回调中妥善处理组件状态的重置逻辑，确保组件在被复用时能够正确展示新数据。
+
+2.针对不同类型的组件，建议为其分配不同的reuseId标识。当新数据需要渲染时，复用机制会优先在对应reuseId的缓存池中查找空闲组件实例。这样可以确保复用的组件与待渲染数据的类型相匹配，避免因组件结构不一致而触发不必要的销毁与重建流程，从而减少性能开销和潜在的界面卡顿。
+
+3.针对白块问题，通过预加载机制，LazyForEach结合cachedCount属性一起使用，在渲染线程空闲时段提前构建和缓存即将进入视口的复杂嵌套组件实例，从而有效避免高速滚动场景下因组件创建耗时导致的视觉空白问题。
 
 ## 常见失效场景
 
@@ -101,28 +109,42 @@ LazyForEach作为常见的渲染控制的方式之一，常用的使用场景有
 
 1. 通过日志观察键值、子组件创建的情况，参考如下所示。开发者需要留意日志中是否出现相同的键值、子组件出现的次数与实际不符等情况。
 
+   ```screen
+   LazyForEach(this.data, (lazyForEachItem: string) => {
+     ListItem() {
+       Row() {
+         Text(lazyForEachItem).fontSize(50)
+       }.margin({ left: 10, right: 10 })
+     }.onAppear(() => {
+       // Record the number of times the component is created through onAppear
+       console.info('appear:' + lazyForEachItem);
+     })
+   }, (item: string) => {
+     // Print the key value in the keyGenerator function
+     console.info('key:' + item);
+     return item;
+   })
    ```
-   1. LazyForEach(this.data, (lazyForEachItem: string) => {
-   2. ListItem() {
-   3. Row() {
-   4. Text(lazyForEachItem).fontSize(50)
-   5. }.margin({ left: 10, right: 10 })
-   6. }.onAppear(() => {
-   7. // Record the number of times the component is created through onAppear
-   8. console.info('appear:' + lazyForEachItem);
-   9. })
-   10. }, (item: string) => {
-   11. // Print the key value in the keyGenerator function
-   12. console.info('key:' + item);
-   13. return item;
-   14. })
-   ```
-
-   [Index.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkUI/Lazy_Loading_Optimizes_Performance/entry/src/main/ets/pages/Index.ets#L18-L31)
 2. 通过Profiler调优工具抓取Trace，可以判断子组件创建的次数。如下图所示，在该帧中出现大量的BuildLazyItem切片，每一次BuildLazyItem对应一次子组件的创建，对比数量可知LazyForEach按需加载失效。关于调优的内容可参考[性能分析](bpta-optimization-tool-practice.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/c5hmYv0cTTKtJWquC1Do5w/zh-cn_image_0000002194010376.png "点击放大")
-3. 通过HiDumper查看组件信息，判断组件的渲染情况。关于HiDumper的内容可参考[HiDumper](../harmonyos-guides/hidumper.md)。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/Mf4vojN_RemjigjXPV-aSw/zh-cn_image_0000002194010376.png "点击放大")
+3. 通过HiDumper查看组件信息，判断组件的渲染情况。关于HiDumper的内容可参考[hidumper](../harmonyos-guides/hidumper.md)。
+
+### 混合布局中懒加载失效场景
+
+当父容器未设置明确的布局约束时，子容器会尝试计算并实例化所有列表项以完成自身的布局测量。在这种情况下，即使开发者使用了 LazyForEach进行按需加载，系统仍会在瞬间创建数千个组件实例，导致懒加载机制完全失效。
+
+场景：具备无限滚动能力的容器嵌套按需加载容器时，若未显式约束子容器的纵向布局空间，将使懒加载失效。
+
+根因：父容器默认在主轴（垂直方向）提供无限的测绘空间，导致内部子容器无法界定视口边界。
+
+结果：LazyForEach的按需实例化逻辑强依赖于视口裁剪，在无边界约束下，在单个布局帧内会瞬时实例化数据源中的数千个组件。导致懒加载机制瘫痪、严重的 UI 线程阻塞、内存瞬时溢出（OOM）以及首屏渲染耗时（TTI）的指数级增长。
+
+解决方案：
+
+给内部子容器设置明确的height()或使用百分比、layoutWeight(1)限制视口边界。
+
+使用[LazyVGridLayout](../harmonyos-references/ts-container-lazyvgridlayout.md)作为[WaterFlow](../harmonyos-references/ts-container-waterflow.md)或[FlowItem](../harmonyos-references/ts-container-flowitem.md)的子组件，通过[columnsTemplate](../harmonyos-references/ts-container-lazyvgridlayout.md#columnstemplate)和[rowsGap](../harmonyos-references/ts-container-lazyvgridlayout.md#rowsgap)、[columnsGap](../harmonyos-references/ts-container-lazyvgridlayout.md#columnsgap)等属性，来实现复杂嵌套布局，避免懒加载失效。
 
 ### 键值相同导致渲染错乱
 
@@ -132,93 +154,89 @@ LazyForEach作为常见的渲染控制的方式之一，常用的使用场景有
 
 当使用LazyForEach时，如果子组件ListItem过于复杂，在子组件创建时，将产生大量的布局计算耗时，最终导致该帧丢帧。关键代码如下所示。
 
+```typescript
+@Entry
+@Component
+struct Index {
+  private data: MyDataSource = new MyDataSource();
+
+  aboutToAppear() {
+    for (let i = 0; i <= 30; i++) {
+      this.data.pushData(`Hello ${i}`)
+    }
+  }
+
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (lazyForEachItem: string) => {
+        ListItem() {
+          Column() {
+            ForEach(this.data.getAllData(), (forEachItem: string) => {
+              ListItem() {
+                Row() {
+                  Text(lazyForEachItem + forEachItem).fontSize(50)
+                    .onAppear(() => {
+                      console.info("appear:" + lazyForEachItem)
+                    })
+                }.margin({ left: 10, right: 10 })
+              }
+            }, (item: string) => item)
+          }
+        }
+      }, (item: string) => item)
+    }.cachedCount(5)
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct Index {
-4. private data: MyDataSource = new MyDataSource();
-
-6. aboutToAppear() {
-7. for (let i = 0; i <= 30; i++) {
-8. this.data.pushData(`Hello ${i}`)
-9. }
-10. }
-
-12. build() {
-13. List({ space: 3 }) {
-14. LazyForEach(this.data, (lazyForEachItem: string) => {
-15. ListItem() {
-16. Column() {
-17. ForEach(this.data.getAllData(), (forEachItem: string) => {
-18. ListItem() {
-19. Row() {
-20. Text(lazyForEachItem + forEachItem).fontSize(50)
-21. .onAppear(() => {
-22. console.info("appear:" + lazyForEachItem)
-23. })
-24. }.margin({ left: 10, right: 10 })
-25. }
-26. }, (item: string) => item)
-27. }
-28. }
-29. }, (item: string) => item)
-30. }.cachedCount(5)
-31. }
-32. }
-```
-
-[segment1.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/ArkUI/Lazy_Loading_Optimizes_Performance/entry/src/main/ets/segment/segment1.ets#L48-L80)
 
 ### Scroll嵌套List导致按需加载失效
 
-当Scroll容器嵌套List组件加载长列表时，若不指定List的宽高尺寸，则默认加载全部ListItem，导致按需加载失效，甚至会导致应用卡顿、崩溃，详细案例可参考[合理使用布局](bpta-improve-layout-performance.md)。
+当Scroll容器嵌套List组件加载长列表时，若不指定List的宽高尺寸，则默认加载全部ListItem，导致按需加载失效，甚至会导致应用卡顿、崩溃，详细案例可参考[布局优化指导](bpta-improve-layout-performance.md)。
 
 ### GridItem未设置高度导致按需加载失效
 
 当使用Grid容器时，如果GridItem没有设置高度，会加载所有子组件，设置了GridItem的宽高，会加载Grid显示区域内的子组件。参考案例代码如下：
 
+```typescript
+@Entry
+@Component
+struct Index {
+  private data: MyDataSource = new MyDataSource();
+  private scroller: Scroller = new Scroller();
+
+  aboutToAppear() {
+    for (let i = 0; i <= 30; i++) {
+      this.data.pushData(`Hello ${i}`)
+    }
+  }
+
+  build() {
+    Column() {
+      Grid(this.scroller) {
+        LazyForEach(this.data, (lazyForEachItem: string) => {
+          GridItem() {
+            Text(lazyForEachItem)
+              .fontSize(50)
+              .width('100%')
+          }
+          .onAppear(() => {
+            console.info("appear:" + lazyForEachItem)
+          })
+        }, (item: string) => {
+          return item;
+        })
+      }
+      .columnsTemplate('1fr')
+      .enableScrollInteraction(true)
+      .width('100%')
+      .height(800)
+      .cachedCount(5)
+    }
+    .width('100%')
+    .height(700)
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct Index {
-4. private data: MyDataSource = new MyDataSource();
-5. private scroller: Scroller = new Scroller();
-
-7. aboutToAppear() {
-8. for (let i = 0; i <= 30; i++) {
-9. this.data.pushData(`Hello ${i}`)
-10. }
-11. }
-
-13. build() {
-14. Column() {
-15. Grid(this.scroller) {
-16. LazyForEach(this.data, (lazyForEachItem: string) => {
-17. GridItem() {
-18. Text(lazyForEachItem)
-19. .fontSize(50)
-20. .width('100%')
-21. }
-22. .onAppear(() => {
-23. console.info("appear:" + lazyForEachItem)
-24. })
-25. }, (item: string) => {
-26. return item;
-27. })
-28. }
-29. .columnsTemplate('1fr')
-30. .enableScrollInteraction(true)
-31. .width('100%')
-32. .height(800)
-33. .cachedCount(5)
-34. }
-35. .width('100%')
-36. .height(700)
-37. }
-38. }
-```
-
-[segment2.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkUI/Lazy_Loading_Optimizes_Performance/entry/src/main/ets/segment/segment2.ets#L48-L86)
 
 ## 示例代码
 

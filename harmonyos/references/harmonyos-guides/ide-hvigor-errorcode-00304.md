@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-er
 title: 资源缺失错误码
 breadcrumb: 指南 > 构建应用 > 构建报错排查 > 编译构建错误码 > 资源缺失错误码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:27+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:9903b4360a56d784e0d8ef8e1a95f12e980187977e808b715a52350ba86a6e5a
+scraped_at: 2026-09-02T14:50:57+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:dbcb8251c4d850e068ccabac4ae7f522a25d37e6ea09afab99864c066082289d
 ---
 
 ## 00304001 启动框架配置文件不存在
@@ -941,3 +941,76 @@ app.json5文件缺失。
 **处理步骤**
 
 确保app.json5文件存在。
+
+## 00304069 executableBinaryPaths-path不是有效的文件
+
+**错误信息**
+
+Invalid executableBinaryPaths-path XXX. At file: YYY.
+
+**错误描述**
+
+executableBinaryPaths-path不是一个有效的文件。
+
+**可能原因**
+
+executableBinaryPaths-path的值对应的文件路径配置错误。
+
+**处理步骤**
+
+确保path配置的文件存在，且存放在本模块的libs/{abi}/目录下，其中{abi}为设备CPU架构类型（如arm64-v8a、x86\_64、armeabi-v7a）。
+
+## 00304071 skillProfiles[name='XXX']中对应的skill目录不存在
+
+**错误信息**
+
+Directory XXX does not exist in skillProfiles[name='XXX']. At file: YYY.
+
+**错误描述**
+
+skillProfiles[name='XXX']中对应的skill目录不存在。
+
+**可能原因**
+
+skillProfiles[name='XXX']中对应的skill目录不存在。
+
+**处理步骤**
+
+创建skillProfiles[name='XXX']对应的skill目录：模块目录/skills/XXX。
+
+## 00304072 skillProfiles的srcEntries文件要在scripts目录下
+
+**错误信息**
+
+srcEntry value XXX is invalid in skillProfiles[name='YYY']. The file must exist in the skills/YYY/scripts directory. At file: ZZZ.
+
+**错误描述**
+
+skillProfiles的srcEntries中的文件要在scripts目录下。
+
+**可能原因**
+
+skillProfiles的srcEntries中的XXX文件不在skills/YYY/scripts目录下。
+
+**处理步骤**
+
+将skillProfiles的srcEntries中的XXX文件放在skills/YYY/scripts目录下。
+
+## 00304074 找不到远程包
+
+**错误信息**
+
+Remote package not found. At file: XXX.
+
+**错误描述**
+
+找不到远程包。
+
+**可能原因**
+
+1. hvigorfile.ts或hvigorconfig.ts中，在[taskGraphResolved](ide-hvigor-life-cycle.md#section746253616316)之前的阶段调用了getOhpmDependencyInfo或getOhpmRemoteHspDependencyInfo。
+2. hvigorfile.ts或hvigorconfig.ts中，直接或间接依赖的插件在[taskGraphResolved](ide-hvigor-life-cycle.md#section746253616316)之前的阶段调用了getOhpmDependencyInfo或getOhpmRemoteHspDependencyInfo。
+
+**处理步骤**
+
+使用[getOhpmDependencyInfoV2](ide-build-expanding-context.md#section1897251184819)、[getOhpmRemoteHspDependencyInfoV2](ide-build-expanding-context.md#section1697717782918)替换getOhpmDependencyInfo、getOhpmRemoteHspDependencyInfo。

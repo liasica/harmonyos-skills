@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-de
 title: 自定义组合
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > 自定义组合
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:01+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:7df93b5e9a822106f70a0254607d6ac4f679403aff9ed7d7019a3c0032a6d3de
+scraped_at: 2026-09-02T14:49:51+08:00
+doc_updated_at: 2026-05-14
+content_hash: sha256:0bc1dcfafe2f8184dde1fcc4337d9e4d4266fda797a9a2255a47e9e82eccac64
 ---
 
 ## 概述
 
-自定义组合提供组件粒度的自定义能力，开发者可通过自定义组件组合已有组件来构建特定的符合业务逻辑的高级组件。组件组合的过程中可以使用布局容器和通用布局属性来对子组件进行自定义的位置排布，可以使用Canvas组件完成纯自绘，也可以使用Shape类组件，通过形状的组合，构建几何图形，实现带交互的图形动画。动画模块可针对不同类型的属性，实现灵活的动画效果。
+自定义组合提供组件粒度的自定义能力，开发者可通过自定义组件组合已有组件来构建特定的符合业务逻辑的高级组件。组件组合的过程中可以使用布局容器和通用布局属性来对子组件进行自定义的位置排布，可以使用[Canvas](arkts-drawing-customization-on-canvas.md)组件完成纯自绘，也可以使用[Shape](../harmonyos-references/ts-drawing-components-shape.md)类组件，通过形状的组合，构建几何图形，实现带交互的图形动画。动画模块可针对不同类型的属性，实现灵活的动画效果。
 
 ## 基本概念
 

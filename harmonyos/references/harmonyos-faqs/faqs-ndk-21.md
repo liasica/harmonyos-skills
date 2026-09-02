@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-21
 title: 如何在ArkTS侧引用其他三方so库
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何在ArkTS侧引用其他三方so库
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:15:50+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:1dadff432bc6acc46e798f50273a7da90baab0484e96ab98c2fcad06d7a802ee
+scraped_at: 2026-09-02T14:53:57+08:00
+doc_updated_at: 2026-08-13
+content_hash: sha256:3815e83d9d05db2281d496d5492cae24e0b17b5bf71be40b9d5392fd01af2376
 ---
 
 **解决措施**
@@ -14,55 +14,51 @@ content_hash: sha256:1dadff432bc6acc46e798f50273a7da90baab0484e96ab98c2fcad06d7a
 
 1. 将so文件移动到libs文件夹下对应架构的目录。如果在纯ArkTS工程中，还需将编译三方库时生成的libc++\\_xxx.so移动到该目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/xF2DoqUGRmOqYT0Nt_TC9Q/zh-cn_image_0000002194318516.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/Twi1AxOwROqrRIC-YRfYbg/zh-cn_image_0000002654835197.png "点击放大")
 2. 在src/main/cpp/types目录下创建新目录，并将Index.d.ts和oh-package.json5文件移动到该目录下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/zApv2AXWR0CeIpUZ5OmM-g/zh-cn_image_0000002229604289.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/kl9vhsZsS92HUSmSWv5hpA/zh-cn_image_0000002654795263.png "点击放大")
 3. 在模块级的oh-package.json5文件中声明该 so 库的根目录路径。
 
+   ```json
+   "dependencies": {
+     "libimportthirdpartylibraries.so": "file:./src/main/cpp/types/libimportthirdpartylibraries",
+     "libapplication.so": "file:./src/main/cpp/types/libapplication"
+   },
    ```
-   1. "dependencies": {
-   2. "libimportthirdpartylibraries.so": "file:./src/main/cpp/types/libimportthirdpartylibraries",
-   3. "libapplication.so": "file:./src/main/cpp/types/libapplication"
-   4. },
-   ```
-
-   [oh-package.json5](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/Ndk/Ndk2/ImportThirdPartyLibraries/oh-package.json5#L12-L15)
 4. 在代码中引用并调用oh-package.json5中声明的依赖。
 
+   ```ts
+   import testNapi from 'libimportthirdpartylibraries.so';
+   import myNapi from 'libapplication.so';
+
+   @Entry
+   @Component
+   struct Index {
+     @State message: string = 'Hello World';
+
+     build() {
+       Row() {
+         Column() {
+           Text(this.message)
+             .fontSize(50)
+             .fontWeight(FontWeight.Bold)
+             .onClick(() => {
+               console.info(`MyTest NAPI 2 + 3 = ${myNapi.add(2, 3)}`);
+               console.info(`MyTest NAPI 2 - 3 = ${testNapi.sub(2, 3)}`);
+             })
+         }
+         .width('100%')
+       }
+       .height('100%')
+     }
+   }
    ```
-   1. import testNapi from 'libimportthirdpartylibraries.so';
-   2. import myNapi from 'libapplication.so';
-
-   4. @Entry
-   5. @Component
-   6. struct Index {
-   7. @State message: string = 'Hello World';
-
-   9. build() {
-   10. Row() {
-   11. Column() {
-   12. Text(this.message)
-   13. .fontSize(50)
-   14. .fontWeight(FontWeight.Bold)
-   15. .onClick(() => {
-   16. console.info(`MyTest NAPI 2 + 3 = ${myNapi.add(2, 3)}`);
-   17. console.info(`MyTest NAPI 2 - 3 = ${testNapi.sub(2, 3)}`);
-   18. })
-   19. }
-   20. .width('100%')
-   21. }
-   22. .height('100%')
-   23. }
-   24. }
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/Ndk/Ndk2/ImportThirdPartyLibraries/src/main/ets/pages/Index.ets#L19-L42)
 
 运行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/3VvAKFIGRWWgnvrhW9rMnw/zh-cn_image_0000002229758785.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/ltB8_JZnQzy0LW9bENxnwQ/zh-cn_image_0000002624635798.png "点击放大")
 
 **参考链接**
 
-[在ArkTS侧引用三方so库](../best-practices/bpta-dynamic-link-library.md#section166546365376)
+[在ArkTS侧引用三方so库](../harmonyos-guides/integrate-third-party-dlls.md#在arkts侧引用三方so库)

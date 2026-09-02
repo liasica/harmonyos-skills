@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-unpu
 title: ohpm unpublish
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm unpublish
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:47:53+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:8b858f222fa983fa9fd37f9161f41dcdb9529f2d1323d107fdbefd0bab7908bf
+scraped_at: 2026-09-02T15:00:29+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:280a57ad09634be5398c108fa2c017dc6666cb4ba748b48c7ed1da228a3fdd49
 ---
 
 下架已发布的三方库。
 
 ## 命令格式
 
-```
-1. ohpm unpublish [options] [<@group>]<pkg>[@<version>]
+```screen
+ohpm unpublish [options] [<@group>]<pkg>[@<version>]
 ```
 
-说明
+**说明** 
 
 * @group：三方库的命名空间，可选。
 * pkg：三方库名称，必选。
@@ -37,7 +37,7 @@ content_hash: sha256:8b858f222fa983fa9fd37f9161f41dcdb9529f2d1323d107fdbefd0bab7
 * 类型：Boolean
 * 别名：f
 
-强制下架。
+默认不开启。使用--force或者-f参数，开启强制下架。
 
 ### publish\_registry
 
@@ -63,7 +63,7 @@ content_hash: sha256:8b858f222fa983fa9fd37f9161f41dcdb9529f2d1323d107fdbefd0bab7
 ### fetch\_timeout
 
 * 默认值：60000
-* 类型： Number
+* 类型：Number
 * 别名：ft
 
 可以在 unpublish 命令后面配置 --ft, --fetch\_timeout <number> 参数，设置操作的超时时间，如果没有指定，默认超时时间为60000ms。
@@ -71,21 +71,23 @@ content_hash: sha256:8b858f222fa983fa9fd37f9161f41dcdb9529f2d1323d107fdbefd0bab7
 ### strict\_ssl
 
 * 默认值：true
-* 类型： Boolean
+* 类型：Boolean
 
-可以在 unpublish 命令后面配置 --strict\_ssl true 参数，校验 https 证书；配置 --strict\_ssl false 参数，不校验 https 证书。
+可以在 unpublish 命令后面不配置参数、配置--strict\_ssl或--strict\_ssl true参数时，开启校验HTTPS证书。
+
+从ohpm 26.0.0.630版本开始，如需关闭校验，可配置--no-strict\_ssl或--strict\_ssl false参数，推荐使用--no-strict\_ssl参数。
 
 ### log\_level
 
 * 默认值：无
-* 类型： String
+* 类型：String
 
 从ohpm 6.0.2.636版本开始，可以在 unpublish 命令后配置--log\_level <string>参数，指定执行当前命令的日志级别（info、debug、warn、error），如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
 ### debug
 
 * 默认值：false
-* 类型： Boolean
+* 类型：Boolean
 
 从ohpm 6.0.2.636版本开始，可以在命令后配置--debug参数，指定执行当前命令的日志级别为debug，该配置仅在当前命令行生效，不修改.ohpmrc中的日志级别，如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
@@ -93,10 +95,10 @@ content_hash: sha256:8b858f222fa983fa9fd37f9161f41dcdb9529f2d1323d107fdbefd0bab7
 
 下架已发布的三方库，执行以下命令：
 
-```
-1. ohpm unpublish demo@1.0.0 -f
+```screen
+ohpm unpublish demo@1.0.0 -f
 ```
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/QjOJvj91TVC41QQ-EhbH8g/zh-cn_image_0000002530753718.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/7p3Owz-ASueJKx2j-uZ9ag/zh-cn_image_0000002731382783.png "点击放大")

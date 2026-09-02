@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 栅格布局 (GridRow/GridCol)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 组件布局 > 构建布局 > 栅格布局 (GridRow/GridCol)
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:42+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:347603d0a80d0cb17fe3b5f50e4fb0411408ec4dd1ccf121cd51541cbd464a37
+scraped_at: 2026-09-02T14:59:17+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:85309ac84245bddb551a8adaeac3815d9e570397af0ac50770d5c67ff22c4b81
 ---
 
 ## 概述
@@ -15,7 +15,7 @@ content_hash: sha256:347603d0a80d0cb17fe3b5f50e4fb0411408ec4dd1ccf121cd51541cbd4
 1. 提供可循的规律：栅格布局可以为布局提供规律性的结构，解决多尺寸多设备的动态布局问题。通过将页面划分为等宽的列数和行数，可以方便地对页面元素进行定位和排版。
 2. 统一的定位标注：栅格布局可以为系统提供一种统一的定位标注，保证不同设备上各个模块的布局一致性。这可以减少设计和开发的复杂度，提高工作效率。
 3. 灵活的间距调整方法：栅格布局可以提供一种灵活的间距调整方法，满足特殊场景布局调整的需求。通过调整列与列之间和行与行之间的间距，可以控制整个页面的排版效果。
-4. 自动换行和自适应：栅格布局可以完成一对多布局的自动换行和自适应。当页面元素的数量超出了一行或一列的容量时，他们会自动换到下一行或下一列，并且在不同的设备上自适应排版，使得页面布局更加灵活和适应性强。
+4. 自动换行和自适应：栅格布局可以完成一对多布局的自动换行和自适应。当页面元素的数量超出了一行或一列的容量时，它们会自动换到下一行或下一列，并且在不同的设备上自适应排版，使得页面布局更加灵活和适应性强。
 
 [GridRow](../harmonyos-references/ts-container-gridrow.md)为栅格容器组件，需与栅格子组件[GridCol](../harmonyos-references/ts-container-gridcol.md)在栅格布局场景中联合使用。
 
@@ -58,63 +58,61 @@ content_hash: sha256:347603d0a80d0cb17fe3b5f50e4fb0411408ec4dd1ccf121cd51541cbd4
   | xl | [n3, n4) |
   | xxl | [n4, INF) |
 
-  ```
-  1. breakpoints: {value: ['100vp', '200vp']} // 表示xs、sm、md共3个断点被使用，小于100vp为xs，100vp-200vp为sm，大于200vp为md。
-  2. breakpoints: {value: ['320vp', '600vp']} // 表示xs、sm、md共3个断点被使用，小于320vp为xs，320vp-600vp为sm，大于600vp为md。
-  3. breakpoints: {value: ['320vp', '600vp', '840vp', '1440vp']} // 表示xs、sm、md、lg、xl共5个断点被使用，小于320vp为xs，320vp-600vp为sm，  600vp-840vp为md，840vp-1440vp为lg，大于1440vp为xl。
+  ```ts
+  breakpoints: {value: ['100vp', '200vp']} // 表示xs、sm、md共3个断点被使用，小于100vp为xs，100vp-200vp为sm，大于200vp为md。
+  breakpoints: {value: ['320vp', '600vp']} // 表示xs、sm、md共3个断点被使用，小于320vp为xs，320vp-600vp为sm，大于600vp为md。
+  breakpoints: {value: ['320vp', '600vp', '840vp', '1440vp']} // 表示xs、sm、md、lg、xl共5个断点被使用，小于320vp为xs，320vp-600vp为sm，  600vp-840vp为md，840vp-1440vp为lg，大于1440vp为xl。
   ```
 * 栅格容器通过监听窗口或容器的尺寸变化进行断点，通过[reference](../harmonyos-references/ts-container-gridrow.md#breakpoints)设置断点切换参考物。考虑到应用可能以非全屏窗口的形式显示，以应用窗口宽度为参照物更为通用。
 
   例如，通过断点设置将应用宽度分成6个区间，通过[columns](../harmonyos-references/ts-container-gridrow.md#gridrowoptions对象说明)配置各断点下栅格容器的栅格列数。
 
+  ```typescript
+  @Entry
+  @Component
+  struct WindowRefGridLayout {
+    @State currentBp: string = 'unknown'
+    @State bgColors: ResourceColor[] =
+      ['rgb(213,213,213)', 'rgb(150,150,150)', 'rgb(0,74,175)', 'rgb(39,135,217)', 'rgb(61,157,180)', 'rgb(23,169,141)',
+        'rgb(255,192,0)', 'rgb(170,10,33)'];
+
+    build() {
+      Column({ space: 6 }) {
+        Text(this.currentBp)
+
+        GridRow({
+          columns: {
+            xs: 2, // 窗口宽度落入xs断点上，栅格容器分为2列。
+            sm: 4, // 窗口宽度落入sm断点上，栅格容器分为4列。
+            md: 8, // 窗口宽度落入md断点上，栅格容器分为8列。
+            lg: 12, // 窗口宽度落入lg断点上，栅格容器分为12列。
+            xl: 12, // 窗口宽度落入xl断点上，栅格容器分为12列。
+            xxl: 12 // 窗口宽度落入xxl断点上，栅格容器分为12列。
+          },
+          breakpoints: {
+            value: ['320vp', '600vp', '840vp', '1440vp', '1600vp'], // 表示在保留默认断点['320vp', '600vp', '840vp']的同时自定义增加'1440vp', '1600vp'的断点，实际开发中需要根据实际使用场景，合理设置断点值实现一次开发多端适配。
+            reference: BreakpointsReference.WindowSize
+          }
+        }) {
+          ForEach(this.bgColors, (color: ResourceColor, index?: number | undefined) => {
+            GridCol({ span: 1 }) { // 所有子组件占一列。
+              Row() {
+                Text(`${index}`)
+              }.width('100%').height('50vp')
+            }.backgroundColor(color)
+          })
+        }
+        .height(200)
+        .border({ color: 'rgb(39,135,217)', width: 2 })
+        .onBreakpointChange((breakPoint) => {
+          this.currentBp = breakPoint
+        })
+      }
+    }
+  }
   ```
-  1. @Entry
-  2. @Component
-  3. struct WindowRefGridLayout {
-  4. @State currentBp: string = "unknown"
-  5. @State bgColors: ResourceColor[] =
-  6. ['rgb(213,213,213)', 'rgb(150,150,150)', 'rgb(0,74,175)', 'rgb(39,135,217)', 'rgb(61,157,180)', 'rgb(23,169,141)',
-  7. 'rgb(255,192,0)', 'rgb(170,10,33)'];
 
-  9. build() {
-  10. Column({ space: 6 }) {
-  11. Text(this.currentBp)
-
-  13. GridRow({
-  14. columns: {
-  15. xs: 2, // 窗口宽度落入xs断点上，栅格容器分为2列。
-  16. sm: 4, // 窗口宽度落入sm断点上，栅格容器分为4列。
-  17. md: 8, // 窗口宽度落入md断点上，栅格容器分为8列。
-  18. lg: 12, // 窗口宽度落入lg断点上，栅格容器分为12列。
-  19. xl: 12, // 窗口宽度落入xl断点上，栅格容器分为12列。
-  20. xxl: 12 // 窗口宽度落入xxl断点上，栅格容器分为12列。
-  21. },
-  22. breakpoints: {
-  23. value: ['320vp', '600vp', '840vp', '1440vp', '1600vp'], // 表示在保留默认断点['320vp', '600vp', '840vp']的同时自定义增加'1440vp', '1600vp'的断点，实际开发中需要根据实际使用场景，合理设置断点值实现一次开发多端适配。
-  24. reference: BreakpointsReference.WindowSize
-  25. }
-  26. }) {
-  27. ForEach(this.bgColors, (color: ResourceColor, index?: number | undefined) => {
-  28. GridCol({ span: 1 }) { // 所有子组件占一列。
-  29. Row() {
-  30. Text(`${index}`)
-  31. }.width('100%').height('50vp')
-  32. }.backgroundColor(color)
-  33. })
-  34. }
-  35. .height(200)
-  36. .border({ color: 'rgb(39,135,217)', width: 2 })
-  37. .onBreakpointChange((breakPoint) => {
-  38. this.currentBp = breakPoint
-  39. })
-  40. }
-  41. }
-  42. }
-  ```
-
-  [GridLayoutReference.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridLayoutReference.ets#L15-L48)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/jc_Xc08_Rky1hxjcSbs9oA/zh-cn_image_0000002589324097.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/AtaejQsBRDmf8Ry_fjgeeg/zh-cn_image_0000002706833440.gif)
 
 ### 布局的总列数
 
@@ -123,156 +121,148 @@ GridRow中通过columns设置栅格布局的总列数。
 * API version 20之前，columns默认值为12，即在未设置columns时，任何断点下，栅格布局均被分成12列。
 * API version 20及以后，columns默认值为{ xs: 2, sm: 4, md: 8, lg: 12, xl: 12, xxl: 12 }。
 
-  ```
-  1. // xxx.ets
-  2. @Entry
-  3. @Component
-  4. struct GridColumnsWithDefaults {
-  5. @State bgColors: ResourceColor[] =
-  6. ['rgb(213,213,213)', 'rgb(150,150,150)', 'rgb(0,74,175)', 'rgb(39,135,217)', 'rgb(61,157,180)', 'rgb(23,169,141)',
-  7. 'rgb(255,192,0)', 'rgb(170,10,33)', 'rgb(213,213,213)', 'rgb(150,150,150)', 'rgb(0,74,175)', 'rgb(39,135,217)'];
+  ```typescript
+  // xxx.ets
+  @Entry
+  @Component
+  struct GridColumnsWithDefaults {
+    @State bgColors: ResourceColor[] =
+      ['rgb(213,213,213)', 'rgb(150,150,150)', 'rgb(0,74,175)', 'rgb(39,135,217)', 'rgb(61,157,180)', 'rgb(23,169,141)',
+        'rgb(255,192,0)', 'rgb(170,10,33)', 'rgb(213,213,213)', 'rgb(150,150,150)', 'rgb(0,74,175)', 'rgb(39,135,217)'];
 
-  9. build() {
-  10. GridRow() {
-  11. ForEach(this.bgColors, (item: ResourceColor, index?: number | undefined) => {
-  12. GridCol({ span: 1 }) {
-  13. Row() {
-  14. Text(`${index}`)
-  15. }.width('100%').height('50')
-  16. }.backgroundColor(item)
-  17. })
-  18. }
-  19. }
-  20. }
+    build() {
+      GridRow() {
+        ForEach(this.bgColors, (item: ResourceColor, index?: number | undefined) => {
+          GridCol({ span: 1 }) {
+            Row() {
+              Text(`${index}`)
+            }.width('100%').height('50')
+          }.backgroundColor(item)
+        })
+      }
+    }
+  }
   ```
-
-  [GridLayoutColumns.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridLayoutColumns.ets#L15-L36)
 
   API version 20之前布局显示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/-28TfmS3QKaXfkA0T4jrdQ/zh-cn_image_0000002589244037.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/5X0rFB-CQCKJBsyzHnF5ZA/zh-cn_image_0000002736312549.png)
 
   API version 20及以后布局显示（以sm设备为例，默认栅格列数为4）：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/_kPdpw1tSom5VuffNa-Qcw/zh-cn_image_0000002558764230.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/dCO5ENO1ScuQKBxI-0s6dw/zh-cn_image_0000002706673506.png)
 
-columns支持number和[GridRowColumnOption](../harmonyos-references/ts-container-gridrow.md#gridrowcolumnoption)两种类型, 可按两种方式设置栅格布局的总列数。
+columns支持number和[GridRowColumnOption](../harmonyos-references/ts-container-gridrow.md#gridrowcolumnoption)两种类型，可按两种方式设置栅格布局的总列数。
 
 * 当columns类型为number时，栅格布局在任何尺寸设备下都被分为同一列数。下面分别设置栅格布局列数为4和8，子元素占一列，效果如下：
 
-  ```
-  1. // xxx.ets
-  2. @Entry
-  3. @Component
-  4. struct FixedFourColumnGrid {
-  5. @State bgColors: ResourceColor[] =
-  6. ['rgb(213,213,213)', 'rgb(150,150,150)', 'rgb(0,74,175)', 'rgb(39,135,217)', 'rgb(61,157,180)', 'rgb(23,169,141)',
-  7. 'rgb(255,192,0)', 'rgb(170,10,33)'];
+  ```typescript
+  // xxx.ets
+  @Entry
+  @Component
+  struct FixedFourColumnGrid {
+    @State bgColors: ResourceColor[] =
+      ['rgb(213,213,213)', 'rgb(150,150,150)', 'rgb(0,74,175)', 'rgb(39,135,217)', 'rgb(61,157,180)', 'rgb(23,169,141)',
+        'rgb(255,192,0)', 'rgb(170,10,33)'];
 
-  9. build() {
-  10. Column({ space: 6 }) {
-  11. Text('columns：4').alignSelf(ItemAlign.Start)
+    build() {
+      Column({ space: 6 }) {
+        Text('columns：4').alignSelf(ItemAlign.Start)
 
-  13. Row() {
-  14. GridRow({ columns: 4 }) {
-  15. ForEach(this.bgColors, (item: ResourceColor, index?: number | undefined) => {
-  16. GridCol({ span: 1 }) {
-  17. Row() {
-  18. Text(`${index}`)
-  19. }.width('100%').height('50')
-  20. }.backgroundColor(item)
-  21. })
-  22. }
-  23. .width('100%').height('100%')
-  24. }
-  25. .height(160)
-  26. .border({ color: 'rgb(39,135,217)', width: 2 })
-  27. .width('90%')
-  28. }
-  29. }
-  30. }
-  ```
-
-  [GridLayoutColumnsToFour.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridLayoutColumnsToFour.ets#L15-L42)
-
-  ```
-  1. // xxx.ets
-  2. @Entry
-  3. @Component
-  4. struct FixedEightColumnGrid {
-  5. @State bgColors: ResourceColor[] =
-  6. ['rgb(213,213,213)', 'rgb(150,150,150)', 'rgb(0,74,175)', 'rgb(39,135,217)', 'rgb(61,157,180)', 'rgb(23,169,141)',
-  7. 'rgb(255,192,0)', 'rgb(170,10,33)'];
-
-  9. build() {
-  10. Column({ space: 6 }) {
-  11. Text('columns：8').alignSelf(ItemAlign.Start)
-
-  13. Row() {
-  14. GridRow({ columns: 8 }) {
-  15. ForEach(this.bgColors, (item: ResourceColor, index?: number | undefined) => {
-  16. GridCol({ span: 1 }) {
-  17. Row() {
-  18. Text(`${index}`)
-  19. }.width('100%').height('50')
-  20. }.backgroundColor(item)
-  21. })
-  22. }
-  23. .width('100%').height('100%')
-  24. }
-  25. .height(160)
-  26. .border({ color: 'rgb(39,135,217)', width: 2 })
-  27. .width('90%')
-  28. }
-  29. }
-  30. }
+        Row() {
+          GridRow({ columns: 4 }) {
+            ForEach(this.bgColors, (item: ResourceColor, index?: number | undefined) => {
+              GridCol({ span: 1 }) {
+                Row() {
+                  Text(`${index}`)
+                }.width('100%').height('50')
+              }.backgroundColor(item)
+            })
+          }
+          .width('100%').height('100%')
+        }
+        .height(160)
+        .border({ color: 'rgb(39,135,217)', width: 2 })
+        .width('90%')
+      }
+    }
+  }
   ```
 
-  [GridLayoutColumnsToEight.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridLayoutColumnsToEight.ets#L15-L42)
+  ```typescript
+  // xxx.ets
+  @Entry
+  @Component
+  struct FixedEightColumnGrid {
+    @State bgColors: ResourceColor[] =
+      ['rgb(213,213,213)', 'rgb(150,150,150)', 'rgb(0,74,175)', 'rgb(39,135,217)', 'rgb(61,157,180)', 'rgb(23,169,141)',
+        'rgb(255,192,0)', 'rgb(170,10,33)'];
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/naHlr342SJ6TDhW7akdTzw/zh-cn_image_0000002558604574.png)
+    build() {
+      Column({ space: 6 }) {
+        Text('columns：8').alignSelf(ItemAlign.Start)
+
+        Row() {
+          GridRow({ columns: 8 }) {
+            ForEach(this.bgColors, (item: ResourceColor, index?: number | undefined) => {
+              GridCol({ span: 1 }) {
+                Row() {
+                  Text(`${index}`)
+                }.width('100%').height('50')
+              }.backgroundColor(item)
+            })
+          }
+          .width('100%').height('100%')
+        }
+        .height(160)
+        .border({ color: 'rgb(39,135,217)', width: 2 })
+        .width('90%')
+      }
+    }
+  }
+  ```
+
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/3s3UqyyxRmG2A7w9PmU7PQ/zh-cn_image_0000002736432597.png)
 * 当columns类型为[GridRowColumnOption](../harmonyos-references/ts-container-gridrow.md#gridrowcolumnoption)时，支持下面6种不同尺寸（xs，sm，md，lg，xl，xxl）设备的栅格列数设置，不同尺寸的设备支持配置不同的栅格列数。
 
-  ```
-  1. @Entry
-  2. @Component
-  3. struct GridRowColumnOptionLayout {
-  4. @State bgColors: ResourceColor[] =
-  5. ['rgb(213,213,213)', 'rgb(150,150,150)', 'rgb(0,74,175)', 'rgb(39,135,217)', 'rgb(61,157,180)', 'rgb(23,169,141)',
-  6. 'rgb(255,192,0)', 'rgb(170,10,33)'];
+  ```typescript
+  @Entry
+  @Component
+  struct GridRowColumnOptionLayout {
+    @State bgColors: ResourceColor[] =
+      ['rgb(213,213,213)', 'rgb(150,150,150)', 'rgb(0,74,175)', 'rgb(39,135,217)', 'rgb(61,157,180)', 'rgb(23,169,141)',
+        'rgb(255,192,0)', 'rgb(170,10,33)'];
 
-  8. build() {
-  9. GridRow({
-  10. columns: { sm: 4, md: 8 },
-  11. breakpoints: {
-  12. value: ['320vp', '600vp', '840vp', '1440vp', '1600vp'] // 表示在保留默认断点['320vp', '600vp', '840vp']的同时自定义增加'1440vp', '1600vp'的断点，实际开发中需要根据实际使用场景，合理设置断点值实现一次开发多端适配。
-  13. }
-  14. }) {
-  15. ForEach(this.bgColors, (item: ResourceColor, index?: number | undefined) => {
-  16. GridCol({ span: 1 }) {
-  17. Row() {
-  18. Text(`${index}`)
-  19. }.width('100%').height('50')
-  20. }.backgroundColor(item)
-  21. })
-  22. }
-  23. .height(200)
-  24. .border({ color: 'rgb(39,135,217)', width: 2 })
-  25. }
-  26. }
+    build() {
+      GridRow({
+        columns: { sm: 4, md: 8 },
+        breakpoints: {
+          value: ['320vp', '600vp', '840vp', '1440vp', '1600vp'] // 表示在保留默认断点['320vp', '600vp', '840vp']的同时自定义增加'1440vp', '1600vp'的断点，实际开发中需要根据实际使用场景，合理设置断点值实现一次开发多端适配。
+        }
+      }) {
+        ForEach(this.bgColors, (item: ResourceColor, index?: number | undefined) => {
+          GridCol({ span: 1 }) {
+            Row() {
+              Text(`${index}`)
+            }.width('100%').height('50')
+          }.backgroundColor(item)
+        })
+      }
+      .height(200)
+      .border({ color: 'rgb(39,135,217)', width: 2 })
+    }
+  }
   ```
-
-  [GridLayoutColumnOption.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridLayoutColumnOption.ets#L15-L42)
 
   API version 20之前布局显示（xs设备未配置栅格列数，取默认列数12）：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/JJfxow1IRtGzFJsmsdCjew/zh-cn_image_0000002589324099.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/M6Mn1Z_CSw2k1hSofi5TIA/zh-cn_image_0000002706833442.gif)
 
   API version 20及以后布局显示（xs设备继承sm设备栅格列数）：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/HdL7PBp6RzSY_XNtaEU8cg/zh-cn_image_0000002589244039.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/nKN_nsd6Q4S947cxUvNRug/zh-cn_image_0000002736312551.gif "点击放大")
 
-  仅部分设置sm、md的栅格列数，未配置的xs、lg、xl、xxl设备根据[栅格列数补全](../harmonyos-references/ts-container-gridrow.md#gridrowcolumnoption)取默认值。
+  仅部分设置sm、md的栅格列数，未配置的xs、lg、xl、xxl设备根据栅格列数补全（见[GridRowColumnOption](../harmonyos-references/ts-container-gridrow.md#gridrowcolumnoption)）取默认值。
 
 ### 排列方向
 
@@ -280,22 +270,18 @@ columns支持number和[GridRowColumnOption](../harmonyos-references/ts-container
 
 * 子组件默认从左往右排列。
 
-  ```
-  1. GridRow({ direction: GridRowDirection.Row }) { /* ... */ }
+  ```typescript
+  GridRow({ direction: GridRowDirection.Row }) { /* ... */ }
   ```
 
-  [GridLayoutDirectionRow.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridLayoutDirectionRow.ets#L21-L23)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/q7ZyLxW-S42snuX7M0HJtw/zh-cn_image_0000002558764232.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/SiPg9BhQQ--nj9u_LQjGkA/zh-cn_image_0000002706673508.png)
 * 子组件从右往左排列。
 
-  ```
-  1. GridRow({ direction: GridRowDirection.RowReverse }) { /* ... */ }
+  ```typescript
+  GridRow({ direction: GridRowDirection.RowReverse }) { /* ... */ }
   ```
 
-  [GridLayoutDirectionRowReverse.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridLayoutDirectionRowReverse.ets#L21-L23)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/b5wLp0gxSBm2JIfEU3k8sQ/zh-cn_image_0000002558604576.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/2JD6PVE9R3yumiXZEpUW7w/zh-cn_image_0000002736432599.png)
 
 ### 子组件间距
 
@@ -303,22 +289,18 @@ GridRow中通过[gutter](../harmonyos-references/ts-container-gridrow.md#gridrow
 
 * 当gutter类型为number时，同时设置栅格子组件间水平和垂直方向边距且相等。下例中，设置子组件水平与垂直方向距离相邻元素的间距为10。
 
-  ```
-  1. GridRow({ gutter: 10 }) { /* ... */ }
+  ```typescript
+  GridRow({ gutter: 10 }) { /* ... */ }
   ```
 
-  [GridLayoutGutterToNumber.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridLayoutGutterToNumber.ets#L21-L23)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/AbviaL8zSC6SL8kvQs0yfQ/zh-cn_image_0000002589324101.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/bfScZCiLQlej4ydOVrQ7yQ/zh-cn_image_0000002706833444.png)
 * 当gutter类型为[GutterOption](../harmonyos-references/ts-container-gridrow.md#gutteroption)时，单独设置栅格子组件水平垂直边距，x属性为水平方向间距，y为垂直方向间距。
 
-  ```
-  1. GridRow({ gutter: { x: 20, y: 50 } }) { /* ... */ }
+  ```typescript
+  GridRow({ gutter: { x: 20, y: 50 } }) { /* ... */ }
   ```
 
-  [GridLayoutGutterOption.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridLayoutGutterOption.ets#L21-L23)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/OBqwkZDCSR6LlzPz8YDs5w/zh-cn_image_0000002589244041.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/-aWtACG-Q4iQo8QUwRBYvA/zh-cn_image_0000002736312553.png)
 
 ## 子组件GridCol
 
@@ -326,134 +308,118 @@ GridRow中通过[gutter](../harmonyos-references/ts-container-gridrow.md#gridrow
 
 * 设置span。
 
-  ```
-  1. let gSpan:Record<string,number> = { 'xs': 1, 'sm': 2, 'md': 3, 'lg': 4 }
-  ```
-
-  [GridColSpan.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridColSpan.ets#L15-L17)
-
-  ```
-  1. GridCol({ span: 2 }){}
-  2. GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } }){}
-  3. GridCol(){}.span(2)
-  4. GridCol(){}.span(gSpan)
+  ```typescript
+  let gSpan:Record<string,number> = { 'xs': 1, 'sm': 2, 'md': 3, 'lg': 4 }
   ```
 
-  [GridColSpan.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridColSpan.ets#L24-L29)
+  ```typescript
+  GridCol({ span: 2 }){}
+  GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } }){}
+  GridCol(){}.span(2)
+  GridCol(){}.span(gSpan)
+  ```
 * 设置offset。
 
-  ```
-  1. let gOffset:Record<string,number> = { 'xs': 1, 'sm': 2, 'md': 3, 'lg': 4 }
-  ```
-
-  [GridColOffset.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridColOffset.ets#L15-L17)
-
-  ```
-  1. GridCol({ offset: 2, span: 1 }){}
-  2. GridCol({ offset: { xs: 2, sm: 2, md: 2, lg: 2 }, span: 1 }){}
-  3. GridCol({ span: 1 }){}.offset(gOffset)
+  ```typescript
+  let gOffset:Record<string,number> = { 'xs': 1, 'sm': 2, 'md': 3, 'lg': 4 }
   ```
 
-  [GridColOffset.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridColOffset.ets#L24-L28)
+  ```typescript
+  GridCol({ offset: 2, span: 1 }){}
+  GridCol({ offset: { xs: 2, sm: 2, md: 2, lg: 2 }, span: 1 }){}
+  GridCol({ span: 1 }){}.offset(gOffset)
+  ```
 * 设置order。
 
-  ```
-  1. let gOrder:Record<string,number> = { 'xs': 1, 'sm': 2, 'md': 3, 'lg': 4 }
-  ```
-
-  [GridColOrder.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridColOrder.ets#L15-L17)
-
-  ```
-  1. GridCol({ order: 2, span: 1 }){}
-  2. GridCol({ order: { xs: 1, sm: 2, md: 3, lg: 4 }, span: 1 }){}
-  3. GridCol({ span: 1 }){}.order(2)
-  4. GridCol({ span: 1 }){}.order(gOrder)
+  ```typescript
+  let gOrder:Record<string,number> = { 'xs': 1, 'sm': 2, 'md': 3, 'lg': 4 }
   ```
 
-  [GridColOrder.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridColOrder.ets#L24-L29)
+  ```typescript
+  GridCol({ order: 2, span: 1 }){}
+  GridCol({ order: { xs: 1, sm: 2, md: 3, lg: 4 }, span: 1 }){}
+  GridCol({ span: 1 }){}.order(2)
+  GridCol({ span: 1 }){}.order(gOrder)
+  ```
 
 ### span
 
 子组件占栅格布局的列数，决定了子组件的宽度。默认值为1。
 
-span支持number和[GridColColumnOption](../harmonyos-references/ts-container-gridcol.md#gridcolcolumnoption)两种类型, 可按两种方式设置栅格子组件占栅格容器的列数。
+span支持number和[GridColColumnOption](../harmonyos-references/ts-container-gridcol.md#gridcolcolumnoption)两种类型，可按两种方式设置栅格子组件占栅格容器的列数。
 
 * 当span类型为number时，子组件在所有尺寸设备下占用的列数相同。
 
-  ```
-  1. // xxx.ets
-  2. @Entry
-  3. @Component
-  4. struct SpanNumberExample {
-  5. @State bgColors: ResourceColor[] =
-  6. ['rgb(213,213,213)', 'rgb(150,150,150)', 'rgb(0,74,175)', 'rgb(39,135,217)', 'rgb(61,157,180)', 'rgb(23,169,141)',
-  7. 'rgb(255,192,0)', 'rgb(170,10,33)'];
+  ```typescript
+  // xxx.ets
+  @Entry
+  @Component
+  struct SpanNumberExample {
+    @State bgColors: ResourceColor[] =
+      ['rgb(213,213,213)', 'rgb(150,150,150)', 'rgb(0,74,175)', 'rgb(39,135,217)', 'rgb(61,157,180)', 'rgb(23,169,141)',
+        'rgb(255,192,0)', 'rgb(170,10,33)'];
 
-  9. build() {
-  10. GridRow({ columns: 8 }) {
-  11. ForEach(this.bgColors, (color: ResourceColor, index?: number | undefined) => {
-  12. GridCol({ span: 2 }) {
-  13. Row() {
-  14. Text(`${index}`)
-  15. }.width('100%').height('50vp')
-  16. }
-  17. .backgroundColor(color)
-  18. })
-  19. }
-  20. .border({ color: 'rgb(39,135,217)', width: 2 })
-  21. .height('150vp')
-  22. }
-  23. }
-  ```
-
-  [GridColSpanToNumber.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridColSpanToNumber.ets#L15-L37)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/EJnIg883TO2Rv3Giw-VWJA/zh-cn_image_0000002558764234.png)
-* 当span类型为GridColColumnOption时，支持6种不同尺寸（xs，sm，md，lg，xl，xxl）设备中子组件所占列数设置，不同尺寸的设备下子组件支持配置不同列数。若仅部分设置sm、md的列数，未配置的xs、lg、xl、xxl设备根据[列数补全](../harmonyos-references/ts-container-gridcol.md#gridcolcolumnoption)取默认值。
-
-  ```
-  1. @Entry
-  2. @Component
-  3. struct SpanColumnOptionExample {
-  4. @State currentBp: string = "unknown"
-  5. @State bgColors: ResourceColor[] =
-  6. ['rgb(213,213,213)', 'rgb(150,150,150)', 'rgb(0,74,175)', 'rgb(39,135,217)', 'rgb(61,157,180)', 'rgb(23,169,141)',
-  7. 'rgb(255,192,0)', 'rgb(170,10,33)'];
-
-  9. build() {
-  10. Column({ space: 6 }) {
-  11. GridRow({ columns: 8 }) {
-  12. ForEach(this.bgColors, (color: ResourceColor, index?: number | undefined) => {
-  13. GridCol({
-  14. span: {
-  15. xs: 1,
-  16. sm: 2,
-  17. md: 3,
-  18. lg: 4
-  19. }
-  20. }) {
-  21. Row() {
-  22. Text(`${index}`)
-  23. }.width('100%').height('50vp')
-  24. }
-  25. .backgroundColor(color)
-  26. })
-  27. }
-  28. .border({ color: 'rgb(39,135,217)', width: 2 })
-  29. .height('150vp')
-  30. .onBreakpointChange((breakPoint) => {
-  31. this.currentBp = breakPoint
-  32. })
-
-  34. Text(this.currentBp)
-  35. }
-  36. }
-  37. }
+    build() {
+      GridRow({ columns: 8 }) {
+        ForEach(this.bgColors, (color: ResourceColor, index?: number | undefined) => {
+          GridCol({ span: 2 }) {
+            Row() {
+              Text(`${index}`)
+            }.width('100%').height('50vp')
+          }
+          .backgroundColor(color)
+        })
+      }
+      .border({ color: 'rgb(39,135,217)', width: 2 })
+      .height('150vp')
+    }
+  }
   ```
 
-  [GridColSpanToOption.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridColSpanToOption.ets#L15-L36)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/VmlLMLLkSP-ZR7UDTpRSrQ/zh-cn_image_0000002706673510.png)
+* 当span类型为GridColColumnOption时，支持6种不同尺寸（xs，sm，md，lg，xl，xxl）设备中子组件所占列数设置，不同尺寸的设备下子组件支持配置不同列数。若仅部分设置sm、md的列数，未配置的xs、lg、xl、xxl设备根据列数补全（见[GridColColumnOption](../harmonyos-references/ts-container-gridcol.md#gridcolcolumnoption)）取默认值。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/9HbIlUppTfa23JFlFsDWTg/zh-cn_image_0000002558604578.gif)
+  ```typescript
+  @Entry
+  @Component
+  struct SpanColumnOptionExample {
+    @State currentBp: string = 'unknown'
+    @State bgColors: ResourceColor[] =
+      ['rgb(213,213,213)', 'rgb(150,150,150)', 'rgb(0,74,175)', 'rgb(39,135,217)', 'rgb(61,157,180)', 'rgb(23,169,141)',
+        'rgb(255,192,0)', 'rgb(170,10,33)'];
+
+    build() {
+      Column({ space: 6 }) {
+        GridRow({ columns: 8 }) {
+          ForEach(this.bgColors, (color: ResourceColor, index?: number | undefined) => {
+            GridCol({
+              span: {
+                xs: 1,
+                sm: 2,
+                md: 3,
+                lg: 4
+              }
+            }) {
+              Row() {
+                Text(`${index}`)
+              }.width('100%').height('50vp')
+            }
+            .backgroundColor(color)
+          })
+        }
+        .border({ color: 'rgb(39,135,217)', width: 2 })
+        .height('150vp')
+        .onBreakpointChange((breakPoint) => {
+          this.currentBp = breakPoint
+        })
+
+        Text(this.currentBp)
+      }
+    }
+  }
+  ```
+
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/jfAF1PlzSzGlIFXaov2ZQw/zh-cn_image_0000002736432601.gif)
 
 ### offset
 
@@ -461,173 +427,165 @@ span支持number和[GridColColumnOption](../harmonyos-references/ts-container-gr
 
 * 当offset类型为number时，子组件偏移相同列数。
 
+  ```typescript
+  @Entry
+  @Component
+  struct OffsetNumberExample {
+    @State bgColors: ResourceColor[] =
+      ['rgb(213,213,213)', 'rgb(150,150,150)', 'rgb(0,74,175)', 'rgb(39,135,217)', 'rgb(61,157,180)', 'rgb(23,169,141)',
+        'rgb(255,192,0)', 'rgb(170,10,33)'];
+
+    build() {
+      Column() {
+        GridRow({ columns: 12 }) {
+          ForEach(this.bgColors, (color: ResourceColor, index?: number | undefined) => {
+            GridCol({ offset: 2, span: 1 }) {
+              Row() {
+                Text('' + index)
+              }.width('100%').height('50vp')
+            }
+            .backgroundColor(color)
+          })
+        }
+
+        Blank().width('100%').height(150)
+      }.border({ color: 'rgb(39,135,217)', width: 2 })
+    }
+  }
   ```
-  1. @Entry
-  2. @Component
-  3. struct OffsetNumberExample {
-  4. @State bgColors: ResourceColor[] =
-  5. ['rgb(213,213,213)', 'rgb(150,150,150)', 'rgb(0,74,175)', 'rgb(39,135,217)', 'rgb(61,157,180)', 'rgb(23,169,141)',
-  6. 'rgb(255,192,0)', 'rgb(170,10,33)'];
 
-  8. build() {
-  9. Column() {
-  10. GridRow({ columns: 12 }) {
-  11. ForEach(this.bgColors, (color: ResourceColor, index?: number | undefined) => {
-  12. GridCol({ offset: 2, span: 1 }) {
-  13. Row() {
-  14. Text('' + index)
-  15. }.width('100%').height('50vp')
-  16. }
-  17. .backgroundColor(color)
-  18. })
-  19. }
-
-  21. Blank().width('100%').height(150)
-  22. }.border({ color: 'rgb(39,135,217)', width: 2 })
-  23. }
-  24. }
-  ```
-
-  [GridColOffsetToNumber.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridColOffsetToNumber.ets#L15-L36)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/oK7_8P4pSjyIzE0esAR6mA/zh-cn_image_0000002589324103.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/_u2ALQtSTk6q5B0AbwA4WQ/zh-cn_image_0000002706833446.png)
 
   在lg及以上尺寸的设备上，栅格分成12列，每一个子组件占1列，偏移2列，每个子组件及间距共占3列，1行放4个子组件。
 * 当offset类型为GridColColumnOption时，支持6种不同尺寸（xs，sm，md，lg，xl，xxl）设备中子组件所占列数设置，各个尺寸下数值可不同。
 
+  ```typescript
+  @Entry
+  @Component
+  struct OffsetColumnOptionExample {
+    @State currentBp: string = 'unknown'
+    @State bgColors: ResourceColor[] =
+      ['rgb(213,213,213)', 'rgb(150,150,150)', 'rgb(0,74,175)', 'rgb(39,135,217)', 'rgb(61,157,180)', 'rgb(23,169,141)',
+        'rgb(255,192,0)', 'rgb(170,10,33)'];
+
+    build() {
+      Column({ space: 6 }) {
+        GridRow({ columns: 12 }) {
+          ForEach(this.bgColors, (color: ResourceColor, index?: number | undefined) => {
+            GridCol({
+              offset: {
+                xs: 1,
+                sm: 2,
+                md: 3,
+                lg: 4
+              },
+              span: 1
+            }) {
+              Row() {
+                Text('' + index)
+              }.width('100%').height('50vp')
+            }
+            .backgroundColor(color)
+          })
+        }
+        .height(200)
+        .border({ color: 'rgb(39,135,217)', width: 2 })
+        .onBreakpointChange((breakPoint) => {
+          this.currentBp = breakPoint
+        })
+
+        Text(this.currentBp)
+      }
+    }
+  }
   ```
-  1. @Entry
-  2. @Component
-  3. struct OffsetColumnOptionExample {
-  4. @State currentBp: string = "unknown"
-  5. @State bgColors: ResourceColor[] =
-  6. ['rgb(213,213,213)', 'rgb(150,150,150)', 'rgb(0,74,175)', 'rgb(39,135,217)', 'rgb(61,157,180)', 'rgb(23,169,141)',
-  7. 'rgb(255,192,0)', 'rgb(170,10,33)'];
 
-  9. build() {
-  10. Column({ space: 6 }) {
-  11. GridRow({ columns: 12 }) {
-  12. ForEach(this.bgColors, (color: ResourceColor, index?: number | undefined) => {
-  13. GridCol({
-  14. offset: {
-  15. xs: 1,
-  16. sm: 2,
-  17. md: 3,
-  18. lg: 4
-  19. },
-  20. span: 1
-  21. }) {
-  22. Row() {
-  23. Text('' + index)
-  24. }.width('100%').height('50vp')
-  25. }
-  26. .backgroundColor(color)
-  27. })
-  28. }
-  29. .height(200)
-  30. .border({ color: 'rgb(39,135,217)', width: 2 })
-  31. .onBreakpointChange((breakPoint) => {
-  32. this.currentBp = breakPoint
-  33. })
-
-  35. Text(this.currentBp)
-  36. }
-  37. }
-  38. }
-  ```
-
-  [GridColOffsetToOption.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridColOffsetToOption.ets#L15-L38)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/wFSTrr2KSWO361kDXBdKUg/zh-cn_image_0000002589244043.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/B3ONP0KLSG24MuYq8Oc0ww/zh-cn_image_0000002736312555.gif)
 
 ### order
 
-栅格子组件的序号，决定子组件排列次序。当子组件不设置order或者设置相同的order, 子组件按照代码顺序展示。当子组件设置不同的order时，order较小的组件在前，较大的在后。
+栅格子组件的序号，决定子组件排列次序。当子组件不设置order或者设置相同的order，子组件按照代码顺序展示。当子组件设置不同的order时，order较小的组件在前，较大的在后。
 
 当子组件部分设置order，部分不设置order时，未设置order的子组件依次排序靠前，设置了order的子组件按照数值从小到大排列。
 
 * 当order类型为number时，子组件在任何尺寸下排序次序一致。
 
+  ```typescript
+  GridRow({ columns: 12 }) {
+    GridCol({ order: 4, span: 1 }) {
+      Row() {
+        Text('1')
+      }.width('100%').height('50vp')
+    }.backgroundColor('rgb(213,213,213)')
+
+    GridCol({ order: 3, span: 1 }) {
+      Row() {
+        Text('2')
+      }.width('100%').height('50vp')
+    }.backgroundColor('rgb(150,150,150)')
+
+    GridCol({ order: 2, span: 1 }) {
+      Row() {
+        Text('3')
+      }.width('100%').height('50vp')
+    }.backgroundColor('rgb(0,74,175)')
+
+    GridCol({ order: 1, span: 1 }) {
+      Row() {
+        Text('4')
+      }.width('100%').height('50vp')
+    }.backgroundColor('rgb(39,135,217)')
+  }.border({ width: 1, color: 'rgb(39,135,217)' }).height('200vp')
   ```
-  1. GridRow({ columns: 12 }) {
-  2. GridCol({ order: 4, span: 1 }) {
-  3. Row() {
-  4. Text('1')
-  5. }.width('100%').height('50vp')
-  6. }.backgroundColor('rgb(213,213,213)')
 
-  8. GridCol({ order: 3, span: 1 }) {
-  9. Row() {
-  10. Text('2')
-  11. }.width('100%').height('50vp')
-  12. }.backgroundColor('rgb(150,150,150)')
-
-  14. GridCol({ order: 2, span: 1 }) {
-  15. Row() {
-  16. Text('3')
-  17. }.width('100%').height('50vp')
-  18. }.backgroundColor('rgb(0,74,175)')
-
-  20. GridCol({ order: 1, span: 1 }) {
-  21. Row() {
-  22. Text('4')
-  23. }.width('100%').height('50vp')
-  24. }.backgroundColor('rgb(39,135,217)')
-  25. }.border({ width: 1, color: 'rgb(39,135,217)' }).height('200vp')
-  ```
-
-  [GridColOrderToNumber.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridColOrderToNumber.ets#L20-L46)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/wJhTMzZjR6yq9v2uTOqthg/zh-cn_image_0000002558764236.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/P9Hlf-TyTd-5TPBT_cm3Ew/zh-cn_image_0000002706673512.png)
 * 当order类型为GridColColumnOption时，支持6种不同尺寸（xs，sm，md，lg，xl，xxl）设备中子组件排序次序设置。在xs设备中，子组件排列顺序为1234；sm为2341，md为3412，lg为2431。
 
+  ```typescript
+  @Entry
+  @Component
+  struct OrderColumnOptionExample {
+    @State currentBp: string = 'unknown'
+
+    build() {
+      Column({ space: 5 }) {
+        GridRow({ columns: 12 }) {
+          GridCol({
+            order: { xs: 1, sm: 5, md: 3, lg: 7 }, span: 1 }) {
+            Row() {
+              Text('1')
+            }.width('100%').height('50vp')
+          }.backgroundColor('rgb(213,213,213)')
+
+          GridCol({
+            order: { xs: 2, sm: 2, md: 6, lg: 1 }, span: 1 }) {
+            Row() {
+              Text('2')
+            }.width('100%').height('50vp')
+          }.backgroundColor('rgb(150,150,150)')
+
+          GridCol({ order: { xs: 3, sm: 3, md: 1, lg: 6 }, span: 1 }) {
+            Row() {
+              Text('3')
+            }.width('100%').height('50vp')
+          }.backgroundColor('rgb(0,74,175)')
+
+          GridCol({ order: { xs: 4, sm: 4, md: 2, lg: 5 }, span: 1 }) {
+            Row() {
+              Text('4')
+            }.width('100%').height('50vp')
+          }.backgroundColor('rgb(39,135,217)')
+        }.border({ width: 1, color: 'rgb(39,135,217)' }).height('200vp').onBreakpointChange((breakpoint) => {
+          this.currentBp = breakpoint
+        })
+
+        Text(this.currentBp)
+      }
+    }
+  }
   ```
-  1. @Entry
-  2. @Component
-  3. struct OrderColumnOptionExample {
-  4. @State currentBp: string = 'unknown'
 
-  6. build() {
-  7. Column({ space: 5 }) {
-  8. GridRow({ columns: 12 }) {
-  9. GridCol({
-  10. order: { xs: 1, sm: 5, md: 3, lg: 7 }, span: 1 }) {
-  11. Row() {
-  12. Text('1')
-  13. }.width('100%').height('50vp')
-  14. }.backgroundColor('rgb(213,213,213)')
-
-  16. GridCol({
-  17. order: { xs: 2, sm: 2, md: 6, lg: 1 }, span: 1 }) {
-  18. Row() {
-  19. Text('2')
-  20. }.width('100%').height('50vp')
-  21. }.backgroundColor('rgb(150,150,150)')
-
-  23. GridCol({ order: { xs: 3, sm: 3, md: 1, lg: 6 }, span: 1 }) {
-  24. Row() {
-  25. Text('3')
-  26. }.width('100%').height('50vp')
-  27. }.backgroundColor('rgb(0,74,175)')
-
-  29. GridCol({ order: { xs: 4, sm: 4, md: 2, lg: 5 }, span: 1 }) {
-  30. Row() {
-  31. Text('4')
-  32. }.width('100%').height('50vp')
-  33. }.backgroundColor('rgb(39,135,217)')
-  34. }.border({ width: 1, color: 'rgb(39,135,217)' }).height('200vp').onBreakpointChange((breakpoint) => {
-  35. this.currentBp = breakpoint
-  36. })
-
-  38. Text(this.currentBp)
-  39. }
-  40. }
-  41. }
-  ```
-
-  [GridColOrderToOption.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridColOrderToOption.ets#L15-L57)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/7XG9cSSrR_qhIrgg8wRyVA/zh-cn_image_0000002558604580.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/wQn8Tpd7SZuFTruFr7MdqA/zh-cn_image_0000002736432603.gif)
 
 ## 栅格组件的嵌套使用
 
@@ -635,45 +593,43 @@ span支持number和[GridColColumnOption](../harmonyos-references/ts-container-gr
 
 以下示例中，栅格把整个空间分为12份。第一层GridRow嵌套GridCol，分为中间大区域以及“footer”区域。第二层GridRow嵌套GridCol，分为“left”和“right”区域。子组件空间按照上一层父组件的空间划分，粉色的区域是屏幕空间的12列，绿色和蓝色的区域是父组件GridCol的12列，依次进行空间的划分。
 
+```typescript
+@Entry
+@Component
+struct GridRowExample {
+  build() {
+    GridRow({ columns: 12 }) {
+      GridCol({ span: 12 }) {
+        GridRow({ columns: 12 }) {
+          GridCol({ span: 2 }) {
+            Row() {
+              Text('left').fontSize(24)
+            }
+            .justifyContent(FlexAlign.Center)
+            .height('90%')
+          }.backgroundColor('#ff41dbaa')
+
+          GridCol({ span: 10 }) {
+            Row() {
+              Text('right').fontSize(24)
+            }
+            .justifyContent(FlexAlign.Center)
+            .height('90%')
+          }.backgroundColor('#ff4168db')
+        }
+        .backgroundColor('#19000000')
+      }
+
+      GridCol({ span: 12 }) {
+        Row() {
+          Text('footer').width('100%').textAlign(TextAlign.Center)
+        }.width('100%').height('10%').backgroundColor(Color.Pink)
+      }
+    }.width('100%').height(300)
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct GridRowExample {
-4. build() {
-5. GridRow({ columns: 12 }) {
-6. GridCol({ span: 12 }) {
-7. GridRow({ columns: 12 }) {
-8. GridCol({ span: 2 }) {
-9. Row() {
-10. Text('left').fontSize(24)
-11. }
-12. .justifyContent(FlexAlign.Center)
-13. .height('90%')
-14. }.backgroundColor('#ff41dbaa')
 
-16. GridCol({ span: 10 }) {
-17. Row() {
-18. Text('right').fontSize(24)
-19. }
-20. .justifyContent(FlexAlign.Center)
-21. .height('90%')
-22. }.backgroundColor('#ff4168db')
-23. }
-24. .backgroundColor('#19000000')
-25. }
-
-27. GridCol({ span: 12 }) {
-28. Row() {
-29. Text('footer').width('100%').textAlign(TextAlign.Center)
-30. }.width('100%').height('10%').backgroundColor(Color.Pink)
-31. }
-32. }.width('100%').height(300)
-33. }
-34. }
-```
-
-[GridRowExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/MultipleLayoutProject/entry/src/main/ets/pages/gridlayout/GridRowExample.ets#L15-L50)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/niS5oNr0T16867QeLVYccQ/zh-cn_image_0000002589324105.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/FxbpQB9pQf6QMyEzSd597A/zh-cn_image_0000002706833448.png)
 
 综上所述，栅格组件提供了丰富的自定义能力，功能非常灵活和强大。只需要明确栅格在不同断点下的[columns](../harmonyos-references/ts-container-gridrow.md#gridrowoptions对象说明)、[margin](../harmonyos-references/ts-universal-attributes-size.md#margin)、[gutter](../harmonyos-references/ts-container-gridrow.md#gridrowoptions对象说明)及[span](../harmonyos-references/ts-container-gridcol.md#gridcoloptions对象说明)等参数，即可确定最终布局，无需关心具体的设备类型及设备状态（如横竖屏）等。

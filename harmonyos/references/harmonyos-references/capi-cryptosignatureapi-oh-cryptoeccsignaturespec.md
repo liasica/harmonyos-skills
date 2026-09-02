@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryp
 title: OH_CryptoEccSignatureSpec
 breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > C API > 结构体 > OH_CryptoEccSignatureSpec
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:04+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:6a7bf47cf01c98b2616cc55d835f4925aa419c47c8632fd7f3ba93367971e82e
+scraped_at: 2026-09-02T14:52:08+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7b2bf0a35a5844944cc899677db7ad6b1bfa1a42e79a22e3a1a8f8619c1fe588
 ---
 
-```
-1. typedef struct OH_CryptoEccSignatureSpec OH_CryptoEccSignatureSpec
+```c
+typedef struct OH_CryptoEccSignatureSpec OH_CryptoEccSignatureSpec
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义ECC签名规范结构体。
 

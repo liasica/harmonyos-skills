@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getal
 title: GetAllAttrNamesAndTypes
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator > GetAllAttrNamesAndTypes
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:39+08:00
+scraped_at: 2026-09-02T15:00:12+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f20ebccc11bf74f4aa530786a5fb592f2d5be7a6c37d08702d854f88ccc699d7
+content_hash: sha256:b16ea277f609964fb9e62804310fa06a5a29b3dca2d8650da92ed44c9a43a8e8
 ---
 
 ## 函数功能
@@ -14,13 +14,13 @@ content_hash: sha256:f20ebccc11bf74f4aa530786a5fb592f2d5be7a6c37d08702d854f88ccc
 
 ## 函数原型
 
-说明
+**说明** 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 
-```
-1. const std::map<std::string, std::string> GetAllAttrNamesAndTypes() const;
-2. graphStatus GetAllAttrNamesAndTypes(std::map<AscendString, AscendString> &attr_name_types) const;
+```cpp
+const std::map<std::string, std::string> GetAllAttrNamesAndTypes() const;
+graphStatus GetAllAttrNamesAndTypes(std::map<AscendString, AscendString> &attr_name_types) const;
 ```
 
 ## 参数说明

@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (MetadataOutput)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (MetadataOutput)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:36+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d24996289afe824e6fab55c4ae327ca86a23dba360ba7970a1387648f730ede6
+scraped_at: 2026-09-02T15:02:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4a17d70e2798aaaadead55caca7981ca13570bc6cf3628ea93e618ff73b44d21
 ---
 
 metadata流。继承[CameraOutput](arkts-apis-camera-cameraoutput.md)。
 
-说明
+**说明** 
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { camera } from '@kit.CameraKit';
+```ts
+import { camera } from '@kit.CameraKit';
 ```
 
 ## start
-
-PhonePC/2in1TabletTVWearable
 
 start(callback: AsyncCallback<void>): void
 
@@ -51,23 +47,21 @@ start(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function startMetadataOutput(metadataOutput: camera.MetadataOutput): void {
-4. metadataOutput.start((err: BusinessError) => {
-5. if (err) {
-6. console.error(`Failed to start metadata output, error code: ${err.code}.`);
-7. return;
-8. }
-9. console.info('Callback returned with metadata output started.');
-10. });
-11. }
+function startMetadataOutput(metadataOutput: camera.MetadataOutput): void {
+  metadataOutput.start((err: BusinessError) => {
+    if (err) {
+      console.error(`Failed to start metadata output, error code: ${err.code}.`);
+      return;
+    }
+    console.info('Callback returned with metadata output started.');
+  });
+}
 ```
 
 ## start
-
-PhonePC/2in1TabletTVWearable
 
 start(): Promise<void>
 
@@ -94,21 +88,19 @@ start(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function startMetadataOutput(metadataOutput: camera.MetadataOutput): void {
-4. metadataOutput.start().then(() => {
-5. console.info('Callback returned with metadata output started.');
-6. }).catch((error: BusinessError) => {
-7. console.error(`Failed to metadata output start, error code: ${error.code}`);
-8. });
-9. }
+function startMetadataOutput(metadataOutput: camera.MetadataOutput): void {
+  metadataOutput.start().then(() => {
+    console.info('Callback returned with metadata output started.');
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to metadata output start, error code: ${error.code}`);
+  });
+}
 ```
 
 ## stop
-
-PhonePC/2in1TabletTVWearable
 
 stop(callback: AsyncCallback<void>): void
 
@@ -126,23 +118,21 @@ stop(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function stopMetadataOutput(metadataOutput: camera.MetadataOutput): void {
-4. metadataOutput.stop((err: BusinessError) => {
-5. if (err) {
-6. console.error(`Failed to stop the metadata output, error code: ${err.code}.`);
-7. return;
-8. }
-9. console.info('Callback returned with metadata output stopped.');
-10. })
-11. }
+function stopMetadataOutput(metadataOutput: camera.MetadataOutput): void {
+  metadataOutput.stop((err: BusinessError) => {
+    if (err) {
+      console.error(`Failed to stop the metadata output, error code: ${err.code}.`);
+      return;
+    }
+    console.info('Callback returned with metadata output stopped.');
+  })
+}
 ```
 
 ## stop
-
-PhonePC/2in1TabletTVWearable
 
 stop(): Promise<void>
 
@@ -160,27 +150,25 @@ stop(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function stopMetadataOutput(metadataOutput: camera.MetadataOutput): void {
-4. metadataOutput.stop().then(() => {
-5. console.info('Callback returned with metadata output stopped.');
-6. }).catch((error: BusinessError) => {
-7. console.error(`Failed to metadata output stop, error code: ${error.code}`);
-8. });
-9. }
+function stopMetadataOutput(metadataOutput: camera.MetadataOutput): void {
+  metadataOutput.stop().then(() => {
+    console.info('Callback returned with metadata output stopped.');
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to metadata output stop, error code: ${error.code}`);
+  });
+}
 ```
 
 ## on('metadataObjectsAvailable')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'metadataObjectsAvailable', callback: AsyncCallback<Array<MetadataObject>>): void
 
 监听检测到的metadata对象，通过注册回调函数获取结果。使用callback异步回调。
 
-说明
+**说明** 
 
 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
@@ -197,25 +185,23 @@ on(type: 'metadataObjectsAvailable', callback: AsyncCallback<Array<MetadataObjec
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function callback(err: BusinessError, metadataObjectArr: Array<camera.MetadataObject>): void {
-4. if (err !== undefined && err.code !== 0) {
-5. console.error(`Callback Error, errorCode: ${err.code}`);
-6. return;
-7. }
-8. console.info('metadata output metadataObjectsAvailable');
-9. }
+function callback(err: BusinessError, metadataObjectArr: Array<camera.MetadataObject>): void {
+  if (err !== undefined && err.code !== 0) {
+    console.error(`Callback Error, errorCode: ${err.code}`);
+    return;
+  }
+  console.info('metadata output metadataObjectsAvailable');
+}
 
-11. function registerMetadataObjectsAvailable(metadataOutput: camera.MetadataOutput): void {
-12. metadataOutput.on('metadataObjectsAvailable', callback);
-13. }
+function registerMetadataObjectsAvailable(metadataOutput: camera.MetadataOutput): void {
+  metadataOutput.on('metadataObjectsAvailable', callback);
+}
 ```
 
 ## off('metadataObjectsAvailable')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'metadataObjectsAvailable', callback?: AsyncCallback<Array<MetadataObject>>): void
 
@@ -234,21 +220,19 @@ off(type: 'metadataObjectsAvailable', callback?: AsyncCallback<Array<MetadataObj
 
 **示例：**
 
-```
-1. function unregisterMetadataObjectsAvailable(metadataOutput: camera.MetadataOutput): void {
-2. metadataOutput.off('metadataObjectsAvailable');
-3. }
+```ts
+function unregisterMetadataObjectsAvailable(metadataOutput: camera.MetadataOutput): void {
+  metadataOutput.off('metadataObjectsAvailable');
+}
 ```
 
 ## on('error')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'error', callback: ErrorCallback): void
 
 监听metadata流的错误，通过注册回调函数获取结果。使用callback异步回调。
 
-说明
+**说明** 
 
 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
@@ -265,21 +249,19 @@ on(type: 'error', callback: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function callback(metadataOutputError: BusinessError): void {
-4. console.error(`Metadata output error code: ${metadataOutputError.code}`);
-5. }
+function callback(metadataOutputError: BusinessError): void {
+  console.error(`Metadata output error code: ${metadataOutputError.code}`);
+}
 
-7. function registerMetadataOutputError(metadataOutput: camera.MetadataOutput): void {
-8. metadataOutput.on('error', callback);
-9. }
+function registerMetadataOutputError(metadataOutput: camera.MetadataOutput): void {
+  metadataOutput.on('error', callback);
+}
 ```
 
 ## off('error')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -298,15 +280,13 @@ off(type: 'error', callback?: ErrorCallback): void
 
 **示例：**
 
-```
-1. function unregisterMetadataOutputError(metadataOutput: camera.MetadataOutput): void {
-2. metadataOutput.off('error');
-3. }
+```ts
+function unregisterMetadataOutputError(metadataOutput: camera.MetadataOutput): void {
+  metadataOutput.off('error');
+}
 ```
 
 ## addMetadataObjectTypes23+
-
-PhonePC/2in1TabletTVWearable
 
 addMetadataObjectTypes(types: Array<MetadataObjectType>): void
 
@@ -334,23 +314,21 @@ addMetadataObjectTypes(types: Array<MetadataObjectType>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function addMetadataObjectTypes(metadataOutput: camera.MetadataOutput, types: Array<camera.MetadataObjectType>): void {
-4. try {
-5. metadataOutput.addMetadataObjectTypes(types);
-6. } catch (error) {
-7. // 失败返回错误码error.code并处理。
-8. let err = error as BusinessError;
-9. console.error(`addMetadataObjectTypes error. error code: ${err.code}`);
-10. }
-11. }
+function addMetadataObjectTypes(metadataOutput: camera.MetadataOutput, types: Array<camera.MetadataObjectType>): void {
+  try {
+    metadataOutput.addMetadataObjectTypes(types);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`addMetadataObjectTypes error. error code: ${err.code}`);
+  }
+}
 ```
 
 ## removeMetadataObjectTypes23+
-
-PhonePC/2in1TabletTVWearable
 
 removeMetadataObjectTypes(types: Array<MetadataObjectType>): void
 
@@ -378,16 +356,132 @@ removeMetadataObjectTypes(types: Array<MetadataObjectType>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function removeMetadataObjectTypes(metadataOutput: camera.MetadataOutput, types: Array<camera.MetadataObjectType>): void {
-4. try {
-5. metadataOutput.removeMetadataObjectTypes(types);
-6. } catch (error) {
-7. // 失败返回错误码error.code并处理。
-8. let err = error as BusinessError;
-9. console.error(`removeMetadataObjectTypes error. error code: ${err.code}`);
-10. }
-11. }
+function removeMetadataObjectTypes(metadataOutput: camera.MetadataOutput, types: Array<camera.MetadataObjectType>): void {
+  try {
+    metadataOutput.removeMetadataObjectTypes(types);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`removeMetadataObjectTypes error. error code: ${err.code}`);
+  }
+}
+```
+
+## isLockMetadataObjectTrackingSupported
+
+isLockMetadataObjectTrackingSupported(): boolean
+
+检查设备是否支持锁定元数据对象（如猫脸、狗脸）追踪功能。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 表示是否支持锁定元数据对象追踪功能。true表示支持，false表示不支持。 |
+
+**示例：**
+
+```ts
+function checkLockMetadataSupport(metadataOutput: camera.MetadataOutput): void {
+  let isSupported: boolean = metadataOutput.isLockMetadataObjectTrackingSupported();
+  console.info(`Lock metadata object tracking supported: ${isSupported}`);
+}
+```
+
+## lockMetadataObjectTracking
+
+lockMetadataObjectTracking(point: Point): void
+
+锁定对特定元数据对象（如猫脸、狗脸）的追踪。
+
+**说明** 
+
+* 该功能以point所指向的点所在的对象为追踪对象，如果该点不存在追踪对象，则功能不生效。
+* 被锁定追踪的对象离开取景范围超过三秒或调用解锁追踪后，锁定追踪自动取消。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| point | [Point](arkts-apis-camera-i.md#point) | 是 | 锁定元数据对象追踪的点位。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](errorcode-camera.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config, only throw in session usage. |
+| 7400201 | Camera service fatal error. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function lockMetadata(metadataOutput: camera.MetadataOutput, point: camera.Point): void {
+  try {
+    metadataOutput.lockMetadataObjectTracking(point);
+  } catch (error) {
+    let err = error as BusinessError;
+    console.error(`lockMetadataObjectTracking error. error code: ${err.code}`);
+  }
+}
+```
+
+## unlockMetadataObjectTracking
+
+unlockMetadataObjectTracking(): void
+
+解锁元数据对象（如猫脸、狗脸）追踪。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](errorcode-camera.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config, only throw in session usage. |
+| 7400201 | Camera service fatal error. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function unlockMetadata(metadataOutput: camera.MetadataOutput): void {
+  try {
+    metadataOutput.unlockMetadataObjectTracking();
+  } catch (error) {
+    let err = error as BusinessError;
+    console.error(`unlockMetadataObjectTracking error. error code: ${err.code}`);
+  }
+}
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-framework-
 title: 多语言支持
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 框架说明 > 多语言支持
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:41+08:00
+scraped_at: 2026-09-02T14:49:52+08:00
 doc_updated_at: 2026-03-23
-content_hash: sha256:7f1f2fc4f9eb03d603c86b689c8b4c545e97553304e46953a428f180f037b21c
+content_hash: sha256:9a36abbfe9a1769b16fe8720cc42d597b1853571342ca83ab52aafaf4489d803
 ---
 
 基于开发框架的应用会覆盖多个国家和地区，开发框架支持多语言能力后，可以让应用开发者无需开发多个不同语言的版本，就可以同时支持多种语言的切换，为项目维护带来便利。
@@ -16,8 +16,8 @@ content_hash: sha256:7f1f2fc4f9eb03d603c86b689c8b4c545e97553304e46953a428f180f03
 
 资源文件用于存放应用在多种语言场景下的资源内容，开发框架使用JSON文件保存资源定义。在[文件组织](js-framework-file.md)中指定的i18n文件夹内放置语言资源文件，语言资源文件的命名是由语言、文字、国家或地区的限定词通过中划线连接组成，其中文字和国家或地区可以省略，如zh-Hant-HK（中国香港地区使用的繁体中文）、zh-CN（中国使用的简体中文）、zh（中文）。命名规则如下：
 
-```
-1. language[-script-region].json
+```json
+language[-script-region].json
 ```
 
 限定词的取值需符合下表要求。
@@ -36,19 +36,19 @@ content_hash: sha256:7f1f2fc4f9eb03d603c86b689c8b4c545e97553304e46953a428f180f03
 
 en-US.json
 
-```
-1. {
-2. "strings": {
-3. "hello": "Hello world!",
-4. "object": "Object parameter substitution-{name}",
-5. "array": "Array type parameter substitution-{0}",
-6. "symbol": "@#$%^&*()_+-={}[]\\|:;\"'<>,./?"
-7. },
+```json
+{
+    "strings": {
+        "hello": "Hello world!",
+        "object": "Object parameter substitution-{name}",
+        "array": "Array type parameter substitution-{0}",
+        "symbol": "@#$%^&*()_+-={}[]\\|:;\"'<>,./?"
+    },
 
-9. "files": {
-10. "image": "image/en_picture.PNG"
-11. }
-12. }
+    "files": {
+        "image": "image/en_picture.PNG"
+    }
+}
 ```
 
 由于不同语言针对单复数有不同的匹配规则，在资源文件中使用“zero”“one”“two”“few”“many”“other”定义不同单复数场景下的词条内容。例如中文不区分单复数，仅存在“other”场景；英文存在“one”、“other”场景；阿拉伯语存在上述6种场景。
@@ -57,32 +57,32 @@ en-US.json
 
 en-US.json
 
-```
-1. {
-2. "strings": {
-3. "people": {
-4. "one": "one person",
-5. "other": "{count} people"
-6. }
-7. }
-8. }
+```json
+{
+    "strings": {
+        "people": {
+            "one": "one person",
+            "other": "{count} people"
+        }
+    }
+}
 ```
 
 ar-AE.json
 
-```
-1. {
-2. "strings": {
-3. "people": {
-4. "zero": "لا أحد",
-5. "one": "وحده",
-6. "two": "اثنان",
-7. "few": "ستة اشخاص",
-8. "many": "خمسون شخص",
-9. "other": "مائة شخص"
-10. }
-11. }
-12. }
+```json
+{
+    "strings": {
+        "people": {
+            "zero": "لا أحد",
+            "one": "وحده",
+            "two": "اثنان",
+            "few": "ستة اشخاص",
+            "many": "خمسون شخص",
+            "other": "مائة شخص"
+        }
+    }
+}
 ```
 
 ## 引用资源
@@ -107,46 +107,46 @@ ar-AE.json
   | params | Array | Object | 否 | 运行时用来替换占位符的实际内容，占位符分为两种：  - 具名占位符，例如{name}。实际内容必须用Object类型指定，例如：$t('strings.object', {name:'Hello world'})。  - 数字占位符，例如{0}。实际内容必须用Array类型指定，例如：$t('strings.array', ['Hello world'])。 |
 * 简单格式化示例代码
 
-  ```
-  1. <!-- xxx.hml -->
-  2. <div>
-  3. <!-- 不使用占位符，text中显示“Hello world!” -->
-  4. <text>{{ $t('strings.hello') }}</text>
-  5. <!-- 具名占位符格式，运行时将占位符{name}替换为“Hello world” -->
-  6. <text>{{ $t('strings.object', { name: 'Hello world' }) }}</text>
-  7. <!-- 数字占位符格式，运行时将占位符{0}替换为“Hello world” -->
-  8. <text>{{ $t('strings.array', ['Hello world']) }}</text>
-  9. <!-- 先在js中获取资源内容，再在text中显示“Hello world” -->
-  10. <text>{{ hello }}</text>
-  11. <!-- 先在js中获取资源内容，并将占位符{name}替换为“Hello world”，再在text中显示“Object parameter substitution-Hello world” -->
-  12. <text>{{ replaceObject }}</text>
-  13. <!-- 先在js中获取资源内容，并将占位符{0}替换为“Hello world”，再在text中显示“Array type parameter substitution-Hello world” -->
-  14. <text>{{ replaceArray }}</text>
+  ```html
+  <!-- xxx.hml -->
+  <div>
+    <!-- 不使用占位符，text中显示“Hello world!” -->
+    <text>{{ $t('strings.hello') }}</text>
+    <!-- 具名占位符格式，运行时将占位符{name}替换为“Hello world” -->
+    <text>{{ $t('strings.object', { name: 'Hello world' }) }}</text>
+    <!-- 数字占位符格式，运行时将占位符{0}替换为“Hello world” -->
+    <text>{{ $t('strings.array', ['Hello world']) }}</text>
+    <!-- 先在js中获取资源内容，再在text中显示“Hello world” -->
+    <text>{{ hello }}</text>
+    <!-- 先在js中获取资源内容，并将占位符{name}替换为“Hello world”，再在text中显示“Object parameter substitution-Hello world” -->
+    <text>{{ replaceObject }}</text>
+    <!-- 先在js中获取资源内容，并将占位符{0}替换为“Hello world”，再在text中显示“Array type parameter substitution-Hello world” -->
+    <text>{{ replaceArray }}</text>
 
-  16. <!-- 获取图片路径 -->
-  17. <image src="{{ $t('files.image') }}" class="image"></image>
-  18. <!-- 先在js中获取图片路径，再在image中显示图片 -->
-  19. <image src="{{ replaceSrc }}" class="image"></image>
-  20. </div>
+    <!-- 获取图片路径 -->
+    <image src="{{ $t('files.image') }}" class="image"></image>
+    <!-- 先在js中获取图片路径，再在image中显示图片 -->
+    <image src="{{ replaceSrc }}" class="image"></image>
+  </div>
   ```
 
-  ```
-  1. // xxx.js
-  2. // 下面为在js文件中的使用方法。
-  3. export default {
-  4. data: {
-  5. hello: '',
-  6. replaceObject: '',
-  7. replaceArray: '',
-  8. replaceSrc: '',
-  9. },
-  10. onInit() {
-  11. this.hello = this.$t('strings.hello');
-  12. this.replaceObject = this.$t('strings.object', { name: 'Hello world' });
-  13. this.replaceArray = this.$t('strings.array', ['Hello world']);
-  14. this.replaceSrc = this.$t('files.image');
-  15. },
-  16. }
+  ```js
+  // xxx.js
+  // 下面为在js文件中的使用方法。
+  export default {
+    data: {
+      hello: '',
+      replaceObject: '',
+      replaceArray: '',
+      replaceSrc: '',
+    },
+    onInit() {
+      this.hello = this.$t('strings.hello');
+      this.replaceObject = this.$t('strings.object', { name: 'Hello world' });
+      this.replaceArray = this.$t('strings.array', ['Hello world']);
+      this.replaceSrc = this.$t('files.image');
+    },
+  }
   ```
 * 单复数格式化方法
 
@@ -164,22 +164,22 @@ ar-AE.json
   | count | number | 是 | 要表达的值。 |
 * 单复数格式化示例代码
 
-  ```
-  1. <!--xxx.hml-->
-  2. <div>
-  3. <!-- 传递数值为0时： "0 people" 阿拉伯语中此处匹配key为zero的词条-->
-  4. <text>{{ $tc('strings.people', 0) }}</text>
-  5. <!-- 传递数值为1时： "one person" 阿拉伯语中此处匹配key为one的词条-->
-  6. <text>{{ $tc('strings.people', 1) }}</text>
-  7. <!-- 传递数值为2时： "2 people" 阿拉伯语中此处匹配key为two的词条-->
-  8. <text>{{ $tc('strings.people', 2) }}</text>
-  9. <!-- 传递数值为6时： "6 people" 阿拉伯语中此处匹配key为few的词条-->
-  10. <text>{{ $tc('strings.people', 6) }}</text>
-  11. <!-- 传递数值为50时： "50 people" 阿拉伯语中此处匹配key为many的词条-->
-  12. <text>{{ $tc('strings.people', 50) }}</text>
-  13. <!-- 传递数值为100时： "100 people" 阿拉伯语中此处匹配key为other的词条-->
-  14. <text>{{ $tc('strings.people', 100) }}</text>
-  15. </div>
+  ```html
+  <!--xxx.hml-->
+  <div>
+    <!-- 传递数值为0时： "0 people" 阿拉伯语中此处匹配key为zero的词条-->
+    <text>{{ $tc('strings.people', 0) }}</text>
+    <!-- 传递数值为1时： "one person" 阿拉伯语中此处匹配key为one的词条-->
+    <text>{{ $tc('strings.people', 1) }}</text>
+    <!-- 传递数值为2时： "2 people" 阿拉伯语中此处匹配key为two的词条-->
+    <text>{{ $tc('strings.people', 2) }}</text>
+    <!-- 传递数值为6时： "6 people" 阿拉伯语中此处匹配key为few的词条-->
+    <text>{{ $tc('strings.people', 6) }}</text>
+    <!-- 传递数值为50时： "50 people" 阿拉伯语中此处匹配key为many的词条-->
+    <text>{{ $tc('strings.people', 50) }}</text>
+    <!-- 传递数值为100时： "100 people" 阿拉伯语中此处匹配key为other的词条-->
+    <text>{{ $tc('strings.people', 100) }}</text>
+  </div>
   ```
 
 ## 获取语言

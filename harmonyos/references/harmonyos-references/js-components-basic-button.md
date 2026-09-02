@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: button
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > button
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:22+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:a8bd67fe9c12e7091b5b58f7cb88c2acac9af5aed275d2203d7dfcdf65602e9a
+scraped_at: 2026-09-02T15:01:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:95f77adf3bf5fd3f7bf2f39878b8497cfd5768773cb342cac3a4fa671f361890
 ---
 
-说明
+**说明** 
 
 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -16,19 +16,15 @@ content_hash: sha256:a8bd67fe9c12e7091b5b58f7cb88c2acac9af5aed275d2203d7dfcdf656
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 不支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-components-common-attributes.md)外，还支持如下属性：
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
-| type | string | - | 否 | 不支持动态修改。默认展示为胶囊型按钮，不同于胶囊类型，四边圆角可以通过border-radius分别指定。该属性可选值包括：  - capsule：胶囊型按钮，带圆角按钮，有背景色和文本。  - circle：圆形按钮，支持放置图标。  - text：文本按钮，仅包含文本显示。  - arc：弧形按钮，仅支持智能穿戴。  - download：下载按钮，额外增加下载进度条功能。 |
+| type | string | - | 否 | 不支持动态修改。默认展示为胶囊型按钮，与标准胶囊按钮不同的是，四边圆角可以通过border-radius分别指定。该属性可选值包括：  - capsule：胶囊型按钮，带圆角按钮，有背景色和文本。  - circle：圆形按钮，支持放置图标。  - text：文本按钮，仅包含文本显示。  - arc：弧形按钮，仅支持智能穿戴。  - download：下载按钮，额外增加下载进度条功能。 |
 | value | string | - | 否 | button的文本值。 |
 | icon | string | - | 否 | button的图标路径，图标格式为jpg，png和svg。 |
 | placement5+ | string | end | 否 | 仅在type属性为缺省时生效，设置图标位于文本的位置，可选值为：  - start：图标位于文本起始处。  - end：图标位于文本结束处。  - top：图标位于文本上方。  - bottom：图标位于文本下方。 |
@@ -36,11 +32,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 样式
 
-PhonePC/2in1TabletTVWearable
-
 ### type设置为非arc
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用样式](js-components-common-styles.md)外，还支持如下样式：
 
@@ -58,8 +50,6 @@ PhonePC/2in1TabletTVWearable
 
 ### type设置为arc
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用样式](js-components-common-styles.md)中background-color、opacity、display、visibility、position、[left|top|right|bottom]外，还支持如下样式：
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
@@ -69,17 +59,13 @@ PhonePC/2in1TabletTVWearable
 | allow-scale | boolean | true | 否 | 弧形按钮的文本尺寸是否跟随系统设置字体缩放尺寸进行放大缩小。true表示跟随系统放大缩小，false表示不跟随系统放大缩小。 |
 | font-style | string | normal | 否 | 弧形按钮的字体样式。 |
 | font-weight | number | string | normal | 否 | 弧形按钮的字体粗细。见[text组件font-weight的样式属性](js-components-basic-text.md#样式)。 |
-| font-family | <string> | sans-serif | 否 | 按钮的字体列表，用逗号分隔，每个字体用字体名或者字体族名设置。列表中第一个系统中存在的或者通过[自定义字体](js-components-common-customizing-font.md)指定的字体，会被选中作为文本的字体。 |
+| font-family | <string> | sans-serif | 否 | 弧形按钮的字体列表，用逗号分隔，每个字体用字体名或者字体族名设置。列表中第一个系统中存在的或者通过[自定义字体](js-components-common-customizing-font.md)指定的字体，会被选中作为文本的字体。 |
 
 ## 事件
-
-PhonePC/2in1TabletTVWearable
 
 支持[通用事件](js-components-common-events.md)。
 
 ## 方法
-
-PhonePC/2in1TabletTVWearable
 
 支持[通用方法](js-components-common-methods.md)。
 
@@ -91,79 +77,77 @@ PhonePC/2in1TabletTVWearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div class="div-button">
-3. <button class="first" type="capsule" value="Capsule button"></button>
-4. <button class="button circle" type="circle" icon="common/ic_add_default.png"></button>
-5. <button class="button text" type="text">Text button</button>
-6. <button class="button download" type="download" id="download-btn"
-7. onclick="progress">{{downloadText}}</button>
-8. <button class="last" type="capsule" waiting="true">Loading</button>
-9. </div>
+```html
+<!-- xxx.hml -->
+<div class="div-button">
+  <button class="first" type="capsule" value="Capsule button"></button>
+  <button class="button circle" type="circle" icon="common/ic_add_default.png"></button>
+  <button class="button text" type="text">Text button</button>
+  <button class="button download" type="download" id="download-btn"
+    onclick="progress">{{downloadText}}</button>
+  <button class="last" type="capsule" waiting="true">Loading</button>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .div-button {
-3. flex-direction: column;
-4. align-items: center;
-5. }
-6. .first{
-7. background-color: #F2F2F2;
-8. text-color: #0D81F2;
-9. }
-10. .button {
-11. margin-top: 15px;
-12. }
-13. .last{
-14. background-color: #F2F2F2;
-15. text-color: #969696;
-16. margin-top: 15px;
-17. width: 280px;
-18. height:72px;
-19. }
-20. .button:waiting {
-21. width: 280px;
-22. }
-23. .circle {
-24. background-color: #007dff;
-25. radius: 72px;
-26. icon-width: 72px;
-27. icon-height: 72px;
-28. }
-29. .text {
-30. text-color: red;
-31. font-size: 40px;
-32. font-weight: 900;
-33. font-family: sans-serif;
-34. font-style: normal;
-35. }
-36. .download {
-37. width: 280px;
-38. text-color: white;
-39. background-color: #007dff;
-40. }
-```
-
-```
-1. // xxx.js
-2. export default {
-3. data: {
-4. count: 5,
-5. downloadText: "Download"
-6. },
-7. progress(e) {
-8. this.count += 10;
-9. this.downloadText = this.count + "%";
-10. this.$element('download-btn').setProgress({ progress: this.count});
-11. if (this.count >= 100) {
-12. this.downloadText = "Done";
-13. }
-14. }
-15. }
+```css
+/* xxx.css */
+.div-button {
+  flex-direction: column;
+  align-items: center;
+}
+.first{
+  background-color: #F2F2F2;
+  text-color: #0D81F2;
+}
+.button {
+  margin-top: 15px;
+}
+.last{
+  background-color: #F2F2F2;
+  text-color: #969696;
+  margin-top: 15px;
+  width: 280px;
+  height:72px;
+}
+.button:waiting {
+  width: 280px;
+}
+.circle {
+  background-color: #007dff;
+  radius: 72px;
+  icon-width: 72px;
+  icon-height: 72px;
+}
+.text {
+  text-color: red;
+  font-size: 40px;
+  font-weight: 900;
+  font-family: sans-serif;
+  font-style: normal;
+}
+.download {
+  width: 280px;
+  text-color: white;
+  background-color: #007dff;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/JRpMGvt3QTiDPMPp5SMe0Q/zh-cn_image_0000002589326579.png)
+```js
+// xxx.js
+export default {
+  data: {
+    count: 5,
+    downloadText: "Download"
+  },
+  progress(e) {
+    this.count += 10;
+    this.downloadText = this.count + "%";
+    this.$element('download-btn').setProgress({ progress: this.count});
+    if (this.count >= 100) {
+      this.downloadText = "Done";
+    }
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/TeNlCkmjTvKSW1lwutXLVg/zh-cn_image_0000002736435529.png)

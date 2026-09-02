@@ -3,21 +3,23 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-bas
 title: 属性
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS 组件 > Web > 属性
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:15+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:853a596def3e97087fea45bb19ede72a510f7bea451b1b36853df6cf54c60f4c
+scraped_at: 2026-09-02T15:01:27+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9297046cbfbb46c7b3d57c91adf1ac0e30a0fd7a4accf88b8c11d6950336bff5
 ---
 
-通用属性仅支持[aspectRatio](ts-universal-attributes-layout-constraints.md#aspectratio)、[backdropBlur](ts-universal-attributes-background.md#backdropblur)、[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、[bindContentCover](ts-universal-attributes-modal-transition.md#bindcontentcover)、[bindContextMenu](ts-universal-attributes-menu.md#bindcontextmenu8)、[bindMenu](ts-universal-attributes-menu.md#bindmenu) 、[bindSheet](ts-universal-attributes-sheet-transition.md#bindsheet)、[borderColor](ts-universal-attributes-border.md#bordercolor)、[borderRadius](ts-universal-attributes-border.md#borderradius)、[borderStyle](ts-universal-attributes-border.md#borderstyle)、[borderWidth](ts-universal-attributes-border.md#borderwidth)、[clip](ts-universal-attributes-sharp-clipping.md#clip12)、[constraintSize](ts-universal-attributes-size.md#constraintsize)、[defaultFocus](ts-universal-attributes-focus.md#defaultfocus9)、[focusable](ts-universal-attributes-focus.md#focusable)、[tabIndex](ts-universal-attributes-focus.md#tabindex9)、[groupDefaultFocus](ts-universal-attributes-focus.md#groupdefaultfocus9)、[displayPriority](ts-universal-attributes-layout-constraints.md#displaypriority)、[enabled](ts-universal-attributes-enable.md#enabled)、[flexBasis](ts-universal-attributes-flex-layout.md#flexbasis)、[flexShrink](ts-universal-attributes-flex-layout.md#flexshrink)、[layoutWeight](ts-universal-attributes-size.md#layoutweight)、[id](ts-universal-attributes-component-id.md#id)、[gridOffset](ts-universal-attributes-grid.md#属性)、[gridSpan](ts-universal-attributes-grid.md#属性)、[useSizeType](ts-universal-attributes-grid.md#属性)、[height](ts-universal-attributes-size.md#height)、[touchable](ts-universal-attributes-click.md#touchabledeprecated)、[margin](ts-universal-attributes-size.md#margin)、[markAnchor](ts-universal-attributes-location.md#markanchor)、[offset](ts-universal-attributes-location.md#offset)、[width](ts-universal-attributes-size.md#width)、[zIndex](ts-universal-attributes-z-order.md#zindex)、[visibility](ts-universal-attributes-visibility.md#visibility)、[scale](ts-universal-attributes-transformation.md#scale)、[translate](ts-universal-attributes-transformation.md#translate)、[responseRegion](ts-universal-attributes-touch-target.md#responseregion)、[size](ts-universal-attributes-size.md#size)、[opacity](ts-universal-attributes-opacity.md#opacity)、[shadow](ts-universal-attributes-image-effect.md#shadow)、[sharedTransition](ts-transition-animation-shared-elements.md)、[transition](ts-transition-animation-component.md)、[position](ts-universal-attributes-location.md#position)、[direction](ts-universal-attributes-location.md#direction)。
+通用属性仅支持[aspectRatio](ts-universal-attributes-layout-constraints.md#aspectratio)、[backdropBlur](ts-universal-attributes-background.md#backdropblur)、[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、[bindContentCover](ts-universal-attributes-modal-transition.md#bindcontentcover)、[bindContextMenu](ts-universal-attributes-menu.md#bindcontextmenu8)、[bindMenu](ts-universal-attributes-menu.md#bindmenu)、[bindSheet](ts-universal-attributes-sheet-transition.md#bindsheet)、[borderColor](ts-universal-attributes-border.md#bordercolor)、[borderRadius](ts-universal-attributes-border.md#borderradius)、[borderStyle](ts-universal-attributes-border.md#borderstyle)、[borderWidth](ts-universal-attributes-border.md#borderwidth)、[clip](ts-universal-attributes-sharp-clipping.md#clip12)、[constraintSize](ts-universal-attributes-size.md#constraintsize)、[defaultFocus](ts-universal-attributes-focus.md#defaultfocus9)、[focusable](ts-universal-attributes-focus.md#focusable)、[tabIndex](ts-universal-attributes-focus.md#tabindex9)、[groupDefaultFocus](ts-universal-attributes-focus.md#groupdefaultfocus9)、[displayPriority](ts-universal-attributes-layout-constraints.md#displaypriority)、[enabled](ts-universal-attributes-enable.md#enabled)、[flexBasis](ts-universal-attributes-flex-layout.md#flexbasis)、[flexShrink](ts-universal-attributes-flex-layout.md#flexshrink)、[layoutWeight](ts-universal-attributes-size.md#layoutweight)、[id](ts-universal-attributes-component-id.md#id)、[gridOffset](ts-universal-attributes-grid.md#属性)、[gridSpan](ts-universal-attributes-grid.md#属性)、[useSizeType](ts-universal-attributes-grid.md#属性)、[height](ts-universal-attributes-size.md#height)、[touchable](ts-universal-attributes-click.md#touchabledeprecated)、[margin](ts-universal-attributes-size.md#margin)、[markAnchor](ts-universal-attributes-location.md#markanchor)、[offset](ts-universal-attributes-location.md#offset)、[width](ts-universal-attributes-size.md#width)、[zIndex](ts-universal-attributes-z-order.md#zindex)、[visibility](ts-universal-attributes-visibility.md#visibility)、[scale](ts-universal-attributes-transformation.md#scale)、[translate](ts-universal-attributes-transformation.md#translate)、[responseRegion](ts-universal-attributes-touch-target.md#responseregion)、[size](ts-universal-attributes-size.md#size)、[opacity](ts-universal-attributes-opacity.md#opacity)、[shadow](ts-universal-attributes-image-effect.md#shadow)、[sharedTransition](ts-transition-animation-shared-elements.md)、[transition](ts-transition-animation-component.md)、[position](ts-universal-attributes-location.md#position)、[direction](ts-universal-attributes-location.md#direction)。
 
-说明
+**说明** 
 
-* 该组件首批接口从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 示例效果请以真机运行为准。
 
-## domStorageAccess
+## 概述
 
-PhonePC/2in1TabletTVWearable
+Web组件属性用于在ArkUI声明式语法下以链式调用的方式配置Web组件的网页加载行为、安全策略、运行环境与交互能力，是定制Web组件行为的主要入口。其中通用的样式与布局类属性（如尺寸、边距、背景、可见性等）请参考[尺寸设置](ts-universal-attributes-size.md)，本章仅描述Web组件特有的属性；运行期动态控制类能力（如加载URL、前进后退、注册/反注册JS对象、运行JavaScript、注入CSS等）请配合[WebviewController](arkts-apis-webview-webviewcontroller.md)使用。
+
+## domStorageAccess
 
 domStorageAccess(domStorageAccess: boolean)
 
@@ -29,35 +31,33 @@ domStorageAccess(domStorageAccess: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| domStorageAccess | boolean | 是 | 设置是否开启文档对象模型存储接口（DOM Storage API）权限。  true表示开启文档对象模型存储接口权限，false表示不开启文档对象模型存储接口权限。  传入undefined或null时为false。 |
+| domStorageAccess | boolean | 是 | 设置是否开启文档对象模型存储接口（DOM Storage API）权限。  true表示开启，false表示不开启。  传入undefined或null时为false。 |
 
-说明
+**说明** 
 
 * 网页中使用到文档对象模型存储接口（DOM Storage API），需将其设置为true，才可正常加载网页。
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .domStorageAccess(true)
-13. }
-14. }
-15. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .domStorageAccess(true)
+    }
+  }
+}
 ```
 
 ## fileAccess
-
-PhonePC/2in1TabletTVWearable
 
 fileAccess(fileAccess: boolean)
 
@@ -69,35 +69,33 @@ fileAccess(fileAccess: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| fileAccess | boolean | 是 | 设置是否开启应用中文件系统的访问。  true表示开启应用中文件系统的访问。false表示不开启应用中文件系统的访问。  同时，当fileAccess为false的时候，仅只读资源目录/data/storage/el1/bundle/entry/resources/resfile里面的资源依然可以通过file协议访问，不受fileAccess管控。  API version 11及以前，传入undefined或null时为true，API version 12及以后传入undefined或null时为false。 |
+| fileAccess | boolean | 是 | 设置是否开启应用中文件系统的访问。  true表示开启，false表示不开启。  同时，当fileAccess为false的时候，仅只读资源目录/data/storage/el1/bundle/entry/resources/resfile里面的资源依然可以通过file协议访问，不受fileAccess管控。  API version 11及以前，传入undefined或null时为true，API version 12及以后传入undefined或null时为false。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .fileAccess(true)
-13. }
-14. }
-15. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .fileAccess(true)
+    }
+  }
+}
 ```
 
 ## imageAccess
 
-PhonePC/2in1TabletTVWearable
-
 imageAccess(imageAccess: boolean)
 
-设置是否允许自动加载图片资源。当属性没有显式调用时，允许自动加载图片资源。
+设置是否允许自动加载图片资源。当属性没有显式调用时，默认允许。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -105,37 +103,35 @@ imageAccess(imageAccess: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| imageAccess | boolean | 是 | 设置是否允许自动加载图片资源。  true表示设置允许自动加载图片资源，false表示设置不允许自动加载图片资源。  传入undefined或null时为false。 |
+| imageAccess | boolean | 是 | 设置是否允许自动加载图片资源。  true表示允许，false表示不允许。  传入undefined或null时为false。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .imageAccess(true)
-13. }
-14. }
-15. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .imageAccess(true)
+    }
+  }
+}
 ```
 
 ## javaScriptProxy
 
-PhonePC/2in1TabletTVWearable
-
 javaScriptProxy(javaScriptProxy: JavaScriptProxy)
 
-将javaScriptProxy中的ArkTS对象注册到Web组件中，该对象将使用JavaScriptProxy中指定的名称注册到网页的所有框架中，包括所有iframe，这使得JavaScript可以调用javaScriptProxy中ArkTS对象的方法。当属性没有显式调用时，默认不将javaScriptProxy中的ArkTS对象注册到Web组件中。
+将javaScriptProxy中的ArkTS对象注册到Web组件中，该对象将使用JavaScriptProxy中指定的名称注册到网页的所有框架中，包括所有iframe，这使得JavaScript可以调用javaScriptProxy中ArkTS对象的方法。
 
-说明
+**说明** 
 
 javaScriptProxy接口需要和[deleteJavaScriptRegister9+](arkts-apis-webview-webviewcontroller.md#deletejavascriptregister)接口配合使用，防止内存泄漏。
 
@@ -155,67 +151,65 @@ javaScriptProxy对象的所有参数不支持更新。
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. class TestObj {
-6. constructor() {
-7. }
+class TestObj {
+  constructor() {
+  }
 
-9. test(data1: string, data2: string, data3: string): string {
-10. console.info("data1:" + data1);
-11. console.info("data2:" + data2);
-12. console.info("data3:" + data3);
-13. return "AceString";
-14. }
+  test(data1: string, data2: string, data3: string): string {
+    console.info("data1:" + data1);
+    console.info("data2:" + data2);
+    console.info("data3:" + data3);
+    return "AceString";
+  }
 
-16. asyncTest(data: string): void {
-17. console.info("async data:" + data);
-18. }
+  asyncTest(data: string): void {
+    console.info("async data:" + data);
+  }
 
-20. toString(): void {
-21. console.info('toString' + "interface instead.");
-22. }
-23. }
+  toString(): void {
+    console.info('toString' + "interface instead.");
+  }
+}
 
-25. @Entry
-26. @Component
-27. struct WebComponent {
-28. controller: webview.WebviewController = new webview.WebviewController();
-29. testObj = new TestObj();
-30. build() {
-31. Column() {
-32. Button('deleteJavaScriptRegister')
-33. .onClick(() => {
-34. try {
-35. this.controller.deleteJavaScriptRegister("objName");
-36. } catch (error) {
-37. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-38. }
-39. })
-40. Web({ src: 'www.example.com', controller: this.controller })
-41. .javaScriptAccess(true)
-42. .javaScriptProxy({
-43. object: this.testObj,
-44. name: "objName",
-45. methodList: ["test", "toString"],
-46. asyncMethodList: ["asyncTest"],
-47. controller: this.controller,
-48. })
-49. }
-50. }
-51. }
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  testObj = new TestObj();
+  build() {
+    Column() {
+      Button('deleteJavaScriptRegister')
+        .onClick(() => {
+          try {
+            this.controller.deleteJavaScriptRegister("objName");
+          } catch (error) {
+            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+          }
+        })
+      Web({ src: 'www.example.com', controller: this.controller })
+        .javaScriptAccess(true)
+        .javaScriptProxy({
+          object: this.testObj,
+          name: "objName",
+          methodList: ["test", "toString"],
+          asyncMethodList: ["asyncTest"],
+          controller: this.controller,
+      })
+    }
+  }
+}
 ```
 
 ## javaScriptAccess
 
-PhonePC/2in1TabletTVWearable
-
 javaScriptAccess(javaScriptAccess: boolean)
 
-设置是否允许执行JavaScript脚本。当属性没有显式调用时，默认允许执行JavaScript脚本。
+设置是否允许执行JavaScript脚本。当属性没有显式调用时，默认允许。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -223,34 +217,32 @@ javaScriptAccess(javaScriptAccess: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| javaScriptAccess | boolean | 是 | 是否允许执行JavaScript脚本。  true表示允许执行JavaScript脚本，false表示不允许执行JavaScript脚本。  传入undefined或null时为false。 |
+| javaScriptAccess | boolean | 是 | 是否允许执行JavaScript脚本。  true表示允许，false表示不允许。  传入undefined或null时为false。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. build() {
-9. Column() {
-10. Web({ src: 'www.example.com', controller: this.controller })
-11. .javaScriptAccess(true)
-12. }
-13. }
-14. }
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .javaScriptAccess(true)
+    }
+  }
+}
 ```
 
 ## overScrollMode11+
 
-PhonePC/2in1TabletTVWearable
-
 overScrollMode(mode: OverScrollMode)
 
-设置Web过滚动模式。当过滚动模式开启时，当用户在Web根页面上滑动到边缘时，Web会通过弹性动画弹回界面，根页面上的内部页面不会触发回弹。该属性没有显式调用时，默认关闭过滚动模式。
+设置Web过滚动模式。开启时，用户在Web根页面滑动到边缘时，Web会通过弹性动画弹回界面，根页面上的内部页面不会触发回弹。该属性没有显式调用时，默认关闭。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -262,27 +254,25 @@ overScrollMode(mode: OverScrollMode)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. @State mode: OverScrollMode = OverScrollMode.ALWAYS;
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .overScrollMode(this.mode)
-13. }
-14. }
-15. }
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State mode: OverScrollMode = OverScrollMode.ALWAYS;
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .overScrollMode(this.mode)
+    }
+  }
+}
 ```
 
 ## mixedMode
-
-PhonePC/2in1TabletTVWearable
 
 mixedMode(mixedMode: MixedMode)
 
@@ -298,31 +288,29 @@ mixedMode(mixedMode: MixedMode)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. @State mode: MixedMode = MixedMode.All;
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .mixedMode(this.mode)
-13. }
-14. }
-15. }
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State mode: MixedMode = MixedMode.All;
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .mixedMode(this.mode)
+    }
+  }
+}
 ```
 
 ## onlineImageAccess
 
-PhonePC/2in1TabletTVWearable
-
 onlineImageAccess(onlineImageAccess: boolean)
 
-设置是否允许从网络加载图片资源（通过HTTP和HTTPS访问的资源）。当属性没有显式调用时，默认允许从网络加载图片资源。
+设置是否允许从网络加载图片资源（通过HTTP和HTTPS访问的资源）。当属性没有显式调用时，默认允许。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -330,35 +318,33 @@ onlineImageAccess(onlineImageAccess: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| onlineImageAccess | boolean | 是 | 设置是否允许从网络加载图片资源。  true表示设置允许从网络加载图片资源，false表示设置不允许从网络加载图片资源。  传入undefined或null时为false。 |
+| onlineImageAccess | boolean | 是 | 设置是否允许从网络加载图片资源。  true表示允许，false表示不允许。  传入undefined或null时为false。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onlineImageAccess(true)
-13. }
-14. }
-15. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onlineImageAccess(true)
+    }
+  }
+}
 ```
 
 ## zoomAccess
 
-PhonePC/2in1TabletTVWearable
-
 zoomAccess(zoomAccess: boolean)
 
-设置是否支持手势进行缩放。该属性没有显式调用时，默认支持手势进行缩放。
+设置是否支持手势进行缩放。该属性没有显式调用时，默认支持。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -366,31 +352,29 @@ zoomAccess(zoomAccess: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| zoomAccess | boolean | 是 | 设置是否支持手势进行缩放。  true表示设置支持手势进行缩放，false表示设置不支持手势进行缩放。  传入undefined或null时为false。 |
+| zoomAccess | boolean | 是 | 设置是否支持手势进行缩放。  true表示支持，false表示不支持。  传入undefined或null时为false。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .zoomAccess(true)
-13. }
-14. }
-15. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .zoomAccess(true)
+    }
+  }
+}
 ```
 
 ## overviewModeAccess
-
-PhonePC/2in1TabletTVWearable
 
 overviewModeAccess(overviewModeAccess: boolean)
 
@@ -404,37 +388,35 @@ overviewModeAccess(overviewModeAccess: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| overviewModeAccess | boolean | 是 | 设置是否使用概览模式加载网页。  true表示设置使用概览模式加载网页，false表示设置不使用概览模式加载网页。  传入undefined或null时为false。 |
+| overviewModeAccess | boolean | 是 | 设置是否使用概览模式加载网页。  true表示使用，false表示不使用。  传入undefined或null时为false。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .overviewModeAccess(true)
-13. }
-14. }
-15. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .overviewModeAccess(true)
+    }
+  }
+}
 ```
 
 ## databaseAccess
-
-PhonePC/2in1TabletTVWearable
 
 databaseAccess(databaseAccess: boolean)
 
 设置Web SQL数据库存储API权限，若未显式调用，此权限默认关闭。
 
-说明
+**说明** 
 
 * 本接口在ArkWeb内核升级到M132版本后因内核废弃Web SQL，对Web SQL数据库的控制失效。ArkWeb内核版本参考ArkWeb简介[约束与限制](../harmonyos-guides/web-component-overview.md#约束与限制)。
 
@@ -448,31 +430,29 @@ databaseAccess(databaseAccess: boolean)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .databaseAccess(true)
-13. }
-14. }
-15. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .databaseAccess(true)
+    }
+  }
+}
 ```
 
 ## geolocationAccess
 
-PhonePC/2in1TabletTVWearable
-
 geolocationAccess(geolocationAccess: boolean)
 
-设置是否开启获取地理位置权限。当属性没有显式调用时，默认开启获取地理位置权限。具体使用方式参考[管理位置权限](../harmonyos-guides/web-geolocation-permission.md)。
+设置是否开启获取地理位置权限。当属性没有显式调用时，默认开启。具体使用方式参考[管理位置权限](../harmonyos-guides/web-geolocation-permission.md)。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -480,35 +460,33 @@ geolocationAccess(geolocationAccess: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| geolocationAccess | boolean | 是 | 设置是否开启获取地理位置权限。  true表示设置开启获取地理位置权限，false表示设置不开启获取地理位置权限。  传入undefined或null时为false。 |
+| geolocationAccess | boolean | 是 | 设置是否开启获取地理位置权限。  true表示开启，false表示不开启。  传入undefined或null时为false。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .geolocationAccess(true)
-13. }
-14. }
-15. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .geolocationAccess(true)
+    }
+  }
+}
 ```
 
 ## mediaPlayGestureAccess9+
 
-PhonePC/2in1TabletTVWearable
-
 mediaPlayGestureAccess(access: boolean)
 
-设置有声视频的自动播放是否需要用户手动点击，静音视频播放不受该接口管控。当该属性未显式设置时，默认有声视频的自动播放需要用户手动点击。
+设置有声视频的自动播放是否需要用户手动点击，静音视频播放不受该接口管控。当该属性未显式设置时，默认需要用户手动点击。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -516,58 +494,56 @@ mediaPlayGestureAccess(access: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| access | boolean | 是 | 设置有声视频的自动播放是否需要用户手动点击。  true表示设置有声视频的自动播放需要用户手动点击，false表示设置有声视频的自动播放不需要用户手动点击，能自动播放。  传入undefined或null时为false。 |
+| access | boolean | 是 | 设置有声视频的自动播放是否需要用户手动点击。  true表示需要用户手动点击，false表示不需要，能自动播放。  传入undefined或null时为false。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. @State access: boolean = true;
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State access: boolean = true;
 
-10. build() {
-11. Column() {
-12. Web({ src: $rawfile('index.html'), controller: this.controller })
-13. .mediaPlayGestureAccess(this.access)
-14. }
-15. }
-16. }
+  build() {
+    Column() {
+      Web({ src: $rawfile('index.html'), controller: this.controller })
+        .mediaPlayGestureAccess(this.access)
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <title>视频播放页面</title>
-6. </head>
-7. <body>
-8. <h1>视频播放</h1>
-9. <video id="testVideo" controls autoplay>
-10. // 需要在video标签中配置autoplay属性，允许视频自动播放
-11. // 在resources的rawfile目录放置任意一个mp4媒体文件，并将其命名为example.mp4
-12. <source src="example.mp4" type="video/mp4">
-13. </video>
-14. </body>
-15. </html>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>视频播放页面</title>
+</head>
+<body>
+<h1>视频播放</h1>
+<video id="testVideo" controls autoplay>
+    // 需要在video标签中配置autoplay属性，允许视频自动播放
+    // 在resources的rawfile目录放置任意一个mp4媒体文件，并将其命名为example.mp4
+    <source src="example.mp4" type="video/mp4">
+</video>
+</body>
+</html>
 ```
 
 ## multiWindowAccess9+
 
-PhonePC/2in1TabletTVWearable
-
 multiWindowAccess(multiWindow: boolean)
 
-设置是否开启多窗口权限。
+设置是否开启多窗口权限。当属性没有显式调用时，默认不开启。
 
-使能多窗口权限时，需要实现onWindowNew事件，示例代码参考[onWindowNew事件](arkts-basic-components-web-events.md#onwindownew9)。
+使能多窗口权限时，需要实现onWindowNew事件，示例代码参考[onWindowNew](arkts-basic-components-web-events.md#onwindownew9)。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -575,20 +551,18 @@ multiWindowAccess(multiWindow: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| multiWindow | boolean | 是 | 设置是否开启多窗口权限。  true表示设置开启多窗口权限，false表示设置不开启多窗口权限。  默认值：false。 |
+| multiWindow | boolean | 是 | 设置是否开启多窗口权限。  true表示开启，false表示不开启。 |
 
 ## horizontalScrollBarAccess9+
 
-PhonePC/2in1TabletTVWearable
-
 horizontalScrollBarAccess(horizontalScrollBar: boolean)
 
-设置是否显示横向滚动条，包括系统默认滚动条和用户自定义滚动条。该属性没有显式调用时，默认显示横向滚动条。
+设置是否显示横向滚动条，包括系统默认滚动条和用户自定义滚动条。该属性没有显式调用时，默认显示。
 
-说明
+**说明** 
 
-* 通过@State变量控制横向滚动条的隐藏/显示后，需要调用[controller.refresh()](arkts-apis-webview-webviewcontroller.md#refresh)生效。
-* 通过@State变量频繁动态改变时，建议切换开关变量和Web组件一一对应。
+* 通过[@State](../harmonyos-guides/arkts-state.md)变量控制横向滚动条的隐藏/显示后，需要调用[controller.refresh()](arkts-apis-webview-webviewcontroller.md#refresh)生效。
+* 通过[@State](../harmonyos-guides/arkts-state.md)变量频繁动态改变时，建议切换开关变量和Web组件一一对应。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -596,81 +570,79 @@ horizontalScrollBarAccess(horizontalScrollBar: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| horizontalScrollBar | boolean | 是 | 设置是否显示横向滚动条。  true表示设置显示横向滚动条，false表示设置不显示横向滚动条。  传入undefined或null时为false。 |
+| horizontalScrollBar | boolean | 是 | 设置是否显示横向滚动条。  true表示显示，false表示不显示。  传入undefined或null时为false。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct WebComponent {
-8. controller: webview.WebviewController = new webview.WebviewController();
-9. @State isShow: boolean = true;
-10. @State btnMsg: string ="隐藏滚动条";
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State isShow: boolean = true;
+  @State btnMsg: string = '隐藏滚动条';
 
-12. build() {
-13. Column() {
-14. // 通过@State变量改变横向滚动条的隐藏/显示后，需调用this.controller.refresh()后生效
-15. Button('refresh')
-16. .onClick(() => {
-17. if(this.isShow){
-18. this.isShow = false;
-19. this.btnMsg="显示滚动条";
-20. }else{
-21. this.isShow = true;
-22. this.btnMsg="隐藏滚动条";
-23. }
-24. try {
-25. this.controller.refresh();
-26. } catch (error) {
-27. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-28. }
-29. }).height("10%").width("40%")
-30. Web({ src: $rawfile('index.html'), controller: this.controller }).height("90%")
-31. .horizontalScrollBarAccess(this.isShow)
-32. }
-33. }
-34. }
+  build() {
+    Column() {
+      // 通过@State变量改变横向滚动条的隐藏/显示后，需调用this.controller.refresh()后生效
+      Button('refresh')
+        .onClick(() => {
+          if (this.isShow) {
+            this.isShow = false;
+            this.btnMsg = '显示滚动条';
+          } else {
+            this.isShow = true;
+            this.btnMsg = '隐藏滚动条';
+          }
+          try {
+            this.controller.refresh();
+          } catch (error) {
+            console.error(`Failed to refresh Web. Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
+          }
+        }).height('10%').width('40%')
+      Web({ src: $rawfile('index.html'), controller: this.controller }).height('90%')
+        .horizontalScrollBarAccess(this.isShow)
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0">
-6. <title>Demo</title>
-7. <style>
-8. body {
-9. width:3000px;
-10. height:6000px;
-11. padding-right:170px;
-12. padding-left:170px;
-13. border:5px solid blueviolet;
-14. }
-15. </style>
-16. </head>
-17. <body>
-18. Scroll Test
-19. </body>
-20. </html>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Demo</title>
+    <style>
+        body {
+          width:3000px;
+          height:6000px;
+          padding-right:170px;
+          padding-left:170px;
+          border:5px solid blueviolet;
+        }
+    </style>
+</head>
+<body>
+Scroll Test
+</body>
+</html>
 ```
 
 ## verticalScrollBarAccess9+
 
-PhonePC/2in1TabletTVWearable
-
 verticalScrollBarAccess(verticalScrollBar: boolean)
 
-设置是否显示纵向滚动条，包括系统默认滚动条和用户自定义滚动条。该属性没有显式调用时，默认显示纵向滚动条。
+设置是否显示纵向滚动条，包括系统默认滚动条和用户自定义滚动条。该属性没有显式调用时，默认显示。
 
-说明
+**说明** 
 
 * 通过@State变量控制纵向滚动条的隐藏/显示后，需要调用controller.refresh()生效。
 * 通过@State变量频繁动态改变时，建议切换开关变量和Web组件一一对应。
@@ -681,75 +653,73 @@ verticalScrollBarAccess(verticalScrollBar: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| verticalScrollBar | boolean | 是 | 设置是否显示纵向滚动条。  true表示设置显示纵向滚动条，false表示设置不显示纵向滚动条。  传入undefined或null时为false。 |
+| verticalScrollBar | boolean | 是 | 设置是否显示纵向滚动条。  true表示显示，false表示不显示。  传入undefined或null时为false。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct WebComponent {
-8. controller: webview.WebviewController = new webview.WebviewController();
-9. @State isShow: boolean = true;
-10. @State btnMsg: string ="隐藏滚动条";
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State isShow: boolean = true;
+  @State btnMsg: string = '隐藏滚动条';
 
-12. build() {
-13. Column() {
-14. // 通过@State变量改变纵向滚动条的隐藏/显示后，需调用this.controller.refresh()后生效
-15. Button(this.btnMsg)
-16. .onClick(() => {
-17. if(this.isShow){
-18. this.isShow = false;
-19. this.btnMsg="显示滚动条";
-20. }else{
-21. this.isShow = true;
-22. this.btnMsg="隐藏滚动条";
-23. }
-24. try {
-25. this.controller.refresh();
-26. } catch (error) {
-27. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-28. }
-29. }).height("10%").width("40%")
-30. Web({ src: $rawfile('index.html'), controller: this.controller }).height("90%")
-31. .verticalScrollBarAccess(this.isShow)
-32. }
-33. }
-34. }
+  build() {
+    Column() {
+      // 通过@State变量改变纵向滚动条的隐藏/显示后，需调用this.controller.refresh()后生效
+      Button(this.btnMsg)
+        .onClick(() => {
+          if (this.isShow) {
+            this.isShow = false;
+            this.btnMsg = '显示滚动条';
+          } else {
+            this.isShow = true;
+            this.btnMsg = '隐藏滚动条';
+          }
+          try {
+            this.controller.refresh();
+          } catch (error) {
+            console.error(`Failed to refresh Web. Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
+          }
+        }).height('10%').width('40%')
+      Web({ src: $rawfile('index.html'), controller: this.controller }).height('90%')
+        .verticalScrollBarAccess(this.isShow)
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0">
-6. <title>Demo</title>
-7. <style>
-8. body {
-9. width:3000px;
-10. height:6000px;
-11. padding-right:170px;
-12. padding-left:170px;
-13. border:5px solid blueviolet;
-14. }
-15. </style>
-16. </head>
-17. <body>
-18. Scroll Test
-19. </body>
-20. </html>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Demo</title>
+    <style>
+        body {
+          width:3000px;
+          height:6000px;
+          padding-right:170px;
+          padding-left:170px;
+          border:5px solid blueviolet;
+        }
+    </style>
+</head>
+<body>
+Scroll Test
+</body>
+</html>
 ```
 
 ## cacheMode
-
-PhonePC/2in1TabletTVWearable
 
 cacheMode(cacheMode: CacheMode)
 
@@ -765,32 +735,34 @@ cacheMode(cacheMode: CacheMode)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. @State mode: CacheMode = CacheMode.None;
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State mode: CacheMode = CacheMode.None;
 
-10. build() {
-11. Column() {
-12. Web({ src: 'www.example.com', controller: this.controller })
-13. .cacheMode(this.mode)
-14. }
-15. }
-16. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .cacheMode(this.mode)
+    }
+  }
+}
 ```
 
 ## copyOptions11+
 
-PhonePC/2in1TabletTVWearable
-
 copyOptions(value: CopyOptions)
 
-设置剪贴板复制范围选项。该属性没有显式调用时，默认支持复制后在当前设备内所有应用内粘贴。
+设置剪贴板复制范围选项。该属性没有显式调用时，默认支持复制后在当前设备所有应用内粘贴。
+
+**说明** 
+
+当设置为CopyOptions.None时，[dataDetectorConfig](arkts-basic-components-web-attributes.md#datadetectorconfig20)中的enablePreviewMenu配置项无效。当[enableDataDetector](arkts-basic-components-web-attributes.md#enabledatadetector20)设置为true且此属性设置为CopyOptions.LocalDevice时，AI菜单功能将被激活。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -802,27 +774,25 @@ copyOptions(value: CopyOptions)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .copyOptions(CopyOptions.None)
-13. }
-14. }
-15. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .copyOptions(CopyOptions.None)
+    }
+  }
+}
 ```
 
 ## textZoomRatio9+
-
-PhonePC/2in1TabletTVWearable
 
 textZoomRatio(textZoomRatio: number)
 
@@ -834,36 +804,34 @@ textZoomRatio(textZoomRatio: number)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| textZoomRatio | number | 是 | 要设置的页面的文本缩放百分比。  取值为整数，范围为(0, 2147483647]。 |
+| textZoomRatio | number | 是 | 要设置的页面的文本缩放百分比，100表示原始大小，大于100表示放大，小于100表示缩小。  取值为整数，范围为(0, 2147483647]。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. @State ratio: number = 150;
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State ratio: number = 150;
 
-10. build() {
-11. Column() {
-12. Web({ src: 'www.example.com', controller: this.controller })
-13. .textZoomRatio(this.ratio)
-14. }
-15. }
-16. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .textZoomRatio(this.ratio)
+    }
+  }
+}
 ```
 
 ## initialScale9+
 
-PhonePC/2in1TabletTVWearable
-
 initialScale(percent: number)
 
-设置整体页面的缩放百分比。该属性没有显式调用时，默认缩放百分比为100。
+设置整体页面的缩放百分比。该属性没有显式调用时，默认为100。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -875,28 +843,26 @@ initialScale(percent: number)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. @State percent: number = 100;
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State percent: number = 100;
 
-10. build() {
-11. Column() {
-12. Web({ src: 'www.example.com', controller: this.controller })
-13. .initialScale(this.percent)
-14. }
-15. }
-16. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .initialScale(this.percent)
+    }
+  }
+}
 ```
 
 ## blockNetwork9+
-
-PhonePC/2in1TabletTVWearable
 
 blockNetwork(block: boolean)
 
@@ -912,28 +878,26 @@ blockNetwork(block: boolean)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. @State block: boolean = true;
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State block: boolean = true;
 
-10. build() {
-11. Column() {
-12. Web({ src: 'www.example.com', controller: this.controller })
-13. .blockNetwork(this.block)
-14. }
-15. }
-16. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .blockNetwork(this.block)
+    }
+  }
+}
 ```
 
 ## defaultFixedFontSize9+
-
-PhonePC/2in1TabletTVWearable
 
 defaultFixedFontSize(size: number)
 
@@ -951,28 +915,26 @@ defaultFixedFontSize(size: number)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. @State fontSize: number = 16;
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State fontSize: number = 16;
 
-10. build() {
-11. Column() {
-12. Web({ src: 'www.example.com', controller: this.controller })
-13. .defaultFixedFontSize(this.fontSize)
-14. }
-15. }
-16. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .defaultFixedFontSize(this.fontSize)
+    }
+  }
+}
 ```
 
 ## defaultFontSize9+
-
-PhonePC/2in1TabletTVWearable
 
 defaultFontSize(size: number)
 
@@ -990,28 +952,26 @@ defaultFontSize(size: number)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. @State fontSize: number = 13;
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State fontSize: number = 13;
 
-10. build() {
-11. Column() {
-12. Web({ src: 'www.example.com', controller: this.controller })
-13. .defaultFontSize(this.fontSize)
-14. }
-15. }
-16. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .defaultFontSize(this.fontSize)
+    }
+  }
+}
 ```
 
 ## minFontSize9+
-
-PhonePC/2in1TabletTVWearable
 
 minFontSize(size: number)
 
@@ -1029,28 +989,26 @@ minFontSize(size: number)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. @State fontSize: number = 13;
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State fontSize: number = 13;
 
-10. build() {
-11. Column() {
-12. Web({ src: 'www.example.com', controller: this.controller })
-13. .minFontSize(this.fontSize)
-14. }
-15. }
-16. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .minFontSize(this.fontSize)
+    }
+  }
+}
 ```
 
 ## minLogicalFontSize9+
-
-PhonePC/2in1TabletTVWearable
 
 minLogicalFontSize(size: number)
 
@@ -1069,32 +1027,30 @@ minLogicalFontSize(size: number)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| size | number | 是 | 设置网页逻辑字体大小最小值，单位px。  输入值的范围为[-2^31, 2^31-1]，实际渲染时超过72px的值按照72px进行渲染，低于1px的值按照1px进行渲染。  传入null或undefined时为18。 |
+| size | number | 是 | 设置网页逻辑字体大小最小值，单位px。  输入值的范围为[-2^31, 2^31-1]，实际渲染时超过72px的值按照72px进行渲染，低于1px的值按照1px进行渲染。  传入null或undefined时为8。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. @State fontSize: number = 13;
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State fontSize: number = 13;
 
-10. build() {
-11. Column() {
-12. Web({ src: 'www.example.com', controller: this.controller })
-13. .minLogicalFontSize(this.fontSize)
-14. }
-15. }
-16. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .minLogicalFontSize(this.fontSize)
+    }
+  }
+}
 ```
 
 ## webFixedFont9+
-
-PhonePC/2in1TabletTVWearable
 
 webFixedFont(family: string)
 
@@ -1108,32 +1064,30 @@ webFixedFont(family: string)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| family | string | 是 | 设置网页的fixed font字体库。  传入null或undefined时为monospace。 |
+| family | string | 是 | 设置网页的fixed font字体库，传入值为字体名称字符串，如"monospace"、"Arial"等。  传入null或undefined时为monospace。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. @State family: string = "monospace";
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State family: string = "monospace";
 
-10. build() {
-11. Column() {
-12. Web({ src: 'www.example.com', controller: this.controller })
-13. .webFixedFont(this.family)
-14. }
-15. }
-16. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .webFixedFont(this.family)
+    }
+  }
+}
 ```
 
 ## webSansSerifFont9+
-
-PhonePC/2in1TabletTVWearable
 
 webSansSerifFont(family: string)
 
@@ -1151,28 +1105,26 @@ webSansSerifFont(family: string)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. @State family: string = "sans-serif";
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State family: string = "sans-serif";
 
-10. build() {
-11. Column() {
-12. Web({ src: 'www.example.com', controller: this.controller })
-13. .webSansSerifFont(this.family)
-14. }
-15. }
-16. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .webSansSerifFont(this.family)
+    }
+  }
+}
 ```
 
 ## webSerifFont9+
-
-PhonePC/2in1TabletTVWearable
 
 webSerifFont(family: string)
 
@@ -1190,28 +1142,26 @@ webSerifFont(family: string)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. @State family: string = "serif";
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State family: string = "serif";
 
-10. build() {
-11. Column() {
-12. Web({ src: 'www.example.com', controller: this.controller })
-13. .webSerifFont(this.family)
-14. }
-15. }
-16. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .webSerifFont(this.family)
+    }
+  }
+}
 ```
 
 ## webStandardFont9+
-
-PhonePC/2in1TabletTVWearable
 
 webStandardFont(family: string)
 
@@ -1229,28 +1179,26 @@ webStandardFont(family: string)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. @State family: string = "sans-serif";
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State family: string = "sans-serif";
 
-10. build() {
-11. Column() {
-12. Web({ src: 'www.example.com', controller: this.controller })
-13. .webStandardFont(this.family)
-14. }
-15. }
-16. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .webStandardFont(this.family)
+    }
+  }
+}
 ```
 
 ## webFantasyFont9+
-
-PhonePC/2in1TabletTVWearable
 
 webFantasyFont(family: string)
 
@@ -1268,27 +1216,25 @@ webFantasyFont(family: string)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. @Entry
-4. @Component
-5. struct WebComponent {
-6. controller: webview.WebviewController = new webview.WebviewController();
-7. @State family: string = "fantasy";
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State family: string = "fantasy";
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .webFantasyFont(this.family)
-13. }
-14. }
-15. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .webFantasyFont(this.family)
+    }
+  }
+}
 ```
 
 ## webCursiveFont9+
-
-PhonePC/2in1TabletTVWearable
 
 webCursiveFont(family: string)
 
@@ -1306,32 +1252,30 @@ webCursiveFont(family: string)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. @State family: string = "cursive";
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State family: string = "cursive";
 
-10. build() {
-11. Column() {
-12. Web({ src: 'www.example.com', controller: this.controller })
-13. .webCursiveFont(this.family)
-14. }
-15. }
-16. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .webCursiveFont(this.family)
+    }
+  }
+}
 ```
 
 ## darkMode9+
 
-PhonePC/2in1TabletTVWearable
-
 darkMode(mode: WebDarkMode)
 
-设置Web深色模式。当属性没有显式调用时，默认Web深色模式关闭。
+设置Web深色模式。当属性没有显式调用时，默认关闭。
 
 当深色模式开启时，Web将启用媒体查询prefers-color-scheme中网页所定义的深色样式，若网页未定义深色样式，则保持原状。如需开启强制深色模式，建议配合[forceDarkAccess](arkts-basic-components-web-attributes.md#forcedarkaccess9)使用。深色模式具体用法可参考[Web深色模式适配](../harmonyos-guides/web-set-dark-mode.md)。
 
@@ -1345,28 +1289,26 @@ darkMode(mode: WebDarkMode)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. @State mode: WebDarkMode = WebDarkMode.On;
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State mode: WebDarkMode = WebDarkMode.On;
 
-10. build() {
-11. Column() {
-12. Web({ src: 'www.example.com', controller: this.controller })
-13. .darkMode(this.mode)
-14. }
-15. }
-16. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .darkMode(this.mode)
+    }
+  }
+}
 ```
 
 ## forceDarkAccess9+
-
-PhonePC/2in1TabletTVWearable
 
 forceDarkAccess(access: boolean)
 
@@ -1378,34 +1320,32 @@ forceDarkAccess(access: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| access | boolean | 是 | 设置网页是否开启强制深色模式。  true表示设置网页开启强制深色模式，false表示设置网页不开启强制深色模式。  传入null或undefined时为false。 |
+| access | boolean | 是 | 设置网页是否开启强制深色模式。  true表示开启，false表示设置不开启。  传入null或undefined时为false。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. @State mode: WebDarkMode = WebDarkMode.On;
-9. @State access: boolean = true;
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State mode: WebDarkMode = WebDarkMode.On;
+  @State access: boolean = true;
 
-11. build() {
-12. Column() {
-13. Web({ src: 'www.example.com', controller: this.controller })
-14. .darkMode(this.mode)
-15. .forceDarkAccess(this.access)
-16. }
-17. }
-18. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .darkMode(this.mode)
+        .forceDarkAccess(this.access)
+    }
+  }
+}
 ```
 
 ## pinchSmooth9+
-
-PhonePC/2in1TabletTVWearable
 
 pinchSmooth(isEnabled: boolean)
 
@@ -1421,33 +1361,31 @@ pinchSmooth(isEnabled: boolean)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .pinchSmooth(true)
-13. }
-14. }
-15. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .pinchSmooth(true)
+    }
+  }
+}
 ```
 
 ## allowWindowOpenMethod10+
-
-PhonePC/2in1TabletTVWearable
 
 allowWindowOpenMethod(flag: boolean)
 
 设置网页是否可以通过JavaScript自动打开新窗口。
 
-说明
+**说明** 
 
 * 该属性仅在[javaScriptAccess](arkts-basic-components-web-attributes.md#javascriptaccess)开启时生效。
 * 该属性在[multiWindowAccess](arkts-basic-components-web-attributes.md#multiwindowaccess9)开启时打开新窗口，关闭时打开本地窗口。
@@ -1464,101 +1402,99 @@ allowWindowOpenMethod(flag: boolean)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. // 在同一界面有两个Web组件。在WebComponent新开窗口时，会跳转到NewWebViewComp。
-5. @CustomDialog
-6. struct NewWebViewComp {
-7. controller?: CustomDialogController;
-8. webviewController1: webview.WebviewController = new webview.WebviewController();
+// 在同一界面有两个Web组件。在WebComponent新开窗口时，会跳转到NewWebViewComp。
+@CustomDialog
+struct NewWebViewComp {
+    controller?: CustomDialogController;
+    webviewController1: webview.WebviewController = new webview.WebviewController();
 
-10. build() {
-11. Column() {
-12. Web({ src: "", controller: this.webviewController1 })
-13. .javaScriptAccess(true)
-14. .multiWindowAccess(false)
-15. .onWindowExit(() => {
-16. console.info("NewWebViewComp onWindowExit");
-17. if (this.controller) {
-18. this.controller.close();
-19. }
-20. })
-21. .onActivateContent(() => {
-22. // 该Web需要展示到前台，建议应用在这里进行tab或window切换的动作
-23. console.info("NewWebViewComp onActivateContent")
-24. })
-25. }
-26. }
-27. }
+    build() {
+        Column() {
+            Web({ src: "", controller: this.webviewController1 })
+                .javaScriptAccess(true)
+                .multiWindowAccess(false)
+                .onWindowExit(() => {
+                    console.info("NewWebViewComp onWindowExit");
+                    if (this.controller) {
+                        this.controller.close();
+                    }
+                })
+                .onActivateContent(() => {
+                    // 该Web需要展示到前台，建议应用在这里进行tab或window切换的动作
+                    console.info("NewWebViewComp onActivateContent")
+                })
+        }
+    }
+}
 
-29. @Entry
-30. @Component
-31. struct WebComponent {
-32. controller: webview.WebviewController = new webview.WebviewController();
-33. dialogController: CustomDialogController | null = null;
+@Entry
+@Component
+struct WebComponent {
+    controller: webview.WebviewController = new webview.WebviewController();
+    dialogController: CustomDialogController | null = null;
 
-35. build() {
-36. Column() {
-37. Web({ src: $rawfile("index.html"), controller: this.controller })
-38. .javaScriptAccess(true)
-39. // 需要使能multiWindowAccess
-40. .multiWindowAccess(true)
-41. .allowWindowOpenMethod(true)
-42. .onWindowNew((event) => {
-43. if (this.dialogController) {
-44. this.dialogController.close()
-45. }
-46. let popController: webview.WebviewController = new webview.WebviewController();
-47. this.dialogController = new CustomDialogController({
-48. builder: NewWebViewComp({ webviewController1: popController }),
-49. // isModal设置为false，防止新窗口被销毁而无法触发onActivateContent回调
-50. isModal: false
-51. })
-52. this.dialogController.open();
-53. // 将新窗口对应WebviewController返回给Web内核。
-54. // 若不调用event.handler.setWebController接口，会造成render进程阻塞。
-55. // 如果没有创建新窗口，调用event.handler.setWebController接口时设置成null，通知Web没有创建新窗口。
-56. event.handler.setWebController(popController);
-57. })
-58. }
-59. }
-60. }
+    build() {
+        Column() {
+            Web({ src: $rawfile("index.html"), controller: this.controller })
+                .javaScriptAccess(true)
+                // 需要使能multiWindowAccess
+                .multiWindowAccess(true)
+                .allowWindowOpenMethod(true)
+                .onWindowNew((event) => {
+                    if (this.dialogController) {
+                        this.dialogController.close()
+                    }
+                    let popController: webview.WebviewController = new webview.WebviewController();
+                    // 将新窗口对应WebviewController返回给Web内核。
+                    // 若不调用event.handler.setWebController接口，会造成渲染进程阻塞。
+                    // 如果没有创建新窗口，调用event.handler.setWebController接口时设置成null，通知Web没有创建新窗口。
+                    event.handler.setWebController(popController);
+                    this.dialogController = new CustomDialogController({
+                        builder: NewWebViewComp({ webviewController1: popController }),
+                        // isModal设置为false，防止新窗口被销毁而无法触发onActivateContent回调
+                        isModal: false
+                    })
+                    this.dialogController.open();
+                })
+        }
+    }
+}
 ```
 
 **HTML示例：**
 
-```
-1. <!-- index.html -->
-2. <!DOCTYPE html>
-3. <html>
-4. <body>
-5. <div>
-6. <button type="button" onclick="delayOpenwindow(5000)">delayOpenwindow_5s</button>
-7. </div>
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<body>
+<div>
+    <button type="button" onclick="delayOpenwindow(5000)">delayOpenwindow_5s</button>
+</div>
 
-9. <script>
-10. function openwindowAll(){
-11. open("https://www.example.com","_blank","height=400,width=600,top=100,left=100,scrollbars=no")
-12. }
-13. function delayOpenwindow(t){
-14. setTimeout(openwindowAll, t);
-15. }
-16. </script>
-17. </body>
-18. </html>
+<script>
+    function openwindowAll(){
+        open("https://www.example.com","_blank","height=400,width=600,top=100,left=100,scrollbars=no")
+    }
+    function delayOpenwindow(t){
+        setTimeout(openwindowAll, t);
+    }
+</script>
+</body>
+</html>
 ```
 
 ## mediaOptions10+
-
-PhonePC/2in1TabletTVWearable
 
 mediaOptions(options: WebMediaOptions)
 
 设置Web媒体播放的策略，其中包括：Web中的音频在重新获焦后能够自动续播的有效期、应用内多个Web实例的音频是否独占。当该属性未显式设置时，默认Web中的音频重新获焦后无法自动续播、应用内多个Web实例的音频是独占的。
 
-说明
+**说明** 
 
 * 同一Web实例中的多个音频均视为同一音频。
 * 该媒体播放策略将同时管控有声视频。
@@ -1575,39 +1511,38 @@ mediaOptions(options: WebMediaOptions)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. @State options: WebMediaOptions = {resumeInterval: 10, audioExclusive: true};
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State options: WebMediaOptions = {resumeInterval: 10, audioExclusive: true};
 
-10. build() {
-11. Column() {
-12. Web({ src: 'www.example.com', controller: this.controller })
-13. .mediaOptions(this.options)
-14. }
-15. }
-16. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .mediaOptions(this.options)
+    }
+  }
+}
 ```
 
 ## javaScriptOnDocumentStart11+
-
-PhonePC/2in1TabletTVWearable
 
 javaScriptOnDocumentStart(scripts: Array<ScriptItem>)
 
 将JavaScript脚本注入到Web组件中，当指定页面或者文档开始加载时，该脚本将在其来源与scriptRules匹配的任何页面中执行。当属性没有显式调用时，默认不将JavaScript脚本注入到Web组件中。
 
-说明
+**说明** 
 
 * 网页文档根元素（HTML Element）创建后、但尚未加载任何其他内容之前注入脚本。
 * 该脚本按照字典序执行，非数组本身顺序，若需数组本身顺序，建议使用[runJavaScriptOnDocumentStart](arkts-basic-components-web-attributes.md#runjavascriptondocumentstart15)接口。
-* 不建议与[runJavaScriptOnDocumentStart](arkts-basic-components-web-attributes.md#runjavascriptondocumentstart15)同时使用。
 * 内容相同的脚本多次注入时将被静默去重，不展示，不提醒，使用首次注入时的scriptRules。
+* 本接口不支持[UrlRegexRule](arkts-basic-components-web-i.md#urlregexrule23)。
+* 建议使用[runJavaScriptOnDocumentStart](arkts-basic-components-web-attributes.md#runjavascriptondocumentstart15)代替。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -1619,75 +1554,74 @@ javaScriptOnDocumentStart(scripts: Array<ScriptItem>)
 
 **ets示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. private localStorage: string =
-9. "if (typeof(Storage) !== 'undefined') {" +
-10. "   localStorage.setItem('color', 'Red');" +
-11. "}";
-12. @State scripts: Array<ScriptItem> = [
-13. { script: this.localStorage, scriptRules: ["*"] }
-14. ];
+@Entry
+@Component
+struct Index {
+    controller: webview.WebviewController = new webview.WebviewController();
+    private localStorage: string =
+        "if (typeof(Storage) !== 'undefined') {" +
+        "   localStorage.setItem('color', 'Red');" +
+        "}";
+    @State scripts: Array<ScriptItem> = [
+        { script: this.localStorage, scriptRules: ["*"] }
+    ];
 
-16. build() {
-17. Column({ space: 20 }) {
-18. Web({ src: $rawfile('index.html'), controller: this.controller })
-19. .javaScriptAccess(true)
-20. .domStorageAccess(true)
-21. .backgroundColor(Color.Grey)
-22. .javaScriptOnDocumentStart(this.scripts)
-23. .width('100%')
-24. .height('100%')
-25. }
-26. }
-27. }
+    build() {
+        Column({ space: 20 }) {
+            Web({ src: $rawfile('index.html'), controller: this.controller })
+                .javaScriptAccess(true)
+                .domStorageAccess(true)
+                .backgroundColor(Color.Grey)
+                .javaScriptOnDocumentStart(this.scripts)
+                .width('100%')
+                .height('100%')
+        }
+    }
+}
 ```
 
 **HTML示例：**
 
-```
-1. <!-- index.html -->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta charset="utf-8">
-6. </head>
-7. <body style="font-size: 30px;" onload='bodyOnLoadLocalStorage()'>
-8. Hello world!
-9. <div id="result"></div>
-10. </body>
-11. <script type="text/javascript">
-12. function bodyOnLoadLocalStorage() {
-13. if (typeof(Storage) !== 'undefined') {
-14. document.getElementById('result').innerHTML = localStorage.getItem('color');
-15. } else {
-16. document.getElementById('result').innerHTML = 'Your browser does not support localStorage.';
-17. }
-18. }
-19. </script>
-20. </html>
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body style="font-size: 30px;" onload='bodyOnLoadLocalStorage()'>
+      Hello world!
+      <div id="result"></div>
+  </body>
+  <script type="text/javascript">
+    function bodyOnLoadLocalStorage() {
+      if (typeof(Storage) !== 'undefined') {
+        document.getElementById('result').innerHTML = localStorage.getItem('color');
+      } else {
+        document.getElementById('result').innerHTML = 'Your browser does not support localStorage.';
+      }
+    }
+  </script>
+</html>
 ```
 
 ## javaScriptOnDocumentEnd11+
-
-PhonePC/2in1TabletTVWearable
 
 javaScriptOnDocumentEnd(scripts: Array<ScriptItem>)
 
 将JavaScript脚本注入到Web组件中，当指定页面或者文档加载完成时，该脚本将在其来源与scriptRules匹配的任何页面中执行。当属性没有显式调用时，默认不将JavaScript脚本注入到Web组件中。
 
-说明
+**说明** 
 
 * 该脚本将在页面的任何JavaScript代码之后运行，并且DOM树此时已经加载、渲染完毕。
 * 该脚本按照字典序执行，非数组本身顺序。
-* 不建议与[runJavaScriptOnDocumentEnd](arkts-basic-components-web-attributes.md#runjavascriptondocumentend15)同时使用。
 * 内容相同的脚本多次注入时将被静默去重，不展示，不提醒，使用首次注入时的scriptRules。
+* 本接口不支持[UrlRegexRule](arkts-basic-components-web-i.md#urlregexrule23)。
+* 建议使用[runJavaScriptOnDocumentEnd](arkts-basic-components-web-attributes.md#runjavascriptondocumentend15)代替。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -1699,61 +1633,58 @@ javaScriptOnDocumentEnd(scripts: Array<ScriptItem>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. private jsStr: string =
-9. "window.document.getElementById(\"result\").innerHTML = 'this is msg from javaScriptOnDocumentEnd'";
-10. @State scripts: Array<ScriptItem> = [
-11. { script: this.jsStr, scriptRules: ["*"] }
-12. ];
+@Entry
+@Component
+struct Index {
+  controller: webview.WebviewController = new webview.WebviewController();
+  private jsStr: string =
+    "window.document.getElementById(\"result\").innerHTML = 'this is msg from javaScriptOnDocumentEnd'";
+  @State scripts: Array<ScriptItem> = [
+    { script: this.jsStr, scriptRules: ["*"] }
+  ];
 
-14. build() {
-15. Column({ space: 20 }) {
-16. Web({ src: $rawfile('index.html'), controller: this.controller })
-17. .javaScriptAccess(true)
-18. .domStorageAccess(true)
-19. .backgroundColor(Color.Grey)
-20. .javaScriptOnDocumentEnd(this.scripts)
-21. .width('100%')
-22. .height('100%')
-23. }
-24. }
-25. }
+  build() {
+    Column({ space: 20 }) {
+      Web({ src: $rawfile('index.html'), controller: this.controller })
+        .javaScriptAccess(true)
+        .domStorageAccess(true)
+        .backgroundColor(Color.Grey)
+        .javaScriptOnDocumentEnd(this.scripts)
+        .width('100%')
+        .height('100%')
+    }
+  }
+}
 ```
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta charset="utf-8">
-6. </head>
-7. <body style="font-size: 30px;">
-8. Hello world!
-9. <div id="result">test msg</div>
-10. </body>
-11. </html>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body style="font-size: 30px;">
+Hello world!
+<div id="result">test msg</div>
+</body>
+</html>
 ```
 
 ## runJavaScriptOnDocumentStart15+
-
-PhonePC/2in1TabletTVWearable
 
 runJavaScriptOnDocumentStart(scripts: Array<ScriptItem>)
 
 将JavaScript脚本注入到Web组件中，当指定页面或者文档开始加载时，该脚本将在其来源与scriptRules匹配的任何页面中执行。当属性没有显式调用时，默认不将JavaScript脚本注入到Web组件中。
 
-说明
+**说明** 
 
 * 网页文档根元素（HTML Element）创建后、但尚未加载任何其他内容之前注入脚本。
 * 该脚本按照数组本身顺序执行。
-* 不建议与[javaScriptOnDocumentStart](arkts-basic-components-web-attributes.md#javascriptondocumentstart11)同时使用。
 * 内容相同的脚本多次注入时将被静默去重，不展示，不提醒，使用首次注入时的scriptRules。
 
 **系统能力：** SystemCapability.Web.Webview.Core
@@ -1766,77 +1697,74 @@ runJavaScriptOnDocumentStart(scripts: Array<ScriptItem>)
 
 **ets示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. private localStorage: string =
-9. "if (typeof(Storage) !== 'undefined') {" +
-10. "   localStorage.setItem('color', 'Red');" +
-11. "}";
-12. private localStorage2: string =
-13. "console.info('runJavaScriptOnDocumentStart urlRegexRules Matching succeeded.')";
-14. @State scripts: Array<ScriptItem> = [
-15. { script: this.localStorage, scriptRules: ["*"] },
-16. { script: this.localStorage2, scriptRules: [], urlRegexRules: [{secondLevelDomain: "", rule: ".*index.html"}] }
-17. ];
+@Entry
+@Component
+struct Index {
+    controller: webview.WebviewController = new webview.WebviewController();
+    private localStorage: string =
+        "if (typeof(Storage) !== 'undefined') {" +
+        "   localStorage.setItem('color', 'Red');" +
+        "}";
+    private localStorage2: string =
+        "console.info('runJavaScriptOnDocumentStart urlRegexRules Matching succeeded.')";
+    @State scripts: Array<ScriptItem> = [
+        { script: this.localStorage, scriptRules: ["*"] },
+        { script: this.localStorage2, scriptRules: [], urlRegexRules: [{secondLevelDomain: "", rule: ".*index.html"}] }
+    ];
 
-19. build() {
-20. Column({ space: 20 }) {
-21. Web({ src: $rawfile('index.html'), controller: this.controller })
-22. .javaScriptAccess(true)
-23. .domStorageAccess(true)
-24. .backgroundColor(Color.Grey)
-25. .runJavaScriptOnDocumentStart(this.scripts)
-26. .width('100%')
-27. .height('100%')
-28. }
-29. }
-30. }
+    build() {
+        Column({ space: 20 }) {
+            Web({ src: $rawfile('index.html'), controller: this.controller })
+                .javaScriptAccess(true)
+                .domStorageAccess(true)
+                .backgroundColor(Color.Grey)
+                .runJavaScriptOnDocumentStart(this.scripts)
+                .width('100%')
+                .height('100%')
+        }
+    }
+}
 ```
 
 **HTML示例：**
 
-```
-1. <!-- index.html -->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta charset="utf-8">
-6. </head>
-7. <body style="font-size: 30px;" onload='bodyOnLoadLocalStorage()'>
-8. Hello world!
-9. <div id="result"></div>
-10. </body>
-11. <script type="text/javascript">
-12. function bodyOnLoadLocalStorage() {
-13. if (typeof(Storage) !== 'undefined') {
-14. document.getElementById('result').innerHTML = localStorage.getItem('color');
-15. } else {
-16. document.getElementById('result').innerHTML = 'Your browser does not support localStorage.';
-17. }
-18. }
-19. </script>
-20. </html>
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body style="font-size: 30px;" onload='bodyOnLoadLocalStorage()'>
+      Hello world!
+      <div id="result"></div>
+  </body>
+  <script type="text/javascript">
+    function bodyOnLoadLocalStorage() {
+      if (typeof(Storage) !== 'undefined') {
+        document.getElementById('result').innerHTML = localStorage.getItem('color');
+      } else {
+        document.getElementById('result').innerHTML = 'Your browser does not support localStorage.';
+      }
+    }
+  </script>
+</html>
 ```
 
 ## runJavaScriptOnDocumentEnd15+
-
-PhonePC/2in1TabletTVWearable
 
 runJavaScriptOnDocumentEnd(scripts: Array<ScriptItem>)
 
 将JavaScript脚本注入到Web组件中，当指定页面或者文档加载完成时，该脚本将在其来源与scriptRules匹配的任何页面中执行。当属性没有显式调用时，默认不将JavaScript脚本注入到Web组件中。
 
-说明
+**说明** 
 
 * 该脚本将在页面的任何JavaScript代码之后运行，并且DOM树此时已经加载、渲染完毕。
 * 该脚本按照数组本身顺序执行。
-* 不建议与[javaScriptOnDocumentEnd](arkts-basic-components-web-attributes.md#javascriptondocumentend11)同时使用。
 * 内容相同的脚本多次注入时将被静默去重，不展示，不提醒，使用首次注入时的scriptRules。
 
 **系统能力：** SystemCapability.Web.Webview.Core
@@ -1849,59 +1777,57 @@ runJavaScriptOnDocumentEnd(scripts: Array<ScriptItem>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. private jsStr: string =
-9. "window.document.getElementById(\"result\").innerHTML = 'this is msg from runJavaScriptOnDocumentEnd'";
-10. private jsStr2: string = "console.info('runJavaScriptOnDocumentEnd urlRegexRules Matching succeeded.')";
-11. @State scripts: Array<ScriptItem> = [
-12. { script: this.jsStr, scriptRules: ["*"] },
-13. { script: this.jsStr2, scriptRules: [], urlRegexRules: [{secondLevelDomain: "", rule: ".*index.html"}] }
-14. ];
+@Entry
+@Component
+struct Index {
+  controller: webview.WebviewController = new webview.WebviewController();
+  private jsStr: string =
+    "window.document.getElementById(\"result\").innerHTML = 'this is msg from runJavaScriptOnDocumentEnd'";
+  private jsStr2: string = "console.info('runJavaScriptOnDocumentEnd urlRegexRules Matching succeeded.')";
+  @State scripts: Array<ScriptItem> = [
+    { script: this.jsStr, scriptRules: ["*"] },
+    { script: this.jsStr2, scriptRules: [], urlRegexRules: [{secondLevelDomain: "", rule: ".*index.html"}] }
+  ];
 
-16. build() {
-17. Column({ space: 20 }) {
-18. Web({ src: $rawfile('index.html'), controller: this.controller })
-19. .javaScriptAccess(true)
-20. .domStorageAccess(true)
-21. .backgroundColor(Color.Grey)
-22. .runJavaScriptOnDocumentEnd(this.scripts)
-23. .width('100%')
-24. .height('100%')
-25. }
-26. }
-27. }
+  build() {
+    Column({ space: 20 }) {
+      Web({ src: $rawfile('index.html'), controller: this.controller })
+        .javaScriptAccess(true)
+        .domStorageAccess(true)
+        .backgroundColor(Color.Grey)
+        .runJavaScriptOnDocumentEnd(this.scripts)
+        .width('100%')
+        .height('100%')
+    }
+  }
+}
 ```
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta charset="utf-8">
-6. </head>
-7. <body style="font-size: 30px;">
-8. Hello world!
-9. <div id="result">test msg</div>
-10. </body>
-11. </html>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body style="font-size: 30px;">
+Hello world!
+<div id="result">test msg</div>
+</body>
+</html>
 ```
 
 ## runJavaScriptOnHeadEnd15+
-
-PhonePC/2in1TabletTVWearable
 
 runJavaScriptOnHeadEnd(scripts: Array<ScriptItem>)
 
 将JavaScript脚本注入到Web组件中，当页面DOM树head标签解析完成时，该脚本将在其来源与scriptRules匹配的任何页面中执行。当属性没有显式调用时，默认不将JavaScript脚本注入到Web组件中。
 
-说明
+**说明** 
 
 * 该脚本按照数组本身顺序执行。
 * 内容相同的脚本多次注入时将被静默去重，不展示，不提醒，使用首次注入时的scriptRules。
@@ -1916,64 +1842,68 @@ runJavaScriptOnHeadEnd(scripts: Array<ScriptItem>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. private jsStr: string =
-9. "window.document.getElementById(\"result\").innerHTML = 'this is msg from runJavaScriptOnHeadEnd'";
-10. private jsStr2: string = "console.info('runJavaScriptOnHeadEnd urlRegexRules Matching succeeded.')";
-11. @State scripts: Array<ScriptItem> = [
-12. { script: this.jsStr, scriptRules: ["*"] },
-13. { script: this.jsStr2, scriptRules: [], urlRegexRules: [{secondLevelDomain: "", rule: ".*index.html"}] }
-14. ];
+@Entry
+@Component
+struct Index {
+  controller: webview.WebviewController = new webview.WebviewController();
+  private jsStr: string =
+    "window.document.getElementById(\"result\").innerHTML = 'this is msg from runJavaScriptOnHeadEnd'";
+  private jsStr2: string = "console.info('runJavaScriptOnHeadEnd urlRegexRules Matching succeeded.')";
+  @State scripts: Array<ScriptItem> = [
+    { script: this.jsStr, scriptRules: ["*"] },
+    { script: this.jsStr2, scriptRules: [], urlRegexRules: [{secondLevelDomain: "", rule: ".*index.html"}] }
+  ];
 
-16. build() {
-17. Column({ space: 20 }) {
-18. Web({ src: $rawfile('index.html'), controller: this.controller })
-19. .javaScriptAccess(true)
-20. .domStorageAccess(true)
-21. .backgroundColor(Color.Grey)
-22. .runJavaScriptOnHeadEnd(this.scripts)
-23. .width('100%')
-24. .height('100%')
-25. }
-26. }
-27. }
+  build() {
+    Column({ space: 20 }) {
+      Web({ src: $rawfile('index.html'), controller: this.controller })
+        .javaScriptAccess(true)
+        .domStorageAccess(true)
+        .backgroundColor(Color.Grey)
+        .runJavaScriptOnHeadEnd(this.scripts)
+        .width('100%')
+        .height('100%')
+    }
+  }
+}
 ```
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta charset="utf-8">
-6. </head>
-7. <body style="font-size: 30px;">
-8. Hello world!
-9. <div id="result">test msg</div>
-10. </body>
-11. </html>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body style="font-size: 30px;">
+Hello world!
+<div id="result">test msg</div>
+</body>
+</html>
 ```
 
 ## layoutMode11+
 
-PhonePC/2in1TabletTVWearable
-
 layoutMode(mode: WebLayoutMode)
 
-设置Web布局模式。当属性没有显式调用时，默认Web布局跟随系统模式。常见问题请参考[Web组件大小自适应页面内容布局](../harmonyos-guides/web-fit-content.md)。
+设置Web布局模式。当属性没有显式调用时，默认Web布局跟随系统模式（WebLayoutMode.NONE）。常见问题请参考[Web组件大小自适应页面内容布局](../harmonyos-guides/web-fit-content.md)。
 
-说明
+**说明** 
 
-目前只支持两种Web布局模式，分别为Web布局跟随系统（WebLayoutMode.NONE）和Web组件高度基于前端页面高度的自适应网页布局（WebLayoutMode.FIT\_CONTENT）。
+目前只支持两种Web布局模式，分别为
+
+* Web布局跟随系统（WebLayoutMode.NONE）。
+* Web组件高度基于前端页面高度的自适应网页布局（WebLayoutMode.FIT\_CONTENT）。
 
 Web组件高度基于前端页面自适应布局有如下限制：
 
+* 当layoutMode设置为WebLayoutMode.FIT\_CONTENT
+  + [forceDisplayScrollBar](arkts-basic-components-web-attributes.md#forcedisplayscrollbar14)不支持常驻
+  + [blankScreenDetectionConfig](arkts-basic-components-web-attributes.md#blankscreendetectionconfig22)不生效
 * 如果Web组件宽或长度超过7680px，请在Web组件创建的时候指定RenderMode.SYNC\_RENDER模式，否则会整个白屏。
 * Web组件创建后不支持动态切换layoutMode模式。
 * Web组件宽高规格：指定RenderMode.ASYNC\_RENDER模式时，分别不超过7680px。
@@ -1988,63 +1918,61 @@ Web组件高度基于前端页面自适应布局有如下限制：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| mode | [WebLayoutMode](arkts-basic-components-web-e.md#weblayoutmode11) | 是 | 设置web布局模式，跟随系统或自适应布局。  传入null或undefined时为WebLayoutMode.NONE |
+| mode | [WebLayoutMode](arkts-basic-components-web-e.md#weblayoutmode11) | 是 | 设置Web布局模式，跟随系统或自适应布局。  传入null或undefined时为WebLayoutMode.NONE |
 
 **示例：**
 
 1、指明layoutMode为WebLayoutMode.FIT\_CONTENT模式，为避免默认渲染模式下(RenderMode.ASYNC\_RENDER)视口高度超过7680px导致页面渲染出错，需要显式指明渲染模式(RenderMode.SYNC\_RENDER)。
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. mode: WebLayoutMode = WebLayoutMode.FIT_CONTENT;
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  mode: WebLayoutMode = WebLayoutMode.FIT_CONTENT;
 
-10. build() {
-11. Column() {
-12. Web({ src: 'www.example.com', controller: this.controller, renderMode: RenderMode.SYNC_RENDER })
-13. .layoutMode(this.mode)
-14. }
-15. }
-16. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller, renderMode: RenderMode.SYNC_RENDER })
+        .layoutMode(this.mode)
+    }
+  }
+}
 ```
 
 2、指明layoutMode为WebLayoutMode.FIT\_CONTENT模式，为避免嵌套滚动场景下，Web滚动到边缘时会优先触发过滚动的过界回弹效果影响用户体验，建议指定[overScrollMode](arkts-basic-components-web-attributes.md#overscrollmode11)为OverScrollMode.NEVER。
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. layoutMode: WebLayoutMode = WebLayoutMode.FIT_CONTENT;
-9. @State overScrollMode: OverScrollMode = OverScrollMode.NEVER;
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  layoutMode: WebLayoutMode = WebLayoutMode.FIT_CONTENT;
+  @State overScrollMode: OverScrollMode = OverScrollMode.NEVER;
 
-11. build() {
-12. Column() {
-13. Web({ src: 'www.example.com', controller: this.controller, renderMode: RenderMode.SYNC_RENDER })
-14. .layoutMode(this.layoutMode)
-15. .overScrollMode(this.overScrollMode)
-16. }
-17. }
-18. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller, renderMode: RenderMode.SYNC_RENDER })
+        .layoutMode(this.layoutMode)
+        .overScrollMode(this.overScrollMode)
+    }
+  }
+}
 ```
 
 ## nestedScroll11+
-
-PhonePC/2in1TabletTVWearable
 
 nestedScroll(value: NestedScrollOptions | NestedScrollOptionsExt)
 
 调用以设置嵌套滚动选项。
 
-说明
+**说明** 
 
 * 可以设置上下左右四个方向，或者设置向前、向后两个方向的嵌套滚动模式，实现与父组件的滚动联动。
 * 支持嵌套滚动的容器：[Grid](ts-container-grid.md)、[List](ts-container-list.md)、[Scroll](ts-container-scroll.md)、[Swiper](ts-container-swiper.md)、[Tabs](ts-container-tabs.md)、[WaterFlow](ts-container-waterflow.md)、[Refresh](ts-container-refresh.md)、[bindSheet](ts-universal-attributes-sheet-transition.md#bindsheet)。
@@ -2061,93 +1989,133 @@ nestedScroll(value: NestedScrollOptions | NestedScrollOptionsExt)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. @Entry
-4. @Component
-5. struct WebComponent {
-6. controller: webview.WebviewController = new webview.WebviewController();
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-8. build() {
-9. Column() {
-10. Web({ src: 'www.example.com', controller: this.controller })
-11. .nestedScroll({
-12. scrollForward: NestedScrollMode.SELF_FIRST,
-13. scrollBackward: NestedScrollMode.SELF_FIRST,
-14. })
-15. }
-16. }
-17. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .nestedScroll({
+          scrollForward: NestedScrollMode.SELF_FIRST,
+          scrollBackward: NestedScrollMode.SELF_FIRST,
+        })
+    }
+  }
+}
 ```
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. @Entry
-4. @Component
-5. struct WebComponent {
-6. controller: webview.WebviewController = new webview.WebviewController()
-7. build() {
-8. Scroll(){
-9. Column() {
-10. Text("嵌套Web")
-11. .height("25%")
-12. .width("100%")
-13. .fontSize(30)
-14. .backgroundColor(Color.Yellow)
-15. Web({ src: $rawfile('index.html'),
-16. controller: this.controller })
-17. .nestedScroll({
-18. scrollUp: NestedScrollMode.SELF_FIRST,
-19. scrollDown: NestedScrollMode.PARENT_FIRST,
-20. scrollLeft: NestedScrollMode.SELF_FIRST,
-21. scrollRight: NestedScrollMode.SELF_FIRST,
-22. })
-23. }
-24. }
-25. }
-26. }
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController()
+  build() {
+    Scroll(){
+      Column() {
+        Text("嵌套Web")
+          .height("25%")
+          .width("100%")
+          .fontSize(30)
+          .backgroundColor(Color.Yellow)
+        Web({ src: $rawfile('index.html'),
+              controller: this.controller })
+          .nestedScroll({
+            scrollUp: NestedScrollMode.SELF_FIRST,
+            scrollDown: NestedScrollMode.PARENT_FIRST,
+            scrollLeft: NestedScrollMode.SELF_FIRST,
+            scrollRight: NestedScrollMode.SELF_FIRST,
+          })
+      }
+    }
+  }
+}
 ```
 
 加载的html文件。
 
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .blue {
+          background-color: lightblue;
+        }
+        .green {
+          background-color: lightgreen;
+        }
+        .blue, .green {
+        font-size:16px;
+        height:200px;
+        text-align: center;       /* 水平居中 */
+        line-height: 200px;       /* 垂直居中（值等于容器高度） */
+        }
+    </style>
+</head>
+<body>
+<div class="blue" >webArea</div>
+<div class="green">webArea</div>
+<div class="blue">webArea</div>
+<div class="green">webArea</div>
+<div class="blue">webArea</div>
+<div class="green">webArea</div>
+<div class="blue">webArea</div>
+</body>
+</html>
 ```
-1. <!-- index.html -->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0">
-6. <style>
-7. .blue {
-8. background-color: lightblue;
-9. }
-10. .green {
-11. background-color: lightgreen;
-12. }
-13. .blue, .green {
-14. font-size:16px;
-15. height:200px;
-16. text-align: center;       /* 水平居中 */
-17. line-height: 200px;       /* 垂直居中（值等于容器高度） */
-18. }
-19. </style>
-20. </head>
-21. <body>
-22. <div class="blue" >webArea</div>
-23. <div class="green">webArea</div>
-24. <div class="blue">webArea</div>
-25. <div class="green">webArea</div>
-26. <div class="blue">webArea</div>
-27. <div class="green">webArea</div>
-28. <div class="blue">webArea</div>
-29. </body>
-30. </html>
+
+## enableScrollDirectionalLock
+
+enableScrollDirectionalLock(value: boolean, type: ScrollDirectionalLockType)
+
+设置Web组件滑动方向锁定，防止用户在斜向滑动时同时触发水平和垂直滚动，提升滚动体验。不调用该方法设置时，默认在嵌套滚动场景下支持滑动方向锁定。ALL模式适用于所有需要锁定滑动的场景，NESTED\_SCROLL模式仅适用于嵌套滚动场景。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | boolean | 是 | 是否支持滑动方向锁定。true 表示滑动方向锁定，滚动视图会根据用户初始滑动的方向来锁定滚动轴，false 表示不锁定。 |
+| type | [ScrollDirectionalLockType](arkts-basic-components-web-e.md#scrolldirectionallocktype) | 是 | 设置Web组件在哪些场景下希望滑动方向锁定。ALL表示所有场景都支持滑动锁定，NESTED\_SCROLL表示在嵌套滚动场景下支持滑动锁定。 |
+
+**示例：**
+
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .width('100%')
+        .height('100%')
+        // 在所有场景下支持滑动方向的锁定
+        .enableScrollDirectionalLock(true, ScrollDirectionalLockType.ALL)
+    }
+  }
+}
 ```
 
 ## bypassVsyncCondition20+
-
-PhonePC/2in1TabletTVWearable
 
 bypassVsyncCondition(condition: WebBypassVsyncCondition)
 
@@ -2163,36 +2131,38 @@ bypassVsyncCondition(condition: WebBypassVsyncCondition)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. condition: WebBypassVsyncCondition = WebBypassVsyncCondition.SCROLLBY_FROM_ZERO_OFFSET;
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  condition: WebBypassVsyncCondition = WebBypassVsyncCondition.SCROLLBY_FROM_ZERO_OFFSET;
 
-10. build() {
-11. Column() {
-12. Button('scrollBy')
-13. .onClick(() => {
-14. this.controller.scrollBy(0, 5);
-15. })
-16. Web({ src: 'www.example.com', controller: this.controller })
-17. .bypassVsyncCondition(this.condition)
-18. }
-19. }
-20. }
+  build() {
+    Column() {
+      Button('scrollBy')
+        .onClick(() => {
+          this.controller.scrollBy(0, 5);
+        })
+      Web({ src: 'www.example.com', controller: this.controller })
+        .bypassVsyncCondition(this.condition)
+    }
+  }
+}
 ```
 
 ## enableNativeEmbedMode11+
 
-PhonePC/2in1TabletTVWearable
-
 enableNativeEmbedMode(enabled: boolean)
 
 设置是否开启同层渲染功能。当该方法没有显式调用时，默认不开启同层渲染功能。
+
+**说明** 
+
+[registerNativeEmbedRule](arkts-basic-components-web-attributes.md#registernativeembedrule12)和[nativeEmbedOptions](arkts-basic-components-web-attributes.md#nativeembedoptions16)等接口依赖此属性开启时才生效。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -2204,26 +2174,24 @@ enableNativeEmbedMode(enabled: boolean)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. @Entry
-4. @Component
-5. struct WebComponent {
-6. controller: webview.WebviewController = new webview.WebviewController();
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-8. build() {
-9. Column() {
-10. Web({ src: 'www.example.com', controller: this.controller })
-11. .enableNativeEmbedMode(true)
-12. }
-13. }
-14. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .enableNativeEmbedMode(true)
+    }
+  }
+}
 ```
 
 ## forceDisplayScrollBar14+
-
-PhonePC/2in1TabletTVWearable
 
 forceDisplayScrollBar(enabled: boolean)
 
@@ -2231,62 +2199,65 @@ forceDisplayScrollBar(enabled: boolean)
 
 全量展开模式下不支持滚动条常驻，即layoutMode为WebLayoutMode.FIT\_CONTENT模式时，参数enabled为false。
 
+**说明** 
+
+* 该接口在当前应用的所有Web组件中全局生效。多个Web组件设置不同值时，以首次设置的值为准。
+* 建议使用[setScrollbarMode](arkts-apis-webview-webviewcontroller.md#setscrollbarmode23)设置当前应用所有Web组件的滚动条模式。若同时调用setScrollbarMode接口，forceDisplayScrollBar接口设置不生效。
+
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| enabled | boolean | 是 | 滚动条是否常驻。  true表示滚动条常驻，false表示滚动条不常驻。  传入undefined或null时属性设置不生效。 |
+| enabled | boolean | 是 | 滚动条是否常驻。  true表示滚动条常驻，false表示滚动条不常驻。  当layoutMode为WebLayoutMode.FIT\_CONTENT模式时，enabled参数强制为false，设置true也不生效。  传入undefined或null时属性设置不生效。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: $rawfile('index.html'), controller: this.controller })
-12. .forceDisplayScrollBar(true)
-13. }
-14. }
-15. }
+  build() {
+    Column() {
+      Web({ src: $rawfile('index.html'), controller: this.controller })
+        .forceDisplayScrollBar(true)
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta name="viewport" content="width=device-width, initial-scale=1.0">
-6. <title>Demo</title>
-7. <style>
-8. body {
-9. width:2560px;
-10. height:2560px;
-11. padding-right:170px;
-12. padding-left:170px;
-13. border:5px solid blueviolet;
-14. }
-15. </style>
-16. </head>
-17. <body>
-18. Scroll Test
-19. </body>
-20. </html>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <style>
+      body {
+        width:2560px;
+        height:2560px;
+        padding-right:170px;
+        padding-left:170px;
+        border:5px solid blueviolet;
+      }
+    </style>
+</head>
+<body>
+Scroll Test
+</body>
+</html>
 ```
 
 ## registerNativeEmbedRule12+
-
-PhonePC/2in1TabletTVWearable
 
 registerNativeEmbedRule(tag: string, type: string)
 
@@ -2309,131 +2280,129 @@ registerNativeEmbedRule(tag: string, type: string)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { NodeController, BuilderNode, NodeRenderType, FrameNode, UIContext } from '@kit.ArkUI';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { NodeController, BuilderNode, NodeRenderType, FrameNode, UIContext } from '@kit.ArkUI';
 
-5. declare class Params {
-6. text: string;
-7. width: number;
-8. height: number;
-9. }
+declare class Params {
+  text: string;
+  width: number;
+  height: number;
+}
 
-11. declare class NodeControllerParams {
-12. surfaceId: string;
-13. renderType: NodeRenderType;
-14. width: number;
-15. height: number;
-16. }
+declare class NodeControllerParams {
+  surfaceId: string;
+  renderType: NodeRenderType;
+  width: number;
+  height: number;
+}
 
-18. class MyNodeController extends NodeController {
-19. private rootNode: BuilderNode<[Params]> | undefined | null;
-20. private surfaceId_: string = "";
-21. private renderType_: NodeRenderType = NodeRenderType.RENDER_TYPE_DISPLAY;
-22. private width_: number = 0;
-23. private height_: number = 0;
+class MyNodeController extends NodeController {
+  private rootNode: BuilderNode<[Params]> | undefined | null;
+  private surfaceId_: string = "";
+  private renderType_: NodeRenderType = NodeRenderType.RENDER_TYPE_DISPLAY;
+  private width_: number = 0;
+  private height_: number = 0;
 
-25. setRenderOption(params: NodeControllerParams) {
-26. this.surfaceId_ = params.surfaceId;
-27. this.renderType_ = params.renderType;
-28. this.width_ = params.width;
-29. this.height_ = params.height;
-30. }
+  setRenderOption(params: NodeControllerParams) {
+    this.surfaceId_ = params.surfaceId;
+    this.renderType_ = params.renderType;
+    this.width_ = params.width;
+    this.height_ = params.height;
+  }
 
-32. makeNode(uiContext: UIContext): FrameNode | null {
-33. this.rootNode = new BuilderNode(uiContext, { surfaceId: this.surfaceId_, type: this.renderType_ });
-34. this.rootNode.build(wrapBuilder(ButtonBuilder), { text: "myButton", width: this.width_, height: this.height_ });
-35. return this.rootNode.getFrameNode();
-36. }
+  makeNode(uiContext: UIContext): FrameNode | null {
+    this.rootNode = new BuilderNode(uiContext, { surfaceId: this.surfaceId_, type: this.renderType_ });
+    this.rootNode.build(wrapBuilder(ButtonBuilder), { text: "myButton", width: this.width_, height: this.height_ });
+    return this.rootNode.getFrameNode();
+  }
 
-38. postInputEvent(event: TouchEvent | MouseEvent | undefined): boolean {
-39. return this.rootNode?.postInputEvent(event) as boolean;
-40. }
-41. }
+  postInputEvent(event: TouchEvent | MouseEvent | undefined): boolean {
+    return this.rootNode?.postInputEvent(event) as boolean;
+  }
+}
 
-43. @Component
-44. struct ButtonComponent {
-45. @Prop params: Params;
-46. @State bkColor: Color = Color.Red;
+@Component
+struct ButtonComponent {
+  @Prop params: Params;
+  @State bkColor: Color = Color.Red;
 
-48. build() {
-49. Column() {
-50. Button(this.params.text)
-51. .height(50)
-52. .width(200)
-53. .border({ width: 2, color: Color.Red })
-54. .backgroundColor(this.bkColor)
-55. }
-56. .width(this.params.width)
-57. .height(this.params.height)
-58. }
-59. }
+  build() {
+    Column() {
+      Button(this.params.text)
+        .height(50)
+        .width(200)
+        .border({ width: 2, color: Color.Red })
+        .backgroundColor(this.bkColor)
+    }
+    .width(this.params.width)
+    .height(this.params.height)
+  }
+}
 
-61. @Builder
-62. function ButtonBuilder(params: Params) {
-63. ButtonComponent({ params: params })
-64. .backgroundColor(Color.Green)
-65. }
+@Builder
+function ButtonBuilder(params: Params) {
+  ButtonComponent({ params: params })
+    .backgroundColor(Color.Green)
+}
 
-67. @Entry
-68. @Component
-69. struct WebComponent {
-70. controller: webview.WebviewController = new webview.WebviewController();
-71. private nodeController: MyNodeController = new MyNodeController();
-72. uiContext: UIContext = this.getUIContext();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  private nodeController: MyNodeController = new MyNodeController();
+  uiContext: UIContext = this.getUIContext();
 
-74. build() {
-75. Column() {
-76. Stack() {
-77. NodeContainer(this.nodeController)
-78. Web({ src: $rawfile('index.html'), controller: this.controller })
-79. // 配置同层渲染开关开启。
-80. .enableNativeEmbedMode(true)
-81. // 注册同层标签为<object>，类型为"native"前缀。
-82. .registerNativeEmbedRule("object", "native")
-83. // 获取<object>标签的生命周期变化数据。
-84. .onNativeEmbedLifecycleChange((object) => {
-85. if (object.status == NativeEmbedStatus.CREATE) {
-86. this.nodeController.setRenderOption({
-87. surfaceId: object.surfaceId as string,
-88. renderType: NodeRenderType.RENDER_TYPE_TEXTURE,
-89. width: this.uiContext!.px2vp(object.info?.width),
-90. height: this.uiContext!.px2vp(object.info?.height)
-91. });
-92. this.nodeController.rebuild();
-93. }
-94. })
-95. }
-96. }
-97. }
-98. }
+  build() {
+    Column() {
+      Stack() {
+        NodeContainer(this.nodeController)
+        Web({ src: $rawfile('index.html'), controller: this.controller })
+           // 配置同层渲染开关开启。
+          .enableNativeEmbedMode(true)
+           // 注册同层标签为<object>，类型为"native"前缀。
+          .registerNativeEmbedRule("object", "native")
+           // 获取<object>标签的生命周期变化数据。
+          .onNativeEmbedLifecycleChange((object) => {
+            if (object.status == NativeEmbedStatus.CREATE) {
+              this.nodeController.setRenderOption({
+                surfaceId: object.surfaceId as string,
+                renderType: NodeRenderType.RENDER_TYPE_TEXTURE,
+                width: this.uiContext!.px2vp(object.info?.width),
+                height: this.uiContext!.px2vp(object.info?.height)
+              });
+              this.nodeController.rebuild();
+            }
+          })
+      }
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <title>同层渲染测试</title>
-6. <meta name="viewport" content="width=device-width, initial-scale=1.0">
-7. </head>
-8. <body>
-9. <div>
-10. <div id="bodyId">
-11. <object id="nativeButton" type ="native/button" width="300" height="300" style="background-color:red">
-12. </object>
-13. </div>
-14. </div>
-15. </body>
-16. </html>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>同层渲染测试</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div>
+    <div id="bodyId">
+        <object id="nativeButton" type ="native/button" width="300" height="300" style="background-color:red">
+        </object>
+    </div>
+</div>
+</body>
+</html>
 ```
 
 ## defaultTextEncodingFormat12+
-
-PhonePC/2in1TabletTVWearable
 
 defaultTextEncodingFormat(textEncodingFormat: string)
 
@@ -2449,54 +2418,52 @@ defaultTextEncodingFormat(textEncodingFormat: string)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: $rawfile('index.html'), controller: this.controller })
-12. // 设置高
-13. .height(500)
-14. .defaultTextEncodingFormat("UTF-8")
-15. .javaScriptAccess(true)
-16. }
-17. }
-18. }
+  build() {
+    Column() {
+      Web({ src: $rawfile('index.html'), controller: this.controller })
+        // 设置高
+        .height(500)
+        .defaultTextEncodingFormat("UTF-8")
+        .javaScriptAccess(true)
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta name="viewport" content="width=device-width" />
-6. <title>My test html5 page</title>
-7. </head>
-8. <body>
-9. <p>hello world, 你好世界!</p>
-10. </body>
-11. </html>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>My test html5 page</title>
+</head>
+<body>
+    <p>hello world, 你好世界!</p>
+</body>
+</html>
 ```
 
 ## metaViewport12+
-
-PhonePC/2in1TabletTVWearable
 
 metaViewport(enabled: boolean)
 
 设置meta标签的viewport属性是否可用。当属性没有显式调用时，默认支持meta标签的viewport属性。
 
-说明
+**说明** 
 
-* 当前通过User-Agent中是否含有"Mobile"字段来判断是否开启前端HTML页面中meta标签的viewport属性。当User-Agent中不含有"Mobile"字段时，meta标签中viewport属性默认关闭，此时可通过显性设置metaViewport属性为true来覆盖关闭状态。
+* 当前通过User-Agent中是否含有"Mobile"字段来判断是否开启前端HTML页面中meta标签的viewport属性。当User-Agent中不含有"Mobile"字段时，meta标签中viewport属性默认关闭，此时可通过显式设置metaViewport属性为true来覆盖关闭状态。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -2510,42 +2477,40 @@ metaViewport(enabled: boolean)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: $rawfile('index.html'), controller: this.controller })
-12. .metaViewport(true)
-13. }
-14. }
-15. }
+  build() {
+    Column() {
+      Web({ src: $rawfile('index.html'), controller: this.controller })
+        .metaViewport(true)
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta name="viewport" content="width=device-width, initial-scale=1.0">
-6. </head>
-7. <body>
-8. <p>hello world, 你好世界!</p>
-9. </body>
-10. </html>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <p>hello world, 你好世界!</p>
+</body>
+</html>
 ```
 
 ## textAutosizing12+
-
-PhonePC/2in1TabletTVWearable
 
 textAutosizing(textAutosizing: boolean)
 
@@ -2553,7 +2518,7 @@ textAutosizing(textAutosizing: boolean)
 
 文本字体大小自动调整生效后，对于字号过小的文本将自动加大字号至16px~32px，避免屏幕较小（默认视口宽度 < 980px）的设备因为缺少移动端适配出现字体过小的可读性问题。
 
-说明
+**说明** 
 
 * 文本字体大小自动调整生效需要满足的前置条件：
   + 设备形态为：Phone、Tablet、Wearable、TV。
@@ -2573,27 +2538,25 @@ textAutosizing(textAutosizing: boolean)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .textAutosizing(false)
-13. }
-14. }
-15. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .textAutosizing(false)
+    }
+  }
+}
 ```
 
 ## enableNativeMediaPlayer12+
-
-PhonePC/2in1TabletTVWearable
 
 enableNativeMediaPlayer(config: NativeMediaPlayerConfig)
 
@@ -2605,31 +2568,29 @@ enableNativeMediaPlayer(config: NativeMediaPlayerConfig)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| config | [NativeMediaPlayerConfig](arkts-basic-components-web-i.md#nativemediaplayerconfig12) | 是 | enable: 是否开启该功能。  shouldOverlay: 该功能开启后， 应用接管网页视频的播放器画面是否覆盖网页内容。  传入undefined或null时为{enable: false, shouldOverlay: false}。 |
+| config | [NativeMediaPlayerConfig](arkts-basic-components-web-i.md#nativemediaplayerconfig12) | 是 | 应用接管网页媒体播放功能的配置对象。包含以下属性：enable（boolean类型，是否开启该功能，默认为false），shouldOverlay（boolean类型，当功能开启后，应用接管网页视频的播放器画面是否覆盖网页内容，默认为false）。  传入undefined或null时为{enable: false, shouldOverlay: false}。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .enableNativeMediaPlayer({enable: true, shouldOverlay: false})
-13. }
-14. }
-15. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .enableNativeMediaPlayer({enable: true, shouldOverlay: false})
+    }
+  }
+}
 ```
 
 ## onAdsBlocked12+
-
-PhonePC/2in1TabletTVWearable
 
 onAdsBlocked(callback: OnAdsBlockedCallback)
 
@@ -2645,35 +2606,33 @@ onAdsBlocked(callback: OnAdsBlockedCallback)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. @State totalAdsBlockCounts: number = 0;
-8. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  @State totalAdsBlockCounts: number = 0;
+  controller: webview.WebviewController = new webview.WebviewController();
 
-10. build() {
-11. Column() {
-12. Web({ src: 'https://www.example.com', controller: this.controller })
-13. .onAdsBlocked((details: AdsBlockedDetails) => {
-14. if (details) {
-15. console.info(' Blocked ' + details.adsBlocked.length + ' in ' + details.url);
-16. let adList: Array<string> = Array.from(new Set(details.adsBlocked));
-17. this.totalAdsBlockCounts += adList.length;
-18. console.info('Total blocked counts :' + this.totalAdsBlockCounts);
-19. }
-20. })
-21. }
-22. }
-23. }
+  build() {
+    Column() {
+      Web({ src: 'https://www.example.com', controller: this.controller })
+      .onAdsBlocked((details: AdsBlockedDetails) => {
+        if (details) {
+          console.info(' Blocked ' + details.adsBlocked.length + ' in ' + details.url);
+          let adList: Array<string> = Array.from(new Set(details.adsBlocked));
+          this.totalAdsBlockCounts += adList.length;
+          console.info('Total blocked counts :' + this.totalAdsBlockCounts);
+        }
+      })
+    }
+  }
+}
 ```
 
 ## keyboardAvoidMode12+
-
-PhonePC/2in1TabletTVWearable
 
 keyboardAvoidMode(mode: WebKeyboardAvoidMode)
 
@@ -2691,47 +2650,54 @@ Web组件自定义软件键盘避让模式。
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. @State avoidMode: WebKeyboardAvoidMode = WebKeyboardAvoidMode.RESIZE_VISUAL;
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State avoidMode: WebKeyboardAvoidMode = WebKeyboardAvoidMode.RESIZE_VISUAL;
 
-10. build() {
-11. Column() {
-12. Web({ src: $rawfile("index.html"), controller: this.controller })
-13. .keyboardAvoidMode(this.avoidMode)
-14. }
-15. }
-16. }
+  build() {
+    Column() {
+      Web({ src: $rawfile("index.html"), controller: this.controller })
+      .keyboardAvoidMode(this.avoidMode)
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <title>测试网页</title>
-6. </head>
-7. <body>
-8. <input type="text" placeholder="Text">
-9. </body>
-10. </html>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>测试网页</title>
+</head>
+<body>
+  <input type="text" placeholder="Text">
+</body>
+</html>
 ```
 
 ## editMenuOptions12+
 
-PhonePC/2in1TabletTVWearable
-
 editMenuOptions(editMenu: EditMenuOptions)
 
 设置Web组件自定义文本选择菜单。
+
+**说明** 
+
+本接口与bindSelectionMenu功能类似，差异如下：
+
+* editMenuOptions：在系统默认菜单风格基础上添加扩展项，触发条件不变。
+* [bindSelectionMenu](arkts-basic-components-web-attributes.md#bindselectionmenu13)：完全自定义菜单风格和触发条件，由开发者定义。
+
+  两者不宜同时使用，建议根据自定义程度需求选择。
 
 用户可以通过该属性设置自定义的文本菜单。
 
@@ -2749,137 +2715,137 @@ editMenuOptions(editMenu: EditMenuOptions)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| editMenu | [EditMenuOptions](ts-text-common.md#editmenuoptions) | 是 | Web自定义文本菜单选项。  菜单项数量，及菜单的content大小、icon图标尺寸，与ArkUI [Menu](ts-basic-components-menu.md)组件保持一致。  菜单中系统自带的id枚举值（[TextMenuItemId](ts-text-common.md#textmenuitemid12)）在Web中仅支持CUT、COPY、PASTE、SELECT\_ALL、TRANSLATE、SEARCH、AI\_WRITER七项。  onMenuItemClick函数中textRange参数在web中无意义，传入值为-1。 |
+| editMenu | [EditMenuOptions](ts-text-common.md#editmenuoptions) | 是 | Web自定义文本菜单选项。  菜单项数量，及菜单的content大小、icon图标尺寸，与ArkUI [Menu](ts-basic-components-menu.md)组件保持一致。  菜单中系统自带的id枚举值（[TextMenuItemId](ts-text-common.md#textmenuitemid12)）在Web中仅支持CUT、COPY、PASTE、SELECT\_ALL、TRANSLATE、SEARCH、AI\_WRITER七项。  onMenuItemClick函数中textRange参数在Web中无意义，传入值为-1。 |
 
 **示例**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. let selectText:string = '';
-5. class TestClass {
-6. setSelectText(param: String) {
-7. selectText = param.toString();
-8. }
-9. }
+let selectText:string = '';
+class TestClass {
+  setSelectText(param: String) {
+    selectText = param.toString();
+  }
+}
 
-11. @Entry
-12. @Component
-13. struct WebComponent {
-14. controller: webview.WebviewController = new webview.WebviewController();
-15. @State testObj: TestClass = new TestClass();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State testObj: TestClass = new TestClass();
 
-17. onCreateMenu(menuItems: Array<TextMenuItem>): Array<TextMenuItem> {
-18. let items = menuItems.filter((menuItem) => {
-19. // 过滤用户需要的系统按键
-20. return (
-21. menuItem.id.equals(TextMenuItemId.CUT) ||
-22. menuItem.id.equals(TextMenuItemId.COPY) ||
-23. menuItem.id.equals((TextMenuItemId.PASTE)) ||
-24. menuItem.id.equals((TextMenuItemId.TRANSLATE)) ||
-25. menuItem.id.equals((TextMenuItemId.SEARCH)) ||
-26. menuItem.id.equals((TextMenuItemId.AI_WRITER))
-27. )
-28. });
-29. let customItem1: TextMenuItem = {
-30. content: 'customItem1',
-31. id: TextMenuItemId.of('customItem1'),
-32. icon: $r('app.media.icon')
-33. };
-34. let customItem2: TextMenuItem = {
-35. content: $r('app.string.customItem2'),
-36. id: TextMenuItemId.of('customItem2'),
-37. icon: $r('app.media.icon')
-38. };
-39. items.push(customItem1);// 在选项列表后添加新选项
-40. items.unshift(customItem2);// 在选项列表前添加选项
+  onCreateMenu(menuItems: Array<TextMenuItem>): Array<TextMenuItem> {
+    let items = menuItems.filter((menuItem) => {
+      // 过滤用户需要的系统按键
+      return (
+        menuItem.id.equals(TextMenuItemId.CUT) ||
+        menuItem.id.equals(TextMenuItemId.COPY) ||
+        menuItem.id.equals((TextMenuItemId.PASTE)) ||
+        menuItem.id.equals((TextMenuItemId.TRANSLATE)) ||
+        menuItem.id.equals((TextMenuItemId.SEARCH)) ||
+        menuItem.id.equals((TextMenuItemId.AI_WRITER))
+      )
+    });
+    let customItem1: TextMenuItem = {
+      content: 'customItem1',
+      id: TextMenuItemId.of('customItem1'),
+      icon: $r('app.media.icon')
+    };
+    let customItem2: TextMenuItem = {
+      content: $r('app.string.customItem2'),
+      id: TextMenuItemId.of('customItem2'),
+      icon: $r('app.media.icon')
+    };
+    items.push(customItem1);// 在选项列表后添加新选项
+    items.unshift(customItem2);// 在选项列表前添加选项
 
-42. return items;
-43. }
+    return items;
+  }
 
-45. onMenuItemClick(menuItem: TextMenuItem, textRange: TextRange): boolean {
-46. if (menuItem.id.equals(TextMenuItemId.CUT)) {
-47. // 用户自定义行为
-48. console.info("拦截 id：CUT")
-49. return true; // 返回true不执行系统回调
-50. } else if (menuItem.id.equals(TextMenuItemId.COPY)) {
-51. // 用户自定义行为
-52. console.info("不拦截 id：COPY")
-53. return false; // 返回false执行系统回调
-54. } else if (menuItem.id.equals(TextMenuItemId.of('customItem1'))) {
-55. // 用户自定义行为
-56. console.info("拦截 id：customItem1")
-57. return true;// 用户自定义菜单选项返回true时点击后不关闭菜单，返回false时关闭菜单
-58. } else if (menuItem.id.equals((TextMenuItemId.of($r('app.string.customItem2'))))){
-59. // 用户自定义行为
-60. console.info("拦截 id：app.string.customItem2")
-61. return true;
-62. }
-63. return false;// 返回默认值false
-64. }
+  onMenuItemClick(menuItem: TextMenuItem, textRange: TextRange): boolean {
+    if (menuItem.id.equals(TextMenuItemId.CUT)) {
+      // 用户自定义行为
+      console.info("拦截 id：CUT")
+      // 返回true表示拦截此菜单项，不执行系统默认的剪切操作
+      return true;
+    } else if (menuItem.id.equals(TextMenuItemId.COPY)) {
+      // 用户自定义行为
+      console.info("不拦截 id：COPY")
+      // 返回false表示不拦截此菜单项，执行系统默认的复制操作
+      return false;
+    } else if (menuItem.id.equals(TextMenuItemId.of('customItem1'))) {
+      // 用户自定义行为
+      console.info("拦截 id：customItem1")
+      return true;// 用户自定义菜单选项返回true时点击后不关闭菜单，返回false时关闭菜单
+    } else if (menuItem.id.equals((TextMenuItemId.of($r('app.string.customItem2'))))){
+      // 用户自定义行为
+      console.info("拦截 id：app.string.customItem2")
+      return true;
+    }
+    return false;// 返回默认值false
+  }
 
-66. onPrepareMenu = (menuItems: Array<TextMenuItem>) => {
-67. let item1: TextMenuItem = {
-68. content: 'prepare1',
-69. id: TextMenuItemId.of('prepareMenu1'),
-70. };
-71. let item2: TextMenuItem = {
-72. content: 'prepare2' + selectText,
-73. id: TextMenuItemId.of('prepareMenu2'),
-74. };
-75. menuItems.push(item1);// 在选项列表后添加新选项
-76. menuItems.unshift(item2);// 在选项列表前添加选项
+   onPrepareMenu = (menuItems: Array<TextMenuItem>) => {
+    let item1: TextMenuItem = {
+      content: 'prepare1',
+      id: TextMenuItemId.of('prepareMenu1'),
+    };
+    let item2: TextMenuItem = {
+      content: 'prepare2' + selectText,
+      id: TextMenuItemId.of('prepareMenu2'),
+    };
+    menuItems.push(item1);// 在选项列表后添加新选项
+    menuItems.unshift(item2);// 在选项列表前添加选项
 
-78. return menuItems;
-79. }
+    return menuItems;
+  }
 
-81. @State EditMenuOptions: EditMenuOptions =
-82. { onCreateMenu: this.onCreateMenu, onMenuItemClick: this.onMenuItemClick, onPrepareMenu:this.onPrepareMenu }
+  @State EditMenuOptions: EditMenuOptions =
+    { onCreateMenu: this.onCreateMenu, onMenuItemClick: this.onMenuItemClick, onPrepareMenu:this.onPrepareMenu }
 
-84. build() {
-85. Column() {
-86. Web({ src: $rawfile("index.html"), controller: this.controller })
-87. .editMenuOptions(this.EditMenuOptions)
-88. .javaScriptProxy({
-89. object: this.testObj,
-90. name: "testObjName",
-91. methodList: ["setSelectText"],
-92. controller: this.controller,
-93. })
-94. }
-95. }
-96. }
+  build() {
+    Column() {
+      Web({ src: $rawfile("index.html"), controller: this.controller })
+        .editMenuOptions(this.EditMenuOptions)
+        .javaScriptProxy({
+          object: this.testObj,
+          name: "testObjName",
+          methodList: ["setSelectText"],
+          controller: this.controller,
+        })
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <title>测试网页</title>
-6. </head>
-7. <body>
-8. <h1>editMenuOptions Demo</h1>
-9. <span>edit menu options</span>
-10. <script>
-11. document.addEventListener('selectionchange', () => {
-12. var selection = window.getSelection();
-13. if (selection.rangeCount > 0) {
-14. var selectedText = selection.toString();
-15. testObjName.setSelectText(selectedText);
-16. }
-17. });
-18. </script>
-19. </body>
-20. </html>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>测试网页</title>
+  </head>
+  <body>
+    <h1>editMenuOptions Demo</h1>
+    <span>edit menu options</span>
+    <script>
+      document.addEventListener('selectionchange', () => {
+        var selection = window.getSelection();
+        if (selection.rangeCount > 0) {
+          var selectedText = selection.toString();
+          testObjName.setSelectText(selectedText);
+        }
+      });
+  </script>
+  </body>
+</html>
 ```
 
 ## enableHapticFeedback13+
-
-PhonePC/2in1TabletTVWearable
 
 enableHapticFeedback(enabled: boolean)
 
@@ -2891,47 +2857,45 @@ enableHapticFeedback(enabled: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| enabled | boolean | 是 | 是否开启振动。  true表示开启振动，false表示不开启振动。  传入undefined或null时属性设置不生效。 |
+| enabled | boolean | 是 | 是否开启振动。  true表示开启振动，false表示不开启振动。  传入undefined或null时保持默认值，即开启振动。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: $rawfile("index.html"), controller: this.controller })
-12. .enableHapticFeedback(true)
-13. }
-14. }
-15. }
+  build() {
+    Column() {
+      Web({ src: $rawfile("index.html"), controller: this.controller })
+      .enableHapticFeedback(true)
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <title>测试网页</title>
-6. </head>
-7. <body>
-8. <h1>enableHapticFeedback Demo</h1>
-9. <span>enable haptic feedback</span>
-10. </body>
-11. </html>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>测试网页</title>
+  </head>
+  <body>
+    <h1>enableHapticFeedback Demo</h1>
+    <span>enable haptic feedback</span>
+  </body>
+</html>
 ```
 
 ## bindSelectionMenu13+
-
-PhonePC/2in1TabletTVWearable
 
 bindSelectionMenu(elementType: WebElementType, content: CustomBuilder, responseType: WebResponseType, options?: SelectionMenuOptionsExt)
 
@@ -2946,331 +2910,330 @@ bindSelectionMenu(elementType: WebElementType, content: CustomBuilder, responseT
 | elementType | [WebElementType](arkts-basic-components-web-e.md#webelementtype13) | 是 | 菜单的类型。 |
 | content | [CustomBuilder](ts-types.md#custombuilder8) | 是 | 菜单的内容。 |
 | responseType | [WebResponseType](arkts-basic-components-web-e.md#webresponsetype13) | 是 | 菜单的响应类型。 |
-| options | [SelectionMenuOptionsExt](arkts-basic-components-web-i.md#selectionmenuoptionsext13) | 否 | 菜单的选项。 |
+| options | [SelectionMenuOptionsExt](arkts-basic-components-web-i.md#selectionmenuoptionsext13) | 否 | 菜单的选项。传入undefined或null时使用默认配置。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { pasteboard } from '@kit.BasicServicesKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { pasteboard } from '@kit.BasicServicesKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. interface PreviewBuilderParam {
-7. width: number;
-8. height: number;
-9. url:Resource | string | undefined;
-10. }
+interface PreviewBuilderParam {
+  width: number;
+  height: number;
+  url:Resource | string | undefined;
+}
 
-12. interface PreviewBuilderParamForImage {
-13. previewImage: Resource | string | undefined;
-14. width: number;
-15. height: number;
-16. }
+interface PreviewBuilderParamForImage {
+  previewImage: Resource | string | undefined;
+  width: number;
+  height: number;
+}
 
-19. @Builder function PreviewBuilderGlobalForImage($$: PreviewBuilderParamForImage) {
-20. Column() {
-21. Image($$.previewImage)
-22. .objectFit(ImageFit.Fill)
-23. .autoResize(true)
-24. }.width($$.width).height($$.height)
-25. }
+@Builder function PreviewBuilderGlobalForImage($$: PreviewBuilderParamForImage) {
+  Column() {
+    Image($$.previewImage)
+      .objectFit(ImageFit.Fill)
+      .autoResize(true)
+  }.width($$.width).height($$.height)
+}
 
-27. @Entry
-28. @Component
-29. struct SelectionMenuLongPress {
-30. controller: webview.WebviewController = new webview.WebviewController();
-31. previewController: webview.WebviewController = new webview.WebviewController();
-32. @Builder PreviewBuilder($$: PreviewBuilderParam){
-33. Column() {
-34. Stack(){
-35. Text("") // 可选择是否展示url
-36. .padding(5)
-37. .width('100%')
-38. .textAlign(TextAlign.Start)
-39. .backgroundColor(Color.White)
-40. .copyOption(CopyOptions.LocalDevice)
-41. .maxLines(1)
-42. .textOverflow({overflow:TextOverflow.Ellipsis})
-43. Progress({ value: this.progressValue, total: 100, type: ProgressType.Linear }) // 展示进度条
-44. .style({ strokeWidth: 3, enableSmoothEffect: true })
-45. .backgroundColor(Color.White)
-46. .opacity(this.progressVisible?1:0)
-47. .backgroundColor(Color.White)
-48. }.alignContent(Alignment.Bottom)
-49. Web({src:$$.url,controller: new webview.WebviewController()})
-50. .javaScriptAccess(true)
-51. .fileAccess(true)
-52. .onlineImageAccess(true)
-53. .imageAccess(true)
-54. .domStorageAccess(true)
-55. .onPageBegin(()=>{
-56. this.progressValue = 0;
-57. this.progressVisible = true;
-58. })
-59. .onProgressChange((event)=>{
-60. this.progressValue = event.newProgress;
-61. })
-62. .onPageEnd(()=>{
-63. this.progressVisible = false;
-64. })
-65. .hitTestBehavior(HitTestMode.None) // 使预览Web不响应手势
-66. }.width($$.width).height($$.height) // 设置预览宽高
-67. }
+@Entry
+@Component
+struct SelectionMenuLongPress {
+  controller: webview.WebviewController = new webview.WebviewController();
+  previewController: webview.WebviewController = new webview.WebviewController();
+  @Builder PreviewBuilder($$: PreviewBuilderParam){
+    Column() {
+      Stack(){
+        Text("") // 可选择是否展示url
+          .padding(5)
+          .width('100%')
+          .textAlign(TextAlign.Start)
+          .backgroundColor(Color.White)
+          .copyOption(CopyOptions.LocalDevice)
+          .maxLines(1)
+          .textOverflow({overflow:TextOverflow.Ellipsis})
+        Progress({ value: this.progressValue, total: 100, type: ProgressType.Linear }) // 展示进度条
+          .style({ strokeWidth: 3, enableSmoothEffect: true })
+          .backgroundColor(Color.White)
+          .opacity(this.progressVisible?1:0)
+          .backgroundColor(Color.White)
+      }.alignContent(Alignment.Bottom)
+      Web({src:$$.url,controller: new webview.WebviewController()})
+        .javaScriptAccess(true)
+        .fileAccess(true)
+        .onlineImageAccess(true)
+        .imageAccess(true)
+        .domStorageAccess(true)
+        .onPageBegin(()=>{
+          this.progressValue = 0;
+          this.progressVisible = true;
+        })
+        .onProgressChange((event)=>{
+          this.progressValue = event.newProgress;
+        })
+        .onPageEnd(()=>{
+          this.progressVisible = false;
+        })
+        .hitTestBehavior(HitTestMode.None) // 使预览Web不响应手势
+    }.width($$.width).height($$.height) // 设置预览宽高
+  }
 
-69. private result: WebContextMenuResult | undefined = undefined;
-70. @State previewImage: Resource | string | undefined = undefined;
-71. @State previewWidth: number = 1;
-72. @State previewHeight: number = 1;
-73. @State previewWidthImage: number = 1;
-74. @State previewHeightImage: number = 1;
-75. @State linkURL:string = "";
-76. @State progressValue:number = 0;
-77. @State progressVisible:boolean = true;
-78. uiContext: UIContext = this.getUIContext();
-79. enablePaste = false;
+  private result: WebContextMenuResult | undefined = undefined;
+  @State previewImage: Resource | string | undefined = undefined;
+  @State previewWidth: number = 1;
+  @State previewHeight: number = 1;
+  @State previewWidthImage: number = 1;
+  @State previewHeightImage: number = 1;
+  @State linkURL:string = "";
+  @State progressValue:number = 0;
+  @State progressVisible:boolean = true;
+  uiContext: UIContext = this.getUIContext();
+  enablePaste = false;
 
-81. clearSelection() {
-82. try {
-83. this.controller.runJavaScript(
-84. 'clearSelection()',
-85. (error, result) => {
-86. if (error) {
-87. console.error(`run clearSelection JavaScript error, ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-88. return;
-89. }
-90. if (result) {
-91. console.info(`The clearSelection() return value is: ${result}`);
-92. }
-93. });
-94. } catch (error) {
-95. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-96. }
-97. }
+  clearSelection() {
+    try {
+      this.controller.runJavaScript(
+        'clearSelection()',
+        (error, result) => {
+          if (error) {
+            console.error(`run clearSelection JavaScript error, ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            return;
+          }
+          if (result) {
+            console.info(`The clearSelection() return value is: ${result}`);
+          }
+        });
+    } catch (error) {
+      console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+    }
+  }
 
-100. @Builder
-101. LinkMenuBuilder() {
-102. Menu() {
-103. MenuItem({ content: '复制链接', })
-104. .onClick(() => {
-105. const pasteboardData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, this.linkURL);
-106. const systemPasteboard = pasteboard.getSystemPasteboard();
-107. systemPasteboard.setData(pasteboardData);
-108. })
-109. MenuItem({content:'打开链接'})
-110. .onClick(()=>{
-111. this.controller.loadUrl(this.linkURL);
-112. })
-113. }
-114. }
-115. @Builder
-116. ImageMenuBuilder() {
-117. Menu() {
-118. MenuItem({ content: '复制图片', })
-119. .onClick(() => {
-120. this.result?.copyImage();
-121. this.result?.closeContextMenu();
-122. })
-123. }
-124. }
-125. @Builder
-126. TextMenuBuilder() {
-127. Menu() {
-128. MenuItem({ content: '复制', })
-129. .onClick(() => {
-130. try {
-131. this.controller.runJavaScript(
-132. 'copySelectedText()',
-133. (error, result) => {
-134. if (error) {
-135. console.error(`run copySelectedText JavaScript error, ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-136. return;
-137. }
-138. if (result) {
-139. console.info(`The copySelectedText() return value is: ${result}`);
-140. }
-141. });
-142. } catch (error) {
-143. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-144. }
-145. this.clearSelection()
-146. }).backgroundColor(Color.Pink)
-147. }
-148. }
-149. build() {
-150. Column() {
-151. Web({ src: $rawfile("index.html"), controller: this.controller })
-152. .javaScriptAccess(true)
-153. .fileAccess(true)
-154. .onlineImageAccess(true)
-155. .imageAccess(true)
-156. .domStorageAccess(true)
-157. .bindSelectionMenu(WebElementType.TEXT, this.TextMenuBuilder, WebResponseType.LONG_PRESS,
-158. {
-159. onAppear: () => {},
-160. onDisappear: () => {},
-161. menuType: MenuType.SELECTION_MENU,
-162. })
-163. .bindSelectionMenu(WebElementType.LINK, this.LinkMenuBuilder, WebResponseType.LONG_PRESS,
-164. {
-165. onAppear: () => {},
-166. onDisappear: () => {
-167. this.result?.closeContextMenu();
-168. },
-169. preview: this.PreviewBuilder({
-170. width: 500,
-171. height: 400,
-172. url:this.linkURL
-173. }),
-174. menuType: MenuType.PREVIEW_MENU
-175. })
-176. .bindSelectionMenu(WebElementType.IMAGE, this.ImageMenuBuilder, WebResponseType.LONG_PRESS,
-177. {
-178. onAppear: () => {},
-179. onDisappear: () => {
-180. this.result?.closeContextMenu();
-181. },
-182. preview: PreviewBuilderGlobalForImage({
-183. previewImage: this.previewImage,
-184. width: this.previewWidthImage,
-185. height: this.previewHeightImage,
-186. }),
-187. menuType: MenuType.PREVIEW_MENU,
-188. })
-189. .zoomAccess(true)
-190. .onContextMenuShow((event) => {
-191. if (event) {
-192. this.result = event.result;
-193. this.previewWidthImage = this.uiContext!.px2vp(event.param.getPreviewWidth());
-194. this.previewHeightImage = this.uiContext!.px2vp(event.param.getPreviewHeight());
-195. if (event.param.getSourceUrl().indexOf("resource://rawfile/") == 0) {
-196. this.previewImage = $rawfile(event.param.getSourceUrl().substring(19));
-197. } else {
-198. this.previewImage = event.param.getSourceUrl();
-199. }
-200. this.linkURL = event.param.getLinkUrl()
-201. return true;
-202. }
-203. return false;
-204. })
-205. }
+  @Builder
+  LinkMenuBuilder() {
+    Menu() {
+      MenuItem({ content: '复制链接', })
+        .onClick(() => {
+          const pasteboardData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, this.linkURL);
+          const systemPasteboard = pasteboard.getSystemPasteboard();
+          systemPasteboard.setData(pasteboardData);
+        })
+      MenuItem({content:'打开链接'})
+        .onClick(()=>{
+          this.controller.loadUrl(this.linkURL);
+        })
+    }
+  }
+  @Builder
+  ImageMenuBuilder() {
+    Menu() {
+      MenuItem({ content: '复制图片', })
+        .onClick(() => {
+          this.result?.copyImage();
+          this.result?.closeContextMenu();
+        })
+    }
+  }
+  @Builder
+  TextMenuBuilder() {
+    Menu() {
+      MenuItem({ content: '复制', })
+        .onClick(() => {
+          try {
+            this.controller.runJavaScript(
+              'copySelectedText()',
+              (error, result) => {
+                if (error) {
+                  console.error(`run copySelectedText JavaScript error, ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                  return;
+                }
+                if (result) {
+                  console.info(`The copySelectedText() return value is: ${result}`);
+                }
+              });
+          } catch (error) {
+            console.error(`Failed to clear selection. Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
+          }
+          this.clearSelection()
+        }).backgroundColor(Color.Pink)
+    }
+  }
+  build() {
+    Column() {
+      Web({ src: $rawfile("index.html"), controller: this.controller })
+        .javaScriptAccess(true)
+        .fileAccess(true)
+        .onlineImageAccess(true)
+        .imageAccess(true)
+        .domStorageAccess(true)
+        .bindSelectionMenu(WebElementType.TEXT, this.TextMenuBuilder, WebResponseType.LONG_PRESS,
+          {
+            onAppear: () => {},
+            onDisappear: () => {},
+            menuType: MenuType.SELECTION_MENU,
+          })
+        .bindSelectionMenu(WebElementType.LINK, this.LinkMenuBuilder, WebResponseType.LONG_PRESS,
+          {
+            onAppear: () => {},
+            onDisappear: () => {
+              this.result?.closeContextMenu();
+            },
+            preview: this.PreviewBuilder({
+              width: 500,
+              height: 400,
+              url:this.linkURL
+            }),
+            menuType: MenuType.PREVIEW_MENU
+          })
+        .bindSelectionMenu(WebElementType.IMAGE, this.ImageMenuBuilder, WebResponseType.LONG_PRESS,
+          {
+            onAppear: () => {},
+            onDisappear: () => {
+              this.result?.closeContextMenu();
+            },
+            preview: PreviewBuilderGlobalForImage({
+              previewImage: this.previewImage,
+              width: this.previewWidthImage,
+              height: this.previewHeightImage,
+            }),
+            menuType: MenuType.PREVIEW_MENU,
+          })
+        .zoomAccess(true)
+        .onContextMenuShow((event) => {
+          if (event) {
+            this.result = event.result;
+            this.previewWidthImage = this.uiContext!.px2vp(event.param.getPreviewWidth());
+            this.previewHeightImage = this.uiContext!.px2vp(event.param.getPreviewHeight());
+            if (event.param.getSourceUrl().indexOf("resource://rawfile/") == 0) {
+              this.previewImage = $rawfile(event.param.getSourceUrl().substring(19));
+            } else {
+              this.previewImage = event.param.getSourceUrl();
+            }
+            this.linkURL = event.param.getLinkUrl()
+            // 返回true表示拦截系统默认的上下文菜单，使用自定义菜单
+            return true;
+          }
+          return false;
+        })
+    }
 
-207. }
-208. // 侧滑返回
-209. onBackPress(): boolean | void {
-210. if (this.controller.accessStep(-1)) {
-211. this.controller.backward();
-212. return true;
-213. } else {
-214. return false;
-215. }
-216. }
-217. }
+  }
+  // 侧滑返回
+  onBackPress(): boolean | void {
+    if (this.controller.accessStep(-1)) {
+      this.controller.backward();
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html lang="zh-CN">
-4. <head>
-5. <meta charset="UTF-8">
-6. <meta name="viewport" content="width=device-width, initial-scale=1.0">
-7. <title>长按复制文本</title>
-8. <style>
-9. .container {
-10. background-color: white;
-11. padding: 30px;
-12. margin: 20px 0;
-13. }
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>长按复制文本</title>
+    <style>
+        .container {
+            background-color: white;
+            padding: 30px;
+            margin: 20px 0;
+        }
 
-15. .context {
-16. line-height: 1.8;
-17. font-size: 18px;
-18. }
+        .context {
+            line-height: 1.8;
+            font-size: 18px;
+        }
 
-20. .context span {
-21. border-radius: 8px;
-22. background-color: #f8f9fa;
-23. }
+        .context span {
+            border-radius: 8px;
+            background-color: #f8f9fa;
+        }
 
-25. .context a {
-26. color: #3498db;
-27. text-decoration: none;
-28. font-size: 18px;
-29. font-weight: 600;
-30. padding: 12px 24px;
-31. border: 2px solid #3498db;
-32. border-radius: 30px;
-33. display: inline-block;
-34. position: relative;
-35. overflow: hidden;
-36. margin-bottom: 20px;
-37. }
+        .context a {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 12px 24px;
+            border: 2px solid #3498db;
+            border-radius: 30px;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
 
-39. .context img {
-40. max-width: 100%;
-41. height: auto;
-42. display: block;
-43. margin-bottom: 20px;
-44. }
+        .context img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 20px;
+        }
 
-46. .context:hover img {
-47. transform: scale(1.05);
-48. }
-49. </style>
-50. </head>
-51. <body>
-52. <div class="container">
+        .context:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
 
-54. <div class="context">
-55. <!--img.png为html同目录下图片-->
-56. <img src="img.png">
-57. </div>
+    <div class="context">
+        <!--img.png为html同目录下图片-->
+        <img src="img.png">
+    </div>
 
-59. <div class="context">
-60. <a  href="https://www.example.com">长按链接唤起菜单</a>
-61. </div>
+    <div class="context">
+        <a  href="https://www.example.com">长按链接唤起菜单</a>
+    </div>
 
-63. <div class="context">
-64. <span>在这个数字时代，文本复制功能变得日益重要。无论是引用名言、保存重要信息，还是分享有趣的内容，复制文本都是我们日常操作的一部分。</span>
-65. </div>
+    <div class="context">
+        <span>在这个数字时代，文本复制功能变得日益重要。无论是引用名言、保存重要信息，还是分享有趣的内容，复制文本都是我们日常操作的一部分。</span>
+    </div>
 
-67. </div>
-68. <br>
+</div>
+<br>
 
-70. <script>
-71. function copySelectedText() {
-72. const selectedText = window.getSelection().toString();
-73. if (selectedText.length > 0) {
-74. // 使用Clipboard API复制文本
-75. navigator.clipboard.writeText(selectedText)
-76. .then(() => {
-77. showNotification();
-78. })
-79. .catch(err => {
-80. console.error('复制失败:', err);
-81. });
-82. }
-83. }
-84. function clearSelection() {
-85. if (window.getSelection) {
-86. window.getSelection().removeAllRanges();
-87. }
-88. }
-89. </script>
-90. </body>
-91. </html>
+<script>
+    function copySelectedText() {
+        const selectedText = window.getSelection().toString();
+        if (selectedText.length > 0) {
+            // 使用Clipboard API复制文本
+            navigator.clipboard.writeText(selectedText)
+                .then(() => {
+                    showNotification();
+                })
+                .catch(err => {
+                    console.error('复制失败:', err);
+                });
+        }
+    }
+     function clearSelection() {
+        if (window.getSelection) {
+            window.getSelection().removeAllRanges();
+        }
+    }
+</script>
+</body>
+</html>
 ```
 
 ## blurOnKeyboardHideMode14+
 
-PhonePC/2in1TabletTVWearable
-
 blurOnKeyboardHideMode(mode: BlurOnKeyboardHideMode)
 
-设置当软键盘收起时Web元素失焦模式。
+设置当软键盘收起时Web元素失焦模式。当属性没有显式调用时，默认按[BlurOnKeyboardHideMode.SILENT](arkts-basic-components-web-e.md#bluronkeyboardhidemode14)模式处理。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -3282,55 +3245,53 @@ blurOnKeyboardHideMode(mode: BlurOnKeyboardHideMode)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. @State blurMode: BlurOnKeyboardHideMode = BlurOnKeyboardHideMode.BLUR;
-9. build() {
-10. Column() {
-11. Web({ src: $rawfile("index.html"), controller: this.controller })
-12. .blurOnKeyboardHideMode(this.blurMode)
-13. }
-14. }
-15. }
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State blurMode: BlurOnKeyboardHideMode = BlurOnKeyboardHideMode.BLUR;
+  build() {
+    Column() {
+      Web({ src: $rawfile("index.html"), controller: this.controller })
+        .blurOnKeyboardHideMode(this.blurMode)
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <title>测试网页</title>
-6. </head>
-7. <body>
-8. <h1>blurOnKeyboardHideMode Demo</h1>
-9. <input type="text" id="input_a">
-10. <script>
-11. const inputElement = document.getElementById('input_a');
-12. inputElement.addEventListener('blur', function() {
-13. console.info('Input has lost focus');
-14. });
-15. </script>
-16. </body>
-17. </html>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>测试网页</title>
+  </head>
+  <body>
+    <h1>blurOnKeyboardHideMode Demo</h1>
+    <input type="text" id="input_a">
+    <script>
+      const inputElement = document.getElementById('input_a');
+      inputElement.addEventListener('blur', function() {
+        console.info('Input has lost focus');
+      });
+    </script>
+  </body>
+</html>
 ```
 
 ## enableFollowSystemFontWeight18+
 
-PhonePC/2in1TabletTVWearable
-
 enableFollowSystemFontWeight(follow: boolean)
 
-设置Web组件是否开启字重跟随系统设置变化。当属性没有显式调用时，Web组件默认开启字重跟随系统设置变化。
+设置Web组件是否开启字重跟随系统设置变化。当属性没有显式调用时，Web组件默认字重不跟随系统设置变化。
 
-说明
+**说明** 
 
 目前该能力只支持前端文本元素跟随变化，暂不支持canvas元素、内嵌docx和pdf格式中的文本跟随变化。
 
@@ -3340,30 +3301,28 @@ enableFollowSystemFontWeight(follow: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| follow | boolean | 是 | 设置Web组件是否开启字重跟随系统设置变化。  true表示字重跟随系统设置中的字体粗细变化，系统设置改变时字重跟随变化。false表示字重不再跟随系统设置中的字体粗细变化，系统设置改变时维持当前字重不变。  传入undefined或null时为true。 |
+| follow | boolean | 是 | 设置Web组件是否开启字重跟随系统设置变化。  true表示字重跟随系统设置中的字体粗细变化，系统设置改变时字重跟随变化。false表示字重不再跟随系统设置中的字体粗细变化，系统设置改变时维持当前字重不变。  传入undefined或null时为false。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. build() {
-9. Column() {
-10. Web({ src: "www.example.com", controller: this.controller })
-11. .enableFollowSystemFontWeight(true)
-12. }
-13. }
-14. }
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  build() {
+    Column() {
+      Web({ src: "www.example.com", controller: this.controller })
+        .enableFollowSystemFontWeight(true)
+    }
+  }
+}
 ```
 
 ## optimizeParserBudget15+
-
-PhonePC/2in1TabletTVWearable
 
 optimizeParserBudget(optimizeParserBudget: boolean)
 
@@ -3385,30 +3344,32 @@ ArkWeb内核在解析HTML文档结构时采取分段解析策略，旨在避免�
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController()
-8. build() {
-9. Column() {
-10. Web({ src: 'www.example.com', controller: this.controller })
-11. .optimizeParserBudget(true)
-12. }
-13. }
-14. }
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController()
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .optimizeParserBudget(true)
+    }
+  }
+}
 ```
 
 ## enableWebAVSession18+
 
-PhonePC/2in1TabletTVWearable
-
 enableWebAVSession(enabled: boolean)
 
 设置是否支持应用对接到播控中心。当属性没有显式设置时，默认支持应用对接到播控中心。
+
+**说明** 
+
+* 当enabled为false时，Web音视频不接入播控中心。若应用退至后台后，网页音频继续播放，Web组件代理申请AUDIO\_PLAYBACK类型长时任务。API版本26.0.0及以上，系统会在通知栏显示对应的[长时任务](../harmonyos-guides/continuous-task.md)通知；删除该通知会停止对应的长时任务。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -3420,45 +3381,43 @@ enableWebAVSession(enabled: boolean)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. build() {
-9. Column() {
-10. Web({ src: $rawfile('index.html'), controller: this.controller })
-11. .enableWebAVSession(true)
-12. }
-13. }
-14. }
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  build() {
+    Column() {
+      Web({ src: $rawfile('index.html'), controller: this.controller })
+        .enableWebAVSession(true)
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <title>视频播放页面</title>
-6. </head>
-7. <body>
-8. <h1>视频播放</h1>
-9. <video id="testVideo" controls>
-10. <!--在resources的rawfile目录中放置任意一个mp4媒体文件，并将其命名为example.mp4-->
-11. <source src="example.mp4" type="video/mp4">
-12. </video>
-13. </body>
-14. </html>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>视频播放页面</title>
+</head>
+<body>
+    <h1>视频播放</h1>
+    <video id="testVideo" controls>
+        <!--在resources的rawfile目录中放置任意一个mp4媒体文件，并将其命名为example.mp4-->
+        <source src="example.mp4" type="video/mp4">
+    </video>
+</body>
+</html>
 ```
 
 ## nativeEmbedOptions16+
-
-PhonePC/2in1TabletTVWearable
 
 nativeEmbedOptions(options?: EmbedOptions)
 
@@ -3474,60 +3433,62 @@ nativeEmbedOptions(options?: EmbedOptions)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. options: EmbedOptions = {supportDefaultIntrinsicSize: true};
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  options: EmbedOptions = {supportDefaultIntrinsicSize: true};
 
-10. build() {
-11. Column() {
-12. Web({ src: $rawfile("index.html"), controller: this.controller })
-13. .enableNativeEmbedMode(true)
-14. .nativeEmbedOptions(this.options)
-15. }
-16. }
-17. }
+  build() {
+    Column() {
+      Web({ src: $rawfile("index.html"), controller: this.controller })
+        .enableNativeEmbedMode(true)
+        .nativeEmbedOptions(this.options)
+    }
+  }
+}
 ```
 
 加载的html文件
 
-```
-1. <!-- index.html -->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <title>同层渲染固定大小测试html</title>
-6. </head>
-7. <body>
-8. <div>
-9. <embed id="input" type = "native/view" style = "background-color:red"/>
-10. </div>
-11. </body>
-12. </html>
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>同层渲染固定大小测试html</title>
+</head>
+<body>
+<div>
+    <embed id="input" type = "native/view" style = "background-color:red"/>
+</div>
+</body>
+</html>
 ```
 
 ## enableDataDetector20+
-
-PhonePC/2in1TabletTVWearable
 
 enableDataDetector(enable: boolean)
 
 设置是否识别网页文本特殊实体，如邮件、电话、网址等。该接口依赖设备底层具备文本识别能力，否则设置无效。该属性没有显式调用时，默认不启用。
 
+**说明** 
+
+[dataDetectorConfig](arkts-basic-components-web-attributes.md#datadetectorconfig20)和[enableSelectedDataDetector](arkts-basic-components-web-attributes.md#enableselecteddatadetector22)等属性依赖此属性开启时才能正常生效。
+
 当enableDataDetector设置为true，同时不设置[dataDetectorConfig](arkts-basic-components-web-attributes.md#datadetectorconfig20)属性时，默认识别所有类型的实体，所识别实体的color和decoration会被更改为如下样式：
 
-```
-1. color: '#ff0a59f7',
-2. decoration:{
-3. type: TextDecorationType.Underline,
-4. color: '#ff0a59f7',
-5. style: TextDecorationStyle.SOLID
-6. }
+```ts
+color: '#ff0a59f7',
+decoration:{
+  type: TextDecorationType.Underline,
+  color: '#ff0a59f7',
+  style: TextDecorationStyle.SOLID
+}
 ```
 
 当enableDataDetector设置为true且[copyOptions](arkts-basic-components-web-attributes.md#copyoptions11)设置为CopyOptions.LocalDevice时，AI菜单功能将被激活。此时，在网页中选中文本后，文本选择菜单能够展示对应的AI菜单项，包括[TextMenuItemId](ts-text-common.md#textmenuitemid12)中的url（打开链接）、email（新建邮件）、phoneNumber（呼叫）、address（导航至该位置）、dateTime（新建日程提醒）。
@@ -3544,49 +3505,47 @@ AI菜单生效时，需在选中范围内，包括一个完整的AI实体，才�
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 是否启用Web文本识别，true表示启用，false表示不启用。  传入undefined或null时属性设置不生效。 |
 
-说明
+**说明** 
 
 动态更新enableDataDetector的启用状态不会即时影响当前页面，需通过刷新页面来使新配置生效。
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: $rawfile("index.html"), controller: this.controller })
-12. .enableDataDetector(true)
-13. }
-14. }
-15. }
+  build() {
+    Column() {
+      Web({ src: $rawfile("index.html"), controller: this.controller })
+        .enableDataDetector(true)
+    }
+  }
+}
 ```
 
 加载的html文件
 
-```
-1. <!-- index.html -->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <title>enableDataDetector示例</title>
-6. </head>
-7. <body>
-8. <p> 电话：400-123-4567 </p>
-9. <p> 邮箱：example@example.com </p>
-10. </body>
-11. </html>
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>enableDataDetector示例</title>
+</head>
+<body>
+    <p> 电话：400-123-4567 </p>
+    <p> 邮箱：example@example.com </p>
+</body>
+</html>
 ```
 
 ## dataDetectorConfig20+
-
-PhonePC/2in1TabletTVWearable
 
 dataDetectorConfig(config: TextDataDetectorConfig)
 
@@ -3607,7 +3566,7 @@ dataDetectorConfig(config: TextDataDetectorConfig)
 | --- | --- | --- | --- |
 | config | [TextDataDetectorConfig](ts-text-common.md#textdatadetectorconfig11对象说明) | 是 | 文本识别配置。 |
 
-说明
+**说明** 
 
 TextDataDetectorConfig中的onDetectResultUpdate在Web组件中不支持，设置的回调不会调用。
 
@@ -3617,56 +3576,54 @@ TextDataDetectorConfig中的onDetectResultUpdate在Web组件中不支持，设�
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: $rawfile("index.html"), controller: this.controller })
-12. .enableDataDetector(true)
-13. .dataDetectorConfig({
-14. types: [
-15. TextDataDetectorType.PHONE_NUMBER,
-16. TextDataDetectorType.EMAIL
-17. ],
-18. color: Color.Red,
-19. decoration: {
-20. type: TextDecorationType.LineThrough,
-21. color: Color.Green,
-22. style: TextDecorationStyle.WAVY
-23. }
-24. })
-25. }
-26. }
-27. }
+  build() {
+    Column() {
+      Web({ src: $rawfile("index.html"), controller: this.controller })
+        .enableDataDetector(true)
+        .dataDetectorConfig({
+          types: [
+            TextDataDetectorType.PHONE_NUMBER,
+            TextDataDetectorType.EMAIL
+          ],
+          color: Color.Red,
+          decoration: {
+            type: TextDecorationType.LineThrough,
+            color: Color.Green,
+            style: TextDecorationStyle.WAVY
+          }
+        })
+    }
+  }
+}
 ```
 
 加载的html文件
 
-```
-1. <!-- index.html -->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <title>dataDetectorConfig示例</title>
-6. </head>
-7. <body>
-8. <p> 电话：400-123-4567 </p>
-9. <p> 邮箱：12345678901@example.com </p>
-10. <p> 网址：www.example.com（此项不识别）</p>
-11. </body>
-12. </html>
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>dataDetectorConfig示例</title>
+</head>
+<body>
+    <p> 电话：400-123-4567 </p>
+    <p> 邮箱：12345678901@example.com </p>
+    <p> 网址：www.example.com（此项不识别）</p>
+</body>
+</html>
 ```
 
 ## enableSelectedDataDetector22+
-
-PhonePC/2in1TabletTVWearable
 
 enableSelectedDataDetector(enable: boolean)
 
@@ -3686,7 +3643,7 @@ AI菜单生效时，需在选中范围内，包括一个完整的AI实体，才�
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 是否启用Web文本识别，true表示启用，false表示不启用。  传入undefined或null时属性重置为默认值。 |
 
-说明
+**说明** 
 
 当enableSelectedDataDetector未配置或设置为true时，将遵循[dataDetectorConfig](arkts-basic-components-web-attributes.md#datadetectorconfig20)中types的配置；若[dataDetectorConfig](arkts-basic-components-web-attributes.md#datadetectorconfig20)也未配置，则默认识别所有类型。
 
@@ -3694,47 +3651,45 @@ AI菜单生效时，需在选中范围内，包括一个完整的AI实体，才�
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: $rawfile("index.html"), controller: this.controller })
-12. .enableSelectedDataDetector(true)
-13. }
-14. }
-15. }
+  build() {
+    Column() {
+      Web({ src: $rawfile("index.html"), controller: this.controller })
+        .enableSelectedDataDetector(true)
+    }
+  }
+}
 ```
 
 加载的html文件
 
-```
-1. <!-- index.html -->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <title>enableSelectedDataDetector示例</title>
-6. </head>
-7. <body>
-8. <p> 电话：400-123-4567 </p>
-9. <p> 邮箱：example@example.com </p>
-10. </body>
-11. </html>
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>enableSelectedDataDetector示例</title>
+</head>
+<body>
+    <p> 电话：400-123-4567 </p>
+    <p> 邮箱：example@example.com </p>
+</body>
+</html>
 ```
 
 ## gestureFocusMode20+
 
-PhonePC/2in1TabletTVWearable
-
 gestureFocusMode(mode: GestureFocusMode)
 
-设置Web组件手势获焦模式。该属性没有显式调用时，默认表示手势按下时，任何手势均会使Web组件获焦。
+设置Web组件手势获焦模式，用于控制Web组件的焦点响应行为。该属性没有显式调用时，默认表示手势按下时，任何手势均会使Web组件获焦。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -3746,42 +3701,40 @@ gestureFocusMode(mode: GestureFocusMode)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. @State mode: GestureFocusMode = GestureFocusMode.DEFAULT;
-9. build() {
-10. Column() {
-11. Web({ src: $rawfile("index.html"), controller: this.controller })
-12. .gestureFocusMode(this.mode)
-13. }
-14. }
-15. }
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State mode: GestureFocusMode = GestureFocusMode.DEFAULT;
+  build() {
+    Column() {
+      Web({ src: $rawfile("index.html"), controller: this.controller })
+        .gestureFocusMode(this.mode)
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <title>测试网页</title>
-6. </head>
-7. <body>
-8. <input type="text" placeholder="Text">
-9. </body>
-10. </html>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>测试网页</title>
+</head>
+<body>
+  <input type="text" placeholder="Text">
+</body>
+</html>
 ```
 
 ## rotateRenderEffect22+
-
-PhonePC/2in1TabletTVWearable
 
 rotateRenderEffect(effect: WebRotateEffect)
 
@@ -3797,42 +3750,40 @@ rotateRenderEffect(effect: WebRotateEffect)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. @State effect: WebRotateEffect = WebRotateEffect.TOPLEFT_EFFECT;
-9. build() {
-10. Column() {
-11. Web({ src: $rawfile("index.html"), controller: this.controller })
-12. .rotateRenderEffect(this.effect)
-13. }
-14. }
-15. }
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State effect: WebRotateEffect = WebRotateEffect.TOPLEFT_EFFECT;
+  build() {
+    Column() {
+      Web({ src: $rawfile("index.html"), controller: this.controller })
+        .rotateRenderEffect(this.effect)
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <title>测试网页</title>
-6. </head>
-7. <body>
-8. <p>测试网页</p>
-9. </body>
-10. </html>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>测试网页</title>
+</head>
+<body>
+  <p>测试网页</p>
+</body>
+</html>
 ```
 
 ## forceEnableZoom21+
-
-PhonePC/2in1TabletTVWearable
 
 forceEnableZoom(enable: boolean)
 
@@ -3848,44 +3799,42 @@ forceEnableZoom(enable: boolean)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: $rawfile("index.html"), controller: this.controller })
-12. .forceEnableZoom(true)
-13. }
-14. }
-15. }
+  build() {
+    Column() {
+      Web({ src: $rawfile("index.html"), controller: this.controller })
+        .forceEnableZoom(true)
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-6. <title>测试网页</title>
-7. </head>
-8. <body>
-9. <h1>forceEnableZoom Demo</h1>
-10. <span>You can scale page when forceEnableZoom is true.</span>
-11. </body>
-12. </html>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <title>测试网页</title>
+</head>
+<body>
+  <h1>forceEnableZoom Demo</h1>
+  <span>You can scale page when forceEnableZoom is true.</span>
+</body>
+</html>
 ```
 
 ## backToTop22+
-
-PhonePC/2in1TabletTVWearable
 
 backToTop(backToTop: boolean)
 
@@ -3901,70 +3850,68 @@ backToTop(backToTop: boolean)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: $rawfile("index.html"), controller: this.controller })
-12. .backToTop(true)
-13. }
-14. }
-15. }
+  build() {
+    Column() {
+      Web({ src: $rawfile("index.html"), controller: this.controller })
+        .backToTop(true)
+    }
+  }
+}
 ```
 
 加载的html文件：
 
-```
-1. <!-- index.html -->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0">
-6. <style>
-7. .blue {
-8. background-color: lightblue;
-9. }
-10. .green {
-11. background-color: lightgreen;
-12. }
-13. .blue, .green {
-14. font-size:16px;
-15. height:200px;
-16. text-align: center;       /* 水平居中 */
-17. line-height: 200px;       /* 垂直居中（值等于容器高度） */
-18. }
-19. </style>
-20. </head>
-21. <body>
-22. <div class="blue" >webArea</div>
-23. <div class="green">webArea</div>
-24. <div class="blue">webArea</div>
-25. <div class="green">webArea</div>
-26. <div class="blue">webArea</div>
-27. <div class="green">webArea</div>
-28. <div class="blue">webArea</div>
-29. <div class="green">webArea</div>
-30. <div class="blue">webArea</div>
-31. </body>
-32. </html>
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .blue {
+          background-color: lightblue;
+        }
+        .green {
+          background-color: lightgreen;
+        }
+        .blue, .green {
+         font-size:16px;
+         height:200px;
+         text-align: center;       /* 水平居中 */
+         line-height: 200px;       /* 垂直居中（值等于容器高度） */
+        }
+    </style>
+</head>
+<body>
+<div class="blue" >webArea</div>
+<div class="green">webArea</div>
+<div class="blue">webArea</div>
+<div class="green">webArea</div>
+<div class="blue">webArea</div>
+<div class="green">webArea</div>
+<div class="blue">webArea</div>
+<div class="green">webArea</div>
+<div class="blue">webArea</div>
+</body>
+</html>
 ```
 
 ## blankScreenDetectionConfig22+
-
-PhonePC/2in1TabletTVWearable
 
 blankScreenDetectionConfig(detectConfig: BlankScreenDetectionConfig)
 
 设置白屏检测的策略配置，如使能开关、检测时间和检测策略等。当属性没有显式调用时，默认关闭白屏检测。
 
-说明
+**说明** 
 
 * 根据detectConfig的配置，在网页加载后检测到白屏或者近似白屏现象，可触发回调[onDetectedBlankScreen](arkts-basic-components-web-events.md#ondetectedblankscreen22)。
 * 设置后下次导航生效。
@@ -3981,43 +3928,41 @@ blankScreenDetectionConfig(detectConfig: BlankScreenDetectionConfig)
 
 **示例：**
 
-```
-1. // blankScreenDetectionConfig.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// blankScreenDetectionConfig.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .blankScreenDetectionConfig({
-13. enable: true,
-14. detectionTiming: [2, 4, 6, 8],
-15. contentfulNodesCountThreshold: 4,
-16. detectionMethods:[BlankScreenDetectionMethod.DETECTION_CONTENTFUL_NODES_SEVENTEEN]
-17. })
-18. .onDetectedBlankScreen((event: BlankScreenDetectionEventInfo)=>{
-19. console.info(`Found blank screen on ${event.url}.`);
-20. console.info(`The blank screen reason is ${event.blankScreenReason}.`);
-21. console.info(`The blank screen detail is ${event.blankScreenDetails?.detectedContentfulNodesCount}.`);
-22. })
-23. }
-24. }
-25. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .blankScreenDetectionConfig({
+          enable: true,
+          detectionTiming: [2, 4, 6, 8],
+          contentfulNodesCountThreshold: 4,
+          detectionMethods:[BlankScreenDetectionMethod.DETECTION_CONTENTFUL_NODES_SEVENTEEN]
+        })
+        .onDetectedBlankScreen((event: BlankScreenDetectionEventInfo)=>{
+          console.info(`Found blank screen on ${event.url}.`);
+          console.info(`The blank screen reason is ${event.blankScreenReason}.`);
+          console.info(`The blank screen detail is ${event.blankScreenDetails?.detectedContentfulNodesCount}.`);
+        })
+    }
+  }
+}
 ```
 
 ## enableImageAnalyzer23+
 
-PhonePC/2in1TabletTVWearable
-
 enableImageAnalyzer(enable: boolean)
 
-设置是否启用网页图片AI分析，当前支持图片文字识别功能，该功能默认开启。
+设置是否启用网页图片AI分析，当前支持图片文字识别功能。属性未显式调用时，该功能默认开启。
 
-说明
+**说明** 
 
 长按或鼠标悬停在图片文字上时，触发图片AI分析，可以选中图片中的文字。能够触发分析的图片规格如下。
 
@@ -4034,60 +3979,58 @@ enableImageAnalyzer(enable: boolean)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: $rawfile("index.html"), controller: this.controller })
-12. .enableImageAnalyzer(true) // 如果需要关闭图片分析能力，需要显式设置为false
-13. }
-14. }
-15. }
+  build() {
+    Column() {
+      Web({ src: $rawfile("index.html"), controller: this.controller })
+        .enableImageAnalyzer(true) // 如果需要关闭图片分析能力，需要显式设置为false
+    }
+  }
+}
 ```
 
 加载的html文件：
 
-```
-1. <!-- index.html -->
-2. <!DOCTYPE html>
-3. <head>
-4. <meta charset="UTF-8">
-5. <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0">
-6. <style>
-7. .image-container {
-8. width: 90%;
-9. }
-10. .image-container img {
-11. width: 100%;
-12. height: auto;
-13. }
-14. </style>
-15. </head>
-16. <body>
-17. <div class="image-container">
-18. <!--example.jpg为html同目录下图片-->
-19. <img src="example.jpg" alt="待AI分析的图片">
-20. </div>
-21. </body>
-22. </html>
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .image-container {
+      width: 90%;
+    }
+    .image-container img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="image-container">
+    <!--example.jpg为html同目录下图片-->
+    <img src="example.jpg" alt="待AI分析的图片">
+  </div>
+</body>
+</html>
 ```
 
 ## enableAutoFill23+
-
-PhonePC/2in1TabletTVWearable
 
 enableAutoFill(value: boolean)
 
 设置是否启用网页自动填充，默认开启。
 
-说明
+**说明** 
 
 网页使用智能填充和密码填充前，需要网页接入对应的填充服务。具体接入方法请查看[网页接入智能填充](../harmonyos-guides/scenario-fusion-h5.md)、[网页接入密码填充](../harmonyos-guides/arkweb-access-password-safe.md)
 
@@ -4101,60 +4044,156 @@ enableAutoFill(value: boolean)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: $rawfile("index.html"), controller: this.controller })
-12. .enableAutoFill(true)
-13. }
-14. }
-15. }
+  build() {
+    Column() {
+      Web({ src: $rawfile("index.html"), controller: this.controller })
+        .enableAutoFill(true)
+    }
+  }
+}
 ```
 
 加载的html文件：
 
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport"/>
+    <title>自动填充测试</title>
+  </head>
+  <body>
+    <h4 align="center">自动填充测试</h4>
+    <form method="post" action="">
+      <div align="center">
+        <label for="name" style="width: 120px; display: inline-block; text-align: end;">姓名:</label>
+        <input type="text" id="name" autocomplete="name"/><br/><br/>
+        <label for="tel-national" style="width: 120px; display: inline-block; text-align: end;">手机号:</label>
+        <input type="text" id="tel-national" autocomplete="tel-national"/><br/><br/>
+      </div>
+      <div align="center">
+        <button type="submit" style="width: 80px">提交</button>
+      </div>
+    </form>
+  </body>
+</html>
 ```
-1. <!-- index.html -->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport"/>
-6. <title>自动填充测试</title>
-7. </head>
-8. <body>
-9. <h4 align="center">自动填充测试</h4>
-10. <form method="post" action="">
-11. <div align="center">
-12. <label for="name" style="width: 120px; display: inline-block; text-align: end;">姓名:</label>
-13. <input type="text" id="name" autocomplete="name"/><br/><br/>
-14. <label for="tel-national" style="width: 120px; display: inline-block; text-align: end;">手机号:</label>
-15. <input type="text" id="tel-national" autocomplete="tel-national"/><br/><br/>
-16. </div>
-17. <div align="center">
-18. <button type="submit" style="width: 80px">提交</button>
-19. </div>
-20. </form>
-21. </body>
-22. </html>
+
+## enableDefaultContextMenu24+
+
+enableDefaultContextMenu(enable: boolean)
+
+设置是否启用默认右键上下文菜单。不调用该方法时，默认不启用。默认菜单仅支持CUT、COPY、PASTE、SELECT\_ALL菜单项。
+
+**说明** 
+
+* 当设置了[onContextMenuShow](arkts-basic-components-web-events.md#oncontextmenushow9)回调并在回调中返回true时，本接口的设置不生效。
+* 默认菜单项会受[editMenuOptions](arkts-basic-components-web-attributes.md#editmenuoptions12)控制，通过该属性可以自定义菜单选项。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enable | boolean | 是 | 是否启用默认右键上下文菜单，true表示启用，false表示不启用。  传入undefined或null时为false。 |
+
+**示例：**
+
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .enableDefaultContextMenu(true)
+    }
+  }
+}
+```
+
+## enableDrag
+
+enableDrag(value: boolean)
+
+设置是否启用拖拽功能。不调用该属性时，默认启用网页拖拽功能。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | boolean | 是 | 是否启用网页拖拽功能，true表示启用，false表示不启用。传入undefined或null时为true。 |
+| **示例：** |  |  |  |
+
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct Index {
+  private controller: webview.WebviewController = new webview.WebviewController();
+
+  build() {
+    Column() {
+      Web({ src: $rawfile('test.html'), controller: this.controller })
+        .enableDrag(false)
+    }
+  }
+}
+```
+
+加载的html文件。
+
+```html
+<!--test.html-->
+<!DOCTYPE html>
+<html>
+  <head><meta charset="UTF-8"><title>拖拽测试</title></head>
+  <body>
+    <div id="drag" draggable="true" style="width:100px;height:100px;background:red;margin:20px;"></div>
+    <div id="drop" style="width:200px;height:200px;background:gray;margin:20px;"></div>
+    <script>
+      drag.ondragstart=e=>e.dataTransfer.setData('text/plain','');
+      drop.ondragover=e=>e.preventDefault();
+      drop.ondrop=e=>{e.preventDefault(); drop.style.background='green';};
+      drag.ondragend=()=>{drop.style.background='gray';};
+    </script>
+  </body>
+</html>
 ```
 
 ## password(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 password(password: boolean)
 
 设置是否应保存密码。该接口为空接口。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 10开始废弃，建议使用[enableAutoFill23+](arkts-basic-components-web-attributes.md#enableautofill23)替代。
 
@@ -4164,19 +4203,17 @@ password(password: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| password | boolean | 是 | 设置为true时，表示允许Web保存密码。  设置为false时，表示不允许Web保存密码。 |
+| password | boolean | 是 | 设置为true时，表示允许Web保存密码。  设置为false时，表示不允许Web保存密码。  传入undefined或null时为false。 |
 
 ## textZoomAtio(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 textZoomAtio(textZoomAtio: number)
 
 设置页面的文本缩放百分比。
 
-说明
+**说明** 
 
-从API version 8开始支持，从API version 9开始废弃，建议使用[textZoomRatio9+](arkts-basic-components-web-attributes.md#textzoomratio9)代替。
+从API version 8开始支持，从API version 9开始废弃，建议使用[textZoomRatio9+](arkts-basic-components-web-attributes.md#textzoomratio9)替代。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -4184,35 +4221,33 @@ textZoomAtio(textZoomAtio: number)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| textZoomAtio | number | 是 | 要设置的页面的文本缩放百分比。  取值范围为正整数。  默认值：100。 |
+| textZoomAtio | number | 是 | 要设置的页面的文本缩放百分比。100表示原始大小，大于100表示放大，小于100表示缩小。  取值范围为(0, 2147483647]。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct WebComponent {
-5. controller: WebController = new WebController()
-6. @State ratio: number = 150
-7. build() {
-8. Column() {
-9. Web({ src: 'www.example.com', controller: this.controller })
-10. .textZoomAtio(this.ratio)
-11. }
-12. }
-13. }
+```ts
+// xxx.ets
+@Entry
+@Component
+struct WebComponent {
+  controller: WebController = new WebController()
+  @State ratio: number = 150
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .textZoomAtio(this.ratio)
+    }
+  }
+}
 ```
 
 ## userAgent(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 userAgent(userAgent: string)
 
 设置用户代理。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 10开始废弃。建议使用[setCustomUserAgent](arkts-apis-webview-webviewcontroller.md#setcustomuseragent10)10+替代。
 
@@ -4226,34 +4261,32 @@ userAgent(userAgent: string)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. @State userAgent:string = 'Mozilla/5.0 (Phone; OpenHarmony 5.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 ArkWeb/4.1.6.1 Mobile DemoApp';
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State userAgent:string = 'Mozilla/5.0 (Phone; OpenHarmony 5.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 ArkWeb/4.1.6.1 Mobile DemoApp';
 
-10. build() {
-11. Column() {
-12. Web({ src: 'www.example.com', controller: this.controller })
-13. .userAgent(this.userAgent)
-14. }
-15. }
-16. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .userAgent(this.userAgent)
+    }
+  }
+}
 ```
 
 ## tableData(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 tableData(tableData: boolean)
 
 设置是否应保存表单数据。当属性没有显式调用时，默认允许Web保存表单数据。该接口为空接口。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 10开始废弃，建议使用[enableAutoFill23+](arkts-basic-components-web-attributes.md#enableautofill23)替代。
 
@@ -4263,17 +4296,15 @@ tableData(tableData: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| tableData | boolean | 是 | 设置为true时，表示允许Web保存表单数据。  设置为false时，表示不允许Web保存表单数据。 |
+| tableData | boolean | 是 | 设置为true时，表示允许Web保存表单数据。  设置为false时，表示不允许Web保存表单数据。  传入undefined或null时为true。 |
 
 ## wideViewModeAccess(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 wideViewModeAccess(wideViewModeAccess: boolean)
 
 设置Web是否支持html中meta标签的viewport属性。该接口为空接口。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 10开始废弃，建议使用[metaViewport12+](arkts-basic-components-web-attributes.md#metaviewport12)替代。
 
@@ -4287,15 +4318,15 @@ wideViewModeAccess(wideViewModeAccess: boolean)
 
 ## selectionMenuOptions(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 selectionMenuOptions(expandedMenuOptions: Array<ExpandedMenuItemOptions>)
 
 Web组件自定义菜单扩展项接口，允许用户设置扩展项的文本内容、图标、回调方法。
 
 该接口只支持选中纯文本，当选中内容包含图片及其他非文本内容时，action信息中会显示乱码。
 
-说明
+**说明** 
+
+本接口在与[editMenuOptions](arkts-basic-components-web-attributes.md#editmenuoptions12)同时使用时，本接口不生效。
 
 从API version 12开始支持，从API version 20开始废弃。建议使用[editMenuOptions12+](arkts-basic-components-web-attributes.md#editmenuoptions12)替代。
 
@@ -4309,51 +4340,49 @@ Web组件自定义菜单扩展项接口，允许用户设置扩展项的文本�
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. @State menuOptionArray: Array<ExpandedMenuItemOptions> = [
-9. {content: 'Apple', startIcon: $r('app.media.icon'), action: (selectedText) => {
-10. console.info('select info ' + selectedText.toString());
-11. }},
-12. {content: '香蕉', startIcon: $r('app.media.icon'), action: (selectedText) => {
-13. console.info('select info ' + selectedText.toString());
-14. }}
-15. ];
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State menuOptionArray: Array<ExpandedMenuItemOptions> = [
+    {content: 'Apple', startIcon: $r('app.media.icon'), action: (selectedText) => {
+      console.info('select info ' + selectedText.toString());
+    }},
+    {content: '香蕉', startIcon: $r('app.media.icon'), action: (selectedText) => {
+      console.info('select info ' + selectedText.toString());
+    }}
+  ];
 
-17. build() {
-18. Column() {
-19. Web({ src: $rawfile("index.html"), controller: this.controller })
-20. .selectionMenuOptions(this.menuOptionArray)
-21. }
-22. }
-23. }
+  build() {
+    Column() {
+      Web({ src: $rawfile("index.html"), controller: this.controller })
+      .selectionMenuOptions(this.menuOptionArray)
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <title>测试网页</title>
-6. </head>
-7. <body>
-8. <h1>selectionMenuOptions Demo</h1>
-9. <span>selection menu options</span>
-10. </body>
-11. </html>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>测试网页</title>
+</head>
+<body>
+  <h1>selectionMenuOptions Demo</h1>
+  <span>selection menu options</span>
+</body>
+</html>
 ```
 
 ## zoomControlAccess22+
-
-PhonePC/2in1TabletTVWearable
 
 zoomControlAccess(zoomControlAccess: boolean)
 
@@ -4371,37 +4400,345 @@ zoomControlAccess(zoomControlAccess: boolean)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: $rawfile("index.html"), controller: this.controller })
-12. .zoomControlAccess(true)
-13. }
-14. }
-15. }
+  build() {
+    Column() {
+      Web({ src: $rawfile("index.html"), controller: this.controller })
+        .zoomControlAccess(true)
+    }
+  }
+}
 ```
 
 加载的html文件。
 
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>测试网页</title>
+</head>
+<body>
+  <h1>zoomControlAccess Demo</h1>
+  <span>You can zoom in/out page when zoomControlAccess is true.</span>
+</body>
+</html>
 ```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta name="viewport" content="width=device-width, initial-scale=1.0">
-6. <title>测试网页</title>
-7. </head>
-8. <body>
-9. <h1>zoomControlAccess Demo</h1>
-10. <span>You can zoom in/out page when zoomControlAccess is true.</span>
-11. </body>
-12. </html>
+
+## aiSessionOptions
+
+aiSessionOptions(aiSessions: Array<AISessionEvent>)
+
+自定义Web组件的前端AI会话配置，用于注册多个自定义AI会话。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| aiSessions | Array<[AISessionEvent](arkts-basic-components-web-i.md#aisessionevent)> | 是 | 前端AI会话配置对象数组，每个对象包含AI会话类型及对应的生命周期回调方法。当前仅支持[AISessionType](arkts-basic-components-web-e.md#aisessiontype)中包含的模型。 |
+
+**示例：**
+
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct DemoPage {
+  private webController: webview.WebviewController = new webview.WebviewController();
+  sessions: Map<string, string> = new Map<string, string>();
+
+  onCreateAISession = (id: string, params: string, result: OnAISessionCallback): boolean => {
+    this.sessions.set(id, params); // 模拟创建AI会话
+    console.info(`[AISession]onCreateAISession params: ${params}`);
+    // 通知调用方AI会话创建成功
+    result(AISessionResultType.SUCCESS, "AISession created");
+    return true;
+  }
+
+  onExecuteAIAction = (id: string, params: string, result: OnAISessionCallback): void => {
+    this.sessions.get(id); // 模拟取出会话，并执行动作
+    console.info(`[AISession]onExecuteAIAction params: ${params}`);
+    // 模拟流式返回AI执行结果：多次调用RUNNING表示任务执行中、返回数据块，最后返回SUCCESS表示任务完成
+    result(AISessionResultType.RUNNING, "AISession chunk 1\n");
+    result(AISessionResultType.RUNNING, "AISession chunk 2\n");
+    result(AISessionResultType.SUCCESS, "AISession chunk end\n");
+  }
+
+  onDestroyAISession = (id: string): void => {
+    this.sessions.delete(id); // 模拟销毁会话并释放资源
+  }
+
+  @State options: AISessionEvent = {
+    aiSessionType: AISessionType.SUMMARIZER,
+    onCreateAISession: this.onCreateAISession,
+    onExecuteAIAction: this.onExecuteAIAction,
+    onDestroyAISession: this.onDestroyAISession
+  }
+
+  build() {
+    Column() {
+      Web({ src: $rawfile('index.html'), controller: this.webController })
+        .aiSessionOptions([this.options])
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
+```
+
+加载的html文件
+
+```html
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Summarizer API Test</title>
+</head>
+<body style="max-width:600px;margin:20px auto;padding:0 16px;">
+  <p id="status">checking...</p>
+  <button id="initBtn" onclick="init()">Create Session</button>
+  <br><br>
+  <textarea id="input" rows="6" style="width:100%;font:inherit" placeholder="paste text to summarize"></textarea>
+  <br><br>
+  <button id="btn" onclick="run()" disabled>Summarize</button>
+  <pre id="result"></pre>
+  <script>
+    let s;
+    (async () => {
+      const d = document.getElementById('status');
+      if (!('Summarizer' in self)) { d.textContent = 'API not supported'; return; }
+      const a = await Summarizer.availability();
+      d.textContent = 'Summarizer: ' + a;
+      if (a === 'unavailable') document.getElementById('initBtn').disabled = true;
+    })();
+
+    async function init() {
+      const d = document.getElementById('status'), ib = document.getElementById('initBtn');
+      ib.disabled = true;
+      d.textContent = 'creating...';
+      try {
+        s = await Summarizer.create({
+          type: 'tldr', length: 'medium', format: 'plain-text',
+          monitor(m) { m.addEventListener('downloadprogress', e => { d.textContent = 'downloading ' + (e.loaded * 100 | 0) + '%' }); }
+        });
+        d.textContent = 'ready';
+        document.getElementById('btn').disabled = false;
+      } catch (e) { d.textContent = 'Error: ' + e.message; ib.disabled = false; }
+    }
+
+    async function run() {
+      const t = document.getElementById('input').value.trim();
+      if (!t || !s) return;
+      const btn = document.getElementById('btn'), r = document.getElementById('result');
+      btn.disabled = true;
+      r.textContent = '...';
+      try { r.textContent = await s.summarize(t); }
+      catch (e) { r.textContent = 'Error: ' + e.message; }
+      btn.disabled = false;
+    }
+  </script>
+</body>
+</html>
+```
+
+## scrollbarLayoutPolicy
+
+scrollbarLayoutPolicy(policy: ScrollbarLayoutPolicy)
+
+选择Web组件内垂直滚动条的布局方式，用于适配不同语言的书写方向。CONTENT模式适用于需要跟随网页CSS direction属性的场景，SYSTEM模式适用于多语言应用中需要跟随系统语言方向设置的场景，如阿拉伯语、希伯来语等从右到左书写的语言。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| policy | [ScrollbarLayoutPolicy](arkts-basic-components-web-e.md#scrollbarlayoutpolicy) | 是 | 设置Web组件内垂直滚动条布局模式。可选值：CONTENT（跟随网页css的direction属性设置），SYSTEM（根据系统语种的左右书写方向进行布局，对于从右向左书写的语言，滚动条将布局在左侧。对于网页内嵌套的多层滚动条均适用）。 |
+
+**示例：**
+
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .width('100%')
+        .height('100%')
+        // 设置为SYSTEM表示跟随系统语言方向布局。设置为CONTENT表示沿用Web样式布局
+        .scrollbarLayoutPolicy(ScrollbarLayoutPolicy.SYSTEM)
+    }
+  }
+}
+```
+
+## keyboardAppearance
+
+keyboardAppearance(mode: WebKeyboardAppearanceMode)
+
+设置键盘外观模式，用于控制Web组件内输入框弹出键盘的外观样式，包括沉浸式和非沉浸式模式。不调用该方法时，默认跟随系统的沉浸式模式。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mode | [WebKeyboardAppearanceMode](arkts-basic-components-web-e.md#webkeyboardappearancemode) | 是 | 键盘外观。传入undefined或null时，跟随系统的沉浸式模式。 |
+
+**示例：**
+
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State appearanceMode: WebKeyboardAppearanceMode = WebKeyboardAppearanceMode.DARK_IMMERSIVE;
+
+  build() {
+    Column() {
+      Web({ src: $rawfile("index.html"), controller: this.controller })
+      .keyboardAppearance(this.appearanceMode)
+    }
+  }
+}
+```
+
+加载的html文件。
+
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>测试网页</title>
+</head>
+<body>
+  <input type="text" placeholder="Text">
+</body>
+</html>
+```
+
+## enableFullscreenVideoOverlay
+
+enableFullscreenVideoOverlay(enabled: boolean)
+
+设置Web组件是否开启覆盖式全屏播放功能。当属性没有显式调用时，默认不开启该能力。
+
+**说明** 
+
+* 当前只支持H264、H265解码格式的视频。
+* 只有视频元素发出的全屏请求才会响应。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**设备行为差异：** 该接口在PC/2in1设备中无效果，在其他设备中可正常调用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enabled | boolean | 是 | 设置Web组件是否开启覆盖式全屏播放功能。  true表示开启该功能。  false表示不开启。  传入undefined或null时为false。 |
+
+**示例：**
+
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+      .enableFullscreenVideoOverlay(true)
+    }
+  }
+}
+```
+
+## enableMediaNetworkProxy
+
+enableMediaNetworkProxy(enabled: boolean)
+
+设置Web组件是否开启媒体资源网络请求代理功能。当属性没有显式调用时，默认不开启该能力。
+
+**说明** 
+
+* 当前只支持HLS流媒体视频。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enabled | boolean | 是 | 设置Web组件是否开启媒体资源网络请求代理功能。  true表示开启该功能。  false表示不开启。 |
+
+**示例：**
+
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+      .enableMediaNetworkProxy(true)
+    }
+  }
+}
 ```

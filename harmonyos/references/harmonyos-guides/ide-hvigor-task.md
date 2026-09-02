@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-ta
 title: 开发Hvigor任务
 breadcrumb: 指南 > 构建应用 > 扩展构建能力 > 开发Hvigor任务
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:47:20+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d7f5bfb447aacaa381b69127d8d74b35f1cd8c2e27a2311f796ec05b3ae88366
+scraped_at: 2026-09-02T14:50:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f2e1f0d4394a2ab1cfe41e044578e6bc642f701b2400251352d962634e535b1f
 ---
 
 ## 了解任务
@@ -18,8 +18,8 @@ UP-TO-DATE
 
 示例：
 
-```
-1. > hvigor UP-TO-DATE ::PackageApp...
+```txt
+> hvigor UP-TO-DATE ::PackageApp...
 ```
 
 Finished
@@ -28,8 +28,8 @@ Finished
 
 示例：
 
-```
-1. > hvigor Finished ::PackageApp... after 310 ms
+```txt
+> hvigor Finished ::PackageApp... after 310 ms
 ```
 
 ## 注册任务
@@ -38,31 +38,31 @@ Finished
 
 1. 编辑工程下hvigorfile.ts文件。
 
-   ```
-   1. // 导入模块
-   2. import { getNode, HvigorNode, HvigorTask } from '@ohos/hvigor';
+   ```ts
+   // 导入模块
+   import { getNode, HvigorNode, HvigorTask } from '@ohos/hvigor';
    ```
 2. 编写任务代码。
 
-   ```
-   1. // 获取当前hvigorNode节点对象
-   2. const node: HvigorNode = getNode(__filename);
+   ```screen
+   // 获取当前hvigorNode节点对象
+   const node: HvigorNode = getNode(__filename);
 
-   4. // 注册Task
-   5. node.registerTask({
-   6. name: 'customTask',
-   7. run() {
-   8. console.log('this is Task');
-   9. }
-   10. });
+   // 注册Task
+   node.registerTask({
+     name: 'customTask',
+     run() {
+       console.log('this is Task');
+     }
+   });
    ```
 3. 执行任务。
 
-   使用hvigor命令行工具执行任务：
+   使用Hvigor命令行工具执行任务：
 
-   ```
-   1. hvigorw customTask
+   ```bash
+   hvigorw customTask
    ```
 4. 查看任务执行结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/KCW0yEfIQWOKTWgj_9PDQw/zh-cn_image_0000002561753201.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/r_Q-HTUfTpyumgGLEFhNwA/zh-cn_image_0000002731542481.png "点击放大")

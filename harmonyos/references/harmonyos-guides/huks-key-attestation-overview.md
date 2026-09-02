@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-atte
 title: 密钥证明介绍及算法规格
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥证明 > 密钥证明介绍及算法规格
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:24+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ffea5c83f83dee556616a58220e291bb19ad47865dc7a962dc901e8bbd2bd1ab
+scraped_at: 2026-09-02T14:59:32+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4ab1c697a5e6ba55f35c0902c6eeb5fe3dcb1943a63ba06823276f54b907ad9f
 ---
 
 HUKS为密钥提供合法性证明能力，主要应用于非对称密钥的公钥的证明。
 
 基于PKI证书链技术，HUKS可以为存储在HUKS中的非对称密钥对的公钥签发证书，证明其公钥的合法性。业务可以通过系统提供的根CA证书，逐级验证HUKS签发的密钥证明证书，来确保证书中的公钥以及对应的私钥，确实来自合法的硬件设备，且存储管理在HUKS中。
 
-说明
+**说明** 
 
 * 当调用方为系统服务且APL等级为normal时，暂不支持密钥证明，此种情况下，processName与APL字段将置空。
 * 密钥证明功能在模拟器场景不支持。
@@ -21,29 +21,29 @@ HUKS为密钥提供合法性证明能力，主要应用于非对称密钥的公�
 
 从API 23开始支持[群组密钥](huks-group-key-overview.md)特性。
 
-密钥证明扩展域段为Asn.1 DER标准编码格式，数据结构定义如下：
+密钥证明扩展域段为ASN.1 DER标准编码格式，数据结构定义如下：
 
-```
-1. KeyAttestation ::= SEQUENCE {
-2. version            AttestationVersion DEFAULT v1,
-3. claim1             AttestationClaim,
-4. claim2             AttestationClaim,
-5. claim3             AttestationClaim,
-6. ... ...
-7. }
-8. AttestationVersion ::= INTEGER { v1(0) }
-9. AttestationClaim ::= SEQUENCE {
-10. securityLevel      SecurityLevel,
-11. type               AttestationType,
-12. value              AttestationValue
-13. }
-14. SecurityLevel ::= INTEGER
-15. AttestationType ::= OBJECT IDENTIFIER
-16. AttestationValue ::= ANY -- DEFINED BY AttestationType
-17. ApplicationIDType ::= SEQUENCE {
-18. type               OBJECT IDENTIFIER,
-19. value              OCT_STR
-20. }
+```asn1
+KeyAttestation ::= SEQUENCE {
+  version            AttestationVersion DEFAULT v1,
+  claim1             AttestationClaim,
+  claim2             AttestationClaim,
+  claim3             AttestationClaim,
+  ... ...
+}
+AttestationVersion ::= INTEGER { v1(0) }
+AttestationClaim ::= SEQUENCE {
+  securityLevel      SecurityLevel,
+  type               AttestationType,
+  value              AttestationValue
+}
+SecurityLevel ::= INTEGER
+AttestationType ::= OBJECT IDENTIFIER
+AttestationValue ::= ANY -- DEFINED BY AttestationType
+ApplicationIDType ::= SEQUENCE {
+  type               OBJECT IDENTIFIER,
+  value              OCT_STR
+}
 ```
 
 常用AttestationClaim类型取值说明：

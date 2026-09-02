@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___dn
 title: Rcp_DnsServers
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > C API > 结构体 > Rcp_DnsServers
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:03+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:87353579f9ac2b9228a2d42e5a1d6b328f0462f1848ae3ad1f4c9db16b0beb1a
+scraped_at: 2026-09-02T15:01:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5e7002d0d1e16c4c23c7e337d107056d9fd347c97d4b8a21e4c59b10678d8495
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 DNS服务器。[Rcp\_DnsConfiguration.dnsRules](_rcp___dns_configuration.md#dnsrules)中的类型之一。
 
@@ -22,27 +20,19 @@ DNS服务器。[Rcp\_DnsConfiguration.dnsRules](_rcp___dns_configuration.md#dnsr
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
-| [Rcp\_IpAndPort](_rcp___ip_and_port.md)[ipAndPort](_rcp___dns_servers.md#ipandport) | IP和端口。 |
+| [Rcp\_IpAndPort](_rcp___ip_and_port.md) [ipAndPort](_rcp___dns_servers.md#ipandport) | IP和端口。 |
 | struct [Rcp\_DnsServers](_rcp___dns_servers.md) \* [next](_rcp___dns_servers.md#next) | 链式存储。指向下一个[Rcp\_DnsServers](_rcp___dns_servers.md)的指针。 |
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTVWearable
-
 ### ipAndPort
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Rcp_IpAndPort Rcp_DnsServers::ipAndPort
+```cpp
+Rcp_IpAndPort Rcp_DnsServers::ipAndPort
 ```
 
 **描述**
@@ -51,10 +41,8 @@ IP和端口。
 
 ### next
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. struct Rcp_DnsServers* Rcp_DnsServers::next
+```cpp
+struct Rcp_DnsServers* Rcp_DnsServers::next
 ```
 
 **描述**

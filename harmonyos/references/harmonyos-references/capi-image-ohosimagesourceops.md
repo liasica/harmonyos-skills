@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: OhosImageSourceOps
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 结构体 > OhosImageSourceOps
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:33+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:50b60bcd76cf5dac3c9c4cea8ea61c6048cc561e260921521efe229a432df80b
+scraped_at: 2026-09-02T15:02:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:50dc209882182f259c2f4312018842d65d2132ae51469de770b24592d50d3ec0
 ---
 
-```
-1. struct OhosImageSourceOps {...}
+```c
+struct OhosImageSourceOps {...}
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义图像源选项信息。此选项给[OH\_ImageSource\_CreateFromUri](capi-image-source-mdk-h.md#oh_imagesource_createfromuri)、[OH\_ImageSource\_CreateFromFd](capi-image-source-mdk-h.md#oh_imagesource_createfromfd)、[OH\_ImageSource\_CreateFromData](capi-image-source-mdk-h.md#oh_imagesource_createfromdata)和[OH\_ImageSource\_CreateIncremental](capi-image-source-mdk-h.md#oh_imagesource_createincremental)接口使用。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

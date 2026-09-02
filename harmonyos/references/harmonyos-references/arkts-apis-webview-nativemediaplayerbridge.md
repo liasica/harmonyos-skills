@@ -3,16 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (NativeMediaPlayerBridge)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Interface (NativeMediaPlayerBridge)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:55:39+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:158ae80c12d132f621c16f9ed9650f75613c4c45bd38f226f6313a2cb9cb9912
+scraped_at: 2026-09-02T15:01:27+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b5824292494f5207147b0ad008cf1abb73094525dd55e808e5b36fe41a8be8a5
 ---
 
-[CreateNativeMediaPlayerCallback](arkts-apis-webview-t.md#createnativemediaplayercallback12)回调函数的返回值类型。接管网页媒体的播放器和ArkWeb内核之间的一个接口类。
+NativeMediaPlayerBridge是[CreateNativeMediaPlayerCallback](arkts-apis-webview-t.md#createnativemediaplayercallback12)回调函数的返回值类型，是接管网页媒体的播放器和ArkWeb内核之间的一个接口类。ArkWeb内核通过该接口类的实例对象控制应用创建的用于接管网页媒体的播放器。该接口允许应用使用自定义的媒体播放器接管网页中的媒体内容播放，同时，该接口还支持播放器的挂起和恢复机制。
 
-ArkWeb内核通过该接口类的实例对象来控制应用创建的用来接管网页媒体的播放器。
-
-说明
+**说明** 
 
 * 本模块首批接口从API version 9开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 本Interface首批接口从API version 12开始支持。
@@ -20,11 +18,9 @@ ArkWeb内核通过该接口类的实例对象来控制应用创建的用来接�
 
 ## updateRect12+
 
-PhonePC/2in1TabletTVWearable
-
 updateRect(x: number, y: number, width: number, height: number): void
 
-更新surface位置信息。
+向应用通知surface位置信息。当网页布局变化、页面滚动或播放区域发生改变时由ArkWeb内核回调此方法，应用需据此更新原生播放器渲染表面的位置和大小。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -32,18 +28,16 @@ updateRect(x: number, y: number, width: number, height: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| x | number | 是 | surface相对于Web组件的x坐标信息。 |
-| y | number | 是 | surface相对于Web组件的y坐标信息。 |
-| width | number | 是 | surface的宽度。  单位：像素。 |
-| height | number | 是 | surface的高度。  单位：像素。 |
+| x | number | 是 | surface相对于Web组件的x坐标信息。  单位：px。 |
+| y | number | 是 | surface相对于Web组件的y坐标信息。  单位：px。 |
+| width | number | 是 | surface的宽度。  单位：px。 |
+| height | number | 是 | surface的高度。  单位：px。 |
 
 **示例：**
 
 完整示例代码参考[onCreateNativeMediaPlayer](arkts-apis-webview-webviewcontroller.md#oncreatenativemediaplayer12)。
 
 ## play12+
-
-PhonePC/2in1TabletTVWearable
 
 play(): void
 
@@ -57,8 +51,6 @@ play(): void
 
 ## pause12+
 
-PhonePC/2in1TabletTVWearable
-
 pause(): void
 
 暂停播放。
@@ -71,8 +63,6 @@ pause(): void
 
 ## seek12+
 
-PhonePC/2in1TabletTVWearable
-
 seek(targetTime: number): void
 
 跳转播放进度到指定时间点。
@@ -83,15 +73,13 @@ seek(targetTime: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| targetTime | number | 是 | 播放跳转到的时间点。  单位：秒。 |
+| targetTime | number | 是 | 播放跳转到的时间点，从媒体开始播放时计算。  单位：秒。 |
 
 **示例：**
 
 完整示例代码参考[onCreateNativeMediaPlayer](arkts-apis-webview-webviewcontroller.md#oncreatenativemediaplayer12)。
 
 ## setVolume12+
-
-PhonePC/2in1TabletTVWearable
 
 setVolume(volume: number): void
 
@@ -103,15 +91,13 @@ setVolume(volume: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| volume | number | 是 | 播放器的音量。  取值范围：[0, 1.0]，其中0表示静音，1.0表示最大音量。 |
+| volume | number | 是 | 播放器的音量。  取值范围：[0, 1.0]，其中0表示静音，1.0表示最大音量。超出取值范围时，按边界值自动修正。 |
 
 **示例：**
 
 完整示例代码参考[onCreateNativeMediaPlayer](arkts-apis-webview-webviewcontroller.md#oncreatenativemediaplayer12)。
 
 ## setMuted12+
-
-PhonePC/2in1TabletTVWearable
 
 setMuted(muted: boolean): void
 
@@ -131,8 +117,6 @@ setMuted(muted: boolean): void
 
 ## setPlaybackRate12+
 
-PhonePC/2in1TabletTVWearable
-
 setPlaybackRate(playbackRate: number): void
 
 设置播放速率。
@@ -143,15 +127,13 @@ setPlaybackRate(playbackRate: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| playbackRate | number | 是 | 播放速率。  取值范围：[0, 10.0]，其中1表示原速播放。 |
+| playbackRate | number | 是 | 播放速率。  取值范围：[0, 10.0]，其中1表示原速播放。超出取值范围时，按边界值自动修正。 |
 
 **示例：**
 
 完整示例代码参考[onCreateNativeMediaPlayer](arkts-apis-webview-webviewcontroller.md#oncreatenativemediaplayer12)。
 
 ## release12+
-
-PhonePC/2in1TabletTVWearable
 
 release(): void
 
@@ -165,11 +147,9 @@ release(): void
 
 ## enterFullscreen12+
 
-PhonePC/2in1TabletTVWearable
-
 enterFullscreen(): void
 
-播放器进入全屏。
+使播放器进入全屏。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -179,11 +159,9 @@ enterFullscreen(): void
 
 ## exitFullscreen12+
 
-PhonePC/2in1TabletTVWearable
-
 exitFullscreen(): void
 
-播放器退出全屏。
+使播放器退出全屏。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -193,11 +171,9 @@ exitFullscreen(): void
 
 ## resumePlayer12+
 
-PhonePC/2in1TabletTVWearable
-
 resumePlayer?(): void
 
-通知应用重建播放器，并恢复播放器的状态信息。
+通知应用重建播放器，并恢复播放器的状态信息。仅与 suspendPlayer 成对出现。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -207,11 +183,9 @@ resumePlayer?(): void
 
 ## suspendPlayer12+
 
-PhonePC/2in1TabletTVWearable
-
 suspendPlayer?(type: SuspendType): void
 
-通知应用销毁播放器，并保存播放器的状态信息。
+通知应用销毁播放器，并保存播放器的状态信息。仅与 resumePlayer 成对出现。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -219,7 +193,7 @@ suspendPlayer?(type: SuspendType): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | [SuspendType](arkts-apis-webview-e.md#suspendtype12) | 是 | 播放器挂起类型。 |
+| type | [SuspendType](arkts-apis-webview-e.md#suspendtype12) | 是 | 播放器挂起类型，用于指定播放器挂起的方式。不同SuspendType取值对应不同的挂起场景。 |
 
 **示例：**
 

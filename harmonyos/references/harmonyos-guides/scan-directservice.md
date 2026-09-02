@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-directse
 title: 接入“扫码直达”服务
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 接入“扫码直达”服务
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:35:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:28a416d02809f898dd93352534b63048274fba093e56114555a1d5ce1cebc001
+scraped_at: 2026-09-02T14:59:48+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:232f5a5f9b239c8fae2db9f152f12de8829240705c17f898a5299c4194e2ed90
 ---
 
-说明
+**说明** 
 
 扫码直达能力仅支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）接入使用。
 
@@ -24,7 +24,7 @@ content_hash: sha256:28a416d02809f898dd93352534b63048274fba093e56114555a1d5ce1ce
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/uWCeeWeiQpmC3j-oFjbxlQ/zh-cn_image_0000002558605454.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/Rjd2o60KQNqVots7yS9U4A/zh-cn_image_0000002736433757.png)
 
 1. 开发者参考App Linking指导完成域名注册。
 2. 用户通过HarmonyOS扫码入口发起扫码请求。
@@ -36,79 +36,84 @@ content_hash: sha256:28a416d02809f898dd93352534b63048274fba093e56114555a1d5ce1ce
 1. 参考[开发准备](scan-config-agc.md)完成必要的准备工作。
 2. 处理接收到的码值，完成应用内页面跳转逻辑。
 
-   ```
-   1. import { router, window } from '@kit.ArkUI';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
-   3. import { UIAbility, Want } from '@kit.AbilityKit';
-   4. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { UIAbility, Want } from '@kit.AbilityKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { router, window } from '@kit.ArkUI';
 
-   7. export default class EntryAbility extends UIAbility {
-   8. private page: string = 'pages/Index';
-   9. private uiContext?: UIContext;
+   export default class EntryAbility extends UIAbility {
+     private page: string = 'pages/Index';
+     private uiContext?: UIContext;
 
-   11. // 冷启动场景通过onCreate回调获取码值信息
-   12. onCreate(want: Want): void {
-   13. hilog.info(0x0001, '[Scan Access]', 'Succeeded in getting want in onCreate');
-   14. // 从want中获取传入的链接信息。
-   15. // 如传入的url为：https://www.example.com/programs?router=Access
-   16. this.getRouterUri(want);
-   17. }
+     // 冷启动场景通过onCreate回调获取码值信息
+     onCreate(want: Want): void {
+       hilog.info(0x0001, '[Scan Access]', 'Succeeded in getting want in onCreate');
 
-   20. // 热启动场景通过onNewWant回调获取码值信息
-   21. onNewWant(want: Want): void {
-   22. hilog.info(0x0001, '[Scan Access]', 'Succeeded in getting want in onNewWant');
-   23. // 从want中获取传入的链接信息
-   24. this.getRouterUri(want);
-   25. }
+       // 从want中获取传入的链接信息。如传入的url为：https://www.example.com/scan
+       this.getRouterUri(want);
+     }
 
-   28. onWindowStageCreate(windowStage: window.WindowStage): void {
-   29. hilog.info(0x0001, '[Scan Access]', 'Ability onWindowStageCreate');
-   30. try {
-   31. windowStage.getMainWindow().then((windowObj: window.Window) => {
-   32. try {
-   33. windowStage.loadContent(this.page).then(() => {
-   34. hilog.info(0x0001, '[Scan Access]', 'Succeeded in loading the content.');
-   35. try {
-   36. this.uiContext = windowObj.getUIContext();
-   37. hilog.info(0x0001, '[Scan Access]', 'Succeeded in getting UIContext.');
-   38. } catch (err) {
-   39. hilog.error(0x0001, '[Scan Access]', `Failed to get UIContext by windowObj. Code: ${err.code}.`);
-   40. }
-   41. }).catch((err: BusinessError) => {
-   42. hilog.error(0x0001, '[Scan Access]', `Failed to load the content. Code: ${err.code}.`);
-   43. })
-   44. } catch (err) {
-   45. hilog.error(0x0001, '[Scan Access]', `Failed to load the content. Code: ${err.code}.`);
-   46. }
-   47. }).catch((err: BusinessError) => {
-   48. hilog.error(0x0001, '[Scan Access]', `Failed to get MainWindow. Code: ${err.code}.`);
-   49. })
-   50. } catch (err) {
-   51. hilog.error(0x0001, '[Scan Access]', `Failed to get MainWindow. Code: ${err.code}.`);
-   52. }
-   53. }
+     // 热启动场景通过onNewWant回调获取码值信息
+     onNewWant(want: Want): void {
+       hilog.info(0x0001, '[Scan Access]', 'Succeeded in getting want in onNewWant');
+       // 从want中获取传入的链接信息
+       this.getRouterUri(want);
+     }
 
-   56. // 解析扫码结果，跳转相应页面
-   57. private getRouterUri(want: Want) {
-   58. const uri: string | undefined = want?.uri;
-   59. if (uri && this.uiContext) {
-   60. // 开发者根据解析的uri跳转至相应页面，例如需要跳转页面为"pages/Access"
-   61. const status: router.RouterState = this.uiContext.getRouter().getState();
-   62. if (status && status.name !== 'Access' && uri) {
-   63. try {
-   64. // 根据uri参数做业务处理
-   65. this.uiContext.getRouter().pushUrl({
-   66. url: 'pages/Access'
-   67. }).catch((err: BusinessError) => {
-   68. hilog.error(0x0001, '[Scan Access]', `Failed to pushUrl by getRouter. Code: ${err.code}.`);
-   69. });
-   70. } catch (err) {
-   71. hilog.error(0x0001, '[Scan Access]', `Failed to pushUrl by getRouter. Code: ${err.code}.`);
-   72. }
-   73. }
-   74. }
-   75. }
-   76. }
+     onWindowStageCreate(windowStage: window.WindowStage): void {
+       hilog.info(0x0001, '[Scan Access]', 'Ability onWindowStageCreate');
+       try {
+         windowStage.getMainWindow().then((windowObj: window.Window) => {
+           try {
+             windowStage.loadContent(this.page).then(() => {
+               hilog.info(0x0001, '[Scan Access]', 'Succeeded in loading the content.');
+               try {
+                 this.uiContext = windowObj.getUIContext();
+                 hilog.info(0x0001, '[Scan Access]', 'Succeeded in getting UIContext.');
+               } catch (err) {
+                 hilog.error(0x0001, '[Scan Access]', `Failed to get UIContext by windowObj. Code: ${err.code}.`);
+               }
+             }).catch((err: BusinessError) => {
+               hilog.error(0x0001, '[Scan Access]', `Failed to load the content. Code: ${err.code}.`);
+             })
+           } catch (err) {
+             hilog.error(0x0001, '[Scan Access]', `Failed to load the content. Code: ${err.code}.`);
+           }
+         }).catch((err: BusinessError) => {
+           hilog.error(0x0001, '[Scan Access]', `Failed to get MainWindow. Code: ${err.code}.`);
+         })
+       } catch (err) {
+         hilog.error(0x0001, '[Scan Access]', `Failed to get MainWindow. Code: ${err.code}.`);
+       }
+     }
+
+     // 解析扫码结果，跳转相应页面
+     private getRouterUri(want: Want): void {
+       const uri: string | undefined = want?.uri;
+       if (!uri) {
+         return;
+       }
+       this.page = 'pages/Access';
+
+       if (this.uiContext) {
+         // 开发者根据解析的uri跳转至相应页面，例如需要跳转页面：pages/Access
+         const status: router.RouterState = this.uiContext.getRouter().getState();
+         if (status && status.name !== 'Access') {
+           try {
+             // 根据uri参数做业务处理
+             this.uiContext.getRouter().pushUrl({
+               url: 'pages/Access'
+             }).catch((err: BusinessError) => {
+               hilog.error(0x0001, '[Scan Access]', `Failed to pushUrl by getRouter. Code: ${err.code}.`);
+             });
+           } catch (err) {
+             hilog.error(0x0001, '[Scan Access]', `Failed to pushUrl by getRouter. Code: ${err.code}.`);
+           }
+         }
+       }
+     }
+   }
    ```
 3. 验证“扫码直达”服务。
 
@@ -118,7 +123,7 @@ content_hash: sha256:28a416d02809f898dd93352534b63048274fba093e56114555a1d5ce1ce
 
 集成效果，以美团单车场景为例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/4pmQXj1URCO1XHbNBzrgNg/zh-cn_image_0000002589324981.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/8RzHDmJPSjObLf0j4nq6SQ/zh-cn_image_0000002706834606.gif)
 
 ## 开发后验证
 

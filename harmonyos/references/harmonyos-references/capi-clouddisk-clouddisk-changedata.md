@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-clou
 title: CloudDisk_ChangeData
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > C API > 结构体 > CloudDisk_ChangeData
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:53+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:3bdb796272f0e4a1d70926fafcb9ea4a43473be1673184db817e518a431fcb0f
+scraped_at: 2026-09-02T15:01:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:578ef91ad2f3df587dfc1aa6783efdd7e2f2c60a5c4ffe579571496302171929
 ---
 
-```
-1. typedef struct CloudDisk_ChangeData  {...} CloudDisk_ChangeData
+```c
+typedef struct CloudDisk_ChangeData  {...} CloudDisk_ChangeData
 ```
 
 ## 概述
-
-PC/2in1Tablet
 
 定义了同步根路径下单个文件变更事件的数据结构。该结构包含有关文件变更的详细信息，包括唯一ID、父目录的唯一ID、相对路径、变更类型、文件大小和时间戳。
 
@@ -26,11 +24,7 @@ PC/2in1Tablet
 
 ## 汇总
 
-PC/2in1Tablet
-
 ### 成员变量
-
-PC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |

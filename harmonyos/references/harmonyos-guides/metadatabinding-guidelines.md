@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/metadatabindi
 title: 记忆链接开发指导
 breadcrumb: 指南 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > 记忆链接开发指导
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:33:35+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fcaa197bad927575160e742b40ef2440b9be250c9dfc4ed1ef26c594b08b4a39
+scraped_at: 2026-09-02T14:50:09+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d3a217110ff8df150ada38d52dc9c828e552a2467a580183674ef6c671e4357b
 ---
 
 ## 概述
@@ -16,11 +16,11 @@ MetadataBinding（记忆链接）指由第三方应用提供[鸿蒙App Linking�
 
 ## 场景介绍
 
-第三方应用可使用记忆链接功能，将鸿蒙App Linking链接映射到调用接口的系统应用或服务。例如，用户在【电商应用】中浏览某个商品时，截图保存了该商品的图片，系统将记录图片与【电商应用】提供的鸿蒙App Linking链接的映射关系。当用户再次浏览该图片时，系统会提醒用户是否需要返回【电商应用】查看商品详情。
+第三方应用可使用记忆链接功能，将鸿蒙App Linking链接映射到调用接口的系统应用或服务。例如，用户在【电商应用】中浏览某个商品时，截图保存了该商品的图片，系统将记录图片与【电商应用】提供的鸿蒙App Linking链接的映射关系。当用户再次浏览该图片时，用户主动触发小艺识屏能力，系统会提醒用户是否需要返回【电商应用】查看商品详情，提醒样式由小艺配置。
 
 ## 演示示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/Xe3ksyNaRH6YVHDLfNQCOQ/zh-cn_image_0000002558764974.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/QrwGx6xqRS6yQ86SMYc9SQ/zh-cn_image_0000002736433559.gif)
 
 ## 接口说明
 
@@ -35,54 +35,59 @@ MetadataBinding（记忆链接）指由第三方应用提供[鸿蒙App Linking�
 
 ## 约束与限制
 
-* 鸿蒙App Linking链接的最大字节数为128。
+* 鸿蒙App Linking链接超过128字节时会编码失败，截图保存原始图像
 
 ## 开发步骤
 
 1. 导入模块。
 
+   ```typescript
+   import { metadataBinding } from '@kit.MultimodalAwarenessKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { Callback } from '@kit.BasicServicesKit';
    ```
-   1. import { metadataBinding } from '@kit.MultimodalAwarenessKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
-   3. import { Callback } from '@kit.BasicServicesKit';
-   ```
-2. 定义记忆服务回调及包名, 函数接收回传编码的内容。
+2. 定义记忆服务回调及包名，函数接收回传编码的内容。
 
-   ```
-   1. let callback : Callback<number> = (event: number) => {};
-   2. let bundleName: string = '';
+   ```typescript
+   let callback : Callback<number> = (event: number) => {};
+   let bundleName: string = '';
    ```
 3. 订阅记忆服务。
 
-   ```
-   1. try {
-   2. metadataBinding.on('operationSubmitMetadata', bundleName, callback);
-   3. console.info("on succeeded");
-   4. } catch (err) {
-   5. let error = err as BusinessError;
-   6. console.error("Register event error and err code is " + error.code);
-   7. }
+   ```typescript
+   try {
+     metadataBinding.on('operationSubmitMetadata', bundleName, callback);
+     console.info('on succeeded');
+     // ...
+   } catch (err) {
+     let error = err as BusinessError;
+     console.error('Register event error and err code is ' + error.code);
+     // ...
+   }
    ```
 4. 提供鸿蒙App Linking链接。
 
-   ```
-   1. // 应用先开通applink服务，然后获取applink，最后提供给记忆链接服务接口，submitMetadata接口applink长度限制为非空且小于128字符.
-   2. let applink: string = "https://example.com/product/12345";
-   3. try {
-   4. metadataBinding.submitMetadata(applink);
-   5. } catch (err) {
-   6. let error = err as BusinessError;
-   7. console.error("Submit metadata error and err code is " + error.code);
-   8. }
+   ```typescript
+   let metadata: string = '';
+   try {
+     metadataBinding.submitMetadata(metadata);
+     // ...
+   } catch (err) {
+     let error = err as BusinessError;
+     console.error('Submit metadata error and err code is ' + error.code);
+     // ...
+   }
    ```
 5. 取消订阅记忆服务。
 
-   ```
-   1. try {
-   2. metadataBinding.off('operationSubmitMetadata', bundleName, callback);
-   3. console.info("off succeeded");
-   4. } catch (err) {
-   5. let error = err as BusinessError;
-   6. console.error("Unregister event error and err code is " + error.code);
-   7. }
+   ```typescript
+   try {
+     metadataBinding.off('operationSubmitMetadata', bundleName, callback);
+     console.info('off succeeded');
+     // ...
+   } catch (err) {
+     let error = err as BusinessError;
+     console.error('Unregister event error and err code is ' + error.code);
+     // ...
+   }
    ```

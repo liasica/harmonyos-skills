@@ -3,34 +3,30 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (MediaKeySystem)
 breadcrumb: API参考 > 媒体 > DRM Kit（数字版权保护服务） > ArkTS API > @ohos.multimedia.drm (数字版权保护) > Interface (MediaKeySystem)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:59+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:aecff273180f9b90328a9def35e0273ae64938aab6024a77631f17309a3ff602
+scraped_at: 2026-09-02T15:02:29+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0714eb065f6f391b5d127373a56c9bc59dade3c54f37f1d26b9ee22f6501ecde
 ---
 
 支持MediaKeySystem实例管理、设备证书申请与处理、会话创建、离线媒体密钥管理、获取DRM度量记录、设备属性等。在调用MediaKeySystem方法之前，必须使用[createMediaKeySystem](arkts-apis-drm-f.md#drmcreatemediakeysystem)创建一个MediaKeySystem实例。
 
-说明
+**说明** 
 
 本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { drm } from '@kit.DrmKit';
+```ts
+import { drm } from '@kit.DrmKit';
 ```
 
 ## setConfigurationString
-
-PhonePC/2in1TabletTVWearable
 
 setConfigurationString(configName: string, value: string): void
 
 设置字符串类型的配置信息。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
@@ -47,34 +43,26 @@ setConfigurationString(configName: string, value: string): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
-| 24700101 | All unknown errors |
-| 24700201 | Fatal service error, for example, service died |
+| 401 | The parameter check failed. Possibly because: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 24700101 | All unknown errors. |
+| 24700201 | Fatal service error, for example, service died. |
 
 **示例：**
 
-```
-1. import { drm } from '@kit.DrmKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { drm } from '@kit.DrmKit';
 
-4. let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem("com.wiseplay.drm");
-5. try {
-6. mediaKeySystem.setConfigurationString("stringConfigName", "stringConfigValue"); // 确保stringConfigName是可配置的。
-7. } catch (err) {
-8. let error = err as BusinessError;
-9. console.error(`setConfigurationString ERROR: ${error}`);
-10. }
+let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem('com.wiseplay.drm');
+mediaKeySystem.setConfigurationString('stringConfigName', 'stringConfigValue'); // 确保stringConfigName是可配置的。
 ```
 
 ## getConfigurationString
-
-PhonePC/2in1TabletTVWearable
 
 getConfigurationString(configName: string): string
 
 获取字符串类型的配置属性值。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
@@ -82,7 +70,7 @@ getConfigurationString(configName: string): string
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| configName | string | 是 | 配置属性名，不能为空，属性名参考[PreDefinedConfigName](arkts-apis-drm-e.md#predefinedconfigname)，具体支持的属性名由设备上DRM解决方案决定。 |
+| configName | string | 是 | 配置属性名，不能为空，长度不能超过4096字节。  如果参数长度超过4096字节，会抛出错误码401。  属性名参考[PreDefinedConfigName](arkts-apis-drm-e.md#predefinedconfigname)，具体支持的属性名由设备上DRM解决方案决定。 |
 
 **返回值：**
 
@@ -96,34 +84,26 @@ getConfigurationString(configName: string): string
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Parameter verification failed, the param's length is zero or too big(exceeds 4096 Bytes). |
-| 24700101 | All unknown errors |
-| 24700201 | Fatal service error, for example, service died |
+| 401 | The parameter check failed. Possibly because: 1. Mandatory parameters are left unspecified. 2. Parameter verification failed, the param's length is zero or too big (exceeds 4096 Bytes). |
+| 24700101 | All unknown errors. |
+| 24700201 | Fatal service error, for example, service died. |
 
 **示例：**
 
-```
-1. import { drm } from '@kit.DrmKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { drm } from '@kit.DrmKit';
 
-4. let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem("com.wiseplay.drm");
-5. try {
-6. let configValue: string = mediaKeySystem.getConfigurationString("vendor");
-7. } catch (err) {
-8. let error = err as BusinessError;
-9. console.error(`getConfigurationString ERROR: ${error}`);
-10. }
+let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem('com.wiseplay.drm');
+let configValue: string = mediaKeySystem.getConfigurationString('vendor');
 ```
 
 ## setConfigurationByteArray
-
-PhonePC/2in1TabletTVWearable
 
 setConfigurationByteArray(configName: string, value: Uint8Array): void
 
 设置数组类型的配置信息。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
@@ -146,31 +126,23 @@ setConfigurationByteArray(configName: string, value: Uint8Array): void
 
 **示例：**
 
-```
-1. import { drm } from '@kit.DrmKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { drm } from '@kit.DrmKit';
 
-4. let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem("com.wiseplay.drm");
-5. // 按实际需求填写configValue属性值，请按实际值传入。
-6. let configValue: Uint8Array = new Uint8Array([0x00, 0x00, 0x00, 0x00]);
-7. try {
-8. // 需确认当前DRM解决方案的byteArrayConfigName属性是可配置的。
-9. mediaKeySystem.setConfigurationByteArray("byteArrayConfigName", configValue);
-10. } catch (err) {
-11. let error = err as BusinessError;
-12. console.error(`setConfigurationByteArray ERROR: ${error}`);
-13. }
+let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem('com.wiseplay.drm');
+// 按实际需求填写configValue属性值，请按实际值传入。
+let configValue: Uint8Array = new Uint8Array([0x00, 0x00, 0x00, 0x00]);
+// 需确认当前DRM解决方案的byteArrayConfigName属性是可配置的。
+mediaKeySystem.setConfigurationByteArray('byteArrayConfigName', configValue);
 ```
 
 ## getConfigurationByteArray
-
-PhonePC/2in1TabletTVWearable
 
 getConfigurationByteArray(configName: string): Uint8Array
 
 获取数组类型的配置信息。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
@@ -193,33 +165,25 @@ getConfigurationByteArray(configName: string): Uint8Array
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Parameter verification failed. |
-| 24700101 | All unknown errors |
-| 24700201 | Fatal service error, for example, service died |
+| 24700101 | All unknown errors. |
+| 24700201 | Fatal service error, for example, service died. |
 
 **示例：**
 
-```
-1. import { drm } from '@kit.DrmKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { drm } from '@kit.DrmKit';
 
-4. let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem("com.wiseplay.drm");
-5. try {
-6. let configValue: Uint8Array = mediaKeySystem.getConfigurationByteArray("deviceUniqueId"); // 确保deviceUniqueId属性是存在的。
-7. } catch (err) {
-8. let error = err as BusinessError;
-9. console.error(`getConfigurationByteArray ERROR: ${error}`);
-10. }
+let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem('com.wiseplay.drm');
+let configValue: Uint8Array = mediaKeySystem.getConfigurationByteArray('deviceUniqueId'); // 确保deviceUniqueId属性是存在的。
 ```
 
 ## getStatistics
-
-PhonePC/2in1TabletTVWearable
 
 getStatistics(): StatisticKeyValue[]
 
 获取性能度量记录。其中包括当前会话数、插件版本信息、每个会话最大三次解密耗时、解密次数和解密失败次数。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
@@ -235,33 +199,25 @@ getStatistics(): StatisticKeyValue[]
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 24700101 | All unknown errors |
-| 24700201 | Fatal service error, for example, service died |
+| 24700101 | All unknown errors. |
+| 24700201 | Fatal service error, for example, service died. |
 
 **示例：**
 
-```
-1. import { drm } from '@kit.DrmKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { drm } from '@kit.DrmKit';
 
-4. let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem("com.wiseplay.drm");
-5. try {
-6. let statisticKeyValue: drm.StatisticKeyValue[] = mediaKeySystem.getStatistics();
-7. } catch (err) {
-8. let error = err as BusinessError;
-9. console.error(`getConfigurationByteArray ERROR: ${error}`);
-10. }
+let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem('com.wiseplay.drm');
+let statisticKeyValue: drm.StatisticKeyValue[] = mediaKeySystem.getStatistics();
 ```
 
 ## getMaxContentProtectionLevel
-
-PhonePC/2in1TabletTVWearable
 
 getMaxContentProtectionLevel(): ContentProtectionLevel
 
 获取当前DRM解决方案支持的最大内容保护级别。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
@@ -277,33 +233,27 @@ getMaxContentProtectionLevel(): ContentProtectionLevel
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 24700101 | All unknown errors |
-| 24700201 | Fatal service error, for example, service died |
+| 24700101 | All unknown errors. |
+| 24700201 | Fatal service error, for example, service died. |
 
 **示例：**
 
-```
-1. import { drm } from '@kit.DrmKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { drm } from '@kit.DrmKit';
 
-4. let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem("com.wiseplay.drm");
-5. try {
-6. let maxLevel: drm.ContentProtectionLevel = mediaKeySystem.getMaxContentProtectionLevel();
-7. } catch (err) {
-8. let error = err as BusinessError;
-9. console.error(`getConfigurationByteArray ERROR: ${error}`);
-10. }
+let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem('com.wiseplay.drm');
+let maxLevel: drm.ContentProtectionLevel = mediaKeySystem.getMaxContentProtectionLevel();
 ```
 
 ## generateKeySystemRequest
-
-PhonePC/2in1TabletTVWearable
 
 generateKeySystemRequest(): Promise<ProvisionRequest>
 
 生成获取mediaKeySystem设备证书的请求。使用Promise异步回调。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+如果设备上已存在设备证书，调用此接口会返回失败。
+
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
@@ -319,33 +269,31 @@ generateKeySystemRequest(): Promise<ProvisionRequest>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 24700101 | All unknown errors |
-| 24700201 | Fatal service error, for example, service died |
+| 24700101 | All unknown errors. |
+| 24700201 | Fatal service error, for example, service died. |
 
 **示例：**
 
-```
-1. import { drm } from '@kit.DrmKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { drm } from '@kit.DrmKit';
 
-4. let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem("com.wiseplay.drm");
-5. // 设备上已有设备证书的情况下不需要调用。
-6. mediaKeySystem.generateKeySystemRequest().then((ProvisionRequest: drm.ProvisionRequest) => {
-7. console.info("generateKeySystemRequest");
-8. }).catch((err: BusinessError) => {
-9. console.error(`generateKeySystemRequest: ERROR: ${err}`);
-10. });
+let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem('com.wiseplay.drm');
+// 设备上已有设备证书的情况下不需要调用。
+mediaKeySystem.generateKeySystemRequest().then((provisionRequest: drm.ProvisionRequest) => {
+  // provisionRequest为接口返回的设备证书请求对象，包含请求数据和默认URL。
+  console.info("generateKeySystemRequest, defaultURL: " + provisionRequest.defaultURL);
+});
 ```
 
 ## processKeySystemResponse
-
-PhonePC/2in1TabletTVWearable
 
 processKeySystemResponse(response: Uint8Array): Promise<void>
 
 处理获得的设备证书请求的响应。使用Promise异步回调。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+如果设备上已存在设备证书，调用此接口会返回失败。
+
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
@@ -353,13 +301,13 @@ processKeySystemResponse(response: Uint8Array): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| response | Uint8Array | 是 | 设备证书响应。 |
+| response | Uint8Array | 是 | 从DRM服务获取的设备证书响应。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -368,34 +316,29 @@ processKeySystemResponse(response: Uint8Array): Promise<void>
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
-| 24700101 | All unknown errors |
-| 24700201 | Fatal service error, for example, service died |
+| 24700101 | All unknown errors. |
+| 24700201 | Fatal service error, for example, service died. |
 
 **示例：**
 
-```
-1. import { drm } from '@kit.DrmKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { drm } from '@kit.DrmKit';
 
-4. let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem("com.wiseplay.drm");
-5. // keySystemResponse是从DRM服务获取的设备证书响应，请按实际值传入；
-6. let keySystemResponse = new Uint8Array([0x00, 0x00, 0x00, 0x00]);
-7. mediaKeySystem.processKeySystemResponse(keySystemResponse).then(() => {
-8. console.info("processKeySystemResponse");
-9. }).catch((err: BusinessError) => {
-10. console.error(`processKeySystemResponse: ERROR: ${err}`);
-11. });
+let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem('com.wiseplay.drm');
+// keySystemResponse是从DRM服务获取的设备证书响应，请按实际值传入。
+let keySystemResponse = new Uint8Array([0x00, 0x00, 0x00, 0x00]);
+mediaKeySystem.processKeySystemResponse(keySystemResponse).then(() => {
+  console.info("processKeySystemResponse");
+});
 ```
 
 ## getCertificateStatus
 
-PhonePC/2in1TabletTVWearable
-
-getCertificateStatus():CertificateStatus
+getCertificateStatus(): CertificateStatus
 
 获取设备证书状态值。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
@@ -411,33 +354,25 @@ getCertificateStatus():CertificateStatus
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 24700101 | All unknown errors |
-| 24700201 | Fatal service error, for example, service died |
+| 24700101 | All unknown errors. |
+| 24700201 | Fatal service error, for example, service died. |
 
 **示例：**
 
-```
-1. import { drm } from '@kit.DrmKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { drm } from '@kit.DrmKit';
 
-4. let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem("com.wiseplay.drm");
-5. try {
-6. let certificateStatus: drm.CertificateStatus = mediaKeySystem.getCertificateStatus();
-7. } catch (err) {
-8. let error = err as BusinessError;
-9. console.error(`getCertificateStatus ERROR: ${error}`);
-10. }
+let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem('com.wiseplay.drm');
+let certificateStatus: drm.CertificateStatus = mediaKeySystem.getCertificateStatus();
 ```
 
 ## on('keySystemRequired')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'keySystemRequired', callback: (eventInfo: EventInfo) => void): void
 
 监听设备证书请求事件，获取事件信息。使用callback异步回调。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
@@ -446,7 +381,7 @@ on(type: 'keySystemRequired', callback: (eventInfo: EventInfo) => void): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，通过[createMediaKeySystem](arkts-apis-drm-f.md#drmcreatemediakeysystem)成功创建MediaKeySystem实例后可监听，需要设备证书时触发该事件。 |
-| callback | (eventInfo: [EventInfo](arkts-apis-drm-i.md#eventinfo)) => void | 是 | 回调函数，返回事件信息。只要有该事件返回就证明需请求设备证书。 |
+| callback | (eventInfo: [EventInfo](arkts-apis-drm-i.md#eventinfo)) => void | 是 | 回调函数，返回事件信息。当收到该事件时，表示需要请求设备证书。 |
 
 **错误码：**
 
@@ -455,28 +390,26 @@ on(type: 'keySystemRequired', callback: (eventInfo: EventInfo) => void): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
-| 24700101 | All unknown errors |
+| 24700101 | All unknown errors. |
 
 **示例：**
 
-```
-1. import { drm } from '@kit.DrmKit';
+```ts
+import { drm } from '@kit.DrmKit';
 
-3. let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem("com.wiseplay.drm");
-4. mediaKeySystem.on('keySystemRequired', (eventInfo: drm.EventInfo) => {
-5. console.info('keySystemRequired ' + 'extra: ' + eventInfo.extraInfo + 'data: ' + eventInfo.info);
-6. });
+let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem('com.wiseplay.drm');
+mediaKeySystem.on('keySystemRequired', (eventInfo: drm.EventInfo) => {
+  console.info('keySystemRequired ' + 'extra: ' + eventInfo.extraInfo + 'data: ' + eventInfo.info);
+});
 ```
 
 ## off('keySystemRequired')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'keySystemRequired', callback?: (eventInfo: EventInfo) => void): void
 
 注销设备证书请求事件的监听。使用callback异步回调。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
@@ -485,7 +418,7 @@ off(type: 'keySystemRequired', callback?: (eventInfo: EventInfo) => void): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件类型，通过[createMediaKeySystem](arkts-apis-drm-f.md#drmcreatemediakeysystem)成功创建MediaKeySystem实例后可监听。 |
-| callback | (eventInfo: [EventInfo](arkts-apis-drm-i.md#eventinfo)) => void | 否 | 回调函数，返回事件信息。可选。 |
+| callback | (eventInfo: [EventInfo](arkts-apis-drm-i.md#eventinfo)) => void | 否 | 回调函数，返回事件信息。可选参数，不传时注销该事件类型的所有监听。 |
 
 **错误码：**
 
@@ -494,25 +427,24 @@ off(type: 'keySystemRequired', callback?: (eventInfo: EventInfo) => void): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
-| 24700101 | All unknown errors |
+| 24700101 | All unknown errors. |
 
 **示例：**
 
-```
-1. import { drm } from '@kit.DrmKit';
-2. let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem("com.wiseplay.drm");
-3. mediaKeySystem.off('keySystemRequired');
+```ts
+import { drm } from '@kit.DrmKit';
+
+let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem('com.wiseplay.drm');
+mediaKeySystem.off('keySystemRequired');
 ```
 
 ## createMediaKeySession
-
-PhonePC/2in1TabletTVWearable
 
 createMediaKeySession(level: ContentProtectionLevel): MediaKeySession
 
 创建指定内容保护级别的MediaKeySession实例。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
@@ -534,35 +466,27 @@ createMediaKeySession(level: ContentProtectionLevel): MediaKeySession
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.The param level exceeds reasonable range, please use value in ContentProtectionLevel. |
-| 24700101 | All unknown errors |
-| 24700104 | Meet max MediaKeySession num limit |
-| 24700201 | Fatal service error, for example, service died |
+| 401 | The parameter check failed. Possibly because: 1. Mandatory parameters are left unspecified. 2. The param level exceeds reasonable range, please use value in ContentProtectionLevel. |
+| 24700101 | All unknown errors. |
+| 24700104 | Meet max MediaKeySession num limit. |
+| 24700201 | Fatal service error, for example, service died. |
 
 **示例：**
 
-```
-1. import { drm } from '@kit.DrmKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { drm } from '@kit.DrmKit';
 
-4. let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem("com.wiseplay.drm");
-5. try {
-6. let mediaKeySession: drm.MediaKeySession = mediaKeySystem.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-7. } catch (err) {
-8. let error = err as BusinessError;
-9. console.error(`createMediaKeySession ERROR: ${error}`);
-10. }
+let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem('com.wiseplay.drm');
+let mediaKeySession: drm.MediaKeySession = mediaKeySystem.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
 ```
 
 ## createMediaKeySession
-
-PhonePC/2in1TabletTVWearable
 
 createMediaKeySession(): MediaKeySession
 
 创建DRM解决方案默认内容保护级别的MediaKeySession实例。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
@@ -578,34 +502,26 @@ createMediaKeySession(): MediaKeySession
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 24700101 | All unknown errors |
-| 24700104 | Meet max MediaKeySession num limit |
-| 24700201 | Fatal service error, for example, service died |
+| 24700101 | All unknown errors. |
+| 24700104 | Meet max MediaKeySession num limit. |
+| 24700201 | Fatal service error, for example, service died. |
 
 **示例：**
 
-```
-1. import { drm } from '@kit.DrmKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { drm } from '@kit.DrmKit';
 
-4. let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem("com.wiseplay.drm");
-5. try {
-6. let mediaKeySession: drm.MediaKeySession = mediaKeySystem.createMediaKeySession();
-7. } catch (err) {
-8. let error = err as BusinessError;
-9. console.error(`createMediaKeySession ERROR: ${error}`);
-10. }
+let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem('com.wiseplay.drm');
+let mediaKeySession: drm.MediaKeySession = mediaKeySystem.createMediaKeySession();
 ```
 
 ## getOfflineMediaKeyIds
-
-PhonePC/2in1TabletTVWearable
 
 getOfflineMediaKeyIds(): Uint8Array[]
 
 获取离线媒体密钥标识列表。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
@@ -621,33 +537,25 @@ getOfflineMediaKeyIds(): Uint8Array[]
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 24700101 | All unknown errors |
-| 24700201 | Fatal service error, for example, service died |
+| 24700101 | All unknown errors. |
+| 24700201 | Fatal service error, for example, service died. |
 
 **示例：**
 
-```
-1. import { drm } from '@kit.DrmKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { drm } from '@kit.DrmKit';
 
-4. let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem("com.wiseplay.drm");
-5. try {
-6. let offlineMediaKeyIds: Uint8Array[] = mediaKeySystem.getOfflineMediaKeyIds();
-7. } catch (err) {
-8. let error = err as BusinessError;
-9. console.error(`getOfflineMediaKeyIds ERROR: ${error}`);
-10. }
+let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem('com.wiseplay.drm');
+let offlineMediaKeyIds: Uint8Array[] = mediaKeySystem.getOfflineMediaKeyIds();
 ```
 
 ## getOfflineMediaKeyStatus
-
-PhonePC/2in1TabletTVWearable
 
 getOfflineMediaKeyStatus(mediaKeyId: Uint8Array): OfflineMediaKeyStatus
 
 获取指定离线媒体密钥标识的媒体密钥的状态值。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
@@ -670,35 +578,27 @@ getOfflineMediaKeyStatus(mediaKeyId: Uint8Array): OfflineMediaKeyStatus
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
-| 24700101 | All unknown errors |
-| 24700201 | Fatal service error, for example, service died |
+| 24700101 | All unknown errors. |
+| 24700201 | Fatal service error, for example, service died. |
 
 **示例：**
 
-```
-1. import { drm } from '@kit.DrmKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { drm } from '@kit.DrmKit';
 
-4. let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem("com.wiseplay.drm");
-5. // mediaKeyId是processMediaKeyResponse或getOfflineMediaKeyIds接口返回的媒体密钥标识，请按实际值传入。
-6. let mediaKeyId = new Uint8Array([0x00, 0x00, 0x00, 0x00]);
-7. try {
-8. let configValue: drm.OfflineMediaKeyStatus = mediaKeySystem.getOfflineMediaKeyStatus(mediaKeyId);
-9. } catch (err) {
-10. let error = err as BusinessError;
-11. console.error(`getOfflineMediaKeyStatus ERROR: ${error}`);
-12. }
+let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem('com.wiseplay.drm');
+// mediaKeyId是processMediaKeyResponse或getOfflineMediaKeyIds接口返回的媒体密钥标识，请按实际值传入。
+let mediaKeyId = new Uint8Array([0x00, 0x00, 0x00, 0x00]);
+let configValue: drm.OfflineMediaKeyStatus = mediaKeySystem.getOfflineMediaKeyStatus(mediaKeyId);
 ```
 
 ## clearOfflineMediaKeys
-
-PhonePC/2in1TabletTVWearable
 
 clearOfflineMediaKeys(mediaKeyId: Uint8Array): void
 
 删除指定媒体密钥标识的离线媒体密钥。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
@@ -715,35 +615,27 @@ clearOfflineMediaKeys(mediaKeyId: Uint8Array): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed.Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
-| 24700101 | All unknown errors |
-| 24700201 | Fatal service error, for example, service died |
+| 24700101 | All unknown errors. |
+| 24700201 | Fatal service error, for example, service died. |
 
 **示例：**
 
-```
-1. import { drm } from '@kit.DrmKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { drm } from '@kit.DrmKit';
 
-4. let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem("com.wiseplay.drm");
-5. // mediaKeyId是processMediaKeyResponse或getOfflineMediaKeyIds接口返回的媒体密钥标识，请按实际值传入。
-6. let mediaKeyId = new Uint8Array([0x00, 0x00, 0x00, 0x00]);
-7. try {
-8. mediaKeySystem.clearOfflineMediaKeys(mediaKeyId);
-9. } catch (err) {
-10. let error = err as BusinessError;
-11. console.error(`clearOfflineMediaKeys ERROR: ${error}`);
-12. }
+let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem('com.wiseplay.drm');
+// mediaKeyId是processMediaKeyResponse或getOfflineMediaKeyIds接口返回的媒体密钥标识，请按实际值传入。
+let mediaKeyId = new Uint8Array([0x00, 0x00, 0x00, 0x00]);
+mediaKeySystem.clearOfflineMediaKeys(mediaKeyId);
 ```
 
 ## destroy
-
-PhonePC/2in1TabletTVWearable
 
 destroy(): void
 
 销毁MediaKeySystem实例。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
@@ -753,20 +645,14 @@ destroy(): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 24700101 | All unknown errors |
-| 24700201 | Fatal service error, for example, service died |
+| 24700101 | All unknown errors. |
+| 24700201 | Fatal service error, for example, service died. |
 
 **示例：**
 
-```
-1. import { drm } from '@kit.DrmKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { drm } from '@kit.DrmKit';
 
-4. let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem("com.wiseplay.drm");
-5. try {
-6. mediaKeySystem.destroy();
-7. } catch (err) {
-8. let error = err as BusinessError;
-9. console.error(`mediaKeySystem destroy ERROR: ${error}`);
-10. }
+let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem('com.wiseplay.drm');
+mediaKeySystem.destroy();
 ```

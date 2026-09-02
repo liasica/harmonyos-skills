@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendabl
 title: 共享模块
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信对象 > Sendable对象 > 共享模块
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:34+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:54c8667ea42541e75aeb118a42a812359efa222c7fc1849331530ea0c68e11a4
+scraped_at: 2026-09-02T14:49:45+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:052c51d96582e6ad7740fec22df6944b203ce03e41baa81f29a631f69ba32ce5
 ---
 
 共享模块是进程内只会加载一次的模块，使用"use shared"这一指令来标记一个模块是否为共享模块。
@@ -14,11 +14,11 @@ content_hash: sha256:54c8667ea42541e75aeb118a42a812359efa222c7fc1849331530ea0c68
 
 ## 约束限制
 
-* "use shared"需要与"use strict"一样写在ArkTS文件顶层，写在import语句之后其他语句之前。
+* "use shared"需要写在ArkTS文件顶层，即写在import语句之后其他语句之前。
 
   共享属性不具备传递性。非共享模块A即使引入了共享模块B，也不会因此变成共享模块。
 * 共享模块只支持ets文件。
-* 共享模块内不允许使用side-effects-import。
+* 共享模块内不允许使用[side-effects-import](arkts-module-side-effects.md)。
 
   共享模块在同一进程内仅加载一次，可在不同线程间共享。
 
@@ -26,129 +26,143 @@ content_hash: sha256:54c8667ea42541e75aeb118a42a812359efa222c7fc1849331530ea0c68
 
   由于side-effects-import不涉及导出变量，因此不会被加载，也不受支持。
 
-  ```
-  1. // test.ets
-  2. console.info("This runs immediately when imported");
+  ```typescript
+  // test.ets
+  console.info("This runs immediately when imported");
   ```
 
-  ```
-  1. // sharedModule.ets
-  2. // 不允许使用side-effects-import，编译报错
-  3. import "./test";
-  4. "use shared"
+  ```typescript
+  // sharedModule.ets
+  // 不允许使用side-effects-import，编译报错
+  import "./test";
+  'use shared'
   ```
 * 共享模块导出的变量必须是可共享对象。
 
   共享模块在并发实例间可共享，因此导出的所有对象必须是可共享的。可共享对象参考[Sendable支持的数据类型](arkts-sendable.md#sendable支持的数据类型)。
 * 共享模块不支持re-export写法。
 
-  ```
-  1. // test.ets
-  2. export let num = 1;
-  3. export let str = 'aaa';
+  ```typescript
+  // test.ets
+  export let num = 1;
+  export let str = 'aaa';
   ```
 
-  ```
-  1. // share.ets
-  2. // 共享模块
-  3. 'use shared'
-  4. export * from './test'; // 编译报错
-  5. export {num, str} from './test'; // 产生运行时报错
+  ```typescript
+  // share.ets
+  // 共享模块
+  'use shared'
+  export * from './test'; // 编译报错
+  export {num, str} from './test'; // 可能导致运行时的未知异常
   ```
 * 共享模块可以引用其他共享模块或非共享模块，引用和被引用场景没有限制。
 * 仅支持使用静态加载、napi\_load\_module或napi\_load\_module\_with\_info加载共享模块。
 
-  ```
-  1. // test.ets
-  2. import { num } from './A'; // 支持静态加载
+  ```typescript
+  // test.ets
+  import { num } from './A'; // 支持静态加载
 
-  4. import { worker } from '@kit.ArkTS';
-  5. let wk = new worker.ThreadWorker("./A"); // 不支持其他方式加载共享模块, 将产生运行时报错
+  import { worker } from '@kit.ArkTS';
+  let wk = new worker.ThreadWorker("./A"); // 不支持其他方式加载共享模块, 将产生运行时报错
   ```
 
-  ```
-  1. // A.ets
-  2. 'use shared'
-  3. export let num: number = 10;
+  ```typescript
+  // A.ets
+  'use shared'
+  export let num: number = 10;
   ```
 
 ## 使用示例
 
 1. 共享模块导出Sendable对象。
 
-   ```
-   1. // 共享模块sharedModule.ets
-   2. import { ArkTSUtils } from '@kit.ArkTS';
+   ```typescript
+   // 共享模块
+   import { ArkTSUtils } from '@kit.ArkTS';
 
-   4. // 声明当前模块为共享模块，只能导出可Sendable数据
-   5. "use shared"
+   // 声明当前模块为共享模块，只能导出Sendable数据
+   'use shared'
 
-   7. // 共享模块，SingletonA全局唯一
-   8. @Sendable
-   9. class SingletonA {
-   10. private count_: number = 0;
-   11. lock_: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
+   // 共享模块，singletonA全局唯一
+   @Sendable
+   class SingletonA {
+     private count_: number = 0;
+     public lock_: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
 
-   13. public async getCount(): Promise<number> {
-   14. return this.lock_.lockAsync(() => {
-   15. return this.count_;
-   16. })
-   17. }
+     public async getCount(): Promise<number> {
+       return this.lock_.lockAsync(() => {
+         return this.count_;
+       })
+     }
 
-   19. public async increaseCount() {
-   20. await this.lock_.lockAsync(() => {
-   21. this.count_++;
-   22. })
-   23. }
-   24. }
+     public async increaseCount() {
+       await this.lock_.lockAsync(() => {
+         this.count_++;
+       })
+     }
+   }
 
-   26. export let singletonA = new SingletonA();
+   export let singletonA = new SingletonA();
    ```
 2. 在多个线程中操作共享模块导出的对象。
 
-   ```
-   1. import { taskpool } from '@kit.ArkTS';
-   2. import { singletonA } from './sharedModule';
+   ```typescript
+   import { ArkTSUtils, taskpool } from '@kit.ArkTS';
+   import { singletonA } from './sharedModule';
 
-   4. @Concurrent
-   5. async function increaseCount() {
-   6. await singletonA.increaseCount();
-   7. console.info("SharedModule: count is:" + await singletonA.getCount());
-   8. }
+   // ...
 
-   10. @Concurrent
-   11. async function printCount() {
-   12. console.info("SharedModule: count is:" + await singletonA.getCount());
-   13. }
+   @Concurrent
+   async function increaseCount() {
+     await singletonA.increaseCount();
+     console.info(`SharedModule: count is: ${await singletonA.getCount()}`);
+   }
 
-   15. @Entry
-   16. @Component
-   17. struct Index {
-   18. @State message: string = 'Hello World';
+   @Concurrent
+   async function printCount() {
+     console.info(`SharedModule: count is: ${await singletonA.getCount()}`);
+   }
 
-   20. build() {
-   21. Row() {
-   22. Column() {
-   23. Button("MainThread print count")
-   24. .onClick(async () => {
-   25. await printCount();
-   26. })
-   27. Button("Taskpool print count")
-   28. .onClick(async () => {
-   29. await taskpool.execute(printCount);
-   30. })
-   31. Button("MainThread increase count")
-   32. .onClick(async () => {
-   33. await increaseCount();
-   34. })
-   35. Button("Taskpool increase count")
-   36. .onClick(async () => {
-   37. await taskpool.execute(increaseCount);
-   38. })
-   39. }
-   40. .width('100%')
-   41. }
-   42. .height('100%')
-   43. }
-   44. }
+   @Entry
+   @Component
+   struct Index {
+     @State message: string = 'Hello World';
+     @State mainThreadPrint: string = 'MainThread print count';
+     @State taskpoolPrint: string = 'Taskpool print count';
+     @State mainThreadIncrease: string = 'MainThread increase count';
+     @State taskpoolIncrease: string = 'Taskpool increase count';
+
+     build() {
+       Row() {
+         Column() {
+           Button(this.mainThreadPrint)
+             .id('MainThread print count')
+             .onClick(async () => {
+               await printCount();
+               this.mainThreadPrint = 'success';
+             })
+           Button(this.taskpoolPrint)
+             .id('Taskpool print count')
+             .onClick(async () => {
+               await taskpool.execute(printCount);
+               this.taskpoolPrint = 'success';
+             })
+           Button(this.mainThreadIncrease)
+             .id('MainThread increase count')
+             .onClick(async () => {
+               await increaseCount();
+               this.mainThreadIncrease = 'success';
+             })
+           Button(this.taskpoolIncrease)
+             .id('Taskpool increase count')
+             .onClick(async () => {
+               await taskpool.execute(increaseCount);
+               this.taskpoolIncrease = 'success';
+             })
+         }
+         .width('100%')
+       }
+       .height('100%')
+     }
+   }
    ```

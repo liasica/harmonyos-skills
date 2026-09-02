@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-spatialreconkit-6101
 title: Spatial Recon Kit
-breadcrumb: 版本说明 > HarmonyOS 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta1引入的变更 > Spatial Recon Kit
+breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta1引入的变更 > Spatial Recon Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:37+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:16:23+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:af5ee5c4ee07ca898d8ac8a89e06f42b90b83e19b1d2ec45a950839d9088c5a2
 ---
 

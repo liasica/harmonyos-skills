@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS API错误码
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-04-29T14:08:10+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:a9143536a1700acf8176db952c2e0c5f629dfebf2d4e372eefa140b82f7b038a
+scraped_at: 2026-09-02T15:02:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:460e84b0469cac89ca9cf1ebaab12376dc40dec83f54a3ef9693330c4090509d
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码](errorcode-universal.md)。
 
 ## 1002600001 系统内部错误
-
-PhonePC/2in1TabletWearable
 
 **错误信息**
 
@@ -34,8 +32,6 @@ System internal error.
 
 ## 1002600002 应用连接地图服务失败
 
-PhonePC/2in1TabletWearable
-
 **错误信息**
 
 Failed to connect to the Map Kit server.
@@ -54,14 +50,12 @@ Failed to connect to the Map Kit server.
 1. 检查设备网络状态。
 2. 清除旧证书配置后，重新自动签名，并配置client\_id和证书指纹；从HarmonyOS 5.0.2(14)版本开始，可参考[开发准备](../harmonyos-guides/map-config-agc.md)进行配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/MvfZ-njNQtKAGoxp2L53Ng/zh-cn_image_0000002589327295.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/0PUlnqP_SuGYueo8wIVQhA/zh-cn_image_0000002706677172.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/sfxWy4TSRfiAyuupjYn77w/zh-cn_image_0000002589247235.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/oF3Gh6lfRB6WxF5wO-F8mQ/zh-cn_image_0000002736436261.png)
 3. 如未解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
 
 ## 1002600003 应用身份校验失败
-
-PhonePC/2in1TabletWearable
 
 **错误信息**
 
@@ -84,9 +78,9 @@ App authentication failed.
 
 1. 检查module.json5文件中配置的client\_id与AGC上是否一致。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/zEBmHbLXTEOC8R0f_r4i4g/zh-cn_image_0000002558767428.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/sJOnmoDRTxOYYkJvCF9b-g/zh-cn_image_0000002706837110.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/Nb7Mh_N9Qi2gCQz-g4WcAg/zh-cn_image_0000002558607770.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/g0IuLRQaSZq3RGDnB1d7HQ/zh-cn_image_0000002736316219.png)
 2. 重新生成公钥指纹（[自动生成签名证书指纹](../app/agc-help-signature-info-0000001628566748.md#section958212134217)/[手动生成签名证书指纹](../app/agc-help-signature-info-0000001628566748.md#section2049119231438)），然后在AGC上[配置公钥指纹](../app/agc-help-cert-fingerprint-0000002278002933.md)。
 3. 检查设备网络状态后重新尝试。
 4. 将设备的系统时间往后调整1天。
@@ -97,38 +91,36 @@ App authentication failed.
 
    自动签名默认已生成的csr签名在如下图路径下，马赛克部分为用户名。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/CWNMX_uQQnu3pgl-pYT_yA/zh-cn_image_0000002589327297.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/dEyTxKxrSKKn9TAHC8bM7A/zh-cn_image_0000002706677174.png)
 
    在AGC上新增证书，将上述所选csr文件选中并生成新的调试证书。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/aZo-sGC9Sk2HGhIiwC4qUA/zh-cn_image_0000002589247237.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/bF8b5greTu2jn7YDeDI8lw/zh-cn_image_0000002736436263.png)
 
    然后添加公钥指纹，选中刚才自己生成调试证书即可。（需注意，配置完成后由于鉴权缓存，可能还是无法马上显示地图，须清除缓存或者将设备的系统时间往后调整1天，才能立刻显示地图。）
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/uZFqNW86Q3erJqLi_ZzftA/zh-cn_image_0000002558767430.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/aoRsQP0TR6-b7I1ZLr6nPA/zh-cn_image_0000002706837112.png)
 
    方案二：将本地配置自动签名证书和AGC上调试证书全部删除，重新生成新的自动签名，调试证书会自动生成，并用新的调试证书生成公钥指纹。
 
    将build-profile.json5文件下signingConfigs参数删除。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/dfw7PpCYR0u6ZNUg5efe7w/zh-cn_image_0000002558607772.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/yNT5aUPvRTWUoDmWN_vRWQ/zh-cn_image_0000002736316221.png)
 
    将config文件夹下所有内容删除。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/YB1IJPljRdSPhMIFIQW93g/zh-cn_image_0000002589327299.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/z28PiMPVSpeinWTNJjGEdw/zh-cn_image_0000002706677176.png)
 
    将AGC上自动签名生成的调试证书删除。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/JvC6cCeaQa23cmMZxMAINw/zh-cn_image_0000002589247239.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/t6jddfi-RFyErcZsuHrIug/zh-cn_image_0000002736436265.png)
 
    将旧证书删除后生成新的自动签名，调试证书会被同步创建，然后用新生成的调试证书生成新的指纹即可。（需注意，配置完成后由于鉴权缓存，可能还是无法马上显示地图，须清除缓存或者将设备的系统时间往后调整1天，才能立刻显示地图。）
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/Pp91DmlDTq6Trcxy0G0D5Q/zh-cn_image_0000002558767432.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/w-4tlxxFR4eKSJvTSoTatg/zh-cn_image_0000002706837114.png)
 7. 如未解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
 
 ## 1002600004 应用没有开通地图服务权限
-
-PhonePC/2in1TabletWearable
 
 **错误信息**
 
@@ -148,12 +140,10 @@ The Map permission is not enabled.
 1. [开通地图服务](../harmonyos-guides/map-config-agc.md#开通地图服务)。
 2. 配置client\_id。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/WDC0wmPASDKDHOcpN9bRkg/zh-cn_image_0000002558607774.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/xahVxp9XQ0CnjWPO5snZWw/zh-cn_image_0000002736316223.png)
 3. 如未解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
 
 ## 1002600005 网络不可用
-
-PhonePC/2in1TabletWearable
 
 **错误信息**
 
@@ -173,8 +163,6 @@ The network is unavailable.
 
 ## 1002600006 API调用量超出配额
 
-PhonePC/2in1TabletWearable
-
 **错误信息**
 
 The API call times exceed the quota.
@@ -192,8 +180,6 @@ API调用量超出配额。
 请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
 
 ## 1002600007 API的QPS超过配额
-
-PhonePC/2in1TabletWearable
 
 **错误信息**
 
@@ -213,8 +199,6 @@ API的QPS超过配额。
 
 ## 1002600008 接口已经欠费
 
-PhonePC/2in1TabletWearable
-
 **错误信息**
 
 The API is in arrears.
@@ -232,8 +216,6 @@ The API is in arrears.
 请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
 
 ## 1002600009 API未订购付费套餐
-
-PhonePC/2in1TabletWearable
 
 **错误信息**
 
@@ -253,8 +235,6 @@ API未订购付费套餐。
 
 ## 1002600010 服务器繁忙，请稍后再试
 
-PhonePC/2in1TabletWearable
-
 **错误信息**
 
 The server is busy. Please wait and try again.
@@ -272,8 +252,6 @@ The server is busy. Please wait and try again.
 尝试重试操作或请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
 
 ## 1002600011 服务器异常
-
-PhonePC/2in1TabletWearable
 
 **错误信息**
 
@@ -295,8 +273,6 @@ Server error.
 
 ## 1002600012 国家或地区码异常
 
-PhonePC/2in1TabletWearable
-
 **错误信息**
 
 The country code is not supported.
@@ -314,8 +290,6 @@ The country code is not supported.
 更换国家/地区码。
 
 ## 1002600013 当前路由地未知，稍后重试
-
-PhonePC/2in1TabletWearable
 
 **错误信息**
 
@@ -336,8 +310,6 @@ The current routing location is unknown. Try again later.
 
 ## 1002600014 地图应用启动失败。
 
-PhonePC/2in1TabletWearable
-
 **错误信息**
 
 Failed to start the map app.
@@ -357,8 +329,6 @@ Failed to start the map app.
 
 ## 1002600015 热力图ID已存在
 
-PhonePC/2in1TabletWearable
-
 **错误信息**
 
 The heatmap ID already exists.
@@ -373,11 +343,99 @@ The heatmap ID already exists.
 
 **处理步骤**
 
-尝试更换ID或请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
+尝试更换ID，如果不能解决可以[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
+
+## 1002600017 该应用缺少地图信号预测功能的权限
+
+**错误信息**
+
+The app lacks permission for the map signal prediction capability.
+
+**错误描述**
+
+该应用缺少地图信号预测功能的权限。
+
+**可能原因**
+
+该应用缺少地图信号预测功能的权限。
+
+**处理步骤**
+
+尝试[开通信号预测能力](../harmonyos-guides/map-map-signal-line.md#开通信号预测能力)。
+
+## 1002600018 信号路线中的signalId已存在
+
+**错误信息**
+
+signalId in the signal route already exists.
+
+**错误描述**
+
+信号路线中的signalId已存在。
+
+**可能原因**
+
+信号路线中的signalId已存在。
+
+**处理步骤**
+
+更改signalId，如果不能解决可以[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
+
+## 1002600019 路线长度超过最大限制200公里
+
+**错误信息**
+
+The route length exceeds the maximum limit of 200 km.
+
+**错误描述**
+
+路线长度超过最大限制200公里。
+
+**可能原因**
+
+路线长度超过最大限制200公里。
+
+**处理步骤**
+
+减少路线长度，如果不能解决可以[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
+
+## 1002600020 无效的运营商
+
+**错误信息**
+
+Invalid carrier.
+
+**错误描述**
+
+无效的运营商。
+
+**可能原因**
+
+未插SIM卡。
+
+**处理步骤**
+
+检查SIM卡是否正常，如果不能解决可以[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
+
+## 1002600021 路由信号不可预测
+
+**错误信息**
+
+The route signal is unpredictable.
+
+**错误描述**
+
+路由信号不可预测。
+
+**可能原因**
+
+传入的经纬度无法预测出路线结果。
+
+**处理步骤**
+
+建议检查传入的经纬度数据，然后重新调用[信号路线](map-map-mapcomponentcontroller.md#addsignalline)接口。
 
 ## 1002600999 未知错误
-
-PhonePC/2in1TabletWearable
 
 **错误信息**
 
@@ -397,8 +455,6 @@ Unknown error.
 
 ## 1002601001 要操作的对象已经不存在
 
-PhonePC/2in1TabletWearable
-
 **错误信息**
 
 The object to be operated does not exist.
@@ -416,8 +472,6 @@ The object to be operated does not exist.
 尝试重试操作或请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
 
 ## 1002601002 自定义地图样式文件不存在
-
-PhonePC/2in1TabletWearable
 
 **错误信息**
 
@@ -443,8 +497,6 @@ The custom map style file does not exist.
 
 ## 1002601004 样式内容格式不正确
 
-PhonePC/2in1TabletWearable
-
 **错误信息**
 
 The style content format is incorrect.
@@ -462,8 +514,6 @@ The style content format is incorrect.
 尝试重试操作或请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
 
 ## 1002601005 生成自定义组件图标失败
-
-PhonePC/2in1TabletWearable
 
 **错误信息**
 
@@ -483,8 +533,6 @@ Failed to generate the icon of the custom component.
 
 ## 1002602001 起终点无归属国家，或服务错误
 
-PhonePC/2in1TabletWearable
-
 **错误信息**
 
 The start and end points do not have home countries, or a service error occurred.
@@ -502,8 +550,6 @@ The start and end points do not have home countries, or a service error occurred
 请检查起终点后尝试重试操作或请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
 
 ## 1002602002 不支持跨区进行路径规划
-
-PhonePC/2in1TabletWearable
 
 **错误信息**
 
@@ -523,8 +569,6 @@ Cross-region route planning is not supported.
 
 ## 1002602003 起始点或结束点超过100个
 
-PhonePC/2in1TabletWearable
-
 **错误信息**
 
 The number of start points or end points exceed 100.
@@ -542,8 +586,6 @@ The number of start points or end points exceed 100.
 检查入参，起点或终点个数是否超限。
 
 ## 1002602004 两点直线距离超过限制的距离
-
-PhonePC/2in1TabletWearable
 
 **错误信息**
 
@@ -563,8 +605,6 @@ The linear distance between the start point and end point exceeds the upper limi
 
 ## 1002602005 起点/终点/途经点不支持导航
 
-PhonePC/2in1TabletWearable
-
 **错误信息**
 
 The start point, end point, or waypoint does not support navigation.
@@ -582,8 +622,6 @@ The start point, end point, or waypoint does not support navigation.
 检查入参。
 
 ## 1002602006 请求点位映射到道路同一点上
-
-PhonePC/2in1TabletWearable
 
 **错误信息**
 
@@ -603,8 +641,6 @@ The request point is mapped to the same point on the road.
 
 ## 1002603001 空结果
 
-PhonePC/2in1TabletWearable
-
 **错误信息**
 
 Zero result.
@@ -622,8 +658,6 @@ Zero result.
 检查入参。
 
 ## 1022100001 要操作的地图控制器不存在
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -643,8 +677,6 @@ The map controller to be operated does not exist.
 
 ## 401 入参无效
 
-PhonePC/2in1TabletWearable
-
 **错误信息**
 
 Invalid input parameter.
@@ -662,8 +694,6 @@ Invalid input parameter.
 检查入参。
 
 ## 801 功能不支持。设备能力受限，调用接口失败。
-
-PhonePC/2in1TabletWearable
 
 **错误信息**
 

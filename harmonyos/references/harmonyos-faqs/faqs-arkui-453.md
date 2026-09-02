@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-453
 title: 全屏模态转场和半模态转场中是否可以实现避让软键盘
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 全屏模态转场和半模态转场中是否可以实现避让软键盘
+breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 全屏模态转场和半模态转场中是否可以实现避让软键盘
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:59+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:50+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:ea13097d22457d15a3e9ec8cd1045989ff6d25ccf452e47a02a167a72fbcbaa3
 ---
 

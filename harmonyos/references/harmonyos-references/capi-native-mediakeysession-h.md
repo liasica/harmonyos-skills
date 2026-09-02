@@ -3,16 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_mediakeysession.h
 breadcrumb: API参考 > 媒体 > DRM Kit（数字版权保护服务） > C API > 头文件 > native_mediakeysession.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:02+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:757d5ad4eb2f294482950eac4d0cc757dba77b65e607b19f5a0e6313dd84e1cd
+scraped_at: 2026-09-02T15:02:29+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7d9a02d832a3c79a742cc9760d5da98d769171d4bddd86475588951f239a661f
 ---
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-定义Drm MediaKeySession API。提供以下功能：
+定义DRM MediaKeySession API。提供以下功能：
 
 生成媒体密钥请求、处理媒体密钥响应、事件监听、获取内容保护级别、检查媒体密钥状态、删除媒体密钥等。
 
@@ -28,11 +26,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -41,14 +35,12 @@ PhonePC/2in1TabletTVWearable
 
 ### 函数
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| [typedef Drm\_ErrCode (\*MediaKeySession\_EventCallback)(DRM\_EventType eventType, uint8\_t \*info,int32\_t infoLen, char \*extra)](capi-native-mediakeysession-h.md#mediakeysession_eventcallback) | MediaKeySession\_EventCallback | MediaKeySession事件触发时将调用的回调，如密钥过期事件。 |
-| [typedef Drm\_ErrCode (\*MediaKeySession\_KeyChangeCallback)(DRM\_KeysInfo \*keysInfo, bool newKeysAvailable)](capi-native-mediakeysession-h.md#mediakeysession_keychangecallback) | MediaKeySession\_KeyChangeCallback | 密钥变更时将调用回调。 |
-| [typedef Drm\_ErrCode (\*OH\_MediaKeySession\_EventCallback)(MediaKeySession \*mediaKeySession, DRM\_EventType eventType,uint8\_t \*info, int32\_t infoLen, char \*extra)](capi-native-mediakeysession-h.md#oh_mediakeysession_eventcallback) | OH\_MediaKeySession\_EventCallback | 事件触发时将调用的回调。 |
-| [typedef Drm\_ErrCode (\*OH\_MediaKeySession\_KeyChangeCallback)(MediaKeySession \*mediaKeySession, DRM\_KeysInfo \*keysInfo, bool newKeysAvailable)](capi-native-mediakeysession-h.md#oh_mediakeysession_keychangecallback) | OH\_MediaKeySession\_KeyChangeCallback | 密钥变更时将调用的回调。 |
+| [typedef Drm\_ErrCode (\*MediaKeySession\_EventCallback)(DRM\_EventType eventType, uint8\_t \*info, int32\_t infoLen, char \*extra)](capi-native-mediakeysession-h.md#mediakeysession_eventcallback) | MediaKeySession\_EventCallback | MediaKeySession事件触发时将调用的回调函数，如密钥过期事件。 |
+| [typedef Drm\_ErrCode (\*MediaKeySession\_KeyChangeCallback)(DRM\_KeysInfo \*keysInfo, bool newKeysAvailable)](capi-native-mediakeysession-h.md#mediakeysession_keychangecallback) | MediaKeySession\_KeyChangeCallback | 密钥变更时调用的回调函数。 |
+| [typedef Drm\_ErrCode (\*OH\_MediaKeySession\_EventCallback)(MediaKeySession \*mediaKeySession, DRM\_EventType eventType, uint8\_t \*info, int32\_t infoLen, char \*extra)](capi-native-mediakeysession-h.md#oh_mediakeysession_eventcallback) | OH\_MediaKeySession\_EventCallback | 事件触发时将调用的回调函数。事件信息来源于媒体播放过程中的DRM事件，通过MediaKeySession实例触发。 |
+| [typedef Drm\_ErrCode (\*OH\_MediaKeySession\_KeyChangeCallback)(MediaKeySession \*mediaKeySession, DRM\_KeysInfo \*keysInfo, bool newKeysAvailable)](capi-native-mediakeysession-h.md#oh_mediakeysession_keychangecallback) | OH\_MediaKeySession\_KeyChangeCallback | 密钥变更时调用的回调函数。 |
 | [Drm\_ErrCode OH\_MediaKeySession\_GenerateMediaKeyRequest(MediaKeySession \*mediaKeySession, DRM\_MediaKeyRequestInfo \*info, DRM\_MediaKeyRequest \*mediaKeyRequest)](capi-native-mediakeysession-h.md#oh_mediakeysession_generatemediakeyrequest) | - | 生成媒体密钥请求。 |
 | [Drm\_ErrCode OH\_MediaKeySession\_ProcessMediaKeyResponse(MediaKeySession \*mediaKeySession, uint8\_t \*response, int32\_t responseLen, uint8\_t \*offlineMediaKeyId, int32\_t \*offlineMediaKeyIdLen)](capi-native-mediakeysession-h.md#oh_mediakeysession_processmediakeyresponse) | - | 处理媒体密钥请求响应。 |
 | [Drm\_ErrCode OH\_MediaKeySession\_CheckMediaKeyStatus(MediaKeySession \*mediaKeySession, DRM\_MediaKeyStatus \*mediaKeyStatus)](capi-native-mediakeysession-h.md#oh_mediakeysession_checkmediakeystatus) | - | 检查媒体密钥状态。 |
@@ -58,25 +50,21 @@ PhonePC/2in1TabletTVWearable
 | [Drm\_ErrCode OH\_MediaKeySession\_RestoreOfflineMediaKeys(MediaKeySession \*mediaKeySession, uint8\_t \*offlineMediaKeyId, int32\_t offlineMediaKeyIdLen)](capi-native-mediakeysession-h.md#oh_mediakeysession_restoreofflinemediakeys) | - | 恢复离线媒体密钥到当前会话。 |
 | [Drm\_ErrCode OH\_MediaKeySession\_GetContentProtectionLevel(MediaKeySession \*mediaKeySession, DRM\_ContentProtectionLevel \*contentProtectionLevel)](capi-native-mediakeysession-h.md#oh_mediakeysession_getcontentprotectionlevel) | - | 获取会话的内容保护级别。 |
 | [Drm\_ErrCode OH\_MediaKeySession\_RequireSecureDecoderModule(MediaKeySession \*mediaKeySession, const char \*mimeType, bool \*status)](capi-native-mediakeysession-h.md#oh_mediakeysession_requiresecuredecodermodule) | - | 是否需要安全解码。 |
-| [Drm\_ErrCode OH\_MediaKeySession\_SetMediaKeySessionCallback(MediaKeySession \*mediaKeySession, MediaKeySession\_Callback \*callback)](capi-native-mediakeysession-h.md#oh_mediakeysession_setmediakeysessioncallback) | - | 设置MediaKeySession事件回调。 |
-| [Drm\_ErrCode OH\_MediaKeySession\_SetCallback(MediaKeySession \*mediaKeySession, OH\_MediaKeySession\_Callback \*callback)](capi-native-mediakeysession-h.md#oh_mediakeysession_setcallback) | - | 设置MediaKeySession事件回调。 |
+| [Drm\_ErrCode OH\_MediaKeySession\_SetMediaKeySessionCallback(MediaKeySession \*mediaKeySession, MediaKeySession\_Callback \*callback)](capi-native-mediakeysession-h.md#oh_mediakeysession_setmediakeysessioncallback) | - | 设置MediaKeySession事件回调。该回调不返回MediaKeySession实例，适用于单个MediaKeySession场景。 |
+| [Drm\_ErrCode OH\_MediaKeySession\_SetCallback(MediaKeySession \*mediaKeySession, OH\_MediaKeySession\_Callback \*callback)](capi-native-mediakeysession-h.md#oh_mediakeysession_setcallback) | - | 设置MediaKeySession事件回调。该回调返回MediaKeySession实例，适用于多个MediaKeySession场景。 |
 | [Drm\_ErrCode OH\_MediaKeySession\_Destroy(MediaKeySession \*mediaKeySession)](capi-native-mediakeysession-h.md#oh_mediakeysession_destroy) | - | 销毁MediaKeySession实例。 |
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### MediaKeySession\_EventCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef  Drm_ErrCode (*MediaKeySession_EventCallback)(DRM_EventType eventType, uint8_t *info,int32_t infoLen, char *extra)
+```c
+typedef Drm_ErrCode (*MediaKeySession_EventCallback)(DRM_EventType eventType, uint8_t *info, int32_t infoLen, char *extra)
 ```
 
 **描述**
 
-MediaKeySession事件触发时将调用的回调，如密钥过期事件。
+MediaKeySession事件触发时将调用的回调函数，如密钥过期事件。
 
 **起始版本：** 11
 
@@ -84,10 +72,10 @@ MediaKeySession事件触发时将调用的回调，如密钥过期事件。
 
 | 参数项 | 描述 |
 | --- | --- |
-| [DRM\_EventType](capi-native-drm-common-h.md#drm_eventtype) eventType | 事件类型。 |
-| uint8\_t \*info | 从媒体密钥会话获取的事件信息。 |
-| int32\_t infoLen | 事件信息长度。 |
-| char \*extra | 从媒体密钥会话中获得的额外信息。 |
+| [DRM\_EventType](capi-native-drm-common-h.md#drm_eventtype) eventType | 输入参数，事件类型。 |
+| uint8\_t \*info | 输出参数，从媒体密钥会话获取的事件信息。 |
+| int32\_t infoLen | 输出参数，事件信息长度。 |
+| char \*extra | 输出参数，从媒体密钥会话中获得的额外信息。 |
 
 **返回：**
 
@@ -97,15 +85,13 @@ MediaKeySession事件触发时将调用的回调，如密钥过期事件。
 
 ### MediaKeySession\_KeyChangeCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef  Drm_ErrCode (*MediaKeySession_KeyChangeCallback)(DRM_KeysInfo *keysInfo, bool newKeysAvailable)
+```c
+typedef  Drm_ErrCode (*MediaKeySession_KeyChangeCallback)(DRM_KeysInfo *keysInfo, bool newKeysAvailable)
 ```
 
 **描述**
 
-密钥变更时将调用回调。
+密钥变更时调用的回调函数。
 
 **起始版本：** 11
 
@@ -124,15 +110,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_MediaKeySession\_EventCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef Drm_ErrCode (*OH_MediaKeySession_EventCallback)(MediaKeySession *mediaKeySession, DRM_EventType eventType,uint8_t *info, int32_t infoLen, char *extra)
+```c
+typedef Drm_ErrCode (*OH_MediaKeySession_EventCallback)(MediaKeySession *mediaKeySession, DRM_EventType eventType,uint8_t *info, int32_t infoLen, char *extra)
 ```
 
 **描述**
 
-事件触发时将调用的回调。
+事件触发时将调用的回调函数。事件信息来源于媒体播放过程中的DRM事件，通过MediaKeySession实例触发。
 
 **起始版本：** 12
 
@@ -140,11 +124,11 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [MediaKeySession](capi-drm-mediakeysession.md) \*mediaKeySession | 会话实例。 |
-| [DRM\_EventType](capi-native-drm-common-h.md#drm_eventtype) eventType | 事件类型。 |
-| uint8\_t \*info | 事件信息。 |
-| int32\_t infoLen | 事件信息长度。 |
-| char \*extra | 增量信息。 |
+| [MediaKeySession](capi-drm-mediakeysession.md) \*mediaKeySession | 输入参数，会话实例，用于标识事件来源。 |
+| [DRM\_EventType](capi-native-drm-common-h.md#drm_eventtype) eventType | 输入参数，事件类型。 |
+| uint8\_t \*info | 输出参数，事件信息，来源于DRM事件。 |
+| int32\_t infoLen | 输出参数，事件信息长度。 |
+| char \*extra | 输出参数，增量信息，来源于DRM事件。 |
 
 **返回：**
 
@@ -154,10 +138,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_MediaKeySession\_KeyChangeCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef Drm_ErrCode (*OH_MediaKeySession_KeyChangeCallback)(MediaKeySession *mediaKeySession, DRM_KeysInfo *keysInfo,bool newKeysAvailable)
+```c
+typedef Drm_ErrCode (*OH_MediaKeySession_KeyChangeCallback)(MediaKeySession *mediaKeySession, DRM_KeysInfo *keysInfo,bool newKeysAvailable)
 ```
 
 **描述**
@@ -170,7 +152,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [MediaKeySession](capi-drm-mediakeysession.md) \*mediaKeySession | 媒体密钥会话实例。 |
+| [MediaKeySession](capi-drm-mediakeysession.md) \*mediaKeySession | 输入参数，媒体密钥会话实例。 |
 | [DRM\_KeysInfo](capi-drm-drm-keysinfo.md) \*keysInfo | 密钥信息。 |
 | bool newKeysAvailable | 新密钥是否可用，true表示可用，false表示不可用。 |
 
@@ -182,10 +164,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_MediaKeySession\_GenerateMediaKeyRequest()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySession_GenerateMediaKeyRequest(MediaKeySession *mediaKeySession,DRM_MediaKeyRequestInfo *info, DRM_MediaKeyRequest *mediaKeyRequest)
+```c
+Drm_ErrCode OH_MediaKeySession_GenerateMediaKeyRequest(MediaKeySession *mediaKeySession,DRM_MediaKeyRequestInfo *info, DRM_MediaKeyRequest *mediaKeyRequest)
 ```
 
 **描述**
@@ -198,7 +178,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [MediaKeySession](capi-drm-mediakeysession.md) \*mediaKeySession | MediaKeySession实例。 |
+| [MediaKeySession](capi-drm-mediakeysession.md) \*mediaKeySession | 输入参数，MediaKeySession实例。 |
 | [DRM\_MediaKeyRequestInfo](capi-drm-drm-mediakeyrequestinfo.md) \*info | 媒体密钥请求信息。 |
 | [DRM\_MediaKeyRequest](capi-drm-drm-mediakeyrequest.md) \*mediaKeyRequest | 媒体密钥请求。 |
 
@@ -210,10 +190,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_MediaKeySession\_ProcessMediaKeyResponse()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySession_ProcessMediaKeyResponse(MediaKeySession *mediaKeySession,uint8_t *response, int32_t responseLen, uint8_t *offlineMediaKeyId, int32_t *offlineMediaKeyIdLen)
+```c
+Drm_ErrCode OH_MediaKeySession_ProcessMediaKeyResponse(MediaKeySession *mediaKeySession,uint8_t *response, int32_t responseLen, uint8_t *offlineMediaKeyId, int32_t *offlineMediaKeyIdLen)
 ```
 
 **描述**
@@ -236,14 +214,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [Drm\_ErrCode](capi-native-drm-err-h.md#drm_errcode) | DRM\_ERR\_OK：执行成功。  DRM\_ERR\_NO\_MEMORY：内存不足，内存分配失败。  DRM\_ERR\_INVALID\_VAL：输入参数mediaKeySession为空指针或无效，或其它指针类型输入参数为空指针。  DRM\_ERR\_UNKNOWN：发生内部错误，请查看日志详细信息。 |
+| [Drm\_ErrCode](capi-native-drm-err-h.md#drm_errcode) | DRM\_ERR\_OK：执行成功。  DRM\_ERR\_NO\_MEMORY：内存不足，内存分配失败。  DRM\_ERR\_INVALID\_VAL：输入参数mediaKeySession为空指针或无效，或其他指针类型输入参数为空指针。  DRM\_ERR\_UNKNOWN：发生内部错误，请查看日志详细信息。 |
 
 ### OH\_MediaKeySession\_CheckMediaKeyStatus()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySession_CheckMediaKeyStatus(MediaKeySession *mediaKeySession,DRM_MediaKeyStatus *mediaKeyStatus)
+```c
+Drm_ErrCode OH_MediaKeySession_CheckMediaKeyStatus(MediaKeySession *mediaKeySession,DRM_MediaKeyStatus *mediaKeyStatus)
 ```
 
 **描述**
@@ -256,8 +232,8 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [MediaKeySession](capi-drm-mediakeysession.md) \*mediaKeySession | MediaKeySession实例。 |
-| [DRM\_MediaKeyStatus](capi-drm-drm-mediakeystatus.md) \*mediaKeyStatus | 媒体密钥状态。 |
+| [MediaKeySession](capi-drm-mediakeysession.md) \*mediaKeySession | 输入参数，必填，MediaKeySession实例。 |
+| [DRM\_MediaKeyStatus](capi-drm-drm-mediakeystatus.md) \*mediaKeyStatus | 输出参数，必填，媒体密钥状态。 |
 
 **返回：**
 
@@ -267,10 +243,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_MediaKeySession\_ClearMediaKeys()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySession_ClearMediaKeys(MediaKeySession *mediaKeySession)
+```c
+Drm_ErrCode OH_MediaKeySession_ClearMediaKeys(MediaKeySession *mediaKeySession)
 ```
 
 **描述**
@@ -293,10 +267,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_MediaKeySession\_GenerateOfflineReleaseRequest()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySession_GenerateOfflineReleaseRequest(MediaKeySession *mediaKeySession,uint8_t *offlineMediaKeyId, int32_t offlineMediaKeyIdLen, uint8_t *releaseRequest,int32_t *releaseRequestLen)
+```c
+Drm_ErrCode OH_MediaKeySession_GenerateOfflineReleaseRequest(MediaKeySession *mediaKeySession,uint8_t *offlineMediaKeyId, int32_t offlineMediaKeyIdLen, uint8_t *releaseRequest,int32_t *releaseRequestLen)
 ```
 
 **描述**
@@ -309,24 +281,22 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [MediaKeySession](capi-drm-mediakeysession.md) \*mediaKeySession | MediaKeySession实例。 |
-| uint8\_t \*offlineMediaKeyId | 离线媒体密钥标识。 |
-| int32\_t \*releaseRequestLen | 离线媒体密钥标识长度。 |
-| uint8\_t \*releaseRequest | 离线媒体密钥释放请求。 |
-| int32\_t \*releaseRequestLen | 离线媒体密钥释放请求长度。 |
+| [MediaKeySession](capi-drm-mediakeysession.md) \*mediaKeySession | 输入参数，MediaKeySession实例。 |
+| uint8\_t \*offlineMediaKeyId | 输入参数，离线媒体密钥标识。取值范围为[1, 64]，单位为字节。 |
+| int32\_t offlineMediaKeyIdLen | 输入参数，离线媒体密钥标识长度，取值范围为[1, 64]。 |
+| uint8\_t \*releaseRequest | 输出参数，离线媒体密钥释放请求。 |
+| int32\_t \*releaseRequestLen | 输出参数，离线媒体密钥释放请求长度。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [Drm\_ErrCode](capi-native-drm-err-h.md#drm_errcode) | DRM\_ERR\_OK：执行成功。  DRM\_ERR\_NO\_MEMORY：内存不足，内存分配失败。  DRM\_ERR\_INVALID\_VAL：输入参数mediaKeySession为空指针或无效，或其它指针类型输入参数为空指针。  DRM\_ERR\_UNKNOWN：发生内部错误或设备上的DRM解决方案不支持离线媒体密钥释放，请查看日志详细信息。 |
+| [Drm\_ErrCode](capi-native-drm-err-h.md#drm_errcode) | DRM\_ERR\_OK：执行成功。  DRM\_ERR\_NO\_MEMORY：内存不足，内存分配失败。  DRM\_ERR\_INVALID\_VAL：输入参数mediaKeySession为空指针或无效，或其他指针类型输入参数为空指针。  DRM\_ERR\_UNKNOWN：发生内部错误或设备上的DRM解决方案不支持离线媒体密钥释放，请查看日志详细信息。 |
 
 ### OH\_MediaKeySession\_ProcessOfflineReleaseResponse()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySession_ProcessOfflineReleaseResponse(MediaKeySession *mediaKeySession,uint8_t *offlineMediaKeyId, int32_t offlineMediaKeyIdLen, uint8_t *releaseResponse,int32_t releaseResponseLen)
+```c
+Drm_ErrCode OH_MediaKeySession_ProcessOfflineReleaseResponse(MediaKeySession *mediaKeySession,uint8_t *offlineMediaKeyId, int32_t offlineMediaKeyIdLen, uint8_t *releaseResponse,int32_t releaseResponseLen)
 ```
 
 **描述**
@@ -349,14 +319,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [Drm\_ErrCode](capi-native-drm-err-h.md#drm_errcode) | DRM\_ERR\_OK：执行成功。  DRM\_ERR\_INVALID\_VAL：输入参数mediaKeySession为空指针或无效，或其它指针类型输入参数为空指针。  DRM\_ERR\_UNKNOWN：发生内部错误或设备上的DRM解决方案不支持离线媒体密钥释放，请查看日志详细信息。 |
+| [Drm\_ErrCode](capi-native-drm-err-h.md#drm_errcode) | DRM\_ERR\_OK：执行成功。  DRM\_ERR\_INVALID\_VAL：输入参数mediaKeySession为空指针或无效，或其他指针类型输入参数为空指针。  DRM\_ERR\_UNKNOWN：发生内部错误或设备上的DRM解决方案不支持离线媒体密钥释放，请查看日志详细信息。 |
 
 ### OH\_MediaKeySession\_RestoreOfflineMediaKeys()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySession_RestoreOfflineMediaKeys(MediaKeySession *mediaKeySession,uint8_t *offlineMediaKeyId, int32_t offlineMediaKeyIdLen)
+```c
+Drm_ErrCode OH_MediaKeySession_RestoreOfflineMediaKeys(MediaKeySession *mediaKeySession,uint8_t *offlineMediaKeyId, int32_t offlineMediaKeyIdLen)
 ```
 
 **描述**
@@ -377,14 +345,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [Drm\_ErrCode](capi-native-drm-err-h.md#drm_errcode) | DRM\_ERR\_OK：执行成功。  DRM\_ERR\_INVALID\_VAL：输入参数mediaKeySession为空指针或无效，或其它指针类型输入参数为空指针。  DRM\_ERR\_UNKNOWN：发生内部错误，请查看日志详细信息。 |
+| [Drm\_ErrCode](capi-native-drm-err-h.md#drm_errcode) | DRM\_ERR\_OK：执行成功。  DRM\_ERR\_INVALID\_VAL：输入参数mediaKeySession为空指针或无效，或其他指针类型输入参数为空指针。  DRM\_ERR\_UNKNOWN：发生内部错误，请查看日志详细信息。 |
 
 ### OH\_MediaKeySession\_GetContentProtectionLevel()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySession_GetContentProtectionLevel(MediaKeySession *mediaKeySession,DRM_ContentProtectionLevel *contentProtectionLevel)
+```c
+Drm_ErrCode OH_MediaKeySession_GetContentProtectionLevel(MediaKeySession *mediaKeySession,DRM_ContentProtectionLevel *contentProtectionLevel)
 ```
 
 **描述**
@@ -408,10 +374,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_MediaKeySession\_RequireSecureDecoderModule()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySession_RequireSecureDecoderModule(MediaKeySession *mediaKeySession,const char *mimeType, bool *status)
+```c
+Drm_ErrCode OH_MediaKeySession_RequireSecureDecoderModule(MediaKeySession *mediaKeySession,const char *mimeType, bool *status)
 ```
 
 **描述**
@@ -425,26 +389,24 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [MediaKeySession](capi-drm-mediakeysession.md) \*mediaKeySession | MediaKeySession实例。 |
-| const char \*mimeType | 媒体类型，支持的媒体类型取决于DRM解决方案，如：video/avc、video/hev。 |
+| const char \*mimeType | 媒体类型，支持的媒体类型取决于DRM解决方案，如：video/avc、video/hevc。 |
 | bool \*status | 安全解码模块状态。true表示需要安全解码模块，false表示不需要安全解码模块。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [Drm\_ErrCode](capi-native-drm-err-h.md#drm_errcode) | DRM\_ERR\_OK：执行成功。  DRM\_ERR\_INVALID\_VAL：输入参数mediaKeySession为空指针或无效，或其它指针类型输入参数为空指针。  DRM\_ERR\_UNKNOWN：发生内部错误，请查看日志详细信息。 |
+| [Drm\_ErrCode](capi-native-drm-err-h.md#drm_errcode) | DRM\_ERR\_OK：执行成功。  DRM\_ERR\_INVALID\_VAL：输入参数mediaKeySession为空指针或无效，或其他指针类型输入参数为空指针。  DRM\_ERR\_UNKNOWN：发生内部错误，请查看日志详细信息。 |
 
 ### OH\_MediaKeySession\_SetMediaKeySessionCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySession_SetMediaKeySessionCallback(MediaKeySession *mediaKeySession,MediaKeySession_Callback *callback)
+```c
+Drm_ErrCode OH_MediaKeySession_SetMediaKeySessionCallback(MediaKeySession *mediaKeySession,MediaKeySession_Callback *callback)
 ```
 
 **描述**
 
-设置MediaKeySession事件回调。
+设置MediaKeySession事件回调。该回调不返回MediaKeySession实例，适用于单个MediaKeySession场景。
 
 **起始版本：** 11
 
@@ -453,7 +415,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [MediaKeySession](capi-drm-mediakeysession.md) \*mediaKeySession | MediaKeySession实例。 |
-| [MediaKeySession\_Callback](capi-drm-mediakeysession-callback.md) \*callback | MediaKeySession的回调。 |
+| [MediaKeySession\_Callback](capi-drm-mediakeysession-callback.md) \*callback | 输入参数，MediaKeySession的回调结构体。 |
 
 **返回：**
 
@@ -463,15 +425,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_MediaKeySession\_SetCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySession_SetCallback(MediaKeySession *mediaKeySession,OH_MediaKeySession_Callback *callback)
+```c
+Drm_ErrCode OH_MediaKeySession_SetCallback(MediaKeySession *mediaKeySession,OH_MediaKeySession_Callback *callback)
 ```
 
 **描述**
 
-设置MediaKeySession事件回调。
+设置MediaKeySession事件回调。该回调返回MediaKeySession实例，适用于多个MediaKeySession场景。
 
 **起始版本：** 12
 
@@ -480,7 +440,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [MediaKeySession](capi-drm-mediakeysession.md) \*mediaKeySession | MediaKeySession实例。 |
-| [OH\_MediaKeySession\_Callback](capi-drm-oh-mediakeysession-callback.md) \*callback | MediaKeySession的回调。 |
+| [OH\_MediaKeySession\_Callback](capi-drm-oh-mediakeysession-callback.md) \*callback | 输入参数，MediaKeySession的回调结构体。 |
 
 **返回：**
 
@@ -490,10 +450,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_MediaKeySession\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySession_Destroy(MediaKeySession *mediaKeySession)
+```c
+Drm_ErrCode OH_MediaKeySession_Destroy(MediaKeySession *mediaKeySession)
 ```
 
 **描述**

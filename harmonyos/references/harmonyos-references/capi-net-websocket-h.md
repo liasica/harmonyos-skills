@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-net-
 title: net_websocket.h
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 头文件 > net_websocket.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:34+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:498fd35d1a6545c00deb47c5183ecf17392e4ccffa90c71f1d5c3de1aa02ee45
+scraped_at: 2026-09-02T15:01:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4765338946f5ff59aa6c2322442811b165fecdc526a842493364baa92ce6917d
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义WebSocket客户端模块的接口。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -43,14 +37,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_WebSocketClient\_Constructor()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. struct WebSocket *OH_WebSocketClient_Constructor(WebSocket_OnOpenCallback onOpen, WebSocket_OnMessageCallback onMessage,WebSocket_OnErrorCallback onError, WebSocket_OnCloseCallback onclose)
+```c
+struct WebSocket *OH_WebSocketClient_Constructor(WebSocket_OnOpenCallback onOpen, WebSocket_OnMessageCallback onMessage,WebSocket_OnErrorCallback onError, WebSocket_OnCloseCallback onclose)
 ```
 
 **描述**
@@ -78,10 +68,8 @@ WebSocket客户端的构造函数。
 
 ### OH\_WebSocketClient\_AddHeader()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_WebSocketClient_AddHeader(struct WebSocket *client, struct WebSocket_Header header)
+```c
+int OH_WebSocketClient_AddHeader(struct WebSocket *client, struct WebSocket_Header header)
 ```
 
 **描述**
@@ -107,10 +95,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_WebSocketClient\_Connect()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_WebSocketClient_Connect(struct WebSocket *client, const char *url, struct WebSocket_RequestOptions options)
+```c
+int OH_WebSocketClient_Connect(struct WebSocket *client, const char *url, struct WebSocket_RequestOptions options)
 ```
 
 **描述**
@@ -139,10 +125,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_WebSocketClient\_Send()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_WebSocketClient_Send(struct WebSocket *client, char *data, size_t length)
+```c
+int OH_WebSocketClient_Send(struct WebSocket *client, char *data, size_t length)
 ```
 
 **描述**
@@ -161,7 +145,7 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | [struct WebSocket](capi-netstack-websocket.md) \*client | 客户端。 |
 | char \*data | 客户端发送的数据。 |
-| size\_t length | 客户端发送的数据长度。 |
+| size\_t length | 客户端发送的数据长度。单位：Byte。 |
 
 **返回：**
 
@@ -171,10 +155,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_WebSocketClient\_Close()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_WebSocketClient_Close(struct WebSocket *client, struct WebSocket_CloseOption options)
+```c
+int OH_WebSocketClient_Close(struct WebSocket *client, struct WebSocket_CloseOption options)
 ```
 
 **描述**
@@ -202,10 +184,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_WebSocketClient\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_WebSocketClient_Destroy(struct WebSocket *client)
+```c
+int OH_WebSocketClient_Destroy(struct WebSocket *client)
 ```
 
 **描述**
@@ -215,7 +195,7 @@ PhonePC/2in1TabletTVWearable
 1. 调用[WebSocket\_OnCloseCallback](capi-net-websocket-type-h.md#websocket_onclosecallback)订阅WebSocket连接关闭事件，并在该回调函数中调用[OH\_WebSocketClient\_Destroy](capi-net-websocket-h.md#oh_websocketclient_destroy)方法。
 2. 调用[OH\_WebSocketClient\_Close](capi-net-websocket-h.md#oh_websocketclient_close)关闭WebSocket连接。
 
-注意
+**注意** 
 
 确保触发[WebSocket\_OnCloseCallback](capi-net-websocket-type-h.md#websocket_onclosecallback)回调后再调用该接口，否则系统内存资源被释放后可能出现socket泄露以及连接未关闭的情况。
 

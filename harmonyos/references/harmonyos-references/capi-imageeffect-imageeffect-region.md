@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: ImageEffect_Region
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 结构体 > ImageEffect_Region
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:38+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:ceca19c3d0bc27a71f121df628565ca2c8d737c4e4f3e0e3c8d9371d4c2130fb
+scraped_at: 2026-09-02T15:02:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2ba0c1304dbbd9f0c37bc29921d9712b7da75d7edd424b18bfd5f4776715242e
 ---
 
-```
-1. typedef struct ImageEffect_Region {...} ImageEffect_Region
+```c
+typedef struct ImageEffect_Region {...} ImageEffect_Region
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 图像区域结构体。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 成员变量
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |

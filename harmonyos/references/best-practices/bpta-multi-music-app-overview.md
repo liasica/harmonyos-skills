@@ -3,445 +3,363 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-musi
 title: 多设备音乐界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备音乐界面
 category: best-practices
-scraped_at: 2026-04-29T14:12:22+08:00
-doc_updated_at: 2026-03-26
-content_hash: sha256:da31c4b86bfe2e0327ff2658735d490e22932604d965abd0c43e45d62e8c1884
+scraped_at: 2026-09-02T15:03:18+08:00
+doc_updated_at: 2026-06-10
+content_hash: sha256:9b0cde7721f5c8c95487c532d48fb087517ccd816a16afb1ad3dfe68c1f52811
 ---
 
 ## 概述
 
-本文将介绍如何在音乐播放器的实际开发过程中实现“一次开发，多端部署”。音乐播放器是当前广受欢迎的大众娱乐应用。本文将以播放页为例，展示其在直板机、双折叠（Mate X系列）、平板、智能穿戴四种产品形态上的“一次开发，多端部署”。本文将通过架构设计、UX设计、页面开发和智能穿戴开发四个部分，介绍在开发过程中实现“一次开发，多端部署”的最佳实践。
+本文将介绍如何在音乐播放类应用的实际开发过程中实现“一次开发，多端部署”。收听音乐是大众最受欢迎的日常娱乐方式之一，而音乐播放应用是其核心载体。多设备音乐播放案例围绕首页、歌单详情页和全屏播放页等核心页面展开，覆盖了用户从音乐浏览、歌单查看到沉浸式播放的完整音乐欣赏链路。文章重点介绍关键布局能力及对应实现。当前应用已适配的设备包括：直板机、双折叠（Mate X系列）、三折叠、阔折叠、平板、电脑、智慧屏和智能穿戴。
 
-说明
+**说明** 
 
-阅读本文前，开发者需熟悉[ArkUI（方舟UI框架）](../harmonyos-guides/arkui.md)和页面开发的“一多”能力（参考[一次开发，多端部署概览](bpta-multi-device-overview.md)）。下文将详细介绍它们在“一多”开发实践中如何使用。
+阅读本文前，建议开发者先了解[ArkUI（方舟UI框架）](../harmonyos-guides/arkui.md)和[一次开发，多端部署概览](bpta-multi-device-overview.md)相关知识。
+
+下文将从UX设计、工程管理、页面开发三个方面系统介绍音乐播放类应用在实际开发中的最佳实践，为开发者提供可借鉴的实现思路。
+
+* [UX设计](bpta-multi-music-app-overview.md#section1496102654513)：介绍音乐播放类应用的交互逻辑与通用设计要点，开发者可直接参考同类设计要点。
+* [工程管理](bpta-multi-music-app-overview.md#section2146193418540)：介绍“一多”工程所需配置，并推荐采用结构更清晰的三层架构。
+* [移动端页面](bpta-multi-music-app-overview.md#section169906412567)、[电脑端页面](bpta-multi-music-app-overview.md#section3647191712520)、[智慧屏页面](bpta-multi-music-app-overview.md#section13448146153217)、[智能穿戴页面](bpta-multi-music-app-overview.md#section95447563587)：遵循实际应用开发流程，以页面为基本单元，依次讲解窗口适配、页面开发的设计思路与实现方法。
 
 ## UX设计
 
-音乐应用以播放页为重点进行介绍。
+应用的UX设计可参考[音乐听书](../design-guides/responsive-design-examples1-0000001957369849.md#section12973333171715)的多设备响应式设计指南，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/0HKV8fXvTsSbSbm2oRbvvA/zh-cn_image_0000002471180817.png "点击放大")
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/PwiPPWPbQOKjkOJR2FCvQg/zh-cn_image_0000002437742432.png "点击放大")
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/bX47A6eQR7m1r-pPpb_GJw/zh-cn_image_0000002471220981.png "点击放大")
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/1x3amcxjTPObN50yKQy6fA/zh-cn_image_0000002437582588.png "点击放大")
-
-|  | sm | md | lg | 智能穿戴 |
-| --- | --- | --- | --- | --- |
-| **布局方式** | 单列+Swiper切换 | 左右分栏（1:1） | 左右分栏（1:1） | 圆形布局 |
-| **交互特点** | 进度条拖动、按钮点击、左右滑动切换页面 | 进度条拖动、按钮点击 | | 按钮点击、旋转表冠 |
-
-说明
-
-由于智能穿戴设备与移动端的布局差异显著，因此需为前者单独创建[HAP](../harmonyos-guides/hap-package.md)包，而非依赖断点判断。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/akEY1a5ZRpuAynxa8Rebbg/zh-cn_image_0000002622170035.png "点击放大")
 
 ## 工程管理
 
-本章将介绍如何创建“一多”工程及划分目录结构。
+为确保“一多”工程代码的复用性与可维护性，建议开发者采用分层架构组织代码工程。该架构将项目划分为产品定制层（products）、基础特性层（features）和公共能力层（common）三个层级，各层级权责明确且功能独立，为开发者提供了清晰、高效且可扩展的设计方案。关于分层架构的具体设计细节，可参考[分层架构设计](bpta-layered-architecture-design.md)。
 
 ### 创建工程
 
-根据三层架构进行[多设备工程部署与发布](bpta-multi-device-ide.md)，先创建出最基本的项目工程，再在基本目录结构的基础上进行修改。
-
-由于圆形屏幕设备在形态与使用场景上的特殊性，其交互与界面设计和常规设备存在显著差异。因此，在products层中设立独立的watch模块，以实现对穿戴设备的精准适配。该模块采用分层架构设计，聚焦于穿戴设备特有的界面与交互逻辑，同时将设备无关的通用逻辑下沉至公共模块，从而确保架构清晰、复用性高。
-
-说明
-
-在开发穿戴应用时，需要将工程中module.json5的deviceTypes改为wearable，以确保应用能够在穿戴设备上正确部署和运行。可参考[智能穿戴应用开发](bpta-smartwatch.md)了解能力介绍。
+建议开发者参考[多设备工程部署与发布](bpta-multi-device-ide.md)相关内容，掌握分层架构工程的创建与配置方法后，创建模板项目工程。根据多设备音乐的开发需求进行针对性修改，确保工程架构贴合实际业务需求。
 
 ### 工程结构
 
-HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力层，为开发者提供清晰、高效、可扩展的设计架构。详细请参见[分层架构设计](bpta-layered-architecture-design.md)。
+多设备音乐应用采用推荐的分层架构，将代码工程按products、features、common三个层级组织。各层级设计如下：
 
-音乐应用根据一多推荐的common、features、products的“三层工程架构”划分目录。其中三个页面功能不同，互不依赖，根据页面划分为三个features（基础特性层）：直播页-live、音乐评论页-musicComment和歌曲列表页-musicList。公共常量、媒体播放工具以及窗口管理工具等需要被不同页面依赖引用的内容，划分为一个common（公共能力层）。在products（产品定制层）中，分别设立了面向智能穿戴设备开发的独立watch模块和适用于普通设备的phone模块，以适配不同设备在界面与交互方面的差异，从而实现清晰的模块化划分。
+* products层：针对不同终端形态提供独立入口与页面组装。例如，products/default面向手机/平板类形态；products/watch、products/tv、products/pc分别面向穿戴、智慧屏、电脑等。
+* features层：包含三个核心业务模块——首页、列表页和播放页。为各模块分别创建对应HAR包，供products层按需引用。各模块相对独立，互不依赖，便于后续维护与迭代。
+* common层：为实现代码复用并减少冗余，集中存放公共常量、日志工具类及窗口管理工具等基础能力，供其他模块统一调用。
 
 工程结构如下：
 
+```screen
+├── common                                                  // 公共能力层目录
+│   └── musicbasic                                          // 基础HAR：歌曲数据、全局状态、断点与窗口工具
+│       └── src/main                                        // 模块标准源码与资源根目录
+│           ├── ets                                         // ArkTS业务源码根目录
+│           │   ├── api                                     // 接口DTO与映射
+│           │   ├── constants                               // 公共常量
+│           │   ├── data                                    // 歌曲/歌单/推荐Feed等行数据模型
+│           │   ├── db                                      // 内存曲库等数据访问
+│           │   ├── model                                   // 全局播控状态、菜单、歌曲实体等
+│           │   └── util                                    // 日志、断点、窗口、持久化门面等工具
+│           └── resources                                   // 字符串、颜色、媒体与rawfile资源
+├── features                                                // 特性HAR：按业务能力拆分
+│   ├── player                                              // 播放器：全屏页、歌词、音频播放封装
+│   │   └── src/main                                        // 模块标准源码与资源根目录
+│   │       ├── ets                                         // ArkTS业务源码根目录
+│   │       │   ├── constant                                // 播放器与歌词相关常量
+│   │       │   ├── model                                   // 播放UI模型、媒体服务、歌词条目
+│   │       │   ├── util                                    // LRC、后台播放、播放意图壳层等
+│   │       │   ├── view                                    // 播放页 UI 组件（含穿戴等形态适配）
+│   │       │   └── viewmodel                               // 播放页ViewModel
+│   │       └── resources                                   // 模块字符串、图标与主题资源
+│   ├── playlist                                            // 歌单：详情页、分栏、迷你播控条
+│   │   └── src/main                                        // 模块标准源码与资源根目录
+│   │       ├── ets                                         // ArkTS业务源码根目录
+│   │       │   ├── model                                   // 歌单与列表UI模型、数据源
+│   │       │   ├── util                                    // 歌单演示数据等工具
+│   │       │   ├── view                                    // 歌单页与迷你条 UI（含穿戴路由相关）
+│   │       │   └── viewmodel                               // 歌单与播控联动ViewModel
+│   │       └── resources                                   // 模块字符串与图标资源
+│   └── recommendation                                      // 推荐首页、宽屏面板、首页迷你条
+│       └── src/main                                        // 模块标准源码与资源根目录
+│           ├── ets                                         // ArkTS业务源码根目录
+│           │   ├── model                                   // 推荐区块UI模型与数据源
+│           │   ├── util                                    // 推荐演示数据工具
+│           │   ├── view                                    // 推荐首页、迷你条、宽屏面板与穿戴首页等 UI
+│           │   └── viewmodel                               // 推荐首页ViewModel
+│           └── resources                                   // 模块字符串、横幅与主题资源
+└── products                                                // 各设备形态HAP产品入口
+    ├── default                                             // 手机/平板应用入口
+    │   └── src/main                                        // 模块标准源码与资源根目录
+    │       ├── ets                                         // ArkTS入口与页面根目录
+    │       │   ├── entryability                            // 主入口Ability
+    │       │   ├── pages                                   // 页面路由（主导航与壳层）
+    │       │   └── phonebackupextability                   // 手机侧备份扩展Ability
+    │       └── resources                                   // 权限声明、页面profile、图标与多语言
+    ├── pc                                                  // PC/2in1应用入口
+    │   └── src/main                                        // 模块标准源码与资源根目录
+    │       ├── ets                                         // ArkTS入口与页面根目录
+    │       │   ├── pages                                   // PC主页与路由页面
+    │       │   ├── pcability                               // PC入口Ability
+    │       │   └── pcbackupability                         // PC备份扩展Ability
+    │       └── resources                                   // 分层图标、页面profile、多语言
+    ├── tv                                                  // 智慧大屏应用入口
+    │   └── src/main                                        // 模块标准源码与资源根目录
+    │       ├── ets                                         // ArkTS入口与页面根目录
+    │       │   ├── pages                                   // TV主页与路由页面
+    │       │   ├── tvability                               // TV入口Ability
+    │       │   └── tvbackupability                         // TV备份扩展Ability
+    │       └── resources                                   // 分层图标、页面profile、多语言
+    └── watch                                               // 智能穿戴应用入口
+        └── src/main                                        // 模块标准源码与资源根目录
+            ├── ets                                         // ArkTS入口与页面根目录
+            │   ├── pages                                   // 穿戴主页路由页面
+            │   ├── watchability                            // 穿戴入口Ability
+            │   └── watchbackupability                      // 穿戴备份扩展Ability
+            └── resources                                   // 表盘图标、路由profile、多语言
 ```
-1. │──common                                    // 公共能力层
-2. │  ├──constantsCommon/src/main/ets            // 公共常量
-3. │  │  └──constants
-4. │  └──mediaCommon/src/main/ets                // 公共媒体方法
-5. │     └──utils
-6. │     └──viewmodel
-7. ├──features                                   // 基础特性层
-8. │  ├──live/src/main/ets                       // 直播页
-9. │  │  ├──constants
-10. │  │  ├──view
-11. │  │  └──viewmodel
-12. │  ├──live/src/main/resources                 // 资源文件目录
-13. │  ├──musicComment/src/main/ets               // 音乐评论页
-14. │  │  ├──constants
-15. │  │  ├──view
-16. │  │  └──viewmodel
-17. │  ├──musicComment/src/main/resources         // 资源文件目录
-18. │  ├──musicList/src/main/ets                  // 歌曲列表页
-19. │  │  ├──components
-20. │  │  ├──constants
-21. │  │  ├──lyric
-22. │  │  ├──view
-23. │  │  └──viewmodel
-24. │  └──musicList/src/main/resources            // 资源文件目录
-25. └──products                                   // 产品定制层
-26. ├──phone/src/main/ets                      // 支持手机、平板
-27. │  ├──common
-28. │  ├──entryability
-29. │  ├──pages
-30. │  ├──phonebackupextability
-31. │  └──viewmodel
-32. ├──phone/src/main/resources                // 资源文件目录
-33. ├──watch/src/main/ets                      // 支持智能穿戴
-34. │  ├──constants
-35. │  ├──pages
-36. │  ├──view
-37. │  ├──watchability
-38. │  └──watchbackupability
-39. └──watch/src/main/resources                // 资源文件目录
-```
 
-## 页面开发
+## 移动端页面
 
-本章介绍音乐应用如何使用“一多”的布局能力，完成页面层级的一套代码、多端适配。下文以播放页为例，介绍各区域使用的具体布局能力，帮助开发者快速实现“一多”开发。
+本章说明在直板机、折叠机、平板等形态下，如何借助一多布局能力，使首页、歌单详情页、全屏播放页在同一套业务逻辑上完成适配，并概述与本示例相关的窗口适配要点。
 
-### 播放页
+### 窗口适配
 
-播放页是音乐应用的主要功能页面，用于播放音乐。以下是播放页在三种设备上的显示效果图：
+* 窗口模式
 
-| 示意图 | **sm** | **md** | **lg** |
-| --- | --- | --- | --- |
-| **效果图** |  |  |  |
+  适配设备支持全屏、分屏、悬浮窗和自由窗口模式，具体参见[窗口模式](bpta-multi-device-window-mode.md)。其中，分屏模式与悬浮窗无需特殊设计，可通过系统方式进入。应用内监听窗口尺寸变化，[通过断点刷新UI](bpta-multi-device-responsive-layout.md#section175001836203617)，即可自动适配全屏、分屏、悬浮窗和自由窗口模式下的布局。
+* 窗口方向
 
-* 播放页主要包含播控区域和歌词区域。在sm断点下，通过Tabs组件或Swiper组件切换这两个区域。在md和lg断点下，播控区域和歌词区域以左右两列展示。
-* 在sm断点下，使用Stack组件将区域1显示在Swiper组件上。区域2、3、4作为沿垂直方向布局的Column组件的子组件，在区域3和区域4之间使用Blank组件填充空白区域。
-* 在md断点下，播控区域与歌词区域通过GridRow和GridCol组件实现。GridRow设置总栅格数为8，每个GridCol占4个栅格。
-* 在lg断点下，GridRow设置总栅格数为12。播控区域占4个栅格，GridCol设置offset为1。歌词区域占6个栅格，offset为1。
+  在类直板机上推荐仅竖屏显示，在双折叠展开态、三折叠展开态、平板等大屏幕场景下推荐四方向旋转并受控制中心的旋转开关控制。在移动端应用推荐在[module.json5](https://gitcode.com/HarmonyOS_Samples/MusicHome/blob/master/products/default/src/main/module.json5)配置文件中将orientation字段设置为follow\_desktop（跟随桌面的旋转模式），具体说明可参考[为应用配置旋转策略](bpta-multi-device-window-direction.md#section714419371037)。
+* 窗口沉浸式
 
-  | 区域编号 | 简介 | 实现方案 |
-  | --- | --- | --- |
-  | 1 | 标题区 | [Row](../harmonyos-references/ts-container-row.md)组件的justifyContent属性设置为FlexAlign.SpaceBetween实现均分能力，代码可参考[多设备长视频界面](multi-video-app.md)。 |
-  | 2 | 专辑封面 | [Image](../harmonyos-references/ts-basic-components-image.md)组件设置aspectRatio属性为1使图片宽高相等。 |
-  | 3 | 歌曲信息 | [Column](../harmonyos-references/ts-container-column.md)组件沿垂直方向布局展示两行文本。 |
-  | 4 | 播控区域 | 使用[Slider](../harmonyos-references/ts-basic-components-slider.md)组件实现进度条。 |
-  | 5 | 歌词区域 | [Canvas](../harmonyos-references/ts-components-canvas-canvas.md)结合动画实现歌词滚动效果。 |
-  | 6 | 桌面歌词按钮 | [Image](../harmonyos-references/ts-basic-components-image.md)组件显示歌词图片。 |
-
-## 智能穿戴开发
-
-本章将介绍音乐应用如何借助“一多”布局能力，在智能穿戴设备上实现独立应用开发，并以首页、歌单页、歌曲列表页与播放页等典型页面为例，详细阐述其设计与实现。
+  根据UX设计，需实现不同窗口模式（全屏、分屏、悬浮窗、自由窗口）下的沉浸式效果，可参考[窗口沉浸式](bpta-multi-device-window-immersive.md)。推荐开发者使用[实现沉浸式效果](bpta-multi-device-window-immersive.md#section180431120426)中的组件级沉浸方案（组件设置页面沉浸），同时进行动态安全区避让，确保沉浸式显示效果。自由窗口模式下，使用[window.setWindowDecorVisible(false)](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)隐藏标题栏，仅保留右上角三键，使应用页面延伸至标题栏区域，实现沉浸式显示效果。
 
 ### 首页
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/uAFFSSwiQrmi3iC3ak8okQ/zh-cn_image_0000002437582592.png "点击放大")
+音乐应用首页用于展示推荐信息流与快捷入口，以满足试听与浏览歌单的需求。本示例将首页主要内容组织在RecommendPage中，并由多个分区组件拼装而成。
+
+效果图如下所示：
+
+| 横向（/纵向）断点 | sm/md | sm | md | lg、xl |
+| --- | --- | --- | --- | --- |
+| 首页 |  |  |  |  |
+
+**界面开发**
+
+对各个区域使用多种能力进行分析，实现方案如下表：
 
 | 区域编号 | 简介 | 实现方案 |
 | --- | --- | --- |
-| 1 | 首页列表区域 | 使用[ArcList](../harmonyos-references/ts-container-arclist.md)实现弧形列表布局，多行展示列表。 |
-| 2 | 首页轮播区域 | 使用[ArcSwiper](../harmonyos-references/ts-container-arcswiper.md)组件实现左右轮播效果。 |
+| 1 | 底部页签 | 借助[HdsTabs](../harmonyos-references/ui-design-hdstabs.md)实现。同时在api版本低的设备上降级使用[Tabs](../harmonyos-references/ts-container-tabs.md)组件。 |
+| 2 | 顶部页签及搜索框 | 使用响应式布局实现。通过监听断点变化，实现折行显示。在横向断点为sm时，组件两行显示；在横向断点为md、lg或xl时，组件单行显示。 |
+| 3 | 歌单卡片列表 | 使用响应式组件[Scroll](../harmonyos-references/ts-container-scroll.md)结合[Row](../harmonyos-references/ts-container-row.md)组件实现横向滚动。 |
+| 4 | 分类标签区域 |
+| 5 | 为你推荐区域 |
+| 7 | 音乐列表 | 使用[List](../harmonyos-references/ts-container-list.md)结合[LazyForEach](../harmonyos-references/ts-rendering-control-lazyforeach.md)实现列表渲染，并通过lanes()属性设置响应式列数，根据横向断点为sm展示一列，md展示两列，lg或者xl展示三列。 |
 
-* 首页列表区域
+### 列表页
 
-  通过[ArcList](../harmonyos-references/ts-container-arclist.md)实现弧形列表布局，设置scrollBar属性为BarState.Off隐藏滚动条的显示，通过space属性调整子组件之间的距离。每个子组件需要使用[ArcListItem](../harmonyos-references/ts-container-arclistitem.md)作为容器，给子组件设置justifyContent为SpaceAround，让其内部元素沿水平方向均匀排列。
+列表页用于展示歌单头图与曲目列表，并在页面内提供迷你播放条以延续播控。对应实现集中在PlaylistDetailPage及相关Section组件。
 
-  ```
-  1. Column() {
-  2. ArcList({ initialIndex: 0 }) {
-  3. ForEach(this.menuList, (item: Menu) => {
-  4. ArcListItem() {
-  5. Row() {
-  6. Image(item.icon)
-  7. .width($r('app.float.home_icon_width'))
-  8. .height($r('app.float.home_icon_width'))
-  9. .borderRadius(StyleConstants.CIRCLE_BORDER_RADIUS)
-  10. .backgroundColor($r('app.color.home_icon_background'))
-  11. .padding($r('app.float.home_icon_padding'))
+效果图如下所示：
 
-  13. Text(item.text)
-  14. .fontColor($r('app.color.font_color'))
-  15. .fontSize($r('app.float.home_font_size'))
+| 横向（/纵向）断点 | sm/md | sm | md | lg、xl |
+| --- | --- | --- | --- | --- |
+| 列表页 |  |  |  |  |
 
-  17. Image($r('app.media.chevron_right'))
-  18. .width($r('app.float.home_icon_jump_width'))
-  19. }
-  20. .width(this.HOME_BTN_WIDTH)
-  21. .height($r('app.float.home_btn_height'))
-  22. .padding({ left: $r('app.float.list_btn_padding'), right: $r('app.float.list_btn_padding') })
-  23. .justifyContent(FlexAlign.SpaceBetween)
-  24. .borderRadius(StyleConstants.CIRCLE_BORDER_RADIUS)
-  25. .backgroundColor($r('app.color.home_btn_background'))
-  26. // ...
-  27. }
-  28. }, (item: Menu, index: number) => JSON.stringify(item) + index)
-  29. }
-  30. .scrollBar(BarState.Off)
-  31. .space(LengthMetrics.vp(5))
-  32. .borderRadius(StyleConstants.CIRCLE_BORDER_RADIUS)
-  33. .focusable(true)
-  34. .focusOnTouch(true)
-  35. .defaultFocus(true)
-  36. }
-  37. .align(Alignment.Center)
-  38. .width(StyleConstants.FULL_WIDTH)
-  39. .height(StyleConstants.FULL_HEIGHT)
-  40. .borderRadius(StyleConstants.CIRCLE_BORDER_RADIUS)
-  ```
+**界面开发**
 
-  [Home.ets](https://gitcode.com/HarmonyOS_Codelabs/MusicHome/blob/master/products/watch/src/main/ets/view/Home.ets#L66-L114)
+列表页通过栅格系统区分窄屏堆叠与宽屏分栏。
 
-* 首页轮播区域
+* 窄屏（如横向断点sm、md下占满列宽）：封面信息区域与列表区域在[GridRow](../harmonyos-references/ts-container-gridrow.md)中均占据满列，呈现上图下文的布局。
+* 宽屏（如横向断点lg、xl）：同一[GridRow](../harmonyos-references/ts-container-gridrow.md)下封面信息区域与列表区按列跨度分为四列与八列，实现左右分栏。
 
-  使用[ArcSwiper](../harmonyos-references/ts-container-arcswiper.md)组件实现，通过左右滑动实现首页和歌单页的切换，并且通过indicator属性设置导航点样式。
+实现方案如下表：
 
-  ```
-  1. Column() {
-  2. Row() {
-  3. ArcSwiper(this.wearableSwiperController) {
-  4. Home()
-  5. PlayList()
-  6. }
-  7. .duration(400)
-  8. .indicator(this.arcDotIndicator
-  9. .arcDirection(ArcDirection.SIX_CLOCK_DIRECTION)
-  10. .selectedItemColor('#FE1B48')
-  11. )
-  12. // ...
-  13. }
-  14. .height(StyleConstants.FULL_HEIGHT)
-  15. }
-  16. .width(StyleConstants.FULL_WIDTH)
-  ```
-
-  [Index.ets](https://gitcode.com/HarmonyOS_Codelabs/MusicHome/blob/master/products/watch/src/main/ets/pages/Index.ets#L45-L84)
-
-### 歌单页
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/of2n0TWCSeequSIg2MHKOQ/zh-cn_image_0000002471180829.png "点击放大")
-
-| 区域编号 | 简介 | 实现方案 |
+|  |  |  |
 | --- | --- | --- |
-| 1 | 歌单列表区域 | 使用[ArcSwiper](../harmonyos-references/ts-container-arcswiper.md)组件实现上下滑动切换歌单。 |
-
-歌单页使用[ArcSwiper](../harmonyos-references/ts-container-arcswiper.md)组件实现。通过将组件的vertical属性设置为true，指定滑动轴为垂直方向，从而实现竖向滑动交互。将indicator属性设置为false，隐藏默认的页面导航点，减少视觉干扰。
-
-```
-1. Column() {
-2. ArcSwiper(this.wearableSwiperController) {
-3. ForEach(this.playList, (item: PlayListSheet) => {
-4. Column({ space: 10 }) {
-5. Row() {
-6. Text(item.name)
-7. .fontWeight(FontWeight.Bold)
-8. .fontColor($r('app.color.font_color'))
-9. .fontSize($r('app.float.home_font_size'))
-10. Image($r('app.media.chevron_right'))
-11. .width($r('app.float.home_icon_jump_width'))
-12. .margin({ left: $r('app.float.playlist_padding') })
-13. }
-
-15. Image($r('app.media.play_btn_fill'))
-16. .width($r('app.float.playlist_icon'))
-17. .height($r('app.float.playlist_icon'))
-18. .position({ x: '25%', y: '65%' })
-19. Text(item.title)
-20. }
-21. .width(StyleConstants.FULL_WIDTH)
-22. .height(StyleConstants.FULL_HEIGHT)
-23. .backgroundImage(item.background, ImageRepeat.NoRepeat)
-24. .backgroundImageSize({ width: StyleConstants.FULL_WIDTH, height: StyleConstants.FULL_HEIGHT })
-25. .justifyContent(FlexAlign.SpaceBetween)
-26. .padding({ top: $r('app.float.playlist_row_padding'), bottom: $r('app.float.playlist_row_padding') })
-27. // ...
-28. }, (item: PlayListSheet, index?: number) => index + JSON.stringify(item))
-29. }
-30. .index(0)
-31. .duration(400)
-32. .focusable(true)
-33. .focusOnTouch(true)
-34. .defaultFocus(true)
-35. .vertical(true)
-36. .indicator(false)
-37. // ...
-38. }
-39. .width(StyleConstants.FULL_WIDTH)
-40. .height(StyleConstants.FULL_HEIGHT)
-```
-
-[PlayList.ets](https://gitcode.com/HarmonyOS_Codelabs/MusicHome/blob/master/products/watch/src/main/ets/view/PlayList.ets#L64-L135)
-
-### 歌曲列表页
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/DfRe75jRSxyPYikMhx23Jw/zh-cn_image_0000002437742444.png "点击放大")
-
-| 区域编号 | 简介 | 实现方案 |
-| --- | --- | --- |
-| 1 | 歌曲列表区域 | 使用首页一致的[ArcList](../harmonyos-references/ts-container-arclist.md)实现多行展示歌曲。 |
-
-列表页采用与首页一致的ArcList弧形列表布局。每一行歌曲项中，左侧使用Image组件展示专辑封面，并通过设置borderRadius为50%实现圆形效果；右侧歌曲信息使用Column组件，设置layoutWeight为1以占据剩余全部宽度，再结合Column组件默认居中的特性，实现剩余空间内居中对齐。
-
-```
-1. Column() {
-2. ArcList({ initialIndex: 0 }) {
-3. ForEach(this.songList, (item: SongItem, index: number) => {
-4. ArcListItem() {
-5. Row() {
-6. Image(item.label)
-7. .width($r('app.float.home_icon_width'))
-8. .height($r('app.float.home_icon_width'))
-9. .borderRadius(StyleConstants.CIRCLE_BORDER_RADIUS)
-
-11. Column() {
-12. Text(item.title)
-13. .fontWeight(FontWeight.Bold)
-14. .fontColor($r('app.color.font_color'))
-15. Text(item.singer)
-16. .fontColor($r('app.color.text_color'))
-17. }
-18. .layoutWeight(1)
-19. }
-20. .width(this.HOME_BTN_WIDTH)
-21. .height($r('app.float.home_btn_height'))
-22. .padding({ left: $r('app.float.list_btn_padding'), right: $r('app.float.list_btn_padding') })
-23. .borderRadius(StyleConstants.CIRCLE_BORDER_RADIUS)
-24. .focusable(true)
-25. .focusOnTouch(true)
-26. .backgroundColor($r('app.color.home_btn_background'))
-27. }
-28. .align(Alignment.Center)
-29. // ...
-30. }, (item: SongItem, index: number) => JSON.stringify(item) + index)
-31. }
-32. .scrollBar(BarState.Off)
-33. .space(LengthMetrics.vp(5))
-34. .borderRadius(StyleConstants.CIRCLE_BORDER_RADIUS)
-35. .focusable(true)
-36. .focusOnTouch(true)
-37. .defaultFocus(true)
-38. }
-39. .align(Alignment.Center)
-40. .width(StyleConstants.FULL_WIDTH)
-41. .height(StyleConstants.FULL_HEIGHT)
-42. .borderRadius(StyleConstants.CIRCLE_BORDER_RADIUS)
-```
-
-[SongList.ets](https://gitcode.com/harmonyos_codelabs/MusicHome/blob/master/products/watch/src/main/ets/view/SongList.ets#L45-L93)
+| **区域编号** | **简介** | **实现方案** |
+| 1 | 标题栏 | 使用[HdsNavDestination](../harmonyos-references/ui-design-hdsnavdestination.md)实现，并支持滚动渐变效果 (IMMERSIVE\_GRADIENT\_BLUR）。 |
+| 2 | 封面信息 | 使用响应式组件[Flex](../harmonyos-references/ts-container-flex.md)实现，当横向断点为sm、md时采用水平布局，当断点为lg、xl时实现垂直布局。 |
+| 3 | 列表区 | 使用[List](../harmonyos-references/ts-container-list.md)结合[LazyForEach](../harmonyos-references/ts-rendering-control-lazyforeach.md)实现列表渲染，并通过lanes()属性设置响应式列数，根据横向断点为sm展示一列，md、lg、xl时展示两列。 |
+| 4 | 播放条 | 使用[Row](../harmonyos-references/ts-container-row.md)组件实现，分为封面区域以及音乐控制区两部分，封面区域通过[Stack](../harmonyos-references/ts-container-stack.md)层叠环形进度条。 |
 
 ### 播放页
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/cJYk1pHtSXmYuebTTLEUyQ/zh-cn_image_0000002471220997.png "点击放大")
+播放页用于沉浸式展示封面、进度条与歌词，并提供手势收起等交互功能。
+
+效果图如下所示：
+
+| 横向（/纵向）断点 | sm/md | sm | md | lg、xl |
+| --- | --- | --- | --- | --- |
+| 播放页 |  |  |  |  |
+| 歌词页 |  |  |  |  |
+
+**界面开发**
+
+全屏播放页面综合使用[Swiper](../harmonyos-references/ts-container-swiper.md)与[GridRow](../harmonyos-references/ts-container-gridrow.md)完成窄宽屏形态切换。
+
+* 窄屏（如横向断点sm下占满列宽）：采用[Swiper](../harmonyos-references/ts-container-swiper.md)分页方式，分页展示封面、歌曲信息与歌词等内容区域。
+* 宽屏（如横向断点md、lg、xl）：使用[GridRow](../harmonyos-references/ts-container-gridrow.md)双列排布歌曲信息控制区域与歌词区域。
+
+实现方案如下表：
+
+|  |  |  |
+| --- | --- | --- |
+| **区域编号** | **简介** | **实现方案** |
+| 1 | 顶部栏 | 使用[Row](../harmonyos-references/ts-container-row.md)组件实现，包含返回图标以及分享按钮。 |
+| 2 | 封面区域 | 使用[Image](../harmonyos-references/ts-basic-components-image.md)组件实现，并通过scale()属性实现下滑关闭缩放动画。 |
+| 3 | 控制区域 | 采用[Column](../harmonyos-references/ts-container-column.md)组件实现垂直布局，进度条由[Slider](../harmonyos-references/ts-basic-components-slider.md)组件实现。 |
+| 4 | 歌词区域 | 使用[Canvas](../harmonyos-references/ts-components-canvas-canvas.md)组件逐行绘制歌词。 |
+
+## 电脑端页面
+
+本章介绍如何基于现有移动端界面开发方案，实现代码逻辑与布局复用，高效完成音乐类应用在电脑设备上的界面开发。
+
+### 首页
+
+将电脑端首页划分为八个区域。
+
+效果图如下所示：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/gF-cwv8HTBCPpEC8YpWZXA/zh-cn_image_0000002622249901.png "点击放大")
+
+**界面开发**
+
+对各个区域使用的多种能力进行分析，实现方案如下表：
 
 | 区域编号 | 简介 | 实现方案 |
 | --- | --- | --- |
-| 1 | 歌曲信息及操作按钮区域 | 使用[Column](../harmonyos-references/ts-container-column.md)组件沿垂直方向布局展示歌曲信息、音乐控制按钮、操作按钮。使用[Stack](../harmonyos-references/ts-container-stack.md)和[Progress](../harmonyos-references/ts-basic-components-progress.md)实现控制按钮和环形进度条。 |
-| 2 | 音量控制区域 | 使用[ArcSlider](../harmonyos-references/ohos-arkui-advanced-arcslider.md)组件实现滑动调节音量。 |
+| 1 | 侧边页签 | 使用侧边栏容器[SideBarContainer](../harmonyos-references/ts-container-sidebarcontainer.md)实现。 |
+| 2 | 顶部页签及搜索框 | 同移动端[首页](bpta-multi-music-app-overview.md#section29721612105717)对应区域的布局实现方案。 |
+| 3 | 歌单卡片列表 |
+| 4 | 分类标签区域 |
+| 5 | 为你推荐区域 |
+| 7 | 音乐列表 |
+| 8 | 播放条 | 使用[Row](../harmonyos-references/ts-container-row.md)组件实现，分为封面区域和音乐控制区两部分，封面通过[Stack](../harmonyos-references/ts-container-stack.md)层叠环形进度条。 |
 
-* 歌曲信息及操作按钮区域
-  1. 使用[Stack](../harmonyos-references/ts-container-stack.md)组件可将多个元素堆叠在一起，实现更加灵活的布局。
-  2. 使用[Progress](../harmonyos-references/ts-basic-components-progress.md)组件用于实时显示当前音乐的播放进度，帮助用户了解歌曲的播放时间及剩余时间。采用环形进度条（ProgressType.Ring），既具视觉吸引力，又能高效利用屏幕空间。
+### 列表页
 
-  ```
-  1. Column() {
-  2. Column() {
-  3. Text(this.songList[this.selectIndex].title)
-  4. .fontWeight(FontWeight.Bold)
-  5. .fontColor($r('app.color.font_color'))
-  6. Text(this.songList[this.selectIndex].singer)
-  7. .fontColor($r('app.color.play_singer_color'))
-  8. }
+将电脑端列表划分为五个区域。
 
-  10. Row() {
-  11. Column() {
-  12. Image($r('app.media.previous_btn'))
-  13. .width($r('app.float.play_song_img'))
-  14. }
-  15. // ...
-  16. Stack() {
-  17. Image(this.songList[this.selectIndex].label)
-  18. .width($r('app.float.play_circle_img'))
-  19. .height($r('app.float.play_circle_img'))
-  20. .borderRadius(StyleConstants.CIRCLE_BORDER_RADIUS)
+效果图如下所示：
 
-  22. Progress({ value: this.time, total: this.max, type: ProgressType.Ring })
-  23. .width($r('app.float.play_progress_width'))
-  24. .backgroundColor(Color.Transparent)
-  25. .color($r('app.color.font_color'))
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/5Xr24Y02T2SZWM0ydokE-g/zh-cn_image_0000002622170043.png "点击放大")
 
-  27. Image($r('app.media.play_btn'))
-  28. .width($r('app.float.play_song_img'))
-  29. .visibility(this.isPlay === true ? Visibility.None : Visibility.Visible)
-  30. // ...
+**界面开发**
 
-  32. Image($r('app.media.pause_btn'))
-  33. .width($r('app.float.play_song_img'))
-  34. .visibility(this.isPlay === true ? Visibility.Visible : Visibility.None)
-  35. // ...
-  36. }
-  37. .width(this.HALF_WIDTH)
-  38. .align(Alignment.Center)
+实现方案如下表：
 
-  40. Column() {
-  41. Image($r('app.media.next_btn'))
-  42. .width($r('app.float.play_song_img'))
-  43. }
-  44. // ...
-  45. }
-  46. .justifyContent(FlexAlign.SpaceAround)
-  47. .width('85%')
+|  |  |  |
+| --- | --- | --- |
+| **区域编号** | **简介** | **实现方案** |
+| 1 | 侧边页签 | 使用侧边栏容器[SideBarContainer](../harmonyos-references/ts-container-sidebarcontainer.md)实现。 |
+| 2 | 标题栏 | 同移动端[列表页](bpta-multi-music-app-overview.md#section15311254145716)对应区域的布局实现方案。 |
+| 3 | 封面信息 |
+| 4 | 列表区 |
+| 5 | 播放条 |
 
-  49. Row() {
-  50. Image($r('app.media.download'))
-  51. .width($r('app.float.play_icon_width'))
-  52. Image($r('app.media.repeat'))
-  53. .width($r('app.float.play_icon_width'))
-  54. Image($r('app.media.full_screen'))
-  55. .width($r('app.float.play_icon_width'))
-  56. }
-  57. .width('60%')
-  58. .justifyContent(FlexAlign.SpaceAround)
-  59. }
-  60. .width(StyleConstants.FULL_WIDTH)
-  61. .height(StyleConstants.FULL_HEIGHT)
-  62. .padding({ top: $r('app.float.play_column_padding'), bottom: $r('app.float.play_column_padding') })
-  63. .justifyContent(FlexAlign.SpaceAround)
-  ```
+### 播放页
 
-  [SongPage.ets](https://gitcode.com/harmonyos_codelabs/MusicHome/blob/master/products/watch/src/main/ets/view/SongPage.ets#L46-L131)
-* 音量控制区域
-  1. 音量控制交互通过[ArcSlider](../harmonyos-references/ohos-arkui-advanced-arcslider.md)实现。通过设置position={ top: 0, right: 0 }，将滑动条定位在界面右上角，使其层级覆盖于其他组件之上，确保良好的可见性与操作便捷性。
-  2. 在滑动条旁新增麦克风图标，并通过精确的position布局进行定位，直观提示用户该控件与音频调节相关，增强功能可识别性与用户体验。
+电脑端播放页面与移动端播放页面实现效果一致，可参考移动端[播放页](bpta-multi-music-app-overview.md#section143891320165811)实现。
 
-  ```
-  1. Column() {
-  2. ArcSlider({ options: this.arcSliderOptions })
-  3. .focusable(true)
-  4. .focusOnTouch(true)
-  5. .defaultFocus(true)
-  6. .zIndex(999)
-  7. .onDigitalCrown((event: CrownEvent) => {
-  8. event.stopPropagation();
-  9. const STEP_DEGREE = 20;
-  10. let newVolume = this.volume + event.degree / STEP_DEGREE;
-  11. newVolume = Math.max(0, Math.min(100, newVolume));
-  12. this.setAVPlayerVolume(newVolume);
-  13. })
-  14. Image($r('app.media.speaker_fill'))
-  15. .width($r('app.float.volume_icon_width'))
-  16. .height($r('app.float.volume_icon_width'))
-  17. .rotate({ angle: '-30deg' })
-  18. .position({
-  19. right: $r('app.float.volume_icon_right'),
-  20. top: $r('app.float.volume_icon_top'),
-  21. })
-  22. }
-  23. .hitTestBehavior(HitTestMode.Transparent)
-  24. .position({
-  25. top: 0,
-  26. right: 0
-  27. })
-  ```
+## 智慧屏页面
 
-  [VolumeSliderComponent.ets](https://gitcode.com/harmonyos_codelabs/MusicHome/blob/master/products/watch/src/main/ets/view/VolumeSliderComponent.ets#L76-L103)
+本章介绍如何基于现有移动端界面开发方案，实现代码逻辑与布局复用，以高效完成音乐类应用在智慧屏设备上的界面开发。
+
+### 首页
+
+将智慧屏首页划分为四个区域。
+
+效果图如下所示：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/0K8wq7u6RrSkJsjwzbbKBQ/zh-cn_image_0000002591610438.png "点击放大")
+
+**界面开发**
+
+对各个区域使用的多种能力进行分析，实现方案如下表：
+
+| 区域编号 | 简介 | 实现方案 |
+| --- | --- | --- |
+| 1 | 顶部胶囊导航 | 使用[Row](../harmonyos-references/ts-container-row.md)组件实现横向布局，使用[List](../harmonyos-references/ts-container-list.md)组件实现胶囊导航。 |
+| 2 | 歌单卡片列表 | 与移动端[首页](bpta-multi-music-app-overview.md#section29721612105717)对应区域的布局实现方案一致。 |
+| 3 | 为你推荐区域 |
+| 4 | 音乐列表 |
+
+### 列表页
+
+智慧屏列表页与移动端显示效果存在较大差异，建议单独开发智慧屏列表页，并将其划分为两个区域。
+
+效果图如下所示：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/v5Im_2bdTr6sicpA9MVEjA/zh-cn_image_0000002591770364.png "点击放大")
+
+**界面开发**
+
+实现方案如下表：
+
+|  |  |  |
+| --- | --- | --- |
+| **区域编号** | **简介** | **实现方案** |
+| 1 | 歌单信息 | 使用[Row](../harmonyos-references/ts-container-row.md)组件实现水平布局。 |
+| 2 | 列表区 | 使用[List](../harmonyos-references/ts-container-list.md)结合[LazyForEach](../harmonyos-references/ts-rendering-control-lazyforeach.md)实现列表渲染。 |
+
+### 播放页
+
+智慧屏播放页与移动端播放页实现效果一致，参考移动端[播放页](bpta-multi-music-app-overview.md#section143891320165811)实现。
+
+## 智能穿戴页面
+
+本章将介绍音乐应用如何借助“一多”布局能力，在智能穿戴设备上实现独立应用开发，并以首页、歌曲列表页与播放页等典型页面为例，详细阐述其设计与实现。
+
+### 首页
+
+穿戴首页通过[ArcSwiper](../harmonyos-references/ts-container-arcswiper.md)实现首页与歌单列表的横向切换，并在首页显示当前播放的音乐以方便用户操作。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/k_KGuT-MQGyceeeDAUrrgg/zh-cn_image_0000002622249905.png "点击放大")
+
+实现方案如下表：
+
+|  |  |  |
+| --- | --- | --- |
+| **区域编号** | **简介** | **实现方案** |
+| 1 | 顶部标题栏 | 使用[Row](../harmonyos-references/ts-container-row.md)组件实现标题与搜索按钮的水平布局。 |
+| 2 | 播控条 | 使用[Row](../harmonyos-references/ts-container-row.md)组件实现，分为封面区域和音乐控制区。 |
+| 3 | 推荐区域 | 使用[Stack](../harmonyos-references/ts-container-stack.md)组件实现图片堆叠效果。 |
+
+### 歌单与曲目列表
+
+穿戴列表页主要展示歌曲列表内容。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/zp7qNpZUQlinrjHE98dFYg/zh-cn_image_0000002622170045.png "点击放大")
+
+实现方案如下表：
+
+|  |  |  |
+| --- | --- | --- |
+| **区域编号** | **简介** | **实现方案** |
+| 1 | 歌单列表页 | 使用[ArcList](../harmonyos-references/ts-container-arclist.md)实现列表展示。 |
+
+### 播放页
+
+穿戴播放页划分为三个区域。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/A3zm7w0vRICJRuDhcHcjeA/zh-cn_image_0000002591610440.png "点击放大")
+
+实现方案如下表：
+
+|  |  |  |
+| --- | --- | --- |
+| **区域编号** | **简介** | **实现方案** |
+| 1 | 歌曲信息 | 使用[Column](../harmonyos-references/ts-container-column.md)组件实现歌名与歌手名的垂直布局。 |
+| 2 | 控制区域 | 使用[Row](../harmonyos-references/ts-container-row.md)组件实现上一首、播放/暂停、下一首的水平布局。 |
+| 3 | 辅助功能区 | 使用[Row](../harmonyos-references/ts-container-row.md)组件实现水平布局。 |
+
+### 交互开发
+
+智能穿戴设备音乐应用因界面空间有限，在页面中直接添加音量调节功能较为不便，因此可利用表冠监听功能实现音量的调节。
+
+* 表冠调节音量
+
+  穿戴设备支持[onDigitalCrown](../harmonyos-references/ts-universal-events-crown.md#ondigitalcrown)事件，当组件获焦后旋转表冠触发该事件。音乐应用可在播放页面监听此事件，通过旋转表冠调节音量大小，具体交互逻辑请参见[示例代码](bpta-multi-music-app-overview.md#section520865982117)。
 
 ## 示例代码
 
-* [多设备音乐界面](https://gitcode.com/harmonyos_codelabs/MusicHome)
+* [多设备音乐界面](https://gitcode.com/HarmonyOS_Samples/MusicHome)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-crash-moni
 title: 崩溃监测实践
 breadcrumb: 最佳实践 > 稳定性 > 稳定性运维 > 崩溃监测实践
 category: best-practices
-scraped_at: 2026-04-28T08:23:07+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:85241b0e199d8344f99c7ba1d0643d70dc44a7aac6c681ab1e68835fe284698a
+scraped_at: 2026-09-02T15:03:24+08:00
+doc_updated_at: 2026-07-09
+content_hash: sha256:0642a258abe981355602686a8efb7d6056db9ecc0e7cd04176d0bb354857f8b5
 ---
 
 ## 概述
@@ -36,7 +36,7 @@ content_hash: sha256:85241b0e199d8344f99c7ba1d0643d70dc44a7aac6c681ab1e68835fe28
 | HiAppEvent | 事件打点机制，可以订阅多种事件，包括崩溃；  属于系统自带API； | 结构化数据，可收集上传到指定服务器；  自行对数据进行分析处理操作； |
 | AGC崩溃服务 | 实时监控服务，可以订阅崩溃提醒；  无需集成SDK； | 数据透明传输，基于AGC一站式服务；  无需代码开发，查看可视化数据报告； |
 
-说明
+**说明** 
 
 在语言层面，二者都支持ArkTS和C/C++的运行时崩溃监测，针对C/C++的崩溃故障问题，可参考[CppCrash类问题分析方法](bpta-stability-app-crash-cpp-way.md)。
 
@@ -97,9 +97,9 @@ AGC崩溃服务的开发使用流程如下：
 
 1. 参照示例，手动触发一次崩溃。
 
-   ```
-   1. let test:string = "{name:'xiaoming' age:10}";
-   2. let result:object = JSON.parse(test);
+   ```screen
+   let test:string = "{name:'xiaoming' age:10}";
+   let result:object = JSON.parse(test);
    ```
 2. 前往AGC崩溃服务查看崩溃数据，分析问题。
 
@@ -109,8 +109,8 @@ AGC崩溃服务的开发使用流程如下：
 2. 在项目列表中找到对应项目，然后在该项目的应用列表中找到对应应用。
 3. 点击“质量 > APMS > 异常管理”，进入异常管理页面。
 4. 点击不同类型的崩溃页签，可以查看相应的崩溃事件，例如CPP\_CRASH、JS\_ERROR、OOM和PROCESS\_KILL。
-5. 在具体页签中的“异常崩溃列表”区域，可以查看崩溃的详细信息。其中，崩溃服务提取了应用崩溃堆栈日志中的关键帧，并自动将崩溃代码出现位置相同的崩溃聚合成一类崩溃事件。借助服务提供的一系列数据，开发者可以分析崩溃发生的原因，具体数据指标及使用见[分析崩溃问题](../app/agc-help-apms-crash-analyse-0000002271413041.md)。
+5. 在具体页签中的“异常崩溃列表”区域，可以查看崩溃的详细信息。其中，崩溃服务提取了应用崩溃堆栈日志中的关键帧，并自动将崩溃代码出现位置相同的崩溃聚合成一类崩溃事件。借助服务提供的一系列数据，开发者可以分析崩溃发生的原因，具体数据指标及使用见[崩溃](../app/agc-help-apms-crash-0000002577579282.md)。
 
-说明
+**说明** 
 
 运行在HarmonyOS ROM版本 ≥ 3.0.0.25的ArkTS应用无需集成SDK，创建应用并开通服务即可。

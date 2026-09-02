@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-faq-abou
 title: 常见基本功能问题汇总
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API常见问题汇总 > 常见基本功能问题汇总
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fe33e9cbd184bf1717db9eae4cfbb11b325bcc9801cb145025ee7a8499738434
+scraped_at: 2026-09-02T14:50:46+08:00
+doc_updated_at: 2026-08-21
+content_hash: sha256:5545142f63e82d983df43ae7f05502983ca9af98580a32bfc97f143cb3262521
 ---
 
 ## 模块加载失败，报错信息显示Error message: is not callable.
@@ -14,21 +14,21 @@ content_hash: sha256:fe33e9cbd184bf1717db9eae4cfbb11b325bcc9801cb145025ee7a84997
 
 通过如下模块注册代码提供的libxxx.so，在部分项目中调用动态库的API，出现Error message: is not callable
 
-```
-1. static napi_module demoModule = {
-2. .nm_version = 1,
-3. .nm_flags = 0,
-4. .nm_filename = nullptr,
-5. .nm_register_func = Init,
-6. .nm_modname = "xxx",
-7. .nm_priv = nullptr,
-8. .reserved = { 0 },
-9. };
+```cpp
+static napi_module demoModule = {
+    .nm_version = 1,
+    .nm_flags = 0,
+    .nm_filename = nullptr,
+    .nm_register_func = Init,
+    .nm_modname = "xxx",
+    .nm_priv = nullptr,
+    .reserved = { 0 },
+};
 
-11. extern "C" __attribute__((constructor)) void RegisterEntryModule()
-12. {
-13. napi_module_register(&demoModule);
-14. }
+extern "C" __attribute__((constructor)) void RegisterEntryModule()
+{
+    napi_module_register(&demoModule);
+}
 ```
 
 * 排查建议：
@@ -49,7 +49,7 @@ content_hash: sha256:fe33e9cbd184bf1717db9eae4cfbb11b325bcc9801cb145025ee7a84997
 * 具体问题：在大量需要通过C++调用ArkTS方法进行通信的场景，如何保证异步任务的有序性？
 * 参考方案：
 
-可参考线程安全函数来实现，napi\_call\_threadsafe\_function可保证异步任务执行顺序, 需要注意的是这些异步任务会投递到ArkTS线程顺序执行，如果是投递到主线程，异步任务的执行时间过长可能导致应用冻结退出，所以不建议将长耗时的任务通过线程安全函数投递到主线程执行。
+可参考线程安全函数来实现，napi\_call\_threadsafe\_function可保证异步任务执行顺序，需要注意的是这些异步任务会投递到ArkTS线程顺序执行，如果是投递到主线程，异步任务的执行时间过长可能导致应用冻结退出，所以不建议将长耗时的任务通过线程安全函数投递到主线程执行。
 
 [使用Node-API接口进行线程安全开发](use-napi-thread-safety.md)
 
@@ -74,7 +74,7 @@ content_hash: sha256:fe33e9cbd184bf1717db9eae4cfbb11b325bcc9801cb145025ee7a84997
 
 可参考文档：
 
-[Native侧子线程与UI主线程通信](../best-practices/bpta-native-sub-main-comm.md)
+[Native侧子线程与UI主线程通信](native_subthread-to-uimain.md)
 
 [使用Node-API接口进行异步任务开发](use-napi-asynchronous-task.md)
 
@@ -112,43 +112,43 @@ content_hash: sha256:fe33e9cbd184bf1717db9eae4cfbb11b325bcc9801cb145025ee7a84997
 * 常见错误场景示例如下：
 
 ```
-1. napi_value NapiInvalidArg(napi_env env, napi_callback_info)
-2. {
-3. napi_status status = napi_ok;
-4. status = napi_get_uv_event_loop(env, nullptr); // loop为nullptr, 状态码napi_invalid_arg
-5. if (status == napi_ok) {
-6. // do something
-7. }
+napi_value NapiInvalidArg(napi_env env, napi_callback_info)
+{
+    napi_status status = napi_ok;
+    status = napi_get_uv_event_loop(env, nullptr); // loop为nullptr, 状态码napi_invalid_arg
+    if (status == napi_ok) {
+        // do something
+    }
 
-9. uv_loop_s* loop = nullptr;
-10. status = napi_get_uv_event_loop(nullptr, &loop); // env为nullptr, 状态码napi_invalid_arg
-11. if (status == napi_ok) {
-12. // do something
-13. }
+    uv_loop_s* loop = nullptr;
+    status = napi_get_uv_event_loop(nullptr, &loop); // env为nullptr, 状态码napi_invalid_arg
+    if (status == napi_ok) {
+        // do something
+    }
 
-15. status = napi_get_uv_event_loop(nullptr, nullptr); // env, loop均为nullptr, 状态码napi_invalid_arg
-16. if (status == napi_ok) {
-17. // do something
-18. }
+    status = napi_get_uv_event_loop(nullptr, nullptr); // env, loop均为nullptr, 状态码napi_invalid_arg
+    if (status == napi_ok) {
+        // do something
+    }
 
-20. return nullptr;
-21. }
+    return nullptr;
+}
 
-23. napi_value NapiGenericFailure(napi_env env, napi_callback_info)
-24. {
-25. std::thread([]() {
-26. napi_env env = nullptr;
-27. napi_create_ark_runtime(&env); // 通常情况下，需要对该接口返回值进行判断
-28. // napi_destroy_ark_runtime 会将指针置空，拷贝一份用以构造问题场景
-29. napi_env copiedEnv = env;
-30. napi_destroy_ark_runtime(&env);
-31. uv_loop_s* loop = nullptr;
-32. napi_status status = napi_get_uv_event_loop(copiedEnv, &loop); // env无效, 状态码napi_generic_failure
-33. if (status == napi_ok) {
-34. // do something
-35. }
-36. }).detach();
-37. }
+napi_value NapiGenericFailure(napi_env env, napi_callback_info)
+{
+    std::thread([]() {
+        napi_env env = nullptr;
+        napi_create_ark_runtime(&env); // 通常情况下，需要对该接口返回值进行判断
+        // napi_destroy_ark_runtime 会将指针置空，拷贝一份用以构造问题场景
+        napi_env copiedEnv = env;
+        napi_destroy_ark_runtime(&env);
+        uv_loop_s* loop = nullptr;
+        napi_status status = napi_get_uv_event_loop(copiedEnv, &loop); // env无效, 状态码napi_generic_failure
+        if (status == napi_ok) {
+            // do something
+        }
+    }).detach();
+}
 ```
 
 ## Native层调用ArkTS层对象方法必须传入一个function给Native层吗
@@ -188,7 +188,7 @@ content_hash: sha256:fe33e9cbd184bf1717db9eae4cfbb11b325bcc9801cb145025ee7a84997
 
 不支持该功能，每次napi\_get\_value\_string\_utf8都需要有一个拷贝过程。
 
-拷贝是必要的，因为会涉及到string生命周期。当触发GC的时候，ArkTS对象可能会在虚拟机里面被搬移，可能搬移到其它地方，也可能直接对象被回收。如果直接返回类似char\*的地址，对象被移动或回收后，原地址的指向的内存可能发生变化。
+拷贝是必要的，因为会涉及到string生命周期。当触发GC的时候，ArkTS对象可能会在虚拟机里面被搬移，可能搬移到其它地方，也可能直接对象被回收。如果直接返回类似char\*的地址，对象被移动或回收后，原地址指向的内存可能发生变化。
 
 ## 多线程下napi\_env的使用注意事项
 
@@ -292,21 +292,21 @@ Node-API接口正常执行后，会返回一个napi\_ok的状态枚举值，若N
 
 * Node-API接口执行前一般会进行入参校验，首先进行的是判空校验。在代码中体现为：
 
-  ```
-  1. CHECK_ENV：env判空校验
-  2. CHECK_ARG：其它入参判空校验
+  ```cpp
+  CHECK_ENV：env判空校验
+  CHECK_ARG：其它入参判空校验
   ```
 * 某些Node-API接口还有入参类型校验。比如napi\_get\_value\_double接口是获取ArkTS number对应的C double值，首先就要保证的是：ArkTS value类型为number，因此可以看到相关校验。
 
-  ```
-  1. RETURN_STATUS_IF_FALSE(env, NativeValue->TypeOf() == Native_NUMBER, napi_number_expected);
+  ```cpp
+  RETURN_STATUS_IF_FALSE(env, NativeValue->TypeOf() == Native_NUMBER, napi_number_expected);
   ```
 * 还有一些接口会对其执行结果进行校验。比如napi\_call\_function这个接口，其功能是执行一个ArkTS Function，当ArkTS Function中出现异常时，Node-API将会返回napi\_pending\_exception的状态值。
 
-  ```
-  1. // 接口内部实现，经校验可返回状态值
-  2. auto resultValue = engine->CallFunction(NativeRecv, NativeFunc, NativeArgv, argc);
-  3. RETURN_STATUS_IF_FALSE(env, resultValue != nullptr, napi_pending_exception)
+  ```cpp
+  // 接口内部实现，经校验可返回状态值
+  auto resultValue = engine->CallFunction(NativeRecv, NativeFunc, NativeArgv, argc);
+  RETURN_STATUS_IF_FALSE(env, resultValue != nullptr, napi_pending_exception)
   ```
 * 还有一些状态值需要根据相应Node-API接口具体分析：确认具体的状态值，分析这个状态值在什么情况下会返回，再排查具体出错原因。
 
@@ -330,35 +330,35 @@ Node-API接口正常执行后，会返回一个napi\_ok的状态枚举值，若N
 
 示例代码：
 
-```
-1. struct ObjectPair {
-2. CppObjA* objA;
-3. CppObjB* objB;
-4. bool objADestroyedA = false;
-5. bool objADestroyedB = false;
-6. };
+```cpp
+struct ObjectPair {
+    CppObjA* objA;
+    CppObjB* objB;
+    bool objADestroyedA = false;
+    bool objADestroyedB = false;
+};
 
-8. // jsObjA 的 finalize 回调
-9. void FinalizeA(napi_env env, void* data, void* hint) {
-10. ObjectPair* pair = static_cast<ObjectPair*>(data);
-11. pair->objADestroyedA = true;
-12. if (pair->objADestroyedA && pair->objADestroyedB) {
-13. delete pair->objA; // 确保先销毁 A
-14. delete pair->objB; // 再销毁 B
-15. delete pair;       // 释放包装结构
-16. }
-17. }
+// jsObjA 的 finalize 回调
+void FinalizeA(napi_env env, void* data, void* hint) {
+    ObjectPair* pair = static_cast<ObjectPair*>(data);
+    pair->objADestroyedA = true;
+    if (pair->objADestroyedA && pair->objADestroyedB) {
+        delete pair->objA; // 确保先销毁 A
+        delete pair->objB; // 再销毁 B
+        delete pair;       // 释放包装结构
+    }
+}
 
-19. // jsObjB 的 finalize 回调
-20. void FinalizeB(napi_env env, void* data, void* hint) {
-21. ObjectPair* pair = static_cast<ObjectPair*>(data);
-22. pair->objADestroyedB = true;
-23. if (pair->objADestroyedA && pair->objADestroyedB) {
-24. delete pair->objA; // 确保先销毁 A
-25. delete pair->objB; // 再销毁 B
-26. delete pair;       // 释放包装结构
-27. }
-28. }
+// jsObjB 的 finalize 回调
+void FinalizeB(napi_env env, void* data, void* hint) {
+    ObjectPair* pair = static_cast<ObjectPair*>(data);
+    pair->objADestroyedB = true;
+    if (pair->objADestroyedA && pair->objADestroyedB) {
+        delete pair->objA; // 确保先销毁 A
+        delete pair->objB; // 再销毁 B
+        delete pair;       // 释放包装结构
+    }
+}
 ```
 
 ## napi\_call\_threadsafe\_function回调任务不执行

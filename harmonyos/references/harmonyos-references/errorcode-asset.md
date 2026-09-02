@@ -3,22 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 关键资产存储服务错误码
 breadcrumb: API参考 > 系统 > 安全 > Asset Store Kit（关键资产存储服务） > 错误码 > 关键资产存储服务错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:49+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:2b70193ff332eaf6efd0993a6207a3070f9fe9fd71e6d9195c3874bf03997e36
+scraped_at: 2026-09-02T15:01:40+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:998bb5c9ab0cc82df2cba4191b1a710b017c6d5ef75606c297db1ee3e29c74f0
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 24000001 关键资产服务不可用
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The ASSET service is unavailable.
+
+**错误描述**
+
+关键资产服务不可用。
 
 **可能原因**
 
@@ -30,11 +32,13 @@ The ASSET service is unavailable.
 
 ## 24000002 未找到关键资产
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The asset is not found.
+
+**错误描述**
+
+未找到关键资产。
 
 **可能原因**
 
@@ -48,11 +52,13 @@ The asset is not found.
 
 ## 24000003 关键资产已存在
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The asset already exists.
+
+**错误描述**
+
+关键资产已存在。
 
 **可能原因**
 
@@ -67,11 +73,13 @@ The asset already exists.
 
 ## 24000004 访问被拒绝
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Access denied.
+
+**错误描述**
+
+访问关键资产被拒绝。
 
 **可能原因**
 
@@ -85,11 +93,13 @@ Access denied.
 
 ## 24000005 锁屏状态不匹配
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The screen lock status does not match.
+
+**错误描述**
+
+设备锁屏状态与关键资产访问控制要求不匹配。
 
 **可能原因**
 
@@ -103,11 +113,13 @@ The screen lock status does not match.
 
 ## 24000006 系统内存不足
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Insufficient memory.
+
+**错误描述**
+
+系统内存不足。
 
 **可能原因**
 
@@ -119,11 +131,13 @@ Insufficient memory.
 
 ## 24000007 关键资产损坏
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The asset is corrupted.
+
+**错误描述**
+
+关键资产损坏。
 
 **可能原因**
 
@@ -135,11 +149,13 @@ The asset is corrupted.
 
 ## 24000008 数据库操作失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The database operation failed.
+
+**错误描述**
+
+操作关键资产数据库失败。
 
 **可能原因**
 
@@ -153,11 +169,13 @@ The database operation failed.
 
 ## 24000009 算法库操作失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The cryptography operation failed.
+
+**错误描述**
+
+密码算法操作失败。
 
 **可能原因**
 
@@ -169,11 +187,13 @@ The cryptography operation failed.
 
 ## 24000010 进程通信错误
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 IPC failed.
+
+**错误描述**
+
+IPC通信失败。
 
 **可能原因**
 
@@ -185,11 +205,13 @@ IPC failed.
 
 ## 24000011 包管理服务异常
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Calling the Bundle Manager service failed.
+
+**错误描述**
+
+调用包管理服务失败。
 
 **可能原因**
 
@@ -201,11 +223,13 @@ Calling the Bundle Manager service failed.
 
 ## 24000012 账号系统服务异常
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Calling the OS Account service failed.
+
+**错误描述**
+
+调用账号系统服务失败。
 
 **可能原因**
 
@@ -217,11 +241,13 @@ Calling the OS Account service failed.
 
 ## 24000013 访问控制服务异常
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Calling the Access Token service failed.
+
+**错误描述**
+
+调用访问控制服务失败。
 
 **可能原因**
 
@@ -233,11 +259,13 @@ Calling the Access Token service failed.
 
 ## 24000014 文件操作失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The file operation failed.
+
+**错误描述**
+
+文件操作失败。
 
 **可能原因**
 
@@ -250,11 +278,13 @@ The file operation failed.
 
 ## 24000015 获取系统时间失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Getting the system time failed.
+
+**错误描述**
+
+获取系统时间失败。
 
 **可能原因**
 
@@ -266,11 +296,13 @@ Getting the system time failed.
 
 ## 24000016 缓存数量超限
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The cache exceeds the limit.
+
+**错误描述**
+
+关键资产预查询缓存数量超限。
 
 **可能原因**
 
@@ -282,11 +314,13 @@ The cache exceeds the limit.
 
 ## 24000017 该子功能不支持
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The capability is not supported.
+
+**错误描述**
+
+该子功能不支持。
 
 **可能原因**
 
@@ -298,11 +332,13 @@ The capability is not supported.
 
 ## 24000018 参数校验失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Parameter verify failed.
+
+**错误描述**
+
+参数校验失败。
 
 **可能原因**
 
@@ -311,3 +347,21 @@ Parameter verify failed.
 **处理步骤**
 
 根据错误信息，调整API参数，并重新调用接口。
+
+## 24000019 属性值不一致
+
+**错误信息**
+
+Each value of [Tag.GROUP\_ID](js-apis-asset.md#tag) and [Tag.REQUIRE\_ATTR\_ENCRYPTED](js-apis-asset.md#tag) in the array is not consistent.
+
+**错误描述**
+
+批量操作时，数组中关键资产的GROUP\_ID和REQUIRE\_ATTR\_ENCRYPTED属性值不一致。
+
+**可能原因**
+
+批量操作时，数组中每个关键资产的GROUP\_ID和REQUIRE\_ATTR\_ENCRYPTED属性值不一致。
+
+**处理步骤**
+
+确保批量操作数组中所有关键资产的GROUP\_ID和REQUIRE\_ATTR\_ENCRYPTED属性值一致，然后重新调用接口。

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: DevEco Studio 6.0.0 Beta1 及以上版本DevEco Studio ARKUI-X工程构建app报错
 breadcrumb: FAQ > DevEco Studio > 编译构建 > DevEco Studio 6.0.0 Beta1 及以上版本DevEco Studio ARKUI-X工程构建app报错
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:21:04+08:00
-doc_updated_at: 2026-03-25
-content_hash: sha256:d86e070a41baa1a30c2955b1799ca8190afea26ec34cd7a9fc9d08dee8467250
+scraped_at: 2026-09-02T14:54:55+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:171e2cca81804743b26b87768c96e4cbb9532c3288bf9c41dbccd3f26e2fae8d
 ---
 
 **问题现象**
 
 构建app报错：“Could not open settings generic class cache for settings file”
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/GvHrkadLTJa1PnjhFf6oEA/zh-cn_image_0000002381980508.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/NvMVPJAnSTSzFM4IXrKsQA/zh-cn_image_0000002654798059.png)
 
 **常见错误场景**
 
@@ -28,12 +28,12 @@ DevEco Studio 6.0.0 Beta1版本DevEco Studio内置的Java版本为21，当前Gra
 
   修改Gradle-wrapper.properties中的distributionUrl，升级为8.4版本。
 
-  ```
-  1. distributionUrl=https\://repo.huaweicloud.com/gradle/gradle-8.4-bin.zip
+  ```screen
+  distributionUrl=https\://repo.huaweicloud.com/gradle/gradle-8.4-bin.zip
   ```
 
 * **方式二：指定使用Java17**
 
   如果本地有JDK17，可以在Gradle.properties中通过org.gradle.java.home变量指定使用Java17。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/cBX7bWR7QoSH2Pb2DAyreg/zh-cn_image_0000002415859685.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/Ghq1ltO6QEytzGgzEtt7yw/zh-cn_image_0000002624638612.png)

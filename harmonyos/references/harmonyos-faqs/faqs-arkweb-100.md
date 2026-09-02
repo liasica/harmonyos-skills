@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-100
 title: 同层渲染场景下控件使能沉浸光感效果变透明
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 同层渲染场景下控件使能沉浸光感效果变透明
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:52+08:00
-doc_updated_at: 2026-04-22
+scraped_at: 2026-09-02T15:21:54+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:ac5f017a6f7001c196d1caa278dd0977d0c9b4ef32b0ea1d256bc52a575e8a33
 ---
 

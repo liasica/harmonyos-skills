@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-94
 title: 如果有多个UIAbility，如何判断应用进入后台
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 如果有多个UIAbility，如何判断应用进入后台
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:50+08:00
-doc_updated_at: 2026-03-20
+scraped_at: 2026-09-02T15:21:16+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:8f8f73d7a220d68ce0864cc50b76ce16540a21756aeb2e4c60298e3a5ed7c9e3
 ---
 

@@ -3,29 +3,25 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.data.dataShare (数据共享)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.dataShare (数据共享)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:49:22+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:0a1415b79a7320b3efbff977454bd389bb6904327dbb3bf190dbe906fe21c39c
+scraped_at: 2026-09-02T15:00:38+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5d577135ac88c709ade67273963eb5760282b383efbf657a1c6919cc6b86542e
 ---
 
-**DataShare**用于应用管理其自身数据，同时支持同个设备上不同应用间的数据共享。
+**DataShare**用于应用管理其自身数据，同时支持同一个设备上不同应用间的数据共享。
 
-说明
+**说明** 
 
-* 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+* 本模块首批接口从API version 20开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本模块接口仅可在Stage模型下使用。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { dataShare } from '@kit.ArkData';
+```ts
+import { dataShare } from '@kit.ArkData';
 ```
 
 ## dataShare.createDataProxyHandle20+
-
-PhonePC/2in1TabletTVWearable
 
 createDataProxyHandle(): Promise<DataProxyHandle>
 
@@ -49,24 +45,22 @@ createDataProxyHandle(): Promise<DataProxyHandle>
 
 **示例：**
 
-```
-1. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-6. dataShare.createDataProxyHandle().then((dataProxyHandle) => {
-7. console.info("createDataProxyHandle succeed");
-8. }).catch((err: BusinessError) => {
-9. console.error(`createDataProxyHandle error: code: ${err.code}, message: ${err.message}`);
-10. });
-11. }
-12. }
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    dataShare.createDataProxyHandle().then((dataProxyHandle) => {
+      console.info("createDataProxyHandle succeed");
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to create DataProxyHandle. Code: ${err.code}, message: ${err.message}`);
+    });
+  }
+}
 ```
 
 ## ChangeType20+
-
-PhonePC/2in1TabletTVWearable
 
 数据变更类型枚举。
 
@@ -80,8 +74,6 @@ PhonePC/2in1TabletTVWearable
 
 ## ProxyData20+
 
-PhonePC/2in1TabletTVWearable
-
 共享配置的数据结构。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Consumer
@@ -89,12 +81,13 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | uri | string | 否 | 否 | 共享配置的全局唯一标识。固定格式为"datashareproxy://{bundleName}/{path}"，其中bundleName为配置发布方应用的bundleName，path可随意填写，但同一应用内不允许重复。字符串长度不超过256个字节。 |
-| value | [ValueType](js-apis-data-valuesbucket.md#valuetype) | 否 | 是 | 共享配置的值。不填则为空字符串。字符串长度不超过4096个字节。当首次发布共享配置时，如果未填写，将默认设置为空字符串。在更新共享配置时，如果未填写，共享配置的值将不会被更新。 |
-| allowList | string[] | 否 | 是 | 允许订阅和读取共享配置的应用程序列表。不填则为空的字符串数组。数组最大长度为256，超过256的部分不生效。数组中每个元素为应用的[appIdentifier](../harmonyos-guides/common-problem-of-application.md#什么是appidentifier)，单个appIdentifier最大长度128字节，超过128字节的appIdentifier不会生效。当首次发布共享配置时，如果未填写，将默认为空的允许列表。在更新共享配置时，如果未填写，共享配置的允许列表将不会被更新。一个空的允许列表表示只有发布者能够访问该共享配置。 |
+| value | [ValueType](js-apis-data-valuesbucket.md#valuetype) | 否 | 是 | 共享配置的值。不填则为空字符串。  **说明：**  1. API版本26.0.0之前，字符串长度不超过4096个字节；从API版本26.0.0开始，默认允许的字符串最大长度为4096字节，可以在[DataProxyConfig](js-apis-data-datashare.md#dataproxyconfig20)中配置maxValueLength将最大长度扩展到102400字节。  2. 当首次发布共享配置时，如果未填写，将默认设置为空字符串。在更新共享配置时，如果未填写，共享配置的值将不会被更新。 |
+| allowList | string[] | 否 | 是 | 允许订阅和读取共享配置的应用程序列表。不填则为空的字符串数组。数组最大长度为256，超过256的部分不生效。当首次发布共享配置时，如果未填写，将默认为空的允许列表。在更新共享配置时，如果未填写，共享配置的允许列表将不会被更新。一个空的允许列表表示只有发布者能够访问该共享配置。  API版本26.0.0之前，数组中每个元素为应用的[appIdentifier](../harmonyos-guides/common-problem-of-application.md#什么是appidentifier)，单个appIdentifier最大长度128字节，超过128字节的appIdentifier不会生效。  从API版本26.0.0开始，数组支持配置特殊字符串"all"（区分大小写）表示允许所有应用访问。 |
+| isMultiValues | boolean | 否 | 是 | 表示是否为使用values的多值类型的共享配置。true表示本次发布的数据是多值类型，则value参数将被忽略。false表示非多值类型。默认为false。  **起始版本：** 26.0.0 |
+| values | Record<number, [ValueType](js-apis-data-valuesbucket.md#valuetype)> | 否 | 是 | 多值类型取值。Record中的第一个参数为key，key由用户指定，必须唯一。第二个参数为key对应的value。单个应用在单个URI下最多支持添加10个value，每个value最大长度为4096字节。同时，所有value的总长度受[DataProxyConfig](js-apis-data-datashare.md#dataproxyconfig20)中maxValueLength字段限制。该参数仅在isMultiValues设置为true时生效，且不允许为空。当isMultiValues为false时默认为undefined。  **起始版本：** 26.0.0 |
+| trustProviders | string[] | 否 | 是 | 可对多值类型共享多值配置进行赋值的App列表。数组最多包含256个元素，超出部分无效。数组中每个元素为某个应用的[appIdentifier](../harmonyos-guides/common-problem-of-application.md#什么是appidentifier)。appIdentifier最大长度为128字节，超过128字节的部分不生效。  若首次发布共享配置时未设置该参数，则默认赋值列表为空。赋值列表为空表示仅发布者可以对多值类型的共享配置进行赋值。该数组支持特殊字符串"all"（区分大小写），表示允许所有应用对多值类型的共享配置进行赋值。该参数仅在isMultiValues设置为true时生效。  **起始版本：** 26.0.0 |
 
 ## DataProxyChangeInfo20+
-
-PhonePC/2in1TabletTVWearable
 
 通知订阅者共享配置变更的数据结构。包括数据变更类型、变化的URI、变更的数据内容。
 
@@ -103,12 +96,11 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | [ChangeType](js-apis-data-datashare.md#changetype20) | 否 | 否 | 通知变更的类型。 |
-| uri | string | 否 | 否 | 通知变更指定URI。 |
+| uri | string | 否 | 否 | 通知变更指定URI。固定格式为"datashareproxy://{bundleName}/{path}"，其中bundleName为配置发布方应用的bundleName，path可随意填写，但同一应用内不允许重复，字符串长度不超过256个字节。 |
 | value | [ValueType](js-apis-data-valuesbucket.md#valuetype) | 否 | 否 | 更新的数据。 |
+| values | [ValueType](js-apis-data-valuesbucket.md#valuetype)[] | 否 | 是 | 多值类型的变更数据。如果变更的数据类型不是多值类型，则values值为undefined。  **起始版本：** 26.0.0 |
 
 ## DataProxyErrorCode20+
-
-PhonePC/2in1TabletTVWearable
 
 配置共享批量操作返回值的状态码枚举。
 
@@ -119,11 +111,9 @@ PhonePC/2in1TabletTVWearable
 | SUCCESS | 0 | 表示操作成功。 |
 | URI\_NOT\_EXIST | 1 | URI不存在或取消订阅一个未订阅过的URI。 |
 | NO\_PERMISSION | 2 | 没有权限在该URI上执行此操作。 |
-| OVER\_LIMIT | 3 | 表示当前应用发布的配置超过32个配置的上限。 |
+| OVER\_LIMIT | 3 | API版本26.0.0之前，表示当前应用发布的配置超过32个配置的上限；从API版本26.0.0开始，表示当前应用发布的配置超过64个配置的上限或获取的共享配置项的值超出[DataProxyConfig](js-apis-data-datashare.md#dataproxyconfig20)中maxValueLength字段配置的最大长度限制。 |
 
 ## DataProxyResult20+
-
-PhonePC/2in1TabletTVWearable
 
 配置共享批量操作结果的数据结构。
 
@@ -135,8 +125,6 @@ PhonePC/2in1TabletTVWearable
 | result | [DataProxyErrorCode](js-apis-data-datashare.md#dataproxyerrorcode20) | 否 | 否 | 操作结果的错误码。 |
 
 ## DataProxyGetResult20+
-
-PhonePC/2in1TabletTVWearable
 
 配置共享批量获取操作结果的数据结构。
 
@@ -151,8 +139,6 @@ PhonePC/2in1TabletTVWearable
 
 ## DataProxyType20+
 
-PhonePC/2in1TabletTVWearable
-
 数据代理类型的枚举。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Consumer
@@ -163,8 +149,6 @@ PhonePC/2in1TabletTVWearable
 
 ## DataProxyConfig20+
 
-PhonePC/2in1TabletTVWearable
-
 数据代理操作配置的数据结构。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Consumer
@@ -172,22 +156,38 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | [DataProxyType](js-apis-data-datashare.md#dataproxytype20) | 否 | 否 | 数据代理操作的类型。 |
+| maxValueLength | [DataProxyMaxValueLength](js-apis-data-datashare.md#dataproxymaxvaluelength) | 否 | 是 | 设置共享配置的值允许的最大长度。如果未填写，默认为MAX\_LENGTH\_4K，即共享配置的值允许的最大长度为4096字节。  **起始版本：** 26.0.0 |
+
+## DataProxyMaxValueLength
+
+[共享配置](js-apis-data-datashare.md#proxydata20)的值允许的最大长度的枚举值。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.DistributedDataManager.DataShare.Consumer
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| MAX\_LENGTH\_4K | 4096 | 表示共享配置的值允许的最大长度为4096字节。 |
+| MAX\_LENGTH\_100K | 102400 | 表示共享配置的值允许的最大长度为102400字节。 |
 
 ## DataProxyHandle20+
 
-PhonePC/2in1TabletTVWearable
-
 数据代理操作句柄的实例，可使用此实例访问或管理共享配置信息。在调用DataProxyHandle提供的方法前，需要先通过[createDataProxyHandle](js-apis-data-datashare.md#datasharecreatedataproxyhandle20)构建一个实例。
 
-### on('dataChange')20+
+**系统能力：** SystemCapability.DistributedDataManager.DataShare.Consumer
 
-PhonePC/2in1TabletTVWearable
+### on('dataChange')20+
 
 on(event: 'dataChange', uris: string[], config: DataProxyConfig, callback: AsyncCallback<DataProxyChangeInfo[]>): DataProxyResult[]
 
 订阅指定URI对应共享配置变更事件。若订阅者已注册变更通知，当配置发布方修改配置时，订阅者将会接收到callback通知，通知携带数据变更类型、变化的URI、变更的共享配置内容。使用callback异步回调。该功能不允许跨用户订阅通知，不允许订阅未发布的配置。订阅成功后若权限被收回，则后续不再通知订阅者。
 
-触发通知：配置发布方调用[publish](js-apis-data-datashare.md#publish20)、[delete](js-apis-data-datashare.md#delete20)接口发布、删除配置时会自动触发通知。
+**配对调用：**
+
+* 订阅后必须在不需要时调用[off('dataChange')](js-apis-data-datashare.md#offdatachange20)取消订阅。
+* 取消订阅时需确保event、uris、config和callback参数与订阅时一致。
+* 未取消订阅可能导致内存泄漏和资源占用。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Consumer
 
@@ -196,9 +196,9 @@ on(event: 'dataChange', uris: string[], config: DataProxyConfig, callback: Async
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件/回调类型，支持的事件为'dataChange'，当配置发布方修改配置时，触发该事件。 |
-| uris | string[] | 是 | 表示要订阅的共享配置对应的URI数组，数组最大长度为32。URI固定格式为"datashareproxy://{bundleName}/{path}"，其中bundleName为配置发布方应用的bundleName，path可随意填写，但同一应用内不允许重复，字符串长度不超过256个字节。 |
-| config | [DataProxyConfig](js-apis-data-datashare.md#dataproxyconfig20) | 是 | 表示数据代理操作的配置。 |
-| callback | AsyncCallback<[DataProxyChangeInfo](js-apis-data-datashare.md#dataproxychangeinfo20)[]> | 是 | 回调函数。当配置发布方修改配置时会回调该函数。 |
+| uris | string[] | 是 | 表示要订阅的共享配置对应的URI数组。  **说明：**  1. API版本26.0.0之前，数组最大长度为32；从API版本26.0.0开始，数组最大长度为64。  2. URI固定格式为"datashareproxy://{bundleName}/{path}"，其中bundleName为配置发布方应用的bundleName，path可随意填写，但同一应用内不允许重复，字符串长度不超过256个字节。 |
+| config | [DataProxyConfig](js-apis-data-datashare.md#dataproxyconfig20) | 是 | 表示数据代理操作的配置。从API版本26.0.0开始，当变更的共享配置内容长度超过[DataProxyConfig](js-apis-data-datashare.md#dataproxyconfig20)中maxValueLength字段配置的最大长度限制时，该共享配置内容会被截断。 |
+| callback | AsyncCallback<[DataProxyChangeInfo](js-apis-data-datashare.md#dataproxychangeinfo20)[]> | 是 | 回调函数。当订阅成功时，err为undefined，data为获取到的DataProxyChangeInfo数组，包含变更类型、URI和变更的共享配置内容；否则为错误对象。 |
 
 **返回值：**
 
@@ -217,34 +217,38 @@ on(event: 'dataChange', uris: string[], config: DataProxyConfig, callback: Async
 
 **示例：**
 
-```
-1. const urisToWatch: string[] =
-2. ['datashareproxy://com.example.app1/config1', 'datashareproxy://com.example.app1/config2',];
-3. const config: dataShare.DataProxyConfig = {
-4. type: dataShare.DataProxyType.SHARED_CONFIG,
-5. };
-6. const callback = (err: BusinessError<void>, changes: dataShare.DataProxyChangeInfo[]): void => {
-7. if (err) {
-8. console.error(`callback error: code: ${err.code}, message: ${err.message}`);
-9. } else {
-10. changes.forEach((change) => {
-11. console.info(`Change Type: ${change.type}, URI: ${change.uri}, Value: ${change.value}`);
-12. });
-13. }
-14. };
-15. const results: dataShare.DataProxyResult[] = dataProxyHandle.on('dataChange', urisToWatch, config, callback);
-16. results.forEach((result) => {
-17. console.info(`URI: ${result.uri}, Result: ${result.result}`);
-18. });
+```ts
+const urisToWatch: string[] =
+  ['datashareproxy://com.example.app1/config1', 'datashareproxy://com.example.app1/config2',];
+const config: dataShare.DataProxyConfig = {
+  type: dataShare.DataProxyType.SHARED_CONFIG,
+};
+const callback = (err: BusinessError<void>, changes: dataShare.DataProxyChangeInfo[]): void => {
+  if (err) {
+    console.error(`Failed to receive data change notification. Code: ${err.code}, message: ${err.message}`);
+  } else {
+    changes.forEach((change) => {
+      console.info(`Change Type: ${change.type}, URI: ${change.uri}, Value: ${change.value}`);
+    });
+  }
+};
+const results: dataShare.DataProxyResult[] = dataProxyHandle.on('dataChange', urisToWatch, config, callback);
+results.forEach((result) => {
+  console.info(`URI: ${result.uri}, Result: ${result.result}`);
+});
 ```
 
 ### off('dataChange')20+
 
-PhonePC/2in1TabletTVWearable
-
 off(event: 'dataChange', uris: string[], config: DataProxyConfig, callback?: AsyncCallback<DataProxyChangeInfo[]>): DataProxyResult[]
 
 取消订阅指定URI对应代理数据变更事件。
+
+**配对调用：**
+
+* 必须在已调用[on('dataChange')](js-apis-data-datashare.md#ondatachange20)订阅后使用。
+* 取消订阅时需确保event、uris、config参数与订阅时一致。
+* 如未指定callback参数，将取消该URI的所有已注册回调函数。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Consumer
 
@@ -253,9 +257,9 @@ off(event: 'dataChange', uris: string[], config: DataProxyConfig, callback?: Asy
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件/回调类型，支持的事件为'dataChange'。 |
-| uris | string[] | 是 | 表示要取消订阅的共享配置对应的URI数组，数组最大长度为32。URI固定格式为"datashareproxy://{bundleName}/{path}"，其中bundleName为配置发布方应用的bundleName，path可随意填写，但同一应用内不允许重复，字符串长度不超过256个字节。 |
+| uris | string[] | 是 | 表示要取消订阅的共享配置对应的URI数组。  **说明：**  1. API版本26.0.0之前，数组最大长度为32；从API版本26.0.0开始，数组最大长度为64。  2. URI固定格式为"datashareproxy://{bundleName}/{path}"，其中bundleName为配置发布方应用的bundleName，path可随意填写，但同一应用内不允许重复，字符串长度不超过256个字节。 |
 | config | [DataProxyConfig](js-apis-data-datashare.md#dataproxyconfig20) | 是 | 表示数据代理操作的配置。 |
-| callback | AsyncCallback<[DataProxyChangeInfo](js-apis-data-datashare.md#dataproxychangeinfo20)[]> | 否 | 回调函数。表示指定取消订阅的callback通知，如果为空、undefined或null，则取消订阅这些URI下所有的通知事件。 |
+| callback | AsyncCallback<[DataProxyChangeInfo](js-apis-data-datashare.md#dataproxychangeinfo20)[]> | 否 | 回调函数。当取消订阅成功时，err为undefined，data为获取到的DataProxyChangeInfo数组，包含变更类型、URI和变更的共享配置内容；否则为错误对象。不填写则取消所有已注册的回调函数。 |
 
 **返回值：**
 
@@ -274,34 +278,42 @@ off(event: 'dataChange', uris: string[], config: DataProxyConfig, callback?: Asy
 
 **示例：**
 
-```
-1. const urisToUnWatch: string[] =
-2. ['datashareproxy://com.example.app1/config1', 'datashareproxy://com.example.app1/config2',];
-3. const config: dataShare.DataProxyConfig = {
-4. type: dataShare.DataProxyType.SHARED_CONFIG,
-5. };
-6. const callback = (err: BusinessError<void>, changes: dataShare.DataProxyChangeInfo[]): void => {
-7. if (err) {
-8. console.error(`callback error: code: ${err.code}, message: ${err.message}`);
-9. } else {
-10. changes.forEach((change) => {
-11. console.info(`Change Type: ${change.type}, URI: ${change.uri}, Value: ${change.value}`);
-12. });
-13. }
-14. };
-15. const results: dataShare.DataProxyResult[] = dataProxyHandle.off('dataChange', urisToUnWatch, config, callback);
-16. results.forEach((result) => {
-17. console.info(`URI: ${result.uri}, Result: ${result.result}`);
-18. });
+```ts
+const urisToUnWatch: string[] =
+  ['datashareproxy://com.example.app1/config1', 'datashareproxy://com.example.app1/config2',];
+const config: dataShare.DataProxyConfig = {
+  type: dataShare.DataProxyType.SHARED_CONFIG,
+};
+const callback = (err: BusinessError<void>, changes: dataShare.DataProxyChangeInfo[]): void => {
+  if (err) {
+    console.error(`Failed to receive data change notification. Code: ${err.code}, message: ${err.message}`);
+  } else {
+    changes.forEach((change) => {
+      console.info(`Change Type: ${change.type}, URI: ${change.uri}, Value: ${change.value}`);
+    });
+  }
+};
+const results: dataShare.DataProxyResult[] = dataProxyHandle.off('dataChange', urisToUnWatch, config, callback);
+results.forEach((result) => {
+  console.info(`URI: ${result.uri}, Result: ${result.result}`);
+});
 ```
 
 ### publish20+
 
-PhonePC/2in1TabletTVWearable
-
 publish(data: ProxyData[], config: DataProxyConfig): Promise<DataProxyResult[]>
 
-发布共享配置项。使用Promise异步回调。发布后，发布者和允许列表中指定的应用可以访问该共享配置项。如果要发布的URI已经存在，则更新对应的共享配置项。如果发布的配置项中存在任一URI的长度超出上限或者格式校验失败，则当前发布操作失败。只有发布者才允许更新共享配置项，每个应用支持最多32个共享配置。
+发布共享配置项。使用Promise异步回调。
+
+发布后，发布者和允许列表中指定的应用可以访问该共享配置项。
+
+如果要发布的URI已经存在，则更新对应的共享配置项。如果发布的配置项中存在任一URI的长度超出上限或者格式校验失败，则当前发布操作失败。
+
+只有发布者才允许更新共享配置项。
+
+API版本26.0.0之前，每个应用支持最多32个共享配置；从API版本26.0.0开始，每个应用支持最多64个共享配置。
+
+从API版本26.0.0开始，支持发布多值类型配置，一个uri只能对应一种值类型。且配置发布后不允许使用publish更新已发布的多值类型uri。多值类型的操作接口见[putValue](js-apis-data-datashare.md#putvalue)、[removeValue](js-apis-data-datashare.md#removevalue)和[getValues](js-apis-data-datashare.md#getvalues)。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Consumer
 
@@ -309,8 +321,8 @@ publish(data: ProxyData[], config: DataProxyConfig): Promise<DataProxyResult[]>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| data | [ProxyData](js-apis-data-datashare.md#proxydata20)[] | 是 | 表示需要创建或者更新的共享配置项数组。数组最大长度为32。 |
-| config | [DataProxyConfig](js-apis-data-datashare.md#dataproxyconfig20) | 是 | 表示数据代理操作的配置。 |
+| data | [ProxyData](js-apis-data-datashare.md#proxydata20)[] | 是 | 表示需要创建或者更新的共享配置项数组。API版本26.0.0之前，数组最大长度为32；从API版本26.0.0开始，数组最大长度为64。 |
+| config | [DataProxyConfig](js-apis-data-datashare.md#dataproxyconfig20) | 是 | 表示数据代理操作的配置。从API版本26.0.0开始，如果发布的配置项中存在任一值的长度超过[DataProxyConfig](js-apis-data-datashare.md#dataproxyconfig20)中maxValueLength字段配置的最大长度限制，则当前发布操作失败。 |
 
 **返回值：**
 
@@ -329,31 +341,29 @@ publish(data: ProxyData[], config: DataProxyConfig): Promise<DataProxyResult[]>
 
 **示例：**
 
-```
-1. const newConfigData: dataShare.ProxyData[] = [{
-2. uri: 'datashareproxy://com.example.app1/config1',
-3. value: 'Value1',
-4. allowList: ['appIdentifier2', 'appIdentifier3'], // 此处字符串仅作示例，使用时需替换为应用实际的appIdentifier
-5. }, {
-6. uri: 'datashareproxy://com.example.app1/config2',
-7. value: 'Value2',
-8. allowList: ['appIdentifier3', 'appIdentifier4'], // 此处字符串仅作示例，使用时需替换为应用实际的appIdentifier
-9. }];
-10. const config: dataShare.DataProxyConfig = {
-11. type: dataShare.DataProxyType.SHARED_CONFIG,
-12. };
-13. dataProxyHandle.publish(newConfigData, config).then((results: dataShare.DataProxyResult[]) => {
-14. results.forEach((result) => {
-15. console.info(`URI: ${result.uri}, Result: ${result.result}`);
-16. });
-17. }).catch((error: BusinessError) => {
-18. console.error(`Failed to publish config. code: ${error.code}, message: ${error.message}`);
-19. });
+```ts
+const newConfigData: dataShare.ProxyData[] = [{
+  uri: 'datashareproxy://com.example.app1/config1',
+  value: 'Value1',
+  allowList: ['appIdentifier2', 'appIdentifier3'], // 此处字符串仅作示例，使用时需替换为应用实际的appIdentifier
+}, {
+  uri: 'datashareproxy://com.example.app1/config2',
+  value: 'Value2',
+  allowList: ['appIdentifier3', 'appIdentifier4'], // 此处字符串仅作示例，使用时需替换为应用实际的appIdentifier
+}];
+const config: dataShare.DataProxyConfig = {
+  type: dataShare.DataProxyType.SHARED_CONFIG,
+};
+dataProxyHandle.publish(newConfigData, config).then((results: dataShare.DataProxyResult[]) => {
+  results.forEach((result) => {
+    console.info(`URI: ${result.uri}, Result: ${result.result}`);
+  });
+}).catch((error: BusinessError) => {
+  console.error(`Failed to publish config. code: ${error.code}, message: ${error.message}`);
+});
 ```
 
 ### delete20+
-
-PhonePC/2in1TabletTVWearable
 
 delete(uris: string[], config: DataProxyConfig): Promise<DataProxyResult[]>
 
@@ -365,7 +375,7 @@ delete(uris: string[], config: DataProxyConfig): Promise<DataProxyResult[]>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| uris | string[] | 是 | 表示需要删除的共享配置对应的URI数组，数组最大长度为32。URI固定格式为"datashareproxy://{bundleName}/{path}"，其中bundleName为配置发布方应用的bundleName，path可随意填写，但同一应用内不允许重复，字符串长度不超过256个字节。 |
+| uris | string[] | 是 | 表示需要删除的共享配置对应的URI数组。  **说明：**  1. API版本26.0.0之前，数组最大长度为32；从API版本26.0.0开始，数组最大长度为64。  2. URI固定格式为"datashareproxy://{bundleName}/{path}"，其中bundleName为配置发布方应用的bundleName，path可随意填写，但同一应用内不允许重复，字符串长度不超过256个字节。 |
 | config | [DataProxyConfig](js-apis-data-datashare.md#dataproxyconfig20) | 是 | 表示数据代理操作的配置。 |
 
 **返回值：**
@@ -385,24 +395,68 @@ delete(uris: string[], config: DataProxyConfig): Promise<DataProxyResult[]>
 
 **示例：**
 
+```ts
+const urisToDelete: string[] =
+  ['datashareproxy://com.example.app1/config1', 'datashareproxy://com.example.app1/config2',];
+const config: dataShare.DataProxyConfig = {
+  type: dataShare.DataProxyType.SHARED_CONFIG,
+};
+dataProxyHandle.delete(urisToDelete, config).then((results: dataShare.DataProxyResult[]) => {
+  results.forEach((result) => {
+    console.info(`URI: ${result.uri}, Result: ${result.result}`);
+  });
+}).catch((error: BusinessError) => {
+  console.error(`Failed to delete config. code: ${error.code}, message: ${error.message}`);
+});
 ```
-1. const urisToDelete: string[] =
-2. ['datashareproxy://com.example.app1/config1', 'datashareproxy://com.example.app1/config2',];
-3. const config: dataShare.DataProxyConfig = {
-4. type: dataShare.DataProxyType.SHARED_CONFIG,
-5. };
-6. dataProxyHandle.delete(urisToDelete, config).then((results: dataShare.DataProxyResult[]) => {
-7. results.forEach((result) => {
-8. console.info(`URI: ${result.uri}, Result: ${result.result}`);
-9. });
-10. }).catch((error: BusinessError) => {
-11. console.error(`Failed to delete config. code: ${error.code}, message: ${error.message}`);
-12. });
+
+### deleteMyPublishedData
+
+deleteMyPublishedData(config: DataProxyConfig): Promise<DataProxyResult[]>
+
+删除当前发布者发布的所有共享配置项。使用Promise异步回调。只有配置发布方能删除共享配置项。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.DistributedDataManager.DataShare.Consumer
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| config | [DataProxyConfig](js-apis-data-datashare.md#dataproxyconfig20) | 是 | 表示数据代理操作的配置。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[DataProxyResult](js-apis-data-datashare.md#dataproxyresult20)[]> | Promise对象。返回批量操作的结果数组。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[数据共享错误码](errorcode-datashare.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 15700000 | Inner error. Possible causes: The service is not ready or is being restarted abnormally. |
+| 15700014 | The parameter format is incorrect or the value range is invalid. |
+
+**示例：**
+
+```ts
+const config: dataShare.DataProxyConfig = {
+  type: dataShare.DataProxyType.SHARED_CONFIG,
+};
+dataProxyHandle.deleteMyPublishedData(config).then((results: dataShare.DataProxyResult[]) => {
+  results.forEach((result) => {
+    console.info(`URI: ${result.uri}, Result: ${result.result}`);
+  });
+}).catch((error: BusinessError) => {
+  console.error(`Failed to delete all configs. Code: ${error.code}, message: ${error.message}`);
+});
 ```
 
 ### get20+
-
-PhonePC/2in1TabletTVWearable
 
 get(uris: string[], config: DataProxyConfig): Promise<DataProxyGetResult[]>
 
@@ -414,8 +468,8 @@ get(uris: string[], config: DataProxyConfig): Promise<DataProxyGetResult[]>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| uris | string[] | 是 | 表示需要获取的共享配置的URI数组，数组最大长度为32。URI固定格式为"datashareproxy://{bundleName}/{path}"，其中bundleName为配置发布方应用的bundleName，path可随意填写，但同一应用内不允许重复，字符串长度不超过256个字节。 |
-| config | [DataProxyConfig](js-apis-data-datashare.md#dataproxyconfig20) | 是 | 表示数据代理操作的配置。 |
+| uris | string[] | 是 | 表示需要获取的共享配置的URI数组。  **说明：**  1. API版本26.0.0之前，数组最大长度为32；从API版本26.0.0开始，数组最大长度为64。  2. URI固定格式为"datashareproxy://{bundleName}/{path}"，其中bundleName为配置发布方应用的bundleName，path可随意填写，但同一应用内不允许重复，字符串长度不超过256个字节。 |
+| config | [DataProxyConfig](js-apis-data-datashare.md#dataproxyconfig20) | 是 | 表示数据代理操作的配置。从API版本26.0.0开始，获取的共享配置项的值长度不能超出[DataProxyConfig](js-apis-data-datashare.md#dataproxyconfig20)中maxValueLength字段配置的最大长度限制。超出限制时，对应获取操作结果的返回值状态码[DataProxyErrorCode](js-apis-data-datashare.md#dataproxyerrorcode20)为OVER\_LIMIT。 |
 
 **返回值：**
 
@@ -434,17 +488,219 @@ get(uris: string[], config: DataProxyConfig): Promise<DataProxyGetResult[]>
 
 **示例：**
 
+```ts
+const urisToGet: string[] =
+  ['datashareproxy://com.example.app1/config1', 'datashareproxy://com.example.app1/config2',];
+const config: dataShare.DataProxyConfig = {
+  type: dataShare.DataProxyType.SHARED_CONFIG,
+};
+dataProxyHandle.get(urisToGet, config).then((results: dataShare.DataProxyGetResult[]) => {
+  results.forEach((result) => {
+    console.info(`URI: ${result.uri}, Result: ${result.result}, AllowList: ${result.allowList}`);
+  });
+}).catch((error: BusinessError) => {
+  console.error(`Failed to get config. code: ${error.code}, message: ${error.message}`);
+});
 ```
-1. const urisToGet: string[] =
-2. ['datashareproxy://com.example.app1/config1', 'datashareproxy://com.example.app1/config2',];
-3. const config: dataShare.DataProxyConfig = {
-4. type: dataShare.DataProxyType.SHARED_CONFIG,
-5. };
-6. dataProxyHandle.get(urisToGet, config).then((results: dataShare.DataProxyGetResult[]) => {
-7. results.forEach((result) => {
-8. console.info(`URI: ${result.uri}, Result: ${result.result}, AllowList: ${result.allowList}`);
-9. });
-10. }).catch((error: BusinessError) => {
-11. console.error(`Failed to get config. code: ${error.code}, message: ${error.message}`);
-12. });
+
+### putValue
+
+putValue(uri: string, key: number, value: ValueType, config: DataProxyConfig): Promise<void>
+
+将一个值写入到已发布的数据中。该操作仅支持对多值类型数据执行。使用Promise异步回调。
+
+若传入的key不存在，则添加新的值；若传入的key已存在，则更新该key对应的值。
+
+默认情况下，单条数据（即URI）在单个应用中最多可添加10个值，每个值最大长度为4096字节。同时，单条数据（即一个URI）在单个应用中所有值总长度受限于数据[publish](js-apis-data-datashare.md#publish20)时指定的maxValueLength参数值。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.DistributedDataManager.DataShare.Consumer
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | 要操作的数据所对应的URI。固定格式为"datashareproxy://{bundleName}/{path}"，其中bundleName为配置发布方应用的bundleName，path可随意填写，但同一应用内不允许重复，字符串长度不超过256个字节。 |
+| key | number | 是 | 添加的值所对应的Key，对同一个应用来说是唯一的。  取值范围为全体整数。 |
+| value | [ValueType](js-apis-data-valuesbucket.md#valuetype) | 是 | 待添加的值。 |
+| config | [DataProxyConfig](js-apis-data-datashare.md#dataproxyconfig20) | 是 | 表示数据代理操作的配置。配置中maxValueLength参数不生效。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[数据共享错误码](errorcode-datashare.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 15700000 | Inner error. Possible causes: The service is not ready or is being restarted abnormally. |
+| 15700011 | The URI does not exist. |
+| 15700014 | The parameter format is incorrect or the value range is invalid. |
+| 15700015 | No permission to access the data specified by the URI. |
+
+**示例：**
+
+```ts
+const config: dataShare.DataProxyConfig = {
+  type: dataShare.DataProxyType.SHARED_CONFIG,
+};
+let testUri: string = 'datashareproxy://com.test.dataproxyhandle/test/pv/001';
+let newConfigData: dataShare.ProxyData[] = [{
+  uri: testUri,
+  values: { 0: 'init' },
+  isMultiValues: true,
+  allowList: [],
+  trustProviders: []
+}];
+
+await dataProxyHandle?.publish(newConfigData, config).then((results: dataShare.DataProxyResult[]) => {
+  results.forEach((result) => {
+    console.info(`URI: ${result.uri}, Result: ${result.result}`);
+  });
+}).catch((error: BusinessError) => {
+  console.error(`Failed to publish config. code: ${error.code}, message: ${error.message}`);
+});
+
+try {
+  await dataProxyHandle?.putValue(testUri, 1, 'hello', config);
+  console.info(`putValue success`);
+} catch (error) {
+  console.error(`putValue failed: code: ${error.code}, message: ${error.message}`);
+}
+```
+
+### removeValue
+
+removeValue(uri: string, key: number, config: DataProxyConfig): Promise<void>
+
+移除键对应的值。该操作仅能对多值类型数据执行。仅能移除本应用添加过的值。使用Promise异步回调。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.DistributedDataManager.DataShare.Consumer
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | 要操作的数据所对应的URI。固定格式为"datashareproxy://{bundleName}/{path}"，其中bundleName为配置发布方应用的bundleName，path可随意填写，但同一应用内不允许重复，字符串长度不超过256个字节。 |
+| key | number | 是 | 要移除的值所对应的Key。  取值范围为全体整数。 |
+| config | [DataProxyConfig](js-apis-data-datashare.md#dataproxyconfig20) | 是 | 表示数据代理操作的配置。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[数据共享错误码](errorcode-datashare.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 15700000 | Inner error. Possible causes: The service is not ready or is being restarted abnormally. |
+| 15700011 | The URI does not exist. |
+| 15700014 | The parameter format is incorrect or the value range is invalid. |
+| 15700015 | No permission to access the data specified by the URI. |
+
+**示例：**
+
+```ts
+const config: dataShare.DataProxyConfig = {
+  type: dataShare.DataProxyType.SHARED_CONFIG,
+};
+let testUri: string = 'datashareproxy://com.test.dataproxyhandle/test/pv/001';
+let newConfigData: dataShare.ProxyData[] = [{
+  uri: testUri,
+  values: { 0: 'init' },
+  isMultiValues: true,
+  allowList: [],
+  trustProviders: []
+}];
+
+await dataProxyHandle?.publish(newConfigData, config).then((results: dataShare.DataProxyResult[]) => {
+  results.forEach((result) => {
+    console.info(`URI: ${result.uri}, Result: ${result.result}`);
+  });
+}).catch((error: BusinessError) => {
+  console.error(`Failed to publish config. code: ${error.code}, message: ${error.message}`);
+});
+
+try {
+  await dataProxyHandle?.removeValue(testUri, 0, config);
+  console.info(`removeValue success`);
+} catch (error) {
+  console.error(`removeValue failed: code: ${error.code}, message: ${error.message}`);
+}
+```
+
+### getValues
+
+getValues(uri: string, config: DataProxyConfig): Promise<ValueType[]>
+
+获取指定URI下的所有多值类型数据。只有发布者和位于[allowList](js-apis-data-datashare.md#proxydata20)中的应用程序才能获取此数据。使用Promise异步回调。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.DistributedDataManager.DataShare.Consumer
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | 要操作的数据所对应的URI。固定格式为"datashareproxy://{bundleName}/{path}"，其中bundleName为配置发布方应用的bundleName，path可随意填写，但同一应用内不允许重复，字符串长度不超过256个字节。 |
+| config | [DataProxyConfig](js-apis-data-datashare.md#dataproxyconfig20) | 是 | 表示数据代理操作的配置。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[ValueType](js-apis-data-valuesbucket.md#valuetype)[]> | Promise对象，返回URI下所有值的数组。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[数据共享错误码](errorcode-datashare.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 15700000 | Inner error. Possible causes: The service is not ready or is being restarted abnormally. |
+| 15700011 | The URI does not exist. |
+| 15700014 | The parameter format is incorrect or the value range is invalid. |
+| 15700015 | No permission to access the data specified by the URI. |
+
+**示例：**
+
+```ts
+const config: dataShare.DataProxyConfig = {
+  type: dataShare.DataProxyType.SHARED_CONFIG,
+};
+let testUri: string = 'datashareproxy://com.test.dataproxyhandle/test/pv/001';
+let newConfigData: dataShare.ProxyData[] = [{
+  uri: testUri,
+  values: { 0: 'init' },
+  isMultiValues: true,
+  allowList: [],
+  trustProviders: []
+}];
+
+await dataProxyHandle!.publish(newConfigData, config).then((results: dataShare.DataProxyResult[]) => {
+  results.forEach((result) => {
+    console.info(`URI: ${result.uri}, Result: ${result.result}`);
+  });
+}).catch((error: BusinessError) => {
+  console.error(`Failed to publish config. code: ${error.code}, message: ${error.message}`);
+});
+
+try {
+  let result: ValueType[] = await dataProxyHandle?.getValues(testUri, config);
+  console.info(`getValues success. Values: ` + JSON.stringify(result));
+} catch (error) {
+  console.error(`getValues failed: code: ${error.code}, message: ${error.message}`);
+}
 ```

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cont
 title: context.h
 breadcrumb: API参考 > AI > MindSpore Lite Kit（昇思推理框架服务） > C API > 头文件 > context.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:02+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6666fb7974a763a2637f6565d71d6482a4a8a733c1ab5daa4e2d127aa80f1547
+scraped_at: 2026-09-02T15:03:11+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d7e351a16aa2649f1dd9aa4d154d9d2119349ac114c17585f9c0d938bd9f19bb
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供了Context相关的接口，可以配置运行时信息，该接口是非线程安全的。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,8 +32,6 @@ PhonePC/2in1TabletTVWearable
 | [OH\_AI\_DeviceInfoHandle](capi-mindspore-oh-ai-deviceinfohandle.md) | void\* | MindSpore Lite运行设备信息的指针。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -83,14 +75,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AI\_ContextCreate()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_ContextHandle OH_AI_ContextCreate()
+```c
+OH_AI_API OH_AI_ContextHandle OH_AI_ContextCreate()
 ```
 
 **描述**
@@ -107,10 +95,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ContextDestroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API void OH_AI_ContextDestroy(OH_AI_ContextHandle *context)
+```c
+OH_AI_API void OH_AI_ContextDestroy(OH_AI_ContextHandle *context)
 ```
 
 **描述**
@@ -127,10 +113,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ContextSetThreadNum()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API void OH_AI_ContextSetThreadNum(OH_AI_ContextHandle context, int32_t thread_num)
+```c
+OH_AI_API void OH_AI_ContextSetThreadNum(OH_AI_ContextHandle context, int32_t thread_num)
 ```
 
 **描述**
@@ -148,10 +132,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ContextGetThreadNum()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API int32_t OH_AI_ContextGetThreadNum(const OH_AI_ContextHandle context)
+```c
+OH_AI_API int32_t OH_AI_ContextGetThreadNum(const OH_AI_ContextHandle context)
 ```
 
 **描述**
@@ -174,10 +156,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ContextSetThreadAffinityMode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API void OH_AI_ContextSetThreadAffinityMode(OH_AI_ContextHandle context, int mode)
+```c
+OH_AI_API void OH_AI_ContextSetThreadAffinityMode(OH_AI_ContextHandle context, int mode)
 ```
 
 **描述**
@@ -195,10 +175,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ContextGetThreadAffinityMode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API int OH_AI_ContextGetThreadAffinityMode(const OH_AI_ContextHandle context)
+```c
+OH_AI_API int OH_AI_ContextGetThreadAffinityMode(const OH_AI_ContextHandle context)
 ```
 
 **描述**
@@ -221,10 +199,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ContextSetThreadAffinityCoreList()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API void OH_AI_ContextSetThreadAffinityCoreList(OH_AI_ContextHandle context, const int32_t *core_list,size_t core_num)
+```c
+OH_AI_API void OH_AI_ContextSetThreadAffinityCoreList(OH_AI_ContextHandle context, const int32_t *core_list,size_t core_num)
 ```
 
 **描述**
@@ -249,10 +225,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ContextGetThreadAffinityCoreList()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API const int32_t *OH_AI_ContextGetThreadAffinityCoreList(const OH_AI_ContextHandle context, size_t *core_num)
+```c
+OH_AI_API const int32_t *OH_AI_ContextGetThreadAffinityCoreList(const OH_AI_ContextHandle context, size_t *core_num)
 ```
 
 **描述**
@@ -276,10 +250,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ContextSetEnableParallel()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API void OH_AI_ContextSetEnableParallel(OH_AI_ContextHandle context, bool is_parallel)
+```c
+OH_AI_API void OH_AI_ContextSetEnableParallel(OH_AI_ContextHandle context, bool is_parallel)
 ```
 
 **描述**
@@ -297,10 +269,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ContextGetEnableParallel()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API bool OH_AI_ContextGetEnableParallel(const OH_AI_ContextHandle context)
+```c
+OH_AI_API bool OH_AI_ContextGetEnableParallel(const OH_AI_ContextHandle context)
 ```
 
 **描述**
@@ -323,10 +293,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_ContextAddDeviceInfo()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API void OH_AI_ContextAddDeviceInfo(OH_AI_ContextHandle context, OH_AI_DeviceInfoHandle device_info)
+```c
+OH_AI_API void OH_AI_ContextAddDeviceInfo(OH_AI_ContextHandle context, OH_AI_DeviceInfoHandle device_info)
 ```
 
 **描述**
@@ -344,10 +312,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_DeviceInfoCreate()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_DeviceInfoHandle OH_AI_DeviceInfoCreate(OH_AI_DeviceType device_type)
+```c
+OH_AI_API OH_AI_DeviceInfoHandle OH_AI_DeviceInfoCreate(OH_AI_DeviceType device_type)
 ```
 
 **描述**
@@ -370,10 +336,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_DeviceInfoDestroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API void OH_AI_DeviceInfoDestroy(OH_AI_DeviceInfoHandle *device_info)
+```c
+OH_AI_API void OH_AI_DeviceInfoDestroy(OH_AI_DeviceInfoHandle *device_info)
 ```
 
 **描述**
@@ -390,10 +354,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_DeviceInfoSetProvider()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API void OH_AI_DeviceInfoSetProvider(OH_AI_DeviceInfoHandle device_info, const char *provider)
+```c
+OH_AI_API void OH_AI_DeviceInfoSetProvider(OH_AI_DeviceInfoHandle device_info, const char *provider)
 ```
 
 **描述**
@@ -411,10 +373,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_DeviceInfoGetProvider()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API const char *OH_AI_DeviceInfoGetProvider(const OH_AI_DeviceInfoHandle device_info)
+```c
+OH_AI_API const char *OH_AI_DeviceInfoGetProvider(const OH_AI_DeviceInfoHandle device_info)
 ```
 
 **描述**
@@ -437,10 +397,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_DeviceInfoSetProviderDevice()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API void OH_AI_DeviceInfoSetProviderDevice(OH_AI_DeviceInfoHandle device_info, const char *device)
+```c
+OH_AI_API void OH_AI_DeviceInfoSetProviderDevice(OH_AI_DeviceInfoHandle device_info, const char *device)
 ```
 
 **描述**
@@ -458,10 +416,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_DeviceInfoGetProviderDevice()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API const char *OH_AI_DeviceInfoGetProviderDevice(const OH_AI_DeviceInfoHandle device_info)
+```c
+OH_AI_API const char *OH_AI_DeviceInfoGetProviderDevice(const OH_AI_DeviceInfoHandle device_info)
 ```
 
 **描述**
@@ -484,10 +440,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_DeviceInfoGetDeviceType()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_DeviceType OH_AI_DeviceInfoGetDeviceType(const OH_AI_DeviceInfoHandle device_info)
+```c
+OH_AI_API OH_AI_DeviceType OH_AI_DeviceInfoGetDeviceType(const OH_AI_DeviceInfoHandle device_info)
 ```
 
 **描述**
@@ -510,10 +464,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_DeviceInfoSetEnableFP16()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API void OH_AI_DeviceInfoSetEnableFP16(OH_AI_DeviceInfoHandle device_info, bool is_fp16)
+```c
+OH_AI_API void OH_AI_DeviceInfoSetEnableFP16(OH_AI_DeviceInfoHandle device_info, bool is_fp16)
 ```
 
 **描述**
@@ -531,10 +483,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_DeviceInfoGetEnableFP16()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API bool OH_AI_DeviceInfoGetEnableFP16(const OH_AI_DeviceInfoHandle device_info)
+```c
+OH_AI_API bool OH_AI_DeviceInfoGetEnableFP16(const OH_AI_DeviceInfoHandle device_info)
 ```
 
 **描述**
@@ -557,10 +507,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_DeviceInfoSetFrequency()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API void OH_AI_DeviceInfoSetFrequency(OH_AI_DeviceInfoHandle device_info, int frequency)
+```c
+OH_AI_API void OH_AI_DeviceInfoSetFrequency(OH_AI_DeviceInfoHandle device_info, int frequency)
 ```
 
 **描述**
@@ -578,10 +526,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_DeviceInfoGetFrequency()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API int OH_AI_DeviceInfoGetFrequency(const OH_AI_DeviceInfoHandle device_info)
+```c
+OH_AI_API int OH_AI_DeviceInfoGetFrequency(const OH_AI_DeviceInfoHandle device_info)
 ```
 
 **描述**
@@ -604,10 +550,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_GetAllNNRTDeviceDescs()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API NNRTDeviceDesc *OH_AI_GetAllNNRTDeviceDescs(size_t *num)
+```c
+OH_AI_API NNRTDeviceDesc *OH_AI_GetAllNNRTDeviceDescs(size_t *num)
 ```
 
 **描述**
@@ -630,10 +574,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_GetElementOfNNRTDeviceDescs()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API NNRTDeviceDesc *OH_AI_GetElementOfNNRTDeviceDescs(NNRTDeviceDesc *descs, size_t index)
+```c
+OH_AI_API NNRTDeviceDesc *OH_AI_GetElementOfNNRTDeviceDescs(NNRTDeviceDesc *descs, size_t index)
 ```
 
 **描述**
@@ -657,10 +599,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_DestroyAllNNRTDeviceDescs()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API void OH_AI_DestroyAllNNRTDeviceDescs(NNRTDeviceDesc **desc)
+```c
+OH_AI_API void OH_AI_DestroyAllNNRTDeviceDescs(NNRTDeviceDesc **desc)
 ```
 
 **描述**
@@ -677,10 +617,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_GetDeviceIdFromNNRTDeviceDesc()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API size_t OH_AI_GetDeviceIdFromNNRTDeviceDesc(const NNRTDeviceDesc *desc)
+```c
+OH_AI_API size_t OH_AI_GetDeviceIdFromNNRTDeviceDesc(const NNRTDeviceDesc *desc)
 ```
 
 **描述**
@@ -703,10 +641,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_GetNameFromNNRTDeviceDesc()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API const char *OH_AI_GetNameFromNNRTDeviceDesc(const NNRTDeviceDesc *desc)
+```c
+OH_AI_API const char *OH_AI_GetNameFromNNRTDeviceDesc(const NNRTDeviceDesc *desc)
 ```
 
 **描述**
@@ -729,10 +665,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_GetTypeFromNNRTDeviceDesc()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_NNRTDeviceType OH_AI_GetTypeFromNNRTDeviceDesc(const NNRTDeviceDesc *desc)
+```c
+OH_AI_API OH_AI_NNRTDeviceType OH_AI_GetTypeFromNNRTDeviceDesc(const NNRTDeviceDesc *desc)
 ```
 
 **描述**
@@ -755,10 +689,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_CreateNNRTDeviceInfoByName()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_DeviceInfoHandle OH_AI_CreateNNRTDeviceInfoByName(const char *name)
+```c
+OH_AI_API OH_AI_DeviceInfoHandle OH_AI_CreateNNRTDeviceInfoByName(const char *name)
 ```
 
 **描述**
@@ -781,10 +713,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_CreateNNRTDeviceInfoByType()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_DeviceInfoHandle OH_AI_CreateNNRTDeviceInfoByType(OH_AI_NNRTDeviceType type)
+```c
+OH_AI_API OH_AI_DeviceInfoHandle OH_AI_CreateNNRTDeviceInfoByType(OH_AI_NNRTDeviceType type)
 ```
 
 **描述**
@@ -807,10 +737,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_DeviceInfoSetDeviceId()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API void OH_AI_DeviceInfoSetDeviceId(OH_AI_DeviceInfoHandle device_info, size_t device_id)
+```c
+OH_AI_API void OH_AI_DeviceInfoSetDeviceId(OH_AI_DeviceInfoHandle device_info, size_t device_id)
 ```
 
 **描述**
@@ -828,10 +756,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_DeviceInfoGetDeviceId()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API size_t OH_AI_DeviceInfoGetDeviceId(const OH_AI_DeviceInfoHandle device_info)
+```c
+OH_AI_API size_t OH_AI_DeviceInfoGetDeviceId(const OH_AI_DeviceInfoHandle device_info)
 ```
 
 **描述**
@@ -854,10 +780,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_DeviceInfoSetPerformanceMode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API void OH_AI_DeviceInfoSetPerformanceMode(OH_AI_DeviceInfoHandle device_info, OH_AI_PerformanceMode mode)
+```c
+OH_AI_API void OH_AI_DeviceInfoSetPerformanceMode(OH_AI_DeviceInfoHandle device_info, OH_AI_PerformanceMode mode)
 ```
 
 **描述**
@@ -875,10 +799,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_DeviceInfoGetPerformanceMode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_PerformanceMode OH_AI_DeviceInfoGetPerformanceMode(const OH_AI_DeviceInfoHandle device_info)
+```c
+OH_AI_API OH_AI_PerformanceMode OH_AI_DeviceInfoGetPerformanceMode(const OH_AI_DeviceInfoHandle device_info)
 ```
 
 **描述**
@@ -901,10 +823,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_DeviceInfoSetPriority()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API void OH_AI_DeviceInfoSetPriority(OH_AI_DeviceInfoHandle device_info, OH_AI_Priority priority)
+```c
+OH_AI_API void OH_AI_DeviceInfoSetPriority(OH_AI_DeviceInfoHandle device_info, OH_AI_Priority priority)
 ```
 
 **描述**
@@ -922,10 +842,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_DeviceInfoGetPriority()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_Priority OH_AI_DeviceInfoGetPriority(const OH_AI_DeviceInfoHandle device_info)
+```c
+OH_AI_API OH_AI_Priority OH_AI_DeviceInfoGetPriority(const OH_AI_DeviceInfoHandle device_info)
 ```
 
 **描述**
@@ -948,10 +866,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_DeviceInfoAddExtension()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AI_API OH_AI_Status OH_AI_DeviceInfoAddExtension(OH_AI_DeviceInfoHandle device_info, const char *name,const char *value, size_t value_size)
+```c
+OH_AI_API OH_AI_Status OH_AI_DeviceInfoAddExtension(OH_AI_DeviceInfoHandle device_info, const char *name,const char *value, size_t value_size)
 ```
 
 **描述**

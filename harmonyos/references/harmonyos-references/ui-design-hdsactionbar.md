@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdsactionbar
-title: HdsActionBar
-breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsActionBar
+title: HdsActionBar (操作栏)
+breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsActionBar (操作栏)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:57:12+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:9cd5eca9f9370c714f81d935bea56695648c1baf0b76f2e9fd5fc5dc6b414296
+scraped_at: 2026-09-02T15:01:39+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4fc9c107405638200f6f190bdd5a1b03c00aa911ce59c251272c1cf6df0178fc
 ---
 
 提供多个按钮操作，如果有主按钮则支持展开和收缩的动效，其内部包含了0或1个主按钮、0或多个非主按钮和背板，其中主按钮可以用户自定义CustomBuilder。
@@ -14,15 +14,11 @@ content_hash: sha256:9cd5eca9f9370c714f81d935bea56695648c1baf0b76f2e9fd5fc5dc6b4
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { HdsActionBar } from '@kit.UIDesignKit';
+```typescript
+import { HdsActionBar } from '@kit.UIDesignKit';
 ```
 
-## 接口
-
-PhonePC/2in1TabletTV
+## HdsActionBar
 
 HdsActionBar({ primaryButton?: ActionBarButton, primaryButtonBuilder?: CustomBuilder, primaryButtonBuilderWidth?: LengthMetrics, startButtons?: Array<ActionBarButton>, endButtons?: Array<ActionBarButton>, actionBarStyle?: ActionBarStyle, isExpand?: boolean, $isExpand?: Callback<boolean>, blurStrategy?: BlurStrategy})
 
@@ -41,7 +37,7 @@ HdsActionBar核心操作组件。
 | 参数名 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | primaryButton | [ActionBarButton](ui-design-hdsactionbar.md#actionbarbutton) | 否 | @Param | 主按钮。 |
-| primaryButtonBuilder | [CustomBuilder](ts-types.md#custombuilder8) | 否 | @BuilderParam | 自定义主按钮。  **说明**：primaryButtonBuilder优先级高于primaryButton。 |
+| primaryButtonBuilder | [CustomBuilder](ts-types.md#custombuilder8) | 否 | @BuilderParam | 自定义主按钮。  primaryButtonBuilder优先级高于primaryButton。  **说明**：设置primaryButtonBuilder时必须同时设置primaryButtonBuilderWidth属性。 |
 | primaryButtonBuilderWidth | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | @Param | 主按钮是自定义组件时，需要设置主按钮宽度。 |
 | startButtons | Array<[ActionBarButton](ui-design-hdsactionbar.md#actionbarbutton)> | 否 | @Param | HdsActionBar布局起始位置按钮组。 |
 | endButtons | Array<[ActionBarButton](ui-design-hdsactionbar.md#actionbarbutton)> | 否 | @Param | HdsActionBar布局末尾位置按钮组。 |
@@ -51,8 +47,6 @@ HdsActionBar核心操作组件。
 | blurStrategy | [BlurStrategy](ui-design-hdsnavigation.md#blurstrategy) | 否 | @Param | HdsActionBar的模糊生效策略。  默认值：BlurStrategy.ADAPTIVE。 |
 
 ## ActionBarButton
-
-PhonePC/2in1TabletTV
 
 定义HdsActionBar的按钮。
 
@@ -65,8 +59,6 @@ PhonePC/2in1TabletTV
 **起始版本：** 6.0.0(20)
 
 ### 属性
-
-PhonePC/2in1TabletTV
 
 ActionBarButton的属性。
 
@@ -99,8 +91,6 @@ ActionBarButton的属性。
 
 ### constructor
 
-PhonePC/2in1TabletTV
-
 constructor(options: ActionBarButtonOptions)
 
 ActionBarButton的构造函数。
@@ -118,8 +108,6 @@ ActionBarButton的构造函数。
 | options | [ActionBarButtonOptions](ui-design-hdsactionbar.md#actionbarbuttonoptions) | 是 | HdsActionBar的按钮参数。 |
 
 ## ActionBarButtonOptions
-
-PhonePC/2in1TabletTV
 
 定义ActionBarButton的constructor参数。
 
@@ -153,8 +141,6 @@ PhonePC/2in1TabletTV
 
 ## ActionBarStyle
 
-PhonePC/2in1TabletTV
-
 定义HdsActionBar的样式。
 
 **装饰器类型：** @ObservedV2
@@ -166,8 +152,6 @@ PhonePC/2in1TabletTV
 **起始版本：** 6.0.0(20)
 
 ### 属性
-
-PhonePC/2in1TabletTV
 
 ActionBarStyle的属性。
 
@@ -194,8 +178,6 @@ ActionBarStyle的属性。
 
 ### constructor
 
-PhonePC/2in1TabletTV
-
 constructor(options: ActionBarStyleOptions)
 
 ActionBarStyle的构造函数。
@@ -213,8 +195,6 @@ ActionBarStyle的构造函数。
 | options | [ActionBarStyleOptions](ui-design-hdsactionbar.md#actionbarstyleoptions) | 是 | HdsActionBar的样式参数。 |
 
 ## ActionBarStyleOptions
-
-PhonePC/2in1TabletTV
 
 定义ActionBarStyle的constructor参数。
 
@@ -241,58 +221,56 @@ PhonePC/2in1TabletTV
 
 ## 示例
 
-PhonePC/2in1TabletTV
-
 HdsActionBar提供一种多按钮组件。
 
-```
-1. import { HdsActionBar, ActionBarButton, ActionBarStyle } from '@kit.UIDesignKit'
+```typescript
+import { HdsActionBar, ActionBarButton, ActionBarStyle } from '@kit.UIDesignKit'
 
-3. @Entry
-4. @ComponentV2
-5. struct TestActionBar {
-6. @Local isExpand: boolean = true;
-7. @Local isPrimaryIconChanged: boolean = false;
-8. @Local primaryHoverTips: ResourceStr = '开始';
+@Entry
+@ComponentV2
+struct TestActionBar {
+  @Local isExpand: boolean = true;
+  @Local isPrimaryIconChanged: boolean = false;
+  @Local primaryHoverTips: ResourceStr = '开始';
 
-10. build() {
-11. Column() {
-12. HdsActionBar({
-13. startButtons: [new ActionBarButton({
-14. baseIcon: $r('sys.symbol.stopwatch_fill')
-15. })],
-16. endButtons: [new ActionBarButton({
-17. baseIcon: $r('sys.symbol.mic_fill')
-18. })],
-19. primaryButton: new ActionBarButton({
-20. baseIcon: $r('sys.symbol.plus'),
-21. altIcon: $r('sys.symbol.play_fill'),
-22. onClick: () => {
-23. this.isExpand = !this.isExpand;
-24. this.isPrimaryIconChanged = !this.isPrimaryIconChanged;
-25. if (this.isPrimaryIconChanged) {
-26. this.primaryHoverTips = '暂停';
-27. } else {
-28. this.primaryHoverTips = '开始';
-29. }
-30. },
-31. hoverTips: this.primaryHoverTips
-32. }),
-33. actionBarStyle: new ActionBarStyle({
-34. isPrimaryIconChanged: this.isPrimaryIconChanged
-35. }),
-36. isExpand: this.isExpand!!
-37. })
-38. }
-39. .width('100%')
-40. .height('100%')
-41. .backgroundColor(0xF1F3F5)
-42. .justifyContent(FlexAlign.Center)
-43. .alignItems(HorizontalAlign.Center)
-44. }
-45. }
+  build() {
+    Column() {
+      HdsActionBar({
+        startButtons: [new ActionBarButton({
+          baseIcon: $r('sys.symbol.stopwatch_fill')
+        })],
+        endButtons: [new ActionBarButton({
+          baseIcon: $r('sys.symbol.mic_fill')
+        })],
+        primaryButton: new ActionBarButton({
+          baseIcon: $r('sys.symbol.plus'),
+          altIcon: $r('sys.symbol.play_fill'),
+          onClick: () => {
+            this.isExpand = !this.isExpand;
+            this.isPrimaryIconChanged = !this.isPrimaryIconChanged;
+            if (this.isPrimaryIconChanged) {
+              this.primaryHoverTips = '暂停';
+            } else {
+              this.primaryHoverTips = '开始';
+            }
+          },
+          hoverTips: this.primaryHoverTips
+        }),
+        actionBarStyle: new ActionBarStyle({
+          isPrimaryIconChanged: this.isPrimaryIconChanged
+        }),
+        isExpand: this.isExpand!!
+      })
+    }
+    .width('100%')
+    .height('100%')
+    .backgroundColor(0xF1F3F5)
+    .justifyContent(FlexAlign.Center)
+    .alignItems(HorizontalAlign.Center)
+  }
+}
 ```
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/8LVvCdjzQBCDSdRKE8HqTA/zh-cn_image_0000002589246861.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/YDZ74OnsRqufxAiDT7T2ag/zh-cn_image_0000002736315827.gif)

@@ -1,16 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-animateresult
-title: AnimateResult
-breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > AnimateResult
+title: Interface (AnimateResult)
+breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (AnimateResult)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:18+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:77013306a4cc95e5a2682d79666c2908106a713a47fcfee76699b100bbc8d36e
+scraped_at: 2026-09-02T14:53:22+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f99c68f917998197e460ab88d4afc951f4e212b2a6a61c83e36f8d5ebc936fef
 ---
 
 ## AnimateResult
-
-PhonePC/2in1TabletWearable
 
 动画结果类。
 

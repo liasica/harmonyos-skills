@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-regression
 title: 回归测试
 breadcrumb: FAQ > DevEco Testing > 回归测试
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:38+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:ef04c840bcf56f5081867e5020baa65fc4e3c63a3e2d5141f43e028dc26f5ee9
+scraped_at: 2026-09-02T14:54:59+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:8372ed3baaf261826d66a8c96ef8a571873451f946082eb27b3db0f485f1353c
 ---
 
 * **[生成回归测试包时报错提示“打包失败,当前项目根目录下缺少testcases文件夹”](faqs-regression-test-1.md)**
@@ -25,3 +25,4 @@ content_hash: sha256:ef04c840bcf56f5081867e5020baa65fc4e3c63a3e2d5141f43e028dc26
 * **[创建回归测试任务时，提示“应用解析异常”](faqs-regression-test-15.md)**
 * **[测试结束后hilog日志一栏显示“-”](faqs-regression-test-16.md)**
 * **[测试过程中没有显示用例包步骤且指标监控中无数据](faqs-regression-test-17.md)**
+* **[如何解决Hypium测试用例转换为测试服务包时py\_file字段获取为空的问题](faqs-regression-test-18.md)**

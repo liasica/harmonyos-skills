@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-510
 title: 版本概览
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.1.0(18) > 版本概览
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.0(18) > 版本概览
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:00+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:5d86f7f8f8dd94362e71a329e82b2b1e46b439f86e545951468106e0bd82bfdd
+scraped_at: 2026-09-02T14:58:46+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:85504c65d1368c3ca06311cbbfc4347b51461080d61a1e3cedf1f1737959615e
 ---
 
 HarmonyOS 5.1.0(18)在HarmonyOS 5.0.5(17)的基础上，进一步增强ArkUI组件能力，提供更多组件调用细节；应用进程、数据等关键信息在保证安全的前提下，进一步提升获取和使用的灵活性。
@@ -16,7 +16,7 @@ HarmonyOS 5.1.0(18)在HarmonyOS 5.0.5(17)的基础上，进一步增强ArkUI组�
 
 ## 版本信息
 
-说明
+**说明** 
 
 使用正确的配套关系进行应用开发可以获得更流畅的开发体验。
 
@@ -33,7 +33,7 @@ HarmonyOS 5.1.0(18)在HarmonyOS 5.0.5(17)的基础上，进一步增强ArkUI组�
 | DevEco Studio 5.1.0 Release (5.1.0.828) | 2025/06/11 |
 | SDK | Release | HarmonyOS 5.1.0 Release SDK  基于OpenHarmony SDK Ohos\_sdk\_public 5.1.0.110(API 18 Release) | 2025/06/11 |
 
-说明
+**说明** 
 
 * 该版本仅面向HUAWEI Watch 5系列智能穿戴设备和HUAWEI Pura 80系列手机、以及部分通过开发者渠道定向获得推送的Mate 60系列手机提供，因此使用其他设备的开发者可能暂时无法体验5.1.0(18)的新增能力。
 * **API版本**请在设备的“设置”中点击设备名称，进入“**关于本机**”进行查询。

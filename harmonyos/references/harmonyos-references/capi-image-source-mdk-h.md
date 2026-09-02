@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: image_source_mdk.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > image_source_mdk.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:21+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:573da28d77d93e22b0cadaca5fe804595ef97fe8eeab48f91880303e6e7d24fe
+scraped_at: 2026-09-02T15:02:32+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:219168023de3e89aebc282de39a8b3be278ec85911335ea798d277884e60d759
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明将ImageSource解码成像素位图的方法。
 
 **库：** libimage\_source\_ndk.z.so
 
-**系统能力：** SystemCapability.Multimedia.Image.Core
+**系统能力：** SystemCapability.Multimedia.Image.ImageSource
 
 **引用文件：** <multimedia/image\_framework/image\_source\_mdk.h>
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -48,8 +42,6 @@ PhonePC/2in1TabletTVWearable
 
 ### 函数
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 描述 |
 | --- | --- |
 | [int32\_t OH\_ImageSource\_Create(napi\_env env, struct OhosImageSource\* src, struct OhosImageSourceOps\* ops, napi\_value \*res)](capi-image-source-mdk-h.md#oh_imagesource_create) | 通过给定的信息OhosImageSource和OhosImageSourceOps结构体，获取JavaScript native层API ImageSource对象。 |
@@ -57,7 +49,7 @@ PhonePC/2in1TabletTVWearable
 | [int32\_t OH\_ImageSource\_CreateFromFd(napi\_env env, int32\_t fd, struct OhosImageSourceOps\* ops, napi\_value \*res)](capi-image-source-mdk-h.md#oh_imagesource_createfromfd) | 通过给定的文件描述符fd和[OhosImageSourceOps](capi-image-ohosimagesourceops.md)结构体，获取JavaScript native层API ImageSource对象。 |
 | [int32\_t OH\_ImageSource\_CreateFromData(napi\_env env, uint8\_t\* data, size\_t dataSize, struct OhosImageSourceOps\* ops, napi\_value \*res)](capi-image-source-mdk-h.md#oh_imagesource_createfromdata) | 通过给定的图像源缓冲区资源data和[OhosImageSourceOps](capi-image-ohosimagesourceops.md)结构体，获取JavaScript native层API ImageSource对象。 |
 | [int32\_t OH\_ImageSource\_CreateFromRawFile(napi\_env env, RawFileDescriptor rawFile, struct OhosImageSourceOps\* ops, napi\_value \*res)](capi-image-source-mdk-h.md#oh_imagesource_createfromrawfile) | 通过给定的资源描述符[RawFileDescriptor](capi-rawfile-rawfiledescriptor.md)和[OhosImageSourceOps](capi-image-ohosimagesourceops.md)结构体，获取JavaScript native层API ImageSource对象。 |
-| [int32\_t OH\_ImageSource\_CreateIncremental(napi\_env env, struct OhosImageSource\* source, struct OhosImageSourceOps\* ops, napi\_value \*res)](capi-image-source-mdk-h.md#oh_imagesource_createincremental) | 通过给定的信息[OhosImageSource](capi-image-ohosimagesource.md)和[OhosImageSourceOps](capi-image-ohosimagesourceops.md)结构，获取增量类型的JavaScript Native API ImageSource对象，图像数据应通过[OH\_ImageSource\_UpdateData](capi-image-source-mdk-h.md#oh_imagesource_updatedata)更新。 |
+| [int32\_t OH\_ImageSource\_CreateIncremental(napi\_env env, struct OhosImageSource\* source, struct OhosImageSourceOps\* ops, napi\_value \*res)](capi-image-source-mdk-h.md#oh_imagesource_createincremental) | 通过[OhosImageSource](capi-image-ohosimagesource.md)和[OhosImageSourceOps](capi-image-ohosimagesourceops.md)结构体，获取增量类型的JavaScript Native API ImageSource对象。图像数据应通过[OH\_ImageSource\_UpdateData](capi-image-source-mdk-h.md#oh_imagesource_updatedata)更新。 |
 | [int32\_t OH\_ImageSource\_CreateIncrementalFromData(napi\_env env, uint8\_t\* data, size\_t dataSize, struct OhosImageSourceOps\* ops, napi\_value \*res)](capi-image-source-mdk-h.md#oh_imagesource_createincrementalfromdata) | 通过给定的图像源缓冲区资源data和[OhosImageSourceOps](capi-image-ohosimagesourceops.md)结构体，获取增量类型的JavaScript Native API ImageSource对象，图像数据应通过[OH\_ImageSource\_UpdateData](capi-image-source-mdk-h.md#oh_imagesource_updatedata)更新。 |
 | [int32\_t OH\_ImageSource\_GetSupportedFormats(struct OhosImageSourceSupportedFormatList\* res)](capi-image-source-mdk-h.md#oh_imagesource_getsupportedformats) | 获取所有支持的解码格式元标记。 |
 | [ImageSourceNative\* OH\_ImageSource\_InitNative(napi\_env env, napi\_value source)](capi-image-source-mdk-h.md#oh_imagesource_initnative) | 从输入JavaScript native层ImageSource对象中，转换成[ImageSourceNative](capi-image-imagesourcenative-.md)值。 |
@@ -71,8 +63,6 @@ PhonePC/2in1TabletTVWearable
 | [int32\_t OH\_ImageSource\_Release(ImageSourceNative\* native)](capi-image-source-mdk-h.md#oh_imagesource_release) | 释放native层图像源 **ImageSourceNative**。 |
 
 ### 变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -93,14 +83,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_ImageSource\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ImageSource_Create(napi_env env, struct OhosImageSource* src, struct OhosImageSourceOps* ops, napi_value *res)
+```c
+int32_t OH_ImageSource_Create(napi_env env, struct OhosImageSource* src, struct OhosImageSourceOps* ops, napi_value *res)
 ```
 
 **描述**
@@ -130,10 +116,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSource\_CreateFromUri()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ImageSource_CreateFromUri(napi_env env, char* uri, size_t size,struct OhosImageSourceOps* ops, napi_value *res)
+```c
+int32_t OH_ImageSource_CreateFromUri(napi_env env, char* uri, size_t size,struct OhosImageSourceOps* ops, napi_value *res)
 ```
 
 **描述**
@@ -160,10 +144,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSource\_CreateFromFd()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ImageSource_CreateFromFd(napi_env env, int32_t fd,struct OhosImageSourceOps* ops, napi_value *res)
+```c
+int32_t OH_ImageSource_CreateFromFd(napi_env env, int32_t fd,struct OhosImageSourceOps* ops, napi_value *res)
 ```
 
 **描述**
@@ -189,10 +171,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSource\_CreateFromData()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ImageSource_CreateFromData(napi_env env, uint8_t* data, size_t dataSize,struct OhosImageSourceOps* ops, napi_value *res)
+```c
+int32_t OH_ImageSource_CreateFromData(napi_env env, uint8_t* data, size_t dataSize,struct OhosImageSourceOps* ops, napi_value *res)
 ```
 
 **描述**
@@ -219,10 +199,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSource\_CreateFromRawFile()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ImageSource_CreateFromRawFile(napi_env env, RawFileDescriptor rawFile,struct OhosImageSourceOps* ops, napi_value *res)
+```c
+int32_t OH_ImageSource_CreateFromRawFile(napi_env env, RawFileDescriptor rawFile,struct OhosImageSourceOps* ops, napi_value *res)
 ```
 
 **描述**
@@ -248,15 +226,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSource\_CreateIncremental()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ImageSource_CreateIncremental(napi_env env, struct OhosImageSource* source, struct OhosImageSourceOps* ops, napi_value *res)
+```c
+int32_t OH_ImageSource_CreateIncremental(napi_env env, struct OhosImageSource* source, struct OhosImageSourceOps* ops, napi_value *res)
 ```
 
 **描述**
 
-通过给定的信息[OhosImageSource](capi-image-ohosimagesource.md)和[OhosImageSourceOps](capi-image-ohosimagesourceops.md)结构，获取增量类型的JavaScript Native API ImageSource对象，图像数据应通过[OH\_ImageSource\_UpdateData](capi-image-source-mdk-h.md#oh_imagesource_updatedata)更新。
+通过[OhosImageSource](capi-image-ohosimagesource.md)和[OhosImageSourceOps](capi-image-ohosimagesourceops.md)结构体，获取增量类型的JavaScript Native API ImageSource对象。图像数据应通过[OH\_ImageSource\_UpdateData](capi-image-source-mdk-h.md#oh_imagesource_updatedata)更新。
 
 **起始版本：** 10
 
@@ -281,10 +257,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSource\_CreateIncrementalFromData()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ImageSource_CreateIncrementalFromData(napi_env env, uint8_t* data, size_t dataSize,struct OhosImageSourceOps* ops, napi_value *res)
+```c
+int32_t OH_ImageSource_CreateIncrementalFromData(napi_env env, uint8_t* data, size_t dataSize,struct OhosImageSourceOps* ops, napi_value *res)
 ```
 
 **描述**
@@ -311,10 +285,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSource\_GetSupportedFormats()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ImageSource_GetSupportedFormats(struct OhosImageSourceSupportedFormatList* res)
+```c
+int32_t OH_ImageSource_GetSupportedFormats(struct OhosImageSourceSupportedFormatList* res)
 ```
 
 **描述**
@@ -337,10 +309,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSource\_InitNative()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. ImageSourceNative* OH_ImageSource_InitNative(napi_env env, napi_value source)
+```c
+ImageSourceNative* OH_ImageSource_InitNative(napi_env env, napi_value source)
 ```
 
 **描述**
@@ -368,10 +338,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSource\_CreatePixelMap()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ImageSource_CreatePixelMap(const ImageSourceNative* native,struct OhosImageDecodingOps* ops, napi_value *res)
+```c
+int32_t OH_ImageSource_CreatePixelMap(const ImageSourceNative* native,struct OhosImageDecodingOps* ops, napi_value *res)
 ```
 
 **描述**
@@ -396,10 +364,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSource\_CreatePixelMapList()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ImageSource_CreatePixelMapList(const ImageSourceNative* native,struct OhosImageDecodingOps* ops, napi_value *res)
+```c
+int32_t OH_ImageSource_CreatePixelMapList(const ImageSourceNative* native,struct OhosImageDecodingOps* ops, napi_value *res)
 ```
 
 **描述**
@@ -424,10 +390,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSource\_GetDelayTime()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ImageSource_GetDelayTime(const ImageSourceNative* native,struct OhosImageSourceDelayTimeList* res)
+```c
+int32_t OH_ImageSource_GetDelayTime(const ImageSourceNative* native,struct OhosImageSourceDelayTimeList* res)
 ```
 
 **描述**
@@ -451,10 +415,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSource\_GetFrameCount()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ImageSource_GetFrameCount(const ImageSourceNative* native, uint32_t *res)
+```c
+int32_t OH_ImageSource_GetFrameCount(const ImageSourceNative* native, uint32_t *res)
 ```
 
 **描述**
@@ -478,10 +440,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSource\_GetImageInfo()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ImageSource_GetImageInfo(const ImageSourceNative* native, int32_t index,struct OhosImageSourceInfo* info)
+```c
+int32_t OH_ImageSource_GetImageInfo(const ImageSourceNative* native, int32_t index,struct OhosImageSourceInfo* info)
 ```
 
 **描述**
@@ -506,10 +466,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSource\_GetImageProperty()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ImageSource_GetImageProperty(const ImageSourceNative* native, struct OhosImageSourceProperty* key, struct OhosImageSourceProperty* value)
+```c
+int32_t OH_ImageSource_GetImageProperty(const ImageSourceNative* native, struct OhosImageSourceProperty* key, struct OhosImageSourceProperty* value)
 ```
 
 **描述**
@@ -534,10 +492,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSource\_ModifyImageProperty()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ImageSource_ModifyImageProperty(const ImageSourceNative* native, struct OhosImageSourceProperty* key, struct OhosImageSourceProperty* value)
+```c
+int32_t OH_ImageSource_ModifyImageProperty(const ImageSourceNative* native, struct OhosImageSourceProperty* key, struct OhosImageSourceProperty* value)
 ```
 
 **描述**
@@ -562,10 +518,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSource\_UpdateData()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ImageSource_UpdateData(const ImageSourceNative* native, struct OhosImageSourceUpdateData* data)
+```c
+int32_t OH_ImageSource_UpdateData(const ImageSourceNative* native, struct OhosImageSourceUpdateData* data)
 ```
 
 **描述**
@@ -589,10 +543,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSource\_Release()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ImageSource_Release(ImageSourceNative* native)
+```c
+int32_t OH_ImageSource_Release(ImageSourceNative* native)
 ```
 
 **描述**

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-diving
 title: 潜水
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 数据类型 > 锻炼记录数据 > 潜水
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d57d91242200d64bc293e60e433f72129d1948bff409cfba66af8898668b2e16
+scraped_at: 2026-09-02T14:59:56+08:00
+doc_updated_at: 2026-07-09
+content_hash: sha256:efd53a2516d1ca87cd306607da66b5f01b3a34edc37c2f916c638de642091280
 ---
 
 ## 自由潜水
@@ -14,11 +14,11 @@ content_hash: sha256:d57d91242200d64bc293e60e433f72129d1948bff409cfba66af8898668
 
 | **锻炼记录子类型常量** | **描述** | 数据来源 |
 | --- | --- | --- |
-| [exerciseSequenceHelper.diving.EXERCISE\_TYPE](../harmonyos-references/health-api-exercisedequencehelper.md#常量-8) | 自由潜水 | 部分专业手表 |
+| [exerciseSequenceHelper.diving.EXERCISE\_TYPE](../harmonyos-references/health-api-exercisesequencehelper.md#常量-8) | 自由潜水 | 部分专业手表 |
 
 ### 自由潜水关联的统计数据说明
 
-* 字段定义：[exerciseSequenceHelper.diving.SummaryFields](../harmonyos-references/health-api-exercisedequencehelper.md#summaryfields-7)
+* 字段定义：[exerciseSequenceHelper.diving.SummaryFields](../harmonyos-references/health-api-exercisesequencehelper.md#summaryfields-7)
 
 | **字段**列表 | 描述 | **类型** | 可选/必选 |
 | --- | --- | --- | --- |
@@ -29,7 +29,7 @@ content_hash: sha256:d57d91242200d64bc293e60e433f72129d1948bff409cfba66af8898668
 
 ### 自由潜水关联的明细数据说明
 
-* 字段定义：[exerciseSequenceHelper.diving.DetailFields](../harmonyos-references/health-api-exercisedequencehelper.md#detailfields-7)
+* 字段定义：[exerciseSequenceHelper.diving.DetailFields](../harmonyos-references/health-api-exercisesequencehelper.md#detailfields-7)
 
 | **字段**列表 | 描述 | **类型** | 可选/必选 |
 | --- | --- | --- | --- |
@@ -42,11 +42,11 @@ content_hash: sha256:d57d91242200d64bc293e60e433f72129d1948bff409cfba66af8898668
 
 | **锻炼记录子类型常量** | **描述** | 数据来源 |
 | --- | --- | --- |
-| [exerciseSequenceHelper.scubaDiving.EXERCISE\_TYPE](../harmonyos-references/health-api-exercisedequencehelper.md#常量-23) | 水肺潜水 | 部分专业手表 |
+| [exerciseSequenceHelper.scubaDiving.EXERCISE\_TYPE](../harmonyos-references/health-api-exercisesequencehelper.md#常量-23) | 水肺潜水 | 部分专业手表 |
 
 ### 水肺潜水关联的统计数据说明
 
-* 字段定义：[exerciseSequenceHelper.scubaDiving.SummaryFields](../harmonyos-references/health-api-exercisedequencehelper.md#summaryfields-22)
+* 字段定义：[exerciseSequenceHelper.scubaDiving.SummaryFields](../harmonyos-references/health-api-exercisesequencehelper.md#summaryfields-22)
 
 | **字段**列表 | 描述 | **类型** | 可选/必选 |
 | --- | --- | --- | --- |
@@ -57,7 +57,7 @@ content_hash: sha256:d57d91242200d64bc293e60e433f72129d1948bff409cfba66af8898668
 
 ### 水肺潜水关联的明细数据说明
 
-* 字段定义：[exerciseSequenceHelper.scubaDiving.DetailFields](../harmonyos-references/health-api-exercisedequencehelper.md#detailfields-22)
+* 字段定义：[exerciseSequenceHelper.scubaDiving.DetailFields](../harmonyos-references/health-api-exercisesequencehelper.md#detailfields-22)
 
 | **字段**列表 | 描述 | **类型** | 可选/必选 |
 | --- | --- | --- | --- |

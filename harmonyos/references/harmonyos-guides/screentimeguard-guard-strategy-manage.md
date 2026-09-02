@@ -3,15 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 守护策略管理
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 守护策略管理
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:53+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:314486380003c3fecb0bb9ab8a6211fc892ca523faca67166ec8f4f5793d731b
+scraped_at: 2026-09-02T14:50:32+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:b7eed1ad6ab987ffbf345682d73d4a2f6bace82c7f6e2d0a78bbd620813a2018
 ---
 
 * **[概述](screentimeguard-guard-strategy-manage-overview.md)**
 * **[添加策略](screentimeguard-add-guard-strategy.md)**
 * **[修改策略](screentimeguard-update-guard-strategy.md)**
-* **[查询策略](screentimeguard-query-guard-strategies.md)**
-* **[删除策略](screentimeguard-remove-guard-strategy.md)**
+* **[查询策略配置数据](screentimeguard-query-guard-strategies.md)**
 * **[启动策略](screentimeguard-start-guard-strategy.md)**
 * **[停止策略](screentimeguard-stop-guard-strategy.md)**
+* **[查询策略运行数据](screentimeguard-query-guard-strategy-data.md)**
+* **[删除策略](screentimeguard-remove-guard-strategy.md)**

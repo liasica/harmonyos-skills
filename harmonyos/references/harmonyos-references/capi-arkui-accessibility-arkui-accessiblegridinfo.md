@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_AccessibleGridInfo
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_AccessibleGridInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:12+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:cc9e2b2233081d8a2974dc41392650f8c315d82edf317475b7a645082c139c48
+scraped_at: 2026-09-02T15:01:23+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5c64b68f4abdecee5d0c4bf77227c3f85040284e26b0ae5d3ae2ae361fd39a15
 ---
 
-```
-1. typedef struct {...} ArkUI_AccessibleGridInfo
+```c
+typedef struct {...} ArkUI_AccessibleGridInfo
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-用于配置特定组件（如[List](ts-container-list.md)、[Flex](ts-container-flex.md)、[Select](ts-basic-components-select.md)、[Swiper](ts-container-swiper.md)组件）的网格布局属性。
+用于描述网格组件的整体布局属性。该结构体用于向无障碍服务提供网格组件的行数、列数和选择模式等信息，支持无障碍服务获取网格的整体布局信息。
 
 **起始版本：** 13
 
@@ -26,14 +24,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
-| int32\_t rowCount | 组件的行数。取值范围为大于0的整数。 |
-| int32\_t columnCount | 组件的列数。取值范围为大于0的整数。 |
-| int32\_t selectionMode | 值为0时表示仅选中网格的一行，非0值时表示选中网格的多行。 |
+| int32\_t rowCount | 网格的行数。取值范围为大于0的整数，传入非正整数时不生效。 |
+| int32\_t columnCount | 网格的列数。取值范围为大于0的整数，传入非正整数时不生效。 |
+| int32\_t selectionMode | 选中模式。值为0时表示仅选中网格的一行，非0值时表示选中网格的多行。 |

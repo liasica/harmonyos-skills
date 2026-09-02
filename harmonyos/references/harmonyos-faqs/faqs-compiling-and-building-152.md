@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“The version number of the module must be a string, but received a xxx.”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“The version number of the module must be a string, but received a xxx.”
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:42+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:15+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:34bdd03816727552ef9cf08e5698cb56dee104db6ea1f1915e5fe579d398dd57
 ---
 

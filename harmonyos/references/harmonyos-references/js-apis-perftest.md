@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: "@ohos.test.PerfTest"
 breadcrumb: API参考 > 系统 > 调测调优 > Test Kit（应用测试服务） > ArkTS API > @ohos.test.PerfTest
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:32+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d268ac8f84d506880519253a03905254e094299ea20bc98b8ff29e4a5f8d321b
+scraped_at: 2026-09-02T15:02:17+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:44a67006a3564e29bac0ce46f8522c434a04c31c64d788ed9bc19d67d38dae5d
 ---
 
-PerfTest提供白盒性能测试能力，供开发者在测试场景使用，支持对指定代码段或指定场景的性能数据测试，支持自动化执行测试代码段，并采集耗时、CPU、内存、时延、帧率等性能数据。
+PerfTest提供白盒性能测试能力，供开发者在测试场景使用。支持对指定代码段或指定场景自动化执行测试，并采集耗时、CPU、内存、时延、帧率等性能数据。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 20开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本模块接口在[单元测试框架](../harmonyos-guides/unittest-guidelines.md)中使用。
@@ -19,15 +19,11 @@ PerfTest提供白盒性能测试能力，供开发者在测试场景使用，支
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { PerfMetric, PerfTest, PerfTestStrategy, PerfMeasureResult } from '@kit.TestKit';
+```ts
+import { PerfMetric, PerfTest, PerfTestStrategy, PerfMeasureResult } from '@kit.TestKit';
 ```
 
 ## PerfMetric
-
-PhonePC/2in1TabletTV
 
 框架支持采集的性能指标。
 
@@ -41,40 +37,31 @@ PhonePC/2in1TabletTV
 | CPU\_LOAD | 1 | 应用进程CPU负载，取值为百分比。 |
 | CPU\_USAGE | 2 | 应用进程CPU使用率，取值为百分比。 |
 | MEMORY\_RSS | 3 | 代码段单次执行结束时，应用进程占用物理内存（含共享库），单位：KB。 |
-| MEMORY\_PSS | 4 | 代码段单次执行结束时，应用进程占用物理内存（不含共享库），单位：KB。 |
+| MEMORY\_PSS | 4 | 代码段单次执行结束时，应用进程占用物理内存（按比例分摊共享库），单位：KB。 |
 | APP\_START\_RESPONSE\_TIME | 5 | 应用启动的响应时延，单位：ms。 |
 | APP\_START\_COMPLETE\_TIME | 6 | 应用启动的完成时延，单位：ms。 |
 | PAGE\_SWITCH\_COMPLETE\_TIME | 7 | 应用内页面切换的完成时延，单位：ms。 |
-| LIST\_SWIPE\_FPS | 8 | 应用内列表滑动的帧率，单位：fps。 |
+| LIST\_SWIPE\_FPS | 8 | 应用内列表滑动的帧率，单位：fps(每秒帧数)。 |
 
-说明
+**说明** 
 
 1. 以上指标均用于采集指定应用进程的性能数据，非系统整机性能数据。
 2. CPU（CPU\_LOAD/CPU\_USAGE）、内存（MEMORY\_RSS/MEMORY\_PSS）数据采集说明如下：
-
-* 测试过程中，代码段执行开始前和代码段执行结束后，会分别采集指定应用进程的CPU和内存数据，因此测试过程中需要保证被测应用进程一直存在。
-
-1. 应用启动时延（APP\_START\_RESPONSE\_TIME/APP\_START\_COMPLETE\_TIME）数据采集说明如下：
-
-* 应用启动时延数据受系统打点上报限制，开始时间为点击事件上报时间点，响应时延结束时间为点击后系统响应首帧的上屏时间点（首帧显示在屏幕上的时间点），完成时延结束时间为应用启动后的首帧上屏时间点，与端到端用户感知时延存在差异。
-* 应用启动时延数据采集支持的场景：桌面点击应用图标启动、Dock栏点击应用图标启动、应用中心点击应用图标启动。
-* 单次测试期间，仅第一次指定应用启动的时延数据会被采集。
-
-1. 页面切换时延（PAGE\_SWITCH\_COMPLETE\_TIME）数据采集说明如下：
-
-* 页面切换时延计算受系统打点上报限制，开始时间为点击事件上报时间点，完成时延结束时间为页面切换后的首帧上屏时间点，与端到端用户感知时延存在差异。
-* 页面切换时延数据采集支持的场景：Router、Navigation控件内的页面切换。
-* 单次测试期间，仅指定应用内第一次页面切换的时延数据会被采集。
-
-1. 列表滑动帧率（LIST\_SWIPE\_FPS）数据采集说明如下：
-
-* 列表滑动帧率：指的是在列表滑动时，屏幕每秒钟渲染更新帧的次数。
-* 列表滑动帧率数据采集支持的场景：ArkUI子系统List、Grid、scroll、waterflow滚动控件列表的滑动。
-* 单次测试期间，仅指定应用内第一次列表滑动的帧率数据会被采集。
+   * 测试过程中，代码段执行开始前和代码段执行结束后，会分别采集指定应用进程的CPU和内存数据，因此测试过程中需要保证被测应用进程一直存在。
+3. 应用启动时延（APP\_START\_RESPONSE\_TIME/APP\_START\_COMPLETE\_TIME）数据采集说明如下：
+   * 应用启动时延数据受系统打点上报限制，与端到端用户感知时延存在差异。开始时间为点击事件上报时间点；响应时延结束时间为点击后系统响应首帧的上屏时间点（首帧显示在屏幕上的时间点）；完成时延结束时间为应用启动后的首帧上屏时间点。
+   * 应用启动时延数据采集支持的场景：桌面点击应用图标启动、Dock栏点击应用图标启动、应用中心点击应用图标启动。
+   * 单次测试期间，仅第一次指定应用启动的时延数据会被采集。
+4. 页面切换时延（PAGE\_SWITCH\_COMPLETE\_TIME）数据采集说明如下：
+   * 页面切换时延计算受系统打点上报限制，与端到端用户感知时延存在差异。开始时间为点击事件上报时间点，完成时延结束时间为页面切换后的首帧上屏时间点。
+   * 页面切换时延数据采集支持的场景：Router、Navigation控件内的页面切换。
+   * 单次测试期间，仅指定应用内第一次页面切换的时延数据会被采集。
+5. 列表滑动帧率（LIST\_SWIPE\_FPS）数据采集说明如下：
+   * 列表滑动帧率：指的是在列表滑动时，屏幕每秒钟渲染更新帧的次数。
+   * 列表滑动帧率数据采集支持的场景：ArkUI子系统List、Grid、Scroll、WaterFlow滚动控件列表的滑动。
+   * 单次测试期间，仅指定应用内第一次列表滑动的帧率数据会被采集。
 
 ## PerfTestStrategy
-
-PhonePC/2in1TabletTV
 
 性能测试执行策略。
 
@@ -84,22 +71,20 @@ PhonePC/2in1TabletTV
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| metrics | Array<[PerfMetric](js-apis-perftest.md#perfmetric)> | 否 | 否 | 被测性能指标列表。 |
-| actionCode | Callback<Callback<boolean>> | 否 | 否 | 测试代码段。 |
-| resetCode | Callback<Callback<boolean>> | 否 | 是 | 测试结束环境重置代码段。默认为空，框架运行时不执行此代码段。 |
-| bundleName | string | 否 | 是 | 被测应用包名。默认为""，框架运行时测试当前测试应用的性能数据。 |
-| iterations | number | 否 | 是 | 测试迭代执行次数，默认值为5。 |
-| timeout | number | 否 | 是 | 单次代码段（actionCode/resetCode）执行的超时时间，默认值为10000ms。 |
+| metrics | Array<[PerfMetric](js-apis-perftest.md#perfmetric)> | 否 | 否 | 被测性能指标列表，列表为空则不采集任何性能指标数据。 |
+| actionCode | Callback<Callback<boolean>> | 否 | 否 | 测试代码段。入参为回调函数，需在代码段中主动调用以通知框架执行完成，否则会导致执行超时，详见下方说明。 |
+| resetCode | Callback<Callback<boolean>> | 否 | 是 | 测试结束环境重置代码段。当测试代码段修改了全局状态（如全局变量、配置等）需要在每轮测试后重置时传入此参数。默认为空，框架在执行测试时不执行此代码段。入参为回调函数，需在代码段中主动调用以通知框架执行完成，否则会导致执行超时，详见下方说明。 |
+| bundleName | string | 否 | 是 | 被测应用包名，格式要求与应用的bundleName一致。当需要测试非当前应用的性能数据时，传入目标应用的包名。默认为""，框架在执行测试时测试当前应用的性能数据。 |
+| iterations | number | 否 | 是 | 测试迭代执行次数，取值范围为大于0的整数，默认值为5。超出范围时抛出异常。 |
+| timeout | number | 否 | 是 | 单次代码段（actionCode/resetCode）执行的超时时间，取值范围为大于0的整数，单位：ms，默认值为10000ms。当测试代码段执行耗时较长时，可适当增大此值以避免超时，超时后将触发异常，并终止测试执行。 |
 
-说明
+**说明** 
 
 属性actionCode和resetCode的入参类型为回调函数"Callback<boolean>"。在代码段中需要主动调用此回调函数，通知框架代码段执行完成，否则会导致代码段执行超时。
 
-其中，回调函数的参数为boolean类型，true代表代码段执行符合预期，false代表代码段执行不符合预期。[代码示例](js-apis-perftest.md#create)。
+其中，回调函数的参数为boolean类型，true代表代码段执行符合预期，false代表代码段执行不符合预期。
 
 ## PerfMeasureResult
-
-PhonePC/2in1TabletTV
 
 性能指标对应测量结果数据。
 
@@ -110,20 +95,16 @@ PhonePC/2in1TabletTV
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | metric | [PerfMetric](js-apis-perftest.md#perfmetric) | 是 | 否 | 被测性能指标。 |
-| roundValues | Array<number> | 是 | 否 | 被测性能指标的各轮测量数据值。当数据采集失败时返回-1。 |
+| roundValues | Array<number> | 是 | 否 | 被测性能指标的各轮测量数据值，单位与对应[PerfMetric](js-apis-perftest.md#perfmetric)指标一致。当数据采集失败时返回-1。 |
 | maximum | number | 是 | 否 | 各轮测量数据最大值（剔除为-1的数据后计算）。 |
 | minimum | number | 是 | 否 | 各轮测量数据最小值（剔除为-1的数据后计算）。 |
 | average | number | 是 | 否 | 各轮测量数据平均值（剔除为-1的数据后计算）。 |
 
 ## PerfTest
 
-PhonePC/2in1TabletTV
-
-PerfTest类为白盒性能测试框架的总入口，提供测试任务创建、测试代码段执行和数据采集、测量结果获取等能力。
+PerfTest类为白盒性能测试框架的总入口，提供测试任务创建、测试代码段执行和数据采集、测量结果获取等能力。通过[PerfTest.create](js-apis-perftest.md#create)创建实例。
 
 ### create
-
-PhonePC/2in1TabletTV
 
 static create(strategy: PerfTestStrategy): PerfTest
 
@@ -143,11 +124,11 @@ static create(strategy: PerfTestStrategy): PerfTest
 
 | 类型 | 说明 |
 | --- | --- |
-| [PerfTest](js-apis-perftest.md#perftest) | 返回构造的PerfTest对象。 |
+| [PerfTest](js-apis-perftest.md#perftest) | 返回构造的PerfTest对象，可用于执行测试任务、采集性能数据和获取测量结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[perftest错误码](errorcode-perftest.md)。
+以下错误码的详细介绍请参见[PerfTest错误码](errorcode-perftest.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -158,40 +139,38 @@ static create(strategy: PerfTestStrategy): PerfTest
 
 **示例：**
 
-```
-1. import { PerfMetric, PerfTest, PerfTestStrategy } from '@kit.TestKit';
+```ts
+import { PerfMetric, PerfTest, PerfTestStrategy } from '@kit.TestKit';
 
-3. async function demo() {
-4. let metrics: Array<PerfMetric> = [PerfMetric.DURATION];
-5. let num = 0;
-6. let actionCode = async (finish: Callback<boolean>) => { // 定义测试代码段，入参类型'Callback<boolean>'，命名为finish
-7. for (let index = 0; index < 10000; index++) {
-8. num++;
-9. }
-10. finish(true); // 调用finish回调函数，通知代码段执行结束，且执行符合预期
-11. }
-12. let resetCode = async (finish: Callback<boolean>) => { // 定义测试结束环境重置代码段
-13. num = 0;
-14. finish(true);
-15. }
-16. let perfTestStrategy: PerfTestStrategy = {
-17. metrics: metrics,
-18. actionCode: actionCode,
-19. resetCode: resetCode,
-20. timeout: 30000,
-21. iterations: 10,
-22. };
-23. let perfTest: PerfTest = PerfTest.create(perfTestStrategy); // 构造一个PerfTest对象，创建测试任务
-24. }
+async function demo() {
+  let metrics: Array<PerfMetric> = [PerfMetric.DURATION];
+  let num = 0;
+  let actionCode = async (finish: Callback<boolean>) => { // 定义测试代码段，入参类型'Callback<boolean>'，命名为finish。
+    for (let index = 0; index < 10000; index++) {
+      num++;
+    }
+    finish(true); // 调用finish回调函数，通知代码段执行结束，且执行符合预期。
+  };
+  let resetCode = async (finish: Callback<boolean>) => { // 定义测试结束环境重置代码段。
+    num = 0;
+    finish(true);
+  };
+  let perfTestStrategy: PerfTestStrategy = {
+    metrics: metrics,
+    actionCode: actionCode,
+    resetCode: resetCode,
+    timeout: 30000,
+    iterations: 10
+  };
+  let perfTest: PerfTest = PerfTest.create(perfTestStrategy); // 构造一个PerfTest对象，创建测试任务。
+}
 ```
 
 ### run
 
-PhonePC/2in1TabletTV
-
 run(): Promise<void>
 
-运行性能测试，迭代执行测试代码段并采集性能数据，使用Promise回调。
+运行性能测试，按配置次数迭代执行测试代码段并采集性能数据，使用Promise回调。每次迭代中，框架依次执行actionCode和resetCode（若已配置），并在actionCode执行期间采集性能数据。执行完成后，可通过[getMeasureResult](js-apis-perftest.md#getmeasureresult)获取采集到的测量结果数据。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -201,11 +180,11 @@ run(): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象。无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[perftest错误码](errorcode-perftest.md)。
+以下错误码的详细介绍请参见[PerfTest错误码](errorcode-perftest.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -216,34 +195,32 @@ run(): Promise<void>
 
 **示例：**
 
-```
-1. import { PerfMetric, PerfTest, PerfTestStrategy } from '@kit.TestKit';
+```ts
+import { PerfMetric, PerfTest, PerfTestStrategy } from '@kit.TestKit';
 
-3. async function demo() {
-4. let metrics: Array<PerfMetric> = [PerfMetric.DURATION];
-5. let num = 0;
-6. let actionCode = async (finish: Callback<boolean>) => {
-7. for (let index = 0; index < 10000; index++) {
-8. num++;
-9. }
-10. finish(true);
-11. }
-12. let perfTestStrategy: PerfTestStrategy = {
-13. metrics: metrics,
-14. actionCode: actionCode
-15. };
-16. let perfTest: PerfTest = PerfTest.create(perfTestStrategy);
-17. await perfTest.run(); // 运行性能测试
-18. }
+async function demo() {
+  let metrics: Array<PerfMetric> = [PerfMetric.DURATION];
+  let num = 0;
+  let actionCode = async (finish: Callback<boolean>) => {
+    for (let index = 0; index < 10000; index++) {
+      num++;
+    }
+    finish(true); // 调用finish回调函数，通知代码段执行结束，且执行符合预期。
+  };
+  let perfTestStrategy: PerfTestStrategy = {
+    metrics: metrics,
+    actionCode: actionCode
+  };
+  let perfTest: PerfTest = PerfTest.create(perfTestStrategy); // 构造一个PerfTest对象，创建测试任务。
+  await perfTest.run(); // 运行性能测试。
+}
 ```
 
 ### getMeasureResult
 
-PhonePC/2in1TabletTV
-
 getMeasureResult(metric: PerfMetric): PerfMeasureResult
 
-获取指定性能指标的测量数据。
+获取指定性能指标的测量数据。需要在[run()](js-apis-perftest.md#run)执行完成后调用，否则无法获取到有效的测量数据。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -253,17 +230,17 @@ getMeasureResult(metric: PerfMetric): PerfMeasureResult
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| metric | [PerfMetric](js-apis-perftest.md#perfmetric) | 是 | 性能指标。 |
+| metric | [PerfMetric](js-apis-perftest.md#perfmetric) | 是 | 指定要查询的性能指标。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [PerfMeasureResult](js-apis-perftest.md#perfmeasureresult) | 性能指标对应测量结果数据。 |
+| [PerfMeasureResult](js-apis-perftest.md#perfmeasureresult) | 指定性能指标对应的测量结果，包含各轮测量数据值及统计值（最大值、最小值、平均值）。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[perftest错误码](errorcode-perftest.md)。
+以下错误码的详细介绍请参见[PerfTest错误码](errorcode-perftest.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -274,35 +251,33 @@ getMeasureResult(metric: PerfMetric): PerfMeasureResult
 
 **示例：**
 
-```
-1. import { PerfMetric, PerfTest, PerfTestStrategy } from '@kit.TestKit';
+```ts
+import { PerfMetric, PerfTest, PerfTestStrategy } from '@kit.TestKit';
 
-3. async function demo() {
-4. let metrics: Array<PerfMetric> = [PerfMetric.DURATION];
-5. let num = 0;
-6. let actionCode = async (finish: Callback<boolean>) => {
-7. for (let index = 0; index < 10000; index++) {
-8. num++;
-9. }
-10. finish(true);
-11. }
-12. let perfTestStrategy: PerfTestStrategy = {
-13. metrics: metrics,
-14. actionCode: actionCode
-15. };
-16. let perfTest: PerfTest = PerfTest.create(perfTestStrategy);
-17. await perfTest.run();
-18. let res = perfTest.getMeasureResult(PerfMetric.DURATION); // 获取指定性能指标的测量数据
-19. }
+async function demo() {
+  let metrics: Array<PerfMetric> = [PerfMetric.DURATION];
+  let num = 0;
+  let actionCode = async (finish: Callback<boolean>) => {
+    for (let index = 0; index < 10000; index++) {
+      num++;
+    }
+    finish(true); // 调用finish回调函数，通知代码段执行结束，且执行符合预期。
+  };
+  let perfTestStrategy: PerfTestStrategy = {
+    metrics: metrics,
+    actionCode: actionCode
+  };
+  let perfTest: PerfTest = PerfTest.create(perfTestStrategy); // 构造一个PerfTest对象，创建测试任务。
+  await perfTest.run();
+  let res = perfTest.getMeasureResult(PerfMetric.DURATION); // 获取指定性能指标的测量数据。
+}
 ```
 
 ### destroy
 
-PhonePC/2in1TabletTV
-
 destroy(): void
 
-销毁PerfTest对象。
+销毁PerfTest对象，释放该对象占用的相关资源。与[create](js-apis-perftest.md#create)方法配对使用，在PerfTest对象使用完毕后调用，未调用此方法可能导致资源无法释放。调用后不应再使用该PerfTest对象。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -310,7 +285,7 @@ destroy(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[perftest错误码](errorcode-perftest.md)。
+以下错误码的详细介绍请参见[PerfTest错误码](errorcode-perftest.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -319,24 +294,24 @@ destroy(): void
 
 **示例：**
 
-```
-1. import { PerfMetric, PerfTest, PerfTestStrategy } from '@kit.TestKit';
+```ts
+import { PerfMetric, PerfTest, PerfTestStrategy } from '@kit.TestKit';
 
-3. async function demo() {
-4. let metrics: Array<PerfMetric> = [PerfMetric.DURATION];
-5. let num = 0;
-6. let actionCode = async (finish: Callback<boolean>) => {
-7. for (let index = 0; index < 10000; index++) {
-8. num++;
-9. }
-10. finish(true);
-11. }
-12. let perfTestStrategy: PerfTestStrategy = {
-13. metrics: metrics,
-14. actionCode: actionCode
-15. };
-16. let perfTest: PerfTest = PerfTest.create(perfTestStrategy);
-17. await perfTest.run();
-18. perfTest.destroy(); // 销毁PerfTest对象
-19. }
+async function demo() {
+  let metrics: Array<PerfMetric> = [PerfMetric.DURATION];
+  let num = 0;
+  let actionCode = async (finish: Callback<boolean>) => {
+    for (let index = 0; index < 10000; index++) {
+      num++;
+    }
+    finish(true); // 调用finish回调函数，通知代码段执行结束，且执行符合预期。
+  };
+  let perfTestStrategy: PerfTestStrategy = {
+    metrics: metrics,
+    actionCode: actionCode
+  };
+  let perfTest: PerfTest = PerfTest.create(perfTestStrategy); // 构造一个PerfTest对象，创建测试任务。
+  await perfTest.run();
+  perfTest.destroy(); // 销毁PerfTest对象。
+}
 ```

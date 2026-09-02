@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/ide-changelog-500-release
 title: 变更说明
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > DevEco Studio > 变更说明
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > DevEco Studio > 变更说明
 category: harmonyos-releases
-scraped_at: 2026-04-29T13:25:18+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:3241c486b2702ddbfb96e4b00ac39bbc427a711e9002d466c9894addc2dcb13e
+scraped_at: 2026-09-02T14:59:07+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:4f98994fce5fe5d39f5e6428e96f1b4067ebfcff1d88a62682789188e36f2bf2
 ---
 
 ## 5.0.3.814至5.0.3.900
@@ -32,58 +32,58 @@ content_hash: sha256:3241c486b2702ddbfb96e4b00ac39bbc427a711e9002d466c9894addc2d
 
 对于DevEco Studio NEXT Developer Beta1（5.0.3.403）之前版本创建的历史工程，在使用了版本配套的新镜像（NEXT.0.0.71）后，如果遇到测试框架没有正确测试结果返回或者运行异常的问题，可以尝试将“模块名称/src/ohosTest/ets/testrunner/OpenHarmonyTestRunner.ets”文件的以下代码：
 
-```
-1. async onRun() {
-2. ...
-3. abilityDelegator.startAbility(want, (err: BusinessError, data: void) => {
-4. hilog.info(0x0000, tag, 'startAbility : err : %{public}s', JSON.stringify(err) ?? '');
-5. hilog.info(0x0000, tag, 'startAbility : data : %{public}s', JSON.stringify(data) ?? '');
-6. })
-7. ...
-8. }
+```screen
+async onRun() {
+    ...
+    abilityDelegator.startAbility(want, (err: BusinessError, data: void) => {
+      hilog.info(0x0000, tag, 'startAbility : err : %{public}s', JSON.stringify(err) ?? '');
+      hilog.info(0x0000, tag, 'startAbility : data : %{public}s', JSON.stringify(data) ?? '');
+    })
+    ...
+}
 ```
 
 修改为：
 
-```
-1. // 新增全局变量
-2. const UNLOCK_ERROR = -3;
-```
-
-```
-1. // 替换函数
-2. async onRun() {
-3. ...
-4. await startAbility(bundleName, testAbilityName);
-5. ...
-6. }
+```screen
+// 新增全局变量
+const UNLOCK_ERROR = -3;
 ```
 
-```
-1. // 新增函数实现
-2. async function startAbility(bundleName: string, abilityName: string) {
-3. await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`).then(result => {
-4. if (result.stdResult.includes("error: unlock screen failed in developer mode")) {
-5. hilog.info(0x0000, tag, '%{public}s', `startAbility failed ${result.stdResult}`);
-6. abilityDelegator.finishTest("", UNLOCK_ERROR, () => {});
-7. return;
-8. }
-9. attachAbility(bundleName);
-10. }).catch((err: string) => {
-11. hilog.info(0x0000, tag, '%{public}s', `startAbility error: ${err}`);
-12. })
-13. }
-
-15. async function attachAbility(bundleName: string) {
-16. await abilityDelegator.executeShellCommand(`aa attach -b ${bundleName}`).then(result => {
-17. hilog.info(0x0000, tag, '%{public}s', `attachAbility ${result.stdResult}`);
-18. }).catch((err: string) => {
-19. hilog.error(0x0000, tag, `%{public}s`, `attachAbility error: ${err}`);
-20. })
-21. }
+```screen
+// 替换函数
+async onRun() {
+    ...
+    await startAbility(bundleName, testAbilityName);
+    ...
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/k1mPPDl2QTGT8sOw-Y-Nyw/zh-cn_image_0000002336528273.png)
+```screen
+// 新增函数实现
+async function startAbility(bundleName: string, abilityName: string) {
+  await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`).then(result => {
+    if (result.stdResult.includes("error: unlock screen failed in developer mode")) {
+      hilog.info(0x0000, tag, '%{public}s', `startAbility failed ${result.stdResult}`);
+      abilityDelegator.finishTest("", UNLOCK_ERROR, () => {});
+      return;
+    }
+    attachAbility(bundleName);
+  }).catch((err: string) => {
+    hilog.info(0x0000, tag, '%{public}s', `startAbility error: ${err}`);
+  })
+}
+ 
+async function attachAbility(bundleName: string) {
+  await abilityDelegator.executeShellCommand(`aa attach -b ${bundleName}`).then(result => {
+    hilog.info(0x0000, tag, '%{public}s', `attachAbility ${result.stdResult}`);
+  }).catch((err: string) => {
+    hilog.error(0x0000, tag, `%{public}s`, `attachAbility error: ${err}`);
+  })
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/pirMGbP5SAefgEIW8x3lDQ/zh-cn_image_0000002336528273.png)
 
 ## 5.0.3.706至5.0.3.800
 
@@ -137,20 +137,20 @@ Code Linter检查安全规则@security/specified-interface-call-chain-check中�
 * 对于历史工程：
   + 如果工程级build-profile.json5文件的useNormalizedOHMUrl字段为true，则默认将[noExternalImportByPath](../harmonyos-guides-V5/ide-hvigor-build-profile-V5.md)设置为true，即通过相对路径跨模块或绝对路径导入文件，编译会报错。
 
-    ```
-    1. import {MainPage} from '../../../../../library/src/main/ets/MainPage'  // 相对路径跨模块导入，编译报错
+    ```screen
+    import {MainPage} from '../../../../../library/src/main/ets/MainPage'  // 相对路径跨模块导入，编译报错
     ```
   + 如果工程级build-profile.json5文件的useNormalizedOHMUrl字段为true，则oh-package.json5中依赖的包使用的别名需要和依赖包的oh-package.json5的name保持一致，否则编译会报错。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/TGD3mjMZTy-fxQ_FYLIW0A/zh-cn_image_0000002336448501.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/dnuEqKR5S46O7ByonxJ33g/zh-cn_image_0000002336448501.png "点击放大")
 * 新建工程时，默认构建[字节码格式的HAR](../harmonyos-guides-V5/ide-hvigor-build-har-V5.md#section179161312181613)。
 
 **适配指导**
 
 * 在报错代码所在模块的oh-package.json5文件中配置dependencies依赖，并通过以下方式导入文件。
 
-  ```
-  1. import {MainPage} from 'library'
+  ```screen
+  import {MainPage} from 'library'
   ```
 * 将oh-package.json5中依赖的包使用的别名，修改为依赖包的oh-package.json5中的name。
 
@@ -169,12 +169,12 @@ Code Linter检查安全规则@security/specified-interface-call-chain-check中�
 
 如果开发者希望修改此默认规格，在harA模块打包的产物中包含harB的so，请在工程级或模块级build-profile.json5文件中buildOption下添加nativeLib/excludeFromHar字段，并设置为false。具体请参考[build-profile.json5](../harmonyos-guides-V5/ide-hvigor-build-profile-V5.md)。
 
-```
-1. "buildOption": {
-2. "nativeLib": {
-3. "excludeFromHar": false
-4. }
-5. }
+```screen
+"buildOption": {
+  "nativeLib": {
+    "excludeFromHar": false
+  }
+}
 ```
 
 ## 5.0.3.502至5.0.3.600
@@ -194,7 +194,7 @@ Code Linter检查安全规则@security/specified-interface-call-chain-check中�
 
 打开历史工程，请根据DevEco Studio提示进行操作，点击Enable按钮，配置完成后会在obfuscation-rules.txt文件中增加四项推荐的混淆规则。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/xZdT4MH5TMyQJ8kzw_3vRw/zh-cn_image_0000002302688922.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/Wnjz8ieXTqGQA1_9XIWajg/zh-cn_image_0000002302688922.png)
 
 ## 5.0.3.500至5.0.3.502
 
@@ -213,14 +213,14 @@ Code Linter检查安全规则@security/specified-interface-call-chain-check中�
 
 如需对har包内的.so文件进行CPP代码调试或采集完整的符号名称，请在模块打包之前，在工程级或模块级build-profile.json5文件中buildOption下添加nativeLib/debugSymbol/strip字段并设置为false。具体请参考[build-profile.json5](../harmonyos-guides-V5/ide-hvigor-build-profile-V5.md)。
 
-```
-1. "buildOption": {
-2. "nativeLib": {
-3. "debugSymbol": {
-4. "strip": false
-5. }
-6. }
-7. }
+```screen
+"buildOption": {
+  "nativeLib": {
+    "debugSymbol": {
+      "strip": false
+    }
+  }
+}
 ```
 
 ## 5.0.3.403至5.0.3.500
@@ -271,7 +271,7 @@ DevEco Studio NEXT Developer Beta2（5.0.3.500）及以上版本，对@Component
 
 升级了ROM，同时升级了新版本配套的DevEco Studio，但当前启动的hdc不是新版本DevEco Studio（5.0.3.404或以上版本）自带的hdc工具。可能由于之前配置过旧版本hdc环境变量，在脱离IDE场景下启动了旧版本的hdc，导致当前使用的hdc工具版本过旧，无法识别到设备。
 
-说明
+**说明** 
 
 可通过如下方式确认当前启动的hdc是否为新版本DevEco Studio自带的hdc工具：使用任务管理器/活动监视器查找hdc，并查看文件所在位置（新版本自带的hdc工具位置：新版本DevEco Studio安装目录/sdk/HarmonyOS-NEXT-DB2/openharmony/toolchains）。
 

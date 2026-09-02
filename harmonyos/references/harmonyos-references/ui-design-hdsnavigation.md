@@ -1,49 +1,43 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdsnavigation
-title: HdsNavigation
-breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsNavigation
+title: HdsNavigation (导航根视图容器)
+breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsNavigation (导航根视图容器)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:57:14+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:751954e468ad7fbac986764b3a612f2345aacd5eeacfb201eb14e5da1600cd1e
+scraped_at: 2026-09-02T15:01:40+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d8e30fa37fa36e9d88f5afe71c1b28e799b7481b2020a541f28a14d40e4e0152
 ---
 
-本模块提供导航组件的能力，默认支持标题栏随内容区滚动的动态模糊样式。6.0.0(20)版本以后，推荐使用[bindToScrollable](ui-design-hdsnavigation.md#bindtoscrollable)、[bindToNestedScrollable](ui-design-hdsnavigation.md#bindtonestedscrollable)属性绑定导航组件和可滚动容器组件后，再使用导航组件滚动相关的功能，从而获得更优的体验。如滚动生效动态模糊样式，标题栏随内容区滚动动态显隐功能等。
+本模块提供导航组件的能力，默认支持标题栏随内容区滚动的动态模糊样式。6.0.0(20)及以上版本，推荐使用[bindToScrollable](ui-design-hdsnavigation.md#bindtoscrollable)、[bindToNestedScrollable](ui-design-hdsnavigation.md#bindtonestedscrollable)属性绑定导航组件和可滚动容器组件后，再使用导航组件滚动相关的功能，从而获得更优的体验。如滚动生效动态模糊样式，标题栏随内容区滚动动态显隐功能等。
 
-HdsNavigation组件是路由导航的根视图容器，一般作为Page页面的根容器使用，其内部默认包含了标题栏、内容区和工具栏。其中内容区默认首页显示导航内容（HdsNavigation的子组件）或非首页显示（[HdsNavDestination](ui-design-hdsnavdestination.md)的子组件），首页和非首页通过路由进行切换。
+HdsNavigation组件是路由导航的根视图容器，一般作为Page页面的根容器使用，其内部默认包含了标题栏、内容区和工具栏。其中内容区默认首页显示导航内容（HdsNavigation的子组件）或非首页显示（[HdsNavDestination (导航子页面容器)](ui-design-hdsnavdestination.md)的子组件），首页和非首页通过路由进行切换。
 
 **起始版本：** 5.1.0(18)
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-说明
+**说明** 
 
 * HdsNavigationAttribute是用于配置HdsNavigation组件属性的关键接口。6.0.1(21)及之前版本，导入HdsNavigation组件后需要开发者手动导入HdsNavigationAttribute，否则会编译报错。从6.0.2(22)版本开始，编译工具链识别到导入HdsNavigation组件后，会自动导入HdsNavigationAttribute，无需开发者手动导入。
 * 如果开发者手动导入HdsNavigationAttribute，DevEco Studio会显示置灰，6.0.1(21)及之前版本删除会编译报错，从6.0.2(22)版本开始，删除对功能无影响。
 
 6.0.1(21)及之前版本：
 
-```
-1. import { HdsNavigation, HdsNavigationAttribute } from '@kit.UIDesignKit';
+```typescript
+import { HdsNavigation, HdsNavigationAttribute } from '@kit.UIDesignKit';
 ```
 
 6.0.2(22)及之后版本：
 
-```
-1. import { HdsNavigation } from '@kit.UIDesignKit';
+```typescript
+import { HdsNavigation } from '@kit.UIDesignKit';
 ```
 
 ## 子组件
 
-PhonePC/2in1TabletTV
-
-可以包含子组件。 推荐使用[NavPathStack](ts-basic-components-navigation.md#navpathstack10)配合[HdsNavDestination](ui-design-hdsnavdestination.md)属性进行页面路由。
+可以包含子组件。 推荐使用[NavPathStack](ts-basic-components-navigation.md#navpathstack10)配合[HdsNavDestination (导航子页面容器)](ui-design-hdsnavdestination.md)属性进行页面路由。
 
 ## 接口
-
-PhonePC/2in1TabletTV
 
 HdsNavigation(pathInfos?: NavPathStack)
 
@@ -63,13 +57,9 @@ HdsNavigation(pathInfos?: NavPathStack)
 
 ## 属性
 
-PhonePC/2in1TabletTV
-
 除支持[通用属性](ts-component-general-attributes.md)外，还支持以下属性：
 
 ### titleBar
-
-PhonePC/2in1TabletTV
 
 titleBar(options?: HdsNavigationTitleBarOptions)
 
@@ -91,8 +81,6 @@ titleBar(options?: HdsNavigationTitleBarOptions)
 
 ### titleMode
 
-PhonePC/2in1TabletTV
-
 titleMode(value: HdsNavigationTitleMode)
 
 设置页面标题栏显示模式。
@@ -111,11 +99,9 @@ titleMode(value: HdsNavigationTitleMode)
 
 ### toolbarConfiguration
 
-PhonePC/2in1TabletTV
-
 toolbarConfiguration(value: Array<ToolbarItem> | CustomBuilder, options?: NavigationToolbarOptions)
 
-说明
+**说明** 
 
 不支持通过SymbolGlyphModifier对象的fontSize属性修改图标大小、effectStrategy属性修改动效、symbolEffect属性修改动效类型。
 
@@ -131,12 +117,10 @@ toolbarConfiguration(value: Array<ToolbarItem> | CustomBuilder, options?: Naviga
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | Array<[ToolbarItem](ts-basic-components-navigation.md#toolbaritem10)> | [CustomBuilder](ts-types.md#custombuilder8) | 是 | 工具栏内容。  使用Array<[ToolbarItem](ts-basic-components-navigation.md#toolbaritem10)>写法设置的工具栏有如下特性：  - 如果为[Stack](ts-basic-components-navigation.md#navigationmode9枚举说明)模式，不推荐使用该写法。推荐使用[CustomBuilder](ts-types.md#custombuilder8)配合[ToolBar](ohos-arkui-advanced-toolbar.md)组件写法，避免布局显示问题。  - 工具栏所有选项均分底部工具栏，在每个均分内容区布局文本和图标。  - 文本超长时，若工具栏选项个数小于5个，优先拓展选项的宽度，最大宽度与屏幕等宽，其次逐级缩小，缩小之后换行，最后截断。  - 最多支持显示5个图标，多余的图标会被放入自动生成的更多图标。  使用[CustomBuilder](ts-types.md#custombuilder8)写法为用户自定义工具栏选项，除均分底部工具栏外不具备以上功能。 |
+| value | Array<[ToolbarItem](ts-basic-components-navigation.md#toolbaritem10)> | [CustomBuilder](ts-types.md#custombuilder8) | 是 | 工具栏内容。  使用Array<[ToolbarItem](ts-basic-components-navigation.md#toolbaritem10)>写法设置的工具栏有如下特性：  - 如果为[Stack](ts-basic-components-navigation.md#navigationmode9枚举说明)模式，不推荐使用该写法。推荐使用[CustomBuilder](ts-types.md#custombuilder8)配合[ToolBar](ohos-arkui-advanced-toolbar.md)组件写法，避免布局显示问题。  - 工具栏所有选项均分底部工具栏，在每个均分内容区布局文本和图标。  - 最多支持显示5个图标，多余的图标会被放入自动生成的更多图标。  使用[CustomBuilder](ts-types.md#custombuilder8)写法为用户自定义工具栏选项，除均分底部工具栏外不具备以上功能。 |
 | options | [NavigationToolbarOptions](ts-basic-components-navigation.md#navigationtoolbaroptions11) | 否 | 工具栏选项。 |
 
 ### hideToolBar
-
-PhonePC/2in1TabletTV
 
 hideToolBar(hide: boolean, animated?: boolean)
 
@@ -157,8 +141,6 @@ hideToolBar(hide: boolean, animated?: boolean)
 
 ### hideTitleBar
 
-PhonePC/2in1TabletTV
-
 hideTitleBar(hide: boolean, animated?: boolean)
 
 设置是否隐藏标题栏，并且可设置在标题栏显示隐藏的状态变化中是否使用动画。
@@ -178,8 +160,6 @@ hideTitleBar(hide: boolean, animated?: boolean)
 
 ### hideBackButton
 
-PhonePC/2in1TabletTV
-
 hideBackButton(value: boolean)
 
 设置是否隐藏标题栏中的返回键。返回键仅针对[titleMode](ui-design-hdsnavigation.md#titlemode)为HdsNavigationTitleMode.MINI时才生效。
@@ -197,8 +177,6 @@ hideBackButton(value: boolean)
 | value | boolean | 是 | 是否隐藏标题栏中的返回键。  默认值：false。  - true：隐藏返回键。  - false：显示返回键。 |
 
 ### navBarWidth
-
-PhonePC/2in1TabletTV
 
 navBarWidth(value: Length)
 
@@ -218,8 +196,6 @@ navBarWidth(value: Length)
 
 ### navBarPosition
 
-PhonePC/2in1TabletTV
-
 navBarPosition(value: NavBarPosition)
 
 设置导航栏位置。仅在HdsNavigation组件分栏时生效。
@@ -237,8 +213,6 @@ navBarPosition(value: NavBarPosition)
 | value | [NavBarPosition](ts-basic-components-navigation.md#navbarposition9枚举说明) | 是 | 导航栏位置。  默认值：NavBarPosition.Start。 |
 
 ### mode
-
-PhonePC/2in1TabletTV
 
 mode(value: NavigationMode)
 
@@ -258,8 +232,6 @@ mode(value: NavigationMode)
 
 ### divider
 
-PhonePC/2in1TabletTV
-
 divider(style: NavigationDividerStyle | null)
 
 设置HdsNavigation双栏模式下的分割线样式。
@@ -277,8 +249,6 @@ divider(style: NavigationDividerStyle | null)
 | style | [NavigationDividerStyle](ts-basic-components-navigation.md#navigationdividerstyle23) | null | 是 | 设置双栏分割线样式。  配置为null时：隐藏分割线。 |
 
 ### hideNavBar
-
-PhonePC/2in1TabletTV
 
 hideNavBar(value: boolean)
 
@@ -298,8 +268,6 @@ hideNavBar(value: boolean)
 
 ### navDestination
 
-PhonePC/2in1TabletTV
-
 navDestination(builder: NavDestinationBuilder)
 
 创建HdsNavDestination组件。使用builder函数，基于name和pageInfos构造HdsNavDestination组件。builder下只能有一个根节点。builder中允许在HdsNavDestination组件外包含一层自定义组件， 但自定义组件不允许设置属性和事件，否则仅显示空白。
@@ -317,8 +285,6 @@ navDestination(builder: NavDestinationBuilder)
 | builder | [NavDestinationBuilder](ui-design-hdsnavigation.md#navdestinationbuilder) | 是 | 创建HdsNavDestination组件。 |
 
 ### navBarWidthRange
-
-PhonePC/2in1TabletTV
 
 navBarWidthRange(value: NavBarWidthRangeOptions)
 
@@ -340,8 +306,6 @@ navBarWidthRange(value: NavBarWidthRangeOptions)
 
 ### minContentWidth
 
-PhonePC/2in1TabletTV
-
 minContentWidth(value: Dimension)
 
 设置导航栏内容区最小宽度（双栏模式下生效）。
@@ -360,15 +324,13 @@ minContentWidth(value: Dimension)
 | --- | --- | --- | --- |
 | value | [Dimension](ts-types.md#dimension10) | 是 | 导航栏内容区最小宽度。  默认值：360。单位：vp。  undefined：行为不做处理，导航栏内容区最小宽度与默认值保持一致。 |
 
-说明
+**说明** 
 
 1. 仅设置navBarWidth时，不支持HdsNavigation分割线拖拽。
 2. navBarWidthRange指定分割线可以拖拽范围。如果不设置值，则按照默认值处理。拖拽范围需要满足navBarWidthRange设置的范围和minContentWidth限制。
 3. HdsNavigation显示范围缩小顺序：a. 缩小内容区大小。如果不设置minContentWidth属性，则可以缩小内容区至0， 否则最小缩小至minContentWidth。b. 缩小导航栏大小，缩小时需要满足导航栏宽度大于navBarRange的下限。c. 对显示内容进行裁切。
 
 ### ignoreLayoutSafeArea
-
-PhonePC/2in1TabletTV
 
 ignoreLayoutSafeArea(types?: Array<LayoutSafeAreaType>, edges?: Array<LayoutSafeAreaEdge>)
 
@@ -387,7 +349,7 @@ ignoreLayoutSafeArea(types?: Array<LayoutSafeAreaType>, edges?: Array<LayoutSafe
 | types | Array <[LayoutSafeAreaType](ts-universal-attributes-expand-safe-area.md#layoutsafeareatype12)> | 否 | 配置扩展安全区域的类型。  默认值：[LayoutSafeAreaType.SYSTEM]。 |
 | edges | Array <[LayoutSafeAreaEdge](ts-universal-attributes-expand-safe-area.md#layoutsafeareaedge12)> | 否 | 配置扩展安全区域的方向。  默认值：[LayoutSafeAreaEdge.TOP, LayoutSafeAreaEdge.BOTTOM]。 |
 
-说明
+**说明** 
 
 组件设置LayoutSafeArea之后生效的条件为：
 
@@ -396,8 +358,6 @@ ignoreLayoutSafeArea(types?: Array<LayoutSafeAreaType>, edges?: Array<LayoutSafe
 若组件延伸到非安全区域内，此时在非安全区域里触发的事件（例如：点击事件）等可能会被系统拦截，优先响应状态栏等系统组件。
 
 ### systemBarStyle
-
-PhonePC/2in1TabletTV
 
 systemBarStyle(originalStyle: Optional<SystemBarStyle>, scrollEffectStyle: Optional<SystemBarStyle>)
 
@@ -416,7 +376,7 @@ systemBarStyle(originalStyle: Optional<SystemBarStyle>, scrollEffectStyle: Optio
 | originalStyle | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[SystemBarStyle](arkts-apis-window-i.md#systembarstyle12)> | 是 | 系统状态栏初始样式。未设置systemBarStyle属性时，颜色默认值同主标题栏字体颜色。 |
 | scrollEffectStyle | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[SystemBarStyle](arkts-apis-window-i.md#systembarstyle12)> | 是 | HdsNavigation动态样式生效后，系统状态栏对应的动态样式。未设置systemBarStyle属性时，颜色默认值同主标题栏字体颜色。 |
 
-说明
+**说明** 
 
 1. 不建议混合使用systemBarStyle属性和window设置状态栏样式的相关接口，例如：[setWindowSystemBarProperties](arkts-apis-window-window.md#setwindowsystembarproperties9)。
 2. [Split](ts-basic-components-navigation.md#navigationmode9枚举说明)模式下的HdsNavigation，如果内容区没有HdsNavDestination，则遵从HdsNavigation首页的设置，反之则遵从栈顶HdsNavDestination的设置。
@@ -425,8 +385,6 @@ systemBarStyle(originalStyle: Optional<SystemBarStyle>, scrollEffectStyle: Optio
 5. 非全屏窗口下，HdsNavigation/HdsNavDestination设置的状态栏不生效。
 
 ### recoverable
-
-PhonePC/2in1TabletTV
 
 recoverable(recoverable: Optional<boolean>)
 
@@ -444,17 +402,14 @@ recoverable(recoverable: Optional<boolean>)
 | --- | --- | --- | --- |
 | recoverable | [Optional](ts-universal-attributes-custom-property.md#optionalt)<boolean> | 是 | HdsNavigation是否可恢复，默认为不可恢复。  默认值：false。  - true：页面栈可恢复。  - false：页面栈不可恢复。 |
 
-说明
+**说明** 
 
-使用该接口需要先设置HdsNavigation的[id属性](ts-universal-attributes-component-id.md#id)，否则该接口无效。
-
-该接口需要配合HdsNavDestination的[recoverable](ui-design-hdsnavdestination.md#recoverable)接口使用。
-
-恢复的过程中不可序列化的信息，例如不可序列化的参数与用户设置的onPop等，会被丢弃，无法恢复。
+1. 使用该接口需要先设置HdsNavigation的[id属性](ts-universal-attributes-component-id.md#id)，否则该接口无效。
+2. 该接口需要配合HdsNavDestination的[recoverable](ui-design-hdsnavdestination.md#recoverable)接口使用。
+3. 恢复的过程中不可序列化的信息，例如不可序列化的参数与用户设置的onPop等，会被丢弃，无法恢复。
+4. 当应用退到后台，因系统资源不足等原因被系统终止后，如果某页面已配置为可恢复，当应用再次被唤醒至前台时，系统将自动恢复该页面。详细说明请参考[UIAbility备份恢复](../harmonyos-guides/ability-recover-guideline.md)。
 
 ### dynamicHideTitleBar
-
-PhonePC/2in1TabletTV
 
 dynamicHideTitleBar(value: DynamicHideParams)
 
@@ -474,8 +429,6 @@ dynamicHideTitleBar(value: DynamicHideParams)
 
 ### bindToScrollable
 
-PhonePC/2in1TabletTV
-
 bindToScrollable(scrollers: Array<Scroller>)
 
 绑定导航组件和可滚动容器组件，动态显隐标题区域，状态栏及底部自定义区域，使能动态显隐更优体验。
@@ -494,8 +447,6 @@ bindToScrollable(scrollers: Array<Scroller>)
 
 ### bindToNestedScrollable
 
-PhonePC/2in1TabletTV
-
 bindToNestedScrollable(scrollers: Array<NestedScrollInfo>)
 
 绑定导航组件和嵌套的可滚动容器组件，动态显隐标题区域、状态栏及底部自定义区域，使能动态显隐更优体验。
@@ -512,15 +463,13 @@ bindToNestedScrollable(scrollers: Array<NestedScrollInfo>)
 | --- | --- | --- | --- |
 | scrollers | Array<[NestedScrollInfo](ui-design-hdsnavigation.md#nestedscrollinfo)> | 是 | 嵌套的可滚动容器组件的控制器。 |
 
-说明
+**说明** 
 
 当多个可滚动容器组件绑定了同一个导航组件时，滚动任何一个容器都会触发标题栏显示或隐藏效果。且当任何一个可滚动容器组件滑动到底部或顶部位
 
 置时，会立即触发标题栏显示动效。因此，为了获得最佳用户体验，不建议同时触发多个可滚动容器组件的滚动事件。
 
 ### enableDragBar
-
-PhonePC/2in1TabletTV
 
 enableDragBar(isEnabled: Optional<boolean>)
 
@@ -540,8 +489,6 @@ enableDragBar(isEnabled: Optional<boolean>)
 
 ### enableModeChangeAnimation
 
-PhonePC/2in1TabletTV
-
 enableModeChangeAnimation(isEnabled: Optional<boolean>)
 
 控制是否开启[NavigationMode](ts-basic-components-navigation.md#navigationmode9枚举说明)单双栏切换时的动效。
@@ -560,8 +507,6 @@ enableModeChangeAnimation(isEnabled: Optional<boolean>)
 
 ### withTheme
 
-PhonePC/2in1TabletTV
-
 withTheme(value: WithThemeOptions)
 
 设置HdsNavigation的[WithTheme](ts-container-with-theme.md)能力。
@@ -577,8 +522,6 @@ withTheme(value: WithThemeOptions)
 | value | [WithThemeOptions](ui-design-hdsnavigation.md#withthemeoptions) | 是 | WithTheme能力配置信息。 |
 
 ### splitPlaceholder
-
-PhonePC/2in1TabletTV
 
 splitPlaceholder(placeholder: ComponentContent)
 
@@ -596,8 +539,6 @@ HdsNavigation双栏模式下，支持设置右侧页面显示默认占位页，�
 
 ### enableVisibilityLifecycleWithContentCover
 
-PhonePC/2in1TabletTV
-
 enableVisibilityLifecycleWithContentCover(isEnabled: Optional<boolean>)
 
 设置是否启用HdsNavDestination页面的[onHidden](ui-design-hdsnavdestination.md#onhidden)、[onShown](ui-design-hdsnavdestination.md#onshown)生命周期与全模态的联动触发。
@@ -614,11 +555,7 @@ enableVisibilityLifecycleWithContentCover(isEnabled: Optional<boolean>)
 
 ## 事件
 
-PhonePC/2in1TabletTV
-
 ### onNavBarStateChange
-
-PhonePC/2in1TabletTV
 
 onNavBarStateChange(callback: Callback<boolean>)
 
@@ -634,11 +571,9 @@ onNavBarStateChange(callback: Callback<boolean>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callBack | [Callback](ts-types.md#callback12)<boolean> | 是 | 参数为true时表示显示导航栏，为false时表示隐藏导航栏。 |
+| callback | [Callback](ts-types.md#callback12)<boolean> | 是 | 回调函数。返回true表示显示导航栏，返回false表示隐藏导航栏。 |
 
 ### onNavigationModeChange
-
-PhonePC/2in1TabletTV
 
 onNavigationModeChange(callback: Callback<NavigationMode>)
 
@@ -654,11 +589,9 @@ onNavigationModeChange(callback: Callback<NavigationMode>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | [Callback](ts-types.md#callback12)<[NavigationMode](ts-basic-components-navigation.md#navigationmode9枚举说明)> | 是 | - 参数为NavigationMode.Split时：当前HdsNavigation显示为双栏。  - 参数为NavigationMode.Stack时：当前HdsNavigation显示为单栏。 |
+| callback | [Callback](ts-types.md#callback12)<[NavigationMode](ts-basic-components-navigation.md#navigationmode9枚举说明)> | 是 | 回调函数。  - 返回NavigationMode.Split时，表示当前HdsNavigation显示为双栏模式。  - 返回NavigationMode.Stack时，表示当前HdsNavigation显示为单栏。 |
 
 ### onTitleModeChange
-
-PhonePC/2in1TabletTV
 
 onTitleModeChange(callback: Callback<HdsNavigationTitleMode>)
 
@@ -674,11 +607,9 @@ onTitleModeChange(callback: Callback<HdsNavigationTitleMode>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | [Callback](ts-types.md#callback12)<[HdsNavigationTitleMode](ui-design-hdsnavigation.md#hdsnavigationtitlemode)> | 是 | 参数为标题栏显示模式。 |
+| callback | [Callback](ts-types.md#callback12)<[HdsNavigationTitleMode](ui-design-hdsnavigation.md#hdsnavigationtitlemode)> | 是 | 回调函数，返回当前标题栏显示模式。 |
 
 ### customNavContentTransition
-
-PhonePC/2in1TabletTV
 
 customNavContentTransition(delegate: CustomTransitionDelegate)
 
@@ -698,8 +629,6 @@ customNavContentTransition(delegate: CustomTransitionDelegate)
 
 ## ScrollEffectType
 
-PhonePC/2in1TabletTV
-
 标题栏模糊样式枚举。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -716,8 +645,6 @@ PhonePC/2in1TabletTV
 | IMMERSIVE\_GRADIENT\_BLUR | 3 | 标题栏的模糊样式类型：沉浸式渐变模糊。  模糊效果在空间维度上呈现渐强/渐弱的变化，模糊边界柔和，用于增强页面沉浸感。  - 当[ScrollEffectOptions](ui-design-hdsnavigation.md#scrolleffectoptions).enableScrollEffect属性配置为true时，标题栏样式从[originalStyle](ui-design-hdsnavigation.md#titlebarstyleoptions)到[scrollEffectStyle](ui-design-hdsnavigation.md#titlebarstyleoptions)线性过渡。  - 当[ScrollEffectOptions](ui-design-hdsnavigation.md#scrolleffectoptions).enableScrollEffect属性配置为false时，直接生效模糊。此样式适用于沉浸式图文类的场景。  **起始版本：** 6.1.0(23) |
 
 ## HdsNavigationTitleMode
-
-PhonePC/2in1TabletTV
 
 标题栏显示模式枚举。
 
@@ -736,8 +663,6 @@ PhonePC/2in1TabletTV
 
 ## DividerShowType
 
-PhonePC/2in1TabletTV
-
 分割线显示类型枚举。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -754,8 +679,6 @@ PhonePC/2in1TabletTV
 
 ## TextStyleMode
 
-PhonePC/2in1TabletTV
-
 文字型图标模式枚举。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -771,8 +694,6 @@ PhonePC/2in1TabletTV
 
 ## BottomBuilderShowType
 
-PhonePC/2in1TabletTV
-
 bottomBuilder显示类型枚举。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -787,8 +708,6 @@ bottomBuilder显示类型枚举。
 | OVERDRAG\_SHOW | 1 | 过度拖拽场景下，显示bottomBuilder。 |
 
 ## HideMode
-
-PhonePC/2in1TabletTV
 
 标题栏动态显隐模式枚举。
 
@@ -807,8 +726,6 @@ PhonePC/2in1TabletTV
 
 ## IconStyleMode
 
-PhonePC/2in1TabletTV
-
 图片型图标模式枚举。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -824,8 +741,6 @@ PhonePC/2in1TabletTV
 | LARGE | 102 | 大图标模式，图标默认大小为40vp \* 40vp。 |
 
 ## BlurStrategy
-
-PhonePC/2in1TabletTV
 
 模糊效果生效策略枚举。
 
@@ -843,8 +758,6 @@ PhonePC/2in1TabletTV
 
 ## TitleSize
 
-PhonePC/2in1TabletTV
-
 标题字号大小。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -859,8 +772,6 @@ PhonePC/2in1TabletTV
 | TITLE\_ML | 1 | 中等偏大号标题。 |
 
 ## NavDestinationBuilder
-
-PhonePC/2in1TabletTV
 
 type NavDestinationBuilder = (name: string, pageInfos: Object) => void
 
@@ -880,8 +791,6 @@ type NavDestinationBuilder = (name: string, pageInfos: Object) => void
 | pageInfos | Object | 是 | 创建的HdsNavDestination页面的详细参数。 |
 
 ## CustomTransitionDelegate
-
-PhonePC/2in1TabletTV
 
 type CustomTransitionDelegate = (from: NavContentInfo, to: NavContentInfo, operation: NavigationOperation) => NavigationAnimatedTransition | undefined
 
@@ -909,8 +818,6 @@ type CustomTransitionDelegate = (from: NavContentInfo, to: NavContentInfo, opera
 
 ## IconType
 
-PhonePC/2in1TabletTV
-
 type IconType = ResourceStr | SymbolGlyphModifier | PixelMap
 
 HdsNavigation标题栏上单个图标型菜单项支持的图片资源类型。
@@ -929,8 +836,6 @@ HdsNavigation标题栏上单个图标型菜单项支持的图片资源类型。
 
 ## HdsNavigationMenuItemOptions
 
-PhonePC/2in1TabletTV
-
 type HdsNavigationMenuItemOptions = HdsNavigationBadgeIconOptions
 
 HdsNavigation标题栏菜单项配置。
@@ -947,8 +852,6 @@ HdsNavigation标题栏菜单项配置。
 
 ## HdsNavigationBackButtonItemOptions
 
-PhonePC/2in1TabletTV
-
 type HdsNavigationBackButtonItemOptions = HdsNavigationIconOptions
 
 HdsNavigation标题栏返回按钮配置。
@@ -963,9 +866,24 @@ HdsNavigation标题栏返回按钮配置。
 | --- | --- |
 | [HdsNavigationIconOptions](ui-design-hdsnavigation.md#hdsnavigationiconoptions) | 图标配置信息。 |
 
-## HdsNavigationBackgroundStyle
+## BuilderType
 
-PhonePC/2in1TabletTV
+type BuilderType = ComponentContent | BuilderOptions
+
+自定义节点类型。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.UIDesign.HDSComponent.Full
+
+**起始版本：** 26.0.0
+
+| 类型 | 说明 |
+| --- | --- |
+| [ComponentContent](js-apis-arkui-componentcontent.md) | 组件内容封装类型。 |
+| [BuilderOptions](ui-design-hdsnavigation.md#builderoptions) | 自定义构建函数类型。 |
+
+## HdsNavigationBackgroundStyle
 
 HdsNavigation标题栏背景板样式。
 
@@ -977,13 +895,11 @@ HdsNavigation标题栏背景板样式。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| backgroundColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 标题栏背景板背景色。  默认值：  模糊样式类型为COMMON\_BLUR或GRADUAL\_BLUR时，背景色默认值均为透明色。  模糊样式类型为GRADIENT\_BLUR时，背景色生效线性径向渐变色，具体默认值分以下场景：  - 若[ScrollEffectOptions](ui-design-hdsnavigation.md#scrolleffectoptions).enableScrollEffect为true，在[TitleBarStyleOptions](ui-design-hdsnavigation.md#titlebarstyleoptions).originalStyle中，backgroundColor默认值为透明色；在[TitleBarStyleOptions](ui-design-hdsnavigation.md#titlebarstyleoptions).scrollEffectStyle中，backgroundColor默认值为#99000000。  - 若[ScrollEffectOptions](ui-design-hdsnavigation.md#scrolleffectoptions).enableScrollEffect为false，仅在[TitleBarStyleOptions](ui-design-hdsnavigation.md#titlebarstyleoptions).originalStyle中，backgroundColor生效，默认值为透明色。  从6.1.0(23)开始，新增如下背景色默认规则：  当模糊样式类型为GRADIENT\_BLUR并已配置systemMaterialEffect，或者模糊类型为IMMERSIVE\_GRADIENT\_BLUR时，对应默认值如下：  - 若[ScrollEffectOptions](ui-design-hdsnavigation.md#scrolleffectoptions).enableScrollEffect为true，默认值为透明色；若[ScrollEffectOptions](ui-design-hdsnavigation.md#scrolleffectoptions).enableScrollEffect为false，默认值为$r('sys.color.comp\_background\_gray')。  - 仅当[ScrollEffectOptions](ui-design-hdsnavigation.md#scrolleffectoptions).enableScrollEffect为true时生效，默认值为r('sys.color.comp\_background\_gray')。 |
+| backgroundColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 标题栏背景板背景色。  当模糊样式类型为COMMON\_BLUR或GRADUAL\_BLUR时，背景色默认值均为透明色。  当模糊样式类型为GRADIENT\_BLUR或IMMERSIVE\_GRADIENT\_BLUR时，背景色生效线性径向渐变色。背景色生效规则及默认值分以下场景：  1. 当模糊样式类型为GRADIENT\_BLUR时：  -当[ScrollEffectOptions](ui-design-hdsnavigation.md#scrolleffectoptions).enableScrollEffect为false时，[TitleBarStyleOptions](ui-design-hdsnavigation.md#titlebarstyleoptions).originalStyle中的backgroundColor默认值为#99000000；[TitleBarStyleOptions](ui-design-hdsnavigation.md#titlebarstyleoptions).scrollEffectStyle中的backgroundColor不生效。  -当[ScrollEffectOptions](ui-design-hdsnavigation.md#scrolleffectoptions).enableScrollEffect为true时，TitleBarStyleOptions.originalStyle中的backgroundColor默认值为透明色，且不支持自定义配置。[TitleBarStyleOptions](ui-design-hdsnavigation.md#titlebarstyleoptions).scrollEffectStyle中的backgroundColor默认值为#99000000。  从API版本6.1.0(23)开始，新增如下背景色生效规则及默认值：  2. 当模糊样式类型为GRADIENT\_BLUR并配置沉浸光感属性[TitleBarStyleOptions](ui-design-hdsnavigation.md#titlebarstyleoptions).systemMaterialEffect时：  -当[ScrollEffectOptions](ui-design-hdsnavigation.md#scrolleffectoptions).enableScrollEffect为false时，[TitleBarStyleOptions](ui-design-hdsnavigation.md#titlebarstyleoptions).originalStyle中的backgroundColor默认值为$r('sys.color.comp\_background\_gray')。  -当[ScrollEffectOptions](ui-design-hdsnavigation.md#scrolleffectoptions).enableScrollEffect为true时，[TitleBarStyleOptions](ui-design-hdsnavigation.md#titlebarstyleoptions).originalStyle中的backgroundColor默认值为透明色；[TitleBarStyleOptions](ui-design-hdsnavigation.md#titlebarstyleoptions).scrollEffectStyle中的backgroundColor默认值为$r('sys.color.comp\_background\_gray')。  从API版本26.0.0开始，新增支持自定义配置[TitleBarStyleOptions](ui-design-hdsnavigation.md#titlebarstyleoptions).originalStyle中的backgroundColor。  3. 当模糊样式类型为IMMERSIVE\_GRADIENT\_BLUR时：  - 当[ScrollEffectOptions](ui-design-hdsnavigation.md#scrolleffectoptions).enableScrollEffect为false时：  若未同时配置沉浸光感属性[TitleBarStyleOptions](ui-design-hdsnavigation.md#titlebarstyleoptions).systemMaterialEffect属性，[TitleBarStyleOptions](ui-design-hdsnavigation.md#titlebarstyleoptions).originalStyle中的backgroundColor默认值为#99000000，且不支持自定义配置。  若已同时配置沉浸光感属性[TitleBarStyleOptions](ui-design-hdsnavigation.md#titlebarstyleoptions).systemMaterialEffect属性，[TitleBarStyleOptions](ui-design-hdsnavigation.md#titlebarstyleoptions).originalStyle中的backgroundColor默认值为$r('sys.color.comp\_background\_gray')。  -当[ScrollEffectOptions](ui-design-hdsnavigation.md#scrolleffectoptions).enableScrollEffect为true时，[TitleBarStyleOptions](ui-design-hdsnavigation.md#titlebarstyleoptions).scrollEffectStyle中的backgroundColor默认值为$r('sys.color.comp\_background\_gray')；[TitleBarStyleOptions](ui-design-hdsnavigation.md#titlebarstyleoptions).originalStyle中的backgroundColor默认值为透明色。  从API版本26.0.0开始，若已同时配置沉浸光感属性[TitleBarStyleOptions](ui-design-hdsnavigation.md#titlebarstyleoptions).systemMaterialEffect属性，新增支持自定义配置[TitleBarStyleOptions](ui-design-hdsnavigation.md#titlebarstyleoptions).originalStyle中的backgroundColor。 |
 | maskExtraHeight | number | 否 | 是 | 标题栏模糊蒙层超出标题栏的额外高度。该配置只在模糊样式类型配置为GRADIENT\_BLUR时生效。单位：vp。  默认值：32。单位：vp。  **起始版本：** 6.0.0(20) |
 | blurRadius | number | 否 | 是 | 标题栏模糊半径。仅在模糊样式类型配置为渐变模糊GRADIENT\_BLUR及沉浸式渐变模糊IMMERSIVE\_GRADIENT\_BLUR时生效。取值范围为[0.0, 128.0]。超出取值范围时，按默认值处理。  默认值：  - 作为[TitleBarStyleOptions](ui-design-hdsnavigation.md#titlebarstyleoptions).originalStyle中的属性时，当[ScrollEffectOptions](ui-design-hdsnavigation.md#scrolleffectoptions).enableScrollEffect为true时，默认值为0.0；当[ScrollEffectOptions](ui-design-hdsnavigation.md#scrolleffectoptions).enableScrollEffect为false，未配置systemMaterialEffect时，默认值为16.0，配置systemMaterialEffect时，默认值为12.0。  - 作为[TitleBarStyleOptions](ui-design-hdsnavigation.md#titlebarstyleoptions).scrollEffectStyle中的属性时，仅在[ScrollEffectOptions](ui-design-hdsnavigation.md#scrolleffectoptions).enableScrollEffect为true时生效，未配置systemMaterialEffect时，默认值为16.0，配置systemMaterialEffect时，默认值为12.0。  **起始版本：** 6.1.0(23) |
 
 ## HdsNavigationTitleStyle
-
-PhonePC/2in1TabletTV
 
 HdsNavigation标题栏的标题样式。
 
@@ -1002,8 +918,6 @@ HdsNavigation标题栏的标题样式。
 
 ## HdsNavigationIconItemStyle
 
-PhonePC/2in1TabletTV
-
 HdsNavigation标题栏的图标样式。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1020,8 +934,6 @@ HdsNavigation标题栏的图标样式。
 
 ## HdsNavigationDividerStyle
 
-PhonePC/2in1TabletTV
-
 HdsNavigation标题栏的分割线样式。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1035,8 +947,6 @@ HdsNavigation标题栏的分割线样式。
 | dividerColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 标题栏分割线颜色。  默认值：$r('sys.color.comp\_divider')。 |
 
 ## HdsTitleBarContentStyle
-
-PhonePC/2in1TabletTV
 
 HdsNavigation标题栏的内容区样式。
 
@@ -1056,8 +966,6 @@ HdsNavigation标题栏的内容区样式。
 
 ## HdsNavigationTitleBarStyle
 
-PhonePC/2in1TabletTV
-
 HdsNavigation标题栏样式。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1073,8 +981,6 @@ HdsNavigation标题栏样式。
 
 ## ScrollEffectOptions
 
-PhonePC/2in1TabletTV
-
 HdsNavigation标题栏的动态样式参数配置。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1089,11 +995,9 @@ HdsNavigation标题栏的动态样式参数配置。
 | scrollEffectType | [ScrollEffectType](ui-design-hdsnavigation.md#scrolleffecttype) | 否 | 是 | 标题栏模糊样式类型。  默认值：ScrollEffectType.COMMON\_BLUR。 |
 | enableRefreshOffsetChange | boolean | 否 | 是 | 是否响应内容区Refresh组件的滚动。  默认值：true。  - true：随内容区Refresh组件的滚动变化生效对应的标题栏样式。  - false：不随内容区Refresh组件的滚动变化生效对应的标题栏样式。  **起始版本：** 6.1.0(23) |
 | blurEffectiveStartOffset | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 动态样式线性过渡的起始位置。当内容区滚动的总偏移量超过该值时，标题栏开始从[originalStyle](ui-design-hdsnavigation.md#titlebarstyleoptions)到[scrollEffectStyle](ui-design-hdsnavigation.md#titlebarstyleoptions)线性过渡。  取值范围[0,+∞)。  默认值：LengthMetric.vp(0)。  超出取值范围时，按默认值处理。 |
-| blurEffectiveEndOffset | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 动态样式线性过渡的终点位置。当内容区滚动的总偏移量超过该值时，标题栏的动态样式过渡结束，固定为[scrollEffectStyle](ui-design-hdsnavigation.md#titlebarstyleoptions)。  取值范围[0,+∞)。  若设置数值小于blurEffectiveStartOffset，按默认值处理。  默认值：  - 标题栏模糊样式类型设置为ScrollEffectType.COMMON\_BLUR或者ScrollEffectType.GRADIENT\_BLUR时，默认值为LengthMetric.vp(8)。  - 标题栏模糊样式类型设置为ScrollEffectType.GRADUAL\_BLUR，默认值为LengthMetric.vp(56)。 |
+| blurEffectiveEndOffset | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 动态样式线性过渡的终点位置。当内容区滚动的总偏移量超过该值时，标题栏的动态样式过渡结束，固定为[scrollEffectStyle](ui-design-hdsnavigation.md#titlebarstyleoptions)。  取值范围[0,+∞)。  若设置数值小于blurEffectiveStartOffset，按默认值处理。  默认值：  - 标题栏模糊样式类型设置为ScrollEffectType.COMMON\_BLUR时，默认值为LengthMetric.vp(8)。  - 标题栏模糊样式类型设置为ScrollEffectType.GRADIENT\_BLUR时，默认值为LengthMetric.vp(8)。**起始版本：** 6.0.0(20)  - 标题栏模糊样式类型设置为ScrollEffectType.GRADUAL\_BLUR，默认值为LengthMetric.vp(56)。**起始版本：** 6.0.0(20)  -标题栏模糊样式类型设置为ScrollEffectType.IMMERSIVE\_GRADIENT\_BLUR，默认值为LengthMetric.vp(56)。**起始版本：** 6.1.0(23) |
 
 ## TitleBarStyleOptions
-
-PhonePC/2in1TabletTV
 
 HdsNavigation标题栏的样式配置。
 
@@ -1114,8 +1018,6 @@ HdsNavigation标题栏的样式配置。
 
 ## HdsNavigationBadgeOptions
 
-PhonePC/2in1TabletTV
-
 HdsNavigation标题栏的信息标记配置。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1131,8 +1033,6 @@ HdsNavigation标题栏的信息标记配置。
 | accessibilityText | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 标题栏信息标记的的无障碍文本属性。  当组件不包含文本属性时，屏幕朗读选中此组件时不播报，使用者无法清楚地知道当前选中了什么组件。为了解决此场景，开发人员可为不包含文字信息的组件设置无障碍文本，当屏幕朗读选中此组件时播报无障碍文本的内容，帮助屏幕朗读的使用者清楚地知道自己选中了什么组件。  默认值：""。  **起始版本：** 6.0.0(20) |
 
 ## HdsNavigationIconOptions
-
-PhonePC/2in1TabletTV
 
 HdsNavigation标题栏上图标配置信息。
 
@@ -1153,8 +1053,6 @@ HdsNavigation标题栏上图标配置信息。
 
 ## HdsNavigationBadgeIconOptions
 
-PhonePC/2in1TabletTV
-
 HdsNavigation标题栏上带信息提醒的图标配置信息。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1169,8 +1067,6 @@ HdsNavigation标题栏上带信息提醒的图标配置信息。
 | badge | [HdsNavigationBadgeOptions](ui-design-hdsnavigation.md#hdsnavigationbadgeoptions) | 否 | 是 | 信息标记配置。 |
 
 ## HdsNavigationMenuContentOptions
-
-PhonePC/2in1TabletTV
 
 HdsNavigation标题栏的菜单区域内容配置。
 
@@ -1188,8 +1084,6 @@ HdsNavigation标题栏的菜单区域内容配置。
 
 ## MultiWindowEntryInAPPMenuParams
 
-PhonePC/2in1TabletTV
-
 HdsNavigation标题栏的菜单区域应用内多窗配置。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1203,8 +1097,6 @@ HdsNavigation标题栏的菜单区域应用内多窗配置。
 | want | [Want](js-apis-app-ability-want.md) | 否 | 否 | 需要启动窗口的参数，有以下要求：  - 必填字段：abilityName, moduleName和bundleName；  - 应用限制：所有指定的名称（abilityName, moduleName 和bundleName）必须属于当前应用；  - 跨应用限制：多窗口功能不支持跨应用的能力。 |
 
 ## HdsNavigationTitle
-
-PhonePC/2in1TabletTV
 
 HdsNavigation标题栏的标题资源配置。字符串超长时，如果不设置副标题，先缩小再换行（2行）最后以"..."截断。如果设置副标题，先缩小最后以"..."截断。
 
@@ -1228,8 +1120,6 @@ HdsNavigation标题栏的标题资源配置。字符串超长时，如果不设�
 
 ## BottomBuilderParams
 
-PhonePC/2in1TabletTV
-
 HdsNavigation标题栏底部自定义区域配置。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1242,12 +1132,11 @@ HdsNavigation标题栏底部自定义区域配置。
 | --- | --- | --- | --- | --- |
 | builder | [CustomBuilder](ts-types.md#custombuilder8) | 否 | 否 | 设置标题底部自定义区域内容。 |
 | builderComponent | [ComponentContent](js-apis-arkui-componentcontent.md) | 否 | 是 | 设置标题底部自定义区域内容。  当同时配置了builder属性与builderComponent属性时，生效builderComponent属性。  **起始版本：** 6.0.1(21) |
+| builderContent | [BuilderType](ui-design-hdsnavigation.md#buildertype) | 否 | 是 | 设置标题底部自定义区域内容。  当同时配置了builder与builderContent属性时，生效builderContent属性；当配置了builderComponent与builderContent属性时，生效builderComponent属性。  **起始版本：** 26.0.0 |
 | height | [Length](ts-types.md#length) | 否 | 是 | 设置标题栏底部自定义区域高度。不支持设置百分比单位。  默认值：56vp。 |
 | showType | [BottomBuilderShowType](ui-design-hdsnavigation.md#bottombuildershowtype) | 否 | 是 | 设置标题栏底部自定义区域显示类型。仅在HideMode配置为HideMode.SCROLL\_UP\_TO时，该配置生效。  默认值：BottomBuilderShowType.DIRECTLY\_SHOW。 |
 
 ## HdsNavigationDividerParams
-
-PhonePC/2in1TabletTV
 
 HdsNavigation标题栏分割线配置，该参数不支持动态切换。
 
@@ -1262,8 +1151,6 @@ HdsNavigation标题栏分割线配置，该参数不支持动态切换。
 | showType | [DividerShowType](ui-design-hdsnavigation.md#dividershowtype) | 否 | 是 | 设置标题栏分割线显示类型。  默认值：DividerShowType.AUTO。 |
 
 ## TitleBarContentOptions
-
-PhonePC/2in1TabletTV
 
 HdsNavigation标题栏的内容区配置信息。
 
@@ -1280,13 +1167,12 @@ HdsNavigation标题栏的内容区配置信息。
 | backIcon | [HdsNavigationBackButtonItemOptions](ui-design-hdsnavigation.md#hdsnavigationbackbuttonitemoptions) | 否 | 是 | 设置标题栏的返回按钮内容。 |
 | stackBuilder | [CustomBuilder](ts-types.md#custombuilder8) | 否 | 是 | 设置标题栏顶部自定义区域。  **起始版本：** 6.0.0(20) |
 | stackBuilderComponent | [ComponentContent](js-apis-arkui-componentcontent.md) | 否 | 是 | 设置标题栏顶部自定义区域。  当同时配置了stackBuilder属性与stackBuilderComponent属性时，生效stackBuilderComponent属性。  **起始版本：** 6.0.1(21) |
+| stackBuilderContent | [BuilderType](ui-design-hdsnavigation.md#buildertype) | 否 | 是 | 设置标题栏顶部自定义区域。  当同时配置了stackBuilder与stackBuilderContent属性时，生效stackBuilderContent属性；当同时配置了stackBuilderComponent与stackBuilderContent属性时，生效stackBuilderComponent属性。  **起始版本：** 26.0.0 |
 | bottomBuilder | [BottomBuilderParams](ui-design-hdsnavigation.md#bottombuilderparams) | 否 | 是 | 设置标题栏底部自定义区域。  **起始版本：** 6.0.0(20) |
 | divider | [HdsNavigationDividerParams](ui-design-hdsnavigation.md#hdsnavigationdividerparams) | 否 | 是 | 设置标题栏分割线内容。  **起始版本：** 6.0.0(20) |
 | subIcon | [HdsNavigationBadgeIconOptions](ui-design-hdsnavigation.md#hdsnavigationbadgeiconoptions) | 否 | 是 | 设置标题栏子图标内容。  **起始版本：** 6.0.0(20) |
 
 ## PaddingOptions
-
-PhonePC/2in1TabletTV
 
 标题栏的内间距配置。
 
@@ -1303,8 +1189,6 @@ PhonePC/2in1TabletTV
 
 ## NavBarWidthRangeOptions
 
-PhonePC/2in1TabletTV
-
 导航栏最大最小宽度配置信息。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1319,8 +1203,6 @@ PhonePC/2in1TabletTV
 | maxWidth | [Dimension](ts-types.md#dimension10) | 否 | 是 | 导航栏最大宽度。  默认值：组件宽度的40% ，且不大于 432，单位：vp。 |
 
 ## HdsNavigationTitleBarOptions
-
-PhonePC/2in1TabletTV
 
 HdsNavigation标题栏配置信息。
 
@@ -1341,8 +1223,6 @@ HdsNavigation标题栏配置信息。
 
 ## DynamicHideParams
 
-PhonePC/2in1TabletTV
-
 HdsNavigation标题栏动态显隐配置信息。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1362,8 +1242,6 @@ HdsNavigation标题栏动态显隐配置信息。
 
 ## NestedScrollInfo
 
-PhonePC/2in1TabletTV
-
 嵌套可滚动容器组件信息。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1379,8 +1257,6 @@ PhonePC/2in1TabletTV
 
 ## WithThemeOptions
 
-PhonePC/2in1TabletTV
-
 标题栏[WithTheme](ts-container-with-theme.md)能力配置信息。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1395,13 +1271,13 @@ PhonePC/2in1TabletTV
 
 ## SystemMaterialParams
 
-PhonePC/2in1TabletTV
-
 材质效果参数。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.UIDesign.HDSComponent.Core
+
+**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在PC/2in1设备调用时需先调用[getSystemMaterialTypes()](ui-design-hdsmaterial.md#getsystemmaterialtypes)接口查询当前设备支持的材质能力。
 
 **起始版本：** 6.1.0(23)
 
@@ -1410,826 +1286,998 @@ PhonePC/2in1TabletTV
 | materialType | [hdsMaterial.MaterialType](ui-design-hdsmaterial.md#materialtype) | 否 | 是 | 设置材质类型。  默认值：hdsMaterial.MaterialType.NONE。 |
 | materialLevel | [hdsMaterial.MaterialLevel](ui-design-hdsmaterial.md#materiallevel) | 否 | 是 | 设置材质等级。  默认值：hdsMaterial.MaterialLevel.ADAPTIVE  **说明**：  **推荐使用默认值ADAPTIVE档位：** 该模式下，系统会根据当前设备的算力动态调整组件的材质效果，实现性能与显示效果的最佳平衡体验。  **若未采用系统自适应能力：** 请先调用[getSystemMaterialTypes()](ui-design-hdsmaterial.md#getsystemmaterialtypes)接口查询当前设备支持的材质能力，再根据查询结果选用相应的材质效果枚举：  1. 如果查询结果显示当前设备支持IMMERSIVE材质类型，可选用EXQUISITE或GENTLE效果。  2. 如果查询结果显示当前设备不支持IMMERSIVE材质类型，则建议使用SMOOTH效果，以降低卡顿和发热风险，保障用户体验。  **详细使用指导：** 请参见[HDS组件使用沉浸光感材质指南](../harmonyos-guides/ui-design-hds-component-material.md#使用自定义沉浸光感效果)。 |
 
-## 示例
+## BuilderOptions
 
-PhonePC/2in1TabletTV
+构建导航标题栏中的自定义组件配置信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.UIDesign.HDSComponent.Core
+
+**起始版本：** 26.0.0
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| builder | [CustomBuilder](ts-types.md#custombuilder8) | 否 | 是 | 用户自定义组件。 |
+| updated | boolean | 否 | 是 | 设置是否需要更新自定义组件节点。  默认值：true。  - true：需要更新自定义组件节点。  - false：不更新自定义组件节点，保持原节点，不重新挂载新节点。 |
+
+## 示例
 
 ### 设置动态模糊样式
 
 通过titleBar属性，自定义设置标题栏随内容区滚动的动态模糊样式。
 
+```typescript
+// 从6.0.2(22)版本开始，无需手动导入HdsNavigationAttribute。具体请参考HdsNavigation的导入模块说明。
+import { HdsNavigation, HdsNavigationAttribute, ScrollEffectType, HdsNavigationTitleMode } from '@kit.UIDesignKit';
+import { LengthMetrics } from '@kit.ArkUI';
+
+const TITLE_BAR_HEIGHT_FREE: number = 138;
+
+@Entry
+@Component
+struct Index {
+  @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack();
+  scroller: Scroller = new Scroller();
+  @State blankHeight: number = TITLE_BAR_HEIGHT_FREE;
+  @State isHideBackButton: boolean = false;
+  @State titleMode: HdsNavigationTitleMode = HdsNavigationTitleMode.FREE;
+  @State subTitle: string = 'Sub';
+
+  build() {
+    HdsNavigation(this.pageInfos) {
+      Column() {
+        Stack() {
+          Scroll(this.scroller) {
+            Column() {
+              Blank().height(this.blankHeight)
+              Image($r('app.media.scenery')).width('100%') // scenery为自定义资源，开发者需替换本地资源
+            }
+          }.edgeEffect(EdgeEffect.Spring).scrollBar(BarState.Off)
+        }
+      }
+    }
+    .titleBar({
+      padding: {
+        start: LengthMetrics.vp(2),
+        end: LengthMetrics.vp(2)
+      },
+      style: {
+        scrollEffectOpts: {
+          enableScrollEffect: true,
+          scrollEffectType: ScrollEffectType.COMMON_BLUR,
+          blurEffectiveStartOffset: LengthMetrics.vp(0),
+          blurEffectiveEndOffset: LengthMetrics.vp(20)
+        },
+        originalStyle: {
+          backgroundStyle: {
+            backgroundColor: $r('sys.color.ohos_id_color_background')
+          },
+          contentStyle: {
+            titleStyle: { mainTitleColor: $r('sys.color.font_primary'), subTitleColor: $r('sys.color.font_secondary') },
+            menuStyle: {
+              backgroundColor: $r('sys.color.comp_background_tertiary'),
+              iconColor: $r('sys.color.icon_primary')
+            },
+            backIconStyle: {
+              backgroundColor: $r('sys.color.comp_background_tertiary'),
+              iconColor: $r('sys.color.icon_primary')
+            }
+          }
+        },
+        scrollEffectStyle: {
+          backgroundStyle: {
+            backgroundColor: $r('sys.color.ohos_id_color_background_transparent')
+          },
+          contentStyle: {
+            titleStyle: { mainTitleColor: $r('sys.color.font_primary'), subTitleColor: $r('sys.color.font_secondary') },
+            menuStyle: {
+              backgroundColor: $r('sys.color.comp_background_tertiary'),
+              iconColor: $r('sys.color.icon_primary')
+            },
+            backIconStyle: {
+              backgroundColor: $r('sys.color.comp_background_tertiary'),
+              iconColor: $r('sys.color.icon_primary')
+            }
+          }
+        }
+      },
+      content: {
+        title: {
+          mainTitle: 'Main',
+          subTitle: this.subTitle
+        },
+        menu: {
+          value: [{
+            content: {
+              label: 'menu1',
+              icon: $r('sys.symbol.ohos_wifi'),
+              isEnabled: true,
+              action: () => {
+                console.info('HdsNavigation menu1');
+              }
+            }
+          }, {
+            content: {
+              label: 'menu2',
+              icon: $r('sys.symbol.plus'),
+              isEnabled: true,
+            }
+          }, {
+            content: {
+              label: 'menu3',
+              icon: $r('sys.symbol.lock')
+            }
+          }, {
+            content: {
+              label: 'menu4',
+              icon: $r('sys.symbol.trunk')
+            }
+          }]
+        },
+        backIcon: {
+          label: 'backButton',
+          icon: $r('sys.symbol.trunk'),
+          isEnabled: true
+        }
+      }
+    })
+    .systemBarStyle({ statusBarContentColor: '#0A59F7' }, { statusBarContentColor: '#C7C7CD' })
+    .titleMode(this.titleMode)
+    .hideBackButton(this.isHideBackButton)
+    .hideTitleBar(false)
+  }
+}
 ```
-1. // 从6.0.2(22)版本开始，无需手动导入HdsNavigationAttribute。具体请参考HdsNavigation的导入模块说明。
-2. import { HdsNavigation, HdsNavigationAttribute, ScrollEffectType, HdsNavigationTitleMode } from '@kit.UIDesignKit';
-3. import { LengthMetrics } from '@kit.ArkUI';
 
-5. const TITLE_BAR_HEIGHT_FREE: number = 138;
-
-7. @Entry
-8. @Component
-9. struct Index {
-10. @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack();
-11. scroller: Scroller = new Scroller();
-12. @State blankHeight: number = TITLE_BAR_HEIGHT_FREE;
-13. @State isHideBackButton: boolean = false;
-14. @State titleMode: HdsNavigationTitleMode = HdsNavigationTitleMode.FREE;
-15. @State subTitle: string = 'Sub';
-
-17. build() {
-18. HdsNavigation(this.pageInfos) {
-19. Column() {
-20. Stack() {
-21. Scroll(this.scroller) {
-22. Column() {
-23. Blank().height(this.blankHeight)
-24. Image($r('app.media.scenery')).width('100%') // scenery为自定义资源，开发者需替换本地资源
-25. }
-26. }.edgeEffect(EdgeEffect.Spring).scrollBar(BarState.Off)
-27. }
-28. }
-29. }
-30. .titleBar({
-31. padding: {
-32. start: LengthMetrics.vp(2),
-33. end: LengthMetrics.vp(2)
-34. },
-35. style: {
-36. scrollEffectOpts: {
-37. enableScrollEffect: true,
-38. scrollEffectType: ScrollEffectType.COMMON_BLUR,
-39. blurEffectiveStartOffset: LengthMetrics.vp(0),
-40. blurEffectiveEndOffset: LengthMetrics.vp(20)
-41. },
-42. originalStyle: {
-43. backgroundStyle: {
-44. backgroundColor: $r('sys.color.ohos_id_color_background'),
-45. },
-46. contentStyle: {
-47. titleStyle: { mainTitleColor: $r('sys.color.font_primary'), subTitleColor: $r('sys.color.font_secondary') },
-48. menuStyle: {
-49. backgroundColor: $r('sys.color.comp_background_tertiary'),
-50. iconColor: $r('sys.color.icon_primary')
-51. },
-52. backIconStyle: {
-53. backgroundColor: $r('sys.color.comp_background_tertiary'),
-54. iconColor: $r('sys.color.icon_primary')
-55. }
-56. }
-57. },
-58. scrollEffectStyle: {
-59. backgroundStyle: {
-60. backgroundColor: $r('sys.color.ohos_id_color_background_transparent'),
-61. },
-62. contentStyle: {
-63. titleStyle: { mainTitleColor: $r('sys.color.font_primary'), subTitleColor: $r('sys.color.font_secondary') },
-64. menuStyle: {
-65. backgroundColor: $r('sys.color.comp_background_tertiary'),
-66. iconColor: $r('sys.color.icon_primary')
-67. },
-68. backIconStyle: {
-69. backgroundColor: $r('sys.color.comp_background_tertiary'),
-70. iconColor: $r('sys.color.icon_primary')
-71. }
-72. }
-73. }
-74. },
-75. content: {
-76. title: {
-77. mainTitle: 'Main',
-78. subTitle: this.subTitle
-79. },
-80. menu: {
-81. value: [{
-82. content: {
-83. label: 'menu1',
-84. icon: $r('sys.symbol.ohos_wifi'),
-85. isEnabled: true,
-86. action: () => {
-87. console.info("HdsNavigation menu1");
-88. }
-89. }
-90. }, {
-91. content: {
-92. label: 'menu2',
-93. icon: $r('sys.symbol.plus'),
-94. isEnabled: true,
-95. }
-96. }, {
-97. content: {
-98. label: 'menu3',
-99. icon: $r('sys.symbol.lock'),
-100. }
-101. }, {
-102. content: {
-103. label: 'menu4',
-104. icon: $r('sys.symbol.trunk'),
-105. }
-106. }]
-107. },
-108. backIcon: {
-109. label: 'backButton',
-110. icon: $r('sys.symbol.trunk'),
-111. isEnabled: true,
-112. }
-113. }
-114. })
-115. .systemBarStyle({ statusBarContentColor: '#0A59F7' }, { statusBarContentColor: '#C7C7CD' })
-116. .titleMode(this.titleMode)
-117. .hideBackButton(this.isHideBackButton)
-118. .hideTitleBar(false)
-119. }
-120. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/dubJhekFSn6pGbGTIMDJog/zh-cn_image_0000002558607386.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/wRVpHQP3S1uIPzq6Yu8IgA/zh-cn_image_0000002706676776.gif)
 
 ### 设置菜单消息提醒
 
-通过设置标题栏上菜单配置中的Badge属性，使用信息提醒能力，在菜单项右上角附加消息提醒。
+通过设置标题栏上菜单配置中的badge属性，使用信息提醒能力，在菜单项右上角附加消息提醒。
 
+```typescript
+// 从6.0.2(22)版本开始，无需手动导入HdsNavigationAttribute。具体请参考HdsNavigation的导入模块说明。
+import { HdsNavigation, HdsNavigationAttribute } from '@kit.UIDesignKit';
+
+const TITLE_BAR_HEIGHT_FREE: number = 138;
+
+@Entry
+@Component
+struct Index {
+  @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack();
+  @State blankHeight: number = TITLE_BAR_HEIGHT_FREE;
+  @State subTitle: string = 'Sub';
+
+  build() {
+    HdsNavigation(this.pageInfos) {
+      Column() {
+        Stack() {
+          Column() {
+            Blank().height(this.blankHeight)
+            Image($r('app.media.background1')) // background1为自定义资源，开发者需替换本地资源
+              .width('100%')
+          }
+        }
+      }
+    }
+    .titleBar({
+      content: {
+        title: {
+          mainTitle: 'Main',
+          subTitle: this.subTitle
+        },
+        menu: {
+          value: [{
+            content: {
+              label: 'menu1',
+              icon: $r('sys.symbol.plus'),
+              isEnabled: true
+            },
+            badge: {
+              count: 1
+            }
+          }, {
+            content: {
+              label: 'menu2',
+              icon: $r('sys.symbol.trunk'),
+              isEnabled: true
+            },
+            badge: {
+              count: 100
+            }
+          }]
+        }
+      }
+    })
+  }
+}
 ```
-1. // 从6.0.2(22)版本开始，无需手动导入HdsNavigationAttribute。具体请参考HdsNavigation的导入模块说明。
-2. import { HdsNavigation, HdsNavigationAttribute } from '@kit.UIDesignKit';
 
-4. const TITLE_BAR_HEIGHT_FREE: number = 138;
-
-6. @Entry
-7. @Component
-8. struct Index {
-9. @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack();
-10. @State blankHeight: number = TITLE_BAR_HEIGHT_FREE;
-11. @State subTitle: string = 'Sub';
-
-13. build() {
-14. HdsNavigation(this.pageInfos) {
-15. Column() {
-16. Stack() {
-17. Column() {
-18. Blank().height(this.blankHeight)
-19. Image($r('app.media.background1')) // background1为自定义资源，开发者需替换本地资源
-20. .width('100%')
-21. }
-22. }
-23. }
-24. }
-25. .titleBar({
-26. content: {
-27. title: {
-28. mainTitle: "Main",
-29. subTitle: this.subTitle
-30. },
-31. menu: {
-32. value: [{
-33. content: {
-34. label: 'menu1',
-35. icon: $r('sys.symbol.plus'),
-36. isEnabled: true,
-37. },
-38. badge: {
-39. count: 1,
-40. }
-41. }, {
-42. content: {
-43. label: 'menu2',
-44. icon: $r('sys.symbol.trunk'),
-45. isEnabled: true,
-46. },
-47. badge: {
-48. count: 100,
-49. }
-50. }]
-51. },
-52. }
-53. })
-54. }
-55. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/mjO1qLzzTnqQljaqTCl06A/zh-cn_image_0000002589326915.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/b2li2Kb1QaqH5KEUdkSbdg/zh-cn_image_0000002736435867.jpg)
 
 ### 设置自定义区域
 
 通过设置titleBar属性中的stackBuilder，bottomBuilder属性，可以使用标题栏的自定义区域设置能力。
 
+```typescript
+// 从6.0.2(22)版本开始，无需手动导入HdsNavigationAttribute。具体请参考HdsNavigation的导入模块说明。
+import { HdsNavigation, HdsNavigationAttribute, ScrollEffectType } from '@kit.UIDesignKit';
+import { LengthMetrics } from '@kit.ArkUI';
+
+const TITLE_BAR_HEIGHT_FREE: number = 138;
+const BOTTOM_BUILDER_HEIGHT: number = 56;
+
+@Entry
+@Component
+struct Index {
+  scroller: Scroller = new Scroller();
+  @State blankHeight: number = TITLE_BAR_HEIGHT_FREE + BOTTOM_BUILDER_HEIGHT;
+
+  @Builder
+  stackBuilder() {
+    Column() {
+      Button('HdsNavigation')
+    }
+    .height(56)
+    .justifyContent(FlexAlign.Center)
+  }
+
+  @Builder
+  bottomBuilder() {
+    Column() {
+      Search()
+    }
+    .width('100%')
+    .height(56)
+  }
+
+  build() {
+    Column() {
+      HdsNavigation() {
+        Scroll(this.scroller) {
+          Column() {
+            Blank().height(this.blankHeight).width('100%')
+            Image($r('app.media.scenery')).width('100%') // scenery为自定义资源，开发者需替换本地资源
+          }
+        }.edgeEffect(EdgeEffect.Spring).scrollBar(BarState.Off)
+      }
+      .titleBar({
+        style: {
+          scrollEffectOpts: {
+            enableScrollEffect: true,
+            scrollEffectType: ScrollEffectType.GRADIENT_BLUR,
+            blurEffectiveStartOffset: LengthMetrics.vp(0),
+            blurEffectiveEndOffset: LengthMetrics.vp(20)
+          },
+          scrollEffectStyle: {
+            backgroundStyle: { maskExtraHeight: 56.0 }
+          }
+        },
+        content: {
+          title: {
+            mainTitle: 'MainTitle',
+            subTitle: 'SubTitle'
+          },
+          stackBuilder: (): void => this.stackBuilder(),
+          bottomBuilder: { builder: (): void => this.bottomBuilder() },
+          menu: {
+            value: [{
+              content: {
+                label: 'menu1',
+                icon: $r('sys.symbol.plus')
+              },
+            }, {
+              content: {
+                label: 'menu2',
+                icon: $r('sys.symbol.lock')
+              }
+            }]
+          }
+        }
+      })
+      .bindToScrollable([this.scroller])
+    }
+  }
+}
 ```
-1. // 从6.0.2(22)版本开始，无需手动导入HdsNavigationAttribute。具体请参考HdsNavigation的导入模块说明。
-2. import { HdsNavigation, HdsNavigationAttribute, ScrollEffectType } from '@kit.UIDesignKit';
-3. import { LengthMetrics } from '@kit.ArkUI';
 
-5. const TITLE_BAR_HEIGHT_FREE: number = 138;
-6. const BOTTOM_BUILDER_HEIGHT: number = 56;
-
-8. @Entry
-9. @Component
-10. struct Index {
-11. scroller: Scroller = new Scroller();
-12. @State blankHeight: number = TITLE_BAR_HEIGHT_FREE + BOTTOM_BUILDER_HEIGHT;
-
-14. @Builder
-15. StackBuilder() {
-16. Column() {
-17. Button("HdsNavigation")
-18. }
-19. .height(56)
-20. .justifyContent(FlexAlign.Center)
-21. }
-
-23. @Builder
-24. BottomBuilder() {
-25. Column() {
-26. Search()
-27. }
-28. .width('100%')
-29. .height(56)
-30. }
-
-32. build() {
-33. Column() {
-34. HdsNavigation() {
-35. Scroll(this.scroller) {
-36. Column() {
-37. Blank().height(this.blankHeight).width('100%')
-38. Image($r('app.media.scenery')).width('100%') // scenery为自定义资源，开发者需替换本地资源
-39. }
-40. }.edgeEffect(EdgeEffect.Spring).scrollBar(BarState.Off)
-41. }
-42. .titleBar({
-43. style: {
-44. scrollEffectOpts: {
-45. enableScrollEffect: true,
-46. scrollEffectType: ScrollEffectType.GRADIENT_BLUR,
-47. blurEffectiveStartOffset: LengthMetrics.vp(0),
-48. blurEffectiveEndOffset: LengthMetrics.vp(20)
-49. },
-50. scrollEffectStyle: {
-51. backgroundStyle: { maskExtraHeight: 56.0 },
-52. }
-53. },
-54. content: {
-55. title: {
-56. mainTitle: 'MainTitle',
-57. subTitle: 'SubTitle'
-58. },
-59. stackBuilder: (): void => this.StackBuilder(),
-60. bottomBuilder: { builder: (): void => this.BottomBuilder() },
-61. menu: {
-62. value: [{
-63. content: {
-64. label: 'menu1',
-65. icon: $r('sys.symbol.plus'),
-66. },
-67. }, {
-68. content: {
-69. label: 'menu2',
-70. icon: $r('sys.symbol.lock'),
-71. }
-72. }]
-73. }
-74. }
-75. })
-76. .bindToScrollable([this.scroller])
-77. }
-78. }
-79. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/RBwlYxa_SsK85kRAgchpVQ/zh-cn_image_0000002589246855.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/9PQGlyKDS8uWgglTFk3rZQ/zh-cn_image_0000002706836712.jpg)
 
 ### 设置标题栏的动态显隐
 
 通过设置dynamicHideTitleBar属性，可以使用标题栏随内容区动态显隐能力。
 
+```typescript
+// 从6.0.2(22)版本开始，无需手动导入HdsNavigationAttribute。具体请参考HdsNavigation的导入模块说明。
+import { HdsNavigation, HdsNavigationAttribute, HideMode } from '@kit.UIDesignKit';
+
+const TITLE_BAR_HEIGHT_FREE: number = 138;
+const BOTTOM_BUILDER_HEIGHT: number = 56;
+
+@Entry
+@Component
+struct Index {
+  scroller: Scroller = new Scroller();
+  @State blankHeight: number = TITLE_BAR_HEIGHT_FREE + BOTTOM_BUILDER_HEIGHT;
+
+  @Builder
+  bottomBuilder() {
+    Column() {
+      Search()
+    }
+    .width('100%')
+    .height(56)
+  }
+
+  build() {
+    Column() {
+      HdsNavigation() {
+        Scroll(this.scroller) {
+          Column() {
+            Blank().height(this.blankHeight).width('100%')
+            Image($r('app.media.scenery')).width('100%') // scenery为自定义资源，开发者需替换本地资源
+          }
+        }.edgeEffect(EdgeEffect.Spring).scrollBar(BarState.Off)
+      }
+      .titleBar({
+        content: {
+          title: {
+            mainTitle: 'MainTitle',
+            subTitle: 'SubTitle'
+          },
+          bottomBuilder: { builder: (): void => this.bottomBuilder() },
+          menu: {
+            value: [{
+              content: {
+                label: 'menu1',
+                icon: $r('sys.symbol.plus')
+              }
+            }]
+          }
+        }
+      })
+      .bindToScrollable([this.scroller])
+      .dynamicHideTitleBar({
+        hideTitleArea: true,
+        hideBottomBuilder: true,
+        hideStatusBar: false,
+        mode: HideMode.SCROLL_UP_TO
+      })
+    }
+  }
+}
 ```
-1. // 从6.0.2(22)版本开始，无需手动导入HdsNavigationAttribute。具体请参考HdsNavigation的导入模块说明。
-2. import { HdsNavigation, HdsNavigationAttribute, HideMode } from '@kit.UIDesignKit';
 
-4. const TITLE_BAR_HEIGHT_FREE: number = 138;
-5. const BOTTOM_BUILDER_HEIGHT: number = 56;
-
-7. @Entry
-8. @Component
-9. struct Index {
-10. scroller: Scroller = new Scroller();
-11. @State blankHeight: number = TITLE_BAR_HEIGHT_FREE + BOTTOM_BUILDER_HEIGHT;
-
-13. @Builder
-14. BottomBuilder() {
-15. Column() {
-16. Search()
-17. }
-18. .width('100%')
-19. .height(56)
-20. }
-
-22. build() {
-23. Column() {
-24. HdsNavigation() {
-25. Scroll(this.scroller) {
-26. Column() {
-27. Blank().height(this.blankHeight).width('100%')
-28. Image($r('app.media.scenery')).width('100%') // scenery为自定义资源，开发者需替换本地资源
-29. }
-30. }.edgeEffect(EdgeEffect.Spring).scrollBar(BarState.Off)
-31. }
-32. .titleBar({
-33. content: {
-34. title: {
-35. mainTitle: 'MainTitle',
-36. subTitle: 'SubTitle'
-37. },
-38. bottomBuilder: { builder: (): void => this.BottomBuilder() },
-39. menu: {
-40. value: [{
-41. content: {
-42. label: 'menu1',
-43. icon: $r('sys.symbol.plus'),
-44. },
-45. }]
-46. }
-47. }
-48. })
-49. .bindToScrollable([this.scroller])
-50. .dynamicHideTitleBar({
-51. hideTitleArea: true,
-52. hideBottomBuilder: true,
-53. hideStatusBar: false,
-54. mode: HideMode.SCROLL_UP_TO
-55. })
-56. }
-57. }
-58. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/Z5LDDnbiQU6JoFHqb45Zxw/zh-cn_image_0000002558767048.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/pzycTOC-RSeezT_zoI-3Mw/zh-cn_image_0000002736315821.gif)
 
 ### 设置标题栏图标样式
 
-通过设置HdsNavigationIconOptions属性中的type属性，可以设置图标为文字型或者图片型图标。
+通过设置[HdsNavigationIconOptions](ui-design-hdsnavigation.md#hdsnavigationiconoptions)属性中的type属性，可以设置图标为文字型或者图片型图标。
 
+```typescript
+// 从6.0.2(22)版本开始，无需手动导入HdsNavigationAttribute。具体请参考HdsNavigation的导入模块说明。
+import {
+  HdsNavigation,
+  HdsNavigationAttribute,
+  HdsNavigationTitleMode,
+  IconStyleMode,
+  TextStyleMode,
+  DividerShowType
+} from '@kit.UIDesignKit';
+
+const TITLE_BAR_HEIGHT_MINI: number = 56;
+
+@Entry
+@Component
+struct Index {
+  scroller: Scroller = new Scroller();
+  @State blankHeight: number = TITLE_BAR_HEIGHT_MINI;
+
+  build() {
+    Column() {
+      HdsNavigation() {
+        Scroll(this.scroller) {
+          Column() {
+            Blank().height(this.blankHeight).width('100%')
+            Image($r('app.media.background1')).width('100%')
+          }
+        }.edgeEffect(EdgeEffect.Spring).scrollBar(BarState.Off)
+      }
+      .titleMode(HdsNavigationTitleMode.MINI)
+      .titleBar({
+        content: {
+          title: {
+            mainTitle: 'Main',
+            subTitle: 'Sub'
+          },
+          menu: {
+            value: [{
+              content: {
+                label: 'CAPSULE',
+                type: TextStyleMode.NORMAL
+              }
+            }, {
+              content: {
+                label: '5',
+                type: TextStyleMode.SINGLE_CHARACTER
+              }
+            }, {
+              content: {
+                label: 'smallIcon',
+                icon: $r('sys.symbol.plus'),
+                type: IconStyleMode.LARGE
+              }
+            }]
+          },
+          subIcon: {
+            content: {
+              label: 'headIcon',
+              icon: $r('sys.symbol.lock'),
+              type: IconStyleMode.SMALL
+            }
+          },
+          divider: { showType: DividerShowType.ON }
+        }
+      })
+    }
+  }
+}
 ```
-1. // 从6.0.2(22)版本开始，无需手动导入HdsNavigationAttribute。具体请参考HdsNavigation的导入模块说明。
-2. import {
-3. HdsNavigation,
-4. HdsNavigationAttribute,
-5. HdsNavigationTitleMode,
-6. IconStyleMode,
-7. TextStyleMode,
-8. DividerShowType
-9. } from '@kit.UIDesignKit';
 
-11. const TITLE_BAR_HEIGHT_MINI: number = 56;
-
-13. @Entry
-14. @Component
-15. struct Index {
-16. scroller: Scroller = new Scroller();
-17. @State blankHeight: number = TITLE_BAR_HEIGHT_MINI;
-
-19. build() {
-20. Column() {
-21. HdsNavigation() {
-22. Scroll(this.scroller) {
-23. Column() {
-24. Blank().height(this.blankHeight).width('100%')
-25. Image($r('app.media.background1')).width('100%')
-26. }
-27. }.edgeEffect(EdgeEffect.Spring).scrollBar(BarState.Off)
-28. }
-29. .titleMode(HdsNavigationTitleMode.MINI)
-30. .hideBackButton(true)
-31. .titleBar({
-32. content: {
-33. title: {
-34. mainTitle: 'Main',
-35. subTitle: 'Sub'
-36. },
-37. menu: {
-38. value: [{
-39. content: {
-40. label: 'CAPSULE',
-41. type: TextStyleMode.NORMAL,
-42. }
-43. }, {
-44. content: {
-45. label: '5',
-46. type: TextStyleMode.SINGLE_CHARACTER,
-47. }
-48. }, {
-49. content: {
-50. label: 'smallIcon',
-51. icon: $r('sys.symbol.plus'),
-52. type: IconStyleMode.LARGE,
-53. }
-54. }]
-55. },
-56. subIcon: {
-57. content: {
-58. label: 'headIcon',
-59. icon: $r('sys.symbol.lock'),
-60. type: IconStyleMode.SMALL,
-61. }
-62. },
-63. divider: { showType: DividerShowType.ON },
-64. }
-65. })
-66. }
-67. }
-68. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/CT-YV9MbRV6fWlV7Zq5fbw/zh-cn_image_0000002558607388.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/h-o5zB2iTamvA3wPCh1baQ/zh-cn_image_0000002706676778.jpg)
 
 ### 半模态标题栏样式
 
 通过titleMode设置半模态标题栏显示模式，半模态模式下，可以在subTitle右侧区域设置用户自定义的subTitleBuilder。半模态样式下，设置图标类型为IconStyleMode.SMALL，同时不设置图标资源时，默认显示关闭按钮。
 
+```typescript
+// 从6.0.2(22)版本开始，无需手动导入HdsNavigationAttribute。具体请参考HdsNavigation的导入模块说明。
+import { HdsNavigation, HdsNavigationAttribute, HdsNavigationTitleMode, IconStyleMode } from '@kit.UIDesignKit';
+
+const TITLE_BAR_HEIGHT_MODAL: number = 80;
+
+@Entry
+@Component
+struct SheetTransitionExample {
+  @State isShow: boolean = false;
+  @State blankHeight: number = TITLE_BAR_HEIGHT_MODAL;
+  scroller: Scroller = new Scroller();
+
+  @Builder
+  subTitleBuilder() {
+    Text('click to share')
+      .fontColor(Color.Blue)
+      .maxFontScale(1)
+      .lineHeight(`${14 * 1.49}vp`)
+      .fontSize(14)
+      .onClick(() => {
+        console.info('click to share');
+      })
+  }
+
+  // 创建半模态页面显示内容
+  @Builder
+  myBuilder() {
+    Column() {
+      HdsNavigation() {
+        Scroll(this.scroller) {
+          Column() {
+            Blank().height(this.blankHeight).width('100%')
+            Image($r('app.media.background1')) // background1为自定义资源，开发者需替换本地资源
+              .width('100%')
+          }
+        }.edgeEffect(EdgeEffect.Spring).scrollBar(BarState.Off)
+      }
+      .titleMode(HdsNavigationTitleMode.MODAL) // 设置显示的HdsNavigation为半模态样式
+      .titleBar({
+        content: {
+          title: {
+            mainTitle: 'MainTitle',
+            subTitle: 'SubTitle',
+            subTitleBuilder: (): void => this.subTitleBuilder() // 自定义副标题区域
+          },
+          menu: {
+            value: [{
+              content: {
+                label: 'modal_cancel',
+                isEnabled: true,
+                type: IconStyleMode.SMALL,
+                action: () => {
+                  console.info('model cancel');
+                }
+              }
+            }]
+          },
+          subIcon: {
+            content: {
+              label: 'leftIcon',
+              icon: $r('sys.symbol.ohos_wifi'),
+              isEnabled: true
+            }
+          }
+        }
+      })
+    }
+  }
+
+  build() {
+    Column() {
+      Button('transition modal')
+        .onClick(() => {
+          this.isShow = true;
+        })
+        .fontSize(20)
+        .margin(10)
+        .bindSheet($$this.isShow, this.myBuilder(), { showClose: false }) // 绑定半模态页面
+    }
+    .justifyContent(FlexAlign.Center)
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
-1. // 从6.0.2(22)版本开始，无需手动导入HdsNavigationAttribute。具体请参考HdsNavigation的导入模块说明。
-2. import { HdsNavigation, HdsNavigationAttribute, HdsNavigationTitleMode, IconStyleMode } from '@kit.UIDesignKit';
 
-4. const TITLE_BAR_HEIGHT_MODAL: number = 80;
-
-6. @Entry
-7. @Component
-8. struct SheetTransitionExample {
-9. @State isShow: boolean = false;
-10. @State blankHeight: number = TITLE_BAR_HEIGHT_MODAL;
-11. scroller: Scroller = new Scroller();
-
-13. @Builder
-14. SubTitleBuilder() {
-15. Text("click to share")
-16. .fontColor(Color.Blue)
-17. .maxFontScale(1)
-18. .lineHeight(`${14 * 1.49}vp`)
-19. .fontSize(14)
-20. .onClick(() => {
-21. console.info("click to share");
-22. })
-23. }
-
-25. // 创建半模态页面显示内容
-26. @Builder
-27. myBuilder() {
-28. Column() {
-29. HdsNavigation() {
-30. Scroll(this.scroller) {
-31. Column() {
-32. Blank().height(this.blankHeight).width('100%')
-33. Image($r('app.media.background1')) // background1为自定义资源，开发者需替换本地资源
-34. .width('100%')
-35. }
-36. }.edgeEffect(EdgeEffect.Spring).scrollBar(BarState.Off)
-37. }
-38. .titleMode(HdsNavigationTitleMode.MODAL) // 设置显示的HdsNavigation为半模态样式
-39. .titleBar({
-40. content: {
-41. title: {
-42. mainTitle: 'MainTitle',
-43. subTitle: 'SubTitle',
-44. subTitleBuilder: this.SubTitleBuilder.bind(this), // 自定义副标题区域
-45. },
-46. menu: {
-47. value: [{
-48. content: {
-49. label: 'modal_cancel',
-50. isEnabled: true,
-51. type: IconStyleMode.SMALL,
-52. action: () => {
-53. console.info("model cancel");
-54. }
-55. }
-56. }]
-57. },
-58. subIcon: {
-59. content: {
-60. label: 'leftIcon',
-61. icon: $r('sys.symbol.ohos_wifi'),
-62. isEnabled: true,
-63. }
-64. },
-65. }
-66. })
-67. }
-68. }
-
-70. build() {
-71. Column() {
-72. Button("transition modal")
-73. .onClick(() => {
-74. this.isShow = true;
-75. })
-76. .fontSize(20)
-77. .margin(10)
-78. .bindSheet($$this.isShow, this.myBuilder(), { showClose: false }) // 绑定半模态页面
-79. }
-80. .justifyContent(FlexAlign.Center)
-81. .width('100%')
-82. .height('100%')
-83. }
-84. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/x2qXxhQoQ3yqVr69a7k8SA/zh-cn_image_0000002589326917.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/yHEVhU5dRJWngIRSZjjqfQ/zh-cn_image_0000002736435869.jpg)
 
 ### 图标上绑定自定义menu
 
-通过设置菜单项HdsNavigationIconOptions中的componentId属性，结合promptAction.openMenu方法，绑定TargetInfo中的Id属性为设置的componentId，可以在对应的图标上弹出用户自定义菜单。
+通过设置菜单项[HdsNavigationIconOptions](ui-design-hdsnavigation.md#hdsnavigationiconoptions)中的componentId属性，结合[promptAction.openMenu](arkts-apis-uicontext-promptaction.md#openmenu18)方法，绑定[TargetInfo](arkts-apis-uicontext-i.md#targetinfo18)中的Id属性为设置的componentId，可以在对应的图标上弹出用户自定义菜单。
 
+```typescript
+// 从6.0.2(22)版本开始，无需手动导入HdsNavigationAttribute。具体请参考HdsNavigation的导入模块说明。
+import { HdsNavigation, HdsNavigationAttribute, HdsNavigationTitleMode } from '@kit.UIDesignKit';
+import { ComponentContent, LengthMetrics, Prompt } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+const TITLE_BAR_HEIGHT_FULL: number = 138;
+
+@Builder
+function menuComponent() {
+  Menu() {
+    MenuItem({ content: 'copy' }).onClick(() => {
+      Prompt.showToast({ message: 'on click' });
+    })
+    MenuItem({ content: 'paste' }).enabled(false)
+  }
+  .width(224).menuItemDivider({ strokeWidth: LengthMetrics.px(1), color: $r('sys.color.comp_divider') })
+}
+
+@Entry
+@Component
+struct Index {
+  scroller: Scroller = new Scroller();
+  @State blankHeight: number = TITLE_BAR_HEIGHT_FULL;
+  private targetId: string = 'bindMenu';
+
+  build() {
+    Column() {
+      HdsNavigation() {
+        Scroll(this.scroller) {
+          Column() {
+            Blank().height(this.blankHeight).width('100%')
+            Image($r('app.media.background1'))
+              .width('100%')
+          }
+        }.edgeEffect(EdgeEffect.Spring).scrollBar(BarState.Off)
+      }
+      .titleMode(HdsNavigationTitleMode.FULL)
+      .titleBar({
+        content: {
+          title: {
+            mainTitle: 'MainTitle',
+            subTitle: 'SubTitle'
+          },
+          menu: {
+            value: [{
+              content: {
+                label: 'menu1',
+                icon: $r('sys.symbol.plus'),
+                isEnabled: true,
+                componentId: this.targetId,
+                action: () => {
+                  let uiContext = this.getUIContext();
+                  let promptAction = uiContext.getPromptAction();
+                  let contentNode = new ComponentContent(uiContext, wrapBuilder(menuComponent));
+                  try {
+                    promptAction.openMenu(
+                      contentNode,
+                      { id: this.targetId },
+                      { backgroundColor: Color.Yellow })
+                      .then(() => {
+                        console.info('openMenu success');
+                      })
+                      .catch((err: BusinessError) => {
+                        console.error(`openMenu error code is ${err.code}, message is ${err.message}`);
+                      })
+                  } catch (error) {
+                    let message = (error as BusinessError).message;
+                    let code = (error as BusinessError).code;
+                    console.error(`openMenu args error code is ${code}, message is ${message}`);
+                  }
+                }
+              }
+            }, {
+              content: {
+                label: 'menu2',
+                icon: $r('sys.symbol.ohos_wifi')
+              }
+            }]
+          }
+        }
+      })
+    }
+  }
+}
 ```
-1. // 从6.0.2(22)版本开始，无需手动导入HdsNavigationAttribute。具体请参考HdsNavigation的导入模块说明。
-2. import { HdsNavigation, HdsNavigationAttribute, HdsNavigationTitleMode } from '@kit.UIDesignKit';
-3. import { ComponentContent, LengthMetrics, Prompt } from '@kit.ArkUI';
-4. import { BusinessError } from '@kit.BasicServicesKit';
 
-6. const TITLE_BAR_HEIGHT_FULL: number = 138;
-
-8. @Builder
-9. function menuComponent() {
-10. Menu() {
-11. MenuItem({ content: "copy" }).onClick(() => {
-12. Prompt.showToast({ message: 'on click' });
-13. })
-14. MenuItem({ content: "paste" }).enabled(false)
-15. }
-16. .width(224).menuItemDivider({ strokeWidth: LengthMetrics.px(1), color: $r('sys.color.comp_divider') })
-17. }
-
-19. @Entry
-20. @Component
-21. struct Index {
-22. scroller: Scroller = new Scroller();
-23. @State blankHeight: number = TITLE_BAR_HEIGHT_FULL;
-24. private targetId: string = 'bindMenu';
-
-26. build() {
-27. Column() {
-28. HdsNavigation() {
-29. Scroll(this.scroller) {
-30. Column() {
-31. Blank().height(this.blankHeight).width('100%')
-32. Image($r('app.media.background1'))
-33. .width('100%')
-34. }
-35. }.edgeEffect(EdgeEffect.Spring).scrollBar(BarState.Off)
-36. }
-37. .titleMode(HdsNavigationTitleMode.FULL)
-38. .titleBar({
-39. content: {
-40. title: {
-41. mainTitle: 'MainTitle',
-42. subTitle: 'SubTitle'
-43. },
-44. menu: {
-45. value: [{
-46. content: {
-47. label: 'menu1',
-48. icon: $r('sys.symbol.plus'),
-49. isEnabled: true,
-50. componentId: this.targetId,
-51. action: () => {
-52. let uiContext = this.getUIContext();
-53. let promptAction = uiContext.getPromptAction();
-54. let contentNode = new ComponentContent(uiContext, wrapBuilder(menuComponent));
-55. try {
-56. promptAction.openMenu(
-57. contentNode,
-58. { id: this.targetId },
-59. { backgroundColor: Color.Yellow });
-60. } catch (error) {
-61. let message = (error as BusinessError).message;
-62. let code = (error as BusinessError).code;
-63. console.error(`openMenu args error code is ${code}, message is ${message}`);
-64. }
-65. console.info("model cancel");
-66. }
-67. }
-68. }, {
-69. content: {
-70. label: 'menu2',
-71. icon: $r('sys.symbol.ohos_wifi'),
-72. }
-73. }]
-74. },
-75. }
-76. })
-77. }
-78. }
-79. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/ikRKCeM_QYG52Cf8Mjd4DA/zh-cn_image_0000002589246857.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/EbyoGGPqSMm60vRKgq7zFA/zh-cn_image_0000002706836714.gif)
 
 ### 设置应用内多窗图标
 
 创建一级导航组件，通过配置titleBar中的menu上的multiWindowEntryInAPPMenu属性，实现应用内多窗图标设置。
 
+```typescript
+// 从6.0.2(22)版本开始，无需手动导入HdsNavigationAttribute。具体请参考HdsNavigation的导入模块说明。
+import { HdsNavigation, HdsNavigationAttribute, HdsNavigationMenuContentOptions } from '@kit.UIDesignKit';
+import { Want } from '@kit.AbilityKit';
+
+@Entry
+@Component
+struct MultiWindowEntryInAPPTest {
+  private want: Want = {
+    // 修改为当前应用的bundleName、moduleName、abilityName，启动应用内的UIAbility
+    bundleName: "com.example.myapplication",
+    moduleName: "entry",
+    abilityName: "FuncAbility",
+  }
+  @State menuContent: HdsNavigationMenuContentOptions = {
+    multiWindowEntryInAPPMenu: {
+      want: this.want,
+    },
+    maxCount: 3,
+    value: [
+      { content: { label: 'menu1', icon: $r('sys.symbol.search_things'), } },
+      { content: { label: 'menu2', icon: $r('sys.symbol.plus'), } }
+    ]
+  }
+
+  build() {
+    HdsNavigation() {
+      Stack() {
+        Text("Page1")
+      }.alignContent(Alignment.Center)
+      .width("100%")
+      .height("100%")
+    }
+    .hideToolBar(false)
+    .navBarWidth('100%')
+    .titleBar({
+      content: {
+        title: {
+          mainTitle: "Index"
+        },
+        menu: this.menuContent
+      }
+    })
+  }
+}
 ```
-1. // 从6.0.2(22)版本开始，无需手动导入HdsNavigationAttribute。具体请参考HdsNavigation的导入模块说明。
-2. import { HdsNavigation, HdsNavigationAttribute, HdsNavigationMenuContentOptions } from '@kit.UIDesignKit';
-3. import { Want } from '@kit.AbilityKit';
 
-5. @Entry
-6. @Component
-7. struct MultiWindowEntryInAPPTest {
-8. private want: Want = {
-9. // 修改为当前应用的bundleName、moduleName、abilityName，启动应用内的UIAbility
-10. bundleName: "com.example.myapplication",
-11. moduleName: "entry",
-12. abilityName: "FuncAbility",
-13. }
-14. @State menuContent: HdsNavigationMenuContentOptions = {
-15. multiWindowEntryInAPPMenu: {
-16. want: this.want,
-17. },
-18. maxCount: 3,
-19. value: [
-20. { content: { label: 'menu1', icon: $r('sys.symbol.search_things'), } },
-21. { content: { label: 'menu2', icon: $r('sys.symbol.plus'), } }
-22. ]
-23. }
-
-25. build() {
-26. HdsNavigation() {
-27. Stack() {
-28. Text("Page1")
-29. }.alignContent(Alignment.Center)
-30. .width("100%")
-31. .height("100%")
-32. }
-33. .hideToolBar(false)
-34. .navBarWidth('100%')
-35. .titleBar({
-36. content: {
-37. title: {
-38. mainTitle: "Index"
-39. },
-40. menu: this.menuContent
-41. }
-42. })
-43. }
-44. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/hNr_pwuwQ0adOsFg383Mpg/zh-cn_image_0000002558767050.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/Mww01YS6QvyEsTHZch3wCg/zh-cn_image_0000002736315823.jpg)
 
 ### 设置HdsNavigation双栏模式
 
 该示例主要展示HdsNavigation在双栏模式下，右侧显示默认占位页。
 
+```typescript
+// 从6.0.2(22)版本开始，无需手动导入HdsNavigationAttribute。具体请参考HdsNavigation的导入模块说明。
+import { HdsNavigation, HdsNavigationAttribute, HdsNavigationTitleMode } from '@kit.UIDesignKit';
+import { ComponentContent } from '@kit.ArkUI';
+
+@Builder
+function placeholderPage() {
+  Column() {
+    Text('分栏模式占位页')
+      .fontSize(28)
+      .fontWeight(700)
+      .margin({ top: 200 })
+  }.width('100%')
+  .height('100%')
+}
+
+@Entry
+@Component
+struct Index {
+  scroller: Scroller = new Scroller();
+  placeholder = new ComponentContent(this.getUIContext(), wrapBuilder(placeholderPage));
+  private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  build() {
+    HdsNavigation() {
+      List({ space: 12, initialIndex: 0, scroller: this.scroller }) {
+        ForEach(this.arr, (item: number) => {
+          ListItem() {
+            Text('' + item)
+              .width('90%')
+              .height(72)
+              .backgroundColor('#FFFFFF')
+              .borderRadius(24)
+              .fontSize(16)
+              .fontWeight(500)
+              .textAlign(TextAlign.Center)
+          }
+        }, (item: number) => item.toString())
+      }
+      .height(324)
+      .width('100%')
+      .margin({ top: 12, left: '10%' })
+    }
+    .mode(NavigationMode.Split) // 设置HdsNavigation模式为Split
+    .splitPlaceholder(this.placeholder)
+    .titleMode(HdsNavigationTitleMode.MINI)
+    .titleBar({
+      enableComponentSafeArea: true,
+      content: {
+        title: {
+          mainTitle: 'Main',
+          subTitle: 'Sub'
+        }
+      }
+    })
+    .bindToScrollable([this.scroller])
+    .divider({ startMargin: 20, endMargin: 20, color: Color.Red }) // 从6.1.0(23)开始，新增divider属性。
+  }
+}
 ```
-1. // 从6.0.2(22)版本开始，无需手动导入HdsNavigationAttribute。具体请参考HdsNavigation的导入模块说明。
-2. import { HdsNavigation, HdsNavigationAttribute, HdsNavigationTitleMode } from '@kit.UIDesignKit';
-3. import { ComponentContent } from '@kit.ArkUI';
 
-5. @Builder
-6. function PlaceholderPage() {
-7. Column() {
-8. Text("分栏模式占位页")
-9. .fontSize(28)
-10. .fontWeight(700)
-11. .margin({ top: 200 })
-12. }.width("100%")
-13. .height("100%")
-14. }
-
-16. @Entry
-17. @Component
-18. struct Index {
-19. scroller: Scroller = new Scroller();
-20. placeholder = new ComponentContent(this.getUIContext(), wrapBuilder(PlaceholderPage))
-21. private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-23. build() {
-24. HdsNavigation() {
-25. List({ space: 12, initialIndex: 0, scroller: this.scroller }) {
-26. ForEach(this.arr, (item: number) => {
-27. ListItem() {
-28. Text('' + item)
-29. .width('90%')
-30. .height(72)
-31. .backgroundColor('#FFFFFF')
-32. .borderRadius(24)
-33. .fontSize(16)
-34. .fontWeight(500)
-35. .textAlign(TextAlign.Center)
-36. }
-37. }, (item: number) => item.toString())
-38. }
-39. .height(324)
-40. .width('100%')
-41. .margin({ top: 12, left: '10%' })
-42. }
-43. .mode(NavigationMode.Split) // 设置HdsNavigation模式为Split
-44. .splitPlaceholder(this.placeholder)
-45. .titleMode(HdsNavigationTitleMode.MINI)
-46. .titleBar({
-47. enableComponentSafeArea: true,
-48. content: {
-49. title: {
-50. mainTitle: 'Main',
-51. subTitle: 'Sub'
-52. },
-53. }
-54. })
-55. .bindToScrollable([this.scroller])
-56. .divider({ startMargin: 20, endMargin: 20, color: Color.Red }) // 从6.1.0(23)开始，新增divider属性。
-57. }
-58. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/Ap2ZAvmoSm6MEKRxorakSg/zh-cn_image_0000002558607390.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/sB7ggvb9R_G_CoRQyPKCrg/zh-cn_image_0000002706676780.gif)
 
 ### 设置标题栏沉浸式样式
 
 该示例主要展示HdsNavigation配置沉浸式模糊和材质的各类型效果。
 
+**示例：**
+
+```typescript
+// 从6.0.2(22)版本开始，无需手动导入HdsNavigationAttribute。具体请参考HdsNavigation的导入模块说明。
+import {
+  hdsMaterial,
+  HdsNavigation,
+  HdsNavigationAttribute,
+  HdsNavigationTitleMode,
+  ScrollEffectType
+} from '@kit.UIDesignKit';
+import { promptAction } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct Index {
+  private scrollerForScroll: Scroller = new Scroller();
+  @State materialLevel: hdsMaterial.MaterialLevel = hdsMaterial.MaterialLevel.ADAPTIVE;
+  @State materialType: hdsMaterial.MaterialType = hdsMaterial.MaterialType.IMMERSIVE;
+
+  aboutToAppear(): void {
+    // 该示例以系统支持的材质类型为hdsMaterial.MaterialType.IMMERSIVE为例
+    try {
+      let materialTypes: Array<hdsMaterial.MaterialType> = hdsMaterial.getSystemMaterialTypes();
+      console.info(`getSystemMaterialTypes successed, types: ${materialTypes}`);
+    } catch (err) {
+      let message = (err as BusinessError).message;
+      let code = (err as BusinessError).code;
+      console.error(`getSystemMaterialTypes failed, code: ${code}, message: ${message}`);
+    }
+  }
+
+  build() {
+    HdsNavigation() {
+      Scroll(this.scrollerForScroll) {
+        Column() {
+          // 'app.media.demo_img'需要替换为开发者所需的资源文件
+          Image($r('app.media.demo_img'))
+            .width('100%')
+          Text(`当前材质Level为： ${this.materialLevel}`).fontSize(20).fontWeight(FontWeight.Bold)
+          Text(`当前材质Type为： ${this.materialType}`).fontSize(20).fontWeight(FontWeight.Bold)
+          Button('切换材质Type为None').onClick(() => {
+            // 无材质效果
+            this.materialType = hdsMaterial.MaterialType.NONE;
+          }).margin({ top: 2 })
+        }.height('100%')
+      }.edgeEffect(EdgeEffect.Spring).height('100%')
+    }
+    .titleBar({
+      content: {
+        title: {
+          mainTitle: '主标题'
+        },
+        menu: {
+          value: [{
+            content: {
+              icon: $r('sys.symbol.search_things'),
+              label: 'search',
+              action: () => {
+                try {
+                  promptAction.openToast({ message: 'on click' })
+                    .then(() => {
+                      console.info('openToast success');
+                    })
+                    .catch((err: BusinessError) => {
+                      console.error(`openToast error code is ${err.code}, message is ${err.message}`);
+                    })
+                } catch (error) {
+                  let message = (error as BusinessError).message;
+                  let code = (error as BusinessError).code;
+                  console.error(`openToast args error code is ${code}, message is ${message}`);
+                }
+              }
+            }
+          }]
+        }
+      },
+      style: {
+        scrollEffectOpts: {
+          // 从6.1.0(23)开始， 新增IMMERSIVE_GRADIENT_BLUR类型，标题文字和图标样式从白色到黑色线性过渡。
+          scrollEffectType: ScrollEffectType.IMMERSIVE_GRADIENT_BLUR
+        },
+        // 从6.1.0(23)开始，支持材质相关属性。
+        // 推荐与ScrollEffectType.IMMERSIVE_GRADIENT_BLUR（推荐沉浸式图文类的场景使用） 或 ScrollEffectType.GRADIENT_BLUR（推荐非沉浸式列表类的场景使用）搭配使用。
+        systemMaterialEffect: {
+          materialType: this.materialType,
+          materialLevel: this.materialLevel
+        }
+      }
+    })
+    .bindToScrollable([this.scrollerForScroll])
+    .hideBackButton(true)
+    .titleMode(HdsNavigationTitleMode.MINI)
+    .ignoreLayoutSafeArea([LayoutSafeAreaType.SYSTEM], [LayoutSafeAreaEdge.TOP, LayoutSafeAreaEdge.BOTTOM])
+  }
+}
 ```
-1. // 从6.0.2(22)版本开始，无需手动导入HdsNavigationAttribute。具体请参考HdsNavigation的导入模块说明。
-2. import {
-3. hdsMaterial,
-4. HdsNavigation,
-5. HdsNavigationAttribute,
-6. HdsNavigationTitleMode,
-7. ScrollEffectType,
-8. } from '@kit.UIDesignKit'
-9. import { promptAction } from '@kit.ArkUI'
 
-11. @Entry
-12. @Component
-13. struct Index {
-14. private scrollerForScroll: Scroller = new Scroller();
-15. @State materialLevel: hdsMaterial.MaterialLevel = hdsMaterial.MaterialLevel.ADAPTIVE;
-16. @State materialType: hdsMaterial.MaterialType = hdsMaterial.MaterialType.IMMERSIVE;
+**效果展示：**
 
-18. aboutToAppear(): void {
-19. // 该示例以系统支持的材质类型为hdsMaterial.MaterialType.IMMERSIVE为例
-20. try {
-21. let materialTypes: Array<hdsMaterial.MaterialType> = hdsMaterial.getSystemMaterialTypes();
-22. console.info(`getSystemMaterialTypes successed, types: ${materialTypes}`);
-23. } catch (err) {
-24. let message = (err as BusinessError).message;
-25. let code = (err as BusinessError).code;
-26. console.error(`getSystemMaterialTypes failed, code: ${code}, message: ${message}`);
-27. }
-28. }
+执行上述代码展示的效果如下。
 
-30. build() {
-31. HdsNavigation() {
-32. Scroll(this.scrollerForScroll) {
-33. Column() {
-34. // 'app.media.demo_img'需要替换为开发者所需的资源文件
-35. Image($r('app.media.demo_img'))
-36. .width('100%')
-37. Text(`当前材质Level为: ${this.materialLevel}`).fontSize(20).fontWeight(FontWeight.Bold)
-38. Text(`当前材质Type为: ${this.materialType}`).fontSize(20).fontWeight(FontWeight.Bold)
-39. Button('切换材质Type为IMMERSIVE').onClick(() => {
-40. // 沉浸式材质效果，该示例场景ADAPTIVE为沉浸式材质
-41. this.materialType = hdsMaterial.MaterialType.IMMERSIVE;
-42. }).margin({ top: 2 })
-43. Button('切换材质Type为None').onClick(() => {
-44. // 无材质效果
-45. this.materialType = hdsMaterial.MaterialType.NONE;
-46. }).margin({ top: 2 })
-47. }.height('100%')
-48. }.edgeEffect(EdgeEffect.Spring).height('100%')
-49. }
-50. .titleBar({
-51. content: {
-52. title: {
-53. mainTitle: '主标题',
-54. },
-55. menu: {
-56. value: [{
-57. content: {
-58. icon: $r('sys.symbol.search_things'),
-59. label: 'search',
-60. action: () => {
-61. promptAction.openToast({ message: 'on click' });
-62. },
-63. }
-64. }]
-65. },
-66. },
-67. style: {
-68. scrollEffectOpts: {
-69. // 从6.1.0(23)开始， 新增IMMERSIVE_GRADIENT_BLUR类型，标题文字和图标样式从白色到黑色线性过渡。
-70. scrollEffectType: ScrollEffectType.IMMERSIVE_GRADIENT_BLUR,
-71. },
-72. // 从6.1.0(23)开始，支持材质相关属性。
-73. // 推荐与ScrollEffectType.IMMERSIVE_GRADIENT_BLUR（推荐沉浸式图文类的场景使用） 或 ScrollEffectType.GRADIENT_BLUR（推荐非沉浸式列表类的场景使用）搭配使用。
-74. systemMaterialEffect: {
-75. materialType: this.materialType,
-76. materialLevel: this.materialLevel
-77. }
-78. },
-79. })
-80. .bindToScrollable([this.scrollerForScroll])
-81. .hideBackButton(true)
-82. .titleMode(HdsNavigationTitleMode.MINI)
-83. .ignoreLayoutSafeArea([LayoutSafeAreaType.SYSTEM], [LayoutSafeAreaEdge.TOP, LayoutSafeAreaEdge.BOTTOM])
-84. }
-85. }
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/-MAmXp8HTw6-uFT61oD_TQ/zh-cn_image_0000002736435871.gif)
+
+### 通过onReady获取栈
+
+该示例主要演示如下两点功能：
+
+1. [NavPathStack](ts-basic-components-navigation.md#navpathstack10)无需声明为状态变量，也可以实现路由栈操作功能。
+2. [HdsNavDestination (导航子页面容器)](ui-design-hdsnavdestination.md)通过[onReady](ui-design-hdsnavdestination.md#onready)事件能够拿到对应的NavPathInfo和所属的[NavPathStack](ts-basic-components-navigation.md#navpathstack10)。
+
+**示例：**
+
+```typescript
+import {
+  HdsNavDestination,
+  HdsNavigation,
+  HdsNavigationAttribute,
+  HdsNavDestinationAttribute,
+  HdsNavigationTitleMode
+} from '@kit.UIDesignKit';
+
+class PageParam {
+  constructor(num_: number) {
+    this.num = num_;
+  }
+
+  num: number = 0;
+}
+
+@Builder
+export function PageOneBuilder(name: string, param: Object) {
+  PageOne();
+}
+
+@Component
+struct PageOne {
+  private stack: NavPathStack | null = null;
+  private name: string = '';
+  private paramNum: number = 0;
+
+  build() {
+    HdsNavDestination() {
+      Column() {
+        Text('NavPathInfo: name: ' + this.name + ', paramNum: ' + this.paramNum)
+        Button('pushPath', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            if (this.stack) {
+              let p = new PageParam(this.paramNum + 1);
+              this.stack.pushPath({ name: 'pageOne', param: p });
+            }
+          })
+        Button('pop', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.stack?.pop();
+          })
+      }
+      .width('100%')
+      .height('100%')
+    }
+    .titleBar({
+      enableComponentSafeArea: true,
+      content: {
+        title: {
+          mainTitle: 'PageOne'
+        }
+      }
+    })
+    .onReady((ctx: NavDestinationContext) => {
+      // 在NavDestination中能够拿到传来的NavPathInfo和当前所处的NavPathStack
+      try {
+        this.name = ctx?.pathInfo?.name;
+        this.paramNum = (ctx?.pathInfo?.param as PageParam)?.num;
+        this.stack = ctx.pathStack;
+      } catch (e) {
+        console.error(`testTag onReady catch exception: ${JSON.stringify(e)}`);
+      }
+    })
+  }
+}
+
+@Entry
+@Component
+struct NavigationExample2 {
+  private stack: NavPathStack = new NavPathStack();
+
+  build() {
+    HdsNavigation(this.stack) {
+      Stack({ alignContent: Alignment.Center }) {
+        Button('pushPath', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            let p = new PageParam(1);
+            this.stack.pushPath({ name: 'pageOne', param: p });
+          })
+      }
+      .width('100%')
+      .height('100%')
+    }
+    .width('100%')
+    .height('100%')
+    .titleBar({
+      content: {
+        title: {
+          mainTitle: '主标题'
+        }
+      }
+    })
+    .titleMode(HdsNavigationTitleMode.MINI)
+    .hideBackButton(true)
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/nn0_a121T6anB9etTBtRVQ/zh-cn_image_0000002589326919.gif "点击放大")
+在src/main目录下的module.json5配置文件中的module字段里配置"routerMap": "$profile:router\_map"，并在src/main/resources/base/profile目录下新增router\_map.json。router\_map.json示例如下。
+
+```json5
+{
+  "routerMap": [
+    {
+      "name": "pageOne",
+      "pageSourceFile": "src/main/ets/pages/Index.ets",
+      "buildFunction": "PageOneBuilder",
+      "data": {
+        "description": "this is pageOne"
+      }
+    }
+  ]
+}
+```
+
+**效果展示：**
+
+执行上述代码，效果展示如下。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/bwfhtV6xThyvmDevmHda9A/zh-cn_image_0000002706836716.gif)

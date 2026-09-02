@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-305
 title: 如何通过路由的方式打开半屏
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 如何通过路由的方式打开半屏
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何通过路由的方式打开半屏
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:17+08:00
-doc_updated_at: 2026-04-27
+scraped_at: 2026-09-02T15:21:21+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:87bc89c6394308e5ab4938d5d9ab9672af8c6f42cedb1d726f7db1117f7c24ff
 ---
 

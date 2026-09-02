@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-data-security
 title: 应用数据安全
-breadcrumb: 最佳实践 > 应用安全 > 应用数据安全
+breadcrumb: 最佳实践 > 安全设计 > 应用数据安全
 category: best-practices
-scraped_at: 2026-04-29T14:13:15+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:6f931f77cdb5d7eca8f4128fcf0636c47d9f2915d1d214d5284d7c6d3b5dd32c
+scraped_at: 2026-09-02T15:03:25+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:62223911d0940f1cfe270d99a78b50909e21bdfd51cb9ba647b1c512975afe01
 ---
 
 ## 概述
@@ -34,7 +34,7 @@ HarmonyOS安全能力以分级安全为架构基础，构建安全应用生态�
 
 根据设备安全能力，如是否有TEE和安全存储芯片等，将设备安全等级分为SL1、SL2、SL3、SL4和SL5五个等级。例如，智能穿戴设备通常为低安全的SL1设备，手机和平板通常为高安全的设备。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/QC0vdIfVSdKGsqwWDocOHw/zh-cn_image_0000002229450445.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/RbXzKtc2RGSQ9thpabdy7A/zh-cn_image_0000002229450445.png "点击放大")
 
 设备从SL1到SL5分级，在完整性保护、加密及数据保护、权限及访问控制、可信执行环境和漏洞防利用这几个维度对应的安全能力要求逐渐提高。
 
@@ -63,7 +63,7 @@ HarmonyOS安全能力以分级安全为架构基础，构建安全应用生态�
 
 除了对数据进行内容分类，开发者还需遵守相关法律法规，例如通用数据保护条例（GDPR）和个人信息保护法，以保护用户隐私和数据安全。具体的数据分类图如图1所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/wExQRlZ4QKa9MydpQqmwSw/zh-cn_image_0000002229335969.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/3ZZDwkQkQ1ClR3HvEXFPLw/zh-cn_image_0000002229335969.png)
 
 按照个人数据分类分级规范要求，可将数据分为S1、S2、S3、S4四个安全等级。
 
@@ -72,8 +72,8 @@ HarmonyOS安全能力以分级安全为架构基础，构建安全应用生态�
 | 风险等级 | 风险标准 | 定义 | 样例 |
 | --- | --- | --- | --- |
 | 严重 | S4 | 业界法律法规定义的特殊数据类型，涉及个人的最私密领域的信息或一旦泄露、篡改、破坏、销毁可能会给个人或组织造成重大的不利影响的数据。 | 政治观点、宗教和哲学信仰、工会成员资格、基因数据、生物信息、健康和性生活状况，性取向等或设备认证鉴权、个人信用卡等财务信息等。 |
-| 高 | S3 | 数据泄露、篡改、破坏、销毁可能给个人或组织带来有限不利影响。 | 个人实时精确定位信息、运动轨迹等。 |
-| 中 | S2 | 数据泄露、篡改、破坏、销毁可能给个人或组织带来有限不利影响。 | 个人的详细通信地址、姓名昵称等。 |
+| 高 | S3 | 数据泄露、篡改、破坏、销毁可能给个人或组织带来严峻不利影响。 | 个人实时精确定位信息、运动轨迹等。 |
+| 中 | S2 | 数据泄露、篡改、破坏、销毁可能给个人或组织带来严重不利影响。 | 个人的详细通信地址、姓名昵称等。 |
 | 低 | S1 | 数据泄露、篡改、破坏、销毁可能给个人或组织带来有限不利影响。 | 性别、国籍、用户申请记录等。 |
 
 数据安全标签和设备安全等级越高，加密措施和访问控制措施越严格，从而确保数据安全性更高。
@@ -107,29 +107,25 @@ HarmonyOS安全能力以分级安全为架构基础，构建安全应用生态�
 
 分级数据文件路径使用应用通用文件路径，获取路径代码如下：
 
+```screen
+getEl2Path(): void {
+  let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  context.area = contextConstant.AreaMode.EL2;
+  let filePath = context.filesDir + '/health_data.txt';
+  this.message = filePath;
+}
 ```
-1. getEl2Path(): void {
-2. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-3. context.area = contextConstant.AreaMode.EL2;
-4. let filePath = context.filesDir + '/health_data.txt';
-5. this.message = filePath;
-6. }
-```
-
-[Index.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppDataSecurity/entry/src/main/ets/pages/Index.ets#L68-L73)
 
 需要获取el1的路径时，修改AreaMode。代码如下：
 
+```screen
+getEl1Path(): void {
+  let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  context.area = contextConstant.AreaMode.EL1;
+  let filePath = context.filesDir + '/health_data.txt';
+  this.message = filePath;
+}
 ```
-1. getEl1Path(): void {
-2. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-3. context.area = contextConstant.AreaMode.EL1;
-4. let filePath = context.filesDir + '/health_data.txt';
-5. this.message = filePath;
-6. }
-```
-
-[Index.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppDataSecurity/entry/src/main/ets/pages/Index.ets#L77-L82)
 
 如果应用没有特殊需求，应将数据存储在el2加密目录中。
 
@@ -160,8 +156,9 @@ HarmonyOS安全能力以分级安全为架构基础，构建安全应用生态�
 
 程序的场景包含三个页面：体检列表页、数据录入页和数据详情页。页面如下：
 
-**图1** 场景设计图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/vYwutxF9RpG5PIvFOL0Vcw/zh-cn_image_0000002193850580.png "点击放大")
+**图1** 场景设计图
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/DkW3_fHtQreVVsbBbqtV5g/zh-cn_image_0000002651598502.png "点击放大")
 
 ### 场景开发
 
@@ -186,43 +183,41 @@ HarmonyOS安全能力以分级安全为架构基础，构建安全应用生态�
 
 参考[分级数据保护](bpta-app-data-security.md#section1433616432387)中代码获取到数据路径后按正常的文件读写即可，以下是文件读写的代码：
 
+```screen
+function writeFile(filePath: string, data: string): void {
+  try {
+    let file = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+    let writeLen = fileIo.writeSync(file.fd, data);
+    hilog.info(0x0000, 'AppDataSecurity', 'The length of str is: ' + writeLen);
+    fileIo.closeSync(file);
+  } catch (error) {
+    hilog.error(0x0000, 'AppDataSecurity', `writeFile error ${JSON.stringify(error)}`);
+  }
+}
+
+function readFile(filePath: string): string {
+  try {
+    let file = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+    let arrayBuffer = new ArrayBuffer(1024);
+
+    class Option {
+      public offset: number = 0;
+      public length: number = 0;
+    }
+
+    let option = new Option();
+    option.length = arrayBuffer.byteLength;
+    let readLen = fileIo.readSync(file.fd, arrayBuffer, option);
+    let buf = buffer.from(arrayBuffer, 0, readLen);
+    hilog.info(0x0000, 'AppDataSecurity', `The length of of file: ${readLen}`);
+    fileIo.closeSync(file);
+    return buf.toString();
+  } catch (error) {
+    hilog.error(0x0000, 'AppDataSecurity', `readFile error ${JSON.stringify(error)}`);
+  }
+  return '';
+}
 ```
-1. function writeFile(filePath: string, data: string): void {
-2. try {
-3. let file = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
-4. let writeLen = fileIo.writeSync(file.fd, data);
-5. hilog.info(0x0000, 'AppDataSecurity', 'The length of str is: ' + writeLen);
-6. fileIo.closeSync(file);
-7. } catch (error) {
-8. hilog.error(0x0000, 'AppDataSecurity', `writeFile error ${JSON.stringify(error)}`);
-9. }
-10. }
-
-12. function readFile(filePath: string): string {
-13. try {
-14. let file = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
-15. let arrayBuffer = new ArrayBuffer(1024);
-
-17. class Option {
-18. public offset: number = 0;
-19. public length: number = 0;
-20. }
-
-22. let option = new Option();
-23. option.length = arrayBuffer.byteLength;
-24. let readLen = fileIo.readSync(file.fd, arrayBuffer, option);
-25. let buf = buffer.from(arrayBuffer, 0, readLen);
-26. hilog.info(0x0000, 'AppDataSecurity', `The length of of file: ${readLen}`);
-27. fileIo.closeSync(file);
-28. return buf.toString();
-29. } catch (error) {
-30. hilog.error(0x0000, 'AppDataSecurity', `readFile error ${JSON.stringify(error)}`);
-31. }
-32. return '';
-33. }
-```
-
-[Index.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppDataSecurity/entry/src/main/ets/pages/Index.ets#L93-L125)
 
 * 数据加解密
 
@@ -230,24 +225,22 @@ HarmonyOS安全能力以分级安全为架构基础，构建安全应用生态�
 
 在生成算法key的配置函数中，需要指定算法类型HUKS\_ALG\_AES、算法key的大小以及密钥用途。
 
+```screen
+function GetAesGenerateProperties(): Array<huks.HuksParam> {
+  let properties: Array<huks.HuksParam> = [{
+    tag: huks.HuksTag.HUKS_TAG_ALGORITHM,
+    value: huks.HuksKeyAlg.HUKS_ALG_AES
+  }, {
+    tag: huks.HuksTag.HUKS_TAG_KEY_SIZE,
+    value: huks.HuksKeySize.HUKS_AES_KEY_SIZE_128
+  }, {
+    tag: huks.HuksTag.HUKS_TAG_PURPOSE,
+    value: huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT |
+    huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT
+  }];
+  return properties;
+}
 ```
-1. function GetAesGenerateProperties(): Array<huks.HuksParam> {
-2. let properties: Array<huks.HuksParam> = [{
-3. tag: huks.HuksTag.HUKS_TAG_ALGORITHM,
-4. value: huks.HuksKeyAlg.HUKS_ALG_AES
-5. }, {
-6. tag: huks.HuksTag.HUKS_TAG_KEY_SIZE,
-7. value: huks.HuksKeySize.HUKS_AES_KEY_SIZE_128
-8. }, {
-9. tag: huks.HuksTag.HUKS_TAG_PURPOSE,
-10. value: huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT |
-11. huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT
-12. }];
-13. return properties;
-14. }
-```
-
-[Index.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppDataSecurity/entry/src/main/ets/pages/Index.ets#L139-L152)
 
 加密函数的算法规格必须与生成算法密钥的配置一致。
 
@@ -259,136 +252,128 @@ HUKS\_TAG\_PADDING填充模式有三种。
 
 HUKS\_TAG\_BLOCK\_MODE有7种分组模式。对于CBC、CTR、OFB、CFB模式，仅使用HUKS\_TAG\_IV加解密参数。对于GCM、CCM模式，需要设置HUKS\_TAG\_NONCE、HUKS\_TAG\_ASSOCIATED\_DATA，并配置HUKS\_TAG\_IV。
 
+```screen
+function GetAesEncryptProperties(): Array<huks.HuksParam> {
+  let properties: Array<huks.HuksParam> = [{
+    tag: huks.HuksTag.HUKS_TAG_ALGORITHM,
+    value: huks.HuksKeyAlg.HUKS_ALG_AES
+  }, {
+    tag: huks.HuksTag.HUKS_TAG_KEY_SIZE,
+    value: huks.HuksKeySize.HUKS_AES_KEY_SIZE_128
+  }, {
+    tag: huks.HuksTag.HUKS_TAG_PURPOSE,
+    value: huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT
+  }, {
+    tag: huks.HuksTag.HUKS_TAG_PADDING,
+    value: huks.HuksKeyPadding.HUKS_PADDING_PKCS7
+  }, {
+    tag: huks.HuksTag.HUKS_TAG_BLOCK_MODE,
+    value: huks.HuksCipherMode.HUKS_MODE_CBC
+  }, {
+    tag: huks.HuksTag.HUKS_TAG_IV,
+    value: StringToUint8Array(IV)
+  }];
+  return properties;
+}
 ```
-1. function GetAesEncryptProperties(): Array<huks.HuksParam> {
-2. let properties: Array<huks.HuksParam> = [{
-3. tag: huks.HuksTag.HUKS_TAG_ALGORITHM,
-4. value: huks.HuksKeyAlg.HUKS_ALG_AES
-5. }, {
-6. tag: huks.HuksTag.HUKS_TAG_KEY_SIZE,
-7. value: huks.HuksKeySize.HUKS_AES_KEY_SIZE_128
-8. }, {
-9. tag: huks.HuksTag.HUKS_TAG_PURPOSE,
-10. value: huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT
-11. }, {
-12. tag: huks.HuksTag.HUKS_TAG_PADDING,
-13. value: huks.HuksKeyPadding.HUKS_PADDING_PKCS7
-14. }, {
-15. tag: huks.HuksTag.HUKS_TAG_BLOCK_MODE,
-16. value: huks.HuksCipherMode.HUKS_MODE_CBC
-17. }, {
-18. tag: huks.HuksTag.HUKS_TAG_IV,
-19. value: StringToUint8Array(IV)
-20. }];
-21. return properties;
-22. }
-```
-
-[Index.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppDataSecurity/entry/src/main/ets/pages/Index.ets#L156-L177)
 
 解密函数的算法规格应与加密算法的配置一致，但需将密钥用途设置为解密。
 
+```screen
+function GetAesDecryptProperties(): Array<huks.HuksParam> {
+  let properties: Array<huks.HuksParam> = [{
+    tag: huks.HuksTag.HUKS_TAG_ALGORITHM,
+    value: huks.HuksKeyAlg.HUKS_ALG_AES
+  }, {
+    tag: huks.HuksTag.HUKS_TAG_KEY_SIZE,
+    value: huks.HuksKeySize.HUKS_AES_KEY_SIZE_128
+  }, {
+    tag: huks.HuksTag.HUKS_TAG_PURPOSE,
+    value: huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT
+  }, {
+    tag: huks.HuksTag.HUKS_TAG_PADDING,
+    value: huks.HuksKeyPadding.HUKS_PADDING_PKCS7
+  }, {
+    tag: huks.HuksTag.HUKS_TAG_BLOCK_MODE,
+    value: huks.HuksCipherMode.HUKS_MODE_CBC
+  }, {
+    tag: huks.HuksTag.HUKS_TAG_IV,
+    value: StringToUint8Array(IV)
+  }];
+  return properties;
+}
 ```
-1. function GetAesDecryptProperties(): Array<huks.HuksParam> {
-2. let properties: Array<huks.HuksParam> = [{
-3. tag: huks.HuksTag.HUKS_TAG_ALGORITHM,
-4. value: huks.HuksKeyAlg.HUKS_ALG_AES
-5. }, {
-6. tag: huks.HuksTag.HUKS_TAG_KEY_SIZE,
-7. value: huks.HuksKeySize.HUKS_AES_KEY_SIZE_128
-8. }, {
-9. tag: huks.HuksTag.HUKS_TAG_PURPOSE,
-10. value: huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT
-11. }, {
-12. tag: huks.HuksTag.HUKS_TAG_PADDING,
-13. value: huks.HuksKeyPadding.HUKS_PADDING_PKCS7
-14. }, {
-15. tag: huks.HuksTag.HUKS_TAG_BLOCK_MODE,
-16. value: huks.HuksCipherMode.HUKS_MODE_CBC
-17. }, {
-18. tag: huks.HuksTag.HUKS_TAG_IV,
-19. value: StringToUint8Array(IV)
-20. }];
-21. return properties;
-22. }
-```
-
-[Index.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppDataSecurity/entry/src/main/ets/pages/Index.ets#L181-L202)
 
 完成上述配置后，调用生成算法的key函数。
 
-```
-1. async function GenerateAesKey(): Promise<void> {
-2. let genProperties = GetAesGenerateProperties();
-3. let options: huks.HuksOptions = {
-4. properties: genProperties
-5. };
+```screen
+async function GenerateAesKey(): Promise<void> {
+  let genProperties = GetAesGenerateProperties();
+  let options: huks.HuksOptions = {
+    properties: genProperties
+  };
 
-7. await huks.generateKeyItem(aesKeyAlias, options)
-8. .then((data) => {
-9. hilog.info(0x0000, 'AppDataSecurity', `promise: generate AES Key success, data = ${JSON.stringify(data)}`);
-10. }).catch((error: Error) => {
-11. hilog.error(0x0000, 'AppDataSecurity', `promise: generate AES Key failed, ${JSON.stringify(error)}`);
-12. })
-13. }
+  await huks.generateKeyItem(aesKeyAlias, options)
+    .then((data) => {
+      hilog.info(0x0000, 'AppDataSecurity', `promise: generate AES Key success, data = ${JSON.stringify(data)}`);
+    }).catch((error: Error) => {
+      hilog.error(0x0000, 'AppDataSecurity', `promise: generate AES Key failed, ${JSON.stringify(error)}`);
+    })
+}
 ```
-
-[Index.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppDataSecurity/entry/src/main/ets/pages/Index.ets#L206-L218)
 
 生成算法密钥后即可进行加解密。加解密过程中，先获取相应配置，然后调用initSession和finishSession完成操作。
 
+```screen
+async function EncryptData(): Promise<void> {
+  let encryptProperties = GetAesEncryptProperties();
+  let options: huks.HuksOptions = {
+    properties: encryptProperties,
+    inData: StringToUint8Array(plainText)
+  };
+
+  await huks.initSession(aesKeyAlias, options)
+    .then((data) => {
+      handle = data.handle;
+    }).catch((error: Error) => {
+      hilog.error(0x0000, 'AppDataSecurity', `promise: init EncryptData failed, ${JSON.stringify(error)}`);
+    })
+
+  await huks.finishSession(handle, options)
+    .then((data) => {
+      hilog.info(0x0000, 'AppDataSecurity',
+        `promise: encrypt data success, data is ` + Uint8ArrayToString(data.outData as Uint8Array));
+      cipherData = data.outData as Uint8Array;
+    }).catch((error: Error) => {
+      hilog.error(0x0000, 'AppDataSecurity', `promise: encrypt data failed, ${JSON.stringify(error)}`);
+    })
+}
+
+async function DecryptData(): Promise<void> {
+  let decryptOptions = GetAesDecryptProperties()
+  let options: huks.HuksOptions = {
+    properties: decryptOptions,
+    inData: cipherData
+  };
+
+  await huks.initSession(aesKeyAlias, options)
+    .then((data) => {
+      handle = data.handle;
+    }).catch((error: Error) => {
+      hilog.error(0x0000, 'AppDataSecurity', `promise: init DecryptData failed, ${JSON.stringify(error)}`);
+    })
+
+  await huks.finishSession(handle, options)
+    .then((data) => {
+      hilog.info(0x0000, 'AppDataSecurity',
+        `promise: decrypt data success, data is ` + Uint8ArrayToString(data.outData as Uint8Array));
+    }).catch((error: Error) => {
+      hilog.error(0x0000, 'AppDataSecurity', `promise: decrypt data failed, ${JSON.stringify(error)}`);
+    })
+}
 ```
-1. async function EncryptData(): Promise<void> {
-2. let encryptProperties = GetAesEncryptProperties();
-3. let options: huks.HuksOptions = {
-4. properties: encryptProperties,
-5. inData: StringToUint8Array(plainText)
-6. };
 
-8. await huks.initSession(aesKeyAlias, options)
-9. .then((data) => {
-10. handle = data.handle;
-11. }).catch((error: Error) => {
-12. hilog.error(0x0000, 'AppDataSecurity', `promise: init EncryptData failed, ${JSON.stringify(error)}`);
-13. })
-
-15. await huks.finishSession(handle, options)
-16. .then((data) => {
-17. hilog.info(0x0000, 'AppDataSecurity',
-18. `promise: encrypt data success, data is ` + Uint8ArrayToString(data.outData as Uint8Array));
-19. cipherData = data.outData as Uint8Array;
-20. }).catch((error: Error) => {
-21. hilog.error(0x0000, 'AppDataSecurity', `promise: encrypt data failed, ${JSON.stringify(error)}`);
-22. })
-23. }
-
-25. async function DecryptData(): Promise<void> {
-26. let decryptOptions = GetAesDecryptProperties()
-27. let options: huks.HuksOptions = {
-28. properties: decryptOptions,
-29. inData: cipherData
-30. };
-
-32. await huks.initSession(aesKeyAlias, options)
-33. .then((data) => {
-34. handle = data.handle;
-35. }).catch((error: Error) => {
-36. hilog.error(0x0000, 'AppDataSecurity', `promise: init DecryptData failed, ${JSON.stringify(error)}`);
-37. })
-
-39. await huks.finishSession(handle, options)
-40. .then((data) => {
-41. hilog.info(0x0000, 'AppDataSecurity',
-42. `promise: decrypt data success, data is ` + Uint8ArrayToString(data.outData as Uint8Array));
-43. }).catch((error: Error) => {
-44. hilog.error(0x0000, 'AppDataSecurity', `promise: decrypt data failed, ${JSON.stringify(error)}`);
-45. })
-46. }
-```
-
-[Index.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppDataSecurity/entry/src/main/ets/pages/Index.ets#L222-L267)
-
-说明
+**说明** 
 
 在体检报表中存在敏感数据，因此需要对数据进行二次加密和分级加密。解密过程与加密顺序相反，先读取分级加密的数据，再进行解密。当涉及不同密级的敏感数据时，可以按密级分别封装序列化，避免高密级数据在数据流动过程中泄露到低密级设备中。
 
@@ -410,4 +395,4 @@ HUKS\_TAG\_BLOCK\_MODE有7种分组模式。对于CBC、CTR、OFB、CFB模式，
 
 ## 示例代码
 
-* [应用数据安全](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/tree/master/AppDataSecurity)
+* [应用数据安全](https://gitcode.com/HarmonyOS_Samples/AppDataSecurity/tree/master)

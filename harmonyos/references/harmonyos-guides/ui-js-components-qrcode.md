@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: qrcode开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > qrcode开发指导
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:50+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:695b2cfbd26f8a888df2149456a452ac4ea78601681ee45ef93d844b2d060ad4
+scraped_at: 2026-09-02T14:59:21+08:00
+doc_updated_at: 2026-07-09
+content_hash: sha256:98f0e4beb11059b3113032781b1a43c4794009641fbe43ee468b4b205769afc8
 ---
 
 生成并显示二维码，具体用法请参考[qrcode](../harmonyos-references/js-components-basic-qrcode.md)。
@@ -14,28 +14,28 @@ content_hash: sha256:695b2cfbd26f8a888df2149456a452ac4ea78601681ee45ef93d844b2d0
 
 在pages/index目录下的hml文件中创建一个qrcode组件。
 
-```
-1. <!-- xxx.hml-->
-2. <div class="container">
-3. <qrcode value="Hello"></qrcode>
-4. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width: 100%;
-4. height: 100%;
-5. flex-direction: column;
-6. align-items: center;
-7. justify-content: center;
-8. background-color: #F1F3F5;
-9. }
+```html
+<!-- xxx.hml-->
+<div class="container">
+  <qrcode value="Hello"></qrcode>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/qp90LKqSSQa72OJodLbElQ/zh-cn_image_0000002589324487.png)
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #F1F3F5;
+}
+```
 
-说明
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/l9k--tm1RpWoOnLds89Qfw/zh-cn_image_0000002706833956.png)
+
+**说明** 
 
 qrcode组件在创建的时候value的值为必填项。
 
@@ -43,78 +43,78 @@ qrcode组件在创建的时候value的值为必填项。
 
 通过设置qrcode的type属性来选择二维码类型，如定义qrcode为矩形二维码、圆形二维码。
 
-```
-1. <!-- xxx.hml-->
-2. <div class="container">
-3. <select onchange="settype">
-4. <option for="{{bcol_list}}" value="{{$item}}">{{$item}}</option>
-5. </select>
-6. <qrcode value="Hello" type="{{qr_type}}"></qrcode>
-7. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width: 100%;
-4. height: 100%;
-5. flex-direction: column;
-6. align-items: center;
-7. justify-content: center;
-8. background-color: #F1F3F5;
-9. }
-10. select{
-11. margin-top: 50px;
-12. margin-bottom: 50px;
-13. }
+```html
+<!-- xxx.hml-->
+<div class="container">
+  <select onchange="settype">
+    <option for="{{bcol_list}}" value="{{$item}}">{{$item}}</option>
+  </select>
+  <qrcode value="Hello" type="{{qr_type}}"></qrcode>
+</div>
 ```
 
-```
-1. // index.js
-2. export default {
-3. data: {
-4. qr_type: 'rect',
-5. bcol_list: ['rect','circle']
-6. },
-7. settype(e) {
-8. this.qr_type = e.newValue
-9. },
-10. }
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #F1F3F5;
+}
+select{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/Dk7rs50mQSyvdeslgnGR1g/zh-cn_image_0000002589244425.gif)
+```js
+// index.js
+export default {
+  data: {
+    qr_type: 'rect',
+    bcol_list: ['rect','circle']
+  },
+  settype(e) {
+    this.qr_type = e.newValue
+  },
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/ktTDb11MRiWLhhGJ7umsZA/zh-cn_image_0000002736313065.gif)
 
 ## 设置样式
 
 通过color和background-color样式为二维码设置显示颜色和背景颜色。
 
-```
-1. <!-- xxx.hml-->
-2. <div class="container">
-3. <qrcode value="Hello" type="rect"></qrcode>
-4. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width: 100%;
-4. height: 100%;
-5. flex-direction: column;
-6. align-items: center;
-7. justify-content: center;
-8. background-color: #F1F3F5;
-9. }
-10. qrcode{
-11. width: 300px;
-12. height: 300px;
-13. color: blue;  background-color: #ffffff;
-14. }
+```html
+<!-- xxx.hml-->
+<div class="container">
+  <qrcode value="Hello" type="rect"></qrcode>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/68h6HEzbTlqH-aEJiOpc9Q/zh-cn_image_0000002558764618.png)
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #F1F3F5;
+}
+qrcode{
+  width: 300px;
+  height: 300px;
+ color: blue;  background-color: #ffffff;
+}
+```
 
-说明
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/E5fEgrCPS0SJ4CbncvNd2A/zh-cn_image_0000002706674022.png)
+
+**说明** 
 
 * width和height不一致时，取二者较小值作为二维码的边长，且最终生成的二维码居中显示。
 * width和height只设置一个时，取设置的值作为二维码的边长。都不设置时，使用200px作为默认边长。
@@ -123,40 +123,40 @@ qrcode组件在创建的时候value的值为必填项。
 
 在本场景中将二维码与输入框绑定，通过改变输入框的内容改变二维码。
 
-```
-1. <!-- xxx.hml-->
-2. <div class="container">
-3. <input style="margin-bottom: 100px;" onchange="change"></input>
-4. <qrcode value="{{textVal}}"></qrcode>
-5. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width: 100%;
-4. height: 100%;
-5. flex-direction: column;
-6. align-items: center;
-7. justify-content: center;
-8. background-color: #F1F3F5;
-9. }
-10. qrcode{
-11. width: 400px;
-12. height: 400px;
-13. }
+```html
+<!-- xxx.hml-->
+<div class="container">
+  <input style="margin-bottom: 100px;" onchange="change"></input>
+  <qrcode value="{{textVal}}"></qrcode>
+</div>
 ```
 
-```
-1. // index.js
-2. export default{
-3. data: {
-4. textVal: ''
-5. },
-6. change(e){
-7. this.textVal = e.value
-8. }
-9. }
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #F1F3F5;
+}
+qrcode{
+  width: 400px;
+  height: 400px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/IOREHO4cS0-Z7f7rWeMZmQ/zh-cn_image_0000002558604962.gif)
+```js
+// index.js
+export default {
+  data: {
+    textVal: ''
+  },
+  change(e){
+    this.textVal = e.value
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/bxcbzypaSF66n1OeYQXkgw/zh-cn_image_0000002736433113.gif)

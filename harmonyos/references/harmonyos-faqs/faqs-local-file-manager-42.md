@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: 不同类型的Context获取fileDir目录的结果不一致
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 不同类型的Context获取fileDir目录的结果不一致
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:30+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:52+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:c1944e437055289188002fd411cdba054e29ed6cb720b17615d425df2aa7eee9
 ---
 

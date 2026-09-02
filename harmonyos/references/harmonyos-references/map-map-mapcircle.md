@@ -1,24 +1,20 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-mapcircle
-title: MapCircle
-breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > MapCircle
+title: Interface (MapCircle)
+breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (MapCircle)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:12+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:f4a95603f4f5dc976b6ae74e446dbc88661d5b3b03abe69ace3e748aa280ad8d
+scraped_at: 2026-09-02T15:02:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7197e280b10cefbd4ddad74943e14174db8243def683b90b5a6af60c3192eed3
 ---
 
 ## 导入模块
 
-PhonePC/2in1TabletWearable
-
-```
-1. import { map, mapCommon } from '@kit.MapKit';
+```typescript
+import { map, mapCommon } from '@kit.MapKit';
 ```
 
 ## MapCircle
-
-PhonePC/2in1TabletWearable
 
 更新和查询圆的接口，继承[BaseOverlay](map-map-baseoverlay.md)。在调用map.[MapComponentController](map-map-mapcomponentcontroller.md)类的[addCircle](map-map-mapcomponentcontroller.md#addcircle)方法时会返回该类型的实例。
 
@@ -32,24 +28,22 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. let mapCircleOptions: mapCommon.MapCircleOptions = {
-2. center: {
-3. latitude: 39.9,
-4. longitude: 116.4
-5. },
-6. radius: 5000,
-7. fillColor: 0XFF00FFFF,
-8. strokeColor: 0xFFFF0000,
-9. strokeWidth: 10,
-10. zIndex: 15
-11. };
-12. let mapCircle = await this.mapController.addCircle(mapCircleOptions);
+```typescript
+let mapCircleOptions: mapCommon.MapCircleOptions = {
+  center: {
+    latitude: 39.9,
+    longitude: 116.4
+  },
+  radius: 5000,
+  fillColor: 0XFF00FFFF,
+  strokeColor: 0xFFFF0000,
+  strokeWidth: 10,
+  zIndex: 15
+};
+let mapCircle = await this.mapController.addCircle(mapCircleOptions);
 ```
 
 ### getCenter
-
-PhonePC/2in1TabletWearable
 
 getCenter(): mapCommon.LatLng
 
@@ -71,13 +65,11 @@ getCenter(): mapCommon.LatLng
 
 **示例：**
 
-```
-1. let center: mapCommon.LatLng = mapCircle.getCenter();
+```typescript
+let center: mapCommon.LatLng = mapCircle.getCenter();
 ```
 
 ### getFillColor
-
-PhonePC/2in1TabletWearable
 
 getFillColor(): number
 
@@ -99,13 +91,11 @@ getFillColor(): number
 
 **示例：**
 
-```
-1. let fillColor: number = mapCircle.getFillColor();
+```typescript
+let fillColor: number = mapCircle.getFillColor();
 ```
 
 ### getRadius
-
-PhonePC/2in1TabletWearable
 
 getRadius(): number
 
@@ -127,13 +117,11 @@ getRadius(): number
 
 **示例：**
 
-```
-1. let radius: number = mapCircle.getRadius();
+```typescript
+let radius: number = mapCircle.getRadius();
 ```
 
 ### getStrokeColor
-
-PhonePC/2in1TabletWearable
 
 getStrokeColor(): number
 
@@ -155,13 +143,11 @@ getStrokeColor(): number
 
 **示例：**
 
-```
-1. let strokeColor: number = mapCircle.getStrokeColor();
+```typescript
+let strokeColor: number = mapCircle.getStrokeColor();
 ```
 
 ### getPatterns
-
-PhonePC/2in1TabletWearable
 
 getPatterns(): Array<mapCommon.PatternItem>
 
@@ -183,13 +169,11 @@ getPatterns(): Array<mapCommon.PatternItem>
 
 **示例：**
 
-```
-1. let patterns: Array<mapCommon.PatternItem> = mapCircle.getPatterns();
+```typescript
+let patterns: Array<mapCommon.PatternItem> = mapCircle.getPatterns();
 ```
 
 ### getStrokeWidth
-
-PhonePC/2in1TabletWearable
 
 getStrokeWidth(): number
 
@@ -211,13 +195,11 @@ getStrokeWidth(): number
 
 **示例：**
 
-```
-1. let strokeWidth: number = mapCircle.getStrokeWidth();
+```typescript
+let strokeWidth: number = mapCircle.getStrokeWidth();
 ```
 
 ### isClickable
-
-PhonePC/2in1TabletWearable
 
 isClickable(): boolean
 
@@ -239,13 +221,11 @@ isClickable(): boolean
 
 **示例：**
 
-```
-1. let clickable: boolean = mapCircle.isClickable();
+```typescript
+let clickable: boolean = mapCircle.isClickable();
 ```
 
 ### setCenter
-
-PhonePC/2in1TabletWearable
 
 setCenter(center: mapCommon.LatLng): void
 
@@ -267,14 +247,12 @@ setCenter(center: mapCommon.LatLng): void
 
 **示例：**
 
-```
-1. let center: mapCommon.LatLng = {latitude: 31.98, longitude: 116.4};
-2. mapCircle.setCenter(center);
+```typescript
+let center: mapCommon.LatLng = {latitude: 31.98, longitude: 116.4};
+mapCircle.setCenter(center);
 ```
 
 ### setClickable
-
-PhonePC/2in1TabletWearable
 
 setClickable(clickable: boolean): void
 
@@ -296,14 +274,12 @@ setClickable(clickable: boolean): void
 
 **示例：**
 
-```
-1. let clickable = true;
-2. mapCircle.setClickable(clickable);
+```typescript
+let clickable = true;
+mapCircle.setClickable(clickable);
 ```
 
 ### setFillColor
-
-PhonePC/2in1TabletWearable
 
 setFillColor(color: number): void
 
@@ -325,14 +301,12 @@ setFillColor(color: number): void
 
 **示例：**
 
-```
-1. let fillColor = 0xFF00FFFF;
-2. mapCircle.setFillColor(fillColor);
+```typescript
+let fillColor = 0xFF00FFFF;
+mapCircle.setFillColor(fillColor);
 ```
 
 ### setRadius
-
-PhonePC/2in1TabletWearable
 
 setRadius(radius: number): void
 
@@ -354,14 +328,12 @@ setRadius(radius: number): void
 
 **示例：**
 
-```
-1. let radius = 300;
-2. mapCircle.setRadius(radius);
+```typescript
+let radius = 300;
+mapCircle.setRadius(radius);
 ```
 
 ### setStrokeColor
-
-PhonePC/2in1TabletWearable
 
 setStrokeColor(color: number): void
 
@@ -383,14 +355,12 @@ setStrokeColor(color: number): void
 
 **示例：**
 
-```
-1. let strokeColor = 0xFFFF0000;
-2. mapCircle.setStrokeColor(strokeColor);
+```typescript
+let strokeColor = 0xFFFF0000;
+mapCircle.setStrokeColor(strokeColor);
 ```
 
 ### setPatterns
-
-PhonePC/2in1TabletWearable
 
 setPatterns(patterns: Array<mapCommon.PatternItem>): void
 
@@ -412,17 +382,15 @@ setPatterns(patterns: Array<mapCommon.PatternItem>): void
 
 **示例：**
 
-```
-1. let patterns: Array<mapCommon.PatternItem> = [
-2. { type: 0, length: 100 },
-3. { type: 1, length: 100 },
-4. { type: 2, length: 100 }];
-5. mapCircle.setPatterns(patterns);
+```typescript
+let patterns: Array<mapCommon.PatternItem> = [
+  { type: 0, length: 100 },
+  { type: 1, length: 100 },
+  { type: 2, length: 100 }];
+mapCircle.setPatterns(patterns);
 ```
 
 ### setStrokeWidth
-
-PhonePC/2in1TabletWearable
 
 setStrokeWidth(width: number): void
 
@@ -444,7 +412,7 @@ setStrokeWidth(width: number): void
 
 **示例：**
 
-```
-1. let width = 10;
-2. mapCircle.setStrokeWidth(width);
+```typescript
+let width = 10;
+mapCircle.setStrokeWidth(width);
 ```

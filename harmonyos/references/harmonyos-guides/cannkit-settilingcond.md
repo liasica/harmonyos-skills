@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-setti
 title: SetTilingCond
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > TilingContext > SetTilingCond
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d910462e39b31835890b09577f73653f548f72909050c808180a1e79e281eb73
+scraped_at: 2026-09-02T14:50:41+08:00
+doc_updated_at: 2026-08-18
+content_hash: sha256:d9482c55c0333aed3c6e32de16f2b49414c3f6f08088d8c825808374d3e3bee0
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:d910462e39b31835890b09577f73653f548f72909050c808180a1e79e28
 
 ## 函数原型
 
-```
-1. ge::graphStatus SetTilingCond(int32_t tiling_cond);
+```cpp
+ge::graphStatus SetTilingCond(int32_t tiling_cond);
 ```
 
 ## 参数说明
@@ -32,13 +32,13 @@ content_hash: sha256:d910462e39b31835890b09577f73653f548f72909050c808180a1e79e28
 
 ## 约束说明
 
-当前支持的Kirin9020和KirinX90系列处理器是分离架构。
+当前支持的Kirin9020、Kirin9030和KirinX90系列处理器是分离架构。
 
 ## 调用示例
 
-```
-1. ge::graphStatus Tiling4XXX(TilingContext* context) {
-2. auto ret = context->SetTilingCond(10);
-3. // ...
-4. }
+```cpp
+ge::graphStatus Tiling4XXX(TilingContext* context) {
+  auto ret = context->SetTilingCond(10);
+  // ...
+}
 ```

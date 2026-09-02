@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AutoExposureQuery)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (AutoExposureQuery)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:32+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d0e11a5e375b4ba85f066528085234ad6f424069fff15df7f376d486abee131d
+scraped_at: 2026-09-02T15:02:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:35b55c70a39455d72c85b22f817cacfd4154d14348b234e4338fbf91f3e55e4a
 ---
 
 针对设备的自动曝光特性提供了一系列查询功能。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Interface首批接口从API version 12开始支持。
@@ -18,15 +18,11 @@ content_hash: sha256:d0e11a5e375b4ba85f066528085234ad6f424069fff15df7f376d486abe
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { camera } from '@kit.CameraKit';
+```ts
+import { camera } from '@kit.CameraKit';
 ```
 
 ## isExposureModeSupported11+
-
-PhonePC/2in1TabletTVWearable
 
 isExposureModeSupported(aeMode: ExposureMode): boolean
 
@@ -58,25 +54,23 @@ isExposureModeSupported(aeMode: ExposureMode): boolean
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function isExposureModeSupported(photoSession: camera.PhotoSession): boolean {
-4. let isSupported: boolean = false;
-5. try {
-6. isSupported = photoSession.isExposureModeSupported(camera.ExposureMode.EXPOSURE_MODE_LOCKED);
-7. } catch (error) {
-8. // 失败返回错误码error.code并处理。
-9. let err = error as BusinessError;
-10. console.error(`The isExposureModeSupported call failed. error code: ${err.code}`);
-11. }
-12. return isSupported;
-13. }
+function isExposureModeSupported(photoSession: camera.PhotoSession): boolean {
+  let isSupported: boolean = false;
+  try {
+    isSupported = photoSession.isExposureModeSupported(camera.ExposureMode.EXPOSURE_MODE_LOCKED);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The isExposureModeSupported call failed. error code: ${err.code}`);
+  }
+  return isSupported;
+}
 ```
 
 ## getExposureBiasRange11+
-
-PhonePC/2in1TabletTVWearable
 
 getExposureBiasRange(): Array<number>
 
@@ -102,18 +96,66 @@ getExposureBiasRange(): Array<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function getExposureBiasRange(photoSession: camera.PhotoSession): Array<number> {
-4. let biasRangeArray: Array<number> = [];
-5. try {
-6. biasRangeArray = photoSession.getExposureBiasRange();
-7. } catch (error) {
-8. // 失败返回错误码error.code并处理。
-9. let err = error as BusinessError;
-10. console.error(`The getExposureBiasRange call failed. error code: ${err.code}`);
-11. }
-12. return biasRangeArray;
-13. }
+function getExposureBiasRange(photoSession: camera.PhotoSession): Array<number> {
+  let biasRangeArray: Array<number> = [];
+  try {
+    biasRangeArray = photoSession.getExposureBiasRange();
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The getExposureBiasRange call failed. error code: ${err.code}`);
+  }
+  return biasRangeArray;
+}
+```
+
+## isExposureMeteringModeSupported24+
+
+isExposureMeteringModeSupported(aeMeteringMode: ExposureMeteringMode): boolean
+
+检测是否支持指定的曝光测光模式。
+
+**元服务API：** 从API version 24开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| aeMeteringMode | [ExposureMeteringMode](arkts-apis-camera-e.md#exposuremeteringmode24) | 是 | 曝光测光模式。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 是否支持曝光测光模式。true表示支持，false表示不支持 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](errorcode-camera.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config, only throw in session usage. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function isExposureMeteringModeSupported(photoSession: camera.PhotoSession, aeMeteringMode: camera.ExposureMeteringMode): boolean {
+  let isSupported: boolean = false;
+  try {
+    isSupported = photoSession.isExposureMeteringModeSupported(aeMeteringMode);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The isExposureMeteringModeSupported call failed. error code: ${err.code}`);
+  }
+  return isSupported;
+}
 ```

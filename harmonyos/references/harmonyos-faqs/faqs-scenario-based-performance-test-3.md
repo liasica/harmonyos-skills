@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-scenario-b
 title: "执行python.exe -m pip install --upgrade pip命令更新pip库时报错ValueError: Unable to find resource t64.exe in package pip._vendor.distlib"
 breadcrumb: "FAQ > DevEco Testing > 专项测试 > 场景化性能测试 > 执行python.exe -m pip install --upgrade pip命令更新pip库时报错ValueError: Unable to find resource t64.exe in package pip._vendor.distlib"
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:29+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:5ba58bf11ad30b7a508fef27a65b653e8a79e427651d6c2c8cb2e1401e6493eb
 ---
 

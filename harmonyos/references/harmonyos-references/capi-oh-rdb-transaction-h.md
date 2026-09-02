@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-r
 title: oh_rdb_transaction.h
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 头文件 > oh_rdb_transaction.h
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:30+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4c046d9f432c6ba74188e2acd09490b28addf8e12b13ba522e6ebdc10bc7beac
+scraped_at: 2026-09-02T15:00:42+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8f428d513718b8f2dc9aabd44d631308f01e563c03f5ab63f4300c21aff5c5ec
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供与数据库事务相关的函数和枚举。
 
@@ -26,28 +24,20 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [OH\_RDB\_TransOptions](capi-rdb-oh-rdb-transoptions.md) | OH\_RDB\_TransOptions | 定义[OH\_RDB\_TransOptions](capi-rdb-oh-rdb-transoptions.md)结构类型。 |
-| [OH\_Rdb\_Transaction](capi-rdb-oh-rdb-transaction.md) | OH\_Rdb\_Transaction | 定义[OH\_RDB\_TransOptions](capi-rdb-oh-rdb-transoptions.md)结构类型。 |
+| [OH\_Rdb\_Transaction](capi-rdb-oh-rdb-transaction.md) | OH\_Rdb\_Transaction | 定义[OH\_Rdb\_Transaction](capi-rdb-oh-rdb-transaction.md)结构类型。 |
 
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [OH\_RDB\_TransType](capi-oh-rdb-transaction-h.md#oh_rdb_transtype) | OH\_RDB\_TransType | 表示关系型数据库事务类型。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -74,14 +64,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_RDB\_TransType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_RDB_TransType
+```c
+enum OH_RDB_TransType
 ```
 
 **描述**
@@ -99,14 +85,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_RdbTrans\_CreateOptions()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_RDB_TransOptions *OH_RdbTrans_CreateOptions(void)
+```c
+OH_RDB_TransOptions *OH_RdbTrans_CreateOptions(void)
 ```
 
 **描述**
@@ -119,14 +101,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_RDB\_TransOptions](capi-rdb-oh-rdb-transoptions.md) | 执行成功时返回指向[OH\_RDB\_TransOptions](capi-rdb-oh-rdb-transoptions.md)实例的指针。否则返回nullptr。  使用完成后，必须通过[OH\_RdbTrans\_DestroyOptions](capi-oh-rdb-transaction-h.md#oh_rdbtrans_destroyoptions)接口释放内存。 |
+| [OH\_RDB\_TransOptions](capi-rdb-oh-rdb-transoptions.md) \* | 执行成功时返回指向[OH\_RDB\_TransOptions](capi-rdb-oh-rdb-transoptions.md)实例的指针。否则返回NULL。  使用完成后，必须通过[OH\_RdbTrans\_DestroyOptions](capi-oh-rdb-transaction-h.md#oh_rdbtrans_destroyoptions)接口释放内存。 |
 
 ### OH\_RdbTrans\_DestroyOptions()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_RdbTrans_DestroyOptions(OH_RDB_TransOptions *options)
+```c
+int OH_RdbTrans_DestroyOptions(OH_RDB_TransOptions *options)
 ```
 
 **描述**
@@ -149,10 +129,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_RdbTransOption\_SetType()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_RdbTransOption_SetType(OH_RDB_TransOptions *options, OH_RDB_TransType type)
+```c
+int OH_RdbTransOption_SetType(OH_RDB_TransOptions *options, OH_RDB_TransType type)
 ```
 
 **描述**
@@ -176,10 +154,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_RdbTrans\_Commit()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_RdbTrans_Commit(OH_Rdb_Transaction *trans)
+```c
+int OH_RdbTrans_Commit(OH_Rdb_Transaction *trans)
 ```
 
 **描述**
@@ -202,10 +178,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_RdbTrans\_Rollback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_RdbTrans_Rollback(OH_Rdb_Transaction *trans)
+```c
+int OH_RdbTrans_Rollback(OH_Rdb_Transaction *trans)
 ```
 
 **描述**
@@ -228,10 +202,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_RdbTrans\_Insert()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_RdbTrans_Insert(OH_Rdb_Transaction *trans, const char *table, const OH_VBucket *row, int64_t *rowId)
+```c
+int OH_RdbTrans_Insert(OH_Rdb_Transaction *trans, const char *table, const OH_VBucket *row, int64_t *rowId)
 ```
 
 **描述**
@@ -257,10 +229,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_RdbTrans\_InsertWithConflictResolution()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_RdbTrans_InsertWithConflictResolution(OH_Rdb_Transaction *trans, const char *table, const OH_VBucket *row,Rdb_ConflictResolution resolution, int64_t *rowId)
+```c
+int OH_RdbTrans_InsertWithConflictResolution(OH_Rdb_Transaction *trans, const char *table, const OH_VBucket *row, Rdb_ConflictResolution resolution, int64_t *rowId)
 ```
 
 **描述**
@@ -287,10 +257,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_RdbTrans\_BatchInsert()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_RdbTrans_BatchInsert(OH_Rdb_Transaction *trans, const char *table, const OH_Data_VBuckets *rows, Rdb_ConflictResolution resolution, int64_t *changes)
+```c
+int OH_RdbTrans_BatchInsert(OH_Rdb_Transaction *trans, const char *table, const OH_Data_VBuckets *rows, Rdb_ConflictResolution resolution, int64_t *changes)
 ```
 
 **描述**
@@ -323,10 +291,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_RdbTrans\_Update()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_RdbTrans_Update(OH_Rdb_Transaction *trans, const OH_VBucket *row, const OH_Predicates *predicates, int64_t *changes)
+```c
+int OH_RdbTrans_Update(OH_Rdb_Transaction *trans, const OH_VBucket *row, const OH_Predicates *predicates, int64_t *changes)
 ```
 
 **描述**
@@ -342,7 +308,7 @@ PhonePC/2in1TabletTVWearable
 | [OH\_Rdb\_Transaction](capi-rdb-oh-rdb-transaction.md) \*trans | 指向[OH\_Rdb\_Transaction](capi-rdb-oh-rdb-transaction.md)实例的指针。 |
 | const [OH\_VBucket](capi-rdb-oh-vbucket.md) \*row | 表示要更新到表中的数据行。 |
 | const [OH\_Predicates](capi-rdb-oh-predicates.md) \*predicates | 表示[OH\_Predicates](capi-rdb-oh-predicates.md)指定的更新条件。 |
-| int64\_t \*changes | 输出参数，表示更新成功的次数。 |
+| int64\_t \*changes | 输出参数，表示更新成功的行数。 |
 
 **返回：**
 
@@ -352,10 +318,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_RdbTrans\_UpdateWithConflictResolution()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_RdbTrans_UpdateWithConflictResolution(OH_Rdb_Transaction *trans, const OH_VBucket *row,const OH_Predicates *predicates, Rdb_ConflictResolution resolution, int64_t *changes)
+```c
+int OH_RdbTrans_UpdateWithConflictResolution(OH_Rdb_Transaction *trans, const OH_VBucket *row, const OH_Predicates *predicates, Rdb_ConflictResolution resolution, int64_t *changes)
 ```
 
 **描述**
@@ -382,10 +346,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_RdbTrans\_Delete()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_RdbTrans_Delete(OH_Rdb_Transaction *trans, const OH_Predicates *predicates, int64_t *changes)
+```c
+int OH_RdbTrans_Delete(OH_Rdb_Transaction *trans, const OH_Predicates *predicates, int64_t *changes)
 ```
 
 **描述**
@@ -400,7 +362,7 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | [OH\_Rdb\_Transaction](capi-rdb-oh-rdb-transaction.md) \*trans | 指向[OH\_Rdb\_Transaction](capi-rdb-oh-rdb-transaction.md)实例的指针。 |
 | const [OH\_Predicates](capi-rdb-oh-predicates.md) \*predicates | 表示[OH\_Predicates](capi-rdb-oh-predicates.md)指定的删除条件。 |
-| int64\_t \*changes | 表示删除成功的次数。 |
+| int64\_t \*changes | 输出参数，表示删除成功的次数。 |
 
 **返回：**
 
@@ -410,10 +372,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_RdbTrans\_Query()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Cursor *OH_RdbTrans_Query(OH_Rdb_Transaction *trans, const OH_Predicates *predicates, const char *columns[], int len)
+```c
+OH_Cursor *OH_RdbTrans_Query(OH_Rdb_Transaction *trans, const OH_Predicates *predicates, const char *columns[], int len)
 ```
 
 **描述**
@@ -429,20 +389,18 @@ PhonePC/2in1TabletTVWearable
 | [OH\_Rdb\_Transaction](capi-rdb-oh-rdb-transaction.md) \*trans | 指向[OH\_Rdb\_Transaction](capi-rdb-oh-rdb-transaction.md)实例的指针。 |
 | const [OH\_Predicates](capi-rdb-oh-predicates.md) \*predicates | 表示[OH\_Predicates](capi-rdb-oh-predicates.md)指定的查询条件。 |
 | const char \*columns[] | 表示要查询的列，如果传入空值，则查询适用于所有列。 |
-| int len | 表示列中元素的个数。 |
+| int len | 传入的columns数组的长度。若len大于columns数组的实际长度，则会访问越界。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_Cursor](capi-rdb-oh-cursor.md) | 如果执行成功，则返回指向[OH\_Cursor](capi-rdb-oh-cursor.md)实例的指针。如果数据库已关闭或数据库没有响应，则返回空。 |
+| [OH\_Cursor](capi-rdb-oh-cursor.md) \* | 如果执行成功，则返回指向[OH\_Cursor](capi-rdb-oh-cursor.md)实例的指针。如果数据库已关闭或数据库没有响应，则返回NULL。 |
 
 ### OH\_RdbTrans\_QuerySql()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Cursor *OH_RdbTrans_QuerySql(OH_Rdb_Transaction *trans, const char *sql, const OH_Data_Values *args)
+```c
+OH_Cursor *OH_RdbTrans_QuerySql(OH_Rdb_Transaction *trans, const char *sql, const OH_Data_Values *args)
 ```
 
 **描述**
@@ -463,14 +421,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_Cursor](capi-rdb-oh-cursor.md) | 如果执行成功，则返回指向[OH\_Cursor](capi-rdb-oh-cursor.md)实例的指针。如果数据库已关闭或数据库没有响应，则返回空。 |
+| [OH\_Cursor](capi-rdb-oh-cursor.md) \* | 如果执行成功，则返回指向[OH\_Cursor](capi-rdb-oh-cursor.md)实例的指针。如果数据库已关闭或数据库没有响应，则返回NULL。 |
 
 ### OH\_RdbTrans\_Execute()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_RdbTrans_Execute(OH_Rdb_Transaction *trans, const char *sql, const OH_Data_Values *args, OH_Data_Value **result)
+```c
+int OH_RdbTrans_Execute(OH_Rdb_Transaction *trans, const char *sql, const OH_Data_Values *args, OH_Data_Value **result)
 ```
 
 **描述**
@@ -498,10 +454,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_RdbTrans\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_RdbTrans_Destroy(OH_Rdb_Transaction *trans)
+```c
+int OH_RdbTrans_Destroy(OH_Rdb_Transaction *trans)
 ```
 
 **描述**
@@ -524,10 +478,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_RdbTrans\_QueryWithoutRowCount()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Cursor *OH_RdbTrans_QueryWithoutRowCount(OH_Rdb_Transaction *trans, const OH_Predicates *predicates, const char * const columns[], int len)
+```c
+OH_Cursor *OH_RdbTrans_QueryWithoutRowCount(OH_Rdb_Transaction *trans, const OH_Predicates *predicates, const char * const columns[], int len)
 ```
 
 **描述**
@@ -549,14 +501,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_Cursor \*](capi-rdb-oh-cursor.md) | 如果执行成功，则返回指向[OH\_Cursor](capi-rdb-oh-cursor.md)实例的指针。如果数据库已关闭或数据库没有响应，则返回nullptr。 |
+| [OH\_Cursor](capi-rdb-oh-cursor.md) \* | 如果执行成功，则返回指向[OH\_Cursor](capi-rdb-oh-cursor.md)实例的指针。如果数据库已关闭或数据库没有响应，则返回NULL。 |
 
 ### OH\_RdbTrans\_QuerySqlWithoutRowCount()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Cursor *OH_RdbTrans_QuerySqlWithoutRowCount(OH_Rdb_Transaction *trans, const char *sql, const OH_Data_Values *args)
+```c
+OH_Cursor *OH_RdbTrans_QuerySqlWithoutRowCount(OH_Rdb_Transaction *trans, const char *sql, const OH_Data_Values *args)
 ```
 
 **描述**
@@ -577,14 +527,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_Cursor \*](capi-rdb-oh-cursor.md) | 如果执行成功，则返回指向[OH\_Cursor](capi-rdb-oh-cursor.md)实例的指针。如果数据库已关闭或数据库没有响应，则返回nullptr。 |
+| [OH\_Cursor](capi-rdb-oh-cursor.md) \* | 如果执行成功，则返回指向[OH\_Cursor](capi-rdb-oh-cursor.md)实例的指针。如果数据库已关闭或数据库没有响应，则返回NULL。 |
 
 ### OH\_RdbTrans\_BatchInsertWithReturning()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_RdbTrans_BatchInsertWithReturning(OH_Rdb_Transaction *trans, const char *table, const OH_Data_VBuckets *rows, Rdb_ConflictResolution resolution, OH_RDB_ReturningContext *context)
+```c
+int OH_RdbTrans_BatchInsertWithReturning(OH_Rdb_Transaction *trans, const char *table, const OH_Data_VBuckets *rows, Rdb_ConflictResolution resolution, OH_RDB_ReturningContext *context)
 ```
 
 **描述**
@@ -619,10 +567,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_RdbTrans\_UpdateWithReturning()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_RdbTrans_UpdateWithReturning(OH_Rdb_Transaction *trans, OH_VBucket *row, OH_Predicates *predicates, Rdb_ConflictResolution resolution, OH_RDB_ReturningContext *context)
+```c
+int OH_RdbTrans_UpdateWithReturning(OH_Rdb_Transaction *trans, OH_VBucket *row, OH_Predicates *predicates, Rdb_ConflictResolution resolution, OH_RDB_ReturningContext *context)
 ```
 
 **描述**
@@ -638,7 +584,7 @@ PhonePC/2in1TabletTVWearable
 | [OH\_Rdb\_Transaction](capi-rdb-oh-rdb-transaction.md) \*trans | 指向[OH\_Rdb\_Transaction](capi-rdb-oh-rdb-transaction.md)实例的指针。 |
 | [OH\_VBucket](capi-rdb-oh-vbucket.md) \*row | 要更新到表中的行数据。 |
 | [OH\_Predicates](capi-rdb-oh-predicates.md) \*predicates | 指向[OH\_Predicates](capi-rdb-oh-predicates.md)实例的指针。 |
-| [Rdb\_ConflictResolution](capi-oh-rdb-types-h.md#rdb_conflictresolution) resolution | 发生冲突时的解决策略Rdb\_ConflictResolution，不建议使用RDB\_CONFLICT\_FAIL，因为失败时会抛异常，  无法正常获取实际的变更数据。 |
+| [Rdb\_ConflictResolution](capi-oh-rdb-types-h.md#rdb_conflictresolution) resolution | 发生冲突时的解决策略[Rdb\_ConflictResolution](capi-oh-rdb-types-h.md#rdb_conflictresolution)，不建议使用RDB\_CONFLICT\_FAIL，因为失败时会抛异常，  无法正常获取实际的变更数据。 |
 | [OH\_RDB\_ReturningContext](capi-rdb-oh-rdb-returningcontext.md) \*context | 指向[OH\_RDB\_ReturningContext](capi-rdb-oh-rdb-returningcontext.md)实例的指针。 |
 
 **返回：**
@@ -649,10 +595,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_RdbTrans\_DeleteWithReturning()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_RdbTrans_DeleteWithReturning(OH_Rdb_Transaction *trans, OH_Predicates *predicates, OH_RDB_ReturningContext *context)
+```c
+int OH_RdbTrans_DeleteWithReturning(OH_Rdb_Transaction *trans, OH_Predicates *predicates, OH_RDB_ReturningContext *context)
 ```
 
 **描述**

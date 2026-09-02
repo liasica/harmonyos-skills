@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-commi
 title: 算子调试概述
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子调试调优 > 算子调试概述
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:12+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d62664b160aea5210fd43c8bd6a605fd641a21517bd71e7593fb72634a05b74a
+scraped_at: 2026-09-02T15:00:05+08:00
+doc_updated_at: 2026-07-03
+content_hash: sha256:980cbc58b9868b345bda90018e2d8b296bb7fabd1a8e5a589c919f3df4edb301
 ---
 
 ## 工具介绍
@@ -40,23 +40,23 @@ content_hash: sha256:d62664b160aea5210fd43c8bd6a605fd641a21517bd71e7593fb72634a0
 | 标准自定义算子工程场景(customize) | 该场景下，开发者需按照“工程创建->算子实现->编译部署>算子调用”的流程完成算子开发和调用。基于工程代码框架完成算子核函数的开发和Tiling实现，通过工程编译脚本完成算子编译部署。Tiling开发基于CANN提供的编程框架进行，后续更易于借助框架功能实现单算子API调用、图模式算子调用等。 |
 | 输入数据和标杆数据 | 使用AscendC调测工具时，需要提供算子输入数据及标杆数据（Golden数据）。  - 输入数据：固定shape算子运行时的输入数据，bin格式。  - 标杆数据：根据输入数据计算出来的真值数据，用于与输出数据进行精度比对，bin格式。 |
 | 算子json配置文件 | 用于描述算子的输入、输出及属性信息，以json格式存储。该文件中的参数个数、顺序、数据类型等信息，必须与算子原型相匹配。  工具支持以下配置格式：  [固定输入/输出顺序的算子json配置](cannkit-json-configuration.md)：其输入/输出参数信息单独在inputs、outputs、attrs配置项中设置，不支持输入/输出参数交叉设置。 |
-| Tiling | 描述Kirin AI处理器上算子的输入/输出数据切分、分块计算、多核并行等策略，主要是为了满足片上存储限制和计算pipeline的需求，最大化计算并行性和数据局部性（data locality 或 data reuse），从而发挥硬件的极致性能。 |
+| Tiling | 描述Kirin AI处理器上算子的输入/输出数据切分、分块计算、多核并行等策略，主要是为了满足片上存储限制和计算pipeline的需求，最大化计算并行性和数据局部性（data locality），从而发挥硬件的极致性能。 |
 | CAModel | CAModel(Cycle Accurate Model)仿真器主要用于生成算子性能仿真流水数据。 |
-| CCEC | CCEC(Cube-based Computing Engine Compiler)工具基于毕昇编译器，通过自动拼接编译选项构建的一种编译方式。其中，毕昇编译器是一款专为达芬奇SOC设计的编译器，支持异构编程扩展，可将开发者编写的昇腾算子代码编译成二进制可执行文件和动态库等形式，详细介绍请参考《[毕昇编译器使用指南](https://www.hiascend.com/document/detail/zh/canncommercial/82RC1/index/index.html)》。 |
-| CCEprint/Intrilog | intrilog：落盘算子运行中的CCE指令流。 |
+| CCEC | CCEC(Cube-based Computing Engine Compiler)工具基于毕昇编译器，通过自动拼接编译选项构建的一种编译方式。其中，毕昇编译器是一款专为达芬奇SoC设计的编译器，支持异构编程扩展，可将开发者编写的昇腾算子代码编译成二进制可执行文件和动态库等形式，详细介绍请参考《[毕昇编译器使用指南](https://www.hiascend.com/document/detail/zh/canncommercial/82RC1/index/index.html)》。 |
+| CCEprint/Intrilog | Intrilog：落盘算子运行中的CCE指令流。 |
 | 原地算子(in-place op) | 一般指原地更新操作类算子，即算子的输入和输出为同一地址，算子在计算完成后，把原有的输出结果直接覆盖在输入的地址上，以减少不必要的内存占用。 |
 
 输入数据和标杆数据可通过numpy生成，样例如下。
 
-```
-1. import numpy as np
-2. def gen_data_simple():
-3. input_x = np.random.uniform(-100, 100, [8, 2048]).astype(np.float16)
-4. input_y = np.random.uniform(-100, 100, [8, 2048]).astype(np.float16)
-5. golden = (input_x + input_y).astype(np.float16)
-6. input_x.tofile("./input/input_x.bin")     # 通过numpy生成的随机输入数据x
-7. input_y.tofile("./input/input_y.bin")     # 通过numpy生成的随机输入数据y
-8. golden.tofile("./output/golden.bin")      # 根据输入计算出来的真值数据，即标杆数据
+```python
+import numpy as np
+def gen_data_simple():
+    input_x = np.random.uniform(-100, 100, [8, 2048]).astype(np.float16)
+    input_y = np.random.uniform(-100, 100, [8, 2048]).astype(np.float16)
+    golden = (input_x + input_y).astype(np.float16)
+    input_x.tofile("./input/input_x.bin")     # 通过numpy生成的随机输入数据x
+    input_y.tofile("./input/input_y.bin")     # 通过numpy生成的随机输入数据y
+    golden.tofile("./output/golden.bin")      # 根据输入计算出来的真值数据，即标杆数据
 ```
 
 ## 运行流程
@@ -65,12 +65,12 @@ content_hash: sha256:d62664b160aea5210fd43c8bd6a605fd641a21517bd71e7593fb72634a0
 
 **图1** 基于命令行的工具运行流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/VGOT9PGkQwiJ0wLfnnSz6A/zh-cn_image_0000002558606094.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/BrTWctatQ2-FKHAYV-wCvg/zh-cn_image_0000002736314419.png)
 
-1. 准备环境：使用本工具进行算子调测前，请先完成基础环境搭建，详细操作参见[环境准备](cannkit-environment-preparation.md)。
-2. 准备数据：准备好bin格式的输入数据和标杆数据文件，该数据是调测工具的必要输入。
-3. 配置json文件：根据工具提供的算子信息json配置样例配置待测算子信息，该文件是调测工具的必要输入。
-4. 通过命令行方式发起算子调测。
+1. 环境准备：使用本工具进行算子调测前，请先完成基础环境搭建，详细操作参见[环境准备](cannkit-environment-preparation.md)。
+2. 数据准备（bin格式）：准备好bin格式的输入数据和标杆数据文件，该数据是调测工具的必要输入。
+3. 算子信息文件配置（json）：根据工具提供的算子信息json配置样例配置待测算子信息，该文件是调测工具的必要输入。
+4. 命令行发起算子调测。
 
    目前工具支持的算子调测能力如下，请按需选择：
 

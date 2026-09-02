@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-signature-
 title: 签名密钥库文件口令错误
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 签名密钥库文件口令错误
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:21:10+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:945c95d91d8de15d59e4db87ce91140b1dd8797abaa04900bd5d4815b4d66839
+scraped_at: 2026-09-02T14:54:56+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:9c98868d281cea30a4324f6d14ca3b9951fcd5318a0d71b43701a75c18b9b4a9
 ---
 
 **问题现象**
@@ -16,7 +16,7 @@ content_hash: sha256:945c95d91d8de15d59e4db87ce91140b1dd8797abaa04900bd5d4815b4d
 
 签名密钥库文件口令错误。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/0zLO7I75QTmLFmqr6zSIQg/zh-cn_image_0000002487813226.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/9LmD7VBUT221h__poY0-JQ/zh-cn_image_0000002624638648.png)
 
 **解决措施**
 
@@ -26,8 +26,8 @@ content_hash: sha256:945c95d91d8de15d59e4db87ce91140b1dd8797abaa04900bd5d4815b4d
 
 * 口令正确示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/AW72perRQAyM-qoreVdq4w/zh-cn_image_0000002376396373.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/0Mw78gnsQ8-8FO2Otd0VvQ/zh-cn_image_0000002654838049.png)
 
 * 口令错误示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/9DtcyWoWSdePYtb9p4mJtg/zh-cn_image_0000002342678234.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/uP-HexQPSpmDTNzt43uJ1g/zh-cn_image_0000002624478740.png)

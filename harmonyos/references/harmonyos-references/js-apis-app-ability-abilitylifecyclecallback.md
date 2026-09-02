@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.abilityLifecycleCallback (UIAbility生命周期回调监听器)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.abilityLifecycleCallback (UIAbility生命周期回调监听器)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:13+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:48eb2a57b240b28a1d7a4f7f23ba8400cc416a3fe0347a024a6e6675dfb9e07f
+scraped_at: 2026-09-02T15:00:32+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:fab0a3223533ecf39bc1924d040ced94cb5cba7742de97f7310eb9bc770abc3d
 ---
 
 [UIAbility](js-apis-app-ability-uiability.md)从创建到销毁过程其生命周期是动态变化的。AbilityLifecycleCallback模块提供监听[UIAbility](js-apis-app-ability-uiability.md)生命周期变化的能力，可用于统计每个UIAbility的运行时长、执行与UIAbility业务逻辑解耦的数据加载等场景。
 
-说明
+**说明** 
 
 本模块首批接口从API version 9 开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -20,27 +20,19 @@ content_hash: sha256:48eb2a57b240b28a1d7a4f7f23ba8400cc416a3fe0347a024a6e6675dfb
 
 ## 使用说明
 
-PhonePC/2in1TabletTVWearable
-
 1. 应用创建AbilityLifecycleCallback对象，并调用[ApplicationContext.on('abilityLifecycle')](js-apis-inner-application-applicationcontext.md#applicationcontextonabilitylifecycle)接口注册UIAbility生命周期变化监听。
 2. 当UIAbility生命周期变化时，应用可以通过已注册的AbilityLifecycleCallback对象接收到UIAbility生命周期的变化通知。
 3. 当应用不需要监听UIAbility生命周期变化时，需要通过[ApplicationContext.off('abilityLifecycle')](js-apis-inner-application-applicationcontext.md#applicationcontextoffabilitylifecycle)接口取消监听。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { AbilityLifecycleCallback } from '@kit.AbilityKit';
+```ts
+import { AbilityLifecycleCallback } from '@kit.AbilityKit';
 ```
 
 ## AbilityLifecycleCallback
 
-PhonePC/2in1TabletTVWearable
-
 ### onAbilityCreate
-
-PhonePC/2in1TabletTVWearable
 
 onAbilityCreate(ability: UIAbility): void
 
@@ -61,8 +53,6 @@ onAbilityCreate(ability: UIAbility): void
 参见[AbilityLifecycleCallback使用示例](js-apis-app-ability-abilitylifecyclecallback.md#abilitylifecyclecallback使用示例)。
 
 ### onWindowStageCreate
-
-PhonePC/2in1TabletTVWearable
 
 onWindowStageCreate(ability: UIAbility, windowStage: window.WindowStage): void
 
@@ -85,8 +75,6 @@ onWindowStageCreate(ability: UIAbility, windowStage: window.WindowStage): void
 
 ### onWindowStageActive
 
-PhonePC/2in1TabletTVWearable
-
 onWindowStageActive(ability: UIAbility, windowStage: window.WindowStage): void
 
 在UIAbility主窗获焦时触发回调。
@@ -107,8 +95,6 @@ onWindowStageActive(ability: UIAbility, windowStage: window.WindowStage): void
 参见[AbilityLifecycleCallback使用示例](js-apis-app-ability-abilitylifecyclecallback.md#abilitylifecyclecallback使用示例)。
 
 ### onWindowStageInactive
-
-PhonePC/2in1TabletTVWearable
 
 onWindowStageInactive(ability: UIAbility, windowStage: window.WindowStage): void
 
@@ -131,8 +117,6 @@ onWindowStageInactive(ability: UIAbility, windowStage: window.WindowStage): void
 
 ### onWindowStageDestroy
 
-PhonePC/2in1TabletTVWearable
-
 onWindowStageDestroy(ability: UIAbility, windowStage: window.WindowStage): void
 
 在UIAbility的[onWindowStageDestroy](js-apis-app-ability-uiability.md#onwindowstagedestroy)触发后回调。
@@ -154,8 +138,6 @@ onWindowStageDestroy(ability: UIAbility, windowStage: window.WindowStage): void
 
 ### onAbilityDestroy
 
-PhonePC/2in1TabletTVWearable
-
 onAbilityDestroy(ability: UIAbility): void
 
 在UIAbility的[onDestroy](js-apis-app-ability-uiability.md#ondestroy)触发后回调。
@@ -175,8 +157,6 @@ onAbilityDestroy(ability: UIAbility): void
 参见[AbilityLifecycleCallback使用示例](js-apis-app-ability-abilitylifecyclecallback.md#abilitylifecyclecallback使用示例)。
 
 ### onAbilityForeground
-
-PhonePC/2in1TabletTVWearable
 
 onAbilityForeground(ability: UIAbility): void
 
@@ -198,8 +178,6 @@ onAbilityForeground(ability: UIAbility): void
 
 ### onAbilityBackground
 
-PhonePC/2in1TabletTVWearable
-
 onAbilityBackground(ability: UIAbility): void
 
 在UIAbility的[onBackground](js-apis-app-ability-uiability.md#onbackground)触发后回调。
@@ -219,8 +197,6 @@ onAbilityBackground(ability: UIAbility): void
 参见[AbilityLifecycleCallback使用示例](js-apis-app-ability-abilitylifecyclecallback.md#abilitylifecyclecallback使用示例)。
 
 ### onAbilityContinue
-
-PhonePC/2in1TabletTVWearable
 
 onAbilityContinue(ability: UIAbility): void
 
@@ -242,8 +218,6 @@ onAbilityContinue(ability: UIAbility): void
 
 ### onAbilityWillCreate12+
 
-PhonePC/2in1TabletTVWearable
-
 onAbilityWillCreate?(ability: UIAbility): void
 
 在UIAbility的[onCreate](js-apis-app-ability-uiability.md#oncreate)触发前回调。
@@ -263,8 +237,6 @@ onAbilityWillCreate?(ability: UIAbility): void
 参见[AbilityLifecycleCallback使用示例](js-apis-app-ability-abilitylifecyclecallback.md#abilitylifecyclecallback使用示例)。
 
 ### onWindowStageWillCreate12+
-
-PhonePC/2in1TabletTVWearable
 
 onWindowStageWillCreate?(ability: UIAbility, windowStage: window.WindowStage): void
 
@@ -287,8 +259,6 @@ onWindowStageWillCreate?(ability: UIAbility, windowStage: window.WindowStage): v
 
 ### onWindowStageWillDestroy12+
 
-PhonePC/2in1TabletTVWearable
-
 onWindowStageWillDestroy?(ability: UIAbility, windowStage: window.WindowStage): void
 
 在UIAbility的[onWindowStageDestroy](js-apis-app-ability-uiability.md#onwindowstagedestroy)触发前回调。
@@ -310,8 +280,6 @@ onWindowStageWillDestroy?(ability: UIAbility, windowStage: window.WindowStage): 
 
 ### onAbilityWillForeground12+
 
-PhonePC/2in1TabletTVWearable
-
 onAbilityWillForeground?(ability: UIAbility): void
 
 在UIAbility的[onForeground](js-apis-app-ability-uiability.md#onforeground)触发前回调。
@@ -331,8 +299,6 @@ onAbilityWillForeground?(ability: UIAbility): void
 参见[AbilityLifecycleCallback使用示例](js-apis-app-ability-abilitylifecyclecallback.md#abilitylifecyclecallback使用示例)。
 
 ### onAbilityWillDestroy12+
-
-PhonePC/2in1TabletTVWearable
 
 onAbilityWillDestroy?(ability: UIAbility): void
 
@@ -354,8 +320,6 @@ onAbilityWillDestroy?(ability: UIAbility): void
 
 ### onAbilityWillBackground12+
 
-PhonePC/2in1TabletTVWearable
-
 onAbilityWillBackground?(ability: UIAbility): void
 
 在UIAbility的[onBackground](js-apis-app-ability-uiability.md#onbackground)触发前回调。
@@ -375,8 +339,6 @@ onAbilityWillBackground?(ability: UIAbility): void
 参见[AbilityLifecycleCallback使用示例](js-apis-app-ability-abilitylifecyclecallback.md#abilitylifecyclecallback使用示例)。
 
 ### onWillNewWant12+
-
-PhonePC/2in1TabletTVWearable
 
 onWillNewWant?(ability: UIAbility): void
 
@@ -398,8 +360,6 @@ onWillNewWant?(ability: UIAbility): void
 
 ### onNewWant12+
 
-PhonePC/2in1TabletTVWearable
-
 onNewWant?(ability: UIAbility): void
 
 在UIAbility的[onNewWant](js-apis-app-ability-uiability.md#onnewwant)触发后回调。
@@ -420,8 +380,6 @@ onNewWant?(ability: UIAbility): void
 
 ### onAbilityWillContinue12+
 
-PhonePC/2in1TabletTVWearable
-
 onAbilityWillContinue?(ability: UIAbility): void
 
 在UIAbility的[onContinue](js-apis-app-ability-uiability.md#oncontinue)触发前回调。
@@ -441,8 +399,6 @@ onAbilityWillContinue?(ability: UIAbility): void
 参见[AbilityLifecycleCallback使用示例](js-apis-app-ability-abilitylifecyclecallback.md#abilitylifecyclecallback使用示例)。
 
 ### onWindowStageWillRestore12+
-
-PhonePC/2in1TabletTVWearable
 
 onWindowStageWillRestore?(ability: UIAbility, windowStage: window.WindowStage): void
 
@@ -465,8 +421,6 @@ onWindowStageWillRestore?(ability: UIAbility, windowStage: window.WindowStage): 
 
 ### onWindowStageRestore12+
 
-PhonePC/2in1TabletTVWearable
-
 onWindowStageRestore?(ability: UIAbility, windowStage: window.WindowStage): void
 
 在UIAbility的[onWindowStageRestore](js-apis-app-ability-uiability.md#onwindowstagerestore)触发后回调。
@@ -488,8 +442,6 @@ onWindowStageRestore?(ability: UIAbility, windowStage: window.WindowStage): void
 
 ### onAbilityWillSaveState12+
 
-PhonePC/2in1TabletTVWearable
-
 onAbilityWillSaveState?(ability: UIAbility): void
 
 在UIAbility的[onSaveState](js-apis-app-ability-uiability.md#onsavestate)触发前回调。
@@ -509,8 +461,6 @@ onAbilityWillSaveState?(ability: UIAbility): void
 参见[AbilityLifecycleCallback使用示例](js-apis-app-ability-abilitylifecyclecallback.md#abilitylifecyclecallback使用示例)。
 
 ### onAbilitySaveState12+
-
-PhonePC/2in1TabletTVWearable
 
 onAbilitySaveState?(ability: UIAbility): void
 
@@ -539,193 +489,193 @@ onAbilitySaveState?(ability: UIAbility): void
 3. 监听到对应UIAbility创建时加载资源，监听到对应UIAbility销毁时释放资源。
 4. 在UIAbility创建、销毁及前后台状态切换时，记录事件并向外发送通知。
 
+```ts
+// 以MyStage.ets文件为例，使用AbilityLifecycleCallback监听UIAbility生命周期
+import { AbilityLifecycleCallback, AbilityStage, application, UIAbility } from "@kit.AbilityKit";
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { JSON } from "@kit.ArkTS";
+import { window } from "@kit.ArkUI";
+import { BusinessError } from "@kit.BasicServicesKit";
+
+const DOMAIN = 0x0000;
+const TAG = 'testTag';
+
+function loadContent() {
+  // 加载数据
+}
+
+function releaseContent() {
+  // 释放数据
+}
+
+function recordAbilityEvent(abilityName: string) {
+  // 执行打点
+}
+
+function publishEvent() {
+  // 对外发布通知
+}
+
+let abilityLifecycleCallback: AbilityLifecycleCallback = {
+  onAbilityCreate(ability: UIAbility) {
+    hilog.info(DOMAIN, TAG, 'onAbilityCreate: ' + ability.context.abilityInfo.name);
+    // UIAbility事件打点记录
+    recordAbilityEvent(ability.context.abilityInfo.name);
+    // 模拟入口UIAbility创建时，加载资源对外发布通知
+    if (ability.context.abilityInfo.name === 'EntryAbility') {
+      loadContent();
+      publishEvent();
+    }
+  },
+  onWindowStageCreate(ability: UIAbility, windowStage: window.WindowStage) {
+    hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onWindowStageCreate.');
+  },
+  onWindowStageActive(ability: UIAbility, windowStage: window.WindowStage) {
+    hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onWindowStageActive.');
+  },
+  onWindowStageInactive(ability: UIAbility, windowStage: window.WindowStage) {
+    hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onWindowStageInactive.');
+  },
+  onWindowStageDestroy(ability: UIAbility, windowStage: window.WindowStage) {
+    hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onWindowStageDestroy.');
+  },
+  onAbilityDestroy(ability: UIAbility) {
+    hilog.info(DOMAIN, TAG, 'onAbilityDestroy: ' + ability.context.abilityInfo.name);
+    recordAbilityEvent(ability.context.abilityInfo.name);
+    // 模拟入口UIAbility销毁时，释放资源
+    if (ability.context.abilityInfo.name === 'EntryAbility') {
+      releaseContent();
+      publishEvent();
+    }
+  },
+  onAbilityForeground(ability: UIAbility) {
+    hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onAbilityForeground.');
+    recordAbilityEvent(ability.context.abilityInfo.name);
+    if (ability.context.abilityInfo.name === 'EntryAbility') {
+      publishEvent();
+    }
+  },
+  onAbilityBackground(ability: UIAbility) {
+    hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onAbilityBackground.');
+    recordAbilityEvent(ability.context.abilityInfo.name);
+    if (ability.context.abilityInfo.name === 'EntryAbility') {
+      publishEvent();
+    }
+  },
+  onAbilityContinue(ability: UIAbility) {
+    hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onAbilityContinue.');
+  },
+  onNewWant(ability: UIAbility) {
+    hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onNewWant');
+  },
+  onWillNewWant(ability: UIAbility) {
+    hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onWillNewWant');
+  },
+  onAbilityWillCreate(ability: UIAbility) {
+    hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onAbilityWillCreate');
+  },
+  onWindowStageWillCreate(ability: UIAbility, windowStage: window.WindowStage) {
+    hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onWindowStageWillCreate');
+  },
+  onWindowStageWillDestroy(ability: UIAbility, windowStage: window.WindowStage) {
+    hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onWindowStageWillDestroy');
+  },
+  onAbilityWillDestroy(ability: UIAbility) {
+    hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onAbilityWillDestroy');
+  },
+  onAbilityWillForeground(ability: UIAbility) {
+    hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onAbilityWillForeground');
+  },
+  onAbilityWillBackground(ability: UIAbility) {
+    hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onAbilityWillBackground');
+  },
+  onAbilityWillContinue(ability: UIAbility) {
+    hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onAbilityWillContinue.');
+  },
+  onWindowStageWillRestore(ability: UIAbility, windowStage: window.WindowStage) {
+    hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onWindowStageWillRestore.');
+  },
+  onWindowStageRestore(ability: UIAbility, windowStage: window.WindowStage) {
+    hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onWindowStageRestore.');
+  },
+  onAbilityWillSaveState(ability: UIAbility) {
+    hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onAbilityWillSaveState.');
+  },
+  onAbilitySaveState(ability: UIAbility) {
+    hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onAbilitySaveState.');
+  }
+};
+
+let lifecycleId = -1; // 保存监听id
+
+export default class MyStage extends AbilityStage {
+  onCreate(): void {
+    hilog.info(DOMAIN, TAG, 'AbilityStage onCreate')
+
+    // AbilityStage创建时注册UIAbility生命周期监听，并把监听id保存起来
+    try {
+      let applicationContext = application.getApplicationContext();
+      lifecycleId = applicationContext.on('abilityLifecycle', abilityLifecycleCallback);
+    } catch (e) {
+      hilog.error(DOMAIN, TAG, `register abilityLifecycle failed: ${JSON.stringify(e)}`);
+    }
+  }
+
+  onDestroy(): void {
+    // AbilityStage销毁时取消UIAbility生命周期监听注册
+    let applicationContext = application.getApplicationContext();
+    applicationContext.off('abilityLifecycle', lifecycleId).catch((e: BusinessError) => {
+      hilog.error(DOMAIN, TAG, `unregister abilityLifecycle failed: ${JSON.stringify(e)}`);
+    });
+  }
+}
 ```
-1. // 以MyStage.ets文件为例，使用AbilityLifecycleCallback监听UIAbility生命周期
-2. import { AbilityLifecycleCallback, AbilityStage, application, UIAbility } from "@kit.AbilityKit";
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { JSON } from "@kit.ArkTS";
-5. import { window } from "@kit.ArkUI";
-6. import { BusinessError } from "@kit.BasicServicesKit";
 
-8. const DOMAIN = 0x0000;
-9. const TAG = 'testTag';
+```ts
+// 以EntryAbility.ets为例，展示应用入口UIAbility
+import { AbilityConstant, ConfigurationConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { window } from '@kit.ArkUI';
 
-11. function loadContent() {
-12. // 加载数据
-13. }
+const DOMAIN = 0x0000;
+const TAG = 'testTag';
 
-15. function releaseContent() {
-16. // 释放数据
-17. }
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
+    hilog.info(DOMAIN, TAG, 'EntryAbility onCreate');
+  }
 
-19. function recordAbilityEvent(abilityName: string) {
-20. // 执行打点
-21. }
+  onDestroy(): void {
+    hilog.info(DOMAIN, TAG, 'EntryAbility onDestroy');
+  }
 
-23. function publishEvent() {
-24. // 对外发布通知
-25. }
+  onWindowStageCreate(windowStage: window.WindowStage): void {
+    // 主窗创建
+    hilog.info(DOMAIN, TAG, 'EntryAbility onWindowStageCreate');
 
-27. let abilityLifecycleCallback: AbilityLifecycleCallback = {
-28. onAbilityCreate(ability: UIAbility) {
-29. hilog.info(DOMAIN, TAG, 'onAbilityCreate: ' + ability.context.abilityInfo.name);
-30. // UIAbility事件打点记录
-31. recordAbilityEvent(ability.context.abilityInfo.name);
-32. // 模拟入口UIAbility创建时，加载资源对外发布通知
-33. if (ability.context.abilityInfo.name === 'EntryAbility') {
-34. loadContent();
-35. publishEvent();
-36. }
-37. },
-38. onWindowStageCreate(ability: UIAbility, windowStage: window.WindowStage) {
-39. hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onWindowStageCreate.');
-40. },
-41. onWindowStageActive(ability: UIAbility, windowStage: window.WindowStage) {
-42. hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onWindowStageActive.');
-43. },
-44. onWindowStageInactive(ability: UIAbility, windowStage: window.WindowStage) {
-45. hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onWindowStageInactive.');
-46. },
-47. onWindowStageDestroy(ability: UIAbility, windowStage: window.WindowStage) {
-48. hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onWindowStageDestroy.');
-49. },
-50. onAbilityDestroy(ability: UIAbility) {
-51. hilog.info(DOMAIN, TAG, 'onAbilityDestroy: ' + ability.context.abilityInfo.name);
-52. recordAbilityEvent(ability.context.abilityInfo.name);
-53. // 模拟入口UIAbility销毁时，释放资源
-54. if (ability.context.abilityInfo.name === 'EntryAbility') {
-55. releaseContent();
-56. publishEvent();
-57. }
-58. },
-59. onAbilityForeground(ability: UIAbility) {
-60. hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onAbilityForeground.');
-61. recordAbilityEvent(ability.context.abilityInfo.name);
-62. if (ability.context.abilityInfo.name === 'EntryAbility') {
-63. publishEvent();
-64. }
-65. },
-66. onAbilityBackground(ability: UIAbility) {
-67. hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onAbilityBackground.');
-68. recordAbilityEvent(ability.context.abilityInfo.name);
-69. if (ability.context.abilityInfo.name === 'EntryAbility') {
-70. publishEvent();
-71. }
-72. },
-73. onAbilityContinue(ability: UIAbility) {
-74. hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onAbilityContinue.');
-75. },
-76. onNewWant(ability: UIAbility) {
-77. hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onNewWant');
-78. },
-79. onWillNewWant(ability: UIAbility) {
-80. hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onWillNewWant');
-81. },
-82. onAbilityWillCreate(ability: UIAbility) {
-83. hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onAbilityWillCreate');
-84. },
-85. onWindowStageWillCreate(ability: UIAbility, windowStage: window.WindowStage) {
-86. hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onWindowStageWillCreate');
-87. },
-88. onWindowStageWillDestroy(ability: UIAbility, windowStage: window.WindowStage) {
-89. hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onWindowStageWillDestroy');
-90. },
-91. onAbilityWillDestroy(ability: UIAbility) {
-92. hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onAbilityWillDestroy');
-93. },
-94. onAbilityWillForeground(ability: UIAbility) {
-95. hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onAbilityWillForeground');
-96. },
-97. onAbilityWillBackground(ability: UIAbility) {
-98. hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onAbilityWillBackground');
-99. },
-100. onAbilityWillContinue(ability: UIAbility) {
-101. hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onAbilityWillContinue.');
-102. },
-103. onWindowStageWillRestore(ability: UIAbility, windowStage: window.WindowStage) {
-104. hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onWindowStageWillRestore.');
-105. },
-106. onWindowStageRestore(ability: UIAbility, windowStage: window.WindowStage) {
-107. hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onWindowStageRestore.');
-108. },
-109. onAbilityWillSaveState(ability: UIAbility) {
-110. hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onAbilityWillSaveState.');
-111. },
-112. onAbilitySaveState(ability: UIAbility) {
-113. hilog.info(DOMAIN, TAG, 'AbilityLifecycleCallback onAbilitySaveState.');
-114. }
-115. };
+    windowStage.loadContent('pages/Index', (err) => {
+      if (err.code) {
+        hilog.error(DOMAIN, TAG, 'Failed to load the content. Cause: %{public}s', JSON.stringify(err));
+        return;
+      }
+      hilog.info(DOMAIN, TAG, 'Succeeded in loading the content.');
+    });
+  }
 
-117. let lifecycleId = -1; // 保存监听id
+  onWindowStageDestroy(): void {
+    // 主窗销毁
+    hilog.info(DOMAIN, TAG, 'EntryAbility onWindowStageDestroy');
+  }
 
-119. export default class MyStage extends AbilityStage {
-120. onCreate(): void {
-121. hilog.info(DOMAIN, TAG, 'AbilityStage onCreate')
+  onForeground(): void {
+    // UIAbility切换到前台
+    hilog.info(DOMAIN, TAG, 'EntryAbility onForeground');
+  }
 
-123. // AbilityStage创建时注册UIAbility生命周期监听，并把监听id保存起来
-124. try {
-125. let applicationContext = application.getApplicationContext();
-126. lifecycleId = applicationContext.on('abilityLifecycle', abilityLifecycleCallback);
-127. } catch (e) {
-128. hilog.error(DOMAIN, TAG, `register abilityLifecycle failed: ${JSON.stringify(e)}`);
-129. }
-130. }
-
-132. onDestroy(): void {
-133. // AbilityStage销毁时取消UIAbility生命周期监听注册
-134. let applicationContext = application.getApplicationContext();
-135. applicationContext.off('abilityLifecycle', lifecycleId).catch((e: BusinessError) => {
-136. hilog.error(DOMAIN, TAG, `unregister abilityLifecycle failed: ${JSON.stringify(e)}`);
-137. });
-138. }
-139. }
-```
-
-```
-1. // 以EntryAbility.ets为例，展示应用入口UIAbility
-2. import { AbilityConstant, ConfigurationConstant, UIAbility, Want } from '@kit.AbilityKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { window } from '@kit.ArkUI';
-
-6. const DOMAIN = 0x0000;
-7. const TAG = 'testTag';
-
-9. export default class EntryAbility extends UIAbility {
-10. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-11. this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
-12. hilog.info(DOMAIN, TAG, 'EntryAbility onCreate');
-13. }
-
-15. onDestroy(): void {
-16. hilog.info(DOMAIN, TAG, 'EntryAbility onDestroy');
-17. }
-
-19. onWindowStageCreate(windowStage: window.WindowStage): void {
-20. // 主窗创建
-21. hilog.info(DOMAIN, TAG, 'EntryAbility onWindowStageCreate');
-
-23. windowStage.loadContent('pages/Index', (err) => {
-24. if (err.code) {
-25. hilog.error(DOMAIN, TAG, 'Failed to load the content. Cause: %{public}s', JSON.stringify(err));
-26. return;
-27. }
-28. hilog.info(DOMAIN, TAG, 'Succeeded in loading the content.');
-29. });
-30. }
-
-32. onWindowStageDestroy(): void {
-33. // 主窗销毁
-34. hilog.info(DOMAIN, TAG, 'EntryAbility onWindowStageDestroy');
-35. }
-
-37. onForeground(): void {
-38. // UIAbility切换到前台
-39. hilog.info(DOMAIN, TAG, 'EntryAbility onForeground');
-40. }
-
-42. onBackground(): void {
-43. // UIAbility切换到后台
-44. hilog.info(DOMAIN, TAG, 'EntryAbility  onBackground');
-45. }
-46. }
+  onBackground(): void {
+    // UIAbility切换到后台
+    hilog.info(DOMAIN, TAG, 'EntryAbility  onBackground');
+  }
+}
 ```

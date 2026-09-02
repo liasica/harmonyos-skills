@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-209
 title: ArkUI有没有在组件刷新后的回调事件
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > ArkUI有没有在组件刷新后的回调事件
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > ArkUI有没有在组件刷新后的回调事件
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:25:54+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:710a25a309780d12b3789fc69c2a314ee54c894b21379a0c8c26ff11bd63d099
+scraped_at: 2026-09-02T14:53:59+08:00
+doc_updated_at: 2026-08-13
+content_hash: sha256:726eb884cf47f8f49b247e176dfe437b8c901969b3071fc243c8806e6437fa49
 ---
 
 当组件状态变量改变时，会刷新组件。具体分为以下两种情况：
@@ -16,4 +16,4 @@ content_hash: sha256:710a25a309780d12b3789fc69c2a314ee54c894b21379a0c8c26ff11bd6
 
 **参考链接**
 
-[状态变量变化监听](../harmonyos-references/ts-state-management-watch-monitor.md)
+[状态变量变化监听](../harmonyos-guides/arkts-watch.md)

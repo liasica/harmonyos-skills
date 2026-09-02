@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-arkts-high
 title: ArkTS高性能编程
 breadcrumb: 最佳实践 > 应用框架 > ArkTS语言 > ArkTS高性能编程
 category: best-practices
-scraped_at: 2026-04-28T08:20:05+08:00
+scraped_at: 2026-09-02T15:03:16+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:d770d231ba6b449c37c7d470d3f06358926ea2c58c8984303d18da119f0aea98
+content_hash: sha256:9c3b242fa0b4196bdca1abf9782cece1ddaad374e0bee42b3d97075f836e991b
 ---
 
 ## 概述
@@ -20,44 +20,40 @@ content_hash: sha256:d770d231ba6b449c37c7d470d3f06358926ea2c58c8984303d18da119f0
 
 【反例】
 
+```screen
+// The variable does not change in the subsequent process. It is recommended to declare it as a constant
+let PRICE = 10000;
+
+function getPrice() {
+  return PRICE;
+}
+
+class ClassA {
+  propA: string = 'propA';
+}
+
+// The variable address of the reference type is not changed in the subsequent process, only the variable property is modified. In this example, it is recommended to change the value of let to const
+let classA: ClassA = new ClassA();
+classA.propA = 'Property A';
 ```
-1. // The variable does not change in the subsequent process. It is recommended to declare it as a constant
-2. let PRICE = 10000;
-
-4. function getPrice() {
-5. return PRICE;
-6. }
-
-8. class ClassA {
-9. propA: string = 'propA';
-10. }
-
-12. // The variable address of the reference type is not changed in the subsequent process, only the variable property is modified. In this example, it is recommended to change the value of let to const
-13. let classA: ClassA = new ClassA();
-14. classA.propA = 'Property A';
-```
-
-[segment.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkTS_high_performance_segment/entry/src/main/ets/segment/segment.ets#L2-L16)
 
 【正例】
 
+```screen
+const PRICE = 10000; // When a constant is declared as a base type, its content cannot be changed
+
+function getPrice() {
+  return PRICE;
+}
+
+class ClassA {
+  propA: string = 'propA';
+}
+
+// When a constant is declared as a reference type, its address cannot be changed, but its properties can be changed
+const classA: ClassA = new ClassA();
+classA.propA = 'Property A';
 ```
-1. const PRICE = 10000; // When a constant is declared as a base type, its content cannot be changed
-
-3. function getPrice() {
-4. return PRICE;
-5. }
-
-7. class ClassA {
-8. propA: string = 'propA';
-9. }
-
-11. // When a constant is declared as a reference type, its address cannot be changed, but its properties can be changed
-12. const classA: ClassA = new ClassA();
-13. classA.propA = 'Property A';
-```
-
-[segment2.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkTS_high_performance_segment/entry/src/main/ets/segment/segment2.ets#L8-L21)
 
 ### 指定number的类型
 
@@ -65,16 +61,14 @@ content_hash: sha256:d770d231ba6b449c37c7d470d3f06358926ea2c58c8984303d18da119f0
 
 【正例】
 
+```screen
+function calAddSum(addNum: number): number {
+  // count is expected to be int, do not declare it as undefined/null or 0.0, directly initialize it to 0
+  let count = 0;
+  count += addNum;
+  return count;
+}
 ```
-1. function calAddSum(addNum: number): number {
-2. // count is expected to be int, do not declare it as undefined/null or 0.0, directly initialize it to 0
-3. let count = 0;
-4. count += addNum;
-5. return count;
-6. }
-```
-
-[segment2.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkTS_high_performance_segment/entry/src/main/ets/segment/segment2.ets#L25-L31)
 
 ### 减少使用ESObject
 
@@ -82,48 +76,44 @@ ESObject主要用于在ArkTS和TS/JS跨语言调用的场景中作为类型标�
 
 【反例】
 
-```
-1. // lib.ets
-2. interface TestA {
-3. sum: number
-4. }
+```screen
+// lib.ets
+interface TestA {
+  sum: number
+}
 
-6. export function getObject(value: number): TestA {
-7. let obj: TestA = { sum: value };
-8. return obj;
-9. }
+export function getObject(value: number): TestA {
+  let obj: TestA = { sum: value };
+  return obj;
+}
 
-11. // app.ets
-12. import { getObject } from 'lib';
-13. let obj:ESObject = getObject(123); // Define the accepted type through ESObject.
+// app.ets
+import { getObject } from 'lib';
+let obj:ESObject = getObject(123); // Define the accepted type through ESObject.
 ```
 
 【正例】
 
 1、导出对应的接口类型和方法。
 
-```
-1. export interface TestA {
-2. sum: number
-3. }
+```screen
+export interface TestA {
+  sum: number
+}
 
-5. export function getObject(value: number): TestA {
-6. let obj: TestA = { sum: value };
-7. return obj;
-8. }
+export function getObject(value: number): TestA {
+  let obj: TestA = { sum: value };
+  return obj;
+}
 ```
-
-[segment.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkTS_high_performance_segment/entry/src/main/ets/segment/segment.ets#L20-L28)
 
 2、在使用该方法的文件中引入对应的类型。
 
-```
-1. import { getObject, TestA } from './segment';
+```screen
+import { getObject, TestA } from './segment';
 
-3. let obj: TestA = getObject(123); // Explicitly introduce the label type
+let obj: TestA = getObject(123); // Explicitly introduce the label type
 ```
-
-[segment2.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkTS_high_performance_segment/entry/src/main/ets/segment/segment2.ets#L2-L4)
 
 ## 属性访问
 
@@ -135,47 +125,43 @@ ESObject主要用于在ArkTS和TS/JS跨语言调用的场景中作为类型标�
 
 【反例】
 
-```
-1. class Time {
-2. static START: number = 1987;
-3. static INFO: number[] = [2001, 2002, 2003, 2004, 2005, 2006]
-4. }
+```screen
+class Time {
+  static START: number = 1987;
+  static INFO: number[] = [2001, 2002, 2003, 2004, 2005, 2006]
+}
 
-6. function getDay(year: number): number {
-7. let totalDays: number = 348;
-8. for (let index: number = 0x8000; index > 0x8; index >>= 1) {
-9. // The value of Time is the same as that of the value of the value of the value of the value of the time
-10. totalDays += ((Time.INFO[year - Time.START] & index) !== 0) ? 1 : 0;
-11. }
-12. return totalDays;
-13. }
+function getDay(year: number): number {
+  let totalDays: number = 348;
+  for (let index: number = 0x8000; index > 0x8; index >>= 1) {
+    // The value of Time is the same as that of the value of the value of the value of the value of the time
+    totalDays += ((Time.INFO[year - Time.START] & index) !== 0) ? 1 : 0;
+  }
+  return totalDays;
+}
 ```
-
-[segment.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkTS_high_performance_segment/entry/src/main/ets/segment/segment.ets#L32-L45)
 
 【正例】
 
-```
-1. // Code after optimization
-2. class Time {
-3. static START: number = 1987;
-4. static INFO: number[] = [2001, 2002, 2003, 2004, 2005, 2006];
-5. }
+```screen
+// Code after optimization
+class Time {
+  static START: number = 1987;
+  static INFO: number[] = [2001, 2002, 2003, 2004, 2005, 2006];
+}
 
-7. function getDay(year: number): number {
-8. let totalDays: number = 348;
-9. // Extract invariants from the loop
-10. const info = Time.INFO[year - Time.START];
-11. for (let index: number = 0x8000; index > 0x8; index >>= 1) {
-12. if ((info & index) !== 0) {
-13. totalDays++;
-14. }
-15. }
-16. return totalDays;
-17. }
+function getDay(year: number): number {
+  let totalDays: number = 348;
+  // Extract invariants from the loop
+  const info = Time.INFO[year - Time.START];
+  for (let index: number = 0x8000; index > 0x8; index >>= 1) {
+    if ((info & index) !== 0) {
+      totalDays++;
+    }
+  }
+  return totalDays;
+}
 ```
-
-[segment2.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkTS_high_performance_segment/entry/src/main/ets/segment/segment2.ets#L35-L52)
 
 ### 给类属性添加访问修饰符
 
@@ -183,44 +169,40 @@ ESObject主要用于在ArkTS和TS/JS跨语言调用的场景中作为类型标�
 
 【反例】
 
+```screen
+class Counter {
+  // The access modifier is not set. The default value is public
+  count: number = 0;
+
+  getCount(): number {
+    return this.count;
+  }
+}
+
+// When accessing
+const counter: Counter = new Counter();
+console.info(counter.count.toString()); // can be accessed through the instance
+console.info(counter.getCount().toString());
 ```
-1. class Counter {
-2. // The access modifier is not set. The default value is public
-3. count: number = 0;
-
-5. getCount(): number {
-6. return this.count;
-7. }
-8. }
-
-10. // When accessing
-11. const counter: Counter = new Counter();
-12. console.info(counter.count.toString()); // can be accessed through the instance
-13. console.info(counter.getCount().toString());
-```
-
-[segment.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkTS_high_performance_segment/entry/src/main/ets/segment/segment.ets#L49-L61)
 
 【正例】
 
+```screen
+class Counter {
+  // Set the access modifier to private
+  private count: number = 0;
+
+  public getCount(): number {
+    return this.count;
+  }
+}
+
+// When accessing
+const counter: Counter = new Counter();
+let res = counter.getCount();
 ```
-1. class Counter {
-2. // Set the access modifier to private
-3. private count: number = 0;
 
-5. public getCount(): number {
-6. return this.count;
-7. }
-8. }
-
-10. // When accessing
-11. const counter: Counter = new Counter();
-12. let res = counter.getCount();
-```
-
-[segment2.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkTS_high_performance_segment/entry/src/main/ets/segment/segment2.ets#L56-L67)
-
-说明
+**说明** 
 
 当设置为private时，无法通过对象字面量的方式初始化类，在有需要通过字面量创建、或者直接访问属性时，设置为public。
 
@@ -232,31 +214,27 @@ ESObject主要用于在ArkTS和TS/JS跨语言调用的场景中作为类型标�
 
 【反例】
 
+```screen
+const array1 = new Array(1, 2, 3); // For this scenario, it is recommended that you do not use new Array (1, 2, 3)
+const array2 = new Array(4, 5, 6); // For this scenario, it is recommended that new Array (4, 5, 6) be not used
+const res = new Array<number>(3);
+for (let i = 0; i < 3; i++) {
+  res[i] = array1[i] + array2[i];
+}
 ```
-1. const array1 = new Array(1, 2, 3); // For this scenario, it is recommended that you do not use new Array (1, 2, 3)
-2. const array2 = new Array(4, 5, 6); // For this scenario, it is recommended that new Array (4, 5, 6) be not used
-3. const res = new Array<number>(3);
-4. for (let i = 0; i < 3; i++) {
-5. res[i] = array1[i] + array2[i];
-6. }
-```
-
-[segment.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkTS_high_performance_segment/entry/src/main/ets/segment/segment.ets#L65-L71)
 
 【正例】
 
+```screen
+const typedArray1 =
+  new Int8Array([1, 2, 3]); // For this scenario, it is recommended that you do not use new Array ([1, 2, 3])
+const typedArray2 =
+  new Int8Array([4, 5, 6]); // For this scenario, it is recommended that you do not use new Array ([4, 5, 6])
+const res1 = new Int8Array(3);
+for (let i = 0; i < 3; i++) {
+  res1[i] = typedArray1[i] + typedArray2[i];
+}
 ```
-1. const typedArray1 =
-2. new Int8Array([1, 2, 3]); // For this scenario, it is recommended that you do not use new Array ([1, 2, 3])
-3. const typedArray2 =
-4. new Int8Array([4, 5, 6]); // For this scenario, it is recommended that you do not use new Array ([4, 5, 6])
-5. const res1 = new Int8Array(3);
-6. for (let i = 0; i < 3; i++) {
-7. res1[i] = typedArray1[i] + typedArray2[i];
-8. }
-```
-
-[segment2.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkTS_high_performance_segment/entry/src/main/ets/segment/segment2.ets#L71-L78)
 
 ## 数据结构的使用
 
@@ -266,57 +244,53 @@ ESObject主要用于在ArkTS和TS/JS跨语言调用的场景中作为类型标�
 
 【反例】
 
-```
-1. class InfoUtil {
-2. getInfo(t1: string, t2: string): string {
-3. if (t1 === t2) {
-4. return '';
-5. }
-6. // The common Record object is used as the container
-7. let info: Record<string, string> = {};
-8. this.setInfo(info);
-9. let t3 = info[t2];
-10. return (t3 != null) ? t3 : '';
-11. }
+```screen
+class InfoUtil {
+  getInfo(t1: string, t2: string): string {
+    if (t1 === t2) {
+      return '';
+    }
+    // The common Record object is used as the container
+    let info: Record<string, string> = {};
+    this.setInfo(info);
+    let t3 = info[t2];
+    return (t3 != null) ? t3 : '';
+  }
 
-13. setInfo(info: Record<string, string>) {
-14. // The interface actually performs the map operation
-15. info.aaa = 'aaa';
-16. info.bbb = 'bbb';
-17. info.ccc = 'ccc';
-18. }
-19. }
+  setInfo(info: Record<string, string>) {
+    // The interface actually performs the map operation
+    info.aaa = 'aaa';
+    info.bbb = 'bbb';
+    info.ccc = 'ccc';
+  }
+}
 ```
-
-[segment.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkTS_high_performance_segment/entry/src/main/ets/segment/segment.ets#L75-L94)
 
 【正例】
 
+```screen
+import HashMap from '@kit.ArkTS';
+
+class InfoUtil {
+  getInfo(t1: string, t2: string): string {
+    if (t1 === t2) {
+      return '';
+    }
+    // The HashMap is used for read and write operations
+    let info: HashMap<string, string> = new HashMap();
+    this.setInfo(info);
+    let t3 = info.get(t2);
+    return (t3 != null) ? t3 : '';
+  }
+
+  setInfo(info: HashMap<string, string>) {
+    // ...
+    info.set('aaa', 'aaa');
+    info.set('bbb', 'bbb');
+    info.set('ccc', 'ccc');
+  }
+}
 ```
-1. import HashMap from '@kit.ArkTS';
-
-3. class InfoUtil {
-4. getInfo(t1: string, t2: string): string {
-5. if (t1 === t2) {
-6. return '';
-7. }
-8. // The HashMap is used for read and write operations
-9. let info: HashMap<string, string> = new HashMap();
-10. this.setInfo(info);
-11. let t3 = info.get(t2);
-12. return (t3 != null) ? t3 : '';
-13. }
-
-15. setInfo(info: HashMap<string, string>) {
-16. // ...
-17. info.set('aaa', 'aaa');
-18. info.set('bbb', 'bbb');
-19. info.set('ccc', 'ccc');
-20. }
-21. }
-```
-
-[segment3.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkTS_high_performance_segment/entry/src/main/ets/segment/segment3.ets#L2-L23)
 
 ### 避免造成稀疏数组
 
@@ -324,16 +298,14 @@ ESObject主要用于在ArkTS和TS/JS跨语言调用的场景中作为类型标�
 
 【反例】
 
+```screen
+// The following case will become a sparse array
+// 1. Directly allocate an array with a size of 100,000, and the virtual machine processes it as a hash table to store elements
+let count = 100000;
+let result: number[] = new Array(count);
+// 2. After allocating the array, it will become a sparse array directly, initialize at 9999
+result[9999] = 0;
 ```
-1. // The following case will become a sparse array
-2. // 1. Directly allocate an array with a size of 100,000, and the virtual machine processes it as a hash table to store elements
-3. let count = 100000;
-4. let result: number[] = new Array(count);
-5. // 2. After allocating the array, it will become a sparse array directly, initialize at 9999
-6. result[9999] = 0;
-```
-
-[segment.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkTS_high_performance_segment/entry/src/main/ets/segment/segment.ets#L98-L103)
 
 ## 函数声明与使用
 
@@ -341,42 +313,38 @@ ESObject主要用于在ArkTS和TS/JS跨语言调用的场景中作为类型标�
 
 能传递参数的尽量传递参数，不要使用闭包，闭包作为参数会多一次闭包的创建和访问。在普通函数中，修改外部作用域的变量时，建议通过函数的参数传递，因为在直接声明时引用外部作用域的变量，如果没有及时清理，可能有内存泄漏的风险。ArkTS中函数参数是引用类型时，作用于引用类型的修改会进行引用传递，函数内对形参的修改也会作用在实参上。
 
-说明
+**说明** 
 
 建议开发者优先使用[Code Linter代码检查](../harmonyos-guides/ide-code-linter.md)进行代码检查，重点关注[@performance/hp-performance-no-closures](../harmonyos-guides/ide_hp-performance-no-closures.md)规则。若扫描结果中出现该规则相关问题，可参考本章节提供的优化建议进行调整。
 
 【反例】
 
+```screen
+const arr: number[] = [0, 1, 2];
+
+function foo() {
+  arr[0] = 1;
+  // arr keeps the use of external variables
+  return arr[0] + arr[1];
+}
+
+let aFoo = foo;
+aFoo();
 ```
-1. const arr: number[] = [0, 1, 2];
-
-3. function foo() {
-4. arr[0] = 1;
-5. // arr keeps the use of external variables
-6. return arr[0] + arr[1];
-7. }
-
-9. let aFoo = foo;
-10. aFoo();
-```
-
-[segment.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkTS_high_performance_segment/entry/src/main/ets/segment/segment.ets#L108-L117)
 
 【正例】
 
+```screen
+let arr: number[] = [0, 1, 2];
+
+// Change to pass by parameters
+function foo(array: Array<number>): number {
+  array[0] = 1;
+  return array[0] + array[1];
+}
+
+foo(arr);
 ```
-1. let arr: number[] = [0, 1, 2];
-
-3. // Change to pass by parameters
-4. function foo(array: Array<number>): number {
-5. array[0] = 1;
-6. return array[0] + array[1];
-7. }
-
-9. foo(arr);
-```
-
-[segment2.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkTS_high_performance_segment/entry/src/main/ets/segment/segment2.ets#L82-L90)
 
 ## 高性能导入导出写法
 
@@ -384,37 +352,35 @@ ESObject主要用于在ArkTS和TS/JS跨语言调用的场景中作为类型标�
 
 【反例】在使用export导出方法时，开发者会使用export ... from 'xxx' 的写法进行变量间接导出。特别地，会有开发者在Index文件中，加载非直接导出的文件。
 
+```screen
+// main: Hap import har file
+import { one } from '@har/Index';
+
+// har/Index.ets （one level）
+export * from './InnerIndex';
+export * from './Utils';
+export * from './Logs';
+export * from './Service';
+export * from './Common';
+export * from './Feature';
+
+// InnerIndex.ets (two level)
+export * from './ThirdIndex';
+export { two } from 'Temp';
+export * from './Utils';
+export * from './Logs';
+export * from './Service';
+
+// ...more level
+
+// LastIndex.ets (N level)
+export * from './Utils';
+export { three } from 'Temp';
+export * from './Numbers';
+
+// Numbers.ets
+export const one: number = 1;
 ```
-1. // main: Hap import har file
-2. import { one } from '@har/Index';
-
-4. // har/Index.ets （one level）
-5. export * from './InnerIndex';
-6. export * from './Utils';
-7. export * from './Logs';
-8. export * from './Service';
-9. export * from './Common';
-10. export * from './Feature';
-
-12. // InnerIndex.ets (two level)
-13. export * from './ThirdIndex';
-14. export { two } from 'Temp';
-15. export * from './Utils';
-16. export * from './Logs';
-17. export * from './Service';
-
-19. // ...more level
-
-21. // LastIndex.ets (N level)
-22. export * from './Utils';
-23. export { three } from 'Temp';
-24. export * from './Numbers';
-
-26. // Numbers.ets
-27. export const one: number = 1;
-```
-
-[segment6.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkTS_high_performance_segment/entry/src/main/ets/segment/segment6.ets#L4-L30)
 
 Numbers文件导出变量one ，最终在Index.ets中暴露出去，但例子的实际查找过程为： '@har/Index' -> 'InnerIndex' -> ... -> 'LastIndex' -> 'Numbers'，这些中间层的连接查找都是额外耗时。
 
@@ -422,22 +388,20 @@ Numbers文件导出变量one ，最终在Index.ets中暴露出去，但例子的
 
 【正例】去掉多层的间接export，即在Index.ets中直接export \* from './Numbers'。
 
+```screen
+// main: Hap import har file
+import { one } from '@har/Index';
+
+// har/Index.ets
+export * from './Numbers'; // only one level
+
+// Numbers.ets
+export const one: number = 1;
 ```
-1. // main: Hap import har file
-2. import { one } from '@har/Index';
-
-4. // har/Index.ets
-5. export * from './Numbers'; // only one level
-
-7. // Numbers.ets
-8. export const one: number = 1;
-```
-
-[segment6.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkTS_high_performance_segment/entry/src/main/ets/segment/segment6.ets#L34-L41)
 
 此时，实际查找过程为： '@har/Index' -> 'Numbers'。在解析变量导入导出时，ArkTS模块化会进行两步操作：1.通过模块名查找对应的模块；2.在对应模块中查找原始的导出变量。因此，如果中间层增加，会花费更多的时间查找每个模块，增加依赖解析阶段的耗时。
 
-注意
+**注意** 
 
 跳过的中间文件如果有顶层代码等写法，可能会对其他文件的执行产生影响，需修改。具体可参考：[模块加载副作用及优化](../harmonyos-guides-V5/arkts-module-side-effects-V5.md)。
 
@@ -449,23 +413,21 @@ export \*对于开发者而言是非常简便的导出方式，尤其在Index文
 
 【反例】Index.ets中使用“export \* from '../Numbers'”。
 
+```screen
+// main.ets
+import { one } from '@har/Index';
+
+// @har/Index.ets
+export * from './Numbers';
+export * from './Utils';
+export * from './Logs';
+export * from './Service';
+export * from './Common';
+export * from './Feature';
+
+// Numbers.ets
+export const one : number = 1;
 ```
-1. // main.ets
-2. import { one } from '@har/Index';
-
-4. // @har/Index.ets
-5. export * from './Numbers';
-6. export * from './Utils';
-7. export * from './Logs';
-8. export * from './Service';
-9. export * from './Common';
-10. export * from './Feature';
-
-12. // Numbers.ets
-13. export const one : number = 1;
-```
-
-[segment6.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkTS_high_performance_segment/entry/src/main/ets/segment/segment6.ets#L45-L57)
 
 在解析命名空间变量导出时，ArkTS模块化会根据变量名one，去Index文件查找对应的导出名，查找过程为：'main -> @har/Index -> Numbers', 在Numbers中找到导出名为one的变量后，记录这条信息。根据ECMA规范，解析命名空间导出不会在此时退出，而是会返回遍历其他导出，确认不存在非同文件的同名导出，因此，整个查找流程为：'main -> @har/Index -> Numbers -> Utils-> Logs -> Service-> Common -> Feature', 确认没有非同文件的同名导出后，才会判定Numbers的导出是正确的记录。
 
@@ -473,23 +435,21 @@ export \*对于开发者而言是非常简便的导出方式，尤其在Index文
 
 【正例】Index.ets中使用“export { one } from '.../Numbers'”。
 
+```screen
+// main.ets
+import { one } from '@har/Index';
+
+// @har/Index.ets
+export { one }  from '../Numbers';  // use named export
+export * from './Utils';
+export * from './Logs';
+export * from './Service';
+export * from './Common';
+export * from './Feature';
+
+// Numbers.ets
+export const one: number = 1;
 ```
-1. // main.ets
-2. import { one } from '@har/Index';
-
-4. // @har/Index.ets
-5. export { one }  from '../Numbers';  // use named export
-6. export * from './Utils';
-7. export * from './Logs';
-8. export * from './Service';
-9. export * from './Common';
-10. export * from './Feature';
-
-12. // Numbers.ets
-13. export const one: number = 1;
-```
-
-[segment6.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkTS_high_performance_segment/entry/src/main/ets/segment/segment6.ets#L61-L73)
 
 修改为具名导出后，整体查找流程为：'main -> @har/Index -> Numbers'，不再会去继续向下查找，减少耗时。同理，@har/Index.ets文件下其他export \*导出也推荐改用具名导出。
 

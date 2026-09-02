@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-rela
 title: relational_store_error_code.h
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 头文件 > relational_store_error_code.h
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:34+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:759670fe7eb48857e1a27afd8fd816e1d438f8b663e0cb989b2ffc322695e565
+scraped_at: 2026-09-02T15:00:42+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:00626eb275bc2c41ded5cebc27dd6933c8f5108f55973424c1b53719222fe79c
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明关系型数据库（RDB）的错误码信息。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,14 +32,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Rdb\_ErrCode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_Rdb_ErrCode
+```c
+enum OH_Rdb_ErrCode
 ```
 
 **描述**
@@ -62,7 +52,7 @@ PhonePC/2in1TabletTVWearable
 | RDB\_E\_NOT\_SUPPORTED = 801 | RDB不具备该能力。 |
 | RDB\_E\_ERROR = E\_BASE | 常见异常的错误代码。 |
 | RDB\_E\_INVALID\_ARGS = (E\_BASE + 1) | 参数非法。 |
-| RDB\_E\_CANNOT\_UPDATE\_READONLY = (E\_BASE + 2) | 更新只读数据库。 |
+| RDB\_E\_CANNOT\_UPDATE\_READONLY = (E\_BASE + 2) | 无法更新只读数据库。 |
 | RDB\_E\_REMOVE\_FILE = (E\_BASE + 3) | 删除文件失败。 |
 | RDB\_E\_EMPTY\_TABLE\_NAME = (E\_BASE + 5) | 表名为空。 |
 | RDB\_E\_EMPTY\_VALUES\_BUCKET = (E\_BASE + 6) | 键值对内容为空。 |
@@ -83,7 +73,7 @@ PhonePC/2in1TabletTVWearable
 | RDB\_E\_INVALID\_CONFLICT\_FLAG = (E\_BASE + 21) | 冲突解决类型非法。 |
 | RDB\_E\_HAVING\_CLAUSE\_NOT\_IN\_GROUP\_BY = (E\_BASE + 22) | HAVING关键字只能用于GROUP BY之后。 |
 | RDB\_E\_NOT\_SUPPORTED\_BY\_STEP\_RESULT\_SET = (E\_BASE + 23) | 不支持step形式数据库结果集。 |
-| RDB\_E\_STEP\_RESULT\_SET\_CROSS\_THREADS = (E\_BASE + 24) | 结果集查询出错。 |
+| RDB\_E\_STEP\_RESULT\_SET\_CROSS\_THREADS = (E\_BASE + 24) | 跨线程使用结果集查询出错。 |
 | RDB\_E\_STEP\_RESULT\_QUERY\_NOT\_EXECUTED = (E\_BASE + 25) | 结果集查询语句未被执行。 |
 | RDB\_E\_STEP\_RESULT\_IS\_AFTER\_LAST = (E\_BASE + 26) | 结果集的游标已经处于最后一行。 |
 | RDB\_E\_STEP\_RESULT\_QUERY\_EXCEEDED = (E\_BASE + 27) | 结果集查询次数已经超过上限。 |
@@ -109,7 +99,7 @@ PhonePC/2in1TabletTVWearable
 | RDB\_E\_WAL\_SIZE\_OVER\_LIMIT = (E\_BASE + 47) | WAL日志文件大小超过默认值。 |
 | RDB\_E\_CON\_OVER\_LIMIT = (E\_BASE + 48) | 数据库连接数已用完。 |
 | RDB\_E\_ALREADY\_CLOSED = (E\_BASE + 50) | 数据库已关闭。  **起始版本：** 18 |
-| RDB\_E\_DATABASE\_BUSY = (E\_BASE + 51) | 数据库无响应。  **起始版本：** 18 |
+| RDB\_E\_DATABASE\_BUSY = (E\_BASE + 51) | 数据库繁忙。  **起始版本：** 18 |
 | RDB\_E\_SQLITE\_CORRUPT = (E\_BASE + 52) | 数据库损坏。  **起始版本：** 18 |
 | RDB\_E\_SQLITE\_PERM = (E\_BASE + 53) | SQLite错误码：访问权限被拒绝。  **起始版本：** 18 |
 | RDB\_E\_SQLITE\_BUSY = (E\_BASE + 54) | SQLite错误码：数据库文件被锁定。  **起始版本：** 18 |

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-background
 title: 应用运行时进程资源使用规格
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 后台任务开发（Background Tasks） > 应用运行时进程资源使用规格
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:54+08:00
-doc_updated_at: 2026-03-17
+scraped_at: 2026-09-02T15:21:18+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:e8ae8e4bac5a167af42d8d56642e098aaa645b6edc23011d86961c67324fe61b
 ---
 

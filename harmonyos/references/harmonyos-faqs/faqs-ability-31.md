@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-31
 title: 两个UIAbility之间可通过哪些方法实现数据传递
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 两个UIAbility之间可通过哪些方法实现数据传递
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:42+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:16+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:9102c46da7d662b0d6b7ed11391581af91179dcad8ab337051a50a6670f49093
 ---
 

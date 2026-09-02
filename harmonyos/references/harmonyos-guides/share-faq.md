@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-faq
 title: Share Kit常见问题
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > Share Kit常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:05+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-02T15:17:49+08:00
+doc_updated_at: 2026-08-29
 content_hash: sha256:1f7847694bcbe9f7fa5a198727c458534df624f89c01c22bb8069a16fd0d4430
 ---
 

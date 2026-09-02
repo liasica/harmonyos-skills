@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature
 title: 新增和增强特性
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.1(13) > OS平台能力 > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:56+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:7089adc0f60267389647d8749dc1806c18bf75714305f7f8ef7c4f53874ec74d
+scraped_at: 2026-09-02T14:49:25+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:34ab8bffecf60a0237a08eaf6ba70c51e22b2b76b747433c7ae2469d7aba3867
 ---
 
 ## Ability Kit
@@ -80,7 +81,7 @@ Preferences部件提供C API。（[指南](../harmonyos-guides/preferences-guide
 
 ## Map Kit
 
-支持设置地图经纬度范围和4个方向与边界之间的距离。（[API参考](../harmonyos-references/map-map-newlatlngbounds.md#newlatlngbounds-3)）
+支持设置地图经纬度范围和4个方向与边界之间的距离。（[API参考](../harmonyos-references/map-map-functions.md#newlatlngbounds-2)）
 
 ## Media Library Kit
 
@@ -106,7 +107,7 @@ PhotoViewPicker能力增强：
 
 ## Payment Kit
 
-新增数字人民币的接口。（[API参考](../harmonyos-references/payment-digitalcnyservice.md)）
+新增数字人民币的接口。（[API参考](../harmonyos-references/payment-ecnypaymentservice.md)）
 
 ## Remote Communication Kit
 

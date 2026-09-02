@@ -1,8 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-poi-scheme
 title: POI方案
+breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 位置推荐方案 > 开发者测试 > POI方案
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:36+08:00
+scraped_at: 2026-09-02T15:18:00+08:00
 doc_updated_at: 2026-03-09
 content_hash: sha256:4aaa43d388a74df3ef694f2cc759ff906d2024c7db37855da6c8f8215484e73b
 ---

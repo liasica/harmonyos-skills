@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 流量管理错误码
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 错误码 > 流量管理错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:46+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:4f4c1ea3b9b7cbbba790255580b5b1ce6a0d722e45deeb86b047f7a538d9899c
+scraped_at: 2026-09-02T15:01:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e5a676c2675a7e2108162d915677202331817004c080b50e05002eceeaf888ff
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码](errorcode-universal.md)说明文档。
 
 ## 2100001 无效的参数
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -34,8 +32,6 @@ Invalid parameter value.
 
 ## 2100002 连接服务失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to connect to the service.
@@ -50,11 +46,10 @@ Failed to connect to the service.
 
 **处理步骤**
 
-检查系统服务运行状态是否正常。
+1. 检查系统服务运行状态是否正常。
+2. 重启手机后再次尝试。
 
 ## 2100003 系统内部错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -66,19 +61,15 @@ System internal error.
 
 **可能原因**
 
-1.内存异常。
-
-2.空指针。
+1. 内存异常。
+2. 空指针。
 
 **处理步骤**
 
-1.检查内存空间是否充足，清理内存后重试。
-
-2.系统异常，请稍后重试或重启设备。
+1. 检查内存空间是否充足，清理内存后重试。
+2. 系统异常，请稍后重试或重启设备。
 
 ## 2103005 读取系统map失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -98,8 +89,6 @@ Failed to read the system map.
 
 ## 2103011 系统map创建失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to create a system map.
@@ -118,8 +107,6 @@ Failed to create a system map.
 
 ## 2103012 获取网卡名失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to obtain the NIC name.
@@ -130,15 +117,13 @@ Failed to obtain the NIC name.
 
 **可能原因**
 
-本机没有此网卡名。
+网卡名不存在。
 
 **处理步骤**
 
-检查传入的网卡名是否正确。
+检查传入的网卡名是否存在，可通过ifconfig命令查询当前设备的网卡。
 
 ## 2103017 读取数据库失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -157,8 +142,6 @@ Failed to read the database.
 检查本机数据库文件是否被损坏。
 
 ## 2103019 时间戳无效
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 

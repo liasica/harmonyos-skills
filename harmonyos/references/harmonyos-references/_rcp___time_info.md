@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___ti
 title: Rcp_TimeInfo
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > C API > 结构体 > Rcp_TimeInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:10+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:59a4cfc28763b222468423ae99b85ca39590a2ecdd1ef551f9b09ae9f7846f6d
+scraped_at: 2026-09-02T15:01:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c7cdcebfde9a944fe1dc9bb77c2b0771dcc835bcee1f268e4241855f27007ff2
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 响应计时信息。
 
@@ -24,11 +22,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -43,14 +37,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTVWearable
-
 ### connectTime
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. double Rcp_TimeInfo::connectTime
+```cpp
+double Rcp_TimeInfo::connectTime
 ```
 
 **描述**
@@ -59,10 +49,8 @@ PhonePC/2in1TabletTVWearable
 
 ### fileTime
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. double Rcp_TimeInfo::fileTime
+```cpp
+double Rcp_TimeInfo::fileTime
 ```
 
 **描述**
@@ -71,10 +59,8 @@ PhonePC/2in1TabletTVWearable
 
 ### nameLookUpTime
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. double Rcp_TimeInfo::nameLookUpTime
+```cpp
+double Rcp_TimeInfo::nameLookUpTime
 ```
 
 **描述**
@@ -83,10 +69,8 @@ PhonePC/2in1TabletTVWearable
 
 ### preTransferTime
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. double Rcp_TimeInfo::preTransferTime
+```cpp
+double Rcp_TimeInfo::preTransferTime
 ```
 
 **描述**
@@ -95,10 +79,8 @@ PhonePC/2in1TabletTVWearable
 
 ### redirectTime
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. double Rcp_TimeInfo::redirectTime
+```cpp
+double Rcp_TimeInfo::redirectTime
 ```
 
 **描述**
@@ -107,10 +89,8 @@ PhonePC/2in1TabletTVWearable
 
 ### startTransferTime
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. double Rcp_TimeInfo::startTransferTime
+```cpp
+double Rcp_TimeInfo::startTransferTime
 ```
 
 **描述**
@@ -119,10 +99,8 @@ PhonePC/2in1TabletTVWearable
 
 ### tlsHandshakeTime
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. double Rcp_TimeInfo::tlsHandshakeTime
+```cpp
+double Rcp_TimeInfo::tlsHandshakeTime
 ```
 
 **描述**
@@ -131,10 +109,8 @@ PhonePC/2in1TabletTVWearable
 
 ### totalTime
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. double Rcp_TimeInfo::totalTime
+```cpp
+double Rcp_TimeInfo::totalTime
 ```
 
 **描述**

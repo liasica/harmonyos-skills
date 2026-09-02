@@ -3,17 +3,17 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-vers
 title: ohpm version
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm version
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:47:53+08:00
-doc_updated_at: 2026-04-22
-content_hash: sha256:193b5c2c124a2ae730ea02def259ecc4ffd5d34fe4a08541abed5ff6dc43278a
+scraped_at: 2026-09-02T15:00:29+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:67631256d54ad724301f510c6dbf05efe5710952eeae24877bba364335ed68a5
 ---
 
 管理模块版本。
 
 ## 命令格式
 
-```
-1. ohpm version [options] [<newversion> | major | minor | patch]
+```screen
+ohpm version [options] [<newversion> | major | minor | patch]
 ```
 
 ## 功能描述
@@ -28,7 +28,7 @@ content_hash: sha256:193b5c2c124a2ae730ea02def259ecc4ffd5d34fe4a08541abed5ff6dc4
 
 ### newversion
 
-newversion 参数应为一个合法的语义化版本，命令会将当前模块版本改写为 newversion 并打印在标准输出中。
+newversion参数应为一个合法的语义化版本，命令会将当前模块版本改写为newversion并打印在标准输出中。
 
 ### major
 
@@ -60,14 +60,14 @@ newversion 参数应为一个合法的语义化版本，命令会将当前模块
 ### prefix
 
 * 默认值：""
-* 类型： string
+* 类型：string
 
 可以在 version 命令后面配置 --prefix <string> 参数，用来指定包的根目录，该目录下必须存在 oh-package.json5 文件。
 
 ### parameterFile
 
 * 默认值：无
-* 类型： string
+* 类型：string
 * 别名：pf
 
 可以在 version 命令后面配置 --pf <string> 或者 --parameterFile <string> 参数，用来指定参数化配置文件地址。使用该命令前需保证项目级别的oh-package.json5中已配置parameterFile参数。
@@ -75,14 +75,14 @@ newversion 参数应为一个合法的语义化版本，命令会将当前模块
 ### log\_level
 
 * 默认值：无
-* 类型： String
+* 类型：String
 
 从ohpm 6.0.2.636版本开始，可以在 version 命令后配置--log\_level <string>参数，指定执行当前命令的日志级别（info、debug、warn、error），如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
 ### debug
 
 * 默认值：false
-* 类型： Boolean
+* 类型：Boolean
 
 从ohpm 6.0.2.636版本开始，可以在命令后配置--debug参数，指定执行当前命令的日志级别为debug，该配置仅在当前命令行生效，不修改.ohpmrc中的日志级别，如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
@@ -90,30 +90,30 @@ newversion 参数应为一个合法的语义化版本，命令会将当前模块
 
 当前模块为 entry，版本号为 1.0.0，在当前模块的根目录执行：
 
-```
-1. ohpm version
+```screen
+ohpm version
 ```
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/igHp7whlRVauCHdmmIB2dg/zh-cn_image_0000002530752894.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/Cm2vh90STk24u8vejKf8QQ/zh-cn_image_0000002701822810.png "点击放大")
 
 接着执行：
 
-```
-1. ohpm version 1.0.1-beta.1
+```screen
+ohpm version 1.0.1-beta.1
 ```
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/2rqXZhI_StWi3zS9XOXr0g/zh-cn_image_0000002561832815.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/gfrNPO4kTGy3jdGSjwvTzw/zh-cn_image_0000002701662886.png "点击放大")
 
 接着执行：
 
-```
-1. ohpm version major
+```screen
+ohpm version major
 ```
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/7EF6TUTORrqSaH3hJVR24g/zh-cn_image_0000002561832819.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/j0lZHtuqRY-iq9SRf268FQ/zh-cn_image_0000002731382113.png "点击放大")

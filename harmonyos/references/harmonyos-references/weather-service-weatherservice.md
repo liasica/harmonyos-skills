@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/weather-s
 title: weatherService（天气数据服务）
 breadcrumb: API参考 > 应用服务 > Weather Service Kit（天气服务） > ArkTS API > weatherService（天气数据服务）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:47+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:21976ff51519932ea39773d6e09d33c4fcb9214925661e4952848ef5c841497b
+scraped_at: 2026-09-02T14:53:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a1d515111d632832b5338d9365b63849fab9e4a306c21e9874741cf03026408c
 ---
 
 本模块提供天气数据服务。
@@ -14,19 +14,17 @@ content_hash: sha256:21976ff51519932ea39773d6e09d33c4fcb9214925661e4952848ef5c84
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { weatherService } from '@kit.WeatherServiceKit';
+```typescript
+import { weatherService } from '@kit.WeatherServiceKit';
 ```
 
 ## weatherService.getWeather
 
-PhonePC/2in1TabletTVWearable
-
 getWeather(request: WeatherRequest): Promise<Weather>
 
 天气数据获取接口，使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -62,45 +60,45 @@ getWeather(request: WeatherRequest): Promise<Weather>
 
 **示例：**
 
-```
-1. // 引入
-2. import { weatherService } from '@kit.WeatherServiceKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+// 引入
+import { weatherService } from '@kit.WeatherServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. async function getWeatherData() {
-6. // 初始化参数
-7. let request: weatherService.WeatherRequest = {
-8. location: {
-9. latitude: 22.62,
-10. longitude: 114.07
-11. },
-12. // 只请求需要的数据，不设置的话默认请求全量数据
-13. limitedDatasets: [weatherService.Dataset.CURRENT, weatherService.Dataset.ALERTS]
-14. }
+async function getWeatherData() {
+  // 初始化参数
+  let request: weatherService.WeatherRequest = {
+    location: {
+      latitude: 22.62,
+      longitude: 114.07
+    },
+    // 只请求需要的数据，不设置的话默认请求全量数据
+    limitedDatasets: [weatherService.Dataset.CURRENT, weatherService.Dataset.ALERTS]
+  }
 
-16. // 请求及错误处理
-17. try {
-18. let weather = await weatherService.getWeather(request);
-19. if (weather.current) {
-20. console.info('getWeather current temperature: ' + weather.current.temperature);
-21. }
-22. if (weather.alerts?.length) {
-23. console.info('getWeather alert: ' + weather.alerts[0].title);
-24. }
-25. } catch (err) {
-26. err = err as BusinessError;
-27. console.error(`getWeather failed. Code: ${err.code}, message: ${err.message}`);
-28. }
-29. }
+  // 请求及错误处理
+  try {
+    let weather = await weatherService.getWeather(request);
+    if (weather.current) {
+      console.info('getWeather current temperature: ' + weather.current.temperature);
+    }
+    if (weather.alerts?.length) {
+      console.info('getWeather alert: ' + weather.alerts[0].title);
+    }
+  } catch (err) {
+    err = err as BusinessError;
+    console.error(`getWeather failed. Code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ## weatherService.getWeatherWithContext
 
-PhonePC/2in1TabletTVWearable
-
 getWeatherWithContext(context: common.Context, request: WeatherRequest): Promise<Weather>
 
 根据调用方提供的上下文信息获取天气数据，使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.2(14)开始，该接口支持在元服务中使用。
 
@@ -137,56 +135,61 @@ getWeatherWithContext(context: common.Context, request: WeatherRequest): Promise
 
 **示例：**
 
-```
-1. // 引入
-2. import { UIAbility } from '@kit.AbilityKit';
-3. import { weatherService } from '@kit.WeatherServiceKit';
-4. import { common } from '@kit.AbilityKit';
-5. import { BusinessError } from '@kit.BasicServicesKit';
-6. import { taskpool } from '@kit.ArkTS';
+```typescript
+// 引入
+import { UIAbility, common } from '@kit.AbilityKit';
+import { weatherService } from '@kit.WeatherServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { taskpool } from '@kit.ArkTS';
 
-8. @Concurrent
-9. async function getWeatherData(context: common.Context) {
-10. let request: weatherService.WeatherRequest = {
-11. location: {
-12. latitude: 22.62,
-13. longitude: 114.07
-14. },
-15. // 只请求需要的数据，不设置的话默认请求全量数据
-16. limitedDatasets: [weatherService.Dataset.CURRENT, weatherService.Dataset.ALERTS]
-17. }
+@Concurrent
+async function getWeatherData(context: common.Context) {
+  let request: weatherService.WeatherRequest = {
+    location: {
+      latitude: 22.62,
+      longitude: 114.07
+    },
+    // 只请求需要的数据，不设置的话默认请求全量数据
+    limitedDatasets: [weatherService.Dataset.CURRENT, weatherService.Dataset.ALERTS]
+  }
 
-19. // 请求及错误处理
-20. try {
-21. let weather = await weatherService.getWeatherWithContext(context, request);
-22. if (weather.current) {
-23. console.info('getWeatherWithContext current temperature: ' + weather.current.temperature);
-24. }
-25. if (weather.alerts?.length) {
-26. console.info('getWeatherWithContext alert: ' + weather.alerts[0].title);
-27. }
-28. } catch (err) {
-29. err = err as BusinessError;
-30. console.error(`getWeatherWithContext failed. Code: ${err.code}, message: ${err.message}`);
-31. }
-32. }
+  // 请求及错误处理
+  try {
+    let weather = await weatherService.getWeatherWithContext(context, request);
+    if (weather.current) {
+      console.info('getWeatherWithContext current temperature: ' + weather.current.temperature);
+    }
+    if (weather.alerts?.length) {
+      console.info('getWeatherWithContext alert: ' + weather.alerts[0].title);
+    }
+  } catch (err) {
+    err = err as BusinessError;
+    console.error(`getWeatherWithContext failed. Code: ${err.code}, message: ${err.message}`);
+  }
+}
 
-34. function executeGetWeather(context: common.Context) {
-35. taskpool.execute(getWeatherData, context);
-36. }
+async function executeGetWeather(context: common.Context): Promise<void> {
+  try {
+    const task: taskpool.Task = new taskpool.Task(getWeatherData, context);
+    await taskpool.execute(task);
+  } catch (err) {
+    err = err as BusinessError;
+    console.error(`executeGetWeather failed. Code: ${err.code}, message: ${err.message}`);
+  }
+}
 
-38. export default class EntryAbility extends UIAbility {
-39. onCreate(): void {
-40. executeGetWeather(this.context);
-41. }
-42. }
+export default class EntryAbility extends UIAbility {
+  onCreate(): void {
+    executeGetWeather(this.context);
+  }
+}
 ```
 
 ## WeatherRequest
 
-PhonePC/2in1TabletTVWearable
-
 天气数据请求类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -203,9 +206,9 @@ PhonePC/2in1TabletTVWearable
 
 ## Location
 
-PhonePC/2in1TabletTVWearable
-
 位置信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -222,11 +225,9 @@ PhonePC/2in1TabletTVWearable
 
 ## Weather
 
-PhonePC/2in1TabletTVWearable
-
 天气数据类。
 
-**元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Weather.Core
 
@@ -236,24 +237,22 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| current | [CurrentWeather](weather-service-weatherservice.md#currentweather) | 否 | 是 | 实况天气，若设置了limitedDatasets且数组中不包含[Dataset](weather-service-weatherservice.md#dataset).CURRENT，该字段不返回。 |
-| daily | [Forecast](weather-service-weatherservice.md#forecastt)<[DailyWeather](weather-service-weatherservice.md#dailyweather)> | 否 | 是 | 多日预报，若设置了limitedDatasets且数组中不包含[Dataset](weather-service-weatherservice.md#dataset).DAILY，该字段不返回。 |
-| hourly | [Forecast](weather-service-weatherservice.md#forecastt)<[HourlyWeather](weather-service-weatherservice.md#hourlyweather)> | 否 | 是 | 逐小时预报，若设置了limitedDatasets且数组中不包含[Dataset](weather-service-weatherservice.md#dataset).HOURLY，该字段不返回。 |
-| minute | [Forecast](weather-service-weatherservice.md#forecastt)<[MinuteWeather](weather-service-weatherservice.md#minuteweather)> | 否 | 是 | 分钟级降水预报，若设置了limitedDatasets且数组中不包含[Dataset](weather-service-weatherservice.md#dataset).MINUTE，或者该区域短期无降水，该字段不返回。 |
-| alerts | [WeatherAlert](weather-service-weatherservice.md#weatheralert)[] | 否 | 是 | 天气预警，若设置了limitedDatasets且数组中不包含[Dataset](weather-service-weatherservice.md#dataset).ALERTS，或者该区域当前无预警，该字段不返回。 |
-| indices | [WeatherIndex](weather-service-weatherservice.md#weatherindex)[] | 否 | 是 | 天气指数，若设置了limitedDatasets且数组中不包含[Dataset](weather-service-weatherservice.md#dataset).INDICES，该字段不返回。 |
-| tides | [Tide](weather-service-weatherservice.md#tide)[] | 否 | 是 | 潮汐，若设置了limitedDatasets且数组中不包含[Dataset](weather-service-weatherservice.md#dataset).TIDES，或者该区域无潮汐站点，该字段不返回。 |
-| city | [City](weather-service-weatherservice.md#city) | 否 | 是 | 请求经纬度对应的城市信息，若设置了limitedDatasets且数组中不包含[Dataset](weather-service-weatherservice.md#dataset).CITY，该字段不返回。  **元服务API：** 从版本6.1.0(23)开始，该接口支持在元服务中使用。  **起始版本：** 6.1.0(23)  **模型约束：** 此接口仅可在Stage模型下使用。 |
-| metadata | [WeatherMetadata](weather-service-weatherservice.md#weathermetadata) | 否 | 否 | 天气数据元数据。 |
-| attributions | [WeatherAttribution](weather-service-weatherservice.md#weatherattribution)[] | 否 | 否 | 天气数据的归因。 |
+| current | [CurrentWeather](weather-service-weatherservice.md#currentweather) | 否 | 是 | 实况天气，若设置了limitedDatasets且数组中不包含[Dataset](weather-service-weatherservice.md#dataset).CURRENT，该字段不返回。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| daily | [Forecast](weather-service-weatherservice.md#forecastt)<[DailyWeather](weather-service-weatherservice.md#dailyweather)> | 否 | 是 | 多日预报，若设置了limitedDatasets且数组中不包含[Dataset](weather-service-weatherservice.md#dataset).DAILY，该字段不返回。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| hourly | [Forecast](weather-service-weatherservice.md#forecastt)<[HourlyWeather](weather-service-weatherservice.md#hourlyweather)> | 否 | 是 | 逐小时预报，若设置了limitedDatasets且数组中不包含[Dataset](weather-service-weatherservice.md#dataset).HOURLY，该字段不返回。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| minute | [Forecast](weather-service-weatherservice.md#forecastt)<[MinuteWeather](weather-service-weatherservice.md#minuteweather)> | 否 | 是 | 分钟级降水预报，若设置了limitedDatasets且数组中不包含[Dataset](weather-service-weatherservice.md#dataset).MINUTE，或者该区域短期无降水，该字段不返回。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| alerts | [WeatherAlert](weather-service-weatherservice.md#weatheralert)[] | 否 | 是 | 天气预警，若设置了limitedDatasets且数组中不包含[Dataset](weather-service-weatherservice.md#dataset).ALERTS，或者该区域当前无预警，该字段不返回。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| indices | [WeatherIndex](weather-service-weatherservice.md#weatherindex)[] | 否 | 是 | 天气指数，若设置了limitedDatasets且数组中不包含[Dataset](weather-service-weatherservice.md#dataset).INDICES，该字段不返回。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| tides | [Tide](weather-service-weatherservice.md#tide)[] | 否 | 是 | 潮汐，若设置了limitedDatasets且数组中不包含[Dataset](weather-service-weatherservice.md#dataset).TIDES，或者该区域无潮汐站点，该字段不返回。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| city | [City](weather-service-weatherservice.md#city) | 否 | 是 | 请求经纬度对应的城市信息，若设置了limitedDatasets且数组中不包含[Dataset](weather-service-weatherservice.md#dataset).CITY，该字段不返回。  **元服务API：** 从版本6.1.0(23)开始，该接口支持在元服务中使用。  **起始版本：** 6.1.0(23) |
+| metadata | [WeatherMetadata](weather-service-weatherservice.md#weathermetadata) | 否 | 否 | 天气数据元数据。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| attributions | [WeatherAttribution](weather-service-weatherservice.md#weatherattribution)[] | 否 | 否 | 天气数据的归因。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 
 ## CurrentWeather
 
-PhonePC/2in1TabletTVWearable
-
 实况天气数据类。
 
-**元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Weather.Core
 
@@ -263,27 +262,27 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| temperature | number | 否 | 否 | 温度。  单位：℃。 |
-| apparentTemperature | number | 否 | 否 | 体感温度。  单位：℃。 |
-| humidity | number | 否 | 否 | 相对湿度。  例如湿度为30%，本字段返回30。 |
-| pressure | number | 否 | 否 | 地面气压。  单位：hPa。 |
-| pressureTrend | [PressureTrend](weather-service-weatherservice.md#pressuretrend) | 否 | 否 | 气压趋势。 |
-| wind | [Wind](weather-service-weatherservice.md#wind) | 否 | 否 | 风力风向。 |
-| cloudCover | number | 否 | 否 | 云量。  例如云量为30%，本字段返回30。 |
-| condition | [WeatherCondition](weather-service-weatherservice.md#weathercondition) | 否 | 否 | 天气现象。 |
-| uvIndex | [UVIndex](weather-service-weatherservice.md#uvindex) | 否 | 否 | 紫外线指数。 |
-| aqi | [WeatherAqi](weather-service-weatherservice.md#weatheraqi) | 否 | 是 | 空气质量。 |
-| visibility | number | 否 | 否 | 能见度。  单位：km。 |
-| updateTime | Date | 否 | 否 | 数据更新时间，UTC时间格式。 |
-| expirationTime | Date | 否 | 否 | 数据失效时间，UTC时间格式。 |
-| summary | string | 否 | 是 | 实况天气一句话描述。 |
-| alertTitle | string | 否 | 是 | 预警标题。  **元服务API：** 从版本6.1.0(23)开始，该接口支持在元服务中使用。  **起始版本：** 6.1.0(23)  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| temperature | number | 否 | 否 | 温度。  单位：℃。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| apparentTemperature | number | 否 | 否 | 体感温度。  单位：℃。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| humidity | number | 否 | 否 | 相对湿度。  例如湿度为30%，本字段返回30。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| pressure | number | 否 | 否 | 地面气压。  单位：hPa。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| pressureTrend | [PressureTrend](weather-service-weatherservice.md#pressuretrend) | 否 | 否 | 气压趋势。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| wind | [Wind](weather-service-weatherservice.md#wind) | 否 | 否 | 风力风向。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| cloudCover | number | 否 | 否 | 云量。  例如云量为30%，本字段返回30。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| condition | [WeatherCondition](weather-service-weatherservice.md#weathercondition) | 否 | 否 | 天气现象。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| uvIndex | [UVIndex](weather-service-weatherservice.md#uvindex) | 否 | 否 | 紫外线指数。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| aqi | [WeatherAqi](weather-service-weatherservice.md#weatheraqi) | 否 | 是 | 空气质量。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| visibility | number | 否 | 否 | 能见度。  单位：km。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| updateTime | Date | 否 | 否 | 数据更新时间，UTC时间格式。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| expirationTime | Date | 否 | 否 | 数据失效时间，UTC时间格式。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| summary | string | 否 | 是 | 实况天气一句话描述。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| alertTitle | string | 否 | 是 | 预警标题。  **元服务API：** 从版本6.1.0(23)开始，该接口支持在元服务中使用。  **起始版本：** 6.1.0(23) |
 
 ## Forecast<T>
 
-PhonePC/2in1TabletTVWearable
-
 预报类天气集合。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -302,9 +301,9 @@ PhonePC/2in1TabletTVWearable
 
 ## DailyWeather
 
-PhonePC/2in1TabletTVWearable
-
 多日天气数据类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -332,9 +331,9 @@ PhonePC/2in1TabletTVWearable
 
 ## HourlyWeather
 
-PhonePC/2in1TabletTVWearable
-
 小时天气数据类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -353,7 +352,7 @@ PhonePC/2in1TabletTVWearable
 | wind | [Wind](weather-service-weatherservice.md#wind) | 否 | 否 | 风力风向。 |
 | cloudCover | number | 否 | 否 | 云量。  例如云量为30%，本字段返回30。 |
 | condition | [WeatherCondition](weather-service-weatherservice.md#weathercondition) | 否 | 否 | 天气现象。 |
-| uvIndex | [UVIndex](weather-service-weatherservice.md#uvindex) | 否 | 否 | 紫外线等级。 |
+| uvIndex | [UVIndex](weather-service-weatherservice.md#uvindex) | 否 | 否 | 紫外线指数。 |
 | aqi | [WeatherAqi](weather-service-weatherservice.md#weatheraqi) | 否 | 是 | 空气质量。 |
 | visibility | number | 否 | 否 | 能见度。  单位：km。 |
 | precipitationProbability | number | 否 | 否 | 降水概率。 |
@@ -361,9 +360,9 @@ PhonePC/2in1TabletTVWearable
 
 ## MinuteWeather
 
-PhonePC/2in1TabletTVWearable
-
 分钟级降水数据类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -381,9 +380,9 @@ PhonePC/2in1TabletTVWearable
 
 ## WeatherAlert
 
-PhonePC/2in1TabletTVWearable
-
 天气预警信息类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -412,9 +411,9 @@ PhonePC/2in1TabletTVWearable
 
 ## WeatherIndex
 
-PhonePC/2in1TabletTVWearable
-
 天气指数数据类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -434,9 +433,9 @@ PhonePC/2in1TabletTVWearable
 
 ## Tide
 
-PhonePC/2in1TabletTVWearable
-
 潮汐数据类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -455,8 +454,6 @@ PhonePC/2in1TabletTVWearable
 | hourlyTides | [HourlyTide](weather-service-weatherservice.md#hourlytide)[] | 否 | 否 | 小时潮汐数据。 |
 
 ## City
-
-PhonePC/2in1TabletTVWearable
 
 城市信息类。
 
@@ -480,9 +477,9 @@ PhonePC/2in1TabletTVWearable
 
 ## WeatherMetadata
 
-PhonePC/2in1TabletTVWearable
-
 天气元数据类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -500,9 +497,9 @@ PhonePC/2in1TabletTVWearable
 
 ## WeatherAttribution
 
-PhonePC/2in1TabletTVWearable
-
 天气数据归因类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -519,9 +516,9 @@ PhonePC/2in1TabletTVWearable
 
 ## Wind
 
-PhonePC/2in1TabletTVWearable
-
 风力风向数据类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -542,9 +539,9 @@ PhonePC/2in1TabletTVWearable
 
 ## WeatherCondition
 
-PhonePC/2in1TabletTVWearable
-
 天气现象数据类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -562,9 +559,9 @@ PhonePC/2in1TabletTVWearable
 
 ## UVIndex
 
-PhonePC/2in1TabletTVWearable
-
 紫外线指数数据类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -582,9 +579,9 @@ PhonePC/2in1TabletTVWearable
 
 ## WeatherAqi
 
-PhonePC/2in1TabletTVWearable
-
 空气质量数据类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -608,9 +605,9 @@ PhonePC/2in1TabletTVWearable
 
 ## MoonEvents
 
-PhonePC/2in1TabletTVWearable
-
 月出/月落时间，月相等信息类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -630,9 +627,9 @@ PhonePC/2in1TabletTVWearable
 
 ## MoonPhase
 
-PhonePC/2in1TabletTVWearable
-
 月相信息类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -650,9 +647,9 @@ PhonePC/2in1TabletTVWearable
 
 ## SunEvents
 
-PhonePC/2in1TabletTVWearable
-
 日出/日落信息类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -669,9 +666,9 @@ PhonePC/2in1TabletTVWearable
 
 ## DayPartForecast
 
-PhonePC/2in1TabletTVWearable
-
 全天部分时段天气信息类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -696,9 +693,9 @@ PhonePC/2in1TabletTVWearable
 
 ## DailyIndex
 
-PhonePC/2in1TabletTVWearable
-
 每天天气指数数据类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -717,9 +714,9 @@ PhonePC/2in1TabletTVWearable
 
 ## HourlyTide
 
-PhonePC/2in1TabletTVWearable
-
 小时潮汐数据类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -736,8 +733,6 @@ PhonePC/2in1TabletTVWearable
 | height | number | 否 | 否 | 潮汐高度。  单位：cm。 |
 
 ## AdministrativeArea
-
-PhonePC/2in1TabletTVWearable
 
 行政区域信息类。
 
@@ -758,11 +753,9 @@ PhonePC/2in1TabletTVWearable
 
 ## Dataset
 
-PhonePC/2in1TabletTVWearable
-
 数据集枚举。
 
-**元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Weather.Core
 
@@ -772,20 +765,20 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| CURRENT | 0 | 实况天气。 |
-| DAILY | 1 | 多日预报。 |
-| HOURLY | 2 | 逐小时预报。 |
-| MINUTE | 3 | 分钟级降水预报。 |
-| ALERTS | 4 | 天气预警。 |
-| INDICES | 5 | 天气指数。 |
-| TIDES | 6 | 潮汐。 |
-| CITY | 7 | 城市信息。  **元服务API：** 从版本6.1.0(23)开始，该接口支持在元服务中使用。  **起始版本：** 6.1.0(23)  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| CURRENT | 0 | 实况天气。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| DAILY | 1 | 多日预报。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| HOURLY | 2 | 逐小时预报。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| MINUTE | 3 | 分钟级降水预报。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| ALERTS | 4 | 天气预警。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| INDICES | 5 | 天气指数。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| TIDES | 6 | 潮汐。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| CITY | 7 | 城市信息。  **元服务API：** 从版本6.1.0(23)开始，该接口支持在元服务中使用。  **起始版本：** 6.1.0(23) |
 
 ## PressureTrend
 
-PhonePC/2in1TabletTVWearable
-
 气压趋势枚举。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -804,9 +797,9 @@ PhonePC/2in1TabletTVWearable
 
 ## ConditionType
 
-PhonePC/2in1TabletTVWearable
-
 天气现象类型枚举。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -894,9 +887,9 @@ PhonePC/2in1TabletTVWearable
 
 ## CompassDirection
 
-PhonePC/2in1TabletTVWearable
-
 指针方向枚举。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -920,9 +913,9 @@ PhonePC/2in1TabletTVWearable
 
 ## ExposureCategory
 
-PhonePC/2in1TabletTVWearable
-
 紫外线暴露程度枚举。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -943,9 +936,9 @@ PhonePC/2in1TabletTVWearable
 
 ## MoonPhaseType
 
-PhonePC/2in1TabletTVWearable
-
 月相类别枚举。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -959,7 +952,7 @@ PhonePC/2in1TabletTVWearable
 | --- | --- | --- |
 | UNDEFINED | 0 | 未定义。 |
 | NEW | 1 | 新月。 |
-| WAXING\_CRESCENT | 2 | 娥眉月。 |
+| WAXING\_CRESCENT | 2 | 蛾眉月。 |
 | FIRST\_QUARTER | 3 | 上弦月。 |
 | WAXING\_GIBBOUS | 4 | 盈凸月。 |
 | FULL | 5 | 满月。 |
@@ -969,9 +962,9 @@ PhonePC/2in1TabletTVWearable
 
 ## Precipitation
 
-PhonePC/2in1TabletTVWearable
-
 降水类型枚举。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -991,9 +984,9 @@ PhonePC/2in1TabletTVWearable
 
 ## AlertLevel
 
-PhonePC/2in1TabletTVWearable
-
 预警级别枚举。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -1015,9 +1008,9 @@ PhonePC/2in1TabletTVWearable
 
 ## AlertType
 
-PhonePC/2in1TabletTVWearable
-
 预警类型枚举。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -1030,7 +1023,7 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | TYPHOON | 1 | 台风。 |
-| RAIN\_STORM | 2 | 暴雨 |
+| RAIN\_STORM | 2 | 暴雨。 |
 | SNOW\_STORM | 3 | 暴雪。 |
 | COLD\_WAVE | 4 | 寒潮。 |
 | GALE | 5 | 大风。 |
@@ -1083,9 +1076,9 @@ PhonePC/2in1TabletTVWearable
 
 ## AqiCategory
 
-PhonePC/2in1TabletTVWearable
-
 空气质量类别枚举。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -1107,9 +1100,9 @@ PhonePC/2in1TabletTVWearable
 
 ## WeatherIndexType
 
-PhonePC/2in1TabletTVWearable
-
 天气指数类型枚举。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -1136,9 +1129,9 @@ PhonePC/2in1TabletTVWearable
 
 ## TideCategory
 
-PhonePC/2in1TabletTVWearable
-
 潮汐类别枚举。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 

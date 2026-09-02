@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/preferences-d
 title: preferences数据库调试工具指导
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > arkdata数据库调试工具 > preferences数据库调试工具指导
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:23+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3f93103783d2e07469ffd15ab10f9c6ca1faefa77db33a958872929ef187f152
+scraped_at: 2026-09-02T14:59:12+08:00
+doc_updated_at: 2026-06-13
+content_hash: sha256:3beaac7a3a354dccd386396759f85ddeb1963ad244b6a93410c0403ad2978a27
 ---
 
 当前开发者在使用preferences数据库进行开发调试和定位问题时，无法查看数据库文件中的内容信息，如元数据和用户数据等。
@@ -14,7 +14,7 @@ content_hash: sha256:3f93103783d2e07469ffd15ab10f9c6ca1faefa77db33a958872929ef18
 
 其中，preference\_kv数据库对应的首选项存储模式为[GSKV存储模式](data-persistence-by-preferences.md#gskv存储)；preference\_xml数据库对应的首选项存储模式为[XML存储模式](data-persistence-by-preferences.md#xml存储)。
 
-说明
+**说明** 
 
 从HarmonyOS 6.0.0版本开始，支持使用preferences数据库调试工具。
 
@@ -38,63 +38,63 @@ content_hash: sha256:3f93103783d2e07469ffd15ab10f9c6ca1faefa77db33a958872929ef18
   | -c | 整型 | 数据库cacheSize，数据库开库配置参数，即bufferPoolSize，代表内存缓存池大小， 默认值2048，可取值为2048和4096。 |
   | -h | 不涉及 | 打印程序帮助信息。 |
 
-  说明
+  **说明** 
 
   preferences数据库调试工具-p和-c两个参数无效，数据库pagesize和cachesize，输入限定范围内的值时，直接使用默认值，默认值为32和2048，输入限定范围外的值时会报错。
 
-  ```
-  1. C:\Users\*****>hdc shell
-  2. $ cd /data/app/el1/100/base/com.test.myapplication   // 进入到目标调试应用路径下(当前路径为示例,开发者需自己获取调试应用路径)
-  3. $ arkdata -t preference_kv                           // 缺省-f, 没有指定数据库文件，默认新建一个名字为arkdata的数据库，路径在当前工作目录的data/preference_kv目录下.
-  4. Enter ".help" for usage hints.
+  ```txt
+  C:\Users\*****>hdc shell
+  $ cd /data/app/el1/100/base/com.test.myapplication   // 进入到目标调试应用路径下(当前路径为示例,开发者需自己获取调试应用路径)
+  $ arkdata -t preference_kv                           // 缺省-f, 没有指定数据库文件，默认新建一个名字为arkdata的数据库，路径在当前工作目录的data/preference_kv目录下.
+  Enter ".help" for usage hints.
   ```
 
   在非调试应用路径下，执行数据库开库操作时，缺少-f默认创建文件夹，在当前目录下创建data/preference\_kv文件夹层级失败，具体报错如下：
 
-  ```
-  1. C:\Users\*****>hdc shell
-  2. $ arkdata -t preference_kv
-  3. [unsucc]Failed to create directory ./data/preference_kv : Permission denied
+  ```txt
+  C:\Users\*****>hdc shell
+  $ arkdata -t preference_kv
+  [unsucc]Failed to create directory ./data/preference_kv : Permission denied
   ```
 
   在非调试应用路径下，执行数据库开库操作时，指定路径，db文件创建失败，具体报错如下：
 
-  ```
-  1. C:\Users\*****>hdc shell
-  2. $ arkdata -t preference_kv -f ./preference_kv
-  3. [GMDB SERVER] [GMERR-1013000] multi-process init init unsucc!
-  4. [ERROR] open db fail, ret = -5000.
+  ```txt
+  C:\Users\*****>hdc shell
+  $ arkdata -t preference_kv -f ./preference_kv
+  [GMDB SERVER] [GMERR-1013000] multi-process init init unsucc!
+  [ERROR] open db fail, ret = -5000.
   ```
 
   preference\_xml和preference\_kv数据库同名不能交叉读写操作，不能混用，preference\_kv打开preference\_xml数据库会报错，preference\_xml打开preference\_kv数据库会损坏，具体报错如下：
 
-  ```
-  1. $ ls ./data/preference_kv
-  2. arkdata       arkdata.ctrl.dwr  arkdata.redo  arkdata.undo
-  3. arkdata.ctrl  arkdata.map       arkdata.safe
-  4. $ ls ./data/preference_xml/
-  5. arkdata  arkdata.lock
-  6. $ arkdata -t preference_kv -f ./data/preference_xml/arkdata
-  7. [GMDB SERVER] [GMERR-1019003] open-mode check init unsucc!
-  8. [unsucc] open db fail, ret = -43000
-  9. $ arkdata -t preference_xml -f ./data/preference_kv/arkdata
-  10. Enter ".help" for usage hints.
-  11. preference_xml>>> /data/temp/./data/preference_kv/arkdata:1: parser error : Start tag expected, '<' not found
-  12. ^
+  ```txt
+  $ ls ./data/preference_kv
+  arkdata       arkdata.ctrl.dwr  arkdata.redo  arkdata.undo
+  arkdata.ctrl  arkdata.map       arkdata.safe
+  $ ls ./data/preference_xml/
+  arkdata  arkdata.lock
+  $ arkdata -t preference_kv -f ./data/preference_xml/arkdata
+  [GMDB SERVER] [GMERR-1019003] open-mode check init unsucc!
+  [unsucc] open db fail, ret = -43000
+  $ arkdata -t preference_xml -f ./data/preference_kv/arkdata
+  Enter ".help" for usage hints.
+  preference_xml>>> /data/temp/./data/preference_kv/arkdata:1: parser error : Start tag expected, '<' not found
+  ^
   ```
 * 可使用arkdata --help查看整个数据库的相关参数。
 
-  ```
-  1. C:\Users\*****>hdc shell
-  2. $ arkdata --help
-  3. USAGE
-  4. arkdata [option]
-  5. OPTION
-  6. -t|--type      <preference_kv | preference_xml | vector>, it is mandatory
-  7. -f|--file      <database file path>
-  8. -p|--pageSize  <database pageSize>
-  9. -c|--cacheSize <database cacheSize>
-  10. -h|--help
+  ```txt
+  C:\Users\*****>hdc shell
+  $ arkdata --help
+  USAGE
+    arkdata [option]
+  OPTION
+    -t|--type      <preference_kv | preference_xml | vector>, it is mandatory
+    -f|--file      <database file path> 
+    -p|--pageSize  <database pageSize>  
+    -c|--cacheSize <database cacheSize>
+    -h|--help
   ```
 
 ## 命令列表
@@ -124,128 +124,128 @@ preference\_kv和preference\_xml调试工具支持的命令如下表所示：
 
 打开preference\_kv或者preference\_xml数据库后，使用帮助命令可以查看其支持的命令。
 
-```
-1. preference_kv>>> .help
+```txt
+preference_kv>>> .help
 ```
 
-```
-1. preference_xml>>> .help
+```txt
+preference_xml>>> .help
 ```
 
 ### 创建或打开已有的数据库
 
 1. 执行hdc shell命令进入shell交互模式。
-2. 必须要先切换至目标调试应用路径下，再进入存在db文件的路径下，执行"arkdata -t preference\_kv -f perfdata"或者"arkdata -t preference\_xml -f perfdata"新建一个数据库。
+2. 必须要先切换至目标调试应用路径下，再进入存在db文件的路径下，执行"arkdata -t preference\_kv"(-f 缺省)或者"arkdata -t preference\_xml"(-f 缺省)新建一个数据库。
 
-   ```
-   1. C:\Users\*****>hdc shell
-   2. $ cd /data/app/el1/100/database/com.test.myapplication   // 进入到目标调试应用路径下.(当前路径为示例,开发者需自己获取调试应用路径)
-   3. $ cd entry/rdb/                                          // 需要进入到有db文件的路径下,保证有读写权限,才能有权限创建新数据库.
-   4. $ arkdata -t preference_kv
-   5. Enter ".help" for usage hints.
-   6. preference_kv>>>.q
-   7. $ arkdata -t preference_xml
-   8. Enter ".help" for usage hints.
-   9. preference_xml>>> put key:1                               // preference_xml需要put一条数据,内部才会触发创建数据库文件.
-   10. ...>>> value:1
-   11. preference_xml>>> .q
+   ```txt
+   C:\Users\*****>hdc shell
+   $ cd /data/app/el1/100/database/com.test.myapplication   // 进入到目标调试应用路径下.(当前路径为示例,开发者需自己获取调试应用路径)
+   $ cd entry/rdb/                                          // 需要进入到有db文件的路径下,保证有读写权限,才能有权限创建新数据库.
+   $ arkdata -t preference_kv
+   Enter ".help" for usage hints.
+   preference_kv>>>.q
+   $ arkdata -t preference_xml
+   Enter ".help" for usage hints.
+   preference_xml>>> put key:1                               // preference_xml需要put一条数据,内部才会触发创建数据库文件.
+    ...>>> value:1
+   preference_xml>>> .q
    ```
 3. 创建新的数据库时，系统会自动生成以下类型的文件， 标签debug\_hap\_data\_file代表属于调试应用。
 
-   ```
-   1. $ ls -lZ ./data/preference_kv/
-   2. total 148
-   3. -rw-rw---- 1 shell shell u:object_r:debug_hap_data_file:s0  73728 2025-08-12 20:31 arkdata
-   4. -rw-rw---- 1 shell shell u:object_r:debug_hap_data_file:s0   4112 2025-08-12 20:31 arkdata.ctrl
-   5. -rw-rw---- 1 shell shell u:object_r:debug_hap_data_file:s0  12304 2025-08-12 20:31 arkdata.ctrl.dwr
-   6. -rw-rw---- 1 shell shell u:object_r:debug_hap_data_file:s0      0 2025-08-12 20:31 arkdata.map
-   7. -rw-rw---- 1 shell shell u:object_r:debug_hap_data_file:s0    512 2025-08-12 20:31 arkdata.redo
-   8. -rw-rw---- 1 shell shell u:object_r:debug_hap_data_file:s0      8 2025-08-12 20:31 arkdata.safe
-   9. -rw-rw---- 1 shell shell u:object_r:debug_hap_data_file:s0  16384 2025-08-12 20:31 arkdata.undo
+   ```txt
+   $ ls -lZ ./data/preference_kv/
+   total 148
+   -rw-rw---- 1 shell shell u:object_r:debug_hap_data_file:s0  73728 2025-08-12 20:31 arkdata
+   -rw-rw---- 1 shell shell u:object_r:debug_hap_data_file:s0   4112 2025-08-12 20:31 arkdata.ctrl
+   -rw-rw---- 1 shell shell u:object_r:debug_hap_data_file:s0  12304 2025-08-12 20:31 arkdata.ctrl.dwr
+   -rw-rw---- 1 shell shell u:object_r:debug_hap_data_file:s0      0 2025-08-12 20:31 arkdata.map
+   -rw-rw---- 1 shell shell u:object_r:debug_hap_data_file:s0    512 2025-08-12 20:31 arkdata.redo
+   -rw-rw---- 1 shell shell u:object_r:debug_hap_data_file:s0      8 2025-08-12 20:31 arkdata.safe
+   -rw-rw---- 1 shell shell u:object_r:debug_hap_data_file:s0  16384 2025-08-12 20:31 arkdata.undo
 
-   11. $ ls -lZ ./data/preference_xml/
-   12. total 12
-   13. -rw-rw---- 1 root ddms u:object_r:debug_hap_data_file:s0  105 2025-09-05 15:11 arkdata
-   14. -rw-rw---- 1 root ddms u:object_r:debug_hap_data_file:s0    0 2025-09-05 15:11 arkdata.lock
+   $ ls -lZ ./data/preference_xml/
+   total 12
+   -rw-rw---- 1 root ddms u:object_r:debug_hap_data_file:s0  105 2025-09-05 15:11 arkdata
+   -rw-rw---- 1 root ddms u:object_r:debug_hap_data_file:s0    0 2025-09-05 15:11 arkdata.lock
    ```
 4. 打开已有数据库。
 
-   ```
-   1. $ arkdata -t preference_kv -f ./data/preference_kv/arkdata
-   2. Enter ".help" for usage hints.
-   3. preference_kv>>>
+   ```txt
+   $ arkdata -t preference_kv -f ./data/preference_kv/arkdata
+   Enter ".help" for usage hints.
+   preference_kv>>>
    ```
 
 ### 插入数据
 
 在preference\_kv>>>提示符下，可通过put命令插入指定键值对，显示结果如下：
 
-```
-1. preference_kv>>> put key:name
-2. ...>>> value:123
-3. preference_kv>>> put key:id_name
-4. ...>>> value:'123'
-5. preference_kv>>> get key:name   // 不带引号结果
-6. type int: 123
-7. preference_kv>>> get key:id_name   // 带引号结果
-8. type string: 123
+```txt
+preference_kv>>> put key:name
+ ...>>> value:123
+preference_kv>>> put key:id_name
+ ...>>> value:'123'
+preference_kv>>> get key:name   // 不带引号结果
+type int: 123
+preference_kv>>> get key:id_name   // 带引号结果
+type string: 123
 ```
 
 ### 全表查询
 
 * 在preference\_xml>>>提示符下，可通过scan命令全表查询，显示结果如下：
 
-  ```
-  1. preference_xml>>> scan
-  2. ==========================PREFERENCES XML INFO============================
-  3. DataCount:7
-  4. ==========================PREFERENCES XML DATA============================
-  5. ==========================Data Index:1==========================
-  6. key:
-  7. 1
-  8. value:
-  9. type int: 1
-  10. ==========================Data Index:2==========================
-  11. key:
-  12. 2
-  13. value:
-  14. type int: 2
-  15. ==========================Data Index:3==========================
-  16. key:
-  17. 3
-  18. value:
-  19. type int: 3
-  20. ==========================Data Index:4==========================
-  21. key:
-  22. 4
-  23. value:
-  24. type int: 4
-  25. ==========================Data Index:5==========================
-  26. key:
-  27. 5
-  28. value:
-  29. type int: 5
-  30. Press 'q' to quit, 'n' to continue: n
-  31. ==========================Data Index:6==========================
-  32. key:
-  33. 6
-  34. value:
-  35. type int: 6
-  36. ==========================Data Index:7==========================
-  37. key:
-  38. 7
-  39. value:
-  40. type int: 7
-  41. preference_xml>>>
+  ```txt
+  preference_xml>>> scan
+  ==========================PREFERENCES XML INFO============================
+  DataCount:7
+  ==========================PREFERENCES XML DATA============================
+  ==========================Data Index:1==========================
+  key:
+  1
+  value:
+  type int: 1
+  ==========================Data Index:2==========================
+  key:
+  2
+  value:
+  type int: 2
+  ==========================Data Index:3==========================
+  key:
+  3
+  value:
+  type int: 3
+  ==========================Data Index:4==========================
+  key:
+  4
+  value:
+  type int: 4
+  ==========================Data Index:5==========================
+  key:
+  5
+  value:
+  type int: 5
+  Press 'q' to quit, 'n' to continue: n
+  ==========================Data Index:6==========================
+  key:
+  6
+  value:
+  type int: 6
+  ==========================Data Index:7==========================
+  key:
+  7
+  value:
+  type int: 7
+  preference_xml>>>
   ```
 * preference\_kv不支持全表扫描，显示结果如下：
 
-  ```
-  1. preference_kv>>> scan
-  2. [unsucc] Unable to parse command.
+  ```txt
+  preference_kv>>> scan
+  [unsucc] Unable to parse command.
   ```
 
-说明
+**说明** 
 
 当显示数据条目达到5条时，为提升阅读体验，系统将提示用户是否继续显示或退出。输入q键退出显示，输入n继续显示结果。
 
@@ -253,78 +253,78 @@ preference\_kv和preference\_xml调试工具支持的命令如下表所示：
 
 在preference\_kv>>>提示符下，可通过get命令指定key查询指定键值对，显示结果如下：
 
-```
-1. preference_kv>>> get key:name
-2. No data for key = name  // 表示没有值
+```txt
+preference_kv>>> get key:name
+ No data for key = name  // 表示没有值
 ```
 
 带引号与不带引号查询的值不同，显示结果如下：
 
-```
-1. preference_kv>>> put key:name
-2. ...>>> value:123
-3. preference_kv>>> put key:id_name
-4. ...>>> value:'123'
-5. preference_kv>>> put key:name
-6. ...>>> value:true
-7. preference_kv>>> put key:name1
-8. ...>>> value:'true'
-9. preference_kv>>> get key:name      // 数字不带引号结果
-10. type int: 123
-11. preference_kv>>> get key:id_name   // 数字带引号结果
-12. type string: 123
-13. preference_kv>>> get key:name      // true不带引号结果
-14. type bool: 1
-15. preference_kv>>> get key:name1     // true带引号结果
-16. type string: true
+```txt
+preference_kv>>> put key:name1
+ ...>>> value:123
+preference_kv>>> put key:name2
+ ...>>> value:'123'
+preference_kv>>> put key:name3
+ ...>>> value:true
+preference_kv>>> put key:name4
+ ...>>> value:'true'
+preference_kv>>> get key:name1      // 数字不带引号结果
+type int: 123
+preference_kv>>> get key:name2      // 数字带引号结果
+type string: 123
+preference_kv>>> get key:name3      // true不带引号结果
+type bool: 1
+preference_kv>>> get key:name4      // true带引号结果
+type string: true
 ```
 
 ### 更新数据
 
 在preference\_kv>>>提示符下，当key值存在时， 可通过put命令更新键值对，显示结果如下：
 
-```
-1. preference_kv>>> put key:name
-2. ...>>> value:x
-3. preference_kv>>> get key:name
-4. type string: x
-5. preference_kv>>> put key:name
-6. ...>>> value:y
-7. preference_kv>>> get key:name
-8. type string: y
+```txt
+preference_kv>>> put key:name
+ ...>>> value:x
+preference_kv>>> get key:name
+type string: x
+preference_kv>>> put key:name
+ ...>>> value:y
+preference_kv>>> get key:name
+type string: y
 ```
 
 ### 删除数据
 
 在preference\_kv>>>提示符下，可通过delete命令删除指定键值对，显示结果如下：
 
-```
-1. preference_kv>>> get key:name
-2. type string: y
-3. preference_kv>>> delete key:name
-4. preference_kv>>> get key:name
-5. No data for key = key:name
+```txt
+preference_kv>>> get key:name
+type string: y
+preference_kv>>> delete key:name
+preference_kv>>> get key:name
+ No data for key = name
 ```
 
 delete命令不指定键值对全表删除，显示结果如下：
 
-```
-1. preference_kv>>> get key:name
-2. type int: xx
-3. preference_kv>>> get key:id_name
-4. type int: yy
-5. preference_kv>>> delete
-6. preference_kv>>> get key:name
-7. No data for key = name
-8. preference_kv>>> get key:id_name
-9. No data for key = id_name
+```txt
+preference_kv>>> get key:name
+type int: xx
+preference_kv>>> get key:id_name
+type int: yy
+preference_kv>>> delete
+preference_kv>>> get key:name
+ No data for key = name
+preference_kv>>> get key:id_name
+ No data for key = id_name
 ```
 
 在preference\_kv>>>提示符下，可以使用 .q或者.quit命令退出数据库交互模式，显示结果如下：
 
-```
-1. preference_kv>>>.q
-2. $
+```txt
+preference_kv>>>.q
+$
 ```
 
 ## 模拟器支持情况

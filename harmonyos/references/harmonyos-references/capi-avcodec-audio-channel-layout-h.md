@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avco
 title: avcodec_audio_channel_layout.h
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 已停止维护的接口 > 头文件 > avcodec_audio_channel_layout.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:13+08:00
-doc_updated_at: 2026-03-19
-content_hash: sha256:6a88cf27451cd6a2b4fc82b8356e91ffdf3f5040beef42dc531dc7cdea72bdef
+scraped_at: 2026-09-02T15:02:23+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8d2db4af1f8435d810df7859351d505f52e10b98e119cfb7c273e4117d02d2ca
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 音频编解码声道布局枚举的声明。
 
@@ -28,32 +26,24 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
-| [AudioChannelSet](capi-avcodec-audio-channel-layout-h.md#audiochannelset) | 音频声道数集合，将每一个声道数映射为int64的变量。(API11废弃) |
-| [AudioChannelLayout](capi-avcodec-audio-channel-layout-h.md#audiochannellayout) | 音频声道数类型，将用户申请的解码器输出格式表示为编解码器的声道类型。(API11废弃) |
+| [AudioChannelSet](capi-avcodec-audio-channel-layout-h.md#audiochannelset) | 音频声道数集合，将每一个声道数映射为uint64\_t的变量。(API11废弃) |
+| [AudioChannelLayout](capi-avcodec-audio-channel-layout-h.md#audiochannellayout) | 音频声道布局类型，将用户申请的解码器输出格式表示为编解码器的声道布局类型。(API11废弃) |
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### AudioChannelSet
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum AudioChannelSet : uint64_t
+```c
+enum AudioChannelSet : uint64_t
 ```
 
 **描述**
 
-音频声道数集合，将每一个声道数映射为int64的变量。
+音频声道数集合，将每一个声道数映射为uint64\_t的变量。
 
 **系统能力：** SystemCapability.Multimedia.Media.CodecBase
 
@@ -118,15 +108,13 @@ PhonePC/2in1TabletTVWearable
 
 ### AudioChannelLayout
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum AudioChannelLayout : uint64_t
+```c
+enum AudioChannelLayout : uint64_t
 ```
 
 **描述**
 
-音频声道数类型，将用户申请的解码器输出格式表示为编解码器的声道类型。
+音频声道布局类型，将用户申请的解码器输出格式表示为编解码器的声道布局类型。
 
 **系统能力：** SystemCapability.Multimedia.Media.CodecBase
 
@@ -138,8 +126,8 @@ PhonePC/2in1TabletTVWearable
 
 | 枚举项 | 描述 |
 | --- | --- |
-| UNKNOWN\_CHANNEL\_LAYOUT = 0 | 未知通道布局。 |
-| MONO = (AudioChannelSet::FRONT\_CENTER) | 单通道布局。 |
+| UNKNOWN\_CHANNEL\_LAYOUT = 0 | 未知声道布局。 |
+| MONO = (AudioChannelSet::FRONT\_CENTER) | 单声道布局。 |
 | STEREO = (AudioChannelSet::FRONT\_LEFT | AudioChannelSet::FRONT\_RIGHT) | 立体声布局。 |
 | CH\_2POINT1 = (STEREO | AudioChannelSet::LOW\_FREQUENCY) | 2.1布局。 |
 | CH\_2\_1 = (STEREO | AudioChannelSet::BACK\_CENTER) | 2\_1布局。 |
@@ -163,7 +151,7 @@ PhonePC/2in1TabletTVWearable
 | CH\_7POINT0\_FRONT = (CH\_5POINT0 | AudioChannelSet::FRONT\_LEFT\_OF\_CENTER | AudioChannelSet::FRONT\_RIGHT\_OF\_CENTER) | 7.0前置布局。 |
 | CH\_7POINT1 = (CH\_5POINT1 | AudioChannelSet::BACK\_LEFT | AudioChannelSet::BACK\_RIGHT) | 7.1布局。 |
 | CH\_7POINT1\_WIDE = (CH\_5POINT1 | AudioChannelSet::FRONT\_LEFT\_OF\_CENTER | AudioChannelSet::FRONT\_RIGHT\_OF\_CENTER) | 7.1宽布局。 |
-| CH\_7POINT1\_WIDE\_BACK = | 7.1后置宽布局。 |
+| CH\_7POINT1\_WIDE\_BACK = (CH\_5POINT1\_BACK | AudioChannelSet::FRONT\_LEFT\_OF\_CENTER | AudioChannelSet::FRONT\_RIGHT\_OF\_CENTER) | 7.1后置宽布局。 |
 | CH\_3POINT1POINT2 = (CH\_3POINT1 | AudioChannelSet::TOP\_FRONT\_LEFT | AudioChannelSet::TOP\_FRONT\_RIGHT) | 3.1.2布局。 |
 | CH\_5POINT1POINT2 = (CH\_5POINT1 | AudioChannelSet::TOP\_SIDE\_LEFT | AudioChannelSet::TOP\_SIDE\_RIGHT) | 5.1.2布局。 |
 | (CH\_5POINT1 | AudioChannelSet::TOP\_FRONT\_LEFT | AudioChannelSet::TOP\_FRONT\_RIGHT |AudioChannelSet::TOP\_BACK\_LEFT | AudioChannelSet::TOP\_BACK\_RIGHT) | 5.1.4布局。 |

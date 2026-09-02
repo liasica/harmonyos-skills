@@ -3,30 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.wantAgent (WantAgent模块)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.app.ability.wantAgent (WantAgent模块)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:48:46+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:62b1abe1fee77441d1d6e0d7ef33547c5932ad6a121b95db32c198b6175c8a0d
+scraped_at: 2026-09-02T15:00:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:fbee5575b299acd06e3f8cce3fa0083b63ffc73a9244123ed1083ec37ea4c391
 ---
 
 WantAgent模块封装了[Want](js-apis-app-ability-want.md)对象，允许应用程序在未来的某个时间点触发WantAgent实例执行指定操作（如启动Ability、发送公共事件等）。
 
 该模块提供了创建WantAgent实例、获取WantAgent实例所属应用的包名、获取WantAgent实例所属应用的UID、主动触发WantAgent实例、判断两个WantAgent实例是否相等等功能。WantAgent的一个典型应用场景是通知处理。例如，当用户点击通知时，会触发WantAgent的[trigger](js-apis-app-ability-wantagent.md#wantagenttrigger)接口，并拉起目标应用。具体使用请参考[通知模块](../harmonyos-guides/notification-with-wantagent.md)。
 
-说明
+**说明** 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { wantAgent } from '@kit.AbilityKit';
+```ts
+import { wantAgent } from '@kit.AbilityKit';
 ```
 
 ## wantAgent.getWantAgent
-
-PhonePC/2in1TabletTVWearable
 
 getWantAgent(info: WantAgentInfo, callback: AsyncCallback<WantAgent>): void
 
@@ -55,64 +51,63 @@ getWantAgent(info: WantAgentInfo, callback: AsyncCallback<WantAgent>): void
 
 **示例：**
 
-```
-1. import { wantAgent, Want } from '@kit.AbilityKit';
-2. import type { WantAgent } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { wantAgent, Want } from '@kit.AbilityKit';
+import type { WantAgent } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. // wantAgent对象
-6. let wantAgentData: WantAgent;
-7. // WantAgentInfo对象
-8. let wantAgentInfo: wantAgent.WantAgentInfo = {
-9. wants: [
-10. {
-11. deviceId: 'deviceId',
-12. bundleName: 'com.example.myapplication',
-13. abilityName: 'EntryAbility',
-14. action: 'action1',
-15. entities: ['entity1'],
-16. type: 'MIMETYPE',
-17. uri: 'key={true,true,false}',
-18. parameters:
-19. {
-20. mykey0: 2222,
-21. mykey1: [1, 2, 3],
-22. mykey2: '[1, 2, 3]',
-23. mykey3: 'ssssssssssssssssssssssssss',
-24. mykey4: [false, true, false],
-25. mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
-26. mykey6: true,
-27. }
-28. } as Want
-29. ],
-30. actionType: wantAgent.OperationType.START_ABILITY,
-31. requestCode: 0,
-32. wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
-33. };
+// wantAgent对象
+let wantAgentData: WantAgent;
+// WantAgentInfo对象
+let wantAgentInfo: wantAgent.WantAgentInfo = {
+  wants: [
+    {
+      deviceId: 'deviceId',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility',
+      action: 'action1',
+      entities: ['entity1'],
+      type: 'MIMETYPE',
+      uri: 'key={true,true,false}',
+      parameters:
+      {
+        mykey0: 2222,
+        mykey1: [1, 2, 3],
+        mykey2: '[1, 2, 3]',
+        mykey3: 'ssssssssssssssssssssssssss',
+        mykey4: [false, true, false],
+        mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
+        mykey6: true,
+      }
+    } as Want
+  ],
+  actionType: wantAgent.OperationType.START_ABILITY,
+  requestCode: 0,
+  wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+};
 
-35. // getWantAgent回调
-36. function getWantAgentCallback(err: BusinessError, data: WantAgent) {
-37. if (err.code) {
-38. console.error(`getWantAgent failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
-39. } else {
-40. wantAgentData = data;
-41. }
-42. }
+// getWantAgent回调
+function getWantAgentCallback(err: BusinessError, data: WantAgent) {
+  if (err.code) {
+      console.error(`getWantAgent failed, code: ${err.code}, message: ${err.message}`);
+    } else {
+      wantAgentData = data;
+    }
+}
 
-44. try {
-45. wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
-46. } catch (err) {
-47. console.error(`getWantAgent failed, error: ${JSON.stringify(err)}`);
-48. }
+try {
+  // 调用getWantAgent接口创建WantAgent对象
+wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
+} catch (err) {
+  console.error(`getWantAgent failed, error: ${JSON.stringify(err)}`);
+}
 ```
 
 ## wantAgent.getWantAgent
 
-PhonePC/2in1TabletTVWearable
-
 getWantAgent(info: WantAgentInfo): Promise<WantAgent>
 
-创建WantAgent。使用Promise异步回调。创建成功返回WantAgent对象，创建失败返回空值。
+创建WantAgent实例，用于后续触发指定操作。使用Promise异步回调。创建成功返回WantAgent对象，创建失败返回空值。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
@@ -142,54 +137,53 @@ getWantAgent(info: WantAgentInfo): Promise<WantAgent>
 
 **示例：**
 
-```
-1. import { wantAgent, Want } from '@kit.AbilityKit';
-2. import type { WantAgent } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { wantAgent, Want } from '@kit.AbilityKit';
+import type { WantAgent } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let wantAgentData: WantAgent;
-6. // WantAgentInfo对象
-7. let wantAgentInfo: wantAgent.WantAgentInfo = {
-8. wants: [
-9. {
-10. deviceId: 'deviceId',
-11. bundleName: 'com.example.myapplication',
-12. abilityName: 'EntryAbility',
-13. action: 'action1',
-14. entities: ['entity1'],
-15. type: 'MIMETYPE',
-16. uri: 'key={true,true,false}',
-17. parameters:
-18. {
-19. mykey0: 2222,
-20. mykey1: [1, 2, 3],
-21. mykey2: '[1, 2, 3]',
-22. mykey3: 'ssssssssssssssssssssssssss',
-23. mykey4: [false, true, false],
-24. mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
-25. mykey6: true,
-26. }
-27. } as Want
-28. ],
-29. actionType: wantAgent.OperationType.START_ABILITY,
-30. requestCode: 0,
-31. wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
-32. };
+let wantAgentData: WantAgent;
+// WantAgentInfo对象
+let wantAgentInfo: wantAgent.WantAgentInfo = {
+  wants: [
+    {
+      deviceId: 'deviceId',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility',
+      action: 'action1',
+      entities: ['entity1'],
+      type: 'MIMETYPE',
+      uri: 'key={true,true,false}',
+      parameters:
+      {
+        mykey0: 2222,
+        mykey1: [1, 2, 3],
+        mykey2: '[1, 2, 3]',
+        mykey3: 'ssssssssssssssssssssssssss',
+        mykey4: [false, true, false],
+        mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
+        mykey6: true,
+      }
+    } as Want
+  ],
+  actionType: wantAgent.OperationType.START_ABILITY,
+  requestCode: 0,
+  wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+};
 
-34. try {
-35. wantAgent.getWantAgent(wantAgentInfo).then((data) => {
-36. wantAgentData = data;
-37. }).catch((err: BusinessError) => {
-38. console.error(`getWantAgent failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
-39. });
-40. } catch (err) {
-41. console.error(`getWantAgent failed! ${err.code} ${err.message}`);
-42. }
+try {
+  wantAgent.getWantAgent(wantAgentInfo).then((data) => {
+    // 创建WantAgent成功，保存返回的WantAgent对象
+    wantAgentData = data;
+  }).catch((err: BusinessError) => {
+    console.error(`getWantAgent failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
+  });
+} catch (err) {
+  console.error(`getWantAgent failed! ${err.code} ${err.message}`);
+}
 ```
 
 ## wantAgent.getBundleName
-
-PhonePC/2in1TabletTVWearable
 
 getBundleName(agent: WantAgent, callback: AsyncCallback<string>): void
 
@@ -204,7 +198,7 @@ getBundleName(agent: WantAgent, callback: AsyncCallback<string>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | agent | WantAgent | 是 | WantAgent对象。 |
-| callback | AsyncCallback<string> | 是 | 回调函数。当获取包名成功，err为undefined，data为创建的WantAgent；否则err为错误对象。 |
+| callback | AsyncCallback<string> | 是 | 回调函数。当获取包名成功，err为undefined，data为获取的包名；否则err为错误对象。 |
 
 **错误码：**
 
@@ -218,73 +212,74 @@ getBundleName(agent: WantAgent, callback: AsyncCallback<string>): void
 
 **示例：**
 
-```
-1. import { wantAgent, Want } from '@kit.AbilityKit';
-2. import type { WantAgent } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { wantAgent, Want } from '@kit.AbilityKit';
+import type { WantAgent } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. // wantAgent对象
-6. let wantAgentData: WantAgent;
-7. // WantAgentInfo对象
-8. let wantAgentInfo: wantAgent.WantAgentInfo = {
-9. wants: [
-10. {
-11. deviceId: 'deviceId',
-12. bundleName: 'com.example.myapplication',
-13. abilityName: 'EntryAbility',
-14. action: 'action1',
-15. entities: ['entity1'],
-16. type: 'MIMETYPE',
-17. uri: 'key={true,true,false}',
-18. parameters:
-19. {
-20. mykey0: 2222,
-21. mykey1: [1, 2, 3],
-22. mykey2: '[1, 2, 3]',
-23. mykey3: 'ssssssssssssssssssssssssss',
-24. mykey4: [false, true, false],
-25. mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
-26. mykey6: true,
-27. }
-28. } as Want
-29. ],
-30. actionType: wantAgent.OperationType.START_ABILITY,
-31. requestCode: 0,
-32. wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
-33. };
+// wantAgent对象
+let wantAgentData: WantAgent;
+// WantAgentInfo对象
+let wantAgentInfo: wantAgent.WantAgentInfo = {
+  wants: [
+    {
+      deviceId: 'deviceId',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility',
+      action: 'action1',
+      entities: ['entity1'],
+      type: 'MIMETYPE',
+      uri: 'key={true,true,false}',
+      parameters:
+      {
+        mykey0: 2222,
+        mykey1: [1, 2, 3],
+        mykey2: '[1, 2, 3]',
+        mykey3: 'ssssssssssssssssssssssssss',
+        mykey4: [false, true, false],
+        mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
+        mykey6: true,
+      }
+    } as Want
+  ],
+  actionType: wantAgent.OperationType.START_ABILITY,
+  requestCode: 0,
+  wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+};
 
-35. // getWantAgent回调
-36. function getWantAgentCallback(err: BusinessError, data: WantAgent) {
-37. if (err) {
-38. console.error(`getWantAgent failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
-39. } else {
-40. wantAgentData = data;
-41. }
-42. // getBundleName回调
-43. let getBundleNameCallback = (err: BusinessError, data: string) => {
-44. if (err) {
-45. console.error(`getBundleName failed! ${err.code} ${err.message}`);
-46. } else {
-47. console.info(`getBundleName ok! ${JSON.stringify(data)}`);
-48. }
-49. }
-50. try {
-51. wantAgent.getBundleName(wantAgentData, getBundleNameCallback);
-52. } catch (err) {
-53. console.error(`getBundleName failed! ${err.code} ${err.message}`);
-54. }
-55. }
+// getWantAgent回调
+function getWantAgentCallback(err: BusinessError, data: WantAgent) {
+  if (err) {
+    console.error(`getWantAgent failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
+  } else {
+    // 创建WantAgent成功，保存返回的WantAgent对象
+    wantAgentData = data;
+  }
+  // getBundleName回调
+  let getBundleNameCallback = (err: BusinessError, data: string) => {
+    if (err) {
+      console.error(`getBundleName failed! ${err.code} ${err.message}`);
+    } else {
+      console.info(`getBundleName ok! ${JSON.stringify(data)}`);
+    }
+  }
+  try {
+    // 调用getBundleName接口获取WantAgent实例的包名
+    wantAgent.getBundleName(wantAgentData, getBundleNameCallback);
+  } catch (err) {
+    console.error(`getBundleName failed! ${err.code} ${err.message}`);
+  }
+}
 
-57. try {
-58. wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
-59. } catch (err) {
-60. console.error(`getWantAgent failed! ${err.code} ${err.message}`);
-61. }
+try {
+  // 调用getWantAgent接口创建WantAgent对象
+  wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
+} catch (err) {
+  console.error(`getWantAgent failed! ${err.code} ${err.message}`);
+}
 ```
 
 ## wantAgent.getBundleName
-
-PhonePC/2in1TabletTVWearable
 
 getBundleName(agent: WantAgent): Promise<string>
 
@@ -318,68 +313,69 @@ getBundleName(agent: WantAgent): Promise<string>
 
 **示例：**
 
-```
-1. import { wantAgent, Want } from '@kit.AbilityKit';
-2. import type { WantAgent } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { wantAgent, Want } from '@kit.AbilityKit';
+import type { WantAgent } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. // wantAgent对象
-6. let wantAgentData: WantAgent;
-7. // WantAgentInfo对象
-8. let wantAgentInfo: wantAgent.WantAgentInfo = {
-9. wants: [
-10. {
-11. deviceId: 'deviceId',
-12. bundleName: 'com.example.myapplication',
-13. abilityName: 'EntryAbility',
-14. action: 'action1',
-15. entities: ['entity1'],
-16. type: 'MIMETYPE',
-17. uri: 'key={true,true,false}',
-18. parameters:
-19. {
-20. mykey0: 2222,
-21. mykey1: [1, 2, 3],
-22. mykey2: '[1, 2, 3]',
-23. mykey3: 'ssssssssssssssssssssssssss',
-24. mykey4: [false, true, false],
-25. mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
-26. mykey6: true,
-27. }
-28. } as Want
-29. ],
-30. actionType: wantAgent.OperationType.START_ABILITY,
-31. requestCode: 0,
-32. wantAgentFlags:[wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
-33. };
+// wantAgent对象
+let wantAgentData: WantAgent;
+// WantAgentInfo对象
+let wantAgentInfo: wantAgent.WantAgentInfo = {
+  wants: [
+    {
+      deviceId: 'deviceId',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility',
+      action: 'action1',
+      entities: ['entity1'],
+      type: 'MIMETYPE',
+      uri: 'key={true,true,false}',
+      parameters:
+      {
+        mykey0: 2222,
+        mykey1: [1, 2, 3],
+        mykey2: '[1, 2, 3]',
+        mykey3: 'ssssssssssssssssssssssssss',
+        mykey4: [false, true, false],
+        mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
+        mykey6: true,
+      }
+    } as Want
+  ],
+  actionType: wantAgent.OperationType.START_ABILITY,
+  requestCode: 0,
+  wantAgentFlags:[wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+};
 
-35. // getWantAgent回调
-36. function getWantAgentCallback(err: BusinessError, data: WantAgent) {
-37. if (err) {
-38. console.error(`getWantAgent failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
-39. } else {
-40. wantAgentData = data;
-41. }
-42. try {
-43. wantAgent.getBundleName(wantAgentData).then((data)=>{
-44. console.info(`getBundleName ok! ${JSON.stringify(data)}`);
-45. }).catch((err: BusinessError)=>{
-46. console.error(`getBundleName failed! ${err.code} ${err.message}`);
-47. });
-48. } catch(err){
-49. console.error(`getBundleName failed! ${err.code} ${err.message}`);
-50. }
-51. }
-52. try {
-53. wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
-54. } catch(err) {
-55. console.error(`getWantAgent failed! ${err.code} ${err.message}`);
-56. }
+// getWantAgent回调
+function getWantAgentCallback(err: BusinessError, data: WantAgent) {
+  if (err) {
+    console.error(`getWantAgent failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
+  } else {
+    // 创建WantAgent成功，保存返回的WantAgent对象
+    wantAgentData = data;
+  }
+  try {
+    // 使用Promise方式获取WantAgent实例的包名
+    wantAgent.getBundleName(wantAgentData).then((data) => {
+      console.info(`getBundleName ok! ${JSON.stringify(data)}`);
+    }).catch((err: BusinessError) => {
+      console.error(`getBundleName failed! ${err.code} ${err.message}`);
+    });
+  } catch(err){
+    console.error(`getBundleName failed! ${err.code} ${err.message}`);
+  }
+}
+try {
+  // 调用getWantAgent接口创建WantAgent对象
+  wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
+} catch(err) {
+  console.error(`getWantAgent failed! ${err.code} ${err.message}`);
+}
 ```
 
 ## wantAgent.getUid
-
-PhonePC/2in1TabletTVWearable
 
 getUid(agent: WantAgent, callback: AsyncCallback<number>): void
 
@@ -408,77 +404,78 @@ getUid(agent: WantAgent, callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { wantAgent, Want } from '@kit.AbilityKit';
-2. import type { WantAgent } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { wantAgent, Want } from '@kit.AbilityKit';
+import type { WantAgent } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. // wantAgent对象
-6. let wantAgentData: WantAgent;
-7. // WantAgentInfo对象
-8. let wantAgentInfo: wantAgent.WantAgentInfo = {
-9. wants: [
-10. {
-11. deviceId: 'deviceId',
-12. bundleName: 'com.example.myapplication',
-13. abilityName: 'EntryAbility',
-14. action: 'action1',
-15. entities: ['entity1'],
-16. type: 'MIMETYPE',
-17. uri: 'key={true,true,false}',
-18. parameters:
-19. {
-20. mykey0: 2222,
-21. mykey1: [1, 2, 3],
-22. mykey2: '[1, 2, 3]',
-23. mykey3: 'ssssssssssssssssssssssssss',
-24. mykey4: [false, true, false],
-25. mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
-26. mykey6: true,
-27. }
-28. } as Want
-29. ],
-30. actionType: wantAgent.OperationType.START_ABILITY,
-31. requestCode: 0,
-32. wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
-33. };
+// wantAgent对象
+let wantAgentData: WantAgent;
+// WantAgentInfo对象
+let wantAgentInfo: wantAgent.WantAgentInfo = {
+  wants: [
+    {
+      deviceId: 'deviceId',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility',
+      action: 'action1',
+      entities: ['entity1'],
+      type: 'MIMETYPE',
+      uri: 'key={true,true,false}',
+      parameters:
+      {
+        mykey0: 2222,
+        mykey1: [1, 2, 3],
+        mykey2: '[1, 2, 3]',
+        mykey3: 'ssssssssssssssssssssssssss',
+        mykey4: [false, true, false],
+        mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
+        mykey6: true,
+      }
+    } as Want
+  ],
+  actionType: wantAgent.OperationType.START_ABILITY,
+  requestCode: 0,
+  wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+};
 
-35. // getWantAgent回调
-36. function getWantAgentCallback(err: BusinessError, data: WantAgent) {
-37. if (err) {
-38. console.error(`getWantAgent failed, code: ${err.code}, message: ${err.message}.`);
-39. } else {
-40. wantAgentData = data;
-41. }
-42. // getUid回调
-43. let getUidCallback = (err: BusinessError, data: number) => {
-44. if (err) {
-45. console.error(`getUid failed, err code: ${err.code}, err msg: ${err.message}.`);
-46. } else {
-47. console.info(`getUid ok, data: ${JSON.stringify(data)}.`);
-48. }
-49. }
-50. try {
-51. wantAgent.getUid(wantAgentData, getUidCallback);
-52. } catch (err) {
-53. let code = (err as BusinessError).code;
-54. let msg = (err as BusinessError).message;
-55. console.error(`getUid failed, err code: ${code}, err msg: ${msg}.`);
-56. }
-57. }
+// getWantAgent回调
+function getWantAgentCallback(err: BusinessError, data: WantAgent) {
+  if (err) {
+    console.error(`getWantAgent failed, code: ${err.code}, message: ${err.message}.`);
+  } else {
+    // 创建WantAgent成功，保存返回的WantAgent对象
+    wantAgentData = data;
+  }
+  // getUid回调
+  let getUidCallback = (err: BusinessError, data: number) => {
+    if (err) {
+      console.error(`getUid failed, err code: ${err.code}, err msg: ${err.message}.`);
+    } else {
+      console.info(`getUid ok, data: ${JSON.stringify(data)}.`);
+    }
+  }
+  try {
+    // 调用getUid接口获取WantAgent实例所属应用的UID
+    wantAgent.getUid(wantAgentData, getUidCallback);
+  } catch (err) {
+    let code = (err as BusinessError).code;
+    let msg = (err as BusinessError).message;
+    console.error(`getUid failed, err code: ${code}, err msg: ${msg}.`);
+  }
+}
 
-59. try {
-60. wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
-61. } catch (err) {
-62. let code = (err as BusinessError).code;
-63. let msg = (err as BusinessError).message;
-64. console.error(`getWantAgent failed, err code: ${code}, err msg: ${msg}.`);
-65. }
+try {
+  // 调用getWantAgent接口创建WantAgent对象
+  wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
+} catch (err) {
+  let code = (err as BusinessError).code;
+  let msg = (err as BusinessError).message;
+  console.error(`getWantAgent failed, err code: ${code}, err msg: ${msg}.`);
+}
 ```
 
 ## wantAgent.getUid
-
-PhonePC/2in1TabletTVWearable
 
 getUid(agent: WantAgent): Promise<number>
 
@@ -512,77 +509,78 @@ getUid(agent: WantAgent): Promise<number>
 
 **示例：**
 
-```
-1. import { wantAgent, Want } from '@kit.AbilityKit';
-2. import type { WantAgent } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { wantAgent, Want } from '@kit.AbilityKit';
+import type { WantAgent } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. // wantAgent对象
-6. let wantAgentData: WantAgent;
-7. // WantAgentInfo对象
-8. let wantAgentInfo: wantAgent.WantAgentInfo = {
-9. wants: [
-10. {
-11. deviceId: 'deviceId',
-12. bundleName: 'com.example.myapplication',
-13. abilityName: 'EntryAbility',
-14. action: 'action1',
-15. entities: ['entity1'],
-16. type: 'MIMETYPE',
-17. uri: 'key={true,true,false}',
-18. parameters:
-19. {
-20. mykey0: 2222,
-21. mykey1: [1, 2, 3],
-22. mykey2: '[1, 2, 3]',
-23. mykey3: 'ssssssssssssssssssssssssss',
-24. mykey4: [false, true, false],
-25. mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
-26. mykey6: true,
-27. }
-28. } as Want
-29. ],
-30. actionType: wantAgent.OperationType.START_ABILITY,
-31. requestCode: 0,
-32. wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
-33. };
+// wantAgent对象
+let wantAgentData: WantAgent;
+// WantAgentInfo对象
+let wantAgentInfo: wantAgent.WantAgentInfo = {
+  wants: [
+    {
+      deviceId: 'deviceId',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility',
+      action: 'action1',
+      entities: ['entity1'],
+      type: 'MIMETYPE',
+      uri: 'key={true,true,false}',
+      parameters:
+      {
+        mykey0: 2222,
+        mykey1: [1, 2, 3],
+        mykey2: '[1, 2, 3]',
+        mykey3: 'ssssssssssssssssssssssssss',
+        mykey4: [false, true, false],
+        mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
+        mykey6: true,
+      }
+    } as Want
+  ],
+  actionType: wantAgent.OperationType.START_ABILITY,
+  requestCode: 0,
+  wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+};
 
-35. // getWantAgent回调
-36. function getWantAgentCallback(err: BusinessError, data: WantAgent) {
-37. if (err) {
-38. console.error(`getWantAgent failed, err code: ${err.code}, err msg: ${err.message}.`);
-39. } else {
-40. wantAgentData = data;
-41. }
-42. try {
-43. wantAgent.getUid(wantAgentData).then((data) => {
-44. console.info(`getUid ok, data: ${JSON.stringify(data)}.`);
-45. }).catch((err: BusinessError) => {
-46. console.error(`getUid failed, err code: ${err.code}, err msg: ${err.message}.`);
-47. });
-48. } catch (err) {
-49. let code = (err as BusinessError).code;
-50. let msg = (err as BusinessError).message;
-51. console.error(`getUid failed, err code: ${code}, err msg: ${msg}.`);
-52. }
-53. }
+// getWantAgent回调
+function getWantAgentCallback(err: BusinessError, data: WantAgent) {
+  if (err) {
+    console.error(`getWantAgent failed, err code: ${err.code}, err msg: ${err.message}.`);
+  } else {
+    // 创建WantAgent成功，保存返回的WantAgent对象
+    wantAgentData = data;
+  }
+  try {
+    // 使用Promise方式获取WantAgent实例所属应用的UID
+    wantAgent.getUid(wantAgentData).then((data) => {
+      console.info(`getUid ok, data: ${JSON.stringify(data)}.`);
+    }).catch((err: BusinessError) => {
+      console.error(`getUid failed, err code: ${err.code}, err msg: ${err.message}.`);
+    });
+  } catch (err) {
+    let code = (err as BusinessError).code;
+    let msg = (err as BusinessError).message;
+    console.error(`getUid failed, err code: ${code}, err msg: ${msg}.`);
+  }
+}
 
-55. try {
-56. wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
-57. } catch (err) {
-58. let code = (err as BusinessError).code;
-59. let msg = (err as BusinessError).message;
-60. console.error(`getWantAgent failed, err code: ${code}, err msg: ${msg}.`);
-61. }
+try {
+  // 调用getWantAgent接口创建WantAgent对象
+  wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
+} catch (err) {
+  let code = (err as BusinessError).code;
+  let msg = (err as BusinessError).message;
+  console.error(`getWantAgent failed, err code: ${code}, err msg: ${msg}.`);
+}
 ```
 
 ## wantAgent.cancel
 
-PhonePC/2in1TabletTVWearable
-
 cancel(agent: WantAgent, callback: AsyncCallback<void>): void
 
-取消WantAgent实例，使用callback异步回调。
+取消WantAgent实例，取消后该实例将无法被触发。使用callback异步回调。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
@@ -593,7 +591,7 @@ cancel(agent: WantAgent, callback: AsyncCallback<void>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | agent | WantAgent | 是 | WantAgent对象。 |
-| callback | AsyncCallback<void> | 是 | 回调函数，当取消WantAgent实例成功，err为undefined，否则err为错误对象。 |
+| callback | AsyncCallback<void> | 是 | 回调函数。当取消WantAgent实例成功，err为undefined，data为undefined；否则err为错误对象。 |
 
 **错误码：**
 
@@ -607,81 +605,82 @@ cancel(agent: WantAgent, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { wantAgent, Want } from '@kit.AbilityKit';
-2. import type { WantAgent } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { wantAgent, Want } from '@kit.AbilityKit';
+import type { WantAgent } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. // wantAgent对象
-6. let wantAgentData: WantAgent;
-7. // WantAgentInfo对象
-8. let wantAgentInfo: wantAgent.WantAgentInfo = {
-9. wants: [
-10. {
-11. deviceId: 'deviceId',
-12. bundleName: 'com.example.myapplication',
-13. abilityName: 'EntryAbility',
-14. action: 'action1',
-15. entities: ['entity1'],
-16. type: 'MIMETYPE',
-17. uri: 'key={true,true,false}',
-18. parameters:
-19. {
-20. mykey0: 2222,
-21. mykey1: [1, 2, 3],
-22. mykey2: '[1, 2, 3]',
-23. mykey3: 'ssssssssssssssssssssssssss',
-24. mykey4: [false, true, false],
-25. mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
-26. mykey6: true,
-27. }
-28. } as Want
-29. ],
-30. actionType: wantAgent.OperationType.START_ABILITY,
-31. requestCode: 0,
-32. wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
-33. };
+// wantAgent对象
+let wantAgentData: WantAgent;
+// WantAgentInfo对象
+let wantAgentInfo: wantAgent.WantAgentInfo = {
+  wants: [
+    {
+      deviceId: 'deviceId',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility',
+      action: 'action1',
+      entities: ['entity1'],
+      type: 'MIMETYPE',
+      uri: 'key={true,true,false}',
+      parameters:
+      {
+        mykey0: 2222,
+        mykey1: [1, 2, 3],
+        mykey2: '[1, 2, 3]',
+        mykey3: 'ssssssssssssssssssssssssss',
+        mykey4: [false, true, false],
+        mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
+        mykey6: true,
+      }
+    } as Want
+  ],
+  actionType: wantAgent.OperationType.START_ABILITY,
+  requestCode: 0,
+  wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+};
 
-35. // getWantAgent回调
-36. function getWantAgentCallback(err: BusinessError, data: WantAgent) {
-37. if (err) {
-38. console.error(`getWantAgent failed, err code: ${err.code}, err msg: ${err.message}.`);
-39. } else {
-40. wantAgentData = data;
-41. }
-42. // cancel回调
-43. let cancelCallback = (err: BusinessError, data: void) => {
-44. if (err) {
-45. console.error(`cancel failed, err code: ${err.code}, err msg: ${err.message}.`);
-46. } else {
-47. console.info(`cancel success.`);
-48. }
-49. }
-50. try {
-51. wantAgent.cancel(wantAgentData, cancelCallback);
-52. } catch (err) {
-53. let code = (err as BusinessError).code;
-54. let msg = (err as BusinessError).message;
-55. console.error(`cancel failed, err code: ${code}, err msg: ${msg}.`);
-56. }
-57. }
+// getWantAgent回调
+function getWantAgentCallback(err: BusinessError, data: WantAgent) {
+  if (err) {
+    console.error(`getWantAgent failed, err code: ${err.code}, err msg: ${err.message}.`);
+  } else {
+    // 创建WantAgent成功，保存返回的WantAgent对象
+    wantAgentData = data;
+  }
+  // cancel回调
+  let cancelCallback = (err: BusinessError, data: void) => {
+    if (err) {
+      console.error(`cancel failed, err code: ${err.code}, err msg: ${err.message}.`);
+    } else {
+      console.info(`cancel success.`);
+    }
+  }
+  try {
+    // 调用cancel接口取消WantAgent实例
+    wantAgent.cancel(wantAgentData, cancelCallback);
+  } catch (err) {
+    let code = (err as BusinessError).code;
+    let msg = (err as BusinessError).message;
+    console.error(`cancel failed, err code: ${code}, err msg: ${msg}.`);
+  }
+}
 
-59. try {
-60. wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
-61. } catch (err) {
-62. let code = (err as BusinessError).code;
-63. let msg = (err as BusinessError).message;
-64. console.error(`getWantAgent failed, err code: ${code}, err msg: ${msg}.`);
-65. }
+try {
+  // 调用getWantAgent接口创建WantAgent对象
+  wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
+} catch (err) {
+  let code = (err as BusinessError).code;
+  let msg = (err as BusinessError).message;
+  console.error(`getWantAgent failed, err code: ${code}, err msg: ${msg}.`);
+}
 ```
 
 ## wantAgent.cancel
 
-PhonePC/2in1TabletTVWearable
-
 cancel(agent: WantAgent): Promise<void>
 
-取消WantAgent实例。使用Promise异步回调。
+取消WantAgent实例，取消后该实例将无法被触发。使用Promise异步回调。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
@@ -711,73 +710,74 @@ cancel(agent: WantAgent): Promise<void>
 
 **示例：**
 
-```
-1. import { wantAgent, Want } from '@kit.AbilityKit';
-2. import type { WantAgent } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { wantAgent, Want } from '@kit.AbilityKit';
+import type { WantAgent } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. // wantAgent对象
-6. let wantAgentData: WantAgent;
-7. // WantAgentInfo对象
-8. let wantAgentInfo: wantAgent.WantAgentInfo = {
-9. wants: [
-10. {
-11. deviceId: 'deviceId',
-12. bundleName: 'com.example.myapplication',
-13. abilityName: 'EntryAbility',
-14. action: 'action1',
-15. entities: ['entity1'],
-16. type: 'MIMETYPE',
-17. uri: 'key={true,true,false}',
-18. parameters:
-19. {
-20. mykey0: 2222,
-21. mykey1: [1, 2, 3],
-22. mykey2: '[1, 2, 3]',
-23. mykey3: 'ssssssssssssssssssssssssss',
-24. mykey4: [false, true, false],
-25. mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
-26. mykey6: true,
-27. }
-28. } as Want
-29. ],
-30. actionType: wantAgent.OperationType.START_ABILITY,
-31. requestCode: 0,
-32. wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
-33. };
+// wantAgent对象
+let wantAgentData: WantAgent;
+// WantAgentInfo对象
+let wantAgentInfo: wantAgent.WantAgentInfo = {
+  wants: [
+    {
+      deviceId: 'deviceId',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility',
+      action: 'action1',
+      entities: ['entity1'],
+      type: 'MIMETYPE',
+      uri: 'key={true,true,false}',
+      parameters:
+      {
+        mykey0: 2222,
+        mykey1: [1, 2, 3],
+        mykey2: '[1, 2, 3]',
+        mykey3: 'ssssssssssssssssssssssssss',
+        mykey4: [false, true, false],
+        mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
+        mykey6: true,
+      }
+    } as Want
+  ],
+  actionType: wantAgent.OperationType.START_ABILITY,
+  requestCode: 0,
+  wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+};
 
-35. // getWantAgent回调
-36. function getWantAgentCallback(err: BusinessError, data: WantAgent) {
-37. if (err) {
-38. console.error(`getWantAgent failed, err code: ${err.code}, err msg: ${err.message}.`);
-39. } else {
-40. wantAgentData = data;
-41. }
-42. try {
-43. wantAgent.cancel(wantAgentData).then((data) => {
-44. console.info('cancel success.');
-45. }).catch((err: BusinessError) => {
-46. console.error(`cancel failed, err code: ${err.code}, err msg: ${err.message}.`);
-47. });
-48. } catch (err) {
-49. let code = (err as BusinessError).code;
-50. let msg = (err as BusinessError).message;
-51. console.error(`cancel failed, err code: ${code}, err msg: ${msg}.`);
-52. }
-53. }
+// getWantAgent回调
+function getWantAgentCallback(err: BusinessError, data: WantAgent) {
+  if (err) {
+    console.error(`getWantAgent failed, err code: ${err.code}, err msg: ${err.message}.`);
+  } else {
+    // 创建WantAgent成功，保存返回的WantAgent对象
+    wantAgentData = data;
+  }
+  try {
+    // 使用Promise方式取消WantAgent实例
+    wantAgent.cancel(wantAgentData).then((data) => {
+      console.info('cancel success.');
+    }).catch((err: BusinessError) => {
+      console.error(`cancel failed, err code: ${err.code}, err msg: ${err.message}.`);
+    });
+  } catch (err) {
+    let code = (err as BusinessError).code;
+    let msg = (err as BusinessError).message;
+    console.error(`cancel failed, err code: ${code}, err msg: ${msg}.`);
+  }
+}
 
-55. try {
-56. wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
-57. } catch (err) {
-58. let code = (err as BusinessError).code;
-59. let msg = (err as BusinessError).message;
-60. console.error(`getWantAgent failed, err code: ${code}, err msg: ${msg}.`);
-61. }
+try {
+  // 调用getWantAgent接口创建WantAgent对象
+  wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
+} catch (err) {
+  let code = (err as BusinessError).code;
+  let msg = (err as BusinessError).message;
+  console.error(`getWantAgent failed, err code: ${code}, err msg: ${msg}.`);
+}
 ```
 
 ## wantAgent.trigger
-
-PhonePC/2in1TabletTVWearable
 
 trigger(agent: WantAgent, triggerInfo: TriggerInfo, callback?: AsyncCallback<CompleteData>): void
 
@@ -807,81 +807,82 @@ trigger(agent: WantAgent, triggerInfo: TriggerInfo, callback?: AsyncCallback<Com
 
 **示例：**
 
-```
-1. import { wantAgent, Want } from '@kit.AbilityKit';
-2. import type { WantAgent } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { wantAgent, Want } from '@kit.AbilityKit';
+import type { WantAgent } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. // wantAgent对象
-6. let wantAgentData: WantAgent;
-7. // triggerInfo
-8. let triggerInfo: wantAgent.TriggerInfo = {
-9. code: 0 // 自定义结果码
-10. };
-11. // WantAgentInfo对象
-12. let wantAgentInfo: wantAgent.WantAgentInfo = {
-13. wants: [
-14. {
-15. deviceId: 'deviceId',
-16. bundleName: 'com.example.myapplication',
-17. abilityName: 'EntryAbility',
-18. action: 'action1',
-19. entities: ['entity1'],
-20. type: 'MIMETYPE',
-21. uri: 'key={true,true,false}',
-22. parameters:
-23. {
-24. mykey0: 2222,
-25. mykey1: [1, 2, 3],
-26. mykey2: '[1, 2, 3]',
-27. mykey3: 'ssssssssssssssssssssssssss',
-28. mykey4: [false, true, false],
-29. mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
-30. mykey6: true,
-31. }
-32. } as Want
-33. ],
-34. actionType: wantAgent.OperationType.START_ABILITY,
-35. requestCode: 0,
-36. wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
-37. };
+// wantAgent对象
+let wantAgentData: WantAgent;
+// triggerInfo
+let triggerInfo: wantAgent.TriggerInfo = {
+  code: 0 // 自定义结果码
+};
+// WantAgentInfo对象
+let wantAgentInfo: wantAgent.WantAgentInfo = {
+  wants: [
+    {
+      deviceId: 'deviceId',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility',
+      action: 'action1',
+      entities: ['entity1'],
+      type: 'MIMETYPE',
+      uri: 'key={true,true,false}',
+      parameters:
+      {
+        mykey0: 2222,
+        mykey1: [1, 2, 3],
+        mykey2: '[1, 2, 3]',
+        mykey3: 'ssssssssssssssssssssssssss',
+        mykey4: [false, true, false],
+        mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
+        mykey6: true,
+      }
+    } as Want
+  ],
+  actionType: wantAgent.OperationType.START_ABILITY,
+  requestCode: 0,
+  wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+};
 
-39. // getWantAgent回调
-40. function getWantAgentCallback(err: BusinessError, data: WantAgent) {
-41. if (err) {
-42. console.info(`getWantAgent failed, code: ${err.code}, message: ${err.message}`);
-43. } else {
-44. wantAgentData = data;
-45. }
-46. // trigger回调
-47. let triggerCallback = (err: BusinessError, data: wantAgent.CompleteData) => {
-48. if (err) {
-49. console.error(`trigger failed, code: ${err.code}, message: ${err.message}`);
-50. } else {
-51. console.info(`trigger success, data: ${JSON.stringify(data)}`);
-52. }
-53. }
-54. try {
-55. wantAgent.trigger(wantAgentData, triggerInfo, triggerCallback);
-56. } catch (err) {
-57. let code = (err as BusinessError).code;
-58. let msg = (err as BusinessError).message;
-59. console.error(`trigger failed, code: ${code}, message: ${msg}.`);
-60. }
-61. }
+// getWantAgent回调
+function getWantAgentCallback(err: BusinessError, data: WantAgent) {
+  if (err) {
+    console.error(`getWantAgent failed, code: ${err.code}, message: ${err.message}`);
+  } else {
+    // 创建WantAgent成功，保存返回的WantAgent对象
+    wantAgentData = data;
+  }
+  // trigger回调
+  let triggerCallback = (err: BusinessError, data: wantAgent.CompleteData) => {
+    if (err) {
+      console.error(`trigger failed, code: ${err.code}, message: ${err.message}`);
+    } else {
+      console.info(`trigger success, data: ${JSON.stringify(data)}`);
+    }
+  }
+  try {
+    // 调用trigger接口触发WantAgent实例执行指定操作
+    wantAgent.trigger(wantAgentData, triggerInfo, triggerCallback);
+  } catch (err) {
+    let code = (err as BusinessError).code;
+    let msg = (err as BusinessError).message;
+    console.error(`trigger failed, code: ${code}, message: ${msg}.`);
+  }
+}
 
-63. try {
-64. wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
-65. } catch (err) {
-66. let code = (err as BusinessError).code;
-67. let msg = (err as BusinessError).message;
-68. console.error(`getWantAgent failed, code: ${code}, message: ${msg}.`);
-69. }
+try {
+  // 调用getWantAgent接口创建WantAgent对象
+  wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
+} catch (err) {
+  let code = (err as BusinessError).code;
+  let msg = (err as BusinessError).message;
+  console.error(`getWantAgent failed, code: ${code}, message: ${msg}.`);
+}
 ```
 
 ## wantAgent.equal
-
-PhonePC/2in1TabletTVWearable
 
 equal(agent: WantAgent, otherAgent: WantAgent, callback: AsyncCallback<boolean>): void
 
@@ -911,75 +912,76 @@ equal(agent: WantAgent, otherAgent: WantAgent, callback: AsyncCallback<boolean>)
 
 **示例：**
 
-```
-1. import { wantAgent, Want } from '@kit.AbilityKit';
-2. import type { WantAgent } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { wantAgent, Want } from '@kit.AbilityKit';
+import type { WantAgent } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. // wantAgent对象
-6. let wantAgent1: WantAgent;
-7. let wantAgent2: WantAgent;
-8. // WantAgentInfo对象
-9. let wantAgentInfo: wantAgent.WantAgentInfo = {
-10. wants: [
-11. {
-12. deviceId: 'deviceId',
-13. bundleName: 'com.example.myapplication',
-14. abilityName: 'EntryAbility',
-15. action: 'action1',
-16. entities: ['entity1'],
-17. type: 'MIMETYPE',
-18. uri: 'key={true,true,false}',
-19. parameters:
-20. {
-21. mykey0: 2222,
-22. mykey1: [1, 2, 3],
-23. mykey2: '[1, 2, 3]',
-24. mykey3: 'ssssssssssssssssssssssssss',
-25. mykey4: [false, true, false],
-26. mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
-27. mykey6: true,
-28. }
-29. } as Want
-30. ],
-31. actionType: wantAgent.OperationType.START_ABILITY,
-32. requestCode: 0,
-33. wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
-34. };
+// wantAgent对象
+let wantAgent1: WantAgent;
+let wantAgent2: WantAgent;
+// WantAgentInfo对象
+let wantAgentInfo: wantAgent.WantAgentInfo = {
+  wants: [
+    {
+      deviceId: 'deviceId',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility',
+      action: 'action1',
+      entities: ['entity1'],
+      type: 'MIMETYPE',
+      uri: 'key={true,true,false}',
+      parameters:
+      {
+        mykey0: 2222,
+        mykey1: [1, 2, 3],
+        mykey2: '[1, 2, 3]',
+        mykey3: 'ssssssssssssssssssssssssss',
+        mykey4: [false, true, false],
+        mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
+        mykey6: true,
+      }
+    } as Want
+  ],
+  actionType: wantAgent.OperationType.START_ABILITY,
+  requestCode: 0,
+  wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+};
 
-36. // getWantAgent回调
-37. function getWantAgentCallback(err: BusinessError, data: WantAgent) {
-38. if (err) {
-39. console.error(`getWantAgent failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
-40. } else {
-41. wantAgent1 = data;
-42. wantAgent2 = data;
-43. }
-44. // equal回调
-45. let equalCallback = (err: BusinessError, data: boolean) => {
-46. if (err) {
-47. console.error(`equal failed! ${err.code} ${err.message}`);
-48. } else {
-49. console.info(`equal ok! ${JSON.stringify(data)}`);
-50. }
-51. }
-52. try {
-53. wantAgent.equal(wantAgent1, wantAgent2, equalCallback);
-54. } catch (err) {
-55. console.error(`equal failed! ${(err as BusinessError).code} ${(err as BusinessError).message}`);
-56. }
-57. }
+// getWantAgent回调
+function getWantAgentCallback(err: BusinessError, data: WantAgent) {
+  if (err) {
+    console.error(`getWantAgent failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
+  } else {
+    // 创建WantAgent成功，保存返回的WantAgent对象
+    wantAgent1 = data;
+    wantAgent2 = data;
+  }
+  // equal回调
+  let equalCallback = (err: BusinessError, data: boolean) => {
+    if (err) {
+      console.error(`equal failed! ${err.code} ${err.message}`);
+    } else {
+      console.info(`equal ok! ${JSON.stringify(data)}`);
+    }
+  }
+  try {
+    // 调用equal接口判断两个WantAgent实例是否相等
+    wantAgent.equal(wantAgent1, wantAgent2, equalCallback);
+  } catch (err) {
+    console.error(`equal failed! ${(err as BusinessError).code} ${(err as BusinessError).message}`);
+  }
+}
 
-59. try {
-60. wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
-61. } catch (err) {
-62. console.error(`getWantAgent failed! ${(err as BusinessError).code} ${(err as BusinessError).message}`);
-63. }
+try {
+  // 调用getWantAgent接口创建WantAgent对象
+  wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
+} catch (err) {
+  console.error(`getWantAgent failed! ${(err as BusinessError).code} ${(err as BusinessError).message}`);
+}
 ```
 
 ## wantAgent.equal
-
-PhonePC/2in1TabletTVWearable
 
 equal(agent: WantAgent, otherAgent: WantAgent): Promise<boolean>
 
@@ -995,7 +997,7 @@ equal(agent: WantAgent, otherAgent: WantAgent): Promise<boolean>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| agent | WantAgent | 是 | WantAgent对象。 |
+| agent | [WantAgent](js-apis-app-ability-wantagent.md#wantagent) | 是 | WantAgent对象。 |
 | otherAgent | WantAgent | 是 | WantAgent对象。 |
 
 **返回值：**
@@ -1014,71 +1016,72 @@ equal(agent: WantAgent, otherAgent: WantAgent): Promise<boolean>
 
 **示例：**
 
-```
-1. import { wantAgent, Want } from '@kit.AbilityKit';
-2. import type { WantAgent } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { wantAgent, Want } from '@kit.AbilityKit';
+import type { WantAgent } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. // wantAgent对象
-6. let wantAgent1: WantAgent;
-7. let wantAgent2: WantAgent;
-8. // WantAgentInfo对象
-9. let wantAgentInfo: wantAgent.WantAgentInfo = {
-10. wants: [
-11. {
-12. deviceId: 'deviceId',
-13. bundleName: 'com.example.myapplication',
-14. abilityName: 'EntryAbility',
-15. action: 'action1',
-16. entities: ['entity1'],
-17. type: 'MIMETYPE',
-18. uri: 'key={true,true,false}',
-19. parameters:
-20. {
-21. mykey0: 2222,
-22. mykey1: [1, 2, 3],
-23. mykey2: '[1, 2, 3]',
-24. mykey3: 'ssssssssssssssssssssssssss',
-25. mykey4: [false, true, false],
-26. mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
-27. mykey6: true,
-28. }
-29. } as Want
-30. ],
-31. actionType: wantAgent.OperationType.START_ABILITY,
-32. requestCode: 0,
-33. wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
-34. };
+// wantAgent对象
+let wantAgent1: WantAgent;
+let wantAgent2: WantAgent;
+// WantAgentInfo对象
+let wantAgentInfo: wantAgent.WantAgentInfo = {
+  wants: [
+    {
+      deviceId: 'deviceId',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility',
+      action: 'action1',
+      entities: ['entity1'],
+      type: 'MIMETYPE',
+      uri: 'key={true,true,false}',
+      parameters:
+      {
+        mykey0: 2222,
+        mykey1: [1, 2, 3],
+        mykey2: '[1, 2, 3]',
+        mykey3: 'ssssssssssssssssssssssssss',
+        mykey4: [false, true, false],
+        mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
+        mykey6: true,
+      }
+    } as Want
+  ],
+  actionType: wantAgent.OperationType.START_ABILITY,
+  requestCode: 0,
+  wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+};
 
-36. // getWantAgent回调
-37. function getWantAgentCallback(err: BusinessError, data: WantAgent) {
-38. if (err) {
-39. console.error(`getWantAgent failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
-40. } else {
-41. wantAgent1 = data;
-42. wantAgent2 = data;
-43. }
-44. try {
-45. wantAgent.equal(wantAgent1, wantAgent2).then((data) => {
-46. console.info(`equal ok! ${JSON.stringify(data)}`);
-47. }).catch((err: BusinessError) => {
-48. console.error(`equal failed! ${err.code} ${err.message}`);
-49. })
-50. } catch (err) {
-51. console.error(`equal failed! ${(err as BusinessError).code} ${(err as BusinessError).message}`);
-52. }
-53. }
+// getWantAgent回调
+function getWantAgentCallback(err: BusinessError, data: WantAgent) {
+  if (err) {
+    console.error(`getWantAgent failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
+  } else {
+    // 创建WantAgent成功，保存返回的WantAgent对象
+    wantAgent1 = data;
+    wantAgent2 = data;
+  }
+  try {
+    // 使用Promise方式判断两个WantAgent实例是否相等
+    wantAgent.equal(wantAgent1, wantAgent2).then((data) => {
+      console.info(`equal ok! ${JSON.stringify(data)}`);
+    }).catch((err: BusinessError) => {
+    console.error(`equal failed! ${err.code} ${err.message}`);
+  });
+  } catch (err) {
+    console.error(`equal failed! ${(err as BusinessError).code} ${(err as BusinessError).message}`);
+  }
+}
 
-55. try {
-56. wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
-57. } catch (err) {
-58. console.error(`getWantAgent failed! ${(err as BusinessError).code} ${(err as BusinessError).message}`);
-59. }
+try {
+  // 调用getWantAgent接口创建WantAgent对象
+  wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
+} catch (err) {
+  console.error(`getWantAgent failed! ${(err as BusinessError).code} ${(err as BusinessError).message}`);
+}
 ```
 
 ## wantAgent.getOperationType
-
-PhonePC/2in1TabletTVWearable
 
 getOperationType(agent: WantAgent, callback: AsyncCallback<number>): void
 
@@ -1093,7 +1096,7 @@ getOperationType(agent: WantAgent, callback: AsyncCallback<number>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | agent | WantAgent | 是 | WantAgent对象。 |
-| callback | AsyncCallback<number> | 是 | 回调函数。当获取一个WantAgent的OperationType信息成功，err为undefined，data为OperationType；否则err为错误对象。 |
+| callback | AsyncCallback<number> | 是 | 回调函数。当获取OperationType信息成功，err为undefined，data为OperationType的数值；否则err为错误对象。 |
 
 **错误码：**
 
@@ -1108,73 +1111,74 @@ getOperationType(agent: WantAgent, callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { wantAgent, Want } from '@kit.AbilityKit';
-2. import type { WantAgent } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { wantAgent, Want } from '@kit.AbilityKit';
+import type { WantAgent } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. // wantAgent对象
-6. let wantAgentData: WantAgent;
-7. // WantAgentInfo对象
-8. let wantAgentInfo: wantAgent.WantAgentInfo = {
-9. wants: [
-10. {
-11. deviceId: 'deviceId',
-12. bundleName: 'com.example.myapplication',
-13. abilityName: 'EntryAbility',
-14. action: 'action1',
-15. entities: ['entity1'],
-16. type: 'MIMETYPE',
-17. uri: 'key={true,true,false}',
-18. parameters:
-19. {
-20. mykey0: 2222,
-21. mykey1: [1, 2, 3],
-22. mykey2: '[1, 2, 3]',
-23. mykey3: 'ssssssssssssssssssssssssss',
-24. mykey4: [false, true, false],
-25. mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
-26. mykey6: true,
-27. }
-28. } as Want
-29. ],
-30. actionType: wantAgent.OperationType.START_ABILITY,
-31. requestCode: 0,
-32. wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
-33. };
+// wantAgent对象
+let wantAgentData: WantAgent;
+// WantAgentInfo对象
+let wantAgentInfo: wantAgent.WantAgentInfo = {
+  wants: [
+    {
+      deviceId: 'deviceId',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility',
+      action: 'action1',
+      entities: ['entity1'],
+      type: 'MIMETYPE',
+      uri: 'key={true,true,false}',
+      parameters:
+      {
+        mykey0: 2222,
+        mykey1: [1, 2, 3],
+        mykey2: '[1, 2, 3]',
+        mykey3: 'ssssssssssssssssssssssssss',
+        mykey4: [false, true, false],
+        mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
+        mykey6: true,
+      }
+    } as Want
+  ],
+  actionType: wantAgent.OperationType.START_ABILITY,
+  requestCode: 0,
+  wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+};
 
-35. // getWantAgent回调
-36. function getWantAgentCallback(err: BusinessError, data: WantAgent) {
-37. if (err) {
-38. console.error(`getWantAgent failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
-39. } else {
-40. wantAgentData = data;
-41. }
-42. // getOperationTypeCallback回调
-43. let getOperationTypeCallback = (err: BusinessError, data: number) => {
-44. if (err) {
-45. console.error(`getOperationType failed! ${err.code} ${err.message}`);
-46. } else {
-47. console.info(`getOperationType ok! ${JSON.stringify(data)}`);
-48. }
-49. }
-50. try {
-51. wantAgent.getOperationType(wantAgentData, getOperationTypeCallback);
-52. } catch (err) {
-53. console.error(`getOperationTypeCallback failed! ${(err as BusinessError).code} ${(err as BusinessError).message}`);
-54. }
-55. }
+// getWantAgent回调
+function getWantAgentCallback(err: BusinessError, data: WantAgent) {
+  if (err) {
+    console.error(`getWantAgent failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
+  } else {
+    // 创建WantAgent成功，保存返回的WantAgent对象
+    wantAgentData = data;
+  }
+  // getOperationTypeCallback回调
+  let getOperationTypeCallback = (err: BusinessError, data: number) => {
+    if (err) {
+      console.error(`getOperationType failed! ${err.code} ${err.message}`);
+    } else {
+      console.info(`getOperationType ok! ${JSON.stringify(data)}`);
+    }
+  }
+  try {
+    // 调用getOperationType接口获取WantAgent实例的操作类型
+    wantAgent.getOperationType(wantAgentData, getOperationTypeCallback);
+  } catch (err) {
+    console.error(`getOperationTypeCallback failed! ${(err as BusinessError).code} ${(err as BusinessError).message}`);
+  }
+}
 
-57. try {
-58. wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
-59. } catch (err) {
-60. console.error(`getWantAgent failed! ${(err as BusinessError).code} ${(err as BusinessError).message}`);
-61. }
+try {
+  // 调用getWantAgent接口创建WantAgent对象
+  wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
+} catch (err) {
+  console.error(`getWantAgent failed! ${(err as BusinessError).code} ${(err as BusinessError).message}`);
+}
 ```
 
 ## wantAgent.getOperationType
-
-PhonePC/2in1TabletTVWearable
 
 getOperationType(agent: WantAgent): Promise<number>
 
@@ -1188,7 +1192,7 @@ getOperationType(agent: WantAgent): Promise<number>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| agent | WantAgent | 是 | WantAgent对象。 |
+| agent | [WantAgent](js-apis-app-ability-wantagent.md#wantagent) | 是 | WantAgent对象。 |
 
 **返回值：**
 
@@ -1209,69 +1213,70 @@ getOperationType(agent: WantAgent): Promise<number>
 
 **示例：**
 
-```
-1. import { wantAgent, Want } from '@kit.AbilityKit';
-2. import type { WantAgent } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { wantAgent, Want } from '@kit.AbilityKit';
+import type { WantAgent } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. // wantAgent对象
-6. let wantAgentData: WantAgent;
-7. // WantAgentInfo对象
-8. let wantAgentInfo: wantAgent.WantAgentInfo = {
-9. wants: [
-10. {
-11. deviceId: 'deviceId',
-12. bundleName: 'com.example.myapplication',
-13. abilityName: 'EntryAbility',
-14. action: 'action1',
-15. entities: ['entity1'],
-16. type: 'MIMETYPE',
-17. uri: 'key={true,true,false}',
-18. parameters:
-19. {
-20. mykey0: 2222,
-21. mykey1: [1, 2, 3],
-22. mykey2: '[1, 2, 3]',
-23. mykey3: 'ssssssssssssssssssssssssss',
-24. mykey4: [false, true, false],
-25. mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
-26. mykey6: true,
-27. }
-28. } as Want
-29. ],
-30. actionType: wantAgent.OperationType.START_ABILITY,
-31. requestCode: 0,
-32. wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
-33. };
+// wantAgent对象
+let wantAgentData: WantAgent;
+// WantAgentInfo对象
+let wantAgentInfo: wantAgent.WantAgentInfo = {
+  wants: [
+    {
+      deviceId: 'deviceId',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility',
+      action: 'action1',
+      entities: ['entity1'],
+      type: 'MIMETYPE',
+      uri: 'key={true,true,false}',
+      parameters:
+      {
+        mykey0: 2222,
+        mykey1: [1, 2, 3],
+        mykey2: '[1, 2, 3]',
+        mykey3: 'ssssssssssssssssssssssssss',
+        mykey4: [false, true, false],
+        mykey5: ['qqqqq', 'wwwwww', 'aaaaaaaaaaaaaaaaa'],
+        mykey6: true,
+      }
+    } as Want
+  ],
+  actionType: wantAgent.OperationType.START_ABILITY,
+  requestCode: 0,
+  wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+};
 
-35. // getWantAgent回调
-36. function getWantAgentCallback(err: BusinessError, data: WantAgent) {
-37. if (err) {
-38. console.error(`getWantAgent failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
-39. } else {
-40. wantAgentData = data;
-41. }
-42. try {
-43. wantAgent.getOperationType(wantAgentData).then((data) => {
-44. console.info(`getOperationType ok! ${JSON.stringify(data)}`);
-45. }).catch((err: BusinessError) => {
-46. console.error(`getOperationType failed! ${err.code} ${err.message}`);
-47. });
-48. } catch (err) {
-49. console.error(`getOperationType failed! ${(err as BusinessError).code} ${(err as BusinessError).message}`);
-50. }
-51. }
+// getWantAgent回调
+function getWantAgentCallback(err: BusinessError, data: WantAgent) {
+  if (err) {
+    console.error(`getWantAgent failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
+  } else {
+    // 创建WantAgent成功，保存返回的WantAgent对象
+    wantAgentData = data;
+  }
+  try {
+    // 使用Promise方式获取WantAgent实例的操作类型
+    wantAgent.getOperationType(wantAgentData).then((data) => {
+      console.info(`getOperationType ok! ${JSON.stringify(data)}`);
+    }).catch((err: BusinessError) => {
+      console.error(`getOperationType failed! ${err.code} ${err.message}`);
+    });
+  } catch (err) {
+    console.error(`getOperationType failed! ${(err as BusinessError).code} ${(err as BusinessError).message}`);
+  }
+}
 
-53. try {
-54. wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
-55. } catch (err) {
-56. console.error(`getWantAgent failed! ${(err as BusinessError).code} ${(err as BusinessError).message}`);
-57. }
+try {
+  // 调用getWantAgent接口创建WantAgent对象
+  wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
+} catch (err) {
+  console.error(`getWantAgent failed! ${(err as BusinessError).code} ${(err as BusinessError).message}`);
+}
 ```
 
 ## WantAgentFlags
-
-PhonePC/2in1TabletTVWearable
 
 表示WantAgent行为控制标志，用于配置WantAgent的创建和触发行为。
 
@@ -1294,8 +1299,6 @@ PhonePC/2in1TabletTVWearable
 
 ## OperationType
 
-PhonePC/2in1TabletTVWearable
-
 表示WantAgent支持的操作类型。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
@@ -1311,8 +1314,6 @@ PhonePC/2in1TabletTVWearable
 | SEND\_COMMON\_EVENT | 4 | 发送一个公共事件。 |
 
 ## CompleteData
-
-PhonePC/2in1TabletTVWearable
 
 表示主动触发WantAgent返回的数据。
 
@@ -1330,8 +1331,6 @@ PhonePC/2in1TabletTVWearable
 
 ## TriggerInfo
 
-PhonePC/2in1TabletTVWearable
-
 type TriggerInfo = \_TriggerInfo
 
 TriggerInfo对象。
@@ -1346,8 +1345,6 @@ TriggerInfo对象。
 
 ## WantAgentInfo
 
-PhonePC/2in1TabletTVWearable
-
 type WantAgentInfo = \_WantAgentInfo
 
 WantAgentInfo对象。
@@ -1361,8 +1358,6 @@ WantAgentInfo对象。
 | [\_WantAgentInfo](js-apis-inner-wantagent-wantagentinfo.md) | WantAgentInfo对象。 |
 
 ## WantAgent
-
-PhonePC/2in1TabletTVWearable
 
 type WantAgent = object
 

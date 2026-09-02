@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-pdfkit-6021
 title: PDF Kit
-breadcrumb: 版本说明 > HarmonyOS 6.0.2(22) > OS平台能力 > API变更清单 > PDF Kit
+breadcrumb: 版本说明 > 更多版本 > 6.0.2(22) > OS平台能力 > API变更清单 > PDF Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:48+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:25+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:336e2054b9edf82c3d2c0c41d09546e9f47be71d8620715b2f88f2c1c20d2c3b
 ---
 

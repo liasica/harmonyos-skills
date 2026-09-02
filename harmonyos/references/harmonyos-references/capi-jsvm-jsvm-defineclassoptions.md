@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm
 title: JSVM_DefineClassOptions
 breadcrumb: API参考 > 公共基础能力 > C API > 结构体 > JSVM_DefineClassOptions
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:26+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:40420f0bc30fefa1bc668c97864536c43c2e46638d9be459642766351895843e
+scraped_at: 2026-09-02T15:03:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:590de8b67ae13d413939474963cd0b1f8b75263aada0a66b221a226654fbf940
 ---
 
-```
-1. typedef struct {...} JSVM_DefineClassOptions
+```c
+typedef struct {...} JSVM_DefineClassOptions
 ```
 
 ## 概述
 
-PhonePC/2in1TabletWearable
-
 定义Class的选项。
+
+**系统能力：** SystemCapability.ArkCompiler.JSVM
 
 **起始版本：** 18
 
@@ -26,11 +26,7 @@ PhonePC/2in1TabletWearable
 
 ## 汇总
 
-PhonePC/2in1TabletWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletWearable
 
 | 名称 | 描述 |
 | --- | --- |

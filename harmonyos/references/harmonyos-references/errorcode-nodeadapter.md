@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: NodeAdapter错误码
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > 错误码 > UI界面 > NodeAdapter错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:56+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:df1076381ec60d396e8cbfae5547d738e723331fc1cce2d970aebc484659f841
+scraped_at: 2026-09-02T15:01:25+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:66ea01e68746e0e31c1fa11e76ce87032626f627098ca48618c234ecbbe7d3b0
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
@@ -20,11 +20,11 @@ The lazy loading adapter is not bound to the component.
 
 **错误描述**
 
-组件未设置NodeAdapter。
+组件未绑定NodeAdapter。
 
 **可能原因**
 
-组件未设置NodeAdapter。
+组件未设置NodeAdapter，NodeAdapter需先与组件绑定后才能进行节点操作。
 
 **处理步骤**
 
@@ -42,11 +42,11 @@ NodeAdapter已经存在。
 
 **可能原因**
 
-NodeAdapter已经存在，不支持添加删除子节点。
+NodeAdapter已经存在，不支持添加或删除子节点。
 
 **处理步骤**
 
-移除NodeAdapter，或放弃在此处添加删除子节点。
+移除NodeAdapter，或放弃在此处添加或删除子节点。
 
 ## 106106 子节点已存在
 
@@ -56,7 +56,7 @@ The corresponding node already has a child node and cannot add an adapter.
 
 **错误描述**
 
-组件已经有子节点
+组件已经有子节点。
 
 **可能原因**
 
@@ -66,25 +66,25 @@ The corresponding node already has a child node and cannot add an adapter.
 
 移除子节点，或放弃在此处设置NodeAdapter。
 
-## 106107 参数下标越界
+## 106107 组件事件中的参数下标越界
 
 **错误信息**
 
-The parameter length in the parameter event exceeds the limit.
+The parameter index in the component event is out of range.
 
 **错误描述**
 
-组件事件中index参数超过数组长度限制。
+组件事件中的参数下标越界。
 
 **可能原因**
 
-传入的index参数超出传入的数组长度限制。
+传入的index参数超出数组长度限制。
 
 **处理步骤**
 
 检查index参数是否超出传入的数组长度限制。
 
-## 106108 数据不存在
+## 106108 组件事件中不存在调用方请求获取的数据
 
 **错误信息**
 
@@ -92,7 +92,7 @@ The data does not exist in the component event.
 
 **错误描述**
 
-组件事件中不存在该数据。
+组件事件中不存在调用方请求获取的数据。
 
 **可能原因**
 
@@ -100,7 +100,7 @@ The data does not exist in the component event.
 
 **处理步骤**
 
-确认当前事件是否存在想要查询的数据。
+确认当前事件是否存在需查询的数据。
 
 ## 106109 不支持返回值
 
@@ -118,7 +118,7 @@ The component event does not support return values.
 
 **处理步骤**
 
-确认当前事件是否存在返回值。
+请移除获取事件返回值的相关代码。
 
 ## 106110 暂不支持该事件类型
 
@@ -128,7 +128,7 @@ The event type is not supported.
 
 **错误描述**
 
-注册通用事件时传入的事件类型错误。
+注册通用事件时传入的事件类型不被支持。
 
 **可能原因**
 
@@ -136,4 +136,4 @@ The event type is not supported.
 
 **处理步骤**
 
-检查函数入参的事件类型的具体值。
+检查函数入参的事件类型取值是否在已支持的事件类型范围内。

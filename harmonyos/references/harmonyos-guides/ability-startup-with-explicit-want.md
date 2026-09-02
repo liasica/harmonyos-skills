@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-startup-with-explicit-want
 title: 使用显式Want启动应用组件
-breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > Stage模型应用组件 > 信息传递载体Want > 使用显式Want启动应用组件
+breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > 信息传递载体Want > 使用显式Want启动应用组件
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:45+08:00
+scraped_at: 2026-09-02T15:16:56+08:00
 doc_updated_at: 2026-03-09
 content_hash: sha256:1740b20415bec095c6b092f8b4140f67572b92e5a7ce4d8b2ac67caf2b67b59e
 ---

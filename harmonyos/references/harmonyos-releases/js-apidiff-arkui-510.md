@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-arkui-510
 title: ArkUI
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.1.0(18) > OS平台能力 > API变更清单 > ArkUI
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.0(18) > OS平台能力 > API变更清单 > ArkUI
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:05+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:34+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:0e24bb33b6010395d8ec7544faefcc88fcb1e84039413fdac26d5c61d8497007
 ---
 

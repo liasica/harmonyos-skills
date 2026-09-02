@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 解除应用访问限制
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 应用访问限制 > 解除应用访问限制
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:40:30+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:da1c96554fdac1ece959043565c0a884a5aacd815b7c4494de6d60bb2f25e332
+scraped_at: 2026-09-02T15:00:02+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:e3a44c48698f4a882fa22202708f89946ca8f20c8f955cebfceab8643e8512ae
 ---
 
 ## 场景介绍
 
-当用户希望解除用户访问某些特定应用的限制时，可以调用解除应用访问限制的接口。根据参数中传入的token以及限制类型（允许/禁用），将允许/禁用清单解析后，解除对应的应用的限制。
+当管控应用希望解除被管控应用的访问限制时，可以通过调用解除应用访问限制接口实现。Screen Time Guard Kit会根据传入的应用token以及限制类型，解除对应应用的访问限制。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/_PbuEXiSQtCEuXsEJyQOWg/zh-cn_image_0000002558765676.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/gMpwZi1HR0yDoqczsZ1Wqg/zh-cn_image_0000002706835202.png)
 
 流程说明：
 
@@ -29,27 +29,22 @@ content_hash: sha256:da1c96554fdac1ece959043565c0a884a5aacd815b7c4494de6d60bb2f2
 
 | 接口名 | 描述 |
 | --- | --- |
-| [releaseAppsRestriction](../harmonyos-references/screentimeguard-guardservice.md#releaseappsrestriction)(appInfo: [AppInfo](../harmonyos-references/screentimeguard-guardservice.md#appinfo), restrictionType: [RestrictionType](../harmonyos-references/screentimeguard-guardservice.md#restrictiontype)): Promise<void> | 根据传入的应用token数组和限制类型（允许/禁用清单），解除对应应用的访问限制。 |
+| [releaseAppsRestriction](../harmonyos-references/screentimeguard-guardservice.md#releaseappsrestriction)(appInfo: [AppInfo](../harmonyos-references/screentimeguard-guardservice.md#appinfo), restrictionType: [RestrictionType](../harmonyos-references/screentimeguard-guardservice.md#restrictiontype)): Promise<void> | 可根据传入应用token数组，以及限制类型（许可/禁用清单），来解除对应应用的访问限制 |
 
-说明
+**说明** 
 
 **定义释义：**
 
-限制类型为禁用清单时，对应用数组中的应用做解除限制。
-
-限制类型为允许清单时，对应用数组以外的应用做解除限制。
+* 限制类型为禁用清单时，对应用数组中的应用做解除限制。
+* 限制类型为许可清单时，对应用数组以外的应用做解除限制。
 
 **边界场景：**
 
-1、如果传入的应用数组为空，限制类型为禁用清单，则不对任何应用做解除限制。
-
-2、如果传入的应用数组为空，限制类型为允许清单，则对除了系统内置允许清单应用（电话、联系人、设置、未成年人模式）、管控发起应用本身、已授权的管控应用之外的所有应用做解除限制。
-
-3、同一个管控应用的限制和解除限制需对称使用，即解除限制必须和其限制的类型匹配上，如不匹配，则为参数错误；如果之前没有做过setAppsRestriction管控，也为参数错误。
-
-4、如果要对之前用禁用清单方式做限制的应用做解除限制，则传入的应用数组需包含所有的禁用清单应用，才可全部解除。
-
-5、传入的应用数组中如果包含了限制时传入的应用数组以外的应用（或包含无效token），则为参数错误。
+* 如果传入的应用数组为空，限制类型为禁用清单，则不对任何应用做解除限制。
+* 如果传入的应用数组为空，限制类型为许可清单，则对除了系统内置许可清单应用（电话、联系人、设置、未成年人模式）、管控发起应用本身、已授权的管控应用之外的所有应用做解除限制。
+* 同一个管控应用的限制和解除限制需对称使用，即解除限制必须和其限制的类型匹配上，如不匹配，则为参数错误；如果之前没有做过setAppsRestriction管控，也为参数错误。
+* 如果要对之前用禁用清单方式做限制的应用做解除限制，则传入的应用数组需包含所有的禁用清单应用，才可全部解除。
+* 传入的应用数组中如果包含了限制时传入的应用数组以外的应用（或包含无效token），则为参数错误。
 
 ## 开发前提
 
@@ -59,35 +54,22 @@ content_hash: sha256:da1c96554fdac1ece959043565c0a884a5aacd815b7c4494de6d60bb2f2
 
 1. 导入相关模块。
 
-   ```
-   1. import { guardService, appPicker } from '@kit.ScreenTimeGuardKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
-   3. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { guardService } from '@kit.ScreenTimeGuardKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 调用releaseAppsRestriction，解除应用访问限制。
 
-   ```
-   1. @Entry
-   2. @Component
-   3. struct TestPage {
-   4. build() {
-   5. Column() {
-   6. Button("TestReleaseAppsRestriction")
-   7. .onClick(async () => {
-   8. try {
-   9. // 先调用startAppPicker获取相应应用的token
-   10. const tokens = await appPicker.startAppPicker(this.getUIContext().getHostContext(), { appTokens: [] });
-
-   12. const appInfo: guardService.AppInfo = { appTokens: tokens };
-   13. const restrictionType: guardService.RestrictionType = guardService.RestrictionType.BLOCKLIST_TYPE;
-   14. await guardService.releaseAppsRestriction(appInfo, restrictionType);
-   15. } catch (err) {
-   16. const message = (err as BusinessError).message;
-   17. const code = (err as BusinessError).code;
-   18. hilog.error(0x0000, `ScreenTimeGuard:releaseAppsRestriction`, `releaseAppsRestriction failed with error code: ${code}, message: ${message}`)
-   19. }
-   20. })
-   21. }
-   22. }
-   23. }
+   ```typescript
+   private async releaseApps(appInfo: guardService.AppInfo): Promise<void> {
+     try {
+       await guardService.releaseAppsRestriction(appInfo, guardService.RestrictionType.BLOCKLIST_TYPE);
+       // ...
+     } catch (error) {
+       let err: BusinessError = error as BusinessError;
+       hilog.error(0x0000, 'GuardService',
+         `releaseAppsRestriction failed, errCode is ${err.code}, errMessage is ${err.message}`);
+     }
+   }
    ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 多设备界面开发案例
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例
 category: best-practices
-scraped_at: 2026-04-28T08:21:07+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:2e4e69ddfa45fc44bc15e148fc4504e72743722e75ad11fbd3eea61a443a0a39
+scraped_at: 2026-09-02T14:53:41+08:00
+doc_updated_at: 2026-05-30
+content_hash: sha256:61d0380d87dccf36f53f0a4fc6be52dab07141b0e884bbfeeaaae857f764538d
 ---
 
 * **[多设备长视频界面](multi-video-app.md)**
@@ -19,7 +19,7 @@ content_hash: sha256:2e4e69ddfa45fc44bc15e148fc4504e72743722e75ad11fbd3eea61a443
 * **[多设备银行理财界面](multi-financial-app.md)**
 * **[多设备社区评论界面](multi-community-app.md)**
 * **[多设备新闻阅读界面](multi-news-read.md)**
-* **[多设备移动支付界面](multi-mobile-payment.md)**
+* **[多设备移动支付界面](bpta-multi-mobile-payment.md)**
 * **[多设备即时通讯界面](multi-communication-app.md)**
 * **[多设备图片美化界面](multi-picture-app.md)**
 * **[多设备游戏界面](bpta-multi_game.md)**

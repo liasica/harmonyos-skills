@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-voip-ability
-title: VoIPExtensionAbility（应用内通话消息扩展Ability）
-breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > ArkTS API > VoIPExtensionAbility（应用内通话消息扩展Ability）
+title: VoIPExtensionAbility（应用内通话消息扩展Ability）（废弃）
+breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > ArkTS API > VoIPExtensionAbility（应用内通话消息扩展Ability）（废弃）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:28+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:91029d8f78eb2582dbf1628809fc1fd32faf84d82aa8f06940f4443617b6c910
+scraped_at: 2026-09-02T14:53:30+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b0764b6f99f942202619431f6b4188a883aae71db87922c5948b62600722c034
 ---
 
 VoIPExtensionAbility为应用内通话消息扩展Ability，继承自[UIExtensionAbility](js-apis-app-ability-uiextensionability.md)，增加获取场景化消息数据的回调。有如下约束：
@@ -13,23 +13,27 @@ VoIPExtensionAbility为应用内通话消息扩展Ability，继承自[UIExtensio
 * VoIPExtensionAbility为独立子进程，轻量级。
 * 不允许调用卡片API。
 
+执行ExtensionAbility失败可能会返回错误，请按具体报错信息排查，详见[ArkTS API错误码](push-error-code.md)。
+
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Push.PushService
 
 **起始版本：** 4.1.0(11)
 
+**废弃版本：** 26.0.0
+
+## 约束限制
+
+为保障系统安全性和稳定性，防止VoIPExtensionAbility滥用系统资源，系统对其能力进行管控， 不支持部分模块的引用，详情请参考[附录](push-voip-ability.md#附录)。
+
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { VoIPExtensionAbility } from '@kit.PushKit';
+```typescript
+import { VoIPExtensionAbility } from '@kit.PushKit';
 ```
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 属性仅可在Stage模型下使用。
 
@@ -39,13 +43,13 @@ PhonePC/2in1TabletTVWearable
 
 **起始版本：** 4.1.0(11)
 
+**废弃版本：** 26.0.0
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| context | [VoIPExtensionContext](push-voip-context.md#voipextensioncontext) | 否 | 否 | VoIPExtensionAbility的上下文环境，继承自[UIExtensionContext](js-apis-inner-application-uiextensioncontext.md)。 |
+| context | [VoIPExtensionContext](push-voip-context.md)(deprecated) | 否 | 否 | VoIPExtensionAbility的上下文环境，继承自[UIExtensionContext](js-apis-inner-application-uiextensioncontext.md)。 |
 
-## onReceiveMessage
-
-PhonePC/2in1TabletTVWearable
+## onReceiveMessage(deprecated)
 
 onReceiveMessage(voipInfo: pushCommon.VoIPInfo): void
 
@@ -59,6 +63,8 @@ onReceiveMessage(voipInfo: pushCommon.VoIPInfo): void
 
 **起始版本：** 4.1.0(11)
 
+**废弃版本：** 26.0.0
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -67,14 +73,25 @@ onReceiveMessage(voipInfo: pushCommon.VoIPInfo): void
 
 **示例：**
 
-```
-1. import { VoIPExtensionAbility, pushCommon } from '@kit.PushKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { VoIPExtensionAbility, pushCommon } from '@kit.PushKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. export default class VoipExtAbility extends VoIPExtensionAbility {
-5. // voipInfo为场景化消息数据
-6. onReceiveMessage(voipInfo: pushCommon.VoIPInfo): void {
-7. hilog.info(0x0000, 'testTag', 'TestExtAbility onReceiveMessage');
-8. }
-9. }
+const LOG_DOMAIN = 0x0000;
+const LOG_TAG = 'VoIPExtensionAbility';
+
+export default class VoipExtAbility extends VoIPExtensionAbility {
+  // voipInfo为场景化消息数据
+  onReceiveMessage(voipInfo: pushCommon.VoIPInfo): void {
+    hilog.info(LOG_DOMAIN, LOG_TAG, 'VoipExtAbility onReceiveMessage');
+  }
+}
 ```
+
+## 附录
+
+VoIPExtensionAbility不支持以下模块的引用。
+
+| Kit | 模块 |
+| --- | --- |
+| Form Kit | [@ohos.app.form.formProvider (formProvider)](js-apis-app-form-formprovider.md)  [@ohos.app.form.formInfo (formInfo)](js-apis-app-form-forminfo.md)  [@ohos.app.form.formBindingData (卡片数据绑定类)](js-apis-app-form-formbindingdata.md)  [@ohos.app.form.FormExtensionAbility (FormExtensionAbility)](js-apis-app-form-formextensionability.md)  [@ohos.application.formBindingData (卡片数据绑定类)](js-apis-application-formbindingdata.md)  [@ohos.application.formInfo (formInfo)](js-apis-application-forminfo.md)  [@ohos.application.formProvider (formProvider)](js-apis-application-formprovider.md) |

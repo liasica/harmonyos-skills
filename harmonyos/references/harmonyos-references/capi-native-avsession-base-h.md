@@ -3,16 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_avsession_base.h
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > C API > 头文件 > native_avsession_base.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:25+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:63adec45b41ec69bd31ed4f75d6a1e10375cd251d632a663139ce7737f082867
+scraped_at: 2026-09-02T15:02:25+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:012e43d5ca2f5a12309313a038dc92bd15bd93def356e2bb365962c64d2ea526
 ---
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-声明avsession基本信息。
+声明AVSession基本信息。
 
 **引用文件：** <multimedia/av\_session/native\_avsession\_base.h>
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -50,14 +44,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### AVSession\_Type
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum AVSession_Type
+```c
+enum AVSession_Type
 ```
 
 **描述**
@@ -70,16 +60,14 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | SESSION\_TYPE\_AUDIO = 0 | 音频会话类型（指媒体类音频，如音乐）。 |
 | SESSION\_TYPE\_VIDEO = 1 | 视频会话类型（指媒体类投屏视频）。 |
-| SESSION\_TYPE\_VOICE\_CALL = 2 | 音频通话会话类型（指人机交互相关的音频，如语音助手）。 |
+| SESSION\_TYPE\_VOICE\_CALL = 2 | 音频通话会话类型（指语音通话）。 |
 | SESSION\_TYPE\_VIDEO\_CALL = 3 | 视频通话会话类型（指视频电话）。 |
 | SESSION\_TYPE\_PHOTO = 4 | 相片会话类型。 |
 
 ### AVSession\_PlaybackState
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum AVSession_PlaybackState
+```c
+enum AVSession_PlaybackState
 ```
 
 **描述**
@@ -106,10 +94,8 @@ PhonePC/2in1TabletTVWearable
 
 ### AVSession\_LoopMode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum AVSession_LoopMode
+```c
+enum AVSession_LoopMode
 ```
 
 **描述**
@@ -122,16 +108,14 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | LOOP\_MODE\_SEQUENCE = 0 | 按顺序播放。 |
 | LOOP\_MODE\_SINGLE = 1 | 单曲循环。 |
-| LOOP\_MODE\_LIST = 2 | 按表单循环。 |
+| LOOP\_MODE\_LIST = 2 | 列表循环。 |
 | LOOP\_MODE\_SHUFFLE = 3 | 随机播放。 |
 | LOOP\_MODE\_CUSTOM = 4 | 自定义播放。 |
 
 ### AVSession\_ControlCommand
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum AVSession_ControlCommand
+```c
+enum AVSession_ControlCommand
 ```
 
 **描述**
@@ -151,10 +135,8 @@ PhonePC/2in1TabletTVWearable
 
 ### AVMetadata\_SkipIntervals
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum AVMetadata_SkipIntervals
+```c
+enum AVMetadata_SkipIntervals
 ```
 
 **描述**
@@ -171,10 +153,8 @@ PhonePC/2in1TabletTVWearable
 
 ### AVMetadata\_DisplayTag
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum AVMetadata_DisplayTag
+```c
+enum AVMetadata_DisplayTag
 ```
 
 **描述**
@@ -189,10 +169,8 @@ PhonePC/2in1TabletTVWearable
 
 ### AVSession\_ConnectionState
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum AVSession_ConnectionState
+```c
+enum AVSession_ConnectionState
 ```
 
 **描述**
@@ -205,14 +183,12 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | STATE\_CONNECTING = 0 | 表示设备正处于连接状态。 |
 | STATE\_CONNECTED = 1 | 表示设备处于已连接状态。 |
-| STATE\_DISCONNECTED = 6 | 表示设备已处于断开默认连接的状态。 |
+| STATE\_DISCONNECTED = 6 | 表示设备已断开连接。 |
 
 ### AVSession\_AVCastCategory
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum AVSession_AVCastCategory
+```c
+enum AVSession_AVCastCategory
 ```
 
 **描述**
@@ -228,10 +204,8 @@ PhonePC/2in1TabletTVWearable
 
 ### AVSession\_DeviceType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum AVSession_DeviceType
+```c
+enum AVSession_DeviceType
 ```
 
 **描述**
@@ -242,17 +216,15 @@ PhonePC/2in1TabletTVWearable
 
 | 枚举项 | 描述 |
 | --- | --- |
-| DEVICE\_TYPE\_LOCAL = 0 | 一种设备类型，标识音频路由为设备自身的内置扬声器或音频插孔。 |
-| DEVICE\_TYPE\_TV = 2 | 一种设备类型，标识音频路由为电视端。 |
-| DEVICE\_TYPE\_SMART\_SPEAKER = 3 | 一种设备类型，标识音频路由为智能音箱端。 |
-| DEVICE\_TYPE\_BLUETOOTH = 10 | 一种设备类型，标识音频路由为蓝牙设备端。 |
+| DEVICE\_TYPE\_LOCAL = 0 | 标识音频路由为设备自身的内置扬声器或音频插孔。 |
+| DEVICE\_TYPE\_TV = 2 | 标识音频路由为电视端。 |
+| DEVICE\_TYPE\_SMART\_SPEAKER = 3 | 标识音频路由为智能音箱端。 |
+| DEVICE\_TYPE\_BLUETOOTH = 10 | 标识音频路由为蓝牙设备端。 |
 
 ### AVSession\_ProtocolType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum AVSession_ProtocolType
+```c
+enum AVSession_ProtocolType
 ```
 
 **描述**
@@ -264,16 +236,14 @@ PhonePC/2in1TabletTVWearable
 | 枚举项 | 描述 |
 | --- | --- |
 | TYPE\_LOCAL = 0 | 默认为本地设备。包括设备本身的内置扬声器或音频插孔，A2DP（Advanced Audio Distribution Profile）设备。 |
-| TYPE\_CAST\_PLUS\_STREAM = 2 | Cast+的Stream模式。表示媒体正在其他设备上展示，应用需要一个AVCastController来控制远程播放。 |
-| TYPE\_DLNA = 4 | DLNA（DIGITAL LIVING NETWORK ALLIANCE）协议。表示设备支持DLNA协议，应用需要一个AVCastController来控制远程播放。 |
+| TYPE\_CAST\_PLUS\_STREAM = 2 | Cast+的Stream模式。表示媒体正在其他设备上展示，应用需要一个[OH\_AVCastController](capi-ohavsession-oh-avcastcontroller.md)来控制远程播放。 |
+| TYPE\_DLNA = 4 | DLNA（DIGITAL LIVING NETWORK ALLIANCE）协议。表示设备支持DLNA协议，应用需要一个[OH\_AVCastController](capi-ohavsession-oh-avcastcontroller.md)来控制远程播放。 |
 | TYPE\_CAST\_PLUS\_AUDIO = 8 | 表示该设备支持高清晰度的音频投播，以获得更好的音质。 |
 
 ### AVSession\_AVCastControlCommandType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum AVSession_AVCastControlCommandType
+```c
+enum AVSession_AVCastControlCommandType
 ```
 
 **描述**
@@ -291,16 +261,14 @@ PhonePC/2in1TabletTVWearable
 | CAST\_CONTROL\_CMD\_PLAY\_PREVIOUS = 4 | 上一首命令。 |
 | CAST\_CONTROL\_CMD\_FAST\_FORWARD = 5 | 快进命令。 |
 | CAST\_CONTROL\_CMD\_REWIND = 6 | 快退命令。 |
-| CAST\_CONTROL\_CMD\_SEEK = 7 | 跳转某一节点命令。 |
+| CAST\_CONTROL\_CMD\_SEEK = 7 | 跳转到指定播放位置命令。 |
 | CAST\_CONTROL\_CMD\_SET\_VOLUME = 8 | 设置音量命令。 |
 | CAST\_CONTROL\_CMD\_SET\_SPEED = 9 | 设置播放倍速命令。 |
 
 ### AVSession\_PlaybackSpeed
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum AVSession_PlaybackSpeed
+```c
+enum AVSession_PlaybackSpeed
 ```
 
 **描述**
@@ -311,20 +279,18 @@ PhonePC/2in1TabletTVWearable
 
 | 枚举项 | 描述 |
 | --- | --- |
-| SPEED\_FORWARD\_0\_75\_X = 0 | 以正常播速的0.75倍速播放视频。 |
-| SPEED\_FORWARD\_1\_00\_X = 1 | 以正常播速（1.00x）播放视频。 |
-| SPEED\_FORWARD\_1\_25\_X = 2 | 以正常播速的1.25倍速播放视频。 |
-| SPEED\_FORWARD\_1\_75\_X = 3 | 以正常播速的1.75倍速播放视频。 |
-| SPEED\_FORWARD\_2\_00\_X = 4 | 以正常播速的2倍速播放视频。 |
-| SPEED\_FORWARD\_0\_50\_X = 5 | 以正常播速的0.5倍速播放视频。 |
-| SPEED\_FORWARD\_1\_50\_X = 6 | 以正常播速的1.5倍速播放视频。 |
+| SPEED\_FORWARD\_0\_75\_X = 0 | 以正常播速的0.75倍速播放音视频。 |
+| SPEED\_FORWARD\_1\_00\_X = 1 | 以正常播速（1.00x）播放音视频。 |
+| SPEED\_FORWARD\_1\_25\_X = 2 | 以正常播速的1.25倍速播放音视频。 |
+| SPEED\_FORWARD\_1\_75\_X = 3 | 以正常播速的1.75倍速播放音视频。 |
+| SPEED\_FORWARD\_2\_00\_X = 4 | 以正常播速的2倍速播放音视频。 |
+| SPEED\_FORWARD\_0\_50\_X = 5 | 以正常播速的0.5倍速播放音视频。 |
+| SPEED\_FORWARD\_1\_50\_X = 6 | 以正常播速的1.5倍速播放音视频。 |
 
 ### AVSession\_PlaybackFilter
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum AVSession_PlaybackFilter
+```c
+enum AVSession_PlaybackFilter
 ```
 
 **描述**
@@ -335,7 +301,7 @@ PhonePC/2in1TabletTVWearable
 
 | 枚举项 | 描述 |
 | --- | --- |
-| FILTER\_STATE = 1 << 0 | 过滤出状态。 |
-| FILTER\_POSITION = 1 << 1 | 过滤出位置。 |
-| FILTER\_SPEED = 1 << 2 | 过滤出倍速。 |
-| FILTER\_VOLUME = 1 << 3 | 过滤出音量。 |
+| FILTER\_STATE = 1 << 0 | 过滤状态。 |
+| FILTER\_POSITION = 1 << 1 | 过滤位置。 |
+| FILTER\_SPEED = 1 << 2 | 过滤倍速。 |
+| FILTER\_VOLUME = 1 << 3 | 过滤音量。 |

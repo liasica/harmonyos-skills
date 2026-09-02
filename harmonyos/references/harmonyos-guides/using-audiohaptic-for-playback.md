@@ -1,154 +1,146 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-audiohaptic-for-playback
-title: 使用AudioHaptic开发音振协同播放功能(ArkTs)
-breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频播放 > 使用AudioHaptic开发音振协同播放功能(ArkTs)
+title: 使用AudioHaptic开发音振协同播放功能(ArkTS)
+breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频播放 > 使用AudioHaptic开发音振协同播放功能(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:32+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:dafe8a556247555e83d6d99ef5437ce208df7e2d13c18a8963acfb5e4c6e24eb
+scraped_at: 2026-09-02T14:59:42+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c98b588ab38fa4a15802bb4f64c83ea582c2b231e3ac08afdd6d0004218ce4a4
 ---
+
+从API版本11开始支持音振协同播放。
 
 AudioHaptic提供音频与振动协同播放及管理的方法，适用于需要在播放音频时同步发起振动的场景，如来电铃声随振、键盘按键反馈、消息通知反馈等。
 
 ## 开发指导
 
-使用AudioHaptic播放音频并同步开启振动，涉及到音频及振动资源的管理、音频时延模式及音频流使用类型的配置、音振播放器的创建及管理等。本开发指导将以一次音振协同播放的过程为例，向开发者讲解如何使用AudioHaptic进行音振协同播放，建议配合[audioHaptic](../harmonyos-references/js-apis-audiohaptic.md)的API说明阅读。
+使用AudioHaptic开发音频与振动协同播放功能，涉及到音频及振动资源的管理、音频时延模式及音频流使用类型的配置、音振播放器的创建及管理等。本文将以一次音振协同播放的过程为例，讲解如何使用AudioHaptic开发音振协同播放功能，建议结合[audioHaptic](../harmonyos-references/js-apis-audiohaptic.md)API接口文档一起阅读。
 
 ### 权限申请
 
 如果应用创建的AudioHapticPlayer需要触发振动，则需要校验应用是否拥有该权限：ohos.permission.VIBRATE。
 
-1. [声明权限](declare-permissions.md)。
-2. [向用户申请授权](request-user-authorization.md)。
+1. 请参考[声明权限](declare-permissions.md)指导，声明该振动权限。
+2. 由于该权限为用户授予类权限，需要拉起用户授权弹窗让用户使用时授权，否则无法获取该权限，代码开发请参考[向用户申请授权](request-user-authorization.md)。
 
 ### 开发步骤及注意事项
 
-以下各步骤示例为片段代码，可通过示例代码右下方链接获取[完整示例](https://gitcode.com/openharmony/applications_app_samples/blob/master/code/DocsSample/Media/Audio/AudioRendererSampleJS)。
-
-1. 获取音振管理器实例，并注册音频及振动资源，资源支持情况可以查看[AudioHapticManager](../harmonyos-references/js-apis-audiohaptic.md#audiohapticmanager)。
-
-   说明
-
-   开发者可通过如下两种方式注册资源：
+1. 获取音振管理器实例，并注册音频及振动资源，单个应用最多支持同时注册128个资源，播放器支持的音频和振动资源格式，请查看[registerSource](../harmonyos-references/js-apis-audiohaptic.md#registersource)文档中的描述。开发者可通过如下两种方式注册资源：
 
    * 方式1：使用[registerSource](../harmonyos-references/js-apis-audiohaptic.md#registersource)接口，通过文件URI来注册资源。
-   * 方式2（推荐）：从API version 20开始，支持使用[registerSourceFromFd](../harmonyos-references/js-apis-audiohaptic.md#registersourcefromfd20)接口，通过文件描述符来注册资源，更便于开发者使用。
+   * 方式2（推荐）：从API版本20开始，支持使用[registerSourceFromFd](../harmonyos-references/js-apis-audiohaptic.md#registersourcefromfd20)接口，通过文件描述符来注册资源。
 
+   ```typescript
+   import { audio, audioHaptic } from '@kit.AudioKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { common } from '@kit.AbilityKit';
+
+   let audioHapticManagerInstance: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
+
+   // ...
+     // 方法1：使用registerSource接口注册资源。
+     let audioUri = 'data/audioTest.wav'; // 此处仅作示例，实际使用时需要将文件替换为应用目标音频资源的URI。
+     let hapticUri = 'data/hapticTest.json'; // 此处仅作示例，实际使用时需要将文件替换为应用目标振动资源的URI。
+     let idForUri = 0;
+
+     audioHapticManagerInstance.registerSource(audioUri, hapticUri).then((value: number) => {
+       console.info(`Succeeded in registering source, sourceId is ${value}.`);
+       idForUri = value;
+       // ...
+     }).catch((err: BusinessError) => {
+       console.error(`Failed to register source. Code: ${err.code}, message: ${err.message}`);
+       // ...
+     });
+     // ...
+     // 方法2：使用registerSourceFromFd接口注册资源。
+     // 此处仅作示例，实际使用时需要将文件替换为应用rawfile目录下的对应文件。
+     let audioFile = context.resourceManager.getRawFdSync('audioTest.ogg');
+     let audioFd: audioHaptic.AudioHapticFileDescriptor = {
+       fd: audioFile.fd,
+       offset: audioFile.offset,
+       length: audioFile.length,
+     };
+     // 此处仅作示例，实际使用时需要将文件替换为应用rawfile目录下的对应文件。
+     let hapticFile = context.resourceManager.getRawFdSync('hapticTest.json');
+     let hapticFd: audioHaptic.AudioHapticFileDescriptor = {
+       fd: hapticFile.fd,
+       offset: hapticFile.offset,
+       length: hapticFile.length,
+     };
+     audioHapticManagerInstance.registerSourceFromFd(audioFd, hapticFd).then((value: number) => {
+       console.info(`Succeeded in registering source from fd, sourceId is ${value}.`);
+       idForFd = value;
+       // ...
+     }).catch((err: BusinessError) => {
+       console.error(`Failed to register source from fd. Code: ${err.code}, message: ${err.message}`);
+       // ...
+     });
    ```
-   1. import { audio, audioHaptic } from '@kit.AudioKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
-   3. import { common } from '@kit.AbilityKit';
+2. 设置音振播放器音频时延模式和音频流使用类型，具体作用和类型可以查看[setAudioLatencyMode](../harmonyos-references/js-apis-audiohaptic.md#setaudiolatencymode)和[setStreamUsage](../harmonyos-references/js-apis-audiohaptic.md#setstreamusage)接口的文档，推荐短信、通知音等短提示音搭配FAST模式，来电铃声等长铃声搭配NORMAL模式。
 
-   5. let audioHapticManagerInstance: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
+   ```typescript
+   let latencyMode: audioHaptic.AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_NORMAL;
+   audioHapticManagerInstance.setAudioLatencyMode(idForFd, latencyMode);
 
-   7. // 单个应用最多支持同时注册128个资源，超过之后将会注册失败（返回注册的资源ID为负数）。
-   8. // 推荐应用合理控制注册资源数量，对于不再需要使用的资源，建议及时取消注册。
-
-   10. // ...
-   11. // 方法1：使用registerSource接口注册资源。
-   12. let audioUri = 'data/audioTest.wav'; // 此处仅作示例，实际使用时需要将文件替换为应用目标音频资源的Uri。
-   13. let hapticUri = 'data/hapticTest.json'; // 此处仅作示例，实际使用时需要将文件替换为应用目标振动资源的Uri。
-   14. let idForUri = 0;
-
-   16. audioHapticManagerInstance.registerSource(audioUri, hapticUri).then((value: number) => {
-   17. console.info(`Promise returned to indicate that the source id of the registered source ${value}.`);
-   18. idForUri = value;
-   19. // ...
-   20. }).catch((err: BusinessError) => {
-   21. console.error(`Failed to register source ${err}`);
-   22. // ...
-   23. });
-   24. // ...
-   25. // 方法2:使用registerSourceFromFd接口注册资源。
-   26. // 此处仅作示例,实际使用时需要将文件替换为应用rawfile目录下的对应文件。
-   27. let audioFile = context.resourceManager.getRawFdSync('audioTest.ogg');
-   28. let audioFd: audioHaptic.AudioHapticFileDescriptor = {
-   29. fd: audioFile.fd,
-   30. offset: audioFile.offset,
-   31. length: audioFile.length,
-   32. };
-   33. // 此处仅作示例,实际使用时需要将文件替换为应用rawfile目录下的对应文件。
-   34. let hapticFile = context.resourceManager.getRawFdSync('hapticTest.json');
-   35. let hapticFd: audioHaptic.AudioHapticFileDescriptor = {
-   36. fd: hapticFile.fd,
-   37. offset: hapticFile.offset,
-   38. length: hapticFile.length,
-   39. };
-   40. audioHapticManagerInstance.registerSourceFromFd(audioFd, hapticFd).then((value: number) => {
-   41. console.info('Succeeded in doing registerSourceFromFd.');
-   42. idForFd = value;
-   43. // ...
-   44. }).catch((err: BusinessError) => {
-   45. console.error(`Failed to registerSourceFromFd. Code: ${err.code}, message: ${err.message}`);
-   46. // ...
-   47. });
+   let usage: audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_NOTIFICATION;
+   audioHapticManagerInstance.setStreamUsage(idForFd, usage);
    ```
-2. 设置音振播放器参数，各参数作用可以查看[AudioHapticManager](../harmonyos-references/js-apis-audiohaptic.md#audiohapticmanager)。
+3. 调用[createPlayer](../harmonyos-references/js-apis-audiohaptic.md#createplayer)方法，创建AudioHapticPlayer实例，其中options参数控制是否将音频静音，是否禁止振动。参数为空时，播放器默认开启音频，允许振动。
 
-   ```
-   1. let latencyMode: audioHaptic.AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_FAST;
-   2. audioHapticManagerInstance.setAudioLatencyMode(idForFd, latencyMode);
-
-   4. let usage: audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_NOTIFICATION;
-   5. audioHapticManagerInstance.setStreamUsage(idForFd, usage);
-   ```
-3. 调用[createPlayer](../harmonyos-references/js-apis-audiohaptic.md#createplayer)方法，创建AudioHapticPlayer实例。
-
-   ```
-   1. let options: audioHaptic.AudioHapticPlayerOptions = {muteAudio: false, muteHaptics: false};
-   2. let audioHapticPlayer: audioHaptic.AudioHapticPlayer | undefined = undefined;
-   3. // ...
-   4. audioHapticManagerInstance.createPlayer(idForFd, options).then((value: audioHaptic.AudioHapticPlayer) => {
-   5. console.info(`Create the audio haptic player successfully.`);
-   6. audioHapticPlayer = value;
-   7. // ...
-   8. }).catch((err: BusinessError) => {
-   9. console.error(`Failed to create player ${err}`);
-   10. // ...
-   11. });
+   ```typescript
+   let options: audioHaptic.AudioHapticPlayerOptions = {muteAudio: false, muteHaptics: false};
+   let audioHapticPlayer: audioHaptic.AudioHapticPlayer | undefined = undefined;
+   // ...
+       audioHapticManagerInstance.createPlayer(idForFd, options).then((value: audioHaptic.AudioHapticPlayer) => {
+         console.info('Succeeded in creating player.');
+         audioHapticPlayer = value;
+         // ...
+       }).catch((err: BusinessError) => {
+         console.error(`Failed to create player. Code: ${err.code}, message: ${err.message}`);
+         // ...
+       });
    ```
 4. 调用[start](../harmonyos-references/js-apis-audiohaptic.md#start)方法，开启音频播放并同步开启振动。
 
-   ```
-   1. audioHapticPlayer.start().then(() => {
-   2. console.info(`Promise returned to indicate that start playing successfully.`);
-   3. // ...
-   4. }).catch((err: BusinessError) => {
-   5. console.error(`Failed to start playing. ${err}`);
-   6. // ...
-   7. });
+   ```typescript
+   audioHapticPlayer.start().then(() => {
+     console.info('Succeeded in starting audio haptic player.');
+     // ...
+   }).catch((err: BusinessError) => {
+     console.error(`Failed to start audio haptic player. Code: ${err.code}, message: ${err.message}`);
+     // ...
+   });
    ```
 5. 调用[stop](../harmonyos-references/js-apis-audiohaptic.md#stop)方法，停止音频播放并同步停止振动。
 
+   ```typescript
+   audioHapticPlayer.stop().then(() => {
+     console.info('Succeeded in stopping audio haptic player.');
+     // ...
+   }).catch((err: BusinessError) => {
+     console.error(`Failed to stop audio haptic player. Code: ${err.code}, message: ${err.message}`);
+     // ...
+   });
    ```
-   1. audioHapticPlayer.stop().then(() => {
-   2. console.info(`Promise returned to indicate that stop playing successfully.`);
-   3. // ...
-   4. }).catch((err: BusinessError) => {
-   5. console.error(`Failed to stop playing. ${err}`);
-   6. // ...
-   7. });
-   ```
-6. 调用[release](../harmonyos-references/js-apis-audiohaptic.md#release)方法，释放AudioHapticPlayer实例。
+6. 应用在使用完音振协同播放器后应主动调用[release](../harmonyos-references/js-apis-audiohaptic.md#release)方法，释放AudioHapticPlayer实例，防止播放器实例长期占用系统音振资源，产生严重的内存与系统资源泄漏，从而导致应用后续无法再创建音振协同播放器。
 
+   ```typescript
+   audioHapticPlayer.release().then(() => {
+     console.info('Succeeded in releasing audio haptic player.');
+     // ...
+   }).catch((err: BusinessError) => {
+     console.error(`Failed to release audio haptic player. Code: ${err.code}, message: ${err.message}`);
+     // ...
+   });
    ```
-   1. audioHapticPlayer.release().then(() => {
-   2. console.info(`Promise returned to indicate that release the audio haptic player successfully.`);
-   3. // ...
-   4. }).catch((err: BusinessError) => {
-   5. console.error(`Failed to release the audio haptic player. ${err}`);
-   6. // ...
-   7. });
-   ```
-7. 调用[unregisterSource](../harmonyos-references/js-apis-audiohaptic.md#unregistersource)方法，将已注册的音频及振动资源移除注册。
+7. 当资源不再使用时，应用必须调用[unregisterSource](../harmonyos-references/js-apis-audiohaptic.md#unregistersource)方法，将已注册的音频及振动资源移除注册，若长期堆积未注销的无效资源，会快速耗尽应用128个资源注册配额，直接导致后续所有音振资源注册失败、播放器无法创建，音振协同播放功能不可用，同时会引发持续性资源泄漏问题。
 
-   ```
-   1. // 对于不再需要使用的资源，建议应用及时取消注册，避免出现资源泄漏或资源数量超上限等问题。
-   2. audioHapticManagerInstance.unregisterSource(idForFd).then(() => {
-   3. console.info(`Promise returned to indicate that unregister source successfully`);
-   4. // ...
-   5. }).catch((err: BusinessError) => {
-   6. console.error(`Failed to unregister source ${err}`);
-   7. // ...
-   8. });
+   ```typescript
+   audioHapticManagerInstance.unregisterSource(idForFd).then(() => {
+     console.info('Succeeded in unregistering source.');
+     // ...
+   }).catch((err: BusinessError) => {
+     console.error(`Failed to unregister source. Code: ${err.code}, message: ${err.message}`);
+     // ...
+   });
    ```

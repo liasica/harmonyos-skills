@@ -1,71 +1,69 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-215
 title: 如何动态控制键盘绑定在不同的TextInput上
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 如何动态控制键盘绑定在不同的TextInput上
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何动态控制键盘绑定在不同的TextInput上
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:16:55+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:a508d0b0b2382690f770bd0718dbaeaafab4109e0b07355e68dfda2adf79d5ae
+scraped_at: 2026-09-02T14:53:59+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:6cd573061448023ea45f8575224d0cf275ea58af114b2a4dc0ce2dd4fc0efa1a
 ---
 
 软键盘的收起和弹出与输入框的获焦和失焦相关。可以通过 focusControl 动态控制输入框焦点的转移，从而控制软键盘的显示和隐藏。将焦点转移到目标输入框可以实现键盘的动态切换。参考代码如下：
 
+```ts
+@Entry
+@Component
+struct DynamicControlKeyboard {
+  // Whether focus is on "key1" TextInput
+  private flag: boolean = true;
+  @Builder
+  customKeyboardBuilder() {
+    Row() {
+      Text('Customize keyboard')
+    }
+    .justifyContent(FlexAlign.Center)
+    .width('1260px')
+    .height('1161px')
+    .backgroundColor(Color.Brown)
+  }
+  build() {
+    Column({space: 10}) {
+      TextInput()
+        .key('key1')
+        .onAppear(() => {
+          focusControl.requestFocus('key1');
+        })
+        .defaultFocus(true)
+      TextInput()
+        .key('key2')
+        .customKeyboard(this.customKeyboardBuilder())
+      Button('Switch TextInput')
+        .onClick(() => {
+          if (this.flag) {
+            console.info('TextInput2 ==> ' + focusControl.requestFocus('key2'));
+          } else {
+            console.info('TextInput1 ==> ' + focusControl.requestFocus('key1'));
+          }
+          this.flag = !this.flag;
+        })
+      Button()
+        .width(0)
+        .height(0)
+        .key('key3')
+    }
+    .padding({ top: 20 })
+    .width('100%')
+    .height('100%')
+    .onClick(() => {
+      focusControl.requestFocus('key3');
+    })
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct DynamicControlKeyboard {
-4. // Whether focus is on "key1" TextInput
-5. private flag: boolean = true;
-6. @Builder
-7. customKeyboardBuilder() {
-8. Row() {
-9. Text('Customize keyboard')
-10. }
-11. .justifyContent(FlexAlign.Center)
-12. .width('1260px')
-13. .height('1161px')
-14. .backgroundColor(Color.Brown)
-15. }
-16. build() {
-17. Column({space: 10}) {
-18. TextInput()
-19. .key('key1')
-20. .onAppear(() => {
-21. focusControl.requestFocus('key1');
-22. })
-23. .defaultFocus(true)
-24. TextInput()
-25. .key('key2')
-26. .customKeyboard(this.customKeyboardBuilder())
-27. Button('Switch TextInput')
-28. .onClick(() => {
-29. if (this.flag) {
-30. console.info('TextInput2 ==> ' + focusControl.requestFocus('key2'));
-31. } else {
-32. console.info('TextInput1 ==> ' + focusControl.requestFocus('key1'));
-33. }
-34. this.flag = !this.flag;
-35. })
-36. Button()
-37. .width(0)
-38. .height(0)
-39. .key('key3')
-40. }
-41. .padding({ top: 20 })
-42. .width('100%')
-43. .height('100%')
-44. .onClick(() => {
-45. focusControl.requestFocus('key3');
-46. })
-47. }
-48. }
-```
-
-[DynamicallyControlKeyboardBinding.ets](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/ArkUI/entry/src/main/ets/pages/DynamicallyControlKeyboardBinding.ets#L21-L68)
 
 效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/ZKISCP9mTCCU8O6HyriW-w/zh-cn_image_0000002426207326.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/HirB88-dTJ-IPvw5I3UcVA/zh-cn_image_0000002426218940.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/g4X9_vyIT22ZO1tVoC4gKQ/zh-cn_image_0000002624475924.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/2ctK9rJKR3SUThdi3cXR4g/zh-cn_image_0000002654835233.png "点击放大")
 
 **参考链接**
 

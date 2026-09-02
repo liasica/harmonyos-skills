@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 文件句柄泄漏类问题检测方法
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 资源泄漏类问题检测 > 文件句柄泄漏类问题检测方法
 category: best-practices
-scraped_at: 2026-04-28T08:22:51+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:e3041cf78edb4be8a4fc376d02e15e84dead92e0ecf8005173b698b2b0e0dc3b
+scraped_at: 2026-09-02T15:03:23+08:00
+doc_updated_at: 2026-05-18
+content_hash: sha256:5648db92245e1d188ddfeeb805ef5a5a1e5ab2bba794f034ae4ac912843e5ae1
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:e3041cf78edb4be8a4fc376d02e15e84dead92e0ecf8005173b698b2b0e
 
 常见的能生成句柄的系统调用有open、pipe、socket等。
 
-注意
+**注意** 
 
 为防止句柄泄漏，请务必记得在使用完fd后，调用close方法进行关闭。
 
@@ -40,59 +40,57 @@ content_hash: sha256:e3041cf78edb4be8a4fc376d02e15e84dead92e0ecf8005173b698b2b0e
 
 1. 修改应用代码，做一个测试按钮，点击这个按钮枚举下进程的所有句柄。
 
+   ```screen
+   import { fileIo, ListFileOptions } from '@kit.CoreFileKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+
+   @Entry
+   @Component
+   struct Index {
+     @State message: string = 'Hello World';
+
+     build() {
+       RelativeContainer() {
+         Text(this.message)
+           .id('HelloWorld')
+           .fontSize($r('app.float.page_text_font_size'))
+           .fontWeight(FontWeight.Bold)
+           .alignRules({
+             center: { anchor: '__container__', align: VerticalAlign.Center },
+             middle: { anchor: '__container__', align: HorizontalAlign.Center }
+           })
+           .onClick(() => {
+             this.message = 'Welcome';
+             let listFileOption:ListFileOptions={};
+             listFileOption.recursion = false;
+             listFileOption.listNum = 10000;
+             fileIo.listFile("/proc/self/fd", listFileOption, (err: BusinessError, fileNames: Array<string>) => {
+               if (err) {
+                 console.error("list file failed, message:", err.message + ", code:" + err.code);
+               } else {
+                 console.log("count:", fileNames.length);
+                 fileNames.forEach(fileName => {
+                   let fd: number = Number(fileName);
+                   try {
+                     let actName = fileIo.dup(fd);
+                     console.info('fd:', fd);
+                     console.info('path:', actName.path);
+                     fileIo.close(actName);
+                   } catch(e) {
+                     console.info(e);
+                   }
+                 });
+               }
+             });
+           })
+       }
+       .height('100%')
+       .width('100%')
+     }
+   }
    ```
-   1. import { fileIo as fs, ListFileOptions } from '@kit.CoreFileKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
-
-   4. @Entry
-   5. @Component
-   6. struct Index {
-   7. @State message: string = 'Hello World';
-
-   9. build() {
-   10. RelativeContainer() {
-   11. Text(this.message)
-   12. .id('HelloWorld')
-   13. .fontSize($r('app.float.page_text_font_size'))
-   14. .fontWeight(FontWeight.Bold)
-   15. .alignRules({
-   16. center: { anchor: '__container__', align: VerticalAlign.Center },
-   17. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-   18. })
-   19. .onClick(() => {
-   20. this.message = 'Welcome';
-   21. let listFileOption:ListFileOptions={};
-   22. listFileOption.recursion = false;
-   23. listFileOption.listNum = 10000;
-   24. fs.listFile("/proc/self/fd", listFileOption, (err: BusinessError, fileNames: Array<string>) => {
-   25. if (err) {
-   26. console.error("list file failed, message:", err.message + ", code:" + err.code);
-   27. } else {
-   28. console.log("count:", fileNames.length);
-   29. fileNames.forEach(fileName => {
-   30. let fd: number = Number(fileName);
-   31. try {
-   32. let actName = fs.dup(fd);
-   33. console.info('fd:', fd);
-   34. console.info('path:', actName.path);
-   35. fs.close(actName);
-   36. } catch(e) {
-   37. console.info(e);
-   38. }
-   39. });
-   40. }
-   41. });
-   42. })
-   43. }
-   44. .height('100%')
-   45. .width('100%')
-   46. }
-   47. }
-   ```
-
-   [FdLeakDetection.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MemoryDetection/entry/src/main/ets/pages/FdLeakDetection.ets#L20-L66)
 2. 尝试复现问题，然后点击一下上述代码对应的测试按钮，分析日志输出，看多了哪些句柄。如果句柄增加不明显，可以反复重复本步骤。
 
-   说明
+   **说明** 
 
    这个演示代码只能打印出应用沙箱目录的文件路径，其他系统路径的文件因为权限问题可能会打印不出来，所以只能定位沙箱目录下文件句柄的泄漏问题。

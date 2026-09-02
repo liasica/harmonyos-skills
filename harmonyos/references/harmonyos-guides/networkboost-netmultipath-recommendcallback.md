@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-
 title: 多网建议监听
 breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务） > 连接迁移（多网并发） > 多网建议监听
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:57+08:00
+scraped_at: 2026-09-02T14:50:06+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0da055f06111bf0fee5848bd5e990bc2a28e59fba6940d6ae802f7686cdc529b
+content_hash: sha256:a2bf2228cc98ec51c14c09afc433fa99a04a9ee6f4807ab5a0bf98eb660781e1
 ---
 
 ## 场景介绍
@@ -25,28 +25,28 @@ content_hash: sha256:0da055f06111bf0fee5848bd5e990bc2a28e59fba6940d6ae802f7686cd
 
 1. 导入Network Boost Kit模块。
 
-   ```
-   1. import { netHandover } from '@kit.NetworkBoostKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { netHandover } from '@kit.NetworkBoostKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 通过订阅的方式监听系统多网建议变化信息。
 
-   ```
-   1. try {
-   2. netHandover.on('multiPathRecommendation', (data: netHandover.MultiPathRecommendationInfo) => {
-   3. // 回调信息处理
-   4. console.info("on multiPathRecommendation: " + JSON.stringify(data));
-   5. });
-   6. } catch (err) {
-   7. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-   8. }
+   ```typescript
+   try {
+     netHandover.on('multiPathRecommendation', (data: netHandover.MultiPathRecommendationInfo) => {
+       // 回调信息处理
+       console.info("on multiPathRecommendation: " + JSON.stringify(data));
+     });
+   } catch (err) {
+     console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+   }
    ```
 3. 当应用业务流程结束，取消订阅系统多网建议变化信息。
 
-   ```
-   1. try {
-   2. netHandover.off('multiPathRecommendation');
-   3. } catch (err) {
-   4. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-   5. }
+   ```typescript
+   try {
+     netHandover.off('multiPathRecommendation');
+   } catch (err) {
+     console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+   }
    ```

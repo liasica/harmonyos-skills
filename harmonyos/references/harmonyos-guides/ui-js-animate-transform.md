@@ -3,312 +3,312 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-animate
 title: transform样式动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 动效开发指导 > CSS动画 > transform样式动画
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:55+08:00
-doc_updated_at: 2026-03-23
-content_hash: sha256:8cce436cae5ad369c2b7f59bc3db3b46d7938a89542dfa83aa17d47c73aa04d2
+scraped_at: 2026-09-02T14:59:21+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:5d384d6349512f01b42c4638cdd808fb313c0183221589fdf85468895450069f
 ---
 
 设置transform属性对组件进行旋转、缩放、移动和倾斜。
 
 ## 设置静态动画
 
-创建一个正方形并旋转90°变成菱形，并用下方的长方形把菱形下半部分遮盖形成屋顶，设置长方形translate属性值为(150px,-150px)确定坐标位置形成门，再使用position属性使横纵线跟随父组件（正方形）移动到指定坐标位置，接着设置scale属性使父子组件一起变大形成窗户大小，最后使用skewX属性使组件倾斜后设置坐标translate(200px,-710px)得到烟囱。
+创建一个正方形并旋转90°变成菱形，并用下方的长方形把菱形下半部分遮盖形成屋顶，设置长方形translate属性值为(150px,-137px)确定坐标位置形成门，再使用position属性使横纵线跟随父组件（正方形）移动到指定坐标位置，接着设置scale属性使父子组件一起变大形成窗户大小，最后使用skewX属性使组件倾斜后设置坐标translate(200px,-710px)得到烟囱。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <div class="top"></div>
-4. <div class="content"></div>
-5. <div class="door"></div>
-6. <!-- 窗户 -->
-7. <div class="window">
-8. <div class="horizontal"></div>
-9. <div class="vertical"></div>
-10. </div>
-11. <div class="chimney"></div>
-12. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width:100%;
-4. height:100%;
-5. background-color:#F1F3F5;
-6. align-items: center;
-7. flex-direction: column;
-8. }
-9. .top{
-10. z-index: -1;
-11. position: absolute;
-12. width: 428px;
-13. height: 428px;
-14. background-color: #860303;
-15. transform: rotate(45deg);
-16. margin-top: 284px;
-17. margin-left: 148px;
-18. }
-19. .content{
-20. margin-top: 500px;
-21. width: 600px;
-22. height: 400px;
-23. background-color: white;
-24. border:  1px solid black;
-25. }
-26. .door{
-27. width: 100px;
-28. height: 135px;
-29. background-color: #1033d9;
-30. transform: translate(150px,-137px);
-31. }
-32. .window{
-33. z-index: 1;
-34. position: relative;
-35. width: 100px;
-36. height: 100px;
-37. background-color: white;
-38. border: 1px solid black;
-39. transform: translate(-150px,-400px) scale(1.5);
-40. }
-41. /* 窗户的横轴 */
-42. .horizontal{
-43. position: absolute;
-44. top: 50%;
-45. width: 100px;
-46. height: 5px;
-47. background-color: black;
-48. }
-49. /* 窗户的纵轴 */
-50. .vertical{
-51. position: absolute;
-52. left: 50%;
-53. width: 5px;
-54. height: 100px;
-55. background-color: black;
-56. }
-57. .chimney{
-58. z-index: -2;
-59. width: 40px;
-60. height: 100px;
-61. border-radius: 15px;
-62. background-color: #9a7404;
-63. transform: translate(200px,-710px) skewX(-5deg);
-64. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <div class="top"></div>
+  <div class="content"></div>
+  <div class="door"></div>
+  <!-- 窗户 -->
+  <div class="window">
+    <div class="horizontal"></div>
+    <div class="vertical"></div>
+  </div>
+  <div class="chimney"></div>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/4LJt9l7DRW2RFeEW4R98DA/zh-cn_image_0000002589244441.png)
+```css
+/* xxx.css */
+.container {
+  width:100%;
+  height:100%;
+  background-color:#F1F3F5;
+  align-items: center;
+  flex-direction: column;
+}
+.top{
+  z-index: -1;
+  position: absolute;
+  width: 428px;
+  height: 428px;
+  background-color: #860303;
+  transform: rotate(45deg);
+  margin-top: 284px;
+  margin-left: 148px;
+}
+.content{
+  margin-top: 500px;
+  width: 600px;
+  height: 400px;
+  background-color: white;
+  border:  1px solid black;
+}
+.door{
+  width: 100px;
+  height: 135px;
+  background-color: #1033d9;
+  transform: translate(150px,-137px);
+}
+.window{
+  z-index: 1;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border: 1px solid black;
+  transform: translate(-150px,-400px) scale(1.5);
+}
+/* 窗户的横轴 */
+.horizontal{
+  position: absolute;
+  top: 50%;
+  width: 100px;
+  height: 5px;
+  background-color: black;
+}
+/* 窗户的纵轴 */
+.vertical{
+  position: absolute;
+  left: 50%;
+  width: 5px;
+  height: 100px;
+  background-color: black;
+}
+.chimney{
+  z-index: -2;
+  width: 40px;
+  height: 100px;
+  border-radius: 15px;
+  background-color: #9a7404;
+  transform: translate(200px,-710px) skewX(-5deg);
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/iIi89Vc8RPigwtyraa-nww/zh-cn_image_0000002736313081.png)
 
 ## 设置平移动画
 
 小球下降动画，改变小球的Y轴坐标实现小球下落，在下一段时间内减小Y轴坐标实现小球回弹，让每次回弹的高度逐次减小直至回弹高度为0，就模拟出了小球下降的动画。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <div class="circle"></div>
-4. <div class="flower"></div>
-5. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width:100%;
-4. height:100%;
-5. background-color:#F1F3F5;
-6. display: flex;
-7. justify-content: center;
-8. }
-9. .circle{
-10. width: 100px;
-11. height: 100px;
-12. border-radius: 50px;
-13. background-color: red;
-14. /* forwards停在动画的最后一帧 */
-15. animation: down 3s fast-out-linear-in forwards;
-16. }
-17. .flower{
-18. position: fixed;
-19. width: 80%;
-20. margin-left: 10%;
-21. height: 5px;
-22. background-color: black;
-23. top: 1000px;
-24. }
-25. @keyframes down {
-26. 0%{
-27. transform: translate(0px,0px);
-28. }
-29. /* 下落 */
-30. 15%{
-31. transform: translate(10px,900px);
-32. }
-33. /* 开始回弹 */
-34. 25%{
-35. transform: translate(20px,500px);
-36. }
-37. /* 下落 */
-38. 35%{
-39. transform: translate(30px,900px);
-40. }
-41. /* 回弹 */
-42. 45%{
-43. transform: translate(40px,700px);
-44. }
-45. 55%{
-46. transform: translate(50px,900px);
-47. }
-48. 65%{
-49. transform: translate(60px,800px);
-50. }
-51. 80%{
-52. transform: translate(70px,900px);
-53. }
-54. 90%{
-55. transform: translate(80px,850px);
-56. }
-57. /* 停止 */
-58. 100%{
-59. transform: translate(90px,900px);
-60. }
-61. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <div class="circle"></div>
+  <div class="flower"></div>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/S9zOkA1ZRdOfDTytz2Skyw/zh-cn_image_0000002558764634.gif)
+```css
+/* xxx.css */
+.container {
+  width:100%;
+  height:100%;
+  background-color:#F1F3F5;
+  display: flex;
+  justify-content: center;
+}
+.circle{
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  background-color: red;
+  /* forwards停在动画的最后一帧 */
+  animation: down 3s fast-out-linear-in forwards;
+}
+.flower{
+  position: fixed;
+  width: 80%;
+  margin-left: 10%;
+  height: 5px;
+  background-color: black;
+  top: 1000px;
+}
+@keyframes down {
+  0%{
+    transform: translate(0px,0px);
+  }
+  /* 下落 */
+  15%{
+    transform: translate(10px,900px);
+  }
+  /* 开始回弹 */
+  25%{
+    transform: translate(20px,500px);
+  }
+  /* 下落 */
+  35%{
+    transform: translate(30px,900px);
+  }
+  /* 回弹 */
+  45%{
+    transform: translate(40px,700px);
+  }
+  55%{
+    transform: translate(50px,900px);
+  }
+  65%{
+    transform: translate(60px,800px);
+  }
+  80%{
+    transform: translate(70px,900px);
+  }
+  90%{
+    transform: translate(80px,850px);
+  }
+  /* 停止 */
+  100%{
+    transform: translate(90px,900px);
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/Al-jKo81SEGPVOVOMw5orA/zh-cn_image_0000002706674038.gif)
 
 ## 设置旋转动画
 
 设置不同的原点位置（transform-origin）改变元素所围绕的旋转中心。rotate3d属性前三个参数值分别为X轴、Y轴、Z轴的旋转向量，第四个值为旋转角度，旋转角度可为负值，负值则代表旋转方向为逆时针方向。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <div class="rotate">
-4. <div class="rect rect1"></div>
-5. <div class="rect rect2"></div>
-6. <div class="rect rect3"></div>
-7. </div>
-8. <!-- 3d属性 -->
-9. <div class="rotate3d">
-10. <div class="content">
-11. <div class="rect4"></div>
-12. <div class="rect5"> </div>
-13. </div>
-14. <div class="mouse"></div>
-15. </div>
-16. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. flex-direction: column;
-4. background-color:#F1F3F5;
-5. display: flex;
-6. align-items: center;
-7. justify-content: center;
-8. width: 100%;
-9. height: 100%;
-10. }
-11. .rect {
-12. width: 100px;
-13. height: 100px;
-14. animation: rotate 3s infinite;
-15. margin-left: 30px;
-16. }
-17. .rect1 {
-18. background-color: #f76160;
-19. }
-20. .rect2 {
-21. background-color: #60f76f;
-22. /* 改变原点位置*/
-23. transform-origin: 10% 10px;
-24. }
-25. .rect3 {
-26. background-color: #6081f7;
-27. /*  改变原点位置*/
-28. transform-origin: right bottom;
-29. }
-30. @keyframes rotate {
-31. from {
-32. transform: rotate(0deg)
-33. }
-34. to {
-35. transform: rotate(360deg);
-36. }
-37. }
-38. /* 3d示例样式 */
-39. .rotate3d {
-40. margin-top: 150px;
-41. flex-direction: column;
-42. background-color:#F1F3F5;
-43. display: flex;
-44. align-items: center;
-45. width: 80%;
-46. height: 600px;
-47. border-radius: 300px;
-48. border: 1px solid #ec0808;
-49. }
-50. .content {
-51. padding-top: 150px;
-52. display: flex;
-53. align-items: center;
-54. justify-content: center;
-55. }
-56. /* rect4 rect5 翻转形成眼睛 */
-57. .rect4 {
-58. width: 100px;
-59. height: 100px;
-60. animation: rotate3d1 1000ms infinite;
-61. background-color: darkmagenta;
-62. }
-63. .rect5 {
-64. width: 100px;
-65. height: 100px;
-66. animation: rotate3d1 1000ms infinite;
-67. margin-left: 100px;
-68. background-color: darkmagenta;
-69. }
-70. .mouse {
-71. margin-top: 150px;
-72. width: 200px;
-73. height: 100px;
-74. border-radius: 50px;
-75. border: 1px solid #e70303;
-76. animation: rotate3d2 1000ms infinite;
-77. }
-78. /* 眼睛的动效 */
-79. @keyframes rotate3d1 {
-80. 0% {
-81. transform:rotate3d(0,0,0,0deg)
-82. }
-83. 50% {
-84. transform:rotate3d(20,20,20,360deg);
-85. }
-86. 100% {
-87. transform:rotate3d(0,0,0,0deg);
-88. }
-89. }
-90. /* 嘴的动效 */
-91. @keyframes rotate3d2 {
-92. 0% {
-93. transform:rotate3d(0,0,0,0deg)
-94. }
-95. 33% {
-96. transform:rotate3d(0,0,10,30deg);
-97. }
-98. 66% {
-99. transform:rotate3d(0,0,10,-30deg);
-100. }
-101. 100% {
-102. transform:rotate3d(0,0,0,0deg);
-103. }
-104. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <div class="rotate">
+    <div class="rect rect1"></div>
+    <div class="rect rect2"></div>
+    <div class="rect rect3"></div>
+  </div>
+  <!-- 3d属性 -->
+  <div class="rotate3d">
+    <div class="content">
+        <div class="rect4"></div>
+        <div class="rect5"> </div>
+    </div>
+    <div class="mouse"></div>
+  </div>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/7Gwzjh3cS_qeW_n4GWSsiw/zh-cn_image_0000002558604978.gif)
+```css
+/* xxx.css */
+.container {
+    flex-direction: column;
+    background-color:#F1F3F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.rect {
+    width: 100px;
+    height: 100px;
+    animation: rotate 3s infinite;
+    margin-left: 30px;
+}
+.rect1 {
+    background-color: #f76160;
+}
+.rect2 {
+    background-color: #60f76f;
+/* 改变原点位置*/
+    transform-origin: 10% 10px;
+}
+.rect3 {
+    background-color: #6081f7;
+/*  改变原点位置*/
+    transform-origin: right bottom;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+/* 3d示例样式 */
+.rotate3d {
+    margin-top: 150px;
+    flex-direction: column;
+    background-color:#F1F3F5;
+    display: flex;
+    align-items: center;
+    width: 80%;
+    height: 600px;
+    border-radius: 300px;
+    border: 1px solid #ec0808;
+}
+.content {
+    padding-top: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* rect4 rect5 翻转形成眼睛 */
+.rect4 {
+    width: 100px;
+    height: 100px;
+    animation: rotate3d1 1000ms infinite;
+    background-color: darkmagenta;
+}
+.rect5 {
+    width: 100px;
+    height: 100px;
+    animation: rotate3d1 1000ms infinite;
+    margin-left: 100px;
+    background-color: darkmagenta;
+}
+.mouse {
+    margin-top: 150px;
+    width: 200px;
+    height: 100px;
+    border-radius: 50px;
+    border: 1px solid #e70303;
+    animation: rotate3d2 1000ms infinite;
+}
+/* 眼睛的动效 */
+@keyframes rotate3d1 {
+    0% {
+        transform:rotate3d(0,0,0,0deg)
+    }
+    50% {
+        transform:rotate3d(20,20,20,360deg);
+    }
+    100% {
+        transform:rotate3d(0,0,0,0deg);
+    }
+}
+/* 嘴的动效 */
+@keyframes rotate3d2 {
+    0% {
+        transform:rotate3d(0,0,0,0deg)
+    }
+    33% {
+        transform:rotate3d(0,0,10,30deg);
+    }
+    66% {
+        transform:rotate3d(0,0,10,-30deg);
+    }
+    100% {
+        transform:rotate3d(0,0,0,0deg);
+    }
+}
+```
 
-说明
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/0FC7acA8STuhxO9vWAxV8Q/zh-cn_image_0000002736433129.gif)
+
+**说明** 
 
 transform-origin变换对象的原点位置，如果仅设置一个值，另一个值为50%，若设置两个值第一个值表示X轴的位置，第二个值表示Y轴的位置。
 
@@ -318,109 +318,109 @@ transform-origin变换对象的原点位置，如果仅设置一个值，另一�
 
 设置scale3d中X轴、Y轴、Z轴的缩放参数实现动画。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <div class="circle">
-4. <text>ripple</text>
-5. </div>
-6. <div class="ripple"></div>
-7. <div class="ripple ripple2"></div>
-8. <!-- 3d -->
-9. <div class="content">
-10. <text>spring</text>
-11. </div>
-12. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. flex-direction: column;
-4. background-color:#F1F3F5;
-5. width: 100%;
-6. position: relative;
-7. }
-8. .circle{
-9. margin-top: 400px;
-10. margin-left: 40%;
-11. width: 100px;
-12. height: 100px;
-13. border-radius: 50px;
-14. background-color: mediumpurple;
-15. z-index: 1;  position: absolute;
-16. }
-17. .ripple{
-18. margin-top: 400px;
-19. margin-left: 40%;
-20. position: absolute; z-index: 0;
-21. width: 100px;
-22. height: 100px;
-23. border-radius: 50px;
-24. background-color: blueviolet;
-25. animation: ripple 5s infinite;
-26. }
-27. /* 设置不同的动画时间 */
-28. .ripple2{
-29. animation-duration: 2.5s;
-30. }
-31. @keyframes ripple{
-32. 0%{
-33. transform: scale(1);
-34. opacity: 0.5;
-35. }
-36. 50%{
-37. transform: scale(3);
-38. opacity: 0;
-39. }
-40. 100%{
-41. transform: scale(1);
-42. opacity: 0.5;
-43. }
-44. }
-45. text{
-46. color: white;
-47. text-align: center;
-48. height: 100%;
-49. width: 100%;
-50. }
-51. .content {
-52. margin-top: 700px;
-53. margin-left: 33%;
-54. width: 200px;
-55. height: 100px;
-56. animation:rubberBand 1s infinite;
-57. background-color: darkmagenta;
-58. position: absolute;
-59. }
-60. @keyframes rubberBand {
-61. 0% {
-62. transform: scale3d(1, 1, 1);
-63. }
-64. 30% {
-65. transform: scale3d(1.25, 0.75, 1.1);
-66. }
-67. 40% {
-68. transform: scale3d(0.75, 1.25, 1.2);
-69. }
-70. 50% {
-71. transform: scale3d(1.15, 0.85, 1.3);
-72. }
-73. 65% {
-74. transform: scale3d(.95, 1.05, 1.2);
-75. }
-76. 75% {
-77. transform: scale3d(1.05, .95, 1.1);
-78. }
-79. 100%{
-80. transform: scale3d(1, 1, 1);
-81. }
-82. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <div class="circle">
+    <text>ripple</text>
+  </div>
+  <div class="ripple"></div>
+  <div class="ripple ripple2"></div>
+  <!-- 3d -->
+  <div class="content">
+    <text>spring</text>
+  </div>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/uo1cC7jsSnOitp5GBJ-OMA/zh-cn_image_0000002589324505.gif)
+```css
+/* xxx.css */
+.container {
+    flex-direction: column;
+    background-color:#F1F3F5;
+    width: 100%;
+    position: relative;
+}
+.circle{
+    margin-top: 400px;
+    margin-left: 40%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background-color: mediumpurple;
+    z-index: 1;  position: absolute;
+}
+.ripple{
+    margin-top: 400px;
+    margin-left: 40%;
+    position: absolute; z-index: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background-color: blueviolet;
+    animation: ripple 5s infinite;
+}
+/* 设置不同的动画时间 */
+.ripple2{
+    animation-duration: 2.5s;
+}
+@keyframes ripple{
+    0%{
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50%{
+        transform: scale(3);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0.5;
+    }
+}
+text{
+    color: white;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+.content {
+    margin-top: 700px;
+    margin-left: 33%;
+    width: 200px;
+    height: 100px;
+    animation:rubberBand 1s infinite;
+    background-color: darkmagenta;
+    position: absolute;
+}
+@keyframes rubberBand {
+    0% {
+        transform: scale3d(1, 1, 1);
+    }
+    30% {
+        transform: scale3d(1.25, 0.75, 1.1);
+    }
+    40% {
+        transform: scale3d(0.75, 1.25, 1.2);
+    }
+    50% {
+        transform: scale3d(1.15, 0.85, 1.3);
+    }
+    65% {
+        transform: scale3d(.95, 1.05, 1.2);
+    }
+    75% {
+        transform: scale3d(1.05, .95, 1.1);
+    }
+    100%{
+        transform: scale3d(1, 1, 1);
+    }
+}
+```
 
-说明
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/IN-69wYhTAuWgHKisIZm3Q/zh-cn_image_0000002706833974.gif)
+
+**说明** 
 
 设置transform属性值后，子元素会跟着父元素一起改变，若只改变父元素其他属性值时（如：height，width），子元素不会改变。
 
@@ -428,156 +428,156 @@ transform-origin变换对象的原点位置，如果仅设置一个值，另一�
 
 matrix是一个参数为六个值的矩阵，6个值分别代表：scaleX, skewY, skewX, scaleY, translateX, translateY。下面示例中设置了matrix属性为matrix(1,0,0,1,0,200)使组件移动和倾斜。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <div class="rect"> </div>
-4. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container{
-3. background-color:#F1F3F5;
-4. display: flex;
-5. justify-content: center;
-6. width: 100%;
-7. height: 100%;
-8. }
-9. .rect{
-10. width: 100px;
-11. height: 100px;
-12. background-color: red;
-13. animation: down 3s infinite forwards;
-14. }
-15. @keyframes down{
-16. 0%{
-17. transform: matrix(1,0,0,1,0,0);
-18. }
-19. 10%{
-20. transform: matrix(1,0,0,1,0,200);
-21. }
-22. 60%{
-23. transform: matrix(2,1.5,1.5,2,0,700);
-24. }
-25. 100%{
-26. transform: matrix(1,0,0,1,0,0);
-27. }
-28. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <div class="rect"> </div>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/ESj7catJT06UtjtJ_cl8pw/zh-cn_image_0000002589244443.gif)
+```css
+/* xxx.css */
+.container{
+  background-color:#F1F3F5;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.rect{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation: down 3s infinite forwards;
+}
+@keyframes down{
+  0%{
+    transform: matrix(1,0,0,1,0,0);
+  }
+  10%{
+    transform: matrix(1,0,0,1,0,200);
+  }
+  60%{
+    transform: matrix(2,1.5,1.5,2,0,700);
+  }
+  100%{
+    transform: matrix(1,0,0,1,0,0);
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/TKdlFKj0QBmkMwSfV0kUzw/zh-cn_image_0000002736313083.gif)
 
 ## 整合transform属性
 
 transform可以设置多个值并且多个值可同时设置，下面案例中展示同时设置缩放（scale），平移（translate），旋转（rotate）属性时的动画效果。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <div class="rect1"></div>
-4. <div class="rect2"></div>
-5. <div class="rect3"></div>
-6. <div class="rect4"></div>
-7. <div class="rect5"></div>
-8. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container{
-3. width: 100%;
-4. height: 100%;
-5. flex-direction:column;
-6. background-color:#F1F3F5;
-7. padding:50px;
-8. }
-9. .rect1{
-10. width: 100px;
-11. height: 100px;
-12. background-color: red;
-13. animation: change1 3s infinite forwards;
-14. }
-15. .rect2{
-16. margin-top: 50px;
-17. width: 100px;
-18. height: 100px;
-19. background-color: darkblue;
-20. animation: change2 3s infinite forwards;
-21. }
-22. .rect3{
-23. margin-top: 50px;
-24. width: 100px;
-25. height: 100px;
-26. background-color: darkblue;
-27. animation: change3 3s infinite;
-28. }
-29. .rect4{
-30. align-self: center;
-31. margin-left: 50px;
-32. margin-top: 200px;
-33. width: 100px;
-34. height: 100px;
-35. background-color: darkmagenta;
-36. animation: change4 3s infinite;
-37. }
-38. .rect5{
-39. margin-top: 300px;
-40. width: 100px;
-41. height: 100px;
-42. background-color: cadetblue;
-43. animation: change5 3s infinite;
-44. }
-45. /* change1 change2 对比 */
-46. @keyframes change1{
-47. 0%{
-48. transform: translate(0,0);    transform: rotate(0deg)
-49. }
-50. 100%{
-51. transform: translate(0,500px);
-52. transform: rotate(360deg)
-53. }
-54. }
-55. /* change2 change3 对比属性顺序不同的动画效果 */
-56. @keyframes change2{
-57. 0%{
-58. transform:translate(0,0) rotate(0deg) ;
-59. }
-60. 100%{
-61. transform: translate(300px,0) rotate(360deg);
-62. }
-63. }
-64. @keyframes change3{
-65. 0%{
-66. transform:rotate(0deg) translate(0,0);
-67. }
-68. 100%{
-69. transform:rotate(360deg)  translate(300px,0);
-70. }
-71. }
-72. /* 属性值不对应的情况 */
-73. @keyframes change4{
-74. 0%{
-75. transform: scale(0.5);
-76. }
-77. 100%{
-78. transform:scale(2) rotate(45deg);
-79. }
-80. }
-81. /* 多属性的写法 */
-82. @keyframes change5{
-83. 0%{
-84. transform:scale(0) translate(0,0) rotate(0);
-85. }
-86. 100%{
-87. transform: scale(1.5) rotate(360deg) translate(200px,0);
-88. }
-89. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <div class="rect1"></div>
+  <div class="rect2"></div>
+  <div class="rect3"></div>
+  <div class="rect4"></div>
+  <div class="rect5"></div>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/YoAZnEZ_SL2PzdzDtMz0WA/zh-cn_image_0000002558764636.gif)
+```css
+/* xxx.css */
+.container{
+    width: 100%;
+    height: 100%;
+    flex-direction:column;
+    background-color:#F1F3F5;
+    padding:50px;
+}
+.rect1{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation: change1 3s infinite forwards;
+}
+.rect2{
+    margin-top: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: darkblue;
+    animation: change2 3s infinite forwards;
+}
+.rect3{
+    margin-top: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: darkblue;
+    animation: change3 3s infinite;
+}
+.rect4{
+    align-self: center;
+    margin-left: 50px;
+    margin-top: 200px;
+    width: 100px;
+    height: 100px;
+    background-color: darkmagenta;
+    animation: change4 3s infinite;
+}
+.rect5{
+    margin-top: 300px;
+    width: 100px;
+    height: 100px;
+   background-color: cadetblue;
+    animation: change5 3s infinite;
+}
+/* change1 change2 对比 */
+@keyframes change1{
+    0%{
+        transform: translate(0,0);    transform: rotate(0deg)
+    }
+    100%{
+        transform: translate(0,500px);
+        transform: rotate(360deg)
+    }
+}
+/* change2 change3 对比属性顺序不同的动画效果 */
+@keyframes change2{
+    0%{
+        transform:translate(0,0) rotate(0deg) ;
+    }
+    100%{
+        transform: translate(300px,0) rotate(360deg);
+    }
+}
+@keyframes change3{
+    0%{
+        transform:rotate(0deg) translate(0,0);
+    }
+    100%{
+        transform:rotate(360deg)  translate(300px,0);
+    }
+}
+/* 属性值不对应的情况 */
+@keyframes change4{
+    0%{
+        transform: scale(0.5);
+    }
+    100%{
+        transform:scale(2) rotate(45deg);
+    }
+}
+/* 多属性的写法 */
+@keyframes change5{
+    0%{
+        transform:scale(0) translate(0,0) rotate(0);
+    }
+    100%{
+        transform: scale(1.5) rotate(360deg) translate(200px,0);
+    }
+}
+```
 
-说明
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/G8tk9UvoQZi4ek0bovhB5Q/zh-cn_image_0000002706674040.gif)
+
+**说明** 
 
 * 当设置多个transform时，后续的transform值会把前面的覆盖掉。若想同时使用多个动画样式可用复合写法，例：transform: scale(1) rotate(0) translate(0,0)。
 * transform进行复合写法时，变化样式内多个样式值顺序的不同会呈现不一样的动画效果。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-g
 title: "@ohos.graphics.text (文本模块)"
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.text (文本模块)
 category: harmonyos-references
-scraped_at: 2026-04-29T14:05:23+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3361b2f44fc54829a5e841b0ec7c55b3db5a86142ea283bb39fd447ab07cf06d
+scraped_at: 2026-09-02T15:02:42+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:43d3d8f034a1369fe45a78e994c5d56779ee758bfb5ebd49dbcdfb4ba3800d56
 ---
 
 本模块提供一系列用于文本布局和字体管理的编程接口。文本布局相关的接口旨在提供高质量的排版，包括字符到字形的转换、字距调整、换行、对齐、文本测量等。字体管理接口提供字体注册、字体描述符、字体集管理等功能。
@@ -22,21 +22,17 @@ content_hash: sha256:3361b2f44fc54829a5e841b0ec7c55b3db5a86142ea283bb39fd447ab07
 * [TextLine](js-apis-graphics-text.md#textline)：以行为单位的段落文本的载体，由Paragraph类调用[getTextLines()](js-apis-graphics-text.md#gettextlines)接口获取。
 * [Run](js-apis-graphics-text.md#run)：文本排版单元，由TextLine类调用[getGlyphRuns()](js-apis-graphics-text.md#getglyphruns)接口获取。
 
-说明
+**说明** 
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { text } from '@kit.ArkGraphics2D'
+```ts
+import { text } from '@kit.ArkGraphics2D'
 ```
 
 ## text.setTextHighContrast20+
-
-PhonePC/2in1TabletTVWearable
 
 setTextHighContrast(action: TextHighContrast): void
 
@@ -46,7 +42,7 @@ setTextHighContrast(action: TextHighContrast): void
 
 可调用此接口设置，也可通过系统设置界面中**高对比度文字配置开关**进行开启/关闭。使用此接口设置开启/关闭文字渲染高对比度配置的优先级高于系统开关设置。
 
-该接口针对应用的文字自绘制场景不生效。
+该接口针对应用通过Canvas等接口自行绘制文字的场景不生效，仅对使用系统文本组件渲染的场景生效。
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
@@ -60,24 +56,22 @@ setTextHighContrast(action: TextHighContrast): void
 
 **示例：**
 
-```
-1. text.setTextHighContrast(text.TextHighContrast.TEXT_APP_DISABLE_HIGH_CONTRAST)
+```ts
+text.setTextHighContrast(text.TextHighContrast.TEXT_APP_DISABLE_HIGH_CONTRAST)
 ```
 
 ## text.setTextUndefinedGlyphDisplay20+
-
-PhonePC/2in1TabletTVWearable
 
 setTextUndefinedGlyphDisplay(noGlyphShow: TextUndefinedGlyphDisplay): void
 
 设置字符映射到.notdef（未定义）字形时要使用的字形类型。
 
-影响此调用后呈现的所有文本。
+调用此接口后，后续渲染的文本若包含未定义字形，均按此设置显示。
 
 此配置会影响显示字体中未定义字符的方式：
 
-* 默认行为遵循字体的内部.notdef字形设计。
-* 开启后将强制使缺失字形的字符以豆腐块形式显示。
+* 默认使用字体的.notdef字形设计。
+* 开启后，缺失字形的字符将以豆腐块形式显示。
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
@@ -91,13 +85,11 @@ setTextUndefinedGlyphDisplay(noGlyphShow: TextUndefinedGlyphDisplay): void
 
 **示例：**
 
-```
-1. text.setTextUndefinedGlyphDisplay(text.TextUndefinedGlyphDisplay.USE_TOFU)
+```ts
+text.setTextUndefinedGlyphDisplay(text.TextUndefinedGlyphDisplay.USE_TOFU)
 ```
 
 ## text.matchFontDescriptors18+
-
-PhonePC/2in1TabletTVWearable
 
 matchFontDescriptors(desc: FontDescriptor): Promise<Array<FontDescriptor>>
 
@@ -125,48 +117,46 @@ matchFontDescriptors(desc: FontDescriptor): Promise<Array<FontDescriptor>>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { text } from '@kit.ArkGraphics2D'
-2. import { BusinessError } from '@kit.BasicServicesKit'
+```ts
+import { text } from '@kit.ArkGraphics2D'
+import { BusinessError } from '@kit.BasicServicesKit'
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. Row() {
-9. Column() {
-10. Button("font descriptor")
-11. .fontSize(30)
-12. .fontWeight(FontWeight.Bold)
-13. .width(300)
-14. .height(80)
-15. .onClick(() => {
-16. console.info(`Get font descriptor start`)
-17. let promise = text.matchFontDescriptors({
-18. weight: text.FontWeight.W400,
-19. })
-20. promise.then((data) => {
-21. console.info(`Font descriptor array size: ${data.length}`);
-22. console.info(`Font descriptor result: ${JSON.stringify(data)}`)
-23. }).catch((error: BusinessError) => {
-24. console.error(`Failed to match the font descriptor, error: ${JSON.stringify(error)}`);
-25. });
-26. })
-27. }
-28. .width('100%')
-29. }
-30. .height('100%')
-31. }
-32. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column() {
+        Button("font descriptor")
+          .fontSize(30)
+          .fontWeight(FontWeight.Bold)
+          .width(300)
+          .height(80)
+          .onClick(() => {
+            console.info(`Get font descriptor start`)
+            let promise = text.matchFontDescriptors({
+              weight: text.FontWeight.W400,
+            })
+            promise.then((data) => {
+              console.info(`Font descriptor array size: ${data.length}`);
+              console.info(`Font descriptor result: ${JSON.stringify(data)}`)
+            }).catch((error: BusinessError) => {
+              console.error(`Failed to match the font descriptor, error: ${JSON.stringify(error)}`);
+            });
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 ## text.getSystemFontFullNamesByType14+
-
-PhonePC/2in1TabletTVWearable
 
 getSystemFontFullNamesByType(fontType: SystemFontType): Promise<Array<string>>
 
@@ -194,48 +184,46 @@ getSystemFontFullNamesByType(fontType: SystemFontType): Promise<Array<string>>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { text } from '@kit.ArkGraphics2D'
-2. import { BusinessError } from '@kit.BasicServicesKit'
+```ts
+import { text } from '@kit.ArkGraphics2D'
+import { BusinessError } from '@kit.BasicServicesKit'
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. Row() {
-9. Column() {
-10. Button("get font list")
-11. .fontSize(30)
-12. .fontWeight(FontWeight.Bold)
-13. .width(300)
-14. .height(80)
-15. .onClick(() => {
-16. let fontType:text.SystemFontType = text.SystemFontType.GENERIC
-17. let promise = text.getSystemFontFullNamesByType(fontType)
-18. promise.then((data) => {
-19. console.info(`then font list size: ${data.length}`)
-20. data.forEach((fontItem) => {
-21. console.info(fontItem)
-22. })
-23. }).catch((error: BusinessError) => {
-24. console.error(`Failed to get font fullNames by type, error: ${JSON.stringify(error)}`);
-25. });
-26. })
-27. }
-28. .width('100%')
-29. }
-30. .height('100%')
-31. }
-32. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column() {
+        Button("get font list")
+          .fontSize(30)
+          .fontWeight(FontWeight.Bold)
+          .width(300)
+          .height(80)
+          .onClick(() => {
+            let fontType:text.SystemFontType = text.SystemFontType.GENERIC
+            let promise = text.getSystemFontFullNamesByType(fontType)
+            promise.then((data) => {
+              console.info(`then font list size: ${data.length}`)
+              data.forEach((fontItem) => {
+                console.info(fontItem)
+              })
+            }).catch((error: BusinessError) => {
+              console.error(`Failed to get font fullNames by type, error: ${JSON.stringify(error)}`);
+            });
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 ## text.getFontDescriptorByFullName14+
-
-PhonePC/2in1TabletTVWearable
 
 getFontDescriptorByFullName(fullName: string, fontType: SystemFontType): Promise<FontDescriptor>
 
@@ -266,51 +254,49 @@ getFontDescriptorByFullName(fullName: string, fontType: SystemFontType): Promise
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
-```
-1. import { text } from '@kit.ArkGraphics2D'
-2. import { BusinessError } from '@kit.BasicServicesKit'
+```ts
+import { text } from '@kit.ArkGraphics2D'
+import { BusinessError } from '@kit.BasicServicesKit'
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. Row() {
-9. Column() {
-10. Button("get fontDescriptor")
-11. .fontSize(30)
-12. .fontWeight(FontWeight.Bold)
-13. .width(300)
-14. .height(80)
-15. .onClick(() => {
-16. let fontType:text.SystemFontType = text.SystemFontType.GENERIC
-17. let promise = text.getFontDescriptorByFullName("HarmonyOS Sans", fontType)
-18. promise.then((fontDescriptor) => {
-19. console.info(`desc: ${JSON.stringify(fontDescriptor)}`)
-20. }).catch((error: BusinessError) => {
-21. console.error(`Failed to get fontDescriptor by fullName, error: ${JSON.stringify(error)}`);
-22. });
-23. })
-24. }
-25. .width('100%')
-26. }
-27. .height('100%')
-28. }
-29. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column() {
+        Button("get fontDescriptor")
+          .fontSize(30)
+          .fontWeight(FontWeight.Bold)
+          .width(300)
+          .height(80)
+          .onClick(() => {
+            let fontType:text.SystemFontType = text.SystemFontType.GENERIC
+            let promise = text.getFontDescriptorByFullName("HarmonyOS Sans", fontType)
+            promise.then((fontDescriptor) => {
+              console.info(`desc: ${JSON.stringify(fontDescriptor)}`)
+            }).catch((error: BusinessError) => {
+              console.error(`Failed to get fontDescriptor by fullName, error: ${JSON.stringify(error)}`);
+            });
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 ## text.getFontDescriptorsFromPath22+
-
-PhonePC/2in1TabletTVWearable
 
 getFontDescriptorsFromPath(path: string | Resource): Promise<Array<FontDescriptor>>
 
 根据字体文件路径获取字体描述符数组。使用Promise异步回调。
 
-说明
+**说明** 
 
 * 如果字体文件未找到、字体文件路径无效、字体文件无权限或者文件非字体格式，返回空数组。
 * [FontDescriptor](js-apis-graphics-text.md#fontdescriptor14)中的weight字段并不精准对应字体文件内部的字重数值，而是将字体文件中的实际字重四舍五入映射到[FontWeight](js-apis-graphics-text.md#fontweight)枚举值后的结果。例如，字体文件字重350会映射为400，对应枚举为W400。
@@ -323,7 +309,7 @@ getFontDescriptorsFromPath(path: string | Resource): Promise<Array<FontDescripto
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | [Resource](ts-types.md#resource) | 是 | 需要查询的字体文件的路径，应为 "file:// + 字体文件绝对路径" 或 $rawfile("工程中resources/rawfile目录下的文件名称")。 |
+| path | string | [Resource](ts-types.md#resource) | 是 | 需要查询的字体文件的路径。支持两种格式：  1. 以"file://"开头的字体文件绝对路径，如"file:///system/fonts/test.ttf"。  2. 工程resources/rawfile目录下的文件，格式为$rawfile('文件名称')，如$rawfile('test.ttf')。 |
 
 **返回值：**
 
@@ -333,42 +319,40 @@ getFontDescriptorsFromPath(path: string | Resource): Promise<Array<FontDescripto
 
 **示例：**
 
-```
-1. import { text } from '@kit.ArkGraphics2D'
+```ts
+import { text } from '@kit.ArkGraphics2D'
 
-3. @Entry
-4. @Component
-5. struct GetFontDescriptorsFromPathTest {
-6. build() {
-7. Column({ space: 10 }) {
-8. Button("get fontDescriptors")
-9. .onClick(async () => {
-10. let promise = text.getFontDescriptorsFromPath("file:///system/fonts/NotoSansCJK-Regular.ttc")
-11. promise.then((fontFullDescriptors) => {
-12. for (let index = 0; index < fontFullDescriptors.length; index++) {
-13. console.info("Path:" + fontFullDescriptors[index].path +
-14. "\npostScriptName:" + fontFullDescriptors[index].postScriptName +
-15. "\nfullName:" + fontFullDescriptors[index].fullName +
-16. "\nfamilyName:" + fontFullDescriptors[index].fontFamily +
-17. "\nfontSubName:" + fontFullDescriptors[index].fontSubfamily +
-18. "\nweight:" + fontFullDescriptors[index].weight +
-19. "\nwidth:" + fontFullDescriptors[index].width +
-20. "\nitalic:" + fontFullDescriptors[index].italic +
-21. "\nmonoSpace:" + fontFullDescriptors[index].monoSpace +
-22. "\nsymbolic:" + fontFullDescriptors[index].symbolic)
-23. }
-24. })
-25. })
-26. }.width("100%")
-27. .height("100%")
-28. .justifyContent(FlexAlign.Center)
-29. }
-30. }
+@Entry
+@Component
+struct GetFontDescriptorsFromPathTest {
+  build() {
+    Column({ space: 10 }) {
+      Button("get fontDescriptors")
+        .onClick(() => {
+          let promise = text.getFontDescriptorsFromPath("file:///system/fonts/NotoSansCJK-Regular.ttc")
+          promise.then((fontFullDescriptors) => {
+            for (let index = 0; index < fontFullDescriptors.length; index++) {
+              console.info("Path:" + fontFullDescriptors[index].path +
+                          "\npostScriptName:" + fontFullDescriptors[index].postScriptName +
+                          "\nfullName:" + fontFullDescriptors[index].fullName +
+                          "\nfamilyName:" + fontFullDescriptors[index].fontFamily +
+                          "\nfontSubName:" + fontFullDescriptors[index].fontSubfamily +
+                          "\nweight:" + fontFullDescriptors[index].weight +
+                          "\nwidth:" + fontFullDescriptors[index].width +
+                          "\nitalic:" + fontFullDescriptors[index].italic +
+                          "\nmonoSpace:" + fontFullDescriptors[index].monoSpace +
+                          "\nsymbolic:" + fontFullDescriptors[index].symbolic)
+            }
+          })
+        })
+    }.width("100%")
+    .height("100%")
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
 
 ## text.getFontUnicodeSet23+
-
-PhonePC/2in1TabletTVWearable
 
 getFontUnicodeSet(path: string | Resource, index: number): Promise<Array<number>>
 
@@ -384,44 +368,42 @@ getFontUnicodeSet(path: string | Resource, index: number): Promise<Array<number>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | [Resource](ts-types.md#resource) | 是 | 需要查询的字体文件的路径，应为 "file:// + 字体文件绝对路径" 或 $rawfile("工程中resources/rawfile目录下的文件名称")。 |
-| index | number | 是 | 字体文件格式为ttc/otc时，指定加载的字体索引。非ttc/otc格式文件索引值只能指定为0。如果该参数非法，将返回空数组。 |
+| path | string | [Resource](ts-types.md#resource) | 是 | 需要查询的字体文件的路径，应为 "file:// + 字体文件绝对路径" 或 $rawfile('工程中resources/rawfile目录下的文件名称')。 |
+| index | number | 是 | 字体文件格式为ttc/otc时，指定加载的字体索引，取值范围为[0, count-1]，其中count为字体文件包含的字体数量。非ttc/otc格式文件索引值只能指定为0。如果该参数为负数或超出字体文件实际索引范围，将返回空数组。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<Array<number>> | Promise对象，返回字体文件持有的unicode码。 |
+| Promise<Array<number>> | Promise对象，返回字体文件对应的unicode码数组。 |
 
 **示例：**
 
-```
-1. import { text } from '@kit.ArkGraphics2D'
+```ts
+import { text } from '@kit.ArkGraphics2D'
 
-3. @Entry
-4. @Component
-5. struct GetFontUnicodeSetTest {
-6. build() {
-7. Column({ space: 10 }) {
-8. Button("get fontUnicode")
-9. .onClick(async () => {
-10. let promise = text.getFontUnicodeSet("file:///system/fonts/HMSymbolVF.ttf", 0)
-11. promise.then((unicodeSet) => {
-12. for (let index = 0; index < unicodeSet.length; index++) {
-13. console.info(unicodeSet[index].toString())
-14. }
-15. })
-16. })
-17. }.width("100%")
-18. .height("100%")
-19. .justifyContent(FlexAlign.Center)
-20. }
-21. }
+@Entry
+@Component
+struct GetFontUnicodeSetTest {
+  build() {
+    Column({ space: 10 }) {
+      Button("get fontUnicode")
+        .onClick(() => {
+          let promise = text.getFontUnicodeSet("file:///system/fonts/HMSymbolVF.ttf", 0)
+          promise.then((unicodeSet) => {
+            for (let index = 0; index < unicodeSet.length; index++) {
+              console.info(unicodeSet[index].toString())
+            }
+          })
+        })
+    }.width("100%")
+    .height("100%")
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
 
 ## text.getFontCount23+
-
-PhonePC/2in1TabletTVWearable
 
 getFontCount(path: string | Resource): number
 
@@ -439,7 +421,7 @@ getFontCount(path: string | Resource): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | [Resource](ts-types.md#resource) | 是 | 需要查询的字体文件的路径，应为 "file:// + 字体文件绝对路径" 或 $rawfile("工程中resources/rawfile目录下的文件名称")。 |
+| path | string | [Resource](ts-types.md#resource) | 是 | 需要查询的字体文件的路径，应为 "file:// + 字体文件绝对路径" 或 $rawfile('工程中resources/rawfile目录下的文件名称')。 |
 
 **返回值：**
 
@@ -449,29 +431,27 @@ getFontCount(path: string | Resource): number
 
 **示例：**
 
-```
-1. import { text } from '@kit.ArkGraphics2D'
+```ts
+import { text } from '@kit.ArkGraphics2D'
 
-3. @Entry
-4. @Component
-5. struct GetFontCountTest {
-6. build() {
-7. Column({ space: 10 }) {
-8. Button("get fontCount")
-9. .onClick(() => {
-10. let fontCount = text.getFontCount("file:///system/fonts/NotoSansCJK-Regular.ttc")
-11. console.info("file count: " + fontCount)
-12. })
-13. }.width("100%")
-14. .height("100%")
-15. .justifyContent(FlexAlign.Center)
-16. }
-17. }
+@Entry
+@Component
+struct GetFontCountTest {
+  build() {
+    Column({ space: 10 }) {
+      Button("get fontCount")
+        .onClick(() => {
+          let fontCount = text.getFontCount("file:///system/fonts/NotoSansCJK-Regular.ttc")
+          console.info("file count: " + fontCount)
+        })
+    }.width("100%")
+    .height("100%")
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
 
 ## text.getFontPathsByType23+
-
-PhonePC/2in1TabletTVWearable
 
 getFontPathsByType(fontType: SystemFontType): Array<string>
 
@@ -495,36 +475,34 @@ getFontPathsByType(fontType: SystemFontType): Array<string>
 
 **示例：**
 
-```
-1. import { text } from '@kit.ArkGraphics2D'
+```ts
+import { text } from '@kit.ArkGraphics2D'
 
-3. @Entry
-4. @Component
-5. struct GetFontPathsByTypeTest {
-6. build() {
-7. Column({ space: 10 }) {
-8. Button("get font path")
-9. .onClick(() => {
-10. let fontList = text.getFontPathsByType(text.SystemFontType.ALL)
-11. console.info("file count: " + fontList.length)
-12. for (let index = 0; index < fontList.length; index++) {
-13. console.info("file path: " + fontList[index])
-14. }
-15. })
-16. }.width("100%")
-17. .height("100%")
-18. .justifyContent(FlexAlign.Center)
-19. }
-20. }
+@Entry
+@Component
+struct GetFontPathsByTypeTest {
+  build() {
+    Column({ space: 10 }) {
+      Button("get font path")
+        .onClick(() => {
+          let fontList = text.getFontPathsByType(text.SystemFontType.ALL)
+          console.info("file count: " + fontList.length)
+          for (let index = 0; index < fontList.length; index++) {
+            console.info("file path: " + fontList[index])
+          }
+        })
+    }.width("100%")
+    .height("100%")
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
 
 ## text.isFontSupported23+
 
-PhonePC/2in1TabletTVWearable
-
 isFontSupported(fontURL: string | Resource): boolean
 
-检查系统是否支持指定的字体文件。
+检查系统是否支持指定的字体文件。可在加载自定义字体前预先验证字体文件的可用性，避免因字体不支持导致文本渲染异常。
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
@@ -544,30 +522,28 @@ isFontSupported(fontURL: string | Resource): boolean
 
 **示例：**
 
-```
-1. import { text } from '@kit.ArkGraphics2D'
+```ts
+import { text } from '@kit.ArkGraphics2D'
 
-3. @Entry
-4. @Component
-5. struct isFontSupportedTest {
-6. build() {
-7. Column({ space: 10 }) {
-8. Button("is font supported")
-9. .onClick(() => {
-10. let filePath = "file:///system/fonts/NotoSansCJK-Regular.ttc"
-11. let isSupported = text.isFontSupported(filePath)
-12. console.info("is font supported: " + isSupported)
-13. })
-14. }.width("100%")
-15. .height("100%")
-16. .justifyContent(FlexAlign.Center)
-17. }
-18. }
+@Entry
+@Component
+struct isFontSupportedTest {
+  build() {
+    Column({ space: 10 }) {
+      Button("is font supported")
+        .onClick(() => {
+          let filePath = "file:///system/fonts/NotoSansCJK-Regular.ttc"
+          let isSupported = text.isFontSupported(filePath)
+          console.info("is font supported: " + isSupported)
+        })
+    }.width("100%")
+    .height("100%")
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
 
 ## TextHighContrast20+
-
-PhonePC/2in1TabletTVWearable
 
 文字渲染高对比度配置类型枚举。
 
@@ -583,8 +559,6 @@ PhonePC/2in1TabletTVWearable
 
 ## TextUndefinedGlyphDisplay20+
 
-PhonePC/2in1TabletTVWearable
-
 文本未定义字形时的显示方式枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
@@ -596,9 +570,48 @@ PhonePC/2in1TabletTVWearable
 | USE\_DEFAULT | 0 | 使用字体的内部.notdef字形。遵循字体的内部.notdef字形设计，可以是空框、空格或自定义符号。 |
 | USE\_TOFU | 1 | 总是用显式的豆腐块替换未定义的字形，覆盖字体的默认行为。用于调试缺失字符或强制一致的缺失符号显示。 |
 
-## TextAlign
+## TextProcessState
 
-PhonePC/2in1TabletTVWearable
+文本处理状态的枚举。
+
+**系统能力：** SystemCapability.Graphics.Drawing
+
+**元服务API**：从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**起始版本：** 26.0.0
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| INIT | 0 | 初始状态，文本处理尚未开始。 |
+| INDEXED | 1 | 已生成索引状态，文本索引已生成。 |
+| SHAPED | 2 | 已塑形状态，文本已完成塑形。 |
+| LINE\_BROKEN | 3 | 已换行状态，文本已换行。 |
+| FORMATTED | 4 | 已格式化状态，文本已完成格式化。 |
+| PAINT | 5 | 已绘制状态，文本已完成绘制。 |
+| UPDATE\_ATTRIBUTE | 6 | 已更新属性状态，文本属性已更新。 |
+
+## TextDisplayState
+
+文本显示状态的枚举。表示文本排版后的原生结果，与外部画布裁切、溢出屏幕等外部显示因素无关。
+
+**系统能力：** SystemCapability.Graphics.Drawing
+
+**元服务API**：从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**起始版本：** 26.0.0
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| UNKNOWN | 0 | 未知显示状态，默认状态。 |
+| ALL | 1 | 完整显示状态，文本无截断、无省略，全部内容正常显示。 |
+| CLIP | 2 | 裁剪显示状态，文本超出排版区域的部分被直接裁剪隐藏。 |
+| OMITTED | 3 | 省略显示状态，文本超出排版区域后，部分内容以指定字符（如省略号 '...'）替代展示。 |
+
+## TextAlign
 
 文本对齐方式枚举。
 
@@ -617,8 +630,6 @@ PhonePC/2in1TabletTVWearable
 
 ## TextVerticalAlign20+
 
-PhonePC/2in1TabletTVWearable
-
 文本垂直对齐方式枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
@@ -634,8 +645,6 @@ PhonePC/2in1TabletTVWearable
 
 ## TextDirection
 
-PhonePC/2in1TabletTVWearable
-
 文本排版方向枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
@@ -648,8 +657,6 @@ PhonePC/2in1TabletTVWearable
 | LTR | 1 | 文本从左到右排版。 |
 
 ## BreakStrategy
-
-PhonePC/2in1TabletTVWearable
 
 断行策略枚举。
 
@@ -665,8 +672,6 @@ PhonePC/2in1TabletTVWearable
 
 ## WordBreak
 
-PhonePC/2in1TabletTVWearable
-
 断词策略枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
@@ -677,12 +682,10 @@ PhonePC/2in1TabletTVWearable
 | --- | --- | --- |
 | NORMAL | 0 | 默认的换行规则。依据各自语言的规则，允许在字间发生换行。 |
 | BREAK\_ALL | 1 | 对于Non-CJK（非中文，日文，韩文）文本允许在任意字符内发生换行。该值适合包含一些非亚洲文本的亚洲文本，比如使连续的英文字符断行。 |
-| BREAK\_WORD | 2 | 对于Non-CJK的文本可在任意2个字符间断行，一行文本中有断行破发点（如空白符）时，优先按破发点换行，保障单词优先完整显示。若整一行文本均无断行破发点时，则在任意2个字符间断行。对于CJK与NORMAL效果一致。 |
+| BREAK\_WORD | 2 | 对于Non-CJK的文本可在任意2个字符间断行，一行文本中有断行点（如空白符）时，优先按断行点换行，保障单词优先完整显示。若整一行文本均无断行点时，则在任意2个字符间断行。对于CJK文本，此策略与NORMAL效果一致。 |
 | BREAK\_HYPHEN18+ | 3 | 每行末尾单词尝试通过连字符“-”进行断行，若无法添加连字符“-”，则跟BREAK\_WORD保持一致。  使用此断词策略时，需与[TextStyle](js-apis-graphics-text.md#textstyle)中locale属性配合使用，通过locale定义语言环境共同作用影响断词效果。 |
 
 ## Decoration
-
-PhonePC/2in1TabletTVWearable
 
 文本装饰线。
 
@@ -699,8 +702,6 @@ PhonePC/2in1TabletTVWearable
 
 ## TextDecorationType
 
-PhonePC/2in1TabletTVWearable
-
 装饰线类型枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
@@ -715,8 +716,6 @@ PhonePC/2in1TabletTVWearable
 | LINE\_THROUGH | 4 | 删除线。 |
 
 ## TextDecorationStyle
-
-PhonePC/2in1TabletTVWearable
 
 装饰线样式枚举。
 
@@ -733,8 +732,6 @@ PhonePC/2in1TabletTVWearable
 | WAVY | 4 | 波浪线。 |
 
 ## FontWeight
-
-PhonePC/2in1TabletTVWearable
 
 字重枚举。
 
@@ -756,8 +753,6 @@ PhonePC/2in1TabletTVWearable
 
 ## FontWidth
 
-PhonePC/2in1TabletTVWearable
-
 字体宽度的枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
@@ -778,8 +773,6 @@ PhonePC/2in1TabletTVWearable
 
 ## FontStyle
 
-PhonePC/2in1TabletTVWearable
-
 字体样式枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
@@ -793,8 +786,6 @@ PhonePC/2in1TabletTVWearable
 | OBLIQUE | 2 | 倾斜体。如果当前字体没有可用的倾斜体版本，会选用斜体替代。 |
 
 ## TextHeightBehavior
-
-PhonePC/2in1TabletTVWearable
 
 文本高度修饰符模式枚举。
 
@@ -811,8 +802,6 @@ PhonePC/2in1TabletTVWearable
 
 ## TextBaseline
 
-PhonePC/2in1TabletTVWearable
-
 文本基线类型枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
@@ -826,27 +815,23 @@ PhonePC/2in1TabletTVWearable
 
 ## EllipsisMode
 
-PhonePC/2in1TabletTVWearable
-
 省略号类型枚举。
 
 EllipsisMode.START和EllipsisMode.MIDDLE仅在单行超长文本生效。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
-**元服务API**：从API version 22开始，该接口支持在元服务中使用。
-
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| START | 0 | 开头省略号，只在[ParagraphStyle](js-apis-graphics-text.md#paragraphstyle)中设置maxLines为1时生效。 |
-| MIDDLE | 1 | 中间省略号，只在[ParagraphStyle](js-apis-graphics-text.md#paragraphstyle)中设置maxLines为1时生效。 |
-| END | 2 | 末尾省略号。 |
+| START | 0 | 开头省略号，该枚举值只在[ParagraphStyle](js-apis-graphics-text.md#paragraphstyle)中设置maxLines为1时生效。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| MIDDLE | 1 | 中间省略号，该枚举值只在[ParagraphStyle](js-apis-graphics-text.md#paragraphstyle)中设置maxLines为1时生效。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| END | 2 | 末尾省略号，该枚举值在[ParagraphStyle](js-apis-graphics-text.md#paragraphstyle)中maxLines设置为任何值时均有效。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| MULTILINE\_START24+ | 3 | 开头省略号，该枚举值在[ParagraphStyle](js-apis-graphics-text.md#paragraphstyle)中maxLines设置为任何值时均有效。  **元服务API**：从API version 24开始，该接口支持在元服务中使用。 |
+| MULTILINE\_MIDDLE24+ | 4 | 中间省略号，该枚举值在[ParagraphStyle](js-apis-graphics-text.md#paragraphstyle)中maxLines设置为任何值时均有效。  **元服务API**：从API version 24开始，该接口支持在元服务中使用。 |
 
 ## TextShadow
 
-PhonePC/2in1TabletTVWearable
-
-字体阴影。
+文本阴影。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
@@ -854,13 +839,11 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| color | [common2D.Color](js-apis-graphics-common2d.md#color) | 否 | 是 | 字体阴影的颜色，默认为黑色Color(255, 0, 0, 0)。 |
-| point | [common2D.Point](js-apis-graphics-common2d.md#point12) | 否 | 是 | 字体阴影基于当前文本的偏移位置，横、纵坐标要大于等于零。 |
-| blurRadius | number | 否 | 是 | 模糊半径，浮点数，默认为0.0px。 |
+| color | [common2D.Color](js-apis-graphics-common2d.md#color) | 否 | 是 | 文本阴影的颜色，默认为黑色Color(255, 0, 0, 0)。 |
+| point | [common2D.Point](js-apis-graphics-common2d.md#point12) | 否 | 是 | 文本阴影基于当前文本的偏移位置，横、纵坐标要大于等于零，单位为物理像素px，默认为common2D.Point(0, 0)。 |
+| blurRadius | number | 否 | 是 | 模糊半径，浮点数，单位为物理像素px，默认为0.0。 |
 
 ## RectStyle
-
-PhonePC/2in1TabletTVWearable
 
 矩形框样式。
 
@@ -871,14 +854,12 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | color | [common2D.Color](js-apis-graphics-common2d.md#color) | 否 | 否 | 矩形框的颜色。 |
-| leftTopRadius | number | 否 | 否 | 矩形框的左上半径。 |
-| rightTopRadius | number | 否 | 否 | 矩形框的右上半径。 |
-| rightBottomRadius | number | 否 | 否 | 矩形框的右下半径。 |
-| leftBottomRadius | number | 否 | 否 | 矩形框的左下半径。 |
+| leftTopRadius | number | 否 | 否 | 矩形框的左上半径，单位为物理像素px。 |
+| rightTopRadius | number | 否 | 否 | 矩形框的右上半径，单位为物理像素px。 |
+| rightBottomRadius | number | 否 | 否 | 矩形框的右下半径，单位为物理像素px。 |
+| leftBottomRadius | number | 否 | 否 | 矩形框的左下半径，单位为物理像素px。 |
 
 ## FontFeature
-
-PhonePC/2in1TabletTVWearable
 
 文本字体特征。
 
@@ -888,27 +869,22 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| name | string | 否 | 否 | 字体特征键值对中的关键字标识的字符串。 |
+| name | string | 否 | 否 | 字体特征键值对中的关键字标识，如'liga'（标准连字）、'kern'（字距调整）等。 |
 | value | number | 否 | 否 | 字体特征键值对的值。 |
 
 ## FontVariation
-
-PhonePC/2in1TabletTVWearable
 
 可变字体属性。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
-**元服务API**：从API version 22开始，该接口支持在元服务中使用。
-
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| axis | string | 否 | 否 | 可变字体属性键值对中的关键字标识的字符串。 |
-| value | number | 否 | 否 | 可变字体属性键值对的值。 |
+| axis | string | 否 | 否 | 可变字体属性键值对中的关键字标识，如'wght'（字重）、'wdth'（字宽）和'ital'（斜体）等。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| value | number | 否 | 否 | 可变字体属性键值对的值。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| isNormalized24+ | boolean | 否 | 是 | 是否归一化。值为true时，value字段取值范围为-1~1，映射字体文件中配置的最小值到最大值范围，0表示字体文件中配置的默认值；值为false时，value字段取值范围为字体文件本身支持调节的范围；默认为false。  **元服务API**：从API version 24开始，该接口支持在元服务中使用。 |
 
 ## TextBadgeType20+
-
-PhonePC/2in1TabletTVWearable
 
 文本上下标枚举。
 
@@ -924,8 +900,6 @@ PhonePC/2in1TabletTVWearable
 
 ## LineHeightStyle21+
 
-PhonePC/2in1TabletTVWearable
-
 行高缩放基数枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
@@ -939,9 +913,7 @@ PhonePC/2in1TabletTVWearable
 
 ## TextStyle
 
-PhonePC/2in1TabletTVWearable
-
-文本样式。
+文本样式，用于控制文本的视觉表现属性，包括字体、颜色、字号、间距、装饰线和阴影等。TextStyle通过[ParagraphBuilder](js-apis-graphics-text.md#paragraphbuilder)的[pushStyle](js-apis-graphics-text.md#pushstyle)方法应用到后续添加的文本内容，与[ParagraphStyle](js-apis-graphics-text.md#paragraphstyle)（控制段落级别属性）配合使用。同一段落中可通过多次pushStyle实现对不同文本片段应用不同样式。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
@@ -951,33 +923,33 @@ PhonePC/2in1TabletTVWearable
 | --- | --- | --- | --- | --- |
 | decoration | [Decoration](js-apis-graphics-text.md#decoration) | 否 | 是 | 装饰线设置，默认不使用装饰线。 |
 | color | [common2D.Color](js-apis-graphics-common2d.md#color) | 否 | 是 | 文字颜色，默认为白色。 |
-| fontWeight | [FontWeight](js-apis-graphics-text.md#fontweight) | 否 | 是 | 字重，默认为W400。 目前只有系统默认字体支持字重的调节，其他字体设置字重值小于semi-bold（即W600）时字体粗细无变化，当设置字重值大于等于semi-bold（即W600）时可能会触发伪加粗效果。 |
+| fontWeight | [FontWeight](js-apis-graphics-text.md#fontweight) | 否 | 是 | 字重，默认为W400。 在HarmonyOS 6.1.1之前，仅系统字体中的可变字体支持字重调节；从HarmonyOS 6.1.1开始，系统字体与三方注册字体中的可变字体均支持字重调节。非可变字体设置字重值小于semi-bold（即W600）时字体粗细无变化，设置字重值大于等于semi-bold（即W600）时可能会触发伪加粗效果。 |
 | fontWidth21+ | [FontWidth](js-apis-graphics-text.md#fontwidth) | 否 | 是 | 字体宽度，默认为NORMAL。 |
 | fontStyle | [FontStyle](js-apis-graphics-text.md#fontstyle) | 否 | 是 | 字体样式，默认为常规样式。 |
 | baseline | [TextBaseline](js-apis-graphics-text.md#textbaseline) | 否 | 是 | 文本基线类型，默认为ALPHABETIC。 |
-| fontFamilies | Array<string> | 否 | 是 | 字体家族名称列表，默认为空，匹配系统字体。 |
-| fontSize | number | 否 | 是 | 字体大小，浮点数，默认为14.0，单位为px。 |
-| letterSpacing | number | 否 | 是 | 字符间距，正数拉开字符距离，若是负数则拉近字符距离，浮点数，默认为0.0，单位为物理像素px。 |
-| wordSpacing | number | 否 | 是 | 单词间距，浮点数，默认为0.0，单位为px。 |
+| fontFamilies | Array<string> | 否 | 是 | 字体家族名称列表，默认为空，匹配系统字体。使用自定义字体时，需将加载字体时指定的名称填入此列表中。当与fontTypefaces同时设置时，fontTypefaces优先级更高，fontFamilies不生效。 |
+| fontTypefaces | Array<[drawing.Typeface](arkts-apis-graphics-drawing-typeface.md)> | 否 | 是 | 指定排版字体对象数组，用于优先使用指定的字体对象进行文本塑形，跳过字体匹配流程。当数组中某个字体对象无法塑形部分文字时，未能塑形的文字将使用系统字体进行塑形。默认为空数组，表示不指定字体对象，使用默认字体匹配流程。  当fontTypefaces与[TextStyle](js-apis-graphics-text.md#textstyle).fontFamilies同时设置时，fontTypefaces优先级更高。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| fontSize | number | 否 | 是 | 字体大小，浮点数，默认为14.0，单位为物理像素px。 |
+| letterSpacing | number | 否 | 是 | 字符间距，正数拉开字符距离，如果为负数则拉近字符距离，浮点数，单位为物理像素px，默认为0.0。 |
+| wordSpacing | number | 否 | 是 | 单词间距，浮点数，单位为物理像素px，默认为0.0。 |
 | heightScale | number | 否 | 是 | 行高缩放倍数，浮点数，默认为1.0，heightOnly为true时生效。 |
-| heightOnly | boolean | 否 | 是 | true表示根据字体大小和heightScale设置文本框的高度，false表示根据行高和行距，默认为false。 |
+| heightOnly | boolean | 否 | 是 | true表示根据字体大小和heightScale设置文本框的高度，false表示根据行高和行距设置文本框高度，默认为false。 |
 | halfLeading | boolean | 否 | 是 | true表示将行间距平分至行的顶部与底部，false则不平分，默认为false。 |
-| ellipsis | string | 否 | 是 | 省略号文本，表示省略号生效后使用该字段值替换省略号部分。 |
+| ellipsis | string | 否 | 是 | 省略号文本，表示省略号生效后使用该字段值替换省略号部分，默认为空字符串，即使用系统默认省略号…（U+2026）。与ParagraphStyle的tab属性共同配置时，tab属性无效。 |
 | ellipsisMode | [EllipsisMode](js-apis-graphics-text.md#ellipsismode) | 否 | 是 | 省略号类型，默认为END，行尾省略号。 |
 | locale | string | 否 | 是 | 语言类型，例如'en-Latn'代表英文(拉丁文字)，'zh-Hans'代表简体中文，'zh-Hant'代表繁体中文。支持language-script格式的两段式语言标签，language遵循ISO 639-1规范，script遵循ISO 15924规范。未指定locale或者设置为空字符串或为undefined时，默认locale为'zh-Hans'。 |
-| baselineShift | number | 否 | 是 | 文本下划线的偏移距离，浮点数，默认为0.0px。 |
-| fontFeatures | Array<[FontFeature](js-apis-graphics-text.md#fontfeature)> | 否 | 是 | 文本字体特征数组。 |
-| fontVariations | Array<[FontVariation](js-apis-graphics-text.md#fontvariation)> | 否 | 是 | 可变字体属性数组。 |
-| textShadows | Array<[TextShadow](js-apis-graphics-text.md#textshadow)> | 否 | 是 | 文本阴影数组。 |
-| backgroundRect | [RectStyle](js-apis-graphics-text.md#rectstyle) | 否 | 是 | 文本矩形框样式。 |
+| baselineShift | number | 否 | 是 | 文本基线的垂直偏移距离，浮点数，单位为物理像素px，默认为0.0。 |
+| fontFeatures | Array<[FontFeature](js-apis-graphics-text.md#fontfeature)> | 否 | 是 | 文本字体特征数组。当需要启用或禁用特定字体特性（如连字、字距调整等）时传入。 |
+| fontVariations | Array<[FontVariation](js-apis-graphics-text.md#fontvariation)> | 否 | 是 | 可变字体属性数组。当需要调整可变字体的可变轴参数（如字重轴、字宽轴等）时传入。 |
+| textShadows | Array<[TextShadow](js-apis-graphics-text.md#textshadow)> | 否 | 是 | 文本阴影数组。当需要为文本添加阴影效果时传入。 |
+| backgroundRect | [RectStyle](js-apis-graphics-text.md#rectstyle) | 否 | 是 | 文本矩形框样式。当需要为文本添加背景矩形框（如设置背景色、圆角等）时传入。 |
 | badgeType20+ | [TextBadgeType](js-apis-graphics-text.md#textbadgetype20) | 否 | 是 | 设置文本排版时是否使能上标或下标。TEXT\_SUPERSCRIPT表示使能上标，TEXT\_SUBSCRIPT表示使能下标，默认值为TEXT\_BADGE\_NONE表示不使能。 |
-| lineHeightMaximum21+ | number | 否 | 是 | 行高上限。若同时应用行高缩放，行高上限在[TextStyle](js-apis-graphics-text.md#textstyle).heightScale大于0时生效。取值为正数浮点数，默认值为Number.MAX\_VALUE。 |
-| lineHeightMinimum21+ | number | 否 | 是 | 行高下限。若同时应用行高缩放，行高下限在[TextStyle](js-apis-graphics-text.md#textstyle).heightScale大于0时生效。取值范围为非负浮点数，默认值为0。 |
+| lineHeightMaximum21+ | number | 否 | 是 | 行高上限，单位为物理像素px。若同时应用行高缩放，行高上限在[TextStyle](js-apis-graphics-text.md#textstyle).heightScale大于0时生效。取值为正数浮点数，默认值为Number.MAX\_VALUE。 |
+| lineHeightMinimum21+ | number | 否 | 是 | 行高下限，单位为物理像素px。若同时应用行高缩放，行高下限在[TextStyle](js-apis-graphics-text.md#textstyle).heightScale大于0时生效。取值范围为非负浮点数，默认值为0。 |
 | lineHeightStyle21+ | [LineHeightStyle](js-apis-graphics-text.md#lineheightstyle21) | 否 | 是 | 行高缩放基数样式。默认为FONT\_SIZE。 |
+| fontEdging24+ | [drawing.FontEdging](arkts-apis-graphics-drawing-e.md#fontedging12) | 否 | 是 | 绘制文本的边缘处理方式，默认值为ANTI\_ALIAS。  **元服务API**：从API version 24开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## StrutStyle
-
-PhonePC/2in1TabletTVWearable
 
 支柱样式，用于控制绘制文本的行间距、基线对齐方式以及其他与行高相关的属性，默认不开启。
 
@@ -990,18 +962,16 @@ PhonePC/2in1TabletTVWearable
 | fontFamilies | Array<string> | 否 | 是 | 字体家族名称列表，默认为空，匹配系统字体。 |
 | fontStyle | [FontStyle](js-apis-graphics-text.md#fontstyle) | 否 | 是 | 字体样式，默认为常规样式。 |
 | fontWidth | [FontWidth](js-apis-graphics-text.md#fontwidth) | 否 | 是 | 字体宽度，默认为NORMAL。 |
-| fontWeight | [FontWeight](js-apis-graphics-text.md#fontweight) | 否 | 是 | 字重，默认为W400。系统默认字体支持字重调节，其他字体设置字重值小于W600时无变化，大于等于W600时可能触发伪加粗效果。 |
-| fontSize | number | 否 | 是 | 字体大小，浮点数，默认14.0，单位物理像素px。 |
+| fontWeight | [FontWeight](js-apis-graphics-text.md#fontweight) | 否 | 是 | 字重，默认为W400。在HarmonyOS 6.1.1之前，仅系统字体中的可变字体支持字重调节；从HarmonyOS 6.1.1开始，系统字体与三方注册字体中的可变字体均支持字重调节。非可变字体设置字重值小于W600时字体粗细无变化，设置字重值大于等于W600时可能会触发伪加粗效果。 |
+| fontSize | number | 否 | 是 | 字体大小，浮点数，默认14.0，单位为物理像素px。 |
 | height | number | 否 | 是 | 行高缩放倍数，浮点数，默认为1.0。 |
-| leading | number | 否 | 是 | 以自定义行距应用于支柱的行距，浮点数，默认为-1.0。 |
+| leading | number | 否 | 是 | 自定义应用于支柱的行距，浮点数，单位为物理像素px，默认为-1.0。 |
 | forceHeight | boolean | 否 | 是 | 是否所有行都将使用支柱的高度，true表示使用，false表示不使用，默认为false。 |
 | enabled | boolean | 否 | 是 | 是否启用支柱样式，true表示使用，false表示不使用，默认为false。 |
 | heightOverride | boolean | 否 | 是 | 是否覆盖高度，true表示覆盖，false表示不覆盖，默认为false。 |
 | halfLeading | boolean | 否 | 是 | true表示将行间距平分至行的顶部与底部，false则不平分，默认为false。 |
 
 ## FontDescriptor14+
-
-PhonePC/2in1TabletTVWearable
 
 字体描述符信息。
 
@@ -1028,17 +998,49 @@ PhonePC/2in1TabletTVWearable
 | copyright23+ | string | 否 | 是 | 字体版权信息，可取任意字符串，默认为空字符串。  **元服务API**：从API version 23开始，该接口支持在元服务中使用。 |
 | trademark23+ | string | 否 | 是 | 字体商标信息，可取任意字符串，默认为空字符串。  **元服务API**：从API version 23开始，该接口支持在元服务中使用。 |
 | license23+ | string | 否 | 是 | 字体许可证信息，可取任意字符串，默认为空字符串。  **元服务API**：从API version 23开始，该接口支持在元服务中使用。 |
+| variationAxisRecords24+ | Array<[FontVariationAxis](js-apis-graphics-text.md#fontvariationaxis24)> | 否 | 是 | 字体可变轴记录数组，用于描述字体支持的可变轴信息。非可变字体此字段为undefined。  **元服务API**：从API version 24开始，该接口支持在元服务中使用。 |
+| variationInstanceRecords24+ | Array<[FontVariationInstance](js-apis-graphics-text.md#fontvariationinstance24)> | 否 | 是 | 字体可变实例记录数组，用于描述字体支持的可变实例信息。非可变字体此字段为undefined。  **元服务API**：从API version 24开始，该接口支持在元服务中使用。 |
 | index23+ | number | 否 | 是 | 字体索引，字体文件为ttc类型时有效，ttf类型统一为0。  **元服务API**：从API version 23开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| languages | Array<string> | 否 | 是 | 字体支持的语言列表，默认为空数组。数组中每个元素为BCP 47格式的语言标签字符串（如'en'、'zh-Hans'），表示该字体支持的书写语言。  **起始版本：** 26.0.0  **元服务API**：从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| fontFeatures | Array<string> | 否 | 是 | 字体支持的OpenType特性标签数组，默认为空数组。数组中每个元素为特性标签字符串（如'liga'表示标准连字、'kern'表示字距调整），表示该字体支持的字体特性。  **起始版本：** 26.0.0  **元服务API**：从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+
+## FontVariationAxis24+
+
+字体可变轴信息。
+
+**系统能力**：SystemCapability.Graphics.Drawing
+
+**元服务API**：从API version 24开始，该接口支持在元服务中使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| key | string | 否 | 否 | 字体可变轴的关键字标识。 |
+| minValue | number | 否 | 否 | 字体可变轴的最小值。 |
+| maxValue | number | 否 | 否 | 字体可变轴的最大值。 |
+| defaultValue | number | 否 | 否 | 字体可变轴的默认值。 |
+| flags | number | 否 | 否 | 字体可变轴的标志位，用于标记某个可变轴是否应该对用户隐藏，值为0或1。值为0时表示该轴对用户可见，值为1时表示该轴应隐藏。 |
+| name | string | 否 | 否 | 字体可变轴的英文名称。 |
+| localName | string | 否 | 否 | 字体可变轴的本地化名称，可以为空。 |
+
+## FontVariationInstance24+
+
+字体可变实例信息，存放预设的可变字体样式信息。
+
+**系统能力**：SystemCapability.Graphics.Drawing
+
+**元服务API**：从API version 24开始，该接口支持在元服务中使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| name | string | 否 | 否 | 字体可变实例的英文名称。 |
+| localName | string | 否 | 否 | 字体可变实例的本地化名称，可以为空。 |
+| coordinates | Array<[FontVariation](js-apis-graphics-text.md#fontvariation)> | 否 | 否 | 可变字体属性数组。 |
 
 ## FontCollection
 
-PhonePC/2in1TabletTVWearable
-
-字体集。
+字体集，用于管理文本排版所需的字体资源。FontCollection为[ParagraphBuilder](js-apis-graphics-text.md#paragraphbuilder)提供字体匹配和字形查找能力，是文本排版管线的基础组件。提供全局实例（[getGlobalInstance](js-apis-graphics-text.md#getglobalinstance)）和本地实例（[getLocalInstance](js-apis-graphics-text.md#getlocalinstance22)），全局实例加载的字体在应用内共享，适用于普通应用场景；本地实例各实例独立，加载的字体仅对当前实例生效、实例间互不影响，推荐卡片场景使用。支持通过[loadFontSync](js-apis-graphics-text.md#loadfontsync)或[loadFont](js-apis-graphics-text.md#loadfont18)加载自定义字体。
 
 ### getGlobalInstance
-
-PhonePC/2in1TabletTVWearable
 
 static getGlobalInstance(): FontCollection
 
@@ -1052,34 +1054,32 @@ static getGlobalInstance(): FontCollection
 
 | 类型 | 说明 |
 | --- | --- |
-| [FontCollection](js-apis-graphics-text.md#fontcollection) | FontCollection对象。 |
+| [FontCollection](js-apis-graphics-text.md#fontcollection) | 应用全局FontCollection实例对象，可用于管理字体加载、卸载和排版等操作。 |
 
 **示例：**
 
-```
-1. import { text } from '@kit.ArkGraphics2D'
+```ts
+import { text } from '@kit.ArkGraphics2D'
 
-3. function textFunc() {
-4. let fontCollection = text.FontCollection.getGlobalInstance();
-5. }
+function textFunc() {
+  let fontCollection = text.FontCollection.getGlobalInstance();
+}
 
-7. @Entry
-8. @Component
-9. struct Index {
-10. fun: Function = textFunc;
-11. build() {
-12. Column() {
-13. Button().onClick(() => {
-14. this.fun();
-15. })
-16. }
-17. }
-18. }
+@Entry
+@Component
+struct Index {
+  fun: Function = textFunc;
+  build() {
+    Column() {
+      Button().onClick(() => {
+        this.fun();
+      })
+    }
+  }
+}
 ```
 
 ### getLocalInstance22+
-
-PhonePC/2in1TabletTVWearable
 
 static getLocalInstance(): FontCollection
 
@@ -1095,18 +1095,16 @@ static getLocalInstance(): FontCollection
 
 | 类型 | 说明 |
 | --- | --- |
-| [FontCollection](js-apis-graphics-text.md#fontcollection) | FontCollection对象。 |
+| [FontCollection](js-apis-graphics-text.md#fontcollection) | 本地FontCollection实例对象，推荐卡片场景使用，可用于管理字体加载、卸载和排版等操作。 |
 
 **示例：**
 
-```
-1. import { text } from '@kit.ArkGraphics2D'
-2. let fontCollection = text.FontCollection.getLocalInstance();
+```ts
+import { text } from '@kit.ArkGraphics2D'
+let fontCollection = text.FontCollection.getLocalInstance();
 ```
 
 ### loadFontSync
-
-PhonePC/2in1TabletTVWearable
 
 loadFontSync(name: string, path: string | Resource): void
 
@@ -1127,43 +1125,41 @@ loadFontSync(name: string, path: string | Resource): void
 
 **示例：**
 
-```
-1. import { text } from '@kit.ArkGraphics2D'
+```ts
+import { text } from '@kit.ArkGraphics2D'
 
-3. let fontCollection: text.FontCollection = new text.FontCollection();
+let fontCollection: text.FontCollection = new text.FontCollection();
 
-5. @Entry
-6. @Component
-7. struct RenderTest {
-8. LoadFontSyncTest() {
-9. fontCollection.loadFontSync('Clock_01', 'file:///system/fonts/HarmonyClock_01.ttf')
-10. let fontFamilies: Array<string> = ["Clock_01"]
-11. let myTextStyle: text.TextStyle = {
-12. fontFamilies: fontFamilies
-13. };
-14. let myParagraphStyle: text.ParagraphStyle = {
-15. textStyle: myTextStyle,
-16. }
-17. let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+@Entry
+@Component
+struct RenderTest {
+  LoadFontSyncTest() {
+    fontCollection.loadFontSync('Clock_01', 'file:///system/fonts/HarmonyClock_01.ttf')
+    let fontFamilies: Array<string> = ["Clock_01"]
+    let myTextStyle: text.TextStyle = {
+      fontFamilies: fontFamilies
+    };
+    let myParagraphStyle: text.ParagraphStyle = {
+      textStyle: myTextStyle,
+    }
+    let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
 
-19. let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
-20. paragraphBuilder.addText(textData);
-21. let paragraph: text.Paragraph = paragraphBuilder.build();
-22. paragraph.layoutSync(600);
-23. }
+    let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
+    paragraphBuilder.addText(textData);
+    let paragraph: text.Paragraph = paragraphBuilder.build();
+    paragraph.layoutSync(600);
+  }
 
-25. aboutToAppear() {
-26. this.LoadFontSyncTest();
-27. }
+  aboutToAppear() {
+    this.LoadFontSyncTest();
+  }
 
-29. build() {
-30. }
-31. }
+  build() {
+  }
+}
 ```
 
 ### loadFont18+
-
-PhonePC/2in1TabletTVWearable
 
 loadFont(name: string, path: string | Resource): Promise<void>
 
@@ -1186,7 +1182,7 @@ loadFont(name: string, path: string | Resource): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -1194,38 +1190,36 @@ loadFont(name: string, path: string | Resource): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { text } from '@kit.ArkGraphics2D'
+```ts
+import { text } from '@kit.ArkGraphics2D'
 
-3. let fontCollection: text.FontCollection = new text.FontCollection();
+let fontCollection: text.FontCollection = new text.FontCollection();
 
-5. @Entry
-6. @Component
-7. struct RenderTest {
-8. async loadFontPromise() {
-9. fontCollection.loadFont('testName', 'file:///system/fonts/a.ttf').then((data) => {
-10. console.info(`Succeeded in doing loadFont ${JSON.stringify(data)} `);
-11. }).catch((error: Error) => {
-12. console.error(`Failed to do loadFont, error: ${JSON.stringify(error)} message: ${error.message}`);
-13. });
-14. }
+@Entry
+@Component
+struct RenderTest {
+  async loadFontPromise() {
+    fontCollection.loadFont('testName', 'file:///system/fonts/a.ttf').then((data) => {
+      console.info(`Succeeded in doing loadFont ${JSON.stringify(data)} `);
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to do loadFont, error: ${error.code} message: ${error.message}`);
+    });
+  }
 
-16. aboutToAppear() {
-17. this.loadFontPromise();
-18. }
+  aboutToAppear() {
+    this.loadFontPromise();
+  }
 
-20. build() {
-21. }
-22. }
+  build() {
+  }
+}
 ```
 
 ### loadFontSyncWithCheck23+
-
-PhonePC/2in1TabletTVWearable
 
 loadFontSyncWithCheck(name: string, path: string | Resource, index?: number): void
 
@@ -1242,7 +1236,7 @@ loadFontSyncWithCheck(name: string, path: string | Resource, index?: number): vo
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 加载字体成功后，该字体对应的名称，可填写任意字符串，可使用该名称指定并使用该字体。 |
-| path | string | [Resource](ts-types.md#resource) | 是 | 需要加载的字体文件的路径，支持两种格式： "file:// + 字体文件绝对路径" 或 $rawfile("字体文件路径")。 |
+| path | string | [Resource](ts-types.md#resource) | 是 | 需要加载的字体文件的路径，支持两种格式： "file:// + 字体文件绝对路径" 或 $rawfile('字体文件路径')。 |
 | index | number | 否 | 字体文件格式为ttc时，指定加载的字体索引。默认为0：表示加载ttc的第一个字体。  非ttc格式文件索引值无意义，若指定索引，只能为0。 |
 
 **错误码：**
@@ -1258,49 +1252,48 @@ loadFontSyncWithCheck(name: string, path: string | Resource, index?: number): vo
 | 25900005 | Failed to get the file size. |
 | 25900006 | Failed to read the file. |
 | 25900007 | Empty file. |
-| 25900008 | Corrupt file. |
+| 25900008 | Corrupted file. |
 
 **示例：**
 
-```
-1. import { text } from '@kit.ArkGraphics2D'
+```ts
+import { text } from '@kit.ArkGraphics2D'
 
-3. let fc: text.FontCollection = text.FontCollection.getGlobalInstance();
+let fc: text.FontCollection = text.FontCollection.getGlobalInstance();
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. message: string = 'Hello World';
-9. fontFamily: string = 'family';
+@Entry
+@Component
+struct Index {
+  message: string = 'Hello World';
+  fontFamily: string = 'family';
 
-11. build() {
-12. RelativeContainer() {
-13. Text(this.message)
-14. .fontFamily(this.fontFamily)
-15. .fontSize(50)
-16. .fontWeight(FontWeight.Bold)
-17. .alignRules({
-18. center: { anchor: '__container__', align: VerticalAlign.Center },
-19. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-20. })
-21. .onClick(() => {
-22. fc.loadFontSyncWithCheck(this.fontFamily, 'file:///system/fonts/NotoSansCJK-Regular.ttc', 1);
-23. try {
-24. fc.loadFontSyncWithCheck(this.fontFamily, '/system/fonts/NotoSansCJK-Regular.ttc', 1);
-25. } catch (e) {
-26. console.error(`Failed to do loadFontWithCheck, error: ${JSON.stringify(e)} message: ${e.message}`);
-27. }
-28. })
-29. }
-30. .height('100%')
-31. .width('100%')
-32. }
-33. }
+  build() {
+    RelativeContainer() {
+      Text(this.message)
+        .fontFamily(this.fontFamily)
+        .fontSize(50)
+        .fontWeight(FontWeight.Bold)
+        .alignRules({
+          center: { anchor: '__container__', align: VerticalAlign.Center },
+          middle: { anchor: '__container__', align: HorizontalAlign.Center }
+        })
+        .onClick(() => {
+          fc.loadFontSyncWithCheck(this.fontFamily, 'file:///system/fonts/NotoSansCJK-Regular.ttc', 1);
+          try {
+            fc.loadFontSyncWithCheck(this.fontFamily, '/system/fonts/NotoSansCJK-Regular.ttc', 1);
+          } catch (error) {
+            let err: BusinessError = error as BusinessError;
+            console.error(`Failed to do loadFontWithCheck, error: ${err.code} message: ${err.message}`);
+          }
+        })
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 ### loadFontWithCheck23+
-
-PhonePC/2in1TabletTVWearable
 
 loadFontWithCheck(name: string, path: string | Resource, index?: number): Promise<void>
 
@@ -1317,7 +1310,7 @@ loadFontWithCheck(name: string, path: string | Resource, index?: number): Promis
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 加载字体成功后，该字体对应的名称，可填写任意字符串，可使用该名称指定并使用该字体。 |
-| path | string | [Resource](ts-types.md#resource) | 是 | 需要加载的字体文件的路径，支持两种格式： "file:// + 字体文件绝对路径" 或 $rawfile("字体文件路径")。 |
+| path | string | [Resource](ts-types.md#resource) | 是 | 需要加载的字体文件的路径，支持两种格式： "file:// + 字体文件绝对路径" 或 $rawfile('字体文件路径')。 |
 | index | number | 否 | 字体文件格式为ttc时，指定加载的字体索引。默认为0：表示加载ttc的第一个字体。  非ttc格式文件索引值无意义，若指定索引，只能为0。 |
 
 **返回值：**
@@ -1339,53 +1332,51 @@ loadFontWithCheck(name: string, path: string | Resource, index?: number): Promis
 | 25900005 | Failed to get the file size. |
 | 25900006 | Failed to read the file. |
 | 25900007 | Empty file. |
-| 25900008 | Corrupt file. |
+| 25900008 | Corrupted file. |
 
 **示例：**
 
-```
-1. import { text } from '@kit.ArkGraphics2D'
+```ts
+import { text } from '@kit.ArkGraphics2D'
 
-3. let fc: text.FontCollection = text.FontCollection.getGlobalInstance();
+let fc: text.FontCollection = text.FontCollection.getGlobalInstance();
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. message: string = 'Hello World';
-9. fontFamily: string = 'family';
+@Entry
+@Component
+struct Index {
+  message: string = 'Hello World';
+  fontFamily: string = 'family';
 
-11. build() {
-12. RelativeContainer() {
-13. Text(this.message)
-14. .fontFamily(this.fontFamily)
-15. .fontSize(50)
-16. .fontWeight(FontWeight.Bold)
-17. .alignRules({
-18. center: { anchor: '__container__', align: VerticalAlign.Center },
-19. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-20. })
-21. .onClick(() => {
-22. fc.loadFontWithCheck(this.fontFamily, 'file:///system/fonts/NotoSansCJK-Regular.ttc', 1).then((data) => {
-23. console.info(`Succeeded in doing loadFontWithCheck ${JSON.stringify(data)} `);
-24. }).catch((error: Error) => {
-25. console.error(`Failed to do loadFontWithCheck, error: ${JSON.stringify(error)} message: ${error.message}`);
-26. });
-27. fc.loadFontWithCheck(this.fontFamily, '/system/fonts/NotoSansCJK-Regular.ttc', 1).then((data) => {
-28. console.info(`Succeeded in doing loadFontWithCheck ${JSON.stringify(data)} `);
-29. }).catch((error: Error) => {
-30. console.error(`Failed to do loadFontWithCheck, error: ${JSON.stringify(error)} message: ${error.message}`);
-31. });
-32. })
-33. }
-34. .height('100%')
-35. .width('100%')
-36. }
-37. }
+  build() {
+    RelativeContainer() {
+      Text(this.message)
+        .fontFamily(this.fontFamily)
+        .fontSize(50)
+        .fontWeight(FontWeight.Bold)
+        .alignRules({
+          center: { anchor: '__container__', align: VerticalAlign.Center },
+          middle: { anchor: '__container__', align: HorizontalAlign.Center }
+        })
+        .onClick(() => {
+          fc.loadFontWithCheck(this.fontFamily, 'file:///system/fonts/NotoSansCJK-Regular.ttc', 1).then((data) => {
+            console.info(`Succeeded in doing loadFontWithCheck ${JSON.stringify(data)} `);
+          }).catch((error: BusinessError) => {
+            console.error(`Failed to do loadFontWithCheck, error: ${error.code} message: ${error.message}`);
+          });
+          fc.loadFontWithCheck(this.fontFamily, '/system/fonts/NotoSansCJK-Regular.ttc', 1).then((data) => {
+            console.info(`Succeeded in doing loadFontWithCheck ${JSON.stringify(data)} `);
+          }).catch((error: BusinessError) => {
+            console.error(`Failed to do loadFontWithCheck, error: ${error.code} message: ${error.message}`);
+          });
+        })
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 ### unloadFontSync20+
-
-PhonePC/2in1TabletTVWearable
 
 unloadFontSync(name: string): void
 
@@ -1413,39 +1404,37 @@ unloadFontSync(name: string): void
 
 **示例：**
 
-```
-1. import { text } from '@kit.ArkGraphics2D'
+```ts
+import { text } from '@kit.ArkGraphics2D'
 
-3. @Entry
-4. @Component
-5. struct UnloadFontSyncTest {
-6. private fc: text.FontCollection = text.FontCollection.getGlobalInstance();
-7. @State content: string = "默认字体"
+@Entry
+@Component
+struct UnloadFontSyncTest {
+  private fc: text.FontCollection = text.FontCollection.getGlobalInstance();
+  @State content: string = "默认字体"
 
-9. build() {
-10. Column({ space: 10 }) {
-11. Text(this.content)
-12. .fontFamily("custom")
-13. Button("load font")
-14. .onClick(() => {
-15. this.fc.loadFontSync("custom", "file:///system/fonts/NotoSansCJK-Regular.ttc")
-16. this.content = "自定义字体"
-17. })
-18. Button("unload font")
-19. .onClick(() => {
-20. this.fc.unloadFontSync("custom")
-21. this.content = "默认字体"
-22. })
-23. }.width("100%")
-24. .height("100%")
-25. .justifyContent(FlexAlign.Center)
-26. }
-27. }
+  build() {
+    Column({ space: 10 }) {
+      Text(this.content)
+        .fontFamily("custom")
+      Button("load font")
+        .onClick(() => {
+          this.fc.loadFontSync("custom", "file:///system/fonts/NotoSansCJK-Regular.ttc")
+          this.content = "自定义字体"
+        })
+      Button("unload font")
+        .onClick(() => {
+          this.fc.unloadFontSync("custom")
+          this.content = "默认字体"
+        })
+    }.width("100%")
+    .height("100%")
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
 
 ### unloadFont20+
-
-PhonePC/2in1TabletTVWearable
 
 unloadFont(name: string): Promise<void>
 
@@ -1475,47 +1464,45 @@ unloadFont(name: string): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **示例：**
 
-```
-1. import { text } from '@kit.ArkGraphics2D'
+```ts
+import { text } from '@kit.ArkGraphics2D'
 
-3. @Entry
-4. @Component
-5. struct UnloadFontTest {
-6. private fc: text.FontCollection = text.FontCollection.getGlobalInstance();
-7. @State content: string = "默认字体"
+@Entry
+@Component
+struct UnloadFontTest {
+  private fc: text.FontCollection = text.FontCollection.getGlobalInstance();
+  @State content: string = "默认字体"
 
-9. build() {
-10. Column({ space: 10 }) {
-11. Text(this.content)
-12. .fontFamily("custom")
-13. Button("load font")
-14. .onClick(async () => {
-15. await this.fc.loadFont("custom", "file:///system/fonts/NotoSansCJK-Regular.ttc")
-16. this.content = "自定义字体"
-17. })
-18. Button("unload font")
-19. .onClick(async () => {
-20. await this.fc.unloadFont("custom")
-21. this.content = "默认字体"
-22. })
-23. }.width("100%")
-24. .height("100%")
-25. .justifyContent(FlexAlign.Center)
-26. }
-27. }
+  build() {
+    Column({ space: 10 }) {
+      Text(this.content)
+        .fontFamily("custom")
+      Button("load font")
+        .onClick(async () => {
+          await this.fc.loadFont("custom", "file:///system/fonts/NotoSansCJK-Regular.ttc")
+          this.content = "自定义字体"
+        })
+      Button("unload font")
+        .onClick(async () => {
+          await this.fc.unloadFont("custom")
+          this.content = "默认字体"
+        })
+    }.width("100%")
+    .height("100%")
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
 
 ### clearCaches
 
-PhonePC/2in1TabletTVWearable
-
 clearCaches(): void
 
-清理字体排版缓存（字体排版缓存本身设有内存上限和清理机制，所占内存有限，如无内存要求，不建议清理）。
+清理字体排版缓存。字体排版缓存本身设有内存上限和自动清理机制，所占内存有限。如无特殊内存要求，不建议清理。
 
 **卡片能力：** 从API version 22开始，该接口支持在ArkTS卡片中使用。
 
@@ -1525,27 +1512,66 @@ clearCaches(): void
 
 **示例：**
 
-```
-1. import { text } from '@kit.ArkGraphics2D'
+```ts
+import { text } from '@kit.ArkGraphics2D'
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. build() {
-7. Column() {
-8. Button().onClick(() => {
-9. text.FontCollection.getGlobalInstance().clearCaches();
-10. })
-11. }
-12. }
-13. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Button().onClick(() => {
+        text.FontCollection.getGlobalInstance().clearCaches();
+      })
+    }
+  }
+}
+```
+
+### setParagraphCachesEnabled
+
+setParagraphCachesEnabled(enable: boolean): void
+
+设置是否启用排版段落缓存。排版段落缓存可以加速重复文本的排版速度，但会占用额外的内存。未调用此接口前，系统默认开启排版段落缓存。
+
+**系统能力：** SystemCapability.Graphics.Drawing
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enable | boolean | 是 | 是否启用排版段落缓存。true表示启用，false表示禁用。 |
+
+**示例：**
+
+```ts
+import { text } from '@kit.ArkGraphics2D'
+
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Button('启用段落缓存').onClick(() => {
+        text.FontCollection.getGlobalInstance().setParagraphCachesEnabled(true);
+      })
+      Button('禁用段落缓存').onClick(() => {
+        text.FontCollection.getGlobalInstance().setParagraphCachesEnabled(false);
+      })
+    }
+  }
+}
 ```
 
 ## ParagraphStyle
 
-PhonePC/2in1TabletTVWearable
-
-段落样式。
+段落样式，用于控制段落的整体布局行为，包括对齐方式、断行策略和最大行数等属性。ParagraphStyle作为[ParagraphBuilder](js-apis-graphics-text.md#paragraphbuilder)构造函数的必要参数，与[TextStyle](js-apis-graphics-text.md#textstyle)（控制文本级别样式）分工协作，共同决定段落的最终排版效果。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
@@ -1560,13 +1586,18 @@ PhonePC/2in1TabletTVWearable
 | strutStyle | [StrutStyle](js-apis-graphics-text.md#strutstyle) | 否 | 是 | 支柱样式，默认为初始的StrutStyle。  **元服务API：** 从API version 22开始，该接口支持在元服务中使用。 |
 | textHeightBehavior | [TextHeightBehavior](js-apis-graphics-text.md#textheightbehavior) | 否 | 是 | 文本高度修饰符模式，默认为ALL。  **元服务API：** 从API version 22开始，该接口支持在元服务中使用。 |
 | tab18+ | [TextTab](js-apis-graphics-text.md#texttab18) | 否 | 是 | 表示段落中文本制表符后的文本对齐方式及位置，默认将制表符替换为一个空格。此参数与文本对齐方式（align属性）或省略号样式（[TextStyle](js-apis-graphics-text.md#textstyle)中的ellipsis属性）共同配置时无效。  **元服务API：** 从API version 22开始，该接口支持在元服务中使用。 |
-| trailingSpaceOptimized20+ | boolean | 否 | 是 | 表示文本排版时行尾空格是否参与对齐计算。true表示行尾空格不参与计算，false表示行尾空格参与计算，默认值为false。  **元服务API：** 从API version 22开始，该接口支持在元服务中使用。 |
+| trailingSpaceOptimized20+ | boolean | 否 | 是 | 表示文本排版时是否考虑行尾空格的对齐影响。true表示忽略行尾空格的对齐影响，false表示考虑行尾空格的对齐影响，默认值为false。  **元服务API：** 从API version 22开始，该接口支持在元服务中使用。 |
 | autoSpace20+ | boolean | 否 | 是 | 设置文本排版时是否使能自动间距。true表示使能自动间距，则会在文本排版时自动调整CJK（中文字符、日文字符、韩文字符）与西文（拉丁字母、西里尔字母、希腊字母）、CJK与数字、CJK与版权符号、版权符号与数字、版权符号与西文之间的间距。false表示不使能自动间距，默认值为false。  **元服务API：** 从API version 22开始，该接口支持在元服务中使用。 |
-| verticalAlign20+ | [TextVerticalAlign](js-apis-graphics-text.md#textverticalalign20) | 否 | 是 | 文本垂直对齐方式，开启行高缩放（即设置[TextStyle](js-apis-graphics-text.md#textstyle)的heightScale）或行内不同字号（即设置[TextStyle](js-apis-graphics-text.md#textstyle)的fontSize）文本混排时生效。若行内有上下标文本（即设置[TextStyle](js-apis-graphics-text.md#textstyle)的badgeType属性文本），上下标文本将与普通文本一样参与垂直对齐。  **元服务API：** 从API version 22开始，该接口支持在元服务中使用。 |
-| lineSpacing21+ | number | 否 | 是 | 行间距，默认值为0。lineSpacing不受[TextStyle](js-apis-graphics-text.md#textstyle)中lineHeightMaximum和lineHeightMinimum限制。尾行默认添加行间距，可通过设置[TextStyle](js-apis-graphics-text.md#textstyle).textHeightBehavior为DISABLE\_ALL或DISABLE\_LAST\_ASCENT禁用尾行行间距。  **元服务API：** 从API version 22开始，该接口支持在元服务中使用。 |
+| verticalAlign20+ | [TextVerticalAlign](js-apis-graphics-text.md#textverticalalign20) | 否 | 是 | 文本垂直对齐方式，默认为BASELINE，即文本基线对齐。开启行高缩放（即设置[TextStyle](js-apis-graphics-text.md#textstyle)的heightScale）或行内不同字号（即设置[TextStyle](js-apis-graphics-text.md#textstyle)的fontSize）文本混排时生效。若行内有上下标文本（即设置[TextStyle](js-apis-graphics-text.md#textstyle)的badgeType属性文本），上下标文本将与普通文本一样参与垂直对齐。  **元服务API：** 从API version 22开始，该接口支持在元服务中使用。 |
+| lineSpacing21+ | number | 否 | 是 | 行间距，单位为物理像素px，默认值为0。lineSpacing不受[TextStyle](js-apis-graphics-text.md#textstyle)中lineHeightMaximum和lineHeightMinimum限制。尾行默认保留行间距，可通过设置[ParagraphStyle](js-apis-graphics-text.md#paragraphstyle)的textHeightBehavior为DISABLE\_ALL或DISABLE\_LAST\_ASCENT禁用尾行行间距。  **元服务API：** 从API version 22开始，该接口支持在元服务中使用。 |
 | compressHeadPunctuation23+ | boolean | 否 | 是 | 设置文本排版时是否使能行首标点压缩。true表示使能行首标点压缩，false表示不使能行首标点压缩，默认值为false。  **说明：**  1. 需要字体文件支持[FontFeature](js-apis-graphics-text.md#fontfeature)中的"ss08"特性，否则无法压缩。  2. 在行首标点压缩范围内的标点才在本特性作用范围内。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
 | includeFontPadding23+ | boolean | 否 | 是 | 设置文本排版时是否使能首尾行padding。true表示使能首尾行padding，false表示不使能首尾行padding，默认值为false。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
 | fallbackLineSpacing23+ | boolean | 否 | 是 | 设置文本排版时是否使能行高回退，当设置的行高小于实际行高时，将行高回退为实际行高。true表示使能行高回退，false表示不使能行高回退，默认值为false。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
+| punctuationOverflow | boolean | 否 | 是 | 设置文本排版时是否使能行尾标点悬挂。true表示使能行尾标点悬挂，允许行尾单个标点超出排版宽度而不换行，false表示不使能行尾标点悬挂，默认值为false。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| orphanCharOptimization | boolean | 否 | 是 | 设置文本排版时是否使能孤字优化。孤字优化通过更高效地处理孤立字符（段落尾行首字符）来改善文本布局。使能后，它会调整换行点以尽可能避免孤立字符。孤字优化特性需在[wordBreak](js-apis-graphics-text.md#wordbreak)为非BREAK\_ALL并且待排版文本首个[TextStyle](js-apis-graphics-text.md#textstyle)的locale为“zh-Hans”或“zh-Hant”时生效。true表示使能孤字优化，false表示不使能孤字优化，默认值为false。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| firstLineHeadIndent | number | 否 | 是 | 设置段落首行缩进，缩进值需大于等于0，单位为物理像素px，默认值为0。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| tailIndents | Array<number> | 否 | 是 | 设置行尾缩进数组，数组中每个元素代表一行缩进值，当实际文本行数超过缩进数组个数时，超过行的缩进为数组最后一个值，缩进值需全大于等于0，单位为物理像素px，默认为空数组。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| headIndents | Array<number> | 否 | 是 | 设置行首缩进数组，数组中每个元素代表一行缩进值，当实际文本行数超过缩进数组个数时，超过行的缩进为数组最后一个值，缩进值需全大于等于0，单位为物理像素px，默认为空数组。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 行首压缩的标点范围:
 
@@ -1587,8 +1618,6 @@ PhonePC/2in1TabletTVWearable
 
 ## PlaceholderAlignment
 
-PhonePC/2in1TabletTVWearable
-
 占位符相对于周围文本的纵向对齐方式。
 
 **系统能力：** SystemCapability.Graphics.Drawing
@@ -1605,17 +1634,15 @@ PhonePC/2in1TabletTVWearable
 | CENTER\_OF\_ROW\_BOX | 5 | 居中对齐。 |
 | FOLLOW\_PARAGRAPH20+ | 6 | 跟随文本排版对齐。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/rcEEs27QRhG4cguAYdwZig/zh-cn_image_0000002589327287.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/WEm_ASHxTwqSGukhCyRn9w/zh-cn_image_0000002736436247.png)
 
-说明
+**说明** 
 
-示意图展示了后三种对齐方式，前三种对齐方式类似，比较位置是文本基线，即绿色线条部分。
+示意图展示了后三种对齐方式，前三种对齐方式在文本基线对齐方式上类似，比较位置是文本基线，即绿色线条部分。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/H9XBvQtiThSzR3YyXA3prQ/zh-cn_image_0000002589247227.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/DtibpiDlTCyIZR1E4xZRwg/zh-cn_image_0000002706837096.png)
 
 ## PlaceholderSpan
-
-PhonePC/2in1TabletTVWearable
 
 描述占位符样式。
 
@@ -1633,8 +1660,6 @@ PhonePC/2in1TabletTVWearable
 
 ## Range
 
-PhonePC/2in1TabletTVWearable
-
 描述左闭右开区间。
 
 **系统能力：** SystemCapability.Graphics.Drawing
@@ -1646,17 +1671,43 @@ PhonePC/2in1TabletTVWearable
 | start | number | 否 | 否 | 区间左侧端点索引，整数。 |
 | end | number | 否 | 否 | 区间右侧端点索引，整数。 |
 
-## Paragraph
+## TextRectSize24+
 
-PhonePC/2in1TabletTVWearable
+文本矩形尺寸，用于描述文本的矩形宽高属性。值为浮点数，单位为物理像素px。
+
+**系统能力**：SystemCapability.Graphics.Drawing
+
+**元服务API**：从API version 24开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| width | number | 否 | 否 | 文本矩形的宽度，浮点数，单位为物理像素px。 |
+| height | number | 否 | 否 | 文本矩形的高度，浮点数，单位为物理像素px。 |
+
+## TextLayoutResult24+
+
+文本布局结果。
+
+**系统能力**：SystemCapability.Graphics.Drawing
+
+**元服务API**：从API version 24开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| fitStrRange | Array<[Range](js-apis-graphics-text.md#range)> | 否 | 否 | 文本布局计算完成后能够完整显示的字符范围数组。 |
+| correctRect | [TextRectSize](js-apis-graphics-text.md#textrectsize24) | 否 | 否 | 布局后段落的矩形尺寸。 |
+
+## Paragraph
 
 保存文本内容及样式的载体，支持排版与绘制操作。
 
 下列API示例中都需先使用[ParagraphBuilder](js-apis-graphics-text.md#paragraphbuilder)类的[build()](js-apis-graphics-text.md#build)接口获取到Paragraph对象实例，再通过此实例调用对应方法。
 
 ### layoutSync
-
-PhonePC/2in1TabletTVWearable
 
 layoutSync(width: number): void
 
@@ -1674,13 +1725,11 @@ layoutSync(width: number): void
 
 **示例：**
 
-```
-1. paragraph.layoutSync(100);
+```ts
+paragraph.layoutSync(100);
 ```
 
 ### layout18+
-
-PhonePC/2in1TabletTVWearable
 
 layout(width: number): Promise<void>
 
@@ -1700,7 +1749,7 @@ layout(width: number): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -1708,93 +1757,127 @@ layout(width: number): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
+```ts
+import { drawing, text } from '@kit.ArkGraphics2D'
+import { image } from '@kit.ImageKit'
+
+let textStyle: text.TextStyle = {
+  color: {
+    alpha: 255,
+    red: 255,
+    green: 0,
+    blue: 0
+  },
+  fontSize: 30,
+};
+let paragraphStyle: text.ParagraphStyle = {
+  textStyle: textStyle,
+};
+let fontCollection: text.FontCollection = new text.FontCollection();
+let paragraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+// 添加文本字符串
+paragraphBuilder.addText("test");
+// 生成排版对象
+let paragraph = paragraphBuilder.build();
+
+function textFunc(pixelmap: PixelMap) {
+  // 通过图片对象构造画布
+  let canvas = new drawing.Canvas(pixelmap);
+  // 进行绘制文本字符串
+  paragraph.paint(canvas, 100, 10);
+}
+
+@Entry
+@Component
+struct Index {
+  @State pixelmap?: PixelMap = undefined;
+  fun: Function = textFunc;
+
+async prepareLayoutPromise() {
+    try {
+      await paragraph.layout(200);
+      console.info('Succeeded in doing layout');
+    } catch (error) {
+      let err: BusinessError = error as BusinessError;
+      console.error(`Failed to do layout, error: ${err.code} message: ${err.message}`);
+    }
+  }
+
+  aboutToAppear() {
+    this.prepareLayoutPromise();
+  }
+
+  build() {
+    Column() {
+      Image(this.pixelmap).width(200).height(200);
+      Button("layout")
+        .width(100)
+        .height(50)
+        .onClick(() => {
+          const color: ArrayBuffer = new ArrayBuffer(160000);
+          let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 200, width: 200 } }
+          if (this.pixelmap == undefined) {
+            // 构造图片对象
+            this.pixelmap = image.createPixelMapSync(color, opts);
+          }
+          // 进行绘制文字
+          this.fun(this.pixelmap);
+        })
+    }
+  }
+}
 ```
-1. import { drawing, text } from '@kit.ArkGraphics2D'
-2. import { image } from '@kit.ImageKit'
 
-4. let textStyle: text.TextStyle = {
-5. color: {
-6. alpha: 255,
-7. red: 255,
-8. green: 0,
-9. blue: 0
-10. },
-11. fontSize: 30,
-12. };
-13. let paragraphStyle: text.ParagraphStyle = {
-14. textStyle: textStyle,
-15. };
-16. let fontCollection: text.FontCollection = new text.FontCollection();
-17. let paragraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
-18. // 添加文本字符串
-19. paragraphBuilder.addText("test");
-20. // 生成排版对象
-21. let paragraph = paragraphBuilder.build();
-
-23. function textFunc(pixelmap: PixelMap) {
-24. // 通过图片对象构造画布
-25. let canvas = new drawing.Canvas(pixelmap);
-26. // 进行绘制文本字符串
-27. paragraph.paint(canvas, 100, 10);
-28. }
-
-30. @Entry
-31. @Component
-32. struct Index {
-33. @State pixelmap?: PixelMap = undefined;
-34. fun: Function = textFunc;
-
-36. async prepareLayoutPromise() {
-37. // 排版对象进行布局计算
-38. paragraph.layout(200).then((data) => {
-39. console.info(`Succeeded in doing layout,  ${JSON.stringify(data)}`);
-40. }).catch((error: Error) => {
-41. console.error(`Failed to do layout, error: ${JSON.stringify(error)} message: ${error.message}`);
-42. });
-43. }
-
-45. aboutToAppear() {
-46. this.prepareLayoutPromise();
-47. }
-
-49. build() {
-50. Column() {
-51. Image(this.pixelmap).width(200).height(200);
-52. Button("layout")
-53. .width(100)
-54. .height(50)
-55. .onClick(() => {
-56. const color: ArrayBuffer = new ArrayBuffer(160000);
-57. let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 200, width: 200 } }
-58. if (this.pixelmap == undefined) {
-59. // 构造图片对象
-60. this.pixelmap = image.createPixelMapSync(color, opts);
-61. }
-62. // 进行绘制文字
-63. this.fun(this.pixelmap);
-64. })
-65. }
-66. }
-67. }
-```
-
-说明
+**说明** 
 
 示意图展示了点击按钮后layout接口示例代码的运行结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/Buf6fO2LRXm16tuVTLhePg/zh-cn_image_0000002558767420.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/ykgbfC9tTtm1Xzg1-Ac6jw/zh-cn_image_0000002736316205.png)
+
+### layoutWithConstraints24+
+
+layoutWithConstraints(size: TextRectSize): TextLayoutResult
+
+使用给定的高度和宽度进行排版并计算所有字形的位置。
+
+**系统能力**：SystemCapability.Graphics.Drawing
+
+**元服务API**：从API version 24开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| size | [TextRectSize](js-apis-graphics-text.md#textrectsize24) | 是 | 约束的高度和宽度，单位为物理像素px。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [TextLayoutResult](js-apis-graphics-text.md#textlayoutresult24) | 布局后的实际尺寸和排版后容下的字符范围。 |
+
+**示例：**
+
+```ts
+let size: text.TextRectSize = { width: 200, height: 100 };
+let result = paragraph.layoutWithConstraints(size); // 功能增强的 layoutSync
+console.info('Width: ' + result.correctRect.width + ', Height: ' + result.correctRect.height);
+for (let i = 0; i < result.fitStrRange.length; ++i) {
+  console.info('fitRange: [' + result.fitStrRange[i].start + ', ' + result.fitStrRange[i].end + ']');
+}
+```
 
 ### paint
 
-PhonePC/2in1TabletTVWearable
-
 paint(canvas: drawing.Canvas, x: number, y: number): void
 
-在画布上以 (x, y) 为左上角绘制文本。
+在画布上以 (x, y) 为左上角绘制文本。调用前必须先调用[layout()](js-apis-graphics-text.md#layout18)接口进行排版，否则无法正确显示文本内容。
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
@@ -1805,26 +1888,24 @@ paint(canvas: drawing.Canvas, x: number, y: number): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | canvas | [drawing.Canvas](arkts-apis-graphics-drawing-canvas.md) | 是 | 绘制的目标画布。 |
-| x | number | 是 | 绘制的左上角位置的横坐标，浮点数。 |
-| y | number | 是 | 绘制的左上角位置的纵坐标，浮点数。 |
+| x | number | 是 | 绘制的左上角位置的横坐标，浮点数，单位为物理像素px。 |
+| y | number | 是 | 绘制的左上角位置的纵坐标，浮点数，单位为物理像素px。 |
 
 **示例：**
 
-```
-1. const color: ArrayBuffer = new ArrayBuffer(160000);
-2. let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 200, width: 200 } }
-3. let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
-4. let canvas = new drawing.Canvas(pixelMap);
-5. paragraph.paint(canvas, 0, 0);
+```ts
+const color: ArrayBuffer = new ArrayBuffer(160000);
+let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 200, width: 200 } }
+let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
+let canvas = new drawing.Canvas(pixelMap);
+paragraph.paint(canvas, 0, 0);
 ```
 
 ### paintOnPath
 
-PhonePC/2in1TabletTVWearable
-
 paintOnPath(canvas: drawing.Canvas, path: drawing.Path, hOffset: number, vOffset: number): void
 
-在画布上沿路径绘制文本。
+在画布上沿路径绘制文本。调用前必须先调用[layout()](js-apis-graphics-text.md#layout18)接口进行排版，否则无法正确显示文本内容。
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
@@ -1836,24 +1917,22 @@ paintOnPath(canvas: drawing.Canvas, path: drawing.Path, hOffset: number, vOffset
 | --- | --- | --- | --- |
 | canvas | [drawing.Canvas](arkts-apis-graphics-drawing-canvas.md) | 是 | 绘制的目标画布。 |
 | path | [drawing.Path](arkts-apis-graphics-drawing-path.md) | 是 | 确认文字位置的路径。 |
-| hOffset | number | 是 | 沿路径方向偏置，从路径起点向前为正，向后为负。 |
-| vOffset | number | 是 | 沿路径垂直方向偏置，沿路径方向左侧为负，右侧为正。 |
+| hOffset | number | 是 | 沿路径方向偏置，从路径起点向前为正，向后为负，单位为物理像素px。 |
+| vOffset | number | 是 | 沿路径垂直方向偏置，沿路径方向左侧为负，右侧为正，单位为物理像素px。 |
 
 **示例：**
 
-```
-1. const color: ArrayBuffer = new ArrayBuffer(160000);
-2. let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 200, width: 200 } }
-3. let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
-4. let canvas = new drawing.Canvas(pixelMap);
-5. let path = new drawing.Path();
-6. path.arcTo(20, 20, 180, 180, 180, 90);
-7. paragraph.paintOnPath(canvas, path, 0, 0);
+```ts
+const color: ArrayBuffer = new ArrayBuffer(160000);
+let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 200, width: 200 } }
+let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
+let canvas = new drawing.Canvas(pixelMap);
+let path = new drawing.Path();
+path.arcTo(20, 20, 180, 180, 180, 90);
+paragraph.paintOnPath(canvas, path, 0, 0);
 ```
 
 ### getMaxWidth
-
-PhonePC/2in1TabletTVWearable
 
 getMaxWidth(): number
 
@@ -1871,13 +1950,11 @@ getMaxWidth(): number
 
 **示例：**
 
-```
-1. let maxWidth = paragraph.getMaxWidth();
+```ts
+let maxWidth = paragraph.getMaxWidth();
 ```
 
 ### getHeight
-
-PhonePC/2in1TabletTVWearable
 
 getHeight(): number
 
@@ -1895,13 +1972,11 @@ getHeight(): number
 
 **示例：**
 
-```
-1. let height = paragraph.getHeight();
+```ts
+let height = paragraph.getHeight();
 ```
 
 ### getLongestLine
-
-PhonePC/2in1TabletTVWearable
 
 getLongestLine(): number
 
@@ -1919,13 +1994,11 @@ getLongestLine(): number
 
 **示例：**
 
-```
-1. let longestLine = paragraph.getLongestLine();
+```ts
+let longestLine = paragraph.getLongestLine();
 ```
 
 ### getLongestLineWithIndent13+
-
-PhonePC/2in1TabletTVWearable
 
 getLongestLineWithIndent(): number
 
@@ -1943,13 +2016,11 @@ getLongestLineWithIndent(): number
 
 **示例：**
 
-```
-1. let longestLineWithIndent = paragraph.getLongestLineWithIndent();
+```ts
+let longestLineWithIndent = paragraph.getLongestLineWithIndent();
 ```
 
 ### getMinIntrinsicWidth
-
-PhonePC/2in1TabletTVWearable
 
 getMinIntrinsicWidth(): number
 
@@ -1967,13 +2038,11 @@ getMinIntrinsicWidth(): number
 
 **示例：**
 
-```
-1. let minIntrinsicWidth = paragraph.getMinIntrinsicWidth();
+```ts
+let minIntrinsicWidth = paragraph.getMinIntrinsicWidth();
 ```
 
 ### getMaxIntrinsicWidth
-
-PhonePC/2in1TabletTVWearable
 
 getMaxIntrinsicWidth(): number
 
@@ -1991,13 +2060,11 @@ getMaxIntrinsicWidth(): number
 
 **示例：**
 
-```
-1. let maxIntrinsicWidth = paragraph.getMaxIntrinsicWidth();
+```ts
+let maxIntrinsicWidth = paragraph.getMaxIntrinsicWidth();
 ```
 
 ### getAlphabeticBaseline
-
-PhonePC/2in1TabletTVWearable
 
 getAlphabeticBaseline(): number
 
@@ -2015,13 +2082,11 @@ getAlphabeticBaseline(): number
 
 **示例：**
 
-```
-1. let alphabeticBaseline = paragraph.getAlphabeticBaseline();
+```ts
+let alphabeticBaseline = paragraph.getAlphabeticBaseline();
 ```
 
 ### getIdeographicBaseline
-
-PhonePC/2in1TabletTVWearable
 
 getIdeographicBaseline(): number
 
@@ -2035,17 +2100,15 @@ getIdeographicBaseline(): number
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 获取表意字下的基线位置，浮点数，单位为物理像素px。 |
+| number | 表意字下的基线位置，浮点数，单位为物理像素px。 |
 
 **示例：**
 
-```
-1. let ideographicBaseline = paragraph.getIdeographicBaseline();
+```ts
+let ideographicBaseline = paragraph.getIdeographicBaseline();
 ```
 
 ### getRectsForRange
-
-PhonePC/2in1TabletTVWearable
 
 getRectsForRange(range: Range, widthStyle: RectWidthStyle, heightStyle: RectHeightStyle): Array<TextBox>
 
@@ -2071,14 +2134,12 @@ getRectsForRange(range: Range, widthStyle: RectWidthStyle, heightStyle: RectHeig
 
 **示例：**
 
-```
-1. let range: text.Range = { start: 0, end: 1};
-2. let rects = paragraph.getRectsForRange(range, text.RectWidthStyle.TIGHT, text.RectHeightStyle.TIGHT);
+```ts
+let range: text.Range = { start: 0, end: 1};
+let rects = paragraph.getRectsForRange(range, text.RectWidthStyle.TIGHT, text.RectHeightStyle.TIGHT);
 ```
 
 ### getRectsForPlaceholders
-
-PhonePC/2in1TabletTVWearable
 
 getRectsForPlaceholders(): Array<TextBox>
 
@@ -2096,13 +2157,11 @@ getRectsForPlaceholders(): Array<TextBox>
 
 **示例：**
 
-```
-1. let placeholderRects = paragraph.getRectsForPlaceholders();
+```ts
+let placeholderRects = paragraph.getRectsForPlaceholders();
 ```
 
 ### getGlyphPositionAtCoordinate
-
-PhonePC/2in1TabletTVWearable
 
 getGlyphPositionAtCoordinate(x: number, y: number): PositionWithAffinity
 
@@ -2116,8 +2175,8 @@ getGlyphPositionAtCoordinate(x: number, y: number): PositionWithAffinity
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| x | number | 是 | 横坐标，浮点数。 |
-| y | number | 是 | 纵坐标，浮点数。 |
+| x | number | 是 | 横坐标，浮点数，单位为物理像素px。 |
+| y | number | 是 | 纵坐标，浮点数，单位为物理像素px。 |
 
 **返回值：**
 
@@ -2127,13 +2186,11 @@ getGlyphPositionAtCoordinate(x: number, y: number): PositionWithAffinity
 
 **示例：**
 
-```
-1. let positionWithAffinity = paragraph.getGlyphPositionAtCoordinate(0, 0);
+```ts
+let positionWithAffinity = paragraph.getGlyphPositionAtCoordinate(0, 0);
 ```
 
 ### getWordBoundary
-
-PhonePC/2in1TabletTVWearable
 
 getWordBoundary(offset: number): Range
 
@@ -2157,13 +2214,11 @@ getWordBoundary(offset: number): Range
 
 **示例：**
 
-```
-1. let wordRange = paragraph.getWordBoundary(0);
+```ts
+let wordRange = paragraph.getWordBoundary(0);
 ```
 
 ### getLineCount
-
-PhonePC/2in1TabletTVWearable
 
 getLineCount(): number
 
@@ -2181,13 +2236,11 @@ getLineCount(): number
 
 **示例：**
 
-```
-1. let lineCount = paragraph.getLineCount();
+```ts
+let lineCount = paragraph.getLineCount();
 ```
 
 ### getLineHeight
-
-PhonePC/2in1TabletTVWearable
 
 getLineHeight(line: number): number
 
@@ -2201,23 +2254,21 @@ getLineHeight(line: number): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| line | number | 是 | 文本行索引，整数，范围为0~getLineCount()-1。 |
+| line | number | 是 | 文本行索引，整数，范围为0~[getLineCount](js-apis-graphics-text.md#getlinecount)-1。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 行高。 |
+| number | 行高，单位为物理像素px。 |
 
 **示例：**
 
-```
-1. let lineHeight = paragraph.getLineHeight(0);
+```ts
+let lineHeight = paragraph.getLineHeight(0);
 ```
 
 ### getLineWidth
-
-PhonePC/2in1TabletTVWearable
 
 getLineWidth(line: number): number
 
@@ -2231,23 +2282,21 @@ getLineWidth(line: number): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| line | number | 是 | 文本行索引，整数，范围为0~getLineCount()-1。 |
+| line | number | 是 | 文本行索引，整数，范围为0~[getLineCount](js-apis-graphics-text.md#getlinecount)-1。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 行宽。 |
+| number | 行宽，单位为物理像素px。 |
 
 **示例：**
 
-```
-1. let lineWidth = paragraph.getLineWidth(0);
+```ts
+let lineWidth = paragraph.getLineWidth(0);
 ```
 
 ### didExceedMaxLines
-
-PhonePC/2in1TabletTVWearable
 
 didExceedMaxLines(): boolean
 
@@ -2265,13 +2314,11 @@ didExceedMaxLines(): boolean
 
 **示例：**
 
-```
-1. let didExceed = paragraph.didExceedMaxLines();
+```ts
+let didExceed = paragraph.didExceedMaxLines();
 ```
 
 ### getTextLines
-
-PhonePC/2in1TabletTVWearable
 
 getTextLines(): Array<TextLine>
 
@@ -2289,13 +2336,11 @@ getTextLines(): Array<TextLine>
 
 **示例：**
 
-```
-1. let lines = paragraph.getTextLines();
+```ts
+let lines = paragraph.getTextLines();
 ```
 
 ### getActualTextRange
-
-PhonePC/2in1TabletTVWearable
 
 getActualTextRange(lineNumber: number, includeSpaces: boolean): Range
 
@@ -2320,13 +2365,11 @@ getActualTextRange(lineNumber: number, includeSpaces: boolean): Range
 
 **示例：**
 
-```
-1. let rang = paragraph.getActualTextRange(0, true);
+```ts
+let rang = paragraph.getActualTextRange(0, true);
 ```
 
 ### getLineMetrics
-
-PhonePC/2in1TabletTVWearable
 
 getLineMetrics(): Array<LineMetrics>
 
@@ -2344,13 +2387,11 @@ getLineMetrics(): Array<LineMetrics>
 
 **示例：**
 
-```
-1. let arrLineMetric =  paragraph.getLineMetrics();
+```ts
+let arrLineMetric =  paragraph.getLineMetrics();
 ```
 
 ### getLineMetrics
-
-PhonePC/2in1TabletTVWearable
 
 getLineMetrics(lineNumber: number): LineMetrics | undefined
 
@@ -2364,7 +2405,7 @@ getLineMetrics(lineNumber: number): LineMetrics | undefined
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| lineNumber | number | 是 | 要查询度量信息的行的编号，行号从0开始。 |
+| lineNumber | number | 是 | 要查询度量信息的行的编号，行号从0开始，最大行索引为文本行数量-1，文本行数量可通过[getLineCount](js-apis-graphics-text.md#getlinecount)接口获取。 |
 
 **返回值：**
 
@@ -2374,15 +2415,13 @@ getLineMetrics(lineNumber: number): LineMetrics | undefined
 
 **示例：**
 
-```
-1. let lineMetrics =  paragraph.getLineMetrics(0);
+```ts
+let lineMetrics =  paragraph.getLineMetrics(0);
 ```
 
 ### updateColor20+
 
-PhonePC/2in1TabletTVWearable
-
-updateColor(color: common2D.Color): void;
+updateColor(color: common2D.Color): void
 
 更新整个文本段落的颜色。如果当前装饰线未设置颜色，使用该接口也会同时更新装饰线的颜色。
 
@@ -2398,15 +2437,13 @@ updateColor(color: common2D.Color): void;
 
 **示例：**
 
-```
-1. paragraph.updateColor({ alpha: 255, red: 255, green: 0, blue: 0 });
+```ts
+paragraph.updateColor({ alpha: 255, red: 255, green: 0, blue: 0 });
 ```
 
 ### updateDecoration20+
 
-PhonePC/2in1TabletTVWearable
-
-updateDecoration(decoration: Decoration): void;
+updateDecoration(decoration: Decoration): void
 
 更新整个文本段落的装饰线。
 
@@ -2422,26 +2459,513 @@ updateDecoration(decoration: Decoration): void;
 
 **示例：**
 
+```ts
+paragraph.updateDecoration({
+  textDecoration: text.TextDecorationType.OVERLINE,
+  color: { alpha: 255, red: 255, green: 0, blue: 0 },
+  decorationStyle: text.TextDecorationStyle.WAVY,
+  decorationThicknessScale: 2.0,
+});
 ```
-1. paragraph.updateDecoration({
-2. textDecoration: text.TextDecorationType.OVERLINE,
-3. color: { alpha: 255, red: 255, green: 0, blue: 0 },
-4. decorationStyle: text.TextDecorationStyle.WAVY,
-5. decorationThicknessScale: 2.0,
-6. });
+
+### getVisibleTextRanges
+
+getVisibleTextRanges(): Array<Range>
+
+获取段落中在屏幕上可见的文本范围。不包含因最大行数（[ParagraphStyle](js-apis-graphics-text.md#paragraphstyle)的maxLines属性）截断或省略号模式（[EllipsisMode](js-apis-graphics-text.md#ellipsismode)）替换而未显示的文本。
+
+**起始版本**：26.0.0
+
+**系统能力**：SystemCapability.Graphics.Drawing
+
+**元服务API**：从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Array<[Range](js-apis-graphics-text.md#range)> | 段落可见文本范围数组，范围为UTF-16编码单元索引。 |
+
+返回的范围取决于段落的具体截断情况（如是否设置最大行数或省略号等）：
+
+| 场景 | 说明 |
+| --- | --- |
+| 文本未被截断 | 范围包含全部已排版文本 |
+| 仅设置maxLines截断（未设置省略号） | 范围为实际显示的文本，即第一行至第maxLines行末尾的文本。 |
+| 尾部省略（[EllipsisMode.END](js-apis-graphics-text.md#ellipsismode)） | 范围为省略号之前的文本。 |
+| 头部省略（[EllipsisMode.START](js-apis-graphics-text.md#ellipsismode)） | 范围为省略号之后的文本。 |
+| 中部省略（[EllipsisMode.MIDDLE](js-apis-graphics-text.md#ellipsismode)） | 第一个范围为省略号之前的文本，第二个范围为省略号之后的文本。 |
+| 多行头部省略（[EllipsisMode.MULTILINE\_START](js-apis-graphics-text.md#ellipsismode)） | 同中部省略，返回省略号前后的文本范围。 |
+| 多行中部省略（[EllipsisMode.MULTILINE\_MIDDLE](js-apis-graphics-text.md#ellipsismode)） | 同中部省略，返回省略号前后的文本范围。 |
+
+**示例：**
+
+```ts
+let visibleRanges = paragraph.getVisibleTextRanges();
+```
+
+### getCharacterRangeForGlyphRange24+
+
+getCharacterRangeForGlyphRange(glyphRange: Range, encoding: drawing.TextEncoding): Array<Range>
+
+获取指定字形范围对应的字符范围。
+
+**系统能力**：SystemCapability.Graphics.Drawing
+
+**元服务API**：从API version 24开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| glyphRange | [Range](js-apis-graphics-text.md#range) | 是 | 字形范围。 |
+| encoding | [drawing.TextEncoding](arkts-apis-graphics-drawing-e.md#textencoding) | 是 | 文本编码类型。目前仅支持UTF-8和UTF-16编码类型。对于UTF-8编码，返回的字符范围表示字节范围。对于UTF-16编码，返回的字符范围表示UTF-16编码单元范围。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Array<[Range](js-apis-graphics-text.md#range)> | 字符范围。如果数组包含一个元素，它表示字符范围。如果包含两个元素，第一个是字符范围，第二个是实际的字形范围。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[图形绘制与显示错误码](errorcode-drawing.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 25900001 | Parameter error. Possible causes: Incorrect parameter range. |
+
+**示例：**
+
+```ts
+import { drawing, text } from '@kit.ArkGraphics2D'
+
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Button("get character range")
+        .onClick(() => {
+          let glyphRange: text.Range = { start: 0, end: 5 };
+          let encoding: drawing.TextEncoding = drawing.TextEncoding.TEXT_ENCODING_UTF8;
+          let textData = "Heน้ำl‍‍lo1️⃣World";
+          let myTextStyle: text.TextStyle = {
+            color: { alpha: 255, red: 255, green: 0, blue: 0 },
+            fontSize: 33,
+          };
+          let myParagraphStyle: text.ParagraphStyle = {
+            textStyle: myTextStyle,
+            align: text.TextAlign.END,
+          };
+          let fontCollection = new text.FontCollection();
+          let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText(textData);
+          let paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(200);
+          let ranges = paragraph.getCharacterRangeForGlyphRange(glyphRange, encoding);
+        })
+    }
+  }
+}
+```
+
+### getGlyphRangeForCharacterRange24+
+
+getGlyphRangeForCharacterRange(characterRange: Range, encoding: drawing.TextEncoding): Array<Range>
+
+获取指定字符范围对应的字形范围。
+
+**系统能力**：SystemCapability.Graphics.Drawing
+
+**元服务API**：从API version 24开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| characterRange | [Range](js-apis-graphics-text.md#range) | 是 | 字符范围。 |
+| encoding | [drawing.TextEncoding](arkts-apis-graphics-drawing-e.md#textencoding) | 是 | 文本编码类型。目前仅支持UTF-8和UTF-16编码类型。对于UTF-8编码，返回的实际字符范围表示字节范围。对于UTF-16编码，返回的实际字符范围表示UTF-16编码单元范围。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Array<[Range](js-apis-graphics-text.md#range)> | 字形范围。数组包含两个元素，第一个是字形范围，第二个是实际的字符范围。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[图形绘制与显示错误码](errorcode-drawing.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 25900001 | Parameter error. Possible causes: Incorrect parameter range. |
+
+**示例：**
+
+```ts
+import { drawing, text } from '@kit.ArkGraphics2D'
+
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Button("get glyph range")
+        .onClick(() => {
+          let characterRange: text.Range = { start: 0, end: 5 };
+          let encoding: drawing.TextEncoding = drawing.TextEncoding.TEXT_ENCODING_UTF8;
+          let textData = "Heน้ำl‍‍lo1️⃣World";
+          let myTextStyle: text.TextStyle = {
+            color: { alpha: 255, red: 255, green: 0, blue: 0 },
+            fontSize: 33,
+          };
+          let myParagraphStyle: text.ParagraphStyle = {
+            textStyle: myTextStyle,
+            align: text.TextAlign.END,
+          };
+          let fontCollection = new text.FontCollection();
+          let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText(textData);
+          let paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(200);
+          let ranges = paragraph.getGlyphRangeForCharacterRange(characterRange, encoding);
+        })
+    }
+  }
+}
+```
+
+### getCharacterPositionAtCoordinate24+
+
+getCharacterPositionAtCoordinate(x: number, y: number, encoding: drawing.TextEncoding): PositionWithAffinity
+
+获取与给定坐标最接近的字符位置信息。
+
+**系统能力**：SystemCapability.Graphics.Drawing
+
+**元服务API**：从API version 24开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| x | number | 是 | 文本排版区域内的水平坐标，单位为物理像素（px）。相对于文本排版区域左上角的x偏移量，向右为正方向。支持浮点数，可取负值（表示在文本区域左侧）。坐标超出文本区域范围时，将返回最近的字符位置。可通过触摸事件或点击事件获取。 |
+| y | number | 是 | 文本排版区域内的垂直坐标，单位为物理像素（px）。相对于文本排版区域左上角的y偏移量，向下为正方向。支持浮点数，可取负值（表示在文本区域上方）。坐标超出文本区域范围时，将返回最近的字符位置。可通过触摸事件或点击事件获取。 |
+| encoding | [drawing.TextEncoding](arkts-apis-graphics-drawing-e.md#textencoding) | 是 | 文本编码类型。目前仅支持UTF-8和UTF-16编码类型。对于UTF-8编码，返回的字符位置表示字节偏移量。对于UTF-16编码，返回的字符位置表示UTF-16编码单元偏移量。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [PositionWithAffinity](js-apis-graphics-text.md#positionwithaffinity) | 字符位置信息。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[图形绘制与显示错误码](errorcode-drawing.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 25900001 | Parameter error. Possible causes: Incorrect parameter range. |
+
+**示例：**
+
+```ts
+import { drawing, text } from '@kit.ArkGraphics2D'
+
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Button("get character position")
+        .onClick(() => {
+          let encoding: drawing.TextEncoding = drawing.TextEncoding.TEXT_ENCODING_UTF8;
+          let textData = "Heน้ำl‍‍lo1️⃣World";
+          let myTextStyle: text.TextStyle = {
+            color: { alpha: 255, red: 255, green: 0, blue: 0 },
+            fontSize: 33,
+          };
+          let myParagraphStyle: text.ParagraphStyle = {
+            textStyle: myTextStyle,
+            align: text.TextAlign.END,
+          };
+          let fontCollection = new text.FontCollection();
+          let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText(textData);
+          let paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(200);
+          let x = 10;
+          let y = 5;
+          let position = paragraph.getCharacterPositionAtCoordinate(x, y, encoding);
+        })
+    }
+  }
+}
+```
+
+### getProcessState
+
+getProcessState(): TextProcessState
+
+获取段落的文本处理状态。
+
+**系统能力**：SystemCapability.Graphics.Drawing
+
+**元服务API**：从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**起始版本：** 26.0.0
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [TextProcessState](js-apis-graphics-text.md#textprocessstate) | 段落的文本处理状态。 |
+
+**示例：**
+
+```ts
+import { text } from '@kit.ArkGraphics2D'
+
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Button("Click")
+        .onClick(() => {
+          let textData = "Hello World";
+          let myTextStyle: text.TextStyle = {
+            color: { alpha: 255, red: 255, green: 0, blue: 0 },
+            fontSize: 33,
+          };
+          let myParagraphStyle: text.ParagraphStyle = {
+            textStyle: myTextStyle
+          };
+          let fontCollection = new text.FontCollection();
+          let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText(textData);
+          let paragraph = paragraphBuilder.build();
+          let processState = paragraph.getProcessState(); // Now it is INIT
+          console.info("Print state: " + processState);
+          paragraph.layoutSync(200);
+          processState = paragraph.getProcessState(); // Now it is FORMATTED
+          console.info("Print state: " + processState);
+        })
+    }
+  }
+}
+```
+
+### getTextDisplayState
+
+getTextDisplayState(): TextDisplayState
+
+获取段落的文本显示状态。
+
+**系统能力**：SystemCapability.Graphics.Drawing
+
+**元服务API**：从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**起始版本：** 26.0.0
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [TextDisplayState](js-apis-graphics-text.md#textdisplaystate) | 段落的文本显示状态。 |
+
+**示例：**
+
+```ts
+import { text } from '@kit.ArkGraphics2D'
+
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Button("Click")
+        .onClick(() => {
+          let textData = "Hello World";
+          let myTextStyle: text.TextStyle = {
+            color: { alpha: 255, red: 255, green: 0, blue: 0 },
+            fontSize: 33,
+          };
+          let myParagraphStyle: text.ParagraphStyle = {
+            textStyle: myTextStyle
+          };
+          let fontCollection = new text.FontCollection();
+          let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText(textData);
+          let paragraph = paragraphBuilder.build();
+          let displayState = paragraph.getTextDisplayState(); // Now it is UNKNOWN
+          console.info("Print state: " + displayState);
+          paragraph.layoutSync(200);
+          displayState = paragraph.getTextDisplayState(); // Now it is CLIP
+          console.info("Print state: " + displayState);
+        })
+    }
+  }
+}
+```
+
+### getParagraphStyle
+
+getParagraphStyle(): ParagraphStyle
+
+获取段落的样式配置。
+
+**系统能力**：SystemCapability.Graphics.Drawing
+
+**元服务API**：从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**起始版本：** 26.0.0
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [ParagraphStyle](js-apis-graphics-text.md#paragraphstyle) | 段落的样式配置。  其中textStyle.color、textStyle.textShadows.color、textStyle.backgroundRect.color、textStyle.decoration.color属性：返回32位无符号整型颜色数值。示例：返回值4278190080，对应纯黑色十六进制颜色值0xFF000000，等价于[common2D.Color](js-apis-graphics-common2d.md#color)对象参数：alpha=255、red=0、green=0、blue=0，示例中提供numberToRGBA转换方法作为参考。 |
+
+**示例：**
+
+```ts
+import { text } from '@kit.ArkGraphics2D'
+import { common2D } from '@kit.ArkGraphics2D'
+
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Button("Click")
+        .onClick(() => {
+          let textData = "Hello World";
+          let myTextStyle: text.TextStyle = {
+            color: { alpha: 255, red: 255, green: 0, blue: 0 },
+            fontSize: 33,
+          };
+          let myParagraphStyle: text.ParagraphStyle = {
+            textStyle: myTextStyle
+          };
+          let fontCollection = new text.FontCollection();
+          let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+          paragraphBuilder.addText(textData);
+          let paragraph = paragraphBuilder.build();
+          paragraph.layoutSync(200);
+          let paragraphStyle = paragraph.getParagraphStyle();
+          if (paragraphStyle.textStyle != undefined) {
+            console.info("Print fontSize: " + paragraphStyle.textStyle?.fontSize);
+            if (paragraphStyle.textStyle?.color != undefined && typeof paragraphStyle.textStyle?.color == 'number') {
+              let textColor: common2D.Color = numberToRGBA(paragraphStyle.textStyle?.color);
+              console.info(`Print text color ARGB: ${textColor.alpha}, ${textColor.red}, ${textColor.green}, ${textColor.blue}`);
+            }
+          }
+        })
+    }
+  }
+}
+
+function numberToRGBA(colorNum: number): common2D.Color {
+  const a = (colorNum >>> 24) & 0xFF;
+  const r = (colorNum >>> 16) & 0xFF;
+  const g = (colorNum >>> 8) & 0xFF;
+  const b = colorNum & 0xFF;
+  return { alpha: a, red: r, green: g, blue: b };
+}
+```
+
+### forceReuseRasterResult
+
+forceReuseRasterResult(isForce: boolean): void
+
+设置是否强制复用光栅化结果。不调用此接口时，系统默认允许更新光栅化结果。
+
+适用于文本内容未发生变化但需要多次调用[paint](js-apis-graphics-text.md#paint)绘制的场景，通过复用光栅化结果可避免重复光栅化计算以提升绘制性能。设置后，在下次调用[paint](js-apis-graphics-text.md#paint)绘制时生效。
+
+**系统能力**：SystemCapability.Graphics.Drawing
+
+**元服务API**：从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| isForce | boolean | 是 | 是否强制复用光栅化结果。true表示强制复用光栅化结果，false表示允许更新光栅化结果。 |
+
+**示例：**
+
+```ts
+// Index.ets
+import { text, drawing } from '@kit.ArkGraphics2D'
+import { image } from '@kit.ImageKit'
+ 
+function textFunc(pixelmap: PixelMap) {
+  let canvas = new drawing.Canvas(pixelmap);
+  let textData = "Hello World";
+  let myTextStyle: text.TextStyle = {
+    color: { alpha: 255, red: 255, green: 0, blue: 0 },
+    fontSize: 33,
+  };
+  let myParagraphStyle: text.ParagraphStyle = {
+    textStyle: myTextStyle
+  };
+  let fontCollection = new text.FontCollection();
+  let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+  paragraphBuilder.addText(textData);
+  let paragraph = paragraphBuilder.build();
+  paragraph.layoutSync(200);
+  paragraph.forceReuseRasterResult(true);
+  paragraph.paint(canvas, 0, 0);
+}
+
+@Entry
+@Component
+struct Index {
+  @State pixelmap?: PixelMap = undefined;
+  fun: Function = textFunc;
+  build() {
+    Column() {
+      Image(this.pixelmap).width(200).height(200);
+      Button("Click").onClick(() => {
+        if (this.pixelmap == undefined) {
+          const color: ArrayBuffer = new ArrayBuffer(160000);
+          let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 200, width: 200 } }
+          this.pixelmap = image.createPixelMapSync(color, opts);
+        }
+        this.fun(this.pixelmap);
+      })
+    }
+  }
+}
 ```
 
 ## LineTypeset18+
 
-PhonePC/2in1TabletTVWearable
-
-保存着文本内容以及样式的载体，可以用于计算单行排版信息。
+保存文本内容及样式的载体，可用于计算单行排版信息。
 
 下列API示例中都需先使用[ParagraphBuilder](js-apis-graphics-text.md#paragraphbuilder)类的[buildLineTypeset()](js-apis-graphics-text.md#buildlinetypeset18)接口获取到LineTypeset对象实例，再通过此实例调用对应方法。
 
 ### getLineBreak18+
-
-PhonePC/2in1TabletTVWearable
 
 getLineBreak(startIndex: number, width: number): number
 
@@ -2455,7 +2979,7 @@ getLineBreak(startIndex: number, width: number): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| startIndex | number | 是 | 开始计算排版的起始位置（包括起始位置）。取值范围需要为[0,文本字符总数）的整数，参数非法时抛出异常。 |
+| startIndex | number | 是 | 开始计算排版的起始位置（包括起始位置）。取值范围需要为[0,文本字符总数）的整数，当参数超出范围时抛出异常。 |
 | width | number | 是 | 可用于排版的宽度，大于0的浮点数，单位为物理像素px。 |
 
 **返回值：**
@@ -2470,19 +2994,17 @@ getLineBreak(startIndex: number, width: number): number
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. let startIndex = 0;
-2. let width = 100.0;
-3. let count = lineTypeset.getLineBreak(startIndex, width);
+```ts
+let startIndex = 0;
+let width = 100.0;
+let count = lineTypeset.getLineBreak(startIndex, width);
 ```
 
 ### createLine18+
-
-PhonePC/2in1TabletTVWearable
 
 createLine(startIndex: number, count: number): TextLine
 
@@ -2497,7 +3019,7 @@ createLine(startIndex: number, count: number): TextLine
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | startIndex | number | 是 | 开始计算排版的起始位置，整数，取值范围为[0, 文本字符总数)。 |
-| count | number | 是 | 从指定起始位置开始进行排版的字符个数，取值为[0,文本字符总数)的整数，startIndex和count之和不能大于文本字符总数。当count为0时，表示排版区间为[startIndex, 文本结尾]。可以先使用[getLineBreak](js-apis-graphics-text.md#getlinebreak18)获取合理的排版字符总数。 |
+| count | number | 是 | 从指定起始位置开始进行排版的字符个数，取值为[0,文本字符总数)的整数，startIndex和count之和不能大于文本字符总数。当count为0时，表示排版区间为[startIndex, 文本的最后一个字符位置]。可以先使用[getLineBreak](js-apis-graphics-text.md#getlinebreak18)获取合理的排版字符总数。 |
 
 **返回值：**
 
@@ -2511,20 +3033,18 @@ createLine(startIndex: number, count: number): TextLine
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. let startIndex = 0;
-2. let width = 100.0;
-3. let count = lineTypeset.getLineBreak(startIndex, width);
-4. let line : text.TextLine = lineTypeset.createLine(startIndex, count);
+```ts
+let startIndex = 0;
+let width = 100.0;
+let count = lineTypeset.getLineBreak(startIndex, width);
+let line : text.TextLine = lineTypeset.createLine(startIndex, count);
 ```
 
 ## RunMetrics
-
-PhonePC/2in1TabletTVWearable
 
 描述文本行中连续文本块的布局信息和度量数据。
 
@@ -2539,8 +3059,6 @@ PhonePC/2in1TabletTVWearable
 
 ## LineMetrics
 
-PhonePC/2in1TabletTVWearable
-
 描述文本布局中单行文字的度量信息。
 
 **系统能力：** SystemCapability.Graphics.Drawing
@@ -2551,21 +3069,19 @@ PhonePC/2in1TabletTVWearable
 | --- | --- | --- | --- | --- |
 | startIndex | number | 否 | 否 | 文本缓冲区中该行开始的索引位置。 |
 | endIndex | number | 否 | 否 | 文本缓冲区中该行结束的索引位置。 |
-| ascent | number | 否 | 否 | 文字上升高度，即从基线到字符顶部的距离。 |
-| descent | number | 否 | 否 | 文字下降高度，即从基线到字符底部的距离。 |
-| height | number | 否 | 否 | 当前行的高度，计算方式为 Math.round(ascent + descent) |
-| width | number | 否 | 否 | 行的宽度。 |
-| left | number | 否 | 否 | 行的左边缘位置。右边缘可通过 left+width 计算得出。 |
-| baseline | number | 否 | 否 | 该行基线相对于段落顶部的 Y 坐标位置。 |
+| ascent | number | 否 | 否 | 文字上升高度，即从基线到字符顶部的距离，单位为物理像素px。 |
+| descent | number | 否 | 否 | 文字下降高度，即从基线到字符底部的距离，单位为物理像素px。 |
+| height | number | 否 | 否 | 当前行的高度，单位为物理像素px，计算方式为 Math.round(ascent + descent) |
+| width | number | 否 | 否 | 行的宽度，单位为物理像素px。 |
+| left | number | 否 | 否 | 行的左边缘位置，单位为物理像素px。右边缘可通过 left+width 计算得出。 |
+| baseline | number | 否 | 否 | 该行基线相对于段落顶部的 Y 坐标位置，单位为物理像素px。 |
 | lineNumber | number | 否 | 否 | 行号，从0开始计数。 |
-| topHeight | number | 否 | 否 | 从顶部到当前行的高度。 |
+| topHeight | number | 否 | 否 | 从顶部到当前行的高度，单位为物理像素px。 |
 | runMetrics | Map<number, [RunMetrics](js-apis-graphics-text.md#runmetrics)> | 否 | 否 | 文本索引范围与关联的字体度量信息之间的映射。 |
 
 ## TextBox
 
-PhonePC/2in1TabletTVWearable
-
-文本矩形区域。
+文本矩形区域，表示文本在布局时所占用的矩形空间。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
@@ -2573,12 +3089,10 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| rect | [common2D.Rect](js-apis-graphics-common2d.md#rect) | 否 | 否 | 矩形区域信息。 |
+| rect | [common2D.Rect](js-apis-graphics-common2d.md#rect) | 否 | 否 | 矩形区域信息，单位为物理像素px。 |
 | direction | [TextDirection](js-apis-graphics-text.md#textdirection) | 否 | 否 | 文本方向。 |
 
 ## PositionWithAffinity
-
-PhonePC/2in1TabletTVWearable
 
 位置和亲和度。
 
@@ -2593,8 +3107,6 @@ PhonePC/2in1TabletTVWearable
 
 ## RectWidthStyle
 
-PhonePC/2in1TabletTVWearable
-
 矩形区域宽度规格枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
@@ -2607,8 +3119,6 @@ PhonePC/2in1TabletTVWearable
 | MAX | 1 | 扩展宽度，以匹配所有行上最宽矩形的位置。 |
 
 ## RectHeightStyle
-
-PhonePC/2in1TabletTVWearable
 
 矩形区域高度规格枚举。
 
@@ -2627,8 +3137,6 @@ PhonePC/2in1TabletTVWearable
 
 ## Affinity
 
-PhonePC/2in1TabletTVWearable
-
 位置亲和度枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
@@ -2642,13 +3150,9 @@ PhonePC/2in1TabletTVWearable
 
 ## ParagraphBuilder
 
-PhonePC/2in1TabletTVWearable
-
-段落生成器。
+段落生成器，采用建造者模式构建段落对象。开发者通过构造函数传入[ParagraphStyle](js-apis-graphics-text.md#paragraphstyle)和[FontCollection](js-apis-graphics-text.md#fontcollection)初始化ParagraphBuilder，然后通过[pushStyle](js-apis-graphics-text.md#pushstyle)设置文本样式、[addText](js-apis-graphics-text.md#addtext)添加文本内容，最终调用[build()](js-apis-graphics-text.md#build)接口生成[Paragraph](js-apis-graphics-text.md#paragraph)对象进行排版和绘制。
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(paragraphStyle: ParagraphStyle, fontCollection: FontCollection)
 
@@ -2663,49 +3167,47 @@ ParagraphBuilder对象的构造函数。
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | paragraphStyle | [ParagraphStyle](js-apis-graphics-text.md#paragraphstyle) | 是 | 段落样式。 |
-| fontCollection | [FontCollection](js-apis-graphics-text.md#fontcollection) | 是 | 字体集。 |
+| fontCollection | [FontCollection](js-apis-graphics-text.md#fontcollection) | 是 | 字体集对象，提供文本排版所需的字体资源，用于在段落构建过程中进行字形匹配和文本渲染。 |
 
 **示例：**
 
-```
-1. import { text } from '@kit.ArkGraphics2D'
+```ts
+import { text } from '@kit.ArkGraphics2D'
 
-3. function textFunc() {
-4. let myTextStyle: text.TextStyle = {
-5. color: { alpha: 255, red: 255, green: 0, blue: 0 },
-6. fontSize: 33,
-7. };
-8. let myParagraphStyle: text.ParagraphStyle = {
-9. textStyle: myTextStyle,
-10. align: text.TextAlign.END,
-11. };
-12. let fontCollection = new text.FontCollection();
-13. let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
-14. }
+function textFunc() {
+  let myTextStyle: text.TextStyle = {
+    color: { alpha: 255, red: 255, green: 0, blue: 0 },
+    fontSize: 33,
+  };
+  let myParagraphStyle: text.ParagraphStyle = {
+    textStyle: myTextStyle,
+    align: text.TextAlign.END,
+  };
+  let fontCollection = new text.FontCollection();
+  let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+}
 
-16. @Entry
-17. @Component
-18. struct Index {
-19. fun: Function = textFunc;
-20. build() {
-21. Column() {
-22. Button().onClick(() => {
-23. this.fun();
-24. })
-25. }
-26. }
-27. }
+@Entry
+@Component
+struct Index {
+  fun: Function = textFunc;
+  build() {
+    Column() {
+      Button().onClick(() => {
+        this.fun();
+      })
+    }
+  }
+}
 ```
 
 ### pushStyle
-
-PhonePC/2in1TabletTVWearable
 
 pushStyle(textStyle: TextStyle): void
 
 更新当前文本块的样式。
 
-说明
+**说明** 
 
 更新当前文本块的样式，之后添加文字均采用该样式。
 
@@ -2721,47 +3223,46 @@ pushStyle(textStyle: TextStyle): void
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D'
-2. import { text } from '@kit.ArkGraphics2D'
-3. import { common2D } from '@kit.ArkGraphics2D'
-4. import { image } from '@kit.ImageKit'
+```ts
+import { text } from '@kit.ArkGraphics2D'
 
-6. function textFunc() {
-7. let myTextStyle: text.TextStyle = {
-8. color: { alpha: 255, red: 255, green: 0, blue: 0 },
-9. fontSize: 33,
-10. };
-11. let myParagraphStyle: text.ParagraphStyle = {
-12. textStyle: myTextStyle,
-13. align: text.TextAlign.CENTER,
-14. };
-15. let fontCollection = new text.FontCollection();
-16. let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
-17. paragraphBuilder.pushStyle(myTextStyle);
-18. }
+function textFunc() {
+  let myTextStyle: text.TextStyle = {
+    color: { alpha: 255, red: 255, green: 0, blue: 0 },
+    fontSize: 33,
+  };
+  let myParagraphStyle: text.ParagraphStyle = {
+    textStyle: myTextStyle,
+    align: text.TextAlign.CENTER,
+  };
+  let fontCollection = new text.FontCollection();
+  let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+  paragraphBuilder.pushStyle(myTextStyle);
+}
 
-20. @Entry
-21. @Component
-22. struct Index {
-23. fun: Function = textFunc;
-24. build() {
-25. Column() {
-26. Button().onClick(() => {
-27. this.fun();
-28. })
-29. }
-30. }
-31. }
+@Entry
+@Component
+struct Index {
+  fun: Function = textFunc;
+  build() {
+    Column() {
+      Button().onClick(() => {
+        this.fun();
+      })
+    }
+  }
+}
 ```
 
 ### popStyle
 
-PhonePC/2in1TabletTVWearable
-
 popStyle(): void
 
 弹出当前文本样式。
+
+**说明** 
+
+必须在调用[pushStyle()](js-apis-graphics-text.md#pushstyle)之后才能调用此方法。调用后，后续添加的文本将使用弹出前的文本样式。如果样式栈为空，将使用[ParagraphStyle](js-apis-graphics-text.md#paragraphstyle)中的textStyle作为默认样式。
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
@@ -2769,44 +3270,39 @@ popStyle(): void
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D'
-2. import { text } from '@kit.ArkGraphics2D'
-3. import { common2D } from '@kit.ArkGraphics2D'
-4. import { image } from '@kit.ImageKit'
+```ts
+import { text } from '@kit.ArkGraphics2D'
 
-6. function textFunc() {
-7. let myTextStyle: text.TextStyle = {
-8. color: { alpha: 255, red: 255, green: 0, blue: 0 },
-9. fontSize: 33,
-10. };
-11. let myParagraphStyle: text.ParagraphStyle = {
-12. textStyle: myTextStyle,
-13. align: text.TextAlign.END,
-14. };
-15. let fontCollection = new text.FontCollection();
-16. let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
-17. paragraphBuilder.pushStyle(myTextStyle);
-18. paragraphBuilder.popStyle();
-19. }
+function textFunc() {
+  let myTextStyle: text.TextStyle = {
+    color: { alpha: 255, red: 255, green: 0, blue: 0 },
+    fontSize: 33,
+  };
+  let myParagraphStyle: text.ParagraphStyle = {
+    textStyle: myTextStyle,
+    align: text.TextAlign.END,
+  };
+  let fontCollection = new text.FontCollection();
+  let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+  paragraphBuilder.pushStyle(myTextStyle);
+  paragraphBuilder.popStyle();
+}
 
-21. @Entry
-22. @Component
-23. struct Index {
-24. fun: Function = textFunc;
-25. build() {
-26. Column() {
-27. Button().onClick(() => {
-28. this.fun();
-29. })
-30. }
-31. }
-32. }
+@Entry
+@Component
+struct Index {
+  fun: Function = textFunc;
+  build() {
+    Column() {
+      Button().onClick(() => {
+        this.fun();
+      })
+    }
+  }
+}
 ```
 
 ### addText
-
-PhonePC/2in1TabletTVWearable
 
 addText(text: string): void
 
@@ -2824,47 +3320,42 @@ addText(text: string): void
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D'
-2. import { text } from '@kit.ArkGraphics2D'
-3. import { common2D } from '@kit.ArkGraphics2D'
-4. import { image } from '@kit.ImageKit'
+```ts
+import { text } from '@kit.ArkGraphics2D'
 
-6. function textFunc() {
-7. let myTextStyle: text.TextStyle = {
-8. color: { alpha: 255, red: 255, green: 0, blue: 0 },
-9. fontSize: 33,
-10. };
-11. let myParagraphStyle: text.ParagraphStyle = {
-12. textStyle: myTextStyle,
-13. align: text.TextAlign.END,
-14. };
-15. let fontCollection = new text.FontCollection();
-16. let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
-17. paragraphBuilder.addText("123666");
-18. }
+function textFunc() {
+  let myTextStyle: text.TextStyle = {
+    color: { alpha: 255, red: 255, green: 0, blue: 0 },
+    fontSize: 33,
+  };
+  let myParagraphStyle: text.ParagraphStyle = {
+    textStyle: myTextStyle,
+    align: text.TextAlign.END,
+  };
+  let fontCollection = new text.FontCollection();
+  let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+  paragraphBuilder.addText("123666");
+}
 
-20. @Entry
-21. @Component
-22. struct Index {
-23. fun: Function = textFunc;
-24. build() {
-25. Column() {
-26. Button().onClick(() => {
-27. this.fun();
-28. })
-29. }
-30. }
-31. }
+@Entry
+@Component
+struct Index {
+  fun: Function = textFunc;
+  build() {
+    Column() {
+      Button().onClick(() => {
+        this.fun();
+      })
+    }
+  }
+}
 ```
 
 ### addPlaceholder
 
-PhonePC/2in1TabletTVWearable
-
 addPlaceholder(placeholderSpan: PlaceholderSpan): void
 
-用于构建文本段落时插入占位符。
+用于构建文本段落时插入占位符。插入后，占位符将在段落排版中按照指定的宽度、高度和对齐方式占据相应空间，并影响文本的换行和布局。
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
@@ -2878,49 +3369,44 @@ addPlaceholder(placeholderSpan: PlaceholderSpan): void
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D'
-2. import { text } from '@kit.ArkGraphics2D'
-3. import { common2D } from '@kit.ArkGraphics2D'
-4. import { image } from '@kit.ImageKit'
+```ts
+import { text } from '@kit.ArkGraphics2D'
 
-6. function textFunc() {
-7. let myParagraphStyle: text.ParagraphStyle = {
-8. align: text.TextAlign.END,
-9. };
-10. let myPlaceholderSpan: text.PlaceholderSpan = {
-11. width: 100,
-12. height: 100,
-13. align: text.PlaceholderAlignment.ABOVE_BASELINE,
-14. baseline: text.TextBaseline.ALPHABETIC,
-15. baselineOffset: 100
-16. };
-17. let fontCollection = new text.FontCollection();
-18. let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
-19. paragraphBuilder.addPlaceholder(myPlaceholderSpan);
-20. }
+function textFunc() {
+  let myParagraphStyle: text.ParagraphStyle = {
+    align: text.TextAlign.END,
+  };
+  let myPlaceholderSpan: text.PlaceholderSpan = {
+    width: 100,
+    height: 100,
+    align: text.PlaceholderAlignment.ABOVE_BASELINE,
+    baseline: text.TextBaseline.ALPHABETIC,
+    baselineOffset: 100
+  };
+  let fontCollection = new text.FontCollection();
+  let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+  paragraphBuilder.addPlaceholder(myPlaceholderSpan);
+}
 
-22. @Entry
-23. @Component
-24. struct Index {
-25. fun: Function = textFunc;
-26. build() {
-27. Column() {
-28. Button().onClick(() => {
-29. this.fun();
-30. })
-31. }
-32. }
-33. }
+@Entry
+@Component
+struct Index {
+  fun: Function = textFunc;
+  build() {
+    Column() {
+      Button().onClick(() => {
+        this.fun();
+      })
+    }
+  }
+}
 ```
 
 ### build
 
-PhonePC/2in1TabletTVWearable
-
 build(): Paragraph
 
-用于构建段落，生成可用于后续排版渲染的段落对象。
+用于构建段落，生成可用于后续排版渲染的段落对象。调用build()后，如需再次构建文本，必须创建新的ParagraphBuilder实例。
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
@@ -2934,46 +3420,43 @@ build(): Paragraph
 
 **示例：**
 
-```
-1. import { drawing, text, common2D } from '@kit.ArkGraphics2D'
-2. import { image } from '@kit.ImageKit'
+```ts
+import { text } from '@kit.ArkGraphics2D'
 
-4. function textFunc() {
-5. let myTextStyle: text.TextStyle = {
-6. color : {alpha: 255, red: 255, green: 0, blue: 0},
-7. fontSize : 20,
-8. };
-9. let myParagraphStyle: text.ParagraphStyle = {
-10. textStyle : myTextStyle,
-11. };
-12. let fontCollection = new text.FontCollection();
-13. let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
-14. paragraphBuilder.addText("123456789");
-15. let paragraph = paragraphBuilder.build();
-16. paragraph.layoutSync(200);
-17. }
+function textFunc() {
+  let myTextStyle: text.TextStyle = {
+    color : {alpha: 255, red: 255, green: 0, blue: 0},
+    fontSize : 20,
+  };
+  let myParagraphStyle: text.ParagraphStyle = {
+    textStyle : myTextStyle,
+  };
+  let fontCollection = new text.FontCollection();
+  let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+  paragraphBuilder.addText("123456789");
+  let paragraph = paragraphBuilder.build();
+  paragraph.layoutSync(200);
+}
 
-19. @Entry
-20. @Component
-21. struct Index {
-22. fun: Function = textFunc;
-23. build() {
-24. Column() {
-25. Button().onClick(() => {
-26. this.fun();
-27. })
-28. }
-29. }
-30. }
+@Entry
+@Component
+struct Index {
+  fun: Function = textFunc;
+  build() {
+    Column() {
+      Button().onClick(() => {
+        this.fun();
+      })
+    }
+  }
+}
 ```
 
 ### buildLineTypeset18+
 
-PhonePC/2in1TabletTVWearable
-
 buildLineTypeset(): LineTypeset
 
-构建行排版器。
+构建行排版器，生成可用于逐行排版计算的LineTypeset对象。
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
@@ -2987,36 +3470,34 @@ buildLineTypeset(): LineTypeset
 
 **示例：**
 
-```
-1. import { text } from '@kit.ArkGraphics2D'
+```ts
+import { text } from '@kit.ArkGraphics2D'
 
-3. function test() {
-4. let myParagraphStyle: text.ParagraphStyle = {
-5. align: text.TextAlign.JUSTIFY,
-6. };
-7. let fontCollection = new text.FontCollection();
-8. let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
-9. paragraphBuilder.addText("123456789");
-10. let lineTypeset = paragraphBuilder.buildLineTypeset();
-11. }
+function test() {
+  let myParagraphStyle: text.ParagraphStyle = {
+    align: text.TextAlign.JUSTIFY,
+  };
+  let fontCollection = new text.FontCollection();
+  let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+  paragraphBuilder.addText("123456789");
+  let lineTypeset = paragraphBuilder.buildLineTypeset();
+}
 
-13. @Entry
-14. @Component
-15. struct Index {
-16. fun: Function = test;
-17. build() {
-18. Column() {
-19. Button().onClick(() => {
-20. this.fun();
-21. })
-22. }
-23. }
-24. }
+@Entry
+@Component
+struct Index {
+  fun: Function = test;
+  build() {
+    Column() {
+      Button().onClick(() => {
+        this.fun();
+      })
+    }
+  }
+}
 ```
 
 ### addSymbol
-
-PhonePC/2in1TabletTVWearable
 
 addSymbol(symbolId: number): void
 
@@ -3034,41 +3515,39 @@ addSymbol(symbolId: number): void
 
 **示例：**
 
-```
-1. import { text } from '@kit.ArkGraphics2D'
+```ts
+import { text } from '@kit.ArkGraphics2D'
 
-3. function textFunc() {
-4. let myTextStyle: text.TextStyle = {
-5. color: { alpha: 255, red: 255, green: 0, blue: 0 },
-6. fontSize: 33,
-7. };
-8. let myParagraphStyle: text.ParagraphStyle = {
-9. textStyle: myTextStyle,
-10. align: text.TextAlign.END,
-11. };
-12. let fontCollection = new text.FontCollection();
-13. let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
-14. paragraphBuilder.addSymbol(0xF0000);
-15. let paragraph = paragraphBuilder.build();
-16. }
+function textFunc() {
+  let myTextStyle: text.TextStyle = {
+    color: { alpha: 255, red: 255, green: 0, blue: 0 },
+    fontSize: 33,
+  };
+  let myParagraphStyle: text.ParagraphStyle = {
+    textStyle: myTextStyle,
+    align: text.TextAlign.END,
+  };
+  let fontCollection = new text.FontCollection();
+  let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+  paragraphBuilder.addSymbol(0xF0000);
+  let paragraph = paragraphBuilder.build();
+}
 
-18. @Entry
-19. @Component
-20. struct Index {
-21. fun: Function = textFunc;
-22. build() {
-23. Column() {
-24. Button().onClick(() => {
-25. this.fun();
-26. })
-27. }
-28. }
-29. }
+@Entry
+@Component
+struct Index {
+  fun: Function = textFunc;
+  build() {
+    Column() {
+      Button().onClick(() => {
+        this.fun();
+      })
+    }
+  }
+}
 ```
 
 ## TypographicBounds18+
-
-PhonePC/2in1TabletTVWearable
 
 文本行的排版边界。文本行排版边界与排版字体、排版字号有关，与字符本身无关，例如字符串为" a b "，'a'字符前面有1个空格，'b'字符后面有1个空格，排版边界就包括行首和末尾空格的边界。例如字符串为"j"或"E"，排版边界相同，即与字符本身无关。
 
@@ -3078,28 +3557,26 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| ascent | number | 否 | 否 | 文本行的上升高度，浮点数。 |
-| descent | number | 否 | 否 | 文本行的下降高度，浮点数。 |
-| leading | number | 否 | 否 | 文本行的行间距，浮点数。 |
-| width | number | 否 | 否 | 排版边界的总宽度，浮点数。 |
+| ascent | number | 否 | 否 | 文本行的上升高度，浮点数，单位为物理像素px。 |
+| descent | number | 否 | 否 | 文本行的下降高度，浮点数，单位为物理像素px。 |
+| leading | number | 否 | 否 | 文本行的行间距，浮点数，单位为物理像素px。 |
+| width | number | 否 | 否 | 排版边界的总宽度，浮点数，单位为物理像素px。 |
 
-说明
+**说明** 
 
-示意图展示了ascent、descent、leading、top、baseline、bottom、next line top的含义。width为文本行排版包括左右空格的宽度。ascent为文本行上升高度最高点，descent为文本行下降高度最低点，leading为文本行间距，top为文本行的最高点，baseline为字符基线，bottom为文本行的最低点，next line top为下一个文本行的最高点。
+示意图展示文本行排版参数：width（包含左右空格的文本行宽度）、ascent（上升高度最高点）、descent（下降高度最低点）、leading（行间距）、top（当前行最高点）、baseline（字符基线）、bottom（当前行最低点）、next line top（下一行最高点）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/anb_DxsdTpurphtMrODlRQ/zh-cn_image_0000002558607762.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/ZgEISsrYSHyewWjAVzYZ6g/zh-cn_image_0000002706677160.png)
 
 示意图展示了字符串为" a b "的排版边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/2TL0E4lnQYmO6qvk9BI-cw/zh-cn_image_0000002589327289.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/h_vXtHJ0TYSyoXjkai6KwQ/zh-cn_image_0000002736436249.png)
 
 示意图展示了字符串为"j"或"E"的排版边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/FtwJm1OMQY2Eb-5auLiH6w/zh-cn_image_0000002589247229.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/rxw0dJIWR3eaIqJgcUzUtA/zh-cn_image_0000002706837098.png)
 
 ## CaretOffsetsCallback18+
-
-PhonePC/2in1TabletTVWearable
 
 type CaretOffsetsCallback = (offset: number, index: number, leadingEdge: boolean) => boolean
 
@@ -3113,7 +3590,7 @@ type CaretOffsetsCallback = (offset: number, index: number, leadingEdge: boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| offset | number | 是 | 文本行中每个字符的偏移量，浮点数。 |
+| offset | number | 是 | 文本行中每个字符的偏移量，浮点数，单位为物理像素px。 |
 | index | number | 是 | 文本行中每个字符的索引值，整数。 |
 | leadingEdge | boolean | 是 | 光标是否位于字符的前缘，true表示位于字符前缘，即偏移量不包含该字符宽度，false表示位于字符后缘，即偏移量包含该字符宽度。 |
 
@@ -3125,15 +3602,11 @@ type CaretOffsetsCallback = (offset: number, index: number, leadingEdge: boolean
 
 ## TextLine
 
-PhonePC/2in1TabletTVWearable
-
 描述段落基础文本行结构的载体。
 
 下列API示例中都需先使用[Paragraph](js-apis-graphics-text.md#paragraph)类的[getTextLines()](js-apis-graphics-text.md#gettextlines)接口或者[LineTypeset](js-apis-graphics-text.md#linetypeset18)类的[createLine()](js-apis-graphics-text.md#createline18)接口获取到TextLine对象实例，再通过此实例调用对应方法。
 
 ### getGlyphCount
-
-PhonePC/2in1TabletTVWearable
 
 getGlyphCount(): number
 
@@ -3151,13 +3624,11 @@ getGlyphCount(): number
 
 **示例：**
 
-```
-1. let glyphCount = lines[0].getGlyphCount();
+```ts
+let glyphCount = lines[0].getGlyphCount();
 ```
 
 ### getTextRange
-
-PhonePC/2in1TabletTVWearable
 
 getTextRange(): Range
 
@@ -3175,13 +3646,11 @@ getTextRange(): Range
 
 **示例：**
 
-```
-1. let textRange = lines[0].getTextRange();
+```ts
+let textRange = lines[0].getTextRange();
 ```
 
 ### getGlyphRuns
-
-PhonePC/2in1TabletTVWearable
 
 getGlyphRuns(): Array<Run>
 
@@ -3199,13 +3668,11 @@ getGlyphRuns(): Array<Run>
 
 **示例：**
 
-```
-1. let runs = lines[0].getGlyphRuns();
+```ts
+let runs = lines[0].getGlyphRuns();
 ```
 
 ### paint
-
-PhonePC/2in1TabletTVWearable
 
 paint(canvas: drawing.Canvas, x: number, y: number): void
 
@@ -3220,46 +3687,42 @@ paint(canvas: drawing.Canvas, x: number, y: number): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | canvas | [drawing.Canvas](arkts-apis-graphics-drawing-canvas.md) | 是 | 绘制的目标canvas。 |
-| x | number | 是 | 绘制的左上角位置的横坐标，浮点数。 |
-| y | number | 是 | 绘制的左上角位置的纵坐标，浮点数。 |
+| x | number | 是 | 绘制的左上角位置的横坐标，浮点数，单位为物理像素px。 |
+| y | number | 是 | 绘制的左上角位置的纵坐标，浮点数，单位为物理像素px。 |
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D'
-2. import { text } from '@kit.ArkGraphics2D'
-3. import { common2D } from '@kit.ArkGraphics2D'
-4. import { image } from '@kit.ImageKit'
+```ts
+import { drawing } from '@kit.ArkGraphics2D'
+import { image } from '@kit.ImageKit'
 
-6. function textFunc(pixelmap: PixelMap) {
-7. let canvas = new drawing.Canvas(pixelmap);
-8. lines[0].paint(canvas, 0, 0);
-9. }
+function textFunc(pixelmap: PixelMap) {
+  let canvas = new drawing.Canvas(pixelmap);
+  lines[0].paint(canvas, 0, 0);
+}
 
-11. @Entry
-12. @Component
-13. struct Index {
-14. @State pixelmap?: PixelMap = undefined;
-15. fun: Function = textFunc;
-16. build() {
-17. Column() {
-18. Image(this.pixelmap).width(200).height(200);
-19. Button().onClick(() => {
-20. if (this.pixelmap == undefined) {
-21. const color: ArrayBuffer = new ArrayBuffer(160000);
-22. let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 200, width: 200 } }
-23. this.pixelmap = image.createPixelMapSync(color, opts);
-24. }
-25. this.fun(this.pixelmap);
-26. })
-27. }
-28. }
-29. }
+@Entry
+@Component
+struct Index {
+  @State pixelmap?: PixelMap = undefined;
+  fun: Function = textFunc;
+  build() {
+    Column() {
+      Image(this.pixelmap).width(200).height(200);
+      Button().onClick(() => {
+        if (this.pixelmap == undefined) {
+          const color: ArrayBuffer = new ArrayBuffer(160000);
+          let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 200, width: 200 } }
+          this.pixelmap = image.createPixelMapSync(color, opts);
+        }
+        this.fun(this.pixelmap);
+      })
+    }
+  }
+}
 ```
 
 ### createTruncatedLine18+
-
-PhonePC/2in1TabletTVWearable
 
 createTruncatedLine(width: number, ellipsisMode: EllipsisMode, ellipsis: string): TextLine
 
@@ -3273,7 +3736,7 @@ createTruncatedLine(width: number, ellipsisMode: EllipsisMode, ellipsis: string)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| width | number | 是 | 截断后的行宽度，浮点数。 |
+| width | number | 是 | 截断后的行宽度，浮点数，单位为物理像素px。 |
 | ellipsisMode | [EllipsisMode](js-apis-graphics-text.md#ellipsismode) | 是 | 截断的类型，当前仅支持头部截断START和尾部截断END。 |
 | ellipsis | string | 是 | 截断的标记字符串。 |
 
@@ -3285,54 +3748,52 @@ createTruncatedLine(width: number, ellipsisMode: EllipsisMode, ellipsis: string)
 
 **示例：**
 
-```
-1. import { drawing, text, common2D } from '@kit.ArkGraphics2D'
-2. import { image } from '@kit.ImageKit'
+```ts
+import { drawing, text } from '@kit.ArkGraphics2D'
+import { image } from '@kit.ImageKit'
 
-4. function textFunc(pixelmap: PixelMap) {
-5. let canvas = new drawing.Canvas(pixelmap);
-6. let truncatedTextLine = lines[0].createTruncatedLine(100, text.EllipsisMode.START, "...");
-7. truncatedTextLine.paint(canvas, 0, 100);
-8. }
+function textFunc(pixelmap: PixelMap) {
+  let canvas = new drawing.Canvas(pixelmap);
+  let truncatedTextLine = lines[0].createTruncatedLine(100, text.EllipsisMode.START, "...");
+  truncatedTextLine.paint(canvas, 0, 100);
+}
 
-10. @Entry
-11. @Component
-12. struct Index {
-13. @State pixelmap?: PixelMap = undefined;
-14. fun: Function = textFunc;
-15. build() {
-16. Column() {
-17. Image(this.pixelmap).width(200).height(200);
-18. Button().onClick(() => {
-19. if (this.pixelmap == undefined) {
-20. const color: ArrayBuffer = new ArrayBuffer(160000);
-21. let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 200, width: 200 } }
-22. this.pixelmap = image.createPixelMapSync(color, opts);
-23. }
-24. this.fun(this.pixelmap);
-25. })
-26. }
-27. }
-28. }
+@Entry
+@Component
+struct Index {
+  @State pixelmap?: PixelMap = undefined;
+  fun: Function = textFunc;
+  build() {
+    Column() {
+      Image(this.pixelmap).width(200).height(200);
+      Button().onClick(() => {
+        if (this.pixelmap == undefined) {
+          const color: ArrayBuffer = new ArrayBuffer(160000);
+          let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 200, width: 200 } }
+          this.pixelmap = image.createPixelMapSync(color, opts);
+        }
+        this.fun(this.pixelmap);
+      })
+    }
+  }
+}
 ```
 
 ### getTypographicBounds18+
-
-PhonePC/2in1TabletTVWearable
 
 getTypographicBounds(): TypographicBounds
 
 获取文本行的排版边界。文本行排版边界与排版字体、排版字号有关，与字符本身无关。例如字符串为" a b "，'a'字符前面有1个空格，'b'字符后面有1个空格，排版边界就包括行首和末尾空格的边界。例如字符串为"j"或"E"，排版边界相同，即与字符本身无关。
 
-说明
+**说明** 
 
 示意图展示了字符串为" a b "的排版边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/7t5JYE2eTjauUgQkIorwtg/zh-cn_image_0000002589327289.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/sbggEvD2TOCQmlwvlTP72Q/zh-cn_image_0000002736436249.png)
 
 示意图展示了字符串为"j"或"E"的排版边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/ES4SLHHIS5GwSMKgamr_0A/zh-cn_image_0000002589247229.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/waKNJBYVTLiBcyB2e8oZIA/zh-cn_image_0000002706837098.png)
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
@@ -3346,28 +3807,26 @@ getTypographicBounds(): TypographicBounds
 
 **示例：**
 
-```
-1. let bounds = lines[0].getTypographicBounds();
-2. console.info('textLine ascent:' + bounds.ascent + ', descent:' + bounds.descent + ', leading:' + bounds.leading + ', width:' + bounds.width);
+```ts
+let bounds = lines[0].getTypographicBounds();
+console.info('textLine ascent:' + bounds.ascent + ', descent:' + bounds.descent + ', leading:' + bounds.leading + ', width:' + bounds.width);
 ```
 
 ### getImageBounds18+
-
-PhonePC/2in1TabletTVWearable
 
 getImageBounds(): common2D.Rect
 
 获取文本行的图像边界。文本行图像边界与排版字体、排版字号、字符本身都有关，相当于视觉边界。例如字符串为" a b "，'a'字符前面有1个空格，'b'字符后面有1个空格，用户在界面上只能看到"a b"，图像边界即为不包括带行首和末尾空格的边界。例如字符串为"j"或"E"，视觉边界不同，即与字符本身有关，"j"字符串的视觉边界宽度小于"E"字符串的视觉边界宽度，"j"字符串的视觉边界高度大于"E"字符串的视觉边界高度。
 
-说明
+**说明** 
 
 示意图展示了字符串为" a b "的图像边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/cBJTc-frQhaJq8-L_M_Xpw/zh-cn_image_0000002558767422.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/cZBbsadATFu5b-Ila7HyLg/zh-cn_image_0000002736316207.png)
 
 示意图展示了字符串为"j"或"E"的图像边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/UnEq232qTc6ClvWnc4f3wQ/zh-cn_image_0000002558607764.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/U3OsIuOGS8Wff3Md5CJCpw/zh-cn_image_0000002706677162.png)
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
@@ -3377,17 +3836,15 @@ getImageBounds(): common2D.Rect
 
 | 类型 | 说明 |
 | --- | --- |
-| [common2D.Rect](js-apis-graphics-common2d.md#rect) | 文本行的图像边界。 |
+| [common2D.Rect](js-apis-graphics-common2d.md#rect) | 文本行的图像边界，单位为物理像素px。 |
 
 **示例：**
 
-```
-1. let imageBounds = lines[0].getImageBounds();
+```ts
+let imageBounds = lines[0].getImageBounds();
 ```
 
 ### getTrailingSpaceWidth18+
-
-PhonePC/2in1TabletTVWearable
 
 getTrailingSpaceWidth(): number
 
@@ -3401,17 +3858,15 @@ getTrailingSpaceWidth(): number
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 文本行尾部空白字符的宽度，浮点数。 |
+| number | 文本行尾部空白字符的宽度，浮点数，单位为物理像素px。 |
 
 **示例：**
 
-```
-1. let trailingSpaceWidth = lines[0].getTrailingSpaceWidth();
+```ts
+let trailingSpaceWidth = lines[0].getTrailingSpaceWidth();
 ```
 
 ### getStringIndexForPosition18+
-
-PhonePC/2in1TabletTVWearable
 
 getStringIndexForPosition(point: common2D.Point): number
 
@@ -3425,7 +3880,7 @@ getStringIndexForPosition(point: common2D.Point): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| point | [common2D.Point](js-apis-graphics-common2d.md#point12) | 是 | 要查找索引的位置。 |
+| point | [common2D.Point](js-apis-graphics-common2d.md#point12) | 是 | 要查找字符索引的坐标位置，坐标相对于文本行的左上角原点，单位为物理像素px。其中x为水平坐标，y为垂直坐标。 |
 
 **返回值：**
 
@@ -3435,14 +3890,13 @@ getStringIndexForPosition(point: common2D.Point): number
 
 **示例：**
 
-```
-1. let point : common2D.Point = { x: 15.0, y: 2.0 };
-2. let index = lines[0].getStringIndexForPosition(point);
+```ts
+import { common2D } from '@kit.ArkGraphics2D'
+let point : common2D.Point = { x: 15.0, y: 2.0 };
+let index = lines[0].getStringIndexForPosition(point);
 ```
 
 ### getOffsetForStringIndex18+
-
-PhonePC/2in1TabletTVWearable
 
 getOffsetForStringIndex(index: number): number
 
@@ -3462,17 +3916,15 @@ getOffsetForStringIndex(index: number): number
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 给定字符串索引处的偏移量，浮点数。 |
+| number | 给定字符串索引处的偏移量，浮点数，单位为物理像素px。 |
 
 **示例：**
 
-```
-1. let offset = lines[0].getOffsetForStringIndex(3);
+```ts
+let offset = lines[0].getOffsetForStringIndex(3);
 ```
 
 ### enumerateCaretOffsets18+
-
-PhonePC/2in1TabletTVWearable
 
 enumerateCaretOffsets(callback: CaretOffsetsCallback): void
 
@@ -3490,17 +3942,14 @@ enumerateCaretOffsets(callback: CaretOffsetsCallback): void
 
 **示例：**
 
-```
-1. function callback(offset: number, index: number, leadingEdge: boolean): boolean {
-2. console.info('textLine: offset: ' + offset + ', index: ' + index + ', leadingEdge: ' + leadingEdge);
-3. return index > 50;
-4. }
-5. lines[0].enumerateCaretOffsets(callback);
+```ts
+lines[0].enumerateCaretOffsets((offset: number, index: number, leadingEdge: boolean): boolean => {
+  console.info('textLine: offset: ' + offset + ', index: ' + index + ', leadingEdge: ' + leadingEdge);
+  return index > 50;
+});
 ```
 
 ### getAlignmentOffset18+
-
-PhonePC/2in1TabletTVWearable
 
 getAlignmentOffset(alignmentFactor: number, alignmentWidth: number): number
 
@@ -3515,31 +3964,27 @@ getAlignmentOffset(alignmentFactor: number, alignmentWidth: number): number
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | alignmentFactor | number | 是 | 对齐因子，即对齐的程度，浮点数。小于等于0.0表示左对齐，大于0.0小于0.5表示偏左对齐，0.5表示居中对齐，大于0.5小于1.0表示偏右对齐，大于等于1.0表示右对齐。 |
-| alignmentWidth | number | 是 | 对齐宽度，即文本行的宽度，浮点数。小于文本行的实际宽度时，返回0。 |
+| alignmentWidth | number | 是 | 对齐宽度，即文本行的宽度，浮点数，单位为物理像素px。小于文本行的实际宽度时，返回0。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 计算得到的对齐所需偏移量，浮点数。 |
+| number | 计算得到的对齐所需偏移量，浮点数，单位为物理像素px。 |
 
 **示例：**
 
-```
-1. let alignmentOffset = lines[0].getAlignmentOffset(0.5, 500);
+```ts
+let alignmentOffset = lines[0].getAlignmentOffset(0.5, 500);
 ```
 
 ## Run
 
-PhonePC/2in1TabletTVWearable
-
-文本排版单元。
+文本排版单元，表示一段具有相同样式属性的连续文本片段。Run由[TextLine](js-apis-graphics-text.md#textline)类的[getGlyphRuns()](js-apis-graphics-text.md#getglyphruns)接口获取。
 
 下列API示例中都需先使用[TextLine](js-apis-graphics-text.md#textline)类的[getGlyphRuns()](js-apis-graphics-text.md#getglyphruns)接口获取Run对象实例，再通过此实例调用对应方法。
 
 ### getGlyphCount
-
-PhonePC/2in1TabletTVWearable
 
 getGlyphCount(): number
 
@@ -3557,13 +4002,11 @@ getGlyphCount(): number
 
 **示例：**
 
-```
-1. let glyphs = runs[0].getGlyphCount();
+```ts
+let glyphs = runs[0].getGlyphCount();
 ```
 
 ### getGlyphs
-
-PhonePC/2in1TabletTVWearable
 
 getGlyphs(): Array<number>
 
@@ -3581,13 +4024,11 @@ getGlyphs(): Array<number>
 
 **示例：**
 
-```
-1. let glyph = runs[0].getGlyphs();
+```ts
+let glyph = runs[0].getGlyphs();
 ```
 
 ### getGlyphs18+
-
-PhonePC/2in1TabletTVWearable
 
 getGlyphs(range: Range): Array<number>
 
@@ -3601,7 +4042,7 @@ getGlyphs(range: Range): Array<number>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| range | [Range](js-apis-graphics-text.md#range) | 是 | 要获取的字形序号范围，range.start表示范围开始的位置，range.end表示范围的长度，如果长度是0表示从范围range.start开始获取到渲染块结束。当range.end、range.start为负数，或者传入null、undefined时，该方法将返回undefined。 |
+| range | [Range](js-apis-graphics-text.md#range) | 是 | 要获取的字形序号范围，range.start表示范围开始的位置，range.end表示范围的长度，当range.end为0时表示从range.start开始获取到渲染块结束。当range.end、range.start为负数，或者传入null、undefined时，该方法将返回undefined。 |
 
 **返回值：**
 
@@ -3611,35 +4052,33 @@ getGlyphs(range: Range): Array<number>
 
 **示例：**
 
-```
-1. import { text } from '@kit.ArkGraphics2D'
+```ts
+import { text } from '@kit.ArkGraphics2D'
 
-3. function textFunc() {
-4. let glyphs = runs[0].getGlyphs(); // 获取渲染块全部字形序号
-5. let glyphsRange = runs[0].getGlyphs({start:1, end:2}); // 获取渲染块从起始位置1开始，长度为2范围内的字形序号
-6. glyphsRange = runs[0].getGlyphs({start:-1, end:2}); // -1是非法参数，将返回undefined
-7. glyphsRange = runs[0].getGlyphs({start:0, end:-10}); // -10是非法参数，将返回undefined
-8. let glyphsNull = runs[0].getGlyphs(null); // null是非法参数，将返回undefined
-9. let glyphsUndefined = runs[0].getGlyphs(undefined); // undefined是非法参数，将返回undefined
-10. }
+function textFunc() {
+  let glyphs = runs[0].getGlyphs(); // 获取渲染块全部字形序号
+  let glyphsRange = runs[0].getGlyphs({start:1, end:2}); // 获取渲染块从起始位置1开始，长度为2范围内的字形序号
+  glyphsRange = runs[0].getGlyphs({start:-1, end:2}); // -1是非法参数，将返回undefined
+  glyphsRange = runs[0].getGlyphs({start:0, end:-10}); // -10是非法参数，将返回undefined
+  let glyphsNull = runs[0].getGlyphs(null); // null是非法参数，将返回undefined
+  let glyphsUndefined = runs[0].getGlyphs(undefined); // undefined是非法参数，将返回undefined
+}
 
-12. @Entry
-13. @Component
-14. struct Index {
-15. fun: Function = textFunc;
-16. build() {
-17. Column() {
-18. Button().onClick(() => {
-19. this.fun();
-20. })
-21. }
-22. }
-23. }
+@Entry
+@Component
+struct Index {
+  fun: Function = textFunc;
+  build() {
+    Column() {
+      Button().onClick(() => {
+        this.fun();
+      })
+    }
+  }
+}
 ```
 
 ### getPositions
-
-PhonePC/2in1TabletTVWearable
 
 getPositions(): Array<common2D.Point>
 
@@ -3657,13 +4096,11 @@ getPositions(): Array<common2D.Point>
 
 **示例：**
 
-```
-1. let positions = runs[0].getPositions();
+```ts
+let positions = runs[0].getPositions();
 ```
 
 ### getPositions18+
-
-PhonePC/2in1TabletTVWearable
 
 getPositions(range: Range): Array<common2D.Point>
 
@@ -3687,35 +4124,33 @@ getPositions(range: Range): Array<common2D.Point>
 
 **示例：**
 
-```
-1. import { text } from '@kit.ArkGraphics2D'
+```ts
+import { text } from '@kit.ArkGraphics2D'
 
-3. function textFunc() {
-4. let positions = runs[0].getPositions(); // 获取渲染块全部字形位置
-5. let positionsRange = runs[0].getPositions({start:1, end:2}); // 获取渲染块从起始位置1开始, 长度为2范围内的字形位置
-6. positionsRange = runs[0].getPositions({start:-1, end:2}); // -1是非法参数，将返回undefined
-7. positionsRange = runs[0].getPositions({start:0, end:-10}); // -10是非法参数，将返回undefined
-8. let positionsNull = runs[0].getPositions(null); // null是非法参数，将返回undefined
-9. let positionsUndefined = runs[0].getPositions(undefined); // undefined是非法参数，将返回undefined
-10. }
+function textFunc() {
+  let positions = runs[0].getPositions(); // 获取渲染块全部字形位置
+  let positionsRange = runs[0].getPositions({start:1, end:2}); // 获取渲染块从起始位置1开始, 长度为2范围内的字形位置
+  positionsRange = runs[0].getPositions({start:-1, end:2}); // -1是非法参数，将返回undefined
+  positionsRange = runs[0].getPositions({start:0, end:-10}); // -10是非法参数，将返回undefined
+  let positionsNull = runs[0].getPositions(null); // null是非法参数，将返回undefined
+  let positionsUndefined = runs[0].getPositions(undefined); // undefined是非法参数，将返回undefined
+}
 
-12. @Entry
-13. @Component
-14. struct Index {
-15. fun: Function = textFunc;
-16. build() {
-17. Column() {
-18. Button().onClick(() => {
-19. this.fun();
-20. })
-21. }
-22. }
-23. }
+@Entry
+@Component
+struct Index {
+  fun: Function = textFunc;
+  build() {
+    Column() {
+      Button().onClick(() => {
+        this.fun();
+      })
+    }
+  }
+}
 ```
 
 ### getOffsets
-
-PhonePC/2in1TabletTVWearable
 
 getOffsets(): Array<common2D.Point>
 
@@ -3733,13 +4168,11 @@ getOffsets(): Array<common2D.Point>
 
 **示例：**
 
-```
-1. let offsets = runs[0].getOffsets();
+```ts
+let offsets = runs[0].getOffsets();
 ```
 
 ### getFont
-
-PhonePC/2in1TabletTVWearable
 
 getFont(): drawing.Font
 
@@ -3757,13 +4190,11 @@ getFont(): drawing.Font
 
 **示例：**
 
-```
-1. let font = runs[0].getFont();
+```ts
+let font = runs[0].getFont();
 ```
 
 ### paint
-
-PhonePC/2in1TabletTVWearable
 
 paint(canvas: drawing.Canvas, x: number, y: number): void
 
@@ -3778,46 +4209,43 @@ paint(canvas: drawing.Canvas, x: number, y: number): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | canvas | [drawing.Canvas](arkts-apis-graphics-drawing-canvas.md) | 是 | 绘制的目标 canvas。 |
-| x | number | 是 | 绘制的左上角位置的横坐标，浮点数。 |
-| y | number | 是 | 绘制的左上角位置的纵坐标。浮点数。 |
+| x | number | 是 | 绘制的左上角位置的横坐标，浮点数，单位为物理像素px。 |
+| y | number | 是 | 绘制的左上角位置的纵坐标，浮点数，单位为物理像素px。 |
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D'
-2. import { text } from '@kit.ArkGraphics2D'
-3. import { common2D } from '@kit.ArkGraphics2D'
-4. import { image } from '@kit.ImageKit'
+```ts
+import { drawing } from '@kit.ArkGraphics2D'
+import { text } from '@kit.ArkGraphics2D'
+import { image } from '@kit.ImageKit'
 
-6. function textFunc(pixelmap: PixelMap) {
-7. let canvas = new drawing.Canvas(pixelmap);
-8. runs[0].paint(canvas, 0, 0);
-9. }
+function textFunc(pixelmap: PixelMap) {
+  let canvas = new drawing.Canvas(pixelmap);
+  runs[0].paint(canvas, 0, 0);
+}
 
-11. @Entry
-12. @Component
-13. struct Index {
-14. @State pixelmap?: PixelMap = undefined;
-15. fun: Function = textFunc;
-16. build() {
-17. Column() {
-18. Image(this.pixelmap).width(200).height(200);
-19. Button().onClick(() => {
-20. if (this.pixelmap == undefined) {
-21. const color: ArrayBuffer = new ArrayBuffer(160000);
-22. let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 200, width: 200 } }
-23. this.pixelmap = image.createPixelMapSync(color, opts);
-24. }
-25. this.fun(this.pixelmap);
-26. })
-27. }
-28. }
-29. }
+@Entry
+@Component
+struct Index {
+  @State pixelmap?: PixelMap = undefined;
+  fun: Function = textFunc;
+  build() {
+    Column() {
+      Image(this.pixelmap).width(200).height(200);
+      Button().onClick(() => {
+        if (this.pixelmap == undefined) {
+          const color: ArrayBuffer = new ArrayBuffer(160000);
+          let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 200, width: 200 } }
+          this.pixelmap = image.createPixelMapSync(color, opts);
+        }
+        this.fun(this.pixelmap);
+      })
+    }
+  }
+}
 ```
 
 ### getStringRange18+
-
-PhonePC/2in1TabletTVWearable
 
 getStringRange(): Range
 
@@ -3835,15 +4263,13 @@ getStringRange(): Range
 
 **示例：**
 
-```
-1. let runStringRange = runs[0].getStringRange();
-2. let location = runStringRange.start;
-3. let length = runStringRange.end;
+```ts
+let runStringRange = runs[0].getStringRange();
+let location = runStringRange.start;
+let length = runStringRange.end;
 ```
 
 ### getStringIndices18+
-
-PhonePC/2in1TabletTVWearable
 
 getStringIndices(range?: Range): Array<number>
 
@@ -3867,49 +4293,47 @@ getStringIndices(range?: Range): Array<number>
 
 **示例：**
 
-```
-1. import { text } from '@kit.ArkGraphics2D'
+```ts
+import { text } from '@kit.ArkGraphics2D'
 
-3. function textFunc() {
-4. let indices = runs[0].getStringIndices(); // 获取渲染块全部字符索引
-5. let indicesRange = runs[0].getStringIndices({start:1, end:2}); // 获取渲染块从起始位置1开始, 长度为2范围内的字符索引
-6. indicesRange = runs[0].getStringIndices({start:-1, end:2}); // -1是非法参数，将返回undefined
-7. indicesRange = runs[0].getStringIndices({start:0, end:-10}); // -10是非法参数，将返回undefined
-8. let indicesNull = runs[0].getStringIndices(null); // null是非法参数，将返回undefined
-9. let indicesUndefined = runs[0].getStringIndices(undefined); // undefined是非法参数，将返回undefined
-10. }
+function textFunc() {
+  let indices = runs[0].getStringIndices(); // 获取渲染块全部字符索引
+  let indicesRange = runs[0].getStringIndices({start:1, end:2}); // 获取渲染块从起始位置1开始, 长度为2范围内的字符索引
+  indicesRange = runs[0].getStringIndices({start:-1, end:2}); // -1是非法参数，将返回undefined
+  indicesRange = runs[0].getStringIndices({start:0, end:-10}); // -10是非法参数，将返回undefined
+  let indicesNull = runs[0].getStringIndices(null); // null是非法参数，将返回undefined
+  let indicesUndefined = runs[0].getStringIndices(undefined); // undefined是非法参数，将返回undefined
+}
 
-12. @Entry
-13. @Component
-14. struct Index {
-15. fun: Function = textFunc;
-16. build() {
-17. Column() {
-18. Button().onClick(() => {
-19. this.fun();
-20. })
-21. }
-22. }
-23. }
+@Entry
+@Component
+struct Index {
+  fun: Function = textFunc;
+  build() {
+    Column() {
+      Button().onClick(() => {
+        this.fun();
+      })
+    }
+  }
+}
 ```
 
 ### getImageBounds18+
-
-PhonePC/2in1TabletTVWearable
 
 getImageBounds(): common2D.Rect
 
 获取该排版单元的图像边界，图像边界与排版字体、排版字号、字符本身都有关，相当于视觉边界，例如字符串为" a b "，'a'字符前面有1个空格，'b'字符后面有1个空格，用户在界面上只能看到"a b"，图像边界即为不包括带行首和末尾空格的边界。
 
-说明
+**说明** 
 
 示意图展示了字符串为" a b "的图像边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/3l5_QOIwSq6fEwbGJP80LA/zh-cn_image_0000002558767422.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/j9ZWD5LKSqCqcWO-82IYkw/zh-cn_image_0000002736316207.png)
 
 示意图展示了字符串为"j"或"E"的图像边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/XEnR4QXoQte1yv1ph6QW4Q/zh-cn_image_0000002558607764.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/VW68T-7UThaR-GeYqlQEWg/zh-cn_image_0000002706677162.png)
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
@@ -3919,31 +4343,29 @@ getImageBounds(): common2D.Rect
 
 | 类型 | 说明 |
 | --- | --- |
-| [common2D.Rect](js-apis-graphics-common2d.md#rect) | 该排版单元的图像边界。 |
+| [common2D.Rect](js-apis-graphics-common2d.md#rect) | 该排版单元的图像边界，单位为物理像素px。 |
 
 **示例：**
 
-```
-1. let bounds = runs[0].getImageBounds();
+```ts
+let bounds = runs[0].getImageBounds();
 ```
 
 ### getTypographicBounds18+
-
-PhonePC/2in1TabletTVWearable
 
 getTypographicBounds(): TypographicBounds
 
 获取该排版单元的排版边界，排版边界与排版字体、排版字号有关，与字符本身无关，例如字符串为" a b "，'a'字符前面有1个空格，'b'字符后面有1个空格，排版边界就包括行首和末尾空格的边界。
 
-说明
+**说明** 
 
 示意图展示了字符串为" a b "的排版边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/yWZA2xF_TzqrwHODJsfM-A/zh-cn_image_0000002589327289.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/bQWx9EJaRKmtod2UbKrW6w/zh-cn_image_0000002736436249.png)
 
 示意图展示了字符串为"j"或"E"的排版边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/-asvUSGrRiWrT0LVlspQ6g/zh-cn_image_0000002589247229.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/6cQfPDfdTdyAyVy8rBlOhg/zh-cn_image_0000002706837098.png)
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
@@ -3957,13 +4379,11 @@ getTypographicBounds(): TypographicBounds
 
 **示例：**
 
-```
-1. let typographicBounds = runs[0].getTypographicBounds();
+```ts
+let typographicBounds = runs[0].getTypographicBounds();
 ```
 
 ### getTextDirection20+
-
-PhonePC/2in1TabletTVWearable
 
 getTextDirection(): TextDirection
 
@@ -3981,13 +4401,11 @@ getTextDirection(): TextDirection
 
 **示例：**
 
-```
-1. let textDirection = runs[0].getTextDirection();
+```ts
+let textDirection = runs[0].getTextDirection();
 ```
 
 ### getAdvances20+
-
-PhonePC/2in1TabletTVWearable
 
 getAdvances(range: Range): Array<common2D.Point>
 
@@ -4007,20 +4425,97 @@ getAdvances(range: Range): Array<common2D.Point>
 
 | 类型 | 说明 |
 | --- | --- |
-| Array<[common2D.Point](js-apis-graphics-common2d.md#point12)> | 返回该排版单元中每个字形相对于水平方向的字形宽度数组。其中，[common2D.Point](js-apis-graphics-common2d.md#point12)中的x值代表每个字形相对于水平方向的字形宽度，y值为保留字段，默认返回0。 |
+| Array<[common2D.Point](js-apis-graphics-common2d.md#point12)> | 返回该排版单元中每个字形相对于水平方向的字形宽度数组。其中，[common2D.Point](js-apis-graphics-common2d.md#point12)中的x值代表每个字形相对于水平方向的字形宽度，单位为物理像素px，y值为保留字段，默认返回0。 |
 
 **示例：**
 
+```ts
+let advancesRange = runs[0].getAdvances({start:1, end:2}); // 获取渲染块从起始位置1开始, 长度为2范围内的字形宽度
+advancesRange = runs[0].getAdvances({start:-1, end:2}); // -1是非法参数，将返回undefined
+advancesRange = runs[0].getAdvances({start:0, end:-10}); // -10是非法参数，将返回undefined
+let advancesNull = runs[0].getAdvances(null); // null是非法参数，将返回undefined
 ```
-1. let advancesRange = runs[0].getAdvances({start:1, end:2}); // 获取渲染块从起始位置1开始, 长度为2范围内的字形宽度
-2. advancesRange = runs[0].getAdvances({start:-1, end:2}); // -1是非法参数，将返回undefined
-3. advancesRange = runs[0].getAdvances({start:0, end:-10}); // -10是非法参数，将返回undefined
-4. let advancesNull = runs[0].getAdvances(null); // null是非法参数，将返回undefined
+
+### getTextStyle
+
+getTextStyle(): TextStyle
+
+获取该排版单元的文本样式。
+
+**系统能力**：SystemCapability.Graphics.Drawing
+
+**元服务API**：从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**起始版本：** 26.0.0
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [TextStyle](js-apis-graphics-text.md#textstyle) | 该排版单元的文本样式。  **说明：**  1.textStyle.color、textStyle.textShadows.color、textStyle.backgroundRect.color、textStyle.decoration.color属性：返回32位无符号整型颜色数值。示例：返回值4278190080，对应纯黑色十六进制颜色值0xFF000000，等价于[common2D.Color](js-apis-graphics-common2d.md#color)对象参数：alpha=255、red=0、green=0、blue=0，示例中提供numberToRGBA转换方法作为参考。  2.textStyle.ellipsis和textStyle.ellipsisMode为段落属性，不支持通过本接口获取，应使用[getParagraphStyle()](js-apis-graphics-text.md#getparagraphstyle)。 |
+
+**示例：**
+
+```ts
+// Index.ets
+import { text } from "@kit.ArkGraphics2D"
+import { common2D } from '@kit.ArkGraphics2D'
+import { JSON } from "@kit.ArkTS";
+
+function textFunc() {
+  let textStyle: text.TextStyle = {
+    color: { alpha: 255, red: 255, green: 0, blue: 0 },
+    fontSize: 33,
+  };
+  let paragraphStyle: text.ParagraphStyle = {
+    textStyle: textStyle,
+    align: text.TextAlign.END,
+  };
+  let fontCollection = new text.FontCollection();
+  let paragraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+  paragraphBuilder.addText("Hello World");
+  let paragraph = paragraphBuilder.build();
+  paragraph.layoutSync(50);
+  let lines = paragraph.getTextLines();
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    let runs = line.getGlyphRuns();
+    for (let j = 0; j < runs.length; j++) {
+      const run = runs[j];
+      const runStyle = run.getTextStyle();
+      console.info(`print line [${i}] run [${j}] textStyle: ${JSON.stringify(runStyle)}`);
+      if (runStyle?.color != undefined && typeof runStyle?.color == 'number') {
+        let textColor: common2D.Color = numberToRGBA(runStyle?.color);
+        console.info(`Print text color ARGB: ${textColor.alpha}, ${textColor.red}, ${textColor.green}, ${textColor.blue}`);
+      }
+    }
+  }
+}
+
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Button("Click").onClick((e: ClickEvent) => {
+        textFunc();
+      })
+    }
+  }
+}
+
+function numberToRGBA(colorNum: number): common2D.Color {
+  const alpha = (colorNum >>> 24) & 0xFF;
+  const red = (colorNum >>> 16) & 0xFF;
+  const green = (colorNum >>> 8) & 0xFF;
+  const blue = colorNum & 0xFF;
+  return { alpha: alpha, red: red, green: green, blue: blue };
+}
 ```
 
 ## TextTab18+
-
-PhonePC/2in1TabletTVWearable
 
 段落风格的文本制表符，储存了对齐方式和位置。
 
@@ -4030,26 +4525,24 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| alignment | [TextAlign](js-apis-graphics-text.md#textalign) | 否 | 否 | 段落中制表符之后的文本对齐方式，支持设置[TextAlign](js-apis-graphics-text.md#textalign)的LEFT左对齐、RIGHT右对齐和CENTER居中对齐方式，其他枚举值为左对齐，默认为左对齐。 |
+| alignment | [TextAlign](js-apis-graphics-text.md#textalign) | 否 | 否 | 段落中制表符之后的文本对齐方式，支持设置[TextAlign](js-apis-graphics-text.md#textalign)的LEFT左对齐、RIGHT右对齐和CENTER居中对齐方式，未列出的枚举值将视为左对齐，默认为左对齐。 |
 | location | number | 否 | 否 | 制表符之后的文本对齐位置，浮点数，单位为物理像素px，最小值为1.0，当该值小于1.0时，该制表符会被替换为一个空格。 |
 
 **示例：**
 
 alignment为CENTER，location为200，文本为"12/t345"：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/P5RENrTxTnOtPokQ3_yU3Q/zh-cn_image_0000002589327291.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/B_HT2VLARkWr8b4gLYZDRw/zh-cn_image_0000002736436251.png)
 
 alignment为LEFT，location为100，文本为"abccccccccc/tdef"：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/mh4mXiCOSA6Cicmz0XgKVA/zh-cn_image_0000002589247231.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/059rp384RECHrzxwQdjBBQ/zh-cn_image_0000002706837100.png)
 
 alignment为RIGHT，location为100，文本为"aabcdef/tg hi/tjkl/tmno/tp qr"：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/iyA4LbK7TomoCxfiJTT2tg/zh-cn_image_0000002558767424.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/slJddKufTCGsO6vgJ1tZAA/zh-cn_image_0000002736316209.png)
 
 ## SystemFontType14+
-
-PhonePC/2in1TabletTVWearable
 
 字体类型枚举，通过位或运算可实现组合类型。
 

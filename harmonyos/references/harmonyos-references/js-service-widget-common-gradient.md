@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: 渐变样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 组件通用信息 > 渐变样式
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:57+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:3456a525f9755afd2bb38d30ac9dad70f699b77a3b0fb3f364f575ea018f168d
+scraped_at: 2026-09-02T15:01:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:362e790133a193ca813df0674a70f2dfb2f3e677b8df68359ab8e2bf0da6c163
 ---
 
 组件普遍支持在style或css中设置渐变样式，可以平稳过渡两个或多个指定的颜色。
 
-说明
+**说明** 
 
 从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -18,27 +18,21 @@ content_hash: sha256:3456a525f9755afd2bb38d30ac9dad70f699b77a3b0fb3f364f575ea018
 
 ## 线性渐变/重复线性渐变
 
-PhonePC/2in1TabletTVWearable
-
 使用渐变样式，需要定义过渡方向和过渡颜色。
 
 ### 过渡方向
-
-PhonePC/2in1TabletTVWearable
 
 通过direction或者angle指定过渡方向。
 
 * direction：进行方向渐变。
 * angle：进行角度渐变。
 
-```
-1. background: linear-gradient(direction/angle, color, color, ...);
-2. background: repeating-linear-gradient(direction/angle, color, color, ...);
+```css
+background: linear-gradient(direction/angle, color, color, ...);
+background: repeating-linear-gradient(direction/angle, color, color, ...);
 ```
 
 ### 过渡颜色
-
-PhonePC/2in1TabletTVWearable
 
 支持以下四种方式：#ff0000、#ffff0000、rgb(255, 0, 0)、rgba(255, 0, 0, 1)，需要指定至少两种颜色。
 
@@ -54,37 +48,37 @@ PhonePC/2in1TabletTVWearable
 
 1. 默认渐变方向为从上向下渐变。
 
-   ```
-   1. #gradient {
-   2. height: 300px;
-   3. width: 600px;
-   4. /* 从顶部开始向底部由红色向绿色渐变 */
-   5. background: linear-gradient(red, #00ff00);
-   6. }
+   ```css
+   #gradient {
+     height: 300px;
+     width: 600px;
+     /* 从顶部开始向底部由红色向绿色渐变 */
+     background: linear-gradient(red, #00ff00);
+   }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/w3aZV432SHGbST-0C0KdWA/zh-cn_image_0000002558607288.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/vL6qQ23gSraJYcUDyi7icg/zh-cn_image_0000002736315721.png)
 2. 45度夹角渐变。
 
-   ```
-   1. /* 45度夹角，从红色渐变到绿色 */
-   2. background: linear-gradient(45deg, rgb(255, 0, 0),rgb(0, 255, 0));
+   ```css
+   /* 45度夹角，从红色渐变到绿色 */
+   background: linear-gradient(45deg, rgb(255, 0, 0),rgb(0, 255, 0));
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/IA2jpVGdQH-FW6RkdaCCQQ/zh-cn_image_0000002589326817.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/zX6xzdxzQuyAQHfJmUGIKQ/zh-cn_image_0000002706676678.png)
 3. 设置方向从左向右渐变。
 
-   ```
-   1. /* 从左向右渐变，在距离左边90px和距离左边360px (600*0.6) 之间270px宽度形成渐变 */
-   2. background: linear-gradient(to right, rgb(255, 0, 0) 90px, rgb(0, 255, 0) 60%);
+   ```css
+   /* 从左向右渐变，在距离左边90px和距离左边360px (600*0.6) 之间270px宽度形成渐变 */
+   background: linear-gradient(to right, rgb(255, 0, 0) 90px, rgb(0, 255, 0) 60%);
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/kDOwjDuRThq0daq5bvdgpA/zh-cn_image_0000002589246757.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/lD1B2bNuQliUFHESIbyvOA/zh-cn_image_0000002736435769.png)
 4. 重复渐变。
 
-   ```
-   1. /* 从左向右重复渐变，重复渐变区域30px（60-30）透明度0.5 */
-   2. background: repeating-linear-gradient(to right, rgba(255, 255, 0, 1) 30vp,rgba(0, 0, 255, .5) 60vp);
+   ```css
+   /* 从左向右重复渐变，重复渐变区域30vp（60-30）透明度0.5 */
+   background: repeating-linear-gradient(to right, rgba(255, 255, 0, 1) 30vp,rgba(0, 0, 255, .5) 60vp);
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/oGzFTfBWTxGMDuJJukkjPw/zh-cn_image_0000002558766950.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/zbem1BJTR6-CnZ7RGnsefw/zh-cn_image_0000002706836614.png)

@@ -1,14 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-3des-sym-encrypt-decrypt-ecb
 title: 使用3DES对称密钥加解密(ArkTS)
-breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密 > 加解密开发指导 > 使用3DES对称密钥加解密(ArkTS)
+breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密介绍 > 使用3DES对称密钥加解密(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:25+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:cf0b6aa6c7c047c28309a00e1240646c724431c02a034430143d1aa8a9b7baaa
+scraped_at: 2026-09-02T14:59:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:879f213f1a58d79ea10442351983b6e10749b713af5087468c76d60e352171af
 ---
 
-对应的算法规格请查看[对称密钥加解密算法规格：3DES](crypto-sym-encrypt-decrypt-spec.md#section3des)。
+对应的算法规格请查看[对称密钥加解密算法规格：3DES](crypto-encryption-decryption.md#section3des)。
 
 ## 开发步骤
 
@@ -16,7 +16,7 @@ content_hash: sha256:cf0b6aa6c7c047c28309a00e1240646c724431c02a034430143d1aa8a9b
 
 1. 调用[cryptoFramework.createSymKeyGenerator](../harmonyos-references/js-apis-cryptoframework.md#cryptoframeworkcreatesymkeygenerator)和[SymKeyGenerator.convertKey](../harmonyos-references/js-apis-cryptoframework.md#convertkey-1)，生成密钥算法为3DES、密钥长度为192位的对称密钥（SymKey）。
 
-   如何生成3DES对称密钥，开发者可参考下文示例，并结合[对称密钥生成和转换规格：3DES](crypto-sym-key-generation-conversion-spec.md#section3des)和[指定二进制数据转换对称密钥](crypto-convert-binary-data-to-sym-key.md)理解，参考文档与当前示例可能存在入参差异，请在阅读时注意区分。
+   如何生成3DES对称密钥，开发者可参考下文示例，并结合[对称密钥生成和转换规格：3DES](crypto-key-generation-conversion.md#section3des)和[指定二进制数据转换对称密钥](crypto-convert-binary-data-to-sym-key.md)理解，参考文档与当前示例可能存在入参差异，请在阅读时注意区分。
 2. 调用[cryptoFramework.createCipher](../harmonyos-references/js-apis-cryptoframework.md#cryptoframeworkcreatecipher)，指定字符串参数'3DES192|ECB|PKCS7'，创建对称密钥类型为3DES192、分组模式为ECB、填充模式为PKCS7的Cipher实例，用于完成加密操作。
 3. 调用[Cipher.init](../harmonyos-references/js-apis-cryptoframework.md#init-1)，设置模式为加密（CryptoMode.ENCRYPT\_MODE），指定加密密钥（SymKey），初始化加密Cipher实例。
 
@@ -38,6 +38,8 @@ content_hash: sha256:cf0b6aa6c7c047c28309a00e1240646c724431c02a034430143d1aa8a9b
 3. 调用[Cipher.update](../harmonyos-references/js-apis-cryptoframework.md#update-1)，更新数据（密文）。
 4. 调用[Cipher.doFinal](../harmonyos-references/js-apis-cryptoframework.md#dofinal-1)，获取解密后的数据。
 
+3DES解密失败返回错误码17630001可参考[使用DES/3DES算法解密时调用doFinal失败](../harmonyos-references/errorcode-crypto-framework.md#使用des3des算法解密时调用dofinal失败)
+
 ## 开发示例
 
 当前示例以ECB分组模式为例，不需要设置加解密参数IV。
@@ -46,102 +48,98 @@ content_hash: sha256:cf0b6aa6c7c047c28309a00e1240646c724431c02a034430143d1aa8a9b
 
 * 异步方法示例：
 
+  ```typescript
+  import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  import { buffer } from '@kit.ArkTS';
+
+  // 加密消息
+  async function encryptMessagePromise(symKey: cryptoFramework.SymKey, plainText: cryptoFramework.DataBlob) {
+    let cipher = cryptoFramework.createCipher('3DES192|ECB|PKCS7');
+    await cipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, null);
+    let encryptData = await cipher.doFinal(plainText);
+    return encryptData;
+  }
+
+  // 解密消息
+  async function decryptMessagePromise(symKey: cryptoFramework.SymKey, cipherText: cryptoFramework.DataBlob) {
+    let decoder = cryptoFramework.createCipher('3DES192|ECB|PKCS7');
+    await decoder.init(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, null);
+    let decryptData = await decoder.doFinal(cipherText);
+    return decryptData;
+  }
+
+  async function genSymKeyByData(symKeyData: Uint8Array) {
+    let symKeyBlob: cryptoFramework.DataBlob = { data: symKeyData };
+    let symGenerator = cryptoFramework.createSymKeyGenerator('3DES192');
+    let symKey = await symGenerator.convertKey(symKeyBlob);
+    console.info('convertKey result: success.');
+    return symKey;
+  }
+
+  async function main() {
+    let keyData =
+      new Uint8Array([238, 249, 61, 55, 128, 220, 183, 224, 139, 253, 248, 239, 239, 41, 71, 25, 235, 206, 230, 162, 249,
+        27, 234, 114]);
+    let symKey = await genSymKeyByData(keyData);
+    let message = 'This is a test';
+    let plainText: cryptoFramework.DataBlob = { data: new Uint8Array(buffer.from(message, 'utf-8').buffer) };
+    let encryptText = await encryptMessagePromise(symKey, plainText);
+    let decryptText = await decryptMessagePromise(symKey, encryptText);
+    if (plainText.data.toString() === decryptText.data.toString()) {
+      console.info('decrypt ok');
+      console.info('decrypt plainText: ' + buffer.from(decryptText.data).toString('utf-8'));
+    } else {
+      console.error('decrypt failed');
+    }
+  }
   ```
-  1. import { cryptoFramework } from '@kit.CryptoArchitectureKit';
-  2. import { buffer } from '@kit.ArkTS';
-
-  4. // 加密消息
-  5. async function encryptMessagePromise(symKey: cryptoFramework.SymKey, plainText: cryptoFramework.DataBlob) {
-  6. let cipher = cryptoFramework.createCipher('3DES192|ECB|PKCS7');
-  7. await cipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, null);
-  8. let encryptData = await cipher.doFinal(plainText);
-  9. return encryptData;
-  10. }
-
-  12. // 解密消息
-  13. async function decryptMessagePromise(symKey: cryptoFramework.SymKey, cipherText: cryptoFramework.DataBlob) {
-  14. let decoder = cryptoFramework.createCipher('3DES192|ECB|PKCS7');
-  15. await decoder.init(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, null);
-  16. let decryptData = await decoder.doFinal(cipherText);
-  17. return decryptData;
-  18. }
-
-  20. async function genSymKeyByData(symKeyData: Uint8Array) {
-  21. let symKeyBlob: cryptoFramework.DataBlob = { data: symKeyData };
-  22. let symGenerator = cryptoFramework.createSymKeyGenerator('3DES192');
-  23. let symKey = await symGenerator.convertKey(symKeyBlob);
-  24. console.info('convertKey result: success.');
-  25. return symKey;
-  26. }
-
-  28. async function main() {
-  29. let keyData =
-  30. new Uint8Array([238, 249, 61, 55, 128, 220, 183, 224, 139, 253, 248, 239, 239, 41, 71, 25, 235, 206, 230, 162, 249,
-  31. 27, 234, 114]);
-  32. let symKey = await genSymKeyByData(keyData);
-  33. let message = 'This is a test';
-  34. let plainText: cryptoFramework.DataBlob = { data: new Uint8Array(buffer.from(message, 'utf-8').buffer) };
-  35. let encryptText = await encryptMessagePromise(symKey, plainText);
-  36. let decryptText = await decryptMessagePromise(symKey, encryptText);
-  37. if (plainText.data.toString() === decryptText.data.toString()) {
-  38. console.info('decrypt ok');
-  39. console.info('decrypt plainText: ' + buffer.from(decryptText.data).toString('utf-8'));
-  40. } else {
-  41. console.error('decrypt failed');
-  42. }
-  43. }
-  ```
-
-  [3des\_ecb\_encryption\_decryption\_asynchronous.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Security/CryptoArchitectureKit/EncryptionDecryption/EncryptionDecryptionGuidance3DES/entry/src/main/ets/pages/3des_ecb_encryption_decryption_asynchronous.ets#L16-L60)
 * 同步方法示例：
 
+  ```typescript
+  import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  import { buffer } from '@kit.ArkTS';
+
+  // 加密消息
+  function encryptMessage(symKey: cryptoFramework.SymKey, plainText: cryptoFramework.DataBlob) {
+    let cipher = cryptoFramework.createCipher('3DES192|ECB|PKCS7');
+    cipher.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, null);
+    let encryptData = cipher.doFinalSync(plainText);
+    return encryptData;
+  }
+
+  // 解密消息
+  function decryptMessage(symKey: cryptoFramework.SymKey, cipherText: cryptoFramework.DataBlob) {
+    let decoder = cryptoFramework.createCipher('3DES192|ECB|PKCS7');
+    decoder.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, null);
+    let decryptData = decoder.doFinalSync(cipherText);
+    return decryptData;
+  }
+
+  function genSymKeyByData(symKeyData: Uint8Array) {
+    let symKeyBlob: cryptoFramework.DataBlob = { data: symKeyData };
+    let symGenerator = cryptoFramework.createSymKeyGenerator('3DES192');
+    let symKey = symGenerator.convertKeySync(symKeyBlob);
+    console.info('convertKeySync result: success.');
+    return symKey;
+  }
+
+  function main() {
+    let keyData =
+      new Uint8Array([238, 249, 61, 55, 128, 220, 183, 224, 139, 253, 248, 239, 239, 41, 71, 25, 235, 206, 230, 162, 249,
+        27, 234, 114]);
+    let symKey = genSymKeyByData(keyData);
+    let message = 'This is a test';
+    let plainText: cryptoFramework.DataBlob = { data: new Uint8Array(buffer.from(message, 'utf-8').buffer) };
+    let encryptText = encryptMessage(symKey, plainText);
+    let decryptText = decryptMessage(symKey, encryptText);
+    if (plainText.data.toString() === decryptText.data.toString()) {
+      console.info('decrypt ok');
+      console.info('decrypt plainText: ' + buffer.from(decryptText.data).toString('utf-8'));
+    } else {
+      console.error('decrypt failed');
+    }
+  }
   ```
-  1. import { cryptoFramework } from '@kit.CryptoArchitectureKit';
-  2. import { buffer } from '@kit.ArkTS';
-
-  4. // 加密消息
-  5. function encryptMessage(symKey: cryptoFramework.SymKey, plainText: cryptoFramework.DataBlob) {
-  6. let cipher = cryptoFramework.createCipher('3DES192|ECB|PKCS7');
-  7. cipher.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, null);
-  8. let encryptData = cipher.doFinalSync(plainText);
-  9. return encryptData;
-  10. }
-
-  12. // 解密消息
-  13. function decryptMessage(symKey: cryptoFramework.SymKey, cipherText: cryptoFramework.DataBlob) {
-  14. let decoder = cryptoFramework.createCipher('3DES192|ECB|PKCS7');
-  15. decoder.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, null);
-  16. let decryptData = decoder.doFinalSync(cipherText);
-  17. return decryptData;
-  18. }
-
-  20. function genSymKeyByData(symKeyData: Uint8Array) {
-  21. let symKeyBlob: cryptoFramework.DataBlob = { data: symKeyData };
-  22. let symGenerator = cryptoFramework.createSymKeyGenerator('3DES192');
-  23. let symKey = symGenerator.convertKeySync(symKeyBlob);
-  24. console.info('convertKeySync result: success.');
-  25. return symKey;
-  26. }
-
-  28. function main() {
-  29. let keyData =
-  30. new Uint8Array([238, 249, 61, 55, 128, 220, 183, 224, 139, 253, 248, 239, 239, 41, 71, 25, 235, 206, 230, 162, 249,
-  31. 27, 234, 114]);
-  32. let symKey = genSymKeyByData(keyData);
-  33. let message = 'This is a test';
-  34. let plainText: cryptoFramework.DataBlob = { data: new Uint8Array(buffer.from(message, 'utf-8').buffer) };
-  35. let encryptText = encryptMessage(symKey, plainText);
-  36. let decryptText = decryptMessage(symKey, encryptText);
-  37. if (plainText.data.toString() === decryptText.data.toString()) {
-  38. console.info('decrypt ok');
-  39. console.info('decrypt plainText: ' + buffer.from(decryptText.data).toString('utf-8'));
-  40. } else {
-  41. console.error('decrypt failed');
-  42. }
-  43. }
-  ```
-
-  [3des\_ecb\_encryption\_decryption\_synchronous.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Security/CryptoArchitectureKit/EncryptionDecryption/EncryptionDecryptionGuidance3DES/entry/src/main/ets/pages/3des_ecb_encryption_decryption_synchronous.ets#L16-L60)
 
 ### 设置加解密参数IV
 
@@ -149,17 +147,23 @@ content_hash: sha256:cf0b6aa6c7c047c28309a00e1240646c724431c02a034430143d1aa8a9b
 
 如果分组模式为CBC、CTR、OFB、CFB，需要参考如下设置加解密参数IV。ECB不需要设置加解密参数IV。
 
-```
-1. function genIvParamsSpec() {
-2. let ivBlob = generateRandom(8); //3DES的 CBC、CFB、OFB、CTR的iv长度为8字节。
-3. let ivParamsSpec: cryptoFramework.IvParamsSpec = {
-4. algName: "IvParamsSpec",
-5. iv: ivBlob
-6. };
-7. return ivParamsSpec;
-8. }
-9. let iv = genIvParamsSpec();
-10. let cipher = cryptoFramework.createCipher('3DES192|CBC|PKCS7');
-11. cipher.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, iv);
-12. // 本段代码只展示CBC、CTR、OFB、CFB分段模式的不同，其他流程请参考开发示例。
+```ts
+function generateRandom(len: number) {
+  let rand = cryptoFramework.createRandom();
+  let generateRandSync = rand.generateRandomSync(len);
+  return generateRandSync;
+}
+
+function genIvParamsSpec() {
+  let ivBlob = generateRandom(8); // 3DES的 CBC、CFB、OFB、CTR的iv长度为8字节。
+  let ivParamsSpec: cryptoFramework.IvParamsSpec = {
+    algName: "IvParamsSpec",
+    iv: ivBlob
+  };
+  return ivParamsSpec;
+}
+let iv = genIvParamsSpec();
+let cipher = cryptoFramework.createCipher('3DES192|CBC|PKCS7');
+cipher.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, iv);
+// 本段代码只展示CBC、CTR、OFB、CFB分组模式的不同，其他流程请参考开发示例。
 ```

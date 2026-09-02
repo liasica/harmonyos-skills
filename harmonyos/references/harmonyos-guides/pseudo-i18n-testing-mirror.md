@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pseudo-i18n-t
 title: 界面镜像伪本地化测试
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 本地化测试 > 伪本地化测试 > 界面镜像伪本地化测试
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:49+08:00
+scraped_at: 2026-09-02T14:59:26+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:f01342e132c10de5f807d0ffc0962ec565262c8c8fe700b36dd7f25632aeba8c
+content_hash: sha256:89ecb7a15e5a7a241c66037b856a8ee487c00ecacd14cd3160c2b769ceb73185
 ---
 
 ## 使用场景
@@ -16,7 +16,7 @@ content_hash: sha256:f01342e132c10de5f807d0ffc0962ec565262c8c8fe700b36dd7f25632a
 
 1. 切换到伪本地化测试区域，如“ar-XB”。
 
-   说明
+   **说明** 
 
    测试区域的切换接口为系统接口，需由系统应用调用。系统应用切换测试区域成功后，普通应用可以进行伪本地化测试。
 2. 遍历需要测试的APP。

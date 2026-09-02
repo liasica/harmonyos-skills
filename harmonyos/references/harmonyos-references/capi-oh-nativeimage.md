@@ -1,23 +1,20 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-nativeimage
 title: OH_NativeImage
+breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 模块 > OH_NativeImage
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:48+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:6a533cd381604eeaa1ba8c84fb18d42de93b3cf589d63b1635ae7158fde636ea
+scraped_at: 2026-09-02T14:53:06+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4cf3a987763277a441cb87d3522f9757e2b61b7d7e7d96475b47a82a6e15ea83
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供NativeImage功能，作为数据消费者，其中一种用法是将数据和OpenGL纹理对接，需在OpenGL环境下使用，另外一种用法是开发者自行获取buffer进行渲染处理。
 
 **起始版本：** 9
 
 ## 文件汇总
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

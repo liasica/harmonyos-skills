@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo remove_instance
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo remove_instance
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:44:41+08:00
+scraped_at: 2026-09-02T14:50:48+08:00
 doc_updated_at: 2026-01-27
-content_hash: sha256:6f7220e95d05f13d188cd5c75d2dc8110ab5f362163b0f24d65487b869458380
+content_hash: sha256:8c8841f05e8ac33478f45e07f81b78781ee9c3823ee196bed28e25c0bbfe6348
 ---
 
 删除本机实例信息。
@@ -17,8 +17,8 @@ content_hash: sha256:6f7220e95d05f13d188cd5c75d2dc8110ab5f362163b0f24d65487b8694
 
 ## 命令格式
 
-```
-1. ohpm-repo remove_instance
+```screen
+ohpm-repo remove_instance
 ```
 
 ## 功能描述
@@ -29,10 +29,10 @@ content_hash: sha256:6f7220e95d05f13d188cd5c75d2dc8110ab5f362163b0f24d65487b8694
 
 执行以下命令：
 
-```
-1. ohpm-repo remove_instance
+```screen
+ohpm-repo remove_instance
 ```
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/kpuiAzFKRO2HDk80bQBXAQ/zh-cn_image_0000002561751221.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/yNo60H15SrKdUaOcwuCkCQ/zh-cn_image_0000002701822402.png "点击放大")

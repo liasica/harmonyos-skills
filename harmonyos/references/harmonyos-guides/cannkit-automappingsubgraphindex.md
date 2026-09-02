@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-autom
 title: AutoMappingSubgraphIndex
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OpRegistrationData > AutoMappingSubgraphIndex
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:42:25+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b4f8acd9cd26adc441f0e482c1f2b2e1bb4f45a94f6438f27d32741295f35fd5
+scraped_at: 2026-09-02T14:50:42+08:00
+doc_updated_at: 2026-06-05
+content_hash: sha256:1bf5b1a6402fba5afafe532c09302454765cb0209bfd34557d68ee2a513c14fa
 ---
 
 ## 函数功能
@@ -14,13 +14,13 @@ content_hash: sha256:b4f8acd9cd26adc441f0e482c1f2b2e1bb4f45a94f6438f27d32741295f
 
 ## 函数原型
 
-```
-1. Status AutoMappingSubgraphIndex(const ge::Graph &graph,
-2. const std::function<int32_t(int32_t data_index)> &input,
-3. const std::function<int32_t(int32_t netoutput_index)> &output)
-4. Status AutoMappingSubgraphIndex(const ge::Graph &graph,
-5. const std::function<Status(int32_t data_index, int32_t &parent_input_index)> &input,
-6. const std::function<Status(int32_t netoutput_index, int32_t &parent_output_index)> &output)
+```cpp
+Status AutoMappingSubgraphIndex(const ge::Graph &graph,
+const std::function<int32_t(int32_t data_index)> &input,
+const std::function<int32_t(int32_t netoutput_index)> &output)
+Status AutoMappingSubgraphIndex(const ge::Graph &graph,
+const std::function<Status(int32_t data_index, int32_t &parent_input_index)> &input,
+const std::function<Status(int32_t netoutput_index, int32_t &parent_output_index)> &output)
 ```
 
 ## 参数说明
@@ -29,7 +29,7 @@ content_hash: sha256:b4f8acd9cd26adc441f0e482c1f2b2e1bb4f45a94f6438f27d32741295f
 | --- | --- | --- |
 | graph | 输入 | 子图对象 |
 | input | 输入 | 输入对应关系函数 |
-| output | 输入 | 输出对应关系函数 |
+| output | 输出 | 输出对应关系函数 |
 
 ## 约束说明
 

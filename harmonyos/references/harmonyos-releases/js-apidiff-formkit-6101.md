@@ -1,9 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-formkit-6101
 title: Form Kit
+breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta1引入的变更 > Form Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:31+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:16:22+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:7051d977c41ba13d041b49b78bf94d3f3258485fd8867a3e656f8b676c970079
 ---
 

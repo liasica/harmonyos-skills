@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-ta
 title: 构建任务说明
 breadcrumb: 指南 > 构建应用 > 概述 > 构建任务说明
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:47:08+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:abb93d77d7cce76265ed858bf09ea01af3a7f508a0712f00a9910377ac8b5678
+scraped_at: 2026-09-02T15:00:26+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:90f69c47e7934e09fa058067a34cec22977276a7e3186a454c87f4364976580f
 ---
 
 本章节将对构建的任务进行说明，可以更直观地了解到构建的任务流程。
@@ -14,33 +14,33 @@ content_hash: sha256:abb93d77d7cce76265ed858bf09ea01af3a7f508a0712f00a9910377ac8
 
 ### HAP基础任务流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/pW6GgFocTFueEP4eNFmiyg/zh-cn_image_0000002561832935.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/b1SD95dEQr2n18LPIQvFuQ/zh-cn_image_0000002701823192.png)
 
 ### HSP基础任务流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/nbUPRGXHR9WtPTAZE2A_hg/zh-cn_image_0000002561752947.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/JevEFLcsRHuCumdnXNUJzw/zh-cn_image_0000002731382497.png)
 
 ### HAR基础任务流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/yxiNrPO8SM-nx26SqpVSaw/zh-cn_image_0000002530753016.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/xt7nUnGWQ-ifLxnPhgZoyw/zh-cn_image_0000002701663274.png)
 
 ## 使用命令查看任务
 
 在DevEco Studio中可以通过以下命令获得任务相关的信息。
 
-```
-1. hvigorw taskTree
+```bash
+hvigorw taskTree
 ```
 
-获取任务树时会根据工程中的模块将模块中注册的任务以下图形式输出：
+获取任务树时会根据工程中的模块，将模块中注册的任务以下图形式输出：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/Q8pIMbpnRkqKFa2Yoi2NpQ/zh-cn_image_0000002530913002.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/vu-KXqntQ_OIYQliO28sww/zh-cn_image_0000002731542467.png)
 
 执行顺序举例说明：如图所示，assembleHap依赖CollectDebugSymbol，CollectDebugSymbol依赖于PackageHap；则任务执行顺序为PackageHap->CollectDebugSymbol->assembleHap。
 
 ## 任务详细说明
 
-根据任务职能的不同主要分为以下几个类型的任务。
+根据任务职能的不同，主要分为以下几种任务类型。
 
 | 任务类别 | 任务说明 |
 | --- | --- |

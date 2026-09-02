@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-swim
 title: 游泳
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 数据类型 > 锻炼记录数据 > 游泳
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:20+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8921b175fd72240cfa37dcfdb2136641ecb069c51d26d1ed8f3b4b08722fe8d5
+scraped_at: 2026-09-02T14:59:56+08:00
+doc_updated_at: 2026-07-09
+content_hash: sha256:96143d1a243708fbe25dccebbd31e77d176bb80aa7ff28ab6222230578d81489
 ---
 
 ## 开放水域游泳
@@ -14,11 +14,11 @@ content_hash: sha256:8921b175fd72240cfa37dcfdb2136641ecb069c51d26d1ed8f3b4b08722
 
 | **锻炼记录子类型常量** | **描述** | 数据来源 |
 | --- | --- | --- |
-| [exerciseSequenceHelper.openWaterSwim.EXERCISE\_TYPE](../harmonyos-references/health-api-exercisedequencehelper.md#常量-18) | 开放水域游泳 | 手环、手表 |
+| [exerciseSequenceHelper.openWaterSwim.EXERCISE\_TYPE](../harmonyos-references/health-api-exercisesequencehelper.md#常量-18) | 开放水域游泳 | 手环、手表 |
 
 ### 开放水域游泳关联的统计数据说明
 
-* 字段定义：[exerciseSequenceHelper.openWaterSwim.SummaryFields](../harmonyos-references/health-api-exercisedequencehelper.md#summaryfields-17)
+* 字段定义：[exerciseSequenceHelper.openWaterSwim.SummaryFields](../harmonyos-references/health-api-exercisesequencehelper.md#summaryfields-17)
 
 | **字段**列表 | 描述 | **类型** | 可选/必选 |
 | --- | --- | --- | --- |
@@ -31,7 +31,7 @@ content_hash: sha256:8921b175fd72240cfa37dcfdb2136641ecb069c51d26d1ed8f3b4b08722
 
 ### 开放水域游泳关联的明细数据说明
 
-字段定义：[exerciseSequenceHelper.openWaterSwim.DetailFields](../harmonyos-references/health-api-exercisedequencehelper.md#detailfields-17)
+字段定义：[exerciseSequenceHelper.openWaterSwim.DetailFields](../harmonyos-references/health-api-exercisesequencehelper.md#detailfields-17)
 
 | **字段**列表 | 描述 | **类型** | 可选/必选 |
 | --- | --- | --- | --- |
@@ -47,11 +47,11 @@ content_hash: sha256:8921b175fd72240cfa37dcfdb2136641ecb069c51d26d1ed8f3b4b08722
 
 | **锻炼记录子类型常量** | **描述** | 数据来源 |
 | --- | --- | --- |
-| [exerciseSequenceHelper.poolSwim.EXERCISE\_TYPE](../harmonyos-references/health-api-exercisedequencehelper.md#常量-19) | 泳池游泳 | 手环、手表 |
+| [exerciseSequenceHelper.poolSwim.EXERCISE\_TYPE](../harmonyos-references/health-api-exercisesequencehelper.md#常量-19) | 泳池游泳 | 手环、手表 |
 
 ### 泳池游泳关联的统计数据说明
 
-字段定义：[exerciseSequenceHelper.poolSwim.SummaryFields](../harmonyos-references/health-api-exercisedequencehelper.md#summaryfields-18)
+字段定义：[exerciseSequenceHelper.poolSwim.SummaryFields](../harmonyos-references/health-api-exercisesequencehelper.md#summaryfields-18)
 
 | **字段**列表 | 描述 | **类型** | 可选/必选 |
 | --- | --- | --- | --- |
@@ -65,7 +65,7 @@ content_hash: sha256:8921b175fd72240cfa37dcfdb2136641ecb069c51d26d1ed8f3b4b08722
 
 ### 泳池游泳关联的明细数据说明
 
-字段定义：[exerciseSequenceHelper.poolSwim.DetailFields](../harmonyos-references/health-api-exercisedequencehelper.md#detailfields-18)
+字段定义：[exerciseSequenceHelper.poolSwim.DetailFields](../harmonyos-references/health-api-exercisesequencehelper.md#detailfields-18)
 
 | **字段**列表 | 描述 | **类型** | 可选/必选 |
 | --- | --- | --- | --- |

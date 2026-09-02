@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-serve
 title: 服务端通知记录查询
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API > 服务端通知记录查询
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:59+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5aec1c418dc502154b6223b1c989f910af90ff7695a65d89ecfce38ac759e24c
+scraped_at: 2026-09-02T15:02:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8c39cff14fe12dc609038d43f16ea02f667c7ad52f3b306be84f5eeab161400f
 ---
 
 ## 功能介绍
@@ -16,7 +16,7 @@ content_hash: sha256:5aec1c418dc502154b6223b1c989f910af90ff7695a65d89ecfce38ac75
 
 开发者可以通过此接口查询历史的服务端通知记录，来确保不会漏处理服务端通知。
 
-说明
+**说明** 
 
 1. 支持查询最近30天内的通知记录。
 2. 不支持查询沙盒的通知记录。
@@ -57,15 +57,15 @@ content_hash: sha256:5aec1c418dc502154b6223b1c989f910af90ff7695a65d89ecfce38ac75
 
 ## 请求示例
 
-```
-1. POST /harmony/v1/application/notifications/query
-2. Content-Type: application/json;charset=UTF-8
-3. Authorization: Bearer ***.***.***
-4. Accept: application/json
-5. {
-6. "startTime": 1751299200000,
-7. "endTime": 1751472000000
-8. }
+```javascript
+POST /harmony/v1/application/notifications/query
+Content-Type: application/json;charset=UTF-8
+Authorization: Bearer ***.***.***
+Accept: application/json
+{
+  "startTime": 1751299200000,
+  "endTime": 1751472000000
+}
 ```
 
 ## 响应参数
@@ -94,21 +94,21 @@ content_hash: sha256:5aec1c418dc502154b6223b1c989f910af90ff7695a65d89ecfce38ac75
 
 ## 响应示例
 
-```
-1. HTTP/1.2 200 OK
-2. Content-Type: application/json;charset=UTF-8
-3. {
-4. "responseCode": "0",
-5. "notificationHistory": [
-6. {
-7. "jwsNotification": "****",
-8. "sendResult": 0
-9. },
-10. {
-11. "jwsNotification": "****",
-12. "sendResult": 1
-13. }
-14. ],
-15. "continuationToken": "***"
-16. }
+```javascript
+HTTP/1.2 200 OK
+Content-Type: application/json;charset=UTF-8
+{
+  "responseCode": "0",
+  "notificationHistory": [
+    {
+      "jwsNotification": "****",
+      "sendResult": 0
+    },
+    {
+      "jwsNotification": "****",
+      "sendResult": 1
+    }
+  ],
+  "continuationToken": "***"
+}
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-order
 title: 应用购买记录相关支付订单查询
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API > 应用购买记录相关支付订单查询
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:56+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8cd17bac85084f72d02d5ef5e449a8b476b38e0155d5757a7f66b88460196fe2
+scraped_at: 2026-09-02T15:02:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9ac582da0ec0166355c93e02d426ee2beb5aae2f2e6cb52b260796f498a50acb
 ---
 
 ## 功能介绍
@@ -16,7 +16,7 @@ content_hash: sha256:8cd17bac85084f72d02d5ef5e449a8b476b38e0155d5757a7f66b884601
 
 例如：当开发者需要查看前一天的付款和退款订单时，可以将开始时间设为前一天的零点，结束时间设为当天的零点，然后调用此接口查询相关的订单记录。
 
-说明
+**说明** 
 
 * 由于当天的订单信息可能还会发生变动，因此不建议使用此接口查询当天的实时订单数据，建议延迟一天查询。
 * 当前仅支持查询180天内的订单数据。
@@ -54,15 +54,15 @@ content_hash: sha256:8cd17bac85084f72d02d5ef5e449a8b476b38e0155d5757a7f66b884601
 
 ## 请求示例
 
-```
-1. POST /order/harmony/v1/application/trade/orders/query
-2. Content-Type: application/json; charset=UTF-8
-3. Authorization: Bearer ***.***.***
-4. Accept: application/json
-5. {
-6. "startTime": 1739548800000,
-7. "endTime": 1739721600000
-8. }
+```javascript
+POST /order/harmony/v1/application/trade/orders/query
+Content-Type: application/json; charset=UTF-8
+Authorization: Bearer ***.***.***
+Accept: application/json
+{
+  "startTime": 1739548800000,
+  "endTime": 1739721600000
+}
 ```
 
 ## 响应参数
@@ -84,46 +84,46 @@ content_hash: sha256:8cd17bac85084f72d02d5ef5e449a8b476b38e0155d5757a7f66b884601
 
 ## 响应示例
 
-```
-1. HTTP/1.2 200 OK
-2. Content-Type: application/json; charset=UTF-8
-3. {
-4. "responseCode": "0",
-5. "orderInfoList": [
-6. {
-7. "requestId": "***",
-8. "country": "CN",
-9. "merchantId": "***",
-10. "applicationId": "***",
-11. "orderTime": 1739602800000,
-12. "tradeTime": 1739602800000,
-13. "productId": "***",
-14. "productName": "test",
-15. "payMoney": "10.00",
-16. "couponAmt": "0.10",
-17. "currency": "CNY",
-18. "tradeState": 0,
-19. "tradeType": "REFUND",
-20. "refundTime": 1739620800000,
-21. "refundMoney": "0.02"
-22. },
-23. {
-24. "requestId": "***",
-25. "country": "CN",
-26. "merchantId": "***",
-27. "applicationId": "***",
-28. "orderTime": 1739602800000,
-29. "tradeTime": 1739602800000,
-30. "productId": "***",
-31. "productName": "测试商品",
-32. "payMoney": "0.01",
-33. "currency": "CNY",
-34. "tradeState": 0,
-35. "tradeType": "PURCHASE"
-36. },
-37. ],
-38. "continuationToken": "***"
-39. }
+```json
+HTTP/1.2 200 OK
+Content-Type: application/json; charset=UTF-8
+{
+  "responseCode": "0",
+  "orderInfoList": [
+    {
+      "requestId": "***",
+      "country": "CN",
+      "merchantId": "***",
+      "applicationId": "***",
+      "orderTime": 1739602800000,
+      "tradeTime": 1739602800000,
+      "productId": "***",
+      "productName": "test",
+      "payMoney": "10.00",
+      "couponAmt": "0.10",
+      "currency": "CNY",
+      "tradeState": 0,
+      "tradeType": "REFUND",
+      "refundTime": 1739620800000,
+      "refundMoney": "0.02"
+    },
+    {
+      "requestId": "***",
+      "country": "CN",
+      "merchantId": "***",
+      "applicationId": "***",
+      "orderTime": 1739602800000,
+      "tradeTime": 1739602800000,
+      "productId": "***",
+      "productName": "测试商品",
+      "payMoney": "0.01",
+      "currency": "CNY",
+      "tradeState": 0,
+      "tradeType": "PURCHASE"
+    },
+  ],
+  "continuationToken": "***"
+}
 ```
 
 ### OrderInfo

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/stationary-gu
 title: Stationary开发指导
 breadcrumb: 指南 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > Stationary开发指导
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:41+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c2a499694dbab934d84dd62667e3718d083cac80b005f601e9c0fe1278c0fead
+scraped_at: 2026-09-02T14:50:09+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:93d369accc87161dc89f7f756cf7e88666e0666c0ca3dd9bcf163bdb04ff79b7
 ---
 
 ## 场景介绍
@@ -48,76 +48,76 @@ content_hash: sha256:c2a499694dbab934d84dd62667e3718d083cac80b005f601e9c0fe1278c
 
 设备需要支持加速度传感器。
 
-目前只提供了算法框架，api接口测试框架的调用返回结果为:data={"type":3,"value":-1};
+目前只提供了算法框架，API接口测试框架的调用返回结果为:data={"type":3,"value":-1};
 
 如需相对静止和绝对静止能力，则具体算法需要开发者自己在device\_status/libs/src/algorithm实现，可参考案例如下：
 
 ```
-1. algoPara_.resultantAcc =
-2. sqrt((algoPara_.x * algoPara_.x) + (algoPara_.y * algoPara_.y) + (algoPara_.z * algoPara_.z));
-3. if ((algoPara_.resultantAcc > RESULTANT_ACC_LOW_THRHD) && (algoPara_.resultantAcc < RESULTANT_ACC_UP_THRHD)) {
-4. if (state_ == STILL) {
-5. return;
-6. }
-7. counter_--;
-8. if (counter_ == 0) {
-9. counter_ = COUNTER_THRESHOLD;
-10. UpdateStateAndReport(VALUE_ENTER, STILL, TYPE_ABSOLUTE_STILL);
-11. }
-12. } else {
-13. counter_ = COUNTER_THRESHOLD;
-14. if (state_ == UNSTILL) {
-15. return;
-16. }
-17. UpdateStateAndReport(VALUE_EXIT, UNSTILL, TYPE_ABSOLUTE_STILL);
-18. }
+algoPara_.resultantAcc =
+   sqrt((algoPara_.x * algoPara_.x) + (algoPara_.y * algoPara_.y) + (algoPara_.z * algoPara_.z));
+if ((algoPara_.resultantAcc > RESULTANT_ACC_LOW_THRHD) && (algoPara_.resultantAcc < RESULTANT_ACC_UP_THRHD)) {
+   if (state_ == STILL) {
+      return;
+   }
+   counter_--;
+   if (counter_ == 0) {
+      counter_ = COUNTER_THRESHOLD;
+      UpdateStateAndReport(VALUE_ENTER, STILL, TYPE_ABSOLUTE_STILL);
+   }
+} else {
+   counter_ = COUNTER_THRESHOLD;
+   if (state_ == UNSTILL) {
+      return;
+   }
+   UpdateStateAndReport(VALUE_EXIT, UNSTILL, TYPE_ABSOLUTE_STILL);
+}
 ```
 
 ## 开发步骤
 
-1. 订阅绝对静止的进入事件，1秒上报一次。
+1. 导入模块。
 
+   ```typescript
+   import { stationary } from '@kit.MultimodalAwarenessKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
-   1. import { stationary } from '@kit.MultimodalAwarenessKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+2. 订阅绝对静止的进入事件，1秒上报一次。
 
-   4. let reportLatencyNs = 1000000000; // 单位：纳秒
-   5. try {
-   6. stationary.on('still', stationary.ActivityEvent.ENTER, reportLatencyNs, (data) => {
-   7. console.info('data=' + JSON.stringify(data));
-   8. })
-   9. } catch (error) {
-   10. let message = (error as BusinessError).message;
-   11. console.error('stationary on failed:' + message);
-   12. }
+   ```typescript
+   let reportLatencyNs = 1000000000; // 单位：纳秒
+   try {
+     stationary.on('still', stationary.ActivityEvent.ENTER, reportLatencyNs, (data) => {
+       console.info('data=' + JSON.stringify(data));
+     })
+     // ...
+   } catch (error) {
+     let message = (error as BusinessError).message;
+     console.error('stationary on failed:' + message);
+   }
    ```
-2. 查询绝对静止状态的进入事件。
+3. 查询绝对静止状态的进入事件。
 
+   ```typescript
+   try {
+     stationary.once('still', (data) => {
+       console.info('data=' + JSON.stringify(data));
+     })
+     // ...
+   } catch (error) {
+     let message = (error as BusinessError).message;
+     console.error('stationary once failed:' + message);
+   }
    ```
-   1. import { stationary } from '@kit.MultimodalAwarenessKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+4. 取消订阅绝对静止状态的进入事件。
 
-   4. try {
-   5. stationary.once('still', (data) => {
-   6. console.info('data=' + JSON.stringify(data));
-   7. })
-   8. } catch (error) {
-   9. let message = (error as BusinessError).message;
-   10. console.error('stationary once failed:' + message);
-   11. }
-   ```
-3. 取消订阅绝对静止状态的进入事件。
-
-   ```
-   1. import { stationary } from '@kit.MultimodalAwarenessKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
-
-   4. try {
-   5. stationary.off('still', stationary.ActivityEvent.ENTER, (data) => {
-   6. console.info('data=' + JSON.stringify(data));
-   7. })
-   8. } catch (error) {
-   9. let message = (error as BusinessError).message;
-   10. console.error('stationary off failed:' + message);
-   11. }
+   ```typescript
+   try {
+     stationary.off('still', stationary.ActivityEvent.ENTER, (data) => {
+       console.info('data=' + JSON.stringify(data));
+     })
+     // ...
+   } catch (error) {
+     let message = (error as BusinessError).message;
+     console.error('stationary off failed:' + message);
+   }
    ```

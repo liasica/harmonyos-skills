@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: UI上下文错误码
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > 错误码 > UI界面 > UI上下文错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:54+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:665455ffda570e148153ca2373ddf0fd7ad757c995d2751d7891f2b97a470af8
+scraped_at: 2026-09-02T15:01:25+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a27fa036cdcb09c60ad74d20fd31c6aca563957c31f2332ab1f77deb76bf0a7c
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
@@ -46,11 +46,9 @@ The callback function is invalid.
 
 **处理步骤**
 
-传入正确类型的回调函数。
+传入非空且符合接口签名要求的回调函数。
 
 ## 100101 小于0的非法值
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -66,11 +64,9 @@ The parameter value cannot be less than 0.
 
 **处理步骤**
 
-传入正常范围的参数。
+传入大于或等于0的参数。
 
 ## 100102 参数类型错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -90,8 +86,6 @@ The parameter value cannot be a floating-point number.
 
 ## 100103 调用线程错误
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The function cannot be called from a non-main thread.
@@ -107,3 +101,21 @@ The function cannot be called from a non-main thread.
 **处理步骤**
 
 在主线程中调用该函数。
+
+## 120007 实例不存在
+
+**错误信息**
+
+The UIContext is not available.
+
+**错误描述**
+
+UIContext不可用。
+
+**可能原因**
+
+传入的实例非法或者对应的实例已销毁。
+
+**处理步骤**
+
+传入有效的UIContext对象。

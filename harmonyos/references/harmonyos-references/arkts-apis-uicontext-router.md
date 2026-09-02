@@ -3,26 +3,37 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Router)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (Router)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:26+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4418a2c70179c140c89cc0ce5fe068a734929c6a160d5193869368940002317e
+scraped_at: 2026-09-02T15:00:49+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:99b07f82350814e0b8d95bd7f44bd20a97558b594078c0edbcd4abb1a8cc8491
 ---
 
-提供通过不同的url访问不同的页面，包括跳转到应用内的指定页面、同应用内的某个页面替换当前页面、返回上一页面或指定的页面等。
+提供通过不同的url访问不同的页面，包括跳转到应用内的指定页面、同应用内的某个页面替换当前页面、返回上一页面或指定的页面等。Router还支持命名路由跳转、页面栈管理、参数传递、返回确认对话框等能力，适用于需要统一管理页面导航流程、处理页面间数据传递的场景，与UIContext集成使用可实现灵活的路由控制。
 
-说明
+Router基于页面栈机制管理页面导航，页面栈支持的最大容量为32个页面。当调用pushUrl时，目标页面会被压入栈顶；调用replaceUrl时，当前页面会被弹出栈并销毁，目标页面压入栈顶；调用back时，栈顶页面会被弹出。
+
+**说明** 
 
 * 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Class首批接口从API version 10开始支持。
+* 本模块接口仅可在Stage模型下使用。
 * 以下API需先使用UIContext中的[getRouter()](arkts-apis-uicontext-uicontext.md#getrouter)方法获取到Router对象，再通过该对象调用对应方法。
+* Router提供了以下两种路由方式：
+
+  + **普通路由**（[pushUrl](arkts-apis-uicontext-router.md#pushurl)/[replaceUrl](arkts-apis-uicontext-router.md#replaceurl)）：通过url路径标识目标页面，适用于简单的页面跳转场景。
+  + **命名路由**（[pushNamedRoute](arkts-apis-uicontext-router.md#pushnamedroute)/[replaceNamedRoute](arkts-apis-uicontext-router.md#replacenamedroute)）：通过name标识目标页面，在跳转之前需要将目标跳转页面通过import将页面进行加载，适用于跨包跳转场景。
+
+  建议在页面路径可能变化或需要统一管理路由的场景下使用命名路由，其他场景使用普通路由。根据是否需要返回上一页来选择使用哪个方法。
 
 ## pushUrl
-
-PhonePC/2in1TabletTVWearable
 
 pushUrl(options: router.RouterOptions): Promise<void>
 
 跳转到应用内的指定页面，使用Promise异步回调。
+
+**说明** 
+
+pushUrl()会在页面栈顶部添加新页面，页面栈深度+1（上限32页，超限报错误码100003），后续可调用back()返回到上一页面或调用replaceUrl()替换当前页面。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -32,13 +43,13 @@ pushUrl(options: router.RouterOptions): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [router.RouterOptions](js-apis-router.md#routeroptions) | 是 | 跳转页面描述信息。 |
+| options | [router.RouterOptions](js-apis-router.md#routeroptions) | 是 | 跳转页面描述信息，包含url（目标页面路径）和params（传递的参数）等字段。  **说明：**  页面栈最大支持32个页面，建议跳转前通过[getStackSize](arkts-apis-uicontext-router.md#getstacksize23)（从API version 23开始支持）检查当前栈大小，避免超出限制导致跳转失败（错误码100003）。API version 23之前可使用[getLength](arkts-apis-uicontext-router.md#getlengthdeprecated)检查。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象。无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -53,115 +64,115 @@ pushUrl(options: router.RouterOptions): Promise<void>
 
 **示例：**
 
+```ts
+import { router } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+// 定义传递参数的内部类
+class InnerParams {
+  array: number[];
+
+  constructor(tuple: number[]) {
+    this.array = tuple;
+  }
+}
+
+// 定义路由参数类
+class RouterParams {
+  data: InnerParams;
+
+  constructor(tuple: number[]) {
+    this.data = new InnerParams(tuple);
+  }
+}
+
+@Entry
+@Component
+struct Index {
+  async routePage() {
+    let options: router.RouterOptions = {
+      url: 'pages/second',  // 跳转目标页面路径
+      params: new RouterParams([12, 45, 78])  // 传递的页面参数
+    }
+    this.getUIContext()
+      .getRouter()
+      .pushUrl(options)
+      .then(() => {
+        console.info('pushUrl success');
+      })
+      .catch((err: ESObject) => {
+        console.error(`pushUrl failed, code is ${(err as BusinessError).code}, message is ${(err as BusinessError).message}`);
+      });
+  }
+
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Text('First Page')
+      Button('Next page')
+        .type(ButtonType.Capsule)
+        .margin({ top: 20 })
+        .onClick(() => {
+          this.routePage()
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
-1. import { router } from '@kit.ArkUI';
-2. import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 定义传递参数的类
-5. class innerParams {
-6. array: number[];
+```ts
+// 在second页面中接收传递过来的参数
+class InnerParams {
+  array: number[];
 
-8. constructor(tuple: number[]) {
-9. this.array = tuple;
-10. }
-11. }
+  constructor(tuple: number[]) {
+    this.array = tuple;
+  }
+}
 
-13. class RouterParams {
-14. data: innerParams;
+class RouterParams {
+  data: InnerParams;
 
-16. constructor(tuple: number[]) {
-17. this.data = new innerParams(tuple);
-18. }
-19. }
+  constructor(tuple: number[]) {
+    this.data = new InnerParams(tuple);
+  }
+}
 
-21. @Entry
-22. @Component
-23. struct Index {
-24. async routePage() {
-25. let options: router.RouterOptions = {
-26. url: 'pages/second',
-27. params: new RouterParams([12, 45, 78])
-28. }
-29. this.getUIContext()
-30. .getRouter()
-31. .pushUrl(options)
-32. .then(() => {
-33. console.info('pushUrl success');
-34. })
-35. .catch((err: ESObject) => {
-36. console.error(`pushUrl failed, code is ${(err as BusinessError).code}, message is ${(err as BusinessError).message}`);
-37. })
-38. }
+@Entry
+@Component
+struct Second {
+  @State data: object = (this.getUIContext().getRouter().getParams() as RouterParams).data;
+  @State secondData: string = '';
 
-40. build() {
-41. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-42. Text('First Page')
-43. Button('Next page')
-44. .type(ButtonType.Capsule)
-45. .margin({ top: 20 })
-46. .onClick(() => {
-47. this.routePage()
-48. })
-49. }
-50. .width('100%')
-51. .height('100%')
-52. }
-53. }
-```
-
-```
-1. // 在second页面中接收传递过来的参数
-2. class innerParams {
-3. array: number[];
-
-5. constructor(tuple: number[]) {
-6. this.array = tuple;
-7. }
-8. }
-
-10. class RouterParams {
-11. data: innerParams;
-
-13. constructor(tuple: number[]) {
-14. this.data = new innerParams(tuple);
-15. }
-16. }
-
-18. @Entry
-19. @Component
-20. struct Second {
-21. @State data: object = (this.getUIContext().getRouter().getParams() as RouterParams).data;
-22. @State secondData: string = '';
-
-24. build() {
-25. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-26. Text('Second Page')
-27. Button('Back')
-28. .fontSize(30)
-29. .onClick(() => {
-30. try {
-31. this.getUIContext().getRouter().showAlertBeforeBackPage({ message: 'Are you sure to return?' })
-32. } catch (error) {
-33. // TODO: Implement error handling.
-34. }
-35. this.getUIContext().getRouter().back()
-36. })
-37. .margin({ top: 20 })
-38. Button(`The value on the first page：${this.secondData}`)
-39. .margin({ top: 20 })
-40. .onClick(()=> {
-41. this.secondData = (this.data['array'][1]).toString();
-42. })
-43. }
-44. .width('100%')
-45. .height('100%')
-46. }
-47. }
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Text('Second Page')
+      Button('Back')
+        .fontSize(30)
+        .onClick(() => {
+          try {
+            // 开启返回询问对话框
+            this.getUIContext().getRouter().showAlertBeforeBackPage({ message: 'Are you sure to return?' })
+          } catch (error) {
+            // TODO: Implement error handling.
+          }
+          this.getUIContext().getRouter().back()
+        })
+        .margin({ top: 20 })
+      Button(`The value on the first page：${this.secondData}`)
+        .margin({ top: 20 })
+        .onClick(()=> {
+          this.secondData = (this.data['array'][1]).toString();
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## pushUrl
-
-PhonePC/2in1TabletTVWearable
 
 pushUrl(options: router.RouterOptions, callback: AsyncCallback<void>): void
 
@@ -176,7 +187,7 @@ pushUrl(options: router.RouterOptions, callback: AsyncCallback<void>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | [router.RouterOptions](js-apis-router.md#routeroptions) | 是 | 跳转页面描述信息。 |
-| callback | AsyncCallback<void> | 是 | router跳转结果回调函数。  当路由跳转成功时，error为undefined。当路由跳转失败时，error为系统返回的错误对象。 |
+| callback | AsyncCallback<void> | 是 | 页面跳转结果回调函数。  当页面跳转成功时，error为undefined。当页面跳转失败时，error为系统返回的错误对象。 |
 
 **错误码：**
 
@@ -191,54 +202,53 @@ pushUrl(options: router.RouterOptions, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. async routePage() {
-7. this.getUIContext().getRouter().pushUrl({
-8. url: 'pages/routerpage2',
-9. params: {
-10. data1: 'message',
-11. data2: {
-12. data3: [123, 456, 789]
-13. }
-14. }
-15. }, (err: Error) => {
-16. if (err) {
-17. let message = (err as BusinessError).message;
-18. let code = (err as BusinessError).code;
-19. console.error(`pushUrl failed, code is ${code}, message is ${message}`);
-20. return;
-21. }
-22. console.info('pushUrl success');
-23. })
-24. }
+@Entry
+@Component
+struct Index {
+  async routePage() {
+    // 调用pushUrl接口进行页面跳转
+    this.getUIContext().getRouter().pushUrl({
+      url: 'pages/routerpage2',  // 跳转目标页面路径
+      params: {  // 传递的页面参数
+        data1: 'message',
+        data2: {
+          data3: [123, 456, 789]
+        }
+      }
+    }, (err: Error) => {
+      if (err) {
+        let message = (err as BusinessError).message;
+        let code = (err as BusinessError).code;
+        console.error(`pushUrl failed, code is ${code}, message is ${message}`);
+        return;
+      }
+      console.info('pushUrl success');
+    })
+  }
 
-26. build() {
-27. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-28. Button() {
-29. Text('next page')
-30. .fontSize(25)
-31. .fontWeight(FontWeight.Bold)
-32. }.type(ButtonType.Capsule)
-33. .margin({ top: 20 })
-34. .backgroundColor('#ccc')
-35. .onClick(() => {
-36. this.routePage();
-37. })
-38. }
-39. .width('100%')
-40. .height('100%')
-41. }
-42. }
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Button() {
+        Text('next page')
+          .fontSize(25)
+          .fontWeight(FontWeight.Bold)
+      }.type(ButtonType.Capsule)
+      .margin({ top: 20 })
+      .backgroundColor('#ccc')
+      .onClick(() => {
+        this.routePage();
+      })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## pushUrl
-
-PhonePC/2in1TabletTVWearable
 
 pushUrl(options: router.RouterOptions, mode: router.RouterMode): Promise<void>
 
@@ -253,13 +263,13 @@ pushUrl(options: router.RouterOptions, mode: router.RouterMode): Promise<void>
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | [router.RouterOptions](js-apis-router.md#routeroptions) | 是 | 跳转页面描述信息。 |
-| mode | [router.RouterMode](js-apis-router.md#routermode9) | 是 | 跳转页面使用的模式。 |
+| mode | [router.RouterMode](js-apis-router.md#routermode9) | 是 | 跳转页面使用的模式，可选Standard（标准模式）或Single（单例模式）。建议根据页面栈管理需求选择：Standard模式适用于常规页面跳转；Single模式可避免相同页面重复入栈，适合登录页、主页等单例场景。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象。无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -274,59 +284,58 @@ pushUrl(options: router.RouterOptions, mode: router.RouterMode): Promise<void>
 
 **示例：**
 
-```
-1. import { router } from '@kit.ArkUI';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { router } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. class RouterTmp {
-5. Standard: router.RouterMode = router.RouterMode.Standard;
-6. }
+// 定义路由模式类
+class RouterTmp {
+  Standard: router.RouterMode = router.RouterMode.Standard;  // 标准路由模式
+}
 
-8. let rtm: RouterTmp = new RouterTmp();
+let rtm: RouterTmp = new RouterTmp();
 
-10. @Entry
-11. @Component
-12. struct Index {
-13. async routePage() {
-14. this.getUIContext().getRouter().pushUrl({
-15. url: 'pages/routerpage2',
-16. params: {
-17. data1: 'message',
-18. data2: {
-19. data3: [123, 456, 789]
-20. }
-21. }
-22. }, rtm.Standard)
-23. .then(() => {
-24. console.info('succeeded');
-25. })
-26. .catch((error: BusinessError) => {
-27. console.error(`pushUrl failed, code is ${error.code}, message is ${error.message}`);
-28. })
-29. }
+@Entry
+@Component
+struct Index {
+  async routePage() {
+    this.getUIContext().getRouter().pushUrl({
+        url: 'pages/routerpage2',
+        params: {  // 传递的页面参数
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        }
+      }, rtm.Standard)  // 使用标准路由模式
+      .then(() => {
+        console.info('succeeded');
+      })
+      .catch((error: BusinessError) => {
+        console.error(`pushUrl failed, code is ${error.code}, message is ${error.message}`);
+      });
+  }
 
-31. build() {
-32. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-33. Button() {
-34. Text('next page')
-35. .fontSize(25)
-36. .fontWeight(FontWeight.Bold)
-37. }.type(ButtonType.Capsule)
-38. .margin({ top: 20 })
-39. .backgroundColor('#ccc')
-40. .onClick(() => {
-41. this.routePage();
-42. })
-43. }
-44. .width('100%')
-45. .height('100%')
-46. }
-47. }
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Button() {
+        Text('next page')
+          .fontSize(25)
+          .fontWeight(FontWeight.Bold)
+      }.type(ButtonType.Capsule)
+      .margin({ top: 20 })
+      .backgroundColor('#ccc')
+      .onClick(() => {
+        this.routePage();
+      })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## pushUrl
-
-PhonePC/2in1TabletTVWearable
 
 pushUrl(options: router.RouterOptions, mode: router.RouterMode, callback: AsyncCallback<void>): void
 
@@ -341,8 +350,8 @@ pushUrl(options: router.RouterOptions, mode: router.RouterMode, callback: AsyncC
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | [router.RouterOptions](js-apis-router.md#routeroptions) | 是 | 跳转页面描述信息。 |
-| mode | [router.RouterMode](js-apis-router.md#routermode9) | 是 | 跳转页面使用的模式。 |
-| callback | AsyncCallback<void> | 是 | router跳转结果回调函数。  当路由跳转成功时，error为undefined。当路由跳转失败时，error为系统返回的错误对象。 |
+| mode | [router.RouterMode](js-apis-router.md#routermode9) | 是 | 跳转页面使用的模式，可选Standard（标准模式）或Single（单例模式）。建议根据页面栈管理需求选择：Standard模式适用于常规页面跳转；Single模式可避免相同页面重复入栈，适合登录页、主页等单例场景。 |
+| callback | AsyncCallback<void> | 是 | 页面跳转结果回调函数。  当页面跳转成功时，error为undefined。当页面跳转失败时，error为系统返回的错误对象。 |
 
 **错误码：**
 
@@ -357,65 +366,67 @@ pushUrl(options: router.RouterOptions, mode: router.RouterMode, callback: AsyncC
 
 **示例：**
 
-```
-1. import { router } from '@kit.ArkUI';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { router } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. class RouterTmp {
-5. Standard: router.RouterMode = router.RouterMode.Standard;
-6. }
+class RouterTmp {
+  Standard: router.RouterMode = router.RouterMode.Standard;
+}
 
-8. let rtm: RouterTmp = new RouterTmp();
+let rtm: RouterTmp = new RouterTmp();
 
-10. @Entry
-11. @Component
-12. struct Index {
-13. async routePage() {
-14. this.getUIContext().getRouter().pushUrl({
-15. url: 'pages/routerpage2',
-16. params: {
-17. data1: 'message',
-18. data2: {
-19. data3: [123, 456, 789]
-20. }
-21. }
-22. }, rtm.Standard, (err) => {
-23. if (err) {
-24. let message = (err as BusinessError).message;
-25. let code = (err as BusinessError).code;
-26. console.error(`pushUrl failed, code is ${code}, message is ${message}`);
-27. return;
-28. }
-29. console.info('pushUrl success');
-30. })
-31. }
+@Entry
+@Component
+struct Index {
+  async routePage() {
+    this.getUIContext().getRouter().pushUrl({
+      url: 'pages/routerpage2',
+      params: {
+        data1: 'message',
+        data2: {
+          data3: [123, 456, 789]
+        }
+      }
+    }, rtm.Standard, (err) => {
+      if (err) {
+        let message = (err as BusinessError).message;
+        let code = (err as BusinessError).code;
+        console.error(`pushUrl failed, code is ${code}, message is ${message}`);
+        return;
+      }
+      console.info('pushUrl success');
+    })
+  }
 
-33. build() {
-34. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-35. Button() {
-36. Text('next page')
-37. .fontSize(25)
-38. .fontWeight(FontWeight.Bold)
-39. }.type(ButtonType.Capsule)
-40. .margin({ top: 20 })
-41. .backgroundColor('#ccc')
-42. .onClick(() => {
-43. this.routePage();
-44. })
-45. }
-46. .width('100%')
-47. .height('100%')
-48. }
-49. }
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Button() {
+        Text('next page')
+          .fontSize(25)
+          .fontWeight(FontWeight.Bold)
+      }.type(ButtonType.Capsule)
+      .margin({ top: 20 })
+      .backgroundColor('#ccc')
+      .onClick(() => {
+        this.routePage();
+      })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## replaceUrl
 
-PhonePC/2in1TabletTVWearable
-
 replaceUrl(options: router.RouterOptions): Promise<void>
 
 用应用内的某个页面替换当前页面，并销毁被替换的页面，使用Promise异步回调。
+
+**说明** 
+
+replaceUrl()会替换页面栈栈顶页面，页面栈深度维持不变。与pushUrl()的核心差异：pushUrl()入栈新页面、栈深度 + 1，replaceUrl()不改变栈深度。被替换的页面会直接销毁，无法通过back()回退访问。适用场景：登录成功跳转首页（避免回退至登录页）、页面重定向、临时中转页面跳转等。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -431,7 +442,7 @@ replaceUrl(options: router.RouterOptions): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象。无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -445,49 +456,48 @@ replaceUrl(options: router.RouterOptions): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. async routePage() {
-7. this.getUIContext().getRouter().replaceUrl({
-8. url: 'pages/detail',
-9. params: {
-10. data1: 'message'
-11. }
-12. })
-13. .then(() => {
-14. console.info('succeeded');
-15. })
-16. .catch((error: BusinessError) => {
-17. console.error(`pushUrl failed, code is ${error.code}, message is ${error.message}`);
-18. })
-19. }
+@Entry
+@Component
+struct Index {
+  async routePage() {
+    // 调用replaceUrl接口进行页面替换
+    this.getUIContext().getRouter().replaceUrl({
+        url: 'pages/detail',  // 替换的目标页面路径
+        params: {  // 传递的页面参数
+          data1: 'message'
+        }
+      })
+      .then(() => {
+        console.info('succeeded');
+      })
+      .catch((error: BusinessError) => {
+        console.error(`replaceUrl failed, code is ${error.code}, message is ${error.message}`);
+      });
+  }
 
-21. build() {
-22. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-23. Button() {
-24. Text('next page')
-25. .fontSize(25)
-26. .fontWeight(FontWeight.Bold)
-27. }.type(ButtonType.Capsule)
-28. .margin({ top: 20 })
-29. .backgroundColor('#ccc')
-30. .onClick(() => {
-31. this.routePage();
-32. })
-33. }
-34. .width('100%')
-35. .height('100%')
-36. }
-37. }
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Button() {
+        Text('next page')
+          .fontSize(25)
+          .fontWeight(FontWeight.Bold)
+      }.type(ButtonType.Capsule)
+      .margin({ top: 20 })
+      .backgroundColor('#ccc')
+      .onClick(() => {
+        this.routePage();
+      })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## replaceUrl
-
-PhonePC/2in1TabletTVWearable
 
 replaceUrl(options: router.RouterOptions, callback: AsyncCallback<void>): void
 
@@ -502,7 +512,7 @@ replaceUrl(options: router.RouterOptions, callback: AsyncCallback<void>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | [router.RouterOptions](js-apis-router.md#routeroptions) | 是 | 替换页面描述信息。 |
-| callback | AsyncCallback<void> | 是 | router跳转结果回调函数。  当路由跳转成功时，error为undefined。当路由跳转失败时，error为系统返回的错误对象。 |
+| callback | AsyncCallback<void> | 是 | 页面替换结果回调函数。  当页面替换成功时，error为undefined。当页面替换失败时，error为系统返回的错误对象。 |
 
 **错误码：**
 
@@ -516,55 +526,53 @@ replaceUrl(options: router.RouterOptions, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. async routePage() {
-7. this.getUIContext().getRouter().replaceUrl({
-8. url: 'pages/detail',
-9. params: {
-10. data1: 'message'
-11. }
-12. }, (err: Error) => {
-13. if (err) {
-14. let message = (err as BusinessError).message;
-15. let code = (err as BusinessError).code;
-16. console.error(`replaceUrl failed, code is ${code}, message is ${message}`);
-17. return;
-18. }
-19. console.info('replaceUrl success');
-20. })
-21. }
+@Entry
+@Component
+struct Index {
+  async routePage() {
+    this.getUIContext().getRouter().replaceUrl({
+      url: 'pages/detail',
+      params: {  // 传递的页面参数
+        data1: 'message'
+      }
+    }, (err: Error) => {
+      if (err) {
+        let message = (err as BusinessError).message;
+        let code = (err as BusinessError).code;
+        console.error(`replaceUrl failed, code is ${code}, message is ${message}`);
+        return;
+      }
+      console.info('replaceUrl success');
+    })
+  }
 
-23. build() {
-24. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-25. Button() {
-26. Text('next page')
-27. .fontSize(25)
-28. .fontWeight(FontWeight.Bold)
-29. }.type(ButtonType.Capsule)
-30. .margin({ top: 20 })
-31. .backgroundColor('#ccc')
-32. .onClick(() => {
-33. this.routePage();
-34. })
-35. }
-36. .width('100%')
-37. .height('100%')
-38. }
-39. }
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Button() {
+        Text('next page')
+          .fontSize(25)
+          .fontWeight(FontWeight.Bold)
+      }.type(ButtonType.Capsule)
+      .margin({ top: 20 })
+      .backgroundColor('#ccc')
+      .onClick(() => {
+        this.routePage();
+      })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## replaceUrl
 
-PhonePC/2in1TabletTVWearable
-
 replaceUrl(options: router.RouterOptions, mode: router.RouterMode): Promise<void>
 
-用应用内的某个页面替换当前页面，并销毁被替换的页面，使用Promise异步回调。与[replaceUrl](arkts-apis-uicontext-router.md#replaceurl)相比，新增了mode参数，即支持设置跳转页面使用的模式。
+用应用内的某个页面替换当前页面，并销毁被替换的页面，使用Promise异步回调。与[replaceUrl](arkts-apis-uicontext-router.md#replaceurl)相比，新增了mode参数，即支持设置替换页面使用的模式。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -575,13 +583,13 @@ replaceUrl(options: router.RouterOptions, mode: router.RouterMode): Promise<void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | [router.RouterOptions](js-apis-router.md#routeroptions) | 是 | 替换页面描述信息。 |
-| mode | [router.RouterMode](js-apis-router.md#routermode9) | 是 | 跳转页面使用的模式。 |
+| mode | [router.RouterMode](js-apis-router.md#routermode9) | 是 | 替换页面使用的模式，可选Standard（标准模式）或Single（单例模式）。建议根据页面栈管理需求选择：Standard模式适用于常规页面跳转；Single模式可避免相同页面重复入栈，适合登录页、主页等单例场景。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象。无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -595,60 +603,58 @@ replaceUrl(options: router.RouterOptions, mode: router.RouterMode): Promise<void
 
 **示例：**
 
-```
-1. import { router } from '@kit.ArkUI';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { router } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. class RouterTmp {
-5. Standard: router.RouterMode = router.RouterMode.Standard;
-6. }
+class RouterTmp {
+  Standard: router.RouterMode = router.RouterMode.Standard;
+}
 
-8. let rtm: RouterTmp = new RouterTmp();
+let rtm: RouterTmp = new RouterTmp();
 
-10. @Entry
-11. @Component
-12. struct Index {
-13. async routePage() {
-14. this.getUIContext().getRouter().replaceUrl({
-15. url: 'pages/detail',
-16. params: {
-17. data1: 'message'
-18. }
-19. }, rtm.Standard)
-20. .then(() => {
-21. console.info('succeeded');
-22. })
-23. .catch((error: BusinessError) => {
-24. console.error(`pushUrl failed, code is ${error.code}, message is ${error.message}`);
-25. })
-26. }
+@Entry
+@Component
+struct Index {
+  async routePage() {
+    this.getUIContext().getRouter().replaceUrl({
+        url: 'pages/detail',
+        params: {
+          data1: 'message'
+        }
+      }, rtm.Standard)
+      .then(() => {
+        console.info('succeeded');
+      })
+      .catch((error: BusinessError) => {
+        console.error(`replaceUrl failed, code is ${error.code}, message is ${error.message}`);
+      });
+  }
 
-28. build() {
-29. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-30. Button() {
-31. Text('next page')
-32. .fontSize(25)
-33. .fontWeight(FontWeight.Bold)
-34. }.type(ButtonType.Capsule)
-35. .margin({ top: 20 })
-36. .backgroundColor('#ccc')
-37. .onClick(() => {
-38. this.routePage();
-39. })
-40. }
-41. .width('100%')
-42. .height('100%')
-43. }
-44. }
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Button() {
+        Text('next page')
+          .fontSize(25)
+          .fontWeight(FontWeight.Bold)
+      }.type(ButtonType.Capsule)
+      .margin({ top: 20 })
+      .backgroundColor('#ccc')
+      .onClick(() => {
+        this.routePage();
+      })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## replaceUrl
 
-PhonePC/2in1TabletTVWearable
-
 replaceUrl(options: router.RouterOptions, mode: router.RouterMode, callback: AsyncCallback<void>): void
 
-用应用内的某个页面替换当前页面，并销毁被替换的页面。使用callback异步回调。与[replaceUrl](arkts-apis-uicontext-router.md#replaceurl-1)相比，新增了mode参数，即支持设置跳转页面使用的模式。
+用应用内的某个页面替换当前页面，并销毁被替换的页面。使用callback异步回调。与[replaceUrl](arkts-apis-uicontext-router.md#replaceurl-1)相比，新增了mode参数，即支持设置替换页面使用的模式。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -659,8 +665,8 @@ replaceUrl(options: router.RouterOptions, mode: router.RouterMode, callback: Asy
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | [router.RouterOptions](js-apis-router.md#routeroptions) | 是 | 替换页面描述信息。 |
-| mode | [router.RouterMode](js-apis-router.md#routermode9) | 是 | 跳转页面使用的模式。 |
-| callback | AsyncCallback<void> | 是 | router跳转结果回调函数。  当路由跳转成功时，error为undefined。当路由跳转失败时，error为系统返回的错误对象。 |
+| mode | [router.RouterMode](js-apis-router.md#routermode9) | 是 | 替换页面使用的模式，可选Standard（标准模式）或Single（单例模式）。建议根据页面栈管理需求选择：Standard模式适用于常规页面跳转；Single模式可避免相同页面重复入栈，适合登录页、主页等单例场景。 |
+| callback | AsyncCallback<void> | 是 | 页面替换结果回调函数。  当页面替换成功时，error为undefined。当页面替换失败时，error为系统返回的错误对象。 |
 
 **错误码：**
 
@@ -674,58 +680,56 @@ replaceUrl(options: router.RouterOptions, mode: router.RouterMode, callback: Asy
 
 **示例：**
 
-```
-1. import { router } from '@kit.ArkUI';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { router } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. class RouterTmp {
-5. Standard: router.RouterMode = router.RouterMode.Standard;
-6. }
+class RouterTmp {
+  Standard: router.RouterMode = router.RouterMode.Standard;
+}
 
-8. let rtm: RouterTmp = new RouterTmp();
+let rtm: RouterTmp = new RouterTmp();
 
-10. @Entry
-11. @Component
-12. struct Index {
-13. async routePage() {
-14. this.getUIContext().getRouter().replaceUrl({
-15. url: 'pages/detail',
-16. params: {
-17. data1: 'message'
-18. }
-19. }, rtm.Standard, (err: Error) => {
-20. if (err) {
-21. let message = (err as BusinessError).message;
-22. let code = (err as BusinessError).code;
-23. console.error(`replaceUrl failed, code is ${code}, message is ${message}`);
-24. return;
-25. }
-26. console.info('replaceUrl success');
-27. });
-28. }
+@Entry
+@Component
+struct Index {
+  async routePage() {
+    this.getUIContext().getRouter().replaceUrl({
+      url: 'pages/detail',
+      params: {
+        data1: 'message'
+      }
+    }, rtm.Standard, (err: Error) => {
+      if (err) {
+        let message = (err as BusinessError).message;
+        let code = (err as BusinessError).code;
+        console.error(`replaceUrl failed, code is ${code}, message is ${message}`);
+        return;
+      }
+      console.info('replaceUrl success');
+    });
+  }
 
-30. build() {
-31. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-32. Button() {
-33. Text('next page')
-34. .fontSize(25)
-35. .fontWeight(FontWeight.Bold)
-36. }.type(ButtonType.Capsule)
-37. .margin({ top: 20 })
-38. .backgroundColor('#ccc')
-39. .onClick(() => {
-40. this.routePage();
-41. })
-42. }
-43. .width('100%')
-44. .height('100%')
-45. }
-46. }
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Button() {
+        Text('next page')
+          .fontSize(25)
+          .fontWeight(FontWeight.Bold)
+      }.type(ButtonType.Capsule)
+      .margin({ top: 20 })
+      .backgroundColor('#ccc')
+      .onClick(() => {
+        this.routePage();
+      })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## pushNamedRoute
-
-PhonePC/2in1TabletTVWearable
 
 pushNamedRoute(options: router.NamedRouterOptions): Promise<void>
 
@@ -739,13 +743,13 @@ pushNamedRoute(options: router.NamedRouterOptions): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [router.NamedRouterOptions](js-apis-router.md#namedrouteroptions10) | 是 | 跳转页面描述信息。 |
+| options | [router.NamedRouterOptions](js-apis-router.md#namedrouteroptions10) | 是 | 跳转页面描述信息，包含name（命名路由名称）和params（传递的参数）等字段。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象。无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -760,52 +764,51 @@ pushNamedRoute(options: router.NamedRouterOptions): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. async routePage() {
-7. this.getUIContext().getRouter().pushNamedRoute({
-8. name: 'myPage',
-9. params: {
-10. data1: 'message',
-11. data2: {
-12. data3: [123, 456, 789]
-13. }
-14. }
-15. })
-16. .then(() => {
-17. console.info('succeeded');
-18. })
-19. .catch((error: BusinessError) => {
-20. console.error(`pushUrl failed, code is ${error.code}, message is ${error.message}`);
-21. })
-22. }
+@Entry
+@Component
+struct Index {
+  async routePage() {
+    // 调用pushNamedRoute接口跳转到命名路由页面
+    this.getUIContext().getRouter().pushNamedRoute({
+        name: 'myPage',  // 命名路由名称
+        params: {  // 传递的页面参数
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        }
+      })
+      .then(() => {
+        console.info('succeeded');
+      })
+      .catch((error: BusinessError) => {
+        console.error(`pushNamedRoute failed, code is ${error.code}, message is ${error.message}`);
+      });
+  }
 
-24. build() {
-25. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-26. Button() {
-27. Text('next page')
-28. .fontSize(25)
-29. .fontWeight(FontWeight.Bold)
-30. }.type(ButtonType.Capsule)
-31. .margin({ top: 20 })
-32. .backgroundColor('#ccc')
-33. .onClick(() => {
-34. this.routePage();
-35. })
-36. }
-37. .width('100%')
-38. .height('100%')
-39. }
-40. }
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Button() {
+        Text('next page')
+          .fontSize(25)
+          .fontWeight(FontWeight.Bold)
+      }.type(ButtonType.Capsule)
+      .margin({ top: 20 })
+      .backgroundColor('#ccc')
+      .onClick(() => {
+        this.routePage();
+      })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## pushNamedRoute
-
-PhonePC/2in1TabletTVWearable
 
 pushNamedRoute(options: router.NamedRouterOptions, callback: AsyncCallback<void>): void
 
@@ -820,7 +823,7 @@ pushNamedRoute(options: router.NamedRouterOptions, callback: AsyncCallback<void>
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | [router.NamedRouterOptions](js-apis-router.md#namedrouteroptions10) | 是 | 跳转页面描述信息。 |
-| callback | AsyncCallback<void> | 是 | router跳转结果回调函数。  当路由跳转成功时，error为undefined。当路由跳转失败时，error为系统返回的错误对象。 |
+| callback | AsyncCallback<void> | 是 | 页面跳转结果回调函数。  当页面跳转成功时，error为undefined。当页面跳转失败时，error为系统返回的错误对象。 |
 
 **错误码：**
 
@@ -835,54 +838,52 @@ pushNamedRoute(options: router.NamedRouterOptions, callback: AsyncCallback<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. async routePage() {
-7. this.getUIContext().getRouter().pushNamedRoute({
-8. name: 'myPage',
-9. params: {
-10. data1: 'message',
-11. data2: {
-12. data3: [123, 456, 789]
-13. }
-14. }
-15. }, (err: Error) => {
-16. if (err) {
-17. let message = (err as BusinessError).message;
-18. let code = (err as BusinessError).code;
-19. console.error(`pushNamedRoute failed, code is ${code}, message is ${message}`);
-20. return;
-21. }
-22. console.info('pushNamedRoute success');
-23. })
-24. }
+@Entry
+@Component
+struct Index {
+  async routePage() {
+    this.getUIContext().getRouter().pushNamedRoute({
+      name: 'myPage',
+      params: {
+        data1: 'message',
+        data2: {
+          data3: [123, 456, 789]
+        }
+      }
+    }, (err: Error) => {
+      if (err) {
+        let message = (err as BusinessError).message;
+        let code = (err as BusinessError).code;
+        console.error(`pushNamedRoute failed, code is ${code}, message is ${message}`);
+        return;
+      }
+      console.info('pushNamedRoute success');
+    })
+  }
 
-26. build() {
-27. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-28. Button() {
-29. Text('next page')
-30. .fontSize(25)
-31. .fontWeight(FontWeight.Bold)
-32. }.type(ButtonType.Capsule)
-33. .margin({ top: 20 })
-34. .backgroundColor('#ccc')
-35. .onClick(() => {
-36. this.routePage();
-37. })
-38. }
-39. .width('100%')
-40. .height('100%')
-41. }
-42. }
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Button() {
+        Text('next page')
+          .fontSize(25)
+          .fontWeight(FontWeight.Bold)
+      }.type(ButtonType.Capsule)
+      .margin({ top: 20 })
+      .backgroundColor('#ccc')
+      .onClick(() => {
+        this.routePage();
+      })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## pushNamedRoute
-
-PhonePC/2in1TabletTVWearable
 
 pushNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode): Promise<void>
 
@@ -897,13 +898,13 @@ pushNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode): Pro
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | [router.NamedRouterOptions](js-apis-router.md#namedrouteroptions10) | 是 | 跳转页面描述信息。 |
-| mode | [router.RouterMode](js-apis-router.md#routermode9) | 是 | 跳转页面使用的模式。 |
+| mode | [router.RouterMode](js-apis-router.md#routermode9) | 是 | 跳转页面使用的模式，可选Standard（标准模式）或Single（单例模式）。建议根据页面栈管理需求选择：Standard模式适用于常规页面跳转；Single模式可避免相同页面重复入栈，适合登录页、主页等单例场景。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象。无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -918,58 +919,56 @@ pushNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode): Pro
 
 **示例：**
 
-```
-1. import { router } from '@kit.ArkUI';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { router } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. class RouterTmp{
-5. Standard:router.RouterMode = router.RouterMode.Standard;
-6. }
-7. let rtm:RouterTmp = new RouterTmp();
+class RouterTmp{
+  Standard:router.RouterMode = router.RouterMode.Standard;
+}
+let rtm:RouterTmp = new RouterTmp();
 
-9. @Entry
-10. @Component
-11. struct Index {
-12. async routePage() {
-13. this.getUIContext().getRouter().pushNamedRoute({
-14. name: 'myPage',
-15. params: {
-16. data1: 'message',
-17. data2: {
-18. data3: [123, 456, 789]
-19. }
-20. }
-21. }, rtm.Standard)
-22. .then(() => {
-23. console.info('succeeded');
-24. })
-25. .catch((error: BusinessError) => {
-26. console.error(`pushUrl failed, code is ${error.code}, message is ${error.message}`);
-27. })
-28. }
+@Entry
+@Component
+struct Index {
+  async routePage() {
+    this.getUIContext().getRouter().pushNamedRoute({
+      name: 'myPage',
+      params: {  // 传递的页面参数
+        data1: 'message',
+        data2: {
+          data3: [123, 456, 789]
+          }
+        }
+      }, rtm.Standard)
+      .then(() => {
+        console.info('succeeded');
+      })
+      .catch((error: BusinessError) => {
+        console.error(`pushNamedRoute failed, code is ${error.code}, message is ${error.message}`);
+      });
+  }
 
-30. build() {
-31. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-32. Button() {
-33. Text('next page')
-34. .fontSize(25)
-35. .fontWeight(FontWeight.Bold)
-36. }.type(ButtonType.Capsule)
-37. .margin({ top: 20 })
-38. .backgroundColor('#ccc')
-39. .onClick(() => {
-40. this.routePage();
-41. })
-42. }
-43. .width('100%')
-44. .height('100%')
-45. }
-46. }
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Button() {
+        Text('next page')
+          .fontSize(25)
+          .fontWeight(FontWeight.Bold)
+      }.type(ButtonType.Capsule)
+      .margin({ top: 20 })
+      .backgroundColor('#ccc')
+      .onClick(() => {
+        this.routePage();
+      })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## pushNamedRoute
-
-PhonePC/2in1TabletTVWearable
 
 pushNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode, callback: AsyncCallback<void>): void
 
@@ -984,8 +983,8 @@ pushNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode, call
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | [router.NamedRouterOptions](js-apis-router.md#namedrouteroptions10) | 是 | 跳转页面描述信息。 |
-| mode | [router.RouterMode](js-apis-router.md#routermode9) | 是 | 跳转页面使用的模式。 |
-| callback | AsyncCallback<void> | 是 | router跳转结果回调函数。  当路由跳转成功时，error为undefined。当路由跳转失败时，error为系统返回的错误对象。 |
+| mode | [router.RouterMode](js-apis-router.md#routermode9) | 是 | 跳转页面使用的模式，可选Standard（标准模式）或Single（单例模式）。建议根据页面栈管理需求选择：Standard模式适用于常规页面跳转；Single模式可避免相同页面重复入栈，适合登录页、主页等单例场景。 |
+| callback | AsyncCallback<void> | 是 | 页面跳转结果回调函数。  当页面跳转成功时，error为undefined。当页面跳转失败时，error为系统返回的错误对象。 |
 
 **错误码：**
 
@@ -1000,65 +999,63 @@ pushNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode, call
 
 **示例：**
 
-```
-1. import { router } from '@kit.ArkUI';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { router } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. class RouterTmp {
-5. Standard: router.RouterMode = router.RouterMode.Standard;
-6. }
+class RouterTmp {
+  Standard: router.RouterMode = router.RouterMode.Standard;
+}
 
-8. let rtm: RouterTmp = new RouterTmp();
+let rtm: RouterTmp = new RouterTmp();
 
-10. @Entry
-11. @Component
-12. struct Index {
-13. async routePage() {
-14. this.getUIContext().getRouter().pushNamedRoute({
-15. name: 'myPage',
-16. params: {
-17. data1: 'message',
-18. data2: {
-19. data3: [123, 456, 789]
-20. }
-21. }
-22. }, rtm.Standard, (err: Error) => {
-23. if (err) {
-24. let message = (err as BusinessError).message;
-25. let code = (err as BusinessError).code;
-26. console.error(`pushNamedRoute failed, code is ${code}, message is ${message}`);
-27. return;
-28. }
-29. console.info('pushNamedRoute success');
-30. })
-31. }
+@Entry
+@Component
+struct Index {
+  async routePage() {
+    this.getUIContext().getRouter().pushNamedRoute({
+      name: 'myPage',
+      params: {
+        data1: 'message',
+        data2: {
+          data3: [123, 456, 789]
+        }
+      }
+    }, rtm.Standard, (err: Error) => {
+      if (err) {
+        let message = (err as BusinessError).message;
+        let code = (err as BusinessError).code;
+        console.error(`pushNamedRoute failed, code is ${code}, message is ${message}`);
+        return;
+      }
+      console.info('pushNamedRoute success');
+    })
+  }
 
-33. build() {
-34. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-35. Button() {
-36. Text('next page')
-37. .fontSize(25)
-38. .fontWeight(FontWeight.Bold)
-39. }.type(ButtonType.Capsule)
-40. .margin({ top: 20 })
-41. .backgroundColor('#ccc')
-42. .onClick(() => {
-43. this.routePage();
-44. })
-45. }
-46. .width('100%')
-47. .height('100%')
-48. }
-49. }
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Button() {
+        Text('next page')
+          .fontSize(25)
+          .fontWeight(FontWeight.Bold)
+      }.type(ButtonType.Capsule)
+      .margin({ top: 20 })
+      .backgroundColor('#ccc')
+      .onClick(() => {
+        this.routePage();
+      })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## replaceNamedRoute
 
-PhonePC/2in1TabletTVWearable
-
 replaceNamedRoute(options: router.NamedRouterOptions): Promise<void>
 
-用指定的命名路由页面替换当前页面，并销毁被替换的页面，使用Promise异步回调。
+用指定的命名路由页面替换当前页面，并销毁被替换的页面，使用Promise异步回调。适用于大型应用中使用命名路由管理页面、路由路径可能变化时避免硬编码URL、模块化开发中各模块独立管理自己的命名路由等场景。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1074,7 +1071,7 @@ replaceNamedRoute(options: router.NamedRouterOptions): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象。无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -1088,49 +1085,48 @@ replaceNamedRoute(options: router.NamedRouterOptions): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. async routePage() {
-7. this.getUIContext().getRouter().replaceNamedRoute({
-8. name: 'myPage',
-9. params: {
-10. data1: 'message'
-11. }
-12. })
-13. .then(() => {
-14. console.info('succeeded');
-15. })
-16. .catch((error: BusinessError) => {
-17. console.error(`pushUrl failed, code is ${error.code}, message is ${error.message}`);
-18. })
-19. }
+@Entry
+@Component
+struct Index {
+  async routePage() {
+    // 调用replaceNamedRoute接口替换命名路由页面
+    this.getUIContext().getRouter().replaceNamedRoute({
+        name: 'myPage',
+        params: {  // 传递的页面参数
+          data1: 'message'
+        }
+      })
+      .then(() => {
+        console.info('succeeded');
+      })
+      .catch((error: BusinessError) => {
+        console.error(`replaceNamedRoute failed, code is ${error.code}, message is ${error.message}`);
+      });
+  }
 
-21. build() {
-22. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-23. Button() {
-24. Text('next page')
-25. .fontSize(25)
-26. .fontWeight(FontWeight.Bold)
-27. }.type(ButtonType.Capsule)
-28. .margin({ top: 20 })
-29. .backgroundColor('#ccc')
-30. .onClick(() => {
-31. this.routePage();
-32. })
-33. }
-34. .width('100%')
-35. .height('100%')
-36. }
-37. }
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Button() {
+        Text('next page')
+          .fontSize(25)
+          .fontWeight(FontWeight.Bold)
+      }.type(ButtonType.Capsule)
+      .margin({ top: 20 })
+      .backgroundColor('#ccc')
+      .onClick(() => {
+        this.routePage();
+      })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## replaceNamedRoute
-
-PhonePC/2in1TabletTVWearable
 
 replaceNamedRoute(options: router.NamedRouterOptions, callback: AsyncCallback<void>): void
 
@@ -1145,7 +1141,7 @@ replaceNamedRoute(options: router.NamedRouterOptions, callback: AsyncCallback<vo
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | [router.NamedRouterOptions](js-apis-router.md#namedrouteroptions10) | 是 | 替换页面描述信息。 |
-| callback | AsyncCallback<void> | 是 | router跳转结果回调函数。  当路由跳转成功时，error为undefined。当路由跳转失败时，error为系统返回的错误对象。 |
+| callback | AsyncCallback<void> | 是 | 页面替换结果回调函数。  当页面替换成功时，error为undefined。当页面替换失败时，error为系统返回的错误对象。 |
 
 **错误码：**
 
@@ -1159,55 +1155,53 @@ replaceNamedRoute(options: router.NamedRouterOptions, callback: AsyncCallback<vo
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. async routePage() {
-7. this.getUIContext().getRouter().replaceNamedRoute({
-8. name: 'myPage',
-9. params: {
-10. data1: 'message'
-11. }
-12. }, (err: Error) => {
-13. if (err) {
-14. let message = (err as BusinessError).message;
-15. let code = (err as BusinessError).code;
-16. console.error(`replaceNamedRoute failed, code is ${code}, message is ${message}`);
-17. return;
-18. }
-19. console.info('replaceNamedRoute success');
-20. })
-21. }
+@Entry
+@Component
+struct Index {
+  async routePage() {
+    this.getUIContext().getRouter().replaceNamedRoute({
+      name: 'myPage',
+      params: {  // 传递的页面参数
+        data1: 'message'
+      }
+    }, (err: Error) => {
+      if (err) {
+        let message = (err as BusinessError).message;
+        let code = (err as BusinessError).code;
+        console.error(`replaceNamedRoute failed, code is ${code}, message is ${message}`);
+        return;
+      }
+      console.info('replaceNamedRoute success');
+    })
+  }
 
-23. build() {
-24. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-25. Button() {
-26. Text('next page')
-27. .fontSize(25)
-28. .fontWeight(FontWeight.Bold)
-29. }.type(ButtonType.Capsule)
-30. .margin({ top: 20 })
-31. .backgroundColor('#ccc')
-32. .onClick(() => {
-33. this.routePage();
-34. })
-35. }
-36. .width('100%')
-37. .height('100%')
-38. }
-39. }
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Button() {
+        Text('next page')
+          .fontSize(25)
+          .fontWeight(FontWeight.Bold)
+      }.type(ButtonType.Capsule)
+      .margin({ top: 20 })
+      .backgroundColor('#ccc')
+      .onClick(() => {
+        this.routePage();
+      })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## replaceNamedRoute
 
-PhonePC/2in1TabletTVWearable
-
 replaceNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode): Promise<void>
 
-用指定的命名路由页面替换当前页面，并销毁被替换的页面，使用Promise异步回调。与[replaceNamedRoute](arkts-apis-uicontext-router.md#replacenamedroute)相比，新增了mode参数，即支持设置跳转页面使用的模式。
+用指定的命名路由页面替换当前页面，并销毁被替换的页面，使用Promise异步回调。与[replaceNamedRoute](arkts-apis-uicontext-router.md#replacenamedroute)相比，新增了mode参数，即支持设置替换页面使用的模式。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1218,13 +1212,13 @@ replaceNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode): 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | [router.NamedRouterOptions](js-apis-router.md#namedrouteroptions10) | 是 | 替换页面描述信息。 |
-| mode | [router.RouterMode](js-apis-router.md#routermode9) | 是 | 跳转页面使用的模式。 |
+| mode | [router.RouterMode](js-apis-router.md#routermode9) | 是 | 替换页面使用的模式，可选Standard（标准模式）或Single（单例模式）。建议根据页面栈管理需求选择：Standard模式适用于常规页面跳转；Single模式可避免相同页面重复入栈，适合登录页、主页等单例场景。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象。无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -1238,60 +1232,58 @@ replaceNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode): 
 
 **示例：**
 
-```
-1. import { router } from '@kit.ArkUI';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { router } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. class RouterTmp {
-5. Standard: router.RouterMode = router.RouterMode.Standard;
-6. }
+class RouterTmp {
+  Standard: router.RouterMode = router.RouterMode.Standard;
+}
 
-8. let rtm: RouterTmp = new RouterTmp();
+let rtm: RouterTmp = new RouterTmp();
 
-10. @Entry
-11. @Component
-12. struct Index {
-13. async routePage() {
-14. this.getUIContext().getRouter().replaceNamedRoute({
-15. name: 'myPage',
-16. params: {
-17. data1: 'message'
-18. }
-19. }, rtm.Standard)
-20. .then(() => {
-21. console.info('succeeded');
-22. })
-23. .catch((error: BusinessError) => {
-24. console.error(`pushUrl failed, code is ${error.code}, message is ${error.message}`);
-25. })
-26. }
+@Entry
+@Component
+struct Index {
+  async routePage() {
+    this.getUIContext().getRouter().replaceNamedRoute({
+        name: 'myPage',
+        params: {
+          data1: 'message'
+        }
+      }, rtm.Standard)
+      .then(() => {
+        console.info('succeeded');
+      })
+      .catch((error: BusinessError) => {
+        console.error(`replaceNamedRoute failed, code is ${error.code}, message is ${error.message}`);
+      });
+  }
 
-28. build() {
-29. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-30. Button() {
-31. Text('next page')
-32. .fontSize(25)
-33. .fontWeight(FontWeight.Bold)
-34. }.type(ButtonType.Capsule)
-35. .margin({ top: 20 })
-36. .backgroundColor('#ccc')
-37. .onClick(() => {
-38. this.routePage();
-39. })
-40. }
-41. .width('100%')
-42. .height('100%')
-43. }
-44. }
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Button() {
+        Text('next page')
+          .fontSize(25)
+          .fontWeight(FontWeight.Bold)
+      }.type(ButtonType.Capsule)
+      .margin({ top: 20 })
+      .backgroundColor('#ccc')
+      .onClick(() => {
+        this.routePage();
+      })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## replaceNamedRoute
 
-PhonePC/2in1TabletTVWearable
-
 replaceNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode, callback: AsyncCallback<void>): void
 
-用指定的命名路由页面替换当前页面，并销毁被替换的页面。使用callback异步回调。与[replaceNamedRoute](arkts-apis-uicontext-router.md#replacenamedroute-1)相比，新增了mode参数，即支持设置跳转页面使用的模式。
+用指定的命名路由页面替换当前页面，并销毁被替换的页面。使用callback异步回调。与[replaceNamedRoute](arkts-apis-uicontext-router.md#replacenamedroute-1)相比，新增了mode参数，即支持设置替换页面使用的模式。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1302,8 +1294,8 @@ replaceNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode, c
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | [router.NamedRouterOptions](js-apis-router.md#namedrouteroptions10) | 是 | 替换页面描述信息。 |
-| mode | [router.RouterMode](js-apis-router.md#routermode9) | 是 | 跳转页面使用的模式。 |
-| callback | AsyncCallback<void> | 是 | router跳转结果回调函数。  当路由跳转成功时，error为undefined。当路由跳转失败时，error为系统返回的错误对象。 |
+| mode | [router.RouterMode](js-apis-router.md#routermode9) | 是 | 替换页面使用的模式，可选Standard（标准模式）或Single（单例模式）。建议根据页面栈管理需求选择：Standard模式适用于常规页面跳转；Single模式可避免相同页面重复入栈，适合登录页、主页等单例场景。 |
+| callback | AsyncCallback<void> | 是 | 页面替换结果回调函数。  当页面替换成功时，error为undefined。当页面替换失败时，error为系统返回的错误对象。 |
 
 **错误码：**
 
@@ -1317,62 +1309,64 @@ replaceNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode, c
 
 **示例：**
 
-```
-1. import { router } from '@kit.ArkUI';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { router } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. class RouterTmp {
-5. Standard: router.RouterMode = router.RouterMode.Standard;
-6. }
+class RouterTmp {
+  Standard: router.RouterMode = router.RouterMode.Standard;
+}
 
-8. let rtm: RouterTmp = new RouterTmp();
+let rtm: RouterTmp = new RouterTmp();
 
-10. @Entry
-11. @Component
-12. struct Index {
-13. async routePage() {
-14. this.getUIContext().getRouter().replaceNamedRoute({
-15. name: 'myPage',
-16. params: {
-17. data1: 'message'
-18. }
-19. }, rtm.Standard, (err: Error) => {
-20. if (err) {
-21. let message = (err as BusinessError).message;
-22. let code = (err as BusinessError).code;
-23. console.error(`replaceNamedRoute failed, code is ${code}, message is ${message}`);
-24. return;
-25. }
-26. console.info('replaceNamedRoute success');
-27. })
-28. }
+@Entry
+@Component
+struct Index {
+  async routePage() {
+    this.getUIContext().getRouter().replaceNamedRoute({
+      name: 'myPage',
+      params: {
+        data1: 'message'
+      }
+    }, rtm.Standard, (err: Error) => {
+      if (err) {
+        let message = (err as BusinessError).message;
+        let code = (err as BusinessError).code;
+        console.error(`replaceNamedRoute failed, code is ${code}, message is ${message}`);
+        return;
+      }
+      console.info('replaceNamedRoute success');
+    })
+  }
 
-30. build() {
-31. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-32. Button() {
-33. Text('next page')
-34. .fontSize(25)
-35. .fontWeight(FontWeight.Bold)
-36. }.type(ButtonType.Capsule)
-37. .margin({ top: 20 })
-38. .backgroundColor('#ccc')
-39. .onClick(() => {
-40. this.routePage();
-41. })
-42. }
-43. .width('100%')
-44. .height('100%')
-45. }
-46. }
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Button() {
+        Text('next page')
+          .fontSize(25)
+          .fontWeight(FontWeight.Bold)
+      }.type(ButtonType.Capsule)
+      .margin({ top: 20 })
+      .backgroundColor('#ccc')
+      .onClick(() => {
+        this.routePage();
+      })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## back
 
-PhonePC/2in1TabletTVWearable
-
 back(options?: router.RouterOptions ): void
 
 返回上一页面或指定的页面。
+
+**说明** 
+
+如果之前调用了showAlertBeforeBackPage()开启了返回询问对话框，则调用back()时会弹出确认对话框：用户选择"取消"则back()不执行，选择"确认"则继续执行；可通过hideAlertBeforeBackPage()关闭返回询问对话框。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1382,22 +1376,20 @@ back(options?: router.RouterOptions ): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [router.RouterOptions](js-apis-router.md#routeroptions) | 否 | 返回页面描述信息，其中参数url指路由跳转时返回到指定url的页面，如果页面栈中没有对应url的页面，则不响应该操作；如果栈中存在对应url的页面，则返回至index最大的同名页面。  如果url未设置，则返回上一页，页面不会重新构建，页面栈里面的page不会回收，出栈后会被回收。 |
+| options | [router.RouterOptions](js-apis-router.md#routeroptions) | 否 | 返回页面描述信息。当需要返回到指定的页面时传入此参数（通过url指定目标页面）；当只需返回上一页时可以不传入此参数。url指定返回的目标页面：若页面栈中存在该url，则返回至index最大的同名页面；若不存在则不响应操作。若url未设置，则返回上一页（页面不会重新构建，出栈后会被回收）。 |
 
 **示例：**
 
 完整示例请参考[PushUrl](arkts-apis-uicontext-router.md#pushurl)中的示例。
 
-```
-1. import { Router , UIContext } from '@kit.ArkUI';
-2. let uiContext: UIContext = this.getUIContext();
-3. let router: Router = uiContext.getRouter();
-4. router.back({url:'pages/detail'});
+```ts
+import { Router , UIContext } from '@kit.ArkUI';
+let uiContext: UIContext = this.getUIContext();
+let router: Router = uiContext.getRouter();
+router.back({url:'pages/detail'});
 ```
 
 ## back12+
-
-PhonePC/2in1TabletTVWearable
 
 back(index: number, params?: Object): void
 
@@ -1411,37 +1403,39 @@ back(index: number, params?: Object): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| index | number | 是 | 跳转目标页面的索引值。  取值范围：[0, +∞) |
-| params | Object | 否 | 页面返回时携带的参数。 |
+| index | number | 是 | 返回目标页面的索引值，从0开始计数（注意：与[getStateByIndex](arkts-apis-uicontext-router.md#getstatebyindex12)的index参数不同，后者从1开始计数）。  取值范围：[0, +∞)。如果index超出页面栈范围或不存在对应页面，则不响应用户操作。 |
+| params | Object | 否 | 页面返回时携带的参数。不传入时不携带参数。 |
 
 **示例：**
 
 完整示例请参考[PushUrl](arkts-apis-uicontext-router.md#pushurl)中的示例。
 
-```
-1. import { Router , UIContext } from '@kit.ArkUI';
-2. let uiContext: UIContext = this.getUIContext();
+```ts
+import { Router , UIContext } from '@kit.ArkUI';
+let uiContext: UIContext = this.getUIContext();
 
-4. let router: Router = uiContext.getRouter();
-5. router.back(1);
+let router: Router = uiContext.getRouter();
+router.back(1);
 ```
 
 完整示例请参考[PushUrl](arkts-apis-uicontext-router.md#pushurl)中的示例。
 
-```
-1. import { Router , UIContext } from '@kit.ArkUI';
-2. let uiContext: UIContext = this.getUIContext();
-3. let router: Router = uiContext.getRouter();
-4. router.back(1, {info:'来自Home页'}); // 携带参数返回
+```ts
+import { Router , UIContext } from '@kit.ArkUI';
+let uiContext: UIContext = this.getUIContext();
+let router: Router = uiContext.getRouter();
+router.back(1, {info:'来自Home页'}); // 携带参数返回
 ```
 
 ## clear
 
-PhonePC/2in1TabletTVWearable
-
 clear(): void
 
 清空页面栈中的所有历史页面，仅保留当前页面作为栈顶页面。
+
+**说明** 
+
+调用 clear()方法会清空全部历史页面栈，最终仅保留当前页面，页面栈深度变为1。此时栈内无历史记录，back()回退接口将失效；但pushUrl()、replaceUrl()等跳转方法仍可正常使用，支持新增页面或替换当前页面。该操作具备不可逆特性，执行完成后用户无法回访任何历史页面，建议仅在退出登录、切换账号等业务场景下使用，调用前务必持久化存储关键页面状态数据。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1451,23 +1445,21 @@ clear(): void
 
 完整示例请参考[PushUrl](arkts-apis-uicontext-router.md#pushurl)中的示例。
 
-```
-1. import { Router , UIContext } from '@kit.ArkUI';
-2. let uiContext: UIContext = this.getUIContext();
+```ts
+import { Router , UIContext } from '@kit.ArkUI';
+let uiContext: UIContext = this.getUIContext();
 
-4. let router: Router = uiContext.getRouter();
-5. router.clear();
+let router: Router = uiContext.getRouter();
+router.clear();
 ```
 
 ## getLength(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getLength(): string
 
 获取当前在页面栈内的页面数量。
 
-说明
+**说明** 
 
 从API version 10开始支持，从 API version 23开始废弃，建议使用[getStackSize](arkts-apis-uicontext-router.md#getstacksize23)替代。
 
@@ -1485,18 +1477,16 @@ getLength(): string
 
 完整示例请参考[PushUrl](arkts-apis-uicontext-router.md#pushurl)中的示例。
 
-```
-1. import { Router , UIContext } from '@kit.ArkUI';
-2. let uiContext: UIContext = this.getUIContext();
+```ts
+import { Router , UIContext } from '@kit.ArkUI';
+let uiContext: UIContext = this.getUIContext();
 
-4. let router: Router = uiContext.getRouter();
-5. let size = router.getLength();
-6. console.info('pages stack size = ' + size);
+let router: Router = uiContext.getRouter();
+let size = router.getLength();
+console.info('pages stack size = ' + size);
 ```
 
 ## getStackSize23+
-
-PhonePC/2in1TabletTVWearable
 
 getStackSize(): number
 
@@ -1506,8 +1496,6 @@ getStackSize(): number
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-**模型约束：** 此接口仅可在Stage模型下使用。
-
 **返回值：**
 
 | 类型 | 说明 |
@@ -1516,33 +1504,31 @@ getStackSize(): number
 
 **示例：**
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
+```ts
+@Entry
+@Component
+struct Index {
 
-5. build() {
-6. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-7. Button() {
-8. Text('stack size')
-9. .fontSize(25)
-10. .fontWeight(FontWeight.Bold)
-11. }.type(ButtonType.Capsule)
-12. .margin({ top: 20 })
-13. .backgroundColor('#ccc')
-14. .onClick(() => {
-15. console.info(`get stack size: ${this.getUIContext().getRouter().getStackSize()}`)
-16. })
-17. }
-18. .width('100%')
-19. .height('100%')
-20. }
-21. }
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Button() {
+        Text('stack size')
+          .fontSize(25)
+          .fontWeight(FontWeight.Bold)
+      }.type(ButtonType.Capsule)
+      .margin({ top: 20 })
+      .backgroundColor('#ccc')
+      .onClick(() => {
+        console.info(`get stack size: ${this.getUIContext().getRouter().getStackSize()}`)
+      })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## getState
-
-PhonePC/2in1TabletTVWearable
 
 getState(): router.RouterState
 
@@ -1562,22 +1548,20 @@ getState(): router.RouterState
 
 完整示例请参考[PushUrl](arkts-apis-uicontext-router.md#pushurl)中的示例。
 
-```
-1. import { Router , UIContext } from '@kit.ArkUI';
-2. let uiContext: UIContext = this.getUIContext();
+```ts
+import { Router , UIContext } from '@kit.ArkUI';
+let uiContext: UIContext = this.getUIContext();
 
-4. let router: Router = uiContext.getRouter();
-5. let page = router.getState();
-6. if (page != undefined) {
-7. console.info('current index = ' + page.index);
-8. console.info('current name = ' + page.name);
-9. console.info('current path = ' + page.path);
-10. }
+let router: Router = uiContext.getRouter();
+let page = router.getState();
+if (page != undefined) {
+  console.info('current index = ' + page.index);
+  console.info('current name = ' + page.name);
+  console.info('current path = ' + page.path);
+}
 ```
 
 ## getStateByIndex12+
-
-PhonePC/2in1TabletTVWearable
 
 getStateByIndex(index: number): router.RouterState | undefined
 
@@ -1591,7 +1575,7 @@ getStateByIndex(index: number): router.RouterState | undefined
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| index | number | 是 | 表示要获取的页面索引。  取值范围：[1, +∞) |
+| index | number | 是 | 表示要获取的页面索引，从1开始计数（注意：与[back](arkts-apis-uicontext-router.md#back12)的index参数不同，后者从0开始计数）。  取值范围：[1, +∞)。索引不存在时返回undefined。 |
 
 **返回值：**
 
@@ -1603,27 +1587,25 @@ getStateByIndex(index: number): router.RouterState | undefined
 
 完整示例请参考[PushUrl](arkts-apis-uicontext-router.md#pushurl)中的示例。
 
-```
-1. import { Router , UIContext } from '@kit.ArkUI';
-2. let uiContext: UIContext = this.getUIContext();
+```ts
+import { Router , UIContext } from '@kit.ArkUI';
+let uiContext: UIContext = this.getUIContext();
 
-4. let router: Router = uiContext.getRouter();
-5. let options: router.RouterState | undefined = router.getStateByIndex(1);
-6. if (options != undefined) {
-7. console.info('index = ' + options.index);
-8. console.info('name = ' + options.name);
-9. console.info('path = ' + options.path);
-10. console.info('params = ' + options.params);
-11. }
+let router: Router = uiContext.getRouter();
+let options: router.RouterState | undefined = router.getStateByIndex(1);
+if (options != undefined) {
+  console.info('index = ' + options.index);
+  console.info('name = ' + options.name);
+  console.info('path = ' + options.path);
+  console.info('params = ' + options.params);
+}
 ```
 
 ## getStateByUrl12+
 
-PhonePC/2in1TabletTVWearable
+getStateByUrl(url: string): Array<router.RouterState>
 
-getStateByUrl(url: string): Array<router.[RouterState](js-apis-router.md#routerstate)>
-
-通过url获取当前页面的状态信息。
+通过url获取匹配指定url的页面的状态信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1633,7 +1615,7 @@ getStateByUrl(url: string): Array<router.[RouterState](js-apis-router.md#routers
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| url | string | 是 | 表示要获取对应页面信息的url。 |
+| url | string | 是 | 表示要获取对应页面信息的url，需使用应用内页面路径格式。如果页面栈中没有对应url的页面，返回空数组。 |
 
 **返回值：**
 
@@ -1645,26 +1627,24 @@ getStateByUrl(url: string): Array<router.[RouterState](js-apis-router.md#routers
 
 完整示例请参考[PushUrl](arkts-apis-uicontext-router.md#pushurl)中的示例。
 
-```
-1. import { Router , UIContext } from '@kit.ArkUI';
-2. let uiContext: UIContext = this.getUIContext();
-3. let router: Router = uiContext.getRouter();
-4. let options:Array<router.RouterState> = router.getStateByUrl('pages/index');
-5. for (let i: number = 0; i < options.length; i++) {
-6. console.info('index = ' + options[i].index);
-7. console.info('name = ' + options[i].name);
-8. console.info('path = ' + options[i].path);
-9. console.info('params = ' + options[i].params);
-10. }
+```ts
+import { Router , UIContext } from '@kit.ArkUI';
+let uiContext: UIContext = this.getUIContext();
+let router: Router = uiContext.getRouter();
+let options:Array<router.RouterState> = router.getStateByUrl('pages/index');
+for (let i: number = 0; i < options.length; i++) {
+  console.info('index = ' + options[i].index);
+  console.info('name = ' + options[i].name);
+  console.info('path = ' + options[i].path);
+  console.info('params = ' + options[i].params);
+}
 ```
 
 ## showAlertBeforeBackPage
 
-PhonePC/2in1TabletTVWearable
-
 showAlertBeforeBackPage(options: router.EnableAlertOptions): void
 
-开启页面返回询问对话框。
+开启页面返回询问对话框。调用此方法后，当用户触发返回操作（如点击返回键、调用back方法）时，系统会先弹出确认对话框询问用户是否返回；用户确认后才会执行返回操作，取消则留在当前页面。适用于表单填写页面（防止用户误触返回导致内容丢失）、重要操作确认页面（如支付、提交订单等）、内容编辑页面（用户可能有未保存的修改时）等场景。与hideAlertBeforeBackPage()方法成对使用：调用本方法开启对话框后，建议在适当时机调用hideAlertBeforeBackPage()关闭对话框。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1674,7 +1654,7 @@ showAlertBeforeBackPage(options: router.EnableAlertOptions): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [router.EnableAlertOptions](js-apis-router.md#enablealertoptions) | 是 | 文本弹窗信息描述。 |
+| options | [router.EnableAlertOptions](js-apis-router.md#enablealertoptions) | 是 | 文本弹窗信息描述，包含message（弹窗提示内容）等参数。 |
 
 **错误码：**
 
@@ -1689,30 +1669,28 @@ showAlertBeforeBackPage(options: router.EnableAlertOptions): void
 
 完整示例请参考[PushUrl](arkts-apis-uicontext-router.md#pushurl)中的示例。
 
-```
-1. import { Router , UIContext } from '@kit.ArkUI';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { Router , UIContext } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let uiContext: UIContext = this.getUIContext();
-5. let router: Router = uiContext.getRouter();
-6. try {
-7. router.showAlertBeforeBackPage({
-8. message: 'Message Info'
-9. });
-10. } catch(error) {
-11. let message = (error as BusinessError).message;
-12. let code = (error as BusinessError).code;
-13. console.error(`showAlertBeforeBackPage failed, code is ${code}, message is ${message}`);
-14. }
+let uiContext: UIContext = this.getUIContext();
+let router: Router = uiContext.getRouter();
+try {
+  router.showAlertBeforeBackPage({
+    message: 'Message Info'
+  });
+} catch(error) {
+  let message = (error as BusinessError).message;
+  let code = (error as BusinessError).code;
+  console.error(`showAlertBeforeBackPage failed, code is ${code}, message is ${message}`);
+}
 ```
 
 ## hideAlertBeforeBackPage
 
-PhonePC/2in1TabletTVWearable
-
 hideAlertBeforeBackPage(): void
 
-禁用页面返回询问对话框。
+禁用页面返回询问对话框。适用于用户已完成保存操作可以安全返回、页面状态切换后不再需要返回确认、需要动态控制返回行为等场景。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1722,21 +1700,19 @@ hideAlertBeforeBackPage(): void
 
 完整示例请参考[PushUrl](arkts-apis-uicontext-router.md#pushurl)中的示例。
 
-```
-1. import { Router , UIContext } from '@kit.ArkUI';
-2. let uiContext: UIContext = this.getUIContext();
+```ts
+import { Router , UIContext } from '@kit.ArkUI';
+let uiContext: UIContext = this.getUIContext();
 
-4. let router: Router = uiContext.getRouter();
-5. router.hideAlertBeforeBackPage();
+let router: Router = uiContext.getRouter();
+router.hideAlertBeforeBackPage();
 ```
 
 ## getParams
 
-PhonePC/2in1TabletTVWearable
-
 getParams(): Object
 
-获取发起跳转的页面往当前页传入的参数。
+获取发起跳转的页面往当前页传入的参数。参数在页面跳转时通过RouterOptions或NamedRouterOptions的params字段传递。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1752,9 +1728,9 @@ getParams(): Object
 
 完整示例请参考[PushUrl](arkts-apis-uicontext-router.md#pushurl)中的示例。
 
-```
-1. import { Router , UIContext } from '@kit.ArkUI';
-2. let uiContext: UIContext = this.getUIContext();
-3. let router: Router = uiContext.getRouter();
-4. router.getParams();
+```ts
+import { Router , UIContext } from '@kit.ArkUI';
+let uiContext: UIContext = this.getUIContext();
+let router: Router = uiContext.getRouter();
+router.getParams();
 ```

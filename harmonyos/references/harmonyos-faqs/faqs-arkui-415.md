@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-415
 title: Navigation通过pushPathByName跳转页面为什么显示空白
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > Navigation通过pushPathByName跳转页面为什么显示空白
+breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Navigation通过pushPathByName跳转页面为什么显示空白
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:49+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:2d7ac7e933a210de437e6733b15442f41c2ec71823b0dd7e35f66d5e2f8859bb
+scraped_at: 2026-09-02T14:54:28+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:a5f11136a003a5d1dab2ad935a28bcca42a94ea7615dd2647db188575e4c57f8
 ---
 
 **常见原因及解决措施**
@@ -28,15 +28,13 @@ content_hash: sha256:2d7ac7e933a210de437e6733b15442f41c2ec71823b0dd7e35f66d5e2f8
 
 修改module.json5文件，将type改为"har"或"shared"，例如：
 
+```ts
+"module": {
+  // "name": "your_module",
+  // "type": "har", // or shared, avoid using feature,
+  // ...
+},
 ```
-1. "module": {
-2. // "name": "your_module",
-3. // "type": "har", // or shared, avoid using feature,
-4. // ...
-5. },
-```
-
-[module.json5](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkUI/entry/src/main/module.json5#L18-L89)
 
 **原因三：****NavBar隐藏导致页面栈异常**
 
@@ -46,15 +44,13 @@ hideNavBar属性设置为true时，NavBar被隐藏，若页面栈为空，会显
 
 确认Navigation组件的hideNavBar属性未设置为true，将其改为false以确保NavBar可见：
 
+```ts
+Navigation() {
+  // page content
+  // ...
+}
+.hideNavBar(false) // Ensure not hidden
 ```
-1. Navigation() {
-2. // page content
-3. // ...
-4. }
-5. .hideNavBar(false) // Ensure not hidden
-```
-
-[NavigationDemo.ets](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkUI/entry/src/main/ets/pages/NavigationDemo.ets#L29-L56)
 
 **原因四：****跳转名称（Name）无效或为空**
 
@@ -66,12 +62,10 @@ pushPathByName传入的name参数为空、拼写错误或不存在于路由表�
 
 使用有效名称，例如：
 
+```ts
+// Correct example: The name must match the routing table
+this.pageStack.pushPathByName('PageDetail', 'param');
 ```
-1. // Correct example: The name must match the routing table
-2. this.pageStack.pushPathByName('PageDetail', 'param');
-```
-
-[NavigationDemo.ets](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkUI/entry/src/main/ets/pages/NavigationDemo.ets#L35-L36)
 
 **原因五：调试环境不兼容**
 
@@ -89,21 +83,19 @@ pushPathByName传入的name参数为空、拼写错误或不存在于路由表�
 
 子页面应直接使用父级传递的NavPathStack实例，避免重新创建。例如：
 
+```ts
+// Subpage code, avoid creating it yourself
+@Component
+struct ChildPage {
+  // Error: Should not use new NavPathStack()
+  // pageStack: NavPathStack = new NavPathStack();
+  // Correct: Inject the parent stack through @Consume or parameters
+  @Consume('pageStack') pageStack: NavPathStack;
+  build() {
+    // ...
+  }
+}
 ```
-1. // Subpage code, avoid creating it yourself
-2. @Component
-3. struct ChildPage {
-4. // Error: Should not use new NavPathStack()
-5. // pageStack: NavPathStack = new NavPathStack();
-6. // Correct: Inject the parent stack through @Consume or parameters
-7. @Consume('pageStack') pageStack: NavPathStack;
-8. build() {
-9. // ...
-10. }
-11. }
-```
-
-[NavigationDemo.ets](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkUI/entry/src/main/ets/pages/NavigationDemo.ets#L62-L72)
 
 **pushPathByName方法的局限性及替代方案**
 
@@ -115,19 +107,17 @@ pushPathByName是同步方法，跳转至不存在的页面时不会抛出异常
 
 改用pushDestinationByName（异步方法），可捕捉错误并重定向：
 
+```ts
+// Asynchronous jump using pushDestructionByName
+this.pageStack.pushDestinationByName('TargetPage', 'param')
+  .then(() => {
+    hilog.info(0x000, 'testTag', 'pushDestinationByName success');
+  })
+  .catch((error: BusinessError) => {
+    // Jump failed, redirected to custom page (such as Stay tuned page)
+    this.pageStack.pushPathByName('ErrorPage', 'param');
+    hilog.error(0x000, 'testTag', `pushDestinationByName failed, code=${error.code}, message=${error.message}`);
+  })
 ```
-1. // Asynchronous jump using pushDestructionByName
-2. this.pageStack.pushDestinationByName('TargetPage', 'param')
-3. .then(() => {
-4. hilog.info(0x000, 'testTag', 'pushDestinationByName success');
-5. })
-6. .catch((error: BusinessError) => {
-7. // Jump failed, redirected to custom page (such as Stay tuned page)
-8. this.pageStack.pushPathByName('ErrorPage', 'param');
-9. hilog.error(0x000, 'testTag', `pushDestinationByName failed, code=${error.code}, message=${error.message}`);
-10. })
-```
-
-[NavigationDemo.ets](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkUI/entry/src/main/ets/pages/NavigationDemo.ets#L42-L51)
 
 优势：通过回调处理错误，避免白屏。

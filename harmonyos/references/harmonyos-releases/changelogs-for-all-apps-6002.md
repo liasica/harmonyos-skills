@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-for-all-apps-6002
 title: OS平台API行为的变更
-breadcrumb: 版本说明 > HarmonyOS 6.0.0(20) > OS平台能力 > OS平台行为变更说明 > 6.0.0(20) Beta2引入的行为变更 > OS平台API行为的变更
+breadcrumb: 版本说明 > 更多版本 > 6.0.0(20) > OS平台能力 > OS平台行为变更说明 > 6.0.0(20) Beta2引入的行为变更 > OS平台API行为的变更
 category: harmonyos-releases
-scraped_at: 2026-04-29T13:21:48+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:c6e762c1cdb7fe750d3523cef30240bd3c756727c90c1349530255924d3218da
+scraped_at: 2026-09-02T14:58:40+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:bb086e28a48c1ee3d7f776683d8c7b98db18336e0e4b81b4c43caaa6e86d26da
 ---
 
 ## Ability Kit
@@ -60,7 +60,7 @@ Ability Kit部分公共事件中包含应用信息，需要增加管控措施。
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于6.0.0(20)时生效。
 
@@ -70,43 +70,43 @@ Ability Kit部分公共事件中包含应用信息，需要增加管控措施。
 
 原因在于扩容后比较器丢失，remove(a1)失败，后续行为异常。
 
-```
-1. import { TreeSet } from '@kit.ArkTS';
+```screen
+import { TreeSet } from '@kit.ArkTS';
 
-3. class A {
-4. time: number;
-5. constructor(time: number) {
-6. this.time = time;
-7. }
-8. static readonly compared = ((first: A, second: A): number => {
-9. return second.time - first.time;
-10. }) as Function as (first: A, second: A) => boolean;
-11. }
-12. const a1 = new A(1);
-13. const a2 = new A(2);
-14. const a3 = new A(3);
-15. const a4 = new A(4);
-16. const a5 = new A(5);
-17. const a6 = new A(6);
-18. const set = new TreeSet<A>(A.compared); // 在add扩容后A.compared丢失
-19. set.add(a1);
-20. set.add(a2);
-21. set.add(a3); // 触发扩容，A.compared丢失
-22. set.add(a4);
-23. set.add(a5);
-24. set.add(a6);
-25. for (let i = 0; i < 5; ++i) {
-26. set.remove(a1); // 同一个红黑树前后用了两种比较规则，数据结构的性质被破坏
-27. console.info(set.has(a1).toString());
-28. // 预期结果：false、false、false、false、false
-29. // 实际结果：false、false、true、true、true
-30. set.add(a1);
-31. }
-32. for (let item of set) {
-33. console.info(item.time.toString());
-34. // 预期结果：6、5、4、3、2、1
-35. // 实际结果：6、1、1
-36. }
+class A {
+  time: number;
+  constructor(time: number) {
+    this.time = time;
+  }
+  static readonly compared = ((first: A, second: A): number => {
+    return second.time - first.time;
+  }) as Function as (first: A, second: A) => boolean;
+}
+const a1 = new A(1);
+const a2 = new A(2);
+const a3 = new A(3);
+const a4 = new A(4);
+const a5 = new A(5);
+const a6 = new A(6);
+const set = new TreeSet<A>(A.compared); // 在add扩容后A.compared丢失
+set.add(a1);
+set.add(a2);
+set.add(a3); // 触发扩容，A.compared丢失
+set.add(a4);
+set.add(a5);
+set.add(a6);
+for (let i = 0; i < 5; ++i) {
+  set.remove(a1); // 同一个红黑树前后用了两种比较规则，数据结构的性质被破坏
+  console.info(set.has(a1).toString());
+  // 预期结果：false、false、false、false、false
+  // 实际结果：false、false、true、true、true
+  set.add(a1);
+}
+for (let item of set) {
+  console.info(item.time.toString());
+  // 预期结果：6、5、4、3、2、1
+  // 实际结果：6、1、1
+}
 ```
 
 变更后：
@@ -193,87 +193,87 @@ drawModifier
 
 具体适配方案可参考下文示例。
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```screen
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. class MyFrontDrawModifier extends DrawModifier {
-4. public scaleX: number = 1;
-5. public scaleY: number = 1;
-6. public uiContext: UIContext;
+class MyFrontDrawModifier extends DrawModifier {
+  public scaleX: number = 1;
+  public scaleY: number = 1;
+  public uiContext: UIContext;
 
-8. constructor(uiContext: UIContext) {
-9. super();
-10. this.uiContext = uiContext;
-11. }
+  constructor(uiContext: UIContext) {
+    super();
+    this.uiContext = uiContext;
+  }
 
-13. drawFront(context: DrawContext): void {
-14. const brush = new drawing.Brush();
-15. brush.setColor({
-16. alpha: 255,
-17. red: 0,
-18. green: 0,
-19. blue: 255
-20. });
-21. context.canvas.attachBrush(brush);
-22. const halfWidth = context.size.width / 2;
-23. const halfHeight = context.size.width / 2;
-24. const radiusScale = (this.scaleX + this.scaleY) / 2;
-25. context.canvas.drawCircle(this.uiContext.vp2px(halfWidth), this.uiContext.vp2px(halfHeight), this.uiContext.vp2px(20 * radiusScale));
-26. }
-27. }
+  drawFront(context: DrawContext): void {
+    const brush = new drawing.Brush();
+    brush.setColor({
+      alpha: 255,
+      red: 0,
+      green: 0,
+      blue: 255
+    });
+    context.canvas.attachBrush(brush);
+    const halfWidth = context.size.width / 2;
+    const halfHeight = context.size.width / 2;
+    const radiusScale = (this.scaleX + this.scaleY) / 2;
+    context.canvas.drawCircle(this.uiContext.vp2px(halfWidth), this.uiContext.vp2px(halfHeight), this.uiContext.vp2px(20 * radiusScale));
+  }
+}
 
-29. @Entry
-30. @Component
-31. struct DrawModifierExample {
-32. @State public modifierToBeCleared: DrawModifier | undefined = new MyFrontDrawModifier(this.getUIContext());
-33. public modifierToBeChanged: MyFrontDrawModifier = new MyFrontDrawModifier(this.getUIContext());
-34. @State public testWidth: number = 100;
+@Entry
+@Component
+struct DrawModifierExample {
+  @State public modifierToBeCleared: DrawModifier | undefined = new MyFrontDrawModifier(this.getUIContext());
+  public modifierToBeChanged: MyFrontDrawModifier = new MyFrontDrawModifier(this.getUIContext());
+  @State public testWidth: number = 100;
 
-36. build() {
-37. Column() {
-38. Button("clearModifier").onClick(() => {
-39. // 变更前：下面代码不生效，Row组件仍旧绑定原本的modifier
-40. this.modifierToBeCleared = undefined;
-41. // 规避方法：变更前若想清空Text组件的自定义绘制效果，可将其绑定的变量变为基类对象
-42. this.modifierToBeCleared = new DrawModifier();
-43. // 变更后：若开发者期望行为和变更前保持一致，即下面代码不生效的话，只需要注释掉这一行即可
-44. // this.modifierToBeCleared = undefined;
-45. })
-46. Column() {
-47. Row()
-48. .width(100)
-49. .height(100)
-50. .margin(10)
-51. .backgroundColor(Color.Gray)
-52. .drawModifier(this.modifierToBeCleared)
-53. }
-54. .margin({ bottom: 50 })
-55. Button('changeModifier')
-56. .onClick(() => {
-57. this.testWidth++;
-58. this.modifierToBeChanged.scaleX += 0.1;
-59. this.modifierToBeChanged.scaleY += 0.1;
-60. // 变更前自动更新，变更后需要手动调用invalidate方法适配
-61. this.modifierToBeChanged?.invalidate();
-62. })
-63. Column() {
-64. Row()
-65. .width(100)
-66. .height(100)
-67. .margin(10)
-68. .backgroundColor(Color.Gray)
-69. .drawModifier(this.modifierToBeChanged)
-70. Row() {
-71. Text("hello world")
-72. .width(this.testWidth)
-73. .height(100)
-74. }
-75. }
-76. .width(300)
-77. .height(300)
-78. }
-79. }
-80. }
+  build() {
+    Column() {
+      Button("clearModifier").onClick(() => {
+        // 变更前：下面代码不生效，Row组件仍旧绑定原本的modifier
+        this.modifierToBeCleared = undefined;
+        // 规避方法：变更前若想清空Text组件的自定义绘制效果，可将其绑定的变量变为基类对象
+        this.modifierToBeCleared = new DrawModifier();
+        // 变更后：若开发者期望行为和变更前保持一致，即下面代码不生效的话，只需要注释掉这一行即可
+        // this.modifierToBeCleared = undefined;
+      })
+      Column() {
+        Row()
+          .width(100)
+          .height(100)
+          .margin(10)
+          .backgroundColor(Color.Gray)
+          .drawModifier(this.modifierToBeCleared)
+      }
+      .margin({ bottom: 50 })
+      Button('changeModifier')
+        .onClick(() => {
+          this.testWidth++;
+          this.modifierToBeChanged.scaleX += 0.1;
+          this.modifierToBeChanged.scaleY += 0.1;
+          // 变更前自动更新，变更后需要手动调用invalidate方法适配
+          this.modifierToBeChanged?.invalidate();
+        })
+      Column() {
+        Row()
+          .width(100)
+          .height(100)
+          .margin(10)
+          .backgroundColor(Color.Gray)
+          .drawModifier(this.modifierToBeChanged)
+        Row() {
+          Text("hello world")
+            .width(this.testWidth)
+            .height(100)
+        }
+      }
+      .width(300)
+      .height(300)
+    }
+  }
+}
 ```
 
 ### 半模态SIDE侧边样式新增避让软键盘能力
@@ -319,33 +319,33 @@ drawModifier
 
 变更后，CanvasRenderer的font接口设置自定义字体生效，绘制字体显示为自定义字体。
 
-```
-1. import { text } from "@kit.ArkGraphics2D"
+```ts
+import { text } from "@kit.ArkGraphics2D"
 
-3. // xxx.ets
-4. @Entry
-5. @Component
-6. struct FontDemo {
-7. private settings: RenderingContextSettings = new RenderingContextSettings(true)
-8. private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings)
+// xxx.ets
+@Entry
+@Component
+struct FontDemo {
+  private settings: RenderingContextSettings = new RenderingContextSettings(true)
+  private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings)
 
-10. build() {
-11. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-12. Canvas(this.context)
-13. .width('100%')
-14. .height('100%')
-15. .backgroundColor('rgb(213,213,213)')
-16. .onReady(() => {
-17. let fontCollection = text.FontCollection.getGlobalInstance();
-18. fontCollection.loadFontSync('HarmonyOS_Sans_Thin_Italic', $rawfile("HarmonyOS_Sans_Thin_Italic.ttf"))
-19. this.context.font = "50px HarmonyOS_Sans_Thin_Italic"
-20. this.context.fillText("Hello World", 20, 60)
-21. })
-22. }
-23. .width('100%')
-24. .height('100%')
-25. }
-26. }
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Canvas(this.context)
+        .width('100%')
+        .height('100%')
+        .backgroundColor('rgb(213,213,213)')
+        .onReady(() => {
+          let fontCollection = text.FontCollection.getGlobalInstance();
+          fontCollection.loadFontSync('HarmonyOS_Sans_Thin_Italic', $rawfile("HarmonyOS_Sans_Thin_Italic.ttf"))
+          this.context.font = "50px HarmonyOS_Sans_Thin_Italic"
+          this.context.fillText("Hello World", 20, 60)
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 | 变更前 | 变更后 |
@@ -372,7 +372,7 @@ CanvasRenderingContext2D和OffscreenCanvasRenderingContext2D的font接口。
 
 保存控件系统提示弹框：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/6ubE1rI_TgqWMk6LAmdfsg/zh-cn_image_0000002394557509.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/pEEHh5pWQya4XENWuzpk3w/zh-cn_image_0000002394557509.png)
 
 经评估，强制弹出系统弹框会与应用内已有弹框冲突，体验不够友好，系统将取消该系统强制弹框的行为。
 
@@ -469,16 +469,16 @@ retrieval.VectorQuery接口的value字段
 
 情况3：使用retrieval.VectorQuery接口的value属性，对新定义的变量赋值，需要做如下修改：
 
-```
-1. let floatArray = new Float32Array([0.1, 0.2]);
-2. let vectorQuery:retrieval.VectorQuery = {
-3. column:"keywords",
-4. value:floatArray,
-5. similarityThreshold:0.35
-6. }
+```screen
+let floatArray = new Float32Array([0.1, 0.2]);
+let vectorQuery:retrieval.VectorQuery = {
+  column:"keywords",
+  value:floatArray,
+  similarityThreshold:0.35
+}
 
-8. let value1:Float32Array = vectorQuery.value;               // 错误写法：value变更为可选字段后，编译报错
-9. let value2:Float32Array | undefined = vectorQuery.value;   // 正确写法
+let value1:Float32Array = vectorQuery.value;               // 错误写法：value变更为可选字段后，编译报错
+let value2:Float32Array | undefined = vectorQuery.value;   // 正确写法
 ```
 
 ## Localization Kit
@@ -522,41 +522,41 @@ retrieval.VectorQuery接口的value字段
 
 变更前，libc++库condition\_variable::wait\_for接口使用系统墙上时间，受到修改系统时间的影响，和开发者预期不符合。
 
-```
-1. template <class _Rep, class _Period>
-2. cv_status
-3. condition_variable::wait_for(unique_lock<mutex>& __lk,
-4. const chrono::duration<_Rep, _Period>& __d)
-5. {
-6. ...
+```cpp
+template <class _Rep, class _Period>
+cv_status
+condition_variable::wait_for(unique_lock<mutex>& __lk,
+                             const chrono::duration<_Rep, _Period>& __d)
+{
+    ...
 
-8. #if defined(_LIBCPP_HAS_COND_CLOCKWAIT)
-9. using __clock_tp_ns = time_point<steady_clock, nanoseconds>;
-10. __ns_rep __now_count_ns = _VSTD::__safe_nanosecond_cast(__c_now.time_since_epoch()).count();
-11. #else
-12. using __clock_tp_ns = time_point<system_clock, nanoseconds>;
-13. __ns_rep __now_count_ns = _VSTD::__safe_nanosecond_cast(system_clock::now().time_since_epoch()).count();
-14. #endif
-
-16. ...
-17. __do_timed_wait(...);
-18. ...
-19. }
+#if defined(_LIBCPP_HAS_COND_CLOCKWAIT)
+    using __clock_tp_ns = time_point<steady_clock, nanoseconds>;
+    __ns_rep __now_count_ns = _VSTD::__safe_nanosecond_cast(__c_now.time_since_epoch()).count();
+#else
+    using __clock_tp_ns = time_point<system_clock, nanoseconds>;
+    __ns_rep __now_count_ns = _VSTD::__safe_nanosecond_cast(system_clock::now().time_since_epoch()).count();
+#endif
+    
+    ...
+    __do_timed_wait(...);
+    ...
+}
 ```
 
-```
-1. void
-2. condition_variable::__do_timed_wait(unique_lock<mutex>& lk,
-3. chrono::time_point<chrono::system_clock, chrono::nanoseconds> tp) noexcept
-4. {
-5. ...
-6. nanoseconds d = tp.time_since_epoch();
-7. if (d > nanoseconds(0x59682F000000E941))
-8. d = nanoseconds(0x59682F000000E941);
-9. ...
-10. int ec = __libcpp_condvar_timedwait(&__cv_, lk.mutex()->native_handle(), &ts);
-11. ...
-12. }
+```pp
+void
+condition_variable::__do_timed_wait(unique_lock<mutex>& lk,
+     chrono::time_point<chrono::system_clock, chrono::nanoseconds> tp) noexcept
+{
+    ...
+    nanoseconds d = tp.time_since_epoch();
+    if (d > nanoseconds(0x59682F000000E941))
+        d = nanoseconds(0x59682F000000E941);
+    ...
+    int ec = __libcpp_condvar_timedwait(&__cv_, lk.mutex()->native_handle(), &ts);
+    ...
+}
 ```
 
 其中0x59682F000000E941 ns = 6442450944s = 2174-02-25 17:42:24，当系统当前时间加上wait\_for接口入参需要等待的时间超过该值时被截断，\_\_libcpp\_condvar\_timedwait会立即返回。
@@ -600,55 +600,55 @@ on('dataReceive')/off('dataReceive')接口第二个参数RecvCapabilityRegistry�
 
 新增必填参数capabilities，应用接入沙箱接收能力时，需配置支持接收的数据类型及最大数量。
 
-```
-1. import { uniformTypeDescriptor as utd } from '@kit.ArkData';
-2. import { systemShare, harmonyShare } from '@kit.ShareKit';
-3. import { common } from '@kit.AbilityKit';
+```ts
+import { uniformTypeDescriptor as utd } from '@kit.ArkData';
+import { systemShare, harmonyShare } from '@kit.ShareKit';
+import { common } from '@kit.AbilityKit';
 
-5. @Component
-6. export default struct Index {
-7. aboutToAppear(): void {
-8. let capabilityRegistry: harmonyShare.RecvCapabilityRegistry = {
-9. windowId: 999, // 此值仅为示例 实际使用时请替换正确的windowId
-10. capabilities: [{
-11. utd: utd.UniformDataType.IMAGE, // 仅可接收图片类型文件
-12. maxSupportedCount: 1, // 最大可接收1个文件
-13. }]
-14. }
-15. // 注册沙箱接收'dataReceive'监听事件
-16. harmonyShare.on('dataReceive', capabilityRegistry, (receivableTarget: harmonyShare.ReceivableTarget) => {
-17. let uiContext: UIContext = this.getUIContext();
-18. let context = uiContext.getHostContext() as common.UIAbilityContext;
-19. receivableTarget.receive(context.filesDir, {
-20. // 此路径仅为示例 使用时请替换实际路径
-21. onDataReceived: (sharedData: systemShare.SharedData) => {
-22. let sharedRecords = sharedData.getRecords();
-23. sharedRecords.forEach((record: systemShare.SharedRecord) => {
-24. // 处理分享数据
-25. });
-26. },
-27. onResult(resultCode: harmonyShare.ShareResultCode) {
-28. if (resultCode === harmonyShare.ShareResultCode.SHARE_SUCCESS) {
-29. // To do things.
-30. }
-31. }
-32. });
-33. });
-34. }
+@Component
+export default struct Index {
+  aboutToAppear(): void {
+    let capabilityRegistry: harmonyShare.RecvCapabilityRegistry = {
+      windowId: 999, // 此值仅为示例 实际使用时请替换正确的windowId
+      capabilities: [{
+        utd: utd.UniformDataType.IMAGE, // 仅可接收图片类型文件
+        maxSupportedCount: 1, // 最大可接收1个文件
+      }]
+    }
+    // 注册沙箱接收'dataReceive'监听事件
+    harmonyShare.on('dataReceive', capabilityRegistry, (receivableTarget: harmonyShare.ReceivableTarget) => {
+      let uiContext: UIContext = this.getUIContext();
+      let context = uiContext.getHostContext() as common.UIAbilityContext;
+      receivableTarget.receive(context.filesDir, {
+        // 此路径仅为示例 使用时请替换实际路径
+        onDataReceived: (sharedData: systemShare.SharedData) => {
+          let sharedRecords = sharedData.getRecords();
+          sharedRecords.forEach((record: systemShare.SharedRecord) => {
+            // 处理分享数据
+          });
+        },
+        onResult(resultCode: harmonyShare.ShareResultCode) {
+          if (resultCode === harmonyShare.ShareResultCode.SHARE_SUCCESS) {
+            // To do things.
+          }
+        }
+      });
+    });
+  }
 
-36. aboutToDisappear(): void {
-37. let capabilityRegistry: harmonyShare.RecvCapabilityRegistry = {
-38. windowId: 999, // 此值仅为示例 实际使用时请替换正确的windowId
-39. capabilities: [{
-40. utd: utd.UniformDataType.IMAGE,
-41. maxSupportedCount: 1,
-42. }]
-43. }
-44. // 解除沙箱接收'dataReceive'监听事件
-45. harmonyShare.off('dataReceive', capabilityRegistry);
-46. }
+  aboutToDisappear(): void {
+    let capabilityRegistry: harmonyShare.RecvCapabilityRegistry = {
+      windowId: 999, // 此值仅为示例 实际使用时请替换正确的windowId
+      capabilities: [{
+        utd: utd.UniformDataType.IMAGE,
+        maxSupportedCount: 1,
+      }]
+    }
+    // 解除沙箱接收'dataReceive'监听事件
+    harmonyShare.off('dataReceive', capabilityRegistry);
+  }
 
-48. build() {
-49. }
-50. }
+  build() {
+  }
+}
 ```

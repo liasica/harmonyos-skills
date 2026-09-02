@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/connectivity-
 title: Connectivity Kit简介
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > Connectivity Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:32:27+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:d69b060dd3a3fe77c6d32fffcbb4d3a250f3d098dba44485afb56e105daef31f
+scraped_at: 2026-09-02T14:59:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d18bfac69193a7b1240731509990538c34d0a2ac5544847964f9ebe548ab1173
 ---
 
 ## Connectivity Kit开发概述
@@ -90,6 +90,9 @@ NFC英文全称Near Field Communication，近距离无线通信。NFC服务提�
 * **PartnerAgent服务模块**
 
   提供了伙伴设备与HarmonyOS设备互通服务，在模块内可以实现互通业务比如媒体控制，电话反控，健康检测等。详情请参考[@ohos.FusionConnectivity.partnerAgent](../harmonyos-references/js-apis-fusionconnectivity-partneragent.md)文档。
+* **融合测距模块**
+
+  融合测距模块，提供了星闪[HADM](fusion-connectivity-terminology.md#hadm)测距服务，在模块内可以使用星闪HADM测距的能力。详情请参考[@ohos.FusionConnectivity.ranging](../harmonyos-references/js-apis-fusionconnectivity-ranging.md)文档。
 
 ### 运作机制
 

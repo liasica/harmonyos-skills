@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 内存泄漏类问题检测方法
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 资源泄漏类问题检测 > 内存泄漏类问题检测方法
 category: best-practices
-scraped_at: 2026-04-28T08:22:50+08:00
+scraped_at: 2026-09-02T15:03:22+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:60d447043eb743d2c55944b51122af271053c1e4756eb8c8875a6ef98b2c26ac
+content_hash: sha256:865f69601ce4b50bf6adc9f52a46053d810d8e5a33a2d56795a89e915b89468c
 ---
 
 ## 概述
@@ -65,7 +65,7 @@ content_hash: sha256:60d447043eb743d2c55944b51122af271053c1e4756eb8c8875a6ef98b2
 
    一是应用可以自行调用hidebug的API计算出堆使用率的占比，超过阈值则调用hidebug的dumpJsRawHeapData方法导出快照。
 
-   说明
+   **说明** 
 
    调用[hidebug.getAppMemoryLimit()](../harmonyos-references/js-apis-hidebug.md#hidebuggetappmemorylimit12)可以获取到MemoryLimit对象，MemoryLimit对象的vmHeapLimit是当前虚拟机线程的虚拟机内存使用上限。
 
@@ -94,7 +94,7 @@ content_hash: sha256:60d447043eb743d2c55944b51122af271053c1e4756eb8c8875a6ef98b2
 
 系统也会对单个进程的不同内核类内存使用设置上限，当内存使用总量超过此门限时，会对应用触发管控。
 
-说明
+**说明** 
 
 目前内核类内存泄漏维测信息只能通过DevEco Testing工具压测获得，系统检测到异常后会自动生成，仅限开发态才能获取到，暂无线上获取方式
 

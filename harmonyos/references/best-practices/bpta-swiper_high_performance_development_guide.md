@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-swiper_hig
 title: Swiper组件加载丢帧优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > Swiper组件加载丢帧优化
 category: best-practices
-scraped_at: 2026-04-29T14:13:35+08:00
+scraped_at: 2026-09-02T15:03:21+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:fc7eaa48d85922850b7cd2889b8a98c32cde5e941d4cb1b9de989bff8c5b1dc2
+content_hash: sha256:e9d4d406466da413bcf2e3157ea817f54bd45a1aafeed7412f2dc90725eb8875
 ---
 
 ## 概述
@@ -26,77 +26,71 @@ content_hash: sha256:fc7eaa48d85922850b7cd2889b8a98c32cde5e941d4cb1b9de989bff8c5
 
 Swiper子组件核心代码如下：
 
+```typescript
+@Reusable
+@Component
+struct QuestionSwiperItem {
+  @State itemData: Question | null = null;
+
+  aboutToReuse(params: Record<string, Object>): void {
+    this.itemData = params.itemData as Question;
+  }
+
+  build() {
+    Column() {
+      Text(this.itemData?.title)
+        // ...
+      Image(this.itemData?.image)
+        // ...
+
+      Column({ space: 16 }) {
+        // ...
+      }
+      .width('100%')
+      .alignItems(HorizontalAlign.Start)
+    }
+    // ...
+  }
+}
 ```
-1. @Reusable
-2. @Component
-3. struct QuestionSwiperItem {
-4. @State itemData: Question | null = null;
-
-6. aboutToReuse(params: Record<string, Object>): void {
-7. this.itemData = params.itemData as Question;
-8. }
-
-10. build() {
-11. Column() {
-12. Text(this.itemData?.title)
-13. // ...
-14. Image(this.itemData?.image)
-15. // ...
-
-17. Column({ space: 16 }) {
-18. // ...
-19. }
-20. .width('100%')
-21. .alignItems(HorizontalAlign.Start)
-22. }
-23. // ...
-24. }
-25. }
-```
-
-[LazyForEachSwiper.ets](https://gitcode.com/harmonyos_samples/SwiperPerformance/blob/master/entry/src/main/ets/pages/LazyForEachSwiper.ets#L20-L71)
 
 Swiper主页面核心代码如下：
 
 * 使用ForEach加载页面
 
-  ```
-  1. aboutToAppear(): void {
-  2. for (let i = 0; i < 1000; i++) {
-  3. this.list.push(i);
-  4. this.data.addData(i, i);
-  5. }
-  6. }
+  ```typescript
+  aboutToAppear(): void {
+    for (let i = 0; i < 1000; i++) {
+      this.list.push(i);
+      this.data.addData(i, i);
+    }
+  }
 
-  8. build() {
-  9. Column() {
-  10. Swiper(this.swiperController) {
-  11. ForEach(this.list, (item: number, index: number) => {
-  12. SwiperItem({ myIndex: index })
-  13. .width('100%')
-  14. .height("100%")
-  15. }, (item: string) => item)
-  16. }
-  17. // ...
-  18. }
-  19. .width('100%')
-  20. .margin({ top: 5 })
-  21. }
+  build() {
+    Column() {
+      Swiper(this.swiperController) {
+        ForEach(this.list, (item: number, index: number) => {
+          SwiperItem({ myIndex: index })
+            .width('100%')
+            .height("100%")
+        }, (item: string) => item)
+      }
+      // ...
+    }
+    .width('100%')
+    .margin({ top: 5 })
+  }
   ```
-
-  [SwiperCoreCode.ets](https://gitcode.com/harmonyos_samples/SwiperPerformance/blob/master/entry/src/main/ets/pages/SwiperCoreCode.ets#L12-L32)
 
 * 使用LazyForEach加载页面
 
+  ```typescript
+  Swiper(this.swiperController) {
+    LazyForEach(this.dataSource, (item: Question) => {
+      QuestionSwiperItem({ itemData: item })
+    }, (item: Question) => item.id)
+  }
   ```
-  1. Swiper(this.swiperController) {
-  2. LazyForEach(this.dataSource, (item: Question) => {
-  3. QuestionSwiperItem({ itemData: item })
-  4. }, (item: Question) => item.id)
-  5. }
-  ```
-
-  [LazyForEachSwiper.ets](https://gitcode.com/harmonyos_samples/SwiperPerformance/blob/master/entry/src/main/ets/pages/LazyForEachSwiper.ets#L93-L97)
 
 **表1** 当总题量为1000时，ForEach与LazyForEach的性能对比
 
@@ -132,77 +126,73 @@ LazyForEach懒加载可以通过设置[cachedCount](../harmonyos-references/ts-c
 
 Swiper子组件核心代码如下：
 
+```typescript
+@Component
+struct SwiperItem {
+  private data: number[] = [];
+  private myIndex: number = 0;
+  // Construct data
+  private imgURL: string[] = Constant.imgURL;
+
+  aboutToAppear(): void {
+    for (let i = 0; i < 50; i++) {
+      this.data.push(i);
+    }
+  }
+
+  build() {
+    Column() {
+      List({ space: 20 }) {
+        ForEach(this.data, (index: number) => {
+          ListItem() {
+            Image(this.imgURL[this.myIndex * 50 + index])
+              .objectFit(ImageFit.Contain)
+              .width("100%")
+              .height("100%")
+          }
+          .aspectRatio(1)
+          .border({ width: 2, color: Color.Green })
+        }, (index: number) => index.toString());
+      }
+      // ...
+    }
+    // ...
+  }
+}
 ```
-1. @Component
-2. struct SwiperItem {
-3. private data: number[] = [];
-4. private myIndex: number = 0;
-5. // Construct data
-6. private imgURL: string[] = Constant.imgURL;
-
-8. aboutToAppear(): void {
-9. for (let i = 0; i < 50; i++) {
-10. this.data.push(i);
-11. }
-12. }
-
-14. build() {
-15. Column() {
-16. List({ space: 20 }) {
-17. ForEach(this.data, (index: number) => {
-18. ListItem() {
-19. Image(this.imgURL[this.myIndex * 50 + index])
-20. .objectFit(ImageFit.Contain)
-21. .width("100%")
-22. .height("100%")
-23. }
-24. .aspectRatio(1)
-25. .border({ width: 2, color: Color.Green })
-26. }, (index: number) => index.toString());
-27. }
-28. // ...
-29. }
-30. // ...
-31. }
-32. }
-```
-
-[SwiperCoreCode.ets](https://gitcode.com/harmonyos_samples/SwiperPerformance/blob/master/entry/src/main/ets/pages/SwiperCoreCode.ets#L43-L74)
 
 Swiper主页面核心代码如下：
 
+```typescript
+@Component
+struct TestCodeTwo {
+  private dataSrc: NumberDataSource = new NumberDataSource();
+
+  aboutToAppear(): void {
+    for (let i = 0; i < 20; i++) {
+      this.dataSrc.addData(i, i);
+    }
+  }
+
+  build() {
+    Column({ space: 5 }) {
+      Swiper() {
+        LazyForEach(this.dataSrc, (item: number, index: number) => {
+          SwiperItem({
+            myIndex: index
+          });
+        }, (item: number) => item.toString());
+      }
+      .cachedCount(1)
+      .autoPlay(true)
+      .interval(1000)
+      .duration(100)
+      // ...
+    }.width('100%')
+    .margin({ top: 5 })
+  }
+}
 ```
-1. @Component
-2. struct TestCodeTwo {
-3. private dataSrc: NumberDataSource = new NumberDataSource();
-
-5. aboutToAppear(): void {
-6. for (let i = 0; i < 20; i++) {
-7. this.dataSrc.addData(i, i);
-8. }
-9. }
-
-11. build() {
-12. Column({ space: 5 }) {
-13. Swiper() {
-14. LazyForEach(this.dataSrc, (item: number, index: number) => {
-15. SwiperItem({
-16. myIndex: index
-17. });
-18. }, (item: number) => item.toString());
-19. }
-20. .cachedCount(1)
-21. .autoPlay(true)
-22. .interval(1000)
-23. .duration(100)
-24. // ...
-25. }.width('100%')
-26. .margin({ top: 5 })
-27. }
-28. }
-```
-
-[SwiperCoreCode.ets](https://gitcode.com/harmonyos_samples/SwiperPerformance/blob/master/entry/src/main/ets/pages/SwiperCoreCode.ets#L82-L109)
 
 为了测试不同缓存数量对性能的影响，将 `cachedCount` 的值分别设置为 1、2、4、8。基于案例程序，测试不同缓存数量对帧率和内存占用的影响。
 
@@ -218,7 +208,7 @@ Swiper主页面核心代码如下：
 
 在一屏显示一个Swiper子组件的连续滑动场景中，将cachedCount值设置为1或2。
 
-说明
+**说明** 
 
 缓存数量仅供参考，不同的应用程序设置的最佳缓存数量不一致，需要针对应用程序测试得出最佳缓存数量。
 
@@ -230,44 +220,42 @@ Swiper主页面核心代码如下：
 
 Swiper子组件：在子组件首次构建(生命周期执行到[aboutToAppear()](../harmonyos-references/ts-custom-component-lifecycle.md#abouttoappear))时，先判断Swiper数据中图片资源是否已经存在，若不存在则先下载图片资源，再构建节点。
 
+```typescript
+@Reusable
+@Component
+struct PreloadSwiperItem {
+  // ...
+
+  aboutToAppear(): void {
+    hiTraceMeter.startTrace('preloadData', 1);
+    // ...
+    if (!this.swiperData.pixelMap) {
+      ImageUtils.getPixelMap(IMAGE_URL, (pixelMap: PixelMap) => {
+        this.swiperData.pixelMap = pixelMap;
+      });
+    }
+    // ...
+  }
+
+  onDidBuild(): void {
+    hiTraceMeter.finishTrace('preloadData', 1);
+  }
+
+  build() {
+    Grid() {
+      LazyForEach(this.gridDataSource, (item: string) => {
+        GridItem() {
+          ImageItem({ item: item, swiperData: this.swiperData })
+        }
+      }, (item: string): string => item.toString())
+    }
+    .columnsTemplate('1fr 1fr 1fr 1fr')
+    // ...
+  }
+}
 ```
-1. @Reusable
-2. @Component
-3. struct PreloadSwiperItem {
-4. // ...
 
-6. aboutToAppear(): void {
-7. hiTraceMeter.startTrace('preloadData', 1);
-8. // ...
-9. if (!this.swiperData.pixelMap) {
-10. ImageUtils.getPixelMap(IMAGE_URL, (pixelMap: PixelMap) => {
-11. this.swiperData.pixelMap = pixelMap;
-12. });
-13. }
-14. // ...
-15. }
-
-17. onDidBuild(): void {
-18. hiTraceMeter.finishTrace('preloadData', 1);
-19. }
-
-21. build() {
-22. Grid() {
-23. LazyForEach(this.gridDataSource, (item: string) => {
-24. GridItem() {
-25. ImageItem({ item: item, swiperData: this.swiperData })
-26. }
-27. }, (item: string): string => item.toString())
-28. }
-29. .columnsTemplate('1fr 1fr 1fr 1fr')
-30. // ...
-31. }
-32. }
-```
-
-[PreloadDataSwiper.ets](https://gitcode.com/harmonyos_samples/SwiperPerformance/blob/master/entry/src/main/ets/pages/PreloadDataSwiper.ets#L37-L85)
-
-说明
+**说明** 
 
 打点事件说明，当SwiperItem发生预加载时，会先进入[自定义组件生命周期](../harmonyos-guides/arkts-page-custom-components-lifecycle.md)回调aboutToAppear，在aboutToAppear回调中使用startTrace开启打点跟踪，随后会进入build渲染组件，build函数执行完成后进入onDidBuild回调，在该回调中使用finishTrace停止打点追踪。分别使用“noPreLoadData”，“preLoadData”标签统计两种场景下的SwiperItem预加载耗时，关于本例中使用性能打点的介绍，请参考[性能打点](../harmonyos-references/js-apis-hitracemeter.md)。
 
@@ -275,81 +263,77 @@ Swiper主页面核心代码：
 
 * 不提前加载数据
 
+  ```typescript
+  @Entry
+  @Component
+  struct NoPreLoadData {
+    private dataSrc: PixelMapDataSource = new PixelMapDataSource();
+
+    aboutToAppear(): void {
+      for (let i = 0; i < 20; i++) {
+        this.dataSrc.addData(i, []);
+      }
+    }
+
+    build() {
+      Column({ space: 5 }) {
+        Swiper() {
+          LazyForEach(this.dataSrc, (item: PixelMap[], index: number) => {
+            SwiperItem({
+              myIndex: index,
+              dataSource: this.dataSrc
+            });
+          }, (item: number, index: number) => index.toString());
+        }
+        // ...
+      }
+      .width('100%')
+      .margin({ top: 5 })
+    }
+  }
   ```
-  1. @Entry
-  2. @Component
-  3. struct NoPreLoadData {
-  4. private dataSrc: PixelMapDataSource = new PixelMapDataSource();
-
-  7. aboutToAppear(): void {
-  8. for (let i = 0; i < 20; i++) {
-  9. this.dataSrc.addData(i, []);
-  10. }
-  11. }
-
-  14. build() {
-  15. Column({ space: 5 }) {
-  16. Swiper() {
-  17. LazyForEach(this.dataSrc, (item: PixelMap[], index: number) => {
-  18. SwiperItem({
-  19. myIndex: index,
-  20. dataSource: this.dataSrc
-  21. });
-  22. }, (item: number, index: number) => index.toString());
-  23. }
-  24. // ...
-  25. }
-  26. .width('100%')
-  27. .margin({ top: 5 })
-  28. }
-  29. }
-  ```
-
-  [SwiperCoreCodeNoPreLoadData.ets](https://gitcode.com/harmonyos_samples/SwiperPerformance/blob/master/entry/src/main/ets/pages/SwiperCoreCodeNoPreLoadData.ets#L15-L43)
 
 * 提前加载数据
 
+  ```typescript
+  Swiper() {
+    LazyForEach(this.swiperDataSource, (item: SwiperData) => {
+      PreloadSwiperItem({ swiperData: item })
+    }, (item: SwiperData) => item.index.toString())
+  }
+  .cachedCount(1)
+  // ...
+  .onAnimationStart((index: number, targetIndex: number) => {
+    if (targetIndex < this.swiperDataSource.totalCount() - 2) {
+      let swiperData = this.swiperDataSource.getData(targetIndex + 2);
+      if (swiperData.pixelMap) {
+        return;
+      } else {
+        // Simulation data download
+        ImageUtils.getPixelMap(IMAGE_URL, (pixelMap: PixelMap) => {
+          swiperData.pixelMap = pixelMap;
+        });
+      }
+    }
+  })
   ```
-  1. Swiper() {
-  2. LazyForEach(this.swiperDataSource, (item: SwiperData) => {
-  3. PreloadSwiperItem({ swiperData: item })
-  4. }, (item: SwiperData) => item.index.toString())
-  5. }
-  6. .cachedCount(1)
-  7. // ...
-  8. .onAnimationStart((index: number, targetIndex: number) => {
-  9. if (targetIndex < this.swiperDataSource.totalCount() - 2) {
-  10. let swiperData = this.swiperDataSource.getData(targetIndex + 2);
-  11. if (swiperData.pixelMap) {
-  12. return;
-  13. } else {
-  14. // Simulation data download
-  15. ImageUtils.getPixelMap(IMAGE_URL, (pixelMap: PixelMap) => {
-  16. swiperData.pixelMap = pixelMap;
-  17. });
-  18. }
-  19. }
-  20. })
-  ```
-
-  [PreloadDataSwiper.ets](https://gitcode.com/harmonyos_samples/SwiperPerformance/blob/master/entry/src/main/ets/pages/PreloadDataSwiper.ets#L104-L131)
 
 性能分析：
 
 如图1所示，不使用onAnimationStart回调提前加载数据，通过自定义打点标签“H:noPreLoadData”，可以看出SwiperItem节点的构建耗时50ms左右。
 
 **图1** 没有提前加载数据的打点信息  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/NqHecc93QMSp5oSJWhdUdQ/zh-cn_image_0000002193850808.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/XAex2tjRQfuPdB0txdmLow/zh-cn_image_0000002193850808.png "点击放大")
 
 如图2所示，采用onAnimationStart回调提前加载数据，通过自定义打点标签“H:preLoadData”，可以看出SwiperItem节点的构建耗时2ms左右。
 
 **图2** 使用了提前加载数据的打点信息  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/Zpnrfwe1QkiiKv0gCu92oA/zh-cn_image_0000002194010396.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/wRF24MUxSSuLlxam9G8bWg/zh-cn_image_0000002194010396.png "点击放大")
 
 观察“H:noPreLoadData”时间段的详细trace图，可以发现预加载构建SwiperItem时，aboutToAppear生命周期回调加载图片资源占用48毫秒。
 
 **图3** “H:noPreLoadData”时间段的trace详细信息  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/uHion_gJRCCnXBGH-0lUfw/zh-cn_image_0000002229450669.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/1fhjldHtRwOTZXXLL9cmHA/zh-cn_image_0000002229450669.png "点击放大")
 
 使用onAnimationStart回调接口提前加载后续范围内子组件所需资源，能够减少cachedCount范围内子组件节点的加载时间。
 

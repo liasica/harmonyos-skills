@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-erro
 title: errorcode.h
 breadcrumb: API参考 > 应用框架 > Localization Kit（本地化开发服务） > C API > 头文件 > errorcode.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:33+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:8abc84e4b23fb5e59581787f2d8289464c49aa96c74bcd5912d8177f813603a6
+scraped_at: 2026-09-02T15:01:38+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:dee3e1f407318fe4e16b7d20f3d5b6429fac2e5bd165f8a79272ed02cc788ae7
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供国际化接口返回的错误码。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,14 +32,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### I18n\_ErrorCode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum I18n_ErrorCode
+```c
+enum I18n_ErrorCode
 ```
 
 **描述**

@@ -3,26 +3,27 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom
 title: 自定义组件内置方法
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义组件 > 自定义组件内置方法
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:31+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:be0f3985041b734a16921f6e5ed6dea30eb0c53aaf5aa12a18bf010290f8bdc8
+scraped_at: 2026-09-02T15:01:08+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2fd3a13b7c5c053db3aaa70c7a1e09af26f70bc49ea6b72543c9b702db2b6fa4
 ---
 
-自定义组件内置方法是由ArkUI开发框架提供给应用开发者的，定义在自定义组件基类上的API。应用开发者可以在自定义组件的实例上调用对应的API以获取当前自定义组件实例相关的信息。例如，查询当前自定义组件上下文的UIContext信息。
+自定义组件内置方法由ArkUI开发框架提供，定义在自定义组件基类上。开发者可以在自定义组件的实例上调用对应的API，以获取当前自定义组件实例的相关信息，包括组件所属的UIContext、组件唯一标识、组件关联的NavDestination、Navigation和路由页面信息，以及自定义弹窗控制器。
 
-说明
+**说明** 
 
-本模块首批接口从API version 11开始支持，后续版本的新增接口，采用上角标单独标记接口的起始版本。
+* 本模块首批接口从API version 11开始支持，后续版本的新增接口，采用上角标单独标记接口的起始版本。
+* 本模块接口仅可在Stage模型下使用。
 
 ## getUIContext
-
-PhonePC/2in1TabletTVWearable
 
 getUIContext(): UIContext
 
 获取UIContext对象。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -34,9 +35,7 @@ getUIContext(): UIContext
 
 ## UIContext
 
-PhonePC/2in1TabletTVWearable
-
-type UIContext = UIContext
+type UIContext = import('../api/@ohos.arkui.UIContext').UIContext
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -44,35 +43,35 @@ type UIContext = UIContext
 
 | 类型 | 说明 |
 | --- | --- |
-| [UIContext](arkts-apis-uicontext-uicontext.md) | 返回UIContext实例对象。 |
+| import('../api/@ohos.arkui.UIContext').[UIContext](arkts-apis-uicontext-uicontext.md) | 返回UIContext实例对象。 |
 
 **示例：**
 
-```
-1. import { UIContext } from '@kit.ArkUI';
+```ts
+import { UIContext } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct MyComponent {
-6. aboutToAppear() {
-7. let uiContext: UIContext = this.getUIContext();
-8. }
+@Entry
+@Component
+struct MyComponent {
+  aboutToAppear() {
+    let uiContext: UIContext = this.getUIContext();
+  }
 
-10. build() {
-11. // ...
-12. }
-13. }
+  build() {
+    // ...
+  }
+}
 ```
 
 ## getUniqueId12+
 
-PhonePC/2in1TabletTVWearable
-
 getUniqueId(): number
 
-获取当前组件的UniqueId。UniqueId为系统为每个组件分配的Id，可保证当前应用中的唯一性。若在组件对应的节点未创建或已销毁时获取，返回无效UniqueId：-1。
+获取当前组件的UniqueId。UniqueId由系统为每个组件分配，可保证在当前应用中唯一。若在组件对应的节点未创建或已销毁时获取，返回无效UniqueId：-1。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -84,27 +83,25 @@ getUniqueId(): number
 
 **示例：**
 
-```
-1. @Entry
-2. @Component
-3. struct MyComponent {
-4. aboutToAppear() {
-5. let uniqueId: number = this.getUniqueId();
-6. }
+```ts
+@Entry
+@Component
+struct MyComponent {
+  aboutToAppear() {
+    let uniqueId: number = this.getUniqueId();
+  }
 
-8. build() {
-9. // ...
-10. }
-11. }
+  build() {
+    // ...
+  }
+}
 ```
 
 ## queryNavDestinationInfo
 
-PhonePC/2in1TabletTVWearable
-
 queryNavDestinationInfo(): NavDestinationInfo | undefined;
 
-查询自定义组件所属的NavDestination信息，仅当自定义组件在NavDestination的内部时才生效。
+查询自定义组件所属的[NavDestination](ts-basic-components-navdestination.md)信息，仅当自定义组件在NavDestination的内部时才生效。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -118,37 +115,35 @@ queryNavDestinationInfo(): NavDestinationInfo | undefined;
 
 **示例：**
 
-```
-1. import { uiObserver } from '@kit.ArkUI';
+```ts
+import { uiObserver } from '@kit.ArkUI';
 
-3. @Component
-4. export struct NavDestinationExample {
-5. build() {
-6. NavDestination() {
-7. MyComponent()
-8. }
-9. }
-10. }
+@Component
+export struct NavDestinationExample {
+  build() {
+    NavDestination() {
+      MyComponent()
+    }
+  }
+}
 
-12. @Component
-13. struct MyComponent {
-14. navDesInfo: uiObserver.NavDestinationInfo | undefined
+@Component
+struct MyComponent {
+  navDesInfo: uiObserver.NavDestinationInfo | undefined
 
-16. aboutToAppear() {
-17. // this指代MyComponent自定义节点，并从该节点向上查找其最近的一个类型为NavDestination的父亲节点
-18. this.navDesInfo = this.queryNavDestinationInfo();
-19. console.info('get navDestinationInfo: ' + JSON.stringify(this.navDesInfo));
-20. }
+  aboutToAppear() {
+    // this指代MyComponent自定义节点，并从该节点向上查找其最近的一个类型为NavDestination的父亲节点
+    this.navDesInfo = this.queryNavDestinationInfo();
+    console.info('get navDestinationInfo: ' + JSON.stringify(this.navDesInfo));
+  }
 
-22. build() {
-23. // ...
-24. }
-25. }
+  build() {
+    // ...
+  }
+}
 ```
 
 ## queryNavDestinationInfo18+
-
-PhonePC/2in1TabletTVWearable
 
 queryNavDestinationInfo(isInner: Optional<boolean>): NavDestinationInfo | undefined
 
@@ -172,113 +167,111 @@ queryNavDestinationInfo(isInner: Optional<boolean>): NavDestinationInfo | undefi
 
 **示例：**
 
-```
-1. // Index.ets
-2. @Entry
-3. @Component
-4. struct NavigationExample {
-5. pageInfo: NavPathStack = new NavPathStack();
+```ts
+// Index.ets
+@Entry
+@Component
+struct NavigationExample {
+  pageInfo: NavPathStack = new NavPathStack();
 
-7. build() {
-8. Navigation(this.pageInfo) {
-9. Column() {
-10. Button('pageOne', { stateEffect: true, type: ButtonType.Capsule })
-11. .width('80%')
-12. .height(40)
-13. .margin(20)
-14. .onClick(() => {
-15. this.pageInfo.pushPath({ name: 'pageOne' }); // 将name指定的NavDestination页面信息入栈。
-16. })
-17. }
-18. }.title('NavIndex')
-19. }
-20. }
-```
-
-```
-1. // PageOne.ets
-2. import { uiObserver } from '@kit.ArkUI';
-
-4. @Builder
-5. export function PageOneBuilder() {
-6. PageOneComponent()
-7. }
-
-9. @Component
-10. export struct PageOneComponent {
-11. navDesInfo: uiObserver.NavDestinationInfo | undefined;
-12. @State text: string = '';
-13. build() {
-14. NavDestination() {
-15. Column() {
-16. Button('点击向内查找')
-17. .width('80%')
-18. .height(40)
-19. .margin(20)
-20. .onClick(() => {
-21. // 向内查询PageOne的NavDestination信息
-22. this.navDesInfo = this.queryNavDestinationInfo(true);
-23. this.text = JSON.stringify(this.navDesInfo?.name).toString();
-24. })
-25. Text('向内查找的NavDestination是:' + this.text)
-26. .width('80%')
-27. .height(50)
-28. .margin(50)
-29. .fontSize(20)
-30. MyComponent()
-31. }.width('100%').height('100%')
-32. }
-33. .title('pageOne')
-34. }
-35. }
-
-37. @Component
-38. struct MyComponent {
-39. navDesInfo: uiObserver.NavDestinationInfo | undefined;
-40. @State text: string = '';
-
-42. build() {
-43. Column() {
-44. Button('点击向外查找')
-45. .width('80%')
-46. .height(40)
-47. .margin(20)
-48. .onClick(() => {
-49. // 向外查询PageOne的NavDestination信息
-50. this.navDesInfo = this.queryNavDestinationInfo(false);
-51. this.text = JSON.stringify(this.navDesInfo?.name).toString();
-52. })
-53. Text('向外查找的NavDestination是:' + this.text)
-54. .width('80%')
-55. .height(50)
-56. .margin(50)
-57. .fontSize(20)
-58. }
-59. }
-60. }
+  build() {
+    Navigation(this.pageInfo) {
+      Column() {
+        Button('pageOne', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            this.pageInfo.pushPath({ name: 'pageOne' }); // 将name指定的NavDestination页面信息入栈。
+          })
+      }
+    }.title('NavIndex')
+  }
+}
 ```
 
+```ts
+// PageOne.ets
+import { uiObserver } from '@kit.ArkUI';
+
+@Builder
+export function PageOneBuilder() {
+  PageOneComponent()
+}
+
+@Component
+export struct PageOneComponent {
+  navDesInfo: uiObserver.NavDestinationInfo | undefined;
+  @State text: string = '';
+  build() {
+    NavDestination() {
+      Column() {
+        Button('点击向内查找')
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            // 向内查询PageOne的NavDestination信息
+            this.navDesInfo = this.queryNavDestinationInfo(true);
+            this.text = JSON.stringify(this.navDesInfo?.name).toString();
+          })
+        Text('向内查找的NavDestination是:' + this.text)
+          .width('80%')
+          .height(50)
+          .margin(50)
+          .fontSize(20)
+        MyComponent()
+      }.width('100%').height('100%')
+    }
+    .title('pageOne')
+  }
+}
+
+@Component
+struct MyComponent {
+  navDesInfo: uiObserver.NavDestinationInfo | undefined;
+  @State text: string = '';
+
+  build() {
+    Column() {
+      Button('点击向外查找')
+        .width('80%')
+        .height(40)
+        .margin(20)
+        .onClick(() => {
+          // 向外查询PageOne的NavDestination信息
+          this.navDesInfo = this.queryNavDestinationInfo(false);
+          this.text = JSON.stringify(this.navDesInfo?.name).toString();
+        })
+      Text('向外查找的NavDestination是:' + this.text)
+        .width('80%')
+        .height(50)
+        .margin(50)
+        .fontSize(20)
+    }
+  }
+}
 ```
-1. // route_map.json
-2. {
-3. "routerMap": [
-4. {
-5. "name": "pageOne",
-6. "pageSourceFile": "src/main/ets/pages/PageOne.ets",
-7. "buildFunction": "PageOneBuilder",
-8. "data": {
-9. "description": "this is pageOne"
-10. }
-11. }
-12. ]
-13. }
+
+```ts
+// route_map.json
+{
+  "routerMap": [
+    {
+      "name": "pageOne",
+      "pageSourceFile": "src/main/ets/pages/PageOne.ets",
+      "buildFunction": "PageOneBuilder",
+      "data": {
+        "description": "this is pageOne"
+      }
+    }
+  ]
+}
 ```
 
 ## NavDestinationInfo
 
-PhonePC/2in1TabletTVWearable
-
-type NavDestinationInfo = NavDestinationInfo
+type NavDestinationInfo = import('../api/@ohos.arkui.observer').default.NavDestinationInfo
 
 NavDestinationInfo实例对象。
 
@@ -288,15 +281,13 @@ NavDestinationInfo实例对象。
 
 | 类型 | 说明 |
 | --- | --- |
-| [NavDestinationInfo](js-apis-arkui-observer.md#navdestinationinfo) | 返回NavDestinationInfo实例对象。 |
+| import('../api/@ohos.arkui.observer').default.[NavDestinationInfo](js-apis-arkui-observer.md#navdestinationinfo) | 返回NavDestinationInfo实例对象。 |
 
 ## queryNavigationInfo12+
 
-PhonePC/2in1TabletTVWearable
-
 queryNavigationInfo(): NavigationInfo | undefined
 
-查询自定义组件所属的Navigation信息。
+查询自定义组件所属的[Navigation](ts-basic-components-navigation.md)信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -310,48 +301,46 @@ queryNavigationInfo(): NavigationInfo | undefined
 
 **示例：**
 
-```
-1. // index.ets
-2. import { uiObserver } from '@kit.ArkUI';
+```ts
+// index.ets
+import { uiObserver } from '@kit.ArkUI';
 
-4. @Entry
-5. @Component
-6. struct MainPage {
-7. pathStack: NavPathStack = new NavPathStack();
+@Entry
+@Component
+struct MainPage {
+  pathStack: NavPathStack = new NavPathStack();
 
-9. build() {
-10. Navigation(this.pathStack) {
-11. // ...
-12. }.id("NavigationId")
-13. }
-14. }
+  build() {
+    Navigation(this.pathStack) {
+      // ...
+    }.id("NavigationId")
+  }
+}
 
-17. @Component
-18. export struct PageOne {
-19. pathStack: NavPathStack = new NavPathStack();
+@Component
+export struct PageOne {
+  pathStack: NavPathStack = new NavPathStack();
 
-21. aboutToAppear() {
-22. // this指代PageOne自定义节点，并从该节点向上查找其最近的一个类型为Navigation的父亲节点
-23. let navigationInfo: uiObserver.NavigationInfo | undefined = this.queryNavigationInfo();
-24. console.info('get navigationInfo: ' + JSON.stringify(navigationInfo));
-25. if (navigationInfo !== undefined) {
-26. this.pathStack = navigationInfo.pathStack;
-27. }
-28. }
+  aboutToAppear() {
+    // this指代PageOne自定义节点，并从该节点向上查找其最近的一个类型为Navigation的父亲节点
+    let navigationInfo: uiObserver.NavigationInfo | undefined = this.queryNavigationInfo();
+    console.info('get navigationInfo: ' + JSON.stringify(navigationInfo));
+    if (navigationInfo !== undefined) {
+      this.pathStack = navigationInfo.pathStack;
+    }
+  }
 
-30. build() {
-31. NavDestination() {
-32. // ...
-33. }.title('PageOne')
-34. }
-35. }
+  build() {
+    NavDestination() {
+      // ...
+    }.title('PageOne')
+  }
+}
 ```
 
 ## NavigationInfo12+
 
-PhonePC/2in1TabletTVWearable
-
-type NavigationInfo = NavigationInfo
+type NavigationInfo = import('../api/@ohos.arkui.observer').default.NavigationInfo
 
 NavigationInfo实例对象。
 
@@ -361,11 +350,9 @@ NavigationInfo实例对象。
 
 | 类型 | 说明 |
 | --- | --- |
-| [NavigationInfo](js-apis-arkui-observer.md#navigationinfo12) | 返回NavigationInfo实例对象。 |
+| import('../api/@ohos.arkui.observer').default.[NavigationInfo](js-apis-arkui-observer.md#navigationinfo12) | 返回NavigationInfo实例对象。 |
 
 ## queryRouterPageInfo12+
-
-PhonePC/2in1TabletTVWearable
 
 queryRouterPageInfo(): RouterPageInfo | undefined;
 
@@ -383,27 +370,25 @@ queryRouterPageInfo(): RouterPageInfo | undefined;
 
 **示例：**
 
-```
-1. import { uiObserver } from '@kit.ArkUI';
+```ts
+import { uiObserver } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct MyComponent {
-6. aboutToAppear() {
-7. let info: uiObserver.RouterPageInfo | undefined = this.queryRouterPageInfo();
-8. }
+@Entry
+@Component
+struct MyComponent {
+  aboutToAppear() {
+    let info: uiObserver.RouterPageInfo | undefined = this.queryRouterPageInfo();
+  }
 
-10. build() {
-11. // ...
-12. }
-13. }
+  build() {
+    // ...
+  }
+}
 ```
 
 ## RouterPageInfo12+
 
-PhonePC/2in1TabletTVWearable
-
-type RouterPageInfo = RouterPageInfo
+type RouterPageInfo = import('../api/@ohos.arkui.observer').default.RouterPageInfo
 
 RouterPageInfo实例对象。
 
@@ -413,11 +398,9 @@ RouterPageInfo实例对象。
 
 | 类型 | 说明 |
 | --- | --- |
-| [RouterPageInfo](js-apis-arkui-observer.md#routerpageinfo) | 返回RouterPageInfo实例对象。 |
+| import('../api/@ohos.arkui.observer').default.[RouterPageInfo](js-apis-arkui-observer.md#routerpageinfo) | 返回RouterPageInfo实例对象。 |
 
 ## getDialogController18+
-
-PhonePC/2in1TabletTVWearable
 
 getDialogController(): PromptActionDialogController | undefined
 
@@ -435,75 +418,73 @@ getDialogController(): PromptActionDialogController | undefined
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { ComponentContent } from '@kit.ArkUI';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { ComponentContent } from '@kit.ArkUI';
 
-4. class Params {
-5. text: string = "";
-6. constructor(text: string) {
-7. this.text = text;
-8. }
-9. }
+class Params {
+  text: string = "";
+  constructor(text: string) {
+    this.text = text;
+  }
+}
 
-11. @ComponentV2
-12. struct MyComponent {
-13. build() {
-14. Column() {
-15. Button('Close Dialog')
-16. .onClick(() => {
-17. let ctrl: PromptActionDialogController = this.getDialogController();
-18. if (ctrl != undefined) {
-19. ctrl.close();
-20. }
-21. })
-22. }
-23. }
-24. }
+@ComponentV2
+struct MyComponent {
+  build() {
+    Column() {
+      Button('Close Dialog')
+        .onClick(() => {
+          let ctrl: PromptActionDialogController | undefined = this.getDialogController();
+          if (ctrl != undefined) {
+            ctrl.close();
+          }
+        })
+    }
+  }
+}
 
-26. @Builder
-27. function buildText(params: Params) {
-28. Column() {
-29. Text(params.text)
-30. .fontSize(50)
-31. .fontWeight(FontWeight.Bold)
-32. .margin({ bottom: 36 })
-33. MyComponent()
-34. }.backgroundColor('#FFF0F0F0')
-35. }
+@Builder
+function buildText(params: Params) {
+  Column() {
+    Text(params.text)
+      .fontSize(50)
+      .fontWeight(FontWeight.Bold)
+      .margin({ bottom: 36 })
+    MyComponent()
+  }.backgroundColor('#FFF0F0F0')
+}
 
-37. @Entry
-38. @ComponentV2
-39. struct Index {
-40. @Local message: string = "hello";
+@Entry
+@ComponentV2
+struct Index {
+  @Local message: string = "hello";
 
-42. build() {
-43. Row() {
-44. Column({ space: 10 }) {
-45. Button('click me')
-46. .fontSize(20)
-47. .onClick(() => {
-48. let ctx = this.getUIContext();
-49. let promptAction = ctx.getPromptAction();
-50. promptAction.openCustomDialog(new ComponentContent(ctx, wrapBuilder(buildText), new Params(this.message)))
-51. .catch((err: BusinessError) => {
-52. console.error("openCustomDialog error: " + err.code + " " + err.message);
-53. })
-54. })
-55. }
-56. .width('100%')
-57. .height('100%')
-58. }
-59. .height('100%')
-60. }
-61. }
+  build() {
+    Row() {
+      Column({ space: 10 }) {
+        Button('click me')
+          .fontSize(20)
+          .onClick(() => {
+            let ctx = this.getUIContext();
+            let promptAction = ctx.getPromptAction();
+            promptAction.openCustomDialog(new ComponentContent(ctx, wrapBuilder(buildText), new Params(this.message)))
+              .catch((err: BusinessError) => {
+                console.error("openCustomDialog error: " + err.code + " " + err.message);
+              })
+          })
+      }
+      .width('100%')
+      .height('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 ## PromptActionDialogController18+
 
-PhonePC/2in1TabletTVWearable
-
-type PromptActionDialogController = promptAction.DialogController
+type PromptActionDialogController = import('../api/@ohos.promptAction').promptAction.DialogController
 
 自定义弹窗控制器，可以控制当前自定义弹窗，具体控制能力包括关闭弹窗等，详见[promptAction.DialogController](js-apis-promptaction.md#dialogcontroller18)。
 
@@ -513,4 +494,4 @@ type PromptActionDialogController = promptAction.DialogController
 
 | 类型 | 说明 |
 | --- | --- |
-| [promptAction.DialogController](js-apis-promptaction.md#dialogcontroller18) | 表示对象类型为promptAction.DialogController实例对象。 |
+| import('../api/@ohos.promptAction').[promptAction.DialogController](js-apis-promptaction.md#dialogcontroller18) | 表示对象类型为promptAction.DialogController实例对象。 |

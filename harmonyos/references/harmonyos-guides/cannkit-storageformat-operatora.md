@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-storageformat-operatora
 title: operator==
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > StorageFormat > operator==
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:12+08:00
+scraped_at: 2026-09-02T14:50:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f099920e086bd35cd7a4c8e3192b600442606c23ee04ce0cee4ae70a7e6cbe5b
+content_hash: sha256:e3df5d73a993babf22dc33758105f5dd5a82dc7e3922fbeec0dfaf6f8dd17dba
 ---
 
 ## 函数功能
@@ -13,8 +14,8 @@ content_hash: sha256:f099920e086bd35cd7a4c8e3192b600442606c23ee04ce0cee4ae70a7e6
 
 ## 函数原型
 
-```
-1. bool operator==(const StorageFormat &other) const
+```cpp
+bool operator==(const StorageFormat &other) const
 ```
 
 ## 参数说明
@@ -35,9 +36,9 @@ false代表不等。
 
 ## 调用示例
 
-```
-1. ExpandDimsType dim_type("1100");
-2. StorageFormat format(ge::Format::FORMAT_NCHW, ge::Format::FORMAT_C1HWNC0, dim_type);
-3. StorageFormat another_format(ge::Format::FORMAT_NCHW, ge::Format::FORMAT_NC, dim_type);
-4. bool is_same_fmt = format == another_format; // false
+```cpp
+ExpandDimsType dim_type("1100");
+StorageFormat format(ge::Format::FORMAT_NCHW, ge::Format::FORMAT_C1HWNC0, dim_type);
+StorageFormat another_format(ge::Format::FORMAT_NCHW, ge::Format::FORMAT_NC, dim_type);
+bool is_same_fmt = format == another_format; // false
 ```

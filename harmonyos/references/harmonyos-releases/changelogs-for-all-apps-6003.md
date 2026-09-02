@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-for-all-apps-6003
 title: OS平台API行为的变更
-breadcrumb: 版本说明 > HarmonyOS 6.0.0(20) > OS平台能力 > OS平台行为变更说明 > 6.0.0(20) Beta3引入的行为变更 > OS平台API行为的变更
+breadcrumb: 版本说明 > 更多版本 > 6.0.0(20) > OS平台能力 > OS平台行为变更说明 > 6.0.0(20) Beta3引入的行为变更 > OS平台API行为的变更
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:05+08:00
-doc_updated_at: 2026-01-19
-content_hash: sha256:c9b0b3ed938ab101393631758c37da19492536193bf5423308e645654580a35f
+scraped_at: 2026-09-02T14:58:39+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:05c034de4a23a86663567bca76fa3592f04d5d3d4e6b3f866e69d6d1bbe2603e
 ---
 
 ## Car Kit
@@ -49,28 +49,28 @@ Car Kit 提供的公共接口在变更后新增 801、1003810001、1003810002 �
 
 以调用导航类接口updateNavigationStatus为例：
 
-```
-1. import { navigationInfoMgr } from '@kit.CarKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```screen
+import { navigationInfoMgr } from '@kit.CarKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. // 定义导航状态属性
-5. let navigationStatus: navigationInfoMgr.NavigationStatus = {/* 按需设置导航数据*/};
+// 定义导航状态属性
+let navigationStatus: navigationInfoMgr.NavigationStatus = {/* 按需设置导航数据*/};
 
-7. try {
-8. // 获取 NavigationController
-9. let naviInfoController: navigationInfoMgr.NavigationController = navigationInfoMgr.getNavigationController();
-10. naviInfoController.updateNavigationStatus(navigationStatus);
-11. } catch (e) {
-12. hilog.error(0x0000, 'testTag', `update navigation status error, error code: ${e.code}`);
-13. // 捕获接口调用异常时的错误码并做相应处理
-14. if (e.code === 801) {
-15. // 按需处理801错误码
-16. } else if (e.code === 1003810001) {
-17. // 按需处理1003810001错误码
-18. } else if (e.code === 1003810002) {
-19. // 按需处理1003810002错误码
-20. }
-21. }
+try {
+  // 获取 NavigationController
+  let naviInfoController: navigationInfoMgr.NavigationController = navigationInfoMgr.getNavigationController();
+  naviInfoController.updateNavigationStatus(navigationStatus);
+} catch (e) {
+  hilog.error(0x0000, 'testTag', `update navigation status error, error code: ${e.code}`);
+  // 捕获接口调用异常时的错误码并做相应处理
+  if (e.code === 801) {
+   // 按需处理801错误码
+ } else if (e.code === 1003810001) {
+   // 按需处理1003810001错误码
+ } else if (e.code === 1003810002) {
+   // 按需处理1003810002错误码
+ }
+}
 ```
 
 ## Data Augmentation Kit
@@ -114,25 +114,25 @@ rag.streamRun接口回调函数输出。
 
 情况3、如果开发者在config中配置了THOUGHT，解析了思考中的具体内容，或者使用固定时间进行界面等待效果：推荐如下修改进行适配：
 
-```
-1. const answerTypes: Array<rag.StreamType> = [rag.StreamType.THOUGHT, rag.StreamType.REFERENCE, rag.StreamType.ANSWER];
-2. await session.streamRun('question', { answerTypes }, (err: BusinessError, stream: rag.Stream) => {
-3. if (err) {
-4. hilog.error(0, TAG, 'errCode: ' + err.code + ', errMessage: ' + err.message);
-5. return;
-6. }
-7. hilog.debug(0, TAG, `stream: ${JSON.stringify(stream)}`);
-8. // 根据stream.type判断当前输出的数据类型，界面变化根据当前拿到的stream.type来刷新，不推荐解析固定输出内容以及等待固定时间处理界面变化。
-9. if (stream.type == rag.StreamType.THOUGHT) {
-10. // 输出的思考内容，自行选择处理方式
-11. } else if (stream.type == rag.StreamType.REFERENCE) {
-12. // 检索到的原始数据，自行选择处理方式
-13. } else if (stream.type == rag.StreamType.ANSWER) {
-14. // 输出的最终答案，自行选择处理方式
-15. } else {
-16. // 其他异常场景，自行选择处理方式
-17. }
-18. });
+```ts
+const answerTypes: Array<rag.StreamType> = [rag.StreamType.THOUGHT, rag.StreamType.REFERENCE, rag.StreamType.ANSWER];
+await session.streamRun('question', { answerTypes }, (err: BusinessError, stream: rag.Stream) => {
+  if (err) {
+    hilog.error(0, TAG, 'errCode: ' + err.code + ', errMessage: ' + err.message);
+    return;
+  }
+  hilog.debug(0, TAG, `stream: ${JSON.stringify(stream)}`);
+  // 根据stream.type判断当前输出的数据类型，界面变化根据当前拿到的stream.type来刷新，不推荐解析固定输出内容以及等待固定时间处理界面变化。
+  if (stream.type == rag.StreamType.THOUGHT) {
+    // 输出的思考内容，自行选择处理方式
+  } else if (stream.type == rag.StreamType.REFERENCE) {
+    // 检索到的原始数据，自行选择处理方式
+  } else if (stream.type == rag.StreamType.ANSWER) {
+    // 输出的最终答案，自行选择处理方式
+  } else {
+    // 其他异常场景，自行选择处理方式
+  }
+});
 ```
 
 ## Device Security Kit

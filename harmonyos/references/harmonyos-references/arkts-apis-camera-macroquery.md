@@ -3,29 +3,25 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (MacroQuery)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (MacroQuery)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:36+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3d2dd9e2c8382d2ce97e234f2dd2fe469b5b70e3a79ad8783d92e54677de602a
+scraped_at: 2026-09-02T15:02:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0aaa76fc65078e2aebf4cdaf4823c710fc03fca9cfabcfc3f989145a8de1e3c0
 ---
 
 提供查询设备是否支持相机微距拍摄的方法。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Interface首批接口从API version 19开始支持。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { camera } from '@kit.CameraKit';
+```ts
+import { camera } from '@kit.CameraKit';
 ```
 
 ## isMacroSupported19+
-
-PhonePC/2in1TabletTVWearable
 
 isMacroSupported(): boolean
 
@@ -43,9 +39,9 @@ isMacroSupported(): boolean
 
 **示例：**
 
-```
-1. function isMacroSupported(photoSession: camera.PhotoSession): boolean {
-2. let isSupported: boolean = photoSession.isMacroSupported();
-3. return isSupported;
-4. }
+```ts
+function isMacroSupported(photoSession: camera.PhotoSession): boolean {
+  let isSupported: boolean = photoSession.isMacroSupported();
+  return isSupported;
+}
 ```

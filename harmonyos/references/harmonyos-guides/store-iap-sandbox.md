@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-iap-san
 title: 测试数字商品服务
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 数字商品服务 > 测试数字商品服务
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:37:10+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8437b335cc75956e25b4f7af6faa9bc7445f0d30476f2dd002040bd56fe52724
+scraped_at: 2026-09-02T14:59:52+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:23a49558331ffa539a2a5175d64d22706f3c7620c2343925f7c002cd2cee282a
 ---
 
 沙盒测试允许开发者在接入数字商品服务的调测过程中无需真实付款即可完成数字商品的购买等相关测试。
 
-说明
+**说明** 
 
 沙盒订单并非真实订单，无法在[开发者中心]->[我的报表]->[支付报表]中查询。
 
@@ -23,21 +23,20 @@ content_hash: sha256:8437b335cc75956e25b4f7af6faa9bc7445f0d30476f2dd002040bd56fe
   1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“用户与访问”。
   2. 左侧导航栏选择“沙盒测试 > 测试账号”，点击“新增”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/_h8ehQt8TQ-hjHftYVFdHw/zh-cn_image_0000002589245077.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/csBHz-6WTcGkBDM19rGNmQ/zh-cn_image_0000002706834784.png)
   3. 填写测试账号信息后，点击“确认”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/nOeYWA4tQ3iCzI1FvFd1DA/zh-cn_image_0000002558765272.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/jOGpB8BWRfKbnEi8Y9v_Wg/zh-cn_image_0000002736313891.png)
 
-  说明
+  **说明** 
 
   沙盒测试账号必须填写已注册、真实的华为账号。添加完成之后需要5~10min才能生效。使用时请检查当前的账号是否支持沙盒测试。
 * 构建debug签名的应用
 
   接入的应用必须是debug签名的应用。构建debug签名应用步骤如下：
 
-1. 参见[手动签名方式调试HarmonyOS应用/元服务](../app/agc-help-debug-app-0000001914423098.md)，申请应用调试证书->注册调试设备->申请调试Profile。
-2. 参见[配置签名信息](ide-publish-app.md#section280162182818)，在DevEco Studio侧配置签名信息。
-3. 在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中[配置应用签名证书指纹](../app/agc-help-signature-info-0000001628566748.md#section5181019153511)。
+  1. 手动签名：开发者需要在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中[申请调试证书](../app/agc-help-debug-cert-0000002283256797.md)、[注册调试设备](../app/agc-help-add-device-0000002283189937.md)、[申请调试Profile](../app/agc-help-debug-profile-0000002248181278.md)后，再[手动签名](ide-signing.md#section297715173233)。
+  2. 在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中[配置公钥指纹](../app/agc-help-cert-fingerprint-0000002278002933.md)。
 
 ## 沙盒测试能力未生效自检
 
@@ -56,16 +55,16 @@ content_hash: sha256:8437b335cc75956e25b4f7af6faa9bc7445f0d30476f2dd002040bd56fe
 * 购买成功后的收据信息[PurchaseOrderPayload](../harmonyos-references/iap-data-model.md#purchaseorderpayload)中，会携带值为"SANDBOX"的environment字段，标识此次购买为沙盒测试的记录。
 * 沙盒环境下购买非消耗型商品，购买之后可以确认发货以完成购买，之后可以再次购买，以方便测试。
 
-  说明
+  **说明** 
 
   正式环境下，非消耗型商品仅允许用户购买一次，不能重复购买。
 * 沙盒测试拉起收银台时，会在收银台展示沙盒测试提示，结果页也有沙盒环境的标志，如下图所示。
 
-说明
+**说明** 
 
 如果未显示截图的提示页面，表示本次交易未进入沙盒测试环境，继续测试会实际扣费，请检查当前是否满足沙盒测试的两个条件。开发者也可在应用中使用[isSandboxActivated](../harmonyos-references/iap-iap.md#iapissandboxactivated)接口来检查当前沙盒环境不可用的原因。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/mOz-jAidSNeu-uR0pKCIzQ/zh-cn_image_0000002558605616.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/YpNVKURyTXqt9tyxqFBE6w/zh-cn_image_0000002706674850.png)
 
 ## 测试自动续期订阅商品
 
@@ -74,11 +73,10 @@ content_hash: sha256:8437b335cc75956e25b4f7af6faa9bc7445f0d30476f2dd002040bd56fe
 * 沙盒环境下的订阅流程与正式环境的订阅流程一致，仍需要完成绑定付款方式，但该过程不会真实扣费。
 * IAP扣费成功后的收据信息[PurchaseOrderPayload](../harmonyos-references/iap-data-model.md#purchaseorderpayload)中，会携带值为"SANDBOX"的environment字段，标识此次购买为沙盒测试的记录。
 * 自动续期处理不需要完成真实扣款，IAP会直接返回成功。
-* 订阅在沙盒场景下会自动续期5次(一共6期)，5次之后需要用户主动发起恢复订阅。
 * 在沙盒测试环境下，订阅首期由用户发起后会自动续期五次（累计共六期），后续需用户手动操作以恢复订阅；若同时涉及[促销场景](iap-subscription-functions.md#提供优惠)，系统将优先完成优惠周期内的自动续期，再继续进行六次续期，此场景下总续期次数为优惠周期数与六次续期之和。
 * 沙盒测试拉起收银台时，会在收银台展示沙盒测试提示，结果页也有沙盒环境的标志，如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/OCFoyuzCRZGzIK6SSfKlJw/zh-cn_image_0000002589325143.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/ZTPgA_ADSP6nQzs3N0Qncg/zh-cn_image_0000002736433937.png)
 
 ## 测试非续期订阅商品购买
 
@@ -88,7 +86,7 @@ content_hash: sha256:8437b335cc75956e25b4f7af6faa9bc7445f0d30476f2dd002040bd56fe
 * IAP购买成功后的收据信息[PurchaseOrderPayload](../harmonyos-references/iap-data-model.md#purchaseorderpayload)中，会携带值为"SANDBOX"的environment字段，标识此次购买为沙盒测试的记录。
 * 沙盒测试拉起收银台时，会在收银台展示沙盒测试提示，结果页也有沙盒环境的标志，如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/WfUuSGZrQmeYD2U1bzjvyA/zh-cn_image_0000002589245079.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/mOG6aykmT4mRknmJ2b-X_g/zh-cn_image_0000002706834786.png)
 
 ## 清除沙盒账号的购买历史记录
 
@@ -98,10 +96,10 @@ content_hash: sha256:8437b335cc75956e25b4f7af6faa9bc7445f0d30476f2dd002040bd56fe
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“用户与访问”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/ORwWbBwgSQKYliJNVhtYDw/zh-cn_image_0000002558765274.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/BvDinYwmTPe3Xqmxi-MVSQ/zh-cn_image_0000002736313893.png)
 2. 左侧导航栏选择“沙盒测试 > 测试账号”，勾选对应的测试账号，点击右上角的“清除购买历史记录”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/1hEW0UuZQk6UsSiO50Rsag/zh-cn_image_0000002558605618.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/52DRwbUMQ2igZZ-4RBTPtg/zh-cn_image_0000002706674852.png)
 3. 在出现的提示弹窗中，点击“确认”按钮，随后该账号在沙盒环境中产生的购买历史记录将被清除，此操作无法被撤销。如果该沙盒账号的购买次数较多，则清除其购买历史记录可能需要更长时间。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/hsrq8papS1qhnMbLRXJRDA/zh-cn_image_0000002589325145.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/TaNphajnRiipDFZIG3erAg/zh-cn_image_0000002736433939.png)

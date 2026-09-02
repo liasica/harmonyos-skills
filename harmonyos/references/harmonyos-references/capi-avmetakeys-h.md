@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avme
 title: avmetakeys.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > avmetakeys.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:57+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:2b777ce62b73de03c7e3a2764c32485be5ca57b97cf1fdbadb6fc00823fa2254
+scraped_at: 2026-09-02T15:02:36+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d13325c7a4a87e82982f5534145183207651f09d3c74c0b747dd47f900c942be
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义音视频元数据键。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -39,12 +33,12 @@ PhonePC/2in1TabletTVWearable
 | const char \* OH\_AVMETA\_KEY\_MIME\_TYPE | 编解码器MIME类型，值类型为字符串（string）。  **起始版本：** 23 |
 | const char \* OH\_AVMETA\_KEY\_DURATION | 媒体时长（单位：微秒），值类型为int64\_t。  **起始版本：** 23 |
 | const char \* OH\_AVMETA\_KEY\_BITRATE | 比特率（单位：bps），值类型为int64\_t。  **起始版本：** 23 |
-| const char \* OH\_AVMETA\_KEY\_FRAME\_RATE | 视频帧率（每100秒的帧数），值类型为double。  **起始版本：** 23 |
-| const char \* OH\_AVMETA\_KEY\_WIDTH | 视频宽度，值类型为int32\_t。  **起始版本：** 23 |
-| const char \* OH\_AVMETA\_KEY\_HEIGHT | 视频高度，值类型为int32\_t。  **起始版本：** 23 |
+| const char \* OH\_AVMETA\_KEY\_FRAME\_RATE | 视频帧率，单位为每秒帧数（fps），值类型为double。  **起始版本：** 23 |
+| const char \* OH\_AVMETA\_KEY\_WIDTH | 视频宽度，单位为像素（px），值类型为int32\_t。  **起始版本：** 23 |
+| const char \* OH\_AVMETA\_KEY\_HEIGHT | 视频高度，单位为像素（px），值类型为int32\_t。  **起始版本：** 23 |
 | const char \* OH\_AVMETA\_KEY\_CHANNEL\_COUNT | 音频声道数，值类型为int32\_t。  **起始版本：** 23 |
-| const char \* OH\_AVMETA\_KEY\_SAMPLE\_RATE | 音频采样率（Hz），值类型为int32\_t。  **起始版本：** 23 |
-| const char \* OH\_AVMETA\_KEY\_SAMPLE\_DEPTH | 音频采样位深（bit depth），值类型为int32\_t。  **起始版本：** 23 |
+| const char \* OH\_AVMETA\_KEY\_SAMPLE\_RATE | 音频采样率，单位为赫兹（Hz），值类型为int32\_t。  **起始版本：** 23 |
+| const char \* OH\_AVMETA\_KEY\_SAMPLE\_DEPTH | 音频采样位深，单位为比特（bit），值类型为int32\_t。  **起始版本：** 23 |
 | const char \* OH\_AVMETA\_KEY\_LANGUAGE | 语言标识，值类型为字符串（string）。  **起始版本：** 23 |
 | const char \* OH\_AVMETA\_KEY\_TRACK\_NAME | 轨道名称，值类型为字符串（string）。  **起始版本：** 23 |
 | const char \* OH\_AVMETA\_KEY\_HDR\_TYPE | HDR类型，值类型为int32\_t。  **起始版本：** 23 |

@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-advertising
 title: advertising（星闪广播能力）
-breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API参考 > advertising（星闪广播能力）
+breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API > advertising（星闪广播能力）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:18+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:efd7f314f5966078d65667b65cfd154a957e16f42f227bad6381268b4e70fb8a
+scraped_at: 2026-09-02T14:52:19+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b241de7863d52417ea86c869e5d04f7e05807feb7fc37e07c3c49080c3259850
 ---
 
 本模块提供了发送星闪广播的相关功能，包括启动广播、停止广播、订阅广播状态等。
@@ -14,17 +14,15 @@ content_hash: sha256:efd7f314f5966078d65667b65cfd154a957e16f42f227bad6381268b4e7
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { advertising } from '@kit.NearLinkKit';
+```typescript
+import { advertising } from '@kit.NearLinkKit';
 ```
 
 ## AdvertisingParams
 
-PhonePC/2in1TabletTVWearable
-
 表示发送广播携带的参数。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
@@ -37,9 +35,9 @@ PhonePC/2in1TabletTVWearable
 
 ## AdvertisingSettings
 
-PhonePC/2in1TabletTVWearable
-
 表示广播配置参数。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
@@ -53,9 +51,9 @@ PhonePC/2in1TabletTVWearable
 
 ## AdvertisingData
 
-PhonePC/2in1TabletTVWearable
-
 表示广播数据包。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
@@ -70,9 +68,9 @@ PhonePC/2in1TabletTVWearable
 
 ## ManufacturerData
 
-PhonePC/2in1TabletTVWearable
-
 表示厂商数据。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
@@ -80,14 +78,14 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| manufacturerId | number | 否 | 否 | 厂商ID。取值范围(0, 65535]。 |
+| manufacturerId | number | 否 | 否 | 厂商ID。取值范围[1, 65535]。 |
 | manufacturerData | ArrayBuffer | 否 | 否 | 厂商数据。 |
 
 ## ServiceData
 
-PhonePC/2in1TabletTVWearable
-
 表示服务相关数据。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
@@ -100,9 +98,9 @@ PhonePC/2in1TabletTVWearable
 
 ## AdvertisingStateChangeInfo
 
-PhonePC/2in1TabletTVWearable
-
 表示广播启停状态变化信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
@@ -115,9 +113,9 @@ PhonePC/2in1TabletTVWearable
 
 ## TxPowerMode
 
-PhonePC/2in1TabletTVWearable
-
 表示广播发送模式，为枚举值。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
@@ -131,9 +129,9 @@ PhonePC/2in1TabletTVWearable
 
 ## AdvertisingState
 
-PhonePC/2in1TabletTVWearable
-
 表示广播状态，为枚举值。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
@@ -146,11 +144,11 @@ PhonePC/2in1TabletTVWearable
 
 ## startAdvertising
 
-PhonePC/2in1TabletTVWearable
-
 startAdvertising(advertisingParams: AdvertisingParams): Promise<number>
 
 发送星闪广播。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.ACCESS\_NEARLINK
 
@@ -172,73 +170,75 @@ startAdvertising(advertisingParams: AdvertisingParams): Promise<number>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](nearlink-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-nearlink.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied |
-| 401 | Invalid parameter |
-| 801 | Capability not supported |
-| 1009700003 | Nearlink is off |
-| 1009700099 | Operation failed |
+| 201 | Permission denied. |
+| 401 | Invalid parameter. |
+| 801 | Capability not supported. |
+| 1009700003 | NearLink is off. |
+| 1009700099 | Operation failed. |
 
 **示例：**
 
-```
-1. import { advertising } from '@kit.NearLinkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { advertising } from '@kit.NearLinkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let manufactureValueBuffer = new Uint8Array(4);
-5. manufactureValueBuffer[0] = 1;
-6. manufactureValueBuffer[1] = 2;
-7. manufactureValueBuffer[2] = 3;
-8. manufactureValueBuffer[3] = 4;
-9. let serviceValueBuffer = new Uint8Array(4);
-10. serviceValueBuffer[0] = 4;
-11. serviceValueBuffer[1] = 6;
-12. serviceValueBuffer[2] = 7;
-13. serviceValueBuffer[3] = 8;
-14. console.info('manufactureValueBuffer = '+ JSON.stringify(manufactureValueBuffer));
-15. console.info('serviceValueBuffer = '+ JSON.stringify(serviceValueBuffer));
-16. let setting: advertising.AdvertisingSettings = {
-17. interval:5000,
-18. power:advertising.TxPowerMode.ADV_TX_POWER_LOW
-19. };
-20. let manufactureDataUnit: advertising.ManufacturerData = {
-21. manufacturerId:4567,
-22. manufacturerData:manufactureValueBuffer.buffer
-23. };
-24. let serviceDataUnit: advertising.ServiceData = {
-25. serviceUuid:"37bea880-fc70-11ea-b720-000000001234",
-26. serviceData:serviceValueBuffer.buffer
-27. };
-28. let advData: advertising.AdvertisingData = {
-29. serviceUuids:["37bea880-fc70-11ea-b720-000000001234"],
-30. manufacturerData:[manufactureDataUnit],
-31. serviceData:[serviceDataUnit]
-32. };
-33. let advertisingParams: advertising.AdvertisingParams = {
-34. advertisingSettings: setting,
-35. advertisingData: advData
-36. }
-37. let advId = -1;
-38. try {
-39. advertising.startAdvertising(advertisingParams).then((advertisingId:number) => {
-40. advId = advertisingId;
-41. console.info('advertising id:'+ JSON.stringify(advId));
-42. });
-43. } catch (err) {
-44. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-45. }
+let manufactureValueBuffer = new Uint8Array(4);
+manufactureValueBuffer[0] = 1;
+manufactureValueBuffer[1] = 2;
+manufactureValueBuffer[2] = 3;
+manufactureValueBuffer[3] = 4;
+let serviceValueBuffer = new Uint8Array(4);
+serviceValueBuffer[0] = 4;
+serviceValueBuffer[1] = 6;
+serviceValueBuffer[2] = 7;
+serviceValueBuffer[3] = 8;
+console.info('manufactureValueBuffer = ' + JSON.stringify(manufactureValueBuffer));
+console.info('serviceValueBuffer = ' + JSON.stringify(serviceValueBuffer));
+let setting: advertising.AdvertisingSettings = {
+  interval:5000,
+  power:advertising.TxPowerMode.ADV_TX_POWER_LOW
+};
+let manufactureDataUnit: advertising.ManufacturerData = {
+  manufacturerId:4567,
+  manufacturerData:manufactureValueBuffer.buffer
+};
+let serviceDataUnit: advertising.ServiceData = {
+  serviceUuid:'37bea880-fc70-11ea-b720-000000001234',
+  serviceData:serviceValueBuffer.buffer
+};
+let advData: advertising.AdvertisingData = {
+  serviceUuids:['37bea880-fc70-11ea-b720-000000001234'],
+  manufacturerData:[manufactureDataUnit],
+  serviceData:[serviceDataUnit]
+};
+let advertisingParams: advertising.AdvertisingParams = {
+  advertisingSettings: setting,
+  advertisingData: advData
+};
+let advId = -1;
+try {
+  advertising.startAdvertising(advertisingParams).then((advertisingId:number) => {
+    advId = advertisingId;
+    console.info('advertising id:' + JSON.stringify(advId));
+  }).catch ((err: BusinessError) => {
+    console.error('errCode: ' + err.code + ', errMessage: ' + err.message);
+  });
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## stopAdvertising
 
-PhonePC/2in1TabletTVWearable
-
 stopAdvertising(advertisingId: number): Promise<void>
 
 停止发送星闪广播。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.ACCESS\_NEARLINK
 
@@ -256,43 +256,45 @@ stopAdvertising(advertisingId: number): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象，无返回值。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](nearlink-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-nearlink.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied |
-| 401 | Invalid parameter |
-| 801 | Capability not supported |
-| 1009700003 | Nearlink is off |
-| 1009700099 | Operation failed |
+| 201 | Permission denied. |
+| 401 | Invalid parameter. |
+| 801 | Capability not supported. |
+| 1009700003 | NearLink is off. |
+| 1009700099 | Operation failed. |
 
 **示例：**
 
-```
-1. import { advertising } from '@kit.NearLinkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { advertising } from '@kit.NearLinkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. let advId: number = 1; // advId在开启广播时获取，参考startAdvertising接口返回值
-6. advertising.stopAdvertising(advId).then(() => {
-7. console.info("stop advertising success");
-8. });
-9. } catch (err) {
-10. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-11. }
+try {
+  let advId: number = 1; // advId在开启广播时获取，参考startAdvertising接口返回值
+  advertising.stopAdvertising(advId).then(() => {
+    console.info('stop advertising success');
+  }).catch ((err: BusinessError) => {
+    console.error('errCode: ' + err.code + ', errMessage: ' + err.message);
+  });
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## on( 'advertisingStateChange')
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'advertisingStateChange', callback: Callback<AdvertisingStateChangeInfo>): void
 
-订阅星闪广播状态变化事件。
+订阅星闪广播状态变化事件。使用callback异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.ACCESS\_NEARLINK
 
@@ -304,43 +306,44 @@ on(type: 'advertisingStateChange', callback: Callback<AdvertisingStateChangeInfo
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 固定填写"advertisingStateChange"字符串，表示星闪广播状态变化事件。 |
-| callback | Callback<[AdvertisingStateChangeInfo](nearlink-advertising.md#advertisingstatechangeinfo)> | 是 | 表示广播状态变化回调函数。 |
+| type | string | 是 | 事件回调类型，支持的事件为'advertisingStateChange'，表示星闪广播状态事件。  当调用[advertising.startAdvertising](nearlink-advertising.md#startadvertising)、[advertising.stopAdvertising](nearlink-advertising.md#stopadvertising)时，均会触发该事件。 |
+| callback | Callback<[AdvertisingStateChangeInfo](nearlink-advertising.md#advertisingstatechangeinfo)> | 是 | 回调函数，返回广播状态变化数据。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](nearlink-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-nearlink.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied |
-| 401 | Invalid parameter |
-| 801 | Capability not supported |
+| 201 | Permission denied. |
+| 401 | Invalid parameter. |
+| 801 | Capability not supported. |
 
 **示例：**
 
-```
-1. import { advertising } from '@kit.NearLinkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { advertising } from '@kit.NearLinkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let onReceiveEvent:(data: advertising.AdvertisingStateChangeInfo) => void = (data: advertising.AdvertisingStateChangeInfo) => {
-5. console.info('advertisingId:'+ data.advertisingId);
-6. console.info('advertisingState:'+ data.state);
-7. }
-8. try {
-9. advertising.on('advertisingStateChange', onReceiveEvent);
-10. } catch (err) {
-11. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-12. }
+let onReceiveEvent:(data: advertising.AdvertisingStateChangeInfo) => void =
+  (data: advertising.AdvertisingStateChangeInfo) => {
+  console.info('advertisingId:' + data.advertisingId);
+  console.info('advertisingState:' + data.state);
+};
+try {
+  advertising.on('advertisingStateChange', onReceiveEvent);
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## off( 'advertisingStateChange')
 
-PhonePC/2in1TabletTVWearable
-
 off(type: 'advertisingStateChange', callback?: Callback<AdvertisingStateChangeInfo>): void
 
-取消订阅星闪广播状态变化事件。
+取消订阅星闪广播状态变化事件。使用callback异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.ACCESS\_NEARLINK
 
@@ -352,28 +355,28 @@ off(type: 'advertisingStateChange', callback?: Callback<AdvertisingStateChangeIn
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 固定填写"advertisingStateChange"字符串，表示星闪广播状态变化事件。 |
-| callback | Callback<[AdvertisingStateChangeInfo](nearlink-advertising.md#advertisingstatechangeinfo)> | 否 | 可选参数，需要取消注册的回调函数，需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
+| type | string | 是 | 事件回调类型，支持的事件为'advertisingStateChange'，表示广播状态事件。 |
+| callback | Callback<[AdvertisingStateChangeInfo](nearlink-advertising.md#advertisingstatechangeinfo)> | 否 | 回调函数，返回广播启停状态变化信息。  填写该参数则取消当前callback订阅。不填写该参数则取消该type对应的所有回调。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](nearlink-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-nearlink.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied |
-| 401 | Invalid parameter |
-| 801 | Capability not supported |
+| 201 | Permission denied. |
+| 401 | Invalid parameter. |
+| 801 | Capability not supported. |
 
 **示例：**
 
-```
-1. import { advertising } from '@kit.NearLinkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { advertising } from '@kit.NearLinkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. advertising.off('advertisingStateChange');
-6. } catch (err) {
-7. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-8. }
+try {
+  advertising.off('advertisingStateChange');
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```

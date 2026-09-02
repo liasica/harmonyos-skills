@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-location-
 title: 地点详情展示
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图Picker > 地点详情展示
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:17+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:69f8c5d92122a57793a266b33a528120733c83a37c85dda56c67bd97b2f2f80f
+scraped_at: 2026-09-02T14:50:29+08:00
+doc_updated_at: 2026-07-09
+content_hash: sha256:7884b11fa5ac480bdfbbd4e94b38cba97308d985eb152ea1553af7d0516f0511
 ---
 
 ## 场景介绍
@@ -14,13 +14,13 @@ content_hash: sha256:69f8c5d92122a57793a266b33a528120733c83a37c85dda56c67bd97b2f
 
 **图1** 地点详情
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/zOZqx8f2TyCrHImjN0sjPg/zh-cn_image_0000002589245357.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/En3q4u5rTsaUoSEWHZ6ijQ/zh-cn_image_0000002706835070.jpg "点击放大")
 
 ## 约束与限制
 
 使用该功能需满足以下条件：
 
-* 仅支持手机、平板和2in1设备。
+* 仅支持手机、平板和PC/2in1设备。
 
 ## 接口说明
 
@@ -35,41 +35,41 @@ content_hash: sha256:69f8c5d92122a57793a266b33a528120733c83a37c85dda56c67bd97b2f
 
 1. 导入相关模块。
 
-   ```
-   1. import { sceneMap } from '@kit.MapKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
-   3. import { common } from '@kit.AbilityKit';
+   ```typescript
+   import { sceneMap } from '@kit.MapKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { common } from '@kit.AbilityKit';
    ```
 2. 创建查询地点详情参数，调用[queryLocation](../harmonyos-references/map-scenemap.md#querylocation)方法拉起地点详情页。
 
-   ```
-   1. // 方式一：传入siteId
-   2. let queryLocationOptions: sceneMap.LocationQueryOptions = {
-   3. siteId: "922207154068557824"
-   4. };
-   5. // 拉起地点详情页
-   6. sceneMap.queryLocation(this.getUIContext().getHostContext() as common.UIAbilityContext, queryLocationOptions)
-   7. .then(() => {
-   8. console.info("QueryLocation", "Succeeded in querying location.");
-   9. })
-   10. .catch((err: BusinessError) => {
-   11. console.error("QueryLocation", `Failed to query Location, code: ${err.code}, message: ${err.message}`);
-   12. });
+   ```typescript
+   // 方式一：传入siteId
+   let queryLocationOptions: sceneMap.LocationQueryOptions = {
+     siteId: "922207154068557824"
+   };
+   // 拉起地点详情页
+   sceneMap.queryLocation(this.getUIContext().getHostContext() as common.UIAbilityContext, queryLocationOptions)
+     .then(() => {
+       console.info("QueryLocation", "Succeeded in querying location.");
+     })
+     .catch((err: BusinessError) => {
+       console.error("QueryLocation", `Failed to query Location, code: ${err.code}, message: ${err.message}`);
+     });
 
-   14. // 方式二：传入location和name
-   15. let queryLocationOptions: sceneMap.LocationQueryOptions = {
-   16. location: {
-   17. latitude: 39.9175,
-   18. longitude: 116.3972
-   19. },
-   20. name: '故宫博物院'
-   21. };
-   22. // 拉起地点详情页
-   23. sceneMap.queryLocation(this.getUIContext().getHostContext() as common.UIAbilityContext, queryLocationOptions)
-   24. .then(() => {
-   25. console.info("QueryLocation", "Succeeded in querying location.");
-   26. })
-   27. .catch((err: BusinessError) => {
-   28. console.error("QueryLocation", `Failed to query Location, code: ${err.code}, message: ${err.message}`);
-   29. });
+   // 方式二：传入location和name
+   let queryLocationOptions: sceneMap.LocationQueryOptions = {
+     location: {
+       latitude: 39.9175,
+       longitude: 116.3972
+     },
+     name: '故宫博物院'
+   };
+   // 拉起地点详情页
+   sceneMap.queryLocation(this.getUIContext().getHostContext() as common.UIAbilityContext, queryLocationOptions)
+     .then(() => {
+       console.info("QueryLocation", "Succeeded in querying location.");
+     })
+     .catch((err: BusinessError) => {
+       console.error("QueryLocation", `Failed to query Location, code: ${err.code}, message: ${err.message}`);
+     });
    ```

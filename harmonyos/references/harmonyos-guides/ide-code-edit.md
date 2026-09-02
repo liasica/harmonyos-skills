@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-edit
 title: 代码编辑
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:20+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:203b5e6b01377c7749a50020b17761e3d8eb789171dc9d4a377e9c036d99e3b9
+scraped_at: 2026-09-02T14:50:50+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5c50ec5405443a26ec28ca19d310619094c320bc2417f3407552a366ae04dc02
 ---
 
 * **[代码阅读](ide-editer-overview.md)**
@@ -15,3 +15,4 @@ content_hash: sha256:203b5e6b01377c7749a50020b17761e3d8eb789171dc9d4a377e9c036d9
 * **[生成ArkTSDoc文档](ide-arktsdoc.md)**
 * **[快速插入场景化代码片段](ide-kit-assistant.md)**
 * **[跨语言代码编辑](ide-cross-language-code-editing.md)**
+* **[代码索引（clangd）](ide-clangd.md)**

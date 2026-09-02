@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-appendix-
 title: 华为IAP范围覆盖
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 附录 > 华为IAP范围覆盖
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:36+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c391a55b6bc45170fe1d18570c40b93bb5703d88ba8abf4be0f788ac6d4a9de5
+scraped_at: 2026-09-02T14:59:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3e6c7b78ec20d85044240715f24957052a0ecdd1d30a4e45fd4b6361961fda37
 ---
 
 IAP已支持全球多个国家或地区，为当地的消费者和商户提供安全、便捷、高效的支付服务。
@@ -16,7 +16,7 @@ IAP已支持全球多个国家或地区，为当地的消费者和商户提供�
 | --- | --- |
 | 银行卡支付（Credit card/Debit card） | 全球支持**183**个国家或地区。 |
 
-说明
+**说明** 
 
 由于某些币种在支付平台不支持携带小数，开发者在设置订单参数amount字段时，应设置为整数金额值，如5.00，不支持5.02。
 
@@ -79,7 +79,7 @@ BEF、XOF、XAF、XPF、KMF、GRD、GNF、HUF、IDR、JPY、LUF、MGA、MGF、PY
 | 51 | 欧洲 | 直布罗陀 | GI | GIP | 银行卡 | Visa/Mastercard/JCB/Maestro/American Express/Discover Card/Diners |
 | 52 | 欧洲 | 格陵兰 | GL | DKK | 银行卡 | Visa/Mastercard/JCB/Maestro/American Express/Discover Card/Diners |
 | 53 | 欧洲 | 阿尔巴尼亚 | AL | ALL | 银行卡 | Visa/Mastercard |
-| 54 | 亚太地区 | 中国境内 | CN | CNY | 银行卡 | 华为支付/Huawei Pay |
+| 54 | 亚太地区 | 中国境内（香港特别行政区、澳门特别行政区、中国台湾除外） | CN | CNY | 银行卡 | 华为支付/Huawei Pay |
 | 55 | 亚太地区 | 马来西亚 | MY | MYR | 银行卡 | Visa/Mastercard/JCB/Discover Card/Diners |
 | 56 | 亚太地区 | 越南 | VN | VND | 银行卡 | Visa/Mastercard/JCB/Discover Card/Diners |
 | 57 | 亚太地区 | 菲律宾 | PH | PHP | 银行卡 | Visa/Mastercard/JCB/Discover Card/Diners |

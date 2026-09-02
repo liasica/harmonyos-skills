@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: span
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > span
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:27+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:754ca4f06c76b12b1ccffb496f84efeab15bb4b51e5717c858df3508c2bd4438
+scraped_at: 2026-09-02T15:01:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0c146816464c029494c083a2a0c048cfdec5f1c57d1f0787c3ad41a4a2d5f753
 ---
 
-说明
+**说明** 
 
 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -16,29 +16,21 @@ content_hash: sha256:754ca4f06c76b12b1ccffb496f84efeab15bb4b51e5717c858df3508c2b
 
 ## 权限列表
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## 子组件
-
-PhonePC/2in1TabletTVWearable
 
 无
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用属性](js-components-common-attributes.md)。
 
-说明
+**说明** 
 
 不支持focusable和disabled属性。
 
 ## 样式
-
-PhonePC/2in1TabletTVWearable
 
 仅支持如下样式：
 
@@ -54,46 +46,40 @@ PhonePC/2in1TabletTVWearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 仅支持[通用事件](js-components-common-events.md)中的click事件。
 
 ## 方法
-
-PhonePC/2in1TabletTVWearable
 
 不支持。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <text class="title">
-4. <span class="spanTxt">span</span>
-5. </text>
-6. </div>
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <text class="title">
+    <span class="spanTxt">span</span>
+  </text>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .container {
-3. display: flex;
-4. justify-content: center;
-5. align-items: center;
-6. }
-7. .title {
-8. font-size: 30px;
-9. text-align: center;
-10. width: 100%;
-11. height: 100px;
-12. }
-13. .spanTxt{
-14. color: chartreuse;
-15. font-size: 80px;
-16. }
+```css
+/* xxx.css */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  font-size: 30px;
+  text-align: center;
+  width: 100%;
+  height: 100px;
+}
+.spanTxt{
+  color: chartreuse;
+  font-size: 80px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/tYnWDq6KRZKIUFeqj4lTyA/zh-cn_image_0000002589326593.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/-VblL71ERju6el3YF3X9bw/zh-cn_image_0000002736435543.png)

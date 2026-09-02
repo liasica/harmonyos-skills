@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-80
 title: ArkTS是否支持解构
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > ArkTS是否支持解构
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:05+08:00
-doc_updated_at: 2026-03-17
+scraped_at: 2026-09-02T15:21:14+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:9931e7642c021964ff9c77cc413f3adf93e7ef99c243c3a9701a178d1a445700
 ---
 

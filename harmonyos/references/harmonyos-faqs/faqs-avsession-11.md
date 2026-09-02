@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-avsession-
 title: 投播后支持哪些控制功能
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频播控（AVSession） > 投播后支持哪些控制功能
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:44+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:06+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:b070a386bbd2387591fa9569ce48817f6dadb2476e16134f2ffda8a3d4ee1c2a
 ---
 

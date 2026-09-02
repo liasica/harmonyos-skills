@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm
 title: JSVM_ScriptOrigin
 breadcrumb: API参考 > 公共基础能力 > C API > 结构体 > JSVM_ScriptOrigin
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:24+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:a3b7e4a98ba7348d789a2a3dc4c64010ce588cdf2b18c90fde1c2d9f95795de4
+scraped_at: 2026-09-02T15:03:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b92fdf51e28652e99f8459b503d8af6926b1339e040200fa90f6040bb268e80f
 ---
 
-```
-1. typedef struct {...} JSVM_ScriptOrigin
+```c
+typedef struct {...} JSVM_ScriptOrigin
 ```
 
 ## 概述
 
-PhonePC/2in1TabletWearable
-
 某段JavaScript代码的原始信息，如sourceMap路径、源文件名、源文件中的起始行/列号等。
+
+**系统能力：** SystemCapability.ArkCompiler.JSVM
 
 **起始版本：** 12
 
@@ -26,11 +26,7 @@ PhonePC/2in1TabletWearable
 
 ## 汇总
 
-PhonePC/2in1TabletWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletWearable
 
 | 名称 | 描述 |
 | --- | --- |

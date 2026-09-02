@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_HostWindowInfo
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_HostWindowInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:29+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:0b0a8f075e48a22cf2d43fd72c99db8f5ab670564ee0a460cd6991e3a4e847b8
+scraped_at: 2026-09-02T14:51:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9b130a275024c8f303ce90edcd3177d353a67d3a26210f8bcc3756e992316fba
 ---
 
-```
-1. typedef struct ArkUI_HostWindowInfo ArkUI_HostWindowInfo
+```c
+typedef struct ArkUI_HostWindowInfo ArkUI_HostWindowInfo
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义窗口属性的HostWindowInfo类信息。
 

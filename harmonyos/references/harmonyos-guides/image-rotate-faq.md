@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-rotate-
 title: 如何获取图片的旋转角度信息
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > Image Kit常见问题 > 如何获取图片的旋转角度信息
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:22+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:b0c1431766c4f84bd567951b7cb38754bb7a4a73db3ee46fd149e1d5ea5c571d
+scraped_at: 2026-09-02T14:59:46+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:d974dd1983cfffa40d2e9e632b3055d624d3294205e39c36fea3179a52afb1f5
 ---
 
 ## 图片旋转角度介绍
@@ -29,9 +29,9 @@ Exif标准中定义了8个Orientation值和它们的字符串表示。
 | 7 | "Right-bottom" | 先水平镜像翻转，再顺时针旋转90°。 |
 | 8 | "Left-bottom" | 顺时针旋转270°。 |
 
-ArkTS场景下读取和编辑图片的旋转角度信息，可参考：[编辑图片Exif信息](image-tool.md)，对应的propertyKey需要设置为：ORIENTATION。
+ArkTS场景下读取和编辑图片的旋转角度信息，可参考：[读取和编辑图片Exif信息](image-tool.md)，对应的propertyKey需要设置为：ORIENTATION。
 
-C/C++场景下读取和编辑图片的旋转角度信息，可参考：[使用Image\_NativeModule编辑图片Exif信息](image-tool-c.md)，对应的key需要设置为：OHOS\_IMAGE\_PROPERTY\_ORIENTATION。
+C/C++场景下读取和编辑图片的旋转角度信息，可参考：[使用Image\_NativeModule读取和编辑图片Exif信息](image-tool-c.md)，对应的key需要设置为：OHOS\_IMAGE\_PROPERTY\_ORIENTATION。
 
 ## 常见问题
 

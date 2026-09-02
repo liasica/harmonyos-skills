@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hilog-tool
 title: hilogtool
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > hilogtool
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:34:21+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:ee836a8c3988f4cc16e9287a09ebc167506162afeedbef23b81b5803980959ab
+scraped_at: 2026-09-02T14:59:41+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:66cd1b9edefb6f89e51ce4472c38dc70c724a277a4db511711d3e61dd116d96b
 ---
 
 ## 使用场景
 
 当前hilog日志为编码后二进制形式保存的gz格式文件，开发者从设备/data/log/hilog路径下导出后无法直接解压查看，需要使用hilogtool工具进行解析，将转换为明文hilog日志。
 
-说明
+**说明** 
 
 当前机制下：kmsg日志不受影响，可直接查看；hilog日志，在shell窗口直接使用hilog命令在线查看日志，不受影响。
 
@@ -32,40 +32,40 @@ content_hash: sha256:ee836a8c3988f4cc16e9287a09ebc167506162afeedbef23b81b5803980
 
 1. 打开终端工具，执行以下命令，根据输出结果分别执行不同命令。
 
-   ```
-   1. echo $SHELL
+   ```shell
+   echo $SHELL
    ```
 
    如果输出结果为/bin/bash，则执行以下命令，打开.bash\_profile文件。
 
-   ```
-   1. vi ~/.bash_profile
+   ```shell
+   vi ~/.bash_profile
    ```
 
    如果输出结果为/bin/zsh，则执行以下命令，打开.zshrc文件。
 
-   ```
-   1. vi ~/.zshrc
+   ```shell
+   vi ~/.zshrc
    ```
 2. 单击字母“i”，进入Insert模式。
 3. 输入以下内容，添加PATH信息。
 
-   ```
-   1. export PATH=$PATH:/path/to/your/hilogtool
+   ```shell
+   export PATH=$PATH:/path/to/your/hilogtool
    ```
 4. 编辑完成后，单击Esc键，退出编辑模式，然后输入“:wq”，单击Enter键保存。
 5. 执行以下命令，使配置的环境变量生效。
 
    如果步骤1打开的是.bash\_profile文件，请执行如下命令：
 
-   ```
-   1. source ~/.bash_profile
+   ```shell
+   source ~/.bash_profile
    ```
 
    如果步骤1打开的是.zshrc文件，请执行如下命令：
 
-   ```
-   1. source ~/.zshrc
+   ```shell
+   source ~/.zshrc
    ```
 6. 环境变量配置完成后，重启电脑。
 
@@ -88,7 +88,7 @@ hilogtool parse --input xxx --output xxx --dict xxx
 | -d/--dict dictFile | 用于指定数据字典的路径；  缺省时，会在命令行当前所在路径下匹配最新的数据字典文件（格式：hilog\_dict.20230908-142200.zip）。 | 解析指定目录(D:\temp\hilog)下的所有hilog文件，并且指定使用该目录下的数据字典：  hilogtool parse -i D:\temp\hilog -d D:\temp\hilog\hilog\_dict.20230908-142200.zip |
 | -v/--version | 查看当前版本号。 | hilogtool -v |
 
-说明
+**说明** 
 
 1.数据字典文件在data/log/hilog目录下，格式为：hilog\_dict.2024xxxx-xxxxxx.zip，是设备启动时自动生成的，在解析日志时需要这个文件。
 
@@ -102,19 +102,19 @@ hilogtool parse --input xxx --output xxx --dict xxx
 
 在当前日志所在目录，通过cmd进入shell窗口，在shell窗口直接执行hilogtool parse，即可进行解析操作，如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/INqj5zE3SXaC5vcUFJC-bQ/zh-cn_image_0000002589324873.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/fCJ67G_8SbOo0MCI5ibUsA/zh-cn_image_0000002736313567.png)
 
 ### 解析指定目录下的hilog文件
 
 hilogtool parse -i D:\09-temp\dict-test -d D:\09-temp\dict-test
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/HuJMqmiuS6K9yOflhzUTZw/zh-cn_image_0000002589244809.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/jxt-i59ISS6yPCm93Q5frw/zh-cn_image_0000002706674524.png)
 
 ### 解析单个hilog文件
 
 hilogtool parse -i D:\09-temp\dict-test\hilog.025.20231020-154659.gz -d D:\09-temp\dict-test
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/iOSHaf-zRNuw6ZMkTxr4wQ/zh-cn_image_0000002558765004.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/eSDSisixTrOuh1TwC6-u0w/zh-cn_image_0000002736433613.png)
 
 ## 自动化脚本
 
@@ -124,30 +124,30 @@ hilogtool parse -i D:\09-temp\dict-test\hilog.025.20231020-154659.gz -d D:\09-te
 
 windows平台 get\_hilog.bat 脚本内容参考：
 
-```
-1. @set Ymd=%date:~0,4%_%date:~5,2%%date:~8,2%_%time:~0,2%%time:~3,2%%time:~6,2%
-2. @set Ymd=%Ymd: =0%
-3. @set Dir=LOG_%YMD%
-4. md %Dir%
-5. hdc file recv /data/log/hilog/ .\%Dir%\
-6. hilogtool parse -i .\%Dir% -d .\%Dir%
-7. pause
+```txt
+@set Ymd=%date:~0,4%_%date:~5,2%%date:~8,2%_%time:~0,2%%time:~3,2%%time:~6,2%
+@set Ymd=%Ymd: =0%
+@set Dir=LOG_%YMD%
+md %Dir%
+hdc file recv /data/log/hilog/ .\%Dir%\
+hilogtool parse -i .\%Dir% -d .\%Dir%
+pause
 ```
 
 脚本运行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/La4zKxnpRy-RlIvBkybFyg/zh-cn_image_0000002558605348.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/nUVd3RxERWGlrNHJduwPjg/zh-cn_image_0000002706834462.png)
 
 ### mac平台脚本
 
 mac平台脚本内容参考：
 
-```
-1. Ymd=$(date "+%Y_%m%d_%H%M%S")
-2. Dir=LOG_$Ymd
-3. mkdir $Dir
-4. hdc file recv /data/log/hilog/ ./$Dir/
-5. ./hilogtool parse -i ./$Dir -d ./$Dir
+```txt
+Ymd=$(date "+%Y_%m%d_%H%M%S")
+Dir=LOG_$Ymd
+mkdir $Dir
+hdc file recv /data/log/hilog/ ./$Dir/
+./hilogtool parse -i ./$Dir -d ./$Dir
 ```
 
 ## 可能有影响的场景
@@ -202,3 +202,5 @@ hdc shell hilog -d /system/bin/hilogTest
 3、数据字典被删掉了，检查导出的日志中是否存在hilog\_dict.2024xxxx-xxxxxx.zip格式的数据字典文件
 
 若不存在，则大概率是被 rm -rf data/log/hilog/\* 命令删除掉了，需要重启设备生成新的数据字典，然后解析。
+
+4、hilogtool解析工具版本过旧，请从最新的HarmonyOS SDK中获取hilogtool解析工具后进一步测试，具体参考[工具获取](hilog-tool.md#工具获取)。

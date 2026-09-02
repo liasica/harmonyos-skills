@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 资源泄漏类问题优化建议
 breadcrumb: 最佳实践 > 稳定性 > 稳定性优化 > 资源泄漏类问题优化建议
 category: best-practices
-scraped_at: 2026-04-29T14:14:14+08:00
+scraped_at: 2026-09-02T15:03:24+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:abbc923d93bf1215e6790a1222edf91f3e626dec838a3cca927af997968007c7
+content_hash: sha256:ccd34b50a8e7e23ef115d6f4c457d0aba96889c4e6eeef229ae3761d5ec7d13c
 ---
 
 ## 内存泄漏问题优化建议
@@ -14,75 +14,69 @@ content_hash: sha256:abbc923d93bf1215e6790a1222edf91f3e626dec838a3cca927af997968
 
 定时器未清理导致组件一直没有析构。
 
+```typescript
+export default class test {
+  private timer: number | null = null; // 正确声明类属性
+
+  onInit() {
+    this.timer = setInterval(() => {
+      this.updateData(); // 通过this调用类方法
+    }, 1000);
+  }
+
+  private updateData() {
+    // 定时任务具体逻辑
+  }
+}
 ```
-1. export default class test {
-2. private timer: number | null = null; // 正确声明类属性
-
-4. onInit() {
-5. this.timer = setInterval(() => {
-6. this.updateData(); // 通过this调用类方法
-7. }, 1000);
-8. }
-
-10. private updateData() {
-11. // 定时任务具体逻辑
-12. }
-13. }
-```
-
-[MemoryLeakDetection.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MemoryDetection/entry/src/main/ets/pages/MemoryLeakDetection.ets#L43-L55)
 
 **优化建议：**
 
 使用定时器组件销毁时一定要调用clearTimeout和clearInterval，否则对象无法析构。
 
+```typescript
+export default class test {
+  private timer: number | null = null; // 正确声明类属性
+
+  onInit() {
+    this.timer = setInterval(() => {
+      this.updateData(); // 通过this调用类方法
+    }, 1000);
+  }
+
+  private updateData() {
+    // 定时任务具体逻辑
+  }
+
+  onDestroy() {
+    if (this.timer !== null) {
+      clearInterval(this.timer); // 清理定时器
+      this.timer = null;
+    }
+  }
+}
 ```
-1. export default class test {
-2. private timer: number | null = null; // 正确声明类属性
-
-4. onInit() {
-5. this.timer = setInterval(() => {
-6. this.updateData(); // 通过this调用类方法
-7. }, 1000);
-8. }
-
-10. private updateData() {
-11. // 定时任务具体逻辑
-12. }
-
-14. onDestroy() {
-15. if (this.timer !== null) {
-16. clearInterval(this.timer); // 清理定时器
-17. this.timer = null;
-18. }
-19. }
-20. }
-```
-
-[MemoryLeakDetection2.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MemoryDetection/entry/src/main/ets/pages/MemoryLeakDetection2.ets#L16-L35)
 
 ### 优化建议2：异常分支需要关注释放申请的内存
 
 申请堆内存但是没有在异常分支进行释放。
 
+```cpp
+static bool InjectNativeLeak1()
+{
+    char* p = (char*)malloc(g_cmdLen + 1);
+    if (!p) {
+        return false;
+    }
+    auto err = memset(p, 'a', g_cmdLen);
+    if (err) {
+        // 异常分支退出未释放
+        return false;
+    }
+    free(p);
+    return true;
+}
 ```
-1. static bool InjectNativeLeak1()
-2. {
-3. char* p = (char*)malloc(g_cmdLen + 1);
-4. if (!p) {
-5. return false;
-6. }
-7. auto err = memset(p, 'a', g_cmdLen);
-8. if (err) {
-9. // 异常分支退出未释放
-10. return false;
-11. }
-12. free(p);
-13. return true;
-14. }
-```
-
-[resource\_leak.cpp](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MemoryDetection/entry/src/main/cpp/resource_leak.cpp#L35-L48)
 
 **优化建议：**
 
@@ -93,24 +87,22 @@ content_hash: sha256:abbc923d93bf1215e6790a1222edf91f3e626dec838a3cca927af997968
 3. 资源申请释放有配对，但配对函数或变量不匹配。
 4. 指针地址偏移等原因导致申请的内存地址丢失。
 
+```cpp
+static bool InjectNativeLeak2()
+{
+    char* p = (char*)malloc(g_cmdLen + 1);
+    if (!p) {
+        return false;
+    }
+    auto err = memset(p, 'a', g_cmdLen);
+    if (err) {
+        free(p);
+        return false;
+    }
+    free(p);
+    return true;
+}
 ```
-1. static bool InjectNativeLeak2()
-2. {
-3. char* p = (char*)malloc(g_cmdLen + 1);
-4. if (!p) {
-5. return false;
-6. }
-7. auto err = memset(p, 'a', g_cmdLen);
-8. if (err) {
-9. free(p);
-10. return false;
-11. }
-12. free(p);
-13. return true;
-14. }
-```
-
-[resource\_leak.cpp](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MemoryDetection/entry/src/main/cpp/resource_leak.cpp#L52-L65)
 
 ## ashmem/ION泄漏问题优化建议
 
@@ -118,38 +110,34 @@ content_hash: sha256:abbc923d93bf1215e6790a1222edf91f3e626dec838a3cca927af997968
 
 未释放的共享内存映射。
 
+```cpp
+void processWithLeak1(int fd, size_t size) {
+    void* ptr = mmap(nullptr, size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+    if (ptr == MAP_FAILED) {
+        return;
+    }
+    // 使用共享内存
+    processData(ptr);
+    // 忘记调用munmap(ptr, size);
+    // 每一次调用都会泄漏一块映射内存
+}
 ```
-1. void processWithLeak1(int fd, size_t size) {
-2. void* ptr = mmap(nullptr, size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
-3. if (ptr == MAP_FAILED) {
-4. return;
-5. }
-6. // 使用共享内存
-7. processData(ptr);
-8. // 忘记调用munmap(ptr, size);
-9. // 每一次调用都会泄漏一块映射内存
-10. }
-```
-
-[resource\_leak.cpp](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MemoryDetection/entry/src/main/cpp/resource_leak.cpp#L78-L87)
 
 **优化建议：**
 
 及时释放内存映射。
 
+```cpp
+void processWithLeak2(int fd, size_t size) {
+    void* ptr = mmap(nullptr, size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+    if (ptr == MAP_FAILED) {
+        return;
+    }
+    // 使用共享内存
+    processData(ptr);
+    munmap(ptr, size);
+}
 ```
-1. void processWithLeak2(int fd, size_t size) {
-2. void* ptr = mmap(nullptr, size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
-3. if (ptr == MAP_FAILED) {
-4. return;
-5. }
-6. // 使用共享内存
-7. processData(ptr);
-8. munmap(ptr, size);
-9. }
-```
-
-[resource\_leak.cpp](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MemoryDetection/entry/src/main/cpp/resource_leak.cpp#L91-L99)
 
 针对ION和ashmem内存泄漏，开发者可以调用命名API接口，设定ashmem和ION的名字，与pixmap绑定，来提高这类内存泄漏的定位效率。
 
@@ -163,15 +151,15 @@ NATIVE层API：**[OH\_PixelmapNative\_SetMemoryName()](../harmonyos-references/c
 
 修改方法示例**：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/U3awnLDUQMiIS-8TxIUq5Q/zh-cn_image_0000002370405688.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/d-2NSsJDRda1qNfPTXxJhA/zh-cn_image_0000002370405688.png "点击放大")
 
 ashmem日志结果示例展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/Ccl3Y3IcS7GHKnMQajPMFg/zh-cn_image_0000002404045417.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/lMNr0816Rguvikoqr_mIEQ/zh-cn_image_0000002404045417.png "点击放大")
 
 ION日志结果示例展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/YGKcXKxMRgmxvmJSuYBkOQ/zh-cn_image_0000002370565600.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/WkmJKjbWR3qta_zf9E62Kw/zh-cn_image_0000002370565600.png "点击放大")
 
 ## 句柄泄漏问题优化建议
 
@@ -179,43 +167,39 @@ ION日志结果示例展示：
 
 代码打开文件句柄，但是没有释放造成句柄泄漏。
 
-```
-1. void InjectContinuingFileFdLeak1(std::string path) {
-2. mode_t fileMode = 0644;
-3. int fd = open(path.c_str(), O_CREAT | O_RDWR, fileMode);
-4. if (fd < 0) {
-5. return;
-6. }
+```cpp
+void InjectContinuingFileFdLeak1(std::string path) {
+    mode_t fileMode = 0644;
+    int fd = open(path.c_str(), O_CREAT | O_RDWR, fileMode);
+    if (fd < 0) {
+        return;
+    }
 
-8. if (!CheckStatus()) {
-9. // 异常分支未关闭句柄
-10. return;
-11. }
-12. close(fd); // 正常业务流程关闭句柄
-13. }
+    if (!CheckStatus()) {
+        // 异常分支未关闭句柄
+        return;
+    }
+    close(fd); // 正常业务流程关闭句柄
+}
 ```
-
-[resource\_leak.cpp](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MemoryDetection/entry/src/main/cpp/resource_leak.cpp#L111-L123)
 
 优化建议：在创建文件句柄的同时在函数出口（含函数各个异常分支）及时增加关闭句柄的操作，防止句柄未正常关闭导致的泄漏。
 
-```
-1. void InjectContinuingFileFdLeak2(std::string path) {
-2. mode_t fileMode = 0644;
-3. int fd = open(path.c_str(), O_CREAT | O_RDWR, fileMode);
-4. if (fd < 0) {
-5. return;
-6. }
+```cpp
+void InjectContinuingFileFdLeak2(std::string path) {
+    mode_t fileMode = 0644;
+    int fd = open(path.c_str(), O_CREAT | O_RDWR, fileMode);
+    if (fd < 0) {
+        return;
+    }
 
-8. if (!CheckStatus()) {
-9. close(fd);
-10. return;
-11. }
-12. close(fd); // 正常业务流程关闭句柄
-13. }
+    if (!CheckStatus()) {
+        close(fd);
+        return;
+    }
+    close(fd); // 正常业务流程关闭句柄
+}
 ```
-
-[resource\_leak.cpp](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MemoryDetection/entry/src/main/cpp/resource_leak.cpp#L127-L139)
 
 ## 线程泄漏问题优化建议
 
@@ -223,19 +207,17 @@ ION日志结果示例展示：
 
 未正确管理线程对象，无法知道线程何时结束，可能导致资源泄漏。
 
+```cpp
+void riskyThreadFunction(int num) {
+    for (int i = 0; i < num; i++) { // 创建 Num 个线程
+        pthread_t thread;
+        pthread_create(&thread, NULL, LeadThreadFn, NULL);
+        // ...
+    }
+    // ...
+    return;
+}
 ```
-1. void riskyThreadFunction(int num) {
-2. for (int i = 0; i < num; i++) { // 创建 Num 个线程
-3. pthread_t thread;
-4. pthread_create(&thread, NULL, LeadThreadFn, NULL);
-5. // ...
-6. }
-7. // ...
-8. return;
-9. }
-```
-
-[resource\_leak.cpp](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MemoryDetection/entry/src/main/cpp/resource_leak.cpp#L153-L161)
 
 优化建议：
 
@@ -244,28 +226,26 @@ ION日志结果示例展示：
 3. 创建线程时为线程取名（默认继承父进程名，导致大量同名线程），便于出现线程泄漏后的快速定位；
 4. pthread\_create后需要调用pthread\_join或者pthread\_detach确保线程资源能回收掉。
 
-```
-1. class ThreadPool { // 线程池实现，支持线程生命周期管理和回收
-2. public:
-3. // ...
-4. static bool addTask(const Task& task) {
-5. // ...
-6. return true;
-7. }
-8. };
+```cpp
+class ThreadPool { // 线程池实现，支持线程生命周期管理和回收
+public:
+    // ...
+    static bool addTask(const Task& task) {
+        // ...
+        return true;
+    }
+};
 
-10. void safeThreadFunction(int num) {
-11. for (int i = 0; i < num; i++) { // 创建 Num 个线程
-12. Task task;
-13. bool ret = ThreadPool::addTask(task); // 使用线程池管理线程
-14. if (ret) {
-15. break;
-16. }
-17. // ...
-18. }
-19. // ...
-20. return;
-21. }
+void safeThreadFunction(int num) {
+    for (int i = 0; i < num; i++) { // 创建 Num 个线程
+        Task task;
+        bool ret = ThreadPool::addTask(task); // 使用线程池管理线程
+        if (ret) {
+            break;
+        }
+        // ...
+    }
+    // ...
+    return;
+}
 ```
-
-[resource\_leak.cpp](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MemoryDetection/entry/src/main/cpp/resource_leak.cpp#L167-L187)

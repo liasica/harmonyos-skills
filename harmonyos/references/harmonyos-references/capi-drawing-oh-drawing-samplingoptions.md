@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: OH_Drawing_SamplingOptions
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 结构体 > OH_Drawing_SamplingOptions
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:30+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:7d0ed82566ede7b0f63810c417b799f9e1daacd1ee35ba59556779d0cf8a620b
+scraped_at: 2026-09-02T14:53:10+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:91901a7bdccf5d50a9d9c2d2f553e6b39e2fc560df2a813cb3e8378828280756
 ---
 
-```
-1. typedef struct OH_Drawing_SamplingOptions OH_Drawing_SamplingOptions
+```c
+typedef struct OH_Drawing_SamplingOptions OH_Drawing_SamplingOptions
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义一个采样选项，用于描述图片、位图等图像的采样方法。
 

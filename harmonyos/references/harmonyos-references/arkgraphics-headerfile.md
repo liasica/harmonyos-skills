@@ -1,8 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkgraphics-headerfile
 title: 头文件
+breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:50+08:00
+scraped_at: 2026-09-02T15:20:27+08:00
 doc_updated_at: 2026-04-20
 content_hash: sha256:c404a1b8d3858a6ba1b831caff47aeaf4c3e131b54dd350fe7d0604f47b1aad5
 ---

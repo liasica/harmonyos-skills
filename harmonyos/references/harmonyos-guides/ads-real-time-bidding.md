@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ads-real-time
 title: 实时竞价
 breadcrumb: 指南 > 应用服务 > Ads Kit（广告服务） > 流量变现服务开发 > 实时竞价
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:37:05+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:30d5b40dea845812e36a68a4243823da3e0c2ec334e52f9f361e33f7d26f5dd7
+scraped_at: 2026-09-02T14:59:52+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:9445493bebf0d9af754859c44429f5e7d782fbe5932d14904dc915ad18001d2f
 ---
 
 ## 场景介绍
@@ -44,32 +44,32 @@ content_hash: sha256:30d5b40dea845812e36a68a4243823da3e0c2ec334e52f9f361e33f7d26
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tMax | number | 否 | 交易的最大超时时间（包含网络延迟），单位ms。 |
-| cur | string | 否 | 竞价请求支持的币种，支持传多个，用英文逗号分隔。当前支持五种货币：  1. CNY（单位：元）。  2. USD（单位：美元）。  3. EUR（单位：欧元）。  4. GBP（单位：英镑）。  5. JPY（单位：日元）。  不填默认是CNY。 |
-| bidFloor | number | 否 | 竞价广告位的底价。当前支持五种货币：  1. CNY（单位：元）。  2. USD（单位：美元）。  3. EUR（单位：欧元）。  4. GBP（单位：英镑）。  5. JPY（单位：日元）。  不填默认是CNY。 |
-| bidFloorCur | string | 否 | 竞价广告位底价使用的币种。如果bidFloor非空，则bidFloorCur也非空。当前只支持五种货币中的一种：  1. CNY（单位：元）。  2. USD（单位：美元）。  3. EUR（单位：欧元）。  4. GBP（单位：英镑）。  5. JPY（单位：日元）。  不填默认是CNY。 |
-| bpkgName | string | 否 | 广告位竞投的APP包名，支持传多个，用英文逗号分隔。 |
+| cur | string | 否 | 竞价请求支持的币种，支持传多个，用英文逗号分隔。  当前支持五种货币： CNY（单位：元）、USD（单位：美元）、EUR（单位：欧元）、GBP（单位：英镑）、JPY（单位：日元）。  不填默认是CNY。 |
+| bidFloor | number | 否 | 竞价广告位的底价。  当前支持五种货币： CNY（单位：元）、USD（单位：美元）、EUR（单位：欧元）、GBP（单位：英镑）、JPY（单位：日元）。  不填默认是CNY。 |
+| bidFloorCur | string | 否 | 竞价广告位底价使用的币种。如果bidFloor非空，则bidFloorCur也非空。  当前只支持五种货币中的一种： CNY（单位：元）、USD（单位：美元）、EUR（单位：欧元）、GBP（单位：英镑）、JPY（单位：日元）。  不填默认是CNY。 |
+| bpkgName | string | 否 | 广告位禁投的APP包名，支持传多个，用英文逗号分隔。 |
 
 示例代码如下所示：
 
-```
-1. import { advertising } from '@kit.AdsKit';
+```typescript
+import { advertising } from '@kit.AdsKit';
 
-3. const adRequestParams: advertising.AdRequestParams = {
-4. // 'h8asowxwhq'为测试专用的广告位ID，暂无竞价信息，App正式发布时需要改为正式的广告位ID
-5. adId: 'h8asowxwhq',
-6. // 广告类型
-7. adType: 3,
-8. // 交易的最大超时时间
-9. tMax: 100,
-10. // 竞价请求支持的币种，多个用英文逗号分隔
-11. cur: 'CNY',
-12. // 竞价广告位的底价
-13. bidFloor: 6.66,
-14. // 竞价广告位底价使用的币种
-15. bidFloorCur: 'CNY',
-16. // 广告位竞投的APP包名，多个用英文逗号分隔
-17. bpkgName: 'com.huawei.baidu,com.huawei.music'
-18. };
+const adRequestParams: advertising.AdRequestParams = {
+  // 'h8asowxwhq'为测试专用的广告位ID，暂无竞价信息，App正式发布时需要改为正式的广告位ID
+  adId: 'h8asowxwhq',
+  // 广告类型
+  adType: 3,
+  // 交易的最大超时时间
+  tMax: 100,
+  // 竞价请求支持的币种，多个用英文逗号分隔
+  cur: 'CNY',
+  // 竞价广告位的底价
+  bidFloor: 6.66,
+  // 竞价广告位底价使用的币种
+  bidFloorCur: 'CNY',
+  // 广告位禁投的APP包名，多个用英文逗号分隔
+  bpkgName: 'com.huawei.baidu,com.huawei.music'
+};
 ```
 
 ### 处理竞价结果
@@ -78,13 +78,13 @@ content_hash: sha256:30d5b40dea845812e36a68a4243823da3e0c2ec334e52f9f361e33f7d26
 
 实时竞价结果信息如下所示：
 
-说明
+**说明** 
 
 回传竞价结果，需要申请使用Internet网络权限[ohos.permission.INTERNET](permissions-for-all.md#ohospermissioninternet)。详细申请权限流程请参考[开发准备](development-preparation.md)。
 
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| price | number | 是 | 本条广告的eCPM（Effective Cost Per Mille，每一千次展示可以获得的广告收入）。 |
+| price | number | 是 | 本条广告的eCPM（Effective Cost Per Mille，每一千次展示可以获得的广告收入）。支持币种：CNY（单位：元）、USD（单位：美元）、EUR（单位：欧元）、GBP（单位：英镑）、JPY（单位：日元）。 |
 | cur | string | 是 | 本条广告的价格币种。支持币种：CNY（单位：元）、USD（单位：美元）、EUR（单位：欧元）、GBP（单位：英镑）、JPY（单位：日元）。 |
 | nurl | string | 是 | 媒体回传竞价成功结果的URL。 |
 | lurl | string | 是 | 媒体回传竞价失败结果的URL。 |
@@ -112,91 +112,91 @@ content_hash: sha256:30d5b40dea845812e36a68a4243823da3e0c2ec334e52f9f361e33f7d26
 
 示例代码如下所示：
 
-```
-1. import { advertising } from '@kit.AdsKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { rcp } from '@kit.RemoteCommunicationKit';
+```typescript
+import { advertising } from '@kit.AdsKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { rcp } from '@kit.RemoteCommunicationKit';
 
-5. interface BiddingInfo {
-6. // 本条广告的eCPM（每一千次展示可以获得的广告收入）
-7. price: number;
+interface BiddingInfo {
+  // 本条广告的eCPM（每一千次展示可以获得的广告收入）
+  price: number;
 
-9. // 本条广告的价格币种
-10. cur: string;
+  // 本条广告的价格币种
+  cur: string;
 
-12. // 媒体回传竞价成功结果的URL
-13. nurl: string;
+  // 媒体回传竞价成功结果的URL
+  nurl: string;
 
-15. // 媒体回传竞价失败结果的URL
-16. lurl: string;
-17. }
+  // 媒体回传竞价失败结果的URL
+  lurl: string;
+}
 
-19. const adLoaderListener: advertising.AdLoadListener = {
-20. // 广告请求失败回调
-21. onAdLoadFailure: (errorCode: number, errorMsg: string) => {
-22. hilog.error(0x0000, 'testTag', `Failed to load ad. Code is ${errorCode}, message is ${errorMsg}`);
-23. },
-24. // 广告请求成功回调
-25. onAdLoadSuccess: (ads: Array<advertising.Advertisement>) => {
-26. hilog.info(0x0000, 'testTag', 'Succeeded in loading ad');
-27. // 期望的底价
-28. const bidFloor: number = 6;
-29. const biddingSuccessAds: Array<advertising.Advertisement> = [];
-30. for (const ad of ads) {
-31. const biddingInfo: BiddingInfo = ad.biddingInfo as BiddingInfo;
-32. if (!biddingInfo) {
-33. continue;
-34. }
-35. if (biddingInfo.cur === 'CNY' && biddingInfo.price >= bidFloor) {
-36. hilog.info(0x0000, 'testTag', 'Petal Ads wins.');
-37. if (biddingInfo.nurl) {
-38. const url: string = biddingInfo.nurl
-39. // 竞胜时，其他DSP最高出价
-40. .replace('SECOND_PRICE', '3.6')
-41. // 价格币种
-42. .replace('AUCTION_CURRENCY', 'CNY');
-43. void sendBiddingResult(url).catch((error: BusinessError) => {
-44. hilog.error(0x0000, 'testTag',
-45. `Failed to sendBiddingResult. Code is ${error.code}, message is ${error.message}`);
-46. });
-47. }
-48. biddingSuccessAds.push(ad);
-49. } else {
-50. hilog.info(0x0000, 'testTag', 'Petal Ads loses.');
-51. if (biddingInfo.lurl) {
-52. const url: string = biddingInfo.lurl
-53. // 竞败时，其他DSP最高出价
-54. .replace('AUCTION_PRICE', '3.6')
-55. // 竞价结果
-56. .replace('AUCTION_LOSS', '102')
-57. // 价格币种
-58. .replace('AUCTION_CURRENCY', 'CNY')
-59. // 竞败时，竞胜DSP推广的App包名
-60. .replace('AUCTION_APP_PKG', 'com.huawei.music')
-61. // 竞败时，竞胜DSP推广的App名称
-62. .replace('AUCTION_APP_NAME', 'music')
-63. // 竞败时，竞胜DSP的编号
-64. .replace('AUCTION_CP_ID', '100')
-65. void sendBiddingResult(url).catch((error: BusinessError) => {
-66. hilog.error(0x0000, 'testTag',
-67. `Failed to sendBiddingResult. Code is ${error.code}, message is ${error.message}`);
-68. });
-69. }
-70. }
-71. }
-72. // ...此处省略展示广告的逻辑
-73. }
-74. };
+const adLoaderListener: advertising.AdLoadListener = {
+  // 广告请求失败回调
+  onAdLoadFailure: (errorCode: number, errorMsg: string) => {
+    hilog.error(0x0000, 'testTag', `Failed to load ad. Code is ${errorCode}, message is ${errorMsg}`);
+  },
+  // 广告请求成功回调
+  onAdLoadSuccess: (ads: Array<advertising.Advertisement>) => {
+    hilog.info(0x0000, 'testTag', 'Succeeded in loading ad');
+    // 期望的底价
+    const bidFloor: number = 6;
+    const biddingSuccessAds: advertising.Advertisement[] = [];
+    for (const ad of ads) {
+      const biddingInfo: BiddingInfo = ad.biddingInfo as BiddingInfo;
+      if (!biddingInfo) {
+        continue;
+      }
+      if (biddingInfo.cur === 'CNY' && biddingInfo.price >= bidFloor) {
+        hilog.info(0x0000, 'testTag', 'Petal Ads wins.');
+        if (biddingInfo.nurl) {
+          const url: string = biddingInfo.nurl
+            // 竞胜时，其他DSP最高出价
+            .replace('SECOND_PRICE', '3.6')
+            // 价格币种
+            .replace('AUCTION_CURRENCY', 'CNY');
+          void sendBiddingResult(url).catch((error: BusinessError) => {
+            hilog.error(0x0000, 'testTag',
+              `Failed to sendBiddingResult. Code is ${error.code}, message is ${error.message}`);
+          });
+        }
+        biddingSuccessAds.push(ad);
+      } else {
+        hilog.info(0x0000, 'testTag', 'Petal Ads loses.');
+        if (biddingInfo.lurl) {
+          const url: string = biddingInfo.lurl
+            // 竞败时，其他DSP最高出价
+            .replace('AUCTION_PRICE', '3.6')
+            // 竞价结果
+            .replace('AUCTION_LOSS', '102')
+            // 价格币种
+            .replace('AUCTION_CURRENCY', 'CNY')
+            // 竞败时，竞胜DSP推广的App包名
+            .replace('AUCTION_APP_PKG', 'com.huawei.music')
+            // 竞败时，竞胜DSP推广的App名称
+            .replace('AUCTION_APP_NAME', 'music')
+            // 竞败时，竞胜DSP的编号
+            .replace('AUCTION_CP_ID', '100')
+          void sendBiddingResult(url).catch((error: BusinessError) => {
+            hilog.error(0x0000, 'testTag',
+              `Failed to sendBiddingResult. Code is ${error.code}, message is ${error.message}`);
+          });
+        }
+      }
+    }
+    // ...此处省略展示广告的逻辑
+  }
+};
 
-76. async function sendBiddingResult(url: string): Promise<void> {
-77. let session: rcp.Session | undefined = undefined;
-78. try {
-79. session = rcp.createSession();
-80. await session.get(url);
-81. } catch (e) {
-82. hilog.error(0x0000, 'testTag', `Failed to send bidding result. Code is ${e.code}, message is ${e.message}`);
-83. } finally {
-84. session?.close();
-85. }
-86. }
+async function sendBiddingResult(url: string): Promise<void> {
+  let session: rcp.Session | undefined = undefined;
+  try {
+    session = rcp.createSession();
+    await session.get(url);
+  } catch (e) {
+    hilog.error(0x0000, 'testTag', `Failed to send bidding result. Code is ${e.code}, message is ${e.message}`);
+  } finally {
+    session?.close();
+  }
+}
 ```

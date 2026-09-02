@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-stability-
 title: 为什么本地的报告文件夹下，稳定性问题的数量比DevEco Testing前端展示的报告问题数量多
 breadcrumb: FAQ > DevEco Testing > 专项测试 > 稳定性基础质量测试 > 为什么本地的报告文件夹下，稳定性问题的数量比DevEco Testing前端展示的报告问题数量多
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:29+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:0fc2dd45ecbb4a0e0ee5bc66fce3bde5aec771cf96d2df364fcadd81777f2fb6
 ---
 

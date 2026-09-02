@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 设置云侧文件的元数据
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 云存储 > 设置云侧文件的元数据
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:45+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:829a7f87e72bb56117b74e6dbef93d878d45e401cb0bf519e5c91f71f510222c
+scraped_at: 2026-09-02T14:50:25+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:d797847977966c2e9c295f4c3fb9ea6936c04aadc50fd8dfcbf8fb6f384c92a9
 ---
 
 文件元数据包含云侧文件名、文件大小、文件类型等常用属性，也包括用户自定义的文件属性。
@@ -23,33 +23,27 @@ content_hash: sha256:829a7f87e72bb56117b74e6dbef93d878d45e401cb0bf519e5c91f71f51
 
 ## 操作步骤
 
-调用[StorageBucket.setMetadata](../harmonyos-references/cloudfoundation-cloudstorage.md#setmetadata)可以设置云侧文档的元数据信息。
+1. 导入相关模块。
 
-```
-1. import { cloudStorage } from '@kit.CloudFoundationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { cloudStorage } from '@kit.CloudFoundationKit';
+   // ...
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```
+2. 调用[StorageBucket.setMetadata](../harmonyos-references/cloudfoundation-cloudstorage.md#setmetadata)设置云侧文档的元数据信息。
 
-5. let storageBucket: cloudStorage.StorageBucket = cloudStorage.bucket();
-
-7. @Component
-8. export struct testPage {
-9. build() {
-10. }
-
-12. // 设置元数据
-13. setMetaData() {
-14. // 设置云存储默认实例中screenshot/screenshot_20250115_155321.jpg文件的元数据信息
-15. storageBucket.setMetadata('screenshot/screenshot_20250115_155321.jpg', {
-16. customMetadata: {
-17. key1: "value1",
-18. key2: "value2"
-19. }
-20. }).then((metadata: cloudStorage.Metadata) => {
-21. hilog.info(0x0000, 'testTag', `Succeeded in setting metadata: ${JSON.stringify(metadata)}`);
-22. }).catch((err: BusinessError) => {
-23. hilog.error(0x0000, 'testTag', `Failed to set metadata, code: ${err.code}, message: ${err.message}`);
-24. })
-25. }
-26. }
-```
+   ```typescript
+   let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
+   hilog.info(0x0000, 'Storage', `promise setMetadata  cloudPath: ${UI.uploadFileName}`);
+   bucket.setMetadata(UI.uploadFileName, {
+     customMetadata: {
+       key1: 'value1',
+       key2: 'value2'
+     }
+   }).then((result: Object) => {
+     hilog.info(0x0000, 'Storage', `Succeeded in setting Metadata  ${JSON.stringify(result)}`);
+   }).catch((err: BusinessError) => {
+     hilog.error(0x0000, 'Storage', `Failed to set Metadata code: ${err.code}, message: ${err.message}`);
+   });
+   ```

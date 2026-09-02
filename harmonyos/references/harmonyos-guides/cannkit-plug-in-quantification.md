@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-plug-
 title: 插件式量化
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > 模型轻量化 > Transformer结构量化 > 插件式量化
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:40:54+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d72672e2e39ae95839916c31f92baa8b6c27d83f742334bab39a0dbe7cab5570
+scraped_at: 2026-09-02T14:50:34+08:00
+doc_updated_at: 2026-05-18
+content_hash: sha256:78daa4b35906da692d922400382ba32dda28b33e286c887cbf97ad8b69aeefd3
 ---
 
 ## 简介
@@ -16,54 +16,54 @@ content_hash: sha256:d72672e2e39ae95839916c31f92baa8b6c27d83f742334bab39a0dbe7ca
 
 PTQ和QAT是两种量化参数优化策略，PTQ使用推理工程即可完成量化校准，QAT需要结合训练工程来进行量化感知训练。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/C5UDqQ-oQF-iiK1FTtMwvw/zh-cn_image_0000002589325581.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/YSpntg3QSauQylBvN6vD0g/zh-cn_image_0000002736434423.png)
 
 ## 接口使用说明
 
-```
-1. import os
-2. import sys
-3. sys.path.append('path/to/dopt_torch_py3')
-4. ####  接口导入
-5. from dopt.dopt_lm.do_opt import (
-6. generate_config_file,   ## 生成量化配置文件
-7. optimize_model,         ## 使用生成和配置好的量化配置文件将浮点nn.module 转成插入量化算子的nn.module
-8. set_quant_state,        ## 分别对激活和量化设置量化推理使能
-9. set_calibrate_state,    ## 设置量化参数可更新状态
-10. generate_quant_params,  ## 导出量化参数接口
-11. )
-12. #### 量化算子插入  首次调用该接口会生成量化配置文件，完成配置后进行PTQ或者QAT
-13. def get_quant_model(model, dopt_config):
-14. ## model: nn.module实例对象 浮点模型定义
-15. ## dopt_config: "path/to/config.json"  生成路径
-16. if not os.path.exists(dopt_config):
-17. generate_config_file(model, dopt_config)
-18. exit()
-19. model = optimize_model(model, dopt_config)
-20. return model
+```python
+import os
+import sys
+sys.path.append('path/to/dopt_torch_py3')
+####  接口导入
+from dopt.dopt_lm.do_opt import (
+    generate_config_file,   ## 生成量化配置文件
+    optimize_model,         ## 使用生成和配置好的量化配置文件将浮点nn.module转成插入量化算子的nn.module
+    set_quant_state,        ## 分别对激活和量化设置量化推理使能
+    set_calibrate_state,    ## 设置量化参数可更新状态
+    generate_quant_params,  ## 导出量化参数接口
+)
+#### 量化算子插入  首次调用该接口会生成量化配置文件，完成配置后进行PTQ或者QAT
+def get_quant_model(model, dopt_config):
+    ## model: nn.module实例对象 浮点模型定义
+    ## dopt_config: "path/to/config.json"  生成路径
+    if not os.path.exists(dopt_config):
+        generate_config_file(model, dopt_config)
+        exit()
+    model = optimize_model(model, dopt_config)
+    return model
 ```
 
 **量化策略配置：**
 
-```
-1. {
-2. "layer_strategy": {
-3. "node_name": {
-4. "type": "<class 'torch.nn.modules.linear.Linear'>",
-5. "quant_strategy": "need to set",
-6. "weight": {
-7. "bit": 4,
-8. "group_size": 128,
-9. "weight_algo": "group_min_max",
-10. },
-11. "input" : {
-12. "bit" : 8,
-13. "input_algo":  "min_max",
-14. "unsigned_quant": True
-15. }
-16. }
-17. }
-18. }
+```json
+{
+    "layer_strategy": {
+        "node_name": {
+            "type": "<class 'torch.nn.modules.linear.Linear'>",
+            "quant_strategy": "need to set",
+            "weight": {
+                "bit": 4,
+                "group_size": 128,
+                "weight_algo": "group_min_max",
+            },
+            "input" : {
+                "bit" : 8,
+                "input_algo":  "min_max",
+                "unsigned_quant": True
+            }
+        }
+    }
+}
 ```
 
 **配置说明：**
@@ -86,21 +86,21 @@ quant\_strategy 不同策略有默认的配置，可参考下表1进行配置修
 
 生成的quant\_config中每一层默认都是float策略。需要将其改为Quant\_aigc\_ptq即可，高阶配置请参考上表。
 
-请使用推理工程并选择合适数量的数据对get\_quant\_model接口返回的模型进行前向推理 即可完成对模型的量化优化如下：
+请使用推理工程并选择合适数量的数据对get\_quant\_model接口返回的模型进行前向推理，即可完成对模型的量化优化如下：
 
-```
-1. ## 首次调用会生成config文件，需要手动配置量化策略
-2. model = get_quant_model(model, quant_config)
-3. model.eval()
-4. ## 打开量化器
-5. set_quant_state(model, weight_state=True, input_state=True)
-6. ## 打开量化参数可标定状态
-7. set_calibrate_state(model, True)
-8. ## 使用实际推理数据进行推理 即量化标定###
-9. for data in datasets:
-10. model(data)
-11. set_calibrate_state(model, False)
-12. torch.save(model.state_dict(), 'pth_save_path')
+```python
+## 首次调用会生成config文件，需要手动配置量化策略
+model = get_quant_model(model, quant_config)
+model.eval()
+## 打开量化器
+set_quant_state(model, weight_state=True, input_state=True)
+## 打开量化参数可标定状态
+set_calibrate_state(model, True)
+## 使用实际推理数据进行推理，即量化标定
+for data in datasets:
+    model(data)
+set_calibrate_state(model, False)
+torch.save(model.state_dict(), 'pth_save_path')
 ```
 
 ## 量化参数优化-QAT
@@ -109,40 +109,40 @@ quant\_strategy 不同策略有默认的配置，可参考下表1进行配置修
 
 请使用训练工程对插有量化算子的模型进行训练。
 
-```
-1. model = get_quant_model(model, quant_config)
-2. model.train()
-3. set_quant_state(model, weight_state=True, input_state=True)
-4. set_calibrate_state(model, True)
-5. """
-6. do training
-7. """
-8. set_calibrate_state(model, False)
-9. torch.save(model.state_dict(), 'pth_save_path')
+```python
+model = get_quant_model(model, quant_config)
+model.train()
+set_quant_state(model, weight_state=True, input_state=True)
+set_calibrate_state(model, True)
+"""
+do training
+"""
+set_calibrate_state(model, False)
+torch.save(model.state_dict(), 'pth_save_path')
 ```
 
 ## 量化参数提取导出
 
-```
-1. from dopt.dopt_lm.do_opt import generate_quant_params, optimize_model
-2. ## model： 浮点 nn.module 实例对象， quant_config：量化配置文件
-3. model = optimize_model(model, quant_config)
-4. ## 加载量化标定后保存的pth
-5. model.load_state_dict(
-6. torch.load('pth_save_path', map_location=torch.device('cpu')),
-7. strict=True,
-8. )
-9. ## 关闭量化参数更新，导出量化参数
-10. ## Tips：也可以在标定完成后直接到这一步，进行参数导出，步骤分离的目的是为了防止过程中有错误，导致前面步骤重来。
-11. set_quant_state(model, weight_state=True, input_state=True)
-12. set_calibrate_state(model, False)
-13. generate_quant_params(
-14. model,
-15. output_dir,
-16. quant_param_2=False,
-17. embedding_separate=True,
-18. )
-19. ## output_dir 下会生成 fake_quant_weight.pth 以及量化参数文件， fake_quant_weight.pth 仅用作导出onnx图时替换权重
+```python
+from dopt.dopt_lm.do_opt import generate_quant_params, optimize_model
+## model： 浮点 nn.module 实例对象， quant_config：量化配置文件
+model = optimize_model(model, quant_config)
+## 加载量化标定后保存的pth
+model.load_state_dict(
+    torch.load('pth_save_path', map_location=torch.device('cpu')),
+    strict=True,
+)
+## 关闭量化参数更新，导出量化参数
+## Tips：也可以在标定完成后直接到这一步，进行参数导出，步骤分离的目的是为了防止过程中有错误，导致前面步骤重来。
+set_quant_state(model, weight_state=True, input_state=True)
+set_calibrate_state(model, False)
+generate_quant_params(
+    model,
+    output_dir,
+    quant_param_2=False,
+    embedding_separate=True,
+)
+## output_dir 下会生成 fake_quant_weight.pth 以及量化参数文件， fake_quant_weight.pth 仅用作导出onnx图时替换权重
 ```
 
 **ONNX 导出：**

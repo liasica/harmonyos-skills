@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/media-transco
 title: 视频转码
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 视频转码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:27+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-02T15:17:33+08:00
+doc_updated_at: 2026-08-29
 content_hash: sha256:f627d0b27b281ebe70462003250ec7f5f41b8b32b0b83c12ffdf3db844d7b5a0
 ---
 

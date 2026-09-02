@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo check_storage
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo check_storage
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:44:41+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:8c56a2dd1defcdbeac3ee52bbc48a6bbd099df6eca1ff8f5ba79c2bb7d5ad1c7
+scraped_at: 2026-09-02T15:00:18+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:0caf1b3b9d05cbf8a6c27522025609fe52e88a99c10e424195fdfdd27544aa98
 ---
 
 检查sftp中存储包的完整性。
@@ -17,13 +17,13 @@ content_hash: sha256:8c56a2dd1defcdbeac3ee52bbc48a6bbd099df6eca1ff8f5ba79c2bb7d5
 
 ## 命令格式
 
-```
-1. ohpm-repo check_storage <target> [options]
+```screen
+ohpm-repo check_storage <target> [options]
 ```
 
 ## 功能描述
 
-命令根据元数据检查sftp存储的包是否存在且完整。该命令要求数据存储db模块必须使用mysql，文件存储store模块必须使用sftp。
+命令根据元数据检查sftp存储的包是否存在且完整。
 
 ## 参数
 
@@ -49,14 +49,14 @@ content_hash: sha256:8c56a2dd1defcdbeac3ee52bbc48a6bbd099df6eca1ff8f5ba79c2bb7d5
 
 执行以下命令，检查包@ohos/basic-ftp的完整性：
 
-```
-1. ohpm-repo check_storage @ohos/basic-ftp
+```screen
+ohpm-repo check_storage @ohos/basic-ftp
 ```
 
-说明
+**说明** 
 
 检查@ohos/basic-ftp包在所有sftp存储目录中的完整性。
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/azinPanJTmyGGrMRJ_Qumg/zh-cn_image_0000002530911340.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/mUdfXUFaS_aLO8u1-nYAmw/zh-cn_image_0000002701662428.png "点击放大")

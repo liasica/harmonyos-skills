@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: VPN错误码
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 错误码 > VPN错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:47+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:bafd41c3d33427422af1054b380d10f51afa4912d3a1f62ec2de699d789b958d
+scraped_at: 2026-09-02T15:01:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:139f15e1109406259e73a09db3fdec97737107c6a9e74c2b2d2d8afe7b128096
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码](errorcode-universal.md)说明文档。
 
 ## 2200001 非法参数值
-
-PhonePC/2in1TabletWearable
 
 **错误信息**
 
@@ -34,8 +32,6 @@ Invalid parameter value.
 
 ## 2200002 连接服务失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to connect to the service.
@@ -46,15 +42,13 @@ Failed to connect to the service.
 
 **可能原因**
 
-服务发生异常。
+服务发生异常。包括但不限于：连接数据库服务异常，连接应用状态管理服务异常等。
 
 **处理步骤**
 
-检查系统服务运行状态是否正常。
+请检查系统服务运行状态并重试。如果问题仍然存在，收集完整日志后联系技术支持获取帮助。
 
 ## 2200003 系统内部错误
-
-PhonePC/2in1TabletWearable
 
 **错误信息**
 
@@ -66,19 +60,15 @@ System internal error.
 
 **可能原因**
 
-1.内存异常。
-
-2.空指针。
+1. 内存异常。
+2. 空指针。
 
 **处理步骤**
 
-1.检查内存空间是否充足，清理内存后重试。
-
-2.系统异常，请稍后重试或重启设备。
+1. 检查内存空间是否充足，清理内存后重试。
+2. 系统异常，请稍后重试或重启设备。如果问题仍然存在，收集完整日志后联系技术支持获取帮助。
 
 ## 2203001 VPN创建失败
-
-PhonePC/2in1TabletWearable
 
 **错误信息**
 
@@ -86,7 +76,7 @@ VPN creation denied, please check the user type.
 
 **错误描述**
 
-拒绝创建VPN，请检测当前用户的类型。
+拒绝创建VPN，请检查当前用户的类型。
 
 **可能原因**
 
@@ -97,8 +87,6 @@ VPN creation denied, please check the user type.
 检查当前登录系统用户的类型。
 
 ## 2203002 VPN已存在
-
-PhonePC/2in1TabletWearable
 
 **错误信息**
 
@@ -118,8 +106,6 @@ VPN已经被创建。
 
 ## 2203004 无效描述符
 
-PhonePC/2in1TabletWearable
-
 **错误信息**
 
 Invalid socket file descriptor.
@@ -138,8 +124,6 @@ tcp链路建立失败。
 
 ## 19900001 无效参数
 
-PhonePC/2in1TabletWearable
-
 **错误信息**
 
 Invalid parameter value.
@@ -157,8 +141,6 @@ Invalid parameter value.
 请检查参数数量和类型。
 
 ## 19900002 系统内部错误
-
-PhonePC/2in1TabletWearable
 
 **错误信息**
 

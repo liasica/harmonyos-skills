@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/theme-font-ar
 title: 使用主题字体（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 字体管理 > 使用主题字体（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:36:14+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6d2911b5d99a9e600d8a00e9d0cf48591ab97d013fd268e79d828d034572258d
+scraped_at: 2026-09-02T14:59:49+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5da7a468cf43f76586b3bc6cad85677996f6b2b1b7e066a2d66b26490c5fabe1
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:6d2911b5d99a9e600d8a00e9d0cf48591ab97d013fd268e79d828d03457
 
 **图1** 主题字体的切换和使用
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/x8odoA5AQ2-jlHNLmiFBQA/zh-cn_image_0000002558765170.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/12_WPX2ARe2oUzAiZkZNRg/zh-cn_image_0000002736433817.jpg)
 
 针对主题字的切换使用，应用方应确保订阅主题字体变更事件，当接收到字体变更事件后，由应用方主动调用页面刷新才能实现主题字的切换，否则主题字只能在重启应用后才生效。
 
@@ -33,141 +33,127 @@ content_hash: sha256:6d2911b5d99a9e600d8a00e9d0cf48591ab97d013fd268e79d828d03457
 1. 请确保在设备系统**主题应用**中，能成功应用一项主题字体。
 2. 导入依赖的相关模块。
 
+   ```typescript
+   import { text } from '@kit.ArkGraphics2D';
    ```
-   1. import { text } from '@kit.ArkGraphics2D';
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/ThemeFont/entry/src/main/ets/pages/Index.ets#L19-L21)
 3. 使用getGlobalInstance()接口获取全局字体集对象，系统框架在注册主题字体过程中仅会将主题字体信息传入全局字体集对象中。
 
+   ```typescript
+   // 获取字体管理器全局FontCollection实例
+   let fontCollection = text.FontCollection.getGlobalInstance();
    ```
-   1. // 获取字体管理器全局FontCollection实例
-   2. let fontCollection = text.FontCollection.getGlobalInstance();
-   ```
+4. 创建段落样式，并使用字体集实例构造段落生成器ParagraphBuilder实例，用于生成段落。
 
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/ThemeFont/entry/src/main/ets/pages/Index.ets#L28-L31)
-4. 创建段落样式，并使用字体管理器实例构造段落生成器ParagraphBuilder实例，用于生成段落。
+   **说明** 
 
-   说明
-
-   在生成段落对象设置段落样式入参时，不能指定fontFamilies属性，否则会变为优先使用指定字体而非主题字体。
+   在生成段落对象设置段落样式入参时，不能指定fontFamilies属性，否则系统会优先使用指定字体而非主题字体。
 
    若未在系统**主题应用**中设置一项主题字体，则将使用系统默认字体进行绘制。
 
+   ```typescript
+   // 设置文本样式
+   let myTextStyle: text.TextStyle = {
+     color: { alpha: 255, red: 255, green: 0, blue: 0 },
+     fontSize: 33
+   };
+   // 创建一个段落样式对象，以设置排版风格
+   let myParagraphStyle: text.ParagraphStyle = {
+     textStyle: myTextStyle,
+     align: 3,
+     wordBreak: text.WordBreak.NORMAL
+   };
+   // 创建一个段落生成器
+   let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
    ```
-   1. // 设置文本样式
-   2. let myTextStyle: text.TextStyle = {
-   3. color: { alpha: 255, red: 255, green: 0, blue: 0 },
-   4. fontSize: 33
-   5. };
-   6. // 创建一个段落样式对象，以设置排版风格
-   7. let myParagraphStyle: text.ParagraphStyle = {
-   8. textStyle: myTextStyle,
-   9. align: 3,
-   10. wordBreak:text.WordBreak.NORMAL
-   11. };
-   12. // 创建一个段落生成器
-   13. let paragraphGraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/ThemeFont/entry/src/main/ets/pages/Index.ets#L32-L46)
 5. 设置文本样式，添加文本内容，并生成段落文本用于后续文本的绘制显示。
 
+   ```typescript
+   // 在段落生成器中设置文本样式
+   paragraphBuilder.pushStyle(myTextStyle);
+   // 在段落生成器中设置文本内容
+   paragraphBuilder.addText("Hello World. \nThis is the theme font.");
+   // 通过段落生成器生成段落
+   let paragraph = paragraphBuilder.build();
    ```
-   1. // 在段落生成器中设置文本样式
-   2. paragraphGraphBuilder.pushStyle(myTextStyle);
-   3. // 在段落生成器中设置文本内容
-   4. paragraphGraphBuilder.addText("Hello World. \nThis is the theme font.");
-   5. // 通过段落生成器生成段落
-   6. let paragraph = paragraphGraphBuilder.build();
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/ThemeFont/entry/src/main/ets/pages/Index.ets#L47-L54)
 6. 创建渲染节点，并保存到数组。（此处示例代码为简化逻辑，采用数组作为容器，实际开发中应结合应用情况选择更恰当的容器来保证节点的添加与删除对应。）
 
+   ```typescript
+   // 创建渲染节点数组
+   const renderNodeMap: Array<RenderNode> = new Array();
+   // 创建节点控制器
+   class MyNodeController extends NodeController {
+     private rootNode: FrameNode | null = null;
+     makeNode(uiContext: UIContext): FrameNode {
+       this.rootNode = new FrameNode(uiContext);
+       if (this.rootNode == null) {
+         return this.rootNode;
+       }
+       const renderNode = this.rootNode.getRenderNode();
+       if (renderNode != null) {
+         renderNode.frame = { x: 0, y: 0, width: 300, height: 50 };
+         renderNode.pivot = { x: 0, y: 0 };
+       }
+       return this.rootNode;
+     }
+     addNode(node: RenderNode): void {
+       if (this.rootNode == null) {
+         return;
+       }
+       const renderNode = this.rootNode.getRenderNode();
+       if (renderNode != null) {
+         renderNode.appendChild(node);
+         // 将节点添加到渲染节点数组中
+         renderNodeMap.push(node);
+       }
+     }
+     clearNodes(): void {
+       if (this.rootNode == null) {
+         return;
+       }
+       const renderNode = this.rootNode.getRenderNode();
+       if (renderNode != null) {
+         renderNode.clearChildren();
+         // 将节点从渲染节点数组中移除
+         renderNodeMap.pop();
+       }
+     }
+   }
    ```
-   1. // 创建渲染节点数组
-   2. const renderNodeMap: Array<RenderNode> = new Array();
-   3. // 创建节点控制器
-   4. class MyNodeController extends NodeController {
-   5. private rootNode: FrameNode | null = null;
-   6. makeNode(uiContext: UIContext): FrameNode {
-   7. this.rootNode = new FrameNode(uiContext);
-   8. if (this.rootNode == null) {
-   9. return this.rootNode;
-   10. }
-   11. const renderNode = this.rootNode.getRenderNode();
-   12. if (renderNode != null) {
-   13. renderNode.frame = { x: 0, y: 0, width: 300, height: 50 };
-   14. renderNode.pivot = { x: 0, y: 0 };
-   15. }
-   16. return this.rootNode;
-   17. }
-   18. addNode(node: RenderNode): void {
-   19. if (this.rootNode == null) {
-   20. return;
-   21. }
-   22. const renderNode = this.rootNode.getRenderNode();
-   23. if (renderNode != null) {
-   24. renderNode.appendChild(node);
-   25. // 将节点添加到渲染节点数组中
-   26. renderNodeMap.push(node);
-   27. }
-   28. }
-   29. clearNodes(): void {
-   30. if (this.rootNode == null) {
-   31. return;
-   32. }
-   33. const renderNode = this.rootNode.getRenderNode();
-   34. if (renderNode != null) {
-   35. renderNode.clearChildren();
-   36. // 将节点从渲染节点数组中移除
-   37. renderNodeMap.pop();
-   38. }
-   39. }
-   40. }
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/ThemeFont/entry/src/main/ets/pages/Index.ets#L61-L102)
 7. 创建渲染节点更新函数，并导出函数，供其他文件（如：EntryAbility.ets）使用；重绘制节点目的为更新排版中字体信息，若不更新字体信息，使用之前残留结果，可能造成文字乱码。
 
+   ```typescript
+   // 导出渲染节点更新函数
+   export function updateRenderNodeData() {
+     renderNodeMap.forEach((node) => {
+       // 主动触发节点重绘制
+       node.invalidate();
+     });
+   }
    ```
-   1. // 导出渲染节点更新函数
-   2. export function updateRenderNodeData() {
-   3. renderNodeMap.forEach((node) => {
-   4. // 主动触发节点重绘制
-   5. node.invalidate();
-   6. });
-   7. }
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/ThemeFont/entry/src/main/ets/pages/Index.ets#L103-L111)
 8. 在EntryAbility.ets中接收主题字变更事件，并调用渲染节点更新函数。
 
+   ```typescript
+   import { AbilityConstant, Configuration, UIAbility, Want } from '@kit.AbilityKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { window } from '@kit.ArkUI';
+   import { updateRenderNodeData } from '../pages/Index';
+
+   // ...
+
+   export default class EntryAbility extends UIAbility {
+     preFontId = "";
+     // ...
+
+     onConfigurationUpdate(newConfig: Configuration): void {
+       let fontId = newConfig.fontId;
+       if (fontId && fontId !== this.preFontId) {
+         this.preFontId = fontId;
+         updateRenderNodeData();
+         // ...
+       }
+     }
+   }
    ```
-   1. import { AbilityConstant, Configuration, UIAbility, Want } from '@kit.AbilityKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
-   3. import { window } from '@kit.ArkUI';
-   4. import { updateRenderNodeData } from '../pages/Index';
-
-   6. // ...
-
-   8. export default class EntryAbility extends UIAbility {
-   9. preFontId = "";
-   10. // ...
-
-   12. onConfigurationUpdate(newConfig: Configuration): void {
-   13. let fontId = newConfig.fontId;
-   14. if (fontId && fontId !== this.preFontId) {
-   15. this.preFontId = fontId;
-   16. updateRenderNodeData();
-   17. // ...
-   18. }
-   19. }
-   20. }
-   ```
-
-   [EntryAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/ThemeFont/entry/src/main/ets/entryability/EntryAbility.ets#L15-L55)
 
 ## 效果展示
 
@@ -177,8 +163,8 @@ content_hash: sha256:6d2911b5d99a9e600d8a00e9d0cf48591ab97d013fd268e79d828d03457
 
 **图2** 主题字体1的效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/0X9EJBGJRRSbjBVRrypQuQ/zh-cn_image_0000002558605514.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/eGTnk_eFSfqSsZzeTiEUHg/zh-cn_image_0000002706834666.png)
 
 **图3** 主题字体2的效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/GXPIoXnfT66mk-ogaDxMGA/zh-cn_image_0000002589325041.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/v8tq8RAMQs-O-Ui6BE87RQ/zh-cn_image_0000002736313773.png)

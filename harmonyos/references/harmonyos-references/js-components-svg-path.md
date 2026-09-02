@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: path
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > path
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:37+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:68423588259776b9f83eb7329d9a4da2ee82e8d1b2700fdee4b57edae2b8fece
+scraped_at: 2026-09-02T15:01:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b5ecbea34b7c6b903a3133023658ccc49c097c901d9901f9568ebea8a6f6c30c
 ---
 
-说明
+**说明** 
 
 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -16,19 +16,13 @@ content_hash: sha256:68423588259776b9f83eb7329d9a4da2ee82e8d1b2700fdee4b57edae2b
 
 ## 权限列表
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 支持[animate](js-components-svg-animate.md)、[animateMotion](js-components-svg-animatemotion.md)、[animateTransform](js-components-svg-animatetransform.md)。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 支持Svg组件[通用属性](js-components-svg-common-attributes.md)和以下属性，设置的通用属性会传递给子组件。
 
@@ -39,17 +33,15 @@ PhonePC/2in1TabletTVWearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <svg width="400" height="400">
-4. <path d="M 10,30 A 20,20 0,0,1 50,30 A 20,20 0,0,1 90,30 Q 90,60 50,90 Q 10,60 10,30 z"
-5. stroke="blue" stroke-width="3" fill="red">
-6. </path>
-7. </svg>
-8. </div>
+```html
+<!-- xxx.hml -->
+<div class="container">
+    <svg width="400" height="400">
+        <path d="M 10,30 A 20,20 0,0,1 50,30 A 20,20 0,0,1 90,30 Q 90,60 50,90 Q 10,60 10,30 z"
+          stroke="blue" stroke-width="3" fill="red">
+        </path>
+    </svg>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/ZDE1jYbWSjCtJJ2kLmBBWw/zh-cn_image_0000002558607108.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/SzxsTWfHQJmsQUNG2TAgNg/zh-cn_image_0000002706676498.png)

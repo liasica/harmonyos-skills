@@ -3,33 +3,29 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (Stabilization)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (Stabilization)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:39+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:9c25b67b76f37ad55d661284ccf8052e18fc6fb293cc3e1aa776fee1600beec2
+scraped_at: 2026-09-02T15:02:27+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b0ddbe9e9c0baf4289cfac4688072c95dbc173af27a97440ba14b93e1b980350
 ---
 
-Stabilization 继承自 [StabilizationQuery](arkts-apis-camera-stabilizationquery.md)。
+Stabilization继承自[StabilizationQuery](arkts-apis-camera-stabilizationquery.md)。
 
 提供设备在录像模式下设置视频防抖的操作。
 
 需要会话中有录像流（[VideoOutput](arkts-apis-camera-videooutput.md)）的前提下，才可以对视频进行防抖设置。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Interface首批接口从API version 11开始支持。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { camera } from '@kit.CameraKit';
+```ts
+import { camera } from '@kit.CameraKit';
 ```
 
 ## getActiveVideoStabilizationMode11+
-
-PhonePC/2in1TabletTVWearable
 
 getActiveVideoStabilizationMode(): VideoStabilizationMode
 
@@ -55,25 +51,23 @@ getActiveVideoStabilizationMode(): VideoStabilizationMode
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function getActiveVideoStabilizationMode(videoSession: camera.VideoSession): camera.VideoStabilizationMode | undefined {
-4. let vsMode: camera.VideoStabilizationMode | undefined = undefined;
-5. try {
-6. vsMode = videoSession.getActiveVideoStabilizationMode();
-7. } catch (error) {
-8. // 失败返回错误码error.code并处理。
-9. let err = error as BusinessError;
-10. console.error(`The getActiveVideoStabilizationMode call failed. error code: ${err.code}`);
-11. }
-12. return vsMode;
-13. }
+function getActiveVideoStabilizationMode(videoSession: camera.VideoSession): camera.VideoStabilizationMode | undefined {
+  let vsMode: camera.VideoStabilizationMode | undefined = undefined;
+  try {
+    vsMode = videoSession.getActiveVideoStabilizationMode();
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The getActiveVideoStabilizationMode call failed. error code: ${err.code}`);
+  }
+  return vsMode;
+}
 ```
 
 ## setVideoStabilizationMode11+
-
-PhonePC/2in1TabletTVWearable
 
 setVideoStabilizationMode(mode: VideoStabilizationMode): void
 
@@ -99,16 +93,16 @@ setVideoStabilizationMode(mode: VideoStabilizationMode): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function setVideoStabilizationMode(videoSession: camera.VideoSession): void {
-4. try {
-5. videoSession.setVideoStabilizationMode(camera.VideoStabilizationMode.OFF);
-6. } catch (error) {
-7. // 失败返回错误码error.code并处理。
-8. let err = error as BusinessError;
-9. console.error(`The setVideoStabilizationMode call failed. error code: ${err.code}`);
-10. }
-11. }
+function setVideoStabilizationMode(videoSession: camera.VideoSession): void {
+  try {
+    videoSession.setVideoStabilizationMode(camera.VideoStabilizationMode.OFF);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The setVideoStabilizationMode call failed. error code: ${err.code}`);
+  }
+}
 ```

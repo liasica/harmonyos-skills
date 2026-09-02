@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API进行自定义异步操作相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API进行自定义异步操作相关开发
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:07+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8a8fc2ab6254b30b9ee52da586e134fcaac5f1591db417caedc2e11a36fe0ca5
+scraped_at: 2026-09-02T15:00:16+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:181a541899c7e16213c6d3209e7839d1fc3dd48efcf4e67ec5bccf57485057ab
 ---
 
 ## 简介
@@ -49,105 +49,105 @@ Node-API接口开发流程参考[使用Node-API实现跨语言交互开发流程
 cpp部分代码
 
 ```
-1. #include "napi/native_api.h"
+#include "napi/native_api.h"
 
-3. static constexpr int INT_ARG_2 = 2; // 入参索引
-4. static constexpr int INT_ARG_3 = 3; // 入参索引
+static constexpr int INT_ARG_2 = 2; // 入参索引
+static constexpr int INT_ARG_3 = 3; // 入参索引
 
-6. static napi_value AsynchronousWork(napi_env env, napi_callback_info info)
-7. {
-8. // 接受四个参数
-9. size_t argc = 4;
-10. napi_value args[4] = {nullptr};
-11. // 从回调信息中获取参数
-12. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-13. // 提取参数中的资源、接收器对象和函数
-14. napi_value resource = args[0];
-15. napi_value recv = args[1];
-16. napi_value func = args[INT_ARG_2];
-17. napi_value argv[1] = {nullptr};
-18. argv[0] = args[INT_ARG_3];
-19. // 获取函数的类型
-20. napi_valuetype funcType;
-21. napi_typeof(env, func, &funcType);
-22. // 创建一个资源名称为"test"的字符串
-23. napi_value resourceName = nullptr;
-24. napi_create_string_utf8(env, "test", NAPI_AUTO_LENGTH, &resourceName);
-25. // 初始化异步上下文
-26. napi_async_context context;
-27. napi_status status = napi_async_init(env, resource, resourceName, &context);
-28. if (status != napi_ok) {
-29. napi_throw_error(env, nullptr, "napi_async_init fail");
-30. return nullptr;
-31. }
-32. // 打开回调作用域
-33. napi_callback_scope scope = nullptr;
-34. status = napi_open_callback_scope(env, resource, context, &scope);
-35. if (status != napi_ok) {
-36. napi_async_destroy(env, context);
-37. napi_throw_error(env, nullptr, "napi_open_callback_scope fail");
-38. return nullptr;
-39. }
-40. // 调用回调函数
-41. napi_value result = nullptr;
-42. if (funcType == napi_function) {
-43. napi_make_callback(env, context, recv, func, 1, argv, &result);
-44. } else {
-45. napi_async_destroy(env, context);
-46. napi_close_callback_scope(env, scope);
-47. napi_throw_error(env, nullptr, "Unexpected argument type");
-48. return nullptr;
-49. }
-50. // 关闭回调作用域
-51. status = napi_close_callback_scope(env, scope);
-52. if (status != napi_ok) {
-53. napi_throw_error(env, nullptr, "napi_close_callback_scope fail");
-54. return nullptr;
-55. }
-56. // 销毁异步上下文
-57. napi_async_destroy(env, context);
-58. return result;
-59. }
+static napi_value AsynchronousWork(napi_env env, napi_callback_info info)
+{
+    // 接受四个参数
+    size_t argc = 4;
+    napi_value args[4] = {nullptr};
+    // 从回调信息中获取参数
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 提取参数中的资源、接收器对象和函数
+    napi_value resource = args[0];
+    napi_value recv = args[1];
+    napi_value func = args[INT_ARG_2];
+    napi_value argv[1] = {nullptr};
+    argv[0] = args[INT_ARG_3];
+    // 获取函数的类型
+    napi_valuetype funcType;
+    napi_typeof(env, func, &funcType);
+    // 创建一个资源名称为"test"的字符串
+    napi_value resourceName = nullptr;
+    napi_create_string_utf8(env, "test", NAPI_AUTO_LENGTH, &resourceName);
+    // 初始化异步上下文
+    napi_async_context context;
+    napi_status status = napi_async_init(env, resource, resourceName, &context);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "napi_async_init fail");
+        return nullptr;
+    }
+    // 打开回调作用域
+    napi_callback_scope scope = nullptr;
+    status = napi_open_callback_scope(env, resource, context, &scope);
+    if (status != napi_ok) {
+        napi_async_destroy(env, context);
+        napi_throw_error(env, nullptr, "napi_open_callback_scope fail");
+        return nullptr;
+    }
+    // 调用回调函数
+    napi_value result = nullptr;
+    if (funcType == napi_function) {
+        napi_make_callback(env, context, recv, func, 1, argv, &result);
+    } else {
+        napi_async_destroy(env, context);
+        napi_close_callback_scope(env, scope);
+        napi_throw_error(env, nullptr, "Unexpected argument type");
+        return nullptr;
+    }
+    // 关闭回调作用域
+    status = napi_close_callback_scope(env, scope);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "napi_close_callback_scope fail");
+        return nullptr;
+    }
+    // 销毁异步上下文
+    napi_async_destroy(env, context);
+    return result;
+}
 ```
 
 接口声明
 
 index.d.ts
 
-```
-1. export const asynchronousWork: (object: Object, obj: Object, fun: Function, num: number) => number | undefined;
+```typescript
+export const asynchronousWork: (object: Object, obj: Object, fun: Function, num: number) => number | undefined;
 ```
 
 ArkTS侧示例代码
 
 导入模块
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import testNapi from 'libentry.so';
-3. import { process } from '@kit.ArkTS';
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import testNapi from 'libentry.so';
+import { process } from '@kit.ArkTS';
 ```
 
 测试代码
 
-```
-1. try {
-2. hilog.info(0x0000, 'testTag', 'Test Node-API asynchronousWork: %{public}d',
-3. testNapi.asynchronousWork({}, process.ProcessManager, (num: number) => {
-4. return num;
-5. }, 123));
-6. // ···
-7. } catch (error) {
-8. hilog.error(0x0000, 'testTag', 'Test Node-API asynchronousWork error: %{public}s', error.message);
-9. // ···
-10. }
+```typescript
+try {
+  hilog.info(0x0000, 'testTag', 'Test Node-API asynchronousWork: %{public}d',
+    testNapi.asynchronousWork({}, process.ProcessManager, (num: number) => {
+      return num;
+    }, 123));
+  // ···
+} catch (error) {
+  hilog.error(0x0000, 'testTag', 'Test Node-API asynchronousWork error: %{public}s', error.message);
+  // ···
+}
 ```
 
 以上代码如果要在native cpp中打印日志，需在CMakeLists.txt文件中添加以下配置信息（并添加头文件：#include "hilog/log.h"）：
 
-```
-1. // CMakeLists.txt
-2. add_definitions( "-DLOG_DOMAIN=0xd0d0" )
-3. add_definitions( "-DLOG_TAG=\"testTag\"" )
-4. target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
+```text
+// CMakeLists.txt
+add_definitions( "-DLOG_DOMAIN=0xd0d0" )
+add_definitions( "-DLOG_TAG=\"testTag\"" )
+target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
 ```

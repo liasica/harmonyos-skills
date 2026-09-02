@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 音频卡顿事件介绍
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 音频卡顿事件 > 音频卡顿事件介绍
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:13+08:00
+scraped_at: 2026-09-02T14:59:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ea01ad06daa898565620d15aa9554f494d77860b33c47e1c97f80be3ef09c1a9
+content_hash: sha256:2b86074cd4e9ffc746c4975ab7acc388c900520e79746a4d677c4d8c52d9e08b
 ---
 
 ## 简介
@@ -15,7 +15,7 @@ content_hash: sha256:ea01ad06daa898565620d15aa9554f494d77860b33c47e1c97f80be3ef0
 * [订阅音频卡顿事件（ArkTS）](hiappevent-watcher-audio-jank-event-arkts.md)
 * [订阅音频卡顿事件（C/C++）](hiappevent-watcher-audio-jank-event-c.md)
 
-说明
+**说明** 
 
 音频卡顿事件不支持在[应用分身场景](app-clone.md)、[输入法应用场景](inputmethod-application-guide.md)或[元服务场景](agc-harmonyos-create-faproject.md)下使用HiAppEvent进行订阅。
 

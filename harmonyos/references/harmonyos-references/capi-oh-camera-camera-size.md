@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: Camera_Size
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 结构体 > Camera_Size
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:47+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0ddbf02c945bfca7e7deeac38f6d9b397dcc977db3bf6897cc8f328cc5dbf9bd
+scraped_at: 2026-09-02T15:02:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:febaeec85d57b5ba1d1045a65f7259defbfc6cb00f9a8f0a4d039915a089ca86
 ---
 
-```
-1. typedef struct Camera_Size {...} Camera_Size
+```c
+typedef struct Camera_Size {...} Camera_Size
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 大小参数。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

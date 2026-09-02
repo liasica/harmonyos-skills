@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getpa
 title: GetParseParamByOperatorFn
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OpRegistrationData > GetParseParamByOperatorFn
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:42:22+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e6948449c463224114bc043e9d5a20ecf0d026767733ccfda0206b0b6169a6b0
+content_hash: sha256:f14f897075f6754f123394c9a02930989b25651873e93ade7c5389ef107583a0
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:e6948449c463224114bc043e9d5a20ecf0d026767733ccfda0206b0b616
 
 ## 函数原型
 
-```
-1. ParseParamByOpFunc GetParseParamByOperatorFn() const
+```cpp
+ParseParamByOpFunc GetParseParamByOperatorFn() const
 ```
 
 ## 参数说明

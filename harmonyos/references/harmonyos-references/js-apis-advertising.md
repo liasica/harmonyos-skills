@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.advertising (广告服务框架)"
 breadcrumb: API参考 > 应用服务 > Ads Kit（广告服务） > ArkTS API > @ohos.advertising (广告服务框架)
 category: harmonyos-references
-scraped_at: 2026-04-29T14:06:56+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:fa94579c99c14f28f8f37745eccd545d580c424b3919141a2475f6445f33f612
+scraped_at: 2026-09-02T15:02:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9076aa4efeda6a0effbf609ac80ead4b0696f0387a663ef1ff978e8fd26f33f1
 ---
 
 本模块提供广告操作能力，包括请求广告、展示广告。
 
-说明
+**说明** 
 
 本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { advertising } from '@kit.AdsKit';
+```typescript
+import { advertising } from '@kit.AdsKit';
 ```
 
 ## advertising.showAd
-
-PhonePC/2in1Tablet
 
 showAd(ad: Advertisement, options: AdDisplayOptions, context?: common.UIAbilityContext): void
 
@@ -36,7 +32,7 @@ showAd(ad: Advertisement, options: AdDisplayOptions, context?: common.UIAbilityC
 
 **参数：**
 
-| **参数名** | **类型** | 必填 | 说明 |
+| 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ad | [Advertisement](js-apis-advertisement.md#advertisement) | 是 | 广告对象。 |
 | options | [AdDisplayOptions](js-apis-advertising.md#addisplayoptions) | 是 | 广告展示参数。 |
@@ -52,30 +48,28 @@ showAd(ad: Advertisement, options: AdDisplayOptions, context?: common.UIAbilityC
 | 21800001 | System internal error. |
 | 21800004 | Failed to display the ad. |
 
-说明
+**说明** 
 
 1. 为了保证广告能正确展示，该接口必须和请求广告接口配套使用。
 2. 该接口仅支持展示激励广告和插屏广告。
 
 **示例：**
 
-其中context的获取方式参见[各类context的获取方式](../harmonyos-guides/application-context-stage.md#context的获取方式)。
+其中context的获取方式参见[各类Context的获取方式](../harmonyos-guides/application-context-stage.md#context的获取方式)。
 
-```
-1. import { common } from '@kit.AbilityKit';
-2. import { advertising } from '@kit.AdsKit';
+```typescript
+import { common } from '@kit.AbilityKit';
+import { advertising } from '@kit.AdsKit';
 
-4. function showAd(ad: advertising.Advertisement, context?: common.UIAbilityContext): void {
-5. // 广告展示参数，开发者可根据项目实际情况设置
-6. const adDisplayOptions: advertising.AdDisplayOptions = {};
-7. // 调用全屏广告展示接口
-8. advertising.showAd(ad, adDisplayOptions, context);
-9. }
+function showAd(ad: advertising.Advertisement, context?: common.UIAbilityContext): void {
+  // 广告展示参数，开发者可根据项目实际情况设置
+  const adDisplayOptions: advertising.AdDisplayOptions = {};
+  // 调用全屏广告展示接口
+  advertising.showAd(ad, adDisplayOptions, context);
+}
 ```
 
 ## advertising.getAdRequestBody12+
-
-PhonePC/2in1Tablet
 
 getAdRequestBody(adParams: AdRequestParams[], adOptions: AdOptions): Promise<string>
 
@@ -85,7 +79,7 @@ getAdRequestBody(adParams: AdRequestParams[], adOptions: AdOptions): Promise<str
 
 **参数：**
 
-| **参数名** | **类型** | 必填 | 说明 |
+| 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | adParams | [AdRequestParams](js-apis-advertising.md#adrequestparams)[] | 是 | 广告请求参数。  **说明：** 该接口体的adId参数可以为空。 |
 | adOptions | [AdOptions](js-apis-advertising.md#adoptions) | 是 | 广告配置参数。 |
@@ -108,25 +102,23 @@ getAdRequestBody(adParams: AdRequestParams[], adOptions: AdOptions): Promise<str
 
 **示例：**
 
-```
-1. import { advertising } from '@kit.AdsKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { advertising } from '@kit.AdsKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. async function getAdRequestBody(adRequestParamsArray: advertising.AdRequestParams[]): Promise<void> {
-6. // 广告配置参数，开发者可根据项目实际情况设置
-7. const adOptions: advertising.AdOptions = {};
-8. await advertising.getAdRequestBody(adRequestParamsArray, adOptions).then((data: string) => {
-9. hilog.info(0x0000, 'testTag', `Succeeded in getting ad request body. Data is ${data}`);
-10. }).catch((error: BusinessError) => {
-11. hilog.info(0x0000, 'testTag', `Failed to get ad request body. Code is ${error.code}, message is ${error.message}`);
-12. });
-13. }
+async function getAdRequestBody(adRequestParamsArray: advertising.AdRequestParams[]): Promise<void> {
+  // 广告配置参数，开发者可根据项目实际情况设置
+  const adOptions: advertising.AdOptions = {};
+  await advertising.getAdRequestBody(adRequestParamsArray, adOptions).then((data: string) => {
+    hilog.info(0x0000, 'testTag', `Succeeded in getting ad request body. Data is ${data}`);
+  }).catch((error: BusinessError) => {
+    hilog.error(0x0000, 'testTag', `Failed to get ad request body. Code is ${error.code}, message is ${error.message}`);
+  });
+}
 ```
 
 ## advertising.parseAdResponse12+
-
-PhonePC/2in1Tablet
 
 parseAdResponse(adResponse: string, listener: MultiSlotsAdLoadListener, context: common.UIAbilityContext): void
 
@@ -136,7 +128,7 @@ parseAdResponse(adResponse: string, listener: MultiSlotsAdLoadListener, context:
 
 **参数：**
 
-| **参数名** | **类型** | 必填 | 说明 |
+| 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | adResponse | string | 是 | 广告响应体。 |
 | listener | [MultiSlotsAdLoadListener](js-apis-advertising.md#multislotsadloadlistener) | 是 | 请求广告回调监听。 |
@@ -157,32 +149,30 @@ parseAdResponse(adResponse: string, listener: MultiSlotsAdLoadListener, context:
 
 其中context的获取方式参见[各类context的获取方式](../harmonyos-guides/application-context-stage.md#context的获取方式)。
 
-```
-1. import { common } from '@kit.AbilityKit';
-2. import { advertising } from '@kit.AdsKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { common } from '@kit.AbilityKit';
+import { advertising } from '@kit.AdsKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. function parseAdResponse(adResponse: string, context: common.UIAbilityContext): void {
-6. // 广告解析处理回调监听
-7. const multiSlotsAdLoaderListener: advertising.MultiSlotsAdLoadListener = {
-8. onAdLoadFailure: (errorCode: number, errorMsg: string) => {
-9. hilog.error(0x0000, 'testTag', `Failed to load multiSlots ad. Code is ${errorCode}, message is ${errorMsg}`);
-10. },
-11. onAdLoadSuccess: (ads: Map<string, Array<advertising.Advertisement>>) => {
-12. hilog.info(0x0000, 'testTag', 'Succeeded in loading multiSlots ad');
-13. // 保存解析处理完成的广告内容用于展示
-14. const returnAds: advertising.Advertisement[] = [];
-15. ads.forEach((adsArray) => returnAds.push(...adsArray));
-16. }
-17. };
-18. // 调用响应体解析接口
-19. advertising.parseAdResponse(adResponse, multiSlotsAdLoaderListener, context);
-20. }
+function parseAdResponse(adResponse: string, context: common.UIAbilityContext): void {
+  // 广告解析处理回调监听
+  const multiSlotsAdLoaderListener: advertising.MultiSlotsAdLoadListener = {
+    onAdLoadFailure: (errorCode: number, errorMsg: string) => {
+      hilog.error(0x0000, 'testTag', `Failed to load multiSlots ad. Code is ${errorCode}, message is ${errorMsg}`);
+    },
+    onAdLoadSuccess: (ads: Map<string, Array<advertising.Advertisement>>) => {
+      hilog.info(0x0000, 'testTag', 'Succeeded in loading multiSlots ad');
+      // 保存解析处理完成的广告内容用于展示
+      const returnAds: advertising.Advertisement[] = [];
+      ads.forEach((adsArray) => returnAds.push(...adsArray));
+    }
+  };
+  // 调用响应体解析接口
+  advertising.parseAdResponse(adResponse, multiSlotsAdLoaderListener, context);
+}
 ```
 
 ## advertising.registerWebAdInterface12+
-
-PhonePC/2in1Tablet
 
 registerWebAdInterface(controller: web\_webview.WebviewController, context: common.UIAbilityContext): void
 
@@ -194,7 +184,7 @@ registerWebAdInterface(controller: web\_webview.WebviewController, context: comm
 
 **参数：**
 
-| **参数名** | **类型** | 必填 | 说明 |
+| 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | controller | web\_webview.[WebviewController](arkts-apis-webview-webviewcontroller.md) | 是 | Web组件控制器。 |
 | context | common.[UIAbilityContext](js-apis-inner-application-uiabilitycontext.md) | 是 | UIAbility的上下文环境。 |
@@ -210,36 +200,34 @@ registerWebAdInterface(controller: web\_webview.WebviewController, context: comm
 
 **示例：**
 
-```
-1. import { common } from '@kit.AbilityKit';
-2. import { advertising } from '@kit.AdsKit';
-3. import { webview } from '@kit.ArkWeb';
+```typescript
+import { common } from '@kit.AbilityKit';
+import { advertising } from '@kit.AdsKit';
+import { webview } from '@kit.ArkWeb';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. private context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-9. private webViewController: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct Index {
+  private context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  private webViewController: webview.WebviewController = new webview.WebviewController();
 
-11. build() {
-12. Column() {
-13. Button('registerWebAdInterface')
-14. .onClick(() => {
-15. advertising.registerWebAdInterface(this.webViewController, this.context);
-16. })
-17. // ...
+  build() {
+    Column() {
+      Button('registerWebAdInterface')
+        .onClick(() => {
+          advertising.registerWebAdInterface(this.webViewController, this.context);
+        })
+      // ...
 
-19. Web({ src: 'https://www.example.com', controller: this.webViewController })
-20. }
-21. .width('100%')
-22. .height('100%')
-23. }
-24. }
+      Web({ src: 'https://www.example.com', controller: this.webViewController })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## advertising.registerWebAdInterface16+
-
-PhonePC/2in1Tablet
 
 registerWebAdInterface(controller: web\_webview.WebviewController, context: common.UIAbilityContext, needRefresh: boolean): void
 
@@ -251,7 +239,7 @@ registerWebAdInterface(controller: web\_webview.WebviewController, context: comm
 
 **参数：**
 
-| **参数名** | **类型** | 必填 | 说明 |
+| 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | controller | web\_webview.[WebviewController](arkts-apis-webview-webviewcontroller.md) | 是 | Web组件控制器。 |
 | context | common.[UIAbilityContext](js-apis-inner-application-uiabilitycontext.md) | 是 | UIAbility的上下文环境。 |
@@ -268,36 +256,34 @@ registerWebAdInterface(controller: web\_webview.WebviewController, context: comm
 
 **示例：**
 
-```
-1. import { common } from '@kit.AbilityKit';
-2. import { advertising } from '@kit.AdsKit';
-3. import { webview } from '@kit.ArkWeb';
+```typescript
+import { common } from '@kit.AbilityKit';
+import { advertising } from '@kit.AdsKit';
+import { webview } from '@kit.ArkWeb';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. private context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-9. private webViewController: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct Index {
+  private context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  private webViewController: webview.WebviewController = new webview.WebviewController();
 
-11. build() {
-12. Column() {
-13. // ...
-14. Button('registerWebAdInterface')
-15. .onClick(() => {
-16. advertising.registerWebAdInterface(this.webViewController, this.context, true);
-17. })
+  build() {
+    Column() {
+      // ...
+      Button('registerWebAdInterface')
+        .onClick(() => {
+          advertising.registerWebAdInterface(this.webViewController, this.context, true);
+        })
 
-19. Web({ src: 'https://www.example.com', controller: this.webViewController })
-20. }
-21. .width('100%')
-22. .height('100%')
-23. }
-24. }
+      Web({ src: 'https://www.example.com', controller: this.webViewController })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## advertising.deleteWebAdInterface16+
-
-PhonePC/2in1Tablet
 
 deleteWebAdInterface(controller: web\_webview.WebviewController, needRefresh: boolean): void
 
@@ -309,7 +295,7 @@ deleteWebAdInterface(controller: web\_webview.WebviewController, needRefresh: bo
 
 **参数：**
 
-| **参数名** | **类型** | 必填 | 说明 |
+| 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | controller | web\_webview.[WebviewController](arkts-apis-webview-webviewcontroller.md) | 是 | Web组件控制器。 |
 | needRefresh | boolean | 是 | 是否需要刷新页面（true: 需要；false: 不需要）。 |
@@ -325,43 +311,39 @@ deleteWebAdInterface(controller: web\_webview.WebviewController, needRefresh: bo
 
 **示例：**
 
-```
-1. import { advertising } from '@kit.AdsKit';
-2. import { webview } from '@kit.ArkWeb';
+```typescript
+import { advertising } from '@kit.AdsKit';
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. private webViewController: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct Index {
+  private webViewController: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Button('deleteWebAdInterface')
-12. .onClick(() => {
-13. advertising.deleteWebAdInterface(this.webViewController, true);
-14. })
+  build() {
+    Column() {
+      Button('deleteWebAdInterface')
+        .onClick(() => {
+          advertising.deleteWebAdInterface(this.webViewController, true);
+        })
 
-16. Web({ src: 'https://www.example.com', controller: this.webViewController })
-17. }
-18. .width('100%')
-19. .height('100%')
-20. }
-21. }
+      Web({ src: 'https://www.example.com', controller: this.webViewController })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## AdLoader
 
-PhonePC/2in1Tablet
-
-提供加载广告的功能
+提供加载广告的功能。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Advertising.Ads
 
 ### constructor
-
-PhonePC/2in1Tablet
 
 constructor(context: common.Context)
 
@@ -373,7 +355,7 @@ constructor(context: common.Context)
 
 **参数：**
 
-| **参数名** | **类型** | 必填 | 说明 |
+| 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.[Context](js-apis-inner-application-context.md) | 是 | ability或application的上下文环境。 |
 
@@ -381,19 +363,17 @@ constructor(context: common.Context)
 
 其中context的获取方式参见[各类context的获取方式](../harmonyos-guides/application-context-stage.md#context的获取方式)。
 
-```
-1. import { common } from '@kit.AbilityKit';
-2. import { advertising } from '@kit.AdsKit';
-3. // ...
+```typescript
+import { common } from '@kit.AbilityKit';
+import { advertising } from '@kit.AdsKit';
+// ...
 
-5. function createAdLoader(context: common.Context): void {
-6. const adLoader: advertising.AdLoader = new advertising.AdLoader(context);
-7. }
+function createAdLoader(context: common.Context): void {
+  const adLoader: advertising.AdLoader = new advertising.AdLoader(context);
+}
 ```
 
 ### loadAd
-
-PhonePC/2in1Tablet
 
 loadAd(adParam: AdRequestParams, adOptions: AdOptions, listener: AdLoadListener): void
 
@@ -405,7 +385,7 @@ loadAd(adParam: AdRequestParams, adOptions: AdOptions, listener: AdLoadListener)
 
 **参数：**
 
-| **参数名** | **类型** | 必填 | 说明 |
+| 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | adParam | [AdRequestParams](js-apis-advertising.md#adrequestparams) | 是 | 广告请求参数。 |
 | adOptions | [AdOptions](js-apis-advertising.md#adoptions) | 是 | 广告配置参数。 |
@@ -418,7 +398,7 @@ loadAd(adParam: AdRequestParams, adOptions: AdOptions, listener: AdLoadListener)
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
-| 801 | Device not supported. |
+| 801 | Device not supported.  适用版本：12+ |
 | 21800001 | System internal error. |
 | 21800003 | Failed to load the ad request. |
 
@@ -426,36 +406,34 @@ loadAd(adParam: AdRequestParams, adOptions: AdOptions, listener: AdLoadListener)
 
 其中context的获取方式参见[各类context的获取方式](../harmonyos-guides/application-context-stage.md#context的获取方式)。
 
-```
-1. import { common } from '@kit.AbilityKit';
-2. import { advertising } from '@kit.AdsKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { common } from '@kit.AbilityKit';
+import { advertising } from '@kit.AdsKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. // ...
-6. function loadAd(context: common.Context, adRequestParams: advertising.AdRequestParams): void {
-7. // 广告配置参数，开发者可根据项目实际情况设置
-8. const adOptions: advertising.AdOptions = {};
-9. // 广告请求回调监听
-10. const adLoaderListener: advertising.AdLoadListener = {
-11. onAdLoadFailure: (errorCode: number, errorMsg: string) => {
-12. hilog.error(0x0000, 'testTag', `Failed to load ad. Code is ${errorCode}, message is ${errorMsg}`);
-13. },
-14. onAdLoadSuccess: (ads: Array<advertising.Advertisement>) => {
-15. hilog.info(0x0000, 'testTag', 'Succeeded in loading ad');
-16. // 保存请求到的广告内容用于展示
-17. const returnAds: advertising.Advertisement[] = ads;
-18. }
-19. };
-20. // 创建AdLoader广告对象
-21. const adLoader: advertising.AdLoader = new advertising.AdLoader(context);
-22. // 调用广告请求接口
-23. adLoader.loadAd(adRequestParams, adOptions, adLoaderListener);
-24. }
+// ...
+function loadAd(context: common.Context, adRequestParams: advertising.AdRequestParams): void {
+  // 广告配置参数，开发者可根据项目实际情况设置
+  const adOptions: advertising.AdOptions = {};
+  // 广告请求回调监听
+  const adLoaderListener: advertising.AdLoadListener = {
+    onAdLoadFailure: (errorCode: number, errorMsg: string) => {
+      hilog.error(0x0000, 'testTag', `Failed to load ad. Code is ${errorCode}, message is ${errorMsg}`);
+    },
+    onAdLoadSuccess: (ads: Array<advertising.Advertisement>) => {
+      hilog.info(0x0000, 'testTag', 'Succeeded in loading ad');
+      // 保存请求到的广告内容用于展示
+      const returnAds: advertising.Advertisement[] = ads;
+    }
+  };
+  // 创建AdLoader广告对象
+  const adLoader: advertising.AdLoader = new advertising.AdLoader(context);
+  // 调用广告请求接口
+  adLoader.loadAd(adRequestParams, adOptions, adLoaderListener);
+}
 ```
 
 ### loadAdWithMultiSlots
-
-PhonePC/2in1Tablet
 
 loadAdWithMultiSlots(adParams: AdRequestParams[], adOptions: AdOptions, listener: MultiSlotsAdLoadListener): void
 
@@ -467,7 +445,7 @@ loadAdWithMultiSlots(adParams: AdRequestParams[], adOptions: AdOptions, listener
 
 **参数：**
 
-| **参数名** | **类型** | 必填 | 说明 |
+| 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | adParams | [AdRequestParams](js-apis-advertising.md#adrequestparams)[] | 是 | 广告请求参数。 |
 | adOptions | [AdOptions](js-apis-advertising.md#adoptions) | 是 | 广告配置参数。 |
@@ -480,7 +458,7 @@ loadAdWithMultiSlots(adParams: AdRequestParams[], adOptions: AdOptions, listener
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
-| 801 | Device not supported. |
+| 801 | Device not supported.  适用版本：12+ |
 | 21800001 | System internal error. |
 | 21800003 | Failed to load the ad request. |
 
@@ -488,37 +466,35 @@ loadAdWithMultiSlots(adParams: AdRequestParams[], adOptions: AdOptions, listener
 
 其中context的获取方式参见[各类context的获取方式](../harmonyos-guides/application-context-stage.md#context的获取方式)。
 
-```
-1. import { common } from '@kit.AbilityKit';
-2. import { advertising } from '@kit.AdsKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { common } from '@kit.AbilityKit';
+import { advertising } from '@kit.AdsKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. // ...
-6. function loadAdWithMultiSlots(context: common.Context, adRequestParamsArray: advertising.AdRequestParams[]): void {
-7. // 广告配置参数，开发者可根据项目实际情况设置
-8. const adOptions: advertising.AdOptions = {};
-9. // 广告请求回调监听
-10. const multiSlotsAdLoaderListener: advertising.MultiSlotsAdLoadListener = {
-11. onAdLoadFailure: (errorCode: number, errorMsg: string) => {
-12. hilog.error(0x0000, 'testTag', `Failed to load multiSlots ad. Code is ${errorCode}, message is ${errorMsg}`);
-13. },
-14. onAdLoadSuccess: (ads: Map<string, Array<advertising.Advertisement>>) => {
-15. hilog.info(0x0000, 'testTag', 'Succeeded in loading multiSlots ad');
-16. // 保存请求到的广告内容用于展示
-17. const returnAds: advertising.Advertisement[] = [];
-18. ads.forEach((adsArray) => returnAds.push(...adsArray));
-19. }
-20. };
-21. // 创建AdLoader广告对象
-22. const adLoader: advertising.AdLoader = new advertising.AdLoader(context);
-23. // 调用广告请求接口
-24. adLoader.loadAdWithMultiSlots(adRequestParamsArray, adOptions, multiSlotsAdLoaderListener);
-25. }
+// ...
+function loadAdWithMultiSlots(context: common.Context, adRequestParamsArray: advertising.AdRequestParams[]): void {
+  // 广告配置参数，开发者可根据项目实际情况设置
+  const adOptions: advertising.AdOptions = {};
+  // 广告请求回调监听
+  const multiSlotsAdLoaderListener: advertising.MultiSlotsAdLoadListener = {
+    onAdLoadFailure: (errorCode: number, errorMsg: string) => {
+      hilog.error(0x0000, 'testTag', `Failed to load multiSlots ad. Code is ${errorCode}, message is ${errorMsg}`);
+    },
+    onAdLoadSuccess: (ads: Map<string, Array<advertising.Advertisement>>) => {
+      hilog.info(0x0000, 'testTag', 'Succeeded in loading multiSlots ad');
+      // 保存请求到的广告内容用于展示
+      const returnAds: advertising.Advertisement[] = [];
+      ads.forEach((adsArray) => returnAds.push(...adsArray));
+    }
+  };
+  // 创建AdLoader广告对象
+  const adLoader: advertising.AdLoader = new advertising.AdLoader(context);
+  // 调用广告请求接口
+  adLoader.loadAdWithMultiSlots(adRequestParamsArray, adOptions, multiSlotsAdLoaderListener);
+}
 ```
 
 ## AdLoadListener
-
-PhonePC/2in1Tablet
 
 单广告位广告请求回调。
 
@@ -528,8 +504,6 @@ PhonePC/2in1Tablet
 
 ### onAdLoadFailure
 
-PhonePC/2in1Tablet
-
 onAdLoadFailure(errorCode: number, errorMsg: string): void
 
 广告请求失败回调。
@@ -538,30 +512,30 @@ onAdLoadFailure(errorCode: number, errorMsg: string): void
 
 **系统能力：** SystemCapability.Advertising.Ads
 
-| 名称 | **类型** | 必填 | 说明 |
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | errorCode | number | 是 | 广告请求失败的错误码。 |
 | errorMsg | string | 是 | 广告请求失败的错误信息。 |
 
 **示例：**
 
-```
-1. import { advertising } from '@kit.AdsKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { advertising } from '@kit.AdsKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. const adLoaderListener: advertising.AdLoadListener = {
-5. onAdLoadFailure: (errorCode: number, errorMsg: string) => {
-6. hilog.error(0x0000, 'testTag', `Failed to load ad. Code is ${errorCode}, message is ${errorMsg}`);
-7. },
-8. onAdLoadSuccess: (ads: Array<advertising.Advertisement>) => {
-9. hilog.info(0x0000, 'testTag', 'Succeeded in loading ad');
-10. }
-11. }
+const adLoaderListener: advertising.AdLoadListener = {
+  onAdLoadFailure: (errorCode: number, errorMsg: string) => {
+    hilog.error(0x0000, 'testTag', `Failed to load ad. Code is ${errorCode}, message is ${errorMsg}`);
+  },
+  onAdLoadSuccess: (ads: Array<advertising.Advertisement>) => {
+    hilog.info(0x0000, 'testTag', 'Succeeded in loading ad');
+  }
+}
 ```
 
 ### onAdLoadSuccess
-
-PhonePC/2in1Tablet
 
 onAdLoadSuccess(ads: Array<Advertisement>): void
 
@@ -571,29 +545,29 @@ onAdLoadSuccess(ads: Array<Advertisement>): void
 
 **系统能力：** SystemCapability.Advertising.Ads
 
-| 名称 | **类型** | 必填 | 说明 |
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ads | Array<[Advertisement](js-apis-advertisement.md#advertisement)> | 是 | 广告数据。 |
 
 **示例：**
 
-```
-1. import { advertising } from '@kit.AdsKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { advertising } from '@kit.AdsKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. const adLoaderListener: advertising.AdLoadListener = {
-5. onAdLoadFailure: (errorCode: number, errorMsg: string) => {
-6. hilog.error(0x0000, 'testTag', `Failed to load ad. Code is ${errorCode}, message is ${errorMsg}`);
-7. },
-8. onAdLoadSuccess: (ads: Array<advertising.Advertisement>) => {
-9. hilog.info(0x0000, 'testTag', 'Succeeded in loading ad');
-10. }
-11. }
+const adLoaderListener: advertising.AdLoadListener = {
+  onAdLoadFailure: (errorCode: number, errorMsg: string) => {
+    hilog.error(0x0000, 'testTag', `Failed to load ad. Code is ${errorCode}, message is ${errorMsg}`);
+  },
+  onAdLoadSuccess: (ads: Array<advertising.Advertisement>) => {
+    hilog.info(0x0000, 'testTag', 'Succeeded in loading ad');
+  }
+}
 ```
 
 ## MultiSlotsAdLoadListener
-
-PhonePC/2in1Tablet
 
 多广告位广告请求回调。
 
@@ -603,8 +577,6 @@ PhonePC/2in1Tablet
 
 ### onAdLoadFailure
 
-PhonePC/2in1Tablet
-
 onAdLoadFailure(errorCode: number, errorMsg: string): void
 
 多广告位广告请求失败回调。
@@ -613,30 +585,30 @@ onAdLoadFailure(errorCode: number, errorMsg: string): void
 
 **系统能力：** SystemCapability.Advertising.Ads
 
-| 名称 | **类型** | 必填 | 说明 |
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | errorCode | number | 是 | 广告请求失败的错误码。 |
 | errorMsg | string | 是 | 广告请求失败的错误信息。 |
 
 **示例：**
 
-```
-1. import { advertising } from '@kit.AdsKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { advertising } from '@kit.AdsKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. const multiSlotsAdLoadListener: advertising.MultiSlotsAdLoadListener = {
-5. onAdLoadFailure: (errorCode: number, errorMsg: string) => {
-6. hilog.error(0x0000, 'testTag', `Failed to load ad. Code is ${errorCode}, message is ${errorMsg}`);
-7. },
-8. onAdLoadSuccess: (adsMap: Map<string, Array<advertising.Advertisement>>) => {
-9. hilog.info(0x0000, 'testTag', 'Succeeded in loading ad');
-10. }
-11. }
+const multiSlotsAdLoadListener: advertising.MultiSlotsAdLoadListener = {
+  onAdLoadFailure: (errorCode: number, errorMsg: string) => {
+    hilog.error(0x0000, 'testTag', `Failed to load ad. Code is ${errorCode}, message is ${errorMsg}`);
+  },
+  onAdLoadSuccess: (adsMap: Map<string, Array<advertising.Advertisement>>) => {
+    hilog.info(0x0000, 'testTag', 'Succeeded in loading ad');
+  }
+}
 ```
 
 ### onAdLoadSuccess
-
-PhonePC/2in1Tablet
 
 onAdLoadSuccess(adsMap: Map<string, Array<Advertisement>>): void
 
@@ -646,29 +618,29 @@ onAdLoadSuccess(adsMap: Map<string, Array<Advertisement>>): void
 
 **系统能力：** SystemCapability.Advertising.Ads
 
-| **参数名** | **类型** | 必填 | 说明 |
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| adsMap | Map<string, Array<[Advertisement](js-apis-advertisement.md#advertisement)>> | 是 | 广告数据。 |
+| adsMap | Map<string, Array<[Advertisement](js-apis-advertisement.md#advertisement)>> | 是 | 广告数据，是以广告位ID为键，存储请求到的广告内容的映射集合。 |
 
 **示例：**
 
-```
-1. import { advertising } from '@kit.AdsKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { advertising } from '@kit.AdsKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. const multiSlotsAdLoadListener: advertising.MultiSlotsAdLoadListener = {
-5. onAdLoadFailure: (errorCode: number, errorMsg: string) => {
-6. hilog.error(0x0000, 'testTag', `Failed to load ad. Code is ${errorCode}, message is ${errorMsg}`);
-7. },
-8. onAdLoadSuccess: (adsMap: Map<string, Array<advertising.Advertisement>>) => {
-9. hilog.info(0x0000, 'testTag', 'Succeeded in loading ad');
-10. }
-11. }
+const multiSlotsAdLoadListener: advertising.MultiSlotsAdLoadListener = {
+  onAdLoadFailure: (errorCode: number, errorMsg: string) => {
+    hilog.error(0x0000, 'testTag', `Failed to load ad. Code is ${errorCode}, message is ${errorMsg}`);
+  },
+  onAdLoadSuccess: (adsMap: Map<string, Array<advertising.Advertisement>>) => {
+    hilog.info(0x0000, 'testTag', 'Succeeded in loading ad');
+  }
+}
 ```
 
 ## AdInteractionListener
-
-PhonePC/2in1Tablet
 
 广告状态变化回调。
 
@@ -677,8 +649,6 @@ PhonePC/2in1Tablet
 **系统能力：** SystemCapability.Advertising.Ads
 
 ### onStatusChanged
-
-PhonePC/2in1Tablet
 
 onStatusChanged(status: string, ad: Advertisement, data: string)
 
@@ -698,72 +668,70 @@ onStatusChanged(status: string, ad: Advertisement, data: string)
 
 **示例：**
 
-```
-1. import { advertising } from '@kit.AdsKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { advertising } from '@kit.AdsKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. const adInteractionListener: advertising.AdInteractionListener = {
-5. onStatusChanged: (status: string, ad: advertising.Advertisement, data: string) => {
-6. switch (status) {
-7. case 'onAdLoad':
-8. hilog.info(0x0000, 'testTag', 'Status is onAdLoad');
-9. break;
-10. case 'onAdFail':
-11. hilog.error(0x0000, 'testTag', 'Status is onAdFail');
-12. break;
-13. case 'onAdOpen':
-14. hilog.info(0x0000, 'testTag', 'Status is onAdOpen');
-15. break;
-16. case 'onAdClick':
-17. hilog.info(0x0000, 'testTag', 'Status is onAdClick');
-18. break;
-19. case 'onAdClose':
-20. // data值为关闭原因
-21. hilog.info(0x0000, 'testTag', `Status is onAdClose, Close Reason is ${data}`);
-22. if (data === 'adShowEnded') {
-23. // 关闭原因为广告展示结束，可根据实际场景添加处理逻辑
-24. }
-25. break;
-26. case 'onMediaProgress':
-27. hilog.info(0x0000, 'testTag', 'Status is onMediaProgress');
-28. break;
-29. case 'onMediaStart':
-30. hilog.info(0x0000, 'testTag', 'Status is onMediaStart');
-31. break;
-32. case 'onMediaPause':
-33. hilog.info(0x0000, 'testTag', 'Status is onMediaPause');
-34. break;
-35. case 'onMediaStop':
-36. hilog.info(0x0000, 'testTag', 'Status is onMediaStop');
-37. break;
-38. case 'onMediaComplete':
-39. hilog.info(0x0000, 'testTag', 'Status is onMediaComplete');
-40. break;
-41. case 'onMediaCountDown':
-42. hilog.info(0x0000, 'testTag', 'Status is onMediaCountDown');
-43. break;
-44. case 'onMediaError':
-45. hilog.info(0x0000, 'testTag', 'Status is onMediaError');
-46. break;
-47. case 'onLandscape':
-48. hilog.info(0x0000, 'testTag', 'Status is onLandscape');
-49. break;
-50. case 'onPortrait':
-51. hilog.info(0x0000, 'testTag', 'Status is onPortrait');
-52. break;
-53. case 'onBackClicked':
-54. hilog.info(0x0000, 'testTag', 'Status is onBackClicked');
-55. break;
-56. default:
-57. break;
-58. }
-59. }
-60. }
+const adInteractionListener: advertising.AdInteractionListener = {
+  onStatusChanged: (status: string, ad: advertising.Advertisement, data: string) => {
+    switch (status) {
+      case 'onAdLoad':
+        hilog.info(0x0000, 'testTag', 'Status is onAdLoad');
+        break;
+      case 'onAdFail':
+        hilog.error(0x0000, 'testTag', 'Status is onAdFail');
+        break;
+      case 'onAdOpen':
+        hilog.info(0x0000, 'testTag', 'Status is onAdOpen');
+        break;
+      case 'onAdClick':
+        hilog.info(0x0000, 'testTag', 'Status is onAdClick');
+        break;
+      case 'onAdClose':
+        // data值为关闭原因
+        hilog.info(0x0000, 'testTag', `Status is onAdClose, Close Reason is ${data}`);
+        if (data === 'adShowEnded') {
+          // 关闭原因为广告展示结束，可根据实际场景添加处理逻辑
+        }
+        break;
+      case 'onMediaProgress':
+        hilog.info(0x0000, 'testTag', 'Status is onMediaProgress');
+        break;
+      case 'onMediaStart':
+        hilog.info(0x0000, 'testTag', 'Status is onMediaStart');
+        break;
+      case 'onMediaPause':
+        hilog.info(0x0000, 'testTag', 'Status is onMediaPause');
+        break;
+      case 'onMediaStop':
+        hilog.info(0x0000, 'testTag', 'Status is onMediaStop');
+        break;
+      case 'onMediaComplete':
+        hilog.info(0x0000, 'testTag', 'Status is onMediaComplete');
+        break;
+      case 'onMediaCountDown':
+        hilog.info(0x0000, 'testTag', 'Status is onMediaCountDown');
+        break;
+      case 'onMediaError':
+        hilog.info(0x0000, 'testTag', 'Status is onMediaError');
+        break;
+      case 'onLandscape':
+        hilog.info(0x0000, 'testTag', 'Status is onLandscape');
+        break;
+      case 'onPortrait':
+        hilog.info(0x0000, 'testTag', 'Status is onPortrait');
+        break;
+      case 'onBackClicked':
+        hilog.info(0x0000, 'testTag', 'Status is onBackClicked');
+        break;
+      default:
+        break;
+    }
+  }
+}
 ```
 
 ## AdOptions
-
-PhonePC/2in1Tablet
 
 广告配置参数。
 
@@ -771,16 +739,16 @@ PhonePC/2in1Tablet
 
 **系统能力：** SystemCapability.Advertising.Ads
 
-| 名称 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| tagForChildProtection | number | 否 | 是否希望根据 COPPA 的规定将您的内容视为面向儿童的内容。  -1：默认值，不确定。  0：不希望。  1：希望。  默认为-1。 |
-| adContentClassification | string | 否 | 设置广告内容分级上限。  W：3+，所有受众。  PI：7+，家长指导。  J：12+，青少年。  A：16+/18+，成人受众。  不填以业务逻辑为准。 |
-| nonPersonalizedAd | number | 否 | 设置是否只请求非个性化广告。  0：请求个性化广告与非个性化广告。  1：只请求非个性化广告。  不填以业务逻辑为准。 |
-| [key: string] | number | boolean | string | undefined | 否 | 自定义参数。  - totalDuration：类型number，单位：s。贴片广告必填自定义参数，用于设置贴片广告展示时长。  - allowMobileTraffic：类型number。可选自定义参数，设置是否允许使用流量下载广告素材。0：不允许，1：允许，不设置以广告主设置为准。  - tagForUnderAgeOfPromise：类型number。可选自定义参数，设置未成年保护标签。是否希望按适合未达到法定承诺年龄的欧洲经济区 (EEA) 用户的方式处理该广告请求。-1：默认值，不确定， 0：不希望 ， 1：希望。 |
+**参数：**
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| tagForChildProtection | number | 否 | 是 | 是否希望根据 COPPA 的规定将您的内容视为面向儿童的内容。  -1：默认值，不确定。  0：不希望。  1：希望。  默认为-1。 |
+| adContentClassification | string | 否 | 是 | 设置广告内容分级上限。  W：3+，所有受众。  PI：7+，家长指导。  J：12+，青少年。  A：16+/18+，成人受众。  不填以业务逻辑为准。 |
+| nonPersonalizedAd | number | 否 | 是 | 设置是否只请求非个性化广告。  0：请求个性化广告与非个性化广告。  1：只请求非个性化广告。  不填以业务逻辑为准。 |
+| [key: string] | number | boolean | string | undefined | 否 | 是 | 自定义参数。  - totalDuration：类型number，单位：s。贴片广告必填自定义参数，用于设置贴片广告展示时长。  - allowMobileTraffic：类型number。可选自定义参数，设置是否允许使用流量下载广告素材。0：不允许，1：允许，不设置以广告主设置为准。  - tagForUnderAgeOfPromise：类型number。可选自定义参数，设置未成年保护标签。是否希望按适合未达到法定承诺年龄的欧洲经济区 (EEA) 用户的方式处理该广告请求。-1：默认值，不确定， 0：不希望 ， 1：希望。 |
 
 ## AdRequestParams
-
-PhonePC/2in1Tablet
 
 广告请求参数。
 
@@ -788,19 +756,19 @@ PhonePC/2in1Tablet
 
 **系统能力：** SystemCapability.Advertising.Ads
 
-| 名称 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| adId | string | 是 | 广告位ID。  说明：[getAdRequestBody](js-apis-advertising.md#advertisinggetadrequestbody12)接口可以不传该参数。 |
-| adType | number | 否 | 请求的广告类型。  - 1：开屏广告。  - 3：原生广告。  - 7：激励广告。  - 8：横幅广告。  - 12：插屏广告。  - 60：贴片广告。  不填默认为原生广告类型。 |
-| adCount | number | 否 | 请求的广告数量。不填以业务逻辑为准。 |
-| adWidth | number | 否 | 请求广告时期望的创意宽度，单位vp（横幅广告必填）。不填以业务逻辑为准。 |
-| adHeight | number | 否 | 请求广告时期望的创意高度，单位vp（横幅广告必填）。不填以业务逻辑为准。 |
-| adSearchKeyword | string | 否 | 广告关键字。不填默认""。  说明：暂不支持使用。 |
-| [key: string] | number | boolean | string | undefined | 否 | 自定义参数。  - isPreload：类型boolean，请求贴片广告时，用于区分普通在线请求和素材预加载请求。true：素材预加载请求，false：普通在线请求。默认值false。仅对贴片广告生效，其他广告请求不解析该参数。  - enableDirectReturnVideoAd：类型boolean，原生广告自定义扩展参数，是否直接返回广告，不用等待所有广告素材下载完成。true：不等待广告素材下载完成，展示广告时在线加载素材；false：等待广告素材下载完成，展示广告时从本地缓存中加载素材。如果不填以云侧配置为准。仅对原生广告生效，其他广告请求不解析该参数。  - oaid: 类型string，开放匿名设备标识符，用于精准推送广告。不填无法获取到个性化广告。默认值为""。  - tMax：类型number，交易的最大超时时间（包含网络延迟）单位ms。  - cur：类型string，竞价请求支持的币种，支持传多个，用英文逗号分隔。当前支持五种货币：CNY（单位：元）、USD（单位：美元）、EUR（单位：欧元）、GBP（单位：英镑）、JPY（单位：日元），不填则默认是CNY。  - bidFloor：类型number，实时竞价广告位的底价。  - bidFloorCur：类型string，广告位底价使用的币种。如果bidFloor非空，则bidFloorCur也非空。当前只支持五种货币中的一种：CNY（单位：元）、USD（单位：美元）、EUR（单位：欧元）、GBP（单位：英镑）、JPY（单位：日元），不填则默认是CNY。  - bpkgName：类型string，广告位禁投的APP包名，支持传多个，用英文逗号分隔。  - orientation ：类型number，媒体请求广告的屏幕方向。1表示竖屏，0表示横屏，不设置则默认为1。当前未上架横屏开屏素材，若设置请求屏幕方向为横屏则不展示开屏广告。如果媒体设置应用固定横屏展示，但该参数未设置或者设置为1，则展示效果会受影响。 |
+**参数：**
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| adId | string | 否 | 否 | 广告位ID。  说明：[getAdRequestBody](js-apis-advertising.md#advertisinggetadrequestbody12)接口可以不传该参数。 |
+| adType | number | 否 | 是 | 请求的广告类型。  - 1：开屏广告。  - 3：原生广告。  - 7：激励广告。  - 8：横幅广告。  - 12：插屏广告。  - 60：贴片广告。  不填默认为原生广告类型。 |
+| adCount | number | 否 | 是 | 请求的广告数量。不填以业务逻辑为准。 |
+| adWidth | number | 否 | 是 | 请求广告时期望的创意宽度，单位vp（横幅广告必填）。不填以业务逻辑为准。 |
+| adHeight | number | 否 | 是 | 请求广告时期望的创意高度，单位vp（横幅广告必填）。不填以业务逻辑为准。 |
+| adSearchKeyword | string | 否 | 是 | 广告关键字。不填默认""。  说明：暂不支持使用。 |
+| [key: string] | number | boolean | string | undefined | 否 | 是 | 自定义参数。  - isPreload：类型boolean，请求贴片广告时，用于区分普通在线请求和素材预加载请求。true：素材预加载请求，false：普通在线请求。默认值false。仅对贴片广告生效，其他广告请求不解析该参数。  - enableDirectReturnVideoAd：类型boolean，原生广告自定义扩展参数，是否直接返回广告，不用等待所有广告素材下载完成。true：不等待广告素材下载完成，展示广告时在线加载素材；false：等待广告素材下载完成，展示广告时从本地缓存中加载素材。如果不填以云侧配置为准。仅对原生广告生效，其他广告请求不解析该参数。  - oaid: 类型string，开放匿名设备标识符，用于精准推送广告。不填无法获取到个性化广告。默认值为""。  - tMax：类型number，交易的最大超时时间（包含网络延迟）单位ms。  - cur：类型string，竞价请求支持的币种，支持传多个，用英文逗号分隔。当前支持五种货币：CNY（单位：元）、USD（单位：美元）、EUR（单位：欧元）、GBP（单位：英镑）、JPY（单位：日元），不填则默认是CNY。  - bidFloor：类型number或者string，实时竞价广告位的底价。如果底价是小数，请传入string避免丢失精度。  - bidFloorCur：类型string，广告位底价使用的币种。如果bidFloor非空，则bidFloorCur也非空。当前只支持五种货币中的一种：CNY（单位：元）、USD（单位：美元）、EUR（单位：欧元）、GBP（单位：英镑）、JPY（单位：日元），不填则默认是CNY。  - bpkgName：类型string，广告位禁投的APP包名，支持传多个，用英文逗号分隔。  - orientation ：类型number，媒体请求广告的屏幕方向。1表示竖屏，0表示横屏，不设置则默认为1。当前未上架横屏开屏素材，若设置请求屏幕方向为横屏则不展示开屏广告。如果媒体设置应用固定横屏展示，但该参数未设置或者设置为1，则展示效果会受影响。 |
 
 ## AdDisplayOptions
-
-PhonePC/2in1Tablet
 
 广告展示参数。
 
@@ -808,11 +776,13 @@ PhonePC/2in1Tablet
 
 **系统能力：** SystemCapability.Advertising.Ads
 
-| 名称 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| customData | string | 否 | 媒体自定义数据。用于服务端通知媒体服务器某位用户因为与激励视频广告互动而应予以奖励，从而规避欺骗的行为（不填则不会通知）。 |
-| userId | string | 否 | 媒体自定义用户id。用于服务端通知媒体服务器某位用户因为与激励视频广告互动而应予以奖励，从而规避欺骗的行为（不填则不会通知）。 |
-| useMobileDataReminder | boolean | 否 | 使用移动数据播放视频或下载应用时是否弹框通知用户。  - true：弹框通知。  - false：不弹框通知。  - 该参数依赖流量弹窗功能，当前不支持完整功能的使用，暂不确定默认值。 |
-| mute | boolean | 否 | 广告视频播放是否静音。  - true：静音播放。  - false：非静音播放。  不填以业务逻辑为准。 |
-| audioFocusType | number | 否 | 视频播放过程中获得音频焦点的场景类型。  - 0：视频播放静音、非静音时都获取焦点。  - 1：视频静音播放时不获取焦点。  - 2：视频播放静音、非静音时都不获取焦点。  - 该接口依赖的相关功能当前不支持使用，暂不确定默认值。 |
-| [key: string] | number | boolean | string | undefined | 否 | 自定义参数。  - refreshTime：类型number，单位：ms，取值范围[30000, 120000]。AutoAdComponent组件可选自定义参数，用于控制广告的轮播时间间隔。填写了该参数，则广告按照参数配置的时间间隔轮播，否则广告不会轮播，只会展示广告响应中的第一个广告内容。 |
+**参数：**
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| customData | string | 否 | 是 | 媒体自定义数据。用于服务端通知媒体服务器某位用户因为与激励视频广告互动而应予以奖励，从而规避欺骗的行为（不填则不会通知）。 |
+| userId | string | 否 | 是 | 媒体自定义用户id。用于服务端通知媒体服务器某位用户因为与激励视频广告互动而应予以奖励，从而规避欺骗的行为（不填则不会通知）。 |
+| useMobileDataReminder | boolean | 否 | 是 | 使用移动数据播放视频或下载应用时是否弹框通知用户。  - true：弹框通知。  - false：不弹框通知。  - 该参数依赖流量弹窗功能，当前不支持完整功能的使用，暂不确定默认值。 |
+| mute | boolean | 否 | 是 | 广告视频播放是否静音。  - true：静音播放。  - false：非静音播放。  不填以业务逻辑为准。 |
+| audioFocusType | number | 否 | 是 | 视频播放过程中获得音频焦点的场景类型。  - 0：视频播放静音、非静音时都获取焦点。  - 1：视频静音播放时不获取焦点。  - 2：视频播放静音、非静音时都不获取焦点。  - 该接口依赖的相关功能当前不支持使用，暂不确定默认值。 |
+| [key: string] | number | boolean | string | undefined | 否 | 是 | 自定义参数。  - refreshTime：AutoAdComponent组件可选自定义参数，用于控制广告的轮播时间间隔。类型number，单位：ms，取值范围[30000, 120000]。如果不设置或取值为非数字或小于等于0的数字，则不轮播，只会展示广告响应中的第一个广告内容。设置小于30000的数字取值30000，设置大于120000的数字取值120000。  - colorMode：广告的主题色。类型number。0：深色主题， 1：浅色主题 ， 2：跟随系统，默认值为2。设置主题色功能从8.4.80.300版本开始支持，查看方式：可在设备上选择“设置> 应用和元服务” ，右上角点击“更多应用”，在应用界面查看智慧营销服务版本。 |

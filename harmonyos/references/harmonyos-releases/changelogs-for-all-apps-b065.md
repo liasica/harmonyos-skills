@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-for-all-apps-b065
 title: 针对所有应用的变更
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Beta引入的接口行为变更 > 针对所有应用的变更
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Beta引入的接口行为变更 > 针对所有应用的变更
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:36:09+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:45a7bf8377bb84ef5188a893f9e6edcf19629f2f71daa9512ae0082953e9b2f0
+scraped_at: 2026-09-02T14:58:53+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:61f0e167e57ae12eb8e52648623faa23cb3dcd96febe987e8325652f9d2adf18
 ---
 
 ## Ability Kit
@@ -44,7 +44,7 @@ UIExtensionAbility仅支持拥有前台窗口的应用拉起，虽有该约束�
 
 在want的flags字段设置了授权flag前提下，禁止在want中的URI字段和wantConstant.Params.PARAMS\_STREAM字段中传入无权限的[File URI](../harmonyos-references-V5/js-apis-file-fileuri-V5.md#fileuri10)。
 
-说明
+**说明** 
 
 有权限的File URI是指应用通过[getUriFromPath](../harmonyos-references-V5/js-apis-file-fileuri-V5.md#fileurigeturifrompath)接口将自身沙箱路径转换后的URI或持久化过的File URI。
 
@@ -84,7 +84,7 @@ UIExtensionAbility仅支持拥有前台窗口的应用拉起，虽有该约束�
 
 应用可以无限制启动子进程，这个场景存在恶意调用风险，因此需要增加子进程最大数量限制。
 
-说明
+**说明** 
 
 该变更在9月21日发布的patch版本引入，对应开发工具DevEco Studio版本为5.0.3.810。
 
@@ -114,7 +114,7 @@ childProcessManager中的startChildProcess(非SELF\_FORK模式)、startArkChildP
 
 因安全合规要求，包管理@ohos.bundle.bundleManager.d.ts中的bundleManager.verifyAbc接口以及bundleManager.deleteAbc接口变更为system API。
 
-说明
+**说明** 
 
 该变更在9月27日发布的patch版本引入，对应开发工具DevEco Studio版本为5.0.3.813。
 
@@ -152,7 +152,7 @@ childProcessManager中的startChildProcess(非SELF\_FORK模式)、startArkChildP
 
 应用从后台使用startAbility拉起自己或者其他应用，这种行为是禁止的。但是利用长时任务，当前可以达到应用在后台依然startAbility成功的效果。这个场景存在恶意弹窗等风险，因此现在禁止应用在运行长时任务时，从后台调用startAbility的行为。
 
-说明
+**说明** 
 
 该变更在9月21日发布的patch版本引入，对应开发工具DevEco Studio版本为5.0.3.810。
 
@@ -190,7 +190,7 @@ utf-16be为大端编码格式，编码出数据应该符合大端编码数据，
 
 这两种编码格式所编码出的数据行为与标准定义不符合，需要修复此问题。
 
-说明
+**说明** 
 
 该变更在9月21日发布的patch版本引入，对应开发工具DevEco Studio版本为5.0.3.810。
 
@@ -228,40 +228,40 @@ encodeIntoUint8Array(input: string, dest: Uint8Array): EncodeIntoUint8ArrayInfo;
 
 encodeInto接口的表现：
 
-```
-1. import { util } from '@kit.ArkTS';
+```ts
+import { util } from '@kit.ArkTS';
 
-3. let encoderUtf16Le = new util.TextEncoder("utf-16le");
-4. let encoderUtf16Be = new util.TextEncoder("utf-16be");
+let encoderUtf16Le = new util.TextEncoder("utf-16le");
+let encoderUtf16Be = new util.TextEncoder("utf-16be");
 
-6. // 变更前：
-7. // let u16_le = encoderUtf16Le.encodeInto('abcdefg'); // u16_le: 0,97,0,98,0,99,0,100,0,101,0,102,0,103
-8. // let u16_be = encoderUtf16Be.encodeInto('abcdefg'); // u16_be: 97,0,98,0,99,0,100,0,101,0,102,0,103,0
+// 变更前：
+// let u16_le = encoderUtf16Le.encodeInto('abcdefg'); // u16_le: 0,97,0,98,0,99,0,100,0,101,0,102,0,103
+// let u16_be = encoderUtf16Be.encodeInto('abcdefg'); // u16_be: 97,0,98,0,99,0,100,0,101,0,102,0,103,0
 
-11. // 变更后：
-12. let u16_le = encoderUtf16Le.encodeInto('abcdefg'); // u16_le: 97,0,98,0,99,0,100,0,101,0,102,0,103,0
-13. let u16_be = encoderUtf16Be.encodeInto('abcdefg'); // u16_be: 0,97,0,98,0,99,0,100,0,101,0,102,0,103
+// 变更后：
+let u16_le = encoderUtf16Le.encodeInto('abcdefg'); // u16_le: 97,0,98,0,99,0,100,0,101,0,102,0,103,0
+let u16_be = encoderUtf16Be.encodeInto('abcdefg'); // u16_be: 0,97,0,98,0,99,0,100,0,101,0,102,0,103
 ```
 
 encodeIntoUint8Array接口的表现：
 
-```
-1. import { util } from '@kit.ArkTS';
+```ts
+import { util } from '@kit.ArkTS';
 
-3. let encoderUtf16Le = new util.TextEncoder("utf-16le");
-4. let encoderUtf16Be = new util.TextEncoder("utf-16be");
+let encoderUtf16Le = new util.TextEncoder("utf-16le");
+let encoderUtf16Be = new util.TextEncoder("utf-16be");
 
-6. // 变更前：
-7. // let dest_le = new Uint8Array(14);
-8. // let dest_be = new Uint8Array(14);
-9. // let res_le = encoderUtf16Le.encodeIntoUint8Array('abcdefg', dest_le); // dest_le: 0,97,0,98,0,99,0,100,0,101,0,102,0,103
-10. // let res_be = encoderUtf16Be.encodeIntoUint8Array('abcdefg', dest_be); // dest_be: 97,0,98,0,99,0,100,0,101,0,102,0,103,0
+// 变更前：
+// let dest_le = new Uint8Array(14);
+// let dest_be = new Uint8Array(14);
+// let res_le = encoderUtf16Le.encodeIntoUint8Array('abcdefg', dest_le); // dest_le: 0,97,0,98,0,99,0,100,0,101,0,102,0,103
+// let res_be = encoderUtf16Be.encodeIntoUint8Array('abcdefg', dest_be); // dest_be: 97,0,98,0,99,0,100,0,101,0,102,0,103,0
 
-12. // 变更后：
-13. let dest_le = new Uint8Array(14);
-14. let dest_be = new Uint8Array(14);
-15. let res_le = encoderUtf16Le.encodeIntoUint8Array('abcdefg', dest_le); // dest_le: 97,0,98,0,99,0,100,0,101,0,102,0,103,0
-16. let res_be = encoderUtf16Be.encodeIntoUint8Array('abcdefg', dest_be); // dest_be: 0,97,0,98,0,99,0,100,0,101,0,102,0,103
+// 变更后：
+let dest_le = new Uint8Array(14);
+let dest_be = new Uint8Array(14);
+let res_le = encoderUtf16Le.encodeIntoUint8Array('abcdefg', dest_le); // dest_le: 97,0,98,0,99,0,100,0,101,0,102,0,103,0
+let res_be = encoderUtf16Be.encodeIntoUint8Array('abcdefg', dest_be); // dest_be: 0,97,0,98,0,99,0,100,0,101,0,102,0,103
 ```
 
 ### Worker模块中RestrictedWorker的接口变更为system API
@@ -270,7 +270,7 @@ encodeIntoUint8Array接口的表现：
 
 因安全合规要求，RestrictedWorker的接口由public API变更为system API。
 
-说明
+**说明** 
 
 该变更在9月27日发布的patch版本引入，对应开发工具DevEco Studio版本为5.0.3.813。
 
@@ -309,7 +309,7 @@ worker模块下的两个接口：
 
 开发者使用ForEach，在旧节点下树的时候会被刷新一次，属于规格外的行为，当刷新调用方法中存在对全局变量的修改时会发生异常。
 
-说明
+**说明** 
 
 该变更在9月21日发布的patch版本引入，对应开发工具DevEco Studio版本为5.0.3.810。
 
@@ -337,77 +337,77 @@ ForEach
 
 变更前：
 
-```
-1. let g_data = 0;
+```ts
+let g_data = 0;
 
-3. @Entry
-4. @Component
-5. struct MyComponent {
-6. @State simpleList: number[] = [0, 1, 2]
+@Entry
+@Component
+struct MyComponent {
+  @State simpleList: number[] = [0, 1, 2]
 
-8. fn(item: number, index: number) {
-9. g_data++;
-10. return 80;
-11. }
+  fn(item: number, index: number) {
+    g_data++;
+    return 80;
+  }
 
-13. build() {
-14. Row() {
-15. Column() {
-16. Button('click button []')
-17. .onClick(() => {
-18. this.simpleList = [4, 5, 6]
-19. })
-20. ForEach(this.simpleList, (item: number, index: number) => {
-21. Text(item.toString())
-22. .fontSize(this.fn(item, index))
-23. .onAppear(()=>{
-24. console.log('g_data: ' + g_data);
-25. })
-26. }, (item: string) => item)
-27. }
-28. .width('100%')
-29. .height('100%')
-30. }
-31. }
-32. }
+  build() {
+    Row() {
+      Column() {
+        Button('click button []')
+          .onClick(() => {
+            this.simpleList = [4, 5, 6]
+          })
+        ForEach(this.simpleList, (item: number, index: number) => {
+          Text(item.toString())
+            .fontSize(this.fn(item, index))
+            .onAppear(()=>{
+              console.log('g_data: ' + g_data);
+            })
+        }, (item: string) => item)
+      }
+      .width('100%')
+      .height('100%')
+    }
+  }
+}
 ```
 
 变更后：
 
-```
-1. let g_data = 0;
+```ts
+let g_data = 0;
 
-3. @Entry
-4. @Component
-5. struct MyComponent {
-6. @State simpleList: number[] = [0, 1, 2]
+@Entry
+@Component
+struct MyComponent {
+  @State simpleList: number[] = [0, 1, 2]
 
-8. fn(item: number, index: number) {
-9. // 变更前总会调用两次，变更后只会调用一次，保证变更前后效果一致
-10. g_data+=2;
-11. return 80;
-12. }
+  fn(item: number, index: number) {
+    // 变更前总会调用两次，变更后只会调用一次，保证变更前后效果一致
+    g_data+=2;
+    return 80;
+  }
 
-14. build() {
-15. Row() {
-16. Column() {
-17. Button('click button []')
-18. .onClick(() => {
-19. this.simpleList = [4, 5, 6]
-20. })
-21. ForEach(this.simpleList, (item: number, index: number) => {
-22. Text(item.toString())
-23. .fontSize(this.fn(item, index))
-24. .onAppear(()=>{
-25. console.log('g_data: ' + g_data);
-26. })
-27. }, (item: string) => item)
-28. }
-29. .width('100%')
-30. .height('100%')
-31. }
-32. }
-33. }
+  build() {
+    Row() {
+      Column() {
+        Button('click button []')
+          .onClick(() => {
+            this.simpleList = [4, 5, 6]
+          })
+        ForEach(this.simpleList, (item: number, index: number) => {
+          Text(item.toString())
+            .fontSize(this.fn(item, index))
+            .onAppear(()=>{
+              console.log('g_data: ' + g_data);
+            })
+        }, (item: string) => item)
+      }
+      .width('100%')
+      .height('100%')
+    }
+  }
+}
 ```
 
 ## AVCodec Kit
@@ -441,35 +441,35 @@ ForEach
 获取方式如下所示：
 
 ```
-1. OH_AVBuffer *buffer = OH_AVBuffer_Create(w * h * 3 >> 1);
-2. if (buffer == nullptr) {
-3. // 处理异常
-4. }
-5. int32_t ret = OH_AVDemuxer_ReadSampleBuffer(demuxer, trackIndex, buffer);
-6. if (ret != AV_ERR_OK) {
-7. // 处理异常
-8. }
+OH_AVBuffer *buffer = OH_AVBuffer_Create(w * h * 3 >> 1);
+if (buffer == nullptr) {
+    // 处理异常
+}
+int32_t ret = OH_AVDemuxer_ReadSampleBuffer(demuxer, trackIndex, buffer);
+if (ret != AV_ERR_OK) {
+    // 处理异常
+}
 
-10. OH_AVCodecBufferAttr info;
-11. ret = OH_AVBuffer_GetBufferAttr(buffer, &info);
-12. if (ret != AV_ERR_OK) {
-13. // 处理异常
-14. }
-15. int64_t newPts = info.pts;
+OH_AVCodecBufferAttr info;
+ret = OH_AVBuffer_GetBufferAttr(buffer, &info);
+if (ret != AV_ERR_OK) {
+    // 处理异常
+}
+int64_t newPts = info.pts;
 ```
 
 并且从API12开始，支持获取轨道起始时间信息 OH\_MD\_KEY\_TRACK\_START\_TIME，用户也可通过变更后 pts，结合轨道起始时间，转换为变更前 pts，代码如下：
 
 ```
-1. OH_AVFormat *trackFormat = OH_AVSource_GetTrackFormat(source, trackIndex);
-2. if (trackFormat == nullptr) {
-3. // 处理异常
-4. }
-5. int64_t startTime = 0;
-6. if (!OH_AVFormat_GetLongValue(trackFormat, OH_MD_KEY_TRACK_START_TIME, &startTime)) {
-7. // 处理异常
-8. }
-9. int64_t oldPts = newPts - startTime;
+OH_AVFormat *trackFormat = OH_AVSource_GetTrackFormat(source, trackIndex);
+if (trackFormat == nullptr) {
+    // 处理异常
+}
+int64_t startTime = 0;
+if (!OH_AVFormat_GetLongValue(trackFormat, OH_MD_KEY_TRACK_START_TIME, &startTime)) {
+    // 处理异常
+}
+int64_t oldPts = newPts - startTime;
 ```
 
 ## Camera Kit
@@ -560,17 +560,17 @@ setSecurityLabel接口未对设置的安全等级进行校验，未阻止应用�
 
 变更后：应用数据设置过数据风险等级后，无法降低数据风险等级，接口抛错13900020。
 
-```
-1. import {fileIo,securityLabel} from '@kit.CoreFileKit';
-2. try {
-3. let path = getContext().filesDir + '/text.txt';
-4. let file = fileIo.openSync(path,fileIo.OpenMode.CREATE);
-5. securityLabel.setSecurityLabelSync(file.path, "s4");
-6. securityLabel.setSecurityLabelSync(file.path, "s3");
-7. console.log( "set security label s3 success");
-8. } catch (err) {
-9. console.log( "set security label s3  fail, " + err.message + err.code);
-10. }
+```ts
+import {fileIo,securityLabel} from '@kit.CoreFileKit';
+try {
+     let path = getContext().filesDir + '/text.txt';
+     let file = fileIo.openSync(path,fileIo.OpenMode.CREATE);
+     securityLabel.setSecurityLabelSync(file.path, "s4");
+     securityLabel.setSecurityLabelSync(file.path, "s3");
+     console.log( "set security label s3 success");
+} catch (err) {
+    console.log( "set security label s3  fail, " + err.message + err.code);
+}
 ```
 
 **起始API Level**
@@ -605,16 +605,16 @@ getSecurityLabel接口获取未对设置过的数据风险等级的数据返回�
 
 变更后：使用接口获取未设置过数据风险等级标签的数据时，默认返回“s3”。运行以下代码，日志中会打印label为“s3”。
 
-```
-1. import {fileIo,securityLabel} from '@kit.CoreFileKit';
-2. try {
-3. let path = getContext().filesDir + '/text.txt';
-4. let file = fileIo.openSync(path,fileIo.OpenMode.CREATE);
-5. let label = securityLabel.getSecurityLabelSync(file.path);
-6. console.log( "get security label success, label is" + label);
-7. } catch (err) {
-8. console.log( "get security label fail, " + err.message + err.code);
-9. }
+```ts
+import {fileIo,securityLabel} from '@kit.CoreFileKit';
+try {
+     let path = getContext().filesDir + '/text.txt';
+     let file = fileIo.openSync(path,fileIo.OpenMode.CREATE);
+     let label = securityLabel.getSecurityLabelSync(file.path);
+     console.log( "get security label success, label is" + label);
+} catch (err) {
+    console.log( "get security label fail, " + err.message + err.code);
+}
 ```
 
 **起始API Level**
@@ -639,7 +639,7 @@ getSecurityLabel接口获取未对设置过的数据风险等级的数据返回�
 
 基于对用户个人文件资产保护，文件必须先授权后使用。文件授权接口实行强管控，提供目录授权和文件持久化授权。
 
-说明
+**说明** 
 
 该变更在9月21日发布的patch版本引入，对应开发工具DevEco Studio版本为5.0.3.810。
 
@@ -684,7 +684,7 @@ getSecurityLabel接口获取未对设置过的数据风险等级的数据返回�
 
 分布式设备管理deviceid接口存在安全漏洞，应用获取的deviceid在设备重置后或者应用卸载重装后不变，对于同一个应用可以标识设备。
 
-说明
+**说明** 
 
 该变更在9月21日发布的patch版本引入，对应开发工具DevEco Studio版本为5.0.3.810。
 
@@ -785,7 +785,7 @@ getSecurityLabel接口获取未对设置过的数据风险等级的数据返回�
 
 aa工具是DevEco Studio调试能力的底层依赖，正常的调试场景都通过DevEco Studio进行，正常情况下DevEco Studio会限制对Release模式的应用进行调试，但存在绕过DevEco Studio直接使用aa工具的调试命令进行调试的风险，应当从根本上限制此行为。
 
-说明
+**说明** 
 
 该变更在9月12日发布的patch版本引入，对应开发工具DevEco Studio版本为5.0.3.806。
 

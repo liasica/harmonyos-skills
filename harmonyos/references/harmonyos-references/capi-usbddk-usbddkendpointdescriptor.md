@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-usbd
 title: UsbDdkEndpointDescriptor
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 结构体 > UsbDdkEndpointDescriptor
 category: harmonyos-references
-scraped_at: 2026-04-29T14:01:31+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:b00fc6c93ff91874b7569adc2f0682ee7067ea00aa4b7714e266fd4b8f3166c3
+scraped_at: 2026-09-02T15:02:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:fa847e6f84488bb9c67e955487360f2fd16790e9bbe3532429b537e56bc24bdc
 ---
 
-```
-1. typedef struct UsbDdkEndpointDescriptor {...} UsbDdkEndpointDescriptor
+```c
+typedef struct UsbDdkEndpointDescriptor {...} UsbDdkEndpointDescriptor
 ```
 
 ## 概述
 
-PC/2in1
-
-端点描述符。
+端点描述符，包含标准端点描述符和未做解析的描述符信息。
 
 **起始版本：** 10
 
@@ -26,14 +24,10 @@ PC/2in1
 
 ## 汇总
 
-PC/2in1
-
 ### 成员变量
-
-PC/2in1
 
 | 名称 | 描述 |
 | --- | --- |
 | [struct UsbEndpointDescriptor](capi-usbddk-usbendpointdescriptor.md) endpointDescriptor | 标准端点描述符。 |
-| const uint8\_t\* extra | 未做解析的描述符，包含特定于类或供应商的描述符。 |
+| const uint8\_t\* extra | 未做解析的描述符指针，包含特定于类或供应商的描述符。 |
 | uint32\_t extraLength | 未做解析的描述符长度。 |

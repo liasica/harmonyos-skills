@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-bluetooth-
 title: 低功耗蓝牙基础使用
 breadcrumb: 最佳实践 > 网络 > 低功耗蓝牙基础使用
 category: best-practices
-scraped_at: 2026-04-29T14:11:05+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:e303c25bfd9246687394e483e84223e788b1a43be0e035cae51c84c3a2a187b1
+scraped_at: 2026-09-02T15:03:17+08:00
+doc_updated_at: 2026-07-22
+content_hash: sha256:2cfe55e5b6d94010a9504662764bc9e5e085deff625e75a1823954e8ca20824f
 ---
 
 ## 概述
@@ -23,7 +23,7 @@ content_hash: sha256:e303c25bfd9246687394e483e84223e788b1a43be0e035cae51c84c3a2a
 3. 数据传输阶段：服务端订阅描述符写请求事件，准备数据（如心率值），通过特征通知机制向已连接客户端发送数据；客户端监听特征值变化事件，接收并解析数据内容，根据业务需求更新用户界面或执行相应逻辑。
 4. 断开连接阶段：服务端在连接状态回调中处理断开事件，可以停止广播并清理资源；客户端主动断开连接，关闭GATT客户端，注销监听器，重置连接状态，可选择将设备ID持久化以便后续自动重连。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/sMe0zWXJQ3-uXA6vM4pQSw/zh-cn_image_0000002492448638.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/joZiHpA-Ttejgqsg3k0YOw/zh-cn_image_0000002492448638.jpg "点击放大")
 
 ### 关键技术
 
@@ -45,7 +45,7 @@ content_hash: sha256:e303c25bfd9246687394e483e84223e788b1a43be0e035cae51c84c3a2a
 **客户端**
 
 1. 检查蓝牙是否开启，若未开启则调用[enableBluetooth()](../harmonyos-references/js-apis-bluetooth-access.md#accessenablebluetooth)接口开启蓝牙；
-2. 调用[on('BLEDeviceFind')](../harmonyos-references/js-apis-bluetooth-ble.md#onbledevicefind15)接口订阅BLE设备扫描结果上报事件，并调用[startBLEScan()](../harmonyos-references/js-apis-bluetooth-ble.md#blestartblescan)接口发起BLE扫描流程；
+2. 调用[ble.on('BLEDeviceFind')](../harmonyos-references/js-apis-bluetooth-ble.md#bleonbledevicefind)接口订阅BLE设备扫描结果上报事件，并调用[startBLEScan()](../harmonyos-references/js-apis-bluetooth-ble.md#blestartblescan)接口发起BLE扫描流程；
 3. 调用[createGattClientDevice(deviceId)](../harmonyos-references/js-apis-bluetooth-ble.md#blecreategattclientdevice)接口，基于扫描到的服务端的广播地址创建[GattClientDevice](../harmonyos-references/js-apis-bluetooth-ble.md#gattclientdevice)实例，即表示创建GATT连接中的客户端；
 4. 调用[on('BLEConnectionStateChange')](../harmonyos-references/js-apis-bluetooth-ble.md#onbleconnectionstatechange)接口订阅GATT profile协议的连接状态变化事件，随后调用[connect()](../harmonyos-references/js-apis-bluetooth-ble.md#connect)接口发起连接远端BLE设备；
 5. 当[on('BLEConnectionStateChange')](../harmonyos-references/js-apis-bluetooth-ble.md#onbleconnectionstatechange)回调函数返回的连接状态为[STATE\_CONNECTED](../harmonyos-references/js-apis-bluetooth-constant.md#profileconnectionstate)时，调用[getServices()](../harmonyos-references/js-apis-bluetooth-ble.md#getservices)进行服务发现，获取服务端设备支持的所有服务；
@@ -83,7 +83,7 @@ content_hash: sha256:e303c25bfd9246687394e483e84223e788b1a43be0e035cae51c84c3a2a
 
 这种协同工作机制大幅提升了BLE连接效率。服务端的精准广播与客户端的智能过滤形成互补，避免了传统全量扫描带来的资源浪费。当用户在应用中看到设备列表时，背后已完成多层筛选：硬件层过滤掉非BLE设备，协议层过滤掉不匹配服务的设备，应用层进一步通过制造商数据确认目标设备身份。这种分层过滤策略不仅加速了设备发现过程，也显著降低了系统功耗，为后续的连接与数据传输奠定了高效基础。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/kASmGtnpSLejBLI23mT6BA/zh-cn_image_0000002524568343.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/t8SphLRZRZmfKq6v_nUUow/zh-cn_image_0000002524568343.jpg "点击放大")
 
 **关键技术**
 
@@ -96,7 +96,7 @@ content_hash: sha256:e303c25bfd9246687394e483e84223e788b1a43be0e035cae51c84c3a2a
 客户端：
 
 1. 调用[access.getState()](../harmonyos-references/js-apis-bluetooth-access.md#accessgetstate)接口查询设备的蓝牙状态，根据返回的[BluetoothState](../harmonyos-references/js-apis-bluetooth-access.md#bluetoothstate)值判断蓝牙是否开启，若未开启则调用[enableBluetooth()](../harmonyos-references/js-apis-bluetooth-access.md#accessenablebluetooth)接口开启蓝牙；
-2. 调用[startBLEScan()](../harmonyos-references/js-apis-bluetooth-ble.md#blestartblescan)接口，通过[ScanOptions](../harmonyos-references/js-apis-bluetooth-ble.md#scanoptions)参数设置扫描参数配置，通过Array<[ScanFilter](../harmonyos-references/js-apis-bluetooth-ble.md#scanfilter)>参数设置扫描结果的过滤策略集合，进行扫描，同时调用[on('BLEDeviceFind')](../harmonyos-references/js-apis-bluetooth-ble.md#bleonbledevicefind)方法订阅BLE设备扫描结果上报事件，处理扫描结果；
+2. 调用[startBLEScan()](../harmonyos-references/js-apis-bluetooth-ble.md#blestartblescan)接口，通过[ScanOptions](../harmonyos-references/js-apis-bluetooth-ble.md#scanoptions)参数设置扫描参数配置，通过Array<[ScanFilter](../harmonyos-references/js-apis-bluetooth-ble.md#scanfilter)>参数设置扫描结果的过滤策略集合，进行扫描，同时调用[ble.on('BLEDeviceFind')](../harmonyos-references/js-apis-bluetooth-ble.md#bleonbledevicefind)方法订阅BLE设备扫描结果上报事件，处理扫描结果；
 3. 调用[connect()](../harmonyos-references/js-apis-bluetooth-ble.md#connect)接口连接远端BLE设备；
 4. 调用[stopBLEScan()](../harmonyos-references/js-apis-bluetooth-ble.md#blestopblescan)接口停止蓝牙扫描。开发者可根据具体业务需求，在适当时机停止蓝牙扫描，例如扫描到目标设备后或断开连接时。
 
@@ -106,89 +106,83 @@ content_hash: sha256:e303c25bfd9246687394e483e84223e788b1a43be0e035cae51c84c3a2a
 
 1. 开启广播前，需要先查询蓝牙是否可用，根据返回结果[BluetoothState](../harmonyos-references/js-apis-bluetooth-access.md#bluetoothstate)的值来判断蓝牙是否开启，当取值是STATE\_ON 或STATE\_TURNING\_ON返回true，表示蓝牙已开启。
 
+   ```typescript
+   /**
+    * Check whether Bluetooth is enabled or turning on.
+    * @returns True if enabled or turning on; false otherwise.
+    */
+   private isBluetoothEnabled(): boolean {
+     let state: access.BluetoothState = access.BluetoothState.STATE_OFF;
+     try {
+       state = access.getState();
+     } catch (error) {
+       Logger.error(`BluetoothServerModel, isBluetoothEnabled failed, error info: ${JSON.stringify(error)}`);
+     }
+     Logger.info(`isBluetoothEnabled: state = ${state}`);
+     if (state === access.BluetoothState.STATE_ON || state === access.BluetoothState.STATE_TURNING_ON) {
+       return true;
+     }
+     return false;
+   }
    ```
-   1. /**
-   2. * Check whether Bluetooth is enabled or turning on.
-   3. * @returns True if enabled or turning on; false otherwise.
-   4. */
-   5. private isBluetoothEnabled(): boolean {
-   6. let state: access.BluetoothState = access.BluetoothState.STATE_OFF;
-   7. try {
-   8. state = access.getState();
-   9. } catch (error) {
-   10. Logger.error(`BluetoothServerModel, isBluetoothEnabled failed, error info: ${JSON.stringify(error)}`);
-   11. }
-   12. Logger.info(`isBluetoothEnabled: state = ${state}`);
-   13. if (state === access.BluetoothState.STATE_ON || state === access.BluetoothState.STATE_TURNING_ON) {
-   14. return true;
-   15. }
-   16. return false;
-   17. }
-   ```
-
-   [BluetoothServerModel.ets](https://gitcode.com/HarmonyOS_Samples/BluetoothLowEnergy/blob/master/entry/src/main/ets/pages/server/model/BluetoothServerModel.ets#L368-L384)
 2. 如果蓝牙未开启，服务端设备需要调用[access.enableBluetooth()](../harmonyos-references/js-apis-bluetooth-access.md#accessenablebluetooth)接口开启蓝牙。
 
+   ```typescript
+   access.enableBluetooth();
    ```
-   1. access.enableBluetooth();
-   ```
-
-   [BluetoothServerModel.ets](https://gitcode.com/HarmonyOS_Samples/BluetoothLowEnergy/blob/master/entry/src/main/ets/pages/server/model/BluetoothServerModel.ets#L399-L399)
 3. 调用[createGattServer()](../harmonyos-references/js-apis-bluetooth-ble.md#blecreategattserver)创建一个Gatt服务的实例，并调用[addService()](../harmonyos-references/js-apis-bluetooth-ble.md#addservice)接口，添加服务。服务添加成功后，调用[startAdvertising()](../harmonyos-references/js-apis-bluetooth-ble.md#blestartadvertising)接口开始广播。
 
+   ```typescript
+   /**
+    * Start BLE advertising and initialize a simple Heart Rate service.
+    * Also registers connection and descriptor write listeners.
+    * @returns `StartAdvertiserResult` status code.
+    */
+   startAdvertiser(): StartAdvertiserResult {
+     if (!this.isBluetoothEnabled()) {
+       this.enableBluetooth();
+       return StartAdvertiserResult.BLUETOOTH_ENABLING;
+     }
+     if (!this.isStateChangeListening) {
+       // Register Bluetooth state change listener.
+       this.onBTStateChange();
+     }
+     if (this.mGattServer) {
+       Logger.warn('[BluetoothServerModel] Existing GATT server detected. Releasing previous instance before starting a new one.');
+       // Release GATT server resources and reset state flags.
+       this.releaseGattServer();
+     }
+     // ...
+     this.mGattServer = ble.createGattServer();
+     this.onDescriptorWriteChange();
+     // ...
+     // Construct server-side service data.
+     const service: ble.GattService = {
+       serviceUuid: BLE_SERVICE_UUID,
+       isPrimary: true,
+       characteristics: characteristics,
+       includeServices: []
+     }
+     try {
+       this.mGattServer.addService(service);
+     } catch (err) {
+       Logger.error(`addService: err = ${JSON.stringify(err)}`);
+       this.releaseGattServer();
+       return StartAdvertiserResult.FAILURE;
+     }
+     try {
+       // Register connection state change listener on GATT server.
+       this.onConnectStateChange();
+       // ...
+       ble.startAdvertising(setting, advData, advResponse);
+       return StartAdvertiserResult.SUCCESS;
+     } catch (err) {
+       Logger.error(`startAdvertiser: err = ${JSON.stringify(err)}`);
+       this.releaseGattServer();
+     }
+     return StartAdvertiserResult.FAILURE;
+   }
    ```
-   1. /**
-   2. * Start BLE advertising and initialize a simple Heart Rate service.
-   3. * Also registers connection and descriptor write listeners.
-   4. * @returns `StartAdvertiserResult` status code.
-   5. */
-   6. startAdvertiser(): StartAdvertiserResult {
-   7. if (!this.isBluetoothEnabled()) {
-   8. this.enableBluetooth();
-   9. return StartAdvertiserResult.BLUETOOTH_ENABLING;
-   10. }
-   11. if (!this.isStateChangeListening) {
-   12. // Register Bluetooth state change listener.
-   13. this.onBTStateChange();
-   14. }
-   15. if (this.mGattServer) {
-   16. Logger.warn('[BluetoothServerModel] Existing GATT server detected. Releasing previous instance before starting a new one.');
-   17. // Release GATT server resources and reset state flags.
-   18. this.releaseGattServer();
-   19. }
-   20. // ...
-   21. this.mGattServer = ble.createGattServer();
-   22. this.onDescriptorWriteChange();
-   23. // ...
-   24. // Construct server-side service data.
-   25. const service: ble.GattService = {
-   26. serviceUuid: BLE_SERVICE_UUID,
-   27. isPrimary: true,
-   28. characteristics: characteristics,
-   29. includeServices: []
-   30. }
-   31. try {
-   32. this.mGattServer.addService(service);
-   33. } catch (err) {
-   34. Logger.error(`addService: err = ${JSON.stringify(err)}`);
-   35. this.releaseGattServer();
-   36. return StartAdvertiserResult.FAILURE;
-   37. }
-   38. try {
-   39. // Register connection state change listener on GATT server.
-   40. this.onConnectStateChange();
-   41. // ...
-   42. ble.startAdvertising(setting, advData, advResponse);
-   43. return StartAdvertiserResult.SUCCESS;
-   44. } catch (err) {
-   45. Logger.error(`startAdvertiser: err = ${JSON.stringify(err)}`);
-   46. this.releaseGattServer();
-   47. }
-   48. return StartAdvertiserResult.FAILURE;
-   49. }
-   ```
-
-   [BluetoothServerModel.ets](https://gitcode.com/HarmonyOS_Samples/BluetoothLowEnergy/blob/master/entry/src/main/ets/pages/server/model/BluetoothServerModel.ets#L88-L185)
 
    如下表格为本文以心跳监控仪场景为例，对应示例代码中使用部分常量的说明，包括自定义厂商数据及蓝牙技术联盟（SIG）定义的标准服务、特征值和描述符。
 
@@ -201,28 +195,26 @@ content_hash: sha256:e303c25bfd9246687394e483e84223e788b1a43be0e035cae51c84c3a2a
    | 厂商数据 | [0x01, 0x02, 0x03, 0x04]（掩码 [FF,FF,00,00]） | 可自定义，在客户端发起BLE扫描时，该数据可用于配置扫描结果的过滤策略。 |
 4. 广播目的达成后（如被目标设备扫描到），调用[stopAdvertising()](../harmonyos-references/js-apis-bluetooth-ble.md#blestopadvertising)接口，停止广播。
 
+   ```typescript
+   /**
+    * Stop BLE advertising and disable Bluetooth (for demo cleanup).
+    */
+   stopAdvertiser() {
+     if (!this.mGattServer) {
+       Logger.warn('[BluetoothServerModel] stopAdvertiser invoked but GATT server is not initialized.');
+       return;
+     }
+     this.offBTStateChange();
+     try {
+       ble.stopAdvertising();
+     } catch (err) {
+       Logger.error(`stopAdvertiser: err = ${JSON.stringify(err)}`);
+     }
+     this.releaseGattServer();
+     this.cachedDeviceId = '';
+     this.notifyDeviceIdChanged();
+   }
    ```
-   1. /**
-   2. * Stop BLE advertising and disable Bluetooth (for demo cleanup).
-   3. */
-   4. stopAdvertiser() {
-   5. if (!this.mGattServer) {
-   6. Logger.warn('[BluetoothServerModel] stopAdvertiser invoked but GATT server is not initialized.');
-   7. return;
-   8. }
-   9. this.offBTStateChange();
-   10. try {
-   11. ble.stopAdvertising();
-   12. } catch (err) {
-   13. Logger.error(`stopAdvertiser: err = ${JSON.stringify(err)}`);
-   14. }
-   15. this.releaseGattServer();
-   16. this.cachedDeviceId = '';
-   17. this.notifyDeviceIdChanged();
-   18. }
-   ```
-
-   [BluetoothServerModel.ets](https://gitcode.com/HarmonyOS_Samples/BluetoothLowEnergy/blob/master/entry/src/main/ets/pages/server/model/BluetoothServerModel.ets#L189-L206)
 
 **客户端**
 
@@ -230,74 +222,70 @@ content_hash: sha256:e303c25bfd9246687394e483e84223e788b1a43be0e035cae51c84c3a2a
 
    开启蓝牙后，调用[startBLEScan()](../harmonyos-references/js-apis-bluetooth-ble.md#blestartblescan)接口启动BLE扫描流程。扫描时，可通过配置过滤策略集合Array<[ScanFilter](../harmonyos-references/js-apis-bluetooth-ble.md#scanfilter)>和扫描参数[ScanOptions](../harmonyos-references/js-apis-bluetooth-ble.md#scanoptions)，主动扫描发现周围广播中特定类型的低功耗蓝牙设备。
 
-   ```
-   1. /**
-   2. * Start BLE scan with custom filter;
-   3. * @returns `StartBLEScanResult` status code.
-   4. */
-   5. startBLEScan(): StartBLEScanResult {
-   6. clearTimeout(this.mTimeoutID);
-   7. this.mTimeoutID = -1;
-   8. if (!this.isBluetoothEnabled()) {
-   9. Logger.info('startBLEScan: bluetooth is disable');
-   10. this.enableBluetooth();
-   11. return StartBLEScanResult.BLUETOOTH_ENABLING;
-   12. }
-   13. this.onBLEDeviceFind();
-   14. const ret = this.startBLEScanInner();
-   15. if (ret) {
-   16. // BLE Scanning Timeout Protection
-   17. this.startScanTimeoutCountdown();
-   18. }
-   19. return ret ? StartBLEScanResult.SUCCESS : StartBLEScanResult.FAILURE;
-   20. }
-   ```
-
-   [BluetoothClientModel.ets](https://gitcode.com/HarmonyOS_Samples/BluetoothLowEnergy/blob/master/entry/src/main/ets/pages/client/model/BluetoothClientModel.ets#L231-L250)
-
-   ```
-   1. /**
-   2. * Internal helper to start scanning using a custom filter.
-   3. * @returns True if scan started successfully.
-   4. */
-   5. private startBLEScanInner(): boolean {
-   6. try {
-   7. const scanFilter = this.createCustomScanFilter();
-   8. const scanOptions: ble.ScanOptions = {
-   9. interval: 500,
-   10. dutyMode: ble.ScanDuty.SCAN_MODE_LOW_POWER,
-   11. matchMode: ble.MatchMode.MATCH_MODE_AGGRESSIVE
-   12. }
-   13. ble.startBLEScan([scanFilter], scanOptions);
-   14. return true;
-   15. } catch (err) {
-   16. Logger.error(`startBLEScanInner: err = ${JSON.stringify(err)}`);
-   17. }
-   18. return false;
-   19. }
-
-   21. /**
-   22. * Create a custom scan filter that matches the demo server's manufacturer data and service UUID.
-   23. * @returns ble.ScanFilter object.
-   24. */
-   25. private createCustomScanFilter(): ble.ScanFilter {
-   26. // Manufacturer data broadcast by the server.
-   27. const manufactureValueBuffer: Uint8Array = new Uint8Array([1, 2, 3, 4]);
-   28. // Mask: 0xFF means match required, 0x00 means ignore that position.
-   29. const manufactureDataMask: Uint8Array = new Uint8Array([0xFF, 0xFF, 0x00, 0x00]);
-   30. const scanFilter: ble.ScanFilter = {
-   31. serviceUuid: BLE_SERVICE_UUID,
-   32. manufactureId: CUSTOM_MANUFACTURE_ID,
-   33. manufactureData: manufactureValueBuffer.buffer,
-   34. manufactureDataMask: manufactureDataMask.buffer
-   35. }
-   36. return scanFilter;
-   37. }
+   ```typescript
+   /**
+    * Start BLE scan with custom filter;
+    * @returns `StartBLEScanResult` status code.
+    */
+   startBLEScan(): StartBLEScanResult {
+     clearTimeout(this.mTimeoutID);
+     this.mTimeoutID = -1;
+     if (!this.isBluetoothEnabled()) {
+       Logger.info('startBLEScan: bluetooth is disable');
+       this.enableBluetooth();
+       return StartBLEScanResult.BLUETOOTH_ENABLING;
+     }
+     this.onBLEDeviceFind();
+     const ret = this.startBLEScanInner();
+     if (ret) {
+       // BLE Scanning Timeout Protection
+       this.startScanTimeoutCountdown();
+     }
+     return ret ? StartBLEScanResult.SUCCESS : StartBLEScanResult.FAILURE;
+   }
    ```
 
-   [BluetoothClientModel.ets](https://gitcode.com/HarmonyOS_Samples/BluetoothLowEnergy/blob/master/entry/src/main/ets/pages/client/model/BluetoothClientModel.ets#L744-L780)
+   ```typescript
+   /**
+    * Internal helper to start scanning using a custom filter.
+    * @returns True if scan started successfully.
+    */
+   private startBLEScanInner(): boolean {
+     try {
+       const scanFilter = this.createCustomScanFilter();
+       const scanOptions: ble.ScanOptions = {
+         interval: 500,
+         dutyMode: ble.ScanDuty.SCAN_MODE_LOW_POWER,
+         matchMode: ble.MatchMode.MATCH_MODE_AGGRESSIVE
+       }
+       ble.startBLEScan([scanFilter], scanOptions);
+       return true;
+     } catch (err) {
+       Logger.error(`startBLEScanInner: err = ${JSON.stringify(err)}`);
+     }
+     return false;
+   }
 
-   说明
+   /**
+    * Create a custom scan filter that matches the demo server's manufacturer data and service UUID.
+    * @returns ble.ScanFilter object.
+    */
+   private createCustomScanFilter(): ble.ScanFilter {
+     // Manufacturer data broadcast by the server.
+     const manufactureValueBuffer: Uint8Array = new Uint8Array([1, 2, 3, 4]);
+     // Mask: 0xFF means match required, 0x00 means ignore that position.
+     const manufactureDataMask: Uint8Array = new Uint8Array([0xFF, 0xFF, 0x00, 0x00]);
+     const scanFilter: ble.ScanFilter = {
+       serviceUuid: BLE_SERVICE_UUID,
+       manufactureId: CUSTOM_MANUFACTURE_ID,
+       manufactureData: manufactureValueBuffer.buffer,
+       manufactureDataMask: manufactureDataMask.buffer
+     }
+     return scanFilter;
+   }
+   ```
+
+   **说明** 
 
    在发起BLE扫描并构建[ScanFilter](../harmonyos-references/js-apis-bluetooth-ble.md#scanfilter)扫描过滤器时，建议根据具体业务需求设定过滤条件，以精准捕获符合特定条件的广播数据包。典型过滤维度包括但不限于：
 
@@ -314,96 +302,90 @@ content_hash: sha256:e303c25bfd9246687394e483e84223e788b1a43be0e035cae51c84c3a2a
 
    onBLEDeviceFind方法中通过[ble.on('BLEDeviceFind')](../harmonyos-references/js-apis-bluetooth-ble.md#bleonbledevicefind)订阅BLE设备扫描结果上报事件，并将扫描到的设备存放到可用设备列表中。
 
-   ```
-   1. /**
-   2. * Device discovery handler; de-duplicates、 update and insert devices.
-   3. * @param arr List of scan results.
-   4. */
-   5. private BLEDeviceFindFunc = (arr: Array<ble.ScanResult>): void => {
-   6. if (!arr.length) {
-   7. return;
-   8. }
-   9. for (const result of arr) {
-   10. let deviceId: string = result.deviceId;
-   11. if (!deviceId) {
-   12. continue;
-   13. }
-   14. let deviceName: string = result.deviceName;
-   15. if (!deviceName) {
-   16. try {
-   17. let data: ArrayBuffer = result.data;
-   18. deviceName = util.TextDecoder.create('utf-8', {
-   19. ignoreBOM: true
-   20. }).decodeToString(new Uint8Array(data), { stream: false });
-   21. } catch (error) {
-   22. Logger.error(`decode deviceName fail: ${JSON.stringify(error)}`);
-   23. }
-   24. }
-   25. this.upsertAvailableDevice(deviceId, deviceName);
-   26. }
-   27. }
+   ```typescript
+   /**
+    * Device discovery handler; de-duplicates、 update and insert devices.
+    * @param arr List of scan results.
+    */
+   private BLEDeviceFindFunc = (arr: Array<ble.ScanResult>): void => {
+     if (!arr.length) {
+       return;
+     }
+     for (const result of arr) {
+       let deviceId: string = result.deviceId;
+       if (!deviceId) {
+         continue;
+       }
+       let deviceName: string = result.deviceName;
+       if (!deviceName) {
+         try {
+           let data: ArrayBuffer = result.data;
+           deviceName = util.TextDecoder.create('utf-8', {
+             ignoreBOM: true
+           }).decodeToString(new Uint8Array(data), { stream: false });
+         } catch (error) {
+           Logger.error(`decode deviceName fail: ${JSON.stringify(error)}`);
+         }
+       }
+       this.upsertAvailableDevice(deviceId, deviceName);
+     }
+   }
 
-   29. /**
-   30. * Subscribe to BLE device discovery events.
-   31. */
-   32. private onBLEDeviceFind() {
-   33. try {
-   34. ble.on('BLEDeviceFind', (arr: Array<ble.ScanResult>) => {
-   35. this.BLEDeviceFindFunc(arr);
-   36. });
-   37. } catch (err) {
-   38. Logger.info(`onBLEDeviceFind: err = ${JSON.stringify(err)}`);
-   39. }
-   40. }
+   /**
+    * Subscribe to BLE device discovery events.
+    */
+   private onBLEDeviceFind() {
+     try {
+       ble.on('BLEDeviceFind', (arr: Array<ble.ScanResult>) => {
+         this.BLEDeviceFindFunc(arr);
+       });
+     } catch (err) {
+       Logger.info(`onBLEDeviceFind: err = ${JSON.stringify(err)}`);
+     }
+   }
    ```
-
-   [BluetoothClientModel.ets](https://gitcode.com/HarmonyOS_Samples/BluetoothLowEnergy/blob/master/entry/src/main/ets/pages/client/model/BluetoothClientModel.ets#L550-L589)
 2. 扫描到设备后，用户选择对应的蓝牙设备进行连接。
 
+   ```typescript
+   /**
+    * Internal helper to connect, set listeners, and update state to CONNECTING.
+    * @param gattClientDevice Target GATT client device.
+    * @returns True if connect() call was issued without throwing.
+    */
+   private connectInner(gattClientDevice: ble.GattClientDevice): boolean {
+     try {
+       if (!gattClientDevice) {
+         return false;
+       }
+       this.onBLEConnectionStateChange();
+       this.onBLECharacteristicChange();
+       this.markConnectionState(ConnectionState.STATE_CONNECTING);
+       gattClientDevice.connect();
+       return true;
+     } catch (err) {
+       Logger.error(`connectInner: err = ${JSON.stringify(err)}`);
+       return false;
+     }
+   }
    ```
-   1. /**
-   2. * Internal helper to connect, set listeners, and update state to CONNECTING.
-   3. * @param gattClientDevice Target GATT client device.
-   4. * @returns True if connect() call was issued without throwing.
-   5. */
-   6. private connectInner(gattClientDevice: ble.GattClientDevice): boolean {
-   7. try {
-   8. if (!gattClientDevice) {
-   9. return false;
-   10. }
-   11. this.onBLEConnectionStateChange();
-   12. this.onBLECharacteristicChange();
-   13. this.markConnectionState(ConnectionState.STATE_CONNECTING);
-   14. gattClientDevice.connect();
-   15. return true;
-   16. } catch (err) {
-   17. Logger.error(`connectInner: err = ${JSON.stringify(err)}`);
-   18. return false;
-   19. }
-   20. }
-   ```
-
-   [BluetoothClientModel.ets](https://gitcode.com/HarmonyOS_Samples/BluetoothLowEnergy/blob/master/entry/src/main/ets/pages/client/model/BluetoothClientModel.ets#L797-L816)
 3. 根据具体业务需求，在适当时机调用[stopBLEScan()](../harmonyos-references/js-apis-bluetooth-ble.md#blestopblescan)接口停止蓝牙扫描。
 
-   ```
-   1. /**
-   2. * Stop BLE scanning and remove discovery callbacks.
-   3. * @returns `StopBLEScanResult` status code.
-   4. */
-   5. stopBLEScan(): StopBLEScanResult {
-   6. clearTimeout(this.mTimeoutID);
-   7. this.mTimeoutID = -1;
-   8. this.offBLEDeviceFind();
-   9. // This method calls ble.stopBLEScan() to stop the BLE scan.
-   10. const ret = this.stopBLEScanInner();
-   11. return ret ? StopBLEScanResult.SUCCESS : StopBLEScanResult.FAILURE;
-   12. }
+   ```typescript
+   /**
+    * Stop BLE scanning and remove discovery callbacks.
+    * @returns `StopBLEScanResult` status code.
+    */
+   stopBLEScan(): StopBLEScanResult {
+     clearTimeout(this.mTimeoutID);
+     this.mTimeoutID = -1;
+     this.offBLEDeviceFind();
+     // This method calls ble.stopBLEScan() to stop the BLE scan.
+     const ret = this.stopBLEScanInner();
+     return ret ? StopBLEScanResult.SUCCESS : StopBLEScanResult.FAILURE;
+   }
    ```
 
-   [BluetoothClientModel.ets](https://gitcode.com/HarmonyOS_Samples/BluetoothLowEnergy/blob/master/entry/src/main/ets/pages/client/model/BluetoothClientModel.ets#L254-L265)
-
-注意
+**注意** 
 
 为优化资源利用并降低功耗，应及时停止BLE扫描/广播，其合理时机包括但不限于：
 
@@ -448,86 +430,82 @@ content_hash: sha256:e303c25bfd9246687394e483e84223e788b1a43be0e035cae51c84c3a2a
 
    服务端需先监听系统蓝牙开关状态，确保在蓝牙开启时提供BLE服务。若蓝牙被关闭，服务端应及时释放GATT服务资源，避免资源浪费和异常状态。
 
-   ```
-   1. /**
-   2. * Internal: Bluetooth adapter state change handler to reflect enable/disable.
-   3. * @param data Current Bluetooth state.
-   4. */
-   5. private stateChangeFunc = (data: access.BluetoothState): void => {
-   6. if (data === access.BluetoothState.STATE_ON) {
-   7. this.cachedBluetoothEnable = true;
-   8. this.notifyBluetoothEnableChanged(true);
-   9. } else if (data === access.BluetoothState.STATE_OFF) {
-   10. this.cachedBluetoothEnable = false;
-   11. this.notifyBluetoothEnableChanged(false);
-   12. this.notifyEnabledMap.clear();
-   13. this.cachedDeviceId = '';
-   14. this.notifyDeviceIdChanged();
-   15. }
-   16. }
+   ```typescript
+   /**
+    * Internal: Bluetooth adapter state change handler to reflect enable/disable.
+    * @param data Current Bluetooth state.
+    */
+   private stateChangeFunc = (data: access.BluetoothState): void => {
+     if (data === access.BluetoothState.STATE_ON) {
+       this.cachedBluetoothEnable = true;
+       this.notifyBluetoothEnableChanged(true);
+     } else if (data === access.BluetoothState.STATE_OFF) {
+       this.cachedBluetoothEnable = false;
+       this.notifyBluetoothEnableChanged(false);
+       this.notifyEnabledMap.clear();
+       this.cachedDeviceId = '';
+       this.notifyDeviceIdChanged();
+     }
+   }
 
-   18. /**
-   19. * Register Bluetooth state change listener.
-   20. */
-   21. private onBTStateChange() {
-   22. if (this.isStateChangeListening) {
-   23. return;
-   24. }
-   25. try {
-   26. access.on('stateChange', this.stateChangeFunc);
-   27. this.isStateChangeListening = true;
-   28. } catch (err) {
-   29. this.isStateChangeListening = false;
-   30. Logger.error(`onBTSateChange: err = ${JSON.stringify(err)}`);
-   31. }
-   32. }
+   /**
+    * Register Bluetooth state change listener.
+    */
+   private onBTStateChange() {
+     if (this.isStateChangeListening) {
+       return;
+     }
+     try {
+       access.on('stateChange', this.stateChangeFunc);
+       this.isStateChangeListening = true;
+     } catch (err) {
+       this.isStateChangeListening = false;
+       Logger.error(`onBTSateChange: err = ${JSON.stringify(err)}`);
+     }
+   }
    ```
-
-   [BluetoothServerModel.ets](https://gitcode.com/HarmonyOS_Samples/BluetoothLowEnergy/blob/master/entry/src/main/ets/pages/server/model/BluetoothServerModel.ets#L262-L293)
 2. 调用[on('connectionStateChange')](../harmonyos-references/js-apis-bluetooth-ble.md#onconnectionstatechange)订阅GATT profile协议的连接状态变化事件。
 
    服务端通过GATT服务器实例监听连接状态变化，当有设备连接或断开时，更新内部状态并通知UI层。特别地，在设备连接成功时，服务端记录客户端的设备ID，为后续数据传输（如心率通知）做准备；在设备断开时，清理相关状态，并提供友好的断连提示。
 
-   ```
-   1. /**
-   2. * Internal: Connection state change handler to track the connected device id.
-   3. * @param data Connection state payload.
-   4. */
-   5. private connectionStateChangeFunc = (data: ble.BLEConnectionChangeState): void => {
-   6. if (data) {
-   7. if (data.state === constant.ProfileConnectionState.STATE_CONNECTED) {
-   8. let deviceId = data.deviceId;
-   9. this.notifyEnabledMap.set(deviceId, false);
-   10. this.cachedDeviceId = deviceId;
-   11. this.notifyDeviceIdChanged();
-   12. } else if (data.state === constant.ProfileConnectionState.STATE_DISCONNECTED) {
-   13. const deviceId = data.deviceId;
-   14. this.notifyEnabledMap.delete(deviceId);
-   15. this.cachedDeviceId = '';
-   16. this.notifyDeviceIdChanged();
-   17. CommonUtils.showToast(CommonUtils.getUIContext(), $r('app.string.disconnection_prompt'));
-   18. }
-   19. }
-   20. }
+   ```typescript
+   /**
+    * Internal: Connection state change handler to track the connected device id.
+    * @param data Connection state payload.
+    */
+   private connectionStateChangeFunc = (data: ble.BLEConnectionChangeState): void => {
+     if (data) {
+       if (data.state === constant.ProfileConnectionState.STATE_CONNECTED) {
+         let deviceId = data.deviceId;
+         this.notifyEnabledMap.set(deviceId, false);
+         this.cachedDeviceId = deviceId;
+         this.notifyDeviceIdChanged();
+       } else if (data.state === constant.ProfileConnectionState.STATE_DISCONNECTED) {
+         const deviceId = data.deviceId;
+         this.notifyEnabledMap.delete(deviceId);
+         this.cachedDeviceId = '';
+         this.notifyDeviceIdChanged();
+         CommonUtils.showToast(CommonUtils.getUIContext(), $r('app.string.disconnection_prompt'));
+       }
+     }
+   }
 
-   22. /**
-   23. * Register connection state change listener on GATT server.
-   24. */
-   25. private onConnectStateChange() {
-   26. if (!this.mGattServer || this.isConnectStateChangeListening) {
-   27. return;
-   28. }
-   29. try {
-   30. this.mGattServer.on('connectionStateChange', this.connectionStateChangeFunc);
-   31. this.isConnectStateChangeListening = true;
-   32. } catch (err) {
-   33. Logger.error(`connectInner: err = ${JSON.stringify(err)}`);
-   34. this.isConnectStateChangeListening = false;
-   35. }
-   36. }
+   /**
+    * Register connection state change listener on GATT server.
+    */
+   private onConnectStateChange() {
+     if (!this.mGattServer || this.isConnectStateChangeListening) {
+       return;
+     }
+     try {
+       this.mGattServer.on('connectionStateChange', this.connectionStateChangeFunc);
+       this.isConnectStateChangeListening = true;
+     } catch (err) {
+       Logger.error(`connectInner: err = ${JSON.stringify(err)}`);
+       this.isConnectStateChangeListening = false;
+     }
+   }
    ```
-
-   [BluetoothServerModel.ets](https://gitcode.com/HarmonyOS_Samples/BluetoothLowEnergy/blob/master/entry/src/main/ets/pages/server/model/BluetoothServerModel.ets#L313-L348)
 
 **客户端**
 
@@ -535,157 +513,149 @@ content_hash: sha256:e303c25bfd9246687394e483e84223e788b1a43be0e035cae51c84c3a2a
 
    客户端需监听蓝牙开关状态，蓝牙开启时自动触发设备扫描流程，避免用户手动操作；蓝牙关闭时，清理已发现设备列表及当前连接状态，防止UI显示不一致。此主动状态管理确保应用行为与系统蓝牙状态同步，提供流畅的用户体验。
 
-   ```
-   1. /**
-   2. * Bluetooth adapter state change listener.
-   3. * @param data New Bluetooth state.
-   4. */
-   5. private stateChangeFunc = (data: access.BluetoothState): void => {
-   6. if (data === access.BluetoothState.STATE_ON) {
-   7. this.bluetoothEnabled = true;
-   8. this.notifyBluetoothStateChanged(true);
-   9. this.startBLEScan();
-   10. } else if (data === access.BluetoothState.STATE_OFF) {
-   11. // Clear discovered device list and current connection status.
-   12. // ...
-   13. }
-   14. }
+   ```typescript
+   /**
+    * Bluetooth adapter state change listener.
+    * @param data New Bluetooth state.
+    */
+   private stateChangeFunc = (data: access.BluetoothState): void => {
+     if (data === access.BluetoothState.STATE_ON) {
+       this.bluetoothEnabled = true;
+       this.notifyBluetoothStateChanged(true);
+       this.startBLEScan();
+     } else if (data === access.BluetoothState.STATE_OFF) {
+       // Clear discovered device list and current connection status.
+       // ...
+     }
+   }
 
-   16. /**
-   17. * Subscribe to Bluetooth adapter state changes.
-   18. */
-   19. private subscribeBTStateChange() {
-   20. if (this.isBTStateChangeSubscribed) {
-   21. return;
-   22. }
-   23. try {
-   24. access.on('stateChange', this.stateChangeFunc);
-   25. this.isBTStateChangeSubscribed = true;
-   26. } catch (err) {
-   27. this.isBTStateChangeSubscribed = false;
-   28. Logger.error(`onBTSateChange: err = ${JSON.stringify(err)}`);
-   29. }
-   30. }
+   /**
+    * Subscribe to Bluetooth adapter state changes.
+    */
+   private subscribeBTStateChange() {
+     if (this.isBTStateChangeSubscribed) {
+       return;
+     }
+     try {
+       access.on('stateChange', this.stateChangeFunc);
+       this.isBTStateChangeSubscribed = true;
+     } catch (err) {
+       this.isBTStateChangeSubscribed = false;
+       Logger.error(`onBTSateChange: err = ${JSON.stringify(err)}`);
+     }
+   }
    ```
-
-   [BluetoothClientModel.ets](https://gitcode.com/HarmonyOS_Samples/BluetoothLowEnergy/blob/master/entry/src/main/ets/pages/client/model/BluetoothClientModel.ets#L490-L530)
 2. 使用[on('BLEConnectionStateChange')](../harmonyos-references/js-apis-bluetooth-ble.md#onbleconnectionstatechange)订阅GATT profile协议的连接状态变化事件，并调用[addPersistentDeviceId()](../harmonyos-references/js-apis-bluetooth-access.md#accessaddpersistentdeviceid16)方法持久化存储蓝牙设备的虚拟MAC地址。
 
    客户端通过GattClientDevice实例监听连接状态变化，当连接成功时，将对端设备的虚拟MAC地址通过[addPersistentDeviceId()](../harmonyos-references/js-apis-bluetooth-access.md#accessaddpersistentdeviceid16)接口固化到系统存储中。这一步骤至关重要，它使应用在下次启动时无需重新扫描，可直接使用已保存的设备ID发起连接，显著提升连接效率。同时，客户端还将启用特征值通知功能，为后续数据传输做准备。
 
-   ```
-   1. /**
-   2. * Handler for connection state changes emitted by ble.GattClientDevice.
-   3. * @param data BLE connection state payload.
-   4. */
-   5. private BLEConnectionStateChangeFunc = async (data: ble.BLEConnectionChangeState): Promise<void> => {
-   6. let state: constant.ProfileConnectionState = data.state;
-   7. if (data) {
-   8. if (state === constant.ProfileConnectionState.STATE_CONNECTED) {
-   9. await this.handleGattConnected();
-   10. } else if (state === constant.ProfileConnectionState.STATE_DISCONNECTED) {
-   11. this.handleGattDisconnected();
-   12. Logger.warn(`GATT link disconnected. GattDisconnectReason reason code: ${data.reason}`);
-   13. } else if (state === constant.ProfileConnectionState.STATE_CONNECTING) {
-   14. Logger.info(`GATT link is connecting.`);
-   15. }
-   16. }
-   17. }
-   ```
-
-   [BluetoothClientModel.ets](https://gitcode.com/HarmonyOS_Samples/BluetoothLowEnergy/blob/master/entry/src/main/ets/pages/client/model/BluetoothClientModel.ets#L87-L103)
-
-   ```
-   1. /**
-   2. * Subscribe to connection state changes on the current GATT client device.
-   3. */
-   4. private onBLEConnectionStateChange() {
-   5. if (!this.mGattClientDevice) {
-   6. return;
-   7. }
-   8. try {
-   9. this.mGattClientDevice.on('BLEConnectionStateChange', this.BLEConnectionStateChangeFunc);
-   10. } catch (err) {
-   11. Logger.error(`onBLEConnectionStateChange: err = ${JSON.stringify(err)}`);
-   12. }
-   13. }
-
-   15. /**
-   16. * Handle successful GATT connection: update state, persist device and enable notifications.
-   17. */
-   18. private async handleGattConnected(): Promise<void> {
-   19. this.markConnectionState(ConnectionState.STATE_CONNECTED);
-   20. this.mLastConnectedDevice = this.cloneDevice(this.mConnectBluetoothDevice);
-   21. this.notifyLastConnectedDeviceChanged();
-   22. this.savePersistentDeviceId(this.mConnectBluetoothDevice.deviceId);
-   23. // Stop scanning after connection.
-   24. this.stopBLEScan();
-   25. await this.enableHeartRateNotification();
-   26. }
-
-   28. /**
-   29. * Save a random device id to system persistent list if valid and not already saved.
-   30. * @param deviceId Random device address to persist.
-   31. */
-   32. private savePersistentDeviceId(deviceId: string | undefined) {
-   33. // Validate whether the deviceId to be persisted is legal.
-   34. // ...
-   35. access.addPersistentDeviceId(deviceId)
-   36. .then(() => {
-   37. this.syncPersistentDeviceIds();
-   38. })
-   39. .catch((err: BusinessError) => {
-   40. Logger.warn(`Failed to persist Bluetooth device virtual MAC address, error info: ${JSON.stringify(err)}`)
-   41. })
-   42. }
+   ```typescript
+   /**
+    * Handler for connection state changes emitted by ble.GattClientDevice.
+    * @param data BLE connection state payload.
+    */
+   private BLEConnectionStateChangeFunc = async (data: ble.BLEConnectionChangeState): Promise<void> => {
+     let state: constant.ProfileConnectionState = data.state;
+     if (data) {
+       if (state === constant.ProfileConnectionState.STATE_CONNECTED) {
+         await this.handleGattConnected();
+       } else if (state === constant.ProfileConnectionState.STATE_DISCONNECTED) {
+         this.handleGattDisconnected();
+         Logger.warn(`GATT link disconnected. GattDisconnectReason reason code: ${data.reason}`);
+       } else if (state === constant.ProfileConnectionState.STATE_CONNECTING) {
+         Logger.info(`GATT link is connecting.`);
+       }
+     }
+   }
    ```
 
-   [BluetoothClientModel.ets](https://gitcode.com/HarmonyOS_Samples/BluetoothLowEnergy/blob/master/entry/src/main/ets/pages/client/model/BluetoothClientModel.ets#L604-L666)
+   ```typescript
+   /**
+    * Subscribe to connection state changes on the current GATT client device.
+    */
+   private onBLEConnectionStateChange() {
+     if (!this.mGattClientDevice) {
+       return;
+     }
+     try {
+       this.mGattClientDevice.on('BLEConnectionStateChange', this.BLEConnectionStateChangeFunc);
+     } catch (err) {
+       Logger.error(`onBLEConnectionStateChange: err = ${JSON.stringify(err)}`);
+     }
+   }
+
+   /**
+    * Handle successful GATT connection: update state, persist device and enable notifications.
+    */
+   private async handleGattConnected(): Promise<void> {
+     this.markConnectionState(ConnectionState.STATE_CONNECTED);
+     this.mLastConnectedDevice = this.cloneDevice(this.mConnectBluetoothDevice);
+     this.notifyLastConnectedDeviceChanged();
+     this.savePersistentDeviceId(this.mConnectBluetoothDevice.deviceId);
+     // Stop scanning after connection.
+     this.stopBLEScan();
+     await this.enableHeartRateNotification();
+   }
+
+   /**
+    * Save a random device id to system persistent list if valid and not already saved.
+    * @param deviceId Random device address to persist.
+    */
+   private savePersistentDeviceId(deviceId: string | undefined) {
+     // Validate whether the deviceId to be persisted is legal.
+     // ...
+     access.addPersistentDeviceId(deviceId)
+       .then(() => {
+         this.syncPersistentDeviceIds();
+       })
+       .catch((err: BusinessError) => {
+         Logger.warn(`Failed to persist Bluetooth device virtual MAC address, error info: ${JSON.stringify(err)}`)
+       })
+   }
+   ```
 3. 使用[getPersistentDeviceIds()](../harmonyos-references/js-apis-bluetooth-access.md#accessgetpersistentdeviceids16)方法获取应用持久化存储过的蓝牙虚拟MAC地址，实现BLE自动重连。
 
    当应用启动或页面重新显示时，客户端会从系统获取所有持久化的设备ID，优先尝试与最近连接的设备建立连接。同时会自动处理连接超时和失败重试逻辑，并在UI上提供连接状态反馈。这一机制实现了快速回连体验，用户无需记忆上次连接的设备，也无需重复扫描配对操作，显著提升了应用的易用性。同时，连接失败时会自动清理无效的持久化ID，确保下次启动时不会尝试连接无效设备。
 
+   ```typescript
+   /**
+    * Try to auto-reconnect using system persistent device ids.
+    * Only attempts the first id to keep behavior predictable.
+    * @returns True if a connection attempt was initiated.
+    */
+   async tryAutoReconnect(): Promise<boolean> {
+     // Prevent multiple concurrent reconnection attempts
+     let isReconnecting: boolean = false;
+     if (this.mIsAutoReconnecting) {
+       return isReconnecting;
+     }
+     this.mIsAutoReconnecting = true;
+     try {
+       // Retrieves the previously persisted Bluetooth virtual MAC addresses by calling the `getPersistentDeviceIds()` method.
+       const ids = this.syncPersistentDeviceIds();
+       // ...
+       // Get the most recent device ID
+       const targetId = ids[0];
+       // Retrieve device name and update UI state related
+       // ...
+       try {
+         this.mGattClientDevice = ble.createGattClientDevice(targetId);
+         const ret = this.connectInner(this.mGattClientDevice);
+         isReconnecting = ret;
+         if (!ret) {
+           this.resetConnectionState();
+         }
+       } catch (error) {
+         Logger.error(`BluetoothClientModel, createGattClientDevice failed, error info: ${JSON.stringify(error)}`);
+       }
+     } catch (error) {
+       Logger.error(`[BluetoothClientModel.tryAutoReconnect] ${JSON.stringify(error)}`);
+     } finally {
+       this.mIsAutoReconnecting = false;
+     }
+     return isReconnecting;
+   }
    ```
-   1. /**
-   2. * Try to auto-reconnect using system persistent device ids.
-   3. * Only attempts the first id to keep behavior predictable.
-   4. * @returns True if a connection attempt was initiated.
-   5. */
-   6. async tryAutoReconnect(): Promise<boolean> {
-   7. // Prevent multiple concurrent reconnection attempts
-   8. let isReconnecting: boolean = false;
-   9. if (this.mIsAutoReconnecting) {
-   10. return isReconnecting;
-   11. }
-   12. this.mIsAutoReconnecting = true;
-   13. try {
-   14. // Retrieves the previously persisted Bluetooth virtual MAC addresses by calling the `getPersistentDeviceIds()` method.
-   15. const ids = this.syncPersistentDeviceIds();
-   16. // ...
-   17. // Get the most recent device ID
-   18. const targetId = ids[0];
-   19. // Retrieve device name and update UI state related
-   20. // ...
-   21. try {
-   22. this.mGattClientDevice = ble.createGattClientDevice(targetId);
-   23. const ret = this.connectInner(this.mGattClientDevice);
-   24. isReconnecting = ret;
-   25. if (!ret) {
-   26. this.resetConnectionState();
-   27. }
-   28. } catch (error) {
-   29. Logger.error(`BluetoothClientModel, createGattClientDevice failed, error info: ${JSON.stringify(error)}`);
-   30. }
-   31. } catch (error) {
-   32. Logger.error(`[BluetoothClientModel.tryAutoReconnect] ${JSON.stringify(error)}`);
-   33. } finally {
-   34. this.mIsAutoReconnecting = false;
-   35. }
-   36. return isReconnecting;
-   37. }
-   ```
-
-   [BluetoothClientModel.ets](https://gitcode.com/HarmonyOS_Samples/BluetoothLowEnergy/blob/master/entry/src/main/ets/pages/client/model/BluetoothClientModel.ets#L127-L177)
 
 ## 蓝牙设备特征值同步
 
@@ -731,160 +701,152 @@ content_hash: sha256:e303c25bfd9246687394e483e84223e788b1a43be0e035cae51c84c3a2a
 
 1. 调用[notifyCharacteristicChanged()](../harmonyos-references/js-apis-bluetooth-ble.md#notifycharacteristicchanged)，特征值发生变化时，主动通知已连接的客户端设备。
 
+   ```typescript
+   /**
+    * Notify a connected client with a heart rate value.
+    * @param deviceId Target device random address.
+    * @param heartRate Heart rate (bpm) to send.
+    */
+   notifyCharacteristicChanged(deviceId: string, heartRate: number) {
+     // Validate deviceId and GattServer for legitimacy
+     // ...
+     const sanitizedHeartRate = Math.max(0, Math.min(255, heartRate));
+     const notifyCharacteristic: ble.NotifyCharacteristic = {
+       serviceUuid: BLE_SERVICE_UUID,
+       characteristicUuid: BLE_CHARACTERISTIC_UUID,
+       characteristicValue: CommonUtils.byteArray2ArrayBuffer([0x00, sanitizedHeartRate]),
+       confirm: false
+     }
+     this.mGattServer.notifyCharacteristicChanged(deviceId, notifyCharacteristic, (err: BusinessError) => {
+       if (err) {
+         Logger.error(`notifyCharacteristicChanged callback failed: err = ${JSON.stringify(err)}`);
+       } else {
+         Logger.info(`[BluetoothServerModel] Heart rate notify success, device=${deviceId}, value=${sanitizedHeartRate}`);
+       }
+     })
+   }
    ```
-   1. /**
-   2. * Notify a connected client with a heart rate value.
-   3. * @param deviceId Target device random address.
-   4. * @param heartRate Heart rate (bpm) to send.
-   5. */
-   6. notifyCharacteristicChanged(deviceId: string, heartRate: number) {
-   7. // Validate deviceId and GattServer for legitimacy
-   8. // ...
-   9. const sanitizedHeartRate = Math.max(0, Math.min(255, heartRate));
-   10. const notifyCharacteristic: ble.NotifyCharacteristic = {
-   11. serviceUuid: BLE_SERVICE_UUID,
-   12. characteristicUuid: BLE_CHARACTERISTIC_UUID,
-   13. characteristicValue: CommonUtils.byteArray2ArrayBuffer([0x00, sanitizedHeartRate]),
-   14. confirm: false
-   15. }
-   16. this.mGattServer.notifyCharacteristicChanged(deviceId, notifyCharacteristic, (err: BusinessError) => {
-   17. if (err) {
-   18. Logger.error(`notifyCharacteristicChanged callback failed: err = ${JSON.stringify(err)}`);
-   19. } else {
-   20. Logger.info(`[BluetoothServerModel] Heart rate notify success, device=${deviceId}, value=${sanitizedHeartRate}`);
-   21. }
-   22. })
-   23. }
-   ```
-
-   [BluetoothServerModel.ets](https://gitcode.com/HarmonyOS_Samples/BluetoothLowEnergy/blob/master/entry/src/main/ets/pages/server/model/BluetoothServerModel.ets#L210-L244)
 
 **客户端**
 
 1. 调用[setCharacteristicChangeNotification()](../harmonyos-references/js-apis-bluetooth-ble.md#setcharacteristicchangenotification)接口，向服务端发送设置通知此特征值请求。
 
-   ```
-   1. /**
-   2. * Handler for connection state changes emitted by ble.GattClientDevice.
-   3. * @param data BLE connection state payload.
-   4. */
-   5. private BLEConnectionStateChangeFunc = async (data: ble.BLEConnectionChangeState): Promise<void> => {
-   6. let state: constant.ProfileConnectionState = data.state;
-   7. if (data) {
-   8. if (state === constant.ProfileConnectionState.STATE_CONNECTED) {
-   9. await this.handleGattConnected();
-   10. } else if (state === constant.ProfileConnectionState.STATE_DISCONNECTED) {
-   11. this.handleGattDisconnected();
-   12. Logger.warn(`GATT link disconnected. GattDisconnectReason reason code: ${data.reason}`);
-   13. } else if (state === constant.ProfileConnectionState.STATE_CONNECTING) {
-   14. Logger.info(`GATT link is connecting.`);
-   15. }
-   16. }
-   17. }
-   ```
-
-   [BluetoothClientModel.ets](https://gitcode.com/HarmonyOS_Samples/BluetoothLowEnergy/blob/master/entry/src/main/ets/pages/client/model/BluetoothClientModel.ets#L87-L103)
-
-   ```
-   1. /**
-   2. * Subscribe to connection state changes on the current GATT client device.
-   3. */
-   4. private onBLEConnectionStateChange() {
-   5. if (!this.mGattClientDevice) {
-   6. return;
-   7. }
-   8. try {
-   9. this.mGattClientDevice.on('BLEConnectionStateChange', this.BLEConnectionStateChangeFunc);
-   10. } catch (err) {
-   11. Logger.error(`onBLEConnectionStateChange: err = ${JSON.stringify(err)}`);
-   12. }
-   13. }
-
-   15. /**
-   16. * Handle successful GATT connection: update state, persist device and enable notifications.
-   17. */
-   18. private async handleGattConnected(): Promise<void> {
-   19. // ...
-   20. // Stop scanning after connection.
-   21. this.stopBLEScan();
-   22. await this.enableHeartRateNotification();
-   23. }
-
-   25. // ...
-
-   27. /**
-   28. * Enable heart rate notifications by toggling notification and writing CCC descriptor.
-   29. */
-   30. private async enableHeartRateNotification(): Promise<void> {
-   31. const device = this.mGattClientDevice;
-   32. if (!device) {
-   33. Logger.warn('[BluetoothClientModel.enableHeartRateNotification] GATT client device unavailable.');
-   34. return;
-   35. }
-   36. try {
-   37. const services: ble.GattService[] = await device.getServices();
-   38. // Perform filtering operations to precisely locate target characteristic values and their configuration descriptors within the GATT service structure
-   39. // ...
-   40. const descriptorObj: BLEDescriptor = {
-   41. serviceUuid: descriptor.serviceUuid,
-   42. characteristicUuid: descriptor.characteristicUuid,
-   43. descriptorUuid: descriptor.descriptorUuid,
-   44. descriptorValue: CommonUtils.byteArray2ArrayBuffer([0x01, 0x00])
-   45. };
-   46. device.setCharacteristicChangeNotification(characteristic, true, (err: BusinessError) => {
-   47. if (err) {
-   48. Logger.error(`NotifyCharacteristicChanged callback failed, error info: ${JSON.stringify(err)}`)
-   49. } else {
-   50. device.writeDescriptorValue(descriptorObj).then(() => {
-   51. Logger.info(`The descriptor for the BLE peripheral device has been successfully written.`);
-   52. }).catch(() => {
-   53. Logger.warn(`Failed to writes the descriptor of a BLE peripheral device.`);
-   54. })
-   55. }
-   56. });
-   57. Logger.info('[BluetoothClientModel.enableHeartRateNotification] Notification enabled successfully.');
-   58. } catch (error) {
-   59. Logger.error(`BluetoothClientModel, enableHeartRateNotification failed, error info:${JSON.stringify(error)}`);
-   60. }
-   61. }
+   ```typescript
+   /**
+    * Handler for connection state changes emitted by ble.GattClientDevice.
+    * @param data BLE connection state payload.
+    */
+   private BLEConnectionStateChangeFunc = async (data: ble.BLEConnectionChangeState): Promise<void> => {
+     let state: constant.ProfileConnectionState = data.state;
+     if (data) {
+       if (state === constant.ProfileConnectionState.STATE_CONNECTED) {
+         await this.handleGattConnected();
+       } else if (state === constant.ProfileConnectionState.STATE_DISCONNECTED) {
+         this.handleGattDisconnected();
+         Logger.warn(`GATT link disconnected. GattDisconnectReason reason code: ${data.reason}`);
+       } else if (state === constant.ProfileConnectionState.STATE_CONNECTING) {
+         Logger.info(`GATT link is connecting.`);
+       }
+     }
+   }
    ```
 
-   [BluetoothClientModel.ets](https://gitcode.com/HarmonyOS_Samples/BluetoothLowEnergy/blob/master/entry/src/main/ets/pages/client/model/BluetoothClientModel.ets#L605-L726)
+   ```typescript
+   /**
+    * Subscribe to connection state changes on the current GATT client device.
+    */
+   private onBLEConnectionStateChange() {
+     if (!this.mGattClientDevice) {
+       return;
+     }
+     try {
+       this.mGattClientDevice.on('BLEConnectionStateChange', this.BLEConnectionStateChangeFunc);
+     } catch (err) {
+       Logger.error(`onBLEConnectionStateChange: err = ${JSON.stringify(err)}`);
+     }
+   }
+
+   /**
+    * Handle successful GATT connection: update state, persist device and enable notifications.
+    */
+   private async handleGattConnected(): Promise<void> {
+     // ...
+     // Stop scanning after connection.
+     this.stopBLEScan();
+     await this.enableHeartRateNotification();
+   }
+
+   // ...
+
+   /**
+    * Enable heart rate notifications by toggling notification and writing CCC descriptor.
+    */
+   private async enableHeartRateNotification(): Promise<void> {
+     const device = this.mGattClientDevice;
+     if (!device) {
+       Logger.warn('[BluetoothClientModel.enableHeartRateNotification] GATT client device unavailable.');
+       return;
+     }
+     try {
+       const services: ble.GattService[] = await device.getServices();
+       // Perform filtering operations to precisely locate target characteristic values and their configuration descriptors within the GATT service structure
+       // ...
+       const descriptorObj: BLEDescriptor = {
+         serviceUuid: descriptor.serviceUuid,
+         characteristicUuid: descriptor.characteristicUuid,
+         descriptorUuid: descriptor.descriptorUuid,
+         descriptorValue: CommonUtils.byteArray2ArrayBuffer([0x01, 0x00])
+       };
+       device.setCharacteristicChangeNotification(characteristic, true, (err: BusinessError) => {
+         if (err) {
+           Logger.error(`NotifyCharacteristicChanged callback failed, error info: ${JSON.stringify(err)}`)
+         } else {
+           device.writeDescriptorValue(descriptorObj).then(() => {
+             Logger.info(`The descriptor for the BLE peripheral device has been successfully written.`);
+           }).catch(() => {
+             Logger.warn(`Failed to writes the descriptor of a BLE peripheral device.`);
+           })
+         }
+       });
+       Logger.info('[BluetoothClientModel.enableHeartRateNotification] Notification enabled successfully.');
+     } catch (error) {
+       Logger.error(`BluetoothClientModel, enableHeartRateNotification failed, error info:${JSON.stringify(error)}`);
+     }
+   }
+   ```
 2. 订阅蓝牙低功耗设备的特征值变化事件[on('BLECharacteristicChange')](../harmonyos-references/js-apis-bluetooth-ble.md#onblecharacteristicchange)。需要先调用[setCharacteristicChangeNotification()](../harmonyos-references/js-apis-bluetooth-ble.md#setcharacteristicchangenotification)接口或[setCharacteristicChangeIndication()](../harmonyos-references/js-apis-bluetooth-ble.md#setcharacteristicchangeindication)接口才能接收server端的通知。
 
-   ```
-   1. /**
-   2. * Characteristic change handler that parses a simple HR Measurement (Flags, HR).
-   3. * @param data Characteristic payload event.
-   4. */
-   5. private BLECharacteristicChangeFunc = (data: ble.BLECharacteristic): void => {
-   6. let characteristicValue: ArrayBuffer = data.characteristicValue;
-   7. let byteArr = CommonUtils.arrayBuffer2ByteArray(characteristicValue);
-   8. if (!byteArr || byteArr.length < 2) {
-   9. Logger.warn(`[BluetoothClientModel.BLECharacteristicChangeFunc] Invalid heart rate payload: ${JSON.stringify(byteArr)}`);
-   10. return;
-   11. }
-   12. let heartRate = byteArr[1];
-   13. this.currentHeartRate = heartRate;
-   14. this.notifyHeartRateChanged(heartRate);
-   15. }
+   ```typescript
+   /**
+    * Characteristic change handler that parses a simple HR Measurement (Flags, HR).
+    * @param data Characteristic payload event.
+    */
+   private BLECharacteristicChangeFunc = (data: ble.BLECharacteristic): void => {
+     let characteristicValue: ArrayBuffer = data.characteristicValue;
+     let byteArr = CommonUtils.arrayBuffer2ByteArray(characteristicValue);
+     if (!byteArr || byteArr.length < 2) {
+       Logger.warn(`[BluetoothClientModel.BLECharacteristicChangeFunc] Invalid heart rate payload: ${JSON.stringify(byteArr)}`);
+       return;
+     }
+     let heartRate = byteArr[1];
+     this.currentHeartRate = heartRate;
+     this.notifyHeartRateChanged(heartRate);
+   }
 
-   17. /**
-   18. * Register a listener for characteristic value changes.
-   19. */
-   20. private onBLECharacteristicChange() {
-   21. if (!this.mGattClientDevice) {
-   22. return;
-   23. }
-   24. try {
-   25. this.mGattClientDevice.on('BLECharacteristicChange', this.BLECharacteristicChangeFunc);
-   26. } catch (error) {
-   27. Logger.error(`BluetoothClientModel, onBLECharacteristicChange failed, error info:${JSON.stringify(error)}`);
-   28. }
-   29. }
+   /**
+    * Register a listener for characteristic value changes.
+    */
+   private onBLECharacteristicChange() {
+     if (!this.mGattClientDevice) {
+       return;
+     }
+     try {
+       this.mGattClientDevice.on('BLECharacteristicChange', this.BLECharacteristicChangeFunc);
+     } catch (error) {
+       Logger.error(`BluetoothClientModel, onBLECharacteristicChange failed, error info:${JSON.stringify(error)}`);
+     }
+   }
    ```
-
-   [BluetoothClientModel.ets](https://gitcode.com/HarmonyOS_Samples/BluetoothLowEnergy/blob/master/entry/src/main/ets/pages/client/model/BluetoothClientModel.ets#L444-L472)
 
 ## 常见问题
 
@@ -900,7 +862,7 @@ content_hash: sha256:e303c25bfd9246687394e483e84223e788b1a43be0e035cae51c84c3a2a
 
 由于应用通过蓝牙扫描获取到的未配对或未固化（参考如下说明）的设备MAC地址为虚拟随机地址，若需该虚拟随机地址不发生改变，可调用[addPersistentDeviceId()](../harmonyos-references/js-apis-bluetooth-access.md#accessaddpersistentdeviceid16)接口持久化存储虚拟随机地址。
 
-说明
+**说明** 
 
 1. 使用蓝牙虚拟MAC地址固化API需申请[ohos.permission.PERSISTENT\_BLUETOOTH\_PEERS\_MAC](../harmonyos-guides/restricted-permissions.md#ohospermissionpersistent_bluetooth_peers_mac)权限，并在[ACL](../app/agc-help-apply-acl-0000002394212138.md)权限审核通过后方可使用。
 2. 使用此接口时，开发者应明确该虚拟随机地址对应的对端蓝牙设备真实地址保持不变。若对端设备地址变更，持久化保存的地址信息也将失效，无法继续使用。
@@ -920,22 +882,22 @@ content_hash: sha256:e303c25bfd9246687394e483e84223e788b1a43be0e035cae51c84c3a2a
 
 基于信息安全考虑，目前不支持通过代码取消配对。若需取消配对，可引导用户进入蓝牙设置页面手动操作。打开系统蓝牙设置页面的方法如下：
 
-```
-1. /**
-2. * Opens the system Bluetooth settings page.
-3. * This method uses HarmonyOS Ability framework to launch the system settings ability specifically for Bluetooth configuration.
-4. */
-5. private openBlueToothSettingsPage() {
-6. const context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. const want: Want = {
-8. bundleName: 'com.huawei.hmos.settings',
-9. abilityName: 'com.huawei.hmos.settings.MainAbility',
-10. uri: 'bluetooth_entry'
-11. };
-12. context.startAbility(want).catch((err: BusinessError) => {
-13. console.error(`Failed to open bluetooth settings, error info: ${JSON.stringify(err)}`);
-14. });
-15. }
+```typescript
+/**
+ * Opens the system Bluetooth settings page.
+ * This method uses HarmonyOS Ability framework to launch the system settings ability specifically for Bluetooth configuration.
+ */
+private openBlueToothSettingsPage() {
+  const context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  const want: Want = {
+    bundleName: 'com.huawei.hmos.settings',
+    abilityName: 'com.huawei.hmos.settings.MainAbility',
+    uri: 'bluetooth_entry'
+  };
+  context.startAbility(want).catch((err: BusinessError) => {
+    console.error(`Failed to open bluetooth settings, error info: ${JSON.stringify(err)}`);
+  });
+}
 ```
 
 ## 示例代码

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/weather-servi
 title: 开发准备
 breadcrumb: 指南 > 应用服务 > Weather Service Kit（天气服务） > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:12+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:38ba3b3eb9150162589b022a93ab2cfa309364fdf68c6e6b8d004fde8d1e321b
+scraped_at: 2026-09-02T15:00:03+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:2b998298a02540cb1c46a16b59ad312567466430213381a5516c5df2de6e21ad
 ---
 
 在阅读本章节前，请先参考“[应用开发准备](application-dev-overview.md)”完成基本准备工作及指纹配置，再继续进行以下开发活动。
 
 ## 开通天气服务
 
-说明
+**说明** 
 
 Weather Service Kit当前仅面向系统应用开放，暂不对外开放。
 
@@ -26,19 +26,19 @@ Weather Service Kit当前仅面向系统应用开放，暂不对外开放。
 
 * ohos.permission.INTERNET：用于请求对应天气相关数据。
 
-```
-1. {
-2. "module": {
-3. // ...
-4. "requestPermissions": [
-5. {
-6. "name": "ohos.permission.INTERNET",
-7. // ...
-8. }
-9. // ...
-10. ]
-11. }
-12. }
+```json5
+{
+  "module": {
+    // ...
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.INTERNET",
+        // ...
+      },
+      // ...
+    ]
+  }
+}
 ```
 
 ## 配置Profile文件

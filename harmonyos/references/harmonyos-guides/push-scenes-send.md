@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-scenes-s
 title: 推送场景化消息
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 端云调试 > 推送场景化消息
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:57+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4202b0fa24577d8d936b8df6791c462cfaa15067197fd7742698b7b908e1a3df
+scraped_at: 2026-09-02T15:00:01+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:085f719572c800f564058e9191421e82c6ed7ec46a8f03c4184f1eeb5d27b6b3
 ---
 
 ## 场景介绍
@@ -16,11 +16,11 @@ Push Kit支持您使用HTTPS协议接入云侧，使用场景化V3接口发送�
 
 | push-type | 名称 |
 | --- | --- |
-| 0 | Alert消息（通知消息） |
+| 0 | Alert消息（通知消息、角标刷新消息，其中Wearable、TV不支持角标刷新） |
 | 1 | 卡片刷新消息 |
 | 2 | 语音播报消息 |
 | 6 | 后台消息 |
-| 7 | 实况窗消息（Wearable、TV、PC/2in1不支持） |
+| 7 | 实况窗消息（TV、PC/2in1不支持） |
 | 10 | 应用内通话消息（Wearable、TV、PC/2in1不支持） |
 
 有关场景化消息的更详细说明，请参见REST API-[场景化消息API接口](../harmonyos-references/push-scenariozed-api-intro.md#场景介绍)。
@@ -32,72 +32,72 @@ Push Kit支持您使用HTTPS协议接入云侧，使用场景化V3接口发送�
 
    **HTTPS POST URL：**
 
-   ```
-   1. POST "https://push-api.cloud.huawei.com/v3/[projectId]/messages:send"
+   ```json
+   POST "https://push-api.cloud.huawei.com/v3/[projectId]/messages:send"
    ```
 
    “[projectId]”请替换为您应用的项目ID。登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“开发与服务”，在项目列表中选择对应的项目，左侧导航栏选择“项目设置”，在该页面获取“项目ID”。
 
    **请求消息头示例：**
 
-   ```
-   1. Content-Type: application/json
-   2. Authorization: Bearer eyJr*****OiIx---****.eyJh*****iJodHR--***.QRod*****4Gp---****
-   3. push-type: 0
+   ```json
+   Content-Type: application/json
+   Authorization: Bearer eyJr*****OiIx---****.eyJh*****iJodHR--***.QRod*****4Gp---****
+   push-type: 0
    ```
 
    * 请求消息头中的Authorization参数为"Bearer "拼接上您在上一步[在线生成服务账号鉴权令牌](push-jwt-token.md)中获取的鉴权令牌。
-   * 请求消息头中的push-type参数为场景化消息类型，0代表Alert消息（通知消息）。
+   * 请求消息头中的push-type参数为场景化消息类型，0代表Alert消息。
 
    **通知消息体示例：**
 
-   ```
-   1. {
-   2. "payload": {
-   3. "notification": {
-   4. "category": "MARKETING",
-   5. "title": "普通通知标题",
-   6. "body": "普通通知内容",
-   7. "clickAction": {
-   8. "actionType": 0
-   9. },
-   10. "notifyId": 12345
-   11. }
-   12. },
-   13. "target": {
-   14. "token": ["MAMzLg**********lPW"]
-   15. },
-   16. "pushOptions": {
-   17. "testMessage": true
-   18. }
-   19. }
+   ```json
+   {
+     "payload": {
+       "notification": {
+         "category": "MARKETING",
+         "title": "普通通知标题",
+         "body": "普通通知内容",
+         "clickAction": {
+           "actionType": 0
+         },
+         "notifyId": 12345
+       }
+     },
+     "target": {
+       "token": ["MAMzLg**********lPW"]
+     },
+     "pushOptions": {
+       "testMessage": true
+     }
+   }
    ```
 
    * 更多场景化消息示例可参见[请求示例](../harmonyos-references/push-scenariozed-api-request-example.md)。
    * 建议您在开发代码前先使用Postman等调试工具发送消息，测试功能。
 3. （可选）您的应用服务器接收Push Kit的消息回执，详情请参见[消息回执](push-msg-receipt.md)。
 
-说明
+**说明** 
 
 Push Kit提供了基于Java语言的服务端示例代码（包括申请鉴权令牌、发送通知消息、卡片刷新消息等功能），方便您参考使用，详情请参见[示例代码](https://gitcode.com/HarmonyOS_Samples/push-kit_-sample-code_-server-demo_-java)。
 
 ## AppGallery Connect在线推送通知消息
 
-说明
+**说明** 
 
 **当前仅支持配置Alert消息**。
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，点击“开发与服务”，在项目列表中选择对应的项目，左侧导航栏选择“项目设置”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/DjKbzZLfTce0PPDgmprNAw/zh-cn_image_0000002589245439.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/YdKGx9BrQ3SVUpzeR3OkTA/zh-cn_image_0000002736434305.png)
 2. 在项目列表中找到您的项目，通过“增长 > 推送服务 > 推送通知（V3 Beta）”导航到“推送通知（V3 Beta）”页签。在该页签下点击“添加推送通知”新建推送任务。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/YPOY-kb-RR6adSQy0LolKQ/zh-cn_image_0000002558765632.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/Kd7_xv9uSde2gC1gQezFTg/zh-cn_image_0000002706835154.png)
 3. 这里以Alert消息举例，配置参数如下。
 
    * **配置推送任务**
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/l4cXeOrdQoifi50CSaARyQ/zh-cn_image_0000002558605976.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/MCtKlXqrRvihkC-a6HslTA/zh-cn_image_0000002736314261.png)
 
      | 字段值 | 说明 |
      | --- | --- |
@@ -106,25 +106,25 @@ Push Kit提供了基于Java语言的服务端示例代码（包括申请鉴权�
      | 场景化类型 | 场景化消息类型，**当前仅支持Alert消息**。 |
    * **配置推送内容-通用参数**
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/NmJSi6T9To-dUpTmdJVtzg/zh-cn_image_0000002589325503.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/acxsY-6dQXWi6q0o7s2ZcQ/zh-cn_image_0000002706675218.png)
 
      | 字段值 | 说明 |
      | --- | --- |
      | 是否测试消息 (testMessage) | 测试消息标识，对应场景化接口中的testMessage参数，此字段为必填字段。  测试消息标识：  false：正式消息  true：测试消息 **（默认值）** |
-     | 离线消息缓存机制 (collapseKey) | 离线消息缓存控制方式，，对应场景化接口中的collapseKey参数，此字段为可选字段。  离线消息缓存控制方式，取值范围-1~100。  -1：对所有离线消息都缓存（**默认值）** ；  0~100：离线消息缓存分组标识，对离线消息进行分组缓存，每个应用每一组只缓存一条最新的离线消息。 |
-     | 消息缓存时间 (ttl) | 对应场景化接口中的ttl参数，此字段为可选字段。  消息缓存时间，单位是秒。在用户设备离线时，消息在Push服务器进行缓存，在消息缓存时间内用户设备上线，消息会下发，超过缓存时间后消息会丢弃，**默认值为86400秒（1天）** ，最大值为15天。 |
+     | 离线消息缓存机制 (collapseKey) | 离线消息缓存控制方式，对应场景化接口中的collapseKey参数，此字段为可选字段。  离线消息缓存控制方式，取值范围-1~100。  -1：对所有离线消息都缓存（**默认值）** ；  0~100：离线消息缓存分组标识，对离线消息进行分组缓存，每个应用每一组只缓存一条最新的离线消息。 |
+     | 消息缓存时间 (ttl) | 对应场景化接口中的ttl参数，此字段为可选字段。  消息缓存时间，单位：s。在用户设备离线时，消息在Push服务器进行缓存，在消息缓存时间内用户设备上线，消息会下发，超过缓存时间后消息会丢弃，**默认值为86400秒（1天）** ，最大值为15天。 |
      | 批量任务消息标识 (biTag) | 对应场景化接口中的biTag参数，此字段为可选字段。  批量任务消息标识，[消息回执](push-msg-receipt.md)时会返回给应用服务器，长度最大64字节。 |
      | 回执ID (receiptId) | 对应场景化接口中的receiptId参数，此字段为可选字段。  回执ID指定本次下行消息的回执地址及配置。该回执ID可以在[配置回执参数](push-msg-receipt.md#配置回执参数)中查看。 |
    * **配置推送内容-发送目标设备**
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/dBT_d7sZTSSOhwxSGYRu3g/zh-cn_image_0000002589245441.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/HDFAH_L8TPGQXhdPNt-v2g/zh-cn_image_0000002736434307.png)
 
      | 字段值 | 说明 |
      | --- | --- |
      | 设备Token (token) | 对应场景化接口中的token参数，此字段为必填字段。  按照Token向目标用户推送消息。  **样例：MAMzL\*\*\*\*\*\*\*** |
    * **配置推送内容-消息内容**
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/eXuBaVe6SCOLer5Ul_hv-g/zh-cn_image_0000002558765634.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/ulz5pQnQQ6K9gbOA8wZeAA/zh-cn_image_0000002706835156.png)
 
      | 字段值 | 说明 |
      | --- | --- |
@@ -134,8 +134,8 @@ Push Kit提供了基于Java语言的服务端示例代码（包括申请鉴权�
      | 点击通知动作 (actionType) | 对应场景化接口中的clickAction中actionType参数，此字段为必填字段。  点击消息后触发的动作，可选择打开应用首页、自定义action页面或自定义intentUri页面。 |
 4. 当您完成上述步骤后，点击右上方“提交”按钮即可推送消息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/3TizupuUS-SxYNPF9isp1g/zh-cn_image_0000002558605978.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/p0eSzAftRkOr60LLzwmvow/zh-cn_image_0000002736314263.png)
 
-   说明
+   **说明** 
 
    预览效果仅供参考，请以客户端实际效果为准。

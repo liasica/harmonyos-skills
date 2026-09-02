@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-135
 title: 如何实现两层Tab嵌套滑动的效果
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 如何实现两层Tab嵌套滑动的效果
+breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现两层Tab嵌套滑动的效果
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:25:36+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:49+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:c651bf90cdf2f03110c1df0c64789ee5988eae10e92a2627a758f013c72d5598
 ---
 

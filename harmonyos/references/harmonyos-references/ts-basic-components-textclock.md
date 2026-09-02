@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: TextClock
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > TextClock
 category: harmonyos-references
-scraped_at: 2026-04-29T13:52:22+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:e95f291bcc00a9b25c6b6728a91b85bc70f91533323854537208512f6f6a50a6
+scraped_at: 2026-09-02T15:01:05+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:3f75a908f159e12b0d9c9ff0576edcd1412e248e6ffbee07e146fe4062ce28ae
 ---
 
-TextClock组件通过文本将当前系统时间显示在设备上。支持不同时区的时间显示，最高精度到秒级。
+TextClock组件通过文本将当前系统时间显示在设备上，支持不同时区的时间显示和时间格式自定义，最高精度到秒级。适用于需要在应用界面上实时展示系统时间、支持多时区显示的场景，可帮助开发者快速实现时间文本展示功能，无需手动计算和更新时间。
 
 组件不可见时，时间变动将停止。组件的可见状态基于[onVisibleAreaChange](ts-universal-component-visible-area-change-event.md#onvisibleareachange)处理，可见阈值ratios大于0即视为可见状态。
 
-说明
+**说明** 
 
-该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+该组件从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 子组件
-
-PhonePC/2in1TabletTVWearable
 
 无
 
 ## 接口
-
-PhonePC/2in1TabletTVWearable
 
 TextClock(options?: TextClockOptions)
 
@@ -38,15 +34,13 @@ TextClock(options?: TextClockOptions)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [TextClockOptions](ts-basic-components-textclock.md#textclockoptions18对象说明) | 否 | 通过文本显示当前系统时间的组件参数。 |
+| options | [TextClockOptions](ts-basic-components-textclock.md#textclockoptions18对象说明) | 否 | 通过文本显示当前系统时间的组件参数。不传入时使用默认配置，各属性默认值详见TextClockOptions。 |
 
 ## TextClockOptions18+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 用于构建TextClock组件的选项。
 
-说明
+**说明** 
 
 为规范匿名对象的定义，API 18版本修改了此处的元素定义。其中，保留了历史匿名对象的起始版本信息，会出现外层元素@since版本号高于内层元素版本号的情况，但这不影响接口的使用。
 
@@ -54,22 +48,20 @@ PhonePC/2in1TabletTVWearable
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| timeZoneOffset8+ | number | 否 | 是 | 设置时区偏移量。  取值范围为[-14, 12]，表示东十二区到西十二区，其中负值表示东时区，正值表示西时区，比如东八区为-8。设置值为该取值范围内的浮点数时会进行取整，舍弃小数部分。  对横跨国际日界线的国家或地区，用-13（UTC+13）和-14（UTC+14）来保证整个国家或者区域处在相同的时间，当设置的值不在取值范围内时，将使用当前系统的时区偏移量。  默认值：当前系统的时区偏移量  设置值为{ 9.5, 3.5, -3.5, -4.5, -5.5, -5.75, -6.5, -9.5, -10.5, -12.75 }集合中的浮点数时不进行取整。  **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| controller8+ | [TextClockController](ts-basic-components-textclock.md#textclockcontroller) | 否 | 是 | 绑定一个控制器，用来控制文本时钟的状态。  **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| timeZoneOffset8+ | number | 否 | 是 | 设置时区偏移量，单位：小时。  取值范围为[-14, 12]，表示东十二区到西十二区，其中负值表示东时区，正值表示西时区，比如东八区为-8。设置值为该取值范围内的浮点数时会进行取整，舍弃小数部分。  对横跨国际日界线的国家或地区，用-13（UTC+13）和-14（UTC+14）来保证整个国家或者区域处在相同的时间，当设置的值不在取值范围内时，将使用当前系统的时区偏移量。  默认值：当前系统的时区偏移量  设置值为{ 9.5, 3.5, -3.5, -4.5, -5.5, -5.75, -6.5, -9.5, -10.5, -12.75 }集合中的浮点数时不进行取整。  **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| controller8+ | [TextClockController](ts-basic-components-textclock.md#textclockcontroller) | 否 | 是 | 绑定一个控制器，用来控制文本时钟的状态。当需要通过代码控制时钟的启动与停止时传入此参数；不传入时，时钟仍会正常运行显示，但无法通过代码控制启停。  **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](ts-component-general-attributes.md)外，还支持以下属性：
 
 ### format
-
-PhonePC/2in1TabletTVWearable
 
 format(value: ResourceStr)
 
@@ -83,7 +75,9 @@ d：日（若想使用01日则使用dd）
 
 E：星期（若想使用星期六则使用EEEE，若想使用周六则使用E、EE、EEE）
 
-H：小时（24小时制） h：小时（12小时制）
+H：小时（24小时制）
+
+h：小时（12小时制）
 
 m：分钟
 
@@ -107,7 +101,7 @@ a：上午/下午（当设置小时制式为H时，该参数不生效）
 
 卡片中默认值：12小时制：hh:mm，24小时制：HH:mm 。
 
-卡片中使用时，最小时间单位为分钟。如果设置格式中有秒或厘秒按默认值处理。
+卡片中使用时，最小时间单位为分钟。如果设置格式中有秒或厘秒，则按默认值处理。
 
 **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
 
@@ -157,8 +151,6 @@ a：上午/下午（当设置小时制式为H时，该参数不生效）
 
 ### fontColor
 
-PhonePC/2in1TabletTVWearable
-
 fontColor(value: ResourceColor)
 
 设置字体颜色。
@@ -173,11 +165,9 @@ fontColor(value: ResourceColor)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [ResourceColor](ts-types.md#resourcecolor) | 是 | 字体颜色。  Wearable设备上默认值：'#c5ffffff'，其他设备默认值：'e6182431' |
+| value | [ResourceColor](ts-types.md#resourcecolor) | 是 | 字体颜色。  Wearable设备上默认值：'#c5ffffff'，其他设备默认值：'#e6182431' |
 
 ### fontSize
-
-PhonePC/2in1TabletTVWearable
 
 fontSize(value: Length)
 
@@ -193,11 +183,9 @@ fontSize(value: Length)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Length](ts-types.md#length) | 是 | 字体大小。fontSize为number类型时，使用fp单位。字体默认大小16fp。不支持设置百分比字符串。 |
+| value | [Length](ts-types.md#length) | 是 | 字体大小。fontSize为number类型时，使用fp单位。  字体默认大小16fp。不支持设置百分比字符串，传入百分比字符串时使用默认值。 |
 
 ### fontStyle
-
-PhonePC/2in1TabletTVWearable
 
 fontStyle(value: FontStyle)
 
@@ -217,8 +205,6 @@ fontStyle(value: FontStyle)
 
 ### fontWeight
 
-PhonePC/2in1TabletTVWearable
-
 fontWeight(value: number | FontWeight | string)
 
 设置文本的字体粗细，设置过大可能会导致不同字体下的文字出现截断。
@@ -233,11 +219,9 @@ fontWeight(value: number | FontWeight | string)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | [FontWeight](ts-appendix-enums.md#fontweight) | string | 是 | 文本的字体粗细，number类型取值范围为[100, 900]，取值间隔为100，取值越大，字体越粗。number类型取值范围外的默认值为400。string类型仅支持number类型取值的字符串形式，例如"400"，以及"bold"、"bolder"、"lighter"、"regular"、"medium"，分别对应FontWeight中相应的枚举值。  默认值：FontWeight.Normal |
+| value | number | [FontWeight](ts-appendix-enums.md#fontweight) | string | 是 | 文本的字体粗细，number类型取值范围为[100, 900]，取值间隔为100，取值越大，字体越粗。number类型取值范围外的默认值为400。string类型支持：number类型取值的字符串形式（如400），以及枚举值'lighter'（对应300）、'regular'（对应400）、'medium'（对应500）、'bold'（对应700）、'bolder'（对应900），分别对应FontWeight中相应的枚举值。  默认值：FontWeight.Normal |
 
 ### fontFamily
-
-PhonePC/2in1TabletTVWearable
 
 fontFamily(value: ResourceStr)
 
@@ -257,15 +241,15 @@ fontFamily(value: ResourceStr)
 
 ### textShadow11+
 
-PhonePC/2in1TabletTVWearable
-
 textShadow(value: ShadowOptions | Array<ShadowOptions>)
 
-设置文字阴影效果。该接口支持以数组形式入参，实现多重文字阴影。不支持fill字段, 不支持智能取色模式。
+设置文字阴影效果。该接口支持以数组形式入参，实现多重文字阴影。不支持fill字段和智能取色模式。
 
 **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -273,11 +257,9 @@ textShadow(value: ShadowOptions | Array<ShadowOptions>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [ShadowOptions](ts-universal-attributes-image-effect.md#shadowoptions对象说明) | Array<[ShadowOptions](ts-universal-attributes-image-effect.md#shadowoptions对象说明)> | 是 | 文字的字体阴影效果。 |
+| value | [ShadowOptions](ts-universal-attributes-image-effect.md#shadowoptions对象说明) | Array<[ShadowOptions](ts-universal-attributes-image-effect.md#shadowoptions对象说明)> | 是 | 文字阴影效果。支持单个阴影对象或阴影数组实现多重阴影效果。ShadowOptions对象包含radius（模糊半径）、color（阴影颜色）、offsetX（X轴偏移）、offsetY（Y轴偏移）等属性。  不支持fill字段，不支持智能取色模式。具体属性说明请参考[ShadowOptions对象说明](ts-universal-attributes-image-effect.md#shadowoptions对象说明)。 |
 
 ### fontFeature11+
-
-PhonePC/2in1TabletTVWearable
 
 fontFeature(value: string)
 
@@ -295,17 +277,17 @@ fontFeature(value: string)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | string | 是 | 文字特性效果。 |
+| value | string | 是 | 文字特性效果，用于设置文字的OpenType特性。格式为：normal | <feature-tag-value>，其中<feature-tag-value>格式为：<string> [ <integer> | on | off ]。可设置多个特性，中间用','隔开。例如，使用等宽时钟数字的格式为：'"ss01" on'。 |
 
 ### contentModifier12+
-
-PhonePC/2in1TabletTVWearable
 
 contentModifier(modifier: ContentModifier<TextClockConfiguration>)
 
@@ -313,17 +295,17 @@ contentModifier(modifier: ContentModifier<TextClockConfiguration>)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| modifier | [ContentModifier<TextClockConfiguration>](ts-basic-components-textclock.md#textclockconfiguration12对象说明) | 是 | 在TextClock组件上，定制内容区的方法。  modifier： 内容修改器，开发者需要自定义class实现ContentModifier接口。 |
+| modifier | [ContentModifier](ts-universal-attributes-content-modifier.md#contentmodifiert)<[TextClockConfiguration](ts-basic-components-textclock.md#textclockconfiguration12对象说明)> | 是 | 在TextClock组件上，定制内容区的方法。  modifier： 内容修改器，开发者需要自定义class实现ContentModifier接口。 |
 
 ### dateTimeOptions12+
-
-PhonePC/2in1TabletTVWearable
 
 dateTimeOptions(dateTimeOptions: Optional<DateTimeOptions>)
 
@@ -332,6 +314,8 @@ dateTimeOptions(dateTimeOptions: Optional<DateTimeOptions>)
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -343,13 +327,9 @@ dateTimeOptions(dateTimeOptions: Optional<DateTimeOptions>)
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用事件](ts-component-general-events.md)外，还支持以下事件：
 
 ### onDateChange
-
-PhonePC/2in1TabletTVWearable
 
 onDateChange(event: (value: number) => void)
 
@@ -375,8 +355,6 @@ onDateChange(event: (value: number) => void)
 
 ## TextClockController
 
-PhonePC/2in1TabletTVWearable
-
 TextClock容器组件的控制器，可以将该控制器绑定到TextClock组件，通过它控制文本时钟的启动与停止。一个TextClock组件仅支持绑定一个控制器。
 
 **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
@@ -387,13 +365,11 @@ TextClock容器组件的控制器，可以将该控制器绑定到TextClock组�
 
 ### 导入对象
 
-```
-1. controller: TextClockController = new TextClockController();
+```ts
+controller: TextClockController = new TextClockController();
 ```
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor()
 
@@ -407,11 +383,9 @@ TextClockController的构造函数。
 
 ### start
 
-PhonePC/2in1TabletTVWearable
-
 start()
 
-启动文本时钟。
+启动文本时钟。使用前需先将TextClockController绑定到TextClock组件。
 
 **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
 
@@ -421,11 +395,9 @@ start()
 
 ### stop
 
-PhonePC/2in1TabletTVWearable
-
 stop()
 
-停止文本时钟。
+停止文本时钟。使用前需先将TextClockController绑定到TextClock组件。
 
 **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
 
@@ -435,287 +407,288 @@ stop()
 
 ## TextClockConfiguration12+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 开发者需要自定义class实现ContentModifier接口。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| timeZoneOffset | number | 否 | 否 | 当前文本时钟时区偏移量。  取值范围为[-14, 12]，表示东十二区到西十二区，其中负值表示东时区，正值表示西时区，比如东八区为-8。设置值为该取值范围内的浮点数时会进行取整，舍弃小数部分。 |
-| started | boolean | 否 | 否 | 指示文本时钟是否启动。  true：表示启动文本时钟。  false：表示关闭文本时钟。  默认值：true |
+| timeZoneOffset | number | 否 | 否 | 当前文本时钟时区偏移量。  取值范围为[-14, 12]，表示东十二区到西十二区，其中负值表示东时区，正值表示西时区，比如东八区为-8。设置值为该取值范围内的浮点数时会进行取整，舍弃小数部分；但设置值为{ 9.5, 3.5, -3.5, -4.5, -5.5, -5.75, -6.5, -9.5, -10.5, -12.75 }集合中的浮点数时不进行取整。当设置的值不在取值范围内时，将使用当前系统的时区偏移量。 |
+| started | boolean | 否 | 否 | 指示文本时钟是否启动。  true：表示启动文本时钟。  false：表示停止文本时钟。  默认值：true |
 | timeValue | number | 否 | 否 | 当前文本时钟时区的UTC秒数。 |
 
 ## 示例
-
-PhonePC/2in1TabletTVWearable
 
 ### 示例1（支持启停的文本样式时钟）
 
 该示例展示了TextClock组件的基本使用方法，通过[format](ts-basic-components-textclock.md#format)属性设置时钟文本的格式。
 
-点击"start TextClock"按钮，按钮回调函数会调用TextClockController启动文本时钟。点击"stop TextClock"按钮，会调用TextClockController暂停文本时钟。
+点击"start TextClock"按钮，按钮回调函数会调用TextClockController启动文本时钟。点击"stop TextClock"按钮，会调用TextClockController停止文本时钟。
 
-示例中的组件通过设置[TextClockController](ts-basic-components-textclock.md#textclockcontroller)回调函数，在文本时钟更新时，持续修改accumulateTime的内容。
+示例中的组件通过设置[onDateChange](ts-basic-components-textclock.md#ondatechange)回调函数，在文本时钟更新时，持续修改accumulateTime的内容。
 
+```ts
+@Entry
+@Component
+struct Second {
+  @State accumulateTime: number = 0;
+  // 创建控制器对象
+  controller: TextClockController = new TextClockController();
+
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Text('Current milliseconds is ' + this.accumulateTime)
+        .fontSize(20)
+      // 以12小时制显示东八区的系统时间，精确到秒。
+      TextClock({ timeZoneOffset: -8, controller: this.controller })
+        .format('aa hh:mm:ss')
+        .onDateChange((value: number) => {
+          this.accumulateTime = value;
+        })
+        .margin(20)
+        .fontSize(30)
+      Button('start TextClock')
+        .margin({ bottom: 10 })
+        .onClick(() => {
+          // 启动文本时钟
+          this.controller.start();
+        })
+      Button('stop TextClock')
+        .onClick(() => {
+          // 停止文本时钟
+          this.controller.stop();
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct Second {
-4. @State accumulateTime: number = 0;
-5. // 导入对象
-6. controller: TextClockController = new TextClockController();
 
-8. build() {
-9. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-10. Text('Current milliseconds is ' + this.accumulateTime)
-11. .fontSize(20)
-12. // 以12小时制显示东八区的系统时间，精确到秒。
-13. TextClock({ timeZoneOffset: -8, controller: this.controller })
-14. .format('aa hh:mm:ss')
-15. .onDateChange((value: number) => {
-16. this.accumulateTime = value;
-17. })
-18. .margin(20)
-19. .fontSize(30)
-20. Button('start TextClock')
-21. .margin({ bottom: 10 })
-22. .onClick(() => {
-23. // 启动文本时钟
-24. this.controller.start();
-25. })
-26. Button('stop TextClock')
-27. .onClick(() => {
-28. // 停止文本时钟
-29. this.controller.stop();
-30. })
-31. }
-32. .width('100%')
-33. .height('100%')
-34. }
-35. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/msdgFzZoTKCFF10rJsvClQ/zh-cn_image_0000002558766444.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/Tev9_P7JRGqA2OILr5xTvw/zh-cn_image_0000002706836100.gif)
 
 ### 示例2（设定文本阴影样式）
 
-该示例通过[textShadow](ts-basic-components-textclock.md#textshadow11)属性设置文本时钟的文本阴影样式。
+该示例通过[textShadow](ts-basic-components-textclock.md#textshadow11)属性设置时钟文本的阴影样式。
 
+```ts
+@Entry
+@Component
+struct TextClockExample {
+  @State textShadows: ShadowOptions | Array<ShadowOptions> = [{
+    radius: 10,
+    color: Color.Red,
+    offsetX: 10,
+    offsetY: 0
+  }, {
+    radius: 10,
+    color: Color.Black,
+    offsetX: 20,
+    offsetY: 0
+  }, {
+    radius: 10,
+    color: Color.Brown,
+    offsetX: 30,
+    offsetY: 0
+  }, {
+    radius: 10,
+    color: Color.Green,
+    offsetX: 40,
+    offsetY: 0
+  }, {
+    radius: 10,
+    color: Color.Yellow,
+    offsetX: 100,
+    offsetY: 0
+  }];
+
+  build() {
+    Column({ space: 8 }) {
+      TextClock().fontSize(50).textShadow(this.textShadows)
+    }
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct TextClockExample {
-4. @State textShadows: ShadowOptions | Array<ShadowOptions> = [{
-5. radius: 10,
-6. color: Color.Red,
-7. offsetX: 10,
-8. offsetY: 0
-9. }, {
-10. radius: 10,
-11. color: Color.Black,
-12. offsetX: 20,
-13. offsetY: 0
-14. }, {
-15. radius: 10,
-16. color: Color.Brown,
-17. offsetX: 30,
-18. offsetY: 0
-19. }, {
-20. radius: 10,
-21. color: Color.Green,
-22. offsetX: 40,
-23. offsetY: 0
-24. }, {
-25. radius: 10,
-26. color: Color.Yellow,
-27. offsetX: 100,
-28. offsetY: 0
-29. }];
 
-31. build() {
-32. Column({ space: 8 }) {
-33. TextClock().fontSize(50).textShadow(this.textShadows)
-34. }
-35. }
-36. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/-ZbTX5U9QNqKl5V135aa5Q/zh-cn_image_0000002558606784.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/B1psrRvlRfSvW8n66z9FzA/zh-cn_image_0000002736315205.png)
 
 ### 示例3（设定自定义内容区）
 
-该示例实现了自定义文本时钟样式的功能，自定义样式实现了一个时间选择器组件：通过文本时钟的时区偏移量与UTC秒数，来动态改变时间选择器的选中值，实现时钟效果。同时，根据文本时钟的启动状态，实现文本选择器的12小时制与24小时制的切换。
+该示例实现了自定义文本时钟样式的功能，自定义样式实现了一个时间选择器组件：通过文本时钟的时区偏移量与UTC秒数，来动态改变时间选择器的选中值，实现时钟效果。同时，根据文本时钟的启动状态，实现时间选择器的12小时制与24小时制的切换。
 
+```ts
+class MyTextClockStyle implements ContentModifier<TextClockConfiguration> {
+  currentTimeZoneOffset: number = new Date().getTimezoneOffset() / 60;
+  title: string = '';
+
+  constructor(title: string) {
+    this.title = title;
+  }
+
+  applyContent(): WrappedBuilder<[TextClockConfiguration]> {
+    return wrapBuilder(buildTextClock);
+  }
+}
+
+@Builder
+function buildTextClock(config: TextClockConfiguration) {
+  Row() {
+    Column() {
+      Text((config.contentModifier as MyTextClockStyle).title)
+        .fontSize(20)
+        .margin(20)
+      TimePicker({
+        // 根据UTC秒数和时区偏移量计算本地时间：config.timeValue为UTC秒数，需乘1000转为毫秒；
+        // currentTimeZoneOffset为当前系统时区偏移量，timeZoneOffset为目标时区偏移量，
+        // 二者之差乘以3600000得到时区调整的毫秒数
+        selected: (new Date(config.timeValue * 1000 +
+          ((config.contentModifier as MyTextClockStyle).currentTimeZoneOffset - config.timeZoneOffset) * 60 * 60 *
+            1000)),
+        format: TimePickerFormat.HOUR_MINUTE_SECOND
+      })
+        .useMilitaryTime(!config.started)
+    }
+  }
+}
+
+@Entry
+@Component
+struct TextClockExample {
+  @State accumulateTime1: number = 0;
+  @State timeZoneOffset: number = -8;
+  controller1: TextClockController = new TextClockController();
+  controller2: TextClockController = new TextClockController();
+
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Text('Current milliseconds is ' + this.accumulateTime1)
+        .fontSize(20)
+        .margin({ top: 20 })
+      TextClock({ timeZoneOffset: this.timeZoneOffset, controller: this.controller1 })
+        .format('aa hh:mm:ss')
+        .onDateChange((value: number) => {
+          this.accumulateTime1 = value;
+        })
+        .margin(20)
+        .fontSize(30)
+      TextClock({ timeZoneOffset: this.timeZoneOffset, controller: this.controller2 })
+        .format('aa hh:mm:ss')
+        .fontSize(30)
+        .contentModifier(new MyTextClockStyle('ContentModifier:'))
+      Button('start TextClock')
+        .margin({ top: 20, bottom: 10 })
+        .onClick(() => {
+          // 启动文本时钟
+          this.controller1.start();
+          this.controller2.start();
+        })
+      Button('stop TextClock')
+        .margin({ bottom: 30 })
+        .onClick(() => {
+          // 停止文本时钟
+          this.controller1.stop();
+          this.controller2.stop();
+        })
+
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
-1. class MyTextClockStyle implements ContentModifier<TextClockConfiguration> {
-2. currentTimeZoneOffset: number = new Date().getTimezoneOffset() / 60;
-3. title: string = '';
 
-5. constructor(title: string) {
-6. this.title = title;
-7. }
-
-9. applyContent(): WrappedBuilder<[TextClockConfiguration]> {
-10. return wrapBuilder(buildTextClock);
-11. }
-12. }
-
-14. @Builder
-15. function buildTextClock(config: TextClockConfiguration) {
-16. Row() {
-17. Column() {
-18. Text((config.contentModifier as MyTextClockStyle).title)
-19. .fontSize(20)
-20. .margin(20)
-21. TimePicker({
-22. selected: (new Date(config.timeValue * 1000 +
-23. ((config.contentModifier as MyTextClockStyle).currentTimeZoneOffset - config.timeZoneOffset) * 60 * 60 *
-24. 1000)),
-25. format: TimePickerFormat.HOUR_MINUTE_SECOND
-26. })
-27. .useMilitaryTime(!config.started)
-28. }
-29. }
-30. }
-
-32. @Entry
-33. @Component
-34. struct TextClockExample {
-35. @State accumulateTime1: number = 0;
-36. @State timeZoneOffset: number = -8;
-37. controller1: TextClockController = new TextClockController();
-38. controller2: TextClockController = new TextClockController();
-
-40. build() {
-41. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-42. Text('Current milliseconds is ' + this.accumulateTime1)
-43. .fontSize(20)
-44. .margin({ top: 20 })
-45. TextClock({ timeZoneOffset: this.timeZoneOffset, controller: this.controller1 })
-46. .format('aa hh:mm:ss')
-47. .onDateChange((value: number) => {
-48. this.accumulateTime1 = value;
-49. })
-50. .margin(20)
-51. .fontSize(30)
-52. TextClock({ timeZoneOffset: this.timeZoneOffset, controller: this.controller2 })
-53. .format('aa hh:mm:ss')
-54. .fontSize(30)
-55. .contentModifier(new MyTextClockStyle('ContentModifier:'))
-56. Button('start TextClock')
-57. .margin({ top: 20, bottom: 10 })
-58. .onClick(() => {
-59. // 启动文本时钟
-60. this.controller1.start();
-61. this.controller2.start();
-62. })
-63. Button('stop TextClock')
-64. .margin({ bottom: 30 })
-65. .onClick(() => {
-66. // 停止文本时钟
-67. this.controller1.stop();
-68. this.controller2.stop();
-69. })
-
-71. }
-72. .width('100%')
-73. .height('100%')
-74. }
-75. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/ij_dDk0eQeuamHBhl9xvmg/zh-cn_image_0000002589326311.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/xI8lLgHBQQWT8kFjhx9uQA/zh-cn_image_0000002706676162.gif)
 
 ### 示例4（设置前导零）
 
 该示例演示了[dateTimeOptions](ts-basic-components-textclock.md#datetimeoptions12)属性为小时字段增加或去除前导0的功能。24小时制的小时字段默认带有前导0，可通过[dateTimeOptions](ts-basic-components-textclock.md#datetimeoptions12)属性去除前导0，12小时制的小时字段默认不带有前导0，可通过[dateTimeOptions](ts-basic-components-textclock.md#datetimeoptions12)属性增加前导0。
 
-```
-1. @Entry
-2. @Component
-3. struct TextClockExample {
-4. build() {
-5. Column({ space: 8 }) {
-6. Row() {
-7. Text('24小时制去除前导0：')
-8. .fontSize(20)
-9. TextClock()
-10. .fontSize(20)
-11. .format('HH:mm:ss')
-12. .dateTimeOptions({ hour: 'numeric' })
-13. }
+```ts
+@Entry
+@Component
+struct TextClockExample {
+  build() {
+    Column({ space: 8 }) {
+      Row() {
+        Text('24小时制去除前导0：')
+          .fontSize(20)
+        TextClock()
+          .fontSize(20)
+          .format('HH:mm:ss')
+          .dateTimeOptions({ hour: 'numeric' })
+      }
 
-15. Row() {
-16. Text('12小时制增加前导0：')
-17. .fontSize(20)
-18. TextClock()
-19. .fontSize(20)
-20. .format('aa hh:mm:ss')
-21. .dateTimeOptions({ hour: '2-digit' })
-22. }
-23. }
-24. .alignItems(HorizontalAlign.Start)
-25. }
-26. }
+      Row() {
+        Text('12小时制增加前导0：')
+          .fontSize(20)
+        TextClock()
+          .fontSize(20)
+          .format('aa hh:mm:ss')
+          .dateTimeOptions({ hour: '2-digit' })
+      }
+    }
+    .alignItems(HorizontalAlign.Start)
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/GvuJ8hcETXi3dgrvLmetNw/zh-cn_image_0000002589246253.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/TdG7KY-ETuaRJ7uEyyOLFQ/zh-cn_image_0000002736435249.png)
 
 ### 示例5（设置文字显示样式）
 
 该示例演示了使用[fontFeature](ts-basic-components-textclock.md#fontfeature11)、[fontColor](ts-basic-components-textclock.md#fontcolor)、[fontStyle](ts-basic-components-textclock.md#fontstyle)、[fontWeight](ts-basic-components-textclock.md#fontweight)、[fontFamily](ts-basic-components-textclock.md#fontfamily)属性设置时钟文字显示样式的功能。
 
+```ts
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Text('fontFeature').fontColor(0xCCCCCC)
+      // 设置文本特性
+      TextClock()
+        .fontFeature('\"sinf\" off')
+      TextClock()
+        .fontFeature('\"sinf\" on')
+        .margin('10%')
+
+      // 设置字体颜色
+      Text('fontColor').fontColor(0xCCCCCC)
+      TextClock()
+        .fontColor(Color.Black)
+      TextClock()
+        .fontColor(Color.Blue)
+        .margin('10%')
+
+      Text('fontStyle').fontColor(0xCCCCCC)
+      // 设置字体样式
+      TextClock()
+        .fontStyle(FontStyle.Normal)
+      TextClock()
+        .fontStyle(FontStyle.Italic)
+        .margin('10%')
+
+      Text('fontWeight').fontColor(0xCCCCCC)
+      // 设置字体粗细
+      TextClock()
+        .fontWeight(FontWeight.Normal)
+      TextClock()
+        .fontWeight(FontWeight.Bold)
+        .margin('10%')
+
+      Text('fontFamily').fontColor(0xCCCCCC)
+      // 设置字体
+      TextClock()
+        .fontFamily('HarmonyOS Sans')
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct Index {
-4. build() {
-5. Column() {
-6. Text('fontFeature').fontColor(0xCCCCCC)
-7. // 设置文本特性
-8. TextClock()
-9. .fontFeature('\"sinf\" off')
-10. TextClock()
-11. .fontFeature('\"sinf\" on')
-12. .margin('10%')
 
-14. // 设置字体颜色
-15. Text('fontColor').fontColor(0xCCCCCC)
-16. TextClock()
-17. .fontColor(Color.Black)
-18. TextClock()
-19. .fontColor(Color.Blue)
-20. .margin('10%')
-
-22. Text('fontStyle').fontColor(0xCCCCCC)
-23. // 设置字体样式
-24. TextClock()
-25. .fontStyle(FontStyle.Normal)
-26. TextClock()
-27. .fontStyle(FontStyle.Italic)
-28. .margin('10%')
-
-30. Text('fontWeight').fontColor(0xCCCCCC)
-31. // 设置字体粗细
-32. TextClock()
-33. .fontWeight(FontWeight.Normal)
-34. TextClock()
-35. .fontWeight(FontWeight.Bold)
-36. .margin('10%')
-
-38. Text('fontFamily').fontColor(0xCCCCCC)
-39. // 设置字体
-40. TextClock()
-41. .fontFamily('HarmonyOS Sans')
-42. }
-43. .width('100%')
-44. .height('100%')
-45. }
-46. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/t746IvAFS9GbtOT-EH43ow/zh-cn_image_0000002558766446.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/ob2S7qHwQK6GZnBVjWxrCg/zh-cn_image_0000002706836102.png)

@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-rdb-
 title: Rdb_DataObserver
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 结构体 > Rdb_DataObserver
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:38+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:c1ed555939ddde96905496afe951e9d50710a3057e683634c707333286bea1bc
+scraped_at: 2026-09-02T15:00:43+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:12fefeabed0d4bc029f89b5327db219ee44b39ef4e5eca90c263b0b584c63d7c
 ---
 
-```
-1. typedef struct Rdb_DataObserver {...} Rdb_DataObserver
+```c
+typedef struct Rdb_DataObserver {...} Rdb_DataObserver
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 表示数据观察者。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

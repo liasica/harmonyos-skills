@@ -3,30 +3,29 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 表冠事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 基础输入事件 > 表冠事件
 category: harmonyos-references
-scraped_at: 2026-04-29T13:51:06+08:00
-doc_updated_at: 2026-04-02
-content_hash: sha256:27d4fa2bd238b0fd3055d7d6758fc40815bbac106cfd4514a7e4933ada20f953
+scraped_at: 2026-09-02T15:00:54+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b8b41a998bad5ba3e337902a7acd2616a7375b6bb8ab99e97e6ed7011eea5d96
 ---
 
 指旋转表冠时触发的事件，事件的分发依赖于应用焦点，开发者可以通过[焦点事件](ts-universal-focus-event.md)自定义事件处理。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 18开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
-* 手动旋转表冠以触发其存在默认的交互逻辑，例如旋转手表的表冠后，滚动条会根据旋转表冠的旋转方向进行滚动。
+* 本模块接口仅可在Stage模型下使用。
+* 手动旋转表冠触发事件时存在默认的交互逻辑，例如旋转手表的表冠后，滚动条会根据旋转表冠的旋转方向进行滚动。
 * 组件收到表冠事件的前提是该组件获焦，焦点控制可以通过[focusable](ts-universal-attributes-focus.md#focusable)、[defaultFocus](ts-universal-attributes-focus.md#defaultfocus9)、[focusOnTouch](ts-universal-attributes-focus.md#focusontouch9)进行管理。
-* 仅穿戴设备支持该事件。
-* 默认支持表冠事件的组件: [Slider](ts-basic-components-slider.md)、[DatePicker](ts-basic-components-datepicker.md)、[TextPicker](ts-basic-components-textpicker.md)、 [TimePicker](ts-basic-components-timepicker.md)、[Scroll](ts-container-scroll.md)、[List](ts-container-list.md)、[Grid](ts-container-grid.md)、[WaterFlow](ts-container-waterflow.md)、[ArcList](ts-container-arclist.md)、[Refresh](ts-container-refresh.md)和[ArcSwiper](ts-container-arcswiper.md)。
+* 仅穿戴设备支持该事件，开发者可通过deviceInfo.[deviceType](js-apis-device-info.md#常量)获取设备类型进行判断。
+* 默认支持表冠事件的组件：[Slider](ts-basic-components-slider.md)、[DatePicker](ts-basic-components-datepicker.md)、[TextPicker](ts-basic-components-textpicker.md)、[TimePicker](ts-basic-components-timepicker.md)、[Scroll](ts-container-scroll.md)、[List](ts-container-list.md)、[Grid](ts-container-grid.md)、[WaterFlow](ts-container-waterflow.md)、[ArcList](ts-container-arclist.md)、[Refresh](ts-container-refresh.md)和[ArcSwiper](ts-container-arcswiper.md)。
 
 ## onDigitalCrown
-
-PhonePC/2in1TabletTVWearable
 
 onDigitalCrown(handler: Optional<Callback<CrownEvent>>): T
 
 组件获焦以后旋转表冠时触发该回调。
 
-说明
+**说明** 
 
 该接口不支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
@@ -44,13 +43,11 @@ onDigitalCrown(handler: Optional<Callback<CrownEvent>>): T
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，可用于链式调用。 |
 
 ## CrownEvent对象说明
 
-PhonePC/2in1TabletTVWearable
-
-组件接收表冠事件的数据结构。内容包括时间戳、旋转角速度、旋转角度、表冠动作和阻止事件冒泡。
+组件接收表冠事件的数据结构。内容包括时间戳、旋转角速度、旋转角度、表冠动作和用于阻止事件冒泡的回调。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -58,51 +55,49 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| timestamp | number | 否 | 否 | 时间戳。 |
-| angularVelocity | number | 否 | 否 | 旋转角速度，每秒转的角度(°/s)。 |
-| degree | number | 否 | 否 | 相对旋转角度。  单位：度。  取值范围:[-360, 360]。 |
+| timestamp | number | 否 | 否 | 时间戳。触发事件时距离系统启动的时间间隔。  单位：ns |
+| angularVelocity | number | 否 | 否 | 旋转角速度。  单位：deg/s |
+| degree | number | 否 | 否 | 相对旋转角度。  单位：deg  取值范围：[-360, 360]。 |
 | action | [CrownAction](ts-appendix-enums.md#crownaction18) | 否 | 否 | 表冠动作。 |
-| stopPropagation | Callback<void> | 否 | 否 | 阻止[事件冒泡](../harmonyos-guides/arkts-interaction-basic-principles.md#事件冒泡)。 |
+| stopPropagation | Callback<void> | 否 | 否 | 阻止[事件冒泡](../harmonyos-guides/arkts-interaction-basic-principles.md#事件冒泡)，可用于当前获焦组件已处理表冠事件、不希望父组件继续响应表冠旋转的场景。 |
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
+该示例实现了组件注册表冠事件，并上报接收到的表冠事件数据内容。
 
-该示例实现了组件注册表冠事件，接收表冠事件数据上报内容。
+```ts
+// xxx.ets
+@Entry
+@Component
+struct CityList {
+  @State message: string = 'onDigitalCrown';
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct CityList {
-5. @State message: string = "onDigitalCrown";
-
-7. build() {
-8. Column() {
-9. Row() {
-10. Stack() {
-11. Text(this.message)
-12. .fontSize(20)
-13. .fontColor(Color.White)
-14. .backgroundColor("#262626")
-15. .textAlign(TextAlign.Center)
-16. .focusable(true)
-17. .focusOnTouch(true)
-18. .defaultFocus(true)
-19. .borderWidth(2)
-20. .width(223)
-21. .height(223)
-22. .borderRadius(110)
-23. .onDigitalCrown((event: CrownEvent) => {
-24. event.stopPropagation();
-25. this.message = "CrownEvent\n\n" + JSON.stringify(event);
-26. console.info(`action: ${event.action}, angularVelocity: ${event.angularVelocity}, degree: ${event.degree}, timestamp: ${event.timestamp}`);
-27. })
-28. }.width("100%").height("100%")
-29. }.width("100%").height("100%")
-30. }
-31. }
-32. }
+  build() {
+    Column() {
+      Row() {
+        Stack() {
+          Text(this.message)
+            .fontSize(20)
+            .fontColor(Color.White)
+            .backgroundColor('#262626')
+            .textAlign(TextAlign.Center)
+            .focusable(true)
+            .focusOnTouch(true)
+            .defaultFocus(true)
+            .borderWidth(2)
+            .width(223)
+            .height(223)
+            .borderRadius(110)
+            .onDigitalCrown((event: CrownEvent) => {
+              event.stopPropagation();
+              this.message = 'CrownEvent\n\n' + JSON.stringify(event);
+              console.info(`action: ${event.action}, angularVelocity: ${event.angularVelocity}, degree: ${event.degree}, timestamp: ${event.timestamp}`);
+            })
+        }.width('100%').height('100%')
+      }.width('100%').height('100%')
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/KnldIfZCRXGk6MWhhECAEg/zh-cn_image_0000002589244253.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/wkO_zhbyTqekvqf85fBekQ/zh-cn_image_0000002706673810.gif)

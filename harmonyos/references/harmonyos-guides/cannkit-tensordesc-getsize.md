@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tenso
 title: GetSize
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > TensorDesc > GetSize
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:58+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:eec8555109666609767824b6afdb33821f721c6422a3a42a5170bb942a16f2a7
+content_hash: sha256:e69c0dd0e3556c9f4a1a0c22bdb48f97b583debcf50cac496531aed82598b060
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:eec8555109666609767824b6afdb33821f721c6422a3a42a5170bb942a1
 
 ## 函数原型
 
-```
-1. int64_t GetSize() const;
+```cpp
+int64_t GetSize() const;
 ```
 
 ## 参数说明

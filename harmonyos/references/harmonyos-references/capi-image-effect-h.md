@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: image_effect.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > image_effect.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:21+08:00
-doc_updated_at: 2026-03-19
-content_hash: sha256:02fbf9cdfbd467a85274692e566efb52657ffc3f94c24c69edcb0daa8fc83a79
+scraped_at: 2026-09-02T15:02:32+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:eb50e55de98c4d049683394e2941721864e37a11322477f6ad57956803aec80b
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 声明效果器相关接口。
 
@@ -30,19 +28,13 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 结构体
-
-PhonePC/2in1TabletTV
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [OH\_ImageEffect](capi-imageeffect-oh-imageeffect.md) | OH\_ImageEffect | 定义效果器结构类型。 |
 
 ### 函数
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -71,21 +63,17 @@ PhonePC/2in1TabletTV
 | [ImageEffect\_ErrorCode OH\_ImageEffect\_SetInputTextureId(OH\_ImageEffect \*imageEffect, int32\_t textureId,int32\_t colorSpace)](capi-image-effect-h.md#oh_imageeffect_setinputtextureid) | 配置输入包含图片内容的纹理标识。 |
 | [ImageEffect\_ErrorCode OH\_ImageEffect\_SetOutputTextureId(OH\_ImageEffect \*imageEffect, int32\_t textureId)](capi-image-effect-h.md#oh_imageeffect_setoutputtextureid) | 配置输出包含渲染后的纹理标识。 |
 | [ImageEffect\_ErrorCode OH\_ImageEffect\_Start(OH\_ImageEffect \*imageEffect)](capi-image-effect-h.md#oh_imageeffect_start) | 启动效果器。 |
-| [ImageEffect\_ErrorCode OH\_ImageEffect\_Stop(OH\_ImageEffect \*imageEffect)](capi-image-effect-h.md#oh_imageeffect_stop) | 停止效果。 |
+| [ImageEffect\_ErrorCode OH\_ImageEffect\_Stop(OH\_ImageEffect \*imageEffect)](capi-image-effect-h.md#oh_imageeffect_stop) | 停止效果器。 |
 | [ImageEffect\_ErrorCode OH\_ImageEffect\_Release(OH\_ImageEffect \*imageEffect)](capi-image-effect-h.md#oh_imageeffect_release) | 释放OH\_ImageEffect实例资源。 |
 | [ImageEffect\_ErrorCode OH\_ImageEffect\_Save(OH\_ImageEffect \*imageEffect, char \*\*info)](capi-image-effect-h.md#oh_imageeffect_save) | 序列化效果器。 |
 | [OH\_ImageEffect \*OH\_ImageEffect\_Restore(const char \*info)](capi-image-effect-h.md#oh_imageeffect_restore) | 反序列化效果器。 |
 
 ## 函数说明
 
-PhonePC/2in1TabletTV
-
 ### OH\_ImageEffect\_Create()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_ImageEffect *OH_ImageEffect_Create(const char *name)
+```c
+OH_ImageEffect *OH_ImageEffect_Create(const char *name)
 ```
 
 **描述**
@@ -110,10 +98,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_AddFilter()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_EffectFilter *OH_ImageEffect_AddFilter(OH_ImageEffect *imageEffect, const char *filterName)
+```c
+OH_EffectFilter *OH_ImageEffect_AddFilter(OH_ImageEffect *imageEffect, const char *filterName)
 ```
 
 **描述**
@@ -139,10 +125,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_AddFilterByFilter()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_ImageEffect_AddFilterByFilter(OH_ImageEffect *imageEffect, OH_EffectFilter *filter)
+```c
+ImageEffect_ErrorCode OH_ImageEffect_AddFilterByFilter(OH_ImageEffect *imageEffect, OH_EffectFilter *filter)
 ```
 
 **描述**
@@ -168,10 +152,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_InsertFilter()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_EffectFilter *OH_ImageEffect_InsertFilter(OH_ImageEffect *imageEffect, uint32_t index, const char *filterName)
+```c
+OH_EffectFilter *OH_ImageEffect_InsertFilter(OH_ImageEffect *imageEffect, uint32_t index, const char *filterName)
 ```
 
 **描述**
@@ -198,10 +180,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_InsertFilterByFilter()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_ImageEffect_InsertFilterByFilter(OH_ImageEffect *imageEffect, uint32_t index,OH_EffectFilter *filter)
+```c
+ImageEffect_ErrorCode OH_ImageEffect_InsertFilterByFilter(OH_ImageEffect *imageEffect, uint32_t index,OH_EffectFilter *filter)
 ```
 
 **描述**
@@ -228,10 +208,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_RemoveFilter()
 
-PhonePC/2in1TabletTV
-
-```
-1. int32_t OH_ImageEffect_RemoveFilter(OH_ImageEffect *imageEffect, const char *filterName)
+```c
+int32_t OH_ImageEffect_RemoveFilter(OH_ImageEffect *imageEffect, const char *filterName)
 ```
 
 **描述**
@@ -257,10 +235,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_RemoveFilterByIndex()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_ImageEffect_RemoveFilterByIndex(OH_ImageEffect *imageEffect, uint32_t index)
+```c
+ImageEffect_ErrorCode OH_ImageEffect_RemoveFilterByIndex(OH_ImageEffect *imageEffect, uint32_t index)
 ```
 
 **描述**
@@ -286,10 +262,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_ReplaceFilter()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_EffectFilter *OH_ImageEffect_ReplaceFilter(OH_ImageEffect *imageEffect, uint32_t index, const char *filterName)
+```c
+OH_EffectFilter *OH_ImageEffect_ReplaceFilter(OH_ImageEffect *imageEffect, uint32_t index, const char *filterName)
 ```
 
 **描述**
@@ -315,10 +289,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_ReplaceFilterByFilter()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_ImageEffect_ReplaceFilterByFilter(OH_ImageEffect *imageEffect, uint32_t index, OH_EffectFilter *filter)
+```c
+ImageEffect_ErrorCode OH_ImageEffect_ReplaceFilterByFilter(OH_ImageEffect *imageEffect, uint32_t index, OH_EffectFilter *filter)
 ```
 
 **描述**
@@ -345,10 +317,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_GetFilterCount()
 
-PhonePC/2in1TabletTV
-
-```
-1. int32_t OH_ImageEffect_GetFilterCount(OH_ImageEffect *imageEffect)
+```c
+int32_t OH_ImageEffect_GetFilterCount(OH_ImageEffect *imageEffect)
 ```
 
 **描述**
@@ -373,10 +343,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_GetFilter()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_EffectFilter *OH_ImageEffect_GetFilter(OH_ImageEffect *imageEffect, uint32_t index)
+```c
+OH_EffectFilter *OH_ImageEffect_GetFilter(OH_ImageEffect *imageEffect, uint32_t index)
 ```
 
 **描述**
@@ -402,10 +370,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_Configure()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_ImageEffect_Configure(OH_ImageEffect *imageEffect, const char *key,const ImageEffect_Any *value)
+```c
+ImageEffect_ErrorCode OH_ImageEffect_Configure(OH_ImageEffect *imageEffect, const char *key,const ImageEffect_Any *value)
 ```
 
 **描述**
@@ -432,10 +398,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_SetOutputSurface()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_ImageEffect_SetOutputSurface(OH_ImageEffect *imageEffect, OHNativeWindow *nativeWindow)
+```c
+ImageEffect_ErrorCode OH_ImageEffect_SetOutputSurface(OH_ImageEffect *imageEffect, OHNativeWindow *nativeWindow)
 ```
 
 **描述**
@@ -461,10 +425,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_GetInputSurface()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_ImageEffect_GetInputSurface(OH_ImageEffect *imageEffect, OHNativeWindow **nativeWindow)
+```c
+ImageEffect_ErrorCode OH_ImageEffect_GetInputSurface(OH_ImageEffect *imageEffect, OHNativeWindow **nativeWindow)
 ```
 
 **描述**
@@ -490,10 +452,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_SetInputPixelmap()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_ImageEffect_SetInputPixelmap(OH_ImageEffect *imageEffect, OH_PixelmapNative *pixelmap)
+```c
+ImageEffect_ErrorCode OH_ImageEffect_SetInputPixelmap(OH_ImageEffect *imageEffect, OH_PixelmapNative *pixelmap)
 ```
 
 **描述**
@@ -519,10 +479,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_SetOutputPixelmap()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_ImageEffect_SetOutputPixelmap(OH_ImageEffect *imageEffect, OH_PixelmapNative *pixelmap)
+```c
+ImageEffect_ErrorCode OH_ImageEffect_SetOutputPixelmap(OH_ImageEffect *imageEffect, OH_PixelmapNative *pixelmap)
 ```
 
 **描述**
@@ -548,10 +506,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_SetInputNativeBuffer()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_ImageEffect_SetInputNativeBuffer(OH_ImageEffect *imageEffect, OH_NativeBuffer *nativeBuffer)
+```c
+ImageEffect_ErrorCode OH_ImageEffect_SetInputNativeBuffer(OH_ImageEffect *imageEffect, OH_NativeBuffer *nativeBuffer)
 ```
 
 **描述**
@@ -577,10 +533,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_SetOutputNativeBuffer()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_ImageEffect_SetOutputNativeBuffer(OH_ImageEffect *imageEffect, OH_NativeBuffer *nativeBuffer)
+```c
+ImageEffect_ErrorCode OH_ImageEffect_SetOutputNativeBuffer(OH_ImageEffect *imageEffect, OH_NativeBuffer *nativeBuffer)
 ```
 
 **描述**
@@ -606,10 +560,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_SetInputUri()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_ImageEffect_SetInputUri(OH_ImageEffect *imageEffect, const char *uri)
+```c
+ImageEffect_ErrorCode OH_ImageEffect_SetInputUri(OH_ImageEffect *imageEffect, const char *uri)
 ```
 
 **描述**
@@ -635,10 +587,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_SetOutputUri()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_ImageEffect_SetOutputUri(OH_ImageEffect *imageEffect, const char *uri)
+```c
+ImageEffect_ErrorCode OH_ImageEffect_SetOutputUri(OH_ImageEffect *imageEffect, const char *uri)
 ```
 
 **描述**
@@ -664,10 +614,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_SetInputPicture()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_ImageEffect_SetInputPicture(OH_ImageEffect *imageEffect, OH_PictureNative *picture)
+```c
+ImageEffect_ErrorCode OH_ImageEffect_SetInputPicture(OH_ImageEffect *imageEffect, OH_PictureNative *picture)
 ```
 
 **描述**
@@ -693,10 +641,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_SetOutputPicture()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_ImageEffect_SetOutputPicture(OH_ImageEffect *imageEffect, OH_PictureNative *picture)
+```c
+ImageEffect_ErrorCode OH_ImageEffect_SetOutputPicture(OH_ImageEffect *imageEffect, OH_PictureNative *picture)
 ```
 
 **描述**
@@ -722,10 +668,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_SetInputTextureId()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_ImageEffect_SetInputTextureId(OH_ImageEffect *imageEffect, int32_t textureId,int32_t colorSpace)
+```c
+ImageEffect_ErrorCode OH_ImageEffect_SetInputTextureId(OH_ImageEffect *imageEffect, int32_t textureId,int32_t colorSpace)
 ```
 
 **描述**
@@ -752,10 +696,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_SetOutputTextureId()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_ImageEffect_SetOutputTextureId(OH_ImageEffect *imageEffect, int32_t textureId)
+```c
+ImageEffect_ErrorCode OH_ImageEffect_SetOutputTextureId(OH_ImageEffect *imageEffect, int32_t textureId)
 ```
 
 **描述**
@@ -781,10 +723,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_Start()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_ImageEffect_Start(OH_ImageEffect *imageEffect)
+```c
+ImageEffect_ErrorCode OH_ImageEffect_Start(OH_ImageEffect *imageEffect)
 ```
 
 **描述**
@@ -809,15 +749,13 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_Stop()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_ImageEffect_Stop(OH_ImageEffect *imageEffect)
+```c
+ImageEffect_ErrorCode OH_ImageEffect_Stop(OH_ImageEffect *imageEffect)
 ```
 
 **描述**
 
-停止效果。
+停止效果器。
 
 **系统能力：** SystemCapability.Multimedia.ImageEffect.Core
 
@@ -837,10 +775,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_Release()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_ImageEffect_Release(OH_ImageEffect *imageEffect)
+```c
+ImageEffect_ErrorCode OH_ImageEffect_Release(OH_ImageEffect *imageEffect)
 ```
 
 **描述**
@@ -865,10 +801,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_Save()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageEffect_ErrorCode OH_ImageEffect_Save(OH_ImageEffect *imageEffect, char **info)
+```c
+ImageEffect_ErrorCode OH_ImageEffect_Save(OH_ImageEffect *imageEffect, char **info)
 ```
 
 **描述**
@@ -894,10 +828,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageEffect\_Restore()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_ImageEffect *OH_ImageEffect_Restore(const char *info)
+```c
+OH_ImageEffect *OH_ImageEffect_Restore(const char *info)
 ```
 
 **描述**

@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: ScenePostProcessSettings
 breadcrumb: API参考 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkTS API > graphics3d > ScenePostProcessSettings
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:38+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:4fbfefcf29902405fca3f5ba9038b777d010c5b86440602fc573c24e0f573b6f
+scraped_at: 2026-09-02T15:02:47+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:870018091be04e3144df8d4f58ea3fd19db2b95f4d47db56dfbefd8c10f30fed
 ---
 
-本模块提供3D图形中的色调映射等图像后处理方法。
+本模块提供ArkGraphics 3D中的色调映射等图像后处理方法。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 12开始支持，后续版本的新增接口，采用上角标标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { ToneMappingType, ToneMappingSettings, BloomSettings, PostProcessSettings } from '@kit.ArkGraphics3D';
+```ts
+import { ToneMappingType, ToneMappingSettings, BloomSettings, VignetteSettings, ColorFringeSettings, PostProcessSettings } from '@kit.ArkGraphics3D';
 ```
 
 ## ToneMappingType
-
-PhonePC/2in1TabletTVWearable
 
 色调映射类型枚举。
 
@@ -38,8 +34,6 @@ PhonePC/2in1TabletTVWearable
 
 ## ToneMappingSettings
 
-PhonePC/2in1TabletTVWearable
-
 色调映射设置。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
@@ -50,8 +44,6 @@ PhonePC/2in1TabletTVWearable
 | exposure | number | 否 | 是 | 曝光度，取值大于0，默认值为undefined。 |
 
 ## BloomSettings18+
-
-PhonePC/2in1TabletTVWearable
 
 泛光设置。当[RenderingPipelineType](js-apis-inner-scene-types.md#renderingpipelinetype21)为FORWARD\_LIGHTWEIGHT时，此功能不可用。
 
@@ -66,20 +58,16 @@ PhonePC/2in1TabletTVWearable
 
 ## VignetteSettings22+
 
-PhonePC/2in1TabletTVWearable
-
 边缘暗角设置。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| roundness | number | 否 | 是 | 暗角的覆盖区域大小，取值范围为[0, 1]，取值为0时覆盖区域收缩至最小，取值为1时覆盖区域为全局，默认值为sqrt(0.5)（约0.707）。 |
+| roundness | number | 否 | 是 | 暗角的圆度，取值范围为[0, 1]，取值为0时暗角形状趋近矩形，取值为1时暗角形状趋近圆形，默认值为sqrt(0.5)（约0.707）。 |
 | intensity | number | 否 | 是 | 作用强度，取值范围为[0, 1]，取值为0时无暗角效果，取值为1时为最大暗角强度，默认值为0.4。 |
 
 ## ColorFringeSettings22+
-
-PhonePC/2in1TabletTVWearable
 
 色晕设置。当[RenderingPipelineType](js-apis-inner-scene-types.md#renderingpipelinetype21)为FORWARD\_LIGHTWEIGHT时，此功能不可用。
 
@@ -87,11 +75,9 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| intensity | number | 否 | 是 | 作用强度，取值范围为0到1之间，默认值为0.2。 |
+| intensity | number | 否 | 是 | 作用强度，取值范围为[0, 1]，默认值为0.2。 |
 
 ## PostProcessSettings
-
-PhonePC/2in1TabletTVWearable
 
 后处理设置，用于配置相机渲染后的图像处理效果，包括色调映射、泛光、边缘暗角和色晕等，作为[Camera](js-apis-inner-scene-nodes.md#camera)的postProcess属性来使用。
 

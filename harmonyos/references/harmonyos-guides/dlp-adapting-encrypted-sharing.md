@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dlp-adapting-
 title: 适配加密分享
 breadcrumb: 指南 > 系统 > 安全 > Data Protection Kit（数据保护服务） > 数据防泄漏服务 > 适配加密分享
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:46+08:00
+scraped_at: 2026-09-02T14:59:29+08:00
 doc_updated_at: 2026-03-23
-content_hash: sha256:841652113cd39d8b40292bfdd4e1c50b91d934618a153fa6a56ec616e95f97e7
+content_hash: sha256:2e584e0448196590646ba625843df931ceb7487267dd07c7a25a68f6baf7365d
 ---
 
 ## 介绍
@@ -53,27 +53,27 @@ DLP加密分享是基于系统级数据防泄漏框架构建的数据安全功�
 2. 通过[DocumentViewPicker](../harmonyos-references/js-apis-file-picker.md#documentviewpicker)获取文件URI。
 3. 应用获取文件URI后即可发送DLP文件。
 
-   ```
-   1. import common from '@ohos.app.ability.common';
-   2. import picker from '@ohos.file.picker';
+   ```ts
+   import common from '@ohos.app.ability.common';
+   import picker from '@ohos.file.picker';
 
-   4. @Component
-   5. struct Index {
-   6. async callFilePicker(): Promise<void> {
-   7. try {
-   8. let context = this.getUIContext()?.getHostContext() as common.UIAbilityContext;
-   9. let documentSelectOptions = new picker.DocumentSelectOptions();
-   10. documentSelectOptions.isEncryptionSupported = true; // 显示加密分享按钮。
-   11. let documentPicker = new picker.DocumentViewPicker(context);
-   12. const documentSelectResult: Array<string> = await documentPicker.select(documentSelectOptions); // 获取文件URI。
-   13. } catch (err) {
-   14. console.error('CallFilePickerSelectFile failed');
-   15. }
-   16. }
+   @Component
+   struct Index {
+     async callFilePicker(): Promise<void> {
+       try {
+         let context = this.getUIContext()?.getHostContext() as common.UIAbilityContext;
+         let documentSelectOptions = new picker.DocumentSelectOptions();
+         documentSelectOptions.isEncryptionSupported = true; // 显示加密分享按钮。
+         let documentPicker = new picker.DocumentViewPicker(context);
+         const documentSelectResult: Array<string> = await documentPicker.select(documentSelectOptions); // 获取文件URI。
+       } catch (err) {
+         console.error('CallFilePickerSelectFile failed');
+       }
+     }
 
-   18. build() {
-   19. }
-   20. }
+     build() {
+     }
+   }
    ```
 
 ## 查看加密文件
@@ -95,29 +95,29 @@ DLP加密分享是基于系统级数据防泄漏框架构建的数据安全功�
 2. 构造[want](../harmonyos-references/js-apis-app-ability-want.md)参数。
 3. 通过[startAbility](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#startability-2)将[want](../harmonyos-references/js-apis-app-ability-want.md)参数传入，使用系统统一打开能力进行打开。
 
-   ```
-   1. import Want from '@ohos.app.ability.Want';
-   2. import { common, wantConstant } from '@kit.AbilityKit';
+   ```ts
+   import Want from '@ohos.app.ability.Want';
+   import { common, wantConstant } from '@kit.AbilityKit';
 
-   4. @Component
-   5. struct Index {
-   6. viewDlp(dlpUri: string) {
-   7. let context = this.getUIContext()?.getHostContext() as common.UIAbilityContext;
-   8. let want: Want = {
-   9. "action": "ohos.want.action.viewData",
-   10. "uri": dlpUri, // 打开DLP文件时，需要先获取待打开DLP文件的URI。
-   11. "flags": wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION, // 为打开的DLP文件进行uri授权，默认只读。
-   12. }
-   13. try {
-   14. // 通过startAbility将want信息传入，调用系统统一打开能力。
-   15. context.startAbility(want);
-   16. } catch (err) {
-   17. console.error('startAbility failed');
-   18. }
-   19. }
-   20. build() {
-   21. }
-   22. }
+   @Component
+   struct Index {
+     viewDlp(dlpUri: string) {
+       let context = this.getUIContext()?.getHostContext() as common.UIAbilityContext;
+       let want: Want = {
+         "action": "ohos.want.action.viewData",
+         "uri": dlpUri, // 打开DLP文件时，需要先获取待打开DLP文件的URI。
+         "flags": wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION, // 为打开的DLP文件进行uri授权，默认只读。
+       }
+       try {
+         // 通过startAbility将want信息传入，调用系统统一打开能力。
+         context.startAbility(want);
+       } catch (err) {
+         console.error('startAbility failed');
+       }
+     }
+     build() {
+     }
+   }
    ```
 
 ### 将DLP文件保存到本地文件管理中查看

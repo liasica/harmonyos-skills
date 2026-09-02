@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getre
 title: GetRequiredInputTensorRange
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > InferShapeRangeContext > GetRequiredInputTensorRange
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:04+08:00
+scraped_at: 2026-09-02T14:50:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9747fc70948a14a115d031c279cc592ce17fee10d4becddbee984310b1387923
+content_hash: sha256:dbd22bf3ce4826b8448f9253721780911d4fbf2b34b539a65b002c44f25dfe56
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:9747fc70948a14a115d031c279cc592ce17fee10d4becddbee984310b13
 
 ## 函数原型
 
-```
-1. const TensorRange *GetRequiredInputTensorRange(const size_t ir_index) const;
+```cpp
+const TensorRange *GetRequiredInputTensorRange(const size_t ir_index) const;
 ```
 
 ## 参数说明
@@ -28,8 +28,8 @@ content_hash: sha256:9747fc70948a14a115d031c279cc592ce17fee10d4becddbee984310b13
 
 TensorRange类型指针，定义如下。
 
-```
-1. using TensorRange = Range<Tensor>;
+```cpp
+using TensorRange = Range<Tensor>;
 ```
 
 ir\_index非法时，返回空指针。
@@ -40,12 +40,12 @@ ir\_index非法时，返回空指针。
 
 ## 调用示例
 
-```
-1. const auto infer_shape_range_func = [](gert::InferShapeRangeContext *context) -> graphStatus {
-2. auto input_shape_range = context->GetRequiredInputTensorRange(0U);
-3. auto output_shape_range = context->GetOutputShapeRange(0U);
-4. *output_shape_range->GetMin() = input_shape_range->GetMin()->GetStorageShape();
-5. *output_shape_range->GetMax() = input_shape_range->GetMax()->GetStorageShape();
-6. return GRAPH_SUCCESS;
-7. };
+```cpp
+const auto infer_shape_range_func = [](gert::InferShapeRangeContext *context) -> graphStatus {
+  auto input_shape_range = context->GetRequiredInputTensorRange(0U);
+  auto output_shape_range = context->GetOutputShapeRange(0U);
+  *output_shape_range->GetMin() = input_shape_range->GetMin()->GetStorageShape();
+  *output_shape_range->GetMax() = input_shape_range->GetMax()->GetStorageShape();
+  return GRAPH_SUCCESS;
+};
 ```

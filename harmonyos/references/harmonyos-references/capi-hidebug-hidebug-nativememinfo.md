@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hide
 title: HiDebug_NativeMemInfo
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > C API > 结构体 > HiDebug_NativeMemInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:26+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:e083fb4f10a52f1d0d62f79be6d1447b84f9bcb3aa071bee715e5f7031d955a9
+scraped_at: 2026-09-02T15:02:17+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7fbee016f30f93e6620c549965e4c38358b1db25ab634b09c64b8778c89d2afd
 ---
 
-```
-1. typedef struct HiDebug_NativeMemInfo {...} HiDebug_NativeMemInfo
+```c
+typedef struct HiDebug_NativeMemInfo {...} HiDebug_NativeMemInfo
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 应用程序进程本机内存信息结构类型定义。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cannkit-h
 title: hiai_options.h
 breadcrumb: API参考 > AI > CANN Kit（CANN异构计算框架服务） > C API > 头文件和结构体 > 头文件 > hiai_options.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:50+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5707ae18071014e077d89a272901e32d3c50f06e5de1f755cc9dc7524f72f631
+scraped_at: 2026-09-02T15:03:10+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:276be9317751634e6d33bd2957052c8b7fec6c2049d685705ff0a64b13d4b34e
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 选项参数的接口。
 
@@ -28,11 +26,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 枚举
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -48,8 +42,6 @@ PhonePC/2in1TabletTV
 | [HiAI\_OmType](cannkit.md#hiai_omtype) {  HIAI\_OM\_TYPE\_OFF = 0,  HIAI\_OM\_TYPE\_PROFILING = 1,  HIAI\_OM\_TYPE\_DUMP = 2  } | 维测类型定义。 |
 
 ### 函数
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-dataaugmentationkit-6001
 title: Data Augmentation Kit
-breadcrumb: 版本说明 > HarmonyOS 6.0.0(20) > OS平台能力 > API变更清单 > 6.0.0(20) Beta1引入的API > Data Augmentation Kit
+breadcrumb: 版本说明 > 更多版本 > 6.0.0(20) > OS平台能力 > API变更清单 > 6.0.0(20) Beta1引入的API > Data Augmentation Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:39+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:30+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:7c8db1000932eb7093d8584fa83a5de5665d8391dc9837b0699a2b63d16bdd0a
 ---
 

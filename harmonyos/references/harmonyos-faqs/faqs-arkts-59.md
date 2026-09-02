@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-59
-title: TaskPool后台I/O任务池，应用能否自行做管控？是否有方法开放管理机制
-breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > ArkTS线程模型和并发 > TaskPool后台I/O任务池，应用能否自行做管控？是否有方法开放管理机制
+title: TaskPool后台I/O任务池，应用能否自行做管控？有无方法开放管理机制
+breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > ArkTS线程模型和并发 > TaskPool后台I/O任务池，应用能否自行做管控？有无方法开放管理机制
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:25+08:00
-doc_updated_at: 2026-03-17
+scraped_at: 2026-09-02T15:21:16+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:24beaaf6d64dc2b5c59cf17a805ecc3f20ca6e37b1ee908a0791d363b272be81
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-utilities-
 title: 设备投屏时，投屏卡顿如何处理
 breadcrumb: FAQ > DevEco Testing > 实用工具 > 设备投屏 > 设备投屏时，投屏卡顿如何处理
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:44+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:20+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:f952ed0b5374a9f42d737d7f135aac81ab3f870d288b966bcd272444b905387d
 ---
 

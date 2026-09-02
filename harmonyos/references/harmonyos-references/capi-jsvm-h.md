@@ -3,16 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm
 title: jsvm.h
 breadcrumb: API参考 > 公共基础能力 > C API > 头文件 > jsvm.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:21+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:704c79c38079b68869f0fb4c3f2d9348d2fed7062716290e71a33c9514754075
+scraped_at: 2026-09-02T15:03:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f3e029bf4652d271eba5a1aca7b3759f06f5cd285cc510fe69197ee6709e3d93
 ---
 
 ## 概述
 
-PhonePC/2in1TabletWearable
-
 提供JSVM-API接口定义。通过API接口为开发者提供独立、标准、完整的JavaScript引擎能力，包括管理引擎生命周期、编译运行JS代码、实现JS/C++跨语言调用、拍摄快照等。
+
+**使用场景：** 适用于需要在Native应用中嵌入JavaScript引擎的场景，如动态脚本执行、插件系统、跨平台业务逻辑复用等。
+
+**收益：** 实现业务逻辑与原生代码解耦，支持热更新，提升开发效率。
 
 **引用文件：** <ark\_runtime/jsvm.h>
 
@@ -26,11 +28,7 @@ PhonePC/2in1TabletWearable
 
 ## 汇总
 
-PhonePC/2in1TabletWearable
-
 ### 宏定义
-
-PhonePC/2in1TabletWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -42,8 +40,6 @@ PhonePC/2in1TabletWearable
 | **EXTERN\_C\_END** | 用于告知编译器按C Code编译以下代码段的段终止标识：  当使用预处理指令\_\_cplusplus检查到C++编译器正在编译时：EXTERN\_C\_START被赋值为"}" ，表示C代码到此为止。当预处理指令\_\_cplusplus检查到不是C++编译器时，无须标记。 |
 
 ### 函数
-
-PhonePC/2in1TabletWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -64,7 +60,7 @@ PhonePC/2in1TabletWearable
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_GetVM(JSVM\_Env env,JSVM\_VM\* result)](capi-jsvm-h.md#oh_jsvm_getvm) | 检索给定环境的虚拟机实例。 |
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_CompileScript(JSVM\_Env env,JSVM\_Value script,const uint8\_t\* cachedData,size\_t cacheDataLength,bool eagerCompile,bool\* cacheRejected,JSVM\_Script\* result)](capi-jsvm-h.md#oh_jsvm_compilescript) | 编译一串JavaScript代码，并返回编译后的脚本。 |
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_CompileScriptWithOrigin(JSVM\_Env env,JSVM\_Value script,const uint8\_t\* cachedData,size\_t cacheDataLength,bool eagerCompile,bool\* cacheRejected,JSVM\_ScriptOrigin\* origin,JSVM\_Script\* result)](capi-jsvm-h.md#oh_jsvm_compilescriptwithorigin) | 编译一串包含 sourcemap 信息的 JavaScript 代码，并返回编译后的脚本。 |
-| [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_CompileScriptWithOptions(JSVM\_Env env,JSVM\_Value script,size\_t optionCount,JSVM\_CompileOptions options[],JSVM\_Script\* result)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm-h#oh_jsvm_compilescriptwithoptions) | 编译一串JavaScript代码，并返回编译后的脚本。 |
+| [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_CompileScriptWithOptions(JSVM\_Env env,JSVM\_Value script,size\_t optionCount,JSVM\_CompileOptions options[],JSVM\_Script\* result)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm-h#oh_jsvm_compilescriptwithoptions) | 编译一串包含sourcemap信息的JavaScript代码，并返回编译后的脚本。 |
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_CreateCodeCache(JSVM\_Env env,JSVM\_Script script,const uint8\_t\*\* data,size\_t\* length)](capi-jsvm-h.md#oh_jsvm_createcodecache) | 为编译后的脚本创建代码缓存。 |
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_RunScript(JSVM\_Env env,JSVM\_Script script,JSVM\_Value\* result)](capi-jsvm-h.md#oh_jsvm_runscript) | 执行一串JavaScript代码并返回其结果，其中包含以下注意事项：与eval不同的是，该函数不允许脚本访问当前词法作用域，因此也不允许访问模块作用域，这意味着require等伪全局变量将不可用。脚本可以访问全局作用域。脚本中的函数和var声明将被添加到全局对象。使用let和const的变量声明将全局可见，但不会被添加到全局对象。this的值在脚本内是global。如果没有 JIT 权限支持，执行含wasm的脚本会失败，在特定场景下存在性能差异，并打印一行日志提示开发者。 |
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_SetInstanceData(JSVM\_Env env,void\* data,JSVM\_Finalize finalizeCb,void\* finalizeHint)](capi-jsvm-h.md#oh_jsvm_setinstancedata) | 将data与当前运行的JSVM环境相关联。后续可以使用OH\_JSVM\_GetInstanceData()检索data。通过先前调用OH\_JSVM\_SetInstanceData()设置的任何与当前运行的JSVM环境相关联的现有数据都将被覆盖。如果先前提供了finalizeCb，则不会调用它。 |
@@ -98,6 +94,7 @@ PhonePC/2in1TabletWearable
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_AllocateArrayBufferBackingStoreData(size\_t byteLength,JSVM\_InitializedFlag initialized,void \*\*data)](capi-jsvm-h.md#oh_jsvm_allocatearraybufferbackingstoredata) | 申请一段 BackingStore 内存给 array buffer 使用。 |
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_FreeArrayBufferBackingStoreData(void \*data)](capi-jsvm-h.md#oh_jsvm_freearraybufferbackingstoredata) | 释放由 OH\_JSVM\_AllocateArrayBufferBackingStoreData 申请的 BackingStore 内存。 |
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_CreateArrayBufferFromBackingStoreData(JSVM\_Env env,void \*data,size\_t backingStoreSize,size\_t offset,size\_t arrayBufferSize,JSVM\_Value \*result)](capi-jsvm-h.md#oh_jsvm_createarraybufferfrombackingstoredata) | 在申请得到的 BackingStore 内存上创建 array buffer。 |
+| [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_CreateArrayBufferFromExternalMemory(JSVM\_Env env,void\* externalData,size\_t byteLength,JSVM\_FinalizeArrayBuffer finalizeCb,void\* finalizeHint,bool\* copied,JSVM\_Value\* result)](capi-jsvm-h.md#oh_jsvm_createarraybufferfromexternalmemory) | 从外部内存创建ArrayBuffer对象（必须先定义JSVM\_EXPERIMENTAL宏才能使用此接口）。 |
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_CreateDate(JSVM\_Env env,double time,JSVM\_Value\* result)](capi-jsvm-h.md#oh_jsvm_createdate) | 分配一个JavaScript Date对象。此API不处理闰秒。这是因为ECMAScript遵循POSIX时间规范，对闰秒进行忽略。 |
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_CreateExternal(JSVM\_Env env,void\* data,JSVM\_Finalize finalizeCb,void\* finalizeHint,JSVM\_Value\* result)](capi-jsvm-h.md#oh_jsvm_createexternal) | 分配一个带有外部数据的JavaScript值。这用于通过JavaScript代码传递外部数据。后续可以使用OH\_JSVM\_GetValueExternal由native代码检索。该API添加了一个JSVM\_Finalize回调，当刚刚创建的JavaScript对象被垃圾回收时将调用该回调。创建的值不是一个对象，因此不支持附加属性。它被认为是一个独特的值类型：使用外部值调用OH\_JSVM\_Typeof()会生成JSVM\_EXTERNAL。 |
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_CreateObject(JSVM\_Env env,JSVM\_Value\* result)](capi-jsvm-h.md#oh_jsvm_createobject) | 分配一个默认的JavaScript对象。该函数功能等同于在JavaScript中执行new Object()。 |
@@ -132,7 +129,7 @@ PhonePC/2in1TabletWearable
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_GetValueStringLatin1(JSVM\_Env env,JSVM\_Value value,char\* buf,size\_t bufsize,size\_t\* result)](capi-jsvm-h.md#oh_jsvm_getvaluestringlatin1) | 返回与传入值对应的ISO-8859-1编码字符串。 |
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_GetValueStringUtf8(JSVM\_Env env,JSVM\_Value value,char\* buf,size\_t bufsize,size\_t\* result)](capi-jsvm-h.md#oh_jsvm_getvaluestringutf8) | 返回与传入值对应的UTF8编码字符串。 |
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_GetValueStringUtf16(JSVM\_Env env,JSVM\_Value value,char16\_t\* buf,size\_t bufsize,size\_t\* result)](capi-jsvm-h.md#oh_jsvm_getvaluestringutf16) | 查询与传入值对应的UTF16编码字符串。 |
-| [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_GetValueUint32(JSVM\_Env env,JSVM\_Value value,uint32\_t\* result)](capi-jsvm-h.md#oh_jsvm_getvalueuint32) | 返回与给定的JavaScript number等价的C uint\_32基础类型值。 |
+| [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_GetValueUint32(JSVM\_Env env,JSVM\_Value value,uint32\_t\* result)](capi-jsvm-h.md#oh_jsvm_getvalueuint32) | 返回与给定的JavaScript number等价的C uint32基础类型值。 |
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_GetBoolean(JSVM\_Env env,bool value,JSVM\_Value\* result)](capi-jsvm-h.md#oh_jsvm_getboolean) | 返回表示给定布尔值的JavaScript单例对象。 |
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_GetGlobal(JSVM\_Env env,JSVM\_Value\* result)](capi-jsvm-h.md#oh_jsvm_getglobal) | 返回global对象。 |
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_GetNull(JSVM\_Env env,JSVM\_Value\* result)](capi-jsvm-h.md#oh_jsvm_getnull) | 返回null对象。 |
@@ -170,7 +167,7 @@ PhonePC/2in1TabletWearable
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_ObjectFreeze(JSVM\_Env env,JSVM\_Value object)](capi-jsvm-h.md#oh_jsvm_objectfreeze) | 冻结指定的对象，防止为其添加新的属性、删除现有属性、更改现有属性的可枚举性/可配置性/可写性、更改现有属性的值、改变对象原型等操作。 |
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_ObjectSeal(JSVM\_Env env,JSVM\_Value object)](capi-jsvm-h.md#oh_jsvm_objectseal) | 封装指定的对象，防止为其添加新的属性并将所有现有属性标记为不可配置。 |
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_CallFunction(JSVM\_Env env,JSVM\_Value recv,JSVM\_Value func,size\_t argc,const JSVM\_Value\* argv,JSVM\_Value\* result)](capi-jsvm-h.md#oh_jsvm_callfunction) | 支持从native代码调用JavaScript函数对象，这是从native代码回调到JavaScript的主要机制。 |
-| [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_CreateFunction(JSVM\_Env env,const char\* utf8name,size\_t length,JSVM\_Callback cb,JSVM\_Value\* result)](capi-jsvm-h.md#oh_jsvm_createfunction) | 支持在native代码中创建函数对象，这是从JavaScript调用native代码的主要机制。在此调用之后，新创建的函数在脚本中不再自动可见。相反，必须在JavaScript可见的任何对象上显示设置属性，才能从脚本访问该函数。 |
+| [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_CreateFunction(JSVM\_Env env,const char\* utf8name,size\_t length,JSVM\_Callback cb,JSVM\_Value\* result)](capi-jsvm-h.md#oh_jsvm_createfunction) | 支持在native代码中创建函数对象，这是从JavaScript调用native代码的主要机制。在此调用之后，新创建的函数在脚本中不再自动可见。相反，必须在JavaScript可见的任何对象上显式设置属性，才能从脚本访问该函数。 |
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_GetCbInfo(JSVM\_Env env,JSVM\_CallbackInfo cbinfo,size\_t\* argc,JSVM\_Value\* argv,JSVM\_Value\* thisArg,void\*\* data)](capi-jsvm-h.md#oh_jsvm_getcbinfo) | 此方法在回调函数中用于检索有关调用的详细信息，例如来自给定回调信息的参数和this指针。 |
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_GetNewTarget(JSVM\_Env env,JSVM\_CallbackInfo cbinfo,JSVM\_Value\* result)](capi-jsvm-h.md#oh_jsvm_getnewtarget) | 返回构造函数调用的new target。如果当前回调不是构造函数调用，结果为NULL。 |
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_NewInstance(JSVM\_Env env,JSVM\_Value constructor,size\_t argc,const JSVM\_Value\* argv,JSVM\_Value\* result)](capi-jsvm-h.md#oh_jsvm_newinstance) | 使用给定的JSVM\_Value表示的构造函数来实例化新的JavaScript值。 |
@@ -197,6 +194,9 @@ PhonePC/2in1TabletWearable
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_StartCpuProfiler(JSVM\_VM vm,JSVM\_CpuProfiler\* result)](capi-jsvm-h.md#oh_jsvm_startcpuprofiler) | 创建并启动一个CPU profiler。 |
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_StopCpuProfiler(JSVM\_VM vm,JSVM\_CpuProfiler profiler,JSVM\_OutputStream stream,void\* streamData)](capi-jsvm-h.md#oh_jsvm_stopcpuprofiler) | 停止CPU profiler并将结果输出到流。 |
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_TakeHeapSnapshot(JSVM\_VM vm,JSVM\_OutputStream stream,void\* streamData)](capi-jsvm-h.md#oh_jsvm_takeheapsnapshot) | 获取当前堆快照并将其输出到流。 |
+| [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_TakeRawHeapSnapshot(JSVM\_VM vm, JSVM\_OutputStream stream, void \*streamData)](capi-jsvm-h.md#oh_jsvm_takerawheapsnapshot) | 获取当前堆快照并以原始堆格式（二进制格式）输出到流。原始堆格式是虚拟机特定的，其布局在不同版本之间可能不稳定。此操作可能会暂时暂停应用程序，频繁调用可能会生成大快照文件并增加磁盘使用，因此如果文件写入磁盘，调用者应适当管理生成的文件。流回调在虚拟机运行的线程上同步调用，回调应避免长时间阻塞操作。如果回调返回false，则输出流中止，快照生成停止。 |
+| [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_SetHeapThresholdCallback(JSVM\_VM vm, uint64\_t threshold, JSVM\_HandlerForHeapThreshold callback, void \*data)](capi-jsvm-h.md#oh_jsvm_setheapthresholdcallback) | 为虚拟机设置堆内存阈值回调，每个虚拟机只能有一个堆内存阈值回调。当不再需要时，应通过OH\_JSVM\_ClearHeapThresholdCallback清除已注册的回调。此API不是线程安全的，必须在虚拟机运行的线程上调用。阈值在GC前后进行检查，当观察到的堆使用量大于或等于阈值时，将调用回调。回调将在同一线程上同步调用，并且在回调运行期间跳过阈值检查。回调返回后，如果堆使用量仍然大于或等于阈值，则将在下一次GC前后再次调用回调。回调返回后无需重新注册。注册的回调由(threshold, callback, data)标识。 |
+| [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_ClearHeapThresholdCallback(JSVM\_VM vm, uint64\_t threshold, JSVM\_HandlerForHeapThreshold callback, void \*data)](capi-jsvm-h.md#oh_jsvm_clearheapthresholdcallback) | 清除先前为虚拟机注册的堆内存阈值回调。此API不是线程安全的，必须在虚拟机运行的线程上调用。注册的回调由(threshold, callback, data)标识。 |
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_OpenInspector(JSVM\_Env env,const char\* host,uint16\_t port)](capi-jsvm-h.md#oh_jsvm_openinspector) | 在指定的主机和端口上激活inspector，将用来调试JS代码。 |
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_CloseInspector(JSVM\_Env env)](capi-jsvm-h.md#oh_jsvm_closeinspector) | 尝试关闭剩余的所有inspector连接。 |
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_WaitForDebugger(JSVM\_Env env,bool breakNextLine)](capi-jsvm-h.md#oh_jsvm_waitfordebugger) | 等待主机与inspector建立socket连接，连接建立后程序将继续运行。发送Runtime.runIfWaitingForDebugger命令。 |
@@ -269,17 +269,15 @@ PhonePC/2in1TabletWearable
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_DeletePrivate(JSVM\_Env env,JSVM\_Value object,JSVM\_Data key)](capi-jsvm-h.md#oh_jsvm_deleteprivate) | 从传入的 object 上删除 private key 对应的 private 属性。 |
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_CreateDataReference(JSVM\_Env env,JSVM\_Data data,uint32\_t initialRefcount,JSVM\_Ref\* result)](capi-jsvm-h.md#oh_jsvm_createdatareference) | 创建一个对于给定 JSVM\_Data 对象的引用，初始的引用计数为传入的 initialRefcount。 |
 | [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_GetReferenceData(JSVM\_Env env,JSVM\_Ref ref,JSVM\_Data\* result)](capi-jsvm-h.md#oh_jsvm_getreferencedata) | 如果引用仍然有效，通过 result 参数返回对应的 JSVM\_Data，表示与 JSVM\_Ref 关联的 JavaScript 值。否则结果将为空。 |
+| [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_BackgroundDeserialize(JSVM\_VM vm, JSVM\_CodeCache cacheData, JSVM\_DeserializeResult\* result)](capi-jsvm-h.md#oh_jsvm_backgrounddeserialize) | 在线程池中反序列化 JSVM\_CodeCache，通过 OH\_JSVM\_ReleaseDeserializeResult 接口释放 JSVM\_DeserializeResult。 |
+| [JSVM\_EXTERN JSVM\_Status OH\_JSVM\_ReleaseDeserializeResult(JSVM\_DeserializeResult result)](capi-jsvm-h.md#oh_jsvm_releasedeserializeresult) | 当 JSVM\_DeserializeResult 不再被使用时进行释放。 |
 
 ## 函数说明
 
-PhonePC/2in1TabletWearable
-
 ### OH\_JSVM\_Init()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_Init(const JSVM_InitOptions* options)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_Init(const JSVM_InitOptions* options)
 ```
 
 **描述**
@@ -292,7 +290,7 @@ PhonePC/2in1TabletWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [const JSVM\_InitOptions](capi-jsvm-jsvm-initoptions.md)\* options | 用于初始化JavaScript虚拟机的选项。 |
+| const [JSVM\_InitOptions](capi-jsvm-jsvm-initoptions.md)\* options | 用于初始化JavaScript虚拟机的选项。 |
 
 **返回：**
 
@@ -302,10 +300,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateVM()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateVM(const JSVM_CreateVMOptions* options,JSVM_VM* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateVM(const JSVM_CreateVMOptions* options,JSVM_VM* result)
 ```
 
 **描述**
@@ -318,7 +314,7 @@ PhonePC/2in1TabletWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [const JSVM\_CreateVMOptions](capi-jsvm-jsvm-createvmoptions.md)\* options | 用于创建虚拟机实例的选项。 |
+| const [JSVM\_CreateVMOptions](capi-jsvm-jsvm-createvmoptions.md)\* options | 用于创建虚拟机实例的选项。 |
 | [JSVM\_VM](capi-jsvm-jsvm-vm--8h.md)\* result | 新的虚拟机实例。 |
 
 **返回：**
@@ -329,10 +325,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_SetMicrotaskPolicy()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_SetMicrotaskPolicy(JSVM_VM vm,JSVM_MicrotaskPolicy policy)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_SetMicrotaskPolicy(JSVM_VM vm,JSVM_MicrotaskPolicy policy)
 ```
 
 **描述**
@@ -356,10 +350,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_DestroyVM()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_DestroyVM(JSVM_VM vm)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_DestroyVM(JSVM_VM vm)
 ```
 
 **描述**
@@ -382,10 +374,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateProxy()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateProxy(JSVM_Env env,JSVM_Value target,JSVM_Value handler,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateProxy(JSVM_Env env,JSVM_Value target,JSVM_Value handler,JSVM_Value* result)
 ```
 
 **描述**
@@ -411,10 +401,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_IsProxy()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsProxy(JSVM_Env env,JSVM_Value value,bool* isProxy)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsProxy(JSVM_Env env,JSVM_Value value,bool* isProxy)
 ```
 
 **描述**
@@ -435,14 +423,12 @@ PhonePC/2in1TabletWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) JSVM\_CDECL | 返回执行状态码。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示接口调用成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示传入参数不合法。 |
+| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示接口调用成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示传入参数不合法。 |
 
 ### OH\_JSVM\_ProxyGetTarget()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_ProxyGetTarget(JSVM_Env env,JSVM_Value value,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_ProxyGetTarget(JSVM_Env env,JSVM_Value value,JSVM_Value* result)
 ```
 
 **描述**
@@ -463,14 +449,12 @@ PhonePC/2in1TabletWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) JSVM\_CDECL | 返回执行状态码。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示接口调用成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示传入参数不合法。  [JSVM\_INVALID\_TYPE](capi-jsvm-types-h.md#jsvm_status) 如果 value 非 Javascript Proxy。 |
+| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示接口调用成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示传入参数不合法。  [JSVM\_INVALID\_TYPE](capi-jsvm-types-h.md#jsvm_status) 如果 value 非 JavaScript Proxy。 |
 
 ### OH\_JSVM\_OpenVMScope()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_OpenVMScope(JSVM_VM vm,JSVM_VMScope* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_OpenVMScope(JSVM_VM vm,JSVM_VMScope* result)
 ```
 
 **描述**
@@ -494,10 +478,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CloseVMScope()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CloseVMScope(JSVM_VM vm,JSVM_VMScope scope)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CloseVMScope(JSVM_VM vm,JSVM_VMScope scope)
 ```
 
 **描述**
@@ -521,10 +503,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateEnv()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateEnv(JSVM_VM vm,size_t propertyCount,const JSVM_PropertyDescriptor* properties,JSVM_Env* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateEnv(JSVM_VM vm,size_t propertyCount,const JSVM_PropertyDescriptor* properties,JSVM_Env* result)
 ```
 
 **描述**
@@ -539,7 +519,7 @@ PhonePC/2in1TabletWearable
 | --- | --- |
 | [JSVM\_VM](capi-jsvm-jsvm-vm--8h.md) vm | 虚拟机实例，新环境将在该实例中创建。 |
 | size\_t propertyCount | 属性数组中元素的个数。 |
-| [const JSVM\_PropertyDescriptor](capi-jsvm-jsvm-propertydescriptor.md)\* properties | 属性描述符的数组。 |
+| const [JSVM\_PropertyDescriptor](capi-jsvm-jsvm-propertydescriptor.md)\* properties | 属性描述符的数组。 |
 | [JSVM\_Env](capi-jsvm-jsvm-env--8h.md)\* result | 创建的新环境。 |
 
 **返回：**
@@ -550,10 +530,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateEnvFromSnapshot()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateEnvFromSnapshot(JSVM_VM vm,size_t index,JSVM_Env* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateEnvFromSnapshot(JSVM_VM vm,size_t index,JSVM_Env* result)
 ```
 
 **描述**
@@ -578,10 +556,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_DestroyEnv()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_DestroyEnv(JSVM_Env env)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_DestroyEnv(JSVM_Env env)
 ```
 
 **描述**
@@ -604,10 +580,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_OpenEnvScope()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_OpenEnvScope(JSVM_Env env,JSVM_EnvScope* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_OpenEnvScope(JSVM_Env env,JSVM_EnvScope* result)
 ```
 
 **描述**
@@ -631,10 +605,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CloseEnvScope()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CloseEnvScope(JSVM_Env env,JSVM_EnvScope scope)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CloseEnvScope(JSVM_Env env,JSVM_EnvScope scope)
 ```
 
 **描述**
@@ -658,10 +630,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetVM()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetVM(JSVM_Env env,JSVM_VM* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetVM(JSVM_Env env,JSVM_VM* result)
 ```
 
 **描述**
@@ -685,10 +655,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CompileScript()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CompileScript(JSVM_Env env,JSVM_Value script,const uint8_t* cachedData,size_t cacheDataLength,bool eagerCompile,bool* cacheRejected,JSVM_Script* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CompileScript(JSVM_Env env,JSVM_Value script,const uint8_t* cachedData,size_t cacheDataLength,bool eagerCompile,bool* cacheRejected,JSVM_Script* result)
 ```
 
 **描述**
@@ -717,10 +685,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CompileScriptWithOrigin()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CompileScriptWithOrigin(JSVM_Env env,JSVM_Value script,const uint8_t* cachedData,size_t cacheDataLength,bool eagerCompile,bool* cacheRejected,JSVM_ScriptOrigin* origin,JSVM_Script* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CompileScriptWithOrigin(JSVM_Env env,JSVM_Value script,const uint8_t* cachedData,size_t cacheDataLength,bool eagerCompile,bool* cacheRejected,JSVM_ScriptOrigin* origin,JSVM_Script* result)
 ```
 
 **描述**
@@ -750,15 +716,13 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CompileScriptWithOptions()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CompileScriptWithOptions(JSVM_Env env,JSVM_Value script,size_t optionCount,JSVM_CompileOptions options[],JSVM_Script* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CompileScriptWithOptions(JSVM_Env env,JSVM_Value script,size_t optionCount,JSVM_CompileOptions options[],JSVM_Script* result)
 ```
 
 **描述**
 
-编译一串JavaScript代码，并返回编译后的脚本。
+编译一串包含sourcemap信息的JavaScript代码，并返回编译后的脚本。
 
 **起始版本：** 12
 
@@ -770,20 +734,18 @@ PhonePC/2in1TabletWearable
 | [JSVM\_Value](capi-jsvm-jsvm-value--8h.md) script | 包含要编译的脚本的JavaScript代码。 |
 | size\_t optionCount | 传入的 option 数组的长度。 |
 | JSVM\_CompileOptions options[] | option 数组，存放所有的编译选项。 |
-| [JSVM\_Script](capi-jsvm-jsvm-value--8h.md)\* result | 编译后的脚本。 |
+| [JSVM\_Script](capi-jsvm-jsvm-script--8h.md)\* result | 编译后的脚本。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示传入的 data 是空指针。  [JSVM\_STRING\_EXPECTED](capi-jsvm-types-h.md#jsvm_status) 表示传入的参数不是string类型。  [JSVM\_GENERIC\_FAILURE](capi-jsvm-types-h.md#jsvm_status) 表示有未知的原因导致执行失败。  [JSVM\_PENDING\_EXCEPTION](capi-jsvm-types-h.md#jsvm_status) 表示执行的过程中产生了JS异常。 |
+| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示传入参数无效。  [JSVM\_STRING\_EXPECTED](capi-jsvm-types-h.md#jsvm_status) 表示传入的参数不是string类型。  [JSVM\_GENERIC\_FAILURE](capi-jsvm-types-h.md#jsvm_status) 表示有未知的原因导致执行失败。  [JSVM\_PENDING\_EXCEPTION](capi-jsvm-types-h.md#jsvm_status) 表示执行的过程中产生了JS异常。 |
 
 ### OH\_JSVM\_CreateCodeCache()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateCodeCache(JSVM_Env env,JSVM_Script script,const uint8_t** data,size_t* length)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateCodeCache(JSVM_Env env,JSVM_Script script,const uint8_t** data,size_t* length)
 ```
 
 **描述**
@@ -809,10 +771,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_RunScript()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_RunScript(JSVM_Env env,JSVM_Script script,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_RunScript(JSVM_Env env,JSVM_Script script,JSVM_Value* result)
 ```
 
 **描述**
@@ -837,10 +797,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_SetInstanceData()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_SetInstanceData(JSVM_Env env,void* data,JSVM_Finalize finalizeCb,void* finalizeHint)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_SetInstanceData(JSVM_Env env,void* data,JSVM_Finalize finalizeCb,void* finalizeHint)
 ```
 
 **描述**
@@ -866,10 +824,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetInstanceData()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetInstanceData(JSVM_Env env,void** data)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetInstanceData(JSVM_Env env,void** data)
 ```
 
 **描述**
@@ -893,10 +849,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetLastErrorInfo()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetLastErrorInfo(JSVM_Env env,const JSVM_ExtendedErrorInfo** result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetLastErrorInfo(JSVM_Env env,const JSVM_ExtendedErrorInfo** result)
 ```
 
 **描述**
@@ -910,7 +864,7 @@ PhonePC/2in1TabletWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [JSVM\_Env](capi-jsvm-jsvm-env--8h.md) env | 调用JSVM-API的环境。 |
-| [const JSVM\_ExtendedErrorInfo](capi-jsvm-jsvm-extendederrorinfo.md)\*\* result | 包含有关错误的更多信息的JSVM\_ExtendedErrorInfo结构。 |
+| const [JSVM\_ExtendedErrorInfo](capi-jsvm-jsvm-extendederrorinfo.md)\*\* result | 包含有关错误的更多信息的JSVM\_ExtendedErrorInfo结构。 |
 
 **返回：**
 
@@ -920,10 +874,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_Throw()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_Throw(JSVM_Env env,JSVM_Value error)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_Throw(JSVM_Env env,JSVM_Value error)
 ```
 
 **描述**
@@ -947,10 +899,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_ThrowError()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_ThrowError(JSVM_Env env,const char* code,const char* msg)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_ThrowError(JSVM_Env env,const char* code,const char* msg)
 ```
 
 **描述**
@@ -975,10 +925,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_ThrowTypeError()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_ThrowTypeError(JSVM_Env env,const char* code,const char* msg)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_ThrowTypeError(JSVM_Env env,const char* code,const char* msg)
 ```
 
 **描述**
@@ -1003,10 +951,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_ThrowRangeError()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_ThrowRangeError(JSVM_Env env,const char* code,const char* msg)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_ThrowRangeError(JSVM_Env env,const char* code,const char* msg)
 ```
 
 **描述**
@@ -1031,10 +977,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_ThrowSyntaxError()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_ThrowSyntaxError(JSVM_Env env,const char* code,const char* msg)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_ThrowSyntaxError(JSVM_Env env,const char* code,const char* msg)
 ```
 
 **描述**
@@ -1059,10 +1003,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_IsError()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsError(JSVM_Env env,JSVM_Value value,bool* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsError(JSVM_Env env,JSVM_Value value,bool* result)
 ```
 
 **描述**
@@ -1087,10 +1029,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateError()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateError(JSVM_Env env,JSVM_Value code,JSVM_Value msg,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateError(JSVM_Env env,JSVM_Value code,JSVM_Value msg,JSVM_Value* result)
 ```
 
 **描述**
@@ -1116,10 +1056,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateTypeError()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateTypeError(JSVM_Env env,JSVM_Value code,JSVM_Value msg,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateTypeError(JSVM_Env env,JSVM_Value code,JSVM_Value msg,JSVM_Value* result)
 ```
 
 **描述**
@@ -1145,10 +1083,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateRangeError()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateRangeError(JSVM_Env env,JSVM_Value code,JSVM_Value msg,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateRangeError(JSVM_Env env,JSVM_Value code,JSVM_Value msg,JSVM_Value* result)
 ```
 
 **描述**
@@ -1174,10 +1110,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateSyntaxError()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateSyntaxError(JSVM_Env env,JSVM_Value code,JSVM_Value msg,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateSyntaxError(JSVM_Env env,JSVM_Value code,JSVM_Value msg,JSVM_Value* result)
 ```
 
 **描述**
@@ -1203,10 +1137,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetAndClearLastException()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetAndClearLastException(JSVM_Env env,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetAndClearLastException(JSVM_Env env,JSVM_Value* result)
 ```
 
 **描述**
@@ -1230,10 +1162,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_IsExceptionPending()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsExceptionPending(JSVM_Env env,bool* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsExceptionPending(JSVM_Env env,bool* result)
 ```
 
 **描述**
@@ -1257,10 +1187,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_OpenHandleScope()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_OpenHandleScope(JSVM_Env env,JSVM_HandleScope* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_OpenHandleScope(JSVM_Env env,JSVM_HandleScope* result)
 ```
 
 **描述**
@@ -1284,10 +1212,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CloseHandleScope()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CloseHandleScope(JSVM_Env env,JSVM_HandleScope scope)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CloseHandleScope(JSVM_Env env,JSVM_HandleScope scope)
 ```
 
 **描述**
@@ -1311,10 +1237,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_OpenEscapableHandleScope()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_OpenEscapableHandleScope(JSVM_Env env,JSVM_EscapableHandleScope* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_OpenEscapableHandleScope(JSVM_Env env,JSVM_EscapableHandleScope* result)
 ```
 
 **描述**
@@ -1338,10 +1262,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CloseEscapableHandleScope()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CloseEscapableHandleScope(JSVM_Env env,JSVM_EscapableHandleScope scope)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CloseEscapableHandleScope(JSVM_Env env,JSVM_EscapableHandleScope scope)
 ```
 
 **描述**
@@ -1365,10 +1287,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_EscapeHandle()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_EscapeHandle(JSVM_Env env,JSVM_EscapableHandleScope scope,JSVM_Value escapee,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_EscapeHandle(JSVM_Env env,JSVM_EscapableHandleScope scope,JSVM_Value escapee,JSVM_Value* result)
 ```
 
 **描述**
@@ -1394,10 +1314,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateReference()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateReference(JSVM_Env env,JSVM_Value value,uint32_t initialRefcount,JSVM_Ref* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateReference(JSVM_Env env,JSVM_Value value,uint32_t initialRefcount,JSVM_Ref* result)
 ```
 
 **描述**
@@ -1423,10 +1341,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_DeleteReference()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_DeleteReference(JSVM_Env env,JSVM_Ref ref)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_DeleteReference(JSVM_Env env,JSVM_Ref ref)
 ```
 
 **描述**
@@ -1450,10 +1366,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_ReferenceRef()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_ReferenceRef(JSVM_Env env,JSVM_Ref ref,uint32_t* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_ReferenceRef(JSVM_Env env,JSVM_Ref ref,uint32_t* result)
 ```
 
 **描述**
@@ -1478,10 +1392,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_ReferenceUnref()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_ReferenceUnref(JSVM_Env env,JSVM_Ref ref,uint32_t* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_ReferenceUnref(JSVM_Env env,JSVM_Ref ref,uint32_t* result)
 ```
 
 **描述**
@@ -1506,10 +1418,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetReferenceValue()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetReferenceValue(JSVM_Env env,JSVM_Ref ref,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetReferenceValue(JSVM_Env env,JSVM_Ref ref,JSVM_Value* result)
 ```
 
 **描述**
@@ -1534,10 +1444,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateArray()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateArray(JSVM_Env env,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateArray(JSVM_Env env,JSVM_Value* result)
 ```
 
 **描述**
@@ -1561,10 +1469,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateArrayWithLength()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateArrayWithLength(JSVM_Env env,size_t length,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateArrayWithLength(JSVM_Env env,size_t length,JSVM_Value* result)
 ```
 
 **描述**
@@ -1589,10 +1495,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateArraybuffer()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateArraybuffer(JSVM_Env env,size_t byteLength,void** data,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateArraybuffer(JSVM_Env env,size_t byteLength,void** data,JSVM_Value* result)
 ```
 
 **描述**
@@ -1618,10 +1522,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_AllocateArrayBufferBackingStoreData()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_AllocateArrayBufferBackingStoreData(size_t byteLength,JSVM_InitializedFlag initialized,void **data)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_AllocateArrayBufferBackingStoreData(size_t byteLength,JSVM_InitializedFlag initialized,void **data)
 ```
 
 **描述**
@@ -1642,14 +1544,12 @@ PhonePC/2in1TabletWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) JSVM\_CDECL | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示传入的 data 是空指针。  [JSVM\_GENERIC\_FAILURE](capi-jsvm-types-h.md#jsvm_status) 表示内存申请失败。 |
+| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示传入的 data 是空指针。  [JSVM\_GENERIC\_FAILURE](capi-jsvm-types-h.md#jsvm_status) 表示内存申请失败。 |
 
 ### OH\_JSVM\_FreeArrayBufferBackingStoreData()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_FreeArrayBufferBackingStoreData(void *data)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_FreeArrayBufferBackingStoreData(void *data)
 ```
 
 **描述**
@@ -1668,14 +1568,12 @@ PhonePC/2in1TabletWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) JSVM\_CDECL | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示传入的 data 是空指针。 |
+| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示传入的 data 是空指针。 |
 
 ### OH\_JSVM\_CreateArrayBufferFromBackingStoreData()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateArrayBufferFromBackingStoreData(JSVM_Env env,void *data,size_t backingStoreSize,size_t offset,size_t arrayBufferSize,JSVM_Value *result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateArrayBufferFromBackingStoreData(JSVM_Env env,void *data,size_t backingStoreSize,size_t offset,size_t arrayBufferSize,JSVM_Value *result)
 ```
 
 **描述**
@@ -1699,14 +1597,48 @@ PhonePC/2in1TabletWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) JSVM\_CDECL | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示触发了下面描述的异常情况之一：  1. offset + arrayBufferSize > backingStoreSize。  2. backingStoreSize 或者 arrayBufferSize 为 0。  3. data 或者 result 为空。 |
+| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示触发了下面描述的异常情况之一：  1. offset + arrayBufferSize > backingStoreSize。  2. backingStoreSize 或者 arrayBufferSize 为 0。  3. data 或者 result 为空。 |
+
+### OH\_JSVM\_CreateArrayBufferFromExternalMemory()
+
+```c
+#ifdef JSVM_EXPERIMENTAL
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateArrayBufferFromExternalMemory(JSVM_Env env, void* externalData, size_t byteLength, JSVM_FinalizeArrayBuffer finalizeCb, void* finalizeHint, bool* copied, JSVM_Value* result);
+#endif // JSVM_EXPERIMENTAL
+```
+
+**描述**
+
+**注意** 
+
+此接口是实验性接口，需定义JSVM\_EXPERIMENTAL宏后方可使用。
+
+从外部内存创建ArrayBuffer对象。接口注意事项及使用示例请参考[使用JSVM-API接口从外部内存创建ArrayBuffer](../harmonyos-guides/use-jsvm-about-external-arraybuffer.md)。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [JSVM\_Env](capi-jsvm-jsvm-env--8h.md) env | 调用JSVM-API的环境。 |
+| void \*externalData | 外部内存指针。**必须8字节对齐**。 |
+| size\_t byteLength | 外部内存的长度（字节）。不得超过引擎最大ArrayBuffer大小。 |
+| [JSVM\_FinalizeArrayBuffer](capi-jsvm-types-h.md#jsvm_finalizearraybuffer) finalizeCb | 可选参数。当ArrayBuffer被GC回收时调用的callback。回调签名含bool copied参数，指示是否发生了拷贝。 |
+| void\* finalizeHint | 可选参数。传递给finalizeCb的自定义提示数据。 |
+| bool\* copied | 可选输出参数。为true表示数据被拷贝，为false表示零拷贝 |
+| [JSVM\_Value](capi-jsvm-jsvm-value--8h.md) \*result | 输出参数。创建的ArrayBuffer对象。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示触发了下面描述的异常情况之一：  1. 传入的result参数为NULL。  2. byteLength>0但externalData为NULL。  3. externalData未8字节对齐。  4. byteLength超过引擎最大限制。  5. byteLength==0但finalizeCb不为NULL。 |
 
 ### OH\_JSVM\_CreateDate()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateDate(JSVM_Env env,double time,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateDate(JSVM_Env env,double time,JSVM_Value* result)
 ```
 
 **描述**
@@ -1731,10 +1663,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateExternal()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateExternal(JSVM_Env env,void* data,JSVM_Finalize finalizeCb,void* finalizeHint,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateExternal(JSVM_Env env,void* data,JSVM_Finalize finalizeCb,void* finalizeHint,JSVM_Value* result)
 ```
 
 **描述**
@@ -1761,10 +1691,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateObject()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateObject(JSVM_Env env,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateObject(JSVM_Env env,JSVM_Value* result)
 ```
 
 **描述**
@@ -1788,10 +1716,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateSymbol()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateSymbol(JSVM_Env env,JSVM_Value description,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateSymbol(JSVM_Env env,JSVM_Value description,JSVM_Value* result)
 ```
 
 **描述**
@@ -1816,10 +1742,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_SymbolFor()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_SymbolFor(JSVM_Env env,const char* utf8description,size_t length,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_SymbolFor(JSVM_Env env,const char* utf8description,size_t length,JSVM_Value* result)
 ```
 
 **描述**
@@ -1845,10 +1769,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateTypedarray()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateTypedarray(JSVM_Env env,JSVM_TypedarrayType type,size_t length,JSVM_Value arraybuffer,size_t byteOffset,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateTypedarray(JSVM_Env env,JSVM_TypedarrayType type,size_t length,JSVM_Value arraybuffer,size_t byteOffset,JSVM_Value* result)
 ```
 
 **描述**
@@ -1876,10 +1798,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateDataview()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateDataview(JSVM_Env env,size_t length,JSVM_Value arraybuffer,size_t byteOffset,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateDataview(JSVM_Env env,size_t length,JSVM_Value arraybuffer,size_t byteOffset,JSVM_Value* result)
 ```
 
 **描述**
@@ -1906,10 +1826,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateInt32()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateInt32(JSVM_Env env,int32_t value,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateInt32(JSVM_Env env,int32_t value,JSVM_Value* result)
 ```
 
 **描述**
@@ -1934,10 +1852,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateUint32()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateUint32(JSVM_Env env,uint32_t value,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateUint32(JSVM_Env env,uint32_t value,JSVM_Value* result)
 ```
 
 **描述**
@@ -1962,10 +1878,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateInt64()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateInt64(JSVM_Env env,int64_t value,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateInt64(JSVM_Env env,int64_t value,JSVM_Value* result)
 ```
 
 **描述**
@@ -1990,10 +1904,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateDouble()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateDouble(JSVM_Env env,double value,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateDouble(JSVM_Env env,double value,JSVM_Value* result)
 ```
 
 **描述**
@@ -2018,10 +1930,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateBigintInt64()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateBigintInt64(JSVM_Env env,int64_t value,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateBigintInt64(JSVM_Env env,int64_t value,JSVM_Value* result)
 ```
 
 **描述**
@@ -2046,10 +1956,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateBigintUint64()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateBigintUint64(JSVM_Env env,uint64_t value,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateBigintUint64(JSVM_Env env,uint64_t value,JSVM_Value* result)
 ```
 
 **描述**
@@ -2074,10 +1982,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateBigintWords()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateBigintWords(JSVM_Env env,int signBit,size_t wordCount,const uint64_t* words,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateBigintWords(JSVM_Env env,int signBit,size_t wordCount,const uint64_t* words,JSVM_Value* result)
 ```
 
 **描述**
@@ -2104,10 +2010,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateStringLatin1()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateStringLatin1(JSVM_Env env,const char* str,size_t length,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateStringLatin1(JSVM_Env env,const char* str,size_t length,JSVM_Value* result)
 ```
 
 **描述**
@@ -2133,10 +2037,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateStringUtf16()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateStringUtf16(JSVM_Env env,const char16_t* str,size_t length,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateStringUtf16(JSVM_Env env,const char16_t* str,size_t length,JSVM_Value* result)
 ```
 
 **描述**
@@ -2162,10 +2064,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateStringUtf8()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateStringUtf8(JSVM_Env env,const char* str,size_t length,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateStringUtf8(JSVM_Env env,const char* str,size_t length,JSVM_Value* result)
 ```
 
 **描述**
@@ -2191,10 +2091,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetArrayLength()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetArrayLength(JSVM_Env env,JSVM_Value value,uint32_t* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetArrayLength(JSVM_Env env,JSVM_Value value,uint32_t* result)
 ```
 
 **描述**
@@ -2219,10 +2117,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetArraybufferInfo()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetArraybufferInfo(JSVM_Env env,JSVM_Value arraybuffer,void** data,size_t* byteLength)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetArraybufferInfo(JSVM_Env env,JSVM_Value arraybuffer,void** data,size_t* byteLength)
 ```
 
 **描述**
@@ -2248,10 +2144,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetPrototype()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetPrototype(JSVM_Env env,JSVM_Value object,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetPrototype(JSVM_Env env,JSVM_Value object,JSVM_Value* result)
 ```
 
 **描述**
@@ -2276,10 +2170,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetTypedarrayInfo()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetTypedarrayInfo(JSVM_Env env,JSVM_Value typedarray,JSVM_TypedarrayType* type,size_t* length,void** data,JSVM_Value* arraybuffer,size_t* byteOffset)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetTypedarrayInfo(JSVM_Env env,JSVM_Value typedarray,JSVM_TypedarrayType* type,size_t* length,void** data,JSVM_Value* arraybuffer,size_t* byteOffset)
 ```
 
 **描述**
@@ -2308,10 +2200,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetDataviewInfo()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetDataviewInfo(JSVM_Env env,JSVM_Value dataview,size_t* bytelength,void** data,JSVM_Value* arraybuffer,size_t* byteOffset)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetDataviewInfo(JSVM_Env env,JSVM_Value dataview,size_t* bytelength,void** data,JSVM_Value* arraybuffer,size_t* byteOffset)
 ```
 
 **描述**
@@ -2339,10 +2229,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetDateValue()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetDateValue(JSVM_Env env,JSVM_Value value,double* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetDateValue(JSVM_Env env,JSVM_Value value,double* result)
 ```
 
 **描述**
@@ -2367,10 +2255,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetValueBool()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetValueBool(JSVM_Env env,JSVM_Value value,bool* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetValueBool(JSVM_Env env,JSVM_Value value,bool* result)
 ```
 
 **描述**
@@ -2395,10 +2281,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetValueDouble()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetValueDouble(JSVM_Env env,JSVM_Value value,double* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetValueDouble(JSVM_Env env,JSVM_Value value,double* result)
 ```
 
 **描述**
@@ -2423,10 +2307,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetValueBigintInt64()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetValueBigintInt64(JSVM_Env env,JSVM_Value value,int64_t* result,bool* lossless)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetValueBigintInt64(JSVM_Env env,JSVM_Value value,int64_t* result,bool* lossless)
 ```
 
 **描述**
@@ -2448,14 +2330,12 @@ PhonePC/2in1TabletWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_BIGINT\_EXPECTED](capi-jsvm-types-h.md#jsvm_status) 表示传入的参数不是BitInt类型。 |
+| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_BIGINT\_EXPECTED](capi-jsvm-types-h.md#jsvm_status) 表示传入的参数不是BigInt类型。 |
 
 ### OH\_JSVM\_GetValueBigintUint64()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetValueBigintUint64(JSVM_Env env,JSVM_Value value,uint64_t* result,bool* lossless)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetValueBigintUint64(JSVM_Env env,JSVM_Value value,uint64_t* result,bool* lossless)
 ```
 
 **描述**
@@ -2477,14 +2357,12 @@ PhonePC/2in1TabletWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_BIGINT\_EXPECTED](capi-jsvm-types-h.md#jsvm_status) 表示传入的参数不是BitInt类型。 |
+| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_BIGINT\_EXPECTED](capi-jsvm-types-h.md#jsvm_status) 表示传入的参数不是BigInt类型。 |
 
 ### OH\_JSVM\_GetValueBigintWords()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetValueBigintWords(JSVM_Env env,JSVM_Value value,int* signBit,size_t* wordCount,uint64_t* words)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetValueBigintWords(JSVM_Env env,JSVM_Value value,int* signBit,size_t* wordCount,uint64_t* words)
 ```
 
 **描述**
@@ -2507,14 +2385,12 @@ PhonePC/2in1TabletWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_BIGINT\_EXPECTED](capi-jsvm-types-h.md#jsvm_status) 表示传入的参数不是BitInt类型。 |
+| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_BIGINT\_EXPECTED](capi-jsvm-types-h.md#jsvm_status) 表示传入的参数不是BigInt类型。 |
 
 ### OH\_JSVM\_GetValueExternal()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetValueExternal(JSVM_Env env,JSVM_Value value,void** result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetValueExternal(JSVM_Env env,JSVM_Value value,void** result)
 ```
 
 **描述**
@@ -2539,10 +2415,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetValueInt32()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetValueInt32(JSVM_Env env,JSVM_Value value,int32_t* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetValueInt32(JSVM_Env env,JSVM_Value value,int32_t* result)
 ```
 
 **描述**
@@ -2567,10 +2441,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetValueInt64()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetValueInt64(JSVM_Env env,JSVM_Value value,int64_t* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetValueInt64(JSVM_Env env,JSVM_Value value,int64_t* result)
 ```
 
 **描述**
@@ -2595,10 +2467,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetValueStringLatin1()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetValueStringLatin1(JSVM_Env env,JSVM_Value value,char* buf,size_t bufsize,size_t* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetValueStringLatin1(JSVM_Env env,JSVM_Value value,char* buf,size_t bufsize,size_t* result)
 ```
 
 **描述**
@@ -2625,10 +2495,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetValueStringUtf8()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetValueStringUtf8(JSVM_Env env,JSVM_Value value,char* buf,size_t bufsize,size_t* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetValueStringUtf8(JSVM_Env env,JSVM_Value value,char* buf,size_t bufsize,size_t* result)
 ```
 
 **描述**
@@ -2655,10 +2523,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetValueStringUtf16()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetValueStringUtf16(JSVM_Env env,JSVM_Value value,char16_t* buf,size_t bufsize,size_t* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetValueStringUtf16(JSVM_Env env,JSVM_Value value,char16_t* buf,size_t bufsize,size_t* result)
 ```
 
 **描述**
@@ -2685,15 +2551,13 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetValueUint32()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetValueUint32(JSVM_Env env,JSVM_Value value,uint32_t* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetValueUint32(JSVM_Env env,JSVM_Value value,uint32_t* result)
 ```
 
 **描述**
 
-返回与给定的JavaScript number等价的C uint\_32基础类型值。
+返回与给定的JavaScript number等价的C uint32基础类型值。
 
 **起始版本：** 11
 
@@ -2713,10 +2577,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetBoolean()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetBoolean(JSVM_Env env,bool value,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetBoolean(JSVM_Env env,bool value,JSVM_Value* result)
 ```
 
 **描述**
@@ -2741,10 +2603,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetGlobal()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetGlobal(JSVM_Env env,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetGlobal(JSVM_Env env,JSVM_Value* result)
 ```
 
 **描述**
@@ -2768,10 +2628,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetNull()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetNull(JSVM_Env env,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetNull(JSVM_Env env,JSVM_Value* result)
 ```
 
 **描述**
@@ -2795,10 +2653,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetUndefined()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetUndefined(JSVM_Env env,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetUndefined(JSVM_Env env,JSVM_Value* result)
 ```
 
 **描述**
@@ -2822,10 +2678,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CoerceToBool()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CoerceToBool(JSVM_Env env,JSVM_Value value,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CoerceToBool(JSVM_Env env,JSVM_Value value,JSVM_Value* result)
 ```
 
 **描述**
@@ -2850,10 +2704,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CoerceToNumber()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CoerceToNumber(JSVM_Env env,JSVM_Value value,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CoerceToNumber(JSVM_Env env,JSVM_Value value,JSVM_Value* result)
 ```
 
 **描述**
@@ -2878,10 +2730,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CoerceToObject()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CoerceToObject(JSVM_Env env,JSVM_Value value,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CoerceToObject(JSVM_Env env,JSVM_Value value,JSVM_Value* result)
 ```
 
 **描述**
@@ -2906,10 +2756,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CoerceToString()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CoerceToString(JSVM_Env env,JSVM_Value value,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CoerceToString(JSVM_Env env,JSVM_Value value,JSVM_Value* result)
 ```
 
 **描述**
@@ -2934,10 +2782,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_Typeof()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_Typeof(JSVM_Env env,JSVM_Value value,JSVM_ValueType* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_Typeof(JSVM_Env env,JSVM_Value value,JSVM_ValueType* result)
 ```
 
 **描述**
@@ -2962,10 +2808,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_Instanceof()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_Instanceof(JSVM_Env env,JSVM_Value object,JSVM_Value constructor,bool* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_Instanceof(JSVM_Env env,JSVM_Value object,JSVM_Value constructor,bool* result)
 ```
 
 **描述**
@@ -2991,10 +2835,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_IsArray()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsArray(JSVM_Env env,JSVM_Value value,bool* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsArray(JSVM_Env env,JSVM_Value value,bool* result)
 ```
 
 **描述**
@@ -3019,10 +2861,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_IsArraybuffer()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsArraybuffer(JSVM_Env env,JSVM_Value value,bool* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsArraybuffer(JSVM_Env env,JSVM_Value value,bool* result)
 ```
 
 **描述**
@@ -3047,10 +2887,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_IsDate()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsDate(JSVM_Env env,JSVM_Value value,bool* isDate)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsDate(JSVM_Env env,JSVM_Value value,bool* isDate)
 ```
 
 **描述**
@@ -3075,10 +2913,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_IsTypedarray()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsTypedarray(JSVM_Env env,JSVM_Value value,bool* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsTypedarray(JSVM_Env env,JSVM_Value value,bool* result)
 ```
 
 **描述**
@@ -3103,10 +2939,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_IsDataview()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsDataview(JSVM_Env env,JSVM_Value value,bool* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsDataview(JSVM_Env env,JSVM_Value value,bool* result)
 ```
 
 **描述**
@@ -3131,10 +2965,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_StrictEquals()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_StrictEquals(JSVM_Env env,JSVM_Value lhs,JSVM_Value rhs,bool* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_StrictEquals(JSVM_Env env,JSVM_Value lhs,JSVM_Value rhs,bool* result)
 ```
 
 **描述**
@@ -3160,10 +2992,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_Equals()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_Equals(JSVM_Env env,JSVM_Value lhs,JSVM_Value rhs,bool* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_Equals(JSVM_Env env,JSVM_Value lhs,JSVM_Value rhs,bool* result)
 ```
 
 **描述**
@@ -3189,10 +3019,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_DetachArraybuffer()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_DetachArraybuffer(JSVM_Env env,JSVM_Value arraybuffer)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_DetachArraybuffer(JSVM_Env env,JSVM_Value arraybuffer)
 ```
 
 **描述**
@@ -3212,14 +3040,12 @@ PhonePC/2in1TabletWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  如果[JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_DETACHABLE\_ARRAYBUFFER\_EXPECTED](capi-jsvm-types-h.md#jsvm_status) 表示传入的参数不是可分析的ArrayBuffer。 |
+| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  如果[JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_DETACHABLE\_ARRAYBUFFER\_EXPECTED](capi-jsvm-types-h.md#jsvm_status) 表示传入的参数不是可分离的ArrayBuffer。 |
 
 ### OH\_JSVM\_IsDetachedArraybuffer()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsDetachedArraybuffer(JSVM_Env env,JSVM_Value value,bool* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsDetachedArraybuffer(JSVM_Env env,JSVM_Value value,bool* result)
 ```
 
 **描述**
@@ -3244,10 +3070,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetPropertyNames()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetPropertyNames(JSVM_Env env,JSVM_Value object,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetPropertyNames(JSVM_Env env,JSVM_Value object,JSVM_Value* result)
 ```
 
 **描述**
@@ -3272,10 +3096,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetAllPropertyNames()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetAllPropertyNames(JSVM_Env env,JSVM_Value object,JSVM_KeyCollectionMode keyMode,JSVM_KeyFilter keyFilter,JSVM_KeyConversion keyConversion,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetAllPropertyNames(JSVM_Env env,JSVM_Value object,JSVM_KeyCollectionMode keyMode,JSVM_KeyFilter keyFilter,JSVM_KeyConversion keyConversion,JSVM_Value* result)
 ```
 
 **描述**
@@ -3303,10 +3125,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_SetProperty()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_SetProperty(JSVM_Env env,JSVM_Value object,JSVM_Value key,JSVM_Value value)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_SetProperty(JSVM_Env env,JSVM_Value object,JSVM_Value key,JSVM_Value value)
 ```
 
 **描述**
@@ -3332,10 +3152,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetProperty()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetProperty(JSVM_Env env,JSVM_Value object,JSVM_Value key,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetProperty(JSVM_Env env,JSVM_Value object,JSVM_Value key,JSVM_Value* result)
 ```
 
 **描述**
@@ -3361,10 +3179,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_HasProperty()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_HasProperty(JSVM_Env env,JSVM_Value object,JSVM_Value key,bool* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_HasProperty(JSVM_Env env,JSVM_Value object,JSVM_Value key,bool* result)
 ```
 
 **描述**
@@ -3390,10 +3206,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_DeleteProperty()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_DeleteProperty(JSVM_Env env,JSVM_Value object,JSVM_Value key,bool* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_DeleteProperty(JSVM_Env env,JSVM_Value object,JSVM_Value key,bool* result)
 ```
 
 **描述**
@@ -3419,10 +3233,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_HasOwnProperty()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_HasOwnProperty(JSVM_Env env,JSVM_Value object,JSVM_Value key,bool* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_HasOwnProperty(JSVM_Env env,JSVM_Value object,JSVM_Value key,bool* result)
 ```
 
 **描述**
@@ -3448,10 +3260,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_SetNamedProperty()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_SetNamedProperty(JSVM_Env env,JSVM_Value object,const char* utf8name,JSVM_Value value)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_SetNamedProperty(JSVM_Env env,JSVM_Value object,const char* utf8name,JSVM_Value value)
 ```
 
 **描述**
@@ -3477,10 +3287,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetNamedProperty()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetNamedProperty(JSVM_Env env,JSVM_Value object,const char* utf8name,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetNamedProperty(JSVM_Env env,JSVM_Value object,const char* utf8name,JSVM_Value* result)
 ```
 
 **描述**
@@ -3506,10 +3314,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_HasNamedProperty()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_HasNamedProperty(JSVM_Env env,JSVM_Value object,const char* utf8name,bool* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_HasNamedProperty(JSVM_Env env,JSVM_Value object,const char* utf8name,bool* result)
 ```
 
 **描述**
@@ -3535,10 +3341,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_SetElement()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_SetElement(JSVM_Env env,JSVM_Value object,uint32_t index,JSVM_Value value)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_SetElement(JSVM_Env env,JSVM_Value object,uint32_t index,JSVM_Value value)
 ```
 
 **描述**
@@ -3564,10 +3368,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetElement()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetElement(JSVM_Env env,JSVM_Value object,uint32_t index,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetElement(JSVM_Env env,JSVM_Value object,uint32_t index,JSVM_Value* result)
 ```
 
 **描述**
@@ -3593,10 +3395,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_HasElement()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_HasElement(JSVM_Env env,JSVM_Value object,uint32_t index,bool* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_HasElement(JSVM_Env env,JSVM_Value object,uint32_t index,bool* result)
 ```
 
 **描述**
@@ -3622,10 +3422,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_DeleteElement()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_DeleteElement(JSVM_Env env,JSVM_Value object,uint32_t index,bool* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_DeleteElement(JSVM_Env env,JSVM_Value object,uint32_t index,bool* result)
 ```
 
 **描述**
@@ -3651,10 +3449,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_DefineProperties()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_DefineProperties(JSVM_Env env,JSVM_Value object,size_t propertyCount,const JSVM_PropertyDescriptor* properties)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_DefineProperties(JSVM_Env env,JSVM_Value object,size_t propertyCount,const JSVM_PropertyDescriptor* properties)
 ```
 
 **描述**
@@ -3670,7 +3466,7 @@ PhonePC/2in1TabletWearable
 | [JSVM\_Env](capi-jsvm-jsvm-env--8h.md) env | 调用JSVM-API的环境。 |
 | [JSVM\_Value](capi-jsvm-jsvm-value--8h.md) object | 待进行属性检索的对象。 |
 | size\_t propertyCount | properties数组中的元素数。 |
-| [const JSVM\_PropertyDescriptor](capi-jsvm-jsvm-propertydescriptor.md)\* properties | 属性描述符的数组。 |
+| const [JSVM\_PropertyDescriptor](capi-jsvm-jsvm-propertydescriptor.md)\* properties | 属性描述符的数组。 |
 
 **返回：**
 
@@ -3680,10 +3476,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_ObjectFreeze()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_ObjectFreeze(JSVM_Env env,JSVM_Value object)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_ObjectFreeze(JSVM_Env env,JSVM_Value object)
 ```
 
 **描述**
@@ -3707,10 +3501,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_ObjectSeal()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_ObjectSeal(JSVM_Env env,JSVM_Value object)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_ObjectSeal(JSVM_Env env,JSVM_Value object)
 ```
 
 **描述**
@@ -3734,10 +3526,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CallFunction()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CallFunction(JSVM_Env env,JSVM_Value recv,JSVM_Value func,size_t argc,const JSVM_Value* argv,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CallFunction(JSVM_Env env,JSVM_Value recv,JSVM_Value func,size_t argc,const JSVM_Value* argv,JSVM_Value* result)
 ```
 
 **描述**
@@ -3754,7 +3544,7 @@ PhonePC/2in1TabletWearable
 | [JSVM\_Value](capi-jsvm-jsvm-value--8h.md) recv | 传递给被调用函数的this值。 |
 | [JSVM\_Value](capi-jsvm-jsvm-value--8h.md) func | 表示将调用的JavaScript函数。 |
 | size\_t argc | argv数组中的元素个数。 |
-| [const JSVM\_Value](capi-jsvm-jsvm-value--8h.md)\* argv | JSVM\_values数组，表示将作为参数传递给函数的JavaScript值。 |
+| const [JSVM\_Value](capi-jsvm-jsvm-value--8h.md)\* argv | JSVM\_values数组，表示将作为参数传递给函数的JavaScript值。 |
 | [JSVM\_Value](capi-jsvm-jsvm-value--8h.md)\* result | 表示返回的JavaScript对象。 |
 
 **返回：**
@@ -3765,15 +3555,13 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateFunction()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateFunction(JSVM_Env env,const char* utf8name,size_t length,JSVM_Callback cb,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateFunction(JSVM_Env env,const char* utf8name,size_t length,JSVM_Callback cb,JSVM_Value* result)
 ```
 
 **描述**
 
-支持在native代码中创建函数对象，这是从JavaScript调用native代码的主要机制。在此调用之后，新创建的函数在脚本中不再自动可见。相反，必须在JavaScript可见的任何对象上显示设置属性，才能从脚本访问该函数。
+支持在native代码中创建函数对象，这是从JavaScript调用native代码的主要机制。在此调用之后，新创建的函数在脚本中不再自动可见。相反，必须在JavaScript可见的任何对象上显式设置属性，才能从脚本访问该函数。
 
 **起始版本：** 11
 
@@ -3795,10 +3583,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetCbInfo()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetCbInfo(JSVM_Env env,JSVM_CallbackInfo cbinfo,size_t* argc,JSVM_Value* argv,JSVM_Value* thisArg,void** data)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetCbInfo(JSVM_Env env,JSVM_CallbackInfo cbinfo,size_t* argc,JSVM_Value* argv,JSVM_Value* thisArg,void** data)
 ```
 
 **描述**
@@ -3826,10 +3612,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetNewTarget()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetNewTarget(JSVM_Env env,JSVM_CallbackInfo cbinfo,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetNewTarget(JSVM_Env env,JSVM_CallbackInfo cbinfo,JSVM_Value* result)
 ```
 
 **描述**
@@ -3854,10 +3638,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_NewInstance()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_NewInstance(JSVM_Env env,JSVM_Value constructor,size_t argc,const JSVM_Value* argv,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_NewInstance(JSVM_Env env,JSVM_Value constructor,size_t argc,const JSVM_Value* argv,JSVM_Value* result)
 ```
 
 **描述**
@@ -3873,7 +3655,7 @@ PhonePC/2in1TabletWearable
 | [JSVM\_Env](capi-jsvm-jsvm-env--8h.md) env | 调用JSVM-API的环境。 |
 | [JSVM\_Value](capi-jsvm-jsvm-value--8h.md) constructor | 表示将作为构造函数调用的JavaScript函数。 |
 | size\_t argc | argv数组中的元素个数。 |
-| [const JSVM\_Value](capi-jsvm-jsvm-value--8h.md)\* argv | JavaScript值数组。其中JSVM\_Value表示构造函数的参数。如果argc为零，则可以通过传入NULL来忽略此参数。 |
+| const [JSVM\_Value](capi-jsvm-jsvm-value--8h.md)\* argv | JavaScript值数组。其中JSVM\_Value表示构造函数的参数。如果argc为零，则可以通过传入NULL来忽略此参数。 |
 | [JSVM\_Value](capi-jsvm-jsvm-value--8h.md)\* result | 表示返回的JavaScript对象，在本例中是构造的对象。 |
 
 **返回：**
@@ -3884,10 +3666,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_DefineClass()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_DefineClass(JSVM_Env env,const char* utf8name,size_t length,JSVM_Callback constructor,size_t propertyCount,const JSVM_PropertyDescriptor* properties,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_DefineClass(JSVM_Env env,const char* utf8name,size_t length,JSVM_Callback constructor,size_t propertyCount,const JSVM_PropertyDescriptor* properties,JSVM_Value* result)
 ```
 
 **描述**
@@ -3905,7 +3685,7 @@ PhonePC/2in1TabletWearable
 | size\_t length | utf8name的长度（以字节为单位）或JSVM\_AUTO\_LENGTH（如果以 null 结尾）。 |
 | [JSVM\_Callback](capi-jsvm-jsvm-callbackstruct.md) constructor | 用于创建类的构造函数的回调函数。包装C++类时，此方法必须是符合JSVM\_Callback。callback签名的静态成员。不能使用C++类构造函数。详情请参考[JSVM\_Callback](capi-jsvm-jsvm-callbackstruct.md)。 |
 | size\_t propertyCount | properties数组参数中的项数。 |
-| [const JSVM\_PropertyDescriptor](capi-jsvm-jsvm-propertydescriptor.md)\* properties | 类的属性描述符，用于定义类的属性和方法。 |
+| const [JSVM\_PropertyDescriptor](capi-jsvm-jsvm-propertydescriptor.md)\* properties | 类的属性描述符，用于定义类的属性和方法。 |
 | [JSVM\_Value](capi-jsvm-jsvm-value--8h.md)\* result | 表示类的构造函数的JSVM\_Value。 |
 
 **返回：**
@@ -3916,10 +3696,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_Wrap()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_Wrap(JSVM_Env env,JSVM_Value jsObject,void* nativeObject,JSVM_Finalize finalizeCb,void* finalizeHint,JSVM_Ref* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_Wrap(JSVM_Env env,JSVM_Value jsObject,void* nativeObject,JSVM_Finalize finalizeCb,void* finalizeHint,JSVM_Ref* result)
 ```
 
 **描述**
@@ -3947,10 +3725,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_Unwrap()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_Unwrap(JSVM_Env env,JSVM_Value jsObject,void** result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_Unwrap(JSVM_Env env,JSVM_Value jsObject,void** result)
 ```
 
 **描述**
@@ -3975,10 +3751,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_RemoveWrap()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_RemoveWrap(JSVM_Env env,JSVM_Value jsObject,void** result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_RemoveWrap(JSVM_Env env,JSVM_Value jsObject,void** result)
 ```
 
 **描述**
@@ -4003,10 +3777,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_TypeTagObject()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_TypeTagObject(JSVM_Env env,JSVM_Value value,const JSVM_TypeTag* typeTag)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_TypeTagObject(JSVM_Env env,JSVM_Value value,const JSVM_TypeTag* typeTag)
 ```
 
 **描述**
@@ -4021,7 +3793,7 @@ PhonePC/2in1TabletWearable
 | --- | --- |
 | [JSVM\_Env](capi-jsvm-jsvm-env--8h.md) env | 调用JSVM-API的环境。 |
 | [JSVM\_Value](capi-jsvm-jsvm-value--8h.md) value | 要标记的JavaScript对象或外部值。 |
-| [const JSVM\_TypeTag](capi-jsvm-jsvm-typetag.md)\* typeTag | 要标记对象的标签。 |
+| const [JSVM\_TypeTag](capi-jsvm-jsvm-typetag.md)\* typeTag | 要标记对象的标签。 |
 
 **返回：**
 
@@ -4031,10 +3803,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CheckObjectTypeTag()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CheckObjectTypeTag(JSVM_Env env,JSVM_Value value,const JSVM_TypeTag* typeTag,bool* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CheckObjectTypeTag(JSVM_Env env,JSVM_Value value,const JSVM_TypeTag* typeTag,bool* result)
 ```
 
 **描述**
@@ -4049,7 +3819,7 @@ PhonePC/2in1TabletWearable
 | --- | --- |
 | [JSVM\_Env](capi-jsvm-jsvm-env--8h.md) env | 调用JSVM-API的环境。 |
 | [JSVM\_Value](capi-jsvm-jsvm-value--8h.md) value | 待检查类型标记的JavaScript对象或外部值。 |
-| [const JSVM\_TypeTag](capi-jsvm-jsvm-typetag.md)\* typeTag | 用于比较在对象上找到的任何标签的标签。 |
+| const [JSVM\_TypeTag](capi-jsvm-jsvm-typetag.md)\* typeTag | 用于比较在对象上找到的任何标签的标签。 |
 | bool\* result | 表示指定的类型标记是否与对象上的类型标记匹配。如果找到相同标签，设置result为true，否则为false。 |
 
 **返回：**
@@ -4060,10 +3830,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_AddFinalizer()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_AddFinalizer(JSVM_Env env,JSVM_Value jsObject,void* finalizeData,JSVM_Finalize finalizeCb,void* finalizeHint,JSVM_Ref* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_AddFinalizer(JSVM_Env env,JSVM_Value jsObject,void* finalizeData,JSVM_Finalize finalizeCb,void* finalizeHint,JSVM_Ref* result)
 ```
 
 **描述**
@@ -4091,10 +3859,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetVersion()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetVersion(JSVM_Env env,uint32_t* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetVersion(JSVM_Env env,uint32_t* result)
 ```
 
 **描述**
@@ -4118,10 +3884,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetVMInfo()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetVMInfo(JSVM_VMInfo* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetVMInfo(JSVM_VMInfo* result)
 ```
 
 **描述**
@@ -4144,10 +3908,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_AdjustExternalMemory()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_AdjustExternalMemory(JSVM_Env env,int64_t changeInBytes,int64_t* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_AdjustExternalMemory(JSVM_Env env,int64_t changeInBytes,int64_t* result)
 ```
 
 **描述**
@@ -4172,10 +3934,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_MemoryPressureNotification()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_MemoryPressureNotification(JSVM_Env env,JSVM_MemoryPressureLevel level)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_MemoryPressureNotification(JSVM_Env env,JSVM_MemoryPressureLevel level)
 ```
 
 **描述**
@@ -4199,10 +3959,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreatePromise()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreatePromise(JSVM_Env env,JSVM_Deferred* deferred,JSVM_Value* promise)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreatePromise(JSVM_Env env,JSVM_Deferred* deferred,JSVM_Value* promise)
 ```
 
 **描述**
@@ -4216,7 +3974,7 @@ PhonePC/2in1TabletWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [JSVM\_Env](capi-jsvm-jsvm-env--8h.md) env | 调用JSVM-API的环境。 |
-| [JSVM\_Deferred](capi-jsvm-jsvm-deferred--8h.md)\* deferred | 一个新创建的延迟对象，后续可以传递给OH\_JSVM\_ResolveDeferred()或OH\_JSVM\_RejectDeferred()以解析resp。或拒绝相关的Promise。 |
+| [JSVM\_Deferred](capi-jsvm-jsvm-deferred--8h.md)\* deferred | 一个新创建的延迟对象，后续可以传递给OH\_JSVM\_ResolveDeferred()或OH\_JSVM\_RejectDeferred()以解析或拒绝相关的Promise。 |
 | [JSVM\_Value](capi-jsvm-jsvm-value--8h.md)\* promise | 与延迟对象关联的JavaScript Promise。 |
 
 **返回：**
@@ -4227,10 +3985,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_ResolveDeferred()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_ResolveDeferred(JSVM_Env env,JSVM_Deferred deferred,JSVM_Value resolution)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_ResolveDeferred(JSVM_Env env,JSVM_Deferred deferred,JSVM_Value resolution)
 ```
 
 **描述**
@@ -4255,10 +4011,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_RejectDeferred()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_RejectDeferred(JSVM_Env env,JSVM_Deferred deferred,JSVM_Value rejection)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_RejectDeferred(JSVM_Env env,JSVM_Deferred deferred,JSVM_Value rejection)
 ```
 
 **描述**
@@ -4283,10 +4037,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_IsPromise()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsPromise(JSVM_Env env,JSVM_Value value,bool* isPromise)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsPromise(JSVM_Env env,JSVM_Value value,bool* isPromise)
 ```
 
 **描述**
@@ -4311,10 +4063,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_PromiseRegisterHandler()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_PromiseRegisterHandler(JSVM_Env env,JSVM_Value promise,JSVM_Value onFulfilled,JSVM_Value onRejected,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_PromiseRegisterHandler(JSVM_Env env,JSVM_Value promise,JSVM_Value onFulfilled,JSVM_Value onRejected,JSVM_Value* result)
 ```
 
 **描述**
@@ -4341,10 +4091,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_JsonParse()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_JsonParse(JSVM_Env env,JSVM_Value jsonString,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_JsonParse(JSVM_Env env,JSVM_Value jsonString,JSVM_Value* result)
 ```
 
 **描述**
@@ -4369,10 +4117,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_JsonStringify()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_JsonStringify(JSVM_Env env,JSVM_Value jsonObject,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_JsonStringify(JSVM_Env env,JSVM_Value jsonObject,JSVM_Value* result)
 ```
 
 **描述**
@@ -4397,10 +4143,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateSnapshot()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateSnapshot(JSVM_VM vm,size_t contextCount,const JSVM_Env* contexts,const char** blobData,size_t* blobSize)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateSnapshot(JSVM_VM vm,size_t contextCount,const JSVM_Env* contexts,const char** blobData,size_t* blobSize)
 ```
 
 **描述**
@@ -4415,7 +4159,7 @@ PhonePC/2in1TabletWearable
 | --- | --- |
 | [JSVM\_VM](capi-jsvm-jsvm-vm--8h.md) vm | 目标环境，API接口将在该环境下调用。 |
 | size\_t contextCount | 上下文个数。 |
-| [const JSVM\_Env](capi-jsvm-jsvm-env--8h.md)\* contexts | 要添加到快照的上下文数组。 |
+| const [JSVM\_Env](capi-jsvm-jsvm-env--8h.md)\* contexts | 要添加到快照的上下文数组。 |
 | const char\*\* blobData | 快照数据。 |
 | size\_t\* blobSize | 快照数据的大小。 |
 
@@ -4427,10 +4171,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetHeapStatistics()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetHeapStatistics(JSVM_VM vm,JSVM_HeapStatistics* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetHeapStatistics(JSVM_VM vm,JSVM_HeapStatistics* result)
 ```
 
 **描述**
@@ -4454,10 +4196,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_StartCpuProfiler()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_StartCpuProfiler(JSVM_VM vm,JSVM_CpuProfiler* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_StartCpuProfiler(JSVM_VM vm,JSVM_CpuProfiler* result)
 ```
 
 **描述**
@@ -4481,10 +4221,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_StopCpuProfiler()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_StopCpuProfiler(JSVM_VM vm,JSVM_CpuProfiler profiler,JSVM_OutputStream stream,void* streamData)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_StopCpuProfiler(JSVM_VM vm,JSVM_CpuProfiler profiler,JSVM_OutputStream stream,void* streamData)
 ```
 
 **描述**
@@ -4510,10 +4248,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_TakeHeapSnapshot()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_TakeHeapSnapshot(JSVM_VM vm,JSVM_OutputStream stream,void* streamData)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_TakeHeapSnapshot(JSVM_VM vm,JSVM_OutputStream stream,void* streamData)
 ```
 
 **描述**
@@ -4536,12 +4272,90 @@ PhonePC/2in1TabletWearable
 | --- | --- |
 | JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。 |
 
+### OH\_JSVM\_TakeRawHeapSnapshot()
+
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_TakeRawHeapSnapshot(JSVM_VM vm, JSVM_OutputStream stream, void *streamData)
+```
+
+**描述**
+
+获取当前堆快照并以原始堆格式（二进制格式）输出到流。原始堆格式是虚拟机特定的，其布局在不同版本之间可能不稳定。此操作可能会暂时暂停应用程序，频繁调用可能会生成大快照文件并增加磁盘使用，因此如果文件写入磁盘，调用者应适当管理生成的文件。流回调在虚拟机运行的线程上同步调用，回调应避免长时间阻塞操作。如果回调返回false，则输出流中止，快照生成停止。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [JSVM\_VM](capi-jsvm-jsvm-vm--8h.md) vm | 将被获取堆快照的虚拟机。 |
+| [JSVM\_OutputStream](capi-jsvm-types-h.md#jsvm_outputstream) stream | 接收二进制数据的输出流回调。 |
+| void \*streamData | 传递给输出流回调的可选数据。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  如果vm或stream为NULL，返回JSVM\_INVALID\_ARG。  其他情况返回JSVM\_OK。 |
+
+### OH\_JSVM\_SetHeapThresholdCallback()
+
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_SetHeapThresholdCallback(JSVM_VM vm, uint64_t threshold, JSVM_HandlerForHeapThreshold callback, void *data)
+```
+
+**描述**
+
+为虚拟机设置堆内存阈值回调，每个虚拟机只能有一个堆内存阈值回调。当不再需要时，应通过OH\_JSVM\_ClearHeapThresholdCallback清除已注册的回调。此API不是线程安全的，必须在虚拟机运行的线程上调用。阈值在GC前后进行检查，当观察到的堆使用量大于或等于阈值时，将调用回调。回调将在同一线程上同步调用，并且在回调运行期间跳过阈值检查。回调返回后，如果堆使用量仍然大于或等于阈值，则将在下一次GC前后再次调用回调。回调返回后无需重新注册。注册的回调由(threshold, callback, data)标识。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [JSVM\_VM](capi-jsvm-jsvm-vm--8h.md) vm | 将被监控堆内存使用量的虚拟机。 |
+| uint64\_t threshold | 堆内存使用量阈值（字节）。该值必须大于0且不超过heapSizeLimit，其中heapSizeLimit是JSVM\_HeapStatistics中的一个字段。 |
+| [JSVM\_HandlerForHeapThreshold](capi-jsvm-types-h.md#jsvm_handlerforheapthreshold) callback | 当阈值检查观察到堆使用量大于或等于阈值时将被调用的回调函数。 |
+| void \*data | 传递给回调的可选用户数据。调用者负责管理此数据的生命周期。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  如果函数执行成功，返回JSVM\_OK。  如果vm或callback为NULL，或threshold为零或超过heapSizeLimit，  或虚拟机已注册了堆内存阈值回调，返回JSVM\_INVALID\_ARG。 |
+
+### OH\_JSVM\_ClearHeapThresholdCallback()
+
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_ClearHeapThresholdCallback(JSVM_VM vm, uint64_t threshold, JSVM_HandlerForHeapThreshold callback, void *data)
+```
+
+**描述**
+
+清除先前为虚拟机注册的堆内存阈值回调。此API不是线程安全的，必须在虚拟机运行的线程上调用。注册的回调由(threshold, callback, data)标识。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [JSVM\_VM](capi-jsvm-jsvm-vm--8h.md) vm | 将被清除堆内存阈值回调的虚拟机。 |
+| uint64\_t threshold | 先前注册的堆内存使用量阈值（字节）。 |
+| [JSVM\_HandlerForHeapThreshold](capi-jsvm-types-h.md#jsvm_handlerforheapthreshold) callback | 先前由OH\_JSVM\_SetHeapThresholdCallback注册的回调函数。 |
+| void \*data | 注册期间使用的用户数据。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  如果函数执行成功，返回JSVM\_OK。  如果vm或callback为NULL，或(threshold, callback, data)  与注册的回调不匹配，返回JSVM\_INVALID\_ARG。 |
+
 ### OH\_JSVM\_OpenInspector()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_OpenInspector(JSVM_Env env,const char* host,uint16_t port)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_OpenInspector(JSVM_Env env,const char* host,uint16_t port)
 ```
 
 **描述**
@@ -4566,10 +4380,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CloseInspector()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CloseInspector(JSVM_Env env)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CloseInspector(JSVM_Env env)
 ```
 
 **描述**
@@ -4592,10 +4404,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_WaitForDebugger()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_WaitForDebugger(JSVM_Env env,bool breakNextLine)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_WaitForDebugger(JSVM_Env env,bool breakNextLine)
 ```
 
 **描述**
@@ -4619,10 +4429,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_DefineClassWithPropertyHandler()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_DefineClassWithPropertyHandler(JSVM_Env env,const char* utf8name,size_t length,JSVM_Callback constructor,size_t propertyCount,const JSVM_PropertyDescriptor* properties,JSVM_PropertyHandlerCfg propertyHandlerCfg,JSVM_Callback callAsFunctionCallback,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_DefineClassWithPropertyHandler(JSVM_Env env,const char* utf8name,size_t length,JSVM_Callback constructor,size_t propertyCount,const JSVM_PropertyDescriptor* properties,JSVM_PropertyHandlerCfg propertyHandlerCfg,JSVM_Callback callAsFunctionCallback,JSVM_Value* result)
 ```
 
 **描述**
@@ -4640,8 +4448,8 @@ PhonePC/2in1TabletWearable
 | size\_t length | utf8name的长度（以字节为单位）或JSVM\_AUTO\_LENGTH（如果以 null 结尾）。 |
 | [JSVM\_Callback](capi-jsvm-jsvm-callbackstruct.md) constructor | 用于创建类的构造函数的回调函数。此方法必须是JSVM\_Callback类型。constructor中callback回调需为静态成员。不能使用C++类构造函数。详情请参考[JSVM\_Callback](capi-jsvm-jsvm-callbackstruct.md)。 |
 | size\_t propertyCount | properties数组参数中的项数。 |
-| [const JSVM\_PropertyDescriptor](capi-jsvm-jsvm-propertydescriptor.md)\* properties | 描述静态数据和实例数据的属性描述符数组类上的属性、访问器和方法请参考JSVM\_PropertyDescriptor。 |
-| [JSVM\_PropertyHandlerCfg](capi-jsvm-jsvm-propertyhandlerconfigurationstruct.md) propertyHandlerCfg | 访问实例对象属性触发相应的回调函数。 |
+| const [JSVM\_PropertyDescriptor](capi-jsvm-jsvm-propertydescriptor.md)\* properties | 描述静态数据和实例数据的属性描述符数组类上的属性、访问器和方法请参考JSVM\_PropertyDescriptor。 |
+| [JSVM\_PropertyHandlerCfg](capi-jsvm-jsvm-propertyhandlerconfigurationstruct8h.md) propertyHandlerCfg | 访问实例对象属性触发相应的回调函数。 |
 | [JSVM\_Callback](capi-jsvm-jsvm-callbackstruct.md) callAsFunctionCallback | 将实例对象作为函数调用将触发此回调。 |
 | [JSVM\_Value](capi-jsvm-jsvm-value--8h.md)\* result | 表示JavaScript类的构造函数的JSVM\_Value。 |
 
@@ -4653,10 +4461,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_IsLocked()
 
-PhonePC/2in1TabletWearable
-
 ```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsLocked(JSVM_Env env, bool* isLocked)
+JSVM_EXTERN JSVM_Status OH_JSVM_IsLocked(JSVM_Env env, bool* isLocked)
 ```
 
 **描述**
@@ -4680,10 +4486,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_AcquireLock()
 
-PhonePC/2in1TabletWearable
-
 ```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_AcquireLock(JSVM_Env env)
+JSVM_EXTERN JSVM_Status OH_JSVM_AcquireLock(JSVM_Env env)
 ```
 
 **描述**
@@ -4706,10 +4510,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_ReleaseLock()
 
-PhonePC/2in1TabletWearable
-
 ```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_ReleaseLock(JSVM_Env env)
+JSVM_EXTERN JSVM_Status OH_JSVM_ReleaseLock(JSVM_Env env)
 ```
 
 **描述**
@@ -4732,10 +4534,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_IsUndefined()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsUndefined(JSVM_Env env,JSVM_Value value,bool* isUndefined)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsUndefined(JSVM_Env env,JSVM_Value value,bool* isUndefined)
 ```
 
 **描述**
@@ -4760,10 +4560,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_IsNull()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsNull(JSVM_Env env,JSVM_Value value,bool* isNull)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsNull(JSVM_Env env,JSVM_Value value,bool* isNull)
 ```
 
 **描述**
@@ -4788,10 +4586,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_IsNullOrUndefined()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsNullOrUndefined(JSVM_Env env,JSVM_Value value,bool* isNullOrUndefined)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsNullOrUndefined(JSVM_Env env,JSVM_Value value,bool* isNullOrUndefined)
 ```
 
 **描述**
@@ -4816,10 +4612,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_IsBoolean()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsBoolean(JSVM_Env env,JSVM_Value value,bool* isBoolean)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsBoolean(JSVM_Env env,JSVM_Value value,bool* isBoolean)
 ```
 
 **描述**
@@ -4844,10 +4638,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_IsNumber()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsNumber(JSVM_Env env,JSVM_Value value,bool* isNumber)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsNumber(JSVM_Env env,JSVM_Value value,bool* isNumber)
 ```
 
 **描述**
@@ -4872,10 +4664,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_IsString()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsString(JSVM_Env env,JSVM_Value value,bool* isString)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsString(JSVM_Env env,JSVM_Value value,bool* isString)
 ```
 
 **描述**
@@ -4900,10 +4690,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_IsSymbol()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsSymbol(JSVM_Env env,JSVM_Value value,bool* isSymbol)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsSymbol(JSVM_Env env,JSVM_Value value,bool* isSymbol)
 ```
 
 **描述**
@@ -4928,10 +4716,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_IsFunction()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsFunction(JSVM_Env env,JSVM_Value value,bool* isFunction)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsFunction(JSVM_Env env,JSVM_Value value,bool* isFunction)
 ```
 
 **描述**
@@ -4956,10 +4742,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_IsObject()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsObject(JSVM_Env env,JSVM_Value value,bool* isObject)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsObject(JSVM_Env env,JSVM_Value value,bool* isObject)
 ```
 
 **描述**
@@ -4984,10 +4768,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_IsBigInt()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsBigInt(JSVM_Env env,JSVM_Value value,bool* isBigInt)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsBigInt(JSVM_Env env,JSVM_Value value,bool* isBigInt)
 ```
 
 **描述**
@@ -5012,10 +4794,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateMap()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateMap(JSVM_Env env, JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateMap(JSVM_Env env, JSVM_Value* result)
 ```
 
 **描述**
@@ -5035,14 +4815,12 @@ PhonePC/2in1TabletWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) JSVM\_CDECL | 返回执行状态码JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示输入参数不合法。 |
+| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示输入参数不合法。 |
 
 ### OH\_JSVM\_IsMap()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsMap(JSVM_Env env,JSVM_Value value,bool* isMap)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsMap(JSVM_Env env,JSVM_Value value,bool* isMap)
 ```
 
 **描述**
@@ -5063,14 +4841,12 @@ PhonePC/2in1TabletWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) JSVM\_CDECL | 返回执行状态码JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示输入参数不合法。 |
+| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示输入参数不合法。 |
 
 ### OH\_JSVM\_IsConstructor()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsConstructor(JSVM_Env env,JSVM_Value value,bool* isConstructor)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsConstructor(JSVM_Env env,JSVM_Value value,bool* isConstructor)
 ```
 
 **描述**
@@ -5091,14 +4867,12 @@ PhonePC/2in1TabletWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) JSVM\_CDECL | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示输入参数不合法。 |
+| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示输入参数不合法。 |
 
 ### OH\_JSVM\_CreateRegExp()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateRegExp(JSVM_Env env,JSVM_Value value,JSVM_RegExpFlags flags,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateRegExp(JSVM_Env env,JSVM_Value value,JSVM_RegExpFlags flags,JSVM_Value* result)
 ```
 
 **描述**
@@ -5120,14 +4894,12 @@ PhonePC/2in1TabletWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) JSVM\_CDECL | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示输入参数不合法。  [JSVM\_PENDING\_EXCEPTION](capi-jsvm-types-h.md#jsvm_status) 表示API在运行时抛出异常。 |
+| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示输入参数不合法。  [JSVM\_PENDING\_EXCEPTION](capi-jsvm-types-h.md#jsvm_status) 表示API在运行时抛出异常。 |
 
 ### OH\_JSVM\_ObjectGetPrototypeOf()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_ObjectGetPrototypeOf(JSVM_Env env,JSVM_Value object,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_ObjectGetPrototypeOf(JSVM_Env env,JSVM_Value object,JSVM_Value* result)
 ```
 
 **描述**
@@ -5152,10 +4924,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_ObjectSetPrototypeOf()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_ObjectSetPrototypeOf(JSVM_Env env,JSVM_Value object,JSVM_Value prototype)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_ObjectSetPrototypeOf(JSVM_Env env,JSVM_Value object,JSVM_Value prototype)
 ```
 
 **描述**
@@ -5180,10 +4950,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateSet()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateSet(JSVM_Env env,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateSet(JSVM_Env env,JSVM_Value* result)
 ```
 
 **描述**
@@ -5207,10 +4975,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_IsSet()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsSet(JSVM_Env env,JSVM_Value value,bool* isSet)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsSet(JSVM_Env env,JSVM_Value value,bool* isSet)
 ```
 
 **描述**
@@ -5235,10 +5001,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CoerceToBigInt()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CoerceToBigInt(JSVM_Env env,JSVM_Value value,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CoerceToBigInt(JSVM_Env env,JSVM_Value value,JSVM_Value* result)
 ```
 
 **描述**
@@ -5259,14 +5023,12 @@ PhonePC/2in1TabletWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_BIGINT\_EXPECTED](capi-jsvm-types-h.md#jsvm_status) 如果传入的JavaScript值无法转换成BitInt。 |
+| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_BIGINT\_EXPECTED](capi-jsvm-types-h.md#jsvm_status) 如果传入的JavaScript值无法转换成BigInt。 |
 
 ### OH\_JSVM\_IsRegExp()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsRegExp(JSVM_Env env,JSVM_Value value,bool* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsRegExp(JSVM_Env env,JSVM_Value value,bool* result)
 ```
 
 **描述**
@@ -5291,10 +5053,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateFunctionWithScript()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateFunctionWithScript(JSVM_Env env,const char* funcName,size_t length,size_t argc,const JSVM_Value* argv,JSVM_Value script,JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateFunctionWithScript(JSVM_Env env,const char* funcName,size_t length,size_t argc,const JSVM_Value* argv,JSVM_Value script,JSVM_Value* result)
 ```
 
 **描述**
@@ -5311,7 +5071,7 @@ PhonePC/2in1TabletWearable
 | const char\* funcName | 包含函数名称的字符串。如果传入NULL，则创建一个匿名函数。 |
 | size\_t length | funcName的长度（以字节为单位）或JSVM\_AUTO\_LENGTH（如果以 null 结尾）。 |
 | size\_t argc | argv数组中的元素个数。 |
-| [const JSVM\_Value](capi-jsvm-jsvm-value--8h.md)\* argv | JSVM\_values数组，表示将作为参数传递给函数的JavaScript值。 |
+| const [JSVM\_Value](capi-jsvm-jsvm-value--8h.md)\* argv | JSVM\_values数组，表示将作为参数传递给函数的JavaScript值。 |
 | [JSVM\_Value](capi-jsvm-jsvm-value--8h.md) script | 包含作为函数体的JavaScript字符串。 |
 | [JSVM\_Value](capi-jsvm-jsvm-value--8h.md)\* result | 表示新创建函数的JavaScript函数对象的JSVM\_Value。 |
 
@@ -5323,10 +5083,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_PumpMessageLoop()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_PumpMessageLoop(JSVM_VM vm,bool* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_PumpMessageLoop(JSVM_VM vm,bool* result)
 ```
 
 **描述**
@@ -5350,10 +5108,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_PerformMicrotaskCheckpoint()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_PerformMicrotaskCheckpoint(JSVM_VM vm)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_PerformMicrotaskCheckpoint(JSVM_VM vm)
 ```
 
 **描述**
@@ -5376,10 +5132,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_IsCallable()
 
-PhonePC/2in1TabletWearable
-
 ```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsCallable(JSVM_Env env, JSVM_Value value, bool* isCallable)
+JSVM_EXTERN JSVM_Status OH_JSVM_IsCallable(JSVM_Env env, JSVM_Value value, bool* isCallable)
 ```
 
 **描述**
@@ -5404,10 +5158,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_RetainScript()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_RetainScript(JSVM_Env env, JSVM_Script script)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_RetainScript(JSVM_Env env, JSVM_Script script)
 ```
 
 **描述**
@@ -5431,10 +5183,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_ReleaseScript()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_ReleaseScript(JSVM_Env env, JSVM_Script script)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_ReleaseScript(JSVM_Env env, JSVM_Script script)
 ```
 
 **描述**
@@ -5458,10 +5208,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_OpenInspectorWithName()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_OpenInspectorWithName(JSVM_Env env,int pid,const char* name)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_OpenInspectorWithName(JSVM_Env env,int pid,const char* name)
 ```
 
 **描述**
@@ -5486,10 +5234,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CompileWasmModule()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CompileWasmModule(JSVM_Env env,const uint8_t *wasmBytecode,size_t wasmBytecodeLength,const uint8_t *cacheData,size_t cacheDataLength,bool *cacheRejected,JSVM_Value *wasmModule)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CompileWasmModule(JSVM_Env env,const uint8_t *wasmBytecode,size_t wasmBytecodeLength,const uint8_t *cacheData,size_t cacheDataLength,bool *cacheRejected,JSVM_Value *wasmModule)
 ```
 
 **描述**
@@ -5514,14 +5260,12 @@ PhonePC/2in1TabletWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示 env 或 wasmBytecode 参数为空，或传入的数据长度参数无效。  [JSVM\_GENERIC\_FAILURE](capi-jsvm-types-h.md#jsvm_status) 表示编译失败。  [JSVM\_PENDING\_EXCEPTION](capi-jsvm-types-h.md#jsvm_status) 表示发生了异常。  [JSVM\_JIT\_MODE\_EXPECTED](capi-jsvm-types-h.md#jsvm_status) 表示当前环境没有 JIT 权限支持。 |
+| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示 env 或 wasmBytecode 参数为空，或传入的数据长度参数无效。  [JSVM\_GENERIC\_FAILURE](capi-jsvm-types-h.md#jsvm_status) 表示编译失败。  [JSVM\_PENDING\_EXCEPTION](capi-jsvm-types-h.md#jsvm_status) 表示发生了异常。 |
 
 ### OH\_JSVM\_CompileWasmFunction()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CompileWasmFunction(JSVM_Env env,JSVM_Value wasmModule,uint32_t functionIndex,JSVM_WasmOptLevel optLevel)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CompileWasmFunction(JSVM_Env env,JSVM_Value wasmModule,uint32_t functionIndex,JSVM_WasmOptLevel optLevel)
 ```
 
 **描述**
@@ -5543,14 +5287,12 @@ PhonePC/2in1TabletWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示 env 或 wasmModule 参数为空，或 wasmModule 不是一个真正的 WebAssembly 模块。  [JSVM\_GENERIC\_FAILURE](capi-jsvm-types-h.md#jsvm_status) 表示函数索引越界，或编译失败。  [JSVM\_PENDING\_EXCEPTION](capi-jsvm-types-h.md#jsvm_status) 表示发生了异常。  [JSVM\_JIT\_MODE\_EXPECTED](capi-jsvm-types-h.md#jsvm_status) 表示当前环境没有 JIT 权限支持。 |
+| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示 env 或 wasmModule 参数为空，或 wasmModule 不是一个真正的 WebAssembly 模块。  [JSVM\_GENERIC\_FAILURE](capi-jsvm-types-h.md#jsvm_status) 表示函数索引越界，或编译失败。  [JSVM\_PENDING\_EXCEPTION](capi-jsvm-types-h.md#jsvm_status) 表示发生了异常。 |
 
 ### OH\_JSVM\_IsWasmModuleObject()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsWasmModuleObject(JSVM_Env env,JSVM_Value value,bool* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsWasmModuleObject(JSVM_Env env,JSVM_Value value,bool* result)
 ```
 
 **描述**
@@ -5575,10 +5317,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateWasmCache()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateWasmCache(JSVM_Env env,JSVM_Value wasmModule,const uint8_t** data,size_t* length)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateWasmCache(JSVM_Env env,JSVM_Value wasmModule,const uint8_t** data,size_t* length)
 ```
 
 **描述**
@@ -5600,14 +5340,12 @@ PhonePC/2in1TabletWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示传入了空指针参数。  [JSVM\_GENERIC\_FAILURE](capi-jsvm-types-h.md#jsvm_status) 表示缓存生成失败。  [JSVM\_JIT\_MODE\_EXPECTED](capi-jsvm-types-h.md#jsvm_status) 表示当前环境没有 JIT 权限支持。 |
+| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示传入了空指针参数。  [JSVM\_GENERIC\_FAILURE](capi-jsvm-types-h.md#jsvm_status) 表示缓存生成失败。 |
 
 ### OH\_JSVM\_ReleaseCache()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_ReleaseCache(JSVM_Env env,const uint8_t* cacheData,JSVM_CacheType cacheType)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_ReleaseCache(JSVM_Env env,const uint8_t* cacheData,JSVM_CacheType cacheType)
 ```
 
 **描述**
@@ -5632,10 +5370,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_IsBigIntObject()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsBigIntObject(JSVM_Env env,JSVM_Value value,bool* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsBigIntObject(JSVM_Env env,JSVM_Value value,bool* result)
 ```
 
 **描述**
@@ -5660,10 +5396,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_IsBooleanObject()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsBooleanObject(JSVM_Env env,JSVM_Value value,bool* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsBooleanObject(JSVM_Env env,JSVM_Value value,bool* result)
 ```
 
 **描述**
@@ -5688,10 +5422,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_IsStringObject()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsStringObject(JSVM_Env env,JSVM_Value value,bool* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsStringObject(JSVM_Env env,JSVM_Value value,bool* result)
 ```
 
 **描述**
@@ -5716,10 +5448,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_IsNumberObject()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsNumberObject(JSVM_Env env,JSVM_Value value,bool* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsNumberObject(JSVM_Env env,JSVM_Value value,bool* result)
 ```
 
 **描述**
@@ -5744,10 +5474,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_IsSymbolObject()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_IsSymbolObject(JSVM_Env env,JSVM_Value value,bool* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_IsSymbolObject(JSVM_Env env,JSVM_Value value,bool* result)
 ```
 
 **描述**
@@ -5772,10 +5500,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetSymbolAsyncIterator()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolAsyncIterator(JSVM_Env env, JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolAsyncIterator(JSVM_Env env, JSVM_Value* result)
 ```
 
 **描述**
@@ -5799,10 +5525,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetSymbolHasInstance()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolHasInstance(JSVM_Env env, JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolHasInstance(JSVM_Env env, JSVM_Value* result)
 ```
 
 **描述**
@@ -5826,10 +5550,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetSymbolIsConcatSpreadable()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolIsConcatSpreadable(JSVM_Env env, JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolIsConcatSpreadable(JSVM_Env env, JSVM_Value* result)
 ```
 
 **描述**
@@ -5853,10 +5575,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetSymbolMatch()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolMatch(JSVM_Env env, JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolMatch(JSVM_Env env, JSVM_Value* result)
 ```
 
 **描述**
@@ -5880,10 +5600,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetSymbolReplace()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolReplace(JSVM_Env env, JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolReplace(JSVM_Env env, JSVM_Value* result)
 ```
 
 **描述**
@@ -5907,10 +5625,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetSymbolSearch()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolSearch(JSVM_Env env, JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolSearch(JSVM_Env env, JSVM_Value* result)
 ```
 
 **描述**
@@ -5934,10 +5650,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetSymbolSplit()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolSplit(JSVM_Env env, JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolSplit(JSVM_Env env, JSVM_Value* result)
 ```
 
 **描述**
@@ -5961,10 +5675,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetSymbolToPrimitive()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolToPrimitive(JSVM_Env env, JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolToPrimitive(JSVM_Env env, JSVM_Value* result)
 ```
 
 **描述**
@@ -5988,10 +5700,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetSymbolUnscopables()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolUnscopables(JSVM_Env env, JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolUnscopables(JSVM_Env env, JSVM_Value* result)
 ```
 
 **描述**
@@ -6015,10 +5725,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetSymbolToStringTag()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolToStringTag(JSVM_Env env, JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolToStringTag(JSVM_Env env, JSVM_Value* result)
 ```
 
 **描述**
@@ -6042,10 +5750,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetSymbolIterator()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolIterator(JSVM_Env env, JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolIterator(JSVM_Env env, JSVM_Value* result)
 ```
 
 **描述**
@@ -6069,10 +5775,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_TraceStart()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_TraceStart(size_t count,const JSVM_TraceCategory* categories,const char* tag,size_t eventsCount)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_TraceStart(size_t count,const JSVM_TraceCategory* categories,const char* tag,size_t eventsCount)
 ```
 
 **描述**
@@ -6086,7 +5790,7 @@ PhonePC/2in1TabletWearable
 | 参数项 | 描述 |
 | --- | --- |
 | size\_t count | 进行 Trace 采集的分类数量。 |
-| [const JSVM\_TraceCategory](capi-jsvm-types-h.md#jsvm_tracecategory)\* categories | 进行 Trace 采集的具体分类数组。 |
+| const [JSVM\_TraceCategory](capi-jsvm-types-h.md#jsvm_tracecategory)\* categories | 进行 Trace 采集的具体分类数组。 |
 | const char\* tag | 用户定义并赋予 Trace 数据的标签。 |
 | size\_t eventsCount | 存储的 Trace 事件数量上限。 |
 
@@ -6094,14 +5798,12 @@ PhonePC/2in1TabletWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。 。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) categories 或者 count 输入不合法。 |
+| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) categories 或者 count 输入不合法。 |
 
 ### OH\_JSVM\_TraceStop()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_TraceStop(JSVM_OutputStream stream, void* streamData)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_TraceStop(JSVM_OutputStream stream, void* streamData)
 ```
 
 **描述**
@@ -6115,20 +5817,18 @@ PhonePC/2in1TabletWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [JSVM\_OutputStream](capi-jsvm-types-h.md#jsvm_outputstream) stream | 输出流回调函数，实现接收 Trace 数据功能。 |
-| void\* streamData | 的输出流指针，用于辅助输出流回调函数进行数据输出。 |
+| void\* streamData | 输出流指针，用于辅助输出流回调函数进行数据输出。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。 。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) stream 或者 streamData 为空。 |
+| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) stream 或者 streamData 为空。 |
 
 ### OH\_JSVM\_AddHandlerForGC()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_AddHandlerForGC(JSVM_VM vm,JSVM_CBTriggerTimeForGC triggerTime,JSVM_HandlerForGC handler,JSVM_GCType gcType,void* userData)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_AddHandlerForGC(JSVM_VM vm,JSVM_CBTriggerTimeForGC triggerTime,JSVM_HandlerForGC handler,JSVM_GCType gcType,void* userData)
 ```
 
 **描述**
@@ -6155,10 +5855,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_RemoveHandlerForGC()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_RemoveHandlerForGC(JSVM_VM vm,JSVM_CBTriggerTimeForGC triggerTime,JSVM_HandlerForGC handler,void* userData)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_RemoveHandlerForGC(JSVM_VM vm,JSVM_CBTriggerTimeForGC triggerTime,JSVM_HandlerForGC handler,void* userData)
 ```
 
 **描述**
@@ -6184,10 +5882,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_SetHandlerForOOMError()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_SetHandlerForOOMError(JSVM_VM vm,JSVM_HandlerForOOMError handler)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_SetHandlerForOOMError(JSVM_VM vm,JSVM_HandlerForOOMError handler)
 ```
 
 **描述**
@@ -6211,10 +5907,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_SetDebugOption()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_SetDebugOption(JSVM_Env env, JSVM_DebugOption debugOption, bool isEnabled)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_SetDebugOption(JSVM_Env env, JSVM_DebugOption debugOption, bool isEnabled)
 ```
 
 **描述**
@@ -6239,10 +5933,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_SetHandlerForFatalError()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_SetHandlerForFatalError(JSVM_VM vm,JSVM_HandlerForFatalError handler)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_SetHandlerForFatalError(JSVM_VM vm,JSVM_HandlerForFatalError handler)
 ```
 
 **描述**
@@ -6266,10 +5958,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_SetHandlerForPromiseReject()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_SetHandlerForPromiseReject(JSVM_VM vm,JSVM_HandlerForPromiseReject handler)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_SetHandlerForPromiseReject(JSVM_VM vm,JSVM_HandlerForPromiseReject handler)
 ```
 
 **描述**
@@ -6293,10 +5983,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_DefineClassWithOptions()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_DefineClassWithOptions(JSVM_Env env,const char* utf8name,size_t length,JSVM_Callback constructor,size_t propertyCount,const JSVM_PropertyDescriptor* properties,JSVM_Value parentClass,size_t option_count,JSVM_DefineClassOptions options[],JSVM_Value* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_DefineClassWithOptions(JSVM_Env env,const char* utf8name,size_t length,JSVM_Callback constructor,size_t propertyCount,const JSVM_PropertyDescriptor* properties,JSVM_Value parentClass,size_t option_count,JSVM_DefineClassOptions options[],JSVM_Value* result)
 ```
 
 **描述**
@@ -6312,9 +6000,9 @@ PhonePC/2in1TabletWearable
 | [JSVM\_Env](capi-jsvm-jsvm-env--8h.md) env | 调用JSVM-API的环境。 |
 | const char\* utf8name | JavaScript构造函数的名称，建议在包装C++类时使用C++类名。 |
 | size\_t length | utf8name的长度（以字节为单位）或JSVM\_AUTO\_LENGTH（如果以 null 结尾）。 |
-| [JSVM\_Callback](capi-jsvm-jsvm-callbackstruct.md) constructor | 用于创建类的构造函数的回调函数。包装C++类时，此方法必须是符合JSVM\_Callback。callback签名的静态成员。不能使用C++类构造函数。详情请参考[JSVM\_Callback](capi-jsvm-jsvm-callbackstruct.md)。 |
+| [JSVM\_Callback](capi-jsvm-jsvm-callbackstruct.md) constructor | 用于创建类的构造函数的回调函数。包装C++类时，此方法必须是符合JSVM\_Callback签名的静态成员。不能使用C++类构造函数。详情请参考[JSVM\_Callback](capi-jsvm-jsvm-callbackstruct.md)。 |
 | size\_t propertyCount | properties数组参数中的项目数量。 |
-| [const JSVM\_PropertyDescriptor](capi-jsvm-jsvm-propertydescriptor.md)\* properties | 类的属性描述符，用于定义类的属性和方法。 |
+| const [JSVM\_PropertyDescriptor](capi-jsvm-jsvm-propertydescriptor.md)\* properties | 类的属性描述符，用于定义类的属性和方法。 |
 | [JSVM\_Value](capi-jsvm-jsvm-value--8h.md) parentClass | 当前所定义的class的父类class。 |
 | size\_t option\_count | options数组参数中的项目数量。 |
 | [JSVM\_DefineClassOptions](capi-jsvm-jsvm-defineclassoptions.md) options[] | 传入的用于定义class的选项数组。 |
@@ -6328,10 +6016,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateExternalStringLatin1()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateExternalStringLatin1(JSVM_Env env, char* str, size_t length, JSVM_Finalize finalizeCallback, void* finalizeHint, JSVM_Value* result, bool* copied)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateExternalStringLatin1(JSVM_Env env, char* str, size_t length, JSVM_Finalize finalizeCallback, void* finalizeHint, JSVM_Value* result, bool* copied)
 ```
 
 **描述**
@@ -6360,10 +6046,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateExternalStringUtf16()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateExternalStringUtf16(JSVM_Env env, char16_t* str, size_t length, JSVM_Finalize finalizeCallback, void* finalizeHint, JSVM_Value* result, bool* copied)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateExternalStringUtf16(JSVM_Env env, char16_t* str, size_t length, JSVM_Finalize finalizeCallback, void* finalizeHint, JSVM_Value* result, bool* copied)
 ```
 
 **描述**
@@ -6392,10 +6076,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreatePrivate()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreatePrivate(JSVM_Env env,JSVM_Value description,JSVM_Data* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreatePrivate(JSVM_Env env,JSVM_Value description,JSVM_Data* result)
 ```
 
 **描述**
@@ -6420,10 +6102,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_SetPrivate()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_SetPrivate(JSVM_Env env,JSVM_Value object,JSVM_Data key,JSVM_Value value)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_SetPrivate(JSVM_Env env,JSVM_Value object,JSVM_Data key,JSVM_Value value)
 ```
 
 **描述**
@@ -6449,10 +6129,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetPrivate()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetPrivate(JSVM_Env env,JSVM_Value object,JSVM_Data key,JSVM_Value *result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetPrivate(JSVM_Env env,JSVM_Value object,JSVM_Data key,JSVM_Value *result)
 ```
 
 **描述**
@@ -6478,10 +6156,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_DeletePrivate()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_DeletePrivate(JSVM_Env env,JSVM_Value object,JSVM_Data key)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_DeletePrivate(JSVM_Env env,JSVM_Value object,JSVM_Data key)
 ```
 
 **描述**
@@ -6506,10 +6182,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_CreateDataReference()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_CreateDataReference(JSVM_Env env,JSVM_Data data,uint32_t initialRefcount,JSVM_Ref* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_CreateDataReference(JSVM_Env env,JSVM_Data data,uint32_t initialRefcount,JSVM_Ref* result)
 ```
 
 **描述**
@@ -6535,10 +6209,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_JSVM\_GetReferenceData()
 
-PhonePC/2in1TabletWearable
-
-```
-1. JSVM_EXTERN JSVM_Status OH_JSVM_GetReferenceData(JSVM_Env env,JSVM_Ref ref,JSVM_Data* result)
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_GetReferenceData(JSVM_Env env,JSVM_Ref ref,JSVM_Data* result)
 ```
 
 **描述**
@@ -6560,3 +6232,53 @@ PhonePC/2in1TabletWearable
 | 类型 | 说明 |
 | --- | --- |
 | JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status) 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status) 表示传入参数不合法。 |
+
+### OH\_JSVM\_BackgroundDeserialize()
+
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_BackgroundDeserialize(JSVM_VM vm, JSVM_CodeCache cacheData, JSVM_DeserializeResult* result);
+```
+
+**描述**
+
+在线程池中反序列化 JSVM\_CodeCache，通过 OH\_JSVM\_ReleaseDeserializeResult 接口释放 JSVM\_DeserializeResult。
+
+**起始版本：** 24
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [JSVM\_VM](capi-jsvm-jsvm-vm--8h.md) vm | 调用JSVM-API的环境。 |
+| [JSVM\_CodeCache](capi-jsvm-jsvm-codecache.md) cacheData | 需要进行反序列化的字节码缓存数据。 |
+| [JSVM\_DeserializeResult](capi-jsvm-jsvm-deserializeresult.md)\* result | 后台反序列化结果。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status): 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status): 表示传入参数不合法。 |
+
+### OH\_JSVM\_ReleaseDeserializeResult()
+
+```c
+JSVM_EXTERN JSVM_Status OH_JSVM_ReleaseDeserializeResult(JSVM_DeserializeResult result);
+```
+
+**描述**
+
+当 JSVM\_DeserializeResult 不再被使用时进行释放。
+
+**起始版本：** 24
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [JSVM\_DeserializeResult](capi-jsvm-jsvm-deserializeresult.md) result | 需要进行释放的后台反序列化结果。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| JSVM\_EXTERN [JSVM\_Status](capi-jsvm-types-h.md#jsvm_status) | 返回执行状态码 JSVM\_Status。  [JSVM\_OK](capi-jsvm-types-h.md#jsvm_status): 表示执行成功。  [JSVM\_INVALID\_ARG](capi-jsvm-types-h.md#jsvm_status): 表示传入参数不合法。 |

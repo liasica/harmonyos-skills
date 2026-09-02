@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/opensles
 title: OpenSL ES
 breadcrumb: API参考 > 标准库 > OpenSL ES
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:31+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:47bb96c555a2b41af8aa2831bf50f6975fc1c1ca3cfb69c52a71bd2c04294b96
+scraped_at: 2026-09-02T15:03:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6a85116f61892621c91a3484a94d667213cfcd3df597cec89943ed3ba24aefc7
 ---
 
-说明
+**说明** 
 
 HarmonyOS上的OpenSL ES接口，是早期SDK8版本开始提供，用于支持应用Native层音频开发的接口。但随着版本演进，接口定义的可扩展性不足，不再能满足音频系统的能力拓展，因此当前已不再推荐应用开发者继续使用此接口进行音频功能开发。请开发者[从OpenSL ES切换到OHAudio](../harmonyos-guides/replace-opensles-by-ohaudio.md)。
 
@@ -20,16 +20,16 @@ OpenSL ES（Open Sound Library for Embedded System）即嵌入式音频加速标
 
 如果开发者需要使用OpenSL ES相关功能，首先请添加头文件：
 
-```
-1. #include <SLES/OpenSLES.h>
-2. #include <SLES/OpenSLES_OpenHarmony.h>
-3. #include <SLES/OpenSLES_Platform.h>
+```screen
+#include <SLES/OpenSLES.h>
+#include <SLES/OpenSLES_OpenHarmony.h>
+#include <SLES/OpenSLES_Platform.h>
 ```
 
 其次在CMakeLists.txt中添加以下链接动态库：
 
-```
-1. libOpenSLES.so
+```screen
+libOpenSLES.so
 ```
 
 ## 支持的API

@@ -3,16 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: 模块描述
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > 模块描述
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:00+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:d21d3a1df263150d15163a00eaea8e6bc29cabecc13f0747611fb2fe4fca58d1
+scraped_at: 2026-09-02T15:01:25+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:35db4468be5a575e6868009ed131f0fcf81770c52dd9e63ef19ea1e50bb2f5f6
 ---
 
-本模块提供Web控制能力，网页显示的能力请参考[组件描述](arkts-basic-components-web.md)。
+WebView模块是HarmonyOS ArkWeb框架提供的Web控制能力模块，用于在应用侧对Web组件的行为进行编程式控制。该模块不涉及网页的显示渲染（显示能力由Web组件提供），而是聚焦于Web组件运行过程中的控制逻辑，包括页面加载与导航、JavaScript脚本执行与双向消息通信、Cookie与存储管理、下载任务管理、网络请求拦截与自定义响应、代理配置、地理位置权限管理、广告过滤、前进后退缓存、媒体播放托管、PDF生成等能力。
+
+开发者在使用Web组件展示网页内容时，如需在应用侧对网页行为进行干预、监听或扩展（例如：向网页发送消息、拦截特定Scheme请求并返回本地资源、管理下载流程、配置代理、控制缓存策略等），应通过本模块提供的Controller和各类Manager/Delegate来实现。
+
+网页显示的能力请参考[组件描述](arkts-basic-components-web.md)。
 
 元服务中使用ArkWeb的说明，请参考[Web组件概述](../atomic-guides/atomicserviceweb-guidelines.md)。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 9开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 示例效果请以真机运行为准。
@@ -21,8 +25,9 @@ content_hash: sha256:d21d3a1df263150d15163a00eaea8e6bc29cabecc13f0747611fb2fe4fc
 该模块提供以下Web控制相关的常用功能：
 
 * [AdsBlockManager](arkts-apis-webview-adsblockmanager.md)：广告过滤配置。
+* [AIPageCommand](arkts-apis-webview-aipagecommand.md)：[executeAIPageCommand](arkts-apis-webview-webviewcontroller.md#executeaipagecommand)支持的JSON命令协议。
 * [BackForwardCacheOptions](arkts-apis-webview-backforwardcacheoptions.md)：前进后退缓存配置。
-* [BackForwardCacheSupportedFeatures](kts-apis-webview-backforwardcachesupportedfeatures.md)：设置前进后退缓存配置所支持的特性。
+* [BackForwardCacheSupportedFeatures](arkts-apis-webview-backforwardcachesupportedfeatures.md)：设置前进后退缓存配置所支持的特性。
 * [GeolocationPermissions](arkts-apis-webview-geolocationpermissions.md)：地理位置权限配置。
 * [JsMessageExt](arkts-apis-webview-jsmessageext.md)：执行JavaScript脚本的结果。
 * [MediaSourceInfo](arkts-apis-webview-mediasourceinfo.md)：媒体源信息。
@@ -50,16 +55,12 @@ content_hash: sha256:d21d3a1df263150d15163a00eaea8e6bc29cabecc13f0747611fb2fe4fc
 
 ## 需要权限
 
-PhonePC/2in1TabletTVWearable
-
 访问在线网页时需添加网络权限：ohos.permission.INTERNET，具体申请方式请参考[声明权限](../harmonyos-guides/declare-permissions.md)。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { webview } from '@kit.ArkWeb';
+```ts
+import { webview } from '@kit.ArkWeb';
 ```
 
 **系统能力：** SystemCapability.Web.Webview.Core

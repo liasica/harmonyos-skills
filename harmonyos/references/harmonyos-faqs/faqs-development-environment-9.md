@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: 如何在命令行使用ohpm
 breadcrumb: FAQ > DevEco Studio > 环境准备 > 如何在命令行使用ohpm
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:20:05+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:acdd59001b3fd8c155215eca5a3fe527cc898f147a7da5ea5cb9864fcd6484c4
+scraped_at: 2026-09-02T15:04:31+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:4ef7cec092d90e90ba7be2cb998700c5dfc0aec739053bad9f721f3448501d6b
 ---
 
-注意
+**注意** 
 
 安装node.js 18.x及以上版本，并配置环境变量。
 
@@ -22,10 +22,10 @@ ohpm 默认解压路径为：DevEco Studio 中默认安装位置：<DevEco Studi
 
 1. 在Windows系统中，右键点击“此电脑”选择“属性”，进入“高级系统设置”，点击“环境变量”，在“系统变量”中找到“Path”，点击“编辑”，添加ohpm工具包解压后的bin目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/HwMjfs5VSmqqzis_Z16eMw/zh-cn_image_0000002229604141.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/aUhdUD5TRKSE9DZElFATwg/zh-cn_image_0000002654837715.png "点击放大")
 2. 添加变量后，重开命令行窗口，执行ohpm -v查看ohpm版本号，终端输出版本号信息（如1.0.0）即为成功。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/oCw5BvUJQyGgiEXBSHZDOQ/zh-cn_image_0000002194318368.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/o1KKCv-IQ3K7s-KD4PCfjQ/zh-cn_image_0000002624478402.png)
 
 **问题现象2**
 
@@ -37,24 +37,24 @@ ohpm 默认解压路径为：DevEco Studio 中默认安装位置：<DevEco Studi
 
 1. 打开终端并编辑 ~/.zshrc 文件。
 
-   ```
-   1. vi ~/.zshrc
+   ```powershell
+   vi ~/.zshrc
    ```
 2. 在文件末尾添加以下行，将软件的bin目录添加到PATH环境变量中（例如：/home/tctAdmin/ohpm/bin）：
 
-   ```
-   1. export PATH="/home/tctAdmin/ohpm/bin:$PATH"
+   ```powershell
+   export PATH="/home/tctAdmin/ohpm/bin:$PATH"
    ```
 3. 保存 ~/.zshrc 文件并退出编辑器。
 4. 使用以下命令使更改生效，或者关闭并重新打开命令行窗口。
 
-   ```
-   1. source ~/.zshrc
+   ```powershell
+   source ~/.zshrc
    ```
 5. 执行ohpm -v查看 ohpm 版本号，命令行输出版本号（如 1.0.0）表示成功。
 
-   ```
-   1. ohpm -v
+   ```powershell
+   ohpm -v
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/06r0HA0GTvSBAi1FHEw0Og/zh-cn_image_0000002194318372.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/hx5cf1HgTQOLUrbs33mKVA/zh-cn_image_0000002654797767.png)

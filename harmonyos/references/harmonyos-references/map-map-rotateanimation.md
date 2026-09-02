@@ -1,24 +1,20 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-rotateanimation
-title: RotateAnimation
-breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > RotateAnimation
+title: Class (RotateAnimation)
+breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Class (RotateAnimation)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:14+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:8727896853c4c6c01f5897ac545e2eaf1d1f13a9aa111babf785c9696b4bce6d
+scraped_at: 2026-09-02T15:02:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:484ebcfe4dfab537ec277b48b327dee623b58e5ebb4b1927be740752afe0000c
 ---
 
 ## 导入模块
 
-PhonePC/2in1TabletWearable
-
-```
-1. import { map } from '@kit.MapKit';
+```typescript
+import { map } from '@kit.MapKit';
 ```
 
 ## RotateAnimation
-
-PhonePC/2in1TabletWearable
 
 控制旋转的动画类，继承[Animation](map-map-animation.md)。
 
@@ -31,8 +27,6 @@ PhonePC/2in1TabletWearable
 **起始版本：** 4.1.0(11)
 
 ### constructor
-
-PhonePC/2in1TabletWearable
 
 constructor(fromDegree: number, toDegree: number)
 
@@ -55,6 +49,6 @@ constructor(fromDegree: number, toDegree: number)
 
 **示例：**
 
-```
-1. let animation: map.RotateAnimation = new map.RotateAnimation(15, 150);
+```typescript
+let animation: map.RotateAnimation = new map.RotateAnimation(15, 150);
 ```

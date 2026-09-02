@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-11
 title: WebView中，双向交互可以使用JSBridge技术，也可以使用端口通信技术，这两者有什么区别
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > WebView中，双向交互可以使用JSBridge技术，也可以使用端口通信技术，这两者有什么区别
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:38+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:53+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:c66076a2a88ca7c216c5224257be59347e7ecd7708a85944a570eea1631fdb67
 ---
 

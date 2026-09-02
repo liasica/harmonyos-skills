@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/build-with-nd
 title: 使用DevEco Studio模板构建NDK工程
 breadcrumb: 指南 > NDK开发 > 构建NDK工程 > 使用DevEco Studio模板构建NDK工程
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:43:53+08:00
+scraped_at: 2026-09-02T14:50:45+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:2e2f5439249e65e1b5015acea78005e7eac3b431d24d6311f301259e264e171c
+content_hash: sha256:b5622e03e95643562488c5c3a4e7eed231e040839bef6ec9eb7331a056b1903a
 ---
 
 NDK通过CMake和Ninja编译应用的C/C++代码，编译过程如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/ysywgyuIQmaT84JfOF_6Jw/zh-cn_image_0000002589245667.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/rfZs8x-BT_SU3lt2flkQ8g/zh-cn_image_0000002706675496.png)
 
 核心编译过程如下：
 
@@ -23,24 +23,24 @@ NDK通过CMake和Ninja编译应用的C/C++代码，编译过程如下图所示�
 
 通过DevEco Studio模板工程创建的NDK工程中，包含默认生成的CMakeLists.txt脚本，如下所示：
 
-```
-1. # the minimum version of CMake.
-2. cmake_minimum_required(VERSION 3.4.1)
-3. project(MyApplication)
+```txt
+# the minimum version of CMake.
+cmake_minimum_required(VERSION 3.4.1)
+project(MyApplication)
 
-5. # 定义一个变量，并赋值为当前模块cpp目录
-6. set(NATIVERENDER_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR})
+# 定义一个变量，并赋值为当前模块cpp目录
+set(NATIVERENDER_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR})
 
-8. # 添加头文件.h目录，包括cpp，cpp/include，告诉cmake去这里找到代码引入的头文件
-9. include_directories(${NATIVERENDER_ROOT_PATH}
-10. ${NATIVERENDER_ROOT_PATH}/include)
+# 添加头文件.h目录，包括cpp，cpp/include，告诉cmake去这里找到代码引入的头文件
+include_directories(${NATIVERENDER_ROOT_PATH}
+                    ${NATIVERENDER_ROOT_PATH}/include)
 
-12. # 声明一个产物libentry.so，SHARED表示产物为动态库，hello.cpp为产物的源代码
-13. add_library(entry SHARED hello.cpp)
+# 声明一个产物libentry.so，SHARED表示产物为动态库，hello.cpp为产物的源代码
+add_library(entry SHARED hello.cpp)
 
-15. # 声明产物entry链接时需要的三方库libace_napi.z.so
-16. # 这里直接写三方库的名称是因为它是在ndk中，已在链接寻址路径中，无需额外声明
-17. target_link_libraries(entry PUBLIC libace_napi.z.so)
+# 声明产物entry链接时需要的三方库libace_napi.z.so
+# 这里直接写三方库的名称是因为它是在ndk中，已在链接寻址路径中，无需额外声明
+target_link_libraries(entry PUBLIC libace_napi.z.so)
 ```
 
 默认的CMakeLists.txt脚本中添加了编译所需的源代码、头文件以及三方库，开发者可根据实际工程添加自定义编译参数、函数声明、简单的逻辑控制等。
@@ -49,21 +49,21 @@ NDK通过CMake和Ninja编译应用的C/C++代码，编译过程如下图所示�
 
 模块级build-profile.json5中externalNativeOptions参数是NDK工程C/C++文件编译配置的入口，可以通过path指定CMake脚本路径、arguments配置CMake参数、cppFlags配置C++编译器参数、abiFilters配置编译架构等。
 
-```
-1. "apiType": "stageMode",
-2. "buildOption": {
-3. "arkOptions": {
-4. },
-5. "externalNativeOptions": {
-6. "path": "./src/main/cpp/CMakeLists.txt",
-7. "arguments": "",
-8. "cppFlags": "",
-9. "abiFilters": [
-10. "arm64-v8a",
-11. "x86_64"
-12. ],
-13. }
-14. }
+```json
+"apiType": "stageMode",
+"buildOption": {
+  "arkOptions": {
+   },
+  "externalNativeOptions": {
+    "path": "./src/main/cpp/CMakeLists.txt",
+    "arguments": "",
+    "cppFlags": "",
+    "abiFilters": [
+       "arm64-v8a",
+       "x86_64"
+    ],
+  }
+}
 ```
 
 externalNativeOptions具体参数说明如下表所示。

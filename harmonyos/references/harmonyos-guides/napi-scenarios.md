@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-scenario
 title: Node-API典型使用场景
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:07+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:4ad4b338a3d51c29bb8b974a0069c19a8e3814c510005fc2eb32f63a7868f96a
+scraped_at: 2026-09-02T14:50:46+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:63c242308c912b2f1768e844ae81400cfa5fa533f466cada7e65918043eaa146
 ---
 
 * **[使用Node-API接口进行异步任务开发](use-napi-asynchronous-task.md)**
@@ -23,3 +23,4 @@ content_hash: sha256:4ad4b338a3d51c29bb8b974a0069c19a8e3814c510005fc2eb32f63a786
 * **[使用Node-API接口产生的异常日志/崩溃分析](use-napi-about-crash.md)**
 * **[使用Node-API调用返回值为promise的ArkTS方法](use-napi-method-promise.md)**
 * **[使用扩展的Node-API接口创建对ArkTS对象的Sendable强引用](use-napi-about-sendable-reference.md)**
+* **[使用扩展的Node-API接口加速属性访问](use-napi-about-fast-property-access.md)**

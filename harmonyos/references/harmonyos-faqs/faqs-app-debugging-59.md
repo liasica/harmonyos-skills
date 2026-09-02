@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: ArkUI Inspector连接应用，偶现连接超时
 breadcrumb: FAQ > DevEco Studio > 应用调试 > ArkUI Inspector连接应用，偶现连接超时
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:21:28+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:20dd8d2f77052b492bdd6fb84420b465278227fad10d12f6503ea78a0ff475ad
+scraped_at: 2026-09-02T14:54:57+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:f0aae4d91bddac381ad3a0c894761aa1f80c554ee56cb10bc37cb1ac3876abce
 ---
 
 **问题现象**
 
 ArkUI Inspector在连接复杂的应用页面时，偶现连接超时。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/fhlkvrCzRyWsZ5vU1Zs7sw/zh-cn_image_0000002270895882.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/E5fQ9wIISoOHDIPsRxHgNg/zh-cn_image_0000002624638712.png)
 
 **解决措施**
 

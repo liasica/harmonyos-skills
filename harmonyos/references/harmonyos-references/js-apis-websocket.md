@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-w
 title: "@ohos.net.webSocket (WebSocket连接)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.webSocket (WebSocket连接)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:28+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ed5bb28d1dbba8f8cf889ec2a69ac62f413d116d68db64284abc746598eca5d3
+scraped_at: 2026-09-02T15:01:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4118fa860d6c3fafa5502a26c967e88461b0776f754da5f94bb1c82697d879ae
 ---
 
 给第三方应用提供webSocket客户端和服务端服务器，实现客户端与服务端的双向连接。
@@ -14,21 +14,17 @@ content_hash: sha256:ed5bb28d1dbba8f8cf889ec2a69ac62f413d116d68db64284abc746598e
 
 服务端：（从API version 23开始支持全设备使用，之前仅支持TV设备使用）使用WebSocket建立服务器与客户端的双向连接，需要先通过[createWebSocketServer](js-apis-websocket.md#websocketcreatewebsocketserver19)方法创建[WebSocketServer](js-apis-websocket.md#websocketserver19)对象，然后通过[start](js-apis-websocket.md#start19)方法启动服务器，监听客户端的申请建链的消息。当连接成功后，服务端会收到[connect](js-apis-websocket.md#onconnect19)事件的回调，之后服务端可以通过[send](js-apis-websocket.md#send19)方法与客户端进行通信，或者通过[listAllConnections](js-apis-websocket.md#listallconnections19)方法列举出当前与服务端建链的所有客户端信息。当客户端给服务端发消息时，服务端会收到[messageReceive](js-apis-websocket.md#onmessagereceive19)事件回调。当服务端想断开与某个客户端的连接时，可以通过调用[close](js-apis-websocket.md#close19)方法主动断开与某个客户端的连接，之后服务端会收到[close](js-apis-websocket.md#onclose19)事件的回调。当服务端想停止service时，可以调用[stop](js-apis-websocket.md#stop19)方法。若在上述任一过程中发生错误，服务端会收到[error](js-apis-websocket.md#onerror19)事件的回调。
 
-说明
+**说明** 
 
 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { webSocket } from '@kit.NetworkKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
 ```
 
 ## webSocket.createWebSocket
-
-PhonePC/2in1TabletTVWearable
 
 createWebSocket(): WebSocket
 
@@ -46,25 +42,21 @@ createWebSocket(): WebSocket
 
 **示例：**
 
-```
-1. let ws: webSocket.WebSocket = webSocket.createWebSocket();
+```ts
+let ws: webSocket.WebSocket = webSocket.createWebSocket();
 ```
 
 ## WebSocket
-
-PhonePC/2in1TabletTVWearable
 
 在调用WebSocket的方法前，需要先通过[webSocket.createWebSocket](js-apis-websocket.md#websocketcreatewebsocket)创建一个WebSocket。
 
 ### connect
 
-PhonePC/2in1TabletTVWearable
-
 connect(url: string, callback: AsyncCallback<boolean>): void
 
 根据URL地址，建立一个WebSocket连接，使用callback异步回调。
 
-说明
+**说明** 
 
 callback中返回的boolean值仅表示连接请求创建是否成功。如需感知WebSocket是否连接成功，需要在调用该接口前调用[on('open')](js-apis-websocket.md#onopen)订阅open事件。
 
@@ -74,9 +66,9 @@ callback中返回的boolean值仅表示连接请求创建是否成功。如需�
 
 **系统能力**：SystemCapability.Communication.NetStack
 
-注意
+**注意** 
 
-URL地址长度不能超过1024个字符，否则会连接失败。从API version 15开始，URL地址长度限制由1024修改为2048。
+URL地址长度不能超过1024个字符，否则会连接失败。从API version 15开始，URL地址长度限制由1024修改为2048。从API version 26开始，URL地址长度限制由2048修改为8196。
 
 **参数：**
 
@@ -93,38 +85,36 @@ URL地址长度不能超过1024个字符，否则会连接失败。从API versio
 | --- | --- |
 | 401 | Parameter error. |
 | 201 | Permission denied. |
-| 2302001 | Websocket url error. |
-| 2302002 | Websocket certificate file does not exist. |
-| 2302003 | Websocket connection already exists. |
-| 2302998 | It is not allowed to access this domain. |
-| 2302999 | Internal error. |
+| 2302001 | Websocket url error.  适用版本：12+ |
+| 2302002 | Websocket certificate file does not exist.  适用版本：12+ |
+| 2302003 | Websocket connection already exists.  适用版本：12+ |
+| 2302998 | It is not allowed to access this domain.  适用版本：12+ |
+| 2302999 | Websocket other unknown error.  适用版本：10+ |
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let ws = webSocket.createWebSocket();
-5. let url = "ws://";
-6. ws.connect(url, (err: BusinessError, value: boolean) => {
-7. if (!err) {
-8. console.info("connect success")
-9. } else {
-10. console.error(`connect fail. Code: ${err.code}, message: ${err.message}`)
-11. }
-12. });
+let ws = webSocket.createWebSocket();
+let url = "ws://";
+ws.connect(url, (err: BusinessError, value: boolean) => {
+  if (!err) {
+    console.info("connect success")
+  } else {
+    console.error(`connect fail. Code: ${err.code}, message: ${err.message}`)
+  }
+});
 ```
 
 ### connect
-
-PhonePC/2in1TabletTVWearable
 
 connect(url: string, options: WebSocketRequestOptions, callback: AsyncCallback<boolean>): void
 
 根据URL地址，建立一个WebSocket连接，使用callback异步回调。
 
-说明
+**说明** 
 
 callback中返回的boolean值仅表示连接请求创建是否成功。如需感知WebSocket是否连接成功，需要在调用该接口前调用[on('open')](js-apis-websocket.md#onopen)订阅open事件。
 
@@ -134,9 +124,9 @@ callback中返回的boolean值仅表示连接请求创建是否成功。如需�
 
 **系统能力**：SystemCapability.Communication.NetStack
 
-注意
+**注意** 
 
-URL地址长度不能超过1024个字符，否则会连接失败。从API version 15开始，URL地址长度限制由1024修改为2048。
+URL地址长度不能超过1024个字符，否则会连接失败。从API version 15开始，URL地址长度限制由1024修改为2048。从API version 26开始，URL地址长度限制由2048修改为8196。
 
 **参数：**
 
@@ -154,47 +144,60 @@ URL地址长度不能超过1024个字符，否则会连接失败。从API versio
 | --- | --- |
 | 401 | Parameter error. |
 | 201 | Permission denied. |
-| 2302001 | Websocket url error. |
-| 2302002 | Websocket certificate file does not exist. |
-| 2302003 | Websocket connection already exists. |
-| 2302998 | It is not allowed to access this domain. |
-| 2302999 | Internal error. |
+| 2302001 | Websocket url error.  适用版本：12+ |
+| 2302002 | Websocket certificate file does not exist.  适用版本：12+ |
+| 2302003 | Websocket connection already exists.  适用版本：12+ |
+| 2302998 | It is not allowed to access this domain.  适用版本：12+ |
+| 2302999 | Websocket other unknown error.  适用版本：10+ |
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let ws = webSocket.createWebSocket();
-5. let options: webSocket.WebSocketRequestOptions | undefined;
-6. if (options !=undefined) {
-7. options.header = {
-8. name1: "value1",
-9. name2: "value2",
-10. name3: "value3"
-11. };
-12. options.caPath = "";
-13. }
-14. let url = "ws://"
-15. ws.connect(url, options, (err: BusinessError, value: Object) => {
-16. if (!err) {
-17. console.info("connect success")
-18. } else {
-19. console.error(`connect fail. Code: ${err.code}, message: ${err.message}`)
-20. }
-21. });
+// 示例1：
+let ws = webSocket.createWebSocket();
+let options: webSocket.WebSocketRequestOptions | undefined;
+if (options !=undefined) {
+  options.header = {
+     name1: "value1",
+     name2: "value2",
+     name3: "value3"
+  };
+  options.caPath = "";
+}
+let url = "ws://"
+ws.connect(url, options, (err: BusinessError, value: Object) => {
+  if (!err) {
+    console.info("connect success")
+  } else {
+    console.error(`connect fail. Code: ${err.code}, message: ${err.message}`)
+  }
+});
+
+// 示例2：
+let url = "ws://"
+let ws = webSocket.createWebSocket();
+let options: webSocket.WebSocketRequestOptions = {
+  minSupportTlsProtocol: webSocket.TlsProtocol.TLS_V_1_1
+};
+ws.connect(url, options, (err: BusinessError, value: Object) => {
+  if (!err) {
+    console.info("connect success")
+  } else {
+    console.error(`connect fail. Code: ${err.code}, message: ${err.message}`)
+  }
+});
 ```
 
 ### connect
-
-PhonePC/2in1TabletTVWearable
 
 connect(url: string, options?: WebSocketRequestOptions): Promise<boolean>
 
 根据URL地址和header，建立一个WebSocket连接。使用Promise异步回调。
 
-说明
+**说明** 
 
 callback中返回的boolean值仅表示连接请求创建是否成功。如需感知WebSocket是否连接成功，需要在调用该接口前调用[on('open')](js-apis-websocket.md#onopen)订阅open事件。
 
@@ -204,9 +207,9 @@ callback中返回的boolean值仅表示连接请求创建是否成功。如需�
 
 **系统能力**：SystemCapability.Communication.NetStack
 
-注意
+**注意** 
 
-URL地址长度不能超过1024个字符，否则会连接失败。从API version 15开始，URL地址长度限制由1024修改为2048。
+URL地址长度不能超过1024个字符，否则会连接失败。从API version 15开始，URL地址长度限制由1024修改为2048。从API version 26开始，URL地址长度限制由2048修改为8196。
 
 **参数：**
 
@@ -229,30 +232,28 @@ URL地址长度不能超过1024个字符，否则会连接失败。从API versio
 | --- | --- |
 | 401 | Parameter error. |
 | 201 | Permission denied. |
-| 2302001 | Websocket url error. |
-| 2302002 | Websocket certificate file does not exist. |
-| 2302003 | Websocket connection already exists. |
-| 2302998 | It is not allowed to access this domain. |
-| 2302999 | Internal error. |
+| 2302001 | Websocket url error.  适用版本：12+ |
+| 2302002 | Websocket certificate file does not exist.  适用版本：12+ |
+| 2302003 | Websocket connection already exists.  适用版本：12+ |
+| 2302998 | It is not allowed to access this domain.  适用版本：12+ |
+| 2302999 | Websocket other unknown error.  适用版本：10+ |
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
 
-3. let ws = webSocket.createWebSocket();
-4. let url = "ws://"
-5. let promise = ws.connect(url);
-6. promise.then((value: boolean) => {
-7. console.info("connect success")
-8. }).catch((err:string) => {
-9. console.error("connect fail, error:" + JSON.stringify(err))
-10. });
+let ws = webSocket.createWebSocket();
+let url = "ws://"
+let promise = ws.connect(url);
+promise.then((value: boolean) => {
+  console.info("connect success")
+}).catch((err:string) => {
+  console.error("connect fail, error:" + JSON.stringify(err))
+});
 ```
 
 ### send
-
-PhonePC/2in1TabletTVWearable
 
 send(data: string | ArrayBuffer, callback: AsyncCallback<boolean>): void
 
@@ -282,42 +283,40 @@ send(data: string | ArrayBuffer, callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let ws = webSocket.createWebSocket();
-5. let url = "ws://"
-6. class OutValue {
-7. status: number = 0
-8. message: string = ""
-9. }
-10. ws.connect(url, (err: BusinessError, value: boolean) => {
-11. if (!err) {
-12. console.info("connect success")
-13. } else {
-14. console.error(`connect fail. Code: ${err.code}, message: ${err.message}`)
-15. }
-16. });
-17. ws.on('open', (err: BusinessError, value: Object) => {
-18. console.info("on open, status:" + (value as OutValue).status + ", message:" + (value as OutValue).message)
-19. ws.send("Hello, server!", (err: BusinessError, value: boolean) => {
-20. if (!err) {
-21. console.info("send success")
-22. } else {
-23. console.error(`send fail. Code: ${err.code}, message: ${err.message}`)
-24. }
-25. });
-26. });
+let ws = webSocket.createWebSocket();
+let url = "ws://"
+class OutValue {
+  status: number = 0
+  message: string = ""
+}
+ws.connect(url, (err: BusinessError, value: boolean) => {
+    if (!err) {
+      console.info("connect success")
+    } else {
+      console.error(`connect fail. Code: ${err.code}, message: ${err.message}`)
+    }
+});
+ws.on('open', (err: BusinessError, value: Object) => {
+  console.info("on open, status:" + (value as OutValue).status + ", message:" + (value as OutValue).message)
+    ws.send("Hello, server!", (err: BusinessError, value: boolean) => {
+    if (!err) {
+      console.info("send success")
+    } else {
+      console.error(`send fail. Code: ${err.code}, message: ${err.message}`)
+    }
+  });
+});
 ```
 
-说明
+**说明** 
 
 send接口必须在监听到open事件后才可以调用。
 
 ### send
-
-PhonePC/2in1TabletTVWearable
 
 send(data: string | ArrayBuffer): Promise<boolean>
 
@@ -352,42 +351,40 @@ send(data: string | ArrayBuffer): Promise<boolean>
 
 **示例：**
 
+```ts
+import { webSocket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let ws = webSocket.createWebSocket();
+let url = "ws://"
+class OutValue {
+  status: number = 0
+  message: string = ""
+}
+ws.connect(url, (err: BusinessError, value: boolean) => {
+    if (!err) {
+      console.info("connect success")
+    } else {
+      console.error("connect fail. Code: ${err.code}, message: ${err.message}")
+    }
+});
+
+ws.on('open', (err: BusinessError, value: Object) => {
+  console.info("on open, status:" + (value as OutValue).status + ", message:" + (value as OutValue).message)
+  let promise = ws.send("Hello, server!");
+  promise.then((value: boolean) => {
+    console.info("send success")
+  }).catch((err:string) => {
+    console.error("send fail, error:" + JSON.stringify(err))
+  });
+});
 ```
-1. import { webSocket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let ws = webSocket.createWebSocket();
-5. let url = "ws://"
-6. class OutValue {
-7. status: number = 0
-8. message: string = ""
-9. }
-10. ws.connect(url, (err: BusinessError, value: boolean) => {
-11. if (!err) {
-12. console.info("connect success")
-13. } else {
-14. console.error("connect fail. Code: ${err.code}, message: ${err.message}")
-15. }
-16. });
-
-18. ws.on('open', (err: BusinessError, value: Object) => {
-19. console.info("on open, status:" + (value as OutValue).status + ", message:" + (value as OutValue).message)
-20. let promise = ws.send("Hello, server!");
-21. promise.then((value: boolean) => {
-22. console.info("send success")
-23. }).catch((err:string) => {
-24. console.error("send fail, error:" + JSON.stringify(err))
-25. });
-26. });
-```
-
-说明
+**说明** 
 
 send接口必须在监听到open事件后才可以调用。
 
 ### close
-
-PhonePC/2in1TabletTVWearable
 
 close(callback: AsyncCallback<boolean>): void
 
@@ -416,23 +413,21 @@ close(callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let ws = webSocket.createWebSocket();
-5. ws.close((err: BusinessError) => {
-6. if (!err) {
-7. console.info("close success")
-8. } else {
-9. console.error(`close fail. Code: ${err.code}, message: ${err.message}`)
-10. }
-11. });
+let ws = webSocket.createWebSocket();
+ws.close((err: BusinessError) => {
+  if (!err) {
+    console.info("close success")
+  } else {
+    console.error(`close fail. Code: ${err.code}, message: ${err.message}`)
+  }
+});
 ```
 
 ### close
-
-PhonePC/2in1TabletTVWearable
 
 close(options: WebSocketCloseOptions, callback: AsyncCallback<boolean>): void
 
@@ -462,29 +457,27 @@ close(options: WebSocketCloseOptions, callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let ws = webSocket.createWebSocket();
+let ws = webSocket.createWebSocket();
 
-6. let options: webSocket.WebSocketCloseOptions | undefined;
-7. if (options != undefined) {
-8. options.code = 1000
-9. options.reason = "your reason"
-10. }
-11. ws.close(options, (err: BusinessError) => {
-12. if (!err) {
-13. console.info("close success")
-14. } else {
-15. console.error(`close fail. Code: ${err.code}, message: ${err.message}`)
-16. }
-17. });
+let options: webSocket.WebSocketCloseOptions | undefined;
+if (options != undefined) {
+    options.code = 1000
+    options.reason = "your reason"
+}
+ws.close(options, (err: BusinessError) => {
+    if (!err) {
+        console.info("close success")
+    } else {
+        console.error(`close fail. Code: ${err.code}, message: ${err.message}`)
+    }
+});
 ```
 
 ### close
-
-PhonePC/2in1TabletTVWearable
 
 close(options?: WebSocketCloseOptions): Promise<boolean>
 
@@ -519,26 +512,24 @@ close(options?: WebSocketCloseOptions): Promise<boolean>
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
 
-3. let ws = webSocket.createWebSocket();
-4. let options: webSocket.WebSocketCloseOptions | undefined;
-5. if (options != undefined) {
-6. options.code = 1000
-7. options.reason = "your reason"
-8. }
-9. let promise = ws.close();
-10. promise.then((value: boolean) => {
-11. console.info("close success")
-12. }).catch((err:string) => {
-13. console.error("close fail, error:" + JSON.stringify(err))
-14. });
+let ws = webSocket.createWebSocket();
+let options: webSocket.WebSocketCloseOptions | undefined;
+if (options != undefined) {
+    options.code = 1000
+    options.reason = "your reason"
+}
+let promise = ws.close();
+promise.then((value: boolean) => {
+    console.info("close success")
+}).catch((err:string) => {
+    console.error("close fail, error:" + JSON.stringify(err))
+});
 ```
 
 ### on('open')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'open', callback: AsyncCallback<Object>): void
 
@@ -557,29 +548,27 @@ on(type: 'open', callback: AsyncCallback<Object>): void
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
-2. import { BusinessError, Callback } from '@kit.BasicServicesKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
+import { BusinessError, Callback } from '@kit.BasicServicesKit';
 
-4. let ws= webSocket.createWebSocket();
-5. class OutValue {
-6. status: number = 0
-7. message: string = ""
-8. }
-9. ws.on('open', (err: BusinessError, value: Object) => {
-10. console.info("on open, status:" + (value as OutValue).status + ", message:" + (value as OutValue).message)
-11. });
+let ws= webSocket.createWebSocket();
+class OutValue {
+  status: number = 0
+  message: string = ""
+}
+ws.on('open', (err: BusinessError, value: Object) => {
+  console.info("on open, status:" + (value as OutValue).status + ", message:" + (value as OutValue).message)
+});
 ```
 
 ### off('open')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'open', callback?: AsyncCallback<Object>): void
 
 取消订阅WebSocket的打开事件，使用callback异步回调。
 
-说明
+**说明** 
 
 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
 
@@ -596,32 +585,107 @@ off(type: 'open', callback?: AsyncCallback<Object>): void
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let ws = webSocket.createWebSocket();
-5. class OutValue {
-6. status: number = 0
-7. message: string = ""
-8. }
-9. let callback1 = (err: BusinessError, value: Object) => {
-10. console.info("on open, status:" + ((value as OutValue).status + ", message:" + (value as OutValue).message))
-11. }
-12. ws.on('open', callback1);
-13. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-14. ws.off('open', callback1);
+let ws = webSocket.createWebSocket();
+class OutValue {
+  status: number = 0
+  message: string = ""
+}
+let callback1 = (err: BusinessError, value: Object) => {
+ console.info("on open, status:" + ((value as OutValue).status + ", message:" + (value as OutValue).message))
+}
+ws.on('open', callback1);
+// 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+ws.off('open', callback1);
+```
+
+### on('openInfo')
+
+on(type: 'openInfo', callback: AsyncCallback<WebSocketOpenInfo>): void
+
+订阅WebSocket的打开信息事件，使用callback异步回调。该事件用于获取WebSocket连接成功后的详细信息。该接口需要在调用[connect](js-apis-websocket.md#connect)发起连接请求前调用。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.Communication.NetStack
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 订阅的事件类型。'openInfo'：WebSocket的打开信息事件。 |
+| callback | AsyncCallback<[WebSocketOpenInfo](js-apis-websocket.md#websocketopeninfo)> | 是 | 回调函数。返回WebSocket连接的详细信息。 |
+
+**示例：**
+
+```ts
+import { webSocket } from '@kit.NetworkKit';
+import { BusinessError, Callback } from '@kit.BasicServicesKit';
+
+let ws = webSocket.createWebSocket();
+ws.on('openInfo', (err: BusinessError, value: webSocket.WebSocketOpenInfo) => {
+  if (value?.protocol != undefined) {
+    console.info(`on openInfo exist protocol: status: ${value.status}, message: ${value.message}, protocol: ${value.protocol}`);
+  } else {
+    console.info(`on openInfo , status: ${value.status}, message: ${value.message}, protocol: ${value.protocol}`);
+  }
+});
+```
+
+### off('openInfo')
+
+off(type: 'openInfo', callback?: AsyncCallback<WebSocketOpenInfo>): void
+
+取消订阅WebSocket的打开信息事件，使用callback异步回调。
+
+**说明** 
+
+可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.Communication.NetStack
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 取消订阅的事件类型。'openInfo'：WebSocket的打开信息事件。 |
+| callback | AsyncCallback<[WebSocketOpenInfo](js-apis-websocket.md#websocketopeninfo)> | 否 | 回调函数。 |
+
+**示例：**
+
+```ts
+import { webSocket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let ws = webSocket.createWebSocket();
+let callback1 = (err: BusinessError, value: webSocket.WebSocketOpenInfo) => {
+  if (value?.protocol != undefined) {
+    console.info(`on openInfo exist protocol: status: ${value.status}, message: ${value.message}, protocol: ${value.protocol}`);
+  } else {
+    console.info(`on openInfo , status: ${value.status}, message: ${value.message}, protocol: ${value.protocol}`);
+  }
+}
+ws.on('openInfo', callback1);
+// 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+ws.off('openInfo', callback1);
 ```
 
 ### on('message')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'message', callback: AsyncCallback<string | ArrayBuffer>): void
 
 订阅WebSocket的接收服务器消息事件，使用callback异步回调。
 
-说明
+**说明** 
 
 AsyncCallback中的数据可以是字符串（API version 6开始支持）或ArrayBuffer（API version 8开始支持）。
 
@@ -638,25 +702,23 @@ AsyncCallback中的数据可以是字符串（API version 6开始支持）或Arr
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let ws = webSocket.createWebSocket();
-5. ws.on('message', (err: BusinessError<void>, value: string | ArrayBuffer) => {
-6. console.info("on message, message:" + value)
-7. });
+let ws = webSocket.createWebSocket();
+ws.on('message', (err: BusinessError<void>, value: string | ArrayBuffer) => {
+  console.info("on message, message:" + value)
+});
 ```
 
 ### off('message')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'message', callback?: AsyncCallback<string | ArrayBuffer>): void
 
 取消订阅WebSocket的接收服务器消息事件，使用callback异步回调。
 
-说明
+**说明** 
 
 AsyncCallback中的数据可以是字符串(API 6)或ArrayBuffer(API 8)。
 
@@ -675,16 +737,14 @@ AsyncCallback中的数据可以是字符串(API 6)或ArrayBuffer(API 8)。
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
 
-3. let ws = webSocket.createWebSocket();
-4. ws.off('message');
+let ws = webSocket.createWebSocket();
+ws.off('message');
 ```
 
 ### on('close')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'close', callback: AsyncCallback<CloseResult>): void
 
@@ -703,25 +763,23 @@ on(type: 'close', callback: AsyncCallback<CloseResult>): void
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let ws = webSocket.createWebSocket();
-5. ws.on('close', (err: BusinessError, value: webSocket.CloseResult) => {
-6. console.info("on close, code is " + value.code + ", reason is " + value.reason)
-7. });
+let ws = webSocket.createWebSocket();
+ws.on('close', (err: BusinessError, value: webSocket.CloseResult) => {
+  console.info("on close, code is " + value.code + ", reason is " + value.reason)
+});
 ```
 
 ### off('close')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'close', callback?: AsyncCallback<CloseResult>): void
 
 取消订阅WebSocket的关闭事件，使用callback异步回调。
 
-说明
+**说明** 
 
 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
 
@@ -738,16 +796,14 @@ off(type: 'close', callback?: AsyncCallback<CloseResult>): void
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
 
-3. let ws = webSocket.createWebSocket();
-4. ws.off('close');
+let ws = webSocket.createWebSocket();
+ws.off('close');
 ```
 
 ### on('error')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -768,25 +824,23 @@ on(type: 'error', callback: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let ws = webSocket.createWebSocket();
-5. ws.on('error', (err: BusinessError) => {
-6. console.error(`on error. Code: ${err.code}, message: ${err.message}`)
-7. });
+let ws = webSocket.createWebSocket();
+ws.on('error', (err: BusinessError) => {
+  console.error(`on error. Code: ${err.code}, message: ${err.message}`)
+});
 ```
 
 ### off('error')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
 取消订阅WebSocket的Error事件，使用callback异步回调。
 
-说明
+**说明** 
 
 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
 
@@ -803,16 +857,14 @@ off(type: 'error', callback?: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
 
-3. let ws = webSocket.createWebSocket();
-4. ws.off('error');
+let ws = webSocket.createWebSocket();
+ws.off('error');
 ```
 
 ### on('dataEnd')11+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'dataEnd', callback: Callback<void>): void
 
@@ -829,24 +881,22 @@ on(type: 'dataEnd', callback: Callback<void>): void
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
 
-3. let ws = webSocket.createWebSocket();
-4. ws.on('dataEnd', () => {
-5. console.info("on dataEnd")
-6. });
+let ws = webSocket.createWebSocket();
+ws.on('dataEnd', () => {
+  console.info("on dataEnd")
+});
 ```
 
 ### off('dataEnd')11+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'dataEnd', callback?: Callback<void>): void
 
 取消订阅WebSocket的数据接收结束事件，使用callback异步回调。
 
-说明
+**说明** 
 
 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
 
@@ -861,16 +911,14 @@ off(type: 'dataEnd', callback?: Callback<void>): void
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
 
-3. let ws = webSocket.createWebSocket();
-4. ws.off('dataEnd');
+let ws = webSocket.createWebSocket();
+ws.off('dataEnd');
 ```
 
 ### on('headerReceive')12+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'headerReceive', callback: Callback<ResponseHeaders>): void
 
@@ -887,24 +935,22 @@ on(type: 'headerReceive', callback: Callback<ResponseHeaders>): void
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
 
-3. let ws = webSocket.createWebSocket();
-4. ws.on('headerReceive', (data) => {
-5. console.info("on headerReceive " + JSON.stringify(data))
-6. });
+let ws = webSocket.createWebSocket();
+ws.on('headerReceive', (data) => {
+  console.info("on headerReceive " + JSON.stringify(data))
+});
 ```
 
 ### off('headerReceive')12+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'headerReceive', callback?: Callback<ResponseHeaders>): void
 
 取消订阅HTTP Response Header事件，使用callback异步回调。
 
-说明
+**说明** 
 
 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
 
@@ -919,26 +965,24 @@ off(type: 'headerReceive', callback?: Callback<ResponseHeaders>): void
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
 
-3. let ws = webSocket.createWebSocket();
-4. ws.off('headerReceive');
+let ws = webSocket.createWebSocket();
+ws.off('headerReceive');
 ```
 
 ## webSocket.createWebSocketServer19+
-
-PhonePC/2in1TabletTVWearable
 
 createWebSocketServer(): WebSocketServer
 
 创建一个WebSocketServer对象，包括启动服务、发送数据、关闭连接、列出客户端信息、停止服务，订阅/取消订阅webSocket连接的连接事件、接收到客户端消息事件、关闭事件和错误事件。
 
-说明
+**说明** 
 
 从API version 23开始支持全设备使用，之前仅支持TV设备使用。
 
-**系统能力**: SystemCapability.Communication.NetStack
+**系统能力**： SystemCapability.Communication.NetStack
 
 **返回值：**
 
@@ -948,31 +992,27 @@ createWebSocketServer(): WebSocketServer
 
 **示例：**
 
-```
-1. let ws: webSocket.WebSocketServer = webSocket.createWebSocketServer();
+```ts
+let ws: webSocket.WebSocketServer = webSocket.createWebSocketServer();
 ```
 
 ## WebSocketServer19+
-
-PhonePC/2in1TabletTVWearable
 
 在调用WebSocketServer方法前，需要先通过[webSocket.createWebSocketServer](js-apis-websocket.md#websocketcreatewebsocketserver19)创建一个WebSocketServer。
 
 ### start19+
 
-PhonePC/2in1TabletTVWearable
-
 start(config: WebSocketServerConfig): Promise<boolean>
 
 配置config参数，启动服务端service。使用Promise异步回调。
 
-说明
+**说明** 
 
 在多次调用该接口时，应避免监听同一端口。
 
-**需要权限**: ohos.permission.INTERNET
+**需要权限**： ohos.permission.INTERNET
 
-**系统能力**: SystemCapability.Communication.NetStack
+**系统能力**： SystemCapability.Communication.NetStack
 
 **参数：**
 
@@ -996,48 +1036,47 @@ start(config: WebSocketServerConfig): Promise<boolean>
 | 2302002 | Websocket certificate file does not exist. |
 | 2302004 | Can't listen on the given NIC. |
 | 2302005 | Can't listen on the given Port. |
+| 2302007 | Websocket port already occupied.  适用版本：24+ |
 | 2302999 | Websocket other unknown error. |
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let localServer: webSocket.WebSocketServer;
-5. let config: webSocket.WebSocketServerConfig = {
-6. serverPort: 8080, // 监听端口
-7. maxConcurrentClientsNumber: 10,
-8. maxConnectionsForOneClient: 10,
-9. }
+let localServer: webSocket.WebSocketServer;
+let config: webSocket.WebSocketServerConfig = {
+  serverPort: 8080, // 监听端口
+  maxConcurrentClientsNumber: 10,
+  maxConnectionsForOneClient: 10,
+}
 
-11. localServer = webSocket.createWebSocketServer();
-12. localServer.start(config).then((success: boolean) => {
-13. if (success) {
-14. console.info('webSocket server start success');
-15. } else {
-16. console.error('websocket server start failed');
-17. }
-18. }).catch((error: BusinessError) => {
-19. console.error(`Failed to start. Code: ${error.code}, message: ${error.message}`);
-20. });
+localServer = webSocket.createWebSocketServer();
+localServer.start(config).then((success: boolean) => {
+  if (success) {
+    console.info('webSocket server start success');
+  } else {
+    console.error('websocket server start failed');
+  }
+}).catch((error: BusinessError) => {
+  console.error(`Failed to start. Code: ${error.code}, message: ${error.message}`);
+});
 ```
 
 ### send19+
-
-PhonePC/2in1TabletTVWearable
 
 send(data: string | ArrayBuffer, connection: WebSocketConnection): Promise<boolean>
 
 通过WebSocket连接发送数据。使用Promise异步回调。
 
-说明
+**说明** 
 
 send接口必须在监听到connect事件后才可以调用。
 
-**需要权限**: ohos.permission.INTERNET
+**需要权限**： ohos.permission.INTERNET
 
-**系统能力**: SystemCapability.Communication.NetStack
+**系统能力**： SystemCapability.Communication.NetStack
 
 **参数：**
 
@@ -1063,56 +1102,54 @@ send接口必须在监听到connect事件后才可以调用。
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let localServer: webSocket.WebSocketServer;
-5. let config: webSocket.WebSocketServerConfig = {
-6. serverPort: 8080, // 监听端口
-7. maxConcurrentClientsNumber: 10,
-8. maxConnectionsForOneClient: 10,
-9. }
+let localServer: webSocket.WebSocketServer;
+let config: webSocket.WebSocketServerConfig = {
+  serverPort: 8080, // 监听端口
+  maxConcurrentClientsNumber: 10,
+  maxConnectionsForOneClient: 10,
+}
 
-11. localServer = webSocket.createWebSocketServer();
-12. localServer.start(config).then((success: boolean) => {
-13. if (success) {
-14. console.info('webSocket server start success');
-15. } else {
-16. console.error('websocket server start failed');
-17. }
-18. }).catch((error: BusinessError) => {
-19. console.error(`Failed to start. Code: ${error.code}, message: ${error.message}`);
-20. });
+localServer = webSocket.createWebSocketServer();
+localServer.start(config).then((success: boolean) => {
+  if (success) {
+    console.info('webSocket server start success');
+  } else {
+    console.error('websocket server start failed');
+  }
+}).catch((error: BusinessError) => {
+  console.error(`Failed to start. Code: ${error.code}, message: ${error.message}`);
+});
 
-22. localServer.on('connect', async (connection: webSocket.WebSocketConnection) => {
-23. console.info(`New client connected! Client ip: ${connection.clientIP}, Client port: ${connection.clientPort}`);
-24. // 当收到on('connect')事件时，可以通过send()方法与客户端进行通信
-25. localServer.send("Hello, I'm server!", connection).then((success: boolean) => {
-26. if (success) {
-27. console.info('message send successfully');
-28. } else {
-29. console.error('message send failed');
-30. }
-31. }).catch((error: BusinessError) => {
-32. console.error(`message send failed, Code: ${error.code}, message: ${error.message}`);
-33. });
-34. });
+localServer.on('connect', async (connection: webSocket.WebSocketConnection) => {
+  console.info(`New client connected! Client ip: ${connection.clientIP}, Client port: ${connection.clientPort}`);
+  // 当收到on('connect')事件时，可以通过send()方法与客户端进行通信
+  localServer.send("Hello, I'm server!", connection).then((success: boolean) => {
+    if (success) {
+      console.info('message send successfully');
+    } else {
+      console.error('message send failed');
+    }
+  }).catch((error: BusinessError) => {
+    console.error(`message send failed, Code: ${error.code}, message: ${error.message}`);
+  });
+});
 ```
 
 ### listAllConnections19+
-
-PhonePC/2in1TabletTVWearable
 
 listAllConnections(): WebSocketConnection[]
 
 获取与服务端连接的所有客户端信息。
 
-**需要权限**: ohos.permission.INTERNET
+**需要权限**： ohos.permission.INTERNET
 
 **系统能力**：SystemCapability.Communication.NetStack
 
-说明
+**说明** 
 
 该接口为异步调用，返回结果需通过await关键字等待异步操作完成，以确保正确获取到所有客户端连接信息。
 
@@ -1120,7 +1157,7 @@ listAllConnections(): WebSocketConnection[]
 
 | 类型 | 说明 |
 | --- | --- |
-| [WebSocketConnection[]](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-websocket#websocketconnection19) | 以字符串数组形式返回所有客户端的信息。 |
+| [WebSocketConnection](js-apis-websocket.md#websocketconnection19)[] | 以字符串数组形式返回所有客户端的信息。 |
 
 **错误码：**
 
@@ -1132,47 +1169,45 @@ listAllConnections(): WebSocketConnection[]
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let connections: webSocket.WebSocketConnection[] = [];
-5. let localServer: webSocket.WebSocketServer;
-6. let config: webSocket.WebSocketServerConfig = {
-7. serverPort: 8080, // 监听端口
-8. maxConcurrentClientsNumber: 10,
-9. maxConnectionsForOneClient: 10,
-10. }
+let connections: webSocket.WebSocketConnection[] = [];
+let localServer: webSocket.WebSocketServer;
+let config: webSocket.WebSocketServerConfig = {
+  serverPort: 8080, // 监听端口
+  maxConcurrentClientsNumber: 10,
+  maxConnectionsForOneClient: 10,
+}
 
-12. localServer = webSocket.createWebSocketServer();
-13. localServer.start(config).then((success: boolean) => {
-14. if (success) {
-15. console.info('webSocket server start success');
-16. } else {
-17. console.error('websocket server start failed');
-18. }
-19. }).catch((error: BusinessError) => {
-20. console.error(`Failed to start. Code: ${error.code}, message: ${error.message}`);
-21. });
+localServer = webSocket.createWebSocketServer();
+localServer.start(config).then((success: boolean) => {
+  if (success) {
+    console.info('webSocket server start success');
+  } else {
+    console.error('websocket server start failed');
+  }
+}).catch((error: BusinessError) => {
+  console.error(`Failed to start. Code: ${error.code}, message: ${error.message}`);
+});
 
-23. localServer.on('connect', async (connection: webSocket.WebSocketConnection) => {
-24. console.info(`New client connected! Client ip: ${connection.clientIP}, Client port: ${connection.clientPort}`);
-25. try {
-26. connections = await localServer.listAllConnections();
-27. if (connections.length === 0) {
-28. console.info('client list is empty');
-29. } else {
-30. console.info(`client list cnt: ${connections.length}, client connections list is: ${connections}`);
-31. }
-32. } catch (error) {
-33. console.error(`Failed to listAllConnections. Code: ${error.code}, message: ${error.message}`);
-34. }
-35. });
+localServer.on('connect', async (connection: webSocket.WebSocketConnection) => {
+  console.info(`New client connected! Client ip: ${connection.clientIP}, Client port: ${connection.clientPort}`);
+  try {
+    connections = await localServer.listAllConnections();
+    if (connections.length === 0) {
+      console.info('client list is empty');
+    } else {
+      console.info(`client list cnt: ${connections.length}, client connections list is: ${connections}`);
+    }
+  } catch (error) {
+    console.error(`Failed to listAllConnections. Code: ${error.code}, message: ${error.message}`);
+  }
+});
 ```
 
 ### close19+
-
-PhonePC/2in1TabletTVWearable
 
 close(connection: WebSocketConnection, options?: webSocket.WebSocketCloseOptions): Promise<boolean>
 
@@ -1206,43 +1241,41 @@ close(connection: WebSocketConnection, options?: webSocket.WebSocketCloseOptions
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let localServer: webSocket.WebSocketServer;
-5. let config: webSocket.WebSocketServerConfig = {
-6. serverPort: 8080, // 监听端口
-7. maxConcurrentClientsNumber: 10,
-8. maxConnectionsForOneClient: 10,
-9. }
+let localServer: webSocket.WebSocketServer;
+let config: webSocket.WebSocketServerConfig = {
+  serverPort: 8080, // 监听端口
+  maxConcurrentClientsNumber: 10,
+  maxConnectionsForOneClient: 10,
+}
 
-11. localServer = webSocket.createWebSocketServer();
-12. localServer.start(config).then((success: boolean) => {
-13. if (success) {
-14. console.info('webSocket server start success');
-15. } else {
-16. console.error('websocket server start failed');
-17. }
-18. }).catch((error: BusinessError) => {
-19. console.error(`Failed to start. Code: ${error.code}, message: ${error.message}`);
-20. });
+localServer = webSocket.createWebSocketServer();
+localServer.start(config).then((success: boolean) => {
+  if (success) {
+    console.info('webSocket server start success');
+  } else {
+    console.error('websocket server start failed');
+  }
+}).catch((error: BusinessError) => {
+  console.error(`Failed to start. Code: ${error.code}, message: ${error.message}`);
+});
 
-22. localServer.on('connect', (connection: webSocket.WebSocketConnection) => {
-23. console.info(`New client connected! Client ip: ${connection.clientIP}, Client port: ${connection.clientPort}`);
-24. localServer.close(connection).then((success: boolean) => {
-25. if (success) {
-26. console.info('close client successfully');
-27. } else {
-28. console.error('close client failed');
-29. }
-30. });
-31. });
+localServer.on('connect', (connection: webSocket.WebSocketConnection) => {
+  console.info(`New client connected! Client ip: ${connection.clientIP}, Client port: ${connection.clientPort}`);
+  localServer.close(connection).then((success: boolean) => {
+    if (success) {
+      console.info('close client successfully');
+    } else {
+      console.error('close client failed');
+    }
+  });
+});
 ```
 
 ### stop19+
-
-PhonePC/2in1TabletTVWearable
 
 stop(): Promise<boolean>
 
@@ -1268,40 +1301,38 @@ stop(): Promise<boolean>
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let localServer: webSocket.WebSocketServer;
-5. let config: webSocket.WebSocketServerConfig = {
-6. serverPort: 8080, // 监听端口
-7. maxConcurrentClientsNumber: 10,
-8. maxConnectionsForOneClient: 10,
-9. }
+let localServer: webSocket.WebSocketServer;
+let config: webSocket.WebSocketServerConfig = {
+  serverPort: 8080, // 监听端口
+  maxConcurrentClientsNumber: 10,
+  maxConnectionsForOneClient: 10,
+}
 
-11. localServer = webSocket.createWebSocketServer();
-12. localServer.start(config).then((success: boolean) => {
-13. if (success) {
-14. console.info('webSocket server start success');
-15. } else {
-16. console.error('websocket server start failed');
-17. }
-18. }).catch((error: BusinessError) => {
-19. console.error(`Failed to start. Code: ${error.code}, message: ${error.message}`);
-20. });
+localServer = webSocket.createWebSocketServer();
+localServer.start(config).then((success: boolean) => {
+  if (success) {
+    console.info('webSocket server start success');
+  } else {
+    console.error('websocket server start failed');
+  }
+}).catch((error: BusinessError) => {
+  console.error(`Failed to start. Code: ${error.code}, message: ${error.message}`);
+});
 
-22. localServer.stop().then((success: boolean) => {
-23. if (success) {
-24. console.info('server stop service successfully');
-25. } else {
-26. console.error('server stop service failed');
-27. }
-28. });
+localServer.stop().then((success: boolean) => {
+  if (success) {
+    console.info('server stop service successfully');
+  } else {
+    console.error('server stop service failed');
+  }
+});
 ```
 
 ### on('connect')19+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'connect', callback: Callback<WebSocketConnection>): void
 
@@ -1318,25 +1349,23 @@ on(type: 'connect', callback: Callback<WebSocketConnection>): void
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
-2. import { BusinessError, Callback } from '@kit.BasicServicesKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
+import { BusinessError, Callback } from '@kit.BasicServicesKit';
 
-4. let localServer = webSocket.createWebSocketServer();
-5. localServer.on('connect', (connection: webSocket.WebSocketConnection) => {
-6. console.info(`New client connected! Client ip: ${connection.clientIP}, Client port: ${connection.clientPort}`);
-7. });
+let localServer = webSocket.createWebSocketServer();
+localServer.on('connect', (connection: webSocket.WebSocketConnection) => {
+  console.info(`New client connected! Client ip: ${connection.clientIP}, Client port: ${connection.clientPort}`);
+});
 ```
 
 ### off('connect')19+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'connect', callback?: Callback<WebSocketConnection>): void
 
 取消订阅WebSocketServer的连接事件（客户端与服务端建链成功），使用callback异步回调。
 
-说明
+**说明** 
 
 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
 
@@ -1351,17 +1380,15 @@ off(type: 'connect', callback?: Callback<WebSocketConnection>): void
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let localServer = webSocket.createWebSocketServer();
-5. localServer.off('connect');
+let localServer = webSocket.createWebSocketServer();
+localServer.off('connect');
 ```
 
 ### on('messageReceive')19+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'messageReceive', callback: Callback<WebSocketMessage>): void
 
@@ -1378,25 +1405,23 @@ on(type: 'messageReceive', callback: Callback<WebSocketMessage>): void
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
-2. import { BusinessError, Callback } from '@kit.BasicServicesKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
+import { BusinessError, Callback } from '@kit.BasicServicesKit';
 
-4. let localServer = webSocket.createWebSocketServer();
-5. localServer.on('messageReceive', (message: webSocket.WebSocketMessage) => {
-6. console.info(`on message received, client: ${message.clientConnection}, data: ${message.data}`);
-7. });
+let localServer = webSocket.createWebSocketServer();
+localServer.on('messageReceive', (message: webSocket.WebSocketMessage) => {
+  console.info(`on message received, client: ${message.clientConnection}, data: ${message.data}`);
+});
 ```
 
 ### off('messageReceive')19+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'messageReceive', callback?: Callback<WebSocketMessage>): void
 
 取消订阅WebSocketServer的接收到客户端消息事件，使用callback异步回调。
 
-说明
+**说明** 
 
 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
 
@@ -1411,17 +1436,15 @@ off(type: 'messageReceive', callback?: Callback<WebSocketMessage>): void
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
-2. import { BusinessError, Callback } from '@kit.BasicServicesKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
+import { BusinessError, Callback } from '@kit.BasicServicesKit';
 
-4. let localServer = webSocket.createWebSocketServer();
-5. localServer.off('messageReceive');
+let localServer = webSocket.createWebSocketServer();
+localServer.off('messageReceive');
 ```
 
 ### on('close')19+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'close', callback: ClientConnectionCloseCallback): void
 
@@ -1438,25 +1461,23 @@ on(type: 'close', callback: ClientConnectionCloseCallback): void
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let localServer = webSocket.createWebSocketServer();
-5. localServer.on('close', (clientConnection: webSocket.WebSocketConnection, closeReason: webSocket.CloseResult) => {
-6. console.info(`client close, client: ${clientConnection}, closeReason: Code: ${closeReason.code}, reason: ${closeReason.reason}`);
-7. });
+let localServer = webSocket.createWebSocketServer();
+localServer.on('close', (clientConnection: webSocket.WebSocketConnection, closeReason: webSocket.CloseResult) => {
+  console.info(`client close, client: ${clientConnection}, closeReason: Code: ${closeReason.code}, reason: ${closeReason.reason}`);
+});
 ```
 
 ### off('close')19+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'close', callback?: ClientConnectionCloseCallback): void
 
 取消订阅WebSocketServer的关闭事件，使用callback异步回调。
 
-说明
+**说明** 
 
 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
 
@@ -1471,17 +1492,15 @@ off(type: 'close', callback?: ClientConnectionCloseCallback): void
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let localServer = webSocket.createWebSocketServer();
-5. localServer.off('close');
+let localServer = webSocket.createWebSocketServer();
+localServer.off('close');
 ```
 
 ### on('error')19+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -1498,25 +1517,23 @@ on(type: 'error', callback: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let wsServer: webSocket.WebSocketServer = webSocket.createWebSocketServer();
-5. wsServer.on('error', (err: BusinessError) => {
-6. console.error(`error. Code: ${err.code}, message: ${err.message}`);
-7. });
+let wsServer: webSocket.WebSocketServer = webSocket.createWebSocketServer();
+wsServer.on('error', (err: BusinessError) => {
+  console.error(`error. Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### off('error')19+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
 取消订阅WebSocketServer的Error事件，使用callback异步回调。
 
-说明
+**说明** 
 
 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
 
@@ -1531,17 +1548,15 @@ off(type: 'error', callback?: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { webSocket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { webSocket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let localServer = webSocket.createWebSocketServer();
-5. localServer.off('error');
+let localServer = webSocket.createWebSocketServer();
+localServer.off('error');
 ```
 
 ## WebSocketRequestOptions
-
-PhonePC/2in1TabletTVWearable
 
 建立WebSocket连接时，可选参数的类型和说明。
 
@@ -1557,10 +1572,10 @@ PhonePC/2in1TabletTVWearable
 | skipServerCertVerification20+ | boolean | 否 | 是 | 是否跳过服务器证书验证。true表示跳过服务器证书验证，false表示不跳过服务器证书验证。默认为false。 |
 | pingInterval21+ | number | 否 | 是 | 自定义[心跳检测](../harmonyos-guides/websocket-connection.md#场景介绍)时间，默认为30s。每pingInterval周期会发起心跳检测，设置为0则表示关闭心跳检测。最大值：30000s，最小值：0s。 |
 | pongTimeout21+ | number | 否 | 是 | 自定义发起心跳检测后，超时断开时间，默认为30s。发起心跳检测后若pongTimeout时间未响应则断开连接。最大值：30000s，最小值：0s。pongTimeout须小于等于pingInterval。 |
+| minSupportTlsProtocol | [TlsProtocol](js-apis-websocket.md#tlsprotocol) | 否 | 是 | 自定义支持的最低TLS协议版本。例如：设置该参数为TLS\_V\_1\_1，则客户端可支持TLS协议版本有TLS1.1、TLS1.2、TLS1.3。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| supportOriginPort | boolean | 否 | 是 | Origin是WebSocket握手请求中的HTTP请求头字段，用于标识请求来源，服务端可据此进行来源校验。该参数用于控制Origin字段是否携带自定义端口号。默认值为false。设置为true时：  - 调用[connect](js-apis-websocket.md#connect)接口后，若其第一个参数url中指定的协议为ws，且显式指定的端口号不是80，则Origin字段中会携带对应的端口；其他情况不携带端口号。  - 调用[connect](js-apis-websocket.md#connect)接口后，若其第一个参数url中指定的协议为wss，且显式指定的端口号不是443，则Origin字段中会携带对应的端口号；其他情况不携带端口号。  设置为false时，Origin字段不会携带端口号。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## ClientCert11+
-
-PhonePC/2in1TabletTVWearable
 
 客户端证书类型。
 
@@ -1573,8 +1588,6 @@ PhonePC/2in1TabletTVWearable
 | keyPassword | string | 否 | 是 | 证书密钥的密码。缺省为空字符串。 |
 
 ## ProxyConfiguration12+
-
-PhonePC/2in1TabletTVWearable
 
 type ProxyConfiguration = 'system' | 'no-proxy' | HttpProxy
 
@@ -1590,8 +1603,6 @@ type ProxyConfiguration = 'system' | 'no-proxy' | HttpProxy
 
 ## WebSocketCloseOptions
 
-PhonePC/2in1TabletTVWearable
-
 关闭WebSocket连接时，可选参数的类型和说明。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -1604,8 +1615,6 @@ PhonePC/2in1TabletTVWearable
 | reason | string | 否 | 是 | 原因值，关闭WebSocket连接时的可选参数，可根据实际情况来填。如果未指定原因值，则原因值将会被设置为默认值"CLOSE\_NORMAL"。 |
 
 ## CloseResult10+
-
-PhonePC/2in1TabletTVWearable
 
 关闭WebSocket连接时，订阅close事件得到的关闭结果。
 
@@ -1620,8 +1629,6 @@ PhonePC/2in1TabletTVWearable
 
 ## ResponseHeaders12+
 
-PhonePC/2in1TabletTVWearable
-
 type ResponseHeaders = { [k: string]: string | string[] | undefined; }
 
 服务器发送的响应头。
@@ -1633,8 +1640,6 @@ type ResponseHeaders = { [k: string]: string | string[] | undefined; }
 | [k:string] | string | string[] | undefined | 否 | 键值对形式存储。其键的类型为字符，可取任意值，其值的类型为字符、字符数组或undefined。 |
 
 ## close错误码说明
-
-PhonePC/2in1TabletTVWearable
 
 发送给服务端的错误码必须为正整数，取值范围为[1000,1015],可以自行定义，如果未指定错误码或传入值不在上述范围内，错误码将会被设置为默认值1000。下面的列表仅供参考。
 
@@ -1650,8 +1655,6 @@ PhonePC/2in1TabletTVWearable
 
 ## HttpProxy12+
 
-PhonePC/2in1TabletTVWearable
-
 type HttpProxy = connection.HttpProxy
 
 网络全局代理配置信息。
@@ -1663,8 +1666,6 @@ type HttpProxy = connection.HttpProxy
 | connection.HttpProxy | 使用指定的网络代理。 |
 
 ## WebSocketServerConfig19+
-
-PhonePC/2in1TabletTVWearable
 
 启动服务端的service时，需要输入的配置信息和说明。
 
@@ -1681,8 +1682,6 @@ PhonePC/2in1TabletTVWearable
 
 ## ServerCert19+
 
-PhonePC/2in1TabletTVWearable
-
 指定服务端证书的信息，包括服务端证书文件路径和服务端证书的私钥文件路径。
 
 **系统能力**：SystemCapability.Communication.NetStack
@@ -1693,8 +1692,6 @@ PhonePC/2in1TabletTVWearable
 | keyPath | string | 否 | 否 | 服务端证书的私钥文件路径。 |
 
 ## WebSocketMessage19+
-
-PhonePC/2in1TabletTVWearable
 
 从指定客户端接收到的消息，包括客户端的信息和数据。
 
@@ -1707,8 +1704,6 @@ PhonePC/2in1TabletTVWearable
 
 ## WebSocketConnection19+
 
-PhonePC/2in1TabletTVWearable
-
 客户端信息，包括客户端的ip地址和端口号port。
 
 **系统能力**：SystemCapability.Communication.NetStack
@@ -1719,8 +1714,6 @@ PhonePC/2in1TabletTVWearable
 | clientPort | number | 否 | 否 | 客户端的端口号port。 |
 
 ## ClientConnectionCloseCallback19+
-
-PhonePC/2in1TabletTVWearable
 
 type ClientConnectionCloseCallback = (clientConnection: WebSocketConnection, closeReason: CloseResult) => void
 
@@ -1734,3 +1727,36 @@ type ClientConnectionCloseCallback = (clientConnection: WebSocketConnection, clo
 | --- | --- | --- | --- |
 | clientConnection | [WebSocketConnection](js-apis-websocket.md#websocketconnection19) | 是 | 客户端信息，包括客户端的ip地址和端口号port。 |
 | closeReason | [CloseResult](js-apis-websocket.md#closeresult10) | 是 | 关闭WebSocket连接时，订阅close事件得到的关闭结果。 |
+
+## TlsProtocol
+
+TLS协议类型。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.Communication.NetStack
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| TLS\_V\_1\_0 | 0 | TLS版本号1.0。 |
+| TLS\_V\_1\_1 | 1 | TLS版本号1.1。 |
+| TLS\_V\_1\_2 | 2 | TLS版本号1.2。 |
+| TLS\_V\_1\_3 | 3 | TLS版本号1.3。 |
+
+## WebSocketOpenInfo
+
+WebSocket连接成功后的详细信息。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.Communication.NetStack
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| status | number | 否 | 否 | 服务器返回的状态码。例如：101表示建链成功并升级为websocket协议。 |
+| message | string | 否 | 否 | 服务器返回的状态信息。与status字段对应，例如：status=101时，该字段返回"Switching Protocols"。 |
+| protocol | string | 否 | 是 | 服务器返回的协商后的协议。 |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-creat
 title: CreateFrom
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > AttrValue > CreateFrom
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:29+08:00
+scraped_at: 2026-09-02T14:50:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9c1a2867d6a807af6b8359eb43bf9f20fb3db44fadc4702ebd8b5608c51966c8
+content_hash: sha256:e60537a8a0795a42ca892184df349f0de928efd7ea303f6d3e4713e444e9a1f4
 ---
 
 ## 函数功能
@@ -18,9 +18,9 @@ content_hash: sha256:9c1a2867d6a807af6b8359eb43bf9f20fb3db44fadc4702ebd8b5608c51
 
 ## 函数原型
 
-```
-1. template<typename T, typename DT>
-2. static T CreateFrom(DT &&val)
+```cpp
+template<typename T, typename DT>
+static T CreateFrom(DT &&val)
 ```
 
 ## 参数说明

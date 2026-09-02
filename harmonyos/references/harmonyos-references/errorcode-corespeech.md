@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS API错误码
 breadcrumb: API参考 > AI > Core Speech Kit（基础语音服务） > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:53+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:63f17a2663e46e1cfc1c583df4a0d64e0ebb221c9daa69be1ffae4140630c570
+scraped_at: 2026-09-02T15:03:10+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:240fff11b58813ee89d1dc58fddbea4e72ab167e63d84822a7a5e7c1b70d32a0
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 1002200001 创建引擎失败
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -29,16 +27,16 @@ Create engine failed.
 1. 语种不支持。
 2. 模式不支持。
 3. 资源不存在或初始化超时。
+4. 频繁创建、销毁引擎引起资源竞争，导致创建失败。
 
 **处理步骤**
 
 1. 调用[listLanguages](hms-ai-speechrecognizer.md#listlanguages)方法查询支持的语种，确认语种后请重新尝试。
 2. 当前仅支持[CreateEngineParams](hms-ai-speechrecognizer.md#createengineparams)，确认模式后请重新尝试。
 3. 资源不存在及初始化超时时，建议稍后重新尝试。
+4. 将创建成功的引擎实例进行存储，创建引擎参数相同的场景复用引擎实例，避免使用完立即销毁引擎，等到后续无需再使用时销毁引擎。
 
 ## 1002200002 开始识别失败
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -58,8 +56,6 @@ Start listening failed.
 
 ## 1002200003 超过最大音频
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
 Exceeded the maximum audio length supported.
@@ -77,8 +73,6 @@ Exceeded the maximum audio length supported.
 建议音频长度不要超过60000ms，重新尝试。
 
 ## 1002200004 结束识别失败
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -98,8 +92,6 @@ Finish recognition failed.
 
 ## 1002200005 取消识别失败
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
 Cancel recognition failed.
@@ -117,8 +109,6 @@ Cancel recognition failed.
 调用[startListening](hms-ai-speechrecognizer.md#startlistening)方法先启动语音识别任务，重新尝试。
 
 ## 1002200006 服务忙碌
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -138,8 +128,6 @@ The engine of SpeechRecognition is busy.
 
 ## 1002200007 引擎未初始化
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
 The engine is not initialized.
@@ -158,8 +146,6 @@ The engine is not initialized.
 
 ## 1002200008 引擎已被销毁
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
 The engine of SpeechRecognition is being destroyed.
@@ -177,8 +163,6 @@ The engine of SpeechRecognition is being destroyed.
 调用[speechRecognizer.createEngine](hms-ai-speechrecognizer.md#speechrecognizercreateengine)方法先初始化引擎，重新尝试。
 
 ## 1002200009 内部服务错误
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -199,8 +183,6 @@ Internal Service Error.
 如果无法解决，建议在线提单，详细步骤请见[在线提单指导](https://developer.huawei.com/consumer/cn/support/feedback/#/)。
 
 ## 1002200010 语音识别未启动
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -256,8 +238,6 @@ AudioCapturer create failed, please check the permission of MICROPHONE.
 
 ## 1002300001 文本长度非法
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
 The length of text is out of range or empty.
@@ -275,8 +255,6 @@ The length of text is out of range or empty.
 修改文本，重新尝试。
 
 ## 1002300002 语言不支持
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -296,8 +274,6 @@ The language is not supported.
 
 ## 1002300003 音色不支持
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
 The person is not supported.
@@ -315,8 +291,6 @@ The person is not supported.
 调用[listVoices](hms-ai-texttospeech.md#listvoices-1)接口查询当前支持的音色信息，重新尝试。
 
 ## 1002300005 创建引擎失败
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -338,8 +312,6 @@ Create engine failed.
 
 ## 1002300008 下载音色错误
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
 Failed to download voice.
@@ -357,8 +329,6 @@ Failed to download voice.
 运行失败，建议再次尝试。
 
 ## 1002300009 下载参数错误
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -381,8 +351,6 @@ Parameter error. Possible causes:
 检查输入参数是否符合要求，确保无误后再次尝试。
 
 ## 1002300010 音色已经下载过
-
-PhonePC/2in1Tablet
 
 **错误信息**
 

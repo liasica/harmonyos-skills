@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-localizationkit-6002
 title: Localization Kit
-breadcrumb: 版本说明 > HarmonyOS 6.0.0(20) > OS平台能力 > API变更清单 > 6.0.0(20) Beta2引入的API > Localization Kit
+breadcrumb: 版本说明 > 更多版本 > 6.0.0(20) > OS平台能力 > API变更清单 > 6.0.0(20) Beta2引入的API > Localization Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:30+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:29+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:4f65c1f4cf1f1d8efbfa73d9a7306af88247518b08f63e75ab050a33694e91ae
 ---
 

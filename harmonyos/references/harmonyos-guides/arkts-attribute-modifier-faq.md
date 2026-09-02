@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-attribu
 title: 动态属性设置常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI开发常见问题 > 动态属性设置常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:00+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:1ac1174e119afea3e2253ba688cd0542f7d039f7265044f920a7b3043a7112f5
+scraped_at: 2026-09-02T14:49:53+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e178cfa6ebc35c8cd804e43a0212d52ffcdbb1bd64205c2cf36b48fcee9ec886
 ---
 
 本文档介绍动态属性设置的常见问题并提供参考。
 
-## 使用AttributeModifier设置组件动态属性，出现jscrash
+## 使用AttributeModifier设置组件动态属性，出现JS Crash
 
 **问题现象**
 
 使用AttributeModifier对组件进行[动态属性设置](../harmonyos-references/ts-universal-attributes-attribute-modifier.md)，设置某些属性后出现[JS Crash](jscrash-guidelines.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/yyg1cCyvQEuLEs93jjWFoQ/zh-cn_image_0000002558764662.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/MuydGW7nQeGWEQU6zVrWbA/zh-cn_image_0000002706674066.png)
 
 **解决措施**
 
@@ -24,35 +24,35 @@ content_hash: sha256:1ac1174e119afea3e2253ba688cd0542f7d039f7265044f920a7b3043a7
 
 **示例代码**
 
-该示例通过Button绑定AttributeModifier，展示了AttributeModifier在设置不支持的属性时会抛出异常的场景，运行示例代码后会出现jscrash报错，参考下方的动图，跳转至具体的报错场景。在本示例中，删除reuseId相关代码即可正常运行。
+该示例通过Button绑定AttributeModifier，展示了AttributeModifier在设置不支持的属性时会抛出异常的场景，运行示例代码后会出现JS Crash报错，参考下方的动图，跳转至具体的报错场景。在本示例中，删除reuseId相关代码即可正常运行。
 
+```ts
+// xxx.ets
+// 设置Button组件属性的自定义AttributeModifier
+class MyButtonModifier implements AttributeModifier<ButtonAttribute> {
+
+  applyNormalAttribute(instance: ButtonAttribute): void {
+    instance.reuseId('String') // 删除本行可以让程序正常运行
+    instance.backgroundColor(Color.Red)
+  }
+}
+
+@Entry
+@Component
+struct attributeDemo {
+  @State modifier: MyButtonModifier = new MyButtonModifier();
+
+  build() {
+    Row() {
+      Column() {
+        Button('Button')
+          .attributeModifier(this.modifier)
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-1. // xxx.ets
-2. // 设置Button组件属性的自定义AttributeModifier
-3. class MyButtonModifier implements AttributeModifier<ButtonAttribute> {
 
-5. applyNormalAttribute(instance: ButtonAttribute): void {
-6. instance.reuseId('String') // 删除本行可以让程序正常运行
-7. instance.backgroundColor(Color.Red)
-8. }
-9. }
-
-11. @Entry
-12. @Component
-13. struct attributeDemo {
-14. @State modifier: MyButtonModifier = new MyButtonModifier();
-
-16. build() {
-17. Row() {
-18. Column() {
-19. Button('Button')
-20. .attributeModifier(this.modifier)
-21. }
-22. .width('100%')
-23. }
-24. .height('100%')
-25. }
-26. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/2RShMXEGRh64QysGsrbfsg/zh-cn_image_0000002558605006.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/QR2djrY5SLKQn0uavSoEfQ/zh-cn_image_0000002736433157.gif)

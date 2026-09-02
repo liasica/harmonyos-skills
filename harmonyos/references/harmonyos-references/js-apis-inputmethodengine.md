@@ -3,30 +3,98 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.inputMethodEngine (输入法服务)"
 breadcrumb: API参考 > 应用框架 > IME Kit（输入法开发服务） > ArkTS API > @ohos.inputMethodEngine (输入法服务)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:09+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:cb0e60c04956340ab9742c388e8f0bf5e9a3c08bdc5ffe34181d3a4155ddd1f5
+scraped_at: 2026-09-02T15:01:35+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6ad567b570097a78c48f8e9bf112a1e86835421d3d7062c4368bc817a73f9b16
 ---
 
-本模块面向输入法应用（包括系统输入法应用、三方输入法应用），为输入法应用提供能力，包括：创建软键盘窗口、插入/删除字符、选中文本、监听物理键盘按键事件等。
+@ohos.inputMethodEngine模块是面向输入法应用（包括系统输入法和第三方输入法）的服务端API模块，提供了输入法应用与系统输入法框架之间的交互能力。
 
-说明
+本模块是输入法应用的服务端接口，定义了输入法应用在运行期间所需的全部开放能力，包括输入法生命周期管理、软键盘面板的创建与控制、文本编辑操作（插入、删除、选中文本）、光标控制、物理键盘事件监听、安全模式管理、私有数据通信等。
+
+输入法应用通过本模块可以：1）订阅输入法绑定/解绑事件，感知编辑框的连接与断开；2）创建和管理软键盘面板（固定态、悬浮态、候选态）及状态栏面板，控制面板的显示、隐藏、大小调整、位置移动、沉浸模式等；3）通过InputClient对编辑框进行文本插入、删除、选中文本、移动光标、发送功能键和扩展编辑动作等操作；4）通过KeyboardDelegate监听物理键盘按键事件、光标位置变化、文本选择变化、文本内容变化、编辑框属性变化等；5）管理安全模式（基础模式/完全访问模式），支持隐私面板设置；6）与编辑框应用进行私有数据通信和自定义消息通信。
+
+当开发输入法应用时使用本模块。本模块需在InputMethodExtensionAbility中使用，适用于系统输入法开发、第三方输入法开发、自定义键盘布局等场景。
+
+**说明** 
 
 本模块首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
+本模块的核心开放能力由以下关键Interface承载：
+
+| Interface/Class | 说明 |
+| --- | --- |
+| InputMethodAbility | 输入法能力对象，是输入法应用的核心入口。提供输入法生命周期事件订阅（绑定/解绑/键盘显示隐藏/子类型切换/安全模式变化等）、面板创建与销毁、安全模式获取等能力。通过getInputMethodAbility()获取实例。 |
+| KeyboardDelegate | 键盘代理对象，提供物理键盘按键事件监听、光标位置变化监听、文本选择变化监听、文本内容变化监听、编辑框属性变化监听等能力。通过getKeyboardDelegate()获取实例。 |
+| InputClient | 输入客户端对象，提供对编辑框的文本操作能力，包括插入文本、删除文本（前删/后删）、获取光标前后文本、移动光标、选中文本、发送功能键和扩展编辑动作、设置预览文本、发送私有数据、自定义消息通信等。通过订阅inputStart事件在回调中获取实例。 |
+| KeyboardController | 键盘控制器对象，提供隐藏键盘、退出当前输入类型等能力。通过订阅inputStart事件在回调中获取实例。 |
+| Panel | 输入法面板对象，提供面板页面内容加载、大小调整、位置移动、显示/隐藏、面板状态切换、隐私模式设置、沉浸模式与效果设置、面板矩形区域预设置、热区更新等能力。通过createPanel()获取实例。 |
+| MessageHandler | 自定义通信对象，用于接收编辑框应用发送的自定义通信数据，并提供终止通知回调。通过InputClient.recvMessage()注册。 |
+
+输入法应用的典型使用流程涉及多个API的组合调用，核心流程为：获取InputMethodAbility实例 -> 订阅inputStart事件 -> 在回调中获取KeyboardController和InputClient -> 创建Panel -> 加载面板页面内容 -> 通过InputClient操作编辑框文本 -> 通过KeyboardController控制键盘显隐。
+
+```javascript
+// 以下为阐述调用逻辑的伪代码
+
+// 1. 获取输入法能力对象
+let inputMethodAbility = inputMethodEngine.getInputMethodAbility();
+
+// 2. 获取键盘代理对象，监听物理键盘和编辑框变化事件
+let keyboardDelegate = inputMethodEngine.getKeyboardDelegate();
+keyboardDelegate.on('keyDown', (event) => {
+  return true;
+});
+keyboardDelegate.on('cursorContextChange', (x, y, height) => {
+  // do something
+});
+keyboardDelegate.on('selectionChange', (oldBegin, oldEnd, newBegin, newEnd) => {
+  // do something
+});
+
+// 3. 订阅输入法绑定事件，获取KeyboardController和InputClient
+inputMethodAbility.on('inputStart', (kbController, inputClient) => {
+
+  // 4. 创建输入法面板
+  let panelInfo = { type: inputMethodEngine.PanelType.SOFT_KEYBOARD, flag: inputMethodEngine.PanelFlag.FLG_FIXED };
+  let panel = inputMethodAbility.createPanel(context, panelInfo);
+
+  // 5. 加载面板页面内容
+  panel.setUiContent('pages/Index');
+
+  // 6. 显示面板
+  panel.show();
+
+  // 7. 通过InputClient操作编辑框
+  inputClient.insertText('Hello');
+  inputClient.deleteForward(1);
+  inputClient.moveCursor(inputMethodEngine.CURSOR_RIGHT);
+
+  // 8. 通过KeyboardController隐藏键盘
+  kbController.hide();
+});
+
+// 9. 订阅输入法解绑事件
+inputMethodAbility.on('inputStop', () => {
+  // 销毁面板
+  inputMethodAbility.destroyPanel(panel);
+});
+```
+
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { inputMethodEngine } from '@kit.IMEKit';
+```ts
+import { inputMethodEngine } from '@kit.IMEKit';
 ```
 
 ## 常量
 
-PhonePC/2in1TabletTVWearable
+功能键常量值、编辑框常量值及光标常量值，用于输入法应用识别编辑框类型、回车键功能、光标移动方向等属性。输入法应用可根据这些常量值调整键盘布局和输入行为，例如：根据编辑框类型（PATTERN\_TEXT/PATTERN\_NUMBER等）切换不同的键盘布局，根据回车键功能（ENTER\_KEY\_TYPE\_SEARCH/ENTER\_KEY\_TYPE\_SEND等）调整回车键的显示文本和图标。
 
-功能键常量值、编辑框常量值及光标常量值。
+以下常量按功能分为三类：
+
+* 功能键常量（ENTER\_KEY\_TYPE系列）：定义编辑框回车键的功能类型，输入法应用可根据功能键类型在软键盘上显示对应的按键标签（如"搜索""发送"等）。
+* 编辑框常量（PATTERN/OPTION/FLAG/DISPLAY\_MODE系列）：定义编辑框的输入类型、输入属性、状态标识和显示模式，输入法应用据此调整键盘布局和输入策略。
+* 光标常量（CURSOR系列）：定义光标移动方向，用于[moveCursor](js-apis-inputmethodengine.md#movecursor9)和[moveCursorSync](js-apis-inputmethodengine.md#movecursorsync10)接口指定光标移动方向。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -50,10 +118,10 @@ PhonePC/2in1TabletTVWearable
 | PATTERN\_PASSWORD | number | 7 | 密码编辑框。 |
 | PATTERN\_PASSWORD\_NUMBER11+ | number | 8 | 数字密码编辑框。 |
 | PATTERN\_PASSWORD\_SCREEN\_LOCK11+ | number | 9 | 锁屏密码编辑框。 |
-| PATTERN\_USER\_NAME20+ | number | 10 | 用户名编辑框。 |
-| PATTERN\_NEW\_PASSWORD20+ | number | 11 | 新密码编辑框。 |
-| PATTERN\_NUMBER\_DECIMAL20+ | number | 12 | 带小数点的数字编辑框。 |
-| PATTERN\_ONE\_TIME\_CODE20+ | number | 13 | 验证码编辑框。 |
+| PATTERN\_USER\_NAME20+ | number | 10 | 用户名编辑框。  **模型约束：** 该参数仅可在Stage模型下使用。 |
+| PATTERN\_NEW\_PASSWORD20+ | number | 11 | 新密码编辑框。  **模型约束：** 该参数仅可在Stage模型下使用。 |
+| PATTERN\_NUMBER\_DECIMAL20+ | number | 12 | 带小数点的数字编辑框。  **模型约束：** 该参数仅可在Stage模型下使用。 |
+| PATTERN\_ONE\_TIME\_CODE20+ | number | 13 | 验证码编辑框。  **模型约束：** 该参数仅可在Stage模型下使用。 |
 | OPTION\_ASCII | number | 20 | 允许输入ASCII值。 |
 | OPTION\_NONE | number | 0 | 不指定编辑框输入属性。 |
 | OPTION\_AUTO\_CAP\_CHARACTERS | number | 2 | 允许输入字符。 |
@@ -73,11 +141,9 @@ PhonePC/2in1TabletTVWearable
 
 ## inputMethodEngine.getInputMethodAbility9+
 
-PhonePC/2in1TabletTVWearable
-
 getInputMethodAbility(): InputMethodAbility
 
-获取输入法应用客户端实例[InputMethodAbility](js-apis-inputmethodengine.md#inputmethodability)，仅支持输入法应用调用。
+获取输入法能力对象实例[InputMethodAbility](js-apis-inputmethodengine.md#inputmethodability)，仅支持输入法应用调用。
 
 输入法应用获取该实例后，可订阅软键盘显示/隐藏请求事件、创建/销毁输入法面板等。
 
@@ -87,21 +153,20 @@ getInputMethodAbility(): InputMethodAbility
 
 | 类型 | 说明 |
 | --- | --- |
-| [InputMethodAbility](js-apis-inputmethodengine.md#inputmethodability) | 输入法应用客户端。 |
+| [InputMethodAbility](js-apis-inputmethodengine.md#inputmethodability) | 输入法能力对象。 |
 
 **示例：**
 
-```
-1. let InputMethodAbility: inputMethodEngine.InputMethodAbility = inputMethodEngine.getInputMethodAbility();
+```ts
+// 获取输入法应用客户端实例
+let inputMethodAbility: inputMethodEngine.InputMethodAbility = inputMethodEngine.getInputMethodAbility();
 ```
 
 ## inputMethodEngine.getKeyboardDelegate9+
 
-PhonePC/2in1TabletTVWearable
-
 getKeyboardDelegate(): KeyboardDelegate
 
-获取客户端编辑事件监听代理实例[KeyboardDelegate](js-apis-inputmethodengine.md#keyboarddelegate)。
+获取客户端编辑事件监听代理实例[KeyboardDelegate](js-apis-inputmethodengine.md#keyboarddelegate)（键盘代理对象）。
 
 输入法应用获取该实例后，可订阅物理键盘按键事件、选中文本变化事件等。
 
@@ -115,23 +180,22 @@ getKeyboardDelegate(): KeyboardDelegate
 
 **示例：**
 
-```
-1. let KeyboardDelegate: inputMethodEngine.KeyboardDelegate = inputMethodEngine.getKeyboardDelegate();
+```ts
+// 获取客户端编辑事件监听代理实例
+let keyboardDelegate: inputMethodEngine.KeyboardDelegate = inputMethodEngine.getKeyboardDelegate();
 ```
 
 ## inputMethodEngine.getInputMethodEngine(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 getInputMethodEngine(): InputMethodEngine
 
-获取输入法应用客户端实例[InputMethodEngine](js-apis-inputmethodengine.md#inputmethodenginedeprecated)。
+获取输入法应用客户端实例[InputMethodEngine](js-apis-inputmethodengine.md#inputmethodenginedeprecated)（输入法引擎）。
 
 输入法应用获取该实例后，可订阅软键盘显示/隐藏请求事件等。
 
-说明
+**说明** 
 
-从API version 8开始支持，API version 9开始废弃，建议使用[getInputMethodAbility](js-apis-inputmethodengine.md#inputmethodenginegetinputmethodability9)替代。
+从 API version 8开始支持，从API version 9开始废弃。建议使用[inputMethodEngine.getInputMethodAbility()](js-apis-inputmethodengine.md#inputmethodenginegetinputmethodability9)替代。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -143,21 +207,20 @@ getInputMethodEngine(): InputMethodEngine
 
 **示例：**
 
-```
-1. let InputMethodEngine: inputMethodEngine.InputMethodEngine = inputMethodEngine.getInputMethodEngine();
+```ts
+// 获取输入法应用客户端实例（已废弃）
+let InputMethodEngine: inputMethodEngine.InputMethodEngine = inputMethodEngine.getInputMethodEngine();
 ```
 
 ## inputMethodEngine.createKeyboardDelegate(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 createKeyboardDelegate(): KeyboardDelegate
 
 获取客户端编辑事件监听代理实例[KeyboardDelegate](js-apis-inputmethodengine.md#keyboarddelegate)。输入法应用获取该实例后，可订阅物理键盘按键事件、选中文本变化事件等。
 
-说明
+**说明** 
 
-从API version 8开始支持，API version 9开始废弃，建议使用[getKeyboardDelegate](js-apis-inputmethodengine.md#inputmethodenginegetkeyboarddelegate9)替代。
+从 API version 8开始支持，从API version 9开始废弃。建议使用[inputMethodEngine.getKeyboardDelegate()](js-apis-inputmethodengine.md#inputmethodenginegetkeyboarddelegate9)替代。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -169,13 +232,11 @@ createKeyboardDelegate(): KeyboardDelegate
 
 **示例：**
 
-```
-1. let keyboardDelegate: inputMethodEngine.KeyboardDelegate = inputMethodEngine.createKeyboardDelegate();
+```ts
+let keyboardDelegate: inputMethodEngine.KeyboardDelegate = inputMethodEngine.createKeyboardDelegate();
 ```
 
 ## CommandDataType12+
-
-PhonePC/2in1TabletTVWearable
 
 type CommandDataType = number | string | boolean;
 
@@ -185,13 +246,11 @@ type CommandDataType = number | string | boolean;
 
 | 类型 | 说明 |
 | --- | --- |
-| string | 表示值类型为字符串。 |
 | number | 表示值类型为数字。 |
+| string | 表示值类型为字符串。 |
 | boolean | 表示值类型为布尔值。 |
 
 ## SizeChangeCallback15+
-
-PhonePC/2in1TabletTVWearable
 
 type SizeChangeCallback = (size: window.Size, keyboardArea?: KeyboardArea) => void
 
@@ -204,29 +263,25 @@ type SizeChangeCallback = (size: window.Size, keyboardArea?: KeyboardArea) => vo
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | [window.Size](arkts-apis-window-i.md#size7) | 是 | 当前面板大小。 |
-| keyboardArea | [KeyboardArea](js-apis-inputmethodengine.md#keyboardarea15) | 否 | 当前面板中可作为键盘区域的大小。 |
+| keyboardArea | [KeyboardArea](js-apis-inputmethodengine.md#keyboardarea15) | 否 | 当前面板中可作为键盘区域的大小。当需要获取或监听键盘区域变化时传入此参数，不传入时默认为undefined（不返回键盘区域信息）。 |
 
 ## InputMethodEngine(deprecated)
 
-PhonePC/2in1TabletTVWearable
+**说明** 
 
-说明
-
-从API version 8开始支持，API version 23开始废弃，建议使用[InputMethodAbility](js-apis-inputmethodengine.md#inputmethodability)替代。
+从 API version 8开始支持，从API version 23开始废弃。建议使用[InputMethodAbility](js-apis-inputmethodengine.md#inputmethodability)替代。
 
 下列API均需使用[getInputMethodEngine](js-apis-inputmethodengine.md#inputmethodenginegetinputmethodenginedeprecated)获取到InputMethodEngine实例后，通过实例调用。
 
 ### on('inputStart')(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'inputStart', callback: (kbController: KeyboardController, textInputClient: TextInputClient) => void): void
 
 订阅输入法绑定成功事件。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 8开始支持，API version 23开始废弃，建议使用[InputMethodAbility#on](js-apis-inputmethodengine.md#oninputstart9)替代。
+从API version 8开始支持，API version 23开始废弃，建议使用[inputMethodEngine.InputMethodAbility.on](js-apis-inputmethodengine.md#oninputstart9)替代。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -239,26 +294,23 @@ on(type: 'inputStart', callback: (kbController: KeyboardController, textInputCli
 
 **示例：**
 
-```
-1. inputMethodEngine.getInputMethodEngine()
-2. .on('inputStart',
-3. (kbController: inputMethodEngine.KeyboardController, textClient: inputMethodEngine.TextInputClient) => {
-4. let keyboardController: inputMethodEngine.KeyboardController = kbController;
-5. let textInputClient: inputMethodEngine.TextInputClient = textClient;
-6. });
+```ts
+inputMethodEngine.getInputMethodEngine()
+  .on('inputStart',
+    (keyboardController: inputMethodEngine.KeyboardController, textInputClient: inputMethodEngine.TextInputClient) => {
+      // 使用kbController和textClient进行相关操作
+    });
 ```
 
 ### off('inputStart')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'inputStart', callback?: (kbController: KeyboardController, textInputClient: TextInputClient) => void): void
 
 取消订阅输入法绑定成功事件。
 
-说明
+**说明** 
 
-从API version 8开始支持，API version 23开始废弃，建议使用[InputMethodAbility#off](js-apis-inputmethodengine.md#offinputstart9)替代。
+从API version 8开始支持，API version 23开始废弃，建议使用[inputMethodEngine.InputMethodAbility.off](js-apis-inputmethodengine.md#offinputstart9)替代。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -271,25 +323,23 @@ off(type: 'inputStart', callback?: (kbController: KeyboardController, textInputC
 
 **示例：**
 
-```
-1. inputMethodEngine.getInputMethodEngine()
-2. .off('inputStart',
-3. (kbController: inputMethodEngine.KeyboardController, textClient: inputMethodEngine.TextInputClient) => {
-4. console.info('delete inputStart notification.');
-5. });
+```ts
+inputMethodEngine.getInputMethodEngine()
+  .off('inputStart',
+    (kbController: inputMethodEngine.KeyboardController, textClient: inputMethodEngine.TextInputClient) => {
+      console.info('delete inputStart notification.');
+    });
 ```
 
 ### on('keyboardShow'|'keyboardHide')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'keyboardShow'|'keyboardHide', callback: () => void): void
 
 订阅输入法软键盘显示或隐藏事件。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 8开始支持，API version 23开始废弃，建议使用[InputMethodAbility#on](js-apis-inputmethodengine.md#onkeyboardshowkeyboardhide9)替代。
+从API version 8开始支持，API version 23开始废弃，建议使用[inputMethodEngine.InputMethodAbility.on](js-apis-inputmethodengine.md#onkeyboardshowkeyboardhide9)替代。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -302,26 +352,24 @@ on(type: 'keyboardShow'|'keyboardHide', callback: () => void): void
 
 **示例：**
 
-```
-1. inputMethodEngine.getInputMethodEngine().on('keyboardShow', () => {
-2. console.info('inputMethodEngine keyboardShow.');
-3. });
-4. inputMethodEngine.getInputMethodEngine().on('keyboardHide', () => {
-5. console.info('inputMethodEngine keyboardHide.');
-6. });
+```ts
+inputMethodEngine.getInputMethodEngine().on('keyboardShow', () => {
+  console.info('inputMethodEngine keyboardShow.');
+});
+inputMethodEngine.getInputMethodEngine().on('keyboardHide', () => {
+  console.info('inputMethodEngine keyboardHide.');
+});
 ```
 
 ### off('keyboardShow'|'keyboardHide')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'keyboardShow'|'keyboardHide', callback?: () => void): void
 
 取消订阅输入法软键盘显示或隐藏事件。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 8开始支持，API version 23开始废弃，建议使用[InputMethodAbility#off](js-apis-inputmethodengine.md#offkeyboardshowkeyboardhide9)替代。
+从API version 8开始支持，API version 23开始废弃，建议使用[inputMethodEngine.InputMethodAbility.off](js-apis-inputmethodengine.md#offkeyboardshowkeyboardhide9)替代。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -334,24 +382,44 @@ off(type: 'keyboardShow'|'keyboardHide', callback?: () => void): void
 
 **示例：**
 
-```
-1. inputMethodEngine.getInputMethodEngine().off('keyboardShow');
-2. inputMethodEngine.getInputMethodEngine().off('keyboardHide');
+```ts
+inputMethodEngine.getInputMethodEngine().off('keyboardShow');
+inputMethodEngine.getInputMethodEngine().off('keyboardHide');
 ```
 
 ## InputMethodAbility
 
-PhonePC/2in1TabletTVWearable
+InputMethodAbility是输入法应用的核心能力对象，提供输入法生命周期管理、面板创建与销毁、事件订阅等功能。输入法应用通过[getInputMethodAbility](js-apis-inputmethodengine.md#inputmethodenginegetinputmethodability9)获取该实例。
+
+核心功能概述：
+
+* 生命周期事件订阅：通过on('inputStart')订阅输入法绑定事件获取[KeyboardController](js-apis-inputmethodengine.md#keyboardcontroller)和[InputClient](js-apis-inputmethodengine.md#inputclient9)实例，通过on('inputStop')订阅输入法解绑事件，通过on('keyboardShow'|'keyboardHide')订阅软键盘显示/隐藏事件。
+* 面板管理：通过[createPanel](js-apis-inputmethodengine.md#createpanel10)创建输入法面板，通过[destroyPanel](js-apis-inputmethodengine.md#destroypanel10)销毁面板。createPanel与destroyPanel需配对调用，防止资源泄漏。
+* 子类型与安全模式：通过on('setSubtype')订阅输入法子类型变化事件，通过on('securityModeChange')订阅安全模式变化事件，通过[getSecurityMode](js-apis-inputmethodengine.md#getsecuritymode11)获取当前安全模式。
+* 私有通信：通过on('privateCommand')订阅应用私有数据事件，用于输入法应用与绑定应用之间的私有数据交互。
+* 屏幕与窗口信息：通过on('setCallingWindow')订阅调用方窗口变化事件，通过on('callingDisplayDidChange')订阅屏幕ID变化事件，通过on('discardTypingText')订阅丢弃文本事件。
+
+典型调用顺序：
+
+1. 输入法应用在[InputMethodExtensionAbility](js-apis-inputmethod-extension-ability.md)的onCreate生命周期中调用getInputMethodAbility()获取实例。
+2. 订阅on('inputStart')事件，在回调中获取KeyboardController和InputClient实例。
+3. 在on('inputStart')回调中调用createPanel()创建面板，并调用panel.setUiContent()加载键盘页面。
+4. 订阅on('keyboardShow'|'keyboardHide')事件，在回调中调用panel.show()/panel.hide()显示/隐藏面板。
+5. 在InputMethodExtensionAbility的onDestroy生命周期中调用destroyPanel()销毁面板，取消所有事件订阅。
 
 下列API均需使用[getInputMethodAbility](js-apis-inputmethodengine.md#inputmethodenginegetinputmethodability9)获取到InputMethodAbility实例后，通过实例调用。
 
-### on('inputStart')9+
+**系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
-PhonePC/2in1TabletTVWearable
+### on('inputStart')9+
 
 on(type: 'inputStart', callback: (kbController: KeyboardController, inputClient: InputClient) => void): void
 
 订阅输入法绑定成功事件。使用callback异步回调。
+
+使用场景：输入法应用需要在编辑框获得焦点并绑定输入法时，获取KeyboardController和InputClient实例以进行后续的键盘操作和文本交互。
+
+使用后效果：当编辑框绑定到输入法应用时，触发回调并返回KeyboardController和InputClient实例。输入法应用可在回调中创建面板、加载键盘页面、订阅KeyboardDelegate事件等。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -360,22 +428,19 @@ on(type: 'inputStart', callback: (kbController: KeyboardController, inputClient:
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 设置监听类型，固定取值为'inputStart'。 |
-| callback | (kbController: [KeyboardController](js-apis-inputmethodengine.md#keyboardcontroller), inputClient: [InputClient](js-apis-inputmethodengine.md#inputclient9)) => void | 是 | 回调函数，返回输入法操作相关实例。 |
+| callback | (kbController: [KeyboardController](js-apis-inputmethodengine.md#keyboardcontroller), inputClient: [InputClient](js-apis-inputmethodengine.md#inputclient9)) => void | 是 | 回调函数，返回输入法操作相关实例。kbController为键盘控制器实例，用于控制键盘显示/隐藏；inputClient为输入客户端实例，用于与编辑框进行文本交互。 |
 
 **示例：**
 
-```
-1. inputMethodEngine.getInputMethodAbility()
-2. .on('inputStart',
-3. (kbController: inputMethodEngine.KeyboardController, client: inputMethodEngine.InputClient) => {
-4. let keyboardController: inputMethodEngine.KeyboardController = kbController;
-5. let inputClient: inputMethodEngine.InputClient = client;
-6. });
+```ts
+inputMethodEngine.getInputMethodAbility()
+  .on('inputStart',
+    (keyboardController: inputMethodEngine.KeyboardController, inputClient: inputMethodEngine.InputClient) => {
+      // 使用kbController和client进行相关操作
+    });
 ```
 
 ### off('inputStart')9+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'inputStart', callback?: (kbController: KeyboardController, inputClient: InputClient) => void): void
 
@@ -392,17 +457,19 @@ off(type: 'inputStart', callback?: (kbController: KeyboardController, inputClien
 
 **示例：**
 
-```
-1. inputMethodEngine.getInputMethodAbility().off('inputStart');
+```ts
+inputMethodEngine.getInputMethodAbility().off('inputStart');
 ```
 
 ### on('inputStop')9+
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'inputStop', callback: () => void): void
 
 订阅停止输入法应用事件。使用callback异步回调。
+
+使用场景：输入法应用需要在编辑框失去焦点或用户切换输入法时，执行清理操作（如隐藏面板、释放资源）。
+
+使用后效果：当输入法应用被停止绑定时触发回调。输入法应用应在回调中隐藏面板、取消事件订阅、释放InputClient相关资源。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -411,19 +478,17 @@ on(type: 'inputStop', callback: () => void): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 设置监听类型，固定取值为'inputStop'。 |
-| callback | () => void | 是 | 回调函数。 |
+| callback | () => void | 是 | 回调函数，无返回参数。 |
 
 **示例：**
 
-```
-1. inputMethodEngine.getInputMethodAbility().on('inputStop', () => {
-2. console.info('inputMethodAbility inputStop');
-3. });
+```ts
+inputMethodEngine.getInputMethodAbility().on('inputStop', () => {
+  console.info('inputMethodAbility inputStop');
+});
 ```
 
 ### off('inputStop')9+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'inputStop', callback: () => void): void
 
@@ -436,23 +501,25 @@ off(type: 'inputStop', callback: () => void): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 设置监听类型，固定取值为'inputStop'。 |
-| callback | () => void | 是 | 取消订阅的回调函数。参数不填写时，取消订阅type对应的所有回调事件。 |
+| callback | () => void | 是 | 取消订阅的回调函数。 |
 
 **示例：**
 
-```
-1. inputMethodEngine.getInputMethodAbility().off('inputStop', () => {
-2. console.info('inputMethodAbility delete inputStop notification.');
-3. });
+```ts
+inputMethodEngine.getInputMethodAbility().off('inputStop', () => {
+  console.info('inputMethodAbility delete inputStop notification.');
+});
 ```
 
 ### on('setCallingWindow')9+
 
-PhonePC/2in1TabletTVWearable
-
-on(type: 'setCallingWindow', callback: (wid: number) => void): void
+on(type: 'setCallingWindow', callback: (wid: number) => void): void;
 
 订阅设置调用窗口事件。使用callback异步回调。
+
+使用场景：输入法应用需要在绑定应用的窗口发生变化时（如应用切换窗口、多窗口场景），调整面板位置或重新定位。
+
+使用后效果：当调用方窗口发生变化时触发回调，返回新的窗口ID。输入法应用可根据窗口ID调整面板位置。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -461,19 +528,17 @@ on(type: 'setCallingWindow', callback: (wid: number) => void): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 设置监听类型，固定取值为'setCallingWindow'。 |
-| callback | (wid: number) => void | 是 | 回调函数，返回调用方窗口的Id。 |
+| callback | (wid: number) => void | 是 | 回调函数，参数为调用方窗口的Id。 |
 
 **示例：**
 
-```
-1. inputMethodEngine.getInputMethodAbility().on('setCallingWindow', (wid: number) => {
-2. console.info('inputMethodAbility setCallingWindow');
-3. });
+```ts
+inputMethodEngine.getInputMethodAbility().on('setCallingWindow', (windowId: number) => {
+  console.info('inputMethodAbility setCallingWindow');
+});
 ```
 
 ### off('setCallingWindow')9+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'setCallingWindow', callback: (wid:number) => void): void
 
@@ -490,19 +555,21 @@ off(type: 'setCallingWindow', callback: (wid:number) => void): void
 
 **示例：**
 
-```
-1. inputMethodEngine.getInputMethodAbility().off('setCallingWindow', (wid: number) => {
-2. console.info('inputMethodAbility delete setCallingWindow notification.');
-3. });
+```ts
+inputMethodEngine.getInputMethodAbility().off('setCallingWindow', (windowId: number) => {
+  console.info('inputMethodAbility delete setCallingWindow notification.');
+});
 ```
 
 ### on('keyboardShow'|'keyboardHide')9+
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'keyboardShow'|'keyboardHide', callback: () => void): void
 
 订阅输入法软键盘显示或隐藏事件。使用callback异步回调。
+
+使用场景：输入法应用需要在软键盘显示/隐藏时，执行相应的界面更新操作（如调整面板布局、更新候选词区域）。
+
+使用后效果：当软键盘显示请求触发时，'keyboardShow'回调被调用，输入法应用应在回调中调用panel.show()显示面板；当软键盘隐藏请求触发时，'keyboardHide'回调被调用，输入法应用应在回调中调用panel.hide()隐藏面板。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -515,18 +582,16 @@ on(type: 'keyboardShow'|'keyboardHide', callback: () => void): void
 
 **示例：**
 
-```
-1. inputMethodEngine.getInputMethodAbility().on('keyboardShow', () => {
-2. console.info('InputMethodAbility keyboardShow.');
-3. });
-4. inputMethodEngine.getInputMethodAbility().on('keyboardHide', () => {
-5. console.info('InputMethodAbility keyboardHide.');
-6. });
+```ts
+inputMethodEngine.getInputMethodAbility().on('keyboardShow', () => {
+  console.info('InputMethodAbility keyboardShow.');
+});
+inputMethodEngine.getInputMethodAbility().on('keyboardHide', () => {
+  console.info('InputMethodAbility keyboardHide.');
+});
 ```
 
 ### off('keyboardShow'|'keyboardHide')9+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'keyboardShow'|'keyboardHide', callback?: () => void): void
 
@@ -538,27 +603,29 @@ off(type: 'keyboardShow'|'keyboardHide', callback?: () => void): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 设置监听类型。  - 'keyboardShow'表示显示键盘。  - 'keyboardHide'表示隐藏键盘。 |
-| callback | () => void | 否 | 回调函数。 |
+| type | string | 是 | 设置监听类型。  - 'keyboardShow'表示显示输入法软键盘。  - 'keyboardHide'表示隐藏输入法软键盘。 |
+| callback | () => void | 否 | 取消订阅的回调函数。参数不填写时，取消订阅type对应的所有回调事件。 |
 
 **示例：**
 
-```
-1. inputMethodEngine.getInputMethodAbility().off('keyboardShow', () => {
-2. console.info('InputMethodAbility delete keyboardShow notification.');
-3. });
-4. inputMethodEngine.getInputMethodAbility().off('keyboardHide', () => {
-5. console.info('InputMethodAbility delete keyboardHide notification.');
-6. });
+```ts
+inputMethodEngine.getInputMethodAbility().off('keyboardShow', () => {
+  console.info('InputMethodAbility delete keyboardShow notification.');
+});
+inputMethodEngine.getInputMethodAbility().off('keyboardHide', () => {
+  console.info('InputMethodAbility delete keyboardHide notification.');
+});
 ```
 
 ### on('setSubtype')9+
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'setSubtype', callback: (inputMethodSubtype: InputMethodSubtype) => void): void
 
 订阅设置输入法子类型事件。使用callback异步回调。
+
+使用场景：输入法应用需要在子类型（如语言、输入模式）发生变化时，切换到对应的键盘布局或输入逻辑。
+
+使用后效果：当输入法子类型变化时触发回调，返回新的输入法子类型信息。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -567,21 +634,19 @@ on(type: 'setSubtype', callback: (inputMethodSubtype: InputMethodSubtype) => voi
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 设置监听类型，固定取值为'setSubtype'。 |
-| callback | (inputMethodSubtype: [InputMethodSubtype](js-apis-inputmethod-subtype.md)) => void | 是 | 回调函数，返回设置的输入法子类型。 |
+| callback | (inputMethodSubtype: [InputMethodSubtype](js-apis-inputmethod-subtype.md)) => void | 是 | 回调函数，返回设置的输入法子类型（InputMethodSubtype，输入法子类型）。 |
 
 **示例：**
 
-```
-1. import { InputMethodSubtype } from '@kit.IMEKit';
+```ts
+import { InputMethodSubtype } from '@kit.IMEKit';
 
-3. inputMethodEngine.getInputMethodAbility().on('setSubtype', (inputMethodSubtype: InputMethodSubtype) => {
-4. console.info('InputMethodAbility setSubtype.');
-5. });
+inputMethodEngine.getInputMethodAbility().on('setSubtype', (inputMethodSubtype: InputMethodSubtype) => {
+  console.info('InputMethodAbility setSubtype.');
+});
 ```
 
 ### off('setSubtype')9+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'setSubtype', callback?: (inputMethodSubtype: InputMethodSubtype) => void): void
 
@@ -598,19 +663,21 @@ off(type: 'setSubtype', callback?: (inputMethodSubtype: InputMethodSubtype) => v
 
 **示例：**
 
-```
-1. inputMethodEngine.getInputMethodAbility().off('setSubtype', () => {
-2. console.info('InputMethodAbility delete setSubtype notification.');
-3. });
+```ts
+inputMethodEngine.getInputMethodAbility().off('setSubtype', () => {
+  console.info('InputMethodAbility delete setSubtype notification.');
+});
 ```
 
 ### on('securityModeChange')11+
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'securityModeChange', callback: Callback< SecurityMode>): void
 
 订阅输入法安全模式改变类型事件。使用callback异步回调。
+
+使用场景：输入法应用需要在安全模式发生变化时（如编辑框切换到密码输入模式、隐私模式等），调整键盘行为（如禁止截图、切换到安全键盘布局等）。
+
+使用后效果：当安全模式变化时触发回调，返回当前的安全模式值。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -623,16 +690,14 @@ on(type: 'securityModeChange', callback: Callback< SecurityMode>): void
 
 **示例：**
 
-```
-1. inputMethodEngine.getInputMethodAbility()
-2. .on('securityModeChange', (securityMode: inputMethodEngine.SecurityMode) => {
-3. console.info(`InputMethodAbility securityModeChange, security is ${securityMode}`);
-4. });
+```ts
+inputMethodEngine.getInputMethodAbility()
+  .on('securityModeChange', (securityMode: inputMethodEngine.SecurityMode) => {
+    console.info(`InputMethodAbility securityModeChange, security is ${securityMode}`);
+  });
 ```
 
 ### off('securityModeChange')11+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'securityModeChange', callback?: Callback< SecurityMode>): void
 
@@ -649,23 +714,25 @@ off(type: 'securityModeChange', callback?: Callback< SecurityMode>): void
 
 **示例：**
 
-```
-1. let securityChangeCallback: (securityMode: inputMethodEngine.SecurityMode) => void =
-2. (securityMode: inputMethodEngine.SecurityMode) => {
-3. console.info(`InputMethodAbility securityModeChange, security is ${securityMode}`);
-4. };
-5. let inputMethodAbility: inputMethodEngine.InputMethodAbility = inputMethodEngine.getInputMethodAbility();
-6. inputMethodAbility.on('securityModeChange', securityChangeCallback);
-7. inputMethodAbility.off('securityModeChange', securityChangeCallback);
+```ts
+let securityChangeCallback: (securityMode: inputMethodEngine.SecurityMode) => void =
+  (securityMode: inputMethodEngine.SecurityMode) => {
+    console.info(`InputMethodAbility securityModeChange, security is ${securityMode}`);
+  };
+let inputMethodAbility: inputMethodEngine.InputMethodAbility = inputMethodEngine.getInputMethodAbility();
+inputMethodAbility.on('securityModeChange', securityChangeCallback);
+inputMethodAbility.off('securityModeChange', securityChangeCallback);
 ```
 
 ### on('privateCommand')12+
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'privateCommand', callback: Callback<Record<string, CommandDataType>>): void;
 
 订阅输入法私有数据事件。使用callback异步回调。
+
+使用场景：应用与输入法之间需要传递私有数据（如自定义命令、配置信息等）时使用。仅系统默认输入法应用可订阅此事件。
+
+使用后效果：当绑定应用向输入法发送私有数据时触发回调，返回私有数据记录。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -686,19 +753,17 @@ on(type: 'privateCommand', callback: Callback<Record<string, CommandDataType>>):
 
 **示例：**
 
-```
-1. let privateCommandCallback: (record: Record<string, inputMethodEngine.CommandDataType>) => void =
-2. (record: Record<string, inputMethodEngine.CommandDataType>) => {
-3. for (let i :number = 0; i < record.length; i++) {
-4. console.info(`private command key: ${i}, value: ${record[i]}`);
-5. }
-6. }
-7. inputMethodEngine.getInputMethodAbility().on('privateCommand', privateCommandCallback);
+```ts
+let privateCommandCallback: (record: Record<string, inputMethodEngine.CommandDataType>) => void =
+  (record: Record<string, inputMethodEngine.CommandDataType>) => {
+    for (const key in record) {
+      console.info(`private command key: ${key}, value: ${record[key]}`);
+    }
+  }
+inputMethodEngine.getInputMethodAbility().on('privateCommand', privateCommandCallback);
 ```
 
 ### off('privateCommand')12+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'privateCommand', callback?: Callback<Record<string, CommandDataType>>): void
 
@@ -723,24 +788,26 @@ off(type: 'privateCommand', callback?: Callback<Record<string, CommandDataType>>
 
 **示例：**
 
-```
-1. let privateCommandCallback: (record: Record<string, inputMethodEngine.CommandDataType>) => void =
-2. (record: Record<string, inputMethodEngine.CommandDataType>) => {
-3. for (let i: number = 0; i < record.length; i++) {
-4. console.info(`private command key: ${i}, value: ${record[i]}`);
-5. }
-6. }
+```ts
+let privateCommandCallback: (record: Record<string, inputMethodEngine.CommandDataType>) => void =
+  (record: Record<string, inputMethodEngine.CommandDataType>) => {
+    for (const key in record) {
+      console.info(`private command key: ${key}, value: ${record[key]}`);
+    }
+  }
 
-8. inputMethodEngine.getInputMethodAbility().off('privateCommand', privateCommandCallback);
+inputMethodEngine.getInputMethodAbility().off('privateCommand', privateCommandCallback);
 ```
 
 ### on('callingDisplayDidChange')18+
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'callingDisplayDidChange', callback: Callback<number>): void
 
 订阅编辑框对应窗口所在屏幕ID变化事件。使用callback异步回调。
+
+使用场景：多屏幕设备场景下，编辑框在不同屏幕间切换时，输入法应用需根据新的屏幕ID调整面板位置和大小。
+
+使用后效果：当编辑框所在屏幕ID发生变化时触发回调，返回新的屏幕ID。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -761,16 +828,14 @@ on(type: 'callingDisplayDidChange', callback: Callback<number>): void
 
 **示例：**
 
-```
-1. let callingDisplayDidChangeCallback: (num: number) => void = (num: number) => {
-2. console.info(`display id: ${num}`);
-3. }
-4. inputMethodEngine.getInputMethodAbility().on('callingDisplayDidChange', callingDisplayDidChangeCallback);
+```ts
+inputMethodEngine.getInputMethodAbility().on('callingDisplayDidChange', (displayId: number) => {
+  console.info(`display id: ${displayId}`);
+});
+inputMethodEngine.getInputMethodAbility().on('callingDisplayDidChange', callingDisplayDidChangeCallback);
 ```
 
 ### off('callingDisplayDidChange')18+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'callingDisplayDidChange', callback?: Callback<number>): void
 
@@ -787,19 +852,21 @@ off(type: 'callingDisplayDidChange', callback?: Callback<number>): void
 
 **示例：**
 
-```
-1. inputMethodEngine.getInputMethodAbility().off('callingDisplayDidChange', (num: number) => {
-2. console.info('InputMethodAbility delete calling display  notification.');
-3. });
+```ts
+inputMethodEngine.getInputMethodAbility().off('callingDisplayDidChange', (displayId: number) => {
+  console.info('InputMethodAbility delete calling display notification.');
+});
 ```
 
 ### on('discardTypingText')20+
 
-PhonePC/2in1TabletTVWearable
+on(type: 'discardTypingText', callback: Callback<void> ): void
 
-on(type: 'discardTypingText', callback: Callback<void>): void
+订阅编辑框应用发送\u201c清空候选词\u201d事件到输入法。使用callback异步回调。
 
-订阅编辑框应用发送“清空候选词”事件到输入法。使用callback异步回调。
+使用场景：编辑框应用需要通知输入法清空当前候选词列表时使用（如用户切换输入框、提交表单后等场景）。
+
+使用后效果：当编辑框应用发送清空候选词请求时触发回调，输入法应用应在回调中清空候选词列表和预输入文本。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -808,23 +875,25 @@ on(type: 'discardTypingText', callback: Callback<void>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 设置监听类型，固定取值为'discardTypingText'。  - 'discardTypingText'：表示订阅编辑框应用发送“清空候选词”事件到输入法。 |
-| callback | Callback<void> | 是 | 回调函数。当命令发送成功，err为undefined，否则为错误对象。 |
+| callback | Callback<void> | 是 | 回调函数。 |
 
 **示例：**
 
-```
-1. inputMethodEngine.getInputMethodAbility().on('discardTypingText', () => {
-2. console.info('InputMethodAbility discard the typing text.');
-3. });
+```ts
+inputMethodEngine.getInputMethodAbility().on('discardTypingText', () => {
+  console.info('InputMethodAbility discard the typing text.');
+});
 ```
 
 ### off('discardTypingText')20+
 
-PhonePC/2in1TabletTVWearable
+off(type: 'discardTypingText', callback?: Callback<void> ): void
 
-off(type: 'discardTypingText', callback?: Callback<void>): void
+取消订阅编辑框应用发送\u201c清空候选词\u201d事件到输入法。使用callback异步回调。
 
-取消订阅编辑框应用发送“清空候选词”事件到输入法。使用callback异步回调。
+使用场景：编辑框应用需要通知输入法清空当前候选词列表时使用（如用户切换输入框、提交表单后等场景）。
+
+使用后效果：当编辑框应用发送清空候选词请求时触发回调，输入法应用应在回调中清空候选词列表和预输入文本。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -837,15 +906,13 @@ off(type: 'discardTypingText', callback?: Callback<void>): void
 
 **示例：**
 
-```
-1. inputMethodEngine.getInputMethodAbility().off('discardTypingText', () => {
-2. console.info('InputMethodAbility discard the typing text.');
-3. });
+```ts
+inputMethodEngine.getInputMethodAbility().off('discardTypingText', () => {
+  console.info('InputMethodAbility discard the typing text.');
+});
 ```
 
 ### getSecurityMode11+
-
-PhonePC/2in1TabletTVWearable
 
 getSecurityMode(): SecurityMode
 
@@ -869,24 +936,28 @@ getSecurityMode(): SecurityMode
 
 **示例：**
 
-```
-1. let security: inputMethodEngine.SecurityMode = inputMethodEngine.getInputMethodAbility().getSecurityMode();
-2. console.error(`getSecurityMode, securityMode is : ${security}`);
+```ts
+let security: inputMethodEngine.SecurityMode = inputMethodEngine.getInputMethodAbility().getSecurityMode();
+console.info(`getSecurityMode, securityMode is : ${security}`);
 ```
 
 ### createPanel10+
 
-PhonePC/2in1TabletTVWearable
-
 createPanel(ctx: BaseContext, info: PanelInfo, callback: AsyncCallback<Panel>): void
 
-创建输入法面板，仅支持输入法应用在[InputMethodExtensionAbility](js-apis-inputmethod-extension-ability.md#inputmethodextensionability)类中调用。使用callback异步回调。
+创建输入法面板，仅支持输入法应用在[InputMethodExtensionAbility](js-apis-inputmethod-extension-ability.md)（输入法扩展能力）类中调用。使用callback异步回调。
 
-说明
+配对调用：
+
+* 调用createPanel()创建面板后，必须在使用完毕后调用[destroyPanel](js-apis-inputmethodengine.md#destroypanel10)销毁面板以释放资源。
+* 未调用destroyPanel()会导致面板资源泄漏，影响系统资源使用。
+* 单个输入法应用仅允许创建一个软键盘类型和一个状态栏类型的面板。
+
+**说明** 
 
 单个输入法应用仅允许创建一个[软键盘类型](js-apis-inputmethodengine.md#paneltype10)和一个[状态栏类型](js-apis-inputmethodengine.md#paneltype10)的面板。
 
-输入法面板不支持创建子窗口。例如：不支持使用[window.createWindow](../harmonyos-guides/application-window-fa.md#设置应用子窗口)、[bindContextMenu](ts-universal-attributes-menu.md#bindcontextmenu8)、[CustomDialog](ts-methods-custom-dialog-box.md)等接口创建子窗口弹窗。建议开发者采用非子窗的替代方案，如[弹出框](ohos-arkui-advanced-dialog.md)、[bindMenu](ts-universal-attributes-menu.md#bindmenu)或设置showInSubwindow为false。
+输入法面板不支持创建子窗口。例如：不支持使用window.createWindow[设置应用子窗口](../lite-wearable-guides/application-window-fa.md#设置应用子窗口)、[bindContextMenu](ts-universal-attributes-menu.md#bindcontextmenu8)、[CustomDialog](ts-methods-custom-dialog-box.md)等接口创建子窗口弹窗。建议开发者采用非子窗的替代方案，如[弹出框](ohos-arkui-advanced-dialog.md)、[bindMenu](ts-universal-attributes-menu.md#bindmenu)或设置showInSubwindow为false。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -896,7 +967,7 @@ createPanel(ctx: BaseContext, info: PanelInfo, callback: AsyncCallback<Panel>): 
 | --- | --- | --- | --- |
 | ctx | [BaseContext](js-apis-inner-application-basecontext.md) | 是 | 当前输入法应用上下文信息。 |
 | info | [PanelInfo](js-apis-inputmethodengine.md#panelinfo10) | 是 | 输入法面板信息。 |
-| callback | AsyncCallback<[Panel](js-apis-inputmethodengine.md#panel10)> | 是 | 回调函数。当输入法面板创建成功，返回当前创建的输入法面板对象。 |
+| callback | AsyncCallback<[Panel](js-apis-inputmethodengine.md#panel10)> | 是 | 回调函数。当输入法面板创建成功，err为undefined，data为获取到的Panel对象；否则为错误对象。 |
 
 **错误码：**
 
@@ -904,51 +975,52 @@ createPanel(ctx: BaseContext, info: PanelInfo, callback: AsyncCallback<Panel>): 
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800004 | not an input method application. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { inputMethodEngine, InputMethodExtensionAbility } from '@kit.IMEKit';
-3. import { Want } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { inputMethodEngine, InputMethodExtensionAbility } from '@kit.IMEKit';
+import { Want } from '@kit.AbilityKit';
 
-5. let panelInfo: inputMethodEngine.PanelInfo = {
-6. type: inputMethodEngine.PanelType.SOFT_KEYBOARD,
-7. flag: inputMethodEngine.PanelFlag.FLG_FIXED
-8. }
+// 创建面板信息，设置面板类型为软键盘，状态为固定态
+let panelInfo: inputMethodEngine.PanelInfo = {
+  type: inputMethodEngine.PanelType.SOFT_KEYBOARD,
+  flag: inputMethodEngine.PanelFlag.FLG_FIXED
+}
 
-10. class InputMethodExt extends InputMethodExtensionAbility {
-11. onCreate(want: Want): void {
-12. console.info(`onCreate, want: ${want.abilityName}`);
-13. if (!this.context) {
-14. inputMethodEngine.getInputMethodAbility()
-15. .createPanel(this.context, panelInfo, (err: BusinessError, panel: inputMethodEngine.Panel) => {
-16. if (err) {
-17. console.error(`Failed to createPanel. Code is ${err.code}, message is ${err.message}`);
-18. return;
-19. }
-20. console.info('Succeed in creating panel.');
-21. })
-22. }
-23. }
-24. }
+class InputMethodExt extends InputMethodExtensionAbility {
+    onCreate(want: Want): void {
+        console.info(`onCreate, want: ${want.abilityName}`);
+        // context为InputMethodExtensionAbility类提供的上下文对象，无需额外获取
+        if (this.context) {
+            // 创建输入法面板
+            inputMethodEngine.getInputMethodAbility()
+            .createPanel(this.context, panelInfo, (err: BusinessError, panel: inputMethodEngine.Panel) => {
+                if (err) {
+                console.error(`Failed to createPanel. Code is ${err.code}, message is ${err.message}`);
+                return;
+              }
+                console.info('Succeed in creating panel.');
+            })
+        }
+    }
+}
 ```
 
 ### createPanel10+
 
-PhonePC/2in1TabletTVWearable
-
 createPanel(ctx: BaseContext, info: PanelInfo): Promise<Panel>
 
-创建输入法面板，仅支持输入法应用在[InputMethodExtensionAbility](js-apis-inputmethod-extension-ability.md#inputmethodextensionability)类中调用。使用promise异步回调。
+创建输入法面板，仅支持输入法应用在[InputMethodExtensionAbility](js-apis-inputmethod-extension-ability.md)类中调用。使用promise异步回调。
 
-说明
+**说明** 
 
 单个输入法应用仅允许创建一个[软键盘类型](js-apis-inputmethodengine.md#paneltype10)和一个[状态栏类型](js-apis-inputmethodengine.md#paneltype10)的面板。
 
-输入法面板不支持创建子窗口。例如：不支持使用[window.createWindow](../harmonyos-guides/application-window-fa.md#设置应用子窗口)、[bindContextMenu](ts-universal-attributes-menu.md#bindcontextmenu8)、[CustomDialog](ts-methods-custom-dialog-box.md)等接口创建子窗口弹窗。建议开发者采用非子窗的替代方案，如[弹出框](ohos-arkui-advanced-dialog.md)、[bindMenu](ts-universal-attributes-menu.md#bindmenu)或设置showInSubwindow为false。
+输入法面板不支持创建子窗口。例如：不支持使用window.createWindow[设置应用子窗口](../lite-wearable-guides/application-window-fa.md#设置应用子窗口)、[bindContextMenu](ts-universal-attributes-menu.md#bindcontextmenu8)、[CustomDialog](ts-methods-custom-dialog-box.md)等接口创建子窗口弹窗。建议开发者采用非子窗的替代方案，如[弹出框](ohos-arkui-advanced-dialog.md)、[bindMenu](ts-universal-attributes-menu.md#bindmenu)或设置showInSubwindow为false。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -963,7 +1035,7 @@ createPanel(ctx: BaseContext, info: PanelInfo): Promise<Panel>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[Panel](js-apis-inputmethodengine.md#panel10)> | 回调函数。当输入法面板创建成功，返回当前创建的输入法面板对象。 |
+| Promise<[Panel](js-apis-inputmethodengine.md#panel10)> | Promise对象，返回Panel对象。 |
 
 **错误码：**
 
@@ -971,43 +1043,48 @@ createPanel(ctx: BaseContext, info: PanelInfo): Promise<Panel>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800004 | not an input method application. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { inputMethodEngine, InputMethodExtensionAbility } from '@kit.IMEKit';
-3. import { Want } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { inputMethodEngine, InputMethodExtensionAbility } from '@kit.IMEKit';
+import { Want } from '@kit.AbilityKit';
 
-5. let panelInfo: inputMethodEngine.PanelInfo = {
-6. type: inputMethodEngine.PanelType.SOFT_KEYBOARD,
-7. flag: inputMethodEngine.PanelFlag.FLG_FIXED
-8. }
+// 创建面板信息，设置面板类型为软键盘，状态为固定态
+let panelInfo: inputMethodEngine.PanelInfo = {
+  type: inputMethodEngine.PanelType.SOFT_KEYBOARD,
+  flag: inputMethodEngine.PanelFlag.FLG_FIXED
+}
 
-10. class InputMethodExt extends InputMethodExtensionAbility {
-11. onCreate(want: Want): void {
-12. console.info(`onCreate, want: ${want.abilityName}`);
-13. if (this.context) {
-14. inputMethodEngine.getInputMethodAbility().createPanel(this.context, panelInfo)
-15. .then((panel: inputMethodEngine.Panel) => {
-16. console.info('Succeed in creating panel.');
-17. }).catch((err: BusinessError) => {
-18. console.error(`Failed to create panel. Code is ${err.code}, message is ${err.message}`);
-19. })
-20. }
-21. }
-22. }
+class InputMethodExt extends InputMethodExtensionAbility {
+    onCreate(want: Want): void {
+        console.info(`onCreate, want: ${want.abilityName}`);
+        if (this.context) {
+            inputMethodEngine.getInputMethodAbility().createPanel(this.context, panelInfo)
+                .then((panel: inputMethodEngine.Panel) => {
+                console.info('Succeed in creating panel.');
+            }).catch((err: BusinessError) => {
+                console.error(`Failed to create panel. Code is ${err.code}, message is ${err.message}`);
+            })
+        }
+    }
+}
 ```
 
 ### destroyPanel10+
 
-PhonePC/2in1TabletTVWearable
+destroyPanel(panel: Panel, callback: AsyncCallback<void> ): void
 
-destroyPanel(panel: Panel, callback: AsyncCallback<void>): void
+销毁输入法面板。需先通过 [createPanel](js-apis-inputmethodengine.md#createpanel10) 创建面板后调用。使用callback异步回调。
 
-销毁输入法面板。使用callback异步回调。
+配对调用：
+
+* 必须与[createPanel](js-apis-inputmethodengine.md#createpanel10)方法配合使用，用于销毁由createPanel()创建的输入法面板。
+* 销毁的面板必须是已成功创建的面板对象。
+* 未正确销毁面板会导致资源泄漏，建议在面板使用完毕后及时调用destroyPanel()释放资源。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -1024,49 +1101,52 @@ destroyPanel(panel: Panel, callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let panelInfo: inputMethodEngine.PanelInfo = {
-4. type: inputMethodEngine.PanelType.SOFT_KEYBOARD,
-5. flag: inputMethodEngine.PanelFlag.FLG_FIXED
-6. }
+// 创建面板信息，设置面板类型为软键盘，状态为固定态
+let panelInfo: inputMethodEngine.PanelInfo = {
+  type: inputMethodEngine.PanelType.SOFT_KEYBOARD,
+  flag: inputMethodEngine.PanelFlag.FLG_FIXED
+}
 
-8. let inputPanel: inputMethodEngine.Panel | undefined = undefined;
-9. if (this.context) {
-10. inputMethodEngine.getInputMethodAbility()
-11. .createPanel(this.context, panelInfo, (err: BusinessError, panel: inputMethodEngine.Panel) => {
-12. if (err) {
-13. console.error(`Failed to create panel. Code is ${err.code}, message is ${err.message}`);
-14. return;
-15. }
-16. inputPanel = panel;
-17. console.info('Succeed in creating panel.');
-18. })
-19. }
-
-21. if (inputPanel) {
-22. inputMethodEngine.getInputMethodAbility().destroyPanel(inputPanel, (err: BusinessError) => {
-23. if (err !== undefined) {
-24. console.error(`Failed to destroy panel. Code is ${err.code}, message is ${err.message}`);
-25. return;
-26. }
-27. console.info('Succeed in destroying panel.');
-28. })
-29. }
+// 在InputMethodExtensionAbility类中使用
+let inputPanel: inputMethodEngine.Panel | undefined = undefined;
+inputMethodEngine.getInputMethodAbility().createPanel(this.context, panelInfo, (err: BusinessError, panel: inputMethodEngine.Panel) => {
+  if (err) {
+    console.error(`Failed to create panel. Code is ${err.code}, message is ${err.message}`);
+    return;
+  }
+  inputPanel = panel;
+  console.info('Succeed in creating panel.');
+  // 创建成功后再销毁
+  if (inputPanel) {
+    inputMethodEngine.getInputMethodAbility().destroyPanel(inputPanel, (err: BusinessError) => {
+      if (err) {
+        console.error(`Failed to destroy panel. Code is ${err.code}, message is ${err.message}`);
+        return;
+      }
+      console.info('Succeed in destroying panel.');
+    });
+  }
+});
 ```
 
 ### destroyPanel10+
 
-PhonePC/2in1TabletTVWearable
-
 destroyPanel(panel: Panel): Promise<void>
 
 销毁输入法面板。使用promise异步回调。
+
+配对调用：
+
+* 必须与[createPanel](js-apis-inputmethodengine.md#createpanel10)方法配合使用，用于销毁由createPanel()创建的输入法面板。
+* 销毁的面板必须是已成功创建的面板对象。
+* 未正确销毁面板会导致资源泄漏，建议在面板使用完毕后及时调用destroyPanel()释放资源。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -1080,7 +1160,7 @@ destroyPanel(panel: Panel): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -1088,53 +1168,71 @@ destroyPanel(panel: Panel): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let panelInfo: inputMethodEngine.PanelInfo = {
-4. type: inputMethodEngine.PanelType.SOFT_KEYBOARD,
-5. flag: inputMethodEngine.PanelFlag.FLG_FIXED
-6. }
+// 创建面板信息，设置面板类型为软键盘，状态为固定态
+let panelInfo: inputMethodEngine.PanelInfo = {
+  type: inputMethodEngine.PanelType.SOFT_KEYBOARD,
+  flag: inputMethodEngine.PanelFlag.FLG_FIXED
+}
 
-8. let inputPanel: inputMethodEngine.Panel | undefined = undefined;
-9. if (this.context) {
-10. inputMethodEngine.getInputMethodAbility()
-11. .createPanel(this.context, panelInfo, (err: BusinessError, panel: inputMethodEngine.Panel) => {
-12. if (err) {
-13. console.error(`Failed to create panel. Code is ${err.code}, message is ${err.message}`);
-14. return;
-15. }
-16. inputPanel = panel;
-17. console.info('Succeed in creating panel.');
-18. })
-19. }
+let inputPanel: inputMethodEngine.Panel | undefined = undefined;
+// context为InputMethodExtensionAbility类提供的上下文对象，无需额外获取
+if (this.context) {
+  inputMethodEngine.getInputMethodAbility()
+    .createPanel(this.context, panelInfo, (err: BusinessError, panel: inputMethodEngine.Panel) => {
+      if (err) {
+        console.error(`Failed to create panel. Code is ${err.code}, message is ${err.message}`);
+        return;
+      }
+      inputPanel = panel;
+      console.info('Succeed in creating panel.');
+    })
+}
 
-21. if (inputPanel) {
-22. inputMethodEngine.getInputMethodAbility().destroyPanel(inputPanel).then(() => {
-23. console.info('Succeed in destroying panel.');
-24. }).catch((err: BusinessError) => {
-25. console.error(`Failed to destroy panel. Code is ${err.code}, message is ${err.message}`);
-26. });
-27. }
+if (inputPanel) {
+  inputMethodEngine.getInputMethodAbility().destroyPanel(inputPanel).then(() => {
+    console.info('Succeed in destroying panel.');
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to destroy panel. Code is ${err.code}, message is ${err.message}`);
+  });
+}
 ```
 
 ## KeyboardDelegate
 
-PhonePC/2in1TabletTVWearable
+KeyboardDelegate是键盘事件监听代理对象，用于输入法应用监听物理键盘按键事件和编辑框文本/光标/选区变化事件。输入法应用通过[getKeyboardDelegate](js-apis-inputmethodengine.md#inputmethodenginegetkeyboarddelegate9)获取该实例。
+
+核心功能概述：
+
+* 物理键盘按键事件：通过on('keyDown'|'keyUp')订阅物理按键的按下/抬起事件，通过on('keyEvent')订阅更完整的按键事件（含组合键信息）。callback返回true表示按键事件被消费，返回false表示不消费。
+* 光标与选区变化事件：通过on('cursorContextChange')订阅光标位置变化事件，通过on('selectionChange')订阅文本选区变化事件。输入法应用可根据这些事件调整候选词位置或输入策略。
+* 文本变化事件：通过on('textChange')订阅编辑框文本内容变化事件，输入法应用可据此更新候选词或输入建议。
+* 编辑框属性变化事件：通过on('editorAttributeChanged')订阅编辑框属性变化事件，输入法应用可根据编辑框属性变化动态调整键盘布局。
+
+使用场景：
+
+* 开发物理键盘快捷键处理功能时，订阅on('keyDown'|'keyUp')或on('keyEvent')事件拦截特定按键。
+* 需要根据编辑框实时状态（光标、选区、文本、属性）调整输入法行为时，订阅对应的on事件。
 
 下列API均需使用[getKeyboardDelegate](js-apis-inputmethodengine.md#inputmethodenginegetkeyboarddelegate9)获取到KeyboardDelegate实例后，通过实例调用。
 
-### on('keyDown'|'keyUp')
+**系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
-PhonePC/2in1TabletTVWearable
+### on('keyDown'|'keyUp')
 
 on(type: 'keyDown'|'keyUp', callback: (event: KeyEvent) => boolean): void
 
 订阅硬键盘（即物理键盘）上物理按键的按下或抬起事件。使用callback异步回调。
+
+使用场景：实现快捷键功能、拦截特殊按键、处理功能键（如删除、回车等）等。
+
+使用后效果：当物理按键按下/抬起时触发回调，回调函数返回按键信息。若按键事件被事件订阅者消费，则callback应返回true，否则返回false。返回true时按键事件不再向编辑框传递，返回false时按键事件继续向编辑框传递。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -1147,26 +1245,24 @@ on(type: 'keyDown'|'keyUp', callback: (event: KeyEvent) => boolean): void
 
 **示例：**
 
-```
-1. inputMethodEngine.getKeyboardDelegate().on('keyUp', (keyEvent: inputMethodEngine.KeyEvent) => {
-2. console.info(`inputMethodEngine keyCode.(keyUp): ${keyEvent.keyCode}`);
-3. console.info(`inputMethodEngine keyAction.(keyUp): ${keyEvent.keyAction}`);
-4. return true;
-5. });
-6. inputMethodEngine.getKeyboardDelegate().on('keyDown', (keyEvent: inputMethodEngine.KeyEvent) => {
-7. console.info(`inputMethodEngine keyCode.(keyDown): ${keyEvent.keyCode}`);
-8. console.info(`inputMethodEngine keyAction.(keyDown): ${keyEvent.keyAction}`);
-9. return true;
-10. });
+```ts
+inputMethodEngine.getKeyboardDelegate().on('keyUp', (keyEvent: inputMethodEngine.KeyEvent) => {
+  console.info(`inputMethodEngine keyCode.(keyUp): ${keyEvent.keyCode}`);
+  console.info(`inputMethodEngine keyAction.(keyUp): ${keyEvent.keyAction}`);
+  return true;
+});
+inputMethodEngine.getKeyboardDelegate().on('keyDown', (keyEvent: inputMethodEngine.KeyEvent) => {
+  console.info(`inputMethodEngine keyCode.(keyDown): ${keyEvent.keyCode}`);
+  console.info(`inputMethodEngine keyAction.(keyDown): ${keyEvent.keyAction}`);
+  return true;
+});
 ```
 
 ### off('keyDown'|'keyUp')
 
-PhonePC/2in1TabletTVWearable
-
 off(type: 'keyDown'|'keyUp', callback?: (event: KeyEvent) => boolean): void
 
-取消订阅硬键盘（即物理键盘）上物理按键的按下或抬起事件。使用callback异步回调。
+取消订阅硬键盘（即物理键盘）上物理按键的按下或抬起事件。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -1175,28 +1271,30 @@ off(type: 'keyDown'|'keyUp', callback?: (event: KeyEvent) => boolean): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 设置监听类型。  - 'keyDown'表示键盘按下。  - 'keyUp'表示键盘抬起。 |
-| callback | (event: [KeyEvent](js-apis-inputmethodengine.md#keyevent)) => boolean | 否 | 取消订阅的回调函数。参数不填写时，取消订阅type对应的所有回调事件。 |
+| callback | (event: [KeyEvent](js-apis-inputmethodengine.md#keyevent)) => boolean | 否 | 取消订阅的回调函数，用于取消特定的键盘按键事件订阅。传入callback时取消指定回调的订阅，参数不填写时，取消订阅type对应的所有回调事件。 |
 
 **示例：**
 
-```
-1. inputMethodEngine.getKeyboardDelegate().off('keyUp', (keyEvent: inputMethodEngine.KeyEvent) => {
-2. console.info('delete keyUp notification.');
-3. return true;
-4. });
-5. inputMethodEngine.getKeyboardDelegate().off('keyDown', (keyEvent: inputMethodEngine.KeyEvent) => {
-6. console.info('delete keyDown notification.');
-7. return true;
-8. });
+```ts
+inputMethodEngine.getKeyboardDelegate().off('keyUp', (keyEvent: inputMethodEngine.KeyEvent) => {
+  console.info('delete keyUp notification.');
+  return true;
+});
+inputMethodEngine.getKeyboardDelegate().off('keyDown', (keyEvent: inputMethodEngine.KeyEvent) => {
+  console.info('delete keyDown notification.');
+  return true;
+});
 ```
 
 ### on('keyEvent')10+
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'keyEvent', callback: (event: InputKeyEvent) => boolean): void
 
-订阅硬键盘（即物理键盘）事件。使用callback异步回调。
+订阅硬键盘（即物理键盘）事件。使用callback异步回调。与on('keyDown'|'keyUp')相比，on('keyEvent')提供更完整的按键事件信息（包含组合键Ctrl/Shift/Alt状态、unicodeChar等），适用于需要处理组合键或获取更丰富按键信息的场景。
+
+使用场景：需要处理组合键（如Ctrl+C、Shift+Enter等）或获取更完整按键信息（如unicodeChar、ctrlKey等）的场景。
+
+使用后效果：当物理按键事件触发时回调被调用。若按键事件被事件订阅者消费，则callback应返回true，否则返回false。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -1209,21 +1307,19 @@ on(type: 'keyEvent', callback: (event: InputKeyEvent) => boolean): void
 
 **示例：**
 
-```
-1. import type { KeyEvent } from '@kit.InputKit';
+```ts
+import type { KeyEvent } from '@kit.InputKit';
 
-3. inputMethodEngine.getKeyboardDelegate().on('keyEvent', (keyEvent: KeyEvent) => {
-4. console.info(`inputMethodEngine keyEvent.action:${ keyEvent.action}`);
-5. console.info(`inputMethodEngine keyEvent.key.code: ${keyEvent.key.code}`);
-6. console.info(`inputMethodEngine keyEvent.ctrlKey: ${keyEvent.ctrlKey}`);
-7. console.info(`inputMethodEngine keyEvent.unicodeChar: ${keyEvent.unicodeChar}`);
-8. return true;
-9. });
+inputMethodEngine.getKeyboardDelegate().on('keyEvent', (keyEvent: KeyEvent) => {
+  console.info(`inputMethodEngine keyEvent.action:${ keyEvent.action}`);
+  console.info(`inputMethodEngine keyEvent.key.code: ${keyEvent.key.code}`);
+  console.info(`inputMethodEngine keyEvent.ctrlKey: ${keyEvent.ctrlKey}`);
+  console.info(`inputMethodEngine keyEvent.unicodeChar: ${keyEvent.unicodeChar}`);
+  return true;
+});
 ```
 
 ### off('keyEvent')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'keyEvent', callback?: (event: InputKeyEvent) => boolean): void
 
@@ -1236,27 +1332,29 @@ off(type: 'keyEvent', callback?: (event: InputKeyEvent) => boolean): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 设置监听类型，固定取值为'keyEvent'。 |
-| callback | (event: [InputKeyEvent](js-apis-keyevent.md#keyevent)) => boolean | 否 | 取消订阅的回调函数。参数不填写时，取消订阅type对应的所有回调事件。 |
+| callback | (event: [InputKeyEvent](js-apis-keyevent.md#keyevent)) => boolean | 否 | 取消订阅的回调函数，用于取消特定的键盘事件订阅。传入callback时取消指定回调的订阅，参数不填写时，取消订阅type对应的所有回调事件。 |
 
 **示例：**
 
-```
-1. import type { KeyEvent } from '@kit.InputKit';
+```ts
+import type { KeyEvent } from '@kit.InputKit';
 
-3. inputMethodEngine.getKeyboardDelegate().off('keyEvent', (keyEvent: KeyEvent) => {
-4. console.info('This is a callback function which will be deregistered.');
-5. return true;
-6. });
-7. inputMethodEngine.getKeyboardDelegate().off('keyEvent');
+inputMethodEngine.getKeyboardDelegate().off('keyEvent', (keyEvent: KeyEvent) => {
+  console.info('This is a callback function which will be deregistered.');
+  return true;
+});
+inputMethodEngine.getKeyboardDelegate().off('keyEvent');
 ```
 
 ### on('cursorContextChange')
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'cursorContextChange', callback: (x: number, y:number, height:number) => void): void
 
 订阅光标变化事件。使用callback异步回调。
+
+使用场景：实时更新候选词显示位置、根据光标位置调整输入法界面、实现跟随光标的浮动菜单等。
+
+使用后效果：当编辑框光标位置发生变化时触发回调，返回光标的x坐标、y坐标和高度信息，输入法应用可据此调整候选词窗口或面板的定位。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -1265,25 +1363,23 @@ on(type: 'cursorContextChange', callback: (x: number, y:number, height:number) =
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 光标变化事件，固定取值为'cursorContextChange'。 |
-| callback | (x: number, y: number, height: number) => void | 是 | 回调函数，返回光标信息。  - x为光标上端的x坐标值，y为光标上端的y坐标值，height为光标的高度值。 |
+| callback | (x: number, y: number, height: number) => void | 是 | 回调函数，返回光标信息。  - x为光标上端的x坐标值，单位：px，y为光标上端的y坐标值，单位：px，height为光标的高度值，单位：px。 |
 
 **示例：**
 
-```
-1. inputMethodEngine.getKeyboardDelegate().on('cursorContextChange', (x: number, y: number, height: number) => {
-2. console.info('inputMethodEngine cursorContextChange x:' + x);
-3. console.info('inputMethodEngine cursorContextChange y:' + y);
-4. console.info('inputMethodEngine cursorContextChange height:' + height);
-5. });
+```ts
+inputMethodEngine.getKeyboardDelegate().on('cursorContextChange', (x: number, y: number, height: number) => {
+  console.info('inputMethodEngine cursorContextChange x:' + x);
+  console.info('inputMethodEngine cursorContextChange y:' + y);
+  console.info('inputMethodEngine cursorContextChange height:' + height);
+});
 ```
 
 ### off('cursorContextChange')
 
-PhonePC/2in1TabletTVWearable
-
 off(type: 'cursorContextChange', callback?: (x: number, y: number, height: number) => void): void
 
-取消订阅光标变化事件。使用callback异步回调。
+取消订阅光标变化事件。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -1296,19 +1392,19 @@ off(type: 'cursorContextChange', callback?: (x: number, y: number, height: numbe
 
 **示例：**
 
-```
-1. inputMethodEngine.getKeyboardDelegate().off('cursorContextChange', (x: number, y: number, height: number) => {
-2. console.info('delete cursorContextChange notification.');
-3. });
+```ts
+inputMethodEngine.getKeyboardDelegate().off('cursorContextChange');
 ```
 
 ### on('selectionChange')
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'selectionChange', callback: (oldBegin: number, oldEnd: number, newBegin: number, newEnd: number) => void): void
 
 订阅文本选择范围变化事件。使用callback异步回调。
+
+使用场景：监听用户选中文本以提供剪切、复制、粘贴等快捷操作、根据选择文本显示相关建议、实现文本编辑辅助功能等。
+
+使用后效果：当编辑框中文本选择范围发生变化时触发回调，返回变化前后的选区起始和终止下标。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -1321,23 +1417,21 @@ on(type: 'selectionChange', callback: (oldBegin: number, oldEnd: number, newBegi
 
 **示例：**
 
-```
-1. inputMethodEngine.getKeyboardDelegate()
-2. .on('selectionChange', (oldBegin: number, oldEnd: number, newBegin: number, newEnd: number) => {
-3. console.info('selectionChange oldBegin:' + oldBegin);
-4. console.info('selectionChange oldEnd:' + oldEnd);
-5. console.info('selectionChange newBegin:' + newBegin);
-6. console.info('selectionChange newEnd:' + newEnd);
-7. });
+```ts
+inputMethodEngine.getKeyboardDelegate()
+  .on('selectionChange', (oldBegin: number, oldEnd: number, newBegin: number, newEnd: number) => {
+    console.info('selectionChange oldBegin:' + oldBegin);
+    console.info('selectionChange oldEnd:' + oldEnd);
+    console.info('selectionChange newBegin:' + newBegin);
+    console.info('selectionChange newEnd:' + newEnd);
+  });
 ```
 
 ### off('selectionChange')
 
-PhonePC/2in1TabletTVWearable
-
 off(type: 'selectionChange', callback?: (oldBegin: number, oldEnd: number, newBegin: number, newEnd: number) => void): void
 
-取消订阅文本选择范围变化事件。使用callback异步回调。
+取消订阅文本选择范围变化事件。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -1350,20 +1444,22 @@ off(type: 'selectionChange', callback?: (oldBegin: number, oldEnd: number, newBe
 
 **示例：**
 
-```
-1. inputMethodEngine.getKeyboardDelegate()
-2. .off('selectionChange', (oldBegin: number, oldEnd: number, newBegin: number, newEnd: number) => {
-3. console.info('delete selectionChange notification.');
-4. });
+```ts
+inputMethodEngine.getKeyboardDelegate()
+  .off('selectionChange', (oldBegin: number, oldEnd: number, newBegin: number, newEnd: number) => {
+    console.info('delete selectionChange notification.');
+  });
 ```
 
 ### on('textChange')
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'textChange', callback: (text: string) => void): void
 
 订阅文本内容变化事件。使用callback异步回调。
+
+使用场景：输入法应用需要根据编辑框文本内容变化更新候选词、提供智能输入建议、实现联想输入等。
+
+使用后效果：当编辑框文本内容发生变化时触发回调，返回当前编辑框的完整文本内容。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -1376,15 +1472,13 @@ on(type: 'textChange', callback: (text: string) => void): void
 
 **示例：**
 
-```
-1. inputMethodEngine.getKeyboardDelegate().on('textChange', (text: string) => {
-2. console.info('inputMethodEngine textChange. text:' + text);
-3. });
+```ts
+inputMethodEngine.getKeyboardDelegate().on('textChange', (text: string) => {
+  console.info('inputMethodEngine textChange. text:' + text);
+});
 ```
 
 ### off('textChange')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'textChange', callback?: (text: string) => void): void
 
@@ -1401,19 +1495,21 @@ off(type: 'textChange', callback?: (text: string) => void): void
 
 **示例：**
 
-```
-1. inputMethodEngine.getKeyboardDelegate().off('textChange', (text: string) => {
-2. console.info('delete textChange notification. text:' + text);
-3. });
+```ts
+inputMethodEngine.getKeyboardDelegate().off('textChange', (text: string) => {
+  console.info('delete textChange notification. text:' + text);
+});
 ```
 
 ### on('editorAttributeChanged')10+
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'editorAttributeChanged', callback: (attr: EditorAttribute) => void): void
 
 订阅编辑框属性变化事件。使用callback异步回调。
+
+使用场景：输入法应用需要根据编辑框属性变化（如输入类型从文本切换到数字、回车键类型从"搜索"切换到"发送"等）动态调整键盘布局。
+
+使用后效果：当编辑框属性发生变化时触发回调，返回变化后的编辑框属性信息（包括inputPattern和enterKeyType），输入法应用可据此重新调整键盘布局。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -1421,21 +1517,19 @@ on(type: 'editorAttributeChanged', callback: (attr: EditorAttribute) => void): v
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 文本变化事件，固定取值为'editorAttributeChanged'。 |
+| type | string | 是 | 编辑框属性变化事件，固定取值为'editorAttributeChanged'。 |
 | callback | (attr: [EditorAttribute](js-apis-inputmethodengine.md#editorattribute)) => void | 是 | 回调函数，返回变化的编辑框属性。 |
 
 **示例：**
 
-```
-1. inputMethodEngine.getKeyboardDelegate()
-2. .on('editorAttributeChanged', (attr: inputMethodEngine.EditorAttribute) => {
-3. console.info(`Succeeded in receiving attribute of editor, inputPattern = ${attr.inputPattern}, enterKeyType = ${attr.enterKeyType}`);
-4. });
+```ts
+inputMethodEngine.getKeyboardDelegate()
+  .on('editorAttributeChanged', (editorAttribute: inputMethodEngine.EditorAttribute) => {
+    console.info(`Succeeded in receiving attribute of editor, inputPattern = ${editorAttribute.inputPattern}, enterKeyType = ${editorAttribute.enterKeyType}`);
+  });
 ```
 
 ### off('editorAttributeChanged')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'editorAttributeChanged', callback?: (attr: EditorAttribute) => void): void
 
@@ -1447,26 +1541,42 @@ off(type: 'editorAttributeChanged', callback?: (attr: EditorAttribute) => void):
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 文本变化事件，固定取值为'editorAttributeChanged'。 |
+| type | string | 是 | 编辑框属性变化事件，固定取值为'editorAttributeChanged'。 |
 | callback | (attr: [EditorAttribute](js-apis-inputmethodengine.md#editorattribute)) => void | 否 | 所要取消订阅的回调处理函数。参数不填写时，默认取消订阅type对应的所有回调事件。 |
 
 **示例：**
 
-```
-1. inputMethodEngine.getKeyboardDelegate().off('editorAttributeChanged');
+```ts
+inputMethodEngine.getKeyboardDelegate().off('editorAttributeChanged');
 ```
 
 ## Panel10+
 
-PhonePC/2in1TabletTVWearable
+Panel是输入法面板对象，提供面板页面加载、显示/隐藏、尺寸调整、位置移动、模式切换等功能。Panel实例通过InputMethodAbility的[createPanel](js-apis-inputmethodengine.md#createpanel10)接口获取，使用完毕后需调用[destroyPanel](js-apis-inputmethodengine.md#destroypanel10)销毁以释放资源。createPanel与destroyPanel必须配对调用。
+
+核心功能概述：
+
+* 页面加载：通过[setUiContent](js-apis-inputmethodengine.md#setuicontent10)为面板加载键盘页面内容，支持加载普通页面和与LocalStorage关联的页面。
+* 显示与隐藏：通过[show](js-apis-inputmethodengine.md#show10)显示面板，通过[hide](js-apis-inputmethodengine.md#hide10)隐藏面板。面板的显示/隐藏也可通过订阅on('show')/on('hide')事件监听状态变化。
+* 尺寸与位置调整：通过[resize](js-apis-inputmethodengine.md#resize10)调整面板尺寸，通过[moveTo](js-apis-inputmethodengine.md#moveto10)移动面板位置，通过[startMoving](js-apis-inputmethodengine.md#startmoving15)拖拽移动面板，通过[adjustPanelRect](js-apis-inputmethodengine.md#adjustpanelrect12)/[updatePanelRect](js-apis-inputmethodengine.md#updatepanelrect)/[updateRegion](js-apis-inputmethodengine.md#updateregion15)调整面板区域。
+* 模式设置：通过[changeFlag](js-apis-inputmethodengine.md#changeflag10)切换面板固定态/浮动态，通过[setPrivacyMode](js-apis-inputmethodengine.md#setprivacymode11)设置隐私模式，通过[setImmersiveMode](js-apis-inputmethodengine.md#setimmersivemode15)/[getImmersiveMode](js-apis-inputmethodengine.md#getimmersivemode15)设置/获取沉浸模式。
+* 事件监听：通过on('show')/on('hide')/on('sizeChange')监听面板状态变化事件。
+
+面板生命周期：
+
+1. 在InputMethodAbility的[createPanel](js-apis-inputmethodengine.md#createpanel10)中创建Panel实例并指定面板类型和标志位。
+2. 调用[setUiContent](js-apis-inputmethodengine.md#setuicontent10)加载键盘页面内容。
+3. 调用[show](js-apis-inputmethodengine.md#show10)显示面板，用户可交互。
+4. 根据需要调用resize、moveTo、changeFlag等接口动态调整面板。
+5. 使用完毕后调用[destroyPanel](js-apis-inputmethodengine.md#destroypanel10)销毁面板，释放资源。
 
 下列API均需使用[createPanel](js-apis-inputmethodengine.md#createpanel10)获取到Panel实例后，通过实例调用。
 
+**系统能力：** SystemCapability.MiscServices.InputMethodFramework
+
 ### setUiContent10+
 
-PhonePC/2in1TabletTVWearable
-
-setUiContent(path: string, callback: AsyncCallback<void>): void
+setUiContent(path: string, callback: AsyncCallback<void> ): void
 
 为当前的输入法面板加载具体页面内容，使用callback异步回调。
 
@@ -1476,7 +1586,7 @@ setUiContent(path: string, callback: AsyncCallback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | 具体页面的路径。 |
+| path | string | 是 | 具体页面的路径。路径长度建议不超过1024字符。 |
 | callback | AsyncCallback<void> | 是 | 回调函数。当面板页面内容加载成功，err为undefined，否则err为错误对象。 |
 
 **错误码：**
@@ -1485,25 +1595,25 @@ setUiContent(path: string, callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. panel.setUiContent('pages/page2/page2', (err: BusinessError) => {
-4. if (err) {
-5. console.error(`Failed to setUiContent. Code is ${err.code}, message is ${err.message}`);
-6. return;
-7. }
-8. console.info('Succeeded in setting the content.');
-9. });
+// 设置输入法面板内容
+// panel对象通过createPanel接口获取，详见createPanel示例
+panel.setUiContent('pages/page2/page2', (err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to setUiContent. Code is ${err.code}, message is ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in setting the content.');
+});
 ```
 
 ### setUiContent10+
-
-PhonePC/2in1TabletTVWearable
 
 setUiContent(path: string): Promise<void>
 
@@ -1515,13 +1625,13 @@ setUiContent(path: string): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | 具体页面的路径。 |
+| path | string | 是 | 具体页面的路径。路径长度建议不超过1024字符。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -1529,25 +1639,23 @@ setUiContent(path: string): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. panel.setUiContent('pages/page2/page2').then(() => {
-4. console.info('Succeeded in setting the content.');
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to setUiContent. Code is ${err.code}, message is ${err.message}`);
-7. });
+panel.setUiContent('pages/page2/page2').then(() => {
+  console.info('Succeeded in setting the content.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to setUiContent. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### setUiContent10+
 
-PhonePC/2in1TabletTVWearable
-
-setUiContent(path: string, storage: LocalStorage, callback: AsyncCallback<void>): void
+setUiContent(path: string, storage: LocalStorage, callback: AsyncCallback<void> ): void
 
 为当前的输入法面板加载与LocalStorage相关联的具体页面内容，使用callback异步回调。
 
@@ -1557,8 +1665,8 @@ setUiContent(path: string, storage: LocalStorage, callback: AsyncCallback<void>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | LocalStorage相关联的具体页面的路径。 |
-| storage | [LocalStorage](ts-state-management.md#localstorage9) | 是 | 存储单元，为应用程序范围内的可变和不可变状态属性提供存储。 |
+| path | string | 是 | LocalStorage相关联的具体页面的路径。路径长度建议不超过1024字符。 |
+| storage | [LocalStorage](ts-state-management.md#localstorage9) | 是 | 存储单元，为应用程序范围内的可变状态属性和不可变状态属性提供存储。 |
 | callback | AsyncCallback<void> | 是 | 回调函数。当面板页面内容加载成功，err为undefined，否则err为错误对象。 |
 
 **错误码：**
@@ -1567,27 +1675,26 @@ setUiContent(path: string, storage: LocalStorage, callback: AsyncCallback<void>)
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let storage: LocalStorage = new LocalStorage();
-4. storage.setOrCreate('storageSimpleProp', 121);
-5. panel.setUiContent('pages/page2/page2', storage, (err: BusinessError) => {
-6. if (err) {
-7. console.error(`Failed to setUiContent. Code is ${err.code}, message is ${err.message}`);
-8. return;
-9. }
-10. console.info('Succeeded in setting the content.');
-11. });
+// 创建并初始化LocalStorage对象
+let storage: LocalStorage = new LocalStorage();
+storage.setOrCreate('storageSimpleProp', 121);
+panel.setUiContent('pages/page2/page2', storage, (err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to setUiContent. Code is ${err.code}, message is ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in setting the content.');
+});
 ```
 
 ### setUiContent10+
-
-PhonePC/2in1TabletTVWearable
 
 setUiContent(path: string, storage: LocalStorage): Promise<void>
 
@@ -1599,14 +1706,14 @@ setUiContent(path: string, storage: LocalStorage): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | 设置加载页面的路径。 |
+| path | string | 是 | 具体页面的路径。路径长度建议不超过1024字符。 |
 | storage | [LocalStorage](ts-state-management.md#localstorage9) | 是 | 存储单元，为应用程序范围内的可变状态属性和非可变状态属性提供存储。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -1614,31 +1721,30 @@ setUiContent(path: string, storage: LocalStorage): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let storage: LocalStorage = new LocalStorage();
-4. storage.setOrCreate('storageSimpleProp', 121);
-5. panel.setUiContent('pages/page2/page2', storage).then(() => {
-6. console.info('Succeeded in setting the content.');
-7. }).catch((err: BusinessError) => {
-8. console.error(`Failed to setUiContent. Code is ${err.code}, message is ${err.message}`);
-9. });
+// 创建并初始化LocalStorage对象
+let storage: LocalStorage = new LocalStorage();
+storage.setOrCreate('storageSimpleProp', 121);
+panel.setUiContent('pages/page2/page2', storage).then(() => {
+  console.info('Succeeded in setting the content.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to setUiContent. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### resize10+
 
-PhonePC/2in1TabletTVWearable
-
-resize(width: number, height: number, callback: AsyncCallback<void>): void
+resize(width: number, height: number, callback: AsyncCallback<void> ): void
 
 改变当前输入法面板的大小，使用callback异步回调。
 
-说明
+**说明** 
 
 面板宽度不超出屏幕宽度，面板高度不高于屏幕高度的0.7倍。
 
@@ -1650,8 +1756,8 @@ resize(width: number, height: number, callback: AsyncCallback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| width | number | 是 | 目标面板的宽度，单位为px。该参数应为大于或等于0的整数，不超出屏幕宽度。 |
-| height | number | 是 | 目标面板的高度，单位为px。该参数应为大于或等于0的整数，不高于屏幕高度的0.7倍。 |
+| width | number | 是 | 目标面板的宽度，单位为px。该参数应为大于或等于0的整数，不超出屏幕宽度。超出范围时返回错误码401。 |
+| height | number | 是 | 目标面板的高度，单位为px。该参数应为大于或等于0的整数，不高于屏幕高度的0.7倍。超出范围时返回错误码401。 |
 | callback | AsyncCallback<void> | 是 | 回调函数。当面板大小改变成功，err为undefined，否则err为错误对象。 |
 
 **错误码：**
@@ -1660,31 +1766,30 @@ resize(width: number, height: number, callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. panel.resize(500, 1000, (err: BusinessError) => {
-4. if (err) {
-5. console.error(`Failed to resize panel. Code is ${err.code}, message is ${err.message}`);
-6. return;
-7. }
-8. console.info('Succeeded in changing the panel size.');
-9. });
+// 改变输入法面板大小
+panel.resize(500, 1000, (err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to resize panel. Code is ${err.code}, message is ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in changing the panel size.');
+});
 ```
 
 ### resize10+
-
-PhonePC/2in1TabletTVWearable
 
 resize(width: number, height: number): Promise<void>
 
 改变当前输入法面板的大小，使用Promise异步回调。
 
-说明
+**说明** 
 
 面板宽度不超出屏幕宽度，面板高度不高于屏幕高度的0.7倍。
 
@@ -1696,14 +1801,14 @@ resize(width: number, height: number): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| width | number | 是 | 目标面板的宽度，单位为px。该参数应为大于或等于0的整数，不超出屏幕宽度。 |
-| height | number | 是 | 目标面板的高度，单位为px。该参数应为大于或等于0的整数，不高于屏幕高度的0.7倍。 |
+| width | number | 是 | 目标面板的宽度，单位为px。该参数应为大于或等于0的整数，不超出屏幕宽度。超出范围时返回错误码401。 |
+| height | number | 是 | 目标面板的高度，单位为px。该参数应为大于或等于0的整数，不高于屏幕高度的0.7倍。超出范围时返回错误码401。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -1711,25 +1816,24 @@ resize(width: number, height: number): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. panel.resize(500, 1000).then(() => {
-4. console.info('Succeeded in changing the panel size.');
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to resize panel. Code is ${err.code}, message is ${err.message}`);
-7. });
+// 改变输入法面板大小
+panel.resize(500, 1000).then(() => {
+  console.info('Succeeded in changing the panel size.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to resize panel. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### moveTo10+
 
-PhonePC/2in1TabletTVWearable
-
-moveTo(x: number, y: number, callback: AsyncCallback<void>): void
+moveTo(x: number, y: number, callback: AsyncCallback<void> ): void
 
 移动面板位置，使用callback异步回调。[面板状态](js-apis-inputmethodengine.md#panelflag10)为固定态时，不产生实际移动效果。
 
@@ -1739,8 +1843,8 @@ moveTo(x: number, y: number, callback: AsyncCallback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| x | number | 是 | 横轴方向移动的值，值大于0表示右移，单位为px。该参数应为整数。 |
-| y | number | 是 | 纵轴方向移动的值，值大于0表示下移，单位为px。该参数应为整数。 |
+| x | number | 是 | 横轴方向移动的值，单位为px。该参数应为整数。值大于0表示右移，小于0表示左移。超出屏幕范围时返回错误码401。 |
+| y | number | 是 | 纵轴方向移动的值，单位为px。该参数应为整数。值大于0表示下移，小于0表示上移。超出屏幕范围时返回错误码401。 |
 | callback | AsyncCallback<void> | 是 | 回调函数。当面板位置移动成功，err为undefined，否则err为错误对象。 |
 
 **错误码：**
@@ -1749,25 +1853,24 @@ moveTo(x: number, y: number, callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. panel.moveTo(300, 300, (err: BusinessError) => {
-4. if (err) {
-5. console.error(`Failed to move panel. Code is ${err.code}, message is ${err.message}`);
-6. return;
-7. }
-8. console.info('Succeeded in moving the panel.');
-9. });
+// 移动输入法面板位置
+panel.moveTo(300, 300, (err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to move panel. Code is ${err.code}, message is ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in moving the panel.');
+});
 ```
 
 ### moveTo10+
-
-PhonePC/2in1TabletTVWearable
 
 moveTo(x: number, y: number): Promise<void>
 
@@ -1786,7 +1889,7 @@ moveTo(x: number, y: number): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -1794,27 +1897,26 @@ moveTo(x: number, y: number): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. panel.moveTo(300, 300).then(() => {
-4. console.info('Succeeded in moving the panel.');
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to move panel. Code is ${err.code}, message is ${err.message}`);
-7. });
+// 移动输入法面板位置
+panel.moveTo(300, 300).then(() => {
+  console.info('Succeeded in moving the panel.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to move panel. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### startMoving15+
 
-PhonePC/2in1TabletTVWearable
-
 startMoving(): void
 
-发送移动命令给窗口，不产生实际移动效果（仅在鼠标点击作用才可以移动）。
+发送移动命令给窗口，使面板进入可拖动状态。不产生实际移动效果，仅在用户通过鼠标拖动面板时才会移动。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -1824,24 +1926,22 @@ startMoving(): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | capability not supported. |
+| 801 | capability not supported. 适用版本：18+ |
 | 12800002 | input method engine error. Possible causes: 1.input method panel not created. 2.the input method application does not subscribe to related events. |
 | 12800013 | window manager service error. |
 | 12800017 | invalid panel type or panel flag. |
 
 **示例：**
 
-```
-1. panel.startMoving();
+```ts
+panel.startMoving();
 ```
 
 ### getDisplayId15+
 
-PhonePC/2in1TabletTVWearable
-
 getDisplayId(): Promise<number>
 
-获取当前窗口的所在id，使用Promise异步回调。
+获取当前窗口的displayId，使用Promise异步回调。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -1862,21 +1962,19 @@ getDisplayId(): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. panel.getDisplayId().then((result: number) => {
-4. console.info('get displayId:' + result);
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to get displayId. Code is ${err.code}, message is ${err.message}`);
-7. });
+panel.getDisplayId().then((result: number) => {
+  console.info('get displayId:' + result);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to get displayId. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### show10+
 
-PhonePC/2in1TabletTVWearable
-
-show(callback: AsyncCallback<void>): void
+show(callback: AsyncCallback<void> ): void
 
 显示当前输入法面板，使用callback异步回调。输入法应用与编辑框绑定成功后可正常调用。
 
@@ -1890,21 +1988,19 @@ show(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. panel.show((err: BusinessError) => {
-4. if (err) {
-5. console.error(`Failed to show panel. Code is ${err.code}, message is ${err.message}`);
-6. return;
-7. }
-8. console.info('Succeeded in showing the panel.');
-9. });
+panel.show((err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to show panel. Code is ${err.code}, message is ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in showing the panel.');
+});
 ```
 
 ### show10+
-
-PhonePC/2in1TabletTVWearable
 
 show(): Promise<void>
 
@@ -1916,25 +2012,23 @@ show(): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. panel.show().then(() => {
-4. console.info('Succeeded in showing the panel.');
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to show panel. Code is ${err.code}, message is ${err.message}`);
-7. });
+panel.show().then(() => {
+  console.info('Succeeded in showing the panel.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to show panel. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### hide10+
 
-PhonePC/2in1TabletTVWearable
-
-hide(callback: AsyncCallback<void>): void
+hide(callback: AsyncCallback<void> ): void
 
 隐藏当前输入法面板，使用callback异步回调。
 
@@ -1948,21 +2042,19 @@ hide(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. panel.hide((err: BusinessError) => {
-4. if (err) {
-5. console.error(`Failed to hide panel. Code is ${err.code}, message is ${err.message}`);
-6. return;
-7. }
-8. console.info('Succeeded in hiding the panel.');
-9. });
+panel.hide((err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to hide panel. Code is ${err.code}, message is ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in hiding the panel.');
+});
 ```
 
 ### hide10+
-
-PhonePC/2in1TabletTVWearable
 
 hide(): Promise<void>
 
@@ -1974,33 +2066,31 @@ hide(): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. panel.hide().then(() => {
-4. console.info('Succeeded in hiding the panel.');
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to hide panel. Code is ${err.code}, message is ${err.message}`);
-7. });
+panel.hide().then(() => {
+  console.info('Succeeded in hiding the panel.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to hide panel. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### adjustPanelRect12+
-
-PhonePC/2in1TabletTVWearable
 
 adjustPanelRect(flag: PanelFlag, rect: PanelRect): void
 
 预设置输入法应用横竖屏大小。接口调用完毕表示adjust请求已提交到输入法框架，不表示执行完毕。
 
-说明
+**说明** 
 
 仅用于SOFT\_KEYBOARD类型，状态为FLG\_FIXED或FLG\_FLOATING的面板。
 
-此接口为同步接口，接口返回仅代表系统侧收到设置的请求，不代表已完成设置。
+此接口为同步接口，接口返回成功仅代表系统侧收到设置的请求，不代表设置完成。如果需要感知执行过程中的异常，建议使用[updatePanelRect](js-apis-inputmethodengine.md#updatepanelrect)或[updatePanelRectSync](js-apis-inputmethodengine.md#updatepanelrectsync)。
 
 手机的PanelFlag是FLG\_FLOATING且面板宽度在0~288vp之间时，面板底部功能键将随面板宽度动态调整大小，为了保证最佳用户体验，建议面板宽度不小于90vp。
 
@@ -2011,7 +2101,7 @@ adjustPanelRect(flag: PanelFlag, rect: PanelRect): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | flag | [PanelFlag](js-apis-inputmethodengine.md#panelflag10) | 是 | 目标面板状态类型。类型为FLG\_FIXED或FLG\_FLOATING。 |
-| rect | [PanelRect](js-apis-inputmethodengine.md#panelrect12) | 是 | 目标面板横屏状态及竖屏状态的横坐标，纵坐标，宽度以及高度。固定态：高度不能超过屏幕高度的70%，宽度不能超过屏幕宽度；悬浮态：高度不能超过屏幕高度，宽度不能超过屏幕宽度。 |
+| rect | [PanelRect](js-apis-inputmethodengine.md#panelrect12) | 是 | 目标面板横屏状态及竖屏状态的横坐标，纵坐标，宽度以及高度。固定态：高度不能超过屏幕高度的70%，宽度不能超过屏幕宽度；悬浮态：高度不能超过屏幕高度，宽度不能超过屏幕宽度。超出范围时返回错误码401。 |
 
 **错误码：**
 
@@ -2019,53 +2109,56 @@ adjustPanelRect(flag: PanelFlag, rect: PanelRect): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800013 | window manager service error. |
 
 **示例：**
 
-```
-1. import { window } from '@kit.ArkUI';
+```ts
+import { window } from '@kit.ArkUI';
 
-3. let landscapeRect: window.Rect = {
-4. left: 100,
-5. top: 100,
-6. width: 400,
-7. height: 400
-8. };
+// 定义横屏状态下面板的矩形区域
+let landscapeRect: window.Rect = {
+  left: 100,
+  top: 100,
+  width: 400,
+  height: 400
+};
 
-10. let portraitRect: window.Rect = {
-11. left: 200,
-12. top: 200,
-13. width: 300,
-14. height: 300
-15. };
+// 定义竖屏状态下面板的矩形区域
+let portraitRect: window.Rect = {
+  left: 200,
+  top: 200,
+  width: 300,
+  height: 300
+};
 
-17. // 目标面板状态类型
-18. let panelFlag: inputMethodEngine.PanelFlag = inputMethodEngine.PanelFlag.FLG_FIXED;
-19. // 目标面板横屏状态及竖屏状态的横坐标，纵坐标，宽度以及高度
-20. let panelRect: inputMethodEngine.PanelRect = {
-21. landscapeRect: landscapeRect,
-22. portraitRect: portraitRect
-23. };
-24. panel.adjustPanelRect(panelFlag, panelRect);
+// 设置面板状态为固定态
+let panelFlag: inputMethodEngine.PanelFlag = inputMethodEngine.PanelFlag.FLG_FIXED;
+// 配置面板的横竖屏矩形区域
+let panelRect: inputMethodEngine.PanelRect = {
+  landscapeRect: landscapeRect,
+  portraitRect: portraitRect
+};
+// 预设置输入法应用横竖屏大小
+panel.adjustPanelRect(panelFlag, panelRect);
 ```
 
 ### adjustPanelRect15+
-
-PhonePC/2in1TabletTVWearable
 
 adjustPanelRect(flag: PanelFlag, rect: EnhancedPanelRect): void
 
 预设置输入法应用横竖屏大小、位置、自定义避让区域以及热区。
 
-说明
+**说明** 
 
 仅用于SOFT\_KEYBOARD类型，状态为FLG\_FIXED或FLG\_FLOATING的面板。此接口兼容[adjustPanelRect](js-apis-inputmethodengine.md#adjustpanelrect12)的调用方法，若入参rect仅填写属性landscapeRect和portraitRect，则默认调用[adjustPanelRect](js-apis-inputmethodengine.md#adjustpanelrect12)。
 
-此接口为同步接口，接口返回仅代表系统侧收到设置的请求，不代表已完成设置。
+此接口为同步接口，接口返回成功仅代表系统侧收到设置的请求，不代表设置完成。如果需要感知执行过程中的异常，建议使用[updatePanelRect](js-apis-inputmethodengine.md#updatepanelrect-1)或[updatePanelRectSync](js-apis-inputmethodengine.md#updatepanelrectsync-1)。
 
 手机的PanelFlag是FLG\_FLOATING且面板宽度在0~288vp之间时，面板底部功能键将随面板宽度动态调整大小，为了保证最佳用户体验，建议面板宽度不小于90vp。
+
+当com.ohos.sceneboard进程不存在时，输入法热区生效范围保持和软键盘区域一致。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -2082,56 +2175,342 @@ adjustPanelRect(flag: PanelFlag, rect: EnhancedPanelRect): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800013 | window manager service error. |
 | 12800017 | invalid panel type or panel flag. |
 
 **示例：**
 
+```ts
+import { window } from '@kit.ArkUI';
+
+let landscapeRect1: window.Rect = {
+  left: 300,
+  top: 650,
+  width: 2000,
+  height: 500
+};
+let landscapeInputRegion: Array<window.Rect> = [landscapeRect1];
+
+let portraitRect1: window.Rect = {
+  left: 0,
+  top: 1800,
+  width: 1200,
+  height: 800
+}
+let portraitInputRegion: Array<window.Rect> = [portraitRect1];
+// 目标面板状态类型。
+let panelFlag: inputMethodEngine.PanelFlag = inputMethodEngine.PanelFlag.FLG_FIXED;
+// 目标面板横屏状态及竖屏状态的位置、大小、避让区域以及热区。
+let panelRect: inputMethodEngine.EnhancedPanelRect = {
+  landscapeAvoidY: 650,
+  landscapeInputRegion: landscapeInputRegion,
+  portraitAvoidY: 1800,
+  portraitInputRegion: portraitInputRegion,
+  fullScreenMode: true
+};
+panel.adjustPanelRect(panelFlag, panelRect);
 ```
-1. import { window } from '@kit.ArkUI';
 
-3. let landscapeRect1: window.Rect = {
-4. left: 300,
-5. top: 650,
-6. width: 2000,
-7. height: 500
-8. };
-9. let landscapeInputRegion: Array<window.Rect> = [landscapeRect1];
+### updatePanelRect
 
-11. let portraitRect1: window.Rect = {
-12. left: 0,
-13. top: 1800,
-14. width: 1200,
-15. height: 800
-16. }
-17. let portraitInputRegion: Array<window.Rect> = [portraitRect1];
-18. // 目标面板状态类型。
-19. let panelFlag: inputMethodEngine.PanelFlag = inputMethodEngine.PanelFlag.FLG_FIXED;
-20. // 目标面板横屏状态及竖屏状态的位置、大小、避让区域以及热区。
-21. let panelRect: inputMethodEngine.EnhancedPanelRect = {
-22. landscapeAvoidY: 650,
-23. landscapeInputRegion: landscapeInputRegion,
-24. portraitAvoidY: 1800,
-25. portraitInputRegion: portraitInputRegion,
-26. fullScreenMode: true
-27. };
-28. panel.adjustPanelRect(panelFlag, panelRect);
+updatePanelRect(flag: PanelFlag, rect: PanelRect): Promise<void>
+
+预设置输入法应用横竖屏大小。使用Promise异步回调。
+
+**说明** 
+
+仅用于SOFT\_KEYBOARD类型，状态为FLG\_FIXED或FLG\_FLOATING的面板。
+
+此接口为异步接口，接口返回仅代表系统侧收到设置的请求，不代表已完成设置。
+
+手机的PanelFlag是FLG\_FLOATING且面板宽度在0~288vp之间时，面板底部功能键将随面板宽度动态调整大小，为了保证最佳用户体验，建议面板宽度不小于90vp。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.MiscServices.InputMethodFramework
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| flag | [PanelFlag](js-apis-inputmethodengine.md#panelflag10) | 是 | 目标面板状态类型。类型为FLG\_FIXED或FLG\_FLOATING。 |
+| rect | [PanelRect](js-apis-inputmethodengine.md#panelrect12) | 是 | 目标面板横屏状态及竖屏状态的横坐标，纵坐标，宽度以及高度。固定态：高度不能超过屏幕高度的70%，宽度不能超过屏幕宽度；悬浮态：高度不能超过屏幕高度，宽度不能超过屏幕宽度。超出范围时返回错误码401。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[输入法框架错误码](errorcode-inputmethod-framework.md)，[通用错误码说明文档](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 12800013 | window manager service error. |
+
+**示例：**
+
+```ts
+import { window } from '@kit.ArkUI';
+
+let landscapeRect: window.Rect = {
+  left: 100,
+  top: 100,
+  width: 400,
+  height: 400
+};
+
+let portraitRect: window.Rect = {
+  left: 200,
+  top: 200,
+  width: 300,
+  height: 300
+};
+
+// 目标面板状态类型
+let panelFlag: inputMethodEngine.PanelFlag = inputMethodEngine.PanelFlag.FLG_FIXED;
+// 目标面板横屏状态及竖屏状态的横坐标，纵坐标，宽度以及高度
+let panelRect: inputMethodEngine.PanelRect = {
+  landscapeRect: landscapeRect,
+  portraitRect: portraitRect
+};
+panel.updatePanelRect(panelFlag, panelRect);
+```
+
+### updatePanelRect
+
+updatePanelRect(flag: PanelFlag, rect: EnhancedPanelRect): Promise<void>
+
+预设置输入法应用横竖屏大小、位置、自定义避让区域以及热区。使用Promise异步回调。
+
+**说明** 
+
+仅用于SOFT\_KEYBOARD类型，状态为FLG\_FIXED或FLG\_FLOATING的面板。此接口兼容[adjustPanelRect](js-apis-inputmethodengine.md#adjustpanelrect12)的调用方法，若入参rect仅填写属性landscapeRect和portraitRect，则默认调用[adjustPanelRect](js-apis-inputmethodengine.md#adjustpanelrect12)。
+
+此接口为异步接口，接口返回仅代表系统侧收到设置的请求，不代表已完成设置。
+
+手机的PanelFlag是FLG\_FLOATING且面板宽度在0~288vp之间时，面板底部功能键将随面板宽度动态调整大小，为了保证最佳用户体验，建议面板宽度不小于90vp。
+
+当com.ohos.sceneboard进程不存在时，输入法热区生效范围保持和软键盘区域一致。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.MiscServices.InputMethodFramework
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| flag | [PanelFlag](js-apis-inputmethodengine.md#panelflag10) | 是 | 目标面板状态类型。类型为FLG\_FIXED或FLG\_FLOATING。 |
+| rect | [EnhancedPanelRect](js-apis-inputmethodengine.md#enhancedpanelrect15) | 是 | 目标面板横屏状态及竖屏状态的位置、大小、避让区域以及热区。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[输入法框架错误码](errorcode-inputmethod-framework.md)，[通用错误码说明文档](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 12800013 | window manager service error. |
+| 12800017 | invalid panel type or panel flag. |
+
+**示例：**
+
+```ts
+import { window } from '@kit.ArkUI';
+
+let landscapeRect1: window.Rect = {
+  left: 300,
+  top: 650,
+  width: 2000,
+  height: 500
+};
+let landscapeInputRegion: Array<window.Rect> = [landscapeRect1];
+
+let portraitRect1: window.Rect = {
+  left: 0,
+  top: 1800,
+  width: 1200,
+  height: 800
+}
+let portraitInputRegion: Array<window.Rect> = [portraitRect1];
+// 目标面板状态类型。
+let panelFlag: inputMethodEngine.PanelFlag = inputMethodEngine.PanelFlag.FLG_FIXED;
+// 目标面板横屏状态及竖屏状态的位置、大小、避让区域以及热区。
+let panelRect: inputMethodEngine.EnhancedPanelRect = {
+  landscapeAvoidY: 650,
+  landscapeInputRegion: landscapeInputRegion,
+  portraitAvoidY: 1800,
+  portraitInputRegion: portraitInputRegion,
+  fullScreenMode: true
+};
+panel.updatePanelRect(panelFlag, panelRect);
+```
+
+### updatePanelRectSync
+
+updatePanelRectSync(flag: PanelFlag, rect: PanelRect): void
+
+预设置输入法应用横竖屏大小。
+
+**说明** 
+
+同步接口阻塞主线程，容易影响UI交互，需谨慎使用。建议优先使用对应的异步接口[updatePanelRect](js-apis-inputmethodengine.md#updatepanelrect)。
+
+仅用于SOFT\_KEYBOARD类型，状态为FLG\_FIXED或FLG\_FLOATING的面板。
+
+此接口为同步接口，接口返回代表系统侧收到设置的请求，并已完成设置。
+
+手机的PanelFlag是FLG\_FLOATING且面板宽度在0~288vp之间时，面板底部功能键将随面板宽度动态调整大小，为了保证最佳用户体验，建议面板宽度不小于90vp。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.MiscServices.InputMethodFramework
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| flag | [PanelFlag](js-apis-inputmethodengine.md#panelflag10) | 是 | 目标面板状态类型。类型为FLG\_FIXED或FLG\_FLOATING。 |
+| rect | [PanelRect](js-apis-inputmethodengine.md#panelrect12) | 是 | 目标面板横屏状态及竖屏状态的横坐标，纵坐标，宽度以及高度。固定态：高度不能超过屏幕高度的70%，宽度不能超过屏幕宽度；悬浮态：高度不能超过屏幕高度，宽度不能超过屏幕宽度。超出范围时返回错误码401。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[输入法框架错误码](errorcode-inputmethod-framework.md)，[通用错误码说明文档](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 12800013 | window manager service error. |
+
+**示例：**
+
+```ts
+import { window } from '@kit.ArkUI';
+
+let landscapeRect: window.Rect = {
+  left: 100,
+  top: 100,
+  width: 400,
+  height: 400
+};
+
+let portraitRect: window.Rect = {
+  left: 200,
+  top: 200,
+  width: 300,
+  height: 300
+};
+
+// 目标面板状态类型
+let panelFlag: inputMethodEngine.PanelFlag = inputMethodEngine.PanelFlag.FLG_FIXED;
+// 目标面板横屏状态及竖屏状态的横坐标，纵坐标，宽度以及高度
+let panelRect: inputMethodEngine.PanelRect = {
+  landscapeRect: landscapeRect,
+  portraitRect: portraitRect
+};
+panel.updatePanelRectSync(panelFlag, panelRect);
+```
+
+### updatePanelRectSync
+
+updatePanelRectSync(flag: PanelFlag, rect: EnhancedPanelRect): void
+
+预设置输入法应用横竖屏大小、位置、自定义避让区域以及热区。
+
+**说明** 
+
+同步接口阻塞主线程，容易影响UI交互，需谨慎使用。建议优先使用对应的异步接口[updatePanelRect](js-apis-inputmethodengine.md#updatepanelrect)。
+
+仅用于SOFT\_KEYBOARD类型，状态为FLG\_FIXED或FLG\_FLOATING的面板。此接口兼容[adjustPanelRect](js-apis-inputmethodengine.md#adjustpanelrect12)的调用方法，若入参rect仅填写属性landscapeRect和portraitRect，则默认调用[adjustPanelRect](js-apis-inputmethodengine.md#adjustpanelrect12)。
+
+此接口为同步接口，接口返回代表系统侧收到设置的请求，并已完成设置。
+
+手机的PanelFlag是FLG\_FLOATING且面板宽度在0~288vp之间时，面板底部功能键将随面板宽度动态调整大小，为了保证最佳用户体验，建议面板宽度不小于90vp。
+
+当com.ohos.sceneboard进程不存在时，输入法热区生效范围保持和软键盘区域一致。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.MiscServices.InputMethodFramework
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| flag | [PanelFlag](js-apis-inputmethodengine.md#panelflag10) | 是 | 目标面板状态类型。类型为FLG\_FIXED或FLG\_FLOATING。 |
+| rect | [EnhancedPanelRect](js-apis-inputmethodengine.md#enhancedpanelrect15) | 是 | 目标面板横屏状态及竖屏状态的位置、大小、避让区域以及热区。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[输入法框架错误码](errorcode-inputmethod-framework.md)，[通用错误码说明文档](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 12800013 | window manager service error. |
+| 12800017 | invalid panel type or panel flag. |
+
+**示例：**
+
+```ts
+import { window } from '@kit.ArkUI';
+
+let landscapeRect1: window.Rect = {
+  left: 300,
+  top: 650,
+  width: 2000,
+  height: 500
+};
+let landscapeInputRegion: Array<window.Rect> = [landscapeRect1];
+
+let portraitRect1: window.Rect = {
+  left: 0,
+  top: 1800,
+  width: 1200,
+  height: 800
+}
+let portraitInputRegion: Array<window.Rect> = [portraitRect1];
+// 目标面板状态类型。
+let panelFlag: inputMethodEngine.PanelFlag = inputMethodEngine.PanelFlag.FLG_FIXED;
+// 目标面板横屏状态及竖屏状态的位置、大小、避让区域以及热区。
+let panelRect: inputMethodEngine.EnhancedPanelRect = {
+  landscapeAvoidY: 650,
+  landscapeInputRegion: landscapeInputRegion,
+  portraitAvoidY: 1800,
+  portraitInputRegion: portraitInputRegion,
+  fullScreenMode: true
+};
+panel.updatePanelRectSync(panelFlag, panelRect);
 ```
 
 ### updateRegion15+
-
-PhonePC/2in1TabletTVWearable
 
 updateRegion(inputRegion: Array<window.Rect>): void
 
 更新当前状态下输入法面板内的热区。
 
-说明
+**说明** 
 
 仅用于SOFT\_KEYBOARD类型，状态为FLG\_FIXED或FLG\_FLOATING的面板。
 
 此接口为同步接口，接口返回仅代表系统侧收到更新热区的请求，不代表已完成热区更新。
+
+当com.ohos.sceneboard进程不存在时，输入法热区生效范围保持和软键盘区域一致。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -2147,32 +2526,30 @@ updateRegion(inputRegion: Array<window.Rect>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800013 | window manager service error. |
 | 12800017 | invalid panel type or panel flag. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { window } from '@kit.ArkUI';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { window } from '@kit.ArkUI';
 
-4. let inputRegion: Array<window.Rect> = [{
-5. left: 300,
-6. top: 650,
-7. width: 2000,
-8. height: 500
-9. }];
-10. panel.updateRegion(inputRegion);
+let inputRegion: Array<window.Rect> = [{
+  left: 300,
+  top: 650,
+  width: 2000,
+  height: 500
+}];
+panel.updateRegion(inputRegion);
 ```
 
 ### on('show')10+
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'show', callback: () => void): void
 
-监听当前面板显示状态，使用callback异步回调。
+监听当前面板显示状态，使用 callback 异步回调。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -2185,15 +2562,13 @@ on(type: 'show', callback: () => void): void
 
 **示例：**
 
-```
-1. panel.on('show', () => {
-2. console.info('Panel is showing.');
-3. });
+```ts
+panel.on('show', () => {
+  console.info('Panel is showing.');
+});
 ```
 
 ### on('hide')10+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'hide', callback: () => void): void
 
@@ -2210,21 +2585,19 @@ on(type: 'hide', callback: () => void): void
 
 **示例：**
 
-```
-1. panel.on('hide', () => {
-2. console.info('Panel is hiding.');
-3. });
+```ts
+panel.on('hide', () => {
+  console.info('Panel is hiding.');
+});
 ```
 
 ### on('sizeChange')12+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'sizeChange', callback: SizeChangeCallback): void
 
 监听当前面板大小变化，使用callback异步回调。
 
-说明
+**说明** 
 
 仅用于SOFT\_KEYBOARD类型，状态为FLG\_FIXED或FLG\_FLOATING的面板。输入法通过adjustPanelRect等接口对面板大小进行调节时，系统会根据一定规则校验计算出最终的数值（例如超出屏幕等场景），输入法应用可通过该回调获取的真实面板大小，完成最终的面板布局刷新。
 
@@ -2242,22 +2615,22 @@ on(type: 'sizeChange', callback: SizeChangeCallback): void
 
 **示例：**
 
-```
-1. import { window } from '@kit.ArkUI';
+```ts
+import { window } from '@kit.ArkUI';
 
-3. panel.on('sizeChange', (windowSize: window.Size) => {
-4. console.info(`panel size changed, width: ${windowSize.width}, height: ${windowSize.height}`);
-5. });
+// 监听面板大小变化事件
+panel.on('sizeChange', (windowSize: window.Size) => {
+  console.info(`panel size changed, width: ${windowSize.width}, height: ${windowSize.height}`);
+});
 
-7. panel.on('sizeChange', (windowSize: window.Size, keyboardArea: inputMethodEngine.KeyboardArea) => {
-8. console.info(`panel size changed, windowSize: ${windowSize.width}, ${windowSize.height}, ` +
-9. `keyboardArea: ${keyboardArea.top}, ${keyboardArea.bottom}, ${keyboardArea.left}, ${keyboardArea.right}`);
-10. });
+// 监听面板大小变化事件（带键盘区域参数）
+panel.on('sizeChange', (windowSize: window.Size, keyboardArea: inputMethodEngine.KeyboardArea) => {
+  console.info(`panel size changed, windowSize: ${windowSize.width}, ${windowSize.height}, ` +
+    `keyboardArea: ${keyboardArea.top}, ${keyboardArea.bottom}, ${keyboardArea.left}, ${keyboardArea.right}`);
+});
 ```
 
 ### off('show')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'show', callback?: () => void): void
 
@@ -2278,17 +2651,15 @@ off(type: 'show', callback?: () => void): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. panel.off('show');
+```ts
+panel.off('show');
 ```
 
 ### off('hide')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'hide', callback?: () => void): void
 
@@ -2309,23 +2680,21 @@ off(type: 'hide', callback?: () => void): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. panel.off('hide');
+```ts
+panel.off('hide');
 ```
 
 ### off('sizeChange')12+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'sizeChange', callback?: SizeChangeCallback): void
 
 取消监听当前面板大小变化，使用callback异步回调。
 
-说明
+**说明** 
 
 仅用于SOFT\_KEYBOARD类型，状态为FLG\_FIXED或FLG\_FLOATING的面板。输入法通过adjustPanelRect等接口对面板大小进行调节时，系统会根据一定规则校验计算出最终的数值（例如超出屏幕等场景），输入法应用可通过该回调获取的真实面板大小，完成最终的面板布局刷新。
 
@@ -2339,21 +2708,19 @@ off(type: 'sizeChange', callback?: SizeChangeCallback): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听当前面板的大小是否产生变化，固定取值为'sizeChange'。 |
-| callback | [SizeChangeCallback](js-apis-inputmethodengine.md#sizechangecallback15) | 否 | 回调函数。返回当前软键盘面板的大小，包含宽度和高度值。 |
+| callback | [SizeChangeCallback](js-apis-inputmethodengine.md#sizechangecallback15) | 否 | 回调函数。返回当前软键盘面板的大小，包含宽度和高度值。参数不填写时，取消订阅type对应的所有回调事件。 |
 
 **示例：**
 
-```
-1. import { window } from '@kit.ArkUI';
+```ts
+import { window } from '@kit.ArkUI';
 
-3. panel.off('sizeChange', (windowSize: window.Size) => {
-4. console.info(`panel size changed, width: ${windowSize.width}, height: ${windowSize.height}`);
-5. });
+panel.off('sizeChange', (windowSize: window.Size) => {
+  console.info(`panel size changed, width: ${windowSize.width}, height: ${windowSize.height}`);
+});
 ```
 
 ### changeFlag10+
-
-PhonePC/2in1TabletTVWearable
 
 changeFlag(flag: PanelFlag): void
 
@@ -2373,18 +2740,16 @@ changeFlag(flag: PanelFlag): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. let panelFlag: inputMethodEngine.PanelFlag = inputMethodEngine.PanelFlag.FLG_FIXED;
-2. panel.changeFlag(panelFlag);
+```ts
+let panelFlag: inputMethodEngine.PanelFlag = inputMethodEngine.PanelFlag.FLG_FIXED;
+panel.changeFlag(panelFlag);
 ```
 
 ### setPrivacyMode11+
-
-PhonePC/2in1TabletTVWearable
 
 setPrivacyMode(isPrivacyMode: boolean): void
 
@@ -2407,22 +2772,20 @@ setPrivacyMode(isPrivacyMode: boolean): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | permissions check fails. |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
-```
-1. let isPrivacyMode: boolean = true;
-2. panel.setPrivacyMode(isPrivacyMode);
+```ts
+let isPrivacyMode: boolean = true;
+panel.setPrivacyMode(isPrivacyMode);
 ```
 
 ### setImmersiveMode15+
 
-PhonePC/2in1TabletTVWearable
-
 setImmersiveMode(mode: ImmersiveMode): void
 
-设置输入法应用的沉浸模式。只能设置不使用沉浸模式(NONE\_IMMERSIVE)、浅色沉浸模式(LIGHT\_IMMERSIVE)或深色沉浸模式(DARK\_IMMERSIVE)。不能设置为沉浸模式(IMMERSIVE)。
+设置输入法应用的沉浸模式。只能设置为不使用沉浸模式(NONE\_IMMERSIVE)、浅色沉浸模式(LIGHT\_IMMERSIVE)或深色沉浸模式(DARK\_IMMERSIVE)。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -2438,19 +2801,17 @@ setImmersiveMode(mode: ImmersiveMode): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed. |
 | 12800002 | input method engine error. Possible causes: 1.input method panel not created. 2.the input method application does not subscribe to related events. |
 | 12800013 | window manager service error. |
 
 **示例：**
 
-```
-1. panel.setImmersiveMode(inputMethodEngine.ImmersiveMode.LIGHT_IMMERSIVE);
+```ts
+panel.setImmersiveMode(inputMethodEngine.ImmersiveMode.LIGHT_IMMERSIVE);
 ```
 
 ### getImmersiveMode15+
-
-PhonePC/2in1TabletTVWearable
 
 getImmersiveMode(): ImmersiveMode
 
@@ -2466,13 +2827,11 @@ getImmersiveMode(): ImmersiveMode
 
 **示例：**
 
-```
-1. let mode: inputMethodEngine.ImmersiveMode = panel.getImmersiveMode();
+```ts
+let mode: inputMethodEngine.ImmersiveMode = panel.getImmersiveMode();
 ```
 
 ### setImmersiveEffect20+
-
-PhonePC/2in1TabletTVWearable
 
 setImmersiveEffect(effect: ImmersiveEffect): void
 
@@ -2488,6 +2847,8 @@ setImmersiveEffect(effect: ImmersiveEffect): void
   + [resize](js-apis-inputmethodengine.md#resize10)(支持API version 10)
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
+
+**设备行为差异**：该接口仅在phone和tablet设备中可正常调用，在其他设备中返回错误码801。
 
 **参数：**
 
@@ -2509,23 +2870,21 @@ setImmersiveEffect(effect: ImmersiveEffect): void
 
 **示例：**
 
-```
-1. let effect: inputMethodEngine.ImmersiveEffect = {
-2. gradientHeight: 100,
-3. gradientMode: inputMethodEngine.GradientMode.LINEAR_GRADIENT
-4. }
-5. panel.setImmersiveEffect(effect);
+```ts
+let effect: inputMethodEngine.ImmersiveEffect = {
+  gradientHeight: 100,
+  gradientMode: inputMethodEngine.GradientMode.LINEAR_GRADIENT
+}
+panel.setImmersiveEffect(effect);
 ```
 
 ### setKeepScreenOn20+
-
-PhonePC/2in1TabletTVWearable
 
 setKeepScreenOn(isKeepScreenOn: boolean): Promise<void>
 
 设置屏幕常亮。使用Promise异步回调。
 
-说明
+**说明** 
 
 * 当键盘拉起时设置常亮生效，键盘关闭则自动失效。
 * 规范使用该接口：必要场景（例如：语音输入）下，设置该属性为true；退出必要场景后，重置该属性为false；其他场景下，不使用该接口。
@@ -2542,7 +2901,7 @@ setKeepScreenOn(isKeepScreenOn: boolean): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -2554,19 +2913,17 @@ setKeepScreenOn(isKeepScreenOn: boolean): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. panel.setKeepScreenOn(true).then(() => {
-4. console.info(`setKeepScreenOn success.`);
-5. }).catch((error: BusinessError) => {
-6. console.error(`setKeepScreenOn failed, code: ${error.code}, message: ${error.message}`);
-7. })
+panel.setKeepScreenOn(true).then(() => {
+  console.info(`setKeepScreenOn success.`);
+}).catch((error: BusinessError) => {
+  console.error(`setKeepScreenOn failed, code: ${error.code}, message: ${error.message}`);
+})
 ```
 
 ### getSystemPanelCurrentInsets21+
-
-PhonePC/2in1TabletTVWearable
 
 getSystemPanelCurrentInsets(displayId: number): Promise<SystemPanelInsets>
 
@@ -2598,30 +2955,33 @@ getSystemPanelCurrentInsets(displayId: number): Promise<SystemPanelInsets>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { inputMethodEngine } from '@kit.IMEKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { inputMethodEngine } from '@kit.IMEKit';
 
-4. let inputMethodAbility: inputMethodEngine.InputMethodAbility = inputMethodEngine.getInputMethodAbility();
-5. let panelConfig: inputMethodEngine.PanelInfo = {
-6. type: inputMethodEngine.PanelType.SOFT_KEYBOARD,
-7. flag: inputMethodEngine.PanelFlag.FLG_FIXED
-8. }
-9. // 以下逻辑需要在输入法InputMethodExtensionAbility中执行，this.context是InputMethodExtensionAbility的上下文
-10. inputMethodAbility.createPanel(this.context, panelConfig).then( (panel: inputMethodEngine.Panel) =>{
-11. panel.getDisplayId().then((displayId: number) => {
-12. panel.getSystemPanelCurrentInsets(displayId).then((insets: inputMethodEngine.SystemPanelInsets) => {
-13. console.info(`getSystemPanelCurrentInsets success, insets is { left: ${insets.left}, right: ${insets.right}, bottom: ${insets.bottom} }`);
-14. }).catch((error: BusinessError) => {
-15. console.error(`getSystemPanelCurrentInsets failed, code: ${error.code}, message: ${error.message}`);
-16. })
-17. });
-18. })
+let inputMethodAbility: inputMethodEngine.InputMethodAbility = inputMethodEngine.getInputMethodAbility();
+let panelConfig: inputMethodEngine.PanelInfo = {
+  type: inputMethodEngine.PanelType.SOFT_KEYBOARD,
+  flag: inputMethodEngine.PanelFlag.FLG_FIXED
+}
+// 以下逻辑需要在输入法InputMethodExtensionAbility中执行，this.context是InputMethodExtensionAbility的上下文
+// 创建输入法面板
+inputMethodAbility.createPanel(this.context, panelConfig).then((panel: inputMethodEngine.Panel) => {
+  panel.getDisplayId().then((displayId: number) => {
+    panel.getSystemPanelCurrentInsets(displayId).then((insets: inputMethodEngine.SystemPanelInsets) => {
+      console.info(`getSystemPanelCurrentInsets success, insets is { left: ${insets.left}, right: ${insets.right}, bottom: ${insets.bottom} }`);
+    }).catch((error: BusinessError) => {
+      console.error(`getSystemPanelCurrentInsets failed, code: ${error.code}, message: ${error.message}`);
+    });
+  }).catch((error: BusinessError) => {
+    console.error(`getDisplayId failed, code: ${error.code}, message: ${error.message}`);
+  });
+}).catch((error: BusinessError) => {
+  console.error(`createPanel failed, code: ${error.code}, message: ${error.message}`);
+});
 ```
 
 ### setSystemPanelButtonColor22+
-
-PhonePC/2in1TabletTVWearable
 
 setSystemPanelButtonColor(fillColor: string | undefined, backgroundColor: string | undefined): Promise<void>
 
@@ -2644,32 +3004,31 @@ setSystemPanelButtonColor(fillColor: string | undefined, backgroundColor: string
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. let fillColor = "#FFFF00";
-5. let backgroundColor = "#0000FF";
-6. this.panel.setSystemPanelButtonColor(fillColor, backgroundColor).then(() => {
-7. console.info(`setSystemPanelButtonColor success.`);
-8. }).catch((error: BusinessError) => {
-9. console.error(`setSystemPanelButtonColor failed, code: ${error.code}, message: ${error.message}`);
-10. })
-11. } catch (err) {
-12. let error = err as BusinessError;
-13. console.error(`setSystemPanelButtonColor failed, code: ${error.code}, message: ${error.message}`);
-14. }
+// 确保有panel实例，可以使用inputMethodEngine.getInputMethodAbility().createPanel(...)创建panel实例
+try {
+  let fillColor = "#FFFF00";
+  let backgroundColor = "#0000FF";
+  panel.setSystemPanelButtonColor(fillColor, backgroundColor).then(() => {
+    console.info(`setSystemPanelButtonColor success.`);
+  }).catch((error: BusinessError) => {
+    console.error(`setSystemPanelButtonColor failed, code: ${error.code}, message: ${error.message}`);
+  })
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`setSystemPanelButtonColor failed, code: ${error.code}, message: ${error.message}`);
+}
 ```
 
 ## KeyboardController
 
-PhonePC/2in1TabletTVWearable
-
 下列API均需使用[on('inputStart')](js-apis-inputmethodengine.md#oninputstart9)获取到KeyboardController实例后，通过实例调用。
 
-### hide9+
+**系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
-PhonePC/2in1TabletTVWearable
+### hide9+
 
 hide(callback: AsyncCallback<void>): void
 
@@ -2693,21 +3052,19 @@ hide(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. keyboardController.hide((err: BusinessError) => {
-4. if (err) {
-5. console.error(`Failed to hide. Code:${err.code}, message:${err.message}`);
-6. return;
-7. }
-8. console.info('Succeeded in hiding keyboard.');
-9. });
+keyboardController.hide((err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to hide. Code:${err.code}, message:${err.message}`);
+    return;
+  }
+  console.info('Succeeded in hiding keyboard.');
+});
 ```
 
 ### hide9+
-
-PhonePC/2in1TabletTVWearable
 
 hide(): Promise<void>
 
@@ -2719,7 +3076,7 @@ hide(): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -2731,27 +3088,25 @@ hide(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. keyboardController.hide().then(() => {
-4. console.info('Succeeded in hiding keyboard.');
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to hide. Code:${err.code}, message:${err.message}`);
-7. });
+keyboardController.hide().then(() => {
+  console.info('Succeeded in hiding keyboard.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to hide. Code:${err.code}, message:${err.message}`);
+});
 ```
 
 ### hideKeyboard(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 hideKeyboard(callback: AsyncCallback<void>): void
 
 隐藏输入法。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 8开始支持，API version 9开始废弃，建议使用[hide](js-apis-inputmethodengine.md#hide9)替代。
+从 API version 8开始支持，从API version 9开始废弃。建议使用[inputMethodEngine.KeyboardController.hide](js-apis-inputmethodengine.md#hide9)替代。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -2763,29 +3118,27 @@ hideKeyboard(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. keyboardController.hideKeyboard((err: BusinessError) => {
-4. if (err) {
-5. console.error(`Failed to hideKeyboard. Code is ${err.code}, message is ${err.message}`);
-6. return;
-7. }
-8. console.info('Succeeded in hiding keyboard.');
-9. });
+keyboardController.hideKeyboard((err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to hideKeyboard. Code is ${err.code}, message is ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in hiding keyboard.');
+});
 ```
 
 ### hideKeyboard(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 hideKeyboard(): Promise<void>
 
 隐藏输入法。使用promise异步回调。
 
-说明
+**说明** 
 
-从API version 8开始支持，API version 9开始废弃，建议使用[hide](js-apis-inputmethodengine.md#hide9-1)替代。
+从 API version 8开始支持，从API version 9开始废弃。建议使用[inputMethodEngine.KeyboardController.hide](js-apis-inputmethodengine.md#hide9)替代。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -2793,23 +3146,21 @@ hideKeyboard(): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. keyboardController.hideKeyboard().then(() => {
-4. console.info('Succeeded in hiding keyboard.');
-5. }).catch((err: BusinessError) => {
-6. console.info(`Failed to hideKeyboard. Code is ${err.code}, message is ${err.message}`);
-7. });
+keyboardController.hideKeyboard().then(() => {
+  console.info('Succeeded in hiding keyboard.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to hideKeyboard. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### exitCurrentInputType11+
-
-PhonePC/2in1TabletTVWearable
 
 exitCurrentInputType(callback: AsyncCallback<void>): void
 
@@ -2834,21 +3185,19 @@ exitCurrentInputType(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. keyboardController.exitCurrentInputType((err: BusinessError) => {
-4. if (err) {
-5. console.error(`Failed to exit current input type. Code:${err.code}, message:${err.message}`);
-6. return;
-7. }
-8. console.info('Succeeded in exiting current input type.');
-9. });
+keyboardController.exitCurrentInputType((err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to exit current input type. Code:${err.code}, message:${err.message}`);
+    return;
+  }
+  console.info('Succeeded in exiting current input type.');
+});
 ```
 
 ### exitCurrentInputType11+
-
-PhonePC/2in1TabletTVWearable
 
 exitCurrentInputType(): Promise<void>
 
@@ -2860,7 +3209,7 @@ exitCurrentInputType(): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -2873,23 +3222,21 @@ exitCurrentInputType(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. keyboardController.exitCurrentInputType().then(() => {
-4. console.info('Succeeded in exiting current input type.');
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to exit current input type. Code:${err.code}, message:${err.message}`);
-7. });
+keyboardController.exitCurrentInputType().then(() => {
+  console.info('Succeeded in exiting current input type.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to exit current input type. Code:${err.code}, message:${err.message}`);
+});
 ```
 
 ## SecurityMode11+
 
-PhonePC/2in1TabletTVWearable
-
 输入法的安全模式，如BASIC或FULL。
 
-**系统能力**: SystemCapability.MiscServices.InputMethodFramework
+**系统能力:** SystemCapability.MiscServices.InputMethodFramework
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2898,11 +3245,9 @@ PhonePC/2in1TabletTVWearable
 
 ## ExtendAction10+
 
-PhonePC/2in1TabletTVWearable
-
 编辑框中文本的扩展编辑操作类型，如剪切、复制等。
 
-**系统能力**: SystemCapability.MiscServices.InputMethodFramework
+**系统能力:** SystemCapability.MiscServices.InputMethodFramework
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2913,11 +3258,9 @@ PhonePC/2in1TabletTVWearable
 
 ## Direction10+
 
-PhonePC/2in1TabletTVWearable
-
 光标的移动方向。
 
-**系统能力**: SystemCapability.MiscServices.InputMethodFramework
+**系统能力:** SystemCapability.MiscServices.InputMethodFramework
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2927,8 +3270,6 @@ PhonePC/2in1TabletTVWearable
 | CURSOR\_RIGHT | 4 | 向右。 |
 
 ## Range10+
-
-PhonePC/2in1TabletTVWearable
 
 选中的文本范围。
 
@@ -2941,8 +3282,6 @@ PhonePC/2in1TabletTVWearable
 
 ## Movement10+
 
-PhonePC/2in1TabletTVWearable
-
 选中文本时，光标移动的方向
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
@@ -2953,11 +3292,9 @@ PhonePC/2in1TabletTVWearable
 
 ## MessageHandler15+
 
-PhonePC/2in1TabletTVWearable
-
 自定义通信对象。
 
-说明
+**说明** 
 
 开发者可通过注册此对象来接收已绑定当前输入法应用的编辑框应用所发送的自定义通信数据，接收到自定义通信数据时会触发此对象中[onMessage](js-apis-inputmethodengine.md#onmessage15)回调函数。
 
@@ -2965,15 +3302,15 @@ PhonePC/2in1TabletTVWearable
 
 若取消注册全局已注册的对象时，会触发被取消对象中[onTerminated](js-apis-inputmethodengine.md#onterminated15)回调函数。
 
-### onMessage15+
+**系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
-PhonePC/2in1TabletTVWearable
+### onMessage15+
 
 onMessage(msgId: string, msgParam?: ArrayBuffer): void
 
 接收已绑定当前输入法应用的编辑框应用发送的自定义数据回调函数。
 
-说明
+**说明** 
 
 当已注册的[MessageHandler](js-apis-inputmethodengine.md#messagehandler15)接收到来自已绑定当前输入法应用的编辑框应用所发送的自定义通信数据时，会触发该回调函数。
 
@@ -2990,33 +3327,29 @@ msgId为必选参数，msgParam为可选参数。存在收到仅有msgId自定�
 
 **示例：**
 
-```
-1. inputMethodEngine.getInputMethodAbility()
-2. .on('inputStart',
-3. (kbController: inputMethodEngine.KeyboardController, client: inputMethodEngine.InputClient) => {
-4. let keyboardController: inputMethodEngine.KeyboardController = kbController;
-5. let inputClient: inputMethodEngine.InputClient = client;
-6. let messageHandler: inputMethodEngine.MessageHandler = {
-7. onTerminated(): void {
-8. console.info('OnTerminated.');
-9. },
-10. onMessage(msgId: string, msgParam?: ArrayBuffer): void {
-11. console.info(`recv message, msgId is ${msgId}, msgParam is ${JSON.stringify(msgParam)}`);
-12. }
-13. }
-14. inputClient.recvMessage(messageHandler);
-15. });
+```ts
+inputMethodEngine.getInputMethodAbility()
+  .on('inputStart',
+    (keyboardController: inputMethodEngine.KeyboardController, inputClient: inputMethodEngine.InputClient) => {
+      let messageHandler: inputMethodEngine.MessageHandler = {
+        onTerminated(): void {
+          console.info('OnTerminated.');
+        },
+        onMessage(msgId: string, msgParam?: ArrayBuffer): void {
+          console.info(`recv message, msgId is ${msgId}, msgParam is ${JSON.stringify(msgParam)}`);
+        }
+      }
+      inputClient.recvMessage(messageHandler);
+    });
 ```
 
 ### onTerminated15+
-
-PhonePC/2in1TabletTVWearable
 
 onTerminated(): void
 
 监听对象终止回调函数。
 
-说明
+**说明** 
 
 当应用注册新的[MessageHandler](js-apis-inputmethodengine.md#messagehandler15)对象时，会触发上一个已注册[MessageHandler](js-apis-inputmethodengine.md#messagehandler15)对象的[onTerminated](js-apis-inputmethodengine.md#onterminated15)回调函数。
 
@@ -3026,33 +3359,46 @@ onTerminated(): void
 
 **示例：**
 
-```
-1. inputMethodEngine.getInputMethodAbility()
-2. .on('inputStart',
-3. (kbController: inputMethodEngine.KeyboardController, client: inputMethodEngine.InputClient) => {
-4. let keyboardController: inputMethodEngine.KeyboardController = kbController;
-5. let inputClient: inputMethodEngine.InputClient = client;
-6. let messageHandler: inputMethodEngine.MessageHandler = {
-7. onTerminated(): void {
-8. console.info('OnTerminated.');
-9. },
-10. onMessage(msgId: string, msgParam?: ArrayBuffer): void {
-11. console.info(`recv message, msgId is ${msgId}, msgParam is ${JSON.stringify(msgParam)}`);
-12. }
-13. }
-14. inputClient.recvMessage(messageHandler);
-15. });
+```ts
+inputMethodEngine.getInputMethodAbility()
+  .on('inputStart',
+    (keyboardController: inputMethodEngine.KeyboardController, inputClient: inputMethodEngine.InputClient) => {
+      let messageHandler: inputMethodEngine.MessageHandler = {
+        onTerminated(): void {
+          console.info('OnTerminated.');
+        },
+        onMessage(msgId: string, msgParam?: ArrayBuffer): void {
+          console.info(`recv message, msgId is ${msgId}, msgParam is ${JSON.stringify(msgParam)}`);
+        }
+      }
+      inputClient.recvMessage(messageHandler);
+    });
 ```
 
 ## InputClient9+
 
-PhonePC/2in1TabletTVWearable
+InputClient是输入法客户端对象，代表当前绑定到输入法应用的编辑框客户端。InputClient实例通过InputMethodAbility的[on('inputStart')](js-apis-inputmethodengine.md#oninputstart9)事件回调获取，每个绑定事件对应一个InputClient实例，输入法应用通过该实例与编辑框进行文本交互。
+
+核心功能概述：
+
+* 文本获取：通过[getForward](js-apis-inputmethodengine.md#getforward9)/[getForwardSync](js-apis-inputmethodengine.md#getforwardsync10)获取光标前的文本，通过[getBackward](js-apis-inputmethodengine.md#getbackward9)/[getBackwardSync](js-apis-inputmethodengine.md#getbackwardsync10)获取光标后的文本，用于分析已输入内容并提供智能补全。
+* 文本编辑：通过[insertText](js-apis-inputmethodengine.md#inserttext9)/[insertTextSync](js-apis-inputmethodengine.md#inserttextsync10)插入文本，通过[deleteForward](js-apis-inputmethodengine.md#deleteforward9)/[deleteForwardSync](js-apis-inputmethodengine.md#deleteforwardsync10)删除光标前的文本，通过[deleteBackward](js-apis-inputmethodengine.md#deletebackward9)/[deleteBackwardSync](js-apis-inputmethodengine.md#deletebackwardsync10)删除光标后的文本。
+* 功能键与光标：通过[sendKeyFunction](js-apis-inputmethodengine.md#sendkeyfunction9)发送功能键（如回车键），通过[moveCursor](js-apis-inputmethodengine.md#movecursor9)/[moveCursorSync](js-apis-inputmethodengine.md#movecursorsync10)移动光标。
+* 选区操作：通过[selectByRange](js-apis-inputmethodengine.md#selectbyrange10)/[selectByRangeSync](js-apis-inputmethodengine.md#selectbyrangesync10)按范围选中文本，通过[selectByMovement](js-apis-inputmethodengine.md#selectbymovement10)/[selectByMovementSync](js-apis-inputmethodengine.md#selectbymovementsync10)按方向选中文本。
+* 编辑框属性：通过[getEditorAttribute](js-apis-inputmethodengine.md#geteditorattribute9)/[getEditorAttributeSync](js-apis-inputmethodengine.md#geteditorattributesync10)获取编辑框属性信息（输入类型、回车键类型等），据此调整键盘布局。
+* 文本预览：通过[setPreviewText](js-apis-inputmethodengine.md#setpreviewtext12)/[setPreviewTextSync](js-apis-inputmethodengine.md#setpreviewtextsync12)设置预览文本，通过[finishTextPreview](js-apis-inputmethodengine.md#finishtextpreview12)/[finishTextPreviewSync](js-apis-inputmethodengine.md#finishtextpreviewsync12)结束文本预览。
+* 私有通信：通过[sendPrivateCommand](js-apis-inputmethodengine.md#sendprivatecommand12)向应用发送私有命令，通过[sendMessage](js-apis-inputmethodengine.md#sendmessage15)/[recvMessage](js-apis-inputmethodengine.md#recvmessage15)进行消息通信。
+
+注意事项：
+
+* InputClient实例与当前绑定的编辑框关联，当编辑框失去焦点或输入法解绑时，该实例可能失效。
+* 同名Sync后缀接口为同步接口，阻塞主线程，容易影响UI交互，需谨慎使用。
 
 下列API均需使用[on('inputStart')](js-apis-inputmethodengine.md#oninputstart9)获取到InputClient实例后，通过实例调用。
 
-### sendKeyFunction9+
+**系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
-PhonePC/2in1TabletTVWearable
+### sendKeyFunction9+
 
 sendKeyFunction(action:number, callback: AsyncCallback<boolean>): void
 
@@ -3065,7 +3411,7 @@ sendKeyFunction(action:number, callback: AsyncCallback<boolean>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | action | number | 是 | 功能键键值。  - 当值为0时，表示无效按键。  - 当值为1时，表示确认键（即回车键）。 |
-| callback | AsyncCallback<boolean> | 是 | 回调函数。当功能键发送成功，err为undefined，data为true；否则为错误对象。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。当功能键发送成功，err为undefined，data为true；当功能键发送失败，err为undefined，data为false；否则为错误对象。 |
 
 **错误码：**
 
@@ -3073,32 +3419,30 @@ sendKeyFunction(action:number, callback: AsyncCallback<boolean>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let action: number = 1;
+let action: number = 1;
 
-5. inputClient.sendKeyFunction(action, (err: BusinessError, result: boolean) => {
-6. if (err) {
-7. console.error(`Failed to sendKeyFunction. Code is ${err.code}, message is ${err.message}`);
-8. return;
-9. }
-10. if (result) {
-11. console.info('Succeeded in sending key function.');
-12. } else {
-13. console.error('Failed to sendKeyFunction.');
-14. }
-15. });
+inputClient.sendKeyFunction(action, (err: BusinessError, result: boolean) => {
+  if (err) {
+    console.error(`Failed to sendKeyFunction. Code is ${err.code}, message is ${err.message}`);
+    return;
+  }
+  if (result) {
+    console.info('Succeeded in sending key function.');
+  } else {
+    console.error('Failed to sendKeyFunction.');
+  }
+});
 ```
 
 ### sendKeyFunction9+
-
-PhonePC/2in1TabletTVWearable
 
 sendKeyFunction(action: number): Promise<boolean>
 
@@ -3116,7 +3460,7 @@ sendKeyFunction(action: number): Promise<boolean>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<boolean> | Promise对象。返回true表示功能键发送成功；返回false表示功能键发送失败。 |
+| Promise<boolean> | Promise对象。resolve返回true表示功能键发送成功；resolve返回false表示功能键发送失败；reject时抛出错误对象，表示执行过程中发生错误。 |
 
 **错误码：**
 
@@ -3124,33 +3468,35 @@ sendKeyFunction(action: number): Promise<boolean>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let action: number = 1;
-4. inputClient.sendKeyFunction(action).then((result: boolean) => {
-5. if (result) {
-6. console.info('Succeeded in sending key function.');
-7. } else {
-8. console.error('Failed to sendKeyFunction.');
-9. }
-10. }).catch((err: BusinessError) => {
-11. console.error(`Failed to sendKeyFunction. Code is ${err.code}, message is ${err.message}`);
-12. });
+let action: number = 1;
+inputClient.sendKeyFunction(action).then((result: boolean) => {
+  if (result) {
+    console.info('Succeeded in sending key function.');
+  } else {
+    console.error('Failed to sendKeyFunction.');
+  }
+}).catch((err: BusinessError) => {
+  console.error(`Failed to sendKeyFunction. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### getForward9+
 
-PhonePC/2in1TabletTVWearable
-
 getForward(length:number, callback: AsyncCallback<string>): void
 
 获取光标前固定长度的文本。使用callback异步回调。
+
+使用场景：分析已输入文本内容以提供智能补全建议、检查文本格式、实现文本预测功能、实现文本语义分析等。
+
+使用后效果：成功时返回光标前指定长度的文本字符串，输入法应用可据此更新候选词或输入建议。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -3167,28 +3513,26 @@ getForward(length:number, callback: AsyncCallback<string>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800006 | input method controller error. Possible cause: create InputMethodController object failed. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let length: number = 1;
-4. inputClient.getForward(length, (err: BusinessError, text: string) => {
-5. if (err) {
-6. console.error(`Failed to getForward. Code is ${err.code}, message is ${err.message}`);
-7. return;
-8. }
-9. console.info('Succeeded in getting forward, text: ' + text);
-10. });
+let length: number = 1;
+inputClient.getForward(length, (err: BusinessError, text: string) => {
+  if (err) {
+    console.error(`Failed to getForward. Code is ${err.code}, message is ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in getting forward, text: ' + text);
+});
 ```
 
 ### getForward9+
-
-PhonePC/2in1TabletTVWearable
 
 getForward(length:number): Promise<string>
 
@@ -3214,30 +3558,32 @@ getForward(length:number): Promise<string>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800006 | input method controller error. Possible cause: create InputMethodController object failed. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let length: number = 1;
-4. inputClient.getForward(length).then((text: string) => {
-5. console.info('Succeeded in getting forward, text: ' + text);
-6. }).catch((err: BusinessError) => {
-7. console.error(`Failed to getForward. Code is ${err.code}, message is ${err.message}`);
-8. });
+let length: number = 1;
+inputClient.getForward(length).then((text: string) => {
+  console.info('Succeeded in getting forward, text: ' + text);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to getForward. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### getForwardSync10+
 
-PhonePC/2in1TabletTVWearable
-
 getForwardSync(length:number): string
 
 获取光标前固定长度的文本。
+
+**说明** 
+
+同步接口阻塞主线程，容易影响UI交互，需谨慎使用。建议优先使用对应的异步接口[getForward](js-apis-inputmethodengine.md#getforward9-1)。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -3259,21 +3605,19 @@ getForwardSync(length:number): string
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800006 | input method controller error. Possible cause: create InputMethodController object failed. |
 
 **示例：**
 
-```
-1. let length: number = 1;
-2. let text: string = inputClient.getForwardSync(length);
-3. console.info(`Succeeded in getting forward, text: ${text}`);
+```ts
+let length: number = 1;
+let text: string = inputClient.getForwardSync(length);
+console.info(`Succeeded in getting forward, text: ${text}`);
 ```
 
 ### getBackward9+
-
-PhonePC/2in1TabletTVWearable
 
 getBackward(length:number, callback: AsyncCallback<string>): void
 
@@ -3294,28 +3638,26 @@ getBackward(length:number, callback: AsyncCallback<string>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800006 | input method controller error. Possible cause: create InputMethodController object failed. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let length: number = 1;
-4. inputClient.getBackward(length, (err: BusinessError, text: string) => {
-5. if (err) {
-6. console.error(`Failed to getBackward. Code is ${err.code}, message is ${err.message}`);
-7. return;
-8. }
-9. console.info('Succeeded in getting backward, text: ' + text);
-10. });
+let length: number = 1;
+inputClient.getBackward(length, (err: BusinessError, text: string) => {
+  if (err) {
+    console.error(`Failed to getBackward. Code is ${err.code}, message is ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in getting backward, text: ' + text);
+});
 ```
 
 ### getBackward9+
-
-PhonePC/2in1TabletTVWearable
 
 getBackward(length:number): Promise<string>
 
@@ -3341,30 +3683,32 @@ getBackward(length:number): Promise<string>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800006 | input method controller error. Possible cause: create InputMethodController object failed. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let length: number = 1;
-4. inputClient.getBackward(length).then((text: string) => {
-5. console.info('Succeeded in getting backward, text: ' + text);
-6. }).catch((err: BusinessError) => {
-7. console.error(`Failed to getBackward. Code is ${err.code}, message is ${err.message}`);
-8. });
+let length: number = 1;
+inputClient.getBackward(length).then((text: string) => {
+  console.info('Succeeded in getting backward, text: ' + text);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to getBackward. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### getBackwardSync10+
 
-PhonePC/2in1TabletTVWearable
-
 getBackwardSync(length:number): string
 
 获取光标后固定长度的文本。
+
+**说明** 
+
+同步接口阻塞主线程，容易影响UI交互，需谨慎使用。建议优先使用对应的异步接口[getBackward](js-apis-inputmethodengine.md#getbackward9)。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -3386,25 +3730,27 @@ getBackwardSync(length:number): string
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800006 | input method controller error. Possible cause: create InputMethodController object failed. |
 
 **示例：**
 
-```
-1. let length: number = 1;
-2. let text: string = inputClient.getBackwardSync(length);
-3. console.info(`Succeeded in getting backward, text: ${text}`);
+```ts
+let length: number = 1;
+let text: string = inputClient.getBackwardSync(length);
+console.info(`Succeeded in getting backward, text: ${text}`);
 ```
 
 ### deleteForward9+
 
-PhonePC/2in1TabletTVWearable
-
 deleteForward(length:number, callback: AsyncCallback<boolean>): void
 
 删除光标前固定长度的文本。使用callback异步回调。
+
+使用场景：实现退格键功能、逐字删除输入、删除错误的输入、实现自定义删除逻辑等。
+
+使用后效果：成功时返回true，编辑框中光标前指定长度的文本被删除。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -3413,7 +3759,7 @@ deleteForward(length:number, callback: AsyncCallback<boolean>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | length | number | 是 | 文本长度。不能小于0。 |
-| callback | AsyncCallback<boolean> | 是 | 回调函数。当光标前固定长度的文本删除成功，err为undefined，data为true；否则为错误对象。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。当光标前固定长度的文本删除成功，err为undefined，data为true；当光标前固定长度的文本删除失败，err为undefined，data为false；否则为错误对象。 |
 
 **错误码：**
 
@@ -3421,32 +3767,30 @@ deleteForward(length:number, callback: AsyncCallback<boolean>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800002 | input method engine error. Possible causes: 1.input method panel not created. 2.the input method application does not subscribe to related events. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let length: number = 1;
-4. inputClient.deleteForward(length, (err: BusinessError, result: boolean) => {
-5. if (err) {
-6. console.error(`Failed to deleteForward. Code is ${err.code}, message is ${err.message}`);
-7. return;
-8. }
-9. if (result) {
-10. console.info('Succeeded in deleting forward.');
-11. } else {
-12. console.error(`Failed to deleteForward.`);
-13. }
-14. });
+let length: number = 1;
+inputClient.deleteForward(length, (err: BusinessError, result: boolean) => {
+  if (err) {
+    console.error(`Failed to deleteForward. Code is ${err.code}, message is ${err.message}`);
+    return;
+  }
+  if (result) {
+    console.info('Succeeded in deleting forward.');
+  } else {
+    console.error(`Failed to deleteForward.`);
+  }
+});
 ```
 
 ### deleteForward9+
-
-PhonePC/2in1TabletTVWearable
 
 deleteForward(length:number): Promise<boolean>
 
@@ -3464,7 +3808,7 @@ deleteForward(length:number): Promise<boolean>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<boolean> | Promise对象。返回true表示删除光标前固定长度的文本成功；返回false表示删除光标前固定长度的文本失败。 |
+| Promise<boolean> | Promise对象。resolve返回true表示删除光标前固定长度的文本成功；resolve返回false表示删除光标前固定长度的文本失败；reject时抛出错误对象，表示执行过程中发生错误。 |
 
 **错误码：**
 
@@ -3472,34 +3816,36 @@ deleteForward(length:number): Promise<boolean>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800002 | input method engine error. Possible causes: 1.input method panel not created. 2.the input method application does not subscribe to related events. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let length: number = 1;
-4. inputClient.deleteForward(length).then((result: boolean) => {
-5. if (result) {
-6. console.info('Succeeded in deleting forward.');
-7. } else {
-8. console.error('Failed to delete Forward.');
-9. }
-10. }).catch((err: BusinessError) => {
-11. console.error(`Failed to deleteForward. Code is ${err.code}, message is ${err.message}`);
-12. });
+let length: number = 1;
+inputClient.deleteForward(length).then((result: boolean) => {
+  if (result) {
+    console.info('Succeeded in deleting forward.');
+  } else {
+    console.error('Failed to delete Forward.');
+  }
+}).catch((err: BusinessError) => {
+  console.error(`Failed to deleteForward. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### deleteForwardSync10+
 
-PhonePC/2in1TabletTVWearable
-
 deleteForwardSync(length:number): void
 
 删除光标前固定长度的文本。
+
+**说明** 
+
+同步接口阻塞主线程，容易影响UI交互，需谨慎使用。建议优先使用对应的异步接口[deleteForward](js-apis-inputmethodengine.md#deleteforward9)。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -3515,24 +3861,26 @@ deleteForwardSync(length:number): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800002 | input method engine error. Possible causes: 1.input method panel not created. 2.the input method application does not subscribe to related events. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 
 **示例：**
 
-```
-1. let length: number = 1;
-2. inputClient.deleteForwardSync(length);
+```ts
+let length: number = 1;
+inputClient.deleteForwardSync(length);
 ```
 
 ### deleteBackward9+
 
-PhonePC/2in1TabletTVWearable
-
 deleteBackward(length:number, callback: AsyncCallback<boolean>): void
 
 删除光标后固定长度的文本。使用callback异步回调。
+
+使用场景：实现删除键功能、删除光标后的字符、快速修正输入、实现自定义删除逻辑等。
+
+使用后效果：成功时返回true，编辑框中光标后指定长度的文本被删除。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -3549,32 +3897,30 @@ deleteBackward(length:number, callback: AsyncCallback<boolean>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800002 | input method engine error. Possible causes: 1.input method panel not created. 2.the input method application does not subscribe to related events. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let length: number = 1;
-4. inputClient.deleteBackward(length, (err: BusinessError, result: boolean) => {
-5. if (err) {
-6. console.error(`Failed to deleteBackward. Code is ${err.code}, message is ${err.message}`);
-7. return;
-8. }
-9. if (result) {
-10. console.info('Succeeded in deleting backward.');
-11. } else {
-12. console.error(`Failed to deleteBackward.`);
-13. }
-14. });
+let length: number = 1;
+inputClient.deleteBackward(length, (err: BusinessError, result: boolean) => {
+  if (err) {
+    console.error(`Failed to deleteBackward. Code is ${err.code}, message is ${err.message}`);
+    return;
+  }
+  if (result) {
+    console.info('Succeeded in deleting backward.');
+  } else {
+    console.error(`Failed to deleteBackward.`);
+  }
+});
 ```
 
 ### deleteBackward9+
-
-PhonePC/2in1TabletTVWearable
 
 deleteBackward(length:number): Promise<boolean>
 
@@ -3592,7 +3938,7 @@ deleteBackward(length:number): Promise<boolean>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<boolean> | Promise对象。返回true表示删除光标后固定长度的文本成功；返回false表示删除光标后固定长度的文本失败。 |
+| Promise<boolean> | Promise对象。resolve返回true表示删除光标后固定长度的文本成功；resolve返回false表示删除光标后固定长度的文本失败；reject时抛出错误对象，表示执行过程中发生错误。 |
 
 **错误码：**
 
@@ -3600,34 +3946,36 @@ deleteBackward(length:number): Promise<boolean>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800002 | input method engine error. Possible causes: 1.input method panel not created. 2.the input method application does not subscribe to related events. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let length: number = 1;
-4. inputClient.deleteBackward(length).then((result: boolean) => {
-5. if (result) {
-6. console.info('Succeeded in deleting backward.');
-7. } else {
-8. console.error('Failed to deleteBackward.');
-9. }
-10. }).catch((err: BusinessError) => {
-11. console.error(`Failed to deleteBackward. Code is ${err.code}, message is ${err.message}`);
-12. });
+let length: number = 1;
+inputClient.deleteBackward(length).then((result: boolean) => {
+  if (result) {
+    console.info('Succeeded in deleting backward.');
+  } else {
+    console.error('Failed to deleteBackward.');
+  }
+}).catch((err: BusinessError) => {
+  console.error(`Failed to deleteBackward. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### deleteBackwardSync10+
 
-PhonePC/2in1TabletTVWearable
-
 deleteBackwardSync(length:number): void
 
 删除光标后固定长度的文本。
+
+**说明** 
+
+同步接口阻塞主线程，容易影响UI交互，需谨慎使用。建议优先使用对应的异步接口[deleteBackward](js-apis-inputmethodengine.md#deletebackward9-1)。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -3643,24 +3991,26 @@ deleteBackwardSync(length:number): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800002 | input method engine error. Possible causes: 1.input method panel not created. 2.the input method application does not subscribe to related events. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 
 **示例：**
 
-```
-1. let length: number = 1;
-2. inputClient.deleteBackwardSync(length);
+```ts
+let length: number = 1;
+inputClient.deleteBackwardSync(length);
 ```
 
 ### insertText9+
 
-PhonePC/2in1TabletTVWearable
-
 insertText(text:string, callback: AsyncCallback<boolean>): void
 
 插入文本。使用callback异步回调。
+
+使用场景：插入候选词、插入特殊符号、实现文本自动补全、快速插入常用短语等。
+
+使用后效果：成功时返回true，文本已插入到编辑框光标位置。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -3677,31 +4027,29 @@ insertText(text:string, callback: AsyncCallback<boolean>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800002 | input method engine error. Possible causes: 1.input method panel not created. 2.the input method application does not subscribe to related events. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. inputClient.insertText('test', (err: BusinessError, result: boolean) => {
-5. if (err) {
-6. console.error(`Failed to insertText. Code is ${err.code}, message is ${err.message}`);
-7. return;
-8. }
-9. if (result) {
-10. console.info('Succeeded in inserting text.');
-11. } else {
-12. console.error('Failed to insertText.');
-13. }
-14. });
+inputClient.insertText('test', (err: BusinessError, result: boolean) => {
+  if (err) {
+    console.error(`Failed to insertText. Code is ${err.code}, message is ${err.message}`);
+    return;
+  }
+  if (result) {
+    console.info('Succeeded in inserting text.');
+  } else {
+    console.error('Failed to insertText.');
+  }
+});
 ```
 
 ### insertText9+
-
-PhonePC/2in1TabletTVWearable
 
 insertText(text:string): Promise<boolean>
 
@@ -3719,7 +4067,7 @@ insertText(text:string): Promise<boolean>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<boolean> | Promise对象。返回true表示插入文本成功；返回false表示插入文本失败。 |
+| Promise<boolean> | Promise对象。resolve返回true表示插入文本成功；resolve返回false表示插入文本失败；reject时抛出错误对象，表示执行过程中发生错误。 |
 
 **错误码：**
 
@@ -3727,33 +4075,35 @@ insertText(text:string): Promise<boolean>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800002 | input method engine error. Possible causes: 1.input method panel not created. 2.the input method application does not subscribe to related events. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputClient.insertText('test').then((result: boolean) => {
-4. if (result) {
-5. console.info('Succeeded in inserting text.');
-6. } else {
-7. console.error('Failed to insertText.');
-8. }
-9. }).catch((err: BusinessError) => {
-10. console.error(`Failed to insertText. Code is ${err.code}, message is ${err.message}`);
-11. });
+inputClient.insertText('test').then((result: boolean) => {
+  if (result) {
+    console.info('Succeeded in inserting text.');
+  } else {
+    console.error('Failed to insertText.');
+  }
+}).catch((err: BusinessError) => {
+  console.error(`Failed to insertText. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### insertTextSync10+
 
-PhonePC/2in1TabletTVWearable
-
 insertTextSync(text: string): void
 
 插入文本。
+
+**说明** 
+
+同步接口阻塞主线程，容易影响UI交互，需谨慎使用。建议优先使用对应的异步接口[insertText](js-apis-inputmethodengine.md#inserttext9-1)。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -3769,23 +4119,25 @@ insertTextSync(text: string): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800002 | input method engine error. Possible causes: 1.input method panel not created. 2.the input method application does not subscribe to related events. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 
 **示例：**
 
-```
-1. inputClient.insertTextSync('test');
+```ts
+inputClient.insertTextSync('test');
 ```
 
 ### getEditorAttribute9+
 
-PhonePC/2in1TabletTVWearable
-
 getEditorAttribute(callback: AsyncCallback<EditorAttribute>): void
 
 获取编辑框属性值。使用callback异步回调。
+
+使用场景：根据编辑框类型调整输入法界面、根据编辑框配置提供不同的输入建议、实现特定输入逻辑、适配不同类型的输入框等。
+
+使用后效果：返回编辑框属性信息（包括inputPattern输入类型和enterKeyType回车键类型），输入法应用据此调整键盘布局。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -3802,25 +4154,22 @@ getEditorAttribute(callback: AsyncCallback<EditorAttribute>): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
+| **示例：** |  |
 
-**示例：**
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-
-3. inputClient.getEditorAttribute((err: BusinessError, editorAttribute: inputMethodEngine.EditorAttribute) => {
-4. if (err) {
-5. console.error(`Failed to getEditorAttribute. Code is ${err.code}, message is ${err.message}`);
-6. return;
-7. }
-8. console.info(`editorAttribute.inputPattern:  ${editorAttribute.inputPattern}`);
-9. console.info(`editorAttribute.enterKeyType:  ${editorAttribute.enterKeyType}`);
-10. });
+inputClient.getEditorAttribute((err: BusinessError, editorAttribute: inputMethodEngine.EditorAttribute) => {
+  if (err) {
+    console.error(`Failed to getEditorAttribute. Code is ${err.code}, message is ${err.message}`);
+    return;
+  }
+  console.info(`editorAttribute.inputPattern:  ${editorAttribute.inputPattern}`);
+  console.info(`editorAttribute.enterKeyType:  ${editorAttribute.enterKeyType}`);
+});
 ```
 
 ### getEditorAttribute9+
-
-PhonePC/2in1TabletTVWearable
 
 getEditorAttribute(): Promise<EditorAttribute>
 
@@ -3844,24 +4193,26 @@ getEditorAttribute(): Promise<EditorAttribute>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputClient.getEditorAttribute().then((editorAttribute: inputMethodEngine.EditorAttribute) => {
-4. console.info(`editorAttribute.inputPattern:  ${editorAttribute.inputPattern}`);
-5. console.info(`editorAttribute.enterKeyType:  ${editorAttribute.enterKeyType}`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`Failed to getEditorAttribute. Code is ${err.code}, message is ${err.message}`);
-8. });
+inputClient.getEditorAttribute().then((editorAttribute: inputMethodEngine.EditorAttribute) => {
+  console.info(`editorAttribute.inputPattern:  ${editorAttribute.inputPattern}`);
+  console.info(`editorAttribute.enterKeyType:  ${editorAttribute.enterKeyType}`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to getEditorAttribute. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### getEditorAttributeSync10+
 
-PhonePC/2in1TabletTVWearable
-
 getEditorAttributeSync(): EditorAttribute
 
 获取编辑框属性值。
+
+**说明** 
+
+同步接口阻塞主线程，容易影响UI交互，需谨慎使用。建议优先使用对应的异步接口[getEditorAttribute](js-apis-inputmethodengine.md#geteditorattribute9)。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -3881,19 +4232,21 @@ getEditorAttributeSync(): EditorAttribute
 
 **示例：**
 
-```
-1. let editorAttribute: inputMethodEngine.EditorAttribute = inputClient.getEditorAttributeSync();
-2. console.info(`editorAttribute.inputPattern:  ${editorAttribute.inputPattern}`);
-3. console.info(`editorAttribute.enterKeyType:  ${editorAttribute.enterKeyType}`);
+```ts
+let editorAttribute: inputMethodEngine.EditorAttribute = inputClient.getEditorAttributeSync();
+console.info(`editorAttribute.inputPattern:  ${editorAttribute.inputPattern}`);
+console.info(`editorAttribute.enterKeyType:  ${editorAttribute.enterKeyType}`);
 ```
 
 ### moveCursor9+
 
-PhonePC/2in1TabletTVWearable
-
 moveCursor(direction: number, callback: AsyncCallback<void>): void
 
 移动光标。使用callback异步回调。
+
+使用场景：实现光标移动到特定位置、实现上下左右移动光标功能、实现快速定位、实现自定义光标控制等。
+
+使用后效果：成功时编辑框中的光标按指定方向移动一步。direction取值参见[光标常量](js-apis-inputmethodengine.md#常量)，1为上移，2为下移，3为左移，4为右移。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -3910,26 +4263,24 @@ moveCursor(direction: number, callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputClient.moveCursor(inputMethodEngine.Direction.CURSOR_UP, (err: BusinessError) => {
-4. if (err) {
-5. console.error(`Failed to moveCursor. Code is ${err.code}, message is ${err.message}`);
-6. return;
-7. }
-8. console.info('Succeeded in moving cursor.');
-9. });
+inputClient.moveCursor(inputMethodEngine.Direction.CURSOR_UP, (err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to moveCursor. Code is ${err.code}, message is ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in moving cursor.');
+});
 ```
 
 ### moveCursor9+
-
-PhonePC/2in1TabletTVWearable
 
 moveCursor(direction: number): Promise<void>
 
@@ -3947,7 +4298,7 @@ moveCursor(direction: number): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -3955,28 +4306,30 @@ moveCursor(direction: number): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputClient.moveCursor(inputMethodEngine.Direction.CURSOR_UP).then(() => {
-4. console.info('Succeeded in moving cursor.');
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to moveCursor. Code is ${err.code}, message is ${err.message}`);
-7. });
+inputClient.moveCursor(inputMethodEngine.Direction.CURSOR_UP).then(() => {
+  console.info('Succeeded in moving cursor.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to moveCursor. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### moveCursorSync10+
 
-PhonePC/2in1TabletTVWearable
-
 moveCursorSync(direction: number): void
 
 移动光标。
+
+**说明** 
+
+同步接口阻塞主线程，容易影响UI交互，需谨慎使用。建议优先使用对应的异步接口[moveCursor](js-apis-inputmethodengine.md#movecursor9)。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -3992,18 +4345,16 @@ moveCursorSync(direction: number): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 
 **示例：**
 
-```
-1. inputClient.moveCursorSync(inputMethodEngine.Direction.CURSOR_UP);
+```ts
+inputClient.moveCursorSync(inputMethodEngine.Direction.CURSOR_UP);
 ```
 
 ### selectByRange10+
-
-PhonePC/2in1TabletTVWearable
 
 selectByRange(range: Range, callback: AsyncCallback<void>): void
 
@@ -4024,27 +4375,27 @@ selectByRange(range: Range, callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let range: inputMethodEngine.Range = { start: 0, end: 1 };
-4. inputClient.selectByRange(range, (err: BusinessError) => {
-5. if (err) {
-6. console.error(`Failed to selectByRange. Code is ${err.code}, message is ${err.message}`);
-7. return;
-8. }
-9. console.info('Succeeded in selecting by range.');
-10. });
+// 设置预上屏文本的替换范围为第一个字符
+// 设置选中文本的起始和结束位置
+let range: inputMethodEngine.Range = { start: 0, end: 1 };
+inputClient.selectByRange(range, (err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to selectByRange. Code is ${err.code}, message is ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in selecting by range.');
+});
 ```
 
 ### selectByRange10+
-
-PhonePC/2in1TabletTVWearable
 
 selectByRange(range: Range): Promise<void>
 
@@ -4062,7 +4413,7 @@ selectByRange(range: Range): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -4070,29 +4421,33 @@ selectByRange(range: Range): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let range: inputMethodEngine.Range = { start: 0, end: 1 };
-4. inputClient.selectByRange(range).then(() => {
-5. console.info('Succeeded in selecting by range.');
-6. }).catch((err: BusinessError) => {
-7. console.error(`Failed to selectByRange. Code is ${err.code}, message is ${err.message}`);
-8. });
+// 设置预上屏文本的替换范围为第一个字符
+// 设置选中文本的起始和结束位置
+let range: inputMethodEngine.Range = { start: 0, end: 1 };
+inputClient.selectByRange(range).then(() => {
+  console.info('Succeeded in selecting by range.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to selectByRange. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### selectByRangeSync10+
 
-PhonePC/2in1TabletTVWearable
-
 selectByRangeSync(range: Range): void
 
 根据索引范围选中文本。
+
+**说明** 
+
+同步接口阻塞主线程，容易影响UI交互，需谨慎使用。建议优先使用对应的异步接口[selectByRange](js-apis-inputmethodengine.md#selectbyrange10)。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -4108,19 +4463,19 @@ selectByRangeSync(range: Range): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 
 **示例：**
 
-```
-1. let range: inputMethodEngine.Range = { start: 0, end: 1 };
-2. inputClient.selectByRangeSync(range);
+```ts
+// 设置预上屏文本的替换范围为第一个字符
+// 设置选中文本的起始和结束位置
+let range: inputMethodEngine.Range = { start: 0, end: 1 };
+inputClient.selectByRangeSync(range);
 ```
 
 ### selectByMovement10+
-
-PhonePC/2in1TabletTVWearable
 
 selectByMovement(movement: Movement, callback: AsyncCallback<void>): void
 
@@ -4141,27 +4496,26 @@ selectByMovement(movement: Movement, callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let movement: inputMethodEngine.Movement = { direction: 1 };
-4. inputClient.selectByMovement(movement, (err: BusinessError) => {
-5. if (err) {
-6. console.error(`Failed to selectByMovement. Code is ${err.code}, message is ${err.message}`);
-7. return;
-8. }
-9. console.info('Succeeded in selecting by movement.');
-10. });
+// 设置选中时光标向上移动
+let movement: inputMethodEngine.Movement = { direction: 1 };
+inputClient.selectByMovement(movement, (err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to selectByMovement. Code is ${err.code}, message is ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in selecting by movement.');
+});
 ```
 
 ### selectByMovement10+
-
-PhonePC/2in1TabletTVWearable
 
 selectByMovement(movement: Movement): Promise<void>
 
@@ -4179,7 +4533,7 @@ selectByMovement(movement: Movement): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -4187,29 +4541,32 @@ selectByMovement(movement: Movement): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let movement: inputMethodEngine.Movement = { direction: 1 };
-4. inputClient.selectByMovement(movement).then(() => {
-5. console.info('Succeeded in selecting by movement.');
-6. }).catch((err: BusinessError) => {
-7. console.error(`Failed to selectByMovement. Code is ${err.code}, message is ${err.message}`);
-8. });
+// 设置选中时光标向上移动
+let movement: inputMethodEngine.Movement = { direction: 1 };
+inputClient.selectByMovement(movement).then(() => {
+  console.info('Succeeded in selecting by movement.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to selectByMovement. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### selectByMovementSync10+
 
-PhonePC/2in1TabletTVWearable
-
 selectByMovementSync(movement: Movement): void
 
 根据光标移动方向选中文本。
+
+**说明** 
+
+同步接口阻塞主线程，容易影响UI交互，需谨慎使用。建议优先使用对应的异步接口[selectByMovement](js-apis-inputmethodengine.md#selectbymovement10-1)。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -4225,19 +4582,18 @@ selectByMovementSync(movement: Movement): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 
 **示例：**
 
-```
-1. let movement: inputMethodEngine.Movement = { direction: 1 };
-2. inputClient.selectByMovementSync(movement);
+```ts
+// 设置选中时光标向上移动
+let movement: inputMethodEngine.Movement = { direction: 1 };
+inputClient.selectByMovementSync(movement);
 ```
 
 ### getTextIndexAtCursor10+
-
-PhonePC/2in1TabletTVWearable
 
 getTextIndexAtCursor(callback: AsyncCallback<number>): void
 
@@ -4249,7 +4605,7 @@ getTextIndexAtCursor(callback: AsyncCallback<number>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<number> | 是 | 回调函数。当文本索引获取成功，err为undefined，否则为错误对象。 |
+| callback | AsyncCallback<number> | 是 | 回调函数。当文本索引获取成功，err为undefined，index为光标所在处的文本索引；否则err为错误对象，index为undefined。 |
 
 **错误码：**
 
@@ -4262,21 +4618,19 @@ getTextIndexAtCursor(callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputClient.getTextIndexAtCursor((err: BusinessError, index: number) => {
-4. if (err) {
-5. console.error(`Failed to getTextIndexAtCursor. Code is ${err.code}, message is ${err.message}`);
-6. return;
-7. }
-8. console.info('Succeeded in getTextIndexAtCursor: ' + index);
-9. });
+inputClient.getTextIndexAtCursor((err: BusinessError, index: number) => {
+  if (err) {
+    console.error(`Failed to getTextIndexAtCursor. Code is ${err.code}, message is ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in getTextIndexAtCursor: ' + index);
+});
 ```
 
 ### getTextIndexAtCursor10+
-
-PhonePC/2in1TabletTVWearable
 
 getTextIndexAtCursor(): Promise<number>
 
@@ -4301,23 +4655,25 @@ getTextIndexAtCursor(): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputClient.getTextIndexAtCursor().then((index: number) => {
-4. console.info('Succeeded in getTextIndexAtCursor: ' + index);
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to getTextIndexAtCursor. Code is ${err.code}, message is ${err.message}`);
-7. });
+inputClient.getTextIndexAtCursor().then((index: number) => {
+  console.info('Succeeded in getTextIndexAtCursor: ' + index);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to getTextIndexAtCursor. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### getTextIndexAtCursorSync10+
 
-PhonePC/2in1TabletTVWearable
-
 getTextIndexAtCursorSync(): number
 
 获取光标所在处的文本索引。
+
+**说明** 
+
+同步接口阻塞主线程，容易影响UI交互，需谨慎使用。建议优先使用对应的异步接口[getTextIndexAtCursor](js-apis-inputmethodengine.md#gettextindexatcursor10)。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -4338,20 +4694,20 @@ getTextIndexAtCursorSync(): number
 
 **示例：**
 
-```
-1. let index: number = inputClient.getTextIndexAtCursorSync();
-2. console.info(`Succeeded in getTextIndexAtCursorSync, index: ${index}`);
+```ts
+let index: number = inputClient.getTextIndexAtCursorSync();
+console.info(`Succeeded in getTextIndexAtCursorSync, index: ${index}`);
 ```
 
 ### sendExtendAction10+
-
-PhonePC/2in1TabletTVWearable
 
 sendExtendAction(action: ExtendAction, callback: AsyncCallback<void>): void
 
 发送扩展编辑操作。使用callback异步回调。
 
-说明
+使用场景：输入法应用需要触发编辑框的扩展编辑功能。例如：用户点击键盘上的剪切按钮时发送CUT操作；用户点击复制按钮时发送COPY操作；用户点击粘贴按钮时发送PASTE操作；用户点击全选按钮时发送SELECT\_ALL操作；自定义工具栏中集成编辑快捷操作。
+
+**说明** 
 
 输入法应用调用该接口向编辑框发送扩展编辑操作，编辑框监听相应事件[on('handleExtendAction')](js-apis-inputmethod.md#onhandleextendaction10)，从而进一步做出处理。
 
@@ -4372,33 +4728,31 @@ sendExtendAction(action: ExtendAction, callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800006 | input method controller error. Possible cause: create InputMethodController object failed. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputClient.sendExtendAction(inputMethodEngine.ExtendAction.COPY, (err: BusinessError) => {
-4. if (err) {
-5. console.error(`Failed to sendExtendAction. Code is ${err.code}, message is ${err.message}`);
-6. return;
-7. }
-8. console.info('Succeeded in sending extend action.');
-9. });
+inputClient.sendExtendAction(inputMethodEngine.ExtendAction.COPY, (err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to sendExtendAction. Code is ${err.code}, message is ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in sending extend action.');
+});
 ```
 
 ### sendExtendAction10+
-
-PhonePC/2in1TabletTVWearable
 
 sendExtendAction(action: ExtendAction): Promise<void>
 
 发送扩展编辑操作。使用promise异步回调。
 
-说明
+**说明** 
 
 输入法应用调用该接口向编辑框发送扩展编辑操作，编辑框监听相应事件[on('handleExtendAction')](js-apis-inputmethod.md#onhandleextendaction10)，从而进一步做出处理。
 
@@ -4416,7 +4770,7 @@ sendExtendAction(action: ExtendAction): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -4424,34 +4778,33 @@ sendExtendAction(action: ExtendAction): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800006 | input method controller error. Possible cause: create InputMethodController object failed. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputClient.sendExtendAction(inputMethodEngine.ExtendAction.COPY).then(() => {
-4. console.info('Succeeded in sending extend action.');
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to sendExtendAction. Code is ${err.code}, message is ${err.message}`);
-7. });
+inputClient.sendExtendAction(inputMethodEngine.ExtendAction.COPY).then(() => {
+  console.info('Succeeded in sending extend action.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to sendExtendAction. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### sendPrivateCommand12+
-
-PhonePC/2in1TabletTVWearable
 
 sendPrivateCommand(commandData: Record<string, CommandDataType>): Promise<void>
 
 发送私有数据至需要与输入法应用通信的系统其他部分。使用promise异步回调。
 
-说明
+**说明** 
 
 * 私有数据通道是系统预置输入法应用与系统特定组件（如文本框、桌面应用等）的通信机制，常用于设备级厂商在特定设备上实现自定义的输入法功能。
 * 私有数据规格限制：总大小32KB，数量限制5条。
+* 私有数据默认发送给文本框，如果需要发送给桌面应用，请在私有数据中携带一条{'sys\_cmd':1}数据。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -4465,7 +4818,7 @@ sendPrivateCommand(commandData: Record<string, CommandDataType>): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -4473,39 +4826,38 @@ sendPrivateCommand(commandData: Record<string, CommandDataType>): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800010 | not the preconfigured default input method. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputMethodEngine.getInputMethodAbility().on('inputStart', (kbController, textInputClient) => {
-4. let record: Record<string, inputMethodEngine.CommandDataType> = {
-5. "valueString1": "abcdefg",
-6. "valueString2": true,
-7. "valueString3": 500,
-8. }
-9. textInputClient.sendPrivateCommand(record).then(() => {
-10. }).catch((err: BusinessError) => {
-11. if (err !== undefined) {
-12. console.error(`sendPrivateCommand catch error: ${err.code} ${err.message}`);
-13. }
-14. });
-15. })
+inputMethodEngine.getInputMethodAbility().on('inputStart', (kbController, textInputClient) => {
+  let record: Record<string, inputMethodEngine.CommandDataType> = {
+    "valueString1": "abcdefg",
+    "valueString2": true,
+    "valueString3": 500
+  }
+textInputClient.sendPrivateCommand(record).then(() => {
+  // do something
+}).catch((err: BusinessError) => {
+    if (err) {
+      console.error(`sendPrivateCommand catch error: ${err.code}, message: ${err.message}`);
+    }
+  });
+})
 ```
 
 ### getCallingWindowInfo12+
-
-PhonePC/2in1TabletTVWearable
 
 getCallingWindowInfo(): Promise<WindowInfo>
 
 获取当前拉起输入法的输入框所在应用窗口信息。使用promise异步回调。
 
-说明
+**说明** 
 
 本接口仅适用于适配使用[Panel](js-apis-inputmethodengine.md#panel10)作为软键盘窗口的输入法应用。
 
@@ -4529,20 +4881,18 @@ getCallingWindowInfo(): Promise<WindowInfo>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputClient.getCallingWindowInfo().then((windowInfo: inputMethodEngine.WindowInfo) => {
-4. console.info(`windowInfo.rect: ${windowInfo.rect.left}, ${windowInfo.rect.top}, ${windowInfo.rect.width}, ${windowInfo.rect.height}`);
-5. console.info(`windowInfo.status: ${windowInfo.status}`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`Failed to getCallingWindowInfo. Code is ${err.code}, message is ${err.message}`);
-8. });
+inputClient.getCallingWindowInfo().then((windowInfo: inputMethodEngine.WindowInfo) => {
+  console.info(`windowInfo.rect: ${windowInfo.rect.left}, ${windowInfo.rect.top}, ${windowInfo.rect.width}, ${windowInfo.rect.height}`);
+  console.info(`windowInfo.status: ${windowInfo.status}`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to getCallingWindowInfo. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### setPreviewText12+
-
-PhonePC/2in1TabletTVWearable
 
 setPreviewText(text: string, range: Range): Promise<void>
 
@@ -4554,14 +4904,14 @@ setPreviewText(text: string, range: Range): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| text | string | 是 | 将被预上屏的文本。 |
-| range | [Range](js-apis-inputmethodengine.md#range10) | 是 | 目标替换的文本范围。  - 当值为{ start: -1, end: -1 }时，默认将参数text替换当前预上屏区域全部文本。  - 当start等于end，默认将参数text插入start对应的光标位置。  - 当start不等于end，将参数text替换range对应区域的文本。  - 当start与end为其他含有负数值的组合，按照参数错误返回。  - 当输入框已有预上屏文本，参数range不得超过预上屏文本范围，否则按照参数错误返回。  - 当输入框无预上屏文本，参数range不得超过输入框文本范围，否则按照参数错误返回。 |
+| text | string | 是 | 预上屏的文本。 |
+| range | [Range](js-apis-inputmethodengine.md#range10) | 是 | 替换的文本范围。  - 当值为{ start: -1, end: -1 }时，默认将参数text替换当前预上屏区域全部文本。  - 当start等于end，默认将参数text插入start对应的光标位置。  - 当start不等于end，将参数text替换range对应区域的文本。  - 当start与end为其他含有负数值的组合，按照参数错误返回。  - 当输入框已有预上屏文本，参数range不得超过预上屏文本范围，否则按照参数错误返回。  - 当输入框无预上屏文本，参数range不得超过输入框文本范围，否则按照参数错误返回。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -4569,30 +4919,34 @@ setPreviewText(text: string, range: Range): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800011 | text preview not supported. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let range: inputMethodEngine.Range = { start: 0, end: 1 };
-4. inputClient.setPreviewText('test', range).then(() => {
-5. console.info('Succeeded in setting preview text.');
-6. }).catch((err: BusinessError) => {
-7. console.error(`Failed to setPreviewText. Code is ${err.code}, message is ${err.message}`);
-8. });
+// 设置预上屏文本的替换范围为第一个字符
+// 设置选中文本的起始和结束位置
+let range: inputMethodEngine.Range = { start: 0, end: 1 };
+inputClient.setPreviewText('test', range).then(() => {
+  console.info('Succeeded in setting preview text.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to setPreviewText. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### setPreviewTextSync12+
 
-PhonePC/2in1TabletTVWearable
-
 setPreviewTextSync(text: string, range: Range): void
 
 设置预上屏文本。
+
+**说明** 
+
+同步接口阻塞主线程，容易影响UI交互，需谨慎使用。建议优先使用对应的异步接口[setPreviewText](js-apis-inputmethodengine.md#setpreviewtext12)。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -4600,8 +4954,8 @@ setPreviewTextSync(text: string, range: Range): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| text | string | 是 | 将被预上屏的文本。 |
-| range | [Range](js-apis-inputmethodengine.md#range10) | 是 | 目标替换的文本范围。  - 当值为{ start: -1, end: -1 }时，默认将参数text替换当前预上屏区域全部文本。  - 当start等于end，默认将参数text插入start对应的光标位置。  - 当start不等于end，将参数text替换range对应区域的文本。  - 当start与end为其他含有负数值的组合，按照参数错误返回。  - 当输入框已有预上屏文本，参数range不得超过预上屏文本范围，否则按照参数错误返回。  - 当输入框无预上屏文本，参数range不得超过输入框文本范围，否则按照参数错误返回。 |
+| text | string | 是 | 预上屏的文本。 |
+| range | [Range](js-apis-inputmethodengine.md#range10) | 是 | 替换的文本范围。  - 当值为{ start: -1, end: -1 }时，默认将参数text替换当前预上屏区域全部文本。  - 当start等于end，默认将参数text插入start对应的光标位置。  - 当start不等于end，将参数text替换range对应区域的文本。  - 当start与end为其他含有负数值的组合，按照参数错误返回。  - 当输入框已有预上屏文本，参数range不得超过预上屏文本范围，否则按照参数错误返回。  - 当输入框无预上屏文本，参数range不得超过输入框文本范围，否则按照参数错误返回。 |
 
 **错误码：**
 
@@ -4609,26 +4963,26 @@ setPreviewTextSync(text: string, range: Range): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800011 | text preview not supported. |
 
 **示例：**
 
-```
-1. let range: inputMethodEngine.Range = { start: 0, end: 1 };
-2. inputClient.setPreviewTextSync('test', range);
+```ts
+// 设置预上屏文本的替换范围为第一个字符
+// 设置选中文本的起始和结束位置
+let range: inputMethodEngine.Range = { start: 0, end: 1 };
+inputClient.setPreviewTextSync('test', range);
 ```
 
 ### finishTextPreview12+
-
-PhonePC/2in1TabletTVWearable
 
 finishTextPreview(): Promise<void>
 
 结束预上屏。使用promise异步回调。
 
-说明
+**说明** 
 
 若当前输入框已有预上屏状态文本，调用此接口后，预上屏内容将被系统正式上屏。
 
@@ -4638,7 +4992,7 @@ finishTextPreview(): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -4651,25 +5005,25 @@ finishTextPreview(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. inputClient.finishTextPreview().then(() => {
-4. console.info('Succeeded in finishing text preview.');
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to finishTextPreview. Code is ${err.code}, message is ${err.message}`);
-7. });
+inputClient.finishTextPreview().then(() => {
+  console.info('Succeeded in finishing text preview.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to finishTextPreview. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### finishTextPreviewSync12+
-
-PhonePC/2in1TabletTVWearable
 
 finishTextPreviewSync(): void
 
 结束预上屏。
 
-说明
+**说明** 
+
+同步接口阻塞主线程，容易影响UI交互，需谨慎使用。建议优先使用对应的异步接口[finishTextPreview](js-apis-inputmethodengine.md#finishtextpreview12)。
 
 若当前输入框已有预上屏状态文本，调用此接口后，预上屏内容将被系统正式上屏。
 
@@ -4686,19 +5040,17 @@ finishTextPreviewSync(): void
 
 **示例：**
 
-```
-1. inputClient.finishTextPreviewSync();
+```ts
+inputClient.finishTextPreviewSync();
 ```
 
 ### sendMessage15+
-
-PhonePC/2in1TabletTVWearable
 
 sendMessage(msgId: string, msgParam?: ArrayBuffer): Promise<void>
 
 发送自定义通信至已绑定当前输入法应用的编辑框应用。使用Promise异步回调。
 
-说明
+**说明** 
 
 该接口需要编辑框与输入法绑定并进入编辑状态，且输入法应用处于完整体验模式时才能调用。
 
@@ -4710,14 +5062,14 @@ msgId最大限制256B，msgParam最大限制128KB。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| msgId | string | 是 | 需要发送至已绑定当前输入法应用的编辑框应用的自定义数据的标识符。 |
-| msgParam | ArrayBuffer | 否 | 需要发送至已绑定当前输入法应用的编辑框应用的自定义数据的消息体。 |
+| msgId | string | 是 | 需要发送至已绑定当前输入法应用的编辑框应用的自定义数据的标识符。最大长度256字节。超出范围时返回错误码401。 |
+| msgParam | ArrayBuffer | 否 | 需要发送至已绑定当前输入法应用的编辑框应用的自定义数据的消息体。最大大小128KB。超出范围时返回错误码401。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -4725,7 +5077,7 @@ msgId最大限制256B，msgParam最大限制128KB。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Incorrect parameter types. 2. Incorrect parameter length. |
+| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. 2. Incorrect parameter length. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800009 | input method client detached. |
 | 12800014 | the input method is in basic mode. |
@@ -4734,27 +5086,25 @@ msgId最大限制256B，msgParam最大限制128KB。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let msgId: string = "testMsgId";
-4. let msgParam: ArrayBuffer = new ArrayBuffer(128);
-5. inputClient.sendMessage(msgId, msgParam).then(() => {
-6. console.info('Succeeded send message.');
-7. }).catch((err: BusinessError) => {
-8. console.error(`Failed to send message. Code is ${err.code}, message is ${err.message}`);
-9. });
+let msgId: string = "testMsgId";
+let msgParam: ArrayBuffer = new ArrayBuffer(128);
+inputClient.sendMessage(msgId, msgParam).then(() => {
+  console.info('Succeeded send message.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to send message. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### recvMessage15+
 
-PhonePC/2in1TabletTVWearable
-
 recvMessage(msgHandler?: MessageHandler): void;
 
-注册或取消注册Messagehandler。
+注册或取消注册MessageHandler。
 
-说明
+**说明** 
 
 [MessageHandler](js-apis-inputmethodengine.md#messagehandler15)对象全局唯一，多次注册仅保留最后一次注册的对象及有效性，并触发上一个已注册对象的[onTerminated](js-apis-inputmethodengine.md#onterminated15)回调函数。
 
@@ -4774,31 +5124,29 @@ recvMessage(msgHandler?: MessageHandler): void;
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. |
 
 **示例：**
 
-```
-1. inputMethodEngine.getInputMethodAbility()
-2. .on('inputStart',
-3. (kbController: inputMethodEngine.KeyboardController, client: inputMethodEngine.InputClient) => {
-4. let keyboardController: inputMethodEngine.KeyboardController = kbController;
-5. let inputClient: inputMethodEngine.InputClient = client;
-6. let messageHandler: inputMethodEngine.MessageHandler = {
-7. onTerminated(): void {
-8. console.info('OnTerminated.');
-9. },
-10. onMessage(msgId: string, msgParam?: ArrayBuffer): void {
-11. console.info('recv message.');
-12. }
-13. }
-14. inputClient.recvMessage(messageHandler);
-15. });
+```ts
+inputMethodEngine.getInputMethodAbility()
+  .on('inputStart',
+    (kbController: inputMethodEngine.KeyboardController, client: inputMethodEngine.InputClient) => {
+      // 创建消息处理器，用于接收编辑框应用发送的自定义通信数据
+      let messageHandler: inputMethodEngine.MessageHandler = {
+        onTerminated(): void {
+          console.info('OnTerminated.');
+        },
+        onMessage(msgId: string, msgParam?: ArrayBuffer): void {
+          console.info('recv message.');
+        }
+      }
+      // 注册消息处理器
+      client.recvMessage(messageHandler);
+    });
 ```
 
 ### getAttachOptions19+
-
-PhonePC/2in1TabletTVWearable
 
 getAttachOptions(): AttachOptions
 
@@ -4812,20 +5160,26 @@ getAttachOptions(): AttachOptions
 | --- | --- |
 | [AttachOptions](js-apis-inputmethodengine.md#attachoptions19) | 返回绑定输入法时的附加选项内容。 |
 
-注意
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码说明文档](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported.  适用版本：19-19 |
+
+**注意** 
 
 从API version 20 开始，错误码801 Capability not supported.被移除。
 
 **示例：**
 
-```
-1. let attachOptions: inputMethodEngine.AttachOptions = inputClient.getAttachOptions();
-2. console.info(`Succeeded in getting AttachOptions, AttachOptions is ${attachOptions}`);
+```ts
+let attachOptions: inputMethodEngine.AttachOptions = inputClient.getAttachOptions();
+console.info(`Succeeded in getting AttachOptions, AttachOptions is ${attachOptions}`);
 ```
 
 ### on('attachOptionsDidChange')19+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'attachOptionsDidChange', callback: Callback<AttachOptions>): void
 
@@ -4840,27 +5194,36 @@ on(type: 'attachOptionsDidChange', callback: Callback<AttachOptions>): void
 | type | string | 是 | 绑定输入法时的附加选项变更事件，固定取值为'attachOptionsDidChange'。 |
 | callback | Callback<[AttachOptions](js-apis-inputmethodengine.md#attachoptions19)> | 是 | 回调函数，返回绑定输入法时的附加选项。 |
 
-注意
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码说明文档](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. 适用版本：19-19。 |
+
+**注意** 
 
 从API version 20 开始，错误码801 Capability not supported.被移除。
 
 **示例：**
 
-```
-1. let attachOptionsDidChangeCallback: (attachOptions: inputMethodEngine.AttachOptions) => void =
-2. (attachOptions: inputMethodEngine.AttachOptions) => {
-3. console.info(`AttachOptionsDidChangeCallback1: attachOptionsDidChange event triggered`);
-4. };
+```ts
+// 创建附加选项变更回调函数
+let attachOptionsDidChangeCallback: (attachOptions: inputMethodEngine.AttachOptions) => void =
+  (_attachOptions: inputMethodEngine.AttachOptions) => {
+    console.info(`AttachOptionsDidChangeCallback1: attachOptionsDidChange event triggered`);
+  };
 
-6. inputClient.on('attachOptionsDidChange', attachOptionsDidChangeCallback);
-7. console.info(`attachOptionsDidChangeCallback subscribed to attachOptionsDidChange`);
-8. inputClient.off('attachOptionsDidChange', attachOptionsDidChangeCallback);
-9. console.info(`attachOptionsDidChange unsubscribed from attachOptionsDidChange`);
+// 订阅绑定输入法时的附加选项变更事件
+inputClient.on('attachOptionsDidChange', attachOptionsDidChangeCallback);
+console.info(`attachOptionsDidChangeCallback subscribed to attachOptionsDidChange`);
+// 取消订阅绑定输入法时的附加选项变更事件
+inputClient.off('attachOptionsDidChange', attachOptionsDidChangeCallback);
+console.info(`attachOptionsDidChange unsubscribed from attachOptionsDidChange`);
 ```
 
 ### off('attachOptionsDidChange')19+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'attachOptionsDidChange', callback?: Callback<AttachOptions>): void
 
@@ -4877,21 +5240,19 @@ off(type: 'attachOptionsDidChange', callback?: Callback<AttachOptions>): void
 
 **示例：**
 
+```ts
+let attachOptionsDidChangeCallback: (attachOptions: inputMethodEngine.AttachOptions) => void =
+  (_attachOptions: inputMethodEngine.AttachOptions) => {
+    console.info(`AttachOptionsDidChangeCallback1: attachOptionsDidChange event triggered`);
+  };
+
+inputClient.on('attachOptionsDidChange', attachOptionsDidChangeCallback);
+console.info(`attachOptionsDidChangeCallback subscribed to attachOptionsDidChange`);
+inputClient.off('attachOptionsDidChange', attachOptionsDidChangeCallback);
+console.info(`attachOptionsDidChange unsubscribed from attachOptionsDidChange`);
 ```
-1. let attachOptionsDidChangeCallback: (attachOptions: inputMethodEngine.AttachOptions) => void =
-2. (attachOptions: inputMethodEngine.AttachOptions) => {
-3. console.info(`AttachOptionsDidChangeCallback1: attachOptionsDidChange event triggered`);
-4. };
 
-6. inputClient.on('attachOptionsDidChange', attachOptionsDidChangeCallback);
-7. console.info(`attachOptionsDidChangeCallback subscribed to attachOptionsDidChange`);
-8. inputClient.off('attachOptionsDidChange', attachOptionsDidChangeCallback);
-9. console.info(`attachOptionsDidChange unsubscribed from attachOptionsDidChange`);
-```
-
-### CapitalizeMode20+
-
-PhonePC/2in1TabletTVWearable
+## CapitalizeMode20+
 
 枚举，定义了文本首字母大写的不同模式。
 
@@ -4904,9 +5265,7 @@ PhonePC/2in1TabletTVWearable
 | WORDS | 2 | 每个单词的首字母大写。 |
 | CHARACTERS | 3 | 每个字母都大写。 |
 
-### EditorAttribute
-
-PhonePC/2in1TabletTVWearable
+## EditorAttribute
 
 编辑框属性值。
 
@@ -4926,10 +5285,9 @@ PhonePC/2in1TabletTVWearable
 | capitalizeMode20+ | [CapitalizeMode](js-apis-inputmethodengine.md#capitalizemode20) | 是 | 是 | 编辑框设置大小写模式。如果没有设置或设置非法值，默认不进行任何首字母大写处理。 |
 | gradientMode20+ | [GradientMode](js-apis-inputmethodengine.md#gradientmode20) | 是 | 是 | 渐变模式。如果没有设置或设置非法值，默认不使用渐变模式。 |
 | extraConfig22+ | [InputMethodExtraConfig](js-apis-inputmethod-extraconfig.md#inputmethodextraconfig) | 是 | 是 | 输入法扩展信息。 |
+| consumeKeyEvents | boolean | 是 | 是 | 编辑框是否具有完整处理字母、字符、功能等按键的能力。  - 值为true，表示具备此能力。  - 值为false，表示不具备此能力。  **起始版本：** 26.0.0  **模型约束：** 该参数仅可在Stage模型下使用。 |
 
 ## KeyEvent
-
-PhonePC/2in1TabletTVWearable
 
 按键属性值。
 
@@ -4941,8 +5299,6 @@ PhonePC/2in1TabletTVWearable
 | keyAction | number | 是 | 否 | 按键事件类型。  - 当值为2时，表示按下事件；  - 当值为3时，表示抬起事件。 |
 
 ## PanelFlag10+
-
-PhonePC/2in1TabletTVWearable
 
 输入法面板状态类型枚举。
 
@@ -4956,8 +5312,6 @@ PhonePC/2in1TabletTVWearable
 
 ## PanelType10+
 
-PhonePC/2in1TabletTVWearable
-
 输入法面板类型枚举。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
@@ -4968,8 +5322,6 @@ PhonePC/2in1TabletTVWearable
 | STATUS\_BAR | 1 | 状态栏类型。 |
 
 ## PanelInfo10+
-
-PhonePC/2in1TabletTVWearable
 
 输入法面板属性。
 
@@ -4982,8 +5334,6 @@ PhonePC/2in1TabletTVWearable
 
 ## PanelRect12+
 
-PhonePC/2in1TabletTVWearable
-
 输入法面板位置大小信息。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
@@ -4995,8 +5345,6 @@ PhonePC/2in1TabletTVWearable
 
 ## EnhancedPanelRect15+
 
-PhonePC/2in1TabletTVWearable
-
 增强的输入法面板位置、大小信息，包含自定义避让区域、自定义热区。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
@@ -5005,15 +5353,13 @@ PhonePC/2in1TabletTVWearable
 | --- | --- | --- | --- | --- |
 | landscapeRect | [window.Rect](arkts-apis-window-i.md#rect7) | 否 | 是 | 横屏状态时输入法面板窗口的位置大小。  - 当fullScreenMode不填写或值为false时，此属性为必选。 |
 | portraitRect | [window.Rect](arkts-apis-window-i.md#rect7) | 否 | 是 | 竖屏状态时，输入法面板窗口的位置大小。  - 当fullScreenMode不填写或值为false时，此属性为必选。 |
-| landscapeAvoidY | number | 否 | 是 | 横屏状态时，面板中的避让线距离面板顶部的距离，单位px。默认值为0。  - 应用内其他系统组件会对避让线以下的输入法面板区域进行避让。  - 面板为固定态时，避让线到屏幕底部的高度不能超过屏幕高度的70%。 |
+| landscapeAvoidY | number | 否 | 是 | 横屏状态时，面板中的避让线距离面板顶部的距离，单位px。默认值为0。  - 应用内其他系统组件会对避让线以下的输入法面板区域进行避让。  - 面板为固定态时，避让线到屏幕底部的高度不能超过屏幕高度的70%。当面板高度大于屏幕高度70%时，取默认值0将无法通过此校验，需要开发者手动设置，使得避让线到屏幕底部的高度不超过屏幕高度的70%。 |
 | landscapeInputRegion | Array<[window.Rect](arkts-apis-window-i.md#rect7)> | 否 | 是 | 横屏状态时，面板接收输入事件的区域。  - 数组大小限制为[1, 4]。默认值为横屏时的面板大小。  - 传入的热区位置是相对于输入法面板窗口左顶点的位置。 |
-| portraitAvoidY | number | 否 | 是 | 竖屏状态时，面板中的避让线距离面板顶部的距离，单位px。默认值为0。  - 应用内其他系统组件会对避让线以下的输入法面板区域进行避让。  - 面板为固定态时，避让线到屏幕底部的高度不能超过屏幕高度的70%。 |
+| portraitAvoidY | number | 否 | 是 | 竖屏状态时，面板中的避让线距离面板顶部的距离，单位px。默认值为0。  - 应用内其他系统组件会对避让线以下的输入法面板区域进行避让。  - 面板为固定态时，避让线到屏幕底部的高度不能超过屏幕高度的70%。当面板高度大于屏幕高度70%时，取默认值0将无法通过此校验，需要开发者手动设置，使得避让线到屏幕底部的高度不超过屏幕高度的70%。 |
 | portraitInputRegion | Array<[window.Rect](arkts-apis-window-i.md#rect7)> | 否 | 是 | 竖屏状态时，面板接收输入事件的区域。  - 数组大小限制为[1, 4]。默认值为竖屏时的面板大小。  - 传入的热区位置是相对于输入法面板窗口左顶点的位置。 |
 | fullScreenMode | boolean | 否 | 是 | 是否开启全屏模式。默认值为false。  - 值为true，landscapeRect和portraitRect可不填写。  - 值为false，landscapeRect和portraitRect为必选属性。 |
 
 ## KeyboardArea15+
-
-PhonePC/2in1TabletTVWearable
 
 面板中的键盘区域。
 
@@ -5028,8 +5374,6 @@ PhonePC/2in1TabletTVWearable
 
 ## AttachOptions19+
 
-PhonePC/2in1TabletTVWearable
-
 绑定输入法时的附加选项。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
@@ -5041,8 +5385,6 @@ PhonePC/2in1TabletTVWearable
 
 ## WindowInfo12+
 
-PhonePC/2in1TabletTVWearable
-
 窗口信息。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
@@ -5053,8 +5395,6 @@ PhonePC/2in1TabletTVWearable
 | status | [window.WindowStatusType](arkts-apis-window-e.md#windowstatustype11) | 否 | 否 | 窗口模式类型。 |
 
 ## ImmersiveMode15+
-
-PhonePC/2in1TabletTVWearable
 
 枚举，输入法沉浸模式。
 
@@ -5069,8 +5409,6 @@ PhonePC/2in1TabletTVWearable
 
 ## RequestKeyboardReason19+
 
-PhonePC/2in1TabletTVWearable
-
 枚举，请求键盘输入的原因。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
@@ -5084,8 +5422,6 @@ PhonePC/2in1TabletTVWearable
 
 ## GradientMode20+
 
-PhonePC/2in1TabletTVWearable
-
 枚举，输入法渐变模式。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
@@ -5097,20 +5433,16 @@ PhonePC/2in1TabletTVWearable
 
 ## ImmersiveEffect20+
 
-PhonePC/2in1TabletTVWearable
-
 沉浸效果。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| gradientHeight | number | 否 | 否 | 渐变高度，不能超过屏幕高度的15%。 |
+| gradientHeight | number | 否 | 否 | 渐变高度，不能超过屏幕高度的15%。单位：px。 |
 | gradientMode | [GradientMode](js-apis-inputmethodengine.md#gradientmode20) | 否 | 否 | 渐变模式。 |
 
 ## SystemPanelInsets21+
-
-PhonePC/2in1TabletTVWearable
 
 输入法软键盘相对系统面板的偏移区域。
 
@@ -5124,25 +5456,27 @@ PhonePC/2in1TabletTVWearable
 
 ## TextInputClient(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 下列API示例中都需使用[on('inputStart')](js-apis-inputmethodengine.md#oninputstartdeprecated)回调获取到TextInputClient实例，再通过此实例调用对应方法。
 
-说明
+**说明** 
 
-从API version 8开始支持，API version 9开始废弃，建议使用[InputClient](js-apis-inputmethodengine.md#inputclient9)替代。
+从 API version 8开始支持，从API version 9开始废弃。建议使用[InputClient](js-apis-inputmethodengine.md#inputclient9)替代。
+
+**系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 ### getForward(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getForward(length:number, callback: AsyncCallback<string>): void
 
 获取光标前固定长度的文本。使用callback异步回调。
 
-说明
+使用场景：分析已输入文本内容以提供智能补全建议、检查文本格式、实现文本预测功能、实现文本语义分析等。
 
-从API version 8开始支持，API version 9开始废弃，建议使用[getForward](js-apis-inputmethodengine.md#getforward9)替代。
+使用后效果：成功时返回光标前指定长度的文本字符串，输入法应用可据此更新候选词或输入建议。
+
+**说明** 
+
+从 API version 8开始支持，从API version 9开始废弃。建议使用[inputMethodEngine.InputClient.getForward](js-apis-inputmethodengine.md#getforward9)替代。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -5155,30 +5489,28 @@ getForward(length:number, callback: AsyncCallback<string>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let length: number = 1;
-4. textInputClient.getForward(length, (err: BusinessError, text: string) => {
-5. if (err) {
-6. console.error(`Failed to getForward. Code is ${err.code}, message is ${err.message}`);
-7. return;
-8. }
-9. console.info('Succeeded in getting forward, text: ' + text);
-10. });
+let length: number = 1;
+textInputClient.getForward(length, (err: BusinessError, text: string) => {
+  if (err) {
+    console.error(`Failed to getForward. Code is ${err.code}, message is ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in getting forward, text: ' + text);
+});
 ```
 
 ### getForward(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getForward(length:number): Promise<string>
 
 获取光标前固定长度的文本。使用promise异步回调。
 
-说明
+**说明** 
 
-从API version 8开始支持，API version 9开始废弃，建议使用[getForward](js-apis-inputmethodengine.md#getforward9-1)替代。
+从 API version 8开始支持，从API version 9开始废弃。建议使用[inputMethodEngine.InputClient.getForward](js-apis-inputmethodengine.md#getforward9-1)替代。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -5196,28 +5528,26 @@ getForward(length:number): Promise<string>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let length: number = 1;
-4. textInputClient.getForward(length).then((text: string) => {
-5. console.info('Succeeded in getting forward, text: ' + text);
-6. }).catch((err: BusinessError) => {
-7. console.error(`Failed to getForward. Code is ${err.code}, message is ${err.message}`);
-8. });
+let length: number = 1;
+textInputClient.getForward(length).then((text: string) => {
+  console.info('Succeeded in getting forward, text: ' + text);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to getForward. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### getBackward(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getBackward(length:number, callback: AsyncCallback<string>): void
 
 获取光标后固定长度的文本。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 8开始支持，API version 9开始废弃，建议使用[getBackward](js-apis-inputmethodengine.md#getbackward9)替代。
+从 API version 8开始支持，从API version 9开始废弃。建议使用[inputMethodEngine.InputClient.getBackward](js-apis-inputmethodengine.md#getbackward9)替代。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -5230,30 +5560,28 @@ getBackward(length:number, callback: AsyncCallback<string>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let length: number = 1;
-4. textInputClient.getBackward(length, (err: BusinessError, text: string) => {
-5. if (err) {
-6. console.error(`Failed to getBackward. Code is ${err.code}, message is ${err.message}`);
-7. return;
-8. }
-9. console.info('Succeeded in getting backward, text: ' + text);
-10. });
+let length: number = 1;
+textInputClient.getBackward(length, (err: BusinessError, text: string) => {
+  if (err) {
+    console.error(`Failed to getBackward. Code is ${err.code}, message is ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in getting backward, text: ' + text);
+});
 ```
 
 ### getBackward(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getBackward(length:number): Promise<string>
 
 获取光标后固定长度的文本。使用promise异步回调。
 
-说明
+**说明** 
 
-从API version 8开始支持，API version 9开始废弃，建议使用[getBackward](js-apis-inputmethodengine.md#getbackward9)替代。
+从 API version 8开始支持，从API version 9开始废弃。建议使用[inputMethodEngine.InputClient.getBackward](js-apis-inputmethodengine.md#getbackward9)替代。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -5271,28 +5599,30 @@ getBackward(length:number): Promise<string>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let length: number = 1;
-4. textInputClient.getBackward(length).then((text: string) => {
-5. console.info(`'Succeeded in getting backward: ${text}`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`Failed to getBackward. Code is ${err.code}, message is ${err.message}`);
-8. });
+let length: number = 1;
+textInputClient.getBackward(length).then((text: string) => {
+  console.info(`Succeeded in getting backward: ${text}`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to getBackward. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### deleteForward(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 deleteForward(length:number, callback: AsyncCallback<boolean>): void
 
 删除光标前固定长度的文本。使用callback异步回调。
 
-说明
+使用场景：实现退格键功能、逐字删除输入、删除错误的输入、实现自定义删除逻辑等。
 
-从API version 8开始支持，API version 9开始废弃，建议使用[deleteForward](js-apis-inputmethodengine.md#deleteforward9)替代。
+使用后效果：成功时返回true，编辑框中光标前指定长度的文本被删除。
+
+**说明** 
+
+从 API version 8开始支持，从API version 9开始废弃。建议使用[inputMethodEngine.InputClient.deleteForward](js-apis-inputmethodengine.md#deleteforward9)替代。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -5301,38 +5631,36 @@ deleteForward(length:number, callback: AsyncCallback<boolean>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | length | number | 是 | 文本长度。不能小于0。 |
-| callback | AsyncCallback<boolean> | 是 | 回调函数。当光标前固定长度的文本删除成功，err为undefined，data为true；否则为错误对象。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。当光标前固定长度的文本删除成功，err为undefined，data为true；当光标前固定长度的文本删除失败，err为undefined，data为false；否则为错误对象。 |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let length: number = 1;
-4. textInputClient.deleteForward(length, (err: BusinessError, result: boolean) => {
-5. if (err) {
-6. console.error(`Failed to deleteForward. Code is ${err.code}, message is ${err.message}`);
-7. return;
-8. }
-9. if (result) {
-10. console.info('Succeeded in deleting forward.');
-11. } else {
-12. console.error('Failed to deleteForward.');
-13. }
-14. });
+let length: number = 1;
+textInputClient.deleteForward(length, (err: BusinessError, result: boolean) => {
+  if (err) {
+    console.error(`Failed to deleteForward. Code is ${err.code}, message is ${err.message}`);
+    return;
+  }
+  if (result) {
+    console.info('Succeeded in deleting forward.');
+  } else {
+    console.error('Failed to deleteForward.');
+  }
+});
 ```
 
 ### deleteForward(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 deleteForward(length:number): Promise<boolean>
 
 删除光标前固定长度的文本。使用promise异步回调。
 
-说明
+**说明** 
 
-从API version 8开始支持，API version 9开始废弃，建议使用[deleteForward](js-apis-inputmethodengine.md#deleteforward9)替代。
+从 API version 8开始支持，从API version 9开始废弃。建议使用[inputMethodEngine.InputClient.deleteForward](js-apis-inputmethodengine.md#deleteforward9)替代。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -5346,36 +5674,38 @@ deleteForward(length:number): Promise<boolean>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<boolean> | Promise对象。返回true表示删除光标前固定长度的文本成功；返回false表示删除光标前固定长度的文本失败。 |
+| Promise<boolean> | Promise对象。resolve返回true表示删除光标前固定长度的文本成功；resolve返回false表示删除光标前固定长度的文本失败；reject时抛出错误对象，表示执行过程中发生错误。 |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let length: number = 1;
-4. textInputClient.deleteForward(length).then((result: boolean) => {
-5. if (result) {
-6. console.info('Succeeded in deleting forward.');
-7. } else {
-8. console.error('Failed to delete forward.');
-9. }
-10. }).catch((err: BusinessError) => {
-11. console.error(`Failed to deleteForward. Code is ${err.code}, message is ${err.message}`);
-12. });
+let length: number = 1;
+textInputClient.deleteForward(length).then((result: boolean) => {
+  if (result) {
+    console.info('Succeeded in deleting forward.');
+  } else {
+    console.error('Failed to delete forward.');
+  }
+}).catch((err: BusinessError) => {
+  console.error(`Failed to deleteForward. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### deleteBackward(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 deleteBackward(length:number, callback: AsyncCallback<boolean>): void
 
 删除光标后固定长度的文本。使用callback异步回调。
 
-说明
+使用场景：实现删除键功能、删除光标后的字符、快速修正输入、实现自定义删除逻辑等。
 
-从API version 8开始支持，API version 9开始废弃，建议使用[deleteBackward](js-apis-inputmethodengine.md#deletebackward9)替代。
+使用后效果：成功时返回true，编辑框中光标后指定长度的文本被删除。
+
+**说明** 
+
+从 API version 8开始支持，从API version 9开始废弃。建议使用[inputMethodEngine.InputClient.deleteBackward](js-apis-inputmethodengine.md#deletebackward9)替代。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -5388,34 +5718,32 @@ deleteBackward(length:number, callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let length: number = 1;
-4. textInputClient.deleteBackward(length, (err: BusinessError, result: boolean) => {
-5. if (err) {
-6. console.error(`Failed to deleteBackward. Code is ${err.code}, message is ${err.message}`);
-7. return;
-8. }
-9. if (result) {
-10. console.info('Succeeded in deleting backward.');
-11. } else {
-12. console.error('Failed to deleteBackward.');
-13. }
-14. });
+let length: number = 1;
+textInputClient.deleteBackward(length, (err: BusinessError, result: boolean) => {
+  if (err) {
+    console.error(`Failed to deleteBackward. Code is ${err.code}, message is ${err.message}`);
+    return;
+  }
+  if (result) {
+    console.info('Succeeded in deleting backward.');
+  } else {
+    console.error('Failed to deleteBackward.');
+  }
+});
 ```
 
 ### deleteBackward(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 deleteBackward(length:number): Promise<boolean>
 
 删除光标后固定长度的文本。使用promise异步回调。
 
-说明
+**说明** 
 
-从API version 8开始支持，API version 9开始废弃，建议使用[deleteBackward](js-apis-inputmethodengine.md#deletebackward9)替代。
+从 API version 8开始支持，从API version 9开始废弃。建议使用[inputMethodEngine.InputClient.deleteBackward](js-apis-inputmethodengine.md#deletebackward9)替代。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -5433,32 +5761,30 @@ deleteBackward(length:number): Promise<boolean>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let length: number = 1;
-4. textInputClient.deleteBackward(length).then((result: boolean) => {
-5. if (result) {
-6. console.info('Succeeded in deleting backward.');
-7. } else {
-8. console.error('Failed to deleteBackward.');
-9. }
-10. }).catch((err: BusinessError) => {
-11. console.error(`Failed to deleteBackward. Code is ${err.code}, message is ${err.message}`);
-12. });
+let length: number = 1;
+textInputClient.deleteBackward(length).then((result: boolean) => {
+  if (result) {
+    console.info('Succeeded in deleting backward.');
+  } else {
+    console.error('Failed to deleteBackward.');
+  }
+}).catch((err: BusinessError) => {
+  console.error(`Failed to deleteBackward. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### sendKeyFunction(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 sendKeyFunction(action: number, callback: AsyncCallback<boolean>): void
 
 发送功能键。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 8开始支持，API version 9开始废弃，建议使用[sendKeyFunction](js-apis-inputmethodengine.md#sendkeyfunction9)替代。
+从 API version 8开始支持，从API version 9开始废弃。建议使用[inputMethodEngine.InputClient.sendKeyFunction](js-apis-inputmethodengine.md#sendkeyfunction9)替代。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -5467,38 +5793,36 @@ sendKeyFunction(action: number, callback: AsyncCallback<boolean>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | action | number | 是 | 功能键键值。  - 当值为0时，表示无效按键；  - 当值为1时，表示确认键（即回车键）。 |
-| callback | AsyncCallback<boolean> | 是 | 回调函数。当功能键发送成功，err为undefined，data为true；否则为错误对象。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。当功能键发送成功，err为undefined，data为true；当功能键发送失败，err为undefined，data为false；否则为错误对象。 |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let action: number = 1;
-4. textInputClient.sendKeyFunction(action, (err: BusinessError, result: boolean) => {
-5. if (err) {
-6. console.error(`Failed to sendKeyFunction. Code is ${err.code}, message is ${err.message}`);
-7. return;
-8. }
-9. if (result) {
-10. console.info('Succeeded in sending key function.');
-11. } else {
-12. console.error('Failed to sendKeyFunction.');
-13. }
-14. });
+let action: number = 1;
+textInputClient.sendKeyFunction(action, (err: BusinessError, result: boolean) => {
+  if (err) {
+    console.error(`Failed to sendKeyFunction. Code is ${err.code}, message is ${err.message}`);
+    return;
+  }
+  if (result) {
+    console.info('Succeeded in sending key function.');
+  } else {
+    console.error('Failed to sendKeyFunction.');
+  }
+});
 ```
 
 ### sendKeyFunction(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 sendKeyFunction(action: number): Promise<boolean>
 
 发送功能键。使用promise异步回调。
 
-说明
+**说明** 
 
-从API version 8开始支持，API version 9开始废弃，建议使用[sendKeyFunction](js-apis-inputmethodengine.md#sendkeyfunction9)替代。
+从 API version 8开始支持，从API version 9开始废弃。建议使用[inputMethodEngine.InputClient.sendKeyFunction](js-apis-inputmethodengine.md#sendkeyfunction9)替代。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -5516,32 +5840,34 @@ sendKeyFunction(action: number): Promise<boolean>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let action: number = 1;
-4. textInputClient.sendKeyFunction(action).then((result: boolean) => {
-5. if (result) {
-6. console.info('Succeeded in sending key function.');
-7. } else {
-8. console.error('Failed to sendKeyFunction.');
-9. }
-10. }).catch((err: BusinessError) => {
-11. console.error(`Failed to sendKeyFunction:. Code is ${err.code}, message is ${err.message}`);
-12. });
+let action: number = 1;
+textInputClient.sendKeyFunction(action).then((result: boolean) => {
+  if (result) {
+    console.info('Succeeded in sending key function.');
+  } else {
+    console.error('Failed to sendKeyFunction.');
+  }
+}).catch((err: BusinessError) => {
+  console.error(`Failed to sendKeyFunction:. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### insertText(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 insertText(text:string, callback: AsyncCallback<boolean>): void
 
 插入文本。使用callback异步回调。
 
-说明
+使用场景：插入候选词、插入特殊符号、实现文本自动补全、快速插入常用短语等。
 
-从API version 8开始支持，API version 9开始废弃，建议使用[insertText](js-apis-inputmethodengine.md#inserttext9)替代。
+使用后效果：成功时返回true，文本已插入到编辑框光标位置。
+
+**说明** 
+
+从 API version 8开始支持，从API version 9开始废弃。建议使用[inputMethodEngine.InputClient.insertText](js-apis-inputmethodengine.md#inserttext9)替代。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -5554,33 +5880,31 @@ insertText(text:string, callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. textInputClient.insertText('test', (err: BusinessError, result: boolean) => {
-4. if (err) {
-5. console.error(`Failed to insertText. Code is ${err.code}, message is ${err.message}`);
-6. return;
-7. }
-8. if (result) {
-9. console.info('Succeeded in inserting text.');
-10. } else {
-11. console.error('Failed to insertText.');
-12. }
-13. });
+textInputClient.insertText('test', (err: BusinessError, result: boolean) => {
+  if (err) {
+    console.error(`Failed to insertText. Code is ${err.code}, message is ${err.message}`);
+    return;
+  }
+  if (result) {
+    console.info('Succeeded in inserting text.');
+  } else {
+    console.error('Failed to insertText.');
+  }
+});
 ```
 
 ### insertText(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 insertText(text:string): Promise<boolean>
 
 插入文本。使用promise异步回调。
 
-说明
+**说明** 
 
-从API version 8开始支持，API version 9开始废弃，建议使用[insertText](js-apis-inputmethodengine.md#inserttext9)替代。
+从 API version 8开始支持，从API version 9开始废弃。建议使用[inputMethodEngine.InputClient.insertText](js-apis-inputmethodengine.md#inserttext9)替代。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -5598,31 +5922,33 @@ insertText(text:string): Promise<boolean>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. textInputClient.insertText('test').then((result: boolean) => {
-4. if (result) {
-5. console.info('Succeeded in inserting text.');
-6. } else {
-7. console.error('Failed to insertText.');
-8. }
-9. }).catch((err: BusinessError) => {
-10. console.error(`Failed to insertText. Code is ${err.code}, message is ${err.message}`);
-11. });
+textInputClient.insertText('test').then((result: boolean) => {
+  if (result) {
+    console.info('Succeeded in inserting text.');
+  } else {
+    console.error('Failed to insertText.');
+  }
+}).catch((err: BusinessError) => {
+  console.error(`Failed to insertText. Code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### getEditorAttribute(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getEditorAttribute(callback: AsyncCallback<EditorAttribute>): void
 
 获取编辑框属性值。使用callback异步回调。
 
-说明
+使用场景：根据编辑框类型调整输入法界面、根据编辑框配置提供不同的输入建议、实现特定输入逻辑、适配不同类型的输入框等。
 
-从API version 8开始支持，API version 9开始废弃，建议使用[getEditorAttribute](js-apis-inputmethodengine.md#geteditorattribute9)替代。
+使用后效果：返回编辑框属性信息（包括inputPattern输入类型和enterKeyType回车键类型），输入法应用据此调整键盘布局。
+
+**说明** 
+
+从 API version 8开始支持，从API version 9开始废弃。建议使用[inputMethodEngine.InputClient.getEditorAttribute](js-apis-inputmethodengine.md#geteditorattribute9)替代。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -5634,31 +5960,29 @@ getEditorAttribute(callback: AsyncCallback<EditorAttribute>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. textInputClient.getEditorAttribute((err: BusinessError,
-5. editorAttribute: inputMethodEngine.EditorAttribute) => {
-6. if (err) {
-7. console.error(`Failed to getEditorAttribute. Code is ${err.code}, message is ${err.message}`);
-8. return;
-9. }
-10. console.info(`editorAttribute.inputPattern: ${editorAttribute.inputPattern}`);
-11. console.info(`editorAttribute.enterKeyType: ${editorAttribute.enterKeyType}`);
-12. });
+textInputClient.getEditorAttribute((err: BusinessError,
+  editorAttribute: inputMethodEngine.EditorAttribute) => {
+  if (err) {
+    console.error(`Failed to getEditorAttribute. Code is ${err.code}, message is ${err.message}`);
+    return;
+  }
+  console.info(`editorAttribute.inputPattern: ${editorAttribute.inputPattern}`);
+  console.info(`editorAttribute.enterKeyType: ${editorAttribute.enterKeyType}`);
+});
 ```
 
 ### getEditorAttribute(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getEditorAttribute(): Promise<EditorAttribute>
 
 获取编辑框属性值。使用promise异步回调。
 
-说明
+**说明** 
 
-从API version 8开始支持，API version 9开始废弃，建议使用[getEditorAttribute](js-apis-inputmethodengine.md#geteditorattribute9)替代。
+从 API version 8开始支持，从API version 9开始废弃。建议使用[inputMethodEngine.InputClient.getEditorAttribute](js-apis-inputmethodengine.md#geteditorattribute9)替代。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -5670,13 +5994,13 @@ getEditorAttribute(): Promise<EditorAttribute>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. textInputClient.getEditorAttribute().then((editorAttribute: inputMethodEngine.EditorAttribute) => {
-4. console.info(`editorAttribute.inputPattern: ${editorAttribute.inputPattern}`);
-5. console.info(`editorAttribute.enterKeyType: ${editorAttribute.enterKeyType}}`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`Failed to getEditorAttribute. Code is ${err.code}, message is ${err.message}`);
-8. });
+textInputClient.getEditorAttribute().then((editorAttribute: inputMethodEngine.EditorAttribute) => {
+  console.info(`editorAttribute.inputPattern: ${editorAttribute.inputPattern}`);
+  console.info(`editorAttribute.enterKeyType: ${editorAttribute.enterKeyType}`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to getEditorAttribute. Code is ${err.code}, message is ${err.message}`);
+});
 ```

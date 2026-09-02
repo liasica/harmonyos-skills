@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-travel-ac
 title: 多设备旅行订票界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备旅行订票界面
 category: best-practices
-scraped_at: 2026-04-28T08:21:16+08:00
-doc_updated_at: 2026-03-26
-content_hash: sha256:905a21ad199bb5b2c52baf523e092d34362701cc173c48b461531b81168dfb74
+scraped_at: 2026-09-02T15:03:18+08:00
+doc_updated_at: 2026-05-18
+content_hash: sha256:fee94898bba044e5794c1ab170115f7ef13026cd682de6179a08f4550cc151e1
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ content_hash: sha256:905a21ad199bb5b2c52baf523e092d34362701cc173c48b461531b81168
 * [架构设计](multi-travel-accommodation.md#section35961357151114)章节推荐“一多”应用使用目录结构更清晰的三层架构，具体包括：数据层、逻辑层和展示层。
 * [页面开发](multi-travel-accommodation.md#section183977201404)章节会将页面划分为不同区域，按照区域的开发顺序，介绍如何使用自适应布局和响应式布局实现不同的UI效果，具体区域包括：头部、内容区和底部。
 
-说明
+**说明** 
 
 阅读本文前，开发者需熟悉[ArkUI（方舟UI框架）](../harmonyos-guides/arkui.md)和页面开发的“一多”能力（参考[一次开发，多端部署概览](bpta-multi-device-overview.md)）。下文将详细介绍它们在“一多”开发实践中如何使用。
 
@@ -55,11 +55,11 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
   | 区域编号 | 简介 | 实现方案 |
   | --- | --- | --- |
-  | 1 | 底部/侧边栏 | 借助[栅格](bpta-multi-device-responsive-layout.md#section1061332817545)监听断点变化改变位置，代码可参考多设备长视频界面[底部/侧边页签](multi-video-app.md#zh-cn_topic_0000001744653537_li1226615201361)小节。 |
+  | 1 | 底部/侧边栏 | 借助[栅格](bpta-multi-device-responsive-layout.md#section1061332817545)监听断点变化改变位置。 |
   | 2 | 顶部控件 | [Select](../harmonyos-references/ts-basic-components-select.md)和[TextInput](../harmonyos-references/ts-basic-components-textinput.md)中间增加[Blank](../harmonyos-references/ts-basic-components-blank.md)，实现拉伸能力。 |
   | 3 | 火车票选择 | 使用Tabs组件实现拉伸能力。 |
-  | 4 | 功能入口 | 使用[Swiper](../harmonyos-references/ts-container-swiper.md)，设置在不同断点下的displayCount属性来实现自适应布局的延伸能力，代码可参考多设备长视频界面[Banner图](multi-video-app.md#zh-cn_topic_0000001744653537_li139671645597)小节。 |
-  | 5 | 热门资讯 | 利用响应式布局的[栅格](bpta-multi-device-responsive-layout.md#section1061332817545)，结合[Stack](../harmonyos-references/ts-container-stack.md)和[Grid](../harmonyos-references/ts-container-grid.md)，设置aspectRatio属性实现缩放能力，代码可参考多设备长视频界面[每日佳片](multi-video-app.md#zh-cn_topic_0000001744653537_li1938820294129)小节。 |
+  | 4 | 功能入口 | 使用[Swiper](../harmonyos-references/ts-container-swiper.md)，设置在不同断点下的displayCount属性来实现自适应布局的延伸能力。 |
+  | 5 | 热门资讯 | 利用响应式布局的[栅格](bpta-multi-device-responsive-layout.md#section1061332817545)，结合[Stack](../harmonyos-references/ts-container-stack.md)和[Grid](../harmonyos-references/ts-container-grid.md)，设置aspectRatio属性实现缩放能力。 |
   | 6 | 酒店预订 | 利用响应式布局的栅格布局，结合Stack组件和Grid组件，设置aspectRatio属性实现缩放能力。 |
 
 ### 时间选择页
@@ -129,8 +129,8 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
   | 2 | 日期栏 | 使用[拉伸能力](bpta-multi-device-adaptive-layout.md#拉伸能力)实现日期与按钮的拉伸自适应。 |
   | 3 | 火车票信息 | 使用栅格断点能力，设置在不同断点下实现拉伸能力。 |
   | 4 | 选择乘车人 | 使用[拉伸能力](bpta-multi-device-adaptive-layout.md#拉伸能力)实现选择乘车人卡片拉伸自适应。 |
-  | 5 | 协议条款 | 使用栅格断点能力，设置在不同断点下顶部控件实现挪移布局。代码可参考多设备长视频界面[顶部页签及搜索框](multi-video-app.md#zh-cn_topic_0000001744653537_li1346175796)小节。 |
-  | 6 | 提交按钮 | 使用栅格断点能力，设置在不同断点下顶部控件实现挪移布局。代码可参考多设备长视频界面[顶部页签及搜索框](multi-video-app.md#zh-cn_topic_0000001744653537_li1346175796)小节。 |
+  | 5 | 协议条款 | 使用栅格断点能力，设置在不同断点下顶部控件实现挪移布局。 |
+  | 6 | 提交按钮 | 使用栅格断点能力，设置在不同断点下顶部控件实现挪移布局。 |
 
 ### 提交订单页
 
@@ -245,78 +245,70 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
 手机上滑展开、下滑收起，主要使用了Scroll组件的onReachStart属性和onWillScroll属性。
 
+```typescript
+Scroll(this.scroller) {
+  HotelDetailsPictureView({ topLength: this.topLength })
+}
+.scrollBar(BarState.Off)
+.width('100%')
+.height('100%')
+.onReachStart(() => {
+  if (!this.isInitialization) {
+    this.topLength = 225;
+    this.isInitialization = true;
+  } else {
+    this.topLength = 460;
+  }
+})
+.onWillScroll((xOffset: number, yOffset: number)=>{
+  if (yOffset > 0) {
+    this.topLength = 225;
+  }
+})
 ```
-1. Scroll(this.scroller) {
-2. HotelDetailsPictureView({ topLength: this.topLength })
-3. }
-4. .scrollBar(BarState.Off)
-5. .width('100%')
-6. .height('100%')
-7. .onReachStart(() => {
-8. if (!this.isInitialization) {
-9. this.topLength = 225;
-10. this.isInitialization = true;
-11. } else {
-12. this.topLength = 460;
-13. }
-14. })
-15. .onWillScroll((xOffset: number, yOffset: number)=>{
-16. if (yOffset > 0) {
-17. this.topLength = 225;
-18. }
-19. })
-```
-
-[HotelDetailsPage.ets](https://gitcode.com/HarmonyOS_Samples/multi-travel-accommodation/blob/master/entry/src/main/ets/pages/HotelDetailsPage.ets#L48-L66)
 
 折叠屏的实现使用Scroll组件支持滚动。小图的点击效果会改变大图内容，点击后将索引值作为参数传递，以修改大图。
 
-```
-1. Scroll() {
-2. Row() {
-3. ForEach(CommonConstants.HOTEL_PICTURE_MESSAGE, (item: Resource, index: number) => {
-4. Column() {
-5. Image(item)
-6. .width(CommonConstants.THIRTY_PERCENT)
-7. .borderRadius($r('app.float.hotel_grade_border'))
-8. .margin(index === CommonConstants.NUMBER_FOUR ? {} : { right: CommonConstants.FIVE_PERCENT })
-9. .onClick(() => {
-10. this.getMainPicture(index);
-11. })
-12. }
-13. }, (item: Resource) => JSON.stringify(item))
-14. }
-15. }
-16. .scrollBar(BarState.Off)
-17. .margin({ top: $r('app.float.calendar_column_margin') })
-18. .width(CommonConstants.NINETY_PERCENT)
-19. .scrollable(ScrollDirection.Horizontal)
-```
-
-[HotelDetailsPictureView.ets](https://gitcode.com/HarmonyOS_Samples/multi-travel-accommodation/blob/master/entry/src/main/ets/view/HotelDetailsPictureView.ets#L133-L151)
-
-```
-1. getMainPicture(index: number) {
-2. this.mainPictureResource = CommonConstants.HOTEL_PICTURE_MESSAGE[index];
-3. }
+```typescript
+Scroll() {
+  Row() {
+    ForEach(CommonConstants.HOTEL_PICTURE_MESSAGE, (item: Resource, index: number) => {
+      Column() {
+        Image(item)
+          .width(CommonConstants.THIRTY_PERCENT)
+          .borderRadius($r('app.float.hotel_grade_border'))
+          .margin(index === CommonConstants.NUMBER_FOUR ? {} : { right: CommonConstants.FIVE_PERCENT })
+          .onClick(() => {
+            this.getMainPicture(index);
+          })
+      }
+    }, (item: Resource) => JSON.stringify(item))
+  }
+}
+.scrollBar(BarState.Off)
+.margin({ top: $r('app.float.calendar_column_margin') })
+.width(CommonConstants.NINETY_PERCENT)
+.scrollable(ScrollDirection.Horizontal)
 ```
 
-[HotelDetailsPictureView.ets](https://gitcode.com/HarmonyOS_Samples/multi-travel-accommodation/blob/master/entry/src/main/ets/view/HotelDetailsPictureView.ets#L29-L31)
+```typescript
+getMainPicture(index: number) {
+  this.mainPictureResource = CommonConstants.HOTEL_PICTURE_MESSAGE[index];
+}
+```
 
 平板则使用Swiper组件，完成滚动切换视图的功能。
 
+```typescript
+Swiper() {
+  ForEach(CommonConstants.HOTEL_PICTURE_MESSAGE, (item: Resource) => {
+    Image(item)
+      .width('100')
+  }, (item: Resource) => JSON.stringify(item))
+}
+.width('40%')
+.height('100%')
 ```
-1. Swiper() {
-2. ForEach(CommonConstants.HOTEL_PICTURE_MESSAGE, (item: Resource) => {
-3. Image(item)
-4. .width('100')
-5. }, (item: Resource) => JSON.stringify(item))
-6. }
-7. .width('40%')
-8. .height('100%')
-```
-
-[HotelDetailsPictureView.ets](https://gitcode.com/HarmonyOS_Samples/multi-travel-accommodation/blob/master/entry/src/main/ets/view/HotelDetailsPictureView.ets#L208-L215)
 
 ### 低价日历页
 
@@ -337,36 +329,32 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
   根据栅格布局监听断点变化，根据断点不同实现不同的响应效果。
 
-  ```
-  1. getFoldStatus() {
-  2. if (this.isShowingCalendar) {
-  3. this.dialogController.open();
-  4. } else {
-  5. this.dialogController.close()
-  6. }
-  7. }
-  ```
-
-  [HotelDetailsRoomView.ets](https://gitcode.com/HarmonyOS_Samples/multi-travel-accommodation/blob/master/entry/src/main/ets/view/HotelDetailsRoomView.ets#L38-L44)
-
-  ```
-  1. Column() {
-  2. Image($r("app.media.cheap_day"))
-  3. .width('15vp')
-  4. Text(CommonConstants.ROOM_BUTTON_MESSAGES[5])
-  5. .font({ size: '8fp', weight: 500 })
-  6. .opacity(0.4)
-  7. }
-  8. .onClick(() => {
-  9. if (this.breakPoint === 'sm') {
-  10. this.pageInfos.pushPath(new NavPathInfo('LowPriceCalendarPage',[]));
-  11. } else {
-  12. this.isShowingCalendar = true;
-  13. }
-  14. })
+  ```typescript
+  getFoldStatus() {
+    if (this.isShowingCalendar) {
+      this.dialogController.open();
+    } else {
+      this.dialogController.close()
+    }
+  }
   ```
 
-  [HotelDetailsRoomView.ets](https://gitcode.com/HarmonyOS_Samples/multi-travel-accommodation/blob/master/entry/src/main/ets/view/HotelDetailsRoomView.ets#L86-L99)
+  ```typescript
+  Column() {
+    Image($r("app.media.cheap_day"))
+      .width('15vp')
+    Text(CommonConstants.ROOM_BUTTON_MESSAGES[5])
+      .font({ size: '8fp', weight: 500 })
+      .opacity(0.4)
+  }
+  .onClick(() => {
+    if (this.breakPoint === 'sm') {
+      this.pageInfos.pushPath(new NavPathInfo('LowPriceCalendarPage',[]));
+    } else {
+      this.isShowingCalendar = true;
+    }
+  })
+  ```
 
 ## 示例代码
 

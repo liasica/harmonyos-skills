@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-mind
 title: OH_AI_TensorHandleArray
 breadcrumb: API参考 > AI > MindSpore Lite Kit（昇思推理框架服务） > C API > 结构体 > OH_AI_TensorHandleArray
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:04+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:147847d97a15c2079db96341f37855f3fa99a185357c248cea08d8268eda02f9
+scraped_at: 2026-09-02T15:03:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:66bde7a053ee600ab90629ec277be6c02f1812ee3e5cab681802d85e384a7a5d
 ---
 
-```
-1. typedef struct OH_AI_TensorHandleArray {...} OH_AI_TensorHandleArray
+```c
+typedef struct OH_AI_TensorHandleArray {...} OH_AI_TensorHandleArray
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 张量数组结构体，用于存储张量数组指针和张量数组长度。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: relationalStore是线程安全的吗
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > relationalStore是线程安全的吗
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:20+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:51+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:10ea72b1050de97b5fdfd70c5ca46d09c64b9890bad14cad49ee187ac155503f
 ---
 

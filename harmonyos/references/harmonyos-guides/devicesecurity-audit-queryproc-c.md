@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 进程信息查询场景（C/C++）
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全审计 > 进程信息查询场景（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:31:39+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:2d204caf93ff20439bb90f486ea8d5576673317c93a4b68eb5dea9db4579ded3
+scraped_at: 2026-09-02T14:59:30+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:1863636515cceece53d69649571ff11d4086c33e96c8768ccebbb06e437a8786
 ---
 
 ## 场景介绍
@@ -14,17 +14,17 @@ content_hash: sha256:2d204caf93ff20439bb90f486ea8d5576673317c93a4b68eb5dea9db457
 
 ## 约束和限制
 
-1. 当前能力仅支持2in1设备。
+1. 当前能力仅支持PC/2in1设备。
 2. 支持单次输入要查询的进程数最大限制为16个。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/qT9mbm6kQEWJPDHfcaereA/zh-cn_image_0000002589324767.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/Hy_NVQ4STI-jSMW5jXDhDA/zh-cn_image_0000002736313409.png)
 
 **流程说明：**
 
-1. 用户在hap应用上调用查询接口获取应用进程信息。
-2. Device Security Kit接口同步返回应用进程信息给hap应用，hap应用根据返回的应用进程信息进行业务处理。
+1. 开发者应用调用查询接口获取应用进程信息。
+2. Device Security Kit接口同步返回应用进程信息给开发者应用，开发者应用根据返回的应用进程信息进行业务处理。
 
 ## 接口说明
 
@@ -37,57 +37,61 @@ content_hash: sha256:2d204caf93ff20439bb90f486ea8d5576673317c93a4b68eb5dea9db457
 
 ## 开发步骤
 
-说明
+**说明** 
 
 * 在开发准备过程中，需要申请权限：ohos.permission.QUERY\_AUDIT\_EVENT。
-* 只允许清单内的企业类应用申请该权限，申请方式请参考：[申请使用企业类应用可用权限](permissions-for-enterprise-apps.md)。
+* 只允许清单内的企业类应用申请该权限，申请方式请参考：[企业类应用可用权限](permissions-for-enterprise-apps.md)。
 
 1. 在CMakeLists.txt中导入安全审计共享库，并链接该库。
 
-   ```
-   1. find_library(dsm-lib libsecurityaudit_ndk.z.so)
-   2. target_link_libraries(entry PUBLIC libace_napi.z.so ${dsm-lib})
+   ```cmake
+   find_library(dsm-lib libsecurityaudit_ndk.z.so)
+   target_link_libraries(entry PUBLIC libace_napi.z.so ${dsm-lib})
    ```
 2. 导入安全审计的头文件。
 
    ```
-   1. #include <DeviceSecurityKit/security_audit.h>
-   2. #include <cstdio>
+   #include <cstdio>
+   #include "DeviceSecurityKit/security_audit.h"
    ```
 3. 开发者根据实际场景，获取单个或所有应用进程信息。
 
-   说明
+   **说明** 
 
-   应用在根据应用进程信息进行业务处理后，需要释放查询接口出入参的内存。
+   开发者应用根据应用进程信息进行业务处理后，需要释放查询接口出入参的内存。
 
    * 调用HMS\_SecurityAudit\_QueryProcesses接口，获取单个应用进程信息。
 
-     ```
-     1. char *result = nullptr;
-     2. uint64_t pids[] = {3266};
-     3. int32_t ret = HMS_SecurityAudit_QueryProcesses(pids, sizeof(pids)/sizeof(pids[0]), &result);
-     4. if (ret == 0 && result != nullptr) {
-     5. printf("HMS_SecurityAudit_QueryProcesses result: %s\n", result);
-     6. } else {
-     7. printf("HMS_SecurityAudit_QueryProcesses failed with error: %d\n", ret);
-     8. }
-     9. if (result != nullptr) {
-     10. delete[] result;
-     11. result = nullptr;
-     12. }
-     ```
+   ```
+   char* result = nullptr;
+   uint64_t pids[] = {3266};
+   int32_t ret = HMS_SecurityAudit_QueryProcesses(pids, sizeof(pids)/sizeof(pids[0]), &result);
+   if (ret == 0 && result != nullptr) {
+       printf("HMS_SecurityAudit_QueryProcesses result: %s\n", result);
+   } else {
+       printf("HMS_SecurityAudit_QueryProcesses failed with error: %d\n", ret);
+   }
+       
+   // ...
+   if (result != nullptr) {
+       delete[] result;
+       result = nullptr;
+   }
+   ```
+
    * 调用HMS\_SecurityAudit\_QueryAllProcesses接口，获取所有的应用进程信息。
 
-     ```
-     1. char *result = nullptr;
-     2. int32_t ret = HMS_SecurityAudit_QueryAllProcesses(&result);
-     3. if (ret == 0 && result != nullptr) {
-     4. printf("HMS_SecurityAudit_QueryAllProcesses result: %s\n", result);
-     5. } else {
-     6. printf("HMS_SecurityAudit_QueryAllProcesses failed with error: %d\n", ret);
-     7. }
-     8. if (result != nullptr) {
-     9. delete[] result;
-     10. result = nullptr;
-     11. }
-     ```
+   ```
+   char* result = nullptr;
+   int32_t ret = HMS_SecurityAudit_QueryAllProcesses(&result);
+   if (ret == 0 && result != nullptr) {
+   printf("HMS_SecurityAudit_QueryAllProcesses result: %s\n", result);
+   } else {
+       printf("HMS_SecurityAudit_QueryAllProcesses failed with error: %d\n", ret);
+   }
+   // ...
+   if (result != nullptr) {
+       delete[] result;
+       result = nullptr;
+   }
+   ```

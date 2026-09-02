@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-1
 title: http网络请求中extraData支持的数据格式有哪些
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > http网络请求中extraData支持的数据格式有哪些
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:04+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:57+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:69cfaf04533d98a1745afea3a57902ae5abb728601856bad031f45efa406af8a
 ---
 

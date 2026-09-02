@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getke
 title: GetKernelType
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > ExtendedKernelContext > GetKernelType
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:59+08:00
+scraped_at: 2026-09-02T14:50:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4adddbc510fac5d9bc2855afc03b21e00a01b11d09822d15920c1ba4ba5bb8e2
+content_hash: sha256:f9828947f5e64d54926d4d5ce1736a41e5557be53d677f033b253e04aa5b7784
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:4adddbc510fac5d9bc2855afc03b21e00a01b11d09822d15920c1ba4ba5
 
 ## 函数原型
 
-```
-1. const char *GetKernelType() const
+```cpp
+const char *GetKernelType() const
 ```
 
 ## 参数说明
@@ -32,8 +32,8 @@ content_hash: sha256:4adddbc510fac5d9bc2855afc03b21e00a01b11d09822d15920c1ba4ba5
 
 ## 调用示例
 
-```
-1. // 假设已存在KernelContext *context
-2. auto extend_context = reinterpret_cast<ExtendedKernelContext *>(context);
-3. auto kernel_type = extend_context->GetKernelType();
+```cpp
+// 假设已存在KernelContext *context
+auto extend_context = reinterpret_cast<ExtendedKernelContext *>(context);
+auto kernel_type = extend_context->GetKernelType();
 ```

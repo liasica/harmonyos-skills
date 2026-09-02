@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/anm-tool
 title: anm工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > anm工具
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:27+08:00
+scraped_at: 2026-09-02T14:50:13+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:13b5e954e12ac4813b7291998f46642e12555f51559c62f86d6471fa00467afa
+content_hash: sha256:0e1380e9b70f3f588a75c085086cfe102828bbb35784471d38ff2858a2918bbe
 ---
 
 Advanced Notification Manager（通知管理工具，简称anm）是实现通知打印、设置通知参数等功能的工具，为开发者提供基本的通知调试和测试能力，例如打印已发布通知详细信息、设置通知缓存个数、使能通知等。
@@ -26,16 +26,16 @@ Advanced Notification Manager（通知管理工具，简称anm）是实现通知
 
 ## 帮助命令（help）
 
-```
-1. # 显示anm相关的帮助信息
-2. anm help
+```bash
+# 显示anm相关的帮助信息
+anm help
 ```
 
 ## 打印命令（dump）
 
-```
-1. # 打印通知相关信息
-2. anm dump [<options>]
+```bash
+# 打印通知相关信息
+anm dump [<options>]
 ```
 
 **打印命令参数列表**
@@ -51,16 +51,16 @@ Advanced Notification Manager（通知管理工具，简称anm）是实现通知
 
 **示例**：
 
-```
-1. # 打印活跃的通知信息
-2. anm dump -A
+```bash
+# 打印活跃的通知信息
+anm dump -A
 ```
 
 ## 设置命令（setting）
 
-```
-1. # 设置通知参数
-2. anm setting [<options>]
+```bash
+# 设置通知参数
+anm setting [<options>]
 ```
 
 **设置命令参数列表**
@@ -76,16 +76,16 @@ Advanced Notification Manager（通知管理工具，简称anm）是实现通知
 
 **示例**：
 
-```
-1. # 设置保存在内存中的最近通知的最大数量为100个
-2. anm setting -c 100
+```bash
+# 设置保存在内存中的最近通知的最大数量为100个
+anm setting -c 100
 
-4. # 设置通知跨设备协同至wearable类型设备的开关为打开状态
-5. anm setting -k wearable:1
+# 设置通知跨设备协同至wearable类型设备的开关为打开状态
+anm setting -k wearable:1
 
-7. # 设置包名为example，uid为10100的应用通知跨设备协同至litewearable类型设备的开关为关闭状态
-8. anm setting -b litewearable:example:10100:0
+# 设置包名为example，uid为10100的应用通知跨设备协同至litewearable类型设备的开关为关闭状态
+anm setting -b litewearable:example:10100:0
 
-10. # 设置渠道类型为0的通知跨设备协同至headset类型设备的开关为打开状态
-11. anm setting -o headset:0:1
+# 设置渠道类型为0的通知跨设备协同至headset类型设备的开关为打开状态
+anm setting -o headset:0:1
 ```

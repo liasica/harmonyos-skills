@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-610
 title: 版本概览
-breadcrumb: 版本说明 > HarmonyOS 6.1.0(23) > 版本概览
+breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > 版本概览
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:18+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4be942e33106e7917528f50784d1e4eae71cb5efdbac025ce928d20bb52f241c
+scraped_at: 2026-09-02T14:58:33+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:847ce7c43ce1c75a7bfb49a9d79040ca4bc7e019d1ca677329cd7122d809c384
 ---
 
 6.1.0(23)在6.0.2(22)的基础上，开发能力得到进一步增强：ArkUI新增自定义键盘切换接续、跑马灯间距配置、滚动组件模拟拖拽等能力；Ability Kit支持Native软件包独立签名及启动时间戳获取；ArkWeb新增模拟点击检测、首屏渲染时间统计、Cookies管理能力；Camera Kit支持HDR动态照片拍摄；Audio Kit新增变声效果和系统音效管理；Media Kit支持批量提取视频缩略图及HDR转SDR；Network Kit增强HTTP请求配置和DNS转码能力；Connectivity Kit的BLE支持自定义广播名称；UI Design Kit新增底部页签悬浮样式和沉浸式材质效果的设置；新增AR Engine人脸识别与骨骼跟踪、3D空间重建会话管理、营销组件等能力，等等。更多详情可参见[OS平台新增和增强特性](os-new-feature-610.md)。
@@ -14,7 +14,7 @@ DevEco Studio能力进一步增强：支持开发API 23工程；支持一键启�
 
 ## 版本信息
 
-说明
+**说明** 
 
 使用正确的配套关系进行应用开发可以获得更流畅的开发体验。
 
@@ -25,14 +25,16 @@ DevEco Studio能力进一步增强：支持开发API 23工程；支持一键启�
 | **软件包** | **发布类型** | **版本号** | **发布时间** |
 | --- | --- | --- | --- |
 | API版本 | Release | 6.1.0(23)  *\***注意**：设备系统支持的API能力范围请以**API版本****为准。* | 2026/04/20 |
-| DevEco Studio | Release | DevEco Studio 6.1.0 Release（6.1.0.830） | 2026/04/20 |
+| DevEco Studio | Release | DevEco Studio 6.1.0 Release（6.1.0.860）  （Patch版本） | 2026/06/30 |
+| DevEco Studio 6.1.0 Release（6.1.0.850）  （Patch版本） | 2026/05/18 |
+| DevEco Studio 6.1.0 Release（6.1.0.830） | 2026/04/20 |
 | SDK | Release | 基于OpenHarmony SDK Ohos\_sdk\_public 6.1.0.105 (API 23 Release) | 2026/04/20 |
 
-说明
+**说明** 
 
 * **API版本**请在设备的“设置”中点击设备名称，进入“**关于本机**”进行查询。
 
-* DevEco Studio版本请从DevEco Studio界面菜单选择“Help > About DevEco Studio”进行查询。
+* DevEco Studio版本请从DevEco Studio界面菜单选择“Help > About DevEco Studio”进行查询。请[点击此处](https://developer.huawei.com/consumer/cn/deveco-studio/)获取最新的DevEco Studio软件版本。
 * SDK内置在DevEco Studio，安装DevEco Studio时自动安装配套版本SDK。具体版本请从DevEco Studio界面菜单选择“Help > About HarmonyOS SDK”进行查询。
 
 ## 应用工程版本信息配置建议
@@ -52,7 +54,7 @@ DevEco Studio能力进一步增强：支持开发API 23工程；支持一键启�
 
 ### 6.1.0(23) Release配套信息
 
-说明
+**说明** 
 
 该版本为受限发布的版本，未面向全网公开发布。
 
@@ -64,7 +66,7 @@ DevEco Studio能力进一步增强：支持开发API 23工程；支持一键启�
 
 ### 6.1.0(23) Beta2配套信息
 
-说明
+**说明** 
 
 该版本为受限发布的版本，未面向全网公开发布。
 
@@ -76,7 +78,7 @@ DevEco Studio能力进一步增强：支持开发API 23工程；支持一键启�
 
 ### 6.1.0(23) Beta1配套信息
 
-说明
+**说明** 
 
 该版本为受限发布的版本，未面向全网公开发布。
 

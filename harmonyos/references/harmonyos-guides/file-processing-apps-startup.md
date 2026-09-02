@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/file-processing-apps-startup
 title: 拉起文件处理类应用（startAbility）
-breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > 应用间跳转 > 拉起指定类型的应用 > 拉起文件处理类应用（startAbility）
+breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起指定类型的应用 > 拉起文件处理类应用（startAbility）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:25:54+08:00
+scraped_at: 2026-09-02T14:59:10+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:515c8996f0cacb69ed87dcb935df19e4fb99c4658143b8850645c1a42dea95c8
+content_hash: sha256:4658eaff351302414aca41fb9545723ede293d726fad1da30287a3a4bcc080d6
 ---
 
 ## 使用场景
@@ -16,7 +16,7 @@ content_hash: sha256:515c8996f0cacb69ed87dcb935df19e4fb99c4658143b8850645c1a42de
 
 图1 效果示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/E-7JPhL4T0uEIVzyqbW_VQ/zh-cn_image_0000002558604344.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/ncRI6ui7RyqdVGQJKkZJwQ/zh-cn_image_0000002706673102.jpeg)
 
 ## 接口关键参数说明
 
@@ -53,80 +53,80 @@ content_hash: sha256:515c8996f0cacb69ed87dcb935df19e4fb99c4658143b8850645c1a42de
 
 1. 导入相关模块。
 
-   ```
-   1. // xxx.ets
-   2. import { fileUri } from '@kit.CoreFileKit';
-   3. import { UIAbility, Want, common, wantConstant } from '@kit.AbilityKit';
-   4. import { BusinessError } from '@kit.BasicServicesKit';
-   5. import { window } from '@kit.ArkUI';
+   ```ts
+   // xxx.ets
+   import { fileUri } from '@kit.CoreFileKit';
+   import { UIAbility, Want, common, wantConstant } from '@kit.AbilityKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { window } from '@kit.ArkUI';
    ```
 2. 获取[应用文件路径](application-context-stage.md#获取应用文件路径)。
 
-   ```
-   1. // xxx.ets
-   2. // 假设应用bundleName值为com.example.demo
-   3. export default class EntryAbility extends UIAbility {
-   4. onWindowStageCreate(windowStage: window.WindowStage) {
-   5. // 获取文件沙箱路径
-   6. let filePath = this.context.filesDir + '/test1.txt';
-   7. // 将沙箱路径转换为uri
-   8. let uri = fileUri.getUriFromPath(filePath);
-   9. // 获取的uri为"file://com.example.demo/data/storage/el2/base/files/test.txt"
-   10. }
-   11. // ...
-   12. }
+   ```ts
+   // xxx.ets
+   // 假设应用bundleName值为com.example.demo
+   export default class EntryAbility extends UIAbility {
+       onWindowStageCreate(windowStage: window.WindowStage) {
+           // 获取文件沙箱路径
+           let filePath = this.context.filesDir + '/test1.txt';
+           // 将沙箱路径转换为uri
+           let uri = fileUri.getUriFromPath(filePath);
+           // 获取的uri为"file://com.example.demo/data/storage/el2/base/files/test.txt"
+       }
+       // ...
+   }
    ```
 3. 构造请求数据。
 
-   ```
-   1. // xxx.ets
-   2. export default class EntryAbility extends UIAbility {
-   3. onWindowStageCreate(windowStage: window.WindowStage) {
-   4. // 获取文件沙箱路径
-   5. let filePath = this.context.filesDir + '/test.txt';
-   6. // 将沙箱路径转换为uri
-   7. let uri = fileUri.getUriFromPath(filePath);
-   8. // 构造请求数据
-   9. let want: Want = {
-   10. action: 'ohos.want.action.viewData', // 表示查看数据的操作，文件打开场景固定为此值
-   11. uri: uri,
-   12. type: 'general.plain-text', // 表示待打开文件的类型
-   13. // 配置被分享文件的读写权限，例如对文件打开应用进行读写授权
-   14. flags: wantConstant.Flags.FLAG_AUTH_WRITE_URI_PERMISSION | wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION
-   15. };
-   16. }
-   17. // ...
-   18. }
+   ```ts
+   // xxx.ets
+   export default class EntryAbility extends UIAbility {
+       onWindowStageCreate(windowStage: window.WindowStage) {
+           // 获取文件沙箱路径
+           let filePath = this.context.filesDir + '/test.txt';
+           // 将沙箱路径转换为uri
+           let uri = fileUri.getUriFromPath(filePath);
+           // 构造请求数据
+           let want: Want = {
+           action: 'ohos.want.action.viewData', // 表示查看数据的操作，文件打开场景固定为此值
+           uri: uri,
+           type: 'general.plain-text', // 表示待打开文件的类型
+           // 配置被分享文件的读写权限，例如对文件打开应用进行读写授权
+           flags: wantConstant.Flags.FLAG_AUTH_WRITE_URI_PERMISSION | wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION
+           };
+       }
+       // ...
+   }
    ```
 4. 调用接口启动。
 
-   ```
-   1. // xxx.ets
-   2. export default class EntryAbility extends UIAbility {
-   3. onWindowStageCreate(windowStage: window.WindowStage) {
-   4. // 获取文件沙箱路径
-   5. let filePath = this.context.filesDir + '/test.txt';
-   6. // 将沙箱路径转换为uri
-   7. let uri = fileUri.getUriFromPath(filePath);
-   8. // 构造请求数据
-   9. let want: Want = {
-   10. action: 'ohos.want.action.viewData', // 表示查看数据的操作，文件打开场景固定为此值
-   11. uri: uri,
-   12. type: 'general.plain-text', // 表示待打开文件的类型
-   13. // 配置被分享文件的读写权限，例如对文件打开应用进行读写授权
-   14. flags: wantConstant.Flags.FLAG_AUTH_WRITE_URI_PERMISSION | wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION
-   15. };
-   16. // 调用接口启动
-   17. this.context.startAbility(want)
-   18. .then(() => {
-   19. console.info('Succeed to invoke startAbility.');
-   20. })
-   21. .catch((err: BusinessError) => {
-   22. console.error(`Failed to invoke startAbility, code: ${err.code}, message: ${err.message}`);
-   23. });
-   24. }
-   25. // ...
-   26. }
+   ```ts
+   // xxx.ets
+   export default class EntryAbility extends UIAbility {
+       onWindowStageCreate(windowStage: window.WindowStage) {
+           // 获取文件沙箱路径
+           let filePath = this.context.filesDir + '/test.txt';
+           // 将沙箱路径转换为uri
+           let uri = fileUri.getUriFromPath(filePath);
+           // 构造请求数据
+           let want: Want = {
+           action: 'ohos.want.action.viewData', // 表示查看数据的操作，文件打开场景固定为此值
+           uri: uri,
+           type: 'general.plain-text', // 表示待打开文件的类型
+           // 配置被分享文件的读写权限，例如对文件打开应用进行读写授权
+           flags: wantConstant.Flags.FLAG_AUTH_WRITE_URI_PERMISSION | wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION
+           };
+           // 调用接口启动
+           this.context.startAbility(want)
+           .then(() => {
+               console.info('Succeed to invoke startAbility.');
+           })
+           .catch((err: BusinessError) => {
+               console.error(`Failed to invoke startAbility, code: ${err.code}, message: ${err.message}`);
+           });
+       }
+       // ...
+   }
    ```
 
 ### 目标方接入步骤
@@ -135,61 +135,61 @@ content_hash: sha256:515c8996f0cacb69ed87dcb935df19e4fb99c4658143b8850645c1a42de
 
    支持打开文件的应用需要在[module.json5](module-configuration-file.md)配置文件中声明文件打开能力。其中uris字段表示接收URI的类型，其中scheme固定为file。type字段表示支持打开的文件类型（参见[UTD类型](uniform-data-type-descriptors.md)（推荐）或[MIME type类型](https://www.iana.org/assignments/media-types/media-types.xhtml?utm_source=ld246.com)），如下举例中类型为txt文件。
 
-   ```
-   1. {
-   2. "module": {
-   3. // ...
-   4. "abilities": [
-   5. {
-   6. // ...
-   7. "skills": [
-   8. {
-   9. "actions": [
-   10. "ohos.want.action.viewData" // 必填，声明数据处理能力
-   11. ],
-   12. "uris": [
-   13. {
-   14. // 允许打开uri中以file://协议开头标识的本地文件
-   15. "scheme": "file", // 必填，声明协议类型为文件
-   16. "type": "general.plain-text", // 必填，表示支持打开的文件类型
-   17. "linkFeature": "FileOpen" // 必填且大小写敏感，表示此URI的功能为文件打开
-   18. }
-   19. // ...
-   20. ]
-   21. // ...
-   22. }
-   23. ]
-   24. }
-   25. ]
-   26. }
-   27. }
+   ```json
+   {
+   "module": {
+       // ...
+       "abilities": [
+       {
+           // ...
+           "skills": [
+           {
+               "actions": [
+               "ohos.want.action.viewData" // 必填，声明数据处理能力
+               ],
+               "uris": [
+               {
+                   // 允许打开uri中以file://协议开头标识的本地文件
+                   "scheme": "file", // 必填，声明协议类型为文件
+                   "type": "general.plain-text", // 必填，表示支持打开的文件类型
+                   "linkFeature": "FileOpen" // 必填且大小写敏感，表示此URI的功能为文件打开
+               }
+               // ...
+               ]
+               // ...
+           }
+           ]
+       }
+       ]
+   }
+   }
    ```
 2. 应用处理待打开文件。
 
    声明了文件打开的应用在被拉起后，获取传入的[Want](../harmonyos-references/js-apis-app-ability-want.md)参数信息，从中获取待打开文件的URI，在打开文件并获取对应的file对象后，可对文件进行读写操作。
 
-   ```
-   1. // xxx.ets
-   2. import { fileIo } from '@kit.CoreFileKit';
-   3. import { Want, AbilityConstant, UIAbility } from '@kit.AbilityKit';
-   4. import { BusinessError } from '@kit.BasicServicesKit';
+   ```ts
+   // xxx.ets
+   import { fileIo } from '@kit.CoreFileKit';
+   import { Want, AbilityConstant, UIAbility } from '@kit.AbilityKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
 
-   6. export default class EntryAbility extends UIAbility {
-   7. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-   8. // 从want信息中获取uri字段
-   9. let uri = want.uri;
-   10. if (uri == null || uri == undefined) {
-   11. console.info('uri is invalid');
-   12. return;
-   13. }
-   14. try {
-   15. // 根据待打开文件的URI进行相应操作。例如同步读写的方式打开URI获取file对象
-   16. let file = fileIo.openSync(uri, fileIo.OpenMode.READ_WRITE);
-   17. console.info('Succeed to open file.');
-   18. } catch (err) {
-   19. let error: BusinessError = err as BusinessError;
-   20. console.error(`Failed to open file openSync, code: ${error.code}, message: ${error.message}`);
-   21. }
-   22. }
-   23. }
+   export default class EntryAbility extends UIAbility {
+       onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
+           // 从want信息中获取uri字段
+           let uri = want.uri;
+           if (uri == null || uri == undefined) {
+               console.info('uri is invalid');
+               return;
+           }
+           try {
+               // 根据待打开文件的URI进行相应操作。例如同步读写的方式打开URI获取file对象
+               let file = fileIo.openSync(uri, fileIo.OpenMode.READ_WRITE);
+               console.info('Succeed to open file.');
+           } catch (err) {
+               let error: BusinessError = err as BusinessError;
+               console.error(`Failed to open file openSync, code: ${error.code}, message: ${error.message}`);
+           }
+       }
+   }
    ```

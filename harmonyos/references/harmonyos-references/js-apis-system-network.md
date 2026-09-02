@@ -3,35 +3,29 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@system.network (网络状态)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 已停止维护的接口 > @system.network (网络状态)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:42+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:92ee584756272853d6daa93aa53963037e07fef43b111aed365bf999ed822f8d
+scraped_at: 2026-09-02T15:01:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ea26d2a1eb83e18ae55de374fef2cee84ee14ab22eb5738697ce6a28624aca56
 ---
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 3开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 从API Version 8 开始，该接口不再维护，推荐使用新接口['@ohos.net.connection'](js-apis-net-connection.md)。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import network from '@system.network';
+```screen
+import network from '@system.network';
 ```
 
 ## 权限列表
-
-PhonePC/2in1TabletTVWearable
 
 ohos.permission.GET\_WIFI\_INFO
 
 ohos.permission.GET\_NETWORK\_INFO
 
 ## network.getType3+
-
-PhonePC/2in1TabletTVWearable
 
 getType(options?: {
 
@@ -63,21 +57,19 @@ fail返回值：
 
 **示例：**
 
-```
-1. export default class Network {
-2. getType() {
-3. network.getType({
-4. success: (data) => {
-5. console.info('success get network type:' + data.type);
-6. }
-7. });
-8. }
-9. }
+```screen
+export default class Network {
+  getType() {
+    network.getType({
+      success: (data) => {
+        console.info('success get network type:' + data.type);
+      }
+    });
+  }
+}
 ```
 
 ## network.subscribe3+
-
-PhonePC/2in1TabletTVWearable
 
 subscribe(options?:{
 
@@ -107,21 +99,19 @@ fail返回值：
 
 **示例：**
 
-```
-1. export default class Network {
-2. subscribe() {
-3. network.subscribe({
-4. success: (data) => {
-5. console.info('success get network type:' + data.type);
-6. }
-7. });
-8. }
-9. }
+```screen
+export default class Network {
+  subscribe() {
+    network.subscribe({
+      success: (data) => {
+        console.info('success get network type:' + data.type);
+      }
+    });
+  }
+}
 ```
 
 ## network.unsubscribe3+
-
-PhonePC/2in1TabletTVWearable
 
 unsubscribe(): void
 
@@ -131,15 +121,13 @@ unsubscribe(): void
 
 **示例：**
 
-```
-1. import network from '@system.network';
+```screen
+import network from '@system.network';
 
-3. network.unsubscribe();
+network.unsubscribe();
 ```
 
 ## NetworkResponse3+
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.Communication.NetManager.Core
 

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-data
 title: data_type.h
 breadcrumb: API参考 > AI > MindSpore Lite Kit（昇思推理框架服务） > C API > 头文件 > data_type.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:02+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e8b22563a2a2ade64362437e9ae595d56604cc3a8a984eb79c19ae597a1f95d8
+scraped_at: 2026-09-02T15:03:11+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:12f2854842e847e28f7a2f62a48dba6d1a4f7ef85b4cd007235a102560e2abf0
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明了张量的数据的类型。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,14 +32,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AI\_DataType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AI_DataType
+```c
+enum OH_AI_DataType
 ```
 
 **描述**

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tenso
 title: SetOriginFormat
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > TensorDesc > SetOriginFormat
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:59+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:24a6c3a86797b6cfa5ff51e625c901acc10ec6ede4b3ea330765fcea136794e0
+content_hash: sha256:c26509f68e2391134a8ced40d37e8ad8ad1ec3e00bd58d4a03bcb1ddd6568dc5
 ---
 
 ## 函数功能
@@ -16,8 +16,8 @@ content_hash: sha256:24a6c3a86797b6cfa5ff51e625c901acc10ec6ede4b3ea330765fcea136
 
 ## 函数原型
 
-```
-1. void SetOriginFormat(Format origin_format);
+```cpp
+void SetOriginFormat(Format origin_format);
 ```
 
 ## 参数说明

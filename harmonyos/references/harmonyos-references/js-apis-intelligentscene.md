@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.intelligentScene (情景模式)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 其他 > @ohos.intelligentScene (情景模式)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:41+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:881316794fe26a44390ed3bea59e9c74d3bc69d9f97461b61d23720313de32c2
+scraped_at: 2026-09-02T15:02:04+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:af857cce55d5222e890872dad4e81715afcac9598a276933f81ed188f72b832d
 ---
 
 本模块提供查询免打扰的相关功能，包括查询系统的免打扰功能是否开启、查询应用自身是否允许打扰等。情景模式（免打扰、睡眠模式、学习模式、工作模式和自定义模式）开启时，免打扰功能会开启。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 23开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhoneTablet
-
-```
-1. import { intelligentScene } from '@kit.BasicServicesKit';
+```js
+import { intelligentScene } from '@kit.BasicServicesKit';
 ```
 
 ## intelligentScene.isDoNotDisturbEnabled
-
-PhoneTablet
 
 isDoNotDisturbEnabled(): Promise<boolean>
 
@@ -53,25 +49,26 @@ isDoNotDisturbEnabled(): Promise<boolean>
 
 **示例**：
 
-```
-1. import { BusinessError, intelligentScene } from '@kit.BasicServicesKit';
+```js
+import { BusinessError, intelligentScene } from '@kit.BasicServicesKit';
 
-3. let isDoNotDisturbEnabled: boolean = false;
-4. try {
-5. isDoNotDisturbEnabled = await intelligentScene.isDoNotDisturbEnabled();
-6. } catch (err) {
-7. console.error(`Failed to get doNotDisturb state, code: ${err.code}, message: ${err.message}`);
-8. }
-9. if (isDoNotDisturbEnabled) {
-10. console.info('DoNotDisturb state is open');
-11. } else {
-12. console.info('DoNotDisturb state is closed');
-13. }
+async function isDoNotDisturbEnabled(): Promise<boolean> {
+  let isDoNotDisturbEnabled: boolean = false;
+  try {
+    isDoNotDisturbEnabled = await intelligentScene.isDoNotDisturbEnabled();
+  } catch (err) {
+    console.error(`Failed to get doNotDisturb state, code: ${err.code}, message: ${err.message}`);
+  }
+  if (isDoNotDisturbEnabled) {
+    console.info('DoNotDisturb state is open');
+  } else {
+    console.info('DoNotDisturb state is closed');
+  }
+  return isDoNotDisturbEnabled;
+}
 ```
 
 ## intelligentScene.isNotifyAllowedInDoNotDisturb
-
-PhoneTablet
 
 isNotifyAllowedInDoNotDisturb(): Promise<boolean>
 
@@ -100,18 +97,21 @@ isNotifyAllowedInDoNotDisturb(): Promise<boolean>
 
 **示例**：
 
-```
-1. import { BusinessError, intelligentScene } from '@kit.BasicServicesKit';
+```js
+import { BusinessError, intelligentScene } from '@kit.BasicServicesKit';
 
-3. let isNotifyAllowedInDoNotDisturb: boolean = false;
-4. try {
-5. isNotifyAllowedInDoNotDisturb = await intelligentScene.isNotifyAllowedInDoNotDisturb();
-6. } catch (err) {
-7. console.error(`Failed to get doNotDisturb state, code: ${err.code}, message: ${err.message}`);
-8. }
-9. if (isNotifyAllowedInDoNotDisturb) {
-10. console.info('Allowed to notify in doNotDisturb state');
-11. } else {
-12. console.info('Not allowed to notify in doNotDisturb state or doNotDisturb is closed');
-13. }
+async function isNotifyAllowedInDoNotDisturb(): Promise<boolean> {
+  let isNotifyAllowedInDoNotDisturb: boolean = false;
+  try {
+    isNotifyAllowedInDoNotDisturb = await intelligentScene.isNotifyAllowedInDoNotDisturb();
+  } catch (err) {
+    console.error(`Failed to get doNotDisturb state, code: ${err.code}, message: ${err.message}`);
+  }
+  if (isNotifyAllowedInDoNotDisturb) {
+    console.info('Allowed to notify in doNotDisturb state');
+  } else {
+    console.info('Not allowed to notify in doNotDisturb state or doNotDisturb is closed');
+  }
+  return isNotifyAllowedInDoNotDisturb;
+}
 ```

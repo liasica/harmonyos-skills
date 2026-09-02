@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-agent
 title: 智能体场景开发案例
 breadcrumb: 最佳实践 > AI使能 > 智能体场景开发案例
 category: best-practices
-scraped_at: 2026-04-29T14:13:14+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:bd7eaa0a0dfda999e5a876ab43d5de8f71387588f397a87426c1c990d8a9e38f
+scraped_at: 2026-09-02T15:03:21+08:00
+doc_updated_at: 2026-08-10
+content_hash: sha256:ea31520c806aac6a61f2e846685caeb85214d051b7545564f43152b461447889
 ---
 
 ## 简介
@@ -28,11 +28,11 @@ content_hash: sha256:bd7eaa0a0dfda999e5a876ab43d5de8f71387588f397a87426c1c990d8a
 
 ### 智能体创建
 
-登录[小艺开放平台](https://developer.huawei.com/consumer/cn/hag/hagindex.html#/)，点击【立即体验】按钮，进入小艺智能体平台页面。点击左上角【+创建智能体】按钮，即可进入智能体创建流程。可自行设定智能体的相关信息，包括它的名称、头像、智能体描述、智能体分类和运行设备等信息。具体内容可参考开发者指导文档[快速创建智能体](../service/quick-start-0000002469548009.md)。
+登录[小艺开放平台](https://developer.huawei.com/consumer/cn/hag/hagindex.html#/)，点击【立即体验】按钮，进入小艺智能体平台页面。点击左上角【+创建智能体】按钮，即可进入智能体创建流程。可自行设定智能体的相关信息，包括它的名称、头像、智能体描述、智能体分类和运行设备等信息。
 
 准备条件：真机调试及端插件开发需在HarmonyOS 5.1.0 Release及以上版本的设备上进行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/usxI69G1RjWRp7HvC8x2RA/zh-cn_image_0000002358083477.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/12wZ2bsWTIOo1sNHajXRjQ/zh-cn_image_0000002358083477.png "点击放大")
 
 ### 模式选择
 
@@ -52,17 +52,17 @@ A2A模式是一种三方智能体接入小艺开放平台的高效编排方式�
 
 不同编排模式的智能体，能力拓展部分的功能点也会有所区别。各编排模式的区别可参考开发者指导文档[智能体分类](../service/differences-in-arrangement-modes-0000002471344117.md)，开发者可根据不同模式的区别，考虑使用场景应该适配何种编排模式的智能体，选择对应的编排模式，并设定智能体相关信息，便可创建对应模式的智能体。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/3AQstt8ATgOZcfN2E5rXnA/zh-cn_image_0000002490331108.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/Di5d2tNUQIiY8X0aFbzrUg/zh-cn_image_0000002490331108.png "点击放大")
 
 ### 智能体编排
 
-智能体创建后，进入智能体的编排页面，开始智能体的编排，给智能体添加各种能力，优化完善智能体。其中，开场对话可以让用户快速了解你的智能体功能或场景设定故事背景，预置问题可以让用户通过点击快速体验智能体的能力，角色指令（prompt）直接决定你所创造的智能体的效果。更多能力点，开发者可参考[编排-能力拓展](../service/ability-expansion-function-introduction-0000002437625858.md)，自定义智能体的背景、能力等。
+智能体创建后，进入智能体的编排页面，开始智能体的编排，给智能体添加各种能力，优化完善智能体。其中，开场对话可以让用户快速了解你的智能体功能或场景设定故事背景，预置问题可以让用户通过点击快速体验智能体的能力，角色指令（prompt）直接决定你所创造的智能体的效果。
 
 以下为LLM模式和工作流模式的编排页面：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/R_8Eg1oxTHaB9HG7fxFkNQ/zh-cn_image_0000002522373909.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/E8jWI2V8RUq1NdcuL4BEVQ/zh-cn_image_0000002522373909.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/2kYx7c3JR22GOjOIlHm_PQ/zh-cn_image_0000002490496464.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/wdpogd2FQmGjHjrTVri0wg/zh-cn_image_0000002490496464.png "点击放大")
 
 ### 功能验证
 
@@ -109,7 +109,7 @@ A2A模式是一种三方智能体接入小艺开放平台的高效编排方式�
 
 1. 调试测试：调试与预览界面可以进行交互测试，预览实际交互场景，也可点击右上角调试按钮，进入调试详情页，查看详细的调测信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/aQSVW0iiQbaJU0zW43fYjA/zh-cn_image_0000002358083481.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/uNqTckB5SOec7-OT80VgOQ/zh-cn_image_0000002358083481.png "点击放大")
 2. 真机测试：点击调试与预览页面右上角的真机测试，可发布真机测试。真机测试前需配置白名单，开发者（团队账户需管理员权限）可通过新增组来管理真机调试用户，每个团队最多可创建100个用户组，每个用户组最多可添加100个用户。 开发者在服务发布至真机调试后，处于真机调试用户白名单中的用户可以访问到该开发测试服务，详见开发者指导文档[真机测试](../service/list-of-user-groups-for-real-machine-testing-0000002471264273.md)。
 
 **上架升级**
@@ -156,289 +156,277 @@ A2A模式是一种三方智能体接入小艺开放平台的高效编排方式�
 
    intentName对应工具名称，intentVersion对应工具版本号，srcEntry为基于意图框架[InsightIntentExecutor](../harmonyos-references/js-apis-app-ability-insightintentexecutor.md#insightintentexecutor)类方法的业务逻辑处理文件。
 
-   ```
-   1. {
-   2. "insightIntents": [
-   3. {
-   4. "domain": "",
-   5. "intentName": "PlayHiddenAudio",
-   6. "intentVersion": "1.0.0",
-   7. "srcEntry": "./ets/entryability/InsightIntentExecutorImpl.ets",
-   8. "uiAbility": {
-   9. "ability": "EntryAbility",
-   10. "executeMode": [
-   11. "background"
-   12. ]
-   13. }
-   14. },
-   15. {
-   16. "domain": "",
-   17. "intentName": "GetAudioName",
-   18. "intentVersion": "1.0.0",
-   19. "srcEntry": "./ets/entryability/InsightIntentExecutorImpl.ets",
-   20. "uiAbility": {
-   21. "ability": "EntryAbility",
-   22. "executeMode": [
-   23. "background"
-   24. ]
-   25. }
-   26. },
-   27. {
-   28. "domain": "",
-   29. "intentName": "OpenSecondPage",
-   30. "intentVersion": "1.0.0",
-   31. "srcEntry": "./ets/entryability/InsightIntentExecutorImpl.ets",
-   32. "uiAbility": {
-   33. "ability": "EntryAbility",
-   34. "executeMode": [
-   35. "background",
-   36. "foreground"
-   37. ]
-   38. }
-   39. }
-   40. ]
-   41. }
+   ```screen
+   {
+     "insightIntents": [
+       {
+         "domain": "",
+         "intentName": "PlayHiddenAudio",
+         "intentVersion": "1.0.0",
+         "srcEntry": "./ets/entryability/InsightIntentExecutorImpl.ets",
+         "uiAbility": {
+           "ability": "EntryAbility",
+           "executeMode": [
+             "background"
+           ]
+         }
+       },
+       {
+         "domain": "",
+         "intentName": "GetAudioName",
+         "intentVersion": "1.0.0",
+         "srcEntry": "./ets/entryability/InsightIntentExecutorImpl.ets",
+         "uiAbility": {
+           "ability": "EntryAbility",
+           "executeMode": [
+             "background"
+           ]
+         }
+       },
+       {
+         "domain": "",
+         "intentName": "OpenSecondPage",
+         "intentVersion": "1.0.0",
+         "srcEntry": "./ets/entryability/InsightIntentExecutorImpl.ets",
+         "uiAbility": {
+           "ability": "EntryAbility",
+           "executeMode": [
+             "background",
+             "foreground"
+           ]
+         }
+       }
+     ]
+   }
    ```
 2. 绑定的端插件被调用时的业务逻辑处理。
 
+   ```screen
+   import { insightIntent, InsightIntentExecutor } from '@kit.AbilityKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { window } from '@kit.ArkUI';
+   import AudioPlayHandler from './intentHandlers/AudioPlayHandler';
+   import TextGetHandler from './intentHandlers/TextGetHandler';
+   import PageNavigateHandler from './intentHandlers/PageNavigateHandler';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+
+   export default class InsightIntentExecutorImpl extends InsightIntentExecutor {
+     // Instruction implementation class.
+     private audioHandler = new AudioPlayHandler();
+     private textHandler = new TextGetHandler();
+     private pageHandler = new PageNavigateHandler();
+
+     // Intention execution method for backend execution.
+     async onExecuteInUIAbilityBackgroundMode(
+       intentName: string,
+       params: Record<string, object>
+     ): Promise<insightIntent.ExecuteResult> {
+
+       try {
+         switch (intentName) {
+           // Play audio intention.
+           case 'PlayHiddenAudio':
+             const stringParam: Record<string, string> = this.convertToRecord(params);
+             return this.audioHandler.execute(stringParam);
+
+           // Obtain audio name intent.
+           case 'GetAudioName':
+             return this.textHandler.execute();
+
+           default:
+             return {
+               code: -1,
+               result: {
+                 'status': 'failed',
+                 'message': `not valid intent name, ${intentName}`
+               }
+             };
+         }
+       } catch (error) {
+         return {
+           code: -2,
+           result: {
+             'status': 'failed',
+             'message': `Intent execution failed: ${(error as BusinessError).message}`
+           }
+         };
+       }
+     }
+
+     private convertToRecord(origin: Record<string, object>): Record<string, string> {
+       const result: Record<string, string> = {};
+       Object.keys(origin).forEach(key => {
+         result[key] = String(origin[key]);
+       });
+
+       return result;
+     }
+
+     // Execution method of backend execution intention.
+     async onExecuteInUIAbilityForegroundMode(name: string, param: Record<string, Object>, pageLoader: window.WindowStage):
+       Promise<insightIntent.ExecuteResult> {
+       switch (name) {
+         // Open the second page intention.
+         case 'OpenSecondPage':
+           return this.pageHandler.execute();
+         default:
+           pageLoader.loadContent('pages/MainPage')
+             .catch((error: BusinessError) => {
+               hilog.error(0x000, 'testTag', `loadContent failed. code=${error.code}, message=${error.message}`);
+             })
+           break;
+       }
+       return Promise.resolve({
+         code: -1,
+         result: {
+           message: 'unknown intent'
+         }
+       } as insightIntent.ExecuteResult)
+     }
+   }
    ```
-   1. import { insightIntent, InsightIntentExecutor } from '@kit.AbilityKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
-   3. import { window } from '@kit.ArkUI';
-   4. import AudioPlayHandler from './intentHandlers/AudioPlayHandler';
-   5. import TextGetHandler from './intentHandlers/TextGetHandler';
-   6. import PageNavigateHandler from './intentHandlers/PageNavigateHandler';
-   7. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-   9. export default class InsightIntentExecutorImpl extends InsightIntentExecutor {
-   10. // Instruction implementation class.
-   11. private audioHandler = new AudioPlayHandler();
-   12. private textHandler = new TextGetHandler();
-   13. private pageHandler = new PageNavigateHandler();
-
-   15. // Intention execution method for backend execution.
-   16. async onExecuteInUIAbilityBackgroundMode(
-   17. intentName: string,
-   18. params: Record<string, object>
-   19. ): Promise<insightIntent.ExecuteResult> {
-
-   21. try {
-   22. switch (intentName) {
-   23. // Play audio intention.
-   24. case 'PlayHiddenAudio':
-   25. const stringParam: Record<string, string> = this.convertToRecord(params);
-   26. return this.audioHandler.execute(stringParam);
-
-   28. // Obtain audio name intent.
-   29. case 'GetAudioName':
-   30. return this.textHandler.execute();
-
-   32. default:
-   33. return {
-   34. code: -1,
-   35. result: {
-   36. 'status': 'failed',
-   37. 'message': `not valid intent name, ${intentName}`
-   38. }
-   39. };
-   40. }
-   41. } catch (error) {
-   42. return {
-   43. code: -2,
-   44. result: {
-   45. 'status': 'failed',
-   46. 'message': `Intent execution failed: ${(error as BusinessError).message}`
-   47. }
-   48. };
-   49. }
-   50. }
-
-   52. private convertToRecord(origin: Record<string, object>): Record<string, string> {
-   53. const result: Record<string, string> = {};
-   54. Object.keys(origin).forEach(key => {
-   55. result[key] = String(origin[key]);
-   56. });
-
-   58. return result;
-   59. }
-
-   61. // Execution method of backend execution intention.
-   62. async onExecuteInUIAbilityForegroundMode(name: string, param: Record<string, Object>, pageLoader: window.WindowStage):
-   63. Promise<insightIntent.ExecuteResult> {
-   64. switch (name) {
-   65. // Open the second page intention.
-   66. case 'OpenSecondPage':
-   67. return this.pageHandler.execute();
-   68. default:
-   69. pageLoader.loadContent('pages/MainPage')
-   70. .catch((error: BusinessError) => {
-   71. hilog.error(0x000, 'testTag', `loadContent failed. code=${error.code}, message=${error.message}`);
-   72. })
-   73. break;
-   74. }
-   75. return Promise.resolve({
-   76. code: -1,
-   77. result: {
-   78. message: 'unknown intent'
-   79. }
-   80. } as insightIntent.ExecuteResult)
-   81. }
-   82. }
-   ```
-
-   [InsightIntentExecutorImpl.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/cfcdb9ee18053e27fdc245f7203e06ac88507064/XiaoyiAgentDemo/entry/src/main/ets/entryability/InsightIntentExecutorImpl.ets#L17-L99)
 3. 功能开发。
    * 实现获取歌曲名称的功能，并返回读取结果。
 
+     ```screen
+     import { insightIntent } from '@kit.AbilityKit';
+     import { BusinessError } from '@kit.BasicServicesKit';
+     import { MediaService } from '../../utils/audioplayer/MediaService';
+
+     export default class TextGetHandler {
+       async execute(): Promise<insightIntent.ExecuteResult> {
+         try {
+           // Execute the method of obtaining the name of the played audio.
+           const audioName: string = MediaService.getInstance().getAudioFileName();
+
+           // Return result.
+           return {
+             code: 0,
+             result: {
+               status:'success',
+               audioName: audioName,
+               message: 'get audio name success'
+             }
+           };
+         } catch (error) {
+           throw new Error(`get audio name failed: ${(error as BusinessError).message}`);
+         }
+       }
+     }
      ```
-     1. import { insightIntent } from '@kit.AbilityKit';
-     2. import { BusinessError } from '@kit.BasicServicesKit';
-     3. import { MediaService } from '../../utils/audioplayer/MediaService';
-
-     5. export default class TextGetHandler {
-     6. async execute(): Promise<insightIntent.ExecuteResult> {
-     7. try {
-     8. // Execute the method of obtaining the name of the played audio.
-     9. const audioName: string = MediaService.getInstance().getAudioFileName();
-
-     11. // Return result.
-     12. return {
-     13. code: 0,
-     14. result: {
-     15. status:'success',
-     16. audioName: audioName,
-     17. message: 'get audio name success'
-     18. }
-     19. };
-     20. } catch (error) {
-     21. throw new Error(`get audio name failed: ${(error as BusinessError).message}`);
-     22. }
-     23. }
-     24. }
-     ```
-
-     [TextGetHandler.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/cfcdb9ee18053e27fdc245f7203e06ac88507064/XiaoyiAgentDemo/entry/src/main/ets/entryability/intentHandlers/TextGetHandler.ets#L17-L40)
    * 使用[Deep Linking](../harmonyos-guides/deep-linking-startup.md#拉起方应用实现应用跳转)实现跳转播放页的功能。
 
      配置module.json5文件中的[skills标签](../harmonyos-guides/module-configuration-file.md#skills标签)，标识跳转场景。
 
+     ```screen
+     "skills": [
+       {
+         "entities": [
+           "entity.system.home",
+           "entity.system.browsable"
+         ],
+         "actions": [
+           "ohos.want.action.home",
+           "ohos.want.action.viewData"
+         ],
+         "uris": [
+           {
+             "scheme": "demo",
+             "host": "aiagentdemo.com",
+             "path": "SecondPage"
+           }
+         ]
+       }
+     ]
      ```
-     1. "skills": [
-     2. {
-     3. "entities": [
-     4. "entity.system.home",
-     5. "entity.system.browsable"
-     6. ],
-     7. "actions": [
-     8. "ohos.want.action.home",
-     9. "ohos.want.action.viewData"
-     10. ],
-     11. "uris": [
-     12. {
-     13. "scheme": "demo",
-     14. "host": "aiagentdemo.com",
-     15. "path": "SecondPage"
-     16. }
-     17. ]
-     18. }
-     19. ]
-     ```
-
-     [module.json5](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/cfcdb9ee18053e27fdc245f7203e06ac88507064/XiaoyiAgentDemo/entry/src/main/module.json5#L25-L43)
 
      在EntryAbility.ets文件中的onNewWant()生命周期回调中，获取、解析拉起方传入的应用链接，开发者可自定义后续的业务处理。
 
+     ```screen
+     onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+       hilog.info(DOMAIN, 'testTag', 'Received URI:', want.uri);
+       const uri = want.uri;
+       let pathname = '';
+       if (uri) {
+         try {
+           const urlObj = url.URL.parseURL(uri);
+           pathname = urlObj.pathname;
+         } catch (error) {
+           let err = error as BusinessError;
+           hilog.error(0x000, 'testTag', `getUIContext failed. code=${err.code}, message=${err.message}`);
+         }
+         uiContext?.getRouter().pushUrl({ url: 'pages' + pathname })
+           .catch((error: BusinessError) => {
+             hilog.error(0x000, 'testTag', `pushUrl failed. code=${error.code}, message=${error.message}`);
+           })
+       }
+     }
      ```
-     1. onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-     2. hilog.info(DOMAIN, 'testTag', 'Received URI:', want.uri);
-     3. const uri = want.uri;
-     4. let pathname = '';
-     5. if (uri) {
-     6. try {
-     7. const urlObj = url.URL.parseURL(uri);
-     8. pathname = urlObj.pathname;
-     9. } catch (error) {
-     10. let err = error as BusinessError;
-     11. hilog.error(0x000, 'testTag', `getUIContext failed. code=${err.code}, message=${err.message}`);
-     12. }
-     13. uiContext?.getRouter().pushUrl({ url: 'pages' + pathname })
-     14. .catch((error: BusinessError) => {
-     15. hilog.error(0x000, 'testTag', `pushUrl failed. code=${error.code}, message=${error.message}`);
-     16. })
-     17. }
-     18. }
-     ```
-
-     [EntryAbility.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/cfcdb9ee18053e27fdc245f7203e06ac88507064/XiaoyiAgentDemo/entry/src/main/ets/entryability/EntryAbility.ets#L75-L92)
 
      执行页面跳转并返回跳转结果。
 
+     ```screen
+     import { insightIntent } from '@kit.AbilityKit';
+     import { BusinessError } from '@kit.BasicServicesKit';
+     import { hilog } from '@kit.PerformanceAnalysisKit';
+
+     export default class PageNavigateHandler {
+       async execute(): Promise<insightIntent.ExecuteResult> {
+         try {
+           // Execute page redirection.
+           let uiContext: UIContext | null | undefined = null;
+           uiContext = AppStorage.get('uiContext');
+           uiContext?.getRouter().pushUrl({ url: 'pages/SecondPage' })
+             .catch((err: BusinessError) => {
+             hilog.error(0x0000, 'testTag',`pushUrl failed, Code:${err.code}, message:${err.message}`);
+           })
+
+           return {
+             code: 0,
+             result: {
+               status: 'success',
+               message: 'Navigation successful',
+               targetPage: 'SecondPage'
+             }
+           };
+         } catch (error) {
+           throw new Error(`Page navigation failed: ${(error as BusinessError).message}`);
+         }
+       }
+     }
      ```
-     1. import { insightIntent } from '@kit.AbilityKit';
-     2. import { BusinessError } from '@kit.BasicServicesKit';
-     3. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-     5. export default class PageNavigateHandler {
-     6. async execute(): Promise<insightIntent.ExecuteResult> {
-     7. try {
-     8. // Execute page redirection.
-     9. let uiContext: UIContext | null | undefined = null;
-     10. uiContext = AppStorage.get('uiContext');
-     11. uiContext?.getRouter().pushUrl({ url: 'pages/SecondPage' })
-     12. .catch((err: BusinessError) => {
-     13. hilog.error(0x0000, 'testTag',`pushUrl failed, Code:${err.code}, message:${err.message}`);
-     14. })
-
-     16. return {
-     17. code: 0,
-     18. result: {
-     19. status: 'success',
-     20. message: 'Navigation successful',
-     21. targetPage: 'SecondPage'
-     22. }
-     23. };
-     24. } catch (error) {
-     25. throw new Error(`Page navigation failed: ${(error as BusinessError).message}`);
-     26. }
-     27. }
-     28. }
-     ```
-
-     [PageNavigateHandler.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/cfcdb9ee18053e27fdc245f7203e06ac88507064/XiaoyiAgentDemo/entry/src/main/ets/entryability/intentHandlers/PageNavigateHandler.ets#L17-L44)
    * 音频播放功能的实现，开发者可根据实际业务需求自定义实现该功能。
 
+     ```screen
+     import { insightIntent } from '@kit.AbilityKit';
+     import { BusinessError } from '@kit.BasicServicesKit';
+     import { MediaService } from '../../utils/audioplayer/MediaService';
+
+     export default class AudioPlayHandler {
+
+       async execute(param: Record<string, string>): Promise<insightIntent.ExecuteResult> {
+         try {
+           // Analyze the parameters passed in by the plugin on the parsing end.
+           const rawAudioName = param.audioName;
+           const audioName = rawAudioName.toString();
+
+           // The method of playing audio can be customized by developers according to their actual business needs.
+           MediaService.getInstance().initAudioPlayer(audioName);
+
+           // Return the result to the end plugin.
+           return {
+             code: 0,
+             result: {
+               status: 'success',
+               message: `play audio ${audioName} started`,
+             }
+           };
+         } catch (error) {
+           throw new Error(`Audio play failed: ${(error as BusinessError).message}`);
+         }
+       }
+     }
      ```
-     1. import { insightIntent } from '@kit.AbilityKit';
-     2. import { BusinessError } from '@kit.BasicServicesKit';
-     3. import { MediaService } from '../../utils/audioplayer/MediaService';
-
-     5. export default class AudioPlayHandler {
-
-     7. async execute(param: Record<string, string>): Promise<insightIntent.ExecuteResult> {
-     8. try {
-     9. // Analyze the parameters passed in by the plugin on the parsing end.
-     10. const rawAudioName = param.audioName;
-     11. const audioName = rawAudioName.toString();
-
-     13. // The method of playing audio can be customized by developers according to their actual business needs.
-     14. MediaService.getInstance().initAudioPlayer(audioName);
-
-     16. // Return the result to the end plugin.
-     17. return {
-     18. code: 0,
-     19. result: {
-     20. status: 'success',
-     21. message: `play audio ${audioName} started`,
-     22. }
-     23. };
-     24. } catch (error) {
-     25. throw new Error(`Audio play failed: ${(error as BusinessError).message}`);
-     26. }
-     27. }
-     28. }
-     ```
-
-     [AudioPlayHandler.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/cfcdb9ee18053e27fdc245f7203e06ac88507064/XiaoyiAgentDemo/entry/src/main/ets/entryability/intentHandlers/AudioPlayHandler.ets#L17-L44)
 
 **工作流创建上架**
 
@@ -452,10 +440,10 @@ A2A模式是一种三方智能体接入小艺开放平台的高效编排方式�
       |  |  |
    3. 按照任务执行顺序连接对应节点
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/FonXTnV3Sled04WgxjECQQ/zh-cn_image_0000002358003581.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/VxXk9BpVTOChatjR0zOBEQ/zh-cn_image_0000002358003581.png "点击放大")
 3. 测试上架：点击【试运行】后，进入调试页面，可自行测试整体流程（无法在小艺开放平台调试端插件适配情况，只能测试工作流整体流程）。测试无误后，点击【上架】，进入上架审核阶段，待审核通过，即可在智能体中添加插件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/zsemP4-mSkC8FZoih0HP1w/zh-cn_image_0000002324005016.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/STHE0cRFRq-Ecvo7heogsA/zh-cn_image_0000002324005016.png "点击放大")
 
 **工作流模式智能体编排**
 
@@ -477,7 +465,7 @@ A2A模式是一种三方智能体接入小艺开放平台的高效编排方式�
 
 功能测试完成后，点击【保存】【上架】即可将智能体提交到上架审核阶段，具体流程可参考开发者指导文档[上/下架、升级流程介绍](../service/process-introduction-0000002509696971.md)。上架完成后，可在端侧小艺的智能体页面搜索查询到创建的智能体并使用。效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/a11LrO7oRWSmBSSOVwt_qw/zh-cn_image_0000002358003589.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/UymT8ZQ4Rve09TyajVeEiw/zh-cn_image_0000002358003589.png "点击放大")
 
 ## 总结
 

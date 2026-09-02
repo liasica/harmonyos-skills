@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 如果需要保存多张表，是创建一个数据库保存多张表还是创建多个数据库，每个数据库只保存一张表？使用的原则是什么
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 如果需要保存多张表，是创建一个数据库保存多张表还是创建多个数据库，每个数据库只保存一张表？使用的原则是什么
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:15+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:51+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:9531306acfd31262749ab5b2a215e15bad28d30bb34a6b1b7fc62ef57733db5e
 ---
 

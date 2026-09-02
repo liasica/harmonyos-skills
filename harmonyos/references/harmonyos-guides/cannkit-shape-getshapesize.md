@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-shape
 title: GetShapeSize
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Shape > GetShapeSize
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:53+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:26342fd7f217e4ed423c09a596c4d907da7f0be55db004cf9f9cee9cb7039d02
+content_hash: sha256:b9c1d03772d5ac0f611f9d871a143f6a9d119932fabf132e389541f447bf5138
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:26342fd7f217e4ed423c09a596c4d907da7f0be55db004cf9f9cee9cb70
 
 ## 函数原型
 
-```
-1. int64_t GetShapeSize() const
+```cpp
+int64_t GetShapeSize() const
 ```
 
 ## 参数说明

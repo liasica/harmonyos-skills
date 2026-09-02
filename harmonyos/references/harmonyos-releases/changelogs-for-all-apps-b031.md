@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-for-all-apps-b031
 title: 针对所有应用的变更
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Developer Beta2引入的接口行为变更 > 针对所有应用的变更
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Developer Beta2引入的接口行为变更 > 针对所有应用的变更
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:36:13+08:00
-doc_updated_at: 2026-01-19
-content_hash: sha256:15a317c3f6c6c46d3b54a2e0ce3cb240fa80082f106328452c48ea7eb41891d2
+scraped_at: 2026-09-02T14:58:54+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:959b3a2f6059d0b9833e1c753c8864ccf9281a5bb02fffc1c0434792329586bb
 ---
 
 ## NDK开发
@@ -37,15 +37,15 @@ content_hash: sha256:15a317c3f6c6c46d3b54a2e0ce3cb240fa80082f106328452c48ea7eb41
 
 变更后，开发者使用如下样例申请匿名内存或修改匿名内存权限将被系统禁止：
 
-```
-1. // 管控行为1：申请匿名内存时设置内存权限为可执行
-2. mmap(NULL, len, PROT_READ | PROT_WRITE | PROT_EXEC, MAP_ANONYMOUS, -1, 0);
+```cpp
+// 管控行为1：申请匿名内存时设置内存权限为可执行
+mmap(NULL, len, PROT_READ | PROT_WRITE | PROT_EXEC, MAP_ANONYMOUS, -1, 0);
 
-4. // 管控行为2：申请匿名内存后，再设置内存的权限为可执行
-5. addr = mmap(NULL, len, PROT_READ | PROT_WRITE, MAP_ANONYMOUS, -1, 0);
+// 管控行为2：申请匿名内存后，再设置内存的权限为可执行
+addr = mmap(NULL, len, PROT_READ | PROT_WRITE, MAP_ANONYMOUS, -1, 0);
 
-7. // ...
-8. mprotect(addr, leng, PROT_READ | PROT_EXEC);
+// ...
+mprotect(addr, leng, PROT_READ | PROT_EXEC);
 ```
 
 如开发者应用嵌入了V8或LuaJIT引擎，需要关闭引擎的JIT功能或考虑接入系统预置的JS引擎（有JIT能力）：
@@ -55,10 +55,10 @@ content_hash: sha256:15a317c3f6c6c46d3b54a2e0ce3cb240fa80082f106328452c48ea7eb41
   + 编译时关闭：在编译v8的GN文件里面加入v8\_jitless = true选项
   + 运行时关闭：在v8启动时传入--jitless参数，例如：
 
-    ```
-    1. int secArgc = ARGCNT;
-    2. char *secArgv[ARGCNT] = {"--jitless"};
-    3. v8::V8::SetFlagsFromCommandLine(&secArgc, secArgv, false);
+    ```cpp
+        int secArgc = ARGCNT;
+        char *secArgv[ARGCNT] = {"--jitless"};
+        v8::V8::SetFlagsFromCommandLine(&secArgc, secArgv, false);
     ```
 * 关闭LuaJIT的JIT功能：
 
@@ -85,9 +85,9 @@ cmake从3.16.5版本升级到3.28.2版本，引入了该项变更。
 
 在开发者使用不支持的命令参数（如 -v）时，应用编译构建将出现失败提示，提示内容如下：
 
-```
-1. CMake Error: Unknown argument -v
-2. CMake Error: Run 'cmake --help' for all supported options.
+```screen
+CMake Error: Unknown argument -v
+CMake Error: Run 'cmake --help' for all supported options.
 ```
 
 **该能力起始支持的API Level**
@@ -107,37 +107,37 @@ cmake从3.16.5版本升级到3.28.2版本，引入了该项变更。
    我们也可以在 [cmake.org](https://cmake.org/cmake/help/v3.28/manual/cmake.1.html) 查看 cmake 官方指导文档，Options 详细描述了支持的命令参数合集及其说明
 2. DevEco Studio构建的项目适配，删除项目模块目录下 build-profile.json5 中 arguments 配置的不支持的参数，删除内容如下：
 
-   ```
-   1. {
-   2. "apiType": '',
-   3. "buildOption": {
-   4. "externalNativeOptions": {
-   5. "path": "",
-   6. "arguments": "-v",   // 删除该项配置中不支持的参数，如删除-v
-   7. "cppFlags": "",
-   8. }
-   9. },
-   10. // ...
-   11. }
+   ```json
+   {
+   "apiType": '',
+   "buildOption": {
+       "externalNativeOptions": {
+       "path": "",
+       "arguments": "-v",   // 删除该项配置中不支持的参数，如删除-v
+       "cppFlags": "",
+       }
+   },
+   // ...
+   }
    ```
 3. 命令行构建的项目适配，删除构建命令中不支持的参数，删除内容如下：
 
-   ```
-   1. {native所在目录}/build-tools/cmake/bin/cmake
-   2. -HC:{项目所在目录}/entry/src/main/cpp
-   3. -BC:{项目所在目录}/entry/.cxx/default/default/arm64-v8a
-   4. -DOHOS_ARCH=arm64-v8a
-   5. -DCMAKE_LIBRARY_OUTPUT_DIRECTORY={项目所在目录}/entry/build/default/intermediates/cmake/default/obj/arm64-v8a
-   6. -DCMAKE_BUILD_TYPE=Debug
-   7. -DOHOS_SDK_NATIVE={native所在目录}
-   8. -DCMAKE_SYSTEM_NAME=OHOS
-   9. -DCMAKE_OHOS_ARCH_ABI=arm64-v8a
-   10. -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
-   11. -DCMAKE_TOOLCHAIN_FILE={native所在目录}/build/cmake/ohos.toolchain.cmake
-   12. -GNinja
-   13. -DCMAKE_MAKE_PROGRAM={native所在目录}/build-tools/cmake/bin/ninja
-   14. --no-warn-unused-cli
-   15. -v  // 删除执行命令中不支持的参数-v
+   ```screen
+   {native所在目录}/build-tools/cmake/bin/cmake
+   -HC:{项目所在目录}/entry/src/main/cpp
+   -BC:{项目所在目录}/entry/.cxx/default/default/arm64-v8a
+   -DOHOS_ARCH=arm64-v8a
+   -DCMAKE_LIBRARY_OUTPUT_DIRECTORY={项目所在目录}/entry/build/default/intermediates/cmake/default/obj/arm64-v8a
+   -DCMAKE_BUILD_TYPE=Debug
+   -DOHOS_SDK_NATIVE={native所在目录}
+   -DCMAKE_SYSTEM_NAME=OHOS
+   -DCMAKE_OHOS_ARCH_ABI=arm64-v8a
+   -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+   -DCMAKE_TOOLCHAIN_FILE={native所在目录}/build/cmake/ohos.toolchain.cmake
+   -GNinja
+   -DCMAKE_MAKE_PROGRAM={native所在目录}/build-tools/cmake/bin/ninja
+   --no-warn-unused-cli
+   -v  // 删除执行命令中不支持的参数-v
    ```
 
 ### 应用编译构建建议cmake\_minimum\_required修改为不低于3.5.0的版本
@@ -158,13 +158,13 @@ cmake从3.16.5版本升级到3.28.2版本，引入了该项变更。
 
 开发者使用默认模板（配置为：cmake\_minimum\_required(VERSION 3.4.1)）时，将出现告警提示，提示内容如下：
 
-```
-1. CMake Deprecation Warning at CMakeLists.txt:2 (CMAKE_MINIMUM_REQUIRED):
-2. Compatibility with CMake < 3.5 will be removed from a future version of
-3. CMake.
+```screen
+CMake Deprecation Warning at CMakeLists.txt:2 (CMAKE_MINIMUM_REQUIRED):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
 
-5. Update the VERSION argument <min> value or use a ...<max> suffix to tell
-6. CMake that the project does not need compatibility with older versions.
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
 ```
 
 **该能力起始支持的API Level**
@@ -179,12 +179,12 @@ cmake从3.16.5版本升级到3.28.2版本，引入了该项变更。
 
 修改项目 CMakeLists.txt 中 cmake\_minimum\_required 配置，修改内容如下：
 
-```
-1. # the minimum version of CMake.
-2. cmake_minimum_required(VERSION 3.4.1)  // 修改为 cmake_minimum_required(VERSION 3.5.0)
+```screen
+# the minimum version of CMake.
+cmake_minimum_required(VERSION 3.4.1)  // 修改为 cmake_minimum_required(VERSION 3.5.0)
 
-4. project(xxx)
-5. ...
+project(xxx)
+...
 ```
 
 ### 应用编译构建harA链接harB的so，导致hap包so冲突
@@ -209,23 +209,23 @@ cmake版本升级到3.28.2之后，当某har模块（如harA）的CMakeLists.txt
 
 如果so版本冲突，请在工程级或者模块级build-profile.json5文件中buildOption下添加nativeLib/filter/select字段，根据包名、版本、产物名称等，选择打包或排除so文件到HAP产物。具体请参考[关于select的使用](../harmonyos-guides-V5/ide-hvigor-cpp-V5.md#section14491810432)。
 
-```
-1. {
-2. buildOption:{
-3. nativeLib:{
-4. filter:{
-5. select:[ // select的优先级高于excludes、pickFirsts等配置项
-6. {
-7. package: "@ohos/curl", // 包名
-8. version： "1.3.5", // 包版本
-9. include： ["libcurl.so"], // 选择打包的native产物
-10. exclude： ["libc++shared.so"], // 排除的native产物
-11. },
-12. ];
-13. }
-14. }
-15. }
-16. }
+```screen
+{
+  buildOption:{
+    nativeLib:{
+      filter:{
+        select:[ // select的优先级高于excludes、pickFirsts等配置项
+          {
+            package: "@ohos/curl", // 包名
+            version： "1.3.5", // 包版本
+            include： ["libcurl.so"], // 选择打包的native产物
+            exclude： ["libc++shared.so"], // 排除的native产物
+          },
+        ];
+      }
+    }
+  }
+}
 ```
 
 ## ArkWeb
@@ -284,7 +284,7 @@ Asset的属性在HarmonyOS NEXT Developer Beta1阶段增加了undefined类型，
 
 11
 
-说明
+**说明** 
 
 Asset属性增加undefined类型为HarmonyOS NEXT Developer Beta1阶段引入的行为变更。
 
@@ -361,20 +361,20 @@ interface的属性名为数字字面量不符合ArkTS语法规则，编译语法
 
 变更前，interface可以声明数字字面量为属性名。
 
-```
-1. interface I {
-2. one: string,
-3. 2: string // no compile-time error
-4. }
+```ts
+interface I {
+  one: string,
+  2: string // no compile-time error
+}
 ```
 
 变更后，interface不可以使用数字字面量为属性名。
 
-```
-1. interface I {
-2. one: string,
-3. 2: string // compile-time error
-4. }
+```ts
+interface I {
+  one: string,
+  2: string // compile-time error
+}
 ```
 
 由于class和对象字面量中均不可以使用数字字面量作为属性名，因此如果使用了包含数字字面量作为属性名的interface不会有影响。
@@ -409,96 +409,96 @@ ArkTS语法检查从API 10起启用。
 
 * 情况一： 用户传入比较器，调用了TreeMap的clear方法后，比较器失效。
 
-  ```
-  1. //使用comparator firstValue > secondValue，表示为降序排序。
-  2. let treeMap : TreeMap<string,string> = new TreeMap<string,string>((firstValue: string, secondValue: string) : boolean => {return firstValue > secondValue});
-  3. treeMap.set("aa","3");
-  4. treeMap.set("dd","1");
-  5. treeMap.set("cc","2");
-  6. treeMap.set("bb","4");
-  7. let numbers = Array.from(treeMap.keys())
-  8. for (let item of numbers) {
-  9. console.log("treeMap:" + item); // key: dd  cc  bb  aa
-  10. }
-  11. treeMap.clear();
-  12. treeMap.set("aa","3");
-  13. treeMap.set("dd","1");
-  14. treeMap.set("cc","2");
-  15. treeMap.set("bb","4");
-  16. numbers = Array.from(treeMap.keys())
-  17. for (let item of numbers) {
-  18. console.log("treeMap:" + item); //key: aa  bb  cc  dd
-  19. }
+  ```ts
+  //使用comparator firstValue > secondValue，表示为降序排序。
+  let treeMap : TreeMap<string,string> = new TreeMap<string,string>((firstValue: string, secondValue: string) : boolean => {return firstValue > secondValue});
+  treeMap.set("aa","3");
+  treeMap.set("dd","1");
+  treeMap.set("cc","2");
+  treeMap.set("bb","4");
+  let numbers = Array.from(treeMap.keys())
+  for (let item of numbers) {
+    console.log("treeMap:" + item); // key: dd  cc  bb  aa
+  }
+  treeMap.clear();
+  treeMap.set("aa","3");
+  treeMap.set("dd","1");
+  treeMap.set("cc","2");
+  treeMap.set("bb","4");
+  numbers = Array.from(treeMap.keys())
+  for (let item of numbers) {
+    console.log("treeMap:" + item); //key: aa  bb  cc  dd
+  }
   ```
 * 情况二： 用户传入比较器，调用了TreeSet的clear方法后，比较器失效。
 
-  ```
-  1. let treeSet : TreeSet<string> = new TreeSet<string>((firstValue: string, secondValue: string) : boolean => {return firstValue > secondValue});
-  2. treeSet.add("a");
-  3. treeSet.add("c");
-  4. treeSet.add("d");
-  5. treeSet.add("b");
-  6. let numbers = Array.from(treeSet.values())
-  7. for (let item of numbers) {
-  8. console.log("TreeSet:" + item); // value: d  c  b  a
-  9. }
-  10. treeSet.clear();
-  11. treeSet.add("a");
-  12. treeSet.add("c");
-  13. treeSet.add("d");
-  14. treeSet.add("b");
-  15. numbers = Array.from(treeSet.values())
-  16. for (let item of numbers) {
-  17. console.log("TreeSet:" + item); // value: a  b  c  d
-  18. }
+  ```ts
+  let treeSet : TreeSet<string> = new TreeSet<string>((firstValue: string, secondValue: string) : boolean => {return firstValue > secondValue});
+  treeSet.add("a");
+  treeSet.add("c");
+  treeSet.add("d");
+  treeSet.add("b");
+  let numbers = Array.from(treeSet.values())
+  for (let item of numbers) {
+    console.log("TreeSet:" + item); // value: d  c  b  a
+  }
+  treeSet.clear();
+  treeSet.add("a");
+  treeSet.add("c");
+  treeSet.add("d");
+  treeSet.add("b");
+  numbers = Array.from(treeSet.values())
+  for (let item of numbers) {
+    console.log("TreeSet:" + item); // value: a  b  c  d
+  }
   ```
 
 变更后
 
 * 情况一： 用户传入比较器，调用了TreeMap的clear方法后，比较器正常排序。
 
-  ```
-  1. //使用comparator firstValue > secondValue，表示为降序排序。
-  2. let treeMap : TreeMap<string,string> = new TreeMap<string,string>((firstValue: string, secondValue: string) : boolean => {return firstValue > secondValue});
-  3. treeMap.set("aa","3");
-  4. treeMap.set("dd","1");
-  5. treeMap.set("cc","2");
-  6. treeMap.set("bb","4");
-  7. let numbers = Array.from(treeMap.keys())
-  8. for (let item of numbers) {
-  9. console.log("treeMap:" + item); // treeMap: dd  cc  bb  aa
-  10. }
-  11. treeMap.clear();
-  12. treeMap.set("aa","3");
-  13. treeMap.set("dd","1");
-  14. treeMap.set("cc","2");
-  15. treeMap.set("bb","4");
-  16. numbers = Array.from(treeMap.keys())
-  17. for (let item of numbers) {
-  18. console.log("treeMap:" + item); // treeMap: dd  cc  bb  aa
-  19. }
+  ```ts
+  //使用comparator firstValue > secondValue，表示为降序排序。
+  let treeMap : TreeMap<string,string> = new TreeMap<string,string>((firstValue: string, secondValue: string) : boolean => {return firstValue > secondValue});
+  treeMap.set("aa","3");
+  treeMap.set("dd","1");
+  treeMap.set("cc","2");
+  treeMap.set("bb","4");
+  let numbers = Array.from(treeMap.keys())
+  for (let item of numbers) {
+    console.log("treeMap:" + item); // treeMap: dd  cc  bb  aa
+  }
+  treeMap.clear();
+  treeMap.set("aa","3");
+  treeMap.set("dd","1");
+  treeMap.set("cc","2");
+  treeMap.set("bb","4");
+  numbers = Array.from(treeMap.keys())
+  for (let item of numbers) {
+    console.log("treeMap:" + item); // treeMap: dd  cc  bb  aa
+  }
   ```
 * 情况二： 用户传入比较器，调用了TreeSet的clear方法后，比较器正常排序。
 
-  ```
-  1. let treeSet : TreeSet<string> = new TreeSet<string>((firstValue: string, secondValue: string) : boolean => {return firstValue > secondValue});
-  2. treeSet.add("a");
-  3. treeSet.add("c");
-  4. treeSet.add("d");
-  5. treeSet.add("b");
-  6. let numbers = Array.from(treeSet.values())
-  7. for (let item of numbers) {
-  8. console.log("TreeSet:" + item); // TreeSet: d  c  b  a
-  9. }
-  10. treeSet.clear();
-  11. treeSet.add("a");
-  12. treeSet.add("c");
-  13. treeSet.add("d");
-  14. treeSet.add("b");
-  15. numbers = Array.from(treeSet.values())
-  16. for (let item of numbers) {
-  17. console.log("TreeSet:" + item); // TreeSet: d  c  b  a
-  18. }
+  ```ts
+  let treeSet : TreeSet<string> = new TreeSet<string>((firstValue: string, secondValue: string) : boolean => {return firstValue > secondValue});
+  treeSet.add("a");
+  treeSet.add("c");
+  treeSet.add("d");
+  treeSet.add("b");
+  let numbers = Array.from(treeSet.values())
+  for (let item of numbers) {
+    console.log("TreeSet:" + item); // TreeSet: d  c  b  a
+  }
+  treeSet.clear();
+  treeSet.add("a");
+  treeSet.add("c");
+  treeSet.add("d");
+  treeSet.add("b");
+  numbers = Array.from(treeSet.values())
+  for (let item of numbers) {
+    console.log("TreeSet:" + item); // TreeSet: d  c  b  a
+  }
   ```
 
 **该能力起始支持的API Level**
@@ -533,20 +533,20 @@ TreeSet.clear()和TreeMap.clear()方法行为变更之后，用户无需重新�
 
 * **变更前** 使用setAll接口添加treeMap1后treeMap长度为1
 
-```
-1. let treeMap : TreeMap<string, number> = new TreeMap();
-2. let treeMap1 : TreeMap<string, number> = new TreeMap();
-3. treeMap.setAll(treeMap1); // 将treeMap1中的所有元素添加到treeMap中
-4. console.info("length:", treeMap.length) // length:1
+```ts
+let treeMap : TreeMap<string, number> = new TreeMap();
+let treeMap1 : TreeMap<string, number> = new TreeMap();
+treeMap.setAll(treeMap1); // 将treeMap1中的所有元素添加到treeMap中
+console.info("length:", treeMap.length) // length:1
 ```
 
 * **变更后** 使用setAll接口添加treeMap1后treeMap长度为0
 
-```
-1. let treeMap : TreeMap<string, number> = new TreeMap();
-2. let treeMap1 : TreeMap<string, number> = new TreeMap();
-3. treeMap.setAll(treeMap1); // 将treeMap1中的所有元素添加到treeMap中
-4. console.info("length:",treeMap.length) // length:0
+```ts
+let treeMap : TreeMap<string, number> = new TreeMap();
+let treeMap1 : TreeMap<string, number> = new TreeMap();
+treeMap.setAll(treeMap1); // 将treeMap1中的所有元素添加到treeMap中
+console.info("length:",treeMap.length) // length:0
 ```
 
 **该能力起始支持的API Level**
@@ -579,51 +579,51 @@ TreeMap.setAll();
 * **变更前**
 * 情况一： 对于传入用户自定义比较器的TreeMap，在没有插入null或undefined的情况下hasKey(null/undefined)错误返回true。
 
-```
-1. let treeMap : TreeMap<string, number> = new TreeMap((firstValue: string, secondValue: string) : boolean => {return firstValue > secondValue});
-2. treeMap.set("aa",3);
-3. treeMap.set("dd",1);
-4. let res = treeMap.hasKey(null);
-5. let res1 = treeMap.hasKey(undefined);
-6. console.info("res:", res) // res:true
-7. console.info("res1:",res1) // res1:true
+```ts
+let treeMap : TreeMap<string, number> = new TreeMap((firstValue: string, secondValue: string) : boolean => {return firstValue > secondValue});
+treeMap.set("aa",3);
+treeMap.set("dd",1);
+let res = treeMap.hasKey(null);
+let res1 = treeMap.hasKey(undefined);
+console.info("res:", res) // res:true
+console.info("res1:",res1) // res1:true
 ```
 
 * 情况二： 对于传入用户自定义比较器的TreeSet，在没有插入null或undefined的情况下has(null/undefined)错误返回true。
 
-```
-1. let treeSet : TreeSet<string> = new TreeSet<string>((firstValue: string, secondValue: string) : boolean => {return firstValue > secondValue});
-2. treeSet.add("a");
-3. treeSet.add("c");
-4. let res = treeSet.has(null);
-5. let res1 = treeSet.has(undefined);
-6. console.info("res:", res) // res:true
-7. console.info("res1:",res1) // res1:true
+```ts
+let treeSet : TreeSet<string> = new TreeSet<string>((firstValue: string, secondValue: string) : boolean => {return firstValue > secondValue});
+treeSet.add("a");
+treeSet.add("c");
+let res = treeSet.has(null);
+let res1 = treeSet.has(undefined);
+console.info("res:", res) // res:true
+console.info("res1:",res1) // res1:true
 ```
 
 * **变更后**
 * 情况一： 对于传入用户自定义比较器的TreeMap，在没有插入null或undefined的情况下hasKey(null/undefined)返回false。
 
-```
-1. let treeMap : TreeMap<string, number> = new TreeMap((firstValue: string, secondValue: string) : boolean => {return firstValue > secondValue});
-2. treeMap.set("aa",3);
-3. treeMap.set("dd",1);
-4. let res = treeMap.hasKey(null);
-5. let res1 = treeMap.hasKey(undefined);
-6. console.info("res:", res) // res:false
-7. console.info("res1:",res1) // res1:false
+```ts
+let treeMap : TreeMap<string, number> = new TreeMap((firstValue: string, secondValue: string) : boolean => {return firstValue > secondValue});
+treeMap.set("aa",3);
+treeMap.set("dd",1);
+let res = treeMap.hasKey(null);
+let res1 = treeMap.hasKey(undefined);
+console.info("res:", res) // res:false
+console.info("res1:",res1) // res1:false
 ```
 
 * 情况二： 对于传入用户自定义比较器的TreeSet，在没有插入null或undefined的情况下has(null/undefined)返回false。
 
-```
-1. let treeSet : TreeSet<string> = new TreeSet<string>((firstValue: string, secondValue: string) : boolean => {return firstValue > secondValue});
-2. treeSet.add("a");
-3. treeSet.add("c");
-4. let res = treeSet.has(null);
-5. let res1 = treeSet.has(undefined);
-6. console.info("res:", res) // res:false
-7. console.info("res1:",res1) // res1:false
+```ts
+let treeSet : TreeSet<string> = new TreeSet<string>((firstValue: string, secondValue: string) : boolean => {return firstValue > secondValue});
+treeSet.add("a");
+treeSet.add("c");
+let res = treeSet.has(null);
+let res1 = treeSet.has(undefined);
+console.info("res:", res) // res:false
+console.info("res1:",res1) // res1:false
 ```
 
 **该能力起始支持的API Level**
@@ -666,24 +666,24 @@ URLParams对象的append接口。
 
 变更前：URLParams对象使用append()方法添加键值对时，若添加的字符串中存在连续多个空格时，接口表现为将连续多个空格只转换为一个'+'。
 
-```
-1. {
-2. const objectParams = new url.URLParams("key=abc")
-3. console.log(objectParams.toString())  // "key=abc"
-4. objectParams.append('key1', 'd   e   f');
-5. console.log(objectParams.toString())  // "key=abc&key1=d+e+f"
-6. }
+```ts
+{
+    const objectParams = new url.URLParams("key=abc")
+    console.log(objectParams.toString())  // "key=abc"
+    objectParams.append('key1', 'd   e   f');
+    console.log(objectParams.toString())  // "key=abc&key1=d+e+f"
+}
 ```
 
 变更后：URLParams对象使用append()方法添加键值对时，若添加的字符串中存在连续多个空格时，接口表现为将连续多个空格转换为对应空格数量的'+'。
 
-```
-1. {
-2. const objectParams = new url.URLParams("key=abc")
-3. console.log(objectParams.toString())  // "key=abc"
-4. objectParams.append('key1', 'd   e   f');
-5. console.log(objectParams.toString())  // "key=abc&key1=d+++e+++f"
-6. }
+```ts
+{
+    const objectParams = new url.URLParams("key=abc")
+    console.log(objectParams.toString())  // "key=abc"
+    objectParams.append('key1', 'd   e   f');
+    console.log(objectParams.toString())  // "key=abc&key1=d+++e+++f"
+}
 ```
 
 **适配指导**
@@ -710,20 +710,20 @@ URL模块URLParams类toString接口，
 
 变更前：创建URLParams对象，如果入参字符串中存在"%2b"和"%2B"时，在toString()后返回的字符串分别表现为"+"和"%2B"。
 
-```
-1. {
-2. const objectParams = new url.URLParams("key%2b=abc%2B")
-3. console.log(objectParams.toString())  // "key+=abc%2B"
-4. }
+```ts
+{
+    const objectParams = new url.URLParams("key%2b=abc%2B")
+    console.log(objectParams.toString())  // "key+=abc%2B"
+}
 ```
 
 变更后：创建URLParams对象，如果入参字符串中存在"%2b"和"%2B"时，在toString()后返回的字符串均表现为"%2B";
 
-```
-1. {
-2. const objectParams = new url.URLParams("key%2b=abc%2B")
-3. console.log(objectParams.toString())  // "key%2B=abc%2B"
-4. }
+```ts
+{
+    const objectParams = new url.URLParams("key%2b=abc%2B")
+    console.log(objectParams.toString())  // "key%2B=abc%2B"
+}
 ```
 
 **适配指导**
@@ -750,28 +750,28 @@ URLParams类append接口。
 
 变更前：URLParams使用append()方法添加键值对, 若想通过添加的key使用get、has、delete、set接口进行增删改查操作，需先对key进行额外encode。
 
-```
-1. {
-2. const objectParams = new url.URLParams('?fod=1&bard=2')
-3. objectParams.append("key&大", "abc");
-4. objectParams.has('key&大');  // false
-5. objectParams.has('%E5%A4%A7');  // true
-6. objectParams.get('key&大');  // undefined
-7. objectParams.get('%E5%A4%A7');  // abc
-8. }
+```ts
+{
+    const objectParams = new url.URLParams('?fod=1&bard=2')
+    objectParams.append("key&大", "abc");
+    objectParams.has('key&大');  // false
+    objectParams.has('%E5%A4%A7');  // true
+    objectParams.get('key&大');  // undefined
+    objectParams.get('%E5%A4%A7');  // abc
+}
 ```
 
 变更后: URLParams使用append()方法添加键值对,可直接使用添加的key拿到对应value进行增删改查操作。
 
-```
-1. {
-2. const objectParams = new url.URLParams('?fod=1&bard=2')
-3. objectParams.append("key&大", "abc");
-4. objectParams.has('key&大');  // true
-5. objectParams.has('%E5%A4%A7');  // false
-6. objectParams.get('key&大');  // abc
-7. objectParams.get('%E5%A4%A7');  // undefined
-8. }
+```ts
+{
+    const objectParams = new url.URLParams('?fod=1&bard=2')
+    objectParams.append("key&大", "abc");
+    objectParams.has('key&大');  // true
+    objectParams.has('%E5%A4%A7');  // false
+    objectParams.get('key&大');  // abc
+    objectParams.get('%E5%A4%A7');  // undefined
+}
 ```
 
 **适配指导**
@@ -790,61 +790,61 @@ URLParams类append接口。
 
    简化示例如下：
 
-   ```
-   1. @ObservedV2
-   2. class TmpA{}
+   ```ts
+   @ObservedV2
+   class TmpA{}
 
-   4. @Entry
-   5. @Component
-   6. struct testTmp {
-   7. @State value_string: TmpA = new TmpA()
-   8. build() {
-   9. Column(){
+   @Entry
+   @Component
+   struct testTmp {
+   @State value_string: TmpA = new TmpA()
+   build() {
+       Column(){
 
-   11. }
-   12. }
-   13. }
+       }
+   }
+   }
    ```
 2. 在@ComponentV2修饰的自定义组件中通过@Param、@Local、@Event、@Provider()、@Consumer()修饰并使用@Observed修饰的类时，进行校验并输出错误信息。
 
    简化示例如下：
 
-   ```
-   1. @Observed
-   2. class TmpA{}
+   ```ts
+   @Observed
+   class TmpA{}
 
-   4. @Entry
-   5. @ComponentV2
-   6. struct testTmp {
-   7. @Param value_string: TmpA = new TmpA()
-   8. build() {
-   9. Column(){
+   @Entry
+   @ComponentV2
+   struct testTmp {
+   @Param value_string: TmpA = new TmpA()
+   build() {
+       Column(){
 
-   11. }
-   12. }
-   13. }
+       }
+   }
+   }
    ```
 3. 以上的变量类型联合使用时，也会进行校验并输出错误信息。
 
    示例如下：
 
-   ```
-   1. @ObservedV2
-   2. class TmpA{}
+   ```ts
+   @ObservedV2
+   class TmpA{}
 
-   4. @Observed
-   5. class TmpB{}
+   @Observed
+   class TmpB{}
 
-   7. @Entry
-   8. @Component
-   9. struct testTmp {
-   10. @State value_string: TmpA | TmpB = new TmpA()
-   11. build() {
-   12. Column(){
+   @Entry
+   @Component
+   struct testTmp {
+   @State value_string: TmpA | TmpB = new TmpA()
+   build() {
+       Column(){
 
-   14. }
-   15. }
-   16. }
+       }
+   }
+   }
    ```
 
 **变更影响**
@@ -893,31 +893,31 @@ textTimer组件的onTimer接口
 
 需要开发者主动适配，调整回调参数的数量级。
 
-```
-1. @Entry
-2. @Component
-3. struct TextTimerExample {
-4. textTimerController: TextTimerController = new TextTimerController();
-5. build() {
-6. Column(){
-7. TextTimer({isCountDown: true, count: 30000, controller: this.textTimerController})
-8. .format('mm:ss.SS')
-9. .fontSize(50)
-10. .onTimer((utc: number, elapsedTime: number) => {
-11. // 如果开发者需改回变更前的效果，可以将utc、elapsedTime乘10
-12. console.info('textTimer countDown utc is:' + utc * 10 + ',elapsedTime is:' + elapsedTime * 10)
-13. })
+```ts
+@Entry
+@Component
+struct TextTimerExample {
+  textTimerController: TextTimerController = new TextTimerController();
+  build() {
+    Column(){
+      TextTimer({isCountDown: true, count: 30000, controller: this.textTimerController})
+        .format('mm:ss.SS')
+        .fontSize(50)
+        .onTimer((utc: number, elapsedTime: number) => {
+          // 如果开发者需改回变更前的效果，可以将utc、elapsedTime乘10
+          console.info('textTimer countDown utc is:' + utc * 10 + ',elapsedTime is:' + elapsedTime * 10)
+        })
 
-15. TextTimer({isCountDown: true, count: 30000, controller: this.textTimerController})
-16. .format('mm:ss.S')
-17. .fontSize(50)
-18. .onTimer((utc: number, elapsedTime: number) => {
-19. // 如果开发者需改回变更前的效果，可以将utc、elapsedTime乘100
-20. console.info('textTimer countDown utc is:' + utc * 100 + ',elapsedTime is:' + elapsedTime * 100)
-21. })
-22. }
-23. }
-24. }
+      TextTimer({isCountDown: true, count: 30000, controller: this.textTimerController})
+        .format('mm:ss.S')
+        .fontSize(50)
+        .onTimer((utc: number, elapsedTime: number) => {
+          // 如果开发者需改回变更前的效果，可以将utc、elapsedTime乘100
+          console.info('textTimer countDown utc is:' + utc * 100 + ',elapsedTime is:' + elapsedTime * 100)
+        })
+    }
+  }
+}
 ```
 
 ### RichEditor组件builderSpan支持绑定自定义菜单
@@ -946,29 +946,29 @@ RichEditor组件的RichEditorSpanType接口。
 
 若开发者需要右击或长按builderSpan时弹出RichEditorSpanType.IMAGE类型的自定义菜单，需要对该自定义菜单绑定RichEditorSpanType.BUILDER类型。
 
-```
-1. @Entry
-2. @Component
-3. struct Example {
-4. @Builder
-5. menu() {
-6. Column() {
-7. Text("自定义菜单");
-8. }
-9. }
-10. build() {
-11. Column() {
-12. RichEditor({controller: new RichEditorController()})
-13. // 变更前
-14. .bindSelectionMenu(RichEditorSpanType.IMAGE, this.menu(), ResponseType.LongPress)
+```ts
+@Entry
+@Component
+struct Example {
+    @Builder
+    menu() {
+        Column() {
+            Text("自定义菜单");
+        }
+    }
+    build() {
+        Column() {
+            RichEditor({controller: new RichEditorController()})
+                // 变更前
+                .bindSelectionMenu(RichEditorSpanType.IMAGE, this.menu(), ResponseType.LongPress)
 
-16. // 变更后
-17. .bindSelectionMenu(RichEditorSpanType.IMAGE, this.menu(), ResponseType.LongPress)
-18. // 绑定RichEditorSpanType.BUILDER类型
-19. .bindSelectionMenu(RichEditorSpanType.BUILDER, this.menu(), ResponseType.LongPress)
-20. }
-21. }
-22. }
+                // 变更后
+                .bindSelectionMenu(RichEditorSpanType.IMAGE, this.menu(), ResponseType.LongPress)
+                // 绑定RichEditorSpanType.BUILDER类型
+                .bindSelectionMenu(RichEditorSpanType.BUILDER, this.menu(), ResponseType.LongPress)
+        }
+    }
+}
 ```
 
 ### RichEditor的lineHeight、letterSpacing、lineSpacing属性返回值单位变更
@@ -1051,37 +1051,37 @@ measureText和measureTextSize接口。
 
 若在Text组件上，fontSize设置的是vp类型字号，则在measureText测算接口将fontSize的number类型参数改为string类型，传入vp类型字号参数。
 
-```
-1. import { MeasureText } from '@kit.ArkUI'
+```ts
+import { MeasureText } from '@kit.ArkUI'
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. @State text: string = "Hello world"
-7. //变更前
-8. @State textWidth: number = MeasureText.measureText({
-9. textContent: this.text,
-10. fontSize: 24
-11. })
-12. //变更后
-13. @State textWidth2: number = MeasureText.measureText({
-14. textContent: this.text,
-15. fontSize: '24vp'
-16. })
+@Entry
+@Component
+struct Index {
+  @State text: string = "Hello world"
+  //变更前
+  @State textWidth: number = MeasureText.measureText({
+    textContent: this.text,
+    fontSize: 24
+  })
+  //变更后
+  @State textWidth2: number = MeasureText.measureText({
+    textContent: this.text,
+    fontSize: '24vp'
+  })
 
-18. build() {
-19. Row() {
-20. Column() {
-21. //被计算文本
-22. Text(this.text).fontSize('24vp')
-23. Text(`The width of '24vp Hello World': ${this.textWidth}`)
-24. Text(`The another width of '24vp Hello World': ${this.textWidth2}`)
-25. }
-26. .width('100%')
-27. }
-28. .height('100%')
-29. }
-30. }
+  build() {
+    Row() {
+      Column() {
+        //被计算文本
+        Text(this.text).fontSize('24vp')
+        Text(`The width of '24vp Hello World': ${this.textWidth}`)
+        Text(`The another width of '24vp Hello World': ${this.textWidth2}`)
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 若在Text组件上，fontSize设置的是fp类型字号则无需适配，测算接口fontSize参数传入number类型数值和Text组件上使用的字号单位是一致的。

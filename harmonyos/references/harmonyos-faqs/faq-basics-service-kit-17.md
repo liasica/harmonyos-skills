@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-basics-serv
 title: 如何获取设备支持的API的版本号
 breadcrumb: FAQ > 系统开发 > 基础功能 > 基础服务（Basics Service） > 如何获取设备支持的API的版本号
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:22+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:00+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:26667e5e7493f7bbc9e8882213df2ffca662658303598d37ca3f879910e7d485
 ---
 

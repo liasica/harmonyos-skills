@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/calendarmanag
 title: 日历服务实践案例
 breadcrumb: 指南 > 应用服务 > Calendar Kit（日历服务） > 日历服务实践案例
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:37:37+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:db87a7d1c5797f06110829400577fab7fed389bfb26aa79b2db31781d017c9d9
+scraped_at: 2026-09-02T14:59:53+08:00
+doc_updated_at: 2026-08-04
+content_hash: sha256:a5715c827844076942e3b461966427a2b896c5316604ce1972700f54853e78cf
 ---
 
 ## 场景介绍
@@ -20,14 +20,14 @@ content_hash: sha256:db87a7d1c5797f06110829400577fab7fed389bfb26aa79b2db31781d01
 * 日程详情：始终显示。
 * 日程通知：通知弹出时显示，通知中心内点击对应日程卡片后显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/P8mbQcICSoaUpcJFIKnQ3g/zh-cn_image_0000002558765322.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/XXcUDRZrQESKlPrUA1aQPA/zh-cn_image_0000002706834838.png)
 
 ## 开发准备
 
 请参考日程管理前三步的[开发步骤](calendarmanager-calendar-developer.md#开发步骤)：
 
 1. 导入相关依赖。
-2. 申请权限。使用Calendar Kit时，需要在module.json5中声明申请读写日历日程所需的权限：ohos.permission.READ\_CALENDAR和ohos.permission.WRITE\_CALENDAR。具体指导可见[声明权限](declare-permissions.md)。
+2. 申请权限。使用Calendar Kit（日历服务）时，需要在module.json5中声明申请读写日历日程所需的权限：ohos.permission.READ\_CALENDAR和ohos.permission.WRITE\_CALENDAR。具体指导可见[声明权限](declare-permissions.md)。
 3. 根据上下文获取日程管理器对象calendarMgr，用于对日历账户进行相关管理操作。推荐在EntryAbility.ets文件中进行操作。
 
 ## 一键服务典型场景
@@ -66,146 +66,146 @@ content_hash: sha256:db87a7d1c5797f06110829400577fab7fed389bfb26aa79b2db31781d01
 
 1. 创建日程。
 
-   ```
-   1. // Index.ets
-   2. import { calendarMgr } from '../entryability/EntryAbility';
-   3. import { calendarManager } from '@kit.CalendarKit';
+   ```ts
+   // Index.ets
+   import { calendarMgr } from '../entryability/EntryAbility';
+   import { calendarManager } from '@kit.CalendarKit';
 
-   5. let tripCalendar: calendarManager.Calendar | undefined = undefined;
-   6. let oriEvent: calendarManager.Event | null = null;
-   7. let id: number = 0;
+   let tripCalendar: calendarManager.Calendar | undefined = undefined;
+   let oriEvent: calendarManager.Event | null = null;
+   let id: number = 0;
 
-   9. async createTripCalendarAndEvent(): Promise<void> {
-   10. // 指定日历账户信息
-   11. const calendarAccount: calendarManager.CalendarAccount = {
-   12. name: 'TripCalendar',
-   13. type: calendarManager.CalendarType.LOCAL,
-   14. // 日历账户显示名称：建议使用应用实际名称。
-   15. displayName: '高铁出行'
-   16. };
-   17. // 日历配置信息
-   18. const config: calendarManager.CalendarConfig = {
-   19. // 设置日历账户颜色
-   20. color: '#aabbcc'
-   21. };
-   22. const startTime = new Date('2025-10-01T08:17:00').getTime();
-   23. const endTime = new Date('2025-10-01T12:51:00').getTime();
-   24. // 日程配置信息
-   25. const event: calendarManager.Event = {
-   26. type: calendarManager.EventType.NORMAL,
-   27. // 日程标题
-   28. title: '行程信息：G107 上海虹桥-北京南',
-   29. // 开始时间
-   30. startTime: startTime,
-   31. // 结束时间
-   32. endTime: endTime,
-   33. // 是否全天日程
-   34. isAllDay:false,
-   35. // 提醒时间
-   36. reminderTime:[120, 240],
-   37. // 备注
-   38. description: '检票口：南二楼1口或北广场B2候车室 \n座位号：02车04二等座',
-   39. // 一键服务
-   40. service: {
-   41. // 服务类型
-   42. type: calendarManager.ServiceType.TRIP,
-   43. // 服务的uri，格式为DeepLink类型。请根据“一键服务”指导文档配置。
-   44. uri: 'demo://mobile/player?params='
-   45. }
-   46. }
-   47. try {
-   48. // 创建日历账户
-   49. tripCalendar = await calendarMgr?.createCalendar(calendarAccount);
-   50. if (!tripCalendar || tripCalendar === null) {
-   51. console.error('Failed to create calendar. tripCalendar is null.');
-   52. return;
-   53. }
-   54. // 请确保日历账户创建成功后，再进行相关日程的管理
-   55. // 设置日历配置信息，设置日历账户颜色
-   56. await tripCalendar.setConfig(config);
-   57. // 添加日程
-   58. id = await tripCalendar.addEvent(event);
-   59. oriEvent = event;
-   60. oriEvent.id = id;
-   61. console.info(`Succeeded in creating calendar and event, result: ${JSON.stringify(id)}`);
-   62. } catch (error) {
-   63. console.error(`Failed to create calendar or event. Code: ${error.code}, message: ${error.message}`);
-   64. }
-   65. }
+   async createTripCalendarAndEvent(): Promise<void> {
+     // 指定日历账户信息
+     const calendarAccount: calendarManager.CalendarAccount = {
+       name: 'TripCalendar',
+       type: calendarManager.CalendarType.LOCAL,
+       // 日历账户显示名称：建议使用应用实际名称。
+       displayName: '高铁出行'
+     };
+     // 日历配置信息
+     const config: calendarManager.CalendarConfig = {
+       // 设置日历账户颜色
+       color: '#aabbcc'
+     };
+     const startTime = new Date('2025-10-01T08:17:00').getTime();
+     const endTime = new Date('2025-10-01T12:51:00').getTime();
+     // 日程配置信息
+     const event: calendarManager.Event = {
+       type: calendarManager.EventType.NORMAL,
+       // 日程标题
+       title: '行程信息：G107 上海虹桥-北京南',
+       // 开始时间
+       startTime: startTime,
+       // 结束时间
+       endTime: endTime,
+       // 是否全天日程
+       isAllDay:false,
+       // 提醒时间
+       reminderTime:[120, 240],
+       // 备注
+       description: '检票口：南二楼1口或北广场B2候车室 \n座位号：02车04二等座',
+       // 一键服务
+       service: {
+         // 服务类型
+         type: calendarManager.ServiceType.TRIP,
+         // 服务的uri，格式为DeepLink类型。请根据“一键服务”指导文档配置。
+         uri: 'demo://mobile/player?params='
+       }
+     }
+     try {
+       // 创建日历账户
+       tripCalendar = await calendarMgr?.createCalendar(calendarAccount);
+       if (!tripCalendar || tripCalendar === null) {
+         console.error('Failed to create calendar. tripCalendar is null.');
+         return;
+       }
+       // 请确保日历账户创建成功后，再进行相关日程的管理
+       // 设置日历配置信息，设置日历账户颜色
+       await tripCalendar.setConfig(config);
+       // 添加日程
+       id = await tripCalendar.addEvent(event);
+       oriEvent = event;
+       oriEvent.id = id;
+       console.info(`Succeeded in creating calendar and event, result: ${JSON.stringify(id)}`);
+     } catch (error) {
+       console.error(`Failed to create calendar or event. Code: ${error.code}, message: ${error.message}`);
+     }
+   }
    ```
 2. 查询日程。
 
-   ```
-   1. // Index.ets
-   2. async getTripEvent(): Promise<void> {
-   3. // 校验calendar是否为空
-   4. if (!tripCalendar || tripCalendar === null) {
-   5. console.error('Failed to get event, calendar is null.');
-   6. return;
-   7. }
-   8. try {
-   9. // 查询行程
-   10. const filter = calendarManager.EventFilter.filterById([id]);
-   11. let data: calendarManager.Event[] = await tripCalendar.getEvents(filter, ['title', 'type', 'startTime', 'endTime']);
-   12. if (data && data.length > 0) {
-   13. oriEvent = data[0];
-   14. }
-   15. console.info(`Succeeded in getting events, data -> ${JSON.stringify(data)}`);
-   16. } catch (err) {
-   17. console.error(`Failed to get events. Code: ${err.code}, message: ${err.message}`);
-   18. }
-   19. }
+   ```ts
+   // Index.ets
+   async getTripEvent(): Promise<void> {
+     // 校验calendar是否为空
+     if (!tripCalendar || tripCalendar === null) {
+       console.error('Failed to get event, calendar is null.');
+       return;
+     }
+     try {
+       // 查询行程
+       const filter = calendarManager.EventFilter.filterById([id]);
+       let data: calendarManager.Event[] = await tripCalendar.getEvents(filter, ['title', 'type', 'startTime', 'endTime']);
+       if (data && data.length > 0) {
+         oriEvent = data[0];
+       }
+       console.info(`Succeeded in getting events, data -> ${JSON.stringify(data)}`);
+     } catch (err) {
+       console.error(`Failed to get events. Code: ${err.code}, message: ${err.message}`);
+     }
+   }
    ```
 3. 更新日程。
 
-   ```
-   1. // Index.ets
-   2. async updateTripEvent(): Promise<void> {
-   3. // 校验calendar是否为空
-   4. if (!tripCalendar || tripCalendar === null) {
-   5. console.error('Failed to update event, calendar is null.');
-   6. return;
-   7. }
-   8. if (!oriEvent || oriEvent === null) {
-   9. console.error('Failed to update event, oriEvent is null');
-   10. return;
-   11. }
-   12. // 修改行程的开始时间startTime和结束时间endTime
-   13. oriEvent.startTime = new Date('2025-10-01T07:03:00').getTime();
-   14. oriEvent.endTime = new Date('2025-10-01T11:51:00').getTime();
-   15. try {
-   16. // 更新行程
-   17. await tripCalendar.updateEvent(oriEvent);
-   18. console.info("Succeeded in updating event");
-   19. } catch (err) {
-   20. console.error(`Failed to update event. Code: ${err.code}, message: ${err.message}`);
-   21. }
-   22. }
+   ```ts
+   // Index.ets
+   async updateTripEvent(): Promise<void> {
+     // 校验calendar是否为空
+     if (!tripCalendar || tripCalendar === null) {
+       console.error('Failed to update event, calendar is null.');
+       return;
+     }
+     if (!oriEvent || oriEvent === null) {
+       console.error('Failed to update event, oriEvent is null');
+       return;
+     }
+     // 修改行程的开始时间startTime和结束时间endTime
+     oriEvent.startTime = new Date('2025-10-01T07:03:00').getTime();
+     oriEvent.endTime = new Date('2025-10-01T11:51:00').getTime();
+     try {
+       // 更新行程
+       await tripCalendar.updateEvent(oriEvent);
+       console.info('Succeeded in updating event');
+     } catch (err) {
+       console.error(`Failed to update event. Code: ${err.code}, message: ${err.message}`);
+     }
+   }
    ```
 4. 删除日程。
 
-   ```
-   1. // Index.ets
-   2. async deleteTripEvent(): Promise<void> {
-   3. // 校验calendar是否为空
-   4. if (!tripCalendar || tripCalendar === null) {
-   5. console.error('Failed to delete event, calendar is null.');
-   6. return;
-   7. }
-   8. try {
-   9. // 删除行程
-   10. await tripCalendar.deleteEvent(id);
-   11. oriEvent = null;
-   12. console.info(`Succeeded in deleting Event`);
-   13. } catch (err) {
-   14. console.error(`Failed to delete Event, Code is ${err.code}, message is ${err.message}`);
-   15. }
-   16. }
+   ```ts
+   // Index.ets
+   async deleteTripEvent(): Promise<void> {
+     // 校验calendar是否为空
+     if (!tripCalendar || tripCalendar === null) {
+       console.error('Failed to delete event, calendar is null.');
+       return;
+     }
+     try {
+       // 删除行程
+       await tripCalendar.deleteEvent(id);
+       oriEvent = null;
+       console.info(`Succeeded in deleting Event`);
+     } catch (err) {
+       console.error(`Failed to delete Event, Code is ${err.code}, message is ${err.message}`);
+     }
+   }
    ```
 
 示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/cMAJDv5lQHym8UDdarCWOA/zh-cn_image_0000002558605666.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/iD8s8uMAQwue7PeNAVPy1g/zh-cn_image_0000002736313945.png)
 
 ### 酒店住宿场景
 
@@ -225,64 +225,64 @@ content_hash: sha256:db87a7d1c5797f06110829400577fab7fed389bfb26aa79b2db31781d01
 
 创建日程示例和示意图如下：
 
-```
-1. // Index.ets
-2. async createHotelCalendarAndEvent(): Promise<void> {
-3. // 指定日历账户信息
-4. const calendarAccount: calendarManager.CalendarAccount = {
-5. name: 'hotelCalendar',
-6. type: calendarManager.CalendarType.LOCAL,
-7. // 日历账户显示名称：建议使用应用实际名称。
-8. displayName: '酒店住宿'
-9. };
-10. // 日历配置信息
-11. const config: calendarManager.CalendarConfig = {
-12. // 设置日历账户颜色
-13. color: '#aabbcc'
-14. };
-15. const startTime = new Date('2025-05-01T15:00:00').getTime();
-16. const endTime = new Date('2025-05-02T12:00:00').getTime();
-17. // 日程配置信息
-18. const event: calendarManager.Event = {
-19. type: calendarManager.EventType.NORMAL,
-20. title: '入住信息:酒店(上海新天地店)',
-21. location: {
-22. location: '上海新天地',
-23. longitude: 121.47506199999998,
-24. latitude: 31.219150000000013
-25. },
-26. startTime: startTime,
-27. endTime: endTime,
-28. isAllDay: true,
-29. // 提醒时间：全天日程是按9点往前计算分钟数
-30. reminderTime: [0, 1440],
-31. description: '入住:15:00后\n离店:12:00前',
-32. // 一键服务
-33. service: {
-34. type: calendarManager.ServiceType.TRIP,
-35. uri: 'demo://mobile/player?params='
-36. }
-37. }
-38. try {
-39. // 创建日历账户
-40. let data: calendarManager.Calendar | undefined= await calendarMgr?.createCalendar(calendarAccount);
-41. if (!data || data === null) {
-42. console.error('Failed to create calendar. data is null.');
-43. return;
-44. }
-45. // 请确保日历账户创建成功后，再进行相关日程的管理
-46. // 设置日历配置信息，设置日历账户颜色
-47. await data.setConfig(config);
-48. // 添加日程
-49. id = await data.addEvent(event);
-50. console.info(`Succeeded in creating calendar and event, result: ${JSON.stringify(id)}`);
-51. } catch (error) {
-52. console.error(`Failed to create calendar or event. Code: ${error.code}, message: ${error.message}`);
-53. }
-54. }
+```ts
+// Index.ets
+async createHotelCalendarAndEvent(): Promise<void> {
+  // 指定日历账户信息
+  const calendarAccount: calendarManager.CalendarAccount = {
+    name: 'hotelCalendar',
+    type: calendarManager.CalendarType.LOCAL,
+    // 日历账户显示名称：建议使用应用实际名称。
+    displayName: '酒店住宿'
+  };
+  // 日历配置信息
+  const config: calendarManager.CalendarConfig = {
+    // 设置日历账户颜色
+    color: '#aabbcc'
+  };
+  const startTime = new Date('2025-05-01T15:00:00').getTime();
+  const endTime = new Date('2025-05-02T12:00:00').getTime();
+  // 日程配置信息
+  const event: calendarManager.Event = {
+    type: calendarManager.EventType.NORMAL,
+    title: '入住信息：酒店(上海新天地店)',
+    location: {
+      location: '上海新天地',
+      longitude: 121.47506199999998,
+      latitude: 31.219150000000013
+    },
+    startTime: startTime,
+    endTime: endTime,
+    isAllDay: true,
+    // 提醒时间：全天日程是按9点往前计算分钟数
+    reminderTime: [0, 1440],
+    description: '入住:15：00后\n离店：12：00前',
+    // 一键服务
+    service: {
+      type: calendarManager.ServiceType.TRIP,
+      uri: 'demo://mobile/player?params='
+    }
+  }
+  try {
+    // 创建日历账户
+    let data: calendarManager.Calendar | undefined= await calendarMgr?.createCalendar(calendarAccount);
+    if (!data || data === null) {
+      console.error('Failed to create calendar. data is null.');
+      return;
+    }
+    // 请确保日历账户创建成功后，再进行相关日程的管理
+    // 设置日历配置信息，设置日历账户颜色
+    await data.setConfig(config);
+    // 添加日程
+    id = await data.addEvent(event);
+    console.info(`Succeeded in creating calendar and event, result: ${JSON.stringify(id)}`);
+  } catch (error) {
+    console.error(`Failed to create calendar or event. Code: ${error.code}, message: ${error.message}`);
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/ipfGA9gBSUaEvdzBrdxFmA/zh-cn_image_0000002589325193.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/hZUb2A0DToasew5GP2qQ5g/zh-cn_image_0000002706674902.png)
 
 ### 直播预约场景
 
@@ -300,58 +300,58 @@ content_hash: sha256:db87a7d1c5797f06110829400577fab7fed389bfb26aa79b2db31781d01
 
 创建日程示例和示意图如下：
 
-```
-1. // Index.ets
-2. async createLiveCalendarAndEvent(): Promise<void> {
-3. // 指定日历账户信息
-4. const calendarAccount: calendarManager.CalendarAccount = {
-5. name: 'liveCalendar',
-6. type: calendarManager.CalendarType.LOCAL,
-7. // 日历账户显示名称：建议使用应用实际名称。
-8. displayName: '直播抢购'
-9. };
-10. // 日历配置信息
-11. const config: calendarManager.CalendarConfig = {
-12. // 设置日历账户颜色
-13. color: '#aabbcc'
-14. };
-15. const startTime = new Date('2025-11-04T21:00:00').getTime();
-16. const endTime = new Date('2025-11-04T22:00:00').getTime();
-17. // 日程配置信息
-18. const event: calendarManager.Event = {
-19. type: calendarManager.EventType.NORMAL,
-20. title: '直播抢购',
-21. startTime: startTime,
-22. endTime: endTime,
-23. isAllDay: false,
-24. reminderTime: [0, 10],
-25. description: '限时特惠,秋季最大福利就在直播间',
-26. // 一键服务
-27. service: {
-28. type: calendarManager.ServiceType.LIVE,
-29. uri: 'demo://mobile/player?params='
-30. }
-31. }
-32. try {
-33. // 创建日历账户
-34. let data: calendarManager.Calendar | undefined= await calendarMgr?.createCalendar(calendarAccount);
-35. if (!data || data === null) {
-36. console.error('Failed to create calendar. data is null.');
-37. return;
-38. }
-39. // 请确保日历账户创建成功后，再进行相关日程的管理
-40. // 设置日历配置信息，设置日历账户颜色
-41. await data.setConfig(config);
-42. // 添加日程
-43. id = await data.addEvent(event);
-44. console.info(`Succeeded in creating calendar and event, result: ${JSON.stringify(id)}`);
-45. } catch (error) {
-46. console.error(`Failed to create calendar or event. Code: ${error.code}, message: ${error.message}`);
-47. }
-48. }
+```ts
+// Index.ets
+async createLiveCalendarAndEvent(): Promise<void> {
+  // 指定日历账户信息
+  const calendarAccount: calendarManager.CalendarAccount = {
+    name: 'liveCalendar',
+    type: calendarManager.CalendarType.LOCAL,
+    // 日历账户显示名称：建议使用应用实际名称。
+    displayName: '直播抢购'
+  };
+  // 日历配置信息
+  const config: calendarManager.CalendarConfig = {
+    // 设置日历账户颜色
+    color: '#aabbcc'
+  };
+  const startTime = new Date('2025-11-04T21:00:00').getTime();
+  const endTime = new Date('2025-11-04T22:00:00').getTime();
+  // 日程配置信息
+  const event: calendarManager.Event = {
+    type: calendarManager.EventType.NORMAL,
+    title: '直播抢购',
+    startTime: startTime,
+    endTime: endTime,
+    isAllDay: false,
+    reminderTime: [0, 10],
+    description: '限时特惠，秋季最大福利就在直播间',
+    // 一键服务
+    service: {
+      type: calendarManager.ServiceType.LIVE,
+      uri: 'demo://mobile/player?params='
+    }
+  }
+  try {
+    // 创建日历账户
+    let data: calendarManager.Calendar | undefined= await calendarMgr?.createCalendar(calendarAccount);
+    if (!data || data === null) {
+      console.error('Failed to create calendar. data is null.');
+      return;
+    }
+    // 请确保日历账户创建成功后，再进行相关日程的管理
+    // 设置日历配置信息，设置日历账户颜色
+    await data.setConfig(config);
+    // 添加日程
+    id = await data.addEvent(event);
+    console.info(`Succeeded in creating calendar and event, result: ${JSON.stringify(id)}`);
+  } catch (error) {
+    console.error(`Failed to create calendar or event. Code: ${error.code}, message: ${error.message}`);
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/peqIawmwRfiHIlbBzsEz1g/zh-cn_image_0000002589245129.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/PxQdkwllQfWko23WERG9Cg/zh-cn_image_0000002736433991.png)
 
 ### 抢购预约场景
 
@@ -369,58 +369,58 @@ content_hash: sha256:db87a7d1c5797f06110829400577fab7fed389bfb26aa79b2db31781d01
 
 创建日程示例和示意图如下：
 
-```
-1. // Index.ets
-2. async createShoppingCalendarAndEvent(): Promise<void> {
-3. // 指定日历账户信息
-4. const calendarAccount: calendarManager.CalendarAccount = {
-5. name: 'shoppingCalendar',
-6. type: calendarManager.CalendarType.LOCAL,
-7. // 日历账户显示名称：建议使用应用实际名称。
-8. displayName: '购物'
-9. };
-10. // 日历配置信息
-11. const config: calendarManager.CalendarConfig = {
-12. // 设置日历账户颜色
-13. color: '#aabbcc'
-14. };
-15. const startTime = new Date('2025-12-19T19:00:00').getTime();
-16. const endTime = new Date('2025-12-19T20:00:00').getTime();
-17. // 日程配置信息
-18. const event: calendarManager.Event = {
-19. type: calendarManager.EventType.NORMAL,
-20. title: '购物节预热',
-21. startTime: startTime,
-22. endTime: endTime,
-23. isAllDay: false,
-24. reminderTime: [0, 10],
-25. description: '9.9限时秒杀,还有精彩福利',
-26. // 一键服务
-27. service: {
-28. type: calendarManager.ServiceType.SHOPPING,
-29. uri: 'demo://mobile/player?params='
-30. }
-31. }
-32. try {
-33. // 创建日历账户
-34. let data: calendarManager.Calendar | undefined= await calendarMgr?.createCalendar(calendarAccount);
-35. if (!data || data === null) {
-36. console.error('Failed to create calendar. data is null.');
-37. return;
-38. }
-39. // 请确保日历账户创建成功后，再进行相关日程的管理
-40. // 设置日历配置信息，设置日历账户颜色
-41. await data.setConfig(config);
-42. // 添加日程
-43. id = await data.addEvent(event);
-44. console.info(`Succeeded in creating calendar and event, result: ${JSON.stringify(id)}`);
-45. } catch (error) {
-46. console.error(`Failed to create calendar or event. Code: ${error.code}, message: ${error.message}`);
-47. }
-48. }
+```ts
+// Index.ets
+async createShoppingCalendarAndEvent(): Promise<void> {
+  // 指定日历账户信息
+  const calendarAccount: calendarManager.CalendarAccount = {
+    name: 'shoppingCalendar',
+    type: calendarManager.CalendarType.LOCAL,
+    // 日历账户显示名称：建议使用应用实际名称。
+    displayName: '购物'
+  };
+  // 日历配置信息
+  const config: calendarManager.CalendarConfig = {
+    // 设置日历账户颜色
+    color: '#aabbcc'
+  };
+  const startTime = new Date('2025-12-19T19:00:00').getTime();
+  const endTime = new Date('2025-12-19T20:00:00').getTime();
+  // 日程配置信息
+  const event: calendarManager.Event = {
+    type: calendarManager.EventType.NORMAL,
+    title: '购物节预热',
+    startTime: startTime,
+    endTime: endTime,
+    isAllDay: false,
+    reminderTime: [0, 10],
+    description: '9.9限时秒杀，还有精彩福利',
+    // 一键服务
+    service: {
+      type: calendarManager.ServiceType.SHOPPING,
+      uri: 'demo://mobile/player?params='
+    }
+  }
+  try {
+    // 创建日历账户
+    let data: calendarManager.Calendar | undefined= await calendarMgr?.createCalendar(calendarAccount);
+    if (!data || data === null) {
+      console.error('Failed to create calendar. data is null.');
+      return;
+    }
+    // 请确保日历账户创建成功后，再进行相关日程的管理
+    // 设置日历配置信息，设置日历账户颜色
+    await data.setConfig(config);
+    // 添加日程
+    id = await data.addEvent(event);
+    console.info(`Succeeded in creating calendar and event, result: ${JSON.stringify(id)}`);
+  } catch (error) {
+    console.error(`Failed to create calendar or event. Code: ${error.code}, message: ${error.message}`);
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/tXNgFTTNQkCiMmWUcN3odQ/zh-cn_image_0000002558765324.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/GgqDHcWUTpWnFP8AIo1HPw/zh-cn_image_0000002706834840.png)
 
 ### 还款提醒场景
 
@@ -439,59 +439,59 @@ content_hash: sha256:db87a7d1c5797f06110829400577fab7fed389bfb26aa79b2db31781d01
 
 创建日程示例和示意图如下：
 
-```
-1. // Index.ets
-2. async createRepaymentCalendarAndEvent(): Promise<void> {
-3. // 指定日历账户信息
-4. const calendarAccount: calendarManager.CalendarAccount = {
-5. name: 'repaymentCalendar',
-6. type: calendarManager.CalendarType.LOCAL,
-7. // 日历账户显示名称：建议使用应用实际名称。
-8. displayName: '金融理财'
-9. };
-10. // 日历配置信息
-11. const config: calendarManager.CalendarConfig = {
-12. // 设置日历账户颜色
-13. color: '#aabbcc'
-14. };
-15. const startTime = new Date('2025-10-20T00:00:00').getTime();
-16. const endTime = new Date('2025-10-20T23:59:59').getTime();
-17. // 日程配置信息
-18. const event: calendarManager.Event = {
-19. type: calendarManager.EventType.NORMAL,
-20. title: '还款提醒',
-21. startTime: startTime,
-22. endTime: endTime,
-23. isAllDay: true,
-24. // 全天日程时，提醒时间为0表示当天上午9点提醒
-25. reminderTime: [0],
-26. description: '本月账单：待还款10989.35元',
-27. // 一键服务
-28. service: {
-29. type: calendarManager.ServiceType.REPAYMENT,
-30. uri: 'demo://mobile/player?params='
-31. }
-32. }
-33. try {
-34. // 创建日历账户
-35. let data: calendarManager.Calendar | undefined= await calendarMgr?.createCalendar(calendarAccount);
-36. if (!data || data === null) {
-37. console.error('Failed to create calendar. data is null.');
-38. return;
-39. }
-40. // 请确保日历账户创建成功后，再进行相关日程的管理
-41. // 设置日历配置信息，设置日历账户颜色
-42. await data.setConfig(config);
-43. // 添加日程
-44. id = await data.addEvent(event);
-45. console.info(`Succeeded in creating calendar and event, result: ${JSON.stringify(id)}`);
-46. } catch (error) {
-47. console.error(`Failed to create calendar or event. Code: ${error.code}, message: ${error.message}`);
-48. }
-49. }
+```ts
+// Index.ets
+async createRepaymentCalendarAndEvent(): Promise<void> {
+  // 指定日历账户信息
+  const calendarAccount: calendarManager.CalendarAccount = {
+    name: 'repaymentCalendar',
+    type: calendarManager.CalendarType.LOCAL,
+    // 日历账户显示名称：建议使用应用实际名称。
+    displayName: '金融理财'
+  };
+  // 日历配置信息
+  const config: calendarManager.CalendarConfig = {
+    // 设置日历账户颜色
+    color: '#aabbcc'
+  };
+  const startTime = new Date('2025-10-20T00:00:00').getTime();
+  const endTime = new Date('2025-10-20T23:59:59').getTime();
+  // 日程配置信息
+  const event: calendarManager.Event = {
+    type: calendarManager.EventType.NORMAL,
+    title: '还款提醒',
+    startTime: startTime,
+    endTime: endTime,
+    isAllDay: true,
+    // 全天日程时，提醒时间为0表示当天上午9点提醒
+    reminderTime: [0],
+    description: '本月账单：待还款10989.35元',
+    // 一键服务
+    service: {
+      type: calendarManager.ServiceType.REPAYMENT,
+      uri: 'demo://mobile/player?params='
+    }
+  }
+  try {
+    // 创建日历账户
+    let data: calendarManager.Calendar | undefined= await calendarMgr?.createCalendar(calendarAccount);
+    if (!data || data === null) {
+      console.error('Failed to create calendar. data is null.');
+      return;
+    }
+    // 请确保日历账户创建成功后，再进行相关日程的管理
+    // 设置日历配置信息，设置日历账户颜色
+    await data.setConfig(config);
+    // 添加日程
+    id = await data.addEvent(event);
+    console.info(`Succeeded in creating calendar and event, result: ${JSON.stringify(id)}`);
+  } catch (error) {
+    console.error(`Failed to create calendar or event. Code: ${error.code}, message: ${error.message}`);
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/vdqC0R4JQBysI5nc77piGg/zh-cn_image_0000002558605668.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/ThviEOvbTlqU3UgwVIEsCw/zh-cn_image_0000002736313947.png)
 
 ### 课程提醒场景
 
@@ -509,58 +509,58 @@ content_hash: sha256:db87a7d1c5797f06110829400577fab7fed389bfb26aa79b2db31781d01
 
 创建日程示例和示意图如下：
 
-```
-1. // Index.ets
-2. async createClassCalendarAndEvent(): Promise<void> {
-3. // 指定日历账户信息
-4. const calendarAccount: calendarManager.CalendarAccount = {
-5. name: 'classCalendar',
-6. type: calendarManager.CalendarType.LOCAL,
-7. // 日历账户显示名称：建议使用应用实际名称。
-8. displayName: '我的课表'
-9. };
-10. // 日历配置信息
-11. const config: calendarManager.CalendarConfig = {
-12. // 设置日历账户颜色
-13. color: '#aabbcc'
-14. };
-15. const startTime = new Date('2025-11-03T09:00:00').getTime();
-16. const endTime = new Date('2025-11-03T09:45:00').getTime();
-17. // 日程配置信息
-18. const event: calendarManager.Event = {
-19. type: calendarManager.EventType.NORMAL,
-20. title: '语文课',
-21. startTime: startTime,
-22. endTime: endTime,
-23. isAllDay: false,
-24. reminderTime: [0, 10],
-25. description: '语文课上课前准备诗歌朗读',
-26. // 一键服务
-27. service: {
-28. type: calendarManager.ServiceType.CLASS,
-29. uri: 'demo://mobile/player?params='
-30. }
-31. }
-32. try {
-33. // 创建日历账户
-34. let data: calendarManager.Calendar | undefined= await calendarMgr?.createCalendar(calendarAccount);
-35. if (!data || data === null) {
-36. console.error('Failed to create calendar. data is null.');
-37. return;
-38. }
-39. // 请确保日历账户创建成功后，再进行相关日程的管理
-40. // 设置日历配置信息，设置日历账户颜色
-41. await data.setConfig(config);
-42. // 添加日程
-43. id = await data.addEvent(event);
-44. console.info(`Succeeded in creating calendar and event, result: ${JSON.stringify(id)}`);
-45. } catch (error) {
-46. console.error(`Failed to create calendar or event. Code: ${error.code}, message: ${error.message}`);
-47. }
-48. }
+```ts
+// Index.ets
+async createClassCalendarAndEvent(): Promise<void> {
+  // 指定日历账户信息
+  const calendarAccount: calendarManager.CalendarAccount = {
+    name: 'classCalendar',
+    type: calendarManager.CalendarType.LOCAL,
+    // 日历账户显示名称：建议使用应用实际名称。
+    displayName: '我的课表'
+  };
+  // 日历配置信息
+  const config: calendarManager.CalendarConfig = {
+    // 设置日历账户颜色
+    color: '#aabbcc'
+  };
+  const startTime = new Date('2025-11-03T09:00:00').getTime();
+  const endTime = new Date('2025-11-03T09:45:00').getTime();
+  // 日程配置信息
+  const event: calendarManager.Event = {
+    type: calendarManager.EventType.NORMAL,
+    title: '语文课',
+    startTime: startTime,
+    endTime: endTime,
+    isAllDay: false,
+    reminderTime: [0, 10],
+    description: '语文课上课前准备诗歌朗读',
+    // 一键服务
+    service: {
+      type: calendarManager.ServiceType.CLASS,
+      uri: 'demo://mobile/player?params='
+    }
+  }
+  try {
+    // 创建日历账户
+    let data: calendarManager.Calendar | undefined= await calendarMgr?.createCalendar(calendarAccount);
+    if (!data || data === null) {
+      console.error('Failed to create calendar. data is null.');
+      return;
+    }
+    // 请确保日历账户创建成功后，再进行相关日程的管理
+    // 设置日历配置信息，设置日历账户颜色
+    await data.setConfig(config);
+    // 添加日程
+    id = await data.addEvent(event);
+    console.info(`Succeeded in creating calendar and event, result: ${JSON.stringify(id)}`);
+  } catch (error) {
+    console.error(`Failed to create calendar or event. Code: ${error.code}, message: ${error.message}`);
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/Pxvt-yhmTl6tHORuioTvlA/zh-cn_image_0000002589325195.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/3oFKJchVQle9Qb5TywSxbg/zh-cn_image_0000002706674904.png)
 
 ### 影音娱乐场景
 
@@ -578,58 +578,58 @@ content_hash: sha256:db87a7d1c5797f06110829400577fab7fed389bfb26aa79b2db31781d01
 
 创建日程示例和示意图如下：
 
-```
-1. // Index.ets
-2. async createSportsCalendarAndEvent(): Promise<void> {
-3. // 指定日历账户信息
-4. const calendarAccount: calendarManager.CalendarAccount = {
-5. name: 'sportsEventsCalendar',
-6. type: calendarManager.CalendarType.LOCAL,
-7. // 日历账户显示名称：建议使用应用实际名称。
-8. displayName: '足球比赛'
-9. };
-10. // 日历配置信息
-11. const config: calendarManager.CalendarConfig = {
-12. // 设置日历账户颜色
-13. color: '#aabbcc'
-14. };
-15. const startTime = new Date('2025-10-19T20:00:00').getTime();
-16. const endTime = new Date('2025-10-19T21:30:00').getTime();
-17. // 日程配置信息
-18. const event: calendarManager.Event = {
-19. type: calendarManager.EventType.NORMAL,
-20. title: '2026年足球联赛',
-21. startTime: startTime,
-22. endTime: endTime,
-23. isAllDay: false,
-24. reminderTime: [0, 10],
-25. description: 'A组 xx队首战',
-26. // 一键服务
-27. service: {
-28. type: calendarManager.ServiceType.SPORTS_EVENTS,
-29. uri: 'demo://mobile/player?params='
-30. }
-31. }
-32. try {
-33. // 创建日历账户
-34. let data: calendarManager.Calendar | undefined= await calendarMgr?.createCalendar(calendarAccount);
-35. if (!data || data === null) {
-36. console.error('Failed to create calendar. data is null.');
-37. return;
-38. }
-39. // 请确保日历账户创建成功后，再进行相关日程的管理
-40. // 设置日历配置信息，设置日历账户颜色
-41. await data.setConfig(config);
-42. // 添加日程
-43. id = await data.addEvent(event);
-44. console.info(`Succeeded in creating calendar and event, result: ${JSON.stringify(id)}`);
-45. } catch (error) {
-46. console.error(`Failed to create calendar or event. Code: ${error.code}, message: ${error.message}`);
-47. }
-48. }
+```ts
+// Index.ets
+async createSportsCalendarAndEvent(): Promise<void> {
+  // 指定日历账户信息
+  const calendarAccount: calendarManager.CalendarAccount = {
+    name: 'sportsEventsCalendar',
+    type: calendarManager.CalendarType.LOCAL,
+    // 日历账户显示名称：建议使用应用实际名称。
+    displayName: '足球比赛'
+  };
+  // 日历配置信息
+  const config: calendarManager.CalendarConfig = {
+    // 设置日历账户颜色
+    color: '#aabbcc'
+  };
+  const startTime = new Date('2025-10-19T20:00:00').getTime();
+  const endTime = new Date('2025-10-19T21:30:00').getTime();
+  // 日程配置信息
+  const event: calendarManager.Event = {
+    type: calendarManager.EventType.NORMAL,
+    title: '2026年足球联赛',
+    startTime: startTime,
+    endTime: endTime,
+    isAllDay: false,
+    reminderTime: [0, 10],
+    description: 'A组 xx队首战',
+    // 一键服务
+    service: {
+      type: calendarManager.ServiceType.SPORTS_EVENTS,
+      uri: 'demo://mobile/player?params='
+    }
+  }
+  try {
+    // 创建日历账户
+    let data: calendarManager.Calendar | undefined= await calendarMgr?.createCalendar(calendarAccount);
+    if (!data || data === null) {
+      console.error('Failed to create calendar. data is null.');
+      return;
+    }
+    // 请确保日历账户创建成功后，再进行相关日程的管理
+    // 设置日历配置信息，设置日历账户颜色
+    await data.setConfig(config);
+    // 添加日程
+    id = await data.addEvent(event);
+    console.info(`Succeeded in creating calendar and event, result: ${JSON.stringify(id)}`);
+  } catch (error) {
+    console.error(`Failed to create calendar or event. Code: ${error.code}, message: ${error.message}`);
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/nPnC8oy7RruNQxbrZm1aQg/zh-cn_image_0000002589245131.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/gtIb5fK7R8WuzBQ3GCSRtg/zh-cn_image_0000002736433993.png)
 
 ### 运动训练场景
 
@@ -647,58 +647,58 @@ content_hash: sha256:db87a7d1c5797f06110829400577fab7fed389bfb26aa79b2db31781d01
 
 创建日程示例及示意图如下：
 
-```
-1. // Index.ets
-2. async createSportsExerciseEvent(): Promise<void> {
-3. // 指定日历账户信息
-4. const calendarAccount: calendarManager.CalendarAccount = {
-5. name: 'sportsExerciseCalendar',
-6. type: calendarManager.CalendarType.LOCAL,
-7. // 日历账户显示名称：建议使用应用实际名称。
-8. displayName: '运动健康'
-9. };
-10. // 日历配置信息
-11. const config: calendarManager.CalendarConfig = {
-12. // 设置日历账户颜色
-13. color: '#aabbcc'
-14. };
-15. const startTime = new Date('2025-10-26T10:30:00').getTime();
-16. const endTime = new Date('2025-10-26T10:45:00').getTime();
-17. // 日程配置信息
-18. const event: calendarManager.Event = {
-19. type: calendarManager.EventType.NORMAL,
-20. title: '健身操·15分钟无跑跳燃脂',
-21. startTime: startTime,
-22. endTime: endTime,
-23. isAllDay: false,
-24. reminderTime: [0, 30],
-25. description: '训练日第17天',
-26. // 一键服务
-27. service: {
-28. type: calendarManager.ServiceType.SPORTS_EXERCISE,
-29. uri: 'demo://mobile/player?params='
-30. }
-31. }
-32. try {
-33. // 创建日历账户
-34. let data: calendarManager.Calendar | undefined= await calendarMgr?.createCalendar(calendarAccount);
-35. if (!data || data === null) {
-36. console.error('Failed to create calendar. data is null.');
-37. return;
-38. }
-39. // 请确保日历账户创建成功后，再进行相关日程的管理
-40. // 设置日历配置信息，设置日历账户颜色
-41. await data.setConfig(config);
-42. // 添加日程
-43. id = await data.addEvent(event);
-44. console.info(`Succeeded in creating calendar and event, result: ${JSON.stringify(id)}`);
-45. } catch (error) {
-46. console.error(`Failed to create calendar or event. Code: ${error.code}, message: ${error.message}`);
-47. }
-48. }
+```ts
+// Index.ets
+async createSportsExerciseEvent(): Promise<void> {
+  // 指定日历账户信息
+  const calendarAccount: calendarManager.CalendarAccount = {
+    name: 'sportsExerciseCalendar',
+    type: calendarManager.CalendarType.LOCAL,
+    // 日历账户显示名称：建议使用应用实际名称。
+    displayName: '运动健康'
+  };
+  // 日历配置信息
+  const config: calendarManager.CalendarConfig = {
+    // 设置日历账户颜色
+    color: '#aabbcc'
+  };
+  const startTime = new Date('2025-10-26T10:30:00').getTime();
+  const endTime = new Date('2025-10-26T10:45:00').getTime();
+  // 日程配置信息
+  const event: calendarManager.Event = {
+    type: calendarManager.EventType.NORMAL,
+    title: '健身操·15分钟无跑跳燃脂',
+    startTime: startTime,
+    endTime: endTime,
+    isAllDay: false,
+    reminderTime: [0, 30],
+    description: '训练日第17天',
+    // 一键服务
+    service: {
+      type: calendarManager.ServiceType.SPORTS_EXERCISE,
+      uri: 'demo://mobile/player?params='
+    }
+  }
+  try {
+    // 创建日历账户
+    let data: calendarManager.Calendar | undefined= await calendarMgr?.createCalendar(calendarAccount);
+    if (!data || data === null) {
+      console.error('Failed to create calendar. data is null.');
+      return;
+    }
+    // 请确保日历账户创建成功后，再进行相关日程的管理
+    // 设置日历配置信息，设置日历账户颜色
+    await data.setConfig(config);
+    // 添加日程
+    id = await data.addEvent(event);
+    console.info(`Succeeded in creating calendar and event, result: ${JSON.stringify(id)}`);
+  } catch (error) {
+    console.error(`Failed to create calendar or event. Code: ${error.code}, message: ${error.message}`);
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/E95ZZp8gRWmiIe1zEJG8qQ/zh-cn_image_0000002558765326.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/FQxQtp3YQXK4H3D47FAr5g/zh-cn_image_0000002706834842.png)
 
 ### 会议场景
 
@@ -717,76 +717,76 @@ content_hash: sha256:db87a7d1c5797f06110829400577fab7fed389bfb26aa79b2db31781d01
 
 创建日程示例和示意图如下：
 
-```
-1. // Index.ets
-2. async createMeetingEvent(): Promise<void> {
-3. // 指定日历账户信息
-4. const calendarAccount: calendarManager.CalendarAccount = {
-5. name: 'meetingCalendar',
-6. type: calendarManager.CalendarType.LOCAL,
-7. // 日历账户显示名称：建议使用应用实际名称。
-8. displayName: '会议'
-9. };
-10. // 日历配置信息
-11. const config: calendarManager.CalendarConfig = {
-12. // 设置日历账户颜色
-13. color: '#aabbcc'
-14. };
-15. // 与会人信息
-16. let attendee: calendarManager.Attendee[] = [
-17. {
-18. name: 'Chris',
-19. email: 'test1@example.com',
-20. role: calendarManager.AttendeeRole.ORGANIZER
-21. },
-22. {
-23. name: 'Jack',
-24. email: 'test2@example.com',
-25. role: calendarManager.AttendeeRole.PARTICIPANT,
-26. type: calendarManager.AttendeeType.REQUIRED
-27. },
-28. {
-29. name: 'Jerry',
-30. email: 'test3@example.com',
-31. role: calendarManager.AttendeeRole.PARTICIPANT,
-32. type: calendarManager.AttendeeType.REQUIRED
-33. }
-34. ];
-35. const startTime = new Date('2025-10-20T09:00:00').getTime();
-36. const endTime = new Date('2025-10-20T10:00:00').getTime();
-37. // 日程配置信息
-38. const event: calendarManager.Event = {
-39. type: calendarManager.EventType.NORMAL,
-40. title: 'xxx会议',
-41. startTime: startTime,
-42. endTime: endTime,
-43. isAllDay: false,
-44. reminderTime: [0, 15],
-45. attendee: attendee,
-46. description: 'xx事务评审',
-47. // 一键服务
-48. service: {
-49. type: calendarManager.ServiceType.MEETING,
-50. uri: 'demo://mobile/player?params='
-51. }
-52. }
-53. try {
-54. // 创建日历账户
-55. let data: calendarManager.Calendar | undefined= await calendarMgr?.createCalendar(calendarAccount);
-56. if (!data || data === null) {
-57. console.error('Failed to create calendar. data is null.');
-58. return;
-59. }
-60. // 请确保日历账户创建成功后，再进行相关日程的管理
-61. // 设置日历配置信息，设置日历账户颜色
-62. await data.setConfig(config);
-63. // 添加日程
-64. id = await data.addEvent(event);
-65. console.info(`Succeeded in creating calendar and event, result: ${JSON.stringify(id)}`);
-66. } catch (error) {
-67. console.error(`Failed to create calendar or event. Code: ${error.code}, message: ${error.message}`);
-68. }
-69. }
+```ts
+// Index.ets
+async createMeetingEvent(): Promise<void> {
+  // 指定日历账户信息
+  const calendarAccount: calendarManager.CalendarAccount = {
+    name: 'meetingCalendar',
+    type: calendarManager.CalendarType.LOCAL,
+    // 日历账户显示名称：建议使用应用实际名称。
+    displayName: '会议'
+  };
+  // 日历配置信息
+  const config: calendarManager.CalendarConfig = {
+    // 设置日历账户颜色
+    color: '#aabbcc'
+  };
+  // 与会人信息
+  let attendee: calendarManager.Attendee[] = [
+    {
+      name: 'Chris',
+      email: 'test1@example.com',
+      role: calendarManager.AttendeeRole.ORGANIZER
+    },
+    {
+      name: 'Jack',
+      email: 'test2@example.com',
+      role: calendarManager.AttendeeRole.PARTICIPANT,
+      type: calendarManager.AttendeeType.REQUIRED
+    },
+    {
+      name: 'Jerry',
+      email: 'test3@example.com',
+      role: calendarManager.AttendeeRole.PARTICIPANT,
+      type: calendarManager.AttendeeType.REQUIRED
+    }
+  ];
+  const startTime = new Date('2025-10-20T09:00:00').getTime();
+  const endTime = new Date('2025-10-20T10:00:00').getTime();
+  // 日程配置信息
+  const event: calendarManager.Event = {
+    type: calendarManager.EventType.NORMAL,
+    title: 'xxx会议',
+    startTime: startTime,
+    endTime: endTime,
+    isAllDay: false,
+    reminderTime: [0, 15],
+    attendee: attendee,
+    description: 'xx事务评审',
+    // 一键服务
+    service: {
+      type: calendarManager.ServiceType.MEETING,
+      uri: 'demo://mobile/player?params='
+    }
+  }
+  try {
+    // 创建日历账户
+    let data: calendarManager.Calendar | undefined= await calendarMgr?.createCalendar(calendarAccount);
+    if (!data || data === null) {
+      console.error('Failed to create calendar. data is null.');
+      return;
+    }
+    // 请确保日历账户创建成功后，再进行相关日程的管理
+    // 设置日历配置信息，设置日历账户颜色
+    await data.setConfig(config);
+    // 添加日程
+    id = await data.addEvent(event);
+    console.info(`Succeeded in creating calendar and event, result: ${JSON.stringify(id)}`);
+  } catch (error) {
+    console.error(`Failed to create calendar or event. Code: ${error.code}, message: ${error.message}`);
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/hWR50ee9RH21kx1Y76MknA/zh-cn_image_0000002558605670.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/gK_9XiyBRxuu8dWm4sIqmQ/zh-cn_image_0000002736313949.png)

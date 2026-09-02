@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_avcodec_audiocodec.h
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 头文件 > native_avcodec_audiocodec.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:02+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:487392e4a0224df6a83fd8306aeb9540b5bc94f7a15639ed4cc1adbfe2c9383f
+scraped_at: 2026-09-02T15:02:22+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:92bcd36371ef89fd8999cfd4b35a1c9fc6c65dba433420a54fd6e5d5ac99e2db
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 音频编解码Native API的声明。
 
@@ -28,19 +26,13 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| [MediaKeySession](capi-drm-mediakeysession.md) | MediaKeySession | MediaKeySession字段。 |
+| [MediaKeySession](capi-drm-mediakeysession.md) | MediaKeySession | MediaKeySession结构。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -56,7 +48,7 @@ PhonePC/2in1TabletTVWearable
 | [OH\_AVErrCode OH\_AudioCodec\_Reset(OH\_AVCodec \*codec)](capi-native-avcodec-audiocodec-h.md#oh_audiocodec_reset) | 重置编解码器。此时会清空已配置的参数和输入输出数据。  如果要继续编解码，需要再次调用Configure接口配置编解码器实例。 |
 | [OH\_AVFormat \*OH\_AudioCodec\_GetOutputDescription(OH\_AVCodec \*codec)](capi-native-avcodec-audiocodec-h.md#oh_audiocodec_getoutputdescription) | 获取编解码器输出数据的OH\_AVFormat信息。  需要注意的是，返回值所指向的OH\_AVFormat实例需要开发者调用[OH\_AVFormat\_Destroy](capi-native-avformat-h.md#oh_avformat_destroy)接口手动释放。 |
 | [OH\_AVErrCode OH\_AudioCodec\_SetParameter(OH\_AVCodec \*codec, const OH\_AVFormat \*format)](capi-native-avcodec-audiocodec-h.md#oh_audiocodec_setparameter) | 配置编解码器的动态参数。  注意，该接口必须在编解码器启动后才能调用。另外，参数配置错误可能会导致编解码失败。 |
-| [OH\_AVErrCode OH\_AudioCodec\_PushInputBuffer(OH\_AVCodec \*codec, uint32\_t index)](capi-native-avcodec-audiocodec-h.md#oh_audiocodec_pushinputbuffer) | 通知音频编解码器已完成对index所对应缓冲区进行输入数据的填充。  [OH\_AVCodecOnNeedInputBuffer](capi-native-avcodec-base-h.md#oh_avcodeconneedinputbuffer)回调将报告可用的输入缓冲区和对应的索引值。  一旦具有指定索引的缓冲区被提交给音频编解码器，该缓冲区将无法再次访问，直到再次收到[OH\_AVCodecOnNeedInputBuffer](capi-native-avcodec-base-h.md#oh_avcodeconneedinputbuffer)回调，收到相同索引时此缓冲区才可使用。  此外，对于某些编解码器，需要在开始时向编解码器输入编解码特定配置数据(Codec-Specific-Data)，以初始化编解码器的编解码过程。  注意：当返回值为AV\_ERR\_UNKNOWN时此次调用不生效，输入缓冲区仍为未处理状态，需根据返回的特定错误代码处理后输入相同的index重新调用OH\_AudioCodec\_PushInputBuffer。 |
+| [OH\_AVErrCode OH\_AudioCodec\_PushInputBuffer(OH\_AVCodec \*codec, uint32\_t index)](capi-native-avcodec-audiocodec-h.md#oh_audiocodec_pushinputbuffer) | 通知音频编解码器已完成对index所对应缓冲区进行输入数据的填充。  [OH\_AVCodecOnNeedInputBuffer](capi-native-avcodec-base-h.md#oh_avcodeconneedinputbuffer)回调将报告可用的输入缓冲区和对应的索引值。  一旦具有指定索引的缓冲区被提交给音频编解码器，该缓冲区将无法再次访问，直到再次收到[OH\_AVCodecOnNeedInputBuffer](capi-native-avcodec-base-h.md#oh_avcodeconneedinputbuffer)回调，收到相同索引时此缓冲区才可使用。  注意：当返回值为AV\_ERR\_UNKNOWN时此次调用不生效，输入缓冲区仍为未处理状态，需根据返回的特定错误代码处理后输入相同的index重新调用OH\_AudioCodec\_PushInputBuffer。 |
 | [OH\_AVErrCode OH\_AudioCodec\_FreeOutputBuffer(OH\_AVCodec \*codec, uint32\_t index)](capi-native-avcodec-audiocodec-h.md#oh_audiocodec_freeoutputbuffer) | 将处理后的输出缓冲区返回给编解码器。使用完输出缓冲区后需及时调用此接口进行释放，否则会阻塞编解码流程。 |
 | [OH\_AVErrCode OH\_AudioCodec\_IsValid(OH\_AVCodec \*codec, bool \*isValid)](capi-native-avcodec-audiocodec-h.md#oh_audiocodec_isvalid) | 检查当前编解码器实例是否有效。  可用于后台故障恢复或应用程序从后台恢复时检测编解码器有效状态。 |
 | [OH\_AVErrCode OH\_AudioCodec\_SetDecryptionConfig(OH\_AVCodec \*codec, MediaKeySession \*mediaKeySession, bool secureAudio)](capi-native-avcodec-audiocodec-h.md#oh_audiocodec_setdecryptionconfig) | 设置解密信息。 |
@@ -67,14 +59,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AudioCodec\_CreateByMime()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVCodec *OH_AudioCodec_CreateByMime(const char *mime, bool isEncoder)
+```c
+OH_AVCodec *OH_AudioCodec_CreateByMime(const char *mime, bool isEncoder)
 ```
 
 **描述**
@@ -100,10 +88,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioCodec\_CreateByName()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVCodec *OH_AudioCodec_CreateByName(const char *name)
+```c
+OH_AVCodec *OH_AudioCodec_CreateByName(const char *name)
 ```
 
 **描述**
@@ -128,10 +114,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioCodec\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AudioCodec_Destroy(OH_AVCodec *codec)
+```c
+OH_AVErrCode OH_AudioCodec_Destroy(OH_AVCodec *codec)
 ```
 
 **描述**
@@ -156,10 +140,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioCodec\_RegisterCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AudioCodec_RegisterCallback(OH_AVCodec *codec, OH_AVCodecCallback callback, void *userData)
+```c
+OH_AVErrCode OH_AudioCodec_RegisterCallback(OH_AVCodec *codec, OH_AVCodecCallback callback, void *userData)
 ```
 
 **描述**
@@ -186,10 +168,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioCodec\_Configure()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AudioCodec_Configure(OH_AVCodec *codec, const OH_AVFormat *format)
+```c
+OH_AVErrCode OH_AudioCodec_Configure(OH_AVCodec *codec, const OH_AVFormat *format)
 ```
 
 **描述**
@@ -215,10 +195,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioCodec\_Prepare()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AudioCodec_Prepare(OH_AVCodec *codec)
+```c
+OH_AVErrCode OH_AudioCodec_Prepare(OH_AVCodec *codec)
 ```
 
 **描述**
@@ -243,10 +221,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioCodec\_Start()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AudioCodec_Start(OH_AVCodec *codec)
+```c
+OH_AVErrCode OH_AudioCodec_Start(OH_AVCodec *codec)
 ```
 
 **描述**
@@ -271,10 +247,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioCodec\_Stop()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AudioCodec_Stop(OH_AVCodec *codec)
+```c
+OH_AVErrCode OH_AudioCodec_Stop(OH_AVCodec *codec)
 ```
 
 **描述**
@@ -299,10 +273,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioCodec\_Flush()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AudioCodec_Flush(OH_AVCodec *codec)
+```c
+OH_AVErrCode OH_AudioCodec_Flush(OH_AVCodec *codec)
 ```
 
 **描述**
@@ -327,10 +299,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioCodec\_Reset()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AudioCodec_Reset(OH_AVCodec *codec)
+```c
+OH_AVErrCode OH_AudioCodec_Reset(OH_AVCodec *codec)
 ```
 
 **描述**
@@ -357,10 +327,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioCodec\_GetOutputDescription()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVFormat *OH_AudioCodec_GetOutputDescription(OH_AVCodec *codec)
+```c
+OH_AVFormat *OH_AudioCodec_GetOutputDescription(OH_AVCodec *codec)
 ```
 
 **描述**
@@ -383,14 +351,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| OH\_AVFormat \* | 返回OH\_AVFormat句柄指针，生命周期将使用下一个[OH\_AudioCodec\_GetOutputDescription](capi-native-avcodec-audiocodec-h.md#oh_audiocodec_getoutputdescription)刷新，或使用OH\_AVCodec销毁。 |
+| OH\_AVFormat \* | 返回OH\_AVFormat句柄指针。 |
 
 ### OH\_AudioCodec\_SetParameter()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AudioCodec_SetParameter(OH_AVCodec *codec, const OH_AVFormat *format)
+```c
+OH_AVErrCode OH_AudioCodec_SetParameter(OH_AVCodec *codec, const OH_AVFormat *format)
 ```
 
 **描述**
@@ -418,21 +384,17 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioCodec\_PushInputBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AudioCodec_PushInputBuffer(OH_AVCodec *codec, uint32_t index)
+```c
+OH_AVErrCode OH_AudioCodec_PushInputBuffer(OH_AVCodec *codec, uint32_t index)
 ```
 
 **描述**
 
-通知音频编解码器已完成对index所对应缓冲区进行输入数据的填充。
+通知音频编解码器已完成对index对应缓冲区进行输入数据的填充。
 
 [OH\_AVCodecOnNeedInputBuffer](capi-native-avcodec-base-h.md#oh_avcodeconneedinputbuffer)回调将报告可用的输入缓冲区和对应的索引值。
 
 一旦具有指定索引的缓冲区被提交给音频编解码器，该缓冲区将无法再次访问，直到再次收到[OH\_AVCodecOnNeedInputBuffer](capi-native-avcodec-base-h.md#oh_avcodeconneedinputbuffer)回调，收到相同索引时此缓冲区才可使用。
-
-此外，对于某些编解码器，需要在开始时向编解码器输入编解码特定配置数据(Codec-Specific-Data)，以初始化编解码器的编解码过程。
 
 注意：当返回值为AV\_ERR\_UNKNOWN时此次调用不生效，输入缓冲区仍为未处理状态，需根据返回的特定错误代码处理后输入相同的index重新调用OH\_AudioCodec\_PushInputBuffer。
 
@@ -455,10 +417,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioCodec\_FreeOutputBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AudioCodec_FreeOutputBuffer(OH_AVCodec *codec, uint32_t index)
+```c
+OH_AVErrCode OH_AudioCodec_FreeOutputBuffer(OH_AVCodec *codec, uint32_t index)
 ```
 
 **描述**
@@ -484,10 +444,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioCodec\_IsValid()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AudioCodec_IsValid(OH_AVCodec *codec, bool *isValid)
+```c
+OH_AVErrCode OH_AudioCodec_IsValid(OH_AVCodec *codec, bool *isValid)
 ```
 
 **描述**
@@ -515,10 +473,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioCodec\_SetDecryptionConfig()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AudioCodec_SetDecryptionConfig(OH_AVCodec *codec, MediaKeySession *mediaKeySession,bool secureAudio)
+```c
+OH_AVErrCode OH_AudioCodec_SetDecryptionConfig(OH_AVCodec *codec, MediaKeySession *mediaKeySession,bool secureAudio)
 ```
 
 **描述**
@@ -545,10 +501,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioCodec\_QueryInputBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AudioCodec_QueryInputBuffer(struct OH_AVCodec *codec, uint32_t *index, int64_t timeoutUs)
+```c
+OH_AVErrCode OH_AudioCodec_QueryInputBuffer(struct OH_AVCodec *codec, uint32_t *index, int64_t timeoutUs)
 ```
 
 **描述**
@@ -581,10 +535,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioCodec\_GetInputBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVBuffer *OH_AudioCodec_GetInputBuffer(struct OH_AVCodec *codec, uint32_t index)
+```c
+OH_AVBuffer *OH_AudioCodec_GetInputBuffer(struct OH_AVCodec *codec, uint32_t index)
 ```
 
 **描述**
@@ -610,10 +562,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioCodec\_QueryOutputBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AudioCodec_QueryOutputBuffer(struct OH_AVCodec *codec, uint32_t *index, int64_t timeoutUs)
+```c
+OH_AVErrCode OH_AudioCodec_QueryOutputBuffer(struct OH_AVCodec *codec, uint32_t *index, int64_t timeoutUs)
 ```
 
 **描述**
@@ -638,14 +588,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_INVALID\_VAL：执行失败，输入参数错误。  AV\_ERR\_INVALID\_STATE：执行失败，状态非法，没有启动编解码器等。  AV\_ERR\_OPERATE\_NOT\_PERMIT：执行失败，不允许非同步模式下调用。  AV\_ERR\_STREAM\_CHANGED：解码输出流格式发生变化, 可以通过调用[OH\_AudioCodec\_GetOutputDescription](capi-native-avcodec-audiocodec-h.md#oh_audiocodec_getoutputdescription)接口获取新的流信息。  AV\_ERR\_TRY\_AGAIN\_LATER：执行失败，超时时间内获取不到可用的缓冲区。 |
+| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_INVALID\_VAL：执行失败，输入参数错误。  AV\_ERR\_INVALID\_STATE：执行失败，状态非法，没有启动编解码器等。  AV\_ERR\_OPERATE\_NOT\_PERMIT：执行失败，不允许非同步模式下调用。  AV\_ERR\_STREAM\_CHANGED：解码输出流格式发生变化，可以通过调用[OH\_AudioCodec\_GetOutputDescription](capi-native-avcodec-audiocodec-h.md#oh_audiocodec_getoutputdescription)接口获取新的流信息。  AV\_ERR\_TRY\_AGAIN\_LATER：执行失败，超时时间内获取不到可用的缓冲区。 |
 
 ### OH\_AudioCodec\_GetOutputBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVBuffer *OH_AudioCodec_GetOutputBuffer(struct OH_AVCodec *codec, uint32_t index)
+```c
+OH_AVBuffer *OH_AudioCodec_GetOutputBuffer(struct OH_AVCodec *codec, uint32_t index)
 ```
 
 **描述**

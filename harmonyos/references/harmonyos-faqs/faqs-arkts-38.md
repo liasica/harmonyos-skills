@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-38
 title: ArkTS的SendableClass对象内存共享的原理和限制是什么
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > ArkTS的SendableClass对象内存共享的原理和限制是什么
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:00+08:00
-doc_updated_at: 2026-03-17
+scraped_at: 2026-09-02T15:21:14+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:2f1a31d54da313e53200bc9501b2d98823e8079fa6d07d6abd93e49a66cf90ec
 ---
 

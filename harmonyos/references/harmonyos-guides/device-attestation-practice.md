@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/device-attest
 title: 验证应用请求真实性集成设计实践
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 应用真实性证明 > 验证应用请求真实性集成设计实践
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:32:11+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6ef011d2db80c974102c9f00f9775963fc29bfe79251214ba6140329bd074f3d
+scraped_at: 2026-09-02T14:59:32+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:32015330f3a8bdd1a20640f58f72706b628197f4adacf2990d204c1bc9181544
 ---
 
 本文档提供了验证应用请求真实性的集成设计方案实践。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/DD1NWPU7QWSRgcxwrrZayA/zh-cn_image_0000002558764914.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/_SjpzOTETiiKNJ0z4X-bfA/zh-cn_image_0000002706834320.png)
 
 ## 创建密钥确立可信凭证流程
 
@@ -23,7 +23,7 @@ content_hash: sha256:6ef011d2db80c974102c9f00f9775963fc29bfe79251214ba6140329bd0
 3. **获取挑战值Challenge**：为了在步骤6“发送密钥证明证书链”中，能够防重放攻击，建议应用先从应用服务器获取一次性的挑战值Challenge。应用服务器采用安全随机数生成挑战值Challenge，并缓存到服务器中，缓存包含如下字段：
 
    用户ID，Challenge值，业务流程（如“创建密钥确立可信凭证流程”）。
-4. **对应用公钥和应用ID进行证明**：调用Universal Keystore Kit密钥证明接口对生成的应用公钥和调用的应用身份进行证明，应用输入挑战值Challenge。
+4. **对应用公钥和应用ID进行证明**：调用Universal Keystore Kit的离线密钥证明接口（[anonAttestKeyItemOffline](../harmonyos-references/js-apis-huks.md#huksanonattestkeyitemoffline)）对生成的应用公钥和调用的应用身份进行证明，应用输入挑战值Challenge。
 5. **获取密钥证明证书链**：Universal Keystore Kit返回密钥证明证书链，包含应用公钥、挑战值Challenge、应用ID等。
 6. **发送密钥证明证书链**：应用将密钥证明证书链发送到应用服务器。
 
@@ -52,7 +52,7 @@ content_hash: sha256:6ef011d2db80c974102c9f00f9775963fc29bfe79251214ba6140329bd0
    用户ID，Challenge值，业务流程（如“密钥使用流程”）。
 2. **使用应用私钥对业务请求进行签名**：调用Universal Keystore Kit签名接口使用指定的应用私钥对业务请求数据进行签名。
 
-   注意
+   **注意** 
 
    需要对“Challenge+业务请求数据”进行签名。
 3. **获取签名数据**：Universal Keystore Kit返回签名数据给应用。
@@ -69,6 +69,6 @@ content_hash: sha256:6ef011d2db80c974102c9f00f9775963fc29bfe79251214ba6140329bd0
 
    应用按照流程图的1.3~1.8流程进行创建密钥确立可信凭证处理，处理成功后再重试2.1~2.6的业务流程。
 
-   说明
+   **说明** 
 
    应用可能会基于服务器数据库容量的考虑，会删除长时间不使用的应用公钥记录，此时会触发步骤7。

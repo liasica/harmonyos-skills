@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/canvas-dr
 title: 画布绘制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:05+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:a299007a71132b536aad7b8c02a4097e8c46e6940faa63feb303382279694e5e
+scraped_at: 2026-09-02T14:51:33+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:0d43e6fd5fb4f664a6875f617111ffc2a5ee29f01a576ce0ae96698a72fa9ea0
 ---
 
 * **[Canvas](ts-components-canvas-canvas.md)**
@@ -19,3 +19,5 @@ content_hash: sha256:a299007a71132b536aad7b8c02a4097e8c46e6940faa63feb3033822796
 * **[OffscreenCanvas](ts-components-offscreencanvas.md)**
 * **[OffscreenCanvasRenderingContext2D](ts-offscreencanvasrenderingcontext2d.md)**
 * **[Path2D](ts-components-canvas-path2d.md)**
+* **[画布绘制通用属性](ts-components-canvas-common-property.md)**
+* **[画布绘制通用方法](ts-components-canvas-common-method.md)**

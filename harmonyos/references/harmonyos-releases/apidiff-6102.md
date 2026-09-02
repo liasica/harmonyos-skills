@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/apidiff-6102
 title: 6.1.0(23) Beta2引入的变更
-breadcrumb: 版本说明 > HarmonyOS 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta2引入的变更
+breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta2引入的变更
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:19+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:16:20+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:427554f612daa513a9168143a3e9ee0bf6f2b345784626425e2bb264adc85c46
 ---
 

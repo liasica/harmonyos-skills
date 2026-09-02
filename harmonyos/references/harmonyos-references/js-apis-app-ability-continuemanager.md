@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.continueManager (跨端迁移)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.app.ability.continueManager (跨端迁移)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:31+08:00
-doc_updated_at: 2026-04-10
-content_hash: sha256:59dc4ea5164a65ccb7971336355de280169c6e0f0ab5fc0df44817965bde69b6
+scraped_at: 2026-09-02T15:00:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:15ac8f5e479d6d4e8d7188c2abb4d0ddbbda5d99bb812662ce2dca78cd8d96fa
 ---
 
-continueManager提供了应用跨端迁移的管理能力，如获取应用跨端迁移过程中快速拉起目标应用的结果。
+continueManager（跨端迁移）提供了应用跨端迁移的管理能力，例如获取应用跨端迁移过程中快速拉起目标应用的结果。跨端迁移是指当用户在一个设备上操作某个应用时，可以在另一个设备的同一个应用中快速切换，无缝衔接上一个设备的应用体验。具体是指在用户使用过程中，当使用情景发生变化：之前使用的设备不再适合继续当前任务，或者周围有更合适的设备时，用户可以选择使用新的设备来继续当前的任务。跨端迁移完成后，之前设备的应用可退出或保留，用户可以将注意力集中在被启动的设备上，继续执行任务。
 
-说明
+**说明** 
 
 本模块首批接口从API version 18开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -18,35 +18,35 @@ continueManager提供了应用跨端迁移的管理能力，如获取应用跨�
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { continueManager } from '@kit.AbilityKit';
+```ts
+import { continueManager } from '@kit.AbilityKit';
 ```
 
 ## continueManager.on
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'prepareContinue', context: Context, callback: AsyncCallback<ContinueResultInfo>): void
 
-在应用快速拉起时，注册回调函数以获取快速拉起结果。使用callback异步回调。
+在应用被快速拉起时，通过注册回调函数获取结果。使用callback异步回调。
 
-说明
+适用于跨设备应用迁移场景，如游戏进度从手机迁移到平板、视频播放跨端同步、文档编辑协作等需要保持应用状态连续的场景。
 
-快速拉起功能支持在用户触发迁移、等待迁移数据返回的过程中，并行拉起应用，减小用户等待时间。在源端应用[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)的continueType标签的取值中添加“\_ContinueQuickStart”后缀，可以开启快速拉起功能。
+**说明** 
+
+快速拉起功能支持在用户触发迁移、等待迁移数据返回的过程中，并行拉起应用，减小用户等待时间。在源端应用[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)的continueType标签的取值中添加"\_ContinueQuickStart"后缀，可以开启快速拉起功能。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Mission
+
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备中调用会返回16300501错误码。
 
 **参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定值：prepareContinue。 |
-| context | [Context](js-apis-inner-application-basecontext.md) | 是 | Ability的Context。 |
-| callback | AsyncCallback<[ContinueResultInfo](js-apis-app-ability-continuemanager.md#continueresultinfo)> | 是 | 回调函数。当快速拉起结果获取成功，err为undefined，ContinueResultInfo为获取到的快速启动结果。否则为错误对象。 |
+| context | [Context](js-apis-inner-application-basecontext.md) | 是 | Ability（应用组件）的Context。 |
+| callback | AsyncCallback<[ContinueResultInfo](js-apis-app-ability-continuemanager.md#continueresultinfo)> | 是 | 回调函数。当快速拉起结果获取成功，err为undefined，ContinueResultInfo为获取到的快速拉起结果。否则为错误对象。 |
 
 **错误码：**
 
@@ -58,64 +58,65 @@ on(type: 'prepareContinue', context: Context, callback: AsyncCallback<ContinueRe
 
 **示例**：
 
-```
-1. import { AbilityConstant, UIAbility, Want, continueManager } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { AbilityConstant, UIAbility, Want, continueManager } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. const TAG: string = '[MigrationAbility]';
-5. const DOMAIN_NUMBER: number = 0xFF00;
+const TAG: string = '[MigrationAbility]';
+const DOMAIN_NUMBER: number = 0xFF00;
 
-7. export default class MigrationAbility extends UIAbility {
-8. storage : LocalStorage = new LocalStorage();
+export default class MigrationAbility extends UIAbility {
+    
+    onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+        hilog.info(DOMAIN_NUMBER, TAG, '%{public}s', 'Ability onCreate');
 
-10. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-11. hilog.info(DOMAIN_NUMBER, TAG, '%{public}s', 'Ability onCreate');
-
-13. // 1.已配置快速拉起功能，应用立即启动时触发应用生命周期回调
-14. if (launchParam.launchReason === AbilityConstant.LaunchReason.PREPARE_CONTINUATION) {
-15. // 注册快速拉起结果通知的回调函数
-16. try {
-17. continueManager.on("prepareContinue", this.context, (err, continueResultInfo) => {
-18. if (err.code != 0) {
-19. console.error('register failed, cause: ' + JSON.stringify(err));
-20. return;
-21. }
-22. console.info('register finished, ' + JSON.stringify(continueResultInfo));
-23. });
-24. } catch (e) {
-25. console.error('register failed, cause: ' + JSON.stringify(e));
-26. }
-27. // 若应用迁移数据较大，可在此处添加加载页面(页面中显示loading等)
-28. // 可处理应用自定义跳转、时序等问题
-29. // ...
-30. }
-31. }
-32. }
+        // 1.已配置快速拉起功能，应用立即启动时触发应用生命周期回调
+        if (launchParam.launchReason === AbilityConstant.LaunchReason.PREPARE_CONTINUATION) {
+            // 注册快速拉起结果通知的回调函数
+            try {
+              continueManager.on('prepareContinue', this.context, (err, continueResultInfo) => {
+                if (err.code != 0) {
+                  hilog.error(DOMAIN_NUMBER, TAG, 'register failed, cause: %{public}s', JSON.stringify(err));
+                  return;
+                }
+                hilog.info(DOMAIN_NUMBER, TAG, 'register finished, %{public}s', JSON.stringify(continueResultInfo));
+              });
+            } catch (e) {
+              hilog.error(DOMAIN_NUMBER, TAG, 'register failed, cause: %{public}s', JSON.stringify(e));
+            }
+            // 若应用迁移数据较大，可在此处添加加载页面(页面中显示loading等)
+            // 可处理应用自定义跳转、时序等问题
+            // ...
+        }
+    }
+}
 ```
 
 ## continueManager.off
 
-PhonePC/2in1TabletTVWearable
-
 off(type: 'prepareContinue', context: Context, callback?: AsyncCallback<ContinueResultInfo>): void
 
-在应用快速拉起时，注销回调函数，不再获取快速拉起结果。使用callback异步回调。
+在应用被快速拉起时，注销回调函数。注销成功后，不再接收快速拉起结果的通知。使用callback异步回调。
 
-说明
+适用于跨设备应用迁移完成或取消迁移后的回调清理场景，如应用迁移成功后清理监听、用户取消迁移操作时释放资源等。
 
-快速拉起功能支持在用户触发迁移、等待迁移数据返回的过程中，并行拉起应用，减小用户等待时间。在源端应用[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)的continueType标签的取值中添加“\_ContinueQuickStart”后缀，可以开启快速拉起功能。
+**说明** 
+
+快速拉起功能支持在用户触发迁移、等待迁移数据返回的过程中，并行拉起应用，减小用户等待时间。在源端应用[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)的continueType标签的取值中添加"\_ContinueQuickStart"后缀，可以开启快速拉起功能。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Mission
+
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备不生效。
 
 **参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定值：prepareContinue。 |
-| context | [Context](js-apis-inner-application-basecontext.md) | 是 | Ability的Context。 |
-| callback | AsyncCallback<[ContinueResultInfo](js-apis-app-ability-continuemanager.md#continueresultinfo)> | 否 | 回调函数。当回调函数注销成功，err为undefined，ContinueResultInfo为获回调函数注销结果。否则为错误对象。 |
+| context | [Context](js-apis-inner-application-basecontext.md) | 是 | Ability（应用组件）的Context。 |
+| callback | AsyncCallback<[ContinueResultInfo](js-apis-app-ability-continuemanager.md#continueresultinfo)> | 否 | 回调函数。当回调函数注销成功，err为undefined，ContinueResultInfo为获取到的回调函数注销结果。否则为错误对象。若未填写，则注销所有已注册的回调；若已填写，则注销指定的回调函数。 |
 
 **错误码：**
 
@@ -127,63 +128,66 @@ off(type: 'prepareContinue', context: Context, callback?: AsyncCallback<Continue
 
 **示例**：
 
-```
-1. import { AbilityConstant, UIAbility, Want, continueManager } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { AbilityConstant, UIAbility, Want, continueManager } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. const TAG: string = '[MigrationAbility]';
-5. const DOMAIN_NUMBER: number = 0xFF00;
+const TAG: string = '[MigrationAbility]';
+const DOMAIN_NUMBER: number = 0xFF00;
 
-7. export default class MigrationAbility extends UIAbility {
-8. storage : LocalStorage = new LocalStorage();
+export default class MigrationAbility extends UIAbility {
+    
+    onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+        hilog.info(DOMAIN_NUMBER, TAG, '%{public}s', 'Ability onCreate');
 
-10. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-11. hilog.info(DOMAIN_NUMBER, TAG, '%{public}s', 'Ability onCreate');
-
-13. // 1.已配置快速拉起功能，应用立即启动时触发应用生命周期回调
-14. if (launchParam.launchReason === AbilityConstant.LaunchReason.PREPARE_CONTINUATION) {
-15. // 注销快速拉起结果通知的回调函数
-16. try {
-17. continueManager.off("prepareContinue", this.context, (err, continueResultInfo) => {
-18. if (err.code != 0) {
-19. console.error('unregister failed, cause: ' + JSON.stringify(err));
-20. return;
-21. }
-22. console.info('unregister finished, ' + JSON.stringify(continueResultInfo));
-23. });
-24. } catch (e) {
-25. console.error('unregister failed, cause: ' + JSON.stringify(e));
-26. }
-27. // 若应用迁移数据较大，可在此处添加加载页面(页面中显示loading等)
-28. // 可处理应用自定义跳转、时序等问题
-29. // ...
-30. }
-31. }
-32. }
+        // 1.已配置快速拉起功能，应用立即启动时触发应用生命周期回调
+        if (launchParam.launchReason === AbilityConstant.LaunchReason.PREPARE_CONTINUATION) {
+            // 注销快速拉起结果通知的回调函数
+            try {
+              continueManager.off('prepareContinue', this.context, (err, continueResultInfo) => {
+                if (err.code != 0) {
+                  hilog.error(DOMAIN_NUMBER, TAG, 'unregister failed, cause: %{public}s', JSON.stringify(err));
+                  return;
+                }
+                hilog.info(DOMAIN_NUMBER, TAG, 'unregister finished, %{public}s', JSON.stringify(continueResultInfo));
+              });
+            } catch (e) {
+              hilog.error(DOMAIN_NUMBER, TAG, 'unregister failed, cause: %{public}s', JSON.stringify(e));
+            }
+            // 若应用迁移数据较大，可在此处添加加载页面(页面中显示loading等)
+            // 可处理应用自定义跳转、时序等问题
+            // ...
+        }
+    }
+}
 ```
 
 ## ContinueResultInfo
 
-PhonePC/2in1TabletTVWearable
+注册或注销回调函数返回的快速拉起结果，包含操作状态码和结果说明信息，用于应用获取跨端迁移快速拉起的执行结果。
 
-注册或注销回调函数返回的快速拉起的结果。
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备不生效。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Mission
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| resultState | [ContinueStateCode](js-apis-app-ability-continuemanager.md#continuestatecode) | 否 | 否 | 操作结果状态码。  **模型约束**：此接口仅可在Stage模型下使用。 |
-| resultInfo | string | 否 | 是 | 操作结果的说明。  **模型约束**：此接口仅可在Stage模型下使用。 |
+| resultState | [ContinueStateCode](js-apis-app-ability-continuemanager.md#continuestatecode) | 否 | 否 | 操作结果状态码。 |
+| resultInfo | string | 否 | 是 | 操作结果的说明，提供操作成功或失败的详细描述信息。 |
 
 ## ContinueStateCode
 
-PhonePC/2in1TabletTVWearable
-
 快速拉起的结果状态码的枚举值。
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备不生效。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Mission
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| SUCCESS | 0 | 操作成功。  **模型约束**：此接口仅可在Stage模型下使用。 |
-| SYSTEM\_ERROR | 1 | 操作失败。  **模型约束**：此接口仅可在Stage模型下使用。 |
+| SUCCESS | 0 | 操作成功。表示快速拉起已成功完成，应用可以继续执行跨端迁移流程。 |
+| SYSTEM\_ERROR | 1 | 操作失败。表示快速拉起过程中发生系统错误，应用需要提示用户迁移失败，并根据业务场景决定是否需要重试。 |

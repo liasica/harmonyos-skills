@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-rest-api-scenes
-title: 场景化消息
-breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 场景化消息
+title: 场景化消息推送
+breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 场景化消息推送
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:31+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:20:51+08:00
+doc_updated_at: 2026-06-12
 content_hash: sha256:9a6780f91fb49f29b1ca413b672efb1407bfb60d4f9a2a1795051d8a083346c4
 ---
 

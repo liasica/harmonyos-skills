@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/vulkan
 title: Vulkan支持能力
 breadcrumb: API参考 > 标准库 > Vulkan > Vulkan支持能力
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:34+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-02T15:20:59+08:00
+doc_updated_at: 2026-08-29
 content_hash: sha256:617b6e52b5ad088abd6845daad83a820cd2ab417ac14f70f0087b2758c93e7eb
 ---
 

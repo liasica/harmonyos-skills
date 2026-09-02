@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-vis
 title: 按压阴影
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 视效 > 按压阴影
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:30:25+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7ab34faaee95bc2dbf6ed19911238d2904c7f2fd8a25b46a4e95b6f9ceccd7aa
+scraped_at: 2026-09-02T14:49:58+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:9a850c38a00285b29e160a8664295d6ef0ab6dfe04fc06257ceef20b76cd63a1
 ---
 
 ## 场景介绍
 
-从6.0.0(20) Beta1版本开始，新增支持[按压阴影](../harmonyos-references/ui-design-hdseffect.md#pressshadow)。
+从6.0.0(20)版本开始，新增支持[按压阴影](../harmonyos-references/ui-design-hdseffect.md#pressshadow)。
 
 通过按压阴影接口可以设置组件的背景色变化效果，一般常用于组件按压交互时的背景色变化场景。
 
@@ -18,54 +18,54 @@ content_hash: sha256:7ab34faaee95bc2dbf6ed19911238d2904c7f2fd8a25b46a4e95b6f9cec
 
 1. 导入模块。
 
-   ```
-   1. import { hdsEffect } from '@kit.UIDesignKit';
+   ```typescript
+   import { hdsEffect } from '@kit.UIDesignKit';
    ```
 2. 创建按压阴影效果。
 
+   ```typescript
+   @Entry
+   @Component
+   struct PressShadowExample {
+     @State buttonBlendState: hdsEffect.PressShadowType = hdsEffect.PressShadowType.NONE;
+     @State buttonGradientState: hdsEffect.PressShadowType = hdsEffect.PressShadowType.NONE;
+
+     build() {
+       NavDestination() {
+         Column({ space: 50 }) {
+           Button('BLEND_WHITE', { buttonStyle: ButtonStyleMode.EMPHASIZED, role: ButtonRole.ERROR, stateEffect: false })
+             .visualEffect(new hdsEffect.HdsEffectBuilder()
+               .pressShadow(this.buttonBlendState)
+               .buildEffect())
+             .onTouch((event: TouchEvent) => {
+               if (event.type === TouchType.Down) {
+                 this.buttonBlendState = hdsEffect.PressShadowType.BLEND_WHITE;
+               } else if (event.type === TouchType.Up || event.type === TouchType.Cancel) {
+                 this.buttonBlendState = hdsEffect.PressShadowType.NONE;
+               }
+             })
+
+           Button('GRADIENT', { buttonStyle: ButtonStyleMode.NORMAL, stateEffect: false })
+             .visualEffect(new hdsEffect.HdsEffectBuilder()
+               .pressShadow(this.buttonGradientState)
+               .buildEffect())
+             .onTouch((event: TouchEvent) => {
+               if (event.type === TouchType.Down) {
+                 this.buttonGradientState = hdsEffect.PressShadowType.BLEND_GRADIENT;
+               } else if (event.type === TouchType.Up || event.type === TouchType.Cancel) {
+                 this.buttonGradientState = hdsEffect.PressShadowType.NONE;
+               }
+             })
+         }
+         .height('70%')
+         .justifyContent(FlexAlign.Center)
+       }
+       .width('100%')
+       .height('100%')
+       .title('Button example')
+       .backgroundColor('#040404')
+     }
+   }
    ```
-   1. @Entry
-   2. @Component
-   3. struct PressShadowExample {
-   4. @State button_blend_state: hdsEffect.PressShadowType = hdsEffect.PressShadowType.NONE;
-   5. @State button_gradient_state: hdsEffect.PressShadowType = hdsEffect.PressShadowType.NONE;
 
-   7. build() {
-   8. NavDestination() {
-   9. Column({ space: 50 }) {
-   10. Button("BLEND_WHITE", { buttonStyle: ButtonStyleMode.EMPHASIZED, role: ButtonRole.ERROR, stateEffect: false })
-   11. .visualEffect(new hdsEffect.HdsEffectBuilder()
-   12. .pressShadow(this.button_blend_state)
-   13. .buildEffect())
-   14. .onTouch((event: TouchEvent) => {
-   15. if (event.type === TouchType.Down) {
-   16. this.button_blend_state =  hdsEffect.PressShadowType.BLEND_WHITE;
-   17. } else if (event.type === TouchType.Up || event.type === TouchType.Cancel) {
-   18. this.button_blend_state =  hdsEffect.PressShadowType.NONE;
-   19. }
-   20. })
-
-   22. Button("GRADIENT", { buttonStyle: ButtonStyleMode.NORMAL, stateEffect: false })
-   23. .visualEffect(new hdsEffect.HdsEffectBuilder()
-   24. .pressShadow(this.button_gradient_state)
-   25. .buildEffect())
-   26. .onTouch((event: TouchEvent) => {
-   27. if (event.type === TouchType.Down) {
-   28. this.button_gradient_state =  hdsEffect.PressShadowType.BLEND_GRADIENT;
-   29. } else if (event.type === TouchType.Up || event.type === TouchType.Cancel) {
-   30. this.button_gradient_state =  hdsEffect.PressShadowType.NONE;
-   31. }
-   32. })
-   33. }
-   34. .height('70%')
-   35. .justifyContent(FlexAlign.Center)
-   36. }
-   37. .width('100%')
-   38. .height('100%')
-   39. .title('Button example')
-   40. .backgroundColor('#040404')
-   41. }
-   42. }
-   ```
-
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/VlJfZevJTIulq5MfjueVig/zh-cn_image_0000002558605194.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/A3vfIKDTQseena1WdsVt6g/zh-cn_image_0000002736433401.gif)

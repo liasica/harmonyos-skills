@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-237
-title: 应用开启禁止截屏之后，系统将如何处理用户的截屏和录屏操作
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 应用开启禁止截屏之后，系统将如何处理用户的截屏和录屏操作
+title: 应用开启禁止截屏之后，用户进行截屏以及录屏后的行为是什么
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 屏幕管理 > 应用开启禁止截屏之后，用户进行截屏以及录屏后的行为是什么
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:00+08:00
-doc_updated_at: 2026-03-25
+scraped_at: 2026-09-02T15:21:35+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:7e60373989fe0f147137aa83fe55c9fadb65cca5494c3f9c44bbb8573d023a7e
 ---
 

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-373
 title: 窗口Orientation枚举值8~10或12和枚举值13~16的区别
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 窗口Orientation枚举值8~10或12和枚举值13~16的区别
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 窗口Orientation枚举值8~10或12和枚举值13~16的区别
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:36+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:37+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:249fb1a939ffa115976af73d93174ae24e65f17a6d64f59fab0c7cb9d4b05b8d
 ---
 

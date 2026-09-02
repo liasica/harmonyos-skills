@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-273
 title: 如何在Navigation页面中实现侧滑事件拦截
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 如何在Navigation页面中实现侧滑事件拦截
+breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何在Navigation页面中实现侧滑事件拦截
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:11+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:c9a7e2cdf376d1e16e12b67761eb2b124cdc81e0ce9f30c417391394481f4bc0
+scraped_at: 2026-09-02T14:54:28+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:a46713801ba3d04ba6663635d38759ef0e13a933ba4f075abbec94685b3e44c2
 ---
 
 1. 因为功能以har形式集成在主工程中，没有@Entry修饰的组件，无法作为入口组件，也不能使用onBackPress生命周期函数。
@@ -15,77 +15,75 @@ content_hash: sha256:c9a7e2cdf376d1e16e12b67761eb2b124cdc81e0ce9f30c417391394481
 
 参考代码如下：
 
+```ts
+import { ShowDialogSuccessResponse } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct SideslipIntercept {
+  controller: TextAreaController = new TextAreaController();
+  @State text: string = '';
+  @Provide pageStack: NavPathStack = new NavPathStack();
+
+  build() {
+    // Main page uses NavDestination as carrier to display Navigation content area
+    Navigation(this.pageStack) {
+    }
+    .onAppear(() => {
+      this.pageStack.pushPathByName('MainPage', null, false);
+    })
+    // Create NavDestination component, use its onBackPressed callback to intercept back event
+    .navDestination(this.textArea)
+  }
+
+  @Builder
+  textArea(name: string) {
+    NavDestination() {
+      Column() {
+        TextArea({
+          text: this.text,
+          placeholder: 'input your word...',
+          controller: this.controller
+        })
+          .onChange((value: string) => {
+            this.text = value;
+          })
+      }
+      .justifyContent(FlexAlign.Start)
+      .width('100%')
+      .height('100%')
+    }
+    .onBackPressed(() => {
+      // Interception logic can be added here, then return true to proceed
+      this.getUIContext().getPromptAction().showDialog({
+        message: 'Save?',
+        alignment: DialogAlignment.Center,
+        buttons: [
+          {
+            text: "Don't Save",
+            color: '#0000FF'
+          },
+          {
+            text: 'Save',
+            color: '#0000FF'
+          }
+        ]
+      }).then((data: ShowDialogSuccessResponse) => {
+        // When selecting button index in buttons array, starting from 0, second index is 1
+        // Click Don't Save button
+        if (data.index === 0) {
+          console.info('Not saving')
+        }
+        // Click Save button
+        if (data.index === 1) {
+          console.info('Saving')
+        }
+      })
+      return true;
+    })
+  }
+}
 ```
-1. import { ShowDialogSuccessResponse } from '@kit.ArkUI';
-
-3. @Entry
-4. @Component
-5. struct SideslipIntercept {
-6. controller: TextAreaController = new TextAreaController();
-7. @State text: string = '';
-8. @Provide pageStack: NavPathStack = new NavPathStack();
-
-10. build() {
-11. // Main page uses NavDestination as carrier to display Navigation content area
-12. Navigation(this.pageStack) {
-13. }
-14. .onAppear(() => {
-15. this.pageStack.pushPathByName('MainPage', null, false);
-16. })
-17. // Create NavDestination component, use its onBackPressed callback to intercept back event
-18. .navDestination(this.textArea)
-19. }
-
-21. @Builder
-22. textArea(name: string) {
-23. NavDestination() {
-24. Column() {
-25. TextArea({
-26. text: this.text,
-27. placeholder: 'input your word...',
-28. controller: this.controller
-29. })
-30. .onChange((value: string) => {
-31. this.text = value;
-32. })
-33. }
-34. .justifyContent(FlexAlign.Start)
-35. .width('100%')
-36. .height('100%')
-37. }
-38. .onBackPressed(() => {
-39. // Interception logic can be added here, then return true to proceed
-40. this.getUIContext().getPromptAction().showDialog({
-41. message: 'Save?',
-42. alignment: DialogAlignment.Center,
-43. buttons: [
-44. {
-45. text: "Don't Save",
-46. color: '#0000FF'
-47. },
-48. {
-49. text: 'Save',
-50. color: '#0000FF'
-51. }
-52. ]
-53. }).then((data: ShowDialogSuccessResponse) => {
-54. // When selecting button index in buttons array, starting from 0, second index is 1
-55. // Click Don't Save button
-56. if (data.index === 0) {
-57. console.info('Not saving')
-58. }
-59. // Click Save button
-60. if (data.index === 1) {
-61. console.info('Saving')
-62. }
-63. })
-64. return true;
-65. })
-66. }
-67. }
-```
-
-[SideSlipEventInterception.ets](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/ArkUI/entry/src/main/ets/pages/SideSlipEventInterception.ets#L21-L88)
 
 **参考链接**
 

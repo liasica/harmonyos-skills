@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-explor
 title: 查看应用探索测试报告时，报告加载卡顿的原因是什么
 breadcrumb: FAQ > DevEco Testing > 探索测试 > 应用探索测试 > 查看应用探索测试报告时，报告加载卡顿的原因是什么
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:36+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:13292d8cde92da2feb969cddfc2292af43b5aff11144e8bc6a2a19de238641b6
 ---
 

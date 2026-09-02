@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-signing-
 title: 签名/验签介绍及算法规格
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥使用 > 签名/验签 > 签名/验签介绍及算法规格
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:18+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f56016c67467073ac1f655bcef9b16f47d70f4518db6a1a36326f074d13b028a
+scraped_at: 2026-09-02T14:50:03+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:80b48a72d58c406c4800c526af4c432dfed417d63c1366cc487b4082321a67ba
 ---
 
 为实现数据完整性保护和防抵赖，可使用生成/导入的密钥，对数据进行签名验签操作。
@@ -27,6 +27,7 @@ content_hash: sha256:f56016c67467073ac1f655bcef9b16f47d70f4518db6a1a36326f074d13
 | ED25519/NoDigest | NoDigest需要指定TAG HuksKeyDigest.HUKS\_DIGEST\_NONE。 | 8+ |
 | SM2/SM3 | 签名是ASN1格式。 | 9+ |
 | SM2/NoDigest | 签名是ASN1格式。  NoDigest需要指定TAG HuksKeyDigest.HUKS\_DIGEST\_NONE。由业务对明文做SM3哈希，再将哈希后的数据传入，哈希后的数据长度必须满足SM2签名验签支持的摘要算法规格。 | 22+ |
+| ML-DSA | 可选参数context可以通过[HUKS\_TAG\_CONTEXT](../harmonyos-references/js-apis-huks.md#hukstag)指定，长度最大255字节。 | 26.0.0+ |
 
 **轻量级智能穿戴规格**
 

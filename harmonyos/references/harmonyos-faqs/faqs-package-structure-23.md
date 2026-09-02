@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 从HAP的拆包中，如何区分是HAR和HSP
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 从HAP的拆包中，如何区分是HAR和HSP
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:29+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:13+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:6156098fc1b412b692dd186382e1e18d09d49f71fc069ca63bca6313358c3a44
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-setex
 title: SetExpandIndex
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > ExpandDimsType > SetExpandIndex
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:56+08:00
+scraped_at: 2026-09-02T14:50:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a9afa5ef903d25dea4d623156531d78504c57fe03f165ee942a39606ebc50865
+content_hash: sha256:489a52fcf13e0e18bb8d96a203e9103d09468cea7dd890471ca6a79a31ad4120
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:a9afa5ef903d25dea4d623156531d78504c57fe03f165ee942a39606ebc
 
 ## 函数原型
 
-```
-1. void SetExpandIndex(const AxisIndex index)
+```cpp
+void SetExpandIndex(const AxisIndex index)
 ```
 
 ## 参数说明
@@ -34,7 +34,7 @@ content_hash: sha256:a9afa5ef903d25dea4d623156531d78504c57fe03f165ee942a39606ebc
 
 ## 调用示例
 
-```
-1. ExpandDimsType type1("1001");
-2. type1.SetExpandIndex(1); // 补维规则mask_=1101
+```cpp
+ExpandDimsType type1("1001");
+type1.SetExpandIndex(1); // 补维规则mask_=1101
 ```

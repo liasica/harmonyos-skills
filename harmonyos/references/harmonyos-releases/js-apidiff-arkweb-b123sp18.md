@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-arkweb-b123sp18
 title: ArkWeb
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.2(14) > OS平台能力 > API变更清单 > ArkWeb
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.2(14) > OS平台能力 > API变更清单 > ArkWeb
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:46+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:38+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:953769bccbdda01255cb5a39e826a83fc5ea58bc6d4980c55fb21cf58c5cc584
 ---
 

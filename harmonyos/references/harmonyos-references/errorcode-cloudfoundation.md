@@ -1,24 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation
-title: ArkTS错误码
-breadcrumb: API参考 > 应用服务 > Cloud Foundation Kit（云开发服务） > ArkTS API > ArkTS错误码
+title: ArkTS API错误码
+breadcrumb: API参考 > 应用服务 > Cloud Foundation Kit（云开发服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:32+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:c73a4a8f4aa1dc111770497da0a39bd2613f097989ca2fe4123ce13c66ceaf43
+scraped_at: 2026-09-02T15:02:52+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:44267582ec53b65bab86e6926c0af6627226feecee9c092a9a91fa5121927eb0
 ---
 
-说明
+**说明** 
 
-以下仅介绍本模块特有错误码。若返回通用错误码，请参考[通用错误码](errorcode-universal.md)处理。若错误信息中返回了其他错误码，请参考下述链接处理：
-
-* [云函数](../AppGallery-connect-References/errorcode-nodejs-0000001733038624.md)
-* [云存储](../AppGallery-connect-References/0000001057683679-0000001056723660.md)
-* [云数据库](../AppGallery-connect-Guides/agc-clouddb-error-code-0000001117436042.md)
+以下仅介绍本模块特有错误码。若返回通用错误码，请参考[通用错误码](errorcode-universal.md)处理。
 
 ## 1008210001 云函数网络连接错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -39,8 +33,6 @@ Network connection error.
 
 ## 1008210009 云函数客户端内部错误
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Client internal error.
@@ -51,15 +43,18 @@ Client internal error.
 
 **可能原因**
 
-客户端内部错误。
+1. 真机场景下，如错误信息中包含“create http task error”，可能是签名方式错误，或者网络问题导致签名验证失败。
+2. 模拟器场景下，如错误信息中包含“create http task error”，可能是未注册模拟器调试凭据。
+3. 系统内部错误。
 
 **处理步骤**
 
-请通过[在线工单系统](https://developer.huawei.com/consumer/cn/support/feedback/#/add/101704353566310877?level2=101704353626565886&level3=101723605535783370&keyWord=Cloud Foundation Kit&channel=ICS0000)联系技术支持人员定位问题。
+1. 请确认应用的签名方式正确。当前Cloud Foundation Kit支持[关联注册应用进行自动签名](../harmonyos-guides/ide-signing-auto.md#section6333421192714)和[手动签名](../harmonyos-guides/ide-signing-manual.md)两种方式。
+2. 请检查设备网络连接情况。
+3. 请参考[使用模拟器调试](../harmonyos-guides/cloudfoundation-emulator.md)进行排查。
+4. 若以上排查结果均无异常，请稍后重试。
 
 ## 1008211001 云函数服务器侧错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -75,11 +70,9 @@ Server error.
 
 **处理步骤**
 
-请通过[在线工单系统](https://developer.huawei.com/consumer/cn/support/feedback/#/add/101704353566310877?level2=101704353626565886&level3=101723605535783370&keyWord=Cloud Foundation Kit&channel=ICS0000)联系技术支持人员定位问题。
+请结合错误信息，参考[云函数服务器侧错误码](../AppGallery-connect-References/errorcode-nodejs-0000001733038624.md)进行排查。
 
 ## 1008220001 云存储网络连接错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -100,8 +93,6 @@ Network connection error.
 
 ## 1008220009 云存储客户端内部错误
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Client internal error.
@@ -112,15 +103,18 @@ Client internal error.
 
 **可能原因**
 
-客户端内部错误。
+1. 真机场景下，如错误信息中包含“create http task error”，可能是签名方式错误，或者网络问题导致签名验证失败。
+2. 模拟器场景下，如错误信息中包含“create http task error”，可能是未注册模拟器调试凭据。
+3. 系统内部错误。
 
 **处理步骤**
 
-请通过[在线工单系统](https://developer.huawei.com/consumer/cn/support/feedback/#/add/101704353566310877?level2=101704353626565886&level3=101723605535783370&keyWord=Cloud Foundation Kit&channel=ICS0000)联系技术支持人员定位问题。
+1. 请确认应用的签名方式正确。当前Cloud Foundation Kit支持[关联注册应用进行自动签名](../harmonyos-guides/ide-signing-auto.md#section6333421192714)和[手动签名](../harmonyos-guides/ide-signing-manual.md)两种方式。
+2. 请检查设备网络连接情况。
+3. 请参考[使用模拟器调试](../harmonyos-guides/cloudfoundation-emulator.md)进行排查。
+4. 若以上排查结果均无异常，请稍后重试。
 
-## 1008221001 云存储云侧执行错误
-
-PhonePC/2in1TabletTVWearable
+## 1008221001 云存储服务器侧错误
 
 **错误信息**
 
@@ -128,19 +122,18 @@ Server error.
 
 **错误描述**
 
-云存储云侧执行错误。
+云存储服务器侧错误。
 
 **可能原因**
 
-云存储客户端请求的云侧文件不存在，云侧安全规则配置不正确，或认证失败等。
+云存储客户端请求的服务器侧文件不存在，服务器侧安全规则配置不正确，或认证失败等。
 
 **处理步骤**
 
-根据错误信息，检查云侧资源以及请求是否正确。
+1. 请参考[云存储模块常见问题](../harmonyos-guides/cloudfoundation-faq-1.md)进行排查。
+2. 请结合错误信息，参考[云存储服务器侧错误码](../AppGallery-connect-References/0000001057683679-0000001056723660.md)进行排查。
 
 ## 1008230001 云数据库网络连接错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -161,8 +154,6 @@ Network connection error.
 
 ## 1008230009 云数据库客户端内部错误
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Client internal error.
@@ -173,15 +164,18 @@ Client internal error.
 
 **可能原因**
 
-客户端内部错误。
+1. 真机场景下，如错误信息中包含“create http task error”，可能是签名方式错误，或者网络问题导致签名验证失败。
+2. 模拟器场景下，如错误信息中包含“create http task error”，可能是未注册模拟器调试凭据。
+3. 系统内部错误。
 
 **处理步骤**
 
-请通过[在线工单系统](https://developer.huawei.com/consumer/cn/support/feedback/#/add/101704353566310877?level2=101704353626565886&level3=101723605535783370&keyWord=Cloud Foundation Kit&channel=ICS0000)联系技术支持人员定位问题。
+1. 请确认应用的签名方式正确。当前Cloud Foundation Kit支持[关联注册应用进行自动签名](../harmonyos-guides/ide-signing-auto.md#section6333421192714)和[手动签名](../harmonyos-guides/ide-signing-manual.md)两种方式。
+2. 请检查设备网络连接情况。
+3. 请参考[使用模拟器调试](../harmonyos-guides/cloudfoundation-emulator.md)进行排查。
+4. 若以上排查结果均无异常，请稍后重试。
 
 ## 1008230002 云数据库schema配置错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -205,8 +199,6 @@ Schema config error.
 
 ## 1008230003 云数据库代码对象错误
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Natural object error.
@@ -225,8 +217,6 @@ Natural object error.
 
 ## 1008231001 云数据库服务器侧错误
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Server error.
@@ -241,11 +231,9 @@ Server error.
 
 **处理步骤**
 
-请通过[在线工单系统](https://developer.huawei.com/consumer/cn/support/feedback/#/add/101704353566310877?level2=101704353626565886&level3=101723605535783370&keyWord=Cloud Foundation Kit&channel=ICS0000)联系技术支持人员定位问题。
+请结合错误信息，参考[云数据库服务器侧错误码](../AppGallery-connect-Guides/agc-clouddb-error-code-0000001117436042.md)进行排查。
 
 ## 1008240009 预加载客户端内部错误
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -257,8 +245,12 @@ Client internal error.
 
 **可能原因**
 
-客户端内部错误。
+1. 如错误信息中包含“preload not support”，可能是设备类型不支持预加载。
+2. 如错误信息中包含“preload no data”，可能是预加载无缓存数据。
+3. 如错误信息中包含“preload failed”，可能是系统内部错误。
 
 **处理步骤**
 
-请通过[在线工单系统](https://developer.huawei.com/consumer/cn/support/feedback/#/add/101704353566310877?level2=101704353626565886&level3=101723605535783370&keyWord=Cloud Foundation Kit&channel=ICS0000)联系技术支持人员定位问题。
+1. 请检查设备类型。当前预加载模块仅支持Phone、Tablet、PC/2in1设备。
+2. 请参考[预加载模块常见问题](../harmonyos-guides/cloudfoundation-faq-5.md)进行排查。
+3. 若以上排查结果均无异常，请稍后重试。

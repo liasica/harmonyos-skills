@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-chann
 title: 随路格式转换
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 数据搬运 > DataCopy > 随路格式转换
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:25+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3fc9737d0fb3a54325ed8ffe73d57222b77d640f18ef3828abc187d058835887
+scraped_at: 2026-09-02T15:00:06+08:00
+doc_updated_at: 2026-08-18
+content_hash: sha256:db49e0437a06e9e6cebd4206b56c22da91a548450aa9ea85bab56e78ae0b0ced
 ---
 
 ## 功能说明
@@ -16,9 +16,9 @@ content_hash: sha256:3fc9737d0fb3a54325ed8ffe73d57222b77d640f18ef3828abc187d0588
 
 * 源操作数为GlobalTensor，目的操作数为LocalTensor（只支持ND2NZ格式转换）
 
-  ```
-  1. template <typename T>
-  2. __aicore__ inline void DataCopy(const LocalTensor<T>& dstLocal, const GlobalTensor<T>& srcGlobal, const Nd2NzParams& intriParams);
+  ```cpp
+  template <typename T> 
+  __aicore__ inline void DataCopy(const LocalTensor<T>& dstLocal, const GlobalTensor<T>& srcGlobal, const Nd2NzParams& intriParams);
   ```
 
   该原型接口支持的数据通路和数据类型如下所示：
@@ -27,20 +27,19 @@ content_hash: sha256:3fc9737d0fb3a54325ed8ffe73d57222b77d640f18ef3828abc187d0588
 
   | 支持型号 | 数据通路 | 源操作数和目的操作数的数据类型 (两者保持一致) |
   | --- | --- | --- |
-  | Kirin9020系列处理器 | GM->A1/B1 | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
-  | KirinX90系列处理器 | GM->A1/B1 | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
+  | Kirin9020系列处理器、Kirin9030系列处理器、KirinX90系列处理器 | GM->A1/B1 | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
 
-  说明
+  **说明** 
 
   使用该接口时需要预留8K的Unified Buffer空间，作为接口的临时数据存放区。
 * 源操作数为LocalTensor，目的操作数为LocalTensor
 
   支持ND2NZ格式转换：
 
-  ```
-  1. // 支持ND2NZ格式转换
-  2. template <typename T>
-  3. __aicore__ inline void DataCopy(const LocalTensor<T>& dstLocal, const LocalTensor<T>& srcGlobal, const Nd2NzParams& intriParams);
+  ```cpp
+  // 支持ND2NZ格式转换
+  template <typename T>    
+  __aicore__ inline void DataCopy(const LocalTensor<T>& dstLocal, const LocalTensor<T>& srcGlobal, const Nd2NzParams& intriParams);
   ```
 
   该原型接口支持的数据通路和数据类型如下所示：
@@ -49,12 +48,11 @@ content_hash: sha256:3fc9737d0fb3a54325ed8ffe73d57222b77d640f18ef3828abc187d0588
 
   | 支持型号 | 数据通路 | 源操作数和目的操作数的数据类型 (两者保持一致) |
   | --- | --- | --- |
-  | Kirin9020系列处理器 | VECIN / VECCALC / VECOUT -> TSCM | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
-  | KirinX90系列处理器 | VECIN / VECCALC / VECOUT -> TSCM | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
+  | Kirin9020系列处理器、Kirin9030系列处理器、KirinX90系列处理器 | VECIN / VECCALC / VECOUT -> TSCM | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
 
-  说明
+  **说明** 
 
-  当前Kirin9020通用核只考虑32Byte对齐的情形，后续根据需要增强接口。
+  当前Kirin9020、Kirin9030通用核只考虑32Byte对齐的情形，后续根据需要增强接口。
 
 ## 参数说明
 
@@ -84,18 +82,20 @@ ND2NZ转换示意图如下，样例中参数设置值和解释说明如下。
 * ndNum = 2，表示传输nd矩阵的数目为2 (nd矩阵1为A1~A2 + B1~B2, nd矩阵2为C1~C2 + D1~D2)。
 * nValue = 2，nd矩阵的行数，也就是矩阵的高度为2。
 * dValue = 24，nd矩阵的列数，也就是矩阵的宽度为24个元素。
-* srcNdMatrixStride = 144，表达相邻nd矩阵起始地址间的偏移，即为A1~C1的距离，即为9个datablock，9 \* 16 = 144个元素。
+* srcNdMatrixStride = 144，表示相邻nd矩阵起始地址间的偏移，即为A1~C1的距离，即为9个datablock，9 \* 16 = 144个元素。
 * srcDValue = 48，表示一行的所含元素个数，即为A1到B1的距离，即为3个datablock，3 \* 16 = 48个元素
 * dstNzC0Stride = 11。ND转换到NZ格式后，源操作数中的一行会转换为目的操作数的多行，例如src中A1和A2为1行，dst中A1和A2被分为2行。多行数据起始地址之间的偏移就是A1和A2在dst中的偏移，偏移为11个datablock。
-* dstNzNStride = 2，表达dst中一个ndMatrix, src的第x行和第x+1行之间的偏移，即A1和B1之间的距离，即为2个datablock。
-* dstNzMatrixStride = 96，表达dst中第x个ndMatrix的起点和第x+1个ndMatrix的起点的偏移，即A1和C1之间的距离，即为6个datablock，6 \* 16 = 96个元素。
+* dstNzNStride = 2，表示dst中一个ndMatrix, src的第x行和第x+1行之间的偏移，即A1和B1之间的距离，即为2个datablock。
+* dstNzMatrixStride = 96，表示dst中第x个ndMatrix的起点和第x+1个ndMatrix的起点的偏移，即A1和C1之间的距离，即为6个datablock，6 \* 16 = 96个元素。
 
 **图1** Nd2Nz转换示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/AhnVvZ7CQcWYhVrBGLE0Mw/zh-cn_image_0000002589245589.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/n-FLFRtKRGuE8Hgg7PrsDQ/zh-cn_image_0000002736434491.png)
 
 ## 支持的型号
 
 Kirin9020系列处理器
+
+Kirin9030系列处理器
 
 KirinX90系列处理器

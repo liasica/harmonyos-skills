@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-43
 title: 如何正确地在CMakeLists.txt文件中配置头文件搜索路径
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何正确地在CMakeLists.txt文件中配置头文件搜索路径
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:15:53+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:863338b429786737f87afc50f8048b748d85f1311a82f54b8dc25706452dead7
+scraped_at: 2026-09-02T14:53:57+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:d18487126c324b8ca9fd6cc30dbed4aa41cbc5675eb3f95b1b5d3cf43821aaa1
 ---
 
 请按照以下示例进行配置：
@@ -14,7 +14,7 @@ content_hash: sha256:863338b429786737f87afc50f8048b748d85f1311a82f54b8dc25706452
 
 目录结构：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/D1kFeN-dRRueSgRfe_O3Kw/zh-cn_image_0000002199836868.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/4968LehMTmWVFUT7E4Lz4g/zh-cn_image_0000002654835209.png)
 
 CMakeLists.txt配置头文件搜索路径：
 
@@ -28,7 +28,7 @@ cpp文件中引用头文件:
 
 目录结构：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/ssJBD40TS6CkpEGfz8wOGw/zh-cn_image_0000002234797125.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/CuXexY7sSHeYsB5hAw_-Mg/zh-cn_image_0000002654795275.png)
 
 CMakeLists.txt配置头文件搜索路径：
 
@@ -42,7 +42,7 @@ cpp文件中引用头文件:
 
 目录结构：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/AkwtuVQJSXSBGzuBMIE2Uw/zh-cn_image_0000002234956969.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/iebElMdJSZmdXhdhOPOEJw/zh-cn_image_0000002624635808.png)
 
 CMakeLists.txt配置头文件搜索路径：
 
@@ -56,7 +56,7 @@ cpp文件中引用头文件:
 
 目录结构：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/SnW-dOWhS7GIiXYGXgyWxA/zh-cn_image_0000002199996680.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/eXZbWmZKRTCntr6JDrcQKg/zh-cn_image_0000002624475906.png)
 
 CMakeLists.txt配置头文件搜索路径:
 

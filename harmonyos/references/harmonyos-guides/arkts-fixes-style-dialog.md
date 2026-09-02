@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-fixes-s
 title: 固定样式弹出框
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 弹出框 (Dialog) > 固定样式弹出框
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:55+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e563fb0a1a51e35e2f4ab5005cfc19dffaf992902ad0dbc7878bd336f4b988a3
+scraped_at: 2026-09-02T14:59:18+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9132251e4a2fc7ad9adae07d1b2eafa6e49f901389a8ad6580f673f5c947f364
 ---
 
 固定样式弹出框采用固定的布局格式，这使得开发者无需关心具体的显示布局细节，只需输入所需显示的文本内容，从而简化了使用流程，提升了便捷性。
@@ -41,57 +41,55 @@ content_hash: sha256:e563fb0a1a51e35e2f4ab5005cfc19dffaf992902ad0dbc7878bd336f4b
 
 创建并显示操作菜单后，菜单的响应结果会异步返回选中按钮在buttons数组中的索引。
 
+```typescript
+import { PromptAction } from '@kit.ArkUI';
+
+@Entry
+@Component
+export struct ShowActionMenuExample {
+  build() {
+    // ...
+      Column({ space: 12 }) {
+
+        Column() {
+          Button('ShowActionMenu')
+            .margin(30)
+            .onClick(() => {
+              let uiContext = this.getUIContext();
+              let promptAction: PromptAction = uiContext.getPromptAction();
+              try {
+                promptAction.showActionMenu({
+                  title: 'showActionMenu Title Info',
+                  buttons: [
+                    {
+                      text: 'item1',
+                      color: '#666666'
+                    },
+                    {
+                      text: 'item2',
+                      color: '#000000'
+                    },
+                  ]
+                })
+                  .then(data => {
+                    console.info('showActionMenu success, click button: ' + data.index);
+                  })
+                  .catch((err: Error) => {
+                    console.error('showActionMenu error: ' + err);
+                  })
+              } catch (error) {
+              }
+            })
+        }.width('100%')
+      }
+      .width('100%')
+      .height('100%')
+      // ...
+  }
+}
 ```
-1. import { PromptAction } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. export struct ShowActionMenuExample {
-6. build() {
-7. // ...
-8. Column({ space: 12 }) {
-
-10. Column() {
-11. Button('ShowActionMenu')
-12. .margin(30)
-13. .onClick(() => {
-14. let uiContext = this.getUIContext();
-15. let promptAction: PromptAction = uiContext.getPromptAction();
-16. try {
-17. promptAction.showActionMenu({
-18. title: 'showActionMenu Title Info',
-19. buttons: [
-20. {
-21. text: 'item1',
-22. color: '#666666'
-23. },
-24. {
-25. text: 'item2',
-26. color: '#000000'
-27. },
-28. ]
-29. })
-30. .then(data => {
-31. console.info('showActionMenu success, click button: ' + data.index);
-32. })
-33. .catch((err: Error) => {
-34. console.error('showActionMenu error: ' + err);
-35. })
-36. } catch (error) {
-37. }
-38. })
-39. }.width('100%')
-40. }
-41. .width('100%')
-42. .height('100%')
-43. // ...
-44. }
-45. }
-```
-
-[ShowActionMenu.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/fixedstyledialog/ShowActionMenu.ets#L16-L72)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/kidvYlVDToS5y1Qm_lVL8A/zh-cn_image_0000002558764394.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/zO2dZyCvSL6vpg27YjJYZA/zh-cn_image_0000002736432833.gif)
 
 ## 对话框 (showDialog)
 
@@ -101,63 +99,61 @@ content_hash: sha256:e563fb0a1a51e35e2f4ab5005cfc19dffaf992902ad0dbc7878bd336f4b
 
 创建并显示对话框，对话框响应后异步返回选中按钮在buttons数组中的索引。
 
+```typescript
+// xxx.ets
+import { PromptAction } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+@Entry
+@Component
+export struct ShowDialogExample {
+  build() {
+    // ...
+      Column({ space: 12 }) {
+        Column() {
+          Button('ShowDialog')
+            .margin(30)
+            .onClick(() => {
+              let uiContext = this.getUIContext();
+              let promptAction: PromptAction = uiContext.getPromptAction();
+              try {
+                promptAction.showDialog({
+                  title: 'showDialog Title Info',
+                  message: 'Message Info',
+                  buttons: [
+                    {
+                      text: 'button1',
+                      color: '#000000'
+                    },
+                    {
+                      text: 'button2',
+                      color: '#000000'
+                    }
+                  ]
+                }, (err, data) => {
+                  if (err) {
+                    console.error('showDialog err: ' + err);
+                    return;
+                  }
+                  console.info('showDialog success callback, click button: ' + data.index);
+                });
+              } catch (error) {
+                let message = (error as BusinessError).message;
+                let code = (error as BusinessError).code;
+                console.error(`showDialog args error code is ${code}, message is ${message}`);
+              }
+            })
+        }.width('100%')
+      }
+      .width('100%')
+      .height('100%')
+      .padding({ left: 12, right: 12 })
+      // ...
+  }
+}
 ```
-1. // xxx.ets
-2. import { PromptAction } from '@kit.ArkUI';
-3. import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. export struct ShowDialogExample {
-8. build() {
-9. // ...
-10. Column({ space: 12 }) {
-11. Column() {
-12. Button('ShowDialog')
-13. .margin(30)
-14. .onClick(() => {
-15. let uiContext = this.getUIContext();
-16. let promptAction: PromptAction = uiContext.getPromptAction();
-17. try {
-18. promptAction.showDialog({
-19. title: 'showDialog Title Info',
-20. message: 'Message Info',
-21. buttons: [
-22. {
-23. text: 'button1',
-24. color: '#000000'
-25. },
-26. {
-27. text: 'button2',
-28. color: '#000000'
-29. }
-30. ]
-31. }, (err, data) => {
-32. if (err) {
-33. console.error('showDialog err: ' + err);
-34. return;
-35. }
-36. console.info('showDialog success callback, click button: ' + data.index);
-37. });
-38. } catch (error) {
-39. let message = (error as BusinessError).message;
-40. let code = (error as BusinessError).code;
-41. console.error(`showdialog args error code is ${code}, message is ${message}`);
-42. }
-43. })
-44. }.width('100%')
-45. }
-46. .width('100%')
-47. .height('100%')
-48. .padding({ left: 12, right: 12 })
-49. // ...
-50. }
-51. }
-```
-
-[ShowDialog.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/fixedstyledialog/ShowDialog.ets#L15-L74)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/pBptNhTrRJqaK08jD6bNZA/zh-cn_image_0000002558604738.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/P3duhx3kSpWE-iuqajHJRQ/zh-cn_image_0000002706833678.gif)
 
 ## 选择器弹窗 (PickerDialog)
 
@@ -171,60 +167,58 @@ content_hash: sha256:e563fb0a1a51e35e2f4ab5005cfc19dffaf992902ad0dbc7878bd336f4b
 
 通过配置[CalendarDialogOptions](../harmonyos-references/ts-methods-calendarpicker-dialog.md#calendardialogoptions对象说明)中的acceptButtonStyle、cancelButtonStyle属性可以实现自定义按钮样式。
 
+```typescript
+// xxx.ets
+
+@Entry
+@Component
+export struct CalendarDialog {
+  private selectedDate: Date = new Date('2024-04-23');
+
+  build() {
+    NavDestination() {
+      Column({ space: 12 }) {
+
+        Column() {
+          Button('Show CalendarPicker Dialog')
+            .margin(20)
+            .onClick(() => {
+              console.info('CalendarDialog.show');
+              CalendarPickerDialog.show({
+                selected: this.selectedDate,
+                acceptButtonStyle: {
+                  fontColor: '#2787d9',
+                  fontSize: '16fp',
+                  backgroundColor: '#f7f7f7',
+                  borderRadius: 10
+                },
+                cancelButtonStyle: {
+                  fontColor: Color.Red,
+                  fontSize: '16fp',
+                  backgroundColor: '#f7f7f7',
+                  borderRadius: 10
+                },
+                onAccept: (date: Date) => {
+                  // 当弹出框再次弹出时显示选中的是上一次确定的日期
+                  this.selectedDate = date;
+                }
+              })
+            })
+        }.width('100%')
+
+      }
+      .width('100%')
+      .height('100%')
+      .padding({ left: 12, right: 12 })
+    }
+    // ...
+    // 请将$r('app.string.CustomDialog_calender')替换为实际资源文件，在本示例中该资源文件的value值为"日历选择器弹窗"
+    .title($r('app.string.CustomDialog_calender'))
+  }
+}
 ```
-1. // xxx.ets
 
-3. @Entry
-4. @Component
-5. export struct CalendarDialog {
-6. private selectedDate: Date = new Date('2024-04-23');
-
-8. build() {
-9. NavDestination() {
-10. Column({ space: 12 }) {
-
-12. Column() {
-13. Button('Show CalendarPicker Dialog')
-14. .margin(20)
-15. .onClick(() => {
-16. console.info('CalendarDialog.show');
-17. CalendarPickerDialog.show({
-18. selected: this.selectedDate,
-19. acceptButtonStyle: {
-20. fontColor: '#2787d9',
-21. fontSize: '16fp',
-22. backgroundColor: '#f7f7f7',
-23. borderRadius: 10
-24. },
-25. cancelButtonStyle: {
-26. fontColor: Color.Red,
-27. fontSize: '16fp',
-28. backgroundColor: '#f7f7f7',
-29. borderRadius: 10
-30. },
-31. onAccept: (date: Date) => {
-32. // 当弹出框再次弹出时显示选中的是上一次确定的日期
-33. this.selectedDate = date;
-34. }
-35. })
-36. })
-37. }.width('100%')
-
-39. }
-40. .width('100%')
-41. .height('100%')
-42. .padding({ left: 12, right: 12 })
-43. }
-44. // ...
-45. // 请将$r('app.string.CustomDialog_calender')替换为实际资源文件，在本示例中该资源文件的value值为"日历选择器弹窗"
-46. .title($r('app.string.CustomDialog_calender'))
-47. }
-48. }
-```
-
-[CalendarPickerDialog.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/fixedstyledialog/CalendarPickerDialog.ets#L16-L68)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/3bLPK3QCSx6wpYNnCzfA2Q/zh-cn_image_0000002589324263.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/ieJRrwByRM6HX9tjKqAomw/zh-cn_image_0000002736312787.gif)
 
 ### 日期滑动选择器弹窗 (DatePickerDialog)
 
@@ -234,92 +228,88 @@ content_hash: sha256:e563fb0a1a51e35e2f4ab5005cfc19dffaf992902ad0dbc7878bd336f4b
 
 弹窗中配置[DatePickerDialogOptions](../harmonyos-references/ts-methods-datepicker-dialog.md#datepickerdialogoptions对象说明)的lunarSwitch、showTime属性为true时，会展示切换农历的开关和时间，当checkbox被选中时，会显示农历。当按下确定按钮时，弹窗会通过onDateAccept返回目前所选中的日期。如需弹窗再次弹出时显示选中的是上一次确定的日期，就要在回调中重新给selectTime进行赋值。
 
-```
-1. @Entry
-2. @Component
-3. export struct DatePickerDialogExample {
-4. @State selectTime: Date = new Date('2023-12-25T08:30:00');
+```typescript
+@Entry
+@Component
+export struct DatePickerDialogExample {
+  @State selectTime: Date = new Date('2023-12-25T08:30:00');
 
-6. build() {
-7. NavDestination() {
-8. Column({ space: 12 }) {
+  build() {
+    NavDestination() {
+      Column({ space: 12 }) {
 
-10. Column() {
-11. Button('showDatePickerDialog')
-12. .margin(30)
-13. .onClick(() => {
-14. this.getUIContext().showDatePickerDialog({
-15. start: new Date('2000-1-1'),
-16. end: new Date('2100-12-31'),
-17. selected: this.selectTime,
-18. lunarSwitch: true,
-19. showTime: true,
-20. onDateAccept: (value: Date) => {
-21. this.selectTime = value;
-22. console.info('DatePickerDialog:onAccept()' + JSON.stringify(value));
-23. },
-24. })
-25. })
-26. }.width('100%').margin({ top: 5 })
+        Column() {
+          Button('showDatePickerDialog')
+            .margin(30)
+            .onClick(() => {
+              this.getUIContext().showDatePickerDialog({
+                start: new Date('2000-1-1'),
+                end: new Date('2100-12-31'),
+                selected: this.selectTime,
+                lunarSwitch: true,
+                showTime: true,
+                onDateAccept: (value: Date) => {
+                  this.selectTime = value;
+                  console.info('DatePickerDialog:onAccept()' + JSON.stringify(value));
+                },
+              })
+            })
+        }.width('100%').margin({ top: 5 })
 
-28. }
-29. .width('100%')
-30. .height('100%')
-31. .padding({ left: 12, right: 12 })
-32. }
-33. // ...
-34. }
-35. }
-```
-
-[DatePickerDialog.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/fixedstyledialog/DatePickerDialog.ets#L16-L57)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/Ah9TvRjdTCud_bYvlAJU0A/zh-cn_image_0000002589244203.gif)
-
-该示例通过配置disappearTextStyle、textStyle、selectedTextStyle、acceptButtonStyle、cancelButtonStyle实现了自定义文本以及按钮样式。
-
-```
-1. @Entry
-2. @Component
-3. export struct DatePickerCustomDialogExample {
-4. @State selectTime: Date = new Date('2023-12-25T08:30:00');
-
-6. build() {
-7. NavDestination() {
-8. Column() {
-9. Button('showDatePickerDialog')
-10. .margin(30)
-11. .onClick(() => {
-12. this.getUIContext().showDatePickerDialog({
-13. start: new Date('2000-1-1'),
-14. end: new Date('2100-12-31'),
-15. selected: this.selectTime,
-16. textStyle: { color: '#2787d9', font: { size: '14fp', weight: FontWeight.Normal } },
-17. selectedTextStyle: { color: '#004aaf', font: { size: '18fp', weight: FontWeight.Regular } },
-18. acceptButtonStyle: {
-19. fontColor: '#2787d9',
-20. fontSize: '16fp',
-21. backgroundColor: '#f7f7f7',
-22. borderRadius: 10
-23. },
-24. cancelButtonStyle: {
-25. fontColor: Color.Red,
-26. fontSize: '16fp',
-27. backgroundColor: '#f7f7f7',
-28. borderRadius: 10
-29. }
-30. })
-31. })
-32. }.width('100%').margin({ top: 5 })
-33. }
-34. // ...
-35. }
-36. }
+      }
+      .width('100%')
+      .height('100%')
+      .padding({ left: 12, right: 12 })
+    }
+    // ...
+  }
+}
 ```
 
-[DatePickerCustomDialog.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/fixedstyledialog/DatePickerCustomDialog.ets#L17-L59)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/E7umHETjQo2OrT3BUWBk1g/zh-cn_image_0000002706673744.gif)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/2nQRfvLmSf2Vcu0omme6hw/zh-cn_image_0000002558764396.gif)
+该示例通过配置textStyle、selectedTextStyle、acceptButtonStyle、cancelButtonStyle实现了自定义文本以及按钮样式。
+
+```typescript
+@Entry
+@Component
+export struct DatePickerCustomDialogExample {
+  @State selectTime: Date = new Date('2023-12-25T08:30:00');
+
+  build() {
+    NavDestination() {
+      Column() {
+        Button('showDatePickerDialog')
+          .margin(30)
+          .onClick(() => {
+            this.getUIContext().showDatePickerDialog({
+              start: new Date('2000-1-1'),
+              end: new Date('2100-12-31'),
+              selected: this.selectTime,
+              textStyle: { color: '#2787d9', font: { size: '14fp', weight: FontWeight.Normal } },
+              selectedTextStyle: { color: '#004aaf', font: { size: '18fp', weight: FontWeight.Regular } },
+              acceptButtonStyle: {
+                fontColor: '#2787d9',
+                fontSize: '16fp',
+                backgroundColor: '#f7f7f7',
+                borderRadius: 10
+              },
+              cancelButtonStyle: {
+                fontColor: Color.Red,
+                fontSize: '16fp',
+                backgroundColor: '#f7f7f7',
+                borderRadius: 10
+              }
+            })
+          })
+      }.width('100%').margin({ top: 5 })
+    }
+    // ...
+    }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/wZZdopFbT1KvyOYudKmxCQ/zh-cn_image_0000002736432835.gif)
 
 ### 时间滑动选择器弹窗 (TimePickerDialog)
 
@@ -329,52 +319,50 @@ content_hash: sha256:e563fb0a1a51e35e2f4ab5005cfc19dffaf992902ad0dbc7878bd336f4b
 
 该示例通过配置[disappearTextStyle](../harmonyos-references/ts-basic-components-timepicker.md#disappeartextstyle10)、[textStyle](../harmonyos-references/ts-basic-components-timepicker.md#textstyle10)、[selectedTextStyle](../harmonyos-references/ts-basic-components-timepicker.md#selectedtextstyle10)、[acceptButtonStyle](../harmonyos-references/ts-methods-timepicker-dialog.md#timepickerdialogoptions对象说明)、[cancelButtonStyle](../harmonyos-references/ts-methods-timepicker-dialog.md#timepickerdialogoptions对象说明)实现了自定义文本以及按钮样式。
 
+```typescript
+// xxx.ets
+
+@Entry
+@Component
+export struct TimePickerDialogExample {
+  @State selectTime: Date = new Date('2023-12-25T08:30:00');
+
+  build() {
+    NavDestination() {
+      Column({ space: 12 }) {
+
+        Column() {
+          Button('showTimePickerDialog')
+            .margin(30)
+            .onClick(() => {
+              this.getUIContext().showTimePickerDialog({
+                selected: this.selectTime,
+                textStyle: { color: '#2787d9', font: { size: '14fp', weight: FontWeight.Normal } },
+                selectedTextStyle: { color: '#004aaf', font: { size: '18fp', weight: FontWeight.Regular } },
+                acceptButtonStyle: {
+                  fontColor: '#2787d9',
+                  fontSize: '16fp',
+                  backgroundColor: '#f7f7f7',
+                  borderRadius: 10
+                },
+                cancelButtonStyle: {
+                  fontColor: Color.Red,
+                  fontSize: '16fp',
+                  backgroundColor: '#f7f7f7',
+                  borderRadius: 10
+                }
+              })
+            })
+        }.width('100%').margin({ top: 5 })
+      }
+      // ...
+    }
+    // ...
+  }
+}
 ```
-1. // xxx.ets
 
-3. @Entry
-4. @Component
-5. export struct TimePickerDialogExample {
-6. @State selectTime: Date = new Date('2023-12-25T08:30:00');
-
-8. build() {
-9. NavDestination() {
-10. Column({ space: 12 }) {
-
-12. Column() {
-13. Button('showTimePickerDialog')
-14. .margin(30)
-15. .onClick(() => {
-16. this.getUIContext().showTimePickerDialog({
-17. selected: this.selectTime,
-18. textStyle: { color: '#2787d9', font: { size: '14fp', weight: FontWeight.Normal } },
-19. selectedTextStyle: { color: '#004aaf', font: { size: '18fp', weight: FontWeight.Regular } },
-20. acceptButtonStyle: {
-21. fontColor: '#2787d9',
-22. fontSize: '16fp',
-23. backgroundColor: '#f7f7f7',
-24. borderRadius: 10
-25. },
-26. cancelButtonStyle: {
-27. fontColor: Color.Red,
-28. fontSize: '16fp',
-29. backgroundColor: '#f7f7f7',
-30. borderRadius: 10
-31. }
-32. })
-33. })
-34. }.width('100%').margin({ top: 5 })
-35. }
-36. // ...
-37. }
-38. // ...
-39. }
-40. }
-```
-
-[TimePickerDialog.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/fixedstyledialog/TimePickerDialog.ets#L16-L65)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/BpWmLuieTEie9g6Jy4iCjg/zh-cn_image_0000002558604740.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/1fjJCN53R861zNTW-qMFlg/zh-cn_image_0000002706833680.gif)
 
 ### 文本滑动选择器弹窗 (TextPickerDialog)
 
@@ -384,139 +372,135 @@ content_hash: sha256:e563fb0a1a51e35e2f4ab5005cfc19dffaf992902ad0dbc7878bd336f4b
 
 该示例通过设置range的参数类型为TextCascadePickerRangeContent[]，实现3列文本选择器弹窗。当按下确定按钮时，弹窗会通过onAccept返回目前所选中文本和索引值。如需弹窗再次弹出时显示选中的是上一次确定的文本，就要在回调中重新给select进行赋值。
 
+```typescript
+@Entry
+@Component
+export struct TextPickerCNDialogExample {
+  private fruits: TextCascadePickerRangeContent[] = [
+    {
+      text: '辽宁省',
+      children: [{ text: '沈阳市', children: [{ text: '沈河区' }, { text: '和平区' }, { text: '浑南区' }] },
+        { text: '大连市', children: [{ text: '中山区' }, { text: '金州区' }, { text: '长海县' }] }]
+    },
+    {
+      text: '吉林省',
+      children: [{ text: '长春市', children: [{ text: '南关区' }, { text: '宽城区' }, { text: '朝阳区' }] },
+        { text: '四平市', children: [{ text: '铁西区' }, { text: '铁东区' }, { text: '梨树县' }] }]
+    },
+    {
+      text: '黑龙江省',
+      children: [{ text: '哈尔滨市', children: [{ text: '道里区' }, { text: '道外区' }, { text: '南岗区' }] },
+        { text: '牡丹江市', children: [{ text: '东安区' }, { text: '西安区' }, { text: '爱民区' }] }]
+    }
+  ];
+  private select: number[] = [0, 0, 0];
+
+  build() {
+    // ...
+      Column() {
+        Button('showTextPickerDialog')
+        // ...
+          .margin(30)
+          .onClick(() => {
+            this.getUIContext().showTextPickerDialog({
+              range: this.fruits,
+              selected: this.select,
+              onAccept: (value: TextPickerResult) => {
+                this.select = value.index as number[]
+              }
+            });
+          })
+      }.width('100%').margin({ top: 5 })
+      // ...
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. export struct TextPickerCNDialogExample {
-4. private fruits: TextCascadePickerRangeContent[] = [
-5. {
-6. text: '辽宁省',
-7. children: [{ text: '沈阳市', children: [{ text: '沈河区' }, { text: '和平区' }, { text: '浑南区' }] },
-8. { text: '大连市', children: [{ text: '中山区' }, { text: '金州区' }, { text: '长海县' }] }]
-9. },
-10. {
-11. text: '吉林省',
-12. children: [{ text: '长春市', children: [{ text: '南关区' }, { text: '宽城区' }, { text: '朝阳区' }] },
-13. { text: '四平市', children: [{ text: '铁西区' }, { text: '铁东区' }, { text: '梨树县' }] }]
-14. },
-15. {
-16. text: '黑龙江省',
-17. children: [{ text: '哈尔滨市', children: [{ text: '道里区' }, { text: '道外区' }, { text: '南岗区' }] },
-18. { text: '牡丹江市', children: [{ text: '东安区' }, { text: '西安区' }, { text: '爱民区' }] }]
-19. }
-20. ];
-21. private select: number = 0;
 
-23. build() {
-24. // ···
-25. Column() {
-26. Button('showTextPickerDialog')
-27. // ···
-28. .margin(30)
-29. .onClick(() => {
-30. this.getUIContext().showTextPickerDialog({
-31. range: this.fruits,
-32. selected: this.select,
-33. onAccept: (value: TextPickerResult) => {
-34. this.select = value.index as number
-35. }
-36. });
-37. })
-38. }.width('100%').margin({ top: 5 })
-39. // ···
-40. }
-41. }
-```
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/DcTDH47XT0e98eAlLffYYw/zh-cn_image_0000002736312789.gif)
 
-[TextPickerCNDialog.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/fixedstyledialog/TextPickerCNDialog.ets#L16-L65)
+## 列表选择弹出框 (ActionSheet)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/8-0mXKcdReK1q7CLCJK5sQ/zh-cn_image_0000002589324265.gif)
+列表选择弹出框适用于呈现多个操作选项，尤其当界面中仅需展示操作列表而无其他内容时。
 
-## 列表选择弹窗 (ActionSheet)
+列表选择弹出框通过UIContext中的[showActionSheet](../harmonyos-references/arkts-apis-uicontext-uicontext.md#showactionsheet)接口实现。
 
-列表选择器弹窗适用于呈现多个操作选项，尤其当界面中仅需展示操作列表而无其他内容时。
-
-列表选择器弹窗通过UIContext中的[showActionSheet](../harmonyos-references/arkts-apis-uicontext-uicontext.md#showactionsheet)接口实现。
-
-列表选择弹窗中，title字段的字体最大放大倍数为2。
+列表选择弹出框中，title字段的字体最大放大倍数为2。
 
 该示例通过配置width、height、transition等接口，定义了弹窗的样式以及弹出动效。
 
+```typescript
+@Entry
+@Component
+export struct showActionSheetExample {
+
+  build() {
+    NavDestination() {
+      Column({ space: 12 }) {
+
+        Column() {
+          Button('showActionSheet')
+            .margin(30)
+            .onClick(() => {
+              this.getUIContext().showActionSheet({
+                title: 'ActionSheet title',
+                message: 'message',
+                autoCancel: false,
+                width: 300,
+                height: 300,
+                cornerRadius: 20,
+                borderWidth: 1,
+                borderStyle: BorderStyle.Solid,
+                borderColor: Color.Blue,
+                backgroundColor: Color.White,
+                transition: TransitionEffect.asymmetric(TransitionEffect.OPACITY
+                  .animation({ duration: 3000, curve: Curve.Sharp })
+                  .combine(TransitionEffect.scale({ x: 1.5, y: 1.5 })
+                  .animation({ duration: 3000, curve: Curve.Sharp })),
+                  TransitionEffect.OPACITY.animation({ duration: 100, curve: Curve.Smooth })
+                    .combine(TransitionEffect.scale({ x: 0.5, y: 0.5 })
+                    .animation({ duration: 100, curve: Curve.Smooth }))),
+                confirm: {
+                  value: 'Confirm button',
+                  action: () => {
+                    console.info('Get ActionSheet handled');
+                  }
+                },
+                alignment: DialogAlignment.Center,
+                sheets: [
+                  {
+                    title: 'apples',
+                    action: () => {
+                    }
+                  },
+                  {
+                    title: 'bananas',
+                    action: () => {
+                    }
+                  },
+                  {
+                    title: 'pears',
+                    action: () => {
+                      console.info('pears');
+                    }
+                  }
+                ]
+              })
+            })
+        }.width('100%').margin({ top: 5 })
+
+      }
+      .width('100%')
+      .height('100%')
+      .padding({ left: 12, right: 12 })
+    }
+    .backgroundColor('#f1f2f3')
+    // 请将$r('app.string.CustomDialog_ActionSheet')替换为实际资源文件，在本示例中该资源文件的value值为"列表选择弹出框"
+    .title($r('app.string.CustomDialog_ActionSheet'))
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. export struct showActionSheetExample {
 
-5. build() {
-6. NavDestination() {
-7. Column({ space: 12 }) {
-
-9. Column() {
-10. Button('showActionSheet')
-11. .margin(30)
-12. .onClick(() => {
-13. this.getUIContext().showActionSheet({
-14. title: 'ActionSheet title',
-15. message: 'message',
-16. autoCancel: false,
-17. width: 300,
-18. height: 300,
-19. cornerRadius: 20,
-20. borderWidth: 1,
-21. borderStyle: BorderStyle.Solid,
-22. borderColor: Color.Blue,
-23. backgroundColor: Color.White,
-24. transition: TransitionEffect.asymmetric(TransitionEffect.OPACITY
-25. .animation({ duration: 3000, curve: Curve.Sharp })
-26. .combine(TransitionEffect.scale({ x: 1.5, y: 1.5 })
-27. .animation({ duration: 3000, curve: Curve.Sharp })),
-28. TransitionEffect.OPACITY.animation({ duration: 100, curve: Curve.Smooth })
-29. .combine(TransitionEffect.scale({ x: 0.5, y: 0.5 })
-30. .animation({ duration: 100, curve: Curve.Smooth }))),
-31. confirm: {
-32. value: 'Confirm button',
-33. action: () => {
-34. console.info('Get Alert Dialog handled');
-35. }
-36. },
-37. alignment: DialogAlignment.Center,
-38. sheets: [
-39. {
-40. title: 'apples',
-41. action: () => {
-42. }
-43. },
-44. {
-45. title: 'bananas',
-46. action: () => {
-47. }
-48. },
-49. {
-50. title: 'pears',
-51. action: () => {
-52. console.info('pears');
-53. }
-54. }
-55. ]
-56. })
-57. })
-58. }.width('100%').margin({ top: 5 })
-
-60. }
-61. .width('100%')
-62. .height('100%')
-63. .padding({ left: 12, right: 12 })
-64. }
-65. .backgroundColor('#f1f2f3')
-66. // 请将$r('app.string.CustomDialog_ActionSheet')替换为实际资源文件，在本示例中该资源文件的value值为"列表选择弹窗"
-67. .title($r('app.string.CustomDialog_ActionSheet'))
-68. }
-69. }
-```
-
-[ActionSheet.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/fixedstyledialog/ActionSheet.ets#L16-L86)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/h3EZQeOLQ56AK9dRhwKJww/zh-cn_image_0000002589244205.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/UbfsI9tRRf6xGAgJ-Yb5Aw/zh-cn_image_0000002706673746.gif)
 
 ## 警告弹窗 (AlertDialog)
 
@@ -529,69 +513,65 @@ content_hash: sha256:e563fb0a1a51e35e2f4ab5005cfc19dffaf992902ad0dbc7878bd336f4b
 
 警告弹窗中，title和subtitle字段的字体最大放大倍数为2。
 
-该示例通过配置width、height、transition等接口，定义了多个按钮弹窗的样式以及弹出动效。
+该示例通过配置transition等接口，定义了多个按钮弹窗的样式以及弹出动效。
 
-```
-1. import { PromptAction } from '@kit.ArkUI';
+```typescript
+@Entry
+@Component
+export struct showAlertDialogExample {
+  build() {
+    NavDestination() {
+      Column({ space: 12 }) {
 
-3. @Entry
-4. @Component
-5. export struct showAlertDialogExample {
-6. build() {
-7. NavDestination() {
-8. Column({ space: 12 }) {
+        Column() {
+          Button('showAlertDialog')
+            .margin(30)
+            .onClick(() => {
+              this.getUIContext().showAlertDialog(
+                {
+                  title: 'title',
+                  message: 'text',
+                  autoCancel: true,
+                  alignment: DialogAlignment.Center,
+                  offset: { dx: 0, dy: -20 },
+                  gridCount: 3,
+                  transition: TransitionEffect.asymmetric(TransitionEffect.OPACITY
+                    .animation({ duration: 3000, curve: Curve.Sharp })
+                    .combine(TransitionEffect.scale({ x: 1.5, y: 1.5 })
+                    .animation({ duration: 3000, curve: Curve.Sharp })),
+                    TransitionEffect.OPACITY.animation({ duration: 100, curve: Curve.Smooth })
+                      .combine(TransitionEffect.scale({ x: 0.5, y: 0.5 })
+                      .animation({ duration: 100, curve: Curve.Smooth }))),
+                  buttons: [{
+                    value: 'cancel',
+                    action: () => {
+                      console.info('Callback when the first button is clicked');
+                    }
+                  },
+                    {
+                      enabled: true,
+                      defaultFocus: true,
+                      style: DialogButtonStyle.HIGHLIGHT,
+                      value: 'ok',
+                      action: () => {
+                        console.info('Callback when the second button is clicked');
+                      }
+                    }],
+                }
+              )
+            })
+        }.width('100%').margin({ top: 5 })
 
-10. Column() {
-11. Button('showAlertDialog')
-12. .margin(30)
-13. .onClick(() => {
-14. this.getUIContext().showAlertDialog(
-15. {
-16. title: 'title',
-17. message: 'text',
-18. autoCancel: true,
-19. alignment: DialogAlignment.Center,
-20. offset: { dx: 0, dy: -20 },
-21. gridCount: 3,
-22. transition: TransitionEffect.asymmetric(TransitionEffect.OPACITY
-23. .animation({ duration: 3000, curve: Curve.Sharp })
-24. .combine(TransitionEffect.scale({ x: 1.5, y: 1.5 })
-25. .animation({ duration: 3000, curve: Curve.Sharp })),
-26. TransitionEffect.OPACITY.animation({ duration: 100, curve: Curve.Smooth })
-27. .combine(TransitionEffect.scale({ x: 0.5, y: 0.5 })
-28. .animation({ duration: 100, curve: Curve.Smooth }))),
-29. buttons: [{
-30. value: 'cancel',
-31. action: () => {
-32. console.info('Callback when the first button is clicked');
-33. }
-34. },
-35. {
-36. enabled: true,
-37. defaultFocus: true,
-38. style: DialogButtonStyle.HIGHLIGHT,
-39. value: 'ok',
-40. action: () => {
-41. console.info('Callback when the second button is clicked');
-42. }
-43. }],
-44. }
-45. )
-46. })
-47. }.width('100%').margin({ top: 5 })
-
-49. }
-50. .width('100%')
-51. .height('100%')
-52. .padding({ left: 12, right: 12 })
-53. }
-54. .backgroundColor('#f1f2f3')
-55. // 请将$r('app.string.CustomDialog_AlertDialog')替换为实际资源文件，在本示例中该资源文件的value值为"警告弹窗"
-56. .title($r('app.string.CustomDialog_AlertDialog'))
-57. }
-58. }
+      }
+      .width('100%')
+      .height('100%')
+      .padding({ left: 12, right: 12 })
+    }
+    .backgroundColor('#f1f2f3')
+    // 请将$r('app.string.CustomDialog_AlertDialog')替换为实际资源文件，在本示例中该资源文件的value值为"警告弹窗"
+    .title($r('app.string.CustomDialog_AlertDialog'))
+  }
+}
 ```
 
-[AlertDialog.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/fixedstyledialog/AlertDialog.ets#L16-L76)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/1Ay6LcO3S864MzSqcwQA2g/zh-cn_image_0000002558764398.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/HvXBSwqnSSi8hSYL6Rc56g/zh-cn_image_0000002736432837.gif)

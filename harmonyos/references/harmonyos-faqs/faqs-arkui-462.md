@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-462
 title: AppStorage存了对象之后里面的值取不出来，什么原因
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > AppStorage存了对象之后里面的值取不出来，什么原因
+breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > AppStorage存了对象之后里面的值取不出来，什么原因
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:01+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:50+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:41ba982ce2a4d2f25e67ae3b4621ca6776f8aa19ed389d995e62f9579ef54cbd
 ---
 

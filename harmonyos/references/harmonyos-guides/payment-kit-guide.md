@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-kit-g
 title: Payment Kit（鸿蒙支付服务）
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:26+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:68e634850b67aaf1d7c7fcf279011f88d6a05e278150ca0f4e6c0f9b0822125e
+scraped_at: 2026-09-02T14:50:29+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:4ad5f514d46dceae91ca0a5f85e62a476e72c99f1954fcaf6738916dfbc5d92e
 ---
 
 * **[Payment Kit简介](payment-introduction.md)**
@@ -22,5 +22,6 @@ content_hash: sha256:68e634850b67aaf1d7c7fcf279011f88d6a05e278150ca0f4e6c0f9b082
 * **[用户身份验证服务](payment-real-name-service.md)**
 * **[沙盒环境验证](payment-sandbox-test.md)**
 * **[运营工具](payment-promotion-service.md)**
+* **[Payment Kit术语表](payment-glossary.md)**
 * **[服务与支持](payment-service-support.md)**
 * **[Payment Kit常见问题](payment-faq.md)**

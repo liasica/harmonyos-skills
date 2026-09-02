@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-activ
 title: SoftmaxFlashV2
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 高阶API > 激活函数 > SoftmaxFlashV2
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:32+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:96a0282fd13f8ad4f51ce8e449c30187d97f92726a5d90a8ae1f4614625bf917
+scraped_at: 2026-09-02T14:50:38+08:00
+doc_updated_at: 2026-08-18
+content_hash: sha256:b9dd1864e8e43d74e483d11adc091ab42b2425812f2cc14d7b956b089114b2b8
 ---
 
 ## 功能说明
@@ -14,10 +14,10 @@ content_hash: sha256:96a0282fd13f8ad4f51ce8e449c30187d97f92726a5d90a8ae1f4614625
 
 * update为false：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/DKfi23cFRem0Xei8J3J1rg/zh-cn_image_0000002558606134.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/NlsTFdsMSrq_h5xb8zyrNg/zh-cn_image_0000002736314459.png)
 * update为true：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/ayCrQyRhQpu4hpVmaRQG4w/zh-cn_image_0000002589325661.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/5P-Hd3H3QDOqnWLKcJ-w6Q/zh-cn_image_0000002706675416.png)
 
 当输入shape为ND格式时，内部的reduce过程按last轴进行。当输入shape为NZ格式时，内部的reduce过程按照last轴和first轴进行
 
@@ -50,14 +50,14 @@ content_hash: sha256:96a0282fd13f8ad4f51ce8e449c30187d97f92726a5d90a8ae1f4614625
 
 高阶API接口
 
-```
-1. template <typename T, bool isUpdate = false, bool isReuseSource = false, bool isBasicBlock = false, bool isDataFormatNZ = false, const SoftmaxConfig& config = SOFTMAX_DEFAULT_CFG> __aicore__ inline void SoftmaxFlashV2(const LocalTensor<T>& dstTensor, const LocalTensor<T>& expSumTensor, const LocalTensor<T>& maxTensor, const LocalTensor<T>& srcTensor, const LocalTensor<T>& expMaxTensor, const LocalTensor<T>& inExpSumTensor, const LocalTensor<T>& inMaxTensor, const SoftMaxTiling& tiling, const SoftMaxShapeInfo& softmaxShapeInfo = {})
+```cpp
+template <typename T, bool isUpdate = false, bool isReuseSource = false, bool isBasicBlock = false, bool isDataFormatNZ = false, const SoftmaxConfig& config = SOFTMAX_DEFAULT_CFG> __aicore__ inline void SoftmaxFlashV2(const LocalTensor<T>& dstTensor, const LocalTensor<T>& expSumTensor, const LocalTensor<T>& maxTensor, const LocalTensor<T>& srcTensor, const LocalTensor<T>& expMaxTensor, const LocalTensor<T>& inExpSumTensor, const LocalTensor<T>& inMaxTensor, const SoftMaxTiling& tiling, const SoftMaxShapeInfo& softmaxShapeInfo = {})
 ```
 
 tiling获取接口
 
-```
-1. __aicore__ inline constexpr SoftMaxTiling SoftMaxFlashV2TilingFunc(const SoftMaxShapeInfo& shapeInfo, const uint32_t dataTypeSize1, const uint32_t dataTypeSize2, const uint32_t localWorkSpaceSize, const bool isUpdate = false, const bool isBasicBlock = false, const bool isDataFormatNZ = false, const bool isFlashOutputBrc = false)
+```cpp
+__aicore__ inline constexpr SoftMaxTiling SoftMaxFlashV2TilingFunc(const SoftMaxShapeInfo& shapeInfo, const uint32_t dataTypeSize1, const uint32_t dataTypeSize2, const uint32_t localWorkSpaceSize, const bool isUpdate = false, const bool isBasicBlock = false, const bool isDataFormatNZ = false, const bool isFlashOutputBrc = false)
 ```
 
 ## 参数说明
@@ -77,13 +77,13 @@ tiling获取接口
 
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
-| dstTensor | 输出 | 目的操作数。  类型为[LocalTensor](cannkit-localtensor.md)，支持的TPosition为VECIN/VECCALC/VECOUT。  dstTensor的shape和源操作数srcTensor一致。 |
-| expSumTensor | 输出 | 目的操作数。  类型为[LocalTensor](cannkit-localtensor.md)，支持的TPosition为VECIN/VECCALC/VECOUT。  用于保存softmax计算过程中reducesum的结果。  expSumTensor的last轴长度固定为32Byte，即一个datablock长度。该datablock中的所有数据为同一个值，比如half数据类型下，该datablock中的16个数均为相同的reducesum的值。  非last轴的长度与dstTensor保持一致。 |
-| maxTensor | 输出 | 目的操作数。  类型为[LocalTensor](cannkit-localtensor.md)，支持的TPosition为VECIN/VECCALC/VECOUT。  用于保存softmax计算过程中reducemax的结果。  maxTensor的last轴长度固定为32Byte，即一个datablock长度。该datablock中的所有数据为同一个值。比如half数据类型下，该datablock中的16个数均为相同的reducemax的值。  非last轴的长度与dstTensor保持一致。 |
-| srcTensor | 输入 | 源操作数。  类型为[LocalTensor](cannkit-localtensor.md)，支持的TPosition为VECIN/VECCALC/VECOUT。  last轴长度需要32Byte对齐。 |
-| expMaxTensor | 输出 | 目的操作数。  类型为[LocalTensor](cannkit-localtensor.md)，支持的TPosition为VECIN/VECCALC/VECOUT。  expMaxTensor的last轴长度固定为32Byte，即一个datablock长度。该datablock中的所有数据为同一个值，比如half数据类型下，该datablock中的16个数均为相同的值。  非last轴的长度需要与dstTensor保持一致。 |
-| inExpSumTensor | 输入 | 源操作数。  类型为[LocalTensor](cannkit-localtensor.md)，支持的TPosition为VECIN/VECCALC/VECOUT。  softmax计算所需要的sum值。  inExpSumTensor的last轴长度固定为32Byte，即一个datablock长度。该datablock中的所有数据为同一个值，比如half数据类型下，该datablock中的16个数均为相同的值。  非last轴的长度需要与dstTensor保持一致。 |
-| inMaxTensor | 输入 | 源操作数。  类型为[LocalTensor](cannkit-localtensor.md)，支持的TPosition为VECIN/VECCALC/VECOUT。  softmax计算所需要的max值。  除模板参数config配置为非拓展模式（SoftmaxMode::SOFTMAX\_OUTPUT\_WITHOUT\_BRC）的场景外，inMaxTensor的last轴长度固定为32Byte，即一个datablock长度。该datablock中的所有数据为同一个值，比如half数据类型下，该datablock里的16个数均为相同的值。  非last轴的长度需要与dstTensor保持一致。 |
+| dstTensor | 输出 | 目的操作数。  类型为[LocalTensor](cannkit-localtensor.md)，支持的TPosition为VECIN、VECCALC、VECOUT。  dstTensor的shape和源操作数srcTensor一致。 |
+| expSumTensor | 输出 | 目的操作数。  类型为[LocalTensor](cannkit-localtensor.md)，支持的TPosition为VECIN、VECCALC、VECOUT。  用于保存softmax计算过程中reducesum的结果。  expSumTensor的last轴长度固定为32Byte，即一个datablock长度。该datablock中的所有数据为同一个值，比如half数据类型下，该datablock中的16个数均为相同的reducesum的值。  非last轴的长度与dstTensor保持一致。 |
+| maxTensor | 输出 | 目的操作数。  类型为[LocalTensor](cannkit-localtensor.md)，支持的TPosition为VECIN、VECCALC、VECOUT。  用于保存softmax计算过程中reducemax的结果。  maxTensor的last轴长度固定为32Byte，即一个datablock长度。该datablock中的所有数据为同一个值。比如half数据类型下，该datablock中的16个数均为相同的reducemax的值。  非last轴的长度与dstTensor保持一致。 |
+| srcTensor | 输入 | 源操作数。  类型为[LocalTensor](cannkit-localtensor.md)，支持的TPosition为VECIN、VECCALC、VECOUT。  last轴长度需要32Byte对齐。 |
+| expMaxTensor | 输出 | 目的操作数。  类型为[LocalTensor](cannkit-localtensor.md)，支持的TPosition为VECIN、VECCALC、VECOUT。  expMaxTensor的last轴长度固定为32Byte，即一个datablock长度。该datablock中的所有数据为同一个值，比如half数据类型下，该datablock中的16个数均为相同的值。  非last轴的长度需要与dstTensor保持一致。 |
+| inExpSumTensor | 输入 | 源操作数。  类型为[LocalTensor](cannkit-localtensor.md)，支持的TPosition为VECIN、VECCALC、VECOUT。  softmax计算所需要的sum值。  inExpSumTensor的last轴长度固定为32Byte，即一个datablock长度。该datablock中的所有数据为同一个值，比如half数据类型下，该datablock中的16个数均为相同的值。  非last轴的长度需要与dstTensor保持一致。 |
+| inMaxTensor | 输入 | 源操作数。  类型为[LocalTensor](cannkit-localtensor.md)，支持的TPosition为VECIN、VECCALC、VECOUT。  softmax计算所需要的max值。  除模板参数config配置为非拓展模式（SoftmaxMode::SOFTMAX\_OUTPUT\_WITHOUT\_BRC）的场景外，inMaxTensor的last轴长度固定为32Byte，即一个datablock长度。该datablock中的所有数据为同一个值，比如half数据类型下，该datablock里的16个数均为相同的值。  非last轴的长度需要与dstTensor保持一致。 |
 | tiling | 输入 | softmaxflashv2接口计算所需tiling信息。通过SoftMaxFlashV2TilingFunc获取。 |
 | softmaxShapeInfo | 输入 | srcTensor的shape信息。SoftMaxShapeInfo类型，具体定义如下：  - uint32\_t srcM：非尾轴长度的乘积  - uint32\_t srcK：尾轴长度，必须32Byte对齐  - uint32\_t oriSrcM：原始非尾轴长度的乘积  - uint32\_t oriSrcK：原始尾轴长度 |
 
@@ -108,6 +108,8 @@ tiling获取接口
 
 Kirin9020系列处理器
 
+Kirin9030系列处理器
+
 KirinX90系列处理器
 
 ## 约束说明
@@ -119,15 +121,15 @@ KirinX90系列处理器
 
 ## 调用示例
 
-```
-1. // 其它处理省略
-2. __aicore__ inline void Compute()
-3. {
-4. AscendC::LocalTensor<half> xLocal = queueX.DeQue<half>();
-5. AscendC::SoftMaxShapeInfo srcShape = { M_VALUE, K_VALUE, M_VALUE, K_VALUE };
-6. AscendC::SoftmaxFlashV2<half, false, false, false, false>(xLocal, sumLocal, maxLocal, xLocal, expmaxLocal, sumLocal,
-7. maxLocal, softmaxTiling, srcShape);
-8. AscendC::DataCopy(zGm[0], xLocal, xLength);
-9. queueX.FreeTensor(xLocal);
-10. }
+```cpp
+// 其它处理省略
+__aicore__ inline void Compute()
+{
+    AscendC::LocalTensor<half> xLocal = queueX.DeQue<half>();
+    AscendC::SoftMaxShapeInfo srcShape = { M_VALUE, K_VALUE, M_VALUE, K_VALUE };
+    AscendC::SoftmaxFlashV2<half, false, false, false, false>(xLocal, sumLocal, maxLocal, xLocal, expmaxLocal, sumLocal,
+        maxLocal, softmaxTiling, srcShape);
+    AscendC::DataCopy(zGm[0], xLocal, xLength);
+    queueX.FreeTensor(xLocal);
+}
 ```

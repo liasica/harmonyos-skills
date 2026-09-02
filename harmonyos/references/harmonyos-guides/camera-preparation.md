@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-prepar
 title: 申请相机开发的权限
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 申请相机开发的权限
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:55+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:711d80c575bee08ae7ea817837ade482a87a18c73f95fc05cc61653a3c0bb907
+scraped_at: 2026-09-02T14:59:44+08:00
+doc_updated_at: 2026-08-03
+content_hash: sha256:8dfe164238480400191b9e472fdfbb5264249fc5ce90e245a6af020f5ba546ed
 ---
 
 相机应用开发的主要流程包含开发准备、设备输入、会话管理、预览、拍照和录像等。
@@ -21,6 +21,7 @@ content_hash: sha256:711d80c575bee08ae7ea817837ade482a87a18c73f95fc05cc61653a3c0
 * 当需要读取图片或视频文件时，请优先使用媒体库[Picker选择媒体资源](photoaccesshelper-photoviewpicker.md)。
 * 当需要保存图片或视频文件时，请优先使用[安全控件保存媒体资源](photoaccesshelper-savebutton.md)。
 
-说明
+**说明** 
 
-仅应用需要克隆、备份或同步用户公共目录的图片、视频类文件时，可申请ohos.permission.READ\_IMAGEVIDEO、ohos.permission.WRITE\_IMAGEVIDEO权限来读写图片视频文件，申请方式请参考[申请受控权限](declare-permissions-in-acl.md)，通过AGC审核后才能使用。为避免应用的上架申请被驳回，开发者应优先使用Picker/控件等替代方案，仅少量符合[特殊场景](restricted-permissions.md#ohospermissionread_imagevideo)的应用被允许申请受限权限。
+* 当通过弹窗向用户申请授权时，用户拒绝授权，可通过[isCameraMuted](../harmonyos-references/arkts-apis-camera-cameramanager.md#iscameramuted)查询当前相机是否被禁用。
+* 仅应用需要克隆、备份或同步用户公共目录的图片、视频类文件时，可申请ohos.permission.READ\_IMAGEVIDEO、ohos.permission.WRITE\_IMAGEVIDEO权限来读写图片视频文件，申请方式请参考[申请受控权限](declare-permissions-in-acl.md)，通过AGC审核后才能使用。为避免应用的上架申请被驳回，开发者应优先使用Picker/控件等替代方案，仅少量符合[特殊场景](restricted-permissions.md#ohospermissionread_imagevideo)的应用被允许申请受限权限。

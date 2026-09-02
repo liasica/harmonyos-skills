@@ -3,31 +3,27 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (Zoom)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (Zoom)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:41+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:823455e0a08dfb5308bb5c2945608f9a6355da10d87782d1102e9189b776e6bc
+scraped_at: 2026-09-02T15:02:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d307483b98777e03047c35fc51bf7c385f93f0b8686d522c83b8acd07e1d2b91
 ---
 
-Zoom 继承自 [ZoomQuery](arkts-apis-camera-zoomquery.md)。
+Zoom继承自[ZoomQuery](arkts-apis-camera-zoomquery.md)。
 
 变焦类，对设备变焦操作。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Interface首批接口从API version 11开始支持。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { camera } from '@kit.CameraKit';
+```ts
+import { camera } from '@kit.CameraKit';
 ```
 
 ## setZoomRatio11+
-
-PhonePC/2in1TabletTVWearable
 
 setZoomRatio(zoomRatio: number): void
 
@@ -53,27 +49,25 @@ setZoomRatio(zoomRatio: number): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function setZoomRatio(photoSession: camera.PhotoSession, zoomRatioRange: Array<number>): void {
-4. if (zoomRatioRange === undefined || zoomRatioRange.length <= 0) {
-5. return;
-6. }
-7. let zoomRatio = zoomRatioRange[0];
-8. try {
-9. photoSession.setZoomRatio(zoomRatio);
-10. } catch (error) {
-11. // 失败返回错误码error.code并处理。
-12. let err = error as BusinessError;
-13. console.error(`The setZoomRatio call failed. error code: ${err.code}`);
-14. }
-15. }
+function setZoomRatio(photoSession: camera.PhotoSession, zoomRatioRange: Array<number>): void {
+  if (zoomRatioRange === undefined || zoomRatioRange.length <= 0) {
+    return;
+  }
+  let zoomRatio = zoomRatioRange[0];
+  try {
+    photoSession.setZoomRatio(zoomRatio);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The setZoomRatio call failed. error code: ${err.code}`);
+  }
+}
 ```
 
 ## getZoomRatio11+
-
-PhonePC/2in1TabletTVWearable
 
 getZoomRatio(): number
 
@@ -96,30 +90,28 @@ getZoomRatio(): number
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config. |
-| 7400201 | Camera service fatal error. |
+| 7400201 | Camera service fatal error.  适用版本：12+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function getZoomRatio(photoSession: camera.PhotoSession): number {
-4. const invalidValue: number = -1;
-5. let zoomRatio: number = invalidValue;
-6. try {
-7. zoomRatio = photoSession.getZoomRatio();
-8. } catch (error) {
-9. // 失败返回错误码error.code并处理。
-10. let err = error as BusinessError;
-11. console.error(`The getZoomRatio call failed. error code: ${err.code}`);
-12. }
-13. return zoomRatio;
-14. }
+function getZoomRatio(photoSession: camera.PhotoSession): number {
+  const invalidValue: number = -1;
+  let zoomRatio: number = invalidValue;
+  try {
+    zoomRatio = photoSession.getZoomRatio();
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The getZoomRatio call failed. error code: ${err.code}`);
+  }
+  return zoomRatio;
+}
 ```
 
 ## setSmoothZoom11+
-
-PhonePC/2in1TabletTVWearable
 
 setSmoothZoom(targetRatio: number, mode?: SmoothZoomMode): void
 
@@ -136,10 +128,18 @@ setSmoothZoom(targetRatio: number, mode?: SmoothZoomMode): void
 | targetRatio | number | 是 | 目标值。通过[getZoomRatioRange](arkts-apis-camera-zoomquery.md#getzoomratiorange11)获取支持的变焦范围，如果设置超过支持范围的值，则只保留精度范围内数值。 |
 | mode | [SmoothZoomMode](arkts-apis-camera-e.md#smoothzoommode11) | 否 | 平滑变焦模式。默认为0。 |
 
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](errorcode-camera.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config.  适用版本：11-17 |
+
 **示例：**
 
-```
-1. function setSmoothZoom(sessionExtendsZoom: camera.Zoom, targetZoomRatio: number, mode: camera.SmoothZoomMode): void {
-2. sessionExtendsZoom.setSmoothZoom(targetZoomRatio, mode);
-3. }
+```ts
+function setSmoothZoom(sessionExtendsZoom: camera.Zoom, targetZoomRatio: number, mode: camera.SmoothZoomMode): void {
+  sessionExtendsZoom.setSmoothZoom(targetZoomRatio, mode);
+}
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-serve
 title: 接收退款申请事件通知
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API > 退款申请通知与处理 > 接收退款申请事件通知
 category: harmonyos-references
-scraped_at: 2026-04-29T14:07:43+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:cd557535774024dc502cf48a0fa2f5825e697ed9df0ac199f7d92188b6c63245
+scraped_at: 2026-09-02T15:02:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f2fa625f6ed602f64f5a5f74297baf7747a6e8d33dfac4187bc679c48aea2040
 ---
 
 ## 功能介绍
@@ -22,7 +22,7 @@ content_hash: sha256:cd557535774024dc502cf48a0fa2f5825e697ed9df0ac199f7d92188b6c
 
 关键事件通知处理流程建议如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/m8KPG5RJTaCbngcpTgynqw/zh-cn_image_0000002558767426.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/bboOAPWCRtqJx_lnuk_ukw/zh-cn_image_0000002736316211.png)
 
 1. IAP服务器发送退款请求关键事件通知。
 2. 应用服务器收到通知请求后，从通知中获取用户申请的退款信息，决策该笔退款订单的处理方式。
@@ -36,7 +36,7 @@ content_hash: sha256:cd557535774024dc502cf48a0fa2f5825e697ed9df0ac199f7d92188b6c
 
 如开发者需接收退款关键事件通知，需要在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中配置开发者服务器的回调地址，地址必须支持HTTPS协议且具有合法商用证书，出于安全考虑，cipher需要支持ECDHE-RSA-AES128-GCM-SHA256、ECDHE-ECDSA-AES128-GCM-SHA256、ECDHE-RSA-AES256-GCM-SHA384或ECDHE-ECDSA-AES256-GCM-SHA384中至少一种，否则无法正常接收通知消息。
 
-说明
+**说明** 
 
 当前沙盒订单退款不支持退款申请事件通知，用户提交退款请求后，IAP服务会跳过退款审核流程，直接完成退款，同时给开发者服务器发送退款成功事件通知（NotificationSubtype：REFUND\_TRANSACTION）。
 
@@ -82,7 +82,7 @@ content_hash: sha256:cd557535774024dc502cf48a0fa2f5825e697ed9df0ac199f7d92188b6c
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
-| refundReason | 是 | String | 用户申请退款理由。  - LEGAL：未成年人未经允许购买  - UNINTENDED\_PURCHASE：无意购买或订阅  - UNSATISFIED\_WITH\_PURCHASE：购买的商品无法正常使用  - FULFILLMENT\_ISSUE：未收到商品  - OTHER：其他原因 |
+| refundReason | 是 | String | 用户申请退款理由。  取值如下：  - LEGAL：未成年人未经允许购买  - UNINTENDED\_PURCHASE：无意购买或订阅  - UNSATISFIED\_WITH\_PURCHASE：购买的商品无法正常使用  - FULFILLMENT\_ISSUE：未收到商品  - OTHER：其他原因 |
 | applyAmount | 是 | Long | 申请退款金额，单位：分。 |
 | currency | 是 | String | 币种。  CNY：人民币 |
 | applyType | 是 | Integer | 请求类型。  1：初次提交 |
@@ -99,43 +99,43 @@ content_hash: sha256:cd557535774024dc502cf48a0fa2f5825e697ed9df0ac199f7d92188b6c
 
 ## 请求示例
 
-```
-1. POST /notify/address
-2. Content-Type: application/json;charset=UTF-8
-3. Accept: application/json
-4. {
-5. "jwsNotification": "***"
-6. }
+```javascript
+POST /notify/address
+Content-Type: application/json;charset=UTF-8
+Accept: application/json
+{
+  "jwsNotification": "***"
+}
 ```
 
 NotificationPayload样例（消耗型/非消耗型）
 
-```
-1. {
-2. "notificationType": "REFUND_REQUEST",
-3. "notificationRequestId": "7f67e39aa72d1a55f36293047f9769c0aa47a467ffb110eaeeeb888def9f9713",
-4. "notificationMetaData": {
-5. "environment": "NORMAL",
-6. "applicationId": "***",
-7. "packageName": "***",
-8. "refundRequestData": {
-9. "refundReason": "UNINTENDED_PURCHASE",
-10. "applyAmount": 1,
-11. "applyType": 1,
-12. "refundBatchNo": "***",
-13. "currency": "CNY",
-14. "refundOrders": [
-15. {
-16. "purchaseOrderId": "***",
-17. "purchaseToken": "***",
-18. "payAmount": 1
-19. }
-20. ]
-21. }
-22. },
-23. "notificationVersion": "v3",
-24. "signedTime": 1741073978222
-25. }
+```javascript
+{
+  "notificationType": "REFUND_REQUEST",
+  "notificationRequestId": "7f67e39aa72d1a55f36293047f9769c0aa47a467ffb110eaeeeb888def9f9713",
+  "notificationMetaData": {
+    "environment": "NORMAL",
+    "applicationId": "***",
+    "packageName": "***",
+    "refundRequestData": {
+      "refundReason": "UNINTENDED_PURCHASE",
+      "applyAmount": 1,
+      "applyType": 1,
+      "refundBatchNo": "***",
+      "currency": "CNY",
+      "refundOrders": [
+        {
+          "purchaseOrderId": "***",
+          "purchaseToken": "***",
+          "payAmount": 1
+        }
+      ]
+    }
+  },
+  "notificationVersion": "v3",
+  "signedTime": 1741073978222
+}
 ```
 
 ## 响应参数
@@ -147,6 +147,6 @@ NotificationPayload样例（消耗型/非消耗型）
 
 ## 响应示例
 
-```
-1. HTTP/1.2 200 OK
+```javascript
+HTTP/1.2 200 OK
 ```

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-prev
 title: preview_output.h
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 头文件 > preview_output.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:46+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:17b577b8867f0e53369e458a24d6a68c3dbf8d69853a5ed08dcfc8a2af31dcb2
+scraped_at: 2026-09-02T15:02:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3368ef3fee8f22d82b4cd11ec4c295bb0aab7db436427dab0b2f65911160280c
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明预览输出概念。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,8 +32,6 @@ PhonePC/2in1TabletTVWearable
 | [Camera\_PreviewOutput](capi-oh-camera-camera-previewoutput.md) | Camera\_PreviewOutput | 预览输出对象。  可以使用[OH\_CameraManager\_CreatePreviewOutput](capi-camera-manager-h.md#oh_cameramanager_createpreviewoutput)方法创建指针。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -62,17 +54,16 @@ PhonePC/2in1TabletTVWearable
 | [Camera\_ErrorCode OH\_PreviewOutput\_GetActiveFrameRate(Camera\_PreviewOutput\* previewOutput, Camera\_FrameRateRange\* frameRateRange)](capi-preview-output-h.md#oh_previewoutput_getactiveframerate) | - | 获取当前预览输出帧率。 |
 | [Camera\_ErrorCode OH\_PreviewOutput\_IsBandwidthCompressionSupported(Camera\_PreviewOutput\* previewOutput, bool\* isSupported)](capi-preview-output-h.md#oh_previewoutput_isbandwidthcompressionsupported) | - | 检查是否支持预览带宽压缩（指通过编码减少数据量，降低其在传输链路中的带宽占用）。 |
 | [Camera\_ErrorCode OH\_PreviewOutput\_EnableBandwidthCompression(Camera\_PreviewOutput\* previewOutput, bool enabled)](capi-preview-output-h.md#oh_previewoutput_enablebandwidthcompression) | - | 使能预览带宽压缩。  该接口只能在使用[OH\_CaptureSession\_CommitConfig()](capi-capture-session-h.md#oh_capturesession_commitconfig)接口之前调用，否则会影响预览流出流格式。 |
+| [Camera\_ErrorCode OH\_PreviewOutput\_AddDeferredSurface(const Camera\_PreviewOutput\* previewOutput, const char\* surfaceId)](capi-preview-output-h.md#oh_previewoutput_adddeferredsurface) | - | 配置延迟预览的Surface。 |
+| [bool OH\_PreviewOutput\_IsLogViewAssistSupported(const Camera\_PreviewOutput\* previewOutput)](capi-preview-output-h.md#oh_previewoutput_islogviewassistsupported) | - | 检查是否支持辅助监看功能。 |
+| [Camera\_ErrorCode OH\_PreviewOutput\_SetLogViewAssistEnable(Camera\_PreviewOutput\* previewOutput, bool enable)](capi-preview-output-h.md#oh_previewoutput_setlogviewassistenable) | - | 使能辅助监看功能。  该接口只能在使用[OH\_CaptureSession\_CommitConfig()](capi-capture-session-h.md#oh_capturesession_commitconfig)接口之后调用。 |
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_PreviewOutput\_OnFrameStart()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_PreviewOutput_OnFrameStart)(Camera_PreviewOutput* previewOutput)
+```c
+typedef void (*OH_PreviewOutput_OnFrameStart)(Camera_PreviewOutput* previewOutput)
 ```
 
 **描述**
@@ -89,10 +80,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreviewOutput\_OnFrameEnd()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_PreviewOutput_OnFrameEnd)(Camera_PreviewOutput* previewOutput, int32_t frameCount)
+```c
+typedef void (*OH_PreviewOutput_OnFrameEnd)(Camera_PreviewOutput* previewOutput, int32_t frameCount)
 ```
 
 **描述**
@@ -110,10 +99,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreviewOutput\_OnError()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_PreviewOutput_OnError)(Camera_PreviewOutput* previewOutput, Camera_ErrorCode errorCode)
+```c
+typedef void (*OH_PreviewOutput_OnError)(Camera_PreviewOutput* previewOutput, Camera_ErrorCode errorCode)
 ```
 
 **描述**
@@ -135,10 +122,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreviewOutput\_RegisterCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PreviewOutput_RegisterCallback(Camera_PreviewOutput* previewOutput, PreviewOutput_Callbacks* callback)
+```c
+Camera_ErrorCode OH_PreviewOutput_RegisterCallback(Camera_PreviewOutput* previewOutput, PreviewOutput_Callbacks* callback)
 ```
 
 **描述**
@@ -162,10 +147,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreviewOutput\_UnregisterCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PreviewOutput_UnregisterCallback(Camera_PreviewOutput* previewOutput, PreviewOutput_Callbacks* callback)
+```c
+Camera_ErrorCode OH_PreviewOutput_UnregisterCallback(Camera_PreviewOutput* previewOutput, PreviewOutput_Callbacks* callback)
 ```
 
 **描述**
@@ -189,10 +172,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreviewOutput\_Start()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PreviewOutput_Start(Camera_PreviewOutput* previewOutput)
+```c
+Camera_ErrorCode OH_PreviewOutput_Start(Camera_PreviewOutput* previewOutput)
 ```
 
 **描述**
@@ -215,10 +196,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreviewOutput\_Stop()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PreviewOutput_Stop(Camera_PreviewOutput* previewOutput)
+```c
+Camera_ErrorCode OH_PreviewOutput_Stop(Camera_PreviewOutput* previewOutput)
 ```
 
 **描述**
@@ -241,10 +220,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreviewOutput\_Release()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PreviewOutput_Release(Camera_PreviewOutput* previewOutput)
+```c
+Camera_ErrorCode OH_PreviewOutput_Release(Camera_PreviewOutput* previewOutput)
 ```
 
 **描述**
@@ -267,10 +244,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreviewOutput\_GetActiveProfile()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PreviewOutput_GetActiveProfile(Camera_PreviewOutput* previewOutput, Camera_Profile** profile)
+```c
+Camera_ErrorCode OH_PreviewOutput_GetActiveProfile(Camera_PreviewOutput* previewOutput, Camera_Profile** profile)
 ```
 
 **描述**
@@ -294,10 +269,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreviewOutput\_DeleteProfile()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PreviewOutput_DeleteProfile(Camera_Profile* profile)
+```c
+Camera_ErrorCode OH_PreviewOutput_DeleteProfile(Camera_Profile* profile)
 ```
 
 **描述**
@@ -320,10 +293,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreviewOutput\_GetPreviewRotation()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PreviewOutput_GetPreviewRotation(Camera_PreviewOutput* previewOutput, int displayRotation, Camera_ImageRotation* imageRotation)
+```c
+Camera_ErrorCode OH_PreviewOutput_GetPreviewRotation(Camera_PreviewOutput* previewOutput, int displayRotation, Camera_ImageRotation* imageRotation)
 ```
 
 **描述**
@@ -348,10 +319,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreviewOutput\_GetPreviewRotationWithoutDisplayRotation()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PreviewOutput_GetPreviewRotationWithoutDisplayRotation(Camera_PreviewOutput* previewOutput, Camera_ImageRotation* imageRotation)
+```c
+Camera_ErrorCode OH_PreviewOutput_GetPreviewRotationWithoutDisplayRotation(Camera_PreviewOutput* previewOutput, Camera_ImageRotation* imageRotation)
 ```
 
 **描述**
@@ -375,10 +344,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreviewOutput\_SetPreviewRotation()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PreviewOutput_SetPreviewRotation(Camera_PreviewOutput* previewOutput, Camera_ImageRotation previewRotation, bool isDisplayLocked)
+```c
+Camera_ErrorCode OH_PreviewOutput_SetPreviewRotation(Camera_PreviewOutput* previewOutput, Camera_ImageRotation previewRotation, bool isDisplayLocked)
 ```
 
 **描述**
@@ -403,10 +370,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreviewOutput\_GetSupportedFrameRates()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PreviewOutput_GetSupportedFrameRates(Camera_PreviewOutput* previewOutput, Camera_FrameRateRange** frameRateRange, uint32_t* size)
+```c
+Camera_ErrorCode OH_PreviewOutput_GetSupportedFrameRates(Camera_PreviewOutput* previewOutput, Camera_FrameRateRange** frameRateRange, uint32_t* size)
 ```
 
 **描述**
@@ -431,10 +396,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreviewOutput\_DeleteFrameRates()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PreviewOutput_DeleteFrameRates(Camera_PreviewOutput* previewOutput, Camera_FrameRateRange* frameRateRange)
+```c
+Camera_ErrorCode OH_PreviewOutput_DeleteFrameRates(Camera_PreviewOutput* previewOutput, Camera_FrameRateRange* frameRateRange)
 ```
 
 **描述**
@@ -458,10 +421,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreviewOutput\_SetFrameRate()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PreviewOutput_SetFrameRate(Camera_PreviewOutput* previewOutput, int32_t minFps, int32_t maxFps)
+```c
+Camera_ErrorCode OH_PreviewOutput_SetFrameRate(Camera_PreviewOutput* previewOutput, int32_t minFps, int32_t maxFps)
 ```
 
 **描述**
@@ -486,10 +447,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreviewOutput\_GetActiveFrameRate()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PreviewOutput_GetActiveFrameRate(Camera_PreviewOutput* previewOutput, Camera_FrameRateRange* frameRateRange)
+```c
+Camera_ErrorCode OH_PreviewOutput_GetActiveFrameRate(Camera_PreviewOutput* previewOutput, Camera_FrameRateRange* frameRateRange)
 ```
 
 **描述**
@@ -513,10 +472,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreviewOutput\_IsBandwidthCompressionSupported()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PreviewOutput_IsBandwidthCompressionSupported(Camera_PreviewOutput* previewOutput, bool* isSupported)
+```c
+Camera_ErrorCode OH_PreviewOutput_IsBandwidthCompressionSupported(Camera_PreviewOutput* previewOutput, bool* isSupported)
 ```
 
 **描述**
@@ -540,10 +497,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreviewOutput\_EnableBandwidthCompression()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PreviewOutput_EnableBandwidthCompression(Camera_PreviewOutput* previewOutput, bool enabled)
+```c
+Camera_ErrorCode OH_PreviewOutput_EnableBandwidthCompression(Camera_PreviewOutput* previewOutput, bool enabled)
 ```
 
 **描述**
@@ -566,3 +521,79 @@ PhonePC/2in1TabletTVWearable
 | 类型 | 说明 |
 | --- | --- |
 | [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功。  CAMERA\_OPERATION\_NOT\_ALLOWED: 操作不允许。  CAMERA\_INVALID\_ARGUMENT：参数丢失或参数类型不正确。  CAMERA\_SESSION\_NOT\_CONFIG：相机会话未配置。  CAMERA\_SERVICE\_FATAL\_ERROR：相机服务异常。 |
+
+### OH\_PreviewOutput\_AddDeferredSurface()
+
+```c
+Camera_ErrorCode OH_PreviewOutput_AddDeferredSurface(const Camera_PreviewOutput* previewOutput, const char* surfaceId)
+```
+
+**描述**
+
+配置延迟预览的Surface。
+
+**起始版本：** 24
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [const Camera\_PreviewOutput](capi-oh-camera-camera-previewoutput.md)\* previewOutput | 添加surfaceId的预览输出实例。 |
+| const char\* surfaceId | 用于创建Camera\_PreviewOutput实例的surfaceId。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功。  CAMERA\_INVALID\_ARGUMENT：参数丢失或参数类型不正确。 |
+
+### OH\_PreviewOutput\_IsLogViewAssistSupported()
+
+```c
+bool OH_PreviewOutput_IsLogViewAssistSupported(const Camera_PreviewOutput* previewOutput)
+```
+
+**描述**
+
+检查是否支持辅助监看功能。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| const [Camera\_PreviewOutput](capi-oh-camera-camera-previewoutput.md)\* previewOutput | 预览输出实例。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| bool | 是否支持辅助监看的结果。true表示支持，false表示不支持。 |
+
+### OH\_PreviewOutput\_SetLogViewAssistEnable()
+
+```c
+Camera_ErrorCode OH_PreviewOutput_SetLogViewAssistEnable(Camera_PreviewOutput* previewOutput, bool enable)
+```
+
+**描述**
+
+使能辅助监看功能。
+
+该接口只能在使用[OH\_CaptureSession\_CommitConfig()](capi-capture-session-h.md#oh_capturesession_commitconfig)接口之后调用。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [Camera\_PreviewOutput](capi-oh-camera-camera-previewoutput.md)\* previewOutput | 指向当前要使能辅助监看的预览输出实例的指针。 |
+| bool enable | 是否使能预览辅助监看。true表示使能，false表示不使能。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功。  CAMERA\_ERROR\_CAPABILITY\_NOT\_SUPPORTED：表示设备当前不支持该能力。  CAMERA\_INVALID\_ARGUMENT：参数丢失或参数类型不正确。  CAMERA\_SESSION\_NOT\_CONFIG：相机会话未配置。  CAMERA\_SERVICE\_FATAL\_ERROR：相机服务异常。 |

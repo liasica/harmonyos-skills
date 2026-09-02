@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-setma
 title: SetMax
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > Range > SetMax
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:06+08:00
+scraped_at: 2026-09-02T14:50:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:5cba7531cc9d465e6acf4a91426bb9da75f573a4189a2518c5dc3ca5bda9bb15
+content_hash: sha256:e35dff7dd4d13cf4a137bf5f41afbc10bd351a3a283c39e8156b74db0131a201
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:5cba7531cc9d465e6acf4a91426bb9da75f573a4189a2518c5dc3ca5bda
 
 ## 函数原型
 
-```
-1. void SetMax(T *max)
+```cpp
+void SetMax(T *max)
 ```
 
 ## 参数说明
@@ -34,8 +34,8 @@ content_hash: sha256:5cba7531cc9d465e6acf4a91426bb9da75f573a4189a2518c5dc3ca5bda
 
 ## 调用示例
 
-```
-1. Range<int> range;
-2. int max = 1024;
-3. range.SetMax(&max);
+```cpp
+Range<int> range;
+int max = 1024;
+range.SetMax(&max);
 ```

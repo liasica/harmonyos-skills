@@ -3,34 +3,30 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-r
 title: "@ohos.reminderAgentManager (后台代理提醒)"
 breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > ArkTS API > @ohos.reminderAgentManager (后台代理提醒)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:56:02+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:547de2069fe5a5d58c0b797ea5eab9a1759a9c81fa3e6b3f686458b5ccdae2d3
+scraped_at: 2026-09-02T15:01:30+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6e07d2547efb49fca77182f5d95bb0b05ac2cf5220888ed15bc974736053bfa5
 ---
 
 本模块提供后台代理提醒的能力，即当应用被冻结或应用退出时，定时提醒功能将被系统服务代理。开发者可以调用本模块接口创建定时提醒，提醒类型支持倒计时、日历、闹钟三种。开发指导请参考[代理提醒开发指南](../harmonyos-guides/agent-powered-reminder.md)。
 
-说明
+**说明** 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { reminderAgentManager } from '@kit.BackgroundTasksKit';
+```ts
+import { reminderAgentManager } from '@kit.BackgroundTasksKit';
 ```
 
 ## reminderAgentManager.publishReminder
-
-PhonePC/2in1TabletTVWearable
 
 publishReminder(reminderReq: ReminderRequest, callback: AsyncCallback<number>): void
 
 发布后台代理提醒。使用callback异步回调。
 
-说明
+**说明** 
 
 该接口需要申请通知弹窗权限[notificationManager.requestEnableNotification](js-apis-notificationmanager.md#notificationmanagerrequestenablenotification10)后调用。
 
@@ -53,39 +49,38 @@ publishReminder(reminderReq: ReminderRequest, callback: AsyncCallback<number>): 
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 201 | Permission denied. |
 | 401 | If the input parameter is not valid parameter. |
 | 1700001 | Notification is not enabled. |
 | 1700002 | The number of reminders exceeds the limit. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { reminderAgentManager } from '@kit.BackgroundTasksKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { reminderAgentManager } from '@kit.BackgroundTasksKit';
 
-4. let timer: reminderAgentManager.ReminderRequestTimer = {
-5. reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
-6. triggerTimeInSeconds: 10
-7. }
+let timer: reminderAgentManager.ReminderRequestTimer = {
+  reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
+  triggerTimeInSeconds: 10
+}
 
-9. reminderAgentManager.publishReminder(timer, (err: BusinessError, reminderId: number) => {
-10. if (err.code) {
-11. console.error("callback err code:" + err.code + " message:" + err.message);
-12. } else {
-13. console.info("callback, reminderId = " + reminderId);
-14. }
-15. });
+reminderAgentManager.publishReminder(timer, (err: BusinessError, reminderId: number) => {
+  if (err.code) {
+    console.error("callback err code:" + err.code + " message:" + err.message);
+  } else {
+    console.info("callback, reminderId = " + reminderId);
+  }
+});
 ```
 
 ## reminderAgentManager.publishReminder
-
-PhonePC/2in1TabletTVWearable
 
 publishReminder(reminderReq: ReminderRequest): Promise<number>
 
 发布后台代理提醒。使用Promise异步回调。
 
-说明
+**说明** 
 
 该接口需要申请通知弹窗权限[notificationManager.requestEnableNotification](js-apis-notificationmanager.md#notificationmanagerrequestenablenotification10)后调用。
 
@@ -113,31 +108,30 @@ publishReminder(reminderReq: ReminderRequest): Promise<number>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 201 | Permission denied. |
 | 401 | If the input parameter is not valid parameter. |
 | 1700001 | Notification is not enabled. |
 | 1700002 | The number of reminders exceeds the limit. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { reminderAgentManager } from '@kit.BackgroundTasksKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { reminderAgentManager } from '@kit.BackgroundTasksKit';
 
-4. let timer: reminderAgentManager.ReminderRequestTimer = {
-5. reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
-6. triggerTimeInSeconds: 10
-7. }
+let timer: reminderAgentManager.ReminderRequestTimer = {
+  reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
+  triggerTimeInSeconds: 10
+}
 
-9. reminderAgentManager.publishReminder(timer).then((reminderId: number) => {
-10. console.info("promise, reminderId = " + reminderId);
-11. }).catch((err: BusinessError) => {
-12. console.error("promise err code:" + err.code + " message:" + err.message);
-13. });
+reminderAgentManager.publishReminder(timer).then((reminderId: number) => {
+  console.info("promise, reminderId = " + reminderId);
+}).catch((err: BusinessError) => {
+  console.error("promise err code:" + err.code + " message:" + err.message);
+});
 ```
 
 ## reminderAgentManager.cancelReminder
-
-PhonePC/2in1TabletTVWearable
 
 cancelReminder(reminderId: number, callback: AsyncCallback<void>): void
 
@@ -149,7 +143,7 @@ cancelReminder(reminderId: number, callback: AsyncCallback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| reminderId | number | 是 | 需要取消的代理提醒的id，代理提醒id会在[发布代理提醒](js-apis-reminderagentmanager.md#reminderagentmanagerpublishreminder)时作为返回值返回。 |
+| reminderId | number | 是 | 需要取消的代理提醒的id，代理提醒id会在调用[reminderAgentManager.publishReminder](js-apis-reminderagentmanager.md#reminderagentmanagerpublishreminder)时作为返回值返回。 |
 | callback | AsyncCallback<void> | 是 | 回调函数，当取消代理提醒成功，err为undefined；否则为错误对象。 |
 
 **错误码：**
@@ -164,23 +158,21 @@ cancelReminder(reminderId: number, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { reminderAgentManager } from '@kit.BackgroundTasksKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { reminderAgentManager } from '@kit.BackgroundTasksKit';
 
-4. let reminderId: number = 1;
-5. reminderAgentManager.cancelReminder(reminderId, (err: BusinessError) => {
-6. if (err.code) {
-7. console.error("callback err code:" + err.code + " message:" + err.message);
-8. } else {
-9. console.info("cancelReminder callback");
-10. }
-11. });
+let reminderId: number = 1;
+reminderAgentManager.cancelReminder(reminderId, (err: BusinessError) => {
+  if (err.code) {
+    console.error("callback err code:" + err.code + " message:" + err.message);
+  } else {
+    console.info("cancelReminder callback");
+  }
+});
 ```
 
 ## reminderAgentManager.cancelReminder
-
-PhonePC/2in1TabletTVWearable
 
 cancelReminder(reminderId: number): Promise<void>
 
@@ -192,7 +184,7 @@ cancelReminder(reminderId: number): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| reminderId | number | 是 | 需要取消的代理提醒的id，代理提醒id会在[发布代理提醒](js-apis-reminderagentmanager.md#reminderagentmanagerpublishreminder)时作为返回值返回。 |
+| reminderId | number | 是 | 需要取消的代理提醒的id，代理提醒id会在调用[reminderAgentManager.publishReminder](js-apis-reminderagentmanager.md#reminderagentmanagerpublishreminder)时作为返回值返回。 |
 
 **返回值：**
 
@@ -212,21 +204,19 @@ cancelReminder(reminderId: number): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { reminderAgentManager } from '@kit.BackgroundTasksKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { reminderAgentManager } from '@kit.BackgroundTasksKit';
 
-4. let reminderId: number = 1;
-5. reminderAgentManager.cancelReminder(reminderId).then(() => {
-6. console.info("cancelReminder promise");
-7. }).catch((err: BusinessError) => {
-8. console.error("promise err code:" + err.code + " message:" + err.message);
-9. });
+let reminderId: number = 1;
+reminderAgentManager.cancelReminder(reminderId).then(() => {
+  console.info("cancelReminder promise");
+}).catch((err: BusinessError) => {
+  console.error("promise err code:" + err.code + " message:" + err.message);
+});
 ```
 
 ## reminderAgentManager.getValidReminders
-
-PhonePC/2in1TabletTVWearable
 
 getValidReminders(callback: AsyncCallback<Array<ReminderRequest>>): void
 
@@ -251,42 +241,40 @@ getValidReminders(callback: AsyncCallback<Array<ReminderRequest>>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { reminderAgentManager } from '@kit.BackgroundTasksKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { reminderAgentManager } from '@kit.BackgroundTasksKit';
 
-4. reminderAgentManager.getValidReminders((err: BusinessError, reminders: Array<reminderAgentManager.ReminderRequest>) => {
-5. if (err.code) {
-6. console.error("callback err code:" + err.code + " message:" + err.message);
-7. } else {
-8. console.info("callback, getValidReminders length = " + reminders.length);
-9. for (let i = 0; i < reminders.length; i++) {
-10. console.info("getValidReminders = " + reminders[i]);
-11. console.info("getValidReminders, reminderType = " + reminders[i].reminderType);
-12. const actionButton = reminders[i].actionButton || [];
-13. for (let j = 0; j < actionButton.length; j++) {
-14. console.info("getValidReminders, actionButton.title = " + actionButton[j]?.title);
-15. console.info("getValidReminders, actionButton.type = " + actionButton[j]?.type);
-16. }
-17. console.info("getValidReminders, wantAgent.pkgName = " + reminders[i].wantAgent?.pkgName);
-18. console.info("getValidReminders, wantAgent.abilityName = " + reminders[i].wantAgent?.abilityName);
-19. console.info("getValidReminders, ringDuration = " + reminders[i].ringDuration);
-20. console.info("getValidReminders, snoozeTimes = " + reminders[i].snoozeTimes);
-21. console.info("getValidReminders, timeInterval = " + reminders[i].timeInterval);
-22. console.info("getValidReminders, title = " + reminders[i].title);
-23. console.info("getValidReminders, content = " + reminders[i].content);
-24. console.info("getValidReminders, expiredContent = " + reminders[i].expiredContent);
-25. console.info("getValidReminders, snoozeContent = " + reminders[i].snoozeContent);
-26. console.info("getValidReminders, notificationId = " + reminders[i].notificationId);
-27. console.info("getValidReminders, slotType = " + reminders[i].slotType);
-28. }
-29. }
-30. });
+reminderAgentManager.getValidReminders((err: BusinessError, reminders: Array<reminderAgentManager.ReminderRequest>) => {
+  if (err.code) {
+    console.error("callback err code:" + err.code + " message:" + err.message);
+  } else {
+    console.info("callback, getValidReminders length = " + reminders.length);
+    for (let i = 0; i < reminders.length; i++) {
+      console.info("getValidReminders = " + reminders[i]);
+      console.info("getValidReminders, reminderType = " + reminders[i].reminderType);
+      const actionButton = reminders[i].actionButton || [];
+      for (let j = 0; j < actionButton.length; j++) {
+        console.info("getValidReminders, actionButton.title = " + actionButton[j]?.title);
+        console.info("getValidReminders, actionButton.type = " + actionButton[j]?.type);
+      }
+      console.info("getValidReminders, wantAgent.pkgName = " + reminders[i].wantAgent?.pkgName);
+      console.info("getValidReminders, wantAgent.abilityName = " + reminders[i].wantAgent?.abilityName);
+      console.info("getValidReminders, ringDuration = " + reminders[i].ringDuration);
+      console.info("getValidReminders, snoozeTimes = " + reminders[i].snoozeTimes);
+      console.info("getValidReminders, timeInterval = " + reminders[i].timeInterval);
+      console.info("getValidReminders, title = " + reminders[i].title);
+      console.info("getValidReminders, content = " + reminders[i].content);
+      console.info("getValidReminders, expiredContent = " + reminders[i].expiredContent);
+      console.info("getValidReminders, snoozeContent = " + reminders[i].snoozeContent);
+      console.info("getValidReminders, notificationId = " + reminders[i].notificationId);
+      console.info("getValidReminders, slotType = " + reminders[i].slotType);
+    }
+  }
+});
 ```
 
 ## reminderAgentManager.getValidReminders
-
-PhonePC/2in1TabletTVWearable
 
 getValidReminders(): Promise<Array<ReminderRequest>>
 
@@ -311,40 +299,38 @@ getValidReminders(): Promise<Array<ReminderRequest>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { reminderAgentManager } from '@kit.BackgroundTasksKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { reminderAgentManager } from '@kit.BackgroundTasksKit';
 
-4. reminderAgentManager.getValidReminders().then((reminders: Array<reminderAgentManager.ReminderRequest>) => {
-5. console.info("promise, getValidReminders length = " + reminders.length);
-6. for (let i = 0; i < reminders.length; i++) {
-7. console.info("getValidReminders = " + reminders[i]);
-8. console.info("getValidReminders, reminderType = " + reminders[i].reminderType);
-9. const actionButton = reminders[i].actionButton || [];
-10. for (let j = 0; j < actionButton.length; j++) {
-11. console.info("getValidReminders, actionButton.title = " + actionButton[j]?.title);
-12. console.info("getValidReminders, actionButton.type = " + actionButton[j]?.type);
-13. }
-14. console.info("getValidReminders, wantAgent.pkgName = " + reminders[i].wantAgent?.pkgName);
-15. console.info("getValidReminders, wantAgent.abilityName = " + reminders[i].wantAgent?.abilityName);
-16. console.info("getValidReminders, ringDuration = " + reminders[i].ringDuration);
-17. console.info("getValidReminders, snoozeTimes = " + reminders[i].snoozeTimes);
-18. console.info("getValidReminders, timeInterval = " + reminders[i].timeInterval);
-19. console.info("getValidReminders, title = " + reminders[i].title);
-20. console.info("getValidReminders, content = " + reminders[i].content);
-21. console.info("getValidReminders, expiredContent = " + reminders[i].expiredContent);
-22. console.info("getValidReminders, snoozeContent = " + reminders[i].snoozeContent);
-23. console.info("getValidReminders, notificationId = " + reminders[i].notificationId);
-24. console.info("getValidReminders, slotType = " + reminders[i].slotType);
-25. }
-26. }).catch((err: BusinessError) => {
-27. console.error("promise err code:" + err.code + " message:" + err.message);
-28. });
+reminderAgentManager.getValidReminders().then((reminders: Array<reminderAgentManager.ReminderRequest>) => {
+  console.info("promise, getValidReminders length = " + reminders.length);
+  for (let i = 0; i < reminders.length; i++) {
+    console.info("getValidReminders = " + reminders[i]);
+    console.info("getValidReminders, reminderType = " + reminders[i].reminderType);
+    const actionButton = reminders[i].actionButton || [];
+    for (let j = 0; j < actionButton.length; j++) {
+      console.info("getValidReminders, actionButton.title = " + actionButton[j]?.title);
+      console.info("getValidReminders, actionButton.type = " + actionButton[j]?.type);
+    }
+    console.info("getValidReminders, wantAgent.pkgName = " + reminders[i].wantAgent?.pkgName);
+    console.info("getValidReminders, wantAgent.abilityName = " + reminders[i].wantAgent?.abilityName);
+    console.info("getValidReminders, ringDuration = " + reminders[i].ringDuration);
+    console.info("getValidReminders, snoozeTimes = " + reminders[i].snoozeTimes);
+    console.info("getValidReminders, timeInterval = " + reminders[i].timeInterval);
+    console.info("getValidReminders, title = " + reminders[i].title);
+    console.info("getValidReminders, content = " + reminders[i].content);
+    console.info("getValidReminders, expiredContent = " + reminders[i].expiredContent);
+    console.info("getValidReminders, snoozeContent = " + reminders[i].snoozeContent);
+    console.info("getValidReminders, notificationId = " + reminders[i].notificationId);
+    console.info("getValidReminders, slotType = " + reminders[i].slotType);
+  }
+}).catch((err: BusinessError) => {
+  console.error("promise err code:" + err.code + " message:" + err.message);
+});
 ```
 
 ## reminderAgentManager.cancelAllReminders
-
-PhonePC/2in1TabletTVWearable
 
 cancelAllReminders(callback: AsyncCallback<void>): void
 
@@ -369,22 +355,20 @@ cancelAllReminders(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { reminderAgentManager } from '@kit.BackgroundTasksKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { reminderAgentManager } from '@kit.BackgroundTasksKit';
 
-4. reminderAgentManager.cancelAllReminders((err: BusinessError) =>{
-5. if (err.code) {
-6. console.error("callback err code:" + err.code + " message:" + err.message);
-7. } else {
-8. console.info("cancelAllReminders callback")
-9. }
-10. });
+reminderAgentManager.cancelAllReminders((err: BusinessError) =>{
+  if (err.code) {
+    console.error("callback err code:" + err.code + " message:" + err.message);
+  } else {
+    console.info("cancelAllReminders callback")
+  }
+});
 ```
 
 ## reminderAgentManager.cancelAllReminders
-
-PhonePC/2in1TabletTVWearable
 
 cancelAllReminders(): Promise<void>
 
@@ -409,20 +393,18 @@ cancelAllReminders(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { reminderAgentManager } from '@kit.BackgroundTasksKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { reminderAgentManager } from '@kit.BackgroundTasksKit';
 
-4. reminderAgentManager.cancelAllReminders().then(() => {
-5. console.info("cancelAllReminders promise")
-6. }).catch((err: BusinessError) => {
-7. console.error("promise err code:" + err.code + " message:" + err.message);
-8. });
+reminderAgentManager.cancelAllReminders().then(() => {
+  console.info("cancelAllReminders promise")
+}).catch((err: BusinessError) => {
+  console.error("promise err code:" + err.code + " message:" + err.message);
+});
 ```
 
 ## reminderAgentManager.addNotificationSlot
-
-PhonePC/2in1TabletTVWearable
 
 addNotificationSlot(slot: NotificationSlot, callback: AsyncCallback<void>): void
 
@@ -447,27 +429,25 @@ addNotificationSlot(slot: NotificationSlot, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { notificationManager } from '@kit.NotificationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { reminderAgentManager } from '@kit.BackgroundTasksKit';
+```ts
+import { notificationManager } from '@kit.NotificationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { reminderAgentManager } from '@kit.BackgroundTasksKit';
 
-5. let mySlot: notificationManager.NotificationSlot = {
-6. notificationType: notificationManager.SlotType.SOCIAL_COMMUNICATION
-7. }
+let mySlot: notificationManager.NotificationSlot = {
+  notificationType: notificationManager.SlotType.SOCIAL_COMMUNICATION
+}
 
-9. reminderAgentManager.addNotificationSlot(mySlot, (err: BusinessError) => {
-10. if (err.code) {
-11. console.error("callback err code:" + err.code + " message:" + err.message);
-12. } else {
-13. console.info("addNotificationSlot callback");
-14. }
-15. });
+reminderAgentManager.addNotificationSlot(mySlot, (err: BusinessError) => {
+  if (err.code) {
+    console.error("callback err code:" + err.code + " message:" + err.message);
+  } else {
+    console.info("addNotificationSlot callback");
+  }
+});
 ```
 
 ## reminderAgentManager.addNotificationSlot
-
-PhonePC/2in1TabletTVWearable
 
 addNotificationSlot(slot: NotificationSlot): Promise<void>
 
@@ -497,24 +477,22 @@ addNotificationSlot(slot: NotificationSlot): Promise<void>
 
 **示例：**
 
-```
-1. import { notificationManager } from '@kit.NotificationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { reminderAgentManager } from '@kit.BackgroundTasksKit';
+```ts
+import { notificationManager } from '@kit.NotificationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { reminderAgentManager } from '@kit.BackgroundTasksKit';
 
-5. let mySlot: notificationManager.NotificationSlot = {
-6. notificationType: notificationManager.SlotType.SOCIAL_COMMUNICATION
-7. }
-8. reminderAgentManager.addNotificationSlot(mySlot).then(() => {
-9. console.info("addNotificationSlot promise");
-10. }).catch((err: BusinessError) => {
-11. console.error("promise err code:" + err.code + " message:" + err.message);
-12. });
+let mySlot: notificationManager.NotificationSlot = {
+  notificationType: notificationManager.SlotType.SOCIAL_COMMUNICATION
+}
+reminderAgentManager.addNotificationSlot(mySlot).then(() => {
+  console.info("addNotificationSlot promise");
+}).catch((err: BusinessError) => {
+  console.error("promise err code:" + err.code + " message:" + err.message);
+});
 ```
 
 ## reminderAgentManager.removeNotificationSlot
-
-PhonePC/2in1TabletTVWearable
 
 removeNotificationSlot(slotType: notification.SlotType, callback: AsyncCallback<void>): void
 
@@ -539,24 +517,22 @@ removeNotificationSlot(slotType: notification.SlotType, callback: AsyncCallback<
 
 **示例：**
 
-```
-1. import { notificationManager } from '@kit.NotificationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { reminderAgentManager } from '@kit.BackgroundTasksKit';
+```ts
+import { notificationManager } from '@kit.NotificationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { reminderAgentManager } from '@kit.BackgroundTasksKit';
 
-5. reminderAgentManager.removeNotificationSlot(notificationManager.SlotType.CONTENT_INFORMATION,
-6. (err: BusinessError) => {
-7. if (err.code) {
-8. console.error("callback err code:" + err.code + " message:" + err.message);
-9. } else {
-10. console.info("removeNotificationSlot callback");
-11. }
-12. });
+reminderAgentManager.removeNotificationSlot(notificationManager.SlotType.CONTENT_INFORMATION,
+  (err: BusinessError) => {
+  if (err.code) {
+    console.error("callback err code:" + err.code + " message:" + err.message);
+  } else {
+    console.info("removeNotificationSlot callback");
+  }
+});
 ```
 
 ## reminderAgentManager.removeNotificationSlot
-
-PhonePC/2in1TabletTVWearable
 
 removeNotificationSlot(slotType: notification.SlotType): Promise<void>
 
@@ -586,21 +562,19 @@ removeNotificationSlot(slotType: notification.SlotType): Promise<void>
 
 **示例：**
 
-```
-1. import { notificationManager } from '@kit.NotificationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { reminderAgentManager } from '@kit.BackgroundTasksKit';
+```ts
+import { notificationManager } from '@kit.NotificationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { reminderAgentManager } from '@kit.BackgroundTasksKit';
 
-5. reminderAgentManager.removeNotificationSlot(notificationManager.SlotType.CONTENT_INFORMATION).then(() => {
-6. console.info("removeNotificationSlot promise");
-7. }).catch((err: BusinessError) => {
-8. console.error("promise err code:" + err.code + " message:" + err.message);
-9. });
+reminderAgentManager.removeNotificationSlot(notificationManager.SlotType.CONTENT_INFORMATION).then(() => {
+  console.info("removeNotificationSlot promise");
+}).catch((err: BusinessError) => {
+  console.error("promise err code:" + err.code + " message:" + err.message);
+});
 ```
 
 ## reminderAgentManager.getAllValidReminders12+
-
-PhonePC/2in1TabletTVWearable
 
 getAllValidReminders(): Promise<Array<ReminderInfo>>
 
@@ -624,40 +598,38 @@ getAllValidReminders(): Promise<Array<ReminderInfo>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { reminderAgentManager } from '@kit.BackgroundTasksKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { reminderAgentManager } from '@kit.BackgroundTasksKit';
 
-4. reminderAgentManager.getAllValidReminders().then((reminders: Array<reminderAgentManager.ReminderInfo>) => {
-5. console.info("promise, getAllValidReminders length = " + reminders.length);
-6. for (let i = 0; i < reminders.length; i++) {
-7. console.info("getAllValidReminders, reminderId = " + reminders[i].reminderId);
-8. console.info("getAllValidReminders, reminderType = " + reminders[i].reminderReq.reminderType);
-9. const actionButton = reminders[i].reminderReq.actionButton || [];
-10. for (let j = 0; j < actionButton.length; j++) {
-11. console.info("getAllValidReminders, actionButton.title = " + actionButton[j]?.title);
-12. console.info("getAllValidReminders, actionButton.type = " + actionButton[j]?.type);
-13. }
-14. console.info("getAllValidReminders, wantAgent.pkgName = " + reminders[i].reminderReq.wantAgent?.pkgName);
-15. console.info("getAllValidReminders, wantAgent.abilityName = " + reminders[i].reminderReq.wantAgent?.abilityName);
-16. console.info("getAllValidReminders, ringDuration = " + reminders[i].reminderReq.ringDuration);
-17. console.info("getAllValidReminders, snoozeTimes = " + reminders[i].reminderReq.snoozeTimes);
-18. console.info("getAllValidReminders, timeInterval = " + reminders[i].reminderReq.timeInterval);
-19. console.info("getAllValidReminders, title = " + reminders[i].reminderReq.title);
-20. console.info("getAllValidReminders, content = " + reminders[i].reminderReq.content);
-21. console.info("getAllValidReminders, expiredContent = " + reminders[i].reminderReq.expiredContent);
-22. console.info("getAllValidReminders, snoozeContent = " + reminders[i].reminderReq.snoozeContent);
-23. console.info("getAllValidReminders, notificationId = " + reminders[i].reminderReq.notificationId);
-24. console.info("getAllValidReminders, slotType = " + reminders[i].reminderReq.slotType);
-25. }
-26. }).catch((err: BusinessError) => {
-27. console.error("promise err code:" + err.code + " message:" + err.message);
-28. });
+reminderAgentManager.getAllValidReminders().then((reminders: Array<reminderAgentManager.ReminderInfo>) => {
+  console.info("promise, getAllValidReminders length = " + reminders.length);
+  for (let i = 0; i < reminders.length; i++) {
+    console.info("getAllValidReminders, reminderId = " + reminders[i].reminderId);
+    console.info("getAllValidReminders, reminderType = " + reminders[i].reminderReq.reminderType);
+    const actionButton = reminders[i].reminderReq.actionButton || [];
+    for (let j = 0; j < actionButton.length; j++) {
+      console.info("getAllValidReminders, actionButton.title = " + actionButton[j]?.title);
+      console.info("getAllValidReminders, actionButton.type = " + actionButton[j]?.type);
+    }
+    console.info("getAllValidReminders, wantAgent.pkgName = " + reminders[i].reminderReq.wantAgent?.pkgName);
+    console.info("getAllValidReminders, wantAgent.abilityName = " + reminders[i].reminderReq.wantAgent?.abilityName);
+    console.info("getAllValidReminders, ringDuration = " + reminders[i].reminderReq.ringDuration);
+    console.info("getAllValidReminders, snoozeTimes = " + reminders[i].reminderReq.snoozeTimes);
+    console.info("getAllValidReminders, timeInterval = " + reminders[i].reminderReq.timeInterval);
+    console.info("getAllValidReminders, title = " + reminders[i].reminderReq.title);
+    console.info("getAllValidReminders, content = " + reminders[i].reminderReq.content);
+    console.info("getAllValidReminders, expiredContent = " + reminders[i].reminderReq.expiredContent);
+    console.info("getAllValidReminders, snoozeContent = " + reminders[i].reminderReq.snoozeContent);
+    console.info("getAllValidReminders, notificationId = " + reminders[i].reminderReq.notificationId);
+    console.info("getAllValidReminders, slotType = " + reminders[i].reminderReq.slotType);
+  }
+}).catch((err: BusinessError) => {
+  console.error("promise err code:" + err.code + " message:" + err.message);
+});
 ```
 
 ## reminderAgentManager.addExcludeDate12+
-
-PhonePC/2in1TabletTVWearable
 
 addExcludeDate(reminderId: number, date: Date): Promise<void>
 
@@ -669,7 +641,7 @@ addExcludeDate(reminderId: number, date: Date): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| reminderId | number | 是 | 需要添加不提醒日期的代理提醒id，代理提醒id会在[发布代理提醒](js-apis-reminderagentmanager.md#reminderagentmanagerpublishreminder)时作为返回值返回。 |
+| reminderId | number | 是 | 需要添加不提醒日期的代理提醒id，代理提醒id会在调用[reminderAgentManager.publishReminder](js-apis-reminderagentmanager.md#reminderagentmanagerpublishreminder)时作为返回值返回。 |
 | date | Date | 是 | 不提醒的日期。 |
 
 **返回值：**
@@ -690,22 +662,20 @@ addExcludeDate(reminderId: number, date: Date): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { reminderAgentManager } from '@kit.BackgroundTasksKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { reminderAgentManager } from '@kit.BackgroundTasksKit';
 
-4. let reminderId: number = 1;
-5. let date = new Date();
-6. reminderAgentManager.addExcludeDate(reminderId, date).then(() => {
-7. console.info("addExcludeDate promise");
-8. }).catch((err: BusinessError) => {
-9. console.error("promise err code:" + err.code + " message:" + err.message);
-10. });
+let reminderId: number = 1;
+let date = new Date();
+reminderAgentManager.addExcludeDate(reminderId, date).then(() => {
+  console.info("addExcludeDate promise");
+}).catch((err: BusinessError) => {
+  console.error("promise err code:" + err.code + " message:" + err.message);
+});
 ```
 
 ## reminderAgentManager.deleteExcludeDates12+
-
-PhonePC/2in1TabletTVWearable
 
 deleteExcludeDates(reminderId: number): Promise<void>
 
@@ -717,7 +687,7 @@ deleteExcludeDates(reminderId: number): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| reminderId | number | 是 | 需要删除不提醒日期的代理提醒id，代理提醒id会在[发布代理提醒](js-apis-reminderagentmanager.md#reminderagentmanagerpublishreminder)时作为返回值返回。 |
+| reminderId | number | 是 | 需要删除不提醒日期的代理提醒id，代理提醒id会在调用[reminderAgentManager.publishReminder](js-apis-reminderagentmanager.md#reminderagentmanagerpublishreminder)时作为返回值返回。 |
 
 **返回值：**
 
@@ -736,21 +706,19 @@ deleteExcludeDates(reminderId: number): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { reminderAgentManager } from '@kit.BackgroundTasksKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { reminderAgentManager } from '@kit.BackgroundTasksKit';
 
-4. let reminderId: number = 1;
-5. reminderAgentManager.deleteExcludeDates(reminderId).then(() => {
-6. console.info("deleteExcludeDates promise");
-7. }).catch((err: BusinessError) => {
-8. console.error("promise err code:" + err.code + " message:" + err.message);
-9. });
+let reminderId: number = 1;
+reminderAgentManager.deleteExcludeDates(reminderId).then(() => {
+  console.info("deleteExcludeDates promise");
+}).catch((err: BusinessError) => {
+  console.error("promise err code:" + err.code + " message:" + err.message);
+});
 ```
 
 ## reminderAgentManager.getExcludeDates12+
-
-PhonePC/2in1TabletTVWearable
 
 getExcludeDates(reminderId: number): Promise<Array<Date>>
 
@@ -762,7 +730,7 @@ getExcludeDates(reminderId: number): Promise<Array<Date>>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| reminderId | number | 是 | 需要查询不提醒日期的代理提醒id，代理提醒id会在[发布代理提醒](js-apis-reminderagentmanager.md#reminderagentmanagerpublishreminder)时作为返回值返回。 |
+| reminderId | number | 是 | 需要查询不提醒日期的代理提醒id，代理提醒id会在调用[reminderAgentManager.publishReminder](js-apis-reminderagentmanager.md#reminderagentmanagerpublishreminder)时作为返回值返回。 |
 
 **返回值：**
 
@@ -781,24 +749,22 @@ getExcludeDates(reminderId: number): Promise<Array<Date>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { reminderAgentManager } from '@kit.BackgroundTasksKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { reminderAgentManager } from '@kit.BackgroundTasksKit';
 
-4. let reminderId: number = 1;
-5. reminderAgentManager.getExcludeDates(reminderId).then((dates) => {
-6. console.info("getExcludeDates promise length: " + dates.length);
-7. for (let i = 0; i < dates.length; i++) {
-8. console.info("getExcludeDates promise date is: " + dates[i].toString());
-9. }
-10. }).catch((err: BusinessError) => {
-11. console.error("promise err code:" + err.code + " message:" + err.message);
-12. });
+let reminderId: number = 1;
+reminderAgentManager.getExcludeDates(reminderId).then((dates) => {
+  console.info("getExcludeDates promise length: " + dates.length);
+  for (let i = 0; i < dates.length; i++) {
+    console.info("getExcludeDates promise date is: " + dates[i].toString());
+  }
+}).catch((err: BusinessError) => {
+  console.error("promise err code:" + err.code + " message:" + err.message);
+});
 ```
 
 ## reminderAgentManager.updateReminder20+
-
-PhonePC/2in1TabletTVWearable
 
 updateReminder(reminderId: number, reminderReq: ReminderRequest): Promise<void>
 
@@ -812,7 +778,7 @@ updateReminder(reminderId: number, reminderReq: ReminderRequest): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| reminderId | number | 是 | 需要更新的代理提醒的id，代理提醒id会在[发布代理提醒](js-apis-reminderagentmanager.md#reminderagentmanagerpublishreminder)时作为返回值返回。 |
+| reminderId | number | 是 | 需要更新的代理提醒的id，代理提醒id会在调用[reminderAgentManager.publishReminder](js-apis-reminderagentmanager.md#reminderagentmanagerpublishreminder)时作为返回值返回。 |
 | reminderReq | [ReminderRequest](js-apis-reminderagentmanager.md#reminderrequest) | 是 | 代理提醒对象实例，用于设置提醒类型、响铃时长等具体信息。 |
 
 **返回值：**
@@ -833,26 +799,24 @@ updateReminder(reminderId: number, reminderReq: ReminderRequest): Promise<void>
 
 **示例：**
 
-```
-1. import { reminderAgentManager } from '@kit.BackgroundTasksKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { reminderAgentManager } from '@kit.BackgroundTasksKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let timer: reminderAgentManager.ReminderRequestTimer = {
-5. reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
-6. triggerTimeInSeconds: 10
-7. }
+let timer: reminderAgentManager.ReminderRequestTimer = {
+  reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
+  triggerTimeInSeconds: 10
+}
 
-9. let reminderId: number = 1;
-10. reminderAgentManager.updateReminder(reminderId, timer).then(() => {
-11. console.info("update reminder succeed");
-12. }).catch((err: BusinessError) => {
-13. console.error("promise err code:" + err.code + " message:" + err.message);
-14. });
+let reminderId: number = 1;
+reminderAgentManager.updateReminder(reminderId, timer).then(() => {
+  console.info("update reminder succeed");
+}).catch((err: BusinessError) => {
+  console.error("promise err code:" + err.code + " message:" + err.message);
+});
 ```
 
 ## reminderAgentManager.cancelReminderOnDisplay23+
-
-PhonePC/2in1TabletTVWearable
 
 cancelReminderOnDisplay(reminderId: number): Promise<void>
 
@@ -864,7 +828,7 @@ cancelReminderOnDisplay(reminderId: number): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| reminderId | number | 是 | 需要取消的代理提醒的id，代理提醒id会在[发布代理提醒](js-apis-reminderagentmanager.md#reminderagentmanagerpublishreminder)时作为返回值返回。 |
+| reminderId | number | 是 | 需要取消的代理提醒的id，代理提醒id会在调用[reminderAgentManager.publishReminder](js-apis-reminderagentmanager.md#reminderagentmanagerpublishreminder)时作为返回值返回。 |
 
 **返回值：**
 
@@ -883,21 +847,19 @@ cancelReminderOnDisplay(reminderId: number): Promise<void>
 
 **示例：**
 
-```
-1. import { reminderAgentManager } from '@kit.BackgroundTasksKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { reminderAgentManager } from '@kit.BackgroundTasksKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let reminderId: number = 1;
-5. reminderAgentManager.cancelReminderOnDisplay(reminderId).then(() => {
-6. console.info("cancel display reminder  succeed");
-7. }).catch((err: BusinessError) => {
-8. console.error("promise err code:" + err.code + " message:" + err.message);
-9. });
+let reminderId: number = 1;
+reminderAgentManager.cancelReminderOnDisplay(reminderId).then(() => {
+  console.info("cancel display reminder  succeed");
+}).catch((err: BusinessError) => {
+  console.error("promise err code:" + err.code + " message:" + err.message);
+});
 ```
 
 ## reminderAgentManager.subscribeReminderState23+
-
-PhonePC/2in1TabletTVWearable
 
 subscribeReminderState(callback: Callback<Array<ReminderState>>): Promise<void>
 
@@ -932,24 +894,22 @@ subscribeReminderState(callback: Callback<Array<ReminderState>>): Promise<void>
 
 **示例：**
 
-```
-1. import { reminderAgentManager } from '@kit.BackgroundTasksKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { reminderAgentManager } from '@kit.BackgroundTasksKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. function reminderStateCallback(states: Array<reminderAgentManager.ReminderState>) {
-5. console.info('length is : ' + states.length);
-6. }
+function reminderStateCallback(states: Array<reminderAgentManager.ReminderState>) {
+  console.info('length is : ' + states.length);
+}
 
-8. reminderAgentManager.subscribeReminderState(reminderStateCallback).then(() => {
-9. console.info('subscribe succeed');
-10. }).catch((err: BusinessError) => {
-11. console.error('promise err code:' + err.code + ' message:' + err.message);
-12. });
+reminderAgentManager.subscribeReminderState(reminderStateCallback).then(() => {
+  console.info('subscribe succeed');
+}).catch((err: BusinessError) => {
+  console.error('promise err code:' + err.code + ' message:' + err.message);
+});
 ```
 
 ## reminderAgentManager.unsubscribeReminderState23+
-
-PhonePC/2in1TabletTVWearable
 
 unsubscribeReminderState(callback?: Callback<Array<ReminderState>>): Promise<void>
 
@@ -981,24 +941,22 @@ unsubscribeReminderState(callback?: Callback<Array<ReminderState>>): Promise<voi
 
 **示例：**
 
-```
-1. import { reminderAgentManager } from '@kit.BackgroundTasksKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { reminderAgentManager } from '@kit.BackgroundTasksKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. function reminderStateCallback(states: Array<reminderAgentManager.ReminderState>) {
-5. console.info('length is : ' + states.length);
-6. }
+function reminderStateCallback(states: Array<reminderAgentManager.ReminderState>) {
+  console.info('length is : ' + states.length);
+}
 
-8. reminderAgentManager.unsubscribeReminderState(reminderStateCallback).then(() => {
-9. console.info('unsubscribe succeed');
-10. }).catch((err: BusinessError) => {
-11. console.error('promise err code:' + err.code + ' message:' + err.message);
-12. });
+reminderAgentManager.unsubscribeReminderState(reminderStateCallback).then(() => {
+  console.info('unsubscribe succeed');
+}).catch((err: BusinessError) => {
+  console.error('promise err code:' + err.code + ' message:' + err.message);
+});
 ```
 
 ## ActionButtonType
-
-PhonePC/2in1TabletTVWearable
 
 提醒上的按钮的类型。
 
@@ -1010,8 +968,6 @@ PhonePC/2in1TabletTVWearable
 | ACTION\_BUTTON\_TYPE\_SNOOZE | 1 | 表示延时提醒的按钮，提醒次数和间隔通过[ReminderRequest](js-apis-reminderagentmanager.md#reminderrequest)中snoozeTimes和timeInterval设置。 |
 
 ## ReminderType
-
-PhonePC/2in1TabletTVWearable
 
 提醒的类型。
 
@@ -1025,8 +981,6 @@ PhonePC/2in1TabletTVWearable
 
 ## RingChannel20+
 
-PhonePC/2in1TabletTVWearable
-
 自定义提示音的音频播放通道。
 
 **系统能力：** SystemCapability.Notification.ReminderAgent
@@ -1037,9 +991,23 @@ PhonePC/2in1TabletTVWearable
 | RING\_CHANNEL\_MEDIA | 1 | 媒体通道。 |
 | RING\_CHANNEL\_NOTIFICATION23+ | 2 | 通知通道。 |
 
-## ActionButton
+## TimeZoneType
 
-PhonePC/2in1TabletTVWearable
+时区类型。用于时区变更时，按照变更后的时区重新计算提醒的目标时间。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.Notification.ReminderAgent
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| DEFAULT | 0 | 默认。修改时区，提醒时间的计算方式与固定时区的行为相同；修改时间，提醒时间的计算方式与跟随系统时区的行为相同。建议根据业务场景，明确指定FIXED\_TIME\_ZONE或者SYSTEM\_TIME\_ZONE类型。 |
+| FIXED\_TIME\_ZONE | 1 | 固定时区，用于抢票、开会等场景。例如：设备在东八区创建08:00的提醒，那么无论设备时区如何变化，都会在东八区的08:00提醒，即在东四区显示为04:00，修改系统时间不影响提醒目标时间。 |
+| SYSTEM\_TIME\_ZONE | 2 | 跟随系统时区，用于早起闹钟、定点运动、睡觉等场景，例如：设备在东八区创建08:00的提醒，在东四区仍为08:00的提醒，修改系统时间不影响提醒目标时间。 |
+
+## ActionButton
 
 弹出的提醒中按钮的类型和标题。
 
@@ -1052,8 +1020,6 @@ PhonePC/2in1TabletTVWearable
 | type | [ActionButtonType](js-apis-reminderagentmanager.md#actionbuttontype) | 否 | 否 | 按钮的类型。 |
 
 ## WantAgent
-
-PhonePC/2in1TabletTVWearable
 
 跳转目标的ability信息。
 
@@ -1068,8 +1034,6 @@ PhonePC/2in1TabletTVWearable
 
 ## MaxScreenWantAgent
 
-PhonePC/2in1TabletTVWearable
-
 通知中心弹出提醒时，全屏显示自动拉起目标的ability信息。该接口为预留接口，暂不支持使用。
 
 **系统能力：** SystemCapability.Notification.ReminderAgent
@@ -1079,9 +1043,22 @@ PhonePC/2in1TabletTVWearable
 | pkgName | string | 否 | 否 | 指明提醒到达时自动拉起的目标包名（如果设备在使用中，则只弹出通知横幅框）。 |
 | abilityName | string | 否 | 否 | 指明提醒到达时自动拉起的目标ability名（如果设备在使用中，则只弹出通知横幅框）。 |
 
-## ReminderRequest
+## NotificationRequestProxy
 
-PhonePC/2in1TabletTVWearable
+通知请求信息。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.Notification.ReminderAgent
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| appMessageId | string | 否 | 是 | 应用发送通知携带的唯一标识字段，用于通知去重，默认为空。具体请参考[NotificationRequest.appMessageId](js-apis-inner-notification-notificationrequest.md#notificationrequest-1)。 |
+| isAlertOnce | boolean | 否 | 是 | 发布或更新该通知时，是否只进行一次通知提醒，默认为false。具体请参考[NotificationRequest.isAlertOnce](js-apis-inner-notification-notificationrequest.md#notificationrequest-1)。  - true：仅首次发布通知时进行提醒，后续更新该通知时，提醒方式变更为[LEVEL\_LOW](js-apis-notificationmanager.md#slotlevel)。  - false：每次均按照配置的通知提醒方式进行提醒。 |
+
+## ReminderRequest
 
 代理提醒对象，用于设置提醒类型、响铃时长等具体信息。
 
@@ -1093,7 +1070,7 @@ PhonePC/2in1TabletTVWearable
 | actionButton | [[ActionButton?, ActionButton?, ActionButton?]](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-reminderagentmanager#actionbutton) | 否 | 是 | 弹出的提醒通知中显示的按钮。  针对三方应用：最多支持两个按钮。  针对系统应用：从API version 10开始最多支持三个按钮，API version 10之前的版本最多支持两个按钮。 |
 | wantAgent | [WantAgent](js-apis-reminderagentmanager.md#wantagent) | 否 | 是 | 点击通知后需要跳转的目标ability信息。 |
 | maxScreenWantAgent | [MaxScreenWantAgent](js-apis-reminderagentmanager.md#maxscreenwantagent) | 否 | 是 | 提醒到达时，全屏显示自动拉起目标的ability信息。如果设备正在使用中，则弹出一个通知横幅框。  说明：该接口为预留接口，暂不支持使用。 |
-| ringDuration | number | 否 | 是 | 指明响铃时长。  单位：s，默认1s，范围：[0, 1800]。  值为0时：跟随系统设置中的通知铃声。  值大于0时：如果设置了[ReminderRequest.customRingUri](js-apis-reminderagentmanager.md#reminderrequest)，则在指定的通道[ReminderRequest.ringChannel](js-apis-reminderagentmanager.md#reminderrequest)上响铃。否则使用代理提醒默认的自定义提示音。  响铃同时会触发振动，响铃时会快速振动一次。 |
+| ringDuration | number | 否 | 是 | 指明响铃时长。  单位：s，默认1s，范围：[0, 1800]。  值为0时：跟随系统设置中的通知铃声。  值大于0时：如果设置了[ReminderRequest.customRingUri](js-apis-reminderagentmanager.md#reminderrequest)，则在指定的通道[ReminderRequest.ringChannel](js-apis-reminderagentmanager.md#reminderrequest)上响铃。否则使用代理提醒默认的自定义提示音。  响铃同时会触发振动，从API版本26.0.0开始，支持长振动，振动时长与响铃时长一致。API版本26.0.0之前版本，响铃时会快速振动一次。 |
 | snoozeTimes | number | 否 | 是 | 指明延时提醒次数，默认0次（不适用于倒计时提醒类型）。 |
 | timeInterval | number | 否 | 是 | 执行延时提醒间隔。  单位：s，最少30s（不适用于倒计时提醒类型）。 |
 | title | string | 否 | 是 | 指明提醒标题。 |
@@ -1105,21 +1082,19 @@ PhonePC/2in1TabletTVWearable
 | snoozeContent | string | 否 | 是 | 指明延时提醒时需要显示的内容（不适用于倒计时提醒类型）。 |
 | snoozeContentResourceId18+ | number | 否 | 是 | 指明延时提醒内容的资源ID，通过$r(资源名称).id方法获取。 |
 | notificationId | number | 否 | 是 | 指明提醒使用的通知的id号，需开发者传入，相同id号的提醒会覆盖，默认值为0。 |
-| groupId11+ | string | 否 | 是 | 指明提醒使用相同的组id。相同组id中，一个提醒被点击不在提醒后，组内其他提醒也会被取消。 |
+| groupId11+ | string | 否 | 是 | 指明提醒使用相同的组id。相同组id中，一个提醒被点击不再提醒后，组内其他提醒也会被取消。 |
 | slotType | [notification.SlotType](js-apis-notificationmanager.md#slottype) | 否 | 是 | 指明提醒的通道渠道类型。 |
 | tapDismissed10+ | boolean | 否 | 是 | 通知是否自动清除，默认值为true，具体请参考[NotificationRequest.tapDismissed](js-apis-inner-notification-notificationrequest.md#notificationrequest-1)。  - true：点击通知消息或通知按钮后，自动删除当前通知。  - false：点击通知消息或通知按钮后，保留当前通知。 |
 | autoDeletedTime10+ | number | 否 | 是 | 自动清除的时间。  数据格式：时间戳，单位：ms，具体请参考[NotificationRequest.autoDeletedTime](js-apis-inner-notification-notificationrequest.md#notificationrequest-1)。 |
 | snoozeSlotType11+ | [notification.SlotType](js-apis-notificationmanager.md#slottype) | 否 | 是 | 指明延时提醒的通道渠道类型（不适用于倒计时提醒类型）。 |
 | customRingUri11+ | string | 否 | 是 | 指明自定义提示音的uri，提示音文件必须放在resources/rawfile目录下，支持m4a、aac、mp3、ogg、wav、flac、amr等格式。 |
 | ringChannel20+ | [RingChannel](js-apis-reminderagentmanager.md#ringchannel20) | 否 | 是 | 指明自定义提示音的音频播放通道，默认为闹钟通道。 |
+| fixedTimeZone | [TimeZoneType](js-apis-reminderagentmanager.md#timezonetype) | 否 | 是 | 时区类型，默认为TimeZoneType.DEFAULT。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| notificationRequestProxy | [NotificationRequestProxy](js-apis-reminderagentmanager.md#notificationrequestproxy) | 否 | 是 | 通知请求信息，默认为空。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## ReminderRequestCalendar
 
-PhonePC/2in1TabletTVWearable
-
-ReminderRequestCalendar extends ReminderRequest
-
-日历实例对象，用于设置提醒的时间。
+日历实例对象，用于设置提醒的时间。ReminderRequestCalendar继承自[ReminderRequest](js-apis-reminderagentmanager.md#reminderrequest)。
 
 **系统能力：** SystemCapability.Notification.ReminderAgent
 
@@ -1133,11 +1108,7 @@ ReminderRequestCalendar extends ReminderRequest
 
 ## ReminderRequestAlarm
 
-PhonePC/2in1TabletTVWearable
-
-ReminderRequestAlarm extends ReminderRequest
-
-闹钟实例对象，用于设置提醒的时间。
+闹钟实例对象，用于设置提醒的时间。ReminderRequestAlarm继承自[ReminderRequest](js-apis-reminderagentmanager.md#reminderrequest)。
 
 **系统能力：** SystemCapability.Notification.ReminderAgent
 
@@ -1149,21 +1120,17 @@ ReminderRequestAlarm extends ReminderRequest
 
 ## ReminderRequestTimer
 
-PhonePC/2in1TabletTVWearable
-
-ReminderRequestTimer extends ReminderRequest
-
-倒计时实例对象，用于设置提醒的时间。
+倒计时实例对象，用于设置提醒的时间。ReminderRequestTimer继承自[ReminderRequest](js-apis-reminderagentmanager.md#reminderrequest)。
 
 **系统能力：** SystemCapability.Notification.ReminderAgent
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | triggerTimeInSeconds | number | 否 | 否 | 指明倒计时的秒数。  单位：s |
+| repeatInterval | number | 否 | 是 | 重复周期，无默认值，未赋值时，无重复周期。需和repeatCount一起使用。  单位：s，范围：[86400, +∞)。超出范围返回错误码401。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| repeatCount | number | 否 | 是 | 重复次数，默认值为0，无限次重复。需和repeatInterval一起使用。  范围：[0, +∞)。超出范围返回错误码401。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## LocalDateTime
-
-PhonePC/2in1TabletTVWearable
 
 用于日历类提醒设置时指定时间信息。
 
@@ -1180,8 +1147,6 @@ PhonePC/2in1TabletTVWearable
 
 ## ReminderInfo12+
 
-PhonePC/2in1TabletTVWearable
-
 代理提醒信息，包含 ReminderRequest 和 ReminderId。
 
 **系统能力：** SystemCapability.Notification.ReminderAgent
@@ -1192,8 +1157,6 @@ PhonePC/2in1TabletTVWearable
 | reminderReq | [ReminderRequest](js-apis-reminderagentmanager.md#reminderrequest) | 否 | 否 | 代理提醒对象。 |
 
 ## ReminderState23+
-
-PhonePC/2in1TabletTVWearable
 
 代理提醒状态信息。状态信息会在如下两种情况发送通知：
 

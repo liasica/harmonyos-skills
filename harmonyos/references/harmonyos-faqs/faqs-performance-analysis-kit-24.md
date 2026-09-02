@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: console.log和hilog的区别，如何选择使用
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > console.log和hilog的区别，如何选择使用
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:17+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:13+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:6d991cd898804c0a524fa1ce0fd99e79c2cad5ef0d2b6ebcea5d6d9bb1c2ecd7
 ---
 

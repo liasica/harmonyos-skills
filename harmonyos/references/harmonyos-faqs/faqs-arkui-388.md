@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-388
 title: 使用Router跳转导致闪退，可能是什么原因，如何排查
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 使用Router跳转导致闪退，可能是什么原因，如何排查
+breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 使用Router跳转导致闪退，可能是什么原因，如何排查
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:41+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:3e2278eb82137ee2a7d465606b7868fc654dde2290c99c74ff85e1c5145260b6
+scraped_at: 2026-09-02T14:54:28+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:2aee1923e0188babcea887d9ecedd8ec54fbf472cbf26bcfb54ef3e1d7ea7da0
 ---
 
 **场景一**: 循环依赖导致闪退
@@ -36,15 +36,13 @@ router的pushUrl出现闪退，报错信息为：Error message: lnternal error.U
 
 建议router的使用切换为UIContext中的使用方案。
 
+```typescript
+this.getUIContext().getRouter().pushUrl({
+  url: 'login/UserNameLoginPage'
+}, () => {
+  this.getUIContext().getRouter().clear();
+})
 ```
-1. this.getUIContext().getRouter().pushUrl({
-2. url: 'login/UserNameLoginPage'
-3. }, () => {
-4. this.getUIContext().getRouter().clear();
-5. })
-```
-
-[UseRouterJumpAndCrash.ets](https://gitcode.com/harmonyos_samples/faqsnippets/blob/abce1db5a4cf676fd100dbd3a0acd02f5bb30358/ArkUI/entry/src/main/ets/pages/UseRouterJumpAndCrash.ets#L13-L17)
 
 **场景三**: 混淆用法错误
 
@@ -56,16 +54,14 @@ router的pushUrl出现闪退，报错信息为：Error message: lnternal error.U
 
 首先排查混淆用法是否正确，正例：
 
+```screen
+-enable-property-obfuscation
+-enable-toplevel-obfuscation
+-enable-filename-obfuscation
+-enable-export-obfuscation
+-keep
+./src/main/ets/startup/\*\*
 ```
-1. -enable-property-obfuscation
-2. -enable-toplevel-obfuscation
-3. -enable-filename-obfuscation
-4. -enable-export-obfuscation
-5. -keep
-6. ./src/main/ets/startup/\*\*
-```
-
-[obfuscation-rules.txt](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/abce1db5a4cf676fd100dbd3a0acd02f5bb30358/ArkUI/entry/obfuscation-rules.txt#L21-L26)
 
 * 检查配置文件build-profile.json5中的"enable"字段是否为 true。
 * 确定子module的Build方式。

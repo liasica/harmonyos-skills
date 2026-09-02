@@ -3,48 +3,43 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: ListItemGroup
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > ListItemGroup
 category: harmonyos-references
-scraped_at: 2026-04-29T13:51:44+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:6381dad76e83a495aeeee2f0d483d535a1c0b99a0cb8c910a383dae1b10e7d04
+scraped_at: 2026-09-02T15:00:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c69f4f5cc63f8760897a48f1ef984dac94e5abd594b762939fcd36951bcafcf5
 ---
 
-该组件用来展示列表item分组，宽度默认充满[List](ts-container-list.md)组件，必须配合List组件来使用。
+该组件用来展示列表项分组，支持自定义分组头部和尾部区域、卡片样式、分割线、懒加载与预加载等能力，适用于需要对列表项进行逻辑分组展示的场景。宽度默认充满[List](ts-container-list.md)组件，必须配合List组件来使用。
 
-ListItemGroup的懒加载是指组件按需加载可见区域可见的子组件。相比全量加载，使用懒加载可以提升应用启动速度，减少内存消耗。ListItemGroup和[ForEach](../harmonyos-guides/arkts-rendering-control-foreach.md)、[LazyForEach](../harmonyos-guides/arkts-rendering-control-lazyforeach.md)、[Repeat](../harmonyos-guides/arkts-new-rendering-control-repeat.md)结合，懒加载能力存在差异：
+ListItemGroup的懒加载是指组件按需加载可见区域内的子组件。相比全量加载，使用懒加载可以提升应用启动速度，减少内存消耗。ListItemGroup和[ForEach](../harmonyos-guides/arkts-rendering-control-foreach.md)、[LazyForEach](../harmonyos-guides/arkts-rendering-control-lazyforeach.md)、[Repeat](../harmonyos-guides/arkts-new-rendering-control-repeat.md)结合，懒加载能力存在差异：
 
-* 当ListItemGroup和ForEach结合，会一次性创建所有的子节点，在需要的时候布局和渲染屏幕范围内的节点。当用户滑动时，划出屏幕范围的节点不会下树销毁，划入屏幕范围的节点会布局和渲染。
-* 当ListItemGroup和LazyForEach结合，会一次性创建、布局、渲染屏幕范围的节点。当用户滑动时，划出屏幕范围的节点会下树销毁，划入屏幕范围的节点会创建、布局、渲染。
+* 当ListItemGroup和ForEach结合，会一次性创建所有的子组件，在需要的时候布局和渲染屏幕范围内的节点。当用户滑动时，滑出屏幕范围的节点不会下树销毁，滑入屏幕范围的节点会布局和渲染。
+* 当ListItemGroup和LazyForEach结合，会一次性创建、布局、渲染屏幕范围的节点。当用户滑动时，滑出屏幕范围的节点会下树销毁，滑入屏幕范围的节点会创建、布局、渲染。
 * 当ListItemGroup和带[virtualScroll](ts-rendering-control-repeat.md#virtualscroll)的Repeat结合，它的懒加载行为和LazyForEach一致。当ListItemGroup和不带virtualScroll的Repeat结合，它的懒加载行为和ForEach一致。
 
-ListItemGroup的预加载是指除了加载显示区域内可见的子组件外，还支持空闲时隙提前加载部分显示区域外不可见的子组件。使用预加载可以减少滚动丢帧，提升流畅性。预加载需要结合懒加载才会生效。ListItemGroup和[ForEach](../harmonyos-guides/arkts-rendering-control-foreach.md)、[LazyForEach](../harmonyos-guides/arkts-rendering-control-lazyforeach.md)、[Repeat](../harmonyos-guides/arkts-new-rendering-control-repeat.md)结合，预加载能力存在差异：
+ListItemGroup的预加载是指除了加载显示区域内的子组件外，还支持空闲时隙提前加载部分显示区域外的子组件。使用预加载可以减少滚动丢帧，提升流畅性。预加载需要结合懒加载才会生效。ListItemGroup和[ForEach](../harmonyos-guides/arkts-rendering-control-foreach.md)、[LazyForEach](../harmonyos-guides/arkts-rendering-control-lazyforeach.md)、[Repeat](../harmonyos-guides/arkts-new-rendering-control-repeat.md)结合，预加载能力存在差异：
 
-* 当ListItemGroup和ForEach结合，如果设置了[cachedCount](ts-container-list.md#cachedcount)，除了会布局显示区域内子组件外，还会在空闲时隙根据List组件的cachedCount属性预布局显示区域外cachedCount范围内的子节点。
-* 当ListItemGroup和LazyForEach结合，如果设置了[cachedCount](ts-container-list.md#cachedcount)，除了会创建和布局显示区域内子组件外，还会在空闲时隙根据List组件的cachedCount属性预创建和预布局显示区域外cachedCount范围内的子节点。
+* 当ListItemGroup和ForEach结合，如果设置了[cachedCount](ts-container-list.md#cachedcount)，除了会布局显示区域内子组件外，还会在空闲时隙根据List组件的cachedCount属性预布局显示区域外cachedCount范围内的子组件。
+* 当ListItemGroup和LazyForEach结合，如果设置了[cachedCount](ts-container-list.md#cachedcount)，除了会创建和布局显示区域内子组件外，还会在空闲时隙根据List组件的cachedCount属性预创建和预布局显示区域外cachedCount范围内的子组件。
 * 当ListItemGroup和带[virtualScroll](ts-rendering-control-repeat.md#virtualscroll)的Repeat结合，它的预加载行为和LazyForEach一致。当ListItemGroup和不带virtualScroll的Repeat结合，它的预加载行为和ForEach一致。
 
-说明
+**说明** 
 
 * 该组件从API version 9开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 该组件的父组件只能是[List](ts-container-list.md)。
 * ListItemGroup组件不支持设置[通用属性aspectRatio](ts-universal-attributes-layout-constraints.md#aspectratio)。
-* 当ListItemGroup的父组件List的[listDirection](ts-container-list.md#listdirection)属性为Axis.Vertical时，设置[通用属性height](ts-universal-attributes-size.md#height)属性不生效。ListItemGroup的高度为header高度、footer高度和所有ListItem布局后总高度之和。
-* 当父组件List的listDirection属性为Axis.Horizontal时，设置[通用属性width](ts-universal-attributes-size.md#width)属性不生效。ListItemGroup的宽度为header宽度、footer宽度和所有ListItem布局后总宽度之和。
-* 当前ListItemGroup内部的ListItem组件不支持编辑、拖拽功能，即ListItem组件的[editable](ts-container-listitem.md#editabledeprecated)属性不生效。
+* 当ListItemGroup的父组件List的[listDirection](ts-container-list.md#listdirection)属性为Axis.Vertical时，设置[通用属性height](ts-universal-attributes-size.md#height)不生效。ListItemGroup的高度为header高度、footer高度和所有ListItem布局后总高度之和。
+* 当父组件List的listDirection属性为Axis.Horizontal时，设置[通用属性width](ts-universal-attributes-size.md#width)不生效。ListItemGroup的宽度为header宽度、footer宽度和所有ListItem布局后总宽度之和。
 * ListItemGroup使用direction属性设置布局方向不生效，ListItemGroup组件布局方向跟随父容器List组件的布局方向。
 
 ## 子组件
-
-PhonePC/2in1TabletTVWearable
 
 包含[ListItem](ts-container-listitem.md)子组件。支持通过渲染控制类型（[if/else](../harmonyos-guides/arkts-rendering-control-ifelse.md)、[ForEach](../harmonyos-guides/arkts-rendering-control-foreach.md)、[LazyForEach](../harmonyos-guides/arkts-rendering-control-lazyforeach.md)和[Repeat](../harmonyos-guides/arkts-new-rendering-control-repeat.md)）动态生成子组件，更推荐使用LazyForEach或Repeat以优化性能。
 
 ## 接口
 
-PhonePC/2in1TabletTVWearable
-
 ListItemGroup(options?: ListItemGroupOptions)
 
-创建ListItemGroup组件。
+创建ListItemGroup组件。该组件的父组件只能是List组件。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -54,34 +49,29 @@ ListItemGroup(options?: ListItemGroupOptions)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [ListItemGroupOptions](ts-container-listitemgroup.md#listitemgroupoptions对象说明) | 否 | 列表item分组组件参数。 |
+| options | [ListItemGroupOptions](ts-container-listitemgroup.md#listitemgroupoptions对象说明) | 否 | ListItemGroup组件参数，用于配置header、footer、间距和样式等。不传入时使用默认配置（无header、footer，间距为0，无卡片样式）。 |
 
 ## ListItemGroupOptions对象说明
 
-PhonePC/2in1TabletTVWearable
-
 ListItemGroup组件参数。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| header | [CustomBuilder](ts-types.md#custombuilder8) | 否 | 是 | 设置ListItemGroup头部组件。  **说明：**  可以放单个子组件或不放子组件。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| headerComponent13+ | [ComponentContent](js-apis-arkui-componentcontent.md) | 否 | 是 | 使用ComponentContent类型参数设置ListItemGroup头部组件。  **说明：**  可以放单个子组件或不放子组件。 该参数的优先级高于参数header。即同时设置header和headerComponent时，以headerComponent设置的值为准。  同一个headerComponent不推荐同时给不同的ListItemGroup使用，否则会导致显示问题。  **元服务API：** 从API version 13开始，该接口支持在元服务中使用。 |
-| footer | [CustomBuilder](ts-types.md#custombuilder8) | 否 | 是 | 设置ListItemGroup尾部组件。  **说明：**  可以放单个子组件或不放子组件。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| footerComponent13+ | [ComponentContent](js-apis-arkui-componentcontent.md) | 否 | 是 | 使用ComponentContent类型参数设置ListItemGroup尾部组件。  **说明：**  可以放单个子组件或不放子组件。该参数的优先级高于参数footer。 即同时设置footer和footerComponent时，以footerComponent设置的值为准。  同一个footerComponent不推荐同时给不同的ListItemGroup使用，否则会导致显示问题。  **元服务API：** 从API version 13开始，该接口支持在元服务中使用。 |
-| space | number | string | 否 | 是 | 列表项间距。只作用于ListItem与ListItem之间，不作用于header与ListItem、footer与ListItem之间。  默认值：0  单位：vp  **说明：**  设置为负数或者大于等于List内容区长度时，按默认值显示。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| style10+ | [ListItemGroupStyle](ts-container-listitemgroup.md#listitemgroupstyle10枚举说明) | 否 | 是 | 设置List组件卡片样式。  默认值：ListItemGroupStyle.NONE  设置为ListItemGroupStyle.NONE时无样式。  设置为ListItemGroupStyle.CARD时，建议配合[ListItem](ts-container-listitem.md)的ListItemStyle.CARD同时使用，显示默认卡片样式。  卡片样式下，ListItemGroup默认规格：左右外边距12vp，上下左右内边距4vp。  卡片样式下，为卡片内的列表选项提供了默认的focused、hover、pressed、selected和disabled样式。  **说明：**  当设置为ListItemStyle.CARD时，List的listDirection属性值须为Axis.Vertical，如果设置为Axis.Horizontal，会导致显示混乱；List属性[alignListItem](ts-container-list.md#alignlistitem9)默认为ListItemAlign.Center，居中对齐显示。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| header | [CustomBuilder](ts-types.md#custombuilder8) | 否 | 是 | 设置ListItemGroup头部组件。  **说明：**  可以放单个子组件或不放子组件，不设置时无头部组件。该参数的优先级低于参数headerComponent。即同时设置header和headerComponent时，以headerComponent设置的值为准。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| headerComponent13+ | [ComponentContent](js-apis-arkui-componentcontent.md) | 否 | 是 | 使用ComponentContent类型参数设置ListItemGroup头部组件。  **说明：**  可以放单个子组件或不放子组件，不设置时无头部组件。该参数的优先级高于参数header。即同时设置header和headerComponent时，以headerComponent设置的值为准。  同一个headerComponent不推荐同时给不同的ListItemGroup使用，否则会导致显示问题。  **元服务API：** 从API version 13开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| footer | [CustomBuilder](ts-types.md#custombuilder8) | 否 | 是 | 设置ListItemGroup尾部组件。  **说明：**  可以放单个子组件或不放子组件，不设置时无尾部组件。该参数的优先级低于参数footerComponent。即同时设置footer和footerComponent时，以footerComponent设置的值为准。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| footerComponent13+ | [ComponentContent](js-apis-arkui-componentcontent.md) | 否 | 是 | 使用ComponentContent类型参数设置ListItemGroup尾部组件。  **说明：**  可以放单个子组件或不放子组件，不设置时无尾部组件。该参数的优先级高于参数footer。即同时设置footer和footerComponent时，以footerComponent设置的值为准。  同一个footerComponent不推荐同时给不同的ListItemGroup使用，否则会导致显示问题。  **元服务API：** 从API version 13开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| space | number | string | 否 | 是 | 列表项间距。只作用于ListItem与ListItem之间，不作用于header与ListItem、footer与ListItem之间。  默认值：0  单位：vp  **说明：**  设置为负数或者大于等于List内容区长度时，按默认值显示。如果同时设置了spaceWidth和space，则spaceWidth优先生效。当spaceWidth为undefined或null时，space生效。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| spaceWidth | [Dimension](ts-types.md#dimension10) | 否 | 是 | 列表项间距。只作用于ListItem与ListItem之间，不作用于header与ListItem、footer与ListItem之间。  默认值：0  单位：vp  **说明：**  设置为负数或者大于等于List内容区长度时，按默认值显示。如果同时设置了spaceWidth和space，则spaceWidth优先生效。当spaceWidth为undefined或null时，space生效。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| style10+ | [ListItemGroupStyle](ts-container-listitemgroup.md#listitemgroupstyle10枚举说明) | 否 | 是 | 设置ListItemGroup组件卡片样式。  默认值：ListItemGroupStyle.NONE  设置为ListItemGroupStyle.NONE时无样式。  设置为ListItemGroupStyle.CARD时，建议配合[ListItem](ts-container-listitem.md)的ListItemStyle.CARD同时使用，显示默认卡片样式。  卡片样式下，ListItemGroup默认规格：左右外边距12vp，上下左右内边距4vp。  卡片样式下，为卡片内的列表选项提供了默认的focused、hover、pressed、selected和disabled样式。  **说明：**  当设置为ListItemGroupStyle.CARD时，List的listDirection属性值须为Axis.Vertical，如果设置为Axis.Horizontal，会导致显示混乱；List属性[alignListItem](ts-container-list.md#alignlistitem9)默认为ListItemAlign.Center，居中对齐显示。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| headerStyle | [ListItemGroupHeaderFooterStyle](ts-container-listitemgroup.md#listitemgroupheaderfooterstyle) | 否 | 是 | 设置ListItemGroup头部样式。  默认值：ListItemGroupHeaderFooterStyle.NONE  设置为ListItemGroupHeaderFooterStyle.NONE时无样式。  设置为ListItemGroupHeaderFooterStyle.FLOATING时，头部组件在滚动时悬浮显示。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| footerStyle | [ListItemGroupHeaderFooterStyle](ts-container-listitemgroup.md#listitemgroupheaderfooterstyle) | 否 | 是 | 设置ListItemGroup尾部样式。  默认值：ListItemGroupHeaderFooterStyle.NONE  设置为ListItemGroupHeaderFooterStyle.NONE时无样式。  设置为ListItemGroupHeaderFooterStyle.FLOATING时，尾部组件在滚动时悬浮显示。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
 ### divider
-
-PhonePC/2in1TabletTVWearable
 
 divider(value: [ListDividerOptions](ts-container-list.md#listdivideroptions18对象说明) | null)
 
@@ -103,17 +93,17 @@ ListItem设置[多态样式](ts-universal-attributes-polymorphic-style.md)时，
 
 ### childrenMainSize12+
 
-PhonePC/2in1TabletTVWearable
-
 childrenMainSize(value: ChildrenMainSize)
 
 设置ListItemGroup组件的子组件在主轴方向的大小信息。
 
-说明
+**说明** 
 
-* 必须同时给所在的List组件设置childrenMainSize属性才可以正常生效。
+* 当List组件的子组件包含ListItemGroup时，必须同时给List组件和每个ListItemGroup组件设置childrenMainSize属性。ListItemGroup通过该属性提供其子组件在主轴方向的大小信息，用于配合List组件的childrenMainSize属性正常生效。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -125,11 +115,11 @@ childrenMainSize(value: ChildrenMainSize)
 
 ## ListItemGroupStyle10+枚举说明
 
-PhonePC/2in1TabletTVWearable
-
 ListItemGroup组件卡片样式枚举。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -138,9 +128,24 @@ ListItemGroup组件卡片样式枚举。
 | NONE | 0 | 无样式。 |
 | CARD | 1 | 显示默认卡片样式。 |
 
-## 示例
+## ListItemGroupHeaderFooterStyle
 
-PhonePC/2in1TabletTVWearable
+ListItemGroup头部和尾部样式枚举。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NONE | 0 | 无样式。 |
+| FLOATING | 1 | 悬浮样式。 |
+
+## 示例
 
 ### 示例1（设置吸顶/吸底）
 
@@ -148,516 +153,591 @@ PhonePC/2in1TabletTVWearable
 
 ListDataSource实现了LazyForEach数据源接口[IDataSource](ts-rendering-control-lazyforeach.md#idatasource)，用于通过LazyForEach给List和ListItemGroup提供子组件。
 
-```
-1. // ListDataSource.ets
-2. export class TimeTableDataSource implements IDataSource {
-3. private list: TimeTable[] = [];
-4. private listeners: DataChangeListener[] = [];
+```ts
+// ListDataSource.ets
+export class TimeTableDataSource implements IDataSource {
+  private list: TimeTable[] = [];
+  private listeners: DataChangeListener[] = [];
 
-6. constructor(list: TimeTable[]) {
-7. this.list = list;
-8. }
+  constructor(list: TimeTable[]) {
+    this.list = list;
+  }
 
-10. totalCount(): number {
-11. return this.list.length;
-12. }
+  totalCount(): number {
+    return this.list.length;
+  }
 
-14. getData(index: number): TimeTable {
-15. return this.list[index];
-16. }
+  getData(index: number): TimeTable {
+    return this.list[index];
+  }
 
-18. registerDataChangeListener(listener: DataChangeListener): void {
-19. if (this.listeners.indexOf(listener) < 0) {
-20. this.listeners.push(listener);
-21. }
-22. }
+  registerDataChangeListener(listener: DataChangeListener): void {
+    if (this.listeners.indexOf(listener) < 0) {
+      this.listeners.push(listener);
+    }
+  }
 
-24. unregisterDataChangeListener(listener: DataChangeListener): void {
-25. const pos = this.listeners.indexOf(listener);
-26. if (pos >= 0) {
-27. this.listeners.splice(pos, 1);
-28. }
-29. }
+  unregisterDataChangeListener(listener: DataChangeListener): void {
+    const pos = this.listeners.indexOf(listener);
+    if (pos >= 0) {
+      this.listeners.splice(pos, 1);
+    }
+  }
 
-31. // 通知控制器数据变化
-32. notifyDataChange(index: number): void {
-33. this.listeners.forEach(listener => {
-34. listener.onDataChange(index);
-35. });
-36. }
+  // 通知控制器数据变化
+  notifyDataChange(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataChange(index);
+    });
+  }
 
-38. // 修改第一个元素
-39. public change1stItem(temp: TimeTable): void {
-40. this.list[0] = temp;
-41. this.notifyDataChange(0);
-42. }
-43. }
+  // 修改第一个元素
+  public change1stItem(temp: TimeTable): void {
+    this.list[0] = temp;
+    this.notifyDataChange(0);
+  }
+}
 
-45. export class ProjectsDataSource implements IDataSource {
-46. private list: string[] = [];
+export class ProjectsDataSource implements IDataSource {
+  private list: string[] = [];
 
-48. constructor(list: string[]) {
-49. this.list = list;
-50. }
+  constructor(list: string[]) {
+    this.list = list;
+  }
 
-52. totalCount(): number {
-53. return this.list.length;
-54. }
+  totalCount(): number {
+    return this.list.length;
+  }
 
-56. getData(index: number): string {
-57. return this.list[index];
-58. }
+  getData(index: number): string {
+    return this.list[index];
+  }
 
-60. registerDataChangeListener(listener: DataChangeListener): void {
-61. }
+  registerDataChangeListener(listener: DataChangeListener): void {
+  }
 
-63. unregisterDataChangeListener(listener: DataChangeListener): void {
-64. }
-65. }
+  unregisterDataChangeListener(listener: DataChangeListener): void {
+  }
+}
 
-67. export interface TimeTable {
-68. title: string;
-69. projects: string[];
-70. }
-```
-
-```
-1. // xxx.ets
-2. import { TimeTable, ProjectsDataSource, TimeTableDataSource } from './ListDataSource';
-3. @Entry
-4. @Component
-5. struct ListItemGroupExample {
-6. itemGroupArray: TimeTableDataSource = new TimeTableDataSource([]);
-
-8. aboutToAppear(): void {
-9. let timeTable: TimeTable[] = [
-10. {
-11. title: '星期一',
-12. projects: ['语文', '数学', '英语']
-13. },
-14. {
-15. title: '星期二',
-16. projects: ['物理', '化学', '生物']
-17. },
-18. {
-19. title: '星期三',
-20. projects: ['历史', '地理', '政治']
-21. },
-22. {
-23. title: '星期四',
-24. projects: ['美术', '音乐', '体育']
-25. }
-26. ];
-27. this.itemGroupArray = new TimeTableDataSource(timeTable);
-28. }
-
-30. @Builder
-31. itemHead(text: string) {
-32. Text(text)
-33. .fontSize(20)
-34. .backgroundColor(0xAABBCC)
-35. .width('100%')
-36. .padding(10)
-37. }
-
-39. @Builder
-40. itemFoot(num: number) {
-41. Text('共' + num + '节课')
-42. .fontSize(16)
-43. .backgroundColor(0xAABBCC)
-44. .width('100%')
-45. .padding(5)
-46. }
-
-48. build() {
-49. Column() {
-50. List({ space: 20 }) {
-51. LazyForEach(this.itemGroupArray, (item: TimeTable) => {
-52. ListItemGroup({ header: this.itemHead(item.title), footer: this.itemFoot(item.projects.length) }) {
-53. LazyForEach(new ProjectsDataSource(item.projects), (project: string) => {
-54. ListItem() {
-55. Text(project)
-56. .width('100%')
-57. .height(100)
-58. .fontSize(20)
-59. .textAlign(TextAlign.Center)
-60. .backgroundColor(0xFFFFFF)
-61. }
-62. }, (item: string) => item)
-63. }
-64. .divider({ strokeWidth: 1, color: Color.Blue }) // 每行之间的分界线
-65. })
-66. }
-67. .width('90%')
-68. .sticky(StickyStyle.Header | StickyStyle.Footer)
-69. .scrollBar(BarState.Off)
-70. }.width('100%').height('100%').backgroundColor(0xDCDCDC).padding({ top: 5 })
-71. }
-72. }
+export interface TimeTable {
+  title: string;
+  projects: string[];
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/7rLg9IAlRzGlVp5HvQCsfQ/zh-cn_image_0000002558606480.gif)
+```ts
+// xxx.ets
+import { TimeTable, ProjectsDataSource, TimeTableDataSource } from './ListDataSource';
+@Entry
+@Component
+struct ListItemGroupExample {
+  itemGroupArray: TimeTableDataSource = new TimeTableDataSource([]);
+
+  aboutToAppear(): void {
+    let timeTable: TimeTable[] = [
+      {
+        title: '星期一',
+        projects: ['语文', '数学', '英语']
+      },
+      {
+        title: '星期二',
+        projects: ['物理', '化学', '生物']
+      },
+      {
+        title: '星期三',
+        projects: ['历史', '地理', '政治']
+      },
+      {
+        title: '星期四',
+        projects: ['美术', '音乐', '体育']
+      }
+    ];
+    this.itemGroupArray = new TimeTableDataSource(timeTable);
+  }
+
+  @Builder
+  itemHead(text: string) {
+    Text(text)
+      .fontSize(20)
+      .backgroundColor(0xAABBCC)
+      .width('100%')
+      .padding(10)
+  }
+
+  @Builder
+  itemFoot(num: number) {
+    Text('共' + num + '节课')
+      .fontSize(16)
+      .backgroundColor(0xAABBCC)
+      .width('100%')
+      .padding(5)
+  }
+
+  build() {
+    Column() {
+      List({ space: 20 }) {
+        LazyForEach(this.itemGroupArray, (item: TimeTable) => {
+          ListItemGroup({ header: this.itemHead(item.title), footer: this.itemFoot(item.projects.length) }) {
+            LazyForEach(new ProjectsDataSource(item.projects), (project: string) => {
+              ListItem() {
+                Text(project)
+                  .width('100%')
+                  .height(100)
+                  .fontSize(20)
+                  .textAlign(TextAlign.Center)
+                  .backgroundColor(0xFFFFFF)
+              }
+            }, (item: string) => item)
+          }
+          .divider({ strokeWidth: 1, color: Color.Blue }) // 每行之间的分界线
+        })
+      }
+      .width('90%')
+      .sticky(StickyStyle.Header | StickyStyle.Footer)
+      .scrollBar(BarState.Off)
+    }.width('100%').height('100%').backgroundColor(0xDCDCDC).padding({ top: 5 })
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/Om_-TjPpRfSU_Xfwpl2HVg/zh-cn_image_0000002736314871.gif)
 
 ### 示例2（设置卡片样式）
 
 该示例展示了ListItemGroup的卡片样式效果。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct ListItemGroupExample2 {
+  private arr: ArrObject[] = [
+    {
+      style: ListItemGroupStyle.CARD,
+      itemStyles: [ListItemStyle.CARD, ListItemStyle.CARD, ListItemStyle.CARD]
+    },
+    {
+      style: ListItemGroupStyle.CARD,
+      itemStyles: [ListItemStyle.CARD, ListItemStyle.CARD, ListItemStyle.NONE]
+    },
+    {
+      style: ListItemGroupStyle.CARD,
+      itemStyles: [ListItemStyle.CARD, ListItemStyle.NONE, ListItemStyle.CARD]
+    },
+    {
+      style: ListItemGroupStyle.NONE,
+      itemStyles: [ListItemStyle.CARD, ListItemStyle.CARD, ListItemStyle.NONE]
+    }
+  ];
+
+  build() {
+    Column() {
+      List({ space: '4vp', initialIndex: 0 }) {
+        ForEach(this.arr, (item: ArrObject, index?: number) => {
+          ListItemGroup({ style: item.style }) {
+            ForEach(item.itemStyles, (itemStyle: number, itemIndex?: number) => {
+              ListItem({ style: itemStyle }) {
+                if (index != undefined && itemIndex != undefined) {
+                  Text('第' + (index + 1) + '个Group中第' + (itemIndex + 1) + '个item')
+                    .width('100%')
+                    .textAlign(TextAlign.Center)
+                }
+              }
+            }, (item: number) => item.toString())
+          }
+        })
+      }
+      .width('100%')
+      .multiSelectable(true)
+      .backgroundColor(0xDCDCDC)
+    }
+    .width('100%')
+    .padding({ top: 5 })
+  }
+}
+
+interface ArrObject {
+  style: number;
+  itemStyles: number[];
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct ListItemGroupExample2 {
-5. private arr: ArrObject[] = [
-6. {
-7. style: ListItemGroupStyle.CARD,
-8. itemStyles: [ListItemStyle.CARD, ListItemStyle.CARD, ListItemStyle.CARD]
-9. },
-10. {
-11. style: ListItemGroupStyle.CARD,
-12. itemStyles: [ListItemStyle.CARD, ListItemStyle.CARD, ListItemStyle.NONE]
-13. },
-14. {
-15. style: ListItemGroupStyle.CARD,
-16. itemStyles: [ListItemStyle.CARD, ListItemStyle.NONE, ListItemStyle.CARD]
-17. },
-18. {
-19. style: ListItemGroupStyle.NONE,
-20. itemStyles: [ListItemStyle.CARD, ListItemStyle.CARD, ListItemStyle.NONE]
-21. }
-22. ];
 
-24. build() {
-25. Column() {
-26. List({ space: '4vp', initialIndex: 0 }) {
-27. ForEach(this.arr, (item: ArrObject, index?: number) => {
-28. ListItemGroup({ style: item.style }) {
-29. ForEach(item.itemStyles, (itemStyle: number, itemIndex?: number) => {
-30. ListItem({ style: itemStyle }) {
-31. if (index != undefined && itemIndex != undefined) {
-32. Text('第' + (index + 1) + '个Group中第' + (itemIndex + 1) + '个item')
-33. .width('100%')
-34. .textAlign(TextAlign.Center)
-35. }
-36. }
-37. }, (item: string) => item)
-38. }
-39. })
-40. }
-41. .width('100%')
-42. .multiSelectable(true)
-43. .backgroundColor(0xDCDCDC)
-44. }
-45. .width('100%')
-46. .padding({ top: 5 })
-47. }
-48. }
-
-50. interface ArrObject {
-51. style: number;
-52. itemStyles: number[];
-53. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/XITlSSYySgONh2FQBzphxw/zh-cn_image_0000002589326007.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/FCAsVY8ZSi2UYZMY7nmmkA/zh-cn_image_0000002706675828.jpeg)
 
 ### 示例3（设置Header/Footer）
 
 该示例通过[ComponentContent](js-apis-arkui-componentcontent.md#componentcontent-1)设置Header/Footer。
 
-ListDataSource说明及完整代码参考[示例1设置吸顶/吸底](ts-container-listitemgroup.md#示例1设置吸顶吸底)。
+ListDataSource说明及完整代码参考[示例1（设置吸顶/吸底）](ts-container-listitemgroup.md#示例1设置吸顶吸底)。
 
+```ts
+// xxx.ets
+import { ComponentContent } from '@kit.ArkUI';
+import { TimeTable, ProjectsDataSource, TimeTableDataSource } from './ListDataSource';
+
+class HeadBuilderParams {
+  text: string | Resource;
+  constructor(text: string | Resource) {
+    this.text = text;
+  }
+}
+
+class FootBuilderParams {
+  num: number | Resource;
+  constructor(num: number | Resource) {
+    this.num = num;
+  }
+}
+
+@Builder
+function itemHead(params: HeadBuilderParams) {
+  Text(params.text)
+    .fontSize(20)
+    .height('48vp')
+    .width('100%')
+    .padding(10)
+    .backgroundColor($r('sys.color.background_tertiary'))
+}
+
+@Builder
+function itemFoot(params: FootBuilderParams) {
+  Text('共' + params.num.toString() + '节课')
+    .fontSize(20)
+    .height('48vp')
+    .width('100%')
+    .padding(10)
+    .backgroundColor($r('sys.color.background_tertiary'))
+}
+
+@Component
+struct MyItemGroup {
+  item: TimeTable = { title: '', projects: [] };
+  header?: ComponentContent<HeadBuilderParams> = undefined;
+  footer?: ComponentContent<FootBuilderParams> = undefined;
+  headerParam = new HeadBuilderParams(this.item.title);
+  footerParam = new FootBuilderParams(this.item.projects.length);
+  itemArr: ProjectsDataSource = new ProjectsDataSource([]);
+
+  aboutToAppear(): void {
+    this.header = new ComponentContent(this.getUIContext(), wrapBuilder(itemHead), this.headerParam);
+    this.footer = new ComponentContent(this.getUIContext(), wrapBuilder(itemFoot), this.footerParam);
+    this.itemArr = new ProjectsDataSource(this.item.projects);
+  }
+  getHeader() {
+    this.header?.update(new HeadBuilderParams(this.item.title));
+    return this.header;
+  }
+
+  getFooter() {
+    this.footer?.update(new FootBuilderParams(this.item.projects.length));
+    return this.footer;
+  }
+
+  build() {
+    ListItemGroup({
+      headerComponent: this.getHeader(),
+      footerComponent: this.getFooter()
+    }) {
+      LazyForEach(this.itemArr, (project: string) => {
+        ListItem() {
+          Text(project)
+            .width('100%')
+            .height(100)
+            .fontSize(20)
+            .textAlign(TextAlign.Center)
+        }
+      }, (item: string) => item)
+    }
+    .divider({ strokeWidth: 1, color: Color.Blue }) // 每行之间的分界线
+  }
+}
+
+@Entry
+@Component
+struct ListItemGroupExample {
+  itemGroupArray: TimeTableDataSource = new TimeTableDataSource([]);
+  aboutToAppear(): void {
+    let timeTable: TimeTable[] = [
+      {
+        title: '星期一',
+        projects: ['语文', '数学', '英语']
+      },
+      {
+        title: '星期二',
+        projects: ['物理', '化学', '生物']
+      },
+      {
+        title: '星期三',
+        projects: ['历史', '地理', '政治', '体育']
+      },
+      {
+        title: '星期四',
+        projects: ['美术', '音乐']
+      }
+    ];
+    this.itemGroupArray = new TimeTableDataSource(timeTable);
+  }
+
+  build() {
+    Column() {
+      Button('update').width(100).height(50).onClick(() => {
+        this.itemGroupArray.change1stItem({
+          title: '更新后的星期一',
+          projects: ['语文', '物理', '历史', '美术']
+        });
+      })
+      List({ space: 20 }) {
+        LazyForEach(this.itemGroupArray, (item: TimeTable) => {
+          MyItemGroup({ item: item })
+        }, (item: TimeTable) => item.title) // LazyForEach依赖键值判断是否刷新子组件
+      }
+      .layoutWeight(1)
+      .sticky(StickyStyle.Header | StickyStyle.Footer)
+      .scrollBar(BarState.Off)
+    }
+    .backgroundColor($r('sys.color.background_primary'))
+  }
+}
 ```
-1. // xxx.ets
-2. import { ComponentContent } from '@kit.ArkUI';
-3. import { TimeTable, ProjectsDataSource, TimeTableDataSource } from './ListDataSource';
 
-5. class HeadBuilderParams {
-6. text: string | Resource;
-7. constructor(text: string | Resource) {
-8. this.text = text;
-9. }
-10. }
-
-12. class FootBuilderParams {
-13. num: number | Resource;
-14. constructor(num: number | Resource) {
-15. this.num = num;
-16. }
-17. }
-
-19. @Builder
-20. function itemHead(params: HeadBuilderParams) {
-21. Text(params.text)
-22. .fontSize(20)
-23. .height('48vp')
-24. .width('100%')
-25. .padding(10)
-26. .backgroundColor($r('sys.color.background_tertiary'))
-27. }
-
-29. @Builder
-30. function itemFoot(params: FootBuilderParams) {
-31. Text('共' + params.num.toString() + '节课')
-32. .fontSize(20)
-33. .height('48vp')
-34. .width('100%')
-35. .padding(10)
-36. .backgroundColor($r('sys.color.background_tertiary'))
-37. }
-
-39. @Component
-40. struct MyItemGroup {
-41. item: TimeTable = { title: '', projects: [] };
-42. header?: ComponentContent<HeadBuilderParams> = undefined;
-43. footer?: ComponentContent<FootBuilderParams> = undefined;
-44. headerParam = new HeadBuilderParams(this.item.title);
-45. footerParam = new FootBuilderParams(this.item.projects.length);
-46. itemArr: ProjectsDataSource = new ProjectsDataSource([]);
-
-48. aboutToAppear(): void {
-49. this.header = new ComponentContent(this.getUIContext(), wrapBuilder(itemHead), this.headerParam);
-50. this.footer = new ComponentContent(this.getUIContext(), wrapBuilder(itemFoot), this.footerParam);
-51. this.itemArr = new ProjectsDataSource(this.item.projects);
-52. }
-53. GetHeader() {
-54. this.header?.update(new HeadBuilderParams(this.item.title));
-55. return this.header;
-56. }
-
-58. GetFooter() {
-59. this.footer?.update(new FootBuilderParams(this.item.projects.length));
-60. return this.footer;
-61. }
-
-63. build() {
-64. ListItemGroup({
-65. headerComponent: this.GetHeader(),
-66. footerComponent: this.GetFooter()
-67. }) {
-68. LazyForEach(this.itemArr, (project: string) => {
-69. ListItem() {
-70. Text(project)
-71. .width('100%')
-72. .height(100)
-73. .fontSize(20)
-74. .textAlign(TextAlign.Center)
-75. }
-76. }, (item: string) => item)
-77. }
-78. .divider({ strokeWidth: 1, color: Color.Blue }) // 每行之间的分界线
-79. }
-80. }
-
-82. @Entry
-83. @Component
-84. struct ListItemGroupExample {
-85. itemGroupArray: TimeTableDataSource = new TimeTableDataSource([]);
-86. aboutToAppear(): void {
-87. let timeTable: TimeTable[] = [
-88. {
-89. title: '星期一',
-90. projects: ['语文', '数学', '英语']
-91. },
-92. {
-93. title: '星期二',
-94. projects: ['物理', '化学', '生物']
-95. },
-96. {
-97. title: '星期三',
-98. projects: ['历史', '地理', '政治', '体育']
-99. },
-100. {
-101. title: '星期四',
-102. projects: ['美术', '音乐']
-103. }
-104. ];
-105. this.itemGroupArray = new TimeTableDataSource(timeTable);
-106. }
-
-108. build() {
-109. Column() {
-110. Button('update').width(100).height(50).onClick(() => {
-111. this.itemGroupArray.change1stItem({
-112. title: '更新后的星期一',
-113. projects: ['语文', '物理', '历史', '美术']
-114. });
-115. })
-116. List({ space: 20 }) {
-117. LazyForEach(this.itemGroupArray, (item: TimeTable) => {
-118. MyItemGroup({ item: item })
-119. }, (item: TimeTable) => item.title) // LazyForEach依赖键值判断是否刷新子组件
-120. }
-121. .layoutWeight(1)
-122. .sticky(StickyStyle.Header | StickyStyle.Footer)
-123. .scrollBar(BarState.Off)
-124. }
-125. .backgroundColor($r('sys.color.background_primary'))
-126. }
-127. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/pTXMSczZTde2R1Ln36HQpw/zh-cn_image_0000002589245949.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/1gfhoPSuT0C9useULxvTpg/zh-cn_image_0000002736434915.gif)
 
 ### 示例4（设置多列布局）
 
 该示例展示了ListItemGroup在多列布局中的使用，通过设置List组件的[lanes](ts-container-list.md#lanes9)属性实现多列布局。
 
-ListDataSource说明及完整代码参考[示例1设置吸顶/吸底](ts-container-listitemgroup.md#示例1设置吸顶吸底)。
+ListDataSource说明及完整代码参考[示例1（设置吸顶/吸底）](ts-container-listitemgroup.md#示例1设置吸顶吸底)。
 
+```ts
+// xxx.ets
+import { ComponentContent } from '@kit.ArkUI';
+import { TimeTable, ProjectsDataSource, TimeTableDataSource } from './ListDataSource';
+
+class HeadBuilderParams {
+  text: string | Resource;
+
+  constructor(text: string | Resource) {
+    this.text = text;
+  }
+}
+
+class FootBuilderParams {
+  num: number | Resource;
+
+  constructor(num: number | Resource) {
+    this.num = num;
+  }
+}
+
+@Builder
+function itemHead(params: HeadBuilderParams) {
+  Text(params.text)
+    .fontSize(20)
+    .height('48vp')
+    .width('100%')
+    .padding(10)
+    .backgroundColor($r('sys.color.background_tertiary'))
+}
+
+@Builder
+function itemFoot(params: FootBuilderParams) {
+  Text('共' + params.num.toString() + '节课')
+    .fontSize(20)
+    .height('48vp')
+    .width('100%')
+    .padding(10)
+    .backgroundColor($r('sys.color.background_tertiary'))
+}
+
+@Component
+struct MyItemGroup {
+  item: TimeTable = { title: '', projects: [] };
+  header?: ComponentContent<HeadBuilderParams> = undefined;
+  footer?: ComponentContent<FootBuilderParams> = undefined;
+  headerParam = new HeadBuilderParams(this.item.title);
+  footerParam = new FootBuilderParams(this.item.projects.length);
+  itemArr: ProjectsDataSource = new ProjectsDataSource([]);
+
+  aboutToAppear(): void {
+    this.header = new ComponentContent(this.getUIContext(), wrapBuilder(itemHead), this.headerParam);
+    this.footer = new ComponentContent(this.getUIContext(), wrapBuilder(itemFoot), this.footerParam);
+    this.itemArr = new ProjectsDataSource(this.item.projects);
+  }
+
+  getHeader() {
+    this.header?.update(new HeadBuilderParams(this.item.title));
+    return this.header;
+  }
+
+  getFooter() {
+    this.footer?.update(new FootBuilderParams(this.item.projects.length));
+    return this.footer;
+  }
+
+  build() {
+    ListItemGroup({
+      headerComponent: this.getHeader(),
+      footerComponent: this.getFooter()
+    }) {
+      LazyForEach(this.itemArr, (project: string) => {
+        ListItem() {
+          // 修改ListItem样式以适应多列布局
+          Column() {
+            Text(project)
+              .fontSize(20)
+              .textAlign(TextAlign.Center)
+          }
+          .width('100%')
+          .height(80)
+          .padding(8)
+          .justifyContent(FlexAlign.Center)
+          .backgroundColor($r('sys.color.background_secondary'))
+          .borderRadius(12)
+          .shadow({
+            radius: 4,
+            color: '#20000000',
+            offsetX: 0,
+            offsetY: 2
+          })
+        }
+      }, (item: string) => item)
+    }
+    .divider({
+      strokeWidth: 2,
+      color: $r('sys.color.background_tertiary'),
+      startMargin: 20,
+      endMargin: 20
+    })
+  }
+}
+
+@Entry
+@Component
+struct ListItemGroupExample {
+  itemGroupArray: TimeTableDataSource = new TimeTableDataSource([]);
+
+  aboutToAppear(): void {
+    let timeTable: TimeTable[] = [
+      {
+        title: '星期一',
+        projects: ['语文', '数学', '英语', '物理', '化学', '生物']
+      },
+      {
+        title: '星期二',
+        projects: ['历史', '地理', '政治', '体育', '美术', '音乐']
+      },
+      {
+        title: '星期三',
+        projects: ['计算机', '编程', '算法', '数据结构', '网络']
+      },
+      {
+        title: '星期四',
+        projects: ['文学', '写作', '阅读', '书法']
+      },
+      {
+        title: '星期五',
+        projects: ['实验', '生活', '奥数', '高数', '中医']
+      }
+    ];
+    this.itemGroupArray = new TimeTableDataSource(timeTable);
+  }
+
+  build() {
+    Column() {
+      List({ space: 15 }) {
+        LazyForEach(this.itemGroupArray, (item: TimeTable) => {
+          MyItemGroup({ item: item })
+        }, (item: TimeTable) => item.title)
+      }
+      .lanes(3) // 设置3列布局
+      .alignListItem(ListItemAlign.Center) // 交叉轴居中对齐
+      .layoutWeight(1)
+      .scrollBar(BarState.Auto)
+      .width('100%')
+      .margin(10)
+    }
+    .backgroundColor($r('sys.color.background_primary'))
+    .width('100%')
+    .height('100%')
+    .padding(10)
+  }
+}
 ```
-1. // xxx.ets
-2. import { ComponentContent } from '@kit.ArkUI';
-3. import { TimeTable, ProjectsDataSource, TimeTableDataSource } from './ListDataSource';
 
-5. class HeadBuilderParams {
-6. text: string | Resource;
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/QwHSLfAOTeeni80EQupOSA/zh-cn_image_0000002706835768.gif)
 
-8. constructor(text: string | Resource) {
-9. this.text = text;
-10. }
-11. }
+### 示例5（设置悬浮态）
 
-13. class FootBuilderParams {
-14. num: number | Resource;
+该示例通过将ListItemGroup的[headerStyle](ts-container-listitemgroup.md#listitemgroupoptions对象说明)设置为[ListItemGroupHeaderFooterStyle.FLOATING](ts-container-listitemgroup.md#listitemgroupheaderfooterstyle)，实现分组头部在滚动时悬浮显示的效果。
 
-16. constructor(num: number | Resource) {
-17. this.num = num;
-18. }
-19. }
+```ts
+// xxx.ets
+export interface ContactGroup {
+  letter: string;
+  names: string[];
+}
 
-21. @Builder
-22. function itemHead(params: HeadBuilderParams) {
-23. Text(params.text)
-24. .fontSize(20)
-25. .height('48vp')
-26. .width('100%')
-27. .padding(10)
-28. .backgroundColor($r('sys.color.background_tertiary'))
-29. }
+@Entry
+@Component
+struct Index {
+  private scroller: Scroller = new Scroller();
+  @State groups: ContactGroup[] = [];
 
-31. @Builder
-32. function itemFoot(params: FootBuilderParams) {
-33. Text('共' + params.num.toString() + '节课')
-34. .fontSize(20)
-35. .height('48vp')
-36. .width('100%')
-37. .padding(10)
-38. .backgroundColor($r('sys.color.background_tertiary'))
-39. }
+  aboutToAppear(): void {
+    this.groups = [
+      {
+        letter: 'A',
+        names: ['Alice', 'Anna', 'Aaron']
+      },
+      {
+        letter: 'B',
+        names: ['Bob', 'Bella', 'Brian']
+      },
+      {
+        letter: 'C',
+        names: ['Cindy', 'Charlie']
+      },
+      {
+        letter: 'D',
+        names: ['David', 'Diana', 'Doris']
+      }
+    ]
+  }
 
-41. @Component
-42. struct MyItemGroup {
-43. item: TimeTable = { title: '', projects: [] };
-44. header?: ComponentContent<HeadBuilderParams> = undefined;
-45. footer?: ComponentContent<FootBuilderParams> = undefined;
-46. headerParam = new HeadBuilderParams(this.item.title);
-47. footerParam = new FootBuilderParams(this.item.projects.length);
-48. itemArr: ProjectsDataSource = new ProjectsDataSource([]);
+  @Builder
+  private GroupHeader(letter: string) {
+    Row() {
+      Text(letter)
+        .fontSize("16.0fp")
+        .size({width: 40, height: 28})
+        .textAlign(TextAlign.Center)
+    }.margin({left: 14, right: 14})
+  }
 
-50. aboutToAppear(): void {
-51. this.header = new ComponentContent(this.getUIContext(), wrapBuilder(itemHead), this.headerParam);
-52. this.footer = new ComponentContent(this.getUIContext(), wrapBuilder(itemFoot), this.footerParam);
-53. this.itemArr = new ProjectsDataSource(this.item.projects);
-54. }
-
-56. GetHeader() {
-57. this.header?.update(new HeadBuilderParams(this.item.title));
-58. return this.header;
-59. }
-
-61. GetFooter() {
-62. this.footer?.update(new FootBuilderParams(this.item.projects.length));
-63. return this.footer;
-64. }
-
-66. build() {
-67. ListItemGroup({
-68. headerComponent: this.GetHeader(),
-69. footerComponent: this.GetFooter()
-70. }) {
-71. LazyForEach(this.itemArr, (project: string) => {
-72. ListItem() {
-73. // 修改ListItem样式以适应多列布局
-74. Column() {
-75. Text(project)
-76. .fontSize(20)
-77. .textAlign(TextAlign.Center)
-78. }
-79. .width('100%')
-80. .height(80)
-81. .padding(8)
-82. .justifyContent(FlexAlign.Center)
-83. .backgroundColor($r('sys.color.background_secondary'))
-84. .borderRadius(12)
-85. .shadow({
-86. radius: 4,
-87. color: '#20000000',
-88. offsetX: 0,
-89. offsetY: 2
-90. })
-91. }
-92. }, (item: string) => item)
-93. }
-94. .divider({
-95. strokeWidth: 2,
-96. color: $r('sys.color.background_tertiary'),
-97. startMargin: 20,
-98. endMargin: 20
-99. })
-100. }
-101. }
-
-103. @Entry
-104. @Component
-105. struct ListItemGroupExample {
-106. itemGroupArray: TimeTableDataSource = new TimeTableDataSource([]);
-
-108. aboutToAppear(): void {
-109. let timeTable: TimeTable[] = [
-110. {
-111. title: '星期一',
-112. projects: ['语文', '数学', '英语', '物理', '化学', '生物']
-113. },
-114. {
-115. title: '星期二',
-116. projects: ['历史', '地理', '政治', '体育', '美术', '音乐']
-117. },
-118. {
-119. title: '星期三',
-120. projects: ['计算机', '编程', '算法', '数据结构', '网络']
-121. },
-122. {
-123. title: '星期四',
-124. projects: ['文学', '写作', '阅读', '书法']
-125. },
-126. {
-127. title: '星期五',
-128. projects: ['实验', '生活', '奥数', '高数', '中医']
-129. }
-130. ];
-131. this.itemGroupArray = new TimeTableDataSource(timeTable);
-132. }
-
-134. build() {
-135. Column() {
-136. List({ space: 15 }) {
-137. LazyForEach(this.itemGroupArray, (item: TimeTable) => {
-138. MyItemGroup({ item: item })
-139. }, (item: TimeTable) => item.title)
-140. }
-141. .lanes(3) // 设置3列布局
-142. .alignListItem(ListItemAlign.Center) // 交叉轴居中对齐
-143. .layoutWeight(1)
-144. .scrollBar(BarState.Auto)
-145. .width('100%')
-146. .margin(10)
-147. }
-148. .backgroundColor($r('sys.color.background_primary'))
-149. .width('100%')
-150. .height('100%')
-151. .padding(10)
-152. }
-153. }
+  build() {
+    List({ scroller: this.scroller , space: 8}) {
+      ForEach(this.groups, (group: ContactGroup) => {
+        ListItemGroup({ header: this.GroupHeader(group.letter), headerStyle: ListItemGroupHeaderFooterStyle.FLOATING }) {
+          ForEach(group.names, (name: string) => {
+            ListItem() {
+              Text(name)
+                .fontSize(16)
+                .fontColor('#182431')
+                .width('100%')
+                .height(72)
+                .padding({ left: 16 })
+            }
+          }, (name: string) => name)
+        }
+      }, (group: ContactGroup) => group.letter)
+    }
+    .height('100%')
+    .width('100%')
+    .scrollBar(BarState.Off)
+    .sticky(StickyStyle.Header)
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/kQC-6IdMSCOQ45G9LoETDw/zh-cn_image_0000002558766140.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/iULWWfBTQGemaenb1e5vug/zh-cn_image_0000002736314873.gif)

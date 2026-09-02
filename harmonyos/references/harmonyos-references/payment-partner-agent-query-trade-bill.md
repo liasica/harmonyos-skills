@@ -1,17 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-partner-agent-query-trade-bill
 title: 查询对账单
+breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 平台类商户/服务商 > 账单 > 查询对账单
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:12+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c6c605166de5309a294d734b76373359422450db3d2f6b6f41190b9b2eeb7bb9
+scraped_at: 2026-09-02T15:03:05+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4dc2e526d77978e288ae6cf5ec81323023d9e0ee37ee4e4b4d7778a96c3b60a4
 ---
 
 ## 功能介绍
 
 开发者可以通过该接口完成对账单离线表单文件的下载。
 
-说明
+**说明** 
 
 1. 无论是否产生交易，每日自动生成账单。如果查询日期超限或未生成，则不返回文件下载信息。其他情况会返回。
 2. 账单下载后，建议遍历附件目录以获取csv后缀的文件进行解析。
@@ -50,10 +51,10 @@ content_hash: sha256:c6c605166de5309a294d734b76373359422450db3d2f6b6f41190b9b2ee
 
 ## 请求示例
 
-```
-1. GET /api/v1/partner/bill/trade-bill/downloadInfo?billDate=20221010 HTTP/1.1
-2. Content-Type: application/json;charset=UTF-8
-3. PayMercAuth: {"callerId":"10132120***","traceId":"202305151520201971407","time":1684135220018,"authId":"120291744647139***","headerSign":"qnZUnn7I+tI1HTaOEV3jJAPbTVYpV+j/KWs********************e/VDQ2LXeZFqtk/wU2A14dsRr1bZxIhSA+85LSmZd3YkzZwJlmZpgXA0oHptyUM=","bodySign":"lpFEmBEE4Ds5SgmW5oKq7VXVmVZg8YRwK1LZe/9L6I/yJ/fr1Pe1RaX+********************eoFGxFyzqYAFHwCTqwmJKQzK9GM2xCp60RM="}
+```json
+GET /api/v1/partner/bill/trade-bill/downloadInfo?billDate=20221010 HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+PayMercAuth: {"callerId":"10132120***","traceId":"202305151520201971407","time":1684135220018,"authId":"120291744647139***","headerSign":"qnZUnn7I+tI1HTaOEV3jJAPbTVYpV+j/KWs********************e/VDQ2LXeZFqtk/wU2A14dsRr1bZxIhSA+85LSmZd3YkzZwJlmZpgXA0oHptyUM=","bodySign":"lpFEmBEE4Ds5SgmW5oKq7VXVmVZg8YRwK1LZe/9L6I/yJ/fr1Pe1RaX+********************eoFGxFyzqYAFHwCTqwmJKQzK9GM2xCp60RM="}
 ```
 
 ## 响应参数
@@ -77,35 +78,35 @@ content_hash: sha256:c6c605166de5309a294d734b76373359422450db3d2f6b6f41190b9b2ee
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json; charset=UTF-8
-3. {
-4. "sign": "MEUCIGnmUY8Yg34Ma5NBwqYzLBdNGTg********************oKn+cRVu/W3HH+8WGGJsV3TA=",
-5. "resultCode": "000000",
-6. "resultDesc": "Success",
-7. "billDownloadParam": {
-8. "headers": {
-9. "Authorization": "AWS4-HMAC-SHA256 Credential=BJIIJMUMOQKXDCODXVCG/2022110********************z-content-sha256;x-amz-date, Signature=e7275216278aebc548f413f899eb2f4d82011ed479087f0055c702fa6addc8e5",
-10. "x-amz-content-sha256": "UNSIGNED-PAYLOAD",
-11. "x-amz-client-request-id": "20210863286224479792",
-12. "x-amz-date": "20221103T005326Z",
-13. "connection": "close",
-14. "Host": "petalpay-merchant-test-001.obs.cn-north-4.myhuaweicloud.cn",
-15. "user-agent": "Apache-HttpAsyncClient/4.1.2 (Java/1.8.0_272)",
-16. "Content-Type": "application/octet-stream"
-17. },
-18. "method": "GET",
-19. "downloadUrl": "https://petalpay-merchant-test-001.obs.cn-north-4.myhuaweicloud.cn/xxxxxx.zip"
-20. }
-21. }
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+{
+  "sign": "MEUCIGnmUY8Yg34Ma5NBwqYzLBdNGTg********************oKn+cRVu/W3HH+8WGGJsV3TA=",
+  "resultCode": "000000",
+  "resultDesc": "Success",
+  "billDownloadParam": {
+    "headers": {
+      "Authorization": "AWS4-HMAC-SHA256 Credential=BJIIJMUMOQKXDCODXVCG/2022110********************z-content-sha256;x-amz-date, Signature=e7275216278aebc548f413f899eb2f4d82011ed479087f0055c702fa6addc8e5",
+      "x-amz-content-sha256": "UNSIGNED-PAYLOAD",
+      "x-amz-client-request-id": "20210863286224479792",
+      "x-amz-date": "20221103T005326Z",
+      "connection": "close",
+      "Host": "petalpay-merchant-test-001.obs.cn-north-4.myhuaweicloud.cn",
+      "user-agent": "Apache-HttpAsyncClient/4.1.2 (Java/1.8.0_272)",
+      "Content-Type": "application/octet-stream"
+    },
+    "method": "GET",
+    "downloadUrl": "https://petalpay-merchant-test-001.obs.cn-north-4.myhuaweicloud.cn/xxxxxx.zip"
+  }
+}
 ```
 
 ## 错误码
 
 **resultCode**非400000的错误码请查看[公共错误码说明](payment-error-code-rest.md#公共错误码说明)。
 
-| **返回码** | **错误码** | **错误描述** | **解决方案** |
+| 返回码 | 错误码 | 错误描述 | 解决方案 |
 | --- | --- | --- | --- |
 | 400000 | INVALID\_ARGUMENTS | 参数不合法 | 请检查请求参数。 |
 | 400000 | BILL\_SWITCH\_NOT\_TURN\_ON | 账单开关没有打开 | 请检查并[打开账单开关](payment-partner-agent-query-trade-bill.md#功能介绍)。 |
@@ -114,22 +115,22 @@ content_hash: sha256:c6c605166de5309a294d734b76373359422450db3d2f6b6f41190b9b2ee
 
 ## 下载文件示例
 
-```
-1. RestTemplate restTemplate = new RestTemplate(new HttpComponentsClientHttpRequestFactory(HttpClients.createSystem()));
-2. HttpHeaders headers = new HttpHeaders();
-3. // billResponse为请求账单接口响应的对象
-4. billResponse.getBillDownloadParam().getHeaders().forEach(headers::add);
-5. HttpEntity<?> httpEntity = new HttpEntity<>(headers);
-6. ResponseEntity<byte[]> responseEntity = restTemplate.exchange(billResponse.getBillDownloadParam().getDownloadUrl(), HttpMethod.GET, httpEntity, byte[].class, new Object[0]);
-7. if (responseEntity.getStatusCode() == HttpStatus.OK) {
-8. // ./对账单2022xxxx.zip 路径可自定义
-9. Files.write(Paths.get("./对账单2022xxxx.zip"), responseEntity.getBody());
-10. }
+```java
+RestTemplate restTemplate = new RestTemplate(new HttpComponentsClientHttpRequestFactory(HttpClients.createSystem()));
+HttpHeaders headers = new HttpHeaders();
+// billResponse为请求账单接口响应的对象
+billResponse.getBillDownloadParam().getHeaders().forEach(headers::add);
+HttpEntity<?> httpEntity = new HttpEntity<>(headers);
+ResponseEntity<byte[]> responseEntity = restTemplate.exchange(billResponse.getBillDownloadParam().getDownloadUrl(), HttpMethod.GET, httpEntity, byte[].class, new Object[0]);
+if (responseEntity.getStatusCode() == HttpStatus.OK) {
+    // ./对账单2022xxxx.zip 路径可自定义
+    Files.write(Paths.get("./对账单2022xxxx.zip"), responseEntity.getBody());
+}
 ```
 
 ## 对账单文件说明
 
-| **字段名** | **是否必填** | **描述** | **示例值** |
+| 字段名 | 是否必选 | 描述 | 示例值 |
 | --- | --- | --- | --- |
 | 商户名称 | 否 | 发起该笔交易下单的华为支付商户主体名称。 | 测试\*\*\*\*\*\*商户 |
 | 商户号 | 是 | 发起该笔交易下单的华为支付商户号。 | 1015\*\*\*\*\*\*89 |
@@ -155,3 +156,4 @@ content_hash: sha256:c6c605166de5309a294d734b76373359422450db3d2f6b6f41190b9b2ee
 | 商户预留信息 | 否 | 预下单时的商户预留信息。 | payload test |
 | AppID | 否 | 应用ID。  如果商户交易未配置AppID校验，则该字段信息为空。 | 5765880\*\*\*\*\*\*8652727 |
 | 用户标识 | 否 | 商户AppID生成的对应的openid。  如果商户交易未配置AppID校验，则该字段信息为空。 | 2248554\*\*\*\*\*\*3012454 |
+| 手续费收取方 | 否 | 指手续费收取所归属商户号。 | 1135\*\*\*\*\*\*82 |

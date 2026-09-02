@@ -1,17 +1,16 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-arkui-b105
 title: ArkUI
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.1(13) > OS平台能力 > API变更清单 > HarmonyOS 5.0.1(13) Beta3引入的API > ArkUI
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.1(13) > OS平台能力 > API变更清单 > HarmonyOS 5.0.1(13) Beta3引入的API > ArkUI
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:36:02+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:356c2132613a8e65a28dcb036d6daea28f05ca8b9781f8cf0b9dd4ded73d0dab
+scraped_at: 2026-09-02T14:49:26+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:3b2beba50001813a5b281edc935bcaf36b2118c11aa1371053aa11b688152497
 ---
 
 | 操作 | 旧版本 | 新版本 | d.ts文件 |
 | --- | --- | --- | --- |
 | API卡片权限变更 | 类名：TextAttribute；  API声明：fontFeature(value: string): TextAttribute;  差异内容：NA | 类名：TextAttribute；  API声明：fontFeature(value: string): TextAttribute;  差异内容：form | component/text.d.ts |
-| API废弃版本变更 | 类名：ToastShowMode；  API声明：TOP\_MOST = 1  差异内容：NA | 类名：ToastShowMode；  API声明：TOP\_MOST = 1  差异内容：12 | api/@ohos.promptAction.d.ts |
 | API废弃版本变更 | 类名：global；  API声明： declare enum NavigationType  差异内容：NA | 类名：global；  API声明： declare enum NavigationType  差异内容：13 | component/navigator.d.ts |
 | API废弃版本变更 | 类名：NavigationType；  API声明：Push  差异内容：NA | 类名：NavigationType；  API声明：Push  差异内容：13 | component/navigator.d.ts |
 | API废弃版本变更 | 类名：NavigationType；  API声明：Back  差异内容：NA | 类名：NavigationType；  API声明：Back  差异内容：13 | component/navigator.d.ts |

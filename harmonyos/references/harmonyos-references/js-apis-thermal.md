@@ -3,32 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-t
 title: "@ohos.thermal (热管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 设备管理 > @ohos.thermal (热管理)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:28+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:9c6b77e08f7d96e46c130c9338887ddce0a4867be0f78a3b46791a684d39d9a8
+scraped_at: 2026-09-02T15:02:01+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b2b1cb3491ed152dc7d0c3ff50a3b1a2be1bead702a6adf7d268d4d9b623b320
 ---
 
 该模块提供热管理相关的接口，包括热档位查询及注册回调等功能。
 
-说明
+**说明** 
 
 本模块首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import {thermal} from '@kit.BasicServicesKit';
+```js
+import {thermal} from '@kit.BasicServicesKit';
 ```
 
 ## thermal.registerThermalLevelCallback9+
 
-PhonePC/2in1TabletTVWearable
-
 registerThermalLevelCallback(callback: Callback<ThermalLevel>): void
 
-**方法介绍：** 订阅热档位变化时的回调提醒。使用callback异步回调。
+订阅热档位变化时的回调提醒。使用callback异步回调。
 
 **系统能力：** SystemCapability.PowerManager.ThermalManager
 
@@ -48,24 +44,22 @@ registerThermalLevelCallback(callback: Callback<ThermalLevel>): void
 
 **示例：**
 
-```
-1. try {
-2. thermal.registerThermalLevelCallback((level: thermal.ThermalLevel) => {
-3. console.info('thermal level is: ' + level);
-4. });
-5. console.info('register thermal level callback success.');
-6. } catch(err) {
-7. console.error('register thermal level callback failed, err: ' + err);
-8. }
+```js
+try {
+    thermal.registerThermalLevelCallback((level: thermal.ThermalLevel) => {
+        console.info('thermal level is: ' + level);
+    });
+    console.info('register thermal level callback success.');
+} catch(err) {
+    console.error('register thermal level callback failed, err: ' + err);
+}
 ```
 
 ## thermal.unregisterThermalLevelCallback9+
 
-PhonePC/2in1TabletTVWearable
-
 unregisterThermalLevelCallback(callback?: Callback<void>): void
 
-**方法介绍：** 取消订阅热档位变化时的回调提醒。使用callback异步回调。
+取消订阅热档位变化时的回调提醒。使用callback异步回调。
 
 **系统能力：** SystemCapability.PowerManager.ThermalManager
 
@@ -85,24 +79,22 @@ unregisterThermalLevelCallback(callback?: Callback<void>): void
 
 **示例：**
 
-```
-1. try {
-2. thermal.unregisterThermalLevelCallback(() => {
-3. console.info('unsubscribe thermal level success.');
-4. });
-5. console.info('unregister thermal level callback success.');
-6. } catch(err) {
-7. console.error('unregister thermal level callback failed, err: ' + err);
-8. }
+```js
+try {
+    thermal.unregisterThermalLevelCallback(() => {
+        console.info('unsubscribe thermal level success.');
+    });
+    console.info('unregister thermal level callback success.');
+} catch(err) {
+    console.error('unregister thermal level callback failed, err: ' + err);
+}
 ```
 
 ## thermal.getLevel9+
 
-PhonePC/2in1TabletTVWearable
-
 getLevel(): ThermalLevel
 
-**方法介绍：** 获取当前热档位信息。
+获取当前热档位信息。
 
 **系统能力：** SystemCapability.PowerManager.ThermalManager
 
@@ -114,22 +106,20 @@ getLevel(): ThermalLevel
 
 **示例：**
 
-```
-1. let level = thermal.getLevel();
-2. console.info('thermal level is: ' + level);
+```js
+let level = thermal.getLevel();
+console.info('thermal level is: ' + level);
 ```
 
 ## thermal.subscribeThermalLevel(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 subscribeThermalLevel(callback: AsyncCallback<ThermalLevel>): void
 
-说明
+订阅热档位变化时的回调提醒。使用callback异步回调。
+
+**说明** 
 
 从API version 8开始支持，从API version 9开始不再维护，建议使用[thermal.registerThermalLevelCallback](js-apis-thermal.md#thermalregisterthermallevelcallback9)替代。
-
-**方法介绍：** 订阅热档位变化时的回调提醒。使用callback异步回调。
 
 **系统能力：** SystemCapability.PowerManager.ThermalManager
 
@@ -137,27 +127,25 @@ subscribeThermalLevel(callback: AsyncCallback<ThermalLevel>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<[ThermalLevel](js-apis-thermal.md#thermallevel)> | 是 | 回调函数。AsyncCallback只返回一个参数，为热档位信息。 |
+| callback | AsyncCallback<[ThermalLevel](js-apis-thermal.md#thermallevel)> | 是 | 回调函数，返回变化后的热档位；该参数是一个函数类型。 |
 
 **示例：**
 
-```
-1. thermal.subscribeThermalLevel((err: Error, level: thermal.ThermalLevel) => {
-2. console.info('thermal level is: ' + level);
-3. });
+```js
+thermal.subscribeThermalLevel((err: Error, level: thermal.ThermalLevel) => {
+    console.info('thermal level is: ' + level);
+});
 ```
 
 ## thermal.unsubscribeThermalLevel(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 unsubscribeThermalLevel(callback?: AsyncCallback<void>): void
 
-说明
+取消订阅热档位变化时的回调提醒。使用callback异步回调。
+
+**说明** 
 
 从API version 8开始支持，从API version 9开始不再维护，建议使用[thermal.unregisterThermalLevelCallback](js-apis-thermal.md#thermalunregisterthermallevelcallback9)替代。
-
-**方法介绍：** 取消订阅热档位变化时的回调提醒。使用callback异步回调。
 
 **系统能力：** SystemCapability.PowerManager.ThermalManager
 
@@ -169,23 +157,21 @@ unsubscribeThermalLevel(callback?: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. thermal.unsubscribeThermalLevel(() => {
-2. console.info('unsubscribe thermal level success.');
-3. });
+```js
+thermal.unsubscribeThermalLevel(() => {
+    console.info('unsubscribe thermal level success.');
+});
 ```
 
 ## thermal.getThermalLevel(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 getThermalLevel(): ThermalLevel
 
-说明
+获取当前热档位信息。
+
+**说明** 
 
 从API version 8开始支持，从API version 9开始不再维护，建议使用[thermal.getLevel](js-apis-thermal.md#thermalgetlevel9)替代。
-
-**方法介绍：** 获取当前热档位信息。
 
 **系统能力：** SystemCapability.PowerManager.ThermalManager
 
@@ -197,14 +183,12 @@ getThermalLevel(): ThermalLevel
 
 **示例：**
 
-```
-1. let level = thermal.getThermalLevel();
-2. console.info('thermal level is: ' + level);
+```js
+let level = thermal.getThermalLevel();
+console.info('thermal level is: ' + level);
 ```
 
 ## ThermalLevel
-
-PhonePC/2in1TabletTVWearable
 
 热档位信息。
 

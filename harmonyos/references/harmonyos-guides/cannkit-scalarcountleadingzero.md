@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-scala
 title: ScalarCountLeadingZero
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 标量计算 > ScalarCountLeadingZero
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:39+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d073032c32edf1fae393322cf9d3b6e8abb19769ea362a7fc125031983b1b992
+scraped_at: 2026-09-02T14:50:36+08:00
+doc_updated_at: 2026-08-18
+content_hash: sha256:1af28daf4731e2d667d50740bd2915deb886548ad14d7557776178a389c9cfab
 ---
 
 ## 功能说明
@@ -14,8 +14,8 @@ content_hash: sha256:d073032c32edf1fae393322cf9d3b6e8abb19769ea362a7fc125031983b
 
 ## 函数原型
 
-```
-1. __aicore__ inline int64_t ScalarCountLeadingZero(uint64_t valueIn)
+```cpp
+__aicore__ inline int64_t ScalarCountLeadingZero(uint64_t valueIn)
 ```
 
 ## 参数说明
@@ -34,6 +34,8 @@ content_hash: sha256:d073032c32edf1fae393322cf9d3b6e8abb19769ea362a7fc125031983b
 
 Kirin9020系列处理器
 
+Kirin9030系列处理器
+
 KirinX90系列处理器
 
 ## 约束说明
@@ -42,8 +44,8 @@ KirinX90系列处理器
 
 ## 调用示例
 
-```
-1. uint64_t valueIn = 0x0ffffffffffffffff;
-2. // 输出数据(ans): 4
-3. int64_t ans = AscendC::ScalarCountLeadingZero(valueIn);
+```cpp
+uint64_t valueIn = 0x0ffffffffffffffff;
+// 输出数据(ans): 4
+int64_t ans = AscendC::ScalarCountLeadingZero(valueIn);
 ```

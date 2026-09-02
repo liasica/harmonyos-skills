@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-
 title: 弱网感知判决 (C/C++)
 breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务） > 网络质量 (C/C++) > 弱网感知判决 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:9b9cb64eda158f85503e7075dc9a589f4f30959a3c842c6d0f2ddf440b8f5286
+scraped_at: 2026-09-02T14:50:06+08:00
+doc_updated_at: 2026-08-07
+content_hash: sha256:1bd05d4459910408f714712efb67b89ccb3c3268fe09f20bf01b3633aec8032b
 ---
 
-通过[网络质量评估（C++）](networkboost-qoscallback-c.md)和[网络场景识别（C++）](networkboost-scenecallback-c.md)章节，弱网感知判决可归纳为3种方式获取：
+通过[网络质量评估 (C/C++)](networkboost-qoscallback-c.md)和[网络场景识别 (C/C++)](networkboost-scenecallback-c.md)章节，弱网感知判决可归纳为3种方式获取：
 
 **监听系统实时判决**：
 

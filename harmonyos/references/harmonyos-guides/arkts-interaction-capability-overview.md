@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-interac
 title: 交互响应概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 交互响应概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:49+08:00
-doc_updated_at: 2026-03-26
-content_hash: sha256:0b9024e2c5fac3a6f890dfb9bff098c7c232e779aa79ea17b200227484add65b
+scraped_at: 2026-09-02T14:59:18+08:00
+doc_updated_at: 2026-05-14
+content_hash: sha256:8ed901ecb8a6f6ec434ee203fd6683dd62c36da9e89aad09b4cadc7168059390
 ---
 
 ArkUI框架提供了丰富的交互功能，支持直接处理基础输入事件，以及由这些事件驱动的手势系统，同时支持拖拽、焦点切换等复杂交互。
@@ -42,7 +42,7 @@ ArkUI框架提供了丰富的交互功能，支持直接处理基础输入事件
 
 如果使用ArkUI系统组件，系统会自动识别和响应这些组件上的手势，如按钮、列表，也可以在组件上绑定处理手势。一个组件上可绑定多个手势，这些手势可以由组件内置默认绑定，也可以由应用显式绑定。这些手势会在用户按下时，通过命中测试被收集上来，由系统统一管理，所有手势都会持续接收到输入事件，直到有一个手势满足条件，在这之后，就只有这一个手势可以继续接收和处理输入事件。
 
-如果希望两个手势非此即彼，则可以考虑使用互斥手势，如果希望两个手势互不影响，则可以考虑使用并行手势，请参考[组合手势](arkts-gesture-events-combined-gestures.md)；
+如果希望两个手势非此即彼，则可以考虑使用互斥手势，如果希望两个手势互不影响，则可以考虑使用并行手势，请参考[GestureGroup](arkts-gesture-events-combined-gestures.md)；
 
 如果希望在用户按下时，才动态决定哪些手势能够参与处理，请参考[手势冲突处理](arkts-gesture-events-gesture-judge.md)。
 

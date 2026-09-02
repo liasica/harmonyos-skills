@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tenso
 title: SetFormat
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Tensor > SetFormat
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:07+08:00
+scraped_at: 2026-09-02T14:50:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9b6b9b519a9d5463c41a198b8ebf2898b10b896a3c89718dbfda3cff221d8e33
+content_hash: sha256:069143dff0a8a05809dc35024b3b356b0030dd66b83072e064023fe112cf7848
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:9b6b9b519a9d5463c41a198b8ebf2898b10b896a3c89718dbfda3cff221
 
 ## 函数原型
 
-```
-1. graphStatus SetFormat(const ge::Format &format);
+```cpp
+graphStatus SetFormat(const ge::Format &format);
 ```
 
 ## 参数说明

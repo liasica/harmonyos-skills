@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-run-devic
 title: 使用本地真机运行应用
 breadcrumb: 指南 > 编写与调试应用 > 使用本地真机运行应用
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:46:34+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:70d983ab9cbabfa72f4a30e890efd6ed00bb7bd15b50a526618e592adeb9db82
+scraped_at: 2026-09-02T15:00:24+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:173c310bfcd01123fc5187737376a97f853d666fe0aa93be9b1a512488d027bd
 ---
 
 在本地真机中运行HarmonyOS应用/元服务，可以采用USB连接方式或者无线连接方式。
 
-说明
+**说明** 
 
 Wearable设备仅支持无线连接方式（Lite Wearable设备不支持）。
 
@@ -26,10 +26,10 @@ Wearable设备仅支持无线连接方式（Lite Wearable设备不支持）。
 2. 在**设置 > 系统 > 开发者选项**中，打开**USB调试**开关（确保设备已连接USB）。
 3. 在真机设备中会弹出“允许USB调试”的弹框，单击**允许**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/Oyuug85pRguiANctBfqTLw/zh-cn_image_0000002530753700.png)
-4. 在菜单栏中，单击**Run>Run'模块名称'**或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/HA9pSB-1RsW5uicC0euiag/zh-cn_image_0000002561753635.png)，或使用默认快捷键**Shift+F10**（macOS为**Control+R**）运行应用/元服务。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/LHm7klPmT-q_NrRuOYtK1g/zh-cn_image_0000002701823842.png)
+4. 在菜单栏中，单击**Run>Run'模块名称'**或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/16LBCCoDSpCGZsA0EsbonA/zh-cn_image_0000002731383141.png)，或使用默认快捷键**Shift+F10**（macOS为**Control+R**）运行应用/元服务。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/t8EbChjsRweUbEsRt0FOhQ/zh-cn_image_0000002561753637.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/ZQv3P9LfSIClgPxIiONOMA/zh-cn_image_0000002731543121.png)
 5. DevEco Studio启动HAP的编译构建和安装。安装成功后，设备会自动运行安装的HarmonyOS应用/元服务。
 
 ### 使用设备连接助手排查问题
@@ -45,17 +45,30 @@ Wearable设备仅支持无线连接方式（Lite Wearable设备不支持）。
 1. 将真机设备和PC连接到同一WLAN网络。
 2. 在**设置 > 系统 >** **开发者选项**中，打开**无线调试**或**通过WLAN调试**（Wearable设备）开关，并获取设备端的IP地址和端口号。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/BJkPgitLTcW1zFJuQI3sHQ/zh-cn_image_0000002530753696.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/HoILQ95mToGjyzYCs82Ouw/zh-cn_image_0000002731543119.png "点击放大")
 3. 连接设备，有两种方式。
-   * 在DevEco Studio菜单栏中，单击**Tools > IP Connection**，输入连接设备的IP地址和端口号，单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/Dk2E8d71Svizmui5_epUog/zh-cn_image_0000002561833605.png)，连接正常后，设备状态为**online**。
+   * 通过DevEco Studio连接。
+     + **6.1.1 Release（6.1.1.300）及以上版本：**单击菜单栏**Tools > IP Connection**，或者在设备下拉列表单击**IP Connection**，按照IP:port格式输入设备的IP地址和端口号，单击**Connect**连接设备，连接成功后会显示在列表中，默认开启屏幕常亮。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/RO1kecHUSHyo-R0jIvFm-Q/zh-cn_image_0000002561753629.png)
-   * 执行hdc命令，关于hdc工具的使用指导请参考[hdc](hdc.md)。
+       开启屏幕常亮后，DevEco Studio会持续向设备发送亮屏指令，使设备屏幕常亮。即使手动将设备锁屏，屏幕也会自动亮起，这是DevEco Studio为保持屏幕常亮而发送亮屏指令的正常行为。
 
+       如需退出屏幕常亮，有以下方式：
+
+       - 方式一：在IP Connection面板中单击**Disable Screen Always-On**。
+       - 方式二：断开设备连接。
+
+       退出后，DevEco Studio将停止发送亮屏指令，设备可正常进入休眠。
+
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/im93NIUNR3y4n4yxDaKsVQ/zh-cn_image_0000002701663924.png)
+     + **6.1.1 Release（6.1.1.300）以下版本：**单击菜单栏**Tools > IP Connection**，输入连接设备的IP地址和端口号，单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/L01NCQFWRWusYR9ylEn-pw/zh-cn_image_0000002701663918.png)，连接正常后，设备状态为**online**。
+
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/MmlhBrxsQY-UyknAMnClQQ/zh-cn_image_0000002731543115.png)
+   * 通过hdc连接，关于hdc工具的使用指导请参考[hdc](hdc.md)。
+
+     ```bash
+     hdc tconn 设备IP地址:端口号
      ```
-     1. hdc tconn 设备IP地址:端口号
-     ```
-4. 在菜单栏中，单击**Run>Run'模块名称'**或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/7nJF-G6ARie-FcxQloQAgw/zh-cn_image_0000002530913684.png)，或使用默认快捷键**Shift+F10**（macOS为**Control+R**）运行应用/元服务。
+4. 在菜单栏中，单击**Run>Run'模块名称'**或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/79WA9BS8QlaUQUYsK0dyvg/zh-cn_image_0000002701663920.png)，或使用默认快捷键**Shift+F10**（macOS为**Control+R**）运行应用/元服务。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/oPhV_4ezTSOLT46o6l2nPg/zh-cn_image_0000002530753694.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/NnPRyVsLQniBkx5XLqu1MA/zh-cn_image_0000002731383143.png)
 5. DevEco Studio启动HAP的编译构建和安装。安装成功后，设备会自动运行安装的HarmonyOS应用/元服务。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-expan
 title: Expand（输出新shape）
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > ExpandDimsType > Expand（输出新shape）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:56+08:00
+scraped_at: 2026-09-02T14:50:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1bd673dda1e715a3393e26b1170f75a7b00c8d73b0212402ff99fa06cabd3ff6
+content_hash: sha256:a24ad78ae14a69bdcaec332c2ae0ccb063b0518c3b22d0a231250f6f5f0b1fb6
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:1bd673dda1e715a3393e26b1170f75a7b00c8d73b0212402ff99fa06cab
 
 ## 函数原型
 
-```
-1. ge::graphStatus Expand(const Shape &shape, Shape &out_shape) const
+```cpp
+ge::graphStatus Expand(const Shape &shape, Shape &out_shape) const
 ```
 
 ## 参数说明
@@ -39,13 +39,13 @@ content_hash: sha256:1bd673dda1e715a3393e26b1170f75a7b00c8d73b0212402ff99fa06cab
 
 ## 调用示例
 
-```
-1. Shape origin_shape({3, 256, 256}); // 设置原始shape 3x256x256
-2. Shape out_shape;
-3. ExpandDimsType type1("1000");
-4. ExpandDimsType type2("10000");
-5. ExpandDimsType type3("1001");
-6. auto ret = type1.Expand(origin_shape, out_shape); // ret = ge::GRAPH_SUCCESS, out_shape = 1,3,256,256
-7. ret = type2.Expand(origin_shape, out_shape); // ret = ge::GRAPH_FAILED
-8. ret = type3.Expand(origin_shape, out_shape); // ret = ge::GRAPH_SUCCESS, out_shape = 1,3,256,1,256
+```cpp
+Shape origin_shape({3, 256, 256}); // 设置原始shape 3x256x256
+Shape out_shape;
+ExpandDimsType type1("1000");
+ExpandDimsType type2("10000");
+ExpandDimsType type3("1001");
+auto ret = type1.Expand(origin_shape, out_shape); // ret = ge::GRAPH_SUCCESS, out_shape = 1,3,256,256
+ret = type2.Expand(origin_shape, out_shape); // ret = ge::GRAPH_FAILED
+ret = type3.Expand(origin_shape, out_shape); // ret = ge::GRAPH_SUCCESS, out_shape = 1,3,256,1,256
 ```

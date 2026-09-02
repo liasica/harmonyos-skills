@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: image_pixel_map_mdk.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > image_pixel_map_mdk.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:20+08:00
-doc_updated_at: 2026-04-10
-content_hash: sha256:b37a2773a496a3275ff8dede7417c5cec8fee45d177b6bf7b0a9507dfcc920e3
+scraped_at: 2026-09-02T15:02:32+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b8fbf1055f30ca4c007a640a291c6f4d7dbe56829d1417b8b88745129a6e3184
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明可以锁定并访问pixelmap数据的方法，声明解锁的方法。推荐使用[pixelmap\_native.h](capi-pixelmap-native-h.md)。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -40,8 +34,6 @@ PhonePC/2in1TabletTVWearable
 
 ### 枚举
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [anonymous enum](capi-image-pixel-map-mdk-h.md#pixelmap透明度类型) | - | PixelMap透明度类型的枚举。 |
@@ -49,8 +41,6 @@ PhonePC/2in1TabletTVWearable
 | [OH\_PixelMap\_AntiAliasingLevel](capi-image-pixel-map-mdk-h.md#oh_pixelmap_antialiasinglevel) | OH\_PixelMap\_AntiAliasingLevel | Pixelmap缩放时采用的缩放算法。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -77,14 +67,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### PixelMap透明度类型
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum anonymous enum
+```c
+enum anonymous enum
 ```
 
 **描述**
@@ -102,10 +88,8 @@ PixelMap 透明度类型的枚举。
 
 ### PixelMap编辑类型
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum anonymous enum
+```c
+enum anonymous enum
 ```
 
 **描述**
@@ -121,10 +105,8 @@ PixelMap编辑类型的枚举。
 
 ### OH\_PixelMap\_AntiAliasingLevel
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_PixelMap_AntiAliasingLevel
+```c
+enum OH_PixelMap_AntiAliasingLevel
 ```
 
 **描述**
@@ -142,14 +124,10 @@ Pixelmap缩放时采用的缩放算法。
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_PixelMap\_CreatePixelMap()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PixelMap_CreatePixelMap(napi_env env, OhosPixelMapCreateOps info,void* buf, size_t len, napi_value* res)
+```c
+int32_t OH_PixelMap_CreatePixelMap(napi_env env, OhosPixelMapCreateOps info,void* buf, size_t len, napi_value* res)
 ```
 
 **描述**
@@ -180,10 +158,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PixelMap\_CreatePixelMapWithStride()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PixelMap_CreatePixelMapWithStride(napi_env env, OhosPixelMapCreateOps info,void* buf, size_t len, int32_t rowStride, napi_value* res)
+```c
+int32_t OH_PixelMap_CreatePixelMapWithStride(napi_env env, OhosPixelMapCreateOps info,void* buf, size_t len, int32_t rowStride, napi_value* res)
 ```
 
 **描述**
@@ -213,10 +189,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PixelMap\_CreateAlphaPixelMap()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PixelMap_CreateAlphaPixelMap(napi_env env, napi_value source, napi_value* alpha)
+```c
+int32_t OH_PixelMap_CreateAlphaPixelMap(napi_env env, napi_value source, napi_value* alpha)
 ```
 
 **描述**
@@ -241,10 +215,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PixelMap\_InitNativePixelMap()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. NativePixelMap* OH_PixelMap_InitNativePixelMap(napi_env env, napi_value source)
+```c
+NativePixelMap* OH_PixelMap_InitNativePixelMap(napi_env env, napi_value source)
 ```
 
 **描述**
@@ -268,10 +240,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PixelMap\_GetBytesNumberPerRow()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PixelMap_GetBytesNumberPerRow(const NativePixelMap* native, int32_t* num)
+```c
+int32_t OH_PixelMap_GetBytesNumberPerRow(const NativePixelMap* native, int32_t* num)
 ```
 
 **描述**
@@ -295,10 +265,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PixelMap\_GetIsEditable()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PixelMap_GetIsEditable(const NativePixelMap* native, int32_t* editable)
+```c
+int32_t OH_PixelMap_GetIsEditable(const NativePixelMap* native, int32_t* editable)
 ```
 
 **描述**
@@ -322,10 +290,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PixelMap\_IsSupportAlpha()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PixelMap_IsSupportAlpha(const NativePixelMap* native, int32_t* alpha)
+```c
+int32_t OH_PixelMap_IsSupportAlpha(const NativePixelMap* native, int32_t* alpha)
 ```
 
 **描述**
@@ -349,10 +315,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PixelMap\_SetAlphaAble()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PixelMap_SetAlphaAble(const NativePixelMap* native, int32_t alpha)
+```c
+int32_t OH_PixelMap_SetAlphaAble(const NativePixelMap* native, int32_t alpha)
 ```
 
 **描述**
@@ -376,10 +340,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PixelMap\_GetDensity()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PixelMap_GetDensity(const NativePixelMap* native, int32_t* density)
+```c
+int32_t OH_PixelMap_GetDensity(const NativePixelMap* native, int32_t* density)
 ```
 
 **描述**
@@ -403,10 +365,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PixelMap\_SetDensity()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PixelMap_SetDensity(const NativePixelMap* native, int32_t density)
+```c
+int32_t OH_PixelMap_SetDensity(const NativePixelMap* native, int32_t density)
 ```
 
 **描述**
@@ -430,10 +390,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PixelMap\_SetOpacity()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PixelMap_SetOpacity(const NativePixelMap* native, float opacity)
+```c
+int32_t OH_PixelMap_SetOpacity(const NativePixelMap* native, float opacity)
 ```
 
 **描述**
@@ -457,10 +415,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PixelMap\_Scale()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PixelMap_Scale(const NativePixelMap* native, float x, float y)
+```c
+int32_t OH_PixelMap_Scale(const NativePixelMap* native, float x, float y)
 ```
 
 **描述**
@@ -487,10 +443,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PixelMap\_ScaleWithAntiAliasing()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PixelMap_ScaleWithAntiAliasing(const NativePixelMap* native, float x, float y,OH_PixelMap_AntiAliasingLevel level)
+```c
+int32_t OH_PixelMap_ScaleWithAntiAliasing(const NativePixelMap* native, float x, float y,OH_PixelMap_AntiAliasingLevel level)
 ```
 
 **描述**
@@ -518,10 +472,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PixelMap\_Translate()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PixelMap_Translate(const NativePixelMap* native, float x, float y)
+```c
+int32_t OH_PixelMap_Translate(const NativePixelMap* native, float x, float y)
 ```
 
 **描述**
@@ -548,10 +500,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PixelMap\_Rotate()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PixelMap_Rotate(const NativePixelMap* native, float angle)
+```c
+int32_t OH_PixelMap_Rotate(const NativePixelMap* native, float angle)
 ```
 
 **描述**
@@ -577,10 +527,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PixelMap\_Flip()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PixelMap_Flip(const NativePixelMap* native, int32_t x, int32_t y)
+```c
+int32_t OH_PixelMap_Flip(const NativePixelMap* native, int32_t x, int32_t y)
 ```
 
 **描述**
@@ -607,10 +555,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PixelMap\_Crop()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PixelMap_Crop(const NativePixelMap* native, int32_t x, int32_t y, int32_t width, int32_t height)
+```c
+int32_t OH_PixelMap_Crop(const NativePixelMap* native, int32_t x, int32_t y, int32_t width, int32_t height)
 ```
 
 **描述**
@@ -639,10 +585,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PixelMap\_GetImageInfo()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PixelMap_GetImageInfo(const NativePixelMap* native, OhosPixelMapInfos *info)
+```c
+int32_t OH_PixelMap_GetImageInfo(const NativePixelMap* native, OhosPixelMapInfos *info)
 ```
 
 **描述**
@@ -668,10 +612,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PixelMap\_AccessPixels()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PixelMap_AccessPixels(const NativePixelMap* native, void** addr)
+```c
+int32_t OH_PixelMap_AccessPixels(const NativePixelMap* native, void** addr)
 ```
 
 **描述**
@@ -695,10 +637,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PixelMap\_UnAccessPixels()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_PixelMap_UnAccessPixels(const NativePixelMap* native)
+```c
+int32_t OH_PixelMap_UnAccessPixels(const NativePixelMap* native)
 ```
 
 **描述**

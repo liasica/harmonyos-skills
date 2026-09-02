@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multithread-d
 title: 应用多线程开发实践案例
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 应用多线程开发实践案例
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:39+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:e199c386ea2340f6aaaf21eb8afe1556eafecbd731cbdc0799b349747d3829f4
+scraped_at: 2026-09-02T14:49:46+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:3d1def69ca32a7506600edf5c15969727d91ccb922bab0be0c2f0761607aadfb
 ---
 
 * **[批量数据写数据库场景](batch-database-operations-guide.md)**
@@ -20,3 +20,4 @@ content_hash: sha256:e199c386ea2340f6aaaf21eb8afe1556eafecbd731cbdc0799b349747d3
 * **[自定义Native Transferable对象的多线程操作场景](napi-coerce-to-native-binding-object.md)**
 * **[自定义Native Sendable对象的多线程操作场景](napi-define-sendable-object.md)**
 * **[Worker常驻线程通过TaskPool进行多任务并发处理](worker-and-taskpool.md)**
+* **[Sendable对象改造实践](sendable-trans-guide.md)**

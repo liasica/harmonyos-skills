@@ -3,20 +3,21 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 布局约束
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 布局与边框 > 布局约束
 category: harmonyos-references
-scraped_at: 2026-04-29T13:51:16+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:f644b1c69ab6f35e0e0b4e23c0f7f47497a6efc643954aab1e178b80d459a5e7
+scraped_at: 2026-09-02T15:00:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:90a7a655d5e6cc0948bb86066024cbbec8a0b92b1a9c1bd0ccdd069a45e5079b
 ---
 
-通过组件的宽高比和显示优先级约束组件显示效果。
+通过组件的宽高比和显示优先级约束组件显示效果，支持固定宽高比设置和响应式优先级控制两个核心特性，可解决组件变形、布局错乱等问题，提升界面显示质量。
 
-说明
+* **aspectRatio**：适用于需要保持固定宽高比的组件，如图片展示、视频播放器、卡片布局等场景。解决组件在不同设备和屏幕方向下需要保持特定宽高比的问题，避免图片或视频拉伸变形。
+* **displayPriority**：适用于响应式布局场景，当父容器空间不足时，可以根据优先级自动隐藏低优先级组件。解决响应式布局中空间不足时组件显示优先级控制问题，避免内容溢出或布局错乱。
 
-从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+**说明** 
+
+从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## aspectRatio
-
-PhonePC/2in1TabletTVWearable
 
 aspectRatio(value: number): T
 
@@ -24,9 +25,11 @@ aspectRatio(value: number): T
 
 * 仅设置width、aspectRatio时，height=width/aspectRatio。
 * 仅设置height、aspectRatio时，width=height\*aspectRatio。
-* 同时设置width、height和aspectRatio时，height不生效，height=width/aspectRatio。
+* 同时设置width、height和aspectRatio时，height会被重新计算为width/aspectRatio，显式设置的height值不生效。
 
-设置aspectRatio属性后，组件宽高会受父组件内容区大小限制，[constraintSize](ts-universal-attributes-size.md#constraintsize)的优先级高于aspectRatio。
+适用于需要保持固定宽高比的组件，例如图片展示、视频播放器、响应式布局中保持比例等场景。
+
+设置aspectRatio属性后，组件宽高会受父组件内容区大小限制，[constraintSize](ts-universal-attributes-size.md#constraintsize)的maxWidth/maxHeight优先级高于aspectRatio。当constraintSize设置的maxWidth/maxHeight约束与aspectRatio计算结果冲突时，组件将优先遵循constraintSize的maxWidth/maxHeight约束，此时aspectRatio可能无法生效。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -38,21 +41,21 @@ aspectRatio(value: number): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | 是 | 指定当前组件的宽高比。  API version 9及以前，默认值为：1.0。  API version 10：无默认值。  **说明：**  该属性在不设置值或者设置非法值(小于等于0)时不生效。  例如，Row只设置宽度且没有子组件，aspectRatio不设置值或者设置成负数时，此时Row高度为0。 |
+| value | number | 是 | 指定当前组件的宽高比，取值范围(0, +∞)。  API version 9及以前，默认值：1.0。  API version 10及以后，默认值：无。  **说明：**  当需要保持组件的宽高比例时使用（如显示图片、视频等需要保持比例的内容）。  该属性设置为非法值（小于等于0）时不生效。API version 10及以后，未设置值时该属性不生效。  设置该属性后，组件宽高会受父组件内容区大小限制，constraintSize的maxWidth/maxHeight优先级高于aspectRatio。  例如：Row仅设置宽度且无子组件时，若aspectRatio未设置或为负值，则高度为0。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件实例，支持链式调用。 |
 
 ## displayPriority
 
-PhonePC/2in1TabletTVWearable
-
 displayPriority(value: number): T
 
-设置当前组件在布局容器中显示的优先级。
+设置当前组件在Row/Column/Flex(单行)容器中显示的优先级，优先级由数值的整数部分决定，整数部分越大优先级越高。
+
+适用于响应式布局中根据父容器空间动态显示/隐藏子组件的场景。例如，在不同屏幕尺寸下优先显示重要内容，隐藏次要内容。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -64,143 +67,141 @@ displayPriority(value: number): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | 是 | 设置当前组件在布局容器中显示的优先级。  默认值：1  **说明：**  仅在[Row](ts-container-row.md)/[Column](ts-container-column.md)/[Flex(单行)](ts-container-flex.md)容器组件中生效。  小数点后的数字不作优先级区分，即区间为[x, x + 1)内的数字视为相同优先级。例如：1.0与1.9为同一优先级。  子组件的displayPriority均不大于1时，优先级没有区别。  当子组件的displayPriority大于1时，displayPriority数值越大，优先级越高。若父容器空间不足，隐藏低优先级子组件。若某一优先级的子组件被隐藏，则优先级更低的子组件也都被隐藏。 |
+| value | number | 是 | 设置当前组件在布局容器中显示的优先级，取值范围[0, +∞)。  默认值：1  **说明：**  仅在[Row](ts-container-row.md)/[Column](ts-container-column.md)/[Flex(单行)](ts-container-flex.md)容器组件中生效。  当容器空间有限，需要控制组件显示顺序或隐藏低优先级组件时使用（如在Flex容器中根据空间大小动态显示内容）。建议根据组件重要性设置优先级，关键组件设置较大的值（如2-10），次要组件设置较小的值（如1）。  小数点后的数字不影响优先级。不大于1的所有值优先级相同。大于1时，displayPriority的整数部分越大，优先级越高；同一整数区间内的值优先级相同。例如：0.5和1.0优先级相同（均不大于1）；1.5和1.9优先级相同（整数部分均为1）；2.0和2.9优先级相同（整数部分均为2），且高于1.x的优先级。  若父容器空间不足，隐藏低优先级子组件。若某一优先级级别的子组件被隐藏，则所有更低优先级的子组件也都会被隐藏。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件实例，支持链式调用。 |
 
 ## 示例
-
-PhonePC/2in1TabletTVWearable
 
 ### 示例1（设置组件宽高比）
 
 通过aspectRatio设置不同的宽高比。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct AspectRatioExample {
-5. private children: string[] = ['1', '2', '3', '4', '5', '6']
+```ts
+// xxx.ets
+@Entry
+@Component
+struct AspectRatioExample {
+  private children: string[] = ['1', '2', '3', '4', '5', '6']
 
-7. build() {
-8. Column({ space: 20 }) {
-9. Text('using container: row').fontSize(14).fontColor(0xCCCCCC).width('100%')
-10. Row({ space: 10 }) {
-11. ForEach(this.children, (item:string) => {
-12. // 组件宽度 = 组件高度*1.5 = 90
-13. Text(item)
-14. .backgroundColor(0xbbb2cb)
-15. .fontSize(20)
-16. .aspectRatio(1.5)
-17. .height(60)
-18. // 组件高度 = 组件宽度/1.5 = 60/1.5 = 40
-19. Text(item)
-20. .backgroundColor(0xbbb2cb)
-21. .fontSize(20)
-22. .aspectRatio(1.5)
-23. .width(60)
-24. }, (item:string) => item)
-25. }
-26. .size({ width: "100%", height: 100 })
-27. .backgroundColor(0xd2cab3)
-28. .clip(true)
+  build() {
+    Column({ space: 20 }) {
+      Text('using container: row').fontSize(14).fontColor(0xCCCCCC).width('100%')
+      Row({ space: 10 }) {
+        ForEach(this.children, (item:string) => {
+          // 组件宽度 = 组件高度*1.5 = 90
+          Text(item)
+            .backgroundColor(0xbbb2cb)
+            .fontSize(20)
+            .aspectRatio(1.5)
+            .height(60)
+          // 组件高度 = 组件宽度/1.5 = 60/1.5 = 40
+          Text(item)
+            .backgroundColor(0xbbb2cb)
+            .fontSize(20)
+            .aspectRatio(1.5)
+            .width(60)
+        }, (item:string) => item)
+      }
+      .size({ width: "100%", height: 100 })
+      .backgroundColor(0xd2cab3)
+      .clip(true)
 
-30. // grid子元素width/height=3/2
-31. Text('using container: grid').fontSize(14).fontColor(0xCCCCCC).width('100%')
-32. Grid() {
-33. ForEach(this.children, (item:string) => {
-34. GridItem() {
-35. Text(item)
-36. .backgroundColor(0xbbb2cb)
-37. .fontSize(40)
-38. .width('100%')
-39. .aspectRatio(1.5)
-40. }
-41. }, (item:string) => item)
-42. }
-43. .columnsTemplate('1fr 1fr 1fr')
-44. .columnsGap(10)
-45. .rowsGap(10)
-46. .size({ width: "100%", height: 165 })
-47. .backgroundColor(0xd2cab3)
-48. }.padding(10)
-49. }
-50. }
+      // grid子元素width/height=3/2
+      Text('using container: grid').fontSize(14).fontColor(0xCCCCCC).width('100%')
+      Grid() {
+        ForEach(this.children, (item:string) => {
+          GridItem() {
+            Text(item)
+              .backgroundColor(0xbbb2cb)
+              .fontSize(40)
+              .width('100%')
+              .aspectRatio(1.5)
+          }
+        }, (item:string) => item)
+      }
+      .columnsTemplate('1fr 1fr 1fr')
+      .columnsGap(10)
+      .rowsGap(10)
+      .size({ width: "100%", height: 165 })
+      .backgroundColor(0xd2cab3)
+    }.padding(10)
+  }
+}
 ```
 
 **图1** 竖屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/Y5FuE0K9QWi2iZECdXguRw/zh-cn_image_0000002558766016.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/Vfcarz-0RE-ik40r1QTm1A/zh-cn_image_0000002706835628.png)
 
 **图2** 横屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/WdY9PXIGQGa0m8FhBUb3LA/zh-cn_image_0000002558606358.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/20LZ2aMVTnStepIH823-Yw/zh-cn_image_0000002736314733.png)
 
 ### 示例2（设置组件显示优先级）
 
 使用displayPriority为子组件设置显示优先级。
 
-```
-1. class ContainerInfo {
-2. label: string = '';
-3. size: string = '';
-4. }
+```ts
+class ContainerInfo {
+  label: string = '';
+  size: string = '';
+}
 
-6. class ChildInfo {
-7. text: string = '';
-8. priority: number = 0;
-9. }
+class ChildInfo {
+  text: string = '';
+  priority: number = 0;
+}
 
-11. @Entry
-12. @Component
-13. struct DisplayPriorityExample {
-14. // 显示容器大小
-15. private container: ContainerInfo[] = [
-16. { label: 'Big container', size: '90%' },
-17. { label: 'Middle container', size: '50%' },
-18. { label: 'Small container', size: '30%' }
-19. ]
-20. private children: ChildInfo[] = [
-21. { text: '1\n(priority:2)', priority: 2 },
-22. { text: '2\n(priority:1)', priority: 1 },
-23. { text: '3\n(priority:3)', priority: 3 },
-24. { text: '4\n(priority:1)', priority: 1 },
-25. { text: '5\n(priority:2)', priority: 2 }
-26. ]
-27. @State currentIndex: number = 0;
+@Entry
+@Component
+struct DisplayPriorityExample {
+  // 显示容器大小
+  private container: ContainerInfo[] = [
+    { label: 'Big container', size: '90%' },
+    { label: 'Middle container', size: '50%' },
+    { label: 'Small container', size: '30%' }
+  ]
+  private children: ChildInfo[] = [
+    { text: '1\n(priority:2)', priority: 2 },
+    { text: '2\n(priority:1)', priority: 1 },
+    { text: '3\n(priority:3)', priority: 3 },
+    { text: '4\n(priority:1)', priority: 1 },
+    { text: '5\n(priority:2)', priority: 2 }
+  ]
+  @State currentIndex: number = 0;
 
-29. build() {
-30. Column({ space: 10 }) {
-31. // 切换父级容器大小
-32. Button(this.container[this.currentIndex].label).backgroundColor(0x317aff)
-33. .onClick(() => {
-34. this.currentIndex = (this.currentIndex + 1) % this.container.length;
-35. })
-36. // 通过变量设置Flex父容器宽度
-37. Flex({ justifyContent: FlexAlign.SpaceBetween }) {
-38. ForEach(this.children, (item:ChildInfo) => {
-39. // 使用displayPriority给子组件绑定显示优先级
-40. Text(item.text)
-41. .width(120)
-42. .height(60)
-43. .fontSize(24)
-44. .textAlign(TextAlign.Center)
-45. .backgroundColor(0xbbb2cb)
-46. .displayPriority(item.priority)
-47. }, (item:ChildInfo) => item.text)
-48. }
-49. .width(this.container[this.currentIndex].size)
-50. .backgroundColor(0xd2cab3)
-51. }.width("100%").margin({ top: 50 })
-52. }
-53. }
+  build() {
+    Column({ space: 10 }) {
+      // 切换父级容器大小
+      Button(this.container[this.currentIndex].label).backgroundColor(0x317aff)
+        .onClick(() => {
+          this.currentIndex = (this.currentIndex + 1) % this.container.length;
+        })
+      // 通过变量设置Flex父容器宽度
+      Flex({ justifyContent: FlexAlign.SpaceBetween }) {
+        ForEach(this.children, (item:ChildInfo) => {
+          // 使用displayPriority给子组件绑定显示优先级
+          Text(item.text)
+            .width(120)
+            .height(60)
+            .fontSize(24)
+            .textAlign(TextAlign.Center)
+            .backgroundColor(0xbbb2cb)
+            .displayPriority(item.priority)
+        }, (item:ChildInfo) => item.text)
+      }
+      .width(this.container[this.currentIndex].size)
+      .backgroundColor(0xd2cab3)
+    }.width("100%").margin({ top: 50 })
+  }
+}
 ```
 
 横屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/hlYTcNggTBqC7n9AfGvbiA/zh-cn_image_0000002589325885.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/9sSLx4b8Q9ivqGxy2k0wWQ/zh-cn_image_0000002706675690.gif)

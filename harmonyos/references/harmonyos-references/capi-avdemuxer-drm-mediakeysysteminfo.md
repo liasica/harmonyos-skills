@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avde
 title: DRM_MediaKeySystemInfo
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 结构体 > DRM_MediaKeySystemInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:10+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:4058c62ecc295c55c34fab6ced91f4a69000ca6e52eef654710fdb8b8246e18b
+scraped_at: 2026-09-02T14:52:47+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:31bc71f884f79ae4e5bfcad5fed31f99fd464c183d2bc3483cecebcb7acf3396
 ---
 
-```
-1. typedef struct DRM_MediaKeySystemInfo DRM_MediaKeySystemInfo
+```c
+typedef struct DRM_MediaKeySystemInfo DRM_MediaKeySystemInfo
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 为DRM\_MediaKeySystemInfo接口定义native层对象。
 

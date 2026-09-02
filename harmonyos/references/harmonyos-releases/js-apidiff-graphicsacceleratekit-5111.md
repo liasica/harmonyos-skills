@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-graphicsacceleratekit-5111
 title: Graphics Accelerate Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.1.1(19) > OS平台能力 > API变更清单 > 5.1.1(19) Beta1引入的API > Graphics Accelerate Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.1(19) > OS平台能力 > API变更清单 > 5.1.1(19) Beta1引入的API > Graphics Accelerate Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:54+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:32+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:8701aeb901a9fe4171c3630f7f6b3e1001b28db38edaebab75b8d944854c151e
 ---
 

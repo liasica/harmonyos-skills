@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-accelerate-assetdownload-faq-10
-title: 若开发者在游戏中使用Unity Addressables资源管理框架，如何集成游戏资源包后台下载功能？
-breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > Graphics Accelerate Kit常见问题 > 游戏资源加速服务 > 若开发者在游戏中使用Unity Addressables资源管理框架，如何集成游戏资源包后台下载功能？
+title: 若开发者在游戏中使用Unity Addressables资源管理框架，如何集成游戏资源包后台下载功能
+breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > Graphics Accelerate Kit常见问题 > 游戏资源加速服务 > 若开发者在游戏中使用Unity Addressables资源管理框架，如何集成游戏资源包后台下载功能
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:48+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b8e879368e985edf66c5dae7730d76b873f865afbf3789d4b7691bb2cd275474
+scraped_at: 2026-09-02T14:50:22+08:00
+doc_updated_at: 2026-05-08
+content_hash: sha256:bb13f5645a2cb7fb0aff7ed4ec560b2d35212f5ea6179c40f0bc5a05ea962374
 ---
 
 Addressables资源加载机制是根据Addressables的缓存文件判定资源包是否已下载，若未下载再通过游戏资源包后台下载功能把资源文件下载到Addressables的缓存目录下。集成步骤如下：
@@ -18,14 +18,14 @@ Addressables资源加载机制是根据Addressables的缓存文件判定资源�
   4. 把需要下载的资源列表信息转换成游戏资源包下载的[AssetDownloadConfig](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadconfig)对象返回给系统。
   5. 把catalog.json，catalog.hash以及GroupData.json文件存放在Addressables目标目录下，目录地址参考如下：
 
-     ```
-     1. /data/app/el2/<USERID>/base/<PACKAGENAME>/haps/entry/files/com.unity.addressables
+     ```typescript
+     /data/app/el2/<USERID>/base/<PACKAGENAME>/haps/entry/files/com.unity.addressables
      ```
 * 在游戏资源包下载的[onBackgroundDownloadSucceeded](../harmonyos-references/graphics-accelerate-extensionability.md#onbackgrounddownloadsucceeded)生命周期函数中：
 
   完成下载的资源文件按照Addressables缓存文件规则，转移到Addressables缓存目录下。缓存目录参考如下：
 
-  ```
-  1. // 缓存目录规则：{缓存根目录}/{资源名称}/{资源哈希值}
-  2. /data/app/el2/<USERID>/base/<PACKAGENAME>/haps/entry/files/TuanjieCache/Shared/feda8eb785f66e8cbfd86bda86dd111e/d73e91fc7611459d41ea88e823492c08
+  ```typescript
+  // 缓存目录规则：{缓存根目录}/{资源名称}/{资源哈希值}
+  /data/app/el2/<USERID>/base/<PACKAGENAME>/haps/entry/files/TuanjieCache/Shared/feda8eb785f66e8cbfd86bda86dd111e/d73e91fc7611459d41ea88e823492c08
   ```

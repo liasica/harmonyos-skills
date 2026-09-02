@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-updat
 title: UpdateDynamicOutputDesc
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator > UpdateDynamicOutputDesc
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:49+08:00
+scraped_at: 2026-09-02T15:00:12+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:bf3d3a6a3573a0088679c94458c031492f4c87e6b0d91b032ba29ab041ea96bc
+content_hash: sha256:7b5c23ad97810e874ac7fce1ccc3e49f8d210d24d567a2e98352374eea9d4479
 ---
 
 ## 函数功能
@@ -14,13 +14,13 @@ content_hash: sha256:bf3d3a6a3573a0088679c94458c031492f4c87e6b0d91b032ba29ab041e
 
 ## 函数原型
 
-说明
+**说明** 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 
-```
-1. graphStatus UpdateDynamicOutputDesc(const std::string &name, uint32_t index, const TensorDesc &tensor_desc);
-2. graphStatus UpdateDynamicOutputDesc(const char_t *name, uint32_t index, const TensorDesc &tensor_desc);
+```cpp
+graphStatus UpdateDynamicOutputDesc(const std::string &name, uint32_t index, const TensorDesc &tensor_desc);
+graphStatus UpdateDynamicOutputDesc(const char_t *name, uint32_t index, const TensorDesc &tensor_desc);
 ```
 
 ## 参数说明

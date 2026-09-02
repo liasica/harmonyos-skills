@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/commonlibrary
 title: 基础库常见问题
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS基础类库 > 基础库常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:28+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:2508ed5bf115eb6597d3251f89bd188127577078705bfd88f66679d170e4fafa
+scraped_at: 2026-09-02T14:49:45+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:6ea1d9c17672c446e7025e08f45dd6da46dfb3250382d0572cd28adab8d6dad8
 ---
 
 ## 解析大文件xml发生内存溢出（Out of Memory）
@@ -33,31 +33,31 @@ libxml2库支持的回调函数主要如下所示：
 
 代码示例：
 
-```
-1. // 用户自定义数据
-2. ParseContext context;
+```c
+// 用户自定义数据
+ParseContext context;
 
-4. // 初始化SAX Handler结构体
-5. xmlSAXHandler SAXHandler = { 0 };
+// 初始化SAX Handler结构体
+xmlSAXHandler SAXHandler = { 0 };
 
-7. // 绑定回调函数，用于在解析过程中处理XML数据
-8. SAXHandler.startDocument = startDocument;
-9. SAXHandler.endDocument = endDocument;
-10. SAXHandler.startElement = startElement;
-11. SAXHandler.endElement = endElement;
-12. SAXHandler.characters = characters;
+// 绑定回调函数，用于在解析过程中处理XML数据
+SAXHandler.startDocument = startDocument;
+SAXHandler.endDocument = endDocument;
+SAXHandler.startElement = startElement;
+SAXHandler.endElement = endElement;
+SAXHandler.characters = characters;
 
-14. // 解析文件
-15. // 用户自定义数据指针
-16. int ret = xmlSAXUserParseFile(&SAXHandler, &context, xmlFileName);
+// 解析文件
+// 用户自定义数据指针
+int ret = xmlSAXUserParseFile(&SAXHandler, &context, xmlFileName);
 
-18. if (ret != 0) {
-19. printf("Failed to parse XML file.\n");
-20. return 1;
-21. }
+if (ret != 0) {
+    printf("Failed to parse XML file.\n");
+    return 1;
+}
 
-23. // 清理libxml2全局状态
-24. xmlCleanupParser();
+// 清理libxml2全局状态
+xmlCleanupParser();
 ```
 
 ## 定时器被误删除
@@ -66,18 +66,18 @@ libxml2库支持的回调函数主要如下所示：
 
 例如以下场景：
 
-```
-1. export class testClass {
-2. // 初始值设置为0
-3. private timeoutId: number = 0;
-4. private intervalId: number = 0;
+```ts
+export class testClass {
+    // 初始值设置为0
+    private timeoutId: number = 0;
+    private intervalId: number = 0;
 
-6. // 在某些情况下没有调用setTimeout设置定时器就调用了clearAnimation函数删除了定时器，就会导致timeoutId为0的定时器被删除
-7. clearAnimation(): void {
-8. clearInterval(this.intervalId);
-9. clearTimeout(this.timeoutId);
-10. }
-11. }
+    // 在某些情况下没有调用setTimeout设置定时器就调用了clearAnimation函数删除了定时器，就会导致timeoutId为0的定时器被删除
+    clearAnimation(): void {
+        clearInterval(this.intervalId);
+        clearTimeout(this.timeoutId);
+    }
+}
 ```
 
 可以通过以下方法快速定位：
@@ -88,70 +88,123 @@ libxml2库支持的回调函数主要如下所示：
 
 示例代码：
 
-```
-1. // 自定义TS文件clearTimeout.ts
+```ts
+// 自定义TS文件clearTimeout.ts
 
-3. // test函数需要在程序调用clearTimeout函数之前调用
-4. export function test() {
-5. // 完全兼容原始 clearTimeout 类型
-6. const origClear = globalThis.clearTimeout;
-7. globalThis.clearTimeout = (...args: any[]) => {
-8. const timeoutId = args[0];
+// test函数需要在程序调用clearTimeout函数之前调用
+export function test() {
+    // 完全兼容原始 clearTimeout 类型
+    const origClear = globalThis.clearTimeout;
+    globalThis.clearTimeout = (...args: any[]) => {
+        const timeoutId = args[0];
 
-10. // 检查所有可能的 timerId = 0 的情况
-11. if (timeoutId === 0 || timeoutId === "0") {
-12. console.info("清除 timerId = 0 !", new Error().stack);
-13. // 触发断点
-14. debugger;
-15. }
+        // 检查所有可能的 timerId = 0 的情况
+        if (timeoutId === 0 || timeoutId === "0") {
+            console.info("清除 timerId = 0 !", new Error().stack);
+            // 触发断点
+            debugger;
+        }
 
-17. // 使用 apply 确保正确传递所有参数
-18. return origClear.apply(this, args);
-19. }
-20. }
-```
-
-```
-1. // 自定义ets文件TimerTest.ets
-
-3. export class testClass {
-4. // 初始值设置为0
-5. private timeoutId: number = 0;
-6. private intervalId: number = 0;
-
-8. // 在某些情况下没有调用setTimeout设置定时器就调用了clearAnimation函数删除了定时器，就会导致timeoutId为0的定时器被删除
-9. clearAnimation(): void {
-10. clearInterval(this.intervalId);
-11. clearTimeout(this.timeoutId);
-12. }
-13. }
+        // 使用 apply 确保正确传递所有参数
+        return origClear.apply(this, args);
+    }
+}
 ```
 
-```
-1. import { test } from './clearTimeout';
-2. import { testClass } from './TimerTest';
+```ts
+// 自定义ets文件TimerTest.ets
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. @State message: string = 'Hello World';
+export class testClass {
+    // 初始值设置为0
+    private timeoutId: number = 0;
+    private intervalId: number = 0;
 
-9. build() {
-10. Row() {
-11. Column() {
-12. Text(this.message)
-13. .fontSize(50)
-14. .fontWeight(FontWeight.Bold)
-15. .onClick(() => {
-16. test();
-17. let testCase = new testClass();
-18. testCase.clearAnimation();
-19. this.message = 'success';
-20. })
-21. }
-22. .width('100%')
-23. }
-24. .height('100%')
-25. }
-26. }
+    // 在某些情况下没有调用setTimeout设置定时器就调用了clearAnimation函数删除了定时器，就会导致timeoutId为0的定时器被删除
+    clearAnimation(): void {
+        clearInterval(this.intervalId);
+        clearTimeout(this.timeoutId);
+    }
+}
 ```
+
+```ts
+import { test } from './clearTimeout';
+import { testClass } from './TimerTest';
+
+@Entry
+@Component
+struct Index {
+    @State message: string = 'Hello World';
+
+    build() {
+      Row() {
+        Column() {
+          Text(this.message)
+            .fontSize(50)
+            .fontWeight(FontWeight.Bold)
+            .onClick(() => {
+                test();
+                let testCase = new testClass();
+                testCase.clearAnimation();
+                this.message = 'success';
+            })
+        }
+        .width('100%')
+      }
+      .height('100%')
+    }
+}
+```
+
+## Base64编码规则
+
+Base64编码使用一组特定的64个字符来表示二进制数据。这64个字符包括大写字母A-Z、小写字母a-z、数字0-9，以及符号"+"和"/"。在某些情况下，还会使用"="作为填充字符。Base64编码将原始数据按每3个字节分组，每组3个字节转换为4个Base64字符。
+
+Base64编码表如下：
+
+| 索引 | 字符 | 索引 | 字符 | 索引 | 字符 | 索引 | 字符 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 0 | A | 16 | Q | 32 | g | 48 | w |
+| 1 | B | 17 | R | 33 | h | 49 | x |
+| 2 | C | 18 | S | 34 | i | 50 | y |
+| 3 | D | 19 | T | 35 | j | 51 | z |
+| 4 | E | 20 | U | 36 | k | 52 | 0 |
+| 5 | F | 21 | V | 37 | l | 53 | 1 |
+| 6 | G | 22 | W | 38 | m | 54 | 2 |
+| 7 | H | 23 | X | 39 | n | 55 | 3 |
+| 8 | I | 24 | Y | 40 | o | 56 | 4 |
+| 9 | J | 25 | Z | 41 | p | 57 | 5 |
+| 10 | K | 26 | a | 42 | q | 58 | 6 |
+| 11 | L | 27 | b | 43 | r | 59 | 7 |
+| 12 | M | 28 | c | 44 | s | 60 | 8 |
+| 13 | N | 29 | d | 45 | t | 61 | 9 |
+| 14 | O | 30 | e | 46 | u | 62 | + |
+| 15 | P | 31 | f | 47 | v | 63 | / |
+
+由此可见Base64是基于64个可打印字符来表示二进制数据的编解码方式。将二进制数据转为字符串（ASCII码），方便数据传输和加解密保护。
+
+它的编码实现原理为：
+
+将需要编码的字符串转换成二进制序列，然后按每6个二进制位为一组，分成若干组，如果不足6位，则低位补0。每6位组成一个新的字节，高位补00，构成一个新的二进制序列，最后根据Base64索引表中的值找到对应的字符。
+
+例如字符串“ABC”，我们进行Base64编码，最后结果会是QUJD：
+
+| 原始字符 | A | B | C | － |
+| --- | --- | --- | --- | --- |
+| ASCII编码 | 65 | 66 | 67 | － |
+| 二进制位 | 01000001 | 01000010 | 01000011 | － |
+| 编码转换 | 010000 | 010100 | 001001 | 000011 |
+| base64索引值 | 16 | 20 | 9 | 3 |
+| base64字符 | Q | U | J | D |
+
+若原始字符串长度不是3的倍数，编码后末尾用“=”填充，使编码后的Base64字符串最终长度为4的倍数，以满足转换后Base64长度要求。
+
+例如字符串“AB”转换后为“QUI”为了凑齐4字节，需要在末尾补充“=”：
+
+| 原始字符 | A | B | － | － |
+| --- | --- | --- | --- | --- |
+| ASCII编码 | 65 | 66 | － | － |
+| 二进制位 | 01000001 | 01000010 | － | － |
+| 编码转换（不足6位补0） | 010000 | 010100 | 001000 | － |
+| base64索引值 | 16 | 20 | 8 | － |
+| base64字符 | Q | U | I | = |

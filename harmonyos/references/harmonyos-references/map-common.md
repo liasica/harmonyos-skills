@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-commo
 title: mapCommon（地图属性模型）
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > mapCommon（地图属性模型）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:25+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:fb54e3c60b47c82773c15b199748620ee5406dffa636acad04b05adf21cc84aa
+scraped_at: 2026-09-02T15:03:00+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3700f8f7497444a18e0b152f5083af86716c2ae445af6256f4db19ae64310b20
 ---
 
 本模块提供map组件相关属性设置接口。
@@ -14,15 +14,11 @@ content_hash: sha256:fb54e3c60b47c82773c15b199748620ee5406dffa636acad04b05adf21c
 
 ## 导入模块
 
-PhonePC/2in1TabletWearable
-
-```
-1. import { mapCommon } from '@kit.MapKit';
+```typescript
+import { mapCommon } from '@kit.MapKit';
 ```
 
 ## MapOptions
-
-PhonePC/2in1TabletWearable
 
 提供Map组件初始化的属性。
 
@@ -36,9 +32,9 @@ PhonePC/2in1TabletWearable
 | --- | --- | --- | --- | --- |
 | mapType | [MapType](map-common.md#maptype) | 否 | 是 | 地图类型，默认值为[MapType](map-common.md#maptype).STANDARD，异常值按默认值处理。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | position | [CameraPosition](map-common.md#cameraposition) | 否 | 否 | 地图相机位置。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
-| bounds | [LatLngBounds](map-common.md#latlngbounds) | 否 | 是 | 地图展示边界，异常值根据无边界处理。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。  **说明：**  西南角纬度不能大于东北角纬度。 |
-| minZoom | number | 否 | 是 | 地图最小层级，有效范围：[2, 20]，默认值为2，异常值按默认值处理。  如果设置的最小缩放级别小于2，minZoom会取2。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
-| maxZoom | number | 否 | 是 | 地图最大层级，有效范围：[2, 20]，默认值为20，异常值按默认值处理。  如果设置的最大缩放级别大于20，maxZoom会取20。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| bounds | [LatLngBounds](map-common.md#latlngbounds) | 否 | 是 | 地图展示边界，默认值无边界，异常值按默认值处理。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。  **说明：**  西南角纬度不能大于东北角纬度。 |
+| minZoom | number | 否 | 是 | 地图最小层级，有效范围：[2, 20]，默认值为2，异常值按默认值处理。  如果设置的最小缩放级别小于2，minZoom会取2；如果设置的最小缩放层级大于20，minZoom会取20。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| maxZoom | number | 否 | 是 | 地图最大层级，有效范围：[2, 20]，默认值为20，异常值按默认值处理。  如果设置的最大缩放级别小于2，maxZoom会取2；如果设置的最大缩放层级大于20，maxZoom会取20。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | rotateGesturesEnabled | boolean | 否 | 是 | 是否支持旋转手势，默认值为true，异常值按默认值处理。  - true：支持  - false：不支持  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | scrollGesturesEnabled | boolean | 否 | 是 | 是否支持滑动手势，默认值为true，异常值按默认值处理。  - true：支持  - false：不支持  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | zoomGesturesEnabled | boolean | 否 | 是 | 是否支持缩放手势，默认值为true，异常值按默认值处理。  - true：支持  - false：不支持  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
@@ -60,46 +56,44 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. // 地图初始化参数
-2. let mapOptions: mapCommon.MapOptions = {
-3. mapType: mapCommon.MapType.STANDARD,
-4. position: {
-5. target: {
-6. latitude: 39.9,
-7. longitude: 116.4
-8. },
-9. zoom: 10
-10. },
-11. bounds: {
-12. northeast: {
-13. latitude: 41.5,
-14. longitude: 125.5
-15. },
-16. southwest: {
-17. latitude: 37.5,
-18. longitude: 108.5
-19. }
-20. },
-21. maxZoom: 20,
-22. minZoom: 2,
-23. rotateGesturesEnabled: true,
-24. scrollGesturesEnabled: true,
-25. zoomGesturesEnabled: true,
-26. zoomControlsEnabled: true,
-27. myLocationControlsEnabled: false,
-28. dayNightMode: mapCommon.DayNightMode.NIGHT,
-29. scaleControlsEnabled: true,
-30. alwaysShowScaleEnabled: true,
-31. scaleUnit: mapCommon.ScaleUnit.METRIC_UNIT,
-32. language: 'zh-Hans',
-33. approveNumberEnabled: true
-34. };
+```typescript
+// 地图初始化参数
+let mapOptions: mapCommon.MapOptions = {
+  mapType: mapCommon.MapType.STANDARD,
+  position: {
+    target: {
+      latitude: 39.9,
+      longitude: 116.4
+    },
+    zoom: 10
+  },
+  bounds: {
+    northeast: {
+      latitude: 41.5,
+      longitude: 125.5
+    },
+    southwest: {
+      latitude: 37.5,
+      longitude: 108.5
+    }
+  },
+  maxZoom: 20,
+  minZoom: 2,
+  rotateGesturesEnabled: true,
+  scrollGesturesEnabled: true,
+  zoomGesturesEnabled: true,
+  zoomControlsEnabled: true,
+  myLocationControlsEnabled: false,
+  dayNightMode: mapCommon.DayNightMode.NIGHT,
+  scaleControlsEnabled: true,
+  alwaysShowScaleEnabled: true,
+  scaleUnit: mapCommon.ScaleUnit.METRIC_UNIT,
+  language: 'zh-Hans',
+  approveNumberEnabled: true
+};
 ```
 
 ## LatLng
-
-PhonePC/2in1TabletWearable
 
 经纬度对象。
 
@@ -113,21 +107,19 @@ PhonePC/2in1TabletWearable
 
 | 名称 | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| latitude | number | 否 | 否 | 纬度，取值范围：[-90, 90]。 |
-| longitude | number | 否 | 否 | 经度，取值范围：[-180, 180)。 |
+| latitude | number | 否 | 否 | 纬度，单位：度，取值范围：[-90, 90]。 |
+| longitude | number | 否 | 否 | 经度，单位：度，取值范围：[-180, 180)。 |
 
 **示例：**
 
-```
-1. let position: mapCommon.LatLng = {
-2. latitude: 39.9,
-3. longitude: 116.4
-4. };
+```typescript
+let position: mapCommon.LatLng = {
+  latitude: 39.9,
+  longitude: 116.4
+};
 ```
 
 ## CameraPosition
-
-PhonePC/2in1TabletWearable
 
 相机状态，包括位置、倾斜角、缩放级别等信息。
 
@@ -143,26 +135,24 @@ PhonePC/2in1TabletWearable
 | --- | --- | --- | --- | --- |
 | target | [LatLng](map-common.md#latlng) | 否 | 否 | 地图中心位置的经纬度坐标。 |
 | zoom | number | 否 | 否 | 屏幕中心附近的缩放级别，取值范围：[2, 20]，默认值为2。 |
-| tilt | number | 否 | 是 | 相机的倾斜角度，即相机与垂直于地球表面的线的夹角，取值范围：[0, 75]，默认值为0。 |
-| bearing | number | 否 | 是 | 地图旋转角度。  以正北方向为0度、顺时针方向为正的角度，默认值为0，取值范围：[0, 360)。超出取值范围的值会换算成取值范围内的值，比如361会被换算成1，-1换算为359。 |
+| tilt | number | 否 | 是 | 相机与垂直于地球表面的线的夹角角度，单位：度，取值范围：[0, 75]，默认值为0。 |
+| bearing | number | 否 | 是 | 地图旋转角度。  以正北方向为0度、顺时针方向为正的角度，单位：度，默认值为0，取值范围：[0, 360)。超出取值范围的值会换算成取值范围内的值，比如361会被换算成1，-1换算为359。 |
 
 **示例：**
 
-```
-1. let cameraPosition: mapCommon.CameraPosition = {
-2. target: {
-3. latitude: 39.9,
-4. longitude: 116.4
-5. },
-6. zoom: 10,
-7. tilt: 45,
-8. bearing: 90
-9. };
+```typescript
+let cameraPosition: mapCommon.CameraPosition = {
+  target: {
+    latitude: 39.9,
+    longitude: 116.4
+  },
+  zoom: 10,
+  tilt: 45,
+  bearing: 90
+};
 ```
 
 ## LatLngBounds
-
-PhonePC/2in1TabletWearable
 
 经纬度划分的一个矩形区域。
 
@@ -181,22 +171,20 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. let bounds: mapCommon.LatLngBounds = {
-2. northeast: {
-3. latitude: 41.5,
-4. longitude: 125.5
-5. },
-6. southwest: {
-7. latitude: 37.5,
-8. longitude: 108.5
-9. }
-10. };
+```typescript
+let bounds: mapCommon.LatLngBounds = {
+  northeast: {
+    latitude: 41.5,
+    longitude: 125.5
+  },
+  southwest: {
+    latitude: 37.5,
+    longitude: 108.5
+  }
+};
 ```
 
 ## PatternItem
-
-PhonePC/2in1TabletWearable
 
 圆、多边形或折线的边框样式。
 
@@ -215,16 +203,14 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. let patternItem: mapCommon.PatternItem = {
-2. type: mapCommon.PatternItemType.DASH,
-3. length: 10
-4. };
+```typescript
+let patternItem: mapCommon.PatternItem = {
+  type: mapCommon.PatternItemType.DASH,
+  length: 10
+};
 ```
 
 ## MyLocationStyle
-
-PhonePC/2in1TabletWearable
 
 自定义定位样式。
 
@@ -238,26 +224,24 @@ PhonePC/2in1TabletWearable
 | --- | --- | --- | --- | --- |
 | anchorU | number | 否 | 是 | 锚点横坐标方向的偏移量，建议取值[0, 1]，默认值为0.5。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | anchorV | number | 否 | 是 | 锚点纵坐标方向的偏移量，建议取值[0, 1]，默认值为0.5。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
-| icon | string | [image.PixelMap](arkts-apis-image-pixelmap.md) | [Resource](ts-types.md#resource) | 否 | 是 | 定位图标。  - 图片格式支持jpg、jpeg、png、gif、webp、svg。  - string类型入参支持两种格式：  - 资源相对路径格式：图标存放在resources/rawfile，icon参数传入rawfile文件夹下的相对路径。  - toDataURL格式（如data:image/png;base64,<图片的Base64字节编码值>）。  **说明：**  从5.0.0(12)版本开始，icon属性支持[image.PixelMap](arkts-apis-image-pixelmap.md)和[Resource](ts-types.md#resource)类型。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| icon | string | [image.PixelMap](arkts-apis-image-pixelmap.md) | [Resource](ts-types.md#resource) | 否 | 是 | 定位图标。  - 图片格式支持jpg、jpeg、png、gif（只支持显示第一帧）、webp、svg。  - string类型入参支持两种格式：  - 资源相对路径格式：图标存放在resources/rawfile，icon参数传入rawfile文件夹下的相对路径。  - toDataURL格式（如data:image/png;base64,<图片的Base64字节编码值>）。  **说明：**  从5.0.0(12)版本开始，icon属性支持[image.PixelMap](arkts-apis-image-pixelmap.md)和[Resource](ts-types.md#resource)类型。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | radiusFillColor | number | 否 | 是 | 定位图标填充色，默认值为0x8F7570FF（紫色），颜色值为ARGB格式。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | displayType | [MyLocationDisplayType](map-common.md#mylocationdisplaytype) | 否 | 是 | 定位图标的展示样式，默认值为[MyLocationDisplayType](map-common.md#mylocationdisplaytype).DEFAULT。  **起始版本：** 5.0.0(12)  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 
 **示例：**
 
-```
-1. let style: mapCommon.MyLocationStyle = {
-2. anchorU: 0.5,
-3. anchorV: 1,
-4. radiusFillColor: 0xffff0000,
-5. // 图标需存放在resources/rawfile目录下
-6. icon: 'test.png',
-7. displayType: mapCommon.MyLocationDisplayType.FOLLOW
-8. };
+```typescript
+let style: mapCommon.MyLocationStyle = {
+  anchorU: 0.5,
+  anchorV: 1,
+  radiusFillColor: 0xffff0000,
+  // 图标需存放在resources/rawfile目录下
+  icon: 'test.png',
+  displayType: mapCommon.MyLocationDisplayType.FOLLOW
+};
 ```
 
 ## Poi
-
-PhonePC/2in1TabletWearable
 
 地图上的POI对象。
 
@@ -277,20 +261,18 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. let poi: mapCommon.Poi = {
-2. id: "1001",
-3. name: "城东烧烤店",
-4. position: {
-5. latitude: 39.6,
-6. longitude: 116.4
-7. }
-8. };
+```typescript
+let poi: mapCommon.Poi = {
+  id: "1001",
+  name: "城东烧烤店",
+  position: {
+    latitude: 39.6,
+    longitude: 116.4
+  }
+};
 ```
 
 ## BaseOverlayOptions
-
-PhonePC/2in1TabletWearable
 
 定义覆盖物基本属性。[MarkerOptions](map-common.md#markeroptions)、[MapCircleOptions](map-common.md#mapcircleoptions)、[MapPolygonOptions](map-common.md#mappolygonoptions)、[MapPolylineOptions](map-common.md#mappolylineoptions)、[MapArcParams](map-common.md#maparcparams)、[ImageOverlayParams](map-common.md#imageoverlayparams)、[BasePriorityOverlayParams](map-common.md#basepriorityoverlayparams)等继承该基础类。
 
@@ -309,8 +291,6 @@ PhonePC/2in1TabletWearable
 
 ## MarkerOptions
 
-PhonePC/2in1TabletWearable
-
 描述Marker属性，继承[BaseOverlayOptions](map-common.md#baseoverlayoptions)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -323,18 +303,18 @@ PhonePC/2in1TabletWearable
 | --- | --- | --- | --- | --- |
 | position | [LatLng](map-common.md#latlng) | 否 | 否 | 标记的位置坐标。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | rotation | number | 否 | 是 | 标记的旋转角度，单位：度。  以正北方向为0度、顺时针方向为正的角度，默认值为0，取值范围：[0, 360)。超出取值范围的值会换算成取值范围内的值，比如361会被换算成1，-1换算为359。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
-| icon | string | [image.PixelMap](arkts-apis-image-pixelmap.md) | [Resource](ts-types.md#resource) | 否 | 是 | 图标，不传时显示默认图标。  - 图片格式支持jpg、jpeg、png、gif、webp、svg。  - string类型入参支持两种格式：  - 资源相对路径格式：图标存放在resources/rawfile，icon参数传入rawfile文件夹下的相对路径。  - toDataURL格式（如data:image/png;base64,<图片的Base64字节编码值>）。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。  **说明：**  从5.0.0(12)版本开始，icon属性支持[image.PixelMap](arkts-apis-image-pixelmap.md)和[Resource](ts-types.md#resource)类型。 |
+| icon | string | [image.PixelMap](arkts-apis-image-pixelmap.md) | [Resource](ts-types.md#resource) | 否 | 是 | 图标，不传时显示默认图标。  - 图片格式支持jpg、jpeg、png、gif（只支持显示第一帧）、webp、svg。  - string类型入参支持两种格式：  - 资源相对路径格式：图标存放在resources/rawfile，icon参数传入rawfile文件夹下的相对路径。  - toDataURL格式（如data:image/png;base64,<图片的Base64字节编码值>）。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。  **说明：**  从5.0.0(12)版本开始，icon属性支持[image.PixelMap](arkts-apis-image-pixelmap.md)和[Resource](ts-types.md#resource)类型。 |
 | alpha | number | 否 | 是 | 透明度，取值范围[0, 1]，0代表完全透明，1表示完全不透明，默认值为1，异常值按默认值处理。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | anchorU | number | 否 | 是 | 锚点的水平坐标，以图像宽度的比例，建议取值[0, 1]，默认值为0.5，异常值按默认值处理。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | anchorV | number | 否 | 是 | 锚点的垂直坐标，以图像高度的比例，建议取值[0, 1]，默认值为1，异常值按默认值处理。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | clickable | boolean | 否 | 是 | 标记是否可以点击，默认值为false，异常值按默认值处理。  - true：可点击  - false：不可点击  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | draggable | boolean | 否 | 是 | 是否可以通过长按来拖拽，默认值为false，异常值按默认值处理。  - true：可拖拽  - false：不可拖拽  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
-| flat | boolean | 否 | 是 | 是否平贴地图，默认值为false，异常值按默认值处理。  - true：可平贴  - false：不可平贴  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
-| title | string | 否 | 是 | 信息窗口的标题，超长字串超出部分用省略号“...”表示。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
-| snippet | string | 否 | 是 | 信息窗口的子标题，超长字串超出部分用省略号“...”表示。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| flat | boolean | 否 | 是 | 是否平贴地图，默认值为false，异常值按默认值处理。  - true：可平贴  - false：不可平贴  **说明：**  开启3D地球且层级处于2~5层时不可平贴地图。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| title | string | 否 | 是 | 信息窗口的标题，信息窗的最大宽度为136vp，超长字串超出部分用省略号“...”表示。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| snippet | string | 否 | 是 | 信息窗口的子标题，信息窗的最大宽度为136vp，超长字串超出部分用省略号“...”表示。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | infoWindowAnchorU | number | 否 | 是 | 指示标记信息窗口的锚点在水平方向上的位置。值范围：[0, 1]，默认值为0.5，异常值按默认值处理。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | infoWindowAnchorV | number | 否 | 是 | 指示标记信息窗口的锚点在垂直方向上的位置。值范围：[0, 1]，默认值为0，异常值按默认值处理。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
-| altitude | number | 否 | 是 | 海拔高度，单位：米，默认值为0，异常值按默认值处理。  **起始版本：** 5.0.0(12)  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| altitude | number | 否 | 是 | 相对于地面的高度，单位：m，默认值为0，异常值按默认值处理。  **起始版本：** 5.0.0(12)  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 | collisionRule | [CollisionRule](map-common.md#collisionrule) | 否 | 是 | 标记与地图POI之间的冲突处理规则，默认值为[CollisionRule](map-common.md#collisionrule).NONE。异常值按照默认值处理。  **说明：**  从5.0.3(15)版本开始，collisionRule属性支持CollisionRule.NONE和CollisionRule.ALL类型；从6.1.0(23)版本开始，collisionRule属性新增支持CollisionRule.NAME和CollisionRule.ICON\_CASCADE类型。  **起始版本：** 5.0.3(15)  **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。 |
 | annotations | [Text](map-common.md#text)[] | 否 | 是 | 标记的注释，最小长度为1，最大长度为3。  **起始版本：** 5.0.3(15)  **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。 |
 | showIcon | boolean | 否 | 是 | 是否显示标记的图标，默认值为true。根据显示的图标对异常值进行处理。  - true：显示标记的图标  - false：不显示标记的图标  **起始版本：** 5.0.3(15)  **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。 |
@@ -346,40 +326,40 @@ PhonePC/2in1TabletWearable
 | priority | number | 否 | 是 | 两个标记（Marker）碰撞时优先级低的标记（Marker）被隐藏，碰撞优先级，数值越大，优先级越低。该值为整数，取值范围：[0, 65535]。  当取值小于最小值时，按照取值范围的最小值处理；取值大于最大值时，按照取值范围的最大值处理。  当不配置或取值为null、undefined，默认为2147483647，即碰撞优先级最低。  **起始版本：** 6.1.0(23)  **元服务API：** 从版本6.1.0(23)开始，该接口支持在元服务中使用。 |
 | minZoom | number | 否 | 是 | 展示的最小地图层级，默认值为2。最小层级不大于最大层级，不小于2，异常值按默认值处理。如果设置的最小缩放级别小于2，minZoom会取2。  **起始版本：** 6.1.0(23)  **元服务API：** 从版本6.1.0(23)开始，该接口支持在元服务中使用。 |
 | maxZoom | number | 否 | 是 | 展示的最大地图层级，默认值为20。最大层级不大于20，不小于最小层级，异常值按默认值处理。如果设置的最大缩放级别大于20，maxZoom会取20。  **起始版本：** 6.1.0(23)  **元服务API：** 从版本6.1.0(23)开始，该接口支持在元服务中使用。 |
+| annotationBackgroundColor | number | 否 | 是 | 注释的背景颜色，颜色值为ARGB格式，默认值无背景色，异常值按默认值处理。  **起始版本：** 6.1.1(24)  **元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。 |
 
 **示例：**
 
-```
-1. let markerOptions: mapCommon.MarkerOptions = {
-2. position: {
-3. latitude: 39.9,
-4. longitude: 116.4
-5. },
-6. rotation: 0,
-7. visible: true,
-8. zIndex: 0,
-9. alpha: 1,
-10. anchorU: 0.5,
-11. anchorV: 1,
-12. clickable: true,
-13. draggable: true,
-14. flat: false,
-15. // 图标需存放在resources/rawfile目录下
-16. icon: 'test.png',
-17. altitude: 100,
-18. collisionRule: mapCommon.CollisionRule.ALL,
-19. offsetX: 20,
-20. offsetY: 20,
-21. forceVisible: true,
-22. priority: 5,
-23. minZoom: 5,
-24. maxZoom: 19
-25. };
+```typescript
+let markerOptions: mapCommon.MarkerOptions = {
+  position: {
+    latitude: 39.9,
+    longitude: 116.4
+  },
+  rotation: 0,
+  visible: true,
+  zIndex: 0,
+  alpha: 1,
+  anchorU: 0.5,
+  anchorV: 1,
+  clickable: true,
+  draggable: true,
+  flat: false,
+  // 图标需存放在resources/rawfile目录下
+  icon: 'test.png',
+  altitude: 100,
+  collisionRule: mapCommon.CollisionRule.ALL,
+  offsetX: 20,
+  offsetY: 20,
+  forceVisible: true,
+  priority: 5,
+  minZoom: 5,
+  maxZoom: 19,
+  annotationBackgroundColor: 0XFF00FFFF
+};
 ```
 
 ## MapCircleOptions
-
-PhonePC/2in1TabletWearable
 
 描述MapCircle属性，继承[BaseOverlayOptions](map-common.md#baseoverlayoptions)。
 
@@ -403,25 +383,23 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. let mapCircleOptions: mapCommon.MapCircleOptions = {
-2. center: {
-3. latitude: 39.9,
-4. longitude: 116.4
-5. },
-6. radius: 5000,
-7. clickable: true,
-8. fillColor: 0XFF00FFFF,
-9. strokeColor: 0xFFFF0000,
-10. strokeWidth: 10,
-11. visible: true,
-12. zIndex: 15
-13. };
+```typescript
+let mapCircleOptions: mapCommon.MapCircleOptions = {
+  center: {
+    latitude: 39.9,
+    longitude: 116.4
+  },
+  radius: 5000,
+  clickable: true,
+  fillColor: 0XFF00FFFF,
+  strokeColor: 0xFFFF0000,
+  strokeWidth: 10,
+  visible: true,
+  zIndex: 15
+};
 ```
 
 ## MapPolygonOptions
-
-PhonePC/2in1TabletWearable
 
 描述MapPolygon属性，继承[BaseOverlayOptions](map-common.md#baseoverlayoptions)。
 
@@ -447,30 +425,28 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. let polygonOptions: mapCommon.MapPolygonOptions = {
-2. points: [
-3. { latitude: 41.893478, longitude: 116.4 },
-4. { latitude: 41.893478, longitude: 121.4 },
-5. { latitude: 45.893478, longitude: 121.4 },
-6. { latitude: 45.893478, longitude: 116.4 }
-7. ],
-8. holes: [],
-9. clickable: true,
-10. fillColor: 0xff00DE00,
-11. geodesic: false,
-12. strokeColor: 0xff000000,
-13. jointType: mapCommon.JointType.DEFAULT,
-14. patterns: [],
-15. strokeWidth: 10,
-16. visible: true,
-17. zIndex: 0
-18. };
+```typescript
+let polygonOptions: mapCommon.MapPolygonOptions = {
+  points: [
+    { latitude: 41.893478, longitude: 116.4 },
+    { latitude: 41.893478, longitude: 121.4 },
+    { latitude: 45.893478, longitude: 121.4 },
+    { latitude: 45.893478, longitude: 116.4 }
+  ],
+  holes: [],
+  clickable: true,
+  fillColor: 0xff00DE00,
+  geodesic: false,
+  strokeColor: 0xff000000,
+  jointType: mapCommon.JointType.DEFAULT,
+  patterns: [],
+  strokeWidth: 10,
+  visible: true,
+  zIndex: 0
+};
 ```
 
 ## MapPolylineOptions
-
-PhonePC/2in1TabletWearable
 
 描述MapPolyline属性，继承[BaseOverlayOptions](map-common.md#baseoverlayoptions)。
 
@@ -500,33 +476,31 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. let polylineOption: mapCommon.MapPolylineOptions = {
-2. points: [
-3. { latitude: 39.693478, longitude: 116.334595 },
-4. { latitude: 39.593478, longitude: 116.434595 },
-5. { latitude: 39.593478, longitude: 116.134595}
-6. ],
-7. clickable: true,
-8. color: 0xff000000,
-9. startCap: mapCommon.CapStyle.BUTT,
-10. endCap: mapCommon.CapStyle.BUTT,
-11. geodesic: false,
-12. jointType: mapCommon.JointType.DEFAULT,
-13. patterns: [{ type: 0, length: 100 }, { type: 0, length: 100 }, { type: 0, length: 100 }],
-14. visible: true,
-15. width: 20,
-16. zIndex: 0,
-17. gradient: false,
-18. // 图标需存放在resources/rawfile目录下
-19. customTexture: "icon/naviline_arrow.png",
-20. isTextureMappingUsed: false
-21. };
+```typescript
+let polylineOption: mapCommon.MapPolylineOptions = {
+  points: [
+    { latitude: 39.693478, longitude: 116.334595 },
+    { latitude: 39.593478, longitude: 116.434595 },
+    { latitude: 39.593478, longitude: 116.134595}
+  ],
+  clickable: true,
+  color: 0xff000000,
+  startCap: mapCommon.CapStyle.BUTT,
+  endCap: mapCommon.CapStyle.BUTT,
+  geodesic: false,
+  jointType: mapCommon.JointType.DEFAULT,
+  patterns: [{ type: 0, length: 100 }, { type: 0, length: 100 }, { type: 0, length: 100 }],
+  visible: true,
+  width: 20,
+  zIndex: 0,
+  gradient: false,
+  // 图标需存放在resources/rawfile目录下
+  customTexture: "icon/naviline_arrow.png",
+  isTextureMappingUsed: false
+};
 ```
 
 ## BasePriorityOverlayParams
-
-PhonePC/2in1TabletWearable
 
 描述气泡、点注释等覆盖物的基础信息，继承[BaseOverlayOptions](map-common.md#baseoverlayoptions)。
 
@@ -543,13 +517,11 @@ PhonePC/2in1TabletWearable
 | anchorU | number | 否 | 是 | POI的锚点在水平方向上的位置，值的范围为[0, 1]，默认值为0.5，异常值按默认值处理。 |
 | anchorV | number | 否 | 是 | POI的锚点在垂直方向上的位置，值的范围为[0, 1]，默认值为1，异常值按默认值处理。 |
 | forceVisible | boolean | 否 | 是 | POI的显示属性，默认值为false，异常值按默认值处理。  - true：碰撞后仍能显示  - false：碰撞后不可显示 |
-| priority | number | 否 | 是 | 碰撞优先级，数值越大，优先级越低，默认值为Number.MAX\_VALUE，异常值按默认值处理。 |
+| priority | number | 否 | 是 | 碰撞优先级，数值越大，优先级越低，取值范围大于0，默认值为Number.MAX\_VALUE，异常值按默认值处理。 |
 | minZoom | number | 否 | 是 | 展示的地图最小图层，有效范围：[2, 20]，默认值为2，异常值按默认值处理。如果设置的最小缩放级别小于2，minZoom会取2。  约束条件：最小层级不大于最大层级，不小于2。 |
 | maxZoom | number | 否 | 是 | 展示的地图最大图层，有效范围：[2, 20]，默认值为20，异常值按默认值处理。如果设置的最大缩放级别大于20，maxZoom会取20。  约束条件：最大层级不大于20，不小于最小层级。 |
 
 ## PointAnnotationParams
-
-PhonePC/2in1TabletWearable
 
 描述点注释属性，继承[BasePriorityOverlayParams](map-common.md#basepriorityoverlayparams)。
 
@@ -565,45 +537,43 @@ PhonePC/2in1TabletWearable
 | repeatable | boolean | 否 | 是 | 点注释名称与地图POI名称相同时，是否支持去重，默认值为false，异常值按默认值处理。  - true：支持去重  - false：不支持去重  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。  **说明：**  碰撞规则为[CollisionRule](map-common.md#collisionrule).NONE时，repeatable不支持设置。 |
 | collisionRule | [CollisionRule](map-common.md#collisionrule) | 否 | 是 | 点注释的碰撞规则，默认值为[CollisionRule](map-common.md#collisionrule).NAME，异常值按默认值处理。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。  **说明：**  设置碰撞规则为[CollisionRule](map-common.md#collisionrule).ALL，需要同时设置覆盖物碰撞优先级priority属性。 |
 | titles | Array<[Text](map-common.md#text)> | 否 | 否 | 点注释的标题，数组长度最小为1，最大为3。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
-| icon | string | [image.PixelMap](arkts-apis-image-pixelmap.md) | [Resource](ts-types.md#resource) | 否 | 是 | 点注释的图标，不传时使用默认图标。  - 图片格式支持jpg、jpeg、png、gif、webp、svg。  - string类型入参支持两种格式：  1. 资源相对路径格式：图标存放在resources/rawfile，icon参数传入rawfile文件夹下的相对路径。  2. toDataURL格式（如data:image/png;base64,<图片的Base64字节编码值>）。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。  **说明：**  从5.0.0(12)版本开始，icon属性支持[image.PixelMap](arkts-apis-image-pixelmap.md)和[Resource](ts-types.md#resource)类型。 |
+| icon | string | [image.PixelMap](arkts-apis-image-pixelmap.md) | [Resource](ts-types.md#resource) | 否 | 是 | 点注释的图标，不传时使用默认图标。  - 图片格式支持jpg、jpeg、png、gif（只支持显示第一帧）、webp、svg。  - string类型入参支持两种格式：  1. 资源相对路径格式：图标存放在resources/rawfile，icon参数传入rawfile文件夹下的相对路径。  2. toDataURL格式（如data:image/png;base64,<图片的Base64字节编码值>）。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。  **说明：**  从5.0.0(12)版本开始，icon属性支持[image.PixelMap](arkts-apis-image-pixelmap.md)和[Resource](ts-types.md#resource)类型。 |
 | showIcon | boolean | 否 | 是 | 点注释是否展示图标。默认值为true。  - true：展示  - false：不展示  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | textPosition | [TextPosition](map-common.md#textposition) | 否 | 是 | 设置点注释的文本位置。  默认值为[TextPosition](map-common.md#textposition).DEFAULT。  **起始版本：** 5.0.0(12)  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 
 **示例：**
 
-```
-1. let pointAnnotationOptions: mapCommon.PointAnnotationParams = {
-2. position: {
-3. latitude: 39.918,
-4. longitude: 116.397
-5. },
-6. repeatable: true,
-7. collisionRule: mapCommon.CollisionRule.NAME,
-8. titles: [{
-9. content: "Title1",
-10. color: 0xFF000000,
-11. fontSize: 15,
-12. strokeColor: 0xFFFFFFFF,
-13. strokeWidth: 2,
-14. fontStyle: mapCommon.FontStyle.ITALIC
-15. }],
-16. // 图标需存放在resources/rawfile目录下
-17. icon: "test.png",
-18. showIcon: true,
-19. anchorU: 0.5,
-20. anchorV: 1,
-21. forceVisible: false,
-22. priority: 3,
-23. minZoom: 2,
-24. maxZoom: 20,
-25. visible: true,
-26. zIndex: 10
-27. };
+```typescript
+let pointAnnotationOptions: mapCommon.PointAnnotationParams = {
+  position: {
+    latitude: 39.918,
+    longitude: 116.397
+  },
+  repeatable: true,
+  collisionRule: mapCommon.CollisionRule.NAME,
+  titles: [{
+    content: "Title1",
+    color: 0xFF000000,
+    fontSize: 15,
+    strokeColor: 0xFFFFFFFF,
+    strokeWidth: 2,
+    fontStyle: mapCommon.FontStyle.ITALIC
+  }],
+  // 图标需存放在resources/rawfile目录下
+  icon: "test.png",
+  showIcon: true,
+  anchorU: 0.5,
+  anchorV: 1,
+  forceVisible: false,
+  priority: 3,
+  minZoom: 2,
+  maxZoom: 20,
+  visible: true,
+  zIndex: 10
+};
 ```
 
 ## BubbleParams
-
-PhonePC/2in1TabletWearable
 
 描述气泡属性，继承[BasePriorityOverlayParams](map-common.md#basepriorityoverlayparams)。
 
@@ -618,32 +588,30 @@ PhonePC/2in1TabletWearable
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | positions | Array<Array<[LatLng](map-common.md#latlng)>> | 否 | 否 | 气泡位置，系统基于多个位置段计算图标的适当位置，异常值不处理。 |
-| icons | Array<string | [image.PixelMap](arkts-apis-image-pixelmap.md) | [Resource](ts-types.md#resource)> | 否 | 否 | 气泡图标，异常值不处理。  - 必须提供4个方向的图标，传入的图标宽高需要相同。  - 图片格式支持jpg、jpeg、png、gif、webp、svg。  - string类型入参支持两种格式：  - 资源相对路径格式：图标存放在resources/rawfile，icon参数传入rawfile文件夹下的相对路径。  - toDataURL格式（如data:image/png;base64,<图片的Base64字节编码值>）。  **说明：**  从5.0.0(12)版本开始，icon属性支持[image.PixelMap](arkts-apis-image-pixelmap.md)和[Resource](ts-types.md#resource)类型。 |
+| icons | Array<string | [image.PixelMap](arkts-apis-image-pixelmap.md) | [Resource](ts-types.md#resource)> | 否 | 否 | 气泡图标，异常值不处理。  - 必须提供4个方向的图标，传入的图标宽高需要相同。  - 图片格式支持jpg、jpeg、png、gif（只支持显示第一帧）、webp、svg。  - string类型入参支持两种格式：  - 资源相对路径格式：图标存放在resources/rawfile，icon参数传入rawfile文件夹下的相对路径。  - toDataURL格式（如data:image/png;base64,<图片的Base64字节编码值>）。  **说明：**  从5.0.0(12)版本开始，icon属性支持[image.PixelMap](arkts-apis-image-pixelmap.md)和[Resource](ts-types.md#resource)类型。 |
 
 **示例：**
 
-```
-1. let bubbleOptions: mapCommon.BubbleParams = {
-2. positions: [[{ latitude: 39.9, longitude: 116.4 }]],
-3. // 图片按照左上右下的顺序取值，图片需存放在resources/rawfile目录下
-4. icons: [
-5. 'icon1.png',
-6. 'icon2.png',
-7. 'icon3.png',
-8. 'icon4.png'
-9. ],
-10. forceVisible: true,
-11. priority: 3,
-12. minZoom: 2,
-13. maxZoom: 20,
-14. visible: true,
-15. zIndex: 1
-16. };
+```typescript
+let bubbleOptions: mapCommon.BubbleParams = {
+  positions: [[{ latitude: 39.9, longitude: 116.4 }]],
+  // 图片按照左上右下的顺序取值，图片需存放在resources/rawfile目录下
+  icons: [
+    'icon1.png',
+    'icon2.png',
+    'icon3.png',
+    'icon4.png'
+  ],
+  forceVisible: true,
+  priority: 3,
+  minZoom: 2,
+  maxZoom: 20,
+  visible: true,
+  zIndex: 1
+};
 ```
 
 ## Text
-
-PhonePC/2in1TabletWearable
 
 用于描述点注释标题的文本属性。
 
@@ -657,7 +625,7 @@ PhonePC/2in1TabletWearable
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| content | string | 否 | 否 | 标题内容，超长字串超出部分用省略号“...”表示。 |
+| content | string | 否 | 否 | 标题内容，最大宽度为136vp，超长字串超出部分用省略号“...”表示。 |
 | color | number | 否 | 是 | 标题字体颜色，默认值为0xFF000000（黑色），颜色值为ARGB格式。 |
 | fontSize | number | 否 | 是 | 标题字体大小，默认值为15，单位：px。取值范围：[0,100]，超出范围按范围内最大值或最小值处理。 |
 | strokeColor | number | 否 | 是 | 标题描边颜色，默认值为0xFFFFFFFF（白色），颜色值为ARGB格式。 |
@@ -666,20 +634,18 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. let text: mapCommon.Text = {
-2. content: "南京夫子庙",
-3. color: 0xFF000000,
-4. fontSize: 15,
-5. strokeColor: 0xFFFFFFFF,
-6. strokeWidth: 2,
-7. fontStyle: mapCommon.FontStyle.ITALIC
-8. };
+```typescript
+let text: mapCommon.Text = {
+  content: "南京夫子庙",
+  color: 0xFF000000,
+  fontSize: 15,
+  strokeColor: 0xFFFFFFFF,
+  strokeWidth: 2,
+  fontStyle: mapCommon.FontStyle.ITALIC
+};
 ```
 
 ## Padding
-
-PhonePC/2in1TabletWearable
 
 设置地图和边界的距离的参数。
 
@@ -700,17 +666,15 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. // 初始化参数，左边距0，底边距50
-2. let padding: mapCommon.Padding = {
-3. left: 0,
-4. bottom: 50
-5. };
+```typescript
+// 初始化参数，左边距0，底边距50
+let padding: mapCommon.Padding = {
+  left: 0,
+  bottom: 50
+};
 ```
 
 ## VisibleRegion
-
-PhonePC/2in1TabletWearable
 
 VisibleRegion包含四个点，这四个点定义了地图相机的四边形可视区域。因为相机可能会倾斜，所以这个多边形也可以是梯形而不一定是矩形。如果相机正好位于可视区域中心上方，则形状为矩形，但如果相机倾斜，则形状将显示为最短边最接近视点的梯形。
 
@@ -732,15 +696,13 @@ VisibleRegion包含四个点，这四个点定义了地图相机的四边形可�
 
 **示例：**
 
-```
-1. // 示例中this.mapController来源参考指南显示地图示例代码
-2. let projection: map.Projection = this.mapController?.getProjection();
-3. let visibleRegion: mapCommon.VisibleRegion = projection.getVisibleRegion();
+```typescript
+// 示例中this.mapController来源参考指南显示地图示例代码
+let projection: map.Projection = this.mapController?.getProjection();
+let visibleRegion: mapCommon.VisibleRegion = projection.getVisibleRegion();
 ```
 
 ## MapPoint
-
-PhonePC/2in1TabletWearable
 
 屏幕坐标点。屏幕左顶点为（0, 0）点，positionX正值代表可视区域向右移动，负值代表可视区域向左移动。positionY正值代表可视区域向下移动，负值代表可视区域向上移动。
 
@@ -759,16 +721,14 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. let point: mapCommon.MapPoint = {
-2. positionX: 100,
-3. positionY: 100
-4. };
+```typescript
+let point: mapCommon.MapPoint = {
+  positionX: 100,
+  positionY: 100
+};
 ```
 
 ## CustomMapStyleOptions
-
-PhonePC/2in1TabletWearable
 
 自定义样式参数。
 
@@ -787,16 +747,14 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. // styleId需要替换为您自己的样式ID，样式ID可在Petal Maps Studio平台上创建
-2. let param: mapCommon.CustomMapStyleOptions = {
-3. styleId: "xxxxxxx"
-4. };
+```typescript
+// styleId需要替换为您自己的样式ID，样式ID可在Petal Maps Studio平台上创建
+let param: mapCommon.CustomMapStyleOptions = {
+  styleId: "xxxxxxx"
+};
 ```
 
 ## ClusterItem
-
-PhonePC/2in1TabletWearable
 
 待聚合节点。
 
@@ -814,18 +772,16 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. let clusterItem: mapCommon.ClusterItem = {
-2. position: {
-3. latitude: 39.99,
-4. longitude: 116.334595
-5. }
-6. };
+```typescript
+let clusterItem: mapCommon.ClusterItem = {
+  position: {
+    latitude: 39.99,
+    longitude: 116.334595
+  }
+};
 ```
 
 ## ClusterOverlayParams
-
-PhonePC/2in1TabletWearable
 
 聚合图层参数。
 
@@ -850,29 +806,27 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. let clusterItem1: mapCommon.ClusterItem = {
-2. position: {
-3. latitude: 39.89,
-4. longitude: 116.335595
-5. }
-6. };
-7. let clusterItem2: mapCommon.ClusterItem = {
-8. position: {
-9. latitude: 39.99,
-10. longitude: 116.334595
-11. }
-12. };
-13. let array: Array<mapCommon.ClusterItem> = [
-14. clusterItem1,
-15. clusterItem2
-16. ];
-17. let clusterOverlayParams: mapCommon.ClusterOverlayParams = { distance: 40, clusterItems: array };
+```typescript
+let clusterItem1: mapCommon.ClusterItem = {
+  position: {
+    latitude: 39.89,
+    longitude: 116.335595
+  }
+};
+let clusterItem2: mapCommon.ClusterItem = {
+  position: {
+    latitude: 39.99,
+    longitude: 116.334595
+  }
+};
+let array: Array<mapCommon.ClusterItem> = [
+  clusterItem1,
+  clusterItem2
+];
+let clusterOverlayParams: mapCommon.ClusterOverlayParams = { distance: 40, clusterItems: array };
 ```
 
 ### getCustomIcon
-
-PhonePC/2in1TabletWearable
 
 getCustomIcon?(clusterItems: Array<ClusterItem>): Promise<image.PixelMap>
 
@@ -898,52 +852,50 @@ getCustomIcon?(clusterItems: Array<ClusterItem>): Promise<image.PixelMap>
 
 **示例：**
 
-```
-1. // 实现mapCommon.ClusterOverlayParams中的getCustomIcon方法
-2. import { mapCommon } from '@kit.MapKit';
-3. import { image } from '@kit.ImageKit';
+```typescript
+// 实现mapCommon.ClusterOverlayParams中的getCustomIcon方法
+import { mapCommon } from '@kit.MapKit';
+import { image } from '@kit.ImageKit';
 
-5. export class ClusterOverlayParamsMore implements mapCommon.ClusterOverlayParams {
-6. clusterItems: mapCommon.ClusterItem[] = new Array();
-7. private offCanvas: OffscreenCanvas = new OffscreenCanvas(62, 62);
-8. private settings: RenderingContextSettings = new RenderingContextSettings(true);
+export class ClusterOverlayParamsMore implements mapCommon.ClusterOverlayParams {
+  clusterItems: mapCommon.ClusterItem[] = new Array();
+  private offCanvas: OffscreenCanvas = new OffscreenCanvas(62, 62);
+  private settings: RenderingContextSettings = new RenderingContextSettings(true);
 
-10. constructor(clusterItems: mapCommon.ClusterItem[], distance: number) {
-11. this.clusterItems = clusterItems;
-12. this.distance = distance;
-13. }
+  constructor(clusterItems: mapCommon.ClusterItem[], distance: number) {
+    this.clusterItems = clusterItems;
+    this.distance = distance;
+  }
 
-15. distance: number = 0;
+  distance: number = 0;
 
-17. // 自定义聚合图标，例如将cluster的clusterItems的第一个clusterItem的经度作为文本，绘制圆形图标
-18. async getCustomIcon(clusterItems: mapCommon.ClusterItem[]): Promise<image.PixelMap> {
-19. let offContext = this.offCanvas.getContext("2d", this.settings);
+  // 自定义聚合图标，例如将cluster的clusterItems的第一个clusterItem的经度作为文本，绘制圆形图标
+  async getCustomIcon(clusterItems: mapCommon.ClusterItem[]): Promise<image.PixelMap> {
+    let offContext = this.offCanvas.getContext("2d", this.settings);
 
-21. offContext.clearRect(0, 0, 62, 62);
-22. // 绘制圆形
-23. offContext.fillStyle = 0xff990000;
-24. offContext.beginPath();
-25. offContext.arc(31, 31, 30, 0, 6.28);
-26. offContext.stroke();
-27. offContext.fill();
-28. offContext.save();
+    offContext.clearRect(0, 0, 62, 62);
+    // 绘制圆形
+    offContext.fillStyle = 0xff990000;
+    offContext.beginPath();
+    offContext.arc(31, 31, 30, 0, 6.28);
+    offContext.stroke();
+    offContext.fill();
+    offContext.save();
 
-30. // 在圆形内绘制文本，文本信息为clusterItems的第一个聚合点的经度
-31. offContext.font = '20vp sans-serif';
-32. offContext.textAlign = 'center';
-33. offContext.textBaseline = 'middle';
-34. offContext.fillStyle = 0xffffffff;
-35. offContext.fillText(JSON.stringify(clusterItems[0].position.longitude).substring(0,3), 31, 31);
-36. offContext.restore();
-37. let iconPixelMap = offContext.getPixelMap(0, 0, 62, 62);
-38. return iconPixelMap;
-39. }
-40. }
+    // 在圆形内绘制文本，文本信息为clusterItems的第一个聚合点的经度
+    offContext.font = '20vp sans-serif';
+    offContext.textAlign = 'center';
+    offContext.textBaseline = 'middle';
+    offContext.fillStyle = 0xffffffff;
+    offContext.fillText(JSON.stringify(clusterItems[0].position.longitude).substring(0, 3), 31, 31);
+    offContext.restore();
+    let iconPixelMap = offContext.getPixelMap(0, 0, 62, 62);
+    return iconPixelMap;
+  }
+}
 ```
 
 ## ImageOverlayParams
-
-PhonePC/2in1TabletWearable
 
 覆盖物参数。继承[BaseOverlayOptions](map-common.md#baseoverlayoptions)。
 
@@ -959,35 +911,33 @@ PhonePC/2in1TabletWearable
 | --- | --- | --- | --- | --- |
 | bounds | [LatLngBounds](map-common.md#latlngbounds) | 否 | 是 | 设置基于矩形区域的覆盖物的位置。position和bounds是可选的，但是两个参数需要必填其中一个参数，当两者都入参时，bounds具有更高的优先级。position入参时，width为必填参数。 |
 | position | [LatLng](map-common.md#latlng) | 否 | 是 | 设置覆盖物的位置。position和bounds是可选的，但是两个参数需要必填其中一个，当两者都入参时，bounds具有更高的优先级。position入参时，width为必填参数。 |
-| width | number | 否 | 是 | 覆盖物的宽度，单位：米，仅当position有值时有效，width为正整数。 |
-| height | number | 否 | 是 | 覆盖物的高度，单位：米，当position和width都有值时才有效，height为正整数。 |
+| width | number | 否 | 是 | 覆盖物的宽度，单位：m，仅当position有值时有效，width为正整数，默认值：0。 |
+| height | number | 否 | 是 | 覆盖物的高度，单位：m，当position和width都有值时才有效，height为正整数，默认值：0。 |
 | anchorU | number | 否 | 是 | 覆盖物的锚点在水平方向上的位置。取值范围：[0,1]。默认值为0.5。  **说明：**  当bounds有值时，设置anchorU会改变覆盖物的锚点在水平方向上的位置，不会改变bounds的范围。 |
 | anchorV | number | 否 | 是 | 覆盖物的锚点在垂直方向上的位置。取值范围：[0,1]。默认值为0.5。  **说明：**  当bounds有值时，设置anchorV会改变覆盖物的锚点在垂直方向上的位置，不会改变bounds的范围。 |
-| bearing | number | 否 | 是 | 覆盖物的旋转角度。  以正北方向为0度、顺时针方向为正的角度，默认值为0，取值范围：[0, 360)。超出取值范围的值会换算成取值范围内的值，比如361会被换算成1，-1换算为359。 |
+| bearing | number | 否 | 是 | 覆盖物的旋转角度。  以正北方向为0度、顺时针方向为正的角度，默认值为0，单位：度，取值范围：[0, 360)。超出取值范围的值会换算成取值范围内的值，比如361会被换算成1，-1换算为359。 |
 | clickable | boolean | 否 | 是 | 覆盖物是否可单击。  - true：可点击。  - false：不可点击。  默认值为false。 |
-| image | [ResourceStr](ts-types.md#resourcestr) | [image.PixelMap](arkts-apis-image-pixelmap.md) | 否 | 否 | 覆盖物的图像入参。  图片格式支持jpg、jpeg、png、gif、webp、svg。  **说明：**  [ResourceStr](ts-types.md#resourcestr)为Resource和string两种格式，其中string类型入参支持两种格式：  - 资源相对路径格式：图标存放在resources/rawfile，image参数传入rawfile文件夹下的相对路径。  - toDataURL格式（如data:image/png;base64,<图片的Base64字节编码值>）。 |
+| image | [ResourceStr](ts-types.md#resourcestr) | [image.PixelMap](arkts-apis-image-pixelmap.md) | 否 | 否 | 覆盖物的图像入参。  图片格式支持jpg、jpeg、png、gif（只支持显示第一帧）、webp、svg。  **说明：**  [ResourceStr](ts-types.md#resourcestr)为Resource和string两种格式，其中string类型入参支持两种格式：  - 资源相对路径格式：图标存放在resources/rawfile，image参数传入rawfile文件夹下的相对路径。  - toDataURL格式（如data:image/png;base64,<图片的Base64字节编码值>）。 |
 | transparency | number | 否 | 是 | 覆盖物的透明度。  取值范围：[0, 1]。  0表示不透明，1表示全透明。  默认值为0。 |
 
 **示例：**
 
-```
-1. let imageOverlayParams: mapCommon.ImageOverlayParams = {
-2. bounds: { southwest: { latitude: 32, longitude: 118 }, northeast: { latitude: 32.4, longitude: 118.4 } },
-3. // 图标需存放在resources/rawfile目录下
-4. image: 'icon/icon.png',
-5. transparency: 0.3,
-6. zIndex: 101,
-7. anchorU: 0.5,
-8. anchorV: 0.5,
-9. clickable: true,
-10. visible: true,
-11. bearing: 90
-12. };
+```typescript
+let imageOverlayParams: mapCommon.ImageOverlayParams = {
+  bounds: { southwest: { latitude: 32, longitude: 118 }, northeast: { latitude: 32.4, longitude: 118.4 } },
+  // 图标需存放在resources/rawfile目录下
+  image: 'icon/icon.png',
+  transparency: 0.3,
+  zIndex: 101,
+  anchorU: 0.5,
+  anchorV: 0.5,
+  clickable: true,
+  visible: true,
+  bearing: 90
+};
 ```
 
 ## BuildingOverlayParams
-
-PhonePC/2in1TabletWearable
 
 3D建筑参数。
 
@@ -1002,8 +952,8 @@ PhonePC/2in1TabletWearable
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | points | Array<[LatLng](map-common.md#latlng)> | 否 | 否 | 建筑底面坐标集合。  最少三个坐标点，而且坐标点按顺时针方向连接可以形成完整的平面。 |
-| totalHeight | number | 否 | 否 | 建筑距离地面的高度，单位：米。  限制最大高度30000米。 |
-| floorBottomHeight | number | 否 | 否 | 所选楼层底部到地面的高度，单位：米。 |
+| totalHeight | number | 否 | 否 | 建筑距离地面的高度，单位：m。  限制最大高度30000m。 |
+| floorBottomHeight | number | 否 | 否 | 所选楼层底部到地面的高度，单位：m。 |
 | topFaceColor | number | 否 | 是 | 建筑顶部的颜色，颜色值是ARGB格式。  默认值为红色（0xffff0000）。 |
 | sideFaceColor | number | 否 | 是 | 建筑侧面的颜色，颜色值是ARGB格式。  默认值为红色（0xffff0000）。 |
 | floorColor | number | 否 | 是 | 所选楼层的顶部颜色，颜色值为ARGB格式。  默认值为红色（0xffff0000）。 |
@@ -1014,163 +964,161 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. let points: Array<mapCommon.LatLng> = [
-2. {
-3. latitude: 31.984794,
-4. longitude: 118.765865
-5. },
-6. {
-7. latitude: 31.98468,
-8. longitude: 118.766076
-9. },
-10. {
-11. latitude: 31.98472,
-12. longitude: 118.766116
-13. },
-14. {
-15. latitude: 31.98463,
-16. longitude: 118.766292
-17. },
-18. {
-19. latitude: 31.984586,
-20. longitude: 118.766251
-21. },
-22. {
-23. latitude: 31.984536,
-24. longitude: 118.766344
-25. },
-26. {
-27. latitude: 31.984633,
-28. longitude: 118.766446
-29. },
-30. {
-31. latitude: 31.9848,
-32. longitude: 118.766285
-33. },
-34. {
-35. latitude: 31.984925,
-36. longitude: 118.766312
-37. },
-38. {
-39. latitude: 31.985282,
-40. longitude: 118.766661
-41. },
-42. {
-43. latitude: 31.985438,
-44. longitude: 118.766419
-45. },
-46. {
-47. latitude: 31.985801,
-48. longitude: 118.766755
-49. },
-50. {
-51. latitude: 31.985856,
-52. longitude: 118.766504
-53. },
-54. {
-55. latitude: 31.985785,
-56. longitude: 118.766434
-57. },
-58. {
-59. latitude: 31.985821,
-60. longitude: 118.766278
-61. },
-62. {
-63. latitude: 31.985897,
-64. longitude: 118.766311
-65. },
-66. {
-67. latitude: 31.985944,
-68. longitude: 118.766095
-69. },
-70. {
-71. latitude: 31.985909,
-72. longitude: 118.766069
-73. },
-74. {
-75. latitude: 31.985794,
-76. longitude: 118.765989
-77. },
-78. {
-79. latitude: 31.9857,
-80. longitude: 118.766029
-81. },
-82. {
-83. latitude: 31.985658,
-84. longitude: 118.766164
-85. },
-86. {
-87. latitude: 31.985647,
-88. longitude: 118.766271
-89. },
-90. {
-91. latitude: 31.985574,
-92. longitude: 118.766297
-93. },
-94. {
-95. latitude: 31.985458,
-96. longitude: 118.766285
-97. },
-98. {
-99. latitude: 31.985271,
-100. longitude: 118.766002
-101. },
-102. {
-103. latitude: 31.985219,
-104. longitude: 118.766002
-105. },
-106. {
-107. latitude: 31.985135,
-108. longitude: 118.766029
-109. },
-110. {
-111. latitude: 31.985093,
-112. longitude: 118.766083
-113. },
-114. {
-115. latitude: 31.985019,
-116. longitude: 118.766109
-117. },
-118. {
-119. latitude: 31.984978,
-120. longitude: 118.766083
-121. },
-122. {
-123. latitude: 31.984794,
-124. longitude: 118.765865
-125. }
-126. ];
-127. points.reverse();
-128. // 3D建筑参数
-129. let buildingOverlayOptions: mapCommon.BuildingOverlayParams =
-130. {
-131. // 3D建筑的范围参数（点为顺时针绘制）
-132. points: points,
-133. // 3D建筑的高度
-134. totalHeight: 51,
-135. // 3D建筑的选中楼层高度
-136. floorBottomHeight: 33,
-137. // 3D建筑的顶部颜色
-138. topFaceColor: 0xffa4b8f7,
-139. // 3D建筑的侧面颜色
-140. sideFaceColor: 0x44a4b8f7,
-141. // 3D建筑的选中楼层颜色
-142. floorColor: 0xff000000,
-143. // 3D建筑的展示层级
-144. showLevel: 14,
-145. // 3D建筑选中楼层从底部升起的动画时长
-146. animationDuration: 5000,
-147. // 3D建筑侧面的纹理
-148. sideTexture: { image: $r("app.media.side_tex"), height: 3, width: 3 },
-149. // 3D建筑选中楼层的纹理
-150. floorTexture: { image: $r("app.media.floor_tex"), height: 3, width: 3 }
-151. };
+```typescript
+let points: Array<mapCommon.LatLng> = [
+  {
+    latitude: 31.984794,
+    longitude: 118.765865
+  },
+  {
+    latitude: 31.98468,
+    longitude: 118.766076
+  },
+  {
+    latitude: 31.98472,
+    longitude: 118.766116
+  },
+  {
+    latitude: 31.98463,
+    longitude: 118.766292
+  },
+  {
+    latitude: 31.984586,
+    longitude: 118.766251
+  },
+  {
+    latitude: 31.984536,
+    longitude: 118.766344
+  },
+  {
+    latitude: 31.984633,
+    longitude: 118.766446
+  },
+  {
+    latitude: 31.9848,
+    longitude: 118.766285
+  },
+  {
+    latitude: 31.984925,
+    longitude: 118.766312
+  },
+  {
+    latitude: 31.985282,
+    longitude: 118.766661
+  },
+  {
+    latitude: 31.985438,
+    longitude: 118.766419
+  },
+  {
+    latitude: 31.985801,
+    longitude: 118.766755
+  },
+  {
+    latitude: 31.985856,
+    longitude: 118.766504
+  },
+  {
+    latitude: 31.985785,
+    longitude: 118.766434
+  },
+  {
+    latitude: 31.985821,
+    longitude: 118.766278
+  },
+  {
+    latitude: 31.985897,
+    longitude: 118.766311
+  },
+  {
+    latitude: 31.985944,
+    longitude: 118.766095
+  },
+  {
+    latitude: 31.985909,
+    longitude: 118.766069
+  },
+  {
+    latitude: 31.985794,
+    longitude: 118.765989
+  },
+  {
+    latitude: 31.9857,
+    longitude: 118.766029
+  },
+  {
+    latitude: 31.985658,
+    longitude: 118.766164
+  },
+  {
+    latitude: 31.985647,
+    longitude: 118.766271
+  },
+  {
+    latitude: 31.985574,
+    longitude: 118.766297
+  },
+  {
+    latitude: 31.985458,
+    longitude: 118.766285
+  },
+  {
+    latitude: 31.985271,
+    longitude: 118.766002
+  },
+  {
+    latitude: 31.985219,
+    longitude: 118.766002
+  },
+  {
+    latitude: 31.985135,
+    longitude: 118.766029
+  },
+  {
+    latitude: 31.985093,
+    longitude: 118.766083
+  },
+  {
+    latitude: 31.985019,
+    longitude: 118.766109
+  },
+  {
+    latitude: 31.984978,
+    longitude: 118.766083
+  },
+  {
+    latitude: 31.984794,
+    longitude: 118.765865
+  }
+];
+points.reverse();
+// 3D建筑参数
+let buildingOverlayOptions: mapCommon.BuildingOverlayParams =
+  {
+    // 3D建筑的范围参数（点为顺时针绘制）
+    points: points,
+    // 3D建筑的高度
+    totalHeight: 51,
+    // 3D建筑的选中楼层高度
+    floorBottomHeight: 33,
+    // 3D建筑的顶部颜色
+    topFaceColor: 0xffa4b8f7,
+    // 3D建筑的侧面颜色
+    sideFaceColor: 0x44a4b8f7,
+    // 3D建筑的选中楼层颜色
+    floorColor: 0xff000000,
+    // 3D建筑的展示层级
+    showLevel: 14,
+    // 3D建筑选中楼层从底部升起的动画时长
+    animationDuration: 5000,
+    // 3D建筑侧面的纹理
+    sideTexture: { image: $r("app.media.side_tex"), height: 3, width: 3 },
+    // 3D建筑选中楼层的纹理
+    floorTexture: { image: $r("app.media.floor_tex"), height: 3, width: 3 }
+  };
 ```
 
 ## BuildingTexture
-
-PhonePC/2in1TabletWearable
 
 建筑纹理。
 
@@ -1184,23 +1132,21 @@ PhonePC/2in1TabletWearable
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| image | [ResourceStr](ts-types.md#resourcestr) | [image.PixelMap](arkts-apis-image-pixelmap.md) | 否 | 否 | 纹理图片。  图片格式支持jpg、jpeg、png、gif、webp、svg。  **说明：**  [ResourceStr](ts-types.md#resourcestr)为Resource和string两种格式，其中string类型入参支持两种格式：  - 资源相对路径格式：图标存放在resources/rawfile，image参数传入rawfile文件夹下的相对路径。  - toDataURL格式（如data:image/png;base64,<图片的Base64字节编码值>）。 |
-| width | number | 否 | 是 | 纹理宽度，单位：米，取值大于等于0，默认值为3，异常值按默认值处理。 |
-| height | number | 否 | 是 | 纹理高度，单位：米，取值大于等于0，默认值为3，异常值按默认值处理。 |
+| image | [ResourceStr](ts-types.md#resourcestr) | [image.PixelMap](arkts-apis-image-pixelmap.md) | 否 | 否 | 纹理图片。  图片格式支持jpg、jpeg、png、gif（只支持显示第一帧）、webp、svg。  **说明：**  [ResourceStr](ts-types.md#resourcestr)为Resource和string两种格式，其中string类型入参支持两种格式：  - 资源相对路径格式：图标存放在resources/rawfile，image参数传入rawfile文件夹下的相对路径。  - toDataURL格式（如data:image/png;base64,<图片的Base64字节编码值>）。 |
+| width | number | 否 | 是 | 纹理宽度，单位：m，取值大于等于0，默认值为3，异常值按默认值处理。 |
+| height | number | 否 | 是 | 纹理高度，单位：m，取值大于等于0，默认值为3，异常值按默认值处理。 |
 
 **示例：**
 
-```
-1. let buildingTexture: mapCommon.BuildingTexture = {
-2. image: $r("app.media.floor_tex"),
-3. height: 10,
-4. width: 10
-5. };
+```typescript
+let buildingTexture: mapCommon.BuildingTexture = {
+  image: $r("app.media.floor_tex"),
+  height: 10,
+  width: 10
+};
 ```
 
 ## TraceOverlayParams
-
-PhonePC/2in1TabletWearable
 
 动态轨迹的参数。
 
@@ -1218,157 +1164,155 @@ PhonePC/2in1TabletWearable
 | width | number | 否 | 是 | 轨迹宽度，单位：px。  默认值为10。  取值范围：[0, 512]，大于512按512处理。 |
 | color | number | 否 | 是 | 轨迹颜色，颜色值是ARGB格式。  默认值为0xaaff0000。 |
 | isMapMoving | boolean | 否 | 是 | 设置地图和轨迹是否一起移动。  - true：地图和轨迹一起移动  - false：仅轨迹移动  默认值为false。 |
-| animationDuration | number | 否 | 是 | 轨迹动画持续时间，单位为毫秒，最小值为100。  默认值为5000。  **说明：**  当持续时间小于100毫秒时，时间将按默认值5000毫秒处理。 |
+| animationDuration | number | 否 | 是 | 轨迹动画持续时间，单位为ms，最小值为100。  默认值为5000。  **说明：**  当持续时间小于100ms时，时间将按默认值5000ms处理。 |
 | animationCallback | Callback<number> | 否 | 是 | 监听轨迹的当前位置。返回点的索引。 |
 
 **示例：**
 
-```
-1. // 示例中this.mapController来源参考指南显示地图示例代码
-2. // marker1的参数
-3. let markerOptions1: mapCommon.MarkerOptions = {
-4. position: {
-5. latitude: 31.99227173519985,
-6. longitude: 118.7622219990476
-7. },
-8. // 图标需存放在resources/base/media目录下
-9. icon: $r("app.media.track_setting_sport_map_marker_22"),
-10. anchorU: 0.5,
-11. anchorV: 1,
-12. visible: true
-13. };
-14. // 新增marker1
-15. let markerBoy1 = await this.mapController.addMarker(markerOptions1);
-16. let boyImages1: map.PlayImageAnimation = new map.PlayImageAnimation();
-17. boyImages1.setDuration(1000);
-18. let resourceArray: Array<Resource> = new Array();
-19. resourceArray.push($r("app.media.side_0"));
-20. resourceArray.push($r("app.media.side_1"));
-21. resourceArray.push($r("app.media.side_2"));
-22. resourceArray.push($r("app.media.side_3"));
-23. resourceArray.push($r("app.media.side_4"));
-24. resourceArray.push($r("app.media.side_5"));
-25. resourceArray.push($r("app.media.side_6"));
-26. resourceArray.push($r("app.media.side_7"));
-27. resourceArray.push($r("app.media.side_8"));
-28. resourceArray.push($r("app.media.side_9"));
-29. resourceArray.push($r("app.media.side_10"));
-30. resourceArray.push($r("app.media.side_11"));
-31. resourceArray.push($r("app.media.side_12"));
-32. resourceArray.push($r("app.media.side_13"));
-33. resourceArray.push($r("app.media.side_14"));
-34. resourceArray.push($r("app.media.side_15"));
-35. resourceArray.push($r("app.media.side_16"));
-36. resourceArray.push($r("app.media.side_17"));
-37. resourceArray.push($r("app.media.side_18"));
-38. resourceArray.push($r("app.media.side_19"));
-39. resourceArray.push($r("app.media.side_20"));
-40. await boyImages1.addImages(resourceArray);
-41. boyImages1.setRepeatCount(-1);
+```typescript
+// 示例中this.mapController来源参考指南显示地图示例代码
+// marker1的参数
+let markerOptions1: mapCommon.MarkerOptions = {
+  position: {
+    latitude: 31.99227173519985,
+    longitude: 118.7622219990476
+  },
+  // 图标需存放在resources/base/media目录下
+  icon: $r("app.media.track_setting_sport_map_marker_22"),
+  anchorU: 0.5,
+  anchorV: 1,
+  visible: true
+};
+// 新增marker1
+let markerBoy1 = await this.mapController.addMarker(markerOptions1);
+let boyImages1: map.PlayImageAnimation = new map.PlayImageAnimation();
+boyImages1.setDuration(1000);
+let resourceArray: Array<Resource> = new Array();
+resourceArray.push($r("app.media.side_0"));
+resourceArray.push($r("app.media.side_1"));
+resourceArray.push($r("app.media.side_2"));
+resourceArray.push($r("app.media.side_3"));
+resourceArray.push($r("app.media.side_4"));
+resourceArray.push($r("app.media.side_5"));
+resourceArray.push($r("app.media.side_6"));
+resourceArray.push($r("app.media.side_7"));
+resourceArray.push($r("app.media.side_8"));
+resourceArray.push($r("app.media.side_9"));
+resourceArray.push($r("app.media.side_10"));
+resourceArray.push($r("app.media.side_11"));
+resourceArray.push($r("app.media.side_12"));
+resourceArray.push($r("app.media.side_13"));
+resourceArray.push($r("app.media.side_14"));
+resourceArray.push($r("app.media.side_15"));
+resourceArray.push($r("app.media.side_16"));
+resourceArray.push($r("app.media.side_17"));
+resourceArray.push($r("app.media.side_18"));
+resourceArray.push($r("app.media.side_19"));
+resourceArray.push($r("app.media.side_20"));
+await boyImages1.addImages(resourceArray);
+boyImages1.setRepeatCount(-1);
 
-43. // marker1添加动画
-44. markerBoy1.setAnimation(boyImages1);
-45. markerBoy1.startAnimation();
+// marker1添加动画
+markerBoy1.setAnimation(boyImages1);
+markerBoy1.startAnimation();
 
-47. // marker2的参数
-48. let markerOptions2: mapCommon.MarkerOptions = {
-49. position: {
-50. latitude: 31.99227173519985,
-51. longitude: 118.7622219990476
-52. },
-53. // 图标需存放在resources/base/media目录下
-54. icon: $r("app.media.track_setting_sport_map_marker_22"),
-55. anchorU: 0.5,
-56. anchorV: 1,
-57. visible: false
-58. };
-59. // 新增marker2
-60. let markerBoy2 = await this.mapController.addMarker(markerOptions2);
-61. let boyImages2: map.PlayImageAnimation = new map.PlayImageAnimation();
-62. boyImages2.setDuration(1000);
-63. let resourceArray2: Array<Resource> = new Array();
-64. resourceArray2.push($r("app.media.behavior_front_cycling_boy_000"));
-65. resourceArray2.push($r("app.media.behavior_front_cycling_boy_001"));
-66. resourceArray2.push($r("app.media.behavior_front_cycling_boy_002"));
-67. resourceArray2.push($r("app.media.behavior_front_cycling_boy_003"));
-68. resourceArray2.push($r("app.media.behavior_front_cycling_boy_004"));
-69. resourceArray2.push($r("app.media.behavior_front_cycling_boy_005"));
-70. resourceArray2.push($r("app.media.behavior_front_cycling_boy_006"));
-71. resourceArray2.push($r("app.media.behavior_front_cycling_boy_007"));
-72. resourceArray2.push($r("app.media.behavior_front_cycling_boy_008"));
-73. resourceArray2.push($r("app.media.behavior_front_cycling_boy_009"));
-74. resourceArray2.push($r("app.media.behavior_front_cycling_boy_010"));
-75. resourceArray2.push($r("app.media.behavior_front_cycling_boy_011"));
-76. resourceArray2.push($r("app.media.behavior_front_cycling_boy_012"));
-77. resourceArray2.push($r("app.media.behavior_front_cycling_boy_013"));
-78. resourceArray2.push($r("app.media.behavior_front_cycling_boy_014"));
-79. resourceArray2.push($r("app.media.behavior_front_cycling_boy_015"));
-80. resourceArray2.push($r("app.media.behavior_front_cycling_boy_016"));
-81. resourceArray2.push($r("app.media.behavior_front_cycling_boy_017"));
-82. resourceArray2.push($r("app.media.behavior_front_cycling_boy_018"));
-83. await boyImages2.addImages(resourceArray2);
-84. boyImages2.setRepeatCount(-1);
-85. // marker2添加动画
-86. markerBoy2.setAnimation(boyImages2);
-87. markerBoy2.startAnimation();
+// marker2的参数
+let markerOptions2: mapCommon.MarkerOptions = {
+  position: {
+    latitude: 31.99227173519985,
+    longitude: 118.7622219990476
+  },
+  // 图标需存放在resources/base/media目录下
+  icon: $r("app.media.track_setting_sport_map_marker_22"),
+  anchorU: 0.5,
+  anchorV: 1,
+  visible: false
+};
+// 新增marker2
+let markerBoy2 = await this.mapController.addMarker(markerOptions2);
+let boyImages2: map.PlayImageAnimation = new map.PlayImageAnimation();
+boyImages2.setDuration(1000);
+let resourceArray2: Array<Resource> = new Array();
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_000"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_001"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_002"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_003"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_004"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_005"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_006"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_007"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_008"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_009"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_010"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_011"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_012"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_013"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_014"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_015"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_016"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_017"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_018"));
+await boyImages2.addImages(resourceArray2);
+boyImages2.setRepeatCount(-1);
+// marker2添加动画
+markerBoy2.setAnimation(boyImages2);
+markerBoy2.startAnimation();
 
-89. let points: Array<mapCommon.LatLng> = new Array();
-90. points.push({ latitude: 31.99685233070878, longitude: 118.75846023442728 });
-91. points.push({ latitude: 31.99671325810786, longitude: 118.75846738985165 });
-92. points.push({ latitude: 31.99659191076709, longitude: 118.7585347621686 });
-93. points.push({ latitude: 31.99648202537233, longitude: 118.7586266510386 });
-94. points.push({ latitude: 31.99637707201552, longitude: 118.75872004590596 });
-95. points.push({ latitude: 31.996278207010903, longitude: 118.75880449946251 });
-96. points.push({ latitude: 31.996187481969695, longitude: 118.7588781960278 });
-97. points.push({ latitude: 31.996092248919354, longitude: 118.75895330554488 });
-98. points.push({ latitude: 31.995962740450565, longitude: 118.75904721407304 });
-99. points.push({ latitude: 31.995792921394, longitude: 118.75916904998051 });
-100. points.push({ latitude: 31.995601885713416, longitude: 118.7593235241019 });
-101. points.push({ latitude: 31.995398221178277, longitude: 118.75949998588176 });
-102. points.push({ latitude: 31.995185902197715, longitude: 118.7596871082939 });
-103. points.push({ latitude: 31.994983473052656, longitude: 118.75987334062296 });
-104. points.push({ latitude: 31.99482433699269, longitude: 118.76002095184032 });
-105. points.push({ latitude: 31.994709073721708, longitude: 118.76012902920532 });
-106. points.push({ latitude: 31.99460732100702, longitude: 118.76023892576234 });
-107. points.push({ latitude: 31.99449284962087, longitude: 118.7603694232856 });
-108. points.push({ latitude: 31.99435358179254, longitude: 118.76053622438056 });
-109. points.push({ latitude: 31.99420771148339, longitude: 118.76072790126692 });
-110. points.push({ latitude: 31.994075194901523, longitude: 118.7609100960977 });
-111. points.push({ latitude: 31.993952686158877, longitude: 118.7610741329013 });
-112. points.push({ latitude: 31.993840180644217, longitude: 118.7612193418965 });
-113. points.push({ latitude: 31.993733787150244, longitude: 118.76135383115654 });
-114. points.push({ latitude: 31.993617206525155, longitude: 118.76150529647698 });
+let points: Array<mapCommon.LatLng> = new Array();
+points.push({ latitude: 31.99685233070878, longitude: 118.75846023442728 });
+points.push({ latitude: 31.99671325810786, longitude: 118.75846738985165 });
+points.push({ latitude: 31.99659191076709, longitude: 118.7585347621686 });
+points.push({ latitude: 31.99648202537233, longitude: 118.7586266510386 });
+points.push({ latitude: 31.99637707201552, longitude: 118.75872004590596 });
+points.push({ latitude: 31.996278207010903, longitude: 118.75880449946251 });
+points.push({ latitude: 31.996187481969695, longitude: 118.7588781960278 });
+points.push({ latitude: 31.996092248919354, longitude: 118.75895330554488 });
+points.push({ latitude: 31.995962740450565, longitude: 118.75904721407304 });
+points.push({ latitude: 31.995792921394, longitude: 118.75916904998051 });
+points.push({ latitude: 31.995601885713416, longitude: 118.7593235241019 });
+points.push({ latitude: 31.995398221178277, longitude: 118.75949998588176 });
+points.push({ latitude: 31.995185902197715, longitude: 118.7596871082939 });
+points.push({ latitude: 31.994983473052656, longitude: 118.75987334062296 });
+points.push({ latitude: 31.99482433699269, longitude: 118.76002095184032 });
+points.push({ latitude: 31.994709073721708, longitude: 118.76012902920532 });
+points.push({ latitude: 31.99460732100702, longitude: 118.76023892576234 });
+points.push({ latitude: 31.99449284962087, longitude: 118.7603694232856 });
+points.push({ latitude: 31.99435358179254, longitude: 118.76053622438056 });
+points.push({ latitude: 31.99420771148339, longitude: 118.76072790126692 });
+points.push({ latitude: 31.994075194901523, longitude: 118.7609100960977 });
+points.push({ latitude: 31.993952686158877, longitude: 118.7610741329013 });
+points.push({ latitude: 31.993840180644217, longitude: 118.7612193418965 });
+points.push({ latitude: 31.993733787150244, longitude: 118.76135383115654 });
+points.push({ latitude: 31.993617206525155, longitude: 118.76150529647698 });
 
-116. // 动态轨迹的入参
-117. let traceOptions: mapCommon.TraceOverlayParams = {
-118. // 轨迹点
-119. points: points,
-120. // 轨迹的动画时长
-121. animationDuration: 5000,
-122. // 相机是否跟随动画移动
-123. isMapMoving: true,
-124. // 轨迹的颜色
-125. color: 0xAAFFAA00,
-126. // 轨迹的宽度
-127. width: 20,
-128. // 轨迹的动画回调（回调轨迹点的index）
-129. animationCallback: (pointIndex) => {
-130. // 换成骑行
-131. if (pointIndex === 10) {
-132. markerBoy1.setVisible(false);
-133. markerBoy2.setVisible(true);
-134. }
-135. }
-136. };
-137. let markers: Array<map.Marker> = new Array();
-138. markers.push(markerBoy1, markerBoy2);
-139. // 新增轨迹点动画
-140. let traceOverlay = await this.mapController.addTraceOverlay(traceOptions, markers);
+// 动态轨迹的入参
+let traceOptions: mapCommon.TraceOverlayParams = {
+  // 轨迹点
+  points: points,
+  // 轨迹的动画时长
+  animationDuration: 5000,
+  // 相机是否跟随动画移动
+  isMapMoving: true,
+  // 轨迹的颜色
+  color: 0xAAFFAA00,
+  // 轨迹的宽度
+  width: 20,
+  // 轨迹的动画回调（回调轨迹点的index）
+  animationCallback: (pointIndex) => {
+    // 换成骑行
+    if (pointIndex === 10) {
+      markerBoy1.setVisible(false);
+      markerBoy2.setVisible(true);
+    }
+  }
+};
+let markers: Array<map.Marker> = new Array();
+markers.push(markerBoy1, markerBoy2);
+// 新增轨迹点动画
+let traceOverlay = await this.mapController.addTraceOverlay(traceOptions, markers);
 ```
 
 ## MapArcParams
-
-PhonePC/2in1TabletWearable
 
 弧线的参数。继承[BaseOverlayOptions](map-common.md#baseoverlayoptions)。
 
@@ -1390,34 +1334,32 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. // 设置弧线参数
-2. let mapArcParams: mapCommon.MapArcParams = {
-3. // 弧线起点坐标
-4. startPoint: {
-5. latitude: 39.913138,
-6. longitude: 116.415112
-7. },
-8. // 弧线终点坐标
-9. endPoint: {
-10. latitude: 28.239473,
-11. longitude: 112.954094
-12. },
-13. // 弧线中心点坐标
-14. centerPoint: {
-15. latitude: 33.86970399048567,
-16. longitude: 112.08633528544145
-17. },
-18. width: 10,
-19. color: 0xffff0000,
-20. visible: true,
-21. zIndex: 100
-22. };
+```typescript
+// 设置弧线参数
+let mapArcParams: mapCommon.MapArcParams = {
+  // 弧线起点坐标
+  startPoint: {
+    latitude: 39.913138,
+    longitude: 116.415112
+  },
+  // 弧线终点坐标
+  endPoint: {
+    latitude: 28.239473,
+    longitude: 112.954094
+  },
+  // 弧线中心点坐标
+  centerPoint: {
+    latitude: 33.86970399048567,
+    longitude: 112.08633528544145
+  },
+  width: 10,
+  color: 0xffff0000,
+  visible: true,
+  zIndex: 100
+};
 ```
 
 ## CoordinateLatLng
-
-PhonePC/2in1TabletWearable
 
 指定的坐标系和坐标。
 
@@ -1436,16 +1378,14 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. let location: mapCommon.CoordinateLatLng = {
-2. coordinateType: mapCommon.CoordinateType.GCJ02,
-3. location: { latitude: 31.984410259206815, longitude: 118.76625379397866 }
-4. };
+```typescript
+let location: mapCommon.CoordinateLatLng = {
+  coordinateType: mapCommon.CoordinateType.GCJ02,
+  location: { latitude: 31.984410259206815, longitude: 118.76625379397866 }
+};
 ```
 
 ## TileOverlayParams
-
-PhonePC/2in1TabletWearable
 
 瓦片图层的参数。继承[BaseOverlayOptions](map-common.md#baseoverlayoptions)。
 
@@ -1465,24 +1405,20 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. let params: mapCommon.TileOverlayParams = {
-2. // 设置地图瓦片图层的地址，必须是以http或者https开头的URL且包含占位符{x}、{y}和{z}
-3. tileUrl: "https://xxx/xxx?x={x}&y={y}&z={z}",
-4. transparency: 0,
-5. fadeIn: false
-6. };
+```typescript
+let params: mapCommon.TileOverlayParams = {
+  // 开发者的地图瓦片图层地址，必须使用以http或者https开头的URL地址，且需包含?x={x}&y={y}&z={z}格式的占位符
+  tileUrl: "https://xxx/xxx?x={x}&y={y}&z={z}",
+  transparency: 0,
+  fadeIn: false
+};
 ```
 
 ## TileOverlayOptions
 
-PhonePC/2in1TabletWearable
-
 瓦片图层的参数。继承[BaseOverlayOptions](map-common.md#baseoverlayoptions)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**元服务API：** 从版本6.0.0(20)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Map.Core
 
@@ -1490,29 +1426,30 @@ PhonePC/2in1TabletWearable
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| tileUrl | string | 否 | 是 | 瓦片图层的URL地址。  必须是以http或者https开头的URL且包含占位符{x}、{y}和{z}。 |
-| tileProvider | [TileProvider](map-common.md#tileprovider) | 否 | 是 | 根据瓦片坐标获取瓦片。 |
-| transparency | number | 否 | 是 | 瓦片图层的透明度。  取值范围为[0, 1]，0表示不透明，1表示透明。  默认值为0。 |
-| fadeIn | boolean | 否 | 是 | 是否开启瓦片图层淡入。  - true：开启瓦片图层淡入。  - false：不开启瓦片图层淡入。  默认值为true。 |
-| diskCacheEnabled | boolean | 否 | 是 | 是否启用磁盘缓存。  - true：开启磁盘缓存。  - false：不开启磁盘缓存。  默认值为false。 |
-| diskCacheSize | number | 否 | 是 | 磁盘缓存大小，单位：KB，默认值：20480。 |
-| diskCachePath | string | 否 | 是 | 磁盘缓存路径。如果启用了磁盘缓存，则必须配置。 |
+| tileUrl | string | 否 | 是 | 瓦片图层的URL地址。  必须是以http或者https开头的URL且包含占位符{x}、{y}和{z}。  **元服务API：** 从版本6.0.0(20)开始，该接口支持在元服务中使用。 |
+| tileProvider | [TileProvider](map-common.md#tileprovider) | 否 | 是 | 根据瓦片坐标获取瓦片。  **元服务API：** 从版本6.0.0(20)开始，该接口支持在元服务中使用。 |
+| transparency | number | 否 | 是 | 瓦片图层的透明度。  取值范围为[0, 1]，0表示不透明，1表示透明。  默认值为0。  **元服务API：** 从版本6.0.0(20)开始，该接口支持在元服务中使用。 |
+| fadeIn | boolean | 否 | 是 | 是否开启瓦片图层淡入。  - true：开启瓦片图层淡入。  - false：不开启瓦片图层淡入。  默认值为true。  **元服务API：** 从版本6.0.0(20)开始，该接口支持在元服务中使用。 |
+| diskCacheEnabled | boolean | 否 | 是 | 是否启用磁盘缓存。  - true：开启磁盘缓存。  - false：不开启磁盘缓存。  默认值为false。  **元服务API：** 从版本6.0.0(20)开始，该接口支持在元服务中使用。 |
+| diskCacheSize | number | 否 | 是 | 磁盘缓存大小，单位：KB，默认值：20480。  **元服务API：** 从版本6.0.0(20)开始，该接口支持在元服务中使用。 |
+| diskCachePath | string | 否 | 是 | 磁盘缓存路径。如果启用了磁盘缓存，则必须配置。  **元服务API：** 从版本6.0.0(20)开始，该接口支持在元服务中使用。 |
+| tileDataReuse | number[] | 否 | 是 | 该配置项用于定义高层级复用低层级瓦片的规则。默认情况下，不进行层级复用。配置数组的长度固定为19，对应层级2至层级20。若数组长度不等于19，则不进行处理。数组中的数字需逐步增大或保持不变，若出现其他情况则视为异常值。数组中的值应在范围[2, 20]内，并会自动向下取整。任何异常值不处理。  **起始版本：** 6.1.1(24)  **元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。 |
 
 **示例：**
 
-```
-1. let params: mapCommon.TileOverlayOptions = {
-2. // 设置地图瓦片图层的地址，必须是以http或者https开头的URL且包含占位符{x}、{y}和{z}
-3. tileUrl: "https://xxx/xxx?x={x}&y={y}&z={z}",
-4. diskCacheEnabled: true,
-5. diskCacheSize: 20480,
-6. diskCachePath: '/data/storage/el2/database'
-7. };
+```typescript
+let params: mapCommon.TileOverlayOptions = {
+  // 开发者的地图瓦片图层地址，必须使用以http或者https开头的URL地址，且需包含?x={x}&y={y}&z={z}格式的占位符
+  tileUrl: "https://xxx/xxx?x={x}&y={y}&z={z}",
+  diskCacheEnabled: true,
+  diskCacheSize: 20480,
+  diskCachePath: '/data/storage/el2/database',
+  // 高层级复用低层级瓦片的配置项
+  tileDataReuse: [ 2, 3, 4, 5, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7 ]
+};
 ```
 
 ## HeatmapParams
-
-PhonePC/2in1TabletWearable
 
 热力图的参数。
 
@@ -1537,8 +1474,6 @@ PhonePC/2in1TabletWearable
 
 ## RadiusUnit
 
-PhonePC/2in1TabletWearable
-
 半径单位。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1556,8 +1491,6 @@ PhonePC/2in1TabletWearable
 
 ## WeightedLatLng
 
-PhonePC/2in1TabletWearable
-
 加权经纬度。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1574,8 +1507,6 @@ PhonePC/2in1TabletWearable
 | intensity | number | 否 | 是 | 强度的权重，取值范围：[0，+∞)，默认值：1，异常值按默认值处理。 |
 
 ## TileProvider
-
-PhonePC/2in1TabletWearable
 
 type TileProvider = (x: number, y: number, z: number) => Promise<ArrayBuffer>
 
@@ -1603,8 +1534,6 @@ type TileProvider = (x: number, y: number, z: number) => Promise<ArrayBuffer>
 
 ## MvtOverlayParams
 
-PhonePC/2in1Tablet
-
 矢量图层的参数。继承[BaseOverlayOptions](map-common.md#baseoverlayoptions)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1621,8 +1550,6 @@ PhonePC/2in1Tablet
 
 ## MvtSource
 
-PhonePC/2in1Tablet
-
 矢量图层的来源。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1637,12 +1564,10 @@ PhonePC/2in1Tablet
 | --- | --- | --- | --- | --- |
 | tileUrl | string | 否 | 是 | 矢量图层的数据下载URL模板。URL必须包含占位符{x}、{y}和{z}。  **说明：**  使用在线下载方式添加矢量图层时（即使用tileUrl方式），需要申请访问网络的权限：ohos.permission.INTERNET。 |
 | tileProvider | [TileProvider](map-common.md#tileprovider) | 否 | 是 | 根据瓦片坐标获取瓦片。 |
-| minZoom | number | 否 | 是 | 最小缩放层级，默认值：2。 |
-| maxZoom | number | 否 | 是 | 最大缩放层级，默认值：20。 |
+| minZoom | number | 否 | 是 | 最小缩放层级，默认值：2，取值范围：[2, 20]，异常值按默认值处理。 |
+| maxZoom | number | 否 | 是 | 最大缩放层级，默认值：20，取值范围：[2, 20]，异常值按默认值处理。 |
 
 ## MvtLayer
-
-PhonePC/2in1Tablet
 
 样式数组，用于配置样式。
 
@@ -1663,8 +1588,6 @@ PhonePC/2in1Tablet
 
 ## MvtPaint
 
-PhonePC/2in1Tablet
-
 用于配置几何体的渲染，如填充、描边等。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1678,11 +1601,9 @@ PhonePC/2in1Tablet
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | fillColor | number | [Expression](map-common.md#expression) | 否 | 是 | 填充颜色，默认值：0x000000，异常值按默认值处理。支持：  - 十六进制RGB格式。  - 从矢量图层数据的属性中读取。 |
-| fillOpacity | number | [Expression](map-common.md#expression) | 否 | 是 | 填充不透明度，默认值：0，异常值按默认值处理。支持：  - 介于0到1之间的数字。  - 从矢量图层数据的属性中读取。 |
+| fillOpacity | number | [Expression](map-common.md#expression) | 否 | 是 | 填充不透明度，默认值：0，异常值按默认值处理。支持：  - 取值范围为[0, 1]，0表示完全透明，1表示完全不透明。  - 从矢量图层数据的属性中读取。 |
 
 ## MvtLayerType
-
-PhonePC/2in1Tablet
 
 矢量图层类型。
 
@@ -1699,8 +1620,6 @@ PhonePC/2in1Tablet
 | FILL | 'fill' | 填充多边形。 |
 
 ## Expression
-
-PhonePC/2in1Tablet
 
 矢量图层叠加表达式。
 
@@ -1719,8 +1638,6 @@ PhonePC/2in1Tablet
 
 ## Operator
 
-PhonePC/2in1Tablet
-
 操作符。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1736,8 +1653,6 @@ PhonePC/2in1Tablet
 | GET | 'get' | 获取操作符。 |
 
 ## FlowFieldOverlayParams
-
-PhonePC/2in1Tablet
 
 流场图层的参数。继承[BaseOverlayOptions](map-common.md#baseoverlayoptions)。
 
@@ -1755,8 +1670,6 @@ PhonePC/2in1Tablet
 | style | [ParticleStyle](map-common.md#particlestyle) | 否 | 是 | 粒子样式。 |
 
 ## ParticleStyle
-
-PhonePC/2in1Tablet
 
 粒子样式。
 
@@ -1777,9 +1690,7 @@ PhonePC/2in1Tablet
 
 ## MassPointItem
 
-PhonePC/2in1TabletWearable
-
-海量点列表。
+海量点项。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -1797,8 +1708,6 @@ PhonePC/2in1TabletWearable
 | snippet | string | 否 | 是 | 点的内容。 |
 
 ## MassPointOverlayParams
-
-PhonePC/2in1TabletWearable
 
 海量点的参数。
 
@@ -1818,9 +1727,69 @@ PhonePC/2in1TabletWearable
 | anchorU | number | 否 | 是 | 图标锚点在水平方向上的位置，取值范围：[0, 1]，默认值：0.5。 |
 | anchorV | number | 否 | 是 | 图标锚点在垂直方向上的位置，取值范围：[0, 1]，默认值：0.5。 |
 
-## MapType
+## LineText
 
-PhonePC/2in1TabletWearable
+提供地图线段的文本。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Map.Core
+
+**起始版本：** 26.0.0
+
+| **名称** | **类型** | 只读 | 可选 | **说明** |
+| --- | --- | --- | --- | --- |
+| lineNames | string[] | 否 | 否 | 分段行文本内容列表。 |
+| lineNameIndexes | number[] | 否 | 否 | 用于在段中显示文本的段线范围。  **说明：**  - 每个值必须大于等于0。  - 值序列必须单调不递减。  - LineNameIndexes数组长度必须是lineNames数组长度的两倍。  如果违反任何一个条件，则该参数将被视为无效参数。 |
+| nameOnRight | boolean | 否 | 是 | 显示在行的哪一边的文本。  - true：右侧。  - false：左侧。  默认值：true，异常值按默认值处理。 |
+| color | number | 否 | 是 | 文字内容的颜色，颜色值采用ARGB格式，默认值：0xFF000000，异常值按默认值处理。 |
+| fontSize | number | 否 | 是 | 文字内容的字体大小，默认值：15，单位：px，取值范围：[0, 100]，超出按边界值处理，null和undefined按默认值处理。 |
+| strokeColor | number | 否 | 是 | 文本内容描边颜色，颜色值采用ARGB格式，默认值：0xFFFFFFFF，异常值按默认值处理。 |
+| fontStyle | [FontStyle](map-common.md#fontstyle) | 否 | 是 | 文字内容的字体样式，默认值：[FontStyle](map-common.md#fontstyle).REGULAR，异常值按默认值处理。 |
+
+## SphereParams
+
+3D地球的属性，包括启用晨昏线、城市灯光、动画持续时间、背景和覆盖物。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Map.Core
+
+**起始版本：** 26.0.0
+
+| **名称** | **类型** | 只读 | 可选 | **说明** |
+| --- | --- | --- | --- | --- |
+| sunLightEnabled | boolean | 否 | 是 | 是否启用晨昏线。  - true：启用晨昏线。  - false：关闭晨昏线。  默认值：true，异常值按默认值处理。  **说明：**  晨昏线是地球表面上太阳光照范围的分界线，将地球分为白天和黑夜两个区域。晨昏线在地球上的位置会随着地球自转和公转而不断变化。 |
+| cityLightEnabled | boolean | 否 | 是 | 是否启用城市灯光，默认值：true，异常值按默认值处理。  - true：启用城市灯光。  - false：关闭城市灯光。 |
+| animateDuration | number | 否 | 是 | 动画持续时间，单位ms，取值范围：不小于0，异常值按默认值处理。 |
+| backgroundImage | [ResourceStr](ts-types.md#resourcestr) | [image.PixelMap](arkts-apis-image-pixelmap.md) | 否 | 是 | 3D地球的背景。 |
+| coverageImage | [ResourceStr](ts-types.md#resourcestr) | [image.PixelMap](arkts-apis-image-pixelmap.md) | 否 | 是 | 3D地球的覆盖物。 |
+
+## MapSignalParams
+
+信号路线的属性，继承[BaseOverlayOptions](map-common.md#baseoverlayoptions)。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Map.Core
+
+**起始版本：** 26.0.0
+
+| **名称** | **类型** | 只读 | 可选 | **说明** |
+| --- | --- | --- | --- | --- |
+| signalId | string | 否 | 否 | 信号路线ID，空值不处理。  **说明：**  成功添加信号路线后，Map Kit会在应用进程内存中缓存signalId。删除路线时，默认保留该缓存，以便在应用进程存活期间，可无需网络直接重新添加已缓存的信号路线。  如果需要删除缓存的signalId，请调用[removeSignalLineCache](map-map-mapcomponentcontroller.md#removesignallinecache)接口。 |
+| points | [LatLng](map-common.md#latlng)[] | 否 | 是 | 信号路线的顶点，长度范围为[0, 10000]，路线长度小于200km，空值返回401。 |
+| colors | number[] | 否 | 是 | 信号路线的颜色，长度必须为3。三段颜色依次对应弱、中、强信号，ARGB格式，默认值：[0xFFFC3C11, 0xFFFFDF42, 0xFF42B0FF]（红、黄、蓝），数组长度必须为3，异常值按照默认值处理。 |
+| width | number | 否 | 是 | 信号路线的宽度，范围为[0, 512]，默认值：10，单位：px，传入值大于512按512处理，小于0按10处理，空值按默认值处理。 |
+| coordinateType | [CoordinateType](map-common.md#coordinatetype) | 否 | 是 | 表示坐标系类型，默认值[CoordinateType.GCJ02](map-common.md#coordinatetype)，异常值按默认值处理。 |
+
+## MapType
 
 地图类型。
 
@@ -1840,8 +1809,6 @@ PhonePC/2in1TabletWearable
 
 ## PatternItemType
 
-PhonePC/2in1TabletWearable
-
 描述圆、多边形或折线的边框样式类型。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1860,8 +1827,6 @@ PhonePC/2in1TabletWearable
 
 ## JointType
 
-PhonePC/2in1TabletWearable
-
 折线、多边形的拐角绘制样式。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1879,8 +1844,6 @@ PhonePC/2in1TabletWearable
 | ROUND | 2 | 使用圆角连接路径段。 |
 
 ## LogoAlignment
-
-PhonePC/2in1TabletWearable
 
 地图Logo的对齐方式。
 
@@ -1901,8 +1864,6 @@ PhonePC/2in1TabletWearable
 
 ## CapStyle
 
-PhonePC/2in1TabletWearable
-
 用于自定义折线端点（起始顶点和末端顶点）样式。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1921,8 +1882,6 @@ PhonePC/2in1TabletWearable
 
 ## CollisionRule
 
-PhonePC/2in1TabletWearable
-
 地图POI之间的碰撞规则。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1939,8 +1898,6 @@ PhonePC/2in1TabletWearable
 | ICON\_CASCADE | 3 | 图标碰撞规则。只有标记（Marker）支持此规则。  **起始版本：** 6.1.0(23)  **元服务API：** 从版本6.1.0(23)开始，该接口支持在元服务中使用。 |
 
 ## FontStyle
-
-PhonePC/2in1TabletWearable
 
 点注释标题的字体样式。
 
@@ -1963,8 +1920,6 @@ PhonePC/2in1TabletWearable
 
 ## CoordinateType
 
-PhonePC/2in1TabletWearable
-
 坐标系类型。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1982,8 +1937,6 @@ PhonePC/2in1TabletWearable
 
 ## MyLocationDisplayType
 
-PhonePC/2in1TabletWearable
-
 定位图标的展示模式。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1997,12 +1950,12 @@ PhonePC/2in1TabletWearable
 | DEFAULT | 0 | 连续定位，相机不移动到我的位置，定位蓝点跟踪设备移动。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 | LOCATE | 1 | 定位一次，且将相机移动到地图中心点。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 | FOLLOW | 2 | 连续定位，且将相机移动到地图中心点，定位蓝点跟随设备移动。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
-| FOLLOW\_ROTATE | 3 | 连续定位，且将相机移动到地图中心点，定位蓝点依照设备方向旋转，并且会跟随设备移动。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。  **说明：**  使用FOLLOW\_ROTATE需应用申请传感器权限：ohos.permission.ACCELEROMETER。 |
-| TRACK\_ROTATE | 4 | 连续定位，位置图标会跟随设备的移动并根据设备方向旋转，但不会移动到地图中心。  **起始版本：** 6.0.0(20)  **元服务API：** 从版本6.0.0(20)开始，该接口支持在元服务中使用。  **说明：**  使用FOLLOW\_ROTATE需应用申请传感器权限：ohos.permission.ACCELEROMETER。 |
+| FOLLOW\_ROTATE | 3 | 连续定位，且将相机移动到地图中心点，定位蓝点依照设备方向旋转，并且会跟随设备移动。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。  **说明：**  需要权限：ohos.permission.ACCELEROMETER。 |
+| TRACK\_ROTATE | 4 | 连续定位，位置图标会跟随设备的移动并根据设备方向旋转，但不会移动到地图中心。  **起始版本：** 6.0.0(20)  **元服务API：** 从版本6.0.0(20)开始，该接口支持在元服务中使用。  **说明：**  需要权限：ohos.permission.ACCELEROMETER。 |
+| MAP\_ROTATE | 5 | 持续获取定位，相机移动到地图的中心点。定位的蓝点会随着设备移动，地图也会根据设备的方向进行旋转。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **说明：**  需要权限：ohos.permission.ACCELEROMETER。 |
+| MAP\_ROTATE\_NO\_CENTER | 6 | 持续获取定位，相机不会移动到地图中心点。定位的蓝点会随着设备移动，地图也会根据设备的方向进行旋转。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **说明：**  需要权限：ohos.permission.ACCELEROMETER。 |
 
 ## DayNightMode
-
-PhonePC/2in1TabletWearable
 
 地图日间夜间模式。
 
@@ -2022,8 +1975,6 @@ PhonePC/2in1TabletWearable
 
 ## ScaleUnit
 
-PhonePC/2in1TabletWearable
-
 地图比例尺公英制单位。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -2040,8 +1991,6 @@ PhonePC/2in1TabletWearable
 | IMPERIAL\_UNIT | 1 | 英制单位。 |
 
 ## TextPosition
-
-PhonePC/2in1TabletWearable
 
 设置点注释的文本位置。
 
@@ -2062,8 +2011,6 @@ PhonePC/2in1TabletWearable
 | RIGHT | 4 | 文本显示在图标的右侧。 |
 
 ## MapElementType
-
-PhonePC/2in1TabletWearable
 
 地图元素类型。
 

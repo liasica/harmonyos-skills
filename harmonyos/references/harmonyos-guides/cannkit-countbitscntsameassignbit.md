@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-count
 title: CountBitsCntSameAsSignBit
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 标量计算 > CountBitsCntSameAsSignBit
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:23+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:267c3037c4ee1aab8756c74fee2df4f85bcd68d8c4f32e274181744e3855bf85
+scraped_at: 2026-09-02T14:50:36+08:00
+doc_updated_at: 2026-08-18
+content_hash: sha256:c26f8ee158110bf65cb88681649f675ed2fc3243dd5669b6653cc74d5b341602
 ---
 
 ## 功能说明
@@ -16,8 +16,8 @@ content_hash: sha256:267c3037c4ee1aab8756c74fee2df4f85bcd68d8c4f32e274181744e385
 
 ## 函数原型
 
-```
-1. __aicore__ inline int64_t CountBitsCntSameAsSignBit(int64_t valueIn)
+```cpp
+__aicore__ inline int64_t CountBitsCntSameAsSignBit(int64_t valueIn)
 ```
 
 ## 参数说明
@@ -36,6 +36,8 @@ content_hash: sha256:267c3037c4ee1aab8756c74fee2df4f85bcd68d8c4f32e274181744e385
 
 Kirin9020系列处理器
 
+Kirin9030系列处理器
+
 KirinX90系列处理器
 
 ## 约束说明
@@ -44,8 +46,8 @@ KirinX90系列处理器
 
 ## 调用示例
 
-```
-1. int64_t valueIn = 0x0f00000000000000;
-2. // 输出数据(ans): 3
-3. int64_t ans = AscendC::CountBitsCntSameAsSignBit(valueIn);
+```cpp
+int64_t valueIn = 0x0f00000000000000;
+// 输出数据(ans): 3
+int64_t ans = AscendC::CountBitsCntSameAsSignBit(valueIn);
 ```

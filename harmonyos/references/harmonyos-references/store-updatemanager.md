@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/store-upd
 title: updateManager（更新功能）
 breadcrumb: API参考 > 应用服务 > AppGallery Kit（应用市场服务） > ArkTS API > updateManager（更新功能）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:20+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:374e481efea1bdd751094c0735d746f8fa6f1b5ae5afce5397003f36af1da08e
+scraped_at: 2026-09-02T15:02:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:170d10c740124342d544fbf27ed222b61f5c9a1c92b638e4173e00e4d80057c6
 ---
 
 提供检测新版本及升级功能。
 
-说明
+**说明** 
 
 调用接口需捕获异常。
 
@@ -18,15 +18,11 @@ content_hash: sha256:374e481efea1bdd751094c0735d746f8fa6f1b5ae5afce5397003f36af1
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { updateManager } from '@kit.AppGalleryKit';
+```typescript
+import { updateManager } from '@kit.AppGalleryKit';
 ```
 
 ## UpdateAvailableCode
-
-PhonePC/2in1TabletTVWearable
 
 检测更新结果码类型的枚举。
 
@@ -45,8 +41,6 @@ PhonePC/2in1TabletTVWearable
 
 ## ShowUpdateResultCode
 
-PhonePC/2in1TabletTVWearable
-
 显示升级弹框结果码类型的枚举。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -62,8 +56,6 @@ PhonePC/2in1TabletTVWearable
 
 ## CheckUpdateResult
 
-PhonePC/2in1TabletTVWearable
-
 检查是否有“更新”的接口调用结果。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -77,12 +69,10 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | updateAvailable | [UpdateAvailableCode](store-updatemanager.md#updateavailablecode) | 是 | 否 | 检查结果。 |
-| versionName | string | 是 | 是 | 版本名称，例如1.0.0.1。  **起始版本：** 6.0.0(20)  **说明：** 用于元服务场景调用。 |
-| versionCode | number | 是 | 是 | 版本号，例如1001。  **起始版本：** 6.0.0(20)  **说明：** 用于元服务场景调用。 |
+| versionName | string | 是 | 是 | 版本名称，例如1.0.0.1。  **起始版本：** 6.0.0(20)  **说明：** 仅用于元服务场景调用，应用场景调用时会返回undefined。 |
+| versionCode | number | 是 | 是 | 版本号，例如1001。  **起始版本：** 6.0.0(20)  **说明：** 仅用于元服务场景调用，应用场景调用时会返回undefined。 |
 
 ## RequestErrorCode
-
-PhonePC/2in1TabletTVWearable
 
 监听元服务更新检查接口结果码类型的枚举。
 
@@ -102,8 +92,6 @@ PhonePC/2in1TabletTVWearable
 
 ## UpdateSessionState
 
-PhonePC/2in1TabletTVWearable
-
 监听元服务更新检查接口的回调结果。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -121,11 +109,9 @@ PhonePC/2in1TabletTVWearable
 
 ## updateManager.checkAppUpdate
 
-PhonePC/2in1TabletTVWearable
-
 checkAppUpdate(context: common.UIAbilityContext): Promise<CheckUpdateResult>
 
-检查是否有更新，使用Promise方式异步返回结果。
+检查是否有更新。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -149,7 +135,7 @@ checkAppUpdate(context: common.UIAbilityContext): Promise<CheckUpdateResult>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](store-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-appgallery.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -164,51 +150,49 @@ checkAppUpdate(context: common.UIAbilityContext): Promise<CheckUpdateResult>
 
 **示例：**
 
-```
-1. import { updateManager } from '@kit.AppGalleryKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { common } from '@kit.AbilityKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { updateManager } from '@kit.AppGalleryKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. @Entry
-7. @Component
-8. struct Index {
-9. @State message: string = 'checkAppUpdate test'
+@Entry
+@Component
+struct Index {
+  @State message: string = 'checkAppUpdate test'
 
-11. build() {
-12. Row() {
-13. Column() {
-14. Text(this.message)
-15. .fontSize(50)
-16. .fontWeight(FontWeight.Bold)
-17. .onClick(() => {
-18. try {
-19. // 检查是否有更新,并返回是否有更新的检查结果
-20. updateManager.checkAppUpdate(this.getUIContext().getHostContext() as common.UIAbilityContext)
-21. .then((checkResult: updateManager.CheckUpdateResult) => {
-22. hilog.info(0, 'TAG', "Succeeded in checking Result updateAvailable:" + checkResult.updateAvailable);
-23. }).catch((error: BusinessError) => {
-24. hilog.error(0, 'TAG', `checkAppUpdate onError.code is ${error.code}, message is ${error.message}`);
-25. });
-26. } catch (error) {
-27. hilog.error(0, 'TAG', `checkAppUpdate onError.code is ${error.code}, message is ${error.message}`);
-28. }
-29. })
-30. }
-31. .width('100%')
-32. }
-33. .height('100%')
-34. }
-35. }
+  build() {
+    Row() {
+      Column() {
+        Text(this.message)
+          .fontSize(50)
+          .fontWeight(FontWeight.Bold)
+          .onClick(() => {
+            try {
+              // 检查是否有更新,并返回是否有更新的检查结果
+              updateManager.checkAppUpdate(this.getUIContext().getHostContext() as common.UIAbilityContext)
+                .then((checkResult: updateManager.CheckUpdateResult) => {
+                  hilog.info(0, 'TAG', "Succeeded in checking Result updateAvailable:" + checkResult.updateAvailable);
+                }).catch((error: BusinessError) => {
+                hilog.error(0, 'TAG', `checkAppUpdate onError.code is ${error.code}, message is ${error.message}`);
+              });
+            } catch (error) {
+              hilog.error(0, 'TAG', `checkAppUpdate onError.code is ${error.code}, message is ${error.message}`);
+            }
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 ## updateManager.showUpdateDialog
 
-PhonePC/2in1TabletTVWearable
-
 showUpdateDialog(context: common.UIAbilityContext): Promise<ShowUpdateResultCode>
 
-显示升级弹框，使用Promise方式异步返回结果。
+显示升级弹框。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -232,7 +216,7 @@ showUpdateDialog(context: common.UIAbilityContext): Promise<ShowUpdateResultCode
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](store-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-appgallery.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -245,56 +229,54 @@ showUpdateDialog(context: common.UIAbilityContext): Promise<ShowUpdateResultCode
 
 **示例：**
 
-```
-1. import { updateManager } from '@kit.AppGalleryKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { common } from '@kit.AbilityKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { updateManager } from '@kit.AppGalleryKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. @Entry
-7. @Component
-8. struct Index {
-9. @State message: string = 'showUpdateDialog test'
+@Entry
+@Component
+struct Index {
+  @State message: string = 'showUpdateDialog test'
 
-11. build() {
-12. Row() {
-13. Column() {
-14. Text(this.message)
-15. .fontSize(50)
-16. .fontWeight(FontWeight.Bold)
-17. .onClick(() => {
-18. try {
-19. // 显示升级弹框,返回显示升级弹框获取结果
-20. updateManager.showUpdateDialog(this.getUIContext().getHostContext() as common.UIAbilityContext)
-21. .then((resultCode: updateManager.ShowUpdateResultCode) => {
-22. hilog.info(0, 'TAG', "Succeeded in showing UpdateDialog resultCode:" + resultCode);
-23. })
-24. .catch((error: BusinessError) => {
-25. hilog.error(0, 'TAG', `showUpdateDialog onError.code is ${error.code}, message is ${error.message}`);
-26. });
-27. } catch (error) {
-28. hilog.error(0, 'TAG', `showUpdateDialog onError.code is ${error.code}, message is ${error.message}`);
-29. }
-30. })
-31. }
-32. .width('100%')
-33. }
-34. .height('100%')
-35. }
-36. }
+  build() {
+    Row() {
+      Column() {
+        Text(this.message)
+          .fontSize(50)
+          .fontWeight(FontWeight.Bold)
+          .onClick(() => {
+            try {
+              // 显示升级弹框,返回显示升级弹框获取结果
+              updateManager.showUpdateDialog(this.getUIContext().getHostContext() as common.UIAbilityContext)
+                .then((resultCode: updateManager.ShowUpdateResultCode) => {
+                  hilog.info(0, 'TAG', "Succeeded in showing UpdateDialog resultCode:" + resultCode);
+                })
+                .catch((error: BusinessError) => {
+                  hilog.error(0, 'TAG', `showUpdateDialog onError.code is ${error.code}, message is ${error.message}`);
+                });
+            } catch (error) {
+              hilog.error(0, 'TAG', `showUpdateDialog onError.code is ${error.code}, message is ${error.message}`);
+            }
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 ## updateManager.on('updateChange')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'updateChange', callback: Callback<UpdateSessionState>, timeout?: number): void
 
 监听元服务更新检查接口，检查到有/无更新后，使用callback方式返回结果。
 
-说明
+**说明** 
 
-同一设备下元服务的调用次数不超过6次/天、每30分钟调用次数不超过1次。
+同一设备下元服务的更新检查监听次数不超过6次/天、每30分钟监听次数不超过1次。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -314,7 +296,7 @@ on(type: 'updateChange', callback: Callback<UpdateSessionState>, timeout?: numbe
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](store-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-appgallery.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -328,56 +310,54 @@ on(type: 'updateChange', callback: Callback<UpdateSessionState>, timeout?: numbe
 
 **示例：**
 
-```
-1. import { updateManager } from '@kit.AppGalleryKit';
-2. import { abilityManager, common } from '@kit.AbilityKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { updateManager } from '@kit.AppGalleryKit';
+import { abilityManager, common } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. @State message: string = 'on'
+@Entry
+@Component
+struct Index {
+  @State message: string = 'on'
 
-10. build() {
-11. Row() {
-12. Column() {
-13. Text(this.message)
-14. .fontSize(50)
-15. .fontWeight(FontWeight.Bold)
-16. .onClick(() => this.callOn)
-17. }
-18. .width('100%')
-19. }
-20. .height('100%')
-21. }
+  build() {
+    Row() {
+      Column() {
+        Text(this.message)
+          .fontSize(50)
+          .fontWeight(FontWeight.Bold)
+          .onClick(() => this.callOn)
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
 
-23. private callOn() {
-24. // 监听元服务更新检查接口，检查到有/无更新后，使用callback方式返回结果。
-25. let callback = (state: updateManager.UpdateSessionState) => {
-26. if (state.code === updateManager.RequestErrorCode.NO_UPGRADE) {
-27. hilog.info (0, 'TAG', `on success, no need update`);
-28. updateManager.off('updateChange');
-29. } else if (state.code === updateManager.RequestErrorCode.NEED_UPGRADE) {
-30. hilog.info (0, 'TAG', `on success, need update`);
-31. } else if (state.code === updateManager.RequestErrorCode.DOWNLOADED) {
-32. hilog.info (0, 'TAG', `on success, need update and download success`);
-33. updateManager.off('updateChange');
-34. abilityManager.restartSelfAtomicService(this.getUIContext().getHostContext() as common.Context);
-35. }
-36. };
-37. try {
-38. // 监听元服务更新检查接口
-39. updateManager.on('updateChange', callback, 20);
-40. } catch (error) {
-41. hilog.error(0, 'TAG', `on Error.code is ${error.code}, message is ${error.message}`);
-42. }
-43. }
-44. }
+  private callOn() {
+    // 监听元服务更新检查接口，检查到有/无更新后，使用callback方式返回结果。
+    let callback = (state: updateManager.UpdateSessionState) => {
+      if (state.code === updateManager.RequestErrorCode.NO_UPGRADE) {
+        hilog.info (0, 'TAG', `on success, no need update`);
+        updateManager.off('updateChange');
+      } else if (state.code === updateManager.RequestErrorCode.NEED_UPGRADE) {
+        hilog.info (0, 'TAG', `on success, need update`);
+      } else if (state.code === updateManager.RequestErrorCode.DOWNLOADED) {
+        hilog.info (0, 'TAG', `on success, need update and download success`);
+        updateManager.off('updateChange');
+        abilityManager.restartSelfAtomicService(this.getUIContext().getHostContext() as common.Context);
+      }
+    };
+    try {
+      // 监听元服务更新检查接口
+      updateManager.on('updateChange', callback, 20);
+    } catch (error) {
+      hilog.error(0, 'TAG', `on Error.code is ${error.code}, message is ${error.message}`);
+    }
+  }
+}
 ```
 
 ## updateManager.off('updateChange')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'updateChange', callback?: Callback<UpdateSessionState>): void
 
@@ -400,7 +380,7 @@ off(type: 'updateChange', callback?: Callback<UpdateSessionState>): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](store-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-appgallery.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -413,13 +393,13 @@ off(type: 'updateChange', callback?: Callback<UpdateSessionState>): void
 
 **示例：**
 
-```
-1. import { updateManager } from '@kit.AppGalleryKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. try {
-4. // 取消监听
-5. updateManager.off('updateChange');
-6. } catch (error) {
-7. hilog.error(0, 'TAG', `moduleInstallManager.off onError.code is ${error.code}, message is ${error.message}`);
-8. }
+```typescript
+import { updateManager } from '@kit.AppGalleryKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+try {
+  // 取消监听
+  updateManager.off('updateChange');
+} catch (error) {
+  hilog.error(0, 'TAG', `moduleInstallManager.off onError.code is ${error.code}, message is ${error.message}`);
+}
 ```

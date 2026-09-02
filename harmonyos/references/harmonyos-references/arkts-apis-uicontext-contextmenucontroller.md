@@ -3,26 +3,27 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (ContextMenuController)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (ContextMenuController)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:50:34+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:bf4864ad5a18c311f3cf93841412b7965376c617f27c02572c623e70375b18fb
+scraped_at: 2026-09-02T15:00:49+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8de0a20d2b73e4c6c01a54b9575b28d941dcc39c02905a7a60601860b05cf5ed
 ---
 
-提供控制菜单关闭的能力。
+提供控制菜单关闭的能力。开发者可以通过此接口在特定场景下（如定时关闭、点击外部区域关闭等）主动关闭菜单。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Class首批接口从API version 12开始支持。
+* 本模块接口仅可在Stage模型下使用。
 * 以下API需先使用UIContext中的[getContextMenuController()](arkts-apis-uicontext-uicontext.md#getcontextmenucontroller12)方法获取ContextMenuController实例，再通过此实例调用对应方法。
 
 ## close12+
 
-PhonePC/2in1TabletTVWearable
-
 close(): void
 
-关闭菜单。
+关闭当前通过bindContextMenu展示的菜单。若当前无菜单展示，调用本方法无效果。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -32,49 +33,50 @@ close(): void
 
 通过定时器触发，调用ContextMenuController的close方法关闭菜单。
 
+```ts
+import { ContextMenuController } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct Index {
+  menu: ContextMenuController = this.getUIContext().getContextMenuController();
+
+  @Builder MenuBuilder() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Button('Test ContextMenu1 Close')
+      Divider().strokeWidth(2).margin(5).color(Color.Black)
+      Button('Test ContextMenu2')
+      Divider().strokeWidth(2).margin(5).color(Color.Black)
+      Button('Test ContextMenu3')
+    }
+    .width(200)
+    .height(160)
+  }
+
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Button('启动定时器').onClick(() => {
+        // 延时10秒后调用close方法关闭菜单
+        setTimeout(() => {
+          this.menu.close();
+        }, 10000);
+      })
+
+      Column() {
+        Text('Test ContextMenu close')
+          .fontSize(20)
+          .width('100%')
+          .height(500)
+          .backgroundColor(0xAFEEEE)
+          .textAlign(TextAlign.Center)
+      }
+      // 绑定自定义菜单，长按触发
+      .bindContextMenu(this.MenuBuilder, ResponseType.LongPress)
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
-1. import { ContextMenuController } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. menu: ContextMenuController = this.getUIContext().getContextMenuController();
-
-8. @Builder MenuBuilder() {
-9. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-10. Button('Test ContextMenu1 Close')
-11. Divider().strokeWidth(2).margin(5).color(Color.Black)
-12. Button('Test ContextMenu2')
-13. Divider().strokeWidth(2).margin(5).color(Color.Black)
-14. Button('Test ContextMenu3')
-15. }
-16. .width(200)
-17. .height(160)
-18. }
-
-20. build() {
-21. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-22. Button("启动定时器").onClick(()=>
-23. {
-24. setTimeout(() => {
-25. this.menu.close();
-26. }, 10000);
-27. })
-
-29. Column() {
-30. Text("Test ContextMenu close")
-31. .fontSize(20)
-32. .width('100%')
-33. .height(500)
-34. .backgroundColor(0xAFEEEE)
-35. .textAlign(TextAlign.Center)
-36. }
-37. .bindContextMenu(this.MenuBuilder, ResponseType.LongPress)
-38. }
-39. .width('100%')
-40. .height('100%')
-41. }
-42. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/-Pmct7Z7S_KqXJbac8wqcA/zh-cn_image_0000002558765926.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/HrzMQa7TQUq7o8ut2aSU7A/zh-cn_image_0000002736434669.gif)

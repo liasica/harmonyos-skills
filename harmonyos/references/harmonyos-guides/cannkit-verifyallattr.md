@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-verif
 title: VerifyAllAttr
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator > VerifyAllAttr
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:49+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3a448d6d8c51d1f32f019b984e16186ab532a23aa455763e5cc6daba4b7d40c8
+content_hash: sha256:f64aa69751d952282fe4144356300d0c17366d635fcbc072d93f4f1dc430d487
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:3a448d6d8c51d1f32f019b984e16186ab532a23aa455763e5cc6daba4b7
 
 ## 函数原型
 
-```
-1. graphStatus VerifyAllAttr(bool disable_common_verifier = false);
+```cpp
+graphStatus VerifyAllAttr(bool disable_common_verifier = false);
 ```
 
 ## 参数说明

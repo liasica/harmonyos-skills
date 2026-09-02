@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-remotecommunicationkit-6003
 title: Remote Communication Kit
-breadcrumb: 版本说明 > HarmonyOS 6.0.0(20) > OS平台能力 > API变更清单 > 6.0.0(20) Beta3引入的API > Remote Communication Kit
+breadcrumb: 版本说明 > 更多版本 > 6.0.0(20) > OS平台能力 > API变更清单 > 6.0.0(20) Beta3引入的API > Remote Communication Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:22+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:28+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:1c32303369685f1c45b94a969108a45dcff1f7e4221a33fb0e08fbca5c01ac83
 ---
 

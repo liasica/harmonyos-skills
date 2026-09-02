@@ -1,18 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-localbuilder
-title: "@LocalBuilder装饰器： 维持组件关系"
-breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @LocalBuilder装饰器： 维持组件关系
+title: "@LocalBuilder装饰器：维持组件关系"
+breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @LocalBuilder装饰器：维持组件关系
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:07+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:e303780314d5d03390607613dcf69eb1819eee4af5e3336fa8497491fcafe741
+scraped_at: 2026-09-02T14:59:15+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:91c7c7d9365766bf9343bca8e6cae1c2f8b1930f107442e8bb0b47cfe3adc129
 ---
 
-当开发者使用局部@Builder进行引用数据传递时，需要考虑组件的父子关系。然而在使用.bind(this)的方式更改函数调用上下文后，会出现组件的父子关系与状态管理的父子关系不一致的问题。为了解决这一问题，引入@LocalBuilder装饰器。@LocalBuilder拥有和局部@Builder相同的功能，且比局部@Builder能够更好的确定组件的父子关系和状态管理的父子关系。
+当开发者使用局部@Builder进行引用数据传递时，需要考虑组件的父子关系。然而在使用.bind(this)的方式更改函数调用上下文后，会出现组件的父子关系与状态管理的父子关系不一致的问题。为了解决这一问题，引入[@LocalBuilder](../harmonyos-references/ts-universal-localbuilder.md#localbuilder)装饰器。@LocalBuilder拥有和局部@Builder相同的功能，且比局部@Builder能够更好地确定组件的父子关系和状态管理的父子关系。
 
 在阅读本文档前，建议提前阅读：[@Builder](arkts-builder.md)。
 
-说明
+**说明** 
 
 从API version 12开始支持。
 
@@ -26,22 +26,18 @@ content_hash: sha256:e303780314d5d03390607613dcf69eb1819eee4af5e3336fa8497491fca
 
 定义的语法：
 
+```typescript
+@LocalBuilder
+myBuilderFunction() {
+  // ···
+}
 ```
-1. @LocalBuilder
-2. myBuilderFunction() {
-3. // ···
-4. }
-```
-
-[CustomBuilderInComponent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/localBuilder/CustomBuilderInComponent.ets#L36-L47)
 
 使用方法：
 
+```typescript
+this.myBuilderFunction()
 ```
-1. this.myBuilderFunction()
-```
-
-[CustomBuilderInComponent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/localBuilder/CustomBuilderInComponent.ets#L51-L53)
 
 * 允许在自定义组件内定义一个或多个@LocalBuilder函数，该函数被视为是该组件的私有、特殊类型的成员函数。
 * 自定义构建函数可以在所属组件的build函数和其他自定义构建函数中调用，但不允许在组件外调用。
@@ -51,57 +47,63 @@ content_hash: sha256:e303780314d5d03390607613dcf69eb1819eee4af5e3336fa8497491fca
 
 跨组件传递局部@Builder函数时，会使用.bind(this)更改函数上下文，但这可能会导致组件的父子关系与状态管理的父子关系不一致。而@LocalBuilder无论是否使用.bind(this)，都不会改变组件的父子关系，即@LocalBuilder中定义组件所属的父组件是确定的，无法被改变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/OAG4OQsYSHyOK-bMKim2Eg/zh-cn_image_0000002589323935.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/vMTvprjaSheLxk89Mmpmfw/zh-cn_image_0000002736312267.png)
 
-说明
+**说明** 
 
 bind()方法创建一个新的函数，称为绑定函数，当调用者绑定bind()时，该绑定函数会以创建时传入的第一个this作为原函数的this。
 
 下方用例中，当函数componentBuilder被@Builder修饰时，显示效果为“Child”；当函数componentBuilder被@LocalBuilder修饰时，显示效果是“Parent”。
 
+```typescript
+@Component
+struct Child {
+  label: string = 'Child';
+  @BuilderParam customBuilderParam: () => void;
+
+  build() {
+    Column() {
+      this.customBuilderParam()
+    }
+    .width('100%')
+  }
+}
+
+@Entry
+@Component
+struct Parent {
+  label: string = 'Parent';
+
+  @Builder
+  componentBuilder() {
+    Text(`${this.label}`) // @Builder内的this指向实际调用点的组件，在这个用例中因为调用点在Child组件内，所以this实际指向Child组件
+      .fontSize(20)
+      .margin(10)
+  }
+
+  @LocalBuilder
+  componentLocalBuilder() {
+    Text(`${this.label}`) // @LocalBuilder内的this指向声明@LocalBuilder函数Parent组件
+      .fontSize(20)
+      .margin(10)
+  }
+
+  build() {
+    Column() {
+      Child({ customBuilderParam: this.componentBuilder }) // Child组件内调用customBuilderParam显示字符串Child。
+      Child({ customBuilderParam: this.componentLocalBuilder }) // 传递函数本身写法，Child组件内调用customBuilderParam显示字符串Parent。
+      Child({
+        customBuilderParam: () => {
+          this.componentLocalBuilder()
+        }
+      }) // () => { 函数调用 }写法，Child组件内调用customBuilderParam显示字符串Parent。
+    }
+    .width('100%')
+  }
+}
 ```
-1. @Component
-2. struct Child {
-3. label: string = 'Child';
-4. @BuilderParam customBuilderParam: () => void;
 
-6. build() {
-7. Column() {
-8. this.customBuilderParam()
-9. }
-10. }
-11. }
-
-13. @Entry
-14. @Component
-15. struct Parent {
-16. label: string = 'Parent';
-
-18. @Builder
-19. componentBuilder() {
-20. Text(`${this.label}`) // @Builder内的this指向实际调用点的组件，在这个用例中因为调用点在Child组件内，所以this实际指向Child组件
-21. }
-
-23. @LocalBuilder
-24. componentLocalBuilder() {
-25. Text(`${this.label}`) // @LocalBuilder内的this指向声明@LocalBuilder函数Parent组件
-26. }
-
-28. build() {
-29. Column() {
-30. Child({ customBuilderParam: this.componentBuilder }) // Child组件内调用customBuilderParam显示字符串Child。
-31. Child({ customBuilderParam: this.componentLocalBuilder }) // Child组件内调用customBuilderParam显示字符串Parent，传递函数本身写法。
-32. Child({
-33. customBuilderParam: () => {
-34. this.componentLocalBuilder()
-35. }
-36. }) // Child组件内调用customBuilderParam显示字符串Parent，() => { 函数调用 }写法。
-37. }
-38. }
-39. }
-```
-
-[ComponentBuilderModify.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/localBuilder/ComponentBuilderModify.ets#L15-L48)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/1WxDPDGgSUqPiiCwwX44NQ/zh-cn_image_0000002706673224.png)
 
 ## 限制条件
 
@@ -117,211 +119,253 @@ bind()方法创建一个新的函数，称为绑定函数，当调用者绑定bi
 * 参数的类型必须与参数声明的类型一致，且不允许为undefined、null。
 * 在@LocalBuilder修饰的函数内部，不允许改变参数值。
 * @LocalBuilder内的UI语法遵循[UI语法规则](arkts-create-custom-components.md#build函数实现规则)。
-* 按回调传递和按引用传递时，支持@Builder函数内UI组件刷新。按引用传递只在传入一个参数且该参数直接传入对象字面量时生效，有多个参数时不支持@Builder函数内UI组件刷新。
+* 按回调传递和按引用传递时，支持@LocalBuilder函数内UI组件刷新。按引用传递只在传入一个参数且该参数直接传入对象字面量时生效，有多个参数时不支持@LocalBuilder函数内UI组件刷新。
 
 ### 按回调传递参数
 
-从API version 20开始，开发者可以通过使用UIUtils.makeBinding()函数、Binding类和MutableBinding类实现@Builder函数中状态变量的刷新。详情请参考[状态管理API文档](../harmonyos-references/js-apis-statemanagement.md#makebinding20)。
+从API version 20开始，开发者可以通过使用UIUtils.makeBinding()函数、Binding类和MutableBinding类实现@LocalBuilder函数中状态变量的刷新。详情请参考[makeBinding](../harmonyos-references/js-apis-statemanagement.md#makebinding20)。
 
+```typescript
+import { UIUtils, Binding } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct Parent {
+  @State variableValue: string = 'Hello World';
+
+  @LocalBuilder
+  citeLocalBuilder(params: Binding<string>) {
+    Row() {
+      Text(`UseStateVarByReference: ${params.value}`)
+        .fontSize(20)
+        .margin(10)
+    }
+  }
+
+  build() {
+    Column() {
+      // 通过UIUtils.makeBinding()方法和Binding类，实现@LocalBuilder函数中状态变量的刷新
+      this.citeLocalBuilder(UIUtils.makeBinding<string>(() => this.variableValue))
+      Button('Click me')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.variableValue = 'Hi World';
+        })
+    }
+    .width('100%')
+  }
+}
 ```
-1. import { UIUtils, Binding } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Parent {
-6. @State variableValue: string = 'Hello World';
-
-8. @LocalBuilder
-9. citeLocalBuilder(params: Binding<string>) {
-10. Row() {
-11. Text(`UseStateVarByReference: ${params.value}`)
-12. }
-13. }
-
-15. build() {
-16. Column() {
-17. // 通过UIUtils.makeBinding()方法和Binding类，实现@Builder函数中状态变量的刷新
-18. this.citeLocalBuilder(UIUtils.makeBinding<string>(() => this.variableValue))
-19. Button('Click me')
-20. .onClick(() => {
-21. this.variableValue = 'Hi World';
-22. })
-23. }
-24. }
-25. }
-```
-
-[BuilderMakeBinding.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/localBuilder/BuilderMakeBinding.ets#L15-L40)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/kYwWKcWMQVetZe09pGOK7g/zh-cn_image_0000002736432313.gif)
 
 ### 按引用传递参数
 
 按引用传递参数时，传递的参数可为状态变量，且状态变量的改变会引起@LocalBuilder函数内的UI刷新。
 
-说明
+**说明** 
 
 若@LocalBuilder函数和$$参数一起使用，子组件调用父组件的@LocalBuilder函数，子组件传入的参数发生变化，不会引起@LocalBuilder函数内的UI刷新。见常见错误[@LocalBuilder函数和$$参数一起使用UI不刷新](arkts-localbuilder.md#localbuilder函数和参数一起使用ui不刷新)。
 
 组件Parent内的@LocalBuilder函数在build函数内调用，按键值对写法进行传值，当点击Click me时，@LocalBuilder内的Text文本内容会随着状态变量内容的改变而改变。
 
+```typescript
+class ReferenceType {
+  paramString: string = '';
+}
+
+@Entry
+@Component
+struct Parent {
+  @State variableValue: string = 'Hello World';
+
+  @LocalBuilder
+  citeLocalBuilder(params: ReferenceType) {
+    Row() {
+      Text(`UseStateVarByReference: ${params.paramString}`)
+        .fontSize(20)
+        .margin(10)
+    }
+  };
+
+  build() {
+    Column() {
+      // 按键值对写法进行传值，传入的参数发生变化，会引起citeLocalBuilder内的UI刷新
+      this.citeLocalBuilder({ paramString: this.variableValue })
+      Button('Click me')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.variableValue = 'Hi World';
+        })
+    }
+    .width('100%')
+  }
+}
 ```
-1. class ReferenceType {
-2. paramString: string = '';
-3. }
 
-5. @Entry
-6. @Component
-7. struct Parent {
-8. @State variableValue: string = 'Hello World';
-
-10. @LocalBuilder
-11. citeLocalBuilder(params: ReferenceType) {
-12. Row() {
-13. Text(`UseStateVarByReference: ${params.paramString}`)
-14. }
-15. };
-
-17. build() {
-18. Column() {
-19. // 按键值对写法进行传值，传入的参数发生变化，会引起citeLocalBuilder内的UI刷新
-20. this.citeLocalBuilder({ paramString: this.variableValue })
-21. Button('Click me').onClick(() => {
-22. this.variableValue = 'Hi World';
-23. })
-24. }
-25. }
-26. }
-```
-
-[ReferencePassing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/localBuilder/ReferencePassing.ets#L30-L56)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/fe6c-D96S4W1Z8KxWoEpnw/zh-cn_image_0000002706833160.gif)
 
 按引用传递参数时，如果在@LocalBuilder函数内调用自定义组件，ArkUI提供$$作为按引用传递参数的范式。
 
 组件Parent内的@LocalBuilder函数内调用自定义组件，且按照引用传递参数将值传递到自定义组件，当Parent组件内状态变量值发生变化时，@LocalBuilder函数内的自定义组件HelloComponent的message值也会随之更新。
 
+```typescript
+class ReferenceType {
+  paramString: string = '';
+}
+
+@Component
+struct HelloComponent {
+  @Prop message: string;
+
+  build() {
+    Row() {
+      Text(`HelloComponent===${this.message}`)
+        .fontSize(20)
+        .margin(10)
+    }
+  }
+}
+
+@Entry
+@Component
+struct Parent {
+  @State variableValue: string = 'Hello World';
+
+  @LocalBuilder
+  citeLocalBuilder($$: ReferenceType) {
+    Row() {
+      Column() {
+        Text(`citeLocalBuilder===${$$.paramString}`)
+          .fontSize(20)
+          .margin(10)
+        HelloComponent({ message: $$.paramString })
+      }
+      .width('100%')
+    }
+  }
+
+  build() {
+    Column() {
+      // 按引用传递参数，传入的参数发生变化，会引起citeLocalBuilder内的UI刷新
+      this.citeLocalBuilder({ paramString: this.variableValue })
+      Button('Click me')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.variableValue = 'Hi World';
+        })
+    }
+    .width('100%')
+  }
+}
 ```
-1. class ReferenceType {
-2. paramString: string = '';
-3. }
 
-5. @Component
-6. struct HelloComponent {
-7. @Prop message: string;
-
-9. build() {
-10. Row() {
-11. Text(`HelloComponent===${this.message}`)
-12. }
-13. }
-14. }
-
-16. @Entry
-17. @Component
-18. struct Parent {
-19. @State variableValue: string = 'Hello World';
-
-21. @LocalBuilder
-22. citeLocalBuilder($$: ReferenceType) {
-23. Row() {
-24. Column() {
-25. Text(`citeLocalBuilder===${$$.paramString}`)
-26. HelloComponent({ message: $$.paramString })
-27. }
-28. }
-29. }
-
-31. build() {
-32. Column() {
-33. // 按引用传递参数，传入的参数发生变化，会引起citeLocalBuilder内的UI刷新
-34. this.citeLocalBuilder({ paramString: this.variableValue })
-35. Button('Click me').onClick(() => {
-36. this.variableValue = 'Hi World';
-37. })
-38. }
-39. }
-40. }
-```
-
-[ParentRefSync.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/localBuilder/ParentRefSync.ets#L30-L70)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/jyEUj5B5SUmkpT-urW5zFg/zh-cn_image_0000002736312269.gif)
 
 当子组件引用父组件的@LocalBuilder函数并传入状态变量时，状态变量的改变不会触发@LocalBuilder函数内的UI刷新。这是因为调用@LocalBuilder装饰的函数创建出来的组件绑定于父组件，而状态变量的刷新机制仅作用于当前组件及其子组件，对父组件无效。而使用@Builder修饰函数可触发UI刷新，原因在于@Builder改变了函数的this指向，使创建出来的组件绑定到子组件上，从而在子组件修改变量能够实现@Builder中的UI刷新。
 
 下面示例中，组件Child将状态变量传递到Parent的@Builder和@LocalBuilder函数内。在@Builder函数内，this指向Child，参数变化能触发UI刷新。在@LocalBuilder函数内，this指向Parent，参数变化不会触发UI刷新。若@LocalBuilder函数内引用Parent的状态变量发生变化，UI能正常刷新。
 
+```typescript
+class Data {
+  public size: number = 0;
+}
+
+@Entry
+@Component
+struct Parent {
+  label: string = 'parent';
+  @State data: Data = new Data();
+
+  @Builder
+  componentBuilder($$: Data) {
+    // 点击Button 触发UI刷新
+    Text('builder + $$')
+      .fontSize(20)
+      .margin(10)
+    Text(`${'this -> ' + this.label}`)
+      .fontSize(20)
+      .margin(10)
+    Text(`${'size : ' + $$.size}`)
+      .fontSize(20)
+      .margin(10)
+  }
+
+  @LocalBuilder
+  componentLocalBuilder($$: Data) {
+    // 点击Button 不会触发UI刷新
+    Text('LocalBuilder + $$ data')
+      .fontSize(20)
+      .margin(10)
+    Text(`${'this -> ' + this.label}`)
+      .fontSize(20)
+      .margin(10)
+    Text(`${'size : ' + $$.size}`)
+      .fontSize(20)
+      .margin(10)
+  }
+
+  @LocalBuilder
+  contentLocalBuilderNoArgument() {
+    // 点击Button 触发UI刷新
+    Text('LocalBuilder + local data')
+      .fontSize(20)
+      .margin(10)
+    Text(`${'this -> ' + this.label}`)
+      .fontSize(20)
+      .margin(10)
+    Text(`${'size : ' + this.data.size}`)
+      .fontSize(20)
+      .margin(10)
+  }
+
+  build() {
+    Column() {
+      Child({
+        contentBuilder: this.componentBuilder,
+        contentLocalBuilder: this.componentLocalBuilder,
+        contentLocalBuilderNoArgument: this.contentLocalBuilderNoArgument,
+        data: this.data
+      })
+    }
+    .width('100%')
+  }
+}
+
+@Component
+struct Child {
+  label: string = 'child';
+
+  @Builder
+  customBuilder() {
+  };
+
+  @BuilderParam contentBuilder: ((data: Data) => void) = this.customBuilder;
+  @BuilderParam contentLocalBuilder: ((data: Data) => void) = this.customBuilder;
+  @BuilderParam contentLocalBuilderNoArgument: (() => void) = this.customBuilder;
+  @Link data: Data;
+
+  build() {
+    Column() {
+      this.contentBuilder({ size: this.data.size })
+      this.contentLocalBuilder({ size: this.data.size })
+      this.contentLocalBuilderNoArgument()
+      Button('add child size')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.data.size += 1;
+        })
+    }
+    .width('100%')
+  }
+}
 ```
-1. class Data {
-2. public size: number = 0;
-3. }
 
-5. @Entry
-6. @Component
-7. struct Parent {
-8. label: string = 'parent';
-9. @State data: Data = new Data();
-
-11. @Builder
-12. componentBuilder($$: Data) {
-13. // 点击Button 触发UI刷新
-14. Text('builder + $$')
-15. Text(`${'this -> ' + this.label}`)
-16. Text(`${'size : ' + $$.size}`)
-17. }
-
-19. @LocalBuilder
-20. componentLocalBuilder($$: Data) {
-21. // 点击Button 不会触发UI刷新
-22. Text('LocalBuilder + $$ data')
-23. Text(`${'this -> ' + this.label}`)
-24. Text(`${'size : ' + $$.size}`)
-25. }
-
-27. @LocalBuilder
-28. contentLocalBuilderNoArgument() {
-29. // 点击Button 触发UI刷新
-30. Text('LocalBuilder + local data')
-31. Text(`${'this -> ' + this.label}`)
-32. Text(`${'size : ' + this.data.size}`)
-33. }
-
-35. build() {
-36. Column() {
-37. Child({
-38. contentBuilder: this.componentBuilder,
-39. contentLocalBuilder: this.componentLocalBuilder,
-40. contentLocalBuilderNoArgument: this.contentLocalBuilderNoArgument,
-41. data: this.data
-42. })
-43. }
-44. }
-45. }
-
-47. @Component
-48. struct Child {
-49. label: string = 'child';
-
-51. @Builder
-52. customBuilder() {
-53. };
-
-55. @BuilderParam contentBuilder: ((data: Data) => void) = this.customBuilder;
-56. @BuilderParam contentLocalBuilder: ((data: Data) => void) = this.customBuilder;
-57. @BuilderParam contentLocalBuilderNoArgument: (() => void) = this.customBuilder;
-58. @Link data: Data;
-
-60. build() {
-61. Column() {
-62. this.contentBuilder({ size: this.data.size })
-63. this.contentLocalBuilder({ size: this.data.size })
-64. this.contentLocalBuilderNoArgument()
-65. Button('add child size')
-66. .onClick(() => {
-67. this.data.size += 1;
-68. })
-69. }
-70. }
-71. }
-```
-
-[BuilderThisDiff.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/localBuilder/BuilderThisDiff.ets#L30-L98)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/LSSsfytkRpqQhtJ2YmGGXQ/zh-cn_image_0000002706673226.gif)
 
 ### 按值传递参数
 
@@ -329,30 +373,34 @@ bind()方法创建一个新的函数，称为绑定函数，当调用者绑定bi
 
 组件Parent将@State修饰的label值按照函数传参方式传递到@LocalBuilder函数内，此时@LocalBuilder函数获取到的值为普通变量值，所以改变@State修饰的label值时，@LocalBuilder函数内的值不会发生改变。
 
+```typescript
+@Entry
+@Component
+struct Parent {
+  @State label: string = 'Hello';
+
+  @LocalBuilder
+  citeLocalBuilder(paramA1: string) {
+    Row() {
+      Text(`UseStateVarByValue: ${paramA1}`)
+        .fontSize(20)
+        .margin(10)
+    }
+    .height('100%')
+  }
+
+  build() {
+    Column() {
+      // 按值传递参数
+      // 改变@State修饰的label值时，@LocalBuilder函数内的值不会发生改变
+      this.citeLocalBuilder(this.label)
+    }
+    .width('100%')
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct Parent {
-4. @State label: string = 'Hello';
 
-6. @LocalBuilder
-7. citeLocalBuilder(paramA1: string) {
-8. Row() {
-9. Text(`UseStateVarByValue: ${paramA1}`)
-10. }
-11. }
-
-13. build() {
-14. Column() {
-15. // 按值传递参数
-16. // 改变@State修饰的label值时，@LocalBuilder函数内的值不会发生改变
-17. this.citeLocalBuilder(this.label)
-18. }
-19. }
-20. }
-```
-
-[ValuePassing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/localBuilder/ValuePassing.ets#L30-L49)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/flsv2HF8SgS7yEnAtMSJvA/zh-cn_image_0000002736432315.png)
 
 ## 使用场景
 
@@ -360,108 +408,91 @@ bind()方法创建一个新的函数，称为绑定函数，当调用者绑定bi
 
 在[@ComponentV2](arkts-create-custom-components.md#componentv2)装饰的自定义组件中使用局部的@LocalBuilder，修改变量时会触发UI刷新。
 
-```
-1. @ObservedV2
-2. class Info {
-3. @Trace name: string = '';
-4. @Trace age: number = 0;
-5. }
+```typescript
+@ObservedV2
+class Info {
+  @Trace name: string = '';
+  @Trace age: number = 0;
+}
 
-7. @ComponentV2
-8. struct ChildPage {
-9. @Require @Param childInfo: Info;
+@ComponentV2
+struct ChildPage {
+  @Require @Param childInfo: Info;
 
-11. build() {
-12. Column() {
-13. Text(`Custom component name: ${this.childInfo.name}`)
-14. .fontSize(20)
-15. .fontWeight(FontWeight.Bold)
-16. Text(`Custom component age: ${this.childInfo.age}`)
-17. .fontSize(20)
-18. .fontWeight(FontWeight.Bold)
-19. }
-20. }
-21. }
+  build() {
+    Column() {
+      Text(`Custom component name: ${this.childInfo.name}`)
+        .fontSize(20)
+        .fontWeight(FontWeight.Bold)
+      Text(`Custom component age: ${this.childInfo.age}`)
+        .fontSize(20)
+        .fontWeight(FontWeight.Bold)
+    }
+    .margin(20)
+  }
+}
 
-23. @Entry
-24. @ComponentV2
-25. struct ParentPage {
-26. info1: Info = { name: 'Tom', age: 25 };
-27. @Local info2: Info = { name: 'Tom', age: 25 };
+@Entry
+@ComponentV2
+struct ParentPage {
+  info1: Info = { name: 'Tom', age: 25 };
+  @Local info2: Info = { name: 'Tom', age: 25 };
 
-29. @LocalBuilder
-30. privateBuilder() {
-31. Column() {
-32. Text(`Local @LocalBuilder name: ${this.info1.name}`)
-33. .fontSize(20)
-34. .fontWeight(FontWeight.Bold)
-35. Text(`Local @LocalBuilder age: ${this.info1.age}`)
-36. .fontSize(20)
-37. .fontWeight(FontWeight.Bold)
-38. }
-39. }
+  @LocalBuilder
+  privateBuilder() {
+    Column() {
+      Text(`Local @LocalBuilder name: ${this.info1.name}`)
+        .fontSize(20)
+        .fontWeight(FontWeight.Bold)
+      Text(`Local @LocalBuilder age: ${this.info1.age}`)
+        .fontSize(20)
+        .fontWeight(FontWeight.Bold)
+    }
+    .margin(20)
+  }
 
-41. @LocalBuilder
-42. privateBuilderSecond() {
-43. Column() {
-44. Text(`Local @LocalBuilder name: ${this.info2.name}`)
-45. .fontSize(20)
-46. .fontWeight(FontWeight.Bold)
-47. Text(`Local @LocalBuilder age: ${this.info2.age}`)
-48. .fontSize(20)
-49. .fontWeight(FontWeight.Bold)
-50. }
-51. }
+  @LocalBuilder
+  privateBuilderSecond() {
+    Column() {
+      Text(`Local @LocalBuilder name: ${this.info2.name}`)
+        .fontSize(20)
+        .fontWeight(FontWeight.Bold)
+      Text(`Local @LocalBuilder age: ${this.info2.age}`)
+        .fontSize(20)
+        .fontWeight(FontWeight.Bold)
+    }
+    .margin(20)
+  }
 
-53. build() {
-54. Column() {
-55. Text(`info1: ${this.info1.name}  ${this.info1.age}`) // Text1
-56. .fontSize(30)
-57. .fontWeight(FontWeight.Bold)
-58. this.privateBuilder() // 调用局部@Builder
-59. Line()
-60. .width('100%')
-61. .height(10)
-62. .backgroundColor('#000000')
-63. .margin(10)
-64. Text(`info2: ${this.info2.name}  ${this.info2.age}`) // Text2
-65. .fontSize(30)
-66. .fontWeight(FontWeight.Bold)
-67. this.privateBuilderSecond() // 调用局部@Builder
-68. Line()
-69. .width('100%')
-70. .height(10)
-71. .backgroundColor('#000000')
-72. .margin(10)
-73. Text(`info1: ${this.info1.name}  ${this.info1.age}`) // Text1
-74. .fontSize(30)
-75. .fontWeight(FontWeight.Bold)
-76. ChildPage({ childInfo: this.info1 }) // 调用自定义组件
-77. Line()
-78. .width('100%')
-79. .height(10)
-80. .backgroundColor('#000000')
-81. .margin(10)
-82. Text(`info2: ${this.info2.name}  ${this.info2.age}`) // Text2
-83. .fontSize(30)
-84. .fontWeight(FontWeight.Bold)
-85. ChildPage({ childInfo: this.info2 }) // 调用自定义组件
-86. Line()
-87. .width('100%')
-88. .height(10)
-89. .backgroundColor('#000000')
-90. .margin(10)
-91. Button('change info1&info2')
-92. .onClick(() => {
-93. this.info1 = { name: 'Cat', age: 18 }; // Text1不会刷新，原因是info1没被装饰器装饰，无法监听到值的改变。
-94. this.info2 = { name: 'Cat', age: 18 }; // Text2会刷新，原因是info2有装饰器装饰，可以监听到值的改变。
-95. })
-96. }
-97. }
-98. }
+  build() {
+    Column() {
+      Text(`info1: ${this.info1.name}  ${this.info1.age}`) // Text1
+        .fontSize(30)
+        .fontWeight(FontWeight.Bold)
+      this.privateBuilder() // 调用局部@LocalBuilder
+      Text(`info2: ${this.info2.name}  ${this.info2.age}`) // Text2
+        .fontSize(30)
+        .fontWeight(FontWeight.Bold)
+      this.privateBuilderSecond() // 调用局部@LocalBuilder
+      Text(`info1: ${this.info1.name}  ${this.info1.age}`) // Text1
+        .fontSize(30)
+        .fontWeight(FontWeight.Bold)
+      ChildPage({ childInfo: this.info1 }) // 调用自定义组件
+      Text(`info2: ${this.info2.name}  ${this.info2.age}`) // Text2
+        .fontSize(30)
+        .fontWeight(FontWeight.Bold)
+      ChildPage({ childInfo: this.info2 }) // 调用自定义组件
+      Button('change info1&info2')
+        .onClick(() => {
+          this.info1 = { name: 'Cat', age: 18 }; // Text1不会刷新，原因是info1没被装饰器装饰，无法监听到值的改变。
+          this.info2 = { name: 'Cat', age: 18 }; // Text2会刷新，原因是info2有装饰器装饰，可以监听到值的改变。
+        })
+    }
+  }
+}
 ```
 
-[V2LocalBuilderUpdate.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/localBuilder/V2LocalBuilderUpdate.ets#L30-L125)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/_pHL-9YeRdiAsfFIXE0Bkw/zh-cn_image_0000002706833162.gif)
 
 ## 常见问题
 
@@ -471,105 +502,101 @@ bind()方法创建一个新的函数，称为绑定函数，当调用者绑定bi
 
 【反例】
 
+```typescript
+class LayoutSize {
+  public size: number = 0;
+}
+
+@Entry
+@Component
+struct Parent {
+  label: string = 'parent';
+  @State layoutSize: LayoutSize = { size: 0 };
+
+  @LocalBuilder
+  componentBuilder($$: LayoutSize) {
+    Text(`this: ${this.label}`)
+    Text(`size: ${$$.size}`)
+  }
+
+  build() {
+    Column() {
+      Child({
+        customBuilder: this.componentBuilder,
+        layoutSize: this.layoutSize
+      })
+    }
+  }
+}
+
+@Component
+struct Child {
+  label: string = 'child';
+  @BuilderParam customBuilder: ((layoutSize: LayoutSize) => void);
+  @Link layoutSize: LayoutSize;
+
+  build() {
+    Column() {
+      this.customBuilder({ size: this.layoutSize.size }) // 子组件调用父组件的@LocalBuilder函数
+      Button('add child size')
+        .onClick(() => {
+          this.layoutSize.size += 1; // 子组件传入的参数发生变化，不会引起@LocalBuilder函数内的UI刷新
+        })
+    }
+  }
+}
 ```
-1. class LayoutSize {
-2. public size: number = 0;
-3. }
-
-5. @Entry
-6. @Component
-7. struct Parent {
-8. label: string = 'parent';
-9. @State layoutSize: LayoutSize = { size: 0 };
-
-11. @LocalBuilder
-12. componentBuilder($$: LayoutSize) {
-13. Text(`this: ${this.label}`)
-14. Text(`size: ${$$.size}`)
-15. }
-
-17. build() {
-18. Column() {
-19. Child({
-20. customBuilder: this.componentBuilder,
-21. layoutSize: this.layoutSize
-22. })
-23. }
-24. }
-25. }
-
-27. @Component
-28. struct Child {
-29. label: string = 'child';
-30. @BuilderParam customBuilder: ((layoutSize: LayoutSize) => void);
-31. @Link layoutSize: LayoutSize;
-
-33. build() {
-34. Column() {
-35. this.customBuilder({ size: this.layoutSize.size }) // 子组件调用父组件的@LocalBuilder函数
-36. Button('add child size')
-37. .onClick(() => {
-38. this.layoutSize.size += 1; // 子组件传入的参数发生变化，不会引起@LocalBuilder函数内的UI刷新
-39. })
-40. }
-41. }
-42. }
-```
-
-[ProblemUINotRefreshOpposite.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/localBuilder/ProblemUINotRefreshOpposite.ets#L15-L58)
 
 【正例】
 
 在声明@LocalBuilder的组件下创建状态变量并在@LocalBuilder函数内访问，可以在状态变量变化时更新@LocalBuilder内的UI组件。
 
+```typescript
+class LayoutSize {
+  public size: number = 0;
+}
+
+@Entry
+@Component
+struct Parent {
+  label: string = 'parent';
+  @State layoutSize: LayoutSize = { size: 0 };
+
+  @LocalBuilder
+  componentBuilder() {
+    Text(`this: ${this.label}`)
+    Text(`size: ${this.layoutSize.size}`)
+  }
+
+  build() {
+    Column() {
+      Child({
+        customBuilder: this.componentBuilder,
+        layoutSize: this.layoutSize
+      })
+    }
+  }
+}
+
+@Component
+struct Child {
+  label: string = 'child';
+  @BuilderParam customBuilder: () => void;
+  @Link layoutSize: LayoutSize;
+
+  build() {
+    Column() {
+      this.customBuilder()
+      Button('add child size')
+        .onClick(() => {
+          this.layoutSize.size += 1; // 子组件传入的参数发生变化，由@Link传入父组件@State，刷新父组件声明的@LocalBuilder函数的UI。
+        })
+    }
+  }
+}
 ```
-1. class LayoutSize {
-2. public size: number = 0;
-3. }
 
-5. @Entry
-6. @Component
-7. struct Parent {
-8. label: string = 'parent';
-9. @State layoutSize: LayoutSize = { size: 0 };
-
-11. @LocalBuilder
-12. componentBuilder() {
-13. Text(`this: ${this.label}`)
-14. Text(`size: ${this.layoutSize.size}`)
-15. }
-
-17. build() {
-18. Column() {
-19. Child({
-20. customBuilder: this.componentBuilder,
-21. layoutSize: this.layoutSize
-22. })
-23. }
-24. }
-25. }
-
-27. @Component
-28. struct Child {
-29. label: string = 'child';
-30. @BuilderParam customBuilder: () => void;
-31. @Link layoutSize: LayoutSize;
-
-33. build() {
-34. Column() {
-35. this.customBuilder()
-36. Button('add child size')
-37. .onClick(() => {
-38. this.layoutSize.size += 1; // 子组件传入的参数发生变化，由@Link传入父组件@State，刷新父组件声明的@LocalBuilder函数的UI。
-39. })
-40. }
-41. }
-42. }
-```
-
-[ProblemUINotRefreshPositive.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/localBuilder/ProblemUINotRefreshPositive.ets#L15-L58)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/aTQkVnwsRXir-Qnla6DFdA/zh-cn_image_0000002589243875.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/kntGXbJhRrmnoHjY5yiJdQ/zh-cn_image_0000002736312271.gif)
 
 ### @LocalBuilder函数在参数处直接调用出现布局错乱
 
@@ -577,74 +604,74 @@ bind()方法创建一个新的函数，称为绑定函数，当调用者绑定bi
 
 【反例】
 
+```typescript
+@Entry
+@Component
+struct Page {
+  @State message: string[] = ['1', '2', '3'];
+
+  build() {
+    List() {
+      // 错误写法，直接传递itemFoot的执行结果。
+      ListItemGroup({ space: 10, footer: this.itemFoot() }) {
+        ForEach(this.message, (item: string, index: number) => {
+          ListItem() {
+            Stack() {
+              Text(item)
+                .fontSize(30)
+            }
+          }
+        })
+      }
+    }
+  }
+
+  @LocalBuilder
+  itemFoot() {
+    Column() {
+      Text('itemFoot')
+        .fontSize(30)
+    }
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct Page {
-4. @State message: string[] = ['1', '2', '3'];
 
-6. build() {
-7. List() {
-8. // 错误写法，直接传递itemFoot的执行结果。
-9. ListItemGroup({ space: 10, footer: this.itemFoot() }) {
-10. ForEach(this.message, (item: string, index: number) => {
-11. ListItem() {
-12. Stack() {
-13. Text(item)
-14. .fontSize(30)
-15. }
-16. }
-17. })
-18. }
-19. }
-20. }
-
-22. @LocalBuilder
-23. itemFoot() {
-24. Column() {
-25. Text('itemFoot')
-26. .fontSize(30)
-27. }
-28. }
-29. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/xQvw1BeEQWG5jLlWX7nWIQ/zh-cn_image_0000002558764068.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/JbLUPkiMRYGiUJzCMphnEA/zh-cn_image_0000002706673228.png)
 
 【正例】
 
 @LocalBuilder装饰的函数作为参数时，使用 () => { 函数调用 } 的形式，布局能够符合预期效果。
 
+```typescript
+@Entry
+@Component
+struct Page {
+  @State message: string[] = ['1', '2', '3'];
+
+  build() {
+    List() {
+      // 正确写法，使用() => { 函数调用 }的形式。
+      ListItemGroup({ space: 10, footer: () => { this.itemFoot() } }) {
+        ForEach(this.message, (item: string, index: number) => {
+          ListItem() {
+            Stack() {
+              Text(item)
+                .fontSize(30)
+            }
+          }
+        })
+      }
+    }
+  }
+
+  @LocalBuilder
+  itemFoot() {
+    Column() {
+      Text('itemFoot')
+        .fontSize(30)
+    }
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct Page {
-4. @State message: string[] = ['1', '2', '3'];
 
-6. build() {
-7. List() {
-8. // 正确写法，使用() => { 函数调用 }的形式。
-9. ListItemGroup({ space: 10, footer: () => { this.itemFoot() } }) {
-10. ForEach(this.message, (item: string, index: number) => {
-11. ListItem() {
-12. Stack() {
-13. Text(item)
-14. .fontSize(30)
-15. }
-16. }
-17. })
-18. }
-19. }
-20. }
-
-22. @LocalBuilder
-23. itemFoot() {
-24. Column() {
-25. Text('itemFoot')
-26. .fontSize(30)
-27. }
-28. }
-29. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/Gf0RtI3DSIyc2zX3kY0u_Q/zh-cn_image_0000002558604412.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/XKtwfQYSQ7q2Smy3Q2lYBw/zh-cn_image_0000002736432317.png)

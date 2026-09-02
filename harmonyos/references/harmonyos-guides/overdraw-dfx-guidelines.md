@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/overdraw-dfx-
 title: 过度绘制调试使用指导
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 过度绘制调试使用指导
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:36:07+08:00
+scraped_at: 2026-09-02T14:50:20+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:2a965cf623e9a435267df240f1749f6c705f8e05cab6e03791844d0a08cd3abb
+content_hash: sha256:18b02221d62c1bd098f8d023d39c1ea8d40f75f38864f981e67015b616e9b69d
 ---
 
 当应用页面布局的嵌套程度过深时，应用渲染阶段会存在一些组件的绘制指令被其他组件的绘制指令部分或完全覆盖遮挡的情况，造成冗余的CPU、GPU等计算资源的使用。这种一个屏幕上的像素点被重复绘制了多次的情况被称为过度绘制（Overdraw）。开发者可通过系统提供的过度绘制调试指令，查看引起过度绘制的组件位置及其层级，从而减轻应用渲染时的负载。
@@ -19,27 +19,27 @@ content_hash: sha256:2a965cf623e9a435267df240f1749f6c705f8e05cab6e03791844d0a08c
 * 使用前提：需在系统设置中开启开发者模式。
 * 开启过度绘制调试功能：
 
-  ```
-  1. param set debug.graphic.overdraw true
+  ```screen
+  param set debug.graphic.overdraw true
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/EIWoeyC-QSekDx4Q2fbO8w/zh-cn_image_0000002558765130.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/SipuO9ehQfaazm1w-SqI7g/zh-cn_image_0000002736433777.png)
 * 关闭过度绘制调试功能：
 
-  ```
-  1. param set debug.graphic.overdraw false
+  ```screen
+  param set debug.graphic.overdraw false
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/8o8PRkaCT5qb281l-Z1OrQ/zh-cn_image_0000002558605474.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/9aFaoi-EQYSkchjJLdHkBg/zh-cn_image_0000002706834626.png)
 * 查看是否开启了过度绘制调试功能：
 
   true表示开启了过度绘制功能，false则表示未开启。
 
-  ```
-  1. param get debug.graphic.overdraw
+  ```screen
+  param get debug.graphic.overdraw
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/bkkRDxW8TlmGczdB5Piz4A/zh-cn_image_0000002589325001.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/-6caSumxTgewzs4bu9C2uQ/zh-cn_image_0000002736313733.png)
 
 ## 过度绘制组件分析
 
@@ -53,45 +53,45 @@ content_hash: sha256:2a965cf623e9a435267df240f1749f6c705f8e05cab6e03791844d0a08c
 
 以下是一个存在冗余的背景颜色嵌套问题的示例应用程序，及其对应的开启过度绘制调试功能的界面显示情况。
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. @State message: string = 'Hello World'
+```ts
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World'
 
-6. build() {
-7. Row() {
-8. Column() {
-9. Column() {
-10. Column() {
-11. Column() {
-12. Column() {
-13. Text("Hello World")
-14. }
-15. .width('80%')
-16. .height('80%')
-17. .backgroundColor(Color.White)
-18. }
-19. .width('80%')
-20. .height('80%')
-21. .backgroundColor(Color.White)
-22. }
-23. .width('80%')
-24. .height('80%')
-25. .backgroundColor(Color.White)
-26. }
-27. .width('80%')
-28. .height('80%')
-29. .backgroundColor(Color.White)
-30. }
-31. .width('80%')
-32. }
-33. .height('80%')
-34. }
-35. }
+  build() {
+    Row() {
+      Column() {
+        Column() {
+          Column() {
+            Column() {
+              Column() {
+                Text("Hello World")
+              }
+              .width('80%')
+              .height('80%')
+              .backgroundColor(Color.White)
+            }
+            .width('80%')
+            .height('80%')
+            .backgroundColor(Color.White)
+          }
+          .width('80%')
+          .height('80%')
+          .backgroundColor(Color.White)
+        }
+        .width('80%')
+        .height('80%')
+        .backgroundColor(Color.White)
+      }
+      .width('80%')
+    }
+    .height('80%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/w5KgRNdyTzy3R4tPw7bMDA/zh-cn_image_0000002589244937.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/xrBm40C7RpiVVNoeuFVi2Q/zh-cn_image_0000002706674690.png)
 
 编译安装后打开过度绘制调试功能，应用界面如上图所示。
 

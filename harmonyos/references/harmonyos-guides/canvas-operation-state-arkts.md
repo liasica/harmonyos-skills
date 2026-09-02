@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/canvas-operat
 title: 画布操作及状态处理（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 画布操作及状态 > 画布操作及状态处理（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:36:08+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:416115a6208fbcb92743ad867e63b79018d5f06e8c7a8b0a1b442db08dbd4892
+scraped_at: 2026-09-02T14:59:49+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a1d128495e0fcd31074461fd1ad50c44146f3565f8df14782c4f1c083ebb9984
 ---
 
 ## 场景介绍
@@ -52,24 +52,22 @@ content_hash: sha256:416115a6208fbcb92743ad867e63b79018d5f06e8c7a8b0a1b442db08db
 * clipOp是裁剪方式，包括交集（INTERSECT）和差集（DIFFERENCE），具体可见[ClipOp](../harmonyos-references/arkts-apis-graphics-drawing-e.md#clipop12)。
 * doAntiAlias表示是否需要抗锯齿处理，如果为true则启用抗锯齿功能，在绘制图形时会对图形的边缘像素进行半透明的模糊处理，如果为false则不开启。
 
+```typescript
+// 创建画刷
+let brush = new drawing.Brush();
+// 设置颜色为蓝色
+brush.setColor(0xFF, 0x00,  0x00, 0xFF);
+// 设置画刷填充效果
+canvas.attachBrush(brush);
+// 创建矩形对象
+let rect: common2D.Rect = { left: VALUE_200, top: VALUE_200, right: VALUE_600, bottom: VALUE_600 };
+// 裁剪矩形区域
+canvas.clipRect(rect);
+// 绘制圆形
+canvas.drawCircle(VALUE_300, VALUE_300, VALUE_300);
+// 去除填充效果
+canvas.detachBrush();
 ```
-1. // 创建画刷
-2. let brush = new drawing.Brush();
-3. // 设置颜色为蓝色
-4. brush.setColor(0xFF, 0x00,  0x00, 0xFF);
-5. // 设置画刷填充效果
-6. canvas.attachBrush(brush);
-7. // 创建矩形对象
-8. let rect: common2D.Rect = { left: VALUE_200, top: VALUE_200, right: VALUE_600, bottom: VALUE_600 };
-9. // 裁剪矩形区域
-10. canvas.clipRect(rect);
-11. // 绘制圆形
-12. canvas.drawCircle(VALUE_300, VALUE_300, VALUE_300);
-13. // 去除填充效果
-14. canvas.detachBrush();
-```
-
-[CanvasOperationState.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/CanvasOperationState.ets#L22-L37)
 
 | 原始图 | 裁剪后的图 |
 | --- | --- |
@@ -102,22 +100,20 @@ content_hash: sha256:416115a6208fbcb92743ad867e63b79018d5f06e8c7a8b0a1b442db08db
 
 简单示例和示意图如下所示：
 
+```typescript
+// 创建画刷
+let brush = new drawing.Brush();
+// 设置颜色为红色
+brush.setColor(0xFF, 0xFF, 0x00, 0x00);
+// 设置画刷填充效果
+canvas.attachBrush(brush);
+// 执行平移操作
+canvas.translate(VALUE_300, VALUE_300);
+// 绘制矩形
+canvas.drawRect({ left: VALUE_200, top: VALUE_200, right: VALUE_600, bottom: VALUE_600 });
+// 去除填充效果
+canvas.detachBrush();
 ```
-1. // 创建画刷
-2. let brush = new drawing.Brush();
-3. // 设置颜色为红色
-4. brush.setColor(0xFF, 0xFF, 0x00, 0x00);
-5. // 设置画刷填充效果
-6. canvas.attachBrush(brush);
-7. // 执行平移操作
-8. canvas.translate(VALUE_300, VALUE_300);
-9. // 绘制矩形
-10. canvas.drawRect({ left: VALUE_200, top: VALUE_200, right: VALUE_600, bottom: VALUE_600 });
-11. // 去除填充效果
-12. canvas.detachBrush();
-```
-
-[CanvasOperationState.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/CanvasOperationState.ets#L41-L54)
 
 | 原始图 | 平移后的效果图 |
 | --- | --- |
@@ -129,22 +125,20 @@ content_hash: sha256:416115a6208fbcb92743ad867e63b79018d5f06e8c7a8b0a1b442db08db
 
 简单示例和示意图如下所示：
 
+```typescript
+// 创建画刷
+let brush = new drawing.Brush();
+// 设置颜色为红色
+brush.setColor(0xFF, 0xFF, 0x00, 0x00);
+// 设置画刷填充效果
+canvas.attachBrush(brush);
+// 顺时针旋转45度
+canvas.rotate(45, VALUE_200, VALUE_200);
+// 绘制矩形
+canvas.drawRect({ left: VALUE_200, top: VALUE_200, right: VALUE_600, bottom: VALUE_600 });
+// 去除填充效果
+canvas.detachBrush();
 ```
-1. // 创建画刷
-2. let brush = new drawing.Brush();
-3. // 设置颜色为红色
-4. brush.setColor(0xFF, 0xFF, 0x00, 0x00);
-5. // 设置画刷填充效果
-6. canvas.attachBrush(brush);
-7. // 顺时针旋转45度
-8. canvas.rotate(45, VALUE_200, VALUE_200);
-9. // 绘制矩形
-10. canvas.drawRect({ left: VALUE_200, top: VALUE_200, right: VALUE_600, bottom: VALUE_600 });
-11. // 去除填充效果
-12. canvas.detachBrush();
-```
-
-[CanvasOperationState.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/CanvasOperationState.ets#L58-L71)
 
 | 原始图 | 旋转后的效果图 |
 | --- | --- |
@@ -156,22 +150,20 @@ content_hash: sha256:416115a6208fbcb92743ad867e63b79018d5f06e8c7a8b0a1b442db08db
 
 简单示例和示意图如下所示：
 
+```typescript
+// 创建画刷
+let brush = new drawing.Brush();
+// 设置颜色为红色
+brush.setColor({ alpha: 0xFF, red: 0xFF, green: 0x00, blue: 0x00 });
+// 设置画刷填充效果
+canvas.attachBrush(brush);
+// 执行放大操作
+canvas.scale(2, 2);
+// 绘制矩形
+canvas.drawRect({ left: VALUE_200, top: VALUE_200, right: VALUE_600, bottom: VALUE_600 });
+// 去除填充效果
+canvas.detachBrush();
 ```
-1. // 创建画刷
-2. let brush = new drawing.Brush();
-3. // 设置颜色为红色
-4. brush.setColor({ alpha: 0xFF, red: 0xFF, green: 0x00, blue: 0x00 });
-5. // 设置画刷填充效果
-6. canvas.attachBrush(brush);
-7. // 执行放大操作
-8. canvas.scale(2, 2);
-9. // 绘制矩形
-10. canvas.drawRect({ left: VALUE_200, top: VALUE_200, right: VALUE_600, bottom: VALUE_600 });
-11. // 去除填充效果
-12. canvas.detachBrush();
-```
-
-[CanvasOperationState.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/CanvasOperationState.ets#L75-L88)
 
 | 原始图 | 缩放后的效果图 |
 | --- | --- |
@@ -183,7 +175,7 @@ content_hash: sha256:416115a6208fbcb92743ad867e63b79018d5f06e8c7a8b0a1b442db08db
 
 ### 接口说明
 
-画布状态保存与恢复使用的接口如下表所示，详细的使用和参数说明请见[canvas](../harmonyos-references/arkts-apis-graphics-drawing-canvas.md)。
+画布状态保存与恢复使用的接口如下表所示，详细的使用和参数说明请见[drawing.Canvas](../harmonyos-references/arkts-apis-graphics-drawing-canvas.md)。
 
 | 接口 | 描述 |
 | --- | --- |
@@ -193,32 +185,30 @@ content_hash: sha256:416115a6208fbcb92743ad867e63b79018d5f06e8c7a8b0a1b442db08db
 
 简单示例和示意图如下所示：
 
-```
-1. // 创建画笔
-2. let pen = new drawing.Pen();
-3. // 设置颜色为红色
-4. pen.setColor({ alpha: 0xFF, red: 0xFF, green: 0x00, blue: 0x00 });
-5. // 设置描边宽度为20px
-6. pen.setStrokeWidth(20);
-7. // 设置画笔描边效果
-8. canvas.attachPen(pen);
-9. // 保存操作，当前是不存在放大等操作的，这个原始状态会被保存下来
-10. canvas.save();
-11. // x轴和y轴方向分别放大2倍
-12. canvas.scale(2, 2);
-13. // 绘制圆形，因为执行过放大操作，所以此时绘制的是大圆
-14. canvas.drawCircle(VALUE_300, VALUE_300, VALUE_200);
-15. // 恢复操作，恢复到没有放大的原始状态
-16. canvas.restore();
-17. // 绘制圆形，因为已经恢复到没有放大的原始状态，所以此时绘制的是小圆
-18. canvas.drawCircle(VALUE_300, VALUE_300, VALUE_200);
-19. // 去除描边效果
-20. canvas.detachPen();
+```typescript
+// 创建画笔
+let pen = new drawing.Pen();
+// 设置颜色为红色
+pen.setColor({ alpha: 0xFF, red: 0xFF, green: 0x00, blue: 0x00 });
+// 设置描边宽度为20px
+pen.setStrokeWidth(20);
+// 设置画笔描边效果
+canvas.attachPen(pen);
+// 保存操作，当前是不存在放大等操作的，这个原始状态会被保存下来
+canvas.save();
+// x轴和y轴方向分别放大2倍
+canvas.scale(2, 2);
+// 绘制圆形，因为执行过放大操作，所以此时绘制的是大圆
+canvas.drawCircle(VALUE_300, VALUE_300, VALUE_200);
+// 恢复操作，恢复到没有放大的原始状态
+canvas.restore();
+// 绘制圆形，因为已经恢复到没有放大的原始状态，所以此时绘制的是小圆
+canvas.drawCircle(VALUE_300, VALUE_300, VALUE_200);
+// 去除描边效果
+canvas.detachPen();
 ```
 
-[CanvasOperationState.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/CanvasOperationState.ets#L92-L113)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/OlItGIsORseffRCex6ZUHA/zh-cn_image_0000002558765136.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/jUCZhJ70Th2qz5b5ZAxSpg/zh-cn_image_0000002736433783.jpg)
 
 ## 示例代码
 

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: DeviceSecurityMode
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > C API > 模块 > DeviceSecurityMode
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:17+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7a18435369cdf6045e4216f22c4b0b894a8fed248222aaa516d1091fe0c13777
+scraped_at: 2026-09-02T15:01:43+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d4b273be5c12c7e5b51653d84ebb08acd8916d57a54b7014f58a4132f9a5d040
 ---
 
 ## 概述
-
-PhonePC/2in1TabletWearable
 
 DeviceSecurityMode模块用于管理设备安全模式。
 
@@ -20,11 +18,7 @@ DeviceSecurityMode模块用于管理设备安全模式。
 
 ## 汇总
 
-PhonePC/2in1TabletWearable
-
 ### 文件
-
-PhonePC/2in1TabletWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -32,15 +26,11 @@ PhonePC/2in1TabletWearable
 
 ### 类型定义
 
-PhonePC/2in1TabletWearable
-
 | 名称 | 描述 |
 | --- | --- |
 | typedef enum [DSM\_DeviceSecurityMode](devicesecurity-capi-devicesecuritymode.md#dsm_devicesecuritymode-1) [DSM\_DeviceSecurityMode](devicesecurity-capi-devicesecuritymode.md#dsm_devicesecuritymode) | 设备安全模式枚举类型定义。 |
 
 ### 枚举
-
-PhonePC/2in1TabletWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -48,22 +38,16 @@ PhonePC/2in1TabletWearable
 
 ### 函数
 
-PhonePC/2in1TabletWearable
-
 | 名称 | 描述 |
 | --- | --- |
-| [DSM\_DeviceSecurityMode](devicesecurity-capi-devicesecuritymode.md#dsm_devicesecuritymode-1) [HMS\_DSM\_GetDeviceSecurityMode()](devicesecurity-capi-devicesecuritymode.md#hms_dsm_getdevicesecuritymode) | 查询当前设备安全模式。 |
+| [DSM\_DeviceSecurityMode](devicesecurity-capi-devicesecuritymode.md#dsm_devicesecuritymode-1) [HMS\_DSM\_GetDeviceSecurityMode(void)](devicesecurity-capi-devicesecuritymode.md#hms_dsm_getdevicesecuritymode) | 查询当前设备安全模式。 |
 
 ## 类型定义说明
 
-PhonePC/2in1TabletWearable
-
 ### DSM\_DeviceSecurityMode
 
-PhonePC/2in1TabletWearable
-
-```
-1. typedef enum DSM_DeviceSecurityMode DSM_DeviceSecurityMode
+```cpp
+typedef enum DSM_DeviceSecurityMode DSM_DeviceSecurityMode
 ```
 
 **描述**
@@ -72,16 +56,12 @@ PhonePC/2in1TabletWearable
 
 **起始版本：** 5.0.1(13)
 
-## 枚举说明
-
-PhonePC/2in1TabletWearable
+## 枚举类型说明
 
 ### DSM\_DeviceSecurityMode
 
-PhonePC/2in1TabletWearable
-
-```
-1. enum DSM_DeviceSecurityMode
+```cpp
+enum DSM_DeviceSecurityMode
 ```
 
 **描述**
@@ -97,14 +77,10 @@ PhonePC/2in1TabletWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletWearable
-
 ### HMS\_DSM\_GetDeviceSecurityMode()
 
-PhonePC/2in1TabletWearable
-
-```
-1. DSM_DeviceSecurityMode HMS_DSM_GetDeviceSecurityMode(void)
+```cpp
+DSM_DeviceSecurityMode HMS_DSM_GetDeviceSecurityMode(void)
 ```
 
 **描述**

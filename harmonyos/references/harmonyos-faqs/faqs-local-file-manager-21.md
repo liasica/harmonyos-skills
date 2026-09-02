@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file-manager-21
-title: 通过fileIo.openSync获得的fd，传递到C侧调close后，ArkTS侧fileIo.closeSync是不是不用调了
-breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 通过fileIo.openSync获得的fd，传递到C侧调close后，ArkTS侧fileIo.closeSync是不是不用调了
+title: 通过fs.openSync获得的fd，传递到C侧调close后，ArkTS侧fs.closeSync是不是不用调了
+breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 通过fs.openSync获得的fd，传递到C侧调close后，ArkTS侧fs.closeSync是不是不用调了
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:26+08:00
-doc_updated_at: 2026-04-21
+scraped_at: 2026-09-02T15:21:51+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:cb7fbf65b5f25ca14d42848f3f13f6709bba611589091d3a12a9163e95fd09ad
 ---
 

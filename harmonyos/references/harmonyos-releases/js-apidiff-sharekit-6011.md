@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-sharekit-6011
 title: Share Kit
-breadcrumb: 版本说明 > HarmonyOS 6.0.1(21) > OS平台能力 > API变更清单 > 6.0.1(21) Beta1引入的API > Share Kit
+breadcrumb: 版本说明 > 更多版本 > 6.0.1(21) > OS平台能力 > API变更清单 > 6.0.1(21) Beta1引入的API > Share Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:01+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:26+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:77de49c9f05471042d76c5f8942c4a8cfc9cfa091b18a14c329c375ce1b9cd31
 ---
 

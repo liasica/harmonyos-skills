@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tenso
 title: SetPlacement
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > TensorDesc > SetPlacement
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:00+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:7044fe85c75baa11059774c4948895f7422ab797e203ebb3e90357d461652832
+content_hash: sha256:b7d5d37b055bed64bc13e5e141cca3d87b81ba4f8278393aa1ab961741a0fd3a
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:7044fe85c75baa11059774c4948895f7422ab797e203ebb3e90357d4616
 
 ## 函数原型
 
-```
-1. void SetPlacement(Placement placement);
+```cpp
+void SetPlacement(Placement placement);
 ```
 
 ## 参数说明

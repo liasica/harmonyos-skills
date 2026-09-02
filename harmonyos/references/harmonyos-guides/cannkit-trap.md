@@ -3,19 +3,19 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-trap
 title: Trap
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 调测接口 > Trap
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:27+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1a3ec8423103191e3e8321ec58ce5afd57de51ea7e80c9968542678ca4847faf
+scraped_at: 2026-09-02T14:50:37+08:00
+doc_updated_at: 2026-08-18
+content_hash: sha256:16b7c78c16f131e1edba75dd913d85a8a0ef5db7244e92c1442008d7dc8733da
 ---
 
 ## 函数功能
 
-当软件产生异常后，使用该指令使kernel中止运行。
+当软件产生异常后，使用该指令终止kernel运行。
 
 ## 函数原型
 
-```
-1. __aicore__ inline void Trap()
+```cpp
+__aicore__ inline void Trap()
 ```
 
 ## 参数说明
@@ -30,6 +30,8 @@ content_hash: sha256:1a3ec8423103191e3e8321ec58ce5afd57de51ea7e80c9968542678ca48
 
 Kirin9020系列处理器
 
+Kirin9030系列处理器
+
 KirinX90系列处理器
 
 ## 注意事项
@@ -38,6 +40,6 @@ KirinX90系列处理器
 
 ## 调用示例
 
-```
-1. AscendC::Trap();
+```cpp
+AscendC::Trap();
 ```

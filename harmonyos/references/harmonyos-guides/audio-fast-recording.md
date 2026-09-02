@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-fast-recording
 title: 低时延音频录制(C/C++)
-breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频录制 > 低时延音频录制(C/C++)
+breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频录制 > 开发麦克风录制(外录)功能 > 低时延音频录制(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:34+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a471e83ab7b0789998640c6bbe7b85e09b469e9a380f1dc29e0f7b61bb68497f
+scraped_at: 2026-09-02T14:59:42+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:75fb818057ab8b9153f5399a6c19c25aa7dcd7f986a706c2be253000a5d31dd2
 ---
 
 从API version 10开始支持低时延音频录制。
@@ -34,8 +34,8 @@ content_hash: sha256:a471e83ab7b0789998640c6bbe7b85e09b469e9a380f1dc29e0f7b61bb6
 设置低时延模式开发示例：
 
 ```
-1. OH_AudioStream_LatencyMode latencyMode = AUDIOSTREAM_LATENCY_MODE_FAST;
-2. OH_AudioStreamBuilder_SetLatencyMode(builder, latencyMode);
+OH_AudioStream_LatencyMode latencyMode = AUDIOSTREAM_LATENCY_MODE_FAST;
+OH_AudioStreamBuilder_SetLatencyMode(builder, latencyMode);
 ```
 
 针对OHAudio开发音频录制，有以下相关实例可供参考：
@@ -76,19 +76,19 @@ content_hash: sha256:a471e83ab7b0789998640c6bbe7b85e09b469e9a380f1dc29e0f7b61bb6
 设置数据回调函数示例：
 
 ```
-1. int32_t MyOnReadData_Legacy(
-2. OH_AudioCapturer* capturer,
-3. void* userData,
-4. void* buffer,
-5. int32_t length)
-6. {
-7. // 从buffer中取出length长度的录音数据。
-8. return 0;
-9. }
-10. // ...
-11. // 配置读入音频数据回调函数。
-12. OH_AudioCapturer_OnReadDataCallback readDataCb = MyOnReadData_NewAPI;
-13. OH_AudioStreamBuilder_SetCapturerReadDataCallback(builder, readDataCb, nullptr);
+int32_t MyOnReadData_Legacy(
+    OH_AudioCapturer* capturer,
+    void* userData,
+    void* buffer,
+    int32_t length)
+{
+    // 从buffer中取出length长度的录音数据。
+    return 0;
+}
+// ...
+    // 配置读入音频数据回调函数。
+    OH_AudioCapturer_OnReadDataCallback readDataCb = MyOnReadData_NewAPI;
+    OH_AudioStreamBuilder_SetCapturerReadDataCallback(builder, readDataCb, nullptr);
 ```
 
 * 为避免音频卡顿，禁止在回调方法OH\_AudioCapturer\_OnReadData中执行耗时操作。
@@ -102,6 +102,6 @@ content_hash: sha256:a471e83ab7b0789998640c6bbe7b85e09b469e9a380f1dc29e0f7b61bb6
   | OH\_AudioStream\_Result OH\_AudioCapturer\_Flush(OH\_AudioCapturer\* capturer) | 释放缓存数据。 |
   | OH\_AudioStream\_Result OH\_AudioCapturer\_Release(OH\_AudioCapturer\* capturer) | 释放录制实例。 |
 
-  注意
+  **注意** 
 
   音频流控制接口执行会有耗时（例如OH\_AudioCapturer\_Stop接口单次执行普遍超过50ms），应避免在主线程中直接调用，以免造成界面显示卡顿。

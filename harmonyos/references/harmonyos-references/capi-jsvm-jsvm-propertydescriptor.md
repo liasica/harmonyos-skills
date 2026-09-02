@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm
 title: JSVM_PropertyDescriptor
 breadcrumb: API参考 > 公共基础能力 > C API > 结构体 > JSVM_PropertyDescriptor
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:24+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:505f236b7502aec70b1e12503b605d3dfa9c820e6a76b26f292ed75b1e048b07
+scraped_at: 2026-09-02T15:03:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:098f69668a1fcd08d897b80e4b90cd55c8c21555cf3213f327e2184f76ce7244
 ---
 
-```
-1. typedef struct {...} JSVM_PropertyDescriptor
+```c
+typedef struct {...} JSVM_PropertyDescriptor
 ```
 
 ## 概述
 
-PhonePC/2in1TabletWearable
-
 属性描述符。
+
+**系统能力：** SystemCapability.ArkCompiler.JSVM
 
 **起始版本：** 11
 
@@ -26,11 +26,7 @@ PhonePC/2in1TabletWearable
 
 ## 汇总
 
-PhonePC/2in1TabletWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletWearable
 
 | 名称 | 描述 |
 | --- | --- |

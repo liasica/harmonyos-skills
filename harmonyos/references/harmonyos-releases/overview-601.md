@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-601
 title: 版本概览
-breadcrumb: 版本说明 > HarmonyOS 6.0.1(21) > 版本概览
+breadcrumb: 版本说明 > 更多版本 > 6.0.1(21) > 版本概览
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e4dd7c95ddb8d133ad86c77a77f050881121b8f3fe640fb998610a1be41ce659
+scraped_at: 2026-09-02T14:58:38+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:65252bc752604e4187b660993d2f08b3e466c7f51dc70039935161c2b878e3c7
 ---
 
 6.0.1(21)在6.0.0(20)的基础上，进一步增强ArkUI组件能力，新增一批属性样式的C API，增强了Image组件的SVG解析能力；Ability Kit增强了拉起应用的结果处理；ArkWeb增强了WebView相关能力；后台任务新增支持并行创建多个同样的长时任务；地图服务进一步丰富了可直接调用的场景，等等。更多详情可参见[OS平台新增和增强特性](os-new-feature-601.md)。
@@ -14,7 +14,7 @@ DevEco Studio进一步增强AI智能辅助编程的能力和Code Linter静态检
 
 ## 版本信息
 
-说明
+**说明** 
 
 使用正确的配套关系进行应用开发可以获得更流畅的开发体验。
 
@@ -31,11 +31,11 @@ DevEco Studio进一步增强AI智能辅助编程的能力和Code Linter静态检
 | DevEco Studio 6.0.1 Release (6.0.1.249) | 2025/11/20 |
 | SDK | Release | HarmonyOS 6.0.1 Release SDK  基于OpenHarmony SDK Ohos\_sdk\_public 6.0.1.112 (API 21 Release) | 2025/11/20 |
 
-说明
+**说明** 
 
 * **API版本**请在设备的“设置”中点击设备名称，进入“**关于本机**”进行查询。
 
-* DevEco Studio版本请从DevEco Studio界面菜单选择“Help > About DevEco Studio”进行查询。
+* DevEco Studio版本请从DevEco Studio界面菜单选择“Help > About DevEco Studio”进行查询。请[点击此处](https://developer.huawei.com/consumer/cn/deveco-studio/)获取最新的DevEco Studio软件版本。
 * SDK内置在DevEco Studio，安装DevEco Studio时自动安装配套版本SDK。具体版本请从DevEco Studio界面菜单选择“Help > About HarmonyOS SDK”进行查询。
 
 ## 应用工程版本信息配置建议

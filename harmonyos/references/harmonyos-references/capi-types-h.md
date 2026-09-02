@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-type
 title: types.h
 breadcrumb: API参考 > AI > MindSpore Lite Kit（昇思推理框架服务） > C API > 头文件 > types.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:04+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:2d518309db54b961ce8b0c33420060f6f85166804c6cb2dd7343627a9b7a9acd
+scraped_at: 2026-09-02T15:03:11+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:00171a10a53a97281368906537185542d040cf4e66a806e2ecd071a88df8b412
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供了MindSpore Lite支持的模型文件类型和设备类型。
 
@@ -26,19 +24,13 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [NNRTDeviceDesc](capi-mindspore-nnrtdevicedesc.md) | NNRTDeviceDesc | NNRt设备信息描述，包含设备ID，设备名称等信息。 |
 
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -52,14 +44,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AI\_ModelType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AI_ModelType
+```c
+enum OH_AI_ModelType
 ```
 
 **描述**
@@ -75,10 +63,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_DeviceType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AI_DeviceType
+```c
+enum OH_AI_DeviceType
 ```
 
 **描述**
@@ -97,10 +83,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_NNRTDeviceType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AI_NNRTDeviceType
+```c
+enum OH_AI_NNRTDeviceType
 ```
 
 **描述**
@@ -118,10 +102,8 @@ NNRt管理的硬件设备类型。
 
 ### OH\_AI\_PerformanceMode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AI_PerformanceMode
+```c
+enum OH_AI_PerformanceMode
 ```
 
 **描述**
@@ -140,10 +122,8 @@ NNRt硬件的工作性能模式。
 
 ### OH\_AI\_Priority
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AI_Priority
+```c
+enum OH_AI_Priority
 ```
 
 **描述**
@@ -161,10 +141,8 @@ NNRt推理任务优先级。
 
 ### OH\_AI\_OptimizationLevel
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AI_OptimizationLevel
+```c
+enum OH_AI_OptimizationLevel
 ```
 
 **描述**
@@ -183,10 +161,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AI\_QuantizationType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AI_QuantizationType
+```c
+enum OH_AI_QuantizationType
 ```
 
 **描述**

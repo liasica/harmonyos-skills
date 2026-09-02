@@ -1,8 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos-clouddev-invokecloudcode
 title: 在端侧调用云侧代码
+breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发端侧工程 > 在端侧调用云侧代码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:07+08:00
+scraped_at: 2026-09-02T15:18:04+08:00
 doc_updated_at: 2026-01-15
 content_hash: sha256:6e00bc4e0f958fea0d0b3b69f8edbc95b3b52c98c4700a22e370ce9208516509
 ---

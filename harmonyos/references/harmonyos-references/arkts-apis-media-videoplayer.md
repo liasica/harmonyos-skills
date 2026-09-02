@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: 废弃的Interface (VideoPlayer, deprecated)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > 废弃的Interface (VideoPlayer, deprecated)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:46+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:a133744a07ffd0d9307ec911f778bfd2803f1e12b681c2b7f252ab82859efde5
+scraped_at: 2026-09-02T15:02:35+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:505a860113d55220b6f0842b0d06cea02aacbf96cce42e2523a3d759ff4bafa3
 ---
 
 视频播放管理类，用于管理和播放视频媒体。在调用VideoPlayer的方法前，需要先通过[createVideoPlayer()](arkts-apis-media-f.md#mediacreatevideoplayerdeprecated)构建一个VideoPlayer实例。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer](arkts-apis-media-avplayer.md)替代。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { media } from '@kit.MediaKit';
+```ts
+import { media } from '@kit.MediaKit';
 ```
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.Multimedia.Media.VideoPlayer
 
@@ -43,13 +39,11 @@ PhonePC/2in1TabletTVWearable
 
 ## setDisplaySurface(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 setDisplaySurface(surfaceId: string, callback: AsyncCallback<void>): void
 
 设置SurfaceId。通过回调函数获取返回值。
 
-说明
+**说明** 
 
 * SetDisplaySurface需要在设置url和Prepare之间，无音频的视频流必须设置Surface否则Prepare失败。
 * 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.surfaceId](arkts-apis-media-avplayer.md#属性)替代。
@@ -65,28 +59,26 @@ setDisplaySurface(surfaceId: string, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let surfaceId: string = '';
-4. videoPlayer.setDisplaySurface(surfaceId, (err: BusinessError) => {
-5. if (err) {
-6. console.error('Failed to set DisplaySurface!');
-7. } else {
-8. console.info('Succeeded in setting DisplaySurface!');
-9. }
-10. });
+let surfaceId: string = '';
+videoPlayer.setDisplaySurface(surfaceId, (err: BusinessError) => {
+  if (err) {
+    console.error('Failed to set DisplaySurface!');
+  } else {
+    console.info('Succeeded in setting DisplaySurface!');
+  }
+});
 ```
 
 ## setDisplaySurface(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 setDisplaySurface(surfaceId: string): Promise<void>
 
 设置SurfaceId。通过Promise获取返回值。
 
-说明
+**说明** 
 
 * SetDisplaySurface需要在设置url和Prepare之间，无音频的视频流必须设置Surface否则Prepare失败。
 * 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.surfaceId](arkts-apis-media-avplayer.md#属性)替代。
@@ -107,26 +99,24 @@ setDisplaySurface(surfaceId: string): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let surfaceId: string = '';
-4. videoPlayer.setDisplaySurface(surfaceId).then(() => {
-5. console.info('Succeeded in setting DisplaySurface');
-6. }).catch((error: BusinessError) => {
-7. console.error(`video catchCallback, error:${error}`);
-8. });
+let surfaceId: string = '';
+videoPlayer.setDisplaySurface(surfaceId).then(() => {
+  console.info('Succeeded in setting DisplaySurface');
+}).catch((error: BusinessError) => {
+  console.error(`video catchCallback, error:${error}`);
+});
 ```
 
 ## prepare(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 prepare(callback: AsyncCallback<void>): void
 
 准备播放视频。通过回调函数获取返回值。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.prepare](arkts-apis-media-avplayer.md#prepare9)替代。
 
@@ -140,27 +130,25 @@ prepare(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. videoPlayer.prepare((err: BusinessError) => {
-4. if (err) {
-5. console.error('Failed to prepare!');
-6. } else {
-7. console.info('Succeeded in preparing!');
-8. }
-9. });
+videoPlayer.prepare((err: BusinessError) => {
+  if (err) {
+    console.error('Failed to prepare!');
+  } else {
+    console.info('Succeeded in preparing!');
+  }
+});
 ```
 
 ## prepare(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 prepare(): Promise<void>
 
 准备播放视频。通过Promise获取返回值。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.prepare](arkts-apis-media-avplayer.md#prepare9-1)替代。
 
@@ -174,25 +162,23 @@ prepare(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. videoPlayer.prepare().then(() => {
-4. console.info('Succeeded in preparing');
-5. }).catch((error: BusinessError) => {
-6. console.error(`video catchCallback, error:${error}`);
-7. });
+videoPlayer.prepare().then(() => {
+  console.info('Succeeded in preparing');
+}).catch((error: BusinessError) => {
+  console.error(`video catchCallback, error:${error}`);
+});
 ```
 
 ## play(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 play(callback: AsyncCallback<void>): void
 
 开始播放视频。通过回调函数获取返回值。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.play](arkts-apis-media-avplayer.md#play9)替代。
 
@@ -206,27 +192,25 @@ play(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. videoPlayer.play((err: BusinessError) => {
-4. if (err) {
-5. console.error('Failed to play!');
-6. } else {
-7. console.info('Succeeded in playing!');
-8. }
-9. });
+videoPlayer.play((err: BusinessError) => {
+  if (err) {
+    console.error('Failed to play!');
+  } else {
+    console.info('Succeeded in playing!');
+  }
+});
 ```
 
 ## play(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 play(): Promise<void>
 
 开始播放视频。通过Promise获取返回值。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.play](arkts-apis-media-avplayer.md#play9-1)替代。
 
@@ -240,25 +224,23 @@ play(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. videoPlayer.play().then(() => {
-4. console.info('Succeeded in playing');
-5. }).catch((error: BusinessError) => {
-6. console.error(`video catchCallback, error:${error}`);
-7. });
+videoPlayer.play().then(() => {
+  console.info('Succeeded in playing');
+}).catch((error: BusinessError) => {
+  console.error(`video catchCallback, error:${error}`);
+});
 ```
 
 ## pause(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 pause(callback: AsyncCallback<void>): void
 
 通过回调方式暂停播放视频。通过回调函数获取返回值。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.pause](arkts-apis-media-avplayer.md#pause9)替代。
 
@@ -272,27 +254,25 @@ pause(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. videoPlayer.pause((err: BusinessError) => {
-4. if (err) {
-5. console.error('Failed to pause!');
-6. } else {
-7. console.info('Succeeded in pausing!');
-8. }
-9. });
+videoPlayer.pause((err: BusinessError) => {
+  if (err) {
+    console.error('Failed to pause!');
+  } else {
+    console.info('Succeeded in pausing!');
+  }
+});
 ```
 
 ## pause(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 pause(): Promise<void>
 
 暂停播放视频。通过Promise获取返回值。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.pause](arkts-apis-media-avplayer.md#pause9-1)替代。
 
@@ -306,25 +286,23 @@ pause(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. videoPlayer.pause().then(() => {
-4. console.info('Succeeded in pausing');
-5. }).catch((error: BusinessError) => {
-6. console.error(`video catchCallback, error:${error}`);
-7. });
+videoPlayer.pause().then(() => {
+  console.info('Succeeded in pausing');
+}).catch((error: BusinessError) => {
+  console.error(`video catchCallback, error:${error}`);
+});
 ```
 
 ## stop(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 stop(callback: AsyncCallback<void>): void
 
 通过回调方式停止播放视频。通过回调函数获取返回值。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.stop](arkts-apis-media-avplayer.md#stop9)替代。
 
@@ -338,27 +316,25 @@ stop(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. videoPlayer.stop((err: BusinessError) => {
-4. if (err) {
-5. console.error('Failed to stop!');
-6. } else {
-7. console.info('Succeeded in stopping!');
-8. }
-9. });
+videoPlayer.stop((err: BusinessError) => {
+  if (err) {
+    console.error('Failed to stop!');
+  } else {
+    console.info('Succeeded in stopping!');
+  }
+});
 ```
 
 ## stop(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 stop(): Promise<void>
 
 停止播放视频。通过Promise获取返回值。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.stop](arkts-apis-media-avplayer.md#stop9-1)替代。
 
@@ -372,25 +348,23 @@ stop(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. videoPlayer.stop().then(() => {
-4. console.info('Succeeded in stopping');
-5. }).catch((error: BusinessError) => {
-6. console.error(`video catchCallback, error:${error}`);
-7. });
+videoPlayer.stop().then(() => {
+  console.info('Succeeded in stopping');
+}).catch((error: BusinessError) => {
+  console.error(`video catchCallback, error:${error}`);
+});
 ```
 
 ## reset(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 reset(callback: AsyncCallback<void>): void
 
 重置播放视频。通过回调函数获取返回值。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.reset](arkts-apis-media-avplayer.md#reset9)替代。
 
@@ -404,27 +378,25 @@ reset(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. videoPlayer.reset((err: BusinessError) => {
-4. if (err) {
-5. console.error('Failed to reset!');
-6. } else {
-7. console.info('Succeeded in resetting!');
-8. }
-9. });
+videoPlayer.reset((err: BusinessError) => {
+  if (err) {
+    console.error('Failed to reset!');
+  } else {
+    console.info('Succeeded in resetting!');
+  }
+});
 ```
 
 ## reset(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 reset(): Promise<void>
 
 重置播放视频。通过Promise获取返回值。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.reset](arkts-apis-media-avplayer.md#reset9-1)替代。
 
@@ -438,25 +410,23 @@ reset(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. videoPlayer.reset().then(() => {
-4. console.info('Succeeded in resetting');
-5. }).catch((error: BusinessError) => {
-6. console.error(`video catchCallback, error:${error}`);
-7. });
+videoPlayer.reset().then(() => {
+  console.info('Succeeded in resetting');
+}).catch((error: BusinessError) => {
+  console.error(`video catchCallback, error:${error}`);
+});
 ```
 
 ## seek(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 seek(timeMs: number, callback: AsyncCallback<number>): void
 
 跳转到指定播放位置，默认跳转到指定时间点的上一个关键帧。通过回调函数获取返回值。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.seek](arkts-apis-media-avplayer.md#seek9)替代。
 
@@ -471,38 +441,36 @@ seek(timeMs: number, callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let videoPlayer: media.VideoPlayer;
-4. media.createVideoPlayer((error: BusinessError, video: media.VideoPlayer) => {
-5. if (video != null) {
-6. videoPlayer = video;
-7. console.info('Succeeded in creating VideoPlayer');
-8. } else {
-9. console.error(`Failed to create VideoPlayer, error:${error}`);
-10. }
-11. });
+let videoPlayer: media.VideoPlayer;
+media.createVideoPlayer((error: BusinessError, video: media.VideoPlayer) => {
+  if (video != null) {
+    videoPlayer = video;
+    console.info('Succeeded in creating VideoPlayer');
+  } else {
+    console.error(`Failed to create VideoPlayer, error:${error}`);
+  }
+});
 
-13. let seekTime: number = 5000;
-14. videoPlayer.seek(seekTime, (err: BusinessError, result: number) => {
-15. if (err) {
-16. console.error('Failed to do seek!');
-17. } else {
-18. console.info('Succeeded in doing seek!');
-19. }
-20. });
+let seekTime: number = 5000;
+videoPlayer.seek(seekTime, (err: BusinessError, result: number) => {
+  if (err) {
+    console.error('Failed to do seek!');
+  } else {
+    console.info('Succeeded in doing seek!');
+  }
+});
 ```
 
 ## seek(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 seek(timeMs: number, mode:SeekMode, callback: AsyncCallback<number>): void
 
 跳转到指定播放位置。通过回调函数获取返回值。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.seek](arkts-apis-media-avplayer.md#seek9)替代。
 
@@ -518,39 +486,37 @@ seek(timeMs: number, mode:SeekMode, callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let videoPlayer: media.VideoPlayer | null = null;
-4. media.createVideoPlayer((error: BusinessError, video: media.VideoPlayer) => {
-5. if (video != null) {
-6. videoPlayer = video;
-7. console.info('Succeeded in creating VideoPlayer');
-8. } else {
-9. console.error(`Failed to create VideoPlayer, error:${error}`);
-10. }
-11. });
-12. let seekTime: number = 5000;
-13. if (videoPlayer) {
-14. (videoPlayer as media.VideoPlayer).seek(seekTime, media.SeekMode.SEEK_NEXT_SYNC, (err: BusinessError, result: number) => {
-15. if (err) {
-16. console.error('Failed to do seek!');
-17. } else {
-18. console.info('Succeeded in doing seek!');
-19. }
-20. });
-21. }
+let videoPlayer: media.VideoPlayer | null = null;
+media.createVideoPlayer((error: BusinessError, video: media.VideoPlayer) => {
+  if (video != null) {
+    videoPlayer = video;
+    console.info('Succeeded in creating VideoPlayer');
+  } else {
+    console.error(`Failed to create VideoPlayer, error:${error}`);
+  }
+});
+let seekTime: number = 5000;
+if (videoPlayer) {
+  (videoPlayer as media.VideoPlayer).seek(seekTime, media.SeekMode.SEEK_NEXT_SYNC, (err: BusinessError, result: number) => {
+    if (err) {
+      console.error('Failed to do seek!');
+    } else {
+      console.info('Succeeded in doing seek!');
+    }
+  });
+}
 ```
 
 ## seek(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 seek(timeMs: number, mode?:SeekMode): Promise<number>
 
 跳转到指定播放位置，如果没有设置mode则跳转到指定时间点的上一个关键帧。通过Promise获取返回值。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.seek](arkts-apis-media-avplayer.md#seek9)替代。
 
@@ -571,43 +537,41 @@ seek(timeMs: number, mode?:SeekMode): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let videoPlayer: media.VideoPlayer | null = null;
-4. media.createVideoPlayer((error: BusinessError, video: media.VideoPlayer) => {
-5. if (video != null) {
-6. videoPlayer = video;
-7. console.info('Succeeded in creating VideoPlayer');
-8. } else {
-9. console.error(`Failed to create VideoPlayer, error:${error}`);
-10. }
-11. });
-12. let seekTime: number = 5000;
-13. if (videoPlayer) {
-14. (videoPlayer as media.VideoPlayer).seek(seekTime).then((seekDoneTime: number) => { // seekDoneTime表示seek完成后的时间点。
-15. console.info('Succeeded in doing seek');
-16. }).catch((error: BusinessError) => {
-17. console.error(`video catchCallback, error:${error}`);
-18. });
+let videoPlayer: media.VideoPlayer | null = null;
+media.createVideoPlayer((error: BusinessError, video: media.VideoPlayer) => {
+  if (video != null) {
+    videoPlayer = video;
+    console.info('Succeeded in creating VideoPlayer');
+  } else {
+    console.error(`Failed to create VideoPlayer, error:${error}`);
+  }
+});
+let seekTime: number = 5000;
+if (videoPlayer) {
+  (videoPlayer as media.VideoPlayer).seek(seekTime).then((seekDoneTime: number) => { // seekDoneTime表示seek完成后的时间点。
+    console.info('Succeeded in doing seek');
+  }).catch((error: BusinessError) => {
+    console.error(`video catchCallback, error:${error}`);
+  });
 
-20. (videoPlayer as media.VideoPlayer).seek(seekTime, media.SeekMode.SEEK_NEXT_SYNC).then((seekDoneTime: number) => {
-21. console.info('Succeeded in doing seek');
-22. }).catch((error: BusinessError) => {
-23. console.error(`video catchCallback, error:${error}`);
-24. });
-25. }
+  (videoPlayer as media.VideoPlayer).seek(seekTime, media.SeekMode.SEEK_NEXT_SYNC).then((seekDoneTime: number) => {
+    console.info('Succeeded in doing seek');
+  }).catch((error: BusinessError) => {
+    console.error(`video catchCallback, error:${error}`);
+  });
+}
 ```
 
 ## setVolume(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 setVolume(vol: number, callback: AsyncCallback<void>): void
 
 设置音量。通过回调函数获取返回值。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.setVolume](arkts-apis-media-avplayer.md#setvolume9)替代。
 
@@ -622,28 +586,26 @@ setVolume(vol: number, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let vol: number = 0.5;
-4. videoPlayer.setVolume(vol, (err: BusinessError) => {
-5. if (err) {
-6. console.error('Failed to set Volume!');
-7. } else {
-8. console.info('Succeeded in setting Volume!');
-9. }
-10. });
+let vol: number = 0.5;
+videoPlayer.setVolume(vol, (err: BusinessError) => {
+  if (err) {
+    console.error('Failed to set Volume!');
+  } else {
+    console.info('Succeeded in setting Volume!');
+  }
+});
 ```
 
 ## setVolume(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 setVolume(vol: number): Promise<void>
 
 设置音量。通过Promise获取返回值。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.setVolume](arkts-apis-media-avplayer.md#setvolume9)替代。
 
@@ -663,26 +625,24 @@ setVolume(vol: number): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let vol: number = 0.5;
-4. videoPlayer.setVolume(vol).then(() => {
-5. console.info('Succeeded in setting Volume');
-6. }).catch((error: BusinessError) => {
-7. console.error(`video catchCallback, error:${error}`);
-8. });
+let vol: number = 0.5;
+videoPlayer.setVolume(vol).then(() => {
+  console.info('Succeeded in setting Volume');
+}).catch((error: BusinessError) => {
+  console.error(`video catchCallback, error:${error}`);
+});
 ```
 
 ## release(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 release(callback: AsyncCallback<void>): void
 
 释放视频资源。通过回调函数获取返回值。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.release](arkts-apis-media-avplayer.md#release9)替代。
 
@@ -696,27 +656,25 @@ release(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. videoPlayer.release((err: BusinessError) => {
-4. if (err) {
-5. console.error('Failed to release!');
-6. } else {
-7. console.info('Succeeded in releasing!');
-8. }
-9. });
+videoPlayer.release((err: BusinessError) => {
+  if (err) {
+    console.error('Failed to release!');
+  } else {
+    console.info('Succeeded in releasing!');
+  }
+});
 ```
 
 ## release(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 release(): Promise<void>
 
 释放视频资源。通过Promise获取返回值。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.release](arkts-apis-media-avplayer.md#release9-1)替代。
 
@@ -730,25 +688,23 @@ release(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. videoPlayer.release().then(() => {
-4. console.info('Succeeded in releasing');
-5. }).catch((error: BusinessError) => {
-6. console.error(`video catchCallback, error:${error}`);
-7. });
+videoPlayer.release().then(() => {
+  console.info('Succeeded in releasing');
+}).catch((error: BusinessError) => {
+  console.error(`video catchCallback, error:${error}`);
+});
 ```
 
 ## getTrackDescription(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getTrackDescription(callback: AsyncCallback<Array<MediaDescription>>): void
 
 获取视频轨道信息。通过回调函数获取返回值。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.getTrackDescription](arkts-apis-media-avplayer.md#gettrackdescription9)替代。
 
@@ -762,27 +718,25 @@ getTrackDescription(callback: AsyncCallback<Array<MediaDescription>>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. videoPlayer.getTrackDescription((error: BusinessError, arrList: Array<media.MediaDescription>) => {
-4. if ((arrList) != null) {
-5. console.info('Succeeded in getting TrackDescription');
-6. } else {
-7. console.error(`Failed to get TrackDescription, error:${error}`);
-8. }
-9. });
+videoPlayer.getTrackDescription((error: BusinessError, arrList: Array<media.MediaDescription>) => {
+  if ((arrList) != null) {
+    console.info('Succeeded in getting TrackDescription');
+  } else {
+    console.error(`Failed to get TrackDescription, error:${error}`);
+  }
+});
 ```
 
 ## getTrackDescription(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getTrackDescription(): Promise<Array<MediaDescription>>
 
 获取视频轨道信息。通过Promise获取返回值。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.getTrackDescription](arkts-apis-media-avplayer.md#gettrackdescription9-1)替代。
 
@@ -796,29 +750,27 @@ getTrackDescription(): Promise<Array<MediaDescription>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. videoPlayer.getTrackDescription().then((arrList: Array<media.MediaDescription>) => {
-4. if (arrList != null) {
-5. console.info('Succeeded in getting TrackDescription');
-6. } else {
-7. console.error('Failed to get TrackDescription');
-8. }
-9. }).catch((error: BusinessError) => {
-10. console.error(`video catchCallback, error:${error}`);
-11. });
+videoPlayer.getTrackDescription().then((arrList: Array<media.MediaDescription>) => {
+  if (arrList != null) {
+    console.info('Succeeded in getting TrackDescription');
+  } else {
+    console.error('Failed to get TrackDescription');
+  }
+}).catch((error: BusinessError) => {
+  console.error(`video catchCallback, error:${error}`);
+});
 ```
 
 ## setSpeed(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 setSpeed(speed: number, callback: AsyncCallback<number>): void
 
 设置播放速度。通过回调函数获取返回值。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.setSpeed](arkts-apis-media-avplayer.md#setspeed9)替代。
 
@@ -833,39 +785,37 @@ setSpeed(speed: number, callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let videoPlayer: media.VideoPlayer | null = null;
-4. media.createVideoPlayer((error: BusinessError, video: media.VideoPlayer) => {
-5. if (video != null) {
-6. videoPlayer = video;
-7. console.info('Succeeded in creating VideoPlayer');
-8. } else {
-9. console.error(`Failed to create VideoPlayer, error:${error}`);
-10. }
-11. });
-12. let speed = media.PlaybackSpeed.SPEED_FORWARD_2_00_X;
-13. if (videoPlayer) {
-14. (videoPlayer as media.VideoPlayer).setSpeed(speed, (err: BusinessError, result: number) => {
-15. if (err) {
-16. console.error('Failed to set Speed!');
-17. } else {
-18. console.info('Succeeded in setting Speed!');
-19. }
-20. });
-21. }
+let videoPlayer: media.VideoPlayer | null = null;
+media.createVideoPlayer((error: BusinessError, video: media.VideoPlayer) => {
+  if (video != null) {
+    videoPlayer = video;
+    console.info('Succeeded in creating VideoPlayer');
+  } else {
+    console.error(`Failed to create VideoPlayer, error:${error}`);
+  }
+});
+let speed = media.PlaybackSpeed.SPEED_FORWARD_2_00_X;
+if (videoPlayer) {
+  (videoPlayer as media.VideoPlayer).setSpeed(speed, (err: BusinessError, result: number) => {
+    if (err) {
+      console.error('Failed to set Speed!');
+    } else {
+      console.info('Succeeded in setting Speed!');
+    }
+  });
+}
 ```
 
 ## setSpeed(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 setSpeed(speed: number): Promise<number>
 
 设置播放速度。通过Promise获取返回值。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.setSpeed](arkts-apis-media-avplayer.md#setspeed9)替代。
 
@@ -885,37 +835,35 @@ setSpeed(speed: number): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let videoPlayer: media.VideoPlayer | null = null;
-4. media.createVideoPlayer((error: BusinessError, video: media.VideoPlayer) => {
-5. if (video != null) {
-6. videoPlayer = video;
-7. console.info('Succeeded in creating VideoPlayer');
-8. } else {
-9. console.error(`Failed to create VideoPlayer, error:${error}`);
-10. }
-11. });
-12. let speed = media.PlaybackSpeed.SPEED_FORWARD_2_00_X;
-13. if (videoPlayer) {
-14. (videoPlayer as media.VideoPlayer).setSpeed(speed).then((result: number) => {
-15. console.info('Succeeded in setting Speed');
-16. }).catch((error: BusinessError) => {
-17. console.error(`Failed to set Speed, error:${error}`);// todo:: error.
-18. });
-19. }
+let videoPlayer: media.VideoPlayer | null = null;
+media.createVideoPlayer((error: BusinessError, video: media.VideoPlayer) => {
+  if (video != null) {
+    videoPlayer = video;
+    console.info('Succeeded in creating VideoPlayer');
+  } else {
+    console.error(`Failed to create VideoPlayer, error:${error}`);
+  }
+});
+let speed = media.PlaybackSpeed.SPEED_FORWARD_2_00_X;
+if (videoPlayer) {
+  (videoPlayer as media.VideoPlayer).setSpeed(speed).then((result: number) => {
+    console.info('Succeeded in setting Speed');
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to set Speed, error:${error}`);// todo:: error.
+  });
+}
 ```
 
 ## on('playbackCompleted')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'playbackCompleted', callback: Callback<void>): void
 
 开始监听视频播放完成事件。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.on('stateChange')](arkts-apis-media-avplayer.md#onstatechange9)替代。
 
@@ -930,21 +878,19 @@ on(type: 'playbackCompleted', callback: Callback<void>): void
 
 **示例：**
 
-```
-1. videoPlayer.on('playbackCompleted', () => {
-2. console.info('playbackCompleted called!');
-3. });
+```ts
+videoPlayer.on('playbackCompleted', () => {
+  console.info('playbackCompleted called!');
+});
 ```
 
 ## on('bufferingUpdate')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'bufferingUpdate', callback: (infoType: BufferingInfoType, value: number) => void): void
 
 开始监听视频缓存更新事件。仅网络播放支持该订阅事件。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.on('bufferingUpdate')](arkts-apis-media-avplayer.md#onbufferingupdate9)替代。
 
@@ -959,22 +905,20 @@ on(type: 'bufferingUpdate', callback: (infoType: BufferingInfoType, value: numbe
 
 **示例：**
 
-```
-1. videoPlayer.on('bufferingUpdate', (infoType: media.BufferingInfoType, value: number) => {
-2. console.info('video bufferingInfo type: ' + infoType);
-3. console.info('video bufferingInfo value: ' + value);
-4. });
+```ts
+videoPlayer.on('bufferingUpdate', (infoType: media.BufferingInfoType, value: number) => {
+  console.info('video bufferingInfo type: ' + infoType);
+  console.info('video bufferingInfo value: ' + value);
+});
 ```
 
 ## on('startRenderFrame')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'startRenderFrame', callback: Callback<void>): void
 
 开始监听视频播放首帧送显上报事件。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.on('startRenderFrame')](arkts-apis-media-avplayer.md#onstartrenderframe9)替代。
 
@@ -989,21 +933,19 @@ on(type: 'startRenderFrame', callback: Callback<void>): void
 
 **示例：**
 
-```
-1. videoPlayer.on('startRenderFrame', () => {
-2. console.info('startRenderFrame called!');
-3. });
+```ts
+videoPlayer.on('startRenderFrame', () => {
+  console.info('startRenderFrame called!');
+});
 ```
 
 ## on('videoSizeChanged')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'videoSizeChanged', callback: (width: number, height: number) => void): void
 
 开始监听视频播放宽高变化事件。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.on('videoSizeChange')](arkts-apis-media-avplayer.md#onvideosizechange9)替代。
 
@@ -1018,22 +960,20 @@ on(type: 'videoSizeChanged', callback: (width: number, height: number) => void):
 
 **示例：**
 
-```
-1. videoPlayer.on('videoSizeChanged', (width: number, height: number) => {
-2. console.info('video width is: ' + width);
-3. console.info('video height is: ' + height);
-4. });
+```ts
+videoPlayer.on('videoSizeChanged', (width: number, height: number) => {
+  console.info('video width is: ' + width);
+  console.info('video height is: ' + height);
+});
 ```
 
 ## on('audioInterrupt')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'audioInterrupt', callback: (info: audio.InterruptEvent) => void): void
 
 监听音频焦点变化事件，参考[audio.InterruptEvent](arkts-apis-audio-i.md#interruptevent9)。
 
-说明
+**说明** 
 
 从API version 9开始支持，从API version 9开始废弃，建议使用[AVPlayer.on('audioInterrupt')](arkts-apis-media-avplayer.md#onaudiointerrupt9)替代。
 
@@ -1048,23 +988,21 @@ on(type: 'audioInterrupt', callback: (info: audio.InterruptEvent) => void): void
 
 **示例：**
 
-```
-1. import { audio } from '@kit.AudioKit';
+```ts
+import { audio } from '@kit.AudioKit';
 
-3. videoPlayer.on('audioInterrupt', (info: audio.InterruptEvent) => {
-4. console.info('audioInterrupt called,and InterruptEvent info is:' + info);
-5. });
+videoPlayer.on('audioInterrupt', (info: audio.InterruptEvent) => {
+  console.info('audioInterrupt called,and InterruptEvent info is:' + info);
+});
 ```
 
 ## on('error')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'error', callback: ErrorCallback): void
 
 开始监听视频播放错误事件，当上报error错误事件后，用户需处理error事件，退出播放操作。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.on('error')](arkts-apis-media-avplayer.md#onerror9)替代。
 
@@ -1079,11 +1017,11 @@ on(type: 'error', callback: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. videoPlayer.on('error', (error: BusinessError) => {  // 设置'error'事件回调。
-4. console.error(`video error called, error: ${error}`);
-5. });
-6. videoPlayer.url = 'fd://error';  // 设置错误的播放地址，触发'error'事件。
+videoPlayer.on('error', (error: BusinessError) => {  // 设置'error'事件回调。
+  console.error(`video error called, error: ${error}`);
+});
+videoPlayer.url = 'fd://error';  // 设置错误的播放地址，触发'error'事件。
 ```

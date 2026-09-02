@@ -1,29 +1,27 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-188
 title: 触摸事件的TouchEvent调用stopPropagation时无法阻止事件分发
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 触摸事件的TouchEvent调用stopPropagation时无法阻止事件分发
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 触摸事件的TouchEvent调用stopPropagation时无法阻止事件分发
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:25:48+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:33618d2f261b8d2a5a5d5eb1dadbffc542a43d450b7ae213b107dd2fb56790c3
+scraped_at: 2026-09-02T14:53:59+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:fd57039d431eb153aaf00516a7bdb98e77f834b788f6f3c5e10ee03c9c1c0729
 ---
 
 **问题现象**
 
 当Button嵌套在另一个Button中时，外部调用stopPropagation方法无法阻止内部Button的onTouch事件触发。
 
+```ts
+Button() {
+  Button()
+    .onTouch(xx)
+}
+.onTouch((event: TouchEvent) => {
+  // 没有阻止内部的button触发onTouch事件
+  event.stopPropagation();
+})
 ```
-1. Button() {
-2. Button()
-3. .onTouch(xx)
-4. }
-5. .onTouch((event: TouchEvent) => {
-6. // 没有阻止内部的button触发onTouch事件
-7. event.stopPropagation();
-8. })
-```
-
-[TouchEventCallsStopPropagation.ets](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/ArkUI/entry/src/main/ets/pages/TouchEventCallsStopPropagation.ets#L25-L32)
 
 **解决措施**
 

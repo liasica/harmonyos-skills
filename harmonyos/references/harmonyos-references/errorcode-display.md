@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 屏幕错误码
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > 错误码 > 图形图像 > 屏幕错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:58+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:0f95c2531d7e44fa5503dda567714e25d2e868dffeb10f35cdd984caa4fa82a0
+scraped_at: 2026-09-02T15:01:25+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:beacae34495296cc20122031aa862c93f941359ff9978befaca70de8958f0cef
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 1400001 无效的显示设备
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -36,8 +34,6 @@ Invalid display or screen.
 
 ## 1400003 系统服务工作异常
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 This display manager service works abnormally.
@@ -56,8 +52,6 @@ This display manager service works abnormally.
 系统服务内部工作异常，请稍候重试，或者重启设备尝试。
 
 ## 1400004 参数异常
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 

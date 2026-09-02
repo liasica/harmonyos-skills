@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-playing-fo
 title: 基于AVPlayer播放格式化音频（C++）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频播放系列开发实践 > 基于AVPlayer播放格式化音频（C++）
 category: best-practices
-scraped_at: 2026-04-29T14:11:28+08:00
+scraped_at: 2026-09-02T15:03:17+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:5a2d72dbe88d572aa45003dd8ff78da00302b9af893dafd94661746f64ce7b5f
+content_hash: sha256:f0fdabdf77b4e9d58d548aa29be44f41f497e5fb999a63eb36e1d4edf7ad2332
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 本文是音频播放系列文章的第4篇，实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/i2e9KrrlS8Ojg94wXeGVFg/zh-cn_image_0000002524217640.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/g0pp_2YDSJWoaXCgklFyFw/zh-cn_image_0000002555337515.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/uj9SB9oATnecIM-OwnsrLA/zh-cn_image_0000002524057652.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/sJgV7NiDQmeKMa6iocxkUQ/zh-cn_image_0000002524217640.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/cWHRpbs5TmyVJ6cylCr-DA/zh-cn_image_0000002555337515.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/I9PChoqnTF-AUIP0pu2D2Q/zh-cn_image_0000002524057652.gif "点击放大")
 
 ## 场景分析
 
@@ -36,7 +36,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 通过[avplayer](../harmonyos-references/capi-avplayer-h.md#概述)接口实现核心音频播放控制能力，包括音频资源加载、播放、暂停、停止及退出等操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/zfT4qKfJQAKgQuOyAfaKTA/zh-cn_image_0000002555217551.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/DrYkCc5KTa27MghCMGNfvA/zh-cn_image_0000002555217551.gif "点击放大")
 
 ### 实现原理
 
@@ -47,7 +47,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 1. 开发者可以通过[OH\_AVPlayer\_Create()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_create)构建一个avplayer实例，创建成功后，此时播放器处于idle状态。
 2. 使用[OH\_AVPlayer\_SetOnInfoCallback()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setoninfocallback)注册状态变化的回调，对状态变化做出响应。
 
-   注意
+   **注意** 
 
    因为AVPlayer播放器的接口是否能正常执行和当前的播放器状态有必然联系，建议开发者务必使用[OH\_AVPlayer\_SetOnInfoCallback()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setoninfocallback)注册状态变化的回调获取当前状态，保证在正确的状态下执行对应操作。以免发生异常，影响开发效率。
 3. 使用[OH\_AVPlayer\_SetOnErrorCallback()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setonerrorcallback)接口设置异常信息的回调，发生异常后，监听错误事件，可以快速根据报错信息进行定位。
@@ -55,7 +55,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 5. 执行[OH\_AVPlayer\_Prepare()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_prepare)接口准备播放音频，播放器会进入prepared状态。
 6. 执行[OH\_AVPlayer\_Play()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_play)接口，播放音频资源。
 
-   注意
+   **注意** 
 
    第4步设置完url、fdSrc等属性后，播放器并不是就立刻进入initialized状态；第5步执行完[OH\_AVPlayer\_Prepare()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_prepare)接口，播放器也不是立刻进入prepared，都是需在[OH\_AVPlayer\_SetOnInfoCallback()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setoninfocallback)注册状态变化的回调中，监听到播放器成功触发至initialized状态后，才能执行下一步的操作，否则接口会执行异常。
 
@@ -69,238 +69,218 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 1. 通过[OH\_AVPlayer\_Create()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_create)创建一个AVPlayer实例。
 
+```cpp
+void AVPlayer::InitPlayer() {
+    // Check the residual status of the previous player
+    if (ohAVPlayer != nullptr) {
+        OH_LOG_INFO(LOG_APP, "Previous audio player remained and release it.");
+        ReleasePlayer();
+    }
+
+    ohAVPlayer = OH_AVPlayer_Create();
+    if (ohAVPlayer == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "Create AVPlayer instance failed.");
+        return;
+    }
+    // ...
+
+    OH_LOG_INFO(LOG_APP, "Init player successfully.");
+}
 ```
-1. void AVPlayer::InitPlayer() {
-2. // Check the residual status of the previous player
-3. if (ohAVPlayer != nullptr) {
-4. OH_LOG_INFO(LOG_APP, "Previous audio player remained and release it.");
-5. ReleasePlayer();
-6. }
-
-8. ohAVPlayer = OH_AVPlayer_Create();
-9. if (ohAVPlayer == nullptr) {
-10. OH_LOG_ERROR(LOG_APP, "Create AVPlayer instance failed.");
-11. return;
-12. }
-13. // ...
-
-15. OH_LOG_INFO(LOG_APP, "Init player successfully.");
-16. }
-```
-
-[avplayer\_playing.cpp](https://gitcode.com/HarmonyOS_Samples/avplayer-play-formatted-audio-cpp/blob/master/entry/src/main/cpp/player/avplayer_playing.cpp#L184-L214)
 
 2. 使用[OH\_AVPlayer\_SetOnInfoCallback()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setoninfocallback)注册状态变化的回调，对状态变化做出响应。
 
-```
-1. // Define OHAVPlayerOnInfoCallback function
-2. static void OHAVPlayerOnInfoCallback(OH_AVPlayer *player, AVPlayerOnInfoType type, OH_AVFormat *infoBody,
-3. [[maybe_unused]] void *userData) {
-4. if (player == nullptr) {
-5. OH_LOG_ERROR(LOG_APP, "OHAVPlayerOnInfoCallback: the player is null.");
-6. return;
-7. }
-8. switch (type) {
-9. case AV_INFO_TYPE_STATE_CHANGE: {
-10. int32_t playerState = 0;
-11. int32_t stateChangeReason = 0;
-12. OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_STATE, &playerState);
-13. OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_STATE_CHANGE_REASON, &stateChangeReason);
-14. OH_LOG_INFO(LOG_APP, "The player state has been changed, state: %{public}d, reason: %{public}d.", playerState,
-15. stateChangeReason);
-16. OHAVPlayerOnStateChange(player, playerState);
-17. } break;
-18. // ...
-19. }
-```
-
-[avplayer\_playing.cpp](https://gitcode.com/HarmonyOS_Samples/avplayer-play-formatted-audio-cpp/blob/master/entry/src/main/cpp/player/avplayer_playing.cpp#L139-L172)
-
-```
-1. // On player state change and process it
-2. static void OHAVPlayerOnStateChange(OH_AVPlayer *player, int32_t playerState) {
-3. AVPlayer::GetInstance().PlayerState = playerState;
-4. switch (playerState) {
-5. case AV_IDLE:
-6. OH_LOG_INFO(LOG_APP, "playerState: AV_IDLE.");
-7. break;
-8. case AV_INITIALIZED:
-9. // ...
-10. // Prepare player
-11. ret = OH_AVPlayer_Prepare(player);
-12. // ...
-13. break;
-14. case AV_PREPARED:
-15. OH_LOG_INFO(LOG_APP, "playerState: AV_PREPARED.");
-16. // ...
-17. if (AVPlayer::GetInstance().WaitPlay) {
-18. AVPlayer::GetInstance().PlaySong();
-19. }
-20. // ...
-21. break;
-22. // ...
-23. default:
-24. break;
-25. }
-26. }
+```cpp
+// Define OHAVPlayerOnInfoCallback function
+static void OHAVPlayerOnInfoCallback(OH_AVPlayer *player, AVPlayerOnInfoType type, OH_AVFormat *infoBody,
+                                     [[maybe_unused]] void *userData) {
+    if (player == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "OHAVPlayerOnInfoCallback: the player is null.");
+        return;
+    }
+    switch (type) {
+    case AV_INFO_TYPE_STATE_CHANGE: {
+        int32_t playerState = 0;
+        int32_t stateChangeReason = 0;
+        OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_STATE, &playerState);
+        OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_STATE_CHANGE_REASON, &stateChangeReason);
+        OH_LOG_INFO(LOG_APP, "The player state has been changed, state: %{public}d, reason: %{public}d.", playerState,
+                    stateChangeReason);
+        OHAVPlayerOnStateChange(player, playerState);
+    } break;
+     // ...
+}
 ```
 
-[avplayer\_playing.cpp](https://gitcode.com/HarmonyOS_Samples/avplayer-play-formatted-audio-cpp/blob/master/entry/src/main/cpp/player/avplayer_playing.cpp#L28-L119)
+```cpp
+// On player state change and process it
+static void OHAVPlayerOnStateChange(OH_AVPlayer *player, int32_t playerState) {
+    AVPlayer::GetInstance().PlayerState = playerState;
+    switch (playerState) {
+    case AV_IDLE:
+        OH_LOG_INFO(LOG_APP, "playerState: AV_IDLE.");
+        break;
+    case AV_INITIALIZED:
+        // ...
+            // Prepare player
+            ret = OH_AVPlayer_Prepare(player);
+            // ...
+        break;
+    case AV_PREPARED:
+        OH_LOG_INFO(LOG_APP, "playerState: AV_PREPARED.");
+        // ...
+            if (AVPlayer::GetInstance().WaitPlay) {
+                AVPlayer::GetInstance().PlaySong();
+            }
+            // ...
+        break;
+        // ...
+    default:
+        break;
+    }
+}
+```
 
 3. 使用[OH\_AVPlayer\_SetOnErrorCallback()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setonerrorcallback)设置异常信息的回调，发生异常后，监听错误事件。
 
+```cpp
+// Define OHAVPlayerOnErrorCallback function
+static void OHAVPlayerOnErrorCallback([[maybe_unused]] OH_AVPlayer *player, int32_t errCode, const char *errMsg,
+                                      [[maybe_unused]] void *userData) {
+    OH_LOG_ERROR(LOG_APP, "OHAVPlayerOnErrorCallback, errCode: %{public}d, errMsg: %{public}s.", errCode, errMsg);
+}
 ```
-1. // Define OHAVPlayerOnErrorCallback function
-2. static void OHAVPlayerOnErrorCallback([[maybe_unused]] OH_AVPlayer *player, int32_t errCode, const char *errMsg,
-3. [[maybe_unused]] void *userData) {
-4. OH_LOG_ERROR(LOG_APP, "OHAVPlayerOnErrorCallback, errCode: %{public}d, errMsg: %{public}s.", errCode, errMsg);
-5. }
-```
-
-[avplayer\_playing.cpp](https://gitcode.com/HarmonyOS_Samples/avplayer-play-formatted-audio-cpp/blob/master/entry/src/main/cpp/player/avplayer_playing.cpp#L176-L180)
 
 4. 通过[OH\_AVPlayer\_SetFDSource()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setfdsource)设置播放资源。
 
+```cpp
+void AVPlayer::LoadSongInfo(uint32_t songFd, uint32_t songFileSize, uint32_t songFileOffset) {
+    if (ohAVPlayer == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "The ohAVPlayer is null.");
+        return;
+    }
+
+    AVPlayerState playerState = AV_IDLE;
+
+    auto ret = OH_AVPlayer_GetState(ohAVPlayer, &playerState);
+    if (ret != AV_ERR_OK) {
+        OH_LOG_ERROR(LOG_APP, "Get player state failed, ret: %{public}d", ret);
+        return;
+    }
+
+    // When the application loads or plays the first song for the first time, the player does not need to be reset
+    // In addition, the player cannot be reset in idle state, otherwise an error will be reported
+    // When playing for the first time, the player is in idle state after creation.
+    if (playerState != AV_IDLE) {
+        ret = OH_AVPlayer_Reset(ohAVPlayer);
+        if (ret != AV_ERR_OK) {
+            OH_LOG_ERROR(LOG_APP, "Reset player failed, ret: %{public}d", ret);
+            return;
+        }
+    }
+
+    ret = OH_AVPlayer_SetFDSource(ohAVPlayer, songFd, songFileOffset, songFileSize);
+    if (ret != AV_ERR_OK) {
+        OH_LOG_ERROR(LOG_APP, "Load song information failed, ret: %{public}d", ret);
+        return;
+    }
+
+    OH_LOG_INFO(LOG_APP,
+                "Load song information successfully. "
+                "Song fd: %{public}d, "
+                "file size: %{public}d, "
+                "file offset: %{public}d.",
+                songFd, songFileSize, songFileOffset);
+}
 ```
-1. void AVPlayer::LoadSongInfo(uint32_t songFd, uint32_t songFileSize, uint32_t songFileOffset) {
-2. if (ohAVPlayer == nullptr) {
-3. OH_LOG_ERROR(LOG_APP, "The ohAVPlayer is null.");
-4. return;
-5. }
-
-7. AVPlayerState playerState = AV_IDLE;
-
-9. auto ret = OH_AVPlayer_GetState(ohAVPlayer, &playerState);
-10. if (ret != AV_ERR_OK) {
-11. OH_LOG_ERROR(LOG_APP, "Get player state failed, ret: %{public}d", ret);
-12. return;
-13. }
-
-15. // When the application loads or plays the first song for the first time, the player does not need to be reset
-16. // In addition, the player cannot be reset in idle state, otherwise an error will be reported
-17. // When playing for the first time, the player is in idle state after creation.
-18. if (playerState != AV_IDLE) {
-19. ret = OH_AVPlayer_Reset(ohAVPlayer);
-20. if (ret != AV_ERR_OK) {
-21. OH_LOG_ERROR(LOG_APP, "Reset player failed, ret: %{public}d", ret);
-22. return;
-23. }
-24. }
-
-26. ret = OH_AVPlayer_SetFDSource(ohAVPlayer, songFd, songFileOffset, songFileSize);
-27. if (ret != AV_ERR_OK) {
-28. OH_LOG_ERROR(LOG_APP, "Load song information failed, ret: %{public}d", ret);
-29. return;
-30. }
-
-32. OH_LOG_INFO(LOG_APP,
-33. "Load song information successfully. "
-34. "Song fd: %{public}d, "
-35. "file size: %{public}d, "
-36. "file offset: %{public}d.",
-37. songFd, songFileSize, songFileOffset);
-38. }
-```
-
-[avplayer\_playing.cpp](https://gitcode.com/HarmonyOS_Samples/avplayer-play-formatted-audio-cpp/blob/master/entry/src/main/cpp/player/avplayer_playing.cpp#L218-L257)
 
 5. 执行[OH\_AVPlayer\_Prepare()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_prepare)接口准备播放音频。
 
+```cpp
+// Prepare player
+ret = OH_AVPlayer_Prepare(player);
+if (ret != AV_ERR_OK) {
+    OH_LOG_ERROR(LOG_APP, "Prepare player failed, ret: %{public}d", ret);
+    (void)OH_AVPlayer_Release(player);
+    player = nullptr;
+}
 ```
-1. // Prepare player
-2. ret = OH_AVPlayer_Prepare(player);
-3. if (ret != AV_ERR_OK) {
-4. OH_LOG_ERROR(LOG_APP, "Prepare player failed, ret: %{public}d", ret);
-5. (void)OH_AVPlayer_Release(player);
-6. player = nullptr;
-7. }
-```
-
-[avplayer\_playing.cpp](https://gitcode.com/HarmonyOS_Samples/avplayer-play-formatted-audio-cpp/blob/master/entry/src/main/cpp/player/avplayer_playing.cpp#L48-L56)
 
 6. 执行[OH\_AVPlayer\_Play()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_play)接口，播放音频资源。
 
+```cpp
+void AVPlayer::PlaySong() {
+    if (ohAVPlayer == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "The ohAVPlayer is null.");
+        return;
+    }
+    if (PlayerState != AV_PREPARED && PlayerState != AV_PAUSED && PlayerState != AV_STOPPED &&
+        PlayerState != AV_COMPLETED) {
+        WaitPlay = true;
+        return;
+    }
+    auto ret = OH_AVPlayer_Play(ohAVPlayer);
+    WaitPlay = false;
+    if (ret != AV_ERR_OK) {
+        OH_LOG_ERROR(LOG_APP, "Play song failed, ret: %{public}d", ret);
+        return;
+    }
+    OH_LOG_INFO(LOG_APP, "Play song successfully.");
+}
 ```
-1. void AVPlayer::PlaySong() {
-2. if (ohAVPlayer == nullptr) {
-3. OH_LOG_ERROR(LOG_APP, "The ohAVPlayer is null.");
-4. return;
-5. }
-6. if (PlayerState != AV_PREPARED && PlayerState != AV_PAUSED && PlayerState != AV_STOPPED &&
-7. PlayerState != AV_COMPLETED) {
-8. WaitPlay = true;
-9. return;
-10. }
-11. auto ret = OH_AVPlayer_Play(ohAVPlayer);
-12. WaitPlay = false;
-13. if (ret != AV_ERR_OK) {
-14. OH_LOG_ERROR(LOG_APP, "Play song failed, ret: %{public}d", ret);
-15. return;
-16. }
-17. OH_LOG_INFO(LOG_APP, "Play song successfully.");
-18. }
-```
-
-[avplayer\_playing.cpp](https://gitcode.com/HarmonyOS_Samples/avplayer-play-formatted-audio-cpp/blob/master/entry/src/main/cpp/player/avplayer_playing.cpp#L261-L278)
 
 7. 执行[OH\_AVPlayer\_Pause()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_pause)接口，暂停播放音频。
 
-```
-1. void AVPlayer::PauseSong() {
-2. if (ohAVPlayer == nullptr) {
-3. OH_LOG_ERROR(LOG_APP, "The ohAVPlayer is null.");
-4. return;
-5. }
-6. auto ret = OH_AVPlayer_Pause(ohAVPlayer);
-7. if (ret != AV_ERR_OK) {
-8. OH_LOG_ERROR(LOG_APP, "Pause song failed, ret: %{public}d", ret);
-9. return;
-10. }
+```cpp
+void AVPlayer::PauseSong() {
+    if (ohAVPlayer == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "The ohAVPlayer is null.");
+        return;
+    }
+    auto ret = OH_AVPlayer_Pause(ohAVPlayer);
+    if (ret != AV_ERR_OK) {
+        OH_LOG_ERROR(LOG_APP, "Pause song failed, ret: %{public}d", ret);
+        return;
+    }
 
-12. OH_LOG_INFO(LOG_APP, "Pause song successfully.");
-13. }
+    OH_LOG_INFO(LOG_APP, "Pause song successfully.");
+}
 ```
-
-[avplayer\_playing.cpp](https://gitcode.com/HarmonyOS_Samples/avplayer-play-formatted-audio-cpp/blob/master/entry/src/main/cpp/player/avplayer_playing.cpp#L294-L306)
 
 8. 执行[OH\_AVPlayer\_Stop()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_stop)接口，停止播放音频资源。
 
+```cpp
+void AVPlayer::StopSong() {
+    if (ohAVPlayer == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "The ohAVPlayer is null.");
+        return;
+    }
+    auto ret = OH_AVPlayer_Stop(ohAVPlayer);
+    if (ret != AV_ERR_OK) {
+        OH_LOG_ERROR(LOG_APP, "Stop song failed, ret: %{public}d", ret);
+        return;
+    }
+    OH_LOG_INFO(LOG_APP, "Stop song successfully.");
+}
 ```
-1. void AVPlayer::StopSong() {
-2. if (ohAVPlayer == nullptr) {
-3. OH_LOG_ERROR(LOG_APP, "The ohAVPlayer is null.");
-4. return;
-5. }
-6. auto ret = OH_AVPlayer_Stop(ohAVPlayer);
-7. if (ret != AV_ERR_OK) {
-8. OH_LOG_ERROR(LOG_APP, "Stop song failed, ret: %{public}d", ret);
-9. return;
-10. }
-11. OH_LOG_INFO(LOG_APP, "Stop song successfully.");
-12. }
-```
-
-[avplayer\_playing.cpp](https://gitcode.com/HarmonyOS_Samples/avplayer-play-formatted-audio-cpp/blob/master/entry/src/main/cpp/player/avplayer_playing.cpp#L310-L321)
 
 9. 执行[OH\_AVPlayer\_Release()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_release)接口，销毁播放资源。
 
+```cpp
+void AVPlayer::ReleasePlayer() {
+    if (ohAVPlayer == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "The ohAVPlayer is null.");
+        return;
+    }
+    auto ret = OH_AVPlayer_Release(ohAVPlayer);
+    if (ret != AV_ERR_OK) {
+        OH_LOG_ERROR(LOG_APP, "Release player failed, ret: %{public}d", ret);
+        return;
+    }
+    ohAVPlayer = nullptr;
+    OH_LOG_INFO(LOG_APP, "Release player successfully.");
+}
 ```
-1. void AVPlayer::ReleasePlayer() {
-2. if (ohAVPlayer == nullptr) {
-3. OH_LOG_ERROR(LOG_APP, "The ohAVPlayer is null.");
-4. return;
-5. }
-6. auto ret = OH_AVPlayer_Release(ohAVPlayer);
-7. if (ret != AV_ERR_OK) {
-8. OH_LOG_ERROR(LOG_APP, "Release player failed, ret: %{public}d", ret);
-9. return;
-10. }
-11. ohAVPlayer = nullptr;
-12. OH_LOG_INFO(LOG_APP, "Release player successfully.");
-13. }
-```
-
-[avplayer\_playing.cpp](https://gitcode.com/HarmonyOS_Samples/avplayer-play-formatted-audio-cpp/blob/master/entry/src/main/cpp/player/avplayer_playing.cpp#L388-L400)
 
 ## 跳转播放
 
@@ -308,7 +288,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 通过点击或拖动进度条精准跳转到指定时间进行播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/gB8JLUlvQu2IdFhT7czuUg/zh-cn_image_0000002524217654.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/T8X6k1v8Q1yzzVZzVqYqPA/zh-cn_image_0000002524217654.gif "点击放大")
 
 ### 实现原理
 
@@ -318,22 +298,20 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 使用avplayer的[OH\_AVPlayer\_Seek()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_seek)接口，跳转到目标时间。
 
+```cpp
+void AVPlayer::SeekPlaySong(uint32_t timeStamp) {
+    if (ohAVPlayer == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "The ohAVPlayer is null.");
+        return;
+    }
+    auto ret = OH_AVPlayer_Seek(ohAVPlayer, timeStamp, AV_SEEK_CLOSEST);
+    if (ret != AV_ERR_OK) {
+        OH_LOG_ERROR(LOG_APP, "Seek song failed, ret: %{public}d", ret);
+        return;
+    }
+    OH_LOG_INFO(LOG_APP, "Seek song successfully.");
+}
 ```
-1. void AVPlayer::SeekPlaySong(uint32_t timeStamp) {
-2. if (ohAVPlayer == nullptr) {
-3. OH_LOG_ERROR(LOG_APP, "The ohAVPlayer is null.");
-4. return;
-5. }
-6. auto ret = OH_AVPlayer_Seek(ohAVPlayer, timeStamp, AV_SEEK_CLOSEST);
-7. if (ret != AV_ERR_OK) {
-8. OH_LOG_ERROR(LOG_APP, "Seek song failed, ret: %{public}d", ret);
-9. return;
-10. }
-11. OH_LOG_INFO(LOG_APP, "Seek song successfully.");
-12. }
-```
-
-[avplayer\_playing.cpp](https://gitcode.com/HarmonyOS_Samples/avplayer-play-formatted-audio-cpp/blob/master/entry/src/main/cpp/player/avplayer_playing.cpp#L325-L336)
 
 ## 静音播放
 
@@ -341,7 +319,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 通过界面按钮快捷切换音频播放静音状态，实现一键开启或关闭静音。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/feNsX5VHQOiCGJ4WtC1KtQ/zh-cn_image_0000002555337523.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/_q0sgSXwSi2ayCErxICQEQ/zh-cn_image_0000002555337523.gif "点击放大")
 
 ### 实现原理
 
@@ -351,24 +329,22 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 调用avplayer的[OH\_AVPlayer\_SetVolume()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setvolume)接口，如果确定开启静音模式，则将音量设置成0。
 
+```cpp
+void AVPlayer::SetSilentMode(bool isSilentMode) {
+    if (ohAVPlayer == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "The ohAVPlayer is null.");
+        return;
+    }
+    // If the isSilentMode is true, set the volume to 0; Otherwise, restore the latest volume value
+    float volume = isSilentMode ? 0 : lastVolume;
+    auto ret = OH_AVPlayer_SetVolume(ohAVPlayer, volume, volume);
+    if (ret != AV_ERR_OK) {
+        OH_LOG_ERROR(LOG_APP, "SetSilentMode: set app volume failed, ret: %{public}d", ret);
+        return;
+    }
+    OH_LOG_INFO(LOG_APP, "Set silent mode successfully.");
+}
 ```
-1. void AVPlayer::SetSilentMode(bool isSilentMode) {
-2. if (ohAVPlayer == nullptr) {
-3. OH_LOG_ERROR(LOG_APP, "The ohAVPlayer is null.");
-4. return;
-5. }
-6. // If the isSilentMode is true, set the volume to 0; Otherwise, restore the latest volume value
-7. float volume = isSilentMode ? 0 : lastVolume;
-8. auto ret = OH_AVPlayer_SetVolume(ohAVPlayer, volume, volume);
-9. if (ret != AV_ERR_OK) {
-10. OH_LOG_ERROR(LOG_APP, "SetSilentMode: set app volume failed, ret: %{public}d", ret);
-11. return;
-12. }
-13. OH_LOG_INFO(LOG_APP, "Set silent mode successfully.");
-14. }
-```
-
-[avplayer\_playing.cpp](https://gitcode.com/HarmonyOS_Samples/avplayer-play-formatted-audio-cpp/blob/master/entry/src/main/cpp/player/avplayer_playing.cpp#L371-L384)
 
 ## 切换歌曲播放
 
@@ -376,7 +352,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 点击上一首或下一首或歌单列表中的歌曲进行不同歌曲播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/NLmkVy3HR7GBeRtYX3Dg7Q/zh-cn_image_0000002524057660.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/a34kCZsnS-ODZlPCqFWt2w/zh-cn_image_0000002524057660.gif "点击放大")
 
 ### 实现原理
 
@@ -386,79 +362,73 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 1. 停止当前播放的歌曲。
 
+```cpp
+void AVPlayer::StopSong() {
+    if (ohAVPlayer == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "The ohAVPlayer is null.");
+        return;
+    }
+    auto ret = OH_AVPlayer_Stop(ohAVPlayer);
+    if (ret != AV_ERR_OK) {
+        OH_LOG_ERROR(LOG_APP, "Stop song failed, ret: %{public}d", ret);
+        return;
+    }
+    OH_LOG_INFO(LOG_APP, "Stop song successfully.");
+}
 ```
-1. void AVPlayer::StopSong() {
-2. if (ohAVPlayer == nullptr) {
-3. OH_LOG_ERROR(LOG_APP, "The ohAVPlayer is null.");
-4. return;
-5. }
-6. auto ret = OH_AVPlayer_Stop(ohAVPlayer);
-7. if (ret != AV_ERR_OK) {
-8. OH_LOG_ERROR(LOG_APP, "Stop song failed, ret: %{public}d", ret);
-9. return;
-10. }
-11. OH_LOG_INFO(LOG_APP, "Stop song successfully.");
-12. }
-```
-
-[avplayer\_playing.cpp](https://gitcode.com/HarmonyOS_Samples/avplayer-play-formatted-audio-cpp/blob/master/entry/src/main/cpp/player/avplayer_playing.cpp#L310-L321)
 
 2. 用[OH\_AVPlayer\_Reset()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_reset)接口重置播放器状态。
 
+```cpp
+ret = OH_AVPlayer_Reset(ohAVPlayer);
+if (ret != AV_ERR_OK) {
+    OH_LOG_ERROR(LOG_APP, "Reset player failed, ret: %{public}d", ret);
+    return;
+}
 ```
-1. ret = OH_AVPlayer_Reset(ohAVPlayer);
-2. if (ret != AV_ERR_OK) {
-3. OH_LOG_ERROR(LOG_APP, "Reset player failed, ret: %{public}d", ret);
-4. return;
-5. }
-```
-
-[avplayer\_playing.cpp](https://gitcode.com/HarmonyOS_Samples/avplayer-play-formatted-audio-cpp/blob/master/entry/src/main/cpp/player/avplayer_playing.cpp#L237-L241)
 
 3.使用[OH\_AVPlayer\_SetFDSource()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setfdsource)设置播放资源。
 
+```cpp
+void AVPlayer::LoadSongInfo(uint32_t songFd, uint32_t songFileSize, uint32_t songFileOffset) {
+    if (ohAVPlayer == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "The ohAVPlayer is null.");
+        return;
+    }
+
+    AVPlayerState playerState = AV_IDLE;
+
+    auto ret = OH_AVPlayer_GetState(ohAVPlayer, &playerState);
+    if (ret != AV_ERR_OK) {
+        OH_LOG_ERROR(LOG_APP, "Get player state failed, ret: %{public}d", ret);
+        return;
+    }
+
+    // When the application loads or plays the first song for the first time, the player does not need to be reset
+    // In addition, the player cannot be reset in idle state, otherwise an error will be reported
+    // When playing for the first time, the player is in idle state after creation.
+    if (playerState != AV_IDLE) {
+        ret = OH_AVPlayer_Reset(ohAVPlayer);
+        if (ret != AV_ERR_OK) {
+            OH_LOG_ERROR(LOG_APP, "Reset player failed, ret: %{public}d", ret);
+            return;
+        }
+    }
+
+    ret = OH_AVPlayer_SetFDSource(ohAVPlayer, songFd, songFileOffset, songFileSize);
+    if (ret != AV_ERR_OK) {
+        OH_LOG_ERROR(LOG_APP, "Load song information failed, ret: %{public}d", ret);
+        return;
+    }
+
+    OH_LOG_INFO(LOG_APP,
+                "Load song information successfully. "
+                "Song fd: %{public}d, "
+                "file size: %{public}d, "
+                "file offset: %{public}d.",
+                songFd, songFileSize, songFileOffset);
+}
 ```
-1. void AVPlayer::LoadSongInfo(uint32_t songFd, uint32_t songFileSize, uint32_t songFileOffset) {
-2. if (ohAVPlayer == nullptr) {
-3. OH_LOG_ERROR(LOG_APP, "The ohAVPlayer is null.");
-4. return;
-5. }
-
-7. AVPlayerState playerState = AV_IDLE;
-
-9. auto ret = OH_AVPlayer_GetState(ohAVPlayer, &playerState);
-10. if (ret != AV_ERR_OK) {
-11. OH_LOG_ERROR(LOG_APP, "Get player state failed, ret: %{public}d", ret);
-12. return;
-13. }
-
-15. // When the application loads or plays the first song for the first time, the player does not need to be reset
-16. // In addition, the player cannot be reset in idle state, otherwise an error will be reported
-17. // When playing for the first time, the player is in idle state after creation.
-18. if (playerState != AV_IDLE) {
-19. ret = OH_AVPlayer_Reset(ohAVPlayer);
-20. if (ret != AV_ERR_OK) {
-21. OH_LOG_ERROR(LOG_APP, "Reset player failed, ret: %{public}d", ret);
-22. return;
-23. }
-24. }
-
-26. ret = OH_AVPlayer_SetFDSource(ohAVPlayer, songFd, songFileOffset, songFileSize);
-27. if (ret != AV_ERR_OK) {
-28. OH_LOG_ERROR(LOG_APP, "Load song information failed, ret: %{public}d", ret);
-29. return;
-30. }
-
-32. OH_LOG_INFO(LOG_APP,
-33. "Load song information successfully. "
-34. "Song fd: %{public}d, "
-35. "file size: %{public}d, "
-36. "file offset: %{public}d.",
-37. songFd, songFileSize, songFileOffset);
-38. }
-```
-
-[avplayer\_playing.cpp](https://gitcode.com/HarmonyOS_Samples/avplayer-play-formatted-audio-cpp/blob/master/entry/src/main/cpp/player/avplayer_playing.cpp#L218-L257)
 
 ## 倍速设置
 
@@ -466,7 +436,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 滑动倍速调节面板调节播放速度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/Dyy3hFM2SiqUPA_FP0jJLg/zh-cn_image_0000002555217553.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/UdTAFgYkToWj0HLGFBkFWA/zh-cn_image_0000002555217553.gif "点击放大")
 
 ### 实现原理
 
@@ -476,44 +446,40 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 1. 通过调节面板获取速度值，传入[OH\_AVPlayer\_SetPlaybackRate()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setplaybackrate)接口中。
 
+```typescript
+Slider({
+  value: this.speed,
+  min: 0.25,
+  max: 2,
+  step: 0.25,
+  style: SliderStyle.OutSet
+})
+  .layoutWeight(1)
+  .showTips(true, this.speed.toString())
+  .showSteps(true)
+  .onChange((value: number, mode: SliderChangeMode) => {
+    this.speed = value;
+    MediaControlCenter.getInstance().setSpeed(this.speed);
+    console.info('value:' + value + 'mode:' + mode.toString());
+  })
 ```
-1. Slider({
-2. value: this.speed,
-3. min: 0.25,
-4. max: 2,
-5. step: 0.25,
-6. style: SliderStyle.OutSet
-7. })
-8. .layoutWeight(1)
-9. .showTips(true, this.speed.toString())
-10. .showSteps(true)
-11. .onChange((value: number, mode: SliderChangeMode) => {
-12. this.speed = value;
-13. MediaControlCenter.getInstance().setSpeed(this.speed);
-14. console.info('value:' + value + 'mode:' + mode.toString());
-15. })
-```
-
-[ControlAreaComponent.ets](https://gitcode.com/HarmonyOS_Samples/avplayer-play-formatted-audio-cpp/blob/master/entry/src/main/ets/view/ControlAreaComponent.ets#L378-L392)
 
 2. 使用[OH\_AVPlayer\_SetPlaybackRate()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setplaybackrate)接口设置播放倍速。
 
+```cpp
+void AVPlayer::SetPlayingSpeed(float speed) {
+    if (ohAVPlayer == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "The ohAVPlayer is null.");
+        return;
+    }
+    auto ret = OH_AVPlayer_SetPlaybackRate(ohAVPlayer, speed);
+    if (ret != AV_ERR_OK) {
+        OH_LOG_ERROR(LOG_APP, "Set playing speed failed, ret: %{public}d", ret);
+        return;
+    }
+    OH_LOG_INFO(LOG_APP, "Set playing speed successfully.");
+}
 ```
-1. void AVPlayer::SetPlayingSpeed(float speed) {
-2. if (ohAVPlayer == nullptr) {
-3. OH_LOG_ERROR(LOG_APP, "The ohAVPlayer is null.");
-4. return;
-5. }
-6. auto ret = OH_AVPlayer_SetPlaybackRate(ohAVPlayer, speed);
-7. if (ret != AV_ERR_OK) {
-8. OH_LOG_ERROR(LOG_APP, "Set playing speed failed, ret: %{public}d", ret);
-9. return;
-10. }
-11. OH_LOG_INFO(LOG_APP, "Set playing speed successfully.");
-12. }
-```
-
-[avplayer\_playing.cpp](https://gitcode.com/HarmonyOS_Samples/avplayer-play-formatted-audio-cpp/blob/master/entry/src/main/cpp/player/avplayer_playing.cpp#L340-L351)
 
 ## 音量设置
 
@@ -521,7 +487,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 滑动音量调节面板调节播放音量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/D-5V61fLRP2xE5Rkl_2Upg/zh-cn_image_0000002524217656.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/kjccD6etSw-d2O1QP5nmaw/zh-cn_image_0000002524217656.gif "点击放大")
 
 ### 实现原理
 
@@ -531,47 +497,43 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 1. 通过调节面板获取音量值，传入[OH\_AVPlayer\_SetVolume()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setvolume)接口中。
 
+```typescript
+Slider({
+  value: this.volume,
+  min: 0,
+  max: 1,
+  step: 0.1,
+  style: SliderStyle.OutSet
+})
+  .showTips(false)
+  .layoutWeight(1)
+  .onChange((value: number, mode: SliderChangeMode) => {
+    this.volume = value;
+    if (this.volume === 0) {
+      this.isSilentMode = true
+    } else {
+      this.isSilentMode = false;
+    }
+  })
 ```
-1. Slider({
-2. value: this.volume,
-3. min: 0,
-4. max: 1,
-5. step: 0.1,
-6. style: SliderStyle.OutSet
-7. })
-8. .showTips(false)
-9. .layoutWeight(1)
-10. .onChange((value: number, mode: SliderChangeMode) => {
-11. this.volume = value;
-12. if (this.volume === 0) {
-13. this.isSilentMode = true
-14. } else {
-15. this.isSilentMode = false;
-16. }
-17. })
-```
-
-[ControlAreaComponent.ets](https://gitcode.com/HarmonyOS_Samples/avplayer-play-formatted-audio-cpp/blob/master/entry/src/main/ets/view/ControlAreaComponent.ets#L312-L328)
 
 2. 使用[OH\_AVPlayer\_SetVolume()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setvolume)设置播放音量。
 
+```cpp
+void AVPlayer::SetPlayingVolume(float volume) {
+    if (ohAVPlayer == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "The ohAVPlayer is null.");
+        return;
+    }
+    auto ret = OH_AVPlayer_SetVolume(ohAVPlayer, volume, volume);
+    if (ret != AV_ERR_OK) {
+        OH_LOG_ERROR(LOG_APP, "Set app volume failed, ret: %{public}d", ret);
+        return;
+    }
+    lastVolume = volume;
+    OH_LOG_INFO(LOG_APP, "Set app volume successfully.");
+}
 ```
-1. void AVPlayer::SetPlayingVolume(float volume) {
-2. if (ohAVPlayer == nullptr) {
-3. OH_LOG_ERROR(LOG_APP, "The ohAVPlayer is null.");
-4. return;
-5. }
-6. auto ret = OH_AVPlayer_SetVolume(ohAVPlayer, volume, volume);
-7. if (ret != AV_ERR_OK) {
-8. OH_LOG_ERROR(LOG_APP, "Set app volume failed, ret: %{public}d", ret);
-9. return;
-10. }
-11. lastVolume = volume;
-12. OH_LOG_INFO(LOG_APP, "Set app volume successfully.");
-13. }
-```
-
-[avplayer\_playing.cpp](https://gitcode.com/HarmonyOS_Samples/avplayer-play-formatted-audio-cpp/blob/master/entry/src/main/cpp/player/avplayer_playing.cpp#L355-L367)
 
 ## 常见问题
 
@@ -597,36 +559,34 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 2. 保证在在正确的播放状态下，执行对应的接口。建议开发者务必使用[OH\_AVPlayer\_SetOnInfoCallback()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setoninfocallback)注册状态变化的回调，当监听到AVPlayer的播放状态到达目标状态时，执行对应的接口。当监听到AVPlayer处于initialized状态时，再执行[OH\_AVPlayer\_Prepare()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_prepare)接口，监听到AVPlayer处于prepared状态时，再执行[OH\_AVPlayer\_Play()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_play)接口。
 
+```cpp
+// On player state change and process it
+static void OHAVPlayerOnStateChange(OH_AVPlayer *player, int32_t playerState) {
+    AVPlayer::GetInstance().PlayerState = playerState;
+    switch (playerState) {
+    case AV_IDLE:
+        OH_LOG_INFO(LOG_APP, "playerState: AV_IDLE.");
+        break;
+    case AV_INITIALIZED:
+        // ...
+            // Prepare player
+            ret = OH_AVPlayer_Prepare(player);
+            // ...
+        break;
+    case AV_PREPARED:
+        OH_LOG_INFO(LOG_APP, "playerState: AV_PREPARED.");
+        // ...
+            if (AVPlayer::GetInstance().WaitPlay) {
+                AVPlayer::GetInstance().PlaySong();
+            }
+            // ...
+        break;
+        // ...
+    default:
+        break;
+    }
+}
 ```
-1. // On player state change and process it
-2. static void OHAVPlayerOnStateChange(OH_AVPlayer *player, int32_t playerState) {
-3. AVPlayer::GetInstance().PlayerState = playerState;
-4. switch (playerState) {
-5. case AV_IDLE:
-6. OH_LOG_INFO(LOG_APP, "playerState: AV_IDLE.");
-7. break;
-8. case AV_INITIALIZED:
-9. // ...
-10. // Prepare player
-11. ret = OH_AVPlayer_Prepare(player);
-12. // ...
-13. break;
-14. case AV_PREPARED:
-15. OH_LOG_INFO(LOG_APP, "playerState: AV_PREPARED.");
-16. // ...
-17. if (AVPlayer::GetInstance().WaitPlay) {
-18. AVPlayer::GetInstance().PlaySong();
-19. }
-20. // ...
-21. break;
-22. // ...
-23. default:
-24. break;
-25. }
-26. }
-```
-
-[avplayer\_playing.cpp](https://gitcode.com/HarmonyOS_Samples/avplayer-play-formatted-audio-cpp/blob/master/entry/src/main/cpp/player/avplayer_playing.cpp#L28-L119)
 
 ## 示例代码
 

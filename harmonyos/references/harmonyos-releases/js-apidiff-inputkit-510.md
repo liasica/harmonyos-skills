@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-inputkit-510
 title: Input Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.1.0(18) > OS平台能力 > API变更清单 > Input Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.0(18) > OS平台能力 > API变更清单 > Input Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:10+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:35+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:3c875fc463bbc395310cde9e7ab7e2a65d947235f11f8b837740714038b1b4e4
 ---
 

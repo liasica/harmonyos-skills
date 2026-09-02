@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-so
 title: 预构建库快速链接
 breadcrumb: 指南 > 构建应用 > 配置构建流程 > 预构建库快速链接
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:47:14+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e57946f038c3f60fa6dacd86897b619ca625f64244f227a84ff7a292dc2be839
+scraped_at: 2026-09-02T15:00:27+08:00
+doc_updated_at: 2026-07-15
+content_hash: sha256:322464d04b5ac5a3c6db411f03e3406c797e431116e836dafdafd00a69a446cf
 ---
 
 在工程中使用依赖模块时，如果希望使用依赖模块中native相关的so库与接口文件（.h/.hpp），Hvigor提供了快速链接功能。
@@ -19,12 +19,12 @@ content_hash: sha256:e57946f038c3f60fa6dacd86897b619ca625f64244f227a84ff7a292dc2
 
   在本地依赖模块中如存在.h等接口文件，可通过在build-profile.json5文件buildOption/nativeLib/headerPath中指定接口文件目录。
 
-  ```
-  1. "buildOption": {
-  2. "nativeLib": {
-  3. "headerPath": "src/main/cpp/include"
-  4. }
-  5. }
+  ```json5
+  "buildOption": {
+    "nativeLib": {
+      "headerPath": "src/main/cpp/include"
+    }
+  }
   ```
 
 ## 预构建库
@@ -33,24 +33,24 @@ content_hash: sha256:e57946f038c3f60fa6dacd86897b619ca625f64244f227a84ff7a292dc2
 
 例如工程依赖了curl共享包，共享包中存在libcurl.so，在oh-package.json5中添加依赖。
 
-```
-1. // oh-package.json5
-2. "dependencies": {
-3. "curl": "1.0.0"
-4. }
+```json5
+// oh-package.json5
+"dependencies": { 
+  "curl": "1.0.0" 
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/8bYtJN9URNm1Ubp0ieLgKg/zh-cn_image_0000002561752915.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/XG-5opcXRP2ky8T2hQc7wg/zh-cn_image_0000002731382421.png)
 
 在工程的CMakeLists.txt脚本中声明链接：
 
-```
-1. // CMakeLists.txt
-2. add_library(entry SHARED napi_init.cpp)
-3. # ${moduleName::soName}.
-4. target_link_libraries(entry PUBLIC curl::curl)
+```screen
+// CMakeLists.txt
+add_library(entry SHARED napi_init.cpp)
+# ${moduleName::soName}.
+target_link_libraries(entry PUBLIC curl::curl)
 ```
 
-说明
+**说明** 
 
 对于本地模块，HAR仅暴露本模块构建的so库，HSP暴露本模块构建及所依赖的so库。

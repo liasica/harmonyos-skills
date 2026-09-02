@@ -3,24 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 健康使用设备授权列表页中应用授权开关打开/关闭时触发回调
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 用户授权管理 > 健康使用设备授权列表页中应用授权开关打开/关闭时触发回调
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:40:27+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:896fda6cd1086c4456c18e348e9d3d53c4cb0a2e9bbf6334e16e791552c79b96
+scraped_at: 2026-09-02T15:00:02+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:fa713e7f8679f2d8c31764d7f26c3dfcc9bb93b582936952f1fcb43b9218cf40
 ---
 
 ## 场景介绍
 
-当通过健康使用设备授权列表页中的授权开关开启或者关闭应用授权时（设置-健康使用设备-右上角四点设置![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/NrRTHc56R0KqkllGkMUDvw/zh-cn_image_0000002558606010.png)-可访问健康使用设备的应用），会执行TimeGuardExtensionAbility中的onUserAuthSwitchOn/onUserAuthSwitchOff回调方法，支持开发者在用户授予授权和撤销授权时执行特定逻辑。若之前已设置过健康使用设备的密码，则在此页面取消应用授权时需要输入健康使用设备的密码。
+当用户通过健康使用设备的授权列表页开启或关闭应用的授权开关时，系统会执行[TimeGuardExtensionAbility](../harmonyos-references/screentimeguard-timeguardextensionability.md)中的回调方法，以此支持管控应用感知用户授权状态的变化。
 
-注意
+**说明** 
 
-应用调用Screen Time Guard Kit接口获取授权或者取消授权时，不会触发onUserAuthSwitchOn/onUserAuthSwitchOff回调方法。只有在健康使用设备授权列表页操作授权开关时才会触发。
+1. 健康使用设备授权列表页（访问入口为：设置-健康使用设备-右上角四点设置![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/KpLpx5k2Rj-V4lZuJYn13g/zh-cn_image_0000002706675254.png)-可访问健康使用设备的应用），用于统一管理所有管控应用的用户授权。
+2. 若用户已设置健康使用设备的密码，则在此页面取消应用授权时需要输入相应的密码。
+3. 管控应用调用Screen Time Guard Kit接口获取授权或者取消授权时，不会触发onUserAuthSwitchOn/onUserAuthSwitchOff回调方法。只有在健康使用设备授权列表页操作授权开关时才会触发。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/iQinrq2mRZqOctbYHYcnHw/zh-cn_image_0000002589325537.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/e6b8_Xi8RUemsDbY8_S-mg/zh-cn_image_0000002736434343.png)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/rF7rDIp0QMqDTveslQGjWw/zh-cn_image_0000002589245475.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/jG3zm6icQ76clB0Yv-L5_A/zh-cn_image_0000002706835194.png)
 
 流程说明（以关闭授权开关为例）：
 
@@ -37,7 +39,7 @@ content_hash: sha256:896fda6cd1086c4456c18e348e9d3d53c4cb0a2e9bbf6334e16e791552c
 | [onUserAuthSwitchOn](../harmonyos-references/screentimeguard-timeguardextensionability.md#onuserauthswitchon)(): Promise<void> | 当用户授予授权时执行特定逻辑。 |
 | [onUserAuthSwitchOff](../harmonyos-references/screentimeguard-timeguardextensionability.md#onuserauthswitchoff)(): Promise<void> | 当用户撤销授权时执行特定逻辑。 |
 
-说明
+**说明** 
 
 1. TimeGuardExtensionAbility与应用运行在不同进程，但共用沙箱。
 2. TimeGuardExtensionAbility与应用直接无法直接传递数据，如需传递数据可以通过[用户首选项](../harmonyos-references/js-apis-data-preferences.md)/[数据库](../harmonyos-references/js-apis-data-relationalstore.md)等数据持久化手段进行传递，或者通过[公共事件模块](../harmonyos-references/js-apis-commoneventmanager.md)传递。
@@ -46,33 +48,41 @@ content_hash: sha256:896fda6cd1086c4456c18e348e9d3d53c4cb0a2e9bbf6334e16e791552c
 
 1. 导入相关模块。
 
+   ```typescript
+   import { TimeGuardExtensionAbility } from '@kit.ScreenTimeGuardKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
-   1. import { TimeGuardExtensionAbility } from '@kit.ScreenTimeGuardKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
-   ```
-2. 继承TimeGuardExtensionAbility，重写onUserAuthSwitchOn和onUserAuthSwitchOff 回调。
+2. 继承TimeGuardExtensionAbility，重写onUserAuthSwitchOn和onUserAuthSwitchOff回调。
 
-   ```
-   1. export default class EntryAbility extends TimeGuardExtensionAbility {
-   2. async onUserAuthSwitchOn(): Promise<void> {
-   3. hilog.info(0x0000, 'EntryAbility', 'test --- onUserAuthSwitchOn');
-   4. }
+   ```typescript
+   export default class TimeGuardExtAbility extends TimeGuardExtensionAbility {
+     // ...
+     
+     async onUserAuthSwitchOn(): Promise<void> {
+       hilog.info(0x0000, 'TimeGuardExtensionAbility', 'onUserAuthSwitchOn');
+     }
 
-   6. async onUserAuthSwitchOff(): Promise<void> {
-   7. hilog.info(0x0000, 'EntryAbility', 'test --- onUserAuthSwitchOff');
-   8. }
-   9. }
+     async onUserAuthSwitchOff(): Promise<void> {
+       hilog.info(0x0000, 'TimeGuardExtensionAbility', 'onUserAuthSwitchOff');
+     }
+   }
    ```
 3. 在工程中entry模块的module.json5文件中的"extensionAbilities"节点添加如下代码。
 
-   ```
-   1. "extensionAbilities": [{
-   2. "name": "EntryAbility",
-   3. "type": "screenTimeGuard",
-   4. "srcEntry": "./ets/entryability/EntryAbility.ets",
-   5. "exported": false,
-   6. "skills": [{
-   7. "actions": ["action.ohos.timeGuard.listener"]
-   8. }]
-   9. }],
+   ```json5
+   "extensionAbilities": [
+     {
+       "name": "TimeGuardExtAbility",
+       "type": "screenTimeGuard",
+       "srcEntry": "./ets/timeguardextability/TimeGuardExtAbility.ets",
+       "exported": false,
+       "skills": [
+         {
+           "actions": [
+             "action.ohos.timeGuard.listener"
+           ]
+         }
+       ],
+     }
+   ],
    ```

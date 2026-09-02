@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-341
 title: 如何在使用子窗口时保持键盘获焦
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 如何在使用子窗口时保持键盘获焦
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何在使用子窗口时保持键盘获焦
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:27+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:37+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:3ca0c09893fc36e5505eed3062bf7a118a99173df8dd75be2dbe88545d2cacec
 ---
 

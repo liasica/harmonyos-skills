@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: ImageEffect_DataValue
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 结构体 > ImageEffect_DataValue
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:36+08:00
-doc_updated_at: 2026-04-10
-content_hash: sha256:7faae06010cdae690971c902c5f4ccaa0535354ace97b4208763366cdc057a4e
+scraped_at: 2026-09-02T15:02:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:652febee9f450b842e23ed89e7fbd92948d499864f56eeb9373b4ad6bb00faf4
 ---
 
-```
-1. typedef union ImageEffect_DataValue {...} ImageEffect_DataValue
+```c
+typedef union ImageEffect_DataValue {...} ImageEffect_DataValue
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 数据值联合体。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 成员变量
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |

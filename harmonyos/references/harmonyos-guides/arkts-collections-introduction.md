@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-collect
 title: 共享容器
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信对象 > Sendable对象 > 共享容器
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:34+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f0539cd4b936024ae77c84d85f05572c65dfd9b22aba76784dce8ccaf7ad491b
+scraped_at: 2026-09-02T14:59:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ffde9ef4ed234800a2f065d1721061aac83e954e5d2b010b2959ec8338af021d
 ---
 
 ## ArkTS容器集
@@ -20,58 +20,59 @@ ArkTS共享容器包含如下几种：[Array](../harmonyos-references/arkts-apis
 
 容器集使用示例如下：
 
-```
-1. import { ArkTSUtils, collections, taskpool } from '@kit.ArkTS';
+```typescript
+import { ArkTSUtils, collections, taskpool } from '@kit.ArkTS';
 
-3. @Concurrent
-4. async function add(arr: collections.Array<number>, lock: ArkTSUtils.locks.AsyncLock) {
-5. await lock.lockAsync(() => {  // 如果不添加异步锁，任务会因为数据竞争冲突，导致抛异常失败
-6. arr[0]++;
-7. })
-8. }
+@Concurrent
+async function add(arr: collections.Array<number>, lock: ArkTSUtils.locks.AsyncLock) {
+  await lock.lockAsync(() => { // 如果不添加异步锁，任务会因为数据竞争冲突，导致抛异常失败
+    arr[0]++;
+  })
+}
 
-10. @Entry
-11. @Component
-12. struct Index {
-13. @State message: string = 'Hello World';
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
 
-15. build() {
-16. RelativeContainer() {
-17. Text(this.message)
-18. .id('HelloWorld')
-19. .fontSize(50)
-20. .fontWeight(FontWeight.Bold)
-21. .alignRules({
-22. center: { anchor: '__container__', align: VerticalAlign.Center },
-23. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-24. })
-25. .onClick(() => {
-26. let taskGroup = new taskpool.TaskGroup();
-27. let lock = new ArkTSUtils.locks.AsyncLock();
-28. let arr = collections.Array.create<number>(1, 0);
-29. let count = 1000;
-30. let num = count;
-31. while (num--) {
-32. taskGroup.addTask(add, arr, lock);
-33. }
-34. taskpool.execute(taskGroup).then(() => {
-35. console.info(`Return success: ${arr[0]} === ${count}`);
-36. }).catch((e: Error) => {
-37. console.error("Return error.");
-38. })
-39. })
-40. }
-41. .height('100%')
-42. .width('100%')
-43. }
-44. }
+  build() {
+    RelativeContainer() {
+      Text(this.message)
+        .id('HelloWorld')
+        .fontSize(50)
+        .fontWeight(FontWeight.Bold)
+        .alignRules({
+          center: { anchor: '__container__', align: VerticalAlign.Center },
+          middle: { anchor: '__container__', align: HorizontalAlign.Center }
+        })
+        .onClick(() => {
+          let taskGroup = new taskpool.TaskGroup();
+          let lock = new ArkTSUtils.locks.AsyncLock();
+          let arr = collections.Array.create<number>(1, 0);
+          let count = 1000;
+          let num = count;
+          while (num--) {
+            taskGroup.addTask(add, arr, lock);
+          }
+          taskpool.execute(taskGroup).then(() => {
+            console.info(`Return success: ${arr[0]} === ${count}`);
+          }).catch((e: Error) => {
+            console.error('Return error.');
+          })
+          this.message = 'success';
+        })
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 ## 共享容器与原生API方法的行为差异对比
 
 ArkTS提供了Sendable数据相关的共享容器集，接口行为与原生API存在部分差异，具体见下文对比。
 
-说明
+**说明** 
 
 ArkTS共享容器的类型与ECMAScript 262规范定义的原生容器类型不同，因此使用原生容器Array的isArray()方法判断collections.Array实例对象会返回false。
 
@@ -79,13 +80,13 @@ ArkTS共享容器采用引用传递方式跨线程传递，与原生容器相比
 
 ### Array
 
-支持通过[collections.Array.from](../harmonyos-references/arkts-apis-arkts-collections-array.md#from)方法将原生容器Array转换为ArkTS Array容器；支持通过原生容器Array的from方法将 ArkTS Array容器转换为原生容器Array。
+支持通过[collections.Array.from](../harmonyos-references/arkts-apis-arkts-collections-array.md#from)方法将原生容器Array转换为ArkTS Array容器；支持通过原生容器Array的from方法将ArkTS Array容器转换为原生容器Array。
 
 | 原生API方法 | ArkTS容器集方法 | 是否有行为差异 | 在ArkTS容器中的差异表现 |
 | --- | --- | --- | --- |
 | length: number | readonly length: number | 是 | 为了防止undefined扩散，不允许设置length。 |
-| new(arrayLength ?: number): any[] | static create(arrayLength: number, initialValue: T): Array | 是 | 为了防止undefined扩散，构造函数中必须提供一个初始值。 |
-| new <T>(arrayLength: number): T[] | constructor() | 否 | 构造时传入的数据必须为Sendable类型，否则将导致编译错误。 |
+| new(arrayLength?: number): any[] | static create(arrayLength: number, initialValue: T): Array | 是 | 为了防止undefined扩散，构造函数中必须提供一个初始值。 |
+| new <T>(arrayLength: number): T[] | constructor() | 是 | 构造时传入的数据必须为Sendable类型，否则将导致编译错误。 |
 | new <T>(...items: T[]): T[] | constructor(first: T, ...left: T[]) | 是 | 为了防止undefined扩散，构造函数中必须提供一个初始值，继承场景下，无法调用该函数进行对象构造。 |
 | from<T>(arrayLike: ArrayLike<T>): T[] | static from<T>(arrayLike: ArrayLike<T>): Array<T> | 否 | / |
 | from<T, U>(iterable: Iterable<T> | ArrayLike<T>, mapfn: (v: T, k: number) => U, thisArg?: any): U[] | static from<U, T>(arrayLike: ArrayLike<U> | Iterable<U>, mapFn: ArrayFromMapFn<U, T>): Array<T> | 否 | / |
@@ -159,7 +160,7 @@ ArkTS共享容器采用引用传递方式跨线程传递，与原生容器相比
 | reduce(callbackfn: (previousValue: number, currentValue: number, currentIndex: number, array: Int8Array) => number, initialValue: number): number | reduce(callbackFn: TypedArrayReduceCallback<number, number, Int8Array>, initialValue: number): number | 否 | / |
 | reduce<U>(callbackfn: (previousValue: U, currentValue: number, currentIndex: number, array: Int8Array) => U, initialValue: U): U | reduce<U>(callbackFn: TypedArrayReduceCallback<U, number, Int8Array>, initialValue: U): U | 否 | / |
 | reverse(): Int8Array | reverse(): Int8Array | 否 | / |
-| set(array: ArrayLike<number>, offset?: number): void | set(array: ArrayLike<number>, offset?: number): void | 是 | 不允许在遍历、访问过程中进行元素的增、删、改操作否则会抛出异常。 |
+| set(array: ArrayLike<number>, offset?: number): void | set(array: ArrayLike<number>, offset?: number): void | 是 | 不允许在遍历、访问过程中进行元素的增、删、改操作，否则会抛出异常。 |
 | slice(start?: number, end?: number): Int8Array | slice(start?: number, end?: number): Int8Array | 否 | / |
 | some(predicate: (value: number, index: number, array: Int8Array) => unknown, thisArg?: any): boolean | some(predicate: TypedArrayPredicateFn<number, Int8Array>): boolean | 是 | ArkTS不支持this，因此不支持thisArg参数。 |
 | sort(compareFn?: (a: number, b: number) => number): this | sort(compareFn?: TypedArrayCompareFn<number>): Int8Array | 是 | 1. 不允许在遍历、访问过程中进行元素的增、删、改操作，否则会抛出异常。  2. 继承场景下，无法获得实际类型的返回值。 |
@@ -197,7 +198,7 @@ ArkTS共享容器采用引用传递方式跨线程传递，与原生容器相比
 | entries(): IterableIterator<[K, V]> | entries(): IterableIterator<[K, V]> | 否 | / |
 | keys(): IterableIterator<K> | keys(): IterableIterator<K> | 否 | / |
 | values(): IterableIterator<V> | values(): IterableIterator<V> | 否 | / |
-| new <K, V>(entries?: readonly (readonly [K, V])[] | null): Map<K, V> | constructor(entries?: readonly (readonly [K, V])[] | null) | 是 | 构造时传入的k,v键值不能是非Sendable数据，否则编译会报错。 |
+| new <K, V>(entries?: readonly (readonly [K, V])[] | null): Map<K, V> | constructor(entries?: readonly (readonly [K, V])[] | null) | 是 | 构造时传入的k,v键值必须均为Sendable数据，否则编译会报错。 |
 
 ### Set
 

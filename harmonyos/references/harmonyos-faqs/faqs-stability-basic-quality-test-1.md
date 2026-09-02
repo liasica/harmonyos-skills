@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-stability-
 title: 任务出现超时未结束是什么原因
 breadcrumb: FAQ > DevEco Testing > 专项测试 > 稳定性基础质量测试 > 任务出现超时未结束是什么原因
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:27+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:7c89103590f4fecb34304322b85538a032cfa01b025d0e644724c9ad74ac8950
 ---
 

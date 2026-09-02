@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-runnin
 title: 在模拟器上运行应用，应用生成的文件在哪个目录下
 breadcrumb: FAQ > DevEco Studio > 应用运行 > 在模拟器上运行应用，应用生成的文件在哪个目录下
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:02+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:17+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:305fd7f4342645d9c35e1bb3544a0921d83c157c72e3745386381619bdbc080d
 ---
 

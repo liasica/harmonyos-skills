@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo restart
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo restart
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:44:39+08:00
+scraped_at: 2026-09-02T15:00:18+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:b5b02e64b2ba78721f49ef6a653e26de295f2e4032a5aa428f05cfb014c72294
+content_hash: sha256:a718508b0e88448ab4336bbd6e7e54ac8073ef48e2512a5f1695721286468e4c
 ---
 
 重新启动ohpm-repo服务。
@@ -16,15 +16,15 @@ content_hash: sha256:b5b02e64b2ba78721f49ef6a653e26de295f2e4032a5aa428f05cfb014c
 
 ## 命令格式
 
-```
-1. ohpm-repo restart
+```screen
+ohpm-repo restart
 ```
 
 ## 功能描述
 
 停止当前ohpm-repo服务，重新启动一个新的ohpm-repo服务。
 
-说明
+**说明** 
 
 启动时将ohpm-repo服务的pid存放到<deploy\_root>/runtime/.pid文件，其中<deploy\_root>为[ohpm-repo私仓部署目录](ide-ohpm-repo-configuration.md#zh-cn_topic_0000001745376470_关于-deploy_root)。
 
@@ -32,10 +32,10 @@ content_hash: sha256:b5b02e64b2ba78721f49ef6a653e26de295f2e4032a5aa428f05cfb014c
 
 执行以下命令：
 
-```
-1. ohpm-repo restart
+```screen
+ohpm-repo restart
 ```
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/Y9bIRESxTTWdQ0cOIWMLMw/zh-cn_image_0000002561751491.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/o8ck87OLSsGfmtecZsAfxQ/zh-cn_image_0000002731541813.png "点击放大")

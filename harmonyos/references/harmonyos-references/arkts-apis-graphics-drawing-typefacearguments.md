@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (TypefaceArguments)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (TypefaceArguments)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:44+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:548a4a97d6bfd6d7895dd83d41b112560c4ccccb4ea79cc554d22e97acafd185
+scraped_at: 2026-09-02T15:02:42+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:6394d2ffcd2c1783c1bf086591716fb6df5a1c0572c594ccde6656f1f3b1378d
 ---
 
-提供字体属性配置的结构体。
+提供字体属性配置的类，用于配置可变字体的属性参数（如字重维度等轴标签及对应属性值）。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Class首批接口从API version 20开始支持。
@@ -19,15 +19,11 @@ content_hash: sha256:548a4a97d6bfd6d7895dd83d41b112560c4ccccb4ea79cc554d22e97aca
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 ```
 
 ## constructor20+
-
-PhonePC/2in1TabletTVWearable
 
 constructor()
 
@@ -39,18 +35,16 @@ constructor()
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
-2. let typeFaceArgument = new drawing.TypefaceArguments();
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
+let typefaceArgument = new drawing.TypefaceArguments();
 ```
 
 ## addVariation20+
 
-PhonePC/2in1TabletTVWearable
-
 addVariation(axis: string, value: number)
 
-给字体属性设置字重值。
+给字体属性添加可变维度轴标签及对应的属性值。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -60,8 +54,8 @@ addVariation(axis: string, value: number)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| axis | string | 是 | 字体属性对象可变维度字重的标签'wght'。具体是否支持的该标签取决于加载的字体文件。请打开对应的字体文件具体查看支持的属性。 |
-| value | number | 是 | 字体属性对象可变维度字重的标签'wght'对应的属性值，需要在字体文件支持的范围内，否则不会生效。如果属性值小于支持的最小值，则默认和最小值一致。如果属性值大于支持的最大值，则默认和最大值效果一致。请打开对应的字体文件具体查看支持的属性值。 |
+| axis | string | 是 | 字体属性对象可变维度轴标签。具体支持哪些标签取决于加载的字体文件。具体支持的属性及标签值请参考对应的字体文件。 |
+| value | number | 是 | 字体属性对象可变维度轴标签对应的属性值，需要在字体文件支持的范围内，否则不会生效。如果属性值小于支持的最小值，则默认和最小值一致。如果属性值大于支持的最大值，则默认和最大值效果一致。请打开对应的字体文件具体查看支持的属性值。 |
 
 **错误码：**
 
@@ -73,9 +67,9 @@ addVariation(axis: string, value: number)
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let typeFaceArgument = new drawing.TypefaceArguments();
-4. typeFaceArgument.addVariation('wght', 10);
+let typefaceArgument = new drawing.TypefaceArguments();
+typefaceArgument.addVariation('wght', 10);
 ```

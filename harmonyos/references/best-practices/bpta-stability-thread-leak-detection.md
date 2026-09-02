@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 线程泄漏类问题检测方法
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 资源泄漏类问题检测 > 线程泄漏类问题检测方法
 category: best-practices
-scraped_at: 2026-04-28T08:22:54+08:00
+scraped_at: 2026-09-02T15:03:23+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:e169abc05c67f24d981ca664cd0545eba96dcf8965a3da0b56259b49ea20d84c
+content_hash: sha256:8da6cff8a61ed5a9697aab80d59d98ca5ab1d56da2df3c0e7b27f3a0b4a708b1
 ---
 
 ## 概述
@@ -30,6 +30,6 @@ content_hash: sha256:e169abc05c67f24d981ca664cd0545eba96dcf8965a3da0b56259b49ea2
 2. 在应用中调用HiDebug.setAppResourceLimit设置thread泄漏上限值，默认为700，如果想快速复现问题，建议设置成更小的值；
 3. 启动[DevEco Testing](https://developer.huawei.com/consumer/cn/deveco-testing/)工具进行稳定性测试，开发者可以选择应用探索测试，如果检测到异常，从工具中能获取到异常日志。
 
-   说明
+   **说明** 
 
    需导入ohos.hidebug模块，该API从API version 12开始支持

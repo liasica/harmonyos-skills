@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-
 title: 多网状态监听
 breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务） > 连接迁移（多网并发） > 多网状态监听
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:57+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7e5111d299c3c25f0726012a84cd862e3264b480e240f27f91b4edaa22c297dc
+scraped_at: 2026-09-02T14:50:06+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7061704fc9fe445c28b8d5a2daf818b1b5910e1e042651be78940c7e6940e7b1
 ---
 
 ## 场景介绍
@@ -25,28 +25,32 @@ content_hash: sha256:7e5111d299c3c25f0726012a84cd862e3264b480e240f27f91b4edaa22c
 
 1. 导入Network Boost Kit模块。
 
-   ```
-   1. import { netHandover } from '@kit.NetworkBoostKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { netHandover } from '@kit.NetworkBoostKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 通过订阅的方式监听多网状态变化信息。
 
-   ```
-   1. try {
-   2. netHandover.on('multiPathStateChange', (data: netHandover.MultiPathStateInfo) => {
-   3. // 回调信息处理
-   4. console.info("on multiPathStateChange: " + JSON.stringify(data));
-   5. });
-   6. } catch (err) {
-   7. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-   8. }
+   ```typescript
+   try {
+     netHandover.on('multiPathStateChange', (data: netHandover.MultiPathStateInfo) => {
+       // 回调信息处理
+       console.info('on multiPathStateChange multiPathState:', data.multiPathState);
+       console.info('on multiPathStateChange cause:', data.cause);
+       console.info('on multiPathStateChange netHandle:', data.netHandle.netId);
+       console.info('on multiPathStateChange pathState:', data.pathState);
+       console.info('on multiPathStateChange pathType:', data.pathType);
+     });
+   } catch (err) {
+     console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+   }
    ```
 3. 当应用业务流程结束和应用退出时，取消订阅多网状态变化信息。
 
-   ```
-   1. try {
-   2. netHandover.off('multiPathStateChange');
-   3. } catch (err) {
-   4. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-   5. }
+   ```typescript
+   try {
+     netHandover.off('multiPathStateChange');
+   } catch (err) {
+     console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+   }
    ```

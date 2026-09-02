@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.ActionExtensionAbility (支持业务操作自定义的ExtensionAbility组件)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.ActionExtensionAbility (支持业务操作自定义的ExtensionAbility组件)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:13+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:f0bb68a4345a8f8816934b1426fdb7e2c379155590889e7fdd929f8da61ed6d6
+scraped_at: 2026-09-02T15:00:32+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:620e3c1541569b6cdc34305b4a52e4d68815a2a1c2228f0531b299e7751fe16e
 ---
 
 ActionExtensionAbility是为开发者提供的自定义操作业务模板，继承自[UIExtensionAbility](js-apis-app-ability-uiextensionability.md)。
@@ -14,26 +14,28 @@ ActionExtensionAbility是为开发者提供的自定义操作业务模板，继�
 
 各类Ability的继承关系详见[继承关系说明](js-apis-app-ability-ability.md#ability的继承关系说明)。
 
-说明
+**说明** 
 
-本模块首批接口从API version 10 开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+本模块首批接口从API version 10 开始支持，从API 版本26.0.0开始废弃，暂无替代接口。
 
 本模块接口仅可在Stage模型下使用。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { ActionExtensionAbility } from '@kit.AbilityKit';
+```ts
+import { ActionExtensionAbility } from '@kit.AbilityKit';
 ```
 
-## ActionExtensionAbility
-
-PhonePC/2in1TabletTVWearable
+## ActionExtensionAbility(deprecated)
 
 ActionExtensionAbility是为开发者提供的自定义操作业务模板，继承自[UIExtensionAbility](js-apis-app-ability-uiextensionability.md)。
 
 ActionExtensionAbility主要用于实现宿主应用的内容查看及交互处理功能。例如，添加一个书签、将选中的文本翻译成其他语言、在当前页面编辑图像等。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.AbilityCore
+
+**起始版本：** 10
+
+**废弃版本：** 26.0.0
+
+**替代接口：** 暂无替代接口

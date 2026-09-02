@@ -1,40 +1,38 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-191
 title: 通用属性width是否支持设置变量
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 通用属性width是否支持设置变量
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 通用属性width是否支持设置变量
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:16:48+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:174aec30801ba52211a311759b1a539fd42542f69cb55d80948398140338c929
+scraped_at: 2026-09-02T14:53:59+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:547a450898d37679f44a8d3a2cdf17e089322d7aab95bf141ae01f303d3acb0a
 ---
 
 通用属性width支持设置变量。
 
-```
-1. @Entry
-2. @Component
-3. struct Page1 {
-4. @State message: string = 'Hello';
-5. @State widthNum: number = 300;
+```screen
+@Entry
+@Component
+struct Page1 {
+  @State message: string = 'Hello';
+  @State widthNum: number = 300;
 
-7. build() {
-8. Row() {
-9. Column() {
-10. Text(this.message)
-11. .fontSize(50)
-12. .fontWeight(FontWeight.Bold)
-13. .width(this.widthNum)
-14. .backgroundColor(Color.Blue)
-15. }
-16. .width('100%')
-17. }
-18. .height('100%')
-19. }
-20. }
+  build() {
+    Row() {
+      Column() {
+        Text(this.message)
+          .fontSize(50)
+          .fontWeight(FontWeight.Bold)
+          .width(this.widthNum)
+          .backgroundColor(Color.Blue)
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-
-[DoesWidthSupportSettingVariables.ets](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/ArkUI/entry/src/main/ets/pages/DoesWidthSupportSettingVariables.ets#L21-L40)
 
 效果如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/cGH94RmlRKWkVGAFYk2AHg/zh-cn_image_0000002194158632.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/S3cF3O2NSP-z2G_DuR-spQ/zh-cn_image_0000002624635822.png "点击放大")

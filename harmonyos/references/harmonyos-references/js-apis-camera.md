@@ -3,13 +3,15 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.multimedia.camera (相机管理)"
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:31+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0fc392fd844c161d0f48b1cf1dcf0afdd099545dcfe1c9bc7e9c15afb8f715d2
+scraped_at: 2026-09-02T14:52:50+08:00
+doc_updated_at: 2026-04-30
+content_hash: sha256:5ad1a3282190eaf985aaa3a69f9d604d314e978c7af2927304e70cc8fea554c9
 ---
 
 * **[模块描述](arkts-apis-camera.md)**
 * **[Functions](arkts-apis-camera-f.md)**
+* **[Interface (Aperture)](arkts-apis-camera-aperture.md)**
+* **[Interface (ApertureQuery)](arkts-apis-camera-aperturequery.md)**
 * **[Interface (AutoDeviceSwitch)](arkts-apis-camera-autodeviceswitch.md)**
 * **[Interface (AutoDeviceSwitchQuery)](arkts-apis-camera-autodeviceswitchquery.md)**
 * **[Interface (AutoExposure)](arkts-apis-camera-autoexposure.md)**
@@ -28,7 +30,15 @@ content_hash: sha256:0fc392fd844c161d0f48b1cf1dcf0afdd099545dcfe1c9bc7e9c15afb8f
 * **[Interface (FocusQuery)](arkts-apis-camera-focusquery.md)**
 * **[Interface (Macro)](arkts-apis-camera-macro.md)**
 * **[Interface (MacroQuery)](arkts-apis-camera-macroquery.md)**
+* **[Interface (ManualExposure)](arkts-apis-camera-manualexposure.md)**
+* **[Interface (ManualExposureQuery)](arkts-apis-camera-manualexposurequery.md)**
+* **[Interface (ManualFocus)](arkts-apis-camera-manualfocus.md)**
+* **[Interface (ManualFocusQuery)](arkts-apis-camera-manualfocusquery.md)**
+* **[Interface (ManualIso)](arkts-apis-camera-manualiso.md)**
+* **[Interface (ManualIsoQuery)](arkts-apis-camera-manualisoquery.md)**
 * **[Interface (MetadataOutput)](arkts-apis-camera-metadataoutput.md)**
+* **[Interface (OIS)](arkts-apis-camera-ois.md)**
+* **[Interface (OISQuery)](arkts-apis-camera-oisquery.md)**
 * **[Interface (Photo)](arkts-apis-camera-photo.md)**
 * **[Interface (PhotoOutput)](arkts-apis-camera-photooutput.md)**
 * **[Interface (PhotoSession)](arkts-apis-camera-photosession.md)**

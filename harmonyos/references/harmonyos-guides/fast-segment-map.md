@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fast-segment-
 title: 使用SegmentMap查询维护区间信息
 breadcrumb: 指南 > 系统 > 基础功能 > FAST Kit（算法加速服务） > 使用SegmentMap查询维护区间信息
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:33:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:89bdc4982613dc2689ff5960eea82c04ababb0932b14a382c466cf9b82d81a1d
+scraped_at: 2026-09-02T14:50:08+08:00
+doc_updated_at: 2026-05-28
+content_hash: sha256:86d4218263360a7692ef938678802788f9d4ccfc225cdbac4c963d55acd03a86
 ---
 
 FAST Kit提供Segment Map用于查询维护区间信息，实现数据序列区间段的快速更新和快速查询。线段表（Segment Map）是一种用于高效处理区间段信息的数据结构，适用于需要频繁对数据序列的某个区间段进行统计或修改的场景。其典型操作包括单点修改、区间修改、区间查询等。
 
-线段表有多种实现方式，其中最常见的是使用二分树的方案，也被称为线段树（Segment Tree）。与直接遍历区间相比，线段表能将许多区间操作的时间复杂度从 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/JrUaG0opQiGQe42-p5vEyw/zh-cn_image_0000002589244755.png) 优化至![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/_ggiEddWTUOfQ5VobgwXXA/zh-cn_image_0000002558764950.png)，在处理大规模数据时优势显著，为构建高性能、响应迅速的应用程序提供数据结构基础。
+线段表有多种实现方式，其中最常见的是使用二分树的方案，也被称为线段树（Segment Tree）。与直接遍历区间相比，线段表能将许多区间操作的时间复杂度从 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/OG0_4FESQjmcyo2TEw_4Rg/zh-cn_image_0000002736433531.png) 优化至![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/H3PLOoyTSG6c0bKyT87ZEg/zh-cn_image_0000002706834380.png)，在处理大规模数据时优势显著，为构建高性能、响应迅速的应用程序提供数据结构基础。
 
 ## 接口说明
 
@@ -29,10 +29,14 @@ FAST Kit提供Segment Map用于查询维护区间信息，实现数据序列区�
 
 ## 开发步骤
 
-1. 首先在CMake脚本中链接相关动态库。
+1. 在CMake脚本中链接相关动态库。
 
-   ```
-   1. target_link_libraries(entry PUBLIC libfast_ads.so)
+   ```cmake
+   find_library(
+       lib_fast_ads
+       NAMES fast_ads
+   )
+   target_link_libraries(entry PRIVATE ${lib_fast_ads})
    ```
 2. 调用HMS\_FAST\_SegmentMap\_CreateConfig生成线段表配置实例（FAST\_SegmentMapConfig）。
 3. 调用HMS\_FAST\_SegmentMap\_SetQueryType设置查询类型。
@@ -43,127 +47,127 @@ FAST Kit提供Segment Map用于查询维护区间信息，实现数据序列区�
 8. 调用HMS\_FAST\_SegmentMap\_Destroy销毁线段表实例。
 9. 调用HMS\_FAST\_SegmentMap\_DestroyConfig销毁线段表配置实例。
 
-```
-1. #include <cassert>
-2. #include <iostream>
-3. #include "FASTKit/fast_ads_segment_map.h"
+```cpp
+#include <cassert>
+#include <iostream>
+#include "FASTKit/fast_ads_segment_map.h"
 
-5. FAST_ErrorCode demoSegmentMapSumSet()
-6. {
-7. FAST_SegmentMapConfig *config = nullptr;
-8. FAST_SegmentMapHandle handle = nullptr;
-9. int32_t *array = nullptr;
-10. FAST_ErrorCode ret;
+FAST_ErrorCode demoSegmentMapSumSet()
+{
+    FAST_SegmentMapConfig *config = nullptr;
+    FAST_SegmentMapHandle handle = nullptr;
+    int32_t *array = nullptr;
+    FAST_ErrorCode ret;
 
-12. ret = HMS_FAST_SegmentMap_CreateConfig(&config);
-13. if (ret != FAST_ERROR_CODE_SUCCESS) {
-14. return ret;
-15. }
+    ret = HMS_FAST_SegmentMap_CreateConfig(&config);
+    if (ret != FAST_ERROR_CODE_SUCCESS) {
+        return ret;
+    }
 
-17. do {
-18. // 初始化配置
-19. ret = HMS_FAST_SegmentMap_SetQueryType(config, FAST_SEGMENTMAP_QUERY_TYPE_SUM);
-20. if (ret != FAST_ERROR_CODE_SUCCESS) {
-21. break;
-22. }
+    do {
+        // 初始化配置
+        ret = HMS_FAST_SegmentMap_SetQueryType(config, FAST_SEGMENTMAP_QUERY_TYPE_SUM);
+        if (ret != FAST_ERROR_CODE_SUCCESS) {
+            break;
+        }
 
-24. ret = HMS_FAST_SegmentMap_SetUpdateType(config, FAST_SEGMENTMAP_UPDATE_TYPE_SET);
-25. if (ret != FAST_ERROR_CODE_SUCCESS) {
-26. break;
-27. }
+        ret = HMS_FAST_SegmentMap_SetUpdateType(config, FAST_SEGMENTMAP_UPDATE_TYPE_SET);
+        if (ret != FAST_ERROR_CODE_SUCCESS) {
+            break;
+        }
 
-29. // 初始化数组
-30. size_t size = 10;
-31. array = new int32_t[size];
-32. for (size_t i = 0; i < size; ++i) {
-33. array[i] = i + 1;
-34. }
-35. // array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+        // 初始化数组
+        size_t size = 10;
+        array = new int32_t[size];
+        for (size_t i = 0; i < size; ++i) {
+            array[i] = i + 1;
+        }
+        // array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 
-37. // 创建线段表实例
-38. ret = HMS_FAST_SegmentMap_Create(&handle, size, array, config);
-39. // 线段表初始化为 {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-40. if (ret != FAST_ERROR_CODE_SUCCESS) {
-41. break;
-42. }
+        // 创建线段表实例
+        ret = HMS_FAST_SegmentMap_Create(&handle, size, array, config);
+        // 线段表初始化为 {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+        if (ret != FAST_ERROR_CODE_SUCCESS) {
+            break;
+        }
 
-44. int32_t result;
+        int32_t result;
 
-46. // 第一次查询：查询区间[0, 5)的求和值
-47. ret = HMS_FAST_SegmentMap_Query(handle, 0, 5, &result);
-48. if (ret != FAST_ERROR_CODE_SUCCESS) {
-49. break;
-50. }
-51. assert(result == 15);  // 1 + 2 + 3 + 4 + 5 = 15
+        // 第一次查询：查询区间[0, 5)的求和值
+        ret = HMS_FAST_SegmentMap_Query(handle, 0, 5, &result);
+        if (ret != FAST_ERROR_CODE_SUCCESS) {
+            break;
+        }
+        assert(result == 15);  // 1 + 2 + 3 + 4 + 5 = 15
 
-53. // 第一次更新：将区间[3, 7)的值设置为-1
-54. ret = HMS_FAST_SegmentMap_Update(handle, 3, 7, -1);
-55. if (ret != FAST_ERROR_CODE_SUCCESS) {
-56. break;
-57. }
-58. // 线段表更新为 {1, 2, 3, -1, -1, -1, -1, 8, 9, 10}
+        // 第一次更新：将区间[3, 7)的值设置为-1
+        ret = HMS_FAST_SegmentMap_Update(handle, 3, 7, -1);
+        if (ret != FAST_ERROR_CODE_SUCCESS) {
+            break;
+        }
+        // 线段表更新为 {1, 2, 3, -1, -1, -1, -1, 8, 9, 10}
 
-60. // 第二次查询：查询区间[0, 5)的求和值
-61. ret = HMS_FAST_SegmentMap_Query(handle, 0, 5, &result);
-62. if (ret != FAST_ERROR_CODE_SUCCESS) {
-63. break;
-64. }
-65. assert(result == 4);  // 1 + 2 + 3 - 1 - 1 = 4
+        // 第二次查询：查询区间[0, 5)的求和值
+        ret = HMS_FAST_SegmentMap_Query(handle, 0, 5, &result);
+        if (ret != FAST_ERROR_CODE_SUCCESS) {
+            break;
+        }
+        assert(result == 4);  // 1 + 2 + 3 - 1 - 1 = 4
 
-67. // 第二次更新：将区间[5, 9)的值设置为2
-68. ret = HMS_FAST_SegmentMap_Update(handle, 5, 9, 2);
-69. if (ret != FAST_ERROR_CODE_SUCCESS) {
-70. break;
-71. }
-72. // 线段表更新为 {1, 2, 3, -1, -1, 2, 2, 2, 2, 10}
+        // 第二次更新：将区间[5, 9)的值设置为2
+        ret = HMS_FAST_SegmentMap_Update(handle, 5, 9, 2);
+        if (ret != FAST_ERROR_CODE_SUCCESS) {
+            break;
+        }
+        // 线段表更新为 {1, 2, 3, -1, -1, 2, 2, 2, 2, 10}
 
-74. // 第三次查询：查询区间[0, 10)的求和值
-75. ret = HMS_FAST_SegmentMap_Query(handle, 0, 10, &result);
-76. if (ret != FAST_ERROR_CODE_SUCCESS) {
-77. break;
-78. }
-79. assert(result == 22);  // 1 + 2 + 3 -1 -1 + 2 + 2 + 2 + 2 + 10 = 22
+        // 第三次查询：查询区间[0, 10)的求和值
+        ret = HMS_FAST_SegmentMap_Query(handle, 0, 10, &result);
+        if (ret != FAST_ERROR_CODE_SUCCESS) {
+            break;
+        }
+        assert(result == 22);  // 1 + 2 + 3 -1 -1 + 2 + 2 + 2 + 2 + 10 = 22
 
-81. // 第三次更新：将区间[0, 3)的值设置为0
-82. ret = HMS_FAST_SegmentMap_Update(handle, 0, 3, 0);
-83. if (ret != FAST_ERROR_CODE_SUCCESS) {
-84. break;
-85. }
-86. // 线段表更新为 {0, 0, 0, -1, -1, 2, 2, 2, 2, 10}
+        // 第三次更新：将区间[0, 3)的值设置为0
+        ret = HMS_FAST_SegmentMap_Update(handle, 0, 3, 0);
+        if (ret != FAST_ERROR_CODE_SUCCESS) {
+            break;
+        }
+        // 线段表更新为 {0, 0, 0, -1, -1, 2, 2, 2, 2, 10}
 
-88. // 第四次查询：查询区间[3, 7)的求和值
-89. ret = HMS_FAST_SegmentMap_Query(handle, 3, 7, &result);
-90. if (ret != FAST_ERROR_CODE_SUCCESS) {
-91. break;
-92. }
-93. assert(result == 2);  // -1 -1 + 2 + 2 = 2
+        // 第四次查询：查询区间[3, 7)的求和值
+        ret = HMS_FAST_SegmentMap_Query(handle, 3, 7, &result);
+        if (ret != FAST_ERROR_CODE_SUCCESS) {
+            break;
+        }
+        assert(result == 2);  // -1 -1 + 2 + 2 = 2
 
-95. // 第四次更新：将区间[7, 10)的值设置为5
-96. ret = HMS_FAST_SegmentMap_Update(handle, 7, 10, 5);
-97. if (ret != FAST_ERROR_CODE_SUCCESS) {
-98. break;
-99. }
-100. // 线段表更新为 {0, 0, 0, -1, -1, 2, 2, 5, 5, 5}
+        // 第四次更新：将区间[7, 10)的值设置为5
+        ret = HMS_FAST_SegmentMap_Update(handle, 7, 10, 5);
+        if (ret != FAST_ERROR_CODE_SUCCESS) {
+            break;
+        }
+        // 线段表更新为 {0, 0, 0, -1, -1, 2, 2, 5, 5, 5}
 
-102. // 第五次查询：查询区间[0, 10)的求和值
-103. ret = HMS_FAST_SegmentMap_Query(handle, 0, 10, &result);
-104. if (ret != FAST_ERROR_CODE_SUCCESS) {
-105. break;
-106. }
-107. assert(result == 17);  // 0 + 0 + 0 -1 -1 + 2 + 2 + 5 + 5 + 5 = 17
-108. } while (0);
+        // 第五次查询：查询区间[0, 10)的求和值
+        ret = HMS_FAST_SegmentMap_Query(handle, 0, 10, &result);
+        if (ret != FAST_ERROR_CODE_SUCCESS) {
+            break;
+        }
+        assert(result == 17);  // 0 + 0 + 0 -1 -1 + 2 + 2 + 5 + 5 + 5 = 17
+    } while (0);
 
-110. // 销毁线段表实例
-111. HMS_FAST_SegmentMap_Destroy(handle);
+    // 销毁线段表实例
+    HMS_FAST_SegmentMap_Destroy(handle);
 
-113. // 销毁配置
-114. HMS_FAST_SegmentMap_DestroyConfig(config);
+    // 销毁配置
+    HMS_FAST_SegmentMap_DestroyConfig(config);
 
-116. // 释放数组
-117. if (array) {
-118. delete[] array;
-119. }
+    // 释放数组
+    if (array) {
+        delete[] array;
+    }
 
-121. return ret;
-122. }
+    return ret;
+}
 ```

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-41
 title: 对于多线程操作首选项和数据库是不是线程安全的？还是每一个线程独立的
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > ArkTS线程模型和并发 > 对于多线程操作首选项和数据库是不是线程安全的？还是每一个线程独立的
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:24+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:16+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:1a6fa647300c6d54c3a6fc2cb04f394b562c834eadfb74e38bed4db3f2060b3c
 ---
 

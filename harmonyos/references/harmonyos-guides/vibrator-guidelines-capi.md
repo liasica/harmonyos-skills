@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/vibrator-guid
 title: 振动开发指导(C/C++)
 breadcrumb: 指南 > 系统 > 硬件 > Sensor Service Kit（传感器服务） > 振动 > 振动开发指导(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:33:41+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3a02b0a2c8f1ef248f32372aa8387c4ad5d2150a8b248280d755f563efd4e535
+scraped_at: 2026-09-02T14:59:38+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:68ae3f7d2aeec7b185b0f1678c8a8eb0741ef9a667253e8650e7804035992a24
 ---
 
 ## 场景介绍
@@ -38,163 +38,163 @@ content_hash: sha256:3a02b0a2c8f1ef248f32372aa8387c4ad5d2150a8b248280d755f563efd
 
 1. 新建一个Native C++工程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/_oYFmKaHSqaKn3vQxROGMQ/zh-cn_image_0000002558605326.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/nZA6l54ZSGquIfNPuWCDnQ/zh-cn_image_0000002706834416.png)
 2. 控制设备上的振动器，需要申请权限ohos.permission.VIBRATE。具体配置方式请参考[声明权限](declare-permissions.md)。
 
-   ```
-   1. "requestPermissions": [
-   2. {
-   3. "name": "ohos.permission.VIBRATE"
-   4. }
-   5. ]
+   ```json5
+   "requestPermissions": [
+     {
+       "name": "ohos.permission.VIBRATE"
+     }
+   ]
    ```
 3. CMakeLists.txt文件中引入动态依赖库。
 
-   ```
-   1. target_link_libraries(entry PUBLIC libace_napi.z.so)
-   2. target_link_libraries(entry PUBLIC libhilog_ndk.z.so)
-   3. target_link_libraries(entry PUBLIC libohvibrator.z.so)
-   4. target_link_libraries(entry PUBLIC librawfile.z.so)
+   ```c
+   target_link_libraries(entry PUBLIC libace_napi.z.so)
+   target_link_libraries(entry PUBLIC libhilog_ndk.z.so)
+   target_link_libraries(entry PUBLIC libohvibrator.z.so)
+   target_link_libraries(entry PUBLIC librawfile.z.so)
    ```
 4. 导入模块。
 
    ```
-   1. #include <sensors/vibrator.h>
-   2. #include "napi/native_api.h"
-   3. #include "hilog/log.h"
-   4. #include <thread>
-   5. #include <fcntl.h>
-   6. #include <unistd.h>
-   7. #include <sys/stat.h>
-   8. #include <rawfile/raw_file_manager.h>
+   #include <sensors/vibrator.h>
+   #include "napi/native_api.h"
+   #include "hilog/log.h"
+   #include <thread>
+   #include <fcntl.h>
+   #include <unistd.h>
+   #include <sys/stat.h>
+   #include <rawfile/raw_file_manager.h>
    ```
 5. 定义常量。
 
    ```
-   1. const int VIBRATOR_LOG_DOMAIN = 0xD002701;
-   2. const char *TAG = "[NativeVibratorTest]";
-   3. constexpr int32_t TIME_WAIT_FOR_OP = 2;
+   const int VIBRATOR_LOG_DOMAIN = 0xD002701;
+   const char *TAG = "[NativeVibratorTest]";
+   constexpr int32_t TIME_WAIT_FOR_OP = 2;
    ```
 6. 控制马达在指定时间内持续振动和停止马达振动。
 
    ```
-   1. static napi_value PlayVibrationInDuration(napi_env env, napi_callback_info info)
-   2. {
-   3. Vibrator_Attribute vibrateAttribute;
-   4. vibrateAttribute.usage = VIBRATOR_USAGE_ALARM;
-   5. // 控制马达在指定时间内持续振动。
-   6. int32_t ret = OH_Vibrator_PlayVibration(2000, vibrateAttribute);
-   7. if (ret != 0) {
-   8. OH_LOG_Print(LOG_APP, LOG_ERROR, VIBRATOR_LOG_DOMAIN, TAG, "vibration fail");
-   9. return nullptr;
-   10. }
-   11. OH_LOG_Print(LOG_APP, LOG_INFO, VIBRATOR_LOG_DOMAIN, TAG, "vibration successful");
-   12. std::this_thread::sleep_for(std::chrono::milliseconds(TIME_WAIT_FOR_OP));
-   13. // 停止马达振动。
-   14. ret = OH_Vibrator_Cancel();
-   15. if (ret != 0) {
-   16. OH_LOG_Print(LOG_APP, LOG_ERROR, VIBRATOR_LOG_DOMAIN, TAG, "cancel vibration fail");
-   17. return nullptr;
-   18. }
-   19. return nullptr;
-   20. }
+   static napi_value PlayVibrationInDuration(napi_env env, napi_callback_info info)
+   {
+       Vibrator_Attribute vibrateAttribute;
+       vibrateAttribute.usage = VIBRATOR_USAGE_ALARM;
+       // 控制马达在指定时间内持续振动。
+       int32_t ret = OH_Vibrator_PlayVibration(2000, vibrateAttribute);
+       if (ret != 0) {
+           OH_LOG_Print(LOG_APP, LOG_ERROR, VIBRATOR_LOG_DOMAIN, TAG, "vibration fail");
+           return nullptr;
+       }
+       OH_LOG_Print(LOG_APP, LOG_INFO, VIBRATOR_LOG_DOMAIN, TAG, "vibration successful");
+       std::this_thread::sleep_for(std::chrono::milliseconds(TIME_WAIT_FOR_OP));
+       // 停止马达振动。
+       ret = OH_Vibrator_Cancel();
+       if (ret != 0) {
+           OH_LOG_Print(LOG_APP, LOG_ERROR, VIBRATOR_LOG_DOMAIN, TAG, "cancel vibration fail");
+           return nullptr;
+       }
+       return nullptr;
+   }
    ```
 7. 播放自定义振动序列。
 
    ```
-   1. static napi_value PlayVibrationCustom(napi_env env, napi_callback_info info)
-   2. {
-   3. size_t argc = 1;
-   4. napi_value argv[1] = { nullptr };
-   5. // 获取参数信息
-   6. napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+   static napi_value PlayVibrationCustom(napi_env env, napi_callback_info info)
+   {
+       size_t argc = 1;
+       napi_value argv[1] = { nullptr };
+       // 获取参数信息
+       napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
 
-   8. // argv[0]即为函数第一个参数Js资源对象，OH_ResourceManager_InitNativeResourceManager转为Native对象
-   9. NativeResourceManager *mNativeResMgr = OH_ResourceManager_InitNativeResourceManager(env, argv[0]);
-   10. if (mNativeResMgr == nullptr) {
-   11. OH_LOG_Print(LOG_APP, LOG_ERROR, VIBRATOR_LOG_DOMAIN, TAG, "Get native resource manager failed");
-   12. return nullptr;
-   13. }
-   14. // 获取rawfile指针对象
-   15. std::string fileName = "coin_drop.json";
-   16. RawFile *rawFile = OH_ResourceManager_OpenRawFile(mNativeResMgr, fileName.c_str());
-   17. if (rawFile == nullptr) {
-   18. OH_ResourceManager_ReleaseNativeResourceManager(mNativeResMgr);
-   19. OH_LOG_Print(LOG_APP, LOG_ERROR, VIBRATOR_LOG_DOMAIN, TAG, "Get native rawFile failed");
-   20. return nullptr;
-   21. }
-   22. // 获取rawfile的描述符RawFileDescriptor {fd, offset, length}
-   23. RawFileDescriptor descriptor;
-   24. OH_ResourceManager_GetRawFileDescriptor(rawFile, descriptor);
-   25. Vibrator_FileDescription fileDescription = {
-   26. .fd = descriptor.fd,
-   27. .offset = descriptor.start,
-   28. .length = descriptor.length
-   29. };
-   30. Vibrator_Attribute vibrateAttribute = {
-   31. .usage = VIBRATOR_USAGE_RING
-   32. };
-   33. // 播放自定义振动序列。
-   34. int32_t ret = OH_Vibrator_PlayVibrationCustom(fileDescription, vibrateAttribute);
-   35. bool isSuccess = ((ret == 0) || (ret == UNSUPPORTED));
-   36. if (!isSuccess) {
-   37. OH_LOG_Print(LOG_APP, LOG_INFO, VIBRATOR_LOG_DOMAIN, TAG, "Vibratecustom fail");
-   38. } else {
-   39. OH_LOG_Print(LOG_APP, LOG_INFO, VIBRATOR_LOG_DOMAIN, TAG, "Vibratecustom successful");
-   40. }
-   41. std::this_thread::sleep_for(std::chrono::milliseconds(TIME_WAIT_FOR_OP));
-   42. // 停止马达振动。
-   43. OH_Vibrator_Cancel();
-   44. // 关闭打开的指针对象
-   45. OH_ResourceManager_CloseRawFile(rawFile);
-   46. OH_ResourceManager_ReleaseNativeResourceManager(mNativeResMgr);
-   47. return nullptr;
-   48. }
+       // argv[0]即为函数第一个参数Js资源对象，OH_ResourceManager_InitNativeResourceManager转为Native对象
+       NativeResourceManager *mNativeResMgr = OH_ResourceManager_InitNativeResourceManager(env, argv[0]);
+       if (mNativeResMgr == nullptr) {
+           OH_LOG_Print(LOG_APP, LOG_ERROR, VIBRATOR_LOG_DOMAIN, TAG, "Get native resource manager failed");
+           return nullptr;
+       }
+       // 获取rawfile指针对象
+       std::string fileName = "coin_drop.json";
+       RawFile *rawFile = OH_ResourceManager_OpenRawFile(mNativeResMgr, fileName.c_str());
+       if (rawFile == nullptr) {
+           OH_ResourceManager_ReleaseNativeResourceManager(mNativeResMgr);
+           OH_LOG_Print(LOG_APP, LOG_ERROR, VIBRATOR_LOG_DOMAIN, TAG, "Get native rawFile failed");
+           return nullptr;
+       }
+       // 获取rawfile的描述符RawFileDescriptor {fd, offset, length}
+       RawFileDescriptor descriptor;
+       OH_ResourceManager_GetRawFileDescriptor(rawFile, descriptor);
+       Vibrator_FileDescription fileDescription = {
+           .fd = descriptor.fd,
+           .offset = descriptor.start,
+           .length = descriptor.length
+       };
+       Vibrator_Attribute vibrateAttribute = {
+           .usage = VIBRATOR_USAGE_RING
+       };
+       // 播放自定义振动序列。
+       int32_t ret = OH_Vibrator_PlayVibrationCustom(fileDescription, vibrateAttribute);
+       bool isSuccess = ((ret == 0) || (ret == UNSUPPORTED));
+       if (!isSuccess) {
+           OH_LOG_Print(LOG_APP, LOG_INFO, VIBRATOR_LOG_DOMAIN, TAG, "Vibratecustom fail");
+       } else {
+           OH_LOG_Print(LOG_APP, LOG_INFO, VIBRATOR_LOG_DOMAIN, TAG, "Vibratecustom successful");
+       }
+       std::this_thread::sleep_for(std::chrono::milliseconds(TIME_WAIT_FOR_OP));
+       // 停止马达振动。
+       OH_Vibrator_Cancel();
+       // 关闭打开的指针对象
+       OH_ResourceManager_CloseRawFile(rawFile);
+       OH_ResourceManager_ReleaseNativeResourceManager(mNativeResMgr);
+       return nullptr;
+   }
    ```
 8. 在Init函数中补充接口。
 
    ```
-   1. EXTERN_C_START
-   2. static napi_value Init(napi_env env, napi_value exports)
-   3. {
-   4. napi_property_descriptor desc[] = {
-   5. {"playVibrationInDuration", nullptr, PlayVibrationInDuration, nullptr, nullptr, nullptr, napi_default, nullptr},
-   6. {"playVibrationCustom", nullptr, PlayVibrationCustom, nullptr, nullptr, nullptr, napi_default, nullptr}
-   7. };
-   8. napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
-   9. return exports;
-   10. }
-   11. EXTERN_C_END
+   EXTERN_C_START
+   static napi_value Init(napi_env env, napi_value exports)
+   {
+       napi_property_descriptor desc[] = {
+           {"playVibrationInDuration", nullptr, PlayVibrationInDuration, nullptr, nullptr, nullptr, napi_default, nullptr},
+           {"playVibrationCustom", nullptr, PlayVibrationCustom, nullptr, nullptr, nullptr, napi_default, nullptr}
+       };
+       napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+       return exports;
+   }
+   EXTERN_C_END
    ```
 9. 在types/libentry路径下index.d.ts文件中引入Napi接口。
 
-   ```
-   1. export const playVibrationInDuration: () => object;
-   2. export const playVibrationCustom: (resmgr: object) => object;
+   ```typescript
+   export const playVibrationInDuration: () => object;
+   export const playVibrationCustom: (resmgr: object) => object;
    ```
 10. 编写程序入口调用代码。
 
-    ```
-    1. import { BusinessError } from '@kit.BasicServicesKit';
-    2. import { hilog } from '@kit.PerformanceAnalysisKit';
-    3. import { resourceManager } from '@kit.LocalizationKit';
-    4. import vibratorCapi from 'libentry.so';
+    ```typescript
+    import { BusinessError } from '@kit.BasicServicesKit';
+    import { hilog } from '@kit.PerformanceAnalysisKit';
+    import { resourceManager } from '@kit.LocalizationKit';
+    import vibratorCapi from 'libentry.so';
 
-    6. const DOMAIN = 0xD002701;
-    7. // ...
-    8. try {
-    9. vibratorCapi.playVibrationInDuration();
-    10. // ...
-    11. } catch (error) {
-    12. let e: BusinessError = error as BusinessError;
-    13. hilog.error(DOMAIN, 'testTag', `Failed to invoke playVibrationInDuration. Code: ${e.code}, message: ${e.message}`);
-    14. }
-    15. // ...
-    16. try {
-    17. vibratorCapi.playVibrationCustom(this.getUIContext().getHostContext()?.resourceManager);
-    18. // ...
-    19. } catch (error) {
-    20. let e: BusinessError = error as BusinessError;
-    21. hilog.error(DOMAIN, 'testTag', `Failed to invoke playVibrationCustom. Code: ${e.code}, message: ${e.message}`);
-    22. }
+    const DOMAIN = 0xD002701;
+    // ...
+              try {
+                vibratorCapi.playVibrationInDuration();
+                // ...
+              } catch (error) {
+                let e: BusinessError = error as BusinessError;
+                hilog.error(DOMAIN, 'testTag', `Failed to invoke playVibrationInDuration. Code: ${e.code}, message: ${e.message}`);
+              }
+              // ...
+              try {
+                vibratorCapi.playVibrationCustom(this.getUIContext().getHostContext()?.resourceManager);
+                // ...
+              } catch (error) {
+                let e: BusinessError = error as BusinessError;
+                hilog.error(DOMAIN, 'testTag', `Failed to invoke playVibrationCustom. Code: ${e.code}, message: ${e.message}`);
+              }
     ```

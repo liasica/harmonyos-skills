@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-h
 title: "@ohos.hiviewdfx.hiAppEvent (应用事件打点)"
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > ArkTS API > @ohos.hiviewdfx.hiAppEvent (应用事件打点)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:18+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:b4805e7b928bf14939f415f8f44622628b2f8da5fdd84fd51b1c4867c0b57217
+scraped_at: 2026-09-02T15:02:16+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a87b231ded88e8785193162ff2bdbd64531d420051d3633def4629a7db2122c2
 ---
 
 本模块提供应用打点和事件订阅能力，包括事件存储、事件订阅、事件清理、打点配置等功能。HiAppEvent将应用运行过程中触发的事件信息统一归纳到[AppEventInfo](js-apis-hiviewdfx-hiappevent.md#appeventinfo)中，并将事件分为系统事件和应用事件两类。
@@ -14,21 +14,17 @@ content_hash: sha256:b4805e7b928bf14939f415f8f44622628b2f8da5fdd84fd51b1c4867c0b
 
 应用事件来源于应用，是应用开发者自己定义的事件，这类事件信息支持自定义后通过[Write](js-apis-hiviewdfx-hiappevent.md#hiappeventwrite-1)打点接口进行配置设定，具体字段含义可结合开发者需求展开。
 
-说明
+**说明** 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { hiAppEvent } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hiAppEvent } from '@kit.PerformanceAnalysisKit';
 ```
 
 ## hiAppEvent.addWatcher
-
-PhonePC/2in1TabletTVWearable
 
 addWatcher(watcher: Watcher): AppEventPackageHolder
 
@@ -59,11 +55,11 @@ addWatcher(watcher: Watcher): AppEventPackageHolder
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 11102001 | Invalid watcher name. Possible causes: 1. Contain invalid characters; 2. Length is invalid. |
 | 11102002 | Invalid filtering event domain. Possible causes: 1. Contain invalid characters; 2. Length is invalid. |
-| 11102003 | Invalid row value. Possible caused by the row value is less than zero. |
-| 11102004 | Invalid size value. Possible caused by the size value is less than zero. |
-| 11102005 | Invalid timeout value. Possible caused by the timeout value is less than zero. |
+| 11102003 | Invalid row value. Possibly caused by the row value is less than zero. |
+| 11102004 | Invalid size value. Possibly caused by the size value is less than zero. |
+| 11102005 | Invalid timeout value. Possibly caused by the timeout value is less than zero. |
 
-注意
+**注意** 
 
 addWatcher接口涉及I/O操作。在对性能敏感的业务场景中，开发者应根据实际需要确定该接口是在主线程还是在子线程中调用。
 
@@ -79,42 +75,42 @@ addWatcher接口涉及I/O操作。在对性能敏感的业务场景中，开发�
 
 方法一：设置回调条件triggerCondition，实现onTrigger()回调。当满足回调条件时，系统将自动触发回调。
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. hiAppEvent.addWatcher({
-4. name: "watcher1",
-5. // 订阅过滤条件，这里是订阅了系统事件领域的应用崩溃事件
-6. appEventFilters: [
-7. {
-8. domain: hiAppEvent.domain.OS,
-9. names: [hiAppEvent.event.APP_CRASH]
-10. }
-11. ],
-12. // 设置触发onTrigger回调的条件，这里是当满足事件总数量达到10个或事件总大小达到1000byte或事件发生超过30s时会触发回调
-13. triggerCondition: {
-14. row: 10,
-15. size: 1000,
-16. timeOut: 1
-17. },
-18. // 实现onTrigger回调，结合triggerCondition使用，满足回调条件触发回调，接收到回调通知后，使用takeNext()查询订阅的事件
-19. onTrigger: (curRow: number, curSize: number, holder: hiAppEvent.AppEventPackageHolder) => {
-20. if (holder == null) {
-21. hilog.error(0x0000, 'hiAppEvent', "holder is null");
-22. return;
-23. }
-24. hilog.info(0x0000, 'hiAppEvent', `curRow=${curRow}, curSize=${curSize}`);
-25. let eventPkg: hiAppEvent.AppEventPackage | null = null;
-26. while ((eventPkg = holder.takeNext()) != null) {
-27. hilog.info(0x0000, 'hiAppEvent', `eventPkg.packageId=${eventPkg.packageId}`);
-28. hilog.info(0x0000, 'hiAppEvent', `eventPkg.row=${eventPkg.row}`);
-29. hilog.info(0x0000, 'hiAppEvent', `eventPkg.size=${eventPkg.size}`);
-30. for (const eventInfo of eventPkg.data) {
-31. hilog.info(0x0000, 'hiAppEvent', `eventPkg.data=${eventInfo}`);
-32. }
-33. }
-34. }
-35. });
+hiAppEvent.addWatcher({
+  name: "watcher1",
+  // 订阅过滤条件，这里是订阅了系统事件领域的应用崩溃事件
+  appEventFilters: [
+    {
+      domain: hiAppEvent.domain.OS,
+      names: [hiAppEvent.event.APP_CRASH]
+    }
+  ],
+  // 设置触发onTrigger回调的条件，这里是当满足事件总数量达到10个或事件总大小达到1000byte或事件发生超过30s时会触发回调
+  triggerCondition: {
+    row: 10,
+    size: 1000,
+    timeOut: 1
+  },
+  // 实现onTrigger回调，结合triggerCondition使用，满足回调条件触发回调，接收到回调通知后，使用takeNext()查询订阅的事件
+  onTrigger: (curRow: number, curSize: number, holder: hiAppEvent.AppEventPackageHolder) => {
+    if (holder == null) {
+      hilog.error(0x0000, 'hiAppEvent', "holder is null");
+      return;
+    }
+    hilog.info(0x0000, 'hiAppEvent', `curRow=${curRow}, curSize=${curSize}`);
+    let eventPkg: hiAppEvent.AppEventPackage | null = null;
+    while ((eventPkg = holder.takeNext()) != null) {
+      hilog.info(0x0000, 'hiAppEvent', `eventPkg.packageId=${eventPkg.packageId}`);
+      hilog.info(0x0000, 'hiAppEvent', `eventPkg.row=${eventPkg.row}`);
+      hilog.info(0x0000, 'hiAppEvent', `eventPkg.size=${eventPkg.size}`);
+      for (const eventInfo of eventPkg.data) {
+        hilog.info(0x0000, 'hiAppEvent', `eventPkg.data=${eventInfo}`);
+      }
+    }
+  }
+});
 ```
 
 方法二：未设置回调条件参数，使用事件订阅返回的holder对象主动获取监听的事件。
@@ -123,63 +119,61 @@ addWatcher接口涉及I/O操作。在对性能敏感的业务场景中，开发�
 
 在手动处理订阅事件的方法中，由于事件可能未生成或日志信息未抓取完成，建议在进程启动后延时重试调用takeNext()获取此类事件。
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. let holder: hiAppEvent.AppEventPackageHolder = hiAppEvent.addWatcher({
-4. name: "watcher2",
-5. // 订阅过滤条件，这里是订阅了系统事件领域的应用崩溃事件
-6. appEventFilters: [
-7. {
-8. domain: hiAppEvent.domain.OS,
-9. names: [hiAppEvent.event.APP_CRASH]
-10. }
-11. ],
-12. });
-13. // 通过订阅数据持有者holder，主动获取崩溃事件
-14. if (holder != null) {
-15. let eventPkg: hiAppEvent.AppEventPackage | null = null;
-16. while ((eventPkg = holder.takeNext()) != null) {
-17. hilog.info(0x0000, 'hiAppEvent', `eventPkg.packageId=${eventPkg.packageId}`);
-18. hilog.info(0x0000, 'hiAppEvent', `eventPkg.row=${eventPkg.row}`);
-19. hilog.info(0x0000, 'hiAppEvent', `eventPkg.size=${eventPkg.size}`);
-20. for (const eventInfo of eventPkg.data) {
-21. hilog.info(0x0000, 'hiAppEvent', `eventPkg.data=${eventInfo}`);
-22. }
-23. }
-24. }
+let holder: hiAppEvent.AppEventPackageHolder = hiAppEvent.addWatcher({
+  name: "watcher2",
+  // 订阅过滤条件，这里是订阅了系统事件领域的应用崩溃事件
+  appEventFilters: [
+    {
+      domain: hiAppEvent.domain.OS,
+      names: [hiAppEvent.event.APP_CRASH]
+    }
+  ],
+});
+// 通过订阅数据持有者holder，主动获取崩溃事件
+if (holder != null) {
+  let eventPkg: hiAppEvent.AppEventPackage | null = null;
+  while ((eventPkg = holder.takeNext()) != null) {
+    hilog.info(0x0000, 'hiAppEvent', `eventPkg.packageId=${eventPkg.packageId}`);
+    hilog.info(0x0000, 'hiAppEvent', `eventPkg.row=${eventPkg.row}`);
+    hilog.info(0x0000, 'hiAppEvent', `eventPkg.size=${eventPkg.size}`);
+    for (const eventInfo of eventPkg.data) {
+      hilog.info(0x0000, 'hiAppEvent', `eventPkg.data=${eventInfo}`);
+    }
+  }
+}
 ```
 
 方法三：实现onReceive()回调，当监听的事件发生后实时触发回调。
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. hiAppEvent.addWatcher({
-4. name: "watcher3",
-5. // 订阅过滤条件，这里是订阅了系统事件领域的应用崩溃事件
-6. appEventFilters: [
-7. {
-8. domain: hiAppEvent.domain.OS,
-9. names: [hiAppEvent.event.APP_CRASH]
-10. }
-11. ],
-12. // 实现onReceive回调，监听到事件后实时回调
-13. onReceive: (domain: string, appEventGroups: Array<hiAppEvent.AppEventGroup>) => {
-14. hilog.info(0x0000, 'hiAppEvent', `domain=${domain}`);
-15. for (const eventGroup of appEventGroups) {
-16. hilog.info(0x0000, 'hiAppEvent', `eventName=${eventGroup.name}`);
-17. for (const eventInfo of eventGroup.appEventInfos) {
-18. hilog.info(0x0000, 'hiAppEvent', `event=${JSON.stringify(eventInfo)}`, );
-19. }
-20. }
-21. }
-22. });
+hiAppEvent.addWatcher({
+  name: "watcher3",
+  // 订阅过滤条件，这里是订阅了系统事件领域的应用崩溃事件
+  appEventFilters: [
+    {
+      domain: hiAppEvent.domain.OS,
+      names: [hiAppEvent.event.APP_CRASH]
+    }
+  ],
+  // 实现onReceive回调，监听到事件后实时回调
+  onReceive: (domain: string, appEventGroups: Array<hiAppEvent.AppEventGroup>) => {
+    hilog.info(0x0000, 'hiAppEvent', `domain=${domain}`);
+    for (const eventGroup of appEventGroups) {
+      hilog.info(0x0000, 'hiAppEvent', `eventName=${eventGroup.name}`);
+      for (const eventInfo of eventGroup.appEventInfos) {
+        hilog.info(0x0000, 'hiAppEvent', `event=${JSON.stringify(eventInfo)}`);
+      }
+    }
+  }
+});
 ```
 
 ## hiAppEvent.removeWatcher
-
-PhonePC/2in1TabletTVWearable
 
 removeWatcher(watcher: Watcher): void
 
@@ -206,22 +200,20 @@ removeWatcher(watcher: Watcher): void
 
 **示例：**
 
-```
-1. // 1. 定义一个事件观察者
-2. let watcher: hiAppEvent.Watcher = {
-3. name: "watcher1",
-4. }
+```ts
+// 1. 定义一个事件观察者
+let watcher: hiAppEvent.Watcher = {
+  name: "watcher1",
+}
 
-6. // 2. 添加一个事件观察者来订阅事件
-7. hiAppEvent.addWatcher(watcher);
+// 2. 添加一个事件观察者来订阅事件
+hiAppEvent.addWatcher(watcher);
 
-9. // 3. 移除该事件观察者以取消订阅事件
-10. hiAppEvent.removeWatcher(watcher);
+// 3. 移除该事件观察者以取消订阅事件
+hiAppEvent.removeWatcher(watcher);
 ```
 
 ## hiAppEvent.setEventParam12+
-
-PhonePC/2in1TabletTVWearable
 
 setEventParam(params: Record<string, ParamType>, domain: string, name?: string): Promise<void>
 
@@ -252,7 +244,7 @@ setEventParam(params: Record<string, ParamType>, domain: string, name?: string):
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| 11100001 | Function disabled. Possible caused by the param disable in ConfigOption is true. |
+| 11100001 | Function disabled. Possibly caused by the param disable in ConfigOption is true. |
 | 11101001 | Invalid event domain. Possible causes: 1. Contain invalid characters; 2. Length is invalid. |
 | 11101002 | Invalid event name. Possible causes: 1. Contain invalid characters; 2. Length is invalid. |
 | 11101004 | Invalid string length of the event parameter. |
@@ -261,26 +253,24 @@ setEventParam(params: Record<string, ParamType>, domain: string, name?: string):
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. let params: Record<string, hiAppEvent.ParamType> = {
-5. "int_data": 100,
-6. "str_data": "strValue",
-7. };
+let params: Record<string, hiAppEvent.ParamType> = {
+  "int_data": 100,
+  "str_data": "strValue",
+};
 
-9. // 给应用事件追加自定义参数
-10. hiAppEvent.setEventParam(params, "test_domain", "test_event").then(() => {
-11. hilog.info(0x0000, 'hiAppEvent', `success to set event param`);
-12. }).catch((err: BusinessError) => {
-13. hilog.error(0x0000, 'hiAppEvent', `code: ${err.code}, message: ${err.message}`);
-14. });
+// 给应用事件追加自定义参数
+hiAppEvent.setEventParam(params, "test_domain", "test_event").then(() => {
+  hilog.info(0x0000, 'hiAppEvent', `success to set event param`);
+}).catch((err: BusinessError) => {
+  hilog.error(0x0000, 'hiAppEvent', `code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## hiAppEvent.setEventConfig15+
-
-PhonePC/2in1TabletTVWearable
 
 setEventConfig(name: string, config: Record<string, ParamType>): Promise<void>
 
@@ -288,9 +278,13 @@ setEventConfig(name: string, config: Record<string, ParamType>): Promise<void>
 
 不同的事件有不同的配置项，目前仅支持以下事件：
 
-* MAIN\_THREAD\_JANK（参数配置详见[主线程超时事件检测](../harmonyos-guides/hiappevent-watcher-mainthreadjank-events.md#seteventconfig接口参数设置说明)）
-* APP\_CRASH（参数配置详见[崩溃日志配置参数设置介绍](../harmonyos-guides/hiappevent-watcher-crash-events.md#崩溃日志规格自定义参数设置)）
+* MAIN\_THREAD\_JANK（参数配置详见[setEventConfig接口参数设置说明](../harmonyos-guides/hiappevent-watcher-mainthreadjank-events.md#seteventconfig接口参数设置说明)）
+* APP\_CRASH（参数配置详见[崩溃日志配置参数设置介绍](../harmonyos-guides/hiappevent-watcher-crash-events.md#自定义规格设置)）
 * RESOURCE\_OVERLIMIT（参数配置详见[资源泄漏事件检测](../harmonyos-guides/hiappevent-watcher-resourceleak-events.md#自定义规格设置)）
+
+**说明** 
+
+从API版本26.0.0开始，configEventPolicy已支持本接口所有设置，推荐使用[configEventPolicy](js-apis-hiviewdfx-hiappevent.md#hiappeventconfigeventpolicy22)。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
@@ -321,27 +315,25 @@ setEventConfig(name: string, config: Record<string, ParamType>): Promise<void>
 
 以下示例用于模拟配置MAIN\_THREAD\_JANK事件的采集堆栈自定义参数：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. let params: Record<string, hiAppEvent.ParamType> = {
-5. "log_type": "1",
-6. "sample_interval": "100",
-7. "ignore_startup_time": "11",
-8. "sample_count": "21",
-9. "report_times_per_app": "3"
-10. };
-11. hiAppEvent.setEventConfig(hiAppEvent.event.MAIN_THREAD_JANK, params).then(() => {
-12. hilog.info(0x0000, 'hiAppEvent', `Successfully set sampling stack parameters.`);
-13. }).catch((err: BusinessError) => {
-14. hilog.error(0x0000, 'hiAppEvent', `Failed to set sample stack value. Code: ${err.code}, message: ${err.message}`);
-15. });
+let params: Record<string, hiAppEvent.ParamType> = {
+  "log_type": "1",
+  "sample_interval": "100",
+  "ignore_startup_time": "11",
+  "sample_count": "21",
+  "report_times_per_app": "3"
+};
+hiAppEvent.setEventConfig(hiAppEvent.event.MAIN_THREAD_JANK, params).then(() => {
+  hilog.info(0x0000, 'hiAppEvent', `Successfully set sampling stack parameters.`);
+}).catch((err: BusinessError) => {
+  hilog.error(0x0000, 'hiAppEvent', `Failed to set sample stack value. Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## hiAppEvent.configEventPolicy22+
-
-PhonePC/2in1TabletTVWearable
 
 configEventPolicy(policy: EventPolicy): Promise<void>
 
@@ -369,30 +361,28 @@ configEventPolicy(policy: EventPolicy): Promise<void>
 
 以下示例用于模拟设置MAIN\_THREAD\_JANK事件的配置策略：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. let policy: hiAppEvent.EventPolicy = {
-5. "mainThreadJankPolicy":{
-6. "logType": 1,
-7. "sampleInterval": 100,
-8. "ignoreStartupTime": 11,
-9. "sampleCount": 21,
-10. "reportTimesPerApp": 3,
-11. "autoStopSampling": true
-12. }
-13. };
-14. hiAppEvent.configEventPolicy(policy).then(() => {
-15. hilog.info(0x0000, 'hiAppEvent', `Successfully set main thread jank event policy.`);
-16. }).catch((err: BusinessError) => {
-17. hilog.error(0x0000, 'hiAppEvent', `Failed to set main thread jank event policy. Code: ${err?.code}, message: ${err?.message}`);
-18. });
+let policy: hiAppEvent.EventPolicy = {
+  mainThreadJankPolicy:{
+    logType: 1,
+    sampleInterval: 100,
+    ignoreStartupTime: 11,
+    sampleCount: 21,
+    reportTimesPerApp: 3,
+    autoStopSampling: true
+  }
+};
+hiAppEvent.configEventPolicy(policy).then(() => {
+  hilog.info(0x0000, 'hiAppEvent', `Successfully set main thread jank event policy.`);
+}).catch((err: BusinessError) => {
+  hilog.error(0x0000, 'hiAppEvent', `Failed to set main thread jank event policy. Code: ${err?.code}, message: ${err?.message}`);
+});
 ```
 
 ## Watcher
-
-PhonePC/2in1TabletTVWearable
 
 提供事件观察者的参数选项。用于配置和管理事件的观察者，实现对特定事件的监听和处理。
 
@@ -408,13 +398,11 @@ PhonePC/2in1TabletTVWearable
 | onTrigger | (curRow: number, curSize: number, holder: [AppEventPackageHolder](js-apis-hiviewdfx-hiappevent.md#appeventpackageholder)) => void | 否 | 是 | 订阅回调函数，需要与回调触发条件triggerCondition一同传入才会生效，函数入参说明如下：  curRow：在本次回调触发时的订阅事件总数量；  curSize：在本次回调触发时的订阅事件总大小，单位为byte；  holder：订阅数据持有者对象，可以通过其对订阅事件进行处理。 |
 | onReceive11+ | (domain: string, appEventGroups: Array<[AppEventGroup](js-apis-hiviewdfx-hiappevent.md#appeventgroup11)>) => void | 否 | 是 | 订阅实时回调函数，与回调函数onTrigger同时存在时，只触发此回调，函数入参说明如下：  domain：回调事件的领域名称；  appEventGroups：回调事件集合。 |
 
-说明
+**说明** 
 
-不建议在回调函数中执行[移除观察者](js-apis-hiviewdfx-hiappevent.md#hiappeventremovewatcher)的操作，watcher一旦被移除，则其原有的订阅回调功能也会随之失效，可能会造成某些事件发生后无订阅回调情况。
+不建议在回调函数中执行[removeWatcher](js-apis-hiviewdfx-hiappevent.md#hiappeventremovewatcher)的操作，watcher一旦被移除，则其原有的订阅回调功能也会随之失效，可能会造成某些事件发生后无订阅回调情况。
 
 ## TriggerCondition
-
-PhonePC/2in1TabletTVWearable
 
 提供设置[Watcher](js-apis-hiviewdfx-hiappevent.md#watcher)的onTrigger回调触发条件的参数选项。
 
@@ -430,8 +418,6 @@ PhonePC/2in1TabletTVWearable
 
 ## AppEventFilter
 
-PhonePC/2in1TabletTVWearable
-
 提供设置[Watcher](js-apis-hiviewdfx-hiappevent.md#watcher)的订阅过滤条件的参数选项。用于在事件观察者中设置事件过滤条件，确保只有满足过滤条件的事件才会被监听处理。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -444,19 +430,15 @@ PhonePC/2in1TabletTVWearable
 | eventTypes | [EventType](js-apis-hiviewdfx-hiappevent.md#eventtype)[] | 否 | 是 | 需要订阅的事件类型集合。默认不进行过滤。 |
 | names11+ | string[] | 否 | 是 | 需要订阅的事件名称集合。默认不进行过滤。 |
 
-说明
+**说明** 
 
 不同类型应用上，系统事件的订阅规格不同，具体规格可参见[HiAppEvent约束与限制](../harmonyos-guides/hiappevent-intro.md#约束与限制)。
 
 ## AppEventPackageHolder
 
-PhonePC/2in1TabletTVWearable
-
 订阅数据持有者类，用于对事件信息进行处理。
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(watcherName: string)
 
@@ -474,24 +456,22 @@ constructor(watcherName: string)
 
 **示例：**
 
-```
-1. // 添加数据观察者“Watcher1”，订阅监听系统事件
-2. hiAppEvent.addWatcher({
-3. name: "Watcher1",
-4. appEventFilters: [
-5. {
-6. domain: hiAppEvent.domain.OS,
-7. }
-8. ],
-9. });
+```ts
+// 添加数据观察者“Watcher1”，订阅监听系统事件
+hiAppEvent.addWatcher({
+  name: "Watcher1",
+  appEventFilters: [
+    {
+      domain: hiAppEvent.domain.OS,
+    }
+  ],
+});
 
-11. // 创建订阅数据持有者实例，holder1持有的数据为上述addWatcher中添加的观察者“Watcher1”监听到的事件
-12. let holder1: hiAppEvent.AppEventPackageHolder = new hiAppEvent.AppEventPackageHolder("Watcher1");
+// 创建订阅数据持有者实例，holder1持有的数据为上述addWatcher中添加的观察者“Watcher1”监听到的事件
+let holder1: hiAppEvent.AppEventPackageHolder = new hiAppEvent.AppEventPackageHolder("Watcher1");
 ```
 
 ### setSize
-
-PhonePC/2in1TabletTVWearable
 
 setSize(size: number): void
 
@@ -514,20 +494,18 @@ setSize(size: number): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| 11104001 | Invalid size value. Possible caused by the size value is less than or equal to zero. |
+| 11104001 | Invalid size value. Possibly caused by the size value is less than or equal to zero. |
 
 **示例：**
 
-```
-1. // 创建订阅数据持有者实例，holder2持有的数据为已通过addWatcher添加的观察者“Watcher1”监听到的事件
-2. let holder2: hiAppEvent.AppEventPackageHolder = new hiAppEvent.AppEventPackageHolder("Watcher1");
-3. // 设置每次取出事件包的数据大小阈值为1000byte
-4. holder2.setSize(1000);
+```ts
+// 创建订阅数据持有者实例，holder2持有的数据为已通过addWatcher添加的观察者“Watcher1”监听到的事件
+let holder2: hiAppEvent.AppEventPackageHolder = new hiAppEvent.AppEventPackageHolder("Watcher1");
+// 设置每次取出事件包的数据大小阈值为1000byte
+holder2.setSize(1000);
 ```
 
 ### setRow12+
-
-PhonePC/2in1TabletTVWearable
 
 setRow(size: number): void
 
@@ -550,20 +528,18 @@ setRow(size: number): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| 11104001 | Invalid size value. Possible caused by the size value is less than or equal to zero. |
+| 11104001 | Invalid size value. Possibly caused by the size value is less than or equal to zero. |
 
 **示例：**
 
-```
-1. // 创建订阅数据持有者实例，holder3持有的数据为已通过addWatcher添加的观察者“Watcher1”监听到的事件
-2. let holder3: hiAppEvent.AppEventPackageHolder = new hiAppEvent.AppEventPackageHolder("Watcher1");
-3. // 设置每次取出的事件包的数据条数为1000条
-4. holder3.setRow(1000);
+```ts
+// 创建订阅数据持有者实例，holder3持有的数据为已通过addWatcher添加的观察者“Watcher1”监听到的事件
+let holder3: hiAppEvent.AppEventPackageHolder = new hiAppEvent.AppEventPackageHolder("Watcher1");
+// 设置每次取出的事件包的数据条数为1000条
+holder3.setRow(1000);
 ```
 
 ### takeNext
-
-PhonePC/2in1TabletTVWearable
 
 takeNext(): AppEventPackage
 
@@ -585,16 +561,14 @@ takeNext(): AppEventPackage
 
 **示例：**
 
-```
-1. // 创建订阅数据持有者实例，holder4持有的数据为已通过addWatcher添加的观察者“Watcher1”监听到的事件
-2. let holder4: hiAppEvent.AppEventPackageHolder = new hiAppEvent.AppEventPackageHolder("Watcher1");
-3. // 获取订阅事件
-4. let eventPkg: hiAppEvent.AppEventPackage | null = holder4.takeNext();
+```ts
+// 创建订阅数据持有者实例，holder4持有的数据为已通过addWatcher添加的观察者“Watcher1”监听到的事件
+let holder4: hiAppEvent.AppEventPackageHolder = new hiAppEvent.AppEventPackageHolder("Watcher1");
+// 获取订阅事件
+let eventPkg: hiAppEvent.AppEventPackage | null = holder4.takeNext();
 ```
 
 ## AppEventInfo
-
-PhonePC/2in1TabletTVWearable
 
 提供事件信息的参数选项。
 
@@ -611,8 +585,6 @@ PhonePC/2in1TabletTVWearable
 
 ## AppEventPackage
 
-PhonePC/2in1TabletTVWearable
-
 提供订阅返回的事件包的参数定义。可用于获取事件包的详细信息，事件包由[takeNext](js-apis-hiviewdfx-hiappevent.md#takenext)接口获得。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
@@ -627,8 +599,6 @@ PhonePC/2in1TabletTVWearable
 
 ## AppEventGroup11+
 
-PhonePC/2in1TabletTVWearable
-
 提供订阅返回的事件组的参数定义。可用于获取事件组的详细信息，事件组常在[Watcher](js-apis-hiviewdfx-hiappevent.md#watcher)的onReceive回调中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -642,11 +612,9 @@ PhonePC/2in1TabletTVWearable
 
 ## hiAppEvent.write
 
-PhonePC/2in1TabletTVWearable
-
 write(info: AppEventInfo, callback: AsyncCallback<void>): void
 
-应用事件打点方法，将AppEventInfo类型的事件进行存储，使用callback方式作为异步回调。通过此接口写入的事件对象是开发者自定义的对象，为了避免与系统事件产生冲突混淆，不建议写入系统事件（[Event](js-apis-hiviewdfx-hiappevent.md#hiappeventevent)中定义的系统事件名称常量）。此接口写入的事件可通过订阅事件观察者（[addWatcher](js-apis-hiviewdfx-hiappevent.md#hiappeventaddwatcher)）进行订阅。
+应用事件打点方法，将AppEventInfo类型的事件进行存储，使用callback方式作为异步回调。通过此接口写入的事件对象是开发者自定义的对象，为了避免与系统事件产生冲突混淆，不建议写入系统事件（[Event](js-apis-hiviewdfx-hiappevent.md#event)中定义的系统事件名称常量）。此接口写入的事件可通过订阅事件观察者（[addWatcher](js-apis-hiviewdfx-hiappevent.md#hiappeventaddwatcher)）进行订阅。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -656,7 +624,7 @@ write(info: AppEventInfo, callback: AsyncCallback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| info | [AppEventInfo](js-apis-hiviewdfx-hiappevent.md#appeventinfo) | 是 | 应用事件对象。其内部定义的事件名称建议避免与[Event](js-apis-hiviewdfx-hiappevent.md#hiappeventevent)中定义的系统事件名称常量产生冲突。 |
+| info | [AppEventInfo](js-apis-hiviewdfx-hiappevent.md#appeventinfo) | 是 | 应用事件对象。其内部定义的事件名称建议避免与[Event](js-apis-hiviewdfx-hiappevent.md#event)中定义的系统事件名称常量产生冲突。 |
 | callback | AsyncCallback<void> | 是 | 打点回调函数。 |
 
 **错误码：**
@@ -666,15 +634,15 @@ write(info: AppEventInfo, callback: AsyncCallback<void>): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| 11100001 | Function disabled. Possible caused by the param disable in ConfigOption is true. |
+| 11100001 | Function disabled. Possibly caused by the param disable in ConfigOption is true. |
 | 11101001 | Invalid event domain. Possible causes: 1. Contain invalid characters; 2. Length is invalid. |
 | 11101002 | Invalid event name. Possible causes: 1. Contain invalid characters; 2. Length is invalid. |
-| 11101003 | Invalid number of event parameters. Possible caused by the number of parameters is over 32. |
+| 11101003 | Invalid number of event parameters. Possibly caused by the number of parameters is over 32. |
 | 11101004 | Invalid string length of the event parameter. |
 | 11101005 | Invalid event parameter name. Possible causes: 1. Contain invalid characters; 2. Length is invalid. |
 | 11101006 | Invalid array length of the event parameter. |
 
-说明
+**说明** 
 
 write接口涉及I/O操作，执行时间通常在毫秒级别。因此，开发者应根据实际业务需求，确定该接口是在主线程还是在子线程中调用。
 
@@ -682,37 +650,35 @@ write接口涉及I/O操作，执行时间通常在毫秒级别。因此，开发
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. let eventParams: Record<string, number | string> = {
-5. "int_data": 100,
-6. "str_data": "strValue",
-7. };
+let eventParams: Record<string, number | string> = {
+  "int_data": 100,
+  "str_data": "strValue",
+};
 
-9. // 应用事件打点，使用callback方式作为异步回调
-10. hiAppEvent.write({
-11. domain: "test_domain",
-12. name: "test_event",
-13. eventType: hiAppEvent.EventType.FAULT,
-14. params: eventParams,
-15. }, (err: BusinessError) => {
-16. if (err) {
-17. hilog.error(0x0000, 'hiAppEvent', `code: ${err.code}, message: ${err.message}`);
-18. return;
-19. }
-20. hilog.info(0x0000, 'hiAppEvent', `success to write event`);
-21. });
+// 应用事件打点，使用callback方式作为异步回调
+hiAppEvent.write({
+  domain: "test_domain",
+  name: "test_event",
+  eventType: hiAppEvent.EventType.FAULT,
+  params: eventParams,
+}, (err: BusinessError) => {
+  if (err) {
+    hilog.error(0x0000, 'hiAppEvent', `code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  hilog.info(0x0000, 'hiAppEvent', `success to write event`);
+});
 ```
 
 ## hiAppEvent.write
 
-PhonePC/2in1TabletTVWearable
-
 write(info: AppEventInfo): Promise<void>
 
-应用事件打点方法，将AppEventInfo类型的事件进行存储，使用Promise方式作为异步回调。通过此接口写入的事件对象是开发者自定义的对象，为了避免与系统事件产生冲突混淆，不建议写入系统事件（[Event](js-apis-hiviewdfx-hiappevent.md#hiappeventevent)中定义的系统事件名称常量）。此接口写入的事件可通过订阅事件观察者（[addWatcher](js-apis-hiviewdfx-hiappevent.md#hiappeventaddwatcher)）进行处理。
+应用事件打点方法，将AppEventInfo类型的事件进行存储，使用Promise方式作为异步回调。通过此接口写入的事件对象是开发者自定义的对象，为了避免与系统事件产生冲突混淆，不建议写入系统事件（[Event](js-apis-hiviewdfx-hiappevent.md#event)中定义的系统事件名称常量）。此接口写入的事件可通过订阅事件观察者（[addWatcher](js-apis-hiviewdfx-hiappevent.md#hiappeventaddwatcher)）进行处理。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -722,7 +688,7 @@ write(info: AppEventInfo): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| info | [AppEventInfo](js-apis-hiviewdfx-hiappevent.md#appeventinfo) | 是 | 应用事件对象。其中的事件名称建议避免与[Event](js-apis-hiviewdfx-hiappevent.md#hiappeventevent)中定义的系统事件名称常量冲突混淆。 |
+| info | [AppEventInfo](js-apis-hiviewdfx-hiappevent.md#appeventinfo) | 是 | 应用事件对象。其中的事件名称建议避免与[Event](js-apis-hiviewdfx-hiappevent.md#event)中定义的系统事件名称常量冲突混淆。 |
 
 **返回值：**
 
@@ -737,15 +703,15 @@ write(info: AppEventInfo): Promise<void>
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| 11100001 | Function disabled. Possible caused by the param disable in ConfigOption is true. |
+| 11100001 | Function disabled. Possibly caused by the param disable in ConfigOption is true. |
 | 11101001 | Invalid event domain. Possible causes: 1. Contain invalid characters; 2. Length is invalid. |
 | 11101002 | Invalid event name. Possible causes: 1. Contain invalid characters; 2. Length is invalid. |
-| 11101003 | Invalid number of event parameters. Possible caused by the number of parameters is over 32. |
+| 11101003 | Invalid number of event parameters. Possibly caused by the number of parameters is over 32. |
 | 11101004 | Invalid string length of the event parameter. |
 | 11101005 | Invalid event parameter name. Possible causes: 1. Contain invalid characters; 2. Length is invalid. |
 | 11101006 | Invalid array length of the event parameter. |
 
-说明
+**说明** 
 
 write接口涉及I/O操作，执行时间通常在毫秒级别。因此，开发者应根据实际业务需求，确定该接口是在主线程还是在子线程中调用。
 
@@ -753,31 +719,29 @@ write接口涉及I/O操作，执行时间通常在毫秒级别。因此，开发
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. let eventParams: Record<string, number | string> = {
-5. "int_data": 100,
-6. "str_data": "strValue",
-7. };
+let eventParams: Record<string, number | string> = {
+  "int_data": 100,
+  "str_data": "strValue",
+};
 
-9. // 应用事件打点，使用Promise方式作为异步回调
-10. hiAppEvent.write({
-11. domain: "test_domain",
-12. name: "test_event",
-13. eventType: hiAppEvent.EventType.FAULT,
-14. params: eventParams,
-15. }).then(() => {
-16. hilog.info(0x0000, 'hiAppEvent', `success to write event`);
-17. }).catch((err: BusinessError) => {
-18. hilog.error(0x0000, 'hiAppEvent', `code: ${err.code}, message: ${err.message}`);
-19. });
+// 应用事件打点，使用Promise方式作为异步回调
+hiAppEvent.write({
+  domain: "test_domain",
+  name: "test_event",
+  eventType: hiAppEvent.EventType.FAULT,
+  params: eventParams,
+}).then(() => {
+  hilog.info(0x0000, 'hiAppEvent', `success to write event`);
+}).catch((err: BusinessError) => {
+  hilog.error(0x0000, 'hiAppEvent', `code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## hiAppEvent.addProcessor11+
-
-PhonePC/2in1TabletTVWearable
 
 addProcessor(processor: Processor): number
 
@@ -811,23 +775,21 @@ addProcessor(processor: Processor): number
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. try {
-4. let processor: hiAppEvent.Processor = {
-5. name: 'analytics_demo'
-6. };
-7. let id: number = hiAppEvent.addProcessor(processor);
-8. hilog.info(0x0000, 'hiAppEvent', `addProcessor event was successful, id=${id}`);
-9. } catch (error) {
-10. hilog.error(0x0000, 'hiAppEvent', `failed to addProcessor event, code=${error.code}`);
-11. }
+try {
+  let processor: hiAppEvent.Processor = {
+    name: 'analytics_demo'
+  };
+  let id: number = hiAppEvent.addProcessor(processor);
+  hilog.info(0x0000, 'hiAppEvent', `addProcessor event was successful, id=${id}`);
+} catch (error) {
+  hilog.error(0x0000, 'hiAppEvent', `failed to addProcessor event, code=${error.code}`);
+}
 ```
 
 ## hiAppEvent.addProcessorFromConfig20+
-
-PhonePC/2in1TabletTVWearable
 
 addProcessorFromConfig(processorName: string, configName?: string): Promise<number>
 
@@ -862,20 +824,18 @@ addProcessorFromConfig(processorName: string, configName?: string): Promise<numb
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. hiAppEvent.addProcessorFromConfig("test_name").then((processorId) => {
-5. hilog.info(0x0000, 'hiAppEvent', `Succeeded in adding processor from config, processorId=${processorId}`);
-6. }).catch((err: BusinessError) => {
-7. hilog.error(0x0000, 'hiAppEvent', `Failed to add processor from config, code: ${err.code}, message: ${err.message}`);
-8. });
+hiAppEvent.addProcessorFromConfig("test_name").then((processorId) => {
+  hilog.info(0x0000, 'hiAppEvent', `Succeeded in adding processor from config, processorId=${processorId}`);
+}).catch((err: BusinessError) => {
+  hilog.error(0x0000, 'hiAppEvent', `Failed to add processor from config, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## hiAppEvent.removeProcessor11+
-
-PhonePC/2in1TabletTVWearable
 
 removeProcessor(id: number): void
 
@@ -901,24 +861,22 @@ removeProcessor(id: number): void
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. try {
-4. let processor: hiAppEvent.Processor = {
-5. name: 'analytics_demo'
-6. };
-7. let id: number = hiAppEvent.addProcessor(processor);
-8. // 根据添加数据处理者返回的标识id移除特定数据处理者
-9. hiAppEvent.removeProcessor(id);
-10. } catch (error) {
-11. hilog.error(0x0000, 'hiAppEvent', `failed to removeProcessor event, code=${error.code}`);
-12. }
+try {
+  let processor: hiAppEvent.Processor = {
+    name: 'analytics_demo'
+  };
+  let id: number = hiAppEvent.addProcessor(processor);
+  // 根据添加数据处理者返回的标识id移除特定数据处理者
+  hiAppEvent.removeProcessor(id);
+} catch (error) {
+  hilog.error(0x0000, 'hiAppEvent', `failed to removeProcessor event, code=${error.code}`);
+}
 ```
 
 ## hiAppEvent.setUserId11+
-
-PhonePC/2in1TabletTVWearable
 
 setUserId(name: string, value: string): void
 
@@ -933,7 +891,7 @@ setUserId(name: string, value: string): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 用户ID的key。只能包含大小写字母、数字、下划线和 $，不能以数字开头，长度非空且不超过256个字符。 |
-| value | string | 是 | 用户ID的值。长度不超过256，当值为null或空字符串时，则清除用户ID。 |
+| value | string | 是 | 用户ID的值。长度不超过256个字符，当值为null或空字符串时，则清除用户ID。 |
 
 **错误码：**
 
@@ -945,19 +903,17 @@ setUserId(name: string, value: string): void
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. try {
-4. hiAppEvent.setUserId('key', 'value');
-5. } catch (error) {
-6. hilog.error(0x0000, 'hiAppEvent', `failed to setUserId event, code=${error.code}`);
-7. }
+try {
+  hiAppEvent.setUserId('key', 'value');
+} catch (error) {
+  hilog.error(0x0000, 'hiAppEvent', `failed to setUserId event, code=${error.code}`);
+}
 ```
 
 ## hiAppEvent.getUserId11+
-
-PhonePC/2in1TabletTVWearable
 
 getUserId(name: string): string
 
@@ -989,21 +945,19 @@ getUserId(name: string): string
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. hiAppEvent.setUserId('key', 'value');
-4. try {
-5. let value: string = hiAppEvent.getUserId('key');
-6. hilog.info(0x0000, 'hiAppEvent', `getUserId event was successful, userId=${value}`);
-7. } catch (error) {
-8. hilog.error(0x0000, 'hiAppEvent', `failed to getUserId event, code=${error.code}`);
-9. }
+hiAppEvent.setUserId('key', 'value');
+try {
+  let value: string = hiAppEvent.getUserId('key');
+  hilog.info(0x0000, 'hiAppEvent', `getUserId event was successful, userId=${value}`);
+} catch (error) {
+  hilog.error(0x0000, 'hiAppEvent', `failed to getUserId event, code=${error.code}`);
+}
 ```
 
 ## hiAppEvent.setUserProperty11+
-
-PhonePC/2in1TabletTVWearable
 
 setUserProperty(name: string, value: string): void
 
@@ -1018,7 +972,7 @@ setUserProperty(name: string, value: string): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 用户属性的key。只能包含大小写字母、数字、下划线和 $，不能以数字开头，长度非空且不超过256个字符。 |
-| value | string | 是 | 用户属性的值。长度不超过1024，当值为null或空字符串时，则清除用户属性。 |
+| value | string | 是 | 用户属性的值。长度不超过1024个字符，当值为null或空字符串时，则清除用户属性。 |
 
 **错误码：**
 
@@ -1030,19 +984,17 @@ setUserProperty(name: string, value: string): void
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. try {
-4. hiAppEvent.setUserProperty('key', 'value');
-5. } catch (error) {
-6. hilog.error(0x0000, 'hiAppEvent', `failed to setUserProperty event, code=${error.code}`);
-7. }
+try {
+  hiAppEvent.setUserProperty('key', 'value');
+} catch (error) {
+  hilog.error(0x0000, 'hiAppEvent', `failed to setUserProperty event, code=${error.code}`);
+}
 ```
 
 ## hiAppEvent.getUserProperty11+
-
-PhonePC/2in1TabletTVWearable
 
 getUserProperty(name: string): string
 
@@ -1074,21 +1026,19 @@ getUserProperty(name: string): string
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. hiAppEvent.setUserProperty('key', 'value');
-4. try {
-5. let value: string = hiAppEvent.getUserProperty('key');
-6. hilog.info(0x0000, 'hiAppEvent', `getUserProperty event was successful, userProperty=${value}`);
-7. } catch (error) {
-8. hilog.error(0x0000, 'hiAppEvent', `failed to getUserProperty event, code=${error.code}`);
-9. }
+hiAppEvent.setUserProperty('key', 'value');
+try {
+  let value: string = hiAppEvent.getUserProperty('key');
+  hilog.info(0x0000, 'hiAppEvent', `getUserProperty event was successful, userProperty=${value}`);
+} catch (error) {
+  hilog.error(0x0000, 'hiAppEvent', `failed to getUserProperty event, code=${error.code}`);
+}
 ```
 
 ## hiAppEvent.clearData
-
-PhonePC/2in1TabletTVWearable
 
 clearData(): void
 
@@ -1100,13 +1050,11 @@ clearData(): void
 
 **示例：**
 
-```
-1. hiAppEvent.clearData();
+```ts
+hiAppEvent.clearData();
 ```
 
 ## hiAppEvent.configure
-
-PhonePC/2in1TabletTVWearable
 
 configure(config: ConfigOption): void
 
@@ -1129,27 +1077,25 @@ configure(config: ConfigOption): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| 11103001 | Invalid max storage quota value. Possible caused by incorrectly formatted. |
+| 11103001 | Invalid max storage quota value. Possibly caused by incorrectly formatted. |
 
 **示例：**
 
-```
-1. // 配置打点开关为关闭状态
-2. let config1: hiAppEvent.ConfigOption = {
-3. disable: true,
-4. };
-5. hiAppEvent.configure(config1);
+```ts
+// 配置打点开关为关闭状态
+let config1: hiAppEvent.ConfigOption = {
+  disable: true,
+};
+hiAppEvent.configure(config1);
 
-7. // 配置文件目录存储配额为100M
-8. let config2: hiAppEvent.ConfigOption = {
-9. maxStorage: '100M',
-10. };
-11. hiAppEvent.configure(config2);
+// 配置文件目录存储配额为100M
+let config2: hiAppEvent.ConfigOption = {
+  maxStorage: '100MB',
+};
+hiAppEvent.configure(config2);
 ```
 
 ## ConfigOption
-
-PhonePC/2in1TabletTVWearable
 
 提供对应用事件打点功能的配置选项。
 
@@ -1160,26 +1106,24 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | disable | boolean | 否 | 是 | 打点功能开关，默认值为false。true：关闭打点功能，false：开启打点功能。 |
-| maxStorage | string | 否 | 是 | 打点数据存放目录的配额大小，默认值为“10M”。建议配额大小不超过10M，配额过大可能会影响接口效率。  在目录大小超出配额后，下次打点会触发对目录的清理操作：按从旧到新的顺序逐个删除打点数据文件，直到目录大小不超出配额时结束。  配额值字符串规格如下：  - 配额值字符串只由数字字符和大小单位字符（单位字符支持[b|k|kb|m|mb|g|gb|t|tb]，不区分大小写）构成。  - 配额值字符串必须以数字开头，后面可以选择不传单位字符（默认使用byte作为单位），或者以单位字符结尾。 |
+| maxStorage | string | 否 | 是 | 打点数据存放目录的配额大小，默认值为“10MB”。建议配额大小不超过10MB，配额过大可能会影响接口效率。  在目录大小超出配额后，下次打点会触发对目录的清理操作：按从旧到新的顺序逐个删除打点数据文件，直到目录大小不超出配额时结束。  配额值字符串规格如下：  - 配额值字符串只由数字字符和大小单位字符（单位字符支持[b|k|kb|m|mb|g|gb|t|tb]，不区分大小写）构成。  - 配额值字符串必须以数字开头，后面可以选择不传单位字符（默认使用byte作为单位），或者以单位字符结尾。 |
 
 ## EventPolicy22+
 
-PhonePC/2in1TabletTVWearable
-
 提供系统事件配置策略的定义，用于使用[configEventPolicy](js-apis-hiviewdfx-hiappevent.md#hiappeventconfigeventpolicy22)设置事件配置策略。
-
-**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| mainThreadJankPolicy | [MainThreadJankPolicy](js-apis-hiviewdfx-hiappevent.md#mainthreadjankpolicy22) | 否 | 是 | 主线程超时事件配置策略。 |
-| cpuUsageHighPolicy | [CpuUsageHighPolicy](js-apis-hiviewdfx-hiappevent.md#cpuusagehighpolicy22) | 否 | 是 | CPU高负载事件配置策略。 |
+| mainThreadJankPolicy | [MainThreadJankPolicy](js-apis-hiviewdfx-hiappevent.md#mainthreadjankpolicy22) | 否 | 是 | 主线程超时事件配置策略。  **元服务API：** 从API version 22开始，该接口支持在元服务中使用。 |
+| cpuUsageHighPolicy | [CpuUsageHighPolicy](js-apis-hiviewdfx-hiappevent.md#cpuusagehighpolicy22) | 否 | 是 | CPU高负载事件配置策略。  **元服务API：** 从API version 22开始，该接口支持在元服务中使用。 |
+| appCrashPolicy24+ | [AppCrashPolicy](js-apis-hiviewdfx-hiappevent.md#appcrashpolicy24) | 否 | 是 | 崩溃事件配置策略。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
+| appFreezePolicy24+ | [AppFreezePolicy](js-apis-hiviewdfx-hiappevent.md#appfreezepolicy24) | 否 | 是 | 应用冻屏事件配置策略。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
+| resourceOverlimitPolicy24+ | [ResourceOverlimitPolicy](js-apis-hiviewdfx-hiappevent.md#resourceoverlimitpolicy24) | 否 | 是 | 资源泄漏事件配置策略。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
+| addressSanitizerPolicy24+ | [AddressSanitizerPolicy](js-apis-hiviewdfx-hiappevent.md#addresssanitizerpolicy24) | 否 | 是 | 地址越界事件配置策略。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
 
 ## MainThreadJankPolicy22+
-
-PhonePC/2in1TabletTVWearable
 
 提供主线程超时事件配置策略的定义。
 
@@ -1198,15 +1142,13 @@ PhonePC/2in1TabletTVWearable
 
 ## CpuUsageHighPolicy22+
 
-PhonePC/2in1TabletTVWearable
-
 提供CPU高负载事件配置策略的定义。
 
-注意
+**注意** 
 
 该接口被调用后，会将设置值持久化。后续重复调用该接口时，若不设置对应参数，则取上一次系统取用的值。
 
-**元服务API：** 从API version 22开始，该接口支持在应用中使用。
+**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
 
@@ -1218,9 +1160,57 @@ PhonePC/2in1TabletTVWearable
 | perfLogCaptureCount | number | 否 | 是 | 采样栈每日采集次数。一旦系统检测到当前异常日志的采集次数超过设置值，系统仍会正常上报事件，但异常事件中的external\_log字段，将不再附加日志文件路径信息。  Debug版本应用，阈值范围：[-1, 100]；  Release版本应用，阈值范围：[0, 20]。  单位：次，默认值：1。  若设置值在阈值范围外，系统将取用默认值1。  **说明**：  1. 值为-1，表示不限制采集日志次数。  2. 值为0，表示不采集日志。  3. 值大于0，表示每日采集次数上限。 |
 | threadLoadInterval | number | 否 | 是 | 应用线程CPU高负载异常检测周期，阈值范围：[5, 3600]，单位：秒，默认值：60。  若设置值在阈值范围外，系统将取用默认值60。 |
 
-## Processor11+
+## AppCrashPolicy24+
 
-PhonePC/2in1TabletTVWearable
+提供崩溃事件配置策略的定义。
+
+**系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| pageSwitchLogEnable | boolean | 否 | 是 | 是否使能崩溃事件的页面切换日志。  true：使能崩溃事件的页面切换日志。  false：不使能崩溃事件的页面切换日志。  默认值：false。  **说明**：应用每次使能行为只在应用当前生命周期生效，在同一生命周期内，以最后一次成功调用的使能状态为准。应用重启后，需要重新设置使能状态。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
+| extendPcLrPrinting | boolean | 否 | 是 | 设置崩溃日志中是否打印pc和lr寄存器前后的内存值。  true：64位系统打印pc和lr寄存器地址向前248字节、向后256字节范围的内存值。32位系统打印pc和lr寄存器地址向前124字节、向后128字节范围的内存值。  false：64位系统打印pc和lr寄存器地址向前16字节、向后232字节范围的内存值。32位系统打印pc和lr寄存器地址向前8字节、向后116字节范围的内存值。  默认值：false。  **起始版本**：26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| logFileCutoffSzBytes | number | 否 | 是 | 设置崩溃日志截断大小。单位为byte，取值范围为[0, 5242880]。默认值取0，表示不截断崩溃日志。  **起始版本**：26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| simplifyVmaPrinting | boolean | 否 | 是 | 设置崩溃日志是否打印所有VMA（Virtual Memory Area，虚拟内存空间）的映射信息，即崩溃日志中Maps。  true：只打印崩溃日志中出现的地址所属的VMA映射信息，以减小日志大小。  false：打印所有VMA映射信息。  默认值：false。  **起始版本**：26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| collectMinidump | boolean | 否 | 是 | 是否使能[minidump](../harmonyos-guides/performance-analysis-kit-terminology.md#minidump)，默认值为false。  true：在Native Crash场景同时生成minidump。  false：在Native Crash场景不生成minidump。  生成minidump日志文件以.dmp结尾，跟随APP\_CRASH事件一起返回，保存在external\_log字段中。  **说明**：该配置项为持久化配置，应用未重新设置前，值不变。  **起始版本**：26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+
+## AppFreezePolicy24+
+
+提供应用冻屏事件配置策略的定义。
+
+**元服务API：** 从API version 24开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| pageSwitchLogEnable | boolean | 否 | 是 | 是否使能应用冻屏事件的页面切换日志。  true：使能应用冻屏事件的页面切换日志。  false：不使能应用冻屏事件的页面切换日志。  默认值：false。  **说明**：应用每次使能行为只在应用当前生命周期生效，在同一生命周期内，以最后一次成功调用的使能状态为准。应用重启后，需要重新设置使能状态。 |
+
+## ResourceOverlimitPolicy24+
+
+提供资源泄漏事件配置策略的定义。
+
+**系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| pageSwitchLogEnable | boolean | 否 | 是 | 是否使能资源泄漏事件的页面切换日志。  true：使能资源泄漏事件的页面切换日志。  false：不使能资源泄漏事件的页面切换日志。  默认值：false。  **说明**：应用每次使能行为只在应用当前生命周期生效，在同一生命周期内，以最后一次成功调用的使能状态为准。应用重启后，需要重新设置使能状态。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
+| jsHeapLogtype | string | 否 | 是 | 设置传递堆快照规格。  "event"：应用发生OOM时，不传递堆快照。  "event\_rawheap"：应用发生OOM时，系统生成并传递堆快照。  **说明**：  - 当前仅接收以上二值，如果传入其他内容，方法将调用失败，不会产生任何效果。  - 参数值为"event\_rawheap"，无法确保成功生成堆快照文件。原因是生成堆快照时，应用可能因性能问题触发冻屏而提前退出。  - 应用每次使能行为只在应用当前生命周期生效，在同一生命周期内，以最后一次成功调用的使能状态为准。应用重启后，需要重新设置使能状态。  **起始版本**：26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| useRefinedLogFileName | boolean | 否 | 是 | 是否使能事件日志文件名精细化开关。  true：使能事件日志文件名精细化开关。  false：不使能事件日志文件名精细化开关。  默认值：false。  **起始版本**：26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+
+## AddressSanitizerPolicy24+
+
+提供地址越界事件配置策略的定义。
+
+**元服务API：** 从API version 24开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| pageSwitchLogEnable | boolean | 否 | 是 | 是否使能地址越界事件的页面切换日志。  true：使能地址越界事件的页面切换日志。  false：不使能地址越界事件的页面切换日志。  默认值：false。  **说明**：应用每次使能行为只在应用当前生命周期生效，在同一生命周期内，以最后一次成功调用的使能状态为准。应用重启后，需要重新设置使能状态。 |
+
+## Processor11+
 
 可以上报事件的数据处理者对象。用于事件的上报和管理，开发者可自定义数据处理配置，满足不同的数据处理需求。
 
@@ -1245,8 +1235,6 @@ PhonePC/2in1TabletTVWearable
 
 ## AppEventReportConfig11+
 
-PhonePC/2in1TabletTVWearable
-
 数据处理者可以上报事件的描述配置。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -1260,8 +1248,6 @@ PhonePC/2in1TabletTVWearable
 | isRealTime | boolean | 否 | 是 | 是否实时上报事件。默认值为false，配置值为true表示实时上报事件，false表示不实时上报事件。 |
 
 ## ParamType12+
-
-PhonePC/2in1TabletTVWearable
 
 type ParamType = number | string | boolean | Array<string>
 
@@ -1280,8 +1266,6 @@ type ParamType = number | string | boolean | Array<string>
 
 ## EventType
 
-PhonePC/2in1TabletTVWearable
-
 事件类型枚举。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -1295,9 +1279,9 @@ PhonePC/2in1TabletTVWearable
 | SECURITY | 3 | 安全类型事件。 |
 | BEHAVIOR | 4 | 行为类型事件。 |
 
-## hiAppEvent.domain11+
+## domain11+
 
-PhonePC/2in1TabletTVWearable
+### 常量
 
 提供领域名称常量。
 
@@ -1309,13 +1293,9 @@ PhonePC/2in1TabletTVWearable
 | --- | --- | --- | --- |
 | OS | string | 是 | 系统领域。 |
 
-## hiAppEvent.event
-
-PhonePC/2in1TabletTVWearable
+## event
 
 ### 常量
-
-PhonePC/2in1TabletTVWearable
 
 提供事件名称常量。包含系统事件名称常量和应用事件名称常量，其中应用事件名称常量是为开发者在调用[Write](js-apis-hiviewdfx-hiappevent.md#hiappeventwrite-1)接口进行应用事件打点时预留的可选自定义事件名称。
 
@@ -1339,10 +1319,11 @@ PhonePC/2in1TabletTVWearable
 | APP\_HICOLLIE21+ | string | 是 | 应用任务执行超时事件。系统事件名称常量。  **元服务API：** 从API version 21开始，该参数支持在元服务中使用。 |
 | AUDIO\_JANK\_FRAME21+ | string | 是 | 应用音频卡顿事件。系统事件名称常量。  **元服务API：** 从API version 21开始，该参数支持在元服务中使用。 |
 | SCROLL\_ARKWEB\_FLING\_JANK23+ | string | 是 | ArkWeb抛滑丢帧事件。系统事件名称常量。  **元服务API：** 从API version 23开始，该参数支持在元服务中使用。 |
+| appFreezeWarning | string | 是 | 应用冻屏告警事件。系统事件名称常量。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
 
-## hiAppEvent.param
+## param
 
-PhonePC/2in1TabletTVWearable
+### 常量
 
 提供参数名称常量。
 

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-devicesecuritykit-6001
 title: Device Security Kit
-breadcrumb: 版本说明 > HarmonyOS 6.0.0(20) > OS平台能力 > API变更清单 > 6.0.0(20) Beta1引入的API > Device Security Kit
+breadcrumb: 版本说明 > 更多版本 > 6.0.0(20) > OS平台能力 > API变更清单 > 6.0.0(20) Beta1引入的API > Device Security Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:39+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:30+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:383424903bc2024bf21b077c4b71fd2da9f97abd74784362a5c7b8911319716f
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-18
 title: ArkTS文件和TS文件的区别
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > ArkTS文件和TS文件的区别
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:59+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:14+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:4522ed4c8aac08b41f11a26102207a8db482f9f7382eabb34f35833325d5a92b
 ---
 

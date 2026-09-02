@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 构建流水线报错：Failed to request the remote SDK
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 构建流水线报错：Failed to request the remote SDK
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:26+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:15+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:ad39c29ea42912b94bc27a4969ed0cca10f06f309c34e6f3d229e956ea56210d
 ---
 

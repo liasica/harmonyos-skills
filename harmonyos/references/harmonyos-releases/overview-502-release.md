@@ -1,18 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-502-release
 title: 版本概览
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.2(14) > 版本概览
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.2(14) > 版本概览
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:43+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:cbbdf9772d41053f0fefc64b4910e0d404259def98862d194d632e92b9725b71
+scraped_at: 2026-09-02T14:58:51+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:359de815299c2e4fa9ccc28b47a87d6511313025173175363244358ab60fa009
 ---
 
 HarmonyOS 5.0.2(14)在此前发布的HarmonyOS 5.0.1(13)的基础上，以快速迭代的方式新增了一批开发者关注度较高的接口能力，可参见[OS新增和增强特性](os-new-feature-502.md)了解详情。同时DevEco Studio进一步优化增强开发能力，完善规则，可参见[DevEco Studio新增和增强特性](deveco-studio-new-features-502.md)了解详情。
 
 ## 版本信息
 
-说明
+**说明** 
 
 使用正确的配套关系进行应用开发可以获得更流畅的开发体验。
 
@@ -29,7 +29,7 @@ HarmonyOS 5.0.2(14)在此前发布的HarmonyOS 5.0.1(13)的基础上，以快速
 | SDK | Release | HarmonyOS 5.0.2 Release SDK | 基于OpenHarmony SDK Ohos\_sdk\_public 5.0.2.126(API 14 Release) | 2025/02/17 |
 | 基于OpenHarmony SDK Ohos\_sdk\_public 5.0.2.123(API 14 Release) | 2025/01/27 |
 
-说明
+**说明** 
 
 * 系统版本请通过设备的“设置 > *设备名称* > 软件版本”进行查询。可在本页面检查版本更新，以及时升级至最新版本。
 

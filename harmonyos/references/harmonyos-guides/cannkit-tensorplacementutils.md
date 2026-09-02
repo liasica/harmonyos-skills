@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tenso
 title: TensorPlacementUtils
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > TensorPlacementUtils
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:16+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:2127ff78dc39167d97b098559b182825a3c2295fc56fda6aac45045883505897
+scraped_at: 2026-09-02T14:50:40+08:00
+doc_updated_at: 2026-05-12
+content_hash: sha256:f32c65c42f2e10bbfc7d54e3bb56eda32b5158255e481aaf6c3e4b48186171ce
 ---
 
 ## 函数功能
@@ -14,34 +14,34 @@ content_hash: sha256:2127ff78dc39167d97b098559b182825a3c2295fc56fda6aac450458835
 
 ## 函数原型
 
-```
-1. class TensorPlacementUtils {
-2. public:
-3. // 判断Tensor是否位于Device上的内存（包括HBM和P2p内存）
-4. static bool IsOnDevice(TensorPlacement placement) {
-5. return (placement == kOnDeviceHbm) || (placement == kOnDeviceP2p);
-6. }
-7. // 判断Tensor是否位于Host上
-8. static bool IsOnHost(TensorPlacement placement) {
-9. return (placement == kOnHost) || (placement == kFollowing);
-10. }
-11. // 判断Tensor是否位于Host上，且数据紧跟在结构体后面
-12. static bool IsOnHostFollowing(TensorPlacement placement) {
-13. return (placement == kFollowing);
-14. }
-15. // 判断Tensor是否位于Host上，且数据不紧跟在结构体后面
-16. static bool IsOnHostNotFollowing(TensorPlacement placement) {
-17. return (placement == kOnHost);
-18. }
-19. // 判断Tensor是否位于Device上的HBM内存
-20. static bool IsOnDeviceHbm(TensorPlacement placement) {
-21. return (placement == kOnDeviceHbm);
-22. }
-23. // 判断Tensor是否位于Device上的P2p内存
-24. static bool IsOnDeviceP2p(TensorPlacement placement) {
-25. return (placement == kOnDeviceP2p);
-26. }
-27. };
+```cpp
+class TensorPlacementUtils {
+ public:
+  // 判断Tensor是否位于Device上的内存（包括HBM和P2p内存）
+  static bool IsOnDevice(TensorPlacement placement) {
+    return (placement == kOnDeviceHbm) || (placement == kOnDeviceP2p);
+  }
+  // 判断Tensor是否位于Host上
+  static bool IsOnHost(TensorPlacement placement) {
+    return (placement == kOnHost) || (placement == kFollowing);
+  }
+  // 判断Tensor是否位于Host上，且数据紧跟在结构体后面
+  static bool IsOnHostFollowing(TensorPlacement placement) {
+    return (placement == kFollowing);
+  }
+  // 判断Tensor是否位于Host上，且数据不紧跟在结构体后面
+  static bool IsOnHostNotFollowing(TensorPlacement placement) {
+    return (placement == kOnHost);
+  }
+  // 判断Tensor是否位于Device上的HBM内存
+  static bool IsOnDeviceHbm(TensorPlacement placement) {
+    return (placement == kOnDeviceHbm);
+  }
+  // 判断Tensor是否位于Device上的P2p内存
+  static bool IsOnDeviceP2p(TensorPlacement placement) {
+    return (placement == kOnDeviceP2p);
+  }
+};
 ```
 
 ## 参数说明
@@ -61,8 +61,8 @@ content_hash: sha256:2127ff78dc39167d97b098559b182825a3c2295fc56fda6aac450458835
 
 ## 调用示例
 
-```
-1. TensorData tensor_data;
-2. tensor_data.SetPlacement(TensorPlacement::kOnDeviceHbm);
-3. auto on_device = TensorPlacementUtils::IsOnDevice(tensor_data.GetPlacement()); // on_device is true
+```cpp
+TensorData tensor_data;
+tensor_data.SetPlacement(TensorPlacement::kOnDeviceHbm);
+auto on_device = TensorPlacementUtils::IsOnDevice(tensor_data.GetPlacement()); // on_device为true
 ```

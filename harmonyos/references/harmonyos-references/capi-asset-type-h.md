@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-asse
 title: asset_type.h
 breadcrumb: API参考 > 系统 > 安全 > Asset Store Kit（关键资产存储服务） > C API > 头文件 > asset_type.h
 category: harmonyos-references
-scraped_at: 2026-04-29T13:57:17+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:387d6dc484934f413d5b1a46f4c7dca7b0de34d22a2713a95e1fda41a84966fe
+scraped_at: 2026-09-02T15:01:40+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e14602f47c878b596f69ef7039b54964d5c16c7fc62de5b200fc48fa22ea0666
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义关键资产存储服务中通用的枚举值、数据结构和错误码。
 
@@ -26,30 +24,24 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [Asset\_Blob](capi-assettype-asset-blob.md) | Asset\_Blob | 二进制数组类型，即不定长的字节数组。 |
-| [Asset\_Value](capi-assettype-asset-value.md) | Asset\_Value | 关键资产属性内容。 |
-| [Asset\_Attr](capi-assettype-asset-attr.md) | Asset\_Attr | 关键资产属性。 |
-| [Asset\_Result](capi-assettype-asset-result.md) | Asset\_Result | 关键资产查询结果，用于定义一条关键资产。 |
-| [Asset\_ResultSet](capi-assettype-asset-resultset.md) | Asset\_ResultSet | 关键资产查询结果集合，用于定义多条关键资产。 |
+| [Asset\_Value](capi-assettype-asset-value.md) | Asset\_Value | 关键资产属性的值（内容）。 |
+| [Asset\_Attr](capi-assettype-asset-attr.md) | Asset\_Attr | 关键资产属性，属性由标签和值组成，以键值对的形式存在。 |
+| [Asset\_Result](capi-assettype-asset-result.md) | Asset\_Result | 单条关键资产的查询结果。 |
+| [Asset\_ResultSet](capi-assettype-asset-resultset.md) | Asset\_ResultSet | 多条关键资产的查询结果。 |
 | [Asset\_SyncResult](capi-assettype-asset-syncresult.md) | Asset\_SyncResult | 关键资产同步结果。 |
 
 ### 枚举
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| [Asset\_TagType](capi-asset-type-h.md#asset_tagtype) | Asset\_TagType | 关键资产属性的类型定义。 |
-| [Asset\_Tag](capi-asset-type-h.md#asset_tag) | Asset\_Tag | 关键资产属性的名称。 |
-| [Asset\_ResultCode](capi-asset-type-h.md#asset_resultcode) | Asset\_ResultCode | 调用ASSET返回的结果码。 |
+| [Asset\_TagType](capi-asset-type-h.md#asset_tagtype) | Asset\_TagType | 关键资产属性标签的类型。 |
+| [Asset\_Tag](capi-asset-type-h.md#asset_tag) | Asset\_Tag | 关键资产属性的标签。 |
+| [Asset\_ResultCode](capi-asset-type-h.md#asset_resultcode) | Asset\_ResultCode | ASSET API使用的结果码。 |
 | [Asset\_Accessibility](capi-asset-type-h.md#asset_accessibility) | Asset\_Accessibility | 基于锁屏状态的访问控制类型。 |
 | [Asset\_AuthType](capi-asset-type-h.md#asset_authtype) | Asset\_AuthType | 关键资产支持的用户认证类型。 |
 | [Asset\_SyncType](capi-asset-type-h.md#asset_synctype) | Asset\_SyncType | 关键资产支持的同步类型。 |
@@ -60,47 +52,39 @@ PhonePC/2in1TabletTVWearable
 
 ### 宏定义
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 描述 |
 | --- | --- |
 | ASSET\_TAG\_TYPE\_MASK (0xF << 28) | 用于获取关键资产属性类型的掩码。  **起始版本：** 11 |
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### Asset\_TagType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Asset_TagType
+```c
+enum Asset_TagType
 ```
 
 **描述**
 
-关键资产属性的类型定义。
+关键资产属性标签的类型。
 
 **起始版本：** 11
 
 | 枚举项 | 描述 |
 | --- | --- |
-| ASSET\_TYPE\_BOOL = 0x1 << 28 | 标识关键资产属性的类型是bool。 |
-| ASSET\_TYPE\_NUMBER = 0x2 << 28 | 标识关键资产属性的类型是uint32\_t。 |
-| ASSET\_TYPE\_BYTES = 0x3 << 28 | 标识关键资产属性的类型是byte数组。 |
+| ASSET\_TYPE\_BOOL = 0x1 << 28 | 表示关键资产属性的类型是bool。 |
+| ASSET\_TYPE\_NUMBER = 0x2 << 28 | 表示关键资产属性的类型是uint32\_t。 |
+| ASSET\_TYPE\_BYTES = 0x3 << 28 | 表示关键资产属性的类型是byte数组。 |
 
 ### Asset\_Tag
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Asset_Tag
+```c
+enum Asset_Tag
 ```
 
 **描述**
 
-关键资产属性的名称。
+关键资产属性的标签。
 
 **起始版本：** 11
 
@@ -109,13 +93,13 @@ PhonePC/2in1TabletTVWearable
 | ASSET\_TAG\_SECRET = ASSET\_TYPE\_BYTES | 0x01 | 表示用户敏感数据，如口令、令牌等，其值为bytes类型。 |
 | ASSET\_TAG\_ALIAS = ASSET\_TYPE\_BYTES | 0x02 | 表示一个关键资产的标识，其值为bytes类型。 |
 | ASSET\_TAG\_ACCESSIBILITY = ASSET\_TYPE\_NUMBER | 0x03 | 表示关键资产何时可访问，其值为uint32\_t类型。 |
-| ASSET\_TAG\_REQUIRE\_PASSWORD\_SET = ASSET\_TYPE\_BOOL | 0x04 | 表示关键资产是否在设备是否设置了锁屏密码时可用，其值为bool类型。 |
+| ASSET\_TAG\_REQUIRE\_PASSWORD\_SET = ASSET\_TYPE\_BOOL | 0x04 | 表示关键资产是否在设备设置了锁屏密码时可用，其值为bool类型。true表示仅在设置了锁屏密码时可访问，false表示不受锁屏密码限制。 |
 | ASSET\_TAG\_AUTH\_TYPE = ASSET\_TYPE\_NUMBER | 0x05 | 表示关键资产需要的用户认证类型，其值为uint32\_t类型。 |
 | ASSET\_TAG\_AUTH\_VALIDITY\_PERIOD = ASSET\_TYPE\_NUMBER | 0x06 | 表示用户认证的有效时间，其值为uint32\_t类型，单位为秒。 |
 | ASSET\_TAG\_AUTH\_CHALLENGE = ASSET\_TYPE\_BYTES | 0x07 | 表示认证时防重放用的挑战值，其值为bytes类型。 |
 | ASSET\_TAG\_AUTH\_TOKEN = ASSET\_TYPE\_BYTES | 0x08 | 表示用户认证后获取到的认证令牌，其值为bytes类型。 |
 | ASSET\_TAG\_SYNC\_TYPE = ASSET\_TYPE\_NUMBER | 0x10 | 表示关键资产的同步类型，其值为uint32\_t类型。 |
-| ASSET\_TAG\_IS\_PERSISTENT = ASSET\_TYPE\_BOOL | 0x11 | 表示关键资产是否需持久化存储，其值为bool类型。  在调用OH\_Asset\_Add函数时传入该属性需要校验权限ohos.permission.STORE\_PERSISTENT\_DATA，该权限申请方式请参考[声明权限](../harmonyos-guides/declare-permissions.md)。 |
+| ASSET\_TAG\_IS\_PERSISTENT = ASSET\_TYPE\_BOOL | 0x11 | 表示关键资产是否需持久化存储，其值为bool类型。true表示应用卸载时保留关键资产，false表示不保留关键资产。在调用OH\_Asset\_Add函数时传入该属性需要校验权限ohos.permission.STORE\_PERSISTENT\_DATA，申请方式请参考[声明权限](../harmonyos-guides/declare-permissions.md)。 |
 | ASSET\_TAG\_DATA\_LABEL\_CRITICAL\_1 = ASSET\_TYPE\_BYTES | 0x20 | 表示一个用户可自定义传入的字段，该字段不可被更新，其值为bytes类型。 |
 | ASSET\_TAG\_DATA\_LABEL\_CRITICAL\_2 = ASSET\_TYPE\_BYTES | 0x21 | 表示一个用户可自定义传入的字段，该字段不可被更新，其值为bytes类型。 |
 | ASSET\_TAG\_DATA\_LABEL\_CRITICAL\_3 = ASSET\_TYPE\_BYTES | 0x22 | 表示一个用户可自定义传入的字段，该字段不可被更新，其值为bytes类型。 |
@@ -135,21 +119,19 @@ PhonePC/2in1TabletTVWearable
 | ASSET\_TAG\_CONFLICT\_RESOLUTION = ASSET\_TYPE\_NUMBER | 0x44 | 表示增加关键资产时的冲突处理策略，其值为uint32\_t类型。 |
 | ASSET\_TAG\_UPDATE\_TIME = ASSET\_TYPE\_BYTES | 0x45 | 表示关键资产的更新时间（时间戳形式），其值为bytes类型。  **起始版本：** 12 |
 | ASSET\_TAG\_OPERATION\_TYPE = ASSET\_TYPE\_NUMBER | 0x46 | 表示附加的操作类型，其值为uint32\_t类型。  **起始版本：** 12 |
-| ASSET\_TAG\_REQUIRE\_ATTR\_ENCRYPTED = ASSET\_TYPE\_BOOL | 0x47 | 表示是否加密业务自定义附属信息，其值为bool类型。  **起始版本：** 14 |
+| ASSET\_TAG\_REQUIRE\_ATTR\_ENCRYPTED = ASSET\_TYPE\_BOOL | 0x47 | 表示是否加密业务自定义附属信息，其值为bool类型。true表示加密业务自定义附属信息，false表示不加密。  **起始版本：** 14 |
 | ASSET\_TAG\_GROUP\_ID = ASSET\_TYPE\_BYTES | 0x48 | 表示关键资产所属群组，其值为bytes类型。  **起始版本：** 18 |
 | ASSET\_TAG\_WRAP\_TYPE = ASSET\_TYPE\_NUMBER | 0x49 | 表示关键资产支持的加密导入导出类型，其值为uint32\_t类型。  **起始版本：** 18 |
 
 ### Asset\_ResultCode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Asset_ResultCode
+```c
+enum Asset_ResultCode
 ```
 
 **描述**
 
-调用ASSET返回的结果码。
+ASSET API使用的结果码。
 
 **起始版本：** 11
 
@@ -179,10 +161,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Asset\_Accessibility
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Asset_Accessibility
+```c
+enum Asset_Accessibility
 ```
 
 **描述**
@@ -199,10 +179,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Asset\_AuthType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Asset_AuthType
+```c
+enum Asset_AuthType
 ```
 
 **描述**
@@ -218,10 +196,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Asset\_SyncType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Asset_SyncType
+```c
+enum Asset_SyncType
 ```
 
 **描述**
@@ -239,10 +215,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Asset\_WrapType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Asset_WrapType
+```c
+enum Asset_WrapType
 ```
 
 **描述**
@@ -258,10 +232,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Asset\_ConflictResolution
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Asset_ConflictResolution
+```c
+enum Asset_ConflictResolution
 ```
 
 **描述**
@@ -277,10 +249,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Asset\_ReturnType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Asset_ReturnType
+```c
+enum Asset_ReturnType
 ```
 
 **描述**
@@ -296,10 +266,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Asset\_OperationType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Asset_OperationType
+```c
+enum Asset_OperationType
 ```
 
 **描述**

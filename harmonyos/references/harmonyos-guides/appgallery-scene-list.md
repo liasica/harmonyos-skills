@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-sc
 title: 场景值
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 附录 > 场景值
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:30+08:00
+scraped_at: 2026-09-02T14:59:53+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:65ce1212678d37a70c04a26d295bb0e92d352c24774dd0592dc63f66f42bc7e4
+content_hash: sha256:ea479441026329e1a47db9ceb6bc69cf5cd45d183fb56538243dccd7dc1aa9c6
 ---
 
 ## 元服务场景值
@@ -18,7 +18,7 @@ content_hash: sha256:65ce1212678d37a70c04a26d295bb0e92d352c24774dd0592dc63f66f42
 
 各场景值ID和场景说明的对应关系如下表所示。
 
-说明
+**说明** 
 
 如果需要查看场景值对应的场景图例，请点击下表中“图例”列的缩略图查看。
 

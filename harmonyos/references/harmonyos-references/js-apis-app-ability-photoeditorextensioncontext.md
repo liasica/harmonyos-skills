@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: PhotoEditorExtensionContext
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > application > PhotoEditorExtensionContext
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:44+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:bb17a1316e07251cbe8ad84608525c0d9fb0847a3aa78ec6724495ce3c107aaa
+scraped_at: 2026-09-02T15:00:35+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ad5d7c14cf130e1df571307a8610c132f1c94b94537ec3d8b018e72464045f11
 ---
 
 PhotoEditorExtensionContext是PhotoEditorExtensionAbility的上下文，继承自ExtensionContext，提供PhotoEditorExtensionAbility的相关配置信息以及保存图片接口。
 
-说明
+**说明** 
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -20,15 +20,11 @@ PhotoEditorExtensionContext是PhotoEditorExtensionAbility的上下文，继承�
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { common } from '@kit.AbilityKit';
+```ts
+import { common } from '@kit.AbilityKit';
 ```
 
 ## PhotoEditorExtensionContext.saveEditedContentWithUri
-
-PhonePC/2in1TabletTV
 
 saveEditedContentWithUri(uri: string): Promise<AbilityResult>
 
@@ -63,66 +59,64 @@ saveEditedContentWithUri(uri: string): Promise<AbilityResult>
 
 **示例：**
 
-```
-1. import { common, UIExtensionContentSession, Want } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { fileIo } from '@kit.CoreFileKit';
-4. import { image } from '@kit.ImageKit';
-5. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { common, UIExtensionContentSession, Want } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { fileIo } from '@kit.CoreFileKit';
+import { image } from '@kit.ImageKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-7. const TAG = '[ExamplePhotoEditorAbility]';
+const TAG = '[ExamplePhotoEditorAbility]';
 
-9. @Entry
-10. @Component
-11. struct Index {
-12. // 原始图片
-13. @State originalImage: PixelMap | null = null;
+@Entry
+@Component
+struct Index {
+  // 原始图片
+  @State originalImage: PixelMap | null = null;
 
-15. build() {
-16. Row() {
-17. Column() {
-18. Button('RotateAndSaveImg').onClick(event => {
-19. hilog.info(0x0000, TAG, `Start to edit image and save.`);
+  build() {
+    Row() {
+      Column() {
+        Button('RotateAndSaveImg').onClick(event => {
+          hilog.info(0x0000, TAG, `Start to edit image and save.`);
 
-21. this.originalImage?.rotate(90).then(() => {
-22. const imagePackerApi: image.ImagePacker = image.createImagePacker();
-23. let packOpts: image.PackingOption = { format: 'image/jpeg', quality: 98 };
-24. imagePackerApi.packToData(this.originalImage, packOpts).then((data: ArrayBuffer) => {
-25. let context = this.getUIContext().getHostContext() as common.PhotoEditorExtensionContext;
-26. let filePath = context.filesDir + '/edited.jpg';
-27. let file: fileIo.File | undefined;
-28. try{
-29. file = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE
-30. | fileIo.OpenMode.CREATE | fileIo.OpenMode.TRUNC);
-31. let writeLen = fileIo.writeSync(file.fd, data);
-32. hilog.info(0x0000, TAG, 'write data to file succeed and size is:'
-33. + writeLen);
-34. fileIo.closeSync(file);
-35. context.saveEditedContentWithUri(filePath).then
-36. (data => {
-37. hilog.info(0x0000, TAG,
-38. `saveContentEditingWithUri result: ${JSON.stringify(data)}`);
-39. });
-40. } catch (e) {
-41. hilog.info(0x0000, TAG, `writeImage failed:${e}`);
-42. } finally {
-43. fileIo.close(file);
-44. }
-45. }).catch((error: BusinessError) => {
-46. hilog.error(0x0000, TAG,
-47. 'Failed to pack the image. And the error is: ' + String(error));
-48. })
-49. })
-50. }).margin({ top: 10 })
-51. }
-52. }
-53. }
-54. }
+          this.originalImage?.rotate(90).then(() => {
+            const imagePackerApi: image.ImagePacker = image.createImagePacker();
+            let packOpts: image.PackingOption = { format: 'image/jpeg', quality: 98 };
+            imagePackerApi.packToData(this.originalImage, packOpts).then((data: ArrayBuffer) => {
+              let context = this.getUIContext().getHostContext() as common.PhotoEditorExtensionContext;
+              let filePath = context.filesDir + '/edited.jpg';
+              let file: fileIo.File | undefined;
+              try{
+                file = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE
+                | fileIo.OpenMode.CREATE | fileIo.OpenMode.TRUNC);
+                let writeLen = fileIo.writeSync(file.fd, data);
+                hilog.info(0x0000, TAG, 'write data to file succeed and size is:'
+                  + writeLen);
+                fileIo.closeSync(file);
+                context.saveEditedContentWithUri(filePath).then
+                  (data => {
+                    hilog.info(0x0000, TAG,
+                      `saveContentEditingWithUri result: ${JSON.stringify(data)}`);
+                  });
+              } catch (e) {
+                hilog.info(0x0000, TAG, `writeImage failed:${e}`);
+              } finally {
+                fileIo.close(file);
+              }
+            }).catch((error: BusinessError) => {
+              hilog.error(0x0000, TAG,
+                'Failed to pack the image. And the error is: ' + String(error));
+            })
+          })
+        }).margin({ top: 10 })
+      }
+    }
+  }
+}
 ```
 
 ## PhotoEditorExtensionContext.saveEditedContentWithImage
-
-PhonePC/2in1TabletTV
 
 saveEditedContentWithImage(pixeMap: image.PixelMap, option: image.PackingOption): Promise<AbilityResult>
 
@@ -158,42 +152,42 @@ saveEditedContentWithImage(pixeMap: image.PixelMap, option: image.PackingOption)
 
 **示例：**
 
-```
-1. import { common, UIExtensionContentSession, Want } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { image } from '@kit.ImageKit';
+```ts
+import { common, UIExtensionContentSession, Want } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { image } from '@kit.ImageKit';
 
-5. const TAG = '[ExamplePhotoEditorAbility]';
+const TAG = '[ExamplePhotoEditorAbility]';
 
-7. @Entry
-8. @Component
-9. struct Index {
-10. // 原始图片
-11. @State originalImage: PixelMap | null = null;
+@Entry
+@Component
+struct Index {
+  // 原始图片
+  @State originalImage: PixelMap | null = null;
 
-13. build() {
-14. Row() {
-15. Column() {
-16. Button('RotateAndSaveImg').onClick(event => {
-17. hilog.info(0x0000, TAG, `Start to edit image and save.`);
+  build() {
+    Row() {
+      Column() {
+        Button('RotateAndSaveImg').onClick(event => {
+          hilog.info(0x0000, TAG, `Start to edit image and save.`);
 
-19. this.originalImage?.rotate(90).then(() => {
-20. let packOpts: image.PackingOption = { format: 'image/jpeg', quality: 98 };
-21. try {
-22. let context = this.getUIContext().getHostContext() as common.PhotoEditorExtensionContext;
-23. context.saveEditedContentWithImage(this.originalImage as image.PixelMap,
-24. packOpts).then(data => {
-25. hilog.info(0x0000, TAG,
-26. `saveContentEditingWithImage result: ${JSON.stringify(data)}`);
-27. });
-28. } catch (e) {
-29. hilog.error(0x0000, TAG, `saveContentEditingWithImage failed:${e}`);
-30. return;
-31. }
-32. })
-33. }).margin({ top: 10 })
-34. }
-35. }
-36. }
-37. }
+          this.originalImage?.rotate(90).then(() => {
+            let packOpts: image.PackingOption = { format: 'image/jpeg', quality: 98 };
+            try {
+              let context = this.getUIContext().getHostContext() as common.PhotoEditorExtensionContext;
+              context.saveEditedContentWithImage(this.originalImage as image.PixelMap,
+                packOpts).then(data => {
+                  hilog.info(0x0000, TAG,
+                    `saveContentEditingWithImage result: ${JSON.stringify(data)}`);
+                });
+            } catch (e) {
+              hilog.error(0x0000, TAG, `saveContentEditingWithImage failed:${e}`);
+              return;
+            }
+          })
+        }).margin({ top: 10 })
+      }
+    }
+  }
+}
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-zero-
 title: 内存零拷贝
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部署 > 内存零拷贝
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:40:59+08:00
+scraped_at: 2026-09-02T15:00:04+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:aa10b8a1fe297dc786c51f59f7282657276c897f84ff00152e40ab74dfbb4f42
+content_hash: sha256:b754b17b70d9a1e8055719a2bb136d27b6ae3c2411d15ba18963aaf047483476
 ---
 
 ## 概述
@@ -16,6 +16,6 @@ content_hash: sha256:aa10b8a1fe297dc786c51f59f7282657276c897f84ff00152e40ab74dfb
 
 对于零拷贝使用场景，在模型加载完成后，使用[OH\_NNTensor\_CreateWithFd](../harmonyos-references/capi-neural-network-core-h.md#oh_nntensor_createwithfd)，将ION内存封装为输入张量“input\_tensor”，输出张量"output\_tensor"，执行推理。
 
-说明
+**说明** 
 
-若size为模型输出大小，对于输出张量，建议开发者申请ION内存的大小为![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/L_Uvuox9ROaeI52fa_4ckw/zh-cn_image_0000002558606066.png)。
+若size为模型输出大小，对于输出张量，建议开发者申请ION内存的大小为![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/KSwd1-IFTPGXFqz993egzQ/zh-cn_image_0000002736314391.png)。

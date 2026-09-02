@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-88
-title: Webview accessBackward不符合预期的可能情况
-breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Webview accessBackward不符合预期的可能情况
+title: Webview设置UA的时候为什么accessBackward返回都是false
+breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Webview设置UA的时候为什么accessBackward返回都是false
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:50+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:54+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:a75fcc864db132b9de54bdaa5a35e876f23cc7f1b88900bb2c750954b0b989f4
 ---
 

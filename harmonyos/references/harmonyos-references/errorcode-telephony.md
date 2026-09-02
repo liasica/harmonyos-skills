@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 电话子系统错误码
 breadcrumb: API参考 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > 错误码 > 电话子系统错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:23+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:5e29d440f5bc905b8a856e4767da3ef10b5573edd2c644f78cb69d2e25dc2ae8
+scraped_at: 2026-09-02T15:02:00+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:12b8a2c28e65a748d3d64730a9fa11cce5803eba4999e267ef77ea55c730005f
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 8300001 输入参数不在处理范围内
-
-PhonePC/2in1TabletWearable
 
 **错误信息**
 
@@ -34,8 +32,6 @@ The input parameter value is out of range.
 
 ## 8300002 服务连接失败
 
-PhonePC/2in1TabletWearable
-
 **错误信息**
 
 Service connection failed.
@@ -52,9 +48,25 @@ Service connection failed.
 
 本次操作异常，请稍后重试。
 
-## 8300003 系统内部错误
+### 无企业来电权限
 
-PhonePC/2in1TabletWearable
+**错误信息**
+
+The enterprise permission is not verified.
+
+**错误描述**
+
+无企业来电权限。
+
+**可能原因**
+
+可能没有申请企业来电权限。
+
+**处理步骤**
+
+通过[申请接入](../harmonyos-guides/callservice-enterprise-contact-display.md#申请接入)申请企业来电权限，或通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题，华为支持人员会及时处理。
+
+## 8300003 系统内部错误
 
 **错误信息**
 
@@ -74,8 +86,6 @@ System internal error.
 
 ## 8300004 未识别SIM卡
 
-PhoneTabletWearable
-
 **错误信息**
 
 No SIM card found.
@@ -94,8 +104,6 @@ No SIM card found.
 
 ## 8300999 内部错误
 
-PhonePC/2in1TabletWearable
-
 **错误信息**
 
 Internal error.
@@ -110,11 +118,9 @@ Internal error.
 
 **处理步骤**
 
-操作异常，请稍后再试。
+本次操作异常，请稍后重试。
 
 ## 8301001 SIM卡未激活
-
-PhoneTabletWearable
 
 **错误信息**
 
@@ -133,8 +139,6 @@ SIM卡未激活。
 请激活SIM卡。
 
 ## 8301002 SIM卡读取数据或者更新数据失败
-
-PhoneTabletWearable
 
 **错误信息**
 
@@ -188,9 +192,43 @@ UT未连接。
 
 断开Wi-Fi，再重发UT请求。
 
-## 3120001 服务连接失败
+## 8401002 输入号码错误
 
-PhoneWearable
+**错误信息**
+
+Invalid input call number.
+
+**错误描述**
+
+输入的号码不合法。
+
+**可能原因**
+
+用户查询卡A的呼叫转移状态，当前卡A并未插在当前手机内。
+
+**处理步骤**
+
+将卡A插入当前手机内。
+
+## 8401003 操作频繁
+
+**错误信息**
+
+Operation too frequent.
+
+**错误描述**
+
+操作过于频繁。
+
+**可能原因**
+
+在30s内连续查询同一类型的呼叫转移状态。
+
+**处理步骤**
+
+30s后重新操作。
+
+## 3120001 服务连接失败
 
 **错误信息**
 
@@ -210,8 +248,6 @@ Service connection failed.
 
 ## 3120002 系统内部错误
 
-PhoneWearable
-
 **错误信息**
 
 System internal error.
@@ -229,8 +265,6 @@ System internal error.
 本次操作异常，请稍后重试。
 
 ## 8800001 输入参数不在处理范围内
-
-PhoneTabletWearable
 
 **错误信息**
 
@@ -250,8 +284,6 @@ The input parameter value is out of range.
 
 ## 8800002 服务连接失败
 
-PhoneTabletWearable
-
 **错误信息**
 
 Service connection failed.
@@ -269,8 +301,6 @@ Service connection failed.
 本次操作异常，请稍后重试。
 
 ## 8800003 系统内部错误
-
-PhoneTabletWearable
 
 **错误信息**
 
@@ -290,8 +320,6 @@ System internal error.
 
 ## 8800999 内部错误
 
-PhoneTabletWearable
-
 **错误信息**
 
 Internal error.
@@ -306,4 +334,4 @@ Internal error.
 
 **处理步骤**
 
-操作异常，请稍后再试。
+本次操作异常，请稍后重试。

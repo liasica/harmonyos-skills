@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: OhosImageSourceUpdateData
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 结构体 > OhosImageSourceUpdateData
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:35+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:619f7911932e6678a74085ae76a1f1d571d0df2c6dbc05789c9d2b8562f39bd2
+scraped_at: 2026-09-02T15:02:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:afe06e454e5249b916d4967a5b9c89a356db3b7d55028d251e0e8e597d2e638e
 ---
 
-```
-1. struct OhosImageSourceUpdateData {...}
+```c
+struct OhosImageSourceUpdateData {...}
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义图像源更新数据选项，由[OH\_ImageSource\_UpdateData](capi-image-source-mdk-h.md#oh_imagesource_updatedata)获取。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

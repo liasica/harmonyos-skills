@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_i_d_o2
 title: FIDO2_PublicKeyCredentialUserEntity
 breadcrumb: API参考 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > C API > 结构体 > FIDO2_PublicKeyCredentialUserEntity
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:33+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:2337ff0f0f9d991a6e58c975895b98420ac8a5c1b5d52bf4117cb1241a731dd6
+scraped_at: 2026-09-02T15:01:45+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:59402f5b1088c3863306f0510ebc4aeb29e0f3545a7557df7d797caea065cf09
 ---
 
 ## 概述
@@ -14,7 +14,9 @@ content_hash: sha256:2337ff0f0f9d991a6e58c975895b98420ac8a5c1b5d52bf4117cb1241a7
 
 **起始版本：** 6.0.0(20)
 
-**相关模块：** [FIDO2](passkey.md)
+**相关模块：** [FIDO2（通行密钥服务）](passkey.md)
+
+**所在头文件：** [fido2\_api.h](onlineauthentication_capi_header_fido2.md)
 
 ## 汇总
 
@@ -23,15 +25,15 @@ content_hash: sha256:2337ff0f0f9d991a6e58c975895b98420ac8a5c1b5d52bf4117cb1241a7
 | 名称 | 描述 |
 | --- | --- |
 | [Uint8Buff](_uint8_buff.md) [id](_f_i_d_o2___public_key_credential_user_entity.md#id) | 凭据的标识符。 |
-| char \* [displayName](_f_i_d_o2___public_key_credential_user_entity.md#displayname) | 前台显示的用户名。 |
-| char \* [name](_f_i_d_o2___public_key_credential_user_entity.md#name) | 用户名。 |
+| char \* [displayName](_f_i_d_o2___public_key_credential_user_entity.md#displayname) | 前台显示的用户名。长度限制0到512。 |
+| char \* [name](_f_i_d_o2___public_key_credential_user_entity.md#name) | 用户名。长度限制0到512。 |
 
 ## 结构体成员变量说明
 
 ### displayName
 
-```
-1. char* FIDO2_PublicKeyCredentialUserEntity::displayName
+```cpp
+char* FIDO2_PublicKeyCredentialUserEntity::displayName
 ```
 
 **描述**
@@ -40,8 +42,8 @@ content_hash: sha256:2337ff0f0f9d991a6e58c975895b98420ac8a5c1b5d52bf4117cb1241a7
 
 ### id
 
-```
-1. Uint8Buff FIDO2_PublicKeyCredentialUserEntity::id
+```cpp
+Uint8Buff FIDO2_PublicKeyCredentialUserEntity::id
 ```
 
 **描述**
@@ -50,8 +52,8 @@ content_hash: sha256:2337ff0f0f9d991a6e58c975895b98420ac8a5c1b5d52bf4117cb1241a7
 
 ### name
 
-```
-1. char* FIDO2_PublicKeyCredentialUserEntity::name
+```cpp
+char* FIDO2_PublicKeyCredentialUserEntity::name
 ```
 
 **描述**

@@ -3,16 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_g___co
 title: FG_ContextDescription_VK
 breadcrumb: API参考 > 图形 > Graphics Accelerate Kit（图形加速服务） > C API > 头文件和结构体 > 结构体 > FG_ContextDescription_VK
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:45+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:56dd7ff7c3e75e13ddfa80708e83012d5bf6f59e9c48a44a95f984fabfcb18bc
+scraped_at: 2026-09-02T15:02:47+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6f61200c84554366336ce288462d76ac5e1a9e832bed0428f4a1547bdcf59821
 ---
 
 ## 概述
 
-PhoneTabletTV
-
-此结构体描述创建超帧上下文实例[FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)所需的属性信息。
+此结构体描述创建超帧上下文实例[FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)所需的属性信息，该接口仅适配Vulkan图形API平台。
 
 **起始版本：** 5.0.0(12)
 
@@ -22,11 +20,7 @@ PhoneTabletTV
 
 ## 汇总
 
-PhoneTabletTV
-
 ### 成员变量
-
-PhoneTabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -38,14 +32,10 @@ PhoneTabletTV
 
 ## 结构体成员变量说明
 
-PhoneTabletTV
-
 ### fnVulkanLoaderFunction
 
-PhoneTabletTV
-
-```
-1. PFN_vkGetInstanceProcAddr FG_ContextDescription_VK::fnVulkanLoaderFunction
+```c
+PFN_vkGetInstanceProcAddr FG_ContextDescription_VK::fnVulkanLoaderFunction
 ```
 
 **描述**
@@ -54,10 +44,8 @@ PhoneTabletTV
 
 ### framesInFlight
 
-PhoneTabletTV
-
-```
-1. uint8_t FG_ContextDescription_VK::framesInFlight
+```c
+uint8_t FG_ContextDescription_VK::framesInFlight
 ```
 
 **描述**
@@ -66,10 +54,8 @@ PhoneTabletTV
 
 ### vkDevice
 
-PhoneTabletTV
-
-```
-1. VkDevice FG_ContextDescription_VK::vkDevice
+```c
+VkDevice FG_ContextDescription_VK::vkDevice
 ```
 
 **描述**
@@ -78,22 +64,18 @@ Vulkan逻辑设备句柄，需在[FG\_Context\_VK](_graphics_accelerate.md#fg_co
 
 ### vkInstance
 
-PhoneTabletTV
-
-```
-1. VkInstance FG_ContextDescription_VK::vkInstance
+```c
+VkInstance FG_ContextDescription_VK::vkInstance
 ```
 
 **描述**
 
-Vulkan实例, 需在[FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)的整个生命周期内有效。
+Vulkan实例，需在[FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)的整个生命周期内有效。
 
 ### vkPhysicalDevice
 
-PhoneTabletTV
-
-```
-1. VkPhysicalDevice FG_ContextDescription_VK::vkPhysicalDevice
+```c
+VkPhysicalDevice FG_ContextDescription_VK::vkPhysicalDevice
 ```
 
 **描述**

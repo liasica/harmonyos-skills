@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hide
 title: HiDebug_NativeStackFrame
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > C API > 结构体 > HiDebug_NativeStackFrame
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:27+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:91dd119d425f902bcd442099ce0a441e1d570582dd49de707e7c3585c9298f1c
+scraped_at: 2026-09-02T15:02:17+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8e988691c2b7df7691483e5d5177c1ee91af9c617883a60636f8253f9197deff
 ---
 
-```
-1. typedef struct HiDebug_NativeStackFrame {...} HiDebug_NativeStackFrame
+```c
+typedef struct HiDebug_NativeStackFrame {...} HiDebug_NativeStackFrame
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 native栈帧内容的定义。
 
@@ -26,11 +24,7 @@ native栈帧内容的定义。
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

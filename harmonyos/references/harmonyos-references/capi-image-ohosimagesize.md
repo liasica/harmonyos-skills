@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: OhosImageSize
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 结构体 > OhosImageSize
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:31+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:adc3ae6a13429d87836818b00ff06d32f877db52f8e3e83e7232c8c4753d0cea
+scraped_at: 2026-09-02T15:02:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b014d64bda8076db57dbf2a2c425ecfe8a931334ab59770317d0a7aa5d308c6d
 ---
 
-```
-1. struct OhosImageSize {...}
+```c
+struct OhosImageSize {...}
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义图像大小。是[OhosImageDecodingOps](capi-image-ohosimagedecodingops.md)的成员变量。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

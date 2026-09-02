@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-faqs
 title: Health Service Kit常见问题
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > Health Service Kit常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:21+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b8b22a3087b034b8c24dbd627b4430217e8101741fdfc394d40e271aa206bae2
+scraped_at: 2026-09-02T14:50:27+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:c0d0c5d85b85c890b630cdabc420ae7afed87ce938806c788d387fb743836468
 ---
 
 ## 读取今天的日常活动数据统计，与运动健康App页面数据不一致
@@ -38,4 +38,4 @@ content_hash: sha256:b8b22a3087b034b8c24dbd627b4430217e8101741fdfc394d40e271aa20
 调用[canOpenLink](../harmonyos-references/js-apis-bundlemanager.md#bundlemanagercanopenlink12)判断运动健康App是否安装。运动健康App Scheme：huaweischeme://healthapp/home/main。
 
 * App已安装，调用[openLink](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#openlink12)接口拉起运动健康App。运动健康App Scheme：huaweischeme://healthapp/home/main。
-* App未安装，调用[应用市场推荐](store-productview.md#应用详情页展示)接口，引导用户下载运动健康App，运动健康App包名：com.huawei.hmos.health。
+* App未安装，调用[应用市场推荐](appgallery-productview-loadproduct.md)接口，引导用户下载运动健康App，运动健康App包名：com.huawei.hmos.health。

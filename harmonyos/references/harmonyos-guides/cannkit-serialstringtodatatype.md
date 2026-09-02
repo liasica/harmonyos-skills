@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-seria
 title: SerialStringToDataType
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > TypeUtils > SerialStringToDataType
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:11+08:00
+scraped_at: 2026-09-02T14:50:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ac662d039648d6d9d186a400f1f5971cea338b5788d48afd758ebfeee0c4c5ea
+content_hash: sha256:3dff18daf6db12d1bf4624b86dab14e94d129dd4588d2e7d3900dff3d9ffa5f1
 ---
 
 ## 函数功能
@@ -16,14 +16,14 @@ content_hash: sha256:ac662d039648d6d9d186a400f1f5971cea338b5788d48afd758ebfeee0c
 
 使用该接口需要包含type\_utils.h头文件。
 
-```
-1. #include "graph/utils/type_utils.h"
+```cpp
+#include "graph/utils/type_utils.h"
 ```
 
 ## 函数原型
 
-```
-1. DataType SerialStringToDataType(const std::string &str);
+```cpp
+DataType SerialStringToDataType(const std::string &str);
 ```
 
 ## 参数说明
@@ -42,7 +42,7 @@ content_hash: sha256:ac662d039648d6d9d186a400f1f5971cea338b5788d48afd758ebfeee0c
 
 ## 调用示例
 
-```
-1. std::string type_str = "DT_UINT32";
-2. auto data_type = SerialStringToDataType(type_str); // 8
+```cpp
+std::string type_str = "DT_UINT32";
+auto data_type = SerialStringToDataType(type_str); // 8
 ```

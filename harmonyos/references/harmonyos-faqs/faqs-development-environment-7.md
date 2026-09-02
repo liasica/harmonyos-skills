@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: 如何配置DevEco Studio的代理
 breadcrumb: FAQ > DevEco Studio > 环境准备 > 如何配置DevEco Studio的代理
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:20:04+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:4093c029812dad01d8a817eb3b13723b5e050e6748323e3a3cf1aafa2c49b6eb
+scraped_at: 2026-09-02T14:54:52+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:36b25ff7b4f09dcb6320638452a9403bf150ca358c8da574780fb5dbc3fdd705
 ---
 
 DevEco Studio开发环境依赖于网络环境，需要连接上网络才能确保工具的正常使用。
@@ -23,5 +23,5 @@ DevEco Studio开发环境依赖于网络环境，需要连接上网络才能确�
      + **Password**：访问代理服务器的密码。
      + **Remember**：勾选，记住密码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/Qkqo3S1pTxyNWWH0dO5uMg/zh-cn_image_0000002229603741.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/YXvHWiyjRB-2BPH4PtODow/zh-cn_image_0000002624638306.png)
 3. 配置完成后，点击“Check connection”，输入网络地址，检查网络连通性。提示“Connection successful”表示代理设置成功。点击“OK”按钮完成配置。

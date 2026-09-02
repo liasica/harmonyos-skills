@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_audio_suite_base.h
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 头文件 > native_audio_suite_base.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:50+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c5402e7a80ced63f5713c9fde3a12c554574d18b0b8a4191e6947a6905dc45fb
+scraped_at: 2026-09-02T15:02:20+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:fef56be433d2016617cf14dac82cc4f1798bfced23b52cb407fe6fd19f5aa1ea
 ---
 
 ## 概述
-
-PhonePC/2in1Tablet
 
 声明音频编创相关底层数据结构。
 
@@ -26,29 +24,23 @@ PhonePC/2in1Tablet
 
 ## 汇总
 
-PhonePC/2in1Tablet
-
 ### 结构体
-
-PhonePC/2in1Tablet
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [OH\_AudioFormat](capi-ohaudiosuite-oh-audioformat.md) | OH\_AudioFormat | 定义音频编创的音频流信息，用于描述基本音频格式。 |
-| [OH\_AudioDataArray](capi-ohaudiosuite-oh-audiodataarray.md) | OH\_AudioDataArray | 定义多路输出渲染接口的输入数据描述。当管线中存在多输出效果节点时，通过多输出渲染接口获取处理过后的音频数据。 |
+| [OH\_AudioDataArray](capi-ohaudiosuite-oh-audiodataarray.md) | OH\_AudioDataArray | 定义多路输出渲染接口的输出数据描述。当管线中存在多输出效果节点时，通过多输出渲染接口获取处理过后的音频数据。 |
 | [OH\_EqualizerFrequencyBandGains](capi-ohaudiosuite-oh-equalizerfrequencybandgains.md) | OH\_EqualizerFrequencyBandGains | 定义音频编创均衡器效果节点配置参数。 |
-| [OH\_AudioSuite\_SpaceRenderPositionParams](audiosuite-oh-audiosuite-spacerenderpositionparams.md) | OH\_AudioSuite\_SpaceRenderPositionParams | 定义3D空间渲染效果节点固定摆位模式的配置参数。左手坐标系：伸出左手，用拇指和食指形成一个“L”形。  拇指指向右侧，食指向上，其余手指指向前。  此时形成了一个3D的左手坐标系。在这个坐标系中，拇指、食指  和其他手指分别代表x轴、y轴和z轴的正方向。 |
-| [OH\_AudioSuite\_SpaceRenderRotationParams](audiosuite-oh-audiosuite-spacerenderrotationparams.md) | OH\_AudioSuite\_SpaceRenderRotationParams | 定义空间渲染效果节点旋转模式配置参数。 |
-| [OH\_AudioSuite\_SpaceRenderExtensionParams](udiosuite-oh-audiosuite-spacerenderextensionparams.md) | OH\_AudioSuite\_SpaceRenderExtensionParams | 定义空间渲染效果节点扩展模式配置参数。 |
-| [OH\_AudioSuite\_PureVoiceChangeOption](i-ohaudiosuite-oh-audiosuite-purevoicechangeoption.md) | OH\_AudioSuite\_PureVoiceChangeOption | 定义音频编创传统变声选项。 |
+| [OH\_AudioSuite\_SpaceRenderPositionParams](capi-ohaudiosuite-oh-audiosuite-spacerenderpositionparams.md) | OH\_AudioSuite\_SpaceRenderPositionParams | 定义3D空间渲染效果节点固定摆位模式的配置参数。左手坐标系：伸出左手，用拇指和食指形成一个“L”形。  拇指指向右侧，食指向上，其余手指指向前。  此时形成了一个3D的左手坐标系。在这个坐标系中，拇指、食指  和其他手指分别代表x轴、y轴和z轴的正方向。 |
+| [OH\_AudioSuite\_SpaceRenderRotationParams](capi-ohaudiosuite-oh-audiosuite-spacerenderrotationparams.md) | OH\_AudioSuite\_SpaceRenderRotationParams | 定义空间渲染效果节点旋转模式配置参数。 |
+| [OH\_AudioSuite\_SpaceRenderExtensionParams](capi-ohaudiosuite-oh-audiosuite-spacerenderextensionparams.md) | OH\_AudioSuite\_SpaceRenderExtensionParams | 定义空间渲染效果节点扩展模式配置参数。 |
+| [OH\_AudioSuite\_PureVoiceChangeOption](capi-ohaudiosuite-oh-audiosuite-purevoicechangeoption.md) | OH\_AudioSuite\_PureVoiceChangeOption | 定义音频编创传统变声选项。 |
 | [OH\_AudioSuiteEngineStruct](capi-ohaudiosuite-oh-audiosuiteenginestruct.md) | OH\_AudioSuiteEngine | 声明音频编创引擎，用来管理音频编创管线。 |
 | [OH\_AudioSuitePipelineStruct](capi-ohaudiosuite-oh-audiosuitepipelinestruct.md) | OH\_AudioSuitePipeline | 声明音频编创管线，用来管理音频编创节点。 |
 | [OH\_AudioNodeStruct](capi-ohaudiosuite-oh-audionodestruct.md) | OH\_AudioNode | 声明音频编创节点，用于描述音频编创节点实例。 |
-| [OH\_AudioNodeBuilderStruct](capi-ohaudiosuite-oh-audionodebuilderstruct.md) | OH\_AudioNodeBuilder | 声明音频编创节点的构造器。用于构建[OH\_AudioNode](capi-ohaudiosuite-oh-audionodestruct.md)，配置输入输出节点数据格式，配置输入节点回调接口。 |
+| [OH\_AudioNodeBuilderStruct](capi-ohaudiosuite-oh-audionodebuilderstruct.md) | OH\_AudioNodeBuilder | 声明音频编创节点的构造器。用于构建[OH\_AudioNode](capi-ohaudiosuite-oh-audionodestruct.md)，配置输入/输出节点数据格式，配置输入节点回调接口。 |
 
 ### 枚举
-
-PhonePC/2in1Tablet
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -69,16 +61,12 @@ PhonePC/2in1Tablet
 
 ### 宏定义
 
-PhonePC/2in1Tablet
-
 | 名称 | 描述 |
 | --- | --- |
 | EQUALIZER\_BAND\_NUM (10) | 定义均衡器频带数量为10个。  **起始版本：** 22 |
-| OH\_PURE\_VOICE\_DEFAULT\_PITCH (0.0f) | 使用系统推荐的音调。用于[OH\_AudioSuite\_PureVoiceChangeOption](i-ohaudiosuite-oh-audiosuite-purevoicechangeoption.md)。  **起始版本：** 23 |
+| OH\_PURE\_VOICE\_DEFAULT\_PITCH (0.0f) | 使用系统推荐的音调。用于[OH\_AudioSuite\_PureVoiceChangeOption](capi-ohaudiosuite-oh-audiosuite-purevoicechangeoption.md)。  **起始版本：** 23 |
 
 ### 变量
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
@@ -94,14 +82,10 @@ PhonePC/2in1Tablet
 
 ## 枚举类型说明
 
-PhonePC/2in1Tablet
-
 ### OH\_AudioNode\_Type
 
-PhonePC/2in1Tablet
-
-```
-1. enum OH_AudioNode_Type
+```c
+enum OH_AudioNode_Type
 ```
 
 **描述**
@@ -112,26 +96,25 @@ PhonePC/2in1Tablet
 
 | 枚举项 | 描述 |
 | --- | --- |
-| INPUT\_NODE\_TYPE\_DEFAULT = 1 | 输入节点，支持从应用程序获取音频数据。 |
-| OUTPUT\_NODE\_TYPE\_DEFAULT = 101 | 输出节点，支持向应用程序提供音频数据。 |
-| EFFECT\_NODE\_TYPE\_EQUALIZER = 201 | 均衡器效果节点。均衡器效果节点输出的音频格式如下：  采样率：48000Hz。  采样格式：[OH\_Audio\_SampleFormat](capi-native-audio-suite-base-h.md#oh_audio_sampleformat).AUDIO\_SAMPLE\_S16LE。  声道数：2。 |
-| EFFECT\_NODE\_TYPE\_NOISE\_REDUCTION = 202 | 降噪效果节点。降噪效果节点输出的音频格式如下：  采样率：16000Hz。  采样格式：[OH\_Audio\_SampleFormat](capi-native-audio-suite-base-h.md#oh_audio_sampleformat).AUDIO\_SAMPLE\_S16LE。  声道数：1。 |
-| EFFECT\_NODE\_TYPE\_SOUND\_FIELD = 203 | 声场效果节点。声场效果节点支持的声场类型：[OH\_SoundFieldType](capi-native-audio-suite-base-h.md#oh_soundfieldtype)。  声场效果节点输出的音频格式如下：  采样率：48000Hz。  采样格式：[OH\_Audio\_SampleFormat](capi-native-audio-suite-base-h.md#oh_audio_sampleformat).AUDIO\_SAMPLE\_S16LE。  声道数：2。 |
-| EFFECT\_MULTII\_OUTPUT\_NODE\_TYPE\_AUDIO\_SEPARATION = 204 | 音源分离效果节点。音源分离效果节点只能连接输出节点。  音源分离效果节点输出的音频格式如下：  采样率：48000Hz。  采样格式：[OH\_Audio\_SampleFormat](capi-native-audio-suite-base-h.md#oh_audio_sampleformat).AUDIO\_SAMPLE\_F32LE。  声道数：4（前2个声道用于人声，后2个声道用于伴奏）。 |
-| EFFECT\_NODE\_TYPE\_VOICE\_BEAUTIFIER = 205 | 声音美化效果节点。声音美化效果节点支持的声音美化类型：[OH\_VoiceBeautifierType](capi-native-audio-suite-base-h.md#oh_voicebeautifiertype)。  声音美化效果节点输出的音频格式如下：  采样率：48000Hz。  采样格式：[OH\_Audio\_SampleFormat](capi-native-audio-suite-base-h.md#oh_audio_sampleformat).AUDIO\_SAMPLE\_S16LE。  声道数：2。 |
-| EFFECT\_NODE\_TYPE\_ENVIRONMENT\_EFFECT = 206 | 环境效果节点。环境效果节点输出的音频格式如下：  采样率：48000Hz。  采样格式：[OH\_Audio\_SampleFormat](capi-native-audio-suite-base-h.md#oh_audio_sampleformat).AUDIO\_SAMPLE\_S16LE。  声道数：2。 |
-| EFFECT\_NODE\_TYPE\_AUDIO\_MIXER = 207 | 混音效果节点。混音效果节点输出的音频格式如下：  采样率：[OH\_Audio\_SampleRate](capi-native-audio-suite-base-h.md#oh_audio_samplerate)。  采样格式：[OH\_Audio\_SampleFormat](capi-native-audio-suite-base-h.md#oh_audio_sampleformat).AUDIO\_SAMPLE\_F32LE。  声道数：2。 |
+| INPUT\_NODE\_TYPE\_DEFAULT = 1 | 输入节点，支持从应用程序获取音频数据。  **起始版本：** 22 |
+| OUTPUT\_NODE\_TYPE\_DEFAULT = 101 | 输出节点，支持向应用程序提供音频数据。  **起始版本：** 22 |
+| EFFECT\_NODE\_TYPE\_EQUALIZER = 201 | 均衡器效果节点。均衡器效果节点输出的音频格式如下：  采样率：48000Hz。  采样格式：[OH\_Audio\_SampleFormat](capi-native-audio-suite-base-h.md#oh_audio_sampleformat).AUDIO\_SAMPLE\_S16LE。  声道数：2。  **起始版本：** 22 |
+| EFFECT\_NODE\_TYPE\_NOISE\_REDUCTION = 202 | 降噪效果节点。降噪效果节点输出的音频格式如下：  采样率：16000Hz。  采样格式：[OH\_Audio\_SampleFormat](capi-native-audio-suite-base-h.md#oh_audio_sampleformat).AUDIO\_SAMPLE\_S16LE。  声道数：1。  **起始版本：** 22 |
+| EFFECT\_NODE\_TYPE\_SOUND\_FIELD = 203 | 声场效果节点。声场效果节点支持的声场类型：[OH\_SoundFieldType](capi-native-audio-suite-base-h.md#oh_soundfieldtype)。  声场效果节点输出的音频格式如下：  采样率：48000Hz。  采样格式：[OH\_Audio\_SampleFormat](capi-native-audio-suite-base-h.md#oh_audio_sampleformat).AUDIO\_SAMPLE\_S16LE。  声道数：2。  **起始版本：** 22 |
+| EFFECT\_MULTII\_OUTPUT\_NODE\_TYPE\_AUDIO\_SEPARATION = 204 | 音源分离效果节点。音源分离效果节点只能连接输出节点。  音源分离效果节点输出的音频格式如下：  采样率：48000Hz。  采样格式：[OH\_Audio\_SampleFormat](capi-native-audio-suite-base-h.md#oh_audio_sampleformat).AUDIO\_SAMPLE\_F32LE。  声道数：4（前2个声道用于人声，后2个声道用于伴奏）。  **起始版本：** 22 |
+| EFFECT\_NODE\_TYPE\_VOICE\_BEAUTIFIER = 205 | 声音美化效果节点。声音美化效果节点支持的声音美化类型：[OH\_VoiceBeautifierType](capi-native-audio-suite-base-h.md#oh_voicebeautifiertype)。  声音美化效果节点输出的音频格式如下：  采样率：48000Hz。  采样格式：[OH\_Audio\_SampleFormat](capi-native-audio-suite-base-h.md#oh_audio_sampleformat).AUDIO\_SAMPLE\_S16LE。  声道数：2。  **起始版本：** 22 |
+| EFFECT\_NODE\_TYPE\_ENVIRONMENT\_EFFECT = 206 | 环境效果节点。环境效果节点输出的音频格式如下：  采样率：48000Hz。  采样格式：[OH\_Audio\_SampleFormat](capi-native-audio-suite-base-h.md#oh_audio_sampleformat).AUDIO\_SAMPLE\_S16LE。  声道数：2。  **起始版本：** 22 |
+| EFFECT\_NODE\_TYPE\_AUDIO\_MIXER = 207 | 混音效果节点。混音效果节点输出的音频格式如下：  采样率：[OH\_Audio\_SampleRate](capi-native-audio-suite-base-h.md#oh_audio_samplerate)。  采样格式：[OH\_Audio\_SampleFormat](capi-native-audio-suite-base-h.md#oh_audio_sampleformat).AUDIO\_SAMPLE\_F32LE。  声道数：2。  **起始版本：** 22 |
 | EFFECT\_NODE\_TYPE\_SPACE\_RENDER = 208 | 空间渲染效果节点。空间渲染效果节点输出的音频格式如下：  采样率：48000Hz。  采样格式：[OH\_Audio\_SampleFormat](capi-native-audio-suite-base-h.md#oh_audio_sampleformat).AUDIO\_SAMPLE\_S16LE。  声道数：2。  **起始版本：** 23 |
 | EFFECT\_NODE\_TYPE\_PURE\_VOICE\_CHANGE = 209 | 传统变声效果节点。传统变声效果节点输出的音频格式如下：  采样率：16000Hz。  采样格式：[OH\_Audio\_SampleFormat](capi-native-audio-suite-base-h.md#oh_audio_sampleformat).AUDIO\_SAMPLE\_S16LE。  声道数：1。  **起始版本：** 23 |
 | EFFECT\_NODE\_TYPE\_GENERAL\_VOICE\_CHANGE = 210 | 通用变声效果节点。通用变声效果节点的输出音频格式如下：  采样率：48000Hz。  采样格式：[OH\_Audio\_SampleFormat](capi-native-audio-suite-base-h.md#oh_audio_sampleformat).AUDIO\_SAMPLE\_S16LE。  声道数：2。  **起始版本：** 23 |
 | EFFECT\_NODE\_TYPE\_TEMPO\_PITCH = 211 | 变速变调效果节点。变速变调效果节点的输出音频格式如下：  采样率：48000Hz。  采样格式：[OH\_Audio\_SampleFormat](capi-native-audio-suite-base-h.md#oh_audio_sampleformat).AUDIO\_SAMPLE\_S16LE。  声道数：1。  **起始版本：** 23 |
+| EFFECT\_NODE\_TYPE\_HOA\_SPACE\_RENDER = 212 | HOA（High-Order Ambisonics）转双耳空间音频节点。HOA转双耳空间音频节点输入的音频格式如下：  采样率：[OH\_Audio\_SampleRate](capi-native-audio-suite-base-h.md#oh_audio_samplerate).SAMPLE\_RATE\_16000、[OH\_Audio\_SampleRate](capi-native-audio-suite-base-h.md#oh_audio_samplerate).SAMPLE\_RATE\_48000。  采样格式：[OH\_Audio\_SampleFormat](capi-native-audio-suite-base-h.md#oh_audio_sampleformat)。  声道布局：1阶至3阶HOA，取值如下：  [OH\_AudioChannelLayout](capi-native-audio-channel-layout-h.md#oh_audiochannellayout).CH\_LAYOUT\_AMB\_ORDER1\_ACN\_N3D、[OH\_AudioChannelLayout](capi-native-audio-channel-layout-h.md#oh_audiochannellayout).CH\_LAYOUT\_AMB\_ORDER1\_ACN\_SN3D、[OH\_AudioChannelLayout](capi-native-audio-channel-layout-h.md#oh_audiochannellayout).CH\_LAYOUT\_AMB\_ORDER1\_FUMA、[OH\_AudioChannelLayout](capi-native-audio-channel-layout-h.md#oh_audiochannellayout).CH\_LAYOUT\_AMB\_ORDER2\_ACN\_N3D、[OH\_AudioChannelLayout](capi-native-audio-channel-layout-h.md#oh_audiochannellayout).CH\_LAYOUT\_AMB\_ORDER2\_ACN\_SN3D、[OH\_AudioChannelLayout](capi-native-audio-channel-layout-h.md#oh_audiochannellayout).CH\_LAYOUT\_AMB\_ORDER2\_FUMA、[OH\_AudioChannelLayout](capi-native-audio-channel-layout-h.md#oh_audiochannellayout).CH\_LAYOUT\_AMB\_ORDER3\_ACN\_N3D、[OH\_AudioChannelLayout](capi-native-audio-channel-layout-h.md#oh_audiochannellayout).CH\_LAYOUT\_AMB\_ORDER3\_ACN\_SN3D、[OH\_AudioChannelLayout](capi-native-audio-channel-layout-h.md#oh_audiochannellayout).CH\_LAYOUT\_AMB\_ORDER3\_FUMA。HOA转双耳空间音频节点的输出音频格式如下：  采样率：48000Hz。  采样格式：[OH\_Audio\_SampleFormat](capi-native-audio-suite-base-h.md#oh_audio_sampleformat).AUDIO\_SAMPLE\_S32LE。  声道数：2。  该节点的前置节点必须连接音频格式为HOA的输入节点，如果未正确连接，在调用[OH\_AudioSuiteEngine\_StartPipeline](capi-native-audio-suite-engine-h.md#oh_audiosuiteengine_startpipeline)接口时将会报错。  **起始版本：** 26.0.0 |
 
 ### OH\_AudioSuite\_PipelineWorkMode
 
-PhonePC/2in1Tablet
-
-```
-1. enum OH_AudioSuite_PipelineWorkMode
+```c
+enum OH_AudioSuite_PipelineWorkMode
 ```
 
 **描述**
@@ -143,14 +126,12 @@ PhonePC/2in1Tablet
 | 枚举项 | 描述 |
 | --- | --- |
 | AUDIOSUITE\_PIPELINE\_EDIT\_MODE = 1 | 编辑模式，管线处于该工作模式下可创建多种效果节点进行音频处理。 |
-| AUDIOSUITE\_PIPELINE\_REALTIME\_MODE = 2 | 实时渲染模式，即在音频处理过程中实时播放已处理的音频。  实时渲染模式下，管线仅支持均衡器效果处理。 |
+| AUDIOSUITE\_PIPELINE\_REALTIME\_MODE = 2 | 实时预览模式，即在音频处理过程中实时预览已处理的音频。  在API version 23之前，实时预览模式下管线仅支持均衡器效果节点；  在API version 23及以后，实时预览模式下管线支持所有效果节点。 |
 
 ### OH\_AudioSuite\_PipelineState
 
-PhonePC/2in1Tablet
-
-```
-1. enum OH_AudioSuite_PipelineState
+```c
+enum OH_AudioSuite_PipelineState
 ```
 
 **描述**
@@ -166,10 +147,8 @@ PhonePC/2in1Tablet
 
 ### OH\_AudioSuite\_Result
 
-PhonePC/2in1Tablet
-
-```
-1. enum OH_AudioSuite_Result
+```c
+enum OH_AudioSuite_Result
 ```
 
 **描述**
@@ -190,17 +169,15 @@ PhonePC/2in1Tablet
 | AUDIOSUITE\_ERROR\_NODE\_NOT\_EXIST = 7 | 节点不存在。 |
 | AUDIOSUITE\_ERROR\_UNSUPPORTED\_CONNECT = 8 | 节点之间不支持连接。 |
 | AUDIOSUITE\_ERROR\_UNSUPPORTED\_OPERATION = 9 | 不支持的操作。例如，效果节点不支持设置音频格式。 |
-| AUDIOSUITE\_ERROR\_CREATED\_EXCEED\_SYSTEM\_LIMITS = 10 | 创建管线或者节点超过系统最大数量限制。具体情况如下：  引擎最多支持创建10条管线（其中，实时渲染管线最多创建1条）。  每一个管线中，输入节点不超过5个，输出节点不超过1个，混音节点不超过3个，音源分离节点不超过1个，其余效果节点不超过5个。 |
-| AUDIOSUITE\_ERROR\_REQUIRED\_PARAMETERS\_MISSING = 11 | 参数缺少必要参数。例如，输入节点未设置回调函数、输出节点未设置音频格式。 |
+| AUDIOSUITE\_ERROR\_CREATED\_EXCEED\_SYSTEM\_LIMITS = 10 | 创建管线或者节点超过系统最大数量限制。具体情况如下：  引擎最多支持创建10条管线。在API版本26.0.0之前，实时预览管线最多创建1条；在API版本26.0.0及以后，不再对实时预览管线的数量做单独限制，但管线的总数仍不得超过10条。  每一个管线中，输出节点的数量不超过1个，混音节点的数量不超过3个，音源分离节点的数量不超过1个。  在API version 24之前，每一个管线中，输入节点的数量不超过5个，其余效果节点的数量不超过5个；在API version 24及以后，每一个管线中，输入节点的数量不超过15个，其余效果节点的数量不超过15个。 |
+| AUDIOSUITE\_ERROR\_REQUIRED\_PARAMETERS\_MISSING = 11 | 缺少必要参数。例如，输入节点未设置回调函数、输出节点未设置音频格式。 |
 | AUDIOSUITE\_ERROR\_TIMEOUT = 12 | 操作超时。 |
 | AUDIOSUITE\_ERROR\_MEMORY\_ALLOC\_FAILED = 13 | 内存申请失败。 |
 
 ### OH\_Audio\_SampleFormat
 
-PhonePC/2in1Tablet
-
-```
-1. enum OH_Audio_SampleFormat
+```c
+enum OH_Audio_SampleFormat
 ```
 
 **描述**
@@ -212,17 +189,15 @@ PhonePC/2in1Tablet
 | 枚举项 | 描述 |
 | --- | --- |
 | AUDIO\_SAMPLE\_U8 = 0 | Unsigned 8位。 |
-| AUDIO\_SAMPLE\_S16LE = 1 | Short 16位小端。 |
-| AUDIO\_SAMPLE\_S24LE = 2 | Short 24位小端。 |
-| AUDIO\_SAMPLE\_S32LE = 3 | Short 32位小端。 |
+| AUDIO\_SAMPLE\_S16LE = 1 | Signed 16位小端。 |
+| AUDIO\_SAMPLE\_S24LE = 2 | Signed 24位小端。 |
+| AUDIO\_SAMPLE\_S32LE = 3 | Signed 32位小端。 |
 | AUDIO\_SAMPLE\_F32LE = 4 | Float 32位小端。 |
 
 ### OH\_Audio\_EncodingType
 
-PhonePC/2in1Tablet
-
-```
-1. enum OH_Audio_EncodingType
+```c
+enum OH_Audio_EncodingType
 ```
 
 **描述**
@@ -237,10 +212,8 @@ PhonePC/2in1Tablet
 
 ### OH\_Audio\_SampleRate
 
-PhonePC/2in1Tablet
-
-```
-1. enum OH_Audio_SampleRate
+```c
+enum OH_Audio_SampleRate
 ```
 
 **描述**
@@ -268,10 +241,8 @@ PhonePC/2in1Tablet
 
 ### OH\_SoundFieldType
 
-PhonePC/2in1Tablet
-
-```
-1. enum OH_SoundFieldType
+```c
+enum OH_SoundFieldType
 ```
 
 **描述**
@@ -289,10 +260,8 @@ PhonePC/2in1Tablet
 
 ### OH\_EnvironmentType
 
-PhonePC/2in1Tablet
-
-```
-1. enum OH_EnvironmentType
+```c
+enum OH_EnvironmentType
 ```
 
 **描述**
@@ -310,10 +279,8 @@ PhonePC/2in1Tablet
 
 ### OH\_VoiceBeautifierType
 
-PhonePC/2in1Tablet
-
-```
-1. enum OH_VoiceBeautifierType
+```c
+enum OH_VoiceBeautifierType
 ```
 
 **描述**
@@ -331,10 +298,8 @@ PhonePC/2in1Tablet
 
 ### OH\_AudioSuite\_SurroundDirection
 
-PhonePC/2in1Tablet
-
-```
-1. enum OH_AudioSuite_SurroundDirection
+```c
+enum OH_AudioSuite_SurroundDirection
 ```
 
 **描述**
@@ -350,10 +315,8 @@ PhonePC/2in1Tablet
 
 ### OH\_AudioSuite\_PureVoiceChangeGenderOption
 
-PhonePC/2in1Tablet
-
-```
-1. enum OH_AudioSuite_PureVoiceChangeGenderOption
+```c
+enum OH_AudioSuite_PureVoiceChangeGenderOption
 ```
 
 **描述**
@@ -369,10 +332,8 @@ PhonePC/2in1Tablet
 
 ### OH\_AudioSuite\_PureVoiceChangeType
 
-PhonePC/2in1Tablet
-
-```
-1. enum OH_AudioSuite_PureVoiceChangeType
+```c
+enum OH_AudioSuite_PureVoiceChangeType
 ```
 
 **描述**
@@ -393,10 +354,8 @@ PhonePC/2in1Tablet
 
 ### OH\_AudioSuite\_GeneralVoiceChangeType
 
-PhonePC/2in1Tablet
-
-```
-1. enum OH_AudioSuite_GeneralVoiceChangeType
+```c
+enum OH_AudioSuite_GeneralVoiceChangeType
 ```
 
 **描述**

@@ -3,11 +3,11 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/enterpris
 title: ArkTS API
 breadcrumb: API参考 > 应用服务 > Enterprise Space Kit（企业数字空间服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:35+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:760e19ddb85eac8ca46eea8f7973507cd4d02db47690649c5234fb52d51bb6bf
+scraped_at: 2026-09-02T14:53:17+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:8c4df0c874e0c0c551799a755906336d5b688e68ba77a495d72f7138dd5fadea
 ---
 
-* **[spaceDataTransfer (空间数据传输)](enterprisespace-spacedatatransfer.md)**
-* **[spaceManager (空间管理)](enterprisespace-spacemanager.md)**
-* **[ArkTS API错误码](enterprisespace-error-code.md)**
+* **[@hms.enterpriseSpaceService.fileTransfer(空间数据传输)](enterprisespace-spacedatatransfer.md)**
+* **[@hms.enterpriseSpaceService.spaceManager(空间管理)](enterprisespace-spacemanager.md)**
+* **[ArkTS API错误码](errorcode-enterprise-space.md)**

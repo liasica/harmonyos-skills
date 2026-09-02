@@ -3,62 +3,58 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AVPlayer)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Interface (AVPlayer)
 category: harmonyos-references
-scraped_at: 2026-04-29T14:04:20+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:c2846eff7338c5fc65580da85f033a174137658dad49e9b13eda633ae2a3feb4
+scraped_at: 2026-09-02T15:02:35+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1b27ce27133393bc7cd02e10c92c645e07f7b570b9b9e203a9b499bd49ac25b6
 ---
 
-播放管理类，用于管理和播放媒体资源。在调用AVPlayer的方法前，需要先通过[createAVPlayer()](arkts-apis-media-f.md#mediacreateavplayer9)构建一个AVPlayer实例。
+播放管理接口，用于管理和播放媒体资源。支持音视频播放、播放控制（播放、暂停、停止、跳转、倍速等）、状态管理和事件监听。适用于本地音视频播放、网络流媒体播放、直播等多种场景。使用AVPlayer可以快速实现播放功能，简化开发流程，提升应用性能和用户体验。在调用AVPlayer的方法前，需要先通过[createAVPlayer()](arkts-apis-media-f.md#mediacreateavplayer9)构建一个AVPlayer实例。
 
 在使用AVPlayer实例的方法时，建议开发者注册相关回调，主动获取当前状态变化。[on('stateChange')](arkts-apis-media-avplayer.md#onstatechange9)：监听播放状态机AVPlayerState切换。[on('error')](arkts-apis-media-avplayer.md#onerror9)：监听错误事件。
 
-应用需要按照实际业务需求合理使用AVPlayer对象，按需创建并及时释放，避免持有过多AVPlayer实例导致内存消耗过大，否则在一定情况下可能导致系统终止应用。
+应用需要控制AVPlayer实例数量，播放结束后应及时调用release()释放资源。建议同时持有的AVPlayer实例数量不超过合理范围，避免内存消耗过大触发系统保护机制终止应用。
 
-Audio/Video播放demo可参考：[音频播放开发指导](../harmonyos-guides/using-avplayer-for-playback.md)、[视频播放开发指导](../harmonyos-guides/video-playback.md)。
+音视频播放开发指导请参考：[使用AVPlayer播放音频(ArkTS)](../harmonyos-guides/using-avplayer-for-playback.md)和[使用AVPlayer播放视频(ArkTS)](../harmonyos-guides/video-playback.md)。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Interface首批接口从API version 9开始支持。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { media } from '@kit.MediaKit';
+```ts
+import { media } from '@kit.MediaKit';
 ```
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| url9+ | string | 否 | 是 | 媒体URL，只允许在**idle**状态下设置。  支持的视频格式：mp4、mpeg-ts、mkv。  支持的音频格式：m4a、aac、mp3、ogg、wav、flac、amr、ape。  **支持路径示例**：  1. fd类型播放：fd://xx。    2. http网络播放：http\://xx。  3. https网络播放：https\://xx。  4. HLS网络播放路径：http\://xx或者https\://xx。  **说明：**  - 设置网络播放路径，需[声明权限](../harmonyos-guides/declare-permissions.md)：[ohos.permission.INTERNET](../harmonyos-guides/permissions-for-all.md#ohospermissioninternet)，相关错误码: [201 权限校验失败](errorcode-universal.md#section201-权限校验失败)。  - 从API version 11开始不支持webm。  - 将资源句柄（fd）传递给AVPlayer实例之后，请不要通过该资源句柄做其他读写操作，包括但不限于将同一个资源句柄传递给多个AVPlayer / AVMetadataExtractor / AVImageGenerator / AVTranscoder。同一时间通过同一个资源句柄读写文件时存在竞争关系，将导致媒体播放器数据获取异常。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| url9+ | string | 否 | 是 | 媒体URL，只允许在**idle**状态下设置。  支持的视频格式：mp4、mpeg-ts、mkv。  支持的音频格式：m4a、aac、mp3、ogg、wav、flac、amr、ape。  **支持路径示例**：  1. fd类型播放：fd://xx。    2. http网络播放：http://xx。  3. https网络播放：https://xx。  4. HLS网络播放路径：http://xx或者https://xx。  **说明：**  - 设置网络播放路径，需[声明权限](../harmonyos-guides/declare-permissions.md)：[ohos.permission.INTERNET](../harmonyos-guides/permissions-for-all.md#ohospermissioninternet)，相关错误码: [201 权限校验失败](errorcode-universal.md#section201-权限校验失败)。  - 从API version 11开始不支持webm。  - 将资源句柄（fd）传递给AVPlayer实例之后，请不要通过该资源句柄做其他读写操作，包括但不限于将同一个资源句柄传递给多个AVPlayer / AVMetadataExtractor / AVImageGenerator / AVTranscoder。同一时间通过同一个资源句柄读写文件时存在竞争关系，将导致媒体播放器数据获取异常。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | fdSrc9+ | [AVFileDescriptor](arkts-apis-media-i.md#avfiledescriptor9) | 否 | 是 | 媒体文件描述，只允许在**idle**状态下设置。  **使用场景**：应用中的媒体资源被连续存储在同一个文件中。  支持的视频格式（mp4、mpeg-ts、mkv）。  支持的音频格式（m4a、aac、mp3、ogg、wav、flac、amr、ape）。  **使用示例**：  假设一个连续存储的媒体文件：  视频1（地址偏移：0，字节长度:100）；  视频2（地址偏移：101，字节长度：50）；  视频3（地址偏移：151，字节长度：150）；  1. 播放视频1：AVFileDescriptor { fd = 资源句柄; offset = 0; length = 100; }。  2. 播放视频2：AVFileDescriptor { fd = 资源句柄; offset = 101; length = 50; }。  3. 播放视频3：AVFileDescriptor { fd = 资源句柄; offset = 151; length = 150; }。  假设是一个独立的媒体文件: 请使用src=fd://xx。  **说明：**  从API version 11开始不支持webm。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | dataSrc10+ | [AVDataSrcDescriptor](arkts-apis-media-i.md#avdatasrcdescriptor10) | 否 | 是 | 流式媒体资源描述，只允许在**idle**状态下设置。  **使用场景**：应用播放从远端下载到本地的文件，在应用未下载完整音视频资源时，提前播放已获取的资源数据。若将已获取的资源数据写入到本地文件中，同时从本地文件中读取数据，即可实现边播边缓存的能力。  支持的视频格式（mp4、mpeg-ts、mkv）。  支持的音频格式（m4a、aac、mp3、ogg、wav、flac、amr、ape）。  **使用示例**：  假设用户正在从远端服务器获取音视频媒体文件，希望下载到本地的同时播放已经下载好的部分：  1.用户需要获取媒体文件的总大小size（单位为字节），获取不到时设置为-1。  2.用户需要实现回调函数func用于填写数据，如果size = -1，则func形式为：func(buffer: ArrayBuffer, length: number)，此时播放器只会按照顺序获取数据；否则func形式为：func(buffer: ArrayBuffer, length: number, pos: number)，播放器会按需跳转并获取数据。  3.用户设置AVDataSrcDescriptor {fileSize = size, callback = func}。  **注意事项**：  如果播放的是mp4/m4a格式用户需要保证moov字段（媒体信息字段）在mdat字段（媒体数据字段）之前，或者moov之前的字段小于10M，否则会导致解析失败无法播放。  **说明：**  从API version 11开始不支持webm。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| surfaceId9+ | string | 否 | 是 | 视频窗口ID，默认无窗口。  仅支持在**initialized**状态下初始化。  初始化后可以在**prepared**/**playing**/**paused**/**completed**/**stopped**状态下重新设置，重新设置后视频播放将在新的窗口渲染。  使用场景：视频播放时的窗口渲染（纯音频播放时不涉及）。  **使用示例**：  通过[getXComponentSurfaceId](ts-basic-components-xcomponent.md#getxcomponentsurfaceid9)接口创建surfaceId。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| loop9+ | boolean | 否 | 否 | 视频循环播放属性，默认false，设置为true表示循环播放，动态属性。  只允许在**prepared**/**playing**/**paused**/**completed**状态下设置。  直播场景不支持loop设置。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| surfaceId9+ | string | 否 | 是 | 视频窗口ID，默认值为空（表示未设置窗口）。  仅支持在**initialized**状态下初始化。  初始化后可以在**prepared**/**playing**/**paused**/**completed**/**stopped**状态下重新设置，重新设置后视频播放将在新的窗口渲染。  使用场景：视频播放时的窗口渲染（纯音频播放时不涉及）。  **使用示例**：  通过[getXComponentSurfaceId](ts-basic-components-xcomponent.md#getxcomponentsurfaceid9)接口创建surfaceId。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| loop9+ | boolean | 否 | 否 | 循环播放属性，默认false，设置为true表示循环播放，动态属性。  只允许在**prepared**/**playing**/**paused**/**completed**状态下设置。  直播场景不支持loop设置。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | videoScaleType9+ | [VideoScaleType](arkts-apis-media-e.md#videoscaletype9) | 否 | 是 | 视频缩放模式，默认VIDEO\_SCALE\_TYPE\_FIT，动态属性。  只允许在**prepared**/**playing**/**paused**/**completed**状态下设置。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | audioInterruptMode9+ | [audio.InterruptMode](arkts-apis-audio-e.md#interruptmode9) | 否 | 是 | 音频焦点模型，默认SHARE\_MODE，动态属性。  只允许在**prepared**/**playing**/**paused**/**completed**状态下设置。  在第一次调用[play()](arkts-apis-media-avplayer.md#play9)之前设置， 以便此后中断模式生效。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | audioRendererInfo10+ | [audio.AudioRendererInfo](arkts-apis-audio-i.md#audiorendererinfo8) | 否 | 是 | 设置音频渲染信息。若媒体源包含视频，则usage默认值为STREAM\_USAGE\_MOVIE，否则usage默认值为STREAM\_USAGE\_MUSIC。rendererFlags默认值为0。若默认usage不满足需求，则须主动配置[audio.AudioRendererInfo](arkts-apis-audio-i.md#audiorendererinfo8)。  只允许在**initialized**状态下设置。  在第一次调用[prepare()](arkts-apis-media-avplayer.md#prepare9)之前设置，以便音频渲染器信息在之后生效。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| audioEffectMode10+ | [audio.AudioEffectMode](arkts-apis-audio-e.md#audioeffectmode10) | 否 | 是 | 设置音频音效模式，默认值为EFFECT\_DEFAULT，动态属性。audioRendererInfo的usage变动时会恢复为默认值，只允许在**prepared**/**playing**/**paused**/**completed**状态下设置。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| audioEffectMode10+ | [audio.AudioEffectMode](arkts-apis-audio-e.md#audioeffectmode10) | 否 | 是 | 设置音频音效模式。  当需要启用特定音效时设置此参数，不设置时使用默认值EFFECT\_DEFAULT（默认音效，适合普通播放场景），动态属性。  EFFECT\_NONE适合需要原始音频的场景，其他音效模式适合特定的音频处理需求。  audioRendererInfo的usage变动时会恢复为默认值，只允许在**prepared**/**playing**/**paused**/**completed**状态下设置。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | state9+ | [AVPlayerState](arkts-apis-media-t.md#avplayerstate9) | 是 | 否 | 音视频播放的状态，全状态有效，可查询参数。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| currentTime9+ | number | 是 | 否 | 视频的当前播放位置，单位为毫秒（ms），可查询参数。  返回为（-1）表示无效值，**prepared**/**playing**/**paused**/**completed**状态下有效。  直播场景默认返回（-1）。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| duration9+ | number | 是 | 否 | 视频时长，单位为毫秒（ms），可查询参数。  返回为（-1）表示无效值，**prepared**/**playing**/**paused**/**completed**状态下有效。  直播场景默认返回（-1）。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| currentTime9+ | number | 是 | 否 | 当前播放位置，单位为毫秒（ms），可查询参数。  返回为（-1）表示无效值，**prepared**/**playing**/**paused**/**completed**状态下有效。  直播场景默认返回（-1）。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| duration9+ | number | 是 | 否 | 音视频时长，单位为毫秒（ms），可查询参数。  返回为（-1）表示无效值，**prepared**/**playing**/**paused**/**completed**状态下有效。  直播场景默认返回（-1）。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | width9+ | number | 是 | 否 | 视频宽，单位为像素（px），可查询参数。  返回为（0）表示无效值，**prepared**/**playing**/**paused**/**completed**状态下有效。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | height9+ | number | 是 | 否 | 视频高，单位为像素（px），可查询参数。  返回为（0）表示无效值，**prepared**/**playing**/**paused**/**completed**状态下有效。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| playlistLoopMode | [PlaylistLoopMode](arkts-apis-media-e.md#playlistloopmode) | 否 | 是 | 在播放媒体列表时，设置循环模式。默认值为PLAYLIST\_LOOP\_MODE\_ALL，表示循环播放列表中的所有项目。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| privacyType | [audio.AudioPrivacyType](arkts-apis-audio-e.md#audioprivacytype10) | 否 | 是 | 音频隐私配置。  当需要设置音频隐私级别时设置此参数，不设置时使用默认值PRIVACY\_TYPE\_PUBLIC（公开音频，适合普通播放场景）。  PRIVACY\_TYPE\_PRIVATE（私密音频）适合隐私敏感的音频内容播放。  详细信息请参阅[audio.AudioPrivacyType](arkts-apis-audio-e.md#audioprivacytype10)。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## on('stateChange')9+
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'stateChange', callback: OnAVPlayerStateChangeHandle): void
 
-监听播放状态机AVPlayerState切换的事件。
+注册监听播放状态机AVPlayerState切换的事件。
 
 **元服务API：** 从API version 11 开始，该接口支持在元服务中使用。
 
@@ -68,55 +64,53 @@ on(type: 'stateChange', callback: OnAVPlayerStateChangeHandle): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 状态机切换事件回调类型，支持的事件：'stateChange'，用户操作和系统都会触发此事件。 |
-| callback12+ | [OnAVPlayerStateChangeHandle](arkts-apis-media-t.md#onavplayerstatechangehandle12) | 是 | 状态机切换事件回调方法。 |
+| type | string | 是 | 事件回调类型，用于注册监听播放状态机AVPlayerState切换事件，支持的事件类型：'stateChange'。用户操作和系统都会触发此事件。 |
+| callback12+ | [OnAVPlayerStateChangeHandle](arkts-apis-media-t.md#onavplayerstatechangehandle12) | 是 | 状态机切换事件回调方法，若存在多次注册监听，则最后一次注册监听生效。 |
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 监听播放状态机AVPlayerState切换的事件。
-4. avPlayer.on('stateChange', async (state: string, reason: media.StateChangeReason) => {
-5. switch (state) {
-6. case 'idle':
-7. console.info('state idle called');
-8. break;
-9. case 'initialized':
-10. console.info('initialized prepared called');
-11. break;
-12. case 'prepared':
-13. console.info('state prepared called');
-14. break;
-15. case 'playing':
-16. console.info('state playing called');
-17. break;
-18. case 'paused':
-19. console.info('state paused called');
-20. break;
-21. case 'completed':
-22. console.info('state completed called');
-23. break;
-24. case 'stopped':
-25. console.info('state stopped called');
-26. break;
-27. case 'released':
-28. console.info('state released called');
-29. break;
-30. case 'error':
-31. console.info('state error called');
-32. break;
-33. default:
-34. console.info('unknown state :' + state);
-35. break;
-36. }
-37. });
-38. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 监听播放状态机AVPlayerState切换的事件。
+  avPlayer.on('stateChange', async (state: string, reason: media.StateChangeReason) => {
+    switch (state) {
+      case 'idle':
+        console.info('state idle called');
+        break;
+      case 'initialized':
+        console.info('state initialized called');
+        break;
+      case 'prepared':
+        console.info('state prepared called');
+        break;
+      case 'playing':
+        console.info('state playing called');
+        break;
+      case 'paused':
+        console.info('state paused called');
+        break;
+      case 'completed':
+        console.info('state completed called');
+        break;
+      case 'stopped':
+        console.info('state stopped called');
+        break;
+      case 'released':
+        console.info('state released called');
+        break;
+      case 'error':
+        console.info('state error called');
+        break;
+      default:
+        console.info('unknown state :' + state);
+        break;
+    }
+  });
+}
 ```
 
 ## off('stateChange')9+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'stateChange', callback?: OnAVPlayerStateChangeHandle): void
 
@@ -131,21 +125,19 @@ off(type: 'stateChange', callback?: OnAVPlayerStateChangeHandle): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 状态机切换事件回调类型，取消注册的事件：'stateChange' |
-| callback12+ | [OnAVPlayerStateChangeHandle](arkts-apis-media-t.md#onavplayerstatechangehandle12) | 否 | 状态机切换事件回调方法。如果填写该参数，仅取消注册此回调的方法，否则取消注册stateChange事件的所有回调方法。 |
+| callback12+ | [OnAVPlayerStateChangeHandle](arkts-apis-media-t.md#onavplayerstatechangehandle12) | 否 | 状态机切换事件回调方法。取消注册监听stateChange事件的所有回调方法，不支持取消某个单个注册监听。 |
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 取消后，不再接收播放状态机AVPlayerState切换的事件。
-4. avPlayer.off('stateChange');
-5. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 取消后，不再接收播放状态机AVPlayerState切换的事件。
+  avPlayer.off('stateChange');
+}
 ```
 
 ## on('error')9+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -159,7 +151,7 @@ on(type: 'error', callback: ErrorCallback): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 错误事件回调类型，支持的事件：'error'，用户操作和系统都会触发此事件。 |
+| type | string | 是 | 事件回调类型，用于注册监听AVPlayer错误事件，支持的事件类型：'error'。用户操作和系统都会触发此事件。 |
 | callback | [ErrorCallback](js-apis-base.md#errorcallback) | 是 | 错误事件回调方法，使用播放器的过程中发生错误，会提供错误码ID和错误信息。 |
 
 **错误码：**
@@ -175,40 +167,39 @@ on(type: 'error', callback: ErrorCallback): void
 | 801 | Capability not supported. |
 | 5400101 | No memory. |
 | 5400102 | Operation not allowed. |
+| 5400103 | I/O error.  适用版本：9-13 |
 | 5400104 | Time out. |
 | 5400105 | Service died. |
 | 5400106 | Unsupported format. |
-| 5410002 | Seek continuous unsupported. |
-| 5411001 | IO can not find host. |
-| 5411002 | IO connection timeout. |
-| 5411003 | IO network abnormal. |
-| 5411004 | IO network unavailable. |
-| 5411005 | IO no permission. |
-| 5411006 | IO request denied. |
-| 5411007 | IO resource not found. |
-| 5411008 | IO SSL client cert needed. |
-| 5411009 | IO SSL connect fail. |
-| 5411010 | IO SSL server cert untrusted. |
-| 5411011 | IO unsupported request. |
-| 5411012 | Http cleartext traffic is not permitted. |
+| 5410002 | Seek continuous unsupported.  适用版本：18+ |
+| 5411001 | IO can not find host.  适用版本：14+ |
+| 5411002 | IO connection timeout.  适用版本：14+ |
+| 5411003 | IO network abnormal.  适用版本：14+ |
+| 5411004 | IO network unavailable.  适用版本：14+ |
+| 5411005 | IO no permission.  适用版本：14+ |
+| 5411006 | IO request denied.  适用版本：14+ |
+| 5411007 | IO resource not found.  适用版本：14+ |
+| 5411008 | IO SSL client cert needed.  适用版本：14+ |
+| 5411009 | IO SSL connect fail.  适用版本：14+ |
+| 5411010 | IO SSL server cert untrusted.  适用版本：14+ |
+| 5411011 | IO unsupported request.  适用版本：14+ |
+| 5411012 | Http cleartext traffic is not permitted.  适用版本：23+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. async function test(){
-3. let avPlayer = await media.createAVPlayer();
-4. // 监听AVPlayer的错误事件，该事件仅用于错误提示，不需要用户停止播控动作。
-5. avPlayer.on('error', (error: BusinessError) => {
-6. console.info('error happened,and error message is :' + error.message);
-7. console.info('error happened,and error code is :' + error.code);
-8. });
-9. }
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 监听AVPlayer的错误事件，该事件仅用于错误提示，不需要用户停止播控动作。
+  avPlayer.on('error', (error: BusinessError) => {
+    console.info('error happened,and error message is :' + error.message);
+    console.info('error happened,and error code is :' + error.code);
+  });
+}
 ```
 
 ## off('error')9+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -227,23 +218,21 @@ off(type: 'error', callback?: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function test(){
-4. let avPlayer = await media.createAVPlayer();
-5. // 取消后，不再监听AVPlayer的错误事件。
-6. avPlayer.off('error');
-7. }
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 取消后，不再监听AVPlayer的错误事件。
+  avPlayer.off('error');
+}
 ```
 
 ## setMediaSource12+
 
-PhonePC/2in1TabletTVWearable
-
 setMediaSource(src:MediaSource, strategy?: PlaybackStrategy): Promise<void>
 
-流媒体预下载资源设置，下载URL对应的流媒体数据并暂存在内存中，此接口只能在idle状态下调用。使用Promise异步回调。
+流媒体预下载资源设置。预下载是指在播放前预先下载部分媒体数据，可减少播放开始时的等待时间，提升用户体验。下载URL对应的流媒体数据并暂存在内存中，此接口只能在idle状态下调用。使用Promise异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -253,8 +242,8 @@ setMediaSource(src:MediaSource, strategy?: PlaybackStrategy): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| src | [MediaSource](arkts-apis-media-mediasource.md) | 是 | 流媒体预下载媒体来源。 |
-| strategy | [PlaybackStrategy](arkts-apis-media-i.md#playbackstrategy12) | 否 | 流媒体预下载播放策略。 |
+| src | [MediaSource](arkts-apis-media-mediasource.md) | 是 | 流媒体预下载的媒体来源对象。 |
+| strategy | [PlaybackStrategy](arkts-apis-media-i.md#playbackstrategy12) | 否 | 流媒体预下载的播放策略。不传此参数时，播放器不应用特定的播放策略。 |
 
 **返回值：**
 
@@ -268,31 +257,507 @@ setMediaSource(src:MediaSource, strategy?: PlaybackStrategy): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 5400102 | Operation not allowed. Return by promise. |
 
 **示例：**
 
+```ts
+async function test(){
+  let player = await media.createAVPlayer();
+  let headers: Record<string, string> = {"User-Agent" : "User-Agent-Value"};
+  let mediaSource : media.MediaSource = media.createMediaSourceWithUrl("http://xxx",  headers);
+  let playStrategy : media.PlaybackStrategy = {
+    preferredWidth: 1,
+    preferredHeight: 2,
+    preferredBufferDuration: 3,
+    preferredHdr: false,
+    preferredBufferDurationForPlaying: 1,
+    thresholdForAutoQuickPlay: 5
+  };
+  player.setMediaSource(mediaSource, playStrategy);
+}
 ```
-1. async function test(){
-2. let player = await media.createAVPlayer();
-3. let headers: Record<string, string> = {"User-Agent" : "User-Agent-Value"};
-4. let mediaSource : media.MediaSource = media.createMediaSourceWithUrl("http://xxx",  headers);
-5. let playStrategy : media.PlaybackStrategy = {
-6. preferredWidth: 1,
-7. preferredHeight: 2,
-8. preferredBufferDuration: 3,
-9. preferredHdr: false,
-10. preferredBufferDurationForPlaying: 1,
-11. thresholdForAutoQuickPlay: 5
-12. };
-13. player.setMediaSource(mediaSource, playStrategy);
-14. }
+
+## getTrackSelectionFilter
+
+getTrackSelectionFilter(): Promise<TrackSelectionFilter>
+
+获取播放器当前配置的轨道选择过滤器。使用Promise异步回调。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVPlayer
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[TrackSelectionFilter](arkts-apis-media-i.md#trackselectionfilter)> | Promise对象，返回当前配置的轨道选择过滤器。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Media错误码](errorcode-media.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400102 | Operation not allowed. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+async function test() {
+  let player = await media.createAVPlayer();
+  player.getTrackSelectionFilter().then((selectionFilter: media.TrackSelectionFilter) => {
+    console.info(`Succeeded in getting TrackSelectionFilter: ${selectionFilter}`);
+  }).catch((err: BusinessError) => {
+    console.error('Failed to getTrackSelectionFilter, error message is:' + err.message);
+  });
+}
+```
+
+## setTrackSelectionFilter
+
+setTrackSelectionFilter(filter : TrackSelectionFilter): Promise<void>
+
+为播放器设置轨道选择过滤器，播放器将使用该过滤器来选择可用的轨道用于播放。使用Promise异步回调。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVPlayer
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| filter | [TrackSelectionFilter](arkts-apis-media-i.md#trackselectionfilter) | 是 | 轨道选择过滤器配置对象，用于设置视频/音频轨道的选择条件，如比特率范围、分辨率范围、帧率范围等。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Media错误码](errorcode-media.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400102 | Operation not allowed. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+async function test() {
+  let player = await media.createAVPlayer();
+  let selectionFilter: media.TrackSelectionFilter = {
+    maxVideoBitrate: 80000,
+    minVideoBitrate: 0,
+    maxVideoFrameRate: 60,
+    minVideoFrameRate: 0,
+    maxVideoResolution: { width: 1080, height: 720 },
+    minVideoResolution: { width: 0, height: 0 },
+    preferredVideoMimeTypes: [media.CodecMimeType.VIDEO_AVC],
+    maxAudioBitrate: 8000,
+    minAudioBitrate: 0,
+    maxAudioChannels: 3,
+    preferredAudioMimeTypes: [media.CodecMimeType.AUDIO_AAC, media.CodecMimeType.AUDIO_MP3],
+    preferredAudioLanguages: [],
+    preferredSubtitleLanguages: []
+  };
+  player.setTrackSelectionFilter(selectionFilter).then(() => {
+    console.info('Succeeded in setting TrackSelectionFilter');
+  }).catch((err: BusinessError) => {
+    console.error('Failed to setTrackSelectionFilter, error message is:' + err.message);
+  });
+}
+```
+
+## addPlaybackMediaSource
+
+addPlaybackMediaSource(src: MediaSource, id?: string): Promise<string>
+
+向播放器的播放列表添加一个新的播放源。使用Promise异步回调。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVPlayer
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| src | [MediaSource](arkts-apis-media-mediasource.md) | 是 | 要添加到播放列表的媒体源对象。 |
+| id | string | 否 | 播放列表中已有媒体源的唯一标识ID，新添加的媒体源会插入到指定媒体源之前。如果未指定，默认添加到列表末尾。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象，返回对应媒体资源的唯一ID。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Media错误码](errorcode-media.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400102 | Operation not allowed. Return by promise. |
+| 5400108 | The media source ID does not exist in the playlist. Returned by promise. |
+
+**示例：**
+
+```ts
+async function test() {
+  let player = await media.createAVPlayer();
+  let headers: Record<string, string> = {"User-Agent" : "MyApp/1.0"};
+  let mediaSource1: media.MediaSource = media.createMediaSourceWithUrl("http://example.com/video1.mp4", headers);
+  let source1 = await player.addPlaybackMediaSource(mediaSource1);
+  let mediaSource2: media.MediaSource = media.createMediaSourceWithUrl("http://example.com/video2.mp4", headers);
+  let source2 = await player.addPlaybackMediaSource(mediaSource2, source1);
+}
+```
+
+## removePlaybackMediaSource
+
+removePlaybackMediaSource(id: string): Promise<void>
+
+从播放器的播放列表中移除指定的媒体源。使用Promise异步回调。
+
+**注意** 
+
+* 如果该ID在当前播放列表中不存在，将返回错误码。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVPlayer
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| id | string | 是 | 要移除的媒体源的唯一标识ID。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Media错误码](errorcode-media.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400102 | Operation not allowed. Return by promise. |
+| 5400108 | The media source ID does not exist in the playlist. Returned via promise. |
+
+**示例：**
+
+```ts
+async function test() {
+  let player = await media.createAVPlayer();
+  let headers: Record<string, string> = {"User-Agent" : "MyApp/1.0"};
+  let mediaSource1: media.MediaSource = media.createMediaSourceWithUrl("http://example.com/video1.mp4", headers);
+  let sourceId = await player.addPlaybackMediaSource(mediaSource1);
+  await player.removePlaybackMediaSource(sourceId);
+}
+```
+
+## clearPlaybackList
+
+clearPlaybackList(): Promise<void>
+
+清空播放列表中的所有项目，当前正在播放的媒体将会立即终止。使用Promise异步回调。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVPlayer
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Media错误码](errorcode-media.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400102 | operation not allowed . Returned via promise. |
+
+**示例：**
+
+```ts
+async function test() {
+  let player = await media.createAVPlayer();
+  let headers: Record<string, string> = {"User-Agent" : "MyApp/1.0"};
+  let mediaSource1: media.MediaSource = media.createMediaSourceWithUrl("http://example.com/video1.mp4", headers);
+  let sourceId1 = await player.addPlaybackMediaSource(mediaSource1);
+  let mediaSource2: media.MediaSource = media.createMediaSourceWithUrl("http://example.com/video2.mp4", headers);
+  let sourceId2 = await player.addPlaybackMediaSource(mediaSource2, sourceId1);
+  await player.clearPlaybackList();
+}
+```
+
+## getCurrentMediaSource
+
+getCurrentMediaSource(): MediaSource | undefined;
+
+获取当前正在播放的媒体源对象，可以在prepared/playing/paused/completed状态调用。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVPlayer
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| MediaSource | undefined | 如果操作成功，则返回当前媒体源，否则返回 undefined。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Media错误码](errorcode-media.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400102 | Operation not allowed. Return by promise. |
+
+**示例：**
+
+```ts
+async function test() {
+  let player = await media.createAVPlayer();
+  let headers: Record<string, string> = {"User-Agent" : "MyApp/1.0"};
+  let mediaSource: media.MediaSource = media.createMediaSourceWithUrl("http://example.com/video1.mp4", headers);
+  await player.addPlaybackMediaSource(mediaSource);
+  let currentMediaSource: media.MediaSource | undefined = player.getCurrentMediaSource();
+}
+```
+
+## getMediaSources
+
+getMediaSources(): Array<MediaSource | undefined>
+
+获取当前播放列表中所有媒体源的数组，可以在idle/prepared/playing/paused/completed/stopped状态调用。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVPlayer
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Array<[MediaSource](arkts-apis-media-mediasource.md) | undefined> | 播放列表中的媒体源数组。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Media错误码](errorcode-media.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400102 | Operation not allowed. Return by promise. |
+
+**示例：**
+
+```ts
+async function test() {
+  let player = await media.createAVPlayer();
+  let headers: Record<string, string> = {"User-Agent" : "MyApp/1.0"};
+  let mediaSource1: media.MediaSource = media.createMediaSourceWithUrl("http://example.com/video1.mp4", headers);
+  let sourceId1 = await player.addPlaybackMediaSource(mediaSource1);
+  let mediaSource2: media.MediaSource = media.createMediaSourceWithUrl("http://example.com/video2.mp4", headers);
+  let sourceId2 = await player.addPlaybackMediaSource(mediaSource2);
+  let sources: Array<media.MediaSource | undefined> = player.getMediaSources();
+}
+```
+
+## advanceToNextMediaSource
+
+advanceToNextMediaSource(): Promise<void>
+
+结束当前媒体源的播放，并开始播放媒体源列表中的下一个媒体源。使用Promise异步回调。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVPlayer
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Media错误码](errorcode-media.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400102 | Operation not allowed. Return by promise. |
+| 5400108 | The previous media source does not exist in the playlist. Returned via promise. |
+
+**示例：**
+
+```ts
+async function test() {
+  let player = await media.createAVPlayer();
+
+  let headers: Record<string, string> = {"User-Agent" : "MyApp/1.0"};
+  let mediaSource1: media.MediaSource = media.createMediaSourceWithUrl("http://example.com/video1.mp4", headers);
+  await player.addPlaybackMediaSource(mediaSource1);
+  let mediaSource2: media.MediaSource = media.createMediaSourceWithUrl("http://example.com/video2.mp4", headers);
+  await player.addPlaybackMediaSource(mediaSource2);
+
+  await player.prepare();
+  await player.play();
+  await player.advanceToNextMediaSource();
+}
+```
+
+## advanceToPrevMediaSource
+
+advanceToPrevMediaSource(): Promise<void>
+
+结束当前媒体源的播放，并开始播放媒体源列表中的上一个媒体源。使用Promise异步回调。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVPlayer
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Media错误码](errorcode-media.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400102 | Operation not allowed. Return by promise. |
+| 5400108 | The next media source does not exist in the playlist. Returned via promise. |
+
+**示例：**
+
+```ts
+async function test() {
+  let player = await media.createAVPlayer();
+
+  let headers: Record<string, string> = {"User-Agent" : "MyApp/1.0"};
+  let mediaSource1: media.MediaSource = media.createMediaSourceWithUrl("http://example.com/video1.mp4", headers);
+  await player.addPlaybackMediaSource(mediaSource1);
+  let mediaSource2: media.MediaSource = media.createMediaSourceWithUrl("http://example.com/video2.mp4", headers);
+  await player.addPlaybackMediaSource(mediaSource2);
+  let mediaSource3: media.MediaSource = media.createMediaSourceWithUrl("http://example.com/video3.mp4", headers);
+  await player.addPlaybackMediaSource(mediaSource3);
+
+  await player.prepare();
+  await player.play();
+  await player.advanceToNextMediaSource();
+  await player.advanceToPrevMediaSource();
+}
+```
+
+## advanceToMediaSource
+
+advanceToMediaSource(id: string): Promise<void>
+
+结束当前媒体源的播放，并开始播放列表中指定的媒体源。使用Promise异步回调。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVPlayer
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| id | string | 是 | 要跳转播放的媒体源的唯一标识ID。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Media错误码](errorcode-media.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400102 | Operation not allowed. Return by promise. |
+| 5400108 | The mediasource does not exist in the playlist. Returned via promise. |
+
+**示例：**
+
+```ts
+async function test() {
+  let player = await media.createAVPlayer();
+  let headers: Record<string, string> = {"User-Agent" : "MyApp/1.0"};
+
+  let mediaSource1: media.MediaSource = media.createMediaSourceWithUrl("http://example.com/video1.mp4", headers);
+  let sourceId1 = await player.addPlaybackMediaSource(mediaSource1);
+  let mediaSource2: media.MediaSource = media.createMediaSourceWithUrl("http://example.com/video2.mp4", headers);
+  let sourceId2 = await player.addPlaybackMediaSource(mediaSource2);
+  let mediaSource3: media.MediaSource = media.createMediaSourceWithUrl("http://example.com/video3.mp4", headers);
+  let sourceId3 = await player.addPlaybackMediaSource(mediaSource3);
+  await player.prepare();
+  await player.play();
+  await player.advanceToMediaSource(sourceId3);
+}
 ```
 
 ## setPlaybackStrategy12+
-
-PhonePC/2in1TabletTVWearable
 
 setPlaybackStrategy(strategy: PlaybackStrategy): Promise<void>
 
@@ -306,13 +771,13 @@ setPlaybackStrategy(strategy: PlaybackStrategy): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| strategy | [PlaybackStrategy](arkts-apis-media-i.md#playbackstrategy12) | 是 | 播放策略。 |
+| strategy | [PlaybackStrategy](arkts-apis-media-i.md#playbackstrategy12) | 是 | 播放策略配置对象，用于设置播放器的各项参数，如preferredWidth、preferredHeight、preferredBufferDuration、preferredHdr、mutedMediaType等，以优化播放体验。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象。无返回结果。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -325,28 +790,26 @@ setPlaybackStrategy(strategy: PlaybackStrategy): Promise<void>
 
 **示例：**
 
-```
-1. import { common } from '@kit.AbilityKit';
+```ts
+import { common } from '@kit.AbilityKit';
 
-3. let player = await media.createAVPlayer();
-4. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-5. let fileDescriptor = await context.resourceManager.getRawFd('xxx.mp4');
-6. player.fdSrc = fileDescriptor
-7. let playStrategy : media.PlaybackStrategy = {
-8. preferredWidth: 1,
-9. preferredHeight: 2,
-10. preferredBufferDuration: 3,
-11. preferredHdr: false,
-12. mutedMediaType: media.MediaType.MEDIA_TYPE_AUD,
-13. preferredBufferDurationForPlaying: 1,
-14. thresholdForAutoQuickPlay: 5
-15. };
-16. player.setPlaybackStrategy(playStrategy);
+let player = await media.createAVPlayer();
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let fileDescriptor = await context.resourceManager.getRawFd('xxx.mp4');
+player.fdSrc = fileDescriptor
+let playStrategy : media.PlaybackStrategy = {
+  preferredWidth: 1,
+  preferredHeight: 2,
+  preferredBufferDuration: 3,
+  preferredHdr: false,
+  mutedMediaType: media.MediaType.MEDIA_TYPE_AUD,
+  preferredBufferDurationForPlaying: 1,
+  thresholdForAutoQuickPlay: 5
+};
+player.setPlaybackStrategy(playStrategy);
 ```
 
 ## setPlaybackRange18+
-
-PhonePC/2in1TabletTVWearable
 
 setPlaybackRange(startTimeMs: number, endTimeMs: number, mode?: SeekMode) : Promise<void>
 
@@ -360,9 +823,9 @@ setPlaybackRange(startTimeMs: number, endTimeMs: number, mode?: SeekMode) : Prom
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| startTimeMs | number | 是 | 区间开始位置，单位ms，取值[0, duration)。可以设置-1值，系统将会从0位置开始播放。 |
-| endTimeMs | number | 是 | 区间结束位置，单位ms，取值(startTimeMs, duration]。可以设置-1值，系统将会播放到资源末尾。 |
-| mode | [SeekMode](arkts-apis-media-e.md#seekmode8) | 否 | 支持SeekMode.SEEK\_PREV\_SYNC和SeekMode.SEEK\_CLOSEST,  默认值: SeekMode.SEEK\_PREV\_SYNC。 |
+| startTimeMs | number | 是 | 区间开始位置，单位为毫秒（ms）。  取值原则：该值必须为整数，范围为[0, duration)。可以取值-1，表示从0位置开始播放。小于-1的其他值不满足要求会报错。 |
+| endTimeMs | number | 是 | 区间结束位置，单位为毫秒（ms）。  取值原则：该值必须为整数，范围为(startTimeMs, duration]。可以取值-1，表示播放到资源末尾。 |
+| mode | [SeekMode](arkts-apis-media-e.md#seekmode8) | 否 | 支持SeekMode.SEEK\_PREV\_SYNC和SeekMode.SEEK\_CLOSEST,  默认值为SeekMode.SEEK\_PREV\_SYNC。 |
 
 **返回值：**
 
@@ -381,26 +844,24 @@ setPlaybackRange(startTimeMs: number, endTimeMs: number, mode?: SeekMode) : Prom
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function  test(){
-4. let avPlayer = await media.createAVPlayer();
-5. avPlayer.setPlaybackRange(0, 6000, media.SeekMode.SEEK_CLOSEST).then(() => {
-6. console.info('Succeeded setPlaybackRange');
-7. }).catch((err: BusinessError) => {
-8. console.error('Failed to setPlaybackRange' + err.message);
-9. });
-10. }
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  avPlayer.setPlaybackRange(0, 6000, media.SeekMode.SEEK_CLOSEST).then(() => {
+    console.info('Succeeded setPlaybackRange');
+  }).catch((err: BusinessError) => {
+    console.error('Failed to setPlaybackRange' + err.message);
+  });
+}
 ```
 
 ## prepare9+
 
-PhonePC/2in1TabletTVWearable
-
 prepare(callback: AsyncCallback<void>): void
 
-准备播放音频/视频，需在[stateChange](arkts-apis-media-avplayer.md#onstatechange9)事件成功触发至initialized状态后，才能调用。使用callback方式异步获取返回值。
+准备播放音频/视频，需在[stateChange](arkts-apis-media-avplayer.md#onstatechange9)事件成功触发至initialized状态后，才能调用。使用callback异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -423,25 +884,23 @@ prepare(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function  test(){
-4. let avPlayer = await media.createAVPlayer();
-5. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至initialized状态后才能调用。
-6. avPlayer.prepare((err: BusinessError) => {
-7. if (err) {
-8. console.error('Failed to prepare,error message is :' + err.message);
-9. } else {
-10. console.info('Succeeded in preparing');
-11. }
-12. });
-13. }
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发至initialized状态后才能调用。
+  avPlayer.prepare((err: BusinessError) => {
+    if (err) {
+      console.error(`Failed to prepare.Code:${err.code},message:${err.message}`);
+    } else {
+      console.info('Succeeded in preparing');
+    }
+  });
+}
 ```
 
 ## prepare9+
-
-PhonePC/2in1TabletTVWearable
 
 prepare(): Promise<void>
 
@@ -470,23 +929,21 @@ prepare(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function  test(){
-4. let avPlayer = await media.createAVPlayer();
-5. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至initialized状态后才能调用。
-6. avPlayer.prepare().then(() => {
-7. console.info('Succeeded in preparing');
-8. }, (err: BusinessError) => {
-9. console.error('Failed to prepare,error message is :' + err.message);
-10. });
-11. }
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发至initialized状态后才能调用。
+  avPlayer.prepare().then(() => {
+    console.info('Succeeded in preparing');
+  }, (err: BusinessError) => {
+    console.error(`Failed to prepare.Code:${err.code},message:${err.message}`);
+  });
+}
 ```
 
 ## setMediaMuted12+
-
-PhonePC/2in1TabletTVWearable
 
 setMediaMuted(mediaType: MediaType, muted: boolean ): Promise<void>
 
@@ -502,7 +959,7 @@ setMediaMuted(mediaType: MediaType, muted: boolean ): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| mediaType | [MediaType](arkts-apis-media-e.md#mediatype8) | 是 | 媒体类型枚举。  **API version 12-19**：仅支持设置MEDIA\_TYPE\_AUD。  **API version 20及以后**：增加支持设置MEDIA\_TYPE\_VID。 |
+| mediaType | [MediaType](arkts-apis-media-e.md#mediatype8) | 是 | 媒体类型枚举，决定静音或画面显示的控制范围。  **API version 12-19**：仅支持MEDIA\_TYPE\_AUD，影响音频静音。  **API version 20及以后**：支持MEDIA\_TYPE\_VID，影响视频画面显示。 |
 | muted | boolean | 是 | **API version 12-19**：仅支持设置音频播放策略，表示音频是否静音播放。true为静音播放，false为取消静音播放。  **API version 20及以后**：增加支持设置视频播放策略，表示视频画面是否关闭。true为关闭画面，false为恢复画面。 |
 
 **返回值：**
@@ -522,28 +979,26 @@ setMediaMuted(mediaType: MediaType, muted: boolean ): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function  test(){
-4. let avPlayer = await media.createAVPlayer();
-5. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至initialized状态后才能调用。
-6. avPlayer.prepare().then(() => {
-7. console.info('Succeeded in preparing');
-8. avPlayer.setMediaMuted(media.MediaType.MEDIA_TYPE_AUD, true);
-9. }, (err: BusinessError) => {
-10. console.error('Failed to prepare,error message is :' + err.message);
-11. });
-12. }
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发至initialized状态后才能调用。
+  avPlayer.prepare().then(() => {
+    console.info('Succeeded in preparing');
+    avPlayer.setMediaMuted(media.MediaType.MEDIA_TYPE_AUD, true);
+  }, (err: BusinessError) => {
+    console.error(`Failed to prepare.Code:${err.code},message:${err.message}`);
+  });
+}
 ```
 
 ## play9+
 
-PhonePC/2in1TabletTVWearable
-
 play(callback: AsyncCallback<void>): void
 
-开始播放音视频资源，只能在prepared/paused/completed状态调用。使用callback方式异步获取返回值。
+开始播放音视频资源，只能在prepared/paused/completed状态调用。使用callback异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -565,25 +1020,23 @@ play(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function  test(){
-4. let avPlayer = await media.createAVPlayer();
-5. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/paused/completed状态后才能调用。
-6. avPlayer.play((err: BusinessError) => {
-7. if (err) {
-8. console.error('Failed to play,error message is :' + err.message);
-9. } else {
-10. console.info('Succeeded in playing');
-11. }
-12. });
-13. }
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/paused/completed状态后才能调用。
+  avPlayer.play((err: BusinessError) => {
+    if (err) {
+      console.error(`Failed to play.Code:${err.code},message:${err.message}`);
+    } else {
+      console.info('Succeeded in playing');
+    }
+  });
+}
 ```
 
 ## play9+
-
-PhonePC/2in1TabletTVWearable
 
 play(): Promise<void>
 
@@ -609,27 +1062,25 @@ play(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function  test(){
-4. let avPlayer = await media.createAVPlayer();
-5. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/paused/completed状态后才能调用。
-6. avPlayer.play().then(() => {
-7. console.info('Succeeded in playing');
-8. }, (err: BusinessError) => {
-9. console.error('Failed to play,error message is :' + err.message);
-10. });
-11. }
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/paused/completed状态后才能调用。
+  avPlayer.play().then(() => {
+    console.info('Succeeded in playing');
+  }, (err: BusinessError) => {
+    console.error(`Failed to play.Code:${err.code},message:${err.message}`);
+  });
+}
 ```
 
 ## pause9+
 
-PhonePC/2in1TabletTVWearable
-
 pause(callback: AsyncCallback<void>): void
 
-暂停播放音视频资源，只能在playing状态调用。使用callback方式异步获取返回值。
+暂停播放音视频资源，只能在playing状态调用。使用callback异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -651,25 +1102,23 @@ pause(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function  test(){
-4. let avPlayer = await media.createAVPlayer();
-5. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至playing状态后才能调用。
-6. avPlayer.pause((err: BusinessError) => {
-7. if (err) {
-8. console.error('Failed to pause,error message is :' + err.message);
-9. } else {
-10. console.info('Succeeded in pausing');
-11. }
-12. });
-13. }
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发至playing状态后才能调用。
+  avPlayer.pause((err: BusinessError) => {
+    if (err) {
+      console.error(`Failed to pause.Code:${err.code},message:${err.message}`);
+    } else {
+      console.info('Succeeded in pausing');
+    }
+  });
+}
 ```
 
 ## pause9+
-
-PhonePC/2in1TabletTVWearable
 
 pause(): Promise<void>
 
@@ -695,27 +1144,25 @@ pause(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function  test(){
-4. let avPlayer = await media.createAVPlayer();
-5. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至playing状态后才能调用。
-6. avPlayer.pause().then(() => {
-7. console.info('Succeeded in pausing');
-8. }, (err: BusinessError) => {
-9. console.error('Failed to pause,error message is :' + err.message);
-10. });
-11. }
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发至playing状态后才能调用。
+  avPlayer.pause().then(() => {
+    console.info('Succeeded in pausing');
+  }, (err: BusinessError) => {
+    console.error(`Failed to pause.Code:${err.code},message:${err.message}`);
+  });
+}
 ```
 
 ## stop9+
 
-PhonePC/2in1TabletTVWearable
-
 stop(callback: AsyncCallback<void>): void
 
-停止播放音视频资源，只能在prepared/playing/paused/completed状态调用。使用callback方式异步获取返回值。
+停止播放音视频资源，只能在prepared/playing/paused/completed状态调用。使用callback异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -737,25 +1184,23 @@ stop(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function  test(){
-4. let avPlayer = await media.createAVPlayer();
-5. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/playing/paused/completed状态后才能调用。
-6. avPlayer.stop((err: BusinessError) => {
-7. if (err) {
-8. console.error('Failed to stop,error message is :' + err.message);
-9. } else {
-10. console.info('Succeeded in stopping');
-11. }
-12. });
-13. }
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/playing/paused/completed状态后才能调用。
+  avPlayer.stop((err: BusinessError) => {
+    if (err) {
+      console.error(`Failed to stop.Code:${err.code},message:${err.message}`);
+    } else {
+      console.info('Succeeded in stopping');
+    }
+  });
+}
 ```
 
 ## stop9+
-
-PhonePC/2in1TabletTVWearable
 
 stop(): Promise<void>
 
@@ -781,27 +1226,25 @@ stop(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function  test(){
-4. let avPlayer = await media.createAVPlayer();
-5. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/playing/paused/completed状态后才能调用。
-6. avPlayer.stop().then(() => {
-7. console.info('Succeeded in stopping');
-8. }, (err: BusinessError) => {
-9. console.error('Failed to stop,error message is :' + err.message);
-10. });
-11. }
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/playing/paused/completed状态后才能调用。
+  avPlayer.stop().then(() => {
+    console.info('Succeeded in stopping');
+  }, (err: BusinessError) => {
+    console.error(`Failed to stop.Code:${err.code},message:${err.message}`);
+  });
+}
 ```
 
 ## reset9+
 
-PhonePC/2in1TabletTVWearable
-
 reset(callback: AsyncCallback<void>): void
 
-重置播放，只能在initialized/prepared/playing/paused/completed/stopped/error状态调用。使用callback方式异步获取返回值。
+重置播放，将播放器恢复到idle状态并清除已设置的媒体资源，只能在initialized/prepared/playing/paused/completed/stopped/error状态调用。使用callback异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -823,29 +1266,27 @@ reset(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function  test(){
-4. let avPlayer = await media.createAVPlayer();
-5. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至initialized/prepared/playing/paused/completed/stopped/error状态后才能调用。
-6. avPlayer.reset((err: BusinessError) => {
-7. if (err) {
-8. console.error('Failed to reset,error message is :' + err.message);
-9. } else {
-10. console.info('Succeeded in resetting');
-11. }
-12. });
-13. }
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发至initialized/prepared/playing/paused/completed/stopped/error状态后才能调用。
+  avPlayer.reset((err: BusinessError) => {
+    if (err) {
+      console.error(`Failed to reset.Code:${err.code},message:${err.message}`);
+    } else {
+      console.info('Succeeded in resetting');
+    }
+  });
+}
 ```
 
 ## reset9+
 
-PhonePC/2in1TabletTVWearable
-
 reset(): Promise<void>
 
-重置播放，只能在initialized/prepared/playing/paused/completed/stopped/error状态调用。使用Promise异步回调。
+重置播放，将播放器恢复到idle状态并清除已设置的媒体资源，只能在initialized/prepared/playing/paused/completed/stopped/error状态调用。使用Promise异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -867,27 +1308,25 @@ reset(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function  test(){
-4. let avPlayer = await media.createAVPlayer();
-5. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至initialized/prepared/playing/paused/completed/stopped/error状态后才能调用。
-6. avPlayer.reset().then(() => {
-7. console.info('Succeeded in resetting');
-8. }, (err: BusinessError) => {
-9. console.error('Failed to reset,error message is :' + err.message);
-10. });
-11. }
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发至initialized/prepared/playing/paused/completed/stopped/error状态后才能调用。
+  avPlayer.reset().then(() => {
+    console.info('Succeeded in resetting');
+  }, (err: BusinessError) => {
+    console.error(`Failed to reset.Code:${err.code},message:${err.message}`);
+  });
+}
 ```
 
 ## release9+
 
-PhonePC/2in1TabletTVWearable
-
 release(callback: AsyncCallback<void>): void
 
-销毁播放资源，除released状态外，均可以调用。使用callback方式异步获取返回值。
+销毁播放资源，除released状态外，AVPlayer在其他状态都可以调用该接口。应用需要按照实际业务需求合理使用AVPlayer对象，按需创建并及时释放，避免持有过多AVPlayer实例导致内存消耗过大，否则可能导致系统终止应用。使用callback异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -909,29 +1348,27 @@ release(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function  test(){
-4. let avPlayer = await media.createAVPlayer();
-5. // 此处仅为示意，实际开发中需要在stateChange事件成功触发除released以外的状态才能调用。
-6. avPlayer.release((err: BusinessError) => {
-7. if (err) {
-8. console.error('Failed to release,error message is :' + err.message);
-9. } else {
-10. console.info('Succeeded in releasing');
-11. }
-12. });
-13. }
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发除released以外的状态才能调用。
+  avPlayer.release((err: BusinessError) => {
+    if (err) {
+      console.error(`Failed to release.Code:${err.code},message:${err.message}`);
+    } else {
+      console.info('Succeeded in releasing');
+    }
+  });
+}
 ```
 
 ## release9+
 
-PhonePC/2in1TabletTVWearable
-
 release(): Promise<void>
 
-销毁播放资源，除released状态，都可以调用。使用Promise异步回调。
+销毁播放资源，除released状态外，AVPlayer在其他状态都可以调用该接口。应用需要按照实际业务需求合理使用AVPlayer对象，按需创建并及时释放，避免持有过多AVPlayer实例导致内存消耗过大，否则可能导致系统终止应用。使用Promise异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -953,27 +1390,25 @@ release(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function  test(){
-4. let avPlayer = await media.createAVPlayer();
-5. // 此处仅为示意，实际开发中需要在stateChange事件成功触发除released以外的状态才能调用。
-6. avPlayer.release().then(() => {
-7. console.info('Succeeded in releasing');
-8. }, (err: BusinessError) => {
-9. console.error('Failed to release,error message is :' + err.message);
-10. });
-11. }
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发除released以外的状态才能调用。
+  avPlayer.release().then(() => {
+    console.info('Succeeded in releasing');
+  }, (err: BusinessError) => {
+    console.error(`Failed to release.Code:${err.code},message:${err.message}`);
+  });
+}
 ```
 
 ## getTrackDescription9+
 
-PhonePC/2in1TabletTVWearable
-
 getTrackDescription(callback: AsyncCallback<Array<MediaDescription>>): void
 
-获取音视频轨道信息，可以在prepared/playing/paused状态调用。获取所有音视轨道信息，应在数据加载回调后调用。使用callback方式异步获取返回值。
+获取音视频轨道信息，可以在prepared/playing/paused状态调用。获取所有音视频轨道信息，应在数据加载回调后调用。使用callback异步回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -995,25 +1430,23 @@ getTrackDescription(callback: AsyncCallback<Array<MediaDescription>>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function  test(){
-4. let avPlayer = await media.createAVPlayer();
-5. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/playing/paused状态后才能调用。
-6. avPlayer.getTrackDescription((error: BusinessError, arrList: Array<media.MediaDescription>) => {
-7. if ((arrList) != null) {
-8. console.info('Succeeded in doing getTrackDescription');
-9. } else {
-10. console.error(`Failed to do getTrackDescription, error:${error}`);
-11. }
-12. });
-13. }
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/playing/paused状态后才能调用。
+  avPlayer.getTrackDescription((error: BusinessError, arrList: Array<media.MediaDescription>) => {
+    if (error) {
+      console.error(`Failed to do getTrackDescription, error:${error}`);
+    } else {
+      console.info('Succeeded in doing getTrackDescription');
+    }
+  });
+}
 ```
 
 ## getTrackDescription9+
-
-PhonePC/2in1TabletTVWearable
 
 getTrackDescription(): Promise<Array<MediaDescription>>
 
@@ -1039,23 +1472,21 @@ getTrackDescription(): Promise<Array<MediaDescription>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function  test(){
-4. let avPlayer = await media.createAVPlayer();
-5. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/playing/paused状态后才能调用。
-6. avPlayer.getTrackDescription().then((arrList: Array<media.MediaDescription>) => {
-7. console.info('Succeeded in getting TrackDescription');
-8. }).catch((error: BusinessError) => {
-9. console.error(`Failed to get TrackDescription, error:${error}`);
-10. });
-11. }
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/playing/paused状态后才能调用。
+  avPlayer.getTrackDescription().then((arrList: Array<media.MediaDescription>) => {
+    console.info('Succeeded in getting TrackDescription');
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to get TrackDescription.Code:${error.code},message:${error.message}`);
+  });
+}
 ```
 
 ## getSelectedTracks12+
-
-PhonePC/2in1TabletTVWearable
 
 getSelectedTracks(): Promise<Array<number>>
 
@@ -1081,23 +1512,21 @@ getSelectedTracks(): Promise<Array<number>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function  test(){
-4. let avPlayer = await media.createAVPlayer();
-5. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/playing/paused状态后才能调用。
-6. avPlayer.getSelectedTracks().then((arrList: Array<number>) => {
-7. console.info('Succeeded in getting SelectedTracks');
-8. }).catch((error: BusinessError) => {
-9. console.error(`Failed to get SelectedTracks, error:${error}`);
-10. });
-11. }
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/playing/paused状态后才能调用。
+  avPlayer.getSelectedTracks().then((arrList: Array<number>) => {
+    console.info('Succeeded in getting SelectedTracks');
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to get SelectedTracks.Code:${error.code},message:${error.message}`);
+  });
+}
 ```
 
 ## getPlaybackInfo12+
-
-PhonePC/2in1TabletTVWearable
 
 getPlaybackInfo(): Promise<PlaybackInfo>
 
@@ -1109,36 +1538,34 @@ getPlaybackInfo(): Promise<PlaybackInfo>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[PlaybackInfo](arkts-apis-media-i.md#playbackinfo12)> | Promise对象，返回播放器信息PlaybackInfo。 |
+| Promise<[PlaybackInfo](arkts-apis-media-i.md#playbackinfo12)> | Promise对象。resolve返回PlaybackInfo对象，包含播放过程中的信息，如播放状态、缓冲状态等详细播放信息；reject返回错误信息。 |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let avPlayer: media.AVPlayer | undefined;
-4. let playbackInfo: media.PlaybackInfo | undefined;
-5. media.createAVPlayer(async (err: BusinessError, player: media.AVPlayer) => {
-6. if (player != null) {
-7. avPlayer = player;
-8. console.info(`Succeeded in creating AVPlayer`);
-9. if (avPlayer) {
-10. try {
-11. playbackInfo = await avPlayer.getPlaybackInfo();
-12. console.info(`AVPlayer getPlaybackInfo = ${JSON.stringify(playbackInfo)}`); // 打印整个PlaybackInfo的值。
-13. } catch (error) {
-14. console.error(`error = ${error}`);
-15. }
-16. }
-17. } else {
-18. console.error(`Failed to create AVPlayer, error message:${err.message}`);
-19. }
-20. });
+let avPlayer: media.AVPlayer | undefined;
+let playbackInfo: media.PlaybackInfo | undefined;
+media.createAVPlayer(async (err: BusinessError, player: media.AVPlayer) => {
+  if (player) {
+    avPlayer = player;
+    console.info(`Succeeded in creating AVPlayer`);
+    if (avPlayer) {
+      try {
+        playbackInfo = await avPlayer.getPlaybackInfo();
+        console.info(`AVPlayer getPlaybackInfo = ${JSON.stringify(playbackInfo)}`); // 打印整个PlaybackInfo的值。
+      } catch (error) {
+        console.error(`error = ${error}`);
+      }
+    }
+  } else {
+    console.error(`Failed to create AVPlayer, error message:${err.message}`);
+  }
+});
 ```
 
 ## getPlaybackPosition18+
-
-PhonePC/2in1TabletTVWearable
 
 getPlaybackPosition(): number
 
@@ -1164,25 +1591,23 @@ getPlaybackPosition(): number
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function  test(){
-4. let avPlayer = await media.createAVPlayer();
-5. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至initialized状态后才能调用。
-6. avPlayer.prepare().then(() => {
-7. console.info('Succeeded in preparing');
-8. let playbackPosition: number = avPlayer.getPlaybackPosition();
-9. console.info(`AVPlayer getPlaybackPosition== ${playbackPosition}`);
-10. }, (err: BusinessError) => {
-11. console.error('Failed to prepare,error message is :' + err.message);
-12. });
-13. }
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发至initialized状态后才能调用。
+  avPlayer.prepare().then(() => {
+    console.info('Succeeded in preparing');
+    let playbackPosition: number = avPlayer.getPlaybackPosition();
+    console.info(`AVPlayer getPlaybackPosition== ${playbackPosition}`);
+  }, (err: BusinessError) => {
+    console.error(`Failed to prepare.Code:${err.code},message:${err.message}`);
+  });
+}
 ```
 
 ## getCurrentPresentationTimestamp23+
-
-PhonePC/2in1TabletTVWearable
 
 getCurrentPresentationTimestamp() : number
 
@@ -1210,29 +1635,29 @@ getCurrentPresentationTimestamp() : number
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function  test(){
-4. let avPlayer = await media.createAVPlayer();
-5. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至initialized状态后才能调用。
-6. avPlayer.play().then(() => {
-7. console.info('Succeeded in playing');
-8. let currentPresentation: number = avPlayer.getCurrentPresentationTimestamp();
-9. console.info(`AVPlayer getCurrentPresentationTimestamp== ${currentPresentation}`);
-10. }, (err: BusinessError) => {
-11. console.error('Failed to prepare,error message is :' + err.message);
-12. });
-13. }
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发至initialized状态后才能调用。
+  avPlayer.play().then(() => {
+    console.info('Succeeded in playing');
+    let currentPresentation: number = avPlayer.getCurrentPresentationTimestamp();
+    console.info(`AVPlayer getCurrentPresentationTimestamp== ${currentPresentation}`);
+  }, (err: BusinessError) => {
+    console.error(`Failed to play.Code:${err.code},message:${err.message}`);
+  });
+}
 ```
 
 ## selectTrack12+
 
-PhonePC/2in1TabletTVWearable
-
 selectTrack(index: number, mode?: SwitchMode): Promise<void>
 
-使用AVPlayer播放多音视频轨资源时，选择指定轨道播放，使用Promise异步回调。
+使用AVPlayer播放多音视频轨资源时，允许用户以指定模式切换到指定轨道以继续播放。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1242,8 +1667,8 @@ selectTrack(index: number, mode?: SwitchMode): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| index | number | 是 | 多音视频资源的轨道索引，可通过[getTrackDescription](arkts-apis-media-avplayer.md#gettrackdescription9-1)接口获取当前资源的所有轨道信息[MediaDescription](arkts-apis-media-i.md#mediadescription8)。 |
-| mode | [SwitchMode](arkts-apis-media-e.md#switchmode12) | 否 | 切换视频轨道模式，默认为SMOOTH模式，**仅在DASH协议网络流视频轨切换时生效**，其他场景当前暂不支持。 |
+| index | number | 是 | 多音视频资源的轨道索引。该值必须为整数。  取值约束：可通过[getTrackDescription](arkts-apis-media-avplayer.md#gettrackdescription9-1)接口返回的音视频轨道信息[MediaDescription](arkts-apis-media-i.md#mediadescription8)中读取的key为MD\_KEY\_TRACK\_INDEX所对应的值。  每个key值的Object类型和范围，请参考[MediaDescriptionKey](arkts-apis-media-e.md#mediadescriptionkey8)对应Key值的说明。 |
+| mode | [SwitchMode](arkts-apis-media-e.md#switchmode12) | 否 | 切换轨道的模式。  取值约束：该模式仅适用于视频轨道的切换。  默认值为SMOOTH模式，在片段末尾进行切换，以确保视频播放的连续性。**仅在DASH/HLS协议网络流视频轨切换时生效。**  从API版本26.0.0开始支持HLS协议网络流视频。 |
 
 **返回值：**
 
@@ -1262,33 +1687,32 @@ selectTrack(index: number, mode?: SwitchMode): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function  test(){
-4. let avPlayer: media.AVPlayer = await media.createAVPlayer();
-5. let audioTrackIndex: Object = 0;
-6. avPlayer.getTrackDescription((error: BusinessError, arrList: Array<media.MediaDescription>) => {
-7. if (arrList != null) {
-8. for (let i = 0; i < arrList.length; i++) {
-9. if (i != 0) {
-10. // 获取音频轨道列表。
-11. audioTrackIndex = arrList[i][media.MediaDescriptionKey.MD_KEY_TRACK_INDEX];
-12. }
-13. }
-14. } else {
-15. console.error(`Failed to get TrackDescription, error:${error}`);
-16. }
-17. });
+async function  test(){
+  let avPlayer: media.AVPlayer = await media.createAVPlayer();
+  let audioTrackIndex: Object = 0;
+  avPlayer.getTrackDescription((error: BusinessError, arrList: Array<media.MediaDescription>) => {
+    if (arrList != null) {
+      // 遍历轨道描述列表，提取非首个轨道的索引用于音频轨道选择。
+      for (let i = 0; i < arrList.length; i++) {
+        if (i != 0) {
+          // 获取音频轨道列表。
+          audioTrackIndex = arrList[i][media.MediaDescriptionKey.MD_KEY_TRACK_INDEX];
+        }
+      }
+    } else {
+      console.error(`Failed to get TrackDescription.Code:${error.code},message:${error.message}`);
+    }
+  });
 
-19. // 选择其中一个音频轨道。
-20. avPlayer.selectTrack(parseInt(audioTrackIndex.toString()));
-21. }
+  // 选择其中一个音频轨道。
+  avPlayer.selectTrack(parseInt(audioTrackIndex.toString()));
+}
 ```
 
 ## deselectTrack12+
-
-PhonePC/2in1TabletTVWearable
 
 deselectTrack(index: number): Promise<void>
 
@@ -1321,37 +1745,35 @@ deselectTrack(index: number): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let avPlayer: media.AVPlayer = await media.createAVPlayer();
-4. let audioTrackIndex: Object = 0;
-5. avPlayer.getTrackDescription((error: BusinessError, arrList: Array<media.MediaDescription>) => {
-6. if (arrList != null) {
-7. for (let i = 0; i < arrList.length; i++) {
-8. if (i != 0) {
-9. // 获取音频轨道列表。
-10. audioTrackIndex = arrList[i][media.MediaDescriptionKey.MD_KEY_TRACK_INDEX];
-11. }
-12. }
-13. } else {
-14. console.error(`Failed to get TrackDescription, error:${error}`);
-15. }
-16. });
+let avPlayer: media.AVPlayer = await media.createAVPlayer();
+let audioTrackIndex: Object = 0;
+avPlayer.getTrackDescription((error: BusinessError, arrList: Array<media.MediaDescription>) => {
+  if (arrList != null) {
+    for (let i = 0; i < arrList.length; i++) {
+      if (i != 0) {
+        // 获取音频轨道列表。
+        audioTrackIndex = arrList[i][media.MediaDescriptionKey.MD_KEY_TRACK_INDEX];
+      }
+    }
+  } else {
+    console.error(`Failed to get TrackDescription.Code:${error.code},message:${error.message}`);
+  }
+});
 
-18. // 选择其中一个音频轨道。
-19. avPlayer.selectTrack(parseInt(audioTrackIndex.toString()));
-20. // 取消选择上次选中的音频轨道，并恢复到默认音频轨道。
-21. avPlayer.deselectTrack(parseInt(audioTrackIndex.toString()));
+// 选择其中一个音频轨道。
+avPlayer.selectTrack(parseInt(audioTrackIndex.toString()));
+// 取消选择上次选中的音频轨道，并恢复到默认音频轨道。
+avPlayer.deselectTrack(parseInt(audioTrackIndex.toString()));
 ```
 
 ## setDecryptionConfig11+
 
-PhonePC/2in1TabletTVWearable
-
 setDecryptionConfig(mediaKeySession: drm.MediaKeySession, secureVideoPath: boolean): void
 
-设置解密配置。当收到[on('mediaKeySystemInfoUpdate')](arkts-apis-media-avplayer.md#onmediakeysysteminfoupdate11)事件时，需根据事件上报的信息创建相关配置并设置解密配置，否则无法播放。
+设置解密配置。当收到[on('mediaKeySystemInfoUpdate')](arkts-apis-media-avplayer.md#onmediakeysysteminfoupdate11)事件时，需根据事件上报的MediaKeySystemInfo信息创建MediaKeySystem和MediaKeySession对象，并调用setDecryptionConfig设置解密配置，否则无法播放。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1361,8 +1783,8 @@ setDecryptionConfig(mediaKeySession: drm.MediaKeySession, secureVideoPath: boole
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| mediaKeySession | [drm.MediaKeySession](arkts-apis-drm-mediakeysession.md) | 是 | 解密会话 |
-| secureVideoPath | boolean | 是 | 安全视频通路，true表示选择安全视频通路，false表示选择非安全视频通路 |
+| mediaKeySession | [drm.MediaKeySession](arkts-apis-drm-mediakeysession.md) | 是 | 解密会话对象，用于播放DRM加密内容。 |
+| secureVideoPath | boolean | 是 | 是否使用安全视频通路。true表示使用安全视频通路（用于播放受保护的DRM内容），false表示使用非安全视频通路（用于播放普通内容）。当播放DRM加密的高清视频内容时，通常需要设置为true。 |
 
 **错误码：**
 
@@ -1370,32 +1792,30 @@ setDecryptionConfig(mediaKeySession: drm.MediaKeySession, secureVideoPath: boole
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
 关于drm模块的示例具体可见[@ohos.multimedia.drm](arkts-apis-drm.md)。
 
-```
-1. import { drm } from '@kit.DrmKit';
+```ts
+import { drm } from '@kit.DrmKit';
 
-3. async function  test(){
-4. let avPlayer = await media.createAVPlayer();
-5. // 创建MediaKeySystem系统。
-6. let keySystem:drm.MediaKeySystem = drm.createMediaKeySystem('com.wiseplay.drm');
-7. // 创建MediaKeySession解密会话。
-8. let keySession:drm.MediaKeySession = keySystem.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-9. // 生成许可证请求、设置许可证响应等。
-10. // 安全视频通路标志。
-11. let secureVideoPath:boolean = false;
-12. // 设置解密配置。
-13. avPlayer.setDecryptionConfig(keySession, secureVideoPath);
-14. }
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 创建MediaKeySystem系统。
+  let keySystem:drm.MediaKeySystem = drm.createMediaKeySystem('com.wiseplay.drm');
+  // 创建MediaKeySession解密会话。
+  let keySession:drm.MediaKeySession = keySystem.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
+  // 生成许可证请求、设置许可证响应等。
+  // 安全视频通路标志。
+  let secureVideoPath:boolean = false;
+  // 设置解密配置。
+  avPlayer.setDecryptionConfig(keySession, secureVideoPath);
+}
 ```
 
 ## getMediaKeySystemInfos11+
-
-PhonePC/2in1TabletTVWearable
 
 getMediaKeySystemInfos(): Array<drm.MediaKeySystemInfo>
 
@@ -1413,32 +1833,32 @@ getMediaKeySystemInfos(): Array<drm.MediaKeySystemInfo>
 
 **示例：**
 
-```
-1. import { drm } from '@kit.DrmKit';
+```ts
+import { drm } from '@kit.DrmKit';
 
-3. async function  test(){
-4. let avPlayer = await media.createAVPlayer();
-5. // 此处仅为示意，实际开发中需要在mediaKeySystemInfoUpdate事件触发成功后才能调用。
-6. const infos = avPlayer.getMediaKeySystemInfos();
-7. console.info('GetMediaKeySystemInfos count: ' + infos.length);
-8. for (let i = 0; i < infos.length; i++) {
-9. console.info('GetMediaKeySystemInfos uuid: ' + infos[i]["uuid"]);
-10. console.info('GetMediaKeySystemInfos pssh: ' + infos[i]["pssh"]);
-11. }
-12. }
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 此处仅为示意，实际开发中需要在mediaKeySystemInfoUpdate事件触发成功后才能调用。
+  const infos = avPlayer.getMediaKeySystemInfos();
+  console.info('GetMediaKeySystemInfos count: ' + infos.length);
+  for (let i = 0; i < infos.length; i++) {
+    console.info('GetMediaKeySystemInfos uuid: ' + infos[i]["uuid"]);
+    console.info('GetMediaKeySystemInfos pssh: ' + infos[i]["pssh"]);
+  }
+}
 ```
 
 ## seek9+
-
-PhonePC/2in1TabletTVWearable
 
 seek(timeMs: number, mode?:SeekMode): void
 
 跳转到指定播放位置，只能在prepared/playing/paused/completed状态调用，可以通过[on('seekDone')](arkts-apis-media-avplayer.md#onseekdone9)事件确认是否生效。
 
-注意
+**注意** 
 
-直播场景不支持seek。
+从API版本26.0.0开始，直播场景支持seek。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1448,36 +1868,34 @@ seek(timeMs: number, mode?:SeekMode): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| timeMs | number | 是 | 指定的跳转时间节点，单位毫秒（ms），取值范围为[0, [duration](arkts-apis-media-avplayer.md#属性)]。  当模式为[SEEK\_CONTINUOUS](arkts-apis-media-e.md#seekmode8)时，可以取值-1，表示SEEK\_CONTINUOUS模式结束。 |
-| mode | [SeekMode](arkts-apis-media-e.md#seekmode8) | 否 | 基于视频I帧的跳转模式，默认为SEEK\_PREV\_SYNC模式，**仅在视频资源播放时设置**。 |
+| timeMs | number | 是 | 指定的跳转时间节点，单位毫秒（ms），取值范围为[0, [duration](arkts-apis-media-avplayer.md#属性)]。  当模式为[SEEK\_CONTINUOUS](arkts-apis-media-e.md#seekmode8)时，可以取值-1，表示SEEK\_CONTINUOUS模式结束。该值必须为整数。 |
+| mode | [SeekMode](arkts-apis-media-e.md#seekmode8) | 否 | 基于视频I帧的跳转模式，默认值为SEEK\_PREV\_SYNC模式，**仅在视频资源播放时设置**。 |
 
 **示例：**
 
-```
-1. async function  test(){
-2. let avPlayer = await media.createAVPlayer();
-3. let seekTime: number = 1000;
-4. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/playing/paused/completed状态后才能调用。
-5. avPlayer.seek(seekTime, media.SeekMode.SEEK_PREV_SYNC);
-6. }
+```ts
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  let seekTime: number = 1000;
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/playing/paused/completed状态后才能调用。
+  avPlayer.seek(seekTime, media.SeekMode.SEEK_PREV_SYNC);
+}
 ```
 
-```
-1. async function  test(){
-2. // SEEK_CONTINUOUS 可以结合Slider的onChange回调方法进行对应处理，当slideMode为Moving时，触发拖动过程的SeekContinuous。
-3. let avPlayer = await media.createAVPlayer();
-4. let slideMovingTime: number = 2000;
-5. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/playing/paused/completed状态后才能调用。
-6. avPlayer.seek(slideMovingTime, media.SeekMode.SEEK_CONTINUOUS);
+```ts
+async function  test(){
+  // SEEK_CONTINUOUS 可以结合Slider的onChange回调方法进行对应处理，当slideMode为Moving时，触发拖动过程的SeekContinuous。
+  let avPlayer = await media.createAVPlayer();
+  let slideMovingTime: number = 2000;
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/playing/paused/completed状态后才能调用。
+  avPlayer.seek(slideMovingTime, media.SeekMode.SEEK_CONTINUOUS);
 
-8. // 当slideMode为End时，调用seek(-1, media.SeekMode.SEEK_CONTINUOUS)结束seek。
-9. avPlayer.seek(-1, media.SeekMode.SEEK_CONTINUOUS);
-10. }
+  // 当slideMode为End时，调用seek(-1, media.SeekMode.SEEK_CONTINUOUS)结束seek。
+  avPlayer.seek(-1, media.SeekMode.SEEK_CONTINUOUS);
+}
 ```
 
 ## isSeekContinuousSupported18+
-
-PhonePC/2in1TabletTVWearable
 
 isSeekContinuousSupported() : boolean
 
@@ -1495,17 +1913,15 @@ isSeekContinuousSupported() : boolean
 
 **示例：**
 
-```
-1. async function  test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/playing/paused/completed状态后才能调用。
-4. let isSupported = avPlayer.isSeekContinuousSupported();
-5. }
+```ts
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/playing/paused/completed状态后才能调用。
+  let isSupported = avPlayer.isSeekContinuousSupported();
+}
 ```
 
 ## on('seekDone')9+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'seekDone', callback: Callback<number>): void
 
@@ -1524,19 +1940,17 @@ on(type: 'seekDone', callback: Callback<number>): void
 
 **示例：**
 
-```
-1. async function  test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 监听后，开始接收seek生效的事件回调。
-4. avPlayer.on('seekDone', (seekDoneTime:number) => {
-5. console.info('seekDone called,and seek time is:' + seekDoneTime);
-6. });
-7. }
+```ts
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 监听后，开始接收seek生效的事件回调。
+  avPlayer.on('seekDone', (seekDoneTime:number) => {
+    console.info('seekDone called,and seek time is:' + seekDoneTime);
+  });
+}
 ```
 
 ## off('seekDone')9+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'seekDone', callback?: Callback<number>): void
 
@@ -1555,23 +1969,23 @@ off(type: 'seekDone', callback?: Callback<number>): void
 
 **示例：**
 
-```
-1. async function  test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 取消后，不再接收seek生效的事件回调。
-4. avPlayer.off('seekDone');
-5. }
+```ts
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 取消后，不再接收seek生效的事件回调。
+  avPlayer.off('seekDone');
+}
 ```
 
 ## setSpeed9+
-
-PhonePC/2in1TabletTVWearable
 
 setSpeed(speed: PlaybackSpeed): void
 
 设置倍速模式，只能在prepared/playing/paused/completed状态调用，可以通过[on('speedDone')](arkts-apis-media-avplayer.md#onspeeddone9)事件确认是否生效。
 
-注意
+setSpeed使用固定的枚举倍速值，适合标准倍速场景；setPlaybackRate支持任意倍速值且取值范围更大，适合自定义倍速场景。两者功能相同，建议根据API版本和精度需求选择：API version 9-19，使用setSpeed；API version 20及以上且需要精确倍速控制，使用setPlaybackRate。
+
+**注意** 
 
 直播场景不支持setSpeed。
 
@@ -1583,21 +1997,19 @@ setSpeed(speed: PlaybackSpeed): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| speed | [PlaybackSpeed](arkts-apis-media-e.md#playbackspeed8) | 是 | 指定播放倍速模式。 |
+| speed | [PlaybackSpeed](arkts-apis-media-e.md#playbackspeed8) | 是 | 指定播放倍速模式，设置后播放器将按照指定倍速播放，如SPEED\_FORWARD\_2\_00\_X表示以2倍速播放。 |
 
 **示例：**
 
-```
-1. async function  test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/playing/paused/completed状态后才能调用。
-4. avPlayer.setSpeed(media.PlaybackSpeed.SPEED_FORWARD_2_00_X);
-5. }
+```ts
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/playing/paused/completed状态后才能调用。
+  avPlayer.setSpeed(media.PlaybackSpeed.SPEED_FORWARD_2_00_X);
+}
 ```
 
 ## on('speedDone')9+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'speedDone', callback: Callback<number>): void
 
@@ -1616,19 +2028,17 @@ on(type: 'speedDone', callback: Callback<number>): void
 
 **示例：**
 
-```
-1. async function  test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 监听后，开始接收setSpeed生效事件回调。
-4. avPlayer.on('speedDone', (speed:number) => {
-5. console.info('speedDone called,and speed value is:' + speed);
-6. });
-7. }
+```ts
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 监听后，开始接收setSpeed生效事件回调。
+  avPlayer.on('speedDone', (speed:number) => {
+    console.info('speedDone called,and speed value is:' + speed);
+  });
+}
 ```
 
 ## off('speedDone')9+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'speedDone', callback?: Callback<number>): void
 
@@ -1647,23 +2057,21 @@ off(type: 'speedDone', callback?: Callback<number>): void
 
 **示例：**
 
-```
-1. async function  test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 取消后，不再接收setSpeed生效事件回调。
-4. avPlayer.off('speedDone');
-5. }
+```ts
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 取消后，不再接收setSpeed生效事件回调。
+  avPlayer.off('speedDone');
+}
 ```
 
 ## setPlaybackRate20+
 
-PhonePC/2in1TabletTVWearable
-
 setPlaybackRate(rate: number): void
 
-设置倍速模式。只能在prepared/playing/paused/completed状态调用，取值范围是[0.125, 4.0]，可以通过[playbackRateDone](arkts-apis-media-avplayer.md#onplaybackratedone20)事件确认是否生效。
+设置倍速模式。只能在'prepared' | 'playing' | 'paused' | 'completed'状态下调用，在API版本26.0.0及以上的取值范围是[0.125, 8.0]，API版本26.0.0以下的取值范围是[0.125, 4.0]，可以通过[playbackRateDone](arkts-apis-media-avplayer.md#onplaybackratedone20)事件确认是否生效。
 
-注意
+**注意** 
 
 直播场景不支持setPlaybackRate。
 
@@ -1675,7 +2083,7 @@ setPlaybackRate(rate: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| rate | number | 是 | 指定播放倍速速率，取值范围为[0.125, 4.0]。 |
+| rate | number | 是 | 指定播放倍速速率值，单位为倍速（x）。  在API版本26.0.0之前的取值范围是[0.125, 4.0]，API版本26.0.0及以后的取值范围是[0.125, 8.0]。默认值为1.0x（正常速度）。 |
 
 **错误码：**
 
@@ -1684,21 +2092,19 @@ setPlaybackRate(rate: number): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 5400108 | The parameter check failed, parameter value out of range. |
-| 5400102 | Operation not allowed，if invalid state or live stream. |
+| 5400102 | Operation not allowed, if invalid state or live stream. |
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/playing/paused/completed状态后才能调用。
-4. avPlayer.setPlaybackRate(2.0);
-5. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/playing/paused/completed状态后才能调用。
+  avPlayer.setPlaybackRate(2.0);
+}
 ```
 
 ## getPlaybackRate23+
-
-PhonePC/2in1TabletTVWearable
 
 getPlaybackRate(): Promise<number>
 
@@ -1714,18 +2120,16 @@ getPlaybackRate(): Promise<number>
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. avPlayer.getPlaybackRate().then((rate: number) => {
-4. console.info('Succeeded getPlaybackRate' + rate);
-5. });
-6. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  avPlayer.getPlaybackRate().then((rate: number) => {
+    console.info('Succeeded getPlaybackRate' + rate);
+  });
+}
 ```
 
 ## on('playbackRateDone')20+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'playbackRateDone', callback: OnPlaybackRateDone): void
 
@@ -1744,19 +2148,17 @@ on(type: 'playbackRateDone', callback: OnPlaybackRateDone): void
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 监听后，开始接收setPlaybackRate生效的事件。
-4. avPlayer.on('playbackRateDone', (rate:number) => {
-5. console.info('playbackRateDone called,and rate value is:' + rate);
-6. });
-7. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 监听后，开始接收setPlaybackRate生效的事件。
+  avPlayer.on('playbackRateDone', (rate:number) => {
+    console.info('playbackRateDone called,and rate value is:' + rate);
+  });
+}
 ```
 
 ## off('playbackRateDone')20+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'playbackRateDone', callback?: OnPlaybackRateDone): void
 
@@ -1775,17 +2177,127 @@ off(type: 'playbackRateDone', callback?: OnPlaybackRateDone): void
 
 **示例：**
 
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 取消后，不再接收setPlaybackRate生效的事件。
+  avPlayer.off('playbackRateDone');
+}
 ```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 取消后，不再接收setPlaybackRate生效的事件。
-4. avPlayer.off('playbackRateDone');
-5. }
+
+## getLoadedTimeRanges
+
+getLoadedTimeRanges(): Promise<Array<Range>>
+
+获取已加载的时间区间段的列表。使用Promise异步回调。
+
+**说明** 
+
+* 对于本地媒体资源，返回的时间区间为0到整个媒体时长。
+* 对于网络媒体资源，返回本地已缓存的时间区间段的列表。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVPlayer
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<[Range](arkts-apis-media-i.md#range11)>> | Promise对象，返回播放器当前已加载的时间区间段的列表。  时间区间段以播放时间轴上的[start, end]位置表示，单位为毫秒（ms）。 |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  avPlayer.getLoadedTimeRanges().then((range: Array<media.Range>) => {
+    console.info(`Succeeded in calling getLoadedTimeRanges: ${range}`);
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to getLoadedTimeRanges.Code:${err.code},message:${err.message}`);
+  });
+}
+```
+
+## getSeekableTimeRanges
+
+getSeekableTimeRanges(): Promise<Array<Range>>
+
+获取可跳转的时间区间段的列表。使用Promise异步回调。
+
+**说明** 
+
+* 对于本地媒体资源及支持分段请求的媒体资源，返回的时间区间为0到整个媒体时长。
+* 对于仅支持分块传输的媒体资源，没有可跳转的时间范围。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVPlayer
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<[Range](arkts-apis-media-i.md#range11)>> | Promise对象，返回播放器当前可跳转的时间区间段的列表。  时间区间段以播放时间轴上的[start, end]位置表示，单位为毫秒（ms）。 |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  avPlayer.getSeekableTimeRanges().then((range: Array<media.Range>) => {
+    console.info(`Succeeded in calling getSeekableTimeRanges: ${range}`);
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to getSeekableTimeRanges.Code:${err.code},message:${err.message}`);
+  });
+}
+```
+
+## seekToDefaultPosition
+
+seekToDefaultPosition(): void
+
+跳转到播放源的默认接入点。直播流为当前推荐的最新接入点；点播视频通常为视频起始位置（等同于seek(0)）。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVPlayer
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Media错误码](errorcode-media.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400102 | Operation not allowed. Return by callback. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  try {
+    avPlayer.seekToDefaultPosition()
+    console.info('Succeeded in calling seekToDefaultPosition.');
+  } catch (err) {
+    console.error(`Failed to seekToDefaultPosition.Code:${err.code},message:${err.message}`);
+  }
+}
 ```
 
 ## setBitrate9+
-
-PhonePC/2in1TabletTVWearable
 
 setBitrate(bitrate: number): void
 
@@ -1799,22 +2311,20 @@ setBitrate(bitrate: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| bitrate | number | 是 | 指定比特率，须通过[availableBitrates](arkts-apis-media-avplayer.md#onavailablebitrates9)事件获得当前HLS/DASH协议网络流可用的比特率列表，如果用户指定的比特率不在此列表中，则播放器将从可用比特率列表中选择最接近的比特率。如果通过availableBitrates事件获得的比特率列表长度为0，则不支持指定比特率，也不会产生bitrateDone回调。 |
+| bitrate | number | 是 | 指定比特率，单位为比特每秒（bps）。  须通过[availableBitrates](arkts-apis-media-avplayer.md#onavailablebitrates9)事件获得当前HLS/DASH协议网络流可用的比特率列表，如果用户指定的比特率不在此列表中，则播放器将从可用比特率列表中选择最接近的比特率。  如果通过availableBitrates事件获得的比特率列表长度为0，则不支持指定比特率，也不会产生bitrateDone回调。 |
 
 **示例：**
 
-```
-1. async function  test(){
-2. let avPlayer = await media.createAVPlayer();
-3. let bitrate: number = 96000;
-4. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/playing/paused/completed状态后才能调用。
-5. avPlayer.setBitrate(bitrate);
-6. }
+```ts
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  let bitrate: number = 96000;
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/playing/paused/completed状态后才能调用。
+  avPlayer.setBitrate(bitrate);
+}
 ```
 
 ## on('bitrateDone')9+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'bitrateDone', callback: Callback<number>): void
 
@@ -1833,19 +2343,17 @@ on(type: 'bitrateDone', callback: Callback<number>): void
 
 **示例：**
 
-```
-1. async function  test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 监听后，开始接收setBitrate生效事件回调。
-4. avPlayer.on('bitrateDone', (bitrate:number) => {
-5. console.info('bitrateDone called,and bitrate value is:' + bitrate);
-6. });
-7. }
+```ts
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 监听后，开始接收setBitrate生效事件回调。
+  avPlayer.on('bitrateDone', (bitrate:number) => {
+    console.info('bitrateDone called,and bitrate value is:' + bitrate);
+  });
+}
 ```
 
 ## off('bitrateDone')9+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'bitrateDone', callback?: Callback<number>): void
 
@@ -1864,17 +2372,15 @@ off(type: 'bitrateDone', callback?: Callback<number>): void
 
 **示例：**
 
-```
-1. async function  test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 取消后，不再接收setBitrate生效事件回调。
-4. avPlayer.off('bitrateDone');
-5. }
+```ts
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 取消后，不再接收setBitrate生效事件回调。
+  avPlayer.off('bitrateDone');
+}
 ```
 
 ## on('availableBitrates')9+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'availableBitrates', callback: Callback<Array<number>>): void
 
@@ -1893,19 +2399,17 @@ on(type: 'availableBitrates', callback: Callback<Array<number>>): void
 
 **示例：**
 
-```
-1. async function  test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 监听后，播放状态切换prepared状态时，接收到HLS/DASH协议网络流可用的比特率列表回调。
-4. avPlayer.on('availableBitrates', (bitrates: Array<number>) => {
-5. console.info('availableBitrates called,and availableBitrates length is:' + bitrates.length);
-6. });
-7. }
+```ts
+async function  test(){
+  let avPlayer = await media.createAVPlayer();
+  // 监听后，播放状态切换prepared状态时，接收到HLS/DASH协议网络流可用的比特率列表回调。
+  avPlayer.on('availableBitrates', (bitrates: Array<number>) => {
+    console.info('availableBitrates called,and availableBitrates length is:' + bitrates.length);
+  });
+}
 ```
 
 ## off('availableBitrates')9+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'availableBitrates', callback?: Callback<Array<number>>): void
 
@@ -1924,17 +2428,15 @@ off(type: 'availableBitrates', callback?: Callback<Array<number>>): void
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 取消后，不再接收HLS/DASH协议网络流可用的比特率列表回调。
-4. avPlayer.off('availableBitrates');
-5. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 取消后，不再接收HLS/DASH协议网络流可用的比特率列表回调。
+  avPlayer.off('availableBitrates');
+}
 ```
 
 ## on('mediaKeySystemInfoUpdate')11+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'mediaKeySystemInfoUpdate', callback: Callback<Array<drm.MediaKeySystemInfo>>): void
 
@@ -1953,24 +2455,22 @@ on(type: 'mediaKeySystemInfoUpdate', callback: Callback<Array<drm.MediaKeySystem
 
 **示例：**
 
-```
-1. import { drm } from '@kit.DrmKit';
+```ts
+import { drm } from '@kit.DrmKit';
 
-3. async function test(){
-4. let avPlayer = await media.createAVPlayer();
-5. // 监听后，开始接收mediaKeySystemInfoUpdate事件回调。
-6. avPlayer.on('mediaKeySystemInfoUpdate', (mediaKeySystemInfo: Array<drm.MediaKeySystemInfo>) => {
-7. for (let i = 0; i < mediaKeySystemInfo.length; i++) {
-8. console.info('mediaKeySystemInfoUpdate happened uuid: ' + mediaKeySystemInfo[i]["uuid"]);
-9. console.info('mediaKeySystemInfoUpdate happened pssh: ' + mediaKeySystemInfo[i]["pssh"]);
-10. }
-11. });
-12. }
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 监听后，开始接收mediaKeySystemInfoUpdate事件回调。
+  avPlayer.on('mediaKeySystemInfoUpdate', (mediaKeySystemInfo: Array<drm.MediaKeySystemInfo>) => {
+    for (let i = 0; i < mediaKeySystemInfo.length; i++) {
+      console.info('mediaKeySystemInfoUpdate happened uuid: ' + mediaKeySystemInfo[i]["uuid"]);
+      console.info('mediaKeySystemInfoUpdate happened pssh: ' + mediaKeySystemInfo[i]["pssh"]);
+    }
+  });
+}
 ```
 
 ## off('mediaKeySystemInfoUpdate')11+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'mediaKeySystemInfoUpdate', callback?: Callback<Array<drm.MediaKeySystemInfo>>): void;
 
@@ -1989,23 +2489,21 @@ off(type: 'mediaKeySystemInfoUpdate', callback?: Callback<Array<drm.MediaKeySyst
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 取消后，不再接收mediaKeySystemInfoUpdate事件回调。
-4. avPlayer.off('mediaKeySystemInfoUpdate');
-5. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 取消后，不再接收mediaKeySystemInfoUpdate事件回调。
+  avPlayer.off('mediaKeySystemInfoUpdate');
+}
 ```
 
 ## setLoudnessGain21+
 
-PhonePC/2in1TabletTVWearable
-
 setLoudnessGain(loudnessGain: number): Promise<void>
 
-设置播放器的响度。调用该接口后，响度增益立即生效。使用Promise异步回调。
+设置播放器的响度增益。响度是指音频的主观感知强度，响度增益通过调整音频信号的强度来改变感知音量，与setVolume的相对音量调节不同。调用该接口后，响度增益立即生效。使用Promise异步回调。
 
-说明
+**说明** 
 
 * 当播放处于prepared/playing/paused/completed/stopped状态时，可调用该接口。
 * 调用此接口时，需确保已设置音频渲染信息AVPlayer.audioRendererInfo，audioRendererInfo的usage参数必须是[STREAM\_USAGE\_MUSIC](arkts-apis-audio-e.md#streamusage)、[STREAM\_USAGE\_MOVIE](arkts-apis-audio-e.md#streamusage)、[STREAM\_USAGE\_AUDIOBOOK](arkts-apis-audio-e.md#streamusage)其中之一。
@@ -2019,7 +2517,7 @@ setLoudnessGain(loudnessGain: number): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| loudnessGain | number | 是 | 设置播放器的响度值，单位为dB，响度范围为[-90.0, 24.0]。默认值为0.0dB。 |
+| loudnessGain | number | 是 | 设置播放器的响度值，单位为分贝（dB），响度范围为[-90.0, 24.0]。默认值为0.0dB。 |
 
 **返回值：**
 
@@ -2029,24 +2527,22 @@ setLoudnessGain(loudnessGain: number): Promise<void>
 
 **示例：**
 
-```
-1. import { audio } from '@kit.AudioKit';
+```ts
+import { audio } from '@kit.AudioKit';
 
-3. async function test(){
-4. let avPlayer = await media.createAVPlayer();
+async function test(){
+  let avPlayer = await media.createAVPlayer();
 
-6. let loudnessGain: number = 1.0;
-7. avPlayer.audioRendererInfo = {
-8. usage: audio.StreamUsage.STREAM_USAGE_MOVIE,
-9. rendererFlags: 0
-10. }
-11. avPlayer.setLoudnessGain(loudnessGain);
-12. }
+  let loudnessGain: number = 1.0;
+  avPlayer.audioRendererInfo = {
+    usage: audio.StreamUsage.STREAM_USAGE_MOVIE,
+    rendererFlags: 0
+  }
+  avPlayer.setLoudnessGain(loudnessGain);
+}
 ```
 
 ## setVolume9+
-
-PhonePC/2in1TabletTVWearable
 
 setVolume(volume: number): void
 
@@ -2060,21 +2556,19 @@ setVolume(volume: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| volume | number | 是 | 指定的相对音量大小，取值范围为[0.00-1.00]，1表示最大音量，即100%。 |
+| volume | number | 是 | 指定的相对音量大小，取值范围为[0.00, 1.00]，1表示最大音量，即100%。 |
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. let volume: number = 1.0;
-4. avPlayer.setVolume(volume);
-5. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  let volume: number = 1.0;
+  avPlayer.setVolume(volume);
+}
 ```
 
 ## on('volumeChange')9+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'volumeChange', callback: Callback<number>): void
 
@@ -2093,19 +2587,17 @@ on(type: 'volumeChange', callback: Callback<number>): void
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 监听后，开始接收setVolume生效的事件回调。
-4. avPlayer.on('volumeChange', (vol: number) => {
-5. console.info('volumeChange called,and new volume is :' + vol);
-6. });
-7. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 监听后，开始接收setVolume生效的事件回调。
+  avPlayer.on('volumeChange', (vol: number) => {
+    console.info('volumeChange called,and new volume is :' + vol);
+  });
+}
 ```
 
 ## off('volumeChange')9+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'volumeChange', callback?: Callback<number>): void
 
@@ -2124,17 +2616,15 @@ off(type: 'volumeChange', callback?: Callback<number>): void
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 取消后，不再接收setVolume生效的事件。
-4. avPlayer.off('volumeChange');
-5. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 取消后，不再接收setVolume生效的事件。
+  avPlayer.off('volumeChange');
+}
 ```
 
 ## on('endOfStream')9+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'endOfStream', callback: Callback<void>): void
 
@@ -2153,19 +2643,17 @@ on(type: 'endOfStream', callback: Callback<void>): void
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 监听后，开始接收endOfStream事件回调。
-4. avPlayer.on('endOfStream', () => {
-5. console.info('endOfStream called');
-6. });
-7. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 监听后，开始接收endOfStream事件回调。
+  avPlayer.on('endOfStream', () => {
+    console.info('endOfStream called');
+  });
+}
 ```
 
 ## off('endOfStream')9+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'endOfStream', callback?: Callback<void>): void
 
@@ -2184,23 +2672,21 @@ off(type: 'endOfStream', callback?: Callback<void>): void
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 取消后，不再接收endOfStream事件回调。
-4. avPlayer.off('endOfStream');
-5. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 取消后，不再接收endOfStream事件回调。
+  avPlayer.off('endOfStream');
+}
 ```
 
 ## on('timeUpdate')9+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'timeUpdate', callback: Callback<number>): void
 
 监听资源播放当前时间，单位为毫秒（ms），用于刷新进度条当前位置，默认间隔100ms时间上报，因用户操作（seek）产生的时间变化会立刻上报。
 
-注意
+**注意** 
 
 * 直播场景不支持timeUpdate上报。
 * 操作（seek）时必须等待seekdone结束才能根据timeUpdate来更新进度条。
@@ -2219,56 +2705,54 @@ on(type: 'timeUpdate', callback: Callback<number>): void
 
 **示例1：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 监听后，开始接收资源播放当前时间事件回调。
-4. avPlayer.on('timeUpdate', (time:number) => {
-5. console.info('timeUpdate called,and new time is :' + time);
-6. });
-7. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 监听后，开始接收资源播放当前时间事件回调。
+  avPlayer.on('timeUpdate', (time:number) => {
+    console.info('timeUpdate called,and new time is :' + time);
+  });
+}
 ```
 
 **示例2：**
 
-```
-1. async function test() {
-2. let avPlayer = await media.createAVPlayer();
+```ts
+async function test() {
+  let avPlayer = await media.createAVPlayer();
 
-4. let isSeeking = false;    // 标记是否正在seek。
-5. let seekTargetTime = 0;   // 记录目标时间（单位：毫秒）。
+  let isSeeking = false;    // 标记是否正在seek。
+  let seekTargetTime = 0;   // 记录目标时间，单位为毫秒（ms）。
 
-7. // 1.监听seekDone：确认跳转完成。
-8. avPlayer.on('seekDone', (seekDoneTime: number) => {
-9. console.info('seekDone called, and seek time is: ' + seekDoneTime);
-10. isSeeking = false;
-11. seekTargetTime = seekDoneTime; // 可选：记录最终定位时间。
-12. });
+  // 1.监听seekDone：确认跳转完成。
+  avPlayer.on('seekDone', (seekDoneTime: number) => {
+    console.info('seekDone called, and seek time is: ' + seekDoneTime);
+    isSeeking = false;
+    seekTargetTime = seekDoneTime; // 可选：记录最终定位时间。
+  });
 
-14. // 2.监听timeUpdate：只在seekDone后才更新进度。
-15. avPlayer.on('timeUpdate', (time: number) => {
-16. // 关键逻辑：只有seekDone之后才允许更新进度条。
-17. if (isSeeking) {
-18. console.info('seek in progress, ignore timeUpdate');
-19. return; // 忽略seek期间的timeUpdate。
-20. }
+  // 2.监听timeUpdate：只在seekDone后才更新进度。
+  avPlayer.on('timeUpdate', (time: number) => {
+    // 关键逻辑：只有seekDone之后才允许更新进度条。
+    if (isSeeking) {
+      console.info('seek in progress, ignore timeUpdate');
+      return; // 忽略seek期间的timeUpdate。
+    }
 
-22. // 真正的播放进度更新（seekDone后才生效）。
-23. console.info('timeUpdate: ' + time + ' ms');
-24. // 此处进行进度条更新。
-25. });
+    // 真正的播放进度更新（seekDone后才生效）。
+    console.info('timeUpdate: ' + time + ' ms');
+    // 此处进行进度条更新。
+  });
 
-27. // 3.模拟seek操作。
-28. let seekTime: number = 1000;
-29. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/playing/paused/completed状态后才能调用。
-30. avPlayer.seek(seekTime, media.SeekMode.SEEK_PREV_SYNC); // 单位：毫秒。
-31. isSeeking = true; // 标记正在seek。
-32. }
+  // 3.模拟seek操作。
+  let seekTime: number = 1000;
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/playing/paused/completed状态后才能调用。
+  avPlayer.seek(seekTime, media.SeekMode.SEEK_PREV_SYNC); // 单位为毫秒（ms）。
+  isSeeking = true; // 标记正在seek。
+}
 ```
 
 ## off('timeUpdate')9+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'timeUpdate', callback?: Callback<number>): void
 
@@ -2287,23 +2771,21 @@ off(type: 'timeUpdate', callback?: Callback<number>): void
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 取消后，不再接收资源播放当前时间事件回调。
-4. avPlayer.off('timeUpdate');
-5. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 取消后，不再接收资源播放当前时间事件回调。
+  avPlayer.off('timeUpdate');
+}
 ```
 
 ## on('durationUpdate')9+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'durationUpdate', callback: Callback<number>): void
 
 监听资源播放资源的时长，单位为毫秒（ms），用于刷新进度条长度，默认只在prepared上报一次，同时允许一些特殊码流刷新多次时长。
 
-注意
+**注意** 
 
 直播场景不支持durationUpdate上报。
 
@@ -2320,19 +2802,17 @@ on(type: 'durationUpdate', callback: Callback<number>): void
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 监听后，开始接收资源播放资源的时长事件回调。
-4. avPlayer.on('durationUpdate', (duration: number) => {
-5. console.info('durationUpdate called,new duration is :' + duration);
-6. });
-7. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 监听后，开始接收资源播放资源的时长事件回调。
+  avPlayer.on('durationUpdate', (duration: number) => {
+    console.info('durationUpdate called,new duration is :' + duration);
+  });
+}
 ```
 
 ## off('durationUpdate')9+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'durationUpdate', callback?: Callback<number>): void
 
@@ -2351,17 +2831,15 @@ off(type: 'durationUpdate', callback?: Callback<number>): void
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 取消后，不再接收资源播放资源的时长事件回调。
-4. avPlayer.off('durationUpdate');
-5. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 取消后，不再接收资源播放资源的时长事件回调。
+  avPlayer.off('durationUpdate');
+}
 ```
 
 ## on('bufferingUpdate')9+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'bufferingUpdate', callback: OnBufferingUpdateHandler): void
 
@@ -2380,19 +2858,17 @@ on(type: 'bufferingUpdate', callback: OnBufferingUpdateHandler): void
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 监听后，开始接收音视频缓存更新事件回调。
-4. avPlayer.on('bufferingUpdate', (infoType: media.BufferingInfoType, value: number) => {
-5. console.info('bufferingUpdate called,and infoType value is:' + infoType + ', value is :' + value);
-6. });
-7. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 监听后，开始接收音视频缓存更新事件回调。
+  avPlayer.on('bufferingUpdate', (infoType: media.BufferingInfoType, value: number) => {
+    console.info('bufferingUpdate called,and infoType value is:' + infoType + ', value is :' + value);
+  });
+}
 ```
 
 ## off('bufferingUpdate')9+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'bufferingUpdate', callback?: OnBufferingUpdateHandler): void
 
@@ -2411,17 +2887,15 @@ off(type: 'bufferingUpdate', callback?: OnBufferingUpdateHandler): void
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 取消后，不再接收资源播放资源的时长事件回调。
-4. avPlayer.off('bufferingUpdate');
-5. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 取消后，不再接收资源播放资源的时长事件回调。
+  avPlayer.off('bufferingUpdate');
+}
 ```
 
 ## on('startRenderFrame')9+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'startRenderFrame', callback: Callback<void>): void
 
@@ -2440,19 +2914,17 @@ on(type: 'startRenderFrame', callback: Callback<void>): void
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 监听后，开始接收视频播放开始首帧渲染的更新事件回调。
-4. avPlayer.on('startRenderFrame', () => {
-5. console.info('startRenderFrame called');
-6. });
-7. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 监听后，开始接收视频播放开始首帧渲染的更新事件回调。
+  avPlayer.on('startRenderFrame', () => {
+    console.info('startRenderFrame called');
+  });
+}
 ```
 
 ## off('startRenderFrame')9+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'startRenderFrame', callback?: Callback<void>): void
 
@@ -2471,17 +2943,15 @@ off(type: 'startRenderFrame', callback?: Callback<void>): void
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 取消后，不再接收视频播放开始首帧渲染的更新事件回调。
-4. avPlayer.off('startRenderFrame');
-5. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 取消后，不再接收视频播放开始首帧渲染的更新事件回调。
+  avPlayer.off('startRenderFrame');
+}
 ```
 
 ## on('videoSizeChange')9+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'videoSizeChange', callback: OnVideoSizeChangeHandler): void
 
@@ -2500,19 +2970,17 @@ on(type: 'videoSizeChange', callback: OnVideoSizeChangeHandler): void
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 监听视频播放宽高变化事件，仅视频播放支持该订阅事件，默认只在prepared状态上报一次。
-4. avPlayer.on('videoSizeChange', (width: number, height: number) => {
-5. console.info('videoSizeChange called,and width is:' + width + ', height is :' + height);
-6. });
-7. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 监听视频播放宽高变化事件，仅视频播放支持该订阅事件，默认只在prepared状态上报一次。
+  avPlayer.on('videoSizeChange', (width: number, height: number) => {
+    console.info('videoSizeChange called,and width is:' + width + ', height is :' + height);
+  });
+}
 ```
 
 ## off('videoSizeChange')9+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'videoSizeChange', callback?: OnVideoSizeChangeHandler): void
 
@@ -2531,17 +2999,15 @@ off(type: 'videoSizeChange', callback?: OnVideoSizeChangeHandler): void
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 取消后，不再监听视频播放宽高变化事件。
-4. avPlayer.off('videoSizeChange');
-5. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 取消后，不再监听视频播放宽高变化事件。
+  avPlayer.off('videoSizeChange');
+}
 ```
 
 ## on('audioInterrupt')9+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'audioInterrupt', callback: Callback<audio.InterruptEvent>): void
 
@@ -2560,21 +3026,19 @@ on(type: 'audioInterrupt', callback: Callback<audio.InterruptEvent>): void
 
 **示例：**
 
-```
-1. import { audio } from '@kit.AudioKit';
+```ts
+import { audio } from '@kit.AudioKit';
 
-3. async function test(){
-4. let avPlayer = await media.createAVPlayer();
-5. // 监听音频焦点变化事件，多个音视频资源同时播放时，会根据音频焦点模型audio.InterruptMode触发此事件。
-6. avPlayer.on('audioInterrupt', (info: audio.InterruptEvent) => {
-7. console.info('audioInterrupt called,and InterruptEvent info is:' + info);
-8. });
-9. }
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 监听音频焦点变化事件，多个音视频资源同时播放时，会根据音频焦点模型audio.InterruptMode触发此事件。
+  avPlayer.on('audioInterrupt', (info: audio.InterruptEvent) => {
+    console.info('audioInterrupt called,and InterruptEvent info is:' + info);
+  });
+}
 ```
 
 ## off('audioInterrupt')9+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'audioInterrupt', callback?: Callback<audio.InterruptEvent>): void
 
@@ -2593,21 +3057,19 @@ off(type: 'audioInterrupt', callback?: Callback<audio.InterruptEvent>): void
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 取消后，不再接收音频焦点变化事件回调。
-4. avPlayer.off('audioInterrupt');
-5. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 取消后，不再接收音频焦点变化事件回调。
+  avPlayer.off('audioInterrupt');
+}
 ```
 
 ## on('audioOutputDeviceChangeWithInfo')11+
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'audioOutputDeviceChangeWithInfo', callback: Callback<audio.AudioStreamDeviceChangeInfo>): void
 
-订阅监听音频流输出设备变化及原因，使用callback方式返回结果。
+订阅监听音频流输出设备变化及原因。使用callback异步回调。
 
 在订阅此监听时，建议参考[响应输出设备变更时合理暂停](../harmonyos-guides/audio-output-device-change.md)自行实现设备连接或者断开时的播放器行为。
 
@@ -2628,29 +3090,27 @@ on(type: 'audioOutputDeviceChangeWithInfo', callback: Callback<audio.AudioStream
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { audio } from '@kit.AudioKit';
+```ts
+import { audio } from '@kit.AudioKit';
 
-3. async function test(){
-4. let avPlayer = await media.createAVPlayer();
-5. // 开始监听音频流输出设备变化及原因。
-6. avPlayer.on('audioOutputDeviceChangeWithInfo', (data: audio.AudioStreamDeviceChangeInfo) => {
-7. console.info(`${JSON.stringify(data)}`);
-8. });
-9. }
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 开始监听音频流输出设备变化及原因。
+  avPlayer.on('audioOutputDeviceChangeWithInfo', (data: audio.AudioStreamDeviceChangeInfo) => {
+    console.info(`${JSON.stringify(data)}`);
+  });
+}
 ```
 
 ## off('audioOutputDeviceChangeWithInfo')11+
 
-PhonePC/2in1TabletTVWearable
-
 off(type: 'audioOutputDeviceChangeWithInfo', callback?: Callback<audio.AudioStreamDeviceChangeInfo>): void
 
-取消订阅监听音频流输出设备变化及原因，使用callback方式返回结果。
+取消订阅监听音频流输出设备变化及原因。使用callback异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2669,25 +3129,23 @@ off(type: 'audioOutputDeviceChangeWithInfo', callback?: Callback<audio.AudioStre
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 取消后，不再接收音频流输出设备变化事件。
-4. avPlayer.off('audioOutputDeviceChangeWithInfo');
-5. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 取消后，不再接收音频流输出设备变化事件。
+  avPlayer.off('audioOutputDeviceChangeWithInfo');
+}
 ```
 
 ## addSubtitleFromFd12+
 
-PhonePC/2in1TabletTVWearable
-
 addSubtitleFromFd(fd: number, offset?: number, length?: number): Promise<void>
 
-依据fd为视频添加外挂字幕，当前仅支持与视频资源同时设置（在avplayer设置fdSrc视频资源后设置外挂字幕）。使用Promise异步回调。
+依据fd为视频添加外挂字幕，当前仅支持与视频资源同时设置（在AVPlayer设置fdSrc视频资源后设置外挂字幕）。使用Promise异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2698,8 +3156,8 @@ addSubtitleFromFd(fd: number, offset?: number, length?: number): Promise<void>
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fd | number | 是 | 资源句柄，通过[resourceManager.getRawFd](js-apis-resource-manager.md#getrawfd9)获取。 |
-| offset | number | 否 | 资源偏移量，需要基于预置资源的信息输入，非法值会造成字幕频资源解析错误，默认值:0。 |
-| length | number | 否 | 资源长度，默认值为文件中从偏移量开始的剩余字节，需要基于预置资源的信息输入，非法值会造成字幕频资源解析错误，默认值:0。 |
+| offset | number | 否 | 资源偏移量。取值范围[0, +∞)。需要基于预置资源的信息输入，非法值会造成字幕资源解析错误。默认值为0。单位为字节。 |
+| length | number | 否 | 资源长度。取值范围[0, +∞)。如果不传递该参数，默认使用文件中从偏移量开始的剩余字节；如果传递该参数，默认值为0，需要基于预置资源的信息输入，非法值会造成字幕资源解析错误。 |
 
 **返回值：**
 
@@ -2718,23 +3176,21 @@ addSubtitleFromFd(fd: number, offset?: number, length?: number): Promise<void>
 
 **示例：**
 
-```
-1. import { common } from '@kit.AbilityKit'
+```ts
+import { common } from '@kit.AbilityKit'
 
-3. let avPlayer = await media.createAVPlayer();
-4. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-5. let fileDescriptor = await context.resourceManager.getRawFd('xxx.srt');
+let avPlayer = await media.createAVPlayer();
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let fileDescriptor = await context.resourceManager.getRawFd('xxx.srt');
 
-7. avPlayer.addSubtitleFromFd(fileDescriptor.fd, fileDescriptor.offset, fileDescriptor.length);
+avPlayer.addSubtitleFromFd(fileDescriptor.fd, fileDescriptor.offset, fileDescriptor.length);
 ```
 
 ## addSubtitleFromUrl12+
 
-PhonePC/2in1TabletTVWearable
-
 addSubtitleFromUrl(url: string): Promise<void>
 
-依据url为视频添加外挂字幕，当前仅支持与视频资源同时设置（在avplayer设置fdSrc视频资源后设置外挂字幕）。使用Promise异步回调。
+依据URL为视频添加外挂字幕，当前仅支持与视频资源同时设置（在AVPlayer设置fdSrc视频资源后设置外挂字幕）。使用Promise异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2744,7 +3200,7 @@ addSubtitleFromUrl(url: string): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| url | string | 是 | 外挂字幕文件地址。 |
+| url | string | 是 | 外挂字幕文件地址。支持http/https网络地址和本地文件路径。当前支持的字幕文件格式包括srt、vtt等常见格式。 |
 
 **返回值：**
 
@@ -2763,17 +3219,15 @@ addSubtitleFromUrl(url: string): Promise<void>
 
 **示例：**
 
-```
-1. async function test(){
-2. let fdUrl:string = 'http://xxx.xxx.xxx/xx/index.srt';
-3. let avPlayer: media.AVPlayer = await media.createAVPlayer();
-4. avPlayer.addSubtitleFromUrl(fdUrl);
-5. }
+```ts
+async function test(){
+  let fdUrl:string = 'https://abc.bcd.example/cde/index.srt'; // 此处仅为示意，请替换为真实资源文件URL。
+  let avPlayer: media.AVPlayer = await media.createAVPlayer();
+  avPlayer.addSubtitleFromUrl(fdUrl);
+}
 ```
 
 ## on('subtitleUpdate')12+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'subtitleUpdate', callback: Callback<SubtitleInfo>): void
 
@@ -2787,31 +3241,29 @@ on(type: 'subtitleUpdate', callback: Callback<SubtitleInfo>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为：'subtitleUpdate'。 |
+| type | string | 是 | 事件回调类型，用于注册监听外挂字幕更新事件，支持的事件类型为：'subtitleUpdate'。 |
 | callback | Callback<[SubtitleInfo](arkts-apis-media-i.md#subtitleinfo12)> | 是 | 外挂字幕事件回调方法。 |
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 订阅获取外挂字幕的事件，当有外挂字幕时，会触发事件。
-4. avPlayer.on('subtitleUpdate', async (info: media.SubtitleInfo) => {
-5. if (info) {
-6. let text = (!info.text) ? '' : info.text
-7. let startTime = (!info.startTime) ? 0 : info.startTime
-8. let duration = (!info.duration) ? 0 : info.duration
-9. console.info('subtitleUpdate info: text=' + text + ' startTime=' + startTime +' duration=' + duration);
-10. } else {
-11. console.info('subtitleUpdate info is null');
-12. }
-13. });
-14. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 订阅获取外挂字幕的事件，当有外挂字幕时，会触发事件。
+  avPlayer.on('subtitleUpdate', async (info: media.SubtitleInfo) => {
+    if (info) {
+      let text = (!info.text) ? '' : info.text
+      let startTime = (!info.startTime) ? 0 : info.startTime
+      let duration = (!info.duration) ? 0 : info.duration
+      console.info('subtitleUpdate info: text=' + text + ' startTime=' + startTime +' duration=' + duration);
+    } else {
+      console.info('subtitleUpdate info is null');
+    }
+  });
+}
 ```
 
 ## off('subtitleUpdate')12+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'subtitleUpdate', callback?: Callback<SubtitleInfo>): void
 
@@ -2830,17 +3282,15 @@ off(type: 'subtitleUpdate', callback?: Callback<SubtitleInfo>): void
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 取消后，不再接收获取外挂字幕的事件。
-4. avPlayer.off('subtitleUpdate');
-5. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 取消后，不再接收获取外挂字幕的事件。
+  avPlayer.off('subtitleUpdate');
+}
 ```
 
 ## on('trackChange')12+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'trackChange', callback: OnTrackChangeHandler): void
 
@@ -2854,24 +3304,22 @@ on(type: 'trackChange', callback: OnTrackChangeHandler): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为：'trackChange'。 |
+| type | string | 是 | 事件回调类型，用于注册监听轨道变更事件，支持的事件类型为：'trackChange'。 |
 | callback | [OnTrackChangeHandler](arkts-apis-media-t.md#ontrackchangehandler12) | 是 | 轨道变更事件回调方法。 |
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 订阅获取轨道变更的事件，当播放的轨道变更时，会触发事件回调。
-4. avPlayer.on('trackChange', (index: number, isSelect: boolean) => {
-5. console.info('trackChange info: index=' + index + ' isSelect=' + isSelect);
-6. });
-7. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 订阅获取轨道变更的事件，当播放的轨道变更时，会触发事件回调。
+  avPlayer.on('trackChange', (index: number, isSelect: boolean) => {
+    console.info('trackChange info: index=' + index + ' isSelect=' + isSelect);
+  });
+}
 ```
 
 ## off('trackChange')12+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'trackChange', callback?: OnTrackChangeHandler): void
 
@@ -2890,17 +3338,15 @@ off(type: 'trackChange', callback?: OnTrackChangeHandler): void
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 取消后，不再接收轨道变更的事件。
-4. avPlayer.off('trackChange');
-5. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 取消后，不再接收轨道变更的事件。
+  avPlayer.off('trackChange');
+}
 ```
 
 ## on('trackInfoUpdate')12+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'trackInfoUpdate', callback: Callback<Array<MediaDescription>>): void
 
@@ -2914,32 +3360,30 @@ on(type: 'trackInfoUpdate', callback: Callback<Array<MediaDescription>>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为：'trackInfoUpdate'。 |
+| type | string | 是 | 事件回调类型，用于注册监听轨道信息更新事件，支持的事件类型为：'trackInfoUpdate'。 |
 | callback | Callback<Array<[MediaDescription](arkts-apis-media-i.md#mediadescription8)>> | 是 | 轨道信息更新事件回调方法。 |
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 订阅获取轨道信息更新的事件，当播放的轨道有更新时，会触发事件回调。
-4. avPlayer.on('trackInfoUpdate', (info: Array<media.MediaDescription>) => {
-5. if (info) {
-6. for (let i = 0; i < info.length; i++) {
-7. let propertyIndex: Object = info[i][media.MediaDescriptionKey.MD_KEY_TRACK_INDEX];
-8. let propertyType: Object = info[i][media.MediaDescriptionKey.MD_KEY_TRACK_TYPE];
-9. console.info('track info: index=' + propertyIndex + ' tracktype=' + propertyType);
-10. }
-11. } else {
-12. console.info('track info is null');
-13. }
-14. });
-15. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 订阅获取轨道信息更新的事件，当播放的轨道有更新时，会触发事件回调。
+  avPlayer.on('trackInfoUpdate', (info: Array<media.MediaDescription>) => {
+    if (info) {
+      for (let i = 0; i < info.length; i++) {
+        let propertyIndex: Object = info[i][media.MediaDescriptionKey.MD_KEY_TRACK_INDEX];
+        let propertyType: Object = info[i][media.MediaDescriptionKey.MD_KEY_TRACK_TYPE];
+        console.info('track info: index=' + propertyIndex + ' tracktype=' + propertyType);
+      }
+    } else {
+      console.info('track info is null');
+    }
+  });
+}
 ```
 
 ## off('trackInfoUpdate')12+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'trackInfoUpdate', callback?: Callback<Array<MediaDescription>>): void
 
@@ -2958,21 +3402,19 @@ off(type: 'trackInfoUpdate', callback?: Callback<Array<MediaDescription>>): void
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 取消后，不再接收轨道信息更新的事件。
-4. avPlayer.off('trackInfoUpdate');
-5. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 取消后，不再接收轨道信息更新的事件。
+  avPlayer.off('trackInfoUpdate');
+}
 ```
 
 ## on('amplitudeUpdate')13+
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'amplitudeUpdate', callback: Callback<Array<number>>): void
 
-订阅音频最大电平值，音频资源播放时定时上报。
+订阅音频最大电平值（振幅强度），用于音频可视化等场景，音频资源播放时定时上报。电平值表示音频信号的瞬时振幅大小。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
@@ -2980,24 +3422,22 @@ on(type: 'amplitudeUpdate', callback: Callback<Array<number>>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为：'amplitudeUpdate'。 |
+| type | string | 是 | 事件回调类型，用于注册监听音频最大电平值更新事件，支持的事件类型为：'amplitudeUpdate'。 |
 | callback | Callback<Array<number>> | 是 | 音频最大电平值更新事件回调方法。 |
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 订阅音频最大电平值，音频资源播放时定时上报。
-4. avPlayer.on('amplitudeUpdate', (value: Array<number>) => {
-5. console.info(`amplitudeUpdate called,and amplitudeUpdate = ${value}`);
-6. });
-7. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 订阅音频最大电平值，音频资源播放时定时上报。
+  avPlayer.on('amplitudeUpdate', (value: Array<number>) => {
+    console.info(`amplitudeUpdate called,and amplitudeUpdate = ${value}`);
+  });
+}
 ```
 
 ## off('amplitudeUpdate')13+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'amplitudeUpdate', callback?: Callback<Array<number>>): void
 
@@ -3014,17 +3454,15 @@ off(type: 'amplitudeUpdate', callback?: Callback<Array<number>>): void
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 取消后，不再接收获取音频最大电平值事件上报。
-4. avPlayer.off('amplitudeUpdate');
-5. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 取消后，不再接收获取音频最大电平值事件上报。
+  avPlayer.off('amplitudeUpdate');
+}
 ```
 
 ## on('seiMessageReceived')18+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'seiMessageReceived', payloadTypes: Array<number>, callback: OnSeiMessageHandle): void
 
@@ -3038,39 +3476,37 @@ on(type: 'seiMessageReceived', payloadTypes: Array<number>, callback: OnSeiMessa
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为：'seiMessageReceived'。 |
-| payloadTypes | Array<number> | 是 | SEI信息的订阅负载类型数组。当前仅支持负载类型为5，即payloadType = 5。 |
+| type | string | 是 | 事件回调类型，用于注册监听SEI信息接收事件，支持的事件类型为：'seiMessageReceived'。仅适用于HTTP-FLV直播流。 |
+| payloadTypes | Array<number> | 是 | SEI信息的订阅负载类型数组，用于指定要监听的SEI消息类型。当前仅支持负载类型为5（payloadType = 5）。 |
 | callback | [OnSeiMessageHandle](arkts-apis-media-t.md#onseimessagehandle18) | 是 | 用于监听SEI信息事件的回调函数，接收订阅的负载类型。 |
 
 **示例：**
 
-```
-1. import { util } from '@kit.ArkTS';
+```ts
+import { util } from '@kit.ArkTS';
 
-3. async function test(){
-4. let avPlayer = await media.createAVPlayer();
+async function test(){
+  let avPlayer = await media.createAVPlayer();
 
-6. // 监听后，开始接收seiMessageReceived事件回调。
-7. avPlayer.on('seiMessageReceived', [5], (messages: Array<media.SeiMessage>, playbackPosition?: number) =>
-8. {
-9. console.info('seiMessageReceived playbackPosition ' + playbackPosition);
+  // 监听后，开始接收seiMessageReceived事件回调。订阅payloadType为5的SEI消息，并解码payload（去除前16字节头部）为UTF-8字符串
+  avPlayer.on('seiMessageReceived', [5], (messages: Array<media.SeiMessage>, playbackPosition?: number) =>
+  {
+    console.info('seiMessageReceived playbackPosition ' + playbackPosition);
 
-11. for (let key = 0; key < messages.length; key++) {
-12. console.info('seiMessageReceived messages payloadType ' + messages[key].payloadType + ' payload size ' + messages[key].payload.byteLength);
+    for (let key = 0; key < messages.length; key++) {
+      console.info('seiMessageReceived messages payloadType ' + messages[key].payloadType + ' payload size ' + messages[key].payload.byteLength);
 
-14. let textDecoder = util.TextDecoder.create("utf-8",{ignoreBOM: true});
-15. let ab = messages[key]?.payload?.slice(16, messages[key].payload.byteLength);
-16. let result: Uint8Array = new Uint8Array(ab);
-17. let retStr: string = textDecoder.decodeToString(result);
-18. console.info('seiMessageReceived messages payload ' + retStr);
-19. }
-20. });
-21. }
+      let textDecoder = util.TextDecoder.create("utf-8",{ignoreBOM: true});
+      let ab = messages[key]?.payload?.slice(16, messages[key].payload.byteLength);
+      let result: Uint8Array = new Uint8Array(ab);
+      let retStr: string = textDecoder.decodeToString(result);
+      console.info('seiMessageReceived messages payload ' + retStr);
+    }
+  });
+}
 ```
 
 ## off('seiMessageReceived')18+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'seiMessageReceived', payloadTypes?: Array<number>, callback?: OnSeiMessageHandle): void
 
@@ -3090,26 +3526,24 @@ off(type: 'seiMessageReceived', payloadTypes?: Array<number>, callback?: OnSeiMe
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 取消后，不再接收seiMessageReceived事件回调。
-4. avPlayer.off('seiMessageReceived');
-5. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 取消后，不再接收seiMessageReceived事件回调。
+  avPlayer.off('seiMessageReceived');
+}
 ```
 
 ## setSuperResolution18+
 
-PhonePC/2in1TabletTVWearable
-
 setSuperResolution(enabled: boolean) : Promise<void>
 
-动态开启/关闭超分算法，可在 'initialized' | 'prepared' | 'playing' | 'paused' | 'completed' | 'stopped' 状态下调用。使用Promise异步回调。
+动态开启/关闭超分辨率（超分）算法。超分辨率是一种视频画质增强技术，可将低分辨率视频提升至更高分辨率显示。可在'initialized' | 'prepared' | 'playing' | 'paused' | 'completed' | 'stopped'状态下调用。使用Promise异步回调。
 
-说明
+**说明** 
 
 * 在调用[prepare()](arkts-apis-media-avplayer.md#prepare9)前先通过[PlaybackStrategy](arkts-apis-media-i.md#playbackstrategy12)使能超分。
-* 默认目标分辨率为1920x1080，单位为像素。
+* 默认目标分辨率为1920x1080，单位为像素（px）。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -3119,7 +3553,7 @@ setSuperResolution(enabled: boolean) : Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| enabled | boolean | 是 | 表示是否开启超分。true表示开启超分，false表示关闭超分。 |
+| enabled | boolean | 是 | 表示是否开启超分。true表示开启超分（当需要提升低分辨率视频的显示质量时选择），false表示关闭超分（当原始分辨率已足够或不需要超分处理时选择）。 |
 
 **返回值：**
 
@@ -3139,29 +3573,27 @@ setSuperResolution(enabled: boolean) : Promise<void>
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. let url: string = 'http://abc.bcd.efg/aa/test.mp4';    // 此处仅为示意，请替换为真实资源文件URL。
-4. avPlayer.url = url;
-5. let playStrategy : media.PlaybackStrategy = {
-6. enableSuperResolution: true
-7. };
-8. avPlayer.setPlaybackStrategy(playStrategy);
-9. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至initialized/prepared/playing/paused/completed/stopped状态后才能调用。
-10. avPlayer.setSuperResolution(true);
-11. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  let url: string = 'http://abc.bcd.efg/aa/test.mp4';    // 此处仅为示意，请替换为真实资源文件URL。
+  avPlayer.url = url;
+  let playStrategy : media.PlaybackStrategy = {
+      enableSuperResolution: true
+  };
+  avPlayer.setPlaybackStrategy(playStrategy);
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发至initialized/prepared/playing/paused/completed/stopped状态后才能调用。
+  avPlayer.setSuperResolution(true);
+}
 ```
 
 ## setVideoWindowSize18+
-
-PhonePC/2in1TabletTVWearable
 
 setVideoWindowSize(width: number, height: number) : Promise<void>
 
 动态设置超分算法的输出分辨率。可在 'initialized' | 'prepared' | 'playing' | 'paused' | 'completed' | 'stopped' 状态下调用。使用Promise异步回调。
 
-输入参数须在320x320~1920x1080范围内，单位为像素。
+输入参数须在320x320~1920x1080范围内，单位为像素（px）。
 
 在调用[prepare()](arkts-apis-media-avplayer.md#prepare9)前先通过[PlaybackStrategy](arkts-apis-media-i.md#playbackstrategy12)使能超分。
 
@@ -3173,8 +3605,8 @@ setVideoWindowSize(width: number, height: number) : Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| width | number | 是 | 超分算法的目标输出视频宽度，取值范围为[320-1920]，单位为像素。 |
-| height | number | 是 | 超分算法的目标输出视频高度，取值范围为[320-1080]，单位为像素。 |
+| width | number | 是 | 超分算法的目标输出视频宽度，取值范围为[320-1920]，单位为像素（px）。 |
+| height | number | 是 | 超分算法的目标输出视频高度，取值范围为[320-1080]，单位为像素（px）。 |
 
 **返回值：**
 
@@ -3195,24 +3627,22 @@ setVideoWindowSize(width: number, height: number) : Promise<void>
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. let url: string = 'http://abc.bcd.efg/aa/test.mp4';    // 此处仅为示意，请替换为真实资源文件URL。
-4. avPlayer.url = url;
-5. let playStrategy : media.PlaybackStrategy = {
-6. enableSuperResolution: true
-7. };
-8. avPlayer.setPlaybackStrategy(playStrategy);
-9. avPlayer.setSuperResolution(true);
-10. // 此处仅为示意，实际开发中需要在stateChange事件成功触发至initialized/prepared/playing/paused/completed/stopped状态后才能调用。
-11. avPlayer.setVideoWindowSize(1920, 1080);
-12. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  let url: string = 'http://abc.bcd.efg/aa/test.mp4';    // 此处仅为示意，请替换为真实资源文件URL。
+  avPlayer.url = url;
+  let playStrategy : media.PlaybackStrategy = {
+      enableSuperResolution: true
+  };
+  avPlayer.setPlaybackStrategy(playStrategy);
+  avPlayer.setSuperResolution(true);
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发至initialized/prepared/playing/paused/completed/stopped状态后才能调用。
+  avPlayer.setVideoWindowSize(1920, 1080);
+}
 ```
 
 ## on('superResolutionChanged')18+
-
-PhonePC/2in1TabletTVWearable
 
 on(type:'superResolutionChanged', callback: OnSuperResolutionChanged): void
 
@@ -3231,19 +3661,17 @@ on(type:'superResolutionChanged', callback: OnSuperResolutionChanged): void
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 订阅监听超分算法开启/关闭事件。
-4. avPlayer.on('superResolutionChanged', (enabled: boolean) => {
-5. console.info('superResolutionChanged called, and enabled is:' + enabled);
-6. });
-7. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 订阅监听超分算法开启/关闭事件。
+  avPlayer.on('superResolutionChanged', (enabled: boolean) => {
+    console.info('superResolutionChanged called, and enabled is:' + enabled);
+  });
+}
 ```
 
 ## off('superResolutionChanged')18+
-
-PhonePC/2in1TabletTVWearable
 
 off(type:'superResolutionChanged', callback?: OnSuperResolutionChanged): void
 
@@ -3262,17 +3690,80 @@ off(type:'superResolutionChanged', callback?: OnSuperResolutionChanged): void
 
 **示例：**
 
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 取消后，不再接收超分算法开启/关闭事件。
+  avPlayer.off('superResolutionChanged');
+}
 ```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. // 取消后，不再接收超分算法开启/关闭事件。
-4. avPlayer.off('superResolutionChanged');
-5. }
+
+## onPlaybackContentChanged
+
+onPlaybackContentChanged(callback: Callback<string>):void;
+
+注册监听器用于监听播放内容变更事件。当播放列表中的当前播放源发生变化时（如调用advanceToNextMediaSource、advanceToMediaSource等方法切换播放源），触发此事件。使用callback异步回调。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVPlayer
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<string> | 是 | 回调函数，用于接收播放内容变更事件。回调参数为id（string类型），表示当前播放的媒体源的唯一标识符ID。 |
+
+**示例：**
+
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  avPlayer.onPlaybackContentChanged((id: string) => {
+    console.info('MediaSourceChange called, SourceId:' + id);
+  });
+}
+```
+
+## offPlaybackContentChanged
+
+offPlaybackContentChanged(callback?: Callback<string>):void;
+
+取消监听播放列表中当前媒体源变更事件。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVPlayer
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<string> | 否 | 指定要取消注册的回调方法。若未指定此参数，则取消订阅该事件的所有回调函数。 |
+
+**示例：**
+
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  let callback = (id: string) => {
+    console.info('MediaSourceChange callback called');
+  };
+
+  avPlayer.onPlaybackContentChanged(callback);
+  avPlayer.offPlaybackContentChanged(callback);
+}
 ```
 
 ## getPlaybackStatisticMetrics23+
-
-PhonePC/2in1TabletTVWearable
 
 getPlaybackStatisticMetrics(): Promise<PlaybackMetrics>
 
@@ -3284,36 +3775,34 @@ getPlaybackStatisticMetrics(): Promise<PlaybackMetrics>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[PlaybackMetrics](arkts-apis-media-t.md#playbackmetrics23)> | Promise对象，返回当前播放器的指标信息PlaybackMetrics。 |
+| Promise<[PlaybackMetrics](arkts-apis-media-t.md#playbackmetrics23)> | Promise对象。resolve返回PlaybackMetrics对象，包含播放器统计指标信息，如播放时长、缓冲时长、错误次数等统计数据；reject返回错误信息。 |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let avPlayer: media.AVPlayer | undefined;
-4. let playbackMetrics: media.PlaybackMetrics | undefined;
-5. media.createAVPlayer(async (err: BusinessError, player: media.AVPlayer) => {
-6. if (player != null) {
-7. avPlayer = player;
-8. console.info(`Succeeded in creating AVPlayer`);
-9. if (avPlayer) {
-10. try {
-11. playbackMetrics = await avPlayer.getPlaybackStatisticMetrics();
-12. console.info(`AVPlayer getPlaybackStatisticMetrics = ${JSON.stringify(playbackMetrics)}`); // 打印整个playbackMetrics的值。
-13. } catch (error) {
-14. console.error(`error = ${error}`);
-15. }
-16. }
-17. } else {
-18. console.error(`Failed to create AVPlayer, error message:${err.message}`);
-19. }
-20. });
+let avPlayer: media.AVPlayer | undefined;
+let playbackMetrics: media.PlaybackMetrics | undefined;
+media.createAVPlayer(async (err: BusinessError, player: media.AVPlayer) => {
+  if (player) {
+    avPlayer = player;
+    console.info(`Succeeded in creating AVPlayer`);
+    if (avPlayer) {
+      try {
+        playbackMetrics = await avPlayer.getPlaybackStatisticMetrics();
+        console.info(`AVPlayer getPlaybackStatisticMetrics = ${JSON.stringify(playbackMetrics)}`); // 打印整个playbackMetrics的值。
+      } catch (error) {
+        console.error(`error = ${error}`);
+      }
+    }
+  } else {
+    console.error(`Failed to create AVPlayer, error message:${err.message}`);
+  }
+});
 ```
 
 ## onMetricsEvent23+
-
-PhonePC/2in1TabletTVWearable
 
 onMetricsEvent(callback: Callback<Array<AVMetricsEvent>>): void
 
@@ -3325,28 +3814,26 @@ onMetricsEvent(callback: Callback<Array<AVMetricsEvent>>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | Callback<Array<[AVMetricsEvent](arkts-apis-media-i.md#avmetricsevent23)>> | 是 | 上报的指标事件信息的方法。使用callback异步回调。 |
+| callback | Callback<Array<[AVMetricsEvent](arkts-apis-media-i.md#avmetricsevent23)>> | 是 | 上报指标事件信息的回调方法，接收AVMetricsEvent数组作为参数。使用callback异步回调。 |
 
 **示例：**
 
-```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. avPlayer.onMetricsEvent((info: Array<media.AVMetricsEvent>) => {
-4. if (info) {
-5. for (let i = 0; i < info.length; i++) {
-6. console.info('metrics info: index=' + i + ' info=' + JSON.stringify(info));
-7. }
-8. } else {
-9. console.info('metrics info is null');
-10. }
-11. });
-12. }
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  avPlayer.onMetricsEvent((info: Array<media.AVMetricsEvent>) => {
+    if (info) {
+      for (let i = 0; i < info.length; i++) {
+        console.info('metrics info: index=' + i + ' info=' + JSON.stringify(info));
+      }
+    } else {
+      console.info('metrics info is null');
+    }
+  });
+}
 ```
 
 ## offMetricsEvent23+
-
-PhonePC/2in1TabletTVWearable
 
 offMetricsEvent(callback?: Callback<Array<AVMetricsEvent>>): void
 
@@ -3358,13 +3845,128 @@ offMetricsEvent(callback?: Callback<Array<AVMetricsEvent>>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | Callback<Array<[AVMetricsEvent](arkts-apis-media-i.md#avmetricsevent23)>> | 否 | 上报的指标事件信息的方法。使用callback异步回调。 |
+| callback | Callback<Array<[AVMetricsEvent](arkts-apis-media-i.md#avmetricsevent23)>> | 否 | 指定要取消注册的回调方法。若未填写该参数，则取消订阅该事件的所有回调方法。 |
 
 **示例：**
 
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  avPlayer.offMetricsEvent();
+}
 ```
-1. async function test(){
-2. let avPlayer = await media.createAVPlayer();
-3. avPlayer.offMetricsEvent();
-4. }
+
+## onTimedMetaData
+
+onTimedMetaData(callback: Callback<AVTimedMetaData>): void
+
+注册监听器以检测基于时间的元数据。目前只支持HLS的#EXT-X-DATERANGE和DASH的Event Stream信息，例如监听插播的元数据信息。使用callback异步回调。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVPlayer
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<[AVTimedMetaData](arkts-apis-media-i.md#avtimedmetadata)> | 是 | 回调函数，返回上报基于时间的元数据。 |
+
+**示例：**
+
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  avPlayer.onTimedMetaData((data: media.AVTimedMetaData) => {
+  });
+}
+```
+
+## offTimedMetaData
+
+offTimedMetaData(callback?: Callback<AVTimedMetaData>): void
+
+取消注册监听器以检测基于时间的元数据。目前只支持HLS的#EXT-X-DATERANGE和DASH的Event Stream信息，例如取消监听插播的元数据信息。使用callback异步回调。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVPlayer
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<[AVTimedMetaData](arkts-apis-media-i.md#avtimedmetadata)> | 否 | 回调函数，返回上报基于时间的元数据。如果未填写该参数，则取消订阅该事件的所有回调函数。 |
+
+**示例：**
+
+```ts
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  avPlayer.offTimedMetaData();
+}
+```
+
+## getCurrentTrack
+
+getCurrentTrack(trackType: MediaType): Promise<number>
+
+获取指定媒体类型的选定轨道。使用Promise异步回调。
+
+只有当AVPlayer处于prepared、playing或者paused状态时，才能调用该接口。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVPlayer
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| trackType | [MediaType](arkts-apis-media-e.md#mediatype8) | 是 | 媒体类型枚举，决定获取轨道索引的类型。  仅支持设置MEDIA\_TYPE\_AUD获取音频轨道索引、MEDIA\_TYPE\_VID获取视频轨道索引。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回指定媒体类型选中轨道的索引值。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Media错误码](errorcode-media.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400101 | No memory. Return by promise. |
+| 5400102 | Operation not allowed. Return by promise. |
+| 5400103 | I/O error. Return by promise. |
+| 5400105 | Service died. Return by promise. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+async function test(){
+  let avPlayer = await media.createAVPlayer();
+  // 此处仅为示意，实际开发中需要在stateChange事件成功触发至prepared/playing/paused状态后才能调用。
+  let myTrackId : number;
+  let trackType: media.MediaType = media.MediaType.MEDIA_TYPE_AUD;
+  avPlayer.getCurrentTrack(trackType).then((trackId: number) => {
+    console.info('Succeeded in getting CurrentTrack');
+    myTrackId = trackId;
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to get CurrentTrack.Code:${error.code},message:${error.message}`);
+  });
+}
 ```

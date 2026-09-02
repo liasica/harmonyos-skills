@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/input-ark
 title: ArkTS API
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:11+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:07d9f7084bdb7ebbb2ff8a7ef1bb87b746bf7d46901bce9f247fd1fb405389ae
+scraped_at: 2026-09-02T14:52:33+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:88f2f8d7f08350337d269d5af40627207d20f845d515845442c486aee9a29b32
 ---
 
 * **[@ohos.multimodalInput.inputDevice (输入设备)](js-apis-inputdevice.md)**
@@ -19,3 +19,4 @@ content_hash: sha256:07d9f7084bdb7ebbb2ff8a7ef1bb87b746bf7d46901bce9f247fd1fb405
 * **[@ohos.multimodalInput.touchEvent (触屏输入事件)](js-apis-touchevent.md)**
 * **[@ohos.multimodalInput.infraredEmitter (红外管理)](js-apis-infraredemitter.md)**
 * **[@ohos.multimodalInput.inputConsumer (全局快捷键)](js-apis-inputconsumer.md)**
+* **[@ohos.multimodalInput.inputEventClient (输入事件注入)](js-apis-inputeventclient.md)**

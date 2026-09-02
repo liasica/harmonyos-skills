@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-472
 title: Tabs如何禁止点击切换，以及禁止滑动内容页切换TabContent
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > Tabs如何禁止点击切换，以及禁止滑动内容页切换TabContent
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Tabs如何禁止点击切换，以及禁止滑动内容页切换TabContent
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:04+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:22+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:28705d4d338f97db0a76d69056fce821dc776d1d4493b0ac91194c2594fc147c
 ---
 

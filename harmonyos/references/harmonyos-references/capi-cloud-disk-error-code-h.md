@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-clou
 title: cloud_disk_error_code.h
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > C API > 头文件 > cloud_disk_error_code.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:52+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:e28696786e3e28fa55deeeb980ac30697ea046b68948ebc52e374f228aaeeed4
+scraped_at: 2026-09-02T15:01:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d3213b925ee900dde628762548234ab4c3521180601991d29c7f53e0e8caa7d7
 ---
 
 ## 概述
-
-PC/2in1Tablet
 
 提供云盘管理模块的错误码定义。
 
@@ -26,11 +24,7 @@ PC/2in1Tablet
 
 ## 汇总
 
-PC/2in1Tablet
-
 ### 枚举
-
-PC/2in1Tablet
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,14 +32,10 @@ PC/2in1Tablet
 
 ## 枚举类型说明
 
-PC/2in1Tablet
-
 ### CloudDisk\_ErrorCode
 
-PC/2in1Tablet
-
-```
-1. enum CloudDisk_ErrorCode
+```c
+enum CloudDisk_ErrorCode
 ```
 
 **描述**

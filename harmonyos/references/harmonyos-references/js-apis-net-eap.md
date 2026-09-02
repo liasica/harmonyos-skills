@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.net.eap (扩展认证)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.eap (扩展认证)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:28+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f69b2d39a494952d71d2ae5947b49576dbf5b90ecd4edf70044bca91723543b0
+scraped_at: 2026-09-02T15:01:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2a218e3e98c493d0d07fd58eab13f46571ca85ad391aa1f41f60e3001dd0838e
 ---
 
 该模块提供了第三方客户端接入802.1X认证（一种基于端口的网络接入控制协议）流程的机制，支撑客户端的定制认证等功能。
 
-说明
+**说明** 
 
 本模块首批接口从API version 20开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import {eap} from '@kit.NetworkKit';
+```js
+import {eap} from '@kit.NetworkKit';
 ```
 
 ## eap.regCustomEapHandler
-
-PhonePC/2in1TabletTV
 
 regCustomEapHandler(netType: number, eapCode: number, eapType: number, callback: Callback<EapData>): void
 
@@ -40,7 +36,7 @@ regCustomEapHandler(netType: number, eapCode: number, eapType: number, callback:
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| netType | number | 是 | 网络类型，取值为1或2。  netType=1表示WLAN，netType=2表示以太网。 |
+| netType | number | 是 | 网络类型，取值为1或2。  netType=1表示WLAN（WLAN仅支持PC/2in1），netType=2表示以太网。 |
 | eapCode | number | 是 | 需要进行定制的EAP code，取值为1、2、3、4 。  code=1 Request、 code=2 Response、 code=3 Success、 code=4 Failure。 |
 | eapType | number | 是 | 需要进行定制处理的EAP method类型，取值范围[0, 255]。  常用取值包括：eapType=1 Identity，eapType=2 Notification，eapType=3 NAK，eapType=4 MD5-Challenge，eapType=5 OTP（One-Time Password），eapType=6 GTC（Generic Token Card），eapType=13 EAP-TLS，eapType=21 EAP-TTLS，eapType=25 EAP-PEAP，eapType=254 Expanded Types，eapType=255 Experimental use。 |
 | callback | Callback<[EapData](js-apis-net-eap.md#eapdata)> | 是 | 回调函数，返回指定的eapCode+eapType的报文。 |
@@ -60,26 +56,20 @@ regCustomEapHandler(netType: number, eapCode: number, eapType: number, callback:
 
 **示例：**
 
-```
-1. import {eap} from '@kit.NetworkKit';
-2. let netType = 1;
-3. let eapCode = 1;
-4. let eapType = 25;
-5. let  eapData = (eapData:eap.EapData):void => {
-6. console.info("rsp result",JSON.stringify(eapData))
-7. }
+```js
+import {eap} from '@kit.NetworkKit';
+let netType = 1;
+let eapCode = 1;
+let eapType = 25;
+let eapData = (eapData:eap.EapData):void => {
+  console.info("rsp result", JSON.stringify(eapData));
+};
 
-9. try {
-10. eap.regCustomEapHandler(netType, eapCode, eapType, eapData);
-11. console.info('regCustomEapHandler success');
-12. } catch (err) {
-13. console.error('errCode: ' + err.code + ', errMessage: ' + err.message);
-14. }
+eap.regCustomEapHandler(netType, eapCode, eapType, eapData);
+console.info('regCustomEapHandler success');
 ```
 
 ## eap.unregCustomEapHandler
-
-PhonePC/2in1TabletTV
 
 unregCustomEapHandler(netType:number, eapCode: number, eapType: number, callback: Callback<EapData>): void
 
@@ -93,7 +83,7 @@ unregCustomEapHandler(netType:number, eapCode: number, eapType: number, callback
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| netType | number | 是 | 网络类型，取值为1或2。  netType=1表示WLAN，netType=2表示以太网。 |
+| netType | number | 是 | 网络类型，取值为1或2。  netType=1表示WLAN（WLAN仅支持PC/2in1），netType=2表示以太网。 |
 | eapCode | number | 是 | 需要进行定制的EAP code，取值为1、2、3、4 。  code=1 Request、 code=2 Response、 code=3 Success、 code=4 Failure。 |
 | eapType | number | 是 | 需要进行定制处理的EAP method类型，取值范围[0, 255]。  常用取值包括：eapType=1 Identity，eapType=2 Notification，eapType=3 NAK，eapType=4 MD5-Challenge，eapType=5 OTP（One-Time Password），eapType=6 GTC（Generic Token Card），eapType=13 EAP-TLS，eapType=21 EAP-TTLS，eapType=25 EAP-PEAP，eapType=254 Expanded Types，eapType=255 Experimental use。 |
 | callback | Callback<[EapData](js-apis-net-eap.md#eapdata)> | 是 | 回调函数，返回指定的eapCode+eapType的报文。 |
@@ -113,32 +103,26 @@ unregCustomEapHandler(netType:number, eapCode: number, eapType: number, callback
 
 **示例：**
 
-```
-1. import {eap} from '@kit.NetworkKit';
-2. let netType = 1;
-3. let eapCode = 1;
-4. let eapType = 25;
-5. let  eapData = (eapData:eap.EapData):void => {
-6. console.info("rsp result",JSON.stringify(eapData))
-7. }
+```js
+import {eap} from '@kit.NetworkKit';
+let netType = 1;
+let eapCode = 1;
+let eapType = 25;
+let eapData = (eapData:eap.EapData):void => {
+  console.info("rsp result", JSON.stringify(eapData));
+};
 
-9. try {
-10. eap.unregCustomEapHandler(netType, eapCode, eapType, eapData);
-11. console.info('unregCustomEapHandler success');
-12. } catch (err) {
-13. console.error('errCode: ' + err.code + ', errMessage: ' + err.message);
-14. }
+eap.unregCustomEapHandler(netType, eapCode, eapType, eapData);
+console.info('unregCustomEapHandler success');
 ```
 
 ## eap.replyCustomEapData
-
-PhonePC/2in1TabletTV
 
 replyCustomEapData(result: CustomResult, data: EapData): void
 
 该接口用于通知系统已完成该步定制化处理。
 
-说明
+**说明** 
 
 * 若用于处理收EAP数据包(rx)时的callback，传给系统的EAP数据需要剥离服务器添加的定制部分。
 * 若用于处理发EAP数据包(tx)时的callback，传给系统的EAP数据为经过添加定制部分后的EAP数据。
@@ -166,26 +150,24 @@ replyCustomEapData(result: CustomResult, data: EapData): void
 | 33200009 | netmanager stop. |
 | 33200099 | internal error. |
 
-```
-1. import {eap} from '@kit.NetworkKit';
-2. let eapData:eap.EapData= {
-3. msgId: 1,
-4. eapBuffer: new Uint8Array([1, 2, 3, 4, 5]),
-5. bufferLen: 5,
-6. };
-7. let result = 1;
+```js
+import {eap} from '@kit.NetworkKit';
+let eapData:eap.EapData= {
+  msgId: 1,
+  eapBuffer: new Uint8Array([1, 2, 3, 4, 5]),
+  bufferLen: 5,
+};
+let result = 1;
 
-9. try {
-10. eap.replyCustomEapData(result, eapData);
-11. console.info('replyCustomEapData success');
-12. } catch (err) {
-13. console.error('errCode: ' + err.code + ', errMessage: ' + err.message);
-14. }
+try {
+  eap.replyCustomEapData(result, eapData);
+  console.info('replyCustomEapData success');
+} catch (err) {
+  console.error('errCode: ' + err.code + ', errMessage: ' + err.message);
+}
 ```
 
 ## eap.startEthEap
-
-PhonePC/2in1TabletTV
 
 startEthEap(netId: number, profile: EthEapProfile): void
 
@@ -217,38 +199,36 @@ startEthEap(netId: number, profile: EthEapProfile): void
 
 **示例：**
 
-```
-1. import {eap} from '@kit.NetworkKit';
-2. let netId = 100;
-3. let profile: eap.EthEapProfile = {
-4. eapMethod: eap.EapMethod.EAP_TTLS,
-5. phase2Method: eap.Phase2Method.PHASE2_AKA_PRIME,
-6. identity: "identity",
-7. anonymousIdentity: "anonymousIdentity",
-8. password: "password",
-9. caCertAliases: "caCertAliases",
-10. caPath: "caPath",
-11. clientCertAliases: "clientCertAliases",
-12. certEntry: new Uint8Array([5,6,7,8,9,10]),
-13. certPassword: "certPassword",
-14. altSubjectMatch: "altSubjectMatch",
-15. domainSuffixMatch: "domainSuffixMatch",
-16. realm: "realm",
-17. plmn: "plmn",
-18. eapSubId: 1
-19. };
-
-21. try {
-22. eap.startEthEap(netId, profile);
-23. console.info('startEthEap success');
-24. } catch (err) {
-25. console.error('errCode: ' + err.code + ', errMessage: ' + err.message);
-26. }
+```js
+import {eap} from '@kit.NetworkKit';
+let netId = 100;
+let profile: eap.EthEapProfile = {
+  eapMethod: eap.EapMethod.EAP_TTLS,
+  phase2Method: eap.Phase2Method.PHASE2_AKA_PRIME,
+  identity: "identity",
+  anonymousIdentity: "anonymousIdentity",
+  password: "password",
+  caCertAliases: "caCertAliases",
+  caPath: "caPath",
+  clientCertAliases: "clientCertAliases",
+  certEntry: new Uint8Array([5,6,7,8,9,10]),
+  certPassword: "certPassword",
+  altSubjectMatch: "altSubjectMatch",
+  domainSuffixMatch: "domainSuffixMatch",
+  realm: "realm",
+  plmn: "plmn",
+  eapSubId: 1
+};
+    
+try {
+  eap.startEthEap(netId, profile);
+  console.info('startEthEap success');
+} catch (err) {
+  console.error('errCode: ' + err.code + ', errMessage: ' + err.message);
+}
 ```
 
 ## eap.logOffEthEap
-
-PhonePC/2in1TabletTV
 
 logOffEthEap(netId: number): void
 
@@ -279,20 +259,18 @@ logOffEthEap(netId: number): void
 
 **示例：**
 
-```
-1. import {eap} from '@kit.NetworkKit';
-2. let netId = 100;
-3. try{
-4. eap.logOffEthEap(netId);
-5. console.info("logOffEthEap success");
-6. } catch (err) {
-7. console.error('errCode: ' + err.code + ', errMessage: ' + err.message);
-8. }
+```js
+import {eap} from '@kit.NetworkKit';
+let netId = 100;
+try{
+  eap.logOffEthEap(netId);
+  console.info("logOffEthEap success");
+} catch (err) {
+  console.error('errCode: ' + err.code + ', errMessage: ' + err.message);
+}
 ```
 
 ## EapData
-
-PhonePC/2in1TabletTV
 
 EAP信息。
 
@@ -302,11 +280,9 @@ EAP信息。
 | --- | --- | --- | --- | --- |
 | msgId | number | 否 | 否 | 伪随机数，用于关联处理前后的EAP数据。 |
 | eapBuffer | Uint8Array | 否 | 否 | 从EAP header开始的EAP原始数据，未加密。 |
-| bufferLen | number | 否 | 否 | 数据长度。 |
+| bufferLen | number | 否 | 否 | 数据长度。单位：Byte。 |
 
 ## CustomResult
-
-PhonePC/2in1TabletTV
 
 表示EAP认证处理结果的枚举。
 
@@ -319,8 +295,6 @@ PhonePC/2in1TabletTV
 | RESULT\_FINISH | 2 | 认证流程结束，结果成功。 |
 
 ## EapMethod
-
-PhonePC/2in1TabletTV
 
 表示EAP认证方式的枚举。
 
@@ -340,8 +314,6 @@ PhonePC/2in1TabletTV
 
 ## Phase2Method
 
-PhonePC/2in1TabletTV
-
 表示第二阶段认证方式的枚举。
 
 **系统能力：** SystemCapability.Communication.NetManager.Eap
@@ -358,8 +330,6 @@ PhonePC/2in1TabletTV
 | PHASE2\_AKA\_PRIME | 7 | AKA Prime类型。 |
 
 ## EthEapProfile
-
-PhonePC/2in1TabletTV
 
 可扩展身份验证协议配置信息。
 

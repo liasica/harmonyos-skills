@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-scsi
 title: ScsiPeripheral_InquiryInfo
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 结构体 > ScsiPeripheral_InquiryInfo
 category: harmonyos-references
-scraped_at: 2026-04-29T14:01:29+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:189b0514fa2604faf907aaa3ba1eb40da6cf2e2e9f4c4f7361f980a4fa7caf59
+scraped_at: 2026-09-02T15:02:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:134c1d810c08dd1753364a9a9eb7f52ae1091e261ab383198d16a68f84e163e1
 ---
 
-```
-1. typedef struct ScsiPeripheral_InquiryInfo {...} ScsiPeripheral_InquiryInfo
+```c
+typedef struct ScsiPeripheral_InquiryInfo {...} ScsiPeripheral_InquiryInfo
 ```
 
 ## 概述
 
-PC/2in1
-
-SCSI inquiry 数据。
+SCSI INQUIRY 数据，用于存储SCSI外设的INQUIRY命令查询结果。
 
 **起始版本：** 18
 
@@ -26,16 +24,12 @@ SCSI inquiry 数据。
 
 ## 汇总
 
-PC/2in1
-
 ### 成员变量
-
-PC/2in1
 
 | 名称 | 描述 |
 | --- | --- |
-| uint8\_t deviceType | 设备类型。 |
-| char idVendor[[SCSIPERIPHERAL\_VENDOR\_ID\_LEN](capi-scsi-peripheral-types-h.md) + 1] | 制造商 id。 |
-| char idProduct[[SCSIPERIPHERAL\_PRODUCT\_ID\_LEN](capi-scsi-peripheral-types-h.md) + 1] | 产品 id。 |
-| char revProduct[[SCSIPERIPHERAL\_PRODUCT\_REV\_LEN](capi-scsi-peripheral-types-h.md) + 1] | 产品版本。 |
-| [ScsiPeripheral\_DeviceMemMap](capi-scsiperipheralddk-scsiperipheral-devicememmap.md)\* data | 所有的查询数据。 |
+| uint8\_t deviceType | SCSI外设的设备类型，具体类型值定义参见SCSI标准协议。 |
+| char idVendor[[SCSIPERIPHERAL\_VENDOR\_ID\_LEN](capi-scsi-peripheral-types-h.md#宏定义) + 1] | 制造商 ID。 |
+| char idProduct[[SCSIPERIPHERAL\_PRODUCT\_ID\_LEN](capi-scsi-peripheral-types-h.md#宏定义) + 1] | 产品 ID。 |
+| char revProduct[[SCSIPERIPHERAL\_PRODUCT\_REV\_LEN](capi-scsi-peripheral-types-h.md#宏定义) + 1] | 产品版本。 |
+| [ScsiPeripheral\_DeviceMemMap](capi-scsiperipheralddk-scsiperipheral-devicememmap.md)\* data | 指向设备内存映射的指针，用于存储查询得到的数据。 |

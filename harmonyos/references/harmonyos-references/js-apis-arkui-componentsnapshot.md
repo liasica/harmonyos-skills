@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.arkui.componentSnapshot (组件截图)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.componentSnapshot (组件截图)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:50:29+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:6d652524504980877e23081b542056c8813d1c4148e1e1e9598c8191ca205be6
+scraped_at: 2026-09-02T15:00:49+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3a4325696e6fc3555936bf6d1633f084322909ae3278b87a71e178904186bb49
 ---
 
 本模块提供获取组件截图的能力，包括已加载的组件的截图和没有加载的组件的截图。组件截图只能够截取组件大小的区域，如果组件的绘制超出了它的区域，或子组件的绘制超出了父组件的区域，这些在组件区域外绘制的内容不会在截图中呈现。兄弟节点堆叠在组件区域内，截图不会显示兄弟组件。
@@ -14,30 +14,27 @@ content_hash: sha256:6d652524504980877e23081b542056c8813d1c4148e1e1e9598c8191ca2
 
 组件截图典型使用场景（如长截图）及最佳实践请参考[使用组件截图](../harmonyos-guides/arkts-uicontext-component-snapshot.md)。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+* 本模块接口仅可在Stage模型下使用。
 * 对于使用[XComponent](ts-basic-components-xcomponent.md)的场景，例如：Video或者相机流媒体展示类组件，不建议使用组件截图相关接口，建议使用[createPixelMapFromSurface](arkts-apis-image-f.md#imagecreatepixelmapfromsurface11)直接获取图片。
-* 如果组件自身内容不能填满组件大小区域，那么剩余位置截图返回的内容为透明像素。如果组件使用了[图像效果](ts-universal-attributes-image-effect.md)类属性或其他的效果类属性，则可能产生非用户预期的截图结果。请排查是否需要填充组件透明内容区域，或使用[窗口截图](arkts-apis-window-window.md#snapshot9)替代。
+* 如果组件自身内容不能填满组件大小区域，那么剩余位置截图返回的内容为透明像素。如果组件使用了[图像效果](ts-universal-attributes-image-effect.md)类属性或其他的效果类属性，则可能产生非用户预期的截图结果。请排查是否需要填充组件透明内容区域，或使用窗口截图接口[snapshot](arkts-apis-window-window.md#snapshot9)替代。
 * 示例效果请以真机运行为准，当前 DevEco Studio预览器不支持。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { componentSnapshot } from '@kit.ArkUI';
+```ts
+import { componentSnapshot } from '@kit.ArkUI';
 ```
 
 ## componentSnapshot.get(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 get(id: string, callback: AsyncCallback<image.PixelMap>, options?: SnapshotOptions): void
 
 获取已加载的组件的截图，传入组件的[组件标识](ts-universal-attributes-component-id.md)，找到对应组件进行截图。通过回调返回结果。
 
-说明
+**说明** 
 
 * 从API version 10开始支持，从API version 18开始废弃，建议使用[get](arkts-apis-uicontext-componentsnapshot.md#get12)替代。get需先通过[UIContext](arkts-apis-uicontext-uicontext.md)中的[getComponentSnapshot](arkts-apis-uicontext-uicontext.md#getcomponentsnapshot12)方法获取[ComponentSnapshot](arkts-apis-uicontext-componentsnapshot.md)对象，然后通过该对象进行调用。
 * 从API version 12开始，可以通过使用[UIContext](arkts-apis-uicontext-uicontext.md)中的[getComponentSnapshot](arkts-apis-uicontext-uicontext.md#getcomponentsnapshot12)方法获取当前UI上下文关联的[ComponentSnapshot](arkts-apis-uicontext-componentsnapshot.md)对象。
@@ -64,64 +61,62 @@ get(id: string, callback: AsyncCallback<image.PixelMap>, options?: SnapshotOptio
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
 | 100001 | Invalid ID. |
 
-说明
+**说明** 
 
 直接使用componentSnapshot可能导致[UI上下文不明确](../harmonyos-guides/arkts-global-interface.md#ui上下文不明确)的问题，建议使用getUIContext()获取[UIContext](arkts-apis-uicontext-uicontext.md)实例，并使用[getComponentSnapshot](arkts-apis-uicontext-uicontext.md#getcomponentsnapshot12)获取绑定实例的componentSnapshot。
 
 **示例：**
 
+```ts
+import { componentSnapshot } from '@kit.ArkUI';
+import { image } from '@kit.ImageKit';
+
+@Entry
+@Component
+struct SnapshotExample {
+  @State pixmap: image.PixelMap | undefined = undefined
+
+  build() {
+    Column() {
+      Row() {
+        Image(this.pixmap).width(200).height(200).border({ color: Color.Black, width: 2 }).margin(5)
+        // $r('app.media.img')需要替换为开发者所需的图像资源文件
+        Image($r('app.media.img'))
+          .autoResize(true)
+          .width(200)
+          .height(200)
+          .margin(5)
+          .id("root")
+      }
+
+      Button("click to generate UI snapshot")
+        .onClick(() => {
+          // 建议使用this.getUIContext().getComponentSnapshot().get()
+          componentSnapshot.get("root", (error: Error, pixmap: image.PixelMap) => {
+            if (error) {
+              console.error(`error:${JSON.stringify(error)}`)
+              return;
+            }
+            this.pixmap = pixmap
+          }, { scale: 2, waitUntilRenderFinished: true })
+        }).margin(10)
+    }
+    .width('100%')
+    .height('100%')
+    .alignItems(HorizontalAlign.Center)
+  }
+}
 ```
-1. import { componentSnapshot } from '@kit.ArkUI';
-2. import { image } from '@kit.ImageKit';
 
-4. @Entry
-5. @Component
-6. struct SnapshotExample {
-7. @State pixmap: image.PixelMap | undefined = undefined
-
-9. build() {
-10. Column() {
-11. Row() {
-12. Image(this.pixmap).width(200).height(200).border({ color: Color.Black, width: 2 }).margin(5)
-13. // $r('app.media.img')需要替换为开发者所需的图像资源文件
-14. Image($r('app.media.img'))
-15. .autoResize(true)
-16. .width(200)
-17. .height(200)
-18. .margin(5)
-19. .id("root")
-20. }
-
-22. Button("click to generate UI snapshot")
-23. .onClick(() => {
-24. // 建议使用this.getUIContext().getComponentSnapshot().get()
-25. componentSnapshot.get("root", (error: Error, pixmap: image.PixelMap) => {
-26. if (error) {
-27. console.error(`error:${JSON.stringify(error)}`)
-28. return;
-29. }
-30. this.pixmap = pixmap
-31. }, { scale: 2, waitUntilRenderFinished: true })
-32. }).margin(10)
-33. }
-34. .width('100%')
-35. .height('100%')
-36. .alignItems(HorizontalAlign.Center)
-37. }
-38. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/dnuDKCpZQBq4QIHCvU_t0Q/zh-cn_image_0000002589325789.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/OM88rBHbSOuca367MNi-sw/zh-cn_image_0000002706835514.gif)
 
 ## componentSnapshot.get(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 get(id: string, options?: SnapshotOptions): Promise<image.PixelMap>
 
 获取已加载的组件的截图，传入组件的[组件标识](ts-universal-attributes-component-id.md)，找到对应组件进行截图。通过Promise返回结果。
 
-说明
+**说明** 
 
 * 从API version 10开始支持，从API version 18开始废弃，建议使用[get](arkts-apis-uicontext-componentsnapshot.md#get12-1)替代。get需先通过[UIContext](arkts-apis-uicontext-uicontext.md)中的[getComponentSnapshot](arkts-apis-uicontext-uicontext.md#getcomponentsnapshot12)方法获取[ComponentSnapshot](arkts-apis-uicontext-componentsnapshot.md)对象，然后通过该对象进行调用。
 * 从API version 12开始，可以通过使用[UIContext](arkts-apis-uicontext-uicontext.md)中的[getComponentSnapshot](arkts-apis-uicontext-uicontext.md#getcomponentsnapshot12)方法获取当前UI上下文关联的[ComponentSnapshot](arkts-apis-uicontext-componentsnapshot.md)对象。
@@ -153,63 +148,61 @@ get(id: string, options?: SnapshotOptions): Promise<image.PixelMap>
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
 | 100001 | Invalid ID. |
 
-说明
+**说明** 
 
 直接使用componentSnapshot可能导致[UI上下文不明确](../harmonyos-guides/arkts-global-interface.md#ui上下文不明确)的问题，建议使用getUIContext()获取[UIContext](arkts-apis-uicontext-uicontext.md)实例，并使用[getComponentSnapshot](arkts-apis-uicontext-uicontext.md#getcomponentsnapshot12)获取绑定实例的componentSnapshot。
 
 **示例：**
 
+```ts
+import { componentSnapshot } from '@kit.ArkUI';
+import { image } from '@kit.ImageKit';
+
+@Entry
+@Component
+struct SnapshotExample {
+  @State pixmap: image.PixelMap | undefined = undefined
+
+  build() {
+    Column() {
+      Row() {
+        Image(this.pixmap).width(200).height(200).border({ color: Color.Black, width: 2 }).margin(5)
+        // $r('app.media.img')需要替换为开发者所需的图像资源文件
+        Image($r('app.media.img'))
+          .autoResize(true)
+          .width(200)
+          .height(200)
+          .margin(5)
+          .id("root")
+      }
+
+      Button("click to generate UI snapshot")
+        .onClick(() => {
+          // 建议使用this.getUIContext().getComponentSnapshot().get()
+          componentSnapshot.get("root", { scale: 2, waitUntilRenderFinished: true })
+            .then((pixmap: image.PixelMap) => {
+              this.pixmap = pixmap
+            }).catch((err: Error) => {
+            console.error(`error:${err}`)
+          })
+        }).margin(10)
+    }
+    .width('100%')
+    .height('100%')
+    .alignItems(HorizontalAlign.Center)
+  }
+}
 ```
-1. import { componentSnapshot } from '@kit.ArkUI';
-2. import { image } from '@kit.ImageKit';
 
-4. @Entry
-5. @Component
-6. struct SnapshotExample {
-7. @State pixmap: image.PixelMap | undefined = undefined
-
-9. build() {
-10. Column() {
-11. Row() {
-12. Image(this.pixmap).width(200).height(200).border({ color: Color.Black, width: 2 }).margin(5)
-13. // $r('app.media.img')需要替换为开发者所需的图像资源文件
-14. Image($r('app.media.img'))
-15. .autoResize(true)
-16. .width(200)
-17. .height(200)
-18. .margin(5)
-19. .id("root")
-20. }
-
-22. Button("click to generate UI snapshot")
-23. .onClick(() => {
-24. // 建议使用this.getUIContext().getComponentSnapshot().get()
-25. componentSnapshot.get("root", { scale: 2, waitUntilRenderFinished: true })
-26. .then((pixmap: image.PixelMap) => {
-27. this.pixmap = pixmap
-28. }).catch((err: Error) => {
-29. console.error(`error:${err}`)
-30. })
-31. }).margin(10)
-32. }
-33. .width('100%')
-34. .height('100%')
-35. .alignItems(HorizontalAlign.Center)
-36. }
-37. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/igcO0Go_T1KGenMLDSHxxQ/zh-cn_image_0000002589325789.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/jb9vHBfkQnmP4kKixOKbfg/zh-cn_image_0000002706835514.gif)
 
 ## componentSnapshot.createFromBuilder(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 createFromBuilder(builder: CustomBuilder, callback: AsyncCallback<image.PixelMap>, delay?: number, checkImageStatus?: boolean, options?: SnapshotOptions): void
 
 在应用后台渲染CustomBuilder自定义组件，并输出其截图。通过回调返回结果并支持在回调中获取离屏组件绘制区域坐标和大小。
 
-说明
+**说明** 
 
 * 从API version 10开始支持，从API version 18开始废弃，建议使用[createFromBuilder](arkts-apis-uicontext-componentsnapshot.md#createfrombuilder12)替代。createFromBuilder需先通过[UIContext](arkts-apis-uicontext-uicontext.md)中的[getComponentSnapshot](arkts-apis-uicontext-uicontext.md#getcomponentsnapshot12)方法获取[ComponentSnapshot](arkts-apis-uicontext-componentsnapshot.md)对象，然后通过该对象进行调用。
 * 从API version 12开始，可以通过使用[UIContext](arkts-apis-uicontext-uicontext.md)中的[getComponentSnapshot](arkts-apis-uicontext-uicontext.md#getcomponentsnapshot12)方法获取当前UI上下文关联的[ComponentSnapshot](arkts-apis-uicontext-componentsnapshot.md)对象。
@@ -239,85 +232,83 @@ createFromBuilder(builder: CustomBuilder, callback: AsyncCallback<image.PixelMap
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
 | 100001 | The builder is not a valid build function. |
-| 160001 | An image component in builder is not ready for taking a snapshot. The check for the ready state is required when the checkImageStatus option is enabled. |
+| 160001 | An image component in builder is not ready for taking a snapshot. The check for the ready state is required when the checkImageStatus option is enabled.  适用版本：12+ |
 
-说明
+**说明** 
 
 直接使用componentSnapshot可能导致[UI上下文不明确](../harmonyos-guides/arkts-global-interface.md#ui上下文不明确)的问题，建议使用getUIContext()获取[UIContext](arkts-apis-uicontext-uicontext.md)实例，并使用[getComponentSnapshot](arkts-apis-uicontext-uicontext.md#getcomponentsnapshot12)获取绑定实例的componentSnapshot。
 
 **示例：**
 
+```ts
+import { componentSnapshot } from '@kit.ArkUI';
+import { image } from '@kit.ImageKit';
+
+@Entry
+@Component
+struct OffscreenSnapshotExample {
+  @State pixmap: image.PixelMap | undefined = undefined
+
+  @Builder
+  RandomBuilder() {
+    Flex({ direction: FlexDirection.Column, justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
+      Text('Test menu item 1')
+        .fontSize(20)
+        .width(100)
+        .height(50)
+        .textAlign(TextAlign.Center)
+      Divider().height(10)
+      Text('Test menu item 2')
+        .fontSize(20)
+        .width(100)
+        .height(50)
+        .textAlign(TextAlign.Center)
+    }
+    .width(100)
+    .id("builder")
+  }
+
+  build() {
+    Column() {
+      Button("click to generate offscreen UI snapshot")
+        .onClick(() => {
+          // 建议使用this.getUIContext().getComponentSnapshot().createFromBuilder()
+          componentSnapshot.createFromBuilder(() => {
+            this.RandomBuilder()
+          },
+            (error: Error, pixmap: image.PixelMap) => {
+              if (error) {
+                console.error(`error:${JSON.stringify(error)}`)
+                return;
+              }
+              this.pixmap = pixmap
+              // 保存pixmap到文件中
+              // ....
+              // 获取组件大小和位置
+              let info = this.getUIContext().getComponentUtils().getRectangleById("builder")
+              console.info(info.size.width + ' ' + info.size.height + ' ' + info.localOffset.x + ' ' +
+              info.localOffset.y + ' ' + info.windowOffset.x + ' ' + info.windowOffset.y)
+            }, 320, true, { scale: 2, waitUntilRenderFinished: true })
+        })
+      Image(this.pixmap)
+        .margin(10)
+        .height(200)
+        .width(200)
+        .border({ color: Color.Black, width: 2 })
+    }.width('100%').margin({ left: 10, top: 5, bottom: 5 }).height(300)
+  }
+}
 ```
-1. import { componentSnapshot } from '@kit.ArkUI';
-2. import { image } from '@kit.ImageKit';
 
-4. @Entry
-5. @Component
-6. struct OffscreenSnapshotExample {
-7. @State pixmap: image.PixelMap | undefined = undefined
-
-9. @Builder
-10. RandomBuilder() {
-11. Flex({ direction: FlexDirection.Column, justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
-12. Text('Test menu item 1')
-13. .fontSize(20)
-14. .width(100)
-15. .height(50)
-16. .textAlign(TextAlign.Center)
-17. Divider().height(10)
-18. Text('Test menu item 2')
-19. .fontSize(20)
-20. .width(100)
-21. .height(50)
-22. .textAlign(TextAlign.Center)
-23. }
-24. .width(100)
-25. .id("builder")
-26. }
-
-28. build() {
-29. Column() {
-30. Button("click to generate offscreen UI snapshot")
-31. .onClick(() => {
-32. // 建议使用this.getUIContext().getComponentSnapshot().createFromBuilder()
-33. componentSnapshot.createFromBuilder(() => {
-34. this.RandomBuilder()
-35. },
-36. (error: Error, pixmap: image.PixelMap) => {
-37. if (error) {
-38. console.error(`error:${JSON.stringify(error)}`)
-39. return;
-40. }
-41. this.pixmap = pixmap
-42. // 保存pixmap到文件中
-43. // ....
-44. // 获取组件大小和位置
-45. let info = this.getUIContext().getComponentUtils().getRectangleById("builder")
-46. console.info(info.size.width + ' ' + info.size.height + ' ' + info.localOffset.x + ' ' +
-47. info.localOffset.y + ' ' + info.windowOffset.x + ' ' + info.windowOffset.y)
-48. }, 320, true, { scale: 2, waitUntilRenderFinished: true })
-49. })
-50. Image(this.pixmap)
-51. .margin(10)
-52. .height(200)
-53. .width(200)
-54. .border({ color: Color.Black, width: 2 })
-55. }.width('100%').margin({ left: 10, top: 5, bottom: 5 }).height(300)
-56. }
-57. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/G_oTHCvBTCWPJwdjaj_9BQ/zh-cn_image_0000002589245731.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/pvdYJDrqQbm0UcMZCtdJyA/zh-cn_image_0000002736314619.gif)
 
 ## componentSnapshot.createFromBuilder(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 createFromBuilder(builder: CustomBuilder, delay?: number, checkImageStatus?: boolean, options?: SnapshotOptions): Promise<image.PixelMap>
 
 在应用后台渲染CustomBuilder自定义组件，并输出其截图。通过Promise返回结果，支持获取离屏组件绘制区域的坐标和大小。
 
-说明
+**说明** 
 
 * 从API version 10开始支持，从API version 18开始废弃，建议使用[createFromBuilder](arkts-apis-uicontext-componentsnapshot.md#createfrombuilder12-1)替代。createFromBuilder需先通过[UIContext](arkts-apis-uicontext-uicontext.md)中的[getComponentSnapshot](arkts-apis-uicontext-uicontext.md#getcomponentsnapshot12)方法获取[ComponentSnapshot](arkts-apis-uicontext-componentsnapshot.md)对象，然后通过该对象进行调用。
 * 从API version 12开始，可以通过使用[UIContext](arkts-apis-uicontext-uicontext.md)中的[getComponentSnapshot](arkts-apis-uicontext-uicontext.md#getcomponentsnapshot12)方法获取当前UI上下文关联的[ComponentSnapshot](arkts-apis-uicontext-componentsnapshot.md)对象。
@@ -352,83 +343,81 @@ createFromBuilder(builder: CustomBuilder, delay?: number, checkImageStatus?: boo
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
 | 100001 | The builder is not a valid build function. |
-| 160001 | An image component in builder is not ready for taking a snapshot. The check for the ready state is required when the checkImageStatus option is enabled. |
+| 160001 | An image component in builder is not ready for taking a snapshot. The check for the ready state is required when the checkImageStatus option is enabled.  适用版本：12+ |
 
-说明
+**说明** 
 
 直接使用componentSnapshot可能导致[UI上下文不明确](../harmonyos-guides/arkts-global-interface.md#ui上下文不明确)的问题，建议使用getUIContext()获取[UIContext](arkts-apis-uicontext-uicontext.md)实例，并使用[getComponentSnapshot](arkts-apis-uicontext-uicontext.md#getcomponentsnapshot12)获取绑定实例的componentSnapshot。
 
 **示例：**
 
+```ts
+import { componentSnapshot } from '@kit.ArkUI'
+import { image } from '@kit.ImageKit'
+
+@Entry
+@Component
+struct OffscreenSnapshotExample {
+  @State pixmap: image.PixelMap | undefined = undefined
+
+  @Builder
+  RandomBuilder() {
+    Flex({ direction: FlexDirection.Column, justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
+      Text('Test menu item 1')
+        .fontSize(20)
+        .width(100)
+        .height(50)
+        .textAlign(TextAlign.Center)
+      Divider().height(10)
+      Text('Test menu item 2')
+        .fontSize(20)
+        .width(100)
+        .height(50)
+        .textAlign(TextAlign.Center)
+    }
+    .width(100)
+    .id("builder")
+  }
+
+  build() {
+    Column() {
+      Button("click to generate offscreen UI snapshot")
+        .onClick(() => {
+          // 建议使用this.getUIContext().getComponentSnapshot().createFromBuilder()
+          componentSnapshot.createFromBuilder(() => {
+            this.RandomBuilder()
+          }, 320, true, { scale: 2, waitUntilRenderFinished: true })
+            .then((pixmap: image.PixelMap) => {
+              this.pixmap = pixmap
+              // 保存pixmap到文件中
+              // ....
+              // 获取组件大小和位置
+              let info = this.getUIContext().getComponentUtils().getRectangleById("builder")
+              console.info(`${info.size.width} ${info.size.height} ${info.localOffset.x} ${
+              info.localOffset.y} ${info.windowOffset.x} ${info.windowOffset.y}`)
+            }).catch((err: Error) => {
+            console.error(`error:${err}`)
+          })
+        })
+      Image(this.pixmap)
+        .margin(10)
+        .height(200)
+        .width(200)
+        .border({ color: Color.Black, width: 2 })
+    }.width('100%').margin({ left: 10, top: 5, bottom: 5 }).height(300)
+  }
+}
 ```
-1. import { componentSnapshot } from '@kit.ArkUI'
-2. import { image } from '@kit.ImageKit'
 
-4. @Entry
-5. @Component
-6. struct OffscreenSnapshotExample {
-7. @State pixmap: image.PixelMap | undefined = undefined
-
-9. @Builder
-10. RandomBuilder() {
-11. Flex({ direction: FlexDirection.Column, justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
-12. Text('Test menu item 1')
-13. .fontSize(20)
-14. .width(100)
-15. .height(50)
-16. .textAlign(TextAlign.Center)
-17. Divider().height(10)
-18. Text('Test menu item 2')
-19. .fontSize(20)
-20. .width(100)
-21. .height(50)
-22. .textAlign(TextAlign.Center)
-23. }
-24. .width(100)
-25. .id("builder")
-26. }
-
-28. build() {
-29. Column() {
-30. Button("click to generate offscreen UI snapshot")
-31. .onClick(() => {
-32. // 建议使用this.getUIContext().getComponentSnapshot().createFromBuilder()
-33. componentSnapshot.createFromBuilder(() => {
-34. this.RandomBuilder()
-35. }, 320, true, { scale: 2, waitUntilRenderFinished: true })
-36. .then((pixmap: image.PixelMap) => {
-37. this.pixmap = pixmap
-38. // 保存pixmap到文件中
-39. // ....
-40. // 获取组件大小和位置
-41. let info = this.getUIContext().getComponentUtils().getRectangleById("builder")
-42. console.info(`${info.size.width} ${info.size.height} ${info.localOffset.x} ${
-43. info.localOffset.y} ${info.windowOffset.x} ${info.windowOffset.y}`)
-44. }).catch((err: Error) => {
-45. console.error(`error:${err}`)
-46. })
-47. })
-48. Image(this.pixmap)
-49. .margin(10)
-50. .height(200)
-51. .width(200)
-52. .border({ color: Color.Black, width: 2 })
-53. }.width('100%').margin({ left: 10, top: 5, bottom: 5 }).height(300)
-54. }
-55. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/FedRTtRuQF-eVEa06T846Q/zh-cn_image_0000002589245731.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/kZRdo3ZyQoGkrwsXfEKZgA/zh-cn_image_0000002736314619.gif)
 
 ## componentSnapshot.getSync12+
-
-PhonePC/2in1TabletTVWearable
 
 getSync(id: string, options?: SnapshotOptions): image.PixelMap
 
 获取已加载的组件的截图，传入组件的[组件标识](ts-universal-attributes-component-id.md)，找到对应组件进行截图。同步等待截图完成返回[PixelMap](arkts-apis-image-pixelmap.md)。
 
-说明
+**说明** 
 
 截图会获取最近一帧的绘制内容。如果在组件触发更新的同时调用截图，更新的渲染内容不会被截取到，截图会返回上一帧的绘制内容。
 
@@ -441,13 +430,13 @@ getSync(id: string, options?: SnapshotOptions): image.PixelMap
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 目标组件的[组件标识](ts-universal-attributes-component-id.md)。 |
-| options | [SnapshotOptions](js-apis-arkui-componentsnapshot.md#snapshotoptions12) | 否 | 截图相关的自定义参数。 |
+| options | [SnapshotOptions](js-apis-arkui-componentsnapshot.md#snapshotoptions12) | 否 | 截图相关的自定义参数，用于在需要自定义截图行为时传入，例如设置缩放比例、等待渲染完成、截图区域、色彩空间或动态范围等。不传入时使用默认截图配置。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| image.[PixelMap](arkts-apis-image-pixelmap.md) | 截图返回的结果。 |
+| image.[PixelMap](arkts-apis-image-pixelmap.md) | 组件截图的PixelMap对象，用于表示截取到的组件图像。 |
 
 **错误码：**
 
@@ -458,77 +447,94 @@ getSync(id: string, options?: SnapshotOptions): image.PixelMap
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
 | 100001 | Invalid ID. |
 | 160002 | Timeout. |
-| 160003 | Unsupported color space or dynamic range mode in snapshot options. |
+| 160003 | Unsupported color space or dynamic range mode in snapshot options.  适用版本：23+ |
 
-说明
+**说明** 
 
 直接使用componentSnapshot可能导致[UI上下文不明确](../harmonyos-guides/arkts-global-interface.md#ui上下文不明确)的问题。建议使用getUIContext()获取[UIContext](arkts-apis-uicontext-uicontext.md)实例，并使用[getComponentSnapshot](arkts-apis-uicontext-uicontext.md#getcomponentsnapshot12)获取绑定实例的componentSnapshot。
 
 **示例：**
 
+```ts
+import { componentSnapshot } from '@kit.ArkUI';
+import { image } from '@kit.ImageKit';
+
+@Entry
+@Component
+struct SnapshotExample {
+  @State pixmap: image.PixelMap | undefined = undefined
+
+  build() {
+    Column() {
+      Row() {
+        Image(this.pixmap).width(200).height(200).border({ color: Color.Black, width: 2 }).margin(5)
+        // $r('app.media.img')需要替换为开发者所需的图像资源文件
+        Image($r('app.media.img'))
+          .autoResize(true)
+          .width(200)
+          .height(200)
+          .margin(5)
+          .id('root')
+      }
+
+      Button('click to generate UI snapshot')
+        .onClick(() => {
+          try {
+            // 建议使用this.getUIContext().getComponentSnapshot().getSync()
+            let pixelmap = componentSnapshot.getSync('root', { scale: 2, waitUntilRenderFinished: true });
+            this.pixmap = pixelmap;
+          } catch (error) {
+            console.error(`getSync error message:${error.message}`);
+          }
+        }).margin(10)
+    }
+    .width('100%')
+    .height('100%')
+    .alignItems(HorizontalAlign.Center)
+  }
+}
 ```
-1. import { componentSnapshot } from '@kit.ArkUI';
-2. import { image } from '@kit.ImageKit';
 
-4. @Entry
-5. @Component
-6. struct SnapshotExample {
-7. @State pixmap: image.PixelMap | undefined = undefined
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/eFexIPULR3GZrBC4iVSPzg/zh-cn_image_0000002706835514.gif)
 
-9. build() {
-10. Column() {
-11. Row() {
-12. Image(this.pixmap).width(200).height(200).border({ color: Color.Black, width: 2 }).margin(5)
-13. // $r('app.media.img')需要替换为开发者所需的图像资源文件
-14. Image($r('app.media.img'))
-15. .autoResize(true)
-16. .width(200)
-17. .height(200)
-18. .margin(5)
-19. .id("root")
-20. }
+## SnapshotSizeLimitation
 
-22. Button("click to generate UI snapshot")
-23. .onClick(() => {
-24. try {
-25. // 建议使用this.getUIContext().getComponentSnapshot().getSync()
-26. let pixelmap = componentSnapshot.getSync("root", { scale: 2, waitUntilRenderFinished: true })
-27. this.pixmap = pixelmap
-28. } catch (error) {
-29. console.error(`getSync errorCode:${error.code} message:${error.message}`)
-30. }
-31. }).margin(10)
-32. }
-33. .width('100%')
-34. .height('100%')
-35. .alignItems(HorizontalAlign.Center)
-36. }
-37. }
-```
+定义组件截图的尺寸限制。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/He5Zd6jcRk6QXNVQfZ9n6Q/zh-cn_image_0000002589325789.gif)
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| maxWidth | number | 否 | 否 | 组件截图的最大宽度限制。  取值范围：[0, +∞)  单位：px |
+| maxHeight | number | 否 | 否 | 组件截图的最大高度限制。  取值范围：[0, +∞)  单位：px |
 
 ## SnapshotOptions12+
 
-PhonePC/2in1TabletTVWearable
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | scale | number | 否 | 是 | 指定截图时图形侧绘制pixelmap的缩放比例，比例过大时截图时间会变长，或者截图可能会失败。  取值范围：[0, +∞)，当小于等于0时按默认情况处理。  默认值：1  **说明：**  请不要截取过大尺寸的图片，截图不建议超过屏幕尺寸的大小。当要截取的图片目标长宽超过底层限制时，截图会返回失败，不同设备的底层限制不同。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| waitUntilRenderFinished | boolean | 否 | 是 | 设置是否强制系统在截图前等待所有绘制指令执行完毕。true表示强制系统在截图前等待所有绘制指令执行完毕，false表示不强制系统在截图前等待所有绘制指令执行完毕。该选项可尽可能确保截图内容是最新的状态，应尽量开启。需要注意的是，开启后接口可能需要更长的时间返回，具体的时间依赖页面当时时刻需要重绘区域的大小。  默认值：false  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| waitUntilRenderFinished | boolean | 否 | 是 | 设置是否强制系统在截图前等待所有绘制指令执行完毕。true表示强制系统在截图前等待所有绘制指令执行完毕，false表示不强制系统在截图前等待所有绘制指令执行完毕。该选项可尽可能确保截图内容是最新的状态，应尽量开启。需要注意的是，开启后接口可能需要更长的时间返回，具体的时间依赖页面当前时刻需要重绘区域的大小。  默认值：false  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | region15+ | [SnapshotRegionType](js-apis-arkui-componentsnapshot.md#snapshotregiontype15) | 否 | 是 | 指定截图的矩形区域范围，默认为整个组件。  **元服务API：** 从API version 15开始，该接口支持在元服务中使用。 |
 | colorMode23+ | [ColorModeOptions](js-apis-arkui-componentsnapshot.md#colormodeoptions23) | 否 | 是 | 指定截图使用的色彩空间。  默认值：{colorSpace: SRGB, isAuto: false}  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
 | dynamicRangeMode23+ | [DynamicRangeModeOptions](js-apis-arkui-componentsnapshot.md#dynamicrangemodeoptions23) | 否 | 是 | 指定截图使用的动态范围模式。  默认值：{dynamicRangeMode: STANDARD, isAuto: false}  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
 
 ## ColorModeOptions23+
 
-PhonePC/2in1TabletTVWearable
-
 定义截图时所使用的色彩空间。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -539,60 +545,60 @@ PhonePC/2in1TabletTVWearable
 
 **示例：**
 
+```ts
+import { image } from '@kit.ImageKit';
+import { colorSpaceManager } from '@kit.ArkGraphics2D';
+
+@Entry
+@Component
+struct SnapshotColorModeExample {
+  @State pixmap: image.PixelMap | undefined = undefined;
+
+  build() {
+    Column() {
+      Row() {
+        Image(this.pixmap).width(200).height(200).border({ color: Color.Black, width: 2 }).margin(5)
+        // $r('app.media.img')需要替换为开发者所需的图像资源文件
+        Image($r('app.media.img'))
+          .autoResize(true)
+          .width(200)
+          .height(200)
+          .margin(5)
+          .id('root')
+      }
+
+      Button('click to generate UI snapshot')
+        .onClick(() => {
+          this.getUIContext().getComponentSnapshot().get('root', (error: Error, pixmap: image.PixelMap) => {
+            if (error) {
+              console.error(`error:${JSON.stringify(error)}`);
+              return;
+            }
+            this.pixmap = pixmap;
+          }, {
+            scale: 2,
+            waitUntilRenderFinished: true,
+            // 设置色彩空间为：DISPLAY_P3
+            colorMode: { colorSpace: colorSpaceManager.ColorSpace.DISPLAY_P3, isAuto: false }
+          })
+        }).margin(10)
+    }
+    .width('100%')
+    .height('100%')
+    .alignItems(HorizontalAlign.Center)
+  }
+}
 ```
-1. import { image } from '@kit.ImageKit';
-2. import { colorSpaceManager } from '@kit.ArkGraphics2D';
 
-4. @Entry
-5. @Component
-6. struct SnapshotColorModeExample {
-7. @State pixmap: image.PixelMap | undefined = undefined;
-
-9. build() {
-10. Column() {
-11. Row() {
-12. Image(this.pixmap).width(200).height(200).border({ color: Color.Black, width: 2 }).margin(5)
-13. // $r('app.media.img')需要替换为开发者所需的图像资源文件
-14. Image($r('app.media.img'))
-15. .autoResize(true)
-16. .width(200)
-17. .height(200)
-18. .margin(5)
-19. .id("root")
-20. }
-
-22. Button("click to generate UI snapshot")
-23. .onClick(() => {
-24. this.getUIContext().getComponentSnapshot().get("root", (error: Error, pixmap: image.PixelMap) => {
-25. if (error) {
-26. console.error(`error:${JSON.stringify(error)}`)
-27. return;
-28. }
-29. this.pixmap = pixmap
-30. }, {
-31. scale: 2,
-32. waitUntilRenderFinished: true,
-33. // 设置色彩空间为：DISPLAY_P3
-34. colorMode: { colorSpace: colorSpaceManager.ColorSpace.DISPLAY_P3, isAuto: false }
-35. })
-36. }).margin(10)
-37. }
-38. .width('100%')
-39. .height('100%')
-40. .alignItems(HorizontalAlign.Center)
-41. }
-42. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/hnI1VPmISniu16SGwaANkg/zh-cn_image_0000002589325789.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/jNOT_u3xReuumeeL90kQqQ/zh-cn_image_0000002706835514.gif)
 
 ## DynamicRangeModeOptions23+
-
-PhonePC/2in1TabletTVWearable
 
 定义截图所使用的动态范围模式。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -603,61 +609,61 @@ PhonePC/2in1TabletTVWearable
 
 **示例：**
 
+```ts
+import { image } from '@kit.ImageKit';
+
+@Entry
+@Component
+struct SnapshotDynamicRangeExample {
+  @State pixmap: image.PixelMap | undefined = undefined;
+
+  build() {
+    Column() {
+      Row() {
+        Image(this.pixmap).width(200).height(200).border({ color: Color.Black, width: 2 }).margin(5)
+        // $r('app.media.img')需要替换为开发者所需的图像资源文件
+        Image($r('app.media.img'))
+          .autoResize(true)
+          .width(200)
+          .height(200)
+          .margin(5)
+          .id('root')
+      }
+
+      Button('click to generate UI snapshot')
+        .onClick(() => {
+          this.getUIContext().getComponentSnapshot().get('root', (error: Error, pixmap: image.PixelMap) => {
+            if (error) {
+              console.error(`error:${JSON.stringify(error)}`);
+              return;
+            }
+            this.pixmap = pixmap;
+          }, {
+            scale: 2,
+            waitUntilRenderFinished: true,
+            // 设置动态范围为自动模式
+            dynamicRangeMode: { dynamicRangeMode: DynamicRangeMode.STANDARD, isAuto: true }
+          })
+        }).margin(10)
+    }
+    .width('100%')
+    .height('100%')
+    .alignItems(HorizontalAlign.Center)
+  }
+}
 ```
-1. import { image } from '@kit.ImageKit';
 
-3. @Entry
-4. @Component
-5. struct SnapshotDynamicRangeExample {
-6. @State pixmap: image.PixelMap | undefined = undefined;
-
-8. build() {
-9. Column() {
-10. Row() {
-11. Image(this.pixmap).width(200).height(200).border({ color: Color.Black, width: 2 }).margin(5)
-12. // $r('app.media.img')需要替换为开发者所需的图像资源文件
-13. Image($r('app.media.img'))
-14. .autoResize(true)
-15. .width(200)
-16. .height(200)
-17. .margin(5)
-18. .id("root")
-19. }
-
-21. Button("click to generate UI snapshot")
-22. .onClick(() => {
-23. this.getUIContext().getComponentSnapshot().get("root", (error: Error, pixmap: image.PixelMap) => {
-24. if (error) {
-25. console.error(`error:${JSON.stringify(error)}`)
-26. return;
-27. }
-28. this.pixmap = pixmap
-29. }, {
-30. scale: 2,
-31. waitUntilRenderFinished: true,
-32. // 设置动态范围为自动模式
-33. dynamicRangeMode: { dynamicRangeMode: DynamicRangeMode.STANDARD, isAuto: true }
-34. })
-35. }).margin(10)
-36. }
-37. .width('100%')
-38. .height('100%')
-39. .alignItems(HorizontalAlign.Center)
-40. }
-41. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/upxbZyN1Tj6Kgz5T5MNVSQ/zh-cn_image_0000002589325789.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/cnia0FJKSWKnOvrjJjhsZQ/zh-cn_image_0000002706835514.gif)
 
 ## SnapshotRegionType15+
-
-PhonePC/2in1TabletTVWearable
 
 type SnapshotRegionType = SnapshotRegion | LocalizedSnapshotRegion
 
 表示组件截图区域，取值类型为下表中的任一类型。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -668,11 +674,11 @@ type SnapshotRegionType = SnapshotRegion | LocalizedSnapshotRegion
 
 ## SnapshotRegion15+
 
-PhonePC/2in1TabletTVWearable
-
 定义组件截图的矩形区域。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -685,11 +691,11 @@ PhonePC/2in1TabletTVWearable
 
 ## LocalizedSnapshotRegion15+
 
-PhonePC/2in1TabletTVWearable
-
 定义组件截图的矩形区域，start和end的值在布局方向为LTR时指定为left和right，在布局方向为RTL时指定为right和left。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -700,69 +706,69 @@ PhonePC/2in1TabletTVWearable
 | end | number | 否 | 否 | 布局方向为LTR时表示截图区域矩形右下角的x轴坐标，布局方向为RTL时表示截图区域矩形左下角的x轴坐标。  单位：px  取值范围：[0, 组件宽度] |
 | bottom | number | 否 | 否 | 布局方向为LTR时表示截图区域矩形右下角的y轴坐标，布局方向为RTL时表示截图区域矩形左下角的y轴坐标。  单位：px  取值范围：[0, 组件高度] |
 
-说明
+**说明** 
 
 直接使用componentSnapshot可能导致[UI上下文不明确](../harmonyos-guides/arkts-global-interface.md#ui上下文不明确)的问题，建议使用getUIContext()获取[UIContext](arkts-apis-uicontext-uicontext.md)实例，并使用[getComponentSnapshot](arkts-apis-uicontext-uicontext.md#getcomponentsnapshot12)获取绑定实例的componentSnapshot。
 
 **示例：**
 
+```ts
+import { image } from '@kit.ImageKit';
+
+@Entry
+@Component
+struct SnapshotExample {
+  @State pixmap: image.PixelMap | undefined = undefined
+
+  build() {
+    Column() {
+      Row() {
+        Column() {
+          TextClock()
+          Button('Button ABCDE').type(ButtonType.Normal)
+          Row() {
+            Checkbox()
+            Text('√')
+            Text(' | ')
+            Checkbox()
+            Text('×')
+          }.align(Alignment.Start)
+
+          TextInput()
+        }
+        .align(Alignment.Start)
+        .id('component1')
+        .width('600px')
+        .height('600px')
+        .borderRadius(6)
+        .borderWidth(2)
+        .borderColor(Color.Green)
+
+      }
+
+      Button('get capture')
+        .onClick(() => {
+          try {
+            let pixelmap = this.getUIContext().getComponentSnapshot().getSync('component1',
+              {
+                scale: 2,
+                waitUntilRenderFinished: true,
+                region: {
+                  start: 20,
+                  top: 20,
+                  end: 200,
+                  bottom: 240
+                }
+              })
+            this.pixmap = pixelmap;
+          } catch (error) {
+            console.error(`getSync error message:${error.message}`);
+          }
+        }).margin(10)
+      Image(this.pixmap).border({ color: Color.Black, width: 2 }).width('600px')
+    }.width('100%').align(Alignment.Center)
+  }
+}
 ```
-1. import { image } from '@kit.ImageKit';
 
-3. @Entry
-4. @Component
-5. struct SnapshotExample {
-6. @State pixmap: image.PixelMap | undefined = undefined
-
-8. build() {
-9. Column() {
-10. Row() {
-11. Column() {
-12. TextClock()
-13. Button("Button ABCDE").type(ButtonType.Normal)
-14. Row() {
-15. Checkbox()
-16. Text("√")
-17. Text(" | ")
-18. Checkbox()
-19. Text("×")
-20. }.align(Alignment.Start)
-
-22. TextInput()
-23. }
-24. .align(Alignment.Start)
-25. .id("component1")
-26. .width("600px")
-27. .height("600px")
-28. .borderRadius(6)
-29. .borderWidth(2)
-30. .borderColor(Color.Green)
-
-32. }
-
-34. Button("get capture")
-35. .onClick(() => {
-36. try {
-37. let pixelmap = this.getUIContext().getComponentSnapshot().getSync("component1",
-38. {
-39. scale: 2,
-40. waitUntilRenderFinished: true,
-41. region: {
-42. start: 20,
-43. top: 20,
-44. end: 200,
-45. bottom: 240
-46. }
-47. })
-48. this.pixmap = pixelmap
-49. } catch (error) {
-50. console.error(`getSync errorCode:${error.code} message:${error.message}`)
-51. }
-52. }).margin(10)
-53. Image(this.pixmap).border({ color: Color.Black, width: 2 }).width("600px")
-54. }.width("100%").align(Alignment.Center)
-55. }
-56. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/gofn1j2QQzaDShv9YWB1Tg/zh-cn_image_0000002558765920.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/323fIJa8T-6jEa_3jVti5w/zh-cn_image_0000002706675576.gif)

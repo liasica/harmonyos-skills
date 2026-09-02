@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-readerkit-504
 title: Reader Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.4(16) > OS平台能力 > API变更清单 > Reader Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.4(16) > OS平台能力 > API变更清单 > Reader Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:27+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:36+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:0ccd373aed2791918d6669564c088d3e5fc867d17b266f8078bf8d8266ffa062
 ---
 

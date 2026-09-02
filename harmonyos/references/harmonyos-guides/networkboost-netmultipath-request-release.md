@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-
 title: 多网发起和释放
 breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务） > 连接迁移（多网并发） > 多网发起和释放
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:57+08:00
+scraped_at: 2026-09-02T14:59:34+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:dc9219bf6b65f5c085c19e0d255ea02362c156469d82ead7fa35f0502d137266
+content_hash: sha256:0fc99c54cb2fae2e79a65b0ebfa2bf91a090823ade4ebafb59bd6655166e3279
 ---
 
 ## 场景介绍
 
 应用可根据自身业务的需要，以及系统的建议来发起多网络加速的请求，并在使用结束后及时释放。支持WiFi和蜂窝并发以及主卡和副卡并发，不支持开发者指定并发组合，并发组合由系统决定。
 
-说明
+**说明** 
 
 * 主卡和副卡并发需要开启智能切换上网卡开关，并依赖主卡和副卡驻留网络的频点，若不满足并发条件（例如主副卡插入同运营商卡场景），多网发起会失败。
 * 受限于硬件，部分设备不支持双卡场景下的多网并发，开发者可通过错误码进行排查。
@@ -35,27 +35,27 @@ content_hash: sha256:dc9219bf6b65f5c085c19e0d255ea02362c156469d82ead7fa35f0502d1
 
 1. 导入Network Boost Kit模块。
 
-   ```
-   1. import { netHandover } from '@kit.NetworkBoostKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { netHandover } from '@kit.NetworkBoostKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 发起多网请求，同步监听多网状态可以获取多网的状态信息。
 
-   ```
-   1. try {
-   2. netHandover.requestMultiPath((data: netHandover.MultiPathRequestResult) => {
-   3. console.info(` requestMultiPath result:` + JSON.stringify(data));
-   4. });
-   5. } catch (err) {
-   6. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-   7. }
+   ```typescript
+   try {
+     netHandover.requestMultiPath((data: netHandover.MultiPathRequestResult) => {
+      console.info(` requestMultiPath result:` + JSON.stringify(data));
+     });
+    } catch (err) {
+     console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+   }
    ```
 3. 当应用业务流程结束，通过releaseMultiPath接口释放多网。
 
-   ```
-   1. try {
-   2. netHandover.releaseMultiPath();
-   3. } catch (err) {
-   4. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-   5. }
+   ```typescript
+   try {
+     netHandover.releaseMultiPath();
+    } catch (err) {
+     console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+   }
    ```

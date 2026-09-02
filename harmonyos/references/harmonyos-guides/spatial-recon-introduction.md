@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/spatial-recon
 title: Spatial Recon Kit简介
 breadcrumb: 指南 > 图形 > Spatial Recon Kit（空间建模服务） > Spatial Recon Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:50+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1f3734ac06de38f34cfa9c0f6f3c32217d14eb80f9527cd60b0682e2f43bbfa9
+scraped_at: 2026-09-02T14:59:51+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:f614b84da9d023403c41a93a678a82063050da2e6f7159c43f48ef97409514e9
 ---
 
 Spatial Recon Kit（空间建模套件）集成了3DGS（3D Gaussian Splatting）模型的渲染、运算等能力。便于用户对三维模型实现自定义操作。
@@ -31,6 +31,6 @@ Spatial Recon Kit提供了和空间重建有关的能力，帮助开发者实现
 
 本Kit暂不支持模拟器。
 
-## 与ArkGraphics 3D 模块的关系
+## 与ArkGraphics 3D模块的关系
 
-Spatial Recon Kit是[ArkGraphics 3D 模块](../harmonyos-references/arkgraphics-3d-api.md)的扩展，需与[ArkGraphics 3D 模块](../harmonyos-references/arkgraphics-3d-api.md)联合使用。
+Spatial Recon Kit是[ArkGraphics 3D模块](../harmonyos-references/arkgraphics-3d-api.md)的扩展，需与[ArkGraphics 3D模块](../harmonyos-references/arkgraphics-3d-api.md)联合使用。

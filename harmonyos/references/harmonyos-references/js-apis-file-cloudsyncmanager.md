@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.file.cloudSyncManager (端云同步管理能力)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > @ohos.file.cloudSyncManager (端云同步管理能力)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:42+08:00
-doc_updated_at: 2026-04-08
-content_hash: sha256:0788831bd941756a5a4f7c9f91495599fdf92e162a8bc9c55ce735bad6158721
+scraped_at: 2026-09-02T15:01:31+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:989361ff1a37a0b5c20c6aec84406c767e90043a82bec886c87f5dd6eaabb1fe
 ---
 
 该模块向云盘管理应用提供端云同步管理能力：包括全量下载的状态和停止原因，以及应用本地和云端文件数量信息。
 
-说明
+**说明** 
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { cloudSyncManager } from '@kit.CoreFileKit';
+```ts
+import { cloudSyncManager } from '@kit.CoreFileKit';
 ```
 
 ## DownloadStopReason20+
-
-PhonePC/2in1TabletTVWearable
 
 全量下载停止原因的枚举，默认值为NO\_STOP。
 
@@ -42,8 +38,6 @@ PhonePC/2in1TabletTVWearable
 
 ## DownloadState20+
 
-PhonePC/2in1TabletTVWearable
-
 全量下载任务状态的枚举。
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSyncManager
@@ -55,8 +49,6 @@ PhonePC/2in1TabletTVWearable
 | STOPPED | 2 | 下载停止。 |
 
 ## DownloadProgress20+
-
-PhonePC/2in1TabletTVWearable
 
 全量下载任务的进度信息。
 
@@ -75,8 +67,6 @@ PhonePC/2in1TabletTVWearable
 | stopReason | [DownloadStopReason](js-apis-file-cloudsyncmanager.md#downloadstopreason20) | 否 | 否 | 下载停止的原因。 |
 
 ## CloudFileInfo20+
-
-PhonePC/2in1TabletTVWearable
 
 应用本地和云端文件个数以及大小信息。
 

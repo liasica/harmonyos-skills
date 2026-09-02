@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_g___al
 title: FG_AlgorithmModeInfo
 breadcrumb: API参考 > 图形 > Graphics Accelerate Kit（图形加速服务） > C API > 头文件和结构体 > 结构体 > FG_AlgorithmModeInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:45+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4b214f2ee6c2e9b578cf54341d72816bd1825f2dc2df38fc0c97a1c4e5bc8233
+scraped_at: 2026-09-02T15:02:47+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e24cbb2e0e181d7da7a2174c9ade78acffb1049a0c52f58b9829eab099a71c57
 ---
 
 ## 概述
-
-PhoneTabletTV
 
 此结构体描述超帧算法模式信息。
 
@@ -22,11 +20,7 @@ PhoneTabletTV
 
 ## 汇总
 
-PhoneTabletTV
-
 ### 成员变量
-
-PhoneTabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -35,14 +29,10 @@ PhoneTabletTV
 
 ## 结构体成员变量说明
 
-PhoneTabletTV
-
 ### meMode
 
-PhoneTabletTV
-
-```
-1. FG_MeMode FG_AlgorithmModeInfo::meMode
+```c
+FG_MeMode FG_AlgorithmModeInfo::meMode
 ```
 
 **描述**
@@ -51,10 +41,8 @@ PhoneTabletTV
 
 ### predictionMode
 
-PhoneTabletTV
-
-```
-1. FG_PredictionMode FG_AlgorithmModeInfo::predictionMode
+```c
+FG_PredictionMode FG_AlgorithmModeInfo::predictionMode
 ```
 
 **描述**

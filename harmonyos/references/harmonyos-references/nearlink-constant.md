@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-constant
 title: constant（星闪公共常量定义）
-breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API参考 > constant（星闪公共常量定义）
+breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API > constant（星闪公共常量定义）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c0c8e521e7ec078ccf7ddeea86571e8e6d0bec6c569f44fd7a857cbb40848981
+scraped_at: 2026-09-02T14:52:19+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6514841c85a3a64982f2b3d79f2470e93e6af7c5e10dfea3d389fd8eb611e89a
 ---
 
 本模块提供了共用的一些常量定义。
@@ -14,17 +14,15 @@ content_hash: sha256:c0c8e521e7ec078ccf7ddeea86571e8e6d0bec6c569f44fd7a857cbb408
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { constant } from '@kit.NearLinkKit';
+```typescript
+import { constant } from '@kit.NearLinkKit';
 ```
 
 ## PairingState
 
-PhonePC/2in1TabletTVWearable
-
 表示和远端设备的配对状态，为枚举值。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
@@ -38,9 +36,9 @@ PhonePC/2in1TabletTVWearable
 
 ## ConnectionState
 
-PhonePC/2in1TabletTVWearable
-
 表示和远端设备的连接状态，为枚举值。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
@@ -55,9 +53,9 @@ PhonePC/2in1TabletTVWearable
 
 ## DeviceClass
 
-PhonePC/2in1TabletTVWearable
-
 表示设备类型，为枚举值。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
@@ -121,9 +119,9 @@ PhonePC/2in1TabletTVWearable
 
 ## AcbState
 
-PhonePC/2in1TabletTVWearable
-
 表示和远端设备的逻辑链路连接状态，为枚举值。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NearLink.Core
 

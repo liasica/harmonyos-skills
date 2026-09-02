@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 使用HSP的多包场景下，直接崩溃并产生cppcrash异常日志，错误信息为resolveBufferCallback get buffer failed
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 使用HSP的多包场景下，直接崩溃并产生cppcrash异常日志，错误信息为resolveBufferCallback get buffer failed
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:38+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:14+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:259d5011cb7b279b0fe5c663d6708ff730c6cff83cdedab73361e28a9cc5ca8d
 ---
 

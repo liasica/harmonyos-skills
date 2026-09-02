@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-input
 title: Input
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > Host API > 原型注册与管理 > OpDef > Input
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:33+08:00
+scraped_at: 2026-09-02T14:50:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:70d4fb0ff77c156bcdd49914d34a02b81bff9c20d5c3816801f7ca01136a16cf
+content_hash: sha256:7bcfe263e120419a80cdb61daf12af827709986d2cff0313714f5430bdfe5229
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:70d4fb0ff77c156bcdd49914d34a02b81bff9c20d5c3816801f7ca01136
 
 ## 函数原型
 
-```
-1. OpParamDef &Input(const char *name);
+```cpp
+OpParamDef &Input(const char *name);
 ```
 
 ## 参数说明

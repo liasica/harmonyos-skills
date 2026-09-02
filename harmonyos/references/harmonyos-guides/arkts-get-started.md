@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-get-sta
 title: 初识ArkTS语言
 breadcrumb: 指南 > 基础入门 > 学习ArkTS语言 > 初识ArkTS语言
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:25:38+08:00
+scraped_at: 2026-09-02T14:49:41+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:6f4bb71e3c3cd130f09afe457a62ea0d1da4469fa8841577ee44ba3e6827c498
+content_hash: sha256:6281a6b060a7f4520027d10270ed394f75fd844296f4a799f35a20eea3e0b44e
 ---
 
 ArkTS是HarmonyOS应用的默认开发语言，在[TypeScript](https://www.typescriptlang.org/)（简称TS）生态基础上做了扩展，保持TS的基本风格。通过规范定义，从而强化了开发期的静态检查和分析，提升了程序执行的稳定性和性能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/6eYoxwziRj69G27oZ5KNHA/zh-cn_image_0000002589323845.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/dgRqOn9WRD604VwfiN6E7A/zh-cn_image_0000002706833006.png)
 
 深入学习请看[ArkTS学习路线](https://developer.huawei.com/consumer/cn/arkts/)和[ArkTS视频课程](https://developer.huawei.com/consumer/cn/training/course/slightMooc/C101717496870909384?pathId=101667550095504391)。
 

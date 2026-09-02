@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: setSessionId加入组网和on启动监听前后设置的区别
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > setSessionId加入组网和on启动监听前后设置的区别
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:17+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:51+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:cdaa47976a491aecafd64d8f9a7315dbec74f7ad10be5f5dfdb868472957c961
 ---
 

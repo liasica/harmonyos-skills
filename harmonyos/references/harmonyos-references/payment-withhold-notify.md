@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-w
 title: 代扣结果回调通知
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 直连商户 > 签约代扣 > 代扣结果回调通知
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5218d55ccb7b20efdda8ef037243449710ced98bd3d2c1aa9ac2554bd6d28982
+scraped_at: 2026-09-02T15:03:04+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2b29e631b0272cd1952892d0c4ef90dc91b31720c029365074a6fd6602ce6236
 ---
 
 ## 功能介绍
 
 完成免密扣款后，华为支付服务器调用此接口向开发者的服务器发送代扣关键事件通知。
 
-说明
+**说明** 
 
 1. 为保证回调请求的可靠性，系统具备重试机制，所以可能出现重发的通知。
 2. 订单状态需根据orderStatus字段判断。
@@ -24,7 +24,7 @@ content_hash: sha256:5218d55ccb7b20efdda8ef037243449710ced98bd3d2c1aa9ac2554bd6d
 ## 接口原型
 
 * **承载协议：** HTTPS POST
-* **接口方向：** 开发者服务器 -> 华为支付服务器
+* **接口方向：** 华为支付服务器 -> 开发者服务器
 * **接口URL：** URL由开发者在请求[申请免密代扣](payment-withhold-apply.md)接口时传递的callbackUrl
 * **数据格式：**
 
@@ -61,29 +61,29 @@ content_hash: sha256:5218d55ccb7b20efdda8ef037243449710ced98bd3d2c1aa9ac2554bd6d
 
 ## 请求示例
 
-```
-1. POST /hw/pay/callback HTTP/1.1
-2. Content-Type: application/json;charset=UTF-8
-3. {
-4. "callbackId": "124070308575300049145189***",
-5. "callbackTime": "2023-03-29 09:29:14",
-6. "currency": "CNY",
-7. "dataType": "plain",
-8. "finishTime": "2023-02-23T10:02:04.000+0800",
-9. "mercOrderNo": "czl00120240705***",
-10. "appId": "5765880207853***",
-11. "mercNo": "10132120***",
-12. "orderStatus": "TRX_SUCCESS",
-13. "payerAmount": 10000,
-14. "payload": "example-payload",
-15. "paymentTools": "AGMT",
-16. "promotionAmount": 0,
-17. "sign": "MEYCIQDXutp78*******************VlWyjA6p210xOqI2InX9w2SIYRx",
-18. "signType": "SM2",
-19. "certNo": "120291744647139***",
-20. "sysTransOrderNo": "12407030857530004914518***",
-21. "totalAmount": 10000
-22. }
+```json
+POST /hw/pay/callback HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+{
+  "callbackId": "124070308575300049145189***",
+  "callbackTime": "2023-03-29 09:29:14",
+  "currency": "CNY",
+  "dataType": "plain",
+  "finishTime": "2023-02-23T10:02:04.000+0800",
+  "mercOrderNo": "czl00120240705***",
+  "appId": "5765880207853***",
+  "mercNo": "10132120***",
+  "orderStatus": "TRX_SUCCESS",
+  "payerAmount": 10000,
+  "payload": "example-payload",
+  "paymentTools": "AGMT",
+  "promotionAmount": 0,
+  "sign": "MEYCIQDXutp78*******************VlWyjA6p210xOqI2InX9w2SIYRx",
+  "signType": "SM2",
+  "certNo": "120291744647139***",
+  "sysTransOrderNo": "12407030857530004914518***",
+  "totalAmount": 10000
+}
 ```
 
 ## 响应参数
@@ -103,11 +103,11 @@ content_hash: sha256:5218d55ccb7b20efdda8ef037243449710ced98bd3d2c1aa9ac2554bd6d
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json; charset=UTF-8
-3. {
-4. "resultCode": "000000",
-5. "resultDesc": "Success."
-6. }
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+{
+  "resultCode": "000000",
+  "resultDesc": "Success."
+}
 ```

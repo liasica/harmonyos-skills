@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (MediaQuery)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (MediaQuery)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:25+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:2e8430ead6c4bdfd73ba9269d9db4215acab1be481883265f0465b6f31eab41f
+scraped_at: 2026-09-02T15:00:49+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4b4698dab835923051f582e7d184f5fd7527ef1b32886ce8363ca8c1adc3130a
 ---
 
 提供根据不同媒体类型定义不同的样式。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Class首批接口从API version 10开始支持。
@@ -18,13 +18,13 @@ content_hash: sha256:2e8430ead6c4bdfd73ba9269d9db4215acab1be481883265f0465b6f31e
 
 ## matchMediaSync
 
-PhonePC/2in1TabletTVWearable
-
 matchMediaSync(condition: string): mediaQuery.MediaQueryListener
 
 设置媒体查询的查询条件，并返回对应的监听句柄。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -32,7 +32,7 @@ matchMediaSync(condition: string): mediaQuery.MediaQueryListener
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| condition | string | 是 | 媒体事件的匹配条件，具体可参考[媒体查询语法规则](../harmonyos-guides/arkts-layout-development-media-query.md#语法规则)。 |
+| condition | string | 是 | 媒体查询的匹配条件，具体可参考[媒体查询语法规则](../harmonyos-guides/arkts-layout-development-media-query.md#语法规则)。 |
 
 **返回值：**
 

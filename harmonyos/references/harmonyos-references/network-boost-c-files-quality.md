@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/network-b
 title: network_boost_quality.h
 breadcrumb: API参考 > 系统 > 网络 > Network Boost Kit（网络加速服务） > C API > 头文件 > network_boost_quality.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:50+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1bad4a2d184958129cc7dd3872a20a75a6c7ebe6bd8ef23c71dc4a940f6c8c29
+scraped_at: 2026-09-02T15:01:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b2913bcab0d6063213440f3d48dffbacf6215cd78040f74b8072a87a73db07ca
 ---
 
 ## 概述
-
-PhonePC/2in1Tablet
 
 声明用于网络质量模块的API。提供基本的函数、结构体和const定义。
 
@@ -26,11 +24,7 @@ PhonePC/2in1Tablet
 
 ## 汇总
 
-PhonePC/2in1Tablet
-
 ### 结构体
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
@@ -40,8 +34,6 @@ PhonePC/2in1Tablet
 | struct [NetworkBoost\_NetworkScene](network-boost-c-struct-network_scene.md) | 网络场景状态变更回调信息。 |
 
 ### 宏定义
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
@@ -53,8 +45,6 @@ PhonePC/2in1Tablet
 | [NB\_TBPS](network-boost-c-overview.md#nb_tbps) 1000000000000 | 1tbps，请使用uint64\_t类型来避免溢出。 |
 
 ### 类型定义
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
@@ -72,8 +62,6 @@ PhonePC/2in1Tablet
 
 ### 枚举
 
-PhonePC/2in1Tablet
-
 | 名称 | 描述 |
 | --- | --- |
 | [NetworkBoost\_RecommendedAction](network-boost-c-overview.md#networkboost_recommendedaction-1) {  NB\_ACTION\_DO\_CACHING = 0, NB\_ACTION\_SUSPEND\_DATA = 1, NB\_ACTION\_DECREASE\_DATA = 2, NB\_ACTION\_INCREASE\_DATA = 3,  NB\_ACTION\_KEEP\_DATA = 4  } | 应用数传策略建议。 |
@@ -83,8 +71,6 @@ PhonePC/2in1Tablet
 | [NetworkBoost\_QoeType](network-boost-c-overview.md#networkboost_qoetype-1) {  NB\_QOE\_GOOD = 0, NB\_QOE\_BAD\_UNKNOWN = 1, NB\_QOE\_BAD\_SERVER\_ERROR = 2, NB\_QOE\_BAD\_NO\_DATA = 3,  NB\_QOE\_BAD\_PACKET\_LOST = 4, NB\_QOE\_BAD\_PACKET\_OUT\_OF\_ORDER = 5, NB\_QOE\_BAD\_HIGH\_JITTER = 6, NB\_QOE\_BAD\_HIGH\_LATENCY = 7  } | 应用体验类型。 |
 
 ### 函数
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |

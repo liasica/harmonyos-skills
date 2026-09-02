@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: 导入Sample时，提示SSL证书校验错误
 breadcrumb: FAQ > DevEco Studio > 环境准备 > 导入Sample时，提示SSL证书校验错误
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:20:04+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:a8c15e013f1ea332e454871bb7ed273e083c85ec9db16307053889301c82117b
+scraped_at: 2026-09-02T15:04:31+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:1dab47e25ba7b923e84c5784ac6c8ea7da7b72655f9efb85bda761599b714bbf
 ---
 
 **问题现象**
 
 导入Sample时，导入失败，提示“SSL certificate problem: unable to get local issuer certificate”证书校验错误。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/Bpmc4XsESryfTSkyjr0EwQ/zh-cn_image_0000002194318052.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/hwx73ZMVTKWZaRdiJ9i5lg/zh-cn_image_0000002624478400.png)
 
 **解决措施**
 
@@ -21,11 +21,11 @@ content_hash: sha256:a8c15e013f1ea332e454871bb7ed273e083c85ec9db16307053889301c8
 1. 进入Git安装目录（默认为C:\Program Files\Git），双击运行“git-cmd.exe”文件。
 2. 在打开的命令行窗口中，执行如下命令关闭SSL证书校验功能。
 
-   说明
+   **说明** 
 
    关闭SSL证书校验，可能会带来安全风险，建议导入完Sample后，及时开启。开启方法：将该命令中的false修改为true即可。
 
-   ```
-   1. git config --global http.sslVerify false
+   ```powershell
+   git config --global http.sslVerify false
    ```
 3. 执行完成后，请重新尝试导入Sample。

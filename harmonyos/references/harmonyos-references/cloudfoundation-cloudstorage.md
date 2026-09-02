@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cloudfoun
 title: cloudStorage (云存储模块)
 breadcrumb: API参考 > 应用服务 > Cloud Foundation Kit（云开发服务） > ArkTS API > cloudStorage (云存储模块)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:32+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:34c6aa7d602f4bad6545a7d6e4aab04c8f5a4367fa653aa791f794db389cb435
+scraped_at: 2026-09-02T15:02:52+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:14f236bf1abe6cf79901472cd0261b45ab3b23fffd7c23438bef705c9fb7a3f4
 ---
 
 本模块提供使用云存储对文件进行上传、下载、查询和删除等操作的能力。
@@ -14,15 +14,11 @@ content_hash: sha256:34c6aa7d602f4bad6545a7d6e4aab04c8f5a4367fa653aa791f794db389
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { cloudStorage } from '@kit.CloudFoundationKit';
+```typescript
+import { cloudStorage } from '@kit.CloudFoundationKit';
 ```
 
 ## bucket
-
-PhonePC/2in1TabletTVWearable
 
 bucket(name?: string): StorageBucket
 
@@ -58,21 +54,22 @@ bucket(name?: string): StorageBucket
 
 **示例：**
 
-```
-1. import { cloudStorage } from '@kit.CloudFoundationKit';
+```typescript
+import { cloudStorage } from '@kit.CloudFoundationKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. let bucket1: cloudStorage.StorageBucket = cloudStorage.bucket(); // name缺省，将启动异步任务查询云侧默认实例
+let bucket1: cloudStorage.StorageBucket = cloudStorage.bucket(); // name缺省，将启动异步任务查询云侧默认实例
+hilog.info(0x0000, 'testTag', `Succeeded in creating a bucket, result: ${JSON.stringify(bucket1)}`);
 
-5. /**
-6. * 指定云存储实例名称为'mybucket-duaf5'
-7. * 'mybucket'是创建云存储实例时用户输入的存储实例名称，'duaf5'是创建云存储实例时生成的随机字符串，通过符号'-'连接
-8. */
-9. let bucket2: cloudStorage.StorageBucket = cloudStorage.bucket('mybucket-duaf5');
+/**
+ * 指定云存储实例名称为'mybucket-duaf5'
+ * 'mybucket'是创建云存储实例时用户输入的存储实例名称，'duaf5'是创建云存储实例时生成的随机字符串，通过符号'-'连接
+ */
+let bucket2: cloudStorage.StorageBucket = cloudStorage.bucket('mybucket-duaf5');
+hilog.info(0x0000, 'testTag', `Succeeded in creating a bucket, result: ${JSON.stringify(bucket2)}`);
 ```
 
 ## StorageBucket
-
-PhonePC/2in1TabletTVWearable
 
 云存储的实例，提供云存储的上传、下载等相关能力，通过[bucket](cloudfoundation-cloudstorage.md#bucket)初始化。
 
@@ -85,8 +82,6 @@ PhonePC/2in1TabletTVWearable
 **起始版本：** 5.0.0(12)
 
 ### uploadFile
-
-PhonePC/2in1TabletTVWearable
 
 uploadFile(context: common.BaseContext, parameters: UploadParams): Promise<request.agent.Task>
 
@@ -117,7 +112,7 @@ uploadFile(context: common.BaseContext, parameters: UploadParams): Promise<reque
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-cloudfoundation.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-cloudfoundation.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -129,47 +124,45 @@ uploadFile(context: common.BaseContext, parameters: UploadParams): Promise<reque
 
 **示例：**
 
-```
-1. import { cloudStorage } from '@kit.CloudFoundationKit';
-2. import { BusinessError, request } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudStorage } from '@kit.CloudFoundationKit';
+import { BusinessError, request } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
+let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
 
-7. // ArkUI上下文
-8. bucket.uploadFile(context, {  // context表示应用上下文
-9. localPath: cacheFile,       // 本地文件路径（context.cacheDir目录下的文件路径）
-10. cloudPath: path             // 云侧文件路径，支持传入“文件目录/文件名”，或仅传入文件名
-11. }).then((task: request.agent.Task) => {
-12. task.on('progress', (progress) => {
-13. hilog.info(0x0000, 'testTag', `on progress ${JSON.stringify(progress)}`);
-14. });
-15. task.on('completed', (progress) => {
-16. hilog.info(0x0000, 'testTag', `on completed ${JSON.stringify(progress)}`);
-17. });
-18. task.on('failed', (progress) => {
-19. hilog.error(0x0000, 'testTag', `on failed ${JSON.stringify(progress)}`);
-20. });
-21. task.on('response', (response) => {
-22. hilog.info(0x0000, 'testTag', `on response ${JSON.stringify(response)}`);
-23. });
+// ArkUI上下文
+bucket.uploadFile(context, { // context表示应用上下文
+  localPath: cacheFile, // 本地文件路径（context.cacheDir目录下的文件路径）
+  cloudPath: path // 云侧文件路径，支持传入“文件目录/文件名”，或仅传入文件名
+}).then((task: request.agent.Task) => {
+  task.on('progress', (progress) => {
+    hilog.info(0x0000, 'testTag', `on progress ${JSON.stringify(progress)}`);
+  });
+  task.on('completed', (progress) => {
+    hilog.info(0x0000, 'testTag', `on completed ${JSON.stringify(progress)}`);
+  });
+  task.on('failed', (progress) => {
+    hilog.error(0x0000, 'testTag', `on failed ${JSON.stringify(progress)}`);
+  });
+  task.on('response', (response) => {
+    hilog.info(0x0000, 'testTag', `on response ${JSON.stringify(response)}`);
+  });
 
-25. // start task
-26. task.start((err: BusinessError) => {
-27. if (err) {
-28. hilog.error(0x0000, 'testTag', `Failed to start a file upload task, code: ${err.code}, message: ${err.message}`);
-29. } else {
-30. hilog.info(0x0000, 'testTag', `Succeeded in starting a file upload task.`);
-31. }
-32. });
-33. }).catch((err: BusinessError) => {
-34. hilog.error(0x0000, 'testTag', `Failed to upload file, code: ${err.code}, message: ${err.message}`);
-35. })
+  // 启动任务
+  task.start((err: BusinessError) => {
+    if (err) {
+      hilog.error(0x0000, 'testTag', `Failed to start a file upload task, code: ${err.code}, message: ${err.message}`);
+    } else {
+      hilog.info(0x0000, 'testTag', `Succeeded in starting a file upload task.`);
+    }
+  });
+}).catch((err: BusinessError) => {
+  hilog.error(0x0000, 'testTag', `Failed to upload file, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### uploadFile
-
-PhonePC/2in1TabletTVWearable
 
 uploadFile(context: common.BaseContext, parameters: UploadParams, callback: AsyncCallback<request.agent.Task>): void
 
@@ -195,7 +188,7 @@ uploadFile(context: common.BaseContext, parameters: UploadParams, callback: Asyn
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-cloudfoundation.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-cloudfoundation.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -207,49 +200,47 @@ uploadFile(context: common.BaseContext, parameters: UploadParams, callback: Asyn
 
 **示例：**
 
-```
-1. import { cloudStorage } from '@kit.CloudFoundationKit';
-2. import { BusinessError, request } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudStorage } from '@kit.CloudFoundationKit';
+import { BusinessError, request } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
+let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
 
-7. // ArkUI上下文
-8. bucket.uploadFile(context, {  // context表示应用上下文
-9. localPath: cacheFile,       // 本地文件路径（context.cacheDir目录下的文件路径）
-10. cloudPath: path             // 云侧文件路径，支持传入“文件目录/文件名”，或仅传入文件名
-11. }, (err: BusinessError, task: request.agent.Task) => {
-12. if (err) {
-13. hilog.error(0x0000, 'testTag', `Failed to upload file, code: ${err.code}, message: ${err.message}`);
-14. return;
-15. }
-16. task.on('progress', (progress) => {
-17. hilog.info(0x0000, 'testTag', `on progress ${JSON.stringify(progress)}`);
-18. });
-19. task.on('completed', (progress) => {
-20. hilog.info(0x0000, 'testTag', `on completed ${JSON.stringify(progress)}`);
-21. });
-22. task.on('failed', (progress) => {
-23. hilog.error(0x0000, 'testTag', `on failed ${JSON.stringify(progress)}`);
-24. });
-25. task.on('response', (response) => {
-26. hilog.info(0x0000, 'testTag', `on response ${JSON.stringify(response)}`);
-27. });
+// ArkUI上下文
+bucket.uploadFile(context, { // context表示应用上下文
+  localPath: cacheFile, // 本地文件路径（context.cacheDir目录下的文件路径）
+  cloudPath: path // 云侧文件路径，支持传入“文件目录/文件名”，或仅传入文件名
+}, (err: BusinessError, task: request.agent.Task) => {
+  if (err) {
+    hilog.error(0x0000, 'testTag', `Failed to upload file, code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  task.on('progress', (progress) => {
+    hilog.info(0x0000, 'testTag', `on progress ${JSON.stringify(progress)}`);
+  });
+  task.on('completed', (progress) => {
+    hilog.info(0x0000, 'testTag', `on completed ${JSON.stringify(progress)}`);
+  });
+  task.on('failed', (progress) => {
+    hilog.error(0x0000, 'testTag', `on failed ${JSON.stringify(progress)}`);
+  });
+  task.on('response', (response) => {
+    hilog.info(0x0000, 'testTag', `on response ${JSON.stringify(response)}`);
+  });
 
-29. // start task
-30. task.start((err: BusinessError) => {
-31. if (err) {
-32. hilog.error(0x0000, 'testTag', `Failed to start a file upload task, code: ${err.code}, message: ${err.message}`);
-33. } else {
-34. hilog.info(0x0000, 'testTag', `Succeeded in starting a file upload task.`);
-35. }
-36. });
-37. });
+  // 启动任务
+  task.start((err: BusinessError) => {
+    if (err) {
+      hilog.error(0x0000, 'testTag', `Failed to start a file upload task, code: ${err.code}, message: ${err.message}`);
+    } else {
+      hilog.info(0x0000, 'testTag', `Succeeded in starting a file upload task.`);
+    }
+  });
+});
 ```
 
 ### downloadFile
-
-PhonePC/2in1TabletTVWearable
 
 downloadFile(context: common.BaseContext, parameters: DownloadParams): Promise<request.agent.Task>
 
@@ -280,7 +271,7 @@ downloadFile(context: common.BaseContext, parameters: DownloadParams): Promise<r
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-cloudfoundation.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-cloudfoundation.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -292,48 +283,46 @@ downloadFile(context: common.BaseContext, parameters: DownloadParams): Promise<r
 
 **示例：**
 
-```
-1. import { cloudStorage } from '@kit.CloudFoundationKit';
-2. import { BusinessError, request } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudStorage } from '@kit.CloudFoundationKit';
+import { BusinessError, request } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
+let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
 
-7. // ArkUI上下文
-8. bucket.downloadFile(context, {  // context表示应用上下文
-9. cloudPath: path,              // 云侧文件路径，支持传入“文件目录/文件名”，或仅传入文件名
-10. localPath: cacheFile,         // 保存至本地文件路径（context.cacheDir目录下的文件路径）
-11. }).then((task: request.agent.Task) => {
-12. task.on('progress', (progress) => {
-13. hilog.info(0x0000, 'testTag', `on progress ${JSON.stringify(progress)}`);
-14. });
-15. task.on('completed', (progress) => {
-16. hilog.info(0x0000, 'testTag', `on completed ${JSON.stringify(progress)}`);
-17. });
-18. task.on('failed', (progress) => {
-19. hilog.error(0x0000, 'testTag', `on failed ${JSON.stringify(progress)}`);
-20. });
-21. task.on('response', (response) => {
-22. hilog.info(0x0000, 'testTag', `on response ${JSON.stringify(response)}`);
-23. });
+// ArkUI上下文
+bucket.downloadFile(context, { // context表示应用上下文
+  cloudPath: path, // 云侧文件路径，支持传入“文件目录/文件名”，或仅传入文件名
+  localPath: cacheFile, // 保存至本地文件路径（context.cacheDir目录下的文件路径）
+}).then((task: request.agent.Task) => {
+  task.on('progress', (progress) => {
+    hilog.info(0x0000, 'testTag', `on progress ${JSON.stringify(progress)}`);
+  });
+  task.on('completed', (progress) => {
+    hilog.info(0x0000, 'testTag', `on completed ${JSON.stringify(progress)}`);
+  });
+  task.on('failed', (progress) => {
+    hilog.error(0x0000, 'testTag', `on failed ${JSON.stringify(progress)}`);
+  });
+  task.on('response', (response) => {
+    hilog.info(0x0000, 'testTag', `on response ${JSON.stringify(response)}`);
+  });
 
-25. // start task
-26. task.start((err: BusinessError) => {
-27. if (err) {
-28. hilog.error(0x0000, 'testTag',
-29. `Failed to start a file download task, code: ${err.code}, message: ${err.message}`);
-30. } else {
-31. hilog.info(0x0000, 'testTag', `Succeeded in starting a file download task.`);
-32. }
-33. });
-34. }).catch((err: BusinessError) => {
-35. hilog.error(0x0000, 'testTag', `Failed to download file, code: ${err.code}, message: ${err.message}`);
-36. })
+  // 启动任务
+  task.start((err: BusinessError) => {
+    if (err) {
+      hilog.error(0x0000, 'testTag',
+        `Failed to start a file download task, code: ${err.code}, message: ${err.message}`);
+    } else {
+      hilog.info(0x0000, 'testTag', `Succeeded in starting a file download task.`);
+    }
+  });
+}).catch((err: BusinessError) => {
+  hilog.error(0x0000, 'testTag', `Failed to download file, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### downloadFile
-
-PhonePC/2in1TabletTVWearable
 
 downloadFile(context: common.BaseContext, parameters: DownloadParams, callback: AsyncCallback<request.agent.Task>): void
 
@@ -359,7 +348,7 @@ downloadFile(context: common.BaseContext, parameters: DownloadParams, callback: 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-cloudfoundation.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-cloudfoundation.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -371,50 +360,48 @@ downloadFile(context: common.BaseContext, parameters: DownloadParams, callback: 
 
 **示例：**
 
-```
-1. import { cloudStorage } from '@kit.CloudFoundationKit';
-2. import { BusinessError, request } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudStorage } from '@kit.CloudFoundationKit';
+import { BusinessError, request } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
+let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
 
-7. // ArkUI上下文
-8. bucket.downloadFile(context, {  // context表示应用上下文
-9. cloudPath: path,              // 云侧文件路径，支持传入“文件目录/文件名”，或仅传入文件名
-10. localPath: cacheFile,         // 保存至本地文件路径（context.cacheDir目录下的文件路径）
-11. }, (err: BusinessError, task: request.agent.Task) => {
-12. if (err) {
-13. hilog.error(0x0000, 'testTag', `Failed to download file, code: ${err.code}, message: ${err.message}`);
-14. return;
-15. }
-16. task.on('progress', (progress) => {
-17. hilog.info(0x0000, 'testTag', `on progress ${JSON.stringify(progress)}`);
-18. });
-19. task.on('completed', (progress) => {
-20. hilog.info(0x0000, 'testTag', `on completed ${JSON.stringify(progress)}`);
-21. });
-22. task.on('failed', (progress) => {
-23. hilog.error(0x0000, 'testTag', `on failed ${JSON.stringify(progress)}`);
-24. });
-25. task.on('response', (response) => {
-26. hilog.info(0x0000, 'testTag', `on response ${JSON.stringify(response)}`);
-27. });
+// ArkUI上下文
+bucket.downloadFile(context, { // context表示应用上下文
+  cloudPath: path, // 云侧文件路径，支持传入“文件目录/文件名”，或仅传入文件名
+  localPath: cacheFile, // 保存至本地文件路径（context.cacheDir目录下的文件路径）
+}, (err: BusinessError, task: request.agent.Task) => {
+  if (err) {
+    hilog.error(0x0000, 'testTag', `Failed to download file, code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  task.on('progress', (progress) => {
+    hilog.info(0x0000, 'testTag', `on progress ${JSON.stringify(progress)}`);
+  });
+  task.on('completed', (progress) => {
+    hilog.info(0x0000, 'testTag', `on completed ${JSON.stringify(progress)}`);
+  });
+  task.on('failed', (progress) => {
+    hilog.error(0x0000, 'testTag', `on failed ${JSON.stringify(progress)}`);
+  });
+  task.on('response', (response) => {
+    hilog.info(0x0000, 'testTag', `on response ${JSON.stringify(response)}`);
+  });
 
-29. // start task
-30. task.start((err: BusinessError) => {
-31. if (err) {
-32. hilog.error(0x0000, 'testTag',
-33. `Failed to start a file download task, code: ${err.code}, message: ${err.message}`);
-34. } else {
-35. hilog.info(0x0000, 'testTag', `Succeeded in starting a file download task.`);
-36. }
-37. });
-38. });
+  // 启动任务
+  task.start((err: BusinessError) => {
+    if (err) {
+      hilog.error(0x0000, 'testTag',
+        `Failed to start a file download task, code: ${err.code}, message: ${err.message}`);
+    } else {
+      hilog.info(0x0000, 'testTag', `Succeeded in starting a file download task.`);
+    }
+  });
+});
 ```
 
 ### getDownloadURL
-
-PhonePC/2in1TabletTVWearable
 
 getDownloadURL(cloudPath: string): Promise<string>
 
@@ -444,7 +431,7 @@ getDownloadURL(cloudPath: string): Promise<string>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-cloudfoundation.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-cloudfoundation.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -456,24 +443,22 @@ getDownloadURL(cloudPath: string): Promise<string>
 
 **示例：**
 
-```
-1. import { cloudStorage } from '@kit.CloudFoundationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudStorage } from '@kit.CloudFoundationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
+let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
 
-7. // cloudPath是云侧文件路径，支持传入“文件目录/文件名”，或仅传入文件名
-8. bucket.getDownloadURL('cloudPath').then((downloadURL: string) => {
-9. hilog.info(0x0000, 'testTag', `Succeeded in getting download URL: ${downloadURL}`);
-10. }).catch((err: BusinessError) => {
-11. hilog.error(0x0000, 'testTag', `Failed to get download URL, code: ${err.code}, message: ${err.message}`);
-12. })
+// cloudPath是云侧文件路径，支持传入“文件目录/文件名”，或仅传入文件名
+bucket.getDownloadURL('cloudPath').then((downloadURL: string) => {
+  hilog.info(0x0000, 'testTag', `Succeeded in getting download URL: ${downloadURL}`);
+}).catch((err: BusinessError) => {
+  hilog.error(0x0000, 'testTag', `Failed to get download URL, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### getDownloadURL
-
-PhonePC/2in1TabletTVWearable
 
 getDownloadURL(cloudPath: string, callback: AsyncCallback<string>): void
 
@@ -494,11 +479,11 @@ getDownloadURL(cloudPath: string, callback: AsyncCallback<string>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cloudPath | string | 是 | 云侧文件路径。支持传入“文件目录/文件名”（如“image/demo.jpg”），或仅传入文件名。 |
-| callback | AsyncCallback<string> | 是 | 回调函数，返回云侧文件下载地址。 |
+| callback | AsyncCallback<string> | 是 | 回调函数。当获取云侧文件下载地址成功，err为undefined，data为获取到的云侧文件下载地址；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-cloudfoundation.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-cloudfoundation.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -510,26 +495,24 @@ getDownloadURL(cloudPath: string, callback: AsyncCallback<string>): void
 
 **示例：**
 
-```
-1. import { cloudStorage } from '@kit.CloudFoundationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudStorage } from '@kit.CloudFoundationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
+let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
 
-7. // cloudPath是云侧文件路径
-8. bucket.getDownloadURL('cloudPath', (err: BusinessError, downloadURL: string) => {
-9. if (err) {
-10. hilog.error(0x0000, 'testTag', `Failed to get download URL, code: ${err.code}, message: ${err.message}`);
-11. } else {
-12. hilog.info(0x0000, 'testTag', `Succeeded in getting download URL: ${downloadURL}`);
-13. }
-14. });
+// cloudPath是云侧文件路径
+bucket.getDownloadURL('cloudPath', (err: BusinessError, downloadURL: string) => {
+  if (err) {
+    hilog.error(0x0000, 'testTag', `Failed to get download URL, code: ${err.code}, message: ${err.message}`);
+  } else {
+    hilog.info(0x0000, 'testTag', `Succeeded in getting download URL: ${downloadURL}`);
+  }
+});
 ```
 
 ### deleteFile
-
-PhonePC/2in1TabletTVWearable
 
 deleteFile(cloudPath: string): Promise<void>
 
@@ -559,7 +542,7 @@ deleteFile(cloudPath: string): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-cloudfoundation.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-cloudfoundation.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -571,24 +554,22 @@ deleteFile(cloudPath: string): Promise<void>
 
 **示例：**
 
-```
-1. import { cloudStorage } from '@kit.CloudFoundationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudStorage } from '@kit.CloudFoundationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
+let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
 
-7. // cloudPath云侧文件路径，支持传入“文件目录/文件名”，或仅传入文件名。
-8. bucket.deleteFile('cloudPath').then(() => {
-9. hilog.info(0x0000, 'testTag', `Succeeded in deleting file.`);
-10. }).catch((err: BusinessError) => {
-11. hilog.error(0x0000, 'testTag', `Failed to delete file, code: ${err.code}, message: ${err.message}`);
-12. })
+// cloudPath云侧文件路径，支持传入“文件目录/文件名”，或仅传入文件名。
+bucket.deleteFile('cloudPath').then(() => {
+  hilog.info(0x0000, 'testTag', `Succeeded in deleting file.`);
+}).catch((err: BusinessError) => {
+  hilog.error(0x0000, 'testTag', `Failed to delete file, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### deleteFile
-
-PhonePC/2in1TabletTVWearable
 
 deleteFile(cloudPath: string, callback: AsyncCallback<void>): void
 
@@ -613,7 +594,7 @@ deleteFile(cloudPath: string, callback: AsyncCallback<void>): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-cloudfoundation.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-cloudfoundation.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -625,26 +606,24 @@ deleteFile(cloudPath: string, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { cloudStorage } from '@kit.CloudFoundationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudStorage } from '@kit.CloudFoundationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
+let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
 
-7. // cloudPath是云侧文件路径，支持传入“文件目录/文件名”，或仅传入文件名。
-8. bucket.deleteFile('cloudPath', (err: BusinessError) => {
-9. if (err) {
-10. hilog.error(0x0000, 'testTag', `Failed to delete file, Code: ${err.code}, message: ${err.message}`);
-11. } else {
-12. hilog.info(0x0000, 'testTag', `Succeeded in deleting file.`);
-13. }
-14. });
+// cloudPath是云侧文件路径，支持传入“文件目录/文件名”，或仅传入文件名。
+bucket.deleteFile('cloudPath', (err: BusinessError) => {
+  if (err) {
+    hilog.error(0x0000, 'testTag', `Failed to delete file, Code: ${err.code}, message: ${err.message}`);
+  } else {
+    hilog.info(0x0000, 'testTag', `Succeeded in deleting file.`);
+  }
+});
 ```
 
 ### list
-
-PhonePC/2in1TabletTVWearable
 
 list(cloudPath: string, options?: ListOptions): Promise<ListResults>
 
@@ -675,7 +654,7 @@ list(cloudPath: string, options?: ListOptions): Promise<ListResults>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-cloudfoundation.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-cloudfoundation.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -687,31 +666,29 @@ list(cloudPath: string, options?: ListOptions): Promise<ListResults>
 
 **示例：**
 
-```
-1. import { cloudStorage } from '@kit.CloudFoundationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudStorage } from '@kit.CloudFoundationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
+let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
 
-7. // 获取云侧根路径下的文件列表
-8. bucket.list('').then((result: cloudStorage.ListResults) => {
-9. hilog.info(0x0000, 'testTag', `Succeeded in listing files, result: ${JSON.stringify(result)}`);
-10. }).catch((err: BusinessError) => {
-11. hilog.error(0x0000, 'testTag', `Failed to list files, code: ${err.code}, message: ${err.message}`);
-12. })
+// 获取云侧根路径下的文件列表
+bucket.list('').then((result: cloudStorage.ListResults) => {
+  hilog.info(0x0000, 'testTag', `Succeeded in listing files, result: ${JSON.stringify(result)}`);
+}).catch((err: BusinessError) => {
+  hilog.error(0x0000, 'testTag', `Failed to list files, code: ${err.code}, message: ${err.message}`);
+});
 
-14. // 获取指定文件夹some_directory下的文件列表
-15. bucket.list('some_directory/').then((result: cloudStorage.ListResults) => {
-16. hilog.info(0x0000, 'testTag', `Succeeded in listing files, result: ${JSON.stringify(result)}`);
-17. }).catch((err: BusinessError) => {
-18. hilog.error(0x0000, 'testTag', `Failed to list files, code: ${err.code}, message: ${err.message}`);
-19. })
+// 获取指定文件夹some_directory下的文件列表
+bucket.list('some_directory/').then((result: cloudStorage.ListResults) => {
+  hilog.info(0x0000, 'testTag', `Succeeded in listing files, result: ${JSON.stringify(result)}`);
+}).catch((err: BusinessError) => {
+  hilog.error(0x0000, 'testTag', `Failed to list files, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### list
-
-PhonePC/2in1TabletTVWearable
 
 list(cloudPath: string, options: ListOptions, callback: AsyncCallback<ListResults>): void
 
@@ -737,7 +714,7 @@ list(cloudPath: string, options: ListOptions, callback: AsyncCallback<ListResult
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-cloudfoundation.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-cloudfoundation.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -749,35 +726,33 @@ list(cloudPath: string, options: ListOptions, callback: AsyncCallback<ListResult
 
 **示例：**
 
-```
-1. import { cloudStorage } from '@kit.CloudFoundationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudStorage } from '@kit.CloudFoundationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
+let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
 
-7. // 获取云侧根路径下的文件列表
-8. bucket.list('', { maxResults: 10, pageMarker: 'test' }, (err: BusinessError, result: cloudStorage.ListResults) => {
-9. if (err) {
-10. hilog.error(0x0000, 'testTag', `Failed to list files, code: ${err.code}, message: ${err.message}`);
-11. } else {
-12. hilog.info(0x0000, 'testTag', `Succeeded in listing files, result: ${JSON.stringify(result)}`);
-13. }
-14. });
+// 获取云侧根路径下的文件列表
+bucket.list('', { maxResults: 10, pageMarker: 'test' }, (err: BusinessError, result: cloudStorage.ListResults) => {
+  if (err) {
+    hilog.error(0x0000, 'testTag', `Failed to list files, code: ${err.code}, message: ${err.message}`);
+  } else {
+    hilog.info(0x0000, 'testTag', `Succeeded in listing files, result: ${JSON.stringify(result)}`);
+  }
+});
 
-16. // 获取指定文件夹some_directory下的文件列表
-17. bucket.list('some_directory/', {}, (err: BusinessError, result: cloudStorage.ListResults) => {
-18. if (err) {
-19. hilog.error(0x0000, 'testTag', `Failed to list files, code: ${err.code}, message: ${err.message}`);
-20. } else {
-21. hilog.info(0x0000, 'testTag', `Succeeded in listing files, result: ${JSON.stringify(result)}`);
-22. }
-23. });
+// 获取指定文件夹some_directory下的文件列表
+bucket.list('some_directory/', {}, (err: BusinessError, result: cloudStorage.ListResults) => {
+  if (err) {
+    hilog.error(0x0000, 'testTag', `Failed to list files, code: ${err.code}, message: ${err.message}`);
+  } else {
+    hilog.info(0x0000, 'testTag', `Succeeded in listing files, result: ${JSON.stringify(result)}`);
+  }
+});
 ```
 
 ### getMetadata
-
-PhonePC/2in1TabletTVWearable
 
 getMetadata(cloudPath: string): Promise<Metadata>
 
@@ -807,7 +782,7 @@ getMetadata(cloudPath: string): Promise<Metadata>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-cloudfoundation.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-cloudfoundation.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -819,24 +794,22 @@ getMetadata(cloudPath: string): Promise<Metadata>
 
 **示例：**
 
-```
-1. import { cloudStorage } from '@kit.CloudFoundationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudStorage } from '@kit.CloudFoundationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
+let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
 
-7. // cloudPath是云侧文件路径，支持传入“文件目录/文件名”，或仅传入文件名。
-8. bucket.getMetadata('cloudPath').then((data: cloudStorage.Metadata) => {
-9. hilog.info(0x0000, 'testTag', `Succeeded in getting metadata: ${JSON.stringify(data)}`);
-10. }).catch((err: BusinessError) => {
-11. hilog.error(0x0000, 'testTag', `Failed to get metadata, code: ${err.code}, message: ${err.message}`);
-12. })
+// cloudPath是云侧文件路径，支持传入“文件目录/文件名”，或仅传入文件名。
+bucket.getMetadata('cloudPath').then((data: cloudStorage.Metadata) => {
+  hilog.info(0x0000, 'testTag', `Succeeded in getting metadata: ${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+  hilog.error(0x0000, 'testTag', `Failed to get metadata, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### getMetadata
-
-PhonePC/2in1TabletTVWearable
 
 getMetadata(cloudPath: string, callback: AsyncCallback<Metadata>): void
 
@@ -861,7 +834,7 @@ getMetadata(cloudPath: string, callback: AsyncCallback<Metadata>): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-cloudfoundation.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-cloudfoundation.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -873,26 +846,24 @@ getMetadata(cloudPath: string, callback: AsyncCallback<Metadata>): void
 
 **示例：**
 
-```
-1. import { cloudStorage } from '@kit.CloudFoundationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudStorage } from '@kit.CloudFoundationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
+let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
 
-7. // cloudPath是云侧文件路径，支持传入“文件目录/文件名”，或仅传入文件名。
-8. bucket.getMetadata('cloudPath', (err: BusinessError, data: cloudStorage.Metadata) => {
-9. if (err) {
-10. hilog.error(0x0000, 'testTag', `Failed to get metadata, code: ${err.code}, message: ${err.message}`);
-11. } else {
-12. hilog.info(0x0000, 'testTag', `Succeeded in getting metadata: ${JSON.stringify(data)}`);
-13. }
-14. });
+// cloudPath是云侧文件路径，支持传入“文件目录/文件名”，或仅传入文件名。
+bucket.getMetadata('cloudPath', (err: BusinessError, data: cloudStorage.Metadata) => {
+  if (err) {
+    hilog.error(0x0000, 'testTag', `Failed to get metadata, code: ${err.code}, message: ${err.message}`);
+  } else {
+    hilog.info(0x0000, 'testTag', `Succeeded in getting metadata: ${JSON.stringify(data)}`);
+  }
+});
 ```
 
 ### setMetadata
-
-PhonePC/2in1TabletTVWearable
 
 setMetadata(cloudPath: string, metadata: MetadataUpdatable): Promise<Metadata>
 
@@ -923,7 +894,7 @@ setMetadata(cloudPath: string, metadata: MetadataUpdatable): Promise<Metadata>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-cloudfoundation.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-cloudfoundation.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -935,29 +906,27 @@ setMetadata(cloudPath: string, metadata: MetadataUpdatable): Promise<Metadata>
 
 **示例：**
 
-```
-1. import { cloudStorage } from '@kit.CloudFoundationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudStorage } from '@kit.CloudFoundationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
+let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
 
-7. // cloudPath是云侧文件路径，支持传入“文件目录/文件名”，或仅传入文件名。
-8. bucket.setMetadata('cloudPath', {
-9. customMetadata: {
-10. key1: "value1",
-11. key2: "value2"
-12. }
-13. }).then((data: cloudStorage.Metadata) => {
-14. hilog.info(0x0000, 'testTag', `Succeeded in setting metadata: ${JSON.stringify(data)}`);
-15. }).catch((err: BusinessError) => {
-16. hilog.error(0x0000, 'testTag', `Failed to set metadata, code: ${err.code}, message: ${err.message}`);
-17. })
+// cloudPath是云侧文件路径，支持传入“文件目录/文件名”，或仅传入文件名。
+bucket.setMetadata('cloudPath', {
+  customMetadata: {
+    key1: 'value1',
+    key2: 'value2'
+  }
+}).then((data: cloudStorage.Metadata) => {
+  hilog.info(0x0000, 'testTag', `Succeeded in setting metadata: ${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+  hilog.error(0x0000, 'testTag', `Failed to set metadata, code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### setMetadata
-
-PhonePC/2in1TabletTVWearable
 
 setMetadata(cloudPath: string, metadata: MetadataUpdatable, callback: AsyncCallback<Metadata>): void
 
@@ -983,7 +952,7 @@ setMetadata(cloudPath: string, metadata: MetadataUpdatable, callback: AsyncCallb
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-cloudfoundation.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-cloudfoundation.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -995,31 +964,29 @@ setMetadata(cloudPath: string, metadata: MetadataUpdatable, callback: AsyncCallb
 
 **示例：**
 
-```
-1. import { cloudStorage } from '@kit.CloudFoundationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudStorage } from '@kit.CloudFoundationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
+let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
 
-7. // cloudPath是云侧文件路径，支持传入“文件目录/文件名”，或仅传入文件名。
-8. bucket.setMetadata('cloudPath', {
-9. customMetadata: {
-10. key1: "value1",
-11. key2: "value2"
-12. }
-13. }, (err: BusinessError, data: cloudStorage.Metadata) => {
-14. if (err) {
-15. hilog.error(0x0000, 'testTag', `Failed to set metadata, code: ${err.code}, message: ${err.message}`);
-16. } else {
-17. hilog.info(0x0000, 'testTag', `Succeeded in setting metadata: ${JSON.stringify(data)}`);
-18. }
-19. });
+// cloudPath是云侧文件路径，支持传入“文件目录/文件名”，或仅传入文件名。
+bucket.setMetadata('cloudPath', {
+  customMetadata: {
+    key1: 'value1',
+    key2: 'value2'
+  }
+}, (err: BusinessError, data: cloudStorage.Metadata) => {
+  if (err) {
+    hilog.error(0x0000, 'testTag', `Failed to set metadata, code: ${err.code}, message: ${err.message}`);
+  } else {
+    hilog.info(0x0000, 'testTag', `Succeeded in setting metadata: ${JSON.stringify(data)}`);
+  }
+});
 ```
 
 ## UploadParams
-
-PhonePC/2in1TabletTVWearable
 
 上传相关参数。
 
@@ -1041,8 +1008,6 @@ PhonePC/2in1TabletTVWearable
 
 ## DownloadParams
 
-PhonePC/2in1TabletTVWearable
-
 下载相关参数。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1063,8 +1028,6 @@ PhonePC/2in1TabletTVWearable
 
 ## ListOptions
 
-PhonePC/2in1TabletTVWearable
-
 列举操作的相关参数。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1077,12 +1040,10 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| maxResults | number | 否 | 是 | 列举文件的最大数量，取值范围1-1000，默认则列举所有文件。 |
+| maxResults | number | 否 | 是 | 列举文件的最大数量，取值范围1-1000，默认则列举所有文件，超出范围则接口报错。 |
 | pageMarker | string | 否 | 是 | 分页标识。默认值为空。 |
 
 ## ListResults
-
-PhonePC/2in1TabletTVWearable
 
 列举操作的结果。
 
@@ -1101,8 +1062,6 @@ PhonePC/2in1TabletTVWearable
 | pageMarker | string | 否 | 是 | 分页标识。默认值为空。 |
 
 ## MetadataUpdatable
-
-PhonePC/2in1TabletTVWearable
 
 可更新参数的元数据信息。
 
@@ -1124,8 +1083,6 @@ PhonePC/2in1TabletTVWearable
 | customMetadata | Record<string, string> | 否 | 是 | 自定义的云侧文件属性，不区分大小写，并且需要符合标准HTTP头部的规范。 |
 
 ## Metadata
-
-PhonePC/2in1TabletTVWearable
 
 完整的元数据信息，继承自[MetadataUpdatable](cloudfoundation-cloudstorage.md#metadataupdatable)。
 

@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 通用事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 通用事件
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:53+08:00
-doc_updated_at: 2026-03-26
-content_hash: sha256:0c4ffaba9e9afe686f31023cbe50d1ad961292c98fa01b04e5b5d70717c273b0
+scraped_at: 2026-09-02T15:01:11+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ffa1eeac634b7ae2de4d1246de7c70b1ea079b3a31cb76a881bd0915e17b3e52
 ---
 
-说明
+**说明** 
 
 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 事件说明
-
-PhonePC/2in1TabletTVWearable
 
 * 事件绑定在组件上，当组件达到事件触发条件时，会执行JS中对应的事件回调函数，实现页面UI视图和页面JS逻辑层的交互。
 * 事件回调函数中通过参数可以携带额外的信息，如组件上的数据对象[dataSet](js-components-common-events.md#target对象6)、事件特有的回调参数。
@@ -30,7 +28,7 @@ PhonePC/2in1TabletTVWearable
 | click | BaseEvent | 点击动作触发该事件。 | 是6+ | 否 |
 | doubleclick7+ | BaseEvent | 双击动作触发该事件。 | 否  从API version 9 开始支持冒泡。 | 否 |
 | longpress | BaseEvent | 长按动作触发该事件。 | 否  从API version 9 开始支持冒泡。 | 否 |
-| swipe5+ | SwipeEvent | 组件上快速滑动后触发该事件。 SwipeEvent具体可参考表4 。 | 否  从API version 9 开始支持冒泡。 | 否 |
+| swipe5+ | SwipeEvent | 组件上快速滑动后触发该事件。 SwipeEvent具体可参考表4。 | 否  从API version 9 开始支持冒泡。 | 否 |
 | attached6+ | - | 当前组件节点挂载在渲染树后触发。 | 否 | 否 |
 | detached6+ | - | 当前组件节点从渲染树中移除后触发。 | 否 | 否 |
 | pinchstart7+ | PinchEvent | 手指开始执行捏合操作时触发该事件。  PinchEvent具体可参考表5。 | 否 | 否 |
@@ -45,7 +43,7 @@ PhonePC/2in1TabletTVWearable
 | dragleave7+ | DragEvent | 离开释放目标区域时触发。 | 否 | 否 |
 | drop7+ | DragEvent | 在可释放目标区域内释放时触发。 | 否 | 否 |
 
-说明
+**说明** 
 
 除上述事件外，其他事件均为非冒泡事件，如[input的change事件](js-components-basic-input.md#事件)，详见各个组件。
 
@@ -103,43 +101,37 @@ PhonePC/2in1TabletTVWearable
 
 ## Target对象6+
 
-PhonePC/2in1TabletTVWearable
-
 当组件触发事件后，事件回调函数默认会收到一个事件对象，通过该事件对象可以获取相应的信息。
 
-| 属性 | 类型 | 说明 |
+| 名称 | 类型 | 说明 |
 | --- | --- | --- |
 | dataSet6+ | Object | 组件上通过通用属性设置的[data-\*](js-components-common-attributes.md#常规属性)的自定义属性组成的集合。 |
 
 **示例：**
 
-```
-1. <!-- xxx.hml -->
-2. <div>
-3. <div data-a="dataA" data-b="dataB"
-4. style="width: 100%; height: 50%; background-color: saddlebrown;"@touchstart='touchstartfunc'></div>
-5. </div>
+```html
+<!-- xxx.hml -->
+<div>
+  <div data-a="dataA" data-b="dataB"
+    style="width: 100%; height: 50%; background-color: saddlebrown;"@touchstart='touchstartfunc'></div>
+</div>
 ```
 
-```
-1. // xxx.js
-2. export default {
-3. touchstartfunc(msg) {
-4. console.info(`on touch start, point is: ${msg.touches[0].globalX}`);
-5. console.info(`on touch start, data is: ${msg.target.dataSet.a}`);
-6. }
-7. }
+```js
+// xxx.js
+export default {
+  touchstartfunc(msg) {
+    console.info(`on touch start, point is: ${msg.touches[0].globalX}`);
+    console.info(`on touch start, data is: ${msg.target.dataSet.a}`);
+  }
+}
 ```
 
 ## DataTransfer对象9+
 
-PhonePC/2in1TabletTVWearable
-
 在拖拽操作的过程中，可以通过dataTransfer对象来传输数据，以便在拖拽操作结束的时候对数据进行其他操作。
 
 ### setData9+
-
-PhonePC/2in1TabletTVWearable
 
 setData(key: string, value: object): boolean
 
@@ -160,23 +152,21 @@ setData(key: string, value: object): boolean
 
 **示例：**
 
-```
-1. // setData的value参数，可以是基本数据类型。
-2. dragStart(e) {
-3. var isSetOK = e.dataTransfer.setData('name', 1);
-4. },
-5. // setData的value参数，也可以是对象类型。
-6. dragStart(e) {
-7. var person = new Object();
-8. person.name = "tom";
-9. person.age = 21;
-10. var isSetOK = e.dataTransfer.setData('person', person);
-11. }
+```js
+// setData的value参数，可以是基本数据类型。
+dragStart(e) {
+    var isSetOK = e.dataTransfer.setData('name', 1);
+},
+// setData的value参数，也可以是对象类型。
+dragStart(e) {
+    var person = new Object();
+    person.name = "tom";
+    person.age = 21;
+    var isSetOK = e.dataTransfer.setData('person', person);
+}
 ```
 
 ### getData9+
-
-PhonePC/2in1TabletTVWearable
 
 getData(key: string): object
 
@@ -196,21 +186,19 @@ getData(key: string): object
 
 **示例：**
 
-```
-1. dragStart(e) {
-2. var person = new Object();
-3. person.name = "tom";
-4. person.age = 21;
-5. e.dataTransfer.setData('person', person);
-6. },
-7. dragEnd(e){
-8. var person = e.dataTransfer.getData('person');
-9. },
+```js
+dragStart(e) {
+    var person = new Object();
+    person.name = "tom";
+    person.age = 21;
+    e.dataTransfer.setData('person', person);
+},
+dragEnd(e){
+    var person = e.dataTransfer.getData('person');
+},
 ```
 
 ### clearData9+
-
-PhonePC/2in1TabletTVWearable
 
 clearData(key?: string): boolean
 
@@ -232,15 +220,13 @@ clearData(key?: string): boolean
 
 **示例：**
 
-```
-1. dragEnd(e) {
-2. var isSuccess = e.dataTransfer.clearData('name');
-3. }
+```js
+dragEnd(e) {
+    var isSuccess = e.dataTransfer.clearData('name');
+}
 ```
 
 ### setDragImage9+
-
-PhonePC/2in1TabletTVWearable
 
 setDragImage(pixelMap: PixelMap, offsetX: number,offsetY: number): boolean
 
@@ -262,44 +248,44 @@ setDragImage(pixelMap: PixelMap, offsetX: number,offsetY: number): boolean
 
 **示例：**
 
-```
-1. import image from '@ohos.multimedia.image';
+```js
+import image from '@ohos.multimedia.image';
 
-3. export default {
-4. // 生成96x96尺寸的PixelMap，创建颜色缓冲区并填充随机色值，配置PixelMap参数后生成实例
-5. createPixelMap() {
-6. let color = new ArrayBuffer(4 * 96 * 96);
-7. var buffer = new Uint8Array(color);
-8. // 循环填充缓冲区色值
-9. for (var i = 0; i < buffer.length; i++) {
-10. buffer[i] = (i + 1) % 255;
-11. }
-12. let opts = {
-13. alphaType: 0,
-14. editable: true,
-15. pixelFormat: 4,
-16. scaleMode: 1,
-17. size: {
-18. height: 96, width: 96
-19. }
-20. }
-21. // 调用image.createPixelMap生成PixelMap实例
-22. const promise = image.createPixelMap(color, opts);
-23. promise.then((data) => {
-24. console.error('-create pixelMap has info message:' + JSON.stringify(data));
-25. this.pixelMap = data;
-26. this.pixelMapReader = data;
-27. })
-28. },
+export default {
+    // 生成96x96尺寸的PixelMap，创建颜色缓冲区并填充随机色值，配置PixelMap参数后生成实例
+    createPixelMap() {
+        let color = new ArrayBuffer(4 * 96 * 96);
+        var buffer = new Uint8Array(color);
+        // 循环填充缓冲区色值
+        for (var i = 0; i < buffer.length; i++) {
+            buffer[i] = (i + 1) % 255;
+        }
+        let opts = {
+            alphaType: 0,
+            editable: true,
+            pixelFormat: 4,
+            scaleMode: 1,
+            size: {
+                height: 96, width: 96
+            }
+        }
+        // 调用image.createPixelMap生成PixelMap实例
+        const promise = image.createPixelMap(color, opts);
+        promise.then((data) => {
+            console.error('-create pixelMap has info message:' + JSON.stringify(data));
+            this.pixelMap = data;
+            this.pixelMapReader = data;
+        })
+    },
 
-30. // 初始化方法，调用createPixelMap生成PixelMap
-31. onInit() {
-32. this.createPixelMap()
-33. },
-
-35. // 拖拽开始回调，设置拖拽预览图为生成的PixelMap，偏移量为(50, 50)
-36. dragStart(e) {
-37. e.dataTransfer.setDragImage(this.pixelMapReader, 50, 50);
-38. }
-39. }
+    // 初始化方法，调用createPixelMap生成PixelMap
+    onInit() {
+        this.createPixelMap()
+    },
+    
+    // 拖拽开始回调，设置拖拽预览图为生成的PixelMap，偏移量为(50, 50)
+    dragStart(e) {
+        e.dataTransfer.setDragImage(this.pixelMapReader, 50, 50);
+    }
+}
 ```

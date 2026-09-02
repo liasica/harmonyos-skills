@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 如何解决单个设备连接设备管理器多出三个设备并无法识别的问题
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > 如何解决单个设备连接设备管理器多出三个设备并无法识别的问题
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:17+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:13+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:0a371cb8b41e7a719fb2338bceb99c4e0f02b2568fc3a09f1134bee66f01873a
 ---
 

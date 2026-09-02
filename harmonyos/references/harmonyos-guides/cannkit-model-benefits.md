@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-model
 title: 模型收益
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > 模型轻量化 > 模型收益
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:17+08:00
+scraped_at: 2026-09-02T15:00:04+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:7a6dfd58ba30b918e6caa901a461934f57f1990edc2ca295a1598e0f17257e0b
+content_hash: sha256:b956a1f6b097172c448395a203a2943a8e3b15cd180c3d9afd4e3d8252d19574
 ---
 
 ## Quant\_INT8-8量化收益
@@ -43,7 +43,7 @@ content_hash: sha256:7a6dfd58ba30b918e6caa901a461934f57f1990edc2ca295a1598e0f172
 | PyTorch | VOC | ResNet-18 + Deeplab v3 | 43.7 | 64.2 |
 | PyTorch | VOC | NASEA | 30.7 | 65.1 |
 
-说明
+**说明** 
 
 [1] 此精度是使用tensorpack重训练模型得出。
 

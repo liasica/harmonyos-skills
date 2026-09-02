@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-setex
 title: SetExpandDimsRule
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > TensorDesc > SetExpandDimsRule
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:59+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:745edc69aa9788cb82e18feafe579a09c572292443f68f8effe151621f88b8a7
+content_hash: sha256:e1c3a7819e5de3c8fc98aed38abe6ed80b67e68d10d48453d9ccb5398d9ac23f
 ---
 
 ## 函数功能
@@ -29,8 +29,8 @@ GE框架对外提供指定运行时格式（整网的输入输出节点的运行
 
 ## 函数原型
 
-```
-1. void SetExpandDimsRule(const AscendString &expand_dims_rule);
+```cpp
+void SetExpandDimsRule(const AscendString &expand_dims_rule);
 ```
 
 ## 参数说明

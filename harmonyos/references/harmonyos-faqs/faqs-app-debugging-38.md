@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: 设备ROM升级至5.0.0.31及以上版本，DevEco Studio连接设备不成功，查询不到设备
 breadcrumb: FAQ > DevEco Studio > 应用调试 > 设备ROM升级至5.0.0.31及以上版本，DevEco Studio连接设备不成功，查询不到设备
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:06+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:17+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:ad5e6bbda9060932fa2a6299957173f15193c43e735439dac31e8824c2506bd1
 ---
 

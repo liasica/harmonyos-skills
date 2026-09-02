@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-testing-o
 title: HarmonyOS 开发者测试服务概述
 breadcrumb: 指南 > 应用测试 > HarmonyOS 开发者测试服务概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:bd7a1fcf4b8e24980aa5f73d93f2aae71d31fc51e3affb3834d4dd750c63b626
+scraped_at: 2026-09-02T14:50:49+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:6bc16b765a5a2516a69c70c8253fd6ab80f4eb251734ce80a376a3948e66650c
 ---
 
-本章节介绍HarmonyOS 开发者测试服务的所有环节，包括代码静态检查、单元测试、应用和元服务体检、UI测试、专项测试、上架预检测试、用户测试、应用性能监测服务和持续集成与交付（CI/CD）。
+本章节介绍HarmonyOS 开发者测试服务的所有环节，包括代码静态检查、单元测试、应用和元服务体检、UI测试、上架预检测试、用户测试、应用性能监测服务和持续集成与交付（CI/CD）。
 
 ## 代码静态检查
 

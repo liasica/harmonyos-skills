@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/store-ark
 title: ArkTS API
 breadcrumb: API参考 > 应用服务 > AppGallery Kit（应用市场服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:19+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:8e2a9fdf392d64226652ae99ebe1a60543d18be08946ef0ae0e4b41c52a1b4d8
+scraped_at: 2026-09-02T14:53:15+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:d18753822b4beae157b4ce3db254d163202138fc98699bda940cd1b35785a069
 ---
 
 * **[moduleInstallManager (产品特性按需分发)](store-moduleinstallmanager.md)**
@@ -17,4 +17,4 @@ content_hash: sha256:8e2a9fdf392d64226652ae99ebe1a60543d18be08946ef0ae0e4b41c52a
 * **[privacyManager（隐私管理服务）](store-privacymanager.md)**
 * **[appInfoManager（应用元数据管理服务）](appgallery-appinfomanager.md)**
 * **[commentManager（应用评论服务）](appgallery-commentmanager.md)**
-* **[ArkTS API错误码](store-error-code.md)**
+* **[ArkTS API错误码](errorcode-appgallery.md)**

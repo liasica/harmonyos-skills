@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hidd
 title: Hid_Device
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 结构体 > Hid_Device
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:45+08:00
-doc_updated_at: 2026-03-26
-content_hash: sha256:f4c586804bffbc0a358fb8173639b5e1e466fc1cfd892278513be4c304b11cc7
+scraped_at: 2026-09-02T15:02:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c1dd698d90d3b319f3b8a9bc22a9f142f943107c1ae3dda285c7d8aad49bfc28
 ---
 
-```
-1. typedef struct Hid_Device {...} Hid_Device
+```c
+typedef struct Hid_Device {...} Hid_Device
 ```
 
 ## 概述
 
-PC/2in1
-
-设备基本信息。
+设备基本信息，用于表示HID设备的名称、厂商ID、产品ID等基本属性，在创建和操作HID设备时作为设备标识使用。
 
 **起始版本：** 11
 
@@ -26,18 +24,14 @@ PC/2in1
 
 ## 汇总
 
-PC/2in1
-
 ### 成员变量
-
-PC/2in1
 
 | 名称 | 描述 |
 | --- | --- |
-| const char\* deviceName | 设备名称 |
-| uint16\_t vendorId | 厂商ID |
-| uint16\_t productId | 产品ID |
-| uint16\_t version | 版本号 |
-| uint16\_t bustype | 总线类型 |
-| Hid\_DeviceProp\* properties | 由[Hid\_DeviceProp](capi-hid-ddk-types-h.md#hid_deviceprop)表示的设备特性 |
-| uint16\_t propLength | 设备特性数量 |
+| const char\* deviceName | 设备名称，最大长度128字符，不能为NULL。超出长度或为NULL时返回错误。 |
+| uint16\_t vendorId | 厂商ID。 |
+| uint16\_t productId | 产品ID。 |
+| uint16\_t version | 版本号。 |
+| uint16\_t bustype | 总线类型，取值含义参考标准HID协议的总线类型定义。 |
+| Hid\_DeviceProp\* properties | 设备特性。使用前应检查指针是否为空；该指针仅在Hid\_Device对象有效期间有效，不应手动释放。 |
+| uint16\_t propLength | 设备特性数量，表示properties数组的有效元素个数。注意：遍历数组时应以该值为边界条件；该值可能为0。 |

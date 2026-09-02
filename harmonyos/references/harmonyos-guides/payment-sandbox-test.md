@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-sandb
 title: 沙盒环境验证
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 沙盒环境验证
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:35+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:d1dd22175d1d576d36a3bf96efd4c906a2a55d7844a30480009b40f44be4c5c1
+scraped_at: 2026-09-02T14:59:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f89a0fd0a64ca7930b51d7ce48376d53e72a8c0e3943e731d185b0a4f431698b
 ---
 
 华为支付提供沙盒环境，开发者无需真实完成商户入网即可开始调试华为支付接入，模拟真实环境下华为支付交易过程，提前介入方案设计和开发联调，提升接入效率。
 
-说明
+**说明** 
 
 * 沙盒环境当前仅支持部分能力及接口调试，具体可参见[沙盒环境接口请求及支持维度说明](payment-sandbox-test.md#沙盒环境接口请求及支持维度说明)。
 * 使用沙盒环境验证支付场景，支付成功不会产生真实扣款。
@@ -35,14 +35,14 @@ content_hash: sha256:d1dd22175d1d576d36a3bf96efd4c906a2a55d7844a30480009b40f44be
 
 ### 构建debug签名应用
 
-说明
+**说明** 
 
 开发者应用为debug模式，应用相关测试场景才能正常进入沙盒环境。
 
 构建debug签名应用步骤如下：
 
 1. 参见[手动签名方式调试HarmonyOS应用/元服务](../app/agc-help-cert-0000002270829389.md)，申请应用调试证书->注册调试设备->申请调试Profile。
-2. 参见[配置签名信息](ide-signing.md#section1240072619462)，在DevEco Studio侧配置签名信息。
+2. 参见[配置签名信息](ide-signing-manual.md#section15586174616)，在DevEco Studio侧配置签名信息。
 3. 在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中[配置应用签名证书指纹](../app/agc-help-cert-fingerprint-0000002278002933.md)。
 
 ## 沙盒环境接口请求及支持维度说明
@@ -65,13 +65,13 @@ REST API请求说明：
 
 1. 在满足沙盒验证条件（已获取[沙盒环境调试配置](payment-sandbox-test.md#沙盒环境调试配置)）下，开发者可以使用沙盒环境配置调用[直连商户预下单](../harmonyos-references/payment-prepay.md)/[平台类商户/服务商预下单](../harmonyos-references/payment-agent-prepay.md)获取预支付ID（prepayId）构建[orderStr](../harmonyos-references/payment-model.md#orderstr)请求[requestPayment](../harmonyos-references/payment-paymentservice.md#requestpayment)接口拉起Payment Kit支付收银台（开发步骤可参见[商户基础支付场景](payment-payment-process.md#开发步骤)）。
 
-   说明
+   **说明** 
 
    * 沙盒环境下的支付流程与正式环境的支付流程一致，相关配置信息（如mercNo、authId等）需要替换为沙盒环境的站点及配置。
    * 使用沙盒环境时，构建的[orderStr](../harmonyos-references/payment-model.md#orderstr)中需要传递沙盒环境标识sandbox\_flag。示例如下：
 
-     ```
-     1. {"app_id":"101831***","merc_no":"101610000***","prepay_id":"12507011723580897591704***","timestamp":"1751361838042","noncestr":"6f18060eee669126b98e474407cc0682","sign":"OeS+xINxcEoClk+WlsLdnZqL0aIJ5qV734StxULDIgnwz8********************qURxBMzdT2NqdwNefGfrcB5kWVic0RuLz8wqrUPoQBrcl83VVzw59jmgrupitpHMD9sHDpja92H4AMP2SBOdFR2a58qexJves26iTO2f2hsSKFSUEUlHYEW/bgZmVv83GOTo4wIaIbN94gBjkou0kBInTqP2Ht0R9gzVCdB0pYLK+PM4nCY72TkeglyuYHjzD6GlqKMO3UZmuUoqYi8=","auth_id":"101610000031***","reserved":"{\"sandbox_flag\": true}"}
+     ```json
+     {"app_id":"101831***","merc_no":"101610000***","prepay_id":"12507011723580897591704***","timestamp":"1751361838042","noncestr":"6f18060eee669126b98e474407cc0682","sign":"OeS+xINxcEoClk+WlsLdnZqL0aIJ5qV734StxULDIgnwz8********************qURxBMzdT2NqdwNefGfrcB5kWVic0RuLz8wqrUPoQBrcl83VVzw59jmgrupitpHMD9sHDpja92H4AMP2SBOdFR2a58qexJves26iTO2f2hsSKFSUEUlHYEW/bgZmVv83GOTo4wIaIbN94gBjkou0kBInTqP2Ht0R9gzVCdB0pYLK+PM4nCY72TkeglyuYHjzD6GlqKMO3UZmuUoqYi8=","auth_id":"101610000031***","reserved":"{\"sandbox_flag\": true}"}
      ```
    * 如果用户没有提前登录，系统会拉起华为账号登录页面让用户登录，请使用沙盒环境用户账户进行登录。
 2. 用户按照正常流程完成支付（实际不会产生真实扣费）后，开发者可以收到回调通知，需要完成回调事件处理。开发者也可以主动请求订单查询、申请退款等接口，以完成订单查询、退款等整个支付流程的闭环。

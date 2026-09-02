@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getco
 title: GetComputeNodeInfo
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > ExtendedKernelContext > GetComputeNodeInfo
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:59+08:00
+scraped_at: 2026-09-02T14:50:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:725a384ab6227f70bab90d8deee35fa6b81195d572a2406c87267cef39f30ace
+content_hash: sha256:bf174b81c7355a40a2289acd2c7ef923e18edb6ca5f17075c05dcd2b929bb6fb
 ---
 
 ## 函数功能
@@ -16,8 +16,8 @@ content_hash: sha256:725a384ab6227f70bab90d8deee35fa6b81195d572a2406c87267cef39f
 
 ## 函数原型
 
-```
-1. const ComputeNodeInfo *GetComputeNodeInfo() const
+```cpp
+const ComputeNodeInfo *GetComputeNodeInfo() const
 ```
 
 ## 参数说明
@@ -36,8 +36,8 @@ content_hash: sha256:725a384ab6227f70bab90d8deee35fa6b81195d572a2406c87267cef39f
 
 ## 调用示例
 
-```
-1. // 假设已存在KernelContext *context
-2. auto extend_context = reinterpret_cast<ExtendedKernelContext *>(context);
-3. auto compute_node_info = extend_context->GetComputeNodeInfo();
+```cpp
+// 假设已存在KernelContext *context
+auto extend_context = reinterpret_cast<ExtendedKernelContext *>(context);
+auto compute_node_info = extend_context->GetComputeNodeInfo();
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 主线程超时事件介绍
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 主线程超时事件 > 主线程超时事件介绍
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:06+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:f8a63efb9edf842b65aa29523dd0ae0ffb5f19fd805cc70b9f3e410ac843646c
+scraped_at: 2026-09-02T14:59:40+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:9161b4568d9bc390ff06403246bfb726978a9c86ebc2fd14ca5e6993a0672f73
 ---
 
 ## 简介
@@ -17,13 +17,17 @@ content_hash: sha256:f8a63efb9edf842b65aa29523dd0ae0ffb5f19fd805cc70b9f3e410ac84
 * [订阅主线程超时事件（ArkTS）](hiappevent-watcher-mainthreadjank-events-arkts.md)。
 * [订阅主线程超时事件（C/C++）](hiappevent-watcher-mainthreadjank-events-ndk.md)。
 
-说明
+**说明** 
 
 主线程超时事件支持在[应用分身](app-clone.md)场景下使用 HiAppEvent 进行订阅，支持在元服务场景下使用HiAppEvent 进行订阅，从 API version 22 开始支持在[输入法应用](inputmethod-application-guide.md)场景下使用 HiAppEvent 进行订阅。
 
 ## 检测原理
 
 详见[主线程超时检测原理](apptask-timeout-guidelines.md#主线程超时检测)。
+
+**注意** 
+
+当开发者通过DevEco Studio的Debug按钮安装并启动应用时，会自动关闭当前工程的超时检测机制。避免调试过程出现超时检测影响开发者调试。
 
 ## 自定义参数
 
@@ -44,7 +48,7 @@ setEventConfig接口不提供主线程超时结束自动停止采样栈的功能
 
 主线程超时采样栈配置参数的定义。
 
-注意
+**注意** 
 
 log\_type参数为必选项。
 
@@ -73,54 +77,54 @@ log\_type=1时，所有参数均需设置。
 
    （1）log\_type=0，用于采样栈或采样trace。
 
-   ```
-   1. import { BusinessError } from '@kit.BasicServicesKit';
-   2. import { hilog, hiAppEvent } from '@kit.PerformanceAnalysisKit';
+   ```ts
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { hilog, hiAppEvent } from '@kit.PerformanceAnalysisKit';
 
-   4. let params: Record<string, hiAppEvent.ParamType> = {
-   5. "log_type": "0"
-   6. };
-   7. hiAppEvent.setEventConfig(hiAppEvent.event.MAIN_THREAD_JANK, params).then(() => {
-   8. hilog.info(0x0000, 'hiAppEvent', `Setting default value successfully.`);
-   9. }).catch((err: BusinessError) => {
-   10. hilog.error(0x0000, 'hiAppEvent', `Failed to set default value. Code: ${err.code}, message: ${err.message}`);
-   11. });
+   let params: Record<string, hiAppEvent.ParamType> = {
+     "log_type": "0"
+   };
+   hiAppEvent.setEventConfig(hiAppEvent.event.MAIN_THREAD_JANK, params).then(() => {
+     hilog.info(0x0000, 'hiAppEvent', `Setting default value successfully.`);
+   }).catch((err: BusinessError) => {
+     hilog.error(0x0000, 'hiAppEvent', `Failed to set default value. Code: ${err.code}, message: ${err.message}`);
+   });
    ```
 
    （2）log\_type=1，仅用于采集调用栈。
 
-   ```
-   1. import { BusinessError } from '@kit.BasicServicesKit';
-   2. import { hilog, hiAppEvent } from '@kit.PerformanceAnalysisKit';
+   ```ts
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { hilog, hiAppEvent } from '@kit.PerformanceAnalysisKit';
 
-   4. let params: Record<string, hiAppEvent.ParamType> = {
-   5. "log_type": "1",
-   6. "sample_interval": "100",
-   7. "ignore_startup_time": "11",
-   8. "sample_count": "21",
-   9. "report_times_per_app": "3"
-   10. };
-   11. hiAppEvent.setEventConfig(hiAppEvent.event.MAIN_THREAD_JANK, params).then(() => {
-   12. hilog.info(0x0000, 'hiAppEvent', `Successfully set sampling stack parameters.`);
-   13. }).catch((err: BusinessError) => {
-   14. hilog.error(0x0000, 'hiAppEvent', `Failed to set sample stack value. Code: ${err.code}, message: ${err.message}`);
-   15. });
+   let params: Record<string, hiAppEvent.ParamType> = {
+     "log_type": "1",
+     "sample_interval": "100",
+     "ignore_startup_time": "11",
+     "sample_count": "21",
+     "report_times_per_app": "3"
+   };
+   hiAppEvent.setEventConfig(hiAppEvent.event.MAIN_THREAD_JANK, params).then(() => {
+     hilog.info(0x0000, 'hiAppEvent', `Successfully set sampling stack parameters.`);
+   }).catch((err: BusinessError) => {
+     hilog.error(0x0000, 'hiAppEvent', `Failed to set sample stack value. Code: ${err.code}, message: ${err.message}`);
+   });
    ```
 
    （3）log\_type=2，仅用于采集trace。
 
-   ```
-   1. import { BusinessError } from '@kit.BasicServicesKit';
-   2. import { hilog, hiAppEvent } from '@kit.PerformanceAnalysisKit';
+   ```ts
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { hilog, hiAppEvent } from '@kit.PerformanceAnalysisKit';
 
-   4. let params: Record<string, hiAppEvent.ParamType> = {
-   5. "log_type": "2"
-   6. };
-   7. hiAppEvent.setEventConfig(hiAppEvent.event.MAIN_THREAD_JANK, params).then(() => {
-   8. hilog.info(0x0000, 'hiAppEvent', `Set to only collect trace successfully.`);
-   9. }).catch((err: BusinessError) => {
-   10. hilog.error(0x0000, 'hiAppEvent', `Failed to set only collect trace. code: ${err.code}, message: ${err.message}`);
-   11. });
+   let params: Record<string, hiAppEvent.ParamType> = {
+     "log_type": "2"
+   };
+   hiAppEvent.setEventConfig(hiAppEvent.event.MAIN_THREAD_JANK, params).then(() => {
+     hilog.info(0x0000, 'hiAppEvent', `Set to only collect trace successfully.`);
+   }).catch((err: BusinessError) => {
+     hilog.error(0x0000, 'hiAppEvent', `Failed to set only collect trace. code: ${err.code}, message: ${err.message}`);
+   });
    ```
 
 ### configEventPolicy接口说明
@@ -143,62 +147,62 @@ log\_type=1时，所有参数均需设置。
 
 （1）logType=0，用于采样栈或采样trace。仅需配置autoStopSampling参数，其他参数均取默认值，无需设置。
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { hilog, hiAppEvent } from '@kit.PerformanceAnalysisKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog, hiAppEvent } from '@kit.PerformanceAnalysisKit';
 
-4. let policy: hiAppEvent.EventPolicy = {
-5. "mainThreadJankPolicy" : {
-6. "logType": 0, // 采集日志类型
-7. "autoStopSampling": true // 超时结束，停止采集堆栈
-8. }
-9. };
-10. hiAppEvent.configEventPolicy(policy).then(() => {
-11. hilog.info(0x0000, 'hiAppEvent', `Setting default value successfully.`);
-12. }).catch((err: BusinessError) => {
-13. hilog.error(0x0000, 'hiAppEvent', `Failed to set default value. Code: ${err.code}, message: ${err.message}`);
-14. });
+let policy: hiAppEvent.EventPolicy = {
+  "mainThreadJankPolicy" : {
+    "logType": 0, // 采集日志类型
+    "autoStopSampling": true // 超时结束，停止采集堆栈
+  }
+};
+hiAppEvent.configEventPolicy(policy).then(() => {
+  hilog.info(0x0000, 'hiAppEvent', `Setting default value successfully.`);
+}).catch((err: BusinessError) => {
+  hilog.error(0x0000, 'hiAppEvent', `Failed to set default value. Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 （2）logType=1，仅用于采集调用栈。触发检测的阈值用户自定义。
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { hilog, hiAppEvent } from '@kit.PerformanceAnalysisKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog, hiAppEvent } from '@kit.PerformanceAnalysisKit';
 
-4. let policy: hiAppEvent.EventPolicy = {
-5. "mainThreadJankPolicy" : {
-6. "logType": 1, // 采集日志类型
-7. "sampleInterval": 70, // 触发检测的阈值，采集堆栈间隔
-8. "ignoreStartupTime": 11, // 应用启动期间忽略主线程超时检测的时间
-9. "sampleCount": 20, // 主线程超时采样次数
-10. "reportTimesPerApp": 3, // 主线程超时采样上报次数
-11. "autoStopSampling": true // 超时结束，停止采集堆栈
-12. }
-13. };
-14. hiAppEvent.configEventPolicy(policy).then(() => {
-15. hilog.info(0x0000, 'hiAppEvent', `Successfully set sampling stack parameters.`);
-16. }).catch((err: BusinessError) => {
-17. hilog.error(0x0000, 'hiAppEvent', `Failed to set sample stack value. Code: ${err.code}, message: ${err.message}`);
-18. });
+let policy: hiAppEvent.EventPolicy = {
+  "mainThreadJankPolicy" : {
+    "logType": 1, // 采集日志类型
+    "sampleInterval": 70, // 触发检测的阈值，采集堆栈间隔
+    "ignoreStartupTime": 11, // 应用启动期间忽略主线程超时检测的时间
+    "sampleCount": 20, // 主线程超时采样次数
+    "reportTimesPerApp": 3, // 主线程超时采样上报次数
+    "autoStopSampling": true // 超时结束，停止采集堆栈
+  }
+};
+hiAppEvent.configEventPolicy(policy).then(() => {
+  hilog.info(0x0000, 'hiAppEvent', `Successfully set sampling stack parameters.`);
+}).catch((err: BusinessError) => {
+  hilog.error(0x0000, 'hiAppEvent', `Failed to set sample stack value. Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 （3）logType=2，仅用于采集trace。其他参数均不生效，无需设置。
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { hilog, hiAppEvent } from '@kit.PerformanceAnalysisKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog, hiAppEvent } from '@kit.PerformanceAnalysisKit';
 
-4. let policy: hiAppEvent.EventPolicy = {
-5. "mainThreadJankPolicy" : {
-6. "logType": 2 // 采集日志类型
-7. }
-8. };
-9. hiAppEvent.configEventPolicy(policy).then(() => {
-10. hilog.info(0x0000, 'hiAppEvent', `Set to only collect trace successfully.`);
-11. }).catch((err: BusinessError) => {
-12. hilog.error(0x0000, 'hiAppEvent', `Failed to set only collect trace. code: ${err.code}, message: ${err.message}`);
-13. });
+let policy: hiAppEvent.EventPolicy = {
+  "mainThreadJankPolicy" : {
+    "logType": 2 // 采集日志类型
+  }
+};
+hiAppEvent.configEventPolicy(policy).then(() => {
+  hilog.info(0x0000, 'hiAppEvent', `Set to only collect trace successfully.`);
+}).catch((err: BusinessError) => {
+  hilog.error(0x0000, 'hiAppEvent', `Failed to set only collect trace. code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### OH\_HiAppEvent\_SetEventConfig接口说明
@@ -218,7 +222,7 @@ log\_type=1时，所有参数均需设置。
 
 接口不提供主线程超时结束自动停止采样栈的功能，config参数作如下配置。
 
-注意
+**注意** 
 
 MAIN\_THREAD\_JANK\_PARAM\_LOG\_TYPE为必选配置项。
 
@@ -256,71 +260,71 @@ MAIN\_THREAD\_JANK\_PARAM\_LOG\_TYPE为"1"时，所有配置项均需设置。
    （1）MAIN\_THREAD\_JANK\_PARAM\_LOG\_TYPE为"0"时，用于采样栈或采样trace。
 
    ```
-   1. #include "napi/native_api.h"
-   2. #include "hilog/log.h"
-   3. #include "hiappevent/hiappevent.h"
+   #include "napi/native_api.h"
+   #include "hilog/log.h"
+   #include "hiappevent/hiappevent.h"
 
-   5. #undef LOG_TAG
-   6. #define LOG_TAG "testTag"
+   #undef LOG_TAG
+   #define LOG_TAG "testTag"
 
-   8. HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
-   9. OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_LOG_TYPE, "0");
-   10. int ret = OH_HiAppEvent_SetEventConfig(EVENT_MAIN_THREAD_JANK, config);
-   11. if (ret == HIAPPEVENT_SUCCESS) {
-   12. OH_LOG_INFO(LogType::LOG_APP, "Setting default value successfully.");
-   13. }
-   14. OH_HiAppEvent_DestroyConfig(config);
+   HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+   OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_LOG_TYPE, "0");
+   int ret = OH_HiAppEvent_SetEventConfig(EVENT_MAIN_THREAD_JANK, config);
+   if (ret == HIAPPEVENT_SUCCESS) {
+       OH_LOG_INFO(LogType::LOG_APP, "Setting default value successfully.");
+   }
+   OH_HiAppEvent_DestroyConfig(config);
    ```
 
    （2）MAIN\_THREAD\_JANK\_PARAM\_LOG\_TYPE为"1"时，仅用于采集调用栈。
 
    ```
-   1. #include "napi/native_api.h"
-   2. #include "hilog/log.h"
-   3. #include "hiappevent/hiappevent.h"
+   #include "napi/native_api.h"
+   #include "hilog/log.h"
+   #include "hiappevent/hiappevent.h"
 
-   5. #undef LOG_TAG
-   6. #define LOG_TAG "testTag"
+   #undef LOG_TAG
+   #define LOG_TAG "testTag"
 
-   8. HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
-   9. OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_LOG_TYPE, "1");
-   10. OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_SAMPLE_INTERVAL, "100");
-   11. OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_IGNORE_STARTUP_TIME, "11");
-   12. OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_SAMPLE_COUNT, "21");
-   13. OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_REPORT_TIMES_PER_APP, "3");
+   HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+   OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_LOG_TYPE, "1");
+   OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_SAMPLE_INTERVAL, "100");
+   OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_IGNORE_STARTUP_TIME, "11");
+   OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_SAMPLE_COUNT, "21");
+   OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_REPORT_TIMES_PER_APP, "3");
 
-   15. int ret = OH_HiAppEvent_SetEventConfig(EVENT_MAIN_THREAD_JANK, config);
-   16. if (ret == HIAPPEVENT_SUCCESS) {
-   17. OH_LOG_INFO(LogType::LOG_APP, "Successfully set sampling stack parameters.");
-   18. }
-   19. OH_HiAppEvent_DestroyConfig(config);
+   int ret = OH_HiAppEvent_SetEventConfig(EVENT_MAIN_THREAD_JANK, config);
+   if (ret == HIAPPEVENT_SUCCESS) {
+       OH_LOG_INFO(LogType::LOG_APP, "Successfully set sampling stack parameters.");
+   }
+   OH_HiAppEvent_DestroyConfig(config);
    ```
 
    （3）MAIN\_THREAD\_JANK\_PARAM\_LOG\_TYPE为"2"时，仅用于采集trace。
 
    ```
-   1. #include "napi/native_api.h"
-   2. #include "hilog/log.h"
-   3. #include "hiappevent/hiappevent.h"
+   #include "napi/native_api.h"
+   #include "hilog/log.h"
+   #include "hiappevent/hiappevent.h"
 
-   5. #undef LOG_TAG
-   6. #define LOG_TAG "testTag"
+   #undef LOG_TAG
+   #define LOG_TAG "testTag"
 
-   8. HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
-   9. OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_LOG_TYPE, "2");
+   HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+   OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_LOG_TYPE, "2");
 
-   11. int ret = OH_HiAppEvent_SetEventConfig(EVENT_MAIN_THREAD_JANK, config);
-   12. if (ret == HIAPPEVENT_SUCCESS) {
-   13. OH_LOG_INFO(LogType::LOG_APP, "Set to only collect trace successfully");
-   14. }
-   15. OH_HiAppEvent_DestroyConfig(config);
+   int ret = OH_HiAppEvent_SetEventConfig(EVENT_MAIN_THREAD_JANK, config);
+   if (ret == HIAPPEVENT_SUCCESS) {
+       OH_LOG_INFO(LogType::LOG_APP, "Set to only collect trace successfully");
+   }
+   OH_HiAppEvent_DestroyConfig(config);
    ```
 
 **name为EVENT\_MAIN\_THREAD\_JANK\_V2**
 
-从API VERSION 22开始，name可以为EVENT\_MAIN\_THREAD\_JANK\_V2，接口提供主线程超时结束自动停止采样栈的功能，config参数作如下配置。
+从API version 22开始，name可以为EVENT\_MAIN\_THREAD\_JANK\_V2，接口提供主线程超时结束自动停止采样栈的功能，config参数作如下配置。
 
-注意
+**注意** 
 
 配置项名称为相关预定义的宏。
 
@@ -357,66 +361,66 @@ MAIN\_THREAD\_JANK\_PARAM\_AUTO\_STOP\_SAMPLING为"true"或"false"，转换为�
    （1）MAIN\_THREAD\_JANK\_PARAM\_LOG\_TYPE为"0"时，用于采样栈或采样trace。
 
    ```
-   1. #include "napi/native_api.h"
-   2. #include "hilog/log.h"
-   3. #include "hiappevent/hiappevent.h"
+   #include "napi/native_api.h"
+   #include "hilog/log.h"
+   #include "hiappevent/hiappevent.h"
 
-   5. #undef LOG_TAG
-   6. #define LOG_TAG "testTag"
+   #undef LOG_TAG
+   #define LOG_TAG "testTag"
 
-   8. HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
-   9. OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_LOG_TYPE, "0");
-   10. OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_AUTO_STOP_SAMPLING, "true");
-   11. int ret = OH_HiAppEvent_SetEventConfig(EVENT_MAIN_THREAD_JANK_V2, config);
-   12. if (ret == HIAPPEVENT_SUCCESS) {
-   13. OH_LOG_INFO(LogType::LOG_APP, "Setting default value successfully.");
-   14. }
-   15. OH_HiAppEvent_DestroyConfig(config);
+   HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+   OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_LOG_TYPE, "0");
+   OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_AUTO_STOP_SAMPLING, "true");
+   int ret = OH_HiAppEvent_SetEventConfig(EVENT_MAIN_THREAD_JANK_V2, config);
+   if (ret == HIAPPEVENT_SUCCESS) {
+       OH_LOG_INFO(LogType::LOG_APP, "Setting default value successfully.");
+   }
+   OH_HiAppEvent_DestroyConfig(config);
    ```
 
    （2）MAIN\_THREAD\_JANK\_PARAM\_LOG\_TYPE为"1"时，仅用于采集调用栈。
 
    ```
-   1. #include "napi/native_api.h"
-   2. #include "hilog/log.h"
-   3. #include "hiappevent/hiappevent.h"
+   #include "napi/native_api.h"
+   #include "hilog/log.h"
+   #include "hiappevent/hiappevent.h"
 
-   5. #undef LOG_TAG
-   6. #define LOG_TAG "testTag"
+   #undef LOG_TAG
+   #define LOG_TAG "testTag"
 
-   8. HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
-   9. OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_LOG_TYPE, "1");
-   10. OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_SAMPLE_INTERVAL, "100");
-   11. OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_IGNORE_STARTUP_TIME, "11");
-   12. OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_SAMPLE_COUNT, "21");
-   13. OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_REPORT_TIMES_PER_APP, "3");
-   14. OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_AUTO_STOP_SAMPLING, "true");
+   HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+   OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_LOG_TYPE, "1");
+   OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_SAMPLE_INTERVAL, "100");
+   OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_IGNORE_STARTUP_TIME, "11");
+   OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_SAMPLE_COUNT, "21");
+   OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_REPORT_TIMES_PER_APP, "3");
+   OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_AUTO_STOP_SAMPLING, "true");
 
-   16. int ret = OH_HiAppEvent_SetEventConfig(EVENT_MAIN_THREAD_JANK_V2, config);
-   17. if (ret == HIAPPEVENT_SUCCESS) {{
-   18. OH_LOG_INFO(LogType::LOG_APP, "Successfully set sampling stack parameters.");
-   19. }
-   20. OH_HiAppEvent_DestroyConfig(config);
+   int ret = OH_HiAppEvent_SetEventConfig(EVENT_MAIN_THREAD_JANK_V2, config);
+   if (ret == HIAPPEVENT_SUCCESS) {
+       OH_LOG_INFO(LogType::LOG_APP, "Successfully set sampling stack parameters.");
+   }
+   OH_HiAppEvent_DestroyConfig(config);
    ```
 
    （3）MAIN\_THREAD\_JANK\_PARAM\_LOG\_TYPE为"2"时，仅用于采集trace。
 
    ```
-   1. #include "napi/native_api.h"
-   2. #include "hilog/log.h"
-   3. #include "hiappevent/hiappevent.h"
+   #include "napi/native_api.h"
+   #include "hilog/log.h"
+   #include "hiappevent/hiappevent.h"
 
-   5. #undef LOG_TAG
-   6. #define LOG_TAG "testTag"
+   #undef LOG_TAG
+   #define LOG_TAG "testTag"
 
-   8. HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
-   9. OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_LOG_TYPE, "2");
+   HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+   OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_LOG_TYPE, "2");
 
-   11. int ret = OH_HiAppEvent_SetEventConfig(EVENT_MAIN_THREAD_JANK_V2, config);
-   12. if (ret == HIAPPEVENT_SUCCESS) {
-   13. OH_LOG_INFO(LogType::LOG_APP, "Set to only collect trace successfully");
-   14. }
-   15. OH_HiAppEvent_DestroyConfig(config);
+   int ret = OH_HiAppEvent_SetEventConfig(EVENT_MAIN_THREAD_JANK_V2, config);
+   if (ret == HIAPPEVENT_SUCCESS) {
+       OH_LOG_INFO(LogType::LOG_APP, "Set to only collect trace successfully");
+   }
+   OH_HiAppEvent_DestroyConfig(config);
    ```
 
 ## 事件字段说明

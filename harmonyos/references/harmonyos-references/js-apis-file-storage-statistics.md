@@ -3,32 +3,30 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.file.storageStatistics (应用空间统计)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > @ohos.file.storageStatistics (应用空间统计)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:45+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:7946a9f7f1ce786fe9d04cd733f1167e86e54755be5acfd7f9d57acc889acb92
+scraped_at: 2026-09-02T15:01:31+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:beef1c169aef86cf0bb94ff838387885cc1afc314ce2417211dc0558b00c00d2
 ---
 
-该模块提供空间查询相关的常用功能：包括对内外卡的空间查询、对应用分类数据统计的查询、对应用数据的查询等。
+该模块提供空间查询相关的常用功能：包括对内置存储和外置存储卡的空间查询、对应用分类数据统计的查询、对应用数据的查询、对文件系统inode资源（总量、剩余量及当前应用占用量）的查询等。适用于存储空间管理、系统监控、应用存储优化等场景，帮助开发者实时掌握设备存储和inode资源使用情况，合理规划存储策略，避免因存储空间或inode资源不足导致应用异常。
 
-说明
+**说明** 
 
 本模块首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { storageStatistics } from '@kit.CoreFileKit';
+```ts
+import { storageStatistics } from '@kit.CoreFileKit';
 ```
 
 ## storageStatistics.getCurrentBundleStats9+
 
-PhonePC/2in1TabletTV
-
 getCurrentBundleStats(): Promise<BundleStats>
 
-应用异步获取当前应用存储空间大小（单位为Byte），使用Promise异步回调。
+获取当前应用的存储空间大小（单位为Byte），使用Promise异步回调。
+
+例如，可在应用的存储管理或设置页面中，用于展示当前应用占用的存储空间，帮助用户了解应用的存储使用情况。
 
 **系统能力**：SystemCapability.FileManagement.StorageService.SpatialStatistics
 
@@ -36,11 +34,11 @@ getCurrentBundleStats(): Promise<BundleStats>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[BundleStats](js-apis-file-storage-statistics.md#bundlestats9)> | Promise对象，返回指定卷上的应用存储空间大小（单位为Byte）。 |
+| Promise<[BundleStats](js-apis-file-storage-statistics.md#bundlestats9)> | Promise对象，返回当前应用的存储空间大小（单位为Byte）。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理错误码](errorcode-filemanagement.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[文件管理错误码](errorcode-filemanagement.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -50,22 +48,22 @@ getCurrentBundleStats(): Promise<BundleStats>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. storageStatistics.getCurrentBundleStats().then((BundleStats: storageStatistics.BundleStats) => {
-3. console.info("getCurrentBundleStats successfully:" + JSON.stringify(BundleStats));
-4. }).catch((err: BusinessError) => {
-5. console.error("getCurrentBundleStats failed with error:"+ JSON.stringify(err));
-6. });
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+storageStatistics.getCurrentBundleStats().then((bundleStats: storageStatistics.BundleStats) => {
+  console.info('getCurrentBundleStats successfully:' + JSON.stringify(bundleStats));
+}).catch((err: BusinessError) => {
+  console.error(`getCurrentBundleStats failed. Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## storageStatistics.getCurrentBundleStats9+
 
-PhonePC/2in1TabletTV
-
 getCurrentBundleStats(callback: AsyncCallback<BundleStats>): void
 
-应用异步获取当前应用存储空间大小（单位为Byte），使用callback异步回调。
+获取当前应用的存储空间大小（单位为Byte），使用callback异步回调。
+
+例如，可在应用的存储管理或设置页面中，用于展示当前应用占用的存储空间，帮助用户了解应用的存储使用情况。
 
 **系统能力**：SystemCapability.FileManagement.StorageService.SpatialStatistics
 
@@ -73,7 +71,7 @@ getCurrentBundleStats(callback: AsyncCallback<BundleStats>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<[BundleStats](js-apis-file-storage-statistics.md#bundlestats9)> | 是 | 获取指定卷上的应用存储空间大小之后的回调。 |
+| callback | AsyncCallback<[BundleStats](js-apis-file-storage-statistics.md#bundlestats9)> | 是 | 回调函数，获取当前应用的存储空间大小之后的回调。  回调参数包括：  err：错误信息，调用成功时为undefined。  bundleStats：当前应用的存储空间统计信息。 |
 
 **错误码：**
 
@@ -87,25 +85,25 @@ getCurrentBundleStats(callback: AsyncCallback<BundleStats>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. storageStatistics.getCurrentBundleStats((error: BusinessError, bundleStats: storageStatistics.BundleStats) => {
-3. if (error) {
-4. console.error("getCurrentBundleStats failed with error:" + JSON.stringify(error));
-5. } else {
-6. // do something
-7. console.info("getCurrentBundleStats successfully:" + JSON.stringify(bundleStats));
-8. }
-9. });
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+storageStatistics.getCurrentBundleStats((error: BusinessError, bundleStats: storageStatistics.BundleStats) => {
+  if (error) {
+    console.error(`getCurrentBundleStats failed. Code: ${error.code}, message: ${error.message}`);
+  } else {
+    // do something
+    console.info('getCurrentBundleStats successfully:' + JSON.stringify(bundleStats));
+  }
+});
 ```
 
 ## storageStatistics.getTotalSize15+
 
-PhonePC/2in1TabletTV
-
 getTotalSize(): Promise<number>
 
 获取内置存储的总空间大小（单位为Byte），使用Promise异步回调。
+
+与getTotalSizeSync相比，本方法不会阻塞当前线程，适用于需要避免阻塞的场景。
 
 **系统能力**：SystemCapability.FileManagement.StorageService.SpatialStatistics
 
@@ -126,22 +124,22 @@ getTotalSize(): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. storageStatistics.getTotalSize().then((number: number) => {
-3. console.info("getTotalSize successfully:" + JSON.stringify(number));
-4. }).catch((err: BusinessError) => {
-5. console.error("getTotalSize failed with error:"+ JSON.stringify(err));
-6. });
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+storageStatistics.getTotalSize().then((totalSize: number) => {
+  console.info('getTotalSize successfully:' + totalSize);
+}).catch((err: BusinessError) => {
+  console.error(`getTotalSize failed. Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## storageStatistics.getTotalSize15+
 
-PhonePC/2in1TabletTV
-
 getTotalSize(callback: AsyncCallback<number>): void
 
 获取内置存储的总空间大小（单位为Byte），使用callback异步回调。
+
+与getTotalSizeSync相比，本方法不会阻塞当前线程，适用于需要避免阻塞的场景。
 
 **系统能力**：SystemCapability.FileManagement.StorageService.SpatialStatistics
 
@@ -149,7 +147,7 @@ getTotalSize(callback: AsyncCallback<number>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<number> | 是 | 获取内置存储的总空间大小之后的回调。 |
+| callback | AsyncCallback<number> | 是 | 回调函数，获取内置存储的总空间大小之后的回调。  回调参数包括：  err：错误信息，调用成功时为undefined。  number：内置存储的总空间大小，单位为Byte。 |
 
 **错误码：**
 
@@ -163,25 +161,25 @@ getTotalSize(callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. storageStatistics.getTotalSize((error: BusinessError, number: number) => {
-3. if (error) {
-4. console.error("getTotalSize failed with error:" + JSON.stringify(error));
-5. } else {
-6. // do something
-7. console.info("getTotalSize successfully:" + number);
-8. }
-9. });
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+storageStatistics.getTotalSize((error: BusinessError, totalSize: number) => {
+  if (error) {
+    console.error(`getTotalSize failed. Code: ${error.code}, message: ${error.message}`);
+  } else {
+    // do something
+    console.info('getTotalSize successfully:' + totalSize);
+  }
+});
 ```
 
 ## storageStatistics.getTotalSizeSync15+
 
-PhonePC/2in1TabletTV
-
 getTotalSizeSync(): number
 
-同步获取内置存储的总空间大小（单位为Byte）。
+同步获取内置存储的总空间大小（单位为Byte）。本方法为同步调用，可能会短暂阻塞当前线程，适用于需要立即获取结果且能接受短暂阻塞的场景。
+
+例如，在存储管理类应用中快速展示设备内置存储总容量。如需避免阻塞，请使用getTotalSize异步接口。
 
 **系统能力**：SystemCapability.FileManagement.StorageService.SpatialStatistics
 
@@ -202,24 +200,24 @@ getTotalSizeSync(): number
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. try {
-3. let number = storageStatistics.getTotalSizeSync();
-4. console.info("getTotalSizeSync successfully:" + JSON.stringify(number));
-5. } catch (err) {
-6. let error: BusinessError = err as BusinessError;
-7. console.error("getTotalSizeSync failed with error:" + JSON.stringify(error));
-8. }
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+try {
+  let totalSize = storageStatistics.getTotalSizeSync();
+  console.info('getTotalSizeSync successfully:' + totalSize);
+} catch (err) {
+  let error: BusinessError = err as BusinessError;
+  console.error(`getTotalSizeSync failed. Code: ${error.code}, message: ${error.message}`);
+}
 ```
 
 ## storageStatistics.getFreeSize15+
 
-PhonePC/2in1TabletTV
-
 getFreeSize(): Promise<number>
 
 获取内置存储的可用空间大小（单位为Byte），使用Promise异步回调。
+
+与getFreeSizeSync相比，本方法不会阻塞当前线程，适用于需要避免阻塞的场景。
 
 **系统能力**：SystemCapability.FileManagement.StorageService.SpatialStatistics
 
@@ -240,22 +238,22 @@ getFreeSize(): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. storageStatistics.getFreeSize().then((number: number) => {
-3. console.info("getFreeSize successfully:" + JSON.stringify(number));
-4. }).catch((err: BusinessError) => {
-5. console.error("getFreeSize failed with error:" + JSON.stringify(err));
-6. });
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+storageStatistics.getFreeSize().then((freeSize: number) => {
+  console.info('getFreeSize successfully:' + freeSize);
+}).catch((err: BusinessError) => {
+  console.error(`getFreeSize failed. Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## storageStatistics.getFreeSize15+
 
-PhonePC/2in1TabletTV
-
 getFreeSize(callback: AsyncCallback<number>): void
 
 获取内置存储的可用空间大小（单位为Byte），使用callback异步回调。
+
+与getFreeSizeSync相比，本方法不会阻塞当前线程，适用于需要避免阻塞的场景。
 
 **系统能力**：SystemCapability.FileManagement.StorageService.SpatialStatistics
 
@@ -263,7 +261,7 @@ getFreeSize(callback: AsyncCallback<number>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<number> | 是 | 获取内置存储的可用空间大小之后的回调。 |
+| callback | AsyncCallback<number> | 是 | 回调函数，获取内置存储的可用空间大小之后的回调。  回调参数包括：  err：错误信息，调用成功时为undefined。  number：内置存储的可用空间大小，单位为Byte。 |
 
 **错误码：**
 
@@ -277,25 +275,25 @@ getFreeSize(callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. storageStatistics.getFreeSize((error: BusinessError, number: number) => {
-3. if (error) {
-4. console.error("getFreeSize failed with error:" + JSON.stringify(error));
-5. } else {
-6. // do something
-7. console.info("getFreeSize successfully:" + number);
-8. }
-9. });
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+storageStatistics.getFreeSize((error: BusinessError, freeSize: number) => {
+  if (error) {
+    console.error(`getFreeSize failed. Code: ${error.code}, message: ${error.message}`);
+  } else {
+    // do something
+    console.info('getFreeSize successfully:' + freeSize);
+  }
+});
 ```
 
 ## storageStatistics.getFreeSizeSync15+
 
-PhonePC/2in1TabletTV
-
 getFreeSizeSync(): number
 
-同步获取内置存储的可用空间大小（单位为Byte）。
+同步获取内置存储的可用空间大小（单位为Byte）。本方法为同步调用，可能会短暂阻塞当前线程，适用于需要立即获取结果且能接受短暂阻塞的场景。
+
+例如，在存储管理类应用中快速展示设备剩余可用存储空间。如需避免阻塞，请使用getFreeSize()异步接口。
 
 **系统能力**：SystemCapability.FileManagement.StorageService.SpatialStatistics
 
@@ -316,20 +314,18 @@ getFreeSizeSync(): number
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. try {
-3. let number = storageStatistics.getFreeSizeSync();
-4. console.info("getFreeSizeSync successfully:" + JSON.stringify(number));
-5. } catch (err) {
-6. let error: BusinessError = err as BusinessError;
-7. console.error("getFreeSizeSync failed with error:" + JSON.stringify(error));
-8. }
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+try {
+  let freeSize = storageStatistics.getFreeSizeSync();
+  console.info('getFreeSizeSync successfully:' + freeSize);
+} catch (err) {
+  let error: BusinessError = err as BusinessError;
+  console.error(`getFreeSizeSync failed. Code: ${error.code}, message: ${error.message}`);
+}
 ```
 
 ## BundleStats9+
-
-PhonePC/2in1TabletTV
 
 **系统能力**：SystemCapability.FileManagement.StorageService.SpatialStatistics
 
@@ -337,4 +333,128 @@ PhonePC/2in1TabletTV
 | --- | --- | --- | --- | --- |
 | appSize | number | 否 | 否 | 应用安装文件大小（单位为Byte）。 |
 | cacheSize | number | 否 | 否 | 应用缓存文件大小（单位为Byte）。 |
-| dataSize | number | 否 | 否 | 应用文件存储大小（除应用安装文件）（单位为Byte）。 |
+| dataSize | number | 否 | 否 | 应用文件存储大小（不含应用安装文件）（单位为Byte）。 |
+
+## storageStatistics.getTotalInodes24+
+
+getTotalInodes(): Promise<number>
+
+获取文件系统的inode资源总量，仅支持查询系统数据分区。使用Promise异步回调。
+
+inode是文件系统中用于标识和管理文件的数据结构，每个文件或目录占用一个inode。当应用创建大量小文件（如日志文件、缓存文件等）时，可能因inode资源耗尽导致无法创建新文件（即使存储空间仍有剩余）。
+
+例如，可在存储管理或系统监控类应用中，用于评估文件系统inode资源是否充足。
+
+**系统能力**：SystemCapability.FileManagement.StorageService.SpatialStatistics
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回文件系统inode资源总量。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[文件管理错误码](errorcode-filemanagement.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13600001 | IPC error. |
+| 13600016 | Failed to query the inode information of the data partition. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+storageStatistics.getTotalInodes().then((totalInodes: number) => {
+  console.info('getTotalInodes successfully:' + totalInodes);
+}).catch((err: BusinessError) => {
+  console.error(`getTotalInodes failed. Code: ${err.code}, message: ${err.message}`);
+});
+```
+
+## storageStatistics.getFreeInodes24+
+
+getFreeInodes(): Promise<number>
+
+获取文件系统的inode资源剩余量，仅支持查询系统数据分区。使用Promise异步回调。
+
+inode是文件系统中用于标识和管理文件的数据结构，每个文件或目录占用一个inode。
+
+例如，在需要频繁创建小文件的应用（如日志系统、缓存管理）中，可用于监控inode剩余量，提前预警避免因inode耗尽导致文件创建失败。
+
+**系统能力**：SystemCapability.FileManagement.StorageService.SpatialStatistics
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回文件系统inode资源剩余量。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[文件管理错误码](errorcode-filemanagement.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13600001 | IPC error. |
+| 13600016 | Failed to query the inode information of the data partition. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+storageStatistics.getFreeInodes().then((freeInodes: number) => {
+  console.info('getFreeInodes successfully:' + freeInodes);
+}).catch((err: BusinessError) => {
+  console.error(`getFreeInodes failed. Code: ${err.code}, message: ${err.message}`);
+});
+```
+
+## storageStatistics.getCurrentBundleInodes24+
+
+getCurrentBundleInodes(): Promise<number>
+
+获取当前应用的inode占用量（仅支持查询系统数据分区），使用Promise异步回调。
+
+inode是文件系统中用于标识和管理文件的数据结构，每个文件或目录占用一个inode。
+
+例如，在应用的存储管理页面中，可用于展示当前应用的inode使用情况，帮助开发者评估应用的inode占用情况，以便优化文件管理策略。
+
+**系统能力**：SystemCapability.FileManagement.StorageService.SpatialStatistics
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回当前应用的inode占用量。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[文件管理错误码](errorcode-filemanagement.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13600001 | IPC error. |
+| 13600002 | File system not supported. |
+| 13600017 | Failed to query the inode information of the application. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+storageStatistics.getCurrentBundleInodes().then((bundleInodes: number) => {
+  console.info('getCurrentBundleInodes successfully:' + bundleInodes);
+}).catch((err: BusinessError) => {
+  console.error(`getCurrentBundleInodes failed. Code: ${err.code}, message: ${err.message}`);
+});
+```

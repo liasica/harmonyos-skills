@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getbl
 title: GetBlockNum
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 系统变量访问 > GetBlockNum
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:26+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8a18e7034498d06f6e11f16587979c594978d9ee593c17a9f8a3a56a1b6a0339
+scraped_at: 2026-09-02T14:50:37+08:00
+doc_updated_at: 2026-08-18
+content_hash: sha256:686410125d6a416c729d49185ee67a4867c8ee6a698fa8bc56fd321304674dfa
 ---
 
 ## 功能说明
@@ -14,8 +14,8 @@ content_hash: sha256:8a18e7034498d06f6e11f16587979c594978d9ee593c17a9f8a3a56a1b6
 
 ## 函数原型
 
-```
-1. __aicore__ inline int64_t GetBlockNum()
+```cpp
+__aicore__ inline int64_t GetBlockNum()
 ```
 
 ## 参数说明
@@ -30,6 +30,8 @@ content_hash: sha256:8a18e7034498d06f6e11f16587979c594978d9ee593c17a9f8a3a56a1b6
 
 Kirin9020系列处理器
 
+Kirin9030系列处理器
+
 KirinX90系列处理器
 
 ## 约束说明
@@ -38,11 +40,11 @@ KirinX90系列处理器
 
 ## 调用示例
 
-```
-1. #include "kernel_operator.h"
-2. // 在核内做简单的tiling计算时使用block_num，复杂tiling建议在host侧完成
-3. __aicore__ inline void InitTilingParam(int32_t& totalSize, int32_t& loopSize)
-4. {
-5. loopSize = totalSize / AscendC::GetBlockNum();
-6. };
+```cpp
+#include "kernel_operator.h"
+// 在核内做简单的tiling计算时使用block_num，复杂tiling建议在host侧完成
+__aicore__ inline void InitTilingParam(int32_t& totalSize, int32_t& loopSize)
+{
+    loopSize = totalSize / AscendC::GetBlockNum();
+};
 ```

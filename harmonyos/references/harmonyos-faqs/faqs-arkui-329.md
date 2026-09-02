@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-329
 title: LocalStorage频繁读写复杂对象时性能变差的原因是什么？
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > LocalStorage频繁读写复杂对象时性能变差的原因是什么？
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > LocalStorage频繁读写复杂对象时性能变差的原因是什么？
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:26+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:22+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:56e4cd5d2d9ca9ec380b221212df9072cf12dae9a70145bee6623f637cb26fa7
 ---
 

@@ -3,26 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: image
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 基础组件 > image
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:52+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:e54712d94f0f09420e80e7c8cb7ac450c912f77c15e7d6513f43ca0606182f6f
+scraped_at: 2026-09-02T15:01:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3825963a2439b06f0496a0781f0a65a6f5e0569b75c2adece4e8a0c9f8fb6914
 ---
 
 图片组件，用来渲染展示图片。
 
-说明
+**说明** 
 
 该组件从API version 4 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 不支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
@@ -34,8 +30,6 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | click | - | 点击动作触发该事件。 |
@@ -43,8 +37,6 @@ PhonePC/2in1TabletTVWearableLite Wearable
 | swipe5+ | [SwipeEvent](js-lite-common-events.md) | 组件上快速滑动后触发。 |
 
 ## 样式
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
@@ -64,25 +56,23 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <image src="common/images/hw_right.png" style="width: 300px; height: 300px; border-color: red; border-width: 2px;">
-4. </image>
-5. </div>
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <image src="common/images/hw_right.png" style="width: 300px; height: 300px; border-color: red; border-width: 2px;">
+  </image>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .container {
-3. justify-content: center;
-4. align-items: center;
-5. flex-direction: column;
-6. width: 100%;
-7. height: 100%;
-8. }
+```css
+/* xxx.css */
+.container {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/vnSa_b6mQb6UaB7aO5asww/zh-cn_image_0000002558607274.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/e6vgPK1FQ8KI-BqS4wuihA/zh-cn_image_0000002736315707.png)

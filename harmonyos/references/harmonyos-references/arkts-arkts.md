@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-ark
 title: ArkTS API
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:49+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:de225c5a01cf9ead6beff73a379f3f0fca497f20e1b0d9cd6a7f698e42a3a5e8
+scraped_at: 2026-09-02T14:51:13+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:32a9ea91f21fe6b9e9f1aa82ba02eea68ff9e52b86771727cdf0475958c75a05
 ---
 
 * **[@arkts.collections (ArkTS容器集)](js-apis-arkts-collections.md)**
@@ -13,7 +13,7 @@ content_hash: sha256:de225c5a01cf9ead6beff73a379f3f0fca497f20e1b0d9cd6a7f698e42a
 * **[@arkts.math.Decimal (高精度数学库Decimal)](js-apis-arkts-decimal.md)**
 * **[@arkts.utils (ArkTS工具库)](js-apis-arkts-utils.md)**
 * **[@ohos.buffer (Buffer)](js-apis-buffer.md)**
-* **[@ohos.convertxml (xml转换JavaScript)](js-apis-convertxml.md)**
+* **[@ohos.convertxml (XML转换JavaScript)](js-apis-convertxml.md)**
 * **[@ohos.fastbuffer (FastBuffer)](js-apis-fastbuffer.md)**
 * **[@ohos.process (获取进程相关的信息)](js-apis-process.md)**
 * **[@ohos.taskpool (启动任务池)](js-apis-taskpool.md)**

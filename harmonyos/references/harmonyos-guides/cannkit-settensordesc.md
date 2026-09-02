@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-sette
 title: SetTensorDesc
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Tensor > SetTensorDesc
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:08+08:00
+scraped_at: 2026-09-02T14:50:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2ba4093831fb0dcdd37df5499462be5165632afb33119181c72180ecec6e4822
+content_hash: sha256:4f41f7dde1c7afe1f7b6750cfb905950a8d584ec6cbeb572e7acd383a7e83bae
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:2ba4093831fb0dcdd37df5499462be5165632afb33119181c72180ecec6
 
 ## 函数原型
 
-```
-1. graphStatus SetTensorDesc(const TensorDesc &tensor_desc);
+```cpp
+graphStatus SetTensorDesc(const TensorDesc &tensor_desc);
 ```
 
 ## 参数说明

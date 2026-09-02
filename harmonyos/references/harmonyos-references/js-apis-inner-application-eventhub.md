@@ -3,27 +3,25 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: EventHub
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > application > EventHub
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:40+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:d6303574ff3205ebb0680810602adf0c299169610f5dc92653f56ded8e9c2129
+scraped_at: 2026-09-02T15:00:35+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:75920293a7dd8d839b5a1ccf027034f6fb55e9a8d372e9cb055d82483b8c0532
 ---
 
 EventHub是系统提供的基于发布-订阅模式实现的事件通信机制。通过事件名，实现了发送方和订阅方之间的解耦，支持不同业务模块间的高效数据传递和状态同步。
 
 主要用于[UIAbility组件与UI的数据通信](../harmonyos-guides/uiability-data-sync-with-ui.md)。
 
-不同的Context对象拥有不同的EventHub对象，不同EventHub对象之间无法直接通信。事件的订阅、取消订阅、触发都作用在某一个具体的EventHub对象上。
+不同的Context对象拥有不同的EventHub对象，不同EventHub对象之间无法直接通信。事件的订阅、取消订阅、触发都作用在某一个具体的EventHub对象上。当Context对象发生变更，其关联的EventHub即随之失效。例如，应用创建分身时会触发ApplicationContext刷新，此前应用在该ApplicationContext上的EventHub将失效。
 
 由于Worker、Taskpool通过Actor模型实现[多线程并发](../harmonyos-guides/multi-thread-concurrency-overview.md#多线程并发模型)，不同虚拟机实例之间拥有独占的内存，因此EventHub对象不能用于线程间的数据通信。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本模块接口仅可在Stage模型下使用。
 
 ## 约束限制
-
-PhonePC/2in1TabletTVWearable
 
 * 不支持在进程间通过Eventhub对象进行数据通信。
 * 不支持在Worker、TaskPool线程间通过EventHub对象进行数据通信。如需进行跨线程通信，参考[使用Emitter进行线程间通信](../harmonyos-guides/itc-with-emitter.md)。
@@ -32,46 +30,40 @@ PhonePC/2in1TabletTVWearable
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { common } from '@kit.AbilityKit';
+```ts
+import { common } from '@kit.AbilityKit';
 ```
 
 ## 使用说明
 
-PhonePC/2in1TabletTVWearable
-
 开发者需要通过Context对象获取EventHub。以下示例通过UIAbility实例的Context对象获取其EventHub对象。
 
-```
-1. import { common, UIAbility } from '@kit.AbilityKit';
+```ts
+import { common, UIAbility } from '@kit.AbilityKit';
 
-3. export default class EntryAbility extends UIAbility {
-4. eventFunc() {
-5. console.info('eventFunc is called');
-6. }
+export default class EntryAbility extends UIAbility {
+  eventFunc() {
+    console.info('eventFunc is called');
+  }
 
-8. onCreate() {
-9. // 调用方式一（推荐）
-10. this.context.eventHub.on('myEvent', this.eventFunc);
+  onCreate() {
+    // 调用方式一（推荐）
+    this.context.eventHub.on('myEvent', this.eventFunc);
 
-12. // 调用方式二
-13. let eventhub = this.context.eventHub as common.EventHub;
-14. eventhub.on('myEvent', this.eventFunc);
-15. }
-16. }
+    // 调用方式二
+    let eventhub = this.context.eventHub as common.EventHub;
+    eventhub.on('myEvent', this.eventFunc);
+  }
+}
 ```
 
 ## EventHub.on
-
-PhonePC/2in1TabletTVWearable
 
 on(event: string, callback: Function): void;
 
 订阅指定事件。
 
-说明
+**说明** 
 
 callback被emit触发时，调用方是EventHub对象，如果要修改callback中this的指向，可以使用箭头函数。
 
@@ -98,86 +90,84 @@ callback被emit触发时，调用方是EventHub对象，如果要修改callback�
 
 callback被emit触发时，调用方是EventHub对象。EventHub对象没有value属性，因此结果是undefined。
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. value: number = 12;
+export default class EntryAbility extends UIAbility {
+  value: number = 12;
 
-7. onCreate() {
-8. try {
-9. this.context.eventHub.on('myEvent', this.eventFunc);
-10. } catch (e) {
-11. let code: number = (e as BusinessError).code;
-12. let msg: string = (e as BusinessError).message;
-13. console.error(`EventHub emit error, code: ${code}, msg: ${msg}`);
-14. }
-15. }
+  onCreate() {
+    try {
+      this.context.eventHub.on('myEvent', this.eventFunc);
+    } catch (e) {
+      let code: number = (e as BusinessError).code;
+      let msg: string = (e as BusinessError).message;
+      console.error(`EventHub emit error, code: ${code}, msg: ${msg}`);
+    }
+  }
 
-17. onForeground() {
-18. try {
-19. // 结果：
-20. // eventFunc is called, value: undefined
-21. this.context.eventHub.emit('myEvent');
-22. } catch (e) {
-23. let code: number = (e as BusinessError).code;
-24. let msg: string = (e as BusinessError).message;
-25. console.error(`EventHub emit error, code: ${code}, msg: ${msg}`);
-26. }
-27. }
+  onForeground() {
+    try {
+      // 结果：
+      // eventFunc is called, value: undefined
+      this.context.eventHub.emit('myEvent');
+    } catch (e) {
+      let code: number = (e as BusinessError).code;
+      let msg: string = (e as BusinessError).message;
+      console.error(`EventHub emit error, code: ${code}, msg: ${msg}`);
+    }
+  }
 
-29. eventFunc() {
-30. console.info(`eventFunc is called, value: ${this.value}`);
-31. }
-32. }
+  eventFunc() {
+    console.info(`eventFunc is called, value: ${this.value}`);
+  }
+}
 ```
 
 **示例2：**
 
-callback使用箭头函数时，调用方是EntryAbility对象。EntryAbility对象里存在value属性，因此结果是12。
+callback使用箭头函数时，this指向EntryAbility对象。EntryAbility对象里存在value属性，因此结果是12。
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. value: number = 12;
+export default class EntryAbility extends UIAbility {
+  value: number = 12;
 
-7. onCreate() {
-8. try {
-9. // 支持使用匿名函数订阅事件
-10. this.context.eventHub.on('myEvent', () => {
-11. console.info(`anonymous eventFunc is called, value: ${this.value}`);
-12. });
-13. } catch (e) {
-14. let code: number = (e as BusinessError).code;
-15. let msg: string = (e as BusinessError).message;
-16. console.error(`EventHub emit error, code: ${code}, msg: ${msg}`);
-17. }
-18. }
+  onCreate() {
+    try {
+      // 支持使用匿名函数订阅事件
+      this.context.eventHub.on('myEvent', () => {
+        console.info(`anonymous eventFunc is called, value: ${this.value}`);
+      });
+    } catch (e) {
+      let code: number = (e as BusinessError).code;
+      let msg: string = (e as BusinessError).message;
+      console.error(`EventHub emit error, code: ${code}, msg: ${msg}`);
+    }
+  }
 
-20. onForeground() {
-21. try {
-22. // 结果：
-23. // anonymous eventFunc is called, value: 12
-24. this.context.eventHub.emit('myEvent');
-25. } catch (e) {
-26. let code: number = (e as BusinessError).code;
-27. let msg: string = (e as BusinessError).message;
-28. console.error(`EventHub emit error, code: ${code}, msg: ${msg}`);
-29. }
-30. }
+  onForeground() {
+    try {
+      // 结果：
+      // anonymous eventFunc is called, value: 12
+      this.context.eventHub.emit('myEvent');
+    } catch (e) {
+      let code: number = (e as BusinessError).code;
+      let msg: string = (e as BusinessError).message;
+      console.error(`EventHub emit error, code: ${code}, msg: ${msg}`);
+    }
+  }
 
-32. eventFunc() {
-33. console.info(`eventFunc is called, value: ${this.value}`);
-34. }
-35. }
+  eventFunc() {
+    console.info(`eventFunc is called, value: ${this.value}`);
+  }
+}
 ```
 
 ## EventHub.off
-
-PhonePC/2in1TabletTVWearable
 
 off(event: string, callback?: Function): void;
 
@@ -207,38 +197,36 @@ off(event: string, callback?: Function): void;
 
 **示例：**
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onCreate() {
-6. try {
-7. this.context.eventHub.on('myEvent', this.eventFunc1);
-8. this.context.eventHub.off('myEvent', this.eventFunc1); // 取消eventFunc1对myEvent事件的订阅
-9. this.context.eventHub.on('myEvent', this.eventFunc1);
-10. this.context.eventHub.on('myEvent', this.eventFunc2);
-11. this.context.eventHub.off('myEvent'); // 取消eventFunc1和eventFunc2对myEvent事件的订阅
-12. } catch (e) {
-13. let code: number = (e as BusinessError).code;
-14. let msg: string = (e as BusinessError).message;
-15. console.error(`EventHub emit error, code: ${code}, msg: ${msg}`);
-16. }
-17. }
+export default class EntryAbility extends UIAbility {
+  onCreate() {
+    try {
+      this.context.eventHub.on('myEvent', this.eventFunc1);
+      this.context.eventHub.off('myEvent', this.eventFunc1); // 取消eventFunc1对myEvent事件的订阅
+      this.context.eventHub.on('myEvent', this.eventFunc1);
+      this.context.eventHub.on('myEvent', this.eventFunc2);
+      this.context.eventHub.off('myEvent'); // 取消eventFunc1和eventFunc2对myEvent事件的订阅
+    } catch (e) {
+      let code: number = (e as BusinessError).code;
+      let msg: string = (e as BusinessError).message;
+      console.error(`EventHub emit error, code: ${code}, msg: ${msg}`);
+    }
+  }
 
-19. eventFunc1() {
-20. console.info('eventFunc1 is called');
-21. }
+  eventFunc1() {
+    console.info('eventFunc1 is called');
+  }
 
-23. eventFunc2() {
-24. console.info('eventFunc2 is called');
-25. }
-26. }
+  eventFunc2() {
+    console.info('eventFunc2 is called');
+  }
+}
 ```
 
 ## EventHub.emit
-
-PhonePC/2in1TabletTVWearable
 
 emit(event: string, ...args: Object[]): void;
 
@@ -265,35 +253,35 @@ emit(event: string, ...args: Object[]): void;
 
 **示例：**
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onCreate() {
-6. this.context.eventHub.on('myEvent', this.eventFunc);
-7. }
+export default class EntryAbility extends UIAbility {
+  onCreate() {
+    this.context.eventHub.on('myEvent', this.eventFunc);
+  }
 
-9. onDestroy() {
-10. try {
-11. // 结果：
-12. // eventFunc is called,undefined,undefined
-13. this.context.eventHub.emit('myEvent');
-14. // 结果：
-15. // eventFunc is called,1,undefined
-16. this.context.eventHub.emit('myEvent', 1);
-17. // 结果：
-18. // eventFunc is called,1,2
-19. this.context.eventHub.emit('myEvent', 1, 2);
-20. } catch (e) {
-21. let code: number = (e as BusinessError).code;
-22. let msg: string = (e as BusinessError).message;
-23. console.error(`EventHub emit error, code: ${code}, msg: ${msg}`);
-24. }
-25. }
+  onDestroy() {
+    try {
+      // 结果：
+      // eventFunc is called,undefined,undefined
+      this.context.eventHub.emit('myEvent');
+      // 结果：
+      // eventFunc is called,1,undefined
+      this.context.eventHub.emit('myEvent', 1);
+      // 结果：
+      // eventFunc is called,1,2
+      this.context.eventHub.emit('myEvent', 1, 2);
+    } catch (e) {
+      let code: number = (e as BusinessError).code;
+      let msg: string = (e as BusinessError).message;
+      console.error(`EventHub emit error, code: ${code}, msg: ${msg}`);
+    }
+  }
 
-27. eventFunc(argOne: number, argTwo: number) {
-28. console.info(`eventFunc is called, ${argOne}, ${argTwo}`);
-29. }
-30. }
+  eventFunc(argOne: number, argTwo: number) {
+    console.info(`eventFunc is called, ${argOne}, ${argTwo}`);
+  }
+}
 ```

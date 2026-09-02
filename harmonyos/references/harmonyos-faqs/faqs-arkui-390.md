@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-390
 title: Navigation跳转页面白屏，可能原因是什么
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > Navigation跳转页面白屏，可能原因是什么
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Navigation跳转页面白屏，可能原因是什么
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:43+08:00
-doc_updated_at: 2026-04-27
-content_hash: sha256:9f8fc859927f6be4982a32145feae2970148eee40997e8c68f2ba7b171cc055d
+scraped_at: 2026-09-02T14:53:59+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:0721f7f7b88f9c4d51b1093895ee86cd7c8f77167f55baaf4534d910853947ab
 ---
 
 **可能原因一**
@@ -18,41 +18,37 @@ content_hash: sha256:9f8fc859927f6be4982a32145feae2970148eee40997e8c68f2ba7b171c
 
 * 路由表中的页面，需要配置入口函数Builder，并且需要使用NavDestination组件才能展示页面。
 
+  ```ts
+  // Jump Page Entry Function 
+  @Builder
+  export function pageOneBuilder() {
+    NavigationJumpToPageWithWhiteScreen();
+  }
+
+  @Entry
+  @Component
+  struct NavigationJumpToPageWithWhiteScreen {
+    pathStack: NavPathStack = new NavPathStack();
+
+    build() {
+      NavDestination() {
+        // ...
+      }
+      .title('PageOne')
+      .onReady((context: NavDestinationContext) => {
+        this.pathStack = context.pathStack;
+      })
+    }
+  }
   ```
-  1. // Jump Page Entry Function
-  2. @Builder
-  3. export function pageOneBuilder() {
-  4. NavigationJumpToPageWithWhiteScreen();
-  5. }
-
-  7. @Entry
-  8. @Component
-  9. struct NavigationJumpToPageWithWhiteScreen {
-  10. pathStack: NavPathStack = new NavPathStack();
-
-  12. build() {
-  13. NavDestination() {
-  14. // ...
-  15. }
-  16. .title('PageOne')
-  17. .onReady((context: NavDestinationContext) => {
-  18. this.pathStack = context.pathStack;
-  19. })
-  20. }
-  21. }
-  ```
-
-  [NavigationJumpToPageWithWhiteScreen.ets](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkUI/entry/src/main/ets/pages/NavigationJumpToPageWithWhiteScreen.ets#L21-L42)
 * HAR/HSP模块可以跳转，可以通过module.json5文件查看type类型是否为“har”或者“shared”，如果是feature则会出现错误。
 
+  ```json
+  "module": {
+    "name": "feature_splash",
+    "type": "feature",
+    // The type needs to be either "har" or "shared"
   ```
-  1. "module": {
-  2. "name": "feature_splash",
-  3. "type": "feature",
-  4. // The type needs to be either "har" or "shared"
-  ```
-
-  [moduleNavigationJumpToPageWithWhiteScreen.json5](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkUI/entry/src/main/moduleNavigationJumpToPageWithWhiteScreen.json5#L21-L24)
 
   即使配置正确，跳转时仍可能出现白屏。可以尝试清理项目，以恢复正常跳转。
 

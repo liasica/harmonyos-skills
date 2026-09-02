@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-hypium-au
 title: 使用Hypium实现ArkWeb自动化测试
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > Web调试维测 > 使用Hypium实现ArkWeb自动化测试
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:32+08:00
+scraped_at: 2026-09-02T14:59:24+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:970325b77fb0276e52edf9e4c6a0cf1c0dc475bad6842df0668355f1e4c5031c
+content_hash: sha256:6fd464e38f0e48af2e1f80fccf8fcdb7979a5165f38ef04520193351ba446054
 ---
 
 ## 概述
@@ -22,8 +22,8 @@ ArkWeb页面支持使用Hypium集成Selenium框架、ChromeDriver驱动进行UI�
 
 Selenium主要用于Web应用程序的自动化测试，核心功能是模拟用户在浏览器中的操作，例如点击按钮、输入文本、导航页面等。
 
-```
-1. pip install selenium
+```shell
+pip install selenium
 ```
 
 3.集成ChromeDriver驱动
@@ -32,23 +32,23 @@ ChromeDriver充当了Selenium WebDriver和Web页面之间的中介。通过Selen
 
 首先将ChromeDriver集成到测试工程的resource文件夹下，然后调用WebDriverSetupTool类中的set\_chromedriver\_exe\_path方法指定chromedriver文件的存放路径或者调用set\_chromedriver\_exe\_search\_path方法指定chromedriver所在文件夹的路径。
 
-```
-1. self.web_tools = WebDriverSetupTool(self.driver)
-2. # 使用set_chromedriver_exe_path指定chromedriver路径，需指定到对应版本的可执行chromedriver文件
-3. self.web_tools.set_chromedriver_exe_path(r"D:\WebAutoTest\resource\web_debug_tools\chromedriver_132\chromedriver.exe")
-```
-
-```
-1. self.web_tools = WebDriverSetupTool(self.driver)
-2. # 使用set_chromedriver_exe_search_path方法指定chromedriver所在文件夹，Hypium在指定的文件夹寻找对应版本的chromedriver文件
-3. self.web_tools.set_chromedriver_exe_search_path(r"D:\WebAutoTest\resource\web_debug_tools")
+```python
+self.web_tools = WebDriverSetupTool(self.driver)
+# 使用set_chromedriver_exe_path指定chromedriver路径，需指定到对应版本的可执行chromedriver文件
+self.web_tools.set_chromedriver_exe_path(r"D:\WebAutoTest\resource\web_debug_tools\chromedriver_132\chromedriver.exe")
 ```
 
-说明
+```python
+self.web_tools = WebDriverSetupTool(self.driver)
+# 使用set_chromedriver_exe_search_path方法指定chromedriver所在文件夹，Hypium在指定的文件夹寻找对应版本的chromedriver文件
+self.web_tools.set_chromedriver_exe_search_path(r"D:\WebAutoTest\resource\web_debug_tools")
+```
+
+**说明** 
 
 * 使用set\_chromedriver\_exe\_search\_path方法指定chromedriver所在文件夹的路径时，下层文件夹命名规则为chromedriver\_版本号，参考下图。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/jm_pKxtmQq6Wi57Jr3YYFA/zh-cn_image_0000002589324617.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/frlYOlyuQV2T2imO8XWAwg/zh-cn_image_0000002736433261.png)
 
 ## 示例代码
 
@@ -56,35 +56,35 @@ ChromeDriver充当了Selenium WebDriver和Web页面之间的中介。通过Selen
 
 webdriver更多使用方法参考Selenium官方文档：[驱动会话 | Selenium](https://www.selenium.dev/zh-cn/documentation/webdriver/drivers/)。
 
-```
-1. from devicetest.core.test_case import TestCase, Step, CheckPoint
-2. from hypium import UiDriver, BY
-3. from hypium.webdriver.webdriver_setup_tool import WebDriverSetupTool
+```python
+from devicetest.core.test_case import TestCase, Step, CheckPoint
+from hypium import UiDriver, BY
+from hypium.webdriver.webdriver_setup_tool import WebDriverSetupTool
 
-5. class ArkWeb_AutoTests(TestCase):
-6. def __init__(self, configs):
-7. self.TAG = self.__class__.__name__
-8. TestCase.__init__(self, self.TAG, configs)
-9. self.driver = UiDriver(self.device1)
-10. self.driver_width, self.driver_height = self.driver.get_display_size()
-11. self.web_tools = WebDriverSetupTool(self.driver)
-12. # 设置chromedriver存放路径
-13. self.web_tools.set_chromedriver_exe_search_path(r"D:\WebAutoTest\resource\web_debug_tools")
-14. # 使用应用包名连接到指定应用的webview页面
-15. self.web_tools.connect("com.huawei.hmos.browser")
-16. # 初始化Selenium的webdriver
-17. self.web_driver = self.web_tools.driver
+class ArkWeb_AutoTests(TestCase):
+    def __init__(self, configs):
+        self.TAG = self.__class__.__name__
+        TestCase.__init__(self, self.TAG, configs)
+        self.driver = UiDriver(self.device1)
+        self.driver_width, self.driver_height = self.driver.get_display_size()
+        self.web_tools = WebDriverSetupTool(self.driver)
+        # 设置chromedriver存放路径
+        self.web_tools.set_chromedriver_exe_search_path(r"D:\WebAutoTest\resource\web_debug_tools")
+        # 使用应用包名连接到指定应用的webview页面
+        self.web_tools.connect("com.huawei.hmos.browser")
+        # 初始化Selenium的webdriver
+        self.web_driver = self.web_tools.driver
 
-19. def setup(self):
-20. pass
+    def setup(self):
+        pass
+        
+    def process(self):
+        # 导航页面：使用Selenium的webdriver访问https://developer.huawei.com/网站
+        self.web_driver.get("https://developer.huawei.com/")
+        # 查找页面元素：使用Selenium的webdriver查找页面ID为th的元素
+        self.web_driver.find_element(BY.ID, "th")
 
-22. def process(self):
-23. # 导航页面：使用Selenium的webdriver访问https://developer.huawei.com/网站
-24. self.web_driver.get("https://developer.huawei.com/")
-25. # 查找页面元素：使用Selenium的webdriver查找页面ID为th的元素
-26. self.web_driver.find_element(BY.ID, "th")
-
-28. def teardown(self):
-29. # 使用结束需要调用webdriver_setup_tool中的close方法关闭web_tools建立的连接
-30. self.web_tools.close()
+    def teardown(self):
+        # 使用结束需要调用webdriver_setup_tool中的close方法关闭web_tools建立的连接
+        self.web_tools.close()
 ```

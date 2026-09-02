@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-nat
 title: Native代码调试
 breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:48+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:e7c3a92777d69118efcb15187229f5fb3959313ca997d5afe9bba8959d685972
+scraped_at: 2026-09-02T14:50:54+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:9cc3b722b38c7e316b576062a7a1bf8ede247a56c1b0b4155a4893262ef1e4bc
 ---
 
 * **[启动调试](ide-debug-native-enable.md)**
@@ -19,3 +19,5 @@ content_hash: sha256:e7c3a92777d69118efcb15187229f5fb3959313ca997d5afe9bba8959d6
 * **[so信息可视化](ide-debug-native-so.md)**
 * **[设置执行点](ide-debug-native-execution-point.md)**
 * **[智能步入](ide-smart-step-into.md)**
+* **[Native调试启动加速](ide-lldb-client-alive.md)**
+* **[调试Native子进程](ide-debug-native-child-process.md)**

@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: progress
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > progress
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:26+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:286f2f4ca6be4c984b064776c96b92da0a8bbe8071e8844eafc632d225054977
+scraped_at: 2026-09-02T15:01:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9495e31da095d1d8b12e6e07e1320460e5003184912cbc5c3ee37f9b3bf50ff9
 ---
 
-说明
+**说明** 
 
 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -16,19 +16,13 @@ content_hash: sha256:286f2f4ca6be4c984b064776c96b92da0a8bbe8071e8844eafc632d2250
 
 ## 权限列表
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 不支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-components-common-attributes.md)外，还支持如下属性：
 
@@ -56,8 +50,6 @@ PhonePC/2in1TabletTVWearable
   | percent | number | 0 | 否 | 当前进度。取值范围为0-100。 |
 
 ## 样式
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用样式](js-components-common-styles.md)外，还支持如下样式：
 
@@ -95,7 +87,7 @@ type=arc
 | background-color | <color> | - | 否 | 弧形进度条的背景色。 |
 | stroke-width | <length> | 4px | 否 | 弧形进度条的宽度，始终在半径区域内。  进度条宽度越大，进度条越靠近圆心。 |
 | start-angle | <deg> | 240 | 否 | 弧形进度条起始角度，以时钟0点为基线，取值范围为0到360（顺时针）。 |
-| total-angle | <deg> | 240 | 否 | 弧形进度条总长度，范围为-360到360，负数标识起点到终点为逆时针。 |
+| total-angle | <deg> | 240 | 否 | 弧形进度条总角度，范围为-360到360，负数表示起点到终点为逆时针。 |
 | center-x | <length> | 弧形进度条宽度的一半 | 否 | 弧形进度条中心位置，坐标原点为组件左上角顶点。该属性需要和center-y和radius一起使用。 |
 | center-y | <length> | 弧形进度条高度的一半 | 否 | 弧形进度条中心位置，坐标原点为组件左上角顶点。该属性需要和center-x和radius一起使用。 |
 | radius | <length> | 弧形进度条宽高最小值的一半 | 否 | 弧形进度条半径，该属性需要和center-x和center-y一起使用。 |
@@ -105,46 +97,40 @@ type=eclipse5+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | color | <color> | - | 否 | 圆形进度条的颜色。 |
-| background-color | <color> | - | 否 | 弧形进度条的背景色。 |
+| background-color | <color> | - | 否 | 圆形进度条的背景色。 |
 
 ## 事件
-
-PhonePC/2in1TabletTVWearable
 
 支持[通用事件](js-components-common-events.md)。
 
 ## 方法
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用方法](js-components-common-methods.md)。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!--xxx.hml -->
-2. <div class="container">
-3. <progress class="min-progress" type="scale-ring"  percent= "10" secondarypercent="50"></progress>
-4. <progress class="min-progress" type="horizontal" percent= "10" secondarypercent="50"></progress>
-5. <progress class="min-progress" type="arc" percent= "10"></progress>
-6. <progress class="min-progress" type="ring" percent= "10" secondarypercent="50"></progress>
-7. </div>
+```html
+<!--xxx.hml -->
+<div class="container">
+  <progress class="min-progress" type="scale-ring"  percent= "10" secondarypercent="50"></progress>
+  <progress class="min-progress" type="horizontal" percent= "10" secondarypercent="50"></progress>
+  <progress class="min-progress" type="arc" percent= "10"></progress>
+  <progress class="min-progress" type="ring" percent= "10" secondarypercent="50"></progress>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .container {
-3. flex-direction: column;
-4. height: 100%;
-5. width: 100%;
-6. align-items: center;
-7. }
-8. .min-progress {
-9. width: 300px;
-10. height: 300px;
-11. }
+```css
+/* xxx.css */
+.container {
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+}
+.min-progress {
+  width: 300px;
+  height: 300px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/uml99UaRRfWHmQy7G3ws_A/zh-cn_image_0000002558766724.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/NWpdppuhSgKU4hq06ME-kA/zh-cn_image_0000002736315493.png)

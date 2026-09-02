@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avre
 title: OH_AVRecorder_MetadataTemplate
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 结构体 > OH_AVRecorder_MetadataTemplate
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:59+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:563d76dac5e5da2b6bf96c5a1b5c0a2657743853d9c012155087d7413efae326
+scraped_at: 2026-09-02T15:02:37+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:db256f55562bfdd5da54e4b2eba355cc7a8fc18cdfa4d2d6aa26a239a5d12bd7
 ---
 
-```
-1. typedef struct OH_AVRecorder_MetadataTemplate {...} OH_AVRecorder_MetadataTemplate
+```c
+typedef struct OH_AVRecorder_MetadataTemplate {...} OH_AVRecorder_MetadataTemplate
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-定义元数据的基本模板。
+定义音视频录制过程中元数据的基本模板，通过键值对（key-value）形式组织元数据，适用于需要在录制输出中附加自定义元数据（如标题、作者、描述等）的场景，便于对录制文件进行分类、检索和管理。开发者可通过AVRecorder的[OH\_AVRecorder\_Prepare](capi-avrecorder-h.md#oh_avrecorder_prepare)接口将该结构体中的元数据设置到录制输出文件中。
 
 **起始版本：** 18
 
@@ -26,13 +24,9 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
-| char\* key | 元数据的键值。 |
-| char\* value | 元数据的内容。 |
+| char\* key | 元数据的键。 |
+| char\* value | 元数据的值。 |

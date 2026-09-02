@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 开发指导(C/C++)
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏场景感知（可选） > 开发指导(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:38:12+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6d25765baaca2e117bfca83433f4756d88379f9cf85aa5e0de336d08665065e0
+scraped_at: 2026-09-02T14:59:55+08:00
+doc_updated_at: 2026-04-30
+content_hash: sha256:3cd849a4ea327d5c6079e2ab32ac1acd9e520f6ec2fd680dc758ce6ae3ad3313
 ---
 
 游戏场景感知包括：
@@ -15,7 +15,7 @@ content_hash: sha256:6d25765baaca2e117bfca83433f4756d88379f9cf85aa5e0de336d08665
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/izv98oAnTQKu_Fc3Mcb46g/zh-cn_image_0000002558765400.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/QyzdO6QpTTqsyltRa2pkNg/zh-cn_image_0000002706674982.png)
 
 1. 游戏启动后调用[HMS\_GamePerformance\_Init](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_init)接口对游戏场景感知进行初始化。
 2. 初始化成功后，游戏调用[HMS\_GamePerformance\_RegisterThermalLevelChangedCallback](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_registerthermallevelchangedcallback)接口注册设备状态变化事件监听，订阅设备状态变化通知。
@@ -37,7 +37,7 @@ content_hash: sha256:6d25765baaca2e117bfca83433f4756d88379f9cf85aa5e0de336d08665
    * 设备CPU性能信息：[HMS\_GamePerformance\_QueryCpuInfo](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_querycpuinfo)
    * 设备温度相关信息：[HMS\_GamePerformance\_QueryThermalInfo](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_querythermalinfo)
 
-说明
+**说明** 
 
 Mali系列GPU不支持采集GPU性能信息，调用订阅和查询设备状态信息接口时无法获取设备GPU性能信息。
 
@@ -64,405 +64,405 @@ Mali系列GPU不支持采集GPU性能信息，调用订阅和查询设备状态�
 
 ### 在 CMake 脚本中链接动态库
 
-```
-1. target_include_directories(entry PUBLIC ${HMOS_SDK_NATIVE}/sysroot/usr/include)
-2. target_link_directories(entry PUBLIC ${HMOS_SDK_NATIVE}/sysroot/usr/lib/aarch64-linux-ohos)
-3. target_link_libraries(entry PUBLIC libgame_performance.z.so)
+```c
+target_include_directories(entry PUBLIC ${HMOS_SDK_NATIVE}/sysroot/usr/include)
+target_link_directories(entry PUBLIC ${HMOS_SDK_NATIVE}/sysroot/usr/lib/aarch64-linux-ohos)
+target_link_libraries(entry PUBLIC libgame_performance.z.so)
 ```
 
 ### 导入模块
 
 导入Game Service Kit。
 
-```
-1. #include <GameServiceKit/game_performance.h>
-2. #include <cstdlib>
+```c
+#include <GameServiceKit/game_performance.h>
+#include <cstdlib>
 ```
 
 ### 初始化
 
 导入相关模块后，需先调用[HMS\_GamePerformance\_Init](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_init)接口对游戏场景感知进行初始化。
 
-说明
+**说明** 
 
 HMS\_GamePerformance\_Init接口是调用其他接口的前提，如果未初始化或初始化失败，将无法调用其他接口。
 
-```
-1. // 创建初始化参数
-2. GamePerformance_InitParameters *initParameters = NULL;
-3. HMS_GamePerformance_CreateInitParameters(&initParameters);
+```c
+// 创建初始化参数
+GamePerformance_InitParameters *initParameters = NULL;
+HMS_GamePerformance_CreateInitParameters(&initParameters);
 
-5. // 设置参数，所有SetXXX接口的第二个参数均为示例，请替换成实际参数
-6. GamePerformance_ErrorCode appVersionSetCode = HMS_GamePerformance_InitParameters_SetAppVersion(initParameters, "1.0");
+// 设置参数，所有SetXXX接口的第二个参数均为示例，请替换成实际参数
+GamePerformance_ErrorCode appVersionSetCode = HMS_GamePerformance_InitParameters_SetAppVersion(initParameters, "1.0");
 
-8. // 所有SetXXX接口，如果参数设置错误，将会返回错误码401；为确保参数设置无误，建议接收返回值并判断错误码
-9. if (appVersionSetCode != GAME_PERFORMANCE_SUCCESS) {
-10. // 异常处理
-11. }
-12. HMS_GamePerformance_InitParameters_SetBundleName(initParameters, "com.example.demo");
+// 所有SetXXX接口，如果参数设置错误，将会返回错误码401；为确保参数设置无误，建议接收返回值并判断错误码
+if (appVersionSetCode != GAME_PERFORMANCE_SUCCESS) {
+    // 异常处理
+}
+HMS_GamePerformance_InitParameters_SetBundleName(initParameters, "com.example.demo");
+ 
+// 初始化
+GamePerformance_ErrorCode ret = HMS_GamePerformance_Init(initParameters);
+if (ret != GAME_PERFORMANCE_SUCCESS) {
+    // 异常处理
+}
 
-14. // 初始化
-15. GamePerformance_ErrorCode ret = HMS_GamePerformance_Init(initParameters);
-16. if (ret != GAME_PERFORMANCE_SUCCESS) {
-17. // 异常处理
-18. }
-
-20. // 使用完释放内存
-21. HMS_GamePerformance_DestroyInitParameters(&initParameters);
+// 使用完释放内存
+HMS_GamePerformance_DestroyInitParameters(&initParameters);
 ```
 
 ### 注册温度变化回调
 
 调用[HMS\_GamePerformance\_RegisterThermalLevelChangedCallback](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_registerthermallevelchangedcallback)接口可以注册温度变化回调，获取设备状态信息的通知，包括温度相关信息、GPU负载和CPU负载信息。
 
-```
-1. // 定义回调函数
-2. static void onThermalLevelChanged(GamePerformance_DeviceInfo *deviceInfo, void *userData) {
-3. // 获取GPU负载等级（须订阅设备信息类型：GAME_PERFORMANCE_DEVICEINFO_TYPE_GPU）
-4. (void) userData;
-5. GamePerformance_GpuInfo *gpuInfo = NULL;
-6. HMS_GamePerformance_DeviceInfo_GetGpuInfo(deviceInfo, &gpuInfo);
-7. int32_t gpuloadLevel = -1;
-8. int32_t vertexLevel = -1;
-9. int32_t fragmentLoadLevel = -1;
-10. int32_t bandwidthLoadLevel = -1;
-11. int32_t textureLoadLevel = -1;
-12. int32_t currentFrequency = -1;
-13. HMS_GamePerformance_GpuInfo_GetGpuLoadLevel(gpuInfo, &gpuloadLevel);
-14. HMS_GamePerformance_GpuInfo_GetVertexLoadLevel(gpuInfo, &vertexLevel);
-15. HMS_GamePerformance_GpuInfo_GetFragmentLoadLevel(gpuInfo, &fragmentLoadLevel);
-16. HMS_GamePerformance_GpuInfo_GetBandwidthLoadLevel(gpuInfo, &bandwidthLoadLevel);
-17. HMS_GamePerformance_GpuInfo_GetTextureLoadLevel(gpuInfo, &textureLoadLevel);
-18. HMS_GamePerformance_GpuInfo_GetCurrentFrequency(gpuInfo, &currentFrequency);
+```c
+// 定义回调函数
+static void onThermalLevelChanged(GamePerformance_DeviceInfo *deviceInfo, void *userData) {
+    // 获取GPU负载等级（须订阅设备信息类型：GAME_PERFORMANCE_DEVICEINFO_TYPE_GPU）
+    (void) userData;
+    GamePerformance_GpuInfo *gpuInfo = NULL;
+    HMS_GamePerformance_DeviceInfo_GetGpuInfo(deviceInfo, &gpuInfo);
+    int32_t gpuloadLevel = -1;
+    int32_t vertexLevel = -1;
+    int32_t fragmentLoadLevel = -1;
+    int32_t bandwidthLoadLevel = -1;
+    int32_t textureLoadLevel = -1;
+    int32_t currentFrequency = -1;
+    HMS_GamePerformance_GpuInfo_GetGpuLoadLevel(gpuInfo, &gpuloadLevel);
+    HMS_GamePerformance_GpuInfo_GetVertexLoadLevel(gpuInfo, &vertexLevel);
+    HMS_GamePerformance_GpuInfo_GetFragmentLoadLevel(gpuInfo, &fragmentLoadLevel);
+    HMS_GamePerformance_GpuInfo_GetBandwidthLoadLevel(gpuInfo, &bandwidthLoadLevel);
+    HMS_GamePerformance_GpuInfo_GetTextureLoadLevel(gpuInfo, &textureLoadLevel);
+    HMS_GamePerformance_GpuInfo_GetCurrentFrequency(gpuInfo, &currentFrequency);
 
-20. // 获取温度相关信息（须订阅设备信息类型：GAME_PERFORMANCE_DEVICEINFO_TYPE_THERMAL）
-21. GamePerformance_ThermalInfo *thermalInfo = NULL;
-22. HMS_GamePerformance_DeviceInfo_GetThermalInfo(deviceInfo, &thermalInfo);
-23. int32_t margin = INT32_MIN;
-24. int32_t trend = INT32_MIN;
-25. int32_t level = -1;
-26. int32_t recommendNormalizedCurrent = 0;
-27. int32_t nowNormalizedCurrent = 0;
-28. int32_t recommendMaxNormalizedCurrent = 0;
-29. HMS_GamePerformance_ThermalInfo_GetThermalMargin(thermalInfo, &margin);
-30. HMS_GamePerformance_ThermalInfo_GetThermalTrend(thermalInfo, &trend);
-31. HMS_GamePerformance_ThermalInfo_GetThermalLevel(thermalInfo, &level);
-32. HMS_GamePerformance_ThermalInfo_GetRecommendNormalizedCurrent(thermalInfo, &recommendNormalizedCurrent);
-33. HMS_GamePerformance_ThermalInfo_GetNowNormalizedCurrent(thermalInfo, &nowNormalizedCurrent);
-34. HMS_GamePerformance_ThermalInfo_GetRecommendMaxNormalizedCurrent(thermalInfo, &recommendMaxNormalizedCurrent);
+    // 获取温度相关信息（须订阅设备信息类型：GAME_PERFORMANCE_DEVICEINFO_TYPE_THERMAL）
+    GamePerformance_ThermalInfo *thermalInfo = NULL;
+    HMS_GamePerformance_DeviceInfo_GetThermalInfo(deviceInfo, &thermalInfo);
+    int32_t margin = INT32_MIN;
+    int32_t trend = INT32_MIN;
+    int32_t level = -1;
+    int32_t recommendNormalizedCurrent = 0;
+    int32_t nowNormalizedCurrent = 0;
+    int32_t recommendMaxNormalizedCurrent = 0;
+    HMS_GamePerformance_ThermalInfo_GetThermalMargin(thermalInfo, &margin);
+    HMS_GamePerformance_ThermalInfo_GetThermalTrend(thermalInfo, &trend);
+    HMS_GamePerformance_ThermalInfo_GetThermalLevel(thermalInfo, &level);
+    HMS_GamePerformance_ThermalInfo_GetRecommendNormalizedCurrent(thermalInfo, &recommendNormalizedCurrent);
+    HMS_GamePerformance_ThermalInfo_GetNowNormalizedCurrent(thermalInfo, &nowNormalizedCurrent);
+    HMS_GamePerformance_ThermalInfo_GetRecommendMaxNormalizedCurrent(thermalInfo, &recommendMaxNormalizedCurrent);
 
-36. // 获取CPU使用率（须订阅设备信息类型：GAME_PERFORMANCE_DEVICEINFO_TYPE_CPU）
-37. GamePerformance_CpuInfo *cpuInfo = NULL;
-38. HMS_GamePerformance_DeviceInfo_GetCpuInfo(deviceInfo, &cpuInfo);
-39. int32_t cpuLoadLevel = 0;
-40. int32_t singleThreadLoadLevel = 0;
-41. HMS_GamePerformance_CpuInfo_GetCpuLoadLevel(cpuInfo, &cpuLoadLevel);
-42. HMS_GamePerformance_CpuInfo_GetSingleThreadLoadLevel(cpuInfo, &singleThreadLoadLevel);
+    // 获取CPU使用率（须订阅设备信息类型：GAME_PERFORMANCE_DEVICEINFO_TYPE_CPU）
+    GamePerformance_CpuInfo *cpuInfo = NULL;
+    HMS_GamePerformance_DeviceInfo_GetCpuInfo(deviceInfo, &cpuInfo);
+    int32_t cpuLoadLevel = 0;
+    int32_t singleThreadLoadLevel = 0;
+    HMS_GamePerformance_CpuInfo_GetCpuLoadLevel(cpuInfo, &cpuLoadLevel);
+    HMS_GamePerformance_CpuInfo_GetSingleThreadLoadLevel(cpuInfo, &singleThreadLoadLevel);
 
-44. // 使用完释放内存
-45. HMS_GamePerformance_DestroyGpuInfo(&gpuInfo);
-46. HMS_GamePerformance_DestroyThermalInfo(&thermalInfo);
-47. HMS_GamePerformance_DestroyCpuInfo(&cpuInfo);
-48. }
+    // 使用完释放内存
+    HMS_GamePerformance_DestroyGpuInfo(&gpuInfo);
+    HMS_GamePerformance_DestroyThermalInfo(&thermalInfo);
+    HMS_GamePerformance_DestroyCpuInfo(&cpuInfo);
+}
 
-50. // 注册回调
-51. void registerCallback() {
-52. // 按需订阅设备信息类型
-53. int size = 2; // 订阅的设备信息类型的数量，即下文array数组的长度
-54. GamePerformance_DeviceInfoType **array = (GamePerformance_DeviceInfoType **)malloc(sizeof(GamePerformance_DeviceInfoType *) * size);
-55. if (array == NULL) {
-56. // 异常处理
-57. }
-58. array[0] = (GamePerformance_DeviceInfoType *)malloc(sizeof(GamePerformance_DeviceInfoType));
-59. array[1] = (GamePerformance_DeviceInfoType *)malloc(sizeof(GamePerformance_DeviceInfoType));
-60. if (!array[0] || !array[1]) {
-61. // 异常处理
-62. }
-63. *(array[0]) = GAME_PERFORMANCE_DEVICEINFO_TYPE_GPU;
-64. *(array[1]) = GAME_PERFORMANCE_DEVICEINFO_TYPE_THERMAL;
-65. void *userData = (void *)"mydata"; // 用户自定义任意类型，callback透传返回
-66. GamePerformance_ErrorCode ret =
-67. HMS_GamePerformance_RegisterThermalLevelChangedCallback(array, size, onThermalLevelChanged, userData);
-68. free(array);
-69. if (ret != GAME_PERFORMANCE_SUCCESS) {
-70. // 异常处理
-71. }
-72. }
+// 注册回调
+void registerCallback() {
+    // 按需订阅设备信息类型
+    int size = 2; // 订阅的设备信息类型的数量，即下文array数组的长度
+    GamePerformance_DeviceInfoType **array = (GamePerformance_DeviceInfoType **)malloc(sizeof(GamePerformance_DeviceInfoType *) * size);
+    if (array == NULL) {
+        // 异常处理
+    }
+    array[0] = (GamePerformance_DeviceInfoType *)malloc(sizeof(GamePerformance_DeviceInfoType));
+    array[1] = (GamePerformance_DeviceInfoType *)malloc(sizeof(GamePerformance_DeviceInfoType));
+    if (!array[0] || !array[1]) {
+        // 异常处理
+    }
+    *(array[0]) = GAME_PERFORMANCE_DEVICEINFO_TYPE_GPU;
+    *(array[1]) = GAME_PERFORMANCE_DEVICEINFO_TYPE_THERMAL;
+    void *userData = (void *)"mydata"; // 用户自定义任意类型，callback透传返回
+    GamePerformance_ErrorCode ret =
+        HMS_GamePerformance_RegisterThermalLevelChangedCallback(array, size, onThermalLevelChanged, userData);
+    free(array);
+    if (ret != GAME_PERFORMANCE_SUCCESS) {
+        // 异常处理
+    }
+}
 ```
 
 ### 取消注册指定温度变化回调
 
 调用[HMS\_GamePerformance\_UnregisterThermalLevelChangedCallback](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_unregisterthermallevelchangedcallback)接口可以取消注册指定温度变化回调。
 
-```
-1. // 取消注册
-2. GamePerformance_ErrorCode ret = HMS_GamePerformance_UnregisterThermalLevelChangedCallback(onThermalLevelChanged);
-3. if (ret != GAME_PERFORMANCE_SUCCESS) {
-4. // 异常处理
-5. }
+```c
+// 取消注册
+GamePerformance_ErrorCode ret = HMS_GamePerformance_UnregisterThermalLevelChangedCallback(onThermalLevelChanged);
+if (ret != GAME_PERFORMANCE_SUCCESS) {
+    // 异常处理
+}
 ```
 
 ### 取消注册所有温度变化回调
 
 可以通过调用[HMS\_GamePerformance\_UnregisterAllThermalLevelChangedCallbacks](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_unregisterallthermallevelchangedcallbacks)接口可以取消注册所有温度变化回调。
 
-```
-1. // 取消所有注册的函数
-2. GamePerformance_ErrorCode ret = HMS_GamePerformance_UnregisterAllThermalLevelChangedCallbacks();
-3. if (ret != GAME_PERFORMANCE_SUCCESS) {
-4. // 异常处理
-5. }
+```c
+// 取消所有注册的函数
+GamePerformance_ErrorCode ret = HMS_GamePerformance_UnregisterAllThermalLevelChangedCallbacks();
+if (ret != GAME_PERFORMANCE_SUCCESS) {
+    // 异常处理
+}
 ```
 
 ### 上报游戏包信息
 
 初始化成功后，可以通过调用[HMS\_GamePerformance\_UpdatePackageInfo](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_updatepackageinfo)接口上报游戏包信息。
 
-```
-1. GamePerformance_PackageInfo *packageInfo = NULL;
-2. HMS_GamePerformance_CreatePackageInfo(&packageInfo);
+```c
+GamePerformance_PackageInfo *packageInfo = NULL;
+HMS_GamePerformance_CreatePackageInfo(&packageInfo);
 
-4. // SetXXX接口的第二个参数均为示例，请替换成实际参数
-5. // 设置必选参数
-6. HMS_GamePerformance_PackageInfo_SetBundleName(packageInfo, "com.example.demo");
-7. HMS_GamePerformance_PackageInfo_SetAppVersion(packageInfo, "1.0");
+// SetXXX接口的第二个参数均为示例，请替换成实际参数
+// 设置必选参数
+HMS_GamePerformance_PackageInfo_SetBundleName(packageInfo, "com.example.demo");
+HMS_GamePerformance_PackageInfo_SetAppVersion(packageInfo, "1.0");
 
-9. // 按需设置可选参数
-10. HMS_GamePerformance_PackageInfo_SetEngineType(packageInfo, GAME_PERFORMANCE_ENGINE_TYPE_COCOS);
-11. HMS_GamePerformance_PackageInfo_SetEngineVersion(packageInfo, "2.0");
-12. HMS_GamePerformance_PackageInfo_SetGameType(packageInfo, GAME_PERFORMANCE_GAME_TYPE_FPS);
+// 按需设置可选参数
+HMS_GamePerformance_PackageInfo_SetEngineType(packageInfo, GAME_PERFORMANCE_ENGINE_TYPE_COCOS);
+HMS_GamePerformance_PackageInfo_SetEngineVersion(packageInfo, "2.0");
+HMS_GamePerformance_PackageInfo_SetGameType(packageInfo, GAME_PERFORMANCE_GAME_TYPE_FPS);
 
-14. // 上报游戏包信息
-15. GamePerformance_ErrorCode ret = HMS_GamePerformance_UpdatePackageInfo(packageInfo);
-16. if (ret != GAME_PERFORMANCE_SUCCESS) {
-17. // 异常处理
-18. }
+// 上报游戏包信息
+GamePerformance_ErrorCode ret = HMS_GamePerformance_UpdatePackageInfo(packageInfo);
+if (ret != GAME_PERFORMANCE_SUCCESS) {
+    // 异常处理
+}
 
-20. // 使用完释放内存
-21. HMS_GamePerformance_DestroyPackageInfo(&packageInfo);
+// 使用完释放内存
+HMS_GamePerformance_DestroyPackageInfo(&packageInfo);
 ```
 
 ### 上报游戏配置信息
 
 初始化成功后，可以通过调用[HMS\_GamePerformance\_UpdateConfigInfo](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_updateconfiginfo)接口上报游戏配置信息。
 
-```
-1. GamePerformance_ConfigInfo *configInfo = NULL;
-2. HMS_GamePerformance_CreateConfigInfo(&configInfo);
+```c
+GamePerformance_ConfigInfo *configInfo = NULL;
+HMS_GamePerformance_CreateConfigInfo(&configInfo);
 
-4. // 如需多次上报，若使用同一个实例上报，只需通过set方法更新参数即可（同一个实例将保留上一次设置的数据）
-5. // SetXXX接口的第二个参数均为示例，请替换成实际参数
-6. // 按需设置下列可选字段
-7. HMS_GamePerformance_ConfigInfo_SetMaxPictureQualityLevel(configInfo, GAME_PERFORMANCE_PQL_BALANCED);
-8. HMS_GamePerformance_ConfigInfo_SetCurrentPictureQualityLevel(configInfo, GAME_PERFORMANCE_PQL_HD);
-9. HMS_GamePerformance_ConfigInfo_SetMaxFrameRate(configInfo, 120);
-10. HMS_GamePerformance_ConfigInfo_SetCurrentFrameRate(configInfo, 60);
-11. HMS_GamePerformance_ConfigInfo_SetMaxResolution(configInfo, "1260*2720");
-12. HMS_GamePerformance_ConfigInfo_SetCurrentResolution(configInfo, "1260*2720");
-13. HMS_GamePerformance_ConfigInfo_SetAntiAliasingEnabled(configInfo, true);
-14. HMS_GamePerformance_ConfigInfo_SetShadowEnabled(configInfo, true);
-15. HMS_GamePerformance_ConfigInfo_SetMultithreadingEnabled(configInfo, true);
-16. HMS_GamePerformance_ConfigInfo_SetParticleEnabled(configInfo, true);
-17. HMS_GamePerformance_ConfigInfo_SetHdModeEnabled(configInfo, true);
+// 如需多次上报，若使用同一个实例上报，只需通过set方法更新参数即可（同一个实例将保留上一次设置的数据）
+// SetXXX接口的第二个参数均为示例，请替换成实际参数
+// 按需设置下列可选字段
+HMS_GamePerformance_ConfigInfo_SetMaxPictureQualityLevel(configInfo, GAME_PERFORMANCE_PQL_BALANCED);
+HMS_GamePerformance_ConfigInfo_SetCurrentPictureQualityLevel(configInfo, GAME_PERFORMANCE_PQL_HD);
+HMS_GamePerformance_ConfigInfo_SetMaxFrameRate(configInfo, 120);
+HMS_GamePerformance_ConfigInfo_SetCurrentFrameRate(configInfo, 60);
+HMS_GamePerformance_ConfigInfo_SetMaxResolution(configInfo, "1260*2720");
+HMS_GamePerformance_ConfigInfo_SetCurrentResolution(configInfo, "1260*2720");
+HMS_GamePerformance_ConfigInfo_SetAntiAliasingEnabled(configInfo, true);
+HMS_GamePerformance_ConfigInfo_SetShadowEnabled(configInfo, true);
+HMS_GamePerformance_ConfigInfo_SetMultithreadingEnabled(configInfo, true);
+HMS_GamePerformance_ConfigInfo_SetParticleEnabled(configInfo, true);
+HMS_GamePerformance_ConfigInfo_SetHdModeEnabled(configInfo, true);
 
-19. // 上报游戏配置信息
-20. GamePerformance_ErrorCode ret = HMS_GamePerformance_UpdateConfigInfo(configInfo);
-21. if (ret != GAME_PERFORMANCE_SUCCESS) {
-22. // 异常处理
-23. }
+// 上报游戏配置信息
+GamePerformance_ErrorCode ret = HMS_GamePerformance_UpdateConfigInfo(configInfo);
+if (ret != GAME_PERFORMANCE_SUCCESS) {
+    // 异常处理
+}
 
-25. // 使用完释放内存
-26. HMS_GamePerformance_DestroyConfigInfo(&configInfo);
+// 使用完释放内存
+HMS_GamePerformance_DestroyConfigInfo(&configInfo);
 ```
 
 ### 上报游戏场景信息
 
 初始化成功后，可以通过调用[HMS\_GamePerformance\_UpdateSceneInfo](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_updatesceneinfo)接口上报游戏场景信息。
 
-```
-1. // SetXXX接口的第二个参数均为示例，请替换成实际参数
-2. GamePerformance_SceneInfo *sceneInfo = NULL;
-3. HMS_GamePerformance_CreateSceneInfo(&sceneInfo);
+```c
+// SetXXX接口的第二个参数均为示例，请替换成实际参数
+GamePerformance_SceneInfo *sceneInfo = NULL;
+HMS_GamePerformance_CreateSceneInfo(&sceneInfo);
 
-5. // 如需多次上报，若使用同一个实例上报，只需通过set方法更新参数即可（同一个实例将保留上一次设置的数据）
-6. // 设置必选字段
-7. HMS_GamePerformance_SceneInfo_SetSceneID(sceneInfo, 1);
-8. HMS_GamePerformance_SceneInfo_SetImportanceLevel(sceneInfo, GAME_PERFORMANCE_SIL_LEVEL1);
+// 如需多次上报，若使用同一个实例上报，只需通过set方法更新参数即可（同一个实例将保留上一次设置的数据）
+// 设置必选字段
+HMS_GamePerformance_SceneInfo_SetSceneID(sceneInfo, 1);
+HMS_GamePerformance_SceneInfo_SetImportanceLevel(sceneInfo, GAME_PERFORMANCE_SIL_LEVEL1);
 
-10. // 按需设置下列可选字段
-11. HMS_GamePerformance_SceneInfo_SetDescription(sceneInfo, "this is description of scene");
-12. HMS_GamePerformance_SceneInfo_SetSubSceneID(sceneInfo, "20101020304");
-13. HMS_GamePerformance_SceneInfo_SetSubDescription(sceneInfo, "this is description of subScene");
-14. HMS_GamePerformance_SceneInfo_SetSceneFrequency(sceneInfo, 2);
-15. HMS_GamePerformance_SceneInfo_SetSceneTime(sceneInfo, 15);
-16. HMS_GamePerformance_SceneInfo_SetRecommendedCpuLevel(sceneInfo, GAME_PERFORMANCE_CPU_LEVEL_HIGH);
-17. HMS_GamePerformance_SceneInfo_SetRecommendedGpuLevel(sceneInfo, GAME_PERFORMANCE_GPU_LEVEL_HIGH);
-18. HMS_GamePerformance_SceneInfo_SetRecommendedDdrLevel(sceneInfo, GAME_PERFORMANCE_DDR_LEVEL_HIGH);
-19. HMS_GamePerformance_SceneInfo_SetKeyThread(sceneInfo, "render");
-20. HMS_GamePerformance_SceneInfo_SetDrawCallCount(sceneInfo, 100);
-21. HMS_GamePerformance_SceneInfo_SetVertexCount(sceneInfo, 100);
-22. HMS_GamePerformance_SceneInfo_SetTriangleCount(sceneInfo, 100);
-23. HMS_GamePerformance_SceneInfo_SetShaderCount(sceneInfo, 100);
-24. HMS_GamePerformance_SceneInfo_SetTextureCount(sceneInfo, 100);
-25. HMS_GamePerformance_SceneInfo_SetMeshCount(sceneInfo, 100);
-26. HMS_GamePerformance_SceneInfo_SetChannelCount(sceneInfo, 100);
-27. HMS_GamePerformance_SceneInfo_SetParticipantCount(sceneInfo, 5);
+// 按需设置下列可选字段
+HMS_GamePerformance_SceneInfo_SetDescription(sceneInfo, "this is description of scene");
+HMS_GamePerformance_SceneInfo_SetSubSceneID(sceneInfo, "20101020304");
+HMS_GamePerformance_SceneInfo_SetSubDescription(sceneInfo, "this is description of subScene");
+HMS_GamePerformance_SceneInfo_SetSceneFrequency(sceneInfo, 2);
+HMS_GamePerformance_SceneInfo_SetSceneTime(sceneInfo, 15);
+HMS_GamePerformance_SceneInfo_SetRecommendedCpuLevel(sceneInfo, GAME_PERFORMANCE_CPU_LEVEL_HIGH);
+HMS_GamePerformance_SceneInfo_SetRecommendedGpuLevel(sceneInfo, GAME_PERFORMANCE_GPU_LEVEL_HIGH);
+HMS_GamePerformance_SceneInfo_SetRecommendedDdrLevel(sceneInfo, GAME_PERFORMANCE_DDR_LEVEL_HIGH);
+HMS_GamePerformance_SceneInfo_SetKeyThread(sceneInfo, "render");
+HMS_GamePerformance_SceneInfo_SetDrawCallCount(sceneInfo, 100);
+HMS_GamePerformance_SceneInfo_SetVertexCount(sceneInfo, 100);
+HMS_GamePerformance_SceneInfo_SetTriangleCount(sceneInfo, 100);
+HMS_GamePerformance_SceneInfo_SetShaderCount(sceneInfo, 100);
+HMS_GamePerformance_SceneInfo_SetTextureCount(sceneInfo, 100);
+HMS_GamePerformance_SceneInfo_SetMeshCount(sceneInfo, 100);
+HMS_GamePerformance_SceneInfo_SetChannelCount(sceneInfo, 100);
+HMS_GamePerformance_SceneInfo_SetParticipantCount(sceneInfo, 5);
 
-29. // 上报游戏场景信息
-30. GamePerformance_ErrorCode ret = HMS_GamePerformance_UpdateSceneInfo(sceneInfo);
-31. if (ret != GAME_PERFORMANCE_SUCCESS) {
-32. // 异常处理
-33. }
+// 上报游戏场景信息
+GamePerformance_ErrorCode ret = HMS_GamePerformance_UpdateSceneInfo(sceneInfo);
+if (ret != GAME_PERFORMANCE_SUCCESS) {
+    // 异常处理
+}
 
-35. // 使用完释放内存
-36. HMS_GamePerformance_DestroySceneInfo(&sceneInfo);
+// 使用完释放内存
+HMS_GamePerformance_DestroySceneInfo(&sceneInfo);
 ```
 
 ### 上报游戏网络信息
 
 初始化成功后，可以通过调用[HMS\_GamePerformance\_UpdateNetInfo](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_updatenetinfo)接口上报游戏网络信息。
 
-```
-1. // SetXXX接口的第二个参数均为示例，请替换成实际参数
-2. GamePerformance_NetInfo *netInfo = NULL;
-3. HMS_GamePerformance_CreateNetInfo(&netInfo);
+```c
+// SetXXX接口的第二个参数均为示例，请替换成实际参数
+GamePerformance_NetInfo *netInfo = NULL;
+HMS_GamePerformance_CreateNetInfo(&netInfo);
 
-5. // 如需多次上报，若使用同一个实例上报，只需通过set方法更新参数即可（同一个实例将保留上一次设置的数据）
-6. // 设置必选字段
-7. HMS_GamePerformance_NetInfo_SetTotalLatency(netInfo, 60);
+// 如需多次上报，若使用同一个实例上报，只需通过set方法更新参数即可（同一个实例将保留上一次设置的数据）
+// 设置必选字段
+HMS_GamePerformance_NetInfo_SetTotalLatency(netInfo, 60);
 
-9. // 按需设置下列可选字段
-10. HMS_GamePerformance_NetInfo_SetNetLoad(netInfo, GAME_PERFORMANCE_NET_LOAD_HEAVY);
-11. HMS_GamePerformance_NetInfo_SetUplinkLatency(netInfo, 10);
-12. HMS_GamePerformance_NetInfo_SetDownlinkLatency(netInfo, 20);
-13. HMS_GamePerformance_NetInfo_SetServerLatency(netInfo, 30);
+// 按需设置下列可选字段
+HMS_GamePerformance_NetInfo_SetNetLoad(netInfo, GAME_PERFORMANCE_NET_LOAD_HEAVY);
+HMS_GamePerformance_NetInfo_SetUplinkLatency(netInfo, 10);
+HMS_GamePerformance_NetInfo_SetDownlinkLatency(netInfo, 20);
+HMS_GamePerformance_NetInfo_SetServerLatency(netInfo, 30);
 
-15. // 上报游戏网络信息
-16. GamePerformance_ErrorCode ret = HMS_GamePerformance_UpdateNetInfo(netInfo);
-17. if (ret != GAME_PERFORMANCE_SUCCESS) {
-18. // 异常处理
-19. }
+// 上报游戏网络信息
+GamePerformance_ErrorCode ret = HMS_GamePerformance_UpdateNetInfo(netInfo);
+if (ret != GAME_PERFORMANCE_SUCCESS) {
+    // 异常处理
+}
 
-21. // 使用完释放内存
-22. HMS_GamePerformance_DestroyNetInfo(&netInfo);
+// 使用完释放内存
+HMS_GamePerformance_DestroyNetInfo(&netInfo);
 ```
 
 ### 上报游戏玩家信息
 
 初始化成功后，可以通过调用[HMS\_GamePerformance\_UpdatePlayerInfo](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_updateplayerinfo)接口上报游戏玩家信息。
 
-```
-1. // SetXXX接口的第二个参数均为示例，请替换成实际参数
-2. GamePerformance_PlayerInfo *playerInfo = NULL;
-3. HMS_GamePerformance_CreatePlayerInfo(&playerInfo);
+```c
+// SetXXX接口的第二个参数均为示例，请替换成实际参数
+GamePerformance_PlayerInfo *playerInfo = NULL;
+HMS_GamePerformance_CreatePlayerInfo(&playerInfo);
 
-5. // 下列三个参数至少设置一个
-6. HMS_GamePerformance_PlayerInfo_SetGamePlayerId(playerInfo, "43JIOdok74***3980sd9453");
-7. HMS_GamePerformance_PlayerInfo_SetTeamPlayerId(playerInfo, "s2546dgs38***374dgwa5g3");
-8. HMS_GamePerformance_PlayerInfo_SetThirdOpenId(playerInfo, "k854Cs367***937efwhi03");
+// 下列三个参数至少设置一个
+HMS_GamePerformance_PlayerInfo_SetGamePlayerId(playerInfo, "43JIOdok74***3980sd9453");
+HMS_GamePerformance_PlayerInfo_SetTeamPlayerId(playerInfo, "s2546dgs38***374dgwa5g3");
+HMS_GamePerformance_PlayerInfo_SetThirdOpenId(playerInfo, "k854Cs367***937efwhi03");
 
-10. // 上报游戏玩家信息
-11. GamePerformance_ErrorCode ret = HMS_GamePerformance_UpdatePlayerInfo(playerInfo);
-12. if (ret != GAME_PERFORMANCE_SUCCESS) {
-13. // 异常处理
-14. }
+// 上报游戏玩家信息
+GamePerformance_ErrorCode ret = HMS_GamePerformance_UpdatePlayerInfo(playerInfo);
+if (ret != GAME_PERFORMANCE_SUCCESS) {
+    // 异常处理
+}
 
-16. // 使用完释放内存
-17. HMS_GamePerformance_DestroyPlayerInfo(&playerInfo);
+// 使用完释放内存
+HMS_GamePerformance_DestroyPlayerInfo(&playerInfo);
 ```
 
 ### 查询GPU性能信息
 
 除订阅设备状态变化的方式外，也可以通过调用[HMS\_GamePerformance\_QueryGpuInfo](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_querygpuinfo)接口主动查询设备GPU性能信息。
 
-```
-1. // 查询GPU性能信息
-2. GamePerformance_GpuInfo *gpuInfo = NULL;
-3. GamePerformance_ErrorCode ret = HMS_GamePerformance_QueryGpuInfo(&gpuInfo);
-4. if (ret != GAME_PERFORMANCE_SUCCESS) {
-5. // 异常处理
-6. }
+```c
+// 查询GPU性能信息
+GamePerformance_GpuInfo *gpuInfo = NULL;
+GamePerformance_ErrorCode ret = HMS_GamePerformance_QueryGpuInfo(&gpuInfo);
+if (ret != GAME_PERFORMANCE_SUCCESS) {
+    // 异常处理
+}
 
-8. // 获取指标数据值
-9. int32_t gpuloadLevel = -1;
-10. int32_t bandwidth = -1;
-11. int32_t currentFrequency = -1;
-12. int32_t fragmentLoadLevel = -1;
-13. int32_t textureLoadLevel = -1;
-14. int32_t vertexLoadLevel = -1;
-15. HMS_GamePerformance_GpuInfo_GetGpuLoadLevel(gpuInfo, &gpuloadLevel);
-16. HMS_GamePerformance_GpuInfo_GetBandwidthLoadLevel(gpuInfo, &bandwidth);
-17. HMS_GamePerformance_GpuInfo_GetCurrentFrequency(gpuInfo, &currentFrequency);
-18. HMS_GamePerformance_GpuInfo_GetFragmentLoadLevel(gpuInfo, &fragmentLoadLevel);
-19. HMS_GamePerformance_GpuInfo_GetTextureLoadLevel(gpuInfo, &textureLoadLevel);
-20. HMS_GamePerformance_GpuInfo_GetVertexLoadLevel(gpuInfo, &vertexLoadLevel);
+// 获取指标数据值
+int32_t gpuloadLevel = -1;
+int32_t bandwidth = -1;
+int32_t currentFrequency = -1;
+int32_t fragmentLoadLevel = -1;
+int32_t textureLoadLevel = -1;
+int32_t vertexLoadLevel = -1;
+HMS_GamePerformance_GpuInfo_GetGpuLoadLevel(gpuInfo, &gpuloadLevel);
+HMS_GamePerformance_GpuInfo_GetBandwidthLoadLevel(gpuInfo, &bandwidth);
+HMS_GamePerformance_GpuInfo_GetCurrentFrequency(gpuInfo, &currentFrequency);
+HMS_GamePerformance_GpuInfo_GetFragmentLoadLevel(gpuInfo, &fragmentLoadLevel);
+HMS_GamePerformance_GpuInfo_GetTextureLoadLevel(gpuInfo, &textureLoadLevel);
+HMS_GamePerformance_GpuInfo_GetVertexLoadLevel(gpuInfo, &vertexLoadLevel);
 
-22. // 使用完释放内存
-23. HMS_GamePerformance_DestroyGpuInfo(&gpuInfo);
+// 使用完释放内存
+HMS_GamePerformance_DestroyGpuInfo(&gpuInfo);
 ```
 
 ### 查询CPU性能信息
 
 除订阅设备状态变化的方式外，也可以通过调用[HMS\_GamePerformance\_QueryCpuInfo](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_querycpuinfo)接口主动查询设备CPU性能信息。
 
-```
-1. // 查询CPU性能信息
-2. GamePerformance_CpuInfo *cpuInfo = NULL;
-3. GamePerformance_ErrorCode ret = HMS_GamePerformance_QueryCpuInfo(&cpuInfo);
-4. if (ret != GAME_PERFORMANCE_SUCCESS) {
-5. // 异常处理
-6. }
+```c
+// 查询CPU性能信息
+GamePerformance_CpuInfo *cpuInfo = NULL;
+GamePerformance_ErrorCode ret = HMS_GamePerformance_QueryCpuInfo(&cpuInfo);
+if (ret != GAME_PERFORMANCE_SUCCESS) {
+    // 异常处理
+}
 
-8. int32_t cpuLoadLevel = 0;
-9. int32_t singleThreadLoadLevel = 0;
-10. HMS_GamePerformance_CpuInfo_GetCpuLoadLevel(cpuInfo, &cpuLoadLevel);
-11. HMS_GamePerformance_CpuInfo_GetSingleThreadLoadLevel(cpuInfo, &singleThreadLoadLevel);
+int32_t cpuLoadLevel = 0;
+int32_t singleThreadLoadLevel = 0;
+HMS_GamePerformance_CpuInfo_GetCpuLoadLevel(cpuInfo, &cpuLoadLevel);
+HMS_GamePerformance_CpuInfo_GetSingleThreadLoadLevel(cpuInfo, &singleThreadLoadLevel);
 
-13. // 使用完释放内存
-14. HMS_GamePerformance_DestroyCpuInfo(&cpuInfo);
+// 使用完释放内存
+HMS_GamePerformance_DestroyCpuInfo(&cpuInfo);
 ```
 
 ### 查询温度相关信息
 
 除订阅设备状态变化的方式外，也可以通过调用[HMS\_GamePerformance\_QueryThermalInfo](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_querythermalinfo)接口主动查询设备温控档位、温升趋势、当前的工作电流、系统建议的工作电流和系统建议的最大工作电流。
 
+```c
+// 查询温度和温升趋势
+GamePerformance_ThermalInfo *thermalInfo = NULL;
+GamePerformance_ThermalInfoQueryParameters *parameters = NULL;
+
+// 创建查询参数
+HMS_GamePerformance_CreateThermalInfoQueryParameters(&parameters);
+
+// 设置是否预测温升趋势。true：将查询温升趋势预测信息，false：不会查询温升趋势预测信息，默认为false。
+HMS_GamePerformance_ThermalInfoQueryParameters_SetNeedsPrediction(parameters, true);
+
+// needsPrediction=true时可选设置该参数。设置预测温升趋势的目标温度等级，设置后将以该温度等级作为目标温度等级进行温升趋势预测，若不设置，将使用系统默认档位进行预测。
+HMS_GamePerformance_ThermalInfoQueryParameters_SetTargetThermalLevel(parameters, 4);
+
+// 查询温度信息
+GamePerformance_ErrorCode ret = HMS_GamePerformance_QueryThermalInfo(parameters, &thermalInfo);
+if (ret != GAME_PERFORMANCE_SUCCESS) {
+    // 异常处理
+}
+int32_t margin = INT32_MIN;
+int32_t trend = INT32_MIN;
+int32_t level = -1;
+int32_t recommendNormalizedCurrent = 0;
+int32_t nowNormalizedCurrent = 0;
+int32_t recommendMaxNormalizedCurrent = 0;
+HMS_GamePerformance_ThermalInfo_GetThermalLevel(thermalInfo, &level);
+HMS_GamePerformance_ThermalInfo_GetThermalMargin(thermalInfo, &margin); // needsPrediction=true时，返回有效值
+HMS_GamePerformance_ThermalInfo_GetThermalTrend(thermalInfo, &trend); // needsPrediction=true时，返回有效值
+HMS_GamePerformance_ThermalInfo_GetRecommendNormalizedCurrent(thermalInfo, &recommendNormalizedCurrent);
+HMS_GamePerformance_ThermalInfo_GetNowNormalizedCurrent(thermalInfo, &nowNormalizedCurrent);
+HMS_GamePerformance_ThermalInfo_GetRecommendMaxNormalizedCurrent(thermalInfo, &recommendMaxNormalizedCurrent);
+
+// 使用完释放内存
+HMS_GamePerformance_DestroyThermalInfo(&thermalInfo);
+HMS_GamePerformance_DestroyThermalInfoQueryParameters(&parameters);
 ```
-1. // 查询温度和温升趋势
-2. GamePerformance_ThermalInfo *thermalInfo = NULL;
-3. GamePerformance_ThermalInfoQueryParameters *parameters = NULL;
 
-5. // 创建查询参数
-6. HMS_GamePerformance_CreateThermalInfoQueryParameters(&parameters);
-
-8. // 设置是否预测温升趋势。true：将查询温升趋势预测信息，false:不会查询温升趋势预测信息，默认为false。
-9. HMS_GamePerformance_ThermalInfoQueryParameters_SetNeedsPrediction(parameters, true);
-
-11. // needsPrediction=true时可选设置该参数。设置预测温升趋势的目标温度等级，设置后将以该温度等级作为目标温度等级进行温升趋势预测，若不设置，将使用系统默认档位进行预测。
-12. HMS_GamePerformance_ThermalInfoQueryParameters_SetTargetThermalLevel(parameters, 4);
-
-14. // 查询温度信息
-15. GamePerformance_ErrorCode ret = HMS_GamePerformance_QueryThermalInfo(parameters, &thermalInfo);
-16. if (ret != GAME_PERFORMANCE_SUCCESS) {
-17. // 异常处理
-18. }
-19. int32_t margin = INT32_MIN;
-20. int32_t trend = INT32_MIN;
-21. int32_t level = -1;
-22. int32_t recommendNormalizedCurrent = 0;
-23. int32_t nowNormalizedCurrent = 0;
-24. int32_t recommendMaxNormalizedCurrent = 0;
-25. HMS_GamePerformance_ThermalInfo_GetThermalLevel(thermalInfo, &level);
-26. HMS_GamePerformance_ThermalInfo_GetThermalMargin(thermalInfo, &margin); // needsPrediction=true时,返回有效值
-27. HMS_GamePerformance_ThermalInfo_GetThermalTrend(thermalInfo, &trend); // needsPrediction=true时,返回有效值
-28. HMS_GamePerformance_ThermalInfo_GetRecommendNormalizedCurrent(thermalInfo, &recommendNormalizedCurrent);
-29. HMS_GamePerformance_ThermalInfo_GetNowNormalizedCurrent(thermalInfo, &nowNormalizedCurrent);
-30. HMS_GamePerformance_ThermalInfo_GetRecommendMaxNormalizedCurrent(thermalInfo, &recommendMaxNormalizedCurrent);
-
-32. // 使用完释放内存
-33. HMS_GamePerformance_DestroyThermalInfo(&thermalInfo);
-34. HMS_GamePerformance_DestroyThermalInfoQueryParameters(&parameters);
-```
-
-说明
+**说明** 
 
 查询温度变化趋势需要历史数据作为计算依据，调用[HMS\_GamePerformance\_QueryThermalInfo](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_querythermalinfo)接口时请保证设备已启动至少一分钟，否则会返回1010300001错误。

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-catalo
 title: 获取目录列表
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容解析 > 获取目录列表
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:40:02+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:dd3e0b01013ef855bde23486bb6292874ca6e8c59bcc14402e4176cf4ec73365
+scraped_at: 2026-09-02T14:50:31+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:631943fa704625ce0da235599d7bc44e1a2b646ee32459a5da27531e10afe915
 ---
 
 当应用需要展示书籍目录列表时，开发者可通过解析能力获取目录节点列表，实现目录列表中章节名称按顺序、层级的展示。当用户点击目录节点时，开发者也需要获取目录位置及资源信息，用于跳转到指定位置。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/S_wDmsQ8Siq8kc67SmeBSA/zh-cn_image_0000002558765644.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/0ROx6Q_0Q2iomeUod0nDhQ/zh-cn_image_0000002736314275.png)
 
 ## 接口说明
 
@@ -29,147 +29,147 @@ content_hash: sha256:dd3e0b01013ef855bde23486bb6292874ca6e8c59bcc14402e4176cf4ec
 
 1. 导入相关模块。
 
-   ```
-   1. import { common } from '@kit.AbilityKit';
-   2. import { bookParser } from '@kit.ReaderKit';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { common } from '@kit.AbilityKit';
+   import { bookParser } from '@kit.ReaderKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 通过提前导入到[应用沙箱目录](app-sandbox-directory.md)中的书籍文件，初始化书籍解析器。
 
-   ```
-   1. private defaultHandler: bookParser.BookParserHandler | null = null;
+   ```typescript
+   private defaultHandler: bookParser.BookParserHandler | null = null;
 
-   3. aboutToAppear(): void {
-   4. this.init().then(() => {
-   5. });
-   6. }
+   aboutToAppear(): void {
+     this.init().then(() => {
+     });
+   }
 
-   8. private async init() {
-   9. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-   10. let path: string = `${context.filesDir}/abc.epub`;
-   11. try {
-   12. this.defaultHandler = await bookParser.getDefaultHandler(path);
-   13. } catch (error) {
-   14. hilog.error(0x0000, "testTAG", `getDefaultHandler failed, Code: ${error.code}, message: ${error.message}`);
-   15. }
-   16. }
+   private async init() {
+     let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+     let path: string = `${context.filesDir}/abc.epub`;
+     try {
+       this.defaultHandler = await bookParser.getDefaultHandler(path);
+     } catch (error) {
+       hilog.error(0x0000, "testTAG", `getDefaultHandler failed, Code: ${error.code}, message: ${error.message}`);
+     }
+   }
    ```
 3. 获取目录列表并进行展示。
 
-   ```
-   1. @State catalogItemList: bookParser.CatalogItem[] = [];
+   ```typescript
+   @State catalogItemList: bookParser.CatalogItem[] = [];
 
-   3. aboutToAppear(): void {
-   4. this.init().then(() => {
-   5. this.getCatalogList();
-   6. });
-   7. }
+   aboutToAppear(): void {
+     this.init().then(() => {
+       this.getCatalogList();
+     });
+   }
 
-   9. private getCatalogList() {
-   10. try {
-   11. this.catalogItemList = this.defaultHandler?.getCatalogList() || [];
-   12. } catch (error) {
-   13. hilog.error(0x0000, "testTAG", `getCatalogList failed, Code: ${error.code}, message: ${error.message}`);
-   14. }
-   15. }
+   private getCatalogList() {
+     try {
+       this.catalogItemList = this.defaultHandler?.getCatalogList() || [];
+     } catch (error) {
+       hilog.error(0x0000, "testTAG", `getCatalogList failed, Code: ${error.code}, message: ${error.message}`);
+     }
+   }
 
-   17. build() {
-   18. Column() {
-   19. List() {
-   20. ForEach(this.catalogItemList, (item: bookParser.CatalogItem) => {
-   21. ListItem() {
-   22. Column() {
-   23. Row() {
-   24. Row() {
-   25. Text(' · ')
-   26. .fontSize(14)
-   27. Text(item.catalogName)
-   28. .fontSize(14)
-   29. .textOverflow({ overflow: TextOverflow.Ellipsis })
-   30. .padding({ top: 8, bottom: 8 })
-   31. .maxLines(2)
-   32. .layoutWeight(1)
-   33. }
+   build() {
+     Column() {
+       List() {
+         ForEach(this.catalogItemList, (item: bookParser.CatalogItem) => {
+           ListItem() {
+             Column() {
+               Row() {
+                 Row() {
+                   Text(' · ')
+                     .fontSize(14)
+                   Text(item.catalogName)
+                     .fontSize(14)
+                     .textOverflow({ overflow: TextOverflow.Ellipsis })
+                     .padding({ top: 8, bottom: 8 })
+                     .maxLines(2)
+                     .layoutWeight(1)
+                 }
 
-   35. }
-   36. .width('100%')
-   37. .height(48)
-   38. .justifyContent(FlexAlign.Center)
-   39. .alignItems(VerticalAlign.Center)
+               }
+               .width('100%')
+               .height(48)
+               .justifyContent(FlexAlign.Center)
+               .alignItems(VerticalAlign.Center)
 
-   41. Divider()
-   42. }
-   43. .padding({
-   44. left: item.catalogLevel ? item.catalogLevel * 26 : 10,
-   45. right: item.catalogLevel ? item.catalogLevel * 26 : 10,
-   46. top: 6,
-   47. bottom: 6
-   48. })
-   49. .onClick(async () => {
-   50. // 在此实现点击目录跳转到指定章节功能
-   51. this.jumpToCatalogItem(item);
-   52. })
-   53. }
-   54. })
-   55. }
-   56. .scrollBar(BarState.Off)
-   57. .width('100%')
-   58. .height('100%')
-   59. }
-   60. .width('100%')
-   61. .height('100%')
-   62. }
+               Divider()
+             }
+             .padding({
+               left: item.catalogLevel ? item.catalogLevel * 26 : 10,
+               right: item.catalogLevel ? item.catalogLevel * 26 : 10,
+               top: 6,
+               bottom: 6
+             })
+             .onClick(async () => {
+               // 在此实现点击目录跳转到指定章节功能
+               this.jumpToCatalogItem(item);
+             })
+           }
+         })
+       }
+       .scrollBar(BarState.Off)
+       .width('100%')
+       .height('100%')
+     }
+     .width('100%')
+     .height('100%')
+   }
    ```
 4. 获取跳转用的目录位置及资源信息。
 
-   ```
-   1. private jumpToCatalogItem(catalogItem: bookParser.CatalogItem) {
-   2. let domPos = this.getDomPos(catalogItem);
-   3. let resourceIndex = this.getResourceItemByCatalog(catalogItem).index;
-   4. // 通过domPos及resourceIndex信息，即可通过startPlay接口跳转到指定位置
-   5. hilog.info(0x0000, "testTAG", `jumpToCatalogItem domPos:${domPos}, resourceIndex:${resourceIndex}`);
-   6. }
+   ```typescript
+   private jumpToCatalogItem(catalogItem: bookParser.CatalogItem) {
+     let domPos = this.getDomPos(catalogItem);
+     let resourceIndex = this.getResourceItemByCatalog(catalogItem).index;
+     // 通过domPos及resourceIndex信息，即可通过startPlay接口跳转到指定位置
+     hilog.info(0x0000, "testTAG", `jumpToCatalogItem domPos:${domPos}, resourceIndex:${resourceIndex}`);
+   }
 
-   8. private getDomPos(catalogItem: bookParser.CatalogItem): string {
-   9. try {
-   10. let domPos: string = this.defaultHandler?.getDomPosByCatalogHref(catalogItem.href || '') || '';
-   11. return domPos;
-   12. } catch (error) {
-   13. hilog.error(0x0000, "testTAG", `getDomPos failed, Code: ${error.code}, message: ${error.message}`);
-   14. }
-   15. return '';
-   16. }
+   private getDomPos(catalogItem: bookParser.CatalogItem): string {
+     try {
+       let domPos: string = this.defaultHandler?.getDomPosByCatalogHref(catalogItem.href || '') || '';
+       return domPos;
+     } catch (error) {
+       hilog.error(0x0000, "testTAG", `getDomPos failed, Code: ${error.code}, message: ${error.message}`);
+     }
+     return '';
+   }
 
-   18. /**
-   19. * 获取书籍目录对应的资源条目
-   20. *
-   21. * @param catalogItem 目录条目
-   22. */
-   23. private getResourceItemByCatalog(catalogItem: bookParser.CatalogItem): bookParser.SpineItem {
-   24. let resourceFile = catalogItem.resourceFile || '';
-   25. try {
-   26. let spineList: bookParser.SpineItem[] = this.defaultHandler?.getSpineList() || []
-   27. // 查找目录对应的资源条目
-   28. let resourceItemArr = spineList.filter(item => item.href === resourceFile);
-   29. if (resourceItemArr.length > 0) {
-   30. hilog.info(0x0000, 'testTag', 'getResourceItemByCatalog get resource ', resourceItemArr[0]);
-   31. let resourceItem = resourceItemArr[0];
-   32. return resourceItem;
-   33. } else if (spineList.length > 0) {
-   34. // 如果查找不到，则默认返回第1个资源条目
-   35. hilog.info(0x0000, 'testTag', 'getResourceItemByCatalog get resource in resourceList', spineList[0]);
-   36. return spineList[0];
-   37. }
-   38. } catch (error) {
-   39. hilog.error(0x0000, "testTAG", `getDomPos failed, Code: ${error.code}, message: ${error.message}`);
-   40. }
-   41. // 如果没有资源条目，则返回默认值
-   42. hilog.info(0x0000, 'testTag', 'getResourceItemByCatalog get resource in escape');
-   43. return {
-   44. idRef: '',
-   45. index: 0,
-   46. href: '',
-   47. properties: ''
-   48. };
-   49. }
+   /**
+    * 获取书籍目录对应的资源条目
+    *
+    * @param catalogItem 目录条目
+    */
+   private getResourceItemByCatalog(catalogItem: bookParser.CatalogItem): bookParser.SpineItem {
+     let resourceFile = catalogItem.resourceFile || '';
+     try {
+       let spineList: bookParser.SpineItem[] = this.defaultHandler?.getSpineList() || []
+       // 查找目录对应的资源条目
+       let resourceItemArr = spineList.filter(item => item.href === resourceFile);
+       if (resourceItemArr.length > 0) {
+         hilog.info(0x0000, 'testTag', 'getResourceItemByCatalog get resource ', resourceItemArr[0]);
+         let resourceItem = resourceItemArr[0];
+         return resourceItem;
+       } else if (spineList.length > 0) {
+         // 如果查找不到，则默认返回第1个资源条目
+         hilog.info(0x0000, 'testTag', 'getResourceItemByCatalog get resource in resourceList', spineList[0]);
+         return spineList[0];
+       }
+     } catch (error) {
+       hilog.error(0x0000, "testTAG", `getResourceItemByCatalog failed, Code: ${error.code}, message: ${error.message}`);
+     }
+     // 如果没有资源条目，则返回默认值
+     hilog.info(0x0000, 'testTag', 'getResourceItemByCatalog get resource in escape');
+     return {
+       idRef: '',
+       index: 0,
+       href: '',
+       properties: ''
+     };
+   }
    ```

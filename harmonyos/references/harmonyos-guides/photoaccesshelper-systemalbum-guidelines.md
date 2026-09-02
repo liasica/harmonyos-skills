@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshe
 title: 系统相册资源使用指导
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 受限开放能力 > 系统相册资源使用指导
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:35:38+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:a1c56d91a45935f4ece68b86f602f56a7e68a054024e2ceb8e3a794aaff248f9
+scraped_at: 2026-09-02T14:59:47+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b41ee8a3533210f3ddd33df6773b5c83ed115042e30810c8aa345458d32c3ab0
 ---
 
 photoAccessHelper提供对收藏夹、视频相册、截屏和录屏相册的相关操作。
 
-说明
+**说明** 
 
 在进行功能开发前，请查阅[开发准备](photoaccesshelper-preparation.md)，了解如何获取相册管理模块实例及申请相关权限。
 
@@ -38,27 +38,25 @@ photoAccessHelper提供对收藏夹、视频相册、截屏和录屏相册的相
 1. 设置获取收藏夹的参数为photoAccessHelper.AlbumType.SYSTEM和photoAccessHelper.AlbumSubtype.FAVORITE。
 2. 调用PhotoAccessHelper.getAlbums接口获取收藏夹对象。
 
+```typescript
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
+
+// ...
+
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  try {
+    let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
+      await phAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.FAVORITE);
+    let album: photoAccessHelper.Album = await fetchResult.getFirstObject();
+    console.info('get favorite album successfully, albumUri: ' + album.albumUri);
+    fetchResult.close();
+    // ...
+  } catch (err) {
+    console.error('get favorite album failed with err: ' + err);
+    // ...
+  }
+}
 ```
-1. import { photoAccessHelper } from '@kit.MediaLibraryKit';
-
-3. // ...
-
-5. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-6. try {
-7. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-8. await phAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.FAVORITE);
-9. let album: photoAccessHelper.Album = await fetchResult.getFirstObject();
-10. console.info('get favorite album successfully, albumUri: ' + album.albumUri);
-11. fetchResult.close();
-12. // ...
-13. } catch (err) {
-14. console.error('get favorite album failed with err: ' + err);
-15. // ...
-16. }
-17. }
-```
-
-[GetFavoriteObjectAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/MediaLibraryKit/SystemAlbumUsageSample/entry/src/main/ets/getfavoriteobjectability/GetFavoriteObjectAbility.ets#L19-L43)
 
 ### 获取收藏夹中的图片和视频
 
@@ -78,40 +76,44 @@ photoAccessHelper提供对收藏夹、视频相册、截屏和录屏相册的相
 3. 调用Album.getAssets接口获取图片资源。
 4. 调用[FetchResult.getFirstObject](../harmonyos-references/arkts-apis-photoaccesshelper-fetchresult.md#getfirstobject-1)接口获取第一张图片。
 
+```typescript
+import { dataSharePredicates } from '@kit.ArkData';
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
+
+// ...
+
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOptions: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+
+  let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | null = null;
+  let photoFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | null = null;
+  try {
+    albumFetchResult = await phAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM,
+      photoAccessHelper.AlbumSubtype.FAVORITE);
+    let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
+    console.info('get favorite album successfully, albumUri: ' + album.albumUri);
+
+    photoFetchResult = await album.getAssets(fetchOptions);
+    let photoAsset: photoAccessHelper.PhotoAsset = await photoFetchResult.getFirstObject();
+    console.info('favorite album getAssets successfully, photoAsset displayName: ' + photoAsset.displayName);
+    // ...
+  } catch (err) {
+    console.error('favorite failed with err: ' + err);
+    // ...
+  } finally {
+    if (photoFetchResult) {
+      photoFetchResult.close();
+    }
+    if (albumFetchResult) {
+      albumFetchResult.close();
+    }
+  }
+}
 ```
-1. import { dataSharePredicates } from '@kit.ArkData';
-2. import { photoAccessHelper } from '@kit.MediaLibraryKit';
-
-4. // ...
-
-6. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-7. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-8. let fetchOptions: photoAccessHelper.FetchOptions = {
-9. fetchColumns: [],
-10. predicates: predicates
-11. };
-
-13. try {
-14. let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-15. await phAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.FAVORITE);
-16. let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
-17. console.info('get favorite album successfully, albumUri: ' + album.albumUri);
-
-19. let photoFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-20. await album.getAssets(fetchOptions);
-21. let photoAsset: photoAccessHelper.PhotoAsset = await photoFetchResult.getFirstObject();
-22. console.info('favorite album getAssets successfully, photoAsset displayName: ' + photoAsset.displayName);
-23. photoFetchResult.close();
-24. albumFetchResult.close();
-25. // ...
-26. } catch (err) {
-27. console.error('favorite failed with err: ' + err);
-28. // ...
-29. }
-30. }
-```
-
-[GetMediaFromFavoritesAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/MediaLibraryKit/SystemAlbumUsageSample/entry/src/main/ets/getmediafromfavoritesability/GetMediaFromFavoritesAbility.ets#L24-L61)
 
 ## 视频相册
 
@@ -131,27 +133,25 @@ photoAccessHelper提供对收藏夹、视频相册、截屏和录屏相册的相
 1. 设置获取视频相册的参数为photoAccessHelper.AlbumType.SYSTEM和photoAccessHelper.AlbumSubtype.VIDEO。
 2. 调用PhotoAccessHelper.getAlbums接口获取视频相册。
 
+```typescript
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
+
+// ...
+
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  try {
+    let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
+      await phAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
+    let album: photoAccessHelper.Album = await fetchResult.getFirstObject();
+    console.info('get video album successfully, albumUri: ' + album.albumUri);
+    fetchResult.close();
+    // ...
+  } catch (err) {
+    console.error('get video album failed with err: ' + err);
+    // ...
+  }
+}
 ```
-1. import { photoAccessHelper } from '@kit.MediaLibraryKit';
-
-3. // ...
-
-5. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-6. try {
-7. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-8. await phAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
-9. let album: photoAccessHelper.Album = await fetchResult.getFirstObject();
-10. console.info('get video album successfully, albumUri: ' + album.albumUri);
-11. fetchResult.close();
-12. // ...
-13. } catch (err) {
-14. console.error('get video album failed with err: ' + err);
-15. // ...
-16. }
-17. }
-```
-
-[GetVideoAlbumAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/MediaLibraryKit/SystemAlbumUsageSample/entry/src/main/ets/getvideoalbumability/GetVideoAlbumAbility.ets#L19-L43)
 
 ### 获取视频相册中的视频
 
@@ -171,37 +171,35 @@ photoAccessHelper提供对收藏夹、视频相册、截屏和录屏相册的相
 3. 调用Album.getAssets接口获取视频资源。
 4. 调用[FetchResult.getFirstObject](../harmonyos-references/arkts-apis-photoaccesshelper-fetchresult.md#getfirstobject-1)接口获取第一个视频。
 
+```typescript
+import { dataSharePredicates } from '@kit.ArkData';
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
+
+// ...
+
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOptions: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+
+  try {
+    let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
+      await phAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
+    let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
+    console.info('get video album successfully, albumUri: ' + album.albumUri);
+
+    let videoFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+      await album.getAssets(fetchOptions);
+    let photoAsset: photoAccessHelper.PhotoAsset = await videoFetchResult.getFirstObject();
+    console.info('video album getAssets successfully, photoAsset displayName: ' + photoAsset.displayName);
+    videoFetchResult.close();
+    albumFetchResult.close();
+    // ...
+  } catch (err) {
+    console.error('video failed with err: ' + err);
+    // ...
+  }
+}
 ```
-1. import { dataSharePredicates } from '@kit.ArkData';
-2. import { photoAccessHelper } from '@kit.MediaLibraryKit';
-
-4. // ...
-
-6. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-7. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-8. let fetchOptions: photoAccessHelper.FetchOptions = {
-9. fetchColumns: [],
-10. predicates: predicates
-11. };
-
-13. try {
-14. let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-15. await phAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
-16. let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
-17. console.info('get video album successfully, albumUri: ' + album.albumUri);
-
-19. let videoFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-20. await album.getAssets(fetchOptions);
-21. let photoAsset: photoAccessHelper.PhotoAsset = await videoFetchResult.getFirstObject();
-22. console.info('video album getAssets successfully, photoAsset displayName: ' + photoAsset.displayName);
-23. videoFetchResult.close();
-24. albumFetchResult.close();
-25. // ...
-26. } catch (err) {
-27. console.error('video failed with err: ' + err);
-28. // ...
-29. }
-30. }
-```
-
-[GetVideosFromVideoAlbumAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/MediaLibraryKit/SystemAlbumUsageSample/entry/src/main/ets/getvideosfromvideoalbumability/GetVideosFromVideoAlbumAbility.ets#L57-L38)

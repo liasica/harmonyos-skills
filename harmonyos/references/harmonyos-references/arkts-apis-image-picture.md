@@ -3,31 +3,27 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (Picture)
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.image (图片处理) > Interface (Picture)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:30ffc70baceb1d0be1661d871a7f1d3ff5fa796d6d8461422f620c6035a7f3be
+scraped_at: 2026-09-02T15:02:30+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1c307855b61c96ab3e2a99187a12bf5efce15fde1e3f085ba057e891cc13d56a
 ---
 
 Picture类，一些包含特殊信息的图片可以解码为Picture（也可以称为多图对象）。多图对象一般包含主图、辅助图和元数据。其中主图包含图像的大部分信息，主要用于显示图像内容；辅助图用于存储与主图相关但不同的数据，展示图像更丰富的信息；元数据一般用来存储关于图像文件的信息。多图对象类用于读取或写入多图对象。在调用Picture的方法前，需要先通过[image.createPicture](arkts-apis-image-f.md#imagecreatepicture13)创建一个Picture实例。
 
 由于图片占用内存较大，所以当Picture实例使用完成后，应主动调用[release](arkts-apis-image-picture.md#release13)方法及时释放内存。释放时应确保该实例的所有异步方法均执行完成，且后续不再使用该实例。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Interface首批接口从API version 13开始支持。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { image } from '@kit.ImageKit';
+```ts
+import { image } from '@kit.ImageKit';
 ```
 
 ## getMainPixelmap13+
-
-PhonePC/2in1TabletTVWearable
 
 getMainPixelmap(): PixelMap
 
@@ -43,31 +39,29 @@ getMainPixelmap(): PixelMap
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function GetMainPixelmap(pictureObj : image.Picture) {
-4. let funcName = "getMainPixelmap";
-5. if (pictureObj != null) {
-6. let mainPixelmap: image.PixelMap = pictureObj.getMainPixelmap();
-7. if (mainPixelmap != null) {
-8. mainPixelmap.getImageInfo().then((imageInfo: image.ImageInfo) => {
-9. if (imageInfo != null) {
-10. console.info('GetMainPixelmap information height:' + imageInfo.size.height + ' width:' + imageInfo.size.width);
-11. }
-12. }).catch((error: BusinessError) => {
-13. console.error(funcName, `Failed error.code: ${error.code} ,error.message: ${error.message}`);
-14. });
-15. }
-16. } else {
-17. console.error('PictureObj is null');
-18. }
-19. }
+async function GetMainPixelmap(pictureObj : image.Picture) {
+  let funcName = "getMainPixelmap";
+  if (pictureObj != null) {
+    let mainPixelmap: image.PixelMap = pictureObj.getMainPixelmap();
+    if (mainPixelmap != null) {
+      mainPixelmap.getImageInfo().then((imageInfo: image.ImageInfo) => {
+        if (imageInfo != null) {
+          console.info(`Succeeded in getting main PixelMap information. Height: ${imageInfo.size.height}, width: ${imageInfo.size.width}.`);
+        }
+      }).catch((error: BusinessError) => {
+        console.error(funcName, `Failed to get main PixelMap information. Code: ${error.code}, message: ${error.message}.`);
+      });
+    }
+  } else {
+    console.error('Picture object is null.');
+  }
+}
 ```
 
 ## getHdrComposedPixelmap13+
-
-PhonePC/2in1TabletTVWearable
 
 getHdrComposedPixelmap(): Promise<PixelMap>
 
@@ -92,31 +86,29 @@ getHdrComposedPixelmap(): Promise<PixelMap>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function GetHdrComposedPixelmap(pictureObj : image.Picture) {
-4. let funcName = "getHdrComposedPixelmap";
-5. if (pictureObj != null) { // 图片包含Hdr图。
-6. let hdrComposedPixelmap: image.PixelMap = await pictureObj.getHdrComposedPixelmap();
-7. if (hdrComposedPixelmap != null) {
-8. hdrComposedPixelmap.getImageInfo().then((imageInfo: image.ImageInfo) => {
-9. if (imageInfo != null) {
-10. console.info(`GetHdrComposedPixelmap information height:${imageInfo.size.height} width:${imageInfo.size.width}`);
-11. }
-12. }).catch((error: BusinessError) => {
-13. console.error(funcName, `Failed error.code: ${error.code} ,error.message: ${error.message}`);
-14. });
-15. }
-16. } else {
-17. console.error('PictureObj is null');
-18. }
-19. }
+async function GetHdrComposedPixelmap(pictureObj : image.Picture) {
+  let funcName = "getHdrComposedPixelmap";
+  if (pictureObj != null) { // 图片包含Hdr图。
+    let hdrComposedPixelmap: image.PixelMap = await pictureObj.getHdrComposedPixelmap();
+    if (hdrComposedPixelmap != null) {
+      hdrComposedPixelmap.getImageInfo().then((imageInfo: image.ImageInfo) => {
+        if (imageInfo != null) {
+          console.info(`Succeeded in getting HDR composed PixelMap information. Height: ${imageInfo.size.height}, width: ${imageInfo.size.width}.`);
+        }
+      }).catch((error: BusinessError) => {
+        console.error(funcName, `Failed to get HDR composed PixelMap information. Code: ${error.code}, message: ${error.message}.`);
+      });
+    }
+  } else {
+    console.error('Picture object is null.');
+  }
+}
 ```
 
 ## getHdrComposedPixelmapWithOptions23+
-
-PhonePC/2in1TabletTVWearable
 
 getHdrComposedPixelmapWithOptions(options?: HdrComposeOptions): Promise<PixelMap | undefined>
 
@@ -150,38 +142,85 @@ getHdrComposedPixelmapWithOptions(options?: HdrComposeOptions): Promise<PixelMap
 
 **示例：**
 
+```ts
+// EntryAbility.ets
+import { image } from '@kit.ImageKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+async function GetHdrComposedPixelmapWithOptions(picture : image.Picture) {
+  if (picture == null) {
+    console.error('Picture is null.');
+    return;
+  }
+
+  let opt: image.HdrComposeOptions = {
+    desiredPixelFormat: image.PixelMapFormat.RGBA_1010102
+  };
+  let hdrComposedPixelmap: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
+  if (hdrComposedPixelmap == null || hdrComposedPixelmap == undefined) {
+    console.error(`Failed to get an HDR composed PixelMap with options.`);
+    return;
+  }
+
+  hdrComposedPixelmap.getImageInfo().then((imageInfo: image.ImageInfo) => {
+    if (imageInfo !== null) {
+      console.info(`Succeeded in getting HDR composed PixelMap information with options. Height: ${imageInfo.size.height}, width: ${imageInfo.size.width}.`);
+    }
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to get HDR composed PixelMap information with options. Code: ${error.code}, message: ${error.message}.`);
+  });
+}
 ```
-1. import { image } from '@kit.ImageKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
 
-4. async function GetHdrComposedPixelmapWithOptions(picture : image.Picture) {
-5. if (picture == null) {
-6. console.error('picture is null');
-7. return;
-8. }
+## hdrComposeToMainPixelmap
 
-10. let opt: image.HdrComposeOptions = {
-11. desiredPixelFormat: image.PixelMapFormat.RGBA_1010102
-12. };
-13. let hdrComposedPixelmap: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions(opt);
-14. if (hdrComposedPixelmap == null || hdrComposedPixelmap == undefined) {
-15. console.error(`GetHdrComposedPixelmapWithOptions failed`);
-16. return;
-17. }
+hdrComposeToMainPixelmap(): Promise<void>
 
-19. hdrComposedPixelmap.getImageInfo().then((imageInfo: image.ImageInfo) => {
-20. if (imageInfo !== null) {
-21. console.info(`GetHdrComposedPixelmapWithOptions information height:${imageInfo.size.height} width:${imageInfo.size.width}`);
-22. }
-23. }).catch((error: BusinessError) => {
-24. console.error(`GetHdrComposedPixelmapWithOptions information failed error.code: ${error.code} ,error.message: ${error.message}`);
-25. });
-26. }
+将Picture对象的主图和增益图合成为HDR图，合成后原Picture的主图被替换为HDR图，原Picture的增益图被删除。使用Promise异步回调。
+
+调用该接口的Picture对象中必须包含主图、增益图。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Image.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Image错误码](errorcode-image.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7600201 | Unsupported operation. e.g.,1. The picture does not have a gainmap. 2. pixelMap's allocator type is not DMA. |
+
+**示例：**
+
+```ts
+// EntryAbility.ets
+import { image } from '@kit.ImageKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+async function HdrComposeToMainPixelmap(picture : image.Picture) {
+  if (picture == null) {
+    console.error('picture is null');
+    return;
+  }
+  try {
+    await picture.hdrComposeToMainPixelmap();
+  } catch(error) {
+    console.error(`Failed to do HdrComposeToMainPixelmap. error.code: ${error.code} ,error.message: ${error.message}`);
+  }
+}
 ```
 
 ## getGainmapPixelmap13+
-
-PhonePC/2in1TabletTVWearable
 
 getGainmapPixelmap(): PixelMap | null
 
@@ -193,39 +232,37 @@ getGainmapPixelmap(): PixelMap | null
 
 | 类型 | 说明 |
 | --- | --- |
-| [PixelMap](arkts-apis-image-pixelmap.md) | null | 返回Pixelmap对象，如果没有则返回null。 |
+| [PixelMap](arkts-apis-image-pixelmap.md) | null | 返回PixelMap对象，如果没有则返回null。 |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function GetGainmapPixelmap(pictureObj : image.Picture) {
-4. let funcName = "getGainmapPixelmap";
-5. if (pictureObj != null) { // 图片包含增益图。
-6. let gainPixelmap: image.PixelMap | null = pictureObj.getGainmapPixelmap();
-7. if (gainPixelmap != null) {
-8. gainPixelmap.getImageInfo().then((imageInfo: image.ImageInfo) => {
-9. if (imageInfo != null) {
-10. console.info(`GetGainmapPixelmap information height:${imageInfo.size.height} width:${imageInfo.size.width}`);
-11. } else {
-12. console.error('GainPixelmap is null');
-13. }
-14. }).catch((error: BusinessError) => {
-15. console.error(funcName, `Failed error.code: ${error.code} ,error.message: ${error.message}`);
-16. });
-17. } else {
-18. console.info('GainPixelmap is null');
-19. }
-20. } else {
-21. console.error('PictureObj is null');
-22. }
-23. }
+async function GetGainmapPixelmap(pictureObj : image.Picture) {
+  let funcName = "getGainmapPixelmap";
+  if (pictureObj != null) { // 图片包含增益图。
+    let gainPixelmap: image.PixelMap | null = pictureObj.getGainmapPixelmap();
+    if (gainPixelmap != null) {
+      gainPixelmap.getImageInfo().then((imageInfo: image.ImageInfo) => {
+        if (imageInfo != null) {
+          console.info(`Succeeded in getting gainmap PixelMap information. Height: ${imageInfo.size.height}, width: ${imageInfo.size.width}.`);
+        } else {
+          console.error('Gainmap PixelMap is null.');
+        }
+      }).catch((error: BusinessError) => {
+        console.error(funcName, `Failed to get gainmap PixelMap information. Code: ${error.code}, message: ${error.message}.`);
+      });
+    } else {
+      console.info('Gainmap PixelMap is null.');
+    }
+  } else {
+    console.error('Picture object is null.');
+  }
+}
 ```
 
 ## setAuxiliaryPicture13+
-
-PhonePC/2in1TabletTVWearable
 
 setAuxiliaryPicture(type: AuxiliaryPictureType, auxiliaryPicture: AuxiliaryPicture): void
 
@@ -250,35 +287,33 @@ setAuxiliaryPicture(type: AuxiliaryPictureType, auxiliaryPicture: AuxiliaryPictu
 
 **示例：**
 
-```
-1. async function SetAuxiliaryPicture(context: Context) {
-2. const resourceMgr = context.resourceManager;
-3. const rawFile = await resourceMgr.getRawFileContent("hdr.jpg");// 需要支持hdr的图片。
-4. let ops: image.SourceOptions = {
-5. sourceDensity: 98,
-6. }
-7. let imageSource: image.ImageSource = image.createImageSource(rawFile.buffer as ArrayBuffer, ops);
-8. let pixelMap: image.PixelMap = await imageSource.createPixelMap();
-9. let pictureObj: image.Picture = image.createPicture(pixelMap);
-10. if (pictureObj != null) {
-11. console.info('Create picture succeeded');
-12. } else {
-13. console.error('Create picture failed');
-14. }
+```ts
+async function SetAuxiliaryPicture(context: Context) {
+  const resourceMgr = context.resourceManager;
+  const rawFile = await resourceMgr.getRawFileContent("hdr.jpg");// 需要支持hdr的图片。
+  let ops: image.SourceOptions = {
+    sourceDensity: 98,
+  }
+  let imageSource: image.ImageSource = image.createImageSource(rawFile.buffer as ArrayBuffer, ops);
+  let pixelMap: image.PixelMap = await imageSource.createPixelMap();
+  let pictureObj: image.Picture = image.createPicture(pixelMap);
+  if (pictureObj != null) {
+    console.info('Succeeded in creating picture.');
+  } else {
+    console.error('Failed to create picture.');
+  }
 
-16. if (pictureObj != null) {
-17. let type: image.AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
-18. let auxPictureObj: image.AuxiliaryPicture | null = pictureObj.getAuxiliaryPicture(type);
-19. if (auxPictureObj != null) {
-20. pictureObj.setAuxiliaryPicture(type, auxPictureObj);
-21. }
-22. }
-23. }
+  if (pictureObj != null) {
+    let type: image.AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
+    let auxPictureObj: image.AuxiliaryPicture | null = pictureObj.getAuxiliaryPicture(type);
+    if (auxPictureObj != null) {
+      pictureObj.setAuxiliaryPicture(type, auxPictureObj);
+    }
+  }
+}
 ```
 
 ## getAuxiliaryPicture13+
-
-PhonePC/2in1TabletTVWearable
 
 getAuxiliaryPicture(type: AuxiliaryPictureType): AuxiliaryPicture | null
 
@@ -308,18 +343,16 @@ getAuxiliaryPicture(type: AuxiliaryPictureType): AuxiliaryPicture | null
 
 **示例：**
 
-```
-1. async function GetAuxiliaryPicture(pictureObj : image.Picture) {
-2. if (pictureObj != null) {
-3. let type: image.AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
-4. let auxPictureObj: image.AuxiliaryPicture | null = pictureObj.getAuxiliaryPicture(type);
-5. }
-6. }
+```ts
+async function GetAuxiliaryPicture(pictureObj : image.Picture) {
+  if (pictureObj != null) {
+    let type: image.AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
+    let auxPictureObj: image.AuxiliaryPicture | null = pictureObj.getAuxiliaryPicture(type);
+  }
+}
 ```
 
 ## setMetadata13+
-
-PhonePC/2in1TabletTVWearable
 
 setMetadata(metadataType: MetadataType, metadata: Metadata): Promise<void>
 
@@ -338,7 +371,7 @@ setMetadata(metadataType: MetadataType, metadata: Metadata): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象。无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -351,41 +384,39 @@ setMetadata(metadataType: MetadataType, metadata: Metadata): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function SetPictureObjMetadata(exifContext: Context) {
-4. const exifResourceMgr = exifContext.resourceManager;
-5. const exifRawFile = await exifResourceMgr.getRawFileContent("exif.jpg");// 含有exif metadata的图片。
-6. let exifOps: image.SourceOptions = {
-7. sourceDensity: 98,
-8. }
-9. let exifImageSource: image.ImageSource = image.createImageSource(exifRawFile.buffer as ArrayBuffer, exifOps);
-10. let exifCommodityPixelMap: image.PixelMap = await exifImageSource.createPixelMap();
-11. let exifPictureObj: image.Picture = image.createPicture(exifCommodityPixelMap);
-12. if (exifPictureObj != null) {
-13. console.info('Create picture succeeded');
-14. } else {
-15. console.error('Create picture failed');
-16. }
+async function SetPictureObjMetadata(exifContext: Context) {
+  const exifResourceMgr = exifContext.resourceManager;
+  const exifRawFile = await exifResourceMgr.getRawFileContent("exif.jpg");// 含有exif metadata的图片。
+  let exifOps: image.SourceOptions = {
+    sourceDensity: 98,
+  }
+  let exifImageSource: image.ImageSource = image.createImageSource(exifRawFile.buffer as ArrayBuffer, exifOps);
+  let exifCommodityPixelMap: image.PixelMap = await exifImageSource.createPixelMap();
+  let exifPictureObj: image.Picture = image.createPicture(exifCommodityPixelMap);
+  if (exifPictureObj != null) {
+    console.info('Succeeded in creating picture.');
+  } else {
+    console.error('Failed to create picture.');
+  }
 
-18. if (exifPictureObj != null) {
-19. let metadataType: image.MetadataType = image.MetadataType.EXIF_METADATA;
-20. let exifMetaData: image.Metadata = await exifPictureObj.getMetadata(metadataType);
-21. exifPictureObj.setMetadata(metadataType, exifMetaData).then(() => {
-22. console.info('Set metadata success');
-23. }).catch((error: BusinessError) => {
-24. console.error('Failed to set metadata. error.code: ' +JSON.stringify(error.code) + ' ,error.message:' + JSON.stringify(error.message));
-25. });
-26. } else {
-27. console.error('exifPictureObj is null');
-28. }
-29. }
+  if (exifPictureObj != null) {
+    let metadataType: image.MetadataType = image.MetadataType.EXIF_METADATA;
+    let exifMetaData: image.Metadata = await exifPictureObj.getMetadata(metadataType);
+    exifPictureObj.setMetadata(metadataType, exifMetaData).then(() => {
+      console.info('Succeeded in setting metadata.');
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to set metadata. error.code: ${error.code} ,error.message: ${error.message}`);
+    });
+  } else {
+    console.error('exifPictureObj is null');
+  }
+}
 ```
 
 ## getMetadata13+
-
-PhonePC/2in1TabletTVWearable
 
 getMetadata(metadataType: MetadataType): Promise<Metadata>
 
@@ -416,25 +447,23 @@ getMetadata(metadataType: MetadataType): Promise<Metadata>
 
 **示例：**
 
-```
-1. async function GetPictureObjMetadataProperties(pictureObj : image.Picture) {
-2. if (pictureObj != null) {
-3. let metadataType: image.MetadataType = image.MetadataType.EXIF_METADATA;
-4. let pictureObjMetaData: image.Metadata = await pictureObj.getMetadata(metadataType);
-5. if (pictureObjMetaData != null) {
-6. console.info('get picture metadata success');
-7. } else {
-8. console.error('get picture metadata is failed');
-9. }
-10. } else {
-11. console.error(" pictureObj is null");
-12. }
-13. }
+```ts
+async function GetPictureObjMetadataProperties(pictureObj : image.Picture) {
+  if (pictureObj != null) {
+    let metadataType: image.MetadataType = image.MetadataType.EXIF_METADATA;
+    let pictureObjMetaData: image.Metadata = await pictureObj.getMetadata(metadataType);
+    if (pictureObjMetaData != null) {
+      console.info('Succeeded in getting picture metadata.');
+    } else {
+      console.error('Failed to get picture metadata.');
+    }
+  } else {
+    console.error(" pictureObj is null");
+  }
+}
 ```
 
 ## marshalling13+
-
-PhonePC/2in1TabletTVWearable
 
 marshalling(sequence: rpc.MessageSequence): void
 
@@ -459,54 +488,52 @@ marshalling(sequence: rpc.MessageSequence): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { rpc } from '@kit.IPCKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { rpc } from '@kit.IPCKit';
 
-4. class MySequence implements rpc.Parcelable {
-5. picture: image.Picture | null = null;
-6. constructor(conPicture: image.Picture) {
-7. this.picture = conPicture;
-8. }
-9. marshalling(messageSequence: rpc.MessageSequence) {
-10. if(this.picture != null) {
-11. this.picture.marshalling(messageSequence);
-12. console.info('Marshalling success !');
-13. return true;
-14. } else {
-15. console.error('Marshalling failed !');
-16. return false;
-17. }
-18. }
-19. unmarshalling(messageSequence : rpc.MessageSequence) {
-20. this.picture = image.createPictureFromParcel(messageSequence);
-21. this.picture.getMainPixelmap().getImageInfo().then((imageInfo : image.ImageInfo) => {
-22. console.info(`Unmarshalling to get mainPixelmap information height:${imageInfo.size.height} width:${imageInfo.size.width}`);
-23. }).catch((error: BusinessError) => {
-24. console.error(`Unmarshalling failed error.code: ${error.code} ,error.message: ${error.message}`);
-25. });
-26. return true;
-27. }
-28. }
+class MySequence implements rpc.Parcelable {
+  picture: image.Picture | null = null;
+  constructor(conPicture: image.Picture) {
+    this.picture = conPicture;
+  }
+  marshalling(messageSequence: rpc.MessageSequence) {
+    if(this.picture != null) {
+      this.picture.marshalling(messageSequence);
+      console.info('Succeeded in marshalling a picture.');
+      return true;
+    } else {
+      console.error('Failed to marshall a picture.');
+      return false;
+    }
+  }
+  unmarshalling(messageSequence : rpc.MessageSequence) {
+    this.picture = image.createPictureFromParcel(messageSequence);
+    this.picture.getMainPixelmap().getImageInfo().then((imageInfo : image.ImageInfo) => {
+      console.info(`Succeeded in unmarshalling a picture and getting main PixelMap information. Height: ${imageInfo.size.height}, width: ${imageInfo.size.width}.`);
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to unmarshall a picture. Code: ${error.code}, message: ${error.message}.`);
+    });
+    return true;
+  }
+}
 
-30. async function Marshalling_UnMarshalling(pictureObj : image.Picture) {
-31. if (pictureObj != null) {
-32. let parcelable: MySequence = new MySequence(pictureObj);
-33. let data: rpc.MessageSequence = rpc.MessageSequence.create();
-34. // 序列化。
-35. data.writeParcelable(parcelable);
-36. let ret: MySequence = new MySequence(pictureObj);
-37. // 反序列化。
-38. data.readParcelable(ret);
-39. } else {
-40. console.error('PictureObj is null');
-41. }
-42. }
+async function Marshalling_UnMarshalling(pictureObj : image.Picture) {
+  if (pictureObj != null) {
+    let parcelable: MySequence = new MySequence(pictureObj);
+    let data: rpc.MessageSequence = rpc.MessageSequence.create();
+    // 序列化。
+    data.writeParcelable(parcelable);
+    let ret: MySequence = new MySequence(pictureObj);
+    // 反序列化。
+    data.readParcelable(ret);
+  } else {
+    console.error('Picture object is null.');
+  }
+}
 ```
 
 ## release13+
-
-PhonePC/2in1TabletTVWearable
 
 release(): void
 
@@ -520,18 +547,18 @@ release(): void
 
 **示例：**
 
-```
-1. async function Release(pictureObj : image.Picture) {
-2. let funcName = "Release";
-3. if (pictureObj != null) {
-4. pictureObj.release();
-5. if (pictureObj.getMainPixelmap() == null) {
-6. console.info(funcName, 'Success !');
-7. } else {
-8. console.error(funcName, 'Failed !');
-9. }
-10. } else {
-11. console.error('PictureObj is null');
-12. }
-13. }
+```ts
+async function Release(pictureObj : image.Picture) {
+  let funcName = "Release";
+  if (pictureObj != null) {
+    pictureObj.release();
+    if (pictureObj.getMainPixelmap() == null) {
+      console.info(funcName, 'Succeeded in releasing a picture.');
+    } else {
+      console.error(funcName, 'Failed to release a picture.');
+    }
+  } else {
+    console.error('Picture object is null.');
+  }
+}
 ```

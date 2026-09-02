@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-
 title: 错误码
 breadcrumb: 指南 > 优化应用性能 > 附录 > 错误码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:38+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:67aac1b1536667c284b101a789fd57dcc72fcf44f61a11f9d731ecc1fe01ac8d
+scraped_at: 2026-09-02T14:50:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c17359eeec48a8ed8ddeeffe99ac822f40df32f9b77b3aa3280318b7e53bed18
 ---
 
 ## 00701101 应用拉起失败
@@ -48,21 +48,23 @@ App not started correctly. Start a new session and try again.
 
 **错误信息**
 
-Failed to import data file. Please check file version or storage space.
+Failed to import data file. Please check file version, storage space, or configure higher IDE memory.
 
 **错误描述**
 
-数据文件导入失败，请检查数据文件版本和磁盘空间。
+数据文件导入失败，请检查数据文件版本、磁盘空间或者设置更高的IDE内存。
 
 **可能原因**
 
 1. 版本不匹配。导入的数据文件版本与当前使用的DevEco Studio版本不匹配。
 2. 磁盘空间不足。
+3. DevEco Studio内存不足。
 
 **处理步骤**
 
 1. 尝试使用数据文件导出时或更高版本的DevEco Studio导入数据。
 2. 清理磁盘空间。
+3. 在菜单栏点击**File** > **Settings** > **Appearance & Behavior** > **System Settings** > **Memory Settings**，修改**DevEco Studio max heap size**（堆大小），推荐使用4096MB及以上。
 
 ## 00702101 离线符号解析失败
 
@@ -188,7 +190,7 @@ Since no Running Application is selected, recording cannot be started. Please se
 
 **处理步骤**
 
-调测的应用开始运行后，再启动录制。
+调测的应用开始运行后，启动录制。
 
 ## 00702204 点击跳转按钮失败
 
@@ -234,7 +236,7 @@ The lane does not exist. Please upgrade the DevEco Studio.
 
 **错误描述**
 
-导入的数据文件中包含的泳道在前版本的DevEco Studio中不存在。
+导入的数据文件中包含的泳道在当前版本的DevEco Studio中不存在。
 
 **可能原因**
 
@@ -252,7 +254,7 @@ Unlock the device and try again.
 
 **错误描述**
 
-解锁被调优的设备后，重新录制。
+解锁被调测的设备后，重新录制。
 
 **可能原因**
 
@@ -328,7 +330,7 @@ Make sure the file name does not contain the following characters:\* : ? " < > |
 
 **可能原因**
 
-导出文件时，文件名使用了不允许的字符，如 \* : ? " < > |。
+在Windows环境中，导出文件时，文件名使用了不允许的字符，如 \* : ? " < > |。
 
 **处理步骤**
 
@@ -346,7 +348,7 @@ Make sure that the file name does not exceed 238 characters.
 
 **可能原因**
 
-导出文件时，文件名超过238个字符的限制。
+在Windows环境中，导出文件时，文件名超过238个字符的限制。
 
 **处理步骤**
 
@@ -356,7 +358,7 @@ Make sure that the file name does not exceed 238 characters.
 
 **错误信息**
 
-Invalid save path: {0}
+Invalid save path: {0}.
 
 **错误描述**
 
@@ -364,11 +366,11 @@ Invalid save path: {0}
 
 **可能原因**
 
-保存路径不存在。
+在Windows环境中，保存路径不存在。
 
 **处理步骤**
 
-确认保存路径存在后，再保存。
+确认保存路径存在后进行保存。
 
 ## 00703201 录制文件过大导致解析失败
 
@@ -378,7 +380,7 @@ The recording file is too large and cannot be parsed. Restart a new recording se
 
 **错误描述**
 
-因录制文件较大，导致解析失败。请减少录制时间重新录制。
+录制文件较大，导致解析失败。请减少录制时间重新录制。
 
 **可能原因**
 
@@ -405,6 +407,24 @@ Profiler分配的内存已达到上限，导致无法正常运行。
 **处理步骤**
 
 在DevEco Studio的配置文件中手动修改虚拟机可使用的最大内存，具体请参考[内存占用率过高导致DevEco Studio无法正常运行](../harmonyos-faqs/faqs-profiler-3.md)。
+
+## 00703203 录制的数据与当前DevEco Studio窗口打开的工程SourceMap文件不匹配或SourceMap文件不存在
+
+**错误信息**
+
+Unable to navigate to source code. Make sure the SourceMap file exists in the corresponding module directory and the recorded data matches the source code project, and then rebuild the project.
+
+**错误描述**
+
+录制的数据与当前DevEco Studio窗口打开的工程SourceMap文件不匹配或SourceMap文件不存在。
+
+**可能原因**
+
+录制的数据与当前DevEco Studio窗口打开的工程SourceMap文件不匹配或SourceMap文件不存在，导致无法正确跳转到源代码。
+
+**处理步骤**
+
+检查应用工程中的SourceMap文件是否存在，检查被录制的应用与当前DevEco Studio窗口打开的应用工程的SourceMap文件是否匹配。
 
 ## 00703204 录制的数据与当前DevEco Studio窗口打开的源码工程不匹配
 

@@ -3,20 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm
 title: JSVM_CreateVMOptions
 breadcrumb: API参考 > 公共基础能力 > C API > 结构体 > JSVM_CreateVMOptions
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:24+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:0c272a1930376cdf6fde3b2c7122961a53435431feee79b4824216c77d08f86c
+scraped_at: 2026-09-02T15:03:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:02c5a5b44cf4462f2a13d85188b92f8a2cd020157e311de69cfacf9743e59280
 ---
 
-```
-1. typedef struct {...} JSVM_CreateVMOptions
+```c
+typedef struct {...} JSVM_CreateVMOptions
 ```
 
 ## 概述
 
-PhonePC/2in1TabletWearable
-
 创建JavaScript虚拟机的选项。
+
+**使用场景：** 需要自定义JavaScript虚拟机内存配置的应用，需要使用快照功能加速虚拟机启动的场景，对虚拟机内存使用有特殊要求的嵌入式或资源受限环境。
+
+**系统能力：** SystemCapability.ArkCompiler.JSVM
 
 **起始版本：** 11
 
@@ -26,11 +28,7 @@ PhonePC/2in1TabletWearable
 
 ## 汇总
 
-PhonePC/2in1TabletWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletWearable
 
 | 名称 | 描述 |
 | --- | --- |

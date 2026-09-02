@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nets
 title: WebSocket_ErrorResult
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 结构体 > WebSocket_ErrorResult
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:38+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:371ba7b25754c22a35a833d45a31ff5ce5659e9d48d07b03f2bde708b49a6bce
+scraped_at: 2026-09-02T15:01:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:01e5b19c564a8e28be68a3a901f15bc4d17922d751c67a804175917006bdfb3d
 ---
 
-```
-1. struct WebSocket_ErrorResult {...}
+```c
+struct WebSocket_ErrorResult {...}
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-websocket客户端来自服务端连接错误的参数。
+WebSocket客户端来自服务端连接错误的参数。
 
 **起始版本：** 11
 
@@ -26,11 +24,7 @@ websocket客户端来自服务端连接错误的参数。
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

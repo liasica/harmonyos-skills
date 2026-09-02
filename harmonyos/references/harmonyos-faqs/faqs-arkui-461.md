@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-461
 title: AppStorage里面存储数据，如何保证不会有内存泄漏
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > AppStorage里面存储数据，如何保证不会有内存泄漏
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > AppStorage里面存储数据，如何保证不会有内存泄漏
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:01+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:22+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:6765cb17c7f4ef2b555a8adf8e84e3fa6733c99c8b46248193586a17195fe6db
 ---
 

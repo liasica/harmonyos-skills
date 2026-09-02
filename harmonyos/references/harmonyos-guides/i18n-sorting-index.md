@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/i18n-sorting-
 title: 创建索引
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用国际化 > 多语言排序 > 创建索引
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:46+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:cc9be3aeeeb5f39c1dfb3536ca91bd512e45c5ffec937b37c4d19f6683f2944b
+scraped_at: 2026-09-02T14:49:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:57d95e4b2317c482268e9df4e7e35ff6a28b24d8c9a977650a19072ff0986755
 ---
 
 ## 功能介绍
@@ -18,25 +18,21 @@ content_hash: sha256:cc9be3aeeeb5f39c1dfb3536ca91bd512e45c5ffec937b37c4d19f6683f
 
 1. 导入模块。
 
+   ```typescript
+   import { i18n } from '@kit.LocalizationKit';
    ```
-   1. import { i18n } from '@kit.LocalizationKit';
-   ```
-
-   [MultilingualSorting.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/International/Internationalization/entry/src/main/ets/i18napplication/MultilingualSorting.ets#L19-L21)
 2. 获取索引列表和索引值。
 
+   ```typescript
+   // 创建索引
+   let indexUtil: i18n.IndexUtil = i18n.getInstance('zh-CN');
+   let indexList = indexUtil.getIndexList(); // indexList = ['…', 'A', 'B', 'C', ... 'X', 'Y', 'Z', '…']
+
+   // 多语言index混排
+   indexUtil.addLocale('ru-RU');
+   // indexList = ['…', 'A', 'B', 'C', ... 'X', 'Y', 'Z', '…', 'А', 'Б', 'В', ... 'Э', 'Ю', 'Я', '…']
+   indexList = indexUtil.getIndexList();
+
+   // 获取字符串的索引值
+   let index = indexUtil.getIndex('你好'); // index = 'N'
    ```
-   1. // 创建索引
-   2. let indexUtil: i18n.IndexUtil = i18n.getInstance('zh-CN');
-   3. let indexList = indexUtil.getIndexList(); // indexList = ['…', 'A', 'B', 'C', ... 'X', 'Y', 'Z', '…']
-
-   5. // 多语言index混排
-   6. indexUtil.addLocale('ru-RU');
-   7. // indexList = ['…', 'A', 'B', 'C', ... 'X', 'Y', 'Z', '…', 'А', 'Б', 'В', ... 'Э', 'Ю', 'Я', '…']
-   8. indexList = indexUtil.getIndexList();
-
-   10. // 获取字符串的索引值
-   11. let index = indexUtil.getIndex('你好'); // index = 'N'
-   ```
-
-   [MultilingualSorting.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/International/Internationalization/entry/src/main/ets/i18napplication/MultilingualSorting.ets#L32-L44)

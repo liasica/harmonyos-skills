@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: switch
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > switch
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:28+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:2a904d4609734f621ff551505b03725c4a9031cb8fbcd8fc6befd3df1614b388
+scraped_at: 2026-09-02T15:01:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f7bd85921274b55ca59e7712c51636fd94e068cc3db509cb4b3292b94ae5750c
 ---
 
-说明
+**说明** 
 
 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -16,19 +16,13 @@ content_hash: sha256:2a904d4609734f621ff551505b03725c4a9031cb8fbcd8fc6befd3df161
 
 ## 权限列表
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 不支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-components-common-attributes.md)外，还支持如下属性：
 
@@ -40,8 +34,6 @@ PhonePC/2in1TabletTVWearable
 | textoff | string | "Off" | 否 | 未选中时显示的文本。 |
 
 ## 样式
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用样式](js-components-common-styles.md)外，还支持如下样式：
 
@@ -58,8 +50,6 @@ PhonePC/2in1TabletTVWearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用事件](js-components-common-events.md)外，还支持如下事件：
 
 | 名称 | 参数 | 描述 |
@@ -68,74 +58,70 @@ PhonePC/2in1TabletTVWearable
 
 ## 方法
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用方法](js-components-common-methods.md)。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <switch @change="normalSwitchChange">
-4. </switch>
-5. <switch class="switch" showtext="true" texton="开启" textoff="关闭" @change="switchChange">
-6. </switch>
-7. <switch class="switch text" showtext="true" texton="开启" textoff="关闭" checked="true" @change="switchChange">
-8. </switch>
-9. </div>
+```html
+<!-- xxx.hml -->
+<div class="container">
+    <switch @change="normalSwitchChange">
+    </switch>
+    <switch class="switch" showtext="true" texton="开启" textoff="关闭" @change="switchChange">
+    </switch>
+    <switch class="switch text" showtext="true" texton="开启" textoff="关闭" checked="true" @change="switchChange">
+    </switch>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .container {
-3. display: flex;
-4. justify-content: center;
-5. align-items: center;
-6. }
-7. .switch {
-8. texton-color: red;
-9. textoff-color: forestgreen;
-10. }
-11. .text {
-12. text-padding: 20px;
-13. font-size: 30px;
-14. font-weight: 700;
-15. }
-```
-
-```
-1. // xxx.js
-2. import promptAction from '@ohos.promptAction';
-3. export default {
-4. data: {
-5. title: 'World'
-6. },
-7. switchChange(e) {
-8. if (e.checked) {
-9. promptAction.showToast({
-10. message: "打开开关"
-11. });
-12. } else {
-13. promptAction.showToast({
-14. message: "关闭开关"
-15. });
-16. }
-17. },
-18. normalSwitchChange(e) {
-19. if (e.checked) {
-20. promptAction.showToast({
-21. message: "switch on"
-22. });
-23. } else {
-24. promptAction.showToast({
-25. message: "switch off"
-26. });
-27. }
-28. }
-29. }
+```css
+/* xxx.css */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.switch {
+    texton-color: red;
+    textoff-color: forestgreen;
+}
+.text {
+    text-padding: 20px;
+    font-size: 30px;
+    font-weight: 700;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/aYnp-O_qQ-qeHUSW_sOZ6Q/zh-cn_image_0000002589246535.gif)
+```js
+// xxx.js
+import promptAction from '@ohos.promptAction';
+export default {
+    data: {
+        title: 'World'
+    },
+    switchChange(e) {
+        if (e.checked) {
+            promptAction.showToast({
+                message: "打开开关"
+            });
+        } else {
+            promptAction.showToast({
+                message: "关闭开关"
+            });
+        }
+    },
+    normalSwitchChange(e) {
+        if (e.checked) {
+            promptAction.showToast({
+                message: "switch on"
+            });
+        } else {
+            promptAction.showToast({
+                message: "switch off"
+            });
+        }
+    }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/f5tFL4gQR0G7CpDmktiwLA/zh-cn_image_0000002706836392.gif)

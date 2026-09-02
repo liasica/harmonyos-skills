@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-runnin
 title: 模拟器无法连接网络
 breadcrumb: FAQ > DevEco Studio > 应用运行 > 模拟器无法连接网络
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:59+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:16+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:6166806ce74031f08f955b17221ebd156216d00c6f748ae63c9c1f676850b995
 ---
 

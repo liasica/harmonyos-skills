@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkweb
 title: ArkWeb（方舟Web）
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:50+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:e3c6bc382af8780e6db9172a932fe0463440e8a5f54b5d99cabfd00fa64f57b5
+scraped_at: 2026-09-02T14:49:54+08:00
+doc_updated_at: 2026-07-21
+content_hash: sha256:f62955c6971673460e814426fc8f94a93e6635c659a371838a9fbb329360dfa5
 ---
 
 * **[ArkWeb简介](web-component-overview.md)**
@@ -20,7 +20,8 @@ content_hash: sha256:e3c6bc382af8780e6db9172a932fe0463440e8a5f54b5d99cabfd00fa64
 * **[管理网页文件上传与下载](web-manage-upload-download.md)**
 * **[使用网页多媒体](web-use-multimedia.md)**
 * **[处理网页内容](web-process-page-content.md)**
-* **[同层渲染](web-same-layer.md)**
+* **[同层渲染](same-layer-rendering.md)**
 * **[使用离线Web组件](web-offline-mode.md)**
 * **[使用WebNativeMessagingExtensionAbility组件实现浏览器扩展和应用通信场景](web-native-messaging.md)**
 * **[Web调试维测](web-debugging.md)**
+* **[ArkWeb术语](arkweb-glossary.md)**

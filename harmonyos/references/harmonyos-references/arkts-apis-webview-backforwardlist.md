@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (BackForwardList)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Interface (BackForwardList)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:10+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:2c445ee395554739108e11202852f3624c3d7ec8f8170d2268d47cf0b8b04519
+scraped_at: 2026-09-02T15:01:27+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:237abb58eef854bfe5c23bd0fd80cc9a410f41353e0f5e58a8a62cb92f2d5e27
 ---
 
-当前Webview的历史信息列表。
+BackForwardList是ArkWeb框架中用于访问Web组件浏览历史列表的接口，通过[getBackForwardEntries](arkts-apis-webview-webviewcontroller.md#getbackforwardentries)方法获取。该接口提供对页面导航历史记录的只读访问能力，开发者可以获取当前历史列表的基本信息（当前索引和历史条目总数），以及通过索引获取指定历史记录项的详细信息。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 9开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 本Interface首批接口从API version 9开始支持。
@@ -18,30 +18,24 @@ content_hash: sha256:2c445ee395554739108e11202852f3624c3d7ec8f8170d2268d47cf0b8b
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { webview } from '@kit.ArkWeb';
+```ts
+import { webview } from '@kit.ArkWeb';
 ```
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | currentIndex | number | 否 | 否 | 当前在页面历史列表中的索引。 |
-| size | number | 否 | 否 | 历史列表中索引的数量，最多保存50条，超过时起始记录会被覆盖。 |
+| size | number | 否 | 否 | 历史列表中历史记录的数量，最多保存50条，超过时起始记录会被覆盖。 |
 
 ## getItemAtIndex
 
-PhonePC/2in1TabletTVWearable
-
 getItemAtIndex(index: number): HistoryItem
 
-获取历史列表中指定索引的历史记录项信息。
+获取历史列表中指定索引的历史记录项信息。需先通过[getBackForwardEntries](arkts-apis-webview-webviewcontroller.md#getbackforwardentries)方法获取BackForwardList实例。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -67,33 +61,33 @@ getItemAtIndex(index: number): HistoryItem
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { BusinessError } from '@kit.BasicServicesKit';
-4. import { image } from '@kit.ImageKit';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { image } from '@kit.ImageKit';
 
-6. @Entry
-7. @Component
-8. struct WebComponent {
-9. controller: webview.WebviewController = new webview.WebviewController();
-10. @State icon: image.PixelMap | undefined = undefined;
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State icon: image.PixelMap | undefined = undefined;
 
-12. build() {
-13. Column() {
-14. Button('getBackForwardEntries')
-15. .onClick(() => {
-16. try {
-17. let list = this.controller.getBackForwardEntries();
-18. let historyItem = list.getItemAtIndex(list.currentIndex);
-19. console.info("HistoryItem: " + JSON.stringify(historyItem));
-20. this.icon = historyItem.icon;
-21. } catch (error) {
-22. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-23. }
-24. })
-25. Web({ src: 'www.example.com', controller: this.controller })
-26. }
-27. }
-28. }
+  build() {
+    Column() {
+      Button('getBackForwardEntries')
+        .onClick(() => {
+          try {
+            let list = this.controller.getBackForwardEntries();
+            let historyItem = list.getItemAtIndex(list.currentIndex);
+            console.info("HistoryItem: " + JSON.stringify(historyItem));
+            this.icon = historyItem.icon;
+          } catch (error) {
+            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+          }
+        })
+      Web({ src: 'www.example.com', controller: this.controller })
+    }
+  }
+}
 ```

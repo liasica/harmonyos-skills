@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 如何在HarmonyOS PC/2in1设备上查看MAC地址
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > 如何在HarmonyOS PC/2in1设备上查看MAC地址
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:22+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:13+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:621c81f13224ee307cdf46eef9ffa978966a7a9a0a22c0ac4fa4407f6b413fed
 ---
 

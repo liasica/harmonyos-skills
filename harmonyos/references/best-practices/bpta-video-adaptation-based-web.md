@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-video-adap
 title: Web页面视频适配
 breadcrumb: 最佳实践 > 应用框架 > ArkWeb > Web页面视频适配
 category: best-practices
-scraped_at: 2026-04-29T14:11:04+08:00
-doc_updated_at: 2026-03-26
-content_hash: sha256:b4497624446fc82f84321f21d555e4a3ffee494b00fb9cb2d06aa940f51d9784
+scraped_at: 2026-09-02T15:03:17+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:90803db463a08a6670f49ae7819fe251e6d8086d8bbbffb85cc643083f7eb0ee
 ---
 
 ## 概述
@@ -22,13 +22,14 @@ content_hash: sha256:b4497624446fc82f84321f21d555e4a3ffee494b00fb9cb2d06aa940f51
 
 默认情况下，网页中的视频点击全屏按钮后，会在移动设备上以竖屏形式播放视频，同时也无法兼容手势返回，对于用户而言，竖屏播放视频画面有限，更希望视频能够以横屏全屏的形式播放，同时使用手势返回后，只退出全屏播放，而不是返回到桌面，在这种情况下，就需要开发者对Web视频做全屏播放的适配。
 
-**图1** 默认情况下进入视频全屏播放效果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/_s_i3iI1RSKqx0mD_rAEWg/zh-cn_image_0000002194009880.gif "点击放大")
+**图1** 默认情况下进入视频全屏播放效果
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/VknDZ5F7T0ucOQra7ARRQg/zh-cn_image_0000002651587052.gif)
 
 ### 实现原理
 
 **图2** Web页面适配全屏播放视频流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/fY4VqCXgSbaecRwjObHptA/zh-cn_image_0000002229335673.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/ReRQg8RfTWajHfmCRTb9tA/zh-cn_image_0000002229335673.png "点击放大")
 
 全屏播放视频首先需要Web页面做沉浸式展示，才能保证在进入全屏显示后，视频能够在非安全区展示。具体实现可以参考[开发应用沉浸式效果](../harmonyos-guides/arkts-develop-apply-immersive-effects.md)。
 
@@ -42,7 +43,7 @@ content_hash: sha256:b4497624446fc82f84321f21d555e4a3ffee494b00fb9cb2d06aa940f51
 * 若为使用Navigation加载的页面，则可在NavDestination的[onBackPressed()](../harmonyos-references/ts-basic-components-navdestination.md#onbackpressed10)回调中，同样通过调用[exitFullScreen()](../harmonyos-references/arkts-apis-webview-nativemediaplayerbridge.md#exitfullscreen12)退出全屏。
 
 **图3** Web页面适配全屏播放效果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/XjS5nCvhR4-9JUFf-CFbSQ/zh-cn_image_0000002193850280.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/LCzN3yxxSYW3VJYcFOLEcQ/zh-cn_image_0000002681626841.gif)
 
 ### 实现步骤
 
@@ -50,111 +51,109 @@ content_hash: sha256:b4497624446fc82f84321f21d555e4a3ffee494b00fb9cb2d06aa940f51
 
 1. Web页面实现时需要注意进行非安全区内容避让，Web组件在加载Web页面时通过[expandSafeArea()](../harmonyos-references/ts-universal-attributes-expand-safe-area.md#expandsafearea)扩展其安全区域，从而让视频沉浸式显示。
 
+   ```screen
+   Web({
+     src: $rawfile(/zh/.test(this.language) ? 'index_cn.html' : 'index_en.html'),
+     controller: this.webController
+   })
+   // ...
+     .expandSafeArea([SafeAreaType.SYSTEM])
    ```
-   1. Web({
-   2. src: $rawfile(/zh/.test(this.language) ? 'index_cn.html' : 'index_en.html'),
-   3. controller: this.webController
-   4. })
-   5. // ...
-   6. .expandSafeArea([SafeAreaType.SYSTEM])
-   ```
-
-   [Index.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/VideoProcessBaseWeb/entry/src/main/ets/pages/Index.ets#L145-L159)
 2. 自定义改变设备横竖屏状态函数，此处定义了changeOrientation()函数，在函数内通过[setPreferredOrientation()](../harmonyos-references/arkts-apis-window-window.md#setpreferredorientation9)接口改变屏幕方向。
 
+   ```screen
+   @Entry
+   @Component
+   struct Index {
+     // ...
+     private windowClass: window.Window | null = null;
+     private context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+     // ...
+     aboutToAppear(): void {
+       window.getLastWindow(this.context)
+         .then((windowClass) => this.windowClass = windowClass)
+         .catch((error: BusinessError<void>) => {
+           hilog.error(0x0000, 'testTag', 'Execution failed, code = %{public}d, message = %{public}s',
+             error.code, error.message);
+         });
+       // ...
+     }
+
+     /**
+      * Changes the preferred orientation of the window.
+      *
+      * @param orientation - The preferred orientation to set. This should be a value from the `window.Orientation` enum.
+      * @returns void - This function does not return any value.
+      */
+     changeOrientation(orientation: window.Orientation) {
+       this.windowClass?.setPreferredOrientation(orientation).catch((error: BusinessError<void>) => {
+         hilog.error(0x0000, 'testTag', 'Execution failed, code = %{public}d, message = %{public}s',
+           error.code, error.message);
+       });
+     }
+
+     // ...
+
+     build() {
+       // ...
+   }
    ```
-   1. @Entry
-   2. @Component
-   3. struct Index {
-   4. // ...
-   5. private windowClass: window.Window | null = null;
-   6. private context: common.UIAbilityContext = context as common.UIAbilityContext;
-   7. // ...
-   8. aboutToAppear(): void {
-   9. window.getLastWindow(this.context).then((windowClass) => this.windowClass = windowClass);
-   10. // ...
-   11. }
-
-   13. /**
-   14. * Changes the preferred orientation of the window.
-   15. *
-   16. * @param orientation - The preferred orientation to set. This should be a value from the `window.Orientation` enum.
-   17. * @returns void - This function does not return any value.
-   18. */
-   19. changeOrientation(orientation: window.Orientation) {
-   20. this.windowClass?.setPreferredOrientation(orientation);
-   21. }
-
-   23. // ...
-
-   25. build() {
-   26. // ...
-   27. }
-   ```
-
-   [Index.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/VideoProcessBaseWeb/entry/src/main/ets/pages/Index.ets#L29-L222)
 3. 设置Web组件的[onFullScreenEnter()](../harmonyos-references/arkts-basic-components-web-events.md#onfullscreenenter9)方法，在方法内通过刚刚定义的changeOrientation()方法改变设备的横竖屏状态，设置屏幕方向为[window.Orientation.LANDSCAPE](../harmonyos-references/js-apis-display.md#orientation10)（横屏显示模式）。此时需要存储event中的[handler](../harmonyos-references/arkts-basic-components-web-i.md#fullscreenenterevent12)，该函数句柄中存储了退出全屏的方法[exitFullScreen()](../harmonyos-references/arkts-basic-components-web-fullscreenexithandler.md#exitfullscreen9)。
 
+   ```screen
+   @Entry
+   @Component
+   struct Index {
+     // ...
+     private isFullScreen: boolean = false;
+     private handler: FullScreenExitHandler | null = null;
+     // ...
+
+     build() {
+       Column() {
+         Web({
+           src: $rawfile(/zh/.test(this.language) ? 'index_cn.html' : 'index_en.html'),
+           controller: this.webController
+         })
+         // ...
+           .onFullScreenEnter((event) => {
+             this.handler = event.handler;
+             this.changeOrientation(window.Orientation.LANDSCAPE);
+             this.isFullScreen = true;
+           })
+           // ...
+
+       }
+     }
+   }
    ```
-   1. @Entry
-   2. @Component
-   3. struct Index {
-   4. // ...
-   5. private isFullScreen: boolean = false;
-   6. private handler: FullScreenExitHandler | null = null;
-   7. // ...
-
-   9. build() {
-   10. Column() {
-   11. Web({
-   12. src: $rawfile(/zh/.test(this.language) ? 'index_cn.html' : 'index_en.html'),
-   13. controller: this.webController
-   14. })
-   15. // ...
-   16. .onFullScreenEnter((event) => {
-   17. this.handler = event.handler;
-   18. this.changeOrientation(window.Orientation.LANDSCAPE);
-   19. this.isFullScreen = true;
-   20. })
-   21. // ...
-
-   23. }
-   24. }
-   25. }
-   ```
-
-   [Index.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/VideoProcessBaseWeb/entry/src/main/ets/pages/Index.ets#L30-L221)
 
 **退出全屏播放**
 
 1. 设置Web组件的[onFullScreenExit()](../harmonyos-references/arkts-basic-components-web-events.md#onfullscreenexit9)回调，在回调内通过changeOrientation()方法改变设备的横竖屏状态，设置屏幕方向为[window.Orientation.PORTRAIT](../harmonyos-references/js-apis-display.md#orientation10)（竖屏显示模式）。
 
+   ```screen
+   Web({
+     src: $rawfile(/zh/.test(this.language) ? 'index_cn.html' : 'index_en.html'),
+     controller: this.webController
+   })
+   // ...
+     .onFullScreenExit(() => {
+       this.changeOrientation(window.Orientation.PORTRAIT);
+       this.isFullScreen = false;
+     })
    ```
-   1. Web({
-   2. src: $rawfile(/zh/.test(this.language) ? 'index_cn.html' : 'index_en.html'),
-   3. controller: this.webController
-   4. })
-   5. // ...
-   6. .onFullScreenExit(() => {
-   7. this.changeOrientation(window.Orientation.PORTRAIT);
-   8. this.isFullScreen = false;
-   9. })
-   ```
-
-   [Index.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/VideoProcessBaseWeb/entry/src/main/ets/pages/Index.ets#L146-L213)
 2. 处理手势返回，以下以首页返回为例，需要在[onBackPress()](../harmonyos-references/ts-custom-component-lifecycle.md#onbackpress)页面生命周期函数中，判断当前是否处于全屏显示状态，若处于全屏显示，则调用之前存储的handler中的[exitFullScreen()](../harmonyos-references/arkts-basic-components-web-fullscreenexithandler.md#exitfullscreen9)退出全屏。
 
+   ```screen
+   onBackPress(): boolean | void {
+     if (this.isFullScreen && this.handler) {
+       this.handler.exitFullScreen();
+       return true;
+     }
+     return false;
+   }
    ```
-   1. onBackPress(): boolean | void {
-   2. if (this.isFullScreen && this.handler) {
-   3. this.handler.exitFullScreen();
-   4. return true;
-   5. }
-   6. return false;
-   7. }
-   ```
-
-   [Index.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/VideoProcessBaseWeb/entry/src/main/ets/pages/Index.ets#L128-L134)
 
 ## 长按复制视频链接
 
@@ -163,7 +162,7 @@ content_hash: sha256:b4497624446fc82f84321f21d555e4a3ffee494b00fb9cb2d06aa940f51
 长按复制视频链接经常被应用于社交分享的场景，用户在应用内看到感兴趣的视频内容希望分享给周边的人，通过长按希望分享的视频选中“复制视频链接地址”选项，可以帮助用户快捷准确地获取到视频的链接地址。
 
 **图4** 长按复制视频链接地址效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/6CP-vUwrS329viX_b5Rz9w/zh-cn_image_0000002229335677.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/QzP6jOIyRSSnIXI0Bd77LQ/zh-cn_image_0000002651427152.gif)
 
 ### 实现原理
 
@@ -176,151 +175,148 @@ content_hash: sha256:b4497624446fc82f84321f21d555e4a3ffee494b00fb9cb2d06aa940f51
 
 1. 定义弹窗内容组件，此处使用[Menu](../harmonyos-references/ts-basic-components-menu.md)作为弹窗内容，通过循环渲染menus菜单数据生成对应的菜单列表。
 
-   ```
-   1. //src/main/ets/view/CustomPopupMenu.ets
+   ```screen
+   //src/main/ets/view/CustomPopupMenu.ets
 
-   3. /**
-   4. * A custom popup menu Builder.
-   5. *
-   6. * @param uri - The URI for which the popup menu will be built.
-   7. * @param context - The UI context in which the popup menu will be used. This should be an instance of `common.UIAbilityContext`.
-   8. * @param openDownloadDialog - A function that, when called, will open a download dialog.
-   9. * @param closeDownloadDialog - A function that, when called, will close the download dialog.
-   10. * @param changeIsShow - A function that, when called, will change the visibility of certain UI elements.
-   11. */
-   12. @Builder
-   13. export function customPopupMenuBuilder(
-   14. uri: string,
-   15. context: common.UIAbilityContext,
-   16. openDownloadDialog: Function,
-   17. closeDownloadDialog: Function,
-   18. changeIsShow: Function
-   19. ) {
-   20. Column() {
-   21. Menu() {
-   22. ForEach(menus, (menu: MenuItem) => {
-   23. MenuItem({
-   24. content: menu.text
-   25. })
-   26. .height(singlePopupHeight)
-   27. .onClick(() => {
-   28. try {
-   29. menu.caller && menu.caller(uri, context, openDownloadDialog, closeDownloadDialog);
-   30. changeIsShow();
-   31. } catch (e) {
-   32. hilog.error(0x000, Constants.TAG, `some error happened, ${JSON.stringify(e)}`);
-   33. }
-   34. })
-   35. }, (menu: MenuItem) => menu.id)
-   36. }
-   37. .width(popupWidth)
-   38. }
-   39. }
+   /**
+    * A custom popup menu Builder.
+    *
+    * @param uri - The URI for which the popup menu will be built.
+    * @param context - The UI context in which the popup menu will be used. This should be an instance of `common.UIAbilityContext`.
+    * @param openDownloadDialog - A function that, when called, will open a download dialog.
+    * @param closeDownloadDialog - A function that, when called, will close the download dialog.
+    * @param changeIsShow - A function that, when called, will change the visibility of certain UI elements.
+    */
+   @Builder
+   export function customPopupMenuBuilder(
+     uri: string,
+     context: common.UIAbilityContext,
+     openDownloadDialog: Function,
+     closeDownloadDialog: Function,
+     changeIsShow: Function
+   ) {
+     Column() {
+       Menu() {
+         ForEach(menus, (menu: MenuItem) => {
+           MenuItem({
+             content: menu.text
+           })
+             .height(singlePopupHeight)
+             .onClick(() => {
+               try {
+                 menu.caller && menu.caller(uri, context, openDownloadDialog, closeDownloadDialog);
+                 changeIsShow();
+               } catch (e) {
+                 hilog.error(0x000, Constants.TAG, `some error happened, ${JSON.stringify(e)}`);
+               }
+             })
+         }, (menu: MenuItem) => menu.id)
+       }
+       .width(popupWidth)
+     }
+   }
    ```
-
-   [CustomPopupMenu.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/VideoProcessBaseWeb/entry/src/main/ets/view/CustomPopupMenu.ets#L51-L89)
 2. 定义isShow作为弹窗显示控制的状态变量，并为Web组件绑定popup弹窗。
 
+   ```screen
+   @Entry
+   @Component
+   struct Index {
+     @State isShow: boolean = false;
+     // ...
+     private context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+     // ...
+
+     build() {
+       Column() {
+         Web({
+           src: $rawfile(/zh/.test(this.language) ? 'index_cn.html' : 'index_en.html'),
+           controller: this.webController
+         })
+         // ...
+           .bindPopup(this.isShow, {
+             builder: customPopupMenuBuilder(
+               this.linkUrl,
+               this.context,
+               this.openDownloadDialog,
+               this.closeDownloadDialog,
+               this.changeIsShow,
+             ),
+             enableArrow: false,
+             placement: Placement.TopLeft,
+             offset: getOffset(this.webWidth, this.webHeight,
+               this.pressPosX, this.pressPosY),
+             onStateChange: (event) => {
+               if (!event.isVisible) {
+                 this.isShow = false;
+                 this.result?.closeContextMenu();
+               }
+             }
+           })
+           // ...
+
+       }
+     }
+   }
    ```
-   1. const uiContext: UIContext | undefined = AppStorage.get('uiContext');
-   2. let context = uiContext!.getHostContext();
-   3. @Entry
-   4. @Component
-   5. struct Index {
-   6. @State isShow: boolean = false;
-   7. // ...
-
-   9. build() {
-   10. Column() {
-   11. Web({
-   12. src: $rawfile(/zh/.test(this.language) ? 'index_cn.html' : 'index_en.html'),
-   13. controller: this.webController
-   14. })
-   15. // ...
-   16. .bindPopup(this.isShow, {
-   17. builder: customPopupMenuBuilder(
-   18. this.linkUrl,
-   19. this.context,
-   20. this.openDownloadDialog,
-   21. this.closeDownloadDialog,
-   22. this.changeIsShow,
-   23. ),
-   24. enableArrow: false,
-   25. placement: Placement.TopLeft,
-   26. offset: getOffset(this.webWidth, this.webHeight,
-   27. this.pressPosX, this.pressPosY),
-   28. onStateChange: (e) => {
-   29. if (!e.isVisible) {
-   30. this.isShow = false;
-   31. this.result?.closeContextMenu();
-   32. }
-   33. }
-   34. })
-   35. // ...
-
-   37. }
-   38. }
-   39. }
-   ```
-
-   [Index.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/VideoProcessBaseWeb/entry/src/main/ets/pages/Index.ets#L26-L223)
 3. 使用Web组件的[onContextMenuShow()](../harmonyos-references/arkts-basic-components-web-events.md#oncontextmenushow9)事件，当触发自定义弹窗时，通过事件参数[event.param.getSourceUrl()](../harmonyos-references/arkts-basic-components-web-webcontextmenuparam.md#getsourceurl9)获取到Web视频链接地址。
 
+   ```screen
+   @Entry
+   @Component
+   struct Index {
+     @State isShow: boolean = false;
+     // ...
+
+     build() {
+       Column() {
+         Web({
+           src: $rawfile(/zh/.test(this.language) ? 'index_cn.html' : 'index_en.html'),
+           controller: this.webController
+         })
+         // ...
+           .onContextMenuShow((event) => {
+             if (!event) {
+               return false;
+             }
+             // ...
+             this.linkUrl = event.param.getSourceUrl();
+             this.isShow = true;
+             return true;
+           })
+           // ...
+
+       }
+     }
+   }
    ```
-   1. @Entry
-   2. @Component
-   3. struct Index {
-   4. @State isShow: boolean = false;
-   5. // ...
-
-   7. build() {
-   8. Column() {
-   9. Web({
-   10. src: $rawfile(/zh/.test(this.language) ? 'index_cn.html' : 'index_en.html'),
-   11. controller: this.webController
-   12. })
-   13. // ...
-   14. .onContextMenuShow((event) => {
-   15. if (!event) {
-   16. return false;
-   17. }
-   18. // ...
-   19. this.linkUrl = event.param.getSourceUrl();
-   20. this.isShow = true;
-   21. return true;
-   22. })
-   23. // ...
-
-   25. }
-   26. }
-   27. }
-   ```
-
-   [Index.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/VideoProcessBaseWeb/entry/src/main/ets/pages/Index.ets#L31-L224)
 4. 将获取的链接地址通过[setData()](../harmonyos-references/js-apis-pasteboard.md#setdata9)方法写入到系统剪贴板，即可完成视频地址的复制。
 
+   ```screen
+   /**
+    * Copies a URI to the system clipboard.
+    *
+    * @param uri - The URI to be copied to the clipboard. This should be a valid string representing a URI.
+    * @returns void - This function does not return any value.
+    */
+   export function copyLink(uri: string) {
+     const pasteData = pasteboard.createData('text/plain', uri);
+     pasteboard.getSystemPasteboard().setData(pasteData, (err) => {
+       if (err) {
+         hilog.error(0x000, Constants.TAG, JSON.stringify(err));
+         return;
+       }
+       try {
+         uiContext?.getPromptAction().showToast({
+           message: $r('app.string.copy_success')
+         })
+       } catch (error) {
+         hilog.error(0x0000, 'testTag', 'Execution failed, code = %{public}d, message = %{public}s',
+           error.code, error.message);
+       }
+     })
+   }
    ```
-   1. /**
-   2. * Copies a URI to the system clipboard.
-   3. *
-   4. * @param uri - The URI to be copied to the clipboard. This should be a valid string representing a URI.
-   5. * @returns void - This function does not return any value.
-   6. */
-   7. export function copyLink(uri: string) {
-   8. const pasteData = pasteboard.createData('text/plain', uri);
-   9. pasteboard.getSystemPasteboard().setData(pasteData, (err) => {
-   10. if (err) {
-   11. hilog.error(0x000, Constants.TAG, JSON.stringify(err));
-   12. return;
-   13. }
-   14. context1.showToast({
-   15. message: $r('app.string.copy_success')
-   16. })
-   17. })
-   18. }
-   ```
-
-   [CustomFunction.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/VideoProcessBaseWeb/entry/src/main/ets/utils/CustomFunction.ets#L28-L45)
 
 ## 长按下载视频
 
@@ -331,7 +327,7 @@ content_hash: sha256:b4497624446fc82f84321f21d555e4a3ffee494b00fb9cb2d06aa940f51
 ### 实现原理
 
 **图5** 长按下载视频整体适配流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/8Dg28eR5TZyEmgMf7jWuig/zh-cn_image_0000002194009868.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/hQUWb8C8T6aTurEn8nYrKQ/zh-cn_image_0000002194009868.png "点击放大")
 
 长按视频区域后，可通过在[onContextMenuShow()](../harmonyos-references/arkts-basic-components-web-events.md#oncontextmenushow9)接口中的事件参数[event.param.getSourceUrl()](../harmonyos-references/arkts-basic-components-web-webcontextmenuparam.md#getsourceurl9)获取到视频链接地址。
 
@@ -345,147 +341,131 @@ content_hash: sha256:b4497624446fc82f84321f21d555e4a3ffee494b00fb9cb2d06aa940f51
 通过Web组件关联的WebviewController调用[startDownload()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#startdownload11)并传入视频链接地址触发下载。
 
 **图6** 长按下载视频效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/lE_4PfoeRMOEzfIDneP2xw/zh-cn_image_0000002229450161.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/hJHHNDJ2TCKP6bDsg-dwLA/zh-cn_image_0000002681786659.gif)
 
 ### 开发步骤
 
 1. 通过Web组件的[onContextMenuShow()](../harmonyos-references/arkts-basic-components-web-events.md#oncontextmenushow9)事件，在事件参数event中通过[event.param.getSourceUrl()](../harmonyos-references/arkts-basic-components-web-webcontextmenuparam.md#getsourceurl9)获取到视频链接地址。
 
+   ```screen
+   @Entry
+   @Component
+   struct Index {
+     @State isShow: boolean = false;
+     // ...
+
+     build() {
+       Column() {
+         Web({
+           src: $rawfile(/zh/.test(this.language) ? 'index_cn.html' : 'index_en.html'),
+           controller: this.webController
+         })
+         // ...
+           .onContextMenuShow((event) => {
+             if (!event) {
+               return false;
+             }
+             // ...
+             this.linkUrl = event.param.getSourceUrl();
+             this.isShow = true;
+             return true;
+           })
+           // ...
+
+       }
+     }
+   }
    ```
-   1. @Entry
-   2. @Component
-   3. struct Index {
-   4. @State isShow: boolean = false;
-   5. // ...
-
-   7. build() {
-   8. Column() {
-   9. Web({
-   10. src: $rawfile(/zh/.test(this.language) ? 'index_cn.html' : 'index_en.html'),
-   11. controller: this.webController
-   12. })
-   13. // ...
-   14. .onContextMenuShow((event) => {
-   15. if (!event) {
-   16. return false;
-   17. }
-   18. // ...
-   19. this.linkUrl = event.param.getSourceUrl();
-   20. this.isShow = true;
-   21. return true;
-   22. })
-   23. // ...
-
-   25. }
-   26. }
-   27. }
-   ```
-
-   [Index.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/VideoProcessBaseWeb/entry/src/main/ets/pages/Index.ets#L31-L224)
 2. 通过[setDownloadDelegate()](../harmonyos-references/arkts-apis-webview-webdownloadmanager.md#setdownloaddelegate11)为Web组件关联的控制器WebviewController绑定下载委托类WebDownloadDelegate。
 
+   ```screen
+   export class WebDownloadManager extends AbstractWebDownloadManager
+   implements ControllerManager {
+     // ...
+     // Define the download delegate instance.
+     private delegate: webview.WebDownloadDelegate = new webview.WebDownloadDelegate();
+
+     // ...
+     public start(controllerName: string, path: string, url: string): Promise<string> {
+       return new Promise((resolve, reject) => {
+         const controller = this.getController(controllerName);
+         // ...
+           // Associate the download delegate with the webview controller.
+           controller?.setDownloadDelegate(this.delegate);
+           // ...
+         } catch (error) {
+           hilog.error(0x0000, 'testTag', 'getDefaultDisplaySync failed, code = %{public}d, message = %{public}s',
+             error.code, error.message);
+         }
+       });
+     }
+
+     // ...
+   }
    ```
-   1. export class WebDownloadManager extends AbstractWebDownloadManager
-   2. implements ControllerManager {
-   3. // ...
-   4. // Define the download delegate instance.
-   5. private delegate: webview.WebDownloadDelegate = new webview.WebDownloadDelegate();
-
-   7. // ...
-   8. public start(controllerName: string, path: string, url: string): Promise<string> {
-   9. return new Promise((resolve, reject) => {
-   10. const controller = this.getController(controllerName);
-   11. // ...
-   12. // Associate the download delegate with the webview controller.
-   13. controller?.setDownloadDelegate(this.delegate);
-   14. // ...
-   15. } catch (error) {
-   16. hilog.error(0x0000, 'testTag', 'Execution failed, code = %{public}d, message = %{public}s',
-   17. error.code, error.message);
-   18. }
-   19. });
-   20. }
-
-   22. // ...
-   23. }
-   ```
-
-   [WebDownloadManager.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/VideoProcessBaseWeb/entry/src/main/ets/utils/WebDownloadManager.ets#L40-L197)
 3. 为WebDownloadDelegate下载委托类设置相关事件回调。
    1. 下载开始前需要指定文件的存储路径，开发者可通过UIAbilityContent上的filesDir传入[应用沙箱目录](../harmonyos-guides/app-sandbox-directory.md)作为下载地址，通过WebDownloadItem的[start()](../harmonyos-references/arkts-apis-webview-webdownloaditem.md#start11)方法传入下载路径即可完成配置。
 
+      ```screen
+      this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
+        this.currentTask = webDownloadItem;
+        this.sourcePath = path + '/' + webDownloadItem.getSuggestedFileName();
+        this.currentTask.start(this.sourcePath);
+        // Specify the download path before downloading.
+        this.taskStatus = webDownloadItem.getState();
+      })
       ```
-      1. this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
-      2. this.currentTask = webDownloadItem;
-      3. this.sourcePath = path + '/' + webDownloadItem.getSuggestedFileName();
-      4. this.currentTask.start(this.sourcePath);
-      5. // Specify the download path before downloading.
-      6. this.taskStatus = webDownloadItem.getState();
-      7. })
-      ```
-
-      [WebDownloadManager.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/VideoProcessBaseWeb/entry/src/main/ets/utils/WebDownloadManager.ets#L73-L79)
    2. 任务下载过程中，开发者可按需维护下载相关信息，例如此处维护了下载的进度downloadProgress与下载速度downloadSpeed提供给UI组件进行展示，下载进度通过webDownloadItem调用[getPercentComplete()](../harmonyos-references/arkts-apis-webview-webdownloaditem.md#getpercentcomplete11)方法获取，下载速度通过webDownloadItem调用[getCurrentSpeed()](../harmonyos-references/arkts-apis-webview-webdownloaditem.md#getcurrentspeed11)方法获取。
 
+      ```screen
+      this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
+        this.currentTask = webDownloadItem;
+        // maintain download progress.
+        this.downloadProgress = webDownloadItem.getPercentComplete();
+        this.downloadSpeed = webDownloadItem.getCurrentSpeed();
+        this.taskStatus = webDownloadItem.getState();
+      })
       ```
-      1. this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
-      2. this.currentTask = webDownloadItem;
-      3. // maintain download progress.
-      4. this.downloadProgress = webDownloadItem.getPercentComplete();
-      5. this.downloadSpeed = webDownloadItem.getCurrentSpeed();
-      6. this.taskStatus = webDownloadItem.getState();
-      7. })
-      ```
-
-      [WebDownloadManager.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/VideoProcessBaseWeb/entry/src/main/ets/utils/WebDownloadManager.ets#L82-L88)
    3. 当任务下载成功后，开发者可以向用户提示下载完成，并按需执行后续的业务逻辑。例如将视频分享给其他软件或保存到其他位置，此处以用户提示下载完成为例。
 
+      ```screen
+      this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
+        this.taskStatus = webDownloadItem.getState();
+        resolve(this.sourcePath);
+      })
       ```
-      1. this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
-      2. this.taskStatus = webDownloadItem.getState();
-      3. resolve(this.sourcePath);
-      4. })
-      ```
-
-      [WebDownloadManager.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/VideoProcessBaseWeb/entry/src/main/ets/utils/WebDownloadManager.ets#L99-L102)
    4. WebDownloadDelegate也提供了下载失败的事件回调，并提供了序列化下载任务的方法，开发者可以使用[serialize()](../harmonyos-references/arkts-apis-webview-webdownloaditem.md#serialize11)方法将下载失败的任务进行序列化，便于之后恢复下载。
 
+      ```screen
+      this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
+        // Serialize the download data when the download fails to resume the download.
+        this.failedData = webDownloadItem.serialize();
+        this.taskStatus = webDownloadItem.getState();
+        reject(new Error('download failed'));
+      })
       ```
-      1. this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
-      2. // Serialize the download data when the download fails to resume the download.
-      3. this.failedData = webDownloadItem.serialize();
-      4. this.taskStatus = webDownloadItem.getState();
-      5. reject(new Error('download failed'));
-      6. })
-      ```
-
-      [WebDownloadManager.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/VideoProcessBaseWeb/entry/src/main/ets/utils/WebDownloadManager.ets#L91-L96)
    5. 在合适的时机首先通过webview.WebDownloadManager上的[setDownloadDelegate()](../harmonyos-references/arkts-apis-webview-webdownloadmanager.md#setdownloaddelegate11)方法重新绑定下载委托类，再通过[deserialize()](../harmonyos-references/arkts-apis-webview-webdownloaditem.md#deserialize11)将失败数据反序列化，最后通过[resumeDownload()](../harmonyos-references/arkts-apis-webview-webdownloadmanager.md#resumedownload11)方法恢复下载任务，被恢复任务会自动开始下载。
 
+      ```screen
+      // Provides an external interface for resuming downloads.
+      public resume() {
+        try {
+          const state = this.currentTask.getState();
+          if (state === webview.WebDownloadState.CANCELED) {
+            webview.WebDownloadManager.setDownloadDelegate(this.delegate);
+            webview.WebDownloadManager.resumeDownload(webview.WebDownloadItem.deserialize(this.failedData));
+          }
+        } catch (error) {
+          hilog.error(0x0000, 'testTag', 'Execution failed, code = %{public}d, message = %{public}s',
+            error.code, error.message);
+        }
+      }
       ```
-      1. // Provides an external interface for resuming downloads.
-      2. public resume() {
-      3. const state = this.currentTask.getState();
-      4. if (state === webview.WebDownloadState.CANCELED) {
-      5. webview.WebDownloadManager.setDownloadDelegate(this.delegate);
-      6. try {
-      7. webview.WebDownloadManager.resumeDownload(webview.WebDownloadItem.deserialize(this.failedData));
-      8. } catch (error) {
-      9. hilog.error(0x0000, 'testTag', 'Execution failed, code = %{public}d, message = %{public}s',
-      10. error.code, error.message);
-      11. }
-      12. }
-      13. }
-      ```
-
-      [WebDownloadManager.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/VideoProcessBaseWeb/entry/src/main/ets/utils/WebDownloadManager.ets#L145-L157)
 4. 通过WebviewController提供的[startDownload()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#startdownload11)方法并传入获取到的视频链接来启动下载。
 
+   ```screen
+   controller?.startDownload(url);
    ```
-   1. controller?.startDownload(url);
-   ```
-
-   [WebDownloadManager.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/VideoProcessBaseWeb/entry/src/main/ets/utils/WebDownloadManager.ets#L110-L110)
 
 ## 总结
 
@@ -493,4 +473,4 @@ content_hash: sha256:b4497624446fc82f84321f21d555e4a3ffee494b00fb9cb2d06aa940f51
 
 ## 示例代码
 
-* [基于Web的视频处理](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/tree/master/VideoProcessBaseWeb)
+* [基于Web组件实现视频处理功能](https://gitcode.com/HarmonyOS_Samples/VideoProcessBaseWeb/tree/master)

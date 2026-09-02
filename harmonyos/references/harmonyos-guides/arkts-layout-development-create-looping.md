@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 创建轮播 (Swiper)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 媒体展示 > 创建轮播 (Swiper)
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7843e3ac1e06552784c981e22a0d67c275a93039f492a09e4cab26e5ffe9fbb7
+scraped_at: 2026-09-02T14:49:50+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4ef87b06e2abd73dcdace813db258ba4e20aea1619c3dc466e0e2cbe8b8c78b4
 ---
 
 [Swiper](../harmonyos-references/ts-container-swiper.md)组件提供滑动轮播显示的能力。Swiper本身是一个容器组件，当设置了多个子组件后，可以对这些子组件进行轮播显示。通常，在一些应用首页显示推荐的内容时，需要用到轮播显示的能力。
@@ -24,50 +24,46 @@ Swiper作为一个容器组件，如果设置了自身尺寸属性，则在轮�
 
 * loop为true
 
+```typescript
+Swiper() {
+  Text('0')
+    .width('90%')
+    .height('100%')
+    .backgroundColor(Color.Gray)
+    .textAlign(TextAlign.Center)
+    .fontSize(30)
+
+  Text('1')
+    .width('90%')
+    .height('100%')
+    .backgroundColor(Color.Green)
+    .textAlign(TextAlign.Center)
+    .fontSize(30)
+
+  Text('2')
+    .width('90%')
+    .height('100%')
+    .backgroundColor(Color.Pink)
+    .textAlign(TextAlign.Center)
+    .fontSize(30)
+}
+// ...
+.loop(true)
 ```
-1. Swiper() {
-2. Text('0')
-3. .width('90%')
-4. .height('100%')
-5. .backgroundColor(Color.Gray)
-6. .textAlign(TextAlign.Center)
-7. .fontSize(30)
 
-9. Text('1')
-10. .width('90%')
-11. .height('100%')
-12. .backgroundColor(Color.Green)
-13. .textAlign(TextAlign.Center)
-14. .fontSize(30)
-
-16. Text('2')
-17. .width('90%')
-18. .height('100%')
-19. .backgroundColor(Color.Pink)
-20. .textAlign(TextAlign.Center)
-21. .fontSize(30)
-22. }
-23. // ···
-24. .loop(true)
-```
-
-[SwiperLoop.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperLoop.ets#L25-L52)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/L4N8KCp7SRu30cw_yBSC-A/zh-cn_image_0000002558604698.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/iYzcIiTWRT65UXFUCz7dWg/zh-cn_image_0000002706673686.gif)
 
 * loop为false
 
-```
-1. Swiper() {
-2. // ···
-3. }
-4. // ···
-5. .loop(false)
+```typescript
+  Swiper() {
+    // ···
+  }
+// ···
+  .loop(false)
 ```
 
-[SwiperLoop.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperLoop.ets#L56-L85)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/TRvcMrH4RVWcX2DsLuntNQ/zh-cn_image_0000002589324223.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/7ODg2-PARFOaByR7reaGaA/zh-cn_image_0000002736432777.gif)
 
 ## 自动轮播
 
@@ -75,19 +71,17 @@ Swiper通过设置[autoPlay](../harmonyos-references/ts-container-swiper.md#auto
 
 autoPlay为true时，会自动切换播放子组件，子组件与子组件之间的播放间隔通过interval属性设置。interval属性默认值为3000，单位毫秒。
 
-```
-1. Swiper() {
-2. // ···
-3. }
-4. // ···
-5. .loop(true)
-6. .autoPlay(true)
-7. .interval(1000)
+```typescript
+  Swiper() {
+    // ···
+  }
+// ···
+  .loop(true)
+  .autoPlay(true)
+  .interval(1000)
 ```
 
-[SwiperAutoPlay.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperAutoPlay.ets#L25-L56)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/04wdDZ3aQdasc-mLy9pz9g/zh-cn_image_0000002589244163.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/8LHThUO4TZOOI4s9A0O8gw/zh-cn_image_0000002706833622.gif)
 
 ## 导航点样式
 
@@ -97,193 +91,183 @@ Swiper提供了默认的导航点样式和导航点箭头样式，导航点默�
 
 * 导航点使用默认样式
 
+```typescript
+Swiper() {
+  Text('0')
+    .width('90%')
+    .height('100%')
+    .backgroundColor(Color.Gray)
+    .textAlign(TextAlign.Center)
+    .fontSize(30)
+
+  Text('1')
+    .width('90%')
+    .height('100%')
+    .backgroundColor(Color.Green)
+    .textAlign(TextAlign.Center)
+    .fontSize(30)
+
+  Text('2')
+    .width('90%')
+    .height('100%')
+    .backgroundColor(Color.Pink)
+    .textAlign(TextAlign.Center)
+    .fontSize(30)
+}
 ```
-1. Swiper() {
-2. Text('0')
-3. .width('90%')
-4. .height('100%')
-5. .backgroundColor(Color.Gray)
-6. .textAlign(TextAlign.Center)
-7. .fontSize(30)
 
-9. Text('1')
-10. .width('90%')
-11. .height('100%')
-12. .backgroundColor(Color.Green)
-13. .textAlign(TextAlign.Center)
-14. .fontSize(30)
-
-16. Text('2')
-17. .width('90%')
-18. .height('100%')
-19. .backgroundColor(Color.Pink)
-20. .textAlign(TextAlign.Center)
-21. .fontSize(30)
-22. }
-```
-
-[SwiperIndicatorStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperIndicatorStyle.ets#L26-L49)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/cir7YEWEQJOhL8VHZittGg/zh-cn_image_0000002558764356.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/SeWxQOnIQ9Gm5OHNsJlXvQ/zh-cn_image_0000002736312731.png)
 
 * 自定义导航点样式
 
-选中的导航点，直径设为30vp，且颜色为蓝色；未选中的导航点，直径设为15vp，颜色设为红色。
+选中的导航点，宽度设为30vp且高度设为15vp，且颜色为蓝色；未选中的导航点，直径设为15vp，颜色设为红色。
 
+```typescript
+  Swiper() {
+    // ···
+  }
+// ···
+  .indicator(
+    Indicator.dot()
+      .left(0)
+      .itemWidth(15)
+      .itemHeight(15)
+      .selectedItemWidth(30)
+      .selectedItemHeight(15)
+      .color(Color.Red)
+      .selectedColor(Color.Blue)
+  )
 ```
-1. Swiper() {
-2. // ···
-3. }
-4. // ···
-5. .indicator(
-6. Indicator.dot()
-7. .left(0)
-8. .itemWidth(15)
-9. .itemHeight(15)
-10. .selectedItemWidth(30)
-11. .selectedItemHeight(15)
-12. .color(Color.Red)
-13. .selectedColor(Color.Blue)
-14. )
-```
 
-[SwiperIndicatorStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperIndicatorStyle.ets#L54-L92)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/kJTiPV-dQW2rqHcxirkCTw/zh-cn_image_0000002558604700.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/iCb6i9p-SIOVi1VXkmFCeQ/zh-cn_image_0000002706673688.png)
 
 Swiper通过设置[displayArrow](../harmonyos-references/ts-container-swiper.md#displayarrow10)属性，可以控制导航点箭头的大小、位置、颜色，底板的大小及颜色，以及鼠标悬停时是否显示箭头。
 
 * 箭头使用默认样式
 
-```
-1. Swiper() {
-2. // ···
-3. }
-4. // ···
-5. .displayArrow(true, false)
+```typescript
+  Swiper() {
+    // ···
+  }
+// ···
+  .displayArrow(true, false)
 ```
 
-[SwiperIndicatorStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperIndicatorStyle.ets#L96-L125)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/gkwmKzkyTxGge9xyouZtBw/zh-cn_image_0000002589324225.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/klPPnpvUSy-wItG0wEpOFA/zh-cn_image_0000002736432779.gif "点击放大")
 
 * 自定义箭头样式
 
 箭头显示在组件两侧，大小为18vp，导航点箭头颜色设为蓝色。
 
-```
-1. Swiper() {
-2. // ···
-3. }
-4. // ···
-5. .displayArrow({
-6. showBackground: true,
-7. isSidebarMiddle: true,
-8. backgroundSize: 24,
-9. backgroundColor: Color.White,
-10. arrowSize: 18,
-11. arrowColor: Color.Blue
-12. }, false)
+```typescript
+  Swiper() {
+    // ···
+  }
+// ···
+  .displayArrow({
+    showBackground: true,
+    isSidebarMiddle: true,
+    backgroundSize: 24,
+    backgroundColor: Color.White,
+    arrowSize: 18,
+    arrowColor: Color.Blue
+  }, false)
 ```
 
-[SwiperIndicatorStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperIndicatorStyle.ets#L129-L165)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/bIcYajSuS62pSwdoNuMoug/zh-cn_image_0000002589244165.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/ywfCgDgLRQCOEkGCFNpUaA/zh-cn_image_0000002706833624.gif "点击放大")
 
 ## 页面切换方式
 
 Swiper支持手指滑动、点击导航点和通过控制器三种方式切换页面，以下示例展示通过控制器切换页面的方法。
 
+```typescript
+// 如需作为页面入口，请取消@Entry的注释并删除export关键字
+// @Entry
+@Component
+export struct SwiperPageSwitchMethod {
+  private swiperBackgroundColors: Color[] = [Color.Blue, Color.Gray, Color.Green, Color.Orange, Color.Brown,
+    Color.Pink, Color.Red, Color.Yellow];
+  private swiperAnimationMode: (SwiperAnimationMode | boolean | undefined)[] = [undefined, true, false,
+    SwiperAnimationMode.NO_ANIMATION, SwiperAnimationMode.DEFAULT_ANIMATION, SwiperAnimationMode.FAST_ANIMATION];
+  private swiperController: SwiperController = new SwiperController();
+  private animationModeIndex: number = 0;
+  private animationMode: (SwiperAnimationMode | boolean | undefined) = undefined;
+  @State animationModeStr: string = 'undefined';
+  @State targetIndex: number = 0;
+
+  aboutToAppear(): void {
+    this.toSwiperAnimationModeStr();
+  }
+
+  build() {
+    // ...
+          Column({ space: 5 }) {
+            Swiper(this.swiperController) {
+              ForEach(this.swiperBackgroundColors, (backgroundColor: Color, index: number) => {
+                Text(index.toString())
+                  .width(250)
+                  .height(250)
+                  .backgroundColor(backgroundColor)
+                  .textAlign(TextAlign.Center)
+                  .fontSize(30)
+              })
+            }
+            // ...
+            .indicator(true)
+
+            Row({ space: 12 }) {
+              Button('showNext')
+                .onClick(() => {
+                  this.swiperController.showNext(); // 通过controller切换到后一页
+                })
+              Button('showPrevious')
+                .onClick(() => {
+                  this.swiperController.showPrevious(); // 通过controller切换到前一页
+                })
+            }.margin(5)
+
+            Row({ space: 12 }) {
+              Text('Index:')
+              Button(this.targetIndex.toString())
+                .onClick(() => {
+                  this.targetIndex = (this.targetIndex + 1) % this.swiperBackgroundColors.length;
+                })
+            }.margin(5)
+            Row({ space: 12 }) {
+              Text('AnimationMode:')
+              Button(this.animationModeStr)
+                .onClick(() => {
+                  this.animationModeIndex = (this.animationModeIndex + 1) % this.swiperAnimationMode.length;
+                  this.toSwiperAnimationModeStr();
+                })
+            }.margin(5)
+
+            Row({ space: 12 }) {
+              Button('changeIndex(' + this.targetIndex + ', ' + this.animationModeStr + ')')
+                .onClick(() => {
+                  this.swiperController.changeIndex(this.targetIndex, this.animationMode); // 通过controller切换到指定页
+                })
+            }.margin(5)
+          }
+          // ...
+  }
+
+  private toSwiperAnimationModeStr() {
+    this.animationMode = this.swiperAnimationMode[this.animationModeIndex];
+    if ((this.animationMode === true) || (this.animationMode === false)) {
+      this.animationModeStr = '' + this.animationMode;
+    } else if ((this.animationMode === SwiperAnimationMode.NO_ANIMATION) ||
+      (this.animationMode === SwiperAnimationMode.DEFAULT_ANIMATION) ||
+      (this.animationMode === SwiperAnimationMode.FAST_ANIMATION)) {
+      this.animationModeStr = SwiperAnimationMode[this.animationMode];
+    } else {
+      this.animationModeStr = 'undefined';
+    }
+  }
+}
 ```
-1. // 如需作为页面入口，请取消@Entry的注释并删除export关键字
-2. // @Entry
-3. @Component
-4. export struct SwiperPageSwitchMethod {
-5. private swiperBackgroundColors: Color[] = [Color.Blue, Color.Brown, Color.Gray, Color.Green, Color.Orange,
-6. Color.Pink, Color.Red, Color.Yellow];
-7. private swiperAnimationMode: (SwiperAnimationMode | boolean | undefined)[] = [undefined, true, false,
-8. SwiperAnimationMode.NO_ANIMATION, SwiperAnimationMode.DEFAULT_ANIMATION, SwiperAnimationMode.FAST_ANIMATION];
-9. private swiperController: SwiperController = new SwiperController();
-10. private animationModeIndex: number = 0;
-11. private animationMode: (SwiperAnimationMode | boolean | undefined) = undefined;
-12. @State animationModeStr: string = 'undefined';
-13. @State targetIndex: number = 0;
 
-15. aboutToAppear(): void {
-16. this.toSwiperAnimationModeStr();
-17. }
-
-19. build() {
-20. // ...
-21. Column({ space: 5 }) {
-22. Swiper(this.swiperController) {
-23. ForEach(this.swiperBackgroundColors, (backgroundColor: Color, index: number) => {
-24. Text(index.toString())
-25. .width(250)
-26. .height(250)
-27. .backgroundColor(backgroundColor)
-28. .textAlign(TextAlign.Center)
-29. .fontSize(30)
-30. })
-31. }
-32. // ...
-33. .indicator(true)
-
-35. Row({ space: 12 }) {
-36. Button('showNext')
-37. .onClick(() => {
-38. this.swiperController.showNext(); // 通过controller切换到后一页
-39. })
-40. Button('showPrevious')
-41. .onClick(() => {
-42. this.swiperController.showPrevious(); // 通过controller切换到前一页
-43. })
-44. }.margin(5)
-
-46. Row({ space: 12 }) {
-47. Text('Index:')
-48. Button(this.targetIndex.toString())
-49. .onClick(() => {
-50. this.targetIndex = (this.targetIndex + 1) % this.swiperBackgroundColors.length;
-51. })
-52. }.margin(5)
-53. Row({ space: 12 }) {
-54. Text('AnimationMode:')
-55. Button(this.animationModeStr)
-56. .onClick(() => {
-57. this.animationModeIndex = (this.animationModeIndex + 1) % this.swiperAnimationMode.length;
-58. this.toSwiperAnimationModeStr();
-59. })
-60. }.margin(5)
-
-62. Row({ space: 12 }) {
-63. Button('changeIndex(' + this.targetIndex + ', ' + this.animationModeStr + ')')
-64. .onClick(() => {
-65. this.swiperController.changeIndex(this.targetIndex, this.animationMode); // 通过controller切换到指定页
-66. })
-67. }.margin(5)
-68. }
-69. // ...
-70. }
-
-72. private toSwiperAnimationModeStr() {
-73. this.animationMode = this.swiperAnimationMode[this.animationModeIndex];
-74. if ((this.animationMode === true) || (this.animationMode === false)) {
-75. this.animationModeStr = '' + this.animationMode;
-76. } else if ((this.animationMode === SwiperAnimationMode.NO_ANIMATION) ||
-77. (this.animationMode === SwiperAnimationMode.DEFAULT_ANIMATION) ||
-78. (this.animationMode === SwiperAnimationMode.FAST_ANIMATION)) {
-79. this.animationModeStr = SwiperAnimationMode[this.animationMode];
-80. } else {
-81. this.animationModeStr = 'undefined';
-82. }
-83. }
-84. }
-```
-
-[SwiperPageSwitchMethod.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperPageSwitchMethod.ets#L18-L117)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/8ak63NVqTTGU2I8FPDfhhw/zh-cn_image_0000002558764358.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/DzLABWzMT1ylecyoYF4HyA/zh-cn_image_0000002736312733.gif)
 
 ## 轮播方向
 
@@ -293,298 +277,285 @@ Swiper支持水平和垂直方向上进行轮播，主要通过[vertical](../har
 
 * 设置水平方向上轮播。
 
-```
-1. Swiper(
-2. // ···
-3. ) {
-4. // ···
-5. }
-6. // ···
-7. .indicator(true)
-8. .vertical(false)
+```typescript
+Swiper(
+// ···
+) {
+// ···
+}
+// ···
+.indicator(true)
+.vertical(false)
 ```
 
-[SwiperDirection.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperDirection.ets#L29-L63)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/bucJyUU7T3yZVcaHpW6D1A/zh-cn_image_0000002558604702.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/6c0kS7H2Td65aPTF2AweFw/zh-cn_image_0000002706673690.png)
 
 * 设置垂直方向轮播。
 
-```
-1. Swiper(
-2. // ···
-3. ) {
-4. // ···
-5. }
-6. // ···
-7. .indicator(true)
-8. .vertical(true)
+```typescript
+Swiper(
+// ···
+) {
+// ···
+}
+// ···
+.indicator(true)
+.vertical(true)
 ```
 
-[SwiperDirection.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperDirection.ets#L80-L114)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/yUdPJCzVRt2F0CNfNypkgA/zh-cn_image_0000002589324227.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/OR3HduOiTVWUFl4Eo4hBNQ/zh-cn_image_0000002736432781.png)
 
 ## 每页显示多个子页面
 
 Swiper支持在一个页面内同时显示多个子组件，通过[displayCount](../harmonyos-references/ts-container-swiper.md#displaycount8)属性设置。
 
-```
-1. Swiper() {
-2. Text('0')
-3. .width(250)
-4. .height(250)
-5. .backgroundColor(Color.Gray)
-6. .textAlign(TextAlign.Center)
-7. .fontSize(30)
-8. Text('1')
-9. .width(250)
-10. .height(250)
-11. .backgroundColor(Color.Green)
-12. .textAlign(TextAlign.Center)
-13. .fontSize(30)
-14. Text('2')
-15. .width(250)
-16. .height(250)
-17. .backgroundColor(Color.Pink)
-18. .textAlign(TextAlign.Center)
-19. .fontSize(30)
-20. Text('3')
-21. .width(250)
-22. .height(250)
-23. .backgroundColor(Color.Yellow)
-24. .textAlign(TextAlign.Center)
-25. .fontSize(30)
-26. }
-27. // ···
-28. .indicator(true)
-29. .displayCount(2)
-30. }
+```typescript
+Swiper() {
+  Text('0')
+    .width(250)
+    .height(250)
+    .backgroundColor(Color.Gray)
+    .textAlign(TextAlign.Center)
+    .fontSize(30)
+  Text('1')
+    .width(250)
+    .height(250)
+    .backgroundColor(Color.Green)
+    .textAlign(TextAlign.Center)
+    .fontSize(30)
+  Text('2')
+    .width(250)
+    .height(250)
+    .backgroundColor(Color.Pink)
+    .textAlign(TextAlign.Center)
+    .fontSize(30)
+  Text('3')
+    .width(250)
+    .height(250)
+    .backgroundColor(Color.Yellow)
+    .textAlign(TextAlign.Center)
+    .fontSize(30)
+}
+// ...
+.indicator(true)
+.displayCount(2)
 ```
 
-[SwiperMultiPage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperMultiPage.ets#L25-L58)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/YWeRX0CaRJaX110qurCxnA/zh-cn_image_0000002589244167.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/vtMQ1KNwR1CtqlTMjGJVcA/zh-cn_image_0000002706833626.png)
 
 ## 自定义切换动画
 
 Swiper支持通过[customContentTransition](../harmonyos-references/ts-container-swiper.md#customcontenttransition12)设置自定义切换动画，可以在回调中对视窗内所有页面逐帧设置透明度、缩放比例、位移、渲染层级等属性实现自定义切换动画。
 
+```typescript
+// 如需作为页面入口，请取消@Entry的注释并删除export关键字
+// @Entry
+@Component
+export struct SwiperCustomAnimation {
+  private DISPLAY_COUNT: number = 2;
+  private MIN_SCALE: number = 0.75;
+  @State backgroundColors: Color[] = [Color.Green, Color.Blue, Color.Yellow, Color.Pink, Color.Gray, Color.Orange];
+  @State opacityList: number[] = [];
+  @State scaleList: number[] = [];
+  @State translateList: number[] = [];
+  @State zIndexList: number[] = [];
+
+  aboutToAppear(): void {
+    for (let i = 0; i < this.backgroundColors.length; i++) {
+      this.opacityList.push(1.0);
+      this.scaleList.push(1.0);
+      this.translateList.push(0.0);
+      this.zIndexList.push(0);
+    }
+  }
+
+  build() {
+    // ...
+      Column({ space: 12 }) {
+        // ...
+          Swiper() {
+            ForEach(this.backgroundColors, (backgroundColor: Color, index: number) => {
+              Text(index.toString())
+                .width('100%')
+                .height('100%')
+                .fontSize(50)
+                .textAlign(TextAlign.Center)
+                .backgroundColor(backgroundColor)
+                .opacity(this.opacityList[index])
+                .scale({ x: this.scaleList[index], y: this.scaleList[index] })
+                .translate({ x: this.translateList[index] })
+                .zIndex(this.zIndexList[index])
+            })
+          }
+          .height(300)
+          .indicator(false)
+          .displayCount(this.DISPLAY_COUNT, true)
+          .customContentTransition({
+            timeout: 1000,
+            transition: (proxy: SwiperContentTransitionProxy) => {
+              if (proxy.position <= proxy.index % this.DISPLAY_COUNT ||
+                proxy.position >= this.DISPLAY_COUNT + proxy.index % this.DISPLAY_COUNT) {
+                // 同组页面完全滑出视窗外时，重置属性值
+                this.opacityList[proxy.index] = 1.0;
+                this.scaleList[proxy.index] = 1.0;
+                this.translateList[proxy.index] = 0.0;
+                this.zIndexList[proxy.index] = 0;
+              } else {
+                // 同组页面未滑出视窗外时，对同组中左右两个页面，逐帧根据position修改属性值
+                if (proxy.index % this.DISPLAY_COUNT === 0) {
+                  this.opacityList[proxy.index] = 1 - proxy.position / this.DISPLAY_COUNT;
+                  this.scaleList[proxy.index] =
+                    this.MIN_SCALE + (1 - this.MIN_SCALE) * (1 - proxy.position / this.DISPLAY_COUNT);
+                  this.translateList[proxy.index] = -proxy.position * proxy.mainAxisLength +
+                    (1 - this.scaleList[proxy.index]) * proxy.mainAxisLength / 2.0;
+                } else {
+                  this.opacityList[proxy.index] = 1 - (proxy.position - 1) / this.DISPLAY_COUNT;
+                  this.scaleList[proxy.index] =
+                    this.MIN_SCALE + (1 - this.MIN_SCALE) * (1 - (proxy.position - 1) / this.DISPLAY_COUNT);
+                  this.translateList[proxy.index] = -(proxy.position - 1) * proxy.mainAxisLength -
+                    (1 - this.scaleList[proxy.index]) * proxy.mainAxisLength / 2.0;
+                }
+                this.zIndexList[proxy.index] = -1;
+              }
+            }
+          })
+          // ...
+      }
+      .width('100%')
+      // ...
+  }
+}
 ```
-1. // 如需作为页面入口，请取消@Entry的注释并删除export关键字
-2. // @Entry
-3. @Component
-4. export struct SwiperCustomAnimation {
-5. private DISPLAY_COUNT: number = 2;
-6. private MIN_SCALE: number = 0.75;
-7. @State backgroundColors: Color[] = [Color.Green, Color.Blue, Color.Yellow, Color.Pink, Color.Gray, Color.Orange];
-8. @State opacityList: number[] = [];
-9. @State scaleList: number[] = [];
-10. @State translateList: number[] = [];
-11. @State zIndexList: number[] = [];
 
-13. aboutToAppear(): void {
-14. for (let i = 0; i < this.backgroundColors.length; i++) {
-15. this.opacityList.push(1.0);
-16. this.scaleList.push(1.0);
-17. this.translateList.push(0.0);
-18. this.zIndexList.push(0);
-19. }
-20. }
-
-22. build() {
-23. // ...
-24. Column({ space: 12 }) {
-25. // ...
-26. Swiper() {
-27. ForEach(this.backgroundColors, (backgroundColor: Color, index: number) => {
-28. Text(index.toString())
-29. .width('100%')
-30. .height('100%')
-31. .fontSize(50)
-32. .textAlign(TextAlign.Center)
-33. .backgroundColor(backgroundColor)
-34. .opacity(this.opacityList[index])
-35. .scale({ x: this.scaleList[index], y: this.scaleList[index] })
-36. .translate({ x: this.translateList[index] })
-37. .zIndex(this.zIndexList[index])
-38. })
-39. }
-40. .height(300)
-41. .indicator(false)
-42. .displayCount(this.DISPLAY_COUNT, true)
-43. .customContentTransition({
-44. timeout: 1000,
-45. transition: (proxy: SwiperContentTransitionProxy) => {
-46. if (proxy.position <= proxy.index % this.DISPLAY_COUNT ||
-47. proxy.position >= this.DISPLAY_COUNT + proxy.index % this.DISPLAY_COUNT) {
-48. // 同组页面完全滑出视窗外时，重置属性值
-49. this.opacityList[proxy.index] = 1.0;
-50. this.scaleList[proxy.index] = 1.0;
-51. this.translateList[proxy.index] = 0.0;
-52. this.zIndexList[proxy.index] = 0;
-53. } else {
-54. // 同组页面未滑出视窗外时，对同组中左右两个页面，逐帧根据position修改属性值
-55. if (proxy.index % this.DISPLAY_COUNT === 0) {
-56. this.opacityList[proxy.index] = 1 - proxy.position / this.DISPLAY_COUNT;
-57. this.scaleList[proxy.index] =
-58. this.MIN_SCALE + (1 - this.MIN_SCALE) * (1 - proxy.position / this.DISPLAY_COUNT);
-59. this.translateList[proxy.index] = -proxy.position * proxy.mainAxisLength +
-60. (1 - this.scaleList[proxy.index]) * proxy.mainAxisLength / 2.0;
-61. } else {
-62. this.opacityList[proxy.index] = 1 - (proxy.position - 1) / this.DISPLAY_COUNT;
-63. this.scaleList[proxy.index] =
-64. this.MIN_SCALE + (1 - this.MIN_SCALE) * (1 - (proxy.position - 1) / this.DISPLAY_COUNT);
-65. this.translateList[proxy.index] = -(proxy.position - 1) * proxy.mainAxisLength -
-66. (1 - this.scaleList[proxy.index]) * proxy.mainAxisLength / 2.0;
-67. }
-68. this.zIndexList[proxy.index] = -1;
-69. }
-70. }
-71. })
-72. // ...
-73. }
-74. .width('100%')
-75. // ...
-76. }
-77. }
-```
-
-[SwiperCustomAnimation.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperCustomAnimation.ets#L18-L107)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/50FPWwYBRP-deT886GV0gQ/zh-cn_image_0000002558764360.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/VwrKHPbXTJuLMFup08L9vA/zh-cn_image_0000002736312735.gif)
 
 ## Swiper与Tabs联动
 
 从API version 18开始，Swiper选中的元素改变时，会通过[onSelected](../harmonyos-references/ts-container-swiper.md#onselected18)回调事件，将元素的索引值index返回。通过调用[tabsController.changeIndex(index)](../harmonyos-references/ts-container-tabs.md#changeindex)方法来实现Tabs页签的切换。
 
+```typescript
+// xxx.ets
+class MyDataSource implements IDataSource {
+  private list: number[] = [];
+
+  constructor(list: number[]) {
+    this.list = list;
+  }
+
+  totalCount(): number {
+    return this.list.length;
+  }
+
+  getData(index: number): number {
+    return this.list[index];
+  }
+
+  registerDataChangeListener(listener: DataChangeListener): void {
+  }
+
+  unregisterDataChangeListener() {
+  }
+}
+
+// 如需作为页面入口，请取消@Entry的注释并删除export关键字
+// @Entry
+@Component
+export struct SwiperAndTabsLinkage {
+  @State fontColor: string = '#182431';
+  @State selectedFontColor: string = '#007DFF';
+  @State currentIndex: number = 0;
+  private list: number[] = [];
+  private tabsController: TabsController = new TabsController();
+  private swiperController: SwiperController = new SwiperController();
+  private swiperData: MyDataSource = new MyDataSource([]);
+  private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+
+  aboutToAppear(): void {
+    for (let i = 0; i <= 9; i++) {
+      this.list.push(i);
+    }
+    this.swiperData = new MyDataSource(this.list);
+  }
+
+  @Builder tabBuilder(index: number, name: string) {
+    Column() {
+      Text(name)
+        .fontColor(this.currentIndex === index ? this.selectedFontColor : this.fontColor)
+        .fontSize(16)
+        .fontWeight(this.currentIndex === index ? 500 : 400)
+        .lineHeight(22)
+        .margin({ top: 17, bottom: 7 })
+      Divider()
+        .strokeWidth(2)
+        .color('#007DFF')
+        .opacity(this.currentIndex === index ? 1 : 0)
+    }.width('20%')
+  }
+
+  build() {
+    // ...
+          Column() {
+            Tabs({ barPosition: BarPosition.Start, controller: this.tabsController }) {
+              ForEach(this.list, (index: number) =>{
+                // 请在resources\base\element\string.json文件中配置name为'swiper_text1' ，value为非空字符串的资源
+                TabContent().tabBar(this.tabBuilder(index,
+                  this.context.resourceManager.getStringByNameSync('swiper_text1') + this.list[index]))
+              })
+            }
+            .onTabBarClick((index: number) => {
+              this.currentIndex = index;
+              this.swiperController.changeIndex(index, true);
+            })
+            .barMode(BarMode.Scrollable)
+            .backgroundColor('#F1F3F5')
+            .height(56)
+            .width('100%')
+
+            Swiper(this.swiperController) {
+              LazyForEach(this.swiperData, (item: number) => {
+                Text(item.toString())
+                  .onAppear(()=>{
+                    console.info('onAppear ' + item.toString());
+                  })
+                  .onDisAppear(()=>{
+                    console.info('onDisAppear ' + item.toString());
+                  })
+                  .width('100%')
+                  .height('40%')
+                  .backgroundColor(0xAFEEEE)
+                  .textAlign(TextAlign.Center)
+                  .fontSize(30)
+              }, (item: number) => item.toString())
+            }
+            .loop(false)
+            .onSelected((index: number) => {
+              console.info('onSelected:' + index);
+              this.currentIndex = index;
+              this.tabsController.changeIndex(index);
+            })
+          }
+          // ...
+  }
+}
 ```
-1. // xxx.ets
-2. class MyDataSource implements IDataSource {
-3. private list: number[] = [];
 
-5. constructor(list: number[]) {
-6. this.list = list;
-7. }
-
-9. totalCount(): number {
-10. return this.list.length;
-11. }
-
-13. getData(index: number): number {
-14. return this.list[index];
-15. }
-
-17. registerDataChangeListener(listener: DataChangeListener): void {
-18. }
-
-20. unregisterDataChangeListener() {
-21. }
-22. }
-
-24. // 如需作为页面入口，请取消@Entry的注释并删除export关键字
-25. // @Entry
-26. @Component
-27. export struct SwiperAndTabsLinkage {
-28. @State fontColor: string = '#182431';
-29. @State selectedFontColor: string = '#007DFF';
-30. @State currentIndex: number = 0;
-31. private list: number[] = [];
-32. private tabsController: TabsController = new TabsController();
-33. private swiperController: SwiperController = new SwiperController();
-34. private swiperData: MyDataSource = new MyDataSource([]);
-35. private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-
-37. aboutToAppear(): void {
-38. for (let i = 0; i <= 9; i++) {
-39. this.list.push(i);
-40. }
-41. this.swiperData = new MyDataSource(this.list);
-42. }
-
-44. @Builder tabBuilder(index: number, name: string) {
-45. Column() {
-46. Text(name)
-47. .fontColor(this.currentIndex === index ? this.selectedFontColor : this.fontColor)
-48. .fontSize(16)
-49. .fontWeight(this.currentIndex === index ? 500 : 400)
-50. .lineHeight(22)
-51. .margin({ top: 17, bottom: 7 })
-52. Divider()
-53. .strokeWidth(2)
-54. .color('#007DFF')
-55. .opacity(this.currentIndex === index ? 1 : 0)
-56. }.width('20%')
-57. }
-
-59. build() {
-60. // ...
-61. Column() {
-62. Tabs({ barPosition: BarPosition.Start, controller: this.tabsController }) {
-63. ForEach(this.list, (index: number) =>{
-64. // 请在resources\base\element\string.json文件中配置name为'swiper_text1' ，value为非空字符串的资源
-65. TabContent().tabBar(this.tabBuilder(index,
-66. this.context.resourceManager.getStringByNameSync('swiper_text1') + this.list[index]))
-67. })
-68. }
-69. .onTabBarClick((index: number) => {
-70. this.currentIndex = index;
-71. this.swiperController.changeIndex(index, true);
-72. })
-73. .barMode(BarMode.Scrollable)
-74. .backgroundColor('#F1F3F5')
-75. .height(56)
-76. .width('100%')
-
-78. Swiper(this.swiperController) {
-79. LazyForEach(this.swiperData, (item: string) => {
-80. Text(item.toString())
-81. .onAppear(()=>{
-82. console.info('onAppear ' + item.toString());
-83. })
-84. .onDisAppear(()=>{
-85. console.info('onDisAppear ' + item.toString());
-86. })
-87. .width('100%')
-88. .height('40%')
-89. .backgroundColor(0xAFEEEE)
-90. .textAlign(TextAlign.Center)
-91. .fontSize(30)
-92. }, (item: string) => item)
-93. }
-94. .loop(false)
-95. .onSelected((index: number) => {
-96. console.info('onSelected:' + index);
-97. this.currentIndex = index;
-98. this.tabsController.changeIndex(index);
-99. })
-100. }
-101. // ...
-102. }
-103. }
-```
-
-[SwiperAndTabsLinkage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperAndTabsLinkage.ets#L19-L135)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/FAM4v6w1T667UZRu6rlZ_A/zh-cn_image_0000002558604704.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/hwuWAlziRkeMT1vBEy94fg/zh-cn_image_0000002706673692.gif)
 
 ## 设置圆点导航点间距
 
 从API version 19开始，针对圆点导航点，可以通过DotIndicator的[space](../harmonyos-references/ts-container-swiper.md#space19)属性来设置圆点导航点的间距。
 
+```typescript
+Swiper(
+  // ···
+) {
+  // ···
+}
+.indicator(new DotIndicator()
+  .space(this.space)
+  // ···
+)
 ```
-1. Swiper(
-2. // ···
-3. ) {
-4. // ···
-5. }
-6. .indicator(new DotIndicator()
-7. .space(this.space)
-8. // ···
-9. )
-```
-
-[SwiperIgnoreComponentSize.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperIgnoreComponentSize.ets#L76-L115)
 
 ## 导航点忽略组件大小
 
@@ -592,144 +563,138 @@ Swiper支持通过[customContentTransition](../harmonyos-references/ts-container
 
 * 圆点导航点忽略组件大小。
 
+```typescript
+Swiper(
+  // ···
+) {
+  // ···
+}
+.indicator(new DotIndicator()
+  // ···
+  .bottom(LengthMetrics.vp(0), this.ignoreSize) // true
+  // ···
+)
 ```
-1. Swiper(
-2. // ···
-3. ) {
-4. // ···
-5. }
-6. .indicator(new DotIndicator()
-7. // ···
-8. .bottom(LengthMetrics.vp(0), this.ignoreSize) // true
-9. // ···
-10. )
-```
-
-[SwiperIgnoreComponentSize.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperIgnoreComponentSize.ets#L77-L114)
 
 * 数字导航点忽略组件大小。
 
+```typescript
+Swiper(
+  // ···
+) {
+  // ···
+}
+.indicator(new DigitIndicator()
+  .bottom(LengthMetrics.vp(0), true)
+)
 ```
-1. Swiper(
-2. // ···
-3. ) {
-4. // ···
-5. }
-6. .indicator(new DigitIndicator()
-7. .bottom(LengthMetrics.vp(0), true)
-8. )
-```
-
-[SwiperDigitIndicatorIgnoreComponentSize.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperDigitIndicatorIgnoreComponentSize.ets#L63-L84)
 
 圆点导航点设置间距及忽略组件大小完整示例代码如下：
 
+```typescript
+import { LengthMetrics } from '@kit.ArkUI';
+// ...
+
+class MyDataSource implements IDataSource {
+  private list: number[] = [];
+
+  constructor(list: number[]) {
+    this.list = list;
+  }
+
+  totalCount(): number {
+    return this.list.length;
+  }
+
+  getData(index: number): number {
+    return this.list[index];
+  }
+
+  registerDataChangeListener(listener: DataChangeListener): void {
+  }
+
+  unregisterDataChangeListener() {
+  }
+}
+
+// 如需作为页面入口，请取消@Entry的注释并删除export关键字
+// @Entry
+@Component
+export struct SwiperIgnoreComponentSize {
+
+  @State space: LengthMetrics = LengthMetrics.vp(0);
+  @State spacePool: LengthMetrics[] = [LengthMetrics.vp(0), LengthMetrics.px(3), LengthMetrics.vp(10)];
+  @State spaceIndex: number = 0;
+
+  @State ignoreSize: boolean = false;
+  @State ignoreSizePool: boolean[] = [false, true];
+  @State ignoreSizeIndex: number = 0;
+
+  private swiperController1: SwiperController = new SwiperController();
+  private data1: MyDataSource = new MyDataSource([]);
+
+  aboutToAppear(): void {
+    let list1: number[] = [];
+    for (let i = 1; i <= 10; i++) {
+      list1.push(i);
+    }
+    this.data1 = new MyDataSource(list1);
+  }
+
+  build() {
+    // ...
+          Scroll() {
+            Column({ space: 20 }) {
+              Swiper(
+                this.swiperController1
+              ) {
+                LazyForEach(this.data1, (item: number) => {
+                  Text(item.toString())
+                    .width('90%')
+                    .height(120)
+                    .backgroundColor(0xAFEEEE)
+                    .textAlign(TextAlign.Center)
+                    .fontSize(30)
+                }, (item: number) => item.toString())
+              }
+              .indicator(new DotIndicator()
+                .space(this.space)
+                .bottom(LengthMetrics.vp(0), this.ignoreSize) // true
+                .itemWidth(15)
+                .itemHeight(15)
+                .selectedItemWidth(15)
+                .selectedItemHeight(15)
+                .color(Color.Gray)
+                .selectedColor(Color.Blue)
+              )
+              .displayArrow({
+                showBackground: true,
+                isSidebarMiddle: true,
+                backgroundSize: 24,
+                backgroundColor: Color.White,
+                arrowSize: 18,
+                arrowColor: Color.Blue
+              }, false)
+
+              Column({ space: 4 }) {
+                Button('spaceIndex:' + this.spaceIndex).onClick(() => {
+                  this.spaceIndex = (this.spaceIndex + 1) % this.spacePool.length;
+                  this.space = this.spacePool[this.spaceIndex];
+                }).margin(10)
+
+                Button('ignoreSizeIndex:' + this.ignoreSizeIndex).onClick(() => {
+                  this.ignoreSizeIndex = (this.ignoreSizeIndex + 1) % this.ignoreSizePool.length;
+                  this.ignoreSize = this.ignoreSizePool[this.ignoreSizeIndex];
+                }).margin(10)
+              }.margin(2)
+            }.width('100%')
+          }
+          // ...
+  }
+}
 ```
-1. import { LengthMetrics } from '@kit.ArkUI';
-2. // ...
 
-5. class MyDataSource implements IDataSource {
-6. private list: number[] = [];
-
-8. constructor(list: number[]) {
-9. this.list = list;
-10. }
-
-12. totalCount(): number {
-13. return this.list.length;
-14. }
-
-16. getData(index: number): number {
-17. return this.list[index];
-18. }
-
-20. registerDataChangeListener(listener: DataChangeListener): void {
-21. }
-
-23. unregisterDataChangeListener() {
-24. }
-25. }
-
-27. // 如需作为页面入口，请取消@Entry的注释并删除export关键字
-28. // @Entry
-29. @Component
-30. export struct SwiperIgnoreComponentSize {
-
-32. @State space: LengthMetrics = LengthMetrics.vp(0);
-33. @State spacePool: LengthMetrics[] = [LengthMetrics.vp(0), LengthMetrics.px(3), LengthMetrics.vp(10)];
-34. @State spaceIndex: number = 0;
-
-36. @State ignoreSize: boolean = false;
-37. @State ignoreSizePool: boolean[] = [false, true];
-38. @State ignoreSizeIndex: number = 0;
-
-40. private swiperController1: SwiperController = new SwiperController();
-41. private data1: MyDataSource = new MyDataSource([]);
-
-43. aboutToAppear(): void {
-44. let list1: number[] = [];
-45. for (let i = 1; i <= 10; i++) {
-46. list1.push(i);
-47. }
-48. this.data1 = new MyDataSource(list1);
-49. }
-
-51. build() {
-52. // ...
-53. Scroll() {
-54. Column({ space: 20 }) {
-55. Swiper(
-56. this.swiperController1
-57. ) {
-58. LazyForEach(this.data1, (item: string) => {
-59. Text(item.toString())
-60. .width('90%')
-61. .height(120)
-62. .backgroundColor(0xAFEEEE)
-63. .textAlign(TextAlign.Center)
-64. .fontSize(30)
-65. }, (item: string) => item)
-66. }
-67. .indicator(new DotIndicator()
-68. .space(this.space)
-69. .bottom(LengthMetrics.vp(0), this.ignoreSize) // true
-70. .itemWidth(15)
-71. .itemHeight(15)
-72. .selectedItemWidth(15)
-73. .selectedItemHeight(15)
-74. .color(Color.Gray)
-75. .selectedColor(Color.Blue)
-76. )
-77. .displayArrow({
-78. showBackground: true,
-79. isSidebarMiddle: true,
-80. backgroundSize: 24,
-81. backgroundColor: Color.White,
-82. arrowSize: 18,
-83. arrowColor: Color.Blue
-84. }, false)
-
-86. Column({ space: 4 }) {
-87. Button('spaceIndex:' + this.spaceIndex).onClick(() => {
-88. this.spaceIndex = (this.spaceIndex + 1) % this.spacePool.length;
-89. this.space = this.spacePool[this.spaceIndex];
-90. }).margin(10)
-
-92. Button('ignoreSizeIndex:' + this.ignoreSizeIndex).onClick(() => {
-93. this.ignoreSizeIndex = (this.ignoreSizeIndex + 1) % this.ignoreSizePool.length;
-94. this.ignoreSize = this.ignoreSizePool[this.ignoreSizeIndex];
-95. }).margin(10)
-96. }.margin(2)
-97. }.width('100%')
-98. }
-99. // ...
-100. }
-101. }
-```
-
-[SwiperIgnoreComponentSize.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperIgnoreComponentSize.ets#L16-L150)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/h_25oKa8TN6JhtYFFXCoeQ/zh-cn_image_0000002589324229.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/AWrPk4b3QEWpm-GbaY9AvQ/zh-cn_image_0000002736432783.gif)
 
 ## 保持可见内容位置不变
 
@@ -739,102 +704,100 @@ maintainVisibleContentPosition为true时，显示区域上方或前方插入或�
 
 关于数据[LazyForEach：数据懒加载](arkts-rendering-control-lazyforeach.md)的具体使用，可参考数据懒加载章节中的示例。
 
+```typescript
+// xxx.ets
+class MyDataSource implements IDataSource {
+  private listeners: DataChangeListener[] = [];
+  private dataArray: string[] = ['0', '1', '2', '3', '4', '5', '6'];
+
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
+
+  public getData(index: number): string | undefined {
+    return this.dataArray[index];
+  }
+
+  public addData(index: number, data: string): void {
+    this.dataArray.splice(index, 0, data);
+    this.listeners.forEach(listener => {
+      listener.onDataAdd(index);
+    })
+  }
+
+  public deleteData(index: number): void {
+    this.dataArray.splice(index, 1);
+    this.listeners.forEach(listener => {
+      listener.onDataDelete(index);
+    })
+  }
+
+  registerDataChangeListener(listener: DataChangeListener): void {
+    if (this.listeners.indexOf(listener) < 0) {
+      hilog.info(DOMAIN, 'testTag', 'add listener');
+      this.listeners.push(listener);
+    }
+  }
+
+  unregisterDataChangeListener(listener: DataChangeListener): void {
+    const pos = this.listeners.indexOf(listener);
+    if (pos >= 0) {
+      hilog.info(DOMAIN, 'testTag', 'remove listener');
+      this.listeners.splice(pos, 1);
+    }
+  }
+}
+
+// 如需作为页面入口，请取消@Entry的注释并删除export关键字
+// @Entry
+@Component
+export struct SwiperVisibleContentPosition {
+  private data: MyDataSource = new MyDataSource();
+  @State index: number = 3;
+
+  build() {
+    // ...
+      Column({ space: 12 }) {
+        // ...
+            Swiper() {
+              LazyForEach(this.data, (item: string) => {
+                Text(item.toString())
+                  .width('90%')
+                  .height(160)
+                  .backgroundColor(0xAFEEEE)
+                  .textAlign(TextAlign.Center)
+                  .fontSize(30)
+              })
+            }
+            .onChange((index) => {
+              this.index = index;
+            })
+            .index(3)
+            .maintainVisibleContentPosition(true)
+            // ...
+
+            Column({ space: 12 }) {
+              Text('index:' + this.index).fontSize(20)
+              Row() {
+                // 在LazyForEach索引为0的位置添加数据
+                Button('header data add').height(30).onClick(() => {
+                  this.data.addData(0, 'header Data');
+                })
+                // 删除LazyForEach索引为0的位置数据
+                Button('header data delete').height(30).onClick(() => {
+                  this.data.deleteData(0);
+                })
+              }
+            }.margin(5)
+            // ...
+      }.width('100%')
+      .margin({ top: 5 })
+      // ...
+  }
+}
 ```
-1. // xxx.ets
-2. class MyDataSource implements IDataSource {
-3. private listeners: DataChangeListener[] = [];
-4. private dataArray: string[] = ['0', '1', '2', '3', '4', '5', '6'];
 
-6. public totalCount(): number {
-7. return this.dataArray.length;
-8. }
-
-10. public getData(index: number): string | undefined {
-11. return this.dataArray[index];
-12. }
-
-14. public addData(index: number, data: string): void {
-15. this.dataArray.splice(index, 0, data);
-16. this.listeners.forEach(listener => {
-17. listener.onDataAdd(index);
-18. })
-19. }
-
-21. public deleteData(index: number): void {
-22. this.dataArray.splice(index, 1);
-23. this.listeners.forEach(listener => {
-24. listener.onDataDelete(index);
-25. })
-26. }
-
-28. registerDataChangeListener(listener: DataChangeListener): void {
-29. if (this.listeners.indexOf(listener) < 0) {
-30. hilog.info(DOMAIN, 'testTag', 'add listener');
-31. this.listeners.push(listener);
-32. }
-33. }
-
-35. unregisterDataChangeListener(listener: DataChangeListener): void {
-36. const pos = this.listeners.indexOf(listener);
-37. if (pos >= 0) {
-38. hilog.info(DOMAIN, 'testTag', 'remove listener');
-39. this.listeners.splice(pos, 1);
-40. }
-41. }
-42. }
-
-44. // 如需作为页面入口，请取消@Entry的注释并删除export关键字
-45. // @Entry
-46. @Component
-47. export struct SwiperVisibleContentPosition {
-48. private data: MyDataSource = new MyDataSource();
-49. @State index: number = 3;
-
-51. build() {
-52. // ...
-53. Column({ space: 12 }) {
-54. // ...
-55. Swiper() {
-56. LazyForEach(this.data, (item: string) => {
-57. Text(item.toString())
-58. .width('90%')
-59. .height(160)
-60. .backgroundColor(0xAFEEEE)
-61. .textAlign(TextAlign.Center)
-62. .fontSize(30)
-63. })
-64. }
-65. .onChange((index) => {
-66. this.index = index;
-67. })
-68. .index(3)
-69. .maintainVisibleContentPosition(true)
-70. // ...
-
-72. Column({ space: 12 }) {
-73. Text('index:' + this.index).fontSize(20)
-74. Row() {
-75. // 在LazyForEach索引为0的位置添加数据
-76. Button('header data add').height(30).onClick(() => {
-77. this.data.addData(0, 'header Data');
-78. })
-79. // 删除LazyForEach索引为0的位置数据
-80. Button('header data delete').height(30).onClick(() => {
-81. this.data.deleteData(0);
-82. })
-83. }
-84. }.margin(5)
-85. // ...
-86. }.width('100%')
-87. .margin({ top: 5 })
-88. // ...
-89. }
-90. }
-```
-
-[SwiperVisibleContentPosition.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/swiper/SwiperVisibleContentPosition.ets#L21-L134)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/ZkuJy0vBR42ngElyXqsrZg/zh-cn_image_0000002589244169.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/0-J306D_SLmoIRuhsH-qpA/zh-cn_image_0000002706833628.gif)
 
 ## 示例代码
 

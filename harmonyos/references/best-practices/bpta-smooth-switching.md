@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-smooth-swi
 title: 在线短视频流畅切换
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 在线短视频流畅切换
 category: best-practices
-scraped_at: 2026-04-29T14:13:09+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:69dbcc9aa0cb4308d18ba46c099b21692660511f3dd55b1e2527cfe16fb8d5cb
+scraped_at: 2026-09-02T15:03:20+08:00
+doc_updated_at: 2026-06-02
+content_hash: sha256:c42f4e45c560926f4823ef03a08b9d8f20999016b71156ddfec10f86b99963a1
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ content_hash: sha256:69dbcc9aa0cb4308d18ba46c099b21692660511f3dd55b1e2527cfe16fb
 
 在动画开始时使用预先准备的播放器起播，起播时延不超过230ms，具体可参考[在线短视频类应用的快速切换与快速起播](../harmonyos-guides/performance-delay.md#section12851131281914)。
 
-说明
+**说明** 
 
 如果使用自研播放器引擎而非AVPlayer，也可以参考该解决方案思路实现优化。
 
@@ -26,7 +26,7 @@ content_hash: sha256:69dbcc9aa0cb4308d18ba46c099b21692660511f3dd55b1e2527cfe16fb
 
 **图1** **在线短视频滑动切换效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/ZhkCyQXzTLq597L_kYregA/zh-cn_image_0000002229336849.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/aquLEr-_SkiJlUYTCquf3Q/zh-cn_image_0000002229336849.gif "点击放大")
 
 ## 场景说明
 
@@ -97,13 +97,13 @@ AVPlayer：
 
 **图2** **功能时序图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/Rl8RVcyVQXOy3tiJQ3SP8Q/zh-cn_image_0000002193851456.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/tNE1KMvtQJmKt1XXIcxipg/zh-cn_image_0000002193851456.png "点击放大")
 
 ### 在线短视频快速切换
 
 **图3** **实现流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/qV8_jpmwQLSok_oQAGyRjg/zh-cn_image_0000002229336837.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/2Oll7NPwRfuLzUZPqxtQoQ/zh-cn_image_0000002229336837.png "点击放大")
 
 **关键点**
 
@@ -113,14 +113,14 @@ AVPlayer可以将Audio/Video媒体资源（比如mp4/mp3/mkv/mpeg-ts等）转码
 
 **LazyForEach数据懒加载**
 
-LazyForEach懒加载可以通过设置cachedCount属性来指定缓存数量（目前设置为3），同时搭配组件复用能力以达到高性能效果。
+LazyForEach懒加载可以通过设置cachedCount属性来指定缓存数量，同时搭配组件复用能力以达到高性能效果。
 
 每次都会创建新的SurfaceID和AVPlayer，不共用已有的SurfaceID和AVPlayer，进而将提前加载好的视频（prepared阶段）放入缓存池中。
 
 在通过Swiper切换时，会根据当前轮询滑动的窗口索引index到缓存池中找到对应的视频（prepared阶段），直接进行播放，从而提高切换性能。
 
 **图4** **视频懒加载示意图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/WPMhq2daQCeF506QOZ4QUg/zh-cn_image_0000002229451329.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/KYwT1dQTQNaKo0s3b7OBpw/zh-cn_image_0000002229451329.png "点击放大")
 
 **异步视频预加载**
 
@@ -129,12 +129,12 @@ LazyForEach懒加载可以通过设置cachedCount属性来指定缓存数量（�
 （1）本地播放一个短视频的耗时。
 
 **图5** **单视频加载示意图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/Ub6kkWIHT5C_EvT4eCa3iw/zh-cn_image_0000002229336853.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/8GVi9-z2Q7CX32qiMLN6vA/zh-cn_image_0000002229336853.png "点击放大")
 
 （2）播放视频A时，提前预加载视频B。切换短视频时，可以立即播放已预加载的视频B，从而减少切换时间，提升切换性能。
 
 **图6** **异步视频预加载示意图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/4hlRaM3dQvCci50UGi1VXA/zh-cn_image_0000002229451333.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/oMph0L8xSZyjOvvNxqLwkw/zh-cn_image_0000002229451333.png "点击放大")
 
 **视频播放预启动接力**
 
@@ -147,44 +147,40 @@ LazyForEach懒加载可以通过设置cachedCount属性来指定缓存数量（�
 视频播放预启动接力：这种预加载机制的工作方式类似于接力赛跑。为了尽快完成接力，当第一个选手接近终点时，第二个选手会提前起跑并与第一个选手完美交接接力棒，从而减少整个接力赛的时间。短视频切换也是如此，如下图所示：
 
 **图7** **视频播放预启动接力****示意图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/q9CD2hg8Ry-QwwewVm77Mw/zh-cn_image_0000002229336841.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/eCyIOd0qQOelAmxk25-mjA/zh-cn_image_0000002229336841.png "点击放大")
 
 **开发步骤**
 
 1. 通过组件复用实现单个视频播放的自定义组件VideoPlayView。
 
+   ```typescript
+   // Key point: Reuse custom video playback components by using the @Reusable decorator.
+   @Reusable
+   @Component
+   export struct VideoPlayView {
+     @Prop @Watch('onIndexChange') curIndex: number = -1;
+     // ...
+   }
    ```
-   1. // Key point: Reuse custom video playback components by using the @Reusable decorator.
-   2. @Reusable
-   3. @Component
-   4. export struct VideoPlayView {
-   5. @Prop @Watch('onIndexChange') curIndex: number = -1;
-   6. // ...
-   7. }
-   ```
-
-   [VideoPlayView.ets](https://gitcode.com/HarmonyOS_Samples/SmoothSwitchShortVideos/blob/master/entry/src/main/ets/view/VideoPlayView.ets#L27-L414)
 
    在自定义组件VideoPlayView中，设置XComponent组件用于视频流渲染，并获取SurfaceID以设置显示画面。在onLoad时，异步创建并初始化AVPlayer播放器，使其提前进入prepared状态，实现视频的异步预加载。
 
+   ```typescript
+   XComponent({
+     id: 'player',
+     type: XComponentType.SURFACE,
+     controller: this.xComponentController
+   })
+     .width(this.XComponentWidth)
+     .height(this.XComponentHeight)
+     .onLoad(async () => {
+       this.surfaceID = this.xComponentController.getXComponentSurfaceId();
+       hilog.info(0x0000, TAG,
+         `surfaceID: ${this.surfaceID}, curIndex: ${this.curIndex}, index: ${this.index}.`);
+       // Key point: Initialize the AVPlayer asynchronously so that the AVPlayer enters the prepared state in advance to implement asynchronous video preloading.
+       this.initAVPlayer();
+     })
    ```
-   1. XComponent({
-   2. id: 'player',
-   3. type: XComponentType.SURFACE,
-   4. controller: this.xComponentController
-   5. })
-   6. .width(this.XComponentWidth)
-   7. .height(this.XComponentHeight)
-   8. .onLoad(async () => {
-   9. this.surfaceID = this.xComponentController.getXComponentSurfaceId();
-   10. hilog.info(0x0000, TAG,
-   11. `surfaceID: ${this.surfaceID}, curIndex: ${this.curIndex}, index: ${this.index}.`);
-   12. // Key point: Initialize the AVPlayer asynchronously so that the AVPlayer enters the prepared state in advance to implement asynchronous video preloading.
-   13. this.initAVPlayer();
-   14. })
-   ```
-
-   [VideoPlayView.ets](https://gitcode.com/HarmonyOS_Samples/SmoothSwitchShortVideos/blob/master/entry/src/main/ets/view/VideoPlayView.ets#L158-L171)
 2. 在Swiper组件中使用LazyForEach懒加载自定义组件VideoPlayView，实现视频轮播。
 
    通过LazyForEach懒加载VideoPlayView自定义组件，确保每个视频拥有独立的SurfaceID和AVPlayer。
@@ -195,105 +191,99 @@ LazyForEach懒加载可以通过设置cachedCount属性来指定缓存数量（�
 
    设置弹簧曲线为.curve(Curve.Ease)。
 
+   ```typescript
+   Swiper(this.swiperController) {
+     // Key point: Use LazyForEach to create an independent SurfaceID in the VideoPlayView component. (The AVPlayer is created in the VideoPlayView and does not share the AVPlayer.)
+     LazyForEach(new AVDataSource(Const.VIDEO_SOURCE), (item: string, index: number) => {
+       VideoPlayView({
+         curSource: item,
+         curIndex: this.curIndex,
+         index: index,
+         firstFlag: this.firstFlag,
+         isPageShow: this.isPageShow,
+         foldStatus: this.foldStatus
+       })
+     }, (item: string, index: number) => JSON.stringify(item) + index)
+   }
+   // Key point: Set cachedCount to implement preloading.
+   .cachedCount(this.firstFlag ? 0 : 2)
+   .width('100%')
+   .height('100%')
+   .vertical(true)
+   .loop(true)
+   // Key point: Change the spring curve to Curve.Ease.
+   .curve(Curve.Ease)
+   .duration(300)
+   .indicator(false)
+   .backgroundColor(Color.Black)
+   .onGestureSwipe((index: number, extraInfo: SwiperAnimationEvent) => {
+     hilog.info(0x0000, TAG, `onGestureSwipe index: ${index}, extraInfo: ${extraInfo}.`);
+   })
+   .onAnimationStart((index: number, targetIndex: number, extraInfo: SwiperAnimationEvent) => {
+     hilog.info(0x0000, TAG,
+       `onAnimationStart index: ${index}, targetIndex: ${targetIndex}, extraInfo: ${extraInfo}.`);
+     // Key point: The curIndex is updated at AnimationStart and the next video starts to be played.
+     this.curIndex = targetIndex;
+   })
    ```
-   1. Swiper(this.swiperController) {
-   2. // Key point: Use LazyForEach to create an independent SurfaceID in the VideoPlayView component. (The AVPlayer is created in the VideoPlayView and does not share the AVPlayer.)
-   3. LazyForEach(new AVDataSource(Const.VIDEO_SOURCE), (item: string, index: number) => {
-   4. VideoPlayView({
-   5. curSource: item,
-   6. curIndex: this.curIndex,
-   7. index: index,
-   8. firstFlag: this.firstFlag,
-   9. isPageShow: this.isPageShow,
-   10. foldStatus: this.foldStatus
-   11. })
-   12. }, (item: string, index: number) => JSON.stringify(item) + index)
-   13. }
-   14. // Key point: Set cachedCount to implement preloading.
-   15. .cachedCount(this.firstFlag ? 0 : 2)
-   16. .width('100%')
-   17. .height('100%')
-   18. .vertical(true)
-   19. .loop(true)
-   20. // Key point: Change the spring curve to Curve.Ease.
-   21. .curve(Curve.Ease)
-   22. .duration(300)
-   23. .indicator(false)
-   24. .backgroundColor(Color.Black)
-   25. .onGestureSwipe((index: number, extraInfo: SwiperAnimationEvent) => {
-   26. hilog.info(0x0000, TAG, `onGestureSwipe index: ${index}, extraInfo: ${extraInfo}.`);
-   27. })
-   28. .onAnimationStart((index: number, targetIndex: number, extraInfo: SwiperAnimationEvent) => {
-   29. hilog.info(0x0000, TAG,
-   30. `onAnimationStart index: ${index}, targetIndex: ${targetIndex}, extraInfo: ${extraInfo}.`);
-   31. // Key point: The curIndex is updated at AnimationStart and the next video starts to be played.
-   32. this.curIndex = targetIndex;
-   33. })
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/SmoothSwitchShortVideos/blob/master/entry/src/main/ets/pages/Index.ets#L61-L93)
 3. 视频播放预加载。
 
    在自定义组件VideoPlayView中，使用@Watch装饰器监听Swiper轮播的curIndex值。
 
+   ```typescript
+   @Prop @Watch('onIndexChange') curIndex: number = -1;
    ```
-   1. @Prop @Watch('onIndexChange') curIndex: number = -1;
-   ```
-
-   [VideoPlayView.ets](https://gitcode.com/HarmonyOS_Samples/SmoothSwitchShortVideos/blob/master/entry/src/main/ets/view/VideoPlayView.ets#L32-L32)
 
    将视频缓存流中的index与curIndex进行比较，判断视频流中哪个视频播放，其余视频均暂停。
 
+   ```screen
+   onIndexChange() {
+     hilog.info(0x0000, TAG,
+       `enter onIndexChange. curIndex: ${this.curIndex}, index: ${this.index}, isPageShow: ${this.isPageShow}.`);
+     if (this.curIndex !== this.index) {
+       pauseVideo(this.avPlayer, this.curIndex, this.index);
+       this.isPlaying = false;
+       this.trackThicknessSize = Const.TRACK_SIZE_MIN;
+     } else {
+       hilog.info(0x0000, TAG,
+         `enter indexChange play. curIndex: ${this.curIndex}, index: ${this.index}, isPageShow: ${this.isPageShow}.`);
+       // Key point: When the index(curIndex) of the current window is the same as the index of the this, the playback starts.
+       if (this.flag === true) {
+         playVideo(this.avPlayer, this.curIndex, this.index);
+         this.isPlaying = true;
+         this.trackThicknessSize = Const.TRACK_SIZE_MIN;
+       } else {
+         let countNum = 0;
+         let intervalFlag = setInterval(() => {
+           countNum++;
+           if (this.curIndex !== this.index) {
+             hilog.info(0x0000, TAG, `enter indexChange play error, clearIntreval. flag: ${this.flag},
+           curIndex: ${this.curIndex}, index: ${this.index}.`);
+             clearInterval(intervalFlag);
+           }
+           // Start playing when the video is prepared and the page is visible.
+           if (this.flag === true && this.isPageShow) {
+             countNum = 0;
+             playVideo(this.avPlayer, this.curIndex, this.index);
+             this.isPlaying = true;
+             this.trackThicknessSize = Const.TRACK_SIZE_MIN;
+             clearInterval(intervalFlag);
+           } else {
+             hilog.info(0x0000, TAG, `enter indexChange play error, clearIntreval. countNum: ${countNum},
+            flag: ${this.flag}, curIndex: ${this.curIndex}, index: ${this.index}.`);
+             if (countNum > 15) {
+               hilog.info(0x0000, TAG,
+                 `enter indexChange play error, reinit initAVPlayer. countNum: ${countNum}, flag: ${this.flag},
+               curIndex: ${this.curIndex}, index: ${this.index}.`);
+               countNum = 0;
+               this.initAVPlayer();
+             }
+           }
+         }, 100);
+       }
+     }
+   }
    ```
-   1. onIndexChange() {
-   2. hilog.info(0x0000, TAG,
-   3. `enter onIndexChange. curIndex: ${this.curIndex}, index: ${this.index}, isPageShow: ${this.isPageShow}.`);
-   4. if (this.curIndex !== this.index) {
-   5. pauseVideo(this.avPlayer, this.curIndex, this.index);
-   6. this.isPlaying = false;
-   7. this.trackThicknessSize = Const.TRACK_SIZE_MIN;
-   8. } else {
-   9. hilog.info(0x0000, TAG,
-   10. `enter indexChange play. curIndex: ${this.curIndex}, index: ${this.index}, isPageShow: ${this.isPageShow}.`);
-   11. // Key point: When the index(curIndex) of the current window is the same as the index of the this, the playback starts.
-   12. if (this.flag === true) {
-   13. playVideo(this.avPlayer, this.curIndex, this.index);
-   14. this.isPlaying = true;
-   15. this.trackThicknessSize = Const.TRACK_SIZE_MIN;
-   16. } else {
-   17. let countNum = 0;
-   18. let intervalFlag = setInterval(() => {
-   19. countNum++;
-   20. if (this.curIndex !== this.index) {
-   21. hilog.info(0x0000, TAG, `enter indexChange play error, clearIntreval. flag: ${this.flag},
-   22. curIndex: ${this.curIndex}, index: ${this.index}.`);
-   23. clearInterval(intervalFlag);
-   24. }
-   25. // 当视频处于prepared状态，并且页面可见时触发播放
-   26. if (this.flag === true && this.isPageShow) {
-   27. countNum = 0;
-   28. playVideo(this.avPlayer, this.curIndex, this.index);
-   29. this.isPlaying = true;
-   30. this.trackThicknessSize = Const.TRACK_SIZE_MIN;
-   31. clearInterval(intervalFlag);
-   32. } else {
-   33. hilog.info(0x0000, TAG, `enter indexChange play error, clearIntreval. countNum: ${countNum},
-   34. flag: ${this.flag}, curIndex: ${this.curIndex}, index: ${this.index}.`);
-   35. if (countNum > 15) {
-   36. hilog.info(0x0000, TAG,
-   37. `enter indexChange play error, reinit initAVPlayer. countNum: ${countNum}, flag: ${this.flag},
-   38. curIndex: ${this.curIndex}, index: ${this.index}.`);
-   39. countNum = 0;
-   40. this.initAVPlayer();
-   41. }
-   42. }
-   43. }, 100);
-   44. }
-   45. }
-   46. }
-   ```
-
-   [VideoPlayView.ets](https://gitcode.com/HarmonyOS_Samples/SmoothSwitchShortVideos/blob/master/entry/src/main/ets/view/VideoPlayView.ets#L76-L122)
 
 ## 总结
 

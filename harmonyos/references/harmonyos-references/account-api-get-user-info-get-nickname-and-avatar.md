@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 获取华为账号用户信息-获取头像昵称
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 获取用户信息 > 获取华为账号用户信息-获取头像昵称
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:12+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:95eb87cce241a55ccb467c5cf4d515cf0926988243f6a716dce0e0b62378c6b1
+scraped_at: 2026-09-02T15:02:50+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:78057b48fcab28391353c575894af9ed60e2afd079bae7b204c9959523e664f2
 ---
 
-注意
+**注意** 
 
 为了更安全的网络访问，请务必使用TLS1.2协议及规定内的加密套件。若使用协议是TLS1.0、TLS1.1或规定外的加密套件，可能无法正常访问华为账号服务。
 
@@ -27,7 +27,7 @@ content_hash: sha256:95eb87cce241a55ccb467c5cf4d515cf0926988243f6a716dce0e0b6237
 * 需确保调用端网络正常。
 * 应用获取华为账号头像昵称之前需要在获取Authorization Code时携带profile（昵称和头像）scope，详见[业务流程](../harmonyos-guides/account-get-avatar-nickname.md#业务流程)。
 
-说明
+**说明** 
 
 获取Authorization Code时不携带profile（昵称和头像）scope，调用成功后响应中将不包含昵称和头像。
 
@@ -61,12 +61,12 @@ content_hash: sha256:95eb87cce241a55ccb467c5cf4d515cf0926988243f6a716dce0e0b6237
 
 请通过POST方式调用，示例如下：
 
-```
-1. POST /rest.php?nsp_svc=GOpen.User.getInfo HTTP/1.1
-2. Host: account.cloud.huawei.com
-3. Content-Type: application/x-www-form-urlencoded
+```http
+POST /rest.php?nsp_svc=GOpen.User.getInfo HTTP/1.1
+Host: account.cloud.huawei.com
+Content-Type: application/x-www-form-urlencoded
 
-5. access_token=<Access Token>
+access_token=<Access Token>
 ```
 
 ## 响应参数
@@ -87,7 +87,7 @@ content_hash: sha256:95eb87cce241a55ccb467c5cf4d515cf0926988243f6a716dce0e0b6237
 | unionID | 是 | String | 用户UnionID。具体格式要求请参考[OpenID和UnionID的格式说明](../harmonyos-guides/account-faq-9.md)。 |
 | displayName | 否 | String | 用户昵称，该字段返回场景详见[获取头像昵称](../harmonyos-guides/account-get-avatar-nickname.md)。  - 请求参数“getNickName”为0或不传时，返回匿名化账号。  - 请求参数“getNickName”为1时，返回昵称，没有昵称时返回匿名化账号。  **说明：**  调用成功后响应中若不包含用户昵称displayName，请确认获取的Authorization Code是否携带了profile（昵称和头像）scope。参考[客户端开发](../harmonyos-guides/account-get-avatar-nickname.md#客户端开发) |
 | displayNameFlag | 否 | int | 返回的昵称类型 。  0：昵称。  1：匿名账号。  **说明：**  调用成功后响应中若不包含昵称类型displayNameFlag，请确认获取的Authorization Code是否携带了profile（昵称和头像）scope。参考[客户端开发](../harmonyos-guides/account-get-avatar-nickname.md#客户端开发) |
-| headPictureURL | 否 | String | 用户头像，该字段返回场景详见[获取头像昵称](../harmonyos-guides/account-get-avatar-nickname.md)。用户未设置头像时不返回。 |
+| headPictureURL | 否 | String | 用户头像，该字段返回场景详见[获取头像昵称](../harmonyos-guides/account-get-avatar-nickname.md)。用户未设置头像时不返回。  **说明：**  当用户更新头像后，原头像链接会立即失效。为确保头像正常显示，建议先将头像下载保存后再使用，避免因用户头像链接失效而影响业务流程。 |
 
 调用失败时，响应消息返回如下：
 
@@ -100,79 +100,79 @@ content_hash: sha256:95eb87cce241a55ccb467c5cf4d515cf0926988243f6a716dce0e0b6237
 
 ### 请求成功时
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json;charset=utf-8
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
 
-4. {
-5. "displayName": "182******74",
-6. "displayNameFlag": 1,
-7. "openID": "AQAxrBzThFv*****lv9tV_4rMCc",
-8. "unionID": "AQAxrB1HNA*****n-IfWRSUVq2M7xU",
-9. "headPictureURL": "https://upfile-*****.jpg"
-10. }
+{
+    "displayName": "182******74",
+    "displayNameFlag": 1,
+    "openID": "AQAxrBzThFv*****lv9tV_4rMCc",
+    "unionID": "AQAxrB1HNA*****n-IfWRSUVq2M7xU",
+    "headPictureURL": "https://upfile-*****.jpg"
+}
 ```
 
 ### 请求失败时
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json;charset=utf-8
-3. NSP_STATUS: 6
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+NSP_STATUS: 6
 
-5. {
-6. "error": "session timeout"
-7. }
+{
+    "error": "session timeout"
+}
 ```
 
 ## 示例代码
 
 Java示例代码如下，运行前需要进行[示例代码环境配置](account-api-common.md#示例代码环境配置)（请将此示例代码与工具类CallUtils放于同一路径下，如不在同一路径，请手动添加import）
 
-```
-1. import com.alibaba.fastjson2.JSONObject;
-2. import org.apache.http.NameValuePair;
-3. import org.apache.http.client.entity.UrlEncodedFormEntity;
-4. import org.apache.http.client.methods.HttpPost;
-5. import org.apache.http.message.BasicNameValuePair;
-6. import java.io.IOException;
-7. import java.util.ArrayList;
-8. import java.util.List;
-9. import java.util.Objects;
+```java
+import com.alibaba.fastjson2.JSONObject;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.message.BasicNameValuePair;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
-11. /**
-12. * 获取华为账号用户信息-获取头像昵称
-13. */
-14. public class GetUserAvatarAndNickNameDemo {
-15. public static void main(String[] args) throws IOException {
-16. // 获取华为账号用户信息-获取头像昵称的接口URL
-17. String url = "https://account.cloud.huawei.com/rest.php?nsp_svc=GOpen.User.getInfo";
-18. // 替换为实际获取到的用户级凭证Access Token
-19. String accessToken = "<Access Token>";
-20. JSONObject result = getUserAvatarAndNickName(url, accessToken, 1);
-21. // 解析获取openID
-22. String openID = result.getString("openID");
-23. // 解析获取unionID
-24. String unionID = result.getString("unionID");
-25. // 解析获取displayName
-26. String displayName = result.getString("displayName");
-27. // 解析获取displayNameFlag
-28. Integer displayNameFlag = result.getInteger("displayNameFlag");
-29. // 解析获取headPictureURL
-30. String headPictureURL = result.getString("headPictureURL");
-31. }
+/**
+ * 获取华为账号用户信息-获取头像昵称
+ */
+public class GetUserAvatarAndNickNameDemo {
+    public static void main(String[] args) throws IOException {
+        // 获取华为账号用户信息-获取头像昵称的接口URL
+        String url = "https://account.cloud.huawei.com/rest.php?nsp_svc=GOpen.User.getInfo";
+        // 替换为实际获取到的用户级凭证Access Token
+        String accessToken = "<Access Token>";
+        JSONObject result = getUserAvatarAndNickName(url, accessToken, 1);
+        // 解析获取openID
+        String openID = result.getString("openID");
+        // 解析获取unionID
+        String unionID = result.getString("unionID");
+        // 解析获取displayName
+        String displayName = result.getString("displayName");
+        // 解析获取displayNameFlag
+        Integer displayNameFlag = result.getInteger("displayNameFlag");
+        // 解析获取headPictureURL
+        String headPictureURL = result.getString("headPictureURL");
+    }
 
-33. private static JSONObject getUserAvatarAndNickName(String url, String access_token, Integer getNickName) throws IOException {
-34. HttpPost httpPost = new HttpPost(url);
-35. List<NameValuePair> request = new ArrayList<>();
-36. request.add(new BasicNameValuePair("access_token", access_token));
-37. request.add(new BasicNameValuePair("getNickName", Objects.isNull(getNickName) ? null : String.valueOf(getNickName)));
-38. httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded");
-39. httpPost.setEntity(new UrlEncodedFormEntity(request));
-40. // 使用默认异常处理逻辑，自定义异常处理请使用api CallUtils#remoteCall(HttpUriRequest, BiFunction<CloseableHttpResponse,String,E>)
-41. return CallUtils.toJsonObject(CallUtils.remoteCall(httpPost));
-42. }
-43. }
+    private static JSONObject getUserAvatarAndNickName(String url, String access_token, Integer getNickName) throws IOException {
+        HttpPost httpPost = new HttpPost(url);
+        List<NameValuePair> request = new ArrayList<>();
+        request.add(new BasicNameValuePair("access_token", access_token));
+        request.add(new BasicNameValuePair("getNickName", Objects.isNull(getNickName) ? null : String.valueOf(getNickName)));
+        httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded");
+        httpPost.setEntity(new UrlEncodedFormEntity(request));
+        // 使用默认异常处理逻辑，自定义异常处理请使用api CallUtils#remoteCall(HttpUriRequest, BiFunction<CloseableHttpResponse,String,E>)
+        return CallUtils.toJsonObject(CallUtils.remoteCall(httpPost));
+    }
+}
 ```
 
 ## 错误码
@@ -189,7 +189,7 @@ Java示例代码如下，运行前需要进行[示例代码环境配置](account
 | 504 | 请求连接超时，常见于网络状况不稳定。 | 建议稍后重试，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 590 | 服务内部错误。 | 请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 
-说明
+**说明** 
 
 Response Header中的NSP\_STATUS字段，在处理成功时不会返回。
 

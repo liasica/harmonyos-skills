@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-concur
 title: 应用并发设计
 breadcrumb: 最佳实践 > 应用框架 > ArkTS语言 > 应用并发设计
 category: best-practices
-scraped_at: 2026-04-29T14:10:45+08:00
+scraped_at: 2026-09-02T15:03:16+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:58725e8bad3277f6d3caa0e4ad11467ec9b18a65ae86854bfe74218dee4085df
+content_hash: sha256:56dffa20b4bedadb3986a0e439475773f90eb1ccb378979fae7ef1bc5a8db8ed
 ---
 
 ## 概述
@@ -42,7 +42,7 @@ ArkTS是HarmonyOS APP的开发语言，它在保持TypeScript（简称TS）基�
 
 并发能力框架如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/BKVW_pTvQX60duqgZ1RvuQ/zh-cn_image_0000002194011076.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/g9yhF4J3QvGFyUlDV-q0EA/zh-cn_image_0000002194011076.png "点击放大")
 
 * **主线程：**执行UI业务、不耗时操作、单次I/O任务，与其他ArkTS线程共享系统I/O线程池，不阻塞ArkTS线程。
 * **TaskPool****高并发任务池：**执行耗时任务，封装任务入口，统计模块负载，开发者无需管理线程生命周期。
@@ -56,21 +56,21 @@ ArkTS是HarmonyOS APP的开发语言，它在保持TypeScript（简称TS）基�
 
 ### 共享内存并发模型
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/Oxh-FxCUQJa4a7DxDpWVmQ/zh-cn_image_0000002194011072.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/IALtwmUhRK-uHKOq1jbgSw/zh-cn_image_0000002194011072.jpg "点击放大")
 
 共享内存模型采用线程和锁的并发机制，不同线程共享内存并通过锁保护临界区。对于包含I/O操作或锁的业务，为防止阻塞，需开启多个线程执行不同业务。线程情况如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/31DtrlTITlCRqtArEW3H3Q/zh-cn_image_0000002194011068.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/YqXbSDD9SRyJeL_6QspHRw/zh-cn_image_0000002194011068.jpg "点击放大")
 
 因此，应用经常存在几百个线程，增加调度开销和内存占用。
 
 ### ArkTS并发模型
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/rIwFxN9yTJiUfcUAQJ139w/zh-cn_image_0000002194011084.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/aZppJLvqS_GD_d8j9hgmZg/zh-cn_image_0000002194011084.jpg "点击放大")
 
 ArkTS采用内存隔离的线程模型，不同线程间通过消息通信，线程内无锁化运行。业务内部的I/O操作由系统分发到后台的I/O任务池，不阻塞ArkTS上层逻辑，线程情况如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/8NfihLEhQx2HX3pbyc7EhQ/zh-cn_image_0000002229336865.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/DCTcydl7RES549DIehz4ng/zh-cn_image_0000002229336865.jpg "点击放大")
 
 异步I/O不阻塞ArkTS线程，TaskPool及I/O线程池由系统管理，提升能效。
 
@@ -135,27 +135,25 @@ ArkTS采用内存隔离的并发模型，不支持跨线程共享对象，必须
      TaskPool任务在子线程中执行，与宿主线程上下文环境不同，因此需确保任务的独立性，内部实现的依赖应通过参数传入或通过[ArkTS模块化](../harmonyos-guides/arkts-runtime-module.md)导入的方式完成。
 * **案例参考**
 
+  ```typescript
+  import { BusinessError } from '@kit.BasicServicesKit';
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+  import { taskpool } from '@kit.ArkTS';
+
+  // ...
+  @Concurrent
+  async function foo(a: number, b: number) {
+    return a + b;
+  }
+
+  function executeTaskPool() {
+    taskpool.execute(foo, 1, 2).then((ret: Object) => { // Result processing
+      hilog.info(DOMAIN, TAG, FORMAT, 'Return:' + ret);
+    }).catch((err: BusinessError) => {
+      hilog.error(DOMAIN, TAG, FORMAT, `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
+    });
+  }
   ```
-  1. import { BusinessError } from '@kit.BasicServicesKit';
-  2. import { hilog } from '@kit.PerformanceAnalysisKit';
-  3. import { taskpool } from '@kit.ArkTS';
-
-  5. // ...
-  6. @Concurrent
-  7. async function foo(a: number, b: number) {
-  8. return a + b;
-  9. }
-
-  11. function executeTaskPool() {
-  12. taskpool.execute(foo, 1, 2).then((ret: Object) => { // Result processing
-  13. hilog.info(DOMAIN, TAG, FORMAT, 'Return:' + ret);
-  14. }).catch((err: BusinessError) => {
-  15. hilog.error(DOMAIN, TAG, FORMAT, `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
-  16. });
-  17. }
-  ```
-
-  [ConcurrencyCapabilitySelection1.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/UseSendable/entry/src/main/ets/pages/ConcurrencyCapabilitySelection1.ets#L20-L42)
 * **与业界方案特殊差异说明**
 
   业界均采用线程池方案，与TaskPool无特殊差异。
@@ -266,39 +264,37 @@ ArkTS采用内存隔离的并发模型，不支持跨线程共享对象，必须
   长时任务与阻塞任务不同，它运行周期较长，但每次执行不会长时间阻塞线程。因此，不建议将需要独占线程的任务封装为长时任务。
 * **案例参考**
 
+  ```typescript
+  import { BusinessError } from '@kit.BasicServicesKit';
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+  import { taskpool } from '@kit.ArkTS';
+  const DOMAIN = 0x0000;
+  const TAG = 'ConcurrencyCapabilitySelection2';
+  const FORMAT = '%{public}s';
+  @Concurrent
+  async function foo() {
+    try {
+      // Long listening and other tasks
+      taskpool.Task.sendData();
+    } catch (err) {
+      hilog.error(0x0000, 'TAG', '%{public}s', `sendData failed. Cause code: ${err.code},message: ${err.message}`);
+    }
+  }
+
+  function executeTaskPool() {
+    let longTask: taskpool.LongTask = new taskpool.LongTask(foo);
+    longTask.onReceiveData((msg: Object) => {
+      // Listening callback
+      hilog.info(DOMAIN, TAG, FORMAT, `onReceiveData, ${msg}`);
+    });
+
+    taskpool.execute(longTask).then(() => {
+      hilog.info(DOMAIN, TAG, FORMAT, 'execute success');
+    }).catch((err: BusinessError) => {
+      hilog.error(DOMAIN, TAG, FORMAT, `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
+    });
+  }
   ```
-  1. import { BusinessError } from '@kit.BasicServicesKit';
-  2. import { hilog } from '@kit.PerformanceAnalysisKit';
-  3. import { taskpool } from '@kit.ArkTS';
-  4. const DOMAIN = 0x0000;
-  5. const TAG = 'ConcurrencyCapabilitySelection2';
-  6. const FORMAT = '%{public}s';
-  7. @Concurrent
-  8. async function foo() {
-  9. try {
-  10. // Long listening and other tasks
-  11. taskpool.Task.sendData();
-  12. } catch (err) {
-  13. hilog.error(0x0000, 'TAG', '%{public}s', `sendData failed. Cause code: ${err.code},message: ${err.message}`);
-  14. }
-  15. }
-
-  17. function executeTaskPool() {
-  18. let longTask: taskpool.LongTask = new taskpool.LongTask(foo);
-  19. longTask.onReceiveData((msg: Object) => {
-  20. // Listening callback
-  21. hilog.info(DOMAIN, TAG, FORMAT, `onReceiveData, ${msg}`);
-  22. });
-
-  24. taskpool.execute(longTask).then(() => {
-  25. hilog.info(DOMAIN, TAG, FORMAT, 'execute success');
-  26. }).catch((err: BusinessError) => {
-  27. hilog.error(DOMAIN, TAG, FORMAT, `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
-  28. });
-  29. }
-  ```
-
-  [ConcurrencyCapabilitySelection2.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/UseSendable/entry/src/main/ets/pages/ConcurrencyCapabilitySelection2.ets#L20-L50)
 * **与业界方案特殊差异说明**
 
   业界通常使用单独的线程池，HarmonyOS使用可调度的任务。
@@ -306,7 +302,7 @@ ArkTS采用内存隔离的并发模型，不支持跨线程共享对象，必须
 
   对于非驻留的长期任务，不建议使用Worker实现。
 
-  说明
+  **说明** 
 
   长时任务是指长时间不间断运行的独立任务，例如监听某个事件，发起执行后不会再接收发起方的输入。虽然也可以使用Worker（推荐用于常驻后台任务），但更推荐使用TaskPool，因为TaskPool更方便且资源消耗更低。[TaskPool和Worker的实现特点对比](../harmonyos-guides/taskpool-vs-worker.md#实现特点对比)。
 
@@ -348,58 +344,56 @@ ArkTS采用内存隔离的并发模型，不支持跨线程共享对象，必须
      当串行队列任务执行失败或被取消时，后续任务仍会执行。
 * **案例参考**
 
+  ```typescript
+  import { BusinessError } from '@kit.BasicServicesKit';
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+  import { taskpool } from '@kit.ArkTS';
+  // ...
+  @Concurrent
+  function additionDelay(delay: number): void {
+    let start: number = new Date().getTime();
+    while (new Date().getTime() - start < delay) {
+      continue;
+    }
+  }
+
+  @Concurrent
+  function waitForRunner(resString: string): string {
+    return resString;
+  }
+
+  async function seqRunner() {
+    let result: string = '';
+    let task1: taskpool.Task = new taskpool.Task(additionDelay, 300);
+    let task2: taskpool.Task = new taskpool.Task(additionDelay, 200);
+    let task3: taskpool.Task = new taskpool.Task(additionDelay, 100);
+    let task4: taskpool.Task = new taskpool.Task(waitForRunner, 50);
+
+    let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
+    runner.execute(task1).then(() => {
+      result += 'a';
+    }).catch((err: BusinessError) => {
+      hilog.error(DOMAIN, TAG, FORMAT, `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
+    });
+
+    runner.execute(task2).then(() => {
+      result += 'b';
+    }).catch((err: BusinessError) => {
+      hilog.error(DOMAIN, TAG, FORMAT, `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
+    });
+
+    runner.execute(task3).then(() => {
+      result += 'c';
+    }).catch((err: BusinessError) => {
+      hilog.error(DOMAIN, TAG, FORMAT, `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
+    });
+
+    await runner.execute(task4).catch((err: BusinessError) => {
+      hilog.error(DOMAIN, TAG, FORMAT, `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
+    });
+    hilog.info(DOMAIN, TAG, FORMAT, 'SequenceRunner: result is :' + result);
+  }
   ```
-  1. import { BusinessError } from '@kit.BasicServicesKit';
-  2. import { hilog } from '@kit.PerformanceAnalysisKit';
-  3. import { taskpool } from '@kit.ArkTS';
-  4. // ...
-  5. @Concurrent
-  6. function additionDelay(delay: number): void {
-  7. let start: number = new Date().getTime();
-  8. while (new Date().getTime() - start < delay) {
-  9. continue;
-  10. }
-  11. }
-
-  13. @Concurrent
-  14. function waitForRunner(resString: string): string {
-  15. return resString;
-  16. }
-
-  18. async function seqRunner() {
-  19. let result: string = '';
-  20. let task1: taskpool.Task = new taskpool.Task(additionDelay, 300);
-  21. let task2: taskpool.Task = new taskpool.Task(additionDelay, 200);
-  22. let task3: taskpool.Task = new taskpool.Task(additionDelay, 100);
-  23. let task4: taskpool.Task = new taskpool.Task(waitForRunner, 50);
-
-  25. let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
-  26. runner.execute(task1).then(() => {
-  27. result += 'a';
-  28. }).catch((err: BusinessError) => {
-  29. hilog.error(DOMAIN, TAG, FORMAT, `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
-  30. });
-
-  32. runner.execute(task2).then(() => {
-  33. result += 'b';
-  34. }).catch((err: BusinessError) => {
-  35. hilog.error(DOMAIN, TAG, FORMAT, `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
-  36. });
-
-  38. runner.execute(task3).then(() => {
-  39. result += 'c';
-  40. }).catch((err: BusinessError) => {
-  41. hilog.error(DOMAIN, TAG, FORMAT, `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
-  42. });
-
-  44. await runner.execute(task4).catch((err: BusinessError) => {
-  45. hilog.error(DOMAIN, TAG, FORMAT, `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
-  46. });
-  47. hilog.info(DOMAIN, TAG, FORMAT, 'SequenceRunner: result is :' + result);
-  48. }
-  ```
-
-  [ConcurrentTaskManagement1.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/UseSendable/entry/src/main/ets/pages/ConcurrentTaskManagement1.ets#L20-L71)
 * **与业界方案特殊差异说明**
 
   对于串行队列中任务执行失败后的处理，业界尚无统一规范。
@@ -444,61 +438,59 @@ ArkTS采用内存隔离的并发模型，不支持跨线程共享对象，必须
      - 具有依赖关系的任务不能放入串行队列。
 * **案例参考**
 
+  ```typescript
+  import { taskpool } from '@kit.ArkTS';
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
+
+  // ...
+  @Concurrent
+  function updateSAB(args: Uint32Array) {
+    if (args[0] == 0) {
+      args[0] = 100;
+      return 100;
+    } else if (args[0] == 100) {
+      args[0] = 200;
+      return 200;
+    } else if (args[0] == 200) {
+      args[0] = 300;
+      return 300;
+    }
+    return 0;
+  }
+
+  function executeTaskPool() {
+    let sab = new SharedArrayBuffer(20);
+    let typedArray = new Uint32Array(sab);
+    let task1 = new taskpool.Task(updateSAB, typedArray);
+    let task2 = new taskpool.Task(updateSAB, typedArray);
+    let task3 = new taskpool.Task(updateSAB, typedArray);
+    try {
+      task1.addDependency(task2);
+      task2.addDependency(task3);
+    } catch (err) {
+      hilog.error(DOMAIN, TAG, FORMAT, `sendData failed. Cause code: ${err.code},message: ${err.message}`);
+    }
+
+    taskpool.execute(task1).then((res: object) => {
+      hilog.info(DOMAIN, TAG, FORMAT, 'taskpool:: execute task1 res: ' + res);
+    }).catch((err: BusinessError) => {
+      hilog.error(DOMAIN, TAG, FORMAT, `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
+    });
+
+    taskpool.execute(task2).then((res: object) => {
+      hilog.info(DOMAIN, TAG, FORMAT, 'taskpool:: execute task2 res: ' + res);
+    }).catch((err: BusinessError) => {
+      hilog.error(DOMAIN, TAG, FORMAT, `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
+    });
+
+    taskpool.execute(task3).then((res: object) => {
+      hilog.info(DOMAIN, TAG, FORMAT, 'taskpool:: execute task3 res: ' + res);
+    }).catch((err: BusinessError) => {
+      hilog.error(DOMAIN, TAG, FORMAT, `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
+    });
+  }
   ```
-  1. import { taskpool } from '@kit.ArkTS';
-  2. import { hilog } from '@kit.PerformanceAnalysisKit';
-  3. import { BusinessError } from '@kit.BasicServicesKit';
-
-  5. // ...
-  6. @Concurrent
-  7. function updateSAB(args: Uint32Array) {
-  8. if (args[0] == 0) {
-  9. args[0] = 100;
-  10. return 100;
-  11. } else if (args[0] == 100) {
-  12. args[0] = 200;
-  13. return 200;
-  14. } else if (args[0] == 200) {
-  15. args[0] = 300;
-  16. return 300;
-  17. }
-  18. return 0;
-  19. }
-
-  21. function executeTaskPool() {
-  22. let sab = new SharedArrayBuffer(20);
-  23. let typedArray = new Uint32Array(sab);
-  24. let task1 = new taskpool.Task(updateSAB, typedArray);
-  25. let task2 = new taskpool.Task(updateSAB, typedArray);
-  26. let task3 = new taskpool.Task(updateSAB, typedArray);
-  27. try {
-  28. task1.addDependency(task2);
-  29. task2.addDependency(task3);
-  30. } catch (err) {
-  31. hilog.error(DOMAIN, TAG, FORMAT, `sendData failed. Cause code: ${err.code},message: ${err.message}`);
-  32. }
-
-  34. taskpool.execute(task1).then((res: object) => {
-  35. hilog.info(DOMAIN, TAG, FORMAT, 'taskpool:: execute task1 res: ' + res);
-  36. }).catch((err: BusinessError) => {
-  37. hilog.error(DOMAIN, TAG, FORMAT, `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
-  38. });
-
-  40. taskpool.execute(task2).then((res: object) => {
-  41. hilog.info(DOMAIN, TAG, FORMAT, 'taskpool:: execute task2 res: ' + res);
-  42. }).catch((err: BusinessError) => {
-  43. hilog.error(DOMAIN, TAG, FORMAT, `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
-  44. });
-
-  46. taskpool.execute(task3).then((res: object) => {
-  47. hilog.info(DOMAIN, TAG, FORMAT, 'taskpool:: execute task3 res: ' + res);
-  48. }).catch((err: BusinessError) => {
-  49. hilog.error(DOMAIN, TAG, FORMAT, `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
-  50. });
-  51. }
-  ```
-
-  [ConcurrentTaskManagement2.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/UseSendable/entry/src/main/ets/pages/ConcurrentTaskManagement2.ets#L20-L75)
 * **与业界方案特殊差异说明**
 
   业界实现的多数任务依赖机制，与TaskPool提供的任务依赖机制表现无明显差异。
@@ -527,50 +519,48 @@ ArkTS采用内存隔离的并发模型，不支持跨线程共享对象，必须
   2. 任务组的结果在所有任务执行结束后统一返回，因此需要先执行完的任务优先处理的场景不要使用任务组。
 * **案例参考**
 
+  ```typescript
+  import { BusinessError } from '@kit.BasicServicesKit';
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+  import { taskpool } from '@kit.ArkTS';
+
+  // ...
+  // Define asynchronous tasks
+  @Concurrent
+  function imageProcessing(arrayBuffer: ArrayBuffer): ArrayBuffer {
+    // Here add business logic, the input is ArrayBuffer, and the output is an ArrayBuffer storing the parsed results.
+    let message: ArrayBuffer = arrayBuffer;
+    return message;
+  }
+
+  let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+  let TASK_POOL_CAPACITY: number = 10;
+
+  function histogramStatistic(pixelBuffer: ArrayBuffer): void {
+    // Add tasks to the task group
+    let byteLengthOfTask: number = pixelBuffer.byteLength / TASK_POOL_CAPACITY;
+    for (let i = 0; i < TASK_POOL_CAPACITY; i++) {
+      let dataSlice: ArrayBuffer = (i === TASK_POOL_CAPACITY - 1) ? pixelBuffer.slice(i * byteLengthOfTask) :
+      pixelBuffer.slice(i * byteLengthOfTask, (i + 1) * byteLengthOfTask);
+      let task: taskpool.Task = new taskpool.Task(imageProcessing, dataSlice);
+      try {
+        taskGroup.addTask(task);
+      } catch (err) {
+        hilog.error(DOMAIN, TAG, FORMAT, `addTask failed. Cause code: ${err.code},message: ${err.message}`);
+      }
+    }
+    try {
+      taskpool.execute(taskGroup, taskpool.Priority.HIGH).then((res: Object[]): void | Promise<void> => {
+        // Result data processing
+        hilog.info(DOMAIN, TAG, FORMAT, `res:${res}`);
+      }).catch((error: BusinessError) => {
+        hilog.error(DOMAIN, TAG, FORMAT, `taskpool excute error: ${error}`);
+      });
+    } catch (error) {
+      hilog.error(DOMAIN, TAG, FORMAT, `taskpool excute error: ${error}`);
+    }
+  }
   ```
-  1. import { BusinessError } from '@kit.BasicServicesKit';
-  2. import { hilog } from '@kit.PerformanceAnalysisKit';
-  3. import { taskpool } from '@kit.ArkTS';
-
-  5. // ...
-  6. // Define asynchronous tasks
-  7. @Concurrent
-  8. function imageProcessing(arrayBuffer: ArrayBuffer): ArrayBuffer {
-  9. // Here add business logic, the input is ArrayBuffer, and the output is an ArrayBuffer storing the parsed results.
-  10. let message: ArrayBuffer = arrayBuffer;
-  11. return message;
-  12. }
-
-  14. let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
-  15. let TASK_POOL_CAPACITY: number = 10;
-
-  17. function histogramStatistic(pixelBuffer: ArrayBuffer): void {
-  18. // Add tasks to the task group
-  19. let byteLengthOfTask: number = pixelBuffer.byteLength / TASK_POOL_CAPACITY;
-  20. for (let i = 0; i < TASK_POOL_CAPACITY; i++) {
-  21. let dataSlice: ArrayBuffer = (i === TASK_POOL_CAPACITY - 1) ? pixelBuffer.slice(i * byteLengthOfTask) :
-  22. pixelBuffer.slice(i * byteLengthOfTask, (i + 1) * byteLengthOfTask);
-  23. let task: taskpool.Task = new taskpool.Task(imageProcessing, dataSlice);
-  24. try {
-  25. taskGroup.addTask(task);
-  26. } catch (err) {
-  27. hilog.error(DOMAIN, TAG, FORMAT, `addTask failed. Cause code: ${err.code},message: ${err.message}`);
-  28. }
-  29. }
-  30. try {
-  31. taskpool.execute(taskGroup, taskpool.Priority.HIGH).then((res: Object[]): void | Promise<void> => {
-  32. // Result data processing
-  33. hilog.info(DOMAIN, TAG, FORMAT, `res:${res}`);
-  34. }).catch((error: BusinessError) => {
-  35. hilog.error(DOMAIN, TAG, FORMAT, `taskpool excute error: ${error}`);
-  36. });
-  37. } catch (error) {
-  38. hilog.error(DOMAIN, TAG, FORMAT, `taskpool excute error: ${error}`);
-  39. }
-  40. }
-  ```
-
-  [ConcurrentTaskManagement3.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/UseSendable/entry/src/main/ets/pages/ConcurrentTaskManagement3.ets#L20-L63)
 
 ### 多任务优先级调度
 
@@ -602,35 +592,33 @@ ArkTS采用内存隔离的并发模型，不支持跨线程共享对象，必须
   2. 依赖多个任务的执行时需要考虑优先级的分配。避免高优先级任务依赖低优先级任务的执行，以防止优先级倒置。
 * **案例参考**
 
+  ```typescript
+  import { BusinessError } from '@kit.BasicServicesKit';
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+  import { taskpool } from '@kit.ArkTS';
+
+  // ...
+  function executeTaskPool(bufferArray: ArrayBuffer): void {
+    taskpool.execute(execColorInfo, bufferArray, taskpool.Priority.HIGH).catch((error: BusinessError) => {
+      hilog.error(DOMAIN, TAG, FORMAT, `taskpool excute error: ${error}`);
+    });
+  }
+
+  @Concurrent
+  async function execColorInfo(bufferArray: ArrayBuffer): Promise<ArrayBuffer> {
+    if (!bufferArray) {
+      return new ArrayBuffer(0);
+    }
+    const newBufferArr = bufferArray;
+    let colorInfo = new Uint8Array(newBufferArr);
+    let PIXEL_STEP = 2;
+    for (let i = 0; i < colorInfo?.length; i += PIXEL_STEP) {
+      // data processing
+    }
+    hilog.info(0x0000, 'ConcurrentTaskManagement4', '%{public}s', `execColorInfo success`);
+    return newBufferArr;
+  }
   ```
-  1. import { BusinessError } from '@kit.BasicServicesKit';
-  2. import { hilog } from '@kit.PerformanceAnalysisKit';
-  3. import { taskpool } from '@kit.ArkTS';
-
-  5. // ...
-  6. function executeTaskPool(bufferArray: ArrayBuffer): void {
-  7. taskpool.execute(execColorInfo, bufferArray, taskpool.Priority.HIGH).catch((error: BusinessError) => {
-  8. hilog.error(DOMAIN, TAG, FORMAT, `taskpool excute error: ${error}`);
-  9. });
-  10. }
-
-  12. @Concurrent
-  13. async function execColorInfo(bufferArray: ArrayBuffer): Promise<ArrayBuffer> {
-  14. if (!bufferArray) {
-  15. return new ArrayBuffer(0);
-  16. }
-  17. const newBufferArr = bufferArray;
-  18. let colorInfo = new Uint8Array(newBufferArr);
-  19. let PIXEL_STEP = 2;
-  20. for (let i = 0; i < colorInfo?.length; i += PIXEL_STEP) {
-  21. // data processing
-  22. }
-  23. hilog.info(0x0000, 'ConcurrentTaskManagement4', '%{public}s', `execColorInfo success`);
-  24. return newBufferArr;
-  25. }
-  ```
-
-  [ConcurrentTaskManagement4.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/UseSendable/entry/src/main/ets/pages/ConcurrentTaskManagement4.ets#L20-L48)
 * **与业界方案特殊差异说明**
 
   业界普遍提供了优先级机制，与TaskPool中的优先级没有显著差异。
@@ -664,32 +652,30 @@ ArkTS采用内存隔离的并发模型，不支持跨线程共享对象，必须
   2. 不建议将多个任务延时到同一时间执行。这可能导致任务排队，从而影响部分任务在指定延时时间后立即执行。
 * **案例参考**
 
+  ```typescript
+  import { BusinessError } from '@kit.BasicServicesKit';
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+  import { taskpool } from '@kit.ArkTS';
+
+  // ...
+  @Concurrent
+  function concurrentTask(num: number): number {
+    hilog.info(0x0000, 'TAG', '%{public}s', 'Add the task that needs to be executed with delay');
+    return num;
+  }
+
+  function executeTaskPool() {
+    // create a task
+    let task: taskpool.Task = new taskpool.Task(concurrentTask, 100);
+    // Delayed execution of task
+    taskpool.executeDelayed(3000, task, taskpool.Priority.HIGH).then((value: Object) => {
+      // Processing delayed task results
+      hilog.info(DOMAIN, TAG, FORMAT, 'taskpool result: ' + value);
+    }).catch((err: BusinessError) => {
+      hilog.error(DOMAIN, TAG, FORMAT, `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
+    });
+  }
   ```
-  1. import { BusinessError } from '@kit.BasicServicesKit';
-  2. import { hilog } from '@kit.PerformanceAnalysisKit';
-  3. import { taskpool } from '@kit.ArkTS';
-
-  5. // ...
-  6. @Concurrent
-  7. function concurrentTask(num: number): number {
-  8. hilog.info(0x0000, 'TAG', '%{public}s', 'Add the task that needs to be executed with delay');
-  9. return num;
-  10. }
-
-  12. function executeTaskPool() {
-  13. // create a task
-  14. let task: taskpool.Task = new taskpool.Task(concurrentTask, 100);
-  15. // Delayed execution of task
-  16. taskpool.executeDelayed(3000, task, taskpool.Priority.HIGH).then((value: Object) => {
-  17. // Processing delayed task results
-  18. hilog.info(DOMAIN, TAG, FORMAT, 'taskpool result: ' + value);
-  19. }).catch((err: BusinessError) => {
-  20. hilog.error(DOMAIN, TAG, FORMAT, `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
-  21. });
-  22. }
-  ```
-
-  [ConcurrentTaskManagement5.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/UseSendable/entry/src/main/ets/pages/ConcurrentTaskManagement5.ets#L20-L45)
 * **与业界方案特殊差异说明**
 
   业界大部分提供了任务延时调度功能，与TaskPool中的任务延时调度无明显差异。
@@ -767,92 +753,88 @@ ArkTS采用内存隔离的并发模型，不支持跨线程共享对象，必须
   | pthread线程与pthread线程 |
 * **案例参考**
 
-  ```
-  1. // napi_init.cpp
-  2. struct CallbackData {
-  3. napi_env env;
-  4. napi_async_work asyncWork = nullptr;
-  5. napi_threadsafe_function tsfn = nullptr;
-  6. int32_t data = -1;
-  7. };
+  ```typescript
+  // napi_init.cpp
+  struct CallbackData {
+      napi_env env;
+      napi_async_work asyncWork = nullptr;
+      napi_threadsafe_function tsfn = nullptr;
+      int32_t data = -1;
+  };
 
-  9. static void CallJs(napi_env env, napi_value jsCb, void *context, void *data) {
-  10. CallbackData *callbackData = reinterpret_cast<CallbackData *>(data);
-  11. napi_value global;
-  12. assert(napi_get_global(env, &global) == napi_ok);
-  13. napi_value number;
-  14. assert(napi_create_int32(env, callbackData->data, &number) == napi_ok);
-  15. assert(napi_call_function(env, global, jsCb, 1, &number, nullptr) == napi_ok);
-  16. }
-  17. static void NativeThread(void *data) {
-  18. CallbackData *callbackData = reinterpret_cast<CallbackData *>(data);
-  19. /* Cross-thread call */
-  20. {
-  21. assert(napi_acquire_threadsafe_function(callbackData->tsfn) == napi_ok);
+  static void CallJs(napi_env env, napi_value jsCb, void *context, void *data) {
+      CallbackData *callbackData = reinterpret_cast<CallbackData *>(data);
+      napi_value global;
+      assert(napi_get_global(env, &global) == napi_ok);
+      napi_value number;
+      assert(napi_create_int32(env, callbackData->data, &number) == napi_ok);
+      assert(napi_call_function(env, global, jsCb, 1, &number, nullptr) == napi_ok);
+  }
+  static void NativeThread(void *data) {
+      CallbackData *callbackData = reinterpret_cast<CallbackData *>(data);
+      /* Cross-thread call */
+      {
+          assert(napi_acquire_threadsafe_function(callbackData->tsfn) == napi_ok);
 
-  23. callbackData->data = 123456;
-  24. napi_status status = napi_call_threadsafe_function(callbackData->tsfn, callbackData, napi_tsfn_blocking);
-  25. assert(status == napi_ok);
-  26. }
-  27. }
-  28. static void ThreadFinished(napi_env env, void *data, [[maybe_unused]] void *context) {
-  29. CallbackData *callbackData = reinterpret_cast<CallbackData *>(data);
+          callbackData->data = 123456;
+          napi_status status = napi_call_threadsafe_function(callbackData->tsfn, callbackData, napi_tsfn_blocking);
+          assert(status == napi_ok);
+      }
+  }
+  static void ThreadFinished(napi_env env, void *data, [[maybe_unused]] void *context) {
+      CallbackData *callbackData = reinterpret_cast<CallbackData *>(data);
 
-  31. assert(napi_release_threadsafe_function(callbackData->tsfn, napi_tsfn_release) == napi_ok);
-  32. ;
-  33. callbackData->asyncWork = nullptr;
-  34. callbackData->tsfn = nullptr;
-  35. delete callbackData;
-  36. }
-  37. static napi_value NativeCall(napi_env env, napi_callback_info info) {
-  38. napi_value resourceName = nullptr;
-  39. CallbackData *callbackData = new CallbackData;
-  40. callbackData->env = env;
+      assert(napi_release_threadsafe_function(callbackData->tsfn, napi_tsfn_release) == napi_ok);
+      ;
+      callbackData->asyncWork = nullptr;
+      callbackData->tsfn = nullptr;
+      delete callbackData;
+  }
+  static napi_value NativeCall(napi_env env, napi_callback_info info) {
+      napi_value resourceName = nullptr;
+      CallbackData *callbackData = new CallbackData;
+      callbackData->env = env;
 
-  42. napi_value jsCb = nullptr;
-  43. size_t argc = 1;
+      napi_value jsCb = nullptr;
+      size_t argc = 1;
 
-  45. assert(napi_get_cb_info(env, info, &argc, &jsCb, nullptr, nullptr) == napi_ok);
-  46. assert(argc == 1);
+      assert(napi_get_cb_info(env, info, &argc, &jsCb, nullptr, nullptr) == napi_ok);
+      assert(argc == 1);
 
-  48. assert(napi_create_string_utf8(env, "Call thread-safe function from c++ thread", NAPI_AUTO_LENGTH, &resourceName) ==
-  49. napi_ok);
-  50. napi_status status;
-  51. status = napi_create_threadsafe_function(env, jsCb, nullptr, resourceName, 0, 1, callbackData, ThreadFinished,
-  52. callbackData, CallJs, &(callbackData->tsfn));
-  53. assert(status == napi_ok);
-  54. return nullptr;
-  55. }
-  ```
-
-  [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/UseSendable/entry/src/main/cpp/napi_init.cpp#L49-L103)
-
-  ```
-  1. import { hilog } from '@kit.PerformanceAnalysisKit';
-  2. import nativeModule from 'libentry.so';
-  3. // ...
-  4. @Component
-  5. export struct InterThreadCommunication1 {
-  6. build() {
-  7. NavDestination() {
-  8. Column() {
-  9. Button($r('app.string.multithreaded_communication_title'))
-  10. .width('100%')
-  11. .onClick(() => {
-  12. nativeModule.nativeCall((a: number) => {
-  13. hilog.info(DOMAIN, TAG, FORMAT, 'Received data from thread-function: %{public}d', a);
-  14. })
-  15. hilog.info(DOMAIN, TAG, FORMAT, `click nativeCall success`);
-  16. })
-  17. }
-  18. // ...
-  19. }
-  20. .title($r('app.string.multithreaded_communication_title'))
-  21. }
-  22. }
+      assert(napi_create_string_utf8(env, "Call thread-safe function from c++ thread", NAPI_AUTO_LENGTH, &resourceName) ==
+             napi_ok);
+      napi_status status;
+      status = napi_create_threadsafe_function(env, jsCb, nullptr, resourceName, 0, 1, callbackData, ThreadFinished,
+                                               callbackData, CallJs, &(callbackData->tsfn));
+      assert(status == napi_ok);
+      return nullptr;
+  }
   ```
 
-  [InterThreadCommunication1.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/UseSendable/entry/src/main/ets/pages/InterThreadCommunication1.ets#L20-L55)
+  ```typescript
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+  import nativeModule from 'libentry.so';
+  // ...
+  @Component
+  export struct InterThreadCommunication1 {
+    build() {
+      NavDestination() {
+        Column() {
+          Button($r('app.string.multithreaded_communication_title'))
+            .width('100%')
+            .onClick(() => {
+              nativeModule.nativeCall((a: number) => {
+                hilog.info(DOMAIN, TAG, FORMAT, 'Received data from thread-function: %{public}d', a);
+              })
+              hilog.info(DOMAIN, TAG, FORMAT, `click nativeCall success`);
+            })
+        }
+        // ...
+      }
+      .title($r('app.string.multithreaded_communication_title'))
+    }
+  }
+  ```
 * **与业界方案特殊差异说明**
   1. Java与C++通信时，业界使用JNI调用，与Node-API机制类似。
   2. Java与C++通信时，业界支持C++线程通过attach方式反射调用Java方法。HarmonyOS APP开发时需通过napi\_threadsafe\_function异步通信。
@@ -878,7 +860,7 @@ ArkTS采用内存隔离的并发模型，不支持跨线程共享对象，必须
 
   步骤二：初始化完成后通知主线程，主线程导入并使用该单例对象。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/R73ypdwKS8SMKzX0RD3QDg/zh-cn_image_0000002194011080.jpg "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/21zU9SJcQ8Glj78SAJNShQ/zh-cn_image_0000002194011080.jpg "点击放大")
 * **业务实现中的关键点**
   1. JS模块对象
 
@@ -894,7 +876,7 @@ ArkTS采用内存隔离的并发模型，不支持跨线程共享对象，必须
 
      Native静态方法提供对应模块的Native功能实现。通过napi\_get\_cb\_info获取JS绑定函数的`this`对象，从而通过this获取绑定在JS模块对象上的Native实例，再调用Native实例对应的Native成员方法，即可完成对应功能的实现。
 
-     说明
+     **说明** 
 
      同上，方法实现中不能进行非线程安全的全局变量操作。
   4. 生命周期问题
@@ -904,122 +886,118 @@ ArkTS采用内存隔离的并发模型，不支持跨线程共享对象，必须
      若需精细化控制，可以绑定finalizeCallback进行管理。线程对象回收时，该线程会调用析构方法。
 * **案例参考**
 
-  ```
-  1. // napi_init.cpp
-  2. class Singleton {
-  3. public:
-  4. static Singleton &GetInstance() {
-  5. static Singleton instance;
-  6. return instance;
-  7. }
-  8. static napi_value GetAddress(napi_env env, napi_callback_info info) {
-  9. uint64_t addressVal = reinterpret_cast<uint64_t>(&GetInstance());
-  10. napi_value napiAddress = nullptr;
-  11. napi_create_bigint_uint64(env, addressVal, &napiAddress);
-  12. return napiAddress;
-  13. }
-  14. static napi_value GetSetSize(napi_env env, napi_callback_info info) {
-  15. std::lock_guard<std::mutex> lock(Singleton::GetInstance().numberSetMutex_);
-  16. uint32_t setSize = Singleton::GetInstance().numberSet_.size();
-  17. napi_value napiSize = nullptr;
-  18. napi_create_uint32(env, setSize, &napiSize);
-  19. return napiSize;
-  20. }
-  21. static napi_value Store(napi_env env, napi_callback_info info) {
-  22. size_t argc = 1;
-  23. napi_value args[1] = {nullptr};
-  24. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-  25. if (argc != 1) {
-  26. napi_throw_error(env, "ERROR: ", "store args number must be one");
-  27. return nullptr;
-  28. }
-  29. napi_valuetype type = napi_undefined;
-  30. napi_typeof(env, args[0], &type);
-  31. if (type != napi_number) {
-  32. napi_throw_error(env, "ERROR: ", "store args is not number");
-  33. return nullptr;
-  34. }
-  35. std::lock_guard<std::mutex> lock(Singleton::GetInstance().numberSetMutex_);
-  36. uint32_t value = 0;
-  37. napi_get_value_uint32(env, args[0], &value);
-  38. Singleton::GetInstance().numberSet_.insert(value);
-  39. return nullptr;
-  40. }
+  ```typescript
+  // napi_init.cpp
+  class Singleton {
+  public:
+      static Singleton &GetInstance() {
+          static Singleton instance;
+          return instance;
+      }
+      static napi_value GetAddress(napi_env env, napi_callback_info info) {
+          uint64_t addressVal = reinterpret_cast<uint64_t>(&GetInstance());
+          napi_value napiAddress = nullptr;
+          napi_create_bigint_uint64(env, addressVal, &napiAddress);
+          return napiAddress;
+      }
+      static napi_value GetSetSize(napi_env env, napi_callback_info info) {
+          std::lock_guard<std::mutex> lock(Singleton::GetInstance().numberSetMutex_);
+          uint32_t setSize = Singleton::GetInstance().numberSet_.size();
+          napi_value napiSize = nullptr;
+          napi_create_uint32(env, setSize, &napiSize);
+          return napiSize;
+      }
+      static napi_value Store(napi_env env, napi_callback_info info) {
+          size_t argc = 1;
+          napi_value args[1] = {nullptr};
+          napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+          if (argc != 1) {
+              napi_throw_error(env, "ERROR: ", "store args number must be one");
+              return nullptr;
+          }
+          napi_valuetype type = napi_undefined;
+          napi_typeof(env, args[0], &type);
+          if (type != napi_number) {
+              napi_throw_error(env, "ERROR: ", "store args is not number");
+              return nullptr;
+          }
+          std::lock_guard<std::mutex> lock(Singleton::GetInstance().numberSetMutex_);
+          uint32_t value = 0;
+          napi_get_value_uint32(env, args[0], &value);
+          Singleton::GetInstance().numberSet_.insert(value);
+          return nullptr;
+      }
 
-  42. private:
-  43. Singleton() {}                                    // Private constructor to prevent external instantiation of objects
-  44. Singleton(const Singleton &) = delete;            // Do not copy the constructor
-  45. Singleton &operator=(const Singleton &) = delete; // The assignment operator is prohibited
+  private:
+      Singleton() {}                                    // Private constructor to prevent external instantiation of objects
+      Singleton(const Singleton &) = delete;            // Do not copy the constructor
+      Singleton &operator=(const Singleton &) = delete; // The assignment operator is prohibited
 
-  47. public:
-  48. std::unordered_set<uint32_t> numberSet_{};
-  49. std::mutex numberSetMutex_{};
-  50. };
-  ```
-
-  [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/UseSendable/entry/src/main/cpp/napi_init.cpp#L110-L159)
-
-  ```
-  1. import { BusinessError } from '@kit.BasicServicesKit';
-  2. import { hilog } from '@kit.PerformanceAnalysisKit';
-  3. import { taskpool } from '@kit.ArkTS';
-  4. import singleton from 'libentry.so';
-
-  6. // ...
-  7. @Concurrent
-  8. function getAddress() {
-  9. let address = singleton.getAddress();
-  10. hilog.info(0x0000, 'TAG', '%{public}s', 'taskpool:: address is ' + address);
-  11. }
-
-  13. @Concurrent
-  14. function store(a: number, b: number, c: number) {
-  15. let size = singleton.getSetSize();
-  16. hilog.info(0x0000, 'TAG', '%{public}s', 'set size is ' + size + ' before store');
-  17. singleton.store(a);
-  18. singleton.store(b);
-  19. singleton.store(c);
-  20. size = singleton.getSetSize();
-  21. hilog.info(0x0000, 'TAG', '%{public}s', 'set size is ' + size + ' after store');
-  22. }
-
-  24. @Component
-  25. export struct InterThreadCommunication2 {
-  26. build() {
-  27. NavDestination() {
-  28. Column() {
-  29. Button($r('app.string.singleton_pattern_title'))
-  30. .width('100%')
-  31. .onClick(() => {
-  32. let address = singleton.getAddress();
-  33. hilog.info(DOMAIN, TAG, FORMAT, `host thread address is ${address}`);
-  34. let task1 = new taskpool.Task(getAddress);
-  35. taskpool.execute(task1).catch((err: BusinessError) => {
-  36. hilog.error(DOMAIN, TAG, FORMAT,
-  37. `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
-  38. });
-
-  40. let task2 = new taskpool.Task(store, 1, 2, 3);
-  41. taskpool.execute(task2).catch((err: BusinessError) => {
-  42. hilog.error(DOMAIN, TAG, FORMAT,
-  43. `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
-  44. });
-
-  46. let task3 = new taskpool.Task(store, 4, 5, 6);
-  47. taskpool.execute(task3).catch((err: BusinessError) => {
-  48. hilog.error(DOMAIN, TAG, FORMAT,
-  49. `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
-  50. });
-  51. })
-  52. }
-  53. // ...
-  54. }
-  55. .title($r('app.string.singleton_pattern_title'))
-  56. }
-  57. }
+  public:
+      std::unordered_set<uint32_t> numberSet_{};
+      std::mutex numberSetMutex_{};
+  };
   ```
 
-  [InterThreadCommunication2.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/UseSendable/entry/src/main/ets/pages/InterThreadCommunication2.ets#L20-L90)
+  ```typescript
+  import { BusinessError } from '@kit.BasicServicesKit';
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+  import { taskpool } from '@kit.ArkTS';
+  import singleton from 'libentry.so';
+
+  // ...
+  @Concurrent
+  function getAddress() {
+    let address = singleton.getAddress();
+    hilog.info(0x0000, 'TAG', '%{public}s', 'taskpool:: address is ' + address);
+  }
+
+  @Concurrent
+  function store(a: number, b: number, c: number) {
+    let size = singleton.getSetSize();
+    hilog.info(0x0000, 'TAG', '%{public}s', 'set size is ' + size + ' before store');
+    singleton.store(a);
+    singleton.store(b);
+    singleton.store(c);
+    size = singleton.getSetSize();
+    hilog.info(0x0000, 'TAG', '%{public}s', 'set size is ' + size + ' after store');
+  }
+
+  @Component
+  export struct InterThreadCommunication2 {
+    build() {
+      NavDestination() {
+        Column() {
+          Button($r('app.string.singleton_pattern_title'))
+            .width('100%')
+            .onClick(() => {
+              let address = singleton.getAddress();
+              hilog.info(DOMAIN, TAG, FORMAT, `host thread address is ${address}`);
+              let task1 = new taskpool.Task(getAddress);
+              taskpool.execute(task1).catch((err: BusinessError) => {
+                hilog.error(DOMAIN, TAG, FORMAT,
+                  `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
+              });
+
+              let task2 = new taskpool.Task(store, 1, 2, 3);
+              taskpool.execute(task2).catch((err: BusinessError) => {
+                hilog.error(DOMAIN, TAG, FORMAT,
+                  `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
+              });
+
+              let task3 = new taskpool.Task(store, 4, 5, 6);
+              taskpool.execute(task3).catch((err: BusinessError) => {
+                hilog.error(DOMAIN, TAG, FORMAT,
+                  `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
+              });
+            })
+        }
+        // ...
+      }
+      .title($r('app.string.singleton_pattern_title'))
+    }
+  }
+  ```
 * **实现方案介绍（方案二）**
 
   步骤一：使用ArkTS对象定义Sendable类的单例，封装为共享模块（进程内共享），并在子线程中初始化。
@@ -1030,59 +1008,55 @@ ArkTS采用内存隔离的并发模型，不支持跨线程共享对象，必须
   Sendable类需要满足一定的约束，可参考[@Sendable装饰器](../harmonyos-guides/arkts-sendable.md#sendable装饰器)。
 * **案例参考**
 
-  ```
-  1. // Demo.ets
-  2. "use shared"
+  ```typescript
+  // Demo.ets
+  "use shared"
 
-  4. @Sendable
-  5. export class Demo {
-  6. private static instance: Demo;
+  @Sendable
+  export class Demo {
+    private static instance: Demo;
 
-  8. private constructor() {
-  9. }
+    private constructor() {
+    }
 
-  11. public static getInstance(): Demo {
-  12. if (!Demo.instance) {
-  13. Demo.instance = new Demo();
-  14. }
-  15. return Demo.instance;
-  16. }
+    public static getInstance(): Demo {
+      if (!Demo.instance) {
+        Demo.instance = new Demo();
+      }
+      return Demo.instance;
+    }
 
-  18. public init(): void {
-  19. // initialization logic
-  20. }
-  21. }
-  ```
-
-  [Demo.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/UseSendable/entry/src/main/ets/pages/Demo.ets#L21-L41)
-
-  ```
-  1. import { BusinessError } from '@kit.BasicServicesKit';
-  2. import { hilog } from '@kit.PerformanceAnalysisKit';
-  3. import { taskpool } from '@kit.ArkTS';
-  4. import { Demo } from './Demo';
-  5. const DOMAIN = 0x0000;
-  6. const TAG = 'InterThreadCommunication3';
-  7. const FORMAT = '%{public}s';
-  8. @Concurrent
-  9. function initSingleton(): void {
-  10. let demo = Demo.getInstance();
-  11. demo.init();
-  12. hilog.info(0x0000, 'InterThreadCommunication3', '%{public}s', `initSingleton success`);
-  13. // Notify the main thread that initialization is complete
-  14. }
-
-  16. async function executeTaskPool(): Promise<void> {
-  17. let task = new taskpool.Task(initSingleton);
-  18. await taskpool.execute(task).then(() => {
-  19. hilog.info(0x0000, 'InterThreadCommunication3', '%{public}s', `executeTaskPool success`);
-  20. }).catch((err: BusinessError) => {
-  21. hilog.error(DOMAIN, TAG, FORMAT, `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
-  22. });
-  23. }
+    public init(): void {
+      // initialization logic
+    }
+  }
   ```
 
-  [InterThreadCommunication3.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/UseSendable/entry/src/main/ets/pages/InterThreadCommunication3.ets#L20-L44)
+  ```typescript
+  import { BusinessError } from '@kit.BasicServicesKit';
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+  import { taskpool } from '@kit.ArkTS';
+  import { Demo } from './Demo';
+  const DOMAIN = 0x0000;
+  const TAG = 'InterThreadCommunication3';
+  const FORMAT = '%{public}s';
+  @Concurrent
+  function initSingleton(): void {
+    let demo = Demo.getInstance();
+    demo.init();
+    hilog.info(0x0000, 'InterThreadCommunication3', '%{public}s', `initSingleton success`);
+    // Notify the main thread that initialization is complete
+  }
+
+  async function executeTaskPool(): Promise<void> {
+    let task = new taskpool.Task(initSingleton);
+    await taskpool.execute(task).then(() => {
+      hilog.info(0x0000, 'InterThreadCommunication3', '%{public}s', `executeTaskPool success`);
+    }).catch((err: BusinessError) => {
+      hilog.error(DOMAIN, TAG, FORMAT, `taskpool execute error. Cause code: ${err.code},message: ${err.message}`);
+    });
+  }
+  ```
 * **与业界方案特殊差异说明**
 
   Java存在ClassLoader机制，所有类型是静态且唯一的，因此可以方便地导入类并支持单例模式。而在HarmonyOS APP开发中，需要借助共享模块来保证类只加载一次，确保唯一性。
@@ -1116,60 +1090,54 @@ ArkTS采用内存隔离的并发模型，不支持跨线程共享对象，必须
 
   以全局环境变量共享为例：
 
-  ```
-  1. import { hilog } from '@kit.PerformanceAnalysisKit';
-  2. import { worker } from '@kit.ArkTS';
-  3. import { freezeObj } from './freezeObj';
-  4. // ...
-  5. @Sendable
-  6. export class GlobalConfig {
-  7. // Some configuration properties and methods
-  8. init() {
-  9. // Initialization-related logic
-  10. freezeObj(this) // Freeze the current object after initialization is completed.
-  11. }
-  12. }
+  ```typescript
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+  import { worker } from '@kit.ArkTS';
+  import { freezeObj } from './freezeObj';
+  // ...
+  @Sendable
+  export class GlobalConfig {
+    // Some configuration properties and methods
+    init() {
+      // Initialization-related logic
+      freezeObj(this) // Freeze the current object after initialization is completed.
+    }
+  }
 
-  14. function executeTaskPool() {
-  15. try {
-  16. let globalConfig = new GlobalConfig();
-  17. globalConfig.init();
-  18. const workerInstance = new worker.ThreadWorker('entry/ets/workers/Worker.ets`', { name: 'Worker1' });
-  19. workerInstance.postMessage(globalConfig);
-  20. hilog.info(DOMAIN, TAG, FORMAT, `executeTaskPool success`);
-  21. } catch (err) {
-  22. hilog.error(DOMAIN, TAG, FORMAT, `postMessage failed. Cause code: ${err.code},message: ${err.message}`);
-  23. }
-  24. }
-  ```
-
-  [InterThreadCommunication4.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/UseSendable/entry/src/main/ets/pages/InterThreadCommunication4.ets#L20-L47)
-
-  ```
-  1. // The worker file path is: entry/ets/workers/Worker.ets
-  2. // Worker.ets
-  3. import { MessageEvents, ThreadWorkerGlobalScope, worker } from '@kit.ArkTS';
-  4. import { GlobalConfig } from '../pages/InterThreadCommunication4';
-  5. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-  7. const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
-  8. workerPort.onmessage = (e: MessageEvents) => {
-  9. let globalConfig: GlobalConfig = e.data;
-  10. hilog.info(0x0000, 'TAG', '%{public}s', `globalConfig: ${globalConfig}`);
-  11. // use the globalConfig object
-  12. }
+  function executeTaskPool() {
+    try {
+      let globalConfig = new GlobalConfig();
+      globalConfig.init();
+      const workerInstance = new worker.ThreadWorker('entry/ets/workers/Worker.ets`', { name: 'Worker1' });
+      workerInstance.postMessage(globalConfig);
+      hilog.info(DOMAIN, TAG, FORMAT, `executeTaskPool success`);
+    } catch (err) {
+      hilog.error(DOMAIN, TAG, FORMAT, `postMessage failed. Cause code: ${err.code},message: ${err.message}`);
+    }
+  }
   ```
 
-  [Worker.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/UseSendable/entry/src/main/ets/workers/Worker.ets#L20-L31)
+  ```typescript
+  // The worker file path is: entry/ets/workers/Worker.ets
+  // Worker.ets
+  import { MessageEvents, ThreadWorkerGlobalScope, worker } from '@kit.ArkTS';
+  import { GlobalConfig } from '../pages/InterThreadCommunication4';
+  import { hilog } from '@kit.PerformanceAnalysisKit';
 
-  ```
-  1. // freezeObj.ts
-  2. export function freezeObj(obj: any) {
-  3. Object.freeze(obj);
-  4. }
+  const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
+  workerPort.onmessage = (e: MessageEvents) => {
+    let globalConfig: GlobalConfig = e.data;
+    hilog.info(0x0000, 'TAG', '%{public}s', `globalConfig: ${globalConfig}`);
+    // use the globalConfig object
+  }
   ```
 
-  [freezeObj.ts](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/UseSendable/entry/src/main/ets/pages/freezeObj.ts#L20-L23)
+  ```screen
+  // freezeObj.ts
+  export function freezeObj(obj: any) {
+    Object.freeze(obj);
+  }
+  ```
 * **与业界方案特殊差异说明**
 
   内存共享模型中，Java/C++对象在不同线程间均可见。Sendable对象需要将对象引用发送到其他线程才能使用。

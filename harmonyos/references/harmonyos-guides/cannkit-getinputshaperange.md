@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getin
 title: GetInputShapeRange
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > InferShapeRangeContext > GetInputShapeRange
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:02+08:00
+scraped_at: 2026-09-02T14:50:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b7db447edf24b53ce281caad7e0452765d78a5d05a21209dd35979261ee2d7da
+content_hash: sha256:029cabf0837f1f4a126d3d5ac9fb20f36a06d378ac0a90973e33fe4b95a028e2
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:b7db447edf24b53ce281caad7e0452765d78a5d05a21209dd35979261ee
 
 ## 函数原型
 
-```
-1. const Range<Shape> *GetInputShapeRange(const size_t index) const;
+```cpp
+const Range<Shape> *GetInputShapeRange(const size_t index) const;
 ```
 
 ## 参数说明
@@ -34,12 +34,12 @@ content_hash: sha256:b7db447edf24b53ce281caad7e0452765d78a5d05a21209dd35979261ee
 
 ## 调用示例
 
-```
-1. const auto infer_shape_range_func = [](gert::InferShapeRangeContext *context) -> graphStatus {
-2. auto input_shape_range = context->GetInputShapeRange(0U);
-3. auto output_shape_range = context->GetOutputShapeRange(0U);
-4. output_shape_range->SetMin(const_cast<gert::Shape *>(input_shape_range->GetMin()));
-5. output_shape_range->SetMax(const_cast<gert::Shape *>(input_shape_range->GetMax()));
-6. return GRAPH_SUCCESS;
-7. };
+```cpp
+const auto infer_shape_range_func = [](gert::InferShapeRangeContext *context) -> graphStatus {
+  auto input_shape_range = context->GetInputShapeRange(0U);
+  auto output_shape_range = context->GetOutputShapeRange(0U);
+  output_shape_range->SetMin(const_cast<gert::Shape *>(input_shape_range->GetMin()));
+  output_shape_range->SetMax(const_cast<gert::Shape *>(input_shape_range->GetMax()));
+  return GRAPH_SUCCESS;
+};
 ```

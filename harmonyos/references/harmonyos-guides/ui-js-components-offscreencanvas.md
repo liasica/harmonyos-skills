@@ -3,200 +3,200 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: OffscreenCanvasRenderingContext2D对象
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > Canvas开发指导 > OffscreenCanvasRenderingContext2D对象
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:52+08:00
+scraped_at: 2026-09-02T14:49:53+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:edae91bbbfd8c4a589a45f9512ec20cf42b08f10a7f97c871e24f29dab1ec9aa
+content_hash: sha256:a10a7e3c69411f5e4ec6c9c00c54dc828f91186d91aa400d70257246874b8fd6
 ---
 
 使用OffscreenCanvas在离屏Canvas画布组件上进行绘制，绘制对象可以是矩形、文本、图片等。 离屏，即GPU在当前缓冲区以外新开辟的一个缓冲区。具体请参考[OffscreenCanvasRenderingContext2D对象](../harmonyos-references/js-offscreencanvasrenderingcontext2d.md)。
 
 以下示例创建了一个OffscreenCanvas画布，再在画布上创建一个getContext2d对象，并设置filter属性改变图片样式。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <canvas ref="canvas1"></canvas>
-4. <select @change="change()">
-5. <option value="blur(5px)">blur</option>
-6. <option value="grayscale(50%)">grayscale</option>
-7. <option value="hue-rotate(45deg)">hue-rotate</option>
-8. <option value="invert(100%)">invert</option>
-9. <option value="drop-shadow(8px 8px 10px green)">drop-shadow</option>
-10. <option value="brightness(0.4)">brightness</option>
-11. <option value="opacity(0.25)">opacity</option>
-12. <option value="saturate(30%)">saturate</option>
-13. <option value="sepia(60%)">sepia</option>
-14. <option value="contrast(200%)">contrast</option>
-15. </select>
-16. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width: 100%;
-4. height: 100%;
-5. flex-direction: column;
-6. justify-content: center;
-7. align-items: center;
-8. background-color: #F1F3F5;
-9. }
-
-11. canvas {
-12. width: 600px;
-13. height: 500px;
-14. background-color: #fdfdfd;
-15. border: 5px solid red;
-16. }
-
-18. select {
-19. margin-top: 50px;
-20. width: 250px;
-21. height: 100px;
-22. background-color: white;
-23. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <canvas ref="canvas1"></canvas>
+  <select @change="change()">
+    <option value="blur(5px)">blur</option>
+    <option value="grayscale(50%)">grayscale</option>
+    <option value="hue-rotate(45deg)">hue-rotate</option>
+    <option value="invert(100%)">invert</option>
+    <option value="drop-shadow(8px 8px 10px green)">drop-shadow</option>
+    <option value="brightness(0.4)">brightness</option>
+    <option value="opacity(0.25)">opacity</option>
+    <option value="saturate(30%)">saturate</option>
+    <option value="sepia(60%)">sepia</option>
+    <option value="contrast(200%)">contrast</option>
+  </select>
+</div>
 ```
 
-```
-1. // xxx.js
-2. import promptAction from '@ohos.promptAction';
+```css
+/* xxx.css */
+.container {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F1F3F5;
+}
 
-4. export default {
-5. data: {
-6. el: null,
-7. ctx: null,
-8. offscreen: null,
-9. offCanvas: null,
-10. img: null,
-11. },
-12. onShow() {
-13. this.ctx = this.$refs.canvas1.getContext('2d');
-14. this.offscreen = new OffscreenCanvas(600, 500);
-15. this.offCanvas = this.offscreen.getContext('2d');
-16. this.img = new Image();
-17. // "common/images/2.png"需要替换为开发者所需的图像资源文件
-18. this.img.src = 'common/images/2.png';
-19. // 图片成功获取触发方法
-20. let _this = this;
-21. this.img.onload = function () {
-22. _this.offCanvas.drawImage(_this.img, 100, 100, 400, 300);
-23. };
-24. this.img.onerror = function () {
-25. promptAction.showToast({ message: 'error', duration: 2000 })
-26. };
-27. var bitmap = this.offscreen.transferToImageBitmap();
-28. this.ctx.transferFromImageBitmap(bitmap);
-29. },
-30. change(e) {
-31. this.offCanvas.filter = e.newValue;
-32. this.offCanvas.drawImage(this.img, 100, 100, 400, 300);
-33. var bitmap = this.offscreen.transferToImageBitmap();
-34. this.ctx.transferFromImageBitmap(bitmap);
-35. },
-36. }
+canvas {
+    width: 600px;
+    height: 500px;
+    background-color: #fdfdfd;
+    border: 5px solid red;
+}
+
+select {
+    margin-top: 50px;
+    width: 250px;
+    height: 100px;
+    background-color: white;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/lK_RDNlKRNmvaWHXP3H6jQ/zh-cn_image_0000002589324497.gif)
+```js
+// xxx.js
+import promptAction from '@ohos.promptAction';
+
+export default {
+    data: {
+        el: null,
+        ctx: null,
+        offscreen: null,
+        offCanvas: null,
+        img: null,
+    },
+    onShow() {
+        this.ctx = this.$refs.canvas1.getContext('2d');
+        this.offscreen = new OffscreenCanvas(600, 500);
+        this.offCanvas = this.offscreen.getContext('2d');
+        this.img = new Image();
+        // "common/images/2.png"需要替换为开发者所需的图像资源文件
+        this.img.src = 'common/images/2.png';
+        // 图片成功获取触发方法
+        let _this = this;
+        this.img.onload = function () {
+            _this.offCanvas.drawImage(_this.img, 100, 100, 400, 300);
+        };
+        this.img.onerror = function () {
+            promptAction.showToast({ message: 'error', duration: 2000 })
+        };
+        var bitmap = this.offscreen.transferToImageBitmap();
+        this.ctx.transferFromImageBitmap(bitmap);
+    },
+    change(e) {
+        this.offCanvas.filter = e.newValue;
+        this.offCanvas.drawImage(this.img, 100, 100, 400, 300);
+        var bitmap = this.offscreen.transferToImageBitmap();
+        this.ctx.transferFromImageBitmap(bitmap);
+    },
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/JZ7L7N9gSxWdmXWCP1aGVw/zh-cn_image_0000002706833966.gif)
 
 ## 判断位置
 
 使用isPointInPath判断坐标点是否在路径的区域内，使用isPointInStroke判断坐标点是否在路径的边缘线上，并在页面上显示返回结果。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <div class="content">
-4. <text>坐标：{{X}}, {{Y}}</text>
-5. <text>In path:{{textValue}}</text>
-6. <text>In stroke:{{textValue1}}</text>
-7. </div>
-8. <canvas ref="canvas"></canvas>
-9. <button onclick="change">Add(50)</button>
-10. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width: 100%;
-4. height: 100%;
-5. flex-direction: column;
-6. justify-content: center;
-7. align-items: center;
-8. background-color: #F1F3F5;
-9. display: flex;
-10. }
-
-12. canvas {
-13. width: 600px;
-14. height: 500px;
-15. background-color: #fdfdfd;
-16. border: 5px solid red;
-17. }
-
-19. .content {
-20. flex-direction: column;
-21. justify-content: center;
-22. align-items: center;
-23. }
-
-25. text {
-26. font-size: 30px;
-27. width: 300px;
-28. height: 80px;
-29. text-align: center;
-30. }
-
-32. button {
-33. width: 180px;
-34. height: 75px;
-35. margin-top: 50px;
-36. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <div class="content">
+    <text>坐标：{{X}}, {{Y}}</text>
+    <text>In path:{{textValue}}</text>
+    <text>In stroke:{{textValue1}}</text>
+  </div>
+  <canvas ref="canvas"></canvas>
+  <button onclick="change">Add(50)</button>
+</div>
 ```
 
-```
-1. // xxx.js
-2. export default {
-3. data: {
-4. textValue: 0,
-5. textValue1: 0,
-6. X: 0,
-7. Y: 250,
-8. },
-9. onShow() {
-10. let canvas = this.$refs.canvas.getContext('2d');
-11. let offscreen = new OffscreenCanvas(500, 500);
-12. let offscreenCanvasCtx = offscreen.getContext('2d');
-13. let offscreenCanvasCtx1 = offscreen.getContext('2d');
-14. offscreenCanvasCtx1.arc(this.X, this.Y, 2, 0, 6.28);
-15. offscreenCanvasCtx.lineWidth = 20;
-16. offscreenCanvasCtx.rect(200, 150, 200, 200);
-17. offscreenCanvasCtx.stroke();
-18. this.textValue1 = offscreenCanvasCtx.isPointInStroke(this.X, this.Y) ? 'true' : 'false';
-19. this.textValue = offscreenCanvasCtx.isPointInPath(this.X, this.Y) ? 'true' : 'false';
-20. let bitmap = offscreen.transferToImageBitmap();
-21. canvas.transferFromImageBitmap(bitmap);
-22. },
-23. change() {
-24. if (this.X < 500) {
-25. this.X = this.X + 50;
-26. } else {
-27. this.X = 0;
-28. }
-29. let canvas = this.$refs.canvas.getContext('2d');
-30. let offscreen = new OffscreenCanvas(500, 500);
-31. let offscreenCanvasCtx = offscreen.getContext('2d');
-32. let offscreenCanvasCtx1 = offscreen.getContext('2d');
-33. offscreenCanvasCtx1.arc(this.X, this.Y, 1, 0, 6.28)
-34. offscreenCanvasCtx.lineWidth = 20
-35. offscreenCanvasCtx.rect(200, 150, 200, 200);
-36. offscreenCanvasCtx.stroke();
-37. this.textValue1 = offscreenCanvasCtx.isPointInStroke(this.X, this.Y) ? 'true' : 'false';
-38. this.textValue = offscreenCanvasCtx.isPointInPath(this.X, this.Y) ? 'true' : 'false';
-39. let bitmap = offscreen.transferToImageBitmap();
-40. canvas.transferFromImageBitmap(bitmap);
-41. }
-42. }
+```css
+/* xxx.css */
+.container {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F1F3F5;
+    display: flex;
+}
+
+canvas {
+    width: 600px;
+    height: 500px;
+    background-color: #fdfdfd;
+    border: 5px solid red;
+}
+
+.content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+text {
+    font-size: 30px;
+    width: 300px;
+    height: 80px;
+    text-align: center;
+}
+
+button {
+    width: 180px;
+    height: 75px;
+    margin-top: 50px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/byRjpSywRwGlI0wWvnDvBg/zh-cn_image_0000002589244435.gif)
+```js
+// xxx.js
+export default {
+    data: {
+        textValue: 0,
+        textValue1: 0,
+        X: 0,
+        Y: 250,
+    },
+    onShow() {
+        let canvas = this.$refs.canvas.getContext('2d');
+        let offscreen = new OffscreenCanvas(500, 500);
+        let offscreenCanvasCtx = offscreen.getContext('2d');
+        let offscreenCanvasCtx1 = offscreen.getContext('2d');
+        offscreenCanvasCtx1.arc(this.X, this.Y, 2, 0, 6.28);
+        offscreenCanvasCtx.lineWidth = 20;
+        offscreenCanvasCtx.rect(200, 150, 200, 200);
+        offscreenCanvasCtx.stroke();
+        this.textValue1 = offscreenCanvasCtx.isPointInStroke(this.X, this.Y) ? 'true' : 'false';
+        this.textValue = offscreenCanvasCtx.isPointInPath(this.X, this.Y) ? 'true' : 'false';
+        let bitmap = offscreen.transferToImageBitmap();
+        canvas.transferFromImageBitmap(bitmap);
+    },
+    change() {
+        if (this.X < 500) {
+            this.X = this.X + 50;
+        } else {
+            this.X = 0;
+        }
+        let canvas = this.$refs.canvas.getContext('2d');
+        let offscreen = new OffscreenCanvas(500, 500);
+        let offscreenCanvasCtx = offscreen.getContext('2d');
+        let offscreenCanvasCtx1 = offscreen.getContext('2d');
+        offscreenCanvasCtx1.arc(this.X, this.Y, 1, 0, 6.28)
+        offscreenCanvasCtx.lineWidth = 20
+        offscreenCanvasCtx.rect(200, 150, 200, 200);
+        offscreenCanvasCtx.stroke();
+        this.textValue1 = offscreenCanvasCtx.isPointInStroke(this.X, this.Y) ? 'true' : 'false';
+        this.textValue = offscreenCanvasCtx.isPointInPath(this.X, this.Y) ? 'true' : 'false';
+        let bitmap = offscreen.transferToImageBitmap();
+        canvas.transferFromImageBitmap(bitmap);
+    }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/GxM9dCZ1SNCtFNRfWhFWGw/zh-cn_image_0000002736313075.gif)

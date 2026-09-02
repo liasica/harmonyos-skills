@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: OH_Drawing_BitmapFormat
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 结构体 > OH_Drawing_BitmapFormat
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:11+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5166d1de63f3b49a3403b29ee6c3b8a7705fa7c0913b8dcebaeeace242779c47
+scraped_at: 2026-09-02T15:02:45+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b26cdf55ea54c2b0c5b7bdad8fb88861496d0b7342b45851005451b55d415488
 ---
 
-```
-1. typedef struct {...} OH_Drawing_BitmapFormat
+```c
+typedef struct {...} OH_Drawing_BitmapFormat
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 结构体用于描述位图像素的格式，包括颜色类型和透明度类型。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

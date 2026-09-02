@@ -3,22 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-n
 title: OH_NativeBuffer
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 模块 > OH_NativeBuffer
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:47+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:2f6a6c05f3bc9337d11616d5060dc7b97f9d1699173a0a8a58a9eef75a2b24a9
+scraped_at: 2026-09-02T14:53:06+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f3c5cf91e3fb86b6fb2d87683ea77d2a52e6ba108a07f7ff2b95e1ff83800dca
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供NativeBuffer功能，通过提供的接口，可以实现共享内存的申请、使用、属性查询、释放等操作。
 
 **起始版本：** 9
 
 ## 文件汇总
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

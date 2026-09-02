@@ -1,14 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/servicecollaboration-collaborationcamera
 title: CollaborationCamera (跨设备互通组件)
-breadcrumb: API参考 > 系统 > 网络 > Service Collaboration Kit（协同服务） > ArkTS 组件 > CollaborationCamera (跨设备互通组件)
+breadcrumb: API参考 > 系统 > 网络 > Service Collaboration Kit（协同服务） > ArkTS组件 > CollaborationCamera (跨设备互通组件)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:15+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:31e3646b90cc75bb56be2b2ede364c4062c3456c5500f753a09483c6f4065159
+scraped_at: 2026-09-02T15:01:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f624366030f5d4b7354ac67e14d40738591a61ab357c58a78a25a17e309edff2
 ---
 
-该模块提供了组件[createCollaborationCameraMenuItems](servicecollaboration-collaborationcamera.md#createcollaborationcameramenuitemsdeprecated)和[CollaborationCameraStateDialog](servicecollaboration-collaborationcamera.md#collaborationcamerastatedialogdeprecated)，两者需要配合使用，完成分布式跨端能力，如在2in1端跨端调用手机端拍照。
+该模块提供了组件[createCollaborationCameraMenuItems](servicecollaboration-collaborationcamera.md#createcollaborationcameramenuitemsdeprecated)和[CollaborationCameraStateDialog](servicecollaboration-collaborationcamera.md#collaborationcamerastatedialogdeprecated)，两者需要配合使用，完成分布式跨端能力，如在PC/2in1端跨端调用Phone端拍照。
 
 通过[createCollaborationCameraMenuItems](servicecollaboration-collaborationcamera.md#createcollaborationcameramenuitemsdeprecated)组件，可以获取组网内具有对应能力的设备列表。用户选择对应的设备后，拉起应用。调用[CollaborationCameraStateDialog](servicecollaboration-collaborationcamera.md#collaborationcamerastatedialogdeprecated)，应用将弹出提示框，提示对端应用状态。
 
@@ -18,15 +18,11 @@ content_hash: sha256:31e3646b90cc75bb56be2b2ede364c4062c3456c5500f753a09483c6f40
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { CollaborationCameraStateDialog, createCollaborationCameraMenuItems, CollaborationCameraBusinessFilter} from '@kit.ServiceCollaborationKit';
+```typescript
+import { CollaborationCameraStateDialog, createCollaborationCameraMenuItems, CollaborationCameraBusinessFilter} from '@kit.ServiceCollaborationKit';
 ```
 
 ## createCollaborationCameraMenuItems(deprecated)
-
-PhonePC/2in1TabletTV
 
 createCollaborationCameraMenuItems(businessFilter?: Array<CollaborationCameraBusinessFilter>): void
 
@@ -35,6 +31,8 @@ createCollaborationCameraMenuItems(businessFilter?: Array<CollaborationCameraBus
 该方法为自定义构建函数，开发者在使用前需要先了解[@Builder](../harmonyos-guides/arkts-builder.md)。
 
 **废弃说明：** 从5.0.0(12) 开始废弃，建议使用[createCollaborationServiceMenuItems](servicecollaboration-collaborationservice.md#createcollaborationservicemenuitems)替代。
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
 
 **装饰器类型：** @Builder
 
@@ -52,22 +50,22 @@ createCollaborationCameraMenuItems(businessFilter?: Array<CollaborationCameraBus
 
 **示例：**
 
-```
-1. @Builder
-2. MyTestMenu() {
-3. Menu() {
-4. createCollaborationCameraMenuItems([CollaborationCameraBusinessFilter.ALL])
-5. }
-6. }
+```typescript
+@Builder
+myTestMenu() {
+  Menu() {
+    createCollaborationCameraMenuItems([CollaborationCameraBusinessFilter.ALL]);
+  }
+}
 ```
 
 ## CollaborationCameraBusinessFilter(deprecated)
 
-PhonePC/2in1TabletTV
-
 能力类型枚举值。
 
 **废弃说明：** 从5.0.0(12) 开始废弃，建议使用[CollaborationServiceFilter](servicecollaboration-collaborationservice.md#collaborationservicefilter)替代。
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Collaboration.Camera
 
@@ -84,18 +82,16 @@ PhonePC/2in1TabletTV
 
 **示例：**
 
-```
-1. @Builder
-2. MyTestMenu() {
-3. Menu() {
-4. createCollaborationCameraMenuItems([CollaborationCameraBusinessFilter.ALL])
-5. }
-6. }
+```typescript
+@Builder
+myTestMenu() {
+  Menu() {
+    createCollaborationCameraMenuItems([CollaborationCameraBusinessFilter.ALL]);
+  }
+}
 ```
 
 ## CollaborationCameraStateDialog(deprecated)
-
-PhonePC/2in1TabletTV
 
 弹窗组件，用于提示对端应用状态。
 
@@ -104,6 +100,8 @@ PhonePC/2in1TabletTV
 该组件为自定义组件，开发者在使用前需要先了解[@Component](../harmonyos-guides/arkts-create-custom-components.md#component)。
 
 **废弃说明：** 从5.0.0(12) 开始废弃，建议使用[CollaborationServiceStateDialog](servicecollaboration-collaborationservice.md#collaborationservicestatedialog)替代。
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
 
 **装饰器类型：** @Component
 
@@ -115,13 +113,13 @@ PhonePC/2in1TabletTV
 
 ### onState(deprecated)
 
-PhonePC/2in1TabletTV
-
 onState: (stateCode: number, buffer: ArrayBuffer) => void
 
 接收数据的回调函数，其中传入的stateCode是完成状态，buffer是回传的图片数据，开发者可通过状态和图片数据结合自身的业务逻辑实现onState方法。
 
 **废弃说明：** 从5.0.0(12) 开始废弃，建议使用[onState](servicecollaboration-collaborationservice.md#onstate)替代。
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Collaboration.Camera
 
@@ -138,29 +136,27 @@ onState: (stateCode: number, buffer: ArrayBuffer) => void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS 错误码](servicecollaboration-error-code.md)。
+以下错误码的详细介绍请参见[错误码](errorcode-servicecollaboration.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 0 | 成功。 |
-| 1001202001 | 对端取消。 |
-| 1001202002 | 协同框架内部出现错误。 |
-| 1001202003 | 本端取消。 |
-| 1001202004 | 跨设备互通能力开始。 |
-| 1001202005 | 图片全部回传结束。 |
-| 1001202006 | 代表回传文件名称。 |
-| 1001202015 | 视频全部回传成功。 |
-| 1001202016 | 正在回传多个视频。 |
+| 0 | Success. |
+| 1001202001 | The peer end cancels the operation. |
+| 1001202002 | An error occurred within the collaborative framework. |
+| 1001202003 | The local end cancels the operation. |
+| 1001202004 | The device interconnectivity has been established. |
+| 1001202005 | All images have been successfully sent back. |
+| 1001202006 | Multiple images are being sent back. |
 
 ### build(deprecated)
-
-PhonePC/2in1TabletTV
 
 build(): void
 
 struct的默认构造函数，开发者无法直接调用此方法。
 
 **废弃说明：** 从5.0.0(12) 开始废弃，建议使用[build](servicecollaboration-collaborationservice.md#build)替代。
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Collaboration.Camera
 
@@ -174,63 +170,67 @@ struct的默认构造函数，开发者无法直接调用此方法。
 
 跨设备互通详细介绍可参考[跨设备互通特性简介](../harmonyos-guides/servicecollaboration-service-overview.md)。
 
-```
-1. import {
-2. createCollaborationCameraMenuItems,
-3. CollaborationCameraStateDialog,
-4. CollaborationCameraBusinessFilter
-5. } from '@kit.ServiceCollaborationKit';
-6. import { image } from '@kit.ImageKit';
-7. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import {
+  createCollaborationCameraMenuItems,
+  CollaborationCameraStateDialog,
+  CollaborationCameraBusinessFilter
+} from '@kit.ServiceCollaborationKit';
+import { image } from '@kit.ImageKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-9. @Entry
-10. @Component
-11. struct Index {
-12. @State picture: PixelMap | undefined = undefined;
+@Entry
+@Component
+struct Index {
+  @State picture: PixelMap | undefined = undefined;
 
-14. @Builder
-15. MyTestMenu() {
-16. Menu() {
-17. createCollaborationCameraMenuItems([CollaborationCameraBusinessFilter.ALL]);
-18. }
-19. }
+  @Builder
+  myTestMenu() {
+    Menu() {
+      createCollaborationCameraMenuItems([CollaborationCameraBusinessFilter.ALL]);
+    }
+  }
 
-21. build() {
-22. Column({ space: 20 }) {
-23. CollaborationCameraStateDialog({
-24. onState: (stateCode: number, buffer: ArrayBuffer): void => this.doInsertPicture(stateCode, buffer)
-25. })
-26. Button('使用远端设备插入图片')
-27. .type(ButtonType.Normal)
-28. .borderRadius(10)
-29. .bindMenu(this.MyTestMenu)
+  build() {
+    Column({ space: 20 }) {
+      CollaborationCameraStateDialog({
+        onState: (stateCode: number, buffer: ArrayBuffer): void => this.doInsertPicture(stateCode, buffer)
+      })
+      Button('使用远端设备插入图片')
+        .type(ButtonType.Normal)
+        .borderRadius(10)
+        .bindMenu(this.myTestMenu)
 
-31. if (this.picture) {
-32. Image(this.picture)
-33. .borderStyle(BorderStyle.Dotted)
-34. .borderWidth(1)
-35. .objectFit(ImageFit.Contain)
-36. .height('80%')
-37. .onComplete((event) => {
-38. if (event != undefined) {
-39. hilog.info(0, "MEMOMOCK", "onComplete " + event.loadingStatus)
-40. }
-41. })
-42. }
-43. }
-44. .padding(20)
-45. .width('100%')
-46. .alignItems(HorizontalAlign.Center)
-47. }
+      if (this.picture) {
+        Image(this.picture)
+          .borderStyle(BorderStyle.Dotted)
+          .borderWidth(1)
+          .objectFit(ImageFit.Contain)
+          .height('80%')
+          .onComplete((event) => {
+            if (event != undefined) {
+              hilog.info(0, 'MEMOMOCK', 'onComplete ' + event.loadingStatus);
+            }
+          })
+      }
+    }
+    .padding(20)
+    .width('100%')
+    .alignItems(HorizontalAlign.Center)
+  }
 
-49. doInsertPicture(stateCode: number, buffer: ArrayBuffer): void {
-50. if (stateCode != 0) {
-51. return
-52. }
-53. let imageSource = image.createImageSource(buffer)
-54. imageSource.createPixelMap().then((pixelMap) => {
-55. this.picture = pixelMap;
-56. })
-57. }
-58. }
+  doInsertPicture(stateCode: number, buffer: ArrayBuffer): void {
+    if (stateCode != 0) {
+      return;
+    }
+    let imageSource = image.createImageSource(buffer);
+    imageSource.createPixelMap().then((pixelMap) => {
+      this.picture = pixelMap;
+    }).catch((error: Error) => {
+      hilog.error(0, 'MEMOMOCK', 'Create pixel map failed: ' + error);
+    }).finally(() => {
+      imageSource.release();
+    });
+  }
+}
 ```

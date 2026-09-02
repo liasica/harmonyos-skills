@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-overa
 title: OMG参数
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型转换 > 离线模型转换 > OMG参数
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:19+08:00
+scraped_at: 2026-09-02T15:00:04+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e511d2b221045381722a719f75959e5606e3ad70479b7b1d81924352e93509f5
+content_hash: sha256:28a643d9acefa23cc5671becf4ac4b6f8538f08f777bb892bee7efbf8531554b
 ---
 
-说明
+**说明** 
 
 * 路径：支持大小写字母、数字、下划线。
 * 文件名：支持大小写字母、数字、下划线和点(.)。
@@ -44,7 +44,7 @@ content_hash: sha256:e511d2b221045381722a719f75959e5606e3ad70479b7b1d81924352e93
 | --platform | 芯片平台，当--target设置为omc时必须设置。 | 否 | 不涉及 |
 | --target | 目标模型类型。  - om  硬件无关Davinci模型。  - omc  硬件强相关Davinci模型，仅可在--platform指定的平台部署 | 否 | om |
 
-说明
+**说明** 
 
 当前只支持下表列出的情况。
 

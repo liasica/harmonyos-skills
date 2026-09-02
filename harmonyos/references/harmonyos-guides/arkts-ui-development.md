@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-deve
 title: UI开发 (ArkTS声明式开发范式)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:53+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:31bc2583fdda3beafbd0368362582457ca8bd57f57995292f0b517cb3ad60f50
+scraped_at: 2026-09-02T14:49:46+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:eaa62c633238d5c6aad3e79710956b90585a6dc6fed7da573e5e155e1e23bc2c
 ---
 
 * **[UI开发（ArkTS声明式开发范式）概述](arkts-ui-development-overview.md)**
@@ -21,6 +21,7 @@ content_hash: sha256:31bc2583fdda3beafbd0368362582457ca8bd57f57995292f0b517cb3ad
 * **[按钮与选择](arkts-form-selection.md)**
 * **[添加组件](arkts-add-component.md)**
 * **[使用弹窗](arkts-use-dialog.md)**
+* **[沉浸光感](arkts-immersive-light-sense.md)**
 * **[几何图形绘制](arkts-draw-graphics.md)**
 * **[添加交互响应](arkts-interaction-development-guide-overview.md)**
 * **[使用动画](arkts-use-animation.md)**

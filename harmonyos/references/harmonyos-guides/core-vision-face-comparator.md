@@ -3,262 +3,283 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/core-vision-f
 title: 人脸比对
 breadcrumb: 指南 > AI > Core Vision Kit（基础视觉服务） > 人脸比对
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:43:28+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ef3098bf84cf069348358fc11dcb4b50a970cb827fd9e18995441b52ec5276ff
+scraped_at: 2026-09-02T15:00:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:19daead4d9f2bc2f3d7c4dff8620911c4d7f7f313cde0e360dc82aee5a5fd776
 ---
 
 ## 适用场景
 
-输入的两张比对图片是同一个人的照片时，系统返回的比对结果为"同一个人"，置信分数比较高；当两张比对图片不是同一个人的照片时，系统返回的比对结果为"非同一个人"，置信分数很低。可以用于APP中需要用到人脸比对功能的场景，比如娱乐类APP中比较两个人的相似度、与明星的相似度等。
+输入的两张比对图片是同一个人的照片时，系统返回的比对结果为“同一个人”，置信分数比较高；当两张比对图片不是同一个人的照片时，系统返回的比对结果为“非同一个人”，置信分数很低。该功能可用于人脸比对的场景，例如身份验证、人脸解锁等安全相关场景。
 
 效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/WHeSEHc0RjKn35uGmGJ1Lg/zh-cn_image_0000002558606152.png)
-
-## 约束与限制
-
-该能力当前不支持模拟器。
-
-| AI能力 | 约束 |
-| --- | --- |
-| 人脸比对 | - 当前功能只支持1v1人脸比对。  - 输入的两张图像都需要合适的成像质量（建议720p以上），224px<高度<15210px，100px<宽度<10000px，高宽比例建议10:1以下（高度小于宽度的10倍），接近手机屏幕高宽比例为宜。 |
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/Rnlb60SYRI6wIG0Ek_wT_A/zh-cn_image_0000002736434521.png)
 
 ## 开发步骤
 
 1. 在使用人脸比对时，将实现人脸比对相关的类添加至工程。
 
+   ```typescript
+   import { faceComparator } from '@kit.CoreVisionKit';
+   import { image } from '@kit.ImageKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { fileIo } from '@kit.CoreFileKit';
+   import { photoAccessHelper } from '@kit.MediaLibraryKit';
    ```
-   1. import { faceComparator } from '@kit.CoreVisionKit';
-   2. import { image } from '@kit.ImageKit';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
-   4. import { BusinessError } from '@kit.BasicServicesKit';
-   5. import { fileIo } from '@kit.CoreFileKit';
-   6. import { photoAccessHelper } from '@kit.MediaLibraryKit';
-   ```
-2. 简单配置页面的布局，并在Button组件添加点击事件，拉起图库，选择图片。
+2. 初始化和释放：在aboutToAppear中调用[faceComparator.init()](../harmonyos-references/core-vision-facecomparator-api.md#facecomparatorinit)初始化人脸比对分析器（加载模型），在aboutToDisappear中调用[faceComparator.release()](../harmonyos-references/core-vision-facecomparator-api.md#facecomparatorrelease)释放资源。
 
-   ```
-   1. Button('选择图片')
-   2. .type(ButtonType.Capsule)
-   3. .fontColor(Color.White)
-   4. .alignSelf(ItemAlign.Center)
-   5. .width('80%')
-   6. .margin(10)
-   7. .onClick(() => {
-   8. // 拉起图库，获取图片资源
-   9. void this.selectImage();
-   10. })
-   ```
-3. 通过图库获取图片资源，将图片转换为[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)，并添加初始化和释放方法。
+   ```typescript
+   async aboutToAppear(): Promise<void> {
+     const initResult = await faceComparator.init();
+     hilog.info(0x0000, TAG, `Face comparator initialization result:${initResult}`);
+   }
 
+   async aboutToDisappear(): Promise<void> {
+     await faceComparator.release();
+     hilog.info(0x0000, TAG, 'Face comparator released successfully');
+   }
    ```
-   1. async aboutToAppear(): Promise<void> {
-   2. const initResult = await faceComparator.init();
-   3. hilog.info(0x0000, TAG, `Face comparator initialization result:${initResult}`);
-   4. }
+3. 通过photoAccessHelper.PhotoViewPicker拉起图库选择两张待比对的图片，使用fileIo与image模块将URI转换为[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)，为后续比对接口准备输入数据。
 
-   6. async aboutToDisappear(): Promise<void> {
-   7. await faceComparator.release();
-   8. hilog.info(0x0000, TAG, 'Face comparator released successfully');
-   9. }
-
-   11. private async selectImage() {
-   12. let uri = await this.openPhoto()
-   13. if (uri === undefined) {
-   14. hilog.error(0x0000, 'faceCompare', "Failed to get two image uris.");
-   15. }
-   16. this.loadImage(uri);
-   17. }
-
-   19. private async openPhoto(): Promise<string[]> {
-   20. return new Promise<string[]>((resolve, reject) => {
-   21. let photoPicker: photoAccessHelper.PhotoViewPicker = new photoAccessHelper.PhotoViewPicker();
-   22. photoPicker.select({
-   23. MIMEType: photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE,
-   24. maxSelectNumber: 2
-   25. }).then(res => {
-   26. resolve(res.photoUris);
-   27. }).catch((err: BusinessError) => {
-   28. hilog.error(0x0000, TAG, `Failed to get photo image uris. code: ${err.code}, message: ${err.message}`);
-   29. reject();
-   30. });
-   31. });
-   32. }
-
-   34. private loadImage(names: string[]) {
-   35. setTimeout(async () => {
-   36. let imageSource: image.ImageSource | undefined = undefined;
-   37. let fileSource = await fileIo.open(names[0], fileIo.OpenMode.READ_ONLY);
-   38. imageSource = image.createImageSource(fileSource.fd);
-   39. this.chooseImage = await imageSource.createPixelMap();
-   40. fileSource = await fileIo.open(names[1], fileIo.OpenMode.READ_ONLY);
-   41. imageSource = image.createImageSource(fileSource.fd);
-   42. this.chooseImage1 = await imageSource.createPixelMap();
-   43. }, 100
-   44. )
-   45. }
+   ```typescript
+   Button('选择图片')
+     .type(ButtonType.Capsule)
+     .fontColor(Color.White)
+     .alignSelf(ItemAlign.Center)
+     .width('80%')
+     .margin(10)
+     .onClick(() => {
+       // 拉起图库，获取图片资源
+       void this.selectImage();
+     })
    ```
-4. 实现人脸比对功能。实例化[VisionInfo](../harmonyos-references/core-vision-facecomparator-api.md#visioninfo)对象，传入两张图片的[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)，调用[faceComparator.compareFaces](../harmonyos-references/core-vision-facecomparator-api.md#facecomparatorcomparefaces)方法进行人脸比对。
 
-   ```
-   1. // 调用人脸比对接口
-   2. let visionInfo: faceComparator.VisionInfo = {
-   3. pixelMap: this.chooseImage,
-   4. };
-   5. let visionInfo1: faceComparator.VisionInfo = {
-   6. pixelMap: this.chooseImage1,
-   7. };
-   8. let data:faceComparator.FaceCompareResult = await faceComparator.compareFaces(visionInfo, visionInfo1);
-   ```
-5. （可选）如果需要将结果展示在界面上，可以用下列代码。
+   选择图片与解码图片的方法实现如下：
 
+   ```typescript
+   private async selectImage() {
+     let uri = await this.openPhoto();
+     if (uri === undefined) {
+       hilog.error(0x0000, TAG, 'Failed to get two image uris.');
+       return;
+     }
+     this.loadImage(uri);
+   }
+
+   private async openPhoto(): Promise<string[]> {
+     return new Promise<string[]>((resolve, reject) => {
+       let photoPicker: photoAccessHelper.PhotoViewPicker = new photoAccessHelper.PhotoViewPicker();
+       photoPicker.select({
+         MIMEType: photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE,
+         maxSelectNumber: 2
+       }).then(res => {
+         resolve(res.photoUris);
+       }).catch((err: BusinessError) => {
+         hilog.error(0x0000, TAG, `Failed to get photo image uris. code: ${err.code}, message: ${err.message}`);
+         reject();
+       });
+     });
+   }
+
+   private loadImage(names: string[]) {
+     setTimeout(async () => {
+       let imageSource: image.ImageSource | undefined = undefined;
+       let fileSource: fileIo.File;
+       fileSource = await fileIo.open(names[0], fileIo.OpenMode.READ_ONLY);
+       imageSource = image.createImageSource(fileSource.fd);
+       this.chooseImage = await imageSource.createPixelMap();
+       fileSource = await fileIo.open(names[1], fileIo.OpenMode.READ_ONLY);
+       imageSource = image.createImageSource(fileSource.fd);
+       this.chooseImage1 = await imageSource.createPixelMap();
+       await fileIo.close(fileSource);
+     }, 100);
+   }
    ```
-   1. let data:faceComparator.FaceCompareResult = await faceComparator.compareFaces(visionInfo, visionInfo1);
-   2. let faceString = "degree of similarity: "+ this.toPercentage(data.similarity)+((data.isSamePerson)?". is":". no")+ " same person";
-   3. hilog.info(0x0000, 'testTag', "faceString data is " + faceString);
-   4. this.dataValues = faceString;
+4. 构造[VisionInfo](../harmonyos-references/core-vision-facecomparator-api.md#visioninfo)对象并传入两张图片的PixelMap，调用[faceComparator.compareFaces](../harmonyos-references/core-vision-facecomparator-api.md#facecomparatorcomparefaces)方法，获取相似度分数，并将结果展示在界面上。
+
+   ```typescript
+   Button('人脸比对')
+     .type(ButtonType.Capsule)
+     .fontColor(Color.White)
+     .alignSelf(ItemAlign.Center)
+     .width('80%')
+     .margin(10)
+     .onClick(() => {
+       if (!this.chooseImage || !this.chooseImage1) {
+         hilog.error(0x0000, TAG, 'Failed to choose image');
+         return;
+       }
+       // 调用人脸比对接口
+       let visionInfo: faceComparator.VisionInfo = {
+         pixelMap: this.chooseImage
+       };
+       let visionInfo1: faceComparator.VisionInfo = {
+         pixelMap: this.chooseImage1
+       };
+        faceComparator.compareFaces(visionInfo, visionInfo1)
+        .then((data: faceComparator.FaceCompareResult) => {
+          if (data !== undefined) {
+            let faceString = `degree of similarity: ${this.toPercentage(data.similarity)}${(data.isSamePerson) ? '. is' : '. no'} same person`;
+            hilog.info(0x0000, TAG, 'faceString data is ' + faceString);
+            this.dataValues = faceString;
+          } else {
+            hilog.error(0x0000, TAG, 'Invalid data received from face comparison');
+            this.dataValues = 'Error: Invalid data';
+          }
+        })
+        .catch((error: BusinessError) => {
+          hilog.error(0x0000, TAG, `Face comparison failed. Code: ${error.code}, message: ${error.message}`);
+          this.dataValues = `Error: ${error.message}`;
+        });
+      })
+   ```
+
+   相似度数值转百分比展示的辅助方法：
+
+   ```typescript
+   private toPercentage(num: number): string {
+     return `${(num * 100).toFixed(2)}%`;
+   }
    ```
 
 ## 开发实例
 
 ### Index.ets
 
-```
-1. import { faceComparator } from '@kit.CoreVisionKit';
-2. import { image } from '@kit.ImageKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
-5. import { fileIo } from '@kit.CoreFileKit';
-6. import { photoAccessHelper } from '@kit.MediaLibraryKit';
+```typescript
+import { faceComparator } from '@kit.CoreVisionKit';
+import { image } from '@kit.ImageKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileIo } from '@kit.CoreFileKit';
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
-8. const TAG: string = "FaceCompareSample";
+const TAG: string = 'FaceCompareSample';
 
-10. @Entry
-11. @Component
-12. struct Index {
-13. @State chooseImage: PixelMap | undefined = undefined
-14. @State chooseImage1: PixelMap | undefined = undefined
-15. @State dataValues: string = ''
+@Entry
+@Component
+struct Index {
+  @State chooseImage: PixelMap | undefined = undefined;
+  @State chooseImage1: PixelMap | undefined = undefined;
+  @State dataValues: string = '';
 
-17. async aboutToAppear(): Promise<void> {
-18. const initResult = await faceComparator.init();
-19. hilog.info(0x0000, TAG, `Face comparator initialization result:${initResult}`);
-20. }
+  async aboutToAppear(): Promise<void> {
+    const initResult = await faceComparator.init();
+    hilog.info(0x0000, TAG, `Face comparator initialization result:${initResult}`);
+  }
 
-22. async aboutToDisappear(): Promise<void> {
-23. await faceComparator.release();
-24. hilog.info(0x0000, TAG, 'Face comparator released successfully');
-25. }
+  async aboutToDisappear(): Promise<void> {
+    await faceComparator.release();
+    hilog.info(0x0000, TAG, 'Face comparator released successfully');
+  }
 
-27. build() {
-28. Column() {
-29. Image(this.chooseImage)
-30. .objectFit(ImageFit.Fill)
-31. .height('30%')
-32. .accessibilityDescription("默认图片1")
-33. Image(this.chooseImage1)
-34. .objectFit(ImageFit.Fill)
-35. .height('30%')
-36. .accessibilityDescription("默认图片2")
-37. Text(this.dataValues)
-38. .copyOption(CopyOptions.LocalDevice)
-39. .height('15%')
-40. .margin(10)
-41. .width('60%')
-42. Button('选择图片')
-43. .type(ButtonType.Capsule)
-44. .fontColor(Color.White)
-45. .alignSelf(ItemAlign.Center)
-46. .width('80%')
-47. .margin(10)
-48. .onClick(() => {
-49. // 拉起图库
-50. void this.selectImage()
-51. })
-52. Button('人脸比对')
-53. .type(ButtonType.Capsule)
-54. .fontColor(Color.White)
-55. .alignSelf(ItemAlign.Center)
-56. .width('80%')
-57. .margin(10)
-58. .onClick(() => {
-59. if(!this.chooseImage || !this.chooseImage1) {
-60. hilog.error(0x0000, TAG, "Failed to choose image");
-61. return;
-62. }
-63. // 调用人脸比对接口
-64. let visionInfo: faceComparator.VisionInfo = {
-65. pixelMap: this.chooseImage,
-66. };
-67. let visionInfo1: faceComparator.VisionInfo = {
-68. pixelMap: this.chooseImage1,
-69. };
-70. faceComparator.compareFaces(visionInfo, visionInfo1)
-71. .then((data: faceComparator.FaceCompareResult) => {
-72. let faceString = "degree of similarity: "+ this.toPercentage(data.similarity)+((data.isSamePerson)?". is":". no")+ " same person";
-73. hilog.info(0x0000, TAG, "faceString data is " + faceString);
-74. this.dataValues = faceString;
-75. })
-76. .catch((error: BusinessError) => {
-77. hilog.error(0x0000, TAG, `Face comparison failed. Code: ${error.code}, message: ${error.message}`);
-78. this.dataValues = `Error: ${error.message}`;
-79. });
-80. })
-81. }
-82. .width('100%')
-83. .height('100%')
-84. .justifyContent(FlexAlign.Center)
-85. }
+  build() {
+    Column() {
+      Image(this.chooseImage)
+        .objectFit(ImageFit.Fill)
+        .height('30%')
+        .accessibilityDescription('默认图片1')
+      Image(this.chooseImage1)
+        .objectFit(ImageFit.Fill)
+        .height('30%')
+        .accessibilityDescription('默认图片2')
+      Text(this.dataValues)
+        .copyOption(CopyOptions.LocalDevice)
+        .height('15%')
+        .margin(10)
+        .width('60%')
+      Button('选择图片')
+        .type(ButtonType.Capsule)
+        .fontColor(Color.White)
+        .alignSelf(ItemAlign.Center)
+        .width('80%')
+        .margin(10)
+        .onClick(() => {
+          // 拉起图库
+          void this.selectImage();
+        })
+      Button('人脸比对')
+        .type(ButtonType.Capsule)
+        .fontColor(Color.White)
+        .alignSelf(ItemAlign.Center)
+        .width('80%')
+        .margin(10)
+        .onClick(() => {
+          if (!this.chooseImage || !this.chooseImage1) {
+            hilog.error(0x0000, TAG, 'Failed to choose image');
+            return;
+          }
+          // 调用人脸比对接口
+          let visionInfo: faceComparator.VisionInfo = {
+            pixelMap: this.chooseImage
+          };
+          let visionInfo1: faceComparator.VisionInfo = {
+            pixelMap: this.chooseImage1
+          };
+          faceComparator.compareFaces(visionInfo, visionInfo1)
+            .then((data: faceComparator.FaceCompareResult) => {
+              if (data !== undefined) {
+                let faceString = `degree of similarity: ${this.toPercentage(data.similarity)}${(data.isSamePerson) ? '. is' : '. no'} same person`;
+                hilog.info(0x0000, TAG, 'faceString data is ' + faceString);
+                this.dataValues = faceString;
+              } else {
+                hilog.error(0x0000, TAG, 'Invalid data received from face comparison');
+                this.dataValues = 'Error: Invalid data';
+              }
+            })
+            .catch((error: BusinessError) => {
+              hilog.error(0x0000, TAG, `Face comparison failed. Code: ${error.code}, message: ${error.message}`);
+              this.dataValues = `Error: ${error.message}`;
+            });
+        })
+    }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
 
-87. private toPercentage(num: number): string {
-88. return `${(num * 100).toFixed(2)}%`;
-89. }
+  private toPercentage(num: number): string {
+    return `${(num * 100).toFixed(2)}%`;
+  }
 
-91. private async selectImage() {
-92. let uri = await this.openPhoto()
-93. if (uri === undefined) {
-94. hilog.error(0x0000, TAG, "Failed to get two image uris.");
-95. }
-96. this.loadImage(uri);
-97. }
+  private async selectImage() {
+    let uris: string[] = await this.openPhoto();
+    if (uris === undefined || uris.length < 2) {
+      hilog.error(0x0000, TAG, 'Failed to get two image uris.');
+      return;
+    }
+    this.loadImage(uris);
+  }
 
-99. private async openPhoto(): Promise<string[]> {
-100. return new Promise<string[]>((resolve, reject) => {
-101. let photoPicker: photoAccessHelper.PhotoViewPicker = new photoAccessHelper.PhotoViewPicker();
-102. photoPicker.select({
-103. MIMEType: photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE,
-104. maxSelectNumber: 2
-105. }).then(res => {
-106. resolve(res.photoUris);
-107. }).catch((err: BusinessError) => {
-108. hilog.error(0x0000, TAG, `Failed to get photo image uris. code: ${err.code}, message: ${err.message}`);
-109. reject();
-110. });
-111. });
-112. }
+  private async openPhoto(): Promise<string[]> {
+    return new Promise<string[]>((resolve, reject) => {
+      let photoPicker: photoAccessHelper.PhotoViewPicker = new photoAccessHelper.PhotoViewPicker();
+      photoPicker.select({
+        MIMEType: photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE,
+        maxSelectNumber: 2
+      }).then(res => {
+        resolve(res.photoUris);
+      }).catch((err: BusinessError) => {
+        hilog.error(0x0000, TAG, `Failed to get photo image uris. code: ${err.code}, message: ${err.message}`);
+        reject();
+      });
+    });
+  }
 
-114. private loadImage(names: string[]) {
-115. setTimeout(async () => {
-116. let imageSource: image.ImageSource | undefined = undefined;
-117. let fileSource: fileIo.File
-118. try {
-119. fileSource = await fileIo.open(names[0], fileIo.OpenMode.READ_ONLY);
-120. imageSource = image.createImageSource(fileSource.fd);
-121. this.chooseImage = await imageSource.createPixelMap();
-122. } catch (error) {
-123. hilog.error(0x0000, TAG, `Failed to open file. Error: ${error}`);
-124. }
-125. try {
-126. fileSource = await fileIo.open(names[1], fileIo.OpenMode.READ_ONLY);
-127. imageSource = image.createImageSource(fileSource.fd);
-128. this.chooseImage1 = await imageSource.createPixelMap();
-129. await fileIo.close(fileSource);
-130. } catch (error) {
-131. hilog.error(0x0000, TAG, `Failed to open the second file. Error: ${error}`);
-132. }
-133. }, 100
-134. )
-135. }
-136. }
+  private loadImage(names: string[]) {
+    setTimeout(async () => {
+      let imageSource: image.ImageSource | undefined = undefined;
+      let fileSource: fileIo.File;
+      fileSource = await fileIo.open(names[0], fileIo.OpenMode.READ_ONLY);
+      imageSource = image.createImageSource(fileSource.fd);
+      this.chooseImage = await imageSource.createPixelMap();
+      fileSource = await fileIo.open(names[1], fileIo.OpenMode.READ_ONLY);
+      imageSource = image.createImageSource(fileSource.fd);
+      this.chooseImage1 = await imageSource.createPixelMap();
+      await fileIo.close(fileSource);
+    }, 100);
+  }
+}
 ```

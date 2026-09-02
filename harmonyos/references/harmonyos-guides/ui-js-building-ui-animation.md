@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-buildin
 title: 动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 构建用户界面 > 动画
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:45+08:00
+scraped_at: 2026-09-02T14:49:53+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:7888ab1efe902a57d1fb819944b67452a529c1d79c5f04762d9ea48a1634774d
+content_hash: sha256:ba5c77dac15db65adfa29d9c792daa6577676cb070b9a8523eaa76d78a86aee6
 ---
 
 动画分为[静态动画](ui-js-building-ui-animation.md#静态动画)和[连续动画](ui-js-building-ui-animation.md#连续动画)。
@@ -20,52 +20,52 @@ content_hash: sha256:7888ab1efe902a57d1fb819944b67452a529c1d79c5f04762d9ea48a163
 
 具体的使用示例如下，更多信息请参考[动画样式](../harmonyos-references/js-components-common-animation.md)。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <text class="translate">hello</text>
-4. <text class="rotate">hello</text>
-5. <text class="scale">hello</text>
-6. </div>
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <text class="translate">hello</text>
+  <text class="rotate">hello</text>
+  <text class="scale">hello</text>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .container {
-3. width: 100%;
-4. flex-direction: column;
-5. align-items: center;
-6. }
-7. .translate {
-8. height: 150px;
-9. width: 300px;
-10. margin: 50px;
-11. font-size: 50px;
-12. background-color: #008000;
-13. transform: translate(200px);
-14. }
-15. .rotate {
-16. height: 150px;
-17. width: 300px;
-18. margin: 50px;
-19. font-size: 50px;
-20. background-color: #008000;
-21. transform-origin: 200px 100px;
-22. transform: rotate(45deg);
-23. }
-24. .scale {
-25. height: 150px;
-26. width: 300px;
-27. margin: 50px;
-28. font-size: 50px;
-29. background-color: #008000;
-30. transform: scaleX(1.5);
-31. }
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+.translate {
+  height: 150px;
+  width: 300px;
+  margin: 50px;
+  font-size: 50px;
+  background-color: #008000;
+  transform: translate(200px);
+}
+.rotate {
+  height: 150px;
+  width: 300px;
+  margin: 50px;
+  font-size: 50px;
+  background-color: #008000;
+  transform-origin: 200px 100px;
+  transform: rotate(45deg);
+}
+.scale {
+  height: 150px;
+  width: 300px;
+  margin: 50px;
+  font-size: 50px;
+  background-color: #008000;
+  transform: scaleX(1.5);
+}
 ```
 
 **图1** 静态动画效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/cqFWoNrjRz6AGqir5Z3Haw/zh-cn_image_0000002558764574.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/3xI-7RgbQ760HhpXuQhJqw/zh-cn_image_0000002736433069.png)
 
 ## 连续动画
 
@@ -81,82 +81,82 @@ content_hash: sha256:7888ab1efe902a57d1fb819944b67452a529c1d79c5f04762d9ea48a163
 
 animation样式需要在css文件中先定义keyframe，在keyframe中设置动画的过渡效果，并通过一个样式类型在hml文件中调用。animation-name的使用示例如下：
 
-```
-1. <!-- xxx.hml -->
-2. <div class="item-container">
-3. <div class="item {{colorParam}}">
-4. <text class="txt">color</text>
-5. </div>
-6. <div class="item {{opacityParam}}">
-7. <text class="txt">opacity</text>
-8. </div>
-9. <input class="button" type="button" name="" value="show" onclick="showAnimation"/>
-10. </div>
-```
-
-```
-1. /* xxx.css */
-2. .item-container {
-3. margin: 60px;
-4. flex-direction: column;
-5. }
-6. .item {
-7. width: 80%;
-8. background-color: #f76160;
-9. }
-10. .txt {
-11. text-align: center;
-12. width: 200px;
-13. height: 100px;
-14. }
-15. .button {
-16. width: 200px;
-17. margin: 10px;
-18. font-size: 30px;
-19. background-color: #09ba07;
-20. }
-21. .color {
-22. animation-name: Color;
-23. animation-duration: 8000ms;
-24. }
-25. .opacity {
-26. animation-name: Opacity;
-27. animation-duration: 8000ms;
-28. }
-29. @keyframes Color {
-30. from {
-31. background-color: #f76160;
-32. }
-33. to {
-34. background-color: #09ba07;
-35. }
-36. }
-37. @keyframes Opacity {
-38. from {
-39. opacity: 0.9;
-40. }
-41. to {
-42. opacity: 0.1;
-43. }
-44. }
+```html
+<!-- xxx.hml -->
+<div class="item-container">
+    <div class="item {{colorParam}}">
+        <text class="txt">color</text>
+    </div>
+    <div class="item {{opacityParam}}">
+        <text class="txt">opacity</text>
+    </div>
+    <input class="button" type="button" name="" value="show" onclick="showAnimation"/>
+</div>
 ```
 
+```css
+/* xxx.css */
+.item-container {
+  margin: 60px;
+  flex-direction: column;
+}
+.item {
+  width: 80%;
+  background-color: #f76160;
+}
+.txt {
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
+.button {
+  width: 200px;
+  margin: 10px;
+  font-size: 30px;
+  background-color: #09ba07;
+}
+.color {
+  animation-name: Color;
+  animation-duration: 8000ms;
+}
+.opacity {
+  animation-name: Opacity;
+  animation-duration: 8000ms;
+}
+@keyframes Color {
+  from {
+    background-color: #f76160;
+  }
+  to {
+    background-color: #09ba07;
+  }
+}
+@keyframes Opacity {
+  from {
+    opacity: 0.9;
+  }
+  to {
+    opacity: 0.1;
+  }
+}
 ```
-1. // xxx.js
-2. export default {
-3. data: {
-4. colorParam: '',
-5. opacityParam: '',
-6. },
-7. showAnimation: function () {
-8. this.colorParam = '';
-9. this.opacityParam = '';
-10. this.colorParam = 'color';
-11. this.opacityParam = 'opacity';
-12. }
-13. }
+
+```js
+// xxx.js
+export default {
+  data: {
+    colorParam: '',
+    opacityParam: '',
+  },
+  showAnimation: function () {
+    this.colorParam = '';
+    this.opacityParam = '';
+    this.colorParam = 'color';
+    this.opacityParam = 'opacity';
+  }
+}
 ```
 
 **图2** 连续动画效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/gcfragmpQR6xvGZK31Ot0g/zh-cn_image_0000002558604918.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/hHEv95yPQMqQ2qGdMvnz_w/zh-cn_image_0000002706833914.gif)

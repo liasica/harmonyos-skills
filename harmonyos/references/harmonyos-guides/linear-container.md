@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/linear-contai
 title: 线性容器
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS基础类库 > ArkTS容器类库 > 线性容器
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:28+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ae5aae1ab2ab380e514b603441943a58db754440201aae41b65f23ed31f933ba
+scraped_at: 2026-09-02T14:59:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:63c9d5e51e61fb9df76803cef5169cc9f3ca1ec6951a8e2b2ed0907257ada610
 ---
 
 线性容器实现能按顺序访问的数据结构，其底层主要通过数组实现，包括ArrayList、Vector、List、LinkedList、Deque、Queue和Stack。
@@ -63,7 +63,7 @@ List和[LinkedList](../harmonyos-references/js-apis-linkedlist.md)相比，Linke
 | 访问元素 | getLast() | 获取最后一个元素。 |
 | 访问元素 | getIndexOf(element: T) | 获取第一个匹配指定元素的位置。 |
 | 访问元素 | getLastIndexOf(element: T) | 获取最后一个匹配指定元素的位置。 |
-| 访问元素 | forEach(callbackfn: (value:T, index?: number, list?: List<T>)=> void,thisArg?: Object) | 遍历访问整个List容器中的每个元素，并执行指定的回调函数。 |
+| 访问元素 | forEach(callbackFn: (value:T, index?: number, list?: List<T>)=> void,thisArg?: Object) | 遍历访问整个List容器中的每个元素，并执行指定的回调函数。 |
 | 访问元素 | [Symbol.iterator]():IterableIterator<T> | 创建迭代器以进行数据访问。 |
 | 修改元素 | set(index:number, element: T) | 修改指定index位置的元素值为element。 |
 | 修改元素 | list[index] = element | 修改指定index位置的元素值为element时，不会对链表中的实际节点进行任何更改，仅会在对象上添加一个属性，可能导致程序状态与链表内部数据不符，引发难以预测的行为。 |
@@ -162,7 +162,7 @@ Stack支持增、删、改、查操作，常用API如下：
 | 操作 | 方法 | 描述 |
 | --- | --- | --- |
 | 增加元素 | push(item: T) | 在栈顶增加一个元素。 |
-| 访问元素 | peek() | 获取栈顶元素，不进行出队操作。 |
+| 访问元素 | peek() | 获取栈顶元素，不进行出栈操作。 |
 | 访问元素 | locate(element: T) | 获取元素对应的位置。 |
 | 访问元素 | forEach(callbackFn: (value: T, index?: number, stack?: Stack<T>) => void, thisArg?: Object) | 遍历访问整个Stack容器的每个元素，并执行指定的回调函数。 |
 | 访问元素 | [Symbol.iterator]():IterableIterator<T> | 创建迭代器以进行数据访问。 |
@@ -170,7 +170,7 @@ Stack支持增、删、改、查操作，常用API如下：
 
 ## Vector
 
-说明
+**说明** 
 
 API version 9开始，该接口不再维护，推荐使用[ArrayList](../harmonyos-references/js-apis-arraylist.md)。
 
@@ -198,56 +198,56 @@ Vector支持增、删、改、查操作，常用API如下：
 | 修改元素 | setLength(newSize:number) | 设置Vector的长度大小。 |
 | 删除元素 | remove(element: T) | 删除第一个匹配到的元素。 |
 | 删除元素 | removeByIndex(index:number) | 删除index位置对应的元素。 |
-| 删除元素 | removeByRange(fromIndex:number,toIndex:number) | 删除指定范围内的元素。 |
+| 删除元素 | removeByRange(fromIndex:number, toIndex:number) | 删除指定范围内的元素。 |
 
 ## 线性容器的使用
 
 此处列举常用的线性容器ArrayList、Deque、Stack、List的使用示例，包括导入模块、添加元素、访问元素及修改等操作。示例代码如下所示：
 
-```
-1. import { ArrayList, Deque, Stack, List } from '@kit.ArkTS'; // 导入ArrayList，Deque，Stack，List模块
+```typescript
+import { ArrayList, Deque, Stack, List } from '@kit.ArkTS'; // 导入ArrayList，Deque，Stack，List模块
 
-3. // ...
-4. // ArrayList
-5. let arrayList1: ArrayList<string> = new ArrayList();
-6. arrayList1.add('a'); // 增加一个值为'a'的元素
-7. let arrayList2: ArrayList<number> = new ArrayList();
-8. arrayList2.add(1); // 增加一个值为1的元素
-9. console.info(`result: ${arrayList2[0]}`); // 访问索引为0的元素。输出：result: 1
-10. // ...
-11. arrayList1[0] = 'one'; // 修改索引为0的元素
-12. console.info(`result: ${arrayList1[0]}`); // 输出：result: one
-13. // ...
-14. // Deque
-15. let deque1: Deque<string> = new Deque();
-16. deque1.insertFront('a'); // 头部增加一个值为'a'的元素
-17. let deque2: Deque<number> = new Deque();
-18. deque2.insertFront(1); // 头部增加一个值为1的元素
-19. console.info(`result: ${deque2.getFirst()}`); // 访问队列首部的元素。输出：result: 1
-20. // ...
-21. deque1.insertEnd('one'); // 尾部增加一个值为'one'的元素
-22. console.info(`result: ${deque1.getLast()}`); // 访问队列尾部的元素。输出：result: one
-23. // ...
-24. // Stack
-25. let stack1: Stack<string> = new Stack();
-26. stack1.push('a'); // 向栈里增加一个值为'a'的元素
-27. let stack2: Stack<number> = new Stack();
-28. stack2.push(1); // 向栈里增加一个值为1的元素
-29. console.info(`result: ${stack1.peek()}`); // 访问栈顶元素。输出：result: a
-30. // ...
-31. console.info(`result: ${stack2.pop()}`); // 删除栈顶元素并返回该删除元素。输出：result: 1
-32. // ...
-33. console.info(`result: ${stack2.length}`); // 输出：result: 0
-34. // ...
-35. // List
-36. let list1: List<string> = new List();
-37. list1.add('a'); // 增加一个值为'a'的元素
-38. let list2: List<number> = new List();
-39. list2.insert(0, 0); // 在0号位置插入（增加）一个值为0的元素
-40. let list3: List<Array<number>> = new List();
-41. let b2 = [1, 2, 3];
-42. list3.add(b2); // 增加一个Array类型的元素
-43. console.info(`result: ${list1[0]}`); // 访问索引为0的元素。输出：result: a
-44. // ...
-45. console.info(`result: ${list3.get(0)}`); // 访问索引为0的元素。输出：result: 1,2,3
+  // ...
+  // ArrayList
+  let arrayList1: ArrayList<string> = new ArrayList();
+  arrayList1.add('a'); // 增加一个值为'a'的元素
+  let arrayList2: ArrayList<number> = new ArrayList();
+  arrayList2.add(1); // 增加一个值为1的元素
+  console.info(`result: ${arrayList2[0]}`); // 访问索引为0的元素。输出：result: 1
+  // ...
+  arrayList1[0] = 'one'; // 修改索引为0的元素
+  console.info(`result: ${arrayList1[0]}`); // 输出：result: one
+  // ...
+  // Deque
+  let deque1: Deque<string> = new Deque();
+  deque1.insertFront('a'); // 头部增加一个值为'a'的元素
+  let deque2: Deque<number> = new Deque();
+  deque2.insertFront(1); // 头部增加一个值为1的元素
+  console.info(`result: ${deque2.getFirst()}`); // 访问队列首部的元素。输出：result: 1
+  // ...
+  deque1.insertEnd('one'); // 尾部增加一个值为'one'的元素
+  console.info(`result: ${deque1.getLast()}`); // 访问队列尾部的元素。输出：result: one
+  // ...
+  // Stack
+  let stack1: Stack<string> = new Stack();
+  stack1.push('a'); // 向栈里增加一个值为'a'的元素
+  let stack2: Stack<number> = new Stack();
+  stack2.push(1); // 向栈里增加一个值为1的元素
+  console.info(`result: ${stack1.peek()}`); // 访问栈顶元素。输出：result: a
+  // ...
+  console.info(`result: ${stack2.pop()}`); // 删除栈顶元素并返回该删除元素。输出：result: 1
+  // ...
+  console.info(`result: ${stack2.length}`); // 输出：result: 0
+  // ...
+  // List
+  let list1: List<string> = new List();
+  list1.add('a'); // 增加一个值为'a'的元素
+  let list2: List<number> = new List();
+  list2.insert(0, 0); // 在0号位置插入（增加）一个值为0的元素
+  let list3: List<Array<number>> = new List();
+  let b2 = [1, 2, 3];
+  list3.add(b2); // 增加一个Array类型的元素
+  console.info(`result: ${list1[0]}`); // 访问索引为0的元素。输出：result: a
+  // ...
+  console.info(`result: ${list3.get(0)}`); // 访问索引为0的元素。输出：result: 1,2,3
 ```

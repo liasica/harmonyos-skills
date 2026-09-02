@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nets
 title: WebSocket_Header
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 结构体 > WebSocket_Header
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:39+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:fda7af01a877b11e2ef8bd206d228fe1a213a3dc5d1ccf93707f66d4c77cab33
+scraped_at: 2026-09-02T15:01:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2a248c37f19637edc34e800579f6a8c41f67c1c7f47a4d02c46bb12243d1d5b2
 ---
 
-```
-1. struct WebSocket_Header {...}
+```c
+struct WebSocket_Header {...}
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-websocket客户端增加header的链表节点。
+WebSocket客户端增加header的链表节点。
 
 **起始版本：** 11
 
@@ -26,11 +24,7 @@ websocket客户端增加header的链表节点。
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

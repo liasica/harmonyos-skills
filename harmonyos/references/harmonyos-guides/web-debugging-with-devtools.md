@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-debugging
 title: 使用DevTools工具调试前端页面
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > Web调试维测 > 使用DevTools工具调试前端页面
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:31+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:9ddde61a0331bc59bcbea9e9664a1767663948940f0c0d0c8086a0b6ca7a78e0
+scraped_at: 2026-09-02T14:59:24+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4e2a9f9d214f53ad4a7cf3433759161f5f23f6f00081355f94c6cd742edc959d
 ---
 
 Web组件支持使用DevTools工具调试前端页面。DevTools是Web前端开发调试工具，支持在电脑上调试移动设备前端页面。开发者通过[setWebDebuggingAccess()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#setwebdebuggingaccess)接口开启Web组件前端页面调试能力，使用DevTools在电脑上调试移动前端网页，设备需为4.1.0及以上版本。
@@ -22,49 +22,45 @@ Web组件支持使用DevTools工具调试前端页面。DevTools是Web前端开�
 
 1. 在应用代码中开启Web调试开关，应用需要调用[setWebDebuggingAccess20+](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#setwebdebuggingaccess20)接口，设置TCP Socket端口号并启用Web调试功能。
 
+   ```typescript
+   import { webview } from '@kit.ArkWeb';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   const DEBUGGING_PORT: number = 8888;
+
+   @Entry
+   @Component
+   struct WebComponent {
+     controller: webview.WebviewController = new webview.WebviewController();
+
+     aboutToAppear(): void {
+       try {
+         // 配置Web开启无线调试模式，指定TCP Socket的端口。
+         webview.WebviewController.setWebDebuggingAccess(true, DEBUGGING_PORT);
+       } catch (error) {
+         console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+       }
+     }
+
+     build() {
+       Column() {
+         Web({ src: 'www.example.com', controller: this.controller })
+       }
+     }
+   }
    ```
-   1. import { webview } from '@kit.ArkWeb';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
-   3. const DEBUGGING_PORT: number = 8888;
 
-   5. @Entry
-   6. @Component
-   7. struct WebComponent {
-   8. controller: webview.WebviewController = new webview.WebviewController();
-
-   10. aboutToAppear(): void {
-   11. try {
-   12. // 配置Web开启无线调试模式，指定TCP Socket的端口。
-   13. webview.WebviewController.setWebDebuggingAccess(true, DEBUGGING_PORT);
-   14. } catch (error) {
-   15. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-   16. }
-   17. }
-
-   19. build() {
-   20. Column() {
-   21. Web({ src: 'www.example.com', controller: this.controller })
-   22. }
-   23. }
-   24. }
-   ```
-
-   [WebDebuggingWithWiFi.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ArkWebDebuggingWithDevtools/entry/src/main/ets/pages/WebDebuggingWithWiFi.ets#L15-L40)
-
-   说明
+   **说明** 
 
    代码中使用的8888端口仅作为示例展示，开发者使用过程中，应保证端口号可以被应用使用。如果因为端口被占用或者应用无权限使用等因素导致端口无法被应用使用，会导致接口抛出异常或者ArkWeb无法开启调试模式。
 2. 开启调试功能需要在DevEco Studio应用工程hap模块的module.json5文件中增加如下权限，添加方法请参考[在配置文件中声明权限](declare-permissions.md#在配置文件中声明权限)。
 
+   ```json5
+    "requestPermissions":[
+      {
+        "name" : "ohos.permission.INTERNET"
+      }
+    ]
    ```
-   1. "requestPermissions":[
-   2. {
-   3. "name" : "ohos.permission.INTERNET"
-   4. }
-   5. ]
-   ```
-
-   [module.json5](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ArkWebDebuggingWithDevtools/entry/src/main/module.json5#L63-L69)
 
 ### 在Chrome浏览器上打开调试工具页面
 
@@ -77,7 +73,7 @@ Web组件支持使用DevTools工具调试前端页面。DevTools是Web前端开�
 
    (2) 在 "Target discovery settings" 中添加被调试设备的IP地址和[setWebDebuggingAccess20+](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#setwebdebuggingaccess20)接口中指定的port端口，比如：192.168.0.3:8888。
 
-说明
+**说明** 
 
 调试工具和被调试设备要在同一局域网下，并且能够相互访问。如果被调试设备有多个IP地址，要使用与调试工具同一个网段的IP地址。
 
@@ -85,11 +81,11 @@ Web组件支持使用DevTools工具调试前端页面。DevTools是Web前端开�
 
 如果前面的步骤执行成功，Chrome的调试页面将显示待调试的网页。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/joJGD0-JQG2R8-N-MerMjg/zh-cn_image_0000002589244547.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/IfoVBjOyTTSqsIGDTEqAlA/zh-cn_image_0000002706834098.jpg)
 
 ### 开始网页调试
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/NIHZBOgrRzqTcQtOUZHQbA/zh-cn_image_0000002558764742.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/lfqrzdwMS-KDKKDq70C9-w/zh-cn_image_0000002736313207.png)
 
 ## USB连接调试
 
@@ -101,39 +97,35 @@ Web组件支持使用DevTools工具调试前端页面。DevTools是Web前端开�
 
 1. 在应用代码中开启Web调试开关，具体如下：
 
+   ```typescript
+   import { webview } from '@kit.ArkWeb';
+
+   @Entry
+   @Component
+   struct WebComponent {
+     controller: webview.WebviewController = new webview.WebviewController();
+
+     aboutToAppear() {
+       // 配置Web开启调试模式
+       webview.WebviewController.setWebDebuggingAccess(true);
+     }
+
+     build() {
+       Column() {
+         Web({ src: 'www.example.com', controller: this.controller })
+       }
+     }
+   }
    ```
-   1. import { webview } from '@kit.ArkWeb';
-
-   3. @Entry
-   4. @Component
-   5. struct WebComponent {
-   6. controller: webview.WebviewController = new webview.WebviewController();
-
-   8. aboutToAppear() {
-   9. // 配置Web开启调试模式
-   10. webview.WebviewController.setWebDebuggingAccess(true);
-   11. }
-
-   13. build() {
-   14. Column() {
-   15. Web({ src: 'www.example.com', controller: this.controller })
-   16. }
-   17. }
-   18. }
-   ```
-
-   [WebDebuggingWithUSB.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ArkWebDebuggingWithDevtools/entry/src/main/ets/pages/WebDebuggingWithUSB.ets#L15-L34)
 2. 开启调试功能需要在DevEco Studio应用工程hap模块的module.json5文件中增加如下权限，添加方法请参考[在配置文件中声明权限](declare-permissions.md#在配置文件中声明权限)。
 
+   ```json5
+   "requestPermissions":[
+     {
+       "name" : "ohos.permission.INTERNET"
+     }
+   ]
    ```
-   1. "requestPermissions":[
-   2. {
-   3. "name" : "ohos.permission.INTERNET"
-   4. }
-   5. ]
-   ```
-
-   [module.json5](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ArkWebDebuggingWithDevtools/entry/src/main/module.json5#L63-L69)
 
 ### 将设备连接至电脑
 
@@ -148,22 +140,22 @@ Web组件支持使用DevTools工具调试前端页面。DevTools是Web前端开�
 
    打开命令行执行如下命令，查看hdc能否发现设备。
 
-   ```
-   1. hdc list targets
+   ```shell
+   hdc list targets
    ```
 
    * 如果命令返回设备的ID，表示hdc已连接上设备。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/TwOmO9PwQt2OhD246OmdKw/zh-cn_image_0000002558605086.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/qZS6KXfwTUSY9pnpXRpdXw/zh-cn_image_0000002706674164.png)
    * 如果命令返回 [Empty]，则说明hdc还没有发现设备。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/oEVpXaZYRzaOX1nynuMeYg/zh-cn_image_0000002589324611.jpg)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/kbNXQLWgSc2Mv-MzgjDg5w/zh-cn_image_0000002736433255.jpg)
 3. 进入hdc shell。
 
    连接设备后，执行以下命令进入hdc shell。
 
-   ```
-   1. hdc shell
+   ```shell
+   hdc shell
    ```
 
 ### 端口转发
@@ -178,13 +170,13 @@ Chrome浏览器无法直接访问到设备上的domain socket， 因此需要将
 
 1. 先在hdc shell里执行如下命令，查询ArkWeb在设备里创建的domain socket。
 
-   ```
-   1. cat /proc/net/unix | grep devtools
+   ```shell
+   cat /proc/net/unix | grep devtools
    ```
 
    * 如果前几步操作无误，该命令的执行结果将显示用于查询的domain socket端口。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/Uo32XJqRQvm5e8cOh8htcw/zh-cn_image_0000002589244549.jpg)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/ilN5YpHRTIqmiT38RQVJ0Q/zh-cn_image_0000002706834100.jpg)
    * 如果没有查询到结果， 请再次确认。
 
      (1) 应用开启了Web调试开关。
@@ -194,17 +186,17 @@ Chrome浏览器无法直接访问到设备上的domain socket， 因此需要将
 
    执行exit退出hdc shell。
 
-   ```
-   1. exit
+   ```shell
+   exit
    ```
 
    在命令行里执行如下命令转发端口。
 
-   ```
-   1. hdc fport tcp:9222 localabstract:webview_devtools_remote_38532
+   ```shell
+   hdc fport tcp:9222 localabstract:webview_devtools_remote_38532
    ```
 
-   说明
+   **说明** 
 
    "webview\_devtools\_remote\_" 后面的数字，代表ArkWeb所在应用的进程号， 该数字不是固定的。请将”webview\_devtools\_remote\_“后面的数字改为自己查询到的值。
 
@@ -212,19 +204,19 @@ Chrome浏览器无法直接访问到设备上的domain socket， 因此需要将
 
    命令执行成功示意图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/LTLFHL-cTtWWmf5nH1FuIw/zh-cn_image_0000002558764744.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/eRJpcBjtTWm1I5JL0QMabA/zh-cn_image_0000002736313209.jpg)
 3. 在命令行里执行如下命令，检查端口是否转发成功。
 
-   ```
-   1. hdc fport ls
+   ```shell
+   hdc fport ls
    ```
 
    * 如果有返回端口转发的任务，则说明端口转发成功。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/yf0gv6ipQ-e3kOhD2bkeZA/zh-cn_image_0000002558605088.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/MNzY4I16T02I5SXCOiZwmg/zh-cn_image_0000002706674166.png)
    * 如果返回 [Empty]， 则说明端口转发失败。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/qGUyfBniTu-OO5L6KiT5eQ/zh-cn_image_0000002589324613.jpg)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/qfYlou5gQAuV8muzIrjRwg/zh-cn_image_0000002736433257.jpg)
 
 ### 便捷脚本
 
@@ -232,78 +224,78 @@ Chrome浏览器无法直接访问到设备上的domain socket， 因此需要将
 
 请复制以下信息创建bat文件，开启调试应用后执行。
 
-```
-1. @echo off
-2. setlocal enabledelayedexpansion
+```bat
+@echo off
+setlocal enabledelayedexpansion
 
-4. :: Initialize port number and PID list
-5. set PORT=9222
-6. set PID_LIST=
+:: Initialize port number and PID list
+set PORT=9222
+set PID_LIST=
 
-8. :: Get the list of all forwarded ports and PIDs
-9. for /f "tokens=2,5 delims=:_" %%a in ('hdc fport ls') do (
-10. if %%a gtr !PORT! (
-11. set PORT=%%a
-12. )
-13. for /f "tokens=1 delims= " %%c in ("%%b") do (
-14. set PID_LIST=!PID_LIST! %%c
-15. )
-16. )
+:: Get the list of all forwarded ports and PIDs
+for /f "tokens=2,5 delims=:_" %%a in ('hdc fport ls') do (
+    if %%a gtr !PORT! (
+        set PORT=%%a
+    )
+    for /f "tokens=1 delims= " %%c in ("%%b") do (
+        set PID_LIST=!PID_LIST! %%c
+    )
+)
 
-18. :: Increment port number for next application
-19. set temp_PORT=!PORT!
-20. set /a temp_PORT+=1
-21. set PORT=!temp_PORT!
+:: Increment port number for next application
+set temp_PORT=!PORT!
+set /a temp_PORT+=1
+set PORT=!temp_PORT!
 
-23. :: Get the domain socket name of devtools
-24. for /f "tokens=*" %%a in ('hdc shell "cat /proc/net/unix | grep devtools"') do (
-25. set SOCKET_NAME=%%a
+:: Get the domain socket name of devtools
+for /f "tokens=*" %%a in ('hdc shell "cat /proc/net/unix | grep devtools"') do (
+    set SOCKET_NAME=%%a
 
-27. :: Extract process ID
-28. for /f "delims=_ tokens=4" %%b in ("!SOCKET_NAME!") do set PID=%%b
+    :: Extract process ID
+    for /f "delims=_ tokens=4" %%b in ("!SOCKET_NAME!") do set PID=%%b
 
-30. :: Check if PID already has a mapping
-31. echo !PID_LIST! | findstr /C:" !PID! " >nul
-32. if errorlevel 1 (
-33. :: Add mapping
-34. hdc fport tcp:!PORT! localabstract:webview_devtools_remote_!PID!
-35. if errorlevel 1 (
-36. echo Error: Failed to add mapping.
-37. pause
-38. exit /b
-39. )
+    :: Check if PID already has a mapping
+    echo !PID_LIST! | findstr /C:" !PID! " >nul
+    if errorlevel 1 (
+        :: Add mapping
+        hdc fport tcp:!PORT! localabstract:webview_devtools_remote_!PID!
+        if errorlevel 1 (
+            echo Error: Failed to add mapping.
+            pause
+            exit /b
+        )
 
-41. :: Add PID to list and increment port number for next application
-42. set PID_LIST=!PID_LIST! !PID!
-43. set temp_PORT=!PORT!
-44. set /a temp_PORT+=1
-45. set PORT=!temp_PORT!
-46. )
-47. )
+        :: Add PID to list and increment port number for next application
+        set PID_LIST=!PID_LIST! !PID!
+        set temp_PORT=!PORT!
+        set /a temp_PORT+=1
+        set PORT=!temp_PORT!
+    )
+)
 
-49. :: If no process ID was found, prompt the user to open debugging in their application code and provide the documentation link
-50. if "!SOCKET_NAME!"=="" (
-51. echo No process ID was found. Please open debugging in your application code using the corresponding interface. You can find the relevant documentation at this link: [https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/web/web-debugging-with-devtools.md]
-52. pause
-53. exit /b
-54. )
+:: If no process ID was found, prompt the user to open debugging in their application code and provide the documentation link
+if "!SOCKET_NAME!"=="" (
+    echo No process ID was found. Please open debugging in your application code using the corresponding interface. You can find the relevant documentation at this link: [https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/web/web-debugging-with-devtools.md]
+    pause
+    exit /b
+)
 
-56. :: Check mapping
-57. hdc fport ls
+:: Check mapping
+hdc fport ls
 
-59. echo.
-60. echo Script executed successfully. Press any key to exit...
-61. pause >nul
+echo.
+echo Script executed successfully. Press any key to exit...
+pause >nul
 
-63. :: Try to open the page in Edge
-64. start msedge chrome://inspect/#devices
+:: Try to open the page in Edge
+start msedge chrome://inspect/#devices
 
-66. :: If Edge is not available, then open the page in Chrome
-67. if errorlevel 1 (
-68. start chrome chrome://inspect/#devices
-69. )
+:: If Edge is not available, then open the page in Chrome
+if errorlevel 1 (
+    start chrome chrome://inspect/#devices
+)
 
-71. endlocal
+endlocal
 ```
 
 **Linux或Mac平台**
@@ -312,65 +304,65 @@ Chrome浏览器无法直接访问到设备上的domain socket， 因此需要将
 
 本脚本会先删除所有的端口转发，如果有其他的工具（如：DevEco Studio）也在使用端口转发功能，会受到影响。
 
-```
-1. #!/bin/bash
+```bat
+#!/bin/bash
 
-3. # Get current fport rule list
-4. CURRENT_FPORT_LIST=$(hdc fport ls)
+# Get current fport rule list
+CURRENT_FPORT_LIST=$(hdc fport ls)
 
-6. # Delete the existing fport rule one by one
-7. while IFS= read -r line; do
-8. # Extract the taskline
-9. IFS=' ' read -ra parts <<< "$line"
-10. taskline="${parts[1]} ${parts[2]}"
+# Delete the existing fport rule one by one
+while IFS= read -r line; do
+    # Extract the taskline
+    IFS=' ' read -ra parts <<< "$line"
+    taskline="${parts[1]} ${parts[2]}"
 
-12. # Delete the corresponding fport rule
-13. echo "Removing forward rule for $taskline"
-14. hdc fport rm $taskline
-15. result=$?
+    # Delete the corresponding fport rule
+    echo "Removing forward rule for $taskline"
+    hdc fport rm $taskline
+    result=$?
 
-17. if [ $result -eq 0 ]; then
-18. echo "Remove forward rule success, taskline:$taskline"
-19. else
-20. echo "Failed to remove forward rule, taskline:$taskline"
-21. fi
+    if [ $result -eq 0 ]; then
+        echo "Remove forward rule success, taskline:$taskline"
+    else
+        echo "Failed to remove forward rule, taskline:$taskline"
+    fi
 
-23. done <<< "$CURRENT_FPORT_LIST"
+done <<< "$CURRENT_FPORT_LIST"
 
-25. # Initial port number
-26. INITIAL_PORT=9222
+# Initial port number
+INITIAL_PORT=9222
 
-28. # Get the current port number, use initial port number if not set previously
-29. CURRENT_PORT=${PORT:-$INITIAL_PORT}
+# Get the current port number, use initial port number if not set previously
+CURRENT_PORT=${PORT:-$INITIAL_PORT}
 
-31. # Get the list of all PIDs that match the condition
-32. PID_LIST=$(hdc shell cat /proc/net/unix | grep webview_devtools_remote_ | awk -F '_' '{print $NF}')
+# Get the list of all PIDs that match the condition
+PID_LIST=$(hdc shell cat /proc/net/unix | grep webview_devtools_remote_ | awk -F '_' '{print $NF}')
 
-34. if [ -z "$PID_LIST" ]; then
-35. echo "Failed to retrieve PID from the device"
-36. exit 1
-37. fi
+if [ -z "$PID_LIST" ]; then
+    echo "Failed to retrieve PID from the device"
+    exit 1
+fi
 
-39. # Increment the port number
-40. PORT=$CURRENT_PORT
+# Increment the port number
+PORT=$CURRENT_PORT
 
-42. # Forward ports for each application one by one
-43. for PID in $PID_LIST; do
-44. # Increment the port number
-45. PORT=$((PORT + 1))
+# Forward ports for each application one by one
+for PID in $PID_LIST; do
+    # Increment the port number
+    PORT=$((PORT + 1))
 
-47. # Execute the hdc fport command
-48. hdc fport tcp:$PORT localabstract:webview_devtools_remote_$PID
+    # Execute the hdc fport command
+    hdc fport tcp:$PORT localabstract:webview_devtools_remote_$PID
 
-50. # Check if the command executed successfully
-51. if [ $? -ne 0 ]; then
-52. echo "Failed to execute hdc fport command"
-53. exit 1
-54. fi
-55. done
+    # Check if the command executed successfully
+    if [ $? -ne 0 ]; then
+        echo "Failed to execute hdc fport command"
+        exit 1
+    fi
+done
 
-57. # List all forwarded ports
-58. hdc fport ls
+# List all forwarded ports
+hdc fport ls
 ```
 
 ### 在Chrome浏览器上打开调试工具页面
@@ -384,20 +376,20 @@ Chrome浏览器无法直接访问到设备上的domain socket， 因此需要将
 
    (2) 在 "Target discovery settings" 中添加要监听的本地端口localhost:9222。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/7UITmZmLQIeqW0iCEqd-9g/zh-cn_image_0000002589244551.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/czwT57FVR4u6i7Xvghusuw/zh-cn_image_0000002706834102.jpg)
 3. 为了同时调试多个应用，请在Chrome浏览器的调试工具网页内，于“Devices”选项中的“configure”部分添加多个端口号。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/Ux5W2JySQJ6HfZvUdDbjAQ/zh-cn_image_0000002558764746.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/w7GGkGAmS9a3uTQoa2l4wA/zh-cn_image_0000002736313211.png)
 
 ### 等待发现被调试页面
 
 如果前面的步骤执行成功，Chrome的调试页面将显示待调试的网页。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/xj67AAeWSleIRj2cZNhmBg/zh-cn_image_0000002589244547.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/4Fe9SfS3Rb-jdU_GyXW4xg/zh-cn_image_0000002706834098.jpg)
 
 ### 开始网页调试
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/M8FbmIWDTA6qUbG7eAd8GA/zh-cn_image_0000002558764742.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/IxmrgaZ_RWG6QB8ks8GBxQ/zh-cn_image_0000002736313207.png)
 
 ## 常见问题与解决方法
 
@@ -413,8 +405,8 @@ Chrome浏览器无法直接访问到设备上的domain socket， 因此需要将
 
 在命令行里执行如下命令后，没有列出设备ID。
 
-```
-1. hdc list targets
+```shell
+hdc list targets
 ```
 
 **解决方法**
@@ -442,8 +434,8 @@ Chrome浏览器无法直接访问到设备上的domain socket， 因此需要将
 
 1. 在hdc shell里执行如下命令后，没有结果。
 
-   ```
-   1. cat /proc/net/unix | grep devtools
+   ```shell
+   cat /proc/net/unix | grep devtools
    ```
 2. 运行脚本出现'Failed to retrieve PID from the device'报错。
 
@@ -469,8 +461,8 @@ Chrome浏览器无法直接访问到设备上的domain socket， 因此需要将
 
 1. 在命令行里执行如下命令后，没有列出之前设置过转发任务。
 
-   ```
-   1. hdc fport ls
+   ```shell
+   hdc fport ls
    ```
 2. 运行脚本出现'Failed to execute hdc fport command'报错。
 
@@ -508,10 +500,10 @@ Chrome浏览器无法直接访问到设备上的domain socket， 因此需要将
 
   + 如果网页有内容， 说明端口转发成功，请在Chrome的调试页面[等待被调试页面的出现](web-debugging-with-devtools.md#等待发现被调试页面)。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/YKxkPJJaQnOXXvTdrLPl1Q/zh-cn_image_0000002558605090.jpg)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/JnRumPp1T2itumRhlt2iFw/zh-cn_image_0000002706674168.jpg)
   + 如果展示的是错误网页， 说明端口转发失败， 请参阅[端口转发不成功](web-debugging-with-devtools.md#端口转发不成功)中的解决方法。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/PgXW28K0SRySIchRIiiPtA/zh-cn_image_0000002589324615.jpg)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/dsdgPv42SGKZJn3VB7sK2A/zh-cn_image_0000002736433259.jpg)
 * 电脑端Chrome浏览器打开 <http://localhost:9222/json> 页面有内容，但是Chrome的调试工具界面还是无法发现调试目标。
 
   + 请确保Chrome调试工具界面的 "Configure" 中配置的端口号，与端口转发指定的TCP端口号一致。

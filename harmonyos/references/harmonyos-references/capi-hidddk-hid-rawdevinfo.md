@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hidd
 title: Hid_RawDevInfo
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 结构体 > Hid_RawDevInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:46+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:671999a1455da100efafd7310238bbef15568d83ee769f7b008df4735e7cf8e2
+scraped_at: 2026-09-02T15:02:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8ea94ffa19838af44401afbf35d46ea6a0d649a6357f120a905832850f5ea588
 ---
 
-```
-1. typedef struct Hid_RawDevInfo {...} Hid_RawDevInfo
+```c
+typedef struct Hid_RawDevInfo {...} Hid_RawDevInfo
 ```
 
 ## 概述
 
-PC/2in1
-
-原始设备信息定义。
+HID原始设备信息，包含总线类型、供应商ID、产品ID等关键标识信息。开发者可以通过此结构体识别和区分不同的HID设备，通常用于设备识别、设备匹配、设备过滤等场景。
 
 **起始版本：** 18
 
@@ -26,14 +24,10 @@ PC/2in1
 
 ## 汇总
 
-PC/2in1
-
 ### 成员变量
-
-PC/2in1
 
 | 名称 | 描述 |
 | --- | --- |
-| uint32\_t busType | 总线类型 |
-| uint16\_t vendor | 供应商ID |
-| uint16\_t product | 产品ID |
+| uint32\_t busType | 总线类型，用于标识HID设备的物理连接方式。 |
+| uint16\_t vendor | 供应商ID。 |
+| uint16\_t product | 产品ID。 |

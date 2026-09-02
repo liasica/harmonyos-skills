@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-framework-
 title: 生命周期
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 框架说明 > 生命周期
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:42+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:60317751afd635b3426b2cb556962324106966296c7a1a42d05e47e889f73e23
+scraped_at: 2026-09-02T14:49:52+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:8a505bf0c24a09d8d37c7199e093261b9d6a46fbeaad6b70c24369efa4d89549
 ---
 
 ## 应用生命周期
@@ -39,144 +39,144 @@ content_hash: sha256:60317751afd635b3426b2cb556962324106966296c7a1a42d05e47e889f
 
 **图1** 生命周期函数调用顺序图示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/elkibFFCQSyNhmrkk47w3A/zh-cn_image_0000002589244379.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/dN9XNaDFTVWCVh78TTQMtw/zh-cn_image_0000002706673976.png)
 
 ## 示例代码
 
 通过以下示例，详细说明生命周期函数的调用顺序。首先创建两个页面，分别为pageA和pageB，并在config.json中配置页面路由信息：
 
-```
-1. {
-2. // ...
-3. "pages": [
-4. "pages/pageA/pageA",
-5. "pages/pageB/pageB"
-6. ],
-7. // ...
-8. }
+```json5
+{
+    // ...
+    "pages": [
+        "pages/pageA/pageA",
+        "pages/pageB/pageB"
+    ],
+    // ...
+}
 ```
 
 pageA实现代码如下：
 
-```
-1. <!-- pageA.hml -->
-2. <div class="container">
-3. <text class="title">This is PageA</text>
-4. <input type="button" value="Go to the PageB" onclick="launch"></input>
-5. </div>
-```
-
-```
-1. /* pageA.css */
-2. .container {
-3. flex-direction: column;
-4. align-items: center;
-5. width: 100%;
-6. height: 100%;
-7. }
-8. .title {
-9. font-size: 38px;
-10. text-align: center;
-11. width: 100%;
-12. height: 40%;
-13. }
+```html
+<!-- pageA.hml -->
+<div class="container">
+  <text class="title">This is PageA</text>
+  <input type="button" value="Go to the PageB" onclick="launch"></input>
+</div>
 ```
 
+```css
+/* pageA.css */
+.container {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.title {
+  font-size: 38px;
+  text-align: center;
+  width: 100%;
+  height: 40%;
+}
 ```
-1. // pageA.js
-2. import router from '@ohos.router';
-3. export default {
-4. launch() {
-5. router.push ({
-6. url: 'pages/pageB/pageB'
-7. });
-8. },
-9. onInit() {
-10. console.info('PageA onInit');
-11. },
-12. onReady() {
-13. console.info('PageA onReady');
-14. },
-15. onShow() {
-16. console.info('PageA onShow');
-17. },
-18. onHide() {
-19. console.info('PageA onHide');
-20. },
-21. onDestroy() {
-22. console.info('PageA onDestroy');
-23. },
-24. onBackPress() {
-25. console.info('PageA onBackPress');
-26. },
-27. onActive() {
-28. console.info('PageA onActive');
-29. },
-30. onInactive() {
-31. console.info('PageA onInactive');
-32. },
-33. onNewRequest() {
-34. console.info('PageA onNewRequest');
-35. }
-36. }
+
+```js
+// pageA.js
+import router from '@ohos.router';
+export default {
+  launch() {
+    router.push ({
+      url: 'pages/pageB/pageB'
+    });
+  },
+  onInit() {
+    console.info('PageA onInit');
+  },
+  onReady() {
+    console.info('PageA onReady');
+  },
+  onShow() {
+    console.info('PageA onShow');
+  },
+  onHide() {
+    console.info('PageA onHide');
+  },
+  onDestroy() {
+    console.info('PageA onDestroy');
+  },
+  onBackPress() {
+    console.info('PageA onBackPress');
+  },
+  onActive() {
+    console.info('PageA onActive');
+  },
+  onInactive() {
+    console.info('PageA onInactive');
+  },
+  onNewRequest() {
+    console.info('PageA onNewRequest');
+  }
+}
 ```
 
 pageB实现代码如下：
 
-```
-1. <!-- pageB.hml -->
-2. <div class="container">
-3. <text class="title">This is PageB</text>
-4. </div>
-```
-
-```
-1. /* pageB.css */
-2. .container {
-3. flex-direction: column;
-4. align-items: center;
-5. width: 100%;
-6. height: 100%;
-7. }
-8. .title {
-9. font-size: 38px;
-10. text-align: center;
-11. width: 100%;
-12. height: 40%;
-13. }
+```html
+<!-- pageB.hml -->
+<div class="container">
+  <text class="title">This is PageB</text>
+</div>
 ```
 
+```css
+/* pageB.css */
+.container {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.title {
+  font-size: 38px;
+  text-align: center;
+  width: 100%;
+  height: 40%;
+}
 ```
-1. // pageB.js
-2. export default {
-3. onInit() {
-4. console.info('PageB onInit');
-5. },
-6. onReady() {
-7. console.info('PageB onReady');
-8. },
-9. onShow() {
-10. console.info('PageB onShow');
-11. },
-12. onHide() {
-13. console.info('PageB onHide');
-14. },
-15. onDestroy() {
-16. console.info('PageB onDestroy');
-17. },
-18. onBackPress() {
-19. console.info('PageB onBackPress');
-20. },
-21. onActive() {
-22. console.info('PageB onActive');
-23. },
-24. onInactive() {
-25. console.info('PageB onInactive');
-26. },
-27. onNewRequest() {
-28. console.info('PageB onNewRequest');
-29. }
-30. }
+
+```js
+// pageB.js
+export default {
+  onInit() {
+    console.info('PageB onInit');
+  },
+  onReady() {
+    console.info('PageB onReady');
+  },
+  onShow() {
+    console.info('PageB onShow');
+  },
+  onHide() {
+    console.info('PageB onHide');
+  },
+  onDestroy() {
+    console.info('PageB onDestroy');
+  },
+  onBackPress() {
+    console.info('PageB onBackPress');
+  },
+  onActive() {
+    console.info('PageB onActive');
+  },
+  onInactive() {
+    console.info('PageB onInactive');
+  },
+  onNewRequest() {
+    console.info('PageB onNewRequest');
+  }
+}
 ```
 
 运行程序，通过日志观察生命周期函数的调用顺序。其中pageA的生命周期函数的调用顺序为：

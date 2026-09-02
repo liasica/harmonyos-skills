@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-commo
 title: 普通数据搬运
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 数据搬运 > DataCopy > 普通数据搬运
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:24+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:bfc3ea6b586b131de17fc6c9f37855565ef262817058edc59a15a1348fcaf9c7
+scraped_at: 2026-09-02T14:50:36+08:00
+doc_updated_at: 2026-08-18
+content_hash: sha256:8dfa4ae9fee5d0c506837801a8d6f820c7bd60506a6a3cbbb65b98f69e3648a4
 ---
 
 ## 函数功能
@@ -16,14 +16,14 @@ content_hash: sha256:bfc3ea6b586b131de17fc6c9f37855565ef262817058edc59a15a1348fc
 
 * 源操作数为GlobalTensor，目的操作数为LocalTensor
 
-  ```
-  1. // 支持连续和不连续
-  2. template <typename T>
-  3. __aicore__ inline void DataCopy(const LocalTensor<T>& dstLocal, const GlobalTensor<T>& srcGlobal, const DataCopyParams& repeatParams);
-
-  5. // 支持连续
-  6. template <typename T>
-  7. __aicore__ inline void DataCopy(const LocalTensor<T>& dstLocal, const GlobalTensor<T>& srcGlobal, const uint32_t calCount);
+  ```cpp
+  // 支持连续和不连续
+  template <typename T> 
+  __aicore__ inline void DataCopy(const LocalTensor<T>& dstLocal, const GlobalTensor<T>& srcGlobal, const DataCopyParams& repeatParams);
+   
+  // 支持连续
+  template <typename T> 
+  __aicore__ inline void DataCopy(const LocalTensor<T>& dstLocal, const GlobalTensor<T>& srcGlobal, const uint32_t calCount);
   ```
 
   该原型接口支持的数据通路和数据类型如下所示：
@@ -32,20 +32,18 @@ content_hash: sha256:bfc3ea6b586b131de17fc6c9f37855565ef262817058edc59a15a1348fc
 
   | 支持型号 | 数据通路（通过[TPosition](cannkit-tposition.md)章节中表1表达） | 源操作数和目的操作数的数据类型 (两者保持一致) |
   | --- | --- | --- |
-  | Kirin9020系列处理器 | GM->L1 | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
-  | KirinX90系列处理器 | GM->L1 | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
-  | Kirin9020系列处理器 | GM->UB | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
-  | KirinX90系列处理器 | GM->UB | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
+  | Kirin9020系列处理器、Kirin9030系列处理器、KirinX90系列处理器 | GM->L1 | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
+  | Kirin9020系列处理器、Kirin9030系列处理器、KirinX90系列处理器 | GM->UB | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
 * 源操作数和目的操作数都为LocalTensor
 
-  ```
-  1. // 支持连续和不连续
-  2. template <typename T>
-  3. __aicore__ inline void DataCopy(const LocalTensor<T>& dstLocal, const LocalTensor<T>& srcGlobal, const DataCopyParams& repeatParams);
-
-  5. // 支持连续
-  6. template <typename T>
-  7. __aicore__ inline void DataCopy(const LocalTensor<T>& dstLocal, const LocalTensor<T>& srcGlobal, const uint32_t calCount);
+  ```cpp
+  // 支持连续和不连续
+   template <typename T> 
+   __aicore__ inline void DataCopy(const LocalTensor<T>& dstLocal, const LocalTensor<T>& srcGlobal, const DataCopyParams& repeatParams);
+    
+   // 支持连续
+   template <typename T> 
+   __aicore__ inline void DataCopy(const LocalTensor<T>& dstLocal, const LocalTensor<T>& srcGlobal, const uint32_t calCount);
   ```
 
   该原型接口支持的数据通路和数据类型如下所示：
@@ -54,25 +52,20 @@ content_hash: sha256:bfc3ea6b586b131de17fc6c9f37855565ef262817058edc59a15a1348fc
 
   | 支持型号 | 数据通路（通过[TPosition](cannkit-tposition.md)章节中表1表达） | 源操作数和目的操作数的数据类型 (两者保持一致) |
   | --- | --- | --- |
-  | Kirin9020系列处理器 | L1->UB | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
-  | KirinX90系列处理器 | L1->UB | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
-  | Kirin9020系列处理器 | L1->BT | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
-  | KirinX90系列处理器 | L1->BT | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
-  | Kirin9020系列处理器 | L1->PT | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
-  | KirinX90系列处理器 | L1->PT | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
-  | Kirin9020系列处理器 | L1->FB | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
-  | KirinX90系列处理器 | L1->FB | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
-  | Kirin9020系列处理器 | UB->L1 | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
-  | KirinX90系列处理器 | UB->L1 | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
+  | Kirin9020系列处理器、Kirin9030系列处理器、KirinX90系列处理器 | L1->UB | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
+  | Kirin9020系列处理器、Kirin9030系列处理器、KirinX90系列处理器 | L1->BT | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
+  | Kirin9020系列处理器、Kirin9030系列处理器、KirinX90系列处理器 | L1->PT | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
+  | Kirin9020系列处理器、Kirin9030系列处理器、KirinX90系列处理器 | L1->FB | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
+  | Kirin9020系列处理器、Kirin9030系列处理器、KirinX90系列处理器 | UB->L1 | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
 * 源操作数为LocalTensor，目的操作数为GlobalTensor
 
-  ```
-  1. // 支持连续和不连续
-  2. template <typename T>
-  3. __aicore__ inline void DataCopy(const GlobalTensor <T>& dstGlobal, const LocalTensor <T>& srcLocal, const DataCopyParams& repeatParams);
-  4. // 支持连续
-  5. template <typename T>
-  6. __aicore__ inline void DataCopy(const GlobalTensor <T>& dstGlobal, const LocalTensor <T>& srcLocal, const uint32_t calCount);
+  ```cpp
+  // 支持连续和不连续
+  template <typename T> 
+  __aicore__ inline void DataCopy(const GlobalTensor <T>& dstGlobal, const LocalTensor <T>& srcLocal, const DataCopyParams& repeatParams);
+  // 支持连续
+  template <typename T> 
+  __aicore__ inline void DataCopy(const GlobalTensor <T>& dstGlobal, const LocalTensor <T>& srcLocal, const uint32_t calCount);
   ```
 
   该原型接口支持的数据通路和数据类型如下所示：
@@ -81,15 +74,13 @@ content_hash: sha256:bfc3ea6b586b131de17fc6c9f37855565ef262817058edc59a15a1348fc
 
   | 支持型号 | 数据通路（通过[TPosition](cannkit-tposition.md)章节中表1表达） | 源操作数和目的操作数的数据类型 (两者保持一致) |
   | --- | --- | --- |
-  | Kirin9020系列处理器 | L1->GM | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
-  | KirinX90系列处理器 | L1->GM | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
-  | Kirin9020系列处理器 | UB->GM | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
-  | KirinX90系列处理器 | UB->GM | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
+  | Kirin9020系列处理器、Kirin9030系列处理器、KirinX90系列处理器 | L1->GM | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
+  | Kirin9020系列处理器、Kirin9030系列处理器、KirinX90系列处理器 | UB->GM | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
 * 源操作数和目的操作数都为LocalTensor，支持源操作数和目的操作数类型不一致
 
-  ```
-  1. template <typename dst_T, typename src_T>
-  2. __aicore__ inline void DataCopy(const LocalTensor<dst_T>& dstLocal, const LocalTensor<src_T>& srcLocal, const DataCopyParams& repeatParams);
+  ```cpp
+  template <typename dst_T, typename src_T> 
+  __aicore__ inline void DataCopy(const LocalTensor<dst_T>& dstLocal, const LocalTensor<src_T>& srcLocal, const DataCopyParams& repeatParams);
   ```
 
 ## 参数说明
@@ -114,11 +105,13 @@ content_hash: sha256:bfc3ea6b586b131de17fc6c9f37855565ef262817058edc59a15a1348fc
 
 下面的样例呈现了DataCopyParams结构体参数的使用方法，样例中完成了2个连续传输数据块的搬运，每个数据块含有8个datablock，源操作数相邻数据块之间无间隔，目的操作数相邻数据块尾与头之间间隔1个datablock。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/frtba7siRMO7bUbn5GMukQ/zh-cn_image_0000002589325649.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/uErzIV1ySa-jcwgLsLXAEw/zh-cn_image_0000002706675404.png)
 
 ## 支持的型号
 
 Kirin9020系列处理器
+
+Kirin9030系列处理器
 
 KirinX90系列处理器
 
@@ -129,70 +122,70 @@ KirinX90系列处理器
 
 ## 调用示例
 
-```
-1. #include "kernel_operator.h"
-2. class KernelDataCopy {
-3. public:
-4. __aicore__ inline KernelDataCopy() {}
-5. __aicore__ inline void Init(__gm__ uint8_t* src0Gm, __gm__ uint8_t* src1Gm, __gm__ uint8_t* dstGm)
-6. {
-7. src0Global.SetGlobalBuffer((__gm__ half*)src0Gm);
-8. src1Global.SetGlobalBuffer((__gm__ half*)src1Gm);
-9. dstGlobal.SetGlobalBuffer((__gm__ half*)dstGm);
-10. pipe.InitBuffer(inQueueSrc0, 1, 512 * sizeof(half));
-11. pipe.InitBuffer(inQueueSrc1, 1, 512 * sizeof(half));
-12. pipe.InitBuffer(outQueueDst, 1, 512 * sizeof(half));
-13. }
-14. __aicore__ inline void Process()
-15. {
-16. CopyIn();
-17. Compute();
-18. CopyOut();
-19. }
-20. private:
-21. __aicore__ inline void CopyIn()
-22. {
-23. AscendC::LocalTensor<half> src0Local = inQueueSrc0.AllocTensor<half>();
-24. AscendC::LocalTensor<half> src1Local = inQueueSrc1.AllocTensor<half>();
-25. AscendC::DataCopy(src0Local, src0Global, 512);
-26. AscendC::DataCopy(src1Local, src1Global, 512);
-27. inQueueSrc0.EnQue(src0Local);
-28. inQueueSrc1.EnQue(src1Local);
-29. }
-30. __aicore__ inline void Compute()
-31. {
-32. AscendC::LocalTensor<half> src0Local = inQueueSrc0.DeQue<half>();
-33. AscendC::LocalTensor<half> src1Local = inQueueSrc1.DeQue<half>();
-34. AscendC::LocalTensor<half> dstLocal = outQueueDst.AllocTensor<half>();
-35. AscendC::Add(dstLocal, src0Local, src1Local, 512);
-36. outQueueDst.EnQue<half>(dstLocal);
-37. inQueueSrc0.FreeTensor(src0Local);
-38. inQueueSrc1.FreeTensor(src1Local);
-39. }
-40. __aicore__ inline void CopyOut()
-41. {
-42. AscendC::LocalTensor<half> dstLocal = outQueueDst.DeQue<half>();
-43. AscendC::DataCopy(dstGlobal, dstLocal, 512);
-44. outQueueDst.FreeTensor(dstLocal);
-45. }
-46. private:
-47. AscendC::TPipe pipe;
-48. AscendC::TQue<AscendC::QuePosition::VECIN, 1> inQueueSrc0, inQueueSrc1;
-49. AscendC::TQue<AscendC::QuePosition::VECOUT, 1> outQueueDst;
-50. AscendC::GlobalTensor<half> src0Global, src1Global, dstGlobal;
-51. };
-52. extern "C" __global__ __aicore__ void data_copy_kernel(__gm__ uint8_t* src0Gm, __gm__ uint8_t* src1Gm, __gm__ uint8_t* dstGm)
-53. {
-54. KernelDataCopy op;
-55. op.Init(src0Gm, src1Gm, dstGm);
-56. op.Process();
-57. }
+```cpp
+#include "kernel_operator.h"
+class KernelDataCopy {
+public:
+    __aicore__ inline KernelDataCopy() {}
+    __aicore__ inline void Init(__gm__ uint8_t* src0Gm, __gm__ uint8_t* src1Gm, __gm__ uint8_t* dstGm)
+    {
+        src0Global.SetGlobalBuffer((__gm__ half*)src0Gm);
+        src1Global.SetGlobalBuffer((__gm__ half*)src1Gm);
+        dstGlobal.SetGlobalBuffer((__gm__ half*)dstGm);
+        pipe.InitBuffer(inQueueSrc0, 1, 512 * sizeof(half));
+        pipe.InitBuffer(inQueueSrc1, 1, 512 * sizeof(half));
+        pipe.InitBuffer(outQueueDst, 1, 512 * sizeof(half));
+    }
+    __aicore__ inline void Process()
+    {
+        CopyIn();
+        Compute();
+        CopyOut();
+    }
+private:
+    __aicore__ inline void CopyIn()
+    {
+        AscendC::LocalTensor<half> src0Local = inQueueSrc0.AllocTensor<half>();
+        AscendC::LocalTensor<half> src1Local = inQueueSrc1.AllocTensor<half>();
+        AscendC::DataCopy(src0Local, src0Global, 512);
+        AscendC::DataCopy(src1Local, src1Global, 512);
+        inQueueSrc0.EnQue(src0Local);
+        inQueueSrc1.EnQue(src1Local);
+    }
+    __aicore__ inline void Compute()
+    {
+        AscendC::LocalTensor<half> src0Local = inQueueSrc0.DeQue<half>();
+        AscendC::LocalTensor<half> src1Local = inQueueSrc1.DeQue<half>();
+        AscendC::LocalTensor<half> dstLocal = outQueueDst.AllocTensor<half>();
+        AscendC::Add(dstLocal, src0Local, src1Local, 512);
+        outQueueDst.EnQue<half>(dstLocal);
+        inQueueSrc0.FreeTensor(src0Local);
+        inQueueSrc1.FreeTensor(src1Local);
+    }
+    __aicore__ inline void CopyOut()
+    {
+        AscendC::LocalTensor<half> dstLocal = outQueueDst.DeQue<half>();
+        AscendC::DataCopy(dstGlobal, dstLocal, 512);
+        outQueueDst.FreeTensor(dstLocal);
+    }
+private:
+    AscendC::TPipe pipe;
+    AscendC::TQue<AscendC::QuePosition::VECIN, 1> inQueueSrc0, inQueueSrc1;
+    AscendC::TQue<AscendC::QuePosition::VECOUT, 1> outQueueDst;
+    AscendC::GlobalTensor<half> src0Global, src1Global, dstGlobal;
+};
+extern "C" __global__ __aicore__ void data_copy_kernel(__gm__ uint8_t* src0Gm, __gm__ uint8_t* src1Gm, __gm__ uint8_t* dstGm)
+{
+    KernelDataCopy op;
+    op.Init(src0Gm, src1Gm, dstGm);
+    op.Process();
+}
 ```
 
 结果示例：
 
-```
-1. 输入数据(src0Global): [1 2 3 ... 512]
-2. 输入数据(src1Global): [1 2 3 ... 512]
-3. 输出数据(dstGlobal):[2 4 6 ... 1024]
+```text
+输入数据(src0Global): [1 2 3 ... 512]
+输入数据(src1Global): [1 2 3 ... 512]
+输出数据(dstGlobal):[2 4 6 ... 1024]
 ```

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avim
 title: AVImageGenerator
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 模块 > AVImageGenerator
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:47+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:2a0584d207b38a01064e49e8e0df4c5c5a1e4e8b95b68a9130a0482a3fad4811
+scraped_at: 2026-09-02T14:52:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4c1404768c45f55a7ab432fbd4f7464a691ca8cf3b1bbd91e3bea4dfadf46bdb
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供用于从视频资源中获取指定时间点视频帧的API。
 
@@ -21,8 +19,6 @@ PhonePC/2in1TabletTVWearable
 **起始版本：** 18
 
 ## 文件汇总
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

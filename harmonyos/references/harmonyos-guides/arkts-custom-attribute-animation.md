@@ -3,189 +3,189 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-custom-
 title: 自定义属性动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 属性动画 > 自定义属性动画
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:08+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:54cbec815121385eb1c7e1e6b9613742dd9295ad5ae0812dd94f719924b448e1
+scraped_at: 2026-09-02T14:49:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1656416f4d22bed1d1c81da004424ecd875868dbbd012874e658f7027f0b2544
 ---
 
-属性动画是指当可动画属性的参数值发生变化时，在UI上产生的连续视觉效果。当参数值连续变化，且设置到可以引起UI发生变化的属性接口上时，即可实现属性动画。
+[属性动画](arkts-attribute-animation-overview.md)是指当可动画属性的参数值发生变化时，在UI上产生的连续视觉效果。当参数值连续变化，且设置到可以引起UI发生变化的属性接口上时，即可实现属性动画。除了组件本身支持动画的属性，ArkUI还提供了[@AnimatableExtend装饰器](arkts-animatable-extend.md)用于自定义可动画属性。
 
-ArkUI提供[@AnimatableExtend装饰器](arkts-animatable-extend.md)，用于自定义可动画属性接口。由于参数的数据类型必须具备一定程度的连续性，自定义可动画属性接口的参数类型仅支持number类型和实现[AnimatableArithmetic<T>接口](arkts-animatable-extend.md#animatablearithmetict接口说明)的自定义类型。通过自定义可动画属性接口和可动画数据类型，在使用animateTo或animation执行动画时，通过逐帧回调函数修改不可动画属性接口的值，能够让不可动画属性接口实现动画效果。也可通过逐帧回调函数每帧修改可动画属性的值，实现逐帧布局的效果。
+由于参数的数据类型必须具备一定程度的连续性，即可以通过插值方法来填补数据点之间的空隙以达到视觉上的连续效果，自定义可动画属性接口的参数类型仅支持number类型和实现[AnimatableArithmetic<T>接口](arkts-animatable-extend.md#animatablearithmetict接口说明)的自定义类型。通过自定义可动画属性接口和可动画数据类型，通过逐帧回调函数修改不可动画属性接口的值，能够让不可动画属性接口实现动画效果，可参考示例[使用自定义数据类型改变图形形状](arkts-custom-attribute-animation.md#使用自定义数据类型改变图形形状)。也可通过逐帧回调函数每帧修改可动画属性的值，实现逐帧布局的效果，可参考示例[使用number数据类型改变Text组件宽度实现逐帧布局的效果](arkts-custom-attribute-animation.md#使用number数据类型改变text组件宽度实现逐帧布局的效果)。关于可动画属性接口和不可动画属性接口的说明可参考[属性动画概述](arkts-attribute-animation-overview.md)中的属性接口分类说明。
 
-## 使用number数据类型和@AnimatableExtend装饰器改变Text组件宽度实现逐帧布局的效果
+## 使用number数据类型改变Text组件宽度实现逐帧布局的效果
 
-```
-1. // 第一步：使用@AnimatableExtend装饰器，自定义可动画属性接口
-2. @AnimatableExtend(Text)
-3. function animatableWidth(width: number) {
-4. .width(width) // 调用系统属性接口，逐帧回调函数每帧修改可动画属性的值，实现逐帧布局的效果。
-5. }
+该示例中通过[@AnimatableExtend装饰器](arkts-animatable-extend.md)定义了可动画属性接口animatableWidth，通过传入number数据类型修改属性[width](../harmonyos-references/ts-universal-attributes-size.md#width)的值，实现了逐帧改变[Text](../harmonyos-references/ts-basic-components-text.md)组件宽度的动画。
 
-7. @Entry
-8. @Component
-9. struct AnimatablePropertyExample {
-10. @State textWidth: number = 80; // 80: 初始文本宽度
+```typescript
+// 第一步：使用@AnimatableExtend装饰器，自定义可动画属性接口
+@AnimatableExtend(Text)
+function animatableWidth(width: number) {
+  .width(width) // 调用系统属性接口，逐帧回调函数每帧修改可动画属性的值，实现逐帧布局的效果。
+}
 
-12. build() {
-13. Column() {
-14. Text('AnimatableProperty')
-15. .animatableWidth(this.textWidth) // 第二步：将自定义可动画属性接口设置到组件上
-16. .animation({ duration: 2000, curve: Curve.Ease }) // 第三步:为自定义可动画属性接口绑定动画。
-17. Button('Play')
-18. .onClick(() => {
-19. this.textWidth = this.textWidth == 80 ? 160 : 80; // 第四步：改变自定义可动画属性的参数，产生动画。
-20. })
-21. }
-22. .width('100%')
-23. .padding(10) // 10: 内边距
-24. }
-25. }
-```
+@Entry
+@Component
+struct AnimatablePropertyExample {
+  @State textWidth: number = 80; // 80: 初始文本宽度
 
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animatableProperty/template1/Index.ets#L16-L43)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/6scz3Um1R3iBU5fIxubTjQ/zh-cn_image_0000002558604816.gif)
-
-## 使用自定义数据类型和@AnimatableExtend装饰器改变图形形状
-
-```
-1. declare type Point = number[];
-
-3. // 定义可动画属性接口的参数类型，实现AnimatableArithmetic<T>接口中加法、减法、乘法和判断相等函数
-4. class PointClass extends Array<number> {
-5. constructor(value: Point) {
-6. super(value[0], value[1]);
-7. }
-
-9. add(rhs: PointClass): PointClass {
-10. let result: Point = new Array<number>() as Point;
-11. for (let i = 0; i < 2; i++) { // 2: 二维坐标点
-12. result.push(rhs[i] + this[i]);
-13. }
-14. return new PointClass(result);
-15. }
-
-17. subtract(rhs: PointClass): PointClass {
-18. let result: Point = new Array<number>() as Point;
-19. for (let i = 0; i < 2; i++) { // 2: 二维坐标点
-20. result.push(this[i] - rhs[i]);
-21. }
-22. return new PointClass(result);
-23. }
-
-25. multiply(scale: number): PointClass {
-26. let result: Point = new Array<number>() as Point;
-27. for (let i = 0; i < 2; i++) { // 2: 二维坐标点
-28. result.push(this[i] * scale);
-29. }
-30. return new PointClass(result);
-31. }
-32. }
-
-34. // 定义可动画属性接口的参数类型，实现AnimatableArithmetic<T>接口中加法、减法、乘法和判断相等函数
-35. // 模板T支持嵌套实现AnimatableArithmetic<T>的类型
-36. class PointVector extends Array<PointClass> implements AnimatableArithmetic<Array<Point>> {
-37. constructor(initialValue: Array<Point>) {
-38. super();
-39. if (initialValue.length) {
-40. initialValue.forEach((p: Point) => this.push(new PointClass(p)));
-41. }
-42. }
-
-44. // implement the IAnimatableArithmetic interface
-45. plus(rhs: PointVector): PointVector {
-46. let result = new PointVector([]);
-47. const len = Math.min(this.length, rhs.length);
-48. for (let i = 0; i < len; i++) {
-49. result.push(this[i].add(rhs[i]));
-50. }
-51. return result;
-52. }
-
-54. subtract(rhs: PointVector): PointVector {
-55. let result = new PointVector([]);
-56. const len = Math.min(this.length, rhs.length);
-57. for (let i = 0; i < len; i++) {
-58. result.push(this[i].subtract(rhs[i]));
-59. }
-60. return result;
-61. }
-
-63. multiply(scale: number): PointVector {
-64. let result = new PointVector([]);
-65. for (let i = 0; i < this.length; i++) {
-66. result.push(this[i].multiply(scale));
-67. }
-68. return result;
-69. }
-
-71. equals(rhs: PointVector): boolean {
-72. if (this.length !== rhs.length) {
-73. return false;
-74. }
-75. for (let index = 0, size = this.length; index < size; ++index) {
-76. if (this[index][0] !== rhs[index][0] || this[index][1] !== rhs[index][1]) {
-77. return false;
-78. }
-79. }
-80. return true;
-81. }
-82. }
-
-84. // 自定义可动画属性接口
-85. @AnimatableExtend(Polyline)
-86. function animatablePoints(points: PointVector) {
-87. .points(points);
-88. }
-
-90. @Entry
-91. @Component
-92. struct AnimatedShape {
-93. squareStartPointX: number = 75; // 75: 正方形起始点X坐标
-94. squareStartPointY: number = 25; // 25: 正方形起始点Y坐标
-95. squareWidth: number = 150; // 150: 正方形宽度
-96. squareEndTranslateX: number = 50; // 50: 正方形结束位置X轴平移量
-97. squareEndTranslateY: number = 50; // 50: 正方形结束位置Y轴平移量
-98. @State pointVec1: PointVector = new PointVector([
-99. [this.squareStartPointX, this.squareStartPointY],
-100. [this.squareStartPointX + this.squareWidth, this.squareStartPointY],
-101. [this.squareStartPointX + this.squareWidth, this.squareStartPointY + this.squareWidth],
-102. [this.squareStartPointX, this.squareStartPointY + this.squareWidth]
-103. ]);
-104. @State pointVec2: PointVector = new PointVector([
-105. [this.squareStartPointX + this.squareEndTranslateX, this.squareStartPointY + this.squareStartPointY],
-106. [this.squareStartPointX + this.squareWidth + this.squareEndTranslateX,
-107. this.squareStartPointY + this.squareStartPointY],
-108. [this.squareStartPointX + this.squareWidth, this.squareStartPointY + this.squareWidth],
-109. [this.squareStartPointX, this.squareStartPointY + this.squareWidth]
-110. ]);
-111. @State color: Color = Color.Green;
-112. @State fontSize: number = 20.0; // 20.0: 字体大小
-113. @State polyline1Vec: PointVector = this.pointVec1;
-114. @State polyline2Vec: PointVector = this.pointVec2;
-
-116. build() {
-117. Row() {
-118. Polyline()
-119. .width(300) // 300: 折线宽度
-120. .height(200) // 200: 折线高度
-121. .backgroundColor('#0C000000') // 0C000000: 背景颜色（黑色带透明度）
-122. .fill('#317AF7') // 317AF7: 填充颜色（蓝色）
-123. .animatablePoints(this.polyline1Vec)
-124. .animation({ duration: 2000, delay: 0, curve: Curve.Ease }) // 2000: 动画持续时间（毫秒），0: 动画延迟时间
-125. .onClick(() => {
-126. if (this.polyline1Vec.equals(this.pointVec1)) {
-127. this.polyline1Vec = this.pointVec2;
-128. } else {
-129. this.polyline1Vec = this.pointVec1;
-130. }
-131. })
-132. }
-133. .width('100%').height('100%').justifyContent(FlexAlign.Center)
-134. }
-135. }
+  build() {
+    Column() {
+      Text('AnimatableProperty')
+        .animatableWidth(this.textWidth) // 第二步：将自定义可动画属性接口设置到组件上
+        .animation({ duration: 2000, curve: Curve.Ease }) // 第三步:为自定义可动画属性接口绑定动画。
+      Button('Play')
+        .onClick(() => {
+          this.textWidth = this.textWidth === 80 ? 160 : 80; // 第四步：改变自定义可动画属性的参数，产生动画。
+        })
+    }
+    .width('100%')
+    .padding(10) // 10: 内边距
+  }
+}
 ```
 
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/animatableProperty/template2/Index.ets#L16-L153)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/hvnDrXNnRImsekf6enP0SA/zh-cn_image_0000002706833774.gif)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/eixtg6gISBWtoA8fC3ulfg/zh-cn_image_0000002589324341.gif)
+## 使用自定义数据类型改变图形形状
+
+该示例中通过[@AnimatableExtend装饰器](arkts-animatable-extend.md)定义了可动画属性接口animatablePoints，通过传入自定义的数据类型修改不可动画属性[points](../harmonyos-references/ts-drawing-components-polyline.md#points)的值，实现了改变[Polyline](../harmonyos-references/ts-drawing-components-polyline.md)组件形状的动画。由于系统不支持Polyline组件points属性的动画，因此需要通过实现[AnimatableArithmetic<T>接口](arkts-animatable-extend.md#animatablearithmetict接口说明)中加法、减法、乘法和判断相等函数，为该属性的参数定义做动画插值的方法。在动画过程中，系统侧根据定义的数据插值方法计算每帧的数据值，回调到[@AnimatableExtend装饰器](arkts-animatable-extend.md)修饰的自定义可动画属性接口，进而设置points属性，为points属性产生动画。
+
+```typescript
+declare type Point = number[];
+
+// 定义可动画属性接口的参数类型，实现AnimatableArithmetic<T>接口中加法、减法、乘法和判断相等函数
+class PointClass extends Array<number> {
+  constructor(value: Point) {
+    super(value[0], value[1]);
+  }
+
+  add(rhs: PointClass): PointClass {
+    let result: Point = new Array<number>() as Point;
+    for (let i = 0; i < 2; i++) { // 2: 二维坐标点
+      result.push(rhs[i] + this[i]);
+    }
+    return new PointClass(result);
+  }
+
+  subtract(rhs: PointClass): PointClass {
+    let result: Point = new Array<number>() as Point;
+    for (let i = 0; i < 2; i++) { // 2: 二维坐标点
+      result.push(this[i] - rhs[i]);
+    }
+    return new PointClass(result);
+  }
+
+  multiply(scale: number): PointClass {
+    let result: Point = new Array<number>() as Point;
+    for (let i = 0; i < 2; i++) { // 2: 二维坐标点
+      result.push(this[i] * scale);
+    }
+    return new PointClass(result);
+  }
+}
+
+// 定义可动画属性接口的参数类型，实现AnimatableArithmetic<T>接口中加法、减法、乘法和判断相等函数
+// 模板T支持嵌套实现AnimatableArithmetic<T>的类型
+class PointVector extends Array<PointClass> implements AnimatableArithmetic<Array<Point>> {
+  constructor(initialValue: Array<Point>) {
+    super();
+    if (initialValue.length) {
+      initialValue.forEach((p: Point) => this.push(new PointClass(p)));
+    }
+  }
+
+  // implement the IAnimatableArithmetic interface
+  plus(rhs: PointVector): PointVector {
+    let result = new PointVector([]);
+    const len = Math.min(this.length, rhs.length);
+    for (let i = 0; i < len; i++) {
+      result.push(this[i].add(rhs[i]));
+    }
+    return result;
+  }
+
+  subtract(rhs: PointVector): PointVector {
+    let result = new PointVector([]);
+    const len = Math.min(this.length, rhs.length);
+    for (let i = 0; i < len; i++) {
+      result.push(this[i].subtract(rhs[i]));
+    }
+    return result;
+  }
+
+  multiply(scale: number): PointVector {
+    let result = new PointVector([]);
+    for (let i = 0; i < this.length; i++) {
+      result.push(this[i].multiply(scale));
+    }
+    return result;
+  }
+
+  equals(rhs: PointVector): boolean {
+    if (this.length !== rhs.length) {
+      return false;
+    }
+    for (let index = 0, size = this.length; index < size; ++index) {
+      if (this[index][0] !== rhs[index][0] || this[index][1] !== rhs[index][1]) {
+        return false;
+      }
+    }
+    return true;
+  }
+}
+
+// 自定义可动画属性接口
+@AnimatableExtend(Polyline)
+function animatablePoints(points: PointVector) {
+  .points(points);
+}
+
+@Entry
+@Component
+struct AnimatedShape {
+  squareStartPointX: number = 75; // 75: 正方形起始点X坐标
+  squareStartPointY: number = 25; // 25: 正方形起始点Y坐标
+  squareWidth: number = 150; // 150: 正方形宽度
+  squareEndTranslateX: number = 50; // 50: 正方形结束位置X轴平移量
+  squareEndTranslateY: number = 50; // 50: 正方形结束位置Y轴平移量
+  @State pointVec1: PointVector = new PointVector([
+    [this.squareStartPointX, this.squareStartPointY],
+    [this.squareStartPointX + this.squareWidth, this.squareStartPointY],
+    [this.squareStartPointX + this.squareWidth, this.squareStartPointY + this.squareWidth],
+    [this.squareStartPointX, this.squareStartPointY + this.squareWidth]
+  ]);
+  @State pointVec2: PointVector = new PointVector([
+    [this.squareStartPointX + this.squareEndTranslateX, this.squareStartPointY + this.squareStartPointY],
+    [this.squareStartPointX + this.squareWidth + this.squareEndTranslateX,
+      this.squareStartPointY + this.squareStartPointY],
+    [this.squareStartPointX + this.squareWidth, this.squareStartPointY + this.squareWidth],
+    [this.squareStartPointX, this.squareStartPointY + this.squareWidth]
+  ]);
+  @State color: Color = Color.Green;
+  @State fontSize: number = 20.0; // 20.0: 字体大小
+  @State polyline1Vec: PointVector = this.pointVec1;
+  @State polyline2Vec: PointVector = this.pointVec2;
+
+  build() {
+    Row() {
+      Polyline()
+        .width(300) // 300: 折线宽度
+        .height(200) // 200: 折线高度
+        .backgroundColor('#0C000000') // 0C000000: 背景颜色（黑色带透明度）
+        .fill('#317AF7') // 317AF7: 填充颜色（蓝色）
+        .animatablePoints(this.polyline1Vec)
+        .animation({ duration: 2000, delay: 0, curve: Curve.Ease }) // 2000: 动画持续时间（毫秒），0: 动画延迟时间
+        .onClick(() => {
+          if (this.polyline1Vec.equals(this.pointVec1)) {
+            this.polyline1Vec = this.pointVec2;
+          } else {
+            this.polyline1Vec = this.pointVec1;
+          }
+        })
+    }
+    .width('100%').height('100%').justifyContent(FlexAlign.Center)
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/-BZZow5PQ2ujng7FRsqV7A/zh-cn_image_0000002736312883.gif)

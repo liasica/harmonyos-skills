@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/access-contro
 title: 基于设备分类和数据分级的访问控制 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 数据可靠性与安全性 > 基于设备分类和数据分级的访问控制 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:21+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e84d2482c0010257179f1217748716a1077fd5269ae2ef9916b9c9242b44666d
+scraped_at: 2026-09-02T14:59:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:49c021bcfc6ed6c2f570c7290d2ba95b49531ce67dbeb3a1921f6f5b72c194cb
 ---
 
 ## 基本概念
@@ -35,7 +35,7 @@ content_hash: sha256:e84d2482c0010257179f1217748716a1077fd5269ae2ef9916b9c9242b4
 
 数据跨设备同步时，基于数据安全标签和设备安全等级进行访问控制。数据库的数据安全标签不高于对端设备的设备安全等级时，数据才能同步。具体访问控制矩阵如下：
 
-| 设备安全级别 | 可同步的数据安全标签 |
+| 设备安全等级 | 可同步的数据安全标签 |
 | --- | --- |
 | SL1 | S1 |
 | SL2 | S1~S2 |
@@ -55,7 +55,7 @@ content_hash: sha256:e84d2482c0010257179f1217748716a1077fd5269ae2ef9916b9c9242b4
 
 具体接口及功能，可见[分布式键值数据库](../harmonyos-references/js-apis-distributedkvstore.md)。
 
-说明
+**说明** 
 
 在单设备使用场景下，KV数据库支持修改securityLevel开库参数进行安全等级升级。数据库安全等级升级操作需要注意以下几点：
 
@@ -63,106 +63,102 @@ content_hash: sha256:e84d2482c0010257179f1217748716a1077fd5269ae2ef9916b9c9242b4
 * 该操作需在关闭当前数据库之后，通过修改securityLevel开库参数重新设置数据库的安全等级，再进行开库操作。
 * 该操作只支持升级，不支持降级。例如支持S2->S3的升级，不支持S3->S2的降级。
 
-```
-1. // 导入模块
-2. // 在pages目录下新建KvStoreInterface.ets
-3. import { distributedKVStore } from '@kit.ArkData';
-4. import { BusinessError } from '@kit.BasicServicesKit';
-5. import EntryAbility from '../entryability/EntryAbility';
-6. // Logger为hilog封装后实现的打印功能
-7. import Logger from '../common/Logger';
+```ts
+// 导入模块
+// 在pages目录下新建KvStoreInterface.ets
+import { distributedKVStore } from '@kit.ArkData';
+import { BusinessError } from '@kit.BasicServicesKit';
+import EntryAbility from '../entryability/EntryAbility';
+// Logger为hilog封装后实现的打印功能
+import Logger from '../common/Logger';
 
-9. let kvManager: distributedKVStore.KVManager | undefined = undefined;
-10. let kvStore: distributedKVStore.SingleKVStore | undefined = undefined;
-11. let appId: string = 'com.example.kvstoresamples';
-12. let storeId: string = 'storeId';
-13. const context = EntryAbility.getContext();
+let kvManager: distributedKVStore.KVManager | undefined = undefined;
+let kvStore: distributedKVStore.SingleKVStore | undefined = undefined;
+let appId: string = 'com.example.kvstoresamples';
+let storeId: string = 'storeId';
+const context = EntryAbility.getContext();
 
-15. // 下面所有接口的代码都实现在KvInterface中
-16. export class KvInterface {
-17. }
-```
-
-```
-1. public CreateKvManager = (() => {
-2. Logger.info('CreateKvManager start');
-3. if (typeof (kvManager) === 'undefined') {
-4. const kvManagerConfig: distributedKVStore.KVManagerConfig = {
-5. bundleName: appId,
-6. context: context
-7. };
-8. try {
-9. // 创建KVManager实例
-10. kvManager = distributedKVStore.createKVManager(kvManagerConfig);
-11. Logger.info('Succeeded in creating KVManager.');
-12. } catch (err) {
-13. Logger.error(`Failed to create KVManager. Code:${err.code},message:${err.message}`);
-14. }
-15. } else {
-16. Logger.info ('KVManager has created');
-17. }
-18. })
+// 下面所有接口的代码都实现在KvInterface中
+export class KvInterface {
+}
 ```
 
-[KvStoreInterface.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/KvStore/KvStoreSamples/entry/src/main/ets/pages/KvStoreInterface.ets#L29-L48)
-
-```
-1. public GetKvStore = (() => {
-2. Logger.info('GetKvStore start');
-3. if (kvManager === undefined) {
-4. Logger.info('KvManager not initialized');
-5. return;
-6. }
-7. try {
-8. let child1 = new distributedKVStore.FieldNode('id');
-9. child1.type = distributedKVStore.ValueType.INTEGER;
-10. child1.nullable = false;
-11. child1.default = '1';
-12. let child2 = new distributedKVStore.FieldNode('name');
-13. child2.type = distributedKVStore.ValueType.STRING;
-14. child2.nullable = false;
-15. child2.default = 'zhangsan';
-
-17. let schema = new distributedKVStore.Schema();
-18. schema.root.appendChild(child1);
-19. schema.root.appendChild(child2);
-20. schema.indexes = ['$.id', '$.name'];
-21. // 0表示COMPATIBLE模式，1表示STRICT模式。
-22. schema.mode = 1;
-23. // 支持在检查Value时，跳过skip指定的字节数，且取值范围为[0,4M-2]。
-24. schema.skip = 0;
-
-26. const options: distributedKVStore.Options = {
-27. createIfMissing: true,
-28. // 设置数据库加密
-29. encrypt: true,
-30. backup: false,
-31. autoSync: false,
-32. // kvStoreType不填时，默认创建多设备协同数据库
-33. kvStoreType: distributedKVStore.KVStoreType.SINGLE_VERSION,
-34. // 多设备协同数据库：kvStoreType: distributedKVStore.KVStoreType.DEVICE_COLLABORATION,
-35. schema: schema,
-36. // schema未定义可以不填，定义方法请参考上方schema示例。
-37. securityLevel: distributedKVStore.SecurityLevel.S3
-38. };
-39. kvManager.getKVStore<distributedKVStore.SingleKVStore>(storeId, options,
-40. (err, store: distributedKVStore.SingleKVStore) => {
-41. if (err) {
-42. Logger.error(`Failed to get KVStore: Code:${err.code},message:${err.message}`);
-43. return;
-44. }
-45. Logger.info('Succeeded in getting KVStore.');
-46. kvStore = store;
-47. // 请确保获取到键值数据库实例后，再进行相关数据操作
-48. });
-49. } catch (e) {
-50. let error = e as BusinessError;
-51. Logger.error(`An unexpected error occurred. Code:${error.code},message:${error.message}`);
-52. }
-53. })
+```typescript
+public CreateKvManager = (() => {
+  Logger.info('CreateKvManager start');
+  if (typeof (kvManager) === 'undefined') {
+    const kvManagerConfig: distributedKVStore.KVManagerConfig = {
+      bundleName: appId,
+      context: context
+    };
+    try {
+      // 创建KVManager实例
+      kvManager = distributedKVStore.createKVManager(kvManagerConfig);
+      Logger.info('Succeeded in creating KVManager.');
+    } catch (err) {
+      Logger.error(`Failed to create KVManager. Code:${err.code},message:${err.message}`);
+    }
+  } else {
+    Logger.info ('KVManager has created');
+  }
+})
 ```
 
-[KvStoreInterface.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/KvStore/KvStoreSamples/entry/src/main/ets/pages/KvStoreInterface.ets#L50-L104)
+```typescript
+public GetKvStore = (() => {
+  Logger.info('GetKvStore start');
+  if (kvManager === undefined) {
+    Logger.info('KvManager not initialized');
+    return;
+  }
+  try {
+    let child1 = new distributedKVStore.FieldNode('id');
+    child1.type = distributedKVStore.ValueType.INTEGER;
+    child1.nullable = false;
+    child1.default = '1';
+    let child2 = new distributedKVStore.FieldNode('name');
+    child2.type = distributedKVStore.ValueType.STRING;
+    child2.nullable = false;
+    child2.default = 'zhangsan';
+
+    let schema = new distributedKVStore.Schema();
+    schema.root.appendChild(child1);
+    schema.root.appendChild(child2);
+    schema.indexes = ['$.id', '$.name'];
+    // 0表示COMPATIBLE模式，1表示STRICT模式。
+    schema.mode = 1;
+    // 支持在检查Value时，跳过skip指定的字节数，且取值范围为[0,4M-2]。
+    schema.skip = 0;
+
+    const options: distributedKVStore.Options = {
+      createIfMissing: true,
+      // 设置数据库加密
+      encrypt: true,
+      backup: false,
+      autoSync: false,
+      // kvStoreType不填时，默认创建多设备协同数据库
+      kvStoreType: distributedKVStore.KVStoreType.SINGLE_VERSION,
+      // 多设备协同数据库：kvStoreType: distributedKVStore.KVStoreType.DEVICE_COLLABORATION,
+      schema: schema,
+      // schema未定义可以不填，定义方法请参考上方schema示例。
+      securityLevel: distributedKVStore.SecurityLevel.S3
+    };
+    kvManager.getKVStore<distributedKVStore.SingleKVStore>(storeId, options,
+      (err, store: distributedKVStore.SingleKVStore) => {
+        if (err) {
+          Logger.error(`Failed to get KVStore: Code:${err.code},message:${err.message}`);
+          return;
+        }
+        Logger.info('Succeeded in getting KVStore.');
+        kvStore = store;
+        // 请确保获取到键值数据库实例后，再进行相关数据操作
+      });
+  } catch (e) {
+    let error = e as BusinessError;
+    Logger.error(`An unexpected error occurred. Code:${error.code},message:${error.message}`);
+  }
+})
+```
 
 ## 使用关系型数据库实现数据分级
 
@@ -170,28 +166,26 @@ content_hash: sha256:e84d2482c0010257179f1217748716a1077fd5269ae2ef9916b9c9242b4
 
 具体接口及功能，可见[@ohos.data.relationalStore (关系型数据库)](../harmonyos-references/arkts-apis-data-relationalstore.md)。
 
+```typescript
+import { relationalStore } from '@kit.ArkData';
+import { UIContext } from '@kit.ArkUI';
+import { common } from '@kit.AbilityKit';
+
+let store: relationalStore.RdbStore | undefined = undefined;
+
+export async function accessControlByDeviceAndDataLevel() {
+  /* context为应用的上下文信息，由调用方自行获取，此处仅为示例。 */
+  const context = new UIContext().getHostContext() as common.UIAbilityContext;
+  try {
+    const STORE_CONFIG: relationalStore.StoreConfig = {
+      name: 'RdbTest.db',
+      // 设置数据库安全级别为S3
+      securityLevel: relationalStore.SecurityLevel.S3
+    };
+    store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+    console.info('Succeeded in getting RdbStore.')
+  } catch (err) {
+    console.error(`Failed to get RdbStore. Code:${err.code}, message:${err.message}`);
+  }
+}
 ```
-1. import { relationalStore } from '@kit.ArkData';
-2. import { UIContext } from '@kit.ArkUI';
-3. import { common } from '@kit.AbilityKit';
-
-5. let store: relationalStore.RdbStore | undefined = undefined;
-
-7. export async function accessControlByDeviceAndDataLevel() {
-8. /* context为应用的上下文信息，由调用方自行获取，此处仅为示例。 */
-9. const context = new UIContext().getHostContext() as common.UIAbilityContext;
-10. try {
-11. const STORE_CONFIG: relationalStore.StoreConfig = {
-12. name: 'RdbTest.db',
-13. // 设置数据库安全级别为S3
-14. securityLevel: relationalStore.SecurityLevel.S3
-15. };
-16. store = await relationalStore.getRdbStore(context, STORE_CONFIG);
-17. console.info('Succeeded in getting RdbStore.')
-18. } catch (err) {
-19. console.error(`Failed to get RdbStore. Code:${err.code}, message:${err.message}`);
-20. }
-21. }
-```
-
-[accessControlByDeviceAndDataLevel.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/RelationalStore/RdbStore/entry/src/main/ets/pages/accessControlByDeviceAndDataLevel.ets#L16-L35)

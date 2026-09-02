@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: OpenGL同一个上下文在多线程中使用问题
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > OpenGL同一个上下文在多线程中使用问题
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:49+08:00
-doc_updated_at: 2026-03-25
-content_hash: sha256:7074a212c28e20945ce80eee67aeb65fecd401aaa2ce684497b16c4ad9b12472
+scraped_at: 2026-09-02T14:54:46+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:606d9924d3511da2227119ec27620e719c76583c0b75dc2febf0ff856c96a0eb
 ---
 
-**问题现象**
+## 问题现象
 
 在主线程中初始化EGL环境并创建上下文，然后在单独的子线程中处理渲染，这会导致黑屏。
 
-**解决措施**
+## 解决措施
 
 OpenGL上下文与特定线程绑定，不能在同一个上下文中并发执行多个线程的操作。
 

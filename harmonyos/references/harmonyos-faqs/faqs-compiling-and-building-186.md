@@ -1,18 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-and-building-186
-title: "报错“ENOENT: no such file or directory, uv_cwd”"
-breadcrumb: "FAQ > DevEco Studio > 编译构建 > 报错“ENOENT: no such file or directory, uv_cwd”"
+title: "报错\"ENOENT: no such file or directory, uv_cwd\""
+breadcrumb: "FAQ > DevEco Studio > 编译构建 > 报错\"ENOENT: no such file or directory, uv_cwd\""
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:21:06+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:10dce79e1769283e0e5d31a29ed37a93f3d93631fce1a4699cd05b59f75cf8ca
+scraped_at: 2026-09-02T14:54:55+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:3999960cf14edf28c070097a8e1c9453b9b84fd1665d392c8de1e75f69011883
 ---
 
 **问题现象**
 
 先构建一次项目，然后强制删除项目后手动恢复再重新构建，出现类似如下报错：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/xYeXm0dQTp2GpEvvY3XErg/zh-cn_image_0000002342994341.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/JnBWDwh4QSG_fWLm77MwUA/zh-cn_image_0000002654838015.png)
 
 **问题原因**
 
@@ -24,20 +24,20 @@ content_hash: sha256:10dce79e1769283e0e5d31a29ed37a93f3d93631fce1a4699cd05b59f75
 
 Linux系统执行:
 
-```
-1. pkill node
+```powershell
+pkill node
 ```
 
 Mac系统执行:
 
-```
-1. killall node
+```powershell
+killall node
 ```
 
 Windows系统执行:
 
-```
-1. taskkill /F /IM node.exe
+```powershell
+taskkill /F /IM node.exe
 ```
 
 **解决措施二**

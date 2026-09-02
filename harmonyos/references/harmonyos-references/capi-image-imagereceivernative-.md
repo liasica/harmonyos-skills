@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: ImageReceiverNative_
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 结构体 > ImageReceiverNative_
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:33+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:17035b914f92e20b58f9a46db0c8df75cc5bcf06eca1a0fb5650a02f8409887f
+scraped_at: 2026-09-02T14:52:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:93bfc6270073ccd868f1a62dc8958b627b128cd5c091d2a53e9b5c95bc5c9e16
 ---
 
-```
-1. typedef struct ImageReceiverNative_ ImageReceiverNative
+```c
+typedef struct ImageReceiverNative_ ImageReceiverNative
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 用于定义ImageReceiverNative数据类型名称。
 

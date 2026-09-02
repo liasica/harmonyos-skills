@@ -3,32 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.resourceschedule.backgroundProcessManager (后台子进程管控)"
 breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > ArkTS API > @ohos.resourceschedule.backgroundProcessManager (后台子进程管控)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:34+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0f3a71abc8ceb55b870a89ed687f9349edbe7660f5280c2b007af65066748124
+scraped_at: 2026-09-02T15:01:29+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:795f998d1b41720ac8e6020e13973fe85447f6394e1f6a28efce35d6e8aae190
 ---
 
 本模块提供了后台子进程管控接口。开发者可以通过本模块接口对子进程进行压制、解压制，避免子进程过多占用系统资源，导致系统使用卡顿。本模块接口仅对通过[OH\_Ability\_StartNativeChildProcess](capi-native-child-process-h.md#oh_ability_startnativechildprocess)接口创建的子进程生效。
 
-说明
+**说明** 
 
 本模块首批接口从API version 17开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { backgroundProcessManager } from '@kit.BackgroundTasksKit';
+```ts
+import { backgroundProcessManager } from '@kit.BackgroundTasksKit';
 ```
 
 ## backgroundProcessManager.setProcessPriority
 
-PhonePC/2in1TabletTVWearable
-
 setProcessPriority(pid: number, priority: ProcessPriority): Promise<void>
 
-设置子进程的压制档位，子进程被压制后可获得的CPU资源将会受到限制。如果主进程调度策略发生变化，如从后台切至前台等，子进程会跟随主进程一同变化，子进程如需继续压制，需要重新调用本接口。
+设置子进程的压制档位，子进程被压制后可获得的CPU资源将会受到限制。如果主进程调度策略发生变化，如从后台切至前台等，子进程会跟随主进程一同变化，子进程如需继续压制，需要重新调用本接口。使用Promise异步回调。
 
 **系统能力**： SystemCapability.Resourceschedule.BackgroundProcessManager
 
@@ -55,26 +51,24 @@ setProcessPriority(pid: number, priority: ProcessPriority): Promise<void>
 
 **示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { backgroundProcessManager } from '@kit.BackgroundTasksKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { backgroundProcessManager } from '@kit.BackgroundTasksKit';
 
-4. let childProcessPid = 33333;
-5. try {
-6. backgroundProcessManager.setProcessPriority(childProcessPid,
-7. backgroundProcessManager.ProcessPriority.PROCESS_INACTIVE);
-8. } catch (error) {
-9. console.error(`setProcessPriority failed, errCode: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
-10. }
+let childProcessPid = 33333;
+try {
+    backgroundProcessManager.setProcessPriority(childProcessPid,
+        backgroundProcessManager.ProcessPriority.PROCESS_INACTIVE);
+} catch (error) {
+    console.error(`setProcessPriority failed, errCode: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
+}
 ```
 
 ## backgroundProcessManager.resetProcessPriority
 
-PhonePC/2in1TabletTVWearable
-
 resetProcessPriority(pid: number): Promise<void>
 
-为子进程解压制，即子进程策略恢复为主进程调度策略。若主进程调度策略发生变化，如从后台切至前台等， 子进程会跟随主进程一同变化，等效于执行一次resetProcessPriority动作。
+为子进程解压制，即子进程策略恢复为主进程调度策略。若主进程调度策略发生变化，如从后台切至前台等， 子进程会跟随主进程一同变化，等效于执行一次resetProcessPriority动作。使用Promise异步回调。
 
 **系统能力**： SystemCapability.Resourceschedule.BackgroundProcessManager
 
@@ -92,21 +86,19 @@ resetProcessPriority(pid: number): Promise<void>
 
 **示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { backgroundProcessManager } from '@kit.BackgroundTasksKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { backgroundProcessManager } from '@kit.BackgroundTasksKit';
 
-4. let childProcessPid = 33333;
-5. try {
-6. backgroundProcessManager.resetProcessPriority(childProcessPid);
-7. } catch (error) {
-8. console.error(`setProcessPriority failed, errCode: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
-9. }
+let childProcessPid = 33333;
+try {
+    backgroundProcessManager.resetProcessPriority(childProcessPid);
+} catch (error) {
+    console.error(`resetProcessPriority failed, errCode: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
+}
 ```
 
 ## backgroundProcessManager.setPowerSaveMode20+
-
-PhonePC/2in1TabletTVWearable
 
 setPowerSaveMode(pid: number, powerSaveMode: PowerSaveMode): Promise<void>
 
@@ -128,7 +120,7 @@ setPowerSaveMode(pid: number, powerSaveMode: PowerSaveMode): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| pid | number | 是 | 进程号。 |
+| pid | number | 是 | 进程号。  取值为正整数。 |
 | powerSaveMode | [PowerSaveMode](js-apis-backgroundprocessmanager.md#powersavemode20) | 是 | 能效模式。 |
 
 **返回值**：
@@ -146,26 +138,28 @@ setPowerSaveMode(pid: number, powerSaveMode: PowerSaveMode): Promise<void>
 | 201 | Permission denied. |
 | 801 | Capability not supported. |
 | 31800002 | Parameter error. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types; 3. PowerSaveMode status is out of range. |
-| 31800003 | Setup error, This setting is overridden by settings in Task Manager. |
+| 31800003 | Setup error, This setting is overridden by settings in Task Manager |
 | 31800004 | The setting failed due to system scheduling reasons. |
 
 **示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { backgroundProcessManager } from '@kit.BackgroundTasksKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { backgroundProcessManager } from '@kit.BackgroundTasksKit';
 
-4. let pid = 33333;
-5. try {
-6. backgroundProcessManager.setPowerSaveMode(pid, backgroundProcessManager.PowerSaveMode.EFFICIENCY_MODE);
-7. } catch (error) {
-8. console.error(`setPowerSaveMode failed, errCode: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
-9. }
+let pid = 33333;  // 请开发者替换为实际的进程号
+try {
+  backgroundProcessManager.setPowerSaveMode(pid, backgroundProcessManager.PowerSaveMode.EFFICIENCY_MODE).then(() => {
+    console.info('setPowerSaveMode promise');
+  }).catch((err: BusinessError) => {
+    console.error(`setPowerSaveMode failed, promise errCode: ${err.code}, message: ${err.message}`);
+  });
+} catch (error) {
+  console.error(`setPowerSaveMode failed, errCode: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
+}
 ```
 
 ## backgroundProcessManager.isPowerSaveMode20+
-
-PhonePC/2in1TabletTVWearable
 
 isPowerSaveMode(pid: number): Promise<boolean>
 
@@ -181,7 +175,7 @@ isPowerSaveMode(pid: number): Promise<boolean>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| pid | number | 是 | 进程号。 |
+| pid | number | 是 | 进程号。  取值为正整数。 |
 
 **返回值**：
 
@@ -201,23 +195,23 @@ isPowerSaveMode(pid: number): Promise<boolean>
 
 **示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { backgroundProcessManager } from '@kit.BackgroundTasksKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { backgroundProcessManager } from '@kit.BackgroundTasksKit';
 
-4. let pid = 33333;
-5. try {
-6. backgroundProcessManager.isPowerSaveMode(pid).then((result: boolean) => {
-7. console.info("isPowerSaveMode: " + result.toString());
-8. });
-9. } catch (error) {
-10. console.error(`isPowerSaveMode failed, errCode: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
-11. }
+let pid = 33333;  // 请开发者替换为实际的进程号
+try {
+  backgroundProcessManager.isPowerSaveMode(pid).then((result: boolean) => {
+    console.info(`isPowerSaveMode: ${result}`);
+  }).catch((err: BusinessError) => {
+    console.error(`isPowerSaveMode failed, promise errCode: ${err.code}, message: ${err.message}`);
+  });
+} catch (error) {
+  console.error(`isPowerSaveMode failed, errCode: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
+}
 ```
 
 ## backgroundProcessManager.getPowerSaveMode23+
-
-PhonePC/2in1TabletTVWearable
 
 getPowerSaveMode(pid: number): Promise<PowerSaveMode>
 
@@ -233,7 +227,7 @@ getPowerSaveMode(pid: number): Promise<PowerSaveMode>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| pid | number | 是 | 进程号。  取值范围：大于0的整数。 |
+| pid | number | 是 | 进程号。  取值为正整数。 |
 
 **返回值：**
 
@@ -253,23 +247,23 @@ getPowerSaveMode(pid: number): Promise<PowerSaveMode>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { backgroundProcessManager } from '@kit.BackgroundTasksKit';
-3. // 请开发者替换为实际的进程号
-4. let pid = 33333;
-5. try {
-6. backgroundProcessManager.getPowerSaveMode(pid).then((result: backgroundProcessManager.PowerSaveMode) => {
-7. console.info("getPowerSaveMode: " + result.toString());
-8. });
-9. } catch (error) {
-10. console.error(`getPowerSaveMode failed, errCode: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
-11. }
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { backgroundProcessManager } from '@kit.BackgroundTasksKit';
+
+let pid = 33333;  // 请开发者替换为实际的进程号
+try {
+  backgroundProcessManager.getPowerSaveMode(pid).then((result: backgroundProcessManager.PowerSaveMode) => {
+    console.info(`getPowerSaveMode: ${result}`);
+  }).catch((err: BusinessError) => {
+    console.error(`getPowerSaveMode failed, promise errCode: ${err.code}, message: ${err.message}`);
+  });
+} catch (error) {
+  console.error(`getPowerSaveMode failed, errCode: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
+}
 ```
 
 ## ProcessPriority
-
-PhonePC/2in1TabletTVWearable
 
 子进程压制档位。
 
@@ -281,8 +275,6 @@ PhonePC/2in1TabletTVWearable
 | PROCESS\_INACTIVE | 2 | 推荐正在执行播放音频、导航等用户可感知业务的后台子进程时设置该档位。 |
 
 ## PowerSaveMode20+
-
-PhonePC/2in1TabletTVWearable
 
 能效模式。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-site
 title: site（地点搜索）
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > site（地点搜索）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:27+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:e675e9de20c8f1e49da3de9c822356b2a52ca436077a36ad5052081d60fa243f
+scraped_at: 2026-09-02T15:02:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:65c6e242e5fdd503c70c94cad506c0c8967f11046b39b0cbfaa24b2503f35077
 ---
 
 本模块提供地点搜索服务。
@@ -14,15 +14,11 @@ content_hash: sha256:e675e9de20c8f1e49da3de9c822356b2a52ca436077a36ad5052081d60f
 
 ## 导入模块
 
-PhonePC/2in1TabletWearable
-
-```
-1. import { site } from '@kit.MapKit';
+```typescript
+import { site } from '@kit.MapKit';
 ```
 
 ## searchByText
-
-PhonePC/2in1TabletWearable
 
 searchByText(searchByTextParams: SearchByTextParams): Promise<SearchByTextResult>
 
@@ -63,23 +59,21 @@ searchByText(searchByTextParams: SearchByTextParams): Promise<SearchByTextResult
 
 **示例：**
 
-```
-1. let params: site.SearchByTextParams = {
-2. query: "Piazzale Dante, 41, 55049 Viareggio, Tuscany, Italy",
-3. location: {
-4. latitude: 31.984410259206815,
-5. longitude: 118.76625379397866
-6. },
-7. radius: 10000,
-8. language: "en"
-9. };
-10. const result = await site.searchByText(params);
-11. console.info("Succeeded in searching by text.");
+```typescript
+let params: site.SearchByTextParams = {
+  query: "Piazzale Dante, 41, 55049 Viareggio, Tuscany, Italy",
+  location: {
+    latitude: 31.984410259206815,
+    longitude: 118.76625379397866
+  },
+  radius: 10000,
+  language: "en"
+};
+const result = await site.searchByText(params);
+console.info("Succeeded in searching by text.");
 ```
 
 ## searchByText
-
-PhonePC/2in1TabletWearable
 
 searchByText(context: common.Context, searchByTextParams: SearchByTextParams): Promise<SearchByTextResult>
 
@@ -121,23 +115,21 @@ searchByText(context: common.Context, searchByTextParams: SearchByTextParams): P
 
 **示例：**
 
-```
-1. let params: site.SearchByTextParams = {
-2. query: "Piazzale Dante, 41, 55049 Viareggio, Tuscany, Italy",
-3. location: {
-4. latitude: 31.984410259206815,
-5. longitude: 118.76625379397866
-6. },
-7. radius: 10000,
-8. language: "en"
-9. };
-10. const result = await site.searchByText(this.getUIContext().getHostContext(), params);
-11. console.info("Succeeded in searching by text.");
+```typescript
+let params: site.SearchByTextParams = {
+  query: "Piazzale Dante, 41, 55049 Viareggio, Tuscany, Italy",
+  location: {
+    latitude: 31.984410259206815,
+    longitude: 118.76625379397866
+  },
+  radius: 10000,
+  language: "en"
+};
+const result = await site.searchByText(this.getUIContext().getHostContext(), params);
+console.info("Succeeded in searching by text.");
 ```
 
 ## nearbySearch
-
-PhonePC/2in1TabletWearable
 
 nearbySearch(nearbySearchParams: NearbySearchParams): Promise<NearbySearchResult>
 
@@ -178,27 +170,25 @@ nearbySearch(nearbySearchParams: NearbySearchParams): Promise<NearbySearchResult
 
 **示例：**
 
-```
-1. let params: site.NearbySearchParams = {
-2. location: {
-3. latitude:51.50811219132287,
-4. longitude:-0.07594896472392065
-5. },
-6. poiTypes: [
-7. "Watch_Store",
-8. "SUBWAY",
-9. "PRIMARY_SCHOOL",
-10. "GENERAL_AUTO_REPAIR_SERVICE_CENTER"
-11. ]
-12. }
-13. // 返回周边搜索结果
-14. const result = await site.nearbySearch(params);
-15. console.info(`Succeeded in searching nearby. result is ${result}`);
+```typescript
+let params: site.NearbySearchParams = {
+  location: {
+    latitude: 51.50811219132287,
+    longitude: -0.07594896472392065
+  },
+  poiTypes: [
+    "Watch_Store",
+    "SUBWAY",
+    "PRIMARY_SCHOOL",
+    "GENERAL_AUTO_REPAIR_SERVICE_CENTER"
+  ]
+}
+// 返回周边搜索结果
+const result = await site.nearbySearch(params);
+console.info(`Succeeded in searching nearby. result is ${result}`);
 ```
 
 ## nearbySearch
-
-PhonePC/2in1TabletWearable
 
 nearbySearch(context: common.Context, nearbySearchParams: NearbySearchParams): Promise<NearbySearchResult>
 
@@ -240,27 +230,25 @@ nearbySearch(context: common.Context, nearbySearchParams: NearbySearchParams): P
 
 **示例：**
 
-```
-1. let params: site.NearbySearchParams = {
-2. location: {
-3. latitude:51.50811219132287,
-4. longitude:-0.07594896472392065
-5. },
-6. poiTypes: [
-7. "Watch_Store",
-8. "SUBWAY",
-9. "PRIMARY_SCHOOL",
-10. "GENERAL_AUTO_REPAIR_SERVICE_CENTER"
-11. ]
-12. }
-13. // 返回周边搜索结果
-14. const result = await site.nearbySearch(this.getUIContext().getHostContext(), params);
-15. console.info(`Succeeded in searching nearby. result is ${result}`);
+```typescript
+let params: site.NearbySearchParams = {
+  location: {
+    latitude:51.50811219132287,
+    longitude:-0.07594896472392065
+  },
+  poiTypes: [
+    "Watch_Store",
+    "SUBWAY",
+    "PRIMARY_SCHOOL",
+    "GENERAL_AUTO_REPAIR_SERVICE_CENTER"
+  ]
+}
+// 返回周边搜索结果
+const result = await site.nearbySearch(this.getUIContext().getHostContext(), params);
+console.info(`Succeeded in searching nearby. result is ${result}`);
 ```
 
 ## queryAutoComplete
-
-PhonePC/2in1TabletWearable
 
 queryAutoComplete(queryAutoCompleteParams: QueryAutoCompleteParams): Promise<QueryAutoCompleteResult>
 
@@ -301,23 +289,21 @@ queryAutoComplete(queryAutoCompleteParams: QueryAutoCompleteParams): Promise<Que
 
 **示例：**
 
-```
-1. let params: site.QueryAutoCompleteParams = {
-2. query: "hotel",
-3. location: {
-4. latitude: 31.984410259206815,
-5. longitude: 118.76625379397866
-6. },
-7. language: "en",
-8. isChildren: true
-9. };
-10. const result = await site.queryAutoComplete(params);
-11. console.info("Succeeded in querying.");
+```typescript
+let params: site.QueryAutoCompleteParams = {
+  query: "hotel",
+  location: {
+    latitude: 31.984410259206815,
+    longitude: 118.76625379397866
+  },
+  language: "en",
+  isChildren: true
+};
+const result = await site.queryAutoComplete(params);
+console.info("Succeeded in querying.");
 ```
 
 ## queryAutoComplete
-
-PhonePC/2in1TabletWearable
 
 queryAutoComplete(context: common.Context, queryAutoCompleteParams: QueryAutoCompleteParams): Promise<QueryAutoCompleteResult>
 
@@ -359,23 +345,21 @@ queryAutoComplete(context: common.Context, queryAutoCompleteParams: QueryAutoCom
 
 **示例：**
 
-```
-1. let params: site.QueryAutoCompleteParams = {
-2. query: "hotel",
-3. location: {
-4. latitude: 31.984410259206815,
-5. longitude: 118.76625379397866
-6. },
-7. language: "en",
-8. isChildren: true
-9. };
-10. const result = await site.queryAutoComplete(this.getUIContext().getHostContext(), params);
-11. console.info("Succeeded in querying.");
+```typescript
+let params: site.QueryAutoCompleteParams = {
+  query: "hotel",
+  location: {
+    latitude: 31.984410259206815,
+    longitude: 118.76625379397866
+  },
+  language: "en",
+  isChildren: true
+};
+const result = await site.queryAutoComplete(this.getUIContext().getHostContext(), params);
+console.info("Succeeded in querying.");
 ```
 
 ## searchById
-
-PhonePC/2in1TabletWearable
 
 searchById(searchByIdParams: SearchByIdParams): Promise<SearchByIdResult>
 
@@ -416,19 +400,17 @@ searchById(searchByIdParams: SearchByIdParams): Promise<SearchByIdResult>
 
 **示例：**
 
-```
-1. let params: site.SearchByIdParams = {
-2. siteId: "144129739873977856",
-3. language: "en",
-4. isChildren: true
-5. };
-6. const result = await site.searchById(params);
-7. console.info("Succeeded in searching by id.");
+```typescript
+let params: site.SearchByIdParams = {
+  siteId: "144129739873977856",
+  language: "en",
+  isChildren: true
+};
+const result = await site.searchById(params);
+console.info("Succeeded in searching by id.");
 ```
 
 ## searchById
-
-PhonePC/2in1TabletWearable
 
 searchById(context: common.Context, searchByIdParams: SearchByIdParams): Promise<SearchByIdResult>
 
@@ -470,25 +452,23 @@ searchById(context: common.Context, searchByIdParams: SearchByIdParams): Promise
 
 **示例：**
 
-```
-1. let params: site.SearchByIdParams = {
-2. siteId: "144129739873977856",
-3. language: "en",
-4. isChildren: true
-5. };
-6. const result = await site.searchById(this.getUIContext().getHostContext(), params);
-7. console.info("Succeeded in searching by id.");
+```typescript
+let params: site.SearchByIdParams = {
+  siteId: "144129739873977856",
+  language: "en",
+  isChildren: true
+};
+const result = await site.searchById(this.getUIContext().getHostContext(), params);
+console.info("Succeeded in searching by id.");
 ```
 
 ## geocode
-
-PhonePC/2in1TabletWearable
 
 geocode(geocodeParams: GeocodeParams): Promise<GeocodeResult>
 
 根据结构化地址获取地点的经纬度。使用Promise异步回调。
 
-说明
+**说明** 
 
 根据地址获取地点的空间坐标，如经纬度，最多返回10条记录。
 
@@ -527,24 +507,22 @@ geocode(geocodeParams: GeocodeParams): Promise<GeocodeResult>
 
 **示例：**
 
-```
-1. let params: site.GeocodeParams = {
-2. "query": "Piazzale Dante, 41, 55049 Viareggio",
-3. "language": "en"
-4. };
-5. const result = await site.geocode(params);
-6. console.info("Succeeded in geocoding.");
+```typescript
+let params: site.GeocodeParams = {
+  "query": "Piazzale Dante, 41, 55049 Viareggio",
+  "language": "en"
+};
+const result = await site.geocode(params);
+console.info("Succeeded in geocoding.");
 ```
 
 ## geocode
-
-PhonePC/2in1TabletWearable
 
 geocode(context: common.Context, geocodeParams: GeocodeParams): Promise<GeocodeResult>
 
 根据结构化地址获取地点的经纬度，支持传入Context上下文。使用Promise异步回调。
 
-说明
+**说明** 
 
 根据地址获取地点的空间坐标，如经纬度，最多返回10条记录。
 
@@ -584,18 +562,16 @@ geocode(context: common.Context, geocodeParams: GeocodeParams): Promise<GeocodeR
 
 **示例：**
 
-```
-1. let params: site.GeocodeParams = {
-2. "query": "Piazzale Dante, 41, 55049 Viareggio",
-3. "language": "en"
-4. };
-5. const result = await site.geocode(this.getUIContext().getHostContext(), params);
-6. console.info("Succeeded in geocoding.");
+```typescript
+let params: site.GeocodeParams = {
+  "query": "Piazzale Dante, 41, 55049 Viareggio",
+  "language": "en"
+};
+const result = await site.geocode(this.getUIContext().getHostContext(), params);
+console.info("Succeeded in geocoding.");
 ```
 
 ## reverseGeocode
-
-PhonePC/2in1TabletWearable
 
 reverseGeocode(reverseGeocodeParams: ReverseGeocodeParams): Promise<ReverseGeocodeResult>
 
@@ -636,22 +612,20 @@ reverseGeocode(reverseGeocodeParams: ReverseGeocodeParams): Promise<ReverseGeoco
 
 **示例：**
 
-```
-1. let params: site.ReverseGeocodeParams = {
-2. location: {
-3. latitude: 31.984410259206815,
-4. longitude: 118.76625379397866
-5. },
-6. language: "en",
-7. radius: 200
-8. };
-9. const result = await site.reverseGeocode(params);
-10. console.info("Succeeded in reversing geocode.");
+```typescript
+let params: site.ReverseGeocodeParams = {
+  location: {
+    latitude: 31.984410259206815,
+    longitude: 118.76625379397866
+  },
+  language: "en",
+  radius: 200
+};
+const result = await site.reverseGeocode(params);
+console.info("Succeeded in reversing geocode.");
 ```
 
 ## reverseGeocode
-
-PhonePC/2in1TabletWearable
 
 reverseGeocode(context: common.Context, reverseGeocodeParams: ReverseGeocodeParams): Promise<ReverseGeocodeResult>
 
@@ -693,22 +667,20 @@ reverseGeocode(context: common.Context, reverseGeocodeParams: ReverseGeocodePara
 
 **示例：**
 
-```
-1. let params: site.ReverseGeocodeParams = {
-2. location: {
-3. latitude: 31.984410259206815,
-4. longitude: 118.76625379397866
-5. },
-6. language: "en",
-7. radius: 200
-8. };
-9. const result = await site.reverseGeocode(this.getUIContext().getHostContext(), params);
-10. console.info("Succeeded in reversing geocode.");
+```typescript
+let params: site.ReverseGeocodeParams = {
+  location: {
+    latitude: 31.984410259206815,
+    longitude: 118.76625379397866
+  },
+  language: "en",
+  radius: 200
+};
+const result = await site.reverseGeocode(this.getUIContext().getHostContext(), params);
+console.info("Succeeded in reversing geocode.");
 ```
 
 ## SortRule
-
-PhonePC/2in1TabletWearable
 
 结果排序规则。
 
@@ -727,8 +699,6 @@ PhonePC/2in1TabletWearable
 
 ## SearchByTextParams
 
-PhonePC/2in1TabletWearable
-
 SearchByTextParams定义了搜索关键字的参数。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -743,10 +713,10 @@ SearchByTextParams定义了搜索关键字的参数。
 | --- | --- | --- | --- | --- |
 | query | string | 否 | 否 | 搜索关键字，例如“故宫”。参数的长度范围：[1, 512]。 |
 | location | [mapCommon.LatLng](map-common.md#latlng) | 否 | 是 | 搜索结果的经纬度。 |
-| radius | number | 否 | 是 | Location的搜索半径，单位：米。取值范围：[1, 50000]，默认50000米。小数点后数字忽略。异常值返回错误码401。 |
+| radius | number | 否 | 是 | Location的搜索半径，单位：m。取值范围：[1, 50000]，默认50000米。小数点后数字忽略。异常值返回错误码401。 |
 | poiTypes | Array<string> | 否 | 是 | 返回指定的华为分类体系的地点，取值范围参见[HwLocationType](map-poi.md#hwlocationtype)。 |
 | countryCodes | Array<string> | 否 | 是 | 在指定的国家内搜索，采用ISO 3166-1 alpha-2。  最多传5个国家或地区码。 |
-| cityId | string | 否 | 是 | 在指定的城市内搜索，参数的长度范围：[1, 32]。  **说明：**  - 支持中国大陆和港澳的中文城市名。  - 对中国大陆城市及港澳地区，支持传入3-4位数字cityCode或6位数字adminCode，参见[城市码及区划代码表](map-citycode.md)。  - 支持传入16-18位数字cityId。 |
+| cityId | string | 否 | 是 | 城市ID，用于在指定的城市内搜索，参数的长度范围：[1, 32]。  **说明：**  - 支持中国大陆和港澳的中文城市名。  - 对中国境内及港澳地区，支持传入3-4位数字cityCode或6位数字adminCode，参见[城市码及区划代码表](map-citycode.md)。  - 支持传入16-18位数字cityId。  - 通过调用[searchByText](map-site.md#searchbytext)、[nearbySearch](map-site.md#nearbysearch)、[queryAutoComplete](map-site.md#queryautocomplete)、[searchById](map-site.md#searchbyid)、[geocode](map-site.md#geocode)和[reverseGeocode](map-site.md#reversegeocode)等接口可以获取cityId。 |
 | isCityLimit | boolean | 否 | 是 | 搜索结果是否强限制在指定城市内，默认值：false，需配合cityId参数使用，若未传cityId按默认值false处理。  - true：强限制在指定城市内  - false：不强限制在指定城市内 |
 | language | string | 否 | 是 | 返回结果的语言类型，参数的长度范围：[1, 16]。语种取值请参见[位置搜索支持语言](../harmonyos-guides/map-language.md#位置搜索支持语言)列表。  如果不传，默认返回地点的当地语言。异常值按默认值处理。 |
 | pageSize | number | 否 | 是 | 每页返回的记录数。取值范围：[1, 20]，默认值为20。 |
@@ -754,8 +724,6 @@ SearchByTextParams定义了搜索关键字的参数。
 | isChildren | boolean | 否 | 是 | 是否返回子节点，默认为false。  - true：如果有子节点信息，则返回子节点的全量信息  - false：不返回 |
 
 ## NearbySearchParams
-
-PhonePC/2in1TabletWearable
 
 周边搜索的参数。
 
@@ -768,7 +736,7 @@ PhonePC/2in1TabletWearable
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | location | [mapCommon.LatLng](map-common.md#latlng) | 否 | 否 | 当前用户的定位。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
-| radius | number | 否 | 是 | 搜索结果限定的半径范围，单位：米。取值范围：[1, 50000]，默认值为1000米。小数点后数字忽略。异常值返回错误码401。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| radius | number | 否 | 是 | 搜索结果限定的半径范围，单位：m。取值范围：[1, 50000]，默认值为1000米。小数点后数字忽略。异常值返回错误码401。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | query | string | 否 | 是 | 搜索关键字，参数的长度范围：[1, 512]。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | poiTypes | Array<string> | 否 | 是 | 返回指定的华为分类体系的地点，取值范围参见[HwLocationType](map-poi.md#hwlocationtype)。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | language | string | 否 | 是 | 输入语言，参数的长度范围：[1, 16]。语种取值请参见[位置搜索支持语言](../harmonyos-guides/map-language.md#位置搜索支持语言)列表。  如果不传，默认返回地点的当地语言。异常值按默认值处理。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
@@ -777,8 +745,6 @@ PhonePC/2in1TabletWearable
 | sortRule | [SortRule](map-site.md#sortrule) | 否 | 是 | 排序规则，默认值为[SortRule](map-site.md#sortrule).COMPOSITE。  **起始版本：** 5.0.0(12)  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 
 ## QueryAutoCompleteParams
-
-PhonePC/2in1TabletWearable
 
 自动补全的参数。
 
@@ -794,16 +760,14 @@ PhonePC/2in1TabletWearable
 | --- | --- | --- | --- | --- |
 | query | string | 否 | 否 | 搜索关键字，参数的长度范围：[1, 512]。 |
 | location | [mapCommon.LatLng](map-common.md#latlng) | 否 | 是 | 搜索结果的经纬度。 |
-| radius | number | 否 | 是 | Location的搜索半径，单位：米。取值范围：[1, 50000]，默认值为50000米。小数点后数字忽略。异常值返回错误码401。 |
+| radius | number | 否 | 是 | Location的搜索半径，单位：m。取值范围：[1, 50000]，默认值为50000米。小数点后数字忽略。异常值返回错误码401。 |
 | poiTypes | Array<string> | 否 | 是 | 返回指定的华为分类体系的地点，取值范围参见[HwLocationType](map-poi.md#hwlocationtype)。 |
-| cityId | string | 否 | 是 | 在指定的城市内搜索，参数的长度范围：[1, 32]。  **说明：**  - 支持中国大陆和港澳的中文城市名。  - 对中国大陆城市及港澳地区，支持传入3-4位数字cityCode或6位数字adminCode，参见[城市码及区划代码表](map-citycode.md)。  - 支持传入16-18位数字cityId。 |
-| isCityLimit | boolean | 否 | 是 | 搜索结果是否强限制在指定城市内，默认值：false，需配合cityId参数使用，若未传cityId按默认值false处理。  - false：不强限制在指定城市内 |
+| cityId | string | 否 | 是 | 城市ID，用于在指定的城市内搜索，参数的长度范围：[1, 32]。  **说明：**  - 支持中国大陆和港澳的中文城市名。  - 对中国境内及港澳地区，支持传入3-4位数字cityCode或6位数字adminCode，参见[城市码及区划代码表](map-citycode.md)。  - 支持传入16-18位数字cityId。  - 通过调用[searchByText](map-site.md#searchbytext)、[nearbySearch](map-site.md#nearbysearch)、[queryAutoComplete](map-site.md#queryautocomplete)、[searchById](map-site.md#searchbyid)、[geocode](map-site.md#geocode)和[reverseGeocode](map-site.md#reversegeocode)等接口可以获取cityId。 |
+| isCityLimit | boolean | 否 | 是 | 搜索结果是否强限制在指定城市内，默认值：false，需配合cityId参数使用，若未传cityId按默认值false处理。  - true：强限制在指定城市内  - false：不强限制在指定城市内 |
 | language | string | 否 | 是 | 输入语言，参数的长度范围：[1, 16]。语种取值请参见[位置搜索支持语言](../harmonyos-guides/map-language.md#位置搜索支持语言)列表。  如果不传，默认返回地点的当地语言。异常值按默认值处理。 |
 | isChildren | boolean | 否 | 是 | 是否返回子节点，默认为false。  - true：如果有子节点信息，则返回子节点的全量信息  - false：不返回 |
 
 ## SearchByIdParams
-
-PhonePC/2in1TabletWearable
 
 地点详情的参数。
 
@@ -823,8 +787,6 @@ PhonePC/2in1TabletWearable
 
 ## ReverseGeocodeParams
 
-PhonePC/2in1TabletWearable
-
 逆地理编码的参数。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -837,15 +799,13 @@ PhonePC/2in1TabletWearable
 | --- | --- | --- | --- | --- |
 | location | [mapCommon.LatLng](map-common.md#latlng) | 否 | 否 | 经纬度。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | language | string | 否 | 是 | 输入语言，参数的长度范围：[1, 16]。语种取值请参见[位置搜索支持语言](../harmonyos-guides/map-language.md#位置搜索支持语言)列表。  如果不传，默认返回地点的当地语言。异常值按默认值处理。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
-| radius | number | 否 | 是 | 搜索半径，单位：米 。取值范围：[0, 1000]，默认值为1000。小数点后数字忽略。异常值返回错误码401。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| radius | number | 否 | 是 | 搜索半径，单位：m。取值范围：[0, 1000]，默认值为1000。小数点后数字忽略。异常值返回错误码401。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | isExtension | boolean | 否 | 是 | 是否扩展返回POI、Aoi、Road、交叉口等信息，推荐设置为true，默认为false。  - true：扩展信息  - false：不扩展，仅返回区划信息  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。  **说明：**  拓展返回信息时，POI信息最多展示30个，Aoi信息最多展示10个，Road信息最多展示3个，交叉口信息最多展示1个。 |
 | poiTypes | Array<string> | 否 | 是 | 返回指定的华为分类体系的地点，取值范围参见[HwLocationType](map-poi.md#hwlocationtype)。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | isNearbyAoi | boolean | 否 | 是 | 是否返回附近的Aoi。  仅当isExtension=true时生效。  推荐设置为true，默认值为false。  - true：返回附近的Aoi  - false：仅返回传入经纬度所在的Aoi  **起始版本：** 5.0.0(12)  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 | sortRule | [SortRule](map-site.md#sortrule) | 否 | 是 | POI的排序规则。  默认值为[SortRule](map-site.md#sortrule).DISTANCE，即按距离排序。  **起始版本：** 5.0.0(12)  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 
 ## GeocodeParams
-
-PhonePC/2in1TabletWearable
 
 正地理编码的参数。
 
@@ -865,8 +825,6 @@ PhonePC/2in1TabletWearable
 
 ## SearchByTextResult
 
-PhonePC/2in1TabletWearable
-
 关键字搜索的结果。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -883,8 +841,6 @@ PhonePC/2in1TabletWearable
 | sites | Array<[Site](map-site.md#site)> | 否 | 是 | 如果查询成功，返回搜索结果。 |
 
 ## NearbySearchResult
-
-PhonePC/2in1TabletWearable
 
 周边搜索的结果。
 
@@ -903,8 +859,6 @@ PhonePC/2in1TabletWearable
 
 ## QueryAutoCompleteResult
 
-PhonePC/2in1TabletWearable
-
 自动补全的结果。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -921,8 +875,6 @@ PhonePC/2in1TabletWearable
 
 ## SearchByIdResult
 
-PhonePC/2in1TabletWearable
-
 地点详情的结果。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -938,8 +890,6 @@ PhonePC/2in1TabletWearable
 | site | [Site](map-site.md#site) | 否 | 是 | 如果查询成功，返回地点详情。 |
 
 ## ReverseGeocodeResult
-
-PhonePC/2in1TabletWearable
 
 逆地理编码的结果。
 
@@ -962,8 +912,6 @@ PhonePC/2in1TabletWearable
 
 ## GeocodeResult
 
-PhonePC/2in1TabletWearable
-
 正地理编码的结果。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -980,13 +928,9 @@ PhonePC/2in1TabletWearable
 
 ## Site
 
-PhonePC/2in1TabletWearable
-
 地点详情。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Map.Core
 
@@ -994,19 +938,18 @@ PhonePC/2in1TabletWearable
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| siteId | string | 否 | 否 | 地点的唯一主键。 |
-| name | string | 否 | 是 | 地点名称。 |
-| formatAddress | string | 否 | 是 | 格式化的地点详细地址。 |
-| addressComponent | [AddressComponent](map-site.md#addresscomponent) | 否 | 否 | 地址详细信息。 |
-| location | [mapCommon.LatLng](map-common.md#latlng) | 否 | 是 | 地点的经纬度。 |
-| viewport | [mapCommon.LatLngBounds](map-common.md#latlngbounds) | 否 | 是 | 地点的视口范围。  **说明：**  [queryAutoComplete](map-site.md#queryautocomplete)不支持返回此字段。 |
-| distance | number | 否 | 是 | 预测地点和传参location之间的直线距离，单位：米。  **说明：**  目前仅关键字搜索和周边搜索支持返回此字段。 |
-| poi | [Poi](map-site.md#poi) | 否 | 是 | 如果地点是POI类型，返回POI信息。 |
-| utcOffset | number | 否 | 是 | 位置所在时区和UTC时区的差值，单位：分钟。  **说明：** 自动补全不支持返回此字段。 |
+| siteId | string | 否 | 否 | 地点的唯一主键。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| name | string | 否 | 是 | 地点名称。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| formatAddress | string | 否 | 是 | 格式化的地点详细地址。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| addressComponent | [AddressComponent](map-site.md#addresscomponent) | 否 | 否 | 地址详细信息。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| location | [mapCommon.LatLng](map-common.md#latlng) | 否 | 是 | 地点的经纬度。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| viewport | [mapCommon.LatLngBounds](map-common.md#latlngbounds) | 否 | 是 | 地点的视口范围。  **说明：**  [queryAutoComplete](map-site.md#queryautocomplete)不支持返回此字段。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| distance | number | 否 | 是 | 预测地点和传参location之间的直线距离，单位：m。  **说明：**  目前仅关键字搜索和周边搜索支持返回此字段。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| poi | [Poi](map-site.md#poi) | 否 | 是 | 如果地点是POI类型，返回POI信息。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| utcOffset | number | 否 | 是 | 位置所在时区和UTC时区的差值，单位：分钟。  **说明：** 自动补全不支持返回此字段。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| reliability | number | 否 | 是 | 相关性，可用于判断搜索结果是否准确。取值范围：[0, 1]，数值越大相关性越高，1表示完全相关。  **起始版本：** 6.1.1(24)  **元服务API：** 从版本6.1.1(24)开始，该接口支持在元服务中使用。 |
 
 ## AddressComponent
-
-PhonePC/2in1TabletWearable
 
 地址详细信息。
 
@@ -1038,8 +981,6 @@ PhonePC/2in1TabletWearable
 
 ## City
 
-PhonePC/2in1TabletWearable
-
 城市信息。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1058,8 +999,6 @@ PhonePC/2in1TabletWearable
 
 ## StreetNumber
 
-PhonePC/2in1TabletWearable
-
 街道号。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1073,15 +1012,13 @@ PhonePC/2in1TabletWearable
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | direction | string | 否 | 是 | 该输入点在街道的方向。 |
-| distance | number | 否 | 是 | 地点和传参location之间的直线距离，单位：米。 |
+| distance | number | 否 | 是 | 地点和传参location之间的直线距离，单位：m。 |
 | location | [mapCommon.LatLng](map-common.md#latlng) | 否 | 是 | 街道经纬度。 |
 | streetNumber | string | 否 | 是 | 街道号。 |
 | streetName | string | 否 | 是 | 街道名称。 |
 | formatAddress | string | 否 | 是 | 格式化的街道地址。 |
 
 ## Poi
-
-PhonePC/2in1TabletWearable
 
 POI信息。
 
@@ -1114,8 +1051,6 @@ POI信息。
 
 ## OpeningHours
 
-PhonePC/2in1TabletWearable
-
 营业时间。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1132,8 +1067,6 @@ PhonePC/2in1TabletWearable
 | periods | Array<[Period](map-site.md#period)> | 否 | 是 | 开放时间段的详细说明。 |
 
 ## Period
-
-PhonePC/2in1TabletWearable
 
 开放时间段的详细说明。
 
@@ -1152,8 +1085,6 @@ PhonePC/2in1TabletWearable
 
 ## TimeOfWeek
 
-PhonePC/2in1TabletWearable
-
 时间模型。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1170,8 +1101,6 @@ PhonePC/2in1TabletWearable
 | time | string | 否 | 是 | 24小时制时间，hhmm格式。 |
 
 ## ChildNode
-
-PhonePC/2in1TabletWearable
 
 POI的子节点信息。
 
@@ -1193,8 +1122,6 @@ POI的子节点信息。
 
 ## Comment
 
-PhonePC/2in1TabletWearable
-
 POI的评论信息。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1212,8 +1139,6 @@ POI的评论信息。
 
 ## Aoi
 
-PhonePC/2in1TabletWearable
-
 Aoi面信息。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1224,8 +1149,8 @@ Aoi面信息。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| area | number | 否 | 是 | Aoi面积。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
-| distance | number | 否 | 是 | 地点和传参location之间的直线距离，单位：米。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| area | number | 否 | 是 | Aoi面积，单位：m2。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| distance | number | 否 | 是 | 地点和传参location之间的直线距离，单位：m。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | siteId | string | 否 | 是 | Aoi ID。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | location | [mapCommon.LatLng](map-common.md#latlng) | 否 | 是 | 地点的经纬度。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | name | string | 否 | 是 | 地点名称。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
@@ -1233,8 +1158,6 @@ Aoi面信息。
 | direction | string | 否 | 是 | 该Aoi在输入点的方向。  **起始版本：** 5.0.0(12)  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 
 ## ReverseGeocodePoi
-
-PhonePC/2in1TabletWearable
 
 逆地理结果POI信息。
 
@@ -1250,15 +1173,13 @@ PhonePC/2in1TabletWearable
 | --- | --- | --- | --- | --- |
 | address | string | 否 | 是 | 地址。 |
 | direction | string | 否 | 是 | 该输入点在POI的方向。 |
-| distance | number | 否 | 是 | 地点和传参location之间的直线距离，单位：米。 |
+| distance | number | 否 | 是 | 地点和传参location之间的直线距离，单位：m。 |
 | siteId | string | 否 | 是 | 地点ID。 |
 | location | [mapCommon.LatLng](map-common.md#latlng) | 否 | 是 | 地点的经纬度。 |
 | name | string | 否 | 是 | 地点名称。 |
 | poiType | string | 否 | 是 | 华为POI分类体系，取值范围请参见[HwLocationType](map-poi.md#hwlocationtype)。 |
 
 ## Road
-
-PhonePC/2in1TabletWearable
 
 道路信息。
 
@@ -1273,14 +1194,12 @@ PhonePC/2in1TabletWearable
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | direction | string | 否 | 是 | 该输入点在道路的方向。 |
-| distance | number | 否 | 是 | 道路和传参location之间的直线距离，单位：米。 |
+| distance | number | 否 | 是 | 道路和传参location之间的直线距离，单位：m。 |
 | siteId | string | 否 | 是 | 道路ID。 |
 | location | [mapCommon.LatLng](map-common.md#latlng) | 否 | 是 | 道路的经纬度。 |
 | name | string | 否 | 是 | 道路名称。 |
 
 ## Intersection
-
-PhonePC/2in1TabletWearable
 
 交叉点信息。
 
@@ -1294,8 +1213,8 @@ PhonePC/2in1TabletWearable
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| direction | string | 否 | 是 | 该输入点交在叉口的方向。 |
-| distance | number | 否 | 是 | 交叉点和传参location之间的直线距离，单位：米。 |
+| direction | string | 否 | 是 | 该输入点与交叉口的方位关系。 |
+| distance | number | 否 | 是 | 交叉点和传参location之间的直线距离，单位：m。 |
 | siteId | string | 否 | 是 | 交叉点ID。 |
 | location | [mapCommon.LatLng](map-common.md#latlng) | 否 | 是 | 交叉点的经纬度。 |
 | name | string | 否 | 是 | 交叉点名称。 |

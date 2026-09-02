@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_audiostream_base.h
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 头文件 > native_audiostream_base.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:50+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0dfa50ead602de69de1885a424da4346a7dfb6df2e38b2a9feec6a158acbfe0e
+scraped_at: 2026-09-02T15:02:20+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:13807b256c216cd499c72cc11687f0ad72a21313d87744d5f0a799d5329de2d7
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明OHAudio基础的数据结构。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -42,8 +36,6 @@ PhonePC/2in1TabletTVWearable
 | [OH\_AudioCapturerStruct](capi-ohaudio-oh-audiocapturerstruct.md) | OH\_AudioCapturer | 声明输入音频流。输入音频流的实例被用来获取音频数据。 |
 
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -67,30 +59,24 @@ PhonePC/2in1TabletTVWearable
 | [OH\_AudioStream\_PrivacyType](capi-native-audiostream-base-h.md#oh_audiostream_privacytype) | OH\_AudioStream\_PrivacyType | 用于标识对应播放音频流是否支持被其他应用录制。 |
 | [OH\_AudioData\_Callback\_Result](capi-native-audiostream-base-h.md#oh_audiodata_callback_result) | OH\_AudioData\_Callback\_Result | 定义音频数据回调结果。 |
 | [OH\_AudioStream\_LatencyType](capi-native-audiostream-base-h.md#oh_audiostream_latencytype) | OH\_AudioStream\_LatencyType | 定义音频时延类型。 |
-| [OH\_AudioStream\_PlaybackCaptureMode](capi-native-audiostream-base-h.md#oh_audiostream_playbackcapturemode) | OH\_AudioStream\_PlaybackCaptureMode | 表示内录（录制设备内部应用的声音）的过滤类型，每种过滤类型可录制不同的播放流类型。该API暂不对外支持。 |
-| [OH\_AudioStream\_PlaybackCaptureStartState](capi-native-audiostream-base-h.md#oh_audiostream_playbackcapturestartstate) | OH\_AudioStream\_PlaybackCaptureStartState | 定义内录的启动状态，该状态在调用[OH\_AudioCapturer\_RequestPlaybackCaptureStart](capi-native-audiocapturer-h.md#oh_audiocapturer_requestplaybackcapturestart)函数后异步返回。该API暂不对外支持。 |
+| [OH\_AudioStream\_PlaybackCaptureMode](capi-native-audiostream-base-h.md#oh_audiostream_playbackcapturemode) | OH\_AudioStream\_PlaybackCaptureMode | 表示内录（录制设备内部应用的声音）的过滤类型，每种过滤类型可录制不同的播放流类型。该API最初仅对特定系统应用可用，从API版本26.0.0开始，支持任意应用使用。 |
+| [OH\_AudioStream\_PlaybackCaptureStartState](capi-native-audiostream-base-h.md#oh_audiostream_playbackcapturestartstate) | OH\_AudioStream\_PlaybackCaptureStartState | 定义内录的启动状态，该状态在调用[OH\_AudioCapturer\_RequestPlaybackCaptureStart](capi-native-audiocapturer-h.md#oh_audiocapturer_requestplaybackcapturestart)函数后异步返回。该API最初仅对特定系统应用可用，从API版本26.0.0开始，支持任意应用使用。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [typedef void (\*OH\_AudioRenderer\_OutputDeviceChangeCallback)(OH\_AudioRenderer\* renderer, void\* userData, OH\_AudioStream\_DeviceChangeReason reason)](capi-native-audiostream-base-h.md#oh_audiorenderer_outputdevicechangecallback) | OH\_AudioRenderer\_OutputDeviceChangeCallback | 输出音频流设备变更的回调函数。 |
 | [typedef void (\*OH\_AudioRenderer\_OnMarkReachedCallback)(OH\_AudioRenderer\* renderer, uint32\_t samplePos, void\* userData)](capi-native-audiostream-base-h.md#oh_audiorenderer_onmarkreachedcallback) | OH\_AudioRenderer\_OnMarkReachedCallback | 到达标记位置时回调。 |
 | [typedef int32\_t (\*OH\_AudioRenderer\_WriteDataWithMetadataCallback)(OH\_AudioRenderer\* renderer, void\* userData, void\* audioData, int32\_t audioDataSize, void\* metadata, int32\_t metadataSize)](capi-native-audiostream-base-h.md#oh_audiorenderer_writedatawithmetadatacallback) | OH\_AudioRenderer\_WriteDataWithMetadataCallback | 该函数指针将指向用于同时写入音频数据和元数据的回调函数。 |
-| [typedef OH\_AudioData\_Callback\_Result (\*OH\_AudioRenderer\_OnWriteDataCallback)(OH\_AudioRenderer\* renderer, void\* userData, void\* audioData, int32\_t audioDataSize)](capi-native-audiostream-base-h.md#oh_audiorenderer_onwritedatacallback) | OH\_AudioRenderer\_OnWriteDataCallback | 该函数指针将指向用于写入音频数据的回调函数。  回调函数仅用来写入音频数据，请勿在回调函数中调用AudioRenderer相关接口。  该函数的返回结果表示填充到缓冲区的数据是否有效。如果结果无效，用户填写的数据将不被播放。  回调函数结束后，音频服务会把audioData指针数据放入队列里等待播放，因此请勿在回调外再次更改audioData指向的数据，且务必保证往audioData填满audioDataSize长度的待播放数据, 否则会导致音频服务播放杂音。  参数audioDataSize可以通过[OH\_AudioStreamBuilder\_SetFrameSizeInCallback](capi-native-audiostreambuilder-h.md#oh_audiostreambuilder_setframesizeincallback)设置。 |
+| [typedef OH\_AudioData\_Callback\_Result (\*OH\_AudioRenderer\_OnWriteDataCallback)(OH\_AudioRenderer\* renderer, void\* userData, void\* audioData, int32\_t audioDataSize)](capi-native-audiostream-base-h.md#oh_audiorenderer_onwritedatacallback) | OH\_AudioRenderer\_OnWriteDataCallback | 该函数指针将指向用于写入音频数据的回调函数。  回调函数仅用来写入音频数据，请勿在回调函数中调用AudioRenderer相关接口。  该函数的返回结果表示填充到缓冲区的数据是否有效。如果结果无效，用户填写的数据将不被播放。  回调函数结束后，音频服务会把audioData指针数据放入队列里等待播放，因此请勿在回调外再次更改audioData指向的数据，且务必保证往audioData填满audioDataSize长度的待播放数据，否则会导致音频服务播放杂音。  参数audioDataSize可以通过[OH\_AudioStreamBuilder\_SetFrameSizeInCallback](capi-native-audiostreambuilder-h.md#oh_audiostreambuilder_setframesizeincallback)设置。  为避免音频播放启动和停止时数据不连续可能出现的杂音，系统通常会在启动和停止时对音频数据做20ms以内的淡入淡出处理。 |
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AudioStream\_Result
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioStream_Result
+```c
+enum OH_AudioStream_Result
 ```
 
 **描述**
@@ -106,13 +92,13 @@ PhonePC/2in1TabletTVWearable
 | AUDIOSTREAM\_ERROR\_ILLEGAL\_STATE = 2 | 非法状态。 |
 | AUDIOSTREAM\_ERROR\_SYSTEM = 3 | 系统通用错误。 |
 | AUDIOSTREAM\_ERROR\_UNSUPPORTED\_FORMAT = 4 | 不支持的音频格式，如不支持的编码类型、采样格式等。  **起始版本：** 19 |
+| AUDIOSTREAM\_ERROR\_UNSUPPORTED\_ABILITY = 6800104 | 不支持的音频流能力，例如功能或配置不支持。  **起始版本：** 26.0.0 |
+| AUDIOSTREAM\_ERROR\_SERVICE\_DIED = 6800302 | 音频服务进程异常结束。  **起始版本：** 26.0.0 |
 
 ### OH\_AudioStream\_Type
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioStream_Type
+```c
+enum OH_AudioStream_Type
 ```
 
 **描述**
@@ -128,10 +114,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioStream\_SampleFormat
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioStream_SampleFormat
+```c
+enum OH_AudioStream_SampleFormat
 ```
 
 **描述**
@@ -143,17 +127,15 @@ PhonePC/2in1TabletTVWearable
 | 枚举项 | 描述 |
 | --- | --- |
 | AUDIOSTREAM\_SAMPLE\_U8 = 0 | Unsigned 8位。 |
-| AUDIOSTREAM\_SAMPLE\_S16LE = 1 | Short 16位小端。 |
-| AUDIOSTREAM\_SAMPLE\_S24LE = 2 | Short 24位小端。 |
-| AUDIOSTREAM\_SAMPLE\_S32LE = 3 | Short 32位小端。 |
+| AUDIOSTREAM\_SAMPLE\_S16LE = 1 | Signed 16位小端。 |
+| AUDIOSTREAM\_SAMPLE\_S24LE = 2 | Signed 24位小端。 |
+| AUDIOSTREAM\_SAMPLE\_S32LE = 3 | Signed 32位小端。 |
 | AUDIOSTREAM\_SAMPLE\_F32LE = 4 | Float 32位小端。  **起始版本：** 17 |
 
 ### OH\_AudioStream\_EncodingType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioStream_EncodingType
+```c
+enum OH_AudioStream_EncodingType
 ```
 
 **描述**
@@ -170,10 +152,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioStream\_Usage
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioStream_Usage
+```c
+enum OH_AudioStream_Usage
 ```
 
 **描述**
@@ -203,10 +183,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioStream\_LatencyMode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioStream_LatencyMode
+```c
+enum OH_AudioStream_LatencyMode
 ```
 
 **描述**
@@ -222,10 +200,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioStream\_DirectPlaybackMode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioStream_DirectPlaybackMode
+```c
+enum OH_AudioStream_DirectPlaybackMode
 ```
 
 **描述**
@@ -238,14 +214,12 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | AUDIOSTREAM\_DIRECT\_PLAYBACK\_NOT\_SUPPORTED = 0 | 该模式代表不支持direct通路播放。 |
 | AUDIOSTREAM\_DIRECT\_PLAYBACK\_BITSTREAM\_SUPPORTED = 1 | 该模式代表支持不解码的direct通路播放。 |
-| AUDIOSTREAM\_DIRECT\_PLAYBACK\_PCM\_SUPPORTED = 2 | 该模式代表支持pcm编码的direct通路播放。 |
+| AUDIOSTREAM\_DIRECT\_PLAYBACK\_PCM\_SUPPORTED = 2 | 该模式代表支持PCM编码的direct通路播放。 |
 
 ### OH\_AudioStream\_VolumeMode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioStream_VolumeMode
+```c
+enum OH_AudioStream_VolumeMode
 ```
 
 **描述**
@@ -261,10 +235,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioStream\_State
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioStream_State
+```c
+enum OH_AudioStream_State
 ```
 
 **描述**
@@ -285,10 +257,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioStream\_SourceType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioStream_SourceType
+```c
+enum OH_AudioStream_SourceType
 ```
 
 **描述**
@@ -310,13 +280,12 @@ PhonePC/2in1TabletTVWearable
 | AUDIOSTREAM\_SOURCE\_TYPE\_CAMCORDER = 13 | 录像。  **起始版本：** 13 |
 | AUDIOSTREAM\_SOURCE\_TYPE\_UNPROCESSED = 14 | 麦克风纯净录音（系统不做任何算法处理）。  **起始版本：** 14 |
 | AUDIOSTREAM\_SOURCE\_TYPE\_LIVE = 17 | 直播。  **起始版本：** 20 |
+| AUDIOSTREAM\_SOURCE\_TYPE\_VOICE\_DOWNLINK = 22 | 蜂窝通话下行录音（通话中对方声音）。使用此输入流的音频采集器应在蜂窝通话开始后创建。使用[OH\_AudioStreamBuilder\_GenerateCapturer](capi-native-audiostreambuilder-h.md#oh_audiostreambuilder_generatecapturer)创建采集流时需要ohos.permission.CAPTURE\_PLAYBACK\_DOWNLINK权限，否则函数将返回错误。  **起始版本：** 26.0.0 |
 
 ### OH\_AudioStream\_Event
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioStream_Event
+```c
+enum OH_AudioStream_Event
 ```
 
 **描述**
@@ -335,10 +304,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioInterrupt\_ForceType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioInterrupt_ForceType
+```c
+enum OH_AudioInterrupt_ForceType
 ```
 
 **描述**
@@ -358,10 +325,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioInterrupt\_Hint
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioInterrupt_Hint
+```c
+enum OH_AudioInterrupt_Hint
 ```
 
 **描述**
@@ -389,10 +354,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioInterrupt\_Mode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioInterrupt_Mode
+```c
+enum OH_AudioInterrupt_Mode
 ```
 
 **描述**
@@ -408,10 +371,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioStream\_AudioEffectMode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioStream_AudioEffectMode
+```c
+enum OH_AudioStream_AudioEffectMode
 ```
 
 **描述**
@@ -427,10 +388,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioStream\_FastStatus
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioStream_FastStatus
+```c
+enum OH_AudioStream_FastStatus
 ```
 
 **描述**
@@ -446,10 +405,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioStream\_DeviceChangeReason
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioStream_DeviceChangeReason
+```c
+enum OH_AudioStream_DeviceChangeReason
 ```
 
 **描述**
@@ -461,18 +418,16 @@ PhonePC/2in1TabletTVWearable
 | 枚举项 | 描述 |
 | --- | --- |
 | REASON\_UNKNOWN = 0 | 未知原因。 |
-| REASON\_NEW\_DEVICE\_AVAILABLE = 1 | 新设备可用。 |
-| REASON\_OLD\_DEVICE\_UNAVAILABLE = 2 | 旧设备不可用。当报告此原因时，应用程序应考虑暂停音频播放。 |
-| REASON\_OVERRODE = 3 | 用户或系统强制选择切换。 |
-| REASON\_SESSION\_ACTIVATED = 4 | 音频会话激活触发的设备切换。  **起始版本：** 20 |
-| REASON\_STREAM\_PRIORITY\_CHANGED = 5 | 更高优先级的音频流出现导致的系统设备切换。  **起始版本：** 20 |
+| REASON\_NEW\_DEVICE\_AVAILABLE = 1 | 新设备可用。例如，音频播放过程中连接有线/蓝牙耳机。 |
+| REASON\_OLD\_DEVICE\_UNAVAILABLE = 2 | 旧设备不可用。例如，音频播放过程中断开有线/蓝牙耳机。当报告此原因时，应用程序应考虑暂停音频播放。 |
+| REASON\_OVERRODE = 3 | 用户或系统强制选择切换。例如，在播控中心强选设备。 |
+| REASON\_SESSION\_ACTIVATED = 4 | [音频会话管理(ArkTS)](../harmonyos-guides/audio-session-management.md)中激活音频会话触发的设备切换。  **起始版本：** 20 |
+| REASON\_STREAM\_PRIORITY\_CHANGED = 5 | 更高优先级的音频流出现导致的系统设备切换。例如，音乐播放过程中来电，通话流优先级更高导致音乐设备被切换。  **起始版本：** 20 |
 
 ### OH\_AudioStream\_PrivacyType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioStream_PrivacyType
+```c
+enum OH_AudioStream_PrivacyType
 ```
 
 **描述**
@@ -489,10 +444,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioData\_Callback\_Result
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioData_Callback_Result
+```c
+enum OH_AudioData_Callback_Result
 ```
 
 **描述**
@@ -508,10 +461,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioStream\_LatencyType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioStream_LatencyType
+```c
+enum OH_AudioStream_LatencyType
 ```
 
 **描述**
@@ -528,15 +479,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioStream\_PlaybackCaptureMode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioStream_PlaybackCaptureMode
+```c
+enum OH_AudioStream_PlaybackCaptureMode
 ```
 
 **描述**
 
-表示内录（录制设备内部应用的声音）的过滤类型，每种过滤类型可录制不同的播放流类型。该API暂不对外支持。
+表示内录（录制设备内部应用的声音）的过滤类型，每种过滤类型可录制不同的播放流类型。该API最初仅对特定系统应用可用，从API版本26.0.0开始，支持任意应用使用。
 
 **起始版本：** 23
 
@@ -548,15 +497,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioStream\_PlaybackCaptureStartState
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AudioStream_PlaybackCaptureStartState
+```c
+enum OH_AudioStream_PlaybackCaptureStartState
 ```
 
 **描述**
 
-定义内录的启动状态，该状态在调用[OH\_AudioCapturer\_RequestPlaybackCaptureStart](capi-native-audiocapturer-h.md#oh_audiocapturer_requestplaybackcapturestart)函数后异步返回。该API暂不对外支持。
+定义内录的启动状态，该状态在调用[OH\_AudioCapturer\_RequestPlaybackCaptureStart](capi-native-audiocapturer-h.md#oh_audiocapturer_requestplaybackcapturestart)函数后异步返回。该API最初仅对特定系统应用可用，从API版本26.0.0开始，支持任意应用使用。
 
 **起始版本：** 23
 
@@ -568,14 +515,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AudioRenderer\_OutputDeviceChangeCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_AudioRenderer_OutputDeviceChangeCallback)(OH_AudioRenderer* renderer, void* userData, OH_AudioStream_DeviceChangeReason reason)
+```c
+typedef void (*OH_AudioRenderer_OutputDeviceChangeCallback)(OH_AudioRenderer* renderer, void* userData, OH_AudioStream_DeviceChangeReason reason)
 ```
 
 **描述**
@@ -594,10 +537,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioRenderer\_OnMarkReachedCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_AudioRenderer_OnMarkReachedCallback)(OH_AudioRenderer* renderer, uint32_t samplePos, void* userData)
+```c
+typedef void (*OH_AudioRenderer_OnMarkReachedCallback)(OH_AudioRenderer* renderer, uint32_t samplePos, void* userData)
 ```
 
 **描述**
@@ -616,10 +557,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioRenderer\_WriteDataWithMetadataCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef int32_t (*OH_AudioRenderer_WriteDataWithMetadataCallback)(OH_AudioRenderer* renderer, void* userData, void* audioData, int32_t audioDataSize, void* metadata, int32_t metadataSize)
+```c
+typedef int32_t (*OH_AudioRenderer_WriteDataWithMetadataCallback)(OH_AudioRenderer* renderer, void* userData, void* audioData, int32_t audioDataSize, void* metadata, int32_t metadataSize)
 ```
 
 **描述**
@@ -647,10 +586,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioRenderer\_OnWriteDataCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef OH_AudioData_Callback_Result (*OH_AudioRenderer_OnWriteDataCallback)(OH_AudioRenderer* renderer, void* userData, void* audioData, int32_t audioDataSize)
+```c
+typedef OH_AudioData_Callback_Result (*OH_AudioRenderer_OnWriteDataCallback)(OH_AudioRenderer* renderer, void* userData, void* audioData, int32_t audioDataSize)
 ```
 
 **描述**
@@ -661,9 +598,11 @@ PhonePC/2in1TabletTVWearable
 
 该函数的返回结果表示填充到缓冲区的数据是否有效。如果结果无效，用户填写的数据将不被播放。
 
-回调函数结束后，音频服务会把audioData指针数据放入队列里等待播放，因此请勿在回调外再次更改audioData指向的数据，且务必保证往audioData填满audioDataSize长度的待播放数据, 否则会导致音频服务播放杂音。
+回调函数结束后，音频服务会把audioData指针数据放入队列里等待播放，因此请勿在回调外再次更改audioData指向的数据，且务必保证往audioData填满audioDataSize长度的待播放数据，否则会导致音频服务播放杂音。
 
 参数audioDataSize可以通过[OH\_AudioStreamBuilder\_SetFrameSizeInCallback](capi-native-audiostreambuilder-h.md#oh_audiostreambuilder_setframesizeincallback)设置。
+
+为避免音频播放启动和停止时数据不连续可能出现的杂音，系统通常会在启动和停止时对音频数据做20ms以内的淡入淡出处理。
 
 **起始版本：** 12
 

@@ -3,51 +3,51 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-act
 title: 设置无主按钮的组件
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 核心操作栏 > 设置无主按钮的组件
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:30:24+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:9683253d13aa12728c29e416fb656f4828091c2f18021a21c9837ce6b480cfcf
+scraped_at: 2026-09-02T14:49:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:47166a8948dda9201a3e08506630c48f3e19e69e7ba508f8e1896977451305e5
 ---
 
 ## 场景介绍
 
-从6.0.0(20) Beta1版本开始，新增支持设置无主按钮的组件。
+从6.0.0(20)版本开始，新增支持设置无主按钮的组件。
 
-[HdsActionBar](../harmonyos-references/ui-design-hdsactionbar.md)组件支持多个按钮的样式。当应用开发者需要多个按钮并且没有主按钮，没有展开和收缩的动效时，可以通过设置左按钮和右按钮配置样式。
+[HdsActionBar (操作栏)](../harmonyos-references/ui-design-hdsactionbar.md)组件支持多个按钮的样式。当应用开发者需要多个按钮并且没有主按钮，没有展开和收缩的动效时，可以通过设置左按钮和右按钮配置样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/vb1jpB3RRRmh9zeoOg8FTA/zh-cn_image_0000002589324715.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/B3dDM9ZIQ9-mzx3HitR6sA/zh-cn_image_0000002706834242.png)
 
 ## 开发步骤
 
 1. 导入相关模块。
 
-   ```
-   1. import { HdsActionBar, ActionBarButton } from '@kit.UIDesignKit'
+   ```typescript
+   import { HdsActionBar, ActionBarButton } from '@kit.UIDesignKit'
    ```
 2. 创建左边的按钮数组startButtons，创建右边的按钮数组endButtons，无主按钮，不支持切换展开和收缩状态。
 
-   ```
-   1. @Entry
-   2. @ComponentV2
-   3. struct TestNoPrimaryButton {
+   ```typescript
+   @Entry
+   @ComponentV2
+   struct Index {
 
-   5. build() {
-   6. Column() {
-   7. HdsActionBar({
-   8. startButtons: [new ActionBarButton({
-   9. baseIcon: $r('sys.symbol.stopwatch_fill')
-   10. }), new ActionBarButton({
-   11. baseIcon: $r('sys.symbol.stopwatch_fill')
-   12. })],
-   13. endButtons: [new ActionBarButton({
-   14. baseIcon: $r('sys.symbol.mic_fill')
-   15. })]
-   16. })
-   17. }
-   18. .width('100%')
-   19. .height('100%')
-   20. .backgroundColor(0xF1F3F5)
-   21. .justifyContent(FlexAlign.Center)
-   22. .alignItems(HorizontalAlign.Center)
-   23. }
-   24. }
+     build() {
+       Column() {
+         HdsActionBar({
+           startButtons: [new ActionBarButton({
+             baseIcon: $r('sys.symbol.stopwatch_fill')
+           }), new ActionBarButton({
+             baseIcon: $r('sys.symbol.stopwatch_fill')
+           })],
+           endButtons: [new ActionBarButton({
+             baseIcon: $r('sys.symbol.mic_fill')
+           })]
+         })
+       }
+       .width('100%')
+       .height('100%')
+       .backgroundColor(0xF1F3F5)
+       .justifyContent(FlexAlign.Center)
+       .alignItems(HorizontalAlign.Center)
+     }
+   }
    ```

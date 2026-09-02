@@ -3,25 +3,19 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pen-insta
 title: InstantShapeGenerator（一笔成形功能）
 breadcrumb: API参考 > 系统 > 硬件 > Pen Kit（手写笔服务） > ArkTS API > InstantShapeGenerator（一笔成形功能）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:add7ef9cccef229e8d668f32d3a5dad49bad2939404f88ac3e44ceb1536e96b0
+scraped_at: 2026-09-02T14:52:38+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9257ca5b724d6dfd4f6034de749ff9e145ed8c728216d11187a93b081a9a348d
 ---
 
 一笔成形的功能入口类。
-
-**模型约束：** 此接口仅可在Stage模型下使用。
-
-**系统能力：** SystemCapability.Stylus.Handwrite
 
 **起始版本：** 5.0.0(12)
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { InstantShapeGenerator, ShapeInfo } from '@kit.Penkit';
+```typescript
+import { InstantShapeGenerator, ShapeInfo } from '@kit.Penkit';
 ```
 
 本模块提供以下类或接口，支持获取一笔成形的图像。
@@ -39,11 +33,9 @@ PhonePC/2in1Tablet
 | [notifyAreaChange](pen-instantsshapegenerator.md#notifyareachange) | 通知控件大小变化。 |
 | [setPauseTime](pen-instantsshapegenerator.md#setpausetime) | 设置触发识别的暂停时间，单位：ms。 |
 | [release](pen-instantsshapegenerator.md#release) | 销毁识别工具。 |
-| [onShapeRecognized](pen-instantsshapegenerator.md#onshaperecognized) | 注册识别完成时的回调方法。 |
+| [onShapeRecognized](pen-instantsshapegenerator.md#onshaperecognized) | 注册识别完成时的回调方法。使用callback异步回调。 |
 
 ## ShapeInfo
-
-PhonePC/2in1Tablet
 
 一笔成形识别结果对象，包含识别的图像的基本信息。
 
@@ -53,8 +45,6 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.0(12)
 
-**参数**：
-
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | shapePath | [Path2D](ts-components-canvas-path2d.md) | 否 | 否 | 图形对象。 |
@@ -63,21 +53,19 @@ PhonePC/2in1Tablet
 
 **示例：**
 
-```
-1. private shapeInfo : ShapeInfo = {
-2. shapePath: '',
-3. shapeString: '',
-4. shapeType: 0
-5. }
+```typescript
+private shapeInfo : ShapeInfo = {
+shapePath: new Path2D(),
+shapeString: '',
+shapeType: 0
+}
 ```
 
 ## processTouchEvent
 
-PhonePC/2in1Tablet
-
 processTouchEvent(event: TouchEvent): void
 
-传递触摸事件。
+传递触摸事件，此接口必须在组件onTouch回调函数中执行。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -93,7 +81,7 @@ processTouchEvent(event: TouchEvent): void
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API 错误码](pen-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API 错误码](errorcode-pen.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -101,23 +89,21 @@ processTouchEvent(event: TouchEvent): void
 
 **示例：**
 
-```
-1. instantShapeGenerator: InstantShapeGenerator = new InstantShapeGenerator();
-2. // 画布
-3. @Builder
-4. Canvas() {
-5. Stack()
-6. .width('100%')
-7. .height('100%')
-8. .onTouch((event: TouchEvent) => {
-9. this.instantShapeGenerator?.processTouchEvent(event);
-10. })
-11. }
+```typescript
+instantShapeGenerator: InstantShapeGenerator = new InstantShapeGenerator();
+// 画布
+@Builder
+Canvas() {
+  Stack()
+    .width('100%')
+    .height('100%')
+    .onTouch((event: TouchEvent) => {
+      this.instantShapeGenerator?.processTouchEvent(event);
+    })
+}
 ```
 
 ## getPathFromString
-
-PhonePC/2in1Tablet
 
 getPathFromString(shapeString: string, penSize: number): Path2D
 
@@ -144,7 +130,7 @@ getPathFromString(shapeString: string, penSize: number): Path2D
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API 错误码](pen-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API 错误码](errorcode-pen.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -152,16 +138,14 @@ getPathFromString(shapeString: string, penSize: number): Path2D
 
 **示例：**
 
-```
-1. // 通过回调方法获取识别结果
-2. private shapeInfoCallback(shapeInfo: ShapeInfo) {
-3. this.drawPath = this.instantShapeGenerator?.getPathFromString(shapeInfo.shapeString, this.penWidth);
-4. }
+```typescript
+// 通过回调方法获取识别结果
+private shapeInfoCallback(shapeInfo: ShapeInfo) {
+  this.drawPath = this.instantShapeGenerator?.getPathFromString(shapeInfo.shapeString, this.penWidth);
+}
 ```
 
 ## notifyAreaChange
-
-PhonePC/2in1Tablet
 
 notifyAreaChange(width: number, height: number): void
 
@@ -182,7 +166,7 @@ notifyAreaChange(width: number, height: number): void
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API 错误码](pen-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API 错误码](errorcode-pen.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -190,21 +174,19 @@ notifyAreaChange(width: number, height: number): void
 
 **示例：**
 
-```
-1. // 画布
-2. @Builder Canvas() {
-3. Stack()
-4. .width('100%')
-5. .height('100%')
-6. .onAreaChange((oldValue, newValue) => {
-7. this.instantShapeGenerator?.notifyAreaChange(Number(newValue.width), Number(newValue.height));
-8. })
-9. }
+```typescript
+// 画布
+@Builder Canvas() {
+  Stack()
+    .width('100%')
+    .height('100%')
+    .onAreaChange((oldValue, newValue) => {
+    this.instantShapeGenerator?.notifyAreaChange(Number(newValue.width), Number(newValue.height));
+  })
+}
 ```
 
 ## setPauseTime
-
-PhonePC/2in1Tablet
 
 setPauseTime(time: number): void
 
@@ -224,7 +206,7 @@ setPauseTime(time: number): void
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API 错误码](pen-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API 错误码](errorcode-pen.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -232,16 +214,18 @@ setPauseTime(time: number): void
 
 **示例：**
 
-```
-1. aboutToAppear() {
-2. console.info('InstantShapeGenerator aboutToAppear')
-3. this.instantShapeGenerator?.setPauseTime(280);
-4. }
+```typescript
+aboutToAppear() {
+  console.info('InstantShapeGenerator aboutToAppear')
+  try {
+    this.instantShapeGenerator?.setPauseTime(280);
+  } catch (error) {
+    console.error('setPauseTime failed: ', error);
+  }
+}
 ```
 
 ## release
-
-PhonePC/2in1Tablet
 
 release(): void
 
@@ -255,20 +239,18 @@ release(): void
 
 **示例：**
 
-```
-1. aboutToDisappear(){
-2. console.info('InstantShapeGenerator aboutToDisappear')
-3. this.instantShapeGenerator?.release();
-4. }
+```typescript
+aboutToDisappear(){
+  console.info('InstantShapeGenerator aboutToDisappear');
+  this.instantShapeGenerator?.release();
+}
 ```
 
 ## onShapeRecognized
 
-PhonePC/2in1Tablet
-
 onShapeRecognized(callback: Callback<ShapeInfo>): InstantShapeGenerator
 
-注册识别完成时的回调方法。
+注册识别完成时的回调方法。使用callback异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -280,24 +262,24 @@ onShapeRecognized(callback: Callback<ShapeInfo>): InstantShapeGenerator
 
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
-| callback | Callback<[ShapeInfo](pen-instantsshapegenerator.md#shapeinfo)> | 是 | 图形识别完成时回调。 |
+| callback | Callback<[ShapeInfo](pen-instantsshapegenerator.md#shapeinfo)> | 是 | 回调函数，返回一笔成形识别结果对象，包含识别的图像的基本信息。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| InstantShapeGenerator | 一笔成形工具方法类实例。 |
+| [InstantShapeGenerator](pen-instantsshapegenerator.md) | 一笔成形工具方法类实例。 |
 
 **示例：**
 
-```
-1. // 通过回调方法获取识别结果
-2. private shapeInfoCallback(shapeInfo: ShapeInfo) {
-3. this.shapeInfo = shapeInfo;
-4. }
+```typescript
+// 通过回调方法获取识别结果
+private shapeInfoCallback(shapeInfo: ShapeInfo) {
+  this.shapeInfo = shapeInfo;
+}
 
-6. aboutToAppear() {
-7. console.info('InstantShapeGenerator aboutToAppear')
-8. this.instantShapeGenerator?.onShapeRecognized(this.shapeInfoCallback)
-9. }
+aboutToAppear() {
+  console.info('InstantShapeGenerator aboutToAppear')
+  this.instantShapeGenerator?.onShapeRecognized(this.shapeInfoCallback)
+}
 ```

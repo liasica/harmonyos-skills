@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-w
 title: 预签约
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 直连商户 > 签约代扣 > 预签约
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:04ae4cbb3aaa31819390ca20bb34885a9b59040ad0a56ada468caeb8c38c8814
+scraped_at: 2026-09-02T14:53:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1043fede1f702f8b9852cd4891eab6cd0889ba3a3bac9ea02a35fc033e5b1f37
 ---
 
 ## 功能介绍
@@ -44,7 +44,7 @@ content_hash: sha256:04ae4cbb3aaa31819390ca20bb34885a9b59040ad0a56ada468caeb8c38
 | --- | --- | --- | --- |
 | appId | 是 | String | 应用ID。获取方式请参见[AppID管理及关联](../pay-docs/hwzf-appidguanli-0000001757041165.md)。 |
 | planId | 是 | String | 协议模板ID。该模板ID是商户在向华为支付[提交代扣权限申请](../harmonyos-guides/payment-password-free-pay-overview.md)时由华为支付生成。 |
-| mercContractCode | 是 | String | 商户签约协议号。开发者请求签约时传入的签约协议号，商户侧自己生成，商户需保证字段唯一性。最大长度64。 |
+| mercContractCode | 是 | String | 商户签约协议号。开发者请求签约时传入的签约协议号，由商户生成，商户需保证字段唯一性。最大长度64。 |
 | mercNo | 是 | String | 商户号。 |
 | callbackUrl | 是 | String | 回调通知地址，通知URL必须为外网环境可直接访问的URL，要求为https地址。具体要求参考[通知回调接口说明](payment-rest-overview.md#通知回调接口说明)。最大长度为512。 |
 | expireTime | 否 | String | 交易过期时间。此时间必须为准确的UTC时间。  格式要求："yyyy-MM-dd'T'HH:mm:ss.SSSZ" 。  **说明：**  - 下单过期时间，不传默认2个小时，如果传递则最小值无限制，最大180天，超过180天系统会报错。  - 传已过时间可能会导致订单因过期、超时等原因异常关闭。  - 开发者可以参考[获取对应的UTC过期时间示例](payment-appendix.md#获取对应的utc过期时间示例)来获取对应的UTC过期时间。 |
@@ -52,18 +52,18 @@ content_hash: sha256:04ae4cbb3aaa31819390ca20bb34885a9b59040ad0a56ada468caeb8c38
 
 ## 请求示例
 
-```
-1. POST /api/v2/contract/presign/app HTTP/1.1
-2. Content-Type: application/json;charset=UTF-8
-3. PayMercAuth: {"callerId":"10132120***","traceId":"202305151026422776499","time":1684117602555,"authId":"120291744647139***","headerSign":"u+H1Oe3fXV9mGCES89XA7tSjp8+********************lOG7eAFfwjEWJu5JyvY5KunSeE6DiKs=","bodySign":"yWDtXOBqDoItPgHmF57L6U5G7F/*******************asPj10iUIFeaszpiRT2aQDaqLGaxvta6J5UxIUmAp+wGdV/juGEvQ="}
-4. Accept: application/json
-5. {
-6. "appId": "5765880207853***",
-7. "callbackUrl": "https://www.xxxxxx.com/hw/pay/callback",
-8. "mercContractCode": "2024020316555432***",
-9. "mercNo": "10132120***",
-10. "planId": "1***"
-11. }
+```json
+POST /api/v2/contract/presign/app HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+PayMercAuth: {"callerId":"10132120***","traceId":"202305151026422776499","time":1684117602555,"authId":"120291744647139***","headerSign":"u+H1Oe3fXV9mGCES89XA7tSjp8+********************lOG7eAFfwjEWJu5JyvY5KunSeE6DiKs=","bodySign":"yWDtXOBqDoItPgHmF57L6U5G7F/*******************asPj10iUIFeaszpiRT2aQDaqLGaxvta6J5UxIUmAp+wGdV/juGEvQ="}
+Accept: application/json
+{
+  "appId": "5765880207853***",
+  "callbackUrl": "https://www.xxxxxx.com/hw/pay/callback",
+  "mercContractCode": "2024020316555432***",
+  "mercNo": "10132120***",
+  "planId": "1***"
+}
 ```
 
 ## 响应参数
@@ -83,19 +83,19 @@ content_hash: sha256:04ae4cbb3aaa31819390ca20bb34885a9b59040ad0a56ada468caeb8c38
 | subCode | 否 | String | 业务错误码。 |
 | subDesc | 否 | String | 业务错误描述信息。 |
 | sign | 是 | String | 签名值。用于开发者对响应报文进行防篡改验证。 |
-| preSignNo | 是 | String | 预签约号。有效期10分钟。 |
+| preSignNo | 是 | String | 预签约号。有效期10分钟。请求异常情况下，该字段不返回或为空。 |
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json; charset=UTF-8
-3. {
-4. "resultCode": "000000",
-5. "resultDesc": "Success.",
-6. "sign": "MEQCIEIWzdpzi************XJItvq/ZkIcCN5/B20pQ==",
-7. "preSignNo": "27713875*****"
-8. }
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+{
+  "resultCode": "000000",
+  "resultDesc": "Success.",
+  "sign": "MEQCIEIWzdpzi************XJItvq/ZkIcCN5/B20pQ==",
+  "preSignNo": "27713875*****"
+}
 ```
 
 ## 错误码

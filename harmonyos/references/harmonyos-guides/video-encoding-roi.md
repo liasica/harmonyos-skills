@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encodin
 title: ROI视频编码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > ROI视频编码
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:34:41+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:e8445cd1247f3e952832f26803706aaf7679e569d4cb5639df8458ecb9947fcb
+scraped_at: 2026-09-02T14:59:43+08:00
+doc_updated_at: 2026-08-21
+content_hash: sha256:546dd44b9279f69e6c8fccaedff0cab191f6a846d92e5411ab17519481f3c101
 ---
 
 ## 基础概念
@@ -26,17 +26,21 @@ ROI视频编码适用于因网络带宽限制导致码率不能满足视频画�
 * 网课视频：将课件文字、讲义图表、板书内容区域设为ROI，保证知识点清晰可读，降低视觉疲劳，提升教学效果。
 * 安全监控：将摄像头画面中的人脸、车牌、出入口等关键区域设为ROI，提升抓拍清晰度，便于后续识别分析。
 
-为了支持不同的编码场景，提供了三类ROI编码开发示例，开发者可根据实际业务和技术架构选择。
+根据编码模式和ROI配置方式的不同，提供了三种ROI编码开发示例，开发者可根据实际业务和技术架构选择。
 
 | 不同场景对照点 | 直播/视频通话场景 | 录像场景 | 编辑导出/内容发布场景 |
 | --- | --- | --- | --- |
 | **ROI信息生产者** | 相机 | 相机 | 应用 |
-| **ROI信息获取方式** | 通过相机元数据回调获取 | 通过相机元数据回调获取 | 应用自管理 |
-| **编码视频帧直接生产者** | 图形 | 相机 | 应用 |
+| **ROI信息获取方式** | 从视频帧NativeBuffer元数据提取 | 从视频帧NativeBuffer元数据提取 | 应用自管理 |
+| **编码视频帧直接生产者** | 图形 | 图形 | 应用 |
 | **编码模式** | Surface模式 | Surface模式 | Buffer模式 |
-| **ROI管理&对齐方式** | 基于时间戳匹配 | 基于回调时机匹配 | 自选 |
-| **ROI参数配置方式** | NativeBuffer元数据配置 | 编码输入参数回调配置 | 编码输入buffer回调配置 |
-| **开发示例** | [Surface模式下通过NativeBuffer接口配置ROI](video-encoding-roi.md#surface模式下通过nativebuffer接口配置roi) | [Surface模式下通过编码输入回调接口配置ROI](video-encoding-roi.md#surface模式下通过编码输入回调接口配置roi) | [Buffer模式下配置ROI](video-encoding-roi.md#buffer模式下配置roi) |
+| **ROI参数配置方式** | NativeBuffer元数据配置（推荐） | 编码输入参数回调配置 | 编码输入Buffer回调配置 |
+| **开发示例** | [Surface模式 - 方式一](video-encoding-roi.md#方式一通过nativebuffer元数据配置推荐) | [Surface模式 - 方式二](video-encoding-roi.md#方式二通过编码输入参数回调配置) | [Buffer模式](video-encoding-roi.md#方式三buffer模式下配置roi) |
+
+**说明** 
+
+* 直播和录像场景均使用Surface模式编码，区别仅在于ROI配置方式。推荐使用NativeBuffer元数据配置方式，实现简单且与编码帧天然对齐。
+* 如果帧处理流程中无法修改编码器输入Buffer的元数据（如相机帧直接送入编码器Surface的场景），可选择编码输入参数回调配置方式。
 
 ## 约束和限制
 
@@ -44,20 +48,42 @@ ROI视频编码适用于因网络带宽限制导致码率不能满足视频画�
 
 **支持的码控模式：** VBR(Variable Bit Rate)、CBR(Constant Bit Rate)、SQR(Stable Quality Rate Control)。
 
-**依赖ROI检测识别能力：** 编码器不具备ROI的检测识别能力，所以ROI编码技术生效依赖于开发者输入的ROI信息。开发者可根据业务场景自行设计并实现ROI识别能力，或通过调用系统相机模块原生提供的人脸区域信息，降低开发成本，具体请参考[相机人脸ROI获取示例](native-camera-metadata.md#状态监听)。
+**依赖ROI检测识别能力：** 编码器不具备ROI的检测识别能力，所以ROI编码技术生效依赖于开发者输入的ROI信息。开发者可根据业务场景自行设计并实现ROI识别能力，或通过调用系统相机模块原生提供的人脸区域信息，降低开发成本，具体参考[元数据(C/C++)](native-camera-metadata.md)。
 
 ## 参数要求说明
 
-支持开发者通过字符串形式下发ROI配置参数，参数需满足"Top,Left-Bottom,Right=DeltaQp"格式，所有参数均为整数。
+ROI配置参数最终以字符串形式下发到编码器。从API版本26.0.0开始支持键值对格式，同时兼容旧版纯数值格式。所有坐标参数和数值参数均为整数。
 
-* ROI是一个矩形区域，Top，Left和Bottom，Right分别定义了ROI的区域在图像中的左上角和右下角的坐标位置（如图1所示）。
-* DeltaQp指定编码量化参数（Quantization Parameter）的差异值，DeltaQp绝对值越大，ROI区域与非ROI区域的编码质量差异越大。DeltaQp为负表示ROI区域编码画质优于非ROI区域。"=DeltaQp"可以省略，省略时使用默认参数（=-3）。
-* 多个ROI参数之间通过";"连接, 多ROI配置如"Top1,Left1-Bottom1,Right1=DeltaQp1;Top2,Left2-Bottom2,Right2=DeltaQp2"。
-* 同一帧最多支持配置6个ROI区域，按照配置顺序，多出的ROI区域将被忽略。总ROI面积不能超过图片面积的1/5。按照配置顺序依次累加，仅生效累加面积在限制之内的ROI区域。
+当ROI数据来源于相机帧的NativeBuffer元数据时，开发者无需手动拼接字符串。可使用OH\_VideoMetadata\_GetRoiCount、OH\_VideoMetadata\_ParseRoiString和OH\_VideoMetadata\_AppendRoiString接口直接从相机帧的ROI元数据中解析区域信息、设置键值对参数（如OH\_MD\_KEY\_VIDEO\_METADATA\_ROI\_DELTA\_QP、OH\_MD\_KEY\_VIDEO\_METADATA\_ROI\_SEM\_LABEL），并自动生成符合编码器要求的配置字符串。
+
+**字符串格式：**
+
+* 键值对格式（推荐）：Top,Left-Bottom,Right=dqp:-6,slb:1
+* 纯数值格式（兼容旧版）：Top,Left-Bottom,Right=DeltaQp
+
+**矩形区域定义：**
+
+ROI是一个矩形区域，Top,Left和Bottom,Right分别定义了ROI的区域在图像中的左上角和右下角的坐标位置（如图1所示）。
+
+**键值对参数：**
+
+| 参数 | 含义 | 取值范围 | 是否必填 | 默认行为 |
+| --- | --- | --- | --- | --- |
+| dqp | 量化参数偏移值（DeltaQP） | [-51, 51] | 否 | 未设置时编码器使用默认QP策略（=-3）。 |
+| slb | 语义标签（Semantic Label） | 0（其他）或1（人脸） | 否 | 该参数仅供开发者区分ROI区域类型，不影响编码行为。 |
+
+* dqp为负表示ROI区域编码画质优于非ROI区域，绝对值越大质量差异越大。
+* slb取值对应[OH\_VideoMetadataRoiSemanticLabel](../harmonyos-references/capi-native-avcodec-videobase-h.md#oh_videometadataroisemanticlabel)枚举：OH\_VIDEO\_METADATA\_ROI\_SEM\_LABEL\_OTHER（0）表示未指定区域类型，OH\_VIDEO\_METADATA\_ROI\_SEM\_LABEL\_FACE（1）表示人脸区域。
+* 多个ROI参数之间通过";"连接，多ROI配置如100,50-300,200=dqp:-6,slb:1;400,30-600,200=dqp:-3。
+
+**数量和面积限制：**
+
+* 同一帧最多支持配置6个ROI区域，按照配置顺序，多出的ROI区域将被忽略。
+* 总ROI面积不能超过图片面积的1/5，按照配置顺序依次累加，仅累加面积在限制之内的ROI区域生效。
 
 **图1：ROI坐标和最大允许面积占比示意图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/z3yLPkHWSkG34DpovkoBlg/zh-cn_image_0000002558605392.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/O6n09347SDSqg5qDgcWNfQ/zh-cn_image_0000002736313603.png)
 
 ## 生效机制说明
 
@@ -82,7 +108,7 @@ ROI视频编码适用于因网络带宽限制导致码率不能满足视频画�
 * NativeBuffer元数据配置方式：不允许配置空字符串，视作未配置ROI参数，当前帧会继承历史帧信息进行ROI编码。
 * 编码输入回调配置方式：允许配置空字符串，但因无法解析出有效ROI信息，编码时按照普通编码方式进行编码。
 
-说明
+**说明** 
 
 因空字符串处理存在差异，应避免配置空字符串。如需关闭某一帧的ROI编码，可配置无位置信息的字符串，如"Clear"或";"等。
 
@@ -90,467 +116,410 @@ ROI视频编码适用于因网络带宽限制导致码率不能满足视频画�
 
 ## 开发示例
 
-### Surface模式下通过NativeBuffer接口配置ROI
+以下开发示例按照编码模式组织。Surface模式和Buffer模式共用相同的ROI信息获取与组装流程，区别在于如何将ROI配置到编码器。
 
-系统相机获取视频帧的接口和获取ROI信息的接口是两个独立的回调接口，需要根据视频时间戳和ROI信息时间戳进行数据同步匹配，并在编码前完成相应帧的ROI配置。
+当相机输出视频帧时，如果检测到ROI区域（如人脸），会将ROI信息写入帧的NativeBuffer元数据。开发者可直接从每帧中提取，无需额外的回调接口和时间戳匹配，具体参考[OH\_NativeBuffer\_MetadataKey](../harmonyos-references/capi-buffer-common-h.md#oh_nativebuffer_metadatakey)。
 
-说明
+### 方式一：通过NativeBuffer元数据配置（推荐）
 
-ROI信息需与相机视频帧信息严格对齐。实际应用中，若两个接口处理不同步，可能导致ROI调用错位；高负载场景下，还可能出现连续两帧ROI时间戳相同的异常。当出现上述情况，不影响编码功能正常运行，开发者可结合编码画质评估结果，自主决定是否继续使用。
-
-在具体业务场景中，相机获取的视频帧会经过一系列的图像处理，如美颜、滤波和增强等前处理（如图2所示），开发者可以根据实际的业务需求进行模块增减。
+Surface模式下，相机将视频帧输出到OH\_NativeImage的Surface上，开发者在帧处理线程中从每帧的NativeBuffer元数据提取ROI信息并组装成配置字符串，随后将ROI字符串写入编码器输入帧的NativeBuffer元数据，实现ROI随帧下发到编码器（如图2所示）。
 
 **图2：NativeBuffer元数据接口配置ROI流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/xfB2hcvpSt2cUmbRSEO-Zw/zh-cn_image_0000002589324919.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/exF4LUJHRCyjPuA82jHwJg/zh-cn_image_0000002706674560.png)
 
 详细开发步骤如下：
 
-1. 在CMakeList.txt中链接动态库。
+1. 在CMakeLists.txt中链接动态库。
 
-   ```
-   1. set(BASE_LIBRARY
-   2. libnative_media_codecbase.so libnative_media_core.so libnative_media_venc.so libnative_window.so
-   3. libnative_buffer.so libnative_image.so libEGL.so libGLESv3.so
-   4. )
-   5. target_link_libraries(recorder PUBLIC ${BASE_LIBRARY})
-   ```
+   ```text
+   set(BASE_LIBRARY
+       libace_napi.z.so libEGL.so libGLESv3.so libace_ndk.z.so libuv.so libhilog_ndk.z.so
+       libnative_media_codecbase.so libnative_media_core.so libnative_media_vdec.so libnative_window.so
+       libnative_media_venc.so libnative_media_acodec.so libnative_media_avdemuxer.so libnative_media_avsource.so
+       libnative_media_avmuxer.so libohaudio.so libnative_buffer.so libnative_vsync.so libnative_image.so libdeviceinfo_ndk.z.so
+   )
 
-   说明
+   add_library(recorder SHARED recorder/RecorderNative.cpp
+                               recorder/Recorder.cpp
+                               capbilities/codec/Muxer.cpp
+                               capbilities/codec/VideoEncoder.cpp
+                               capbilities/codec/AudioCapturer.cpp
+                               capbilities/codec/AudioEncoder.cpp
+                               capbilities/codec/CodecCallback.cpp
+                               capbilities/render/egl_render_context.cpp
+                               capbilities/render/render_thread.cpp
+                               capbilities/render/shader_program.cpp
+                               common/RoiQueue.cpp
+   )
 
-   上述'recorder'字样仅为示例，此处应由开发者根据具体的CMake工程目标名称进行替换。
-2. 监听相机元数据回调接口获取人脸位置信息。
-
-   如何注册相机元数据回调可以参考 [相机元数据状态监听](camera-metadata.md#状态监听)。
-
-   ```
-   1. import { camera } from '@kit.CameraKit'
-   2. import { BusinessError } from '@kit.BasicServicesKit'
-   3. import recorder from 'librecorder.so';
-
-   5. interface FaceBoundingBox {
-   6. topLeftX: number;
-   7. topLeftY: number;
-   8. width: number;
-   9. height: number;
-   10. }
-
-   12. onMetadataObjectsAvailable(metadataOutput: camera.MetadataOutput): void {
-   13. metadataOutput.on('metadataObjectsAvailable', (err: BusinessError, metadataObjectArr: Array<camera.MetadataObject>) => {
-   14. if (err !== undefined && err.code !== 0) {
-   15. return;
-   16. }
-   17. const faceBoundingBoxes: Array<FaceBoundingBox> = [];
-   18. let unifiedTimestamp = 0;
-   19. let timestampSet = false;
-
-   21. for (const metadataObject of metadataObjectArr) {
-   22. if (metadataObject.type === camera.MetadataObjectType.FACE_DETECTION) {
-   23. if (!timestampSet) {
-   24. unifiedTimestamp = metadataObject.timestamp;
-   25. timestampSet = true;
-   26. }
-   27. faceBoundingBoxes.push({
-   28. topLeftX: metadataObject.boundingBox.topLeftX,
-   29. topLeftY: metadataObject.boundingBox.topLeftY,
-   30. width: metadataObject.boundingBox.width,
-   31. height: metadataObject.boundingBox.height
-   32. })
-   33. }
-   34. }
-   35. if (faceBoundingBoxes.length > 0) {
-   36. // 下发人脸位置信息到Native层（this.nativeRecorderObj是Native层实例）。
-   37. recorder.UpdateFaceRect(this.nativeRecorderObj, unifiedTimestamp, faceBoundingBoxes);
-   38. }
-   39. });
-   40. }
-   ```
-3. Native层解析TS层传递的人脸位置信息。
-
-   ```
-   1. struct FaceRect {
-   2. double topLeftX;
-   3. double topLeftY;
-   4. double width;
-   5. double height;
-   6. };
-
-   8. static napi_value UpdateFaceRect(napi_env env, napi_callback_info info)
-   9. {
-   10. size_t argc = 3;
-   11. napi_value args[3] = {nullptr};
-   12. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-   13. if (argc < 3) {
-   14. return nullptr;
-   15. }
-   16. // 解析native实例。
-   17. int64_t addrValue = 0;
-   18. bool flag = false;
-   19. napi_get_value_bigint_int64(env, args[0], &addrValue, &flag);
-   20. Recorder *recorder = reinterpret_cast<Recorder *>(addrValue);
-   21. if (recorder == nullptr) {
-   22. return nullptr;
-   23. }
-   24. // 解析时间戳。
-   25. int64_t timestamp = 0;
-   26. napi_get_value_int64(env, args[1], &timestamp);
-   27. // 解析人脸Rect。
-   28. napi_value faceRectArray = args[2];
-   29. bool isArray;
-   30. napi_is_array(env, faceRectArray, &isArray);
-   31. if (!isArray) {
-   32. return nullptr;
-   33. }
-   34. uint32_t arrayLength;
-   35. napi_get_array_length(env, faceRectArray, &arrayLength);
-   36. std::vector<FaceRect> faceRectVec;
-   37. for (uint32_t i = 0; i < arrayLength; i++) {
-   38. FaceRect item = {0};
-   39. napi_value faceRectObj;
-   40. napi_get_element(env, faceRectArray, i, &faceRectObj);
-   41. napi_value propValue;
-   42. napi_get_named_property(env, faceRectObj, "topLeftX", &propValue);
-   43. napi_get_value_double(env, propValue, &item.topLeftX);
-   44. napi_get_named_property(env, faceRectObj, "topLeftY", &propValue);
-   45. napi_get_value_double(env, propValue, &item.topLeftY);
-   46. napi_get_named_property(env, faceRectObj, "width", &propValue);
-   47. napi_get_value_double(env, propValue, &item.width);
-   48. napi_get_named_property(env, faceRectObj, "topLeftX", &propValue);
-   49. napi_get_value_double(env, propValue, &item.height);
-   50. faceRectVec.push_back(item);
-   51. }
-   52. recorder->ConvertToRoi(timestamp, faceRectVec);
-   53. return nullptr;
-   54. }
-   ```
-4. 转换成ROI信息格式字符串并保存。
-
-   ```
-   1. #include <map>
-   2. #include <mutex>
-   3. #include <sstream>
-   4. #include <string>
-
-   6. const int width = 1920;   // 视频帧宽度。
-   7. const int height = 1080;  // 视频帧高度。
-   8. const int qpOffset = -6;  // QP偏移参数。
-   9. std::map<int64_t, std::string> g_roiStrMap; // 时间戳和ROI信息映射。
-   10. std::mutex g_roiMutex;
-
-   12. void Recorder::ConvertToRoi(int64_t timestamp, std::vector<FaceRect>* faceRectVec)
-   13. {
-   14. std::string mergedRoiStr;
-   15. // 遍历所有faceRect。
-   16. for (const auto& faceRect : faceRectVec) {
-   17. // 归一化坐标转像素坐标。
-   18. int left = static_cast<int32_t>(faceRect.topLeftX * width);
-   19. int top = static_cast<int32_t>(faceRect.topLeftY * height);
-   20. int right = static_cast<int32_t>(faceRect.width * width) + left;
-   21. int bottom = static_cast<int32_t>(faceRect.height * height) + top;
-
-   23. // 拼接当前人脸框的格式字符串（top,left-bottom,right=QpOffset;）。
-   24. std::ostringstream oss;
-   25. oss << mergedRoiStr; // 拼接已有片段。
-   26. oss << top << "," << left << "-" << bottom << "," << right << "=" << qpOffset << ";";
-   27. mergedRoiStr = oss.str();
-   28. }
-
-   30. if (!mergedRoiStr.empty()) {
-   31. std::lock_guard<std::mutex> lock(g_roiMutex);
-   32. // 此场景可获取视频帧时间戳，基于时间戳匹配。
-   33. g_roiStrMap[timestamp] = mergedRoiStr;
-   34. }
-   35. }
-   ```
-5. 基于视频帧时间戳查找匹配的ROI信息。
-
-   需要包含的头文件。
-
-   ```
-   1. #include <EGL/egl.h>
-   2. #include <EGL/eglext.h>
-   3. #include <GLES3/gl3.h>
-   4. #include <GLES2/gl2ext.h>
-   5. #include <native_image/native_image.h>
+   target_link_libraries(recorder PUBLIC ${BASE_LIBRARY} player)
    ```
 
-   创建NativeImage用来接收视频帧。
+   **说明** 
+
+   上述'recorder','player'字样仅为示例，此处应由开发者根据具体的CMake工程目标名称进行替换。
+2. 从视频帧NativeBuffer元数据提取ROI信息。
+
+   相机输出视频帧时，若检测到ROI区域（如人脸），会将ROI信息写入帧的NativeBuffer元数据中。开发者可通过OH\_NativeBuffer\_GetMetadataValue提取ROI原始字符串。
 
    ```
-   1. GLuint textureId;
-   2. glGenTextures(1, &textureId);
-   3. // 创建NativeImage实例，关联纹理。
-   4. OH_NativeImage* image = OH_NativeImage_Create(textureId, GL_TEXTURE_EXTERNAL_OES);
+   OH_NativeBuffer *nativeBuffer = nullptr;
+   int32_t ret = OH_NativeBuffer_FromNativeWindowBuffer(InBuffer, &nativeBuffer);
+   if (ret == 0 && nativeBuffer != nullptr) {
+       int32_t roiSize = 0;
+       uint8_t *roiData = nullptr;
+       ret = OH_NativeBuffer_GetMetadataValue(nativeBuffer,
+           OH_NativeBuffer_MetadataKey::OH_REGION_OF_INTEREST_METADATA, &roiSize, &roiData);
+       if (ret == 0 && roiData != nullptr && roiSize > 0) {
+           return std::string(reinterpret_cast<char*>(roiData), roiSize);
+       }
+   }
    ```
 
-   获取NativeImage对应NativeWindow，作为相机预览流的目标窗口。并通过OH\_NativeImage\_SetOnFrameAvailableListener注册回调OH\_OnFrameAvailableListener获取视频帧更新。
+   **说明** 
+
+   InBuffer是通过OH\_NativeImage\_AcquireNativeWindowBuffer从OH\_NativeImage获取的相机帧，相机输出的ROI信息已写入该Buffer的元数据中。关于NativeImage的创建和帧接收机制，请参考开发指南视频编码中[Surface模式](video-encoding.md#surface模式)的相关说明。
+3. 使用OH\_VideoMetadata API组装ROI配置字符串。
+
+   提取的ROI原始字符串包含区域坐标信息，开发者需要通过OH\_VideoMetadata\_GetRoiCount、OH\_VideoMetadata\_ParseRoiString和OH\_VideoMetadata\_AppendRoiString接口解析原始ROI并追加DeltaQP参数，生成完整的ROI配置字符串（如"100,50-300,200=dqp:-6"）。
 
    ```
-   1. // 在回调后更新NativeImage。
-   2. int32_t ret = OH_NativeImage_UpdateSurfaceImage(image);
-   3. if (ret != 0) {
-   4. // 异常处理。
-   5. }
-   6. // 获取视频帧时间戳。
-   7. int64_t imageTimeStamp = OH_NativeImage_GetTimestamp(image);
-   8. // 使用视频帧时间戳找到与之对应的ROI信息。
-   9. std::lock_guard<std::mutex> lock(g_roiMutex);
-   10. auto it = g_roiStrMap.find(imageTimeStamp);
-   11. std::string noRoiStr = ";"; // 随元数据配置方式，需配置非空无效字符串关闭本视频帧ROI编码。
-   12. std::string roiInfo = (it != g_roiStrMap.end()) ? it->second : noRoiStr;
-   ```
-6. 将ROI信息设置到视频帧NativeBuffer元数据中。
-
-   需要包含的头文件。
-
-   ```
-   1. #include <multimedia/player_framework/native_avcodec_videoencoder.h>
-   2. #include <multimedia/player_framework/native_avcodec_base.h>
-   3. #include <native_window/external_window.h>
-   4. #include <native_buffer/native_buffer.h>
-   ```
-
-   经过系列egl处理后，生成了用于编码的视频帧纹理。需要使用eglSwapBuffers函数将纹理绘制到编码器的输入NativeWindow中。编码输入NativeWindow获取方式如下。
-
-   ```
-   1. OH_AVCodec *codec = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
-   2. OHNativeWindow *nativeWindow = nullptr;
-   3. OH_VideoEncoder_GetSurface(codec, &nativeWindow);
-   ```
-
-   绘制之前获取最新的NativeBuffer，并配置ROI信息。绘制过程可参考[OpenGLES示例](../harmonyos-references/opengles.md#简单示例)，最终通过eglSwapBuffers送绘制好的数据到编码器进行编码。
-
-   ```
-   1. int fenceFd = -1;
-   2. OHNativeWindowBuffer *winBuffer = nullptr;
-   3. // 从Surface中请求一帧OHNativeWindowBuffer。
-   4. int32_t ret = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &winBuffer, &fenceFd);
-   5. if (ret != 0) {
-   6. // 异常处理。
-   7. }
-   8. // 将OHNativeWindowBuffer转换为NativeBuffer。
-   9. OH_NativeBuffer *nativeBuffer = nullptr;
-   10. OH_NativeBuffer_FromNativeWindowBuffer(winBuffer, &nativeBuffer);
-   11. // 配置ROI信息到NativeBuffer元数据中。
-   12. int32_t ret = OH_NativeBuffer_SetMetaDataValue(nativeBuffer,
-   13. OH_NativeBuffer_MetaDataKey::OH_REGION_OF_INTEREST_METADATA, roiInfo.size,
-   14. reinterpret_cast<uint8_t *>(roiInfo.data()));
-   15. if (ret != 0) {
-   16. // 异常处理。
-   17. }
+   if (currentRoiStr.empty()) {
+       return "";
+   }
+   uint32_t roiCount = 0;
+   OH_AVErrCode roiRet = OH_VideoMetadata_GetRoiCount(currentRoiStr.c_str(), &roiCount);
+   if (roiRet != AV_ERR_OK || roiCount == 0) {
+       return "";
+   }
+   std::vector<OH_AVFormat*> parsedFormats(roiCount, nullptr);
+   uint32_t actualCount = 0;
+   roiRet = OH_VideoMetadata_ParseRoiString(currentRoiStr.c_str(), parsedFormats.data(),
+                                            roiCount, &actualCount);
+   if (roiRet != AV_ERR_OK || actualCount == 0) {
+       return "";
+   }
+   char *assembledStr = nullptr;
+   for (uint32_t i = 0; i < actualCount; i++) {
+       if (parsedFormats[i] != nullptr) {
+           OH_AVFormat_SetIntValue(parsedFormats[i], OH_MD_KEY_VIDEO_METADATA_ROI_DELTA_QP,
+               ROI_DELTA_QP);
+           OH_VideoMetadata_AppendRoiString(&assembledStr, parsedFormats[i]);
+           OH_AVFormat_Destroy(parsedFormats[i]);
+           parsedFormats[i] = nullptr;
+       }
+   }
+   std::string result;
+   if (assembledStr != nullptr) {
+       result = std::string(assembledStr);
+       free(assembledStr);
+   }
    ```
 
-### Surface模式下通过编码输入回调接口配置ROI
+   **说明** 
 
-在此场景中，视频帧被直接送入编码器窗口（如图3所示）。
+   OH\_VideoMetadata\_AppendRoiString会在内部进行内存扩容，返回的C风格字符串需要开发者调用free()释放。
+4. 将ROI配置字符串写入编码器输入帧的NativeBuffer元数据。
 
-相机输出视频帧和元数据（如果存在）的时间相近。设置编码输入参数的回调后，编码器在接收到视频帧时会触发回调。在回调中，如果获取成功，则该视频帧包含匹配的ROI信息；如果获取超时，则该视频帧不包含匹配的ROI信息。
+   在Surface模式下，编码器通过Surface接收视频帧。开发者需要先通过OH\_NativeWindow\_NativeWindowRequestBuffer从编码器Surface请求Buffer，再将组装好的ROI字符串写入该Buffer的NativeBuffer元数据中。
+
+   ```
+   OH_NativeBuffer *encoderNativeBuffer = nullptr;
+   int32_t ret = OH_NativeBuffer_FromNativeWindowBuffer(OutBufferEncoder, &encoderNativeBuffer);
+   if (ret == 0 && encoderNativeBuffer != nullptr) {
+       int32_t roiStrSize = static_cast<int32_t>(assembledRoiStr.size());
+       ret = OH_NativeBuffer_SetMetadataValue(encoderNativeBuffer,
+           OH_NativeBuffer_MetadataKey::OH_REGION_OF_INTEREST_METADATA,
+           roiStrSize, reinterpret_cast<uint8_t*>(const_cast<char*>(assembledRoiStr.data())));
+       if (ret != 0) {
+           OH_LOG_Print(LOG_APP, LOG_WARN, LOG_PRINT_DOMAIN, "RenderThread",
+                        "OH_NativeBuffer_SetMetadataValue failed, ret: %{public}d", ret);
+       } else {
+           OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "RenderThread",
+                        "ROI metadata written to encoder buffer: %{public}s", assembledRoiStr.c_str());
+       }
+   }
+   ```
+
+   **说明** 
+
+   当相机帧未检测到ROI区域时，assembledRoiStr为空字符串。NativeBuffer元数据配置方式不支持空字符串，需写入无位置信息的字符串（如"Clear"或";"）。具体参考[生效机制说明](video-encoding-roi.md#生效机制说明)。
+5. 将Buffer提交给编码器并释放资源。
+
+   ROI配置完成后，通过OH\_NativeWindow\_NativeWindowFlushBuffer将预览Buffer和编码器Buffer提交，并释放相机帧资源。
+
+   ```
+   void RenderThread::FlushAndCleanup(OHNativeWindowBuffer *InBuffer, int32_t fenceFd1,
+       OHNativeWindowBuffer *OutBuffer, OHNativeWindowBuffer *OutBufferEncoder)
+   {
+       OH_NativeWindow_NativeObjectUnreference(InBuffer);
+       OH_NativeImage_ReleaseNativeWindowBuffer(nativeImage_, InBuffer, fenceFd1);
+
+       Region region{nullptr, 0};
+       int acquireFenceFd = -1;
+       OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow_, OutBuffer, acquireFenceFd, region);
+       if (OutBufferEncoder != nullptr) {
+           OH_NativeWindow_NativeWindowFlushBuffer(encoderNativeWindow_, OutBufferEncoder, acquireFenceFd, region);
+       }
+   }
+   ```
+
+### 方式二：通过编码输入参数回调配置
+
+此方式同样适用于Surface模式。从帧的NativeBuffer元数据中提取ROI信息，配置方式通过OH\_VideoEncoder\_RegisterParameterCallback注册的编码输入参数回调完成（如图3所示）。
+
+编码器在接收到视频帧时触发参数回调，由于参数回调不包含帧时间戳信息，开发者需要使用以PTS（时间戳）为键的同步队列（RoiQueue）将帧处理线程中的ROI数据按时间顺序传递到编码回调。回调中从队列弹出PTS最小的ROI条目，通过OH\_AVFormat\_SetStringValue配置到参数格式中。
 
 **图3：编码输入参数回调接口配置ROI流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/aOVOWLiBRkee92-WawFq1Q/zh-cn_image_0000002589244855.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/7wD4wK7QTWaxArtZ28yZ2A/zh-cn_image_0000002736433649.png)
 
 详细开发步骤如下：
 
-1. 在CMakeList.txt中链接动态库。
+1. 在CMakeLists.txt中链接动态库。
+
+   同[方式一：通过nativebuffer元数据配置（推荐）](video-encoding-roi.md#方式一通过nativebuffer元数据配置推荐)步骤1。
+2. 从视频帧NativeBuffer元数据提取ROI信息。
+
+   同[方式一：通过nativebuffer元数据配置（推荐）](video-encoding-roi.md#方式一通过nativebuffer元数据配置推荐)步骤2。
+3. 使用OH\_VideoMetadata API组装ROI配置字符串。
+
+   同[方式一：通过nativebuffer元数据配置（推荐）](video-encoding-roi.md#方式一通过nativebuffer元数据配置推荐)步骤3。
+4. 实现PTS同步队列与回调用户数据结构。
+
+   由于参数回调不包含帧时间戳信息，无法直接将ROI数据与编码帧对齐。建议实现一个以PTS为键的同步队列，将帧处理线程中的ROI数据按PTS顺序传递到编码回调。编码回调通过用户数据结构中的队列指针访问队列，弹出PTS最小的条目获取ROI配置字符串。
+
+   CodecUserRoi是定义在VideoEncoder类内部的嵌套结构体，包含队列指针以便回调直接访问。
+
+   ```c
+   // 参数回调配置的用户数据结构。
+   struct CodecUserRoi {
+       VideoEncoder* vencoder = nullptr;
+       RoiQueue* roiQueue = nullptr;
+   };
+   ```
+5. 注册编码输入参数回调。
+
+   在创建编码器后、Configure之前，注册编码输入参数回调。必须在Configure之前注册，否则回调不会生效。
 
    ```
-   1. set(BASE_LIBRARY
-   2. libnative_media_codecbase.so libnative_media_core.so libnative_media_venc.so
-   3. )
-   4. target_link_libraries(recorder PUBLIC ${BASE_LIBRARY})
+   // 参数回调配置：在Configure之前注册参数回调。
+   if (roiPathType_ == ROI_PATH_METADATA_CALLBACK) {
+       userData_ = std::make_unique<CodecUserRoi>();
+       if (userData_) {
+           userData_->vencoder = this;
+           userData_->roiQueue = &roiQueue_;
+       }
+       int32_t ret = OH_VideoEncoder_RegisterParameterCallback(encoder_, OnNeedInputParameter, userData_.get());
+       CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, SAMPLE_ERR_ERROR,
+                                "OH_VideoEncoder_RegisterParameterCallback failed, ret: %{public}d", ret);
+       SAMPLE_LOGI("参数回调配置: ROI parameter callback registered.");
+   }
    ```
 
-   说明
+   **说明** 
 
-   上述'recorder'字样仅为示例，此处应由开发者根据具体的CMake工程目标名称进行替换。
-2. 监听相机元数据回调接口获取人脸位置信息。
+   OH\_VideoEncoder\_RegisterParameterCallback必须在OH\_VideoEncoder\_Configure之前调用。回调注册后，编码器每接收一帧输入数据都会触发OnNeedInputParameter回调。
+6. 在编码输入参数回调中配置ROI信息。
 
-   同[Surface模式下通过NativeBuffer接口配置ROI](video-encoding-roi.md#surface模式下通过nativebuffer接口配置roi)步骤2。
-3. Native层解析TS层传递的人脸位置信息。
-
-   同[Surface模式下通过NativeBuffer接口配置ROI](video-encoding-roi.md#surface模式下通过nativebuffer接口配置roi)步骤3。
-4. 转换成ROI信息格式字符串并保存。
-
-   编码参数回调的设计中未包含视频帧的时间戳字段，为配合后续对齐，需要使用线程安全的先入先出队列管理ROI信息，参考实现如下。
+   当编码器接收到输入数据时，会触发OnNeedInputParameter回调。在回调中，从RoiQueue中弹出PTS最小的ROI条目，并通过OH\_AVFormat\_SetStringValue配置到参数格式中。空字符串同样需配置至编码参数，以明确标识该帧未配置ROI区域。
 
    ```
-   1. // RoiFifoQueue.h
-   2. #include <queue>
-   3. #include <string>
-   4. #include <mutex>
-   5. #include <condition_variable>
-   6. #include <chrono>
+   static void OnNeedInputParameter(OH_AVCodec *codec, uint32_t index, OH_AVFormat *parameter, void *userData)
+   {
+       auto *roiUserData = static_cast<VideoEncoder::CodecUserRoi *>(userData);
+       if (!roiUserData || !roiUserData->roiQueue) {
+           OH_VideoEncoder_PushInputParameter(codec, index);
+           return;
+       }
 
-   8. class RoiFifoQueue {
-   9. public:
-   10. void push(const std::string& roiStr) {
-   11. std::lock_guard<std::mutex> lock(mtx);
-   12. roiQueue.push(roiStr);
-   13. cv.notify_one(); // 通知等待的取数线程。
-   14. }
-
-   16. bool pop(std::string& outRoiStr, const std::chrono::milliseconds& timeout) {
-   17. std::unique_lock<std::mutex> lock(mtx);
-   18. if (!cv.wait_for(lock, timeout, [this]() {
-   19. return !roiQueue.empty() || isStopped;
-   20. })) {
-   21. return false; // 超时则无ROI。
-   22. }
-   23. if (isStopped || roiQueue.empty()) {
-   24. return false;
-   25. }
-   26. outRoiStr = roiQueue.front();
-   27. roiQueue.pop();
-   28. return true;
-   29. }
-
-   31. void clear() {
-   32. std::lock_guard<std::mutex> lock(mtx);
-   33. while (!roiQueue.empty()) {
-   34. roiQueue.pop();
-   35. }
-   36. }
-
-   38. void stop() {
-   39. std::lock_guard<std::mutex> lock(mtx);
-   40. isStopped = true;
-   41. cv.notify_all(); // 唤醒所有等待的线程。
-   42. }
-
-   44. ~RoiFifoQueue() {
-   45. stop();
-   46. }
-   47. };
-   48. private:
-   49. std::queue<std::string> roiQueue;    // 存储合并后的完整ROI字符串。
-   50. std::mutex mtx;                      // 互斥锁保护队列。
-   51. std::condition_variable cv;          // 条件变量用于超时等待。
-   52. bool isStopped = false;              // 停止标志。
+       std::string roiStr = roiUserData->roiQueue->Pop();
+       OH_AVFormat_SetStringValue(parameter, OH_MD_KEY_VIDEO_ENCODER_ROI_PARAMS, roiStr.c_str());
+       if (!roiStr.empty()) {
+           SAMPLE_LOGI("ROI configured (parameter callback path): %{public}s", roiStr.c_str());
+       }
+       OH_VideoEncoder_PushInputParameter(codec, index);
+   }
    ```
+7. 将组装好的ROI字符串连同帧PTS传递到VideoEncoder的RoiQueue。
 
-   转换成ROI信息格式并保存在队列中。
+   在帧处理线程中提取并组装ROI字符串后，需要将ROI字符串以PTS为索引，推入VideoEncoder的RoiQueue中。RoiQueue以PTS为键排序，确保编码回调按帧顺序获取ROI数据，避免错位。
 
    ```
-   1. #include <sstream>
-   2. #include "RoiFifoQueue.h"
-
-   4. const int width = 1920;   // 视频帧宽度。
-   5. const int height = 1080;  // 视频帧高度。
-   6. const int qpOffset = -6;  // QP偏移参数。
-   7. RoiFifoQueue g_roiStrQueue;
-
-   9. void Recorder::ConvertToRoi(int64_t timestamp, std::vector<FaceRect>* faceRectVec)
-   10. {
-   11. std::string mergedRoiStr;
-   12. // 遍历所有faceRect。
-   13. for (const auto& faceRect : faceRectVec) {
-   14. // 归一化坐标转像素坐标。
-   15. int left = static_cast<int32_t>(faceRect.topLeftX * width);
-   16. int top = static_cast<int32_t>(faceRect.topLeftY * height);
-   17. int right = static_cast<int32_t>(faceRect.width * width) + left;
-   18. int bottom = static_cast<int32_t>(faceRect.height * height) + top;
-
-   20. // 拼接当前人脸框的格式字符串（top,left-bottom,right=QpOffset;）。
-   21. std::ostringstream oss;
-   22. oss << mergedRoiStr; // 拼接已有片段。
-   23. oss << top << "," << left << "-" << bottom << "," << right << "=" << qpOffset << ";";
-   24. mergedRoiStr = oss.str();
-   25. }
-
-   27. if (!mergedRoiStr.empty()) {
-   28. std::lock_guard<std::mutex> lock(g_roiMutex);
-   29. // 此场景可获取视频帧时间戳，基于时间戳匹配。
-   30. g_roiStrQueue.push(mergedRoiStr);
-   31. }
-   32. }
-   ```
-5. 在编码输入参数回调中配置ROI信息。
-
-   需要包含的头文件。
-
-   ```
-   1. #include <multimedia/player_framework/native_avcodec_videoencoder.h>
-   2. #include <multimedia/player_framework/native_avcodec_base.h>
-   3. #include <multimedia/player_framework/native_avformat.h>
-   4. #include <multimedia/player_framework/native_avbuffer.h>
+   int64_t pts = OH_NativeImage_GetTimestamp(nativeImage_);
+   if (roiPathType_ == ROI_PATH_METADATA_CALLBACK && onRoiStrAssembled_) {
+       onRoiStrAssembled_(pts, assembledRoiStr);
+   }
    ```
 
-   创建编码器。
+   VideoEncoder将ROI数据推入RoiQueue：
 
    ```
-   1. OH_AVCodec *codec = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
+   // 参数回调配置：将ROI条目按PTS推入RoiQueue。
+   void VideoEncoder::PushRoiEntry(int64_t pts, const std::string &roiStr)
+   {
+       roiQueue_.Push(pts, roiStr);
+   }
+
+   // 参数回调配置：ROI关闭时清空RoiQueue。
+   void VideoEncoder::ClearRoiQueue()
+   {
+       roiQueue_.Clear();
+   }
    ```
 
-   视频编码的详细操作步骤请参考[视频编码](video-encoding.md)开发指南，下面仅针对ROI编码做具体说明。
+**说明** 
 
-   ```
-   1. const std::chrono::milliseconds ROI_WAIT_TIMEOUT = std::chrono::milliseconds(4); // 4ms超时。
-   2. static void OnNeedInputParameter(OH_AVCodec *codec, uint32_t index, OH_AVFormat *parameter, void *userData)
-   3. {
-   4. (void)codec;
-   5. (void)userData;
-   6. std::string roiInfo = "";
-   7. if (!g_roiStrQueue.pop(roiInfo, ROI_WAIT_TIMEOUT)) {
-   8. roiInfo = ";"; // 与NativeBuffer通路统一。
-   9. }
-   10. // 找到ROI配置，ROI编码生效；找不到ROI，普通编码生效。
-   11. OH_AVFormat_SetStringValue(parameter, OH_MD_KEY_VIDEO_ENCODER_ROI_PARAMS, roiInfo.c_str());
-   12. OH_VideoEncoder_PushInputParameter(codec, index);
-   13. }
+RoiQueue以PTS为键排序存储ROI条目。编码回调取出PTS最小的条目，保证帧与ROI的顺序一致性。如果队列为空，最多等待3ms再返回空字符串。队列会自动清理超过2秒的陈旧条目，防止无限增长。每帧均应把ROI字符串入队（包括空ROI字符串），空ROI字符串用于明确标识该帧未配置ROI区域；关闭ROI时调用ClearRoiQueue清空队列。
 
-   15. // 注册随帧参数回调。
-   16. OH_VideoEncoder_OnNeedInputParameter inParaCb = OnNeedInputParameter;
-   17. OH_VideoEncoder_RegisterParameterCallback(codec, inParaCb, nullptr);
-   ```
+### 方式三：Buffer模式下配置ROI
 
-### Buffer模式下配置ROI
-
-在该场景中，视频帧和ROI均由应用提供，并采用buffer模式编码。开发者可以参考前文所述的**基于时间戳匹配**或**基于回调时机匹配**两种对齐方式来实现ROI与视频帧的对齐，并在编码输入Buffer回调中完成ROI参数的配置（如图4所示）。
+Buffer模式下，视频帧通过OH\_VideoEncoder\_PushInputBuffer送入编码器，开发者需要在OnNeedInputBuffer回调中填充帧像素数据的同时配置ROI信息。由于Buffer模式没有编码器Surface，帧像素数据需要从相机帧Buffer中拷贝出来，连同ROI字符串一起推入帧队列供编码回调消费（如图4所示）。
 
 **图4：编码输入Buffer回调接口配置ROI流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/_HdDsCAPSG-3O3ZSNDqPUg/zh-cn_image_0000002558765050.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/lhFKRkpdR8KiuztcmRNIDw/zh-cn_image_0000002706834498.png)
 
-准备步骤同[Surface模式下通过编码输入回调接口配置ROI](video-encoding-roi.md#surface模式下通过编码输入回调接口配置roi)步骤1-4，此处仅说明配置差异。
+详细开发步骤如下：
 
-在编码输入Buffer回调中配置ROI信息。
+1. 在CMakeLists.txt中链接动态库。
 
-```
-1. static void OnNeedInputBuffer(OH_AVCodec *codec, uint32_t index, OH_AVBuffer *buffer, void *userData)
-2. {
-3. (void)codec;
-4. (void)userData;
-5. auto format = std::shared_ptr<OH_AVFormat>(OH_AVBuffer_GetParameter(buffer), OH_AVFormat_Destroy);
-6. if (format == nullptr) {
-7. // 异常处理。
-8. }
-9. std::string roiInfo = "";
-10. if (!g_roiStrQueue.pop(roiInfo, ROI_WAIT_TIMEOUT)) {
-11. roiInfo = ";"; // 与NativeBuffer通路统一。
-12. }
-13. OH_AVFormat_SetStringValue(format.get(), OH_MD_KEY_VIDEO_ENCODER_ROI_PARAMS, roiInfo.c_str());
+   同[方式一：通过nativebuffer元数据配置（推荐）](video-encoding-roi.md#方式一通过nativebuffer元数据配置推荐)步骤1。
+2. 从视频帧NativeBuffer元数据提取ROI信息。
 
-15. // 此处还需做视频帧填充，此处忽略。
-16. // 通知编码器buffer输入完成。
-17. OH_VideoEncoder_PushInputBuffer(codec, index);
-18. }
+   同[方式一：通过nativebuffer元数据配置（推荐）](video-encoding-roi.md#方式一通过nativebuffer元数据配置推荐)步骤2。
+3. 使用OH\_VideoMetadata API组装ROI配置字符串。
 
-20. static void OnStreamChanged(OH_AVCodec *codec, OH_AVFormat *format, void *userData)
-21. {
-22. // 此处仅作定义，实现忽略。
-23. }
+   同[方式一：通过nativebuffer元数据配置（推荐）](video-encoding-roi.md#方式一通过nativebuffer元数据配置推荐)步骤3。
+4. 定义帧数据结构和帧队列。
 
-25. static void OnError(OH_AVCodec *codec, int32_t errorCode, void *userData)
-26. {
-27. // 此处仅作定义，实现忽略。
-28. }
+   Buffer模式下，编码器通过回调请求输入Buffer。开发者需要将相机帧的像素数据和ROI字符串封装为帧数据项，推入线程安全的帧队列供编码回调消费。
 
-30. static void OnNewOutputBuffer(OH_AVCodec *codec, uint32_t index, OH_AVBuffer *buffer, void *userData)
-31. {
-32. // 此处仅作定义，实现忽略。
-33. }
+   ```c
+   // Buffer模式编码的帧数据项。
+   constexpr uint32_t FRAME_QUEUE_POP_TIMEOUT_MS = 4;
+   constexpr size_t FRAME_QUEUE_MAX_SIZE = 3;
 
-35. OH_AVCodecCallback cb = {&OnError, &OnStreamChanged, &OnNeedInputBuffer, &OnNewOutputBuffer};
-36. OH_AVErrCode ret = OH_VideoEncoder_RegisterCallback(videoEnc, cb, nullptr);
-```
+   struct FrameItem {
+       std::vector<uint8_t> pixels;
+       int32_t width = 0;
+       int32_t height = 0;
+       std::string roiStr;
+   };
+   ```
+5. 将帧像素数据和ROI字符串推入帧队列。
+
+   在帧处理线程中，从相机帧Buffer读取像素数据，连同组装好的ROI字符串一起推入帧队列。
+
+   ```
+   // Buffer模式：从相机帧读取像素数据并推入帧队列。
+   BufferHandle *bufferHandle = OH_NativeWindow_GetBufferHandleFromNative(InBuffer);
+   if (bufferHandle == nullptr) {
+       return;
+   }
+   OH_NativeBuffer *cameraNativeBuffer = nullptr;
+   int32_t ret = OH_NativeBuffer_FromNativeWindowBuffer(InBuffer, &cameraNativeBuffer);
+   if (ret != 0 || cameraNativeBuffer == nullptr) {
+       return;
+   }
+   void *virAddr = nullptr;
+   ret = OH_NativeBuffer_Map(cameraNativeBuffer, &virAddr);
+   if (ret != 0 || virAddr == nullptr) {
+       return;
+   }
+   int32_t frameWidth = bufferHandle->width;
+   int32_t frameHeight = bufferHandle->height;
+   int32_t stride = bufferHandle->stride;
+   int32_t frameSize = stride * frameHeight;
+   FrameItem frameItem;
+   frameItem.width = frameWidth;
+   frameItem.height = frameHeight;
+   frameItem.roiStr = assembledRoiStr;
+   frameItem.pixels.resize(frameSize);
+   std::copy(static_cast<uint8_t *>(virAddr),
+             static_cast<uint8_t *>(virAddr) + frameSize,
+             frameItem.pixels.data());
+   frameQueue_->Push(frameItem);
+   OH_NativeBuffer_Unmap(cameraNativeBuffer);
+   OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "RenderThread",
+                "Buffer模式: pushed frame to queue, size: %{public}d, ROI: %{public}s",
+                frameSize, assembledRoiStr.c_str());
+   ```
+
+   **说明** 
+
+   Buffer模式需要从相机帧Buffer拷贝像素数据到应用内存，存在额外的数据拷贝开销，相比Surface模式的零拷贝机制会有更高的延迟。开发者应根据实际场景选择合适的编码模式。
+6. 在编码输入Buffer回调中配置ROI信息。
+
+   当编码器请求输入Buffer时，触发OnNeedInputBuffer回调，回调中将Buffer入队供消费线程处理。Buffer模式的消费线程从队列取出Buffer，调用FillBufferModeInput从帧队列弹出帧数据项，将像素数据拷贝到编码器Buffer中，并通过OH\_AVBuffer\_GetParameter获取格式后设置ROI字符串。
+
+   OnNeedInputBuffer回调将Buffer入队，供消费线程处理过程如下：
+
+   ```
+   void CodecCallback::OnNeedInputBuffer(OH_AVCodec *codec, uint32_t index, OH_AVBuffer *buffer, void *userData)
+   {
+       if (userData == nullptr) {
+           return;
+       }
+       CodecUserData *codecUserData = static_cast<CodecUserData *>(userData);
+       std::unique_lock<std::mutex> lock(codecUserData->inputMutex);
+       codecUserData->inputBufferInfoQueue.emplace(index, buffer);
+       codecUserData->inputCond.notify_all();
+   }
+   ```
+
+   Buffer模式消费线程从队列取出Buffer并调用FillBufferModeInput填充帧数据和ROI示例如下：
+
+   ```
+   void Recorder::VideoEncBufferInputThread()
+   {
+       while (isStarted_) {
+           CHECK_AND_BREAK_LOG(isStarted_, "Work done, thread out");
+           std::unique_lock<std::mutex> lock(encContext_->inputMutex);
+           bool condRet = encContext_->inputCond.wait_for(
+               lock, std::chrono::seconds(THREAD_WAIT_TIMEOUT_SEC),
+               [this]() { return !isStarted_ || !encContext_->inputBufferInfoQueue.empty(); });
+           CHECK_AND_BREAK_LOG(isStarted_, "Work done, thread out");
+           CHECK_AND_CONTINUE_LOG(!encContext_->inputBufferInfoQueue.empty(),
+               "Buffer queue is empty, continue, cond ret: %{public}d", condRet);
+
+           CodecBufferInfo bufferInfo = encContext_->inputBufferInfoQueue.front();
+           encContext_->inputBufferInfoQueue.pop();
+           lock.unlock();
+
+           OH_AVBuffer *buffer = reinterpret_cast<OH_AVBuffer *>(bufferInfo.buffer);
+           FillBufferModeInput(bufferInfo.bufferIndex, buffer);
+       }
+   }
+   ```
+
+   FillBufferModeInput的实现如下：
+
+   ```
+   void Recorder::FillBufferModeInput(uint32_t index, OH_AVBuffer *buffer)
+   {
+       FrameItem frameItem;
+       if (!encContext_->frameQueue->Pop(frameItem, std::chrono::milliseconds(FRAME_QUEUE_POP_TIMEOUT_MS))) {
+           OH_VideoEncoder_PushInputBuffer(videoEncoder_->GetCodec(), index);
+           return;
+       }
+       uint8_t *bufferAddr = OH_AVBuffer_GetAddr(buffer);
+       int32_t bufferCapacity = OH_AVBuffer_GetCapacity(buffer);
+       if (bufferAddr != nullptr && bufferCapacity >= static_cast<int32_t>(frameItem.pixels.size())) {
+           std::copy(frameItem.pixels.data(), frameItem.pixels.data() + frameItem.pixels.size(), bufferAddr);
+           OH_AVCodecBufferAttr attr;
+           attr.size = static_cast<int32_t>(frameItem.pixels.size());
+           attr.offset = 0;
+           attr.flags = AVCODEC_BUFFER_FLAGS_NONE;
+           OH_AVBuffer_SetBufferAttr(buffer, &attr);
+       }
+       if (!frameItem.roiStr.empty()) {
+           OH_AVFormat *format = OH_AVBuffer_GetParameter(buffer);
+           if (format != nullptr) {
+               OH_AVFormat_SetStringValue(format, OH_MD_KEY_VIDEO_ENCODER_ROI_PARAMS, frameItem.roiStr.c_str());
+           }
+       }
+       OH_VideoEncoder_PushInputBuffer(videoEncoder_->GetCodec(), index);
+   }
+   ```

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-420
 title: Navigation页面参数如何管理？如：传递参数、参数返回、参数获取
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > Navigation页面参数如何管理？如：传递参数、参数返回、参数获取
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Navigation页面参数如何管理？如：传递参数、参数返回、参数获取
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:51+08:00
-doc_updated_at: 2026-04-27
+scraped_at: 2026-09-02T15:21:22+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:60ff05e17adc4c1c918c3e575e20b87a5bdd3ea993bca30001dd335d81272bf6
 ---
 

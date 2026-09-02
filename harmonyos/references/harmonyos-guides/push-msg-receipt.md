@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-msg-rece
 title: （可选）开发消息回执
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 端云调试 > （可选）开发消息回执
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:57+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:82ad739a31e08c84e5c57ce38317afa2ab28798f1cb1481dea069432fcca94d3
+scraped_at: 2026-09-02T15:00:00+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:e1a8388a2ac134454d3b778a7d061b129b0a6438084501652386ee17607e96fb
 ---
 
 ## 场景介绍
@@ -22,22 +22,22 @@ content_hash: sha256:82ad739a31e08c84e5c57ce38317afa2ab28798f1cb1481dea069432fcc
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“开发与服务”，在项目列表中选择对应的项目，左侧导航栏选择“项目设置”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/zDCG27RSS3O8ZOVHA5O3Kg/zh-cn_image_0000002589325505.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/F45trkQnRS29OBK8OBJ4WA/zh-cn_image_0000002706675220.png)
 2. 在项目列表中找到您的项目，通过“增长 > 推送服务 > 配置”导航到“配置”页签。在该页面可以选择配置项目级回执或者应用级回执，需要注意的是项目级回执消息接收URL地址，对该项目下所有应用生效。如果您同时配置了项目级回执和应用级回执地址，则优先获取应用级回执地址信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/CYP78PHJS_G8z9slsGXzAg/zh-cn_image_0000002589245443.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/AKpQgROFTua65iMxYGx_mQ/zh-cn_image_0000002736434309.png)
 3. 这里以应用级回执举例，选择需要配置回执的应用，点击“开通”应用回执状态。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/6JGrVYsBRteu49LTspZfdA/zh-cn_image_0000002558765636.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/zbeD3uoRRP-kpKBF1zL5fQ/zh-cn_image_0000002706835158.png)
 4. 进入回执参数配置，可以选择已有回执或者新建回执。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/aTUIc75hQoOKgBs2bE7WYQ/zh-cn_image_0000002558605980.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/5fzHRRIyQ4K9J1AYyi15fQ/zh-cn_image_0000002736314265.png)
 
 ## 配置回执参数
 
 点击“新建回执”后，需要配置如下参数：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/NdJg6IqCSB-vpEkZQAcXEA/zh-cn_image_0000002589325507.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/DL_6mgzMSnqhj227XtWbnA/zh-cn_image_0000002706675222.png)
 
 1. 配置消息回执的名称和回调地址。
 
@@ -45,21 +45,21 @@ content_hash: sha256:82ad739a31e08c84e5c57ce38317afa2ab28798f1cb1481dea069432fcc
 
    * 商用CA提示：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/l91X9jwSTGCxRVdaiZ9kNg/zh-cn_image_0000002589245445.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/7uuOrm05TfOc_nY6WflYmA/zh-cn_image_0000002736434311.png)
    * 自签CA提示：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/dBA-kfXQQrqVm0DSYDjQSw/zh-cn_image_0000002558765638.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/dXSB-iE5Shqt5A-S2TNFeA/zh-cn_image_0000002706835160.png)
 
-   说明
+   **说明** 
 
    证书过期将导致您无法接收消息回执，请及时更换回执服务器证书。
 2. 配置回调用户名（可选，下文描述为userName）和回调密钥（可选，下文描述为secret）进行身份验证。回调密钥支持自动生成。
 
    1. 从回执消息的请求Header中获取X-HUAWEI-CALLBACK-ID，举例如下：
 
-      ```
-      1. X-HUAWEI-CALLBACK-ID:
-      2. timestamp=1563*****1261;nonce=a07bfa17-6d82-4b53-a9a2-07c*****eef1;value=E4YeO*********************QXF+c=
+      ```json
+      X-HUAWEI-CALLBACK-ID:
+      timestamp=1563*****1261;nonce=a07bfa17-6d82-4b53-a9a2-07c*****eef1;value=E4YeO*********************QXF+c=
       ```
 
       其中timestamp为回执消息的时间戳（毫秒级时间戳），nonce为UUID随机数，value为签名信息，签名方法为：Base64(HMAC-SHA256(secret, timestamp+nonce+userName))。
@@ -67,35 +67,35 @@ content_hash: sha256:82ad739a31e08c84e5c57ce38317afa2ab28798f1cb1481dea069432fcc
 
       生成签名示例（以下为java代码）：
 
-      ```
-      1. StringBuilder buf = new StringBuilder();
-      2. buf.append(timestamp);
-      3. buf.append(nonce);
-      4. // 在回执配置中的回调用户名
-      5. buf.append(userName);
-      6. // 在回执配置中的回调密钥
-      7. String secret = "your secret";
-      8. String signature = "";
-      9. try {
-      10. Mac mac = Mac.getInstance("HmacSHA256");
-      11. // 老旧版本的回执配置密钥使用secret.getBytes(UTF_8)，新的回执配置密钥使用base64编码
-      12. SecretKeySpec key = new SecretKeySpec(Base64.getDecoder().decode(secret), "HmacSHA256");
-      13. mac.init(key);
-      14. byte[] encodeV = mac.doFinal(buf.toString().getBytes(UTF_8));
-      15. signature = Base64.getEncoder().encodeToString(encodeV);
-      16. } catch (NoSuchAlgorithmException | InvalidKeyException e) {
-      17. // 打印错误日志
-      18. // ...
-      19. }
+      ```java
+      StringBuilder buf = new StringBuilder();
+      buf.append(timestamp);
+      buf.append(nonce);
+      // 在回执配置中的回调用户名
+      buf.append(userName);
+      // 在回执配置中的回调密钥
+      String secret = "your secret";
+      String signature = "";
+      try {
+        Mac mac = Mac.getInstance("HmacSHA256");
+        // 老旧版本的回执配置密钥使用secret.getBytes(UTF_8)，新的回执配置密钥使用base64编码
+        SecretKeySpec key = new SecretKeySpec(Base64.getDecoder().decode(secret), "HmacSHA256");
+        mac.init(key);
+        byte[] encodeV = mac.doFinal(buf.toString().getBytes(UTF_8));
+        signature = Base64.getEncoder().encodeToString(encodeV);
+      } catch (NoSuchAlgorithmException | InvalidKeyException e) {
+        // 打印错误日志
+        // ...
+      }
       ```
 3. 配置回执支持版本
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/_cXFLDG_R6u9-6X7eAQl7g/zh-cn_image_0000002558605982.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/R5Qj3wxlTemKXp8rI3cYig/zh-cn_image_0000002736314267.png)
 
    V1回执不支持场景化消息发送，请使用V2回执。
 4. “测试回执”可以对回执地址进行功能测试，点击“提交”完成回执的创建。
 
-   说明
+   **说明** 
 
    * 华为Push服务器和接收回执消息的应用服务器之间使用HTTPS协议，华为Push服务器会校验应用服务器提供证书的合法性，请使用商用CA签发的HTTPS证书。
    * 如果您的回执配置正确，点击“测试回执”后，您的回执服务器将收到由华为Push服务器发送的测试消息，同一回执版本该消息内容固定，仅供测试使用。
@@ -104,63 +104,63 @@ content_hash: sha256:82ad739a31e08c84e5c57ce38317afa2ab28798f1cb1481dea069432fcc
 
    消息到达回执：
 
-   说明
+   **说明** 
 
    除卡片刷新场景外的其他场景化消息均支持消息到达回执。
 
-   ```
-   1. {
-   2. "statuses": [
-   3. {
-   4. "biTag": "bi**62",
-   5. "pushType": 0,
-   6. "token": "MsDZmCSyuS+Gd***********ZLs8Es",
-   7. "requestId": "169802**1701",
-   8. "appPackageName": "com.**.**",
-   9. "deliveryStatus": {
-   10. "result": 0,
-   11. "timestamp": 1697741455082
-   12. }
-   13. }
-   14. ]
-   15. }
+   ```json
+    {
+     "statuses": [
+       {
+         "biTag": "bi**62",
+         "pushType": 0,
+         "token": "MsDZmCSyuS+Gd***********ZLs8Es",
+         "requestId": "169802**1701",
+         "appPackageName": "com.**.**",
+         "deliveryStatus": {
+           "result": 0,
+           "timestamp": 1697741455082
+         }
+       }
+     ]
+   }
    ```
 
    卡片刷新回执：
 
-   ```
-   1. {
-   2. "statuses": [
-   3. {
-   4. "biTag": "bi**62",
-   5. "pushType": 1,
-   6. "token": "MsDZmCSyuS+Gd***********ZLs8Es",
-   7. "requestId": "169802**1701",
-   8. "appPackageName": "com.**.**",
-   9. "formStatus": {
-   10. "formId": 10086,
-   11. "result": 0,
-   12. "timestamp": 1698027152082
-   13. }
-   14. }
-   15. ]
-   16. }
+   ```json
+   {
+     "statuses": [
+       {
+         "biTag": "bi**62",
+         "pushType": 1,
+         "token": "MsDZmCSyuS+Gd***********ZLs8Es",
+         "requestId": "169802**1701",
+         "appPackageName": "com.**.**",
+         "formStatus": {
+           "formId": 10086,
+           "result": 0,
+           "timestamp": 1698027152082
+         }
+       }
+     ]
+   }
    ```
 
    您的回执服务器必须返回成功的响应，才能测试通过，再点击“提交”完成回执的创建。
 
    成功响应：
 
-   ```
-   1. {
-   2. "code": "0",
-   3. "message": "success"
-   4. }
+   ```json
+   {
+        "code": "0",
+        "message": "success"
+    }
    ```
 
 ## 回执状态码
 
-说明
+**说明** 
 
 通过回执状态码定位问题之前，请优先检查[消息推送接口](../harmonyos-references/push-scenariozed-api-request-struct.md)URL（https://push-api.cloud.huawei.com/**v3**/**[projectId]**/messages:send）是否正确：
 
@@ -182,7 +182,7 @@ content_hash: sha256:82ad739a31e08c84e5c57ce38317afa2ab28798f1cb1481dea069432fcc
 | 27 | 应用进程不在，后台消息被缓存 | 在终端设备上目标应用进程不存在导致后台消息被缓存。 |
 | 31 | 目标应用中不存在指向的页面 | 请参见[点击消息动作](push-send-alert.md#点击消息动作)检查应用skills标签配置和消息请求体中的clickAction字段。 |
 | 51 | 终端设备处于开机未解锁状态 | 用户重启终端设备后，点亮屏幕未解锁。 |
-| 102 | 消息频控丢弃 | 系统会根据现网使用场景和流量进行管控，不合理的使用场景系统会进行频控。 |
+| 102 | 消息频控丢弃 | 系统会根据使用场景和流量进行管控，不合理的使用场景系统会进行频控。 |
 | 144 | profileId不存在 | 发送下行消息时请检查场景化消息payload中的[profileId](../harmonyos-references/push-scenariozed-api-request-param.md#notification)字段。 |
 | 151 | 推送消息未展示或卡片formId不存在 | 1. 请检查卡片是否已经添加到终端设备桌面。  2. 请检查卡片刷新消息中指定的[formId](../harmonyos-references/push-scenariozed-api-request-param.md#formupdatepayload-卡片刷新消息)是否存在。 |
 | 155 | 实况窗通知更新失败 | 请检查您的通知是否未创建或已经过期。 |
@@ -199,6 +199,6 @@ content_hash: sha256:82ad739a31e08c84e5c57ce38317afa2ab28798f1cb1481dea069432fcc
 | 268 | 未携带status字段 | 通过Push Kit创建的实况窗，在对该实况窗更新时未携带[status](../harmonyos-references/push-scenariozed-api-request-param.md#liveviewpayload-实况窗消息)字段。 |
 | 269 | 重复创建实况窗 | 通过Push Kit创建的实况窗重复（[activityId](../harmonyos-references/push-scenariozed-api-request-param.md#liveviewpayload-实况窗消息)相同）。 |
 
-说明
+**说明** 
 
 您需要对上述状态中的2、5、6、10做过滤处理，减少对这些用户的无效推送。

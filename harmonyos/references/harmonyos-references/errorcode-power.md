@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 系统电源管理错误码
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 错误码 > 系统电源管理错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:97020fe69dfaae967389cbfc130aa63b87d4c6c1e5296e020a99a363f9e8b796
+scraped_at: 2026-09-02T15:02:05+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:10c988c07b68b3aa13dbd33b4f9f0d1ec8fe5fff5422a5e8d1e95ccd01032e41
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 4900101 连接服务失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -35,8 +33,8 @@ Failed to connect to the service.
 
 1. 在控制台中输入如下命令，查看当前的系统服务列表。
 
-   ```
-   1. > hdc shell hidumper -ls
+   ```bash
+   > hdc shell hidumper -ls
    ```
 2. 查看系统服务列表中是否包含PowerManagerService系统服务。
 
@@ -93,3 +91,57 @@ Setting the power mode failed.
 **处理步骤**
 
 当前电源模式不可切换至目标电源模式，可使用[getPowerMode](js-apis-power.md#powergetpowermode9)接口查询当前电源模式。
+
+## 4900400 接口入参错误
+
+**错误信息**
+
+The input parameter is invalid.
+
+**错误描述**
+
+接口的入参错误。
+
+**可能原因**
+
+入参超出范围或为空。
+
+**处理步骤**
+
+此错误说明入参值不符合要求，请检查入参值是否正确。
+
+## 4900501 读电源配置节点失败
+
+**错误信息**
+
+Failed to read the power configuration value.
+
+**错误描述**
+
+读操作失败。
+
+**可能原因**
+
+节点不存在。
+
+**处理步骤**
+
+请检查入参节点是否存在。
+
+## 4900601 写电源配置节点失败
+
+**错误信息**
+
+Failed to write the power configuration value.
+
+**错误描述**
+
+写操作失败。
+
+**可能原因**
+
+节点不存在。
+
+**处理步骤**
+
+请检查入参节点是否存在。

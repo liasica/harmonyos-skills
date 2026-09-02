@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-ux-b106
 title: UX样式或效果的变更
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.1(13) > OS平台能力 > OS平台行为变更说明 > HarmonyOS 5.0.1(13) Beta3引入的行为变更 > UX样式或效果的变更
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.1(13) > OS平台能力 > OS平台行为变更说明 > HarmonyOS 5.0.1(13) Beta3引入的行为变更 > UX样式或效果的变更
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:58+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:c4d08d0d0a8cb0bb020a2fcc806773baadd0e9c8bc0f0b617fb4465526f8c929
+scraped_at: 2026-09-02T14:58:52+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:4342cf7b86705c670878d569ab502a7ea051e654b96e6801cc38b0f68ea699d1
 ---
 
 ## QRCode深浅色适配修改
@@ -82,23 +82,23 @@ AnimateParam和KeyframeAnimateParam的onFinish接口。
 
 示例：
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. @State message: string = 'Hello World';
+```ts
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
 
-6. build() {
-7. Column() {
-8. TextInput({text: "输入文字1"})
-9. .showCounter(true)
-10. .maxLength(10)
-11. TextInput({text: "输入文字2"})
-12. }
-13. .height('100%')
-14. .width('100%')
-15. }
-16. }
+  build() {
+    Column() {
+      TextInput({text: "输入文字1"})
+        .showCounter(true)
+        .maxLength(10)
+      TextInput({text: "输入文字2"})
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 **起始API Level**
@@ -123,7 +123,7 @@ TextInput组件showCounter接口。
 
 此变更不涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.1(13)时生效。
 
@@ -177,47 +177,47 @@ barOverlap接口
 
 当barOverlap设置为true时，开发者若期望无模糊效果，设置barBackgroundBlurStyle为BlurStyle.NONE。示例如下：
 
-```
-1. @Entry
-2. @Component
-3. struct barHeightTest {
-4. @State arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-5. build() {
-6. Column() {
-7. Tabs({ barPosition: BarPosition.End }) {
-8. TabContent() {
-9. Column() {
-10. List({ space: 10 }) {
-11. ForEach(this.arr, (item: number) => {
-12. ListItem() {
-13. Text("item" + item).width('80%').height(200).fontSize(16).textAlign(TextAlign.Center).backgroundColor('#fff8b81e')
-14. }
-15. }, (item: string) => item)
-16. }.width('100%').height('100%')
-17. .lanes(2).alignListItem(ListItemAlign.Center)
-18. }.width('100%').height('100%')
-19. .backgroundColor(Color.Pink)
-20. }
-21. .tabBar(new BottomTabBarStyle($r('sys.media.ohos_icon_mask_svg'), "测试0"))
+```ts
+@Entry
+@Component
+struct barHeightTest {
+  @State arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  build() {
+    Column() {
+      Tabs({ barPosition: BarPosition.End }) {
+        TabContent() {
+          Column() {
+            List({ space: 10 }) {
+              ForEach(this.arr, (item: number) => {
+                ListItem() {
+                  Text("item" + item).width('80%').height(200).fontSize(16).textAlign(TextAlign.Center).backgroundColor('#fff8b81e')
+                }
+              }, (item: string) => item)
+            }.width('100%').height('100%')
+            .lanes(2).alignListItem(ListItemAlign.Center)
+          }.width('100%').height('100%')
+          .backgroundColor(Color.Pink)
+        }
+        .tabBar(new BottomTabBarStyle($r('sys.media.ohos_icon_mask_svg'), "测试0"))
 
-23. TabContent() {
-24. Column() {
-25. List({ space: 10 }) {
-26. ForEach(this.arr, (item: number) => {
-27. ListItem() {
-28. Text("item" + item).width('80%').height(200).fontSize(16).textAlign(TextAlign.Center).backgroundColor('#fff8b81e')
-29. }
-30. }, (item: string) => item)
-31. }.width('100%').height('100%')
-32. .lanes(2).alignListItem(ListItemAlign.Center)
-33. }.width('100%').height('100%')
-34. .backgroundColor(Color.Blue)
-35. }
-36. .tabBar(new BottomTabBarStyle($r('sys.media.ohos_icon_mask_svg'), "测试1"))
-37. }
-38. .barOverlap(true)
-39. .barBackgroundBlurStyle(BlurStyle.NONE) // 关闭TabBar模糊效果
-40. }
-41. }
-42. }
+        TabContent() {
+          Column() {
+            List({ space: 10 }) {
+              ForEach(this.arr, (item: number) => {
+                ListItem() {
+                  Text("item" + item).width('80%').height(200).fontSize(16).textAlign(TextAlign.Center).backgroundColor('#fff8b81e')
+                }
+              }, (item: string) => item)
+            }.width('100%').height('100%')
+            .lanes(2).alignListItem(ListItemAlign.Center)
+          }.width('100%').height('100%')
+          .backgroundColor(Color.Blue)
+        }
+        .tabBar(new BottomTabBarStyle($r('sys.media.ohos_icon_mask_svg'), "测试1"))
+      }
+      .barOverlap(true)
+      .barBackgroundBlurStyle(BlurStyle.NONE) // 关闭TabBar模糊效果
+    }
+  }
+}
 ```

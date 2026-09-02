@@ -1,14 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-agreement-overview
 title: 密钥协商介绍及算法规格
-breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥协商 > 密钥协商介绍及算法规格
+breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥协商介绍及算法规格
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:35+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:14ab888467c253d703e7f15d0e3c888ac0fcc2a13530ad8d039b374dee629a5d
+scraped_at: 2026-09-02T14:50:00+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1c449b3ee69f2ac0269bf2f6956fc5273765887c67d4d21a32012b31505ad97d
 ---
 
-在非安全通道环境中，需要不共享任何秘密的情况下，协商出一个安全的共享密钥，可以使用密钥协商算法。
+在非安全通道环境中，需要在通信双方不预先共享任何秘密的情况下协商出一个安全的共享密钥时，可以使用密钥协商算法。
 
 接下来将说明系统目前支持的算法及其对应的规格。
 
@@ -20,6 +20,7 @@ ECDH（Elliptic Curve Diffie–Hellman key exchange），算法库框架提供�
 
 | 非对称密钥算法 | 字符串参数 | API版本 |
 | --- | --- | --- |
+| ECC | ECC192 | 26.0.0+ |
 | ECC | ECC224 | 9+ |
 | ECC | ECC256 | 9+ |
 | ECC | ECC384 | 9+ |
@@ -75,3 +76,10 @@ DH（Diffie–Hellman key exchange），算法库框架提供了DH密钥协商�
 | DH | DH | 11+ |
 
 如表中最后一行所示，为了兼容由密钥参数生成的密钥，DH密钥协商参数输入密钥类型时支持不指定知名安全素数群，密钥协商运算结果由实际输入的密钥决定，且该场景支持非标准群组的密钥协商。
+
+* **[使用ECDH进行密钥协商(ArkTS)](crypto-key-agreement-using-ecdh.md)**
+* **[使用ECDH进行密钥协商(C/C++)](crypto-key-agreement-using-ecdh-ndk.md)**
+* **[使用X25519进行密钥协商(ArkTS)](crypto-key-agreement-using-x25519.md)**
+* **[使用X25519进行密钥协商(C/C++)](crypto-key-agreement-using-x25519-ndk.md)**
+* **[使用DH进行密钥协商(ArkTS)](crypto-key-agreement-using-dh.md)**
+* **[使用DH进行密钥协商(C/C++)](crypto-key-agreement-using-dh-ndk.md)**

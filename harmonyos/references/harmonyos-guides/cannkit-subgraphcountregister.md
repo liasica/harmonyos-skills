@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-subgr
 title: SubgraphCountRegister
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator > SubgraphCountRegister
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:49+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:65e259e3b4d4221f7938e7b5a50f7906a59727fe5fe5f8d81abba68a77a68a33
+content_hash: sha256:045170df5c52cfd8a5e06c4333b4f545147b97da48b75591bd0d3e937aa9d8a2
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:65e259e3b4d4221f7938e7b5a50f7906a59727fe5fe5f8d81abba68a77a
 
 ## 函数原型
 
-```
-1. void SubgraphCountRegister(const char_t *ir_name, uint32_t count);
+```cpp
+void SubgraphCountRegister(const char_t *ir_name, uint32_t count);
 ```
 
 ## 参数说明

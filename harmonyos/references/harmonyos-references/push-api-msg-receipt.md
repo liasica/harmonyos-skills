@@ -3,16 +3,10 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-api-
 title: 消息回执
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 消息回执
 category: harmonyos-references
-scraped_at: 2026-04-29T14:09:11+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:737c7af1bff3f6fddd301b6b5b0298037b8de2a5a44fc0e0d21a6a17919abc98
+scraped_at: 2026-09-02T15:03:07+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:31f8d046189e958f617dcef3b20973ef60663203aa1cefe0bc01f2386139bf79
 ---
-
-说明
-
-为了更安全的网络访问，华为Push Kit于2022年11月30日关闭Push相关域名的TLS1.0、TLS1.1协议及规定之外的加密套件，当前应用使用TLS1.2以下协议或使用规定外的加密套件将无法正常推送消息。
-
-若您的应用访问Push相关域名使用协议是TLS1.0或TLS1.1，可能无法正常发送消息，请您务必升级到TLS1.2及以上版本。
 
 ## 功能介绍
 
@@ -22,11 +16,7 @@ content_hash: sha256:737c7af1bff3f6fddd301b6b5b0298037b8de2a5a44fc0e0d21a6a17919
 
 您需要在AppGallery Connect上开通“消息回执”权益，如何开通请参见[开通回执权益](../harmonyos-guides/push-msg-receipt.md#开通回执权益)。
 
-回执接口版本分为V1和V2，场景化消息发送**仅V2版本的回执接口支持**。
-
-**回执接口V2版本**支持的场景化消息接口为：
-
-https://push-api.cloud.huawei.com/v3/[projectId]/messages:send
+回执接口版本分为V1和V2，不同版本的回执消息请求头和响应参数相同，仅请求体不同。场景化消息推送仅支持V2版本回执。
 
 ## 接口原型
 
@@ -77,22 +67,22 @@ https://push-api.cloud.huawei.com/v3/[projectId]/messages:send
 
 ## 请求示例
 
-```
-1. {
-2. "statuses": [
-3. {
-4. "biTag": "131415",
-5. "pushType": 0,
-6. "appPackageName": "com.****",
-7. "token": "148896*******000001",
-8. "requestId": "1*******0",
-9. "deliveryStatus":{
-10. "result": 0,
-11. "timestamp": 1607832761768
-12. }
-13. }
-14. ]
-15. }
+```json
+{
+  "statuses": [
+    {
+      "biTag": "131415",
+      "pushType": 0,
+      "appPackageName": "com.****",
+      "token": "148896*******000001",
+      "requestId": "1*******0",
+      "deliveryStatus":{
+        "result": 0,
+        "timestamp": 1607832761768
+      }
+    }
+  ]
+}
 ```
 
 ## 响应参数
@@ -104,9 +94,9 @@ https://push-api.cloud.huawei.com/v3/[projectId]/messages:send
 
 ## 响应示例
 
-```
-1. {
-2. "code": "0",
-3. "message": "success"
-4. }
+```json
+{
+  "code": "0",
+  "message": "success"
+}
 ```

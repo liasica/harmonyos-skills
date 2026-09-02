@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-93
 title: Web组件的内存占用与内存回收机制
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web组件的内存占用与内存回收机制
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:50+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:54+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:e161b17025909861346dffac18e5098c4385ffd2b3a889fc34a0b42282d70f74
 ---
 

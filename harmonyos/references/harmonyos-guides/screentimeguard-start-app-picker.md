@@ -3,27 +3,27 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 拉起应用选择页
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 应用选择页 > 拉起应用选择页
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:40:28+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:296416dbac927b73da5ea62f3834c69c559cd24807098b549501456bbfd67a27
+scraped_at: 2026-09-02T15:00:02+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:eb2e5fcc323d8854fb6e94ef53c8a9a522d78fbbc0706850daaf9592a7dccbb1
 ---
 
 ## 场景介绍
 
-在用户需要为特定应用设置使用时长或使用限制策略的场景下，开发者通过调用拉起应用选择页的接口拉起选择页后，使得用户能够选择目标应用。在用户选择完毕并点击完成按钮后，接口会返回应用的token。开发者获取到目标应用的token后，可以根据token为选定应用配置管控策略。
+在需要为指定应用设置管控规则的场景下，管控应用通过调用拉起应用选择页的接口拉起选择页后，使得用户能够选择目标应用。在用户选择完毕并点击完成按钮后，接口会返回选中应用的token。管控应用获取到目标应用的token后，可以根据token为选定应用设置管控规则。
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/TssD-09FTNC4S1YT467raw/zh-cn_image_0000002558765668.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/aEOwagcEScufEqTvUrQ13w/zh-cn_image_0000002736314299.png)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/AqX4THsvQVuapK6Q3WgAJw/zh-cn_image_0000002558606012.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/SWDUS626SwG8ciLTGy-OYw/zh-cn_image_0000002706675256.png)
 
 流程说明：
 
 1. 应用调用拉起应用选择页的接口，拉起健康使用设备查询开发者是否已申请权限，以及用户是否授权。
-2. 若状态为未授权，则抛出对应错误码；若状态为已授权，应用将拉起应用选择列表，并根据传入应用token信息预勾选对应应用。
+2. 若开发者没有权限或用户没有授权，则抛出相应错误码。若开发者有权限且用户已授权，应用将拉起应用选择列表，并根据传入应用token信息预勾选对应应用。
 3. 应用选择页将用户选中的应用列表转化为token列表返回给调用接口的应用。
 
 ## 接口说明
@@ -34,7 +34,7 @@ content_hash: sha256:296416dbac927b73da5ea62f3834c69c559cd24807098b549501456bbfd
 | --- | --- |
 | [startAppPicker](../harmonyos-references/screentimeguard-app-picker.md#startapppicker)(context: [common.Context](../harmonyos-references/js-apis-inner-application-context.md), appSelection: [guardService.AppInfo](../harmonyos-references/screentimeguard-guardservice.md#appinfo)): Promise<string[]> | 拉起应用选择页。 |
 
-说明
+**说明** 
 
 1. 应用选择页面中的应用列表不包含的系统应用包括：电话、联系人、设置、未成年模式等。
 2. 应用选择页面中的应用列表不包含管控发起应用本身和已授权的管控应用。
@@ -47,30 +47,24 @@ content_hash: sha256:296416dbac927b73da5ea62f3834c69c559cd24807098b549501456bbfd
 
 1. 导入相关模块。
 
-   ```
-   1. import { appPicker } from '@kit.ScreenTimeGuardKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
-   3. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { appPicker } from '@kit.ScreenTimeGuardKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 调用startAppPicker，拉起应用选择页。
 
-   ```
-   1. @Entry
-   2. @Component
-   3. struct TestPage {
-   4. build() {
-   5. Column() {
-   6. Button("TestStartAppPicker")
-   7. .onClick(async () => {
-   8. try {
-   9. await appPicker.startAppPicker(this.getUIContext().getHostContext(), { appTokens: [] });
-   10. } catch (err) {
-   11. const message = (err as BusinessError).message;
-   12. const code = (err as BusinessError).code;
-   13. hilog.error(0x0000, `ScreenTimeGuard:startAppPicker`, `startAppPicker failed error code: ${code}, message: ${message}`);
-   14. }
-   15. })
-   16. }
-   17. }
-   18. }
+   ```typescript
+   private async getAppTokens(selectedAppTokens: string[]): Promise<string[]> {
+     try {
+       let newSelectedAppTokens: string[] =
+         await appPicker.startAppPicker(this.getUIContext().getHostContext(), { appTokens: selectedAppTokens });
+       return newSelectedAppTokens;
+     } catch(error) {
+       let err: BusinessError = error as BusinessError;
+       hilog.error(0x0000, 'GuardService',
+         `startAppPicker fail, errCode is ${err.code}, errMessage is ${err.message}`);
+       return selectedAppTokens;
+     }
+   }
    ```

@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/appgaller
 title: commentManager（应用评论服务）
 breadcrumb: API参考 > 应用服务 > AppGallery Kit（应用市场服务） > ArkTS API > commentManager（应用评论服务）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:21+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e8c0d1e43470540ca21630d65ff3d682cabae078360245fe2ea1c17533820492
+scraped_at: 2026-09-02T15:02:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8a97d0dd32ccd859bf0c2f309f940aa682fe3576e31b842c0c43794dad65208a
 ---
 
 提供应用内评论能力，用户无需进入应用市场应用详情页进行评论。
 
-说明
+**说明** 
 
 调用接口需捕获异常。
 
@@ -18,15 +18,11 @@ content_hash: sha256:e8c0d1e43470540ca21630d65ff3d682cabae078360245fe2ea1c175338
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { commentManager } from '@kit.AppGalleryKit';
+```typescript
+import { commentManager } from '@kit.AppGalleryKit';
 ```
 
 ## commentManager.showCommentDialog
-
-PhonePC/2in1Tablet
 
 showCommentDialog(context: common.UIExtensionContext | common.UIAbilityContext): Promise<void>
 
@@ -52,7 +48,7 @@ showCommentDialog(context: common.UIExtensionContext | common.UIAbilityContext):
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](store-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-appgallery.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -68,40 +64,40 @@ showCommentDialog(context: common.UIExtensionContext | common.UIAbilityContext):
 
 **示例：**
 
-```
-1. import { commentManager } from '@kit.AppGalleryKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import type { common } from '@kit.AbilityKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { commentManager } from '@kit.AppGalleryKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import type { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. @Entry
-7. @Component
-8. struct Index {
-9. @State message: string = 'showCommentDialog'
+@Entry
+@Component
+struct Index {
+  @State message: string = 'showCommentDialog'
 
-11. build() {
-12. Row() {
-13. Column() {
-14. Text(this.message)
-15. .fontSize(50)
-16. .fontWeight(FontWeight.Bold)
-17. .onClick(() => {
-18. try {
-19. const uiContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-20. // 拉起应用评分弹窗
-21. commentManager.showCommentDialog(uiContext).then(()=>{
-22. hilog.info(0, 'TAG', "succeeded in showing commentDialog.");
-23. }).catch((error: BusinessError<Object>) => {
-24. hilog.error(0, 'TAG', `showCommentDialog failed, Code: ${error.code}, message: ${error.message}`);
-25. });
-26. } catch (error) {
-27. hilog.error(0, 'TAG', `showCommentDialog failed, Code: ${error.code}, message: ${error.message}`);
-28. }
-29. })
-30. }
-31. .width('100%')
-32. }
-33. .height('100%')
-34. }
-35. }
+  build() {
+    Row() {
+      Column() {
+        Text(this.message)
+          .fontSize(50)
+          .fontWeight(FontWeight.Bold)
+          .onClick(() => {
+            try {
+              const uiContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+              // 拉起应用评分弹窗
+              commentManager.showCommentDialog(uiContext).then(()=>{
+                hilog.info(0, 'TAG', "succeeded in showing commentDialog.");
+              }).catch((error: BusinessError<Object>) => {
+                hilog.error(0, 'TAG', `showCommentDialog failed, Code: ${error.code}, message: ${error.message}`);
+              });
+            } catch (error) {
+              hilog.error(0, 'TAG', `showCommentDialog failed, Code: ${error.code}, message: ${error.message}`);
+            }
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-universal-
 title: 如何保存私钥等重要数据
 breadcrumb: FAQ > 系统开发 > 安全 > 密钥管理（Universal Keystore） > 如何保存私钥等重要数据
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:03+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:57+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:2ec64c60e07aa733750cc84596fa9f0f11162bb39f07173cdcb209e0cd3dea5e
 ---
 

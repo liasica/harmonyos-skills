@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-compi
 title: GetStorageFormat
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > CompileTimeTensorDesc > GetStorageFormat
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:50+08:00
+scraped_at: 2026-09-02T14:50:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:32069131eea913bdd20a755d654a68b29e3f412ae58d116ffa542684bf00a054
+content_hash: sha256:e0c0a6766cb7d158bd8e36b126b2f424ce7a485f556cf3c3a31a6f33bcfc5f90
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:32069131eea913bdd20a755d654a68b29e3f412ae58d116ffa542684bf0
 
 ## 函数原型
 
-```
-1. ge::Format GetStorageFormat() const
+```cpp
+ge::Format GetStorageFormat() const
 ```
 
 ## 参数说明
@@ -32,16 +32,16 @@ content_hash: sha256:32069131eea913bdd20a755d654a68b29e3f412ae58d116ffa542684bf0
 
 ## 调用示例
 
-```
-1. auto dtype_ = ge::DataType::DT_INT32;
-2. StorageFormat fmt_(ge::Format::FORMAT_NC, ge::FORMAT_NCHW, {});
-3. ExpandDimsType type_("1001");
-4. gert::CompileTimeTensorDesc td;
-5. td.SetDataType(dtype_);
-6. auto dtype = td.GetDataType(); // ge::DataType::DT_INT32;
-7. td.SetStorageFormat(fmt_.GetStorageFormat());
-8. auto storage_fmt = td.GetStorageFormat(); // ge::FORMAT_NCHW
-9. td.SetOriginFormat(fmt_.GetOriginFormat());
-10. auto origin_fmt = td.GetOriginFormat(); // ge::Format::FORMAT_NC
-11. td.SetExpandDimsType(type_);auto type = td.GetExpandDimsType(); // type_("1001")
+```cpp
+auto dtype_ = ge::DataType::DT_INT32;
+StorageFormat fmt_(ge::Format::FORMAT_NC, ge::FORMAT_NCHW, {});
+ExpandDimsType type_("1001");
+gert::CompileTimeTensorDesc td;
+td.SetDataType(dtype_);
+auto dtype = td.GetDataType(); // ge::DataType::DT_INT32;
+td.SetStorageFormat(fmt_.GetStorageFormat());
+auto storage_fmt = td.GetStorageFormat(); // ge::FORMAT_NCHW
+td.SetOriginFormat(fmt_.GetOriginFormat());
+auto origin_fmt = td.GetOriginFormat(); // ge::Format::FORMAT_NC
+td.SetExpandDimsType(type_);auto type = td.GetExpandDimsType(); // type_("1001")
 ```

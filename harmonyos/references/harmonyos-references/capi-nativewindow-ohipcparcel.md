@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: OHIPCParcel
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 结构体 > OHIPCParcel
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:34+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:922bb6eb5a1db2ad6862c26c332ef2e0e4fb090aa662dbe764ed9d83099cf36e
+scraped_at: 2026-09-02T14:53:10+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b287881e698fc67e360a036e07fe144fa1bba67364ef5a5620beb52fe029cafe
 ---
 
-```
-1. typedef struct OHIPCParcel OHIPCParcel
+```c
+typedef struct OHIPCParcel OHIPCParcel
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供对IPC序列化对象的访问功能。
 

@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-clou
 title: CloudDisk_DisplayNameInfo
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > C API > 结构体 > CloudDisk_DisplayNameInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:54+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:fcbbe3044f85a2cf02317a3d77542bf764de04746d09eb9ef4421ec77a779705
+scraped_at: 2026-09-02T15:01:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4eb1eaeac3f03b0a81ad31659aec414989f144adfa5e68fc3d2c6c173a584486
 ---
 
-```
-1. typedef struct CloudDisk_DisplayNameInfo {...} CloudDisk_DisplayNameInfo
+```c
+typedef struct CloudDisk_DisplayNameInfo {...} CloudDisk_DisplayNameInfo
 ```
 
 ## 概述
-
-PC/2in1Tablet
 
 定义同步根路径的显示名称信息。
 
@@ -26,11 +24,7 @@ PC/2in1Tablet
 
 ## 汇总
 
-PC/2in1Tablet
-
 ### 成员变量
-
-PC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |

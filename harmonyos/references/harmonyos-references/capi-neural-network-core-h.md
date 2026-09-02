@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-neur
 title: neural_network_core.h
 breadcrumb: API参考 > AI > Neural Network Runtime Kit（Neural Network运行时服务） > C API > 头文件 > neural_network_core.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:10+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:87ff6164b29737f771cc8113efcf30b7b7542ffe2459498e9fb3b3104ea01367
+scraped_at: 2026-09-02T15:03:12+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:b53f66ef41d8e53e0decd79be51f8c6a0bceffabdbb862c49746da78ebe89e59
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 Neural Network Core模块接口定义，AI推理框架使用Neural Network Core提供的Native接口，完成模型编译，并在加速硬件上执行推理和计算。
 
@@ -30,11 +28,7 @@ Neural Network Core的接口目前均不支持多线程并发调用。
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 函数
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -45,14 +39,14 @@ PhonePC/2in1TabletTV
 | [OH\_NN\_ReturnCode OH\_NNCompilation\_ExportCacheToBuffer(OH\_NNCompilation \*compilation,const void \*buffer,size\_t length,size\_t \*modelSize)](capi-neural-network-core-h.md#oh_nncompilation_exportcachetobuffer) | 将模型缓存写入到指定内存区域。  模型缓存的相关描述参考[OH\_NNCompilation\_SetCache](capi-neural-network-core-h.md#oh_nncompilation_setcache)。  模型缓存是编译构建的结果[OH\_NNCompilation\_Build](capi-neural-network-core-h.md#oh_nncompilation_build)，因此必须在[OH\_NNCompilation\_Build](capi-neural-network-core-h.md#oh_nncompilation_build)之后调用该接口。 |
 | [OH\_NN\_ReturnCode OH\_NNCompilation\_ImportCacheFromBuffer(OH\_NNCompilation \*compilation,const void \*buffer,size\_t modelSize)](capi-neural-network-core-h.md#oh_nncompilation_importcachefrombuffer) | 从指定内存区域读取模型缓存。  模型缓存的相关描述参考[OH\_NNCompilation\_SetCache](capi-neural-network-core-h.md#oh_nncompilation_setcache)。  调用[OH\_NNCompilation\_ImportCacheFromBuffer](capi-neural-network-core-h.md#oh_nncompilation_importcachefrombuffer)后，应调用[OH\_NNCompilation\_Build](capi-neural-network-core-h.md#oh_nncompilation_build)完成恢复。  **compilation**只将**buffer**指针保存在里面，而不是复制其数据。您不能在**compilation**被销毁之前释放内存**buffer**。 |
 | [OH\_NN\_ReturnCode OH\_NNCompilation\_AddExtensionConfig(OH\_NNCompilation \*compilation,const char \*configName,const void \*configValue,const size\_t configValueSize)](capi-neural-network-core-h.md#oh_nncompilation_addextensionconfig) | 为自定义硬件属性添加扩展配置。  某些设备有自己的特定属性，这些属性尚未在NNRt中打开。该接口为您提供了另一种方式设置设备的这些自定义硬件属性。  您应该从设备供应商的文档查询它们的名称和值，并将它们逐一添加到编译实例中。这些属性将直接传递给设备驱动程序，如果驱动程序无法解析它们，该接口将返回错误码。  调用[OH\_NNCompilation\_Build](capi-neural-network-core-h.md#oh_nncompilation_build)后，**configName**和**configValue**就可以释放了。 |
-| [OH\_NN\_ReturnCode OH\_NNCompilation\_SetDevice(OH\_NNCompilation \*compilation, size\_t deviceID)](capi-neural-network-core-h.md#oh_nncompilation_setdevice) | 指定模型编译和计算的硬件。  编译阶段，需要指定模型编译和执行计算的硬件设备。先调用[OH\_NNDevice\_GetAllDevicesID](capi-neural-network-core-h.md#oh_nndevice_getalldevicesid)获取可用的设备ID，通过[OH\_NNDevice\_GetType](capi-neural-network-core-h.md#oh_nndevice_gettype)和[OH\_NNDevice\_GetType](capi-neural-network-core-h.md#oh_nndevice_gettype)获取设备信息后，将期望编译执行的设备ID传入该接口进行设置。 |
+| [OH\_NN\_ReturnCode OH\_NNCompilation\_SetDevice(OH\_NNCompilation \*compilation, size\_t deviceID)](capi-neural-network-core-h.md#oh_nncompilation_setdevice) | 指定模型编译和计算的硬件。  编译阶段，需要指定模型编译和执行计算的硬件设备。先调用[OH\_NNDevice\_GetAllDevicesID](capi-neural-network-core-h.md#oh_nndevice_getalldevicesid)获取可用的设备ID，通过[OH\_NNDevice\_GetType](capi-neural-network-core-h.md#oh_nndevice_gettype)和[OH\_NNDevice\_GetName](capi-neural-network-core-h.md#oh_nndevice_getname)获取设备信息后，将期望编译执行的设备ID传入该接口进行设置。 |
 | [OH\_NN\_ReturnCode OH\_NNCompilation\_SetCache(OH\_NNCompilation \*compilation, const char \*cachePath, uint32\_t version)](capi-neural-network-core-h.md#oh_nncompilation_setcache) | 设置编译模型的缓存目录和版本。 |
 | [OH\_NN\_ReturnCode OH\_NNCompilation\_SetPerformanceMode(OH\_NNCompilation \*compilation,OH\_NN\_PerformanceMode performanceMode)](capi-neural-network-core-h.md#oh_nncompilation_setperformancemode) | 设置模型计算的性能模式。  Neural Network Runtime 支持为模型计算设置性能模式，满足低功耗到极致性能的需求。如果编译阶段没有调用该接口设置性能模式，编译实例为模型默认分配[OH\_NN\_PERFORMANCE\_NONE](capi-neural-network-runtime-type-h.md#oh_nn_performancemode)模式。在[OH\_NN\_PERFORMANCE\_NONE](capi-neural-network-runtime-type-h.md#oh_nn_performancemode)模式下，硬件按默认的性能模式执行计算。 在不支持性能模式设置的硬件上调用该接口，将返回[OH\_NN\_UNAVAILABLE\_DEVICE](capi-neural-network-runtime-type-h.md#oh_nn_returncode)错误码。 |
 | [OH\_NN\_ReturnCode OH\_NNCompilation\_SetPriority(OH\_NNCompilation \*compilation, OH\_NN\_Priority priority)](capi-neural-network-core-h.md#oh_nncompilation_setpriority) | 设置模型计算的优先级。  Neural Network Runtime 支持为模型设置计算优先级，优先级仅作用于相同uid进程创建的模型，不同uid进程、不同设备的优先级不会相互影响。 在不支持优先级设置的硬件上调用该接口，将返回[OH\_NN\_UNAVAILABLE\_DEVICE](capi-neural-network-runtime-type-h.md#oh_nn_returncode)错误码。 |
 | [OH\_NN\_ReturnCode OH\_NNCompilation\_EnableFloat16(OH\_NNCompilation \*compilation, bool enableFloat16)](capi-neural-network-core-h.md#oh_nncompilation_enablefloat16) | 是否以float16的浮点数精度计算。  浮点模型默认使用float32精度计算。如果在支持float16精度的硬件上调用该接口，float32浮点数精度的模型将以float16的精度执行计算，可减少内存占用和执行时间。 该选项对于定点模型是无效的，例如int8类型的定点模型。  在不支持float16精度计算的硬件上调用该接口，将返回[OH\_NN\_UNAVAILABLE\_DEVICE](capi-neural-network-runtime-type-h.md#oh_nn_returncode)错误码。 |
 | [OH\_NN\_ReturnCode OH\_NNCompilation\_Build(OH\_NNCompilation \*compilation)](capi-neural-network-core-h.md#oh_nncompilation_build) | 执行模型编译。  完成编译配置后，调用该接口执行模型编译。编译实例将模型和编译选项推送至硬件设备进行编译。  在调用该接口后，无法进行额外的编译操作，调用[OH\_NNCompilation\_SetDevice](capi-neural-network-core-h.md#oh_nncompilation_setdevice)、[OH\_NNCompilation\_SetCache](capi-neural-network-core-h.md#oh_nncompilation_setcache)、[OH\_NNCompilation\_SetPerformanceMode](capi-neural-network-core-h.md#oh_nncompilation_setperformancemode)、[OH\_NNCompilation\_SetPriority](capi-neural-network-core-h.md#oh_nncompilation_setpriority)和[OH\_NNCompilation\_EnableFloat16](capi-neural-network-core-h.md#oh_nncompilation_enablefloat16)接口将返回[OH\_NN\_OPERATION\_FORBIDDEN](capi-neural-network-runtime-type-h.md#oh_nn_returncode)。 |
 | [void OH\_NNCompilation\_Destroy(OH\_NNCompilation \*\*compilation)](capi-neural-network-core-h.md#oh_nncompilation_destroy) | 销毁Compilation实例。  调用[OH\_NNCompilation\_Construct](capi-neural-network-core-h.md#oh_nncompilation_construct)、[OH\_NNCompilation\_ConstructWithOfflineModelFile](capi-neural-network-core-h.md#oh_nncompilation_constructwithofflinemodelfile)、[OH\_NNCompilation\_ConstructWithOfflineModelBuffer](capi-neural-network-core-h.md#oh_nncompilation_constructwithofflinemodelbuffer)、[OH\_NNCompilation\_ConstructForCache](capi-neural-network-core-h.md#oh_nncompilation_constructforcache)创建的编译实例需要调用该接口主动销毁。 如果compilation为空指针或者\*compilation为空指针，该接口仅打印警告日志，不执行销毁操作。 |
-| [NN\_TensorDesc \*OH\_NNTensorDesc\_Create()](capi-neural-network-core-h.md#oh_nntensordesc_create) | 创建一个[NN\_TensorDesc](capi-neuralnetworkruntime-nn-tensordesc.md)实例。  [NN\_TensorDesc](capi-neuralnetworkruntime-nn-tensordesc.md)描述了各种张量属性，如名称/数据类型/形状/格式等。  可以调用以下接口，基于传入的[NN\_TensorDesc](capi-neuralnetworkruntime-nn-tensordesc.md)实例创建[NN\_Tensor](capi-neuralnetworkruntime-nn-tensor.md)实例：  [OH\_NNTensor\_Create](capi-neural-network-core-h.md#oh_nntensor_create)  [OH\_NNTensor\_CreateWithSize](capi-neural-network-core-h.md#oh_nntensor_createwithsize)  [OH\_NNTensor\_CreateWithFd](capi-neural-network-core-h.md#oh_nntensor_createwithfd)  该接口会将[NN\_TensorDesc](capi-neuralnetworkruntime-nn-tensordesc.md)实例复制到[NN\_Tensor](capi-neuralnetworkruntime-nn-tensor.md)中，因此您可以创建多个[NN\_Tensor](capi-neuralnetworkruntime-nn-tensor.md)个实例，并持有相同的[NN\_TensorDesc](capi-neuralnetworkruntime-nn-tensordesc.md)实例。当[NN\_TensorDesc](capi-neuralnetworkruntime-nn-tensordesc.md)实例不再使用时，您应该调用[OH\_NNTensorDesc\_Destroy](capi-neural-network-core-h.md#oh_nntensordesc_destroy)接口销毁它。 |
+| [NN\_TensorDesc \*OH\_NNTensorDesc\_Create()](capi-neural-network-core-h.md#oh_nntensordesc_create) | 创建一个[NN\_TensorDesc](capi-neuralnetworkruntime-nn-tensordesc.md)实例。  [NN\_TensorDesc](capi-neuralnetworkruntime-nn-tensordesc.md)描述了各种张量属性，如名称/数据类型/形状/格式等。  可以调用以下接口，基于传入的[NN\_TensorDesc](capi-neuralnetworkruntime-nn-tensordesc.md)实例创建[NN\_Tensor](capi-neuralnetworkruntime-nn-tensor.md)实例：  [OH\_NNTensor\_Create](capi-neural-network-core-h.md#oh_nntensor_create)  [OH\_NNTensor\_CreateWithSize](capi-neural-network-core-h.md#oh_nntensor_createwithsize)  [OH\_NNTensor\_CreateWithFd](capi-neural-network-core-h.md#oh_nntensor_createwithfd)  该接口会将[NN\_TensorDesc](capi-neuralnetworkruntime-nn-tensordesc.md)实例复制到[NN\_Tensor](capi-neuralnetworkruntime-nn-tensor.md)中，因此您可以创建多个[NN\_Tensor](capi-neuralnetworkruntime-nn-tensor.md)实例，并持有相同的[NN\_TensorDesc](capi-neuralnetworkruntime-nn-tensordesc.md)实例。当[NN\_TensorDesc](capi-neuralnetworkruntime-nn-tensordesc.md)实例不再使用时，您应该调用[OH\_NNTensorDesc\_Destroy](capi-neural-network-core-h.md#oh_nntensordesc_destroy)接口销毁它。 |
 | [OH\_NN\_ReturnCode OH\_NNTensorDesc\_Destroy(NN\_TensorDesc \*\*tensorDesc)](capi-neural-network-core-h.md#oh_nntensordesc_destroy) | 释放一个[NN\_TensorDesc](capi-neuralnetworkruntime-nn-tensordesc.md)实例。  当[NN\_TensorDesc](capi-neuralnetworkruntime-nn-tensordesc.md)实例不再使用时，需要调用该接口销毁，否则将发生内存泄漏。  如果**tensorDesc**或**\*tensorDesc**为空指针，则该接口将返回错误码，并且不会执行销毁操作。 |
 | [OH\_NN\_ReturnCode OH\_NNTensorDesc\_SetName(NN\_TensorDesc \*tensorDesc, const char \*name)](capi-neural-network-core-h.md#oh_nntensordesc_setname) | 设置[NN\_TensorDesc](capi-neuralnetworkruntime-nn-tensordesc.md)的名称。  [NN\_TensorDesc](capi-neuralnetworkruntime-nn-tensordesc.md)实例创建完成后，调用该接口设置张量的名称，**\*name**的值是以**'\0'**结尾的C风格字符串。  如果**tensorDesc**或**name**为空指针，则该接口将返回错误码。 |
 | [OH\_NN\_ReturnCode OH\_NNTensorDesc\_GetName(const NN\_TensorDesc \*tensorDesc, const char \*\*name)](capi-neural-network-core-h.md#oh_nntensordesc_getname) | 获取[NN\_TensorDesc](capi-neuralnetworkruntime-nn-tensordesc.md)的名称。  调用该接口获取指定[NN\_TensorDesc](capi-neuralnetworkruntime-nn-tensordesc.md)实例的名称，**\*name**的值是以\*\*'\0'\*  结尾的C风格字符串。  如果**tensorDesc**或**name**为空指针，则该接口将返回错误码。作为输出参数，\*name必须为空指针，否则该接口将返回错误码。  例如您应该定义char tensorName = NULL，并传递&tensorName作为name的参数。   您不需要释放**name**的内存，当**tensorDesc**被销毁时，它会被自动释放。 |
@@ -83,22 +77,18 @@ PhonePC/2in1TabletTV
 | [OH\_NN\_ReturnCode OH\_NNExecutor\_GetInputDimRange(const OH\_NNExecutor \*executor,size\_t index,size\_t \*\*minInputDims,size\_t \*\*maxInputDims,size\_t \*shapeLength)](capi-neural-network-core-h.md#oh_nnexecutor_getinputdimrange) | 获取所有输入张量的维度范围。  当输入张量具有动态形状时，它在不同硬件上支持的维度范围可能是不同的，可以通过该接口获取当前设备上支持的维度范围。**\*minInputDims**保存了指定输入张量的最小维度（维度数与形状匹配），而**\*maxInputDims**则保存了最大维度。 |
 | [OH\_NN\_ReturnCode OH\_NNExecutor\_SetOnRunDone(OH\_NNExecutor \*executor, NN\_OnRunDone onRunDone)](capi-neural-network-core-h.md#oh_nnexecutor_setonrundone) | 设置异步推理结束后的回调处理函数。  回调函数的定义详见[NN\_OnRunDone](capi-neural-network-runtime-type-h.md#nn_onrundone)。 |
 | [OH\_NN\_ReturnCode OH\_NNExecutor\_SetOnServiceDied(OH\_NNExecutor \*executor, NN\_OnServiceDied onServiceDied)](capi-neural-network-core-h.md#oh_nnexecutor_setonservicedied) | 设置异步推理执行期间设备驱动服务突然死亡时的回调处理函数。  回调函数的定义详见[NN\_OnServiceDied](capi-neural-network-runtime-type-h.md#nn_onservicedied)。 |
-| [OH\_NN\_ReturnCode OH\_NNExecutor\_RunSync(OH\_NNExecutor \*executor,NN\_Tensor \*inputTensor[],size\_t inputCount,NN\_Tensor \*outputTensor[],size\_t outputCount)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-neural-network-core-h#oh_nnexecutor_runsync) | 执行同步推理。  需要先通过[OH\_NNTensor\_Create](capi-neural-network-core-h.md#oh_nntensor_create)、[OH\_NNTensor\_CreateWithSize](capi-neural-network-core-h.md#oh_nntensor_createwithsize)或[OH\_NNTensor\_CreateWithFd](capi-neural-network-core-h.md#oh_nntensor_createwithfd)接口创建输入和输出张量。然后由[OH\_NNTensor\_GetDataBuffer](capi-neural-network-core-h.md#oh_nntensor_getdatabuffer)获取张量数据指针并向其拷贝输入数据。执行器会通过执行推理产生推理结果，并将结果写入输出张量中。  如果输出张量具有动态形状，可以通过[OH\_NNExecutor\_GetOutputShape](capi-neural-network-core-h.md#oh_nnexecutor_getoutputshape)接口获取输出张量的实际形状。或者通过[OH\_NNTensor\_GetTensorDesc](capi-neural-network-core-h.md#oh_nntensor_gettensordesc)接口从输入张量中获取张量描述，然后通过[OH\_NNTensorDesc\_GetShape](capi-neural-network-core-h.md#oh_nntensordesc_getshape)接口获取实际形状。 |
-| [OH\_NN\_ReturnCode OH\_NNExecutor\_RunAsync(OH\_NNExecutor \*executor,NN\_Tensor \*inputTensor[],size\_t inputCount,NN\_Tensor \*outputTensor[],size\_t outputCount,int32\_t timeout,void \*userData)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-neural-network-core-h#oh_nnexecutor_runasync) | 执行异步推理。  需要先通过[OH\_NNTensor\_Create](capi-neural-network-core-h.md#oh_nntensor_create)、[OH\_NNTensor\_CreateWithSize](capi-neural-network-core-h.md#oh_nntensor_createwithsize)或[OH\_NNTensor\_CreateWithFd](capi-neural-network-core-h.md#oh_nntensor_createwithfd)接口创建输入和输出张量。然后由[OH\_NNTensor\_GetDataBuffer](capi-neural-network-core-h.md#oh_nntensor_getdatabuffer)获取张量数据指针并向其拷贝输入数据。执行器会通过执行推理产生推理结果，并将结果写入输出张量中。  如果输出张量具有动态形状，可以通过[OH\_NNExecutor\_GetOutputShape](capi-neural-network-core-h.md#oh_nnexecutor_getoutputshape)接口获取输出张量的实际形状。或者通过[OH\_NNTensor\_GetTensorDesc](capi-neural-network-core-h.md#oh_nntensor_gettensordesc)接口从输入张量中获取张量描述，然后通过[OH\_NNTensorDesc\_GetShape](capi-neural-network-core-h.md#oh_nntensordesc_getshape)接口获取实际形状。  该接口是非阻塞式的，调用后会立刻返回，而推理结果、执行返回状态可以通过回调函数[NN\_OnRunDone](capi-neural-network-runtime-type-h.md#nn_onrundone)来获取。如果设备驱动服务在执行过程中异常终止，可以通过回调函数[NN\_OnServiceDied](capi-neural-network-runtime-type-h.md#nn_onservicedied)来处理。  可以通过接口[OH\_NNExecutor\_SetOnRunDone](capi-neural-network-core-h.md#oh_nnexecutor_setonrundone)和[OH\_NNExecutor\_SetOnServiceDied](capi-neural-network-core-h.md#oh_nnexecutor_setonservicedied)设置回调函数[NN\_OnRunDone](capi-neural-network-runtime-type-h.md#nn_onrundone)和[NN\_OnServiceDied](capi-neural-network-runtime-type-h.md#nn_onservicedied)。  如果推理时长超过了**timeout**，会立刻终止推理，回调函数[NN\_OnRunDone](capi-neural-network-runtime-type-h.md#nn_onrundone)的**errCode**  ****参数会返回[OH\_NN\_TIMEOUT](capi-neural-network-runtime-type-h.md#oh_nn_returncode)错误。****  ******userData**是区分不同次异步执行的标识符，会作为回调函数的第一个参数返回，您可以使用能够区分不同次执行的任意数据作为标识符。**** |
-| [OH\_NN\_ReturnCode OH\_NNDevice\_GetAllDevicesID(const size\_t \*\*allDevicesID, uint32\_t \*deviceCount)](capi-neural-network-core-h.md#oh_nndevice_getalldevicesid) | 获取对接到Neural Network Runtime的硬件ID。  每个硬件存在唯一且固定的ID，该接口通过uint32\_t数组返回当前设备上已经对接的硬件ID。  硬件ID通过size\_t数组返回，数组的每个元素是单个硬件的ID值。数组内存由内部进行管理，在下次调用该接口前，数据指针将一直有效。 |
+| [OH\_NN\_ReturnCode OH\_NNExecutor\_RunSync(OH\_NNExecutor \*executor,NN\_Tensor \*inputTensor[],size\_t inputCount,NN\_Tensor \*outputTensor[],size\_t outputCount)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-neural-network-core-h#oh_nnexecutor_runsync) | 执行同步推理。  需要先通过[OH\_NNTensor\_Create](capi-neural-network-core-h.md#oh_nntensor_create)、[OH\_NNTensor\_CreateWithSize](capi-neural-network-core-h.md#oh_nntensor_createwithsize)或[OH\_NNTensor\_CreateWithFd](capi-neural-network-core-h.md#oh_nntensor_createwithfd)接口创建输入和输出张量。然后由[OH\_NNTensor\_GetDataBuffer](capi-neural-network-core-h.md#oh_nntensor_getdatabuffer)获取张量数据指针并向其拷贝输入数据。执行器会通过执行推理产生推理结果，并将结果写入输出张量中。  如果输出张量具有动态形状，可以通过[OH\_NNExecutor\_GetOutputShape](capi-neural-network-core-h.md#oh_nnexecutor_getoutputshape)接口获取输出张量的实际形状。或者通过[OH\_NNTensor\_GetTensorDesc](capi-neural-network-core-h.md#oh_nntensor_gettensordesc)接口从张量中获取张量描述，然后通过[OH\_NNTensorDesc\_GetShape](capi-neural-network-core-h.md#oh_nntensordesc_getshape)接口获取实际形状。 |
+| [OH\_NN\_ReturnCode OH\_NNExecutor\_RunAsync(OH\_NNExecutor \*executor,NN\_Tensor \*inputTensor[],size\_t inputCount,NN\_Tensor \*outputTensor[],size\_t outputCount,int32\_t timeout,void \*userData)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-neural-network-core-h#oh_nnexecutor_runasync) | 执行异步推理。  需要先通过[OH\_NNTensor\_Create](capi-neural-network-core-h.md#oh_nntensor_create)、[OH\_NNTensor\_CreateWithSize](capi-neural-network-core-h.md#oh_nntensor_createwithsize)或[OH\_NNTensor\_CreateWithFd](capi-neural-network-core-h.md#oh_nntensor_createwithfd)接口创建输入和输出张量。然后由[OH\_NNTensor\_GetDataBuffer](capi-neural-network-core-h.md#oh_nntensor_getdatabuffer)获取张量数据指针并向其拷贝输入数据。执行器会通过执行推理产生推理结果，并将结果写入输出张量中。  如果输出张量具有动态形状，可以通过[OH\_NNExecutor\_GetOutputShape](capi-neural-network-core-h.md#oh_nnexecutor_getoutputshape)接口获取输出张量的实际形状。或者通过[OH\_NNTensor\_GetTensorDesc](capi-neural-network-core-h.md#oh_nntensor_gettensordesc)接口从张量中获取张量描述，然后通过[OH\_NNTensorDesc\_GetShape](capi-neural-network-core-h.md#oh_nntensordesc_getshape)接口获取实际形状。  该接口是非阻塞式的，调用后会立刻返回，而推理结果、执行返回状态可以通过回调函数[NN\_OnRunDone](capi-neural-network-runtime-type-h.md#nn_onrundone)来获取。如果设备驱动服务在执行过程中异常终止，可以通过回调函数[NN\_OnServiceDied](capi-neural-network-runtime-type-h.md#nn_onservicedied)来处理。  可以通过接口[OH\_NNExecutor\_SetOnRunDone](capi-neural-network-core-h.md#oh_nnexecutor_setonrundone)和[OH\_NNExecutor\_SetOnServiceDied](capi-neural-network-core-h.md#oh_nnexecutor_setonservicedied)设置回调函数[NN\_OnRunDone](capi-neural-network-runtime-type-h.md#nn_onrundone)和[NN\_OnServiceDied](capi-neural-network-runtime-type-h.md#nn_onservicedied)。  如果推理时长超过了**timeout**，会立刻终止推理，回调函数[NN\_OnRunDone](capi-neural-network-runtime-type-h.md#nn_onrundone)的**errCode**  ****参数会返回[OH\_NN\_TIMEOUT](capi-neural-network-runtime-type-h.md#oh_nn_returncode)错误。****  ******userData**是区分不同次异步执行的标识符，会作为回调函数的第一个参数返回，您可以使用能够区分不同次执行的任意数据作为标识符。**** |
+| [OH\_NN\_ReturnCode OH\_NNDevice\_GetAllDevicesID(const size\_t \*\*allDevicesID, uint32\_t \*deviceCount)](capi-neural-network-core-h.md#oh_nndevice_getalldevicesid) | 获取对接到Neural Network Runtime的硬件ID。每个硬件存在唯一且固定的ID。 |
 | [OH\_NN\_ReturnCode OH\_NNDevice\_GetName(size\_t deviceID, const char \*\*name)](capi-neural-network-core-h.md#oh_nndevice_getname) | 获取指定硬件的名称。  通过deviceID指定计算硬件，获取硬件的名称。硬件ID需要调用[OH\_NNDevice\_GetAllDevicesID](capi-neural-network-core-h.md#oh_nndevice_getalldevicesid)获取。如果deviceID是0，那么会默认使用设备列表中的第一个设备。 **\*name**是一个C风格的字符串，以**'\0'**作为结束符。  **\*name**必须是一个空指针，否则接口会返回[OH\_NN\_INVALID\_PARAMETER](capi-neural-network-runtime-type-h.md#oh_nn_returncode)错误。例如您应该定义char\* deviceName = NULL，然后将&deviceName作为参数传入。 |
 | [OH\_NN\_ReturnCode OH\_NNDevice\_GetType(size\_t deviceID, OH\_NN\_DeviceType \*deviceType)](capi-neural-network-core-h.md#oh_nndevice_gettype) | 获取指定硬件的类别信息。  通过deviceID指定计算硬件，获取硬件的类别。如果deviceID是0，那么会默认使用设备列表中的第一个设备。目前支持的设备类型有：  - CPU设备：OH\_NN\_CPU  - GPU设备：OH\_NN\_GPU  - 机器学习专用加速器：OH\_NN\_ACCELERATOR  - 不属于以上类型的其他硬件类型：OH\_NN\_OTHERS |
 
 ## 函数说明
 
-PhonePC/2in1TabletTV
-
 ### OH\_NNCompilation\_Construct()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NNCompilation *OH_NNCompilation_Construct(const OH_NNModel *model)
+```c
+OH_NNCompilation *OH_NNCompilation_Construct(const OH_NNModel *model)
 ```
 
 **描述**
@@ -137,10 +127,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNCompilation\_ConstructWithOfflineModelFile()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NNCompilation *OH_NNCompilation_ConstructWithOfflineModelFile(const char *modelPath)
+```c
+OH_NNCompilation *OH_NNCompilation_ConstructWithOfflineModelFile(const char *modelPath)
 ```
 
 **描述**
@@ -169,10 +157,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNCompilation\_ConstructWithOfflineModelBuffer()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NNCompilation *OH_NNCompilation_ConstructWithOfflineModelBuffer(const void *modelBuffer, size_t modelSize)
+```c
+OH_NNCompilation *OH_NNCompilation_ConstructWithOfflineModelBuffer(const void *modelBuffer, size_t modelSize)
 ```
 
 **描述**
@@ -200,10 +186,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNCompilation\_ConstructForCache()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NNCompilation *OH_NNCompilation_ConstructForCache()
+```c
+OH_NNCompilation *OH_NNCompilation_ConstructForCache()
 ```
 
 **描述**
@@ -226,10 +210,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNCompilation\_ExportCacheToBuffer()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNCompilation_ExportCacheToBuffer(OH_NNCompilation *compilation,const void *buffer,size_t length,size_t *modelSize)
+```c
+OH_NN_ReturnCode OH_NNCompilation_ExportCacheToBuffer(OH_NNCompilation *compilation,const void *buffer,size_t length,size_t *modelSize)
 ```
 
 **描述**
@@ -259,10 +241,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNCompilation\_ImportCacheFromBuffer()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNCompilation_ImportCacheFromBuffer(OH_NNCompilation *compilation,const void *buffer,size_t modelSize)
+```c
+OH_NN_ReturnCode OH_NNCompilation_ImportCacheFromBuffer(OH_NNCompilation *compilation,const void *buffer,size_t modelSize)
 ```
 
 **描述**
@@ -293,10 +273,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNCompilation\_AddExtensionConfig()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNCompilation_AddExtensionConfig(OH_NNCompilation *compilation,const char *configName,const void *configValue,const size_t configValueSize)
+```c
+OH_NN_ReturnCode OH_NNCompilation_AddExtensionConfig(OH_NNCompilation *compilation,const char *configName,const void *configValue,const size_t configValueSize)
 ```
 
 **描述**
@@ -328,17 +306,15 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNCompilation\_SetDevice()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNCompilation_SetDevice(OH_NNCompilation *compilation, size_t deviceID)
+```c
+OH_NN_ReturnCode OH_NNCompilation_SetDevice(OH_NNCompilation *compilation, size_t deviceID)
 ```
 
 **描述**
 
 指定模型编译和计算的硬件。
 
-编译阶段，需要指定模型编译和执行计算的硬件设备。先调用[OH\_NNDevice\_GetAllDevicesID](capi-neural-network-core-h.md#oh_nndevice_getalldevicesid)获取可用的设备ID，通过[OH\_NNDevice\_GetType](capi-neural-network-core-h.md#oh_nndevice_gettype)和[OH\_NNDevice\_GetType](capi-neural-network-core-h.md#oh_nndevice_gettype)获取设备信息后，将期望编译执行的设备ID传入该接口进行设置。
+编译阶段，需要指定模型编译和执行计算的硬件设备。先调用[OH\_NNDevice\_GetAllDevicesID](capi-neural-network-core-h.md#oh_nndevice_getalldevicesid)获取可用的设备ID，通过[OH\_NNDevice\_GetType](capi-neural-network-core-h.md#oh_nndevice_gettype)和[OH\_NNDevice\_GetName](capi-neural-network-core-h.md#oh_nndevice_getname)获取设备信息后，将期望编译执行的设备ID传入该接口进行设置。
 
 **起始版本：** 9
 
@@ -357,10 +333,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNCompilation\_SetCache()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNCompilation_SetCache(OH_NNCompilation *compilation, const char *cachePath, uint32_t version)
+```c
+OH_NN_ReturnCode OH_NNCompilation_SetCache(OH_NNCompilation *compilation, const char *cachePath, uint32_t version)
 ```
 
 **描述**
@@ -369,7 +343,7 @@ PhonePC/2in1TabletTV
 
 在支持模型缓存的硬件上，模型在硬件驱动层编译后可以保存为模型缓存文件，下次编译时直接从模型缓存文件读取模型，减少重新编译的耗时。
 
-该接口接受模型缓存路径和版本，根据缓存路径中和版本的不同情况，该接口采取不同的行为：
+该接口接受模型缓存路径和版本，根据缓存路径和版本的不同情况，该接口采取不同的行为：
 
 * 模型缓存路径指定的目录下没有文件：将编译后的模型缓存到目录下，设置缓存版本等于version。
 * 模型缓存路径指定的目录下存在完整的缓存文件，且版本号 == version：读取路径下的缓存文件，传递到底层硬件中转换为可以执行的模型实例。
@@ -396,10 +370,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNCompilation\_SetPerformanceMode()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNCompilation_SetPerformanceMode(OH_NNCompilation *compilation,OH_NN_PerformanceMode performanceMode)
+```c
+OH_NN_ReturnCode OH_NNCompilation_SetPerformanceMode(OH_NNCompilation *compilation,OH_NN_PerformanceMode performanceMode)
 ```
 
 **描述**
@@ -425,10 +397,8 @@ Neural Network Runtime 支持为模型计算设置性能模式，满足低功耗
 
 ### OH\_NNCompilation\_SetPriority()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNCompilation_SetPriority(OH_NNCompilation *compilation, OH_NN_Priority priority)
+```c
+OH_NN_ReturnCode OH_NNCompilation_SetPriority(OH_NNCompilation *compilation, OH_NN_Priority priority)
 ```
 
 **描述**
@@ -454,10 +424,8 @@ Neural Network Runtime 支持为模型设置计算优先级，优先级仅作用
 
 ### OH\_NNCompilation\_EnableFloat16()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNCompilation_EnableFloat16(OH_NNCompilation *compilation, bool enableFloat16)
+```c
+OH_NN_ReturnCode OH_NNCompilation_EnableFloat16(OH_NNCompilation *compilation, bool enableFloat16)
 ```
 
 **描述**
@@ -485,10 +453,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNCompilation\_Build()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNCompilation_Build(OH_NNCompilation *compilation)
+```c
+OH_NN_ReturnCode OH_NNCompilation_Build(OH_NNCompilation *compilation)
 ```
 
 **描述**
@@ -515,10 +481,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNCompilation\_Destroy()
 
-PhonePC/2in1TabletTV
-
-```
-1. void OH_NNCompilation_Destroy(OH_NNCompilation **compilation)
+```c
+void OH_NNCompilation_Destroy(OH_NNCompilation **compilation)
 ```
 
 **描述**
@@ -537,10 +501,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNTensorDesc\_Create()
 
-PhonePC/2in1TabletTV
-
-```
-1. NN_TensorDesc *OH_NNTensorDesc_Create()
+```c
+NN_TensorDesc *OH_NNTensorDesc_Create()
 ```
 
 **描述**
@@ -569,10 +531,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNTensorDesc\_Destroy()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNTensorDesc_Destroy(NN_TensorDesc **tensorDesc)
+```c
+OH_NN_ReturnCode OH_NNTensorDesc_Destroy(NN_TensorDesc **tensorDesc)
 ```
 
 **描述**
@@ -599,10 +559,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNTensorDesc\_SetName()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNTensorDesc_SetName(NN_TensorDesc *tensorDesc, const char *name)
+```c
+OH_NN_ReturnCode OH_NNTensorDesc_SetName(NN_TensorDesc *tensorDesc, const char *name)
 ```
 
 **描述**
@@ -630,10 +588,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNTensorDesc\_GetName()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNTensorDesc_GetName(const NN_TensorDesc *tensorDesc, const char **name)
+```c
+OH_NN_ReturnCode OH_NNTensorDesc_GetName(const NN_TensorDesc *tensorDesc, const char **name)
 ```
 
 **描述**
@@ -665,10 +621,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNTensorDesc\_SetDataType()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNTensorDesc_SetDataType(NN_TensorDesc *tensorDesc, OH_NN_DataType dataType)
+```c
+OH_NN_ReturnCode OH_NNTensorDesc_SetDataType(NN_TensorDesc *tensorDesc, OH_NN_DataType dataType)
 ```
 
 **描述**
@@ -696,10 +650,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNTensorDesc\_GetDataType()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNTensorDesc_GetDataType(const NN_TensorDesc *tensorDesc, OH_NN_DataType *dataType)
+```c
+OH_NN_ReturnCode OH_NNTensorDesc_GetDataType(const NN_TensorDesc *tensorDesc, OH_NN_DataType *dataType)
 ```
 
 **描述**
@@ -727,10 +679,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNTensorDesc\_SetShape()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNTensorDesc_SetShape(NN_TensorDesc *tensorDesc, const int32_t *shape, size_t shapeLength)
+```c
+OH_NN_ReturnCode OH_NNTensorDesc_SetShape(NN_TensorDesc *tensorDesc, const int32_t *shape, size_t shapeLength)
 ```
 
 **描述**
@@ -759,10 +709,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNTensorDesc\_GetShape()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNTensorDesc_GetShape(const NN_TensorDesc *tensorDesc, int32_t **shape, size_t *shapeLength)
+```c
+OH_NN_ReturnCode OH_NNTensorDesc_GetShape(const NN_TensorDesc *tensorDesc, int32_t **shape, size_t *shapeLength)
 ```
 
 **描述**
@@ -795,10 +743,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNTensorDesc\_SetFormat()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNTensorDesc_SetFormat(NN_TensorDesc *tensorDesc, OH_NN_Format format)
+```c
+OH_NN_ReturnCode OH_NNTensorDesc_SetFormat(NN_TensorDesc *tensorDesc, OH_NN_Format format)
 ```
 
 **描述**
@@ -826,10 +772,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNTensorDesc\_GetFormat()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNTensorDesc_GetFormat(const NN_TensorDesc *tensorDesc, OH_NN_Format *format)
+```c
+OH_NN_ReturnCode OH_NNTensorDesc_GetFormat(const NN_TensorDesc *tensorDesc, OH_NN_Format *format)
 ```
 
 **描述**
@@ -857,10 +801,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNTensorDesc\_GetElementCount()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNTensorDesc_GetElementCount(const NN_TensorDesc *tensorDesc, size_t *elementCount)
+```c
+OH_NN_ReturnCode OH_NNTensorDesc_GetElementCount(const NN_TensorDesc *tensorDesc, size_t *elementCount)
 ```
 
 **描述**
@@ -890,10 +832,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNTensorDesc\_GetByteSize()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNTensorDesc_GetByteSize(const NN_TensorDesc *tensorDesc, size_t *byteSize)
+```c
+OH_NN_ReturnCode OH_NNTensorDesc_GetByteSize(const NN_TensorDesc *tensorDesc, size_t *byteSize)
 ```
 
 **描述**
@@ -925,10 +865,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNTensor\_Create()
 
-PhonePC/2in1TabletTV
-
-```
-1. NN_Tensor *OH_NNTensor_Create(size_t deviceID, NN_TensorDesc *tensorDesc)
+```c
+NN_Tensor *OH_NNTensor_Create(size_t deviceID, NN_TensorDesc *tensorDesc)
 ```
 
 **描述**
@@ -964,10 +902,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNTensor\_CreateWithSize()
 
-PhonePC/2in1TabletTV
-
-```
-1. NN_Tensor *OH_NNTensor_CreateWithSize(size_t deviceID, NN_TensorDesc *tensorDesc, size_t size)
+```c
+NN_Tensor *OH_NNTensor_CreateWithSize(size_t deviceID, NN_TensorDesc *tensorDesc, size_t size)
 ```
 
 **描述**
@@ -1004,10 +940,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNTensor\_CreateWithFd()
 
-PhonePC/2in1TabletTV
-
-```
-1. NN_Tensor *OH_NNTensor_CreateWithFd(size_t deviceID,NN_TensorDesc *tensorDesc,int fd,size_t size,size_t offset)
+```c
+NN_Tensor *OH_NNTensor_CreateWithFd(size_t deviceID,NN_TensorDesc *tensorDesc,int fd,size_t size,size_t offset)
 ```
 
 **描述**
@@ -1044,10 +978,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNTensor\_Destroy()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNTensor_Destroy(NN_Tensor **tensor)
+```c
+OH_NN_ReturnCode OH_NNTensor_Destroy(NN_Tensor **tensor)
 ```
 
 **描述**
@@ -1074,10 +1006,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNTensor\_GetTensorDesc()
 
-PhonePC/2in1TabletTV
-
-```
-1. NN_TensorDesc *OH_NNTensor_GetTensorDesc(const NN_Tensor *tensor)
+```c
+NN_TensorDesc *OH_NNTensor_GetTensorDesc(const NN_Tensor *tensor)
 ```
 
 **描述**
@@ -1108,10 +1038,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNTensor\_GetDataBuffer()
 
-PhonePC/2in1TabletTV
-
-```
-1. void *OH_NNTensor_GetDataBuffer(const NN_Tensor *tensor)
+```c
+void *OH_NNTensor_GetDataBuffer(const NN_Tensor *tensor)
 ```
 
 **描述**
@@ -1140,10 +1068,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNTensor\_GetFd()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNTensor_GetFd(const NN_Tensor *tensor, int *fd)
+```c
+OH_NN_ReturnCode OH_NNTensor_GetFd(const NN_Tensor *tensor, int *fd)
 ```
 
 **描述**
@@ -1171,10 +1097,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNTensor\_GetSize()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNTensor_GetSize(const NN_Tensor *tensor, size_t *size)
+```c
+OH_NN_ReturnCode OH_NNTensor_GetSize(const NN_Tensor *tensor, size_t *size)
 ```
 
 **描述**
@@ -1204,10 +1128,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNTensor\_GetOffset()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNTensor_GetOffset(const NN_Tensor *tensor, size_t *offset)
+```c
+OH_NN_ReturnCode OH_NNTensor_GetOffset(const NN_Tensor *tensor, size_t *offset)
 ```
 
 **描述**
@@ -1237,10 +1159,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNExecutor\_Construct()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NNExecutor *OH_NNExecutor_Construct(OH_NNCompilation *compilation)
+```c
+OH_NNExecutor *OH_NNExecutor_Construct(OH_NNCompilation *compilation)
 ```
 
 **描述**
@@ -1265,10 +1185,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNExecutor\_GetOutputShape()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNExecutor_GetOutputShape(OH_NNExecutor *executor,uint32_t outputIndex,int32_t **shape,uint32_t *shapeLength)
+```c
+OH_NN_ReturnCode OH_NNExecutor_GetOutputShape(OH_NNExecutor *executor,uint32_t outputIndex,int32_t **shape,uint32_t *shapeLength)
 ```
 
 **描述**
@@ -1302,10 +1220,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNExecutor\_Destroy()
 
-PhonePC/2in1TabletTV
-
-```
-1. void OH_NNExecutor_Destroy(OH_NNExecutor **executor)
+```c
+void OH_NNExecutor_Destroy(OH_NNExecutor **executor)
 ```
 
 **描述**
@@ -1324,10 +1240,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNExecutor\_GetInputCount()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNExecutor_GetInputCount(const OH_NNExecutor *executor, size_t *inputCount)
+```c
+OH_NN_ReturnCode OH_NNExecutor_GetInputCount(const OH_NNExecutor *executor, size_t *inputCount)
 ```
 
 **描述**
@@ -1353,10 +1267,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNExecutor\_GetOutputCount()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNExecutor_GetOutputCount(const OH_NNExecutor *executor, size_t *outputCount)
+```c
+OH_NN_ReturnCode OH_NNExecutor_GetOutputCount(const OH_NNExecutor *executor, size_t *outputCount)
 ```
 
 **描述**
@@ -1382,10 +1294,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNExecutor\_CreateInputTensorDesc()
 
-PhonePC/2in1TabletTV
-
-```
-1. NN_TensorDesc *OH_NNExecutor_CreateInputTensorDesc(const OH_NNExecutor *executor, size_t index)
+```c
+NN_TensorDesc *OH_NNExecutor_CreateInputTensorDesc(const OH_NNExecutor *executor, size_t index)
 ```
 
 **描述**
@@ -1411,10 +1321,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNExecutor\_CreateOutputTensorDesc()
 
-PhonePC/2in1TabletTV
-
-```
-1. NN_TensorDesc *OH_NNExecutor_CreateOutputTensorDesc(const OH_NNExecutor *executor, size_t index)
+```c
+NN_TensorDesc *OH_NNExecutor_CreateOutputTensorDesc(const OH_NNExecutor *executor, size_t index)
 ```
 
 **描述**
@@ -1440,10 +1348,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNExecutor\_GetInputDimRange()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNExecutor_GetInputDimRange(const OH_NNExecutor *executor,size_t index,size_t **minInputDims,size_t **maxInputDims,size_t *shapeLength)
+```c
+OH_NN_ReturnCode OH_NNExecutor_GetInputDimRange(const OH_NNExecutor *executor,size_t index,size_t **minInputDims,size_t **maxInputDims,size_t *shapeLength)
 ```
 
 **描述**
@@ -1480,10 +1386,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNExecutor\_SetOnRunDone()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNExecutor_SetOnRunDone(OH_NNExecutor *executor, NN_OnRunDone onRunDone)
+```c
+OH_NN_ReturnCode OH_NNExecutor_SetOnRunDone(OH_NNExecutor *executor, NN_OnRunDone onRunDone)
 ```
 
 **描述**
@@ -1509,10 +1413,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNExecutor\_SetOnServiceDied()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNExecutor_SetOnServiceDied(OH_NNExecutor *executor, NN_OnServiceDied onServiceDied)
+```c
+OH_NN_ReturnCode OH_NNExecutor_SetOnServiceDied(OH_NNExecutor *executor, NN_OnServiceDied onServiceDied)
 ```
 
 **描述**
@@ -1538,10 +1440,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNExecutor\_RunSync()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNExecutor_RunSync(OH_NNExecutor *executor,NN_Tensor *inputTensor[],size_t inputCount,NN_Tensor *outputTensor[],size_t outputCount)
+```c
+OH_NN_ReturnCode OH_NNExecutor_RunSync(OH_NNExecutor *executor,NN_Tensor *inputTensor[],size_t inputCount,NN_Tensor *outputTensor[],size_t outputCount)
 ```
 
 **描述**
@@ -1550,7 +1450,7 @@ PhonePC/2in1TabletTV
 
 需要先通过[OH\_NNTensor\_Create](capi-neural-network-core-h.md#oh_nntensor_create)、[OH\_NNTensor\_CreateWithSize](capi-neural-network-core-h.md#oh_nntensor_createwithsize)或[OH\_NNTensor\_CreateWithFd](capi-neural-network-core-h.md#oh_nntensor_createwithfd)接口创建输入和输出张量。然后由[OH\_NNTensor\_GetDataBuffer](capi-neural-network-core-h.md#oh_nntensor_getdatabuffer)获取张量数据指针并向其拷贝输入数据。执行器会通过执行推理产生推理结果，并将结果写入输出张量中。
 
-如果输出张量具有动态形状，可以通过[OH\_NNExecutor\_GetOutputShape](capi-neural-network-core-h.md#oh_nnexecutor_getoutputshape)接口获取输出张量的实际形状。或者通过[OH\_NNTensor\_GetTensorDesc](capi-neural-network-core-h.md#oh_nntensor_gettensordesc)接口从输入张量中获取张量描述，然后通过[OH\_NNTensorDesc\_GetShape](capi-neural-network-core-h.md#oh_nntensordesc_getshape)接口获取实际形状。
+如果输出张量具有动态形状，可以通过[OH\_NNExecutor\_GetOutputShape](capi-neural-network-core-h.md#oh_nnexecutor_getoutputshape)接口获取输出张量的实际形状。或者通过[OH\_NNTensor\_GetTensorDesc](capi-neural-network-core-h.md#oh_nntensor_gettensordesc)接口从张量中获取张量描述，然后通过[OH\_NNTensorDesc\_GetShape](capi-neural-network-core-h.md#oh_nntensordesc_getshape)接口获取实际形状。
 
 **起始版本：** 11
 
@@ -1572,10 +1472,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNExecutor\_RunAsync()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNExecutor_RunAsync(OH_NNExecutor *executor,NN_Tensor *inputTensor[],size_t inputCount,NN_Tensor *outputTensor[],size_t outputCount,int32_t timeout,void *userData)
+```c
+OH_NN_ReturnCode OH_NNExecutor_RunAsync(OH_NNExecutor *executor,NN_Tensor *inputTensor[],size_t inputCount,NN_Tensor *outputTensor[],size_t outputCount,int32_t timeout,void *userData)
 ```
 
 **描述**
@@ -1584,7 +1482,7 @@ PhonePC/2in1TabletTV
 
 需要先通过[OH\_NNTensor\_Create](capi-neural-network-core-h.md#oh_nntensor_create)、[OH\_NNTensor\_CreateWithSize](capi-neural-network-core-h.md#oh_nntensor_createwithsize)或[OH\_NNTensor\_CreateWithFd](capi-neural-network-core-h.md#oh_nntensor_createwithfd)接口创建输入和输出张量。然后由[OH\_NNTensor\_GetDataBuffer](capi-neural-network-core-h.md#oh_nntensor_getdatabuffer)获取张量数据指针并向其拷贝输入数据。执行器会通过执行推理产生推理结果，并将结果写入输出张量中。
 
-如果输出张量具有动态形状，可以通过[OH\_NNExecutor\_GetOutputShape](capi-neural-network-core-h.md#oh_nnexecutor_getoutputshape)接口获取输出张量的实际形状。或者通过[OH\_NNTensor\_GetTensorDesc](capi-neural-network-core-h.md#oh_nntensor_gettensordesc)接口从输入张量中获取张量描述，然后通过[OH\_NNTensorDesc\_GetShape](capi-neural-network-core-h.md#oh_nntensordesc_getshape)接口获取实际形状。
+如果输出张量具有动态形状，可以通过[OH\_NNExecutor\_GetOutputShape](capi-neural-network-core-h.md#oh_nnexecutor_getoutputshape)接口获取输出张量的实际形状。或者通过[OH\_NNTensor\_GetTensorDesc](capi-neural-network-core-h.md#oh_nntensor_gettensordesc)接口从张量中获取张量描述，然后通过[OH\_NNTensorDesc\_GetShape](capi-neural-network-core-h.md#oh_nntensordesc_getshape)接口获取实际形状。
 
 该接口是非阻塞式的，调用后会立刻返回，而推理结果、执行返回状态可以通过回调函数[NN\_OnRunDone](capi-neural-network-runtime-type-h.md#nn_onrundone)来获取。如果设备驱动服务在执行过程中异常终止，可以通过回调函数[NN\_OnServiceDied](capi-neural-network-runtime-type-h.md#nn_onservicedied)来处理。
 
@@ -1616,19 +1514,13 @@ userData是区分不同次异步执行的标识符，会作为回调函数的第
 
 ### OH\_NNDevice\_GetAllDevicesID()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNDevice_GetAllDevicesID(const size_t **allDevicesID, uint32_t *deviceCount)
+```c
+OH_NN_ReturnCode OH_NNDevice_GetAllDevicesID(const size_t **allDevicesID, uint32_t *deviceCount)
 ```
 
 **描述**
 
-获取对接到Neural Network Runtime的硬件ID。
-
-每个硬件存在唯一且固定的ID，该接口通过uint32\_t数组返回当前设备上已经对接的硬件ID。
-
-硬件ID通过size\_t数组返回，数组的每个元素是单个硬件的ID值。数组内存由内部进行管理，在下次调用该接口前，数据指针将一直有效。
+获取对接到Neural Network Runtime的硬件ID。每个硬件存在唯一且固定的ID。
 
 **起始版本：** 9
 
@@ -1636,8 +1528,8 @@ PhonePC/2in1TabletTV
 
 | 参数项 | 描述 |
 | --- | --- |
-| const size\_t \*\*allDevicesID | 指向size\_t数组的指针。要求传入的\*allDevicesID为空指针，否则将返回错误码[OH\_NN\_INVALID\_PARAMETER](capi-neural-network-runtime-type-h.md#oh_nn_returncode)。 |
-| uint32\_t \*deviceCount | uint32\_t类型的指针，用于返回\*allDevicesID的长度。 |
+| const size\_t \*\*allDevicesID | 指向size\_t数组的指针。  返回硬件ID数组，数组的每个元素是单个硬件的ID值。数组内存由内部进行管理，在下次调用该接口前，数据指针将一直有效。  要求传入的\*allDevicesID为空指针，否则将返回错误码[OH\_NN\_INVALID\_PARAMETER](capi-neural-network-runtime-type-h.md#oh_nn_returncode)。 |
+| uint32\_t \*deviceCount | uint32\_t类型的指针，用于返回\*allDevicesID的长度，即当前设备上已经对接的硬件数量。 |
 
 **返回：**
 
@@ -1647,10 +1539,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNDevice\_GetName()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNDevice_GetName(size_t deviceID, const char **name)
+```c
+OH_NN_ReturnCode OH_NNDevice_GetName(size_t deviceID, const char **name)
 ```
 
 **描述**
@@ -1676,10 +1566,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNDevice\_GetType()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNDevice_GetType(size_t deviceID, OH_NN_DeviceType *deviceType)
+```c
+OH_NN_ReturnCode OH_NNDevice_GetType(size_t deviceID, OH_NN_DeviceType *deviceType)
 ```
 
 **描述**

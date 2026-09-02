@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ubsan
 title: 使用UBSan检测未定义行为
 breadcrumb: 指南 > 编写与调试应用 > 日志与故障分析 > 故障分析 > 使用UBSan检测未定义行为
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:46:56+08:00
+scraped_at: 2026-09-02T15:00:25+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:cc7d6bfc3d9880ceacaba408e60394205c57b0334c7294b9e47162cf340eac9b
+content_hash: sha256:345323b6f0f9d34ed7b8ba05345576c3c045b3e17e868c89fc7357d4920efda0
 ---
 
 代码中出现未定义行为，最初可能不会产生任何问题，但是随着代码的复杂度提高，未定义行为可能造成程序崩溃或发生错误，检测出根源会变得更加困难。UBSan（Undefined Behavior Sanitizer）可以检测代码中出现的未定义行为，帮助用户清除未定义行为引起的运行时错误。
@@ -31,25 +31,25 @@ ASan、TSan、UBSan、HWASan不能同时开启，只能开启其中一个。
 
 点击****Run > Edit Configurations >** Diagnostics**，勾选**Undefined Behavior Sanitizer**开启检测。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/5UnwciSRTjKi-Wk_M7t8qQ/zh-cn_image_0000002530753114.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/Bx9QaBjXQFGTxvppgG-acg/zh-cn_image_0000002731382425.png)
 
 ### 方式二
 
 在需要开启UBSan的模块中，通过添加构建参数开启UBSan检测插桩，在对应模块的模块级build-profile.json5中添加命令参数：
 
-```
-1. "arguments": "-DOHOS_ENABLE_UBSAN=ON"
+```json5
+"arguments": "-DOHOS_ENABLE_UBSAN=ON"
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/tBBBCIpsT-O5HaWfgt6kng/zh-cn_image_0000002530753110.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/qbyFem9FTJeUWKWJrCFL-A/zh-cn_image_0000002731542397.png)
 
 ## 使用UBSan
 
 1. 运行或调试当前应用。
 2. 当检测出未定义行为时，弹出UBSan log信息，点击信息中的链接即可跳转到未定义行为的代码处。日志中的异常检测类型请参考[UBSan异常检测类型](../best-practices/bpta-stability-ubsan-detection.md#section124211321406)。
 
-   说明
+   **说明** 
 
    无论[编译模式](ide-hvigor-compilation-options-customizing-guide.md#section192461528194916)是debug或release，均有链接可直接跳转至源码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/Tgm37ETUT4KnDLoUlb2Jpw/zh-cn_image_0000002561833031.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/BAG4WCivTz-ErSJ7L3ezcg/zh-cn_image_0000002701663202.png)

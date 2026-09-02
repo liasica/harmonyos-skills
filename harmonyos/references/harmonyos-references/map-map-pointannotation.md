@@ -1,24 +1,20 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-pointannotation
-title: PointAnnotation
-breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > PointAnnotation
+title: Interface (PointAnnotation)
+breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (PointAnnotation)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:12+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:a5b4f32212fd859350ff20a8f72b8dd3e894eb4a05e7f131ca1879948bf609a4
+scraped_at: 2026-09-02T15:02:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0daf9a69ecae9be5f0aaeb1a1d33199bc5acd145150b659f75bf6b1574892112
 ---
 
 ## 导入模块
 
-PhonePC/2in1TabletWearable
-
-```
-1. import { map, mapCommon } from '@kit.MapKit';
+```typescript
+import { map, mapCommon } from '@kit.MapKit';
 ```
 
 ## PointAnnotation
-
-PhonePC/2in1TabletWearable
 
 点注释，继承[BasePriorityOverlay](map-map-basepriorityoverlay.md)。在调用map.[MapComponentController](map-map-mapcomponentcontroller.md)类的[addPointAnnotation](map-map-mapcomponentcontroller.md#addpointannotation)方法时会返回该类型的实例。
 
@@ -32,24 +28,22 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. let pointAnnotationOptions: mapCommon.PointAnnotationParams = {
-2. position: {
-3. latitude: 32.120750,
-4. longitude: 118.788765
-5. },
-6. titles: [{
-7. content: "南京夫子庙"
-8. }],
-9. // 图标需存放在resources/rawfile目录下
-10. icon: 'icon.png'
-11. };
-12. let pointAnnotation: map.PointAnnotation = await this.mapController.addPointAnnotation(pointAnnotationOptions);
+```typescript
+let pointAnnotationOptions: mapCommon.PointAnnotationParams = {
+  position: {
+    latitude: 32.120750,
+    longitude: 118.788765
+  },
+  titles: [{
+    content: "南京夫子庙"
+  }],
+  // 图标需存放在resources/rawfile目录下
+  icon: 'icon.png'
+};
+let pointAnnotation: map.PointAnnotation = await this.mapController.addPointAnnotation(pointAnnotationOptions);
 ```
 
 ### getPosition
-
-PhonePC/2in1TabletWearable
 
 getPosition(): mapCommon.LatLng
 
@@ -71,13 +65,11 @@ getPosition(): mapCommon.LatLng
 
 **示例：**
 
-```
-1. let position: mapCommon.LatLng = pointAnnotation.getPosition();
+```typescript
+let position: mapCommon.LatLng = pointAnnotation.getPosition();
 ```
 
 ### getTitleText
-
-PhonePC/2in1TabletWearable
 
 getTitleText(): mapCommon.Text
 
@@ -99,13 +91,11 @@ getTitleText(): mapCommon.Text
 
 **示例：**
 
-```
-1. let titleText: mapCommon.Text = pointAnnotation.getTitleText();
+```typescript
+let titleText: mapCommon.Text = pointAnnotation.getTitleText();
 ```
 
 ### setTitleText
-
-PhonePC/2in1TabletWearable
 
 setTitleText(text: mapCommon.Text): void
 
@@ -127,21 +117,19 @@ setTitleText(text: mapCommon.Text): void
 
 **示例：**
 
-```
-1. // 以pointAnnotation为例
-2. pointAnnotation.setTitleText({
-3. content: '',
-4. color: 0xff00ffff,
-5. fontSize: 15,
-6. strokeColor: 0xff00ff00,
-7. strokeWidth: 2,
-8. fontStyle: mapCommon.FontStyle.BOLD_ITALIC
-9. });
+```typescript
+// 以pointAnnotation为例
+pointAnnotation.setTitleText({
+  content: '',
+  color: 0xff00ffff,
+  fontSize: 15,
+  strokeColor: 0xff00ff00,
+  strokeWidth: 2,
+  fontStyle: mapCommon.FontStyle.BOLD_ITALIC
+});
 ```
 
 ### setTitleAnimation
-
-PhonePC/2in1TabletWearable
 
 setTitleAnimation(animation: FontSizeAnimation): void
 
@@ -163,30 +151,28 @@ setTitleAnimation(animation: FontSizeAnimation): void
 
 **示例：**
 
-```
-1. let animation: map.FontSizeAnimation = new map.FontSizeAnimation(5, 25);
-2. animation.setDuration(3000);
-3. animation.on("start",() => {
-4. console.info('start Font Animation');
-5. });
-6. animation.on("end",() => {
-7. console.info('end Font Animation');
-8. });
-9. // 设置动画完成的状态
-10. animation.setFillMode(map.AnimationFillMode.BACKWARDS);
-11. // 设置动画重复方式
-12. animation.setRepeatMode(map.AnimationRepeatMode.REVERSE);
-13. // 设置动画的插值器
-14. animation.setInterpolator(Curve.Linear);
-15. // 设置动画重复的次数
-16. animation.setRepeatCount(100);
-17. pointAnnotation.setTitleAnimation(animation);
-18. pointAnnotation.startTitleAnimation();
+```typescript
+let animation: map.FontSizeAnimation = new map.FontSizeAnimation(5, 25);
+animation.setDuration(3000);
+animation.on("start", () => {
+  console.info('start Font Animation');
+});
+animation.on("end", () => {
+  console.info('end Font Animation');
+});
+// 设置动画完成的状态
+animation.setFillMode(map.AnimationFillMode.BACKWARDS);
+// 设置动画重复方式
+animation.setRepeatMode(map.AnimationRepeatMode.REVERSE);
+// 设置动画的插值器
+animation.setInterpolator(Curve.Linear);
+// 设置动画重复的次数
+animation.setRepeatCount(100);
+pointAnnotation.setTitleAnimation(animation);
+pointAnnotation.startTitleAnimation();
 ```
 
 ### startTitleAnimation
-
-PhonePC/2in1TabletWearable
 
 startTitleAnimation(): void
 
@@ -202,6 +188,6 @@ startTitleAnimation(): void
 
 **示例：**
 
-```
-1. pointAnnotation.startTitleAnimation();
+```typescript
+pointAnnotation.startTitleAnimation();
 ```

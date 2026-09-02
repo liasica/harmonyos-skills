@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/apidiff-6011
 title: 6.0.1(21) Beta1引入的API
-breadcrumb: 版本说明 > HarmonyOS 6.0.1(21) > OS平台能力 > API变更清单 > 6.0.1(21) Beta1引入的API
+breadcrumb: 版本说明 > 更多版本 > 6.0.1(21) > OS平台能力 > API变更清单 > 6.0.1(21) Beta1引入的API
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:55+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:16:25+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:78e59fde7c238cafe2c4a062fc09c24b9c68630082c410b61989f9f52ab32851
 ---
 

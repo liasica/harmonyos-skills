@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Functions
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > ArkTS API > @ohos.multimedia.avMusicTemplate (音频模板) > Functions
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b6a8686f7c586f975602b0bcea0ff65b28735ceb48a96da7f2a7d583561e2ad6
+scraped_at: 2026-09-02T15:02:24+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d0a6ace426cacc1e210777d4af8cd809c5986091406eec7e5199bdfc66280e0d
 ---
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 23开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本模块仅适用于API version 23及以上版本的Car设备。
 
 ## 导入模块
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 ```
 
 ## avMusicTemplate.createAVMusicTemplate
@@ -33,7 +33,7 @@ createAVMusicTemplate(accessType: AVMusicTemplateType): AVMusicTemplate
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| accessType | [AVMusicTemplateType](arkts-apis-avmusictemplate-e.md#avmusictemplatetype) | 是 | 音频模板枚举类型。 |
+| accessType | [AVMusicTemplateType](arkts-apis-avmusictemplate-e.md#avmusictemplatetype) | 是 | 音频模板类型。 |
 
 **返回值：**
 
@@ -52,42 +52,42 @@ createAVMusicTemplate(accessType: AVMusicTemplateType): AVMusicTemplate
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. private static sInstance: TemplateManager;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private static instance: TemplateManager;
 
-7. private constructor() {
-8. }
+  private constructor() {
+  }
 
-10. /**
-11. * 获取模板控制器实例。
-12. *
-13. * @returns 模板控制器实例。
-14. */
-15. public static getInstance(): TemplateManager {
-16. if (!TemplateManager.sInstance) {
-17. TemplateManager.sInstance = new TemplateManager();
-18. }
-19. return TemplateManager.sInstance;
-20. };
+  /**
+   * 获取模板管理器实例。
+   *
+   * @returns 模板管理器实例。
+   */
+  public static getInstance(): TemplateManager {
+    if (!TemplateManager.instance) {
+      TemplateManager.instance = new TemplateManager();
+    }
+    return TemplateManager.instance;
+  };
 
-22. /**
-23. * 创建音频模板。
-24. */
-25. public createTemplate() {
-26. if (this.template) {
-27. console.warn('createTemplate: template not undefined');
-28. return
-29. }
-30. try {
-31. this.template = avMusicTemplate.createAVMusicTemplate(avMusicTemplate.AVMusicTemplateType.DEFAULT);
-32. console.info('Succeeded in creating template.');
-33. } catch (e) {
-34. console.error(`createTemplate, errCode: ${e?.code}`);
-35. }
-36. }
-37. }
+  /**
+   * 创建音频模板。
+   */
+  public createTemplate() {
+    if (this.template) {
+      console.warn('createTemplate: template already exists');
+      return;
+    }
+    try {
+      this.template = avMusicTemplate.createAVMusicTemplate(avMusicTemplate.AVMusicTemplateType.DEFAULT);
+      console.info('Succeeded in creating template.');
+    } catch (e) {
+      console.error(`createTemplate, errCode: ${e?.code}`);
+    }
+  }
+}
 ```

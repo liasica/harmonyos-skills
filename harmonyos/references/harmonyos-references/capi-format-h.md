@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-form
 title: format.h
 breadcrumb: API参考 > AI > MindSpore Lite Kit（昇思推理框架服务） > C API > 头文件 > format.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:02+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:57f85b6ebd7834efdea16e1aae287a6292734bd662a99d88c63de9efda91950f
+scraped_at: 2026-09-02T15:03:11+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:def42e39cff9942782a9cf6060a66528d1f31f34749ba67b8905be5461152d5e
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供张量数据的排列格式。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,14 +32,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AI\_Format
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AI_Format
+```c
+enum OH_AI_Format
 ```
 
 **描述**

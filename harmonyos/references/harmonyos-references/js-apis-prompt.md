@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: "@ohos.prompt (弹窗)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 已停止维护的接口 > @ohos.prompt (弹窗)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:51:02+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:4516280eab5861007770864550bf684559ba64e269d018d72dc72541afbd26c3
+scraped_at: 2026-09-02T15:00:53+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ab66b48d7689c2fc406f571a6c8e0f09f1794c167721145fb3eeb77454467df0
 ---
 
 创建并显示文本提示框、对话框和操作菜单。
 
-说明
+**说明** 
 
 从API version 9 开始，该接口不再维护，推荐使用新接口[@ohos.promptAction (弹窗)](js-apis-promptaction.md)。
 
@@ -18,15 +18,11 @@ content_hash: sha256:4516280eab5861007770864550bf684559ba64e269d018d72dc72541afb
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import prompt from '@ohos.prompt'
+```ts
+import prompt from '@ohos.prompt'
 ```
 
 ## prompt.showToast
-
-PhonePC/2in1TabletTVWearable
 
 showToast(options: ShowToastOptions): void
 
@@ -42,19 +38,17 @@ showToast(options: ShowToastOptions): void
 
 **示例：**
 
-```
-1. import prompt from '@ohos.prompt'
-2. prompt.showToast({
-3. message: 'Message Info',
-4. duration: 2000
-5. });
+```ts
+import prompt from '@ohos.prompt'
+prompt.showToast({
+  message: 'Message Info',
+  duration: 2000
+});
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/4idmK20gQlKCwp055DgLTQ/zh-cn_image_0000002589325851.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/XqSyOlvySCih46YvsI0sBg/zh-cn_image_0000002706675652.gif)
 
 ## ShowToastOptions
-
-PhonePC/2in1TabletTVWearable
 
 文本提示框的选项。
 
@@ -68,11 +62,9 @@ PhonePC/2in1TabletTVWearable
 
 ## prompt.showDialog
 
-PhonePC/2in1TabletTVWearable
-
 showDialog(options: ShowDialogOptions): Promise<ShowDialogSuccessResponse>
 
-创建并显示对话框，对话框响应后同步返回结果。
+创建并显示对话框，使用Promise异步回调。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -90,35 +82,33 @@ showDialog(options: ShowDialogOptions): Promise<ShowDialogSuccessResponse>
 
 **示例：**
 
-```
-1. import prompt from '@ohos.prompt'
-2. prompt.showDialog({
-3. title: 'Title Info',
-4. message: 'Message Info',
-5. buttons: [
-6. {
-7. text: 'button1',
-8. color: '#000000'
-9. },
-10. {
-11. text: 'button2',
-12. color: '#000000'
-13. }
-14. ],
-15. })
-16. .then(data => {
-17. console.info('showDialog success, click button: ' + data.index);
-18. })
-19. .catch((err:Error) => {
-20. console.info('showDialog error: ' + err);
-21. })
+```ts
+import prompt from '@ohos.prompt'
+prompt.showDialog({
+  title: 'Title Info',
+  message: 'Message Info',
+  buttons: [
+    {
+      text: 'button1',
+      color: '#000000'
+    },
+    {
+      text: 'button2',
+      color: '#000000'
+    }
+  ],
+})
+  .then(data => {
+    console.info('showDialog success, click button: ' + data.index);
+  })
+  .catch((err:Error) => {
+    console.info('showDialog error: ' + err);
+  })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/z4cs7W0ASX-6dpXuZUP2Dw/zh-cn_image_0000002589325815.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/7Fsy_R18TOqSF_UnTMtiig/zh-cn_image_0000002706835552.gif)
 
 ## prompt.showDialog
-
-PhonePC/2in1TabletTVWearable
 
 showDialog(options: ShowDialogOptions, callback: AsyncCallback<ShowDialogSuccessResponse>):void
 
@@ -130,40 +120,38 @@ showDialog(options: ShowDialogOptions, callback: AsyncCallback<ShowDialogSuccess
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [ShowDialogOptions](js-apis-prompt.md#showdialogoptions) | 是 | 页面显示对话框信息描述。 |
+| options | [ShowDialogOptions](js-apis-prompt.md#showdialogoptions) | 是 | 对话框选项。 |
 | callback | AsyncCallback<[ShowDialogSuccessResponse](js-apis-prompt.md#showdialogsuccessresponse)> | 是 | 对话框响应结果回调。 |
 
 **示例：**
 
-```
-1. import prompt from '@ohos.prompt'
-2. prompt.showDialog({
-3. title: 'showDialog Title Info',
-4. message: 'Message Info',
-5. buttons: [
-6. {
-7. text: 'button1',
-8. color: '#000000'
-9. },
-10. {
-11. text: 'button2',
-12. color: '#000000'
-13. }
-14. ]
-15. }, (err, data) => {
-16. if (err) {
-17. console.info('showDialog err: ' + err);
-18. return;
-19. }
-20. console.info('showDialog success callback, click button: ' + data.index);
-21. });
+```ts
+import prompt from '@ohos.prompt'
+prompt.showDialog({
+  title: 'showDialog Title Info',
+  message: 'Message Info',
+  buttons: [
+    {
+      text: 'button1',
+      color: '#000000'
+    },
+    {
+      text: 'button2',
+      color: '#000000'
+    }
+  ]
+}, (err, data) => {
+  if (err) {
+    console.info('showDialog err: ' + err);
+    return;
+  }
+  console.info('showDialog success callback, click button: ' + data.index);
+});
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/dJ3uc8_gR1GLpyvYgPE14Q/zh-cn_image_0000002589245757.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/RxwkO_usSry2BywBkKe-EA/zh-cn_image_0000002736314657.gif)
 
 ## ShowDialogOptions
-
-PhonePC/2in1TabletTVWearable
 
 对话框的选项。
 
@@ -177,8 +165,6 @@ PhonePC/2in1TabletTVWearable
 
 ## ShowDialogSuccessResponse
 
-PhonePC/2in1TabletTVWearable
-
 对话框的响应结果。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
@@ -188,8 +174,6 @@ PhonePC/2in1TabletTVWearable
 | index | number | 是 | 选中按钮在buttons数组中的索引。 |
 
 ## prompt.showActionMenu
-
-PhonePC/2in1TabletTVWearable
 
 showActionMenu(options: ActionMenuOptions, callback: AsyncCallback<ActionMenuSuccessResponse>):void
 
@@ -206,38 +190,36 @@ showActionMenu(options: ActionMenuOptions, callback: AsyncCallback<ActionMenuSuc
 
 **示例：**
 
-```
-1. import prompt from '@ohos.prompt'
-2. prompt.showActionMenu({
-3. title: 'Title Info',
-4. buttons: [
-5. {
-6. text: 'item1',
-7. color: '#666666'
-8. },
-9. {
-10. text: 'item2',
-11. color: '#000000'
-12. },
-13. ]
-14. }, (err, data) => {
-15. if (err) {
-16. console.info('showActionMenu err: ' + err);
-17. return;
-18. }
-19. console.info('showActionMenu success callback, click button: ' + data.index);
-20. })
+```ts
+import prompt from '@ohos.prompt'
+prompt.showActionMenu({
+  title: 'Title Info',
+  buttons: [
+    {
+      text: 'item1',
+      color: '#666666'
+    },
+    {
+      text: 'item2',
+      color: '#000000'
+    },
+  ]
+}, (err, data) => {
+  if (err) {
+    console.info('showActionMenu err: ' + err);
+    return;
+  }
+  console.info('showActionMenu success callback, click button: ' + data.index);
+})
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/DmqLZ7OxRU6k44L_l5TCKQ/zh-cn_image_0000002589325817.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/RyWxkE85Q2SIEEgtnT9Ypg/zh-cn_image_0000002706835554.gif)
 
 ## prompt.showActionMenu
 
-PhonePC/2in1TabletTVWearable
-
 showActionMenu(options: ActionMenuOptions): Promise<ActionMenuSuccessResponse>
 
-创建并显示操作菜单，菜单响应后同步返回结果。
+创建并显示操作菜单，使用Promise异步回调。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -255,34 +237,32 @@ showActionMenu(options: ActionMenuOptions): Promise<ActionMenuSuccessResponse>
 
 **示例：**
 
-```
-1. import prompt from '@ohos.prompt'
-2. prompt.showActionMenu({
-3. title: 'showActionMenu Title Info',
-4. buttons: [
-5. {
-6. text: 'item1',
-7. color: '#666666'
-8. },
-9. {
-10. text: 'item2',
-11. color: '#000000'
-12. },
-13. ]
-14. })
-15. .then(data => {
-16. console.info('showActionMenu success, click button: ' + data.index);
-17. })
-18. .catch((err:Error) => {
-19. console.info('showActionMenu error: ' + err);
-20. })
+```ts
+import prompt from '@ohos.prompt'
+prompt.showActionMenu({
+  title: 'showActionMenu Title Info',
+  buttons: [
+    {
+      text: 'item1',
+      color: '#666666'
+    },
+    {
+      text: 'item2',
+      color: '#000000'
+    },
+  ]
+})
+  .then(data => {
+    console.info('showActionMenu success, click button: ' + data.index);
+  })
+  .catch((err:Error) => {
+    console.info('showActionMenu error: ' + err);
+  })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/dxEKdPJPSAiGqhQWUD1dlg/zh-cn_image_0000002558765948.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/5Xhd4QYQTtqo7Fz8h1NRKQ/zh-cn_image_0000002706675616.gif)
 
 ## ActionMenuOptions
-
-PhonePC/2in1TabletTVWearable
 
 操作菜单的选项。
 
@@ -295,8 +275,6 @@ PhonePC/2in1TabletTVWearable
 
 ## ActionMenuSuccessResponse
 
-PhonePC/2in1TabletTVWearable
-
 操作菜单的响应结果。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
@@ -306,8 +284,6 @@ PhonePC/2in1TabletTVWearable
 | index | number | 是 | 选中按钮在buttons数组中的索引，从0开始。 |
 
 ## Button
-
-PhonePC/2in1TabletTVWearable
 
 菜单中的菜单项按钮。
 

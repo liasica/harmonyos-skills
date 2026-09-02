@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cannkit-h
 title: hiai_aipp_param.h
 breadcrumb: API参考 > AI > CANN Kit（CANN异构计算框架服务） > C API > 头文件和结构体 > 头文件 > hiai_aipp_param.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:50+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ac5a53205dd51cb8c0330ad1950bbf48ceb871aad7237bab49b63aa2abbb7b85
+scraped_at: 2026-09-02T15:03:10+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d02633dbde40d7af46c6a283b625eec036603decf8b7b6670056b50bfa5b19ef
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 模型推理时动态AIPP对象创建，参数设置和查询的接口。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 类型定义
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -38,16 +32,12 @@ PhonePC/2in1TabletTV
 
 ### 枚举
 
-PhonePC/2in1TabletTV
-
 | 名称 | 描述 |
 | --- | --- |
 | [HiAI\_ImageFormat](cannkit.md#hiai_imageformat) {  HIAI\_YUV420SP\_U8 = 0,  HIAI\_XRGB8888\_U8 = 1,  HIAI\_YUV400\_U8 = 2,  HIAI\_ARGB8888\_U8 = 3,  HIAI\_YUYV\_U8 = 4,  HIAI\_YUV422SP\_U8 = 5,  HIAI\_AYUV444\_U8 = 6,  HIAI\_RGB888\_U8 = 7,  HIAI\_BGR888\_U8 = 8,  HIAI\_YUV444SP\_U8 = 9,  HIAI\_YVU444SP\_U8 = 10,  HIAI\_IMAGE\_FORMAT\_INVALID = 255  } | CANN Kit推理支持的输入和输出Tensor的图片格式的枚举。 |
 | [HiAI\_ImageColorSpace](cannkit.md#hiai_imagecolorspace) {  HIAI\_JPEG = 0,  HIAI\_BT\_601\_NARROW = 1,  HIAI\_BT\_601\_FULL = 2,  HIAI\_BT\_709\_NARROW = 3,  HIAI\_IMAGE\_COLOR\_SPACE\_INVALID = 4  } | 图像色域空间类型。 |
 
 ### 函数
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |

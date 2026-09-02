@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-input
 title: InputReorderVector
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OpRegistrationData > InputReorderVector
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:42:27+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d710eec55b8655d02d08c0398de2320b054ef8764e445891ea2ba352a8371fa7
+content_hash: sha256:d613f3d8a47290144b12a61124d74c3b96964e521a008e6ae68516cb2ef37185
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:d710eec55b8655d02d08c0398de2320b054ef8764e445891ea2ba352a83
 
 ## 函数原型
 
-```
-1. OpRegistrationData &InputReorderVector(const std::vector<int32_t> &input_order)
+```cpp
+OpRegistrationData &InputReorderVector(const std::vector<int32_t> &input_order)
 ```
 
 ## 参数说明

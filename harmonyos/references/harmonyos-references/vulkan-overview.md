@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/vulkan-ov
 title: Vulkan开发概述
 breadcrumb: API参考 > 标准库 > Vulkan > Vulkan开发指导 > Vulkan开发概述
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:33+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-02T15:20:59+08:00
+doc_updated_at: 2026-08-29
 content_hash: sha256:f013798e484a8849ce6bf7f9ed07896e3a556d47c7220413616d5c0107732031
 ---
 

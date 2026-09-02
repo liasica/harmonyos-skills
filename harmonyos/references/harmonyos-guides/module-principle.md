@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-princi
 title: 模块化运行简介
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS运行时 > ArkTS模块化 > 模块化运行简介
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:26:50+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f884a279b92ce88766719a7d66569708d84c0077e46cc887cbbf55fee8bfe9ef
+scraped_at: 2026-09-02T14:59:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:42ecbc23759f86ffb1fb3ad3065573b23b69d99f037689924bd871225d24f51b
 ---
 
 为了解决大型或复杂应用开发过程中，部分代码编译时被多次拷贝导致包体积增大、文件依赖、代码与资源共享困难以及单例和全局变量污染等问题，ArkTS支持应用模块化编译、打包和运行，简化代码的编写与维护。
@@ -20,7 +20,7 @@ ArkTS模块化运行根据ECMAScript模块规范实现，以后序遍历的方�
 
 以下图为例，每个父节点加载对应子节点，并按import顺序执行同级。模块图文件执行顺序为：D->F->G->E->B->I->H->C->A。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/SzBzKeQRS-qZUpDUlugr-Q/zh-cn_image_0000002589323899.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/a8rQuJCiSxKfUjMCQNxBbQ/zh-cn_image_0000002736432239.png)
 
 A文件称为入口文件，即执行起点。一些内置的加载接口，如[windowStage.loadContent](../harmonyos-references/arkts-apis-window-window.md#loadcontent9)和[路由跳转](arkts-navigation-architecture.md)等页面拉起接口（即不是通过import写法拉起的文件），入参文件都会作为入口文件执行。
 
@@ -48,7 +48,7 @@ CommonJS模块是JavaScript社区2009年提出的标准，首先在Node.js采用
 | 变量 | const ohos = require('ohos') | module.exports = add |
 | 函数 | const ohos = require('ohos')  ohos.fun(); | exports.fun = function foo () {}或module.exports.fun = function foo () {} |
 
-说明
+**说明** 
 
 CommonJS模块仅适用于第三方包的导出，不支持在工程中创建和使用。
 
@@ -69,31 +69,31 @@ CommonJS与ES Module互相引用的规格如下表所示，导入和导出语法
 
 ### JSON文件
 
-JSON（JavaScript Object Notation）是一种轻量级的数据交互格式，采用完全独立于编程语言的文本格式来存储和表示数据。
+JSON（JavaScript Object Notation）是一种轻量级的数据交换格式，采用完全独立于编程语言的文本格式来存储和表示数据。
 
 JSON文件只能使用default方式导入，如下所示：
 
-```
-1. import data from './ImportJson.json';
+```typescript
+import data from './ImportJson.json';
 ```
 
 ### Native模块
 
 Native模块（so）的导入导出与加载ets/ts/js语法规格一致。详情请参考：[静态方式加载native模块](arkts-import-native-module.md)。
 
-说明
+**说明** 
 
 Native模块不支持在CommonJS模块中导入。
 
 示例：
 
-```
-1. // libentry.so对应的index.d.ts
-2. export const add: (a: number, b: number) => number;
+```typescript
+// libentry.so对应的Index.d.ts
+export const add: (a: number, b: number) => number;
 ```
 
-```
-1. // NameImport.ets
-2. import { add } from 'libentry.so';
-3. add(2, 3);
+```typescript
+// NameImport.ets
+import { add } from 'libentry.so';
+add(2, 3);
 ```

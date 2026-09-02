@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cannkit-h
 title: hiai_single_op.h
 breadcrumb: API参考 > AI > CANN Kit（CANN异构计算框架服务） > C API > 头文件和结构体 > 头文件 > hiai_single_op.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:50+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:196c60f17f1da7ba72d3627e3e2464f76616b4acabe6362f48018caff0b47e68
+scraped_at: 2026-09-02T15:03:10+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:76b4daab557c91be7a6af2308bdb5cf6319ca84ba8f67ac143b8ece3963c4f26
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 定义CANN Kit单算子接口，用于单算子的创建、计算以及Tensor和Buffer的管理。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 结构体
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -40,8 +34,6 @@ PhonePC/2in1TabletTV
 
 ### 类型定义
 
-PhonePC/2in1TabletTV
-
 | 名称 | 描述 |
 | --- | --- |
 | typedef struct [HiAI\_SingleOpTensorDesc](cannkit.md#hiai_singleoptensordesc) [HiAI\_SingleOpTensorDesc](cannkit.md#hiai_singleoptensordesc) | 单算子Tensor描述的句柄。 |
@@ -49,14 +41,12 @@ PhonePC/2in1TabletTV
 | typedef struct [HiAI\_SingleOpTensor](cannkit.md#hiai_singleoptensor) [HiAI\_SingleOpTensor](cannkit.md#hiai_singleoptensor) | 单算子Tensor句柄。 |
 | typedef struct [HiAI\_SingleOpOptions](cannkit.md#hiai_singleopoptions) [HiAI\_SingleOpOptions](cannkit.md#hiai_singleopoptions) | 单算子选项句柄。 |
 | typedef struct [HiAI\_SingleOpDescriptor](cannkit.md#hiai_singleopdescriptor) [HiAI\_SingleOpDescriptor](cannkit.md#hiai_singleopdescriptor) | 单算子的算子描述句柄。 |
-| typedef struct [HiAISingleOpDescriptor\_ConvolutionParam](cannkit-sopdesc-convparam.md) | [HMS\_HiAISingleOpDescriptor\_CreateConvolution](cannkit.md#hms_hiaisingleopdescriptor_createconvolution)输入参数。 |
-| typedef struct [HiAI\_SingleOpExecutorConvolutionParam](cannkit-sopexec-convparam.md) | [HMS\_HiAISingleOpExecutor\_CreateConvolution](cannkit.md#hms_hiaisingleopexecutor_createconvolution)输入参数。 |
-| typedef struct [HiAI\_SingleOpExecutorFusedConvolutionActivationParam](cannkit-sopexec-fusedconv-actparam.md) | [HMS\_HiAISingleOpExecutor\_CreateFusedConvolutionActivation](cannkit.md#hms_hiaisingleopexecutor_createfusedconvolutionactivation)输入参数。 |
+| typedef struct [HiAISingleOpDescriptor\_ConvolutionParam](cannkit-sopdesc-convparam.md) [HiAISingleOpDescriptor\_ConvolutionParam](cannkit-sopdesc-convparam.md) | [HMS\_HiAISingleOpDescriptor\_CreateConvolution](cannkit.md#hms_hiaisingleopdescriptor_createconvolution)输入参数。 |
+| typedef struct [HiAI\_SingleOpExecutorConvolutionParam](cannkit-sopexec-convparam.md) [HiAI\_SingleOpExecutorConvolutionParam](cannkit-sopexec-convparam.md) | [HMS\_HiAISingleOpExecutor\_CreateConvolution](cannkit.md#hms_hiaisingleopexecutor_createconvolution)输入参数。 |
+| typedef struct [HiAI\_SingleOpExecutorFusedConvolutionActivationParam](cannkit-sopexec-fusedconv-actparam.md) [HiAI\_SingleOpExecutorFusedConvolutionActivationParam](cannkit-sopexec-fusedconv-actparam.md) | [HMS\_HiAISingleOpExecutor\_CreateFusedConvolutionActivation](cannkit.md#hms_hiaisingleopexecutor_createfusedconvolutionactivation)输入参数。 |
 | typedef struct [HiAI\_SingleOpExecutor](cannkit.md#hiai_singleopexecutor) [HiAI\_SingleOpExecutor](cannkit.md#hiai_singleopexecutor) | 单算子执行器句柄。 |
 
 ### 枚举
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -68,8 +58,6 @@ PhonePC/2in1TabletTV
 | [HiAI\_SingleOpSupportStatus](cannkit.md#hiai_singleopsupportstatus) {  HIAI\_SINGLEOP\_OPTIMIZED = 0,  HIAI\_SINGLEOP\_COMMON = 1,  HIAI\_SINGLEOP\_UNSUPPORTED = 2  } | 单算子支持状态枚举。 |
 
 ### 函数
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |

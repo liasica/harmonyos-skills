@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 如何从数据库中获得特定类型的文件列表
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 如何从数据库中获得特定类型的文件列表
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:14+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:51+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:09e9a48676670b76650d7a574fe212d9f0d978609433df3475d0a7cc06ed53be
 ---
 

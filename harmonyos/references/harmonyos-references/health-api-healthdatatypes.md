@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-api-healthdatatypes
-title: healthDataTypes(运动健康数据类型常量)
-breadcrumb: API参考 > 应用服务 > Health Service Kit（运动健康服务） > ArkTS API > 运动健康数据类型常量及模型定义 > healthDataTypes(运动健康数据类型常量)
+title: healthDataTypes (运动健康数据类型常量)
+breadcrumb: API参考 > 应用服务 > Health Service Kit（运动健康服务） > ArkTS API > 运动健康数据类型常量及模型定义 > healthDataTypes (运动健康数据类型常量)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:50+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:88a64bff50786d9ed4afd07796677feb936cbc2df7d28b9656f4e832d7bc0439
+scraped_at: 2026-09-02T15:02:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:835377ae8a0cf7b03f14ef218d60a32342ca1ea37aa628a85c944927b43f211e
 ---
 
 本模块提供运动健康数据类型常量。
@@ -14,23 +14,21 @@ content_hash: sha256:88a64bff50786d9ed4afd07796677feb936cbc2df7d28b9656f4e832d7b
 
 ## 导入模块
 
-PhoneTabletWearable
-
-```
-1. import { healthStore } from '@kit.HealthServiceKit';
+```typescript
+import { healthStore } from '@kit.HealthServiceKit';
 ```
 
-说明
+**说明** 
 
 此模块为healthStore子模块，需通过healthStore.healthDataTypes方式使用。
 
 ## 常量
 
-PhoneTabletWearable
-
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | 名称 | 类型 | 说明 |
 | --- | --- | --- |
@@ -48,6 +46,7 @@ PhoneTabletWearable
 | WEIGHT | [healthStore.DataType](health-api-healthstore.md#datatype) | 体重数据类型。 |
 | SLEEP\_RECORD | [healthStore.DataType](health-api-healthstore.md#datatype) | 夜间睡眠数据类型。 |
 | SLEEP\_NAP\_RECORD | [healthStore.DataType](health-api-healthstore.md#datatype) | 零星小睡数据类型。 |
+| MENSTRUAL\_CYCLE | [healthStore.DataType](health-api-healthstore.md#datatype) | 生理周期数据类型。  **起始版本：** 6.1.1(24) |
 | WORKOUT | [healthStore.DataType](health-api-healthstore.md#datatype) | 锻炼记录数据类型。 |
 | ADVENTURES | [healthStore.SubDataType](health-api-healthstore.md#subdatatype) | 户外探险子数据类型。 |
 | AEROBICS | [healthStore.SubDataType](health-api-healthstore.md#subdatatype) | 健美操子数据类型。 |

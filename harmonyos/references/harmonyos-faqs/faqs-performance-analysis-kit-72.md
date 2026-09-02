@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: hdc无法安装包
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > hdc无法安装包
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:25+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:13+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:457d764070dbb3e1fe1198d78bbe84049e2d35e18bf6bb00d358810d15971919
 ---
 

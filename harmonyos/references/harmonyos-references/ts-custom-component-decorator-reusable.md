@@ -1,0 +1,95 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom-component-decorator-reusable
+title: "@Reusable：组件复用"
+breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义组件 > 组件扩展装饰器 > @Reusable：组件复用
+category: harmonyos-references
+scraped_at: 2026-09-02T15:01:08+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:99eb9ab2a5e59c226e0b5432e483a7b318472566f48ae1d68ead21d6ff2bd478
+---
+
+为了降低反复创建销毁自定义组件带来的性能开销，开发者可以使用@Reusable装饰@Component装饰的自定义组件，实现组件复用。@Reusable支持通过reuseId标识不同类型的可复用组件，提供aboutToReuse回调接收复用参数，并支持配置内存优化策略。该装饰器适用于列表滚动、频繁切换组件显示与隐藏等需要反复创建销毁组件的场景。
+
+开发指南参考：[@Reusable装饰器：组件复用](../harmonyos-guides/arkts-reusable.md)。
+
+**说明** 
+
+* 本装饰器首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+
+## @Reusable
+
+const Reusable: ClassDecorator & ((options: ReusableOptions) => ClassDecorator)
+
+声明一个可复用的自定义组件。需与@Component搭配使用，用于装饰自定义组件，以实现组件复用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | [ReusableOptions](ts-custom-component-parameter.md#reusableoptions) | 否 | 可复用自定义组件的参数，用于配置内存优化策略，缺省时无内存优化策略。建议在组件频繁创建销毁的场景下配置该参数以获得内存优化效果。  **起始版本：** 26.0.0 |
+
+**示例：**
+
+```ts
+class Message {
+  value: string | undefined;
+
+  constructor(value: string) {
+    this.value = value;
+  }
+}
+
+@Entry
+@Component
+struct Index {
+  // 使用@State控制子组件的显示与隐藏
+  @State isChildVisible: boolean = true;
+
+  build() {
+    Column() {
+      Button('Hello')
+        .fontSize(30)
+        .fontWeight(FontWeight.Bold)
+        .onClick(() => {
+          // 点击按钮切换子组件的显示状态
+          this.isChildVisible = !this.isChildVisible;
+        })
+      if (this.isChildVisible) {
+        Child({ message: new Message('Child') })
+          // 设置reuseId，用于组件复用标识
+          .reuseId('Child')
+      }
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
+
+// 使用@Reusable装饰器标记可复用组件，配合@Component使用
+@Reusable
+@Component
+struct Child {
+  @State message: Message = new Message('AboutToReuse');
+
+  // 组件复用时的回调，接收传入的参数
+  aboutToReuse(params: Record<string, ESObject>) {
+    console.info('Reuse====Child==');
+    this.message = params.message as Message;
+  }
+
+  build() {
+    Column() {
+      Text(this.message.value)
+        .fontSize(30)
+    }
+    .borderWidth(1)
+    .height(100)
+  }
+}
+```

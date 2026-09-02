@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 如何通过hdc命令清除手机中应用的缓存
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > 如何通过hdc命令清除手机中应用的缓存
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:21+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:13+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:e8311af6a622b44c84b48423ae7828c69a17c0520e8826f6ca4fd5bde491771e
 ---
 

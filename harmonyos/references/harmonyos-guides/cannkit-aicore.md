@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-aicor
 title: AICore
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > Host API > 原型注册与管理 > OpDef > AICore
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:35+08:00
+scraped_at: 2026-09-02T14:50:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:bf7bb2e8b1871c09b75823056e4134f1e857d41d8be8768d3ba982b38ba5ac47
+content_hash: sha256:75e23142afb013725348f2b255aee31acb11d7ad70447b5c21cdaa64c3d87df5
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:bf7bb2e8b1871c09b75823056e4134f1e857d41d8be8768d3ba982b38ba
 
 ## 函数原型
 
-```
-1. OpAICoreDef &AICore(void);
+```cpp
+OpAICoreDef &AICore(void);
 ```
 
 ## 参数说明

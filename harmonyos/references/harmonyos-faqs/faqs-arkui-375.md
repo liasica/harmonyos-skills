@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-375
 title: 自定义构建函数Builder与自定义组件component的使用区别以及限制是什么
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 自定义构建函数Builder与自定义组件component的使用区别以及限制是什么
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 自定义构建函数Builder与自定义组件component的使用区别以及限制是什么
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:36+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:22+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:8160dab1d76bd27e5510a3071e04c1e123731e70b15018f61180fadaf85241b2
 ---
 

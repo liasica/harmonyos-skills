@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-intro
 title: Payment Kit简介
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > Payment Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:26+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e8f0082fdfc0333b53a00a8510444c15b623c69b5a8bf20130bd6b637c244aab
+scraped_at: 2026-09-02T14:59:59+08:00
+doc_updated_at: 2026-06-13
+content_hash: sha256:0c8ccdb1929849fde7105e4092072f27c39917eb92b60b1f1dfbb00e05cb3563
 ---
 
-Payment Kit（鸿蒙支付服务）提供了方便、安全和快捷的支付方式，开发者在开发的商户应用/元服务中接入支付服务便捷且快速。
+Payment Kit（鸿蒙支付服务）提供了方便、安全和快捷的支付方式，助力开发者在商户应用/元服务中快速实现支付功能。
 
 商户应用/元服务接入Payment Kit后，可在商户的应用/元服务内通过拉起华为支付收银台来完成订单的支付并展示支付结果以及完成用户对**实体商品或服务**（例如酒店服务、出行服务、充值缴费服务等）的购买。
 
@@ -70,8 +70,8 @@ Payment Kit支持的支付能力如下：
 | --- | --- | --- | --- |
 | **基础支付** | 直连商户、平台类商户、服务商 | [商户基础支付场景](payment-payment-process.md)  [通用收银台支付相关场景](payment-common-pay-introduction.md) | 用户选购商品后，商户通过接入基础支付完成用户订单的创建与支付。 |
 | **合单支付** | 平台类商户 | [平台类商户合单支付场景](payment-partner-combined.md) | 通过合单支付，商户可将不同商户的一个或多个订单合并到同一个订单完成支付。 |
-| **支付并签约** | 直连商户、服务商 | [支付并签约场景](payment-pay-and-sign.md) | 用户支付完成后可与商户签订协议，完成后续相关业务自动扣款。 |
-| **签约代扣** | 直连商户、服务商 | [签约代扣场景](payment-withhold-process.md) | 商户可主动发起与用户签订相关协议，完成相关业务自动扣款（如水电费预缴，自动充值代扣等），简化用户操作流程。 |
+| **支付并签约** | 直连商户、平台类商户、服务商 | [支付并签约场景](payment-pay-and-sign.md) | 用户支付完成后可与商户签订协议，完成后续相关业务自动扣款。 |
+| **签约代扣** | 直连商户、平台类商户、服务商 | [签约代扣场景](payment-withhold-process.md) | 商户可主动发起与用户签订相关协议，完成相关业务自动扣款（如水电费预缴，自动充值代扣等），简化用户操作流程。 |
 | **数字人民币支付** | 运营机构或受理服务机构入网的商户 | [数字人民币支付场景](payment-digital-cny-pay.md) | 在运营机构或受理服务机构入网的商户可通过接入数字人民币来完成如用户话费充值缴费等相关支付操作。 |
 
 支付能力之间的差异：
@@ -83,23 +83,23 @@ Payment Kit支持的支付能力如下：
 
 华为支付接入顺序如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/MrJYWrqXSh2wlnBTHMbFQw/zh-cn_image_0000002589325441.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/hRvwY4gESAGjD72bDAnJ1A/zh-cn_image_0000002706675156.png)
 
 [数字人民币支付](payment-digital-cny-pay.md)接入顺序如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/0SHkZgl-T7SdXh3KcSh3VQ/zh-cn_image_0000002589245379.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/bvxV_gcRTOy89ONU2D3uig/zh-cn_image_0000002736434245.png)
 
 通用收银台[混合支付场景](payment-common-pay-mix.md)接入顺序如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/ieT7qGrmSuiy0pmMb-Xx8Q/zh-cn_image_0000002558765572.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/6cP3VZ9AQHaUU6eNrhnmCw/zh-cn_image_0000002706835094.png)
 
 通用收银台[纯外部支付场景](payment-common-pay-external.md)接入顺序如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/vlqA1ucxRKC0j65TVgLdSA/zh-cn_image_0000002558605916.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/YubCVaIOQGqhmeUqcaPBQQ/zh-cn_image_0000002736314201.png)
 
 用户身份验证服务、人脸核身实人验证接入顺序如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/Kpvrb5uUSdirIoTaGt8TkA/zh-cn_image_0000002589325443.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/DsX-G_cYQJqPSBiZBhJJTg/zh-cn_image_0000002706675158.png)
 
 ## 约束与限制
 
@@ -114,10 +114,10 @@ Payment Kit的能力只支持实物商品和服务（酒店服务、出行服务
 | 基础支付 | Phone、Tablet、PC/2in1 |
 | 平台类商户合单支付 | Phone、Tablet、PC/2in1 |
 | 免密支付 | Phone、Tablet、PC/2in1 |
-| 数字人民币支付 | Phone、Tablet、PC/2in1 |
+| 数字人民币支付 | Phone |
 | 通用收银台 | Phone、Tablet、PC/2in1 |
 | 引导用户绑卡 | Phone、Tablet、PC/2in1 |
-| 用户身份验证服务 | Phone、Tablet |
+| 用户身份验证服务 | Phone、Tablet、PC/2in1 |
 | 营销组件 | Phone、Tablet、PC/2in1 |
 
 ### 支持的国家/地区

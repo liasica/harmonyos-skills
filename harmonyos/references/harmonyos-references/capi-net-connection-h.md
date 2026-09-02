@@ -1,15 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-net-connection-h
 title: net_connection.h
+breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 头文件 > net_connection.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:30+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:809ef9bb4f6d5afefa382714044cb123af047f5f1b371c3c3dc7462fdf6d8096
+scraped_at: 2026-09-02T15:01:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c4508cb8aaaccf52ece7d6b107d10f917f8004c1d06b9c19acf2254a97c6a094
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 为网络管理数据网络连接模块提供C接口。
 
@@ -25,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -46,6 +41,8 @@ PhonePC/2in1TabletTVWearable
 | [int32\_t OHOS\_NetConn\_UnregisterDnsResolver(void)](capi-net-connection-h.md#ohos_netconn_unregisterdnsresolver) | 取消注册自定义DNS解析器。 |
 | [int32\_t OH\_NetConn\_RegisterDnsResolver(OH\_NetConn\_CustomDnsResolver resolver)](capi-net-connection-h.md#oh_netconn_registerdnsresolver) | 注册自定义DNS解析器。 |
 | [int32\_t OH\_NetConn\_UnregisterDnsResolver(void)](capi-net-connection-h.md#oh_netconn_unregisterdnsresolver) | 取消注册自定义DNS解析器。 |
+| [int32\_t OH\_NetConn\_RegisterCustomDnsResolver(OH\_NetConn\_CustomDnsResolver resolver)](capi-net-connection-h.md#oh_netconn_registercustomdnsresolver) | 注册自定义DNS解析器。 |
+| [int32\_t OH\_NetConn\_UnregisterCustomDnsResolver(void)](capi-net-connection-h.md#oh_netconn_unregistercustomdnsresolver) | 取消注册自定义DNS解析器。 |
 | [int32\_t OH\_NetConn\_BindSocket(int32\_t socketFd, NetConn\_NetHandle \*netHandle)](capi-net-connection-h.md#oh_netconn_bindsocket) | 将套接字绑定到特定的网络。 |
 | [int32\_t OH\_NetConn\_SetAppHttpProxy(NetConn\_HttpProxy \*httpProxy)](capi-net-connection-h.md#oh_netconn_setapphttpproxy) | 为当前应用设置http代理配置信息。 |
 | [int32\_t OH\_NetConn\_RegisterAppHttpProxyCallback(OH\_NetConn\_AppHttpProxyChange appHttpProxyChange, uint32\_t \*callbackId)](capi-net-connection-h.md#oh_netconn_registerapphttpproxycallback) | 注册监听应用http代理变化的回调。 |
@@ -53,6 +50,7 @@ PhonePC/2in1TabletTVWearable
 | [int32\_t OH\_NetConn\_RegisterNetConnCallback(NetConn\_NetSpecifier \*specifier, NetConn\_NetConnCallback \*netConnCallback,uint32\_t timeout, uint32\_t \*callbackId)](capi-net-connection-h.md#oh_netconn_registernetconncallback) | 注册监听网络状态变化的回调。 |
 | [int32\_t OH\_NetConn\_RegisterDefaultNetConnCallback(NetConn\_NetConnCallback \*netConnCallback, uint32\_t \*callbackId)](capi-net-connection-h.md#oh_netconn_registerdefaultnetconncallback) | 注册监听默认网络状态变化的回调。 |
 | [int32\_t OH\_NetConn\_UnregisterNetConnCallback(uint32\_t callBackId)](capi-net-connection-h.md#oh_netconn_unregisternetconncallback) | 注销监听网络状态变化的回调。 |
+| [int32\_t OH\_NetConn\_RefreshGlobalHttpProxyWithCallback(OH\_NetConn\_GlobalHttpProxyRefreshCallback callback, void \*userContext)](capi-net-connection-h.md#oh_netconn_refreshglobalhttpproxywithcallback) | 请求重新认证全局HTTP代理。调用本接口会触发一个异步重新认证请求，在认证完成后触发一次回调用于通知认证结果。  接口返回值为0表示请求已被接受，并不表示重新认证已成功，最终通过回调通知认证结果。若返回非零值，则不会触发回调。 |
 | [NetConn\_ErrorCode OH\_NetConn\_SetPacUrl(const char \*pacUrl)](capi-net-connection-h.md#oh_netconn_setpacurl) | 设置系统级代理自动配置（PAC）脚本地址。 |
 | [NetConn\_ErrorCode OH\_NetConn\_GetPacUrl(char \*pacUrl)](capi-net-connection-h.md#oh_netconn_getpacurl) | 获取系统级代理自动配置（PAC）脚本地址。 |
 | [int32\_t OH\_NetConn\_QueryProbeResult(char \*destination, int32\_t duration, NetConn\_ProbeResultInfo \*probeResultInfo)](capi-net-connection-h.md#oh_netconn_queryproberesult) | 查询网络探测结果。 |
@@ -60,14 +58,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_NetConn\_HasDefaultNet()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NetConn_HasDefaultNet(int32_t *hasDefaultNet)
+```c
+int32_t OH_NetConn_HasDefaultNet(int32_t *hasDefaultNet)
 ```
 
 **描述**
@@ -94,10 +88,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NetConn\_GetDefaultNet()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NetConn_GetDefaultNet(NetConn_NetHandle *netHandle)
+```c
+int32_t OH_NetConn_GetDefaultNet(NetConn_NetHandle *netHandle)
 ```
 
 **描述**
@@ -124,10 +116,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NetConn\_IsDefaultNetMetered()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NetConn_IsDefaultNetMetered(int32_t *isMetered)
+```c
+int32_t OH_NetConn_IsDefaultNetMetered(int32_t *isMetered)
 ```
 
 **描述**
@@ -154,10 +144,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NetConn\_GetConnectionProperties()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NetConn_GetConnectionProperties(NetConn_NetHandle *netHandle, NetConn_ConnectionProperties *prop)
+```c
+int32_t OH_NetConn_GetConnectionProperties(NetConn_NetHandle *netHandle, NetConn_ConnectionProperties *prop)
 ```
 
 **描述**
@@ -185,10 +173,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NetConn\_GetNetCapabilities()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NetConn_GetNetCapabilities(NetConn_NetHandle *netHandle, NetConn_NetCapabilities *netCapabilities)
+```c
+int32_t OH_NetConn_GetNetCapabilities(NetConn_NetHandle *netHandle, NetConn_NetCapabilities *netCapabilities)
 ```
 
 **描述**
@@ -212,14 +198,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 0 - 成功。 201 - 缺少权限。  401 - 参数错误. 2100002 - 无法连接到服务。  2100003 - 内部错误。 |
+| int32\_t | 0 - 成功。201 - 缺少权限。  401 - 参数错误。2100002 - 无法连接到服务。  2100003 - 内部错误。 |
 
 ### OH\_NetConn\_GetDefaultHttpProxy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NetConn_GetDefaultHttpProxy(NetConn_HttpProxy *httpProxy)
+```c
+int32_t OH_NetConn_GetDefaultHttpProxy(NetConn_HttpProxy *httpProxy)
 ```
 
 **描述**
@@ -240,14 +224,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 0 - 成功。 201 - 缺少权限。  401 - 参数错误. 2100002 - 无法连接到服务。  2100003 - 内部错误。 |
+| int32\_t | 0 - 成功。201 - 缺少权限。  401 - 参数错误。2100002 - 无法连接到服务。  2100003 - 内部错误。 |
 
 ### OH\_NetConn\_GetAddrInfo()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NetConn_GetAddrInfo(char *host, char *serv, struct addrinfo *hint, struct addrinfo **res, int32_t netId)
+```c
+int32_t OH_NetConn_GetAddrInfo(char *host, char *serv, struct addrinfo *hint, struct addrinfo **res, int32_t netId)
 ```
 
 **描述**
@@ -278,10 +260,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NetConn\_FreeDnsResult()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NetConn_FreeDnsResult(struct addrinfo *res)
+```c
+int32_t OH_NetConn_FreeDnsResult(struct addrinfo *res)
 ```
 
 **描述**
@@ -308,10 +288,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NetConn\_GetAllNets()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NetConn_GetAllNets(NetConn_NetHandleList *netHandleList)
+```c
+int32_t OH_NetConn_GetAllNets(NetConn_NetHandleList *netHandleList)
 ```
 
 **描述**
@@ -338,10 +316,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OHOS\_NetConn\_RegisterDnsResolver()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OHOS_NetConn_RegisterDnsResolver(OH_NetConn_CustomDnsResolver resolver)
+```c
+int32_t OHOS_NetConn_RegisterDnsResolver(OH_NetConn_CustomDnsResolver resolver)
 ```
 
 **描述**
@@ -370,10 +346,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OHOS\_NetConn\_UnregisterDnsResolver()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OHOS_NetConn_UnregisterDnsResolver(void)
+```c
+int32_t OHOS_NetConn_UnregisterDnsResolver(void)
 ```
 
 **描述**
@@ -396,19 +370,23 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NetConn\_RegisterDnsResolver()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NetConn_RegisterDnsResolver(OH_NetConn_CustomDnsResolver resolver)
+```c
+int32_t OH_NetConn_RegisterDnsResolver(OH_NetConn_CustomDnsResolver resolver)
 ```
 
 **描述**
 
-注册自定义DNS解析器。
+注册自定义DNS解析器。不再使用时，应调用 [OH\_NetConn\_UnregisterDnsResolver](capi-net-connection-h.md#oh_netconn_unregisterdnsresolver)注销自定义DNS解析器。
+
+建议使用[OH\_NetConn\_RegisterCustomDnsResolver](capi-net-connection-h.md#oh_netconn_registercustomdnsresolver)接口注册。当使用[OH\_NetConn\_RegisterCustomDnsResolver](capi-net-connection-h.md#oh_netconn_registercustomdnsresolver)时，需要使用[OH\_NetConn\_UnregisterCustomDnsResolver](capi-net-connection-h.md#oh_netconn_unregistercustomdnsresolver)接口取消注册。
 
 **系统能力：** SystemCapability.Communication.NetManager.Core
 
 **起始版本：** 13
+
+**废弃版本：** 26.0.0
+
+**替代接口：** OH\_NetConn\_RegisterCustomDnsResolver
 
 **参数：**
 
@@ -424,10 +402,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NetConn\_UnregisterDnsResolver()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NetConn_UnregisterDnsResolver(void)
+```c
+int32_t OH_NetConn_UnregisterDnsResolver(void)
 ```
 
 **描述**
@@ -438,18 +414,74 @@ PhonePC/2in1TabletTVWearable
 
 **起始版本：** 13
 
+**废弃版本：** 26.0.0
+
+**替代接口：** OH\_NetConn\_UnregisterCustomDnsResolver
+
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
 | int32\_t | 0 - 成功。  2100002 - 无法连接到服务。  2100003 - 内部错误。 |
 
+### OH\_NetConn\_RegisterCustomDnsResolver()
+
+```c
+int32_t OH_NetConn_RegisterCustomDnsResolver(OH_NetConn_CustomDnsResolver resolver)
+```
+
+**描述**
+
+注册自定义DNS解析器。注册后，系统DNS解析请求将优先回调该解析器，由开发者按需返回自定义解析结果；若未返回自定义结果，则继续使用系统默认DNS解析规则。
+
+同一时间全局仅支持一个自定义DNS解析器生效。如需更换解析器，应先调用[OH\_NetConn\_UnregisterCustomDnsResolver](capi-net-connection-h.md#oh_netconn_unregistercustomdnsresolver)注销已注册的解析器，再重新注册。
+
+作用范围：适用于系统DNS查询，以及应用通过系统网络库发起的DNS查询；不适用于应用自行实现的HTTPDNS解析、加密DNS解析（如 DoH/DoT）等非系统 DNS 通道的解析请求。不再使用时，应调用 [OH\_NetConn\_UnregisterCustomDnsResolver](capi-net-connection-h.md#oh_netconn_unregistercustomdnsresolver)注销自定义DNS解析器。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Communication.NetManager.Core
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_NetConn\_CustomDnsResolver](capi-net-connection-type-h.md#oh_netconn_customdnsresolver) resolver | 指向自定义DNS解析器的指针。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| int32\_t | 0 - 成功。  401 - 参数错误。  2101008 - 解析器已存在。 |
+
+### OH\_NetConn\_UnregisterCustomDnsResolver()
+
+```c
+int32_t OH_NetConn_UnregisterCustomDnsResolver(void)
+```
+
+**描述**
+
+取消注册自定义DNS解析器。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Communication.NetManager.Core
+
+**起始版本：** 26.0.0
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| int32\_t | 0 - 成功。  2100003 - 内部错误。 |
+
 ### OH\_NetConn\_BindSocket()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NetConn_BindSocket(int32_t socketFd, NetConn_NetHandle *netHandle)
+```c
+int32_t OH_NetConn_BindSocket(int32_t socketFd, NetConn_NetHandle *netHandle)
 ```
 
 **描述**
@@ -475,10 +507,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NetConn\_SetAppHttpProxy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NetConn_SetAppHttpProxy(NetConn_HttpProxy *httpProxy)
+```c
+int32_t OH_NetConn_SetAppHttpProxy(NetConn_HttpProxy *httpProxy)
 ```
 
 **描述**
@@ -503,10 +533,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NetConn\_RegisterAppHttpProxyCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NetConn_RegisterAppHttpProxyCallback(OH_NetConn_AppHttpProxyChange appHttpProxyChange, uint32_t *callbackId)
+```c
+int32_t OH_NetConn_RegisterAppHttpProxyCallback(OH_NetConn_AppHttpProxyChange appHttpProxyChange, uint32_t *callbackId)
 ```
 
 **描述**
@@ -522,7 +550,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_NetConn\_AppHttpProxyChange](capi-net-connection-type-h.md#oh_netconn_apphttpproxychange) appHttpProxyChange | 需要注册的监听回调。 |
-| uint32\_t \*callbackId | 回调注册后生成的id, 关联已注册的回调。 |
+| uint32\_t \*callbackId | 回调注册后生成的id，关联已注册的回调。 |
 
 **返回：**
 
@@ -532,10 +560,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NetConn\_UnregisterAppHttpProxyCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_NetConn_UnregisterAppHttpProxyCallback(uint32_t callbackId)
+```c
+void OH_NetConn_UnregisterAppHttpProxyCallback(uint32_t callbackId)
 ```
 
 **描述**
@@ -552,12 +578,39 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | uint32\_t callbackId | 需要被注销的回调所对应的id。 |
 
+### OH\_NetConn\_RefreshGlobalHttpProxyWithCallback()
+
+```c
+int32_t OH_NetConn_RefreshGlobalHttpProxyWithCallback(OH_NetConn_GlobalHttpProxyRefreshCallback callback, void *userContext)
+```
+
+**描述**
+
+请求重新认证全局HTTP代理。调用本接口会触发一个异步重新认证请求，在认证完成后触发一次回调用于通知认证结果。
+
+接口返回值为0表示请求已被接受，并不表示重新认证已成功，最终通过回调通知认证结果。若返回非零值，则不会触发回调。
+
+**需要权限：** ohos.permission.INTERNET
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_NetConn\_GlobalHttpProxyRefreshCallback](capi-net-connection-type-h.md#oh_netconn_globalhttpproxyrefreshcallback) callback | 用于接收重新认证结果的回调。若为NULL，则接口会返回401。 |
+| void \*userContext | 用户自定义数据，会通过回调返回给调用方。系统不会访问、拷贝或释放该数据，可以配置为NULL。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| int32\_t | 0 - 成功。  201 - 缺少权限。  401 - 参数错误。 |
+
 ### OH\_NetConn\_RegisterNetConnCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NetConn_RegisterNetConnCallback(NetConn_NetSpecifier *specifier, NetConn_NetConnCallback *netConnCallback,uint32_t timeout, uint32_t *callbackId)
+```c
+int32_t OH_NetConn_RegisterNetConnCallback(NetConn_NetSpecifier *specifier, NetConn_NetConnCallback *netConnCallback,uint32_t timeout, uint32_t *callbackId)
 ```
 
 **描述**
@@ -587,10 +640,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NetConn\_RegisterDefaultNetConnCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NetConn_RegisterDefaultNetConnCallback(NetConn_NetConnCallback *netConnCallback, uint32_t *callbackId)
+```c
+int32_t OH_NetConn_RegisterDefaultNetConnCallback(NetConn_NetConnCallback *netConnCallback, uint32_t *callbackId)
 ```
 
 **描述**
@@ -618,10 +669,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NetConn\_UnregisterNetConnCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NetConn_UnregisterNetConnCallback(uint32_t callBackId)
+```c
+int32_t OH_NetConn_UnregisterNetConnCallback(uint32_t callBackId)
 ```
 
 **描述**
@@ -648,10 +697,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NetConn\_SetPacUrl()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. NetConn_ErrorCode OH_NetConn_SetPacUrl(const char *pacUrl)
+```c
+NetConn_ErrorCode OH_NetConn_SetPacUrl(const char *pacUrl)
 ```
 
 **描述**
@@ -676,10 +723,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NetConn\_GetPacUrl()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. NetConn_ErrorCode OH_NetConn_GetPacUrl(char *pacUrl)
+```c
+NetConn_ErrorCode OH_NetConn_GetPacUrl(char *pacUrl)
 ```
 
 **描述**
@@ -702,10 +747,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NetConn\_QueryProbeResult()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NetConn_QueryProbeResult(char *destination, int32_t duration, NetConn_ProbeResultInfo *probeResultInfo)
+```c
+int32_t OH_NetConn_QueryProbeResult(char *destination, int32_t duration, NetConn_ProbeResultInfo *probeResultInfo)
 ```
 
 **描述**
@@ -734,17 +777,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NetConn\_QueryTraceRoute()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NetConn_QueryTraceRoute(char *destination, NetConn_TraceRouteOption *option,NetConn_TraceRouteInfo *traceRouteInfo)
+```c
+int32_t OH_NetConn_QueryTraceRoute(char *destination, NetConn_TraceRouteOption *option,NetConn_TraceRouteInfo *traceRouteInfo)
 ```
 
 **描述**
 
 查询网络跟踪路由。
 
-说明
+**说明** 
 
 应用调用该接口需申请精确位置权限。根据[申请位置权限开发指导](../harmonyos-guides/location-permission-guidelines.md)，调用方需同时申请ohos.permission.APPROXIMATELY\_LOCATION和ohos.permission.LOCATION。
 

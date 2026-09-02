@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/car-smartmobilitycommon
-title: smartMobilityCommon（智慧出行场景）
-breadcrumb: API参考 > 系统 > 硬件 > Car Kit（车服务） > ArkTS API > smartMobilityCommon（智慧出行场景）
+title: smartMobilityCommon (智慧出行场景)
+breadcrumb: API参考 > 系统 > 硬件 > Car Kit（车服务） > ArkTS API > smartMobilityCommon (智慧出行场景)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:35+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1f2c85c8b846da772f2e4c6b747c72ed42abb0303929cec207f9ca817be1bc9d
+scraped_at: 2026-09-02T15:02:11+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7a5899f6c28de9faec34c427be24ee0818bf67e68c4045605ff0fa45f17c0bbf
 ---
 
 作为分布式业务公共功能提供给应用，实现监听分布式业务（HiCar、超级桌面等）的状态，以及事件监听的能力。
@@ -14,17 +14,15 @@ content_hash: sha256:1f2c85c8b846da772f2e4c6b747c72ed42abb0303929cec207f9ca817be
 
 ## 导入模块
 
-PhoneTablet
-
-```
-1. import { smartMobilityCommon } from '@kit.CarKit';
+```typescript
+import { smartMobilityCommon } from '@kit.CarKit';
 ```
 
 ## SmartMobilityEvent
 
-PhoneTablet
-
 公共事件。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.CarService.DistributedEngine
 
@@ -38,9 +36,9 @@ PhoneTablet
 
 ## SmartMobilityInfo
 
-PhoneTablet
-
 该类为智慧出行的状态信息，定义了当前的业务类型、连接状态、业务数据。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.CarService.DistributedEngine
 
@@ -54,9 +52,9 @@ PhoneTablet
 
 ## SmartMobilityStatus
 
-PhoneTablet
-
 业务连接状态枚举值。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.CarService.DistributedEngine
 
@@ -69,9 +67,9 @@ PhoneTablet
 
 ## SmartMobilityType
 
-PhoneTablet
-
 业务类型枚举值。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.CarService.DistributedEngine
 
@@ -85,15 +83,15 @@ PhoneTablet
 
 ## getSmartMobilityAwareness
 
-PhoneTablet
-
 getSmartMobilityAwareness(): SmartMobilityAwareness
 
 用于获取智慧出行管理类。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.CarService.DistributedEngine
 
-**设备行为差异**：对于6.0.0(22)及之前的版本，该接口在Phone中可正常使用，在其他设备类型中返回801错误码。在6.1.0(23)及之后版本该接口在Phone、Tablet中均可正常使用。
+**设备行为差异**：对于6.0.0(22)及之前的版本，该接口在Phone中可正常调用，在其他设备类型中返回801错误码。在6.1.0(23)及之后版本，该接口在Phone、Tablet中均可正常调用，在其它设备中无效果。
 
 **需要权限：** ohos.permission.ACCESS\_CAR\_DISTRIBUTED\_ENGINE
 
@@ -107,15 +105,15 @@ getSmartMobilityAwareness(): SmartMobilityAwareness
 
 **示例：**
 
-```
-1. import { smartMobilityCommon } from '@kit.CarKit';
+```typescript
+import { smartMobilityCommon } from '@kit.CarKit';
 
-3. let awareness: smartMobilityCommon.SmartMobilityAwareness = smartMobilityCommon.getSmartMobilityAwareness();
+let awareness: smartMobilityCommon.SmartMobilityAwareness = smartMobilityCommon.getSmartMobilityAwareness();
 ```
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](car-error-code.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -124,9 +122,9 @@ getSmartMobilityAwareness(): SmartMobilityAwareness
 
 ## SmartMobilityAwareness
 
-PhoneTablet
-
 智慧出行管理类，用于调用智慧出行接口。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.CarService.DistributedEngine
 
@@ -134,15 +132,15 @@ PhoneTablet
 
 ### on('smartMobilityEvent')
 
-PhoneTablet
-
 on(type: 'smartMobilityEvent', smartMobilityTypes: SmartMobilityType[],callback: Callback<SmartMobilityEvent>): void
 
-注册智慧出行业务的事件监听，例如导航流转完成后通知事件时，触发此回调执行。
+注册智慧出行业务的事件监听，例如导航流转完成后通知事件时，触发此回调执行。使用callback异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.CarService.DistributedEngine
 
-**设备行为差异**：对于6.0.0(22)及之前的版本，该接口在Phone中可正常使用，在其他设备类型中返回801错误码。在6.1.0(23)及之后版本该接口在Phone、Tablet中均可正常使用。
+**设备行为差异**：对于6.0.0(22)及之前的版本，该接口在Phone中可正常调用，在其他设备类型中返回801错误码。在6.1.0(23)及之后版本，该接口在Phone、Tablet中均可正常调用，在其它设备中无效果。
 
 **需要权限：** ohos.permission.ACCESS\_CAR\_DISTRIBUTED\_ENGINE
 
@@ -154,11 +152,11 @@ on(type: 'smartMobilityEvent', smartMobilityTypes: SmartMobilityType[],callback:
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅类型，该位置为常量值：  'smartMobilityEvent'，表示订阅事件监听。 |
 | smartMobilityTypes | [SmartMobilityType](car-smartmobilitycommon.md#smartmobilitytype)[] | 是 | 业务类型数组，支持同时订阅多个业务。 |
-| callback | Callback<[SmartMobilityEvent](car-smartmobilitycommon.md#smartmobilityevent)> | 是 | 出行业务事件回调函数。 |
+| callback | Callback<[SmartMobilityEvent](car-smartmobilitycommon.md#smartmobilityevent)> | 是 | 出行业务事件回调函数，返回智慧出行公共事件对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](car-error-code.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -168,38 +166,38 @@ on(type: 'smartMobilityEvent', smartMobilityTypes: SmartMobilityType[],callback:
 
 **示例：**
 
-```
-1. import { smartMobilityCommon } from '@kit.CarKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { smartMobilityCommon } from '@kit.CarKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. try {
-5. // Get single instance of SmartMobilityAwareness.
-6. let awareness: smartMobilityCommon.SmartMobilityAwareness = smartMobilityCommon.getSmartMobilityAwareness();
-7. // 业务类型
-8. let types: smartMobilityCommon.SmartMobilityType[] = [smartMobilityCommon.SmartMobilityType.CAR_HOP];
-9. // 出行业务事件回调函数
-10. const callBack = (event: smartMobilityCommon.SmartMobilityEvent) => {
-11. hilog.info(0x0000, 'testTag', 'Received smart mobility event: ', JSON.stringify(event));
-12. };
-13. // 注册出行业务事件监听
-14. awareness.on('smartMobilityEvent', types, callBack);
-15. } catch (e) {
-16. // 捕获接口调用异常时的错误码并做相应处理
-17. hilog.error(0x0000, 'testTag', `on smart mobility event error, error code: ${e?.code}`);
-18. }
+try {
+  // 获取SmartMobilityAwareness实例
+  let awareness: smartMobilityCommon.SmartMobilityAwareness = smartMobilityCommon.getSmartMobilityAwareness();
+  // 业务类型
+  let types: smartMobilityCommon.SmartMobilityType[] = [smartMobilityCommon.SmartMobilityType.CAR_HOP];
+  // 出行业务事件回调函数
+  const callBack = (event: smartMobilityCommon.SmartMobilityEvent) => {
+    hilog.info(0x0000, 'testTag', 'Received smart mobility event: ', JSON.stringify(event));
+  };
+  // 注册出行业务事件监听
+  awareness.on('smartMobilityEvent', types, callBack);
+} catch (e) {
+  // 捕获接口调用异常时的错误码并做相应处理
+  hilog.error(0x0000, 'testTag', `on smart mobility event error, error code: ${e?.code}`);
+}
 ```
 
 ### off('smartMobilityEvent')
 
-PhoneTablet
-
 off(type: 'smartMobilityEvent', smartMobilityTypes: SmartMobilityType[], callback?: Callback<SmartMobilityEvent>): void
 
-取消注册智慧出行业务的事件监听。
+取消注册智慧出行业务的事件监听。使用callback异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.CarService.DistributedEngine
 
-**设备行为差异**：对于6.0.0(22)及之前的版本，该接口在Phone中可正常使用，在其他设备类型中返回801错误码。在6.1.0(23)及之后版本该接口在Phone、Tablet中均可正常使用。
+**设备行为差异**：对于6.0.0(22)及之前的版本，该接口在Phone中可正常调用，在其他设备类型中返回801错误码。在6.1.0(23)及之后版本，该接口在Phone、Tablet中均可正常调用，在其它设备中无效果。
 
 **需要权限：** ohos.permission.ACCESS\_CAR\_DISTRIBUTED\_ENGINE
 
@@ -215,7 +213,7 @@ off(type: 'smartMobilityEvent', smartMobilityTypes: SmartMobilityType[], callbac
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](car-error-code.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -225,39 +223,39 @@ off(type: 'smartMobilityEvent', smartMobilityTypes: SmartMobilityType[], callbac
 
 **示例：**
 
-```
-1. import { smartMobilityCommon } from '@kit.CarKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { smartMobilityCommon } from '@kit.CarKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. try {
-5. // Get single instance of SmartMobilityAwareness.
-6. let awareness: smartMobilityCommon.SmartMobilityAwareness = smartMobilityCommon.getSmartMobilityAwareness();
-7. // 业务类型
-8. let types: smartMobilityCommon.SmartMobilityType[] = [smartMobilityCommon.SmartMobilityType.CAR_HOP];
-9. // 出行业务事件回调函数
-10. const callBack = (event: smartMobilityCommon.SmartMobilityEvent) => {
-11. hilog.info(0x0000, 'testTag', 'Received smart mobility event: ', JSON.stringify(event));
-12. };
+try {
+  // 获取SmartMobilityAwareness实例
+  let awareness: smartMobilityCommon.SmartMobilityAwareness = smartMobilityCommon.getSmartMobilityAwareness();
+  // 业务类型
+  let types: smartMobilityCommon.SmartMobilityType[] = [smartMobilityCommon.SmartMobilityType.CAR_HOP];
+  // 出行业务事件回调函数
+  const callBack = (event: smartMobilityCommon.SmartMobilityEvent) => {
+    hilog.info(0x0000, 'testTag', 'Received smart mobility event: ', JSON.stringify(event));
+  };
 
-14. // 解注册出行业务事件监听
-15. awareness.off('smartMobilityEvent', types, callBack);
-16. } catch (e) {
-17. // 捕获接口调用异常时的错误码并做相应处理
-18. hilog.error(0x0000, 'testTag', `off smart mobility event error, error code: ${e?.code}`);
-19. }
+  // 解注册出行业务事件监听
+  awareness.off('smartMobilityEvent', types, callBack);
+} catch (e) {
+  // 捕获接口调用异常时的错误码并做相应处理
+  hilog.error(0x0000, 'testTag', `off smart mobility event error, error code: ${e?.code}`);
+}
 ```
 
 ### getSmartMobilityEvent
-
-PhoneTablet
 
 getSmartMobilityEvent(type: SmartMobilityType, eventName: string): SmartMobilityEvent
 
 应用获取指定事件的信息。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.CarService.DistributedEngine
 
-**设备行为差异**：对于6.0.0(22)及之前的版本，该接口在Phone中可正常使用，在其他设备类型中返回801错误码。在6.1.0(23)及之后版本该接口在Phone、Tablet中均可正常使用。
+**设备行为差异**：对于6.0.0(22)及之前的版本，该接口在Phone中可正常调用，在其他设备类型中返回801错误码。在6.1.0(23)及之后版本，该接口在Phone、Tablet中均可正常调用，在其它设备中无效果。
 
 **需要权限：** ohos.permission.ACCESS\_CAR\_DISTRIBUTED\_ENGINE
 
@@ -268,7 +266,7 @@ getSmartMobilityEvent(type: SmartMobilityType, eventName: string): SmartMobility
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | [SmartMobilityType](car-smartmobilitycommon.md#smartmobilitytype) | 是 | 业务类型。 |
-| eventName | string | 是 | 事件名。取值有下面3种：  CAR\_HOP\_EVENT，流转事件。  HICAR\_EVENT，HiCar事件。  SUPER\_LAUNCHER\_EVENT，超级桌面事件。 |
+| eventName | string | 是 | 事件名。取值有下面3种：  CAR\_HOP\_EVENT，流转事件。  HICAR\_EVENT，HiCar事件。  SUPER\_LAUNCHER\_EVENT，超级桌面事件。  其他取值，则接口返回[401](errorcode-universal.md#section401-参数检查失败)错误码。 |
 
 **返回值：**
 
@@ -278,7 +276,7 @@ getSmartMobilityEvent(type: SmartMobilityType, eventName: string): SmartMobility
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](car-error-code.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -288,36 +286,37 @@ getSmartMobilityEvent(type: SmartMobilityType, eventName: string): SmartMobility
 
 **示例：**
 
-```
-1. import { smartMobilityCommon } from '@kit.CarKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { smartMobilityCommon } from '@kit.CarKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. try {
-5. // Get single instance of SmartMobilityAwareness.
-6. let awareness: smartMobilityCommon.SmartMobilityAwareness = smartMobilityCommon.getSmartMobilityAwareness();
-7. // 业务类型
-8. let type = smartMobilityCommon.SmartMobilityType.CAR_HOP;
-9. // 事件名称
-10. let eventName: string = 'CAR_HOP_EVENT';
-11. // 获取公共事件信息
-12. let event: smartMobilityCommon.SmartMobilityEvent = awareness.getSmartMobilityEvent(type, eventName);
-13. } catch (e) {
-14. // 捕获接口调用异常时的错误码并做相应处理
-15. hilog.error(0x0000, 'testTag', `get smart mobility event error, error code: ${e?.code}`);
-16. }
+try {
+  // 获取SmartMobilityAwareness实例
+  let awareness: smartMobilityCommon.SmartMobilityAwareness = smartMobilityCommon.getSmartMobilityAwareness();
+  // 业务类型
+  let type = smartMobilityCommon.SmartMobilityType.CAR_HOP;
+  // 事件名称
+  let eventName: string = 'CAR_HOP_EVENT';
+  // 获取公共事件信息
+  let event: smartMobilityCommon.SmartMobilityEvent = awareness.getSmartMobilityEvent(type, eventName);
+  hilog.info(0x0000, 'testTag', `get smart mobility event succeed, event: ${JSON.stringify(event)}`);
+} catch (e) {
+  // 捕获接口调用异常时的错误码并做相应处理
+  hilog.error(0x0000, 'testTag', `get smart mobility event error, error code: ${e?.code}`);
+}
 ```
 
 ### on('smartMobilityStatus')
 
-PhoneTablet
-
 on(type: 'smartMobilityStatus', smartMobilityTypes: SmartMobilityType[], callback: Callback<SmartMobilityInfo>): void
 
-注册智慧出行连接状态的监听。
+注册智慧出行连接状态的监听。使用callback异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.CarService.DistributedEngine
 
-**设备行为差异**：对于6.0.0(22)及之前的版本，该接口在Phone中可正常使用，在其他设备类型中返回801错误码。在6.1.0(23)及之后版本该接口在Phone、Tablet中均可正常使用。
+**设备行为差异**：对于6.0.0(22)及之前的版本，该接口在Phone中可正常调用，在其他设备类型中返回801错误码。在6.1.0(23)及之后版本，该接口在Phone、Tablet中均可正常调用，在其它设备中无效果。
 
 **需要权限：** ohos.permission.ACCESS\_CAR\_DISTRIBUTED\_ENGINE
 
@@ -329,11 +328,11 @@ on(type: 'smartMobilityStatus', smartMobilityTypes: SmartMobilityType[], callbac
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅类型，该位置为常量值：  'smartMobilityStatus'，表示订阅业务连接状态监听。 |
 | smartMobilityTypes | [SmartMobilityType](car-smartmobilitycommon.md#smartmobilitytype)[] | 是 | 业务类型数组，支持同时订阅多个业务。 |
-| callback | Callback<[SmartMobilityInfo](car-smartmobilitycommon.md#smartmobilityinfo)> | 是 | 出行连接状态回调函数。 |
+| callback | Callback<[SmartMobilityInfo](car-smartmobilitycommon.md#smartmobilityinfo)> | 是 | 出行连接状态回调函数，返回智慧出行状态信息对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](car-error-code.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -343,38 +342,38 @@ on(type: 'smartMobilityStatus', smartMobilityTypes: SmartMobilityType[], callbac
 
 **示例：**
 
-```
-1. import { smartMobilityCommon } from '@kit.CarKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { smartMobilityCommon } from '@kit.CarKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. try {
-5. // Get single instance of SmartMobilityAwareness.
-6. let awareness: smartMobilityCommon.SmartMobilityAwareness = smartMobilityCommon.getSmartMobilityAwareness();
-7. // 业务类型
-8. let types: smartMobilityCommon.SmartMobilityType[] = [smartMobilityCommon.SmartMobilityType.HICAR];
-9. // 出行连接状态回调函数
-10. const callBack = (info: smartMobilityCommon.SmartMobilityInfo) => {
-11. hilog.info(0x0000, 'testTag', 'Received smart mobility info: ', JSON.stringify(info));
-12. };
-13. // 注册智慧出行连接状态的监听
-14. awareness.on('smartMobilityStatus', types, callBack);
-15. } catch (e) {
-16. // 捕获接口调用异常时的错误码并做相应处理
-17. hilog.error(0x0000, 'testTag', `on smart mobility status error, error code: ${e?.code}`);
-18. }
+try {
+  // 获取SmartMobilityAwareness实例
+  let awareness: smartMobilityCommon.SmartMobilityAwareness = smartMobilityCommon.getSmartMobilityAwareness();
+  // 业务类型
+  let types: smartMobilityCommon.SmartMobilityType[] = [smartMobilityCommon.SmartMobilityType.HICAR];
+  // 出行连接状态回调函数
+  const callBack = (info: smartMobilityCommon.SmartMobilityInfo) => {
+    hilog.info(0x0000, 'testTag', 'Received smart mobility info: ', JSON.stringify(info));
+  };
+  // 注册智慧出行连接状态的监听
+  awareness.on('smartMobilityStatus', types, callBack);
+} catch (e) {
+  // 捕获接口调用异常时的错误码并做相应处理
+  hilog.error(0x0000, 'testTag', `on smart mobility status error, error code: ${e?.code}`);
+}
 ```
 
 ### off('smartMobilityStatus')
 
-PhoneTablet
-
 off(type: 'smartMobilityStatus', smartMobilityTypes: SmartMobilityType[], callback?: Callback<SmartMobilityInfo>): void
 
-取消注册智慧出行连接状态的监听。
+取消注册智慧出行连接状态的监听。使用callback异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.CarService.DistributedEngine
 
-**设备行为差异**：对于6.0.0(22)及之前的版本，该接口在Phone中可正常使用，在其他设备类型中返回801错误码。在6.1.0(23)及之后版本该接口在Phone、Tablet中均可正常使用。
+**设备行为差异**：对于6.0.0(22)及之前的版本，该接口在Phone中可正常调用，在其他设备类型中返回801错误码。在6.1.0(23)及之后版本，该接口在Phone、Tablet中均可正常调用，在其它设备中无效果。
 
 **需要权限：** ohos.permission.ACCESS\_CAR\_DISTRIBUTED\_ENGINE
 
@@ -390,7 +389,7 @@ off(type: 'smartMobilityStatus', smartMobilityTypes: SmartMobilityType[], callba
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](car-error-code.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -400,38 +399,38 @@ off(type: 'smartMobilityStatus', smartMobilityTypes: SmartMobilityType[], callba
 
 **示例：**
 
-```
-1. import { smartMobilityCommon } from '@kit.CarKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { smartMobilityCommon } from '@kit.CarKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. try {
-5. // Get single instance of SmartMobilityAwareness.
-6. let awareness: smartMobilityCommon.SmartMobilityAwareness = smartMobilityCommon.getSmartMobilityAwareness();
-7. // 业务类型
-8. let types: smartMobilityCommon.SmartMobilityType[] = [smartMobilityCommon.SmartMobilityType.HICAR];
-9. // 出行连接状态回调函数
-10. const callBack = (info: smartMobilityCommon.SmartMobilityInfo) => {
-11. hilog.info(0x0000, 'testTag', 'Received smart mobility info: ', JSON.stringify(info));
-12. };
-13. // 取消注册智慧出行连接状态的监听
-14. awareness.off('smartMobilityStatus', types);
-15. } catch (e) {
-16. // 捕获接口调用异常时的错误码并做相应处理
-17. hilog.error(0x0000, 'testTag', `off smart mobility status error, error code: ${e?.code}`);
-18. }
+try {
+  // 获取SmartMobilityAwareness实例
+  let awareness: smartMobilityCommon.SmartMobilityAwareness = smartMobilityCommon.getSmartMobilityAwareness();
+  // 业务类型
+  let types: smartMobilityCommon.SmartMobilityType[] = [smartMobilityCommon.SmartMobilityType.HICAR];
+  // 出行连接状态回调函数
+  const callBack = (info: smartMobilityCommon.SmartMobilityInfo) => {
+    hilog.info(0x0000, 'testTag', 'Received smart mobility info: ', JSON.stringify(info));
+  };
+  // 取消注册智慧出行连接状态的监听
+  awareness.off('smartMobilityStatus', types, callBack);
+} catch (e) {
+  // 捕获接口调用异常时的错误码并做相应处理
+  hilog.error(0x0000, 'testTag', `off smart mobility status error, error code: ${e?.code}`);
+}
 ```
 
 ### getSmartMobilityStatus
-
-PhoneTablet
 
 getSmartMobilityStatus(type: SmartMobilityType): SmartMobilityInfo
 
 获取智慧出行连接状态。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.CarService.DistributedEngine
 
-**设备行为差异**：对于6.0.0(22)及之前的版本，该接口在Phone中可正常使用，在其他设备类型中返回801错误码。在6.1.0(23)及之后版本该接口在Phone、Tablet中均可正常使用。
+**设备行为差异**：对于6.0.0(22)及之前的版本，该接口在Phone中可正常调用，在其他设备类型中返回801错误码。在6.1.0(23)及之后版本，该接口在Phone、Tablet中均可正常调用，在其它设备中无效果。
 
 **需要权限：** ohos.permission.ACCESS\_CAR\_DISTRIBUTED\_ENGINE
 
@@ -451,7 +450,7 @@ getSmartMobilityStatus(type: SmartMobilityType): SmartMobilityInfo
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](car-error-code.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -461,18 +460,20 @@ getSmartMobilityStatus(type: SmartMobilityType): SmartMobilityInfo
 
 **示例：**
 
-```
-1. import { smartMobilityCommon } from '@kit.CarKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { smartMobilityCommon } from '@kit.CarKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. try {
-5. let awareness: smartMobilityCommon.SmartMobilityAwareness = smartMobilityCommon.getSmartMobilityAwareness();
-6. // 业务类型
-7. let type = smartMobilityCommon.SmartMobilityType.HICAR;
-8. // 获取业务状态信息
-9. let ret = awareness.getSmartMobilityStatus(type);
-10. } catch (e) {
-11. // 捕获接口调用异常时的错误码并做相应处理
-12. hilog.error(0x0000, 'testTag', `get smart mobility status error, error code: ${e?.code}`);
-13. }
+try {
+  // 获取SmartMobilityAwareness实例
+  let awareness: smartMobilityCommon.SmartMobilityAwareness = smartMobilityCommon.getSmartMobilityAwareness();
+  // 业务类型
+  let type = smartMobilityCommon.SmartMobilityType.HICAR;
+  // 获取业务状态信息
+  let ret = awareness.getSmartMobilityStatus(type);
+  hilog.info(0x0000, 'testTag', `get smart mobility status succeed, status: ${JSON.stringify(ret)}`);
+} catch (e) {
+  // 捕获接口调用异常时的错误码并做相应处理
+  hilog.error(0x0000, 'testTag', `get smart mobility status error, errCode: ${e?.code}`);
+}
 ```

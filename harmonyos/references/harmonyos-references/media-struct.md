@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/media-str
 title: 结构体
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:57+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1bafbb43becc03daa4a2d882df4cf8d13864c3c9c5bac0ea877bfb393322b37e
+scraped_at: 2026-09-02T14:53:00+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:0429df5d1f316520e4ad84afd7778b197242dc706d2157f2201882894dd3b83d
 ---
 
 * **[OH\_AVImageGenerator](capi-avimagegenerator-oh-avimagegenerator.md)**
@@ -32,21 +32,22 @@ content_hash: sha256:1bafbb43becc03daa4a2d882df4cf8d13864c3c9c5bac0ea877bfb39332
 * **[OH\_VideoInfo](capi-avscreencapture-oh-videoinfo.md)**
 * **[OH\_RecorderInfo](capi-avscreencapture-oh-recorderinfo.md)**
 * **[OH\_AVScreenCaptureConfig](capi-avscreencapture-oh-avscreencaptureconfig.md)**
+* **[OH\_PrivacyProtectInfo](capi-avscreencapture-oh-privacyprotectinfo.md)**
 * **[OH\_AVScreenCaptureCallback](capi-avscreencapture-oh-avscreencapturecallback.md)**
 * **[OH\_Rect](capi-avscreencapture-oh-rect.md)**
 * **[OH\_AudioBuffer](capi-avscreencapture-oh-audiobuffer.md)**
-* **[OH\_NativeBuffer](pi-avscreencapture-avscreencapture-oh-nativebuffer.md)**
+* **[OH\_NativeBuffer](capi-avscreencapture-avscreencapture-oh-nativebuffer.md)**
 * **[OH\_AVScreenCapture](capi-avscreencapture-oh-avscreencapture.md)**
-* **[OH\_AVScreenCapture\_ContentFilter](i-avscreencapture-oh-avscreencapture-contentfilter.md)**
-* **[OH\_AVScreenCapture\_CaptureStrategy](avscreencapture-oh-avscreencapture-capturestrategy.md)**
-* **[OH\_AVScreenCapture\_UserSelectionInfo](screencapture-oh-avscreencapture-userselectioninfo.md)**
-* **[OH\_AVScreenCaptureHighlightConfig](-avscreencapture-oh-avscreencapturehighlightconfig.md)**
+* **[OH\_AVScreenCapture\_ContentFilter](capi-avscreencapture-oh-avscreencapture-contentfilter.md)**
+* **[OH\_AVScreenCapture\_CaptureStrategy](capi-avscreencapture-oh-avscreencapture-capturestrategy.md)**
+* **[OH\_AVScreenCapture\_UserSelectionInfo](capi-avscreencapture-oh-avscreencapture-userselectioninfo.md)**
+* **[OH\_AVScreenCaptureHighlightConfig](capi-avscreencapture-oh-avscreencapturehighlightconfig.md)**
 * **[OH\_LowPowerAudioSink](capi-lowpoweraudiosink-oh-lowpoweraudiosink.md)**
-* **[OH\_LowPowerAudioSinkCallback](api-lowpoweraudiosink-oh-lowpoweraudiosinkcallback.md)**
+* **[OH\_LowPowerAudioSinkCallback](capi-lowpoweraudiosink-oh-lowpoweraudiosinkcallback.md)**
 * **[OH\_AVSamplesBuffer](capi-avsinkbase-oh-avsamplesbuffer.md)**
 * **[OH\_LowPowerVideoSink](capi-lowpowervideosink-oh-lowpowervideosink.md)**
-* **[OH\_LowPowerVideoSinkCallback](api-lowpowervideosink-oh-lowpowervideosinkcallback.md)**
-* **[VideoProcessing\_ColorSpaceInfo](api-videoprocessing-videoprocessing-colorspaceinfo.md)**
+* **[OH\_LowPowerVideoSinkCallback](capi-lowpowervideosink-oh-lowpowervideosinkcallback.md)**
+* **[VideoProcessing\_ColorSpaceInfo](capi-videoprocessing-videoprocessing-colorspaceinfo.md)**
 * **[OH\_VideoProcessing](capi-videoprocessing-oh-videoprocessing.md)**
 * **[NativeWindow](capi-videoprocessing-nativewindow.md)**
 * **[OH\_AVFormat](capi-videoprocessing-oh-avformat.md)**
@@ -57,5 +58,7 @@ content_hash: sha256:1bafbb43becc03daa4a2d882df4cf8d13864c3c9c5bac0ea877bfb39332
 * **[OH\_AVMediaSourceLoadingRequest](capi-avmedia-source-oh-avmediasourceloadingrequest.md)**
 * **[OH\_AVMediaSourceLoader](capi-avmedia-source-oh-avmediasourceloader.md)**
 * **[OH\_AVSeiMessageArray](capi-avplayer-oh-avseimessagearray.md)**
-* **[OH\_AVMetadataExtractor\_OutputParam](tadataextractor-oh-avmetadataextractor-outputparam.md)**
-* **[OH\_AVMetadataExtractor\_FrameInfo](metadataextractor-oh-avmetadataextractor-frameinfo.md)**
+* **[OH\_AVMetadataExtractor\_OutputParam](capi-avmetadataextractor-oh-avmetadataextractor-outputparam.md)**
+* **[OH\_AVMetadataExtractor\_FrameInfo](capi-avmetadataextractor-oh-avmetadataextractor-frameinfo.md)**
+* **[OH\_MultiDisplayCapability](capi-avscreencapture-oh-multidisplaycapability.md)**
+* **[OH\_AVPlayerVideoOutput](capi-avplayer-oh-avplayervideooutput.md)**

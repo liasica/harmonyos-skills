@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_hp-arkui-
 title: "@performance/hp-arkui-image-async-load"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/hp-arkui-image-async-load
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:03+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:d67a14db3827bacc31f60247b1e2bf54bfd00c49c985070375d2ed5e04733096
+scraped_at: 2026-09-02T14:50:52+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d2808ba8e3cb63dad2043a8cdb032ca5f24bbc4d6f20bed7f3c86ff7582664bd
 ---
 
 建议大图片使用异步加载。
@@ -14,62 +14,62 @@ content_hash: sha256:d67a14db3827bacc31f60247b1e2bf54bfd00c49c985070375d2ed5e047
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@performance/hp-arkui-image-async-load": "suggestion",
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@performance/hp-arkui-image-async-load": "suggestion",
+  }
+}
 ```
 
 ## 选项
 
-该规则无需配置额外选项。
+该规则无需配置选项。
 
 ## 正例
 
-```
-1. @Entry
-2. @Component
-3. struct MyComponent {
-4. build() {
-5. Row() {
-6. // 本地图片4k.png
-7. Image($r('app.media.4k'))
-8. .border({ width: 1 })
-9. .borderStyle(BorderStyle.Dashed)
-10. .height(100)
-11. .width(100)
-12. }
-13. }
-14. }
+```screen
+@Entry
+@Component
+struct MyComponent {
+  build() {
+    Row() {
+      // 本地图片4k.png
+      Image($r('app.media.4k'))
+        .border({ width: 1 })
+        .borderStyle(BorderStyle.Dashed)
+        .height(100)
+        .width(100)
+    }
+  }
+}
 ```
 
 ## 反例
 
-```
-1. @Entry
-2. @Component
-3. struct MyComponent {
-4. build() {
-5. Row() {
-6. // 本地图片4k.png
-7. Image($r('app.media.4k'))
-8. .border({ width: 1 })
-9. .borderStyle(BorderStyle.Dashed)
-10. .height(100)
-11. .width(100)
-12. .syncLoad(true)
-13. }
-14. }
-15. }
+```screen
+@Entry
+@Component
+struct MyComponent {
+  build() {
+    Row() {
+      // 本地图片4k.png
+      Image($r('app.media.4k'))
+        .border({ width: 1 })
+        .borderStyle(BorderStyle.Dashed)
+        .height(100)
+        .width(100)
+        .syncLoad(true)
+    }
+  }
+}
 ```
 
 ## 规则集
 
-```
-1. plugin:@performance/all
+```screen
+plugin:@performance/all
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

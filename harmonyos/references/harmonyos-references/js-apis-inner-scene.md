@@ -3,30 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: Scene
 breadcrumb: API参考 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkTS API > graphics3d > Scene
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:36+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f4f622fcf1958c6f03c7dea9e36def972f10656dc6ca2f2c686f83c601448026
+scraped_at: 2026-09-02T15:02:47+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:aa31b11e931fa6f2759322f30fdcd849769cd1d4645e16fb1a1499ee055f86db
 ---
 
 本模块作为ArkGraphics 3D基础模块，提供SceneResourceParameters、SceneNodeParameters等通用数据类型。同时提供glTF模型加载，场景元素、资源创建等基础方法。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 12开始支持，后续版本的新增接口，采用上角标标记接口的起始版本。
 * 关于.shader资源文件，具体请见[.shader资源文件格式要求](../harmonyos-guides/arkgraphics3d-shader-resource.md)。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { SceneResourceParameters, SceneNodeParameters, RaycastResult, RaycastParameters,RenderResourceFactory,
-2. SceneResourceFactory, SceneComponent, RenderContext, RenderConfiguration, RenderParameters, Scene } from '@kit.ArkGraphics3D';
+```ts
+import { SceneResourceParameters, SceneNodeParameters, RaycastResult, RaycastParameters, RenderResourceFactory, CameraParameters, EffectParameters,
+  SceneResourceFactory, SceneComponent, RenderContext, SoftShadowConfig, PCFConfig, RenderConfiguration, RenderParameters, Scene } from '@kit.ArkGraphics3D';
 ```
 
 ## SceneResourceParameters
-
-PhonePC/2in1TabletTVWearable
 
 场景资源参数对象，包含name和uri，用于提供场景资源的名称以及3D场景所需的资源文件路径。
 
@@ -34,75 +30,71 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| name | string | 否 | 否 | 要创建资源的名称，可由开发者自定填写，用于标识该场景资源。 |
+| name | string | 否 | 否 | 要创建资源的名称，可由开发者自定义填写，用于标识该场景资源。 |
 | uri | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 3D场景所需的资源文件路径。默认值为undefined。 |
 
 **示例：**
 
-```
-1. import { Shader, SceneResourceParameters, SceneResourceFactory, Scene } from '@kit.ArkGraphics3D';
+```ts
+import { Shader, SceneResourceParameters, SceneResourceFactory, Scene } from '@kit.ArkGraphics3D';
 
-3. function createShaderPromise(): Promise<Shader> {
-4. return new Promise((resolve, reject) => {
-5. // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
-6. let scene: Promise<Scene> = Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
-7. scene.then(async (result: Scene) => {
-8. let sceneFactory: SceneResourceFactory = result.getResourceFactory();
+function createShaderPromise(): Promise<Shader> {
+  return new Promise((resolve, reject) => {
+    // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
+    let scene: Promise<Scene> = Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+    scene.then(async (result: Scene) => {
+      let sceneFactory: SceneResourceFactory = result.getResourceFactory();
 
-10. // 创建shader资源（通过SceneResourceParameters配置），路径和文件名可根据项目实际资源自定义
-11. let sceneResourceParameter: SceneResourceParameters = { name: "shaderResource",
-12. uri: $rawfile("shaders/custom_shader/custom_material_sample.shader") };
-13. let shader: Shader = await sceneFactory.createShader(sceneResourceParameter);
-14. resolve(shader);
-15. }).catch((error: Error) => {
-16. console.error('Scene load failed:', error);
-17. reject(error);
-18. });
-19. });
-20. }
+      // 创建shader资源（通过SceneResourceParameters配置），路径和文件名可根据项目实际资源自定义
+      let sceneResourceParameter: SceneResourceParameters = { name: "shaderResource",
+        uri: $rawfile("shaders/custom_shader/custom_material_sample.shader") };
+      let shader: Shader = await sceneFactory.createShader(sceneResourceParameter);
+      resolve(shader);
+    }).catch((err: Error) => {
+      console.error(`Failed to load scene. Message: ${err.message}`);
+      reject(err);
+    });
+  });
+}
 ```
 
 ## SceneNodeParameters
 
-PhonePC/2in1TabletTVWearable
-
-场景节点参数对象，它用于提供场景节点层次中的名称和路径。
+场景节点参数对象，用于提供场景节点层次中的名称和路径。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | string | 否 | 否 | 要创建的节点名称，可由开发者自定义填写，用于标识场景节点。 |
-| path | string | 否 | 是 | 场景节点层次中的路径。用于指定创建的摄影机、灯光或节点在场景节点层次中的放置位置。每层之间使用'/'符号进行分割。如果未提供，则将其设置为根节点的子节点。默认值为undefined。 |
+| path | string | 否 | 是 | 场景节点层次中的路径。用于指定创建的相机、灯光或节点在场景节点层次中的放置位置。每层之间使用'/'符号进行分割。如果未提供，则将其设置为根节点的子节点。默认值为undefined。 |
 
 **示例：**
 
-```
-1. import { SceneNodeParameters, SceneResourceFactory, Scene, Node } from '@kit.ArkGraphics3D';
+```ts
+import { SceneNodeParameters, SceneResourceFactory, Scene, Node } from '@kit.ArkGraphics3D';
 
-3. function createNodePromise() : Promise<Node> {
-4. return new Promise((resolve, reject) => {
-5. // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
-6. let scene: Promise<Scene> = Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
-7. scene.then(async (result: Scene) => {
-8. let sceneFactory: SceneResourceFactory = result.getResourceFactory();
+function createNodePromise() : Promise<Node> {
+  return new Promise((resolve, reject) => {
+    // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
+    let scene: Promise<Scene> = Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+    scene.then(async (result: Scene) => {
+      let sceneFactory: SceneResourceFactory = result.getResourceFactory();
 
-10. // 创建SceneNodeParameters类型变量并以此创建node
-11. let sceneNodeParameter: SceneNodeParameters = { name: "empty_node",
-12. path:"/rootNode_/empty_node" };
-13. let node: Node = await sceneFactory.createNode(sceneNodeParameter);
-14. resolve(node);
-15. }).catch((error: Error) => {
-16. console.error('Scene load failed:', error);
-17. reject(error);
-18. });
-19. });
-20. }
+      // 创建SceneNodeParameters类型变量并以此创建node
+      let sceneNodeParameter: SceneNodeParameters = { name: "empty_node",
+        path:"/rootNode_/empty_node" };
+      let node: Node = await sceneFactory.createNode(sceneNodeParameter);
+      resolve(node);
+    }).catch((err: Error) => {
+      console.error(`Failed to load scene. Message: ${err.message}`);
+      reject(err);
+    });
+  });
+}
 ```
 
 ## RaycastResult20+
-
-PhonePC/2in1TabletTVWearable
 
 射线检测命中结果对象，包含被射线击中的3D物体详细信息。
 
@@ -111,12 +103,10 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | node | [Node](js-apis-inner-scene-nodes.md#node) | 否 | 否 | 被射线击中的3D场景节点，可通过该节点操作目标物体（如移动、旋转、隐藏）。 |
-| centerDistance | number | 否 | 否 | 命中物体包围盒中心到摄像机中心的距离，单位为世界坐标系下的场景单位（比如cm、m、km等），取值范围大于0。 |
+| centerDistance | number | 否 | 否 | 命中物体包围盒中心到相机中心的距离，单位为世界坐标系下的场景单位（比如cm、m、km等），取值范围大于0。 |
 | hitPosition | [Position3](js-apis-inner-scene-types.md#position3) | 否 | 否 | 射线与物体碰撞点的精确世界坐标（{x: number, y: number, z: number}），单位为世界坐标系下的场景单位（比如cm、m、km等）。 |
 
 ## RaycastParameters20+
-
-PhonePC/2in1TabletTVWearable
 
 射线检测参数配置，用于定义射线检测的行为。
 
@@ -128,13 +118,9 @@ PhonePC/2in1TabletTVWearable
 
 ## RenderResourceFactory20+
 
-PhonePC/2in1TabletTVWearable
-
 用于创建可在共享[RenderContext](js-apis-inner-scene.md#rendercontext20)的多个场景（[Scene](js-apis-inner-scene.md#scene-1)）中共享的渲染资源。
 
 ### createShader20+
-
-PhonePC/2in1TabletTVWearable
 
 createShader(params: SceneResourceParameters): Promise<Shader>
 
@@ -156,27 +142,25 @@ createShader(params: SceneResourceParameters): Promise<Shader>
 
 **示例：**
 
-```
-1. import { Shader, SceneResourceParameters, Scene, RenderContext, RenderResourceFactory } from '@kit.ArkGraphics3D';
+```ts
+import { Shader, SceneResourceParameters, Scene, RenderContext, RenderResourceFactory } from '@kit.ArkGraphics3D';
 
-3. function createShaderResource(): Promise<Shader> {
-4. const renderContext: RenderContext | null = Scene.getDefaultRenderContext();
-5. if (!renderContext) {
-6. return Promise.reject(new Error("RenderContext is null"));
-7. }
-8. const renderResourceFactory: RenderResourceFactory = renderContext.getRenderResourceFactory();
-9. // 创建shader资源，路径和文件名可根据项目实际资源自定义
-10. let shaderParams: SceneResourceParameters = {
-11. name: "custom_shader",
-12. uri: $rawfile("shaders/custom_shader/custom_material_sample.shader")
-13. };
-14. return renderResourceFactory.createShader(shaderParams);
-15. }
+function createShaderResource(): Promise<Shader> {
+  const renderContext: RenderContext | null = Scene.getDefaultRenderContext();
+  if (!renderContext) {
+    return Promise.reject(new Error("RenderContext is null"));
+  }
+  const renderResourceFactory: RenderResourceFactory = renderContext.getRenderResourceFactory();
+  // 创建shader资源，路径和文件名可根据项目实际资源自定义
+  let shaderParams: SceneResourceParameters = {
+    name: "custom_shader",
+    uri: $rawfile("shaders/custom_shader/custom_material_sample.shader")
+  };
+  return renderResourceFactory.createShader(shaderParams);
+}
 ```
 
 ### createImage20+
-
-PhonePC/2in1TabletTVWearable
 
 createImage(params: SceneResourceParameters): Promise<Image>
 
@@ -198,27 +182,67 @@ createImage(params: SceneResourceParameters): Promise<Image>
 
 **示例：**
 
-```
-1. import { Image, SceneResourceParameters, Scene, RenderContext, RenderResourceFactory } from '@kit.ArkGraphics3D';
+```ts
+import { Image, SceneResourceParameters, Scene, RenderContext, RenderResourceFactory } from '@kit.ArkGraphics3D';
 
-3. function createImageResource(): Promise<Image> {
-4. const renderContext: RenderContext | null = Scene.getDefaultRenderContext();
-5. if (!renderContext) {
-6. return Promise.reject(new Error("RenderContext is null"));
-7. }
-8. const renderResourceFactory: RenderResourceFactory = renderContext.getRenderResourceFactory();
-9. // 加载图片资源，路径和文件名可根据项目实际资源自定义
-10. let imageParams: SceneResourceParameters = {
-11. name: "sampleImage",
-12. uri: $rawfile("image/Cube_BaseColor.png")
-13. };
-14. return renderResourceFactory.createImage(imageParams);
-15. }
+function createImageResource(): Promise<Image> {
+  const renderContext: RenderContext | null = Scene.getDefaultRenderContext();
+  if (!renderContext) {
+    return Promise.reject(new Error("RenderContext is null"));
+  }
+  const renderResourceFactory: RenderResourceFactory = renderContext.getRenderResourceFactory();
+  // 加载图片资源，路径和文件名可根据项目实际资源自定义
+  let imageParams: SceneResourceParameters = {
+    name: "sampleImage",
+    uri: $rawfile("image/Cube_BaseColor.png")
+  };
+  return renderResourceFactory.createImage(imageParams);
+}
+```
+
+### createImageStream
+
+createImageStream(params: SceneResourceParameters): Promise<ImageStream>
+
+根据指定场景资源参数创建流图片，使用Promise异步回调。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUi.Graphics3D
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| params | [SceneResourceParameters](js-apis-inner-scene.md#sceneresourceparameters) | 是 | 创建流图片的参数。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[ImageStream](js-apis-inner-scene-resources.md#imagestream)> | Promise对象，返回创建的流图片。 |
+
+**示例：**
+
+```ts
+import { ImageStream, SceneResourceParameters, Scene, RenderContext, RenderResourceFactory } from '@kit.ArkGraphics3D';
+
+function createImageStreamResource(): Promise<ImageStream> {
+  const renderContext: RenderContext | null = Scene.getDefaultRenderContext();
+  if (!renderContext) {
+    return Promise.reject(new Error("RenderContext is null"));
+  }
+  const renderResourceFactory: RenderResourceFactory = renderContext.getRenderResourceFactory();
+  let imageStreamParams: SceneResourceParameters = {
+    name: "sampleImageStream"
+  };
+  return renderResourceFactory.createImageStream(imageStreamParams);
+}
 ```
 
 ### createMesh20+
-
-PhonePC/2in1TabletTVWearable
 
 createMesh(params: SceneResourceParameters, geometry: GeometryDefinition): Promise<MeshResource>
 
@@ -241,78 +265,76 @@ createMesh(params: SceneResourceParameters, geometry: GeometryDefinition): Promi
 
 **示例：**
 
-```
-1. import { SceneResourceParameters, Scene, CustomGeometry, PrimitiveTopology, RenderContext, RenderResourceFactory,
-2. MeshResource }  from '@kit.ArkGraphics3D';
+```ts
+import { SceneResourceParameters, Scene, CustomGeometry, PrimitiveTopology, RenderContext, RenderResourceFactory,
+  MeshResource }  from '@kit.ArkGraphics3D';
 
-4. function createMeshResource(): Promise<MeshResource> {
-5. const renderContext: RenderContext | null = Scene.getDefaultRenderContext();
-6. if (!renderContext) {
-7. return Promise.reject(new Error("RenderContext is null"));
-8. }
-9. const renderResourceFactory: RenderResourceFactory = renderContext.getRenderResourceFactory();
-10. const geometry = new CustomGeometry();
-11. geometry.vertices = [
-12. { x: 0, y: 0, z: 0 },
-13. { x: 1, y: 0, z: 0 },
-14. { x: 1, y: 1, z: 0 },
-15. { x: 0, y: 1, z: 0 },
-16. { x: 0, y: 0, z: 1 },
-17. { x: 1, y: 0, z: 1 },
-18. { x: 1, y: 1, z: 1 },
-19. { x: 0, y: 1, z: 1 }
-20. ];
-21. geometry.indices = [
-22. 0, 1, 2, 2, 3, 0,     // front
-23. 4, 5, 6, 6, 7, 4,     // back
-24. 0, 4, 5, 5, 1, 0,     // bottom
-25. 1, 5, 6, 6, 2, 1,     // right
-26. 3, 2, 6, 6, 7, 3,     // top
-27. 3, 7, 4, 4, 0, 3      // left
-28. ];
-29. geometry.topology = PrimitiveTopology.TRIANGLE_LIST;
-30. geometry.normals = [
-31. { x: 0, y: 0, z: 1 },
-32. { x: 0, y: 0, z: 1 },
-33. { x: 0, y: 0, z: 1 },
-34. { x: 0, y: 0, z: 1 },
-35. { x: 0, y: 0, z: 1 },
-36. { x: 0, y: 0, z: 1 },
-37. { x: 0, y: 0, z: 1 },
-38. { x: 0, y: 0, z: 1 }
-39. ];
-40. geometry.uvs = [
-41. { x: 0, y: 0 },
-42. { x: 1, y: 0 },
-43. { x: 1, y: 1 },
-44. { x: 0, y: 1 },
-45. { x: 0, y: 0 },
-46. { x: 1, y: 0 },
-47. { x: 1, y: 1 },
-48. { x: 0, y: 1 }
-49. ];
-50. geometry.colors = [
-51. { r: 1, g: 0, b: 0, a: 1 },
-52. { r: 0, g: 1, b: 0, a: 1 },
-53. { r: 0, g: 0, b: 1, a: 1 },
-54. { r: 1, g: 1, b: 0, a: 1 },
-55. { r: 1, g: 0, b: 1, a: 1 },
-56. { r: 0, g: 1, b: 1, a: 1 },
-57. { r: 1, g: 1, b: 1, a: 1 },
-58. { r: 0, g: 0, b: 0, a: 1 }
-59. ];
-60. // 加载图片资源，路径和文件名可根据项目实际资源自定义
-61. let sceneResourceParameter: SceneResourceParameters = {
-62. name: "cubeMesh",
-63. uri: $rawfile("image/Cube_BaseColor.png")
-64. };
-65. return renderResourceFactory.createMesh(sceneResourceParameter, geometry);
-66. }
+function createMeshResource(): Promise<MeshResource> {
+  const renderContext: RenderContext | null = Scene.getDefaultRenderContext();
+  if (!renderContext) {
+    return Promise.reject(new Error("RenderContext is null"));
+  }
+  const renderResourceFactory: RenderResourceFactory = renderContext.getRenderResourceFactory();
+  const geometry = new CustomGeometry();
+  geometry.vertices = [
+    { x: 0, y: 0, z: 0 },
+    { x: 1, y: 0, z: 0 },
+    { x: 1, y: 1, z: 0 },
+    { x: 0, y: 1, z: 0 },
+    { x: 0, y: 0, z: 1 },
+    { x: 1, y: 0, z: 1 },
+    { x: 1, y: 1, z: 1 },
+    { x: 0, y: 1, z: 1 }
+  ];
+  geometry.indices = [
+    0, 1, 2, 2, 3, 0, // front
+    4, 5, 6, 6, 7, 4, // back
+    0, 4, 5, 5, 1, 0, // bottom
+    1, 5, 6, 6, 2, 1, // right
+    3, 2, 6, 6, 7, 3, // top
+    3, 7, 4, 4, 0, 3  // left
+  ];
+  geometry.topology = PrimitiveTopology.TRIANGLE_LIST;
+  geometry.normals = [
+    { x: 0, y: 0, z: 1 },
+    { x: 0, y: 0, z: 1 },
+    { x: 0, y: 0, z: 1 },
+    { x: 0, y: 0, z: 1 },
+    { x: 0, y: 0, z: 1 },
+    { x: 0, y: 0, z: 1 },
+    { x: 0, y: 0, z: 1 },
+    { x: 0, y: 0, z: 1 }
+  ];
+  geometry.uvs = [
+    { x: 0, y: 0 },
+    { x: 1, y: 0 },
+    { x: 1, y: 1 },
+    { x: 0, y: 1 },
+    { x: 0, y: 0 },
+    { x: 1, y: 0 },
+    { x: 1, y: 1 },
+    { x: 0, y: 1 }
+  ];
+  geometry.colors = [
+    { r: 1, g: 0, b: 0, a: 1 },
+    { r: 0, g: 1, b: 0, a: 1 },
+    { r: 0, g: 0, b: 1, a: 1 },
+    { r: 1, g: 1, b: 0, a: 1 },
+    { r: 1, g: 0, b: 1, a: 1 },
+    { r: 0, g: 1, b: 1, a: 1 },
+    { r: 1, g: 1, b: 1, a: 1 },
+    { r: 0, g: 0, b: 0, a: 1 }
+  ];
+  // 创建网格资源，路径和文件名可根据项目实际资源自定义
+  let sceneResourceParameter: SceneResourceParameters = {
+    name: "cubeMesh",
+    uri: $rawfile("image/Cube_BaseColor.png")
+  };
+  return renderResourceFactory.createMesh(sceneResourceParameter, geometry);
+}
 ```
 
 ### createSampler20+
-
-PhonePC/2in1TabletTVWearable
 
 createSampler(params:SceneResourceParameters): Promise<Sampler>
 
@@ -334,27 +356,25 @@ createSampler(params:SceneResourceParameters): Promise<Sampler>
 
 **示例：**
 
-```
-1. import { SceneResourceParameters, Scene, RenderContext, RenderResourceFactory, Sampler } from '@kit.ArkGraphics3D';
+```ts
+import { SceneResourceParameters, Scene, RenderContext, RenderResourceFactory, Sampler } from '@kit.ArkGraphics3D';
 
-3. function createSamplerResource(): Promise<Sampler> {
-4. const renderContext: RenderContext | null = Scene.getDefaultRenderContext();
-5. if (!renderContext) {
-6. return Promise.reject(new Error("RenderContext is null"));
-7. }
-8. const renderResourceFactory: RenderResourceFactory = renderContext.getRenderResourceFactory();
-9. // 加载图片资源，路径和文件名可根据项目实际资源自定义
-10. let samplerParams: SceneResourceParameters = {
-11. name: "sampler1",
-12. uri: $rawfile("image/Cube_BaseColor.png")
-13. };
-14. return renderResourceFactory.createSampler(samplerParams);
-15. }
+function createSamplerResource(): Promise<Sampler> {
+  const renderContext: RenderContext | null = Scene.getDefaultRenderContext();
+  if (!renderContext) {
+    return Promise.reject(new Error("RenderContext is null"));
+  }
+  const renderResourceFactory: RenderResourceFactory = renderContext.getRenderResourceFactory();
+  // 创建采样器资源，路径和文件名可根据项目实际资源自定义
+  let samplerParams: SceneResourceParameters = {
+    name: "sampler1",
+    uri: $rawfile("image/Cube_BaseColor.png")
+  };
+  return renderResourceFactory.createSampler(samplerParams);
+}
 ```
 
 ### createScene20+
-
-PhonePC/2in1TabletTVWearable
 
 createScene(uri?: ResourceStr): Promise<Scene>
 
@@ -376,30 +396,28 @@ createScene(uri?: ResourceStr): Promise<Scene>
 
 **示例：**
 
-```
-1. import { Scene, RenderContext, RenderResourceFactory } from '@kit.ArkGraphics3D';
+```ts
+import { Scene, RenderContext, RenderResourceFactory } from '@kit.ArkGraphics3D';
 
-3. // fromFile=true：从指定glb文件加载场景，fromFile=false：创建一个空场景，此参数是为了示例展示两种常见场景创建方式
-4. function createScenePromise(fromFile: boolean = false): Promise<Scene> {
-5. const renderContext: RenderContext | null = Scene.getDefaultRenderContext();
-6. if (!renderContext) {
-7. return Promise.reject(new Error("RenderContext is null"));
-8. }
+// fromFile=true：从指定glb文件加载场景，fromFile=false：创建一个空场景，此参数是为了示例展示两种常见场景创建方式
+function createScenePromise(fromFile: boolean = false): Promise<Scene> {
+  const renderContext: RenderContext | null = Scene.getDefaultRenderContext();
+  if (!renderContext) {
+    return Promise.reject(new Error("RenderContext is null"));
+  }
 
-10. const renderResourceFactory: RenderResourceFactory = renderContext.getRenderResourceFactory();
-11. if (fromFile) {
-12. // 创建场景并加载.gltf或.glb文件作为初始内容，路径和名称可根据项目实际资源自定义
-13. return renderResourceFactory.createScene($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
-14. } else {
-15. // 创建空场景
-16. return renderResourceFactory.createScene();
-17. }
-18. }
+  const renderResourceFactory: RenderResourceFactory = renderContext.getRenderResourceFactory();
+  if (fromFile) {
+    // 创建场景并加载.gltf或.glb文件作为初始内容，路径和名称可根据项目实际资源自定义
+    return renderResourceFactory.createScene($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+  } else {
+    // 创建空场景
+    return renderResourceFactory.createScene();
+  }
+}
 ```
 
 ## CameraParameters21+
-
-PhonePC/2in1TabletTVWearable
 
 相机创建参数配置，用于定义相机创建的额外选项。
 
@@ -412,8 +430,6 @@ PhonePC/2in1TabletTVWearable
 
 ## EffectParameters21+
 
-PhonePC/2in1TabletTVWearable
-
 特效参数配置，用于指定创建特效时所需的特效ID，作为[createEffect](js-apis-inner-scene.md#createeffect21)接口的入参来创建特效对象。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
@@ -424,13 +440,9 @@ PhonePC/2in1TabletTVWearable
 
 ## SceneResourceFactory
 
-PhonePC/2in1TabletTVWearable
-
 用于创建3D场景中资源的接口，例如相机、光源等，继承自[RenderResourceFactory](js-apis-inner-scene.md#renderresourcefactory20)。
 
 ### createCamera
-
-PhonePC/2in1TabletTVWearable
 
 createCamera(params: SceneNodeParameters): Promise<Camera>
 
@@ -452,30 +464,28 @@ createCamera(params: SceneNodeParameters): Promise<Camera>
 
 **示例：**
 
-```
-1. import { SceneNodeParameters, Camera, SceneResourceFactory, Scene } from '@kit.ArkGraphics3D';
+```ts
+import { SceneNodeParameters, Camera, SceneResourceFactory, Scene } from '@kit.ArkGraphics3D';
 
-3. function createCameraPromise(): Promise<Camera> {
-4. return new Promise((resolve, reject) => {
-5. // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
-6. let scene: Promise<Scene> = Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
-7. scene.then(async (result: Scene) => {
-8. let sceneFactory: SceneResourceFactory = result.getResourceFactory();
-9. let sceneCameraParameter: SceneNodeParameters = { name: "camera1" };
-10. // 创建相机
-11. let camera: Camera = await sceneFactory.createCamera(sceneCameraParameter);
-12. resolve(camera);
-13. }).catch((error: Error) => {
-14. console.error('Scene load failed:', error);
-15. reject(error);
-16. });
-17. });
-18. }
+function createCameraPromise(): Promise<Camera> {
+  return new Promise((resolve, reject) => {
+    // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
+    let scene: Promise<Scene> = Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+    scene.then(async (result: Scene) => {
+      let sceneFactory: SceneResourceFactory = result.getResourceFactory();
+      let sceneCameraParameter: SceneNodeParameters = { name: "camera1" };
+      // 创建相机
+      let camera: Camera = await sceneFactory.createCamera(sceneCameraParameter);
+      resolve(camera);
+    }).catch((err: Error) => {
+      console.error(`Failed to load scene. Message: ${err.message}`);
+      reject(err);
+    });
+  });
+}
 ```
 
 ### createCamera21+
-
-PhonePC/2in1TabletTVWearable
 
 createCamera(params: SceneNodeParameters, cameraParams: CameraParameters): Promise<Camera>
 
@@ -498,32 +508,30 @@ createCamera(params: SceneNodeParameters, cameraParams: CameraParameters): Promi
 
 **示例：**
 
-```
-1. import { SceneNodeParameters, Camera, SceneResourceFactory, Scene, CameraParameters,
-2. RenderingPipelineType } from '@kit.ArkGraphics3D';
+```ts
+import { SceneNodeParameters, Camera, SceneResourceFactory, Scene, CameraParameters,
+  RenderingPipelineType } from '@kit.ArkGraphics3D';
 
-4. function createCameraPromise(): Promise<Camera> {
-5. return new Promise((resolve, reject) => {
-6. // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
-7. let scene: Promise<Scene> = Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
-8. scene.then(async (result: Scene) => {
-9. let sceneFactory: SceneResourceFactory = result.getResourceFactory();
-10. let nodeParameter: SceneNodeParameters = { name: "camera1" };
-11. let camParameter: CameraParameters = {renderingPipeline: RenderingPipelineType.FORWARD};
-12. // 创建相机
-13. let camera: Camera = await sceneFactory.createCamera(nodeParameter, camParameter);
-14. resolve(camera);
-15. }).catch((error: Error) => {
-16. console.error('Scene load failed:', error);
-17. reject(error);
-18. });
-19. });
-20. }
+function createCameraPromise(): Promise<Camera> {
+  return new Promise((resolve, reject) => {
+    // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
+    let scene: Promise<Scene> = Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+    scene.then(async (result: Scene) => {
+      let sceneFactory: SceneResourceFactory = result.getResourceFactory();
+      let nodeParameter: SceneNodeParameters = { name: "camera1" };
+      let camParameter: CameraParameters = {renderingPipeline: RenderingPipelineType.FORWARD};
+      // 创建相机
+      let camera: Camera = await sceneFactory.createCamera(nodeParameter, camParameter);
+      resolve(camera);
+    }).catch((err: Error) => {
+      console.error(`Failed to load scene. Message: ${err.message}`);
+      reject(err);
+    });
+  });
+}
 ```
 
 ### createLight
-
-PhonePC/2in1TabletTVWearable
 
 createLight(params: SceneNodeParameters, lightType: LightType): Promise<Light>
 
@@ -546,30 +554,28 @@ createLight(params: SceneNodeParameters, lightType: LightType): Promise<Light>
 
 **示例：**
 
-```
-1. import { SceneNodeParameters, LightType, Light, SceneResourceFactory, Scene } from '@kit.ArkGraphics3D';
+```ts
+import { SceneNodeParameters, LightType, Light, SceneResourceFactory, Scene } from '@kit.ArkGraphics3D';
 
-3. function createLightPromise() : Promise<Light> {
-4. return new Promise((resolve, reject) => {
-5. // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
-6. let scene: Promise<Scene> = Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
-7. scene.then(async (result: Scene) => {
-8. let sceneFactory: SceneResourceFactory = result.getResourceFactory();
-9. let sceneLightParameter: SceneNodeParameters = { name: "light" };
-10. // 创建平行光
-11. let light: Light = await sceneFactory.createLight(sceneLightParameter, LightType.DIRECTIONAL);
-12. resolve(light);
-13. }).catch((error: Error) => {
-14. console.error('Scene load failed:', error);
-15. reject(error);
-16. });
-17. });
-18. }
+function createLightPromise() : Promise<Light> {
+  return new Promise((resolve, reject) => {
+    // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
+    let scene: Promise<Scene> = Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+    scene.then(async (result: Scene) => {
+      let sceneFactory: SceneResourceFactory = result.getResourceFactory();
+      let sceneLightParameter: SceneNodeParameters = { name: "light" };
+      // 创建平行光
+      let light: Light = await sceneFactory.createLight(sceneLightParameter, LightType.DIRECTIONAL);
+      resolve(light);
+    }).catch((err: Error) => {
+      console.error(`Failed to load scene. Message: ${err.message}`);
+      reject(err);
+    });
+  });
+}
 ```
 
 ### createNode
-
-PhonePC/2in1TabletTVWearable
 
 createNode(params: SceneNodeParameters): Promise<Node>
 
@@ -591,31 +597,29 @@ createNode(params: SceneNodeParameters): Promise<Node>
 
 **示例：**
 
-```
-1. import { SceneNodeParameters, SceneResourceFactory, Scene, Node } from '@kit.ArkGraphics3D';
+```ts
+import { SceneNodeParameters, SceneResourceFactory, Scene, Node } from '@kit.ArkGraphics3D';
 
-3. function createNodePromise(): Promise<Node> {
-4. return new Promise((resolve, reject) => {
-5. // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
-6. let scene: Promise<Scene> = Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
-7. scene.then(async (result: Scene) => {
-8. let sceneFactory: SceneResourceFactory = result.getResourceFactory();
-9. let sceneNodeParameter: SceneNodeParameters = { name: "empty_node",
-10. path:"/rootNode_/empty_node" };
-11. // 创建节点
-12. let node: Node = await sceneFactory.createNode(sceneNodeParameter);
-13. resolve(node);
-14. }).catch((error: Error) => {
-15. console.error('Scene load failed:', error);
-16. reject(error);
-17. });
-18. });
-19. }
+function createNodePromise(): Promise<Node> {
+  return new Promise((resolve, reject) => {
+    // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
+    let scene: Promise<Scene> = Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+    scene.then(async (result: Scene) => {
+      let sceneFactory: SceneResourceFactory = result.getResourceFactory();
+      let sceneNodeParameter: SceneNodeParameters = { name: "empty_node",
+        path:"/rootNode_/empty_node" };
+      // 创建节点
+      let node: Node = await sceneFactory.createNode(sceneNodeParameter);
+      resolve(node);
+    }).catch((err: Error) => {
+      console.error(`Failed to load scene. Message: ${err.message}`);
+      reject(err);
+    });
+  });
+}
 ```
 
 ### createMaterial
-
-PhonePC/2in1TabletTVWearable
 
 createMaterial(params: SceneResourceParameters, materialType: MaterialType): Promise<Material>
 
@@ -638,30 +642,28 @@ createMaterial(params: SceneResourceParameters, materialType: MaterialType): Pro
 
 **示例：**
 
-```
-1. import { MaterialType, Material, SceneResourceParameters, SceneResourceFactory, Scene } from '@kit.ArkGraphics3D';
+```ts
+import { MaterialType, Material, SceneResourceParameters, SceneResourceFactory, Scene } from '@kit.ArkGraphics3D';
 
-3. function createMaterialPromise() : Promise<Material> {
-4. return new Promise((resolve, reject) => {
-5. // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
-6. let scene: Promise<Scene> = Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
-7. scene.then(async (result: Scene) => {
-8. let sceneFactory: SceneResourceFactory = result.getResourceFactory();
-9. let sceneMaterialParameter: SceneResourceParameters = { name: "material" };
-10. // 创建材质
-11. let material: Material = await sceneFactory.createMaterial(sceneMaterialParameter, MaterialType.SHADER);
-12. resolve(material);
-13. }).catch((error: Error) => {
-14. console.error('Scene load failed:', error);
-15. reject(error);
-16. });
-17. });
-18. }
+function createMaterialPromise() : Promise<Material> {
+  return new Promise((resolve, reject) => {
+    // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
+    let scene: Promise<Scene> = Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+    scene.then(async (result: Scene) => {
+      let sceneFactory: SceneResourceFactory = result.getResourceFactory();
+      let sceneMaterialParameter: SceneResourceParameters = { name: "material" };
+      // 创建材质
+      let material: Material = await sceneFactory.createMaterial(sceneMaterialParameter, MaterialType.SHADER);
+      resolve(material);
+    }).catch((err: Error) => {
+      console.error(`Failed to load scene. Message: ${err.message}`);
+      reject(err);
+    });
+  });
+}
 ```
 
 ### createEnvironment
-
-PhonePC/2in1TabletTVWearable
 
 createEnvironment(params: SceneResourceParameters): Promise<Environment>
 
@@ -683,31 +685,29 @@ createEnvironment(params: SceneResourceParameters): Promise<Environment>
 
 **示例：**
 
-```
-1. import { Environment, SceneResourceParameters, SceneResourceFactory, Scene } from '@kit.ArkGraphics3D';
+```ts
+import { Environment, SceneResourceParameters, SceneResourceFactory, Scene } from '@kit.ArkGraphics3D';
 
-3. function createEnvironmentPromise(): Promise<Environment> {
-4. return new Promise((resolve, reject) => {
-5. // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
-6. let scene: Promise<Scene> = Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
-7. scene.then(async (result: Scene) => {
-8. let sceneFactory: SceneResourceFactory = result.getResourceFactory();
-9. // 加载环境贴图资源，路径和文件名可根据项目实际资源自定义
-10. let sceneEnvironmentParameter: SceneResourceParameters = { name: "env", uri: $rawfile("KTX/quarry_02_2k_radiance.ktx") };
-11. // 创建Environment
-12. let env: Environment = await sceneFactory.createEnvironment(sceneEnvironmentParameter);
-13. resolve(env);
-14. }).catch((error: Error) => {
-15. console.error('Scene load failed:', error);
-16. reject(error);
-17. });
-18. });
-19. }
+function createEnvironmentPromise(): Promise<Environment> {
+  return new Promise((resolve, reject) => {
+    // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
+    let scene: Promise<Scene> = Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+    scene.then(async (result: Scene) => {
+      let sceneFactory: SceneResourceFactory = result.getResourceFactory();
+      // 加载环境贴图资源，路径和文件名可根据项目实际资源自定义
+      let sceneEnvironmentParameter: SceneResourceParameters = { name: "env", uri: $rawfile("KTX/quarry_02_2k_radiance.ktx") };
+      // 创建Environment
+      let env: Environment = await sceneFactory.createEnvironment(sceneEnvironmentParameter);
+      resolve(env);
+    }).catch((err: Error) => {
+      console.error(`Failed to load scene. Message: ${err.message}`);
+      reject(err);
+    });
+  });
+}
 ```
 
 ### createGeometry18+
-
-PhonePC/2in1TabletTVWearable
 
 createGeometry(params: SceneNodeParameters, mesh:MeshResource): Promise<Geometry>
 
@@ -730,37 +730,35 @@ createGeometry(params: SceneNodeParameters, mesh:MeshResource): Promise<Geometry
 
 **示例：**
 
-```
-1. import { SceneResourceFactory, Scene, Geometry, CubeGeometry } from '@kit.ArkGraphics3D';
+```ts
+import { SceneResourceFactory, Scene, Geometry, CubeGeometry } from '@kit.ArkGraphics3D';
 
-3. function createGeometryPromise() : Promise<Geometry> {
-4. return new Promise((resolve, reject) => {
-5. let scene: Promise<Scene> = Scene.load();
-6. scene.then(async (result: Scene | undefined) => {
-7. if (!result) {
-8. return;
-9. }
-10. let sceneFactory: SceneResourceFactory = result.getResourceFactory();
-11. // 创建立方体几何数据
-12. let cubeGeom = new CubeGeometry();
-13. cubeGeom.size = { x: 1, y: 1, z: 1 };
-14. // 根据立方体几何数据创建网格资源
-15. let meshRes = await sceneFactory.createMesh({ name: "MeshName" }, cubeGeom);
-16. console.info("TEST createGeometryPromise");
-17. // 根据场景节点参数和网格资源创建几何对象
-18. let geometry: Geometry = await sceneFactory.createGeometry({ name: "GeometryName" }, meshRes);
-19. resolve(geometry);
-20. }).catch((error: Error) => {
-21. console.error('Scene load failed:', error);
-22. reject(error);
-23. });
-24. });
-25. }
+function createGeometryPromise() : Promise<Geometry> {
+  return new Promise((resolve, reject) => {
+    let scene: Promise<Scene> = Scene.load();
+    scene.then(async (result: Scene | undefined) => {
+      if (!result) {
+        return;
+      }
+      let sceneFactory: SceneResourceFactory = result.getResourceFactory();
+      // 创建立方体几何数据
+      let cubeGeom = new CubeGeometry();
+      cubeGeom.size = { x: 1, y: 1, z: 1 };
+      // 根据立方体几何数据创建网格资源
+      let meshRes = await sceneFactory.createMesh({ name: "MeshName" }, cubeGeom);
+      console.info("TEST createGeometryPromise");
+      // 根据场景节点参数和网格资源创建几何对象
+      let geometry: Geometry = await sceneFactory.createGeometry({ name: "GeometryName" }, meshRes);
+      resolve(geometry);
+    }).catch((err: Error) => {
+      console.error(`Failed to load scene. Message: ${err.message}`);
+      reject(err);
+    });
+  });
+}
 ```
 
 ### createEffect21+
-
-PhonePC/2in1TabletTVWearable
 
 createEffect(params: EffectParameters): Promise<Effect>
 
@@ -782,32 +780,30 @@ createEffect(params: EffectParameters): Promise<Effect>
 
 **示例：**
 
-```
-1. import { SceneResourceFactory, Scene, Effect, EffectParameters } from '@kit.ArkGraphics3D';
+```ts
+import { SceneResourceFactory, Scene, Effect, EffectParameters } from '@kit.ArkGraphics3D';
 
-3. function createEffect() : Promise<Effect> {
-4. return new Promise((resolve, reject) => {
-5. let scene: Promise<Scene> = Scene.load();
-6. scene.then(async (result: Scene | undefined) => {
-7. if (!result) {
-8. return;
-9. }
-10. let sceneFactory: SceneResourceFactory = result.getResourceFactory();
-11. // 特效ID，固定格式为'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'，比如'e68a7f45-2d21-4a0d-9aef-7d9c825d3f12'
-12. let params: EffectParameters = {effectId: "e68a7f45-2d21-4a0d-9aef-7d9c825d3f12"}
-13. let effect: Effect = await sceneFactory.createEffect(params);
-14. resolve(effect);
-15. }).catch((error: Error) => {
-16. console.error('Scene load failed:', error);
-17. reject(error);
-18. });
-19. });
-20. }
+function createEffect() : Promise<Effect> {
+  return new Promise((resolve, reject) => {
+    let scene: Promise<Scene> = Scene.load();
+    scene.then(async (result: Scene | undefined) => {
+      if (!result) {
+        return;
+      }
+      let sceneFactory: SceneResourceFactory = result.getResourceFactory();
+      // 特效ID，固定格式为'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'，比如'e68a7f45-2d21-4a0d-9aef-7d9c825d3f12'
+      let params: EffectParameters = {effectId: "e68a7f45-2d21-4a0d-9aef-7d9c825d3f12"};
+      let effect: Effect = await sceneFactory.createEffect(params);
+      resolve(effect);
+    }).catch((err: Error) => {
+      console.error(`Failed to load scene. Message: ${err.message}`);
+      reject(err);
+    });
+  });
+}
 ```
 
 ## SceneComponent20+
-
-PhonePC/2in1TabletTVWearable
 
 表示基础场景组件，用于描述场景节点的组件信息，包括组件名称及其对应的属性集合。
 
@@ -815,18 +811,14 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| name | string | 否 | 否 | 要创建场景组件的名称，可由开发者自定填写，用于标识场景组件。 |
-| property | Record<string, string | number | [Vec2](js-apis-inner-scene-types.md#vec2) | [Vec3](js-apis-inner-scene-types.md#vec3) | [Vec4](js-apis-inner-scene-types.md#vec4) | [SceneResource](js-apis-inner-scene-resources.md#sceneresource-1) | boolean | number[] | string[] | [SceneResource](js-apis-inner-scene-resources.md#sceneresource-1)[] | [Vec2](js-apis-inner-scene-types.md#vec2)[] | [Vec3](js-apis-inner-scene-types.md#vec3)[] | [Vec4](js-apis-inner-scene-types.md#vec4)[] | null | undefined> | 是 | 否 | 组件的属性集合，以键值对形式存储。支持多种基础类型和复杂类型，用于描述场景组件的各种属性，单位及取值范围取决于具体场景组件。 |
+| name | string | 否 | 否 | 要创建场景组件的名称，可由开发者自定义填写，用于标识场景组件。 |
+| property | Record<string, string | number | [Vec2](js-apis-inner-scene-types.md#vec2) | [Vec3](js-apis-inner-scene-types.md#vec3) | [Vec4](js-apis-inner-scene-types.md#vec4) | [SceneResource](js-apis-inner-scene-resources.md#sceneresource) | boolean | number[] | string[] | [SceneResource](js-apis-inner-scene-resources.md#sceneresource)[] | [Vec2](js-apis-inner-scene-types.md#vec2)[] | [Vec3](js-apis-inner-scene-types.md#vec3)[] | [Vec4](js-apis-inner-scene-types.md#vec4)[] | null | undefined> | 是 | 否 | 组件的属性集合，以键值对形式存储。支持多种基础类型和复杂类型，用于描述场景组件的各种属性，单位及取值范围取决于具体场景组件。 |
 
 ## RenderContext20+
-
-PhonePC/2in1TabletTVWearable
 
 定义了所有渲染资源的上下文。在同一渲染上下文中创建的多个场景之间，可以共享渲染资源。
 
 ### getRenderResourceFactory20+
-
-PhonePC/2in1TabletTVWearable
 
 getRenderResourceFactory() : RenderResourceFactory
 
@@ -842,23 +834,21 @@ getRenderResourceFactory() : RenderResourceFactory
 
 **示例：**
 
-```
-1. import { Scene, RenderContext, RenderResourceFactory } from '@kit.ArkGraphics3D';
+```ts
+import { Scene, RenderContext, RenderResourceFactory } from '@kit.ArkGraphics3D';
 
-3. function getRenderResourceFactory(): void {
-4. const renderContext: RenderContext | null = Scene.getDefaultRenderContext();
-5. if (!renderContext) {
-6. console.error("RenderContext is null");
-7. return;
-8. }
-9. const renderResourceFactory: RenderResourceFactory = renderContext.getRenderResourceFactory();
-10. console.info("TEST getRenderResourceFactory");
-11. }
+function getRenderResourceFactory(): void {
+  const renderContext: RenderContext | null = Scene.getDefaultRenderContext();
+  if (!renderContext) {
+    console.error("Failed to get default render context");
+    return;
+  }
+  const renderResourceFactory: RenderResourceFactory = renderContext.getRenderResourceFactory();
+  console.info("TEST getRenderResourceFactory");
+}
 ```
 
 ### loadPlugin20+
-
-PhonePC/2in1TabletTVWearable
 
 loadPlugin(name: string): Promise<boolean>
 
@@ -880,22 +870,20 @@ loadPlugin(name: string): Promise<boolean>
 
 **示例：**
 
-```
-1. import { Scene, RenderContext } from '@kit.ArkGraphics3D';
+```ts
+import { Scene, RenderContext } from '@kit.ArkGraphics3D';
 
-3. function loadPlugin(): Promise<boolean> {
-4. const renderContext: RenderContext | null = Scene.getDefaultRenderContext();
-5. if (!renderContext) {
-6. console.error("RenderContext is null");
-7. return Promise.reject(new Error("RenderContext is null"));
-8. }
-9. return renderContext.loadPlugin("pluginName");
-10. }
+function loadPlugin(): Promise<boolean> {
+  const renderContext: RenderContext | null = Scene.getDefaultRenderContext();
+  if (!renderContext) {
+    console.error("Failed to get default render context");
+    return Promise.reject(new Error("RenderContext is null"));
+  }
+  return renderContext.loadPlugin("pluginName");
+}
 ```
 
 ### registerResourcePath20+
-
-PhonePC/2in1TabletTVWearable
 
 registerResourcePath(protocol: string, uri: string): boolean
 
@@ -918,37 +906,64 @@ registerResourcePath(protocol: string, uri: string): boolean
 
 **示例：**
 
-```
-1. import { Scene, RenderContext } from '@kit.ArkGraphics3D';
+```ts
+import { Scene, RenderContext } from '@kit.ArkGraphics3D';
 
-3. function registerResourcePath(): void {
-4. // 创建shader资源，路径和文件名可根据项目实际资源自定义
-5. Scene.load($rawfile("shaders/custom_shader/custom_material_sample.shader"))
-6. .then(() => {
-7. const renderContext: RenderContext | null = Scene.getDefaultRenderContext();
-8. if (!renderContext) {
-9. console.error("RenderContext is null");
-10. return false;
-11. }
-12. // 注册路径检索名"myproto"及其对应的资产路径目录"OhosRawFile://shaders/custom_shader/"
-13. // 当shader内部通过检索名引用关联文件，如路径为"myproto://textures/base.png"，
-14. // 系统会将"myproto://"替换为"OhosRawFile://shaders/custom_shader/"，
-15. // 最终从"OhosRawFile://shaders/custom_shader/textures/base.png"加载关联文件
-16. return renderContext.registerResourcePath("myproto", "OhosRawFile://shaders/custom_shader/");
-17. })
-18. .then(result => {
-19. if (result) {
-20. console.info("resource path registration success");
-21. } else {
-22. console.error("resource path registration failed");
-23. }
-24. });
-25. }
+function registerResourcePath(): void {
+  // 创建shader资源，路径和文件名可根据项目实际资源自定义
+  Scene.load($rawfile("shaders/custom_shader/custom_material_sample.shader"))
+    .then(() => {
+      const renderContext: RenderContext | null = Scene.getDefaultRenderContext();
+      if (!renderContext) {
+        console.error("Failed to get default render context");
+        return false;
+      }
+      // 注册路径检索名"myproto"及其对应的资产路径目录"OhosRawFile://shaders/custom_shader/"
+      // 当shader内部通过检索名引用关联文件，如路径为"myproto://textures/base.png"，
+      // 系统会将"myproto://"替换为"OhosRawFile://shaders/custom_shader/"，
+      // 最终从"OhosRawFile://shaders/custom_shader/textures/base.png"加载关联文件
+      return renderContext.registerResourcePath("myproto", "OhosRawFile://shaders/custom_shader/");
+    })
+    .then(result => {
+      if (result) {
+        console.info("Succeeded in registering resource path");
+      } else {
+        console.error("Failed to register resource path");
+      }
+    });
+}
 ```
+
+## SoftShadowConfig
+
+软阴影配置抽象基类，用于控制阴影渲染的算法类型及其参数配置。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUi.Graphics3D
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| shadowAlgorithmType | [ShadowAlgorithmType](js-apis-inner-scene-types.md#shadowalgorithmtype) | 是 | 否 | 阴影算法的枚举值。 |
+
+## PCFConfig
+
+PCF（Percentage Closer Filtering，百分比邻近过滤）软阴影配置类，继承自[SoftShadowConfig](js-apis-inner-scene.md#softshadowconfig)。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUi.Graphics3D
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| shadowSampleRadius | number | undefined | 否 | 是 | 采样半径，决定了阴影边缘模糊的范围，半径越大，阴影边缘越柔和。采样半径过大会导致阴影过度模糊，失去阴影形状特征。  默认值为5.0。  取值范围：>= 0。  - 设置为0时，将不进行PCF采样，无阴影效果。  - 设置为undefined时，恢复默认值5.0进行渲染。 |
+| shadowSampleCount | number | undefined | 否 | 是 | 采样数量，决定了每个像素采样阴影图的次数，数量越多，阴影质量越高，但性能开销越大。  默认值为16。  取值范围：0 ~ 64。  - 超出此范围的值会被自动限制到最近的有效边界值（例如65实际按64处理）。  - 设置为0时，将不进行PCF采样，无阴影效果。  - 设置为undefined时，恢复默认值16进行渲染。 |
 
 ## RenderConfiguration23+
-
-PhonePC/2in1TabletTVWearable
 
 渲染配置接口。
 
@@ -957,10 +972,9 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | shadowResolution | [Vec2](js-apis-inner-scene-types.md#vec2) | 否 | 是 | 表示全局阴影贴图分辨率，单位为像素（px）。默认值为undefined，表示阴影贴图分辨率设置为1024 \* 1024。输入的值需要大于0才能正确生效。如果输入值为浮点数则自动截取整数部分；如果输入值小于或等于0则无视该输入，维持原有配置。 |
+| softShadowConfig | [SoftShadowConfig](js-apis-inner-scene.md#softshadowconfig) | 否 | 是 | 软阴影配置参数，用于控制阴影渲染的算法类型及其具体配置。  当值为undefined或不设置该参数时，使用默认的硬阴影算法（无阴影柔化效果）。  当设置为有效的SoftShadowConfig对象（如PCFConfig）时，启用对应的软阴影算法。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## RenderParameters15+
-
-PhonePC/2in1TabletTVWearable
 
 渲染参数接口。
 
@@ -972,13 +986,9 @@ PhonePC/2in1TabletTVWearable
 
 ## Scene
 
-PhonePC/2in1TabletTVWearable
-
-用于设置场景。
+用于设置场景。Scene采用树状层次结构组织场景节点，根节点（root）作为场景的入口。
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
 
@@ -991,11 +1001,9 @@ PhonePC/2in1TabletTVWearable
 
 ### load
 
-PhonePC/2in1TabletTVWearable
-
 static load(uri?: ResourceStr): Promise<Scene>
 
-通过传入的资源路径加载资源，使用Promise异步回调。
+通过传入的资源路径加载资源，使用Promise异步回调。调用后，应该在Scene使用完毕时调用[destroy](js-apis-inner-scene.md#destroy)释放资源，否则可能导致资源泄漏。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
 
@@ -1015,53 +1023,51 @@ static load(uri?: ResourceStr): Promise<Scene>
 
 示例1：通过rawfile加载（相对路径）
 
-```
-1. import { Scene } from '@kit.ArkGraphics3D';
+```ts
+import { Scene } from '@kit.ArkGraphics3D';
 
-3. function loadModel(): void {
-4. // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
-5. let scene: Promise<Scene> = Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
-6. scene.then((result: Scene) => {
-7. console.info("Scene loaded, root node: " + result.root?.name);
-8. });
-9. }
+function loadModel(): void {
+  // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
+  let scene: Promise<Scene> = Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+  scene.then((result: Scene) => {
+    console.info("Scene loaded, root node: " + result.root?.name);
+  });
+}
 ```
 
 示例2：通过绝对路径加载（从应用沙盒目录/data/storage/el2/base/files加载模型）
 
-```
-1. import { common } from '@kit.AbilityKit';
-2. import { fileIo } from '@kit.CoreFileKit';
-3. import { Scene } from '@kit.ArkGraphics3D';
+```ts
+import { common } from '@kit.AbilityKit';
+import { fileIo } from '@kit.CoreFileKit';
+import { Scene } from '@kit.ArkGraphics3D';
 
-5. async function loadModelFromAbsolutePath(context: common.UIAbilityContext): Promise<void> {
-6. // 获取应用沙盒目录（Scene.load仅能读取应用自身写入的文件，不能读取hdc/adb push写入的文件）
-7. const appCtx = context.getApplicationContext();
-8. const filesDir = appCtx.filesDir; // /data/storage/el2/base/files
+async function loadModelFromAbsolutePath(context: common.UIAbilityContext): Promise<void> {
+  // 获取应用沙盒目录（Scene.load仅能读取应用自身写入的文件，不能读取hdc/adb push写入的文件）
+  const appCtx = context.getApplicationContext();
+  const filesDir = appCtx.filesDir; // /data/storage/el2/base/files
 
-10. // 从rawfile读取模型内容（实际使用中也可以替换为其他来源的数据）
-11. // 使用.glb文件更易于复制加载；若为.gltf，请将其.bin和贴图文件一并复制到同一目录
-12. const src = 'gltf/CubeWithFloor/glTF/AnimatedCube.glb';
-13. const load_uri = `${filesDir}/AnimatedCube.glb`;
+  // 从rawfile读取模型内容（实际使用中也可以替换为其他来源的数据）
+  // 使用.glb文件更易于复制加载；若为.gltf，请将其.bin和贴图文件一并复制到同一目录
+  const src = 'gltf/CubeWithFloor/glTF/AnimatedCube.glb';
+  const load_uri = `${filesDir}/AnimatedCube.glb`;
 
-15. // 写入模型文件到应用沙盒目录，生成可被Scene.load(绝对路径)访问的实际文件
-16. const rawData = await context.resourceManager.getRawFileContent(src);
-17. const file = fileIo.openSync(load_uri, fileIo.OpenMode.CREATE | fileIo.OpenMode.TRUNC | fileIo.OpenMode.WRITE_ONLY);
-18. fileIo.writeSync(file.fd, rawData.buffer.slice(rawData.byteOffset, rawData.byteOffset + rawData.byteLength));
-19. fileIo.closeSync(file);
+  // 写入模型文件到应用沙盒目录，生成可被Scene.load(绝对路径)访问的实际文件
+  const rawData = await context.resourceManager.getRawFileContent(src);
+  const file = fileIo.openSync(load_uri, fileIo.OpenMode.CREATE | fileIo.OpenMode.TRUNC | fileIo.OpenMode.WRITE_ONLY);
+  fileIo.writeSync(file.fd, rawData.buffer.slice(rawData.byteOffset, rawData.byteOffset + rawData.byteLength));
+  fileIo.closeSync(file);
 
-21. // 使用绝对路径加载模型
-22. Scene.load(load_uri).then((scene: Scene) => {
-23. // 加载成功后的逻辑处理
-24. }).catch((error: string) => {
-25. console.error('Scene load failed: ' + error);
-26. });
-27. }
+  // 使用绝对路径加载模型
+  Scene.load(load_uri).then((scene: Scene) => {
+    // 加载成功后的逻辑处理
+  }).catch((err: Error) => {
+    console.error(`Failed to load scene. Message: ${err.message}`);
+  });
+}
 ```
 
 ### getNodeByPath
-
-PhonePC/2in1TabletTVWearable
 
 getNodeByPath(path: string, type?: NodeType): Node | null
 
@@ -1074,7 +1080,7 @@ getNodeByPath(path: string, type?: NodeType): Node | null
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 场景节点层次中的路径。每层之间使用'/'符号进行分割。 |
-| type | [NodeType](js-apis-inner-scene-nodes.md#nodetype) | 否 | 预期返回的节点类型。默认值为空。 |
+| type | [NodeType](js-apis-inner-scene-nodes.md#nodetype) | 否 | 预期返回的节点类型。当需要确保返回特定类型的节点时传入此参数，不传入时返回路径上找到的第一个节点（不限制类型）。默认值为空。 |
 
 **返回值：**
 
@@ -1084,24 +1090,22 @@ getNodeByPath(path: string, type?: NodeType): Node | null
 
 **示例：**
 
-```
-1. import { Scene, Node } from '@kit.ArkGraphics3D';
+```ts
+import { Scene, Node } from '@kit.ArkGraphics3D';
 
-3. function getNode(): void {
-4. // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
-5. let scene: Promise<Scene> = Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
-6. scene.then(async (result: Scene) => {
-7. if (result) {
-8. // 寻找指定路径的节点
-9. let node : Node | null = result.getNodeByPath("rootNode_");
-10. }
-11. });
-12. }
+function getNode(): void {
+  // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
+  let scene: Promise<Scene> = Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+  scene.then(async (result: Scene) => {
+    if (result) {
+         // 寻找指定路径的节点
+        let node : Node | null = result.getNodeByPath("rootNode_");
+    }
+  });
+}
 ```
 
 ### getResourceFactory
-
-PhonePC/2in1TabletTVWearable
 
 getResourceFactory(): SceneResourceFactory
 
@@ -1117,24 +1121,22 @@ getResourceFactory(): SceneResourceFactory
 
 **示例：**
 
-```
-1. import { SceneResourceFactory, Scene } from '@kit.ArkGraphics3D';
+```ts
+import { SceneResourceFactory, Scene } from '@kit.ArkGraphics3D';
 
-3. function getFactory(): void {
-4. // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
-5. let scene: Promise<Scene> = Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
-6. scene.then(async (result: Scene) => {
-7. if (result) {
-8. // 获得SceneResourceFactory对象
-9. let sceneFactory: SceneResourceFactory = result.getResourceFactory();
-10. }
-11. });
-12. }
+function getFactory(): void {
+  // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
+  let scene: Promise<Scene> = Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+  scene.then(async (result: Scene) => {
+    if (result) {
+         // 获得SceneResourceFactory对象
+        let sceneFactory: SceneResourceFactory = result.getResourceFactory();
+    }
+  });
+}
 ```
 
 ### destroy
-
-PhonePC/2in1TabletTVWearable
 
 destroy(): void
 
@@ -1144,24 +1146,22 @@ destroy(): void
 
 **示例：**
 
-```
-1. import { Scene } from '@kit.ArkGraphics3D';
+```ts
+import { Scene } from '@kit.ArkGraphics3D';
 
-3. function destroy(): void {
-4. // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
-5. let scene: Promise<Scene> = Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
-6. scene.then(async (result: Scene) => {
-7. if (result) {
-8. // 销毁scene
-9. result.destroy();
-10. }
-11. });
-12. }
+function destroy(): void {
+  // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
+  let scene: Promise<Scene> = Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+  scene.then(async (result: Scene) => {
+    if (result) {
+         // 销毁scene
+        result.destroy();
+    }
+  });
+}
 ```
 
 ### importNode18+
-
-PhonePC/2in1TabletTVWearable
 
 importNode(name: string, node: Node, parent: Node | null): Node
 
@@ -1185,31 +1185,29 @@ importNode(name: string, node: Node, parent: Node | null): Node
 
 **示例：**
 
-```
-1. import { Scene } from '@kit.ArkGraphics3D';
+```ts
+import { Scene } from '@kit.ArkGraphics3D';
 
-3. function ImportNodeTest() {
-4. Scene.load().then(async (result: Scene | undefined) => {
-5. if (!result) {
-6. return;
-7. }
-8. // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
-9. Scene.load($rawfile("gltf/AnimatedCube/glTF/AnimatedCube.glb"))
-10. .then(async (extScene: Scene) => {
-11. let extNode = extScene.getNodeByPath("rootNode_/Unnamed Node 1/AnimatedCube");
-12. console.info("TEST ImportNodeTest");
-13. let node = result.importNode("scene", extNode, result.root);
-14. if (node) {
-15. node.position.x = 5;
-16. }
-17. });
-18. });
-19. }
+function ImportNodeTest() {
+  Scene.load().then(async (result: Scene | undefined) => {
+    if (!result) {
+      return;
+    }
+    // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
+    Scene.load($rawfile("gltf/AnimatedCube/glTF/AnimatedCube.glb"))
+      .then(async (extScene: Scene) => {
+        let extNode = extScene.getNodeByPath("rootNode_/Unnamed Node 1/AnimatedCube");
+        console.info("TEST ImportNodeTest");
+        let node = result.importNode("scene", extNode, result.root);
+        if (node) {
+          node.position.x = 5;
+        }
+      });
+  });
+}
 ```
 
 ### importScene18+
-
-PhonePC/2in1TabletTVWearable
 
 importScene(name: string, scene: Scene, parent: Node | null): Node
 
@@ -1233,25 +1231,23 @@ importScene(name: string, scene: Scene, parent: Node | null): Node
 
 **示例：**
 
-```
-1. import { Scene } from '@kit.ArkGraphics3D';
+```ts
+import { Scene } from '@kit.ArkGraphics3D';
 
-3. function ImportSceneTest() {
-4. Scene.load().then(async (result: Scene | undefined) => {
-5. if (!result) {
-6. return;
-7. }
-8. // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
-9. let content = await result.getResourceFactory().createScene($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb"))
-10. console.info("TEST ImportSceneTest");
-11. result.importScene("helmet", content, null);
-12. });
-13. }
+function ImportSceneTest() {
+  Scene.load().then(async (result: Scene | undefined) => {
+    if (!result) {
+      return;
+    }
+    // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
+    let content = await result.getResourceFactory().createScene($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb"));
+    console.info("TEST ImportSceneTest");
+    result.importScene("helmet", content, null);
+  });
+}
 ```
 
 ### renderFrame15+
-
-PhonePC/2in1TabletTVWearable
 
 renderFrame(params?: RenderParameters): boolean
 
@@ -1273,25 +1269,23 @@ renderFrame(params?: RenderParameters): boolean
 
 **示例：**
 
-```
-1. import { Scene } from '@kit.ArkGraphics3D';
+```ts
+import { Scene } from '@kit.ArkGraphics3D';
 
-3. function RenderFrameTest() {
-4. // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
-5. Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb"))
-6. .then(async (result: Scene | undefined) => {
-7. if (!result) {
-8. return;
-9. }
-10. console.info("TEST RenderFrameTest");
-11. result.renderFrame({ alwaysRender: true });
-12. });
-13. }
+function RenderFrameTest() {
+  // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
+  Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb"))
+    .then(async (result: Scene | undefined) => {
+      if (!result) {
+        return;
+      }
+      console.info("TEST RenderFrameTest");
+      result.renderFrame({ alwaysRender: true });
+  });
+}
 ```
 
 ### createComponent20+
-
-PhonePC/2in1TabletTVWearable
 
 createComponent(node: Node, name: string): Promise<SceneComponent>
 
@@ -1314,31 +1308,29 @@ createComponent(node: Node, name: string): Promise<SceneComponent>
 
 **示例：**
 
-```
-1. import { Scene, SceneComponent } from '@kit.ArkGraphics3D';
+```ts
+import { Scene, SceneComponent } from '@kit.ArkGraphics3D';
 
-3. function createComponentTest(): Promise<SceneComponent> {
-4. // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
-5. return Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb"))
-6. .then(scene => {
-7. if (!scene) {
-8. return Promise.reject(new Error("Scene load failed"));
-9. }
-10. // RenderConfigurationComponent为引擎内置组件，创建时无需依赖插件
-11. return scene.createComponent(scene.root, "RenderConfigurationComponent");
-12. })
-13. .then(component => {
-14. if (!component) {
-15. return Promise.reject(new Error("createComponent failed"));
-16. }
-17. return component;
-18. });
-19. }
+function createComponentTest(): Promise<SceneComponent> {
+  // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
+  return Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb"))
+    .then(scene => {
+      if (!scene) {
+        return Promise.reject(new Error("Failed to load scene"));
+      }
+      // RenderConfigurationComponent为引擎内置组件，创建时无需依赖插件
+      return scene.createComponent(scene.root, "RenderConfigurationComponent");
+    })
+    .then(component => {
+      if (!component) {
+        return Promise.reject(new Error("Failed to create component"));
+      }
+      return component;
+    });
+}
 ```
 
 ### getComponent20+
-
-PhonePC/2in1TabletTVWearable
 
 getComponent(node: Node, name: string): SceneComponent | null
 
@@ -1361,35 +1353,33 @@ getComponent(node: Node, name: string): SceneComponent | null
 
 **示例：**
 
-```
-1. import { Scene } from '@kit.ArkGraphics3D';
+```ts
+import { Scene } from '@kit.ArkGraphics3D';
 
-3. function getComponentTest() {
-4. // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
-5. Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb"))
-6. .then(async (result: Scene | undefined) => {
-7. if (!result) {
-8. console.error("Scene load failed");
-9. return;
-10. }
-11. console.info("TEST getComponentTest");
-12. let component = result.getComponent(result.root, "myComponent");
-13. if (component) {
-14. console.info("getComponent success");
-15. } else {
-16. console.warn("Component not found");
-17. }
-18. });
-19. }
+function getComponentTest() {
+  // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
+  Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb"))
+    .then(async (result: Scene | undefined) => {
+      if (!result) {
+        console.error("Failed to load scene");
+        return;
+      }
+      console.info("TEST getComponentTest");
+      let component = result.getComponent(result.root, "myComponent");
+      if (component) {
+        console.info("Succeeded in getting component");
+      } else {
+        console.error("Failed to get component");
+      }
+    });
+}
 ```
 
 ### getDefaultRenderContext20+
 
-PhonePC/2in1TabletTVWearable
-
 static getDefaultRenderContext(): RenderContext | null
 
-获取当前图形对象所关联的渲染环境信息。
+获取当前图形对象所关联的渲染上下文。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
 
@@ -1401,23 +1391,21 @@ static getDefaultRenderContext(): RenderContext | null
 
 **示例：**
 
-```
-1. import { Scene, RenderContext } from '@kit.ArkGraphics3D';
+```ts
+import { Scene, RenderContext } from '@kit.ArkGraphics3D';
 
-3. function getDefaultRenderContextTest() {
-4. console.info("TEST getDefaultRenderContextTest");
-5. const renderContext: RenderContext | null = Scene.getDefaultRenderContext();
-6. if (renderContext) {
-7. console.info("getDefaultRenderContext success");
-8. } else {
-9. console.error("RenderContext is null");
-10. }
-11. }
+function getDefaultRenderContextTest() {
+  console.info("TEST getDefaultRenderContextTest");
+  const renderContext: RenderContext | null = Scene.getDefaultRenderContext();
+  if (renderContext) {
+    console.info("Succeeded in getting default render context");
+  } else {
+    console.error("Failed to get default render context");
+  }
+}
 ```
 
 ### cloneNode23+
-
-PhonePC/2in1TabletTVWearable
 
 cloneNode(node: Node, parent: Node, name: string): Node | null
 
@@ -1441,22 +1429,22 @@ cloneNode(node: Node, parent: Node, name: string): Node | null
 
 **示例：**
 
-```
-1. import { Scene, Node } from '@kit.ArkGraphics3D';
+```ts
+import { Scene, Node } from '@kit.ArkGraphics3D';
 
-3. function CloneNode() {
-4. // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
-5. Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.gltf"))
-6. .then(async (result: Scene) => {
-7. let node = result.getNodeByPath("rootNode_/Unnamed Node 1/AnimatedCube") as Node;
-8. let parent = result.root as Node;
-9. let name = "cloneNode_";
-10. let clone = result.cloneNode(node, parent, name);
-11. if (clone) {
-12. console.info("cloneNode success");
-13. } else {
-14. console.error("cloneNode failed");
-15. }
-16. });
-17. }
+function CloneNode() {
+  // 加载场景资源，支持.gltf和.glb格式，路径和文件名可根据项目实际资源自定义
+  Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.gltf"))
+    .then(async (result: Scene) => {
+      let node = result.getNodeByPath("rootNode_/Unnamed Node 1/AnimatedCube") as Node;
+      let parent = result.root as Node;
+      let name = "cloneNode_";
+      let clone = result.cloneNode(node, parent, name);
+      if (clone) {
+        console.info("Succeeded in cloning node");
+      } else {
+        console.error("Failed to clone node");
+      }
+    });
+}
 ```

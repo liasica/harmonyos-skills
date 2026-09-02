@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-usbd
 title: UsbControlRequestSetup
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 结构体 > UsbControlRequestSetup
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:50+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:804a6b08179c0a244fb55c55d88815184e17aadbfa9faf7621248615e2667b23
+scraped_at: 2026-09-02T15:02:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:50b61d3ff95a6c70ecf6c47fbe2284311b3ef4af6dd77868272cce79437c1f74
 ---
 
-```
-1. typedef struct UsbControlRequestSetup {...} __attribute__((aligned(8))) UsbControlRequestSetup
+```c
+typedef struct UsbControlRequestSetup {...} __attribute__((aligned(8))) UsbControlRequestSetup
 ```
 
 ## 概述
-
-PC/2in1
 
 控制传输setup包，对应USB协议中的Setup Data。
 
@@ -26,11 +24,7 @@ PC/2in1
 
 ## 汇总
 
-PC/2in1
-
 ### 成员变量
-
-PC/2in1
 
 | 名称 | 描述 |
 | --- | --- |

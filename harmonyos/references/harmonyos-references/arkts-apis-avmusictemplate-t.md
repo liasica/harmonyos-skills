@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Types
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > ArkTS API > @ohos.multimedia.avMusicTemplate (音频模板) > Types
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:21+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7c27af7e7c0c1ff829e555b1e587b258ca0cab9fa827cc7ddce217bbfc1a06a5
+scraped_at: 2026-09-02T15:02:24+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:26f38bbd93980a1dc300a4549f3faa93fe9fb67d95d005345c3d89db5f30ab34
 ---
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 23开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本模块仅适用于API version 23及以上版本的Car设备。
@@ -81,7 +81,7 @@ type QueryMediaEntityEvent = (params: QueryMediaEntityParam) => Promise<PageMedi
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| params | [QueryMediaEntityParam](arkts-apis-avmusictemplate-i.md#querymediaentityparam) | 是 | 查询媒体实例的参数。 |
+| params | [QueryMediaEntityParam](arkts-apis-avmusictemplate-i.md#querymediaentityparam) | 是 | 查询媒体实体的参数。 |
 
 **返回值：**
 
@@ -127,7 +127,7 @@ type QueryPlaylistEvent = (pageIndex: number, sort: Sort) => Promise<PageMediaEn
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pageIndex | number | 是 | 页面的索引。 |
-| sort | [Sort](arkts-apis-avmusictemplate-e.md#sort) | 是 | 排序的枚举值。 |
+| sort | [Sort](arkts-apis-avmusictemplate-e.md#sort) | 是 | 排序类型。 |
 
 **返回值：**
 
@@ -211,7 +211,7 @@ type QueryRecommendMediaEntityListEvent = () => Promise<MediaEntity[]>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[MediaEntity](arkts-apis-avmusictemplate-i.md#mediaentity)[]> | Promise对象，返回推荐的媒体实例的数组。 |
+| Promise<[MediaEntity](arkts-apis-avmusictemplate-i.md#mediaentity)[]> | Promise对象，返回推荐的媒体实体的数组。 |
 
 ## QueryHotWordsEvent
 
@@ -265,7 +265,7 @@ type ClearSearchHistoryEvent = () => Promise<OperResult>
 
 type LoginEvent = (controlType: LoginType, id?: string) => Promise<QrCodeInfo[]>
 
-登录事件。使用Promise异步回调。
+登录事件。用于控制登录流程，包括查询登录信息、刷新登录信息、取消操作和退出登录。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -315,7 +315,7 @@ type RequestDialogInfoEvent = (actionType: DialogActionType, actionInfo?: Dialog
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| actionType | [DialogActionType](arkts-apis-avmusictemplate-t.md#dialogactiontype) | 是 | 对话框类型。 |
+| actionType | [DialogActionType](arkts-apis-avmusictemplate-t.md#dialogactiontype) | 是 | 对话框操作类型。 |
 | actionInfo | [DialogActionInfo](arkts-apis-avmusictemplate-i.md#dialogactioninfo) | 否 | 对话框动作结果的信息。 |
 
 **返回值：**
@@ -344,7 +344,7 @@ type DialogActionType = 'open' | 'close' | 'refresh'
 
 type HandleMemberPurchaseEvent = (info: MemberPurchaseInfo) => Promise<DialogInfo>
 
-处理购买会员事件。使用Promise异步回调。
+处理购买会员事件。系统会在用户触发购买操作时调用此事件。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -366,7 +366,7 @@ type HandleMemberPurchaseEvent = (info: MemberPurchaseInfo) => Promise<DialogInf
 
 type QueryMemberPurchaseEvent = (memberPurchaseType: MemberPurchaseType) => Promise<MemberPurchaseInfo[]>
 
-购买会员查询事件。使用Promise异步回调。
+购买会员查询事件。用于根据会员购买类型查询可用的会员购买信息，系统会在用户进入会员购买页面时调用此事件。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -388,7 +388,7 @@ type QueryMemberPurchaseEvent = (memberPurchaseType: MemberPurchaseType) => Prom
 
 type QueryCustomContentEvent = (queryType: CustomType[]) => Promise<CustomElement>
 
-自定义内容查询事件。使用Promise异步回调。
+自定义内容查询事件。用于查询用户基本信息、界面选项卡配置、代码编译选项和系统设置项等自定义内容。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -427,7 +427,7 @@ type CustomType = 'USER\_INFO' | 'TAB' | 'COMPILATION' | 'SETTINGS'
 
 type DownloadMediaEntityEvent = (controlType: DownloadControlType, mediaEntity: MediaEntity) => Promise<OperResult>
 
-媒体实体下载事件。使用Promise异步回调。
+媒体实体下载事件。用于控制媒体实体的下载流程，支持开始下载、暂停下载、恢复下载和删除下载操作。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -437,8 +437,8 @@ type DownloadMediaEntityEvent = (controlType: DownloadControlType, mediaEntity: 
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| controlType | [DownloadControlType](arkts-apis-avmusictemplate-t.md#downloadcontroltype) | 是 | controlType的可选项包括：用户信息，选项卡，合集，设置。 |
-| mediaEntity | [MediaEntity](arkts-apis-avmusictemplate-i.md#mediaentity) | 是 | 媒体实例。 |
+| controlType | [DownloadControlType](arkts-apis-avmusictemplate-t.md#downloadcontroltype) | 是 | controlType的可选项包括：开始下载、删除下载、恢复下载、暂停下载。 |
+| mediaEntity | [MediaEntity](arkts-apis-avmusictemplate-i.md#mediaentity) | 是 | 媒体实体。 |
 
 **返回值：**
 
@@ -450,7 +450,7 @@ type DownloadMediaEntityEvent = (controlType: DownloadControlType, mediaEntity: 
 
 type DownloadControlType = 'startDownload' | 'deleteDownload' | 'resumeDownload' | 'pauseDownload'
 
-定义下载操作的控制类型，包括开始下载、删除下载、恢复下载和暂停下载。该类型可取的值为下表字符串。
+下载操作控制类型。该类型可取的值为下表字符串。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -511,7 +511,7 @@ type ProblemAndAdviceEvent = (advice: string) => Promise<OperResult>
 
 type PlayForSearchEvent = (command: SearchPlayInfoType, args: SearchPlayInfo) => Promise<OperResult>
 
-搜播事件。使用Promise异步回调。
+搜索并播放媒体的事件。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -551,7 +551,7 @@ type ExecuteActionEvent = (actionType: string, params: string) => Promise<string
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<string> | Promise对象，返回执行操作的结果对象。 |
+| Promise<string> | Promise对象，返回执行操作的结果字符串。 |
 
 ## PlayMediaEntityEvent
 

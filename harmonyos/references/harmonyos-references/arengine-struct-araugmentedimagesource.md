@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-
 title: AREngine_ARAugmentedImageSource
 breadcrumb: API参考 > 图形 > AR Engine（AR引擎服务） > C API > 头文件和结构体 > 结构体 > AREngine_ARAugmentedImageSource
 category: harmonyos-references
-scraped_at: 2026-04-29T14:05:10+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:ded57a31bff5554046ec252c12179d65635b4674eaf7aa147e6ce6bac2757c35
+scraped_at: 2026-09-02T15:02:40+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:99cc973da27c5d00761f99c7f5e4e07947a9cb3926e036d7a95ca9986c7f1d23
 ---
 
 ## 概述
-
-PhoneTabletTV
 
 图像数据。
 
@@ -22,11 +20,7 @@ PhoneTabletTV
 
 ## 汇总
 
-PhoneTabletTV
-
 ### 成员变量
-
-PhoneTabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -39,14 +33,10 @@ PhoneTabletTV
 
 ## 结构体成员变量说明
 
-PhoneTabletTV
-
 ### imageName
 
-PhoneTabletTV
-
-```
-1. const char* AREngine_ARAugmentedImageSource::imageName
+```cpp
+const char* AREngine_ARAugmentedImageSource::imageName
 ```
 
 **描述**
@@ -55,10 +45,8 @@ PhoneTabletTV
 
 ### imageData
 
-PhoneTabletTV
-
-```
-1. const uint8_t* AREngine_ARAugmentedImageSource::imageData
+```cpp
+const uint8_t* AREngine_ARAugmentedImageSource::imageData
 ```
 
 **描述**
@@ -67,10 +55,8 @@ PhoneTabletTV
 
 ### pixelWidth
 
-PhoneTabletTV
-
-```
-1. int32_t AREngine_ARAugmentedImageSource::pixelWidth
+```cpp
+int32_t AREngine_ARAugmentedImageSource::pixelWidth
 ```
 
 **描述**
@@ -79,10 +65,8 @@ PhoneTabletTV
 
 ### pixelHeight
 
-PhoneTabletTV
-
-```
-1. int32_t AREngine_ARAugmentedImageSource::pixelHeight
+```cpp
+int32_t AREngine_ARAugmentedImageSource::pixelHeight
 ```
 
 **描述**
@@ -91,10 +75,8 @@ PhoneTabletTV
 
 ### stride
 
-PhoneTabletTV
-
-```
-1. int32_t AREngine_ARAugmentedImageSource::stride
+```cpp
+int32_t AREngine_ARAugmentedImageSource::stride
 ```
 
 **描述**
@@ -103,10 +85,8 @@ PhoneTabletTV
 
 ### realWidthInMeters
 
-PhoneTabletTV
-
-```
-1. float AREngine_ARAugmentedImageSource::realWidthInMeters
+```cpp
+float AREngine_ARAugmentedImageSource::realWidthInMeters
 ```
 
 **描述**

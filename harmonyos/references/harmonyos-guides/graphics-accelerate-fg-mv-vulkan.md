@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: Vulkan平台
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏渲染加速服务 > 超帧功能开发 > 顶点标记 > Vulkan平台
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:36:26+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:042dafb47c4ce7d5f1c066ff285e9865870f6b9b9a47b09a8ad892c2d3cec763
+scraped_at: 2026-09-02T14:59:50+08:00
+doc_updated_at: 2026-06-13
+content_hash: sha256:ba18bbd1e267b3d07b674db60fdc8bf9aa39e771b0473c11e8baeaf9effe541e
 ---
 
 ## 业务流程
@@ -16,14 +16,14 @@ content_hash: sha256:042dafb47c4ce7d5f1c066ff285e9865870f6b9b9a47b09a8ad892c2d3c
 
   开发阶段，开发者需要使用系统的图形驱动库提供的Vulkan接口，在期望被标记的物体绘制前后添加上开始标记指令和结束标记指令。运行阶段，基于Vulkan的Transform Feedback（变换反馈）特性，被标记的所有Draw Call处理的顶点数据将被缓存，再通过顶点匹配、运动估计、屏幕空间投影等过程，得到高精度运动向量，最终绘制出预测帧。运行阶段流程如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/h46AhquDTwS2_hlyCecfxg/zh-cn_image_0000002558765210.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/aBh8UGBaS_qAJnxcBbO47A/zh-cn_image_0000002736313823.png)
 * 顶点标记原则
 
   被标记的物体能在运动估计阶段得到更高精度的运动向量图（MV，Motion Vector），但需要付出额外的性能代价，开发者需要在这之间做出平衡。**建议只标记画面中相对场景运动的物体**，因为相对场景运动的物体的顶点数量较少，但运动预测却最为困难，这样的标记方式能以少量的性能代价换取较明显的超帧画质收益。
 
-  注意
+  **须知** 
 
-  **请在会影响最终深度缓冲区写入的渲染Pass中，标记对应的Draw Call**。比如对于延迟管线，建议在gbuffer pass中标记；对于有pre depth的前向管线，建议在pre depth pass标记；对于无pre depth的前向管线，建议在base pass(也叫forward pass)中进行标记。并且注意，不要在生成shadowmap pass中的动态物体Draw Call进行标记。
+  **请在会影响最终深度缓冲区写入的渲染Pass中，标记对应的Draw Call**。比如对于延迟管线，建议在gbuffer pass中标记；对于有pre depth的前向管线，建议在pre depth pass标记；对于无pre depth的前向管线，建议在base pass(也叫forward pass)中进行标记。并且注意，不要在生成shadow map pass中的动态物体Draw Call进行标记。
 
 ## 开发步骤
 
@@ -31,52 +31,49 @@ content_hash: sha256:042dafb47c4ce7d5f1c066ff285e9865870f6b9b9a47b09a8ad892c2d3c
 
 1. 设置meta-data。设置GraphicsAccelerateKit\_VBMV为true，来通知系统支持顶点标记。
 
-   ```
-   1. {
-   2. "module": {
-   3. /*
-   4. 其他的配置项
-   5. ...
-   6. */
-   7. "metadata": [
-   8. {
-   9. "name": "GraphicsAccelerateKit_VBMV",
-   10. "value": "true"
-   11. }
-   12. ]
-   13. }
-   14. }
+   ```json5
+   {
+       "module": {
+           // 其他的配置项...
+           "metadata": [
+               {
+                   "name": "GraphicsAccelerateKit_VBMV",
+                   "value": "true"
+               }
+           ]
+       }
+   }
    ```
 2. 引用头文件。
 
-   ```
-   1. // 引用超帧frame_generation_vk.h头文件
-   2. #include <graphics_game_sdk/frame_generation_vk.h>
+   ```cpp
+   // 引用超帧frame_generation_vk.h头文件
+   #include <graphics_game_sdk/frame_generation_vk.h>
    ```
 3. 创建QueryPool，用vkCmdBeginQuery，vkCmdEndQuery标记Draw Call。
 
-   ```
-   1. // 变量定义
-   2. VkQueryPool queryPool;
-   3. VkQueryPoolCreateInfo createInfo{};
-   4. VkCommandBuffer cmd_buffer{};
-   5. VkDevice device;
-   6. VkQueryType VK_QUERY_TYPE_HISS_MOTION_VECTOR_DRAW_TRACKING_HUAWEI = static_cast<VkQueryType>(1000000000);
+   ```cpp
+   // 变量定义
+   VkQueryPool queryPool;
+   VkQueryPoolCreateInfo createInfo{};
+   VkCommandBuffer cmd_buffer{};
+   VkDevice device;
+   VkQueryType VK_QUERY_TYPE_HISS_MOTION_VECTOR_DRAW_TRACKING_HUAWEI = static_cast<VkQueryType>(1000000000);
 
-   8. // 创建QueryPool，queryCount需要等于1，queryType配置后将不支持查询管理，仅用来顶点标记
-   9. createInfo.sType = VK_STRUCTURE_TYPE_QUERY_POOL_CREATE_INFO;
-   10. createInfo.queryType = VK_QUERY_TYPE_HISS_MOTION_VECTOR_DRAW_TRACKING_HUAWEI;
-   11. createInfo.queryCount = 1;
-   12. vkCreateQueryPool(device, &createInfo, nullptr, &queryPool);
+   // 创建QueryPool，queryCount需要等于1，queryType配置后将不支持查询管理，仅用来顶点标记
+   createInfo.sType = VK_STRUCTURE_TYPE_QUERY_POOL_CREATE_INFO;
+   createInfo.queryType = VK_QUERY_TYPE_HISS_MOTION_VECTOR_DRAW_TRACKING_HUAWEI;
+   createInfo.queryCount = 1;
+   vkCreateQueryPool(device, &createInfo, nullptr, &queryPool);
 
-   14. // 循环渲染帧
-   15. void DrawDynamicObject()
-   16. {
-   17. // 绘制动态物体前，开始记录顶点数据
-   18. vkCmdBeginQuery(cmd_buffer, queryPool, 0, 0);
-   19. // 绘制动态物体
-   20. vkCmdDraw(cmd_buffer, 3, 1, 0, 0);
-   21. // 绘制动态物体后，结束记录顶点数据
-   22. vkCmdEndQuery(cmd_buffer, queryPool, 0);
-   23. }
+   // 循环渲染帧
+   void DrawDynamicObject()
+   {
+       // 绘制动态物体前，开始记录顶点数据
+       vkCmdBeginQuery(cmd_buffer, queryPool, 0, 0);
+       // 绘制动态物体
+       vkCmdDraw(cmd_buffer, 3, 1, 0, 0);
+       // 绘制动态物体后，结束记录顶点数据
+       vkCmdEndQuery(cmd_buffer, queryPool, 0);
+   }
    ```

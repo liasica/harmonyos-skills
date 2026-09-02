@@ -3,10 +3,245 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/changelog
 title: 最佳实践文档变更说明
 breadcrumb: 最佳实践 > 文档变更说明 > 最佳实践文档变更说明
 category: best-practices
-scraped_at: 2026-04-29T14:14:26+08:00
-doc_updated_at: 2026-04-13
-content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebea2cc2
+scraped_at: 2026-09-02T15:03:25+08:00
+doc_updated_at: 2026-08-26
+content_hash: sha256:f32f2259d58182c365ff333cc4e95c260a97e92f4cd5a57bf7d15e5bbd7aa596
 ---
+
+## 2026年8月
+
+### 新增文档
+
+新增文档17篇。
+
+**行业场景解决方案**
+
+* [基于PixelMap实现图片编辑](bpta-pixelmap-image-editing.md)：介绍了如何使用PixelMap对图片进行编辑处理，如获取图片信息、裁剪、缩放、偏移、旋转、翻转、设置透明度、读写像素数据等。
+* [基于PixelMap与Canvas实现图片编辑](bpta-pixelmap-canvas-image-editing.md)：介绍了如何基于PixelMap和Canvas实现图片编辑处理，如获取图片信息、裁剪、缩放、偏移、旋转、翻转、设置透明度、读写像素数据、图片水印添加等。
+* [视频轻编辑开发实践](bpta-video-light-editing.md)：介绍了视频轻编辑基于媒体能力的典型场景，包括视频预览，添加文字/图片/背景音乐，视频裁剪、导出等。
+
+**稳定性**
+
+* [开发态快速定位应用崩溃](bpta-locate-application-crashes.md)：介绍了以内存越界访问为典型案例，构建数组越界示例工程。
+* [运维态高效处理GPU内核泄漏](bpta-handling-gpu-kernel-leaks.md)：介绍了如何通过APMS智能分析平台定位问题的全部流程。
+* [运维态高效处理FD资源泄漏](bpta-efficiently-handle-fd-leaks.md)：介绍了在运维态下如何通过应用质量管理（APMS）平台进行FD资源泄漏的监控、分析、定位与修复。
+* [应用冻屏故障检测机制及规格说明](bpta-stability-appfreeze-fault-detection-mechanism.md)：介绍了应用冻屏故障检测检测机制、日志规格、日志获取方式等。
+* [RSS内存泄漏故障模式概述](bpta-stability-rssleak-fault-mode-overreview.md)：介绍了RSS内存泄漏概念、系统检测机制以及开发态和运维态的分析方法。
+* [NativeHeap堆过大导致内存泄漏故障模式说明](bpta-stability-nativeheap-fault-mode.md)：介绍了NativeHeap内存泄漏的可能根因，结合案例提供开发态与运维态的问题分析思路。
+* [匿名映射过大导致内存泄漏故障模式说明](bpta-stability-anon-fault-mode.md)：介绍匿名映射内存泄漏的可能根因，并结合案例为开发者介绍开发态与运维态的问题分析思路。
+* [GPU内存泄漏故障模式概述](bpta-stability-gpuleak-fault-mode-overreview.md)：介绍了RSS内存泄漏概念、系统检测机制以及开发态和运维态的分析方法。
+* [单应用自渲染GPU内存泄漏故障模式说明](bpta-stability-gpuleak-self-rendering-fault-mode.md)：介绍了应用自渲染场景发生GPU内存泄漏的主要根因，并基于案例提供开发态与运维态的问题分析思路。
+* [ArkWeb V8 OOM故障模式概述](bpta-overview-of-arkweb-oom-fault-modes.md)：介绍了ArkWeb V8引擎OOM（Out Of Memory）问题的分析与定位实践。
+* [JS对象长期被JS持有导致内存泄漏故障模式说明](bpta-arkweb-oom-js-object-held-by-js-object.md)：介绍了两种JS对象内存占用过高导致引擎OOM的问题场景。
+* [JSVM OOM故障模式概述](bpta-overview-of-jsvm-oom-fault-modes.md)：介绍了JSVM的JS引擎及其堆内存结构以及JS引擎内存初步分析方法。
+* [JS对象被Native持有导致内存泄漏故障模式说明](bpta-jsvm-oom-js-object-held-by-native.md)：列举几种可能引发OOM的CPP代码，通过内存分析方法展示对应代码下的堆内存特征，并给出预防建议。
+* [JS对象长期被JS持有导致内存泄漏故障模式说明](bpta-jsvm-oom-js-object-held-by-js-object.md)：列举几种可能引发OOM的JS代码，通过内存分析方法展示对应代码下的堆内存特征，并给出预防建议。
+
+### 优化文档
+
+优化文档3篇。
+
+**媒体**
+
+[音频焦点管理解决方案](bpta-audio-focus-management.md)：新增应用内短视频与VoIP通话焦点冲突问题小节，介绍应用内VoIP通话与短视频焦点冲突问题分析思路及解决方案。
+
+**一次开发，多端部署**
+
+* [页面布局场景](bpta-multi-device-page-layout.md)：新增边看边评典型场景，优化双分栏判断逻辑与比例。
+
+**多端设备支持**
+
+* [电脑应用开发](bpta-pc-guide.md)：新增梦露电脑硬件参数、产品示意图、手写笔适配内容。
+
+## 2026年7月
+
+### 新增文档
+
+新增文档19篇。
+
+**行业场景解决方案**
+
+* [基于List和Scroller实现双向滚动列表](bpta-horizontal-vertical-scrolling-list.md)：介绍了如何基于List组件和Scroller控制器，封装核心组件[DualScrollTable](https://gitcode.com/HarmonyOS_Samples/DualScrollList/blob/master/tableview/src/main/ets/components/DualScrollTable.ets)（双向滚动列表组件），实现满足基础功能的双向滚动列表解决方案。
+* [K歌解决方案](bpta-karaoke-singing.md)：介绍了如何基于[AudioCapturer](../harmonyos-references/arkts-apis-audio-audiocapturer.md)、[AudioRenderer](../harmonyos-references/arkts-apis-audio-audiorenderer.md)、[AudioLoopback](../harmonyos-references/arkts-apis-audio-audioloopback.md)、[AudioRoutingManager](../harmonyos-references/arkts-apis-audio-audioroutingmanager.md)、[AVPlayer](../harmonyos-references/arkts-apis-media-avplayer.md)开发一个K歌应用。
+
+**稳定性**
+
+* [CppCrash故障检测机制及规格说明](bpta-stability-cppcrash-fault-detection-mechanism.md)：介绍了CppCrash故障检测机制及规格说明，为开发者提供详细的维测日志以辅助故障定位。
+* [SIGSEGV无效内存访问故障模式说明](bpta-stability-cppcrash-sigsegv-fault-mode.md)：介绍了SIGSEGV无效内存访问故障模式说明，为开发者提供详细的问题定位及处理指导。
+* [SIGABRT进程主动终止故障模式说明](bpta-stability-cppcrash-sigabrt-fault-mode.md)：介绍了SIGABRT进程主动终止故障模式说明，为开发者提供详细的问题定位及处理指导。
+* [SIGBUS非法内存访问故障模式说明](bpta-stability-cppcrash-sigbus-fault-mode.md)：介绍了SIGBUS非法内存访问故障模式说明，为开发者提供详细的问题定位及处理指导。
+* [SIGILL非法指令故障模式说明](bpta-stability-cppcrash-sigill-fault-mode.md)：介绍了SIGILL非法指令故障模式说明，为开发者提供详细的问题定位及处理指导。
+* [SIGTRAP断点或陷阱异常故障模式说明](bpta-stability-cppcrash-sigtrap-fault-mode.md)：介绍了SIGTRAP断点或陷阱异常故障模式说明，为开发者提供详细的问题定位及处理指导。
+* [应用主线程阻塞故障模式说明](bpta-app-main-thread-block.md)：介绍了如何通过分析应用冻屏故障日志中的主线程堆栈，定位主线程阻塞类型的应用冻屏（AppFreeze）问题。
+* [应用主线程繁忙故障模式说明](bpta-app-main-thread-busy.md)：介绍了如何通过分析应用冻屏故障日志中的主线程堆栈，定位主线程繁忙类型的应用冻屏（AppFreeze）问题。
+* [ArkWeb GPU进程卡死故障模式说明](bpta-arkweb-gpu-freeze.md)：介绍了如何定位主线程阻塞在ArkWeb堆栈类型的应用冻屏（AppFreeze）问题。
+* [ArkWeb Render进程卡死故障模式说明](bpta-arkweb-render-freeze.md)：介绍了如何定位因render卡死导致的应用冻屏（AppFreeze）问题。
+* [开发态快速定位ArkTS泄漏](bpta-arkts-leak-in-develop.md)：介绍了如何通过常见泄漏场景和ArkTS内存泄漏分析案例，快速定位应用中的内存泄漏问题。
+* [开发态快速定位DMA泄漏](bpta-dma-leak-in-develop.md)：介绍了如何通过高频泄漏场景和DMA内存泄漏分析案例快速定位应用DMA泄漏的问题
+* [开发态快速定位Native泄漏](bpta-native-leak-in-develop.md)：介绍了如何通过高频泄漏场景和Native内存泄漏分析案例，定位应用中的Native内存泄漏问题。
+* [开发态快速定位AppFreeze冻屏指导](bpta-app-freeze-in-develop.md)：介绍了如何通过高频冻屏场景及分析案例，快速定位冻屏问题。
+* [运维态高效处理应用崩溃](bpta-app-crash-in-operation.md)：介绍了在运维态下如何通过[APMS](../app/agc-help-apms-0000002235870062.md)平台对应用崩溃事件进行标准化排查、分析、定位和修复的闭环流程。
+* [运维态高效处理ArkTS泄漏](bpta-arkts-leak-in-operation.md)：介绍了在运维态下如何通过[APMS](../app/agc-help-apms-0000002235870062.md)平台进行ArkTS泄漏事件的标准化排查、分析、定位和修复闭环流程。
+* [运维态高效处理Native泄漏](bpta-native-leak-in-operation.md)：介绍了在运维态下如何利用[APMS](../app/agc-help-apms-0000002235870062.md)平台完成Native内存泄漏的监控、分析、定位及修复全流程。
+* [运维态高效处理应用冻屏](bpta-app-freeze-in-operation.md)：介绍了在运维态下如何通过[APMS](../app/agc-help-apms-0000002235870062.md)平台对应用冻屏事件进行标准化排查、分析、定位和修复的闭环流程。
+
+### 优化文档
+
+优化文档1篇。
+
+**自由流转**
+
+* [碰一碰文件分享](bpta-application-knock-file-share.md)：新增精准碰一碰章节。
+
+### 下线文档
+
+下线文档30篇。
+
+**组件封装与复用**
+
+* 组件动态创建：内容已迁移至[“指南 > 应用框架 > ArkUI（方舟UI框架）> UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件复用 > 自定义组件复用开发实践”](../harmonyos-guides/arkts-component_reuse.md)。
+* 组件封装：内容已迁移至[“指南 > 应用框架 > ArkUI（方舟UI框架）> UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件复用 > 自定义组件复用开发实践”](../harmonyos-guides/arkts-component_reuse.md)。
+* 组件复用：已迁移至[“指南 > 应用框架 > ArkUI（方舟UI框架）> UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件复用 > 组件复用问题诊断分析”](../harmonyos-guides/arkts-diagnosis-component-reuse-issues.md)。
+* 组件复用问题诊断分析：内容已迁移至[“指南 > 应用框架 > ArkUI（方舟UI框架）> UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件复用 > 组件复用问题诊断分析”](../harmonyos-guides/arkts-diagnosis-component-reuse-issues.md)。
+
+**布局与弹窗**
+
+* 自定义弹窗选型与开发：内容已迁移至[“指南 > 应用框架 > ArkUI（方舟UI框架) > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 自定义弹窗选型与开发”](../harmonyos-guides/custom-dialog-select-develop.md)。
+* 常见列表流：内容已迁移至[“指南 > 应用框架 > ArkUI（方舟UI框架）> UI开发 (ArkTS声明式开发范式) > 列表与网格 > 常见列表流”](../harmonyos-guides/arkts-common-list-flow.md)。
+* 文本展开折叠：内容已迁移至[“指南 > 应用框架 > ArkUI（方舟UI框架）> UI开发 (ArkTS声明式开发范式) > 使用文本 > 文本展开折叠”](../harmonyos-guides/arkts-text-unfolding-and-folding.md)。
+* 富文本显示的选型与开发：内容已迁移至[“指南 > 应用框架 > ArkUI（方舟UI框架）> UI开发 (ArkTS声明式开发范式) > 使用文本 > 富文本显示的选型与开发”](../harmonyos-guides/arkts-selection-and-development-of-rich-text-display.md)。
+* 布局优化指导：内容已迁移至[“指南 > 应用框架 > ArkUI（方舟UI框架) > UI开发 (ArkTS声明式开发范式) > 组件布局 > 布局优化指导”](../harmonyos-guides/arkts-layout-optimization-guidance.md)。
+
+**动画与转场**
+
+* 页面间转场：指南中已有相似文档，详见[页面转场动画 (不推荐)](../harmonyos-guides/arkts-page-transition-animation.md)。
+
+**应用框架**
+
+* 同层渲染原生组件：内容已迁移至[“指南>应用框架>ArkWeb（方舟Web）>同层渲染原生组件”](../harmonyos-guides/same-layer-rendering-native-component.md)。
+
+**网络**
+
+* 网络信息查询与连接管理：内容已迁移至[“指南>系统>网络>Network Kit（网络服务）>连接网络>连接网络开发实践>网络信息查询与连接管理”](../harmonyos-guides/network-information-query-connection-management.md)。
+* 应用网络重连：内容已迁移至[“指南>系统>网络>Network Kit（网络服务）>连接网络>连接网络开发实践>应用网络重连”](../harmonyos-guides/application-network-reconnection.md)。
+
+**媒体**
+
+* 基于AVPlayer播放长视频实践：内容已迁移至[“指南 > 媒体 > Media Kit（媒体服务）> 媒体开发指导(ArkTS) > 媒体开发实践 > 基于AVPlayer播放长视频实践”](../harmonyos-guides/avplayer-long-video.md)。
+* 基于AVPlayer播放短视频实践：内容已迁移至[“指南 > 媒体 > Media Kit（媒体服务）> 媒体开发指导(ArkTS) > 媒体开发实践 > 基于AVPlayer播放短视频实践”](../harmonyos-guides/avplayer-short-video.md)。
+* 基于AVPlayer播放嵌入式短视频实践：内容已迁移至[“指南 > 媒体 > Media Kit（媒体服务）> 媒体开发指导(ArkTS) > 媒体开发实践 > 基于AVPlayer播放嵌入式短视频实践”](../harmonyos-guides/avplayer-embeded-short-video.md)。
+* 基于AVPlayer播放网络视频实践：内容已迁移至[“指南 > 媒体 > Media Kit（媒体服务）> 媒体开发指导(ArkTS) > 媒体开发实践 > 基于AVPlayer播放网络视频实践”](../harmonyos-guides/avplayer-network-video.md)。
+* 在线视频播放卡顿优化：内容已迁移至[“指南 > 媒体 > Media Kit（媒体服务）> 媒体开发指导(ArkTS) > 媒体开发实践 > 在线视频播放卡顿优化”](../harmonyos-guides/online-video-playback-lags-optimize.md)。
+* 音画同步：内容已迁移至[“指南 > 媒体 > AVCodec Kit（音视频编解码服务）> 音视频编解码开发实践 > 音画同步”](../harmonyos-guides/audio-video-synchronization.md)。
+* 图片获取与保存实践：内容已迁移至[“指南 > 媒体 >Media Library Kit（媒体文件管理服务）> 图片获取与保存实践”](../harmonyos-guides/images-get-preservation-practice.md)。
+* 自定义相机拍照：内容已迁移至[“指南>媒体>Camera Kit（相机服务）>开发相机应用基础能力(ArkTS)>拍照(ArkTS)”](../harmonyos-guides/camera-shooting.md)。
+* 自定义相机录像：内容已迁移至[“指南>媒体>Camera Kit（相机服务）>开发相机应用基础能力(ArkTS)>录像(ArkTS)”](../harmonyos-guides/camera-recording.md)。
+* 自定义相机预览：内容已迁移至[“指南>媒体>Camera Kit（相机服务）>开发相机应用基础能力(ArkTS)>预览(ArkTS)”](../harmonyos-guides/camera-preview.md)。
+* 相机预览花屏解决方案：内容已迁移至[“指南>媒体>Camera Kit（相机服务）>开发相机应用基础能力(ArkTS)>相机预览花屏解决方案”](../harmonyos-guides/camera-preview-glitch-solution.md)。
+
+**NDK开发**
+
+* Native侧子线程与UI主线程通信：内容已迁移至[“指南 > NDK 开发 > 编译工具链 > Native侧子线程与UI主线程通信”](../harmonyos-guides/native_subthread-to-uimain.md)。
+* 跨语言调用复杂参数传递：内容已迁移至[“指南 > NDK 开发 > 编译工具链 > 跨语言调用复杂参数传递”](../harmonyos-guides/cross-language-complex-param.md)。
+
+**应用安全**
+
+* 加解密跨平台数据兼容性：内容已迁移至[“指南>系统>安全>Crypto Architecture Kit（加解密算法框架服务）>实现跨平台加解密数据兼容性”](../harmonyos-guides/crypto-development-practice.md)。
+* 网络连接安全配置：内容已迁移至[“指南>系统>网络>Network Kit（网络服务）>连接网络>连接网络开发实践>网络连接安全配置”](../harmonyos-guides/network-connection-security-configuration.md)。
+
+**稳定性**
+
+* 故障类型：文档内容下线。
+* 日志规格：文档内容下线。
+
+## 2026年6月
+
+### 新增文档
+
+新增文档10篇。
+
+**技术创新**
+
+* [智感握姿](bpta-smart-reach.md)：介绍了如何在HarmonyOS应用中接入智感握姿能力，具体包括组件原生适配与自定义握持感知两种方案。
+* [沉浸光感](bpta-spatiality-immersive.md)：介绍了如何在HarmonyOS应用中快速接入沉浸光感能力。包括沉浸光感的基础概念，首眼沉浸光感、自适应悬浮导航与智感握姿智能交互三大应用场景。
+* [防窥保护](bpta-antipeep-protection.md)：介绍了如何基于dlpAntiPeep能力，智能检测到旁窥风险时，系统对隐私数据的安全操作，从而保护用户安全隐私。
+* [冷启网络预建链最佳实践](bpta-pre-connect.md)：介绍了远场通信预键链特性在网络请求获取资源的原理及特点、实现流程和约束与限制。
+* [星盾机密风控引擎](bpta-risk-control-engine.md)：介绍了星盾机密风控引擎的功能原理及特点，如何在涉诈场景中应用和使用该特性的约束与限制。
+* [弱网直播优化](bpta-live-streaming-optimization.md)：介绍quic特性在弱网直播场景下原理及特点、实现流程和约束限制。
+* [互动卡片开发实践](bpta-live-form-development-practice.md)：介绍了互动卡片的使用场景、开发方案和常见问题。
+
+**场景创新**
+
+* [实现修图软件的波轮菜单功能](bpta-wavewheel-for-image-editor.md)：介绍了如何使用波轮菜单SDK提供的完整的波轮菜单功能封装，实现在应用中集成波轮菜单功能的开发指导。
+* [全链路盯盘开发实践](bpta-always-on-market-watch.md)：介绍了如何实现桌面盯盘、防窥保护、锁屏盯盘、待机屏保盯盘的功能开发。
+* [游戏预启动开发实践](bpta-game-prelaunch-practice.md)：介绍了如何实现游戏预启动的功能开发。
+
+### 优化文档
+
+优化文档8篇。
+
+**媒体**
+
+* [音频焦点管理解决方案](bpta-audio-focus-management.md)：优化文章描述和示例代码。
+
+**一次开发，多端部署**
+
+* [多设备音乐界面](bpta-multi-music-app-overview.md)：文档架构调整，整篇优化。
+* [多设备购物比价界面](multi-shopping-price-comparison.md)：文档架构调整，整篇优化。
+* [多设备社区评论界面](multi-community-app.md)：文档架构调整，整篇优化；实现的一多社区评论界应用，补充适配三折叠、阔折叠、Hope、电脑。
+* [多设备短视频界面](multi-short-video-app.md)：文档架构调整，整篇优化；增加了三折叠、阔折叠、电脑、智慧屏、智能穿戴的适配，增加视频播放、视频切换、展开评论区、短视频自适应等功能开发指导。
+
+**自由流转**
+
+* [常见接续最佳实践](bpta-application-continue-progess.md)：更新流程图和部分设备运行动图，更新文章章节结构。
+* [社交通讯全场景协同最佳实践](bpta-continue.md)：扩展垂域案例，增加碰一碰添加图片、碰一碰/隔空传送分享内容的功能。
+
+**稳定性**
+
+* [使用GWP-ASan检测内存错误](bpta-stability-gwpasan-detection.md)：GWP-ASan常见案例完善，从代码实例、定位思路、修复建议等维度补充介绍各类异常检测类型。
+
+### 下线文档
+
+下线文档9篇。
+
+**应用框架**
+
+* 跨模块资源访问：文档已迁移至指南。
+* Native侧实现文件访问：文档已迁移至指南。
+
+**网络**
+
+* 多网并发网络加速：文档已迁移至指南。
+
+**AI使能**
+
+* 基于RAG框架实现邮件智能问答：文档已迁移至指南。
+
+**编译构建**
+
+* GN构建工程配置HarmonyOS编译工具链：文档已迁移至指南。
+* CMake构建工程配置HarmonyOS编译工具链：文档已迁移至指南。
+* Make构建工程配置HarmonyOS编译工具链：文档已迁移至指南。
+* Configure构建工程配置HarmonyOS编译工具链：文档已迁移至指南。
+* 使用lycium工具快速编译三方库：文档已迁移至指南。
+
+## 2026年5月
+
+### 新增文档
+
+新增文档3篇。
+
+**应用框架**
+
+* [基于AbcKitTS实现字节码插桩](bpta-abckitts-implements-instrumentation.md)：介绍了在实际业务场景中，AbcKitTS的切面编程中的高频应用模式和基本使用方法。
+
+**性能**
+
+* [Web帧率问题分析](bpta-web-frame-rate-performance-analysis.md)：介绍了三方应用在滑动时产生丢帧现象的常见原因，并提供了相应的解决方案。
+
+**稳定性**
+
+* [JS Crash类问题案例](bpta-scenario-stability-jscrash.md)：介绍了当前开发者所遇到的高频JS Crash故障案例。
 
 ## 2026年4月
 
@@ -22,6 +257,42 @@ content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebe
 * 原指南中的自由流转内容下架，相关内容整合迁移至最佳实践 > 自由流转目录，并与最佳实践中原有的全场景协同内容合并。
 * 最佳实践下的自由流转目录重新划分为跨端迁移、多端协同、典型全场景协同开发案例三部分，在原有内容基础上调整目录结构，并优化融合《自由流转概述》《应用接续概述》《应用接续数据迁移》《跨设备拖拽》《跨设备剪贴板》指南文章。
 * 调整后，自由流转目录将在最佳实践板块下形成完整的知识体系架构，指导开发者全方位理解并实践自由流转开发。
+
+### 新增文档
+
+新增文档6篇。
+
+* **媒体**
+* [基于Video组件播放长视频](bpta-video-component-long-video.md)：介绍了如何基于Video组件实现长视频播放，实现基本播控、视频首帧显示、全屏播放、跳转播放、前台小窗播放、点击按钮选择倍速、长按视频倍速、循环播放、音量设置、接入播控中心等功能。
+* [基于Video组件播放短视频](bpta-video-component-short-video.md)：介绍了如何使用Video组件实现短视频播放，实现基础播控、自定义进度条、全屏播放、跳转播放、播放倍速调节、自动连播、音量设置及前后台状态感知等功能。
+
+**功耗**
+
+* [应用UI进程空跑问题分析](bpta-ui-skip-analysis.md)：介绍了什么是应用UI进程空跑、应用UI进程空跑的分析思路和常见故障根因。
+* [自渲染图层未使用硬件合成问题分析](bpta-hwc-self-rendering-layer-analysis.md)：介绍了如何实现自渲染图层使用硬件合成、问题定位和常见问题根因。
+* [应用退后台禁止使用传感器问题分析](bpta-background-sensors-baned-analysis.md)：介绍了为何应用退后台禁止使用传感器和问题定位流程。
+
+### 优化文档
+
+优化文档3篇。
+
+**多端设备体验提升**
+
+* [阔折叠应用开发](bpta-purax-guide.md)：在原有Pura X阔折叠基础上，补充Puira X Max的相关开发指导。
+
+**一次开发，多端部署**
+
+* [多设备长视频界面](multi-video-app.md)：新增阔折叠、三折叠、PC和智慧屏适配，按照最新案例优化内容，简化功能描述。
+* [窗口方向](bpta-multi-device-window-direction.md)：分类介绍了18种窗口横竖屏旋转枚举的效果，以窗口旋转策略实现的高频场景为载体，帮助开发者选择更适合应用的窗口旋转模式。
+
+### 删除文档
+
+删除文档2篇。
+
+**媒体**
+
+* 音频播放交互场景：介绍在音乐播放器应用中，如何从应用与用户、播放设备以及其他应用的交互三方面入手，为应用带来灵活多样、符合用户直觉的交互体验的示例方案。
+* 视频播放：介绍如何基于HarmonyOS能力快速实现视频播放应用。
 
 ## 2026年3月
 
@@ -125,7 +396,7 @@ content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebe
 
 **媒体**
 
-* [自定义相机拍照](bpta-custom-camera-photo.md)：新增使用音量键拍照章节和使用音量键拍照的开发步骤。
+* 自定义相机拍照：新增使用音量键拍照章节和使用音量键拍照的开发步骤。
 * [HDR Vivid视频播放与录制开发实践](bpta-hdrvivid.md)：由HDR Vivid视频录制、播放与转码文档拆分生成。
 * [HDR Vivid视频转码SDR视频开发实践](bpta-hdrtosdr.md)：由HDR Vivid视频录制、播放与转码文档拆分生成。
 
@@ -177,8 +448,8 @@ content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebe
 
 **媒体**
 
-* [音画同步](bpta-audio-video-synchronization.md)：新增音画同步功能开发流程图、新增音画同步本地视频，网络视频，录制视频三种开发场景介绍。
-* [自定义相机预览](bpta-custom-camera-preview.md)：新增预览人脸检测章节，介绍了预览流人脸检测信息。
+* 音画同步：新增音画同步功能开发流程图、新增音画同步本地视频，网络视频，录制视频三种开发场景介绍。
+* 自定义相机预览：新增预览人脸检测章节，介绍了预览流人脸检测信息。
 
 **一次开发，多端部署**
 
@@ -252,7 +523,7 @@ content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebe
 
 **组件封装与复用**
 
-* [组件复用问题诊断分析](bpta-component-reuse-issue-diagnosis-and-analysis.md)：以列表组件为例，介绍组件复用常见问题的分析与解决方案。
+* 组件复用问题诊断分析：以列表组件为例，介绍组件复用常见问题的分析与解决方案。
 
 **应用框架**
 
@@ -260,15 +531,15 @@ content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebe
 
 **网络**
 
-* [多网并发网络加速](bpta-multi-path-network-turbo.md)：介绍了多网并发的机制原理与基本开发流程，结合大文件分片传输和多文件并发传输两个实际应用场景介绍多网并发能力的适配方案。
+* 多网并发网络加速：介绍了多网并发的机制原理与基本开发流程，结合大文件分片传输和多文件并发传输两个实际应用场景介绍多网并发能力的适配方案。
 
 **媒体**
 
 * [基于AVPlayer基础播控实践](bpta-avplayer-basic-control.md)：介绍了如何基于AVPlayer系统播放器实现视频播放、暂停、跳转播放、静音播放、循环播放、窗口缩放模式设置、倍速设置、音量设置等基本开发场景。
-* [基于AVPlayer播放长视频实践](bpta-avplayer-long-video.md)：介绍了如何基于AVPlayer系统播放器实现长视频播放。
-* [基于AVPlayer播放短视频实践](bpta-avplayer-short-video.md)：介绍了如何实现基本播控能力、焦点管理、前后台感知、横竖屏切换和旋转感知和短视频列表流畅切换场景。
-* [基于AVPlayer播放嵌入式短视频实践](bpta-avplayer-embeded-short-video.md)：介绍如何基于[AVPlayer](../harmonyos-references/arkts-apis-media-avplayer.md)系统播放器实现嵌入式短视频播放。
-* [基于AVPlayer播放网络视频](bpta-avplayer-embeded-network-video.md)：介绍如何基于AVPlayer系统播放器实现网络视频播放。
+* 基于AVPlayer播放长视频实践：介绍了如何基于AVPlayer系统播放器实现长视频播放。
+* 基于AVPlayer播放短视频实践：介绍了如何实现基本播控能力、焦点管理、前后台感知、横竖屏切换和旋转感知和短视频列表流畅切换场景。
+* 基于AVPlayer播放嵌入式短视频实践：介绍如何基于[AVPlayer](../harmonyos-references/arkts-apis-media-avplayer.md)系统播放器实现嵌入式短视频播放。
+* 基于AVPlayer播放网络视频：介绍如何基于AVPlayer系统播放器实现网络视频播放。
 * [渲染视频画面](bpta-video-render.md)：介绍了视频解码后渲染视频画面的三种方式，包括基于XComponent渲染、基于OpenGL渲染和基于Vulkan渲染。
 
 **布局与弹窗**
@@ -311,11 +582,11 @@ content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebe
 
 **布局与弹窗**
 
-* [富文本显示的选型与开发](bpta-rich-text-display.md)：介绍了高亮显示的超链接文本、自定义表情、图标与文本的组合元素、自定义的图文元素四个场景的富文本信息的效果实现。
+* 富文本显示的选型与开发：介绍了高亮显示的超链接文本、自定义表情、图标与文本的组合元素、自定义的图文元素四个场景的富文本信息的效果实现。
 
 **网络**
 
-* [网络信息查询与连接管理](bpta-common-network-query.md)：介绍了常用的网络信息查询与连接管理功能实现，包括获取网络类型、检查网络可用性、监听网络状态变化、查询Wi-Fi及蜂窝网络信息等
+* 网络信息查询与连接管理：介绍了常用的网络信息查询与连接管理功能实现，包括获取网络类型、检查网络可用性、监听网络状态变化、查询Wi-Fi及蜂窝网络信息等
 
 **多端设备支持**
 
@@ -372,9 +643,9 @@ content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebe
 
 * [基于Buffer模式进行视频转码](bpta-buffer-mode-transcoding.md)：介绍了视频编解码的基本概念、Buffer模式下的视频编解码原理，并详细介绍了视频转码的实现方案和开发步骤。
 * [基于AVScreenCapture实现屏幕录制](bpta-avscreencapture-for-screen-recording.md)：介绍如何基于AVScreenCapture实现对屏幕的录制功能，主要包括三种实现方案：ArkTS侧录屏存文件，Native侧录屏存文件，Native侧录屏转码流。
-* [自定义相机预览](bpta-custom-camera-preview.md)：介绍了自定义相机预览部分由基础到进阶的开发实践。
-* [自定义相机拍照](bpta-custom-camera-photo.md)：以自定义相机为例，介绍基础拍照、参数配置、分段式拍照、HDR Vivid拍照以及动图拍摄等功能。
-* [自定义相机录像](bpta-custom-camera-video.md)：以自定义相机为例，介绍相机设备的创建与调用、录像的启动与停止、以及输出处理的完整流程。
+* 自定义相机预览：介绍了自定义相机预览部分由基础到进阶的开发实践。
+* 自定义相机拍照：以自定义相机为例，介绍基础拍照、参数配置、分段式拍照、HDR Vivid拍照以及动图拍摄等功能。
+* 自定义相机录像：以自定义相机为例，介绍相机设备的创建与调用、录像的启动与停止、以及输出处理的完整流程。
 
 **应用质量概览**
 
@@ -432,7 +703,7 @@ content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebe
 
 **组件封装与复用**
 
-* [组件封装](bpta-ui-component-encapsulation.md)：补充常见问题，优化组件公共样式封装、自定义组件封装场景。
+* 组件封装：补充常见问题，优化组件公共样式封装、自定义组件封装场景。
 
 **布局与弹窗**
 
@@ -509,7 +780,7 @@ content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebe
 **变更效果**
 
 **图1** 最佳实践目录变更前后对比   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/71g_Cap3RyicKtfBAsy8ww/zh-cn_image_0000002307192376.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/t5QJmT-gQ02MVYnSrm_ccA/zh-cn_image_0000002307192376.png "点击放大")
 
 ### 新增文档
 
@@ -521,12 +792,12 @@ content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebe
 
 **组件封装与复用**
 
-* [组件复用](bpta-component-reuse.md)：介绍了同一列表和多个列表内组件复用开发场景，帮助开发者更好地理解复用机制，进而优化应用性能。
+* 组件复用：介绍了同一列表和多个列表内组件复用开发场景，帮助开发者更好地理解复用机制，进而优化应用性能。
 
 **布局和弹窗**
 
-* [文本展开折叠](bpta-text-expand-collapse.md)：介绍了如何使用系统自带模块，实现纯文本和富文本的展开、折叠功能。
-* [自定义弹窗选型与开发](bpta-customdialog-selection-and-development.md)：介绍了弹窗的基本类型、不同类型弹窗的特性、主要推荐的弹窗类型及能力支持情况、弹窗的使用建议等内容。
+* 文本展开折叠：介绍了如何使用系统自带模块，实现纯文本和富文本的展开、折叠功能。
+* 自定义弹窗选型与开发：介绍了弹窗的基本类型、不同类型弹窗的特性、主要推荐的弹窗类型及能力支持情况、弹窗的使用建议等内容。
 * [基于ScrollComponents实现瀑布流](bpta-waterflow-based-on-scrollcomponents.md)：介绍了基于ScrollComponents实现瀑布流的原理、使用场景及实现步骤。
 
 **应用服务**
@@ -572,7 +843,7 @@ content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebe
 **AI使能**
 
 * [智能体场景开发案例](bpta-agent.md)：介绍如何基于[智能问答场景](bpta-agent.md#section2907103562520)和[音频播放场景](bpta-agent.md#section15781420152616)，在小艺智能体平台上快速搭建智能体并适配相应需求场景。
-* [基于RAG框架实现邮件智能问答](bpta-ai-ragqa.md)：介绍了知识库构建、LLM部署与调用和RAG会话如何实现以及如何基于RAG框架实现邮件系统的智能问答。
+* 基于RAG框架实现邮件智能问答：介绍了知识库构建、LLM部署与调用和RAG会话如何实现以及如何基于RAG框架实现邮件系统的智能问答。
 
 ### 删除文档
 
@@ -706,7 +977,7 @@ content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebe
 
 **图2** 最佳实践目录变更
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/3mt6lCXUTnCbZM0DTbkruw/zh-cn_image_0000002318291885.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/flVbAW2WS2mOiRkKCfRLoA/zh-cn_image_0000002318291885.png "点击放大")
 
 ### 新增文档
 
@@ -714,7 +985,7 @@ content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebe
 
 **媒体**
 
-* [图片获取与保存实践](bpta-image_get_and_save.md)：介绍HarmonyOS上常见的获取图片的方式、获取后读取图片信息、以及将图片保存在本地的操作。
+* 图片获取与保存实践：介绍HarmonyOS上常见的获取图片的方式、获取后读取图片信息、以及将图片保存在本地的操作。
 
 **文档变更说明**
 
@@ -773,8 +1044,8 @@ content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebe
 * [使用方舟异常信息增强检测](bpta-stability-ark-exception-detection.md)：介绍了在使用方舟时，如何进行异常检测以提高应用程序的稳定性。包括常见的异常类型和处理方法，以及如何使用华为提供的工具来进行异常检测和分析。
 * [应用体检](bpta-stability-app-analyzer.md)：介绍了应用与元服务体检工具（AppAnalyzer）的功能、安装和配置方法，以及如何使用应用与元服务体检工具进行应用程序的稳定性分析和优化。
 * [使用DevEco Testing进行稳定性测试](bpta-stability-deveco-testing.md)：介绍DevEco Testing为HarmonyOS NEXT应用开发者提供的稳定性测试服务，包括稳定性基础质量测试及应用探索测试。
-* [故障类型](bpta-stability-fault-type.md)：介绍了在软件开发过程中如何提高系统的稳定性，以及如何识别和处理不同类型的故障。
-* [日志规格](bpta-stability-log-specs.md)：介绍了稳定性日志规范的内容。旨在帮助开发者了解如何编写稳定性日志，以便更好地监控和调试应用程序的稳定性问题。
+* 故障类型：介绍了在软件开发过程中如何提高系统的稳定性，以及如何识别和处理不同类型的故障。
+* 日志规格：介绍了稳定性日志规范的内容。旨在帮助开发者了解如何编写稳定性日志，以便更好地监控和调试应用程序的稳定性问题。
 * [地址越界类问题分析方法](bpta-stability-address-illegal-way.md)：介绍地址越界问题检测能力、地址越界问题定位分析思路。
 * [地址越界类问题案例](bpta-scenario-stability-address-sanitizer.md)：介绍地址越界问题典型案例分析。分别是stack-tag-mismatch（栈溢出）问题和heap-use-after-free问题。
 * 资源泄漏问题排查方法：介绍资源泄漏检测能力、泄漏问题定位分析思路。
@@ -799,17 +1070,17 @@ content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebe
 
 **功能开发**
 
-* [跨模块资源访问](bpta-cross-module-resource-access.md)：介绍如何实现跨模块访问HAR和HSP里面的资源。
+* 跨模块资源访问：介绍如何实现跨模块访问HAR和HSP里面的资源。
 * [TaskPool使用规范](bpta-taskpool_usage_specifications_and_faqs.md)：介绍了什么是任务池，包括任务池的定义、使用场景、使用规范、任务池的创建和销毁、任务的提交和执行、任务池的监控和调优以及常见问题等内容。
 * [基于StateStore的全局状态管理](bpta-global-state-management-state-store.md)：介绍了全局状态管理和状态存储的相关内容，包括全局状态管理的概念、作用和优势、状态存储的不同方式和使用场景，以及如何选择适合的状态存储方案等内容。
 * [图片预览器](bpta-picture-preview.md)：介绍了在开发过程中如何实现高效的图片预览功能，包括使用异步加载和缓存技术来提高图片加载速度，使用合适的图片格式和压缩算法来减小图片文件大小，以及如何处理不同屏幕尺寸和分辨率的适配等内容。
 * [页面亮度设置](bpta-page-brightness-settings.md)：介绍了在应用程序中如何设置页面亮度的方法，包括通过使用系统提供的API来控制页面亮度，以提供更好的用户体验和节省电池寿命。
-* [常见列表流](bpta-common-list-flows.md)：介绍了常见列表流程的最佳实践，包括列表流程的设计原则、列表流程的类型、列表流程的实现方式以及列表流程的性能优化等方面的内容。
+* 常见列表流：介绍了常见列表流程的最佳实践，包括列表流程的设计原则、列表流程的类型、列表流程的实现方式以及列表流程的性能优化等方面的内容。
 * [基于DialogHub的通用弹窗](bpta-hadss_dialoghub.md)：介绍了DialogHub解决方案的概述、架构设计、开发流程、技术要点等。
 * [长截图](bpta-long-snapshot-practice.md)：本文以List组件和Web组件为例来介绍长截图功能的开发，分别通过控制器Scroller和WebviewController，结合组件截图模块componentSnapshot，实现长截图功能。
 * [2in1异形窗口](bpta-2in1-window-shape.md)：介绍了在开发应用程序时如何适配2in1设备的窗口形状，以提供更好的用户体验。
 * [基于Web页面的视频适配](bpta-video-adaptation-based-web.md)：介绍了如何在Web应用中实现视频自适应，以提供更好的用户体验。
-* [应用网络重连](bpta-network-reconnection.md)：介绍了如何在移动应用开发中处理网络连接中断和重连。包括网络连接状态的监测、断线重连的策略、错误处理和用户体验优化等方面。
+* 应用网络重连：介绍了如何在移动应用开发中处理网络连接中断和重连。包括网络连接状态的监测、断线重连的策略、错误处理和用户体验优化等方面。
 * [低功耗蓝牙基础使用](bpta-bluetooth-low-energy.md)：介绍了基于BLE进行蓝牙扫描管理、蓝牙连接状态管理、蓝牙设备特征值同步三个场景，并分别从服务端和客户端描述其相关实现。
 * 基于rcp的文件上传与下载：介绍了如何实现带进度的上传下载、断点续传、后台文件上传下载场景，为开发者提供基于rcp的文件上传与下载的开发实践。
 * [基于系统能力获取视频缩略图](bpta-video-thumbnail.md)：介绍了如何使用视频处理服务生成视频缩略图。
@@ -838,13 +1109,13 @@ content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebe
 
 **安全**
 
-* [加解密跨平台数据兼容性](bpta-cross-platform-compatibility.md)：介绍数据编码格式差异以及加解密算法使用差异导致加解密失败的可能原因，并提供相应的解决方案。
+* 加解密跨平台数据兼容性：介绍数据编码格式差异以及加解密算法使用差异导致加解密失败的可能原因，并提供相应的解决方案。
 
 **功能开发**
 
 * [一镜到底动效](bpta-one-shot-to-the-end.md)：介绍一镜到底的实现原理和两个典型场景案例。
 * [卡片更新与数据交互](bpta-card-update-and-data-interaction.md)：介绍如何在应用程序中实现卡片更新和数据交互的指导和建议。
-* [相机预览花屏解决方案](bpta-deal-stride-solution.md)：介绍相机预览花屏的实现原理、场景案例。效果比对和常见问题，并提供相应的示例代码，助力开发者高效解决问题。
+* 相机预览花屏解决方案：介绍相机预览花屏的实现原理、场景案例。效果比对和常见问题，并提供相应的示例代码，助力开发者高效解决问题。
 * [多线程操作密集型关系型数据库和文件读写](bpta-local-file-and-data-multithreaded-io.md)：介绍如何使用多线程操作密集型关系型数据库和文件读写，包括TaskPool和Sendable的实现原理和使用方法。
 
 ## 2024年11月
@@ -858,7 +1129,7 @@ content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebe
 * 原“常见性能优化场景”章节更名为“性能场景优化案例”，修改文档标题，提升查找的准确性和效率。
 
   **图3** 最佳实践性能目录变更对比   
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/Nc3iRFF7RSWxbtbyH2moMw/zh-cn_image_0000002283692304.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/fT1nqMgjR7OSPiT9UTb_sQ/zh-cn_image_0000002283692304.png "点击放大")
 
 ### 新增文档
 
@@ -886,15 +1157,15 @@ content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebe
 
 **安全**
 
-* [网络连接安全配置](bpta-network-ca-security.md)：介绍网络通信和安全方面的内容。包括网络通信的最佳实践，如使用HTTPS协议进行数据传输，使用合适的加密算法保护数据安全，以及优化网络请求等。同时还介绍网络安全的最佳实践，如使用安全的认证和授权机制，防止网络攻击和数据泄露等。
+* 网络连接安全配置：介绍网络通信和安全方面的内容。包括网络通信的最佳实践，如使用HTTPS协议进行数据传输，使用合适的加密算法保护数据安全，以及优化网络请求等。同时还介绍网络安全的最佳实践，如使用安全的认证和授权机制，防止网络攻击和数据泄露等。
 
 **功能开发**
 
 * [桌面快捷方式](bpta-desktop-shortcuts.md)：介绍如何创建桌面快捷方式、如何设置快捷方式图标和名称、如何使用快捷方式进行快速访问等内容。
-* [跨语言调用复杂参数传递](bpta-complex-type-pass.md)：介绍如何使用复杂类型传递数据的方法。通过详细的指导和示例，帮助开发者了解如何在应用程序中使用复杂类型进行数据传递。
+* 跨语言调用复杂参数传递：介绍如何使用复杂类型传递数据的方法。通过详细的指导和示例，帮助开发者了解如何在应用程序中使用复杂类型进行数据传递。
 * [Native侧跨HAR/HSP模块接口调用](bpta-cross-module-reference.md)：介绍Native侧跨HAR/HSP模块调用两种典型场景，包括调用Native方法和调用ArkTS方法，以方便开发者更好的掌握Native侧跨模块调用的能力。
 * [三方动态链接库集成](bpta-dynamic-link-library.md)：介绍动态链接库（Dynamic Link Library，简称DLL）的定义、使用场景、优势以及开发和使用DLL的最佳实践建议。让开发者快速了解如何有效地使用DLL来提高软件的模块化、可维护性和重用性，从而提升开发效率和软件质量。
-* [Native侧子线程与UI主线程通信](bpta-native-sub-main-comm.md)：介绍Native侧子线程与UI主线程通信开发的两种方案，即如何基于线程安全函数机制实现和基于libuv异步库的uv\_async\_send方法实现。
+* Native侧子线程与UI主线程通信：介绍Native侧子线程与UI主线程通信开发的两种方案，即如何基于线程安全函数机制实现和基于libuv异步库的uv\_async\_send方法实现。
 * [组件冗余刷新解决方案](bpta-redundancy-refresh-guide.md)：介绍冗余刷新的基本概念、冗余刷新的设计原则、冗余刷新的实施步骤以及常见问题和解决方案等。通过阅读该文档，开发者可以了解如何设计和实施一个可靠的冗余刷新系统，以提高系统的稳定性和可用性。
 * [Grid网格元素拖拽交换](bpta-grid-drag-swap.md)：介绍如何实现Grid网格拖拽交换的技术，如何实现网格拖拽交换功能。
 * [窗口沉浸式](bpta-multi-device-window-immersive.md)：介绍沉浸式体验设计原则和方法。包括了沉浸式设计的定义、设计原则、设计方法和实践建议等方面的内容。
@@ -977,7 +1248,7 @@ content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebe
 
 * 应用间跳转场景开发实践：介绍ArkTS页面拉起已安装应用的相关场景，包括拉起指定应用、拉起指定应用并获取返回结果、拉起指定类型应用、拉起系统应用。
 * [Web和应用的跳转与拉起](bpta-web-app-jump-and-pull-up.md)：介绍ArkWeb页面跳转以及拉起应用相关的知识，包括ArkWeb页面与ArkTS页面互相跳转、ArkWeb页面指定应用跳转、ArkWeb页面指定类型跳转和ArkWeb页面跳转系统应用页面。
-* [Native侧实现文件访问](bpta-file-native-side.md)：介绍三种Native侧访问文件的实现方案，包括访问应用沙箱内文件、访问应用资源文件和访问系统公共目录文件。
+* Native侧实现文件访问：介绍三种Native侧访问文件的实现方案，包括访问应用沙箱内文件、访问应用资源文件和访问系统公共目录文件。
 * 组件复用场景与方法详解：介绍组件复用的场景和方法。详细说明了什么是组件复用，为什么要进行组件复用，以及如何在开发过程中实现组件复用。
 * [Image白块解决方案](bpta-image-white-lump-solution.md)：介绍如何应用沙箱提前缓存，减少Image白块出现时长的优化方案。
 * [使用Swiper组件实现轮播图](bpta-carousel-graphic-works.md)：介绍如何通过Swiper组件来动态展示图片，实现图文作品合集轮播和实现轮播图片叠加的效果。
@@ -985,14 +1256,14 @@ content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebe
 * [常见导航样式案例](bpta-multi-tab-practice.md)：介绍如何在应用程序中使用底部、顶部和侧边多标签功能，以提供更好的用户体验和功能。
 * [智慧多窗](bpta-multi-window-practice.md)：介绍悬浮窗/分屏布局适配方案，以及智慧多窗开发过程中的一些常见问题以及解决方案，来帮助开发者快速适配智慧多窗布局开发，提升用户使用体验。
 * 网络管理与状态监听开发实践：介绍网络管理中网络连接管理、网络信息查询和网络状态监听等。帮助开发者了解网络管理中常用的查询方式和如何进行网络状态变化的监听。
-* [视频播放](bpta-video-playback-development-practice.md)：介绍如何基于HarmonyOS能力快速实现视频播放应用。
-* [在线视频播放卡顿优化](bpta-online-video-playback-lags-practice.md)：介绍如何解决在线视频播放过程中可能遇到的卡顿问题。
-* [音画同步](bpta-audio-video-synchronization.md)：介绍如何通过第三方视频播放应用正确获取并使用音频相关信息来保证播放时的音视频同步。
+* 视频播放：介绍如何基于HarmonyOS能力快速实现视频播放应用。
+* 在线视频播放卡顿优化：介绍如何解决在线视频播放过程中可能遇到的卡顿问题。
+* 音画同步：介绍如何通过第三方视频播放应用正确获取并使用音频相关信息来保证播放时的音视频同步。
 * [水印添加](bpta-add-watermark.md)：介绍水印添加的基本原理以及掌握开发的流程与细节。包括页面上添加水印、图片上添加水印和PDF文档添加水印。
 
 **开发工具**
 
-* [使用lycium工具快速编译三方库](bpta-lycium-adapts-to-harmonyos.md)：介绍如何在Linux环境下，使用lycium工具通过ohos sdk快速编译openssl三方库源码。
+* 使用lycium工具快速编译三方库：介绍如何在Linux环境下，使用lycium工具通过ohos sdk快速编译openssl三方库源码。
 
 ### 删除文档
 
@@ -1016,14 +1287,14 @@ content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebe
 
 * [高负载场景分帧渲染](bpta-dispose-highly-loaded-component-render.md)：介绍如何在转场场景和滑动场景中实现高负载组件渲染的方法。包括实现原理、解决思路和开发步骤等。
 * [相机分段式拍照性能优化](bpta-camera-shot2see.md)：介绍如何在相机Shot2See场景中实现分段式拍照Shot2See的完成时延低于单段式拍照。
-* [音频播放交互场景](bpta-audio-interaction-practice.md)：介绍在音乐播放器应用中，如何从应用与用户、播放设备以及其他应用的交互三方面入手，为应用带来灵活多样、符合用户直觉的交互体验的示例方案。
+* 音频播放交互场景：介绍在音乐播放器应用中，如何从应用与用户、播放设备以及其他应用的交互三方面入手，为应用带来灵活多样、符合用户直觉的交互体验的示例方案。
 * [Drawing自绘制性能提升](bpta-drawing-capability-improve-performance.md)：介绍如何通过绘图能力来提高性能的方法。文档中详细解释了绘图能力的重要性，以及如何使用绘图能力来优化应用程序的性能。
 
 * [意图框架习惯推荐场景](bpta-intent-recommend-practice.md)：介绍如何通过意图接入来开发“音乐播放”场景。
 
 **开发工具：**
 
-* [Configure构建工程配置HarmonyOS编译工具链](bpta-configure-adapts-to-harmonyos.md)：介绍如何使用Configure构建工程配置HarmonyOS编译工具链，包括Configure构建三方库适配流程、环境准备和编译三方库。
+* Configure构建工程配置HarmonyOS编译工具链：介绍如何使用Configure构建工程配置HarmonyOS编译工具链，包括Configure构建三方库适配流程、环境准备和编译三方库。
 
 ### 删除文档
 
@@ -1059,14 +1330,14 @@ content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebe
 * 瀑布流页面滑动性能解决方案：介绍瀑布流页面滑动相关的性能优化解决方案。
 * [基于HMRouter的页面跳转](bpta-hmrouter.md)：介绍HMRouter路由框架的使用，包括页面跳转、弹窗提示、转场动效、数据加载、维测场景等。
 * [软键盘布局适配](bpta-keyboard-layout-adapt.md)：介绍软键盘的弹出收起和监听、软键盘避让机制和软键盘避让常见问题，以帮助开发者了解软键盘的弹出和收起的控制、避让机制以及软键盘常见问题的解决方法。
-* [同层渲染原生组件](bpta-render-web-using-same-layer-render.md)：介绍什么是同层渲染，Web组件首次加载原生组件的方案比对和性能收益比对和列表滑动场景性能收益比对。
+* 同层渲染原生组件：介绍什么是同层渲染，Web组件首次加载原生组件的方案比对和性能收益比对和列表滑动场景性能收益比对。
 
 * [马良GPU渲染优化](bpta-maleoon-gpu-best-practices.md)：介绍如何在马良（Maleoon）GPU上达到最佳的性能表现，只针对Maleoon GPU的优化实践，帮助开发者高效完成渲染任务。
 
 **开发工具**
 
-* [CMake构建工程配置HarmonyOS编译工具链](bpta-cmake-adapts-to-harmonyos.md)：介绍如何在Linux环境下，使用CMake构建工具通过ohos sdk编译cJSON三方库源码，生成ohos平台三方库的so及二进制文件。
-* [Make构建工程配置HarmonyOS编译工具链](bpta-make-adapts-to-harmonyos.md)：介绍如何在Linux环境下，使用Make构建工具通过ohos sdk编译bzip2三方库源码，生成ohos平台三方库的so及二进制文件。
+* CMake构建工程配置HarmonyOS编译工具链：介绍如何在Linux环境下，使用CMake构建工具通过ohos sdk编译cJSON三方库源码，生成ohos平台三方库的so及二进制文件。
+* Make构建工程配置HarmonyOS编译工具链：介绍如何在Linux环境下，使用Make构建工具通过ohos sdk编译bzip2三方库源码，生成ohos平台三方库的so及二进制文件。
 
 ### 删除文档
 
@@ -1101,7 +1372,7 @@ content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebe
 
 * [高负载场景线程优先级设置](bpta-thread-priority-setting.md)：介绍在开发过程中如何合理地设置线程的优先级，以提高应用程序的性能和稳定性。通过调整线程的优先级，可以确保关键任务得到优先处理，从而提高应用的响应速度和用户体验。
 * [主线程耗时操作优化](bpta-time-optimization-of-the-main-thread.md)：介绍开发过程中常见的冗余操作，常见的高频回调场景以及其他主线程优化思路。
-* [自定义弹窗选型与开发](bpta-customdialog-selection-and-development.md)：介绍自定义对话框开发的实践方法。提供了详细的步骤和示例，帮助开发者了解如何使用开发工具和技术来创建自定义对话框。
+* 自定义弹窗选型与开发：介绍自定义对话框开发的实践方法。提供了详细的步骤和示例，帮助开发者了解如何使用开发工具和技术来创建自定义对话框。
 * [手势事件冲突解决方案](bpta-gestures-practice.md)：介绍手势触发的基本流程，执行原理、如何响应手势事件、如何解决冲突问题等。主要包括事件响应链收集、手势响应优先级、手势响应控制和常见手势冲突问题。
 
 * 基于RCP的网络请求开发实践：介绍RCP与HTTP的区别，如何使用RCP实现基础的网络请求、多表单提交、双向证书校验、DNS的相关设置、请求与响应拦截和捕获有关HTTP请求/响应流。
@@ -1170,7 +1441,7 @@ content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebe
 **功能开发**
 
 * 使用AOT进行性能优化：已下线。
-* [组件复用](bpta-component-reuse.md)：介绍如何使用组件复用机制提升应用帧率。
+* 组件复用：介绍如何使用组件复用机制提升应用帧率。
 * [懒加载优化性能](bpta-lazyforeach-optimization.md)：介绍如何通过懒加载技术来优化网页性能，提高用户体验。详细介绍懒加载的原理、实现方式和注意事项，并提供了示例代码和最佳实践建议。
 
 ## 2024年4月
@@ -1213,7 +1484,7 @@ content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebe
 **HarmonyOS特征**
 
 * [多设备股票类界面](multi-ticket-class.md)：介绍“一多”在股票类应用开发中的应用。主要包含首页、资讯、自选股、个股详情、行情等9个典型页面。
-* [多设备移动支付界面](multi-mobile-payment.md)：介绍“一多”在移动支付应用开发中的应用。主要包含支付、收款、扫码等。
+* [多设备移动支付界面](bpta-multi-mobile-payment.md)：介绍“一多”在移动支付应用开发中的应用。主要包含支付、收款、扫码等。
 
 **架构**
 
@@ -1233,12 +1504,12 @@ content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebe
 
 **功能开发**
 
-* [组件封装](bpta-ui-component-encapsulation.md)：介绍公用组件封装、弹窗组件封装和组件工厂类封装的业务场景，并具体说明了各场景及其实现方案。
-* [组件动态创建](bpta-ui-dynamic-operations.md)：介绍如何在用户界面中实现动态操作，设计和实现具有动态操作功能的用户界面。包括使用动态数据绑定、使用动态样式和主题、使用动态布局等。
+* 组件封装：介绍公用组件封装、弹窗组件封装和组件工厂类封装的业务场景，并具体说明了各场景及其实现方案。
+* 组件动态创建：介绍如何在用户界面中实现动态操作，设计和实现具有动态操作功能的用户界面。包括使用动态数据绑定、使用动态样式和主题、使用动态布局等。
 
 **开发工具**
 
-* [GN构建工程配置HarmonyOS编译工具链](bpta-gn-adapts-to-harmonyos.md)：介绍如何在GN工程中配置HarmonyOS工具链，然后通过HarmonyOS工具链编译出可以在HarmonyOS环境下使用的三方库。
+* GN构建工程配置HarmonyOS编译工具链：介绍如何在GN工程中配置HarmonyOS工具链，然后通过HarmonyOS工具链编译出可以在HarmonyOS环境下使用的三方库。
 
 ## 2024年1月
 
@@ -1325,5 +1596,5 @@ content_hash: sha256:d4ff0756a8ff9be5f93e652c402bc9c000e44f65ba533846753fd6c5ebe
 
 **功能开发**
 
-* [布局优化指导](bpta-improve-layout-performance.md)：介绍如何提高布局性能，包括使用CSS Grid和Flexbox进行灵活布局、减少DOM元素的数量、合理使用CSS样式和动画、优化图片加载等。
-* [页面间转场](bpta-page-transition.md)：介绍在开发网页时如何实现流畅的页面过渡效果，包括如何使用动画、过渡效果和预加载等技术来优化页面过渡。
+* 布局优化指导：介绍如何提高布局性能，包括使用CSS Grid和Flexbox进行灵活布局、减少DOM元素的数量、合理使用CSS样式和动画、优化图片加载等。
+* 页面间转场：介绍在开发网页时如何实现流畅的页面过渡效果，包括如何使用动画、过渡效果和预加载等技术来优化页面过渡。

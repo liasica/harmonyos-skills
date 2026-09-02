@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/live-view-kit
 title: Live View Kit（实况窗服务）
 breadcrumb: 指南 > 应用服务 > Live View Kit（实况窗服务）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:34+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5d885500705b938875224ea02d913fd9fd9a4479fbffd3878b76cedf2c612fc1
+scraped_at: 2026-09-02T14:50:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0ff7e7ba95f4aa6b702aa6856c373d36fd3f098d5fbd8fa9ab63bd26eb99e57a
 ---
 
 * **[Live View Kit简介](liveview-introduction.md)**
@@ -13,3 +13,4 @@ content_hash: sha256:5d885500705b938875224ea02d913fd9fd9a4479fbffd3878b76cedf2c6
 * **[开发准备](liveview-preparations.md)**
 * **[开发实况窗场景](liveview-scenes.md)**
 * **[Live View Kit常见问题](liveview-faq.md)**
+* **[Live View Kit术语](liveview-kit-terminology.md)**

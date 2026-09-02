@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-k
 title: XEG_NNGIDescription
 breadcrumb: API参考 > 图形 > XEngine Kit（GPU加速引擎服务） > C API > 头文件和结构体 > 结构体 > XEG_NNGIDescription
 category: harmonyos-references
-scraped_at: 2026-04-29T14:06:40+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:2d8703b86ac0a3c6370546ee3aa91ab3b37d142075cfb044212ffb468e48d050
+scraped_at: 2026-09-02T15:02:49+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6ac3f5208d3f1c5864b42687e36f90ff72240f6bc4345226d327cc3f4011b1ae
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 此结构体描述更新NNGI用于计算光线追踪全局光照的所需的信息。
 
@@ -22,11 +20,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 成员变量
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -45,19 +39,15 @@ PhonePC/2in1TabletTV
 | VkImageView [trainingInputBaseColorMetallicImage](xengine-kit-xeg-nngidescription.md#traininginputbasecolormetallicimage) | 训练输入基础颜色图像，不能为空，格式必须是至少3通道数据，RGB通道分别存储红绿蓝分量，忽略alpha通道信息。其分辨率和[XEG\_NNGICreateInfo](xengine-kit-xeg-nngicreateinfo.md)中trainingSize的分辨率保持一致。 |
 | VkImageView [trainingInputGIImage](xengine-kit-xeg-nngidescription.md#traininginputgiimage) | 训练输入GI图像，不能为空，格式必须是至少3通道数据，RGB通道分别存储红绿蓝分量的辐射度值，忽略alpha通道信息。该训练图像的GI结果的质量越高，推理输出的GI结果的质量就越高。其分辨率和[XEG\_NNGICreateInfo](xengine-kit-xeg-nngicreateinfo.md)中trainingSize的分辨率保持一致。 |
 | VkAabbPositionsKHR [sceneAabb](xengine-kit-xeg-nngidescription.md#sceneaabb) | 渲染包围盒范围。 |
-| bool [isSceneUnbounded](xengine-kit-xeg-nngidescription.md#issceneunbounded) = false | 渲染场景是否无界，true表示场景无边界，false表示场景有边界，当前只支持false。 |
-| float [spatialScaleFactor](xengine-kit-xeg-nngidescription.md#spatialscalefactor) = 0 | 场景缩放因子，对于有界场景，无需设置，XEngine根据sceneAabb计算该值，对于无界场景，建议设置为平均深度。 |
+| bool [isSceneUnbounded](xengine-kit-xeg-nngidescription.md#issceneunbounded) | 渲染场景是否无界，true表示场景无边界，false表示场景有边界，当前只支持false。 |
+| float [spatialScaleFactor](xengine-kit-xeg-nngidescription.md#spatialscalefactor) | 场景缩放因子，对于有界场景，无需设置，XEngine根据sceneAabb计算该值，对于无界场景，建议设置为平均深度。 |
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTV
-
 ### inferenceCameraProjectionMatrix
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_NNGIDescription::inferenceCameraProjectionMatrix[16]
+```cpp
+float XEG_NNGIDescription::inferenceCameraProjectionMatrix[16]
 ```
 
 **描述**
@@ -66,10 +56,8 @@ PhonePC/2in1TabletTV
 
 ### inferenceCameraViewMatrix
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_NNGIDescription::inferenceCameraViewMatrix[16]
+```cpp
+float XEG_NNGIDescription::inferenceCameraViewMatrix[16]
 ```
 
 **描述**
@@ -78,10 +66,8 @@ PhonePC/2in1TabletTV
 
 ### inferenceInputBaseColorMetallicImage
 
-PhonePC/2in1TabletTV
-
-```
-1. VkImageView XEG_NNGIDescription::inferenceInputBaseColorMetallicImage
+```cpp
+VkImageView XEG_NNGIDescription::inferenceInputBaseColorMetallicImage
 ```
 
 **描述**
@@ -90,10 +76,8 @@ PhonePC/2in1TabletTV
 
 ### inferenceInputDepthImage
 
-PhonePC/2in1TabletTV
-
-```
-1. VkImageView XEG_NNGIDescription::inferenceInputDepthImage
+```cpp
+VkImageView XEG_NNGIDescription::inferenceInputDepthImage
 ```
 
 **描述**
@@ -102,10 +86,8 @@ PhonePC/2in1TabletTV
 
 ### inferenceInputNormalImage
 
-PhonePC/2in1TabletTV
-
-```
-1. VkImageView XEG_NNGIDescription::inferenceInputNormalImage
+```cpp
+VkImageView XEG_NNGIDescription::inferenceInputNormalImage
 ```
 
 **描述**
@@ -114,10 +96,8 @@ PhonePC/2in1TabletTV
 
 ### inferenceOutputGIImage
 
-PhonePC/2in1TabletTV
-
-```
-1. VkImageView XEG_NNGIDescription::inferenceOutputGIImage
+```cpp
+VkImageView XEG_NNGIDescription::inferenceOutputGIImage
 ```
 
 **描述**
@@ -126,22 +106,18 @@ PhonePC/2in1TabletTV
 
 ### isSceneUnbounded
 
-PhonePC/2in1TabletTV
-
-```
-1. bool XEG_NNGIDescription::isSceneUnbounded = false
+```cpp
+bool XEG_NNGIDescription::isSceneUnbounded
 ```
 
 **描述**
 
-渲染场景是否无界，当前只支持false。
+渲染场景是否无界。true表示场景无边界，false表示场景有边界。当前只支持false。
 
 ### pNext
 
-PhonePC/2in1TabletTV
-
-```
-1. const void* XEG_NNGIDescription::pNext
+```cpp
+const void* XEG_NNGIDescription::pNext
 ```
 
 **描述**
@@ -150,10 +126,8 @@ PhonePC/2in1TabletTV
 
 ### sceneAabb
 
-PhonePC/2in1TabletTV
-
-```
-1. VkAabbPositionsKHR XEG_NNGIDescription::sceneAabb
+```cpp
+VkAabbPositionsKHR XEG_NNGIDescription::sceneAabb
 ```
 
 **描述**
@@ -162,10 +136,8 @@ PhonePC/2in1TabletTV
 
 ### spatialScaleFactor
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_NNGIDescription::spatialScaleFactor = 0
+```cpp
+float XEG_NNGIDescription::spatialScaleFactor
 ```
 
 **描述**
@@ -174,10 +146,8 @@ PhonePC/2in1TabletTV
 
 ### sType
 
-PhonePC/2in1TabletTV
-
-```
-1. XEG_StructureType XEG_NNGIDescription::sType
+```cpp
+XEG_StructureType XEG_NNGIDescription::sType
 ```
 
 **描述**
@@ -186,10 +156,8 @@ PhonePC/2in1TabletTV
 
 ### trainingCameraProjectionMatrix
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_NNGIDescription::trainingCameraProjectionMatrix[16]
+```cpp
+float XEG_NNGIDescription::trainingCameraProjectionMatrix[16]
 ```
 
 **描述**
@@ -198,10 +166,8 @@ PhonePC/2in1TabletTV
 
 ### trainingCameraViewMatrix
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_NNGIDescription::trainingCameraViewMatrix[16]
+```cpp
+float XEG_NNGIDescription::trainingCameraViewMatrix[16]
 ```
 
 **描述**
@@ -210,10 +176,8 @@ PhonePC/2in1TabletTV
 
 ### trainingInputBaseColorMetallicImage
 
-PhonePC/2in1TabletTV
-
-```
-1. VkImageView XEG_NNGIDescription::trainingInputBaseColorMetallicImage
+```cpp
+VkImageView XEG_NNGIDescription::trainingInputBaseColorMetallicImage
 ```
 
 **描述**
@@ -222,10 +186,8 @@ PhonePC/2in1TabletTV
 
 ### trainingInputGIImage
 
-PhonePC/2in1TabletTV
-
-```
-1. VkImageView XEG_NNGIDescription::trainingInputGIImage
+```cpp
+VkImageView XEG_NNGIDescription::trainingInputGIImage
 ```
 
 **描述**
@@ -234,10 +196,8 @@ PhonePC/2in1TabletTV
 
 ### trainingInputNormalImage
 
-PhonePC/2in1TabletTV
-
-```
-1. VkImageView XEG_NNGIDescription::trainingInputNormalImage
+```cpp
+VkImageView XEG_NNGIDescription::trainingInputNormalImage
 ```
 
 **描述**
@@ -246,10 +206,8 @@ PhonePC/2in1TabletTV
 
 ### trainingInputPositionImage
 
-PhonePC/2in1TabletTV
-
-```
-1. VkImageView XEG_NNGIDescription::trainingInputPositionImage
+```cpp
+VkImageView XEG_NNGIDescription::trainingInputPositionImage
 ```
 
 **描述**

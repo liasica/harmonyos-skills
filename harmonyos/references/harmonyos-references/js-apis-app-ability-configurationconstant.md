@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.ConfigurationConstant (环境变量相关的常量定义)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.app.ability.ConfigurationConstant (环境变量相关的常量定义)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:31+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:3f924ed27c58c9b3f33eb2d020b1f5bdb6c668f47fbf302af8c5f0b913c8eb76
+scraped_at: 2026-09-02T15:00:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:34a86a1b5c53e433891812da6704213a8b5fc8bc57fe9d44735a9e12f1181bfc
 ---
 
 ConfigurationConstant模块提供了[Configuration](js-apis-app-ability-configuration.md)操作相关的系统预置枚举。
 
-说明
+**说明** 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { ConfigurationConstant } from '@kit.AbilityKit';
+```ts
+import { ConfigurationConstant } from '@kit.AbilityKit';
 ```
 
 ## ColorMode
-
-PhonePC/2in1TabletTVWearable
 
 表示深浅色模式的枚举，用于[Configuration.colorMode](js-apis-app-ability-configuration.md#configuration)字段。开发者可以使用这些预置枚举设置或获取系统/应用的深浅色模式。
 
@@ -40,8 +36,6 @@ PhonePC/2in1TabletTVWearable
 
 ## Direction
 
-PhonePC/2in1TabletTVWearable
-
 表示屏幕方向的枚举，用于[Configuration.direction](js-apis-app-ability-configuration.md#configuration)字段。开发者可以使用这些预置枚举设置或获取系统/应用的显示方向。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
@@ -55,8 +49,6 @@ PhonePC/2in1TabletTVWearable
 | DIRECTION\_HORIZONTAL | 1 | 表示水平方向。 |
 
 ## ScreenDensity
-
-PhonePC/2in1TabletTVWearable
 
 表示屏幕像素密度的枚举，用于[Configuration.screenDensity](js-apis-app-ability-configuration.md#configuration)字段。开发者可以使用这些预置枚举设置或获取屏幕的像素密度。
 

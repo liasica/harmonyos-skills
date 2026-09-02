@@ -3,59 +3,59 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_type-anno
 title: "@typescript-eslint/type-annotation-spacing"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/type-annotation-spacing
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:51+08:00
+scraped_at: 2026-09-02T15:00:22+08:00
 doc_updated_at: 2026-02-09
-content_hash: sha256:462e8b02556aa1c514e83cc3f16d783ef9e16d2e896bc377a67aad160893ee22
+content_hash: sha256:b356dfa878de807adbb4eee2090c7d16dd9116cae9b3eb096940a9da90bdec75
 ---
 
 类型注解前后需要一致的空格风格。
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@typescript-eslint/type-annotation-spacing": "error"
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@typescript-eslint/type-annotation-spacing": "error"
+  }
+}
 ```
 
 ## 选项
 
 支持配置以下选项：
 
-```
-1. type Options = {
-2. before: boolean;
-3. after: boolean;
-4. overrides: {
-5. colon: {
-6. before: boolean;
-7. after: boolean;
-8. };
-9. arrow: {
-10. before: boolean;
-11. after: boolean;
-12. };
-13. variable: {
-14. before: boolean;
-15. after: boolean;
-16. };
-17. parameter: {
-18. before: boolean;
-19. after: boolean;
-20. };
-21. property: {
-22. before: boolean;
-23. after: boolean;
-24. };
-25. returnType: {
-26. before: boolean;
-27. after: boolean;
-28. };
-29. }
-30. }
+```screen
+type Options = {
+  before: boolean;
+  after: boolean;
+  overrides: {
+    colon: {
+      before: boolean;
+      after: boolean;
+    };
+    arrow: {
+      before: boolean;
+      after: boolean;
+    };
+    variable: {
+      before: boolean;
+      after: boolean;
+    };
+    parameter: {
+      before: boolean;
+      after: boolean;
+    };
+    property: {
+      before: boolean;
+      after: boolean;
+    };
+    returnType: {
+      before: boolean;
+      after: boolean;
+    };
+  }
+}
 ```
 
 * before/after：布尔类型，可以设置为true或者false。true表示类型注解中的冒号（:）和箭头（=>）之前/之后需要加空格，false表示类型注解中的冒号（:）和箭头（=>）之前/之后不需要加空格。
@@ -77,80 +77,80 @@ content_hash: sha256:462e8b02556aa1c514e83cc3f16d783ef9e16d2e896bc377a67aad16089
 
 示例：
 
-```
-1. "@typescript-eslint/type-annotation-spacing": [
-2. "error",
-3. {
-4. "before": true,
-5. "after": true,
-6. "overrides": {
-7. "colon": {
-8. "before": false,
-9. "after": true
-10. },
-11. "arrow": {
-12. "before": true,
-13. "after": true
-14. },
-15. "variable": {
-16. "before": true,
-17. "after": false
-18. },
-19. "parameter": {
-20. "before": false,
-21. "after": true
-22. },
-23. "property": {
-24. "before": true,
-25. "after": false
-26. },
-27. "returnType": {
-28. "before": true,
-29. "after": false
-30. }
-31. }
-32. }
-33. ]
+```screen
+"@typescript-eslint/type-annotation-spacing": [
+  "error",
+  {
+    "before": true,
+    "after": true,
+    "overrides": {
+      "colon": {
+        "before": false,
+        "after": true
+      },
+      "arrow": {
+        "before": true,
+        "after": true
+      },
+      "variable": {
+        "before": true,
+        "after": false
+      },
+      "parameter": {
+        "before": false,
+        "after": true
+      },
+      "property": {
+        "before": true,
+        "after": false
+      },
+      "returnType": {
+        "before": true,
+        "after": false
+      }
+    }
+  }
+]
 ```
 
-说明
+**说明** 
 
 选项存在优先级，overrides下的配置会覆盖overrides之外的配置：overrides.variable/parameter/property/returnType > overrides.colon/arrow > before/after。
 
 ## 正例
 
-```
-1. // 默认冒号前无空格，冒号后有空格
-2. export const foo1: string = 'bar';
+```screen
+// 默认冒号前无空格，冒号后有空格
+export const foo1: string = 'bar';
 
-4. export declare function foo2(): string;
+export declare function foo2(): string;
 
-6. export class Foo3 {
-7. public name: string = 'hello';
-8. }
-9. // 默认箭头前后都有空格
-10. export declare type Foo4 = () => void;
+export class Foo3 {
+  public name: string = 'hello';
+}
+// 默认箭头前后都有空格
+export declare type Foo4 = () => void;
 ```
 
 ## 反例
 
-```
-1. // 默认冒号前无空格，冒号后有空格
-2. export const foo1 :string = 'bar';
+```screen
+// 默认冒号前无空格，冒号后有空格
+export const foo1 :string = 'bar';
 
-4. export declare function foo2() :string;
+export declare function foo2() :string;
 
-6. export class Foo3 {
-7. public name :string = 'hello';
-8. }
-9. // 默认箭头前后都有空格
-10. export declare type Foo4 = ()=>void;
+export class Foo3 {
+  public name :string = 'hello';
+}
+// 默认箭头前后都有空格
+export declare type Foo4 = ()=>void;
 ```
 
 ## 规则集
 
-```
-1. plugin:@typescript-eslint/all
+```screen
+plugin:@typescript-eslint/all
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

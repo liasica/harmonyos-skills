@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-remote-device
 title: remoteDevice（对端设备的连接能力）
-breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API参考 > remoteDevice（对端设备的连接能力）
+breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API > remoteDevice（对端设备的连接能力）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:18+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:05472805b65a1a5bb46fc24774f8071f143a6ace5a44eabc2598f5e24760ed22
+scraped_at: 2026-09-02T15:01:53+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:95a23596457e9969069abcc2185c5fa8e190501c0956e22404679c929a3e4d9e
 ---
 
 本模块提供了查询远端设备信息、发起配对等功能。
@@ -16,19 +16,17 @@ content_hash: sha256:05472805b65a1a5bb46fc24774f8071f143a6ace5a44eabc2598f5e2476
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { remoteDevice } from '@kit.NearLinkKit';
+```typescript
+import { remoteDevice } from '@kit.NearLinkKit';
 ```
 
 ## PairingState
 
-PhonePC/2in1TabletTVWearable
-
-type PairingState = [constant.PairingState](nearlink-constant.md#pairingstate)
+type PairingState = constant.PairingState
 
 表示和远端设备的配对状态，为枚举值。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
@@ -40,11 +38,11 @@ type PairingState = [constant.PairingState](nearlink-constant.md#pairingstate)
 
 ## ConnectionState
 
-PhonePC/2in1TabletTVWearable
-
-type ConnectionState = [constant.ConnectionState](nearlink-constant.md#connectionstate)
+type ConnectionState = constant.ConnectionState
 
 表示和远端设备的连接状态，为枚举值。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
@@ -56,11 +54,11 @@ type ConnectionState = [constant.ConnectionState](nearlink-constant.md#connectio
 
 ## DeviceClass
 
-PhonePC/2in1TabletTVWearable
-
-type DeviceClass = [constant.DeviceClass](nearlink-constant.md#deviceclass)
+type DeviceClass = constant.DeviceClass
 
 表示设备类型，为枚举值。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
@@ -72,11 +70,11 @@ type DeviceClass = [constant.DeviceClass](nearlink-constant.md#deviceclass)
 
 ## AcbState
 
-PhonePC/2in1TabletTVWearable
-
-type AcbState = [constant.AcbState](nearlink-constant.md#acbstate)
+type AcbState = constant.AcbState
 
 表示和远端设备的逻辑链路连接状态，为枚举值。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
@@ -88,11 +86,11 @@ type AcbState = [constant.AcbState](nearlink-constant.md#acbstate)
 
 ## createRemoteDevice
 
-PhonePC/2in1TabletTVWearable
-
 createRemoteDevice(address: string): RemoteDevice
 
 创建远端设备实例。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
@@ -102,7 +100,7 @@ createRemoteDevice(address: string): RemoteDevice
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| address | string | 是 | 远端设备地址。地址格式参考："11:22:33:AA:BB:FF"。 |
+| address | string | 是 | 远端设备地址。地址格式参考：11:22:33:AA:BB:FF。 |
 
 **返回值：**
 
@@ -112,36 +110,35 @@ createRemoteDevice(address: string): RemoteDevice
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](nearlink-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-nearlink.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameter |
-| 801 | Capability not supported |
+| 801 | Capability not supported. |
 
 **示例：**
 
-```
-1. import { remoteDevice } from '@kit.NearLinkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { remoteDevice } from '@kit.NearLinkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let addr: string = '00:11:22:33:AA:FF'; // 扫描获取到的远端设备地址
-5. let device: remoteDevice.RemoteDevice;
-6. try {
-7. device = remoteDevice.createRemoteDevice(addr);
-8. console.info('device: ' + JSON.stringify(device));
-9. } catch (err) {
-10. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-11. }
+let addr: string = '00:11:22:33:AA:FF'; // 扫描获取到的远端设备地址
+let device: remoteDevice.RemoteDevice;
+try {
+  device = remoteDevice.createRemoteDevice(addr);
+  console.info('device: ' + JSON.stringify(device));
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## RemoteDevice
 
-PhonePC/2in1TabletTVWearable
-
-说明
+**说明** 
 
 提供远端设备的操作方法，使用前需要使用[remoteDevice.createRemoteDevice](nearlink-remote-device.md#createremotedevice)方法创建一个远端设备[RemoteDevice](nearlink-remote-device.md#remotedevice)实例。一个设备只需要创建一次，无需多次创建。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
@@ -149,11 +146,11 @@ PhonePC/2in1TabletTVWearable
 
 ### startPairing
 
-PhonePC/2in1TabletTVWearable
-
 startPairing(): Promise<void>
 
 发起与远端设备的配对。使用Promise异步回调。发起配对后，将依据本端与远端设备的输入输出能力标识弹出不同类型的弹窗，需使用者进一步确认。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.ACCESS\_NEARLINK
 
@@ -165,44 +162,46 @@ startPairing(): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象，无返回值。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](nearlink-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-nearlink.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied |
-| 801 | Capability not supported |
-| 1009700003 | Nearlink is off |
-| 1009700099 | Operation failed |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 1009700003 | NearLink is off. |
+| 1009700099 | Operation failed. |
 
 **示例：**
 
-```
-1. import { remoteDevice } from '@kit.NearLinkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { remoteDevice } from '@kit.NearLinkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let addr: string = '00:11:22:33:AA:FF'; // 扫描获取到的远端设备地址
-5. let device: remoteDevice.RemoteDevice;
-6. try {
-7. device = remoteDevice.createRemoteDevice(addr);
-8. device.startPairing().then(()=>{
-9. console.info('start pairing success');
-10. });
-11. } catch (err) {
-12. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-13. }
+let addr: string = '00:11:22:33:AA:FF'; // 扫描获取到的远端设备地址
+let device: remoteDevice.RemoteDevice;
+try {
+  device = remoteDevice.createRemoteDevice(addr);
+  device.startPairing().then(()=>{
+    console.info('start pairing success');
+  }).catch ((err: BusinessError) => {
+    console.error('errCode: ' + err.code + ', errMessage: ' + err.message);
+  });
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ### getPairingState
 
-PhonePC/2in1TabletTVWearable
-
 getPairingState(): PairingState
 
 获取和远端设备的配对状态。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.ACCESS\_NEARLINK
 
@@ -218,39 +217,39 @@ getPairingState(): PairingState
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](nearlink-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-nearlink.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied |
-| 801 | Capability not supported |
-| 1009700003 | Nearlink is off |
-| 1009700099 | Operation failed |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 1009700003 | NearLink is off. |
+| 1009700099 | Operation failed. |
 
 **示例：**
 
-```
-1. import { remoteDevice } from '@kit.NearLinkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { remoteDevice } from '@kit.NearLinkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let addr: string = '00:11:22:33:AA:FF'; // 扫描获取到的远端设备地址
-5. let device: remoteDevice.RemoteDevice;
-6. try {
-7. device = remoteDevice.createRemoteDevice(addr);
-8. let state: remoteDevice.PairingState = device.getPairingState();
-9. console.info('state:' + JSON.stringify(state));
-10. } catch (err) {
-11. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-12. }
+let addr: string = '00:11:22:33:AA:FF'; // 扫描获取到的远端设备地址
+let device: remoteDevice.RemoteDevice;
+try {
+  device = remoteDevice.createRemoteDevice(addr);
+  let state: remoteDevice.PairingState = device.getPairingState();
+  console.info('state:' + JSON.stringify(state));
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ### getDeviceName
 
-PhonePC/2in1TabletTVWearable
-
 getDeviceName(): string
 
 获取远端设备名称。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.ACCESS\_NEARLINK
 
@@ -266,39 +265,39 @@ getDeviceName(): string
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](nearlink-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-nearlink.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied |
-| 801 | Capability not supported |
-| 1009700003 | Nearlink is off |
-| 1009700099 | Operation failed |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 1009700003 | NearLink is off. |
+| 1009700099 | Operation failed. |
 
 **示例：**
 
-```
-1. import { remoteDevice } from '@kit.NearLinkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { remoteDevice } from '@kit.NearLinkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let addr: string = '00:11:22:33:AA:FF'; // 扫描获取到的远端设备地址
-5. let device: remoteDevice.RemoteDevice;
-6. try {
-7. device = remoteDevice.createRemoteDevice(addr);
-8. let name: string = device.getDeviceName();
-9. console.info('state:' + JSON.stringify(name));
-10. } catch (err) {
-11. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-12. }
+let addr: string = '00:11:22:33:AA:FF'; // 扫描获取到的远端设备地址
+let device: remoteDevice.RemoteDevice;
+try {
+  device = remoteDevice.createRemoteDevice(addr);
+  let name: string = device.getDeviceName();
+  console.info('name:' + JSON.stringify(name));
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ### getDeviceClass
 
-PhonePC/2in1TabletTVWearable
-
 getDeviceClass(): DeviceClass
 
 获取远端设备类型。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.ACCESS\_NEARLINK
 
@@ -314,39 +313,39 @@ getDeviceClass(): DeviceClass
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](nearlink-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-nearlink.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied |
-| 801 | Capability not supported |
-| 1009700003 | Nearlink is off |
-| 1009700099 | Operation failed |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 1009700003 | NearLink is off. |
+| 1009700099 | Operation failed. |
 
 **示例：**
 
-```
-1. import { remoteDevice } from '@kit.NearLinkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { remoteDevice } from '@kit.NearLinkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let addr: string = '00:11:22:33:AA:FF'; // 扫描获取到的远端设备地址
-5. let device: remoteDevice.RemoteDevice;
-6. try {
-7. device = remoteDevice.createRemoteDevice(addr);
-8. let type: remoteDevice.DeviceClass = device.getDeviceClass();
-9. console.info('type:' + JSON.stringify(type));
-10. } catch (err) {
-11. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-12. }
+let addr: string = '00:11:22:33:AA:FF'; // 扫描获取到的远端设备地址
+let device: remoteDevice.RemoteDevice;
+try {
+  device = remoteDevice.createRemoteDevice(addr);
+  let type: remoteDevice.DeviceClass = device.getDeviceClass();
+  console.info('type:' + JSON.stringify(type));
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ### getConnectionState
 
-PhonePC/2in1TabletTVWearable
-
 getConnectionState(): ConnectionState
 
 获取本端设备和远端设备的连接状态。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.ACCESS\_NEARLINK
 
@@ -362,39 +361,39 @@ getConnectionState(): ConnectionState
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](nearlink-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-nearlink.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied |
-| 801 | Capability not supported |
-| 1009700003 | Nearlink is off |
-| 1009700099 | Operation failed |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 1009700003 | NearLink is off. |
+| 1009700099 | Operation failed. |
 
 **示例：**
 
-```
-1. import { remoteDevice } from '@kit.NearLinkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { remoteDevice } from '@kit.NearLinkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let addr: string = '00:11:22:33:AA:FF'; // 扫描获取到的远端设备地址
-5. let device: remoteDevice.RemoteDevice;
-6. try {
-7. device = remoteDevice.createRemoteDevice(addr);
-8. let state: remoteDevice.ConnectionState = device.getConnectionState();
-9. console.info('state:' + JSON.stringify(state));
-10. } catch (err) {
-11. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-12. }
+let addr: string = '00:11:22:33:AA:FF'; // 扫描获取到的远端设备地址
+let device: remoteDevice.RemoteDevice;
+try {
+  device = remoteDevice.createRemoteDevice(addr);
+  let state: remoteDevice.ConnectionState = device.getConnectionState();
+  console.info('state:' + JSON.stringify(state));
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ### getAcbState
 
-PhonePC/2in1TabletTVWearable
-
 getAcbState(): AcbState
 
 获取和远端设备的逻辑链路连接状态。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.ACCESS\_NEARLINK
 
@@ -410,28 +409,93 @@ getAcbState(): AcbState
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](nearlink-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-nearlink.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied |
-| 801 | Capability not supported |
-| 1009700003 | Nearlink is off |
-| 1009700099 | Operation failed |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 1009700003 | NearLink is off. |
+| 1009700099 | Operation failed. |
 
 **示例：**
 
-```
-1. import { remoteDevice } from '@kit.NearLinkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { remoteDevice } from '@kit.NearLinkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let addr: string = '00:11:22:33:AA:FF'; // 扫描获取到的远端设备地址
-5. let device: remoteDevice.RemoteDevice;
-6. try {
-7. device = remoteDevice.createRemoteDevice(addr);
-8. let state: remoteDevice.AcbState = device.getAcbState();
-9. console.info('state:' + JSON.stringify(state));
-10. } catch (err) {
-11. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-12. }
+let addr: string = '00:11:22:33:AA:FF'; // 扫描获取到的远端设备地址
+let device: remoteDevice.RemoteDevice;
+try {
+  device = remoteDevice.createRemoteDevice(addr);
+  let state: remoteDevice.AcbState = device.getAcbState();
+  console.info('state:' + JSON.stringify(state));
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
+
+### getDeviceInformation
+
+getDeviceInformation(): DeviceInformation
+
+获取远端设备的设备信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**需要权限：** ohos.permission.ACCESS\_NEARLINK
+
+**系统能力：** SystemCapability.Communication.NearLink.Core
+
+**起始版本：** 6.1.1(24)
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [DeviceInformation](nearlink-remote-device.md#deviceinformation) | 远端设备的设备信息。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-nearlink.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 1009700003 | NearLink is off. |
+| 1009700099 | Operation failed. |
+
+**示例：**
+
+```typescript
+import { remoteDevice } from '@kit.NearLinkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { buffer } from '@kit.ArkTS';
+
+let addr: string = '00:11:22:33:AA:FF'; // 扫描获取到的远端设备地址
+let device: remoteDevice.RemoteDevice;
+try {
+  device = remoteDevice.createRemoteDevice(addr);
+  let deviceInfo: remoteDevice.DeviceInformation = device.getDeviceInformation();
+  console.info('deviceInfo.manufacturerData:' + buffer.from(deviceInfo.manufacturerData, 'binary').toString('hex'));
+  console.info('deviceInfo.modelData:' + buffer.from(deviceInfo.modelData, 'binary').toString('hex'));
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
+```
+
+## DeviceInformation
+
+表示远端设备信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Communication.NearLink.Core
+
+**起始版本：** 6.1.1(24)
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| manufacturerData | string | 否 | 否 | 厂商信息。 |
+| modelData | string | 否 | 否 | 设备型号信息。 |

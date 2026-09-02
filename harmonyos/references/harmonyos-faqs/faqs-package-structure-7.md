@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: SharedLibrary能否在配置文件中声明abilities、extensionAbilities标签
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > SharedLibrary能否在配置文件中声明abilities、extensionAbilities标签
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:27+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:13+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:4078219eb9fdf25dd19c4b815df219d9a6a0468ee26f31fbccd095ecc5bea787
 ---
 

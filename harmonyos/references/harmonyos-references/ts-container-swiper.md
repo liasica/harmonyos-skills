@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Swiper
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > Swiper
 category: harmonyos-references
-scraped_at: 2026-04-29T13:51:48+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6e24700458dafe4226ec143da6190cf68268aae4642d4314421d38119a9da9a8
+scraped_at: 2026-09-02T15:00:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:52b293c64b548af813b00e58032c93f69fa1fe860346c6cb935c4bfcb83e0bb0
 ---
 
 滑块视图容器，提供子组件滑动轮播显示的能力。
 
-说明
+**说明** 
 
 * 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * Swiper组件通过内置的[PanGesture](ts-basic-gestures-pangesture.md)拖动手势实现滑动轮播效果，将[disableSwipe](ts-container-swiper.md#disableswipe8)属性设为true时，会禁用该手势监听，从而阻止滑动操作。
@@ -18,11 +18,9 @@ content_hash: sha256:6e24700458dafe4226ec143da6190cf68268aae4642d4314421d38119a9
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 可以包含子组件。
 
-说明
+**说明** 
 
 * 子组件类型：系统组件和自定义组件，支持渲染控制类型（[if/else](../harmonyos-guides/arkts-rendering-control-ifelse.md)、[ForEach](../harmonyos-guides/arkts-rendering-control-foreach.md)、[LazyForEach](../harmonyos-guides/arkts-rendering-control-lazyforeach.md)和[Repeat](../harmonyos-guides/arkts-new-rendering-control-repeat.md)）。不建议子组件中混用懒加载组件（包括LazyForEach、Repeat）和非懒加载组件，或者子组件中使用多个懒加载组件，否则可能导致懒加载组件预加载能力失效等问题。不建议在组件动画过程中对数据源进行操作，否则会导致布局出现异常。
 * Swiper子组件的[visibility](ts-universal-attributes-visibility.md#visibility)属性设置为Visibility.None，且Swiper的displayCount属性设置为'auto'时，对应子组件在视窗内不占位，但不影响导航点个数；visibility属性设置为Visibility.None或者Visibility.Hidden时，对应子组件不显示，但依然会在视窗内占位。
@@ -31,8 +29,6 @@ PhonePC/2in1TabletTVWearable
 * 在包含大量子组件的场景中，建议采用懒加载、缓存数据、预加载数据和组件复用等方法，以优化Swiper的性能并减少内存占用。最佳实践请参考[优化Swiper组件加载慢丢帧问题](../best-practices/bpta-swiper_high_performance_development_guide.md)。
 
 ## 接口
-
-PhonePC/2in1TabletTVWearable
 
 Swiper(controller?: SwiperController)
 
@@ -52,17 +48,13 @@ Swiper(controller?: SwiperController)
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用属性](ts-component-general-attributes.md)外，还支持以下属性：
 
-说明
+**说明** 
 
 Swiper组件通用属性[clip](ts-universal-attributes-sharp-clipping.md#clip12)的默认值为true。
 
 ### index
-
-PhonePC/2in1TabletTVWearable
 
 index(value: number)
 
@@ -84,8 +76,6 @@ index(value: number)
 
 ### autoPlay
 
-PhonePC/2in1TabletTVWearable
-
 autoPlay(value: boolean)
 
 设置子组件是否自动播放。轮播方向为索引从小到大。
@@ -106,8 +96,6 @@ autoPlay(value: boolean)
 
 ### autoPlay18+
 
-PhonePC/2in1TabletTVWearable
-
 autoPlay(autoPlay: boolean, options: AutoPlayOptions)
 
 设置子组件是否自动播放。options入参控制手指或者鼠标等按下屏幕时子组件是否停止自动播放。
@@ -117,6 +105,8 @@ autoPlay(autoPlay: boolean, options: AutoPlayOptions)
 **卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -128,8 +118,6 @@ autoPlay(autoPlay: boolean, options: AutoPlayOptions)
 | options | [AutoPlayOptions](ts-container-swiper.md#autoplayoptions18对象说明) | 是 | 配置手指或者鼠标等按下屏幕时子组件是否停止自动播放。当stopWhenTouched设置为true时，多指按下场景中任意一个手指抬起后，将自动继续播放。  默认值：{ stopWhenTouched: true }，停止自动播放。 |
 
 ### indicator
-
-PhonePC/2in1TabletTVWearable
 
 indicator(value: DotIndicator | DigitIndicator | boolean)
 
@@ -149,13 +137,11 @@ indicator(value: DotIndicator | DigitIndicator | boolean)
 
 ### indicator15+
 
-PhonePC/2in1TabletTVWearable
-
 indicator(indicator: IndicatorComponentController | DotIndicator | DigitIndicator | boolean)
 
 设置外部绑定的导航点组件控制器。
 
-说明
+**说明** 
 
 设置外部绑定的导航点组件控制器后，可以和外部导航点结合使用。外部导航点支持自定义设置显示位置和大小。详细介绍可参看[Indicator](ts-swiper-components-indicator.md)。
 
@@ -163,27 +149,29 @@ indicator(indicator: IndicatorComponentController | DotIndicator | DigitIndicato
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| indicator | [IndicatorComponentController](ts-swiper-components-indicator.md#indicatorcomponentcontroller)15+ | [DotIndicator](ts-container-swiper.md#dotindicator10) | [DigitIndicator](ts-container-swiper.md#digitindicator10) | boolean | 是 | 可选导航点指示器样式。  - IndicatorComponentController：单独导航点指示器控制器。当使用单独导航点指示器控制器时，可以与外部单独导航点进行绑定，但是绑定的单独导航点和内置导航点不能同时存在。  - DotIndicator：圆点指示器样式。  - DigitIndicator：数字指示器样式。  - boolean：是否启用导航点指示器。设置为true启用，false不启用。  默认值：true  默认类型：DotIndicator。 |
+| indicator | [IndicatorComponentController](ts-swiper-components-indicator.md#indicatorcomponentcontroller)15+ | [DotIndicator](ts-container-swiper.md#dotindicator10) | [DigitIndicator](ts-container-swiper.md#digitindicator10) | boolean | 是 | 可选导航点指示器样式。  - IndicatorComponentController：单独导航点指示器控制器。当使用单独导航点指示器控制器时，可以与外部单独导航点进行绑定，但是绑定的单独导航点和内置导航点不能同时存在。  - DotIndicator：圆点指示器样式。  - DigitIndicator：数字指示器样式。  - boolean：是否启用导航点指示器。设置为true启用，false不启用。  默认值：true  默认类型：DotIndicator |
 
 ### nestedScroll11+
-
-PhonePC/2in1TabletTVWearable
 
 nestedScroll(value: SwiperNestedScrollMode)
 
 设置Swiper组件和父组件的嵌套滚动模式。[loop](ts-container-swiper.md#loop)为true时Swiper组件没有边缘，不会触发父组件嵌套滚动。
 
-说明
+**说明** 
 
 由于Swiper的抛滑动画逻辑和其它滚动类组件不同（Swiper一次只能滑动一页，抛滑时做翻页动画），当Swiper内嵌套其它滚动组件时，如果Swiper的翻页动画已经启动，将无法接受子节点上传的滚动偏移量。这时Swiper的翻页动画和子节点的边缘效果动画会同时执行。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -195,11 +183,13 @@ nestedScroll(value: SwiperNestedScrollMode)
 
 ### loop
 
-PhonePC/2in1TabletTVWearable
-
 loop(value: boolean)
 
 设置是否开启循环。在LazyForEach懒循环加载模式下，加载的组件数量建议大于5个。
+
+**说明** 
+
+循环场景下，设置prevMargin/nextMargin属性，屏幕朗读线性遍历子组件时会触发“聚焦-滚动-暴露新子节点”的无限循环。建议在该场景下，设置loop为false或者使用[accessibilityGroup](ts-universal-attributes-accessibility.md#accessibilitygroup14)设置子组件不启用无障碍服务。
 
 **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
 
@@ -214,8 +204,6 @@ loop(value: boolean)
 | value | boolean | 是 | 是否开启循环。  true：开启循环；false：不开启循环。  传入参数非法时，按true处理。 |
 
 ### effectMode8+
-
-PhonePC/2in1TabletTVWearable
 
 effectMode(value: EdgeEffect)
 
@@ -235,8 +223,6 @@ effectMode(value: EdgeEffect)
 
 ### interval
 
-PhonePC/2in1TabletTVWearable
-
 interval(value: number)
 
 设置使用自动播放时播放的时间间隔。
@@ -254,8 +240,6 @@ interval(value: number)
 | value | number | 是 | 自动播放时播放的时间间隔。当该值小于[duration](ts-container-swiper.md#duration)属性值时，翻页完成后会立即开始下一次轮播。  默认值：3000  单位：毫秒  取值范围：[0, +∞)，设置小于0的值时，按照默认值处理。 |
 
 ### duration
-
-PhonePC/2in1TabletTVWearable
 
 duration(value: number)
 
@@ -277,8 +261,6 @@ curve默认曲线为[interpolatingSpring](js-apis-curve.md#curvesinterpolatingsp
 
 ### curve8+
 
-PhonePC/2in1TabletTVWearable
-
 curve(value: Curve | string | ICurve)
 
 设置Swiper的动画曲线，默认为弹簧插值曲线，常用曲线参考[Curve枚举说明](ts-appendix-enums.md#curve)，也可以通过[插值计算](js-apis-curve.md)模块提供的接口创建自定义的插值曲线对象。
@@ -297,8 +279,6 @@ curve(value: Curve | string | ICurve)
 
 ### vertical
 
-PhonePC/2in1TabletTVWearable
-
 vertical(value: boolean)
 
 设置是否为纵向滑动。
@@ -316,8 +296,6 @@ vertical(value: boolean)
 | value | boolean | 是 | 是否为纵向滑动。true为纵向滑动，false为横向滑动。  默认值：false |
 
 ### itemSpace
-
-PhonePC/2in1TabletTVWearable
 
 itemSpace(value: number | string)
 
@@ -339,13 +317,11 @@ itemSpace(value: number | string)
 
 ### cachedCount8+
 
-PhonePC/2in1TabletTVWearable
-
 cachedCount(value: number)
 
 设置预加载子组件个数，以当前页面为基准，加载当前显示页面的前后个数。前面item删除，后面会向前补位。例如cachedCount=1时，会将当前显示的页面的前面一页和后面一页的子组件都预加载。如果设置为按组翻页，即displayCount的swipeByGroup参数设为true，预加载时会以组为基本单位。例如cachedCount=1，swipeByGroup=true时，会将当前组的前面一组和后面一组的子组件都预加载。
 
-说明
+**说明** 
 
 * 在连续滑动场景中，一屏显示一个Swiper子组件时，通常将cachedCount值设置为1或2即可。最佳实践请参考[优化Swiper组件加载慢丢帧问题-缓存数据项](../best-practices/bpta-swiper_high_performance_development_guide.md#section143504547145)。
 * 只在[LazyForEach](../harmonyos-guides/arkts-rendering-control-lazyforeach.md)和开启了virtualScroll开关的[Repeat](../harmonyos-guides/arkts-new-rendering-control-repeat.md)中生效，生效后超出显示及缓存范围的子节点会被释放。
@@ -364,19 +340,19 @@ cachedCount(value: number)
 
 ### cachedCount15+
 
-PhonePC/2in1TabletTVWearable
-
 cachedCount(count: number, isShown: boolean)
 
 设置预加载子组件个数。
 
-说明
+**说明** 
 
 * isShown值为true，且设置的count过大时，如果前后预加载范围内可加载的节点不足，循环场景下同一个可加载节点只会布局在一侧。
 
 **卡片能力：** 从API version 15开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -387,9 +363,34 @@ cachedCount(count: number, isShown: boolean)
 | count | number | 是 | 预加载子组件个数。  默认值：1  取值范围：[0, +∞)，设置小于0的值时，按照默认值处理。 |
 | isShown | boolean | 是 | 预加载范围内的节点是否进行绘制，不下渲染树。  true：预加载范围内的节点进行绘制；false：预加载范围内的节点不进行绘制。  传入非法值时，按false处理。 |
 
-### disableSwipe8+
+### cachedCount24+
 
-PhonePC/2in1TabletTVWearable
+cachedCount(count: number, options: CachedCountOptions)
+
+设置预加载子组件个数和配置选项。
+
+**说明** 
+
+* 当options的independent设置为true时，预加载子组件个数按count个数计算，与[displayCount](ts-container-swiper.md#displaycount22)的分组swipeByGroup计算解耦。例如cachedCount的count为1时，会将当前显示子节点的前一个和后一个子组件预加载。
+* 当displayCount的swipeByGroup参数设为true，且options的independent为false（默认值）时，预加载子组件个数以组为基本单位。例如cachedCount的count为1，displayCount的value为2，displayCount的swipeByGroup为true时，会将当前显示组的前一组和后一组的各两个子组件预加载。
+* 只在[LazyForEach](../harmonyos-guides/arkts-rendering-control-lazyforeach.md)和开启了virtualScroll开关的[Repeat](../harmonyos-guides/arkts-new-rendering-control-repeat.md)中生效，生效后超出缓存范围的子节点会被释放。
+
+**卡片能力：** 从API version 24开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 24开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| count | number | 是 | 预加载子组件个数。  取值范围：[0, +∞)，设置小于0的值时，按照1处理。 |
+| options | [CachedCountOptions](ts-container-swiper.md#cachedcountoptions24对象说明) | 是 | 预加载子组件的配置选项。 |
+
+### disableSwipe8+
 
 disableSwipe(value: boolean)
 
@@ -409,8 +410,6 @@ disableSwipe(value: boolean)
 
 ### displayCount8+
 
-PhonePC/2in1TabletTVWearable
-
 displayCount(value: number | string | SwiperAutoFill, swipeByGroup?: boolean)
 
 设置Swiper视窗内元素显示个数。
@@ -421,7 +420,7 @@ displayCount(value: number | string | SwiperAutoFill, swipeByGroup?: boolean)
 
 使用SwiperAutoFill类型时，子元素主轴宽度会基于Swiper主轴宽度适应。通过设置一个子组件最小宽度值minSize，会根据Swiper当前宽度和minSize值自动计算并更改一页内元素显示个数。当minSize为空或者小于等于0时，Swiper显示1列。
 
-说明
+**说明** 
 
 * 按组进行翻页时，判定翻页的拖拽距离阈值将调整为Swiper宽度的50%（若按子元素翻页，该阈值为子元素宽度的50%）。若最后一组的子元素数量少于displayCount，将利用占位子元素进行填充，占位子元素仅用于布局定位，不显示任何内容，其位置将直接显示Swiper的背景样式。
 * displayCount设置为'auto'，并且设置loop属性的值为false时，选中导航点的位置与视窗内首个页面的位置保持一致。如果翻页完成后，视窗内首个页面仅部分显示在视窗内，选中导航点亦与页面的位置保持一致，位于两个未选中的导航点之间。在此情况下，建议开发者隐藏导航点。
@@ -451,11 +450,9 @@ displayCount(value: number | string | SwiperAutoFill, swipeByGroup?: boolean)
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | string | [SwiperAutoFill](ts-container-swiper.md#swiperautofill10)10+ | 是 | 视窗内显示的子元素个数。  默认值：1  取值范围：(0, +∞)，设置小于等于0的值时，按照默认值处理。 |
-| swipeByGroup11+ | boolean | 否 | 是否按组进行翻页。如果设为true，在翻页时会按组进行翻页，每组内子元素的数量为displayCount value的值；如果为false，则为默认翻页行为，即按照子元素进行翻页。  默认值：false |
+| swipeByGroup11+ | boolean | 否 | 是否按组进行翻页。如果设为true，在翻页时会按组进行翻页，每组内子元素的数量为displayCount value的值；如果为false，则为默认翻页行为，即按照子元素进行翻页。  默认值：false  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ### displayCount22+
-
-PhonePC/2in1TabletTVWearable
 
 displayCount(value: number | string | SwiperAutoFill | ItemFillPolicy, swipeByGroup?: boolean)
 
@@ -475,6 +472,8 @@ displayCount(value: number | string | SwiperAutoFill | ItemFillPolicy, swipeByGr
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -484,7 +483,7 @@ displayCount(value: number | string | SwiperAutoFill | ItemFillPolicy, swipeByGr
 | value | number | string | [SwiperAutoFill](ts-container-swiper.md#swiperautofill10) | [ItemFillPolicy](ts-types.md#itemfillpolicy22) | 是 | 视窗内显示的子元素个数。  取值范围：(0, +∞)，设置小于等于0的值时，按照1处理。 |
 | swipeByGroup | boolean | 否 | 是否按组进行翻页。如果设为true，在翻页时会按组进行翻页，每组内子元素的数量为displayCount的值；如果为false，则为默认翻页行为，即按照子元素进行翻页。  默认值：false |
 
-说明
+**说明** 
 
 当Swiper子组件个数小于等于Swiper组件内容区内显示的节点总个数(totalDisplayCount = DisplayCount + prevMargin? (1 : 0) + nextMargin? (1 : 0))时，一般按照非循环模式布局处理，此时，前后边距对应子组件不显示，但依然会在视窗内占位。Swiper组件按照totalDisplayCount个数判断测算规格。例外情况如下：
 
@@ -493,17 +492,17 @@ displayCount(value: number | string | SwiperAutoFill | ItemFillPolicy, swipeByGr
 
 ### displayArrow10+
 
-PhonePC/2in1TabletTVWearable
-
 displayArrow(value: ArrowStyle | boolean, isHoverShow?: boolean)
 
 设置导航点箭头样式。
 
-说明
+**说明** 
 
 Swiper视窗内显示所有子节点时，只显示一屏，无法翻页，左右翻页箭头均不显示。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -515,8 +514,6 @@ Swiper视窗内显示所有子节点时，只显示一屏，无法翻页，左�
 | isHoverShow | boolean | 否 | 设置鼠标悬停时是否显示箭头。  默认值：false  **说明：**  1. isHoverShow为false时，常驻显示箭头。  2. isHoverShow为true时，有导航点时鼠标悬停在导航点和箭头范围内显示箭头，无导航点时鼠标悬停在Swiper显示范围内显示箭头。  3. 箭头显示时，支持点击翻页。 |
 
 ### displayMode
-
-PhonePC/2in1TabletTVWearable
 
 displayMode(value: SwiperDisplayMode)
 
@@ -536,23 +533,23 @@ displayMode(value: SwiperDisplayMode)
 
 ### nextMargin10+
 
-PhonePC/2in1TabletTVWearable
-
 nextMargin(value: Length, ignoreBlank?:boolean)
 
-设置后边距，用于露出后一项的一小部分，使用效果可以参考[示例1设置导航点交互及翻页动效](ts-container-swiper.md#示例1设置导航点交互及翻页动效)。仅当Swiper子组件的布局方式为拉伸时生效，主要包括两种场景：1、displayMode属性设置为SwiperDisplayMode.STRETCH；2、displayCount属性设置为number类型。
+设置后边距，用于露出后一项的一小部分，使用效果可以参考[示例1](ts-container-swiper.md#示例1设置导航点交互及翻页动效)设置导航点交互及翻页动效。仅当Swiper子组件的布局方式为拉伸时生效，主要包括两种场景：1、displayMode属性设置为SwiperDisplayMode.STRETCH；2、displayCount属性设置为number类型。
 
 当主轴方向为横向布局时，nextMargin或prevMargin中任意一个大于子组件测算的宽度，nextMargin和prevMargin均不显示。
 
 当主轴方向为纵向布局时，nextMargin或prevMargin中任意一个大于子组件测算的高度，nextMargin和prevMargin均不显示。
 
-使用nextMargin/prevMargin接口时，不要对子组件进行[尺寸范围限制](ts-universal-attributes-size.md#constraintsize)，否则子节点主轴将不会被拉伸到预期长度，边距失去效果。
+使用nextMargin/prevMargin接口时，不要对子组件设置[constraintSize](ts-universal-attributes-size.md#constraintsize)属性，否则子节点主轴将不会被拉伸到预期长度，边距失去效果。
 
-说明
+**说明** 
 
 该接口不支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -560,28 +557,28 @@ nextMargin(value: Length, ignoreBlank?:boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Length](ts-types.md#length) | 是 | 后边距。不支持设置百分比。  默认值：0 |
+| value | [Length](ts-types.md#length) | 是 | 后边距。不支持设置百分比。  默认值：0  单位参考[Length](ts-types.md#length)类型的说明。 |
 | ignoreBlank12+ | boolean | 否 | 非loop场景下尾页不显示nextMargin。在非loop场景下，设置为true时，尾页不显示空白的nextMargin，尾页的右边缘与Swiper视窗右边缘对齐；设置false时，尾页显示空白nextMargin，尾页的右边缘与Swiper视窗右边缘的距离为nextMargin。  默认值：false  **说明：**  尾页场景下，prevMargin和nextMargin的值相加作为左边边距显示前一个页面。 |
 
 ### prevMargin10+
 
-PhonePC/2in1TabletTVWearable
-
 prevMargin(value: Length, ignoreBlank?:boolean)
 
-设置前边距，用于露出前一项的一小部分，使用效果可以参考[示例1设置导航点交互及翻页动效](ts-container-swiper.md#示例1设置导航点交互及翻页动效)。仅当Swiper子组件的布局方式为拉伸时生效，主要包括两种场景：1、displayMode属性设置为SwiperDisplayMode.STRETCH；2、displayCount属性设置为number类型。
+设置前边距，用于露出前一项的一小部分，使用效果可以参考[示例1](ts-container-swiper.md#示例1设置导航点交互及翻页动效)设置导航点交互及翻页动效。仅当Swiper子组件的布局方式为拉伸时生效，主要包括两种场景：1、displayMode属性设置为SwiperDisplayMode.STRETCH；2、displayCount属性设置为number类型。
 
 当主轴方向为横向布局时，nextMargin/prevMargin中任意一个大于子组件测算的宽度，nextMargin和prevMargin均不显示。
 
 当主轴方向为纵向布局时，nextMargin/prevMargin中任意一个大于子组件测算的高度，nextMargin和prevMargin均不显示。
 
-使用nextMargin/prevMargin接口时，不要对子组件进行[尺寸范围限制](ts-universal-attributes-size.md#constraintsize)，否则子节点主轴将不会被拉伸到预期长度，边距失去效果。
+使用nextMargin/prevMargin接口时，不要对子组件设置[constraintSize](ts-universal-attributes-size.md#constraintsize)属性，否则子节点主轴将不会被拉伸到预期长度，边距失去效果。
 
-说明
+**说明** 
 
 该接口不支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -589,18 +586,18 @@ prevMargin(value: Length, ignoreBlank?:boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Length](ts-types.md#length) | 是 | 前边距。不支持设置百分比。  默认值：0 |
+| value | [Length](ts-types.md#length) | 是 | 前边距。不支持设置百分比。  默认值：0  单位参考[Length](ts-types.md#length)类型的说明。 |
 | ignoreBlank12+ | boolean | 否 | 非loop场景下首页不显示prevMargin。在非loop场景下，设置为true时，首页不显示空白的prevMargin，首页的左边缘与Swiper视窗左边缘对齐；设置false时，首页显示空白prevMargin，首页的左边缘与Swiper视窗左边缘的距离为prevMargin。  默认值：false  **说明：**  首页场景下，prevMargin和nextMargin的值相加作为右边边距显示后一个页面。 |
 
 ### indicatorInteractive12+
 
-PhonePC/2in1TabletTVWearable
-
 indicatorInteractive(value: boolean)
 
-设置禁用组件导航点交互功能。
+设置组件导航点是否可交互。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -612,8 +609,6 @@ indicatorInteractive(value: boolean)
 
 ### pageFlipMode15+
 
-PhonePC/2in1TabletTVWearable
-
 pageFlipMode(mode: Optional<PageFlipMode>)
 
 设置鼠标滚轮翻页模式。未通过该接口设置时，默认为连续翻页模式，取值为PageFlipMode.CONTINUOUS。
@@ -621,6 +616,8 @@ pageFlipMode(mode: Optional<PageFlipMode>)
 **卡片能力：** 从API version 15开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -632,8 +629,6 @@ pageFlipMode(mode: Optional<PageFlipMode>)
 
 ### maintainVisibleContentPosition20+
 
-PhonePC/2in1TabletTVWearable
-
 maintainVisibleContentPosition(enabled: boolean)
 
 设置显示区域上方或前方插入或删除数据时是否保持可见内容位置不变。适用于使用单一[LazyForEach](../harmonyos-guides/arkts-rendering-control-lazyforeach.md)作为Swiper子节点的情况，通过LazyForEach的[onDataAdd](ts-rendering-control-lazyforeach.md#ondataadd8)、[onDataDelete](ts-rendering-control-lazyforeach.md#ondatadelete8)等接口修改数据源。其他场景下，显示区域上方或前方插入或删除数据，可见内容位置会变化。
@@ -643,6 +638,8 @@ maintainVisibleContentPosition(enabled: boolean)
 **卡片能力：** 从API version 20开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -654,15 +651,13 @@ maintainVisibleContentPosition(enabled: boolean)
 
 ### indicatorStyle(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 indicatorStyle(value?: IndicatorStyle)
 
 设置导航点样式。
 
-说明
+**说明** 
 
-从API version 8开始支持，从API version 10开始废弃，建议使用[indicator](ts-container-swiper.md#indicator)替代。
+从API version 8开始支持，从API version 10开始废弃，建议使用[indicator(value: DotIndicator | DigitIndicator | boolean)](ts-container-swiper.md#indicator)替代。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -674,8 +669,6 @@ indicatorStyle(value?: IndicatorStyle)
 
 ## SwiperDisplayMode枚举说明
 
-PhonePC/2in1TabletTVWearable
-
 Swiper在主轴上的尺寸大小模式枚举。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
@@ -684,16 +677,16 @@ Swiper在主轴上的尺寸大小模式枚举。
 | --- | --- | --- |
 | Stretch(deprecated) | 0 | Swiper滑动一页的宽度为Swiper组件自身的宽度。  **说明**：从API version 7开始支持，从API version 10开始废弃，建议使用STRETCH替代。  **卡片能力：** 从API version 7开始，该接口支持在ArkTS卡片中使用。 |
 | AutoLinear(deprecated) | 1 | Swiper滑动一页的宽度为子组件宽度中的最大值。此枚举表现形式与[displayCount](ts-container-swiper.md#displaycount8)中使用string类型，将值设置为auto表现一致，具体可参考[displayCount](ts-container-swiper.md#displaycount8)说明。  **说明**：从API version 7开始支持，从API version 10开始废弃，建议使用AUTO\_LINEAR替代。  **卡片能力：** 从API version 7开始，该接口支持在ArkTS卡片中使用。 |
-| STRETCH10+ | 0 | Swiper滑动一页的宽度为Swiper组件自身的宽度。  **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| AUTO\_LINEAR(deprecated) | 1 | Swiper滑动一页的宽度为视窗内最左侧子组件的宽度。此枚举表现形式与[displayCount](ts-container-swiper.md#displaycount8)中使用string类型，将值设置为auto表现一致，具体可参考[displayCount](ts-container-swiper.md#displaycount8)说明。  **说明**：从API version 10开始支持，从API version 12开始废弃，建议使用[Scroller.scrollTo](ts-container-scroll.md#scrollto)替代。  **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| STRETCH10+ | 0 | Swiper滑动一页的宽度为Swiper组件自身的宽度。  **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| AUTO\_LINEAR(deprecated) | 1 | Swiper滑动一页的宽度为视窗内最左侧子组件的宽度。此枚举表现形式与[displayCount](ts-container-swiper.md#displaycount8)中使用string类型，将值设置为auto表现一致，具体可参考[displayCount](ts-container-swiper.md#displaycount8)说明。  **说明**：从API version 10开始支持，从API version 12开始废弃，建议使用[Scroller.scrollTo](ts-container-scroll.md#scrollto)替代。  **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## SwiperNestedScrollMode11+枚举说明
-
-PhonePC/2in1TabletTVWearable
 
 Swiper组件和父组件的嵌套滚动模式枚举。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -704,8 +697,6 @@ Swiper组件和父组件的嵌套滚动模式枚举。
 
 ## SwiperController
 
-PhonePC/2in1TabletTVWearable
-
 Swiper容器组件的控制器，可以将此对象绑定至Swiper组件，实现控制Swiper翻页等功能。
 
 **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
@@ -715,8 +706,6 @@ Swiper容器组件的控制器，可以将此对象绑定至Swiper组件，实�
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor()
 
@@ -730,8 +719,6 @@ SwiperController的构造函数。
 
 ### showNext
 
-PhonePC/2in1TabletTVWearable
-
 showNext()
 
 翻至下一页。翻页带动效切换过程，时长通过Swiper的[duration](ts-container-swiper.md#duration)属性设置。
@@ -743,8 +730,6 @@ showNext()
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ### showPrevious
-
-PhonePC/2in1TabletTVWearable
 
 showPrevious()
 
@@ -758,8 +743,6 @@ showPrevious()
 
 ### changeIndex12+
 
-PhonePC/2in1TabletTVWearable
-
 changeIndex(index: number, useAnimation?: boolean)
 
 翻至指定页面。
@@ -767,6 +750,8 @@ changeIndex(index: number, useAnimation?: boolean)
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -779,19 +764,19 @@ changeIndex(index: number, useAnimation?: boolean)
 
 ### changeIndex15+
 
-PhonePC/2in1TabletTVWearable
-
 changeIndex(index: number, animationMode?: SwiperAnimationMode | boolean)
 
 翻页至指定页面。
 
-说明
+**说明** 
 
 该接口本身提供了不带动画跳转页面的能力（animationMode设置为false或者SwiperAnimationMode.NO\_ANIMATION），不建议使用changeIndex接口启动动画后，直接使用finishAnimation接口打断来实现页面不带动画跳转。
 
 **卡片能力：** 从API version 15开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -803,8 +788,6 @@ changeIndex(index: number, animationMode?: SwiperAnimationMode | boolean)
 | animationMode | [SwiperAnimationMode](ts-container-swiper.md#swiperanimationmode15枚举说明) | boolean | 否 | 设置翻页至指定页面时的动效模式。  默认值：SwiperAnimationMode.NO\_ANIMATION  **说明：**  当传入true时有动效，等同于SwiperAnimationMode.DEFAULT\_ANIMATION；当传入false时无动效，等同于SwiperAnimationMode.NO\_ANIMATION。 |
 
 ### finishAnimation
-
-PhonePC/2in1TabletTVWearable
 
 finishAnimation(callback?: VoidCallback)
 
@@ -824,8 +807,6 @@ finishAnimation(callback?: VoidCallback)
 
 ### preloadItems18+
 
-PhonePC/2in1TabletTVWearable
-
 preloadItems(indices: Optional<Array<number>>): Promise<void>
 
 控制Swiper预加载指定子节点。调用该接口后会一次性加载所有指定的子节点，因此为了性能考虑，建议分批加载子节点。使用Promise异步回调。
@@ -834,13 +815,15 @@ preloadItems(indices: Optional<Array<number>>): Promise<void>
 
 与[LazyForEach](../harmonyos-guides/arkts-rendering-control-lazyforeach.md)和自定义组件结合使用时，由于[LazyForEach](../harmonyos-guides/arkts-rendering-control-lazyforeach.md)只会保留缓存范围内的自定义组件，在缓存范围外的会被删除，因此需要开发者保证通过该接口预加载的节点index在缓存范围内。
 
-说明
+**说明** 
 
 Swiper的preloadItems需要在Swiper创建之后去调用，首次预加载推荐在Swiper的[onAppear](ts-universal-events-show-hide.md#onappear)生命周期中去控制。
 
 **卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -867,13 +850,11 @@ Swiper的preloadItems需要在Swiper创建之后去调用，首次预加载推�
 
 ### startFakeDrag23+
 
-PhonePC/2in1TabletTVWearable
-
 startFakeDrag(): boolean
 
 开启模拟拖拽功能。
 
-说明
+**说明** 
 
 * Swiper已经处在真实手势拖拽中，或者已经开启了模拟拖拽，调用接口会返回false表示操作失败。
 * 模拟拖拽无法触发嵌套滚动。
@@ -894,13 +875,11 @@ startFakeDrag(): boolean
 
 ### fakeDragBy23+
 
-PhonePC/2in1TabletTVWearable
-
 fakeDragBy(offset: number): boolean
 
 设置模拟拖拽的拖拽距离。
 
-说明
+**说明** 
 
 * 模拟拖拽的距离需要依赖布局体现，建议接口在布局前调用，拖拽效果可以在当前帧布局后体现。如果在未布局前调用了多次该接口，当前帧布局时只生效最后一次调用传入的拖拽距离。
 * 在[loop](ts-container-swiper.md#loop)设置为true的循环场景下，如果设置的模拟拖拽的距离大于布局总长度，此时模拟拖拽距离会被调整为拖拽到刚好显示第一个子节点（向布局起点拖拽）或者最后一个子节点（向布局终点方向拖拽）的距离。
@@ -928,13 +907,11 @@ fakeDragBy(offset: number): boolean
 
 ### stopFakeDrag23+
 
-PhonePC/2in1TabletTVWearable
-
 stopFakeDrag(): boolean
 
 关闭模拟拖拽功能。
 
-说明
+**说明** 
 
 在开启模拟拖拽后，如果接收到真实拖拽手势，模拟拖拽会结束。
 
@@ -953,8 +930,6 @@ stopFakeDrag(): boolean
 | boolean | 是否关闭模拟拖拽功能。  true表示关闭模拟拖拽功能成功；false表示关闭模拟拖拽功能失败。 |
 
 ### isFakeDragging23+
-
-PhonePC/2in1TabletTVWearable
 
 isFakeDragging(): boolean
 
@@ -976,13 +951,13 @@ isFakeDragging(): boolean
 
 ## SwiperAnimationMode15+枚举说明
 
-PhonePC/2in1TabletTVWearable
-
 Swiper组件翻页至指定页面的动效模式。
 
 **卡片能力：** 从API version 15开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -994,19 +969,17 @@ Swiper组件翻页至指定页面的动效模式。
 
 ## Indicator10+
 
-PhonePC/2in1TabletTVWearable
-
 设置导航点距离Swiper组件距离。由于导航点有默认交互区域，交互区域高度为32vp，所以无法让显示部分完全贴底。若想实现完全贴底，可以使用[IndicatorComponent](ts-swiper-components-indicator.md#indicatorcomponent)组件，更灵活地调整位置。
 
 **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ### left
-
-PhonePC/2in1TabletTVWearable
 
 left(value: Length): T
 
@@ -1016,13 +989,15 @@ left(value: Length): T
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Length](ts-types.md#length) | 是 | 设置导航点左侧相对于Swiper的位置。  未设置left和right时，进行自适应大小布局，按照指示器本身大小和Swiper的大小在主轴方向上进行居中对齐。  设置为0时：按照0位置布局计算。  优先级：高于right属性。  取值范围：[0,Swiper宽度-导航点区域宽度]，超出该范围时，取最近的边界值。 |
+| value | [Length](ts-types.md#length) | 是 | 设置导航点左侧相对于Swiper的位置。  未设置left和right时，进行自适应大小布局，按照指示器本身大小和Swiper的大小在主轴方向上进行居中对齐。  设置为0时：按照0位置布局计算。  优先级：高于right属性。  取值范围：[0,Swiper宽度-导航点区域宽度]，超出该范围时，取最近的边界值。  单位参考[Length](ts-types.md#length)类型的说明。 |
 
 **返回值：**
 
@@ -1032,8 +1007,6 @@ left(value: Length): T
 
 ### top
 
-PhonePC/2in1TabletTVWearable
-
 top(value: Length): T
 
 导航点顶部相对于Swiper的位置。
@@ -1042,13 +1015,15 @@ top(value: Length): T
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Length](ts-types.md#length) | 是 | 设置导航点顶部相对于Swiper的位置。  未设置top和bottom时，进行自适应大小布局，按照指示器本身大小和Swiper的大小，在交叉轴方向上，位于底部，效果与设置bottom=0一致。  设置为0时：按照0位置布局计算。  优先级：高于bottom属性。  取值范围：[0,Swiper高度-导航点区域高度]，超出该范围时，取最近的边界值。 |
+| value | [Length](ts-types.md#length) | 是 | 设置导航点顶部相对于Swiper的位置。  未设置top和bottom时，进行自适应大小布局，按照指示器本身大小和Swiper的大小，在交叉轴方向上，位于底部，效果与设置bottom=0一致。  设置为0时：按照0位置布局计算。  优先级：高于bottom属性。  取值范围：[0,Swiper高度-导航点区域高度]，超出该范围时，取最近的边界值。  单位参考[Length](ts-types.md#length)类型的说明。 |
 
 **返回值：**
 
@@ -1058,8 +1033,6 @@ top(value: Length): T
 
 ### right
 
-PhonePC/2in1TabletTVWearable
-
 right(value: Length): T
 
 导航点右侧相对于Swiper的位置。
@@ -1068,13 +1041,15 @@ right(value: Length): T
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Length](ts-types.md#length) | 是 | 设置导航点右侧相对于Swiper的位置。  未设置left和right时，进行自适应大小布局，按照指示器本身大小和Swiper的大小在主轴方向上进行居中对齐。  设置为0时：按照0位置布局计算。  优先级：低于left属性。  取值范围：[0,Swiper宽度-导航点区域宽度]，超出该范围 时，取最近的边界值。 |
+| value | [Length](ts-types.md#length) | 是 | 设置导航点右侧相对于Swiper的位置。  未设置left和right时，进行自适应大小布局，按照指示器本身大小和Swiper的大小在主轴方向上进行居中对齐。  设置为0时：按照0位置布局计算。  优先级：低于left属性。  取值范围：[0,Swiper宽度-导航点区域宽度]，超出该范围 时，取最近的边界值。  单位参考[Length](ts-types.md#length)类型的说明。 |
 
 **返回值：**
 
@@ -1084,8 +1059,6 @@ right(value: Length): T
 
 ### bottom
 
-PhonePC/2in1TabletTVWearable
-
 bottom(value: Length): T
 
 导航点底部相对于Swiper的位置。
@@ -1094,13 +1067,15 @@ bottom(value: Length): T
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Length](ts-types.md#length) | 是 | 设置导航点底部相对于Swiper的位置。  未设置top和bottom时，进行自适应大小布局，按照指示器本身大小和Swiper的大小，在交叉轴方向上，位于底部，效果与设置bottom=0一致。  设置为0时：按照0位置布局计算。  优先级：低于top属性。  取值范围：[0,Swiper高度-导航点区域高度]，超出该范围时，取最近的边界值。 |
+| value | [Length](ts-types.md#length) | 是 | 设置导航点底部相对于Swiper的位置。  未设置top和bottom时，进行自适应大小布局，按照指示器本身大小和Swiper的大小，在交叉轴方向上，位于底部，效果与设置bottom=0一致。  设置为0时：按照0位置布局计算。  优先级：低于top属性。  取值范围：[0,Swiper高度-导航点区域高度]，超出该范围时，取最近的边界值。  单位参考[Length](ts-types.md#length)类型的说明。 |
 
 **返回值：**
 
@@ -1110,8 +1085,6 @@ bottom(value: Length): T
 
 ### bottom19+
 
-PhonePC/2in1TabletTVWearable
-
 bottom(bottom: LengthMetrics | Length, ignoreSize: boolean): T
 
 导航点底部相对于Swiper的位置，并可通过ignoreSize属性忽略导航点大小。
@@ -1120,14 +1093,16 @@ bottom(bottom: LengthMetrics | Length, ignoreSize: boolean): T
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| bottom | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | [Length](ts-types.md#length) | 是 | 设置导航点底部相对于Swiper的位置。  未设置top和bottom时，进行自适应大小布局，按照指示器本身大小和Swiper的大小，在交叉轴方向上，位于底部，效果与设置bottom=0一致。  设置为0时：按照0位置布局计算。  优先级：低于top属性。  取值范围：[0,Swiper高度-导航点区域高度]，超出该范围时，取最近的边界值。 |
-| ignoreSize | boolean | 是 | 设置是否忽略导航点本身大小，默认false。  设为true时可以将导航点更靠近Swiper底部，使用方法可以参考[示例9演示导航点space与bottom](ts-container-swiper.md#示例9演示导航点space与bottom)。  说明：[数字导航点](ts-container-swiper.md#digitindicator10)ignoreSize属性，不生效的场景如下：  • 当[vertical](ts-container-swiper.md#vertical) 设置为false，且bottom > 0。  • 当[vertical](ts-container-swiper.md#vertical) 设置为true时：  1、bottom > 0 时。  2、bottom设为undefined。  3、isSidebarMiddle设置为false时。 |
+| bottom | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | [Length](ts-types.md#length) | 是 | 设置导航点底部相对于Swiper的位置。  未设置top和bottom时，进行自适应大小布局，按照指示器本身大小和Swiper的大小，在交叉轴方向上，位于底部，效果与设置bottom=0一致。  设置为0时：按照0位置布局计算。  优先级：低于top属性。  取值范围：[0,Swiper高度-导航点区域高度]，超出该范围时，取最近的边界值。  单位参考[Length](ts-types.md#length)类型的说明。 |
+| ignoreSize | boolean | 是 | 设置是否忽略导航点本身大小，默认false。  设为true时可以将导航点更靠近Swiper底部，使用方法可以参考[示例9](ts-container-swiper.md#示例9演示导航点space与bottom)演示导航点space与bottom。  说明：当导航点为[DigitIndicator](ts-container-swiper.md#digitindicator10)的类型时，不生效的场景如下：  • 当[vertical](ts-container-swiper.md#vertical) 设置为false，且bottom > 0。  • 当[vertical](ts-container-swiper.md#vertical) 设置为true时：  1、bottom > 0 时。  2、bottom设为undefined。  3、isSidebarMiddle设置为false时。 |
 
 **返回值：**
 
@@ -1137,8 +1112,6 @@ bottom(bottom: LengthMetrics | Length, ignoreSize: boolean): T
 
 ### start12+
 
-PhonePC/2in1TabletTVWearable
-
 start(value: LengthMetrics): T
 
 在[RTL](ts-state-management-environment-variables.md#layoutdirection)模式下为导航点距离Swiper组件右边的距离，在[LTR](ts-state-management-environment-variables.md#layoutdirection)模式下为导航点距离Swiper组件左边的距离。
@@ -1146,6 +1119,8 @@ start(value: LengthMetrics): T
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1163,8 +1138,6 @@ start(value: LengthMetrics): T
 
 ### end12+
 
-PhonePC/2in1TabletTVWearable
-
 end(value: LengthMetrics): T
 
 在RTL模式下为导航点距离Swiper组件左边的距离，在LTR模式下为导航点距离Swiper组件右边的距离。
@@ -1172,6 +1145,8 @@ end(value: LengthMetrics): T
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1189,8 +1164,6 @@ end(value: LengthMetrics): T
 
 ### dot
 
-PhonePC/2in1TabletTVWearable
-
 static dot(): DotIndicator
 
 返回一个DotIndicator对象。
@@ -1198,6 +1171,8 @@ static dot(): DotIndicator
 **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1209,8 +1184,6 @@ static dot(): DotIndicator
 
 ### digit
 
-PhonePC/2in1TabletTVWearable
-
 static digit(): DigitIndicator
 
 返回一个DigitIndicator对象。
@@ -1218,6 +1191,8 @@ static digit(): DigitIndicator
 **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1229,25 +1204,23 @@ static digit(): DigitIndicator
 
 ## DotIndicator10+
 
-PhonePC/2in1TabletTVWearable
-
 构造圆点指示器的样式，继承自[Indicator](ts-container-swiper.md#indicator10)。
 
 **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor()
 
 DotIndicator的构造函数。
 
-说明
+**说明** 
 
 * 按压导航点时，导航点会放大至1.33倍显示，因此非按压态时导航点的可见范围边界至实际范围边界存在一定距离，该距离会随着itemWidth、itemHeight、selectedItemWidth、selectedItemHeight等参数变大而变大。
 * 若页面数量较多、圆点导航点超出页面时，建议使用maxDisplayCount设置导航点显示个数。
@@ -1256,11 +1229,11 @@ DotIndicator的构造函数。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ### itemWidth
-
-PhonePC/2in1TabletTVWearable
 
 itemWidth(value: Length): DotIndicator
 
@@ -1269,6 +1242,8 @@ Swiper组件圆点导航指示器的宽。
 **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1286,8 +1261,6 @@ Swiper组件圆点导航指示器的宽。
 
 ### itemHeight
 
-PhonePC/2in1TabletTVWearable
-
 itemHeight(value: Length): DotIndicator
 
 Swiper组件圆点导航指示器的高。
@@ -1295,6 +1268,8 @@ Swiper组件圆点导航指示器的高。
 **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1312,8 +1287,6 @@ Swiper组件圆点导航指示器的高。
 
 ### selectedItemWidth
 
-PhonePC/2in1TabletTVWearable
-
 selectedItemWidth(value: Length): DotIndicator
 
 选中Swiper组件圆点导航指示器的宽。
@@ -1321,6 +1294,8 @@ selectedItemWidth(value: Length): DotIndicator
 **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1338,8 +1313,6 @@ selectedItemWidth(value: Length): DotIndicator
 
 ### selectedItemHeight
 
-PhonePC/2in1TabletTVWearable
-
 selectedItemHeight(value: Length): DotIndicator
 
 选中Swiper组件圆点导航指示器的高。
@@ -1347,6 +1320,8 @@ selectedItemHeight(value: Length): DotIndicator
 **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1364,8 +1339,6 @@ selectedItemHeight(value: Length): DotIndicator
 
 ### mask
 
-PhonePC/2in1TabletTVWearable
-
 mask(value: boolean): DotIndicator
 
 是否显示Swiper组件圆点导航指示器的蒙版样式。
@@ -1373,6 +1346,8 @@ mask(value: boolean): DotIndicator
 **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1390,8 +1365,6 @@ mask(value: boolean): DotIndicator
 
 ### color
 
-PhonePC/2in1TabletTVWearable
-
 color(value: ResourceColor): DotIndicator
 
 Swiper组件圆点导航指示器的颜色。
@@ -1399,6 +1372,8 @@ Swiper组件圆点导航指示器的颜色。
 **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1416,8 +1391,6 @@ Swiper组件圆点导航指示器的颜色。
 
 ### selectedColor
 
-PhonePC/2in1TabletTVWearable
-
 selectedColor(value: ResourceColor): DotIndicator
 
 选中Swiper组件圆点导航指示器的颜色。
@@ -1425,6 +1398,8 @@ selectedColor(value: ResourceColor): DotIndicator
 **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1442,13 +1417,13 @@ selectedColor(value: ResourceColor): DotIndicator
 
 ### maxDisplayCount12+
 
-PhonePC/2in1TabletTVWearable
-
 maxDisplayCount(maxDisplayCount: number): DotIndicator
 
 圆点导航点指示器样式下，导航点显示个数最大值。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1456,7 +1431,7 @@ maxDisplayCount(maxDisplayCount: number): DotIndicator
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| maxDisplayCount | number | 是 | 设置圆点导航点指示器样式下，导航点显示个数最大值，当实际导航点个数大于最大导航点个数时，会生效超长效果样式，样式如[示例5](ts-container-swiper.md#示例5设置圆点导航点超长显示)所示。  默认值：这个属性没有默认值，如果设置异常值那等同于没有超长显示效果。  取值范围：[6, 9]  **说明：**  1、超长显示场景，目前暂时不支持交互功能（包括：手指点击拖拽、鼠标操作等）。  2、在超长显示场景下，中间页面对应的选中导航点的位置，并不是完全固定的，取决于之前的翻页操作序列。  3、当前仅支持displayCount为1的场景。 |
+| maxDisplayCount | number | 是 | 设置圆点导航点指示器样式下，导航点显示个数最大值，当实际导航点个数大于最大导航点个数时，会生效超长效果样式，样式如[示例5](ts-container-swiper.md#示例5设置圆点导航点超长显示)所示。  默认值：这个属性没有默认值，如果设置异常值那等同于没有超长显示效果。  取值范围：[6, 9]  **说明：**  1、超长显示场景，API版本26.0.0之前不支持交互功能（包括：手指点击拖拽、鼠标操作），从API版本26.0.0开始支持手指点击拖拽的交互功能，不支持鼠标操作的交互功能。  2、在超长显示场景下，中间页面对应的选中导航点的位置，并不是完全固定的，取决于之前的翻页操作序列。  3、当前仅支持displayCount为1的场景。 |
 
 **返回值：**
 
@@ -1466,8 +1441,6 @@ maxDisplayCount(maxDisplayCount: number): DotIndicator
 
 ### space19+
 
-PhonePC/2in1TabletTVWearable
-
 space(space: LengthMetrics): DotIndicator
 
 设置Swiper圆点导航点间距。
@@ -1475,6 +1448,8 @@ space(space: LengthMetrics): DotIndicator
 **卡片能力：** 从API version 19开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1490,9 +1465,35 @@ space(space: LengthMetrics): DotIndicator
 | --- | --- |
 | [DotIndicator](ts-container-swiper.md#dotindicator10) | 返回当前圆点指示器。 |
 
-## DigitIndicator10+
+### indicatorIcon
 
-PhonePC/2in1TabletTVWearable
+indicatorIcon(iconList: Array<IndicatorIconInfo>): DotIndicator
+
+设置Swiper圆点导航点的图标。
+
+**起始版本：** 26.0.0
+
+**卡片能力：** 从API版本26.0.0开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| iconList | Array<[IndicatorIconInfo](ts-container-swiper.md#indicatoriconinfo)> | 是 | 设置圆点导航点图标。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [DotIndicator](ts-container-swiper.md#dotindicator10) | 返回当前圆点指示器。 |
+
+## DigitIndicator10+
 
 构造数字指示器的样式，继承自[Indicator](ts-container-swiper.md#indicator10)。
 
@@ -1500,9 +1501,11 @@ PhonePC/2in1TabletTVWearable
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-说明
+**说明** 
 
 按组翻页时，数字导航点显示的子节点数量不包括占位节点。
 
@@ -1512,8 +1515,6 @@ PhonePC/2in1TabletTVWearable
 
 ### fontColor
 
-PhonePC/2in1TabletTVWearable
-
 fontColor(value: ResourceColor): DigitIndicator
 
 Swiper组件数字导航点的字体颜色。
@@ -1521,6 +1522,8 @@ Swiper组件数字导航点的字体颜色。
 **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1538,8 +1541,6 @@ Swiper组件数字导航点的字体颜色。
 
 ### selectedFontColor
 
-PhonePC/2in1TabletTVWearable
-
 selectedFontColor(value: ResourceColor): DigitIndicator
 
 选中Swiper组件数字导航点的字体颜色。
@@ -1547,6 +1548,8 @@ selectedFontColor(value: ResourceColor): DigitIndicator
 **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1564,8 +1567,6 @@ selectedFontColor(value: ResourceColor): DigitIndicator
 
 ### digitFont
 
-PhonePC/2in1TabletTVWearable
-
 digitFont(value: Font): DigitIndicator
 
 Swiper组件数字导航点的字体样式。
@@ -1573,6 +1574,8 @@ Swiper组件数字导航点的字体样式。
 **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1590,8 +1593,6 @@ Swiper组件数字导航点的字体样式。
 
 ### selectedDigitFont
 
-PhonePC/2in1TabletTVWearable
-
 selectedDigitFont(value: Font): DigitIndicator
 
 选中Swiper组件数字导航点的字体样式。
@@ -1599,6 +1600,8 @@ selectedDigitFont(value: Font): DigitIndicator
 **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1608,7 +1611,7 @@ selectedDigitFont(value: Font): DigitIndicator
 | --- | --- | --- | --- |
 | value | [Font](ts-types.md#font) | 是 | 设置选中Swiper组件数字导航点的字体样式。  默认值：  { size: 14, weight: FontWeight.Normal } |
 
-说明
+**说明** 
 
 按组翻页时，数字导航点显示的子节点数量不包括占位节点。
 
@@ -1620,8 +1623,6 @@ selectedDigitFont(value: Font): DigitIndicator
 
 ### constructor
 
-PhonePC/2in1TabletTVWearable
-
 constructor()
 
 DigitIndicator的构造函数。
@@ -1630,15 +1631,17 @@ DigitIndicator的构造函数。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ## ArrowStyle10+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 左右箭头属性。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1653,13 +1656,13 @@ PhonePC/2in1TabletTVWearable
 
 ## SwiperAutoFill10+
 
-PhonePC/2in1TabletTVWearable
-
 自适应属性。
 
 **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1669,13 +1672,13 @@ PhonePC/2in1TabletTVWearable
 
 ## AutoPlayOptions18+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 自动播放属性。
 
 **卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1683,15 +1686,51 @@ PhonePC/2in1TabletTVWearable
 | --- | --- | --- | --- | --- |
 | stopWhenTouched | boolean | 否 | 否 | 在按下事件中配置子组件是否立即停止播放。  设置为true时，停止播放。设置为false时，自动播放不中断。  默认值：true |
 
-## 事件
+## CachedCountOptions24+对象说明
 
-PhonePC/2in1TabletTVWearable
+预加载子组件的配置选项。
+
+**卡片能力：** 从API version 24开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 24开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| isShown | boolean | 否 | 是 | 预加载范围内的节点是否进行绘制。  设置为true时，预加载范围内的节点进行绘制。  设置为false时，预加载范围内的节点不进行绘制。  默认值：false |
+| independent | boolean | 否 | 是 | [cachedCount](ts-container-swiper.md#cachedcount24)是否按组计算。  设置为true时，cachedCount按实际子组件个数计算，不按组计算。  设置为false时，如果displayCount.swipeByGroup=true，则cachedCount按组计算，否则按实际子组件个数计算。  默认值：false |
+
+## IndicatorIconInfo
+
+圆点导航点图标配置。
+
+**说明** 
+
+仅支持通过SymbolGlyphModifier对象的[fontColor](ts-basic-components-symbolglyph.md#fontcolor)属性修改图标颜色。
+
+**起始版本：** 26.0.0
+
+**卡片能力：** 从API版本26.0.0开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| index | number | 否 | 否 | 配置图标的导航点索引。  取值范围：[0, swiper子组件的数量-1]  **说明：**  设置的值大于最大页面索引时，图标不显示。 |
+| icon | [ResourceStr](ts-types.md#resourcestr) | [SymbolGlyphModifier](ts-universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | 否 | 否 | 配置的图标内容。  **说明：**  未设置有效图标时，显示圆点导航点。 |
+
+## 事件
 
 除支持[通用事件](ts-component-general-events.md)外，还支持以下事件：
 
 ### onChange
-
-PhonePC/2in1TabletTVWearable
 
 onChange(event: Callback<number>)
 
@@ -1699,7 +1738,7 @@ onChange(event: Callback<number>)
 
 Swiper组件结合LazyForEach使用时，不能在onChange事件里触发子页面UI的刷新。
 
-说明
+**说明** 
 
 如果是动画引起的索引变化，回调在动画结束时触发。
 
@@ -1717,13 +1756,11 @@ Swiper组件结合LazyForEach使用时，不能在onChange事件里触发子页�
 
 ### onAnimationStart9+
 
-PhonePC/2in1TabletTVWearable
-
 onAnimationStart(event: OnSwiperAnimationStartCallback)
 
 切换动画开始时触发该回调。
 
-说明
+**说明** 
 
 * 调用此回调后，切换动画的逻辑将在渲染线程中执行，从而使处于空闲状态的主线程能够充分利用这段时间来加载子组件所需资源，减少后续在cachedCount范围内节点的预加载时间。最佳实践请参考[优化Swiper组件加载慢丢帧问题-提前加载数据](../best-practices/bpta-swiper_high_performance_development_guide.md#section8783121513246)。
 * 当翻页动画时长为0时，只有以下场景会触发该回调：滑动翻页、自动轮播、调用SwiperController.showNext()和SwiperController.showPrevious()接口以及手指点击导航点翻页。
@@ -1741,8 +1778,6 @@ onAnimationStart(event: OnSwiperAnimationStartCallback)
 | event | [OnSwiperAnimationStartCallback](ts-container-swiper.md#onswiperanimationstartcallback18) | 是 | 切换动画开始时触发的回调。 |
 
 ### onAnimationEnd9+
-
-PhonePC/2in1TabletTVWearable
 
 onAnimationEnd(event: OnSwiperAnimationEndCallback)
 
@@ -1762,19 +1797,19 @@ onAnimationEnd(event: OnSwiperAnimationEndCallback)
 | --- | --- | --- | --- |
 | event | [OnSwiperAnimationEndCallback](ts-container-swiper.md#onswiperanimationendcallback18) | 是 | 切换动画结束时触发的回调。 |
 
-说明
+**说明** 
 
 * 当翻页动画时长为0时，只有以下场景会触发该回调：滑动翻页、自动轮播、调用SwiperController.showNext()和SwiperController.showPrevious()接口以及手指点击导航点翻页。
 
 ### onGestureSwipe10+
-
-PhonePC/2in1TabletTVWearable
 
 onGestureSwipe(event: OnSwiperGestureSwipeCallback)
 
 在页面跟手滑动过程中，逐帧触发该回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1785,8 +1820,6 @@ onGestureSwipe(event: OnSwiperGestureSwipeCallback)
 | event | [OnSwiperGestureSwipeCallback](ts-container-swiper.md#onswipergestureswipecallback18) | 是 | 在页面跟手滑动过程中，逐帧触发的回调。onGestureSwipe回调触发时机在onTouch之后，如果需要在离手后执行操作建议使用[onAnimationStart](ts-container-swiper.md#onanimationstart9)。 |
 
 ### customContentTransition12+
-
-PhonePC/2in1TabletTVWearable
 
 customContentTransition(transition: SwiperContentAnimatedTransition)
 
@@ -1802,7 +1835,11 @@ customContentTransition(transition: SwiperContentAnimatedTransition)
 
 4、在页面跟手滑动和离手后执行切换动画的过程中，默认动画（页面滑动）依然会发生，若希望页面不滑动，可以设置主轴方向上负的位移（translate属性）来抵消页面滑动。例如：当displayCount属性值为2，视窗内有下标为0、1的两个页面时，页面水平滑动过程中，可以逐帧设置第0页的translate属性在x轴上的值为-position \* mainAxisLength来抵消第0页的位移，设置第1页的translate属性在x轴上的值为-(position - 1) \* mainAxisLength来抵消第1页的位移。
 
+**卡片能力：** 从API版本26.0.0开始，该接口支持在ArkTS卡片中使用。
+
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1813,8 +1850,6 @@ customContentTransition(transition: SwiperContentAnimatedTransition)
 | transition | [SwiperContentAnimatedTransition](ts-container-swiper.md#swipercontentanimatedtransition12) | 是 | Swiper自定义切换动画相关信息。 |
 
 ### onContentDidScroll12+
-
-PhonePC/2in1TabletTVWearable
 
 onContentDidScroll(handler: ContentDidScrollCallback)
 
@@ -1830,6 +1865,8 @@ onContentDidScroll(handler: ContentDidScrollCallback)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -1840,8 +1877,6 @@ onContentDidScroll(handler: ContentDidScrollCallback)
 
 ### onSelected18+
 
-PhonePC/2in1TabletTVWearable
-
 onSelected(event: Callback<number>)
 
 当选中元素改变时触发该回调，返回值为当前选中的元素的索引值。
@@ -1849,6 +1884,8 @@ onSelected(event: Callback<number>)
 **卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1858,13 +1895,11 @@ onSelected(event: Callback<number>)
 | --- | --- | --- | --- |
 | event | [Callback](ts-types.md#callback12)<number> | 是 | 当前选中元素的索引。 |
 
-说明
+**说明** 
 
 onSelected回调中不可修改swiper的index属性，不可调用SwiperController.changeIndex()、SwiperController.showNext()和SwiperController.showPrevious()方法。
 
 ### onUnselected18+
-
-PhonePC/2in1TabletTVWearable
 
 onUnselected(event: Callback<number>)
 
@@ -1874,6 +1909,8 @@ onUnselected(event: Callback<number>)
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -1882,13 +1919,11 @@ onUnselected(event: Callback<number>)
 | --- | --- | --- | --- |
 | event | [Callback](ts-types.md#callback12)<number> | 是 | 将要隐藏元素的索引。 |
 
-说明
+**说明** 
 
 onUnselected回调中不可修改swiper的index属性，不可调用SwiperController.changeIndex()、SwiperController.showNext()和SwiperController.showPrevious()方法。
 
 ### onContentWillScroll15+
-
-PhonePC/2in1TabletTVWearable
 
 onContentWillScroll(handler: ContentWillScrollCallback)
 
@@ -1902,6 +1937,8 @@ Swiper滑动行为拦截事件，在滑动前触发。Swiper会依据该事件�
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -1912,8 +1949,6 @@ Swiper滑动行为拦截事件，在滑动前触发。Swiper会依据该事件�
 
 ### onScrollStateChanged20+
 
-PhonePC/2in1TabletTVWearable
-
 onScrollStateChanged(event: Callback<ScrollState>)
 
 Swiper滑动状态变化事件回调，在跟手滑动、离手动画、停止三种滑动状态变化时触发，返回值为当前滑动状态。
@@ -1921,6 +1956,8 @@ Swiper滑动状态变化事件回调，在跟手滑动、离手动画、停止�
 **卡片能力：** 从API version 20开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1932,8 +1969,6 @@ Swiper滑动状态变化事件回调，在跟手滑动、离手动画、停止�
 
 ## OnSwiperAnimationStartCallback18+
 
-PhonePC/2in1TabletTVWearable
-
 type OnSwiperAnimationStartCallback = (index: number, targetIndex: number, extraInfo: SwiperAnimationEvent) => void
 
 切换动画开始时触发的回调。
@@ -1941,6 +1976,8 @@ type OnSwiperAnimationStartCallback = (index: number, targetIndex: number, extra
 **卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1954,8 +1991,6 @@ type OnSwiperAnimationStartCallback = (index: number, targetIndex: number, extra
 
 ## OnSwiperAnimationEndCallback18+
 
-PhonePC/2in1TabletTVWearable
-
 type OnSwiperAnimationEndCallback = (index: number, extraInfo: SwiperAnimationEvent) => void
 
 切换动画结束时触发的回调。
@@ -1963,6 +1998,8 @@ type OnSwiperAnimationEndCallback = (index: number, extraInfo: SwiperAnimationEv
 **卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1975,13 +2012,13 @@ type OnSwiperAnimationEndCallback = (index: number, extraInfo: SwiperAnimationEv
 
 ## OnSwiperGestureSwipeCallback18+
 
-PhonePC/2in1TabletTVWearable
-
 type OnSwiperGestureSwipeCallback = (index: number, extraInfo: SwiperAnimationEvent) => void
 
 在页面跟手滑动过程中，逐帧触发的回调。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1994,13 +2031,13 @@ type OnSwiperGestureSwipeCallback = (index: number, extraInfo: SwiperAnimationEv
 
 ## ContentDidScrollCallback12+
 
-PhonePC/2in1TabletTVWearable
-
 type ContentDidScrollCallback = (selectedIndex: number, index: number, position: number, mainAxisLength: number) => void
 
 Swiper滑动时触发的回调，参数可参考[SwiperContentTransitionProxy](ts-container-swiper.md#swipercontenttransitionproxy12)中的说明。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2015,8 +2052,6 @@ Swiper滑动时触发的回调，参数可参考[SwiperContentTransitionProxy](t
 
 ## ContentWillScrollCallback15+
 
-PhonePC/2in1TabletTVWearable
-
 type ContentWillScrollCallback = (result: SwiperContentWillScrollResult) => boolean
 
 Swiper即将滑动前触发的回调，返回值表示是否允许此次滑动。
@@ -2024,6 +2059,8 @@ Swiper即将滑动前触发的回调，返回值表示是否允许此次滑动�
 **卡片能力：** 从API version 15开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2041,13 +2078,13 @@ Swiper即将滑动前触发的回调，返回值表示是否允许此次滑动�
 
 ## SwiperContentWillScrollResult15+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 滑动的相关信息，主要包括：当前页面对应的index、滑动方向上即将显示的页面index和此次滑动的位移。
 
 **卡片能力：** 从API version 15开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2059,11 +2096,11 @@ PhonePC/2in1TabletTVWearable
 
 ## SwiperAnimationEvent10+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 Swiper组件动画相关信息集合。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2075,11 +2112,13 @@ Swiper组件动画相关信息集合。
 
 ## SwiperContentAnimatedTransition12+
 
-PhonePC/2in1TabletTVWearable
-
 Swiper自定义切换动画相关信息。
 
+**卡片能力：** 从API版本26.0.0开始，该接口支持在ArkTS卡片中使用。
+
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2090,15 +2129,25 @@ Swiper自定义切换动画相关信息。
 
 ## SwiperContentTransitionProxy12+
 
-PhonePC/2in1TabletTVWearable
-
 Swiper自定义切换动画执行过程中，返回给开发者的proxy对象。开发者可通过该对象获取自定义动画视窗内的页面信息，同时，也可以通过调用该对象的finishTransition接口通知Swiper组件页面自定义动画已结束。
 
+**卡片能力：** 从API版本26.0.0开始，该接口支持在ArkTS卡片中使用。
+
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ### 属性
+
+**卡片能力：** 从API版本26.0.0开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2107,30 +2156,30 @@ Swiper自定义切换动画执行过程中，返回给开发者的proxy对象。
 | position | number | 否 | 否 | index页面相对于Swiper主轴起始位置（selectedIndex对应页面的起始位置）的移动比例。 |
 | mainAxisLength | number | 否 | 否 | index对应页面在主轴方向上的长度，单位vp。 |
 
-说明
+**说明** 
 
 * 例如，当前选中的子组件的索引为0，从第0页切换到第1页的动画过程中，每帧都会对视窗内所有页面触发回调，当视窗内有第0页和第1页两页时，每帧会触发两次回调。其中，第一次回调的selectedIndex为0、index为0、position为当前帧第0页相对于动画开始前第0页的移动比例，mainAxisLength为主轴方向上第0页的长度。第二次回调的selectedIndex仍为0、index为1、position为当前帧第1页相对于动画开始前第0页的移动比例，mainAxisLength为主轴方向上第1页的长度。
 * 若动画曲线为弹簧插值曲线，从第0页切换到第1页的动画过程中，可能会因为离手时的位置和速度，先过滑到第2页，再回弹到第1页，该过程中每帧会对视窗内第1页和第2页触发回调。
 
 ### finishTransition12+
 
-PhonePC/2in1TabletTVWearable
-
 finishTransition(): void
 
 通知Swiper组件，此页面的自定义动画已结束。
 
+**卡片能力：** 从API版本26.0.0开始，该接口支持在ArkTS卡片中使用。
+
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ## IndicatorStyle(deprecated)对象说明
 
-PhonePC/2in1TabletTVWearable
-
 导航点样式。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 10开始废弃，建议使用[indicator](ts-container-swiper.md#indicator10)替代。
 
@@ -2149,926 +2198,927 @@ PhonePC/2in1TabletTVWearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 ### 示例1（设置导航点交互及翻页动效）
 
 该示例通过[changeIndex](ts-container-swiper.md#changeindex15)接口设置[SwiperAnimationMode](ts-container-swiper.md#swiperanimationmode15枚举说明)动效以跳转指定页面，并使用[onScrollStateChanged](ts-container-swiper.md#onscrollstatechanged20)回调监听滑动状态的变化。
 
 从API version 20开始，新增onScrollStateChanged事件。
 
+```ts
+// xxx.ets
+class MyDataSource implements IDataSource {
+  private list: number[] = [];
+
+  constructor(list: number[]) {
+    this.list = list;
+  }
+
+  totalCount(): number {
+    return this.list.length;
+  }
+
+  getData(index: number): number {
+    return this.list[index];
+  }
+
+  registerDataChangeListener(listener: DataChangeListener): void {
+  }
+
+  unregisterDataChangeListener() {
+  }
+}
+
+@Entry
+@Component
+struct SwiperExample {
+  private swiperController: SwiperController = new SwiperController();
+  private data: MyDataSource = new MyDataSource([]);
+
+  aboutToAppear(): void {
+    let list: number[] = [];
+    for (let i = 1; i <= 10; i++) {
+      list.push(i);
+    }
+    this.data = new MyDataSource(list);
+  }
+
+  build() {
+    Column({ space: 5 }) {
+      Swiper(this.swiperController) {
+        LazyForEach(this.data, (item: number) => {
+          Text(item.toString())
+            .width('90%')
+            .height(160)
+            .backgroundColor(0xAFEEEE)
+            .textAlign(TextAlign.Center)
+            .fontSize(30)
+        }, (item: number) => item.toString())
+      }
+      .cachedCount(2)
+      .index(1)
+      .autoPlay(true)
+      .interval(4000)
+      .loop(true)
+      .indicatorInteractive(true)
+      .duration(1000)
+      .itemSpace(5)
+      .prevMargin(35)
+      .nextMargin(35)
+      .indicator( // 设置圆点导航点样式
+        new DotIndicator()
+          .itemWidth(15)
+          .itemHeight(15)
+          .selectedItemWidth(15)
+          .selectedItemHeight(15)
+          .color(Color.Gray)
+          .selectedColor(Color.Blue))
+      .displayArrow({ // 设置导航点箭头样式
+        showBackground: true,
+        isSidebarMiddle: true,
+        backgroundSize: 24,
+        backgroundColor: Color.White,
+        arrowSize: 18,
+        arrowColor: Color.Blue
+      }, false)
+      .curve(Curve.Linear)
+      .onChange((index: number) => {
+        console.info(index.toString());
+      })
+      .onScrollStateChanged((event: ScrollState) => {
+        console.info("event: " + event);
+      })
+      .onGestureSwipe((index: number, extraInfo: SwiperAnimationEvent) => {
+        console.info("index: " + index);
+        console.info("current offset: " + extraInfo.currentOffset);
+      })
+      .onAnimationStart((index: number, targetIndex: number, extraInfo: SwiperAnimationEvent) => {
+        console.info("index: " + index);
+        console.info("targetIndex: " + targetIndex);
+        console.info("current offset: " + extraInfo.currentOffset);
+        console.info("target offset: " + extraInfo.targetOffset);
+        console.info("velocity: " + extraInfo.velocity);
+      })
+      .onAnimationEnd((index: number, extraInfo: SwiperAnimationEvent) => {
+        console.info("index: " + index);
+        console.info("current offset: " + extraInfo.currentOffset);
+      })
+
+      Row({ space: 12 }) {
+        Button('showPrevious')
+          .onClick(() => {
+            this.swiperController.showPrevious();
+          })
+        Button('showNext')
+          .onClick(() => {
+            this.swiperController.showNext();
+          })
+      }.margin(5)
+      Row({ space: 5 }) {
+        Button('FAST 0')
+          .onClick(() => {
+            // 控制器：跳转到索引0，使用快速动画模式
+            this.swiperController.changeIndex(0, SwiperAnimationMode.FAST_ANIMATION);
+          })
+        Button('FAST 3')
+          .onClick(() => {
+            // 控制器：跳转到索引3，使用快速动画模式
+            this.swiperController.changeIndex(3, SwiperAnimationMode.FAST_ANIMATION);
+          })
+        Button('FAST ' + 9)
+          .onClick(() => {
+            // 控制器：跳转到索引9，使用快速动画模式
+            this.swiperController.changeIndex(9, SwiperAnimationMode.FAST_ANIMATION);
+          })
+      }.margin(5)
+    }.width('100%')
+    .margin({ top: 5 })
+  }
+}
 ```
-1. // xxx.ets
-2. class MyDataSource implements IDataSource {
-3. private list: number[] = [];
 
-5. constructor(list: number[]) {
-6. this.list = list;
-7. }
-
-9. totalCount(): number {
-10. return this.list.length;
-11. }
-
-13. getData(index: number): number {
-14. return this.list[index];
-15. }
-
-17. registerDataChangeListener(listener: DataChangeListener): void {
-18. }
-
-20. unregisterDataChangeListener() {
-21. }
-22. }
-
-24. @Entry
-25. @Component
-26. struct SwiperExample {
-27. private swiperController: SwiperController = new SwiperController();
-28. private data: MyDataSource = new MyDataSource([]);
-
-30. aboutToAppear(): void {
-31. let list: number[] = [];
-32. for (let i = 1; i <= 10; i++) {
-33. list.push(i);
-34. }
-35. this.data = new MyDataSource(list);
-36. }
-
-38. build() {
-39. Column({ space: 5 }) {
-40. Swiper(this.swiperController) {
-41. LazyForEach(this.data, (item: string) => {
-42. Text(item.toString())
-43. .width('90%')
-44. .height(160)
-45. .backgroundColor(0xAFEEEE)
-46. .textAlign(TextAlign.Center)
-47. .fontSize(30)
-48. }, (item: string) => item)
-49. }
-50. .cachedCount(2)
-51. .index(1)
-52. .autoPlay(true)
-53. .interval(4000)
-54. .loop(true)
-55. .indicatorInteractive(true)
-56. .duration(1000)
-57. .itemSpace(5)
-58. .prevMargin(35)
-59. .nextMargin(35)
-60. .indicator( // 设置圆点导航点样式
-61. new DotIndicator()
-62. .itemWidth(15)
-63. .itemHeight(15)
-64. .selectedItemWidth(15)
-65. .selectedItemHeight(15)
-66. .color(Color.Gray)
-67. .selectedColor(Color.Blue))
-68. .displayArrow({ // 设置导航点箭头样式
-69. showBackground: true,
-70. isSidebarMiddle: true,
-71. backgroundSize: 24,
-72. backgroundColor: Color.White,
-73. arrowSize: 18,
-74. arrowColor: Color.Blue
-75. }, false)
-76. .curve(Curve.Linear)
-77. .onChange((index: number) => {
-78. console.info(index.toString());
-79. })
-80. .onScrollStateChanged((event: ScrollState) => {
-81. console.info("event: " + event);
-82. })
-83. .onGestureSwipe((index: number, extraInfo: SwiperAnimationEvent) => {
-84. console.info("index: " + index);
-85. console.info("current offset: " + extraInfo.currentOffset);
-86. })
-87. .onAnimationStart((index: number, targetIndex: number, extraInfo: SwiperAnimationEvent) => {
-88. console.info("index: " + index);
-89. console.info("targetIndex: " + targetIndex);
-90. console.info("current offset: " + extraInfo.currentOffset);
-91. console.info("target offset: " + extraInfo.targetOffset);
-92. console.info("velocity: " + extraInfo.velocity);
-93. })
-94. .onAnimationEnd((index: number, extraInfo: SwiperAnimationEvent) => {
-95. console.info("index: " + index);
-96. console.info("current offset: " + extraInfo.currentOffset);
-97. })
-
-99. Row({ space: 12 }) {
-100. Button('showPrevious')
-101. .onClick(() => {
-102. this.swiperController.showPrevious();
-103. })
-104. Button('showNext')
-105. .onClick(() => {
-106. this.swiperController.showNext();
-107. })
-108. }.margin(5)
-109. Row({ space: 5 }) {
-110. Button('FAST 0')
-111. .onClick(() => {
-112. // 控制器：跳转到索引0，使用快速动画模式
-113. this.swiperController.changeIndex(0, SwiperAnimationMode.FAST_ANIMATION);
-114. })
-115. Button('FAST 3')
-116. .onClick(() => {
-117. // 控制器：跳转到索引3，使用快速动画模式
-118. this.swiperController.changeIndex(3, SwiperAnimationMode.FAST_ANIMATION);
-119. })
-120. Button('FAST ' + 9)
-121. .onClick(() => {
-122. // 控制器：跳转到索引9，使用快速动画模式
-123. this.swiperController.changeIndex(9, SwiperAnimationMode.FAST_ANIMATION);
-124. })
-125. }.margin(5)
-126. }.width('100%')
-127. .margin({ top: 5 })
-128. }
-129. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/sDj0MU2WTh-nyb45gIxLJQ/zh-cn_image_0000002589326029.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/fzu_6CeJThe0BwucZGXSxg/zh-cn_image_0000002736314895.gif)
 
 ### 示例2（设置数字指示器）
 
 该示例通过[DigitIndicator](ts-container-swiper.md#digitindicator10)接口，实现了数字指示器的效果和功能。
 
+```ts
+// xxx.ets
+class MyDataSource implements IDataSource {
+  private list: number[] = [];
+
+  constructor(list: number[]) {
+    this.list = list;
+  }
+
+  totalCount(): number {
+    return this.list.length;
+  }
+
+  getData(index: number): number {
+    return this.list[index];
+  }
+
+  registerDataChangeListener(listener: DataChangeListener): void {
+  }
+
+  unregisterDataChangeListener() {
+  }
+}
+
+@Entry
+@Component
+struct SwiperExample {
+  private swiperController: SwiperController = new SwiperController();
+  private data: MyDataSource = new MyDataSource([]);
+
+  aboutToAppear(): void {
+    let list: number[] = [];
+    for (let i = 1; i <= 10; i++) {
+      list.push(i);
+    }
+    this.data = new MyDataSource(list);
+  }
+
+  build() {
+    Column({ space: 5 }) {
+      Swiper(this.swiperController) {
+        LazyForEach(this.data, (item: number) => {
+          Text(item.toString())
+            .width('90%')
+            .height(160)
+            .backgroundColor(0xAFEEEE)
+            .textAlign(TextAlign.Center)
+            .fontSize(30)
+        }, (item: number) => item.toString())
+      }
+      .cachedCount(2)
+      .index(1)
+      .autoPlay(true)
+      .interval(4000)
+      .indicator(Indicator.digit() // 设置数字导航点样式
+        .top(200)
+        .fontColor(Color.Gray)
+        .selectedFontColor(Color.Gray)
+        .digitFont({ size: 20, weight: FontWeight.Bold })
+        .selectedDigitFont({ size: 20, weight: FontWeight.Normal }))
+      .loop(true)
+      .duration(1000)
+      .itemSpace(0)
+      .displayArrow(true, false)
+
+      Row({ space: 12 }) {
+        Button('showNext')
+          .onClick(() => {
+            this.swiperController.showNext();
+          })
+        Button('showPrevious')
+          .onClick(() => {
+            this.swiperController.showPrevious();
+          })
+      }.margin(5)
+    }.width('100%')
+    .margin({ top: 5 })
+  }
+}
 ```
-1. // xxx.ets
-2. class MyDataSource implements IDataSource {
-3. private list: number[] = [];
 
-5. constructor(list: number[]) {
-6. this.list = list;
-7. }
-
-9. totalCount(): number {
-10. return this.list.length;
-11. }
-
-13. getData(index: number): number {
-14. return this.list[index];
-15. }
-
-17. registerDataChangeListener(listener: DataChangeListener): void {
-18. }
-
-20. unregisterDataChangeListener() {
-21. }
-22. }
-
-24. @Entry
-25. @Component
-26. struct SwiperExample {
-27. private swiperController: SwiperController = new SwiperController();
-28. private data: MyDataSource = new MyDataSource([]);
-
-30. aboutToAppear(): void {
-31. let list: number[] = [];
-32. for (let i = 1; i <= 10; i++) {
-33. list.push(i);
-34. }
-35. this.data = new MyDataSource(list);
-36. }
-
-38. build() {
-39. Column({ space: 5 }) {
-40. Swiper(this.swiperController) {
-41. LazyForEach(this.data, (item: string) => {
-42. Text(item.toString())
-43. .width('90%')
-44. .height(160)
-45. .backgroundColor(0xAFEEEE)
-46. .textAlign(TextAlign.Center)
-47. .fontSize(30)
-48. }, (item: string) => item)
-49. }
-50. .cachedCount(2)
-51. .index(1)
-52. .autoPlay(true)
-53. .interval(4000)
-54. .indicator(Indicator.digit() // 设置数字导航点样式
-55. .top(200)
-56. .fontColor(Color.Gray)
-57. .selectedFontColor(Color.Gray)
-58. .digitFont({ size: 20, weight: FontWeight.Bold })
-59. .selectedDigitFont({ size: 20, weight: FontWeight.Normal }))
-60. .loop(true)
-61. .duration(1000)
-62. .itemSpace(0)
-63. .displayArrow(true, false)
-
-65. Row({ space: 12 }) {
-66. Button('showNext')
-67. .onClick(() => {
-68. this.swiperController.showNext();
-69. })
-70. Button('showPrevious')
-71. .onClick(() => {
-72. this.swiperController.showPrevious();
-73. })
-74. }.margin(5)
-75. }.width('100%')
-76. .margin({ top: 5 })
-77. }
-78. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/MoyfNvtvTLOvCjEFVF-S7g/zh-cn_image_0000002589245971.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/8hun4XXJTi-y4J0uktxj5g/zh-cn_image_0000002706675852.gif)
 
 ### 示例3（设置按组翻页）
 
 该示例通过[displayCount](ts-container-swiper.md#displaycount8)属性实现了按组翻页效果。
 
+从API version 24开始，新增[CachedCountOptions](ts-container-swiper.md#cachedcountoptions24对象说明)参数，通过该参数实现缓存的节点个数和displayCount的按组显示数量解耦。
+
+```ts
+// xxx.ets
+class MyDataSource implements IDataSource {
+  private list: number[] = [];
+
+  constructor(list: number[]) {
+    this.list = list;
+  }
+
+  totalCount(): number {
+    return this.list.length;
+  }
+
+  getData(index: number): number {
+    return this.list[index];
+  }
+
+  registerDataChangeListener(listener: DataChangeListener): void {
+  }
+
+  unregisterDataChangeListener() {
+  }
+}
+
+@Entry
+@Component
+struct SwiperExample {
+  private swiperController: SwiperController = new SwiperController();
+  private data: MyDataSource = new MyDataSource([]);
+
+  aboutToAppear(): void {
+    let list: number[] = [];
+    for (let i = 1; i <= 10; i++) {
+      list.push(i);
+    }
+    this.data = new MyDataSource(list);
+  }
+
+  build() {
+    Column({ space: 5 }) {
+      Swiper(this.swiperController) {
+        LazyForEach(this.data, (item: number) => {
+          Text(item.toString())
+            .width('90%')
+            .height(160)
+            .backgroundColor(0xAFEEEE)
+            .textAlign(TextAlign.Center)
+            .fontSize(30)
+        }, (item: number) => item.toString())
+      }
+      .displayCount(3, true) // 开启按组翻页：每页显示3个轮播项，且翻页时整组切换
+      .cachedCount(1, { independent: true }) // 从API version 24开始，新增CachedCountOptions.independent参数。在显示区域外各缓存一个子节点，和displayCount的按组显示数量解耦
+      .autoPlay(true)
+      .interval(4000)
+      .loop(true)
+      .duration(1000)
+      .itemSpace(10)
+      .indicator( // 设置圆点导航点样式
+        new DotIndicator()
+          .itemWidth(15)
+          .itemHeight(15)
+          .selectedItemWidth(15)
+          .selectedItemHeight(15)
+          .color(Color.Gray)
+          .selectedColor(Color.Blue))
+
+      Row({ space: 12 }) {
+        Button('showNext')
+          .onClick(() => {
+            this.swiperController.showNext();
+          })
+        Button('showPrevious')
+          .onClick(() => {
+            this.swiperController.showPrevious();
+          })
+      }.margin(5)
+    }.width('100%')
+    .margin({ top: 5 })
+  }
+}
 ```
-1. // xxx.ets
-2. class MyDataSource implements IDataSource {
-3. private list: number[] = [];
 
-5. constructor(list: number[]) {
-6. this.list = list;
-7. }
-
-9. totalCount(): number {
-10. return this.list.length;
-11. }
-
-13. getData(index: number): number {
-14. return this.list[index];
-15. }
-
-17. registerDataChangeListener(listener: DataChangeListener): void {
-18. }
-
-20. unregisterDataChangeListener() {
-21. }
-22. }
-
-24. @Entry
-25. @Component
-26. struct SwiperExample {
-27. private swiperController: SwiperController = new SwiperController();
-28. private data: MyDataSource = new MyDataSource([]);
-
-30. aboutToAppear(): void {
-31. let list: number[] = [];
-32. for (let i = 1; i <= 10; i++) {
-33. list.push(i);
-34. }
-35. this.data = new MyDataSource(list);
-36. }
-
-38. build() {
-39. Column({ space: 5 }) {
-40. Swiper(this.swiperController) {
-41. LazyForEach(this.data, (item: string) => {
-42. Text(item.toString())
-43. .width('90%')
-44. .height(160)
-45. .backgroundColor(0xAFEEEE)
-46. .textAlign(TextAlign.Center)
-47. .fontSize(30)
-48. }, (item: string) => item)
-49. }
-50. .displayCount(3, true) // 开启按组翻页：每页显示3个轮播项，且翻页时整组切换
-51. .autoPlay(true)
-52. .interval(4000)
-53. .loop(true)
-54. .duration(1000)
-55. .itemSpace(10)
-56. .indicator( // 设置圆点导航点样式
-57. new DotIndicator()
-58. .itemWidth(15)
-59. .itemHeight(15)
-60. .selectedItemWidth(15)
-61. .selectedItemHeight(15)
-62. .color(Color.Gray)
-63. .selectedColor(Color.Blue))
-
-65. Row({ space: 12 }) {
-66. Button('showNext')
-67. .onClick(() => {
-68. this.swiperController.showNext();
-69. })
-70. Button('showPrevious')
-71. .onClick(() => {
-72. this.swiperController.showPrevious();
-73. })
-74. }.margin(5)
-75. }.width('100%')
-76. .margin({ top: 5 })
-77. }
-78. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/PXpgMu6tSoGuBForMXiRYg/zh-cn_image_0000002558766162.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/FH4NGj6rRD6dogSJh67Nfw/zh-cn_image_0000002736434939.gif)
 
 ### 示例4（设置自定义页面切换动画）
 
 该示例通过[customContentTransition](ts-container-swiper.md#customcontenttransition12)接口，实现了自定义Swiper页面按组翻页动画效果。
 
-```
-1. // EntryAbility.ets
-2. import { Configuration, UIAbility } from '@kit.AbilityKit';
-3. import { i18n } from '@kit.LocalizationKit';
-4. import { CommonUtil } from '../common/CommonUtil';
+```ts
+// EntryAbility.ets
+import { Configuration, UIAbility } from '@kit.AbilityKit';
+import { i18n } from '@kit.LocalizationKit';
+import { CommonUtil } from '../common/CommonUtil';
 
-6. export default class EntryAbility extends UIAbility {
-7. onConfigurationUpdate(newConfig: Configuration): void {
-8. // 监听系统配置变化
-9. if (newConfig.language) {
-10. CommonUtil.setIsRTL(i18n.isRTL(newConfig.language));
-11. }
-12. }
-13. }
-```
-
-```
-1. // CommonUtil.ets
-2. export class CommonUtil {
-3. private static isRTL: boolean = false;
-
-5. public static setIsRTL(isRTL: boolean): void {
-6. CommonUtil.isRTL = isRTL;
-7. }
-
-9. public static getIsRTL(): boolean {
-10. return CommonUtil.isRTL;
-11. }
-12. }
+export default class EntryAbility extends UIAbility {
+  onConfigurationUpdate(newConfig: Configuration): void {
+    // 监听系统配置变化
+    if (newConfig.language) {
+      CommonUtil.setIsRTL(i18n.isRTL(newConfig.language));
+    }
+  }
+}
 ```
 
-```
-1. // xxx.ets
-2. import { CommonUtil } from '../common/CommonUtil';
+```ts
+// CommonUtil.ets
+export class CommonUtil {
+  private static isRTL: boolean = false;
 
-4. @Entry
-5. @Component
-6. struct SwiperCustomAnimationExample {
-7. private DISPLAY_COUNT: number = 2;
-8. private MIN_SCALE: number = 0.75;
+  public static setIsRTL(isRTL: boolean): void {
+    CommonUtil.isRTL = isRTL;
+  }
 
-10. @State backgroundColors: Color[] = [Color.Green, Color.Blue, Color.Yellow, Color.Pink, Color.Gray, Color.Orange];
-11. @State opacityList: number[] = [];
-12. @State scaleList: number[] = [];
-13. @State translateList: number[] = [];
-14. @State zIndexList: number[] = [];
-
-16. aboutToAppear(): void {
-17. for (let i = 0; i < this.backgroundColors.length; i++) {
-18. this.opacityList.push(1.0);
-19. this.scaleList.push(1.0);
-20. this.translateList.push(0.0);
-21. this.zIndexList.push(0);
-22. }
-23. }
-
-25. build() {
-26. Column() {
-27. Swiper() {
-28. ForEach(this.backgroundColors, (backgroundColor: Color, index: number) => {
-29. Text(index.toString()).width('100%').height('100%').fontSize(50).textAlign(TextAlign.Center)
-30. .backgroundColor(backgroundColor)
-31. // 自定义动画变化透明度、缩放页面、抵消系统默认位移、渲染层级等
-32. .opacity(this.opacityList[index])
-33. .scale({ x: this.scaleList[index], y: this.scaleList[index] })
-34. .translate({ x: this.translateList[index] })
-35. .zIndex(this.zIndexList[index])
-36. })
-37. }
-38. .height(300)
-39. .indicator(false)
-40. .displayCount(this.DISPLAY_COUNT, true)
-41. .customContentTransition({
-42. // 页面移除视窗时超时1000ms下渲染树
-43. timeout: 1000,
-44. // 对视窗内所有页面逐帧回调transition，在回调中修改opacity、scale、translate、zIndex等属性值，实现自定义动画
-45. transition: (proxy: SwiperContentTransitionProxy) => {
-46. if (!CommonUtil.getIsRTL()) {
-47. if (proxy.position <= proxy.index % this.DISPLAY_COUNT || proxy.position >= this.DISPLAY_COUNT + proxy.index % this.DISPLAY_COUNT) {
-48. // 同组页面往左滑或往右完全滑出视窗外时，重置属性值
-49. this.opacityList[proxy.index] = 1.0;
-50. this.scaleList[proxy.index] = 1.0;
-51. this.translateList[proxy.index] = 0.0;
-52. this.zIndexList[proxy.index] = 0;
-53. } else {
-54. // 同组页面往右滑且未滑出视窗外时，对同组中左右两个页面，逐帧根据position修改属性值，实现两个页面往Swiper中间靠拢并透明缩放的自定义切换动画
-55. if (proxy.index % this.DISPLAY_COUNT === 0) {
-56. this.opacityList[proxy.index] = 1 - proxy.position / this.DISPLAY_COUNT;
-57. this.scaleList[proxy.index] = this.MIN_SCALE + (1 - this.MIN_SCALE) * (1 - proxy.position / this.DISPLAY_COUNT);
-58. this.translateList[proxy.index] = -proxy.position * proxy.mainAxisLength + (1 - this.scaleList[proxy.index]) * proxy.mainAxisLength / 2.0;
-59. } else {
-60. this.opacityList[proxy.index] = 1 - (proxy.position - 1) / this.DISPLAY_COUNT;
-61. this.scaleList[proxy.index] = this.MIN_SCALE + (1 - this.MIN_SCALE) * (1 - (proxy.position - 1) / this.DISPLAY_COUNT);
-62. this.translateList[proxy.index] = -(proxy.position - 1) * proxy.mainAxisLength - (1 - this.scaleList[proxy.index]) * proxy.mainAxisLength / 2.0;
-63. }
-64. this.zIndexList[proxy.index] = -1;
-65. }
-66. } else {
-67. // 适配镜像
-68. if (proxy.position >= -proxy.index % this.DISPLAY_COUNT || proxy.position <= -this.DISPLAY_COUNT - proxy.index % this.DISPLAY_COUNT) {
-69. // 同组页面往右滑或往左完全滑出视窗外时，重置属性值
-70. this.opacityList[proxy.index] = 1.0;
-71. this.scaleList[proxy.index] = 1.0;
-72. this.translateList[proxy.index] = 0.0;
-73. this.zIndexList[proxy.index] = 0;
-74. } else {
-75. // 同组页面往左滑且未滑出视窗外时，对同组中左右两个页面，逐帧根据position修改属性值，实现两个页面往Swiper中间靠拢并透明缩放的自定义切换动画
-76. if (proxy.index % this.DISPLAY_COUNT === 0) {
-77. this.opacityList[proxy.index] = 1 + proxy.position / this.DISPLAY_COUNT;
-78. this.scaleList[proxy.index] = this.MIN_SCALE + (1 - this.MIN_SCALE) * (1 + proxy.position / this.DISPLAY_COUNT);
-79. this.translateList[proxy.index] = -proxy.position * proxy.mainAxisLength - (1 - this.scaleList[proxy.index]) * proxy.mainAxisLength / 2.0;
-80. } else {
-81. this.opacityList[proxy.index] = 1 + (proxy.position + 1) / this.DISPLAY_COUNT;
-82. this.scaleList[proxy.index] = this.MIN_SCALE + (1 - this.MIN_SCALE) * (1 + (proxy.position + 1) / this.DISPLAY_COUNT);
-83. this.translateList[proxy.index] = -(proxy.position + 1) * proxy.mainAxisLength + (1 - this.scaleList[proxy.index]) * proxy.mainAxisLength / 2.0;
-84. }
-85. this.zIndexList[proxy.index] = -1;
-86. }
-87. }
-88. }
-89. })
-90. .onContentDidScroll((selectedIndex: number, index: number, position: number, mainAxisLength: number) => {
-91. // 监听Swiper页面滑动事件，在该回调中可以实现自定义导航点切换动画等
-92. console.info("onContentDidScroll selectedIndex: " + selectedIndex + ", index: " + index + ", position: " + position + ", mainAxisLength: " + mainAxisLength);
-93. })
-94. }.width('100%')
-95. }
-96. }
+  public static getIsRTL(): boolean {
+    return CommonUtil.isRTL;
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/QLZrTr8QT9CIjq5DAUC1gw/zh-cn_image_0000002558606504.gif)
+```ts
+// xxx.ets
+import { CommonUtil } from '../common/CommonUtil';
+
+@Entry
+@Component
+struct SwiperCustomAnimationExample {
+  private DISPLAY_COUNT: number = 2;
+  private MIN_SCALE: number = 0.75;
+
+  @State backgroundColors: Color[] = [Color.Green, Color.Blue, Color.Yellow, Color.Pink, Color.Gray, Color.Orange];
+  @State opacityList: number[] = [];
+  @State scaleList: number[] = [];
+  @State translateList: number[] = [];
+  @State zIndexList: number[] = [];
+
+  aboutToAppear(): void {
+    for (let i = 0; i < this.backgroundColors.length; i++) {
+      this.opacityList.push(1.0);
+      this.scaleList.push(1.0);
+      this.translateList.push(0.0);
+      this.zIndexList.push(0);
+    }
+  }
+
+  build() {
+    Column() {
+      Swiper() {
+        ForEach(this.backgroundColors, (backgroundColor: Color, index: number) => {
+          Text(index.toString()).width('100%').height('100%').fontSize(50).textAlign(TextAlign.Center)
+            .backgroundColor(backgroundColor)
+            // 自定义动画变化透明度、缩放页面、抵消系统默认位移、渲染层级等
+            .opacity(this.opacityList[index])
+            .scale({ x: this.scaleList[index], y: this.scaleList[index] })
+            .translate({ x: this.translateList[index] })
+            .zIndex(this.zIndexList[index])
+        })
+      }
+      .height(300)
+      .indicator(false)
+      .displayCount(this.DISPLAY_COUNT, true)
+      .customContentTransition({
+        // 页面移除视窗时超时1000ms下渲染树
+        timeout: 1000,
+        // 对视窗内所有页面逐帧回调transition，在回调中修改opacity、scale、translate、zIndex等属性值，实现自定义动画
+        transition: (proxy: SwiperContentTransitionProxy) => {
+          if (!CommonUtil.getIsRTL()) {
+            if (proxy.position <= proxy.index % this.DISPLAY_COUNT || proxy.position >= this.DISPLAY_COUNT + proxy.index % this.DISPLAY_COUNT) {
+              // 同组页面往左滑或往右完全滑出视窗外时，重置属性值
+              this.opacityList[proxy.index] = 1.0;
+              this.scaleList[proxy.index] = 1.0;
+              this.translateList[proxy.index] = 0.0;
+              this.zIndexList[proxy.index] = 0;
+            } else {
+              // 同组页面往右滑且未滑出视窗外时，对同组中左右两个页面，逐帧根据position修改属性值，实现两个页面往Swiper中间靠拢并透明缩放的自定义切换动画
+              if (proxy.index % this.DISPLAY_COUNT === 0) {
+                this.opacityList[proxy.index] = 1 - proxy.position / this.DISPLAY_COUNT;
+                this.scaleList[proxy.index] = this.MIN_SCALE + (1 - this.MIN_SCALE) * (1 - proxy.position / this.DISPLAY_COUNT);
+                this.translateList[proxy.index] = -proxy.position * proxy.mainAxisLength + (1 - this.scaleList[proxy.index]) * proxy.mainAxisLength / 2.0;
+              } else {
+                this.opacityList[proxy.index] = 1 - (proxy.position - 1) / this.DISPLAY_COUNT;
+                this.scaleList[proxy.index] = this.MIN_SCALE + (1 - this.MIN_SCALE) * (1 - (proxy.position - 1) / this.DISPLAY_COUNT);
+                this.translateList[proxy.index] = -(proxy.position - 1) * proxy.mainAxisLength - (1 - this.scaleList[proxy.index]) * proxy.mainAxisLength / 2.0;
+              }
+              this.zIndexList[proxy.index] = -1;
+            }
+          } else {
+            // 适配镜像
+            if (proxy.position >= -proxy.index % this.DISPLAY_COUNT || proxy.position <= -this.DISPLAY_COUNT - proxy.index % this.DISPLAY_COUNT) {
+              // 同组页面往右滑或往左完全滑出视窗外时，重置属性值
+              this.opacityList[proxy.index] = 1.0;
+              this.scaleList[proxy.index] = 1.0;
+              this.translateList[proxy.index] = 0.0;
+              this.zIndexList[proxy.index] = 0;
+            } else {
+              // 同组页面往左滑且未滑出视窗外时，对同组中左右两个页面，逐帧根据position修改属性值，实现两个页面往Swiper中间靠拢并透明缩放的自定义切换动画
+              if (proxy.index % this.DISPLAY_COUNT === 0) {
+                this.opacityList[proxy.index] = 1 + proxy.position / this.DISPLAY_COUNT;
+                this.scaleList[proxy.index] = this.MIN_SCALE + (1 - this.MIN_SCALE) * (1 + proxy.position / this.DISPLAY_COUNT);
+                this.translateList[proxy.index] = -proxy.position * proxy.mainAxisLength - (1 - this.scaleList[proxy.index]) * proxy.mainAxisLength / 2.0;
+              } else {
+                this.opacityList[proxy.index] = 1 + (proxy.position + 1) / this.DISPLAY_COUNT;
+                this.scaleList[proxy.index] = this.MIN_SCALE + (1 - this.MIN_SCALE) * (1 + (proxy.position + 1) / this.DISPLAY_COUNT);
+                this.translateList[proxy.index] = -(proxy.position + 1) * proxy.mainAxisLength + (1 - this.scaleList[proxy.index]) * proxy.mainAxisLength / 2.0;
+              }
+              this.zIndexList[proxy.index] = -1;
+            }
+          }
+        }
+      })
+      .onContentDidScroll((selectedIndex: number, index: number, position: number, mainAxisLength: number) => {
+        // 监听Swiper页面滑动事件，在该回调中可以实现自定义导航点切换动画等
+        console.info("onContentDidScroll selectedIndex: " + selectedIndex + ", index: " + index + ", position: " + position + ", mainAxisLength: " + mainAxisLength);
+      })
+    }.width('100%')
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/3Uaqoh_rTW64hRDEnARhZw/zh-cn_image_0000002706835792.gif)
 
 ### 示例5（设置圆点导航点超长显示）
 
 该示例通过DotIndicator接口的[maxDisplayCount](ts-container-swiper.md#maxdisplaycount12)属性，实现了圆点导航点超长显示动画效果。
 
+```ts
+class MyDataSource implements IDataSource {
+  private list: number[] = [];
+
+  constructor(list: number[]) {
+    this.list = list;
+  }
+
+  totalCount(): number {
+    return this.list.length;
+  }
+
+  getData(index: number): number {
+    return this.list[index];
+  }
+
+  registerDataChangeListener(listener: DataChangeListener): void {
+  }
+
+  unregisterDataChangeListener() {
+  }
+}
+
+@Entry
+@Component
+struct Index {
+  private swiperController: SwiperController = new SwiperController();
+  private data: MyDataSource = new MyDataSource([]);
+
+  aboutToAppear(): void {
+    let list: number[] = [];
+    for (let i = 1; i <= 15; i++) {
+      list.push(i);
+    }
+    this.data = new MyDataSource(list);
+  }
+
+  build() {
+    Column({ space: 5 }) {
+      Swiper(this.swiperController) {
+        LazyForEach(this.data, (item: number) => {
+          Text(item.toString())
+            .width('90%')
+            .height(160)
+            .backgroundColor(0xAFEEEE)
+            .textAlign(TextAlign.Center)
+            .fontSize(30)
+        }, (item: number) => item.toString())
+      }
+      .cachedCount(2)
+      .index(5)
+      .autoPlay(true)
+      .interval(4000)
+      .loop(true)
+      .duration(1000)
+      .itemSpace(0)
+      .indicator( // 设置圆点导航点样式
+        new DotIndicator()
+          .itemWidth(8)
+          .itemHeight(8)
+          .selectedItemWidth(16)
+          .selectedItemHeight(8)
+          .color(Color.Gray)
+          .selectedColor(Color.Blue)
+          .maxDisplayCount(9)) // 设置导航点最大显示数量为9个
+      .displayArrow({ // 设置导航点箭头样式
+        showBackground: true,
+        isSidebarMiddle: true,
+        backgroundSize: 24,
+        backgroundColor: Color.White,
+        arrowSize: 18,
+        arrowColor: Color.Blue
+      }, false)
+      .curve(Curve.Linear)
+      Row({ space: 12 }) {
+        Button('showNext')
+          .onClick(() => {
+            this.swiperController.showNext();
+          })
+        Button('showPrevious')
+          .onClick(() => {
+            this.swiperController.showPrevious();
+          })
+      }.margin(5)
+    }.width('100%')
+    .margin({ top: 5 })
+  }
+}
 ```
-1. class MyDataSource implements IDataSource {
-2. private list: number[] = [];
 
-4. constructor(list: number[]) {
-5. this.list = list;
-6. }
-
-8. totalCount(): number {
-9. return this.list.length;
-10. }
-
-12. getData(index: number): number {
-13. return this.list[index];
-14. }
-
-16. registerDataChangeListener(listener: DataChangeListener): void {
-17. }
-
-19. unregisterDataChangeListener() {
-20. }
-21. }
-
-23. @Entry
-24. @Component
-25. struct Index {
-26. private swiperController: SwiperController = new SwiperController();
-27. private data: MyDataSource = new MyDataSource([]);
-
-29. aboutToAppear(): void {
-30. let list: number[] = [];
-31. for (let i = 1; i <= 15; i++) {
-32. list.push(i);
-33. }
-34. this.data = new MyDataSource(list);
-35. }
-
-37. build() {
-38. Column({ space: 5 }) {
-39. Swiper(this.swiperController) {
-40. LazyForEach(this.data, (item: string) => {
-41. Text(item.toString())
-42. .width('90%')
-43. .height(160)
-44. .backgroundColor(0xAFEEEE)
-45. .textAlign(TextAlign.Center)
-46. .fontSize(30)
-47. }, (item: string) => item)
-48. }
-49. .cachedCount(2)
-50. .index(5)
-51. .autoPlay(true)
-52. .interval(4000)
-53. .loop(true)
-54. .duration(1000)
-55. .itemSpace(0)
-56. .indicator( // 设置圆点导航点样式
-57. new DotIndicator()
-58. .itemWidth(8)
-59. .itemHeight(8)
-60. .selectedItemWidth(16)
-61. .selectedItemHeight(8)
-62. .color(Color.Gray)
-63. .selectedColor(Color.Blue)
-64. .maxDisplayCount(9)) // 设置导航点最大显示数量为9个
-65. .displayArrow({ // 设置导航点箭头样式
-66. showBackground: true,
-67. isSidebarMiddle: true,
-68. backgroundSize: 24,
-69. backgroundColor: Color.White,
-70. arrowSize: 18,
-71. arrowColor: Color.Blue
-72. }, false)
-73. .curve(Curve.Linear)
-74. Row({ space: 12 }) {
-75. Button('showNext')
-76. .onClick(() => {
-77. this.swiperController.showNext();
-78. })
-79. Button('showPrevious')
-80. .onClick(() => {
-81. this.swiperController.showPrevious();
-82. })
-83. }.margin(5)
-84. }.width('100%')
-85. .margin({ top: 5 })
-86. }
-87. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/PbZObJF7SLSveR-aOR5gYA/zh-cn_image_0000002589326031.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/v227UvD4QruQNQl_SJBkPA/zh-cn_image_0000002736314897.gif)
 
 ### 示例6（预加载子节点）
 
 该示例通过[preloadItems](ts-container-swiper.md#preloaditems18)接口实现了预加载指定子节点。
 
-```
-1. // xxx.ets
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// xxx.ets
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct SwiperPreloadItems {
-7. @State currentIndex: number = 1;
-8. private swiperController: SwiperController = new SwiperController();
-9. @State arr: string[] = ["0", "1", "2", "3", "4", "5"];
+@Entry
+@Component
+struct SwiperPreloadItems {
+  @State currentIndex: number = 1;
+  private swiperController: SwiperController = new SwiperController();
+  @State arr: string[] = ["0", "1", "2", "3", "4", "5"];
 
-11. build() {
-12. Column() {
-13. Swiper(this.swiperController) {
-14. ForEach(this.arr, (item: string) => {
-15. MyComponent({ txt: item })
-16. })
-17. }
-18. .cachedCount(1, true)
-19. .width("70%")
-20. .height("50%")
+  build() {
+    Column() {
+      Swiper(this.swiperController) {
+        ForEach(this.arr, (item: string) => {
+          MyComponent({ txt: item })
+        })
+      }
+      .cachedCount(1, true)
+      .width("70%")
+      .height("50%")
 
-23. Button('preload items: [2, 3]')
-24. .margin(5)
-25. .onClick(() => {
-26. // 预加载index=2和index=3的子节点
-27. try {
-28. this.swiperController.preloadItems([2, 3])
-29. .then(() => {
-30. console.info('preloadItems [2, 3] success.');
-31. })
-32. .catch((error: BusinessError) => {
-33. console.error('preloadItems [2, 3] failed, error code: ' + error.code + ', error message: ' + error.message);
-34. })
-35. } catch (error) {
-36. console.error('preloadItems [2, 3] failed, error code: ' + error.code + ', error message: ' + error.message);
-37. }
+      Button('preload items: [2, 3]')
+        .margin(5)
+        .onClick(() => {
+          // 预加载index=2和index=3的子节点
+          try {
+            this.swiperController.preloadItems([2, 3])
+              .then(() => {
+                console.info('preloadItems [2, 3] success.');
+              })
+              .catch((error: BusinessError) => {
+                console.error('preloadItems [2, 3] failed, error code: ' + error.code + ', error message: ' + error.message);
+              })
+          } catch (error) {
+            console.error('preloadItems [2, 3] failed, error code: ' + error.code + ', error message: ' + error.message);
+          }
 
-39. })
-40. }
-41. .width("100%")
-42. .margin(5)
-43. }
-44. }
+        })
+    }
+    .width("100%")
+    .margin(5)
+  }
+}
 
-46. @Component
-47. struct MyComponent {
-48. private txt: string = "";
+@Component
+struct MyComponent {
+  private txt: string = "";
 
-50. aboutToAppear(): void {
-51. console.info('aboutToAppear txt:' + this.txt);
-52. }
+  aboutToAppear(): void {
+    console.info('aboutToAppear txt:' + this.txt);
+  }
 
-54. aboutToDisappear(): void {
-55. console.info('aboutToDisappear txt:' + this.txt);
-56. }
+  aboutToDisappear(): void {
+    console.info('aboutToDisappear txt:' + this.txt);
+  }
 
-58. build() {
-59. Text(this.txt)
-60. .textAlign(TextAlign.Center)
-61. .width('100%')
-62. .height('100%')
-63. .backgroundColor(0xAFEEEE)
-64. }
-65. }
+  build() {
+    Text(this.txt)
+      .textAlign(TextAlign.Center)
+      .width('100%')
+      .height('100%')
+      .backgroundColor(0xAFEEEE)
+  }
+}
 ```
 
 ### 示例7（实现Tabs与Swiper联动）
 
 该示例通过[onSelected](ts-container-swiper.md#onselected18)接口，实现了[Tabs](ts-container-tabs.md)与Swiper联动切换。
 
+```ts
+// xxx.ets
+class MyDataSource implements IDataSource {
+  private list: number[] = [];
+
+  constructor(list: number[]) {
+    this.list = list;
+  }
+
+  totalCount(): number {
+    return this.list.length;
+  }
+
+  getData(index: number): number {
+    return this.list[index];
+  }
+
+  registerDataChangeListener(listener: DataChangeListener): void {
+  }
+
+  unregisterDataChangeListener() {
+  }
+}
+
+@Entry
+@Component
+struct TabsSwiperExample {
+  @State fontColor: string = '#182431';
+  @State selectedFontColor: string = '#007DFF';
+  @State currentIndex: number = 0;
+  private list: number[] = [];
+  private tabsController: TabsController = new TabsController();
+  private swiperController: SwiperController = new SwiperController();
+  private swiperData: MyDataSource = new MyDataSource([]);
+
+  aboutToAppear(): void {
+    for (let i = 0; i <= 9; i++) {
+      this.list.push(i);
+    }
+    this.swiperData = new MyDataSource(this.list);
+  }
+
+  @Builder tabBuilder(index: number, name: string) {
+    Column() {
+      Text(name)
+        .fontColor(this.currentIndex === index ? this.selectedFontColor : this.fontColor)
+        .fontSize(16)
+        .fontWeight(this.currentIndex === index ? 500 : 400)
+        .lineHeight(22)
+        .margin({ top: 17, bottom: 7 })
+      Divider()
+        .strokeWidth(2)
+        .color('#007DFF')
+        .opacity(this.currentIndex === index ? 1 : 0)
+    }.width('20%')
+  }
+
+  build() {
+    Column() {
+      Tabs({ barPosition: BarPosition.Start, controller: this.tabsController }) {
+        ForEach(this.list, (index: number) => {
+          TabContent().tabBar(this.tabBuilder(index, '页签 ' + this.list[index]))
+        })
+      }
+      .onTabBarClick((index: number) => {
+        this.currentIndex = index;
+        this.swiperController.changeIndex(index, true);
+      })
+      .barMode(BarMode.Scrollable)
+      .backgroundColor('#F1F3F5')
+      .height(56)
+      .width('100%')
+
+      Swiper(this.swiperController) {
+        LazyForEach(this.swiperData, (item: number) => {
+          Text(item.toString())
+            .onAppear(()=>{
+              console.info('onAppear ' + item.toString());
+            })
+            .onDisAppear(()=>{
+              console.info('onDisAppear ' + item.toString());
+            })
+            .width('100%')
+            .height('40%')
+            .backgroundColor(0xAFEEEE)
+            .textAlign(TextAlign.Center)
+            .fontSize(30)
+        }, (item: number) => item.toString())
+      }
+      .loop(false)
+      // 选中/切换轮播项时触发
+      .onSelected((index: number) => {
+        console.info("onSelected:" + index);
+        // 同步选中索引到currentIndex（更新页签选中态）
+        this.currentIndex = index;
+        // 控制Tabs切换到对应索引页签
+        this.tabsController.changeIndex(index);
+      })
+    }
+  }
+}
 ```
-1. // xxx.ets
-2. class MyDataSource implements IDataSource {
-3. private list: number[] = [];
 
-5. constructor(list: number[]) {
-6. this.list = list;
-7. }
-
-9. totalCount(): number {
-10. return this.list.length;
-11. }
-
-13. getData(index: number): number {
-14. return this.list[index];
-15. }
-
-17. registerDataChangeListener(listener: DataChangeListener): void {
-18. }
-
-20. unregisterDataChangeListener() {
-21. }
-22. }
-
-24. @Entry
-25. @Component
-26. struct TabsSwiperExample {
-27. @State fontColor: string = '#182431';
-28. @State selectedFontColor: string = '#007DFF';
-29. @State currentIndex: number = 0;
-30. private list: number[] = [];
-31. private tabsController: TabsController = new TabsController();
-32. private swiperController: SwiperController = new SwiperController();
-33. private swiperData: MyDataSource = new MyDataSource([]);
-
-35. aboutToAppear(): void {
-36. for (let i = 0; i <= 9; i++) {
-37. this.list.push(i);
-38. }
-39. this.swiperData = new MyDataSource(this.list);
-40. }
-
-42. @Builder tabBuilder(index: number, name: string) {
-43. Column() {
-44. Text(name)
-45. .fontColor(this.currentIndex === index ? this.selectedFontColor : this.fontColor)
-46. .fontSize(16)
-47. .fontWeight(this.currentIndex === index ? 500 : 400)
-48. .lineHeight(22)
-49. .margin({ top: 17, bottom: 7 })
-50. Divider()
-51. .strokeWidth(2)
-52. .color('#007DFF')
-53. .opacity(this.currentIndex === index ? 1 : 0)
-54. }.width('20%')
-55. }
-
-57. build() {
-58. Column() {
-59. Tabs({ barPosition: BarPosition.Start, controller: this.tabsController }) {
-60. ForEach(this.list, (index: number) =>{
-61. TabContent().tabBar(this.tabBuilder(index, '页签 ' + this.list[index]))
-62. })
-63. }
-64. .onTabBarClick((index: number) => {
-65. this.currentIndex = index;
-66. this.swiperController.changeIndex(index, true);
-67. })
-68. .barMode(BarMode.Scrollable)
-69. .backgroundColor('#F1F3F5')
-70. .height(56)
-71. .width('100%')
-
-73. Swiper(this.swiperController) {
-74. LazyForEach(this.swiperData, (item: string) => {
-75. Text(item.toString())
-76. .onAppear(()=>{
-77. console.info('onAppear ' + item.toString());
-78. })
-79. .onDisAppear(()=>{
-80. console.info('onDisAppear ' + item.toString());
-81. })
-82. .width('100%')
-83. .height('40%')
-84. .backgroundColor(0xAFEEEE)
-85. .textAlign(TextAlign.Center)
-86. .fontSize(30)
-87. }, (item: string) => item)
-88. }
-89. .loop(false)
-90. // 选中/切换轮播项时触发
-91. .onSelected((index: number) => {
-92. console.info("onSelected:" + index);
-93. // 同步选中索引到currentIndex（更新页签选中态）
-94. this.currentIndex = index;
-95. // 控制Tabs切换到对应索引页签
-96. this.tabsController.changeIndex(index);
-97. })
-98. }
-99. }
-100. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/7_Pigw7SSTiaDwNQetNtuA/zh-cn_image_0000002589245973.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/-V0obHiiSrK7zK_eoIRVQw/zh-cn_image_0000002706675854.gif)
 
 ### 示例8（滑动行为拦截事件）
 
 该示例通过[onContentWillScroll](ts-container-swiper.md#oncontentwillscroll15)事件实现了单方向的滑动翻页，即只能滑动向前翻页，滑动向后翻页的行为会被拦截。
 
+```ts
+// xxx.ets
+class MyDataSource implements IDataSource {
+  private list: number[] = [];
+
+  constructor(list: number[]) {
+    this.list = list;
+  }
+
+  totalCount(): number {
+    return this.list.length;
+  }
+
+  getData(index: number): number {
+    return this.list[index];
+  }
+
+  registerDataChangeListener(listener: DataChangeListener): void {
+  }
+
+  unregisterDataChangeListener() {
+  }
+}
+
+@Entry
+@Component
+struct SwiperExample {
+  private swiperController: SwiperController = new SwiperController();
+  private data: MyDataSource = new MyDataSource([]);
+  private currentIndex: number = 4;
+
+  aboutToAppear(): void {
+    let list: number[] = [];
+    for (let i = 1; i <= 10; i++) {
+      list.push(i);
+    }
+    this.data = new MyDataSource(list);
+  }
+
+  build() {
+    Column({ space: 5 }) {
+      Swiper(this.swiperController) {
+        LazyForEach(this.data, (item: number) => {
+          Text(item.toString())
+            .width('90%')
+            .height(160)
+            .backgroundColor(0xAFEEEE)
+            .textAlign(TextAlign.Center)
+            .fontSize(30)
+        }, (item: number) => item.toString())
+      }
+      .index(this.currentIndex)
+      .loop(false)
+      .onChange((index: number) => {
+        this.currentIndex = index;
+      })
+      .onContentWillScroll((result: SwiperContentWillScrollResult) => {
+        // result.comingIndex：即将要滑动到的目标索引
+        // 拦截逻辑：
+        // 1. 若目标索引 > 当前索引：返回false，拦截该滑动行为
+        // 2. 若目标索引 < 当前索引：返回true，允许该滑动行为
+        if (result.comingIndex > this.currentIndex) {
+          return false;
+        }
+        return true;
+      })
+
+      Row({ space: 12 }) {
+        Button('showNext')
+          .onClick(() => {
+            this.swiperController.showNext();
+          })
+        Button('showPrevious')
+          .onClick(() => {
+            this.swiperController.showPrevious();
+          })
+      }.margin(5)
+    }.width('100%')
+    .margin({ top: 5 })
+  }
+}
 ```
-1. // xxx.ets
-2. class MyDataSource implements IDataSource {
-3. private list: number[] = [];
 
-5. constructor(list: number[]) {
-6. this.list = list;
-7. }
-
-9. totalCount(): number {
-10. return this.list.length;
-11. }
-
-13. getData(index: number): number {
-14. return this.list[index];
-15. }
-
-17. registerDataChangeListener(listener: DataChangeListener): void {
-18. }
-
-20. unregisterDataChangeListener() {
-21. }
-22. }
-
-24. @Entry
-25. @Component
-26. struct SwiperExample {
-27. private swiperController: SwiperController = new SwiperController();
-28. private data: MyDataSource = new MyDataSource([]);
-29. private currentIndex: number = 4;
-
-31. aboutToAppear(): void {
-32. let list: number[] = [];
-33. for (let i = 1; i <= 10; i++) {
-34. list.push(i);
-35. }
-36. this.data = new MyDataSource(list);
-37. }
-
-39. build() {
-40. Column({ space: 5 }) {
-41. Swiper(this.swiperController) {
-42. LazyForEach(this.data, (item: string) => {
-43. Text(item.toString())
-44. .width('90%')
-45. .height(160)
-46. .backgroundColor(0xAFEEEE)
-47. .textAlign(TextAlign.Center)
-48. .fontSize(30)
-49. }, (item: string) => item)
-50. }
-51. .index(this.currentIndex)
-52. .loop(false)
-53. .onChange((index: number) => {
-54. this.currentIndex = index;
-55. })
-56. .onContentWillScroll((result: SwiperContentWillScrollResult) => {
-57. // result.comingIndex：即将要滑动到的目标索引
-58. // 拦截逻辑：
-59. // 1. 若目标索引 > 当前索引：返回false，拦截该滑动行为
-60. // 2. 若目标索引 < 当前索引：返回true，允许该滑动行为
-61. if (result.comingIndex > this.currentIndex) {
-62. return false;
-63. }
-64. return true;
-65. })
-
-67. Row({ space: 12 }) {
-68. Button('showNext')
-69. .onClick(() => {
-70. this.swiperController.showNext();
-71. })
-72. Button('showPrevious')
-73. .onClick(() => {
-74. this.swiperController.showPrevious();
-75. })
-76. }.margin(5)
-77. }.width('100%')
-78. .margin({ top: 5 })
-79. }
-80. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/7cnvBIZaTC6GWdp4-QcCMA/zh-cn_image_0000002558766164.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/MygRSL50TLOZOmZ-d2TFvA/zh-cn_image_0000002736434941.gif)
 
 ### 示例9（演示导航点space与bottom）
 
 该示例通过[bottom](ts-container-swiper.md#bottom19)和[space](ts-container-swiper.md#space19)接口，实现了圆点导航点与底部间距为0的间距控制以及导航点之间的间距控制。
 
+```ts
+import { LengthMetrics } from '@kit.ArkUI';
+
+// MyDataSource.ets
+class MyDataSource implements IDataSource {
+  private list: number[] = [];
+
+  constructor(list: number[]) {
+    this.list = list;
+  }
+
+  totalCount(): number {
+    return this.list.length;
+  }
+
+  getData(index: number): number {
+    return this.list[index];
+  }
+
+  registerDataChangeListener(listener: DataChangeListener): void {
+  }
+
+  unregisterDataChangeListener() {
+  }
+}
+
+// SwiperExample.ets
+@Entry
+@Component
+struct SwiperExample {
+
+  @State space: LengthMetrics = LengthMetrics.vp(0);
+  @State spacePool: LengthMetrics[] = [LengthMetrics.vp(0), LengthMetrics.px(3), LengthMetrics.vp(10)];
+  @State spaceIndex: number = 0;
+
+  @State ignoreSize: boolean = false;
+  @State ignoreSizePool: boolean[] = [false, true];
+  @State ignoreSizeIndex: number = 0;
+
+  private swiperController1: SwiperController = new SwiperController();
+  private data1: MyDataSource = new MyDataSource([]);
+
+  aboutToAppear(): void {
+    let list1: number[] = [];
+    for (let i = 1; i <= 10; i++) {
+      list1.push(i);
+    }
+    this.data1 = new MyDataSource(list1);
+  }
+
+  build() {
+    Scroll() {
+      Column({ space: 20 }) {
+        Swiper(this.swiperController1) {
+        LazyForEach(this.data1, (item: number) => {
+            Text(item.toString())
+              .width('90%')
+              .height(120)
+              .backgroundColor(0xAFEEEE)
+              .textAlign(TextAlign.Center)
+              .fontSize(30)
+        }, (item: number) => item.toString())
+        }
+        .indicator(new DotIndicator()
+          .space(this.space) // 控制导航点之间的间距
+          .bottom(LengthMetrics.vp(0), this.ignoreSize) // 控制导航点与Swiper底部的间距
+          .itemWidth(15)
+          .itemHeight(15)
+          .selectedItemWidth(15)
+          .selectedItemHeight(15)
+          .color(Color.Gray)
+          .selectedColor(Color.Blue))
+        .displayArrow({
+          showBackground: true,
+          isSidebarMiddle: true,
+          backgroundSize: 24,
+          backgroundColor: Color.White,
+          arrowSize: 18,
+          arrowColor: Color.Blue
+        }, false)
+        
+        Column({ space: 4 }) {
+          Button('spaceIndex:' + this.spaceIndex).onClick(() => {
+            this.spaceIndex = (this.spaceIndex + 1) % this.spacePool.length;
+            this.space = this.spacePool[this.spaceIndex];
+          }).margin(10)
+
+          Button('ignoreSizeIndex:' + this.ignoreSizeIndex).onClick(() => {
+            this.ignoreSizeIndex = (this.ignoreSizeIndex + 1) % this.ignoreSizePool.length;
+            this.ignoreSize = this.ignoreSizePool[this.ignoreSizeIndex];
+          }).margin(10)
+        }.margin(2)
+      }.width('100%')
+    }
+  }
+}
 ```
-1. import { LengthMetrics } from '@kit.ArkUI';
 
-3. // MyDataSource.ets
-4. class MyDataSource implements IDataSource {
-5. private list: number[] = [];
-
-7. constructor(list: number[]) {
-8. this.list = list;
-9. }
-
-11. totalCount(): number {
-12. return this.list.length;
-13. }
-
-15. getData(index: number): number {
-16. return this.list[index];
-17. }
-
-19. registerDataChangeListener(listener: DataChangeListener): void {
-20. }
-
-22. unregisterDataChangeListener() {
-23. }
-24. }
-
-26. // SwiperExample.ets
-27. @Entry
-28. @Component
-29. struct SwiperExample {
-
-31. @State space: LengthMetrics = LengthMetrics.vp(0);
-32. @State spacePool: LengthMetrics[] = [LengthMetrics.vp(0), LengthMetrics.px(3), LengthMetrics.vp(10)];
-33. @State spaceIndex: number = 0;
-
-35. @State ignoreSize: boolean = false;
-36. @State ignoreSizePool: boolean[] = [false, true];
-37. @State ignoreSizeIndex: number = 0;
-
-39. private swiperController1: SwiperController = new SwiperController();
-40. private data1: MyDataSource = new MyDataSource([]);
-
-42. aboutToAppear(): void {
-43. let list1: number[] = [];
-44. for (let i = 1; i <= 10; i++) {
-45. list1.push(i);
-46. }
-47. this.data1 = new MyDataSource(list1);
-48. }
-
-50. build() {
-51. Scroll() {
-52. Column({ space: 20 }) {
-53. Swiper(this.swiperController1) {
-54. LazyForEach(this.data1, (item: string) => {
-55. Text(item.toString())
-56. .width('90%')
-57. .height(120)
-58. .backgroundColor(0xAFEEEE)
-59. .textAlign(TextAlign.Center)
-60. .fontSize(30)
-61. }, (item: string) => item)
-62. }
-63. .indicator(new DotIndicator()
-64. .space(this.space) // 控制导航点之间的间距
-65. .bottom(LengthMetrics.vp(0), this.ignoreSize) // 控制导航点与Swiper底部的间距
-66. .itemWidth(15)
-67. .itemHeight(15)
-68. .selectedItemWidth(15)
-69. .selectedItemHeight(15)
-70. .color(Color.Gray)
-71. .selectedColor(Color.Blue))
-72. .displayArrow({
-73. showBackground: true,
-74. isSidebarMiddle: true,
-75. backgroundSize: 24,
-76. backgroundColor: Color.White,
-77. arrowSize: 18,
-78. arrowColor: Color.Blue
-79. }, false)
-
-81. Column({ space: 4 }) {
-82. Button('spaceIndex:' + this.spaceIndex).onClick(() => {
-83. this.spaceIndex = (this.spaceIndex + 1) % this.spacePool.length;
-84. this.space = this.spacePool[this.spaceIndex];
-85. }).margin(10)
-
-87. Button('ignoreSizeIndex:' + this.ignoreSizeIndex).onClick(() => {
-88. this.ignoreSizeIndex = (this.ignoreSizeIndex + 1) % this.ignoreSizePool.length;
-89. this.ignoreSize = this.ignoreSizePool[this.ignoreSizeIndex];
-90. }).margin(10)
-91. }.margin(2)
-92. }.width('100%')
-93. }
-94. }
-95. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/21vf81zNRgmXffcimM-waA/zh-cn_image_0000002558606506.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/Mqoyeu3oTVyXOib4RJ0cRw/zh-cn_image_0000002706835794.gif)
 
 ### 示例10（Swiper组件基于断点配置显示个数）
 
@@ -3076,67 +3126,67 @@ PhonePC/2in1TabletTVWearable
 
 从API version 22开始，新增[displayCount](ts-container-swiper.md#displaycount22)接口，用于设置Swiper视窗内元素显示个数。
 
-```
-1. class MyDataSource implements IDataSource {
-2. private list: number[] = [];
+```ts
+class MyDataSource implements IDataSource {
+  private list: number[] = [];
 
-4. constructor(list: number[]) {
-5. this.list = list;
-6. }
+  constructor(list: number[]) {
+    this.list = list;
+  }
 
-8. totalCount(): number {
-9. return this.list.length;
-10. }
+  totalCount(): number {
+    return this.list.length;
+  }
 
-12. getData(index: number): number {
-13. return this.list[index];
-14. }
+  getData(index: number): number {
+    return this.list[index];
+  }
 
-16. registerDataChangeListener(listener: DataChangeListener): void {
-17. }
+  registerDataChangeListener(listener: DataChangeListener): void {
+  }
 
-19. unregisterDataChangeListener() {
-20. }
-21. }
+  unregisterDataChangeListener() {
+  }
+}
 
-23. @Entry
-24. @Component
-25. struct SwiperExample {
-26. private data: MyDataSource = new MyDataSource([]);
+@Entry
+@Component
+struct SwiperExample {
+  private data: MyDataSource = new MyDataSource([]);
 
-28. aboutToAppear(): void {
-29. let list: number[] = [];
-30. for (let i = 1; i <= 10; i++) {
-31. list.push(i);
-32. }
-33. this.data = new MyDataSource(list);
-34. }
+  aboutToAppear(): void {
+    let list: number[] = [];
+    for (let i = 1; i <= 10; i++) {
+      list.push(i);
+    }
+    this.data = new MyDataSource(list);
+  }
 
-36. build() {
-37. Column() {
-38. Swiper() {
-39. LazyForEach(this.data, (item: string) => {
-40. Text(item.toString())
-41. .height(160)
-42. .backgroundColor(0xAFEEEE)
-43. .textAlign(TextAlign.Center)
-44. .fontSize(30)
-45. }, (item: string) => item)
-46. }
-47. .width('100%')
-48. .displayCount({fillType:PresetFillType.BREAKPOINT_SM1MD2LG3}) // 按断点设置视窗内元素显示个数
-49. }
-50. }
-51. }
+  build() {
+    Column() {
+      Swiper() {
+        LazyForEach(this.data, (item: number) => {
+          Text(item.toString())
+            .height(160)
+            .backgroundColor(0xAFEEEE)
+            .textAlign(TextAlign.Center)
+            .fontSize(30)
+        }, (item: number) => item.toString())
+      }
+      .width('100%')
+      .displayCount({fillType:PresetFillType.BREAKPOINT_SM1MD2LG3}) // 按断点设置视窗内元素显示个数
+    }
+  }
+}
 ```
 
 Swiper宽度属于[sm](../harmonyos-guides/arkts-layout-development-grid-layout.md#栅格容器断点)及更小的断点区间时显示1列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/FM3F-_Y_QfOKRIjpIHUhgQ/zh-cn_image_0000002589326033.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/bYVFFcr5T4KCGi1nxLlgGw/zh-cn_image_0000002736314899.jpg)
 
 Swiper宽度属于[md](../harmonyos-guides/arkts-layout-development-grid-layout.md#栅格容器断点)断点区间时显示2列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/0Ny9gb9SSK2RT7C6JlMOSA/zh-cn_image_0000002589245975.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/ZicVjr7PTPm5xhozLBe-JQ/zh-cn_image_0000002706675856.jpg)
 
 ### 示例11（Swiper组件模拟拖拽）
 
@@ -3144,60 +3194,107 @@ Swiper宽度属于[md](../harmonyos-guides/arkts-layout-development-grid-layout.
 
 从API version 23开始，新增[startFakeDrag](ts-container-swiper.md#startfakedrag23)接口、[fakeDragBy](ts-container-swiper.md#fakedragby23)接口、[stopFakeDrag](ts-container-swiper.md#stopfakedrag23)接口、[isFakeDragging](ts-container-swiper.md#isfakedragging23)接口，用于实现模拟拖拽。
 
+```ts
+// SwiperFakeDragExample.ets
+@Entry
+@Component
+struct SwiperFakeDragExample {
+  private swiperController: SwiperController = new SwiperController();
+  private baseDisplayX: number = 0;
+  private panOption: PanGestureOptions = new PanGestureOptions({ direction: PanDirection.Left | PanDirection.Right });
+
+  build() {
+    Scroll() {
+      Column({ space: 20 }) {
+        Swiper(this.swiperController) {
+          Column() {
+            Text('可消费拖动事件的内层组件')
+              .fontSize(20)
+          }
+          .justifyContent(FlexAlign.Center)
+          .backgroundColor('#D5D5D5')
+          .gesture(
+            // 内层组件消费了拖拽事件，根据事件信息触发外层Swiper滚动。
+            PanGesture(this.panOption)
+              .onActionStart((event: GestureEvent) => {
+                let ret = this.swiperController.isFakeDragging();
+                if (ret) {
+                  return;
+                }
+                ret = this.swiperController.startFakeDrag();
+                console.info('startFakeDrag ret = ', ret);
+                this.baseDisplayX = event.offsetX;
+              })
+              .onActionUpdate((event: GestureEvent) => {
+                if (event) {
+                  let ret = this.swiperController.fakeDragBy(event.offsetX - this.baseDisplayX);
+                  console.info('fakeDragBy ret = ', ret);
+                  this.baseDisplayX = event.offsetX;
+                }
+              })
+              .onActionEnd((event: GestureEvent) => {
+                let ret = this.swiperController.stopFakeDrag();
+                console.info('stopFakeDrag ret = ', ret);
+              })
+          )
+
+          Column()
+            .backgroundColor('#E3F8F9')
+        }
+        .width('90%')
+        .height('50%')
+      }
+      .width('100%')
+    }
+  }
+}
 ```
-1. // SwiperFakeDragExample.ets
-2. @Entry
-3. @Component
-4. struct SwiperFakeDragExample {
-5. private swiperController: SwiperController = new SwiperController();
-6. private baseDisplayX: number = 0;
-7. private panOption: PanGestureOptions = new PanGestureOptions({ direction: PanDirection.Left | PanDirection.Right });
 
-9. build() {
-10. Scroll() {
-11. Column({ space: 20 }) {
-12. Swiper(this.swiperController) {
-13. Column() {
-14. Text('可消费拖动事件的内层组件')
-15. .fontSize(20)
-16. }
-17. .justifyContent(FlexAlign.Center)
-18. .backgroundColor('#D5D5D5')
-19. .gesture(
-20. // 内层组件消费了拖拽事件，根据事件信息触发外层Swiper滚动。
-21. PanGesture(this.panOption)
-22. .onActionStart((event: GestureEvent) => {
-23. let ret = this.swiperController.isFakeDragging();
-24. if (ret) {
-25. return;
-26. }
-27. ret = this.swiperController.startFakeDrag();
-28. console.info('startFakeDrag ret = ', ret);
-29. this.baseDisplayX = event.offsetX;
-30. })
-31. .onActionUpdate((event: GestureEvent) => {
-32. if (event) {
-33. let ret = this.swiperController.fakeDragBy(event.offsetX - this.baseDisplayX);
-34. console.info('fakeDragBy ret = ', ret);
-35. this.baseDisplayX = event.offsetX;
-36. }
-37. })
-38. .onActionEnd((event: GestureEvent) => {
-39. let ret = this.swiperController.stopFakeDrag();
-40. console.info('stopFakeDrag ret = ', ret);
-41. })
-42. )
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/CVvDLnz9RACMyhLi4pERSw/zh-cn_image_0000002736434943.gif)
 
-44. Column()
-45. .backgroundColor('#E3F8F9')
-46. }
-47. .width('90%')
-48. .height('50%')
-49. }
-50. .width('100%')
-51. }
-52. }
-53. }
+### 示例12（配置Swiper组件导航点图标）
+
+该示例通过设置indicatorIcon接口，展示了Swiper组件如何配置导航点图标。
+
+从API版本26.0.0开始，新增[indicatorIcon](ts-container-swiper.md#indicatoricon)接口。
+
+```ts
+// swiperIndicatorIcon.ets
+import { SymbolGlyphModifier } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct SwiperIndicatorIconExample {
+  private symbolModifier1: SymbolGlyphModifier = new SymbolGlyphModifier($r('sys.symbol.ohos_wifi'));
+  @State arr: string[] = ['0', '1'];
+
+  build() {
+    Scroll() {
+      Column({ space: 20 }) {
+        Swiper() {
+          ForEach(this.arr, (item: string) => {
+            Text(item)
+              .textAlign(TextAlign.Center)
+              .width('100%')
+              .height('100%')
+              .backgroundColor(0xAFEEEE)
+          })
+        }
+        .width('90%')
+        .height('50%')
+        .indicator( // 设置圆点导航点样式
+          new DotIndicator()
+            .itemWidth(20)
+            .itemHeight(20)
+            .selectedItemWidth(20)
+            .selectedItemHeight(20)
+            .indicatorIcon([{ index: 0, icon: this.symbolModifier1 },
+              { index: 1, icon: $r('sys.media.ohos_ic_public_albums') }])) // 设置导航点图标
+      }
+      .width('100%')
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/q5SHIgajQY6M29gyrZUrrA/zh-cn_image_0000002558766166.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/MBiRK68zQum3UkXaIild0A/zh-cn_image_0000002706835796.jpg)

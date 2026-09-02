@@ -1,15 +1,15 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-spatialrecon-hms-spatialrecon-dataframe
 title: HMS_SpatialRecon_DataFrame
-breadcrumb: API参考 > 图形 > Spatial Recon Kit（空间建模服务） > C API > 结构体 > HMS_SpatialRecon_DataFrame
+breadcrumb: API参考 > 图形 > Spatial Recon Kit（空间建模服务） > C API > 头文件和结构体 > 结构体 > HMS_SpatialRecon_DataFrame
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:68cca6849473f7f9ba181698d455fee4f2c4eca4ac2f7aeb56b682d3b3fd7a06
+scraped_at: 2026-09-02T15:02:48+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e538c9d02b27a5b8dc1461efd9008c0bd980d66d5713f426f4f990009e40f2fe
 ---
 
-```
-1. typedef struct HMS_SpatialRecon_DataFrame {...} HMS_SpatialRecon_DataFrame
+```c
+typedef struct HMS_SpatialRecon_DataFrame {...} HMS_SpatialRecon_DataFrame
 ```
 
 ## 概述
@@ -33,8 +33,8 @@ content_hash: sha256:68cca6849473f7f9ba181698d455fee4f2c4eca4ac2f7aeb56b682d3b3f
 | float principalX = 0.0f | 主点X坐标（光心），单位：px。 |
 | float principalY = 0.0f | 主点Y坐标（光心），单位：px。 |
 | float distortionCoef[8] | 失真参数 [k1, k2, p1, p2, k3, k4, k5, k6]。 |
-| int32\_t imageWidth = 0.0f | 图像的宽度，单位：px。 |
-| int32\_t imageHeight = 0.0f | 图像的高度，单位：px。 |
+| int32\_t imageWidth = 0 | 图像的宽度，单位：px。 |
+| int32\_t imageHeight = 0 | 图像的高度，单位：px。 |
 | float position[3] | 相机在3D空间中的位置 [x, y, z]。 |
 | float rotation[4] | 相机旋转，表示为四元数 [x, y, z, w]。 |
 | int64\_t timestamp = 0 | 帧捕获的时间戳，单位：ns。 |

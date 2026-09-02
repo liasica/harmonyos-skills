@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/open-permissi
 title: 手动设置授权
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 申请应用权限 > 手动设置授权
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:30:35+08:00
+scraped_at: 2026-09-02T14:49:58+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:6307907bf2d457c62399e4d3e34122064f93125b40000f4a8681272e0d53ef92
+content_hash: sha256:b08f4744e3227aef80f4ffb199887e93b5ed23fd0df933ae155ed6d63efbcfe6
 ---
 
 当应用需要访问用户的隐私信息或使用敏感系统能力时，如拦截键盘输入事件，应向用户申请授权。这些权限属于[manual\_settings](app-permission-mgmt-overview.md#manual_settings手动设置授权)权限。
@@ -28,47 +28,47 @@ content_hash: sha256:6307907bf2d457c62399e4d3e34122064f93125b40000f4a8681272e0d5
 
    在进行权限申请之前，需要先检查当前应用程序是否已经被授予权限。可以通过调用[checkAccessToken()](../harmonyos-references/js-apis-abilityaccessctrl.md#checkaccesstoken9)方法来校验当前是否已经授权。如果已经授权，则可以直接访问目标操作，否则需要进行下一步操作，即引导用户跳转到系统应用“设置”中进行授权。
 
-   ```
-   1. import { abilityAccessCtrl, bundleManager, Permissions } from '@kit.AbilityKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { abilityAccessCtrl, bundleManager, Permissions } from '@kit.AbilityKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
 
-   4. async function checkPermissionGrant(permission: Permissions): Promise<abilityAccessCtrl.GrantStatus> {
-   5. let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
-   6. let grantStatus: abilityAccessCtrl.GrantStatus = abilityAccessCtrl.GrantStatus.PERMISSION_DENIED;
+   async function checkPermissionGrant(permission: Permissions): Promise<abilityAccessCtrl.GrantStatus> {
+     let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+     let grantStatus: abilityAccessCtrl.GrantStatus = abilityAccessCtrl.GrantStatus.PERMISSION_DENIED;
 
-   8. // 获取应用程序的accessTokenID
-   9. let tokenId: number = 0;
-   10. try {
-   11. let bundleInfo: bundleManager.BundleInfo =
-   12. await bundleManager.getBundleInfoForSelf(bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION);
-   13. let appInfo: bundleManager.ApplicationInfo = bundleInfo.appInfo;
-   14. tokenId = appInfo.accessTokenId;
-   15. } catch (error) {
-   16. const err: BusinessError = error as BusinessError;
-   17. console.error(`Failed to get bundle info for self, code: ${err.code}, message: ${err.message}`);
-   18. }
+     // 获取应用程序的accessTokenID
+     let tokenId: number = 0;
+     try {
+       let bundleInfo: bundleManager.BundleInfo =
+         await bundleManager.getBundleInfoForSelf(bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION);
+       let appInfo: bundleManager.ApplicationInfo = bundleInfo.appInfo;
+       tokenId = appInfo.accessTokenId;
+     } catch (error) {
+       const err: BusinessError = error as BusinessError;
+       console.error(`Failed to get bundle info for self, code: ${err.code}, message: ${err.message}`);
+     }
 
-   20. // 校验应用是否被授予权限
-   21. try {
-   22. grantStatus = await atManager.checkAccessToken(tokenId, permission);
-   23. } catch (error) {
-   24. const err: BusinessError = error as BusinessError;
-   25. console.error(`Failed to check access token, code: ${err.code}, message: ${err.message}`);
-   26. }
+     // 校验应用是否被授予权限
+     try {
+       grantStatus = await atManager.checkAccessToken(tokenId, permission);
+     } catch (error) {
+       const err: BusinessError = error as BusinessError;
+       console.error(`Failed to check access token, code: ${err.code}, message: ${err.message}`);
+     }
 
-   28. return grantStatus;
-   29. }
+     return grantStatus;
+   }
 
-   31. async function checkPermissions(): Promise<void> {
-   32. let grantStatus: boolean = await checkPermissionGrant('ohos.permission.HOOK_KEY_EVENT') === abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED;// 获取拦截键盘输入事件权限状态。
-   33. if (grantStatus) {
-   34. // 已经授权，可以继续访问目标操作
-   35. console.info(`permission is granted.`);
-   36. } else {
-   37. // 未授权，引导用户跳转到系统应用“设置”中进行授权
-   38. console.info(`permission is not granted.`);
-   39. }
-   40. }
+   async function checkPermissions(): Promise<void> {
+     let grantStatus: boolean = await checkPermissionGrant('ohos.permission.HOOK_KEY_EVENT') === abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED;// 获取拦截键盘输入事件权限状态。
+     if (grantStatus) {
+       // 已经授权，可以继续访问目标操作
+       console.info(`permission is granted.`);
+     } else {
+       // 未授权，引导用户跳转到系统应用“设置”中进行授权
+       console.info(`permission is not granted.`);
+     }
+   }
    ```
 3. 引导用户跳转到系统应用“设置”中进行授权。
 
@@ -78,11 +78,11 @@ content_hash: sha256:6307907bf2d457c62399e4d3e34122064f93125b40000f4a8681272e0d5
 
    路径一：设置 > 隐私和安全 > 权限类型（如键盘输入辅助） > 某个应用
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/h1ky4GqmRam0KnErk2GsyQ/zh-cn_image_0000002589244661.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/etW0JLgTRjuM9teMCHaBxA/zh-cn_image_0000002736313359.png)
 
    路径二：设置 > 应用和元服务 > 某个应用 > 权限类型（如键盘输入辅助）
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/BJ3-rOZOQKG9aGQDxIfNaw/zh-cn_image_0000002558764856.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/dwvJcjemRcmP_3TmvAJ3hQ/zh-cn_image_0000002706674316.png)
 
    应用在UIAbility的onWindowStageCreate()回调中调用[openPermissionOnSetting()](../harmonyos-references/js-apis-abilityaccessctrl.md#openpermissiononsetting22)方法引导用户跳转到“设置”，或根据业务需要在UI中引导用户跳转到“设置”。
 
@@ -90,82 +90,82 @@ content_hash: sha256:6307907bf2d457c62399e4d3e34122064f93125b40000f4a8681272e0d5
 
    效果展示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/rsEnYGUuTJKI4LmZAYqacw/zh-cn_image_0000002558605200.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/wzudJ4jHR06ygw1n2m22ig/zh-cn_image_0000002736433407.png)
 
    * 在UIAbility中引导用户跳转到系统应用“设置”中的对应路径。
 
-     ```
-     1. import { abilityAccessCtrl, common, Permissions, UIAbility } from '@kit.AbilityKit';
-     2. import { window } from '@kit.ArkUI';
-     3. import { BusinessError } from '@kit.BasicServicesKit';
+     ```typescript
+     import { abilityAccessCtrl, common, Permissions, UIAbility } from '@kit.AbilityKit';
+     import { window } from '@kit.ArkUI';
+     import { BusinessError } from '@kit.BasicServicesKit';
 
-     5. function openPermOnSetting(permission: Permissions, context: common.UIAbilityContext): void {
-     6. let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
-     7. // openPermissionOnSetting会判断权限的授权状态来决定是否唤起弹窗
-     8. atManager.openPermissionOnSetting(context, permission).then((data) => {
-     9. if (data === abilityAccessCtrl.SelectedResult.REJECTED) {
-     10. // 用户不允许跳转到“设置”
-     11. console.info(`user not allowed.`);
-     12. } else if (data === abilityAccessCtrl.SelectedResult.OPENED) {
-     13. // 用户选择跳转到“设置”
-     14. console.info(`user allowed to setting.`);
-     15. } else {
-     16. // 权限已授权，无需弹窗
-     17. console.info(`permission is granted.`);
-     18. }
-     19. }).catch((err: BusinessError) => {
-     20. console.error(`Failed to openPermissionOnSetting, code: ${err.code}, message: ${err.message}`);
-     21. })
-     22. }
+     function openPermOnSetting(permission: Permissions, context: common.UIAbilityContext): void {
+       let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+       // openPermissionOnSetting会判断权限的授权状态来决定是否唤起弹窗
+       atManager.openPermissionOnSetting(context, permission).then((data) => {
+         if (data === abilityAccessCtrl.SelectedResult.REJECTED) {
+           // 用户不允许跳转到“设置”
+           console.info(`user not allowed.`);
+         } else if (data === abilityAccessCtrl.SelectedResult.OPENED) {
+           // 用户选择跳转到“设置”
+           console.info(`user allowed to setting.`);
+         } else {
+           // 权限已授权，无需弹窗
+           console.info(`permission is granted.`);
+         }
+       }).catch((err: BusinessError) => {
+         console.error(`Failed to openPermissionOnSetting, code: ${err.code}, message: ${err.message}`);
+       })
+     }
 
-     24. export default class OpenPermAbility extends UIAbility {
-     25. onWindowStageCreate(windowStage: window.WindowStage): void {
-     26. // ···
-     27. windowStage.loadContent('openpermpages/Index', (err) => {
-     28. openPermOnSetting('ohos.permission.HOOK_KEY_EVENT', this.context);
-     29. // ···
-     30. });
-     31. }
-     32. // ···
-     33. }
+     export default class OpenPermAbility extends UIAbility {
+       onWindowStageCreate(windowStage: window.WindowStage): void {
+         // ···
+         windowStage.loadContent('openpermpages/Index', (err) => {
+           openPermOnSetting('ohos.permission.HOOK_KEY_EVENT', this.context);
+         // ···
+         });
+       }
+     // ···
+     }
      ```
    * 在UI中引导用户跳转到系统应用“设置”中的对应路径。
 
-     ```
-     1. import { abilityAccessCtrl, common, Permissions } from '@kit.AbilityKit';
-     2. import { BusinessError } from '@kit.BasicServicesKit';
+     ```typescript
+     import { abilityAccessCtrl, common, Permissions } from '@kit.AbilityKit';
+     import { BusinessError } from '@kit.BasicServicesKit';
 
-     4. function openPermOnSetting(permission: Permissions, context: common.UIAbilityContext): void {
-     5. let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
-     6. // openPermissionOnSetting会判断权限的授权状态来决定是否唤起弹窗
-     7. atManager.openPermissionOnSetting(context, permission).then((data) => {
-     8. if (data === abilityAccessCtrl.SelectedResult.REJECTED) {
-     9. // 用户不允许跳转到“设置”
-     10. console.info(`user not allowed.`);
-     11. } else if (data === abilityAccessCtrl.SelectedResult.OPENED) {
-     12. // 用户选择跳转到“设置”
-     13. console.info(`user allowed to setting.`);
-     14. } else {
-     15. // 权限已授权，无需弹窗
-     16. console.info(`permission is granted.`);
-     17. }
-     18. }).catch((err: BusinessError) => {
-     19. console.error(`Failed to openPermissionOnSetting, code: ${err.code}, message: ${err.message}`);
-     20. })
-     21. }
+     function openPermOnSetting(permission: Permissions, context: common.UIAbilityContext): void {
+       let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+       // openPermissionOnSetting会判断权限的授权状态来决定是否唤起弹窗
+       atManager.openPermissionOnSetting(context, permission).then((data) => {
+         if (data === abilityAccessCtrl.SelectedResult.REJECTED) {
+           // 用户不允许跳转到“设置”
+           console.info(`user not allowed.`);
+         } else if (data === abilityAccessCtrl.SelectedResult.OPENED) {
+           // 用户选择跳转到“设置”
+           console.info(`user allowed to setting.`);
+         } else {
+           // 权限已授权，无需弹窗
+           console.info(`permission is granted.`);
+         }
+       }).catch((err: BusinessError) => {
+         console.error(`Failed to openPermissionOnSetting, code: ${err.code}, message: ${err.message}`);
+       })
+     }
 
-     23. @Entry
-     24. @Component
-     25. struct Index {
-     26. aboutToAppear() {
-     27. const context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-     28. openPermOnSetting('ohos.permission.HOOK_KEY_EVENT', context);
-     29. }
+     @Entry
+     @Component
+     struct Index {
+       aboutToAppear() {
+         const context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+         openPermOnSetting('ohos.permission.HOOK_KEY_EVENT', context);
+       }
 
-     31. build() {
-     32. // ···
-     33. }
-     34. }
+       build() {
+         // ···
+       }
+     }
      ```
 4. 处理授权结果。
 

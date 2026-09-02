@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: drawing_shadow_layer.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > drawing_shadow_layer.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:59+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:ffeb29a28d07f289a566b75cfbc3e07edcb78712930c3ba12d714d12d90f5a85
+scraped_at: 2026-09-02T15:02:44+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:31d5a82b6b3e74c99db40d67b4bb3e036d107380373992bdabe8aec19b53ce0e
 ---
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
 声明与绘图模块中的阴影层对象相关的函数。
+
+本模块为单线程模型策略，需要调用方自行管理线程安全和上下文状态的切换。
 
 **引用文件：** <native\_drawing/drawing\_shadow\_layer.h>
 
@@ -26,11 +26,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -39,14 +35,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Drawing\_ShadowLayerCreate()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ShadowLayer* OH_Drawing_ShadowLayerCreate(float blurRadius, float x, float y, uint32_t color)
+```c
+OH_Drawing_ShadowLayer* OH_Drawing_ShadowLayerCreate(float blurRadius, float x, float y, uint32_t color)
 ```
 
 **描述**
@@ -78,10 +70,8 @@ blurRadius小于等于0时返回OH\_DRAWING\_ERROR\_PARAMETER\_OUT\_OF\_RANGE。
 
 ### OH\_Drawing\_ShadowLayerDestroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Drawing_ShadowLayerDestroy(OH_Drawing_ShadowLayer* shadowLayer)
+```c
+void OH_Drawing_ShadowLayerDestroy(OH_Drawing_ShadowLayer* shadowLayer)
 ```
 
 **描述**

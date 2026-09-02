@@ -1,18 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-generate-message-digest
 title: 消息摘要计算SHA256(ArkTS)
-breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 消息摘要计算 > 消息摘要计算开发指导 > 消息摘要计算SHA256(ArkTS)
+breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 消息摘要计算介绍及算法规格 > 消息摘要计算SHA256(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:38+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:1fa46bccaff4f00e1ffce7b28e7996154e8a05117484459f8b3e9de223d1b004
+scraped_at: 2026-09-02T14:59:29+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:393f8f77b06518234a5137953435276f17ff6c1b1795f52f8d4d5bac880d1a87
 ---
 
 对应的算法规格请查看[消息摘要计算算法规格](crypto-generate-message-digest-overview.md#支持的算法与规格)。
 
-说明
+**说明** 
 
-从API version 12开始，轻量级智能穿戴设备支持消息摘要的计算与操作。
+从API版本12开始，轻量级智能穿戴设备支持消息摘要的计算与操作。
 
 ## 开发步骤
 
@@ -29,44 +29,40 @@ content_hash: sha256:1fa46bccaff4f00e1ffce7b28e7996154e8a05117484459f8b3e9de223d
 
 * 以使用await方式单次传入数据，获取摘要计算结果为例：
 
-  ```
-  1. import { cryptoFramework } from '@kit.CryptoArchitectureKit';
-  2. import { buffer } from '@kit.ArkTS';
+  ```typescript
+  import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  import { buffer } from '@kit.ArkTS';
 
-  4. async function doMd() {
-  5. let mdAlgName = 'SHA256'; // 摘要算法名
-  6. let message = 'mdTestMessage'; // 待摘要的数据
-  7. let md = cryptoFramework.createMd(mdAlgName);
-  8. // 数据量较少时，可以只做一次update，将数据全部传入，接口未对入参长度做限制
-  9. await md.update({ data: new Uint8Array(buffer.from(message, 'utf-8').buffer) });
-  10. let mdResult = await md.digest();
-  11. console.info('Md result: ' + mdResult.data);
-  12. let mdLen = md.getMdLength();
-  13. console.info('md len: ' + mdLen);
-  14. }
+  async function doMd() {
+    let mdAlgName = 'SHA256'; // 摘要算法名
+    let message = 'mdTestMessage'; // 待摘要的数据
+    let md = cryptoFramework.createMd(mdAlgName);
+    // 数据量较少时，可以只做一次update，将数据全部传入，接口未对入参长度做限制
+    await md.update({ data: new Uint8Array(buffer.from(message, 'utf-8').buffer) });
+    let mdResult = await md.digest();
+    console.info('Md result: ' + mdResult.data);
+    let mdLen = md.getMdLength();
+    console.info('md len: ' + mdLen);
+  }
   ```
-
-  [SingleTimeAsync.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Security/CryptoArchitectureKit/MessageDigestComputation/entry/src/main/ets/pages/sha256/singleTime/SingleTimeAsync.ets#L15-L31)
 * 以使用同步方式单次传入数据，获取摘要计算结果为例：
 
-  ```
-  1. import { cryptoFramework } from '@kit.CryptoArchitectureKit';
-  2. import { buffer } from '@kit.ArkTS';
+  ```typescript
+  import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  import { buffer } from '@kit.ArkTS';
 
-  4. function doMdBySync() {
-  5. let mdAlgName = 'SHA256'; // 摘要算法名
-  6. let message = 'mdTestMessage'; // 待摘要的数据
-  7. let md = cryptoFramework.createMd(mdAlgName);
-  8. // 数据量较少时，可以只做一次update，将数据全部传入，接口未对入参长度做限制
-  9. md.updateSync({ data: new Uint8Array(buffer.from(message, 'utf-8').buffer) });
-  10. let mdResult = md.digestSync();
-  11. console.info('[Sync]:Md result: ' + mdResult.data);
-  12. let mdLen = md.getMdLength();
-  13. console.info('md len: ' + mdLen);
-  14. }
+  function doMdBySync() {
+    let mdAlgName = 'SHA256'; // 摘要算法名
+    let message = 'mdTestMessage'; // 待摘要的数据
+    let md = cryptoFramework.createMd(mdAlgName);
+    // 数据量较少时，可以只做一次update，将数据全部传入，接口未对入参长度做限制
+    md.updateSync({ data: new Uint8Array(buffer.from(message, 'utf-8').buffer) });
+    let mdResult = md.digestSync();
+    console.info('[Sync]:Md result: ' + mdResult.data);
+    let mdLen = md.getMdLength();
+    console.info('md len: ' + mdLen);
+  }
   ```
-
-  [SingleTimeSync.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Security/CryptoArchitectureKit/MessageDigestComputation/entry/src/main/ets/pages/sha256/singleTime/SingleTimeSync.ets#L15-L30)
 
 ### 分段摘要算法
 
@@ -77,53 +73,49 @@ content_hash: sha256:1fa46bccaff4f00e1ffce7b28e7996154e8a05117484459f8b3e9de223d
 
 * 以使用await方式分段传入数据，获取摘要计算结果为例：
 
-  ```
-  1. import { cryptoFramework } from '@kit.CryptoArchitectureKit';
-  2. import { buffer } from '@kit.ArkTS';
+  ```typescript
+  import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  import { buffer } from '@kit.ArkTS';
 
-  4. async function doLoopMd() {
-  5. let mdAlgName = 'SHA256'; // 摘要算法名
-  6. let md = cryptoFramework.createMd(mdAlgName);
-  7. // 假设信息总共43字节，根据utf-8解码后，也是43字节
-  8. let messageText = 'aaaaa.....bbbbb.....ccccc.....ddddd.....eee';
-  9. let messageData = new Uint8Array(buffer.from(messageText, 'utf-8').buffer);
-  10. let updateLength = 20; // 假设以20字节为单位进行分段update，实际并无要求
-  11. for (let i = 0; i < messageData.length; i += updateLength) {
-  12. let updateMessage = messageData.subarray(i, i + updateLength);
-  13. let updateMessageBlob: cryptoFramework.DataBlob = { data: updateMessage };
-  14. await md.update(updateMessageBlob);
-  15. }
-  16. let mdOutput = await md.digest();
-  17. console.info('md result: ' + mdOutput.data);
-  18. let mdLen = md.getMdLength();
-  19. console.info('md len: ' + mdLen);
-  20. }
+  async function doLoopMd() {
+    let mdAlgName = 'SHA256'; // 摘要算法名
+    let md = cryptoFramework.createMd(mdAlgName);
+    // 假设信息总共43字节，根据utf-8解码后，也是43字节
+    let messageText = 'aaaaa.....bbbbb.....ccccc.....ddddd.....eee';
+    let messageData = new Uint8Array(buffer.from(messageText, 'utf-8').buffer);
+    let updateLength = 20; // 假设以20字节为单位进行分段update，实际并无要求
+    for (let i = 0; i < messageData.length; i += updateLength) {
+      let updateMessage = messageData.subarray(i, i + updateLength);
+      let updateMessageBlob: cryptoFramework.DataBlob = { data: updateMessage };
+      await md.update(updateMessageBlob);
+    }
+    let mdOutput = await md.digest();
+    console.info('md result: ' + mdOutput.data);
+    let mdLen = md.getMdLength();
+    console.info('md len: ' + mdLen);
+  }
   ```
-
-  [SegmentationAsync.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Security/CryptoArchitectureKit/MessageDigestComputation/entry/src/main/ets/pages/sha256/segmentation/SegmentationAsync.ets#L15-L37)
 * 以使用同步方式分段传入数据，获取摘要计算结果为例：
 
-  ```
-  1. import { cryptoFramework } from '@kit.CryptoArchitectureKit';
-  2. import { buffer } from '@kit.ArkTS';
+  ```typescript
+  import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  import { buffer } from '@kit.ArkTS';
 
-  4. function doLoopMdBySync() {
-  5. let mdAlgName = 'SHA256'; // 摘要算法名
-  6. let md = cryptoFramework.createMd(mdAlgName);
-  7. // 假设信息总共43字节，根据utf-8解码后，也是43字节
-  8. let messageText = 'aaaaa.....bbbbb.....ccccc.....ddddd.....eee';
-  9. let messageData = new Uint8Array(buffer.from(messageText, 'utf-8').buffer);
-  10. let updateLength = 20; // 假设以20字节为单位进行分段update，实际并无要求
-  11. for (let i = 0; i < messageData.length; i += updateLength) {
-  12. let updateMessage = messageData.subarray(i, i + updateLength);
-  13. let updateMessageBlob: cryptoFramework.DataBlob = { data: updateMessage };
-  14. md.updateSync(updateMessageBlob);
-  15. }
-  16. let mdOutput = md.digestSync();
-  17. console.info('[Sync]:md result: ' + mdOutput.data);
-  18. let mdLen = md.getMdLength();
-  19. console.info('md len: ' + mdLen);
-  20. }
+  function doLoopMdBySync() {
+    let mdAlgName = 'SHA256'; // 摘要算法名
+    let md = cryptoFramework.createMd(mdAlgName);
+    // 假设信息总共43字节，根据utf-8解码后，也是43字节
+    let messageText = 'aaaaa.....bbbbb.....ccccc.....ddddd.....eee';
+    let messageData = new Uint8Array(buffer.from(messageText, 'utf-8').buffer);
+    let updateLength = 20; // 假设以20字节为单位进行分段update，实际并无要求
+    for (let i = 0; i < messageData.length; i += updateLength) {
+      let updateMessage = messageData.subarray(i, i + updateLength);
+      let updateMessageBlob: cryptoFramework.DataBlob = { data: updateMessage };
+      md.updateSync(updateMessageBlob);
+    }
+    let mdOutput = md.digestSync();
+    console.info('[Sync]:md result: ' + mdOutput.data);
+    let mdLen = md.getMdLength();
+    console.info('md len: ' + mdLen);
+  }
   ```
-
-  [SegmentationSync.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Security/CryptoArchitectureKit/MessageDigestComputation/entry/src/main/ets/pages/sha256/segmentation/SegmentationSync.ets#L16-L38)

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-networkboostkit-b065
 title: Network Boost Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Beta引入的API > Network Boost Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Beta引入的API > Network Boost Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:36:19+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:41+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:1ddc81568b5e1cbea6564403a2e3d0e84b6979f3d1014f1dc865aa9866b0c0af
 ---
 

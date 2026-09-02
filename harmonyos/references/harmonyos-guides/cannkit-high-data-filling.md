@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-high-
 title: 数据填充
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 高阶API > 数据填充
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:32+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b9ca02b59ed03e35e3893249144b7903afbf2b18ac2f7584b0bfdfb471a23754
+scraped_at: 2026-09-02T15:00:07+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:04eb5675a4930fc0e18b8cc1d1a5df73d78fae9bda1de6aac102921138dcf3bb
 ---
 
 ## Broadcast
@@ -16,9 +16,9 @@ content_hash: sha256:b9ca02b59ed03e35e3893249144b7903afbf2b18ac2f7584b0bfdfb471a
 
 比如A的shape为(2,1)，广播的目标shape为(2,16)，则会将原来的一列扩展为相同的16列。
 
-```
-1. 输入数据：  [[ 1] [ 2]]
-2. 输出数据：  [[ 1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1] [ 2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2]]
+```text
+输入数据：  [[ 1] [ 2]]
+输出数据：  [[ 1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1] [ 2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2]]
 ```
 
 ### 实现原理
@@ -27,7 +27,7 @@ content_hash: sha256:b9ca02b59ed03e35e3893249144b7903afbf2b18ac2f7584b0bfdfb471a
 
 **图1** Broadcast算法框图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/ZrcSHB1bQNOOQHvMQFNWuQ/zh-cn_image_0000002558606136.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/eDPoQQpCQKWJzcDnJi6Aww/zh-cn_image_0000002736314461.png)
 
 计算过程分为如下几步，均在Vector上进行：
 
@@ -39,15 +39,15 @@ content_hash: sha256:b9ca02b59ed03e35e3893249144b7903afbf2b18ac2f7584b0bfdfb471a
 
 * 通过sharedTmpBuffer入参传入临时空间
 
-  ```
-  1. template <typename T, int32_t dim, int32_t axis, bool isReuseSource = false>
-  2. __aicore__ inline void Broadcast(const LocalTensor<T> &dstLocal, const LocalTensor<T> &srcLocal, const uint32_t dstShape[dim], const uint32_t srcShape[dim], LocalTensor<uint8_t> &sharedTmpBuffer)
+  ```cpp
+  template <typename T, int32_t dim, int32_t axis, bool isReuseSource = false>
+  __aicore__ inline void Broadcast(const LocalTensor<T> &dstLocal, const LocalTensor<T> &srcLocal, const uint32_t dstShape[dim], const uint32_t srcShape[dim], LocalTensor<uint8_t> &sharedTmpBuffer)
   ```
 * 接口框架申请临时空间
 
-  ```
-  1. template <typename T, int32_t dim, int32_t axis, bool isReuseSource = false>
-  2. __aicore__ inline void Broadcast(const LocalTensor<T> &dstLocal, const LocalTensor<T> &srcLocal, const uint32_t dstShape[dim], const uint32_t srcShape[dim])
+  ```cpp
+  template <typename T, int32_t dim, int32_t axis, bool isReuseSource = false>
+  __aicore__ inline void Broadcast(const LocalTensor<T> &dstLocal, const LocalTensor<T> &srcLocal, const uint32_t dstShape[dim], const uint32_t srcShape[dim])
   ```
 
 该接口需要额外的临时空间来存储计算过程中的中间变量。临时空间支持开发者通过sharedTmpBuffer入参传入和接口框架申请两种方式。
@@ -72,11 +72,11 @@ content_hash: sha256:b9ca02b59ed03e35e3893249144b7903afbf2b18ac2f7584b0bfdfb471a
 
 | 参数名称 | 输入/输出 | 描述 |
 | --- | --- | --- |
-| dstLocal | 输出 | 目的操作数。  类型为[LocalTensor](cannkit-localtensor.md)，支持的TPosition为VECIN/VECCALC/VECOUT。 |
-| srcLocal | 输入 | 源操作数。  源操作数的数据类型需要与目的操作数保持一致。  类型为[LocalTensor](cannkit-localtensor.md)，支持的TPosition为VECIN/VECCALC/VECOUT。 |
+| dstLocal | 输出 | 目的操作数。  类型为[LocalTensor](cannkit-localtensor.md)，支持的TPosition为VECIN、VECCALC、VECOUT。 |
+| srcLocal | 输入 | 源操作数。  源操作数的数据类型需要与目的操作数保持一致。  类型为[LocalTensor](cannkit-localtensor.md)，支持的TPosition为VECIN、VECCALC、VECOUT。 |
 | dstShape | 输入 | 输出tensor的shape：uint32\_t类型的数组，长度为1或者2， 输入/输出的shape维度数目必须一致。 |
 | srcShape | 输入 | 输入tensor的shape：uint32\_t类型的数组，长度为1或者2， 输入/输出的shape维度数目必须一致。 |
-| sharedTmpBuffer | 输入 | 临时缓存。  类型为[LocalTensor](cannkit-localtensor.md)，支持的TPosition为VECIN/VECCALC/VECOUT。  用于Broadcast内部复杂计算时存储中间变量，由开发者提供。 |
+| sharedTmpBuffer | 输入 | 临时缓存。  类型为[LocalTensor](cannkit-localtensor.md)，支持的TPosition为VECIN、VECCALC、VECOUT。  用于Broadcast内部复杂计算时存储中间变量，由开发者提供。 |
 
 ### 返回值
 
@@ -97,104 +97,104 @@ KirinX90系列处理器
 
 ### 调用示例
 
-```
-1. #include "kernel_operator.h"
+```cpp
+#include "kernel_operator.h"
 
-3. template <typename T, int32_t dim, int32_t axis>
-4. class KernelBroadcast {
-5. public:
-6. __aicore__ inline KernelBroadcast()
-7. {}
-8. __aicore__ inline void Init(
-9. GM_ADDR srcGm, GM_ADDR dstGm, const uint32_t dstShape[dim], const uint32_t srcShape[dim])
-10. {
-11. for (uint32_t i = 0; i < dim; i++) {
-12. srcSize *= srcShape[i];
-13. dstSize *= dstShape[i];
-14. }
-15. srcGlobal.SetGlobalBuffer(reinterpret_cast<__gm__ T *>(srcGm), srcSize);
-16. dstGlobal.SetGlobalBuffer(reinterpret_cast<__gm__ T *>(dstGm), dstSize);
+template <typename T, int32_t dim, int32_t axis>
+class KernelBroadcast {
+public:
+    __aicore__ inline KernelBroadcast()
+    {}
+    __aicore__ inline void Init(
+        GM_ADDR srcGm, GM_ADDR dstGm, const uint32_t dstShape[dim], const uint32_t srcShape[dim])
+    {
+        for (uint32_t i = 0; i < dim; i++) {
+            srcSize *= srcShape[i];
+            dstSize *= dstShape[i];
+        }
+        srcGlobal.SetGlobalBuffer(reinterpret_cast<__gm__ T *>(srcGm), srcSize);
+        dstGlobal.SetGlobalBuffer(reinterpret_cast<__gm__ T *>(dstGm), dstSize);
 
-18. pipe.InitBuffer(inQueueX, 1, srcSize * sizeof(T));
-19. pipe.InitBuffer(outQueue, 1, dstSize * sizeof(T));
-20. dstShape_ = dstShape;
-21. srcShape_ = srcShape;
-22. }
-23. __aicore__ inline void Process()
-24. {
-25. CopyIn();
-26. Compute();
-27. CopyOut();
-28. }
+        pipe.InitBuffer(inQueueX, 1, srcSize * sizeof(T));
+        pipe.InitBuffer(outQueue, 1, dstSize * sizeof(T));
+        dstShape_ = dstShape;
+        srcShape_ = srcShape;
+    }
+    __aicore__ inline void Process()
+    {
+        CopyIn();
+        Compute();
+        CopyOut();
+    }
 
-30. private:
-31. __aicore__ inline void CopyIn()
-32. {
-33. AscendC::LocalTensor<T> srcLocal = inQueueX.AllocTensor<T>();
-34. AscendC::DataCopy(srcLocal, srcGlobal, srcSize);
-35. inQueueX.EnQue(srcLocal);
-36. }
-37. __aicore__ inline void Compute()
-38. {
-39. AscendC::LocalTensor<T> dstLocal = outQueue.AllocTensor<T>();
-40. AscendC::LocalTensor<T> srcLocal = inQueueX.DeQue<T>();
-41. AscendC::Broadcast<T, dim, axis>(dstLocal, srcLocal, dstShape_, srcShape_);
+private:
+    __aicore__ inline void CopyIn()
+    {
+        AscendC::LocalTensor<T> srcLocal = inQueueX.AllocTensor<T>();
+        AscendC::DataCopy(srcLocal, srcGlobal, srcSize);
+        inQueueX.EnQue(srcLocal);
+    }
+    __aicore__ inline void Compute()
+    {
+        AscendC::LocalTensor<T> dstLocal = outQueue.AllocTensor<T>();
+        AscendC::LocalTensor<T> srcLocal = inQueueX.DeQue<T>();
+        AscendC::Broadcast<T, dim, axis>(dstLocal, srcLocal, dstShape_, srcShape_);
 
-43. outQueue.EnQue<T>(dstLocal);
-44. inQueueX.FreeTensor(srcLocal);
-45. }
-46. __aicore__ inline void CopyOut()
-47. {
-48. AscendC::LocalTensor<T> dstLocal = outQueue.DeQue<T>();
-49. AscendC::DataCopy(dstGlobal, dstLocal, dstSize);
-50. outQueue.FreeTensor(dstLocal);
-51. }
+        outQueue.EnQue<T>(dstLocal);
+        inQueueX.FreeTensor(srcLocal);
+    }
+    __aicore__ inline void CopyOut()
+    {
+        AscendC::LocalTensor<T> dstLocal = outQueue.DeQue<T>();
+        AscendC::DataCopy(dstGlobal, dstLocal, dstSize);
+        outQueue.FreeTensor(dstLocal);
+    }
 
-53. private:
-54. AscendC::GlobalTensor<T> srcGlobal;
-55. AscendC::GlobalTensor<T> dstGlobal;
+private:
+    AscendC::GlobalTensor<T> srcGlobal;
+    AscendC::GlobalTensor<T> dstGlobal;
 
-57. AscendC::TPipe pipe;
-58. AscendC::TQue<AscendC::TPosition::VECIN, 1> inQueueX;
-59. AscendC::TQue<AscendC::TPosition::VECOUT, 1> outQueue;
-60. const uint32_t *dstShape_{nullptr};
-61. const uint32_t *srcShape_{nullptr};
-62. int32_t srcSize{1};
-63. int32_t dstSize{1};
-64. };
+    AscendC::TPipe pipe;
+    AscendC::TQue<AscendC::TPosition::VECIN, 1> inQueueX;
+    AscendC::TQue<AscendC::TPosition::VECOUT, 1> outQueue;
+    const uint32_t *dstShape_{nullptr};
+    const uint32_t *srcShape_{nullptr};
+    int32_t srcSize{1};
+    int32_t dstSize{1};
+};
 
-66. template <typename T, int32_t dim, int32_t axis>
-67. __aicore__ void kernel_broadcast_operator(
-68. GM_ADDR srcGm, GM_ADDR dstGm, const uint32_t dstShape[dim], const uint32_t srcShape[dim])
-69. {
-70. KernelBroadcast<T, dim, axis> op;
-71. op.Init(srcGm, dstGm, dstShape, srcShape);
-72. op.Process();
-73. }
+template <typename T, int32_t dim, int32_t axis>
+__aicore__ void kernel_broadcast_operator(
+    GM_ADDR srcGm, GM_ADDR dstGm, const uint32_t dstShape[dim], const uint32_t srcShape[dim])
+{
+    KernelBroadcast<T, dim, axis> op;
+    op.Init(srcGm, dstGm, dstShape, srcShape);
+    op.Process();
+}
 ```
 
 结果示例如下：
 
-```
-1. 输入数据（srcLocal）:
-2. [[ 1] [ 2] [ 3] [ 4] [ 5] [ 6] [ 7] [ 8] [ 9] [10] [11] [12] [13] [14] [15] [16]]
-3. dim：2
-4. axis：1
-5. 输出数据（dstLocal）:
-6. [[ 1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1]
-7. [ 2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2]
-8. [ 3  3  3  3  3  3  3  3  3  3  3  3  3  3  3  3]
-9. [ 4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4]
-10. [ 5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5]
-11. [ 6  6  6  6  6  6  6  6  6  6  6  6  6  6  6  6]
-12. [ 7  7  7  7  7  7  7  7  7  7  7  7  7  7  7  7]
-13. [ 8  8  8  8  8  8  8  8  8  8  8  8  8  8  8  8]
-14. [ 9  9  9  9  9  9  9  9  9  9  9  9  9  9  9  9]
-15. [10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10]
-16. [11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11]
-17. [12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12]
-18. [13 13 13 13 13 13 13 13 13 13 13 13 13 13 13 13]
-19. [14 14 14 14 14 14 14 14 14 14 14 14 14 14 14 14]
-20. [15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15]
-21. [16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16]]
+```text
+输入数据（srcLocal）:
+[[ 1] [ 2] [ 3] [ 4] [ 5] [ 6] [ 7] [ 8] [ 9] [10] [11] [12] [13] [14] [15] [16]]
+dim: 2
+axis: 1
+输出数据（dstLocal）:
+[[ 1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1]
+[ 2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2]
+[ 3  3  3  3  3  3  3  3  3  3  3  3  3  3  3  3]
+[ 4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4]
+[ 5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5]
+[ 6  6  6  6  6  6  6  6  6  6  6  6  6  6  6  6]
+[ 7  7  7  7  7  7  7  7  7  7  7  7  7  7  7  7]
+[ 8  8  8  8  8  8  8  8  8  8  8  8  8  8  8  8]
+[ 9  9  9  9  9  9  9  9  9  9  9  9  9  9  9  9]
+[10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10]
+[11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11]
+[12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12]
+[13 13 13 13 13 13 13 13 13 13 13 13 13 13 13 13]
+[14 14 14 14 14 14 14 14 14 14 14 14 14 14 14 14]
+[15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15]
+[16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16]]
 ```

@@ -3,29 +3,25 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@system.router (页面路由)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 已停止维护的接口 > @system.router (页面路由)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:52+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:bab0fdd5fd29f285f7b07032445f128e4ca10d53f01ac7ec78495b9c5ae000b9
+scraped_at: 2026-09-02T15:00:54+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e7191e3177084f6598b074f448d05bee0ca9b9b6b8e270283d8e6a9e0fa34a59
 ---
 
 通过不同的uri访问不同的页面。
 
-说明
+**说明** 
 
 * 从API version 8 开始，该接口不再维护，推荐使用新接口[@ohos.router](js-apis-router.md)。
 * 本模块首批接口从API version 3开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
-```
-1. import router from '@system.router';
+```ts
+import router from '@system.router';
 ```
 
 ## router.push
-
-PhonePC/2in1TabletTVWearable
 
 push(options: RouterOptions): void
 
@@ -41,45 +37,43 @@ push(options: RouterOptions): void
 
 **示例：**
 
-```
-1. // 在当前页面中
-2. import router from '@system.router';
-3. class A{
-4. pushPage() {
-5. router.push({
-6. uri: 'pages/routerpage2/routerpage2',
-7. params: {
-8. data1: 'message',
-9. data2: {
-10. data3: [123, 456, 789]
-11. }
-12. }
-13. });
-14. }
-15. }
-16. export default new A()
-```
-
-```
-1. // 在routerpage2页面中
-2. class B{
-3. data:Record<string,string> = {'data1': 'default'}
-4. data2:Record<string,number[]> = {'data3': [1, 2, 3]}
-5. onInit() {
-6. console.info('showData1:' + this.data.data1);
-7. console.info('showData3:' + this.data2.data3);
-8. }
-9. }
-10. export default new B()
+```ts
+// 在当前页面中
+import router from '@system.router';
+class A{
+  pushPage() {
+    router.push({
+      uri: 'pages/routerpage2/routerpage2',
+      params: {
+        data1: 'message',
+        data2: {
+          data3: [123, 456, 789]
+        }
+      }
+    });
+  }
+}
+export default new A()
 ```
 
-说明
+```ts
+// 在routerpage2页面中
+class B{
+  data:Record<string,string> = {'data1': 'default'}
+  data2:Record<string,number[]> = {'data3': [1, 2, 3]}
+  onInit() {
+    console.info('showData1:' + this.data.data1);
+    console.info('showData3:' + this.data2.data3);
+  }
+}
+export default new B()
+```
+
+**说明** 
 
 页面路由栈支持的最大Page数量为32。
 
 ## router.replace
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 replace(options: RouterOptions): void
 
@@ -95,36 +89,34 @@ replace(options: RouterOptions): void
 
 **示例：**
 
-```
-1. // 在当前页面中
-2. import router from '@system.router';
-3. class C{
-4. replacePage() {
-5. router.replace({
-6. uri: 'pages/detail/detail',
-7. params: {
-8. data1: 'message'
-9. }
-10. });
-11. }
-12. }
-13. export default new C()
+```ts
+// 在当前页面中
+import router from '@system.router';
+class C{
+  replacePage() {
+    router.replace({
+      uri: 'pages/detail/detail',
+      params: {
+        data1: 'message'
+      }
+    });
+  }
+}
+export default new C()
 ```
 
-```
-1. // 在detail页面中
-2. class Area {
-3. data:Record<string,string> = {'data1': 'default'}
-4. onInit() {
-5. console.info(`showData1: ${JSON.stringify(this.data)}`);
-6. }
-7. }
-8. export default new Area()
+```ts
+// 在detail页面中
+class Area {
+  data:Record<string,string> = {'data1': 'default'}
+  onInit() {
+    console.info(`showData1: ${JSON.stringify(this.data)}`);
+  }
+}
+export default new Area()
 ```
 
 ## router.back
-
-PhonePC/2in1TabletTVWearable
 
 back(options?: BackRouterOptions): void
 
@@ -140,72 +132,70 @@ back(options?: BackRouterOptions): void
 
 **示例：**
 
-```
-1. // index页面
-2. import router from '@system.router';
-3. class D{
-4. indexPushPage() {
-5. router.push({
-6. uri: 'pages/detail/detail'
-7. });
-8. }
-9. }
-10. export default new D()
-```
-
-```
-1. // detail页面
-2. import router from '@system.router';
-3. class E{
-4. detailPushPage() {
-5. router.push({
-6. uri: 'pages/mall/mall'
-7. });
-8. }
-9. }
-10. export default new E()
+```ts
+// index页面
+import router from '@system.router';
+class D{
+  indexPushPage() {
+    router.push({
+      uri: 'pages/detail/detail'
+    });
+  }
+}
+export default new D()
 ```
 
-```
-1. // mall页面通过back，将返回detail页面
-2. import router from '@system.router';
-3. class F{
-4. mallBackPage() {
-5. router.back();
-6. }
-7. }
-8. export default new F()
-```
-
-```
-1. // detail页面通过back，将返回index页面
-2. import router from '@system.router';
-3. class G{
-4. defaultBack() {
-5. router.back();
-6. }
-7. }
-8. export default new G()
+```ts
+// detail页面
+import router from '@system.router';
+class E{
+  detailPushPage() {
+    router.push({
+      uri: 'pages/mall/mall'
+    });
+  }
+}
+export default new E()
 ```
 
-```
-1. // 通过back，返回到detail页面
-2. import router from '@system.router';
-3. class H{
-4. backToDetail() {
-5. router.back({uri:'pages/detail/detail'});
-6. }
-7. }
-8. export default new H()
+```ts
+// mall页面通过back，将返回detail页面
+import router from '@system.router';
+class F{
+  mallBackPage() {
+    router.back();
+  }
+}
+export default new F()
 ```
 
-说明
+```ts
+// detail页面通过back，将返回index页面
+import router from '@system.router';
+class G{
+  defaultBack() {
+    router.back();
+  }
+}
+export default new G()
+```
+
+```ts
+// 通过back，返回到detail页面
+import router from '@system.router';
+class H{
+  backToDetail() {
+    router.back({uri:'pages/detail/detail'});
+  }
+}
+export default new H()
+```
+
+**说明** 
 
 示例中的uri字段是页面路由，由配置文件中的pages列表指定。
 
 ## router.getParams7+
-
-PhonePC/2in1TabletTVWearable
 
 getParams(): ParamsInterface
 
@@ -221,8 +211,6 @@ getParams(): ParamsInterface
 
 ## router.clear
 
-PhonePC/2in1TabletTVWearable
-
 clear(): void
 
 清空页面栈中的所有历史页面，仅保留当前页面作为栈顶页面。
@@ -231,19 +219,17 @@ clear(): void
 
 **示例：**
 
-```
-1. import router from '@system.router';
-2. class I{
-3. clearPage() {
-4. router.clear();
-5. }
-6. }
-7. export default new I()
+```ts
+import router from '@system.router';
+class I{
+  clearPage() {
+    router.clear();
+  }
+}
+export default new I()
 ```
 
 ## router.getLength
-
-PhonePC/2in1TabletTVWearable
 
 getLength(): string
 
@@ -259,20 +245,18 @@ getLength(): string
 
 **示例：**
 
-```
-1. import router from '@system.router';
-2. class J{
-3. getLength() {
-4. let size = router.getLength();
-5. console.info('pages stack size = ' + size);
-6. }
-7. }
-8. export default new J()
+```ts
+import router from '@system.router';
+class J{
+  getLength() {
+    let size = router.getLength();
+    console.info('pages stack size = ' + size);
+  }
+}
+export default new J()
 ```
 
 ## router.getState
-
-PhonePC/2in1TabletTVWearable
 
 getState(): RouterState
 
@@ -288,22 +272,20 @@ getState(): RouterState
 
 **示例：**
 
-```
-1. import router from '@system.router';
-2. class K{
-3. getState() {
-4. let page = router.getState();
-5. console.info('current index = ' + page.index);
-6. console.info('current name = ' + page.name);
-7. console.info('current path = ' + page.path);
-8. }
-9. }
-10. export default new K()
+```ts
+import router from '@system.router';
+class K{
+  getState() {
+    let page = router.getState();
+    console.info('current index = ' + page.index);
+    console.info('current name = ' + page.name);
+    console.info('current path = ' + page.path);
+  }
+}
+export default new K()
 ```
 
 ## router.enableAlertBeforeBackPage6+
-
-PhonePC/2in1TabletTVWearable
 
 enableAlertBeforeBackPage(options: EnableAlertBeforeBackPageOptions): void
 
@@ -319,27 +301,25 @@ enableAlertBeforeBackPage(options: EnableAlertBeforeBackPageOptions): void
 
 **示例：**
 
-```
-1. import router from '@system.router';
-2. class L{
-3. enableAlertBeforeBackPage() {
-4. router.enableAlertBeforeBackPage({
-5. message: 'Message Info',
-6. success: ()=> {
-7. console.info('success');
-8. },
-9. cancel: ()=> {
-10. console.info('cancel');
-11. }
-12. });
-13. }
-14. }
-15. export default new L()
+```ts
+import router from '@system.router';
+class L{
+  enableAlertBeforeBackPage() {
+    router.enableAlertBeforeBackPage({
+      message: 'Message Info',
+      success: ()=> {
+        console.info('success');
+      },
+      cancel: ()=> {
+        console.info('cancel');
+      }
+    });
+  }
+}
+export default new L()
 ```
 
 ## router.disableAlertBeforeBackPage6+
-
-PhonePC/2in1TabletTVWearable
 
 disableAlertBeforeBackPage(options?: DisableAlertBeforeBackPageOptions): void
 
@@ -355,26 +335,24 @@ disableAlertBeforeBackPage(options?: DisableAlertBeforeBackPageOptions): void
 
 **示例：**
 
-```
-1. import router from '@system.router';
-2. class Z{
-3. disableAlertBeforeBackPage() {
-4. router.disableAlertBeforeBackPage({
-5. success: ()=> {
-6. console.info('success');
-7. },
-8. cancel: ()=> {
-9. console.info('cancel');
-10. }
-11. });
-12. }
-13. }
-14. export default new Z()
+```ts
+import router from '@system.router';
+class Z{
+  disableAlertBeforeBackPage() {
+    router.disableAlertBeforeBackPage({
+      success: ()=> {
+        console.info('success');
+      },
+      cancel: ()=> {
+        console.info('cancel');
+      }
+    });
+  }
+}
+export default new Z()
 ```
 
 ## RouterOptions
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 定义路由器的选项。
 
@@ -387,8 +365,6 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 ## BackRouterOptions
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 定义路由器返回的选项。
 
 **系统能力：** 以下各项对应的系统能力有所不同，详见下表。
@@ -396,11 +372,9 @@ PhonePC/2in1TabletTVWearableLite Wearable
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri7+ | string | 否 | 返回到指定uri的界面，如果页面栈上没有uri页面，则不响应该情况。如果uri未设置，则返回上一页。  **系统能力：** SystemCapability.ArkUI.ArkUI.Full |
-| params7+ | object | 否 | 跳转时要同时传递到目标页面的数据。  **系统能力：** SystemCapability.ArkUI.ArkUI.Lite |
+| params7+ | Object | 否 | 返回时要同时传递到目标页面的数据。  **系统能力：** SystemCapability.ArkUI.ArkUI.Lite |
 
 ## RouterState
-
-PhonePC/2in1TabletTVWearable
 
 定义路由器的状态。
 
@@ -413,8 +387,6 @@ PhonePC/2in1TabletTVWearable
 | path | string | 是 | 表示当前页面的路径。 |
 
 ## EnableAlertBeforeBackPageOptions6+
-
-PhonePC/2in1TabletTVWearable
 
 定义EnableAlertBeforeBackPage选项。
 
@@ -429,22 +401,201 @@ PhonePC/2in1TabletTVWearable
 
 ## DisableAlertBeforeBackPageOptions6+
 
-PhonePC/2in1TabletTVWearable
-
 定义DisableAlertBeforeBackPage参数选项。
 
 **系统能力：** 以下各项对应的系统能力均为SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| success | (errMsg: string) => void | 否 | 关闭询问对话框能力成功时触发，errMsg表示返回信息。 |
-| cancel | (errMsg: string) => void | 否 | 关闭询问对话框能力失败时触发，errMsg表示返回信息。 |
+| success | (errMsg: string) => void | 否 | 关闭询问对话框成功时触发，errMsg表示返回信息。 |
+| cancel | (errMsg: string) => void | 否 | 关闭询问对话框失败时触发，errMsg表示返回信息。 |
 | complete | () => void | 否 | 当对话框关闭时触发该回调。 |
 
 ## ParamsInterface
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 | 名称 | 参数类型 | 说明 |
 | --- | --- | --- |
 | [key: string] | object | 路由参数列表。 |
+
+## 示例
+
+该示例展示了类Web范式下router.[replace](js-apis-system-router.md#routerreplace)接口的跳转功能。
+
+示例树状结构如下：
+
+```text
+pages
+├─ index
+│  ├─ index.css
+│  ├─ index.hml
+│  └─ index.js
+└─ routerPages
+   ├─ routerPage.css
+   ├─ routerPage.hml
+   └─ routerPage.js
+```
+
+```css
+/* index.css */
+.page {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #050816;
+}
+
+.page-name {
+  width: 78%;
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+  color: #f8fafc;
+}
+
+.tips {
+  width: 82%;
+  margin-top: 12px;
+  font-size: 12px;
+  text-align: center;
+  color: #cbd5e1;
+}
+
+.status {
+  width: 82%;
+  margin-top: 8px;
+  font-size: 12px;
+  text-align: center;
+  color: #94a3b8;
+}
+
+.action-button {
+  width: 190px;
+  height: 42px;
+  margin-top: 22px;
+  border-radius: 21px;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+}
+```
+
+```hml
+<!--index.hml-->
+<div class="page">
+    <text class="page-name">{{ pageName }}</text>
+    <text class="tips">{{ tips }}</text>
+    <text class="status">{{ statusText }}</text>
+    <input class="action-button" type="button" value="Replace to routerPage" onclick="replaceToRouterPage"></input>
+</div>
+```
+
+```js
+// index.js
+import router from '@system.router';
+
+export default {
+    data: {
+        pageName: 'Index Page',
+        tips: 'Tap the button to replace this page.',
+        statusText: 'Current page: index'
+    },
+    replaceToRouterPage: function() {
+        router.replace({
+            uri: 'pages/routerPages/routerPage',
+            params: {
+                data1: 'This page was opened by router.replace().'
+            }
+        });
+    }
+}
+```
+
+```css
+/* routerPage.css */
+.page {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #050816;
+}
+
+.page-name {
+  width: 78%;
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+  color: #f8fafc;
+}
+
+.tips {
+  width: 82%;
+  margin-top: 12px;
+  font-size: 12px;
+  text-align: center;
+  color: #cbd5e1;
+}
+
+.status {
+  width: 82%;
+  margin-top: 8px;
+  font-size: 12px;
+  text-align: center;
+  color: #94a3b8;
+}
+
+.action-button {
+  width: 190px;
+  height: 42px;
+  margin-top: 22px;
+  border-radius: 21px;
+  background-color: #16a34a;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+}
+```
+
+```hml
+<!--routerPage.hml-->
+<div class="page">
+    <text class="page-name">{{ pageName }}</text>
+    <text class="tips">{{ tips }}</text>
+    <text class="status">{{ statusText }}</text>
+    <input class="action-button" type="button" value="Replace to index" onclick="replaceToIndex"></input>
+</div>
+```
+
+```js
+// routerPage.js
+import router from '@system.router';
+
+export default {
+    data: {
+        pageName: 'Router Page',
+        tips: 'Tap the button to replace this page and return home.',
+        statusText: 'Current page: routerPage',
+        data1: 'Waiting for router.replace params.'
+    },
+    onInit: function() {
+        if (this.data1) {
+            this.statusText = this.data1;
+        }
+    },
+    replaceToIndex: function() {
+        router.replace({
+            uri: 'pages/index/index'
+        });
+    }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/VlCi8TAWSP6UzU2jWfwUkw/zh-cn_image_0000002736434739.gif)

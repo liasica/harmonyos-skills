@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-k
 title: XEngine
 breadcrumb: API参考 > 图形 > XEngine Kit（GPU加速引擎服务） > C API > 模块 > XEngine
 category: harmonyos-references
-scraped_at: 2026-04-29T14:06:33+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:a2f045dd3f284ce7b63857354d0c1317c8da06f4a6df88baa959ffffa7789aa6
+scraped_at: 2026-09-02T15:02:48+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:46c0d735115efe8ef7b4693473c22044da43de7a645a682344697888beea3103
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 提供XEngine图形相关能力接口。
 
@@ -20,33 +18,29 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 文件
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
 | [xeg\_extension\_defs.h](xengine-kit-xeg-extension-defs-8h.md) | 提供XEngine扩展特性宏定义信息。 |
-| [xeg\_gles\_adaptive\_vrs.h](xengine-kit-xeg-gles-adaptive-vrs-8h.md) | XEngine VRS特性接口。使用此头文件的接口前需要通过[HMS\_XEG\_GetString](xengine-kit-xengine.md#hms_xeg_getstring)接口查询[XEG\_ADAPTIVE\_VRS\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_adaptive_vrs_extension_name)扩展可用。 |
+| [xeg\_gles\_adaptive\_vrs.h](xengine-kit-xeg-gles-adaptive-vrs-8h.md) | XEngine自适应VRS（Variable Rate Shading，可变速率着色）特性GLES接口。使用此头文件的接口前需要通过[HMS\_XEG\_GetString](xengine-kit-xengine.md#hms_xeg_getstring)接口查询[XEG\_ADAPTIVE\_VRS\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_adaptive_vrs_extension_name)扩展可用。 |
 | [xeg\_gles\_extension.h](xengine-kit-xeg-gles-extension-8h.md) | XEngine扩展特性查询接口（OpenGL ES）。 |
-| [xeg\_gles\_neural\_upscale.h](xengine-kit-xeg-gles-neural-upscale-8h.md) | XEngine空域AI超分特性OpenGL ES接口，推荐超分倍率为[1.0, 1.5]。使用此头文件中的接口前需要通过[HMS\_XEG\_GetString](xengine-kit-xengine.md#hms_xeg_getstring)接口查询[XEG\_NEURAL\_UPSCALE\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_neural_upscale_extension_name)扩展可用。 |
+| [xeg\_gles\_neural\_upscale.h](xengine-kit-xeg-gles-neural-upscale-8h.md) | XEngine空域AI超分特性OpenGL ES接口。使用此头文件中的接口前需要通过[HMS\_XEG\_GetString](xengine-kit-xengine.md#hms_xeg_getstring)接口查询[XEG\_NEURAL\_UPSCALE\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_neural_upscale_extension_name)或者[XEG\_NEURAL\_UPSCALE2\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_neural_upscale2_extension_name)扩展是否可用。 |
 | [xeg\_gles\_spatial\_upscale.h](xengine-kit-xeg-gles-spatial-upscale-8h.md) | XEngine空域GPU超分特性OpenGL ES接口。使用此头文件的接口前需要通过[HMS\_XEG\_GetString](xengine-kit-xengine.md#hms_xeg_getstring)接口查询[XEG\_SPATIAL\_UPSCALE\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_spatial_upscale_extension_name)扩展可用。 |
 | [xeg\_gles\_temporal\_upscale.h](xengine-kit-xeg-gles-temporal-upscale-8h.md) | XEngine时域AI超分特性OpenGL ES接口。推荐超分倍率为[1.25, 2.0]，使用此头文件中的接口前需要通过[HMS\_XEG\_GetString](xengine-kit-xengine.md#hms_xeg_getstring)接口查询[XEG\_TEMPORAL\_UPSCALE\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_temporal_upscale_extension_name)扩展可用。 |
-| [xeg\_vulkan\_adaptive\_vrs.h](xengine-kit-xeg-vulkan-adaptive-vrs-8h.md) | XEngine Adaptive VRS特性Vulkan接口。使用此头文件的接口前需要通过[HMS\_XEG\_EnumerateDeviceExtensionProperties](xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询[XEG\_ADAPTIVE\_VRS\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_adaptive_vrs_extension_name)扩展可用。 |
+| [xeg\_vulkan\_adaptive\_vrs.h](xengine-kit-xeg-vulkan-adaptive-vrs-8h.md) | XEngine自适应VRS（Variable Rate Shading，可变速率着色）特性vulkan接口。使用此头文件的接口前需要通过[HMS\_XEG\_EnumerateDeviceExtensionProperties](xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询[XEG\_ADAPTIVE\_VRS\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_adaptive_vrs_extension_name)扩展可用。 |
 | [xeg\_vulkan\_common.h](xengine-kit-xeg-vulkan-common-8h.md) | 包含XEngine中Vulkan相关的通用类型定义。 |
 | [xeg\_vulkan\_extension.h](xengine-kit-xeg-vulkan-extension-8h.md) | XEngine 扩展特性查询接口（Vulkan）。 |
 | [xeg\_vulkan\_hps.h](xengine-kit-xeg-vulkan-hps-8h.md) | XEngine 高性能着色器接口。使用此头文件中的接口前需要通过[HMS\_XEG\_EnumerateDeviceExtensionProperties](xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询[XEG\_HPS\_RADIX\_SORT\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_hps_radix_sort_extension_name)扩展可用。 |
-| [xeg\_vulkan\_rt\_reflection.h](xengine-kit-xeg-vulkan-rt-reflection-8h.md) | XEngine RT Reflection特性接口。使用此头文件中的接口前需要通过[HMS\_XEG\_EnumerateDeviceExtensionProperties](xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询 [XEG\_RT\_REFLECTION\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_rt_reflection_extension_name)扩展可用。 |
-| [xeg\_vulkan\_rt\_visible\_mask.h](xengine-kit-xeg-vulkan-rt-visible-mask-8h.md) | XEngine RT VisibleMask特性接口。使用此头文件中的接口前需要通过[HMS\_XEG\_EnumerateDeviceExtensionProperties](xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询[XEG\_RT\_SHADOW\_AO\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_rt_shadow_ao_extension_name)扩展可用。 |
+| [xeg\_vulkan\_rt\_reflection.h](xengine-kit-xeg-vulkan-rt-reflection-8h.md) | XEngine Ray-Traced Reflection（光线追踪反射）特性接口。使用此头文件中的接口前需要通过[HMS\_XEG\_EnumerateDeviceExtensionProperties](xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询 [XEG\_RT\_REFLECTION\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_rt_reflection_extension_name)扩展可用。 |
+| [xeg\_vulkan\_rt\_visible\_mask.h](xengine-kit-xeg-vulkan-rt-visible-mask-8h.md) | XEngine Ray-Traced VisibleMask（光线追踪阴影和环境光遮蔽）特性接口。使用此头文件中的接口前需要通过[HMS\_XEG\_EnumerateDeviceExtensionProperties](xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询[XEG\_RT\_SHADOW\_AO\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_rt_shadow_ao_extension_name)扩展可用。 |
 | [xeg\_vulkan\_rtgi.h](xengine-kit-xeg-vulkan-rtgi-8h.md) | XEngine光线追踪全局光照特性Vulkan接口，提供动态漫反射全局光照（DDGI）及神经网络全局光照（NNGI）两种特性。使用此头文件的接口前，需要先调用[HMS\_XEG\_EnumerateDeviceExtensionProperties](xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询扩展[XEG\_RTGI\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_rtgi_extension_name)可用。 |
 | [xeg\_vulkan\_spatial\_upscale.h](xengine-kit-xeg-vulkan-spatial-upscale-8h.md) | XEngine空域GPU超分特性Vulkan接口。使用此头文件的接口前需要通过[HMS\_XEG\_EnumerateDeviceExtensionProperties](xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询[XEG\_SPATIAL\_UPSCALE\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_spatial_upscale_extension_name)扩展可用。 |
 | [xeg\_vulkan\_temporal\_upscale.h](xengine-kit-xeg-vulkan-temporal-upscale-8h.md) | XEngine时域AI超分特性接口，推荐超分倍率为[1.25, 2.0]。使用此头文件中的接口前需要通过[HMS\_XEG\_EnumerateDeviceExtensionProperties](xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询[XEG\_TEMPORAL\_UPSCALE\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_temporal_upscale_extension_name)扩展可用。 |
+| [xeg\_vulkan\_neural\_upscale.h](xengine-kit-xeg-vulkan-neural-upscale-8h.md) | XEngine空域AI超分特性Vulkan接口。使用此头文件的接口前需要通过[HMS\_XEG\_EnumerateDeviceExtensionProperties](xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询[XEG\_NEURAL\_UPSCALE\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_neural_upscale_extension_name)扩展可用。 |
+| [xeg\_control\_display\_separation.h](xengine-kit-xeg-control-display-separation.md) | XEngine控显分离特性接口。 |
 
 ### 结构体
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -72,10 +66,10 @@ PhonePC/2in1TabletTV
 | struct [XEG\_SpatialUpscaleDescription](xengine-kit-xeg-spatialupscaledescription.md) | 此结构体描述下发空域GPU超分渲染命令时需要的图像信息。 |
 | struct [XEG\_TemporalUpscaleCreateInfo](xengine-kit-xeg-temporalupscalecreateinfo.md) | 此结构体描述创建[XEG\_TemporalUpscale](xengine-kit-xengine.md#xeg_temporalupscale)对象的信息。当结构体中的信息变化时，需要创建新的[XEG\_TemporalUpscale](xengine-kit-xengine.md#xeg_temporalupscale)对象。 |
 | struct [XEG\_TemporalUpscaleDescription](xengine-kit-xeg-temporalupscaledescription.md) | 此结构体描述下发时域AI超分渲染命令时的输入信息。 |
+| struct [XEG\_NeuralUpscaleCreateInfo](xengine-kit-xeg-neuralupscalecreateinfo.md) | 此结构体描述创建[XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale)对象的信息。当结构体中的信息变化时，需要创建新的[XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale)对象。 |
+| struct [XEG\_NeuralUpscaleDescription](xengine-kit-xeg-neuralupscaledescription.md) | 此结构体描述下发空域AI超分渲染命令时的输入信息。 |
 
 ### 宏定义
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -85,12 +79,13 @@ PhonePC/2in1TabletTV
 | [XEG\_neural\_upscale](xengine-kit-xengine.md#xeg_neural_upscale) 1 | XEngine空域AI超分扩展特性宏定义。 |
 | [XEG\_NEURAL\_UPSCALE\_VERSION](xengine-kit-xengine.md#xeg_neural_upscale_version) 1 | XEngine空域AI超分扩展特性版本号。 |
 | [XEG\_NEURAL\_UPSCALE\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_neural_upscale_extension_name) "XEG\_neural\_upscale" | XEngine空域AI超分扩展特性名称。 |
+| [XEG\_NEURAL\_UPSCALE2\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_neural_upscale2_extension_name) "XEG\_neural\_upscale2" | XEngine空域AI超分（版本2）扩展特性名称。 |
 | [XEG\_temporal\_upscale](xengine-kit-xengine.md#xeg_temporal_upscale) 1 | XEngine时域AI超分扩展特性宏定义。 |
 | [XEG\_TEMPORAL\_UPSCALE\_VERSION](xengine-kit-xengine.md#xeg_temporal_upscale_version) 1 | XEngine时域AI超分扩展特性版本号。 |
 | [XEG\_TEMPORAL\_UPSCALE\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_temporal_upscale_extension_name) "XEG\_temporal\_upscale" | XEngine时域AI超分扩展特性名称。 |
-| [XEG\_adaptive\_vrs](xengine-kit-xengine.md#xeg_adaptive_vrs) 1 | XEngine自适应VRS扩展特性宏定义。 |
-| [XEG\_ADAPTIVE\_VRS\_VERSION](xengine-kit-xengine.md#xeg_adaptive_vrs_version) 1 | XEngine自适应VRS扩展特性版本号。 |
-| [XEG\_ADAPTIVE\_VRS\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_adaptive_vrs_extension_name) "XEG\_adaptive\_vrs" | XEngine自适应VRS扩展特性名称。 |
+| [XEG\_adaptive\_vrs](xengine-kit-xengine.md#xeg_adaptive_vrs) 1 | XEngine自适应VRS(Variable Rate Shading)扩展特性宏定义。 |
+| [XEG\_ADAPTIVE\_VRS\_VERSION](xengine-kit-xengine.md#xeg_adaptive_vrs_version) 1 | XEngine自适应VRS(Variable Rate Shading)扩展特性版本号。 |
+| [XEG\_ADAPTIVE\_VRS\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_adaptive_vrs_extension_name) "XEG\_adaptive\_vrs" | XEngine自适应VRS(Variable Rate Shading)扩展特性名称。 |
 | [XEG\_RTGI\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_rtgi_extension_name) "XEG\_rtgi" | XEngine光线追踪全局光照扩展特性名称。 |
 | [XEG\_RT\_SHADOW\_AO\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_rt_shadow_ao_extension_name) "XEG\_rt\_shadow\_ao" | XEngine光线追踪阴影和环境光遮蔽扩展特性名称。 |
 | [XEG\_RT\_REFLECTION\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_rt_reflection_extension_name) "XEG\_rt\_reflection" | XEngine光线追踪反射扩展特性名称。 |
@@ -98,28 +93,26 @@ PhonePC/2in1TabletTV
 | [XEG\_ADAPTIVE\_VRS\_INPUT\_SIZE](xengine-kit-xengine.md#xeg_adaptive_vrs_input_size) 0x1U | 用于设置[HMS\_XEG\_AdaptiveVRSParameter](xengine-kit-xengine.md#hms_xeg_adaptivevrsparameter)接口的INPUT\_SIZE参数，表示上一帧渲染管线最终渲染的图像宽度和高度。 |
 | [XEG\_ADAPTIVE\_VRS\_INPUT\_REGION](xengine-kit-xengine.md#xeg_adaptive_vrs_input_region) 0x2U | 用于设置[HMS\_XEG\_AdaptiveVRSParameter](xengine-kit-xengine.md#hms_xeg_adaptivevrsparameter)接口的INPUT\_REGION参数，表示上一帧渲染管线最终渲染的图像区域。 |
 | [XEG\_ADAPTIVE\_VRS\_TEXEL\_SIZE](xengine-kit-xengine.md#xeg_adaptive_vrs_texel_size) 0x3U | 用于设置[HMS\_XEG\_AdaptiveVRSParameter](xengine-kit-xengine.md#hms_xeg_adaptivevrsparameter)接口的TEXEL\_SIZE参数。 |
-| [XEG\_ADAPTIVE\_VRS\_ERROR\_SENSITIVITY](xengine-kit-xengine.md#xeg_adaptive_vrs_error_sensitivity) 0x4U | 用于设置[HMS\_XEG\_AdaptiveVRSParameter](xengine-kit-xengine.md#hms_xeg_adaptivevrsparameter)接口的ERROR\_SENSITIVITY参数，表示控制生成着色率图像的阈值。该值越大，平均着色率越小，即性能会越好但画质会劣化。建议取值范围为[0, 1]。 |
+| [XEG\_ADAPTIVE\_VRS\_ERROR\_SENSITIVITY](xengine-kit-xengine.md#xeg_adaptive_vrs_error_sensitivity) 0x4U | 用于设置[HMS\_XEG\_AdaptiveVRSParameter](xengine-kit-xengine.md#hms_xeg_adaptivevrsparameter)接口的ERROR\_SENSITIVITY参数，表示控制生成着色率图像的阈值。该值越大，平均着色率越小，即性能会越好但画质会劣化。建议取值范围为[0.0, 1.0]。 |
 | [XEG\_ADAPTIVE\_VRS\_FLIP](xengine-kit-xengine.md#xeg_adaptive_vrs_flip) 0x5U | 用于设置[HMS\_XEG\_AdaptiveVRSParameter](xengine-kit-xengine.md#hms_xeg_adaptivevrsparameter)接口的FLIP参数，该参数用于控制是否执行图像上下翻转。 |
 | [XEG\_EXTENSIONS](xengine-kit-xengine.md#xeg_extensions) 0x01U | 作为[HMS\_XEG\_GetString](xengine-kit-xengine.md#hms_xeg_getstring)接口的入参，以获取XEngine支持的OpenGL ES扩展特性。 |
 | [XEG\_NEURAL\_UPSCALE\_SCISSOR](xengine-kit-xengine.md#xeg_neural_upscale_scissor) 0x1U | 用于通过[HMS\_XEG\_NeuralUpscaleParameter](xengine-kit-xengine.md#hms_xeg_neuralupscaleparameter)接口设置超分的裁剪窗口参数，裁剪窗口用于确定对输入图像采样的区域。 |
-| [XEG\_NEURAL\_UPSCALE\_SHARPNESS](xengine-kit-xengine.md#xeg_neural_upscale_sharpness) 0x2U | 用于通过[HMS\_XEG\_NeuralUpscaleParameter](xengine-kit-xengine.md#hms_xeg_neuralupscaleparameter)接口设置超分的锐化度参数，锐化度的建议取值范围为[0, 1]。 |
-| [XEG\_NEURAL\_UPSCALE\_INPUT\_HANDLE](xengine-kit-xengine.md#xeg_neural_upscale_input_handle) 0x4U | 用于通过[HMS\_XEG\_NeuralUpscaleParameter](xengine-kit-xengine.md#hms_xeg_neuralupscaleparameter)接口设置与超分输入纹理关联的OH\_NativeBuffer handle。 |
+| [XEG\_NEURAL\_UPSCALE\_SHARPNESS](xengine-kit-xengine.md#xeg_neural_upscale_sharpness) 0x2U | 用于通过[HMS\_XEG\_NeuralUpscaleParameter](xengine-kit-xengine.md#hms_xeg_neuralupscaleparameter)接口设置超分的锐化度参数，锐化度的建议取值范围为[0.0, 1.0]。 |
+| [XEG\_NEURAL\_UPSCALE\_INPUT\_HANDLE](xengine-kit-xengine.md#xeg_neural_upscale_input_handle) 0x4U | 用于通过[HMS\_XEG\_NeuralUpscaleParameter](xengine-kit-xengine.md#hms_xeg_neuralupscaleparameter)接口设置与超分输入纹理关联的[OH\_NativeBuffer](capi-oh-nativebuffer.md) handle。 |
 | [XEG\_SPATIAL\_UPSCALE\_SCISSOR](xengine-kit-xengine.md#xeg_spatial_upscale_scissor) 0x1U | 用于设置[HMS\_XEG\_SpatialUpscaleParameter](xengine-kit-xengine.md#hms_xeg_spatialupscaleparameter)接口的SCISSOR参数。 |
 | [XEG\_SPATIAL\_UPSCALE\_SHARPNESS](xengine-kit-xengine.md#xeg_spatial_upscale_sharpness) 0x2U | 用于设置[HMS\_XEG\_SpatialUpscaleParameter](xengine-kit-xengine.md#hms_xeg_spatialupscaleparameter)接口的SHARPNESS参数。 |
 | [XEG\_TEMPORAL\_UPSCALE\_INPUT\_SIZE](xengine-kit-xengine.md#xeg_temporal_upscale_input_size) 0x1U | 用于通过[HMS\_XEG\_TemporalUpscaleParameter](xengine-kit-xengine.md#hms_xeg_temporalupscaleparameter)接口设置超分输入纹理的真实宽高。 |
 | [XEG\_TEMPORAL\_UPSCALE\_JITTER\_NUM](xengine-kit-xengine.md#xeg_temporal_upscale_jitter_num) 0x2U | 用于通过[HMS\_XEG\_TemporalUpscaleParameter](xengine-kit-xengine.md#hms_xeg_temporalupscaleparameter)接口设置相机抖动的周期数，取值范围为[4, 16]，推荐8。 |
 | [XEG\_TEMPORAL\_UPSCALE\_DEPTH\_REVERSED](xengine-kit-xengine.md#xeg_temporal_upscale_depth_reversed) 0x3U | 用于通过[HMS\_XEG\_TemporalUpscaleParameter](xengine-kit-xengine.md#hms_xeg_temporalupscaleparameter)接口设置是否存在深度反转。true表示存在深度反转，false表示不存在深度反转。 |
 | [XEG\_TEMPORAL\_UPSCALE\_RESET\_HISTORY](xengine-kit-xengine.md#xeg_temporal_upscale_reset_history) 0x4U | 用于通过[HMS\_XEG\_TemporalUpscaleParameter](xengine-kit-xengine.md#hms_xeg_temporalupscaleparameter)接口设置是否重置历史帧数据，true表示重置，false表示不重置。在历史帧未使用超分，并且当前帧开始使用超分的情况下建议设置为true。 |
-| [XEG\_TEMPORAL\_UPSCALE\_STEADY\_LEVEL](xengine-kit-xengine.md#xeg_temporal_upscale_steady_level) 0x5U | 用于通过[HMS\_XEG\_TemporalUpscaleParameter](xengine-kit-xengine.md#hms_xeg_temporalupscaleparameter)接口设置画面偏向当前帧（鬼影少但可能存在闪烁）还是历史帧（鬼影多但是更稳定）的平衡程度。取值范围为[0.0, 1.0]，值越大越偏向历史帧。 |
+| [XEG\_TEMPORAL\_UPSCALE\_STEADY\_LEVEL](xengine-kit-xengine.md#xeg_temporal_upscale_steady_level) 0x5U | 用于通过[HMS\_XEG\_TemporalUpscaleParameter](xengine-kit-xengine.md#hms_xeg_temporalupscaleparameter)接口设置画面偏向当前帧（鬼影少但可能存在闪烁）还是历史帧（鬼影多但是更稳定）的平衡程度。取值范围为[0.0, 1.0]，如果该值不在以上范围内，则会发生未定义行为，例如渲染效果不正确或程序崩溃，值越大越偏向历史帧。建议根据实际需求选择合适的值，例如在需要减少鬼影时可设置为较小值，需要减少闪烁可以设置为较大值，推荐值为0.5。 |
 | [XEG\_MAX\_EXTENSION\_NAME\_SIZE](xengine-kit-xengine.md#xeg_max_extension_name_size) 256 | XEngine扩展特性名称支持的最大长度。 |
 
 ### 类型定义
 
-PhonePC/2in1TabletTV
-
 | 名称 | 描述 |
 | --- | --- |
-| typedef void(GL\_APIENTRYP [PFN\_HMS\_XEG\_ADAPTIVEVRSPARAMETER](xengine-kit-xengine.md#pfn_hms_xeg_adaptivevrsparameter)) (GLenum pname, GLvoid \*param) | 设置自适应VRS输入参数的函数指针定义。 |
+| typedef void(GL\_APIENTRYP [PFN\_HMS\_XEG\_ADAPTIVEVRSPARAMETER](xengine-kit-xengine.md#pfn_hms_xeg_adaptivevrsparameter)) (GLenum pname, GLvoid \*param) | 设置自适应VRS(Variable Rate Shading)输入参数的函数指针定义。 |
 | typedef void(GL\_APIENTRYP [PFN\_HMS\_XEG\_DISPATCHADAPTIVEVRS](xengine-kit-xengine.md#pfn_hms_xeg_dispatchadaptivevrs)) (GLfloat \*reprojectionMatrix, GLuint inputColorImage, GLuint inputDepthImage, GLuint shadingRateImage) | 计算着色率图像的函数指针定义。 |
 | typedef void(GL\_APIENTRYP [PFN\_HMS\_XEG\_APPLYADAPTIVEVRS](xengine-kit-xengine.md#pfn_hms_xeg_applyadaptivevrs)) (GLuint shadingRateImage) | 将着色率图像应用到渲染目标中的函数指针定义。 |
 | typedef const GLubyte \*(GL\_APIENTRYP [PFN\_HMS\_XEG\_GETSTRING](xengine-kit-xengine.md#pfn_hms_xeg_getstring)) (GLenum name) | XEngine OpenGL ES扩展特性查询接口函数指针定义。 |
@@ -133,7 +126,7 @@ PhonePC/2in1TabletTV
 | typedef struct [XEG\_AdaptiveVRSCreateInfo](xengine-kit-xeg-adaptivevrscreateinfo.md) [XEG\_AdaptiveVRSCreateInfo](xengine-kit-xengine.md#xeg_adaptivevrscreateinfo) | 此结构体描述创建[XEG\_AdaptiveVRS](xengine-kit-xengine.md#xeg_adaptivevrs)对象的参数信息，当结构体中的信息变化时，需要创建新的[XEG\_AdaptiveVRS](xengine-kit-xengine.md#xeg_adaptivevrs)对象。 |
 | typedef struct [XEG\_AdaptiveVRSDescription](xengine-kit-xeg-adaptivevrsdescription.md) [XEG\_AdaptiveVRSDescription](xengine-kit-xengine.md#xeg_adaptivevrsdescription) | 此结构体描述下发绘制着色率纹理命令需要的参数信息，每一帧都需要进行更新。 |
 | typedef VkResult(VKAPI\_PTR \* [PFN\_HMS\_XEG\_CreateAdaptiveVRS](xengine-kit-xengine.md#pfn_hms_xeg_createadaptivevrs)) (VkDevice device, const [XEG\_AdaptiveVRSCreateInfo](xengine-kit-xeg-adaptivevrscreateinfo.md) \*pXegAdaptiveVRSCreateInfo, [XEG\_AdaptiveVRS](xengine-kit-xengine.md#xeg_adaptivevrs) \*pXegAdaptiveVRS) | 创建[XEG\_AdaptiveVRS](xengine-kit-xengine.md#xeg_adaptivevrs)对象的函数指针定义。 |
-| typedef void(VKAPI\_PTR \* [PFN\_HMS\_XEG\_CmdDispatchAdaptiveVRS](xengine-kit-xengine.md#pfn_hms_xeg_cmddispatchadaptivevrs)) (VkCommandBuffer commandBuffer, [XEG\_AdaptiveVRS](xengine-kit-xengine.md#xeg_adaptivevrs) xegAdaptiveVRS, [XEG\_AdaptiveVRSDescription](xengine-kit-xeg-adaptivevrsdescription.md) \*pXegAdaptiveVRSDescription) | 执行计算自适应可变着色率命令的函数指针定义。 |
+| typedef void(VKAPI\_PTR \* [PFN\_HMS\_XEG\_CmdDispatchAdaptiveVRS](xengine-kit-xengine.md#pfn_hms_xeg_cmddispatchadaptivevrs)) (VkCommandBuffer commandBuffer, [XEG\_AdaptiveVRS](xengine-kit-xengine.md#xeg_adaptivevrs) xegAdaptiveVRS, [XEG\_AdaptiveVRSDescription](xengine-kit-xeg-adaptivevrsdescription.md) \*pXegAdaptiveVRSDescription) | 执行计算自适应VRS命令的函数指针定义。 |
 | typedef void(VKAPI\_PTR \* [PFN\_HMS\_XEG\_DestroyAdaptiveVRS](xengine-kit-xengine.md#pfn_hms_xeg_destroyadaptivevrs)) ([XEG\_AdaptiveVRS](xengine-kit-xengine.md#xeg_adaptivevrs) xegAdaptiveVRS) | 销毁[XEG\_AdaptiveVRS](xengine-kit-xengine.md#xeg_adaptivevrs)对象的函数指针定义。 |
 | typedef enum [XEG\_StructureType](xengine-kit-xengine.md#xeg_structuretype) XEG\_StructureType | XEngine结构体类型的枚举。 |
 | typedef VkResult(VKAPI\_PTR \* [PFN\_HMS\_XEG\_CmdSetSynchronization](xengine-kit-xengine.md#pfn_hms_xeg_cmdsetsynchronization)) (VkCommandBuffer commandBuffer, const void \*xegHandle) | 设置同步信号，等待渲染结果写入指定图像的函数指针定义。使用RTGI特性时，为等待GI渲染结果到写入指定图像。 |
@@ -150,8 +143,8 @@ PhonePC/2in1TabletTV
 | typedef struct [XEG\_RTReflectionCreateInfo](xengine-kit-xeg-rtreflectioncreateinfo.md) [XEG\_RTReflectionCreateInfo](xengine-kit-xengine.md#xeg_rtreflectioncreateinfo) | 此结构体描述创建[XEG\_RTReflection](xengine-kit-xengine.md#xeg_rtreflection)对象的信息。当结构体中的信息变化时，需要创建新的[XEG\_RTReflection](xengine-kit-xengine.md#xeg_rtreflection)对象。 |
 | typedef struct [XEG\_RTReflectionDescription](xengine-kit-xeg-rtreflectiondescription.md) [XEG\_RTReflectionDescription](xengine-kit-xengine.md#xeg_rtreflectiondescription) | 此结构体描述下发光线求交命令时的输入信息。 |
 | typedef VkResult(VKAPI\_ATTR \* [PFN\_HMS\_XEG\_CreateRTReflection](xengine-kit-xengine.md#pfn_hms_xeg_creatertreflection)) (VkDevice device, const void \*pCreateInfo, [XEG\_RTReflection](xengine-kit-xengine.md#xeg_rtreflection) \*pRtReflection) | 创建[XEG\_RTReflection](xengine-kit-xengine.md#xeg_rtreflection)对象的函数指针定义。 |
-| typedef VkResult VKAPI\_ATTR \* [PFN\_HMS\_XEG\_CmdRenderRTReflection](xengine-kit-xengine.md#pfn_hms_xeg_cmdrenderrtreflection)(VkCommandBuffer commandBuffer, [XEG\_RTReflection](xengine-kit-xengine.md#xeg_rtreflection) rtReflection, const void \*pDescription) | 录制计算RT反射命中信息命令的函数指针定义。 |
-| typedef void VKAPI\_ATTR \* [PFN\_HMS\_XEG\_DestroyRTReflection](xengine-kit-xengine.md#pfn_hms_xeg_destroyrtreflection)([XEG\_RTReflection](xengine-kit-xengine.md#xeg_rtreflection) rtReflection) | 销毁[XEG\_RTReflection](xengine-kit-xengine.md#xeg_rtreflection)对象的函数指针定义。 |
+| typedef VkResult(VKAPI\_ATTR \* [PFN\_HMS\_XEG\_CmdRenderRTReflection](xengine-kit-xengine.md#pfn_hms_xeg_cmdrenderrtreflection)) (VkCommandBuffer commandBuffer, [XEG\_RTReflection](xengine-kit-xengine.md#xeg_rtreflection) rtReflection, const void \*pDescription) | 录制计算RT反射命中信息命令的函数指针定义。 |
+| typedef void(VKAPI\_ATTR \* [PFN\_HMS\_XEG\_DestroyRTReflection](xengine-kit-xengine.md#pfn_hms_xeg_destroyrtreflection)) ([XEG\_RTReflection](xengine-kit-xengine.md#xeg_rtreflection) rtReflection) | 销毁[XEG\_RTReflection](xengine-kit-xengine.md#xeg_rtreflection)对象的函数指针定义。 |
 | VK\_DEFINE\_HANDLE([XEG\_RTVisibleMask](xengine-kit-xengine.md#xeg_rtvisiblemask)) | [XEG\_RTVisibleMask](xengine-kit-xengine.md#xeg_rtvisiblemask)的句柄。表示光线追踪VisibleMask特性实例，支持阴影和环境光遮蔽效果。 |
 | typedef enum [XEG\_DenoiseQualityMode](xengine-kit-xengine.md#xeg_denoisequalitymode) XEG\_DenoiseQualityMode | 去噪质量模式枚举。 |
 | typedef enum [XEG\_TraversalMode](xengine-kit-xengine.md#xeg_traversalmode) XEG\_TraversalMode | 遍历模式枚举。 |
@@ -175,25 +168,33 @@ PhonePC/2in1TabletTV
 | typedef VkResult(VKAPI\_ATTR \* [PFN\_HMS\_XEG\_CreateTemporalUpscale](xengine-kit-xengine.md#pfn_hms_xeg_createtemporalupscale)) (VkDevice device, [XEG\_TemporalUpscaleCreateInfo](xengine-kit-xeg-temporalupscalecreateinfo.md) \*pTemporalUpscaleInfo, [XEG\_TemporalUpscale](xengine-kit-xengine.md#xeg_temporalupscale) \*pTemporalUpscale) | 创建[XEG\_TemporalUpscale](xengine-kit-xengine.md#xeg_temporalupscale)对象的函数指针定义。 |
 | typedef void(VKAPI\_ATTR \* [PFN\_HMS\_XEG\_CmdRenderTemporalUpscale](xengine-kit-xengine.md#pfn_hms_xeg_cmdrendertemporalupscale)) (VkCommandBuffer commandBuffer, [XEG\_TemporalUpscale](xengine-kit-xengine.md#xeg_temporalupscale) temporalUpscale, [XEG\_TemporalUpscaleDescription](xengine-kit-xeg-temporalupscaledescription.md) \*pDescription) | 录制时域AI超分渲染命令的函数指针定义。 |
 | typedef void(VKAPI\_ATTR \* [PFN\_HMS\_XEG\_DestroyTemporalUpscale](xengine-kit-xengine.md#pfn_hms_xeg_destroytemporalupscale)) ([XEG\_TemporalUpscale](xengine-kit-xengine.md#xeg_temporalupscale) temporalUpscale) | 销毁[XEG\_TemporalUpscale](xengine-kit-xengine.md#xeg_temporalupscale)对象的函数指针定义。 |
+| VK\_DEFINE\_HANDLE([XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale)) | [XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale)的句柄。 |
+| typedef struct [XEG\_NeuralUpscaleCreateInfo](xengine-kit-xeg-neuralupscalecreateinfo.md) [XEG\_NeuralUpscaleCreateInfo](xengine-kit-xengine.md#xeg_neuralupscalecreateinfo) | 此结构体描述创建[XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale)对象的信息。当结构体中的信息变化时，需要创建新的[XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale)对象。 |
+| typedef struct [XEG\_NeuralUpscaleDescription](xengine-kit-xeg-neuralupscaledescription.md) [XEG\_NeuralUpscaleDescription](xengine-kit-xengine.md#xeg_neuralupscaledescription) | 此结构体描述下发空域AI超分渲染命令时的输入信息。 |
+| typedef VkResult(VKAPI\_PTR \* [PFN\_HMS\_XEG\_CreateNeuralUpscale](xengine-kit-xengine.md#pfn_hms_xeg_createneuralupscale)) (VkDevice device, const [XEG\_NeuralUpscaleCreateInfo](xengine-kit-xeg-neuralupscalecreateinfo.md) \*pCreateInfo, [XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale) \*pNeuralUpscale) | 创建[XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale)对象的函数指针定义。 |
+| typedef VkResult(VKAPI\_PTR \* [PFN\_HMS\_XEG\_CmdRenderNeuralUpscale](xengine-kit-xengine.md#pfn_hms_xeg_cmdrenderneuralupscale)) (VkCommandBuffer commandBuffer, [XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale) neuralUpscale, const [XEG\_NeuralUpscaleDescription](xengine-kit-xeg-neuralupscaledescription.md) \*pDescription) | 录制空域AI超分渲染命令的函数指针定义。 |
+| typedef void(VKAPI\_PTR \* [PFN\_HMS\_XEG\_DestroyNeuralUpscale](xengine-kit-xengine.md#pfn_hms_xeg_destroyneuralupscale)) ([XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale) neuralUpscale) | 销毁[XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale)对象的函数指针定义。 |
+| typedef enum [XEG\_ControlDisplaySeparationStatus](xengine-kit-xengine.md#xeg_controldisplayseparationstatus) XEG\_ControlDisplaySeparationStatus | 此枚举描述控显分离当前的状态信息。 |
+| typedef void(\*[PFN\_HMS\_XEG\_ControlDisplaySeparationStatusCallback](xengine-kit-xengine.md#pfn_hms_xeg_controldisplayseparationstatuscallback)) ([XEG\_ControlDisplaySeparationStatus](xengine-kit-xengine.md#xeg_controldisplayseparationstatus) status) | 控显分离特性监听函数的函数指针定义。 |
+| typedef bool(\*[PFN\_HMS\_XEG\_SetControlDisplaySeparationStatusListener](xengine-kit-xengine.md#pfn_hms_xeg_setcontroldisplayseparationstatuslistener)) ([PFN\_HMS\_XEG\_ControlDisplaySeparationStatusCallback](xengine-kit-xengine.md#pfn_hms_xeg_controldisplayseparationstatuscallback) callback) | 设置控显分离特性全局唯一监听函数的函数指针定义。 |
+| typedef void(\*[PFN\_HMS\_XEG\_RemoveControlDisplaySeparationStatusListener](xengine-kit-xengine.md#pfn_hms_xeg_removecontroldisplayseparationstatuslistener)) () | 移除控显分离特性全局唯一监听函数的函数指针定义。 |
+| typedef bool(\*[PFN\_HMS\_XEG\_SetControlDisplaySeparationActive](xengine-kit-xengine.md#pfn_hms_xeg_setcontroldisplayseparationactive)) (bool flag) | 设置控显分离特性使能开关的函数指针定义。 |
 
 ### 枚举
 
-PhonePC/2in1TabletTV
-
 | 名称 | 描述 |
 | --- | --- |
-| [XEG\_StructureType](xengine-kit-xengine.md#xeg_structuretype) {  XEG\_STRUCTURE\_TYPE\_RT\_SHADOWAO\_CREATE\_INFO = 0, XEG\_STRUCTURE\_TYPE\_RT\_SHADOWAO\_DESCRIPTION = 1, XEG\_STRUCTURE\_TYPE\_RT\_REFLECTION\_CREATE\_INFO = 2, XEG\_STRUCTURE\_TYPE\_RT\_REFLECTION\_DESCRIPTION = 3,  XEG\_STRUCTURE\_TYPE\_NNGI\_CREATE\_INFO = 4, XEG\_STRUCTURE\_TYPE\_NNGI\_DESCRIPTION = 5, XEG\_STRUCTURE\_TYPE\_DDGI\_CREATE\_INFO = 6, XEG\_STRUCTURE\_TYPE\_DDGI\_DESCRIPTION = 7,  XEG\_STRUCTURE\_TYPE\_HPS\_CREATE\_INFO = 1001, XEG\_STRUCTURE\_TYPE\_HPS\_RADIX\_SORT = 1002, XEG\_STRUCTURE\_TYPE\_HPS\_RADIX\_SORT\_DESCRIPTION = 1003  } | XEngine结构体类型的枚举。 |
+| [XEG\_StructureType](xengine-kit-xengine.md#xeg_structuretype) {  XEG\_STRUCTURE\_TYPE\_RT\_SHADOWAO\_CREATE\_INFO = 0, XEG\_STRUCTURE\_TYPE\_RT\_SHADOWAO\_DESCRIPTION = 1, XEG\_STRUCTURE\_TYPE\_RT\_REFLECTION\_CREATE\_INFO = 2, XEG\_STRUCTURE\_TYPE\_RT\_REFLECTION\_DESCRIPTION = 3,  XEG\_STRUCTURE\_TYPE\_NNGI\_CREATE\_INFO = 4, XEG\_STRUCTURE\_TYPE\_NNGI\_DESCRIPTION = 5, XEG\_STRUCTURE\_TYPE\_DDGI\_CREATE\_INFO = 6, XEG\_STRUCTURE\_TYPE\_DDGI\_DESCRIPTION = 7, XEG\_STRUCTURE\_TYPE\_NEURAL\_UPSCALE\_CREATE\_INFO = 8, XEG\_STRUCTURE\_TYPE\_NEURAL\_UPSCALE\_DESCRIPTION = 9,  XEG\_STRUCTURE\_TYPE\_HPS\_CREATE\_INFO = 1001, XEG\_STRUCTURE\_TYPE\_HPS\_RADIX\_SORT = 1002, XEG\_STRUCTURE\_TYPE\_HPS\_RADIX\_SORT\_DESCRIPTION = 1003  } | XEngine结构体类型的枚举。 |
 | [XEG\_DenoiseQualityMode](xengine-kit-xengine.md#xeg_denoisequalitymode) { XEG\_DENOISE\_QUALITY\_MODE\_NONE = 0, XEG\_DENOISE\_QUALITY\_MODE\_QUALITY = 1, XEG\_DENOISE\_QUALITY\_MODE\_BALANCED = 2, XEG\_DENOISE\_QUALITY\_MODE\_PERFORMANCES = 3 } | 去噪质量模式枚举。 |
 | [XEG\_TraversalMode](xengine-kit-xengine.md#xeg_traversalmode) { XEG\_TRAVERSAL\_MODE\_DEFAULT = 0, XEG\_TRAVERSAL\_MODE\_PERFORMANCES = 1 } | 遍历模式枚举。 |
 | [XEG\_RTGIQualityMode](xengine-kit-xengine.md#xeg_rtgiqualitymode) { XEG\_RTGI\_QUALITY\_MODE\_QUALITY = 0, XEG\_RTGI\_QUALITY\_MODE\_BALANCED = 1, XEG\_RTGI\_QUALITY\_MODE\_PERFORMANCE = 2 } | 输出图像质量模式的枚举。 |
+| [XEG\_ControlDisplaySeparationStatus](xengine-kit-xengine.md#xeg_controldisplayseparationstatus) { UNAVAILABLE = 0, AVAILABLE = 1} | 控显分离当前的状态信息的枚举。 |
 
 ### 函数
 
-PhonePC/2in1TabletTV
-
 | 名称 | 描述 |
 | --- | --- |
-| GL\_APICALL void GL\_APIENTRY [HMS\_XEG\_AdaptiveVRSParameter](xengine-kit-xengine.md#hms_xeg_adaptivevrsparameter) (GLenum pname, GLvoid \*param) | 设置自适应VRS的参数。 |
+| GL\_APICALL void GL\_APIENTRY [HMS\_XEG\_AdaptiveVRSParameter](xengine-kit-xengine.md#hms_xeg_adaptivevrsparameter) (GLenum pname, GLvoid \*param) | 设置自适应VRS(Variable Rate Shading)的参数。 |
 | GL\_APICALL void GL\_APIENTRY [HMS\_XEG\_DispatchAdaptiveVRS](xengine-kit-xengine.md#hms_xeg_dispatchadaptivevrs) (GLfloat \*reprojectionMatrix, GLuint inputColorImage, GLuint inputDepthImage, GLuint shadingRateImage) | 计算着色率图像。 |
 | GL\_APICALL void GL\_APIENTRY [HMS\_XEG\_ApplyAdaptiveVRS](xengine-kit-xengine.md#hms_xeg_applyadaptivevrs) (GLuint shadingRateImage) | 将着色率图像应用到渲染目标中。 |
 | const GLubyte \* [HMS\_XEG\_GetString](xengine-kit-xengine.md#hms_xeg_getstring) (GLenum name) | XEngine OpenGL ES扩展特性查询接口。 |
@@ -204,7 +205,7 @@ PhonePC/2in1TabletTV
 | GL\_APICALL void GL\_APIENTRY [HMS\_XEG\_TemporalUpscaleParameter](xengine-kit-xengine.md#hms_xeg_temporalupscaleparameter) (GLenum pname, const GLvoid \*param) | 设置时域AI超分输入参数。 |
 | GL\_APICALL void GL\_APIENTRY [HMS\_XEG\_RenderTemporalUpscale](xengine-kit-xengine.md#hms_xeg_rendertemporalupscale) (GLuint inputTexture, GLuint depthTexture, GLuint motionVectorTexture, GLuint dynamicMaskTexture, GLfloat jitterX, GLfloat jitterY) | 执行时域AI超分渲染命令。 |
 | VKAPI\_ATTR VkResult VKAPI\_CALL [HMS\_XEG\_CreateAdaptiveVRS](xengine-kit-xengine.md#hms_xeg_createadaptivevrs) (VkDevice device, [XEG\_AdaptiveVRSCreateInfo](xengine-kit-xeg-adaptivevrscreateinfo.md) \*pXegAdaptiveVRSCreateInfo, [XEG\_AdaptiveVRS](xengine-kit-xengine.md#xeg_adaptivevrs) \*pXegAdaptiveVRS) | 创建[XEG\_AdaptiveVRS](xengine-kit-xengine.md#xeg_adaptivevrs)对象。 |
-| VKAPI\_ATTR void VKAPI\_CALL [HMS\_XEG\_CmdDispatchAdaptiveVRS](xengine-kit-xengine.md#hms_xeg_cmddispatchadaptivevrs) (VkCommandBuffer commandBuffer, [XEG\_AdaptiveVRS](xengine-kit-xengine.md#xeg_adaptivevrs) xegAdaptiveVRS, [XEG\_AdaptiveVRSDescription](xengine-kit-xeg-adaptivevrsdescription.md) \*pXegAdaptiveVRSDescription) | 执行计算自适应可变着色率命令。 |
+| VKAPI\_ATTR void VKAPI\_CALL [HMS\_XEG\_CmdDispatchAdaptiveVRS](xengine-kit-xengine.md#hms_xeg_cmddispatchadaptivevrs) (VkCommandBuffer commandBuffer, [XEG\_AdaptiveVRS](xengine-kit-xengine.md#xeg_adaptivevrs) xegAdaptiveVRS, [XEG\_AdaptiveVRSDescription](xengine-kit-xeg-adaptivevrsdescription.md) \*pXegAdaptiveVRSDescription) | 执行计算自适应VRS命令。 |
 | VKAPI\_ATTR void VKAPI\_CALL [HMS\_XEG\_DestroyAdaptiveVRS](xengine-kit-xengine.md#hms_xeg_destroyadaptivevrs) ([XEG\_AdaptiveVRS](xengine-kit-xengine.md#xeg_adaptivevrs) xegAdaptiveVRS) | 销毁[XEG\_AdaptiveVRS](xengine-kit-xengine.md#xeg_adaptivevrs)对象。 |
 | VKAPI\_ATTR VkResult VKAPI\_CALL [HMS\_XEG\_CmdSetSynchronization](xengine-kit-xengine.md#hms_xeg_cmdsetsynchronization) (VkCommandBuffer commandBuffer, const void \*xegHandle) | 设置同步信号，等待渲染结果写入指定图像。使用RTGI特性时，为等待GI渲染结果写入指定图像。 |
 | VKAPI\_ATTR VkResult VKAPI\_CALL [HMS\_XEG\_EnumerateDeviceExtensionProperties](xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties) (VkPhysicalDevice physicalDevice, uint32\_t \*pPropertyCount, [XEG\_ExtensionProperties](xengine-kit-xeg-extensionproperties.md) \*pProperties) | XEngine Vulkan扩展特性查询接口。 |
@@ -226,36 +227,36 @@ PhonePC/2in1TabletTV
 | VKAPI\_ATTR VkResult VKAPI\_CALL [HMS\_XEG\_CreateTemporalUpscale](xengine-kit-xengine.md#hms_xeg_createtemporalupscale) (VkDevice device, [XEG\_TemporalUpscaleCreateInfo](xengine-kit-xeg-temporalupscalecreateinfo.md) \*pTemporalUpscaleInfo, [XEG\_TemporalUpscale](xengine-kit-xengine.md#xeg_temporalupscale) \*pTemporalUpscale) | 创建[XEG\_TemporalUpscale](xengine-kit-xengine.md#xeg_temporalupscale)对象。 |
 | VKAPI\_ATTR void VKAPI\_CALL [HMS\_XEG\_CmdRenderTemporalUpscale](xengine-kit-xengine.md#hms_xeg_cmdrendertemporalupscale) (VkCommandBuffer commandBuffer, [XEG\_TemporalUpscale](xengine-kit-xengine.md#xeg_temporalupscale) temporalUpscale, [XEG\_TemporalUpscaleDescription](xengine-kit-xeg-temporalupscaledescription.md) \*pDescription) | 录制时域AI超分渲染命令。 |
 | VKAPI\_ATTR void VKAPI\_CALL [HMS\_XEG\_DestroyTemporalUpscale](xengine-kit-xengine.md#hms_xeg_destroytemporalupscale) ([XEG\_TemporalUpscale](xengine-kit-xengine.md#xeg_temporalupscale) temporalUpscale) | 销毁[XEG\_TemporalUpscale](xengine-kit-xengine.md#xeg_temporalupscale)对象。 |
+| VKAPI\_ATTR VkResult VKAPI\_CALL [HMS\_XEG\_CreateNeuralUpscale](xengine-kit-xengine.md#hms_xeg_createneuralupscale) (VkDevice device, const [XEG\_NeuralUpscaleCreateInfo](xengine-kit-xeg-neuralupscalecreateinfo.md) \*pCreateInfo, [XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale) \*pNeuralUpscale) | 创建[XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale)对象。 |
+| VKAPI\_ATTR VkResult VKAPI\_CALL [HMS\_XEG\_CmdRenderNeuralUpscale](xengine-kit-xengine.md#hms_xeg_cmdrenderneuralupscale) (VkCommandBuffer commandBuffer, [XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale) neuralUpscale, const [XEG\_NeuralUpscaleDescription](xengine-kit-xeg-neuralupscaledescription.md) \*pDescription) | 录制空域AI超分渲染命令。 |
+| VKAPI\_ATTR void VKAPI\_CALL [HMS\_XEG\_DestroyNeuralUpscale](xengine-kit-xengine.md#hms_xeg_destroyneuralupscale) ([XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale) neuralUpscale) | 销毁[XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale)对象。 |
+| bool [HMS\_XEG\_SetControlDisplaySeparationStatusListener](xengine-kit-xengine.md#hms_xeg_setcontroldisplayseparationstatuslistener) ([PFN\_HMS\_XEG\_ControlDisplaySeparationStatusCallback](xengine-kit-xengine.md#pfn_hms_xeg_controldisplayseparationstatuscallback) callback) | 设置控显分离特性全局唯一监听函数。 |
+| void [HMS\_XEG\_RemoveControlDisplaySeparationStatusListener](xengine-kit-xengine.md#hms_xeg_removecontroldisplayseparationstatuslistener) () | 移除控显分离特性全局唯一监听函数。 |
+| bool [HMS\_XEG\_SetControlDisplaySeparationActive](xengine-kit-xengine.md#hms_xeg_setcontroldisplayseparationactive) (bool flag) | 设置控显分离特性使能开关。 |
 
 ## 宏定义说明
 
-PhonePC/2in1TabletTV
-
 ### XEG\_adaptive\_vrs
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_adaptive_vrs   1
+```cpp
+#define XEG_adaptive_vrs   1
 ```
 
 **描述**
 
-XEngine自适应VRS扩展特性宏定义。
+XEngine自适应VRS(Variable Rate Shading)扩展特性宏定义。
 
 **起始版本：** 5.0.0(12)
 
 ### XEG\_ADAPTIVE\_VRS\_ERROR\_SENSITIVITY
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_ADAPTIVE_VRS_ERROR_SENSITIVITY   0x4U
+```cpp
+#define XEG_ADAPTIVE_VRS_ERROR_SENSITIVITY   0x4U
 ```
 
 **描述**
 
-用于设置[HMS\_XEG\_AdaptiveVRSParameter](xengine-kit-xengine.md#hms_xeg_adaptivevrsparameter)接口的ERROR\_SENSITIVITY参数，表示控制生成着色率图像的阈值。该值越大，平均着色率越小，即性能会越好但画质会劣化。建议取值范围为[0, 1]。
+用于设置[HMS\_XEG\_AdaptiveVRSParameter](xengine-kit-xengine.md#hms_xeg_adaptivevrsparameter)接口的ERROR\_SENSITIVITY参数，表示控制生成着色率图像的阈值。该值越大，平均着色率越小，即性能会越好但画质会劣化。建议取值范围为[0.0, 1.0]。
 
 使用此宏定义时通过[HMS\_XEG\_AdaptiveVRSParameter](xengine-kit-xengine.md#hms_xeg_adaptivevrsparameter)接口设置ERROR\_SENSITIVITY参数，向接口传递的param必须是GLfloat指针，否则将产生未定义行为，如渲染效果不正确或者程序崩溃。 可选参数，默认为0.5。
 
@@ -263,24 +264,20 @@ PhonePC/2in1TabletTV
 
 ### XEG\_ADAPTIVE\_VRS\_EXTENSION\_NAME
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_ADAPTIVE_VRS_EXTENSION_NAME   "XEG_adaptive_vrs"
+```cpp
+#define XEG_ADAPTIVE_VRS_EXTENSION_NAME   "XEG_adaptive_vrs"
 ```
 
 **描述**
 
-XEngine自适应VRS扩展特性名称。
+XEngine自适应VRS(Variable Rate Shading)扩展特性名称。
 
 **起始版本：** 5.0.0(12)
 
 ### XEG\_ADAPTIVE\_VRS\_FLIP
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_ADAPTIVE_VRS_FLIP   0x5U
+```cpp
+#define XEG_ADAPTIVE_VRS_FLIP   0x5U
 ```
 
 **描述**
@@ -293,10 +290,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_ADAPTIVE\_VRS\_INPUT\_REGION
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_ADAPTIVE_VRS_INPUT_REGION   0x2U
+```cpp
+#define XEG_ADAPTIVE_VRS_INPUT_REGION   0x2U
 ```
 
 **描述**
@@ -309,10 +304,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_ADAPTIVE\_VRS\_INPUT\_SIZE
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_ADAPTIVE_VRS_INPUT_SIZE   0x1U
+```cpp
+#define XEG_ADAPTIVE_VRS_INPUT_SIZE   0x1U
 ```
 
 **描述**
@@ -325,10 +318,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_ADAPTIVE\_VRS\_TEXEL\_SIZE
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_ADAPTIVE_VRS_TEXEL_SIZE   0x3U
+```cpp
+#define XEG_ADAPTIVE_VRS_TEXEL_SIZE   0x3U
 ```
 
 **描述**
@@ -341,10 +332,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_ADAPTIVE\_VRS\_VERSION
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_ADAPTIVE_VRS_VERSION   1
+```cpp
+#define XEG_ADAPTIVE_VRS_VERSION   1
 ```
 
 **描述**
@@ -355,10 +344,8 @@ XEngine自适应VRS扩展特性版本号。
 
 ### XEG\_EXTENSIONS
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_EXTENSIONS   0x01U
+```cpp
+#define XEG_EXTENSIONS   0x01U
 ```
 
 **描述**
@@ -369,10 +356,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_HPS\_RADIX\_SORT\_EXTENSION\_NAME
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_HPS_RADIX_SORT_EXTENSION_NAME   "XEG_hps_radix_sort"
+```cpp
+#define XEG_HPS_RADIX_SORT_EXTENSION_NAME   "XEG_hps_radix_sort"
 ```
 
 **描述**
@@ -383,10 +368,8 @@ XEngine 高性能基数排序扩展特性名称。
 
 ### XEG\_MAX\_EXTENSION\_NAME\_SIZE
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_MAX_EXTENSION_NAME_SIZE   256
+```cpp
+#define XEG_MAX_EXTENSION_NAME_SIZE   256
 ```
 
 **描述**
@@ -397,10 +380,8 @@ XEngine扩展特性名称支持的最大长度。
 
 ### XEG\_neural\_upscale
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_neural_upscale   1
+```cpp
+#define XEG_neural_upscale   1
 ```
 
 **描述**
@@ -411,10 +392,8 @@ XEngine空域AI超分扩展特性宏定义。
 
 ### XEG\_NEURAL\_UPSCALE\_EXTENSION\_NAME
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_NEURAL_UPSCALE_EXTENSION_NAME   "XEG_neural_upscale"
+```cpp
+#define XEG_NEURAL_UPSCALE_EXTENSION_NAME   "XEG_neural_upscale"
 ```
 
 **描述**
@@ -423,60 +402,72 @@ XEngine空域AI超分扩展特性名称。
 
 **起始版本：** 5.0.0(12)
 
-### XEG\_NEURAL\_UPSCALE\_INPUT\_HANDLE
+### XEG\_NEURAL\_UPSCALE2\_EXTENSION\_NAME
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_NEURAL_UPSCALE_INPUT_HANDLE   0x4U
+```cpp
+#define XEG_NEURAL_UPSCALE2_EXTENSION_NAME   "XEG_neural_upscale2"
 ```
 
 **描述**
 
-用于通过[HMS\_XEG\_NeuralUpscaleParameter](xengine-kit-xengine.md#hms_xeg_neuralupscaleparameter)接口设置与超分输入纹理关联的OH\_NativeBuffer handle。
+XEngine空域AI超分（版本2）扩展特性名称。
 
-使用此宏定义设置超分输入参数时，向接口传递的param值必须是与向[HMS\_XEG\_RenderNeuralUpscale](xengine-kit-xengine.md#hms_xeg_renderneuralupscale)接口传递的inputTexture纹理参数对应的合法的OH\_NativeBuffer handle，否则将产生未定义行为，如渲染效果不正确或者程序崩溃。 必选参数。
-
-**起始版本：** 5.0.0(12)
+**起始版本：** 26.0.0
 
 ### XEG\_NEURAL\_UPSCALE\_SCISSOR
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_NEURAL_UPSCALE_SCISSOR   0x1U
+```cpp
+#define XEG_NEURAL_UPSCALE_SCISSOR   0x1U
 ```
 
 **描述**
 
 用于通过[HMS\_XEG\_NeuralUpscaleParameter](xengine-kit-xengine.md#hms_xeg_neuralupscaleparameter)接口设置超分的裁剪窗口参数，裁剪窗口用于确定对输入图像采样的区域。
 
-使用此宏定义设置裁剪窗口参数时，向接口传递的param值必须是长度为4的无符号整数数组，否则将产生未定义行为，如渲染效果不正确或者程序崩溃。数组中的值依次为：x， y， width， height，其中x、y确定裁剪窗口的左下角，width、height分别确定裁剪窗口的宽和高。 可选参数，不设置裁剪窗口参数时的默认值为（0， 0， 输入纹理的宽， 输入纹理的高）。
+使用此宏定义设置裁剪窗口参数时，向接口传递的param值必须是长度为4的无符号整数数组，否则将产生未定义行为，如渲染效果不正确或者程序崩溃。数组中的值依次为：x，y，width，height，其中x、y确定裁剪窗口的左下角，width、height分别确定裁剪窗口的宽和高。
+
+可选参数，不设置裁剪窗口参数时的默认值为（0， 0， 输入纹理的宽， 输入纹理的高）。
 
 **起始版本：** 5.0.0(12)
 
 ### XEG\_NEURAL\_UPSCALE\_SHARPNESS
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_NEURAL_UPSCALE_SHARPNESS   0x2U
+```cpp
+#define XEG_NEURAL_UPSCALE_SHARPNESS   0x2U
 ```
 
 **描述**
 
-用于通过[HMS\_XEG\_NeuralUpscaleParameter](xengine-kit-xengine.md#hms_xeg_neuralupscaleparameter)接口设置超分的锐化度参数，锐化度的建议取值范围为[0, 1]。
+用于通过[HMS\_XEG\_NeuralUpscaleParameter](xengine-kit-xengine.md#hms_xeg_neuralupscaleparameter)接口设置超分的锐化度参数，锐化度的建议取值范围为[0.0, 1.0]。
 
-使用此宏定义设置超分的锐化度参数时，向接口传递的param值必须是指向一个float值的合法指针，否则将产生未定义行为，如渲染效果不正确或者程序崩溃。 可选参数，不设置锐化度参数时的默认值为0.2。
+使用此宏定义设置超分的锐化度参数时，向接口传递的param值必须是指向一个float值的合法指针，否则将产生未定义行为，如渲染效果不正确或者程序崩溃。
+
+可选参数，不设置锐化度参数时的默认值为0.2。
+
+**起始版本：** 5.0.0(12)
+
+### XEG\_NEURAL\_UPSCALE\_INPUT\_HANDLE
+
+```cpp
+#define XEG_NEURAL_UPSCALE_INPUT_HANDLE   0x4U
+```
+
+**描述**
+
+用于通过[HMS\_XEG\_NeuralUpscaleParameter](xengine-kit-xengine.md#hms_xeg_neuralupscaleparameter)接口设置与超分输入纹理关联的[OH\_NativeBuffer](capi-oh-nativebuffer.md) handle。
+
+使用此宏定义设置超分输入参数时，向接口传递的param值必须是与向[HMS\_XEG\_RenderNeuralUpscale](xengine-kit-xengine.md#hms_xeg_renderneuralupscale)接口传递的inputTexture纹理参数对应的合法的[OH\_NativeBuffer](capi-oh-nativebuffer.md) handle，否则将产生未定义行为，如渲染效果不正确或者程序崩溃。
+
+当[XEG\_NEURAL\_UPSCALE\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_neural_upscale_extension_name)扩展可用时，该参数为必选参数。
+
+当[XEG\_NEURAL\_UPSCALE2\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_neural_upscale2_extension_name)扩展可用时，不需要设置该参数。
 
 **起始版本：** 5.0.0(12)
 
 ### XEG\_NEURAL\_UPSCALE\_VERSION
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_NEURAL_UPSCALE_VERSION   1
+```cpp
+#define XEG_NEURAL_UPSCALE_VERSION   1
 ```
 
 **描述**
@@ -487,10 +478,8 @@ XEngine空域AI超分扩展特性版本号。
 
 ### XEG\_RT\_REFLECTION\_EXTENSION\_NAME
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_RT_REFLECTION_EXTENSION_NAME   "XEG_rt_reflection"
+```cpp
+#define XEG_RT_REFLECTION_EXTENSION_NAME   "XEG_rt_reflection"
 ```
 
 **描述**
@@ -501,10 +490,8 @@ XEngine光线追踪反射扩展特性名称。
 
 ### XEG\_RT\_SHADOW\_AO\_EXTENSION\_NAME
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_RT_SHADOW_AO_EXTENSION_NAME   "XEG_rt_shadow_ao"
+```cpp
+#define XEG_RT_SHADOW_AO_EXTENSION_NAME   "XEG_rt_shadow_ao"
 ```
 
 **描述**
@@ -515,10 +502,8 @@ XEngine光线追踪阴影和环境光遮蔽扩展特性名称。
 
 ### XEG\_RTGI\_EXTENSION\_NAME
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_RTGI_EXTENSION_NAME   "XEG_rtgi"
+```cpp
+#define XEG_RTGI_EXTENSION_NAME   "XEG_rtgi"
 ```
 
 **描述**
@@ -529,10 +514,8 @@ XEngine光线追踪全局光照扩展特性名称。
 
 ### XEG\_spatial\_upscale
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_spatial_upscale   1
+```cpp
+#define XEG_spatial_upscale   1
 ```
 
 **描述**
@@ -543,10 +526,8 @@ XEngine空域GPU超分扩展特性宏定义。
 
 ### XEG\_SPATIAL\_UPSCALE\_EXTENSION\_NAME
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_SPATIAL_UPSCALE_EXTENSION_NAME   "XEG_spatial_upscale"
+```cpp
+#define XEG_SPATIAL_UPSCALE_EXTENSION_NAME   "XEG_spatial_upscale"
 ```
 
 **描述**
@@ -557,10 +538,8 @@ XEngine空域GPU超分扩展特性名称。
 
 ### XEG\_SPATIAL\_UPSCALE\_SCISSOR
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_SPATIAL_UPSCALE_SCISSOR   0x1U
+```cpp
+#define XEG_SPATIAL_UPSCALE_SCISSOR   0x1U
 ```
 
 **描述**
@@ -573,26 +552,22 @@ PhonePC/2in1TabletTV
 
 ### XEG\_SPATIAL\_UPSCALE\_SHARPNESS
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_SPATIAL_UPSCALE_SHARPNESS   0x2U
+```cpp
+#define XEG_SPATIAL_UPSCALE_SHARPNESS   0x2U
 ```
 
 **描述**
 
 用于设置[HMS\_XEG\_SpatialUpscaleParameter](xengine-kit-xengine.md#hms_xeg_spatialupscaleparameter)接口的SHARPNESS参数。
 
-使用此宏定义时通过[HMS\_XEG\_SpatialUpscaleParameter](xengine-kit-xengine.md#hms_xeg_spatialupscaleparameter)接口设置SHARPNESS参数，向接口传递的param值必须是指向float类型的指针。SHARPNESS参数建议取值范围为[0, 1]，否则将产生未定义行为，如渲染效果不正确或者程序崩溃。 SHARPNESS参数越大锐化效果越强，不同风格图像锐化值需要调整，否则会导致过度锐化现象，如出现大量噪点。
+使用此宏定义时通过[HMS\_XEG\_SpatialUpscaleParameter](xengine-kit-xengine.md#hms_xeg_spatialupscaleparameter)接口设置SHARPNESS参数，向接口传递的param值必须是指向float类型的指针。SHARPNESS参数建议取值范围为[0.0, 1.0]，否则将产生未定义行为，如渲染效果不正确或者程序崩溃。SHARPNESS参数越大锐化效果越强，不同风格图像锐化值需要调整，否则会导致过度锐化现象，如出现大量噪点。
 
 **起始版本：** 5.0.0(12)
 
 ### XEG\_SPATIAL\_UPSCALE\_VERSION
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_SPATIAL_UPSCALE_VERSION   1
+```cpp
+#define XEG_SPATIAL_UPSCALE_VERSION   1
 ```
 
 **描述**
@@ -603,10 +578,8 @@ XEngine空域GPU超分扩展特性版本号。
 
 ### XEG\_temporal\_upscale
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_temporal_upscale   1
+```cpp
+#define XEG_temporal_upscale   1
 ```
 
 **描述**
@@ -617,10 +590,8 @@ XEngine时域AI超分扩展特性宏定义。
 
 ### XEG\_TEMPORAL\_UPSCALE\_DEPTH\_REVERSED
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_TEMPORAL_UPSCALE_DEPTH_REVERSED   0x3U
+```cpp
+#define XEG_TEMPORAL_UPSCALE_DEPTH_REVERSED   0x3U
 ```
 
 **描述**
@@ -633,10 +604,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_TEMPORAL\_UPSCALE\_EXTENSION\_NAME
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_TEMPORAL_UPSCALE_EXTENSION_NAME   "XEG_temporal_upscale"
+```cpp
+#define XEG_TEMPORAL_UPSCALE_EXTENSION_NAME   "XEG_temporal_upscale"
 ```
 
 **描述**
@@ -647,10 +616,8 @@ XEngine时域AI超分扩展特性名称。
 
 ### XEG\_TEMPORAL\_UPSCALE\_INPUT\_SIZE
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_TEMPORAL_UPSCALE_INPUT_SIZE   0x1U
+```cpp
+#define XEG_TEMPORAL_UPSCALE_INPUT_SIZE   0x1U
 ```
 
 **描述**
@@ -663,10 +630,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_TEMPORAL\_UPSCALE\_JITTER\_NUM
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_TEMPORAL_UPSCALE_JITTER_NUM   0x2U
+```cpp
+#define XEG_TEMPORAL_UPSCALE_JITTER_NUM   0x2U
 ```
 
 **描述**
@@ -679,10 +644,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_TEMPORAL\_UPSCALE\_RESET\_HISTORY
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_TEMPORAL_UPSCALE_RESET_HISTORY   0x4U
+```cpp
+#define XEG_TEMPORAL_UPSCALE_RESET_HISTORY   0x4U
 ```
 
 **描述**
@@ -695,15 +658,13 @@ PhonePC/2in1TabletTV
 
 ### XEG\_TEMPORAL\_UPSCALE\_STEADY\_LEVEL
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_TEMPORAL_UPSCALE_STEADY_LEVEL   0x5U
+```cpp
+#define XEG_TEMPORAL_UPSCALE_STEADY_LEVEL   0x5U
 ```
 
 **描述**
 
-用于通过[HMS\_XEG\_TemporalUpscaleParameter](xengine-kit-xengine.md#hms_xeg_temporalupscaleparameter)接口设置画面偏向当前帧（鬼影少但可能存在闪烁）还是历史帧（鬼影多但是更稳定）的平衡程度。取值范围为[0.0, 1.0]，值越大越偏向历史帧。
+用于通过[HMS\_XEG\_TemporalUpscaleParameter](xengine-kit-xengine.md#hms_xeg_temporalupscaleparameter)接口设置画面偏向当前帧（鬼影少但可能存在闪烁）还是历史帧（鬼影多但是更稳定）的平衡程度。取值范围为[0.0, 1.0]，如果该值不在以上范围内，则会发生未定义行为，例如渲染效果不正确或程序崩溃，值越大越偏向历史帧。建议根据实际需求选择合适的值，例如在需要减少鬼影时可设置为较小值，需要减少闪烁可以设置为较大值，推荐值为0.5。
 
 使用此宏定义设置平衡程度时，向接口传递的param值必须是指向一个GLfloat值的合法指针，否则将产生未定义行为，如渲染效果不正确或者程序崩溃。可选参数，默认值是0.5。
 
@@ -711,10 +672,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_TEMPORAL\_UPSCALE\_VERSION
 
-PhonePC/2in1TabletTV
-
-```
-1. #define XEG_TEMPORAL_UPSCALE_VERSION   1
+```cpp
+#define XEG_TEMPORAL_UPSCALE_VERSION   1
 ```
 
 **描述**
@@ -725,19 +684,15 @@ XEngine时域AI超分扩展特性版本号。
 
 ## 类型定义说明
 
-PhonePC/2in1TabletTV
-
 ### PFN\_HMS\_XEG\_ADAPTIVEVRSPARAMETER
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void(GL_APIENTRYP PFN_HMS_XEG_ADAPTIVEVRSPARAMETER) (GLenum pname, GLvoid *param)
+```cpp
+typedef void(GL_APIENTRYP PFN_HMS_XEG_ADAPTIVEVRSPARAMETER) (GLenum pname, GLvoid *param)
 ```
 
 **描述**
 
-设置自适应VRS输入参数的函数指针定义。
+设置自适应VRS(Variable Rate Shading)输入参数的函数指针定义。
 
 **起始版本：** 5.0.0(12)
 
@@ -750,10 +705,8 @@ PhonePC/2in1TabletTV
 
 ### PFN\_HMS\_XEG\_APPLYADAPTIVEVRS
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void(GL_APIENTRYP PFN_HMS_XEG_APPLYADAPTIVEVRS) (GLuint shadingRateImage)
+```cpp
+typedef void(GL_APIENTRYP PFN_HMS_XEG_APPLYADAPTIVEVRS) (GLuint shadingRateImage)
 ```
 
 **描述**
@@ -766,19 +719,17 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| shadingRateImage | 计算得到的着色率图像，传入0表示关闭自适应VRS。 |
+| shadingRateImage | 计算得到的着色率图像，传入0表示关闭自适应VRS(Variable Rate Shading)。 |
 
 ### PFN\_HMS\_XEG\_CmdDispatchAdaptiveVRS
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void(VKAPI_PTR *PFN_HMS_XEG_CmdDispatchAdaptiveVRS) (VkCommandBuffer commandBuffer, XEG_AdaptiveVRS xegAdaptiveVRS, XEG_AdaptiveVRSDescription *pXegAdaptiveVRSDescription)
+```cpp
+typedef void(VKAPI_PTR *PFN_HMS_XEG_CmdDispatchAdaptiveVRS) (VkCommandBuffer commandBuffer, XEG_AdaptiveVRS xegAdaptiveVRS, XEG_AdaptiveVRSDescription *pXegAdaptiveVRSDescription)
 ```
 
 **描述**
 
-执行计算自适应可变着色率命令的函数指针定义。
+执行计算自适应VRS命令的函数指针定义。
 
 **起始版本：** 5.0.0(12)
 
@@ -792,10 +743,8 @@ PhonePC/2in1TabletTV
 
 ### PFN\_HMS\_XEG\_CmdRadixSortHPS
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CmdRadixSortHPS) (VkCommandBuffer commandBuffer, XEG_HPS hps, const XEG_HPSRadixSortDescription *pDescription)
+```cpp
+typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CmdRadixSortHPS) (VkCommandBuffer commandBuffer, XEG_HPS hps, const XEG_HPSRadixSortDescription *pDescription)
 ```
 
 **描述**
@@ -818,10 +767,8 @@ PhonePC/2in1TabletTV
 
 ### PFN\_HMS\_XEG\_CmdRenderRTGI
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CmdRenderRTGI) (VkCommandBuffer commandBuffer, XEG_RTGI rtGI, const void *pDescription)
+```cpp
+typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CmdRenderRTGI) (VkCommandBuffer commandBuffer, XEG_RTGI rtGI, const void *pDescription)
 ```
 
 **描述**
@@ -844,10 +791,8 @@ PhonePC/2in1TabletTV
 
 ### PFN\_HMS\_XEG\_CmdRenderRTReflection
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef VkResult VKAPI_ATTR *PFN_HMS_XEG_CmdRenderRTReflection(VkCommandBuffer commandBuffer, XEG_RTReflection rtReflection, const void *pDescription)
+```cpp
+typedef VkResult (VKAPI_ATTR *PFN_HMS_XEG_CmdRenderRTReflection)(VkCommandBuffer commandBuffer, XEG_RTReflection rtReflection, const void *pDescription)
 ```
 
 **描述**
@@ -866,10 +811,8 @@ PhonePC/2in1TabletTV
 
 ### PFN\_HMS\_XEG\_CmdRenderRTVisibleMask
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CmdRenderRTVisibleMask) (VkCommandBuffer commandBuffer, XEG_RTVisibleMask rtVisibleMask, const void *pDescription)
+```cpp
+typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CmdRenderRTVisibleMask) (VkCommandBuffer commandBuffer, XEG_RTVisibleMask rtVisibleMask, const void *pDescription)
 ```
 
 **描述**
@@ -892,10 +835,8 @@ VkResult类型的错误码，值为VK\_SUCCESS时表示执行成功。
 
 ### PFN\_HMS\_XEG\_CmdRenderSpatialUpscale
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void(VKAPI_PTR *PFN_HMS_XEG_CmdRenderSpatialUpscale) (VkCommandBuffer commandBuffer, XEG_SpatialUpscale xegSpatialUpscale, XEG_SpatialUpscaleDescription *pXegSpatialUpscaleDescription)
+```cpp
+typedef void(VKAPI_PTR *PFN_HMS_XEG_CmdRenderSpatialUpscale) (VkCommandBuffer commandBuffer, XEG_SpatialUpscale xegSpatialUpscale, XEG_SpatialUpscaleDescription *pXegSpatialUpscaleDescription)
 ```
 
 **描述**
@@ -914,10 +855,8 @@ PhonePC/2in1TabletTV
 
 ### PFN\_HMS\_XEG\_CmdRenderTemporalUpscale
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void(VKAPI_ATTR *PFN_HMS_XEG_CmdRenderTemporalUpscale) (VkCommandBuffer commandBuffer, XEG_TemporalUpscale temporalUpscale, XEG_TemporalUpscaleDescription *pDescription)
+```cpp
+typedef void(VKAPI_ATTR *PFN_HMS_XEG_CmdRenderTemporalUpscale) (VkCommandBuffer commandBuffer, XEG_TemporalUpscale temporalUpscale, XEG_TemporalUpscaleDescription *pDescription)
 ```
 
 **描述**
@@ -934,12 +873,34 @@ PhonePC/2in1TabletTV
 | temporalUpscale | 已创建的[XEG\_TemporalUpscale](xengine-kit-xengine.md#xeg_temporalupscale)对象。 |
 | pDescription | 超分渲染输入信息结构体[XEG\_TemporalUpscaleDescription](xengine-kit-xeg-temporalupscaledescription.md)的指针，不允许为空。 |
 
+### PFN\_HMS\_XEG\_CmdRenderNeuralUpscale
+
+```cpp
+typedef VkResult (VKAPI_PTR *PFN_HMS_XEG_CmdRenderNeuralUpscale) (VkCommandBuffer commandBuffer, XEG_NeuralUpscale neuralUpscale, const XEG_NeuralUpscaleDescription *pDescription)
+```
+
+**描述**
+
+录制空域AI超分渲染命令的函数指针定义。
+
+**起始版本：** 26.0.0
+
+**参数:**
+
+| 名称 | 描述 |
+| --- | --- |
+| commandBuffer | Vulkan命令缓冲对象，需要是Primary类型。 |
+| neuralUpscale | 已创建的[XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale)对象。 |
+| pDescription | 超分渲染输入信息结构体[XEG\_NeuralUpscaleDescription](xengine-kit-xeg-neuralupscaledescription.md)的指针，不允许为空。 |
+
+**返回：**
+
+返回一个VkResult类型的错误码，返回值为VK\_SUCCESS表示执行成功。
+
 ### PFN\_HMS\_XEG\_CmdSetSynchronization
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CmdSetSynchronization) (VkCommandBuffer commandBuffer, const void *xegHandle)
+```cpp
+typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CmdSetSynchronization) (VkCommandBuffer commandBuffer, const void *xegHandle)
 ```
 
 **描述**
@@ -961,10 +922,8 @@ PhonePC/2in1TabletTV
 
 ### PFN\_HMS\_XEG\_CreateAdaptiveVRS
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CreateAdaptiveVRS) (VkDevice device, const XEG_AdaptiveVRSCreateInfo *pXegAdaptiveVRSCreateInfo, XEG_AdaptiveVRS *pXegAdaptiveVRS)
+```cpp
+typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CreateAdaptiveVRS) (VkDevice device, const XEG_AdaptiveVRSCreateInfo *pXegAdaptiveVRSCreateInfo, XEG_AdaptiveVRS *pXegAdaptiveVRS)
 ```
 
 **描述**
@@ -987,10 +946,8 @@ PhonePC/2in1TabletTV
 
 ### PFN\_HMS\_XEG\_CreateHPS
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CreateHPS) (VkDevice device, const XEG_HPSCreateInfo *pCreateInfo, XEG_HPS *pHps)
+```cpp
+typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CreateHPS) (VkDevice device, const XEG_HPSCreateInfo *pCreateInfo, XEG_HPS *pHps)
 ```
 
 **描述**
@@ -1013,10 +970,8 @@ PhonePC/2in1TabletTV
 
 ### PFN\_HMS\_XEG\_CreateRTGI
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CreateRTGI) (VkDevice device, const void *pCreateInfo, XEG_RTGI *pRtGI)
+```cpp
+typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CreateRTGI) (VkDevice device, const void *pCreateInfo, XEG_RTGI *pRtGI)
 ```
 
 **描述**
@@ -1039,10 +994,8 @@ PhonePC/2in1TabletTV
 
 ### PFN\_HMS\_XEG\_CreateRTReflection
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef VkResult(VKAPI_ATTR *PFN_HMS_XEG_CreateRTReflection) (VkDevice device, const void *pCreateInfo, XEG_RTReflection *pRtReflection)
+```cpp
+typedef VkResult(VKAPI_ATTR *PFN_HMS_XEG_CreateRTReflection) (VkDevice device, const void *pCreateInfo, XEG_RTReflection *pRtReflection)
 ```
 
 **描述**
@@ -1065,10 +1018,8 @@ PhonePC/2in1TabletTV
 
 ### PFN\_HMS\_XEG\_CreateRTVisibleMask
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CreateRTVisibleMask) (VkDevice device, const void *pCreateInfo, XEG_RTVisibleMask *pRTVisibleMask)
+```cpp
+typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CreateRTVisibleMask) (VkDevice device, const void *pCreateInfo, XEG_RTVisibleMask *pRTVisibleMask)
 ```
 
 **描述**
@@ -1091,10 +1042,8 @@ VkResult类型的错误码，值为VK\_SUCCESS时表示创建成功。
 
 ### PFN\_HMS\_XEG\_CreateSpatialUpscale
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CreateSpatialUpscale) (VkDevice device, const XEG_SpatialUpscaleCreateInfo *pXegSpatialUpscaleCreateInfo, XEG_SpatialUpscale *pXegSpatialUpscale)
+```cpp
+typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CreateSpatialUpscale) (VkDevice device, const XEG_SpatialUpscaleCreateInfo *pXegSpatialUpscaleCreateInfo, XEG_SpatialUpscale *pXegSpatialUpscale)
 ```
 
 **描述**
@@ -1117,10 +1066,8 @@ PhonePC/2in1TabletTV
 
 ### PFN\_HMS\_XEG\_CreateTemporalUpscale
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef VkResult(VKAPI_ATTR *PFN_HMS_XEG_CreateTemporalUpscale) (VkDevice device, XEG_TemporalUpscaleCreateInfo *pTemporalUpscaleInfo, XEG_TemporalUpscale *pTemporalUpscale)
+```cpp
+typedef VkResult(VKAPI_ATTR *PFN_HMS_XEG_CreateTemporalUpscale) (VkDevice device, XEG_TemporalUpscaleCreateInfo *pTemporalUpscaleInfo, XEG_TemporalUpscale *pTemporalUpscale)
 ```
 
 **描述**
@@ -1141,12 +1088,34 @@ PhonePC/2in1TabletTV
 
 返回一个VkResult类型的错误码，返回值为VK\_SUCCESS表示执行成功。
 
+### PFN\_HMS\_XEG\_CreateNeuralUpscale
+
+```cpp
+typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_CreateNeuralUpscale) (VkDevice device, const XEG_NeuralUpscaleCreateInfo *pCreateInfo, XEG_NeuralUpscale *pNeuralUpscale)
+```
+
+**描述**
+
+创建[XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale)对象的函数指针定义。
+
+**起始版本：** 26.0.0
+
+**参数:**
+
+| 名称 | 描述 |
+| --- | --- |
+| device | 必须是当前使用的VkDevice。 |
+| pCreateInfo | 超分实例句柄创建信息结构体[XEG\_NeuralUpscaleCreateInfo](xengine-kit-xeg-neuralupscalecreateinfo.md)的指针，不允许为空。 |
+| pNeuralUpscale | 指向句柄的指针，创建的[XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale)在此句柄中返回。 |
+
+**返回：**
+
+返回一个VkResult类型的错误码，返回值为VK\_SUCCESS表示执行成功。
+
 ### PFN\_HMS\_XEG\_DestroyAdaptiveVRS
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void(VKAPI_PTR *PFN_HMS_XEG_DestroyAdaptiveVRS) (XEG_AdaptiveVRS xegAdaptiveVRS)
+```cpp
+typedef void(VKAPI_PTR *PFN_HMS_XEG_DestroyAdaptiveVRS) (XEG_AdaptiveVRS xegAdaptiveVRS)
 ```
 
 **描述**
@@ -1163,10 +1132,8 @@ PhonePC/2in1TabletTV
 
 ### PFN\_HMS\_XEG\_DestroyHPS
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void(VKAPI_PTR *PFN_HMS_XEG_DestroyHPS) (XEG_HPS hps)
+```cpp
+typedef void(VKAPI_PTR *PFN_HMS_XEG_DestroyHPS) (XEG_HPS hps)
 ```
 
 **描述**
@@ -1183,10 +1150,8 @@ PhonePC/2in1TabletTV
 
 ### PFN\_HMS\_XEG\_DestroyRTGI
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void(VKAPI_PTR *PFN_HMS_XEG_DestroyRTGI) (XEG_RTGI rtGI)
+```cpp
+typedef void(VKAPI_PTR *PFN_HMS_XEG_DestroyRTGI) (XEG_RTGI rtGI)
 ```
 
 **描述**
@@ -1203,10 +1168,8 @@ PhonePC/2in1TabletTV
 
 ### PFN\_HMS\_XEG\_DestroyRTReflection
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void VKAPI_ATTR *PFN_HMS_XEG_DestroyRTReflection(XEG_RTReflection rtReflection)
+```cpp
+typedef void(VKAPI_ATTR *PFN_HMS_XEG_DestroyRTReflection) (XEG_RTReflection rtReflection)
 ```
 
 **描述**
@@ -1223,10 +1186,8 @@ PhonePC/2in1TabletTV
 
 ### PFN\_HMS\_XEG\_DestroyRTVisibleMask
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void(VKAPI_PTR *PFN_HMS_XEG_DestroyRTVisibleMask) (XEG_RTVisibleMask rtVisibleMask)
+```cpp
+typedef void(VKAPI_PTR *PFN_HMS_XEG_DestroyRTVisibleMask) (XEG_RTVisibleMask rtVisibleMask)
 ```
 
 **描述**
@@ -1243,10 +1204,8 @@ PhonePC/2in1TabletTV
 
 ### PFN\_HMS\_XEG\_DestroySpatialUpscale
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void(VKAPI_PTR *PFN_HMS_XEG_DestroySpatialUpscale) (XEG_SpatialUpscale xegSpatialUpscale)
+```cpp
+typedef void(VKAPI_PTR *PFN_HMS_XEG_DestroySpatialUpscale) (XEG_SpatialUpscale xegSpatialUpscale)
 ```
 
 **描述**
@@ -1263,10 +1222,8 @@ PhonePC/2in1TabletTV
 
 ### PFN\_HMS\_XEG\_DestroyTemporalUpscale
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void(VKAPI_ATTR *PFN_HMS_XEG_DestroyTemporalUpscale) (XEG_TemporalUpscale temporalUpscale)
+```cpp
+typedef void(VKAPI_ATTR *PFN_HMS_XEG_DestroyTemporalUpscale) (XEG_TemporalUpscale temporalUpscale)
 ```
 
 **描述**
@@ -1281,12 +1238,28 @@ PhonePC/2in1TabletTV
 | --- | --- |
 | temporalUpscale | 需要销毁的[XEG\_TemporalUpscale](xengine-kit-xengine.md#xeg_temporalupscale)对象。 |
 
+### PFN\_HMS\_XEG\_DestroyNeuralUpscale
+
+```cpp
+typedef void(VKAPI_PTR *PFN_HMS_XEG_DestroyNeuralUpscale)(XEG_NeuralUpscale neuralUpscale)
+```
+
+**描述**
+
+销毁[XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale)对象的函数指针定义。
+
+**起始版本：** 26.0.0
+
+**参数:**
+
+| 名称 | 描述 |
+| --- | --- |
+| neuralUpscale | 需要销毁的[XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale)对象。 |
+
 ### PFN\_HMS\_XEG\_DISPATCHADAPTIVEVRS
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void(GL_APIENTRYP PFN_HMS_XEG_DISPATCHADAPTIVEVRS) (GLfloat *reprojectionMatrix, GLuint inputColorImage, GLuint inputDepthImage, GLuint shadingRateImage)
+```cpp
+typedef void(GL_APIENTRYP PFN_HMS_XEG_DISPATCHADAPTIVEVRS) (GLfloat *reprojectionMatrix, GLuint inputColorImage, GLuint inputDepthImage, GLuint shadingRateImage)
 ```
 
 **描述**
@@ -1304,16 +1277,14 @@ PhonePC/2in1TabletTV
 | inputDepthImage | 当前帧渲染管线最终渲染结果深度附件纹理ID。 |
 | shadingRateImage | 用于生成着色率图信息的纹理ID，需用户创建并输入。 |
 
-说明
+**说明** 
 
 纹理类型需要是GL\_TEXTURE\_2D且mipLevels为1。
 
 ### PFN\_HMS\_XEG\_EnumerateDeviceExtensionProperties
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_EnumerateDeviceExtensionProperties) (VkPhysicalDevice physicalDevice, uint32_t *pPropertyCount, XEG_ExtensionProperties *pProperties)
+```cpp
+typedef VkResult(VKAPI_PTR *PFN_HMS_XEG_EnumerateDeviceExtensionProperties) (VkPhysicalDevice physicalDevice, uint32_t *pPropertyCount, XEG_ExtensionProperties *pProperties)
 ```
 
 **描述**
@@ -1336,10 +1307,8 @@ XEngine Vulkan扩展特性查询接口函数指针定义。
 
 ### PFN\_HMS\_XEG\_GETSTRING
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef const GLubyte *(GL_APIENTRYP PFN_HMS_XEG_GETSTRING) (GLenum name)
+```cpp
+typedef const GLubyte *(GL_APIENTRYP PFN_HMS_XEG_GETSTRING) (GLenum name)
 ```
 
 **描述**
@@ -1360,10 +1329,8 @@ XEngine OpenGL ES扩展特性查询接口函数指针定义。
 
 ### PFN\_HMS\_XEG\_NEURALUPSCALEPARAMETER
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void(GL_APIENTRYP PFN_HMS_XEG_NEURALUPSCALEPARAMETER) (GLenum pname, GLvoid *param)
+```cpp
+typedef void(GL_APIENTRYP PFN_HMS_XEG_NEURALUPSCALEPARAMETER) (GLenum pname, GLvoid *param)
 ```
 
 **描述**
@@ -1381,10 +1348,8 @@ PhonePC/2in1TabletTV
 
 ### PFN\_HMS\_XEG\_RENDERNEURALUPSCALE
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void(GL_APIENTRYP PFN_HMS_XEG_RENDERNEURALUPSCALE) (GLuint inputTexture)
+```cpp
+typedef void(GL_APIENTRYP PFN_HMS_XEG_RENDERNEURALUPSCALE) (GLuint inputTexture)
 ```
 
 **描述**
@@ -1397,14 +1362,12 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| inputTexture | 超分输入纹理，输入纹理是GL\_TEXTURE\_2D类型且mipLevels为1，纹理的宽度取值范围是[448, 1728]，否则可能会引起AI推理结果错误。此输入纹理必须是由OH\_NativeBuffer创建的，并需要在调用此接口前将OH\_NativeBuffer对应的handle设置为超分的输入参数，详见接口[HMS\_XEG\_NeuralUpscaleParameter](xengine-kit-xengine.md#hms_xeg_neuralupscaleparameter)。 |
+| inputTexture | 超分输入纹理，输入纹理是GL\_TEXTURE\_2D类型且mipLevels为1。  当[XEG\_NEURAL\_UPSCALE\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_neural_upscale_extension_name)扩展可用时，纹理的宽度取值范围是[448, 1728]，否则可能会引起AI推理结果错误。此输入纹理必须是由[OH\_NativeBuffer](capi-oh-nativebuffer.md)创建的，并需要在调用此接口前将[OH\_NativeBuffer](capi-oh-nativebuffer.md)对应的handle设置为超分的输入参数，详见接口[HMS\_XEG\_NeuralUpscaleParameter](xengine-kit-xengine.md#hms_xeg_neuralupscaleparameter)。  当[XEG\_NEURAL\_UPSCALE2\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_neural_upscale2_extension_name)扩展可用时，纹理的宽度取值范围建议[448, 1792]，此输入纹理不需要由OH\_NativeBuffer创建。 |
 
 ### PFN\_HMS\_XEG\_RENDERSPATIALUPSCALE
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void(GL_APIENTRYP PFN_HMS_XEG_RENDERSPATIALUPSCALE) (GLuint inputTexture)
+```cpp
+typedef void(GL_APIENTRYP PFN_HMS_XEG_RENDERSPATIALUPSCALE) (GLuint inputTexture)
 ```
 
 **描述**
@@ -1421,10 +1384,8 @@ PhonePC/2in1TabletTV
 
 ### PFN\_HMS\_XEG\_RenderTemporalUpscale
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void(GL_APIENTRYP PFN_HMS_XEG_RenderTemporalUpscale) (GLuint inputTexture, GLuint depthTexture, GLuint motionVectorTexture, GLuint dynamicMaskTexture, GLfloat jitterX, GLfloat jitterY)
+```cpp
+typedef void(GL_APIENTRYP PFN_HMS_XEG_RenderTemporalUpscale) (GLuint inputTexture, GLuint depthTexture, GLuint motionVectorTexture, GLuint dynamicMaskTexture, GLfloat jitterX, GLfloat jitterY)
 ```
 
 **描述**
@@ -1441,15 +1402,13 @@ PhonePC/2in1TabletTV
 | depthTexture | 深度纹理。 |
 | motionVectorTexture | 运动矢量图像。运动矢量的计算方式为当前渲染像素的NDC坐标的XY值减去上一帧的NDC坐标的XY值。 |
 | dynamicMaskTexture | 物体的动态遮罩图像，格式需要是GL\_RED或其兼容格式。R通道的合法值为0.0，0.2或1.0，其中0.0表示静态物体，0.2表示运动物体如人物，1.0表示特效或半透明物体。 |
-| jitterX | 相机在X方向上的抖动。 |
-| jitterY | 相机在Y方向上的抖动。 |
+| jitterX | 相机在x方向的抖动，通常为超分依赖的前序渲染过程中应用的亚像素抖动，包含在相机的投影矩阵中；在ndc坐标系下，其取值范围是 [-1/width, 1/width], width是输入inputTexture纹理的宽度（像素数）。 |
+| jitterY | 相机在y方向的抖动，通常为超分依赖的前序渲染过程中应用的亚像素抖动，包含在相机的投影矩阵中；在ndc坐标系下，其取值范围是 [-1/height, 1/height], height是输入inputTexture纹理的高度（像素数）。 |
 
 ### PFN\_HMS\_XEG\_SPATIALUPSCALEPARAMETER
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void(GL_APIENTRYP PFN_HMS_XEG_SPATIALUPSCALEPARAMETER) (GLenum pname, GLvoid *param)
+```cpp
+typedef void(GL_APIENTRYP PFN_HMS_XEG_SPATIALUPSCALEPARAMETER) (GLenum pname, GLvoid *param)
 ```
 
 **描述**
@@ -1467,10 +1426,8 @@ PhonePC/2in1TabletTV
 
 ### PFN\_HMS\_XEG\_TemporalUpscaleParameter
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void(GL_APIENTRYP PFN_HMS_XEG_TemporalUpscaleParameter) (GLenum pname, GLvoid *param)
+```cpp
+typedef void(GL_APIENTRYP PFN_HMS_XEG_TemporalUpscaleParameter) (GLenum pname, GLvoid *param)
 ```
 
 **描述**
@@ -1486,12 +1443,92 @@ PhonePC/2in1TabletTV
 | pname | 输入参数的枚举名，取值范围为 [XEG\_TEMPORAL\_UPSCALE\_INPUT\_SIZE](xengine-kit-xengine.md#xeg_temporal_upscale_input_size)、[XEG\_TEMPORAL\_UPSCALE\_JITTER\_NUM](xengine-kit-xengine.md#xeg_temporal_upscale_jitter_num)、[XEG\_TEMPORAL\_UPSCALE\_DEPTH\_REVERSED](xengine-kit-xengine.md#xeg_temporal_upscale_depth_reversed)、[XEG\_TEMPORAL\_UPSCALE\_RESET\_HISTORY](xengine-kit-xengine.md#xeg_temporal_upscale_reset_history)、[XEG\_TEMPORAL\_UPSCALE\_STEADY\_LEVEL](xengine-kit-xengine.md#xeg_temporal_upscale_steady_level)。 |
 | param | 输入参数的值，取值详见输入参数枚举名的说明。 |
 
+### PFN\_HMS\_XEG\_ControlDisplaySeparationStatusCallback
+
+```cpp
+typedef void(*PFN_HMS_XEG_ControlDisplaySeparationStatusCallback) (XEG_ControlDisplaySeparationStatus status);
+```
+
+**描述**
+
+控显分离特性监听函数的函数指针定义。
+
+**设备行为差异：** 该接口只在部分折叠手机上可正常使用，在其他设备中不可交互。
+
+**起始版本：** 26.0.0
+
+**参数:**
+
+| 名称 | 描述 |
+| --- | --- |
+| status | 控显分离状态信息的枚举值 |
+
+### PFN\_HMS\_XEG\_SetControlDisplaySeparationStatusListener
+
+```cpp
+typedef bool(*PFN_HMS_XEG_SetControlDisplaySeparationStatusListener) (PFN_HMS_XEG_ControlDisplaySeparationStatusCallback callback);
+```
+
+**描述**
+
+设置控显分离特性全局唯一监听函数的函数指针定义。
+
+**设备行为差异：** 该接口只在部分折叠手机上可正常使用，在其他设备中不可交互。
+
+**起始版本：** 26.0.0
+
+**参数:**
+
+| 名称 | 描述 |
+| --- | --- |
+| callback | 待设置的回调函数，不允许为空 |
+
+**返回：**
+
+返回设置是否成功，true表示设置成功，false代表设置失败，只有当前设备支持控显分离特性并且应用在module.json中注册了控显分离特性才返回成功。
+
+### PFN\_HMS\_XEG\_RemoveControlDisplaySeparationStatusListener
+
+```cpp
+typedef void(*PFN_HMS_XEG_RemoveControlDisplaySeparationStatusListener) ();
+```
+
+**描述**
+
+移除控显分离特性全局唯一监听函数的函数指针定义。
+
+**设备行为差异：** 该接口只在部分折叠手机上可正常使用，在其他设备中不可交互。
+
+**起始版本：** 26.0.0
+
+### PFN\_HMS\_XEG\_SetControlDisplaySeparationActive
+
+```cpp
+typedef bool(*PFN_HMS_XEG_SetControlDisplaySeparationActive) (bool flag);
+```
+
+**描述**
+
+设置控显分离特性使能开关的函数指针定义。
+
+**设备行为差异：** 该接口只在部分折叠手机上可正常使用，在其他设备中不可交互。
+
+**起始版本：** 26.0.0
+
+**参数:**
+
+| 名称 | 描述 |
+| --- | --- |
+| flag | 待设置的特性使能开关状态，true表示开启，false表示关闭。 |
+
+**返回：**
+
+返回设置是否成功，true表示设置成功，false代表设置失败，设置控显分离特性使能成功的前提是必须设置控显分离特性监听函数并且监听函数回调的状态为可用。
+
 ### XEG\_AdaptiveVRS
 
-PhonePC/2in1TabletTV
-
-```
-1. VK_DEFINE_HANDLE(XEG_AdaptiveVRS)
+```cpp
+VK_DEFINE_HANDLE(XEG_AdaptiveVRS)
 ```
 
 **描述**
@@ -1502,10 +1539,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_AdaptiveVRSCreateInfo
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef struct XEG_AdaptiveVRSCreateInfo XEG_AdaptiveVRSCreateInfo
+```cpp
+typedef struct XEG_AdaptiveVRSCreateInfo XEG_AdaptiveVRSCreateInfo
 ```
 
 **描述**
@@ -1516,10 +1551,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_AdaptiveVRSDescription
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef struct XEG_AdaptiveVRSDescription XEG_AdaptiveVRSDescription
+```cpp
+typedef struct XEG_AdaptiveVRSDescription XEG_AdaptiveVRSDescription
 ```
 
 **描述**
@@ -1530,10 +1563,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_DenoiseQualityMode
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef enum XEG_DenoiseQualityMode XEG_DenoiseQualityMode
+```cpp
+typedef enum XEG_DenoiseQualityMode XEG_DenoiseQualityMode
 ```
 
 **描述**
@@ -1544,10 +1575,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_ExtensionProperties
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef struct XEG_ExtensionProperties XEG_ExtensionProperties
+```cpp
+typedef struct XEG_ExtensionProperties XEG_ExtensionProperties
 ```
 
 **描述**
@@ -1558,10 +1587,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_HPS
 
-PhonePC/2in1TabletTV
-
-```
-1. VK_DEFINE_HANDLE(XEG_HPS)
+```cpp
+VK_DEFINE_HANDLE(XEG_HPS)
 ```
 
 **描述**
@@ -1572,10 +1599,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_HPSCreateInfo
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef struct XEG_HPSCreateInfo XEG_HPSCreateInfo
+```cpp
+typedef struct XEG_HPSCreateInfo XEG_HPSCreateInfo
 ```
 
 **描述**
@@ -1586,10 +1611,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_HPSRadixSort
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef struct XEG_HPSRadixSort XEG_HPSRadixSort
+```cpp
+typedef struct XEG_HPSRadixSort XEG_HPSRadixSort
 ```
 
 **描述**
@@ -1600,10 +1623,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_HPSRadixSortDescription
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef struct XEG_HPSRadixSortDescription XEG_HPSRadixSortDescription
+```cpp
+typedef struct XEG_HPSRadixSortDescription XEG_HPSRadixSortDescription
 ```
 
 **描述**
@@ -1614,10 +1635,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_RTGI
 
-PhonePC/2in1TabletTV
-
-```
-1. VK_DEFINE_HANDLE(XEG_RTGI)
+```cpp
+VK_DEFINE_HANDLE(XEG_RTGI)
 ```
 
 **描述**
@@ -1628,10 +1647,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_RTGIQualityMode
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef enum XEG_RTGIQualityMode XEG_RTGIQualityMode
+```cpp
+typedef enum XEG_RTGIQualityMode XEG_RTGIQualityMode
 ```
 
 **描述**
@@ -1642,10 +1659,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_RTReflection
 
-PhonePC/2in1TabletTV
-
-```
-1. VK_DEFINE_HANDLE(XEG_RTReflection)
+```cpp
+VK_DEFINE_HANDLE(XEG_RTReflection)
 ```
 
 **描述**
@@ -1656,10 +1671,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_RTReflectionCreateInfo
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef struct XEG_RTReflectionCreateInfo XEG_RTReflectionCreateInfo
+```cpp
+typedef struct XEG_RTReflectionCreateInfo XEG_RTReflectionCreateInfo
 ```
 
 **描述**
@@ -1670,10 +1683,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_RTReflectionDescription
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef struct XEG_RTReflectionDescription XEG_RTReflectionDescription
+```cpp
+typedef struct XEG_RTReflectionDescription XEG_RTReflectionDescription
 ```
 
 **描述**
@@ -1684,10 +1695,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_RTVisibleMask
 
-PhonePC/2in1TabletTV
-
-```
-1. VK_DEFINE_HANDLE(XEG_RTVisibleMask)
+```cpp
+VK_DEFINE_HANDLE(XEG_RTVisibleMask)
 ```
 
 **描述**
@@ -1698,10 +1707,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_SpatialUpscale
 
-PhonePC/2in1TabletTV
-
-```
-1. VK_DEFINE_HANDLE(XEG_SpatialUpscale)
+```cpp
+VK_DEFINE_HANDLE(XEG_SpatialUpscale)
 ```
 
 **描述**
@@ -1712,10 +1719,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_SpatialUpscaleCreateInfo
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef struct XEG_SpatialUpscaleCreateInfo XEG_SpatialUpscaleCreateInfo
+```cpp
+typedef struct XEG_SpatialUpscaleCreateInfo XEG_SpatialUpscaleCreateInfo
 ```
 
 **描述**
@@ -1726,10 +1731,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_SpatialUpscaleDescription
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef struct XEG_SpatialUpscaleDescription XEG_SpatialUpscaleDescription
+```cpp
+typedef struct XEG_SpatialUpscaleDescription XEG_SpatialUpscaleDescription
 ```
 
 **描述**
@@ -1740,10 +1743,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_StructureType
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef enum XEG_StructureType XEG_StructureType
+```cpp
+typedef enum XEG_StructureType XEG_StructureType
 ```
 
 **描述**
@@ -1754,10 +1755,8 @@ XEngine结构体类型的枚举。
 
 ### XEG\_TemporalUpscale
 
-PhonePC/2in1TabletTV
-
-```
-1. VK_DEFINE_HANDLE(XEG_TemporalUpscale)
+```cpp
+VK_DEFINE_HANDLE(XEG_TemporalUpscale)
 ```
 
 **描述**
@@ -1768,10 +1767,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_TemporalUpscaleCreateInfo
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef struct XEG_TemporalUpscaleCreateInfo XEG_TemporalUpscaleCreateInfo
+```cpp
+typedef struct XEG_TemporalUpscaleCreateInfo XEG_TemporalUpscaleCreateInfo
 ```
 
 **描述**
@@ -1782,10 +1779,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_TemporalUpscaleDescription
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef struct XEG_TemporalUpscaleDescription XEG_TemporalUpscaleDescription
+```cpp
+typedef struct XEG_TemporalUpscaleDescription XEG_TemporalUpscaleDescription
 ```
 
 **描述**
@@ -1796,10 +1791,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_TraversalMode
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef enum XEG_TraversalMode XEG_TraversalMode
+```cpp
+typedef enum XEG_TraversalMode XEG_TraversalMode
 ```
 
 **描述**
@@ -1808,16 +1801,62 @@ PhonePC/2in1TabletTV
 
 **起始版本：** 6.0.0(20)
 
-## 枚举类型说明
+### XEG\_NeuralUpscale
 
-PhonePC/2in1TabletTV
+```cpp
+VK_DEFINE_HANDLE(XEG_NeuralUpscale)
+```
+
+**描述**
+
+[XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale)的句柄。
+
+**起始版本：** 26.0.0
+
+### XEG\_NeuralUpscaleCreateInfo
+
+```cpp
+typedef struct XEG_NeuralUpscaleCreateInfo XEG_NeuralUpscaleCreateInfo
+```
+
+**描述**
+
+此结构体描述创建[XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale)对象的信息。当结构体中的信息变化时，需要创建新的[XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale)对象。
+
+**起始版本：** 26.0.0
+
+### XEG\_NeuralUpscaleDescription
+
+```cpp
+typedef struct XEG_NeuralUpscaleDescription XEG_NeuralUpscaleDescription
+```
+
+**描述**
+
+此结构体描述下发空域AI超分渲染命令时的输入信息。
+
+**起始版本：** 26.0.0
+
+### XEG\_ControlDisplaySeparationStatus
+
+```cpp
+typedef enum XEG_ControlDisplaySeparationStatus XEG_ControlDisplaySeparationStatus
+```
+
+**描述**
+
+控显分离当前的状态信息的枚举
+
+**设备行为差异：** 该接口只在部分折叠手机上可正常使用，在其他设备中不可交互。
+
+**起始版本：** 26.0.0
+
+## 枚举类型说明
 
 ### XEG\_DenoiseQualityMode
 
-PhonePC/2in1TabletTV
-
-```
-1. enum XEG_DenoiseQualityMode
+```cpp
+enum XEG_DenoiseQualityMode
 ```
 
 **描述**
@@ -1835,10 +1874,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_RTGIQualityMode
 
-PhonePC/2in1TabletTV
-
-```
-1. enum XEG_RTGIQualityMode
+```cpp
+enum XEG_RTGIQualityMode
 ```
 
 **描述**
@@ -1855,10 +1892,8 @@ PhonePC/2in1TabletTV
 
 ### XEG\_StructureType
 
-PhonePC/2in1TabletTV
-
-```
-1. enum XEG_StructureType
+```cpp
+enum XEG_StructureType
 ```
 
 **描述**
@@ -1877,16 +1912,16 @@ XEngine结构体类型的枚举。
 | XEG\_STRUCTURE\_TYPE\_NNGI\_DESCRIPTION | 结构体[XEG\_NNGIDescription](xengine-kit-xeg-nngidescription.md)的类型。 |
 | XEG\_STRUCTURE\_TYPE\_DDGI\_CREATE\_INFO | 结构体[XEG\_DDGICreateInfo](xengine-kit-xeg-ddgicreateinfo.md)的类型。 |
 | XEG\_STRUCTURE\_TYPE\_DDGI\_DESCRIPTION | 结构体[XEG\_DDGIDescription](xengine-kit-xeg-ddgidescription.md)的类型。 |
+| XEG\_STRUCTURE\_TYPE\_NEURAL\_UPSCALE\_CREATE\_INFO | 结构体[XEG\_NeuralUpscaleCreateInfo](xengine-kit-xeg-neuralupscalecreateinfo.md)的类型。 |
+| XEG\_STRUCTURE\_TYPE\_NEURAL\_UPSCALE\_DESCRIPTION | 结构体[XEG\_NeuralUpscaleDescription](xengine-kit-xeg-neuralupscaledescription.md)的类型。 |
 | XEG\_STRUCTURE\_TYPE\_HPS\_CREATE\_INFO | 结构体[XEG\_HPSCreateInfo](xengine-kit-xeg-hpscreateinfo.md)的类型。 |
 | XEG\_STRUCTURE\_TYPE\_HPS\_RADIX\_SORT | 结构体[XEG\_HPSRadixSort](xengine-kit-xeg-hpsradixsort.md)的类型。 |
 | XEG\_STRUCTURE\_TYPE\_HPS\_RADIX\_SORT\_DESCRIPTION | 结构体[XEG\_HPSRadixSortDescription](xengine-kit-xeg-hpsradixsortdescription.md)的类型。 |
 
 ### XEG\_TraversalMode
 
-PhonePC/2in1TabletTV
-
-```
-1. enum XEG_TraversalMode
+```cpp
+enum XEG_TraversalMode
 ```
 
 **描述**
@@ -1900,21 +1935,36 @@ PhonePC/2in1TabletTV
 | XEG\_TRAVERSAL\_MODE\_DEFAULT | 逐像素进行光线追踪场景遍历。 |
 | XEG\_TRAVERSAL\_MODE\_PERFORMANCES | 通过算法进行场景遍历，性能更好，画质可能有细微的差别。 |
 
-## 函数说明
+### XEG\_ControlDisplaySeparationStatus
 
-PhonePC/2in1TabletTV
-
-### HMS\_XEG\_AdaptiveVRSParameter()
-
-PhonePC/2in1TabletTV
-
-```
-1. GL_APICALL void GL_APIENTRY HMS_XEG_AdaptiveVRSParameter (GLenum pname, GLvoid * param)
+```cpp
+enum XEG_ControlDisplaySeparationStatus
 ```
 
 **描述**
 
-设置自适应VRS的参数。
+控显分离当前的状态信息的枚举
+
+**设备行为差异：** 该接口只在部分折叠手机上可正常使用，在其他设备中不可交互。
+
+**起始版本：** 26.0.0
+
+| 枚举值 | 描述 |
+| --- | --- |
+| UNAVAILABLE | 控显分离不可用。 |
+| AVAILABLE | 控显分离可用。 |
+
+## 函数说明
+
+### HMS\_XEG\_AdaptiveVRSParameter()
+
+```cpp
+GL_APICALL void GL_APIENTRY HMS_XEG_AdaptiveVRSParameter (GLenum pname, GLvoid * param)
+```
+
+**描述**
+
+设置自适应VRS(Variable Rate Shading)的参数。
 
 **起始版本：** 5.0.0(12)
 
@@ -1927,10 +1977,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_XEG\_ApplyAdaptiveVRS()
 
-PhonePC/2in1TabletTV
-
-```
-1. GL_APICALL void GL_APIENTRY HMS_XEG_ApplyAdaptiveVRS (GLuint shadingRateImage)
+```cpp
+GL_APICALL void GL_APIENTRY HMS_XEG_ApplyAdaptiveVRS (GLuint shadingRateImage)
 ```
 
 **描述**
@@ -1943,19 +1991,17 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| shadingRateImage | 计算得到的着色率图像，传入0表示关闭自适应VRS。 |
+| shadingRateImage | 计算得到的着色率图像，传入0表示关闭自适应VRS(Variable Rate Shading)。 |
 
 ### HMS\_XEG\_CmdDispatchAdaptiveVRS()
 
-PhonePC/2in1TabletTV
-
-```
-1. VKAPI_ATTR void VKAPI_CALL HMS_XEG_CmdDispatchAdaptiveVRS (VkCommandBuffer commandBuffer, XEG_AdaptiveVRS xegAdaptiveVRS, XEG_AdaptiveVRSDescription * pXegAdaptiveVRSDescription)
+```cpp
+VKAPI_ATTR void VKAPI_CALL HMS_XEG_CmdDispatchAdaptiveVRS (VkCommandBuffer commandBuffer, XEG_AdaptiveVRS xegAdaptiveVRS, XEG_AdaptiveVRSDescription * pXegAdaptiveVRSDescription)
 ```
 
 **描述**
 
-执行计算自适应可变着色率命令。
+执行计算自适应VRS命令。
 
 **起始版本：** 5.0.0(12)
 
@@ -1969,10 +2015,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_XEG\_CmdRadixSortHPS()
 
-PhonePC/2in1TabletTV
-
-```
-1. VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CmdRadixSortHPS (VkCommandBuffer commandBuffer, XEG_HPS hps, const XEG_HPSRadixSortDescription * pDescription)
+```cpp
+VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CmdRadixSortHPS (VkCommandBuffer commandBuffer, XEG_HPS hps, const XEG_HPSRadixSortDescription * pDescription)
 ```
 
 **描述**
@@ -1995,10 +2039,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_XEG\_CmdRenderRTGI()
 
-PhonePC/2in1TabletTV
-
-```
-1. VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CmdRenderRTGI (VkCommandBuffer commandBuffer, XEG_RTGI rtGI, const void * pDescription)
+```cpp
+VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CmdRenderRTGI (VkCommandBuffer commandBuffer, XEG_RTGI rtGI, const void * pDescription)
 ```
 
 **描述**
@@ -2021,10 +2063,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_XEG\_CmdRenderRTReflection()
 
-PhonePC/2in1TabletTV
-
-```
-1. VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CmdRenderRTReflection (VkCommandBuffer commandBuffer, XEG_RTReflection rtReflection, const void * pDescription)
+```cpp
+VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CmdRenderRTReflection (VkCommandBuffer commandBuffer, XEG_RTReflection rtReflection, const void * pDescription)
 ```
 
 **描述**
@@ -2043,10 +2083,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_XEG\_CmdRenderRTVisibleMask()
 
-PhonePC/2in1TabletTV
-
-```
-1. VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CmdRenderRTVisibleMask (VkCommandBuffer commandBuffer, XEG_RTVisibleMask rtVisibleMask, const void * pDescription)
+```cpp
+VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CmdRenderRTVisibleMask (VkCommandBuffer commandBuffer, XEG_RTVisibleMask rtVisibleMask, const void * pDescription)
 ```
 
 **描述**
@@ -2069,10 +2107,8 @@ VkResult类型的错误码，值为VK\_SUCCESS时表示执行成功。
 
 ### HMS\_XEG\_CmdRenderSpatialUpscale()
 
-PhonePC/2in1TabletTV
-
-```
-1. VKAPI_ATTR void VKAPI_CALL HMS_XEG_CmdRenderSpatialUpscale (VkCommandBuffer commandBuffer, XEG_SpatialUpscale xegSpatialUpscale, XEG_SpatialUpscaleDescription * pXegSpatialUpscaleDescription)
+```cpp
+VKAPI_ATTR void VKAPI_CALL HMS_XEG_CmdRenderSpatialUpscale (VkCommandBuffer commandBuffer, XEG_SpatialUpscale xegSpatialUpscale, XEG_SpatialUpscaleDescription * pXegSpatialUpscaleDescription)
 ```
 
 **描述**
@@ -2091,10 +2127,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_XEG\_CmdRenderTemporalUpscale()
 
-PhonePC/2in1TabletTV
-
-```
-1. VKAPI_ATTR void VKAPI_CALL HMS_XEG_CmdRenderTemporalUpscale (VkCommandBuffer commandBuffer, XEG_TemporalUpscale temporalUpscale, XEG_TemporalUpscaleDescription * pDescription)
+```cpp
+VKAPI_ATTR void VKAPI_CALL HMS_XEG_CmdRenderTemporalUpscale (VkCommandBuffer commandBuffer, XEG_TemporalUpscale temporalUpscale, XEG_TemporalUpscaleDescription * pDescription)
 ```
 
 **描述**
@@ -2111,12 +2145,34 @@ PhonePC/2in1TabletTV
 | temporalUpscale | 已创建的[XEG\_TemporalUpscale](xengine-kit-xengine.md#xeg_temporalupscale)对象。 |
 | pDescription | 超分渲染输入信息结构体[XEG\_TemporalUpscaleDescription](xengine-kit-xeg-temporalupscaledescription.md)的指针，不允许为空。 |
 
+### HMS\_XEG\_CmdRenderNeuralUpscale()
+
+```cpp
+VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CmdRenderNeuralUpscale (VkCommandBuffer commandBuffer, XEG_NeuralUpscale neuralUpscale, const XEG_NeuralUpscaleDescription *pDescription)
+```
+
+**描述**
+
+录制空域AI超分渲染命令。
+
+**起始版本：** 26.0.0
+
+**参数:**
+
+| 名称 | 描述 |
+| --- | --- |
+| commandBuffer | Vulkan命令缓冲对象，需要是Primary类型。 |
+| neuralUpscale | 已创建的[XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale)对象。 |
+| pDescription | 超分渲染输入信息结构体[XEG\_NeuralUpscaleDescription](xengine-kit-xeg-neuralupscaledescription.md)的指针，不允许为空。 |
+
+**返回：**
+
+返回一个VkResult类型的错误码，返回值为VK\_SUCCESS表示执行成功。
+
 ### HMS\_XEG\_CmdSetSynchronization()
 
-PhonePC/2in1TabletTV
-
-```
-1. VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CmdSetSynchronization (VkCommandBuffer commandBuffer, const void * xegHandle )
+```cpp
+VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CmdSetSynchronization (VkCommandBuffer commandBuffer, const void * xegHandle )
 ```
 
 **描述**
@@ -2138,10 +2194,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_XEG\_CreateAdaptiveVRS()
 
-PhonePC/2in1TabletTV
-
-```
-1. VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CreateAdaptiveVRS (VkDevice device, XEG_AdaptiveVRSCreateInfo * pXegAdaptiveVRSCreateInfo, XEG_AdaptiveVRS * pXegAdaptiveVRS)
+```cpp
+VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CreateAdaptiveVRS (VkDevice device, XEG_AdaptiveVRSCreateInfo * pXegAdaptiveVRSCreateInfo, XEG_AdaptiveVRS * pXegAdaptiveVRS)
 ```
 
 **描述**
@@ -2164,10 +2218,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_XEG\_CreateHPS()
 
-PhonePC/2in1TabletTV
-
-```
-1. VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CreateHPS (VkDevice device, const XEG_HPSCreateInfo * pCreateInfo, XEG_HPS * pHps )
+```cpp
+VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CreateHPS (VkDevice device, const XEG_HPSCreateInfo * pCreateInfo, XEG_HPS * pHps )
 ```
 
 **描述**
@@ -2190,10 +2242,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_XEG\_CreateRTGI()
 
-PhonePC/2in1TabletTV
-
-```
-1. VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CreateRTGI (VkDevice device, const void * pCreateInfo, XEG_RTGI * pRtGI )
+```cpp
+VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CreateRTGI (VkDevice device, const void * pCreateInfo, XEG_RTGI * pRtGI )
 ```
 
 **描述**
@@ -2216,10 +2266,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_XEG\_CreateRTReflection()
 
-PhonePC/2in1TabletTV
-
-```
-1. VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CreateRTReflection (VkDevice device, const void * pCreateInfo, XEG_RTReflection * pRtReflection )
+```cpp
+VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CreateRTReflection (VkDevice device, const void * pCreateInfo, XEG_RTReflection * pRtReflection )
 ```
 
 **描述**
@@ -2242,10 +2290,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_XEG\_CreateRTVisibleMask()
 
-PhonePC/2in1TabletTV
-
-```
-1. VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CreateRTVisibleMask (VkDevice device, const void * pCreateInfo, XEG_RTVisibleMask * pRTVisibleMask )
+```cpp
+VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CreateRTVisibleMask (VkDevice device, const void * pCreateInfo, XEG_RTVisibleMask * pRTVisibleMask )
 ```
 
 **描述**
@@ -2268,10 +2314,8 @@ VkResult类型的错误码，值为VK\_SUCCESS时表示创建成功。
 
 ### HMS\_XEG\_CreateSpatialUpscale()
 
-PhonePC/2in1TabletTV
-
-```
-1. VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CreateSpatialUpscale (VkDevice device, const XEG_SpatialUpscaleCreateInfo * pXegSpatialUpscaleCreateInfo, XEG_SpatialUpscale * pXegSpatialUpscale)
+```cpp
+VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CreateSpatialUpscale (VkDevice device, const XEG_SpatialUpscaleCreateInfo * pXegSpatialUpscaleCreateInfo, XEG_SpatialUpscale * pXegSpatialUpscale)
 ```
 
 **描述**
@@ -2294,10 +2338,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_XEG\_CreateTemporalUpscale()
 
-PhonePC/2in1TabletTV
-
-```
-1. VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CreateTemporalUpscale (VkDevice device, XEG_TemporalUpscaleCreateInfo * pTemporalUpscaleInfo, XEG_TemporalUpscale * pTemporalUpscale)
+```cpp
+VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CreateTemporalUpscale (VkDevice device, XEG_TemporalUpscaleCreateInfo * pTemporalUpscaleInfo, XEG_TemporalUpscale * pTemporalUpscale)
 ```
 
 **描述**
@@ -2318,12 +2360,34 @@ PhonePC/2in1TabletTV
 
 返回一个VkResult类型的错误码，返回值为VK\_SUCCESS表示执行成功。
 
+### HMS\_XEG\_CreateNeuralUpscale()
+
+```cpp
+VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CreateNeuralUpscale (VkDevice device, const XEG_NeuralUpscaleCreateInfo * pCreateInfo, XEG_NeuralUpscale * pNeuralUpscale)
+```
+
+**描述**
+
+创建[XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale)对象。
+
+**起始版本：** 26.0.0
+
+**参数:**
+
+| 名称 | 描述 |
+| --- | --- |
+| device | 必须是当前使用的VkDevice。 |
+| pCreateInfo | 超分实例句柄创建信息结构体[XEG\_NeuralUpscaleCreateInfo](xengine-kit-xeg-neuralupscalecreateinfo.md)的指针，不允许为空。 |
+| pNeuralUpscale | 指向句柄的指针，创建的[XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale)在此句柄中返回。 |
+
+**返回：**
+
+返回一个VkResult类型的错误码，返回值为VK\_SUCCESS表示执行成功。
+
 ### HMS\_XEG\_DestroyAdaptiveVRS()
 
-PhonePC/2in1TabletTV
-
-```
-1. VKAPI_ATTR void VKAPI_CALL HMS_XEG_DestroyAdaptiveVRS (XEG_AdaptiveVRS xegAdaptiveVRS)
+```cpp
+VKAPI_ATTR void VKAPI_CALL HMS_XEG_DestroyAdaptiveVRS (XEG_AdaptiveVRS xegAdaptiveVRS)
 ```
 
 **描述**
@@ -2340,10 +2404,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_XEG\_DestroyHPS()
 
-PhonePC/2in1TabletTV
-
-```
-1. VKAPI_ATTR void VKAPI_CALL HMS_XEG_DestroyHPS (XEG_HPS hps)
+```cpp
+VKAPI_ATTR void VKAPI_CALL HMS_XEG_DestroyHPS (XEG_HPS hps)
 ```
 
 **描述**
@@ -2360,10 +2422,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_XEG\_DestroyRTGI()
 
-PhonePC/2in1TabletTV
-
-```
-1. VKAPI_ATTR void VKAPI_CALL HMS_XEG_DestroyRTGI (XEG_RTGI rtGI)
+```cpp
+VKAPI_ATTR void VKAPI_CALL HMS_XEG_DestroyRTGI (XEG_RTGI rtGI)
 ```
 
 **描述**
@@ -2380,10 +2440,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_XEG\_DestroyRTReflection()
 
-PhonePC/2in1TabletTV
-
-```
-1. VKAPI_ATTR void VKAPI_CALL HMS_XEG_DestroyRTReflection (XEG_RTReflection rtReflection)
+```cpp
+VKAPI_ATTR void VKAPI_CALL HMS_XEG_DestroyRTReflection (XEG_RTReflection rtReflection)
 ```
 
 **描述**
@@ -2400,10 +2458,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_XEG\_DestroyRTVisibleMask()
 
-PhonePC/2in1TabletTV
-
-```
-1. VKAPI_ATTR void VKAPI_CALL HMS_XEG_DestroyRTVisibleMask (XEG_RTVisibleMask rtVisibleMask)
+```cpp
+VKAPI_ATTR void VKAPI_CALL HMS_XEG_DestroyRTVisibleMask (XEG_RTVisibleMask rtVisibleMask)
 ```
 
 **描述**
@@ -2420,10 +2476,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_XEG\_DestroySpatialUpscale()
 
-PhonePC/2in1TabletTV
-
-```
-1. VKAPI_ATTR void VKAPI_CALL HMS_XEG_DestroySpatialUpscale (XEG_SpatialUpscale xegSpatialUpscale)
+```cpp
+VKAPI_ATTR void VKAPI_CALL HMS_XEG_DestroySpatialUpscale (XEG_SpatialUpscale xegSpatialUpscale)
 ```
 
 **描述**
@@ -2440,10 +2494,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_XEG\_DestroyTemporalUpscale()
 
-PhonePC/2in1TabletTV
-
-```
-1. VKAPI_ATTR void VKAPI_CALL HMS_XEG_DestroyTemporalUpscale (XEG_TemporalUpscale temporalUpscale)
+```cpp
+VKAPI_ATTR void VKAPI_CALL HMS_XEG_DestroyTemporalUpscale (XEG_TemporalUpscale temporalUpscale)
 ```
 
 **描述**
@@ -2458,12 +2510,28 @@ PhonePC/2in1TabletTV
 | --- | --- |
 | temporalUpscale | 需要销毁的[XEG\_TemporalUpscale](xengine-kit-xengine.md#xeg_temporalupscale)对象。 |
 
+### HMS\_XEG\_DestroyNeuralUpscale()
+
+```cpp
+VKAPI_ATTR void VKAPI_CALL HMS_XEG_DestroyNeuralUpscale (XEG_NeuralUpscale neuralUpscale)
+```
+
+**描述**
+
+销毁[XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale)对象。
+
+**起始版本：** 26.0.0
+
+**参数:**
+
+| 名称 | 描述 |
+| --- | --- |
+| neuralUpscale | 需要销毁的[XEG\_NeuralUpscale](xengine-kit-xengine.md#xeg_neuralupscale)对象。 |
+
 ### HMS\_XEG\_DispatchAdaptiveVRS()
 
-PhonePC/2in1TabletTV
-
-```
-1. GL_APICALL void GL_APIENTRY HMS_XEG_DispatchAdaptiveVRS (GLfloat * reprojectionMatrix, GLuint inputColorImage, GLuint inputDepthImage, GLuint shadingRateImage)
+```cpp
+GL_APICALL void GL_APIENTRY HMS_XEG_DispatchAdaptiveVRS (GLfloat * reprojectionMatrix, GLuint inputColorImage, GLuint inputDepthImage, GLuint shadingRateImage)
 ```
 
 **描述**
@@ -2481,16 +2549,14 @@ PhonePC/2in1TabletTV
 | inputDepthImage | 当前帧渲染管线最终渲染结果深度附件纹理ID。 |
 | shadingRateImage | 用于生成着色率图信息的纹理ID，需用户创建并输入。 |
 
-说明
+**说明** 
 
 纹理类型需要是GL\_TEXTURE\_2D且mipLevels为1。
 
 ### HMS\_XEG\_EnumerateDeviceExtensionProperties()
 
-PhonePC/2in1TabletTV
-
-```
-1. VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_EnumerateDeviceExtensionProperties (VkPhysicalDevice physicalDevice, uint32_t * pPropertyCount, XEG_ExtensionProperties * pProperties)
+```cpp
+VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_EnumerateDeviceExtensionProperties (VkPhysicalDevice physicalDevice, uint32_t * pPropertyCount, XEG_ExtensionProperties * pProperties)
 ```
 
 **描述**
@@ -2513,10 +2579,8 @@ XEngine Vulkan扩展特性查询接口。
 
 ### HMS\_XEG\_GetString()
 
-PhonePC/2in1TabletTV
-
-```
-1. const GLubyte* HMS_XEG_GetString (GLenum name)
+```cpp
+const GLubyte* HMS_XEG_GetString (GLenum name)
 ```
 
 **描述**
@@ -2537,10 +2601,8 @@ XEngine OpenGL ES扩展特性查询接口。
 
 ### HMS\_XEG\_NeuralUpscaleParameter()
 
-PhonePC/2in1TabletTV
-
-```
-1. GL_APICALL void GL_APIENTRY HMS_XEG_NeuralUpscaleParameter (GLenum pname, GLvoid * param)
+```cpp
+GL_APICALL void GL_APIENTRY HMS_XEG_NeuralUpscaleParameter (GLenum pname, GLvoid * param)
 ```
 
 **描述**
@@ -2558,10 +2620,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_XEG\_RenderNeuralUpscale()
 
-PhonePC/2in1TabletTV
-
-```
-1. GL_APICALL void GL_APIENTRY HMS_XEG_RenderNeuralUpscale (GLuint inputTexture)
+```cpp
+GL_APICALL void GL_APIENTRY HMS_XEG_RenderNeuralUpscale (GLuint inputTexture)
 ```
 
 **描述**
@@ -2574,14 +2634,12 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| inputTexture | 超分输入纹理，输入纹理是GL\_TEXTURE\_2D类型且mipLevels为1，纹理的宽度取值范围是[448, 1728]，否则可能会引起AI推理结果错误。此输入纹理必须是由OH\_NativeBuffer创建的，并需要在调用此接口前将OH\_NativeBuffer对应的handle设置为超分的输入参数，详见接口[HMS\_XEG\_NeuralUpscaleParameter](xengine-kit-xengine.md#hms_xeg_neuralupscaleparameter)。 |
+| inputTexture | 超分输入纹理，输入纹理是GL\_TEXTURE\_2D类型且mipLevels为1。  当[XEG\_NEURAL\_UPSCALE\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_neural_upscale_extension_name)扩展可用时，纹理的宽度取值范围是[448, 1728]，否则可能会引起AI推理结果错误。此输入纹理必须是由[OH\_NativeBuffer](capi-oh-nativebuffer.md)创建的，并需要在调用此接口前将[OH\_NativeBuffer](capi-oh-nativebuffer.md)对应的handle设置为超分的输入参数，详见接口[HMS\_XEG\_NeuralUpscaleParameter](xengine-kit-xengine.md#hms_xeg_neuralupscaleparameter)。  当[XEG\_NEURAL\_UPSCALE2\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_neural_upscale2_extension_name)扩展可用时，纹理的宽度取值范围建议[448, 1792]，此输入纹理不需要由OH\_NativeBuffer创建。 |
 
 ### HMS\_XEG\_RenderSpatialUpscale()
 
-PhonePC/2in1TabletTV
-
-```
-1. GL_APICALL void GL_APIENTRY HMS_XEG_RenderSpatialUpscale (GLuint inputTexture)
+```cpp
+GL_APICALL void GL_APIENTRY HMS_XEG_RenderSpatialUpscale (GLuint inputTexture)
 ```
 
 **描述**
@@ -2598,10 +2656,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_XEG\_RenderTemporalUpscale()
 
-PhonePC/2in1TabletTV
-
-```
-1. GL_APICALL void GL_APIENTRY HMS_XEG_RenderTemporalUpscale (GLuint inputTexture, GLuint depthTexture, GLuint motionVectorTexture, GLuint dynamicMaskTexture, GLfloat jitterX, GLfloat jitterY )
+```cpp
+GL_APICALL void GL_APIENTRY HMS_XEG_RenderTemporalUpscale (GLuint inputTexture, GLuint depthTexture, GLuint motionVectorTexture, GLuint dynamicMaskTexture, GLfloat jitterX, GLfloat jitterY )
 ```
 
 **描述**
@@ -2618,15 +2674,13 @@ PhonePC/2in1TabletTV
 | depthTexture | 深度纹理。 |
 | motionVectorTexture | 运动矢量图像。运动矢量的计算方式为当前渲染像素的NDC坐标的XY值减去上一帧的NDC坐标的XY值。 |
 | dynamicMaskTexture | 物体的动态遮罩图像，格式需要是GL\_RED或其兼容格式。R通道的合法值为0.0，0.2或1.0，其中0.0表示静态物体，0.2表示运动物体如人物，1.0表示特效或半透明物体。 |
-| jitterX | 相机在X方向上的抖动。 |
-| jitterY | 相机在Y方向上的抖动。 |
+| jitterX | 相机在X方向上的抖动，通常为超分依赖的前序渲染过程中应用的亚像素抖动，包含在相机的投影矩阵中；在ndc坐标系下，其取值范围是 [-1/width, 1/width], width是输入inputTexture纹理的宽度（像素数）。 |
+| jitterY | 相机在Y方向上的抖动，通常为超分依赖的前序渲染过程中应用的亚像素抖动，包含在相机的投影矩阵中；在ndc坐标系下，其取值范围是 [-1/height, 1/height], height是输入inputTexture纹理的高度（像素数）。 |
 
 ### HMS\_XEG\_SpatialUpscaleParameter()
 
-PhonePC/2in1TabletTV
-
-```
-1. GL_APICALL void GL_APIENTRY HMS_XEG_SpatialUpscaleParameter (GLenum pname, GLvoid * param)
+```cpp
+GL_APICALL void GL_APIENTRY HMS_XEG_SpatialUpscaleParameter (GLenum pname, GLvoid * param)
 ```
 
 **描述**
@@ -2644,10 +2698,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_XEG\_TemporalUpscaleParameter()
 
-PhonePC/2in1TabletTV
-
-```
-1. GL_APICALL void GL_APIENTRY HMS_XEG_TemporalUpscaleParameter (GLenum pname, const GLvoid * param)
+```cpp
+GL_APICALL void GL_APIENTRY HMS_XEG_TemporalUpscaleParameter (GLenum pname, const GLvoid * param)
 ```
 
 **描述**
@@ -2662,3 +2714,65 @@ PhonePC/2in1TabletTV
 | --- | --- |
 | pname | 输入参数的枚举名，取值范围为[XEG\_TEMPORAL\_UPSCALE\_INPUT\_SIZE](xengine-kit-xengine.md#xeg_temporal_upscale_input_size)、[XEG\_TEMPORAL\_UPSCALE\_JITTER\_NUM](xengine-kit-xengine.md#xeg_temporal_upscale_jitter_num)、[XEG\_TEMPORAL\_UPSCALE\_DEPTH\_REVERSED](xengine-kit-xengine.md#xeg_temporal_upscale_depth_reversed)、[XEG\_TEMPORAL\_UPSCALE\_RESET\_HISTORY](xengine-kit-xengine.md#xeg_temporal_upscale_reset_history)、[XEG\_TEMPORAL\_UPSCALE\_STEADY\_LEVEL](xengine-kit-xengine.md#xeg_temporal_upscale_steady_level)。 |
 | param | 输入参数的值，取值详见输入参数枚举名的说明。 |
+
+### HMS\_XEG\_SetControlDisplaySeparationStatusListener()
+
+```cpp
+bool HMS_XEG_SetControlDisplaySeparationStatusListener(PFN_HMS_XEG_ControlDisplaySeparationStatusCallback callback);
+```
+
+**描述**
+
+设置控显分离特性全局唯一监听函数。
+
+**设备行为差异：** 该接口只在部分折叠手机上可正常使用，在其他设备中不可交互。
+
+**起始版本：** 26.0.0
+
+**参数:**
+
+| 名称 | 描述 |
+| --- | --- |
+| callback | 待设置的回调函数，不允许为空。 |
+
+**返回:**
+
+返回设置是否成功，true表示设置成功，false代表设置失败，只有当前设备支持控显分离特性并且应用在module.json中注册了控显分离特性才返回成功。
+
+### HMS\_XEG\_RemoveControlDisplaySeparationStatusListener()
+
+```cpp
+void HMS_XEG_RemoveControlDisplaySeparationStatusListener();
+```
+
+**描述**
+
+移除控显分离特性全局唯一监听函数。
+
+**设备行为差异：** 该接口只在部分折叠手机上可正常使用，在其他设备中不可交互。
+
+**起始版本：** 26.0.0
+
+### HMS\_XEG\_SetControlDisplaySeparationActive()
+
+```cpp
+bool HMS_XEG_SetControlDisplaySeparationActive(bool flag);
+```
+
+**描述**
+
+设置控显分离特性使能开关。
+
+**设备行为差异：** 该接口只在部分折叠手机上可正常使用，在其他设备中不可交互。
+
+**起始版本：** 26.0.0
+
+**参数:**
+
+| 名称 | 描述 |
+| --- | --- |
+| flag | 待设置的特性使能开关状态，true表示开启，false表示关闭。 |
+
+**返回:**
+
+返回设置是否成功，true表示设置成功，false代表设置失败，设置控显分离特性使能成功的前提是必须设置控显分离特性监听函数并且监听函数回调的状态为可用。

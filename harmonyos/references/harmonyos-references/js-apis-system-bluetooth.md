@@ -3,27 +3,23 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@system.bluetooth (蓝牙)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 已停止维护的接口 > @system.bluetooth (蓝牙)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:12+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d4fbd73d765ecdfa62929b1af790e287111481e62f75d4b3510f61fcb6bb54d8
+scraped_at: 2026-09-02T15:01:52+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3493b4110aef4f4ae3e8ad3de886efa0e75b4bd409acae82c183cd36e1eda80a
 ---
 
-说明
+**说明** 
 
 * 从API Version 7 开始，该接口不再维护，推荐使用[@ohos.bluetooth.ble](js-apis-bluetooth-ble.md)等相关profile接口。
 * 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-WearableLite Wearable
-
-```
-1. import bluetooth from '@system.bluetooth';
+```js
+import bluetooth from '@system.bluetooth';
 ```
 
 ## bluetooth.startBLEScan(OBJECT)
-
-WearableLite Wearable
 
 开始搜寻附近的低功耗蓝牙外围设备。此操作比较耗费系统资源，请在搜索并连接到设备后调用[bluetooth.stopBLEScan](js-apis-system-bluetooth.md#bluetoothstopblescanobject)方法停止搜索。
 
@@ -42,24 +38,22 @@ WearableLite Wearable
 
 **示例：**
 
-```
-1. bluetooth.startBLEScan({
-2. interval:0,
-3. success() {
-4. console.log('call bluetooth.startBLEScan success.');
-5. },
-6. fail(code, data) {
-7. console.log('call bluetooth.startBLEScan failed, code:' + code + ', data:' + data);
-8. },
-9. complete() {
-10. console.log('call bluetooth.startBLEScan complete.');
-11. }
-12. });
+```js
+bluetooth.startBLEScan({
+  interval:0,
+  success() {
+    console.info('call bluetooth.startBLEScan success.');
+  },
+  fail(code, data) {
+    console.info('call bluetooth.startBLEScan failed, code:' + code + ', data:' + data);
+  },
+  complete() {
+    console.info('call bluetooth.startBLEScan complete.');
+  }
+});
 ```
 
 ## bluetooth.stopBLEScan(OBJECT)
-
-WearableLite Wearable
 
 停止搜寻附近的低功耗蓝牙外围设备。与[bluetooth.startBLEScan(OBJECT)](js-apis-system-bluetooth.md#bluetoothstartblescanobject)接口配套使用。
 
@@ -77,23 +71,21 @@ WearableLite Wearable
 
 **示例：**
 
-```
-1. bluetooth.stopBLEScan({
-2. success() {
-3. console.log('call bluetooth.stopBLEScan success.');
-4. },
-5. fail(data, code) {
-6. console.log('call bluetooth.stopBLEScan fail, code:' + code + ', data:' + data);
-7. },
-8. complete() {
-9. console.log('call bluetooth.stopBLEScan complete.');
-10. }
-11. });
+```js
+bluetooth.stopBLEScan({
+  success() {
+    console.info('call bluetooth.stopBLEScan success.');
+  },
+  fail(data, code) {
+    console.info('call bluetooth.stopBLEScan fail, code:' + code + ', data:' + data);
+  },
+  complete() {
+    console.info('call bluetooth.stopBLEScan complete.');
+  }
+});
 ```
 
 ## bluetooth.subscribeBLEFound(OBJECT)
-
-WearableLite Wearable
 
 订阅寻找到新设备。再次调用时，会覆盖前一次调用效果，即仅最后一次调用生效。
 
@@ -126,20 +118,18 @@ WearableLite Wearable
 
 **示例：**
 
-```
-1. bluetooth.subscribeBLEFound({
-2. success(data) {
-3. console.log('call bluetooth.subscribeBLEFound success, data: ${data}.');
-4. },
-5. fail(data, code) {
-6. console.log('call bluetooth.startBLEScan failed, code:' + code + ', data:' + data);
-7. }
-8. });
+```js
+bluetooth.subscribeBLEFound({
+  success(data) {
+    console.info('call bluetooth.subscribeBLEFound success, data: ${data}.');
+  },
+  fail(data, code) {
+    console.info('call bluetooth.startBLEScan failed, code:' + code + ', data:' + data);
+  }
+});
 ```
 
 ## bluetooth.unsubscribeBLEFound()
-
-WearableLite Wearable
 
 解除订阅寻找到新设备。
 
@@ -147,13 +137,11 @@ WearableLite Wearable
 
 **示例：**
 
-```
-1. bluetooth.unsubscribeBLEFound();
+```js
+bluetooth.unsubscribeBLEFound();
 ```
 
 ## 常见错误码
-
-WearableLite Wearable
 
 | 错误码 | 说明 |
 | --- | --- |

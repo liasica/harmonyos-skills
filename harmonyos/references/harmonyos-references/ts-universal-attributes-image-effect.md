@@ -3,24 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 图像效果
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 图像效果
 category: harmonyos-references
-scraped_at: 2026-04-29T13:51:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1f27d88c5850e500dab6f33d4fe5daf14ee5fba3937f70b4c2bce1ea649bb816
+scraped_at: 2026-09-02T15:00:56+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:5b3a43c312139309d79026fd97db2f98f00081fa86be5cc12c1389d40be67a60
 ---
 
-设置组件的模糊、阴影、球面效果以及设置图片的图像效果。
+设置组件的模糊、阴影、球面效果以及设置图像效果。
 
-说明
+**说明** 
 
 从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## blur
 
-PhonePC/2in1TabletTVWearable
-
 blur(value: number, options?: BlurOptions): T
 
-为组件添加内容模糊效果。
+为组件添加内容模糊效果。当组件设置了BlendApplyType.OFFSCREEN的blendMode时，该接口可能无法截取到正确画面。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -32,18 +30,16 @@ blur(value: number, options?: BlurOptions): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | 是 | 当前组件添加内容模糊效果，入参为模糊半径，模糊半径越大越模糊，为0时不模糊。 |
-| options11+ | [BlurOptions](ts-universal-attributes-foreground-blur-style.md#bluroptions11) | 否 | 灰阶模糊参数。对图像中的黑白色进行色阶调整，使其趋于灰色更为柔和美观，对图像中的彩色调整没有效果。  默认值：grayscale: [0,0] |
+| value | number | 是 | 模糊半径，模糊半径越大越模糊，值小于等于0时不模糊。  单位：px |
+| options11+ | [BlurOptions](ts-universal-attributes-foreground-blur-style.md#bluroptions11) | 否 | 灰阶模糊参数。对图像中的黑白色进行色阶调整，使黑白灰度过渡更加平滑柔和，对图像中的彩色调整没有效果。  默认值：grayscale: [0,0] |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## blur18+
-
-PhonePC/2in1TabletTVWearable
 
 blur(blurRadius: Optional<number>, options?: BlurOptions): T
 
@@ -53,24 +49,24 @@ blur(blurRadius: Optional<number>, options?: BlurOptions): T
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| blurRadius | [Optional](ts-universal-attributes-custom-property.md#optionalt)<number> | 是 | 当前组件添加内容模糊效果，入参为模糊半径，模糊半径越大越模糊，为0时不模糊。  当blurRadius的值为undefined时，维持之前取值。 |
+| blurRadius | [Optional](ts-universal-attributes-custom-property.md#optionalt)<number> | 是 | 模糊半径，模糊半径越大越模糊，值小于等于0时不模糊。  单位：px  当blurRadius的值为undefined时，维持之前取值。从未设置该属性时，默认值为0，表示不模糊。 |
 | options | [BlurOptions](ts-universal-attributes-foreground-blur-style.md#bluroptions11) | 否 | 灰阶模糊参数。对图像中的黑白色进行色阶调整，使其趋于灰色更为柔和美观，对图像中的彩色调整没有效果。  默认值：grayscale: [0,0] |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## blur19+
-
-PhonePC/2in1TabletTVWearable
 
 blur(blurRadius: Optional<number>, options?: BlurOptions, sysOptions?: SystemAdaptiveOptions): T
 
@@ -80,13 +76,15 @@ blur(blurRadius: Optional<number>, options?: BlurOptions, sysOptions?: SystemAda
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| blurRadius | [Optional](ts-universal-attributes-custom-property.md#optionalt)<number> | 是 | 当前组件添加内容模糊效果，入参为模糊半径，模糊半径越大越模糊，为0时不模糊。  当blurRadius的值为undefined时，维持之前取值。 |
+| blurRadius | [Optional](ts-universal-attributes-custom-property.md#optionalt)<number> | 是 | 模糊半径，模糊半径越大越模糊，值小于等于0时不模糊。  单位：px  当blurRadius的值为undefined时，维持之前取值。从未设置该属性时，默认值为0，表示不模糊。 |
 | options | [BlurOptions](ts-universal-attributes-foreground-blur-style.md#bluroptions11) | 否 | 灰阶模糊参数。对图像中的黑白色进行色阶调整，使其趋于灰色更为柔和美观，对图像中的彩色调整没有效果。  默认值：grayscale: [0,0] |
 | sysOptions | [SystemAdaptiveOptions](ts-universal-attributes-background.md#systemadaptiveoptions19) | 否 | 系统自适应调节参数。  默认值：{ disableSystemAdaptation: false } |
 
@@ -94,11 +92,9 @@ blur(blurRadius: Optional<number>, options?: BlurOptions, sysOptions?: SystemAda
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## shadow
-
-PhonePC/2in1TabletTVWearable
 
 shadow(value: ShadowOptions | ShadowStyle): T
 
@@ -120,11 +116,9 @@ shadow(value: ShadowOptions | ShadowStyle): T
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## shadow18+
-
-PhonePC/2in1TabletTVWearable
 
 shadow(options: Optional<ShadowOptions | ShadowStyle>): T
 
@@ -134,27 +128,27 @@ shadow(options: Optional<ShadowOptions | ShadowStyle>): T
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[ShadowOptions](ts-universal-attributes-image-effect.md#shadowoptions对象说明) | [ShadowStyle](ts-universal-attributes-image-effect.md#shadowstyle10枚举说明)> | 是 | 为当前组件添加阴影效果。  入参类型为ShadowOptions时，可以指定模糊半径、阴影的颜色、X轴和Y轴的偏移量。  入参类型为ShadowStyle时，可指定不同阴影样式。  当options的值为undefined时，恢复为无样式的阴影效果。 |
+| options | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[ShadowOptions](ts-universal-attributes-image-effect.md#shadowoptions对象说明) | [ShadowStyle](ts-universal-attributes-image-effect.md#shadowstyle10枚举说明)> | 是 | 为当前组件添加阴影效果。  入参类型为ShadowOptions时，可以指定模糊半径、阴影的颜色、X轴和Y轴的偏移量。  入参类型为ShadowStyle时，可指定不同阴影样式。  当options的值为undefined时，恢复为无阴影效果。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## grayscale
 
-PhonePC/2in1TabletTVWearable
-
 grayscale(value: number): T
 
-为组件添加灰度效果。上层渲染灰度会覆盖下层子组件渲染。不通过该接口设置时，默认无变化。
+为组件添加灰度效果。上层渲染灰度会覆盖下层子组件渲染。未设置时，默认无变化。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -172,19 +166,19 @@ grayscale(value: number): T
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## grayscale18+
 
-PhonePC/2in1TabletTVWearable
-
 grayscale(grayscale: Optional<number>): T
 
-为组件添加灰度效果。上层渲染灰度会覆盖下层子组件渲染。不通过该接口设置时，默认无变化。与[grayscale](ts-universal-attributes-image-effect.md#grayscale)相比，grayscale参数新增了对undefined类型的支持。
+为组件添加灰度效果。上层渲染灰度会覆盖下层子组件渲染。未设置时，默认无变化。与[grayscale](ts-universal-attributes-image-effect.md#grayscale)相比，grayscale参数新增了对undefined类型的支持。
 
 **卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -198,15 +192,13 @@ grayscale(grayscale: Optional<number>): T
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## brightness
 
-PhonePC/2in1TabletTVWearable
-
 brightness(value: number): T
 
-为组件添加高光效果。不通过该接口设置时，默认无变化。
+为组件添加高光效果。未设置时，默认无变化。与lightUpEffect方法相比，brightness以乘数方式调节亮度（值大于1可超过原始亮度），适合需要增强或减弱亮度的场景；lightUpEffect以程度方式调节亮度（值范围[0,1]，不能超过原始亮度），适合需要控制图像亮起程度的场景。当组件设置了BlendApplyType.OFFSCREEN的blendMode时，该接口可能无法截取到正确画面。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -224,19 +216,19 @@ brightness(value: number): T
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## brightness18+
 
-PhonePC/2in1TabletTVWearable
-
 brightness(brightness: Optional<number>): T
 
-为组件添加高光效果。不通过该接口设置时，默认无变化。与[brightness](ts-universal-attributes-image-effect.md#brightness)相比，brightness参数新增了对undefined类型的支持。
+为组件添加高光效果。未设置时，默认无变化。与[brightness](ts-universal-attributes-image-effect.md#brightness)相比，brightness参数新增了对undefined类型的支持。
 
 **卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -250,15 +242,13 @@ brightness(brightness: Optional<number>): T
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## saturate
 
-PhonePC/2in1TabletTVWearable
-
 saturate(value: number): T
 
-为组件添加饱和度效果。不通过该接口设置时，默认无变化。
+为组件添加饱和度效果。未设置时，默认无变化。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -270,25 +260,25 @@ saturate(value: number): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | 是 | 为当前组件添加饱和度效果，饱和度为颜色中的含色成分和消色成分(灰)的比例，入参为1时，显示原图像，大于1时含色成分越大，饱和度越大，小于1时消色成分越大，饱和度越小。  推荐取值范围：[0, 50)  **说明：**  设置小于0的值时，按值为0处理。 |
+| value | number | 是 | 为当前组件添加饱和度效果，饱和度为颜色中的含色成分和消色成分（灰）的比例，入参为1时，显示原图像，大于1时含色成分越大，饱和度越大，小于1时消色成分越大，饱和度越小。  取值范围：[0, +∞)  推荐取值范围：[0, 50)  **说明：**  设置小于0的值时，按值为0处理。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## saturate18+
 
-PhonePC/2in1TabletTVWearable
-
 saturate(saturate: Optional<number>): T
 
-为组件添加饱和度效果。不通过该接口设置时，默认无变化。与[saturate](ts-universal-attributes-image-effect.md#saturate)相比，saturate参数新增了对undefined类型的支持。
+为组件添加饱和度效果。未设置时，默认无变化。与[saturate](ts-universal-attributes-image-effect.md#saturate)相比，saturate参数新增了对undefined类型的支持。
 
 **卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -296,21 +286,19 @@ saturate(saturate: Optional<number>): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| saturate | [Optional](ts-universal-attributes-custom-property.md#optionalt)<number> | 是 | 为当前组件添加饱和度效果，饱和度为颜色中的含色成分和消色成分(灰)的比例，入参为1时，显示原图像，大于1时含色成分越大，饱和度越大，小于1时消色成分越大，饱和度越小。  推荐取值范围：[0, 50)  **说明：**  设置小于0的值时，按值为0处理。  当saturate的值为undefined时。恢复为饱和度为1的效果。 |
+| saturate | [Optional](ts-universal-attributes-custom-property.md#optionalt)<number> | 是 | 为当前组件添加饱和度效果，饱和度为颜色中的含色成分和消色成分（灰）的比例，入参为1时，显示原图像，大于1时含色成分越大，饱和度越大，小于1时消色成分越大，饱和度越小。  取值范围：[0, +∞)  推荐取值范围：[0, 50)  **说明：**  设置小于0的值时，按值为0处理。  当saturate的值为undefined时，恢复为饱和度为1的效果。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## contrast
 
-PhonePC/2in1TabletTVWearable
-
 contrast(value: number): T
 
-为组件添加对比度效果。不通过该接口设置时，默认无变化。
+为组件添加对比度效果。未设置时，默认无变化。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -322,25 +310,25 @@ contrast(value: number): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | 是 | 为当前组件添加对比度效果，入参为对比度的值。值为1时，显示原图，大于1时，值越大对比度越高，图像越清晰醒目，小于1时，值越小对比度越低，当对比度为0时，图像变为全灰。  推荐取值范围：[0, 10)  **说明：**  设置小于0的值时，按值为0处理。 |
+| value | number | 是 | 为当前组件添加对比度效果，入参为对比度的值。值为1时，显示原图，大于1时，值越大对比度越高，图像越清晰醒目，小于1时，值越小对比度越低，当对比度为0时，图像变为全灰。  取值范围：[0, +∞)  推荐取值范围：[0, 10)  **说明：**  设置小于0的值时，按值为0处理。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## contrast18+
 
-PhonePC/2in1TabletTVWearable
-
 contrast(contrast: Optional<number>): T
 
-为组件添加对比度效果。不通过该接口设置时，默认无变化。与[contrast](ts-universal-attributes-image-effect.md#contrast)相比，contrast参数新增了对undefined类型的支持。
+为组件添加对比度效果。未设置时，默认无变化。与[contrast](ts-universal-attributes-image-effect.md#contrast)相比，contrast参数新增了对undefined类型的支持。
 
 **卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -348,17 +336,15 @@ contrast(contrast: Optional<number>): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| contrast | [Optional](ts-universal-attributes-custom-property.md#optionalt)<number> | 是 | 为当前组件添加对比度效果，入参为对比度的值。值为1时，显示原图，大于1时，值越大对比度越高，图像越清晰醒目，小于1时，值越小对比度越低，当对比度为0时，图像变为全灰。  推荐取值范围：[0, 10)  **说明：**  设置小于0的值时，按值为0处理。  当contrast的值为undefined时，恢复为对比度为1的效果。 |
+| contrast | [Optional](ts-universal-attributes-custom-property.md#optionalt)<number> | 是 | 为当前组件添加对比度效果，入参为对比度的值。值为1时，显示原图，大于1时，值越大对比度越高，图像越清晰醒目，小于1时，值越小对比度越低，当对比度为0时，图像变为全灰。  取值范围：[0, +∞)  推荐取值范围：[0, 10)  **说明：**  设置小于0的值时，按值为0处理。  当contrast的值为undefined时，恢复为对比度为1的效果。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## invert
-
-PhonePC/2in1TabletTVWearable
 
 invert(value: number | InvertOptions): T
 
@@ -374,17 +360,15 @@ invert(value: number | InvertOptions): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | [InvertOptions](ts-universal-attributes-image-effect.md#invertoptions11对象说明)11+ | 是 | 反转输入的图像。  入参对象为number时。入参为图像反转的比例，值为1时完全反转，值为0则图像无变化。  取值范围：[0, 1]。  设置小于0的值时，按值为0处理。设置大于1的值时，按值为1处理。  入参对象为 InvertOptions时，对比背景颜色灰度值和阈值区间，背景颜色灰度值小于阈值区间时反色取high值，当背景颜色灰度值大于阈值区间时反色取low值，背景颜色灰度值在阈值区间内取值由high线性渐变到low。  **说明：**  number和InvertOptions两种形式的入参对应不同的反转效果。两种类型的入参切换时，不会清除之前已设置的反转效果，两种反转效果会同时存在，建议始终使用同一种形式的入参。 |
+| value | number | [InvertOptions](ts-universal-attributes-image-effect.md#invertoptions11对象说明)11+ | 是 | 反转输入的图像。  入参对象为number时，入参为图像反转的比例，值为1时完全反转，值为0则图像无变化。  取值范围：[0, 1]。  设置小于0的值时，按值为0处理。设置大于1的值时，按值为1处理。  入参对象为 InvertOptions时，对比背景颜色灰度值和阈值区间，背景颜色灰度值小于阈值区间时反色取high值，当背景颜色灰度值大于阈值区间时反色取low值，背景颜色灰度值在阈值区间内取值由high线性渐变到low。  **说明：**  number和InvertOptions两种形式的入参对应不同的反转效果。两种类型的入参切换时，不会清除之前已设置的反转效果，两种反转效果会同时存在，建议始终使用同一种形式的入参。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## invert18+
-
-PhonePC/2in1TabletTVWearable
 
 invert(options: Optional<number | InvertOptions>): T
 
@@ -394,23 +378,23 @@ invert(options: Optional<number | InvertOptions>): T
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [Optional](ts-universal-attributes-custom-property.md#optionalt)<number | [InvertOptions](ts-universal-attributes-image-effect.md#invertoptions11对象说明)11+> | 是 | 反转输入的图像。  入参对象为number时。入参为图像反转的比例，值为1时完全反转，值为0则图像无变化。  取值范围：[0, 1]。  设置小于0的值时，按值为0处理。设置大于1的值时，按值为1处理。  入参对象为 InvertOptions时，对比背景颜色灰度值和阈值区间，背景颜色灰度值小于阈值区间时反色取high值，当背景颜色灰度值大于阈值区间时反色取low值，背景颜色灰度值在阈值区间内取值由high线性渐变到low。  当options的值为undefined时，恢复为图像无变化的效果。  **说明：**  number和InvertOptions两种形式的入参对应不同的反转效果。两种类型的入参切换时，不会清除之前已设置的反转效果，两种反转效果会同时存在，建议始终使用同一种形式的入参。 |
+| options | [Optional](ts-universal-attributes-custom-property.md#optionalt)<number | [InvertOptions](ts-universal-attributes-image-effect.md#invertoptions11对象说明)> | 是 | 反转输入的图像。  入参对象为number时，入参为图像反转的比例，值为1时完全反转，值为0则图像无变化。  取值范围：[0, 1]。  设置小于0的值时，按值为0处理。设置大于1的值时，按值为1处理。  入参对象为 InvertOptions时，对比背景颜色灰度值和阈值区间，背景颜色灰度值小于阈值区间时反色取high值，当背景颜色灰度值大于阈值区间时反色取low值，背景颜色灰度值在阈值区间内取值由high线性渐变到low。  当options的值为undefined时，恢复为图像无变化的效果。  **说明：**  number和InvertOptions两种形式的入参对应不同的反转效果。两种类型的入参切换时，不会清除之前已设置的反转效果，两种反转效果会同时存在，建议始终使用同一种形式的入参。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## sepia
-
-PhonePC/2in1TabletTVWearable
 
 sepia(value: number): T
 
@@ -432,11 +416,9 @@ sepia(value: number): T
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## sepia18+
-
-PhonePC/2in1TabletTVWearable
 
 sepia(sepia: Optional<number>): T
 
@@ -446,27 +428,27 @@ sepia(sepia: Optional<number>): T
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| sepia | [Optional](ts-universal-attributes-custom-property.md#optionalt)<number> | 是 | 将图像转换为深褐色，降低色彩度，产生温暖复古的图像风格。入参为褐色滤镜强度，值为1则完全是深褐色的，值小于等于0则图像无变化，值大于1会进一步放大色彩偏移比例，图像整体会变得更亮且色彩更加偏黄/偏红，但不属于标准sepia效果。  当sepia的值为undefined时，恢复为图像无变化的效果。  取值范围：[0, +∞)，推荐取值范围：(0, 1]。 |
+| sepia | [Optional](ts-universal-attributes-custom-property.md#optionalt)<number> | 是 | 将图像转换为深褐色，降低色彩度，产生温暖复古的图像风格。入参为褐色滤镜强度，值为1则完全是深褐色的，值小于等于0则图像无变化，值大于1会进一步放大色彩偏移比例，图像整体会变得更亮且色彩更加偏黄/偏红，但不属于标准sepia效果。  取值范围：[0, +∞)，推荐取值范围：(0, 1]。  当sepia的值为undefined时，恢复为图像无变化的效果。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## hueRotate
 
-PhonePC/2in1TabletTVWearable
-
 hueRotate(value: number | string): T
 
-色相旋转效果。不通过该接口设置时，默认无变化。
+色相旋转效果。未设置时，默认无变化。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -478,25 +460,25 @@ hueRotate(value: number | string): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | string | 是 | 色相旋转效果，输入参数为旋转角度。  取值范围：(-∞, +∞)  **说明：**  色调旋转360度会显示原始颜色。先将色调旋转180 度，然后再旋转-180度会显示原始颜色。数据类型为number时，值为90和'90deg'效果一致。 |
+| value | number | string | 是 | 色相旋转效果，输入参数为旋转角度。  单位：度（°）  取值范围：(-∞, +∞)  **说明：**  色相旋转360度会显示原始颜色。先将色相旋转180度，然后再旋转-180度会显示原始颜色。数据类型为number时，值为90和'90deg'效果一致。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## hueRotate18+
 
-PhonePC/2in1TabletTVWearable
-
 hueRotate(rotation: Optional<number | string>): T
 
-色相旋转效果。不通过该接口设置时，默认无变化。与[hueRotate](ts-universal-attributes-image-effect.md#huerotate)相比，rotation参数新增了对undefined类型的支持。
+色相旋转效果。未设置时，默认无变化。与[hueRotate](ts-universal-attributes-image-effect.md#huerotate)相比，rotation参数新增了对undefined类型的支持。
 
 **卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -504,17 +486,15 @@ hueRotate(rotation: Optional<number | string>): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| rotation | [Optional](ts-universal-attributes-custom-property.md#optionalt)<number | string> | 是 | 色相旋转效果，输入参数为旋转角度。  取值范围：(-∞, +∞)  string需为数值字符串类型。  **说明：**  色调旋转360度会显示原始颜色。先将色调旋转180 度，然后再旋转-180度会显示原始颜色。数据类型为number时，值为90和'90deg'效果一致。  当rotation的值为undefined时，恢复为无色相旋转的效果。 |
+| rotation | [Optional](ts-universal-attributes-custom-property.md#optionalt)<number | string> | 是 | 色相旋转效果，输入参数为旋转角度。单位为度（°）  取值范围：(-∞, +∞)  string需为数值字符串类型。  **说明：**  色相旋转360度会显示原始颜色。先将色相旋转180度，然后再旋转-180度会显示原始颜色。数据类型为number时，值为90和'90deg'效果一致。  当rotation的值为undefined时，恢复为无色相旋转的效果。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## colorBlend
-
-PhonePC/2in1TabletTVWearable
 
 colorBlend(value: Color | string | Resource): T
 
@@ -530,21 +510,21 @@ colorBlend(value: Color | string | Resource): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Color](ts-appendix-enums.md#color) | string | [Resource](ts-types.md#resource) | 是 | 为当前组件添加颜色叠加效果，入参为叠加的颜色字符串。取值可为string类型，如'0x000000'，'rgba(0,0,0,1)'。 |
+| value | [Color](ts-appendix-enums.md#color) | string | [Resource](ts-types.md#resource) | 是 | 为当前组件添加颜色叠加效果，入参为叠加的颜色。取值可为Color类型、string类型或Resource类型，如使用Color.Green，或string类型如'0x000000'、'rgba(0,0,0,1)'。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## colorBlend18+
-
-PhonePC/2in1TabletTVWearable
 
 colorBlend(color: Optional<Color | string | Resource>): T
 
 为组件添加颜色叠加效果。与[colorBlend](ts-universal-attributes-image-effect.md#colorblend)相比，color参数新增了对undefined类型的支持。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -556,23 +536,23 @@ colorBlend(color: Optional<Color | string | Resource>): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| color | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[Color](ts-appendix-enums.md#color) | string | [Resource](ts-types.md#resource)> | 是 | 为当前组件添加颜色叠加效果，入参为叠加的颜色。取值可为string类型，如'0x000000'，'rgba(0,0,0,1)'。  当color的值为undefined时，恢复为无颜色叠加的效果。 |
+| color | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[Color](ts-appendix-enums.md#color) | string | [Resource](ts-types.md#resource)> | 是 | 为当前组件添加颜色叠加效果，入参为叠加的颜色。取值可为Color枚举值、string类型（如'0x000000'、'rgba(0,0,0,1)'）或Resource资源引用。  当color的值为undefined时，恢复为无颜色叠加的效果。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## linearGradientBlur12+
 
-PhonePC/2in1TabletTVWearable
-
 linearGradientBlur(value: number, options: LinearGradientBlurOptions): T
 
-为组件添加内容线性渐变模糊效果。
+为组件添加内容线性渐变模糊效果。当组件设置了BlendApplyType.OFFSCREEN的blendMode时，该接口可能无法截取到正确画面。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -580,18 +560,16 @@ linearGradientBlur(value: number, options: LinearGradientBlurOptions): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | 是 | 为模糊半径，模糊半径越大越模糊，为0时不模糊。  取值范围：[0, 1000] |
+| value | number | 是 | 模糊半径，模糊半径越大越模糊，为0时不模糊。  单位：px  取值范围：[0, 1000] |
 | options | [LinearGradientBlurOptions](ts-universal-attributes-image-effect.md#lineargradientbluroptions12) | 是 | 设置线性渐变模糊效果。  线性渐变参数，包含模糊程度和模糊位置数组fractionStops，及渐变模糊方向direction。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## linearGradientBlur18+
-
-PhonePC/2in1TabletTVWearable
 
 linearGradientBlur(blurRadius: Optional<number>, options: Optional<LinearGradientBlurOptions>): T
 
@@ -599,32 +577,34 @@ linearGradientBlur(blurRadius: Optional<number>, options: Optional<LinearGradien
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| blurRadius | [Optional](ts-universal-attributes-custom-property.md#optionalt)<number> | 是 | 为模糊半径，模糊半径越大越模糊，为0时不模糊。  取值范围：[0, 1000]  当blurRadius的值为undefined时，恢复为渐变模糊为0的效果。 |
-| options | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[LinearGradientBlurOptions](ts-universal-attributes-image-effect.md#lineargradientbluroptions12)> | 是 | 设置线性渐变模糊效果。  线性渐变参数，包含模糊程度和模糊位置数组fractionStops，及渐变模糊方向direction。 |
+| blurRadius | [Optional](ts-universal-attributes-custom-property.md#optionalt)<number> | 是 | 模糊半径，模糊半径越大越模糊，为0时不模糊。  单位：px  取值范围：[0, 1000]  当blurRadius的值为undefined时，恢复为渐变模糊为0的效果。 |
+| options | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[LinearGradientBlurOptions](ts-universal-attributes-image-effect.md#lineargradientbluroptions12)> | 是 | 设置线性渐变模糊效果。  线性渐变参数，包含模糊程度和模糊位置数组fractionStops，及渐变模糊方向direction。  当options的值为undefined时，恢复为无线性渐变模糊的效果。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## renderGroup10+
 
-PhonePC/2in1TabletTVWearable
-
 renderGroup(value: boolean): T
 
-设置是否组成节点组。节点组表示当前组件和子组件组成的子树先在离屏画布中渲染，再与父组件融合绘制。设置为节点组后，系统会缓存绘制结果，提升性能。但如果节点组内的组件频繁更新，缓存失效，可能导致性能下降。此外，设置为节点组后，当前组件的不透明度不为1时，绘制效果可能有差异。
+设置是否组成节点组。节点组表示当前组件和子组件组成的子树先在离屏画布中渲染，再与父组件融合绘制。设置为节点组后，系统会缓存绘制结果，提升性能。与[freeze](ts-universal-attributes-image-effect.md#freeze12)方法相比，renderGroup允许组件属性继续更新（但频繁更新会导致缓存失效），适合需要动态更新且希望缓存优化的场景；freeze完全停止内部属性更新，适合静态内容的稳定缓存优化。但如果节点组内的组件频繁更新，缓存失效，可能导致性能下降。此外，设置为节点组后，当前组件的不透明度不为1时，绘制效果可能有差异。
 
 不设置该属性时，默认不组成节点组。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -640,21 +620,25 @@ renderGroup(value: boolean): T
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## renderGroup18+
-
-PhonePC/2in1TabletTVWearable
 
 renderGroup(isGroup: Optional<boolean>): T
 
 设置是否组成节点组。节点组表示当前组件和子组件组成的子树先在离屏画布中渲染，再与父组件融合绘制。设置为节点组后，系统会缓存绘制结果，提升性能。但如果节点组内的组件频繁更新，缓存失效，可能导致性能下降。此外，设置为节点组后，当前组件的不透明度不为1时，绘制效果可能有差异。
+
+**说明** 
+
+与[freeze](ts-universal-attributes-image-effect.md#freeze12)不同，renderGroup在缓存绘制结果后仍允许内部属性更新（更新时缓存失效），适用于组件需要动态更新的场景；freeze则完全停止内部属性更新，适用于组件内容稳定不需要更新的场景。
 
 与[renderGroup10+](ts-universal-attributes-image-effect.md#rendergroup10)相比，isGroup参数新增了对undefined类型的支持。
 
 不设置该属性时，默认不组成节点组。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -670,11 +654,9 @@ renderGroup(isGroup: Optional<boolean>): T
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## blendMode11+
-
-PhonePC/2in1TabletTVWearable
 
 blendMode(value: BlendMode, type?: BlendApplyType): T
 
@@ -684,6 +666,8 @@ blendMode(value: BlendMode, type?: BlendApplyType): T
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -691,17 +675,15 @@ blendMode(value: BlendMode, type?: BlendApplyType): T
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [BlendMode](ts-universal-attributes-image-effect.md#blendmode11枚举说明) | 是 | 混合模式。  默认值：BlendMode.NONE  **说明：**  混合模式设置为BlendMode.NONE时，blend效果实际为默认的BlendMode.SRC\_OVER，且BlendApplyType不生效。 |
-| type | [BlendApplyType](ts-universal-attributes-image-effect.md#blendapplytype11枚举说明) | 否 | blendMode实现方式是否离屏。  默认值：BlendApplyType.FAST  **说明：**  1. 设置BlendApplyType.FAST时，不离屏。  2. 设置BlendApplyType.OFFSCREEN时，会创建当前组件大小的离屏画布，再将当前组件（含子组件）的内容绘制到离屏画布上，再用指定的混合模式与下方画布已有内容进行混合。使用该实现方式时，将导致[linearGradientBlur12+](ts-universal-attributes-image-effect.md#lineargradientblur12)、[backgroundEffect](ts-universal-attributes-background.md#backgroundeffect11)、[brightness](ts-universal-attributes-image-effect.md#brightness)、[blur](ts-universal-attributes-image-effect.md#blur)等需要截屏的接口无法截取到正确的画面。 |
+| type | [BlendApplyType](ts-universal-attributes-image-effect.md#blendapplytype11枚举说明) | 否 | blendMode实现方式是否离屏。  默认值：BlendApplyType.FAST  **说明：**  1. 设置BlendApplyType.FAST时，不离屏。  2. 设置BlendApplyType.OFFSCREEN时，会创建当前组件大小的离屏画布，再将当前组件（含子组件）的内容绘制到离屏画布上，再用指定的混合模式与下方画布已有内容进行混合。使用该实现方式时，将导致[linearGradientBlur12+](ts-universal-attributes-image-effect.md#lineargradientblur12)、[backgroundEffect](ts-universal-attributes-background.md#backgroundeffect11)、[brightness](ts-universal-attributes-image-effect.md#brightness)、[blur](ts-universal-attributes-image-effect.md#blur)等需要截屏的接口无法截取到正确的画面。  3. 混合模式设置为BlendMode.NONE时，BlendApplyType不生效。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## blendMode18+
-
-PhonePC/2in1TabletTVWearable
 
 blendMode(mode: Optional<BlendMode>, type?: BlendApplyType): T
 
@@ -711,6 +693,8 @@ blendMode(mode: Optional<BlendMode>, type?: BlendApplyType): T
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -718,23 +702,23 @@ blendMode(mode: Optional<BlendMode>, type?: BlendApplyType): T
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[BlendMode](ts-universal-attributes-image-effect.md#blendmode11枚举说明)> | 是 | 混合模式。  默认值：BlendMode.NONE  当mode的值为undefined时，恢复为内容不进行混合的效果。  **说明：**  混合模式设置为BlendMode.NONE时，blend效果实际为默认的BlendMode.SRC\_OVER，且BlendApplyType不生效。 |
-| type | [BlendApplyType](ts-universal-attributes-image-effect.md#blendapplytype11枚举说明) | 否 | blendMode实现方式是否离屏。  默认值：BlendApplyType.FAST  **说明：**  1. 设置BlendApplyType.FAST时，不离屏。  2. 设置BlendApplyType.OFFSCREEN时，会创建当前组件大小的离屏画布，再将当前组件（含子组件）的内容绘制到离屏画布上，再用指定的混合模式与下方画布已有内容进行混合。使用该实现方式时，将导致[linearGradientBlur12+](ts-universal-attributes-image-effect.md#lineargradientblur12)、[backgroundEffect](ts-universal-attributes-background.md#backgroundeffect11)、[brightness](ts-universal-attributes-image-effect.md#brightness)、[blur](ts-universal-attributes-image-effect.md#blur)等需要截屏的接口无法截取到正确的画面。 |
+| type | [BlendApplyType](ts-universal-attributes-image-effect.md#blendapplytype11枚举说明) | 否 | blendMode实现方式是否离屏。  默认值：BlendApplyType.FAST  **说明：**  1. 设置BlendApplyType.FAST时，不离屏。  2. 设置BlendApplyType.OFFSCREEN时，会创建当前组件大小的离屏画布，再将当前组件（含子组件）的内容绘制到离屏画布上，再用指定的混合模式与下方画布已有内容进行混合。使用该实现方式时，将导致[linearGradientBlur12+](ts-universal-attributes-image-effect.md#lineargradientblur12)、[backgroundEffect](ts-universal-attributes-background.md#backgroundeffect11)、[brightness](ts-universal-attributes-image-effect.md#brightness)、[blur](ts-universal-attributes-image-effect.md#blur)等需要截屏的接口无法截取到正确的画面。  3. 混合模式设置为BlendMode.NONE时，BlendApplyType不生效。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## BlendApplyType11+枚举说明
-
-PhonePC/2in1TabletTVWearable
 
 指示如何将指定的混合模式应用于视图的内容。
 
 **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -745,13 +729,13 @@ PhonePC/2in1TabletTVWearable
 
 ## useShadowBatching11+
 
-PhonePC/2in1TabletTVWearable
-
 useShadowBatching(value: boolean): T
 
-控件内部子节点的阴影进行同层绘制，同层元素阴影重叠。
+控件内部子节点的阴影是否进行同层绘制，控制同层元素阴影重叠效果。需配合[shadow](ts-universal-attributes-image-effect.md#shadow)方法使用，当子节点已通过shadow()设置阴影时，useShadowBatching可控制这些阴影是否进行同层绘制。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -767,17 +751,17 @@ useShadowBatching(value: boolean): T
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## useShadowBatching18+
 
-PhonePC/2in1TabletTVWearable
-
 useShadowBatching(use: Optional<boolean>): T
 
-控件内部子节点的阴影进行同层绘制，同层元素阴影重叠。与[useShadowBatching11+](ts-universal-attributes-image-effect.md#useshadowbatching11)相比，use参数新增了对undefined类型的支持。
+控件内部子节点的阴影是否进行同层绘制，同层绘制时子节点阴影不会产生重叠覆盖效果。需配合[shadow](ts-universal-attributes-image-effect.md#shadow)方法使用，当子节点设置了shadow效果时，useShadowBatching可控制子节点阴影进行同层绘制，实现同层阴影不重叠效果。调用顺序：先在子节点上设置shadow属性，再在父容器上设置useShadowBatching(true)。与[useShadowBatching11+](ts-universal-attributes-image-effect.md#useshadowbatching11)相比，use参数新增了对undefined类型的支持。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -793,41 +777,41 @@ useShadowBatching(use: Optional<boolean>): T
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## sphericalEffect12+
 
-PhonePC/2in1TabletTVWearable
-
 sphericalEffect(value: number): T
 
-设置组件的图像球面化程度。
+设置组件的图像球面化程度。球面化效果将组件内容映射到球面曲面上，使图像呈现出类似球体的立体视觉效果，值越大球面弧度越高、立体感越强。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | 是 | 设置组件的图像球面化程度。  取值范围：[0,1]。  **说明：**  1. 如果value等于0则图像保持原样，如果value等于1则图像为完全球面化效果。在0和1之间，数值越大，则球面化程度越高。  value < 0 或者 value > 1为异常情况，value < 0按0处理，value > 1按1处理。  2. 组件阴影和外描边不支持球面效果。  3. 设置value大于0时，组件冻屏并且把组件内容绘制到透明离屏buffer上，如果要更新组件属性则需要把value设置为0。 |
+| value | number | 是 | 设置组件的图像球面化程度。球面化效果将组件内容映射到球面曲面上，使图像呈现出类似球体的立体视觉效果，值越大球面弧度越高、立体感越强。  取值范围：[0,1]。  **说明：**  1. 如果value等于0则图像保持原样，如果value等于1则图像为完全球面化效果。在0和1之间，数值越大，则球面化程度越高。  value < 0或者value > 1为异常情况，value < 0按0处理，value > 1按1处理。  2. 组件阴影和外描边不支持球面效果。  3. 设置value大于0时，组件冻屏并且把组件内容绘制到透明离屏buffer上，如果要更新组件属性则需要把value设置为0。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## sphericalEffect18+
 
-PhonePC/2in1TabletTVWearable
-
 sphericalEffect(effect: Optional<number>): T
 
-设置组件的图像球面化程度。与[sphericalEffect12+](ts-universal-attributes-image-effect.md#sphericaleffect12)相比，effect参数新增了对undefined类型的支持。
+设置组件的图像球面化程度。球面化效果将组件内容映射到球面曲面上，使图像呈现出类似球体的立体视觉效果，值越大球面弧度越高、立体感越强。与[sphericalEffect12+](ts-universal-attributes-image-effect.md#sphericaleffect12)相比，effect参数新增了对undefined类型的支持。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -835,23 +819,23 @@ sphericalEffect(effect: Optional<number>): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| effect | [Optional](ts-universal-attributes-custom-property.md#optionalt)<number> | 是 | 设置组件的图像球面化程度。  取值范围：[0,1]。  **说明：**  1. 如果value等于0则图像保持原样，如果value等于1则图像为完全球面化效果。在0和1之间，数值越大，则球面化程度越高。  effect < 0 或者 effect > 1为异常情况，effect < 0按0处理，effect > 1按1处理。  2. 组件阴影和外描边不支持球面效果。  3. 设置effect大于0时，组件冻屏并且把组件内容绘制到透明离屏buffer上，如果要更新组件属性则需要把effect设置为0。  当effect的值为undefined时，恢复为图像球面化程度为0的效果。 |
+| effect | [Optional](ts-universal-attributes-custom-property.md#optionalt)<number> | 是 | 设置组件的图像球面化程度。球面化效果将组件内容映射到球面曲面上，使图像呈现出类似球体的立体视觉效果，值越大球面弧度越高、立体感越强。  取值范围：[0,1]。  **说明：**  1. 如果effect等于0则图像保持原样，如果effect等于1则图像为完全球面化效果。在0和1之间，数值越大，则球面化程度越高。  effect < 0或者effect > 1为异常情况，effect < 0按0处理，effect > 1按1处理。  2. 组件阴影和外描边不支持球面效果。  3. 设置effect大于0时，组件冻屏并且把组件内容绘制到透明离屏buffer上，如果要更新组件属性则需要把effect设置为0。  当effect的值为undefined时，恢复为图像球面化程度为0的效果。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## lightUpEffect12+
-
-PhonePC/2in1TabletTVWearable
 
 lightUpEffect(value: number): T
 
 设置组件图像亮起程度。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -865,11 +849,9 @@ lightUpEffect(value: number): T
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## lightUpEffect18+
-
-PhonePC/2in1TabletTVWearable
 
 lightUpEffect(degree: Optional<number>): T
 
@@ -877,29 +859,31 @@ lightUpEffect(degree: Optional<number>): T
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| degree | [Optional](ts-universal-attributes-custom-property.md#optionalt)<number> | 是 | 设置组件图像亮起程度。  取值范围：[0,1]。  如果value等于0则图像为全黑，如果value等于1则图像为全亮效果。0到1之间数值越大，表示图像亮度越高。degree < 0 或者 degree > 1为异常情况，degree < 0按0处理，degree > 1按1处理。  当degree的值为undefined时，恢复为亮起为1的效果。 |
+| degree | [Optional](ts-universal-attributes-custom-property.md#optionalt)<number> | 是 | 设置组件图像亮起程度。  取值范围：[0,1]。  如果degree等于0则图像为全黑，如果degree等于1则图像为全亮效果。0到1之间数值越大，表示图像亮度越高。degree < 0 或者 degree > 1为异常情况，degree < 0按0处理，degree > 1按1处理。  当degree的值为undefined时，恢复为亮起为1的效果。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## pixelStretchEffect12+
-
-PhonePC/2in1TabletTVWearable
 
 pixelStretchEffect(options: PixelStretchEffectOptions): T
 
 设置组件的图像边缘像素扩展距离。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -913,17 +897,17 @@ pixelStretchEffect(options: PixelStretchEffectOptions): T
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## pixelStretchEffect18+
-
-PhonePC/2in1TabletTVWearable
 
 pixelStretchEffect(options: Optional<PixelStretchEffectOptions>): T
 
 设置组件的图像边缘像素扩展距离。与[pixelStretchEffect12+](ts-universal-attributes-image-effect.md#pixelstretcheffect12)相比，options参数新增了对undefined类型的支持。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -937,34 +921,34 @@ pixelStretchEffect(options: Optional<PixelStretchEffectOptions>): T
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## PixelStretchEffectOptions10+
-
-PhonePC/2in1TabletTVWearable
 
 像素扩展属性集合，用于描述像素扩展的信息。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| left | [Length](ts-types.md#length) | 否 | 是 | 组件图像左边沿像素扩展距离。  默认值：0vp |
-| right | [Length](ts-types.md#length) | 否 | 是 | 组件图像右边沿像素扩展距离。  默认值：0vp |
-| top | [Length](ts-types.md#length) | 否 | 是 | 组件图像上边沿像素扩展距离。  默认值：0vp |
-| bottom | [Length](ts-types.md#length) | 否 | 是 | 组件图像下边沿像素扩展距离。  默认值：0vp |
+| left | [Length](ts-types.md#length) | 否 | 是 | 组件图像左边沿像素扩展距离。需与right、top、bottom方向保持一致：四个方向的扩展统一为非正值或者非负值，不支持百分比和具体值混用。  默认值：0vp |
+| right | [Length](ts-types.md#length) | 否 | 是 | 组件图像右边沿像素扩展距离。需与left、top、bottom方向保持一致：四个方向的扩展统一为非正值或者非负值，不支持百分比和具体值混用。  默认值：0vp |
+| top | [Length](ts-types.md#length) | 否 | 是 | 组件图像上边沿像素扩展距离。需与left、right、bottom方向保持一致：四个方向的扩展统一为非正值或者非负值，不支持百分比和具体值混用。  默认值：0vp |
+| bottom | [Length](ts-types.md#length) | 否 | 是 | 组件图像下边沿像素扩展距离。需与left、right、top方向保持一致：四个方向的扩展统一为非正值或者非负值，不支持百分比和具体值混用。  默认值：0vp |
 
 ## systemBarEffect12+
 
-PhonePC/2in1TabletTVWearable
-
 systemBarEffect(): T
 
-根据背景进行智能反色并且带有模糊效果。
+根据背景颜色自动判断反色区域和反色程度，并叠加模糊效果。智能反色基于背景内容的颜色与亮度特征自动确定反色策略，使组件在不同背景下保持内容可视性；模糊效果对背景内容进行模糊处理，增强系统栏与背景的视觉融合效果。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -972,26 +956,24 @@ systemBarEffect(): T
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## ShadowType10+枚举说明
-
-PhonePC/2in1TabletTVWearable
 
 阴影类型。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| COLOR | 0 | 颜色。 |
-| BLUR | 1 | 模糊。 |
+| COLOR | 0 | 颜色阴影，基于指定颜色值绘制阴影效果。 |
+| BLUR | 1 | 模糊阴影，基于组件内容模糊绘制阴影效果。 |
 
 ## ShadowOptions对象说明
-
-PhonePC/2in1TabletTVWearable
 
 阴影属性集合，用于设置阴影的模糊半径、阴影的颜色、X轴和Y轴的偏移量。
 
@@ -999,20 +981,20 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| radius | number | [Resource](ts-types.md#resource) | 否 | 否 | 阴影模糊半径。  取值范围：[0, +∞)  单位：px  **说明：**  设置小于0的值时，按值为0处理。  如需使用vp单位的数值可用[vp2px](arkts-apis-uicontext-uicontext.md#vp2px12)进行转换。  如果radius为Resource类型，则传入的值需为number类型。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。 |
-| type10+ | [ShadowType](ts-universal-attributes-image-effect.md#shadowtype10枚举说明) | 否 | 是 | 阴影类型。  默认值：COLOR  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| color | [Color](ts-appendix-enums.md#color) | string | [Resource](ts-types.md#resource)| [ColoringStrategy11+](ts-appendix-enums.md#coloringstrategy10) | 否 | 是 | 阴影的颜色。  默认为黑色。  **说明：**  从API version 11开始，该接口支持使用ColoringStrategy实现智能取色，智能取色功能不支持在ArkTS卡片、[textShadow](ts-basic-components-text.md#textshadow10)中使用。  当前仅支持平均取色和主色取色，智能取色区域为shadow绘制区域。  支持使用'average'字符串触发智能平均取色模式，支持使用'primary'字符串触发智能主色模式。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。 |
+| radius | number | [Resource](ts-types.md#resource) | 否 | 否 | 阴影模糊半径。  取值范围：[0, +∞)，API版本26.0.0开始取值范围变更为(-∞, +∞)  单位：px  **说明：**  API版本26.0.0之前，设置小于0的值时，按值为0处理，此时不绘制阴影；从API版本26.0.0开始，设置的值即为最终取值，值为0时仍绘制阴影，设置负数值时不绘制阴影。  如需使用vp单位的数值可用[vp2px](arkts-apis-uicontext-uicontext.md#vp2px12)进行转换。  如果radius为Resource类型，则传入的值需为number类型。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。 |
+| type10+ | [ShadowType](ts-universal-attributes-image-effect.md#shadowtype10枚举说明) | 否 | 是 | 阴影类型。  默认值：COLOR  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| color | [Color](ts-appendix-enums.md#color) | string | [Resource](ts-types.md#resource) | [ColoringStrategy](ts-appendix-enums.md#coloringstrategy10)11+ | 否 | 是 | 阴影的颜色。  默认为黑色。  **说明：**  从API version 11开始，该接口支持使用ColoringStrategy实现智能取色，智能取色功能不支持在ArkTS卡片、[textShadow](ts-basic-components-text.md#textshadow10)中使用。  当前仅支持平均取色和主色取色，智能取色区域为shadow绘制区域。  支持使用'average'字符串触发智能平均取色模式，支持使用'primary'字符串触发智能主色模式。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。 |
 | offsetX | number | [Resource](ts-types.md#resource) | 否 | 是 | 阴影的X轴偏移量。  默认值：0  单位：px  **说明：**  如需使用vp单位的数值可用[vp2px](arkts-apis-uicontext-uicontext.md#vp2px12)进行转换。  如果offsetX为Resource类型，则传入的值需为number类型。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。 |
 | offsetY | number | [Resource](ts-types.md#resource) | 否 | 是 | 阴影的Y轴偏移量。  默认值：0  单位：px  **说明：**  如需使用vp单位的数值可用[vp2px](arkts-apis-uicontext-uicontext.md#vp2px12)进行转换。  如果offsetY为Resource类型，则传入的值需为number类型。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。 |
-| fill11+ | boolean | 否 | 是 | 阴影是否内部填充。true表示阴影在内部填充，false表示阴影在外部填充。  默认值：false。  **说明：**  [textShadow](ts-basic-components-text.md#textshadow10)中该字段不生效。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| fill11+ | boolean | 否 | 是 | 阴影是否内部填充。true表示阴影在内部填充，false表示阴影在外部填充。  默认值：false。  **说明：**  [textShadow](ts-basic-components-text.md#textshadow10)中该字段不生效。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## ShadowStyle10+枚举说明
-
-PhonePC/2in1TabletTVWearable
 
 组件阴影效果。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1027,17 +1009,17 @@ PhonePC/2in1TabletTVWearable
 
 ## BlendMode11+枚举说明
 
-PhonePC/2in1TabletTVWearable
-
 混合模式。
 
-说明
+**说明** 
 
 blendMode枚举中，s表示源像素，d表示目标像素，sa表示源像素透明度，da表示目标像素透明度，r表示混合后像素，ra表示混合后像素透明度。
 
 **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1076,26 +1058,26 @@ blendMode枚举中，s表示源像素，d表示目标像素，sa表示源像素�
 
 ## LinearGradientBlurOptions12+
 
-PhonePC/2in1TabletTVWearable
-
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| fractionStops | [FractionStop](ts-universal-attributes-image-effect.md#fractionstop12)[] | 否 | 否 | 数组中保存的每一个二元数组（取值0-1，小于0则为0，大于1则为1）表示[模糊程度, 模糊位置]；模糊位置需严格递增，开发者传入的数据不符合规范会记录日志，渐变模糊数组中二元数组个数必须大于等于2，否则渐变模糊不生效。 |
+| fractionStops | [FractionStop](ts-universal-attributes-image-effect.md#fractionstop12)[] | 否 | 否 | 数组中保存的每一个二元数组（取值0-1，小于0则为0，大于1则为1）表示[模糊分数, 模糊位置]；模糊位置需严格递增，开发者传入的数据不符合规范会记录日志，渐变模糊数组中二元数组个数必须大于等于2，否则渐变模糊不生效。 |
 | direction | [GradientDirection](ts-appendix-enums.md#gradientdirection) | 否 | 否 | 渐变模糊方向。  默认值：  GradientDirection.Bottom |
 
 ## FractionStop12+
-
-PhonePC/2in1TabletTVWearable
 
 type FractionStop = [ number, number ]
 
 定义模糊段。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1105,34 +1087,34 @@ type FractionStop = [ number, number ]
 
 ## InvertOptions11+对象说明
 
-PhonePC/2in1TabletTVWearable
-
-前景智能取反色。
+前景智能取反色。基于灰度阈值区间决定反色取值，参见[invert](ts-universal-attributes-image-effect.md#invert)中的详细机制说明。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| low | number | 否 | 否 | 背景颜色灰度值大于阈值区间时的取值。  取值范围：[0, 1] |
-| high | number | 否 | 否 | 背景颜色灰度值小于阈值区间时的取值。  取值范围：[0, 1] |
-| threshold | number | 否 | 否 | 灰度阈值。  取值范围：[0, 1] |
-| thresholdRange | number | 否 | 否 | 阈值范围。  取值范围：[0, 1]  **说明：**  灰度阈值上下偏移thresholdRange构成阈值区间，背景颜色灰度值在区间内取值由high线性渐变到low。 |
+| low | number | 否 | 否 | 背景颜色灰度值大于阈值区间时的取值。  取值范围：[0, 1]。设置小于0的值时，按值为0处理。设置大于1的值时，按值为1处理。 |
+| high | number | 否 | 否 | 背景颜色灰度值小于阈值区间时的取值。  取值范围：[0, 1]。设置小于0的值时，按值为0处理。设置大于1的值时，按值为1处理。 |
+| threshold | number | 否 | 否 | 灰度阈值。与thresholdRange配合使用，灰度阈值上下偏移thresholdRange构成阈值区间。  取值范围：[0, 1] |
+| thresholdRange | number | 否 | 否 | 阈值范围。  取值范围：[0, 1]。设置小于0的值时，按值为0处理；设置大于1的值时，按值为1处理。  **说明：**  灰度阈值上下偏移thresholdRange构成阈值区间，背景颜色灰度值在区间内取值由high线性渐变到low。 |
 
 ## BackgroundImageOptions18+
 
-PhonePC/2in1TabletTVWearable
-
 定义背景图选项。
 
-说明
+**说明** 
 
 背景图片的同步加载可能会带来潜在性能问题，详情可见[Image](ts-basic-components-image.md#image-1)中说明。
 
 **卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1143,17 +1125,17 @@ PhonePC/2in1TabletTVWearable
 
 ## freeze12+
 
-PhonePC/2in1TabletTVWearable
-
 freeze(value: boolean): T
 
-设置当前控件和子控件是否整体离屏渲染绘制后重复绘制缓存，不再进行内部属性更新。
+设置当前控件和子控件是否整体离屏渲染绘制后重复绘制缓存，不再进行内部属性更新。当freeze设置为true时，组件属性更新将被冻结；若需恢复属性更新，需先将freeze设置为false。
 
-说明
+**说明** 
 
 从API version 20开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1167,21 +1149,21 @@ freeze(value: boolean): T
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## freeze18+
 
-PhonePC/2in1TabletTVWearable
-
 freeze(freeze: Optional<boolean>): T
 
-设置当前控件和子控件是否整体离屏渲染绘制后重复绘制缓存，不再进行内部属性更新。与[freeze](ts-universal-attributes-image-effect.md#freeze12)相比，freeze参数新增了对undefined类型的支持。
+设置当前控件和子控件是否整体离屏渲染绘制后重复绘制缓存，不再进行内部属性更新。当freeze设置为true时，组件属性更新将被冻结；若需恢复属性更新，需先将freeze设置为false。与[freeze](ts-universal-attributes-image-effect.md#freeze12)相比，freeze参数新增了对undefined类型的支持。
 
-说明
+**说明** 
 
 从API version 20开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1195,503 +1177,651 @@ freeze(freeze: Optional<boolean>): T
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
+
+## systemMaterial
+
+systemMaterial(material: SystemUiMaterial | undefined): T
+
+设置组件的系统材质。不同系统材质对应不同的属性影响效果，该接口可以影响背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)、材质层滤镜[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)效果，影响的属性与设备材质等级相关，参考[ImmersiveMaterial](arkts-apis-uimaterial.md#immersivematerial)。[ImmersiveMaterial](arkts-apis-uimaterial.md#immersivematerial)只有在支持沉浸式材质的设备上设置才有效果，在不支持沉浸式材质的设备上可设置但无效果，可通过[isImmersiveMaterialSupported](arkts-apis-uimaterial.md#uimaterialisimmersivematerialsupported)判断设备是否支持沉浸式材质。使用示例请参考[示例1（设置沉浸式系统材质）](arkts-apis-uimaterial.md#示例1设置沉浸式系统材质)。
+
+**说明** 
+
+* 通过该属性设置组件的系统材质时，仅在Navigation或NavDestination的标题栏，或横向Tabs中barPosition为BarPosition.End的底部TabBar中生效。
+* [ImmersiveMaterial](arkts-apis-uimaterial.md#immersivematerial)只有在支持沉浸式材质的设备上设置才有效果，在不支持沉浸式材质的设备上可设置但无效果，可通过[isImmersiveMaterialSupported](arkts-apis-uimaterial.md#uimaterialisimmersivematerialsupported)判断设备是否支持沉浸式材质。在不支持沉浸式材质的设备上，设置ImmersiveMaterial后，组件的样式仍由已设置的通用属性决定，ImmersiveMaterial不会覆盖任何通用属性。
+* 在同时设置了材质影响的通用属性发生冲突时，除阴影外，总体原则为后设置的生效，对于阴影属性取决于[ImmersiveMaterial](arkts-apis-uimaterial.md#immersivematerial)的applyShadow参数。
+
+  + 先设置[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)属性后设置[systemMaterial](ts-universal-attributes-image-effect.md#systemmaterial)属性：backgroundColor属性被覆盖。在支持沉浸式材质的高算力和中算力设备上，背景色属性被清空为透明色；在支持沉浸式材质的低算力设备上，材质自带的背景色效果覆盖了先设置的backgroundColor属性。
+  + 先设置[systemMaterial](ts-universal-attributes-image-effect.md#systemmaterial)属性后设置[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)属性：systemMaterial属性影响的背景色效果被覆盖，背景色属性生效为后设置的backgroundColor属性的颜色。
+* 对于所有设备算力档位均需要材质颜色的场景，可以通过[ImmersiveMaterial](arkts-apis-uimaterial.md#immersivematerial)的materialColor参数承载，不再设置[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)属性。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**卡片能力：** 从API版本26.0.0开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| material | [SystemUiMaterial](ts-universal-attributes-image-effect.md#systemuimaterial) | undefined | 是 | 组件的系统材质对象。设置为undefined时恢复为无材质的效果，若同时设置了材质对象影响的通用属性，会恢复至对应通用属性设置的值，冲突的属性由材质对象决定，参考[ImmersiveMaterial](arkts-apis-uimaterial.md#immersivematerial)。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回当前组件，用于链式调用。 |
+
+## SystemUiMaterial
+
+type SystemUiMaterial = import('../api/@ohos.arkui.uiMaterial').default.Material
+
+系统材质对象基类。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**卡片能力：** 从API版本26.0.0开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+| 类型 | 说明 |
+| --- | --- |
+| import('../api/@ohos.arkui.uiMaterial').default.[Material](arkts-apis-uimaterial.md#material) | 系统材质对象基类。 |
+
+## doubleSided
+
+doubleSided(value: Optional<boolean>): T
+
+是否绘制组件的双面。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**卡片能力：** 从API版本26.0.0开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [Optional](ts-universal-attributes-custom-property.md#optionalt)<boolean> | 是 | 是否绘制组件的双面。  设置为true表示组件的正面和背面都是可见的。  设置为false表示组件的正面是可见的，旋转时组件的背面是不可见的。  设置为undefined时效果和设置为true时保持一致，默认开启双面绘制。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回当前组件，用于链式调用。 |
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 ### 示例1（设置图片不同属性效果）
 
-设置图片的效果，包括阴影，灰度，高光，饱和度，对比度，图像反转，叠色，色相旋转等。
+设置图片的效果，包括阴影、灰度、高光、饱和度、对比度、图像反转、叠色、色相旋转等。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct ImageEffectsExample {
+  build() {
+    Column({ space: 5 }) {
+      // 添加阴影效果，图片效果不变
+      Text('shadow').fontSize(15).fontColor(0xCCCCCC).width('90%')
+      // $r("app.media.image")需要替换为开发者所需的图像资源文件。
+      Image($r('app.media.image'))
+        .width('90%')
+        .height(30)
+        .shadow({
+          radius: 10,
+          color: Color.Green,
+          offsetX: 20,
+          offsetY: 20
+        })
+
+      // 添加内部阴影效果
+      Text('shadow').fontSize(15).fontColor(0xCCCCCC).width('90%')
+      // $r("app.media.image")需要替换为开发者所需的图像资源文件。
+      Image($r('app.media.image'))
+        .width('90%')
+        .height(30)
+        .shadow({
+          radius: 5,
+          color: Color.Green,
+          offsetX: 20,
+          offsetY: 20,
+          fill: true
+        }).opacity(0.5)
+
+      // 灰度效果0~1，越接近1，灰度越明显
+      Text('grayscale').fontSize(15).fontColor(0xCCCCCC).width('90%')
+      // $r("app.media.image")需要替换为开发者所需的图像资源文件。
+      Image($r('app.media.image')).width('90%').height(30).grayscale(0.3)
+      // $r("app.media.image")需要替换为开发者所需的图像资源文件。
+      Image($r('app.media.image')).width('90%').height(30).grayscale(0.8)
+
+      // 高光效果，1为正常图片，<1变暗，>1亮度增大
+      Text('brightness').fontSize(15).fontColor(0xCCCCCC).width('90%')
+      // $r("app.media.image")需要替换为开发者所需的图像资源文件。
+      Image($r('app.media.image')).width('90%').height(30).brightness(1.2)
+
+      // 饱和度，原图为1
+      Text('saturate').fontSize(15).fontColor(0xCCCCCC).width('90%')
+      // $r("app.media.image")需要替换为开发者所需的图像资源文件。
+      Image($r('app.media.image')).width('90%').height(30).saturate(2.0)
+      // $r("app.media.image")需要替换为开发者所需的图像资源文件。
+      Image($r('app.media.image')).width('90%').height(30).saturate(0.7)
+
+      // 对比度，1为原图，>1值越大越清晰，<1值越小越模糊
+      Text('contrast').fontSize(15).fontColor(0xCCCCCC).width('90%')
+      // $r("app.media.image")需要替换为开发者所需的图像资源文件。
+      Image($r('app.media.image')).width('90%').height(30).contrast(2.0)
+      // $r("app.media.image")需要替换为开发者所需的图像资源文件。
+      Image($r('app.media.image')).width('90%').height(30).contrast(0.8)
+
+      // 图像反转比例
+      Text('invert').fontSize(15).fontColor(0xCCCCCC).width('90%')
+      // $r("app.media.image")需要替换为开发者所需的图像资源文件。
+      Image($r('app.media.image')).width('90%').height(30).invert(0.2)
+      // $r("app.media.image")需要替换为开发者所需的图像资源文件。
+      Image($r('app.media.image')).width('90%').height(30).invert(0.8)
+
+      // 叠色添加
+      Text('colorBlend').fontSize(15).fontColor(0xCCCCCC).width('90%')
+      // $r("app.media.image")需要替换为开发者所需的图像资源文件。
+      Image($r('app.media.image')).width('90%').height(30).colorBlend(Color.Green)
+      // $r("app.media.image")需要替换为开发者所需的图像资源文件。
+      Image($r('app.media.image')).width('90%').height(30).colorBlend(Color.Blue)
+
+      // 深褐色
+      Text('sepia').fontSize(15).fontColor(0xCCCCCC).width('90%')
+      // $r("app.media.image")需要替换为开发者所需的图像资源文件。
+      Image($r('app.media.image')).width('90%').height(30).sepia(0.8)
+
+      // 色相旋转
+      Text('hueRotate').fontSize(15).fontColor(0xCCCCCC).width('90%')
+      // $r("app.media.image")需要替换为开发者所需的图像资源文件。
+      Image($r('app.media.image')).width('90%').height(30).hueRotate(90)
+    }.width('100%').margin({ top: 5 })
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct ImageEffectsExample {
-5. build() {
-6. Column({ space: 5 }) {
-7. // 添加阴影效果，图片效果不变
-8. Text('shadow').fontSize(15).fontColor(0xCCCCCC).width('90%')
-9. // $r("app.media.image")需要替换为开发者所需的图像资源文件。
-10. Image($r('app.media.image'))
-11. .width('90%')
-12. .height(30)
-13. .shadow({
-14. radius: 10,
-15. color: Color.Green,
-16. offsetX: 20,
-17. offsetY: 20
-18. })
 
-20. // 添加内部阴影效果
-21. Text('shadow').fontSize(15).fontColor(0xCCCCCC).width('90%')
-22. // $r("app.media.image")需要替换为开发者所需的图像资源文件。
-23. Image($r('app.media.image'))
-24. .width('90%')
-25. .height(30)
-26. .shadow({
-27. radius: 5,
-28. color: Color.Green,
-29. offsetX: 20,
-30. offsetY: 20,
-31. fill: true
-32. }).opacity(0.5)
-
-34. // 灰度效果0~1，越接近1，灰度越明显
-35. Text('grayscale').fontSize(15).fontColor(0xCCCCCC).width('90%')
-36. // $r("app.media.image")需要替换为开发者所需的图像资源文件。
-37. Image($r('app.media.image')).width('90%').height(30).grayscale(0.3)
-38. // $r("app.media.image")需要替换为开发者所需的图像资源文件。
-39. Image($r('app.media.image')).width('90%').height(30).grayscale(0.8)
-
-41. // 高光效果，1为正常图片，<1变暗，>1亮度增大
-42. Text('brightness').fontSize(15).fontColor(0xCCCCCC).width('90%')
-43. // $r("app.media.image")需要替换为开发者所需的图像资源文件。
-44. Image($r('app.media.image')).width('90%').height(30).brightness(1.2)
-
-46. // 饱和度，原图为1
-47. Text('saturate').fontSize(15).fontColor(0xCCCCCC).width('90%')
-48. // $r("app.media.image")需要替换为开发者所需的图像资源文件。
-49. Image($r('app.media.image')).width('90%').height(30).saturate(2.0)
-50. // $r("app.media.image")需要替换为开发者所需的图像资源文件。
-51. Image($r('app.media.image')).width('90%').height(30).saturate(0.7)
-
-53. // 对比度，1为原图，>1值越大越清晰，<1值越小越模糊
-54. Text('contrast').fontSize(15).fontColor(0xCCCCCC).width('90%')
-55. // $r("app.media.image")需要替换为开发者所需的图像资源文件。
-56. Image($r('app.media.image')).width('90%').height(30).contrast(2.0)
-57. // $r("app.media.image")需要替换为开发者所需的图像资源文件。
-58. Image($r('app.media.image')).width('90%').height(30).contrast(0.8)
-
-60. // 图像反转比例
-61. Text('invert').fontSize(15).fontColor(0xCCCCCC).width('90%')
-62. // $r("app.media.image")需要替换为开发者所需的图像资源文件。
-63. Image($r('app.media.image')).width('90%').height(30).invert(0.2)
-64. // $r("app.media.image")需要替换为开发者所需的图像资源文件。
-65. Image($r('app.media.image')).width('90%').height(30).invert(0.8)
-
-67. // 叠色添加
-68. Text('colorBlend').fontSize(15).fontColor(0xCCCCCC).width('90%')
-69. // $r("app.media.image")需要替换为开发者所需的图像资源文件。
-70. Image($r('app.media.image')).width('90%').height(30).colorBlend(Color.Green)
-71. // $r("app.media.image")需要替换为开发者所需的图像资源文件。
-72. Image($r('app.media.image')).width('90%').height(30).colorBlend(Color.Blue)
-
-74. // 深褐色
-75. Text('sepia').fontSize(15).fontColor(0xCCCCCC).width('90%')
-76. // $r("app.media.image")需要替换为开发者所需的图像资源文件。
-77. Image($r('app.media.image')).width('90%').height(30).sepia(0.8)
-
-79. // 色相旋转
-80. Text('hueRotate').fontSize(15).fontColor(0xCCCCCC).width('90%')
-81. // $r("app.media.image")需要替换为开发者所需的图像资源文件。
-82. Image($r('app.media.image')).width('90%').height(30).hueRotate(90)
-83. }.width('100%').margin({ top: 5 })
-84. }
-85. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/za4gyHNSSO2iot_ZUUyF_w/zh-cn_image_0000002589245841.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/q-Kjg3BwRZ2na_aQBDTXCg/zh-cn_image_0000002736434791.png)
 
 ### 示例2（设置组件线性渐变模糊效果）
 
 该示例主要演示通过[linearGradientBlur](ts-universal-attributes-image-effect.md#lineargradientblur12)设置组件的内容线性渐变模糊效果。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct ImageExample1 {
-5. // $r('app.media.testlinearGradientBlurOrigin')需要替换为开发者所需的资源文件。
-6. private_resource1: Resource = $r('app.media.testlinearGradientBlurOrigin')
-7. @State image_src: Resource = this.private_resource1
+```ts
+// xxx.ets
+@Entry
+@Component
+struct LinearGradientBlurExample {
+  // $r('app.media.testlinearGradientBlurOrigin')需要替换为开发者所需的资源文件。
+  privateResource1: Resource = $r('app.media.testlinearGradientBlurOrigin')
+  @State imageSrc: Resource = this.privateResource1
 
-9. build() {
-10. Column() {
-11. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start }) {
-12. Row({ space: 5 }) {
-13. Image(this.image_src)
-14. .blur(0) // 设置图片模糊效果为不模糊
-15. .linearGradientBlur(60,
-16. { fractionStops: [[0, 0], [0, 0.33], [1, 0.66], [1, 1]], direction: GradientDirection.Bottom })
-17. }
-18. }
-19. }
-20. }
-21. }
+  build() {
+    Column() {
+      Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start }) {
+        Row({ space: 5 }) {
+          Image(this.imageSrc)
+            .blur(0) // 设置图片模糊效果为不模糊
+            .linearGradientBlur(60,
+              { fractionStops: [[0, 0], [0, 0.33], [1, 0.66], [1, 1]], direction: GradientDirection.Bottom })
+        }
+      }
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/Wxx6c2QoQMGDwxH416og3A/zh-cn_image_0000002558766032.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/68pDGeUhTmCeZTAj6MqEKw/zh-cn_image_0000002706835644.png)
 
 ### 示例3（设置离屏渲染效果）
 
 该示例主要演示通过[renderGroup](ts-universal-attributes-image-effect.md#rendergroup10)来设置组件是否先整体离屏渲染绘制后，再与父组件融合绘制。
 
+```ts
+// xxx.ets
+@Component
+struct RenderGroupChildComponent {
+  @Prop renderGroupValue: boolean;
+
+  build() {
+    Row() {
+      Row() {
+        Row()
+          .backgroundColor(Color.Black)
+          .width(100)
+          .height(100)
+          .opacity(1)
+      }
+      .backgroundColor(Color.White)
+      .width(150)
+      .height(150)
+      .justifyContent(FlexAlign.Center)
+      .opacity(0.6)
+      .renderGroup(this.renderGroupValue)
+    }
+    .backgroundColor(Color.Black)
+    .width(200)
+    .height(200)
+    .justifyContent(FlexAlign.Center)
+    .opacity(1)
+  }
+}
+
+@Entry
+@Component
+struct RenderGroupExample {
+  build() {
+    Column() {
+      RenderGroupChildComponent({ renderGroupValue: true })
+        .margin(20)
+      RenderGroupChildComponent({ renderGroupValue: false })
+        .margin(20)
+    }
+    .width("100%")
+    .height("100%")
+    .alignItems(HorizontalAlign.Center)
+  }
+}
 ```
-1. // xxx.ets
-2. @Component
-3. struct Component1 {
-4. @Prop renderGroupValue: boolean;
 
-6. build() {
-7. Row() {
-8. Row() {
-9. Row()
-10. .backgroundColor(Color.Black)
-11. .width(100)
-12. .height(100)
-13. .opacity(1)
-14. }
-15. .backgroundColor(Color.White)
-16. .width(150)
-17. .height(150)
-18. .justifyContent(FlexAlign.Center)
-19. .opacity(0.6)
-20. .renderGroup(this.renderGroupValue)
-21. }
-22. .backgroundColor(Color.Black)
-23. .width(200)
-24. .height(200)
-25. .justifyContent(FlexAlign.Center)
-26. .opacity(1)
-27. }
-28. }
-
-30. @Entry
-31. @Component
-32. struct RenderGroupExample {
-33. build() {
-34. Column() {
-35. Component1({ renderGroupValue: true })
-36. .margin(20)
-37. Component1({ renderGroupValue: false })
-38. .margin(20)
-39. }
-40. .width("100%")
-41. .height("100%")
-42. .alignItems(HorizontalAlign.Center)
-43. }
-44. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/M-AvB_GXQZe-lpUIXTWadQ/zh-cn_image_0000002558606374.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/JmEADGdSSHeRthJYnR5P_A/zh-cn_image_0000002736314749.png)
 
 ### 示例4（当前组件内容与下方画布内容混合）
 
 该示例主要演示通过[blendMode](ts-universal-attributes-image-effect.md#blendmode11)将当前组件内容与下方画布内容混合。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct Index {
-5. build() {
-6. Column() {
-7. Text("blendMode")
-8. .fontSize(20)
-9. .fontWeight(FontWeight.Bold)
-10. .fontColor('#ffff0101')
-11. Row() {
-12. Circle()
-13. .width(200)
-14. .height(200)
-15. .fill(Color.Green)
-16. .position({ x: 50, y: 50 })
-17. Circle()
-18. .width(200)
-19. .height(200)
-20. .fill(Color.Blue)
-21. .position({ x: 150, y: 50 })
-22. }
-23. .blendMode(BlendMode.OVERLAY, BlendApplyType.OFFSCREEN)
-24. .alignItems(VerticalAlign.Center)
-25. .height(300)
-26. .width('100%')
-27. }
-28. .height('100%')
-29. .width('100%')
-30. // $r("app.media.image")需要替换为开发者所需的图像资源文件。
-31. .backgroundImage($r('app.media.image'))
-32. .backgroundImageSize(ImageSize.Cover)
-33. }
-34. }
+```ts
+// xxx.ets
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Text("blendMode")
+        .fontSize(20)
+        .fontWeight(FontWeight.Bold)
+        .fontColor('#ffff0101')
+      Row() {
+        Circle()
+          .width(200)
+          .height(200)
+          .fill(Color.Green)
+          .position({ x: 50, y: 50 })
+        Circle()
+          .width(200)
+          .height(200)
+          .fill(Color.Blue)
+          .position({ x: 150, y: 50 })
+      }
+      .blendMode(BlendMode.OVERLAY, BlendApplyType.OFFSCREEN)
+      .alignItems(VerticalAlign.Center)
+      .height(300)
+      .width('100%')
+    }
+    .height('100%')
+    .width('100%')
+    // $r("app.media.image")需要替换为开发者所需的图像资源文件。
+    .backgroundImage($r('app.media.image'))
+    .backgroundImageSize(ImageSize.Cover)
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/NqwmZMU6SLSYskoMlRgvlw/zh-cn_image_0000002589325901.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/PbHxM-glQimnruVLJqbnXg/zh-cn_image_0000002706675706.png)
 
 ### 示例5（前景智能取反色）
 
 该示例主要通过[InvertOptions](ts-universal-attributes-image-effect.md#invertoptions11对象说明)来实现前景智能取反色。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct Index {
-5. build() {
-6. Stack() {
-7. Column()
-8. Stack() {
-9. // $r("app.media.r")需要替换为开发者所需的图像资源文件。
-10. // 该示例中图片为从左到右，颜色由浅到深。
-11. Image($r('app.media.r')).width('100%')
-12. Column() {
-13. Column().width("100%").height(30).invert({
-14. low: 0,
-15. high: 1,
-16. threshold: 0.5,
-17. thresholdRange: 0.2
-18. })
-19. Column().width("100%").height(30).invert({
-20. low: 0.2,
-21. high: 0.5,
-22. threshold: 0.3,
-23. thresholdRange: 0.2
-24. })
-25. }
-26. }
-27. .width('100%')
-28. .height('100%')
-29. }
-30. }
-31. }
+```ts
+// xxx.ets
+@Entry
+@Component
+struct Index {
+  build() {
+    Stack() {
+      Column()
+      Stack() {
+        // $r("app.media.r")需要替换为开发者所需的图像资源文件。
+        // 该示例中图片为从左到右，颜色由浅到深。
+        Image($r('app.media.r')).width('100%')
+        Column() {
+          Column().width("100%").height(30).invert({
+            low: 0,
+            high: 1,
+            threshold: 0.5,
+            thresholdRange: 0.2
+          })
+          Column().width("100%").height(30).invert({
+            low: 0.2,
+            high: 0.5,
+            threshold: 0.3,
+            thresholdRange: 0.2
+          })
+        }
+      }
+      .width('100%')
+      .height('100%')
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/TTxIlRqzT5qYCdhVNFMLCg/zh-cn_image_0000002589245843.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/ZVC1dvJOTNa2JRWooj-FHQ/zh-cn_image_0000002736434793.png)
 
 ### 示例6（设置同层阴影不重叠效果）
 
 该示例主要通过[useShadowBatching](ts-universal-attributes-image-effect.md#useshadowbatching11)搭配[shadow](ts-universal-attributes-image-effect.md#shadow)实现同层阴影不重叠效果。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct UseShadowBatchingExample {
+  build() {
+    Column() {
+      Column({ space: 10 }) {
+        Stack() {
+
+        }
+        .width('90%')
+        .height(50)
+        .margin({ top: 5 })
+        .backgroundColor(0xFFE4C4)
+        .shadow({
+          radius: 120,
+          color: Color.Green,
+          offsetX: 0,
+          offsetY: 0
+        })
+        .align(Alignment.TopStart)
+        .shadow({
+          radius: 120,
+          color: Color.Green,
+          offsetX: 0,
+          offsetY: 0
+        })
+
+        Stack() {
+
+        }
+        .width('90%')
+        .height(50)
+        .margin({ top: 5 })
+        .backgroundColor(0xFFE4C4)
+        .align(Alignment.TopStart)
+        .shadow({
+          radius: 120,
+          color: Color.Red,
+          offsetX: 0,
+          offsetY: 0
+        })
+        .width('90%')
+        .backgroundColor(Color.White)
+
+        Column() {
+          Text()
+            .fontWeight(FontWeight.Bold)
+            .fontSize(20)
+            .fontColor(Color.White)
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(150)
+        .height(150)
+        .borderRadius(10)
+        .backgroundColor(0xf56c6c)
+        .shadow({
+          radius: 300,
+          color: Color.Yellow,
+          offsetX: 0,
+          offsetY: 0
+        })
+
+        Column() {
+          Text()
+            .fontWeight(FontWeight.Bold)
+            .fontSize(20)
+            .fontColor(Color.White)
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(150)
+        .height(150)
+        .backgroundColor(0x67C23A)
+        .borderRadius(10)
+        .translate({ y: -50 })
+        .shadow({
+          radius: 220,
+          color: Color.Blue,
+          offsetX: 0,
+          offsetY: 0
+        })
+      }
+      .useShadowBatching(true)
+    }
+    .width('100%').margin({ top: 5 })
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct UseShadowBatchingExample {
-5. build() {
-6. Column() {
-7. Column({ space: 10 }) {
-8. Stack() {
 
-10. }
-11. .width('90%')
-12. .height(50)
-13. .margin({ top: 5 })
-14. .backgroundColor(0xFFE4C4)
-15. .shadow({
-16. radius: 120,
-17. color: Color.Green,
-18. offsetX: 0,
-19. offsetY: 0
-20. })
-21. .align(Alignment.TopStart)
-22. .shadow({
-23. radius: 120,
-24. color: Color.Green,
-25. offsetX: 0,
-26. offsetY: 0
-27. })
-
-29. Stack() {
-
-31. }
-32. .width('90%')
-33. .height(50)
-34. .margin({ top: 5 })
-35. .backgroundColor(0xFFE4C4)
-36. .align(Alignment.TopStart)
-37. .shadow({
-38. radius: 120,
-39. color: Color.Red,
-40. offsetX: 0,
-41. offsetY: 0
-42. })
-43. .width('90%')
-44. .backgroundColor(Color.White)
-
-46. Column() {
-47. Text()
-48. .fontWeight(FontWeight.Bold)
-49. .fontSize(20)
-50. .fontColor(Color.White)
-51. }
-52. .justifyContent(FlexAlign.Center)
-53. .width(150)
-54. .height(150)
-55. .borderRadius(10)
-56. .backgroundColor(0xf56c6c)
-57. .shadow({
-58. radius: 300,
-59. color: Color.Yellow,
-60. offsetX: 0,
-61. offsetY: 0
-62. })
-
-64. Column() {
-65. Text()
-66. .fontWeight(FontWeight.Bold)
-67. .fontSize(20)
-68. .fontColor(Color.White)
-69. }
-70. .justifyContent(FlexAlign.Center)
-71. .width(150)
-72. .height(150)
-73. .backgroundColor(0x67C23A)
-74. .borderRadius(10)
-75. .translate({ y: -50 })
-76. .shadow({
-77. radius: 220,
-78. color: Color.Blue,
-79. offsetX: 0,
-80. offsetY: 0
-81. })
-82. }
-83. .useShadowBatching(true)
-84. }
-85. .width('100%').margin({ top: 5 })
-86. }
-87. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/nvnynmnpTdKh2fHwYxU5DQ/zh-cn_image_0000002558766034.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/gqmI_F-rRLi3D9yuTHHFIg/zh-cn_image_0000002706835646.png)
 
 ### 示例7（设置组件图像球面效果）
 
 该示例主要演示通过[sphericalEffect](ts-universal-attributes-image-effect.md#sphericaleffect12)设置组件的图像球面效果。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct SphericalEffectExample {
-5. build() {
-6. Stack() {
-7. TextInput({ placeholder: "请输入变化范围百分比（[0%,100%]）" })
-8. .width('50%')
-9. .height(35)
-10. .type(InputType.Number)
-11. .enterKeyType(EnterKeyType.Done)
-12. .caretColor(Color.Red)
-13. .placeholderColor(Color.Blue)
-14. .placeholderFont({
-15. size: 20,
-16. style: FontStyle.Italic,
-17. weight: FontWeight.Bold
-18. })
-19. .sphericalEffect(0.5)
-20. }.alignContent(Alignment.Center).width("100%").height("100%")
-21. }
-22. }
+```ts
+// xxx.ets
+@Entry
+@Component
+struct SphericalEffectExample {
+  build() {
+    Stack() {
+      TextInput({ placeholder: "请输入变化范围百分比（[0%,100%]）" })
+        .width('50%')
+        .height(35)
+        .type(InputType.Number)
+        .enterKeyType(EnterKeyType.Done)
+        .caretColor(Color.Red)
+        .placeholderColor(Color.Blue)
+        .placeholderFont({
+          size: 20,
+          style: FontStyle.Italic,
+          weight: FontWeight.Bold
+        })
+        .sphericalEffect(0.5)
+    }.alignContent(Alignment.Center).width("100%").height("100%")
+  }
+}
 ```
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/u0GZK4myRtS0uh3x5VZWpg/zh-cn_image_0000002558606376.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/mFenMaBnRwmPH-YiBkyKJQ/zh-cn_image_0000002736314751.png)
 
 去掉sphericalEffect的设置，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/j6ZRl1NqSxSgCgzfPPROvA/zh-cn_image_0000002589325903.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/juViUYT1QHiUzYiN7H9UBQ/zh-cn_image_0000002706675708.png)
 
 ### 示例8（设置组件图像渐亮效果）
 
 该示例主要演示通过[lightUpEffect](ts-universal-attributes-image-effect.md#lightupeffect12)设置组件的图像渐亮效果。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct LightUpExample {
-5. build() {
-6. Stack() {
-7. Text('This is the text content with letterSpacing 0.')
-8. .letterSpacing(0)
-9. .fontSize(12)
-10. .border({ width: 1 })
-11. .padding(10)
-12. .width('50%')
-13. .lightUpEffect(0.6)
-14. }.alignContent(Alignment.Center).width("100%").height("100%")
-15. }
-16. }
+```ts
+// xxx.ets
+@Entry
+@Component
+struct LightUpExample {
+  build() {
+    Stack() {
+      Text('This is the text content with letterSpacing 0.')
+        .letterSpacing(0)
+        .fontSize(12)
+        .border({ width: 1 })
+        .padding(10)
+        .width('50%')
+        .lightUpEffect(0.6)
+    }.alignContent(Alignment.Center).width("100%").height("100%")
+  }
+}
 ```
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/i22ka3DlRg6A_Kg2stw6Jw/zh-cn_image_0000002589245845.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/1HwdZ2UeTBiEje2GdjFRMw/zh-cn_image_0000002736434795.png)
 
 修改lightUpEffect参数值为0.2：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/w0pG1hPHR5a9Kl5Ruc8Clg/zh-cn_image_0000002558766036.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/uVrj4NkeQWmTV1Tw9gJSuA/zh-cn_image_0000002706835648.png)
 
 去掉lightUpEffect的设置，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/TIt9uTgJQUG_oT5oHdldvg/zh-cn_image_0000002558606378.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/3LJ-IZlET_mbDVKwQuPMAQ/zh-cn_image_0000002736314753.png)
 
 ### 示例9（设置组件图像边缘像素扩展效果）
 
 该示例主要演示通过[pixelStretchEffect](ts-universal-attributes-image-effect.md#pixelstretcheffect12)设置组件的图像边缘像素扩展效果。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct PixelStretchExample {
-5. build() {
-6. Stack() {
-7. Text('This is the text content with letterSpacing 0.')
-8. .letterSpacing(0)
-9. .fontSize(12)
-10. .border({ width: 1 })
-11. .padding(10)
-12. .clip(false)
-13. .width('50%')
-14. .pixelStretchEffect({
-15. top: 10,
-16. left: 10,
-17. right: 10,
-18. bottom: 10
-19. })
-20. }.alignContent(Alignment.Center).width("100%").height("100%")
-21. }
-22. }
+```ts
+// xxx.ets
+@Entry
+@Component
+struct PixelStretchExample {
+  build() {
+    Stack() {
+      Text('This is the text content with letterSpacing 0.')
+        .letterSpacing(0)
+        .fontSize(12)
+        .border({ width: 1 })
+        .padding(10)
+        .clip(false)
+        .width('50%')
+        .pixelStretchEffect({
+          top: 10,
+          left: 10,
+          right: 10,
+          bottom: 10
+        })
+    }.alignContent(Alignment.Center).width("100%").height("100%")
+  }
+}
 ```
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/et_pV9WAQ3C1Wgek1IH4hw/zh-cn_image_0000002589325905.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/NK9NXbLCQvGg99ZjtMaGUQ/zh-cn_image_0000002706675710.png)
 
 去掉pixelStretchEffect的设置，原图效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/nz7zjzmMSse0zqUjt8kg8A/zh-cn_image_0000002589245847.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/ufh0pdJQQAGnUyKL3H6tvg/zh-cn_image_0000002736434797.png)
 
 ### 示例10（系统导航条智能反色）
 
 该示例主要演示通过[systemBarEffect](ts-universal-attributes-image-effect.md#systembareffect12)来实现系统导航条智能反色。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct Index {
-5. build() {
-6. Column() {
-7. Stack() {
-8. // $r("app.media.testImage")需要替换为开发者所需的图像资源文件。
-9. Image($r('app.media.testImage')).width('100%').height('100%')
-10. Column()
-11. .width(150)
-12. .height(10)
-13. .systemBarEffect()
-14. .border({ radius: 5 })
-15. .margin({ bottom: 80 })
-16. }.alignContent(Alignment.Center)
-17. }
-18. }
-19. }
+```ts
+// xxx.ets
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Stack() {
+        // $r("app.media.testImage")需要替换为开发者所需的图像资源文件。
+        Image($r('app.media.testImage')).width('100%').height('100%')
+        Column()
+          .width(150)
+          .height(10)
+          .systemBarEffect()
+          .border({ radius: 5 })
+          .margin({ bottom: 80 })
+      }.alignContent(Alignment.Center)
+    }
+  }
+}
 ```
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/N3B5iH-kTTK8oOtvhDQiVQ/zh-cn_image_0000002558766038.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/PiErIb7wRYqHCNlFK-CJZQ/zh-cn_image_0000002706835650.png)
+
+### 示例11（设置组件是否双面绘制）
+
+该示例主要演示通过[doubleSided](ts-universal-attributes-image-effect.md#doublesided)来设置组件是否双面绘制。
+
+从API版本26.0.0开始，新增doubleSided方法。
+
+```ts
+// xxx.ets
+@Entry
+@Component
+struct DoubleSided {
+  @State angleY: number = 0;
+  @State isAnimating: boolean = false;
+  @State isDoubleSided: boolean = true;
+  build() {
+    Column({space: 30}) {
+      Text('DoubleSided 背面剔除验证')
+        .fontSize(24)
+        .fontWeight(FontWeight.Bold)
+        .fontColor(Color.White)
+      Stack() {
+        Stack() {
+          Text('FRONT')
+            .fontSize(32)
+            .fontColor(Color.White)
+        }
+        .width(300)
+        .height(300)
+        .backgroundColor(Color.Blue)
+        .border({ width: 2, color: Color.Gray })
+        .doubleSided(this.isDoubleSided)
+        .rotate({ x: 0, y: 1, z: 0, angle: this.angleY})
+      }
+      .width(300)
+      .height(300)
+      Text(`Y轴旋转： ${Math.round(this.angleY)}°`)
+        .fontSize(16)
+        .fontColor(Color.White)
+      Button(this.isAnimating ? '复原' : '翻转')
+        .onClick(() => {
+          if (this.isAnimating) {
+            this.angleY = 0
+            this.isAnimating = false
+          } else {
+            this.isAnimating = true
+            this.angleY = 180
+          }
+        })
+      Button(`doubleSided: ${this.isDoubleSided ? 'true (双面)' : 'false (单面)'}`)
+        .backgroundColor(this.isDoubleSided ? '#4CAF50' : '#F44336')
+        .onClick(() => {
+          this.isDoubleSided = !this.isDoubleSided
+        })
+    }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+    .backgroundColor('#1a1a1a')
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/Nx_EFt1_SfePz2hsQkABsw/zh-cn_image_0000002736314755.gif)

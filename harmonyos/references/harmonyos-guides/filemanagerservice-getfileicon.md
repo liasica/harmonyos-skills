@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/filemanagerse
 title: 获取文件图标
 breadcrumb: 指南 > 应用服务 > File Manager Service Kit（文件管理服务） > 获取文件图标
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:59+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b825381a7bef1ec87e21580d45ca11e412749b6ae6aba47c4bbe1c83c677bccc
+scraped_at: 2026-09-02T14:50:25+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:0e754385e0c8badf6d7de6ef2f2becbc74d6c47cb31a90ae1f92d582401bec05
 ---
 
 ## 场景介绍
@@ -16,54 +16,70 @@ content_hash: sha256:b825381a7bef1ec87e21580d45ca11e412749b6ae6aba47c4bbe1c83c67
 
 | 接口名 | 描述 |
 | --- | --- |
-| function [getFileIconSync](../harmonyos-references/filemanagerservice-arkts-filemanagerservice.md#filemanagerservicegetfileiconsync)(fileType: string): string | Resource | 根据文件类型获取文件图标。 |
-| function [getFileIcon](../harmonyos-references/filemanagerservice-arkts-filemanagerservice.md#filemanagerservicegetfileicon)(fileType: string): Promise<string | Resource> | 根据文件类型获取文件图标。使用Promise异步回调。 |
+| [getFileIconSync](../harmonyos-references/filemanagerservice-arkts-filemanagerservice.md#filemanagerservicegetfileiconsync)(fileType: string): string | Resource | 根据文件类型获取文件图标。 |
+| [getFileIcon](../harmonyos-references/filemanagerservice-arkts-filemanagerservice.md#filemanagerservicegetfileicon)(fileType: string): Promise<string | Resource> | 根据文件类型获取文件图标。使用Promise异步回调。 |
 
 ## 示例代码
 
-1.导入文件管理服务模块及相关模块
+1.导入文件管理服务模块及相关模块。
 
-```
-1. import { fileManagerService } from '@kit.FileManagerServiceKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { uniformTypeDescriptor } from '@kit.ArkData';
+```typescript
+import { fileManagerService } from '@kit.FileManagerServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { uniformTypeDescriptor } from '@kit.ArkData';
 ```
 
 2.申请权限。使用获取文件图标接口时，需要在module.json5中声明申请接口所需的权限：ohos.permission.GET\_FILE\_ICON。具体指导可见[声明权限](declare-permissions.md)。
 
-3.获取文件图标
+3.获取文件图标。
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. @State fileIcon: string | Resource = '';
+```typescript
+@Component
+export struct GetFileIcon {
+  @State inputText: string = ''
+  @State fileIcon: string | Resource = '';
 
-6. private getFileIconByFileExtension(filenameExtension: string): void {
-7. try {
-8. let typeId: string = uniformTypeDescriptor.getUniformDataTypeByFilenameExtension(filenameExtension);
-9. this.fileIcon = fileManagerService.getFileIconSync(typeId);
-10. } catch (error) {
-11. let err: BusinessError = error as BusinessError;
-12. console.error('getFileIconByFileExtension failed with err: ' + JSON.stringify(err));
-13. }
-14. }
+  private getFileIconByFileExtension(filenameExtension: string): void {
+    try {
+      // 根据文件的后缀名，获取后缀名对应文件类型的UTD-ID
+      // filenameExtension为文件后缀，以txt文件为例，filenameExtension可以输入为：“.txt”
+      let typeId: string = uniformTypeDescriptor.getUniformDataTypeByFilenameExtension(filenameExtension);
+      // 调用getFileIconSync方法，根据UTD-ID获取对应的文件图标
+      this.fileIcon = fileManagerService.getFileIconSync(typeId);
+    } catch (error) {
+      let err: BusinessError = error as BusinessError;
+      console.error('getFileIconByFileExtension failed with err: ' + JSON.stringify(err));
+    }
+  }
 
-16. build() {
-17. RelativeContainer() {
-18. Column() {
-19. Image(this.fileIcon)
-20. .height(88)
-21. .border({ width: 1, radius: 6 })
-22. Button('Update FileIcon')
-23. .onClick(() => {
-24. // 以txt格式为例
-25. this.getFileIconByFileExtension('.txt');
-26. })
-27. }
-28. }
-29. .height('100%')
-30. .width('100%')
-31. }
-32. }
+  build() {
+    NavDestination() {
+      Column() {
+        Image(this.fileIcon)
+          .height(88)
+          .border({ width: 1, radius: 6 })
+
+        TextInput({ placeholder: '请输入文件后缀名', text: $$this.inputText })
+          .width('85%')
+          .height(50)
+          .borderRadius(8)
+          .padding(12)
+
+        Button('获取文件图标')
+          .width('60%')
+          .height(48)
+          .type(ButtonType.Capsule)
+          .onClick(() => {
+            this.getFileIconByFileExtension(this.inputText);
+          })
+        Blank()
+      }
+      .width('100%')
+      .height('100%')
+      .backgroundColor(Color.White)
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```

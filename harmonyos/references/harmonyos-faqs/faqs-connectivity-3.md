@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-connectivi
 title: USE_BLUETOOTH 和 ACCESS_BLUETOOTH的区别是什么
 breadcrumb: FAQ > 系统开发 > 网络 > 短距通信（Connectivity） > USE_BLUETOOTH 和 ACCESS_BLUETOOTH的区别是什么
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:18+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:59+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:aefcc76985039c416b52ce1c4b133729989f1dc95e6090811cebc37cb827d954
 ---
 

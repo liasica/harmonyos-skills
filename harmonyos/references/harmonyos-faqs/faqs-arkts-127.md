@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-127
-title: 如何获取应用进程的CPU使用时间
-breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 如何获取应用进程的CPU使用时间
+title: 如何获取应用进程执行时间
+breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 如何获取应用进程执行时间
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:15+08:00
-doc_updated_at: 2026-03-12
+scraped_at: 2026-09-02T15:21:15+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:85a9d3038202b9f762ef975263e72b2b5854587028eaea59a673f1333e402f18
 ---
 

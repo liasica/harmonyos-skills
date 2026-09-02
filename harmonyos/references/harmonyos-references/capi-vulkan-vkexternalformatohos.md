@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-vulk
 title: VkExternalFormatOHOS
 breadcrumb: API参考 > 标准库 > Vulkan > Vulkan扩展能力 > VkExternalFormatOHOS
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:37+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:c6fbdfb33db95667c17f2ac9cd3e8eabc6c18343ad1bdf442977b239eda001e0
+scraped_at: 2026-09-02T15:03:15+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4386d605ceedca3b4b6b45fbc94f23eae77dce82cb23f6e46c05095be8a2fcd3
 ---
 
-```
-1. typedef struct VkExternalFormatOHOS {...} VkExternalFormatOHOS
+```c
+typedef struct VkExternalFormatOHOS {...} VkExternalFormatOHOS
 ```
 
 ## 概述

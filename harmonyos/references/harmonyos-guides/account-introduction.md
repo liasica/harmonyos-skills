@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-intro
 title: Account Kit简介
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > Account Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:36:46+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:0db13fe808577494a9bcc4fb72ce386e6507e7fe41de73840f737e7899602f42
+scraped_at: 2026-09-02T14:59:51+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:54b879a6d38fe05ddfc2b8b890e65271b7f7a599e4332e0de5eb9281806b6eb6
 ---
 
 ## 场景介绍
@@ -37,31 +37,21 @@ Account Kit（华为账号服务）提供简单、快速、安全的登录功能
 
 ## 示例代码
 
-Account Kit提供的[SampleCode示例工程](https://gitcode.com/HarmonyOS_Samples/accountkit-samplecode-clientdemo-arkts)体现了Account Kit的[华为账号一键登录](account-phone-unionid-login.md)、[静默登录](account-silent-login.md)、[获取头像昵称](account-get-avatar-nickname.md)、[快速验证手机号](account-get-phonenumber.md)、[收货地址](account-choose-address-dev.md)、[发票抬头](account-select-invoice-title.md)、[未成年人模式](account-overview-minorsprotection.md)等特性，可参考该工程进行应用的相关内容开发。
-
-## 基本概念
-
-* **OpenID**：应用维度用户标识符，是华为账号用户在应用/元服务的唯一标识。不同应用/元服务（不管是否在同一个开发者账号下）获取到用户的OpenID不同。OpenID严格区分大小写。
-* **UnionID**：开发者维度用户标识符，华为账号用户同一开发者账号下的唯一标识。开发者有多个应用/元服务时，同一个开发者账号下的应用/元服务获取到用户的UnionID相同。UnionID严格区分大小写。
-* **GroupUnionID**：关联主体账号组维度用户标识符，是华为账号用户在关联主体账号组内的唯一标识。不同开发者账号加入同一关联主体账号组后，其组内所有开发者的应用/元服务获取到用户的GroupUnionID相同。
-* **permission**：数据或接口权限，通过该权限判断应用是否能获取对应数据或调用对应接口。
-* **scopes**：scope列表，用于获取用户数据。开发者向华为账号服务申请不同类型用户数据的标识。比如头像昵称（profile）、匿名手机号（quickLoginAnonymousPhone）等。
-* **Authorization Code**：授权码，用户使用华为账号登录成功之后，可通过返回的凭据解析出授权码，通过授权码可获取Access Token、Refresh Token、ID Token等。
-* **Access Token**：访问凭证，是访问被权限管控资源的应用级凭证。可使用Access Token调用获取用户信息接口获取用户信息。
-* **ID Token**：用户身份凭证，是OIDC（[OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html)）协议相对于OAuth 2.0协议扩展的一个用户身份凭证，包含用户信息。用户使用华为账号登录成功之后，可通过返回的凭据解析出Authorization Code、ID Token等数据。
+Account Kit提供的[SampleCode示例工程](https://gitcode.com/HarmonyOS_Samples/accountkit-samplecode-clientdemo-arkts)体现了Account Kit的[华为账号一键登录](account-phone-unionid-login.md)、[静默登录](account-silent-login.md)、[获取头像昵称](account-get-avatar-nickname.md)、[获取手机号](account-get-phonenumber.md)、[收货地址](account-choose-address-dev.md)、[发票抬头](account-select-invoice-title.md)、[未成年人模式](account-overview-minorsprotection.md)等特性，可参考该工程进行应用的相关内容开发。
 
 ## 约束与限制
 
 | Account Kit提供的能力 | 支持的设备类型 |
 | --- | --- |
 | [获取头像昵称](account-get-avatar-nickname.md) | Phone、Tablet、PC/2in1、Wearable、TV |
-| [获取手机号](account-get-phone-overview.md) | Phone、Tablet、PC/2in1、Wearable、TV |
-| [获取收货地址](account-choose-address-dev.md) | Phone、Tablet、PC/2in1 |
+| [获取手机号](account-get-phonenumber.md) | Phone、Tablet、PC/2in1、Wearable、TV |
+| [获取收货地址](account-choose-address-dev.md) | Phone、Tablet、PC/2in1、TV |
 | [获取发票抬头](account-select-invoice-title.md) | Phone、Tablet、PC/2in1 |
 | [获取风险等级](account-get-risklevel-introduction.md) | Phone、Tablet、PC/2in1、Wearable、TV |
+| [获取实名年龄段](account-get-realname-age.md) | Phone、Tablet、PC/2in1、Wearable、TV |
 | [未成年人模式](account-overview-minorsprotection.md) | Phone、Tablet、PC/2in1、TV |
-| [登录按钮组件](../harmonyos-references/account-api-huawei-id-button.md) | Phone、Tablet、PC/2in1、TV |
-| [登录面板组件](../harmonyos-references/account-api-loginpanel.md) | Phone、Tablet、PC/2in1、TV |
+| [登录按钮组件](../harmonyos-references/account-api-huawei-id-button.md#loginwithhuaweiidbutton) | Phone、Tablet、PC/2in1、TV |
+| [登录面板组件](../harmonyos-references/account-api-loginpanel.md#loginpanel) | Phone、Tablet、PC/2in1、TV |
 
 ### 支持的国家/地区
 
@@ -72,4 +62,5 @@ Account Kit提供的[SampleCode示例工程](https://gitcode.com/HarmonyOS_Sampl
 本Kit支持模拟器，但与真机存在部分能力差异，具体差异如下。
 
 * 通用差异：请参见“[模拟器与真机的差异](ide-emulator-specification.md#section1227613205203)”。
-* 模拟器仅支持应用统一认证服务[authentication](../harmonyos-references/account-api-authentication.md)的登录和授权能力、[华为账号Button登录组件](../harmonyos-references/account-api-huawei-id-button.md)。
+* 模拟器仅支持应用统一认证服务[authentication](../harmonyos-references/account-api-authentication.md)的登录和授权能力、[华为账号Button登录组件](../harmonyos-references/account-api-huawei-id-button.md#loginwithhuaweiidbutton)。
+* 不支持Wearable设备模拟器。

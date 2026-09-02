@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-24
 title: 线程间JS对象通过序列化方式进行数据通信，是否存在性能问题
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > ArkTS线程模型和并发 > 线程间JS对象通过序列化方式进行数据通信，是否存在性能问题
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:21+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:16+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:44fea429a183b38868c0d3cd4b47e213c2a85c30d761d9e3009d4fcb938e0748
 ---
 

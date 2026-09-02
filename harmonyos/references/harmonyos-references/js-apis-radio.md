@@ -3,32 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-r
 title: "@ohos.telephony.radio (网络搜索)"
 breadcrumb: API参考 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > ArkTS API > @ohos.telephony.radio (网络搜索)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:2792f18a6fa15858fc89e5a71453dee9f03ffd3726f19e35352ff6353115d73f
+scraped_at: 2026-09-02T15:02:00+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c3f7ec85d7551216a7cb8e72d38f28964725d431628ac2c355563d69cbd4cb58
 ---
 
-网络搜索模块提供管理网络搜索的一些基础功能，包括获取当前接入的CS域和PS域无线接入技术、获取网络状态、获取当前选网模式、获取注册网络所在国家的ISO国家码、获取主卡所在卡槽的索引号、获取指定SIM卡槽对应的注册网络信号强度信息列表、获取运营商名称，判断当前设备是否支持NR(New Radio)、判断主卡的Radio是否打开等。
+网络搜索模块提供管理网络搜索的一些基础功能，包括获取当前接入的CS域和PS域无线接入技术、获取网络状态、获取当前选网模式、获取注册网络所在国家的ISO国家码、获取主卡所在卡槽的索引号、获取指定SIM卡槽对应的注册网络信号强度信息列表、获取运营商名称，判断当前设备是否支持NR(New Radio)、判断主卡的Radio是否打开等。其中，CS(Circuit Switched)域为电路交换域，PS(Packet Switched)为分组交换域。
 
-说明
+**说明** 
 
 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhoneTabletWearable
-
-```
-1. import { radio } from '@kit.TelephonyKit';
+```ts
+import { radio } from '@kit.TelephonyKit';
 ```
 
 ## radio.getRadioTech
 
-PhoneTabletWearable
-
 getRadioTech(slotId: number, callback: AsyncCallback<[NetworkRadioTech](js-apis-radio.md#networkradiotech11)>): void
 
-获取当前接入的CS域和PS域无线接入技术。使用callback异步回调。
+获取当前接入的CS域和PS域无线接入技术。使用callback异步回调。其中，CS域为电路交换域，PS为分组交换域。
 
 **需要权限**：ohos.permission.GET\_NETWORK\_INFO
 
@@ -39,7 +35,7 @@ getRadioTech(slotId: number, callback: AsyncCallback<[NetworkRadioTech](js-apis-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | slotId | number | 是 | 卡槽ID。  - 0：卡槽1。  - 1：卡槽2。 |
-| callback | AsyncCallback<[NetworkRadioTech](js-apis-radio.md#networkradiotech11)> | 是 | 回调函数。返回当前接入的CS域和PS域无线接入技术。 |
+| callback | AsyncCallback<[NetworkRadioTech](js-apis-radio.md#networkradiotech11)> | 是 | 回调函数。返回当前接入的CS域和PS域无线接入技术。其中，CS域为电路交换域，PS为分组交换域。 |
 
 **错误码：**
 
@@ -56,26 +52,26 @@ getRadioTech(slotId: number, callback: AsyncCallback<[NetworkRadioTech](js-apis-
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let slotId: number = 0;
-4. radio.getRadioTech(slotId, (err: BusinessError, data: radio.NetworkRadioTech) => {
-5. if (err) {
-6. console.error(`getRadioTech failed, callback: err->${JSON.stringify(err)}`);
-7. return;
-8. }
-9. console.info(`getRadioTech success, callback: data->${JSON.stringify(data)}`);
-10. });
+// 指定卡槽ID，0表示卡槽1
+let slotId: number = 0;
+// 获取当前接入的CS域和PS域无线接入技术
+radio.getRadioTech(slotId, (err: BusinessError, data: radio.NetworkRadioTech) => {
+    if (err) {
+        console.error(`getRadioTech failed, callback: err code: ${err.code}, message: ${err.message}`);
+        return;
+    }
+    console.info(`getRadioTech success, callback: data->${JSON.stringify(data)}`);
+});
 ```
 
 ## radio.getRadioTech
 
-PhoneTabletWearable
-
 getRadioTech(slotId: number): Promise<[NetworkRadioTech](js-apis-radio.md#networkradiotech11)>
 
-获取当前接入的CS域和PS域无线接入技术。使用Promise异步回调。
+获取当前接入的CS域和PS域无线接入技术。使用Promise异步回调。其中，CS域为电路交换域，PS为分组交换域。
 
 **需要权限**：ohos.permission.GET\_NETWORK\_INFO
 
@@ -91,7 +87,7 @@ getRadioTech(slotId: number): Promise<[NetworkRadioTech](js-apis-radio.md#networ
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[NetworkRadioTech](js-apis-radio.md#networkradiotech11)> | 以Promise形式返回当前接入的CS域和PS域技术。 |
+| Promise<[NetworkRadioTech](js-apis-radio.md#networkradiotech11)> | 以Promise形式返回当前接入的CS域和PS域技术。CS域为电路交换域，PS为分组交换域。 |
 
 **错误码：**
 
@@ -108,24 +104,22 @@ getRadioTech(slotId: number): Promise<[NetworkRadioTech](js-apis-radio.md#networ
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let slotId: number = 0;
-4. radio.getRadioTech(slotId).then((data: radio.NetworkRadioTech) => {
-5. console.info(`getRadioTech success, promise: data->${JSON.stringify(data)}`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`getRadioTech failed, promise: err->${JSON.stringify(err)}`);
-8. });
+let slotId: number = 0;
+radio.getRadioTech(slotId).then((data: radio.NetworkRadioTech) => {
+    console.info(`getRadioTech success, promise: data->${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+    console.error(`getRadioTech failed, promise: err code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## radio.getRadioTechSync18+
 
-PhoneTabletWearable
-
 getRadioTechSync(slotId: number): [NetworkRadioTech](js-apis-radio.md#networkradiotech11)
 
-获取当前接入的CS域和PS域无线接入技术。
+获取当前接入的CS域和PS域无线接入技术，为[getRadioTech](js-apis-radio.md#radiogetradiotech)的同步版本，直接返回结果。与异步方法getRadioTech功能相同，适用于需要立即获取结果且能接受阻塞调用的场景；若需要非阻塞调用，请使用getRadioTech。CS域为电路交换域，PS为分组交换域。
 
 **需要权限**：ohos.permission.GET\_NETWORK\_INFO
 
@@ -141,7 +135,7 @@ getRadioTechSync(slotId: number): [NetworkRadioTech](js-apis-radio.md#networkrad
 
 | 类型 | 说明 |
 | --- | --- |
-| [NetworkRadioTech](js-apis-radio.md#networkradiotech11) | 返回当前接入的CS域和PS域技术。 |
+| [NetworkRadioTech](js-apis-radio.md#networkradiotech11) | 返回当前接入的CS域和PS域技术。CS域为电路交换域，PS为分组交换域。 |
 
 **错误码：**
 
@@ -152,21 +146,25 @@ getRadioTechSync(slotId: number): [NetworkRadioTech](js-apis-radio.md#networkrad
 | 201 | Permission denied. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 | 8300001 | Invalid parameter value. |
-| 8300002 | Operation failed. Cannot connect to service. |
+| 8300002 | Service connection failed. |
 | 8300003 | System internal error. |
-| 8300999 | Unknown error code. |
+| 8300999 | Unknown error. |
 
 **示例：**
 
-```
-1. let slotId: number = 0;
-2. let networkRadioTech: radio.NetworkRadioTech = radio.getRadioTechSync(slotId);
-3. console.info(`getRadioTechSync success, NetworkRadioTech->${JSON.stringify(networkRadioTech)}`);
+```ts
+// 指定卡槽ID，0表示卡槽1
+let slotId: number = 0;
+try {
+    // 同步获取当前接入的CS域和PS域无线接入技术
+    let networkRadioTech: radio.NetworkRadioTech = radio.getRadioTechSync(slotId);
+    console.info(`getRadioTechSync success, NetworkRadioTech->${JSON.stringify(networkRadioTech)}`);
+} catch (err) {
+    console.error(`getRadioTechSync failed, err->${JSON.stringify(err)}`);
+}
 ```
 
 ## radio.getNetworkState
-
-PhoneTabletWearable
 
 getNetworkState(callback: AsyncCallback<NetworkState>): void
 
@@ -197,21 +195,19 @@ getNetworkState(callback: AsyncCallback<NetworkState>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. radio.getNetworkState((err: BusinessError, data: radio.NetworkState) => {
-4. if (err) {
-5. console.error(`getNetworkState failed, callback: err->${JSON.stringify(err)}`);
-6. return;
-7. }
-8. console.info(`getNetworkState success, callback: data->${JSON.stringify(data)}`);
-9. });
+radio.getNetworkState((err: BusinessError, data: radio.NetworkState) => {
+    if (err) {
+        console.error(`getNetworkState failed, callback: err code: ${err.code}, message: ${err.message}`);
+        return;
+    }
+    console.info(`getNetworkState success, callback: data->${JSON.stringify(data)}`);
+});
 ```
 
 ## radio.getNetworkState
-
-PhoneTabletWearable
 
 getNetworkState(slotId: number, callback: AsyncCallback<NetworkState>): void
 
@@ -243,22 +239,20 @@ getNetworkState(slotId: number, callback: AsyncCallback<NetworkState>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let slotId: number = 0;
-4. radio.getNetworkState(slotId, (err: BusinessError, data: radio.NetworkState) => {
-5. if (err) {
-6. console.error(`getNetworkState failed, callback: err->${JSON.stringify(err)}`);
-7. return;
-8. }
-9. console.info(`getNetworkState success, callback: data->${JSON.stringify(data)}`);
-10. });
+let slotId: number = 0;
+radio.getNetworkState(slotId, (err: BusinessError, data: radio.NetworkState) => {
+    if (err) {
+        console.error(`getNetworkState failed, callback: err code: ${err.code}, message: ${err.message}`);
+        return;
+    }
+    console.info(`getNetworkState success, callback: data->${JSON.stringify(data)}`);
+});
 ```
 
 ## radio.getNetworkState
-
-PhoneTabletWearable
 
 getNetworkState(slotId?: number): Promise<NetworkState>
 
@@ -278,7 +272,7 @@ getNetworkState(slotId?: number): Promise<NetworkState>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[NetworkState](js-apis-radio.md#networkstate)> | 以Promise形式返回网络状态。 |
+| Promise<[NetworkState](js-apis-radio.md#networkstate)> | Promise对象，返回网络状态。 |
 
 **错误码：**
 
@@ -295,20 +289,20 @@ getNetworkState(slotId?: number): Promise<NetworkState>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let slotId: number = 0;
-4. radio.getNetworkState(slotId).then((data: radio.NetworkState) => {
-5. console.info(`getNetworkState success, promise: data->${JSON.stringify(data)}`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`getNetworkState failed, promise: err->${JSON.stringify(err)}`);
-8. });
+// 指定卡槽ID，0表示卡槽1
+let slotId: number = 0;
+// 获取网络状态，使用Promise异步回调
+radio.getNetworkState(slotId).then((data: radio.NetworkState) => {
+    console.info(`getNetworkState success, promise: data->${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+    console.error(`getNetworkState failed, promise: err code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## radio.getNetworkSelectionMode
-
-PhoneTabletWearable
 
 getNetworkSelectionMode(slotId: number, callback: AsyncCallback<NetworkSelectionMode>): void
 
@@ -337,22 +331,20 @@ getNetworkSelectionMode(slotId: number, callback: AsyncCallback<NetworkSelection
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let slotId: number = 0;
-4. radio.getNetworkSelectionMode(slotId, (err: BusinessError, data: radio.NetworkSelectionMode) => {
-5. if (err) {
-6. console.error(`getNetworkSelectionMode failed, callback: err->${JSON.stringify(err)}`);
-7. return;
-8. }
-9. console.info(`getNetworkSelectionMode success, callback: data->${JSON.stringify(data)}`);
-10. });
+let slotId: number = 0;
+radio.getNetworkSelectionMode(slotId, (err: BusinessError, data: radio.NetworkSelectionMode) => {
+    if (err) {
+        console.error(`getNetworkSelectionMode failed, callback: err code: ${err.code}, message: ${err.message}`);
+        return;
+    }
+    console.info(`getNetworkSelectionMode success, callback: data->${JSON.stringify(data)}`);
+});
 ```
 
 ## radio.getNetworkSelectionMode
-
-PhoneTabletWearable
 
 getNetworkSelectionMode(slotId: number): Promise<NetworkSelectionMode>
 
@@ -386,20 +378,18 @@ getNetworkSelectionMode(slotId: number): Promise<NetworkSelectionMode>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let slotId: number = 0;
-4. radio.getNetworkSelectionMode(slotId).then((data: radio.NetworkSelectionMode) => {
-5. console.info(`getNetworkSelectionMode success, promise: data->${JSON.stringify(data)}`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`getNetworkSelectionMode failed, promise: err->${JSON.stringify(err)}`);
-8. });
+let slotId: number = 0;
+radio.getNetworkSelectionMode(slotId).then((data: radio.NetworkSelectionMode) => {
+    console.info(`getNetworkSelectionMode success, promise: data->${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+    console.error(`getNetworkSelectionMode failed, promise: err code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## radio.getISOCountryCodeForNetwork7+
-
-PhoneTabletWearable
 
 getISOCountryCodeForNetwork(slotId: number, callback: AsyncCallback<string>): void
 
@@ -428,22 +418,20 @@ getISOCountryCodeForNetwork(slotId: number, callback: AsyncCallback<string>): vo
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let slotId: number = 0;
-4. radio.getISOCountryCodeForNetwork(slotId, (err: BusinessError, data: string) => {
-5. if (err) {
-6. console.error(`getISOCountryCodeForNetwork failed, callback: err->${JSON.stringify(err)}`);
-7. return;
-8. }
-9. console.info(`getISOCountryCodeForNetwork success, callback: data->${JSON.stringify(data)}`);
-10. });
+let slotId: number = 0;
+radio.getISOCountryCodeForNetwork(slotId, (err: BusinessError, data: string) => {
+    if (err) {
+        console.error(`getISOCountryCodeForNetwork failed, callback: err code: ${err.code}, message: ${err.message}`);
+        return;
+    }
+    console.info(`getISOCountryCodeForNetwork success, callback: data->${JSON.stringify(data)}`);
+});
 ```
 
 ## radio.getISOCountryCodeForNetwork7+
-
-PhoneTabletWearable
 
 getISOCountryCodeForNetwork(slotId: number): Promise<string>
 
@@ -477,20 +465,18 @@ getISOCountryCodeForNetwork(slotId: number): Promise<string>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let slotId: number = 0;
-4. radio.getISOCountryCodeForNetwork(slotId).then((data: string) => {
-5. console.info(`getISOCountryCodeForNetwork success, promise: data->${JSON.stringify(data)}`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`getISOCountryCodeForNetwork failed, promise: err->${JSON.stringify(err)}`);
-8. });
+let slotId: number = 0;
+radio.getISOCountryCodeForNetwork(slotId).then((data: string) => {
+    console.info(`getISOCountryCodeForNetwork success, promise: data->${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+    console.error(`getISOCountryCodeForNetwork failed, promise: err code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## radio.getISOCountryCodeForNetworkSync10+
-
-PhoneTabletWearable
 
 getISOCountryCodeForNetworkSync(slotId: number): string
 
@@ -512,15 +498,17 @@ getISOCountryCodeForNetworkSync(slotId: number): string
 
 **示例：**
 
-```
-1. let slotId: number = 0;
-2. let countryISO: string = radio.getISOCountryCodeForNetworkSync(slotId);
-3. console.info(`the country ISO is:` + countryISO);
+```ts
+let slotId: number = 0;
+try {
+    let countryISO: string = radio.getISOCountryCodeForNetworkSync(slotId);
+    console.info(`the country ISO is:` + countryISO);
+} catch (err) {
+    console.error(`getISOCountryCodeForNetworkSync failed, err->${JSON.stringify(err)}`);
+}
 ```
 
 ## radio.getPrimarySlotId7+
-
-PhoneTabletWearable
 
 getPrimarySlotId(callback: AsyncCallback<number>): void
 
@@ -548,21 +536,19 @@ getPrimarySlotId(callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. radio.getPrimarySlotId((err: BusinessError, data: number) => {
-4. if (err) {
-5. console.error(`getPrimarySlotId failed, callback: err->${JSON.stringify(err)}`);
-6. return;
-7. }
-8. console.info(`getPrimarySlotId success, callback: data->${JSON.stringify(data)}`);
-9. });
+radio.getPrimarySlotId((err: BusinessError, data: number) => {
+    if (err) {
+        console.error(`getPrimarySlotId failed, callback: err code: ${err.code}, message: ${err.message}`);
+        return;
+    }
+    console.info(`getPrimarySlotId success, callback: data->${JSON.stringify(data)}`);
+});
 ```
 
 ## radio.getPrimarySlotId7+
-
-PhoneTabletWearable
 
 getPrimarySlotId(): Promise<number>
 
@@ -574,7 +560,7 @@ getPrimarySlotId(): Promise<number>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<number> | 以Promise形式返回获取设备主卡所在卡槽的索引号的结果。 |
+| Promise<number> | 以Promise形式返回设备主卡所在卡槽的索引号。 |
 
 **错误码：**
 
@@ -588,19 +574,17 @@ getPrimarySlotId(): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. radio.getPrimarySlotId().then((data: number) => {
-4. console.info(`getPrimarySlotId success, promise: data->${JSON.stringify(data)}`);
-5. }).catch((err: BusinessError) => {
-6. console.error(`getPrimarySlotId failed, promise: err->${JSON.stringify(err)}`);
-7. });
+radio.getPrimarySlotId().then((data: number) => {
+    console.info(`getPrimarySlotId success, promise: data->${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+    console.error(`getPrimarySlotId failed, promise: err code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## radio.getSignalInformation7+
-
-PhoneTabletWearable
 
 getSignalInformation(slotId: number, callback: AsyncCallback<Array<SignalInformation>>): void
 
@@ -629,22 +613,20 @@ getSignalInformation(slotId: number, callback: AsyncCallback<Array<SignalInforma
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let slotId: number = 0;
-4. radio.getSignalInformation(slotId, (err: BusinessError, data: Array<radio.SignalInformation>) => {
-5. if (err) {
-6. console.error(`getSignalInformation failed, callback: err->${JSON.stringify(err)}`);
-7. return;
-8. }
-9. console.info(`getSignalInformation success, callback: data->${JSON.stringify(data)}`);
-10. });
+let slotId: number = 0;
+radio.getSignalInformation(slotId, (err: BusinessError, data: Array<radio.SignalInformation>) => {
+    if (err) {
+        console.error(`getSignalInformation failed, callback: err code: ${err.code}, message: ${err.message}`);
+        return;
+    }
+    console.info(`getSignalInformation success, callback: data->${JSON.stringify(data)}`);
+});
 ```
 
 ## radio.getSignalInformation7+
-
-PhoneTabletWearable
 
 getSignalInformation(slotId: number): Promise<Array<SignalInformation>>
 
@@ -678,20 +660,18 @@ getSignalInformation(slotId: number): Promise<Array<SignalInformation>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let slotId: number = 0;
-4. radio.getSignalInformation(slotId).then((data: Array<radio.SignalInformation>) => {
-5. console.info(`getSignalInformation success, promise: data->${JSON.stringify(data)}`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`getSignalInformation failed, promise: err->${JSON.stringify(err)}`);
-8. });
+let slotId: number = 0;
+radio.getSignalInformation(slotId).then((data: Array<radio.SignalInformation>) => {
+    console.info(`getSignalInformation success, promise: data->${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+    console.error(`getSignalInformation failed, promise: err code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## radio.getSignalInformationSync10+
-
-PhoneTabletWearable
 
 getSignalInformationSync(slotId: number): Array<SignalInformation>
 
@@ -713,21 +693,23 @@ getSignalInformationSync(slotId: number): Array<SignalInformation>
 
 **示例：**
 
-```
-1. let slotId: number = 0;
-2. let signalInfo: Array<radio.SignalInformation> = radio.getSignalInformationSync(slotId);
-3. console.info(`signal information size is:` + signalInfo.length);
+```ts
+let slotId: number = 0;
+try {
+    let signalInfo: Array<radio.SignalInformation> = radio.getSignalInformationSync(slotId);
+    console.info(`signal information size is:` + signalInfo.length);
+} catch (err) {
+    console.error(`getSignalInformationSync failed, err->${JSON.stringify(err)}`);
+}
 ```
 
-## radio.isNrSupported8+(deprecated)
-
-PhoneTabletWearable
+## radio.isNrSupported(deprecated)
 
 isNrSupported(): boolean
 
 判断当前设备是否支持NR(New Radio)。
 
-说明
+**说明** 
 
 从 API version 7开始支持，从API version 9开始废弃。建议使用[isNRSupported](js-apis-radio.md#radioisnrsupported9)替代。
 
@@ -737,24 +719,22 @@ isNrSupported(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | - true：支持。  - false：不支持。 |
+| boolean | 当前设备是否支持NR。- true：支持。  - false：不支持。 |
 
 **示例：**
 
-```
-1. let result: boolean = radio.isNrSupported();
-2. console.info("Result: "+ result);
+```ts
+let result: boolean = radio.isNrSupported();
+console.info("Result: " + result);
 ```
 
 ## radio.isNrSupported(deprecated)
-
-PhoneTabletWearable
 
 isNrSupported(slotId: number): boolean
 
 判断当前设备是否支持NR(New Radio)。
 
-说明
+**说明** 
 
 从 API version 8开始支持，从API version 9开始废弃。建议使用[isNRSupported](js-apis-radio.md#radioisnrsupported9-1)替代。
 
@@ -770,19 +750,19 @@ isNrSupported(slotId: number): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | - true：支持。  - false：不支持。 |
+| boolean | 当前设备是否支持NR。- true：支持。  - false：不支持。 |
 
 **示例：**
 
-```
-1. let slotId: number = 0;
-2. let result: boolean = radio.isNrSupported(slotId);
-3. console.info("Result: "+ result);
+```ts
+// 指定卡槽ID，0表示卡槽1
+let slotId: number = 0;
+// 判断当前设备是否支持NR（该接口已废弃，建议使用isNRSupported）
+let result: boolean = radio.isNrSupported(slotId);
+console.info("Result: " + result);
 ```
 
 ## radio.isNRSupported9+
-
-PhoneTabletWearable
 
 isNRSupported(): boolean
 
@@ -794,18 +774,16 @@ isNRSupported(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | - true：支持。  - false：不支持。 |
+| boolean | 当前设备是否支持NR。- true：支持。  - false：不支持。 |
 
 **示例：**
 
-```
-1. let result: boolean = radio.isNRSupported();
-2. console.info("Result: "+ result);
+```ts
+let result: boolean = radio.isNRSupported();
+console.info("Result: " + result);
 ```
 
 ## radio.isNRSupported9+
-
-PhoneTabletWearable
 
 isNRSupported(slotId: number): boolean
 
@@ -823,19 +801,17 @@ isNRSupported(slotId: number): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | - true：支持。  - false：不支持。 |
+| boolean | 当前设备是否支持NR。- true：支持。  - false：不支持。 |
 
 **示例：**
 
-```
-1. let slotId: number = 0;
-2. let result: boolean = radio.isNRSupported(slotId);
-3. console.info("Result: "+ result);
+```ts
+let slotId: number = 0;
+let result: boolean = radio.isNRSupported(slotId);
+console.info("Result: " + result);
 ```
 
 ## radio.isRadioOn7+
-
-PhoneTabletWearable
 
 isRadioOn(callback: AsyncCallback<boolean>): void
 
@@ -866,21 +842,19 @@ isRadioOn(callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. radio.isRadioOn((err: BusinessError, data: boolean) => {
-4. if (err) {
-5. console.error(`isRadioOn failed, callback: err->${JSON.stringify(err)}`);
-6. return;
-7. }
-8. console.info(`isRadioOn success, callback: data->${JSON.stringify(data)}`);
-9. });
+radio.isRadioOn((err: BusinessError, data: boolean) => {
+    if (err) {
+        console.error(`isRadioOn failed, callback: err code: ${err.code}, message: ${err.message}`);
+        return;
+    }
+    console.info(`isRadioOn success, callback: data->${JSON.stringify(data)}`);
+});
 ```
 
 ## radio.isRadioOn7+
-
-PhoneTabletWearable
 
 isRadioOn(slotId: number, callback: AsyncCallback<boolean>): void
 
@@ -912,22 +886,20 @@ isRadioOn(slotId: number, callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let slotId: number = 0;
-4. radio.isRadioOn(slotId, (err: BusinessError, data: boolean) => {
-5. if (err) {
-6. console.error(`isRadioOn failed, callback: err->${JSON.stringify(err)}`);
-7. return;
-8. }
-9. console.info(`isRadioOn success, callback: data->${JSON.stringify(data)}`);
-10. });
+let slotId: number = 0;
+radio.isRadioOn(slotId, (err: BusinessError, data: boolean) => {
+    if (err) {
+        console.error(`isRadioOn failed, callback: err code: ${err.code}, message: ${err.message}`);
+        return;
+    }
+    console.info(`isRadioOn success, callback: data->${JSON.stringify(data)}`);
+});
 ```
 
 ## radio.isRadioOn7+
-
-PhoneTabletWearable
 
 isRadioOn(slotId?: number): Promise<boolean>
 
@@ -941,7 +913,7 @@ isRadioOn(slotId?: number): Promise<boolean>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| slotId | number | 否 | 卡槽ID。  - 0：卡槽1。  - 1：卡槽2。  如果不指定slotId，默认判断主卡Radio是否打开 |
+| slotId | number | 否 | 卡槽ID。  - 0：卡槽1。  - 1：卡槽2。  如果不指定slotId，默认判断主卡Radio是否打开。 |
 
 **返回值：**
 
@@ -964,20 +936,18 @@ isRadioOn(slotId?: number): Promise<boolean>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let slotId: number = 0;
-4. radio.isRadioOn(slotId).then((data: boolean) => {
-5. console.info(`isRadioOn success, promise: data->${JSON.stringify(data)}`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`isRadioOn failed, promise: err->${JSON.stringify(err)}`);
-8. });
+let slotId: number = 0;
+radio.isRadioOn(slotId).then((data: boolean) => {
+    console.info(`isRadioOn success, promise: data->${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+    console.error(`isRadioOn failed, promise: err code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## radio.getOperatorName7+
-
-PhoneTabletWearable
 
 getOperatorName(slotId: number, callback: AsyncCallback<string>): void
 
@@ -1006,22 +976,20 @@ getOperatorName(slotId: number, callback: AsyncCallback<string>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let slotId: number = 0;
-4. radio.getOperatorName(slotId, (err: BusinessError, data: string) => {
-5. if (err) {
-6. console.error(`getOperatorName failed, callback: err->${JSON.stringify(err)}`);
-7. return;
-8. }
-9. console.info(`getOperatorName success, callback: data->${JSON.stringify(data)}`);
-10. });
+let slotId: number = 0;
+radio.getOperatorName(slotId, (err: BusinessError, data: string) => {
+    if (err) {
+        console.error(`getOperatorName failed, callback: err code: ${err.code}, message: ${err.message}`);
+        return;
+    }
+    console.info(`getOperatorName success, callback: data->${JSON.stringify(data)}`);
+});
 ```
 
 ## radio.getOperatorName7+
-
-PhoneTabletWearable
 
 getOperatorName(slotId: number): Promise<string>
 
@@ -1055,24 +1023,22 @@ getOperatorName(slotId: number): Promise<string>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let slotId: number = 0;
-4. radio.getOperatorName(slotId).then((data: string) => {
-5. console.info(`getOperatorName success, promise: data->${JSON.stringify(data)}`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`getOperatorName failed, promise: err->${JSON.stringify(err)}`);
-8. });
+let slotId: number = 0;
+radio.getOperatorName(slotId).then((data: string) => {
+    console.info(`getOperatorName success, promise: data->${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+    console.error(`getOperatorName failed, promise: err code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## radio.getOperatorNameSync10+
 
-PhoneTabletWearable
-
 getOperatorNameSync(slotId: number): string
 
-获取运营商名称。
+获取运营商名称，为[getOperatorName](js-apis-radio.md#radiogetoperatorname7)的同步版本，直接返回结果。与异步方法getOperatorName功能相同，适用于需要立即获取结果且能接受阻塞调用的场景；若需要非阻塞调用，请使用getOperatorName。
 
 **系统能力**：SystemCapability.Telephony.CoreService
 
@@ -1090,17 +1056,21 @@ getOperatorNameSync(slotId: number): string
 
 **示例：**
 
-```
-1. let slotId: number = 0;
-2. let operatorName: string = radio.getOperatorNameSync(slotId);
-3. console.info(`operator name is:` + operatorName);
+```ts
+// 指定卡槽ID，0表示卡槽1
+let slotId: number = 0;
+try {
+    // 同步获取运营商名称
+    let operatorName: string = radio.getOperatorNameSync(slotId);
+    console.info(`operator name is:` + operatorName);
+} catch (err) {
+    console.error(`getOperatorNameSync failed, err->${JSON.stringify(err)}`);
+}
 ```
 
 ## NetworkRadioTech11+
 
-PhoneTabletWearable
-
-网络中packet service (PS) 和 circuit service (CS) 无线接入技术。
+网络中PS（分组交换域）和CS（电路交换域）的无线接入技术。
 
 **系统能力**：SystemCapability.Telephony.CoreService
 
@@ -1110,8 +1080,6 @@ PhoneTabletWearable
 | csRadioTech | [RadioTechnology](js-apis-radio.md#radiotechnology) | 否 | 否 | CS无线接入技术。 |
 
 ## RadioTechnology
-
-PhoneTabletWearable
 
 无线接入技术。
 
@@ -1124,18 +1092,16 @@ PhoneTabletWearable
 | RADIO\_TECHNOLOGY\_1XRTT | 2 | 无线接入技术1XRTT(Single-Carrier Radio Transmission Technology)。 |
 | RADIO\_TECHNOLOGY\_WCDMA | 3 | 无线接入技术WCDMA(Wideband Code Division Multiple Access)。 |
 | RADIO\_TECHNOLOGY\_HSPA | 4 | 无线接入技术HSPA(High Speed Packet Access)。 |
-| RADIO\_TECHNOLOGY\_HSPAP | 5 | 无线接入技术HSPAP(High Speed packet access (HSPA+) )。 |
+| RADIO\_TECHNOLOGY\_HSPAP | 5 | 无线接入技术HSPAP(High Speed Packet Access+)。 |
 | RADIO\_TECHNOLOGY\_TD\_SCDMA | 6 | 无线接入技术TD\_SCDMA(TimeDivision-Synchronous Code Division Multiple Access)。 |
 | RADIO\_TECHNOLOGY\_EVDO | 7 | 无线接入技术EVDO(Evolution Data Only)。 |
-| RADIO\_TECHNOLOGY\_EHRPD | 8 | 无线接入技术EHRPD(Evolved High Rate Package Data)。 |
+| RADIO\_TECHNOLOGY\_EHRPD | 8 | 无线接入技术EHRPD(Evolved High Rate Packet Data)。 |
 | RADIO\_TECHNOLOGY\_LTE | 9 | 无线接入技术LTE(Long Term Evolution)。 |
 | RADIO\_TECHNOLOGY\_LTE\_CA | 10 | 无线接入技术LTE\_CA(Long Term Evolution\_Carrier Aggregation)。 |
-| RADIO\_TECHNOLOGY\_IWLAN | 11 | 无线接入技术IWLAN(Industrial Wireless LAN)。 |
+| RADIO\_TECHNOLOGY\_IWLAN | 11 | 无线接入技术IWLAN(Interworking Wireless LAN)。 |
 | RADIO\_TECHNOLOGY\_NR | 12 | 无线接入技术NR(New Radio)。 |
 
 ## SignalInformation
-
-PhoneTabletWearable
 
 网络信号强度信息对象。
 
@@ -1144,12 +1110,10 @@ PhoneTabletWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | signalType | [NetworkType](js-apis-radio.md#networktype) | 否 | 否 | 网络信号强度类型。 |
-| signalLevel | number | 否 | 否 | 网络信号强度等级。 |
-| dBm9+ | number | 否 | 否 | 网络信号强度。 |
+| signalLevel | number | 否 | 否 | 网络信号强度等级，范围为[0, 5]，超出范围返回错误。 |
+| dBm9+ | number | 否 | 否 | 网络信号强度，范围为[-140, 140]，超出范围返回错误。 |
 
 ## NetworkType
-
-PhoneTabletWearable
 
 网络类型。
 
@@ -1167,8 +1131,6 @@ PhoneTabletWearable
 
 ## NetworkState
 
-PhoneTabletWearable
-
 网络注册状态。
 
 **系统能力**：SystemCapability.Telephony.CoreService
@@ -1177,17 +1139,15 @@ PhoneTabletWearable
 | --- | --- | --- | --- | --- |
 | longOperatorName | string | 否 | 否 | 注册网络的长运营商名称。 |
 | shortOperatorName | string | 否 | 否 | 注册网络的短运营商名称。 |
-| plmnNumeric | string | 否 | 否 | 注册网络的PLMN码。 |
-| isRoaming | boolean | 否 | 否 | 是否处于漫游状态。 |
+| plmnNumeric | string | 否 | 否 | 注册网络的PLMN(Public Land Mobile Network，公共陆地移动网络)码。 |
+| isRoaming | boolean | 否 | 否 | 是否处于漫游状态。  - true：处于漫游状态。  - false：未处于漫游状态。 |
 | regState | [RegState](js-apis-radio.md#regstate) | 否 | 否 | 设备的网络注册状态。 |
 | cfgTech8+ | [RadioTechnology](js-apis-radio.md#radiotechnology) | 否 | 否 | 设备的无线接入技术。 |
 | nsaState | [NsaState](js-apis-radio.md#nsastate) | 否 | 否 | 设备的NSA网络注册状态。 |
-| isCaActive | boolean | 否 | 否 | CA的状态。 |
+| isCaActive | boolean | 否 | 否 | CA（Carrier Aggregation，载波聚合）的状态。  - true：CA已激活。  - false：CA未激活。 |
 | isEmergency | boolean | 否 | 否 | 此设备是否只允许拨打紧急呼叫。 |
 
 ## RegState
-
-PhoneTabletWearable
 
 网络注册状态。
 
@@ -1202,8 +1162,6 @@ PhoneTabletWearable
 
 ## NsaState
 
-PhoneTabletWearable
-
 非独立组网状态。
 
 **系统能力**：SystemCapability.Telephony.CoreService
@@ -1215,11 +1173,9 @@ PhoneTabletWearable
 | NSA\_STATE\_CONNECTED\_DETECT | 3 | 设备在LTE小区下连接到LTE网络支持NSA和NR覆盖检测。 |
 | NSA\_STATE\_IDLE\_DETECT | 4 | 支持NSA和NR覆盖检测的LTE小区下设备处于空闲状态。 |
 | NSA\_STATE\_DUAL\_CONNECTED | 5 | 设备在支持NSA的LTE小区下连接到LTE + NR网络。 |
-| NSA\_STATE\_SA\_ATTACHED | 6 | 设备在5GC附着时在NG-RAN小区下空闲或连接到NG-RAN小区。 |
+| NSA\_STATE\_SA\_ATTACHED | 6 | 设备在5GC（5G核心网）附着时在NG-RAN（下一代无线接入网）小区下空闲或连接到NG-RAN小区。 |
 
 ## NetworkSelectionMode
-
-PhoneTabletWearable
 
 选网模式。
 
@@ -1232,8 +1188,6 @@ PhoneTabletWearable
 | NETWORK\_SELECTION\_MANUAL | 2 | 手动选网模式。 |
 
 ## CellInformation8+
-
-PhoneTabletWearable
 
 小区信息。
 

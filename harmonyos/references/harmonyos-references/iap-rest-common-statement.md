@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-rest-
 title: 公共说明
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API > 公共说明
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:55+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0de82d7125ecc40622fa564db079e3c3742caa3e5b9b115faf9485f7c55e2521
+scraped_at: 2026-09-02T15:02:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5552bee3faf02ce29d8db7f06c29560975d58ada98ea0b7fd7274b24a3d5c2dd
 ---
 
 接口协议：HTTPS
@@ -18,7 +18,7 @@ content_hash: sha256:0de82d7125ecc40622fa564db079e3c3742caa3e5b9b115faf9485f7c55
 * 编码：UTF-8
 * Post Content Type: application/json;charset=UTF-8、application/x-www-form-urlencoded
 
-  说明
+  **说明** 
 
   1. 应用内支付的所有服务端接口均要求使用标准的application/json进行访问，使用其他的MIME Type会导致部分场景出现无法预测的调用问题。
   2. 接口响应未来可能会新增字段。

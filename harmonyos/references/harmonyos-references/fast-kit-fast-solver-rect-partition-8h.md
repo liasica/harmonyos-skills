@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/fast-kit-
 title: fast_solver_rect_partition.h
 breadcrumb: API参考 > 系统 > 基础功能 > FAST Kit（算法加速服务） > C API > 头文件和结构体 > 头文件 > fast_solver_rect_partition.h
 category: harmonyos-references
-scraped_at: 2026-04-29T14:00:45+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:81a3029a090f9a74fd98f02f31400f7ee1a25eaa3a825ddeb9514e1c79dd77e1
+scraped_at: 2026-09-02T15:02:06+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5c9f663da73deb5c36ed98a9769b7557dcf01439d0d28e2d200bc9c54736be3a
 ---
 
 ## 概述
-
-PhonePC/2in1Tablet
 
 矩形划分求解器相关数据结构及函数定义。
 
@@ -26,11 +24,7 @@ PhonePC/2in1Tablet
 
 ## 汇总
 
-PhonePC/2in1Tablet
-
 ### 结构体
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
@@ -38,16 +32,12 @@ PhonePC/2in1Tablet
 
 ### 类型定义
 
-PhonePC/2in1Tablet
-
 | 名称 | 描述 |
 | --- | --- |
 | typedef struct [FAST\_Rect](fast-kit--fast-rect.md) [FAST\_Rect](fast-kit-fast.md#fast_rect) | 定义矩形的数据结构。 |
 | typedef struct [FAST\_RectPartitionConfig](fast-kit-fast.md#fast_rectpartitionconfig) [FAST\_RectPartitionConfig](fast-kit-fast.md#fast_rectpartitionconfig) | 矩形划分求解器的不透明配置。 |
 
 ### 函数
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |

@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 防火墙错误码
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 错误码 > 防火墙错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:47+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8cf94ec380f05d254dfe28b9c703e7359a3eaf0626b17c7863e00b16be9fa5ce
+scraped_at: 2026-09-02T15:01:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ab2d2d515e5e7eeed9cd93ffb1c527e07473fafeb52266723220cd87257c232e
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码](errorcode-universal.md)说明文档。
 
 ## 29400000 指定用户不存在
-
-PC/2in1
 
 **错误信息**
 
@@ -33,8 +31,6 @@ The specified user does not exist.
 检查系统是否创建该用户ID。
 
 ## 29400001 防火墙规则数量超过最大值
-
-PC/2in1
 
 **错误信息**
 
@@ -56,8 +52,6 @@ The number of firewall rules exceeds the maximum.
 
 ## 29400002 防火墙规则中的IP地址规则数量超过最大值
 
-PC/2in1
-
 **错误信息**
 
 The number of IP address rules in the firewall rule exceeds the maximum.
@@ -76,8 +70,6 @@ IP类型的防火墙规则中，IP地址规则数量超过最大值。
 
 ## 29400003 防火墙规则中的port规则数量超过最大值
 
-PC/2in1
-
 **错误信息**
 
 The number of port rules in the firewall rule exceeds the maximum.
@@ -95,8 +87,6 @@ IP类型的防火墙规则中，port规则数量超过最大值。
 检查添加的一条IP规则中的NetFirewallPortParams参数个数是否超过10个。
 
 ## 29400004 防火墙规则中的域名规则数量超过最大值
-
-PC/2in1
 
 **错误信息**
 
@@ -118,8 +108,6 @@ domain类型的防火墙规则中，域名规则数量超过最大值。
 
 ## 29400005 模糊域名规则数量超过最大值
 
-PC/2in1
-
 **错误信息**
 
 The number of domain rules exceeds the maximum.
@@ -137,8 +125,6 @@ domain类型的防火墙规则中，模糊域名规则数量超过最大值。
 检查所有userid的模糊域名规则数量是否大于100个。
 
 ## 29400006 指定的规则不存在
-
-PC/2in1
 
 **错误信息**
 
@@ -158,8 +144,6 @@ The specified rule does not exist.
 
 ## 29400007 DNS规则重复
 
-PC/2in1
-
 **错误信息**
 
 The dns rule is duplication.
@@ -175,3 +159,23 @@ DNS规则重复。
 **处理步骤**
 
 检查增加/更新的DNS规则是否已存在。
+
+## 2100001 非法参数值
+
+**错误信息**
+
+Invalid parameter value.
+
+**错误描述**
+
+非法参数值。
+
+**可能原因**
+
+1. 参数无效：用户ID无效；规则ID无效；IP地址参数无效；端口参数无效；协议参数无效；域名参数无效；应用UID参数无效。
+2. 分页查询参数无效：查询规则列表参数无效。
+
+**处理步骤**
+
+1. 检查输入参数的取值范围是否正确。
+2. 检查输入参数的类型是否规范，例如IP地址、端口、域名是否规范。

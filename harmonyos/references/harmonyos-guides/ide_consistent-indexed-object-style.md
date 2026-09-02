@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_consisten
 title: "@typescript-eslint/consistent-indexed-object-style"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/consistent-indexed-object-style
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:25+08:00
+scraped_at: 2026-09-02T14:50:51+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:3da19ed01b1fb84d20c76667f2a9b3a3c3da94e47076fea77b4b48633d569d11
+content_hash: sha256:619f034a41d796ce080acb5afb1a6e7d109708e5f22ac8e5f0d151b893f50fe0
 ---
 
 允许或禁止使用“Record”类型。
@@ -14,13 +14,13 @@ content_hash: sha256:3da19ed01b1fb84d20c76667f2a9b3a3c3da94e47076fea77b4b48633d5
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@typescript-eslint/consistent-indexed-object-style": "error"
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@typescript-eslint/consistent-indexed-object-style": "error"
+  }
+}
 ```
 
 ## 选项
@@ -29,29 +29,29 @@ content_hash: sha256:3da19ed01b1fb84d20c76667f2a9b3a3c3da94e47076fea77b4b48633d5
 
 ## 正例
 
-```
-1. // 默认推荐使用Record 类型
-2. export type Foo = Record<string, unknown>;
+```screen
+// 默认推荐使用Record 类型
+export type Foo = Record<string, unknown>;
 ```
 
 ## 反例
 
-```
-1. export interface Foo1 {
-2. // 默认推荐使用Record 类型
-3. [key: string]: unknown;
-4. }
+```screen
+export interface Foo1 {
+  // 默认推荐使用Record 类型
+  [key: string]: unknown;
+}
 
-6. export type Foo2 = {
-7. // 默认推荐使用Record 类型
-8. [key: string]: unknown;
-9. };
+export type Foo2 = {
+  // 默认推荐使用Record 类型
+  [key: string]: unknown;
+};
 ```
 
 ## 规则集
 
-```
-1. plugin:@typescript-eslint/all
+```screen
+plugin:@typescript-eslint/all
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

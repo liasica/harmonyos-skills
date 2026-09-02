@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/deveco-studio-new-features-600
 title: 新增和增强特性
-breadcrumb: 版本说明 > HarmonyOS 6.0.0(20) > DevEco Studio > 新增和增强特性
+breadcrumb: 版本说明 > 更多版本 > 6.0.0(20) > DevEco Studio > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:44+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:877efe8aefc87fe3d4ca0b8df3e21ff7edcc0b2a8d4a9215958f2b03a23a4c72
+scraped_at: 2026-09-02T14:58:45+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e771691ad7abdf7389cd3a1cb2cb8b6cbee877d461803e823c591e867cb83a99
 ---
 
 ## DevEco Studio 6.0.0 Release（6.0.0.878）兼容性配套关系
@@ -173,7 +173,7 @@ DevEco Studio 6.0.0.848配套使用的命令行工具列表、支持的API范围
 **编写与调试应用**
 
 * 新增支持测试C++代码，对C++代码进行覆盖率统计。具体请参考[测试C++代码](../harmonyos-guides/ide-instrument-test.md#section1617524564017)。
-* 自动签名新增关联注册应用进行签名的功能。具体请参考[配置调试签名](../harmonyos-guides/ide-signing.md#section20943184413328)。
+* 自动签名新增关联注册应用进行签名的功能。具体请参考[配置调试签名](../harmonyos-guides/ide-signing-auto.md#section6333421192714)。
 * Code Linter新增6条检查规则。具体请参考[规则变更说明](../harmonyos-guides/ide-codelinter-rules-change.md)。
 
 ### 变更特性
@@ -220,9 +220,6 @@ DevEco Studio 6.0.0.828配套使用的命令行工具列表、支持的API范围
 
 * 支持卡片与应用解耦，作为两个独立模块进行开发。具体请参考[创建服务卡片](../harmonyos-guides/ide-service-widget.md)。
 * 支持创建Car设备可用的卡片。具体请参考[创建服务卡片](../harmonyos-guides/ide-service-widget.md)。
-* ohpm-repo工具能力增强：
-  + 支持配置多个仓库，并能够为每个仓库设置可读策略，可写策略和发布策略。具体请参考[仓库管理](../harmonyos-guides/ide-ohpm-depot-management.md)。
-  + 支持为每个包配置管理权限，支持配置包的查看者，维护者和所有者。具体请参考[包权限管理](../harmonyos-guides/ide-package-permission-management.md)。
 
 **编写与调试应用**
 
@@ -230,10 +227,10 @@ DevEco Studio 6.0.0.828配套使用的命令行工具列表、支持的API范围
 * HAP/HSP引用HSP时支持预览。
 * 预览启动后，点击侧边工具栏预览按钮隐藏窗口，如果10分钟内再次点击按钮预览同一个页面，预览界面会直接显示预览效果，不会重新启动预览流程。
 
-* 新增部分ACL权限支持通过自动签名快速申请。具体请参考[支持ACL权限](../harmonyos-guides/ide-signing.md#section5301916183411)。
+* 新增部分ACL权限支持通过自动签名快速申请。具体请参考[支持ACL权限](../harmonyos-guides/ide-signing-auto.md#section5301916183411)。
 * 模拟器新增支持穿戴设备。具体请参考[设备支持类型](../harmonyos-guides/ide-emulator-devicetype.md)。
 * 支持通过命令行查询模拟器实例。具体请参考[通过命令行使用模拟器](../harmonyos-guides/ide-emulator-command-line.md)。
-* App Freeze类型的FaultLog新增System页签，用于在高负载场景下，展示设备CPU/内存的日志信息。具体请参考[查看高负载CPU/内存日志信息](../harmonyos-guides/ide-fault-log.md#section179717814915)。
+* App Freeze类型的FaultLog新增System页签，用于在高负载场景下，展示设备CPU/内存的日志信息。具体请参考[查看高负载CPU/内存日志信息](../harmonyos-guides/ide-faultlog-appfreeze.md#section145027295519)。
 * 跨语言调试时，进入C++断点后，支持查看ArkTS变量。具体请参考[跨语言调试](../harmonyos-guides/ide-cross-language-debugging.md)。
 * 在DevEco Testing中测试生成的检测报告，支持导入到AppAnalyzer进行诊断和分析，获得可能的故障原因并生成体检报告。具体请参考[应用与元服务体检](../harmonyos-guides/ide-app-analyzer.md)。
 * AppAnalyzer的最佳实践下新增一条规则：应用/元服务非预期文件打包检测。具体请参考[最佳实践](../harmonyos-guides/ide-app-analyzer-all-rules.md#section215214149573)。
@@ -297,10 +294,10 @@ DevEco Studio 6.0.0.456配套使用的命令行工具列表、支持的API范围
 * 提供Copy Reference能力，便于拷贝代码行或类、方法、参数、变量等名称定义处的地址。具体请参考[Copy Reference](../harmonyos-guides/ide-editer-overview.md#section169943542212)。
 * 预览调试能力增强。具体请参考[使用预览器调试应用](../harmonyos-guides/ide-previewer-debug.md)。
 * 模拟器新增支持折叠屏PC/2in1设备。
-* App Freeze类型的FaultLog支持结构化展示和日志过滤。具体请参考[查看appfreeze结构化日志](../harmonyos-guides/ide-fault-log.md#section1890141984710)。
+* AppFreeze类型的FaultLog支持结构化展示和日志过滤。具体请参考[查看AppFreeze（应用冻屏）日志](../harmonyos-guides/ide-faultlog-appfreeze.md)。
 * 应用与元服务体检支持选择构建模式、Product和Target，在体检过程中自动编译构建打包。具体请参考[应用与元服务体检](../harmonyos-guides/ide-app-analyzer.md)。
 * 场景化体检新增web场景。具体请参考[体检场景](../harmonyos-guides/ide-app-analyzer-scenes.md)。
-* 新增部分ACL权限支持通过自动签名快速申请。具体请参考[支持ACL权限](../harmonyos-guides/ide-signing.md#section5301916183411)。
+* 新增部分ACL权限支持通过自动签名快速申请。具体请参考[支持ACL权限](../harmonyos-guides/ide-signing-auto.md#section5301916183411)。
 
 **构建应用**
 
@@ -400,17 +397,16 @@ DevEco Studio 6.0.0.418配套使用的命令行工具列表、支持的API范围
 * 新增支持通过自然语言交互，分析并解释当前实例或项目中存在的性能问题，帮助开发者快速定位影响性能的具体原因。具体请参考[智慧调优](../harmonyos-guides/ide-ai-profiler.md)。
 * 支持对C API的变更情况进行查询，提供跨版本查询能力。具体请参考[API变更查询](../harmonyos-guides/ide-editer-overview.md#section234174215231)。
 * Code Linter新增3条检查规则，@typescript-eslint/explicit-function-return-type规则新增支持对.ets文件进行检查的配置选项。具体请参考[规则变更说明](../harmonyos-guides/ide-codelinter-rules-change.md)。
-* 新增部分ACL权限支持通过自动签名快速申请。具体请参考[支持ACL权限](../harmonyos-guides/ide-signing.md#section5301916183411)。
+* 新增部分ACL权限支持通过自动签名快速申请。具体请参考[支持ACL权限](../harmonyos-guides/ide-signing-auto.md#section5301916183411)。
 * Profiler调优工具能力增强：
   + Snapshot分析模板支持将引用链以图表形式展示。具体请参考[引用链可视化](../harmonyos-guides/ide-snapshot-basic-operations.md#section210094462720)。
   + Snapshot分析支持对应用对象类的名称进行解析。具体请参考[应用对象名称解析](../harmonyos-guides/ide-snapshot-basic-operations.md#section17661924162612)。
   + Launch模板支持展示应用冷启动过程ETS文件加载情况。具体请参考[Launch模板基本操作](../harmonyos-guides/ide-insight-session-launch.md)。
   + Profiler工具Energy模版支持能耗异常数据展示并定位到异常能耗组件。具体请参考[能耗诊断：Energy分析](../harmonyos-guides/ide-profiler-energy.md)。
 * 提供Graphics Profiler工具捕获GPU帧信息。具体请参考[GPU帧捕获工具：Graphics Profiler](../harmonyos-guides/ide-graphics-profiler.md)。
-* 新增部分ACL权限支持通过自动签名快速申请。具体请参考[支持ACL权限](../harmonyos-guides/ide-signing.md#section5301916183411)。
+* 新增部分ACL权限支持通过自动签名快速申请。具体请参考[支持ACL权限](../harmonyos-guides/ide-signing-auto.md#section5301916183411)。
 * ohpm支持使用@module通过模块名指向模块目录的方式引入依赖。具体请参考[依赖配置说明](../harmonyos-guides/ide-oh-package-json5.md#section2016910347161)。
 * ohpm命令行工具支持list --recursive选项展示所有模块的依赖树。具体请参考[recursive](../harmonyos-guides/ide-ohpm-list.md#section1585593414216)。
-* ohpm-repo支持三方库字节码文件的OHMUrl版本一致性校验。具体请参考[content\_check\_plugin](../harmonyos-guides/ide-ohpm-repo-configuration.md#section1216516278174)。
 * hvigor-config.json5文件的execution下新增optimizationStrategy字段，用于指定构建模式。同时命令行参数支持--optimization-strategy=performance/memory。具体请参考[hvigor-config.json5文件](../harmonyos-guides/ide-hvigor-set-options.md)和[hvigorw](../harmonyos-guides/ide-hvigor-commandline.md)。
 * hvigor-config.json5文件的properties下新增以下字段。具体请参考[hvigor-config.json5文件](../harmonyos-guides/ide-hvigor-set-options.md)。
   + 新增ohos.rollupCache.usePathPlaceholder字段，用于指定是否将build目录下rollup缓存中的绝对路径替换为占位符。
@@ -420,7 +416,7 @@ DevEco Studio 6.0.0.418配套使用的命令行工具列表、支持的API范围
 * 新建Native C++工程默认使用毕昇编译器，打开历史工程会弹窗提示，点击**立即体验**可以切换使用毕昇编译器。
 * 混淆助手支持关联历史记录，历史已经排查过的白名单字段无需再重复排查，同时支持合并白名单文件。具体请参考[通过混淆助手配置保留选项](../harmonyos-guides/ide-build-obfuscation.md#section19439175917123)。
 * ArkUI Inspector支持按照组件粒度3D展开应用，方便查看组件之间的嵌套、遮挡关系。具体请参考[3D展开应用](../harmonyos-guides/ide-arkui-inspector.md#section138812162416)。
-* Cpp Crash类型的FaultLog支持结构化展示和日志过滤。具体请参考[查看结构化日志](../harmonyos-guides/ide-fault-log.md#section14328144141615)。
+* Cpp Crash类型的FaultLog支持结构化展示和日志过滤。具体请参考[查看Cpp Crash（进程崩溃）日志](../harmonyos-guides/ide-faultlog-cppcrash.md)。
 * 模拟器支持自定义屏幕尺寸、分辨率、DPI等配置。具体请参考[创建模拟器](../harmonyos-guides/ide-emulator-create.md)或[自定义屏幕配置](../harmonyos-guides/ide-emulator-customize-screen-configuration.md)。
 * 模拟器支持添加多块屏幕，用于快速测试不同分辨率、DPI场景下的UI布局等需求。具体请参考[模拟器多屏能力](../harmonyos-guides/ide-emulator-more-features.md#section9744191415368)。
 * 应用与元服务体检新增上架前体检模式，针对上架阻塞问题进行快速检测，检测完成之后可以选择上传体检报告，用于应用市场上架参考，提升上架效率。具体请参考[应用与元服务体检](../harmonyos-guides/ide-app-analyzer.md)。

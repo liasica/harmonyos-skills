@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/serviceco
 title: ServiceCollaboration_CollaborationDeviceInfoSets
 breadcrumb: API参考 > 系统 > 网络 > Service Collaboration Kit（协同服务） > C API > 头文件和结构体 > 结构体 > ServiceCollaboration_CollaborationDeviceInfoSets
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:16+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e457aa2ca6f504ab323dd7ae861160cd982ce6b1d4e9b18d32f446f119d48fc4
+scraped_at: 2026-09-02T15:01:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:adb5c5da827c04cfc292434e279c1d28de70d08c57cc1a84a76048242e58a9d5
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 通过[HMS\_ServiceCollaboration\_GetCollaborationDeviceInfos](servicecollaboration-capi-module.md#hms_servicecollaboration_getcollaborationdeviceinfos)获取的对端设备信息对象集合。
 
@@ -22,11 +20,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 成员变量
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -35,14 +29,10 @@ PhonePC/2in1TabletTV
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTV
-
 ### deviceInfoSets
 
-PhonePC/2in1TabletTV
-
-```
-1. ServiceCollaboration_CollaborationDeviceInfo* ServiceCollaboration_CollaborationDeviceInfoSets::deviceInfoSets
+```c
+ServiceCollaboration_CollaborationDeviceInfo* ServiceCollaboration_CollaborationDeviceInfoSets::deviceInfoSets
 ```
 
 **描述**
@@ -51,10 +41,8 @@ PhonePC/2in1TabletTV
 
 ### size
 
-PhonePC/2in1TabletTV
-
-```
-1. uint32_t ServiceCollaboration_CollaborationDeviceInfoSets::size
+```c
+uint32_t ServiceCollaboration_CollaborationDeviceInfoSets::size
 ```
 
 **描述**

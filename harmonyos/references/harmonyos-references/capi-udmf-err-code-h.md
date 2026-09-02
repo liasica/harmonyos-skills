@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-udmf
 title: udmf_err_code.h
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 头文件 > udmf_err_code.h
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:32+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:91cde7c695e2c048f1655eb9532f7558e369159b2c2e0f67b453f433335f7479
+scraped_at: 2026-09-02T15:00:42+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d445ba0e72254719cb614346a3feab880e4ad3018ac94458ba31bd36baed384f
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 声明统一数据管理框架错误码信息。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 枚举
-
-PhonePC/2in1TabletTV
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -39,14 +33,10 @@ PhonePC/2in1TabletTV
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTV
-
 ### Udmf\_ErrCode
 
-PhonePC/2in1TabletTV
-
-```
-1. enum Udmf_ErrCode
+```c
+enum Udmf_ErrCode
 ```
 
 **描述**
@@ -63,10 +53,8 @@ PhonePC/2in1TabletTV
 
 ### Udmf\_ListenerStatus
 
-PhonePC/2in1TabletTV
-
-```
-1. enum Udmf_ListenerStatus
+```c
+enum Udmf_ListenerStatus
 ```
 
 **描述**

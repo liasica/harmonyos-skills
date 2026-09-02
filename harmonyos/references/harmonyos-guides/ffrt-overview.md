@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ffrt-overview
 title: Function Flow Runtime Kit概述
 breadcrumb: 指南 > 系统 > 基础功能 > Function Flow Runtime Kit（任务并发调度服务） > Function Flow Runtime Kit概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:27+08:00
+scraped_at: 2026-09-02T14:59:36+08:00
 doc_updated_at: 2026-04-17
-content_hash: sha256:5ef5f3fd857a0e81cd9e8749e432aae47d9f48d380cd4eec217292afb3d6d3cf
+content_hash: sha256:408cca657856522ede864d4767c35e7da5f6afb9363569e48f6b08a3e09e3f06
 ---
 
 ## 简介
@@ -47,7 +47,7 @@ FFRT编程模型中的任务包含以下主要特征：
 * 任务可支持嵌套，即任务在执行过程中可生成新的任务下发给运行时，形成父子任务关系。
 * 多任务支持同步，例如等待，锁，条件变量等。
 
-注意
+**注意** 
 
 任务颗粒度影响应用执行性能，颗粒度过小增加调度开销，颗粒度过大降低并行度。FFRT编程模型中任务的目标颗粒度最小为100us量级，开发者应注意合理控制任务颗粒度。
 

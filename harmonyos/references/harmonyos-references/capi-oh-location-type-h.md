@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-l
 title: oh_location_type.h
 breadcrumb: API参考 > 应用服务 > Location Kit（位置服务） > C API > 头文件 > oh_location_type.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:07+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8b626fcb8c51225687f532a2d7fc7f1a6b7eaa3a157ed0197484d440b108dacd
+scraped_at: 2026-09-02T15:02:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a9eb9a42379ac72e909afba9bf36e9346211fb0455ade0e5c601f851219925c6
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义位置服务常用的属性。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -39,8 +33,6 @@ PhonePC/2in1TabletTVWearable
 | [Location\_RequestConfig](capi-location-location-requestconfig.md) | Location\_RequestConfig | 定义位置请求参数的结构体。 |
 
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -51,10 +43,9 @@ PhonePC/2in1TabletTVWearable
 
 ### 函数
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
+| [bool OH\_LocationInfo\_IsFromMock(Location\_Info\* location)](capi-oh-location-type-h.md#oh_locationinfo_isfrommock) | - | 判断定位信息是否来自模拟位置功能。  **起始版本：** 26.0.0 |
 | [Location\_BasicInfo OH\_LocationInfo\_GetBasicInfo(Location\_Info\* location)](capi-oh-location-type-h.md#oh_locationinfo_getbasicinfo) | - | 获取位置基本信息。 |
 | [Location\_ResultCode OH\_LocationInfo\_GetAdditionalInfo(Location\_Info\* location, char\* additionalInfo, uint32\_t length)](capi-oh-location-type-h.md#oh_locationinfo_getadditionalinfo) | - | 获取位置信息中的附加信息。 |
 | [typedef void (\*Location\_InfoCallback)(Location\_Info\* location, void\* userData)](capi-oh-location-type-h.md#location_infocallback) | Location\_InfoCallback | 用于接收位置上报的回调函数。 |
@@ -67,14 +58,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### Location\_ResultCode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Location_ResultCode
+```c
+enum Location_ResultCode
 ```
 
 **描述**
@@ -94,10 +81,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Location\_UseScene
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Location_UseScene
+```c
+enum Location_UseScene
 ```
 
 **描述**
@@ -115,10 +100,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Location\_PowerConsumptionScene
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Location_PowerConsumptionScene
+```c
+enum Location_PowerConsumptionScene
 ```
 
 **描述**
@@ -135,10 +118,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Location\_SourceType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Location_SourceType
+```c
+enum Location_SourceType
 ```
 
 **描述**
@@ -156,14 +137,34 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
+### OH\_LocationInfo\_IsFromMock()
+
+```c
+bool OH_LocationInfo_IsFromMock(Location_Info* location)
+```
+
+**描述**
+
+判断定位信息是否来自模拟位置功能。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [Location\_Info](capi-location-location-info.md)\* location | 指向位置信息结构体的指针。  需要传入非空指针，该指针可以在[Location\_InfoCallback](capi-oh-location-type-h.md#location_infocallback)中获取。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| bool | 返回bool类型的结果，用于指示该位置是否来自模拟位置功能。  如果值为 true，表示该位置来自模拟位置功能；如果值为false，表示该位置源自系统的真实定位结果。 |
 
 ### OH\_LocationInfo\_GetBasicInfo()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Location_BasicInfo OH_LocationInfo_GetBasicInfo(Location_Info* location)
+```c
+Location_BasicInfo OH_LocationInfo_GetBasicInfo(Location_Info* location)
 ```
 
 **描述**
@@ -186,10 +187,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_LocationInfo\_GetAdditionalInfo()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Location_ResultCode OH_LocationInfo_GetAdditionalInfo(Location_Info* location, char* additionalInfo, uint32_t length)
+```c
+Location_ResultCode OH_LocationInfo_GetAdditionalInfo(Location_Info* location, char* additionalInfo, uint32_t length)
 ```
 
 **描述**
@@ -214,10 +213,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Location\_InfoCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*Location_InfoCallback)(Location_Info* location, void* userData)
+```c
+typedef void (*Location_InfoCallback)(Location_Info* location, void* userData)
 ```
 
 **描述**
@@ -235,10 +232,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Location\_CreateRequestConfig()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Location_RequestConfig* OH_Location_CreateRequestConfig(void)
+```c
+Location_RequestConfig* OH_Location_CreateRequestConfig(void)
 ```
 
 **描述**
@@ -255,10 +250,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Location\_DestroyRequestConfig()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Location_DestroyRequestConfig(Location_RequestConfig* requestConfig)
+```c
+void OH_Location_DestroyRequestConfig(Location_RequestConfig* requestConfig)
 ```
 
 **描述**
@@ -275,10 +268,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_LocationRequestConfig\_SetUseScene()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_LocationRequestConfig_SetUseScene(Location_RequestConfig* requestConfig, Location_UseScene useScene)
+```c
+void OH_LocationRequestConfig_SetUseScene(Location_RequestConfig* requestConfig, Location_UseScene useScene)
 ```
 
 **描述**
@@ -304,10 +295,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_LocationRequestConfig\_SetPowerConsumptionScene()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_LocationRequestConfig_SetPowerConsumptionScene(Location_RequestConfig* requestConfig, Location_PowerConsumptionScene powerConsumptionScene)
+```c
+void OH_LocationRequestConfig_SetPowerConsumptionScene(Location_RequestConfig* requestConfig, Location_PowerConsumptionScene powerConsumptionScene)
 ```
 
 **描述**
@@ -325,10 +314,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_LocationRequestConfig\_SetInterval()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_LocationRequestConfig_SetInterval(Location_RequestConfig* requestConfig, int interval)
+```c
+void OH_LocationRequestConfig_SetInterval(Location_RequestConfig* requestConfig, int interval)
 ```
 
 **描述**
@@ -346,10 +333,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_LocationRequestConfig\_SetCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_LocationRequestConfig_SetCallback(Location_RequestConfig* requestConfig, Location_InfoCallback callback, void* userData)
+```c
+void OH_LocationRequestConfig_SetCallback(Location_RequestConfig* requestConfig, Location_InfoCallback callback, void* userData)
 ```
 
 **描述**

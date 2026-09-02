@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-ui-widget-
 title: JS卡片概述
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > JS卡片开发 > JS卡片概述
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:30:02+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:6e399615e40698a3066f4d7757e1d5cb9a2ceefe9173386f705f9bb054483066
+scraped_at: 2026-09-02T14:59:25+08:00
+doc_updated_at: 2026-08-24
+content_hash: sha256:8d6dc8a17d2c0686c32641d1d2dd9f592f011c6f284b0fed739c696ad475e8cb
 ---
 
-JS卡片是使用类Web范式（HML+CSS+JSON）开发页面的卡片，现在已经支持FA模型和Stage模型两种[应用模型](application-models.md)。开发指导请参见[JS卡片开发指导（Stage模型）](js-ui-widget-development.md)和[JS卡片开发指导（FA模型）](widget-development-fa.md)。在开发新卡片时，推荐采用ArkTS声明式来构建UI，声明式和类web范式差异点可参考[ArkUI简介](arkui-overview.md)。
+JS卡片是使用类Web范式（HML+CSS+JSON）开发页面的卡片，现在已经支持FA模型和Stage模型两种[应用模型](stage-model-development-overview.md)。开发指导请参见[JS卡片开发指导（Stage模型）](js-ui-widget-development.md)和[JS卡片开发指导（FA模型）](widget-development-fa.md)。在开发新卡片时，推荐采用ArkTS声明式来构建UI，声明式和类Web范式差异点可参考[ArkUI简介](arkui-overview.md)。
 
 ## 实现原理
 
@@ -16,7 +16,7 @@ JS卡片实现原理如图1所示。
 
 **图1** JS卡片实现原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/mXyir640TLahaAfPXf41Bg/zh-cn_image_0000002558605156.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/ZLUJQFYVTIiuaXAmKMQnUQ/zh-cn_image_0000002706674270.png)
 
 卡片使用方包含以下模块：
 
@@ -37,6 +37,6 @@ JS卡片实现原理如图1所示。
 * 卡片提供方实例管理模块：由卡片提供方开发者实现，负责对卡片管理服务分配的卡片实例进行持久化管理。
 * 通信适配层：由HarmonyOS SDK提供，负责与卡片管理服务通信，用于将卡片的更新数据主动推送到卡片管理服务。
 
-说明
+**说明** 
 
 实际开发时只需要作为卡片提供方进行卡片内容的开发，卡片使用方和卡片管理服务由系统自动处理。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicemanager
 title: 分布式设备管理开发指南
 breadcrumb: 指南 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > 分布式设备管理开发指南
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:45+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:10fbe24318fb483cd0dd2f1fe1478558e8f220fa0b9be47c7e7fef32c4d1f95d
+scraped_at: 2026-09-02T14:59:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:32329f36602e597f4915c8367cc3ed10ba5a25d86b11b8a9531c5e95778d7db1
 ---
 
 ## 分布式设备管理简介
@@ -18,7 +18,7 @@ content_hash: sha256:10fbe24318fb483cd0dd2f1fe1478558e8f220fa0b9be47c7e7fef32c4d
 
 * **发现**
 
-  发现周围终端设备并上报。周围设备需要连接同局域网或者同时打开蓝牙，可以根据设备类型、距离、设备是否可信等进行筛选。
+  发现周围终端设备并上报。周围设备需要连接同局域网或者同时打开蓝牙。
 * **绑定**
 
   不同设备协同合作完成分布式业务的前提是设备间可信，对于周边发现的不可信设备，可通过绑定使彼此建立可信关系，提供PIN码、碰、扫、靠等设备认证框架，支持对接各种认证交互接口。
@@ -39,6 +39,10 @@ content_hash: sha256:10fbe24318fb483cd0dd2f1fe1478558e8f220fa0b9be47c7e7fef32c4d
 
 设备信息属于用户敏感数据，所以即使用户已连接同一局域网或者蓝牙开关已开启，应用在获取设备位置前仍需向用户申请数据同步权限。在用户确认允许后，系统才会向应用提供设备管理能力。
 
+## 模拟器支持情况
+
+本模块暂不支持模拟器。
+
 ## 申请分布式数据同步权限开发指导
 
 ### 场景概述
@@ -55,41 +59,41 @@ ohos.permission.DISTRIBUTED\_DATASYNC：分布式数据同步权限
 
 1. 在module.json5配置文件中配置分布式数据同步权限ohos.permission.DISTRIBUTED\_DATASYNC。
 
-   ```
-   1. {
-   2. "module" : {
-   3. "requestPermissions":[
-   4. {
-   5. "name" : "ohos.permission.DISTRIBUTED_DATASYNC",
-   6. "reason": "$string:distributed_permission",
-   7. "usedScene": {
-   8. "abilities": [
-   9. "MainAbility"
-   10. ],
-   11. "when": "inuse"
-   12. }
-   13. }
-   14. ]
-   15. }
-   16. }
+   ```ts
+   {
+     "module" : {
+       "requestPermissions":[
+         {
+           "name" : "ohos.permission.DISTRIBUTED_DATASYNC",
+           "reason": "$string:distributed_permission",
+           "usedScene": {
+             "abilities": [
+               "MainAbility"
+             ],
+             "when": "inuse"
+           }
+         }
+       ]
+     }
+   }
    ```
 2. 导入abilityAccessCtrl模块，用于获取权限申请的能力。
 
-   ```
-   1. import { abilityAccessCtrl } from '@kit.AbilityKit';
+   ```ts
+   import { abilityAccessCtrl } from '@kit.AbilityKit';
    ```
 3. 分布式数据同步权限的授权方式为user\_grant，因此需要调用[requestPermissionsFromUser()](../harmonyos-references/js-apis-abilityaccessctrl.md#requestpermissionsfromuser9)接口，以动态弹窗的方式向用户申请授权。
 
-   ```
-   1. let atManager = abilityAccessCtrl.createAtManager();
-   2. atManager.requestPermissionsFromUser(context, ['ohos.permission.DISTRIBUTED_DATASYNC'])
-   3. .then(async (data) => {
-   4. logger.info(`data: ${JSON.stringify(data)}`);
-   5. // ...
-   6. })
-   7. .catch((err: BusinessError) => {
-   8. logger.error(`requestPermissionsFromUser error: ${JSON.stringify(err)}`);
-   9. });
+   ```typescript
+   let atManager = abilityAccessCtrl.createAtManager();
+   atManager.requestPermissionsFromUser(context, ['ohos.permission.DISTRIBUTED_DATASYNC'])
+     .then(async (data) => {
+       logger.info(`data: ${JSON.stringify(data)}`);
+       // ...
+     })
+     .catch((err: BusinessError) => {
+       logger.error(`requestPermissionsFromUser error: ${JSON.stringify(err)}`);
+     });
    ```
 
 ## 设备发现开发指导
@@ -109,74 +113,93 @@ startDiscovering(discoverParam: {[key: string]: Object;} , filterOptions?: {[key
 1. 申请分布式数据同步权限。
 2. 导入distributedDeviceManager模块，所有与设备管理相关的功能API，都是通过该模块提供的。
 
-   ```
-   1. import { distributedDeviceManager } from '@kit.DistributedServiceKit';
+   ```ts
+   import { distributedDeviceManager } from '@kit.DistributedServiceKit';
    ```
 3. 导入BusinessError模块，用于获取distributedDeviceManager模块相关接口抛出的错误码。
 
-   ```
-   1. import { BusinessError } from '@kit.BasicServicesKit';
+   ```ts
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 4. 创建设备管理实例，设备管理实例是分布式设备管理方法的调用入口。
 
-   ```
-   1. async createDeviceManager(): Promise<void> {
-   2. if (typeof (this.deviceManager) != 'undefined') {
-   3. return;
-   4. }
+   ```typescript
+   async createDeviceManager(): Promise<void> {
+     if (typeof (this.deviceManager) != 'undefined') {
+       return;
+     }
 
-   6. logger.info('[DeviceManager.RemoteDeviceModel] deviceManager.createDeviceManager begin');
-   7. try {
-   8. let dmInstance = distributedDeviceManager.createDeviceManager('com.samples.devicemanager');
-   9. this.deviceManager = dmInstance
-   10. // ...
-   11. logger.info(`[DeviceManager.RemoteDeviceModel] createDeviceManager callback returned,
-   12. value= ${JSON.stringify(this.deviceManager)}`);
-   13. } catch (err) {
-   14. let error: BusinessError = err as BusinessError;
-   15. logger.error(`[DeviceManager.RemoteDeviceModel] createDeviceManager throw error,
-   16. error=${error} message=${error.message}`);
-   17. }
-   18. logger.info('[DeviceManager.RemoteDeviceModel] distributedDeviceManager.createDeviceManager end');
-   19. }
+     logger.info('[DeviceManager.RemoteDeviceModel] deviceManager.createDeviceManager begin');
+     try {
+       let dmInstance = distributedDeviceManager.createDeviceManager('com.samples.devicemanager');
+       this.deviceManager = dmInstance
+       // ...
+       logger.info(`[DeviceManager.RemoteDeviceModel] createDeviceManager callback returned,
+       value= ${JSON.stringify(this.deviceManager)}`);
+     } catch (err) {
+       let error: BusinessError = err as BusinessError;
+       logger.error(`[DeviceManager.RemoteDeviceModel] createDeviceManager throw error,
+       error=${error} message=${error.message}`);
+     }
+     logger.info('[DeviceManager.RemoteDeviceModel] distributedDeviceManager.createDeviceManager end');
+   }
    ```
 5. 注册发现设备的回调，调用发现接口发现周边设备。发现状态持续两分钟，超过两分钟，会停止发现，最大发现数量99个。
 
+   ```typescript
+   startDeviceDiscovery(): void {
+     if (typeof (this.deviceManager) == 'undefined') {
+       logger.error('[DeviceManager.RemoteDeviceModel] deviceManager has not initialized');
+       this.showErrMsg('deviceManager has not initialized');
+       return;
+     }
+     let self = this;
+     try {
+       this.deviceManager.on('discoverSuccess', (data) => {
+         if (data == null) {
+           return;
+         }
+         logger.info('[DeviceManager.RemoteDeviceModel] deviceFound data=' + JSON.stringify(data));
+         self.deviceFound(data);
+       })
+       this.deviceManager.on('discoverFailure', (data) => {
+         logger.info('[DeviceManager.RemoteDeviceModel] discoverFail data=' + JSON.stringify(data));
+       })
+       // ...
+       let discoverParam: Record<string, number> = {
+         'discoverTargetType': 1
+       };
+       let filterOptions: Record<string, number> = this.getFilterOptions();
+       logger.info('[DeviceManager.RemoteDeviceModel] startDeviceDiscovery filterOptions = ' + JSON.stringify(filterOptions));
+       if (Object.entries(filterOptions).length == 0) {
+         this.deviceManager.startDiscovering(discoverParam);
+       } else {
+         this.deviceManager.startDiscovering(discoverParam, filterOptions);
+       }
+     } catch (err) {
+       let e: BusinessError = err as BusinessError;
+       logger.error('[DeviceManager.RemoteDeviceModel] startDeviceDiscovery failed err: ' + e.toString());
+     }
+   }
    ```
-   1. startDeviceDiscovery(): void {
-   2. if (typeof (this.deviceManager) == 'undefined') {
-   3. logger.error('[DeviceManager.RemoteDeviceModel] deviceManager has not initialized');
-   4. this.showErrMsg('deviceManager has not initialized');
-   5. return;
-   6. }
-   7. let self = this;
-   8. try {
-   9. this.deviceManager.on('discoverSuccess', (data) => {
-   10. if (data == null) {
-   11. return;
-   12. }
-   13. logger.info('[DeviceManager.RemoteDeviceModel] deviceFound data=' + JSON.stringify(data));
-   14. self.deviceFound(data);
-   15. })
-   16. this.deviceManager.on('discoverFailure', (data) => {
-   17. logger.info('[DeviceManager.RemoteDeviceModel] discoverFail data=' + JSON.stringify(data));
-   18. })
-   19. // ...
-   20. let discoverParam: Record<string, number> = {
-   21. 'discoverTargetType': 1
-   22. };
-   23. let filterOptions: Record<string, number> = this.getFilterOptions();
-   24. logger.info('[DeviceManager.RemoteDeviceModel] startDeviceDiscovery filterOptions = ' + JSON.stringify(filterOptions));
-   25. if (Object.entries(filterOptions).length == 0) {
-   26. this.deviceManager.startDiscovering(discoverParam);
-   27. } else {
-   28. this.deviceManager.startDiscovering(discoverParam, filterOptions);
-   29. }
-   30. } catch (err) {
-   31. let e: BusinessError = err as BusinessError;
-   32. logger.error('[DeviceManager.RemoteDeviceModel] startDeviceDiscovery failed err: ' + e.toString());
-   33. }
-   34. }
+6. 发现结束或页面退出时，调用停止发现接口释放发现监听。
+
+   ```typescript
+   stopDeviceDiscovery(): void {
+     if (typeof (this.deviceManager) == 'undefined') {
+       logger.error('[DeviceManager.RemoteDeviceModel] deviceManager has not initialized');
+       this.showErrMsg('deviceManager has not initialized');
+       return;
+     }
+     logger.info('[DeviceManager.RemoteDeviceModel] stopDeviceDiscovery');
+     try {
+       this.deviceManager.stopDiscovering();
+       this.deviceManager.off('discoverSuccess');
+       this.deviceManager.off('discoverFailure');
+     } catch (e) {
+       logger.error('[DeviceManager.RemoteDeviceModel] stopDeviceDiscovery failed err: ' + e.toString());
+     }
+   }
    ```
 
 ## 设备绑定开发指导
@@ -197,40 +220,40 @@ bindTarget(deviceId: string, bindParam: {[key: string]: Object;} , callback: Asy
 2. 发现周边不可信设备。
 3. 选择不可信设备id，发起设备绑定。
 
-   ```
-   1. authenticateDevice(device: distributedDeviceManager.DeviceBasicInfo): void {
-   2. logger.info('[DeviceManager.RemoteDeviceModel] authenticateDevice ' + JSON.stringify(device));
-   3. if (typeof (this.deviceManager) == 'undefined') {
-   4. logger.error('[DeviceManager.RemoteDeviceModel] deviceManager has not initialized');
-   5. this.showErrMsg('deviceManager has not initialized');
-   6. return;
-   7. }
+   ```typescript
+   authenticateDevice(device: distributedDeviceManager.DeviceBasicInfo): void {
+     logger.info('[DeviceManager.RemoteDeviceModel] authenticateDevice ' + JSON.stringify(device));
+     if (typeof (this.deviceManager) == 'undefined') {
+       logger.error('[DeviceManager.RemoteDeviceModel] deviceManager has not initialized');
+       this.showErrMsg('deviceManager has not initialized');
+       return;
+     }
 
-   9. for (let i = 0; i < this.discoverList.length; i++) {
-   10. if (this.discoverList[i].deviceId != device.deviceId) {
-   11. continue;
-   12. }
+     for (let i = 0; i < this.discoverList.length; i++) {
+       if (this.discoverList[i].deviceId != device.deviceId) {
+         continue;
+       }
 
-   14. let bindParam: Record<string, number | string> = {
-   15. 'bindLevel': 3,
-   16. 'bindType': 1, // PIN码认证
-   17. 'targetPkgName': 'ohos.samples.etsdevicemanager',
-   18. 'appName': 'DeviceManager',
-   19. };
-   20. try {
-   21. this.deviceManager.bindTarget(device.deviceId, bindParam, (err: BusinessError, data: Object) => {
-   22. if (err) {
-   23. logger.error('[DeviceManager.RemoteDeviceModel] authenticateDevice error:' + JSON.stringify(err));
-   24. return;
-   25. }
-   26. logger.info('[DeviceManager.RemoteDeviceModel] authenticateDevice succeed:' + JSON.stringify(data));
-   27. })
-   28. } catch (err) {
-   29. let e: BusinessError = err as BusinessError;
-   30. logger.error('[DeviceManager.RemoteDeviceModel] authenticateDevice failed err: ' + e.toString());
-   31. }
-   32. }
-   33. }
+       let bindParam: Record<string, number | string> = {
+         'bindLevel': 3,
+         'bindType': 1, // PIN码认证
+         'targetPkgName': 'ohos.samples.etsdevicemanager',
+         'appName': 'DeviceManager',
+       };
+       try {
+         this.deviceManager.bindTarget(device.deviceId, bindParam, (err: BusinessError, data: Object) => {
+           if (err) {
+             logger.error('[DeviceManager.RemoteDeviceModel] authenticateDevice error:' + JSON.stringify(err));
+             return;
+           }
+           logger.info('[DeviceManager.RemoteDeviceModel] authenticateDevice succeed:' + JSON.stringify(data));
+         })
+       } catch (err) {
+         let e: BusinessError = err as BusinessError;
+         logger.error('[DeviceManager.RemoteDeviceModel] authenticateDevice failed err: ' + e.toString());
+       }
+     }
+   }
    ```
 
 ## 设备信息查询开发指导
@@ -252,23 +275,23 @@ getAvailableDeviceListSync(): Array<DeviceBasicInfo>;
 3. 建立设备间的可信关系。
 4. 查询周围上线并且可信的设备。
 
-   ```
-   1. getTrustedDeviceList(): void {
-   2. if (typeof (this.deviceManager) == 'undefined') {
-   3. logger.error('[DeviceManager.RemoteDeviceModel] deviceManager has not initialized');
-   4. this.showErrMsg('deviceManager has not initialized');
-   5. return;
-   6. }
+   ```typescript
+   getTrustedDeviceList(): void {
+     if (typeof (this.deviceManager) == 'undefined') {
+       logger.error('[DeviceManager.RemoteDeviceModel] deviceManager has not initialized');
+       this.showErrMsg('deviceManager has not initialized');
+       return;
+     }
 
-   8. logger.info('[DeviceManager.RemoteDeviceModel] getTrustedDeviceList begin');
-   9. try {
-   10. this.trustedDeviceList = this.deviceManager.getAvailableDeviceListSync();
-   11. // ...
-   12. } catch (error) {
-   13. logger.error('[DeviceManager.RemoteDeviceModel] getTrustedDeviceList error: ${error}' + error.toString());
-   14. this.showErrMsg('getTrustedDeviceList failed');
-   15. }
-   16. }
+     logger.info('[DeviceManager.RemoteDeviceModel] getTrustedDeviceList begin');
+     try {
+       this.trustedDeviceList = this.deviceManager.getAvailableDeviceListSync();
+       // ...
+     } catch (error) {
+       logger.error('[DeviceManager.RemoteDeviceModel] getTrustedDeviceList error: ${error}' + error.toString());
+       this.showErrMsg('getTrustedDeviceList failed');
+     }
+   }
    ```
 
 ## 设备上下线监听开发指导
@@ -288,48 +311,48 @@ on(type: 'deviceStateChange', callback: Callback<{ action: DeviceStateChange; de
 1. 申请分布式数据同步权限。
 2. 导入distributedDeviceManager模块，所有与设备管理相关的功能API，都是通过该模块提供的。
 
-   ```
-   1. import { distributedDeviceManager } from '@kit.DistributedServiceKit';
+   ```ts
+   import { distributedDeviceManager } from '@kit.DistributedServiceKit';
    ```
 3. 导入BusinessError模块，用于获取distributedDeviceManager模块相关接口抛出的错误码。
 
-   ```
-   1. import { BusinessError } from '@kit.BasicServicesKit';
+   ```ts
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 4. 创建设备管理实例，设备管理实例是分布式设备管理方法的调用入口，并注册设备上下线回调。
 
-   ```
-   1. registerDeviceStateListener(): void {
-   2. logger.info('[DeviceManager.RemoteDeviceModel] registerDeviceStateListener');
-   3. if (typeof (this.deviceManager) == 'undefined') {
-   4. logger.error('[DeviceManager.RemoteDeviceModel] deviceManager has not initialized');
-   5. this.showErrMsg('deviceManager has not initialized');
-   6. return;
-   7. }
+   ```typescript
+   registerDeviceStateListener(): void {
+     logger.info('[DeviceManager.RemoteDeviceModel] registerDeviceStateListener');
+     if (typeof (this.deviceManager) == 'undefined') {
+       logger.error('[DeviceManager.RemoteDeviceModel] deviceManager has not initialized');
+       this.showErrMsg('deviceManager has not initialized');
+       return;
+     }
 
-   9. // ...
-   10. try {
-   11. this.deviceManager.on('deviceStateChange', (data: dataType) => {
-   12. if (data == null) {
-   13. return;
-   14. }
-   15. logger.info('[DeviceManager.RemoteDeviceModel] deviceStateChange data=' + JSON.stringify(data));
-   16. switch (data.action) {
-   17. case distributedDeviceManager.DeviceStateChange.AVAILABLE:
-   18. logger.info('[DeviceManager.RemoteDeviceModel] deviceStateChange ONLINE');
-   19. // ...
-   20. break;
-   21. case distributedDeviceManager.DeviceStateChange.UNAVAILABLE:
-   22. logger.info('[DeviceManager.RemoteDeviceModel] deviceStateChange OFFLINE');
-   23. // ...
-   24. break;
-   25. default:
-   26. break;
-   27. }
-   28. })
-   29. } catch(err) {
-   30. let e: BusinessError = err as BusinessError;
-   31. logger.error('[DeviceManager.RemoteDeviceModel] deviceStateChange failed err: ' + e.toString());
-   32. }
-   33. }
+     // ...
+     try {
+       this.deviceManager.on('deviceStateChange', (data: dataType) => {
+         if (data == null) {
+           return;
+         }
+         logger.info('[DeviceManager.RemoteDeviceModel] deviceStateChange data=' + JSON.stringify(data));
+         switch (data.action) {
+           case distributedDeviceManager.DeviceStateChange.AVAILABLE:
+             logger.info('[DeviceManager.RemoteDeviceModel] deviceStateChange ONLINE');
+             // ...
+             break;
+           case distributedDeviceManager.DeviceStateChange.UNAVAILABLE:
+             logger.info('[DeviceManager.RemoteDeviceModel] deviceStateChange OFFLINE');
+             // ...
+             break;
+           default:
+             break;
+         }
+       })
+     } catch(err) {
+       let e: BusinessError = err as BusinessError;
+       logger.error('[DeviceManager.RemoteDeviceModel] deviceStateChange failed err: ' + e.toString());
+     }
+   }
    ```

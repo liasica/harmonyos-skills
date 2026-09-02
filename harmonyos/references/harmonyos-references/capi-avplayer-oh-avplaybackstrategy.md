@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avpl
 title: OH_AVPlaybackStrategy
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 结构体 > OH_AVPlaybackStrategy
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:08+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ba1f1bb4f0872cbcda579737506e5bf10c37bb889e9e45622beef551091c49a0
+scraped_at: 2026-09-02T14:53:01+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1c4e0d3424e688df4dd217991520eae952ddad4ab99bd44a8c5a2835fcfac5e2
 ---
 
-```
-1. typedef struct OH_AVPlaybackStrategy OH_AVPlaybackStrategy
+```c
+typedef struct OH_AVPlaybackStrategy OH_AVPlaybackStrategy;
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-音视频播放策略的结构体类型。
+音视频播放策略的结构体类型，用于配置播放器在播放音视频内容时的策略参数，适用于需要精细控制播放行为的场景。
 
 **起始版本：** 23
 

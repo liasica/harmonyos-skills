@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/i18n-time-dat
 title: 时间日期国际化
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用国际化 > 时间日期国际化
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:44+08:00
+scraped_at: 2026-09-02T14:59:26+08:00
 doc_updated_at: 2026-03-09
 content_hash: sha256:5c3e69a372e5f94eb93c22aa317df9a93377c2c5d945078ee311d7a1a5888570
 ---

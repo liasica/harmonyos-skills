@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-faq
 title: Scan Kit常见问题
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > Scan Kit常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:43+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f6cbaacd9e6b388f6861cfdaa0c900cfe3bc43eec65cb0aa489d351de182ed3a
+scraped_at: 2026-09-02T14:50:19+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:22dcb1a705381fcf2174fdb567eccdb3a1025280035401531034ab21cd1dce3e
 ---
 
 * **[如何添加“扫码直达”服务的快速入口](scan-faq-1.md)**
@@ -17,7 +17,7 @@ content_hash: sha256:f6cbaacd9e6b388f6861cfdaa0c900cfe3bc43eec65cb0aa489d351de18
 * **[条形码识别坐标信息为空](scan-faq-7.md)**
 * **[自定义界面扫码预览画面出现拉伸](scan-faq-8.md)**
 * **[自定义界面扫码黑屏现象](scan-faq-9.md)**
-* **[自定义界面扫码如何连续扫码（customScan.rescan）](scan-faq-10.md)**
+* **[自定义界面扫码如何连续扫码](scan-faq-10.md)**
 * **[通过字节数组生成码图无法识别](scan-faq-11.md)**
 * **[默认界面扫码取消后，如何感知](scan-faq-12.md)**
 * **[H5场景如何接入扫码](scan-faq-13.md)**

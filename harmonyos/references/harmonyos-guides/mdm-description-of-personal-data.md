@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-descripti
 title: 个人数据处理说明
 breadcrumb: 指南 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > 个人数据处理说明
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:33+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:98bf76aef01f25cabdc09fd535e1cd1df8b993b9430416f252bb23d4aa4de9f7
+scraped_at: 2026-09-02T14:50:08+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:3de2bd8ef725062f3578b485788604c28ff358a0097220831fa9802a8de6acf4
 ---
 
 此文档针对华为作为最终用户数据处理者，开发者作为最终用户数据控制者的数据处理进行说明，包括：
@@ -29,6 +29,7 @@ content_hash: sha256:98bf76aef01f25cabdc09fd535e1cd1df8b993b9430416f252bb23d4aa4
 | IMEI | 开发者可以通过MDM API获取设备IMEI。 | 不留存。 |
 | MEID | 开发者可以通过MDM API获取设备MEID。 | 不留存。 |
 | IMSI | 开发者可以通过MDM API获取设备IMSI。 | 不留存。 |
+| 应用使用记录 | 开发者可以通过MDM API获取设备应用使用记录(应用使用时长)。 | 不留存。 |
 
 ## 指导用户行使数据主体权利
 

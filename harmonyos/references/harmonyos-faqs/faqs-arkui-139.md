@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-139
 title: XComponent 怎么设置成透明
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > XComponent 怎么设置成透明
+breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > XComponent 怎么设置成透明
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:25:38+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:50+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:549c8b50df0d2e15b4f79c9f0a39344c0abb35cce712cd4d43958f6dc012029e
 ---
 

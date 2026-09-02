@@ -1,0 +1,97 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-kit
+title: 稳定性
+breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性
+category: harmonyos-faqs
+scraped_at: 2026-09-02T14:53:49+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:e734c65eb3fe7a3b28353d42b8aec66ec30c079660f0bee892da5ee6395974a5
+---
+
+* **[应用切换深色模式时发生闪退](faq-stability-1.md)**
+* **[启动应用时发生闪退](faq-stability-2.md)**
+* **[用户打开视频播放时，应用发生闪退](faq-stability-3.md)**
+* **[页面发生卡死，无法响应点击或侧滑操作](faq-stability-4.md)**
+* **[应用使用时卡死无响应](faq-stability-5.md)**
+* **[应用点击某功能时卡死无响应](faq-stability-6.md)**
+* **[使用应用过程中卡死，无法响应用户任何操作](faq-stability-7.md)**
+* **[应用在启动加载时，卡死无响应后闪退](faq-stability-8.md)**
+* **[媒体服务线程泄漏导致应用闪退](faq-stability-9.md)**
+* **[CppCrash问题定位](faq-stability-10.md)**
+* **[Native内存泄漏导致应用闪退](faq-stability-11.md)**
+* **[内存溢出问题定位](faq-stability-12.md)**
+* **[JsCrash问题定位](faq-stability-13.md)**
+* **[在使用发音跟读功能时，应用出现闪退](faq-stability-14.md)**
+* **[应用使用卡顿，运行一段时间后出现闪退](faq-stability-15.md)**
+* **[未申请JIT权限导致应用卡死在启动页](faq-stability-16.md)**
+* **[应用刷新页面时出现闪退](faq-stability-17.md)**
+* **[线程泄漏问题定位](faq-stability-18.md)**
+* **[后台播放音乐或者录音时，应用闪退](faq-stability-19.md)**
+* **[应用在使用过程中持续出现闪退](faq-stability-20.md)**
+* **[点击保存按钮应用无响应](faq-stability-21.md)**
+* **[NFC提示弹窗无法关闭](faq-stability-22.md)**
+* **[应用导入大量图片后卡死](faq-stability-23.md)**
+* **[点击音频播放按钮，应用无响应](faq-stability-24.md)**
+* **[截屏操作耗时较长，多次截屏操作后出现无响应的现象](faq-stability-25.md)**
+* **[应用在6.0版本系统上启动时发生闪退，5.0版本启动正常](faq-stability-26.md)**
+* **[设备关闭定位情况下，应用获取位置时闪退](faq-stability-27.md)**
+* **[应用启动时一直闪退，无法打开](faq-stability-28.md)**
+* **[使用手机验证码登录帐号后，应用闪退](faq-stability-29.md)**
+* **[应用在弹窗消失后页面暗屏，点击侧滑无响应](faq-stability-30.md)**
+* **[点击拍照按钮后，页面上所有按钮点击无效](faq-stability-31.md)**
+* **[应用使用过程中自动退出](faq-stability-32.md)**
+* **[应用启动时长时间白屏后启动失败](faq-stability-33.md)**
+* **[页面内容在加载过程中，卡死无响应](faq-stability-34.md)**
+* **[多指操作时应用出现闪退](faq-stability-35.md)**
+* **[应用使用蓝牙功能时闪退](faq-stability-36.md)**
+* **[点击桌面图标跳转到设置界面](faq-stability-37.md)**
+* **[打开扫一扫，扫描二维码时应用闪退](faq-stability-38.md)**
+* **[应用在后台时，一段时间后自动退出](faq-stability-39.md)**
+* **[快速连续点击拍照按钮，应用闪退](faq-stability-40.md)**
+* **[未开启NFC情况下跳转NFC功能页面，应用闪退重启](faq-stability-41.md)**
+* **[点击跳转三方支付时应用闪退](faq-stability-42.md)**
+* **[跳转到新页面时，应用闪退](faq-stability-43.md)**
+* **[当跳转到新页面时提示登录超时，随后应用闪退](faq-stability-44.md)**
+* **[应用在背单词过程中出现闪退](faq-stability-45.md)**
+* **[应用启动中进行加解密处理时，出现闪退](faq-stability-46.md)**
+* **[如何定位应用中Native层出现的空指针解引用CppCrash](faq-stability-47.md)**
+* **[hdc命令无法获取蓝牙HCI日志该怎么处理](faq-stability-48.md)**
+* **[如何解决日志内容过大时控制台打印被截断的问题](faq-stability-49.md)**
+* **[开启HWAsan监测后应用崩溃如何解决](faq-stability-50.md)**
+* **[aa命令拉起hipreview应用并预览本地文件失败](faq-stability-51.md)**
+* **[如何通过hdc命令获取当前真机调试的页面信息](faq-stability-52.md)**
+* **[Attach Debugger调试失效，无法正常拦截断点](faq-stability-53.md)**
+* **[DevEco Studio使用热重载报错：JSONException](faq-stability-54.md)**
+* **[如何通过无感监听实现Navigation根页面的埋点监听](faq-stability-55.md)**
+* **[自定义弹框资源未释放导致稳定性测试出现内存泄漏](faq-stability-56.md)**
+* **[使用hdc file recv命令接收文件失败](faq-stability-57.md)**
+* **[C++代码配置trace打点数据](faq-stability-58.md)**
+* **[进入应用时一直停留在启动页](faq-stability-59.md)**
+* **[HiAppEvent获取的日志过长无法传输](faq-stability-60.md)**
+* **[使用PersistenceV2.globalConnect获取持久化数据时应用闪退](faq-stability-61.md)**
+* **[应用闪退问题总结](faq-stability-62.md)**
+* **[Attach Debugger调试无法识别包名](faq-stability-63.md)**
+* **[应用无响应-UI或界面卡死（AppFreeze）场景分析与调优](faq-stability-64.md)**
+* **[应用闪退-Native运行时崩溃（CppCrash）信号与定位指导](faq-stability-65.md)**
+* **[AppFreeze-主线程卡死（THREAD\_BLOCK\_6S）故障定位](faq-stability-66.md)**
+* **[内存泄漏-句柄泄漏(FD\_LEAK)问题排查](faq-stability-67.md)**
+* **[应用闪退-ArkTS运行时崩溃（JsCrash）异常全集与定位](faq-stability-68.md)**
+* **[AppFreeze-输入事件阻塞（APP\_INPUT\_BLOCK）故障定位](faq-stability-69.md)**
+* **[NDK工程bad\_variant\_access崩溃分析和解决](faq-stability-70.md)**
+* **[应用闪退-Native内存(PSS\_MEMORY)泄漏问题排查](faq-stability-71.md)**
+* **[内存泄漏-ashmem(KERNEL\_MEMORY)问题排查](faq-stability-73.md)**
+* **[内存泄漏-ion(KERNEL\_MEMORY)问题排查](faq-stability-74.md)**
+* **[内存泄漏-gpu/gpu\_rs(KERNEL\_MEMORY)问题排查](faq-stability-75.md)**
+* **[ArkTS主线程执行高复杂度循环逻辑导致APP\_INPUT\_BLOCK卡顿](faq-stability-76.md)**
+* **[应用闪退无faultlog日志，如何定位解决](faq-stability-77.md)**
+* **[CppCrash-SIGABRT（进程终止）类崩溃问题排查](faq-stability-78.md)**
+* **[如何收集应用崩溃信息](faq-stability-79.md)**
+* **[使用hilog命令查看日志常见问题](faq-stability-80.md)**
+* **[堆栈解析异常问题](faq-stability-81.md)**
+* **[代码调试断点不生效问题](faq-stability-82.md)**
+* **[hidumper命令常见问题](faq-stability-83.md)**
+* **[代码调试报错常见问题](faq-stability-84.md)**
+* **[Profiler录制没有数据](faq-stability-85.md)**
+* **[如何检测资源泄漏问题](faq-stability-86.md)**
+* **[如何获取应用打印的hilog日志到本地查看](faq-stability-87.md)**
+* **[aa命令常见问题](faq-stability-88.md)**

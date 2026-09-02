@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-component
 title: ArkWeb简介
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > ArkWeb简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:50+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:9cddd01db6e332f5fb6dea6f0066e7a4d2133d7e0a75629693e5cac00140af25
+scraped_at: 2026-09-02T14:49:54+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:d8d3565103534c2bbd83e3e9f8c3ee750bd3495e8d0ae8e5228a2bf0417ce058
 ---
 
 ## 使用场景
@@ -33,12 +33,12 @@ Web组件为开发者提供了丰富的控制Web页面能力。包括：
 
 使用Web组件访问在线Web网页时需添加网络权限：ohos.permission.INTERNET，具体申请方式请参考[声明权限](declare-permissions.md)。
 
-```
-1. "requestPermissions":[
-2. {
-3. "name" : "ohos.permission.INTERNET"
-4. }
-5. ]
+```ts
+"requestPermissions":[
+    {
+      "name" : "ohos.permission.INTERNET"
+    }
+  ]
 ```
 
 ## 约束与限制
@@ -50,5 +50,11 @@ Web组件为开发者提供了丰富的控制Web页面能力。包括：
   | --- | --- |
   | HarmonyOS 4.0及之前 | M99 |
   | HarmonyOS 4.1-5.1 | M114 |
-  | HarmonyOS 6.0 | M132（默认，推荐使用）  M114（可选，若应用需切换为此内核，请参考[M114内核在HarmonyOS6.0系统上的适配指导](https://gitcode.com/openharmony-tpc/chromium_src/blob/132_trunk/web/ReleaseNote/CompatibleWithLegacyWebEngine.md)） |
-  | HarmonyOS开发套件（基于API23） | M132 |
+  | HarmonyOS 6.0 | M132（默认，推荐使用，请参考[M114->M132差异适配指南](https://gitcode.com/openharmony-tpc/chromium_src/blob/master/web/ReleaseNote/ArkWeb_114_132.md)）  M114（可选，若应用需切换为此内核，请参考[M114内核在HarmonyOS 6.0系统上的适配指导](https://gitcode.com/openharmony-tpc/chromium_src/blob/master/web/ReleaseNote/CompatibleWithLegacyWebEngine_6.0.md)） |
+  | HarmonyOS 6.1 | M132 |
+  | HarmonyOS 7.0 | M144（默认，推荐使用，请参考[M132->M144差异适配指南](https://gitcode.com/openharmony-tpc/chromium_src/blob/master/web/ReleaseNote/ArkWeb_132_144.md)）  M132（可选，若应用需切换为此内核，请参考[M132内核在HarmonyOS 7.0系统上的适配指导](https://gitcode.com/openharmony-tpc/chromium_src/blob/master/web/ReleaseNote/CompatibleWithLegacyWebEngine_7.0.md)） |
+* 为保障用户隐私安全，HarmonyOS内置了ArkWeb组件，旨在为全场景设备提供安全、可靠且一致的网页浏览体验。应用渲染网页需调用ArkWeb组件；元服务内嵌网页渲染则需使用官方提供的Webview组件。开发者可根据其元服务开发框架，选择使用[ASCF Webview](../atomic-ascf/develop-web-view.md)或[AtomicServiceEnhancedWeb](../atomic-guides/atomicserviceweb-guidelines.md#atomicserviceenhancedweb)组件。元服务内嵌页面内容需遵循元服务内嵌页面管理规范。
+
+## 模拟器支持情况
+
+* 本Kit支持模拟器。模拟器与真机存在通用差异，详情请参见“[模拟器与真机的差异](ide-emulator-specification.md)”。

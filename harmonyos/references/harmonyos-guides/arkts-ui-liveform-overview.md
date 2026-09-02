@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-live
 title: 互动卡片概述
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > 互动卡片开发 > 互动卡片概述
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:30:01+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:a657220257193483878c7ab27e9b474f37a90d82bb687cda2d49b92e10fa54f6
+scraped_at: 2026-09-02T14:59:25+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ec0962448da6135abac5cd77a480355ee5e8024571cfaabf081f35a5173145d4
 ---
 
 从API version 20开始，支持互动卡片。互动卡片提供卡片动效能力，例如卡片破框动效，丰富信息提醒、浅层交互功能，显著提升用户体验。
@@ -20,11 +20,11 @@ content_hash: sha256:a657220257193483878c7ab27e9b474f37a90d82bb687cda2d49b92e10f
 
 **图1** 趣味交互类型互动卡片样例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/l2tFzxDyQwe-sIFNClm4Ww/zh-cn_image_0000002558605150.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/WPZcg7rmSjOAbhFgSjgFuQ/zh-cn_image_0000002736313279.gif)
 
 ### 场景动效类型
 
-场景动效类型互动卡片支持实现动态效果。以天气卡片为例，当天气变为雷雨天气时，卡片激活并触发互动卡片动效。动效结束后，卡片恢复原有显示效果。详细信息请参考[场景动效类型互动卡片概述](arkts-ui-liveform-sceneanimation-overview.md)。
+场景动效类型互动卡片支持实现动态效果。以天气卡片为例，当天气变为雷雨天气时，卡片激活并触发互动卡片动效。动效结束后，卡片恢复原有显示效果。详细信息请参考[场景动效类型互动卡片开发指导](arkts-ui-liveform-sceneanimation-development.md)。
 
 ## 约束和限制
 

@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm
 title: JSVM_Data__*
 breadcrumb: API参考 > 公共基础能力 > C API > 结构体 > JSVM_Data__*
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:27+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:c070422e89ec075fefe963d13790053de69b3f04f55d1a9c08ba40dc9f26a58f
+scraped_at: 2026-09-02T14:53:37+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b85a4dc6ab19848904c535d3db9e258fa17829e1d1c54adae52e312e7171cc54
 ---
 
-```
-1. typedef struct JSVM_Data__* JSVM_Data
+```c
+typedef struct JSVM_Data__* JSVM_Data
 ```
 
 ## 概述
 
-PhonePC/2in1TabletWearable
-
 表示一个 JavaScript Data。
+
+**系统能力：** SystemCapability.ArkCompiler.JSVM
 
 **起始版本：** 18
 

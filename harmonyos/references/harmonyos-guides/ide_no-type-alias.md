@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-type-a
 title: "@typescript-eslint/no-type-alias"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-type-alias
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:39+08:00
+scraped_at: 2026-09-02T14:50:51+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:7fcbd34ad84fc8e94c1f1fd5c653301b150b639dfa152cc81e2c93e5a1a2fdb6
+content_hash: sha256:6c09fae7c61e63f716c5c06d3f9dff92b67a894087cf305029bd8f0ce9ad9e98
 ---
 
 禁止使用类型别名。
@@ -14,13 +14,13 @@ content_hash: sha256:7fcbd34ad84fc8e94c1f1fd5c653301b150b639dfa152cc81e2c93e5a1a
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@typescript-eslint/no-type-alias": "error"
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@typescript-eslint/no-type-alias": "error"
+  }
+}
 ```
 
 ## 选项
@@ -29,37 +29,37 @@ content_hash: sha256:7fcbd34ad84fc8e94c1f1fd5c653301b150b639dfa152cc81e2c93e5a1a
 
 ## 正例
 
-```
-1. interface Person {
-2. readonly firstName: string;
-3. readonly lastName: string;
-4. readonly age: number;
-5. }
+```screen
+interface Person {
+  readonly firstName: string;
+  readonly lastName: string;
+  readonly age: number;
+}
 
-7. export function addPerson(person: Person): Person {
-8. return person;
-9. }
+export function addPerson(person: Person): Person {
+  return person;
+}
 ```
 
 ## 反例
 
-```
-1. // 不允许使用类型别名，建议使用接口替代
-2. type Person = {
-3. readonly firstName: string;
-4. readonly lastName: string;
-5. readonly age: number;
-6. };
+```screen
+// 不允许使用类型别名，建议使用接口替代
+type Person = {
+  readonly firstName: string;
+  readonly lastName: string;
+  readonly age: number;
+};
 
-8. export function addPerson(person: Person): Person {
-9. return person;
-10. }
+export function addPerson(person: Person): Person {
+  return person;
+}
 ```
 
 ## 规则集
 
-```
-1. plugin:@typescript-eslint/all
+```screen
+plugin:@typescript-eslint/all
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

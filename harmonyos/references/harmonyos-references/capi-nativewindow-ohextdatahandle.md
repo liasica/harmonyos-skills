@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: OHExtDataHandle
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 结构体 > OHExtDataHandle
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:18+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:81b6af6e75d494b8281043c66dfed50613ab6f2fd45cabfa0a4ba411c6e954d8
+scraped_at: 2026-09-02T15:02:46+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1b3c8f9cf453d29e0df88739e406e6a6568a8e3acf97ada343c6f11aeb2acaf8
 ---
 
-```
-1. typedef struct OHExtDataHandle {...} OHExtDataHandle
+```c
+typedef struct OHExtDataHandle {...} OHExtDataHandle
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 扩展数据句柄结构体定义。
 
@@ -28,11 +26,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

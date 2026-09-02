@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: ArkTS卡片主动刷新
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS卡片页面刷新 > ArkTS卡片主动刷新
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:57+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:02dec8b50a27546fe3a68b27558e5a609adcdd411fb631a9bf1d8288222f8c90
+scraped_at: 2026-09-02T14:59:25+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:bfea973d3488d650ad23246d72ca50ba0cbcfafc25a2f3deee6706a7f0eb76bc
 ---
 
 本文主要提供主动刷新的开发指导，刷新流程请参考[主动刷新概述](arkts-ui-widget-interaction-overview.md#主动刷新)。
@@ -21,175 +21,175 @@ content_hash: sha256:02dec8b50a27546fe3a68b27558e5a609adcdd411fb631a9bf1d8288222
 1. [创建卡片](arkts-ui-widget-creation.md)。
 2. 实现卡片布局，在卡片上添加一个刷新按钮，点击按钮后通过[postCardAction](../harmonyos-references/js-apis-postcardaction.md#postcardaction-1)接口，触发onFormEvent回调。
 
-   ```
-   1. // entry/src/main/ets/updatebymessage/pages/UpdateByMessageCard.ets
-   2. let storageUpdateByMsg = new LocalStorage();
+   ```typescript
+   // entry/src/main/ets/updatebymessage/pages/UpdateByMessageCard.ets
+   let storageUpdateByMsg = new LocalStorage();
 
-   4. @Entry(storageUpdateByMsg)
-   5. @Component
-   6. struct UpdateByMessageCard {
-   7. // $r('app.string.default_title')和$r('app.string.DescriptionDefault')需要替换为开发者所需的资源文件
-   8. @LocalStorageProp('title') title: ResourceStr = $r('app.string.default_title');
-   9. @LocalStorageProp('detail') detail: ResourceStr = $r('app.string.DescriptionDefault');
+   @Entry(storageUpdateByMsg)
+   @Component
+   struct UpdateByMessageCard {
+     // $r('app.string.default_title')和$r('app.string.DescriptionDefault')需要替换为开发者所需的资源文件
+     @LocalStorageProp('title') title: ResourceStr = $r('app.string.default_title');
+     @LocalStorageProp('detail') detail: ResourceStr = $r('app.string.DescriptionDefault');
 
-   11. build() {
-   12. Column() {
-   13. Column() {
-   14. Text(this.title)
-   15. .fontColor('#FFFFFF')
-   16. .opacity(0.9)
-   17. .fontSize(14)
-   18. .margin({ top: '8%', left: '10%' })
-   19. Text(this.detail)
-   20. .fontColor('#FFFFFF')
-   21. .opacity(0.6)
-   22. .fontSize(12)
-   23. .margin({ top: '5%', left: '10%' })
-   24. }.width('100%').height('50%')
-   25. .alignItems(HorizontalAlign.Start)
+     build() {
+       Column() {
+         Column() {
+           Text(this.title)
+             .fontColor('#FFFFFF')
+             .opacity(0.9)
+             .fontSize(14)
+             .margin({ top: '8%', left: '10%' })
+           Text(this.detail)
+             .fontColor('#FFFFFF')
+             .opacity(0.6)
+             .fontSize(12)
+             .margin({ top: '5%', left: '10%' })
+         }.width('100%').height('50%')
+         .alignItems(HorizontalAlign.Start)
 
-   27. Row() {
-   28. // ...
-   29. Button() {
-   30. // $r('app.string.update')需要替换为开发者所需的资源文件
-   31. Text($r('app.string.update'))
-   32. .fontColor('#45A6F4')
-   33. .fontSize(12)
-   34. }
-   35. .width(120)
-   36. .height(32)
-   37. .margin({ top: '30%', bottom: '10%' })
-   38. .backgroundColor('#FFFFFF')
-   39. .borderRadius(16)
-   40. .onClick(() => {
-   41. postCardAction(this, {
-   42. action: 'message',
-   43. params: { msgTest: 'messageEvent' }
-   44. });
-   45. })
-   46. }.width('100%').height('40%')
-   47. .justifyContent(FlexAlign.Center)
-   48. }
-   49. .width('100%')
-   50. .height('100%')
-   51. .alignItems(HorizontalAlign.Start)
-   52. // $r('app.media.CardEvent')需要替换为开发者所需的资源文件
-   53. .backgroundImage($r('app.media.CardEvent'))
-   54. .backgroundImageSize(ImageSize.Cover)
-   55. }
-   56. }
+         Row() {
+           // ...
+           Button() {
+             // $r('app.string.update')需要替换为开发者所需的资源文件
+             Text($r('app.string.update'))
+               .fontColor('#45A6F4')
+               .fontSize(12)
+           }
+           .width(120)
+           .height(32)
+           .margin({ top: '30%', bottom: '10%' })
+           .backgroundColor('#FFFFFF')
+           .borderRadius(16)
+           .onClick(() => {
+             postCardAction(this, {
+               action: 'message',
+               params: { msgTest: 'messageEvent' }
+             });
+           })
+         }.width('100%').height('40%')
+         .justifyContent(FlexAlign.Center)
+       }
+       .width('100%')
+       .height('100%')
+       .alignItems(HorizontalAlign.Start)
+       // $r('app.media.CardEvent')需要替换为开发者所需的资源文件
+       .backgroundImage($r('app.media.CardEvent'))
+       .backgroundImageSize(ImageSize.Cover)
+     }
+   }
    ```
 3. 在onFormEvent回调函数的实现中，通过updateForm接口刷新卡片数据。
 
-   ```
-   1. // entry/src/main/ets/entryformability/EntryFormAbility.ts
-   2. import { formBindingData, FormExtensionAbility, formInfo, formProvider } from '@kit.FormKit';
-   3. import { Configuration, Want } from '@kit.AbilityKit';
-   4. import { BusinessError } from '@kit.BasicServicesKit';
-   5. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   // entry/src/main/ets/entryformability/EntryFormAbility.ts
+   import { formBindingData, FormExtensionAbility, formInfo, formProvider } from '@kit.FormKit';
+   import { Configuration, Want } from '@kit.AbilityKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
 
-   8. // entry/src/main/ets/entryformability/EntryFormAbility.ts
-   9. const TAG: string = 'EntryFormAbility';
-   10. const DOMAIN_NUMBER: number = 0xFF00;
+   // entry/src/main/ets/entryformability/EntryFormAbility.ts
+   const TAG: string = 'EntryFormAbility';
+   const DOMAIN_NUMBER: number = 0xFF00;
 
-   12. export default class EntryFormAbility extends FormExtensionAbility {
-   13. onAddForm(want: Want): formBindingData.FormBindingData {
-   14. hilog.info(DOMAIN_NUMBER, TAG, '[EntryFormAbility] onAddForm');
-   15. hilog.info(DOMAIN_NUMBER, TAG, want.parameters?.[formInfo.FormParam.NAME_KEY] as string);
-   16. // 卡片使用方创建卡片时触发，卡片提供方需要返回卡片数据绑定类
-   17. let obj: Record<string, string> = {
-   18. 'title': 'titleOnAddForm',
-   19. 'detail': 'detailOnAddForm'
-   20. };
-   21. let formData: formBindingData.FormBindingData = formBindingData.createFormBindingData(obj);
-   22. return formData;
-   23. }
+   export default class EntryFormAbility extends FormExtensionAbility {
+     onAddForm(want: Want): formBindingData.FormBindingData {
+       hilog.info(DOMAIN_NUMBER, TAG, '[EntryFormAbility] onAddForm');
+       hilog.info(DOMAIN_NUMBER, TAG, want.parameters?.[formInfo.FormParam.NAME_KEY] as string);
+       // 卡片使用方创建卡片时触发，卡片提供方需要返回卡片数据绑定类
+       let obj: Record<string, string> = {
+         'title': 'titleOnAddForm',
+         'detail': 'detailOnAddForm'
+       };
+       let formData: formBindingData.FormBindingData = formBindingData.createFormBindingData(obj);
+       return formData;
+     }
 
-   25. onCastToNormalForm(formId: string): void {
-   26. // ...
-   27. hilog.info(DOMAIN_NUMBER, TAG, '[EntryFormAbility] onCastToNormalForm');
-   28. }
+     onCastToNormalForm(formId: string): void {
+       // ...
+       hilog.info(DOMAIN_NUMBER, TAG, '[EntryFormAbility] onCastToNormalForm');
+     }
 
-   30. onUpdateForm(formId: string): void {
-   31. // 若卡片支持定时更新/定点更新/卡片使用方主动请求更新功能，则提供方需要重写该方法以支持数据更新
-   32. hilog.info(DOMAIN_NUMBER, TAG, '[EntryFormAbility] onUpdateForm');
-   33. let obj: Record<string, string> = {
-   34. 'title': 'titleOnUpdateForm',
-   35. 'detail': 'detailOnUpdateForm'
-   36. };
-   37. let formData: formBindingData.FormBindingData = formBindingData.createFormBindingData(obj);
-   38. formProvider.updateForm(formId, formData).catch((error: BusinessError) => {
-   39. hilog.info(DOMAIN_NUMBER, TAG, '[EntryFormAbility] updateForm, error:' + JSON.stringify(error));
-   40. });
-   41. }
+     onUpdateForm(formId: string): void {
+       // 若卡片支持定时更新/定点更新/卡片使用方主动请求更新功能，则提供方需要重写该方法以支持数据更新
+       hilog.info(DOMAIN_NUMBER, TAG, '[EntryFormAbility] onUpdateForm');
+       let obj: Record<string, string> = {
+         'title': 'titleOnUpdateForm',
+         'detail': 'detailOnUpdateForm'
+       };
+       let formData: formBindingData.FormBindingData = formBindingData.createFormBindingData(obj);
+       formProvider.updateForm(formId, formData).catch((error: BusinessError) => {
+         hilog.info(DOMAIN_NUMBER, TAG, '[EntryFormAbility] updateForm, error:' + JSON.stringify(error));
+       });
+     }
 
-   43. onChangeFormVisibility(newStatus: Record<string, number>): void {
-   44. // ...
-   45. hilog.info(DOMAIN_NUMBER, TAG, '[EntryFormAbility] onChangeFormVisibility');
-   46. }
+     onChangeFormVisibility(newStatus: Record<string, number>): void {
+       // ...
+       hilog.info(DOMAIN_NUMBER, TAG, '[EntryFormAbility] onChangeFormVisibility');
+     }
 
-   48. onFormEvent(formId: string, message: string): void {
-   49. // 若卡片支持触发事件，则需要重写该方法并实现对事件的触发
-   50. hilog.info(DOMAIN_NUMBER, TAG, `FormAbility onFormEvent, formId = ${formId}, message: ${message}`);
-   51. class FormDataClass {
-   52. title: string = 'Title Update.'; // 和卡片布局中对应
-   53. detail: string = 'Description update success.'; // 和卡片布局中对应
-   54. }
+     onFormEvent(formId: string, message: string): void {
+       // 若卡片支持触发事件，则需要重写该方法并实现对事件的触发
+       hilog.info(DOMAIN_NUMBER, TAG, `FormAbility onFormEvent, formId = ${formId}, message: ${message}`);
+       class FormDataClass {
+         title: string = 'Title Update.'; // 和卡片布局中对应
+         detail: string = 'Description update success.'; // 和卡片布局中对应
+       }
 
-   56. // 请根据业务替换为实际刷新的卡片数据
-   57. let formData = new FormDataClass();
-   58. let formInfo: formBindingData.FormBindingData = formBindingData.createFormBindingData(formData);
-   59. formProvider.updateForm(formId, formInfo).then(() => {
-   60. hilog.info(DOMAIN_NUMBER, TAG, 'FormAbility updateForm success.');
-   61. }).catch((error: BusinessError) => {
-   62. hilog.error(DOMAIN_NUMBER, TAG, `Operation updateForm failed. Cause: ${JSON.stringify(error)}`);
-   63. });
-   64. }
+       // 请根据业务替换为实际刷新的卡片数据
+       let formData = new FormDataClass();
+       let formInfo: formBindingData.FormBindingData = formBindingData.createFormBindingData(formData);
+       formProvider.updateForm(formId, formInfo).then(() => {
+         hilog.info(DOMAIN_NUMBER, TAG, 'FormAbility updateForm success.');
+       }).catch((error: BusinessError) => {
+         hilog.error(DOMAIN_NUMBER, TAG, `Operation updateForm failed. Cause: ${JSON.stringify(error)}`);
+       });
+     }
 
-   66. onRemoveForm(formId: string): void {
-   67. // ...
-   68. hilog.info(DOMAIN_NUMBER, TAG, '[EntryFormAbility] onRemoveForm');
-   69. // ...
-   70. }
+     onRemoveForm(formId: string): void {
+       // ...
+       hilog.info(DOMAIN_NUMBER, TAG, '[EntryFormAbility] onRemoveForm');
+       // ...
+     }
 
-   72. onConfigurationUpdate(config: Configuration) {
-   73. // ...
-   74. hilog.info(DOMAIN_NUMBER, TAG, '[EntryFormAbility] onConfigurationUpdate:' + JSON.stringify(config));
-   75. }
+     onConfigurationUpdate(config: Configuration) {
+       // ...
+       hilog.info(DOMAIN_NUMBER, TAG, '[EntryFormAbility] onConfigurationUpdate:' + JSON.stringify(config));
+     }
 
-   78. onAcquireFormState(want: Want): formInfo.FormState {
-   79. // ...
-   80. return formInfo.FormState.READY;
-   81. }
+     onAcquireFormState(want: Want): formInfo.FormState {
+       // ...
+       return formInfo.FormState.READY;
+     }
 
-   83. }
+   }
    ```
 4. 资源文件如下。
 
-   ```
-   1. // entry/src/main/resources/zh_CN/element/string.json
-   2. {
-   3. "string": [
-   4. // ...
-   5. {
-   6. "name": "default_title",
-   7. "value": "Title default."
-   8. },
-   9. {
-   10. "name": "DescriptionDefault",
-   11. "value": "Description default."
-   12. },
-   13. {
-   14. "name": "update",
-   15. "value": "刷新"
-   16. }
-   17. ]
-   18. }
+   ```ts
+   // entry/src/main/resources/zh_CN/element/string.json
+   {
+      "string": [
+      // ...
+        {
+          "name": "default_title",
+          "value": "Title default."
+        },
+        {
+          "name": "DescriptionDefault",
+          "value": "Description default."
+        },
+        {
+          "name": "update",
+          "value": "刷新"
+        }
+      ]
+   }
    ```
 
 ### 运行结果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/Anbu2hmFTQ6O_kTUicxBSA/zh-cn_image_0000002558764794.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/id6_2u6QQMan5FYONXlGkA/zh-cn_image_0000002706674218.gif)
 
 ## 卡片提供方批量请求刷新卡片内容
 
@@ -202,155 +202,156 @@ content_hash: sha256:02dec8b50a27546fe3a68b27558e5a609adcdd411fb631a9bf1d8288222
 1. [创建卡片](arkts-ui-widget-creation.md)。
 2. 实现卡片布局，在卡片上创建两个待刷新的Text。
 
-   ```
-   1. // entry/src/main/ets/reloadbyuiability/pages/ReloadByUIAbilityCard.ets
-   2. let storageReloadForm = new LocalStorage();
+   ```typescript
+   // entry/src/main/ets/reloadbyuiability/pages/ReloadByUIAbilityCard.ets
+   let storageReloadForm = new LocalStorage();
 
-   4. @Entry(storageReloadForm)
-   5. @Component
-   6. struct ReloadByUIAbilityCard {
-   7. // 创建两个待刷新的Text，Text初始内容分别为'Title default'、'Description default'。资源文件定义请参见下方步骤5
-   8. @LocalStorageProp('title') title: ResourceStr = $r('app.string.default_title');
-   9. @LocalStorageProp('detail') detail: ResourceStr = $r('app.string.DescriptionDefault');
+   @Entry(storageReloadForm)
+   @Component
+   struct ReloadByUIAbilityCard {
+     // 创建两个待刷新的Text，Text初始内容分别为'Title default'、'Description default'。资源文件定义请参见下方步骤5
+     @LocalStorageProp('title') title: ResourceStr = $r('app.string.default_title');
+     @LocalStorageProp('detail') detail: ResourceStr = $r('app.string.DescriptionDefault');
 
-   11. build() {
-   12. Column() {
-   13. Column() {
-   14. Text(this.title)
-   15. .fontSize(14)
-   16. .margin({ top: '8%', left: '10%' })
-   17. Text(this.detail)
-   18. .fontSize(12)
-   19. .margin({ top: '5%', left: '10%' })
-   20. }.width('100%').height('50%')
-   21. .alignItems(HorizontalAlign.Start)
-   22. }
-   23. .width('100%')
-   24. .height('100%')
-   25. .alignItems(HorizontalAlign.Start)
-   26. }
-   27. }
+     build() {
+       Column() {
+         Column() {
+           Text(this.title)
+             .fontSize(14)
+             .margin({ top: '8%', left: '10%' })
+           Text(this.detail)
+             .fontSize(12)
+             .margin({ top: '5%', left: '10%' })
+         }.width('100%').height('50%')
+         .alignItems(HorizontalAlign.Start)
+       }
+       .width('100%')
+       .height('100%')
+       .alignItems(HorizontalAlign.Start)
+     }
+   }
    ```
 3. 在FormExtensionAbility中实现onUpdateForm回调，通过updateForm接口定义卡片刷新逻辑。
 
-   ```
-   1. // entry/src/main/ets/entryformability/EntryFormAbility.ets
-   2. import { formBindingData, FormExtensionAbility, formInfo, formProvider } from '@kit.FormKit';
-   3. import { Want } from '@kit.AbilityKit';
-   4. import { BusinessError } from '@kit.BasicServicesKit';
-   5. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   // entry/src/main/ets/entryformability/EntryFormAbility.ets
+   import { formBindingData, FormExtensionAbility, formInfo, formProvider } from '@kit.FormKit';
+   import { Want } from '@kit.AbilityKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
 
-   7. const TAG: string = 'EntryFormAbility';
-   8. const DOMAIN_NUMBER: number = 0xFF00;
+   const TAG: string = 'EntryFormAbility';
+   const DOMAIN_NUMBER: number = 0xFF00;
 
-   10. export default class EntryFormAbility extends FormExtensionAbility {
-   11. onAddForm(want: Want) {
-   12. const formData = '';
-   13. return formBindingData.createFormBindingData(formData);
-   14. }
+   export default class EntryFormAbility extends FormExtensionAbility {
+     onAddForm(want: Want) {
+       const formData = '';
+       return formBindingData.createFormBindingData(formData);
+     }
 
-   16. onCastToNormalForm(formId: string): void {
-   17. hilog.info(DOMAIN_NUMBER, TAG, '[EntryFormAbility] onCastToNormalForm');
-   18. }
+     onCastToNormalForm(formId: string): void {
+       hilog.info(DOMAIN_NUMBER, TAG, '[EntryFormAbility] onCastToNormalForm');
+     }
 
-   20. onUpdateForm(formId: string) {
+     onUpdateForm(formId: string) {
 
-   22. class FormDataClass {
-   23. title: string = 'Title: ' + Math.random();
-   24. detail: string = 'Description: ' + Math.random();
-   25. }
+       class FormDataClass {
+         title: string = 'Title: ' + Math.random();
+         detail: string = 'Description: ' + Math.random();
+       }
 
-   27. let formData = new FormDataClass();
-   28. let formInfo: formBindingData.FormBindingData = formBindingData.createFormBindingData(formData);
-   29. formProvider.updateForm(formId, formInfo).then(() => {
-   30. hilog.info(DOMAIN_NUMBER, TAG, 'FormAbility updateForm success.');
-   31. }).catch((error: BusinessError) => {
-   32. hilog.error(DOMAIN_NUMBER, TAG, `Operation updateForm failed. code: ${error.code}, message: ${error.message}`);
-   33. });
-   34. }
+       let formData = new FormDataClass();
+       let formInfo: formBindingData.FormBindingData = formBindingData.createFormBindingData(formData);
+       // 更新卡片数据
+       formProvider.updateForm(formId, formInfo).then(() => {
+         hilog.info(DOMAIN_NUMBER, TAG, 'FormAbility updateForm success.');
+       }).catch((error: BusinessError) => {
+         hilog.error(DOMAIN_NUMBER, TAG, `Operation updateForm failed. code: ${error.code}, message: ${error.message}`);
+       });
+     }
 
-   36. onFormEvent(formId: string, message: string) {
-   37. hilog.info(DOMAIN_NUMBER, TAG, '[EntryFormAbility] onFormEvent');
-   38. }
+     onFormEvent(formId: string, message: string) {
+       hilog.info(DOMAIN_NUMBER, TAG, '[EntryFormAbility] onFormEvent');
+     }
 
-   40. onRemoveForm(formId: string) {
-   41. hilog.info(DOMAIN_NUMBER, TAG, '[EntryFormAbility] onRemoveForm');
-   42. }
+     onRemoveForm(formId: string) {
+       hilog.info(DOMAIN_NUMBER, TAG, '[EntryFormAbility] onRemoveForm');
+     }
 
-   44. onAcquireFormState(want: Want) {
-   45. hilog.info(DOMAIN_NUMBER, TAG, '[EntryFormAbility] onAcquireFormState');
-   46. return formInfo.FormState.READY;
-   47. }
-   48. }
+     onAcquireFormState(want: Want) {
+       hilog.info(DOMAIN_NUMBER, TAG, '[EntryFormAbility] onAcquireFormState');
+       return formInfo.FormState.READY;
+     }
+   }
    ```
 4. 在UIAbility的界面中添加两个批量刷新按钮，点击按钮后通过reloadForms或reloadAllForms接口，批量触发FormExtensionAbility中的onUpdateForm回调。
 
-   ```
-   1. // entry/src/main/ets/pages/index.ets
-   2. import { common } from '@kit.AbilityKit';
-   3. import { BusinessError } from '@kit.BasicServicesKit';
-   4. import { formProvider } from '@kit.FormKit';
+   ```typescript
+   // entry/src/main/ets/pages/index.ets
+   import { common } from '@kit.AbilityKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { formProvider } from '@kit.FormKit';
 
-   6. @Entry
-   7. @Component
-   8. struct Index {
-   9. build() {
-   10. Column({ space: 20 }) {
-   11. Button('reloadForms')
-   12. .onClick(() => {
-   13. try {
-   14. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-   15. let moduleName: string = 'entry';
-   16. let abilityName: string = 'EntryFormAbility';
-   17. let formName: string = 'reloadByUIAbilityCard';
-   18. formProvider.reloadForms(context, moduleName, abilityName, formName).then((reloadNum: number) => {
-   19. console.info(`reloadForms success, reload number: ${reloadNum}`);
-   20. }).catch((error: BusinessError) => {
-   21. console.error(`promise error, code: ${error.code}, message: ${error.message})`);
-   22. });
-   23. } catch (error) {
-   24. console.error(`catch error, code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message})`);
-   25. }
-   26. })
-   27. Button('reloadAllForms')
-   28. .onClick(() => {
-   29. try {
-   30. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-   31. formProvider.reloadAllForms(context).then((reloadNum: number) => {
-   32. console.info(`reloadAllForms success, reload number: ${reloadNum}`);
-   33. }).catch((error: BusinessError) => {
-   34. console.error(`promise error, code: ${error.code}, message: ${error.message})`);
-   35. });
-   36. } catch (error) {
-   37. console.error(`catch error, code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message})`);
-   38. }
-   39. })
-   40. }
-   41. .height('100%')
-   42. .width('100%')
-   43. .justifyContent(FlexAlign.Center)
-   44. }
-   45. }
+   @Entry
+   @Component
+   struct Index {
+     build() {
+       Column({ space: 20 }) {
+         Button('reloadForms')
+           .onClick(() => {
+             try {
+               let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+               let moduleName: string = 'entry';
+               let abilityName: string = 'EntryFormAbility';
+               let formName: string = 'ReloadByUIAbility';
+               formProvider.reloadForms(context, moduleName, abilityName, formName).then((reloadNum: number) => {
+                 console.info(`reloadForms success, reload number: ${reloadNum}`);
+               }).catch((error: BusinessError) => {
+                 console.error(`promise error, code: ${error.code}, message: ${error.message}`);
+               });
+             } catch (error) {
+               console.error(`catch error, code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
+             }
+           })
+         Button('reloadAllForms')
+           .onClick(() => {
+             try {
+               let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+               formProvider.reloadAllForms(context).then((reloadNum: number) => {
+                 console.info(`reloadAllForms success, reload number: ${reloadNum}`);
+               }).catch((error: BusinessError) => {
+                 console.error(`promise error, code: ${error.code}, message: ${error.message}`);
+               });
+             } catch (error) {
+               console.error(`catch error, code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
+             }
+           })
+       }
+       .height('100%')
+       .width('100%')
+       .justifyContent(FlexAlign.Center)
+     }
+   }
    ```
 5. 资源文件如下。
 
-   ```
-   1. // entry/src/main/resources/base/element/string.json
-   2. {
-   3. "string": [
-   4. // ...
-   5. {
-   6. "name": "default_title",
-   7. "value": "Title default."
-   8. },
-   9. {
-   10. "name": "DescriptionDefault",
-   11. "value": "Description default."
-   12. }
-   13. ]
-   14. }
+   ```json5
+   // entry/src/main/resources/base/element/string.json
+   {
+      "string": [
+      // ...
+        {
+          "name": "default_title",
+          "value": "Title default."
+        },
+        {
+          "name": "DescriptionDefault",
+          "value": "Description default."
+        }
+      ]
+   }
    ```
 
 ### 运行结果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/mx2W6NRtS-aCdn1QrhpryQ/zh-cn_image_0000002558605138.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/Sepie67hTQSFaexrslwzVg/zh-cn_image_0000002736433309.gif)

@@ -3,51 +3,106 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.InputMethodExtensionContext (InputMethodExtensionContext)"
 breadcrumb: API参考 > 应用框架 > IME Kit（输入法开发服务） > ArkTS API > @ohos.InputMethodExtensionContext (InputMethodExtensionContext)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:06+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c4356ee562db40c46999d7d242c334989a47e1a54817ee50578edd1a3e47cef5
+scraped_at: 2026-09-02T15:01:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:54241a0e11ab0276edeb4bc998ff74584830dd465f2925b3825edabd9294a5b4
 ---
 
-InputMethodExtensionContext模块是InputMethodExtensionAbility的上下文环境，继承于ExtensionContext，提供InputMethodExtensionAbility具有的能力和接口，包括启动、停止、绑定、解绑Ability。
+@ohos.InputMethodExtensionContext模块是InputMethodExtensionAbility的上下文环境，继承于ExtensionContext，为输入法扩展能力提供上下文级别的操作接口。
 
-说明
+本模块是输入法ExtensionAbility的上下文类，继承自ExtensionContext，作为InputMethodExtensionAbility实例的context属性提供。它承载了输入法扩展应用在其生命周期内可使用的上下文能力，包括销毁自身和拉起其他应用。
+
+本模块提供两大核心能力：1）通过destroy()销毁输入法ExtensionAbility自身，实现输入法应用的生命周期终止；2）通过startAbility()拉起目标应用，使输入法应用能够启动其他Ability进行交互，拓展输入法功能的灵活性和可扩展性。
+
+当开发输入法ExtensionAbility并需要在其生命周期内执行上下文级操作时使用本模块。典型场景包括：输入法应用在onDestroy回调中主动销毁自身、输入法应用需要拉起设置页面或其他辅助应用等。
+
+**说明** 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 本模块接口仅可在Stage模型下使用。
 
+模块内的核心API按功能分为两类：
+
+1. 生命周期管理：destroy()用于销毁输入法ExtensionAbility自身，终止输入法应用运行。
+2. Ability交互：startAbility()用于从输入法应用拉起目标Ability（如设置页面等），拓展输入法应用与其他应用的交互能力。
+
+典型使用流程：在InputMethodExtensionAbility的onCreate回调中获取this.context → 在需要终止输入法时调用context.destroy() → 在需要拉起其他应用时调用context.startAbility(want)。
+
+| Class | 说明 |
+| --- | --- |
+| InputMethodExtensionContext | 输入法扩展上下文类，继承自ExtensionContext，为InputMethodExtensionAbility提供上下文操作能力。关键方法包括：destroy()销毁输入法自身（支持callback和Promise两种异步方式）、startAbility(want)拉起目标应用（Promise方式，API 12+新增）。 |
+
+本模块的InputMethodExtensionContext需通过InputMethodExtensionAbility子类实例获取，其API与InputMethodExtensionAbility生命周期回调组合使用。
+
+```javascript
+// 以下为阐述调用逻辑的伪代码
+
+// 1. 定义InputMethodExtensionAbility子类
+class InputMethodExtAbility extends InputMethodExtensionAbility {
+  onCreate(want) {
+    // 获取上下文对象
+    let context = this.context; // InputMethodExtensionContext实例
+  }
+
+  onDestroy() {
+    // 在生命周期回调中销毁自身
+    this.context.destroy();
+  }
+}
+
+// 2. 拉起目标应用（如输入法设置页面）
+let targetWant = {
+  bundleName: "com.example.settings",
+  abilityName: "SettingsAbility"
+};
+this.context.startAbility(targetWant);
+```
+
+**说明** 
+
+InputMethodExtensionContext实例通过InputMethodExtensionAbility子类的this.context属性获取，不可直接创建。destroy()通常在onDestroy生命周期回调中调用，也可在其他时机主动调用以终止输入法ExtensionAbility。
+
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { InputMethodExtensionContext } from '@kit.IMEKit';
+```ts
+import { InputMethodExtensionContext } from '@kit.IMEKit';
 ```
 
 ## 使用说明
 
-PhonePC/2in1TabletTVWearable
-
 在使用InputMethodExtensionContext的功能前，需要通过InputMethodExtensionAbility子类实例获取。
 
+```ts
+import { InputMethodExtensionAbility, InputMethodExtensionContext } from '@kit.IMEKit';
+import { Want } from '@kit.AbilityKit';
+
+class InputMethodExtAbility extends InputMethodExtensionAbility {
+  onCreate(want: Want): void {
+    console.info('onCreate, want:' + want.abilityName);
+  }
+}
 ```
-1. import { InputMethodExtensionAbility, InputMethodExtensionContext } from '@kit.IMEKit';
-2. import { Want } from '@kit.AbilityKit';
 
-4. class InputMethodExtAbility extends InputMethodExtensionAbility {
-5. onCreate(want: Want): void {
-6. console.info('onCreate, want:' + want.abilityName);
-7. }
-8. }
-```
+## InputMethodExtensionContext
 
-## InputMethodExtensionContext.destroy
+InputMethodExtensionContext是InputMethodExtensionAbility的上下文环境，继承自ExtensionContext，为输入法扩展能力提供上下文级别的操作接口。
 
-PhonePC/2in1TabletTVWearable
+**模型约束：** 此接口仅可在Stage模型下使用。
 
-destroy(callback: AsyncCallback<void>): void;
+**系统能力：** SystemCapability.MiscServices.InputMethodFramework
+
+### destroy
+
+destroy(callback: AsyncCallback<void>): void
 
 销毁输入法应用。使用callback异步回调。
+
+* 含义/功能：销毁当前的InputMethodExtensionAbility，终止输入法应用的运行。调用后系统将触发InputMethodExtensionAbility.onDestroy()生命周期回调。
+* 使用场景：当输入法应用需要主动终止自身运行时使用。例如：输入法应用在处理完特定任务后主动退出、或在onDestroy回调中配合销毁以确保资源释放。
+* 使用后效果：调用成功后，当前的InputMethodExtensionAbility将被销毁，系统触发onDestroy()生命周期回调，输入法应用进程终止。调用后再进行其他上下文操作将不起效。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -55,39 +110,43 @@ destroy(callback: AsyncCallback<void>): void;
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<void> | 是 | 回调函数。当销毁输入法应用成功时，err为undefined；否则为错误对象。 |
+| callback | [AsyncCallback](js-apis-base.md#asynccallback)<void> | 是 | 回调函数。当销毁输入法应用成功时，err为undefined；否则为错误对象。 |
 
 **示例：**
 
+```ts
+import { InputMethodExtensionAbility, InputMethodExtensionContext } from '@kit.IMEKit';
+import { Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+class InputMethodExtAbility extends InputMethodExtensionAbility {
+  onCreate(want: Want): void {
+    console.info('onCreate, want:' + want.abilityName);
+  }
+
+  onDestroy() {
+    this.context.destroy((err: BusinessError) => {
+      if (err) {
+        console.error(`Failed to destroy context, err code = ${err.code}`);
+        return;
+      }
+      console.info('Succeeded in destroying context.');
+    });
+  }
+}
 ```
-1. import { InputMethodExtensionAbility, InputMethodExtensionContext } from '@kit.IMEKit';
-2. import { Want } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
 
-5. class InputMethodExtAbility extends InputMethodExtensionAbility {
-6. onCreate(want: Want): void {
-7. console.info('onCreate, want:' + want.abilityName);
-8. }
+### destroy
 
-10. onDestroy() {
-11. this.context.destroy((err: BusinessError) => {
-12. if (err) {
-13. console.error(`Failed to destroy context, err code = ${err.code}`);
-14. return;
-15. }
-16. console.info('Succeeded in destroying context.');
-17. });
-18. }
-19. }
-```
-
-## InputMethodExtensionContext.destroy
-
-PhonePC/2in1TabletTVWearable
-
-destroy(): Promise<void>;
+destroy(): Promise<void>
 
 销毁输入法应用。使用Promise异步回调。
+
+* 含义/功能：销毁当前的InputMethodExtensionAbility，终止输入法应用的运行。调用后系统将触发InputMethodExtensionAbility.onDestroy()生命周期回调。
+* 使用场景：当输入法应用需要主动终止自身运行时使用。与callback形式功能相同，适合需要使用Promise链式调用的场景。
+* 使用后效果：调用成功后，当前的InputMethodExtensionAbility将被销毁，系统触发onDestroy()生命周期回调，输入法应用进程终止。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -95,37 +154,41 @@ destroy(): Promise<void>;
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **示例：**
 
+```ts
+import { InputMethodExtensionAbility, InputMethodExtensionContext } from '@kit.IMEKit';
+import { Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+class InputMethodExtAbility extends InputMethodExtensionAbility {
+  onCreate(want: Want): void {
+    console.info('onCreate, want:' + want.abilityName);
+  }
+
+  onDestroy() {
+    this.context.destroy().then(() => {
+      console.info('Succeeded in destroying context.');
+    }).catch((err: BusinessError)=>{
+      console.error(`Failed to destroy context, err code = ${err.code}`);
+    });
+  }
+}
 ```
-1. import { InputMethodExtensionAbility, InputMethodExtensionContext } from '@kit.IMEKit';
-2. import { Want } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
 
-5. class InputMethodExtAbility extends InputMethodExtensionAbility {
-6. onCreate(want: Want): void {
-7. console.info('onCreate, want:' + want.abilityName);
-8. }
+### startAbility12+
 
-10. onDestroy() {
-11. this.context.destroy().then(() => {
-12. console.info('Succeed in destroying context.');
-13. }).catch((err: BusinessError)=>{
-14. console.error(`Failed to destroy context, err code = ${err.code}`);
-15. });
-16. }
-17. }
-```
-
-## InputMethodExtensionContext.startAbility12+
-
-PhonePC/2in1TabletTVWearable
-
-startAbility(want: Want): Promise<void>;
+startAbility(want: Want): Promise<void>
 
 拉起目标应用。使用Promise异步回调。
+
+* 含义/功能：从输入法应用启动指定的Ability，使输入法应用能够与其他应用交互。通过Want参数指定目标应用的Ability名称和Bundle名称。
+* 使用场景：当输入法应用需要拉起其他应用时使用。例如：输入法应用拉起系统设置页面供用户配置输入法、拉起浏览器打开帮助文档等。
+* 使用后效果：调用成功后，目标Ability被启动并显示在前台。输入法应用自身不会受到影响，继续正常运行。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
@@ -135,19 +198,26 @@ startAbility(want: Want): Promise<void>;
 | --- | --- | --- | --- |
 | want | [Want](js-apis-app-ability-want.md) | 是 | 用于指定目标应用的Want类型信息，包括ability名称、bundle名称等。 |
 
+want参数使用建议：
+
+* 含义/功能：Want类型信息，描述要启动的目标Ability。
+* 必填属性：bundleName（目标应用包名）和abilityName（目标Ability名称）为必填项，否则无法定位目标Ability。
+* 取值范围：Want对象的属性值均为string类型，需与目标应用在module.json5中配置的bundleName和abilityName保持一致。
+* 注意事项：want中的bundleName和abilityName必须与目标应用的配置严格一致（包括大小写），否则将返回16000001错误（指定的Ability不存在）。开发者可通过查看目标应用的module.json5配置文件或使用AppGallery获取正确的包名和Ability名。
+
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[输入法框架错误码](errorcode-inputmethod-framework.md)，[元能力子系统错误码](errorcode-ability.md)，[通用错误码说明文档](errorcode-universal.md)。
+以下错误码的详细介绍请参见[通用错误码说明文档](errorcode-universal.md)，[元能力子系统错误码](errorcode-ability.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 16000001 | The specified ability does not exist. |
 | 16000002 | Incorrect ability type. |
 | 16000004 | Cannot start an invisible component. |
@@ -170,32 +240,32 @@ startAbility(want: Want): Promise<void>;
 
 **示例：**
 
-```
-1. import { InputMethodExtensionAbility, InputMethodExtensionContext } from '@kit.IMEKit';
-2. import { Want } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { InputMethodExtensionAbility, InputMethodExtensionContext } from '@kit.IMEKit';
+import { Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. class InputMethodExtAbility extends InputMethodExtensionAbility {
-6. onCreate(want: Want): void {
-7. const context: InputMethodExtensionContext = this.context;
-8. const targetWant: Want = {
-9. bundleName: "com.example.aafwk.test",
-10. abilityName: "com.example.aafwk.test.TwoAbility"
-11. };
+class InputMethodExtAbility extends InputMethodExtensionAbility {
+  onCreate(want: Want): void {
+    const context: InputMethodExtensionContext = this.context;
+    const targetWant: Want = {
+      bundleName: "com.example.aafwk.test",
+      abilityName: "com.example.aafwk.test.TwoAbility"
+    };
 
-13. context.startAbility(targetWant)
-14. .then(() => console.info('startAbility success'))
-15. .catch((err: BusinessError) => {
-16. console.error(`StartAbility failed. Code: ${err.code}, Message: ${err.message}`);
-17. });
-18. }
+    context.startAbility(targetWant)
+      .then(() => console.info('startAbility success'))
+      .catch((err: BusinessError) => {
+        console.error(`StartAbility failed. Code: ${err.code}, Message: ${err.message}`);
+      });
+  }
 
-20. onDestroy() {
-21. this.context.destroy().then(() => {
-22. console.info('Succeed in destroying context.');
-23. }).catch((err: BusinessError) => {
-24. console.error(`Failed to destroy context, err code = ${err.code}`);
-25. });
-26. }
-27. }
+  onDestroy() {
+    this.context.destroy().then(() => {
+      console.info('Succeeded in destroying context.');
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to destroy context, err code = ${err.code}`);
+    });
+  }
+}
 ```

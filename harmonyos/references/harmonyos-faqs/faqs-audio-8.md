@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-audio-8
 title: 播放短促提示音（如点赞、收藏、新消息等场景的提示音或音效），应该如何处理
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音频（Audio） > 播放短促提示音（如点赞、收藏、新消息等场景的提示音或音效），应该如何处理
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:37+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:04+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:9bae59b4896496dc516a5f8f07c5d2c9c25798ccdbd96b17a3c016372beb0d79
 ---
 

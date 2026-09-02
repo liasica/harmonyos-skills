@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hypium-python
 title: 应用UI测试（基于Python）
 breadcrumb: 指南 > 应用测试 > 单元测试和UI测试 > 应用UI测试（基于Python）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:48:03+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:933f2e85300874e76b786d315405a40e7b3af4e3853af6d93d4c8e2a6412bf95
+scraped_at: 2026-09-02T15:18:05+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b02ffc477b6d63f6399bacc66e1948986c80c47095e9c3c940d923da3efc3cd6
 ---
 
 ## 框架概述
@@ -24,11 +24,11 @@ DevEco Testing Hypium （以下简称Hypium）是HarmonyOS平台的UI自动化�
 
 **2.安装PyCharm**
 
-推荐从[PyCharm官网](https://www.jetbrains.com.cn/en-us/pycharm/)安装2022.3以后的社区版本。
+推荐从[PyCharm官网](https://www.jetbrains.com.cn/en-us/pycharm/)安装2024.2以后的社区版本。
 
-说明
+**说明** 
 
-项目创建功能只支持2022.3至2025.1的PyCharm版本。2024.3版本由于pycharm自身原因，只能选择单设备模板进行创建。
+项目创建功能只支持2024.2至2026.2的PyCharm版本。2024.3版本由于pycharm自身原因，只能选择单设备模板进行创建。
 
 **3.安装hdc**
 
@@ -40,8 +40,8 @@ DevEco Testing Hypium （以下简称Hypium）是HarmonyOS平台的UI自动化�
 
 在命令行中执行以下命令安装最新版本hypium
 
-```
-1. pip install hypium -U
+```screen
+pip install hypium -U --trusted-host mirrors.huaweicloud.com -i https://mirrors.huaweicloud.com/repository/pypi/simple
 ```
 
 * **方式二：安装包离线安装**
@@ -50,28 +50,28 @@ DevEco Testing Hypium （以下简称Hypium）是HarmonyOS平台的UI自动化�
 
 **自动安装**
 
-```
-1. python install.py -g hypium_basic   #安装基础包，通过-g执行安装组合模式
+```screen
+python install.py -g hypium_basic   #安装基础包，通过-g执行安装组合模式
 ```
 
-注意
+**须知** 
 
 仅6.1及之后版本支持离线自动安装。
 
 **手动安装**
 
-```
-1. python -m pip install xdevice-6.1.0.210-py3-none-any.whl
-2. python -m pip install xdevice_devicetest-6.1.0.210-py3-none-any.whl
-3. python -m pip install xdevice_ohos-6.1.0.210-py3-none-any.whl
-4. python -m pip install hypium-6.1.0.210-py3-none-any.whl
+```screen
+python -m pip install xdevice-6.1.0.210-py3-none-any.whl
+python -m pip install xdevice_devicetest-6.1.0.210-py3-none-any.whl
+python -m pip install xdevice_ohos-6.1.0.210-py3-none-any.whl
+python -m pip install hypium-6.1.0.210-py3-none-any.whl
 
-6. # 此版本仅作为示例，实际请根据项目使用的版本选择
+# 此版本仅作为示例，实际请根据项目使用的版本选择
 ```
 
 **5.DevEco Testing Hypium插件安装及使用方法**
 
-注意
+**注意** 
 
 Mac系统使用UiViewer功能时，需在设置面板中手动指定hdc路径，详情可见 **本小节中 · 插件功能 Ⅳ.设置面板区域-hdc路径**。
 
@@ -81,31 +81,31 @@ Mac系统使用UiViewer功能时，需在设置面板中手动指定hdc路径，
 
 Ⅰ. 访问华为开发者联盟官网[下载页面](https://developer.huawei.com/consumer/cn/download/deveco-testing-hypium)下载DevEco Testing Hypium安装包，下载后解压该安装包，找到其中的hypium-pycharm-plugin-6.1.0.210.zip（该版本号仅做示例，请以实际版本号为准），此文件为插件的安装包，无需再进行解压。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/ko2mWStoRTuKGJxduSI23w/zh-cn_image_0000002524503481.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/yLjEA6gOT-a8iNz21ltECg/zh-cn_image_0000002633533148.jpg "点击放大")
 
 Ⅱ. 打开PyCharm后，点击File -> Settings -> Plugin -> 齿轮图标 -> Install Plugin from Disk。在弹出的文件选择器中，选择第一步下载的hypium-pycharm-plugin-6.1.0.210.zip（该版本号仅做示例，请以实际版本号为准）离线安装包，完成安装。安装完成后，重启PyCharm即可使用新安装的Deveco Testing Hypium插件。
 
-说明
+**说明** 
 
 在6.0及以后的版本中，DevEco Testing Hypium插件在下载包中的名称由“DevEcoTesting-Hypium”修改为“hypium-pycharm-plugin”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/Oy9KctX6QCG29N0dLb3mAQ/zh-cn_image_0000002524503499.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/YotWukS9Sku5eJqpwtqeFQ/zh-cn_image_0000002633533186.png "点击放大")
 
 安装完成后在Plugins界面可以看到DevEcoTesting-Hypium插件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/nFWn-milS2iNQiemwFooCg/zh-cn_image_0000002492503710.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/8z3XfDoPROKmCw5syMNXWA/zh-cn_image_0000002633693104.png)
 
 * **插件功能**
 
 PyCharm有三个主要的开发功能区，如下图所示。DevEco Testing Hypium插件在不同的开发功能区提供了对应的用例开发辅助功能，在PyCharm的设置面板中提供了插件的设置功能，在PyCharm的工程新建面板中提供了用例工程模板创建功能，下文分区域介绍这些功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/VfJoRMP7SDmL6ptqFTo1ww/zh-cn_image_0000002524623423.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/YAPD1ubxQImQ6cEpFOTj8A/zh-cn_image_0000002633693072.png "点击放大")
 
 **Ⅰ. 项目文件区域**
 
 在项目文件区域右键点击项目目录或者文件，选择 DevEco Testing Hypium，弹出对应的功能菜单。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/ttjJGrnNQse8vJskPuxv_Q/zh-cn_image_0000002524623427.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/YaqyU_BXTXWwcXoq2khzXg/zh-cn_image_0000002633533204.png)
 
 功能菜单根据选择的目录和文件不同存在区别，详细参见下表：
 
@@ -134,7 +134,7 @@ PyCharm有三个主要的开发功能区，如下图所示。DevEco Testing Hypi
 
 DevEco Testing Hypium插件会在PyCharm界面右边缘的ToolWindow区域生成UiViewer标签，点击后会展开UiViewer功能面板。UiViewer功能目前分为4个界面：设备选择界面 、单设备控件查看界面 、单设备投屏界面 、双设备投屏界面。
 
-注意
+**注意** 
 
 UiViewer插件当前仅支持USB连接本地设备调测和本地模拟器进行调测，但是由于模拟器性能资源管理策略，当模拟器处于后台或被其他页面遮挡时，将不会进行画面渲染绘制。此时在投屏时会出现黑屏闪烁现象，如需规避，需要使模拟器处于前台显示。
 
@@ -142,7 +142,7 @@ UiViewer插件当前仅支持USB连接本地设备调测和本地模拟器进行
 
 设备选择界面如下图所示， 若首次进入该界面，或设备状态发生变化，需点击“刷新”按钮以更新设备列表。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/EZFoBEm2Td2mIRPqrWoaSw/zh-cn_image_0000002558763237.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/BRp86enMRHiRMx8l2VHYyw/zh-cn_image_0000002663932235.png)
 
 设备信息说明见下表：
 
@@ -162,7 +162,7 @@ UiViewer插件当前仅支持USB连接本地设备调测和本地模拟器进行
 
 **单设备投屏界面**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/Ig6r2XbwQYatRjWy3uO5bQ/zh-cn_image_0000002492343770.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/-7OsigItSf2CvUjcbzOqVw/zh-cn_image_0000002633533184.png "点击放大")
 
 **功能说明：**
 
@@ -217,19 +217,19 @@ UiViewer插件当前仅支持USB连接本地设备调测和本地模拟器进行
 
 当需要对某一设备进行控件查看时，插件将自动退出双设备投屏模式，切换至单设备控件查看界面，以确保控件信息的准确展示与操作体验。完成控件查看后，用户可手动返回双设备投屏视图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/PW3WjNY9Q_uJZYawm0zepQ/zh-cn_image_0000002492503742.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/i2PhkpEhSn6vlVxR5k4eUA/zh-cn_image_0000002633533192.png "点击放大")
 
 **执行结果报告展示功能**
 
 使用“一键执行当前用例”功能完成测试用例执行后，插件将在控制台旁边自动生成执行结果标签。点击该标签，即可查看本次用例执行过程中各步骤的截图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/kZjI84XbTMaPzi6zCpn3Nw/zh-cn_image_0000002524623411.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/ef26cbruToyRy1Wxq9CURw/zh-cn_image_0000002663932253.png "点击放大")
 
 **Ⅳ. 设置面板区**
 
 打开PyCharm设置面板，选中左侧的DevEco Testing Hypium选项，可以进入DevEco Testing Hypium的设置面板，如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/5olAfwL2R8qvXsXM7zjaXQ/zh-cn_image_0000002553106760.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/TciMEt8bRhuXVW-N93ytfw/zh-cn_image_0000002633533200.png)
 
 各个配置项的详细说明见下表：
 
@@ -251,17 +251,17 @@ UiViewer插件当前仅支持USB连接本地设备调测和本地模拟器进行
 
 在PyCharm顶部点击File -> New Project 进入模板工程创建面板。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/gaBGYeHJSpaS52WXTKofiw/zh-cn_image_0000002524623425.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/oW36F76KS8-YhQPN0ZNuwQ/zh-cn_image_0000002664012293.png)
 
 点击左侧的DevEco Testing Hypium，可以创建Hypium用例模板工程。共有两种类型的Hypium模板工程，分别对应单设备和双设备的测试场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/rvQU2eeqQDCoqxm1Rg2R1Q/zh-cn_image_0000002524623429.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/HTC-XYcWTqCSFg2ziZRcww/zh-cn_image_0000002664012327.jpg "点击放大")
 
 选择对应模板，配置工程路径以及Python环境参数，点击Create即可创建Hypium测试用例工程。工程目录中包含一个模板用例和一个模板配置文件user\_config.xml。
 
 以单设备工程为例，创建完成后的界面如下图所示。连接被测设备后，可右键点击模板用例文件代码编辑区域“执行hypium用例”来运行当前用例。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/L0jRR24LQVWD-xF84e2-GA/zh-cn_image_0000002492503754.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/Jm_Thf3jS6mXpICw8VTygA/zh-cn_image_0000002633693110.png)
 
 ## 测试脚本开发快速入门
 
@@ -273,73 +273,73 @@ UiViewer插件当前仅支持USB连接本地设备调测和本地模拟器进行
 
 a）直接使用以下附件中的模板工程。
 
-[HypiumProjectTemplate.zip](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20260428202149.86767420690067113494768043790742:20260430134800:2800:353142BEF8A44431DC35EFFBBAE1A6C025758607910DF95B89C87FE383FB5C3C.zip?needInitFileName=true)
+[HypiumProjectTemplate.zip](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20260828145420.46179425033343051389088358461583:20260903151532:2800:4CE2645E76B78F0350653F3CDE76D14A64A6B30EF2B42F32372F4958DB42F4A9.zip?needInitFileName=true)
 
 b）通过PyCharm上的DevEcoTesting-Hypium插件进行创建。请参考本文档的**“安装向导 -> DevEco Testing Hypium插件安装及使用方法 -> 插件功能 -> 工程创建区域****”**小节。
 
 **Ⅰ.工程目录文件介绍**
 
-```
-1. HypiumProjectTemplate
-2. |     |----aw                                     // 工程中自定义模块文件夹
-3. |     |     |----Utils.py                           // 示例模块文件
-4. |     |----config                                   // 测试工程配置文件夹
-5. |     |     |----user_config.xml                    // 测试工程配置文件
-6. |     |----resource                              // 测试资源文件夹，测试过程中用到的资源文件默认会优先从当前文件夹进行查找。
-7. |     |----testcases                             // 测试用例文件夹，测试过程中的测试用例文件优先会从当前文件夹进行查找。
-8. |     |    |----Example.json                        // Example测试用例配置文件，配置用例所需设备等参数。
-9. |     |    |----Example.py                          // Example测试用例文件，存储测试逻辑代码。注意该文件无法直接运行，要通过测试框架启动后加载执行，详情参见后文测试用例执行部分。
-10. |     |----main.py                               // 测试用例执行入口文件，用户可以通过运行该文件启动测试任务，执行测试用例。
+```screen
+HypiumProjectTemplate
+|     |----aw                                     // 工程中自定义模块文件夹
+|     |     |----Utils.py                           // 示例模块文件
+|     |----config                                   // 测试工程配置文件夹
+|     |     |----user_config.xml                    // 测试工程配置文件
+|     |----resource                              // 测试资源文件夹，测试过程中用到的资源文件默认会优先从当前文件夹进行查找。
+|     |----testcases                             // 测试用例文件夹，测试过程中的测试用例文件优先会从当前文件夹进行查找。
+|     |    |----Example.json                        // Example测试用例配置文件，配置用例所需设备等参数。
+|     |    |----Example.py                          // Example测试用例文件，存储测试逻辑代码。注意该文件无法直接运行，要通过测试框架启动后加载执行，详情参见后文测试用例执行部分。
+|     |----main.py                               // 测试用例执行入口文件，用户可以通过运行该文件启动测试任务，执行测试用例。
 ```
 
 **Ⅱ.工程配置文件介绍**
 
-```
-1. <?xml version="1.0" encoding="UTF-8"?>
-2. <user_config>
-3. <environment>
-4. <!-- type: 设备连接方式，仅支持设置为usb-hdc，表示使用hdc命令控制设备（默认)。 -->
-5. <device type="usb-hdc">
-6. <!-- ip: 远端hdc server的ip地址，ip和port为空时使用本地设备，非空时使用远端设备。 -->
-7. <!-- port: 远端hdc server的端口号 -->
-8. <!-- sn：设备序列号，设为空时，表示所有设备均可用 -->
-9. <info ip="" port="" sn="sn"/>
-10. <!-- 可添加多个info标签，配置多个设备 -->
-11. <info ip="" port="" sn="sn"/>
-12. </device>
-13. </environment>
-14. <testcases>
-15. <!-- 测试用例目录，该属性为空时默认使用当前项目下的testcases目录。 -->
-16. <dir></dir>
-17. </testcases>
-18. <resource>
-19. <!-- 测试资源文件目录，该属性为空时默认使用当前项目下的resource目录。 -->
-20. <dir></dir>
-21. </resource>
-22. <!-- 用例执行日志级别，当前仅支持设置为INFO或者DEBUG，默认为INFO，如需更详细信息可设置为DEBUG。 -->
-23. <loglevel>DEBUG</loglevel>
-24. <devicelog>
-25. <!-- 指定用例执行完成后自动从设备端拉取的文件目录，多个目录使用分号分隔。 -->
-26. <dir>/data/log/tee;/data/log/test</dir>
-27. <!-- 设置用例执行时抓取的hilog日志等级，默认值为INFO。 -->
-28. <loglevel>DEBUG</loglevel>
-29. <!-- 设置单个用例执行完成并抓取设备端hilog日志文件后，是否自动清空设备端的日志文件，默认值为true。-->
-30. <clear></clear>
-31. <!-- 设置用例执行完成后是否抓取设备端hilog日志文件，默认值为ON。注意设置为OFF时上述devicelog配置下的dir、loglevel以及clear属性不生效。 -->
-32. <enable>ON</enable>
-33. </devicelog>
-34. <taskargs>
-35. <!-- pass_through，透传参数给测试用例。如{"task_id":"950191","user_define":{"execType":"3"}} -->
-36. <!-- 参数获取方法：from xdevice import Variables; print(Variables.config.pass_through) -->
-37. <pass_through></pass_through>
-38. <!-- repeat，用例重复运行多少次。大于1的整数才生效 -->
-39. <repeat></repeat>
-40. <!-- screenshot，操作类接口运行后是否截图。true开启/false不开启，默认值false -->
-41. <screenshot>false</screenshot>
-42. <!-- screenrecorder，用例Step步骤是否录屏。true开启/false不开启，默认值false -->
-43. <screenrecorder>false</screenrecorder>
-44. </taskargs>
-45. </user_config>
+```screen
+<?xml version="1.0" encoding="UTF-8"?>
+<user_config>
+    <environment>
+        <!-- type: 设备连接方式，仅支持设置为usb-hdc，表示使用hdc命令控制设备（默认)。 -->
+        <device type="usb-hdc">
+            <!-- ip: 远端hdc server的ip地址，ip和port为空时使用本地设备，非空时使用远端设备。 -->
+            <!-- port: 远端hdc server的端口号 -->
+            <!-- sn：设备序列号，设为空时，表示所有设备均可用 -->
+            <info ip="" port="" sn="sn"/>
+            <!-- 可添加多个info标签，配置多个设备 -->
+            <info ip="" port="" sn="sn"/>
+        </device>
+    </environment>
+    <testcases>
+        <!-- 测试用例目录，该属性为空时默认使用当前项目下的testcases目录。 -->
+        <dir></dir>
+    </testcases>
+    <resource>
+        <!-- 测试资源文件目录，该属性为空时默认使用当前项目下的resource目录。 -->
+        <dir></dir>
+    </resource>
+    <!-- 用例执行日志级别，当前仅支持设置为INFO或者DEBUG，默认为INFO，如需更详细信息可设置为DEBUG。 -->
+    <loglevel>DEBUG</loglevel>
+    <devicelog>
+        <!-- 指定用例执行完成后自动从设备端拉取的文件目录，多个目录使用分号分隔。 -->
+        <dir>/data/log/tee;/data/log/test</dir>
+        <!-- 设置用例执行时抓取的hilog日志等级，默认值为INFO。 -->
+        <loglevel>DEBUG</loglevel>    
+        <!-- 设置单个用例执行完成并抓取设备端hilog日志文件后，是否自动清空设备端的日志文件，默认值为true。-->
+        <clear></clear>                
+        <!-- 设置用例执行完成后是否抓取设备端hilog日志文件，默认值为ON。注意设置为OFF时上述devicelog配置下的dir、loglevel以及clear属性不生效。 -->
+        <enable>ON</enable>            
+    </devicelog>
+    <taskargs>
+        <!-- pass_through，透传参数给测试用例。如{"task_id":"950191","user_define":{"execType":"3"}} -->
+        <!-- 参数获取方法：from xdevice import Variables; print(Variables.config.pass_through) -->
+        <pass_through></pass_through>
+        <!-- repeat，用例重复运行多少次。大于1的整数才生效 -->
+        <repeat></repeat>
+        <!-- screenshot，操作类接口运行后是否截图。true开启/false不开启，默认值false -->
+        <screenshot>false</screenshot>
+        <!-- screenrecorder，用例Step步骤是否录屏。true开启/false不开启，默认值false -->
+        <screenrecorder>false</screenrecorder>
+    </taskargs>   
+</user_config>
 ```
 
 **Ⅲ.测试用例介绍**
@@ -365,30 +365,30 @@ Hypium 测试用例由两部分组成：测试用例配置文件（JSON 格式�
 
 **示例代码**
 
-```
-1. # !/usr/bin/env python
-2. # coding: utf-8
-3. from devicetest.core.test_case import TestCase, Step
-4. from devicetest.utils.file_util import get_resource_path
-5. from hypium import *
-6. from aw import Utils
-7. class Example(TestCase):
-8. def __init__(self, controllers):
-9. self.TAG = self.__class__.__name__
-10. TestCase.__init__(self, self.TAG, controllers)
-11. self.driver = UiDriver(self.device1)
-12. def setup(self):
-13. Step('1.回到桌面')
-14. self.driver.swipe_to_home()
-15. def process(self):
-16. Step('2.检查短信应用版本')
-17. mms_version = Utils.get_app_version_code(self.driver, 'com.ohos.mms')
-18. host.check_greater(mms_version, 0)
-19. Step('3.点击桌面上的短信')
-20. self.driver.touch(BY.text("信息"))
-21. def teardown(self):
-22. Step("4. 停止短信应用")
-23. self.driver.stop_app("com.ohos.mms")
+```screen
+# !/usr/bin/env python
+# coding: utf-8
+from devicetest.core.test_case import TestCase, Step
+from devicetest.utils.file_util import get_resource_path
+from hypium import *
+from aw import Utils
+class Example(TestCase):
+    def __init__(self, controllers):
+        self.TAG = self.__class__.__name__
+        TestCase.__init__(self, self.TAG, controllers)
+        self.driver = UiDriver(self.device1)
+    def setup(self):
+        Step('1.回到桌面')
+        self.driver.swipe_to_home()
+    def process(self):
+        Step('2.检查短信应用版本')
+        mms_version = Utils.get_app_version_code(self.driver, 'com.ohos.mms')
+        host.check_greater(mms_version, 0)
+        Step('3.点击桌面上的短信')
+        self.driver.touch(BY.text("信息"))
+    def teardown(self):
+        Step("4. 停止短信应用")
+        self.driver.stop_app("com.ohos.mms")
 ```
 
 * **测试用例配置文件**
@@ -399,27 +399,27 @@ Hypium 测试用例由两部分组成：测试用例配置文件（JSON 格式�
 
 **示例：**
 
-```
-1. {
-2. // description属性为测试用例的功能描述。
-3. "description": "Config for app test suites",
-4. // environment属性用于配置测试用例需要的设备类型和数量。
-5. "environment": [
-6. {
-7. "type": "device",   // 设备操作系统类型，device表示HarmonyOS设备。
-8. "label": "phone"    // 设备物理形态，phone为手机，tablet为平板，设置为空字符串或者移除该属性表示用例对设备类型无要求。用户可以通过执行hdc shell param get const.product.devicetype查看设备类型。
-9. }，
-10. {
-11. "type": "device",   // 测试用例需要多个设备时，在environment属性中添加多个设备配置项。
-12. "label": "phone"
-13. }
-14. ],
-15. // driver字段主要描述测试用例的测试驱动是什么，以及具体要执行的Python脚本文件在哪（填写与当前JSON文件的相对路径即可）
-16. // 不填写则在当前JSON文件下寻找同名Python文件
-17. "driver": {
-18. "type": "DeviceTest",
-19. }
-20. }
+```screen
+{
+    // description属性为测试用例的功能描述。
+    "description": "Config for app test suites",
+    // environment属性用于配置测试用例需要的设备类型和数量。
+    "environment": [
+        {
+            "type": "device",   // 设备操作系统类型，device表示HarmonyOS设备。
+            "label": "phone"    // 设备物理形态，phone为手机，tablet为平板，设置为空字符串或者移除该属性表示用例对设备类型无要求。用户可以通过执行hdc shell param get const.product.devicetype查看设备类型。
+        }，
+        {
+            "type": "device",   // 测试用例需要多个设备时，在environment属性中添加多个设备配置项。
+            "label": "phone"
+        }
+    ],
+    // driver字段主要描述测试用例的测试驱动是什么，以及具体要执行的Python脚本文件在哪（填写与当前JSON文件的相对路径即可）
+    // 不填写则在当前JSON文件下寻找同名Python文件
+    "driver": {
+        "type": "DeviceTest",
+           }
+}
 ```
 
 **测试套模式**
@@ -435,16 +435,16 @@ Hypium 测试用例由两部分组成：测试用例配置文件（JSON 格式�
 
 **示例代码**
 
-```
-1. from devicetest.core.test_case import Step
-2. from devicetest.core.suite.test_suite import TestSuite
-3. class Testsuite1(TestSuite):
-4. # 测试套的前置步骤将在所有测试用例执行前运行。当多个测试用例具有相同的初始化操作时，可将共用的前置逻辑定义在此。
-5. def setup(self):
-6. Step("TestSuite: setup")
-7. # 测试套的清理步骤会在所有测试用例执行完成后运行。
-8. def teardown(self):
-9. Step("TestSuite: teardown")
+```screen
+from devicetest.core.test_case import Step
+from devicetest.core.suite.test_suite import TestSuite
+class Testsuite1(TestSuite):
+    # 测试套的前置步骤将在所有测试用例执行前运行。当多个测试用例具有相同的初始化操作时，可将共用的前置逻辑定义在此。
+    def setup(self):
+        Step("TestSuite: setup")
+    # 测试套的清理步骤会在所有测试用例执行完成后运行。
+    def teardown(self):
+        Step("TestSuite: teardown")
 ```
 
 * **测试套配置文件**
@@ -455,32 +455,32 @@ Hypium 测试用例由两部分组成：测试用例配置文件（JSON 格式�
 
 **示例代码**
 
-```
-1. {
-2. "description": "Config for app test suites",
-3. // environment属性用于配置测试用例需要的设备类型和数量。
-4. "environment": [
-5. {
-6. "type": "device",     // 配置设备操作系统类型，device表示HarmonyOS设备。
-7. "label": "phone"      // 设备物理形态，phone为手机，tablet为平板，设置为空字符串或者移除该属性表示用例对设备类型无要求。用户可以通过执行hdc shell param get const.product.devicetype查看设备类型。
-8. }
-9. ],
-10. // driver 属性用于定义测试用例的驱动类型及待执行脚本的路径，脚本路径需为相对于当前 JSON 文件的路径。
-11. "driver": {
-12. "type": "DeviceTestSuite",
-13. // 指定测试套配置（JSON）文件对应的测试套脚本（Python）文件路径（可省略 .py 后缀），支持相对路径或绝对路径。若使用相对路径，需相对于测试工程根目录；若未指定，则默认查找与当前 JSON 文件同目录下同名的 Python文件。
-14. "testsuite": "TS_001/TS_001",
-15. // 指定测试套中的测试用例脚本(Python)文件列表，指定方式有两种。
-16. // 方式一：定义 suitecases 字段，并在其中指定测试用例脚本文件的路径。路径可使用相对路径或绝对路径；若使用相对路径，其根目录为当前测试套目录。
-17. "suitecases": [
-18. "TestCase1.py",         // 相对路径
-19. "/path/to/TestCase2.py" // 绝对路径
-20. ]
-21. // 方式二：将测试用例脚本（Python）文件保存到测试套目录中，并且设置文件名前缀为"TC_"，框架即可自动扫描当前测试套对应的所有测试用例脚本文件。
-22. },
-23. // kits字段主要描述测试用例需要的测试公共kit，如pushkit、shellkit等
-24. "kits": []
-25. }
+```screen
+{
+    "description": "Config for app test suites",
+    // environment属性用于配置测试用例需要的设备类型和数量。
+    "environment": [
+        {
+            "type": "device",     // 配置设备操作系统类型，device表示HarmonyOS设备。
+            "label": "phone"      // 设备物理形态，phone为手机，tablet为平板，设置为空字符串或者移除该属性表示用例对设备类型无要求。用户可以通过执行hdc shell param get const.product.devicetype查看设备类型。
+        }
+    ],
+    // driver 属性用于定义测试用例的驱动类型及待执行脚本的路径，脚本路径需为相对于当前 JSON 文件的路径。
+    "driver": {
+        "type": "DeviceTestSuite",
+        // 指定测试套配置（JSON）文件对应的测试套脚本（Python）文件路径（可省略 .py 后缀），支持相对路径或绝对路径。若使用相对路径，需相对于测试工程根目录；若未指定，则默认查找与当前 JSON 文件同目录下同名的 Python文件。
+        "testsuite": "TS_001/TS_001",
+        // 指定测试套中的测试用例脚本(Python)文件列表，指定方式有两种。
+        // 方式一：定义 suitecases 字段，并在其中指定测试用例脚本文件的路径。路径可使用相对路径或绝对路径；若使用相对路径，其根目录为当前测试套目录。
+        "suitecases": [
+            "TestCase1.py",         // 相对路径
+            "/path/to/TestCase2.py" // 绝对路径
+        ]
+        // 方式二：将测试用例脚本（Python）文件保存到测试套目录中，并且设置文件名前缀为"TC_"，框架即可自动扫描当前测试套对应的所有测试用例脚本文件。
+    },
+    // kits字段主要描述测试用例需要的测试公共kit，如pushkit、shellkit等
+    "kits": []
+}
 ```
 
 * **测试用例脚本文件**
@@ -506,8 +506,8 @@ Hypium框架命令可以分为三类：help、list和run。其中run为最常用
 
 打开命令行窗口，切换到测试脚本工程的根目录，执行以下命令可以进入Hypium控制台。
 
-```
-1. python -m hypium
+```screen
+python -m hypium
 ```
 
 **常用命令介绍**
@@ -516,18 +516,18 @@ Hypium框架命令可以分为三类：help、list和run。其中run为最常用
 
 输入help指令可以查询框架指令帮助信息。
 
-```
-1. help:
-2. use help to get information.
-3. usage:
-4. run:  Display a list of supported run command.
-5. list: Display a list of supported device and task record.
-6. Examples:
-7. help run
-8. help list
+```screen
+help:
+    use help to get information.  
+usage:
+    run:  Display a list of supported run command.
+    list: Display a list of supported device and task record.  
+Examples:
+    help run
+    help list
 ```
 
-说明
+**说明** 
 
 help run：展示run指令相关说明；help list：展示 list指令相关说明。
 
@@ -535,24 +535,24 @@ help run：展示run指令相关说明；help list：展示 list指令相关说�
 
 list指令用来展示设备和相关的任务信息。
 
-```
-1. list:
-2. This command is used to display device list and task record.
-3. usage:
-4. list
-5. list history
-6. list <id>
-7. Introduction:
-8. list:         display device list
-9. list history: display history record of a serial of tasks
-10. list <id>:    display history record about task what contains specific id
-11. Examples:
-12. list
-13. list history
-14. list 6e****90
+```screen
+list:
+    This command is used to display device list and task record.  
+usage:
+      list
+      list history
+      list <id> 
+Introduction:
+    list:         display device list
+    list history: display history record of a serial of tasks
+    list <id>:    display history record about task what contains specific id  
+Examples:
+    list
+    list history
+    list 6e****90
 ```
 
-说明
+**说明** 
 
 list：展示设备信息；
 
@@ -564,24 +564,24 @@ list< id >：展示特定id的任务其历史信息。
 
 run指令主要用于执行测试任务。
 
-```
-1. run:
-2. This command is used to execute the selected testcases.
-3. It includes a series of processes such as use case compilation, execution, and result collection.
-4. usage: run [-l TESTLIST [TESTLIST ...] | -tf TESTFILE
-5. [TESTFILE ...]] [-tc TESTCASE] [-c CONFIG] [-sn DEVICE_SN]
-6. [-rp REPORT_PATH [REPORT_PATH ...]]
-7. [-respath RESOURCE_PATH [RESOURCE_PATH ...]]
-8. [-tcpath TESTCASES_PATH [TESTCASES_PATH ...]]
-9. [-ta TESTARGS [TESTARGS ...]]
-10. [-env TEST_ENVIRONMENT [TEST_ENVIRONMENT ...]]
-11. [--retry RETRY] [--session SESSION]
-12. [--repeat REPEAT]
-13. action task
-14. Specify tests to run.
-15. positional arguments:
-16. action                Specify action
-17. task                    Specify task name,such as "ssts", "acts", "hits"
+```screen
+run:
+    This command is used to execute the selected testcases.
+    It includes a series of processes such as use case compilation, execution, and result collection.  
+usage: run [-l TESTLIST [TESTLIST ...] | -tf TESTFILE
+            [TESTFILE ...]] [-tc TESTCASE] [-c CONFIG] [-sn DEVICE_SN]
+            [-rp REPORT_PATH [REPORT_PATH ...]]
+            [-respath RESOURCE_PATH [RESOURCE_PATH ...]]
+            [-tcpath TESTCASES_PATH [TESTCASES_PATH ...]]
+            [-ta TESTARGS [TESTARGS ...]]
+            [-env TEST_ENVIRONMENT [TEST_ENVIRONMENT ...]]
+            [--retry RETRY] [--session SESSION]
+            [--repeat REPEAT]
+            action task  
+Specify tests to run.
+  positional arguments:
+  action                Specify action
+  task                    Specify task name,such as "ssts", "acts", "hits"
 ```
 
 run常用指令基本使用方式如下：
@@ -606,21 +606,21 @@ PyCharm中执行用例依赖本文档的安装向导部分介绍的PyCharm插件
 
 测试报告目录结构如下：
 
-```
-1. 当前报告目录（默认目录/指定目录）
-2. ├── details（用例步骤截图存放目录）
-3. ├── result（模块执行结果存放目录）
-4. │     ├── <测试用例1结果>.xml
-5. │     ├──  ... ...
-6. ├── log (设备和任务运行log存放目录)
-7. │     ├── <测试用例1设备执行>.log
-8. │     ├── ... ...
-9. │     ├── <任务执行>.log
-10. ├── static (报告展示页面css元素存放目录)
-11. ├── summary_report.html（测试任务可视化报告）
-12. ├── summary_report.xml（测试任务数据报告）
-13. ├── summary.ini（记录测试类型，使用的设备，开始时间和结束时间等信息）
-14. ├── task_info.record（记录执行命令，失败用例等清单信息）
+```screen
+当前报告目录（默认目录/指定目录）
+    ├── details（用例步骤截图存放目录）
+    ├── result（模块执行结果存放目录）
+    │     ├── <测试用例1结果>.xml
+    │     ├──  ... ...  
+    ├── log (设备和任务运行log存放目录)
+    │     ├── <测试用例1设备执行>.log
+    │     ├── ... ...
+    │     ├── <任务执行>.log
+    ├── static (报告展示页面css元素存放目录)
+    ├── summary_report.html（测试任务可视化报告）
+    ├── summary_report.xml（测试任务数据报告）
+    ├── summary.ini（记录测试类型，使用的设备，开始时间和结束时间等信息）
+    ├── task_info.record（记录执行命令，失败用例等清单信息）
 ```
 
 ## API使用说明
@@ -636,27 +636,27 @@ Hypium测试框架提供了两大类API来支持用例的编写：设备相关AP
 
 **示例代码**
 
-```
-1. # -*- coding: utf-8 -*-
-2. from devicetest.core.test_case import TestCase, Step, CheckPoint
-3. from hypium import *
-4. from hypium.model import WindowFilter
-5. class DemoCase(TestCase):
-6. def __init__(self, configs):
-7. self.TAG = self.__class__.__name__
-8. TestCase.__init__(self, self.TAG, configs)
-9. def setup(self):
-10. pass
+```screen
+# -*- coding: utf-8 -*-
+from devicetest.core.test_case import TestCase, Step, CheckPoint
+from hypium import *
+from hypium.model import WindowFilter
+class DemoCase(TestCase):
+    def __init__(self, configs):
+        self.TAG = self.__class__.__name__
+        TestCase.__init__(self, self.TAG, configs)
+    def setup(self):
+        pass
 
-12. def process(self):
-13. # 创建driver对象（self.device1对象在测试用例类中提供）
-14. driver = UiDriver(self.device1)
-15. # 查找控件
-16. component = driver.find_component(BY.text("蓝牙"))
-17. # 查找窗口
-18. window = driver.find_window(WindowFilter().bundle_name("com.huawei.hmos.settings"))
-19. def teardown(self):
-20. pass
+    def process(self):
+        # 创建driver对象（self.device1对象在测试用例类中提供）
+        driver = UiDriver(self.device1)
+        # 查找控件
+        component = driver.find_component(BY.text("蓝牙"))
+        # 查找窗口
+        window = driver.find_window(WindowFilter().bundle_name("com.huawei.hmos.settings"))
+    def teardown(self):
+        pass
 ```
 
 设备无关的API当前主要包括两个基础API类： **host** 和**CV**。
@@ -666,26 +666,26 @@ Hypium测试框架提供了两大类API来支持用例的编写：设备相关AP
 
 **示例代码**
 
-```
-1. from hypium import host, CV
+```screen
+from hypium import host, CV
 
-3. # 执行PC端命令
-4. echo = host.shell("a.bat")
-5. # 调用图像接口
-6. brightness = CV.calculate_brightness("/path/to/image.jpeg")
+# 执行PC端命令
+echo = host.shell("a.bat")
+# 调用图像接口
+brightness = CV.calculate_brightness("/path/to/image.jpeg")
 ```
 
 此外Hypium还包含一些常量类型，例如**KeyCode，UiParam，MatchPattern**等，以及数据类型**Point，Rect**等。
 
 **示例代码**
 
-```
-1. from hypium.model import KeyCode, UiParam, MatchPattern
+```screen
+from hypium.model import KeyCode, UiParam, MatchPattern
 
-3. # 按下电源键（使用常量KeyCode.POWER）
-4. driver.press_key(KeyCode.POWER)
-5. # 向左滑动屏幕（使用常量UiParam.LEFT）
-6. driver.swipe(UiParam.LEFT)
+# 按下电源键（使用常量KeyCode.POWER）
+driver.press_key(KeyCode.POWER)
+# 向左滑动屏幕（使用常量UiParam.LEFT）
+driver.swipe(UiParam.LEFT)
 ```
 
 下文各小节将详细介绍主要测试场景中Hypium的API的使用方法。
@@ -696,7 +696,7 @@ Hypium测试框架提供了两大类API来支持用例的编写：设备相关AP
 
 通过 DevEco Testing Hypium插件中的 UiViewer 工具，可以查看界面控件的各项属性，有助于在后续测试用例开发中准确定位控件。具体使用方法请参考本文档的**“安装向导 -> DevEco Testing Hypium插件安装及使用方法**“小节。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/-KuqTZQXRVmw6TH9rNFMRw/zh-cn_image_0000002524623459.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/aMuiYKS-RLWxO-rbWyWouQ/zh-cn_image_0000002633693118.png "点击放大")
 
 * **控件查找**
 
@@ -714,23 +714,23 @@ Hypium 支持三种主要的控件定位方式：控件属性定位、图片匹�
 
 从**hypium**包中导入BY选择器对象，从**hypium.model**包中导入匹配模式常量类**MatchPattern**。
 
-```
-1. from hypium import BY
-2. from hypium.model import MatchPattern
+```screen
+from hypium import BY
+from hypium.model import MatchPattern
 ```
 
 通过BY对象描述需要查找或者操作的控件对象的属性，例如查找text属性为“蓝牙”的控件。
 
-```
-1. # 查找text属性为"控件文本"的控件。
-2. component = driver.find_component(BY.text("蓝牙"))
-3. # 读取控件的的边框位置。
-4. bounds = component.getBounds()
-5. # 直接点击控件。
-6. component = driver.touch(BY.text("蓝牙"))
+```screen
+# 查找text属性为"控件文本"的控件。
+component = driver.find_component(BY.text("蓝牙"))
+# 读取控件的的边框位置。
+bounds = component.getBounds()
+# 直接点击控件。
+component = driver.touch(BY.text("蓝牙"))
 ```
 
-注意
+**注意** 
 
 默认情况下，find\_component和touch等方法会查找/操作第一个条件匹配的控件，如需操作第n个满足匹配条件的控件，请参考查找所有匹配控件。
 
@@ -744,9 +744,9 @@ Hypium 支持三种主要的控件定位方式：控件属性定位、图片匹�
 | 4 | MatchPattern.REGEXP | 正则表达式匹配 |
 | 5 | MatchPattern.REGEXP\_ICASE | 正则表达式匹配（忽略大小写） |
 
-```
-1. # 点击text属性值前缀为“今天星期”的控件。
-2. driver.touch(BY.text("今天星期", MatchPattern.STARTS_WITH))
+```screen
+# 点击text属性值前缀为“今天星期”的控件。
+driver.touch(BY.text("今天星期", MatchPattern.STARTS_WITH))
 ```
 
 BY选择器支持的所有属性如下表所示：
@@ -770,12 +770,12 @@ BY选择器支持的所有属性如下表所示：
 
 BY选择器支持链式调用，允许用户指定多个控件属性进行联合定位。当界面上存在多个控件的部分属性相同而其他属性不同时，可通过组合条件精确匹配目标控件。
 
-```
-1. # 点击文本为"蓝牙", 类型为"Button", 并且key为"bluetooth_switch"的按钮。
-2. driver.touch(BY.text("蓝牙").type("Button").key("bluetooth_switch"))
+```screen
+# 点击文本为"蓝牙", 类型为"Button", 并且key为"bluetooth_switch"的按钮。
+driver.touch(BY.text("蓝牙").type("Button").key("bluetooth_switch"))
 
-4. # 查找文本为"蓝牙", 类型为"Button", 并且key为"bluetooth_switch"的按钮。
-5. component = driver.find_component(BY.text("蓝牙").type("Button").key("bluetooth_switch"))
+# 查找文本为"蓝牙", 类型为"Button", 并且key为"bluetooth_switch"的按钮。
+component = driver.find_component(BY.text("蓝牙").type("Button").key("bluetooth_switch"))
 ```
 
 **控件相对位置+属性组合定位控件**
@@ -793,7 +793,7 @@ BY选择器支持链式调用，允许用户指定多个控件属性进行联合
 
 相对位置通常和控件的属性结合使用来定位控件，以下图场景为例，界面上存在多个按钮，用户需要点击显示通知图标之后的按钮，定位方式如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/VvDZowtlTX6-tAkNhJ2JCQ/zh-cn_image_0000002524623441.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/IIBcBfj2TS6Afv8DmseLsg/zh-cn_image_0000002633693102.png "点击放大")
 
 1. 首先选择一个可以通过属性唯一定位的锚点控件。例如**BY.text("显示通知图标")**
 2. 然后找到需要操作的目标控件，选择该控件的一个不唯一属性，通常为type属性。例如**BY.type("Button")**
@@ -801,27 +801,27 @@ BY选择器支持链式调用，允许用户指定多个控件属性进行联合
 
 **示例代码**
 
-```
-1. # 查找在text属性为"显示通知图标"的控件之后的type属性为"Button"的控件。
-2. component = driver.find_component(BY.type("Button").isAfter(BY.text("显示通知图标")))
-```
-
-```
-1. # 查找在text属性为"账号"的控件之前的type属性为"Image"的控件。
-2. component = driver.find_component(BY.type("Image").isBefore(BY.text("账号")))
+```screen
+# 查找在text属性为"显示通知图标"的控件之后的type属性为"Button"的控件。
+component = driver.find_component(BY.type("Button").isAfter(BY.text("显示通知图标")))
 ```
 
-```
-1. # 查找在key为"nav_container"内部的类型为"Image"的控件。
-2. component = driver.find_component(BY.type("Image").within(BY.key("nav_container")))
-```
-
-```
-1. # 查找包名为"com.huawei.hmos.settings"的应用内部的text属性为"蓝牙"的控件。
-2. component = driver.find_component(BY.text("蓝牙").inWindow("com.huawei.hmos.settings"))
+```screen
+# 查找在text属性为"账号"的控件之前的type属性为"Image"的控件。
+component = driver.find_component(BY.type("Image").isBefore(BY.text("账号")))
 ```
 
-注意
+```screen
+# 查找在key为"nav_container"内部的类型为"Image"的控件。
+component = driver.find_component(BY.type("Image").within(BY.key("nav_container")))
+```
+
+```screen
+# 查找包名为"com.huawei.hmos.settings"的应用内部的text属性为"蓝牙"的控件。
+component = driver.find_component(BY.text("蓝牙").inWindow("com.huawei.hmos.settings"))
+```
+
+**注意** 
 
 相对位置中的锚点控件**不能**再使用相对位置描述，即**BY.isBefore**方法的参数中不能再出现**BY.isBefore**或者**BY.isAfter**等相对定位的方式。
 
@@ -829,33 +829,33 @@ BY选择器支持链式调用，允许用户指定多个控件属性进行联合
 
 BY.xpath匹配器支持通过XPath语法来查找控件。部分控件没有唯一定位的属性，同时通过相对定位的方式也无法准确定位，推荐使用XPath语法来进行更精确的控件定位。
 
-注意
+**注意** 
 
 XPath不能和其他属性匹配一起使用，通过XPath查找控件相比单属性和多属性查找控件的效率会有所下降。
 
 在如下场景中，用户需要找到红框标识的图标，然而该图标没有唯一定位的属性，推荐使用XPath语法描述该控件相对其他可定位控件的路径关系来定位该控件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/HT0v78onSxCZqfksyhW-tQ/zh-cn_image_0000002492503760.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/BNSgbTWoRh-h0dpiVdK3RA/zh-cn_image_0000002633693116.png "点击放大")
 
 该页面上，“可用 WLAN”是一个固定的可唯一定位的文本，用户可以首先通过XPath定位到该文本**//\*[@text='可用 WLAN']**，然后定位到该文本控件所在的List控件**/ancestor::List**，然后从该List控件开始找到对应的Image控件**/ListItemGroup/ListItem[1]//Text/following::Image**。
 
 **示例代码**
 
-```
-1. # 查找上图中红框所示的图标，并点击。
-2. comp = driver.find_component(BY.xpath("//*[@text='可用 WLAN']/ancestor::List/ListItemGroup/ListItem[1]//Text/following::Image"))
-3. comp.click()
+```screen
+# 查找上图中红框所示的图标，并点击。
+comp = driver.find_component(BY.xpath("//*[@text='可用 WLAN']/ancestor::List/ListItemGroup/ListItem[1]//Text/following::Image"))
+comp.click()
 ```
 
 在支持传入BY选择器的接口均可以使用XPath来定位控件。
 
-```
-1. # 查找text属性为WLAN的控件。
-2. driver.find_component(BY.xpath("//*[@text='WLAN']"))
-3. driver.find_all_components(BY.xpath("//*[@text='WLAN']"))
-4. driver.wait_for_component(BY.xpath("//*[@text='WLAN']"))
-5. # 点击text属性为WLAN的控件。
-6. driver.touch(BY.xpath("//*[@text='WLAN']"))
+```screen
+# 查找text属性为WLAN的控件。
+driver.find_component(BY.xpath("//*[@text='WLAN']"))
+driver.find_all_components(BY.xpath("//*[@text='WLAN']"))
+driver.wait_for_component(BY.xpath("//*[@text='WLAN']"))
+# 点击text属性为WLAN的控件。
+driver.touch(BY.xpath("//*[@text='WLAN']"))
 ```
 
 **查找所有匹配控件**
@@ -864,18 +864,18 @@ XPath不能和其他属性匹配一起使用，通过XPath查找控件相比单�
 
 以如下场景为例，界面上存在多个Button，用户需要点击第2个特定的Button或点击所有Button时，可以使用**driver.find\_all\_components**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/MNVAIoyHQd-YGK2spjEyhw/zh-cn_image_0000002524503477.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/sgjv9GMUTICfWmBjcWzadw/zh-cn_image_0000002663932271.png "点击放大")
 
 **示例代码**
 
-```
-1. # 查找所有type属性为"Button"的控件, 如果有匹配的结果，components为列表，包含多个满足条件的IUiComponent对象。
-2. components = driver.find_all_components(BY.type("Button"))
-3. # 点击所有的控件。
-4. for component in components:
-5. driver.touch(component)
-6. # 点击第2个控件。
-7. driver.touch(component[1])
+```screen
+# 查找所有type属性为"Button"的控件, 如果有匹配的结果，components为列表，包含多个满足条件的IUiComponent对象。
+components = driver.find_all_components(BY.type("Button"))
+# 点击所有的控件。
+for component in components:
+    driver.touch(component)
+# 点击第2个控件。
+driver.touch(component[1])
 ```
 
 **图片定位控件**
@@ -884,12 +884,12 @@ XPath不能和其他属性匹配一起使用，通过XPath查找控件相比单�
 
 以如下场景为例，若红框中的控件没有可以唯一定位的属性，也无法通过与附近控件的相对位置定位，用户可以尝试使用图片匹配的方式定位控件，定位方式如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/V-w8xEhwQz-TmnxtJpFK7A/zh-cn_image_0000002524623447.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/znatExDbQ1-FaGnzK3UZgg/zh-cn_image_0000002663932237.png "点击放大")
 
 1. 截取红框中图片保存到为template.jpeg（文件名根据需要定义）。
 2. 调用driver.touch\_image，传入template.jpeg图片的路径。
 
-注意
+**注意** 
 
 使用图片定位控件需要安装opencv-python包，使用如下命令安装：
 
@@ -897,16 +897,16 @@ python -m pip install opencv-python
 
 **示例代码**
 
-```
-1. # 点击屏幕上和模板图片template.jpeg匹配的位置。
-2. driver.touch_image("/path/to/template.jpeg")
+```screen
+# 点击屏幕上和模板图片template.jpeg匹配的位置。
+driver.touch_image("/path/to/template.jpeg")
 
-4. # 查找屏幕上和模板图片template.jpeg匹配的位置, bounds为Rect类型，记录了控件上下左右边框的位置。
-5. bounds = driver.find_image("template.jpeg")
-6. print(bounds.top, bounds.left, bounds.bottom, bounds.right)
+# 查找屏幕上和模板图片template.jpeg匹配的位置, bounds为Rect类型，记录了控件上下左右边框的位置。
+bounds = driver.find_image("template.jpeg")
+print(bounds.top, bounds.left, bounds.bottom, bounds.right)
 ```
 
-注意
+**注意** 
 
 当前仅支持查找匹配度最高的匹配的图片区域，不支持匹配多个目标。
 
@@ -922,23 +922,23 @@ python -m pip install opencv-python
 
 以下图场景为例，如果红框中的控件无法通过上述方式定位，用户可以采用比例坐标的方式点击。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/VmZ8ii9IQlSHwRvCrM7Hug/zh-cn_image_0000002524503469.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/JftnGVZnQnCop2KhIVQINw/zh-cn_image_0000002633533174.png "点击放大")
 
 用户可以通过 UiViewer 工具的控件查看模式获取控件的比例坐标。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/A3Xc9ZZvSuuOBoBftHE5ZQ/zh-cn_image_0000002492343782.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/4UM3fckXQvShRq5bQ_MAEQ/zh-cn_image_0000002663932255.png "点击放大")
 
-```
-1. # 点击屏幕上(0.52 * 屏幕宽度, 0.98 * 屏幕高度)的位置。
-2. driver.touch((0.52, 0.98))
+```screen
+# 点击屏幕上(0.52 * 屏幕宽度, 0.98 * 屏幕高度)的位置。
+driver.touch((0.52, 0.98))
 ```
 
 * **窗口查找**
 
 **查找窗口**
 
-```
-1. def find_window(filter: WindowFilter) -> UiWindow
+```screen
+def find_window(filter: WindowFilter) -> UiWindow
 ```
 
 **接口说明**
@@ -957,15 +957,15 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 查找标题为日历的窗口。
-2. window = driver.find_window(WindowFilter().title("日历"))
-3. # 查找包名为com.huawei.hmos.calendar，并且处于活动状态的窗口。
-4. window = driver.find_window(WindowFilter().bundle_name("com.huawei.hmos.calendar").actived(True))
-5. # 查找处于活动状态的窗口。
-6. window = driver.find_window(WindowFilter().actived(True))
-7. # 查找聚焦状态的窗口。
-8. window = driver.find_window(WindowFilter().focused(True))
+```screen
+# 查找标题为日历的窗口。
+window = driver.find_window(WindowFilter().title("日历"))
+# 查找包名为com.huawei.hmos.calendar，并且处于活动状态的窗口。
+window = driver.find_window(WindowFilter().bundle_name("com.huawei.hmos.calendar").actived(True))
+# 查找处于活动状态的窗口。
+window = driver.find_window(WindowFilter().actived(True))
+# 查找聚焦状态的窗口。
+window = driver.find_window(WindowFilter().focused(True))
 ```
 
 * **界面操作**
@@ -974,8 +974,8 @@ python -m pip install opencv-python
 
 **点击**
 
-```
-1. def touch(target: Union[ISelector, IUiComponent, tuple], mode: str = UiParam.NORMAL, scroll_target: Union[ISelector, IUiComponent] = None, wait_time: float = 0.1)
+```screen
+def touch(target: Union[ISelector, IUiComponent, tuple], mode: str = UiParam.NORMAL, scroll_target: Union[ISelector, IUiComponent] = None, wait_time: float = 0.1)
 ```
 
 **接口说明**
@@ -993,25 +993,25 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 点击文本为"hello"的控件。
-2. driver.touch(BY.text("hello"))
-3. # 点击(100, 200)的位置。
-4. driver.touch((100, 200))
-5. # 点击比例坐标为(0.8, 0.9)的位置。
-6. driver.touch((0.8, 0.9))
-7. # 双击确认按钮(控件文本为"确认", 类型为"Button")。
-8. driver.touch(BY.text("确认").type("Button"), mode=UiParam.DOUBLE)
-9. # 在类型为Scroll的控件上滑动查找文本为"退出"的控件并点击。
-10. driver.touch(BY.text("退出"), scroll_target=BY.type("Scroll"))
-11. # 长按比例坐标为(0.8, 0.9)的位置。
-12. driver.touch((0.8, 0.9), mode="long")
+```screen
+# 点击文本为"hello"的控件。
+driver.touch(BY.text("hello"))
+# 点击(100, 200)的位置。
+driver.touch((100, 200))
+# 点击比例坐标为(0.8, 0.9)的位置。
+driver.touch((0.8, 0.9))
+# 双击确认按钮(控件文本为"确认", 类型为"Button")。
+driver.touch(BY.text("确认").type("Button"), mode=UiParam.DOUBLE)
+# 在类型为Scroll的控件上滑动查找文本为"退出"的控件并点击。
+driver.touch(BY.text("退出"), scroll_target=BY.type("Scroll"))
+# 长按比例坐标为(0.8, 0.9)的位置。
+driver.touch((0.8, 0.9), mode="long")
 ```
 
 **长按**
 
-```
-1. def long_click(self, target: Union[ISelector, IUiComponent, tuple], press_time: float = 2, offset=None):
+```screen
+def long_click(self, target: Union[ISelector, IUiComponent, tuple], press_time: float = 2, offset=None):
 ```
 
 **接口说明**
@@ -1030,19 +1030,19 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 长按文本为"按钮"的控件5秒
-2. driver.long_click(BY.text("按钮"), press_time=5)
-3. # 长按(100, 200)的位置5秒
-4. driver.long_click((100, 200), press_time=5)
-5. # 长按文本为"设置"的控件左上角(偏移0, 0)
-6. driver.long_click(BY.text("设置"), offset=(0, 0))
+```screen
+# 长按文本为"按钮"的控件5秒
+driver.long_click(BY.text("按钮"), press_time=5)
+# 长按(100, 200)的位置5秒
+driver.long_click((100, 200), press_time=5)
+# 长按文本为"设置"的控件左上角(偏移0, 0)
+driver.long_click(BY.text("设置"), offset=(0, 0))
 ```
 
 **多指点击**
 
-```
-1. def multi_finger_touch(points: List[tuple], duration: float = 0.1, area: Rect = None)
+```screen
+def multi_finger_touch(points: List[tuple], duration: float = 0.1, area: Rect = None)
 ```
 
 **接口说明**
@@ -1059,23 +1059,23 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 执行多指点击操作, 同时点击屏幕(0.1, 0.2), (0.3, 0.4)的位置。
-2. driver.multi_finger_touch([(0.1, 0.2), (0.3, 0.4)])
-3. # 执行多指点击操作, 设置点击按下时间为1秒。
-4. driver.multi_finger_touch([(0.1, 0.2), (0.3, 0.4)], duration=2)
-5. # 查找Image类型控件。
-6. comp = driver.find_component(BY.type("Image"))
-7. # 在指定的控件区域内执行多指点击(点击坐标为控件区域内的比例坐标)。
-8. driver.multi_finger_touch([(0.5, 0.5), (0.6, 0.6)], area=comp.getBounds())
+```screen
+# 执行多指点击操作, 同时点击屏幕(0.1, 0.2), (0.3, 0.4)的位置。
+driver.multi_finger_touch([(0.1, 0.2), (0.3, 0.4)])
+# 执行多指点击操作, 设置点击按下时间为1秒。
+driver.multi_finger_touch([(0.1, 0.2), (0.3, 0.4)], duration=2)
+# 查找Image类型控件。
+comp = driver.find_component(BY.type("Image"))
+# 在指定的控件区域内执行多指点击(点击坐标为控件区域内的比例坐标)。
+driver.multi_finger_touch([(0.5, 0.5), (0.6, 0.6)], area=comp.getBounds())
 ```
 
 **滑动**
 
 **执行指定方向的滑动操作**
 
-```
-1. def swipe(direction: str, distance: int = 60, area: Union[ISelector, IUiComponent] = None, side: str = None, start_point: tuple = None, swipe_time: float = 0.3)
+```screen
+def swipe(direction: str, distance: int = 60, area: Union[ISelector, IUiComponent] = None, side: str = None, start_point: tuple = None, swipe_time: float = 0.3)
 ```
 
 **接口说明**
@@ -1095,25 +1095,25 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 在屏幕上向上滑动, 距离40。
-2. driver.swipe(UiParam.UP, distance=40)
-3. # 在屏幕上向右滑动, 滑动时间为0.1秒。
-4. driver.swipe(UiParam.RIGHT, swipe_time=0.1)
-5. # 在屏幕起始点为比例坐标为(0.8, 0.8)的位置向上滑动，距离30。
-6. driver.swipe(UiParam.UP, 30, start_point=(0.8, 0.8))
-7. # 在屏幕左边区域向下滑动， 距离30。
-8. driver.swipe(UiParam.DOWN, 30, side=UiParam.LEFT)
-9. # 在屏幕右侧区域向上滑动，距离30。
-10. driver.swipe(UiParam.UP, side=UiParam.RIGHT)
-11. # 在类型为Scroll的控件中向上滑动。
-12. driver.swipe(UiParam.UP, area=BY.type("Scroll"))
+```screen
+# 在屏幕上向上滑动, 距离40。
+driver.swipe(UiParam.UP, distance=40)
+# 在屏幕上向右滑动, 滑动时间为0.1秒。
+driver.swipe(UiParam.RIGHT, swipe_time=0.1)
+# 在屏幕起始点为比例坐标为(0.8, 0.8)的位置向上滑动，距离30。
+driver.swipe(UiParam.UP, 30, start_point=(0.8, 0.8))
+# 在屏幕左边区域向下滑动， 距离30。
+driver.swipe(UiParam.DOWN, 30, side=UiParam.LEFT)
+# 在屏幕右侧区域向上滑动，距离30。
+driver.swipe(UiParam.UP, side=UiParam.RIGHT)
+# 在类型为Scroll的控件中向上滑动。
+driver.swipe(UiParam.UP, area=BY.type("Scroll"))
 ```
 
 **执行指定起始结束位置的精确滑动操作**
 
-```
-1. def slide(start: Union[ISelector, tuple], end: Union[ISelector, tuple], area: Union[ISelector, IUiComponent] = None, slide_time: float = 0.3)
+```screen
+def slide(start: Union[ISelector, tuple], end: Union[ISelector, tuple], area: Union[ISelector, IUiComponent] = None, slide_time: float = 0.3)
 ```
 
 **接口说明**
@@ -1131,21 +1131,21 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 从类型为Slider的控件滑动到文本为最大的控件
-2. driver.slide(BY.type("Slider"), BY.text("最大"))
-3. # 从坐标100, 200滑动到300，400
-4. driver.slide((100, 200), (300, 400))
-5. # 从坐标100, 200滑动到300，400, 滑动时间为3秒
-6. driver.slide((100, 200), (300, 400), slide_time=3)
-7. # 在类型为Slider的控件上从(0, 0)滑动到(100, 0)
-8. driver.slide((0, 0), (100, 0), area = BY.type("Slider"))
+```screen
+# 从类型为Slider的控件滑动到文本为最大的控件
+driver.slide(BY.type("Slider"), BY.text("最大"))
+# 从坐标100, 200滑动到300，400
+driver.slide((100, 200), (300, 400))
+# 从坐标100, 200滑动到300，400, 滑动时间为3秒
+driver.slide((100, 200), (300, 400), slide_time=3)
+# 在类型为Slider的控件上从(0, 0)滑动到(100, 0)
+driver.slide((0, 0), (100, 0), area = BY.type("Slider"))
 ```
 
 **拖拽**
 
-```
-1. def drag(start: Union[ISelector, tuple, IUiComponent], end: Union[ISelector, tuple, IUiComponent], area: Union[ISelector, IUiComponent] = None, press_time: float = 1, drag_time: float = 1)
+```screen
+def drag(start: Union[ISelector, tuple, IUiComponent], end: Union[ISelector, tuple, IUiComponent], area: Union[ISelector, IUiComponent] = None, press_time: float = 1, drag_time: float = 1)
 ```
 
 **接口说明**
@@ -1164,24 +1164,24 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 拖拽文本为"文件.txt"的控件到文本为"上传文件"的控件。
-2. driver.drag(BY.text("文件.txt"), BY.text("上传文件"))
-3. # 拖拽id为"start_bar"的控件到坐标(100, 200)的位置, 拖拽时间为2秒。
-4. driver.drag(BY.key("start_bar"), (100, 200), drag_time=2)
-5. # 在id为"Canvas"的控件上执行拖拽操作，从"Canvas"控件中(0.1, 0.5)的位置拖拽到(0.9, 0.5)位置。
-6. # 假如"Canvas"控件左上角坐标(100, 100), 宽度为200，高度为50，此操作等价于
-7. # driver.drag((100 + 0.1 * 200, 100 + 0.5 * 50), (100 + 0.9 * 200, 100 + 0.5 * 50))。
-8. driver.drag((0.1, 0.5), (0.9, 0.5), area=BY.id("Canvas"))
-9. # 在滑动条上执行拖拽操作, 以滑动条组件左上角为原点, 从滑动条区域中的(10, 10)拖拽到(10, 200)。
-10. # 假设滑动条左上角坐标为(500, 500), 此操作等价于driver.drag((500 + 10, 500 + 10), (500 + 10, 500 + 200))。
-11. driver.drag((10, 10), (10, 200), area=BY.type("Slider"))
+```screen
+# 拖拽文本为"文件.txt"的控件到文本为"上传文件"的控件。
+driver.drag(BY.text("文件.txt"), BY.text("上传文件"))
+# 拖拽id为"start_bar"的控件到坐标(100, 200)的位置, 拖拽时间为2秒。
+driver.drag(BY.key("start_bar"), (100, 200), drag_time=2)
+# 在id为"Canvas"的控件上执行拖拽操作，从"Canvas"控件中(0.1, 0.5)的位置拖拽到(0.9, 0.5)位置。
+# 假如"Canvas"控件左上角坐标(100, 100), 宽度为200，高度为50，此操作等价于
+# driver.drag((100 + 0.1 * 200, 100 + 0.5 * 50), (100 + 0.9 * 200, 100 + 0.5 * 50))。
+driver.drag((0.1, 0.5), (0.9, 0.5), area=BY.id("Canvas"))
+# 在滑动条上执行拖拽操作, 以滑动条组件左上角为原点, 从滑动条区域中的(10, 10)拖拽到(10, 200)。
+# 假设滑动条左上角坐标为(500, 500), 此操作等价于driver.drag((500 + 10, 500 + 10), (500 + 10, 500 + 200))。
+driver.drag((10, 10), (10, 200), area=BY.type("Slider"))
 ```
 
 **捏合缩小**
 
-```
-1. def pinch_in(area: Union[ISelector, IUiComponent, Rect], scale: float = 0.4, direction: str = "diagonal", **kwargs)
+```screen
+def pinch_in(area: Union[ISelector, IUiComponent, Rect], scale: float = 0.4, direction: str = "diagonal", **kwargs)
 ```
 
 **接口说明**
@@ -1199,17 +1199,17 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 在类型为Image的控件上进行双指捏合缩小操作。
-2. driver.pinch_in(BY.type("Image"))
-3. # 在类型为Image的控件上进行双指捏合缩小操作, 设置水平方向捏合。
-4. driver.pinch_in(BY.type("Image"), direction="horizontal")
+```screen
+# 在类型为Image的控件上进行双指捏合缩小操作。
+driver.pinch_in(BY.type("Image"))
+# 在类型为Image的控件上进行双指捏合缩小操作, 设置水平方向捏合。
+driver.pinch_in(BY.type("Image"), direction="horizontal")
 ```
 
 **双指放大**
 
-```
-1. def pinch_out(area: Union[ISelector, IUiComponent, Rect], scale: float = 1.6, direction: str = "diagonal", **kwargs)
+```screen
+def pinch_out(area: Union[ISelector, IUiComponent, Rect], scale: float = 1.6, direction: str = "diagonal", **kwargs)
 ```
 
 **接口说明**
@@ -1227,17 +1227,17 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 在类型为Image的控件上进行双指放大操作。
-2. driver.pinch_out(BY.type("Image"))
-3. # 在类型为Image的控件上进行双指捏合缩小操作, 设置水平方向捏合。
-4. driver.pinch_out(BY.type("Image"), direction="horizontal")
+```screen
+# 在类型为Image的控件上进行双指放大操作。
+driver.pinch_out(BY.type("Image"))
+# 在类型为Image的控件上进行双指捏合缩小操作, 设置水平方向捏合。
+driver.pinch_out(BY.type("Image"), direction="horizontal")
 ```
 
 **双指滑动**
 
-```
-1. def two_finger_swipe(start1: tuple, end1: tuple, start2: tuple, end2: tuple, duration: float = 0.5, area: Rect = None)
+```screen
+def two_finger_swipe(start1: tuple, end1: tuple, start2: tuple, end2: tuple, duration: float = 0.5, area: Rect = None)
 ```
 
 **接口说明**
@@ -1257,21 +1257,21 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 执行双指滑动操作, 手指1从(0.4, 0.4)滑动到(0.2, 0.2), 手指2从(0.6, 0.6)滑动到(0.8, 0.8)。
-2. driver.two_finger_swipe((0.4, 0.4), (0.2, 0.2), (0.6, 0.6), (0.8, 0.8))
-3. # 执行双指滑动操作, 手指1从(0.4, 0.4)滑动到(0.2, 0.2), 手指2从(0.6, 0.6)滑动到(0.8, 0.8), 持续时间3秒。
-4. driver.two_finger_swipe((0.4, 0.4), (0.2, 0.2), (0.6, 0.6), (0.8, 0.8), duration=3)
-5. # 查找Image类型控件。
-6. comp = driver.find_component(BY.type("Image"))
-7. # 在指定的控件区域内执行双指滑动(滑动起始/停止坐标为控件区域内的比例坐标)。
-8. driver.two_finger_swipe((0.4, 0.4), (0.1, 0.1), (0.6, 0.6), (0.9, 0.9), area=comp.getBounds())
+```screen
+# 执行双指滑动操作, 手指1从(0.4, 0.4)滑动到(0.2, 0.2), 手指2从(0.6, 0.6)滑动到(0.8, 0.8)。
+driver.two_finger_swipe((0.4, 0.4), (0.2, 0.2), (0.6, 0.6), (0.8, 0.8))
+# 执行双指滑动操作, 手指1从(0.4, 0.4)滑动到(0.2, 0.2), 手指2从(0.6, 0.6)滑动到(0.8, 0.8), 持续时间3秒。
+driver.two_finger_swipe((0.4, 0.4), (0.2, 0.2), (0.6, 0.6), (0.8, 0.8), duration=3)
+# 查找Image类型控件。
+comp = driver.find_component(BY.type("Image"))
+# 在指定的控件区域内执行双指滑动(滑动起始/停止坐标为控件区域内的比例坐标)。
+driver.two_finger_swipe((0.4, 0.4), (0.1, 0.1), (0.6, 0.6), (0.9, 0.9), area=comp.getBounds())
 ```
 
 **自定路径滑动手势（单指）**
 
-```
-1. def inject_gesture(gesture: Gesture, speed: int = 2000)
+```screen
+def inject_gesture(gesture: Gesture, speed: int = 2000)
 ```
 
 **接口说明**
@@ -1287,33 +1287,33 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. from hypium.uidriver import Gesture
+```screen
+from hypium.uidriver import Gesture
 
-3. # 创建一个gesture对象。
-4. gesture = Gesture()
-5. # 获取控件计算器的位置。
-6. pos = driver.findComponent(BY.text("计算器")).getBoundsCenter()
-7. # 获取屏幕尺寸。
-8. size = driver.getDisplaySize()
-9. # 起始位置, 长按2秒。
-10. gesture.start(pos.to_tuple(), 2)
-11. # 移动到屏幕边缘。
-12. gesture.move_to(Point(size.X - 20, int(size.Y / 2)).to_tuple())
-13. # 停留2秒。
-14. gesture.pause(2)
-15. # 移动到(360, 500)的位置。
-16. gesture.move_to(Point(360, 500).to_tuple())
-17. # 停留2秒结束。
-18. gesture.pause(2)
-19. # 执行gesture对象描述的操作。
-20. driver.inject_gesture(gesture)
+# 创建一个gesture对象。
+gesture = Gesture()
+# 获取控件计算器的位置。
+pos = driver.findComponent(BY.text("计算器")).getBoundsCenter()
+# 获取屏幕尺寸。
+size = driver.getDisplaySize()
+# 起始位置, 长按2秒。
+gesture.start(pos.to_tuple(), 2)
+# 移动到屏幕边缘。
+gesture.move_to(Point(size.X - 20, int(size.Y / 2)).to_tuple())
+# 停留2秒。
+gesture.pause(2)
+# 移动到(360, 500)的位置。
+gesture.move_to(Point(360, 500).to_tuple())
+# 停留2秒结束。
+gesture.pause(2)
+# 执行gesture对象描述的操作。
+driver.inject_gesture(gesture)
 ```
 
 **自定路径滑动手势(多指)**
 
-```
-1. def inject_multi_finger_gesture(gestures: List[Gesture], speed: int = 6000)
+```screen
+def inject_multi_finger_gesture(gestures: List[Gesture], speed: int = 6000)
 ```
 
 **接口说明**
@@ -1329,22 +1329,22 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. from hypium.uidriver import Gesture
-2. # 创建手指1的手势, 从(0.4, 0.4)的位置移动到(0.2, 0.2)的位置。
-3. gesture1 = Gesture().start((0.4, 0.4)).move_to((0.2, 0.2), interval=1)
-4. # 创建手指2的手势, 从(0.6, 0.6)的位置移动到(0.8, 0.8)的位置。
-5. gesture2 = Gesture().start((0.6, 0.6)).move_to((0.8, 0.8), interval=1)
-6. # 注入多指操作。
-7. driver.inject_multi_finger_gesture((gesture1, gesture2))
+```screen
+from hypium.uidriver import Gesture
+# 创建手指1的手势, 从(0.4, 0.4)的位置移动到(0.2, 0.2)的位置。
+gesture1 = Gesture().start((0.4, 0.4)).move_to((0.2, 0.2), interval=1)
+# 创建手指2的手势, 从(0.6, 0.6)的位置移动到(0.8, 0.8)的位置。
+gesture2 = Gesture().start((0.6, 0.6)).move_to((0.8, 0.8), interval=1)
+# 注入多指操作。
+driver.inject_multi_finger_gesture((gesture1, gesture2))
 ```
 
 **Ⅱ. 键盘鼠标**
 
 **鼠标点击**
 
-```
-1. def mouse_click(pos: Union[tuple, IUiComponent, ISelector], button_id: MouseButton = MouseButton.MOUSE_BUTTON_LEFT, key1: Union[KeyCode, int] = None, key2: Union[KeyCode, int] = None)
+```screen
+def mouse_click(pos: Union[tuple, IUiComponent, ISelector], button_id: MouseButton = MouseButton.MOUSE_BUTTON_LEFT, key1: Union[KeyCode, int] = None, key2: Union[KeyCode, int] = None)
 ```
 
 **接口说明**
@@ -1362,19 +1362,19 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 使用鼠标左键点击(100, 200)的位置。
-2. driver.mouse_click((100, 200), MouseButton.MOUSE_BUTTON_LEFT)
-3. # 使用鼠标右键点击文本为"确认"的控件。
-4. driver.mouse_click(BY.text("确认"), MouseButton.MOUSE_BUTTON_RIGHT)
-5. # 使用鼠标右键点击比例坐标(0.8, 0.5)的位置。
-6. driver.mouse_click((0.8, 0.5), MouseButton.MOUSE_BUTTON_RIGHT)
+```screen
+# 使用鼠标左键点击(100, 200)的位置。
+driver.mouse_click((100, 200), MouseButton.MOUSE_BUTTON_LEFT)
+# 使用鼠标右键点击文本为"确认"的控件。
+driver.mouse_click(BY.text("确认"), MouseButton.MOUSE_BUTTON_RIGHT)
+# 使用鼠标右键点击比例坐标(0.8, 0.5)的位置。
+driver.mouse_click((0.8, 0.5), MouseButton.MOUSE_BUTTON_RIGHT)
 ```
 
 **鼠标拖拽**
 
-```
-1. def mouse_drag(start: Union[tuple, IUiComponent, ISelector], end: Union[tuple, IUiComponent, ISelector], speed: int = 3000)
+```screen
+def mouse_drag(start: Union[tuple, IUiComponent, ISelector], end: Union[tuple, IUiComponent, ISelector], speed: int = 3000)
 ```
 
 **接口说明**
@@ -1391,15 +1391,15 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 鼠标从控件1拖拽到控件2。
-2. driver.mouse_drag(BY.text("控件1"), BY.text("控件2"))
+```screen
+# 鼠标从控件1拖拽到控件2。
+driver.mouse_drag(BY.text("控件1"), BY.text("控件2"))
 ```
 
 **鼠标移动**
 
-```
-1. def mouse_move(start: Union[tuple, IUiComponent, ISelector], end: Union[tuple, IUiComponent, ISelector], speed: int = 3000)
+```screen
+def mouse_move(start: Union[tuple, IUiComponent, ISelector], end: Union[tuple, IUiComponent, ISelector], speed: int = 3000)
 ```
 
 **接口说明**
@@ -1416,15 +1416,15 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 鼠标从控件1移动到控件2。
-2. driver.mouse_move(BY.text("控件1"), BY.text("控件2"))
+```screen
+# 鼠标从控件1移动到控件2。
+driver.mouse_move(BY.text("控件1"), BY.text("控件2"))
 ```
 
 **按键**
 
-```
-1. def press_key(key_code: Union[KeyCode, int], key_code2: Union[KeyCode, int] = None, mode="normal")
+```screen
+def press_key(key_code: Union[KeyCode, int], key_code2: Union[KeyCode, int] = None, mode="normal")
 ```
 
 **接口说明**
@@ -1441,19 +1441,19 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 按下电源键。
-2. driver.press_key(KeyCode.POWER)
-3. # 长按电源键。
-4. driver.press_key(KeyCode.POWER, mode=UiParam.LONG)
-5. # 按下音量下键。
-6. driver.press_key(KeyCode.VOLUME_DOWN)
+```screen
+# 按下电源键。
+driver.press_key(KeyCode.POWER)
+# 长按电源键。
+driver.press_key(KeyCode.POWER, mode=UiParam.LONG)
+# 按下音量下键。
+driver.press_key(KeyCode.VOLUME_DOWN)
 ```
 
 **按组合键**
 
-```
-1. def press_combination_key(key1: Union[KeyCode, int], key2: Union[KeyCode, int], key3: Union[KeyCode, int] = None)
+```screen
+def press_combination_key(key1: Union[KeyCode, int], key2: Union[KeyCode, int], key3: Union[KeyCode, int] = None)
 ```
 
 **接口说明**
@@ -1470,19 +1470,19 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 按下音量下键和电源键的组合键
-2. driver.press_combination_key(KeyCode.VOLUME_DOWN, KeyCode.POWER)
-3. # 同时按下ctrl, shift和F键
-4. driver.press_combination_key(KeyCode.CTRL_LEFT, KeyCode.SHIFT_LEFT, KeyCode.F)
+```screen
+# 按下音量下键和电源键的组合键
+driver.press_combination_key(KeyCode.VOLUME_DOWN, KeyCode.POWER)
+# 同时按下ctrl, shift和F键
+driver.press_combination_key(KeyCode.CTRL_LEFT, KeyCode.SHIFT_LEFT, KeyCode.F)
 ```
 
 * **hdc/shell命令执行**
 
 **hdc命令执行**
 
-```
-1. def hdc(cmd, timeout: float = 60) -> str
+```screen
+def hdc(cmd, timeout: float = 60) -> str
 ```
 
 **接口说明**
@@ -1502,17 +1502,17 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 执行hdc命令list targets。
-2. echo = driver.hdc("list targets")
-3. # 执行hdc命令hilog, 设置30秒超时。
-4. echo = driver.hdc("hilog", timeout = 30)
+```screen
+# 执行hdc命令list targets。
+echo = driver.hdc("list targets")
+# 执行hdc命令hilog, 设置30秒超时。
+echo = driver.hdc("hilog", timeout = 30)
 ```
 
 **设备侧shell命令执行**
 
-```
-1. def shell(cmd: str, timeout: float = 60) -> str
+```screen
+def shell(cmd: str, timeout: float = 60) -> str
 ```
 
 **接口说明**
@@ -1532,17 +1532,17 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 在设备shell中执行命令ls -l。
-2. echo = driver.shell("ls -l")
-3. # 在设备shell中执行命令top, 设置10秒超时时间。
-4. echo = driver.shell("top", timeout=10)
+```screen
+# 在设备shell中执行命令ls -l。
+echo = driver.shell("ls -l")
+# 在设备shell中执行命令top, 设置10秒超时时间。
+echo = driver.shell("top", timeout=10)
 ```
 
 **PC侧shell命令执行**
 
-```
-1. def shell(cmd: Union[str, list], timeout: float = 300) -> str
+```screen
+def shell(cmd: Union[str, list], timeout: float = 300) -> str
 ```
 
 **接口说明**
@@ -1558,19 +1558,19 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 在PC端执行dir命令。
-2. echo = host.shell("dir")
-3. # 在PC端执行netstat命令读取回显结果, 设置超时时间为10秒。
-4. echo = host.shell("netstat", timeout=10)
+```screen
+# 在PC端执行dir命令。
+echo = host.shell("dir")
+# 在PC端执行netstat命令读取回显结果, 设置超时时间为10秒。
+echo = host.shell("netstat", timeout=10)
 ```
 
 * **应用预置操作**
 
 **安装应用**
 
-```
-1. def install_app(package_path: str, options: str = "", **kwargs)
+```screen
+def install_app(package_path: str, options: str = "", **kwargs)
 ```
 
 **接口说明**
@@ -1586,17 +1586,17 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 安装路径为test.hap的安装包到手机。
-2. driver.install_app(r"test.hap")
-3. # 替换安装路径为test.hap的安装包到手机(增加-r参数指定替换安装)。
-4. driver.install_app(r"test.hap", "-r")
+```screen
+# 安装路径为test.hap的安装包到手机。
+driver.install_app(r"test.hap")
+# 替换安装路径为test.hap的安装包到手机(增加-r参数指定替换安装)。
+driver.install_app(r"test.hap", "-r")
 ```
 
 **卸载应用**
 
-```
-1. def uninstall_app(package_name: str, **kwargs)
+```screen
+def uninstall_app(package_name: str, **kwargs)
 ```
 
 **接口说明**
@@ -1611,15 +1611,15 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 卸载包名为com.test.myapp的应用。
-2. driver.uninstall_app("com.test.myapp")
+```screen
+# 卸载包名为com.test.myapp的应用。
+driver.uninstall_app("com.test.myapp")
 ```
 
 **清除应用缓存数据**
 
-```
-1. def clear_app_data(package_name: str)
+```screen
+def clear_app_data(package_name: str)
 ```
 
 **接口说明**
@@ -1634,15 +1634,15 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 清除包名为com.test.myapp的应用的缓存数据。
-2. driver.clear_app_data("com.test.myapp")
+```screen
+# 清除包名为com.test.myapp的应用的缓存数据。
+driver.clear_app_data("com.test.myapp")
 ```
 
 **启动应用**
 
-```
-1. def start_app(package_name: str, page_name: str = None, params: str = "", wait_time: float = 1)
+```screen
+def start_app(package_name: str, page_name: str = None, params: str = "", wait_time: float = 1)
 ```
 
 **接口说明**
@@ -1660,15 +1660,15 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 启动浏览器。
-2. driver.start_app("com.huawei.hmos.browser", "MainAbility")
+```screen
+# 启动浏览器。
+driver.start_app("com.huawei.hmos.browser", "MainAbility")
 ```
 
 **停止应用**
 
-```
-1. def stop_app(package_name: str, wait_time: float = 0.5)
+```screen
+def stop_app(package_name: str, wait_time: float = 0.5)
 ```
 
 **接口说明**
@@ -1684,17 +1684,17 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 停止包名为com.huawei.hmos.settings的应用。
-2. driver.stop_app("com.huawei.hmos.settings")
+```screen
+# 停止包名为com.huawei.hmos.settings的应用。
+driver.stop_app("com.huawei.hmos.settings")
 ```
 
 * **文件拉取/推送**
 
 **拉取文件**
 
-```
-1. def pull_file(device_path: str, local_path: str = None, timeout: int = 60)
+```screen
+def pull_file(device_path: str, local_path: str = None, timeout: int = 60)
 ```
 
 **接口说明**
@@ -1711,15 +1711,15 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 从设备中拉取文件"/data/local/tmp/test.log"保存到PC端的test.log。
-2. driver.pull_file("/data/local/tmp/test.log", "test.log")
+```screen
+# 从设备中拉取文件"/data/local/tmp/test.log"保存到PC端的test.log。
+driver.pull_file("/data/local/tmp/test.log", "test.log")
 ```
 
 **推送文件**
 
-```
-1. def push_file(local_path: str, device_path: str, timeout: int = 60)
+```screen
+def push_file(local_path: str, device_path: str, timeout: int = 60)
 ```
 
 **接口说明**
@@ -1736,15 +1736,15 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 从PC端推送文件test.hap保存到设备端的"/data/local/tmp/test.hap"。
-2. driver.push_file("test.hap", "/data/local/tmp/test.hap")
+```screen
+# 从PC端推送文件test.hap保存到设备端的"/data/local/tmp/test.hap"。
+driver.push_file("test.hap", "/data/local/tmp/test.hap")
 ```
 
 **查询文件是否存在**
 
-```
-1. def has_file(file_path: str) -> bool
+```screen
+def has_file(file_path: str) -> bool
 ```
 
 **接口说明**
@@ -1759,17 +1759,17 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 查询设备端是否存在文件/data/local/tmp/test_file.txt。
-2. driver.has_file("/data/local/tmp/test_file.txt")
+```screen
+# 查询设备端是否存在文件/data/local/tmp/test_file.txt。
+driver.has_file("/data/local/tmp/test_file.txt")
 ```
 
 * **文本输入/清除**
 
 **输入文本**
 
-```
-1. def input_text(component: Union[ISelector, IUiComponent, tuple], text: str, mode: InputTextMode = None):
+```screen
+def input_text(component: Union[ISelector, IUiComponent, tuple], text: str, mode: InputTextMode = None):
 ```
 
 **接口说明**
@@ -1786,21 +1786,21 @@ python -m pip install opencv-python
 
 使用示例
 
-```
-1. from hypium import BY
-2. from hypium.model import InputTextMode
-3. # 在类型为"TextInput"的控件中输入文本"hello world"。
-4. driver.input_text(BY.type("TextInput"), "hello world")
-5. # 在类型为"TextInput"的控件中使用剪切板一次性输入文本"hello world"。
-6. driver.input_text(BY.type("TextInput"), "hello world", mode=InputTextMode().paste(True))
-7. # 在类型为"TextInput"的控件中使用剪切板一次性并追加输入文本"hello world"。
-8. driver.input_text(BY.type("TextInput"), "hello world", mode=InputTextMode().paste(True).addition(True))
+```screen
+from hypium import BY
+from hypium.model import InputTextMode
+# 在类型为"TextInput"的控件中输入文本"hello world"。
+driver.input_text(BY.type("TextInput"), "hello world")
+# 在类型为"TextInput"的控件中使用剪切板一次性输入文本"hello world"。
+driver.input_text(BY.type("TextInput"), "hello world", mode=InputTextMode().paste(True))
+# 在类型为"TextInput"的控件中使用剪切板一次性并追加输入文本"hello world"。
+driver.input_text(BY.type("TextInput"), "hello world", mode=InputTextMode().paste(True).addition(True))
 ```
 
 **清除文本**
 
-```
-1. def clear_text(component: [ISelector, IUiComponent])
+```screen
+def clear_text(component: [ISelector, IUiComponent])
 ```
 
 **接口说明**
@@ -1815,9 +1815,9 @@ python -m pip install opencv-python
 
 使用示例
 
-```
-1. # 清除类型为"InputText"的控件中的内容。
-2. driver.clear_text(BY.type("InputText"))
+```screen
+# 清除类型为"InputText"的控件中的内容。
+driver.clear_text(BY.type("InputText"))
 ```
 
 * **断言**
@@ -1826,8 +1826,8 @@ python -m pip install opencv-python
 
 **检查是否相等**
 
-```
-1. def check_equal(value: Any, expect: Any = True, fail_msg: str = None, expect_equal=True)
+```screen
+def check_equal(value: Any, expect: Any = True, fail_msg: str = None, expect_equal=True)
 ```
 
 **接口说明**
@@ -1844,15 +1844,15 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 检查a等于b。
-2. host.check_equal(a, b, "a != b")
+```screen
+# 检查a等于b。
+host.check_equal(a, b, "a != b")
 ```
 
 **检查是否超过预期值**
 
-```
-1. def check_greater(value: Any, expect: Any, fail_msg: str = None)
+```screen
+def check_greater(value: Any, expect: Any, fail_msg: str = None)
 ```
 
 **接口说明**
@@ -1869,17 +1869,17 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 检查a大于b
-2. host.check_greater(a, b)
+```screen
+# 检查a大于b
+host.check_greater(a, b)
 ```
 
 **Ⅱ. 控件断言**
 
 **检查控件是否存在**
 
-```
-1. def check_component_exist(component: ISelector, expect_exist: bool = True, wait_time: int = 0, scroll_target: Union[ISelector, IUiComponent] = None)
+```screen
+def check_component_exist(component: ISelector, expect_exist: bool = True, wait_time: int = 0, scroll_target: Union[ISelector, IUiComponent] = None)
 ```
 
 **接口说明**
@@ -1897,21 +1897,21 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 检查类型为Button的控件存在。
-2. driver.check_component_exist(BY.type("Button"))
-3. # 检查类型为Button的控件存在，如果不存在等待最多5秒。
-4. driver.check_component_exist(BY.type("Button"), wait_time=5)
-5. # 在类型为Scroll的控件上滚动检查文本为"hello"的控件存在。
-6. driver.check_component_exist(BY.text("hello"), scroll_target=BY.type("Scroll"))
-7. # 检查文本为确认的控件不存在。
-8. driver.check_component_exist(BY.text("确认"), expect_exist=False)
+```screen
+# 检查类型为Button的控件存在。
+driver.check_component_exist(BY.type("Button"))
+# 检查类型为Button的控件存在，如果不存在等待最多5秒。
+driver.check_component_exist(BY.type("Button"), wait_time=5)
+# 在类型为Scroll的控件上滚动检查文本为"hello"的控件存在。
+driver.check_component_exist(BY.text("hello"), scroll_target=BY.type("Scroll"))
+# 检查文本为确认的控件不存在。
+driver.check_component_exist(BY.text("确认"), expect_exist=False)
 ```
 
 **检查控件属性**
 
-```
-1. def check_component(component: Union[ISelector, IUiComponent], expected_equal: bool = True, **kwargs)
+```screen
+def check_component(component: Union[ISelector, IUiComponent], expected_equal: bool = True, **kwargs)
 ```
 
 **接口说明**
@@ -1928,21 +1928,21 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 检查id为xxx的控件的checked属性为True。
-2. driver.check_component(BY.key("xxx"), checked=True)
-3. # 检查id为check_button的按钮enabled属性为True。
-4. driver.check_component(BY.key("checked_button"), enabled=True)
-5. # 检查id为container的控件文本内容为“正在检查”。
-6. driver.check_component(BY.key("container"), text="正在检查")
-7. # 检查id为container的控件文本内容不为空。
-8. driver.check_component(BY.key("container"), text="", expect_equal=False)
+```screen
+# 检查id为xxx的控件的checked属性为True。
+driver.check_component(BY.key("xxx"), checked=True)
+# 检查id为check_button的按钮enabled属性为True。
+driver.check_component(BY.key("checked_button"), enabled=True)
+# 检查id为container的控件文本内容为“正在检查”。
+driver.check_component(BY.key("container"), text="正在检查")
+# 检查id为container的控件文本内容不为空。
+driver.check_component(BY.key("container"), text="", expect_equal=False)
 ```
 
 **检查图片是否存在**
 
-```
-1. def check_image_exist(image_path_pc: str, expect_exist: bool = True, similarity: float = 0.95, timeout: int = 3, mode="template", **kwargs)
+```screen
+def check_image_exist(image_path_pc: str, expect_exist: bool = True, similarity: float = 0.95, timeout: int = 3, mode="template", **kwargs)
 ```
 
 **接口说明**
@@ -1962,25 +1962,25 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 检查图片存在。
-2. driver.check_image_exist("test.jpeg")
-3. # 检查图片不存在。
-4. driver.check_image_exist("test.jpeg", expect_exist=False)
-5. # 检查图片存在, 图片相似度要求95%, 重复检查时间5秒。
-6. driver.check_image_exist("test.jpeg", timeout=5, similarity=0.95)
-7. # 检查图片不存在, 重复检查时间5秒。
-8. driver.check_image_exist("test.jpeg", timeout=5, expect_exist=False)
-9. # 使用sift算法检查图片存在, 设置最少匹配特征点数量为16。
-10. driver.check_image_exist("test.jpeg", mode="sift", min_match_point=16)
+```screen
+# 检查图片存在。
+driver.check_image_exist("test.jpeg")
+# 检查图片不存在。
+driver.check_image_exist("test.jpeg", expect_exist=False)
+# 检查图片存在, 图片相似度要求95%, 重复检查时间5秒。
+driver.check_image_exist("test.jpeg", timeout=5, similarity=0.95)
+# 检查图片不存在, 重复检查时间5秒。
+driver.check_image_exist("test.jpeg", timeout=5, expect_exist=False)
+# 使用sift算法检查图片存在, 设置最少匹配特征点数量为16。
+driver.check_image_exist("test.jpeg", mode="sift", min_match_point=16)
 ```
 
 **Ⅲ. 窗口断言**
 
 **检查窗口**
 
-```
-1. def check_window(window: WindowFilter, title: str = None, bundle_name: str = None)
+```screen
+def check_window(window: WindowFilter, title: str = None, bundle_name: str = None)
 ```
 
 **接口说明**
@@ -1996,45 +1996,45 @@ python -m pip install opencv-python
 
 **使用示例**
 
-```
-1. # 检查当前焦点窗口的包名为com.huawei.hmos.settings。
-2. driver.check_window(WindowFilter().focused(True), bundle_name="com.huawei.hmos.settings")
+```screen
+# 检查当前焦点窗口的包名为com.huawei.hmos.settings。
+driver.check_window(WindowFilter().focused(True), bundle_name="com.huawei.hmos.settings")
 ```
 
 * **日志打印**
 
 用户使用以下方法可以在测试用例脚本中打印日志，日志会记录到测试报告中。
 
-```
-1. from devicetest.core.test_case import Step, CheckPoint, MESSAGE
+```screen
+from devicetest.core.test_case import Step, CheckPoint, MESSAGE
 
-3. Step("点击按钮")
-4. CheckPoint("检查联系人存在")
-5. MESSAGE("打印一条提示消息")
+Step("点击按钮")
+CheckPoint("检查联系人存在")
+MESSAGE("打印一条提示消息")
 ```
 
 在自定义实现的接口中，可以调用driver对象中的log模块打印日志消息，对应日志也会记录到测试报告中。
 
-```
-1. driver.log.debug("debug级别的日志")
-2. driver.log.info("info级别的日志")
-3. driver.log.warning("warning级别的日志")
-4. driver.log.error("error级别的日志")
+```screen
+driver.log.debug("debug级别的日志")
+driver.log.info("info级别的日志")
+driver.log.warning("warning级别的日志")
+driver.log.error("error级别的日志")
 ```
 
 * **读取测试项目中资源文件路径**
 
 用户可通过以下接口读取测试工程资源目录中的文件路径。接口接收文件名或相对路径作为参数，搜索测试工程资源文件目录并返回文件的完整路径。若未找到对应文件，则抛出异常。
 
-```
-1. from devicetest.utils import file_util
-2. file_path = file_util.get_resource_path("filename")
+```screen
+from devicetest.utils import file_util
+file_path = file_util.get_resource_path("filename")
 ```
 
 该接口默认搜索文件，开发者可以设置isdir=True来搜索目录路径。
 
-```
-1. dir_path = file_util.get_resource_path("dirname", isdir=True)
+```screen
+dir_path = file_util.get_resource_path("dirname", isdir=True)
 ```
 
 ## 隐私协议

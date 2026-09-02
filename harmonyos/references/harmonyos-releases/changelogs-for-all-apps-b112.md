@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-for-all-apps-b112
 title: OS平台API行为的变更
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.1(13) > OS平台能力 > OS平台行为变更说明 > HarmonyOS 5.0.1(13) Release引入的行为变更 > OS平台API行为的变更
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.1(13) > OS平台能力 > OS平台行为变更说明 > HarmonyOS 5.0.1(13) Release引入的行为变更 > OS平台API行为的变更
 category: harmonyos-releases
-scraped_at: 2026-04-29T13:23:53+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:c17be5ff5725dc3d98f9032eaef9cd1d21b5bc65210b246b7d954b9733abb6cd
+scraped_at: 2026-09-02T14:58:52+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:bf189f7a1d2697f171b6a7431ced22a698513300e94396daa73c4ac7978a17b5
 ---
 
 ## ArkUI
@@ -20,7 +20,7 @@ content_hash: sha256:c17be5ff5725dc3d98f9032eaef9cd1d21b5bc65210b246b7d954b9733a
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.1(13)时生效。
 
@@ -80,80 +80,80 @@ ArkTS的onMouse接口，Native的OH\_NativeXComponent\_GetMouseEvent接口和reg
 
 animateTo适配前：
 
-```
-1. @Entry
-2. @Component
-3. struct Example {
-4. @State rotateAngle: number = 0
-5. @State wid: number = 100
-6. @State color: Color = Color.Red
+```ts
+@Entry
+@Component
+struct Example {
+  @State rotateAngle: number = 0
+  @State wid: number = 100
+  @State color: Color = Color.Red
 
-8. build() {
-9. Column() {
-10. Column()
-11. .size({width: 100, height: 100})
-12. .backgroundColor(this.color)
-13. Button('animate')
-14. .margin(50)
-15. .rotate({ x: 0, y: 0, z: 1, angle: this.rotateAngle })
-16. .onSizeChange((oldValue: SizeOptions, newValue: SizeOptions)=>{
-17. // animateTo前修改wid时的布局同步的触发了onSizeChange事件，也会被带入无限循环动画中
-18. // 产生背景色的无限循环动画
-19. if (Number(newValue.width) >= 150) {
-20. this.color = Color.Blue;
-21. } else {
-22. this.color = Color.Red;
-23. }
-24. })
-25. .onClick(()=>{
-26. this.wid = 200;
-27. animateTo({
-28. iterations: -1, // 设置-1表示动画无限循环
-29. playMode: PlayMode.Alternate,
-30. }, () => {
-31. this.rotateAngle = 90
-32. })
-33. })
-34. }.width('100%').margin({ top: 5 })
-35. }
-36. }
+  build() {
+    Column() {
+      Column()
+        .size({width: 100, height: 100})
+        .backgroundColor(this.color)
+      Button('animate')
+        .margin(50)
+        .rotate({ x: 0, y: 0, z: 1, angle: this.rotateAngle })
+        .onSizeChange((oldValue: SizeOptions, newValue: SizeOptions)=>{
+          // animateTo前修改wid时的布局同步的触发了onSizeChange事件，也会被带入无限循环动画中
+          // 产生背景色的无限循环动画
+          if (Number(newValue.width) >= 150) {
+            this.color = Color.Blue;
+          } else {
+            this.color = Color.Red;
+          }
+        })
+        .onClick(()=>{
+          this.wid = 200;
+          animateTo({
+            iterations: -1, // 设置-1表示动画无限循环
+            playMode: PlayMode.Alternate,
+          }, () => {
+            this.rotateAngle = 90
+          })
+        })
+    }.width('100%').margin({ top: 5 })
+  }
+}
 ```
 
 animateTo适配后：
 
-```
-1. @Entry
-2. @Component
-3. struct Example {
-4. @State rotateAngle: number = 0
-5. @State wid: number = 100
-6. @State color: Color = Color.Red
+```ts
+@Entry
+@Component
+struct Example {
+  @State rotateAngle: number = 0
+  @State wid: number = 100
+  @State color: Color = Color.Red
 
-8. build() {
-9. Column() {
-10. Column()
-11. .size({width: 100, height: 100})
-12. .backgroundColor(this.color)
-13. Button('animate')
-14. .margin(50)
-15. .rotate({ x: 0, y: 0, z: 1, angle: this.rotateAngle })
-16. .onSizeChange((oldValue: SizeOptions, newValue: SizeOptions)=>{
-17. // onSizeChange为同步回调，最好不在同步回调中直接修改状态变量。
-18. })
-19. .onClick(()=>{
-20. this.wid = 200;
-21. // 如果不需要产生color的动画则在动画外直接修改color，this.color = Color.Blue，而不是在同步回调中
-22. animateTo({
-23. iterations: -1, // 设置-1表示动画无限循环
-24. playMode: PlayMode.Alternate,
-25. }, () => {
-26. this.rotateAngle = 90
-27. // 如果需要产生color的动画则在此处加上this.color = Color.Blue，将color的改变放在动画闭包中
-28. })
-29. })
-30. }.width('100%').margin({ top: 5 })
-31. }
-32. }
+  build() {
+    Column() {
+      Column()
+        .size({width: 100, height: 100})
+        .backgroundColor(this.color)
+      Button('animate')
+        .margin(50)
+        .rotate({ x: 0, y: 0, z: 1, angle: this.rotateAngle })
+        .onSizeChange((oldValue: SizeOptions, newValue: SizeOptions)=>{
+          // onSizeChange为同步回调，最好不在同步回调中直接修改状态变量。  
+        })
+        .onClick(()=>{
+          this.wid = 200;
+          // 如果不需要产生color的动画则在动画外直接修改color，this.color = Color.Blue，而不是在同步回调中
+          animateTo({
+            iterations: -1, // 设置-1表示动画无限循环
+            playMode: PlayMode.Alternate,
+          }, () => {
+            this.rotateAngle = 90
+            // 如果需要产生color的动画则在此处加上this.color = Color.Blue，将color的改变放在动画闭包中
+          })
+        })
+    }.width('100%').margin({ top: 5 })
+  }
+}
 ```
 
 ### 系统对单应用最大创建UIAbility数量限制变更
@@ -190,7 +190,7 @@ animateTo适配后：
 
 Video组件默认允许拖入任意视频并自动播放的行为不符合终端用户预期，故需调整该默认规格。
 
-说明
+**说明** 
 
 该变更在2025年1月8日更新的ROM版本引入，ROM版本号为5.0.0.123。
 
@@ -212,39 +212,39 @@ Video组件。
 
 应用若需要使Video组件支持解析拖入的视频信息并自动播放，可通过如下代码实现：
 
-```
-1. import { unifiedDataChannel, uniformTypeDescriptor } from '@kit.ArkData';
+```ts
+import { unifiedDataChannel, uniformTypeDescriptor } from '@kit.ArkData';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. @State videoSrc: Resource | string = $rawfile('video1.mp4');
-7. private controller: VideoController = new VideoController();
+@Entry
+@Component
+struct Index {
+  @State videoSrc: Resource | string = $rawfile('video1.mp4');
+  private controller: VideoController = new VideoController();
 
-9. build() {
-10. Column() {
-11. Video({
-12. src: this.videoSrc,
-13. controller: this.controller
-14. })
-15. .width('100%')
-16. .height(600)
-17. .onPrepared(() => {
-18. // 在onPrepared回调中执行controller的start方法，确保视频源更换后直接开始播放。
-19. this.controller.start();
-20. })
-21. .onDrop((e: DragEvent) => {
-22. // 外部视频拖入应用Video组件范围，松手后触发通过onDrop注册的回调。
-23. // 在DragEvent中会包含拖入的视频源信息，取出后赋值给状态变量videoSrc即可改变Video的视频源。
-24. let record = e.getData().getRecords()[0];
-25. if (record.getType() == uniformTypeDescriptor.UniformDataType.VIDEO) {
-26. let videoInfo = record as unifiedDataChannel.Video;
-27. this.videoSrc = videoInfo.videoUri;
-28. }
-29. })
-30. }
-31. }
-32. }
+  build() {
+    Column() {
+      Video({
+        src: this.videoSrc,
+        controller: this.controller
+      })
+        .width('100%')
+        .height(600)
+        .onPrepared(() => {
+          // 在onPrepared回调中执行controller的start方法，确保视频源更换后直接开始播放。
+          this.controller.start();
+        })
+        .onDrop((e: DragEvent) => {
+          // 外部视频拖入应用Video组件范围，松手后触发通过onDrop注册的回调。
+          // 在DragEvent中会包含拖入的视频源信息，取出后赋值给状态变量videoSrc即可改变Video的视频源。
+          let record = e.getData().getRecords()[0];
+          if (record.getType() == uniformTypeDescriptor.UniformDataType.VIDEO) {
+            let videoInfo = record as unifiedDataChannel.Video;
+            this.videoSrc = videoInfo.videoUri;
+          }
+        })
+    }
+  }
+}
 ```
 
 ## ArkWeb
@@ -283,7 +283,7 @@ web.d.ts的onErrorReceive接口
 
 PostCardAction的router事件当前未对被拉起的Ability类型进行校验，但实际此事件应只允许拉起UIAbility，针对使用router事件拉起非UIAbility的场景，需要做安全加固。
 
-说明
+**说明** 
 
 该变更在2025年1月8日更新的ROM版本引入，ROM版本号为5.0.0.123。
 
@@ -315,7 +315,7 @@ PostCardAction
 
 app.json中对bundleName的正则匹配规则较简单，不符合应用包名规范，进行整改。
 
-说明
+**说明** 
 
 该变更在2024年12月8日发布的patch版本引入，对应开发工具DevEco Studio版本为5.0.5.306。
 
@@ -344,7 +344,7 @@ Openharmony SDK目录下toolchains/modulecheck/app.json scheme文件。
 
 升级SDK版本后，如果DevEco Studio编辑器中提示如下报错，请按照新规则修改应用的bundleName。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/QGgNIY2gTAG4putVXu5_DQ/zh-cn_image_0000002143569014.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/8atJBLGiRcGZNT30AlUCzQ/zh-cn_image_0000002143569014.png)
 
 ## 工具
 
@@ -357,7 +357,7 @@ Openharmony SDK目录下toolchains/modulecheck/app.json scheme文件。
 1. 移除Heapdump在线解析逻辑，产物格式由.heapsnapshot变为.rawheap。
 2. rawheap文件解析生成heapsnapshot文件的功能由SDK中集成的rawheap\_translator工具提供。
 
-说明
+**说明** 
 
 该变更在2024年12月8日发布的patch版本引入，对应开发工具DevEco Studio版本为5.0.5.306。
 
@@ -399,28 +399,28 @@ MacOS环境变量设置：
 
 打开终端工具，输入以下命令并执行：
 
-```
-1. echo $SHELL
+```screen
+echo $SHELL
 ```
 
 上述命令执行结果可能为/bin/bash或者/bin/zsh，下面以/bin/bash为例，/bin/zsh同理。执行以下命令，打开.bash\_profile文件：
 
-```
-1. vi ~/.bash_profile
+```screen
+vi ~/.bash_profile
 ```
 
 单击键盘上字母“i”，进入编辑模式，输入以下命令：
 
-```
-1. export PATH=$PATH:<rawheap_translator路径>
+```screen
+export PATH=$PATH:<rawheap_translator路径>
 ```
 
 编辑完成后，单击键盘Esc键退出编辑模式，然后输入“:wq”，单击键盘Enter键保存修改。
 
 执行以下命令，使配置的环境变量生效：
 
-```
-1. source ~/.bash_profile
+```screen
+source ~/.bash_profile
 ```
 
 配置完成后重新启动电脑。
@@ -429,10 +429,10 @@ MacOS环境变量设置：
 
 工具调用命令：
 
-```
-1. rawheap_translator <rawheap_file>
+```screen
+rawheap_translator <rawheap_file>
 
-3. rawheap_translator <rawheap_file> <heapsnapshot_file>
+rawheap_translator <rawheap_file> <heapsnapshot_file>
 ```
 
 参数列表：

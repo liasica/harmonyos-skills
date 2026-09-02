@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-cryptoarchitecturekit-510
 title: Crypto Architecture Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.1.0(18) > OS平台能力 > API变更清单 > Crypto Architecture Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.0(18) > OS平台能力 > API变更清单 > Crypto Architecture Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:08+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:35+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:4375971d2d1d6f8c4ce6043eaf52757b94aec52773da18b1458f75fad2d2e453
 ---
 

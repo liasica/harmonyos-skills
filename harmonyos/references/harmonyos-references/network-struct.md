@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/network-s
 title: 结构体
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:33+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:099967183bc248a91f89258fc91758458d78394b00a871f9ce31634752bc1cf5
+scraped_at: 2026-09-02T14:52:22+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:64e3601d7470d44691d4268a7dcdb1be5b74d2639a8a0a8a93326a2f3b895079
 ---
 
 * **[NetConn\_NetHandle](capi-netconnection-netconn-nethandle.md)**
@@ -42,3 +42,25 @@ content_hash: sha256:099967183bc248a91f89258fc91758458d78394b00a871f9ce31634752b
 * **[Http\_Request](capi-netstack-http-request.md)**
 * **[Http\_EventsHandler](capi-netstack-http-eventshandler.md)**
 * **[Http\_Headers](capi-netstack-http-headers.md)**
+* **[OH\_TrafficFilter\_IPAddress](capi-trafficfilter-oh-trafficfilter-ipaddress.md)**
+* **[OH\_TrafficFilter\_IPCidr](capi-trafficfilter-oh-trafficfilter-ipcidr.md)**
+* **[OH\_TrafficFilter\_IPRange](capi-trafficfilter-oh-trafficfilter-iprange.md)**
+* **[OH\_TrafficFilter\_IPMulti](capi-trafficfilter-oh-trafficfilter-ipmulti.md)**
+* **[OH\_TrafficFilter\_IPMatch](capi-trafficfilter-oh-trafficfilter-ipmatch.md)**
+* **[OH\_TrafficFilter\_InterfaceMatch](capi-trafficfilter-oh-trafficfilter-interfacematch.md)**
+* **[OH\_TrafficFilter\_PortRange](capi-trafficfilter-oh-trafficfilter-portrange.md)**
+* **[OH\_TrafficFilter\_PortMulti](capi-trafficfilter-oh-trafficfilter-portmulti.md)**
+* **[OH\_TrafficFilter\_PortMatch](capi-trafficfilter-oh-trafficfilter-portmatch.md)**
+* **[OH\_TrafficFilter\_ConnectionInfo](capi-trafficfilter-oh-trafficfilter-connectioninfo.md)**
+* **[OH\_TrafficFilter\_ProcessInfo](capi-trafficfilter-oh-trafficfilter-processinfo.md)**
+* **[OH\_TrafficFilter\_RedirectRule](capi-trafficfilter-oh-trafficfilter-redirectrule.md)**
+* **[OH\_TrafficFilter\_Redirector](capi-trafficfilter-oh-trafficfilter-redirector.md)**
+* **[OH\_Http\_Interceptor\_Headers](capi-netstack-http-interceptor-headers.md)**
+* **[OH\_Http\_Interceptor\_Request](capi-netstack-http-interceptor-request.md)**
+* **[OH\_Http\_Interceptor\_Response](capi-netstack-http-interceptor-response.md)**
+* **[OH\_Http\_Interceptor](capi-netstack-http-interceptor.md)**
+* **[Ethernet\_MacAddressInfo](capi-netethernet-ethernet-macaddressinfo.md)**
+* **[Ethernet\_MacAddrInfoList](capi-netethernet-ethernet-macaddrinfolist.md)**
+* **[Ethernet\_NetAddr](capi-netethernet-ethernet-netaddr.md)**
+* **[Ethernet\_NetAddrInfo](capi-netethernet-ethernet-netaddrinfo.md)**
+* **[Ethernet\_NetAddrList](capi-netethernet-ethernet-netaddrlist.md)**

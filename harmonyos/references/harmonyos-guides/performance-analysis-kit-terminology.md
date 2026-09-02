@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/performance-a
 title: Performance Analysis Kit术语
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > Performance Analysis Kit术语
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:19+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:1ad2d5f5fc23e8248ed343d332376e80e2dcf6b505aeae70ca86ef450872b5f8
+scraped_at: 2026-09-02T14:59:40+08:00
+doc_updated_at: 2026-08-21
+content_hash: sha256:514abeda62225b376401844b35ff11db49c6dc528bd45f00054d57ee079ae95e
 ---
 
 ## 通用
 
 ### log版本
 
-Log版本是指在系统中开启了日志记录功能的系统版本。这种版本会记录系统运行时的各种信息，包括应用程序的运行情况、系统错误信息、调试信息等等。这些信息可以通过hdc工具或者第三方应用程序查看和分析，有助于开发者进行调试和优化。
+log版本是指在系统中开启了日志记录功能的系统版本。这种版本会记录系统运行时的各种信息，包括应用程序的运行情况、系统错误信息、调试信息等等。这些信息可以通过hdc工具或者第三方应用程序查看和分析，有助于开发者进行调试和优化。
 
 在设备中， 点击 “设置”->搜索关键字“关于本机”->“软件版本”进行查看，log版本会以“log”结尾。如：BRA-AL00 5.0.0.36(C00E15R4P92log)是log版本。
 
 ### nolog版本
 
-Nolog版本是指在系统中关闭了日志记录功能的系统版本。这种版本不会记录系统运行时的信息，因此相对来说更加轻量级，运行速度也更快。但是，由于没有日志记录，开发者在调试和优化时会比较困难。
+nolog版本是指在系统中关闭了日志记录功能的系统版本。这种版本不会记录系统运行时的信息，因此相对来说更加轻量级，运行速度也更快。但是，由于没有日志记录，开发者在调试和优化时会比较困难。
 
 在设备中， 点击 “设置”->搜索关键字“关于本机”->“软件版本”进行查看，nolog版本号末尾不带有“log”关键字。如：BRA-AL00 5.0.0.36(C00E15R4P92)是nolog版本。
 
@@ -148,3 +148,7 @@ RSS（Resident Set Size）指的是进程中实际驻留在物理内存中的大
 ### NMD
 
 NMD（Native Malloc Detail）指的是进程的jemalloc快照详细信息。
+
+### minidump
+
+minidump（Mini Dump）指的是进程崩溃时生成的微型转储文件，包含了进程崩溃时的寄存器、线程、栈内存等信息。当前系统侧最大支持回溯400个线程。

@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/intents-a
 title: ArkTS API错误码
 breadcrumb: API参考 > AI > Intents Kit（意图框架服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ac04e24e7838bc8a9e0fbe42aebc6027229f5f50c7c9b9334711a7d27cba9177
+scraped_at: 2026-09-02T15:03:11+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:6e67076b669c546decccbaf3565a1e8da90b2ebf2d8bdf4aa473f625783d0fa1
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 1000101101 应用未订阅
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -26,15 +24,13 @@ The application has not been registered with the InsightIntent.
 
 **可能原因**
 
-应用未在InsightIntent进行订阅（未配置白名单）。
+应用未在InsightIntent进行订阅。
 
 **处理步骤**
 
-参考[开发指南](../harmonyos-guides/intents-access-flow.md)，进行InsightIntent订阅申请（白名单）。
+参考[Intents Kit接入流程](../harmonyos-guides/intents-access-flow.md)，进行InsightIntent订阅申请。
 
 ## 1000101102 小艺停止服务
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -54,8 +50,6 @@ HUAWEI Assistant has stopped providing services.
 
 ## 1000101104 超过应用共享次数
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
 The number of sharing times exceeds the limit.
@@ -73,8 +67,6 @@ The number of sharing times exceeds the limit.
 优化业务逻辑，减少共享次数。
 
 ## 1000101105 超过单次共享数据大小限制
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -94,8 +86,6 @@ The size of a single shared data exceeds the limit.
 
 ## 1000101106 超过所有应用共享总次数限制
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
 Exceeded the maximum number of sharing times of all applications.
@@ -114,8 +104,6 @@ Exceeded the maximum number of sharing times of all applications.
 
 ## 1000101107 过多SID刷新请求
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
 Too many Service Open ID renew requests.
@@ -133,8 +121,6 @@ SID刷新请求过于频繁。
 延迟请求时间，第2天再进行刷新请求。或将renew参数设为false获取缓存的SID。
 
 ## 1000101201 服务异常
-
-PhonePC/2in1Tablet
 
 **错误信息**
 

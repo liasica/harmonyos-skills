@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_buffer.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > native_buffer.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b5f4069fa0cd274d8f16de05638bbb2baf1409485a6a427a7a1ea1e58ea4e605
+scraped_at: 2026-09-02T15:02:43+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1f4341af68748ca94076e17bab593041ef6efacb2b8f619a9475337663bc5358
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义获取和使用NativeBuffer的相关函数。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -42,16 +36,12 @@ PhonePC/2in1TabletTVWearable
 
 ### 枚举
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [OH\_NativeBuffer\_Usage](capi-native-buffer-h.md#oh_nativebuffer_usage) | OH\_NativeBuffer\_Usage | OH\_NativeBuffer的用途。 |
 | [OH\_NativeBuffer\_ColorGamut](capi-native-buffer-h.md#oh_nativebuffer_colorgamut) | OH\_NativeBuffer\_ColorGamut | OH\_NativeBuffer的色域。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -76,14 +66,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_NativeBuffer\_Usage
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_NativeBuffer_Usage
+```c
+enum OH_NativeBuffer_Usage
 ```
 
 **描述**
@@ -107,10 +93,8 @@ OH\_NativeBuffer的用途。
 
 ### OH\_NativeBuffer\_ColorGamut
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_NativeBuffer_ColorGamut
+```c
+enum OH_NativeBuffer_ColorGamut
 ```
 
 **描述**
@@ -137,14 +121,10 @@ OH\_NativeBuffer的色域。
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_NativeBuffer\_Alloc()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_NativeBuffer* OH_NativeBuffer_Alloc(const OH_NativeBuffer_Config* config)
+```c
+OH_NativeBuffer* OH_NativeBuffer_Alloc(const OH_NativeBuffer_Config* config)
 ```
 
 **描述**
@@ -173,10 +153,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeBuffer\_Reference()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeBuffer_Reference(OH_NativeBuffer *buffer)
+```c
+int32_t OH_NativeBuffer_Reference(OH_NativeBuffer *buffer)
 ```
 
 **描述**
@@ -205,10 +183,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeBuffer\_Unreference()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeBuffer_Unreference(OH_NativeBuffer *buffer)
+```c
+int32_t OH_NativeBuffer_Unreference(OH_NativeBuffer *buffer)
 ```
 
 **描述**
@@ -235,10 +211,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeBuffer\_GetConfig()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_NativeBuffer_GetConfig(OH_NativeBuffer *buffer, OH_NativeBuffer_Config* config)
+```c
+void OH_NativeBuffer_GetConfig(OH_NativeBuffer *buffer, OH_NativeBuffer_Config* config)
 ```
 
 **描述**
@@ -260,10 +234,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeBuffer\_Map()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeBuffer_Map(OH_NativeBuffer *buffer, void **virAddr)
+```c
+int32_t OH_NativeBuffer_Map(OH_NativeBuffer *buffer, void **virAddr)
 ```
 
 **描述**
@@ -299,10 +271,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeBuffer\_Unmap()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeBuffer_Unmap(OH_NativeBuffer *buffer)
+```c
+int32_t OH_NativeBuffer_Unmap(OH_NativeBuffer *buffer)
 ```
 
 **描述**
@@ -329,10 +299,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeBuffer\_GetSeqNum()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. uint32_t OH_NativeBuffer_GetSeqNum(OH_NativeBuffer *buffer)
+```c
+uint32_t OH_NativeBuffer_GetSeqNum(OH_NativeBuffer *buffer)
 ```
 
 **描述**
@@ -359,10 +327,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeBuffer\_SetColorSpace()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeBuffer_SetColorSpace(OH_NativeBuffer *buffer, OH_NativeBuffer_ColorSpace colorSpace)
+```c
+int32_t OH_NativeBuffer_SetColorSpace(OH_NativeBuffer *buffer, OH_NativeBuffer_ColorSpace colorSpace)
 ```
 
 **描述**
@@ -390,10 +356,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeBuffer\_MapPlanes()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeBuffer_MapPlanes(OH_NativeBuffer *buffer, void **virAddr, OH_NativeBuffer_Planes *outPlanes)
+```c
+int32_t OH_NativeBuffer_MapPlanes(OH_NativeBuffer *buffer, void **virAddr, OH_NativeBuffer_Planes *outPlanes)
 ```
 
 **描述**
@@ -422,10 +386,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeBuffer\_FromNativeWindowBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeBuffer_FromNativeWindowBuffer(OHNativeWindowBuffer *nativeWindowBuffer, OH_NativeBuffer **buffer)
+```c
+int32_t OH_NativeBuffer_FromNativeWindowBuffer(OHNativeWindowBuffer *nativeWindowBuffer, OH_NativeBuffer **buffer)
 ```
 
 **描述**
@@ -453,10 +415,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeBuffer\_GetColorSpace()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeBuffer_GetColorSpace(OH_NativeBuffer *buffer, OH_NativeBuffer_ColorSpace *colorSpace)
+```c
+int32_t OH_NativeBuffer_GetColorSpace(OH_NativeBuffer *buffer, OH_NativeBuffer_ColorSpace *colorSpace)
 ```
 
 **描述**
@@ -484,10 +444,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeBuffer\_SetMetadataValue()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeBuffer_SetMetadataValue(OH_NativeBuffer *buffer, OH_NativeBuffer_MetadataKey metadataKey,int32_t size, uint8_t *metadata)
+```c
+int32_t OH_NativeBuffer_SetMetadataValue(OH_NativeBuffer *buffer, OH_NativeBuffer_MetadataKey metadataKey, int32_t size, uint8_t *metadata)
 ```
 
 **描述**
@@ -517,10 +475,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeBuffer\_GetMetadataValue()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeBuffer_GetMetadataValue(OH_NativeBuffer *buffer, OH_NativeBuffer_MetadataKey metadataKey,int32_t *size, uint8_t **metadata)
+```c
+int32_t OH_NativeBuffer_GetMetadataValue(OH_NativeBuffer *buffer, OH_NativeBuffer_MetadataKey metadataKey, int32_t *size, uint8_t **metadata)
 ```
 
 **描述**
@@ -550,10 +506,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeBuffer\_MapWaitFence()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeBuffer_MapWaitFence(OH_NativeBuffer *buffer, int32_t fenceFd, void **virAddr)
+```c
+int32_t OH_NativeBuffer_MapWaitFence(OH_NativeBuffer *buffer, int32_t fenceFd, void **virAddr)
 ```
 
 **描述**
@@ -575,7 +529,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_NativeBuffer](capi-oh-nativebuffer-oh-nativebuffer.md) \*buffer | 一个指向[OH\_NativeBuffer](capi-oh-nativebuffer-oh-nativebuffer.md)实例的指针。 |
-| int32\_t fenceFd | 指向文件描述符句柄，用于并发同步控制。 |
+| int32\_t fenceFd | 文件描述符句柄，用于并发同步控制。 |
 | void \*\*virAddr | 一个二级指针，二级指针指向映射到当前进程的虚拟内存的地址。 |
 
 **返回：**
@@ -586,10 +540,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeBuffer\_WriteToParcel()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeBuffer_WriteToParcel(OH_NativeBuffer* buffer, OHIPCParcel* parcel)
+```c
+int32_t OH_NativeBuffer_WriteToParcel(OH_NativeBuffer* buffer, OHIPCParcel* parcel)
 ```
 
 **描述**
@@ -617,10 +569,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeBuffer\_ReadFromParcel()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeBuffer_ReadFromParcel(OHIPCParcel* parcel, OH_NativeBuffer** buffer)
+```c
+int32_t OH_NativeBuffer_ReadFromParcel(OHIPCParcel* parcel, OH_NativeBuffer** buffer)
 ```
 
 **描述**
@@ -650,10 +600,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeBuffer\_IsSupported()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeBuffer_IsSupported(OH_NativeBuffer_Config config, bool* isSupported)
+```c
+int32_t OH_NativeBuffer_IsSupported(OH_NativeBuffer_Config config, bool* isSupported)
 ```
 
 **描述**
@@ -681,10 +629,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeBuffer\_MapAndGetConfig()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeBuffer_MapAndGetConfig(OH_NativeBuffer* buffer, void** virAddr, OH_NativeBuffer_Config* config)
+```c
+int32_t OH_NativeBuffer_MapAndGetConfig(OH_NativeBuffer* buffer, void** virAddr, OH_NativeBuffer_Config* config)
 ```
 
 **描述**
@@ -709,4 +655,4 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 执行成功时返回NATIVE\_ERROR\_OK。  buffer、virAddr或config为空指针时返回NATIVE\_ERROR\_INVALID\_ARGUMENTS。  映射时返回NATIVE\_ERROR\_UNKNOWN。  其他返回值可参考[OHNativeErrorCode](capi-graphic-error-code-h.md#ohnativeerrorcode)。 |
+| int32\_t | 执行成功时返回NATIVE\_ERROR\_OK。  buffer、virAddr或config为空指针时返回NATIVE\_ERROR\_INVALID\_ARGUMENTS。  映射失败时返回NATIVE\_ERROR\_UNKNOWN。  其他返回值可参考[OHNativeErrorCode](capi-graphic-error-code-h.md#ohnativeerrorcode)。 |

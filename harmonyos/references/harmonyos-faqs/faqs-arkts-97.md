@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-97
 title: ArkTS是否支持匿名内部类
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > ArkTS是否支持匿名内部类
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:10+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:14+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:4d3ff9c4fae0a306553ff2673f038c19deb3bf4fcac630cf4c38276b0dcab86e
 ---
 

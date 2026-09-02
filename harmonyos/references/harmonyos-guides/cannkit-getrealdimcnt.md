@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getre
 title: GetRealDimCnt
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > TensorDesc > GetRealDimCnt
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:57+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6575edc0bb4c34f089b8152adcbc0136419fe5f01a6cef47d7a1d43886926d1b
+content_hash: sha256:d45fecc05c47fe52c67182b27044818a59df9c530fd49320cb0ee844ce071803
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:6575edc0bb4c34f089b8152adcbc0136419fe5f01a6cef47d7a1d438869
 
 ## 函数原型
 
-```
-1. int64_t GetRealDimCnt() const;
+```cpp
+int64_t GetRealDimCnt() const;
 ```
 
 ## 参数说明

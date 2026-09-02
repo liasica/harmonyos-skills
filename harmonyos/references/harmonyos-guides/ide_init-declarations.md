@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_init-decl
 title: "@typescript-eslint/init-declarations"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/init-declarations
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:27+08:00
+scraped_at: 2026-09-02T14:50:51+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0e2839ff59ce43015453d140fbba12201f9c4189804549fe6d9065dc4d958e78
+content_hash: sha256:11725b35129249d8cce07c70629cfe89ad4a88f14e8e310259438f104d622054
 ---
 
 禁止或者要求在变量声明中进行初始化。
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@typescript-eslint/init-declarations": "error"
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@typescript-eslint/init-declarations": "error"
+  }
+}
 ```
 
 ## 选项
@@ -27,32 +27,32 @@ content_hash: sha256:0e2839ff59ce43015453d140fbba12201f9c4189804549fe6d9065dc4d9
 
 ## 正例
 
-```
-1. // 默认变量必须在声明时初始化
-2. export function foo() {
-3. console.info('hello');
-4. }
+```screen
+// 默认变量必须在声明时初始化
+export function foo() {
+  console.info('hello');
+}
 
-6. export const bar = 1;
-7. export const qux = 3;
+export const bar = 1;
+export const qux = 3;
 ```
 
 ## 反例
 
-```
-1. // 默认变量必须在声明时初始化
-2. export function foo() {
-3. console.info('hello');
-4. }
+```screen
+// 默认变量必须在声明时初始化
+export function foo() {
+  console.info('hello');
+}
 
-6. export let bar: string;
-7. export let qux: number;
+export let bar: string;
+export let qux: number;
 ```
 
 ## 规则集
 
-```
-1. plugin:@typescript-eslint/all
+```screen
+plugin:@typescript-eslint/all
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Functions
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @arkts.utils (ArkTS工具库) > Functions
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:00+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:dd78fa28828809298c3dfaad833f3d1cf617d5ba2984c91f2ed4c7a6c010b0a5
+scraped_at: 2026-09-02T15:00:45+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:eff48e94b9d9c3f24b59624a4157eeb9fbeee4249c2f60f8d802b923499721a1
 ---
 
-说明
+**说明** 
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -16,15 +16,11 @@ content_hash: sha256:dd78fa28828809298c3dfaad833f3d1cf617d5ba2984c91f2ed4c7a6c01
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { ArkTSUtils } from '@kit.ArkTS'
+```ts
+import { ArkTSUtils } from '@kit.ArkTS';
 ```
 
 ## ArkTSUtils.isSendable
-
-PhonePC/2in1TabletTVWearable
 
 isSendable(value: Object | null | undefined): boolean
 
@@ -38,7 +34,7 @@ isSendable(value: Object | null | undefined): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | Object | null | undefined | 是 | 待校验的对象。 |
+| value | Object | null | undefined | 是 | 待判断是否为Sendable数据类型的对象。 |
 
 **返回值：**
 
@@ -48,18 +44,18 @@ isSendable(value: Object | null | undefined): boolean
 
 **示例：**
 
-```
-1. import { ArkTSUtils } from '@kit.ArkTS';
+```ts
+import { ArkTSUtils } from '@kit.ArkTS';
 
-3. @Sendable
-4. function sendableFunc() {
-5. console.info("sendableFunc");
-6. }
+@Sendable
+function sendableFunc() {
+  console.info("sendableFunc");
+}
 
-8. if (ArkTSUtils.isSendable(sendableFunc)) {
-9. console.info("sendableFunc is Sendable");
-10. } else {
-11. console.info("sendableFunc is not Sendable");
-12. }
-13. // 期望输出: 'SendableFunc is Sendable'
+if (ArkTSUtils.isSendable(sendableFunc)) {
+  console.info("sendableFunc is Sendable");
+} else {
+  console.info("sendableFunc is not Sendable");
+}
+// 期望输出: 'sendableFunc is Sendable'
 ```

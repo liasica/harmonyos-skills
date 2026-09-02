@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/i18n-dst-tran
 title: 夏令时跳变
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用国际化 > 时区与夏令时国际化 > 夏令时跳变
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:30:12+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c3bd651d0276ab433ad69649ac4ff8e6b43a636713fe630b54dbbad52da02479
+scraped_at: 2026-09-02T14:59:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:290e763642b8ae0b7797e2e99d9566fb1a72901114a8f6054d6a3eb5b636d117
 ---
 
 ## 功能介绍
@@ -20,26 +20,22 @@ content_hash: sha256:c3bd651d0276ab433ad69649ac4ff8e6b43a636713fe630b54dbbad52da
 
 1. 导入模块。
 
+   ```typescript
+   import { i18n } from '@kit.LocalizationKit';
    ```
-   1. import { i18n } from '@kit.LocalizationKit';
-   ```
-
-   [TimezoneDstSetting.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/International/Internationalization/entry/src/main/ets/i18napplication/TimezoneDstSetting.ets#L19-L21)
 2. 使用场景。
 
 * 计算一天的小时数：一整天的小时数在夏令时跳变的当天会发生变化，并非24小时。例如，在大多数国家，夏令时开始的当天，一整天时间为23小时；夏令时结束的当天，一整天时间为25小时。计算夏令时跳变前后挂钟时间之间相差的小时数。示例代码如下：
 
+  ```typescript
+  let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans');
+  calendar.setTimeZone('Europe/London');
+  calendar.set(2021, 2, 27, 16, 0, 0); // 夏令时开始前的时间
+  let startTime = calendar.getTimeInMillis();
+  calendar.set(2021, 2, 28, 16, 0, 0); // 处于夏令时期间的时间
+  let finishTime = calendar.getTimeInMillis();
+  let hours = (finishTime - startTime) / (3600 * 1000); // hours = 23
   ```
-  1. let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans');
-  2. calendar.setTimeZone('Europe/London');
-  3. calendar.set(2021, 2, 27, 16, 0, 0); // 夏令时开始前的时间
-  4. let startTime = calendar.getTimeInMillis();
-  5. calendar.set(2021, 2, 28, 16, 0, 0); // 处于夏令时期间的时间
-  6. let finishTime = calendar.getTimeInMillis();
-  7. let hours = (finishTime - startTime) / (3600 * 1000); // hours = 23
-  ```
-
-  [TimezoneDstSetting.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/International/Internationalization/entry/src/main/ets/i18napplication/TimezoneDstSetting.ets#L135-L143)
 
 ### 存储和显示数据
 
@@ -49,7 +45,7 @@ content_hash: sha256:c3bd651d0276ab433ad69649ac4ff8e6b43a636713fe630b54dbbad52da
 
 在夏令时内，本地时间显示建议添加夏令时标识。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/YsVWlhCxQYuCevq2w-2BTA/zh-cn_image_0000002558605164.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/1HjclbAHSSO8C-smMdGNvw/zh-cn_image_0000002706674280.png)
 
 ### 存储和传输时间数据
 

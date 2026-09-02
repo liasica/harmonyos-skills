@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-505
 title: 新增和增强特性
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.5(17) > OS平台能力 > 新增和增强特性
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.5(17) > OS平台能力 > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:18+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a880ee489a6d1927548ade997e586dfcd92762b07d29c81e85448843f7eb8197
+scraped_at: 2026-09-02T14:49:22+08:00
+doc_updated_at: 2026-08-04
+content_hash: sha256:2baf98b4682dbd0708da256c1f2cf1d39c27824e8d4894e5fe7a0af9d4411434
 ---
 
 ## Ability
@@ -30,7 +30,7 @@ UDMF新增支持将传入的data转换成多样式数据结构的能力。若原
 * C API的事件能力增强，新增支持获取事件命中的组件的宽度、高度、X坐标、Y坐标等能力。（[API参考](../harmonyos-references/capi-ui-input-event-h.md#oh_arkui_uiinputevent_geteventtargetwidth)）
 * 基础类型定义新增支持清除当前的预上屏文本内容。（[API参考](../harmonyos-references/ts-universal-attributes-text-style.md#clearpreviewtext17)）
 * UIContext新增支持创建不依赖窗口的UI实例。（[API参考](../harmonyos-references/arkts-apis-uicontext-uicontext.md#createuicontextwithoutwindow17)）
-* 组件可见区域变化事件新增支持设置事件的回调参数，限制它的执行间隔。（[API参考-ArkTS](../harmonyos-references/ts-universal-component-visible-area-change-event.md#onvisibleareaapproximatechange17)、[API参考-C API](../harmonyos-references/capi-native-type-h.md#oh_arkui_visibleareaeventoptions_create)）
+* 组件可见区域变化事件新增支持设置事件的回调参数，限制它的执行间隔。（[API参考-ArkTS](../harmonyos-references/ts-universal-component-visible-area-change-event.md#onvisibleareaapproximatechange17)、[API参考-C API](../harmonyos-references/capi-common-attributes-h.md#oh_arkui_visibleareaeventoptions_create)）
 * ImageAnimator组件支持设置是否通过系统onVisibleAreaChange的可见性来判断组件的暂停和播放。（[API参考](../harmonyos-references/ts-basic-components-imageanimator.md#monitorinvisiblearea17)）
 * 画中画窗口支持通过创建参数LocalStorage实现页面级别的UI状态存储单元，多实例下可用来跟踪主窗实例。（[API参考](../harmonyos-references/js-apis-pipwindow.md#pipconfiguration)）
 * 针对PC/2in1设备的窗口管理新增支持主窗的尺寸记忆功能。（[API参考](../harmonyos-references/arkts-apis-window-windowstage.md#setwindowrectautosave17)）
@@ -71,7 +71,7 @@ UDMF新增支持将传入的data转换成多样式数据结构的能力。若原
 
 ## Payment Kit
 
-新增引导用户绑卡能力。（[指南](../harmonyos-guides/payment-partner-bindcard.md)、[API参考](../harmonyos-references/payment-paymentservice.md#paymentservicerequestbindcard)）
+新增引导用户绑卡能力。（[指南](../harmonyos-guides/payment-partner-bindcard.md)、[API参考](../harmonyos-references/payment-paymentservice.md#requestbindcard)）
 
 ## PDF Kit
 
@@ -79,7 +79,7 @@ UDMF新增支持将传入的data转换成多样式数据结构的能力。若原
 
 ## Preview Kit
 
-新增文件打开加速预加载状态感知能力。（[指南](../harmonyos-guides/preview-openfileboost-stateawareness.md)、[API参考](../harmonyos-references/preview-arkts-openfileboost-api.md#openfileboostaddfile)）
+新增文件打开加速预加载状态感知能力。（[指南](../harmonyos-guides/preview-openfileboost-stateawareness.md)、[API参考](../harmonyos-references/preview-arkts-openfileboost-api.md#openfileboostaddfiledeprecated)）
 
 ## Vision Kit
 

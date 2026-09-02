@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/formkit-overv
 title: Form Kit简介
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > Form Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:51+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:ecc57af6318d7c2524e0e1fb6dc7ebca2c2b6cbf24a498e4df3b987ba59c2f21
+scraped_at: 2026-09-02T14:49:57+08:00
+doc_updated_at: 2026-08-03
+content_hash: sha256:f0b1f8876dd4e66197d72fd2ca244b3cb18cec73f8b78c1403696571939b1c53
 ---
 
-Form Kit（卡片开发服务）提供了一种在桌面、锁屏等系统应用上嵌入显示应用信息的开发框架和API，可以将应用内用户关注的重要信息或常用操作抽取到服务卡片（简称“卡片”）上，通过将卡片添加到桌面、锁屏等系统应用上，以达到信息展示、服务直达的便捷体验效果。
+Form Kit（卡片开发服务）提供了一种在桌面、锁屏等系统应用上嵌入显示应用信息的开发框架和API，可以将应用内用户关注的重要信息或常用操作抽取到服务卡片（简称“卡片”）上，通过将卡片添加到桌面、锁屏等系统应用上，以达到信息展示、服务直达的便捷体验效果。后续统一使用英文名“Form Kit”进行表述。
 
 ## 卡片使用场景
 
-* 支持设备类型：手机、平板、PC/2in1、智慧屏、智能手表、车机。轻量级智能穿戴设备不支持使用本Kit。
+* 支持设备类型：Phone、Tablet、PC/2in1、TV、Wearable、Car。轻量级智能穿戴设备不支持使用本Kit。
 * 支持开发卡片应用类型：应用和元服务内均支持开发卡片。
 * 支持卡片使用位置：用户可以在桌面、锁屏等系统应用上添加使用，不支持在普通应用内嵌入显示卡片。
 * 卡片常见使用步骤：
@@ -23,13 +23,13 @@ Form Kit（卡片开发服务）提供了一种在桌面、锁屏等系统应用
 
 **图1** 卡片常见使用步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/57Yy1BB3Ri-KeIO9kPwT1A/zh-cn_image_0000002589244587.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/Ck5-NkeNQlqeUzatIs1Ypg/zh-cn_image_0000002736313249.png)
 
 ## 服务卡片架构
 
 **图2** 服务卡片架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/r9BWnw9HTruWiNUtrsruwg/zh-cn_image_0000002558764782.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/y-t_6HFMS-WNgQ-nzd_h7Q/zh-cn_image_0000002706674206.png)
 
 **卡片场景中涉及到的基本概念**
 

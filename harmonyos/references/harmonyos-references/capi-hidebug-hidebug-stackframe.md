@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hide
 title: HiDebug_StackFrame
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > C API > 结构体 > HiDebug_StackFrame
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:28+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:917abd8d50b09fbf6ff3118a485f4a431b71d4608dba960e90c6c8ee79a26d04
+scraped_at: 2026-09-02T15:02:17+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ccfe32929518fd0fd9eb35ce9d8622e4be50c9e58c2ed653189f279bff726071
 ---
 
-```
-1. typedef struct HiDebug_StackFrame {...} HiDebug_StackFrame
+```c
+typedef struct HiDebug_StackFrame {...} HiDebug_StackFrame
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-栈帧内容的定义。
+栈帧内容的定义。该结构体用于表示调试时的栈帧信息，支持获取当前栈的类型以及对应的js栈帧或Native栈帧内容，帮助开发者进行问题定位和调试分析。
 
 **起始版本：** 20
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

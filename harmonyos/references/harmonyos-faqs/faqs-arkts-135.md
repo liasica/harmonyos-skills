@@ -3,37 +3,33 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-135
 title: 模块间循环依赖导致运行时未初始化异常问题定位
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 模块间循环依赖导致运行时未初始化异常问题定位
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:17+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:d735bb7d71d1eeccce2eb18e4c153c3f6af9e2595b0236fa1cd13858a36ffbf1
+scraped_at: 2026-09-02T14:53:53+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:c9f02fecda3657d38ac42c17a41768494650da23176b3cb3867657c6f39aab76
 ---
 
 **问题场景**
 
 模块间循环依赖可能导致应用运行时模块依赖的变量未初始化。例如，index.ets文件执行前，会先执行依赖的page.ets文件，而page.ets文件又循环依赖了index.ets导出的foo符号。此时index.ets文件未执行，foo变量尚未初始化，会导致运行时异常。
 
-```
-1. // index.ets
-2. import { bar } from './page'
+```ts
+// index.ets
+import { bar } from './page'
 
-4. export function foo() {
-5. bar()
-6. }
-```
-
-[index.ets](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/ArkTS/entry/src/main/ets/pages/CircularDependencies/index.ets#L6-L11)
-
-```
-1. // page.ets
-2. import { foo } from './index'
-
-4. export function bar() {
-5. foo()
-6. }
-7. bar()
+export function foo() {
+  bar()
+}
 ```
 
-[page.ets](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/ArkTS/entry/src/main/ets/pages/CircularDependencies/page.ets#L6-L12)
+```ts
+// page.ets
+import { foo } from './index'
+
+export function bar() {
+  foo()
+}
+bar()
+```
 
 **问题现象**
 

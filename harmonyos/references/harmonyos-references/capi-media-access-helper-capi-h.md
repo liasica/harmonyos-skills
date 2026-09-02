@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-medi
 title: media_access_helper_capi.h
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > C API > 头文件 > media_access_helper_capi.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:20+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:96765797d33d50f07d9167002e44309300e510d2c65487431700be70a8142f21
+scraped_at: 2026-09-02T15:02:38+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b837809340a548aa5c63b865bd3d85aa9aaba99a970583396ecedcc1242d016c
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 定义与相册管理模块相关的API。
 
@@ -28,11 +26,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 函数
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -40,14 +34,10 @@ PhonePC/2in1TabletTV
 
 ## 函数说明
 
-PhonePC/2in1TabletTV
-
 ### OH\_MediaAccessHelper\_ApplyChanges()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAccessHelper_ApplyChanges(OH_MediaAssetChangeRequest* changeRequest)
+```c
+MediaLibrary_ErrorCode OH_MediaAccessHelper_ApplyChanges(OH_MediaAssetChangeRequest* changeRequest)
 ```
 
 **描述**

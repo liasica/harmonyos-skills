@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-28
 title: Worker和TaskPool的线程数量是否有限制
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > ArkTS线程模型和并发 > Worker和TaskPool的线程数量是否有限制
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:22+08:00
-doc_updated_at: 2026-03-25
+scraped_at: 2026-09-02T15:21:16+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:5f2d4df274ae0576d0bd7e99d5275bb9c1e4f18e1a8dc3d48ddb4cd04752d611
 ---
 

@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: "@ohos.process (获取进程相关的信息)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.process (获取进程相关的信息)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:01+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:72e58a5c3ecc74c21d91f5698fac6da98fde361a92df4bd42073482827f0a95c
+scraped_at: 2026-09-02T15:00:47+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b35ba27a4daaff83813cd90a0b1a19c9f656769df312dc608a7e7afd671bf3ca
 ---
 
 获取进程相关的信息，提供进程管理的相关功能。
 
-说明
+**说明** 
 
 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { process } from '@kit.ArkTS';
+```ts
+import { process } from '@kit.ArkTS';
 ```
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -37,8 +33,6 @@ PhonePC/2in1TabletTVWearable
 | tid8+ | number | 是 | 否 | 当前线程的tid。 |
 
 ## EventListener
-
-PhonePC/2in1TabletTVWearable
 
 type EventListener = (evt: Object) => void
 
@@ -56,8 +50,6 @@ type EventListener = (evt: Object) => void
 
 ## process.isIsolatedProcess8+
 
-PhonePC/2in1TabletTVWearable
-
 isIsolatedProcess(): boolean
 
 检查进程是否已被隔离。
@@ -74,13 +66,11 @@ isIsolatedProcess(): boolean
 
 **示例：**
 
-```
-1. let result = process.isIsolatedProcess();
+```js
+let result = process.isIsolatedProcess();
 ```
 
 ## process.is64Bit8+
-
-PhonePC/2in1TabletTVWearable
 
 is64Bit(): boolean
 
@@ -98,13 +88,11 @@ is64Bit(): boolean
 
 **示例：**
 
-```
-1. let result = process.is64Bit();
+```js
+let result = process.is64Bit();
 ```
 
 ## process.getStartRealtime8+
-
-PhonePC/2in1TabletTVWearable
 
 getStartRealtime(): number
 
@@ -122,13 +110,11 @@ getStartRealtime(): number
 
 **示例：**
 
-```
-1. let realtime = process.getStartRealtime();
+```js
+let realtime = process.getStartRealtime();
 ```
 
 ## process.getPastCpuTime8+
-
-PhonePC/2in1TabletTVWearable
 
 getPastCpuTime(): number
 
@@ -146,13 +132,11 @@ getPastCpuTime(): number
 
 **示例：**
 
-```
-1. let result = process.getPastCpuTime();
+```js
+let result = process.getPastCpuTime();
 ```
 
 ## process.abort
-
-PhonePC/2in1TabletTVWearable
 
 abort(): void
 
@@ -164,13 +148,11 @@ abort(): void
 
 **示例：**
 
-```
-1. process.abort();
+```js
+process.abort();
 ```
 
 ## process.uptime
-
-PhonePC/2in1TabletTVWearable
 
 uptime(): number
 
@@ -188,19 +170,17 @@ uptime(): number
 
 **示例：**
 
-```
-1. let time = process.uptime();
+```js
+let time = process.uptime();
 ```
 
 ## process.kill(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 kill(signal: number, pid: number): boolean
 
 发送信号到指定进程，结束该进程。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[kill9+](js-apis-process.md#kill9)替代。
 
@@ -221,22 +201,20 @@ kill(signal: number, pid: number): boolean
 
 **示例：**
 
-```
-1. let pres = process.pid;
-2. let result = process.kill(28, pres);
+```js
+let pid = process.pid;
+let result = process.kill(28, pid);
 ```
 
 ## process.exit(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 exit(code: number): void
 
 终止程序。
 
-请谨慎使用此接口。调用此接口后应用将退出。如果输入参数非0，可能会导致数据丢失或出现异常。
+请谨慎使用此接口。调用此接口后应用将退出。如果输入参数非0，可能会导致数据丢失或出现未定义的运行异常。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[exit9+](js-apis-process.md#exit9)替代。
 
@@ -250,19 +228,17 @@ exit(code: number): void
 
 **示例：**
 
-```
-1. process.exit(0);
+```js
+process.exit(0);
 ```
 
 ## process.getUidForName(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getUidForName(v: string): number
 
 根据指定的用户名，从系统的用户数据库中获取该用户的uid。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[getUidForName9+](js-apis-process.md#getuidforname9)替代。
 
@@ -282,19 +258,17 @@ getUidForName(v: string): number
 
 **示例：**
 
-```
-1. let pres = process.getUidForName("tool");
+```js
+let pres = process.getUidForName("tool");
 ```
 
 ## process.getThreadPriority(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getThreadPriority(v: number): number
 
 根据指定的tid获取线程优先级，优先级顺序取决于当前操作系统。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[getThreadPriority9+](js-apis-process.md#getthreadpriority9)替代。
 
@@ -314,20 +288,18 @@ getThreadPriority(v: number): number
 
 **示例：**
 
-```
-1. let tid = process.tid;
-2. let pres = process.getThreadPriority(tid);
+```js
+let tid = process.tid;
+let pres = process.getThreadPriority(tid);
 ```
 
 ## process.isAppUid(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isAppUid(v: number): boolean
 
 判断uid是否属于应用程序。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[isAppUid9+](js-apis-process.md#isappuid9)替代。
 
@@ -347,19 +319,19 @@ isAppUid(v: number): boolean
 
 **示例：**
 
-```
-1. let result = process.isAppUid(688);
+```js
+// uid通过process.uid获取
+let pres = process.uid;
+let result = process.isAppUid(pres);
 ```
 
 ## process.getSystemConfig(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getSystemConfig(name: number): number
 
 获取系统配置信息。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[getSystemConfig9+](js-apis-process.md#getsystemconfig9)替代。
 
@@ -379,20 +351,18 @@ getSystemConfig(name: number): number
 
 **示例：**
 
-```
-1. let _SC_ARG_MAX = 0;
-2. let pres = process.getSystemConfig(_SC_ARG_MAX);
+```js
+let _SC_ARG_MAX = 0;
+let pres = process.getSystemConfig(_SC_ARG_MAX);
 ```
 
 ## process.getEnvironmentVar(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 getEnvironmentVar(name: string): string
 
-获取环境变量名对应的值。
+获取环境变量名对应的值。如果环境变量不存在，返回undefined。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[getEnvironmentVar9+](js-apis-process.md#getenvironmentvar9)替代。
 
@@ -412,21 +382,17 @@ getEnvironmentVar(name: string): string
 
 **示例：**
 
-```
-1. let pres = process.getEnvironmentVar("PATH");
+```js
+let pres = process.getEnvironmentVar("PATH");
 ```
 
 ## ProcessManager9+
 
-PhonePC/2in1TabletTVWearable
-
-提供进程管理相关接口，包括进程UID判断、用户信息查询、线程优先级获取、环境变量获取、进程退出和信号发送等功能。
+提供进程管理相关接口，包括进程uid判断、用户信息查询、线程优先级获取、环境变量获取、进程退出和信号发送等功能。
 
 通过new process.ProcessManager()构造ProcessManager对象。
 
 ### isAppUid9+
-
-PhonePC/2in1TabletTVWearable
 
 isAppUid(v: number): boolean
 
@@ -448,31 +414,23 @@ isAppUid(v: number): boolean
 | --- | --- |
 | boolean | 返回判断结果。如果是应用程序的uid则返回true，否则返回false。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. let pro = new process.ProcessManager();
-2. // uid通过process.uid获取
-3. let pres = process.uid;
-4. let result = pro.isAppUid(pres);
-5. console.info("result: " + result); // result: true
+```js
+// 创建ProcessManager实例
+let processManager = new process.ProcessManager();
+// uid通过process.uid获取
+let pres = process.uid;
+// 判断uid是否属于当前应用程序
+let result = processManager.isAppUid(pres);
+console.info("result:", result); // result: true
 ```
 
 ### getUidForName9+
 
-PhonePC/2in1TabletTVWearable
-
 getUidForName(v: string): number
 
-根据指定的用户名，从系统的用户数据库中获取该用户uid。
+根据指定的用户名，从系统的用户数据库中获取该用户的uid。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -490,24 +448,16 @@ getUidForName(v: string): number
 | --- | --- |
 | number | 获取用户uid，如果用户不存在则返回-1。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. let pro = new process.ProcessManager();
-2. let pres = pro.getUidForName("tool");
+```js
+// 创建ProcessManager实例
+let processManager = new process.ProcessManager();
+// 根据用户名获取uid
+let pres = processManager.getUidForName("tool");
 ```
 
 ### getThreadPriority9+
-
-PhonePC/2in1TabletTVWearable
 
 getThreadPriority(v: number): number
 
@@ -521,7 +471,7 @@ getThreadPriority(v: number): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| v | number | 是 | 指定的线程tid。 |
+| v | number | 是 | 指定的线程tid。可通过process.tid获取。 |
 
 **返回值：**
 
@@ -529,25 +479,18 @@ getThreadPriority(v: number): number
 | --- | --- |
 | number | 返回线程的优先级。优先级顺序取决于当前操作系统。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. let pro = new process.ProcessManager();
-2. let tid = process.tid;
-3. let pres = pro.getThreadPriority(tid);
+```js
+// 创建ProcessManager实例
+let processManager = new process.ProcessManager();
+// 获取当前线程tid
+let tid = process.tid;
+// 根据tid获取线程优先级
+let pres = processManager.getThreadPriority(tid);
 ```
 
 ### getSystemConfig9+
-
-PhonePC/2in1TabletTVWearable
 
 getSystemConfig(name: number): number
 
@@ -569,25 +512,18 @@ getSystemConfig(name: number): number
 | --- | --- |
 | number | 返回系统配置信息。如果配置不存在，返回-1。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. let pro = new process.ProcessManager();
-2. let _SC_ARG_MAX = 0;
-3. let pres = pro.getSystemConfig(_SC_ARG_MAX);
+```js
+// 创建ProcessManager实例
+let processManager = new process.ProcessManager();
+// 定义系统配置参数
+let _SC_ARG_MAX = 0;
+// 获取系统配置信息
+let pres = processManager.getSystemConfig(_SC_ARG_MAX);
 ```
 
 ### getEnvironmentVar9+
-
-PhonePC/2in1TabletTVWearable
 
 getEnvironmentVar(name: string): string
 
@@ -609,30 +545,22 @@ getEnvironmentVar(name: string): string
 | --- | --- |
 | string | 返回指定环境变量名对应的值。如果环境变量不存在，返回undefined。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. let pro = new process.ProcessManager();
-2. let pres = pro.getEnvironmentVar("PATH");
+```js
+// 创建ProcessManager实例
+let processManager = new process.ProcessManager();
+// 获取PATH环境变量的值
+let pres = processManager.getEnvironmentVar("PATH");
 ```
 
 ### exit9+
-
-PhonePC/2in1TabletTVWearable
 
 exit(code: number): void
 
 终止程序。
 
-请谨慎使用此接口，此接口调用后应用会退出，如果入参非0会产生数据丢失或者异常情况。
+请谨慎使用此接口，此接口调用后应用会退出，如果输入参数非0，可能会导致数据丢失或出现未定义的运行异常。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -644,28 +572,18 @@ exit(code: number): void
 | --- | --- | --- | --- |
 | code | number | 是 | 进程的退出码。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. let pro = new process.ProcessManager();
-2. pro.exit(0);
+```js
+let processManager = new process.ProcessManager();
+processManager.exit(0);
 ```
 
 ### kill9+
 
-PhonePC/2in1TabletTVWearable
-
 kill(signal: number, pid: number): boolean
 
-发送signal到指定的进程，结束指定进程（仅支持结束本进程）。
+发送信号到指定的进程，结束指定进程（仅支持结束本进程）。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -675,8 +593,8 @@ kill(signal: number, pid: number): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| signal | number | 是 | 发送特定的信号给目标进程。 取值范围：1 <= signal <= 64。 |
-| pid | number | 是 | 进程的id。 |
+| signal | number | 是 | 发送特定的信号给指定进程。 取值范围：1 <= signal <= 64。 |
+| pid | number | 是 | 进程的id。可通过process.pid获取。 |
 
 **返回值：**
 
@@ -684,18 +602,13 @@ kill(signal: number, pid: number): boolean
 | --- | --- |
 | boolean | 信号是否发送成功。如果信号发送成功则返回true，否则返回false。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. let pro = new process.ProcessManager();
-2. let pres = process.pid;
-3. let result = pro.kill(28, pres);
+```js
+// 创建ProcessManager实例
+let processManager = new process.ProcessManager();
+// 获取当前进程pid
+let pres = process.pid;
+// 发送信号28结束当前进程
+let result = processManager.kill(28, pres);
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API接口设置ArkTS对象的属性
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口设置ArkTS对象的属性
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:08+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:9f4dbf4df3f7077c13413e41d0e609c06e8c3895557788b1244877d92d593954
+scraped_at: 2026-09-02T15:00:16+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1a216cd8a99270349fc9b203064a31f82dc1ce66f0322daec5f97068a9d28ee1
 ---
 
 ## 简介
@@ -50,54 +50,54 @@ Node-API接口开发流程可参考[使用Node-API实现跨语言交互开发流
 cpp部分代码
 
 ```
-1. // napi_get_property_names
-2. static napi_value GetPropertyNames(napi_env env, napi_callback_info info)
-3. {
-4. // 解析ArkTS的传参
-5. size_t argc = 1;
-6. napi_value args[1] = {nullptr};
-7. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-8. // 以字符串数组的形式获取对象的可枚举属性的名称，以result传出
-9. napi_value result;
-10. napi_status status = napi_get_property_names(env, args[0], &result);
-11. if (status != napi_ok) {
-12. napi_throw_error(env, nullptr, "Node-API napi_get_property_names fail");
-13. return nullptr;
-14. }
-15. return result;
-16. }
+// napi_get_property_names
+static napi_value GetPropertyNames(napi_env env, napi_callback_info info)
+{
+    // 解析ArkTS的传参
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 以字符串数组的形式获取对象的可枚举属性的名称，以result传出
+    napi_value result;
+    napi_status status = napi_get_property_names(env, args[0], &result);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Node-API napi_get_property_names fail");
+        return nullptr;
+    }
+    return result;
+}
 ```
 
 接口声明
 
-```
-1. export const getPropertyNames: (obj: Object) => Array<string> | undefined; // napi_get_property_names
+```typescript
+export const getPropertyNames: (obj: Object) => Array<string> | undefined; // napi_get_property_names
 ```
 
 ArkTS侧示例代码
 
-```
-1. // napi_get_property_names
-2. try {
-3. class Obj {
-4. public data: number = 0
-5. public message: string = ''
-6. }
+```typescript
+// napi_get_property_names
+try {
+  class Obj {
+    public data: number = 0
+    public message: string = ''
+  }
 
-8. let obj: Obj = { data: 0, message: 'hello world' };
-9. let propertyNames = testNapi.getPropertyNames(obj);
-10. if (Array.isArray(propertyNames) && propertyNames.length > 0) {
-11. hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_property_names: %{public}s',
-12. propertyNames[0]);
-13. hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_property_names: %{public}s',
-14. propertyNames[1]);
-15. // ...
-16. }
-17. } catch (error) {
-18. hilog.error(0x0000, 'testTag', 'Test Node-API napi_get_property_names error: %{public}s',
-19. error.message);
-20. // ...
-21. }
+  let obj: Obj = { data: 0, message: 'hello world' };
+  let propertyNames = testNapi.getPropertyNames(obj);
+  if (Array.isArray(propertyNames) && propertyNames.length > 0) {
+    hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_property_names: %{public}s',
+      propertyNames[0]);
+    hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_property_names: %{public}s',
+      propertyNames[1]);
+    // ...
+  }
+} catch (error) {
+  hilog.error(0x0000, 'testTag', 'Test Node-API napi_get_property_names error: %{public}s',
+    error.message);
+  // ...
+}
 ```
 
 ### napi\_set\_property
@@ -107,52 +107,52 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. // napi_set_property
-2. static napi_value SetProperty(napi_env env, napi_callback_info info)
-3. {
-4. // 接收ArkTS侧传入的三个参数：第一个参数为想要设置的object，第二个参数为属性，第三个参数为属性对应的值
-5. size_t argc = 3;
-6. napi_value args[3] = {nullptr};
-7. napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-8. if (status != napi_ok) {
-9. napi_throw_error(env, nullptr, "Node-API napi_get_cb_info fail");
-10. }
-11. // 通过调用napi_set_property接口将属性与值设置入object，如果失败，直接抛出错误
-12. status = napi_set_property(env, args[0], args[1], args[INT_ARG_2]);
-13. if (status != napi_ok) {
-14. napi_throw_error(env, nullptr, "Node-API napi_set_property fail");
-15. return nullptr;
-16. }
-17. // 返回设置成功的object对象
-18. return args[0];
-19. }
+// napi_set_property
+static napi_value SetProperty(napi_env env, napi_callback_info info)
+{
+    // 接收ArkTS侧传入的三个参数：第一个参数为想要设置的object，第二个参数为属性，第三个参数为属性对应的值
+    size_t argc = 3;
+    napi_value args[3] = {nullptr};
+    napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Node-API napi_get_cb_info fail");
+    }
+    // 通过调用napi_set_property接口将属性与值设置入object，如果失败，直接抛出错误
+    status = napi_set_property(env, args[0], args[1], args[INT_ARG_2]);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Node-API napi_set_property fail");
+        return nullptr;
+    }
+    // 返回设置成功的object对象
+    return args[0];
+}
 ```
 
 接口声明
 
-```
-1. export const setProperty: (obj: Object, key: String, value: string) => Object | undefined; // napi_set_property
+```typescript
+export const setProperty: (obj: Object, key: String, value: string) => Object | undefined; // napi_set_property
 ```
 
 ArkTS侧示例代码
 
-```
-1. // napi_set_property
-2. try {
-3. class Obj {
-4. public data: number = 0
-5. public message: string = ''
-6. }
+```typescript
+// napi_set_property
+try {
+  class Obj {
+    public data: number = 0
+    public message: string = ''
+  }
 
-8. let obj: Obj = { data: 0, message: 'hello world' };
-9. let result = testNapi.setProperty(obj, 'code', 'hi');
-10. hilog.info(0x0000, 'testTag', 'Test Node-API napi_set_property: %{public}s',
-11. JSON.stringify(result));
-12. // ...
-13. } catch (error) {
-14. hilog.info(0x0000, 'testTag', 'Test Node-API napi_set_property error: %{public}s', error.message);
-15. // ...
-16. }
+  let obj: Obj = { data: 0, message: 'hello world' };
+  let result = testNapi.setProperty(obj, 'code', 'hi');
+  hilog.info(0x0000, 'testTag', 'Test Node-API napi_set_property: %{public}s',
+    JSON.stringify(result));
+  // ...
+} catch (error) {
+  hilog.info(0x0000, 'testTag', 'Test Node-API napi_set_property error: %{public}s', error.message);
+  // ...
+}
 ```
 
 ### napi\_get\_property
@@ -162,48 +162,48 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. // napi_get_property
-2. static napi_value GetProperty(napi_env env, napi_callback_info info)
-3. {
-4. // 接收两个ArkTS传来的参数
-5. size_t argc = 2;
-6. napi_value args[2] = {nullptr};
-7. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-8. // 传入的第一个参数为要检测的object，第二个对象为要检测的属性，通过调用napi_get_property接口获取对应的值
-9. napi_value result;
-10. napi_status status = napi_get_property(env, args[0], args[1], &result);
-11. if (status != napi_ok) {
-12. napi_throw_error(env, nullptr, "Node-API napi_get_property fail");
-13. return nullptr;
-14. }
-15. return result;
-16. }
+// napi_get_property
+static napi_value GetProperty(napi_env env, napi_callback_info info)
+{
+    // 接收两个ArkTS传来的参数
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 传入的第一个参数为要检测的object，第二个参数为要检测的属性，通过调用napi_get_property接口获取对应的值
+    napi_value result;
+    napi_status status = napi_get_property(env, args[0], args[1], &result);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Node-API napi_get_property fail");
+        return nullptr;
+    }
+    return result;
+}
 ```
 
 接口声明
 
-```
-1. export const getProperty: (obj: Object, key: string) => string | undefined; // napi_get_property
+```typescript
+export const getProperty: (obj: Object, key: string) => string | undefined; // napi_get_property
 ```
 
 ArkTS侧示例代码
 
-```
-1. // napi_get_property
-2. try {
-3. class Obj {
-4. public data: number = 0
-5. public message: string = ''
-6. }
+```typescript
+// napi_get_property
+try {
+  class Obj {
+    public data: number = 0
+    public message: string = ''
+  }
 
-8. let obj: Obj = { data: 0, message: 'hello world' };
-9. hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_property: %{public}s',
-10. testNapi.getProperty(obj, 'message'));
-11. // ...
-12. } catch (error) {
-13. hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_property error: %{public}s', error.message);
-14. // ...
-15. }
+  let obj: Obj = { data: 0, message: 'hello world' };
+  hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_property: %{public}s',
+    testNapi.getProperty(obj, 'message'));
+  // ...
+} catch (error) {
+  hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_property error: %{public}s', error.message);
+  // ...
+}
 ```
 
 ### napi\_has\_property
@@ -213,57 +213,57 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. // napi_has_property
-2. static napi_value HasProperty(napi_env env, napi_callback_info info)
-3. {
-4. // 从ArkTS侧传入两个参数：第一个参数为要检验的对象，第二个参数为要检测是否存在对象的属性
-5. size_t argc = 2;
-6. napi_value args[2] = {nullptr};
-7. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+// napi_has_property
+static napi_value HasProperty(napi_env env, napi_callback_info info)
+{
+    // 从ArkTS侧传入两个参数：第一个参数为要检验的对象，第二个参数为要检测是否存在对象的属性
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
-9. // 将参数传入napi_has_property方法中，若接口调用成功则将结果转化为napi_value类型抛出，否则抛出错误
-10. bool result;
-11. napi_status status = napi_has_property(env, args[0], args[1], &result);
-12. if (status != napi_ok) {
-13. napi_throw_error(env, nullptr, "Node-API napi_has_property fail");
-14. return nullptr;
-15. }
+    // 将参数传入napi_has_property方法中，若接口调用成功则将结果转化为napi_value类型抛出，否则抛出错误
+    bool result;
+    napi_status status = napi_has_property(env, args[0], args[1], &result);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Node-API napi_has_property fail");
+        return nullptr;
+    }
 
-17. // 若传入属性存在传入对象中，则输出true将结果转化为napi_value类型抛出
-18. napi_value returnResult;
-19. napi_get_boolean(env, result, &returnResult);
-20. return returnResult;
-21. }
+    // 若传入属性存在传入对象中，则输出true将结果转化为napi_value类型抛出
+    napi_value returnResult;
+    napi_get_boolean(env, result, &returnResult);
+    return returnResult;
+}
 ```
 
 接口声明
 
-```
-1. export const hasProperty: (obj: Object, key: number | string) => boolean | undefined; // napi_has_property
+```typescript
+export const hasProperty: (obj: Object, key: number | string) => boolean | undefined; // napi_has_property
 ```
 
 ArkTS侧示例代码
 
-```
-1. // napi_has_property
-2. try {
-3. class Obj {
-4. public data: number = 0
-5. public message: string = ''
-6. }
+```typescript
+// napi_has_property
+try {
+  class Obj {
+    public data: number = 0
+    public message: string = ''
+  }
 
-8. let obj: Obj = { data: 0, message: 'hello world' };
-9. let resultFalse = testNapi.hasProperty(obj, 0);
-10. let resultTrue = testNapi.hasProperty(obj, 'data');
-11. hilog.info(0x0000, 'testTag', 'Test Node-API napi_has_property: %{public}s',
-12. JSON.stringify(resultFalse));
-13. hilog.info(0x0000, 'testTag', 'Test Node-API napi_has_property: %{public}s',
-14. JSON.stringify(resultTrue));
-15. // ...
-16. } catch (error) {
-17. hilog.info(0x0000, 'testTag', 'Test Node-API napi_has_property error: %{public}s', error.message);
-18. // ...
-19. }
+  let obj: Obj = { data: 0, message: 'hello world' };
+  let resultFalse = testNapi.hasProperty(obj, 0);
+  let resultTrue = testNapi.hasProperty(obj, 'data');
+  hilog.info(0x0000, 'testTag', 'Test Node-API napi_has_property: %{public}s',
+    JSON.stringify(resultFalse));
+  hilog.info(0x0000, 'testTag', 'Test Node-API napi_has_property: %{public}s',
+    JSON.stringify(resultTrue));
+  // ...
+} catch (error) {
+  hilog.info(0x0000, 'testTag', 'Test Node-API napi_has_property error: %{public}s', error.message);
+  // ...
+}
 ```
 
 ### napi\_delete\_property
@@ -275,64 +275,64 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. // napi_delete_property
-2. // 从传入的Object对象中删除指定属性，返回是否删除成功的bool结果值
-3. static napi_value DeleteProperty(napi_env env, napi_callback_info info)
-4. {
-5. // 接收两个ArkTS传来的参数
-6. size_t argc = 2;
-7. napi_value args[2] = {nullptr};
-8. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+// napi_delete_property
+// 从传入的Object对象中删除指定属性，返回是否删除成功的bool结果值
+static napi_value DeleteProperty(napi_env env, napi_callback_info info)
+{
+    // 接收两个ArkTS传来的参数
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
-10. napi_valuetype valueType;
-11. napi_typeof(env, args[0], &valueType);
-12. if (valueType != napi_object) {
-13. napi_throw_error(env, nullptr, "Expects an object as argument.");
-14. return nullptr;
-15. }
-16. // 删除指定属性，结果存储在result中
-17. bool result = false;
-18. napi_status status = napi_delete_property(env, args[0], args[1], &result);
-19. if (status != napi_ok) {
-20. napi_throw_error(env, nullptr, "Node-API napi_delete_property failed");
-21. return nullptr;
-22. }
-23. // 将bool结果转换为napi_value并返回
-24. napi_value ret;
-25. napi_get_boolean(env, result, &ret);
-26. return ret;
-27. }
+    napi_valuetype valueType;
+    napi_typeof(env, args[0], &valueType);
+    if (valueType != napi_object) {
+        napi_throw_error(env, nullptr, "Expects an object as argument.");
+        return nullptr;
+    }
+    // 删除指定属性，结果存储在result中
+    bool result = false;
+    napi_status status = napi_delete_property(env, args[0], args[1], &result);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Node-API napi_delete_property failed");
+        return nullptr;
+    }
+    // 将bool结果转换为napi_value并返回
+    napi_value ret;
+    napi_get_boolean(env, result, &ret);
+    return ret;
+}
 ```
 
 接口声明
 
-```
-1. export const deleteProperty: (obj: Object, key: string) => boolean; // napi_delete_property
+```typescript
+export const deleteProperty: (obj: Object, key: string) => boolean; // napi_delete_property
 ```
 
 ArkTS侧示例代码
 
-```
-1. import testNapi from 'libentry.so';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import testNapi from 'libentry.so';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. export function napiDeleteProperty() {
-5. class Obj {
-6. first: number = 0;
-7. }
+export function napiDeleteProperty() {
+  class Obj {
+    first: number = 0;
+  }
 
-9. let obj: Obj = { first: 1 };
-10. hilog.info(0x0000, 'testTag', 'Test Node-API napi_delete_property first: %{public}s',
-11. testNapi.deleteProperty(obj, 'first'));
-12. // Set the new property as non-configurable
-13. // The Object.defineProperty method is not supported in DevEco Studio 4.1.0.400 and above versions, and needs to be used in TS (TypeScript)
-14. Object.defineProperty(obj, 'config', {
-15. configurable: false,
-16. value: 'value'
-17. })
-18. hilog.info(0x0000, 'testTag', 'Test Node-API napi_delete_property config: %{public}s',
-19. testNapi.deleteProperty(obj, 'config'));
-20. }
+  let obj: Obj = { first: 1 };
+  hilog.info(0x0000, 'testTag', 'Test Node-API napi_delete_property first: %{public}s',
+    testNapi.deleteProperty(obj, 'first'));
+  // Set the new property as non-configurable
+  // The Object.defineProperty method is not supported in DevEco Studio 4.1.0.400 and above versions, and needs to be used in TS (TypeScript)
+  Object.defineProperty(obj, 'config', {
+    configurable: false,
+    value: 'value'
+  })
+  hilog.info(0x0000, 'testTag', 'Test Node-API napi_delete_property config: %{public}s',
+    testNapi.deleteProperty(obj, 'config'));
+}
 ```
 
 ### napi\_has\_own\_property
@@ -342,63 +342,63 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. // napi_has_own_property
-2. static napi_value NapiHasOwnProperty(napi_env env, napi_callback_info info)
-3. {
-4. // 接收两个ArkTS传来的参数
-5. size_t argc = 2;
-6. napi_value args[2] = {nullptr};
-7. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-8. // 检查第一个参数是否为对象
-9. napi_valuetype valueTypeObj;
-10. napi_typeof(env, args[0], &valueTypeObj);
-11. if (valueTypeObj != napi_object) {
-12. napi_throw_error(env, nullptr, "First argument must be an object.");
-13. return nullptr;
-14. }
-15. // 检查第二个参数是否为string
-16. napi_valuetype valuetypeStr;
-17. napi_typeof(env, args[1], &valuetypeStr);
-18. if (valuetypeStr != napi_string) {
-19. napi_throw_error(env, nullptr, "Second argument must be a string.");
-20. return nullptr;
-21. }
-22. // 检查对象是否具有指定属性，结果存储在hasProperty中
-23. bool hasProperty;
-24. napi_status status = napi_has_own_property(env, args[0], args[1], &hasProperty);
-25. if (status != napi_ok) {
-26. napi_throw_error(env, nullptr, "napi_has_own_property failed");
-27. return nullptr;
-28. }
-29. // 将bool结果转换为napi_value并返回
-30. napi_value result;
-31. napi_get_boolean(env, hasProperty, &result);
-32. return result;
-33. }
+// napi_has_own_property
+static napi_value NapiHasOwnProperty(napi_env env, napi_callback_info info)
+{
+    // 接收两个ArkTS传来的参数
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 检查第一个参数是否为对象
+    napi_valuetype valueTypeObj;
+    napi_typeof(env, args[0], &valueTypeObj);
+    if (valueTypeObj != napi_object) {
+        napi_throw_error(env, nullptr, "First argument must be an object.");
+        return nullptr;
+    }
+    // 检查第二个参数是否为string
+    napi_valuetype valuetypeStr;
+    napi_typeof(env, args[1], &valuetypeStr);
+    if (valuetypeStr != napi_string) {
+        napi_throw_error(env, nullptr, "Second argument must be a string.");
+        return nullptr;
+    }
+    // 检查对象是否具有指定属性，结果存储在hasProperty中
+    bool hasProperty;
+    napi_status status = napi_has_own_property(env, args[0], args[1], &hasProperty);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "napi_has_own_property failed");
+        return nullptr;
+    }
+    // 将bool结果转换为napi_value并返回
+    napi_value result;
+    napi_get_boolean(env, hasProperty, &result);
+    return result;
+}
 ```
 
 接口声明
 
-```
-1. export const napiHasOwnProperty: (obj: Object, key: string) => boolean | undefined; // napi_has_own_property
+```typescript
+export const napiHasOwnProperty: (obj: Object, key: string) => boolean | undefined; // napi_has_own_property
 ```
 
 ArkTS侧示例代码
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import testNapi from 'libentry.so';
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import testNapi from 'libentry.so';
 
-4. export function napiHasOwnProperty() {
-5. let myObj = { 'myProperty': 1 };
-6. let inheritedObj = { 'inheritedProperty': 2 };
-7. // The Object.setPrototypeOf method is not supported in DevEco Studio 4.1.0.400 and later versions, and must be used in TypeScript (TS).
-8. Object.setPrototypeOf(myObj, inheritedObj);
-9. hilog.info(0x0000, 'testTag', 'Test Node-API napi_has_own_property my: %{public}s',
-10. testNapi.napiHasOwnProperty(myObj, 'myProperty'));
-11. hilog.info(0x0000, 'testTag', 'Test Node-API napi_has_own_property inherited: %{public}s',
-12. testNapi.napiHasOwnProperty(myObj, 'inheritedProperty'));
-13. }
+export function napiHasOwnProperty() {
+  let myObj = { 'myProperty': 1 };
+  let inheritedObj = { 'inheritedProperty': 2 };
+  // The Object.setPrototypeOf method is not supported in DevEco Studio 4.1.0.400 and later versions, and must be used in TypeScript (TS).
+  Object.setPrototypeOf(myObj, inheritedObj);
+  hilog.info(0x0000, 'testTag', 'Test Node-API napi_has_own_property my: %{public}s',
+    testNapi.napiHasOwnProperty(myObj, 'myProperty'));
+  hilog.info(0x0000, 'testTag', 'Test Node-API napi_has_own_property inherited: %{public}s',
+    testNapi.napiHasOwnProperty(myObj, 'inheritedProperty'));
+}
 ```
 
 ### napi\_set\_named\_property
@@ -408,53 +408,53 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. // napi_set_named_property
-2. static napi_value NapiSetNamedProperty(napi_env env, napi_callback_info info)
-3. {
-4. // 接收一个ArkTS传来的参数
-5. size_t argc = 1;
-6. napi_value str;
-7. const int32_t strLength = 32;
-8. char strKey[strLength] = "";
-9. napi_get_cb_info(env, info, &argc, &str, nullptr, nullptr);
-10. // 获取传入参数字符串并存储在strKey中
-11. size_t keyLength;
-12. napi_status status = napi_get_value_string_utf8(env, str, strKey, strLength, &keyLength);
-13. if (status != napi_ok) {
-14. napi_throw_error(env, nullptr, "napi_get_value_string_utf8 failed");
-15. return nullptr;
-16. }
-17. // 创建一个新对象
-18. napi_value newObj;
-19. napi_create_object(env, &newObj);
-20. // 设置整数值1234为属性值
-21. int32_t value = 1234;
-22. napi_value numValue;
-23. napi_create_int32(env, value, &numValue);
-24. // 将整数值与指定属性名关联
-25. status = napi_set_named_property(env, newObj, strKey, numValue);
-26. if (status != napi_ok) {
-27. napi_throw_error(env, nullptr, "napi_set_named_property failed");
-28. return nullptr;
-29. }
-30. // 返回设置了命名属性的对象newObj
-31. return newObj;
-32. }
+// napi_set_named_property
+static napi_value NapiSetNamedProperty(napi_env env, napi_callback_info info)
+{
+    // 接收一个ArkTS传来的参数
+    size_t argc = 1;
+    napi_value str;
+    const int32_t strLength = 32;
+    char strKey[strLength] = "";
+    napi_get_cb_info(env, info, &argc, &str, nullptr, nullptr);
+    // 获取传入参数字符串并存储在strKey中
+    size_t keyLength;
+    napi_status status = napi_get_value_string_utf8(env, str, strKey, strLength, &keyLength);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "napi_get_value_string_utf8 failed");
+        return nullptr;
+    }
+    // 创建一个新对象
+    napi_value newObj;
+    napi_create_object(env, &newObj);
+    // 设置整数值1234为属性值
+    int32_t value = 1234;
+    napi_value numValue;
+    napi_create_int32(env, value, &numValue);
+    // 将整数值与指定属性名关联
+    status = napi_set_named_property(env, newObj, strKey, numValue);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "napi_set_named_property failed");
+        return nullptr;
+    }
+    // 返回设置了命名属性的对象newObj
+    return newObj;
+}
 ```
 
 接口声明
 
-```
-1. export const napiSetNamedProperty: (key: string) => Object | undefined; // napi_set_named_property
+```typescript
+export const napiSetNamedProperty: (key: string) => Object | undefined; // napi_set_named_property
 ```
 
 ArkTS侧示例代码
 
-```
-1. // napi_set_named_property
-2. let obj = testNapi.napiSetNamedProperty('myProperty');
-3. let objAsString = JSON.stringify(obj);
-4. hilog.info(0x0000, 'testTag', 'Test Node-API napi_set_named_property: %{public}s', objAsString);
+```typescript
+// napi_set_named_property
+let obj = testNapi.napiSetNamedProperty('myProperty');
+let objAsString = JSON.stringify(obj);
+hilog.info(0x0000, 'testTag', 'Test Node-API napi_set_named_property: %{public}s', objAsString);
 ```
 
 ### napi\_get\_named\_property
@@ -464,70 +464,70 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. // napi_get_named_property
-2. static napi_value NapiGetNamedProperty(napi_env env, napi_callback_info info)
-3. {
-4. // 接收两个ArkTS传来的参数
-5. size_t argc = 2;
-6. napi_value args[2] = {nullptr};
-7. const int32_t strLength = 32;
-8. char strKey[strLength] = "";
-9. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-10. // 获取要获取的属性名
-11. size_t keyLength;
-12. napi_get_value_string_utf8(env, args[1], strKey, strLength, &keyLength);
-13. // 获取指定属性的值并存储在result中
-14. napi_value result;
-15. napi_status status = napi_get_named_property(env, args[0], strKey, &result);
-16. if (status != napi_ok) {
-17. napi_throw_error(env, nullptr, "napi_get_named_property failed");
-18. return nullptr;
-19. }
-20. // 返回result
-21. return result;
-22. }
+// napi_get_named_property
+static napi_value NapiGetNamedProperty(napi_env env, napi_callback_info info)
+{
+    // 接收两个ArkTS传来的参数
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    const int32_t strLength = 32;
+    char strKey[strLength] = "";
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 获取要获取的属性名
+    size_t keyLength;
+    napi_get_value_string_utf8(env, args[1], strKey, strLength, &keyLength);
+    // 获取指定属性的值并存储在result中
+    napi_value result;
+    napi_status status = napi_get_named_property(env, args[0], strKey, &result);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "napi_get_named_property failed");
+        return nullptr;
+    }
+    // 返回result
+    return result;
+}
 ```
 
 接口声明
 
-```
-1. export const napiGetNamedProperty: (obj: Object,
-2. key: string) => boolean | number | string | Object | undefined; // napi_get_named_property
+```typescript
+export const napiGetNamedProperty: (obj: Object,
+  key: string) => boolean | number | string | Object | undefined; // napi_get_named_property
 ```
 
 ArkTS侧示例代码
 
-```
-1. // napi_get_named_property
-2. interface NestedObj {
-3. nestedStr: string;
-4. nestedNum: number;
-5. }
+```typescript
+// napi_get_named_property
+interface NestedObj {
+  nestedStr: string;
+  nestedNum: number;
+}
 
-7. class Obj {
-8. public str: string = '';
-9. public num: number = 0;
-10. public bol: boolean = false;
-11. public nestedObj: NestedObj = { nestedStr: '', nestedNum: 0 };
-12. }
+class Obj {
+  public str: string = '';
+  public num: number = 0;
+  public bol: boolean = false;
+  public nestedObj: NestedObj = { nestedStr: '', nestedNum: 0 };
+}
 
-14. let obj: Obj = {
-15. str: 'bar',
-16. num: 42,
-17. bol: true,
-18. nestedObj: { nestedStr: 'nestedValue', nestedNum: 123 }
-19. };
-20. hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_named_property : %{public}s',
-21. testNapi.napiGetNamedProperty(obj, 'str'));
-22. hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_named_property : %{public}d',
-23. testNapi.napiGetNamedProperty(obj, 'num'));
-24. hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_named_property : %{public}s',
-25. testNapi.napiGetNamedProperty(obj, 'bol'));
-26. let nestedObj = testNapi.napiGetNamedProperty(obj, 'nestedObj');
-27. let objAsString = JSON.stringify(nestedObj);
-28. hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_named_property : %{public}s', objAsString);
-29. hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_named_property : %{public}s',
-30. testNapi.napiGetNamedProperty(obj, 'null'));
+let obj: Obj = {
+  str: 'bar',
+  num: 42,
+  bol: true,
+  nestedObj: { nestedStr: 'nestedValue', nestedNum: 123 }
+};
+hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_named_property : %{public}s',
+  testNapi.napiGetNamedProperty(obj, 'str'));
+hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_named_property : %{public}d',
+  testNapi.napiGetNamedProperty(obj, 'num'));
+hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_named_property : %{public}s',
+  testNapi.napiGetNamedProperty(obj, 'bol'));
+let nestedObj = testNapi.napiGetNamedProperty(obj, 'nestedObj');
+let objAsString = JSON.stringify(nestedObj);
+hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_named_property : %{public}s', objAsString);
+hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_named_property : %{public}s',
+  testNapi.napiGetNamedProperty(obj, 'null'));
 ```
 
 ### napi\_has\_named\_property
@@ -537,66 +537,66 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. // napi_has_named_property
-2. static napi_value NapiHasNamedProperty(napi_env env, napi_callback_info info)
-3. {
-4. // 接收两个ArkTS传来的参数
-5. size_t argc = 2;
-6. napi_value args[2] = {nullptr};
-7. const int32_t strLength = 32;
-8. char strKey[strLength] = "";
-9. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-10. // 获取要检查的属性名
-11. size_t keyLength;
-12. napi_get_value_string_utf8(env, args[1], strKey, strLength, &keyLength);
-13. // 检查对象是否具有指定命名的属性，并将结果存储在hasProperty中
-14. bool hasProperty = false;
-15. napi_status status = napi_has_named_property(env, args[0], strKey, &hasProperty);
-16. if (status != napi_ok) {
-17. napi_throw_error(env, nullptr, "napi_has_named_property failed");
-18. return nullptr;
-19. }
-20. // 将bool结果转换为napi_value并返回
-21. napi_value result;
-22. napi_get_boolean(env, hasProperty, &result);
-23. return result;
-24. }
+// napi_has_named_property
+static napi_value NapiHasNamedProperty(napi_env env, napi_callback_info info)
+{
+    // 接收两个ArkTS传来的参数
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    const int32_t strLength = 32;
+    char strKey[strLength] = "";
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 获取要检查的属性名
+    size_t keyLength;
+    napi_get_value_string_utf8(env, args[1], strKey, strLength, &keyLength);
+    // 检查对象是否具有指定命名的属性，并将结果存储在hasProperty中
+    bool hasProperty = false;
+    napi_status status = napi_has_named_property(env, args[0], strKey, &hasProperty);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "napi_has_named_property failed");
+        return nullptr;
+    }
+    // 将bool结果转换为napi_value并返回
+    napi_value result;
+    napi_get_boolean(env, hasProperty, &result);
+    return result;
+}
 ```
 
 接口声明
 
-```
-1. export const napiHasNamedProperty: (obj: Object, key: string) => boolean | undefined; // napi_has_named_property
+```typescript
+export const napiHasNamedProperty: (obj: Object, key: string) => boolean | undefined; // napi_has_named_property
 ```
 
 ArkTS侧示例代码
 
-```
-1. // napi_has_named_property
-2. interface NestedObj {
-3. nestedStr: string;
-4. nestedNum: number;
-5. }
+```typescript
+// napi_has_named_property
+interface NestedObj {
+  nestedStr: string;
+  nestedNum: number;
+}
 
-7. class Obj {
-8. public str: string = '';
-9. public num: number = 0;
-10. public bol: boolean = false;
-11. public nestedObj: NestedObj = { nestedStr: '', nestedNum: 0 };
-12. }
+class Obj {
+  public str: string = '';
+  public num: number = 0;
+  public bol: boolean = false;
+  public nestedObj: NestedObj = { nestedStr: '', nestedNum: 0 };
+}
 
-14. let obj: Obj = {
-15. str: 'bar',
-16. num: 42,
-17. bol: true,
-18. nestedObj: { nestedStr: 'nestedValue', nestedNum: 123 }
-19. };
-20. hilog.info(0x0000, 'testTag', 'Test Node-API napi_has_named_property : %{public}s',
-21. testNapi.napiHasNamedProperty(obj, 'str'));
-22. hilog.info(0x0000, 'testTag', 'Test Node-API napi_has_named_property : %{public}s',
-23. testNapi.napiHasNamedProperty(obj, 'nestedStr'));
-24. hilog.info(0x0000, 'testTag', 'Test Node-API napi_has_named_property : %{public}s',
-25. testNapi.napiHasNamedProperty(obj, 'bol'));
+let obj: Obj = {
+  str: 'bar',
+  num: 42,
+  bol: true,
+  nestedObj: { nestedStr: 'nestedValue', nestedNum: 123 }
+};
+hilog.info(0x0000, 'testTag', 'Test Node-API napi_has_named_property : %{public}s',
+  testNapi.napiHasNamedProperty(obj, 'str'));
+hilog.info(0x0000, 'testTag', 'Test Node-API napi_has_named_property : %{public}s',
+  testNapi.napiHasNamedProperty(obj, 'nestedStr'));
+hilog.info(0x0000, 'testTag', 'Test Node-API napi_has_named_property : %{public}s',
+  testNapi.napiHasNamedProperty(obj, 'bol'));
 ```
 
 ### napi\_define\_properties
@@ -606,131 +606,131 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. // napi_define_properties
-2. static napi_value DefineMethodPropertiesExample(napi_env env, napi_callback_info info)
-3. {
-4. // 创建一个int32类型的属性值
-5. int32_t propValue = 26;
-6. napi_value returnValue = nullptr;
-7. napi_create_int32(env, propValue, &returnValue);
-8. return returnValue;
-9. }
+// napi_define_properties
+static napi_value DefineMethodPropertiesExample(napi_env env, napi_callback_info info)
+{
+    // 创建一个int32类型的属性值
+    int32_t propValue = 26;
+    napi_value returnValue = nullptr;
+    napi_create_int32(env, propValue, &returnValue);
+    return returnValue;
+}
 
-11. // Getter回调函数
-12. static napi_value GetterCallback(napi_env env, napi_callback_info info)
-13. {
-14. napi_value result;
-15. const char *str = u8"World!";
-16. size_t length = strlen(str);
-17. // 创建属性的值
-18. napi_create_string_utf8(env, str, length, &result);
-19. return result;
-20. }
+// Getter回调函数
+static napi_value GetterCallback(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    const char *str = u8"World!";
+    size_t length = strlen(str);
+    // 创建属性的值
+    napi_create_string_utf8(env, str, length, &result);
+    return result;
+}
 
-22. // Setter回调函数
-23. static napi_value SetterCallback(napi_env env, napi_callback_info info)
-24. {
-25. // 获取传递给setter的参数
-26. size_t argc = 1;
-27. napi_value argv[1] = {nullptr};
-28. napi_value result;
-29. napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
-30. size_t length = 0;
-31. napi_get_value_string_utf8(env, argv[0], nullptr, 0, &length);
-32. char* buf = new char[length + 1];
-33. std::memset(buf, 0, length + 1);
-34. napi_get_value_string_utf8(env, argv[0], buf, length + 1, &length);
-35. napi_create_string_utf8(env, buf, length, &result);
-36. delete[] buf;
-37. return result;
-38. }
+// Setter回调函数
+static napi_value SetterCallback(napi_env env, napi_callback_info info)
+{
+    // 获取传递给setter的参数
+    size_t argc = 1;
+    napi_value argv[1] = {nullptr};
+    napi_value result;
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+    size_t length = 0;
+    napi_get_value_string_utf8(env, argv[0], nullptr, 0, &length);
+    char* buf = new char[length + 1];
+    std::memset(buf, 0, length + 1);
+    napi_get_value_string_utf8(env, argv[0], buf, length + 1, &length);
+    napi_create_string_utf8(env, buf, length, &result);
+    delete[] buf;
+    return result;
+}
 
-40. static napi_value DefineMethodProperties(napi_env env, napi_callback_info info)
-41. {
-42. napi_value obj;
-43. napi_create_object(env, &obj);
-44. // 在obj对象上定义了一个函数defineMethodPropertiesExample，在函数defineMethodPropertiesExample中定义了一个变量并返回，在调用obj的这个对象时可以调用这个函数
-45. napi_property_descriptor descriptor[] = {{"defineMethodPropertiesExample", nullptr, DefineMethodPropertiesExample,
-46. nullptr, nullptr, nullptr, napi_default, nullptr}};
-47. napi_define_properties(env, obj, sizeof(descriptor) / sizeof(descriptor[0]), descriptor);
-48. return obj;
-49. }
+static napi_value DefineMethodProperties(napi_env env, napi_callback_info info)
+{
+    napi_value obj;
+    napi_create_object(env, &obj);
+    // 在obj对象上定义了一个函数defineMethodPropertiesExample，在函数defineMethodPropertiesExample中定义了一个变量并返回，在调用obj的这个对象时可以调用这个函数
+    napi_property_descriptor descriptor[] = {{"defineMethodPropertiesExample", nullptr, DefineMethodPropertiesExample,
+                                              nullptr, nullptr, nullptr, napi_default, nullptr}};
+    napi_define_properties(env, obj, sizeof(descriptor) / sizeof(descriptor[0]), descriptor);
+    return obj;
+}
 
-51. static napi_value DefineStringProperties(napi_env env, napi_callback_info info)
-52. {
-53. napi_value obj;
-54. napi_create_object(env, &obj);
-55. // 创建一个string类型的属性值
-56. napi_value string_value;
-57. napi_create_string_utf8(env, "Hello!", NAPI_AUTO_LENGTH, &string_value);
-58. napi_property_descriptor descriptor[] = {
-59. {"defineStringPropertiesExample", nullptr, nullptr, nullptr, nullptr, string_value, napi_default, nullptr}};
-60. napi_define_properties(env, obj, sizeof(descriptor) / sizeof(descriptor[0]), descriptor);
-61. return obj;
-62. }
+static napi_value DefineStringProperties(napi_env env, napi_callback_info info)
+{
+    napi_value obj;
+    napi_create_object(env, &obj);
+    // 创建一个string类型的属性值
+    napi_value string_value;
+    napi_create_string_utf8(env, "Hello!", NAPI_AUTO_LENGTH, &string_value);
+    napi_property_descriptor descriptor[] = {
+        {"defineStringPropertiesExample", nullptr, nullptr, nullptr, nullptr, string_value, napi_default, nullptr}};
+    napi_define_properties(env, obj, sizeof(descriptor) / sizeof(descriptor[0]), descriptor);
+    return obj;
+}
 
-64. static napi_value CreateStringWithGetterSetter(napi_env env, napi_callback_info info)
-65. {
-66. napi_value obj;
-67. napi_create_object(env, &obj);
-68. // 定义getter函数
-69. napi_value getterFn;
-70. napi_create_function(env, nullptr, 0, GetterCallback, nullptr, &getterFn);
-71. napi_set_named_property(env, obj, "getterCallback", getterFn);
-72. // 定义setter函数
-73. napi_value setterFn;
-74. napi_create_function(env, nullptr, 0, SetterCallback, nullptr, &setterFn);
-75. napi_set_named_property(env, obj, "setterCallback", setterFn);
-76. // 定义带有getter和setter的属性
-77. napi_property_descriptor desc = {"defineGetterSetter", nullptr, nullptr, GetterCallback, SetterCallback, nullptr,
-78. napi_enumerable, nullptr};
-79. napi_define_properties(env, obj, 1, &desc);
-80. return obj;
-81. }
+static napi_value CreateStringWithGetterSetter(napi_env env, napi_callback_info info)
+{
+    napi_value obj;
+    napi_create_object(env, &obj);
+    // 定义getter函数
+    napi_value getterFn;
+    napi_create_function(env, nullptr, 0, GetterCallback, nullptr, &getterFn);
+    napi_set_named_property(env, obj, "getterCallback", getterFn);
+    // 定义setter函数
+    napi_value setterFn;
+    napi_create_function(env, nullptr, 0, SetterCallback, nullptr, &setterFn);
+    napi_set_named_property(env, obj, "setterCallback", setterFn);
+    // 定义带有getter和setter的属性
+    napi_property_descriptor desc = {"defineGetterSetter", nullptr, nullptr, GetterCallback, SetterCallback, nullptr,
+                                     napi_enumerable, nullptr};
+    napi_define_properties(env, obj, 1, &desc);
+    return obj;
+}
 ```
 
 接口声明
 
-```
-1. export class DefineMethodObj {
-2. defineMethodPropertiesExample: Function;
-3. }
+```typescript
+export class DefineMethodObj {
+  defineMethodPropertiesExample: Function;
+}
 
-5. export class DefineStringObj {
-6. defineStringPropertiesExample: string;
-7. }
+export class DefineStringObj {
+  defineStringPropertiesExample: string;
+}
 
-9. export class DefineGetterSetterObj {
-10. getterCallback: Function;
-11. setterCallback: Function;
-12. }
+export class DefineGetterSetterObj {
+  getterCallback: Function;
+  setterCallback: Function;
+}
 
-14. export const defineMethodProperties: () => DefineMethodObj; // napi_define_properties
+export const defineMethodProperties: () => DefineMethodObj; // napi_define_properties
 
-16. export const defineStringProperties: () => DefineStringObj;
+export const defineStringProperties: () => DefineStringObj;
 
-18. export const createStringWithGetterSetter: () => DefineGetterSetterObj;
+export const createStringWithGetterSetter: () => DefineGetterSetterObj;
 ```
 
 ArkTS侧示例代码
 
-```
-1. // napi_define_properties
-2. // 定义method类型的属性
-3. hilog.info(0x0000, 'testTag', 'Test Node-API define_method_properties:%{public}d',
-4. testNapi.defineMethodProperties()
-5. .defineMethodPropertiesExample());
-6. // 定义string类型的属性
-7. hilog.info(0x0000, 'testTag', 'Test Node-API define_string_properties::%{public}s ',
-8. testNapi.defineStringProperties()
-9. .defineStringPropertiesExample);
-10. // getter和setter
-11. hilog.info(0x0000, 'testTag', 'Test Node-API get::%{public}s ',
-12. testNapi.createStringWithGetterSetter()
-13. .getterCallback());
-14. hilog.info(0x0000, 'testTag', 'Test Node-API setter::%{public}s ',
-15. testNapi.createStringWithGetterSetter()
-16. .setterCallback('set data'));
+```typescript
+// napi_define_properties
+// 定义method类型的属性
+hilog.info(0x0000, 'testTag', 'Test Node-API define_method_properties:%{public}d',
+  testNapi.defineMethodProperties()
+    .defineMethodPropertiesExample());
+// 定义string类型的属性
+hilog.info(0x0000, 'testTag', 'Test Node-API define_string_properties::%{public}s ',
+  testNapi.defineStringProperties()
+    .defineStringPropertiesExample);
+// getter和setter
+hilog.info(0x0000, 'testTag', 'Test Node-API get::%{public}s ',
+  testNapi.createStringWithGetterSetter()
+    .getterCallback());
+hilog.info(0x0000, 'testTag', 'Test Node-API setter::%{public}s ',
+  testNapi.createStringWithGetterSetter()
+    .setterCallback('set data'));
 ```
 
 ### napi\_get\_all\_property\_names
@@ -740,61 +740,61 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. // napi_get_all_property_names
-2. static napi_value GetAllPropertyNames(napi_env env, napi_callback_info info)
-3. {
-4. // 传入一个参数
-5. size_t argc = 1;
-6. napi_value args[1] = {nullptr};
-7. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+// napi_get_all_property_names
+static napi_value GetAllPropertyNames(napi_env env, napi_callback_info info)
+{
+    // 传入一个参数
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
-9. // 获取给定对象的所有属性名称
-10. napi_value result;
-11. napi_status status = napi_get_all_property_names(env, args[0], napi_key_own_only, napi_key_writable,
-12. napi_key_numbers_to_strings, &result);
-13. // 如果获取属性名失败，抛出一个错误
-14. if (status != napi_ok) {
-15. napi_throw_error(env, nullptr, "Node-API napi_get_all_property_names fail");
-16. return nullptr;
-17. }
+    // 获取给定对象的所有属性名称
+    napi_value result;
+    napi_status status = napi_get_all_property_names(env, args[0], napi_key_own_only, napi_key_writable,
+                                                     napi_key_numbers_to_strings, &result);
+    // 如果获取属性名失败，抛出一个错误
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Node-API napi_get_all_property_names fail");
+        return nullptr;
+    }
 
-19. return result;
-20. }
+    return result;
+}
 ```
 
 接口声明
 
-```
-1. export const getAllPropertyNames: (obj: Object) => Array<string> | undefined; // napi_get_all_property_names
+```typescript
+export const getAllPropertyNames: (obj: Object) => Array<string> | undefined; // napi_get_all_property_names
 ```
 
 ArkTS侧示例代码
 
-```
-1. // napi_get_all_property_names
-2. try {
-3. class Obj {
-4. public data: number = 0
-5. public message: string = ''
-6. }
+```typescript
+// napi_get_all_property_names
+try {
+  class Obj {
+    public data: number = 0
+    public message: string = ''
+  }
 
-8. let obj: Obj = { data: 0, message: 'hello world' };
-9. let propertyNames = testNapi.getAllPropertyNames(obj);
-10. hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_all_property_names: %{public}s',
-11. JSON.stringify(propertyNames));
-12. // ...
-13. } catch (error) {
-14. hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_all_property_names error: %{public}s',
-15. error.message);
-16. // ...
-17. }
+  let obj: Obj = { data: 0, message: 'hello world' };
+  let propertyNames = testNapi.getAllPropertyNames(obj);
+  hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_all_property_names: %{public}s',
+    JSON.stringify(propertyNames));
+  // ...
+} catch (error) {
+  hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_all_property_names error: %{public}s',
+    error.message);
+  // ...
+}
 ```
 
 以上代码如果要在native cpp中打印日志，需在CMakeLists.txt文件中添加以下配置信息（并添加头文件：#include "hilog/log.h"）：
 
-```
-1. // CMakeLists.txt
-2. add_definitions( "-DLOG_DOMAIN=0xd0d0" )
-3. add_definitions( "-DLOG_TAG=\"testTag\"" )
-4. target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
+```text
+// CMakeLists.txt
+add_definitions( "-DLOG_DOMAIN=0xd0d0" )
+add_definitions( "-DLOG_TAG=\"testTag\"" )
+target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
 ```

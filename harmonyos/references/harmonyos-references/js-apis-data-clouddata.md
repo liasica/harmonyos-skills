@@ -3,32 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.data.cloudData (端云服务)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.cloudData (端云服务)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:22+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:9170ea17d13cc85a0d63196d08f0e369103fbe228c880b8a22bdd10cd735b382
+scraped_at: 2026-09-02T15:00:41+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3e5b67fb1b23cb1d54213b0c517df39df416f885bc5a0b4de24eeeafd60d7cd8
 ---
 
-端云服务提供端云协同、端云共享和端云策略。
+端云服务提供端云策略能力。
 
-端云协同提供结构化数据（RDB Store）端云同步的能力。即：云作为数据的中心节点，通过与云的数据同步，实现数据云备份、同账号设备间的数据一致性。
+端云策略提供端云同步策略配置的能力。
 
-端云配置提供端云同步策略配置的能力。
-
-说明
+**说明** 
 
 * 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { cloudData } from '@kit.ArkData';
+```ts
+import { cloudData } from '@kit.ArkData';
 ```
 
 ## StrategyType
-
-PhonePC/2in1TabletTV
 
 云同步策略类型枚举。
 
@@ -40,8 +34,6 @@ PhonePC/2in1TabletTV
 
 ## NetWorkStrategy
 
-PhonePC/2in1TabletTV
-
 网络策略参数枚举。
 
 **系统能力：** SystemCapability.DistributedDataManager.CloudSync.Client
@@ -51,9 +43,39 @@ PhonePC/2in1TabletTV
 | WIFI | 1 | WIFI网络策略。 |
 | CELLULAR | 2 | 蜂窝网络策略。 |
 
-## cloudData.setCloudStrategy
+## AutoSyncTriggerMode
 
-PhonePC/2in1TabletTV
+自动同步触发模式枚举。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.DistributedDataManager.CloudSync.Client
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| ACCOUNT\_LOGIN | 0 | 账号登录触发模式。 |
+| CLOUD\_SWITCH\_ON | 1 | 同步开关触发模式。 |
+| NETWORK\_RECOVER | 2 | 网络恢复后的触发模式。 |
+| CLOUD\_DATA\_CHANGE | 3 | 云端数据变更触发模式。 |
+| USER\_CHANGE | 4 | 用户变更触发模式。 |
+
+## AutoSyncTriggerInfo
+
+自动同步触发信息。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.DistributedDataManager.CloudSync.Client
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| mode | [AutoSyncTriggerMode](js-apis-data-clouddata.md#autosynctriggermode) | 否 | 否 | 自动同步触发模式。 |
+
+## cloudData.setCloudStrategy
 
 setCloudStrategy(strategy: StrategyType, param?: Array<commonType.ValueType>): Promise<void>
 
@@ -66,13 +88,13 @@ setCloudStrategy(strategy: StrategyType, param?: Array<commonType.ValueType>): P
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | strategy | [StrategyType](js-apis-data-clouddata.md#strategytype) | 是 | 配置的策略类型。 |
-| param | Array<[commonType.ValueType](js-apis-data-commontype.md#valuetype)> | 否 | 策略参数。当前仅支持设置网络策略，默认支持WIFI和蜂窝网络策略。 |
+| param | Array<[commonType.ValueType](js-apis-data-commontype.md#valuetype)> | 否 | 策略参数，类型为Array<commonType.ValueType>，实际传入值为[NetWorkStrategy](js-apis-data-clouddata.md#networkstrategy)枚举值，取值范围为WIFI和CELLULAR，默认支持WIFI和蜂窝网络策略。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -83,15 +105,94 @@ setCloudStrategy(strategy: StrategyType, param?: Array<commonType.ValueType>): P
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 801 | Capability not supported. |
 
-**样例：**
+**示例：**
 
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+// 仅WIFI同步
+cloudData.setCloudStrategy(cloudData.StrategyType.NETWORK, [cloudData.NetWorkStrategy.WIFI]).then(() => {
+  console.info('Succeeded in setting the cloud strategy');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to set cloud strategy. Code: ${err.code}, message: ${err.message}`);
+});
 ```
-1. import { BusinessError } from '@kit.BasicServicesKit';
 
-3. // 仅WIFI同步
-4. cloudData.setCloudStrategy(cloudData.StrategyType.NETWORK, [cloudData.NetWorkStrategy.WIFI]).then(() => {
-5. console.info('Succeeded in setting the cloud strategy');
-6. }).catch((err: BusinessError) => {
-7. console.error(`Failed to set cloud strategy. Code: ${err.code}, message: ${err.message}`);
-8. });
+## cloudData.onAutoSyncTrigger
+
+onAutoSyncTrigger(observer: Callback<AutoSyncTriggerInfo>): void
+
+在已打开端云同步且应用关闭自动同步的条件下，注册自动同步触发事件通知。当满足自动触发条件时，回调函数会被调用。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.DistributedDataManager.CloudSync.Client
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| observer | Callback<[AutoSyncTriggerInfo](js-apis-data-clouddata.md#autosynctriggerinfo)> | 是 | 回调函数，返回自动同步触发信息。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+
+**示例：**
+
+```ts
+function autoSyncTriggerObserver(info: cloudData.AutoSyncTriggerInfo) {
+  console.info(`Auto sync triggered, mode: ${info.mode}`);
+}
+
+cloudData.onAutoSyncTrigger(autoSyncTriggerObserver);
+```
+
+## cloudData.offAutoSyncTrigger
+
+offAutoSyncTrigger(observer?: Callback<AutoSyncTriggerInfo>): void
+
+取消订阅自动同步触发事件通知。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.DistributedDataManager.CloudSync.Client
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| observer | Callback<[AutoSyncTriggerInfo](js-apis-data-clouddata.md#autosynctriggerinfo)> | 否 | 回调函数。 若传入observer，则取消指定回调函数的订阅；若不传入observer，则取消所有已注册的订阅。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+
+**示例：**
+
+```ts
+function autoSyncTriggerObserver(info: cloudData.AutoSyncTriggerInfo) {
+  console.info(`Auto sync triggered, mode: ${info.mode}`);
+}
+
+// 订阅
+cloudData.onAutoSyncTrigger(autoSyncTriggerObserver);
+
+// 取消指定订阅
+cloudData.offAutoSyncTrigger(autoSyncTriggerObserver);
+
+// 取消所有订阅
+cloudData.offAutoSyncTrigger();
 ```

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 概述
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 获取用户信息 > 概述
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:12+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:20:34+08:00
+doc_updated_at: 2026-08-29
 content_hash: sha256:262b911fcde29b7b3536bcb47fdeadf7af53c3b726b3811acf38b767909f77f2
 ---
 

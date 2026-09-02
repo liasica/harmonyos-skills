@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 使用TSan检测线程问题
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 线程并发类问题检测 > 使用TSan检测线程问题
 category: best-practices
-scraped_at: 2026-04-29T14:14:02+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:894f22e417fe7cb169d14ffb36260b5c46c066947befe92c0723ecf278a1591d
+scraped_at: 2026-09-02T15:03:22+08:00
+doc_updated_at: 2026-05-30
+content_hash: sha256:49f716ffe4ad48ca68f76453ca888e27420df42e535a79176aa7e09063bca121
 ---
 
 ## 原理概述
@@ -60,17 +60,17 @@ TSan能够检测出如下问题：
 
 1. 点击**Run > Edit Configurations >** **Diagnostics**，勾选**Thread Sanitizer**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/PzrgVPGoR6G5iywiUD8nsQ/zh-cn_image_0000002370405548.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/DP_5tqLDRlKMUbDVKVp5Yw/zh-cn_image_0000002370405548.png)
 2. 如果有引用本地library，需在library模块的build-profile.json5文件中，配置arguments字段值为“-DOHOS\_ENABLE\_TSAN=ON”，表示以TSan模式编译so文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/AvbhKhfKTqCuhRQ0OjBEdA/zh-cn_image_0000002404045261.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/jHBF72PYRZ2tsoKtd13UEQ/zh-cn_image_0000002404045261.png)
 
 **流水线场景**
 
 在hvigorw命令后加上**ohos-debug-tsan=true**的选项，执行hvigorw命令，更多options参考[命令行构建工具（hvigorw）](../harmonyos-guides/ide-hvigor-commandline.md)。
 
-```
-1. hvigorw [taskNames...] ohos-debug-tsan=true  <options>
+```screen
+hvigorw [taskNames...] ohos-debug-tsan=true  <options>
 ```
 
 同上，如果有引用本地library，需在library模块的build-profile.json5文件中，配置arguments字段值为“-DOHOS\_ENABLE\_TSAN=ON”，表示以TSAN模式编译so文件。
@@ -81,19 +81,19 @@ TSan能够检测出如下问题：
 
 1. 修改工程目录下AppScope/app.json5，添加TSan配置开关。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/VxmqiPQnRPSEzFeDzjudQA/zh-cn_image_0000002370565432.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/r74pfSXhRYOYnXT5r3ESKQ/zh-cn_image_0000002370565432.png)
 2. 设置模块级构建TSan插桩。
 
    在需要使能TSan的模块中，通过添加构建参数开启TSan检测插桩，在对应模块的模块级build-profile.json5中添加命令参数：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/s1yk25DORGm9MWfQRwkuiQ/zh-cn_image_0000002404125101.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/c18DFHpDSqOhingzbPPVJg/zh-cn_image_0000002404125101.png)
 
 **流水线场景**
 
 在hvigorw命令后加上**ohos-debug-tsan=true**的选项，执行hvigorw命令，更多options参考[命令行构建工具（hvigorw）](../harmonyos-guides/ide-hvigor-commandline.md)。
 
-```
-1. hvigorw [taskNames...] ohos-debug-tsan=true  <options>
+```screen
+hvigorw [taskNames...] ohos-debug-tsan=true  <options>
 ```
 
 同上，如果有引用本地library，需在library模块的build-profile.json5文件中，配置arguments字段值为“-DOHOS\_ENABLE\_TSAN=ON”，表示以TSAN模式编译so文件。
@@ -108,33 +108,31 @@ TSan能够检测出如下问题：
 
 **错误代码实例**
 
+```cpp
+int Global = 12;
+
+void Set1() {
+    *(char *)&Global = 4;
+}
+
+void Set2() {
+    Global=43;
+}
+
+void *Thread1(void *x){
+    Set1();
+    return x;
+}
+
+static napi_value Add(napi_env env, napi_callback_info info){
+    ...
+    pthread_t t;
+    pthread_create(&t, NULL, Thread1, NULL);
+    Set2();
+    pthread_join(t, NULL);
+    ...
+}
 ```
-1. int Global = 12;
-
-4. void Set1() {
-5. *(char *)&Global = 4;
-6. }
-
-9. void Set2() {
-10. Global=43;
-11. }
-
-14. void *Thread1(void *x){
-15. Set1();
-16. return x;
-17. }
-
-20. static napi_value Add(napi_env env, napi_callback_info info){
-21. ...
-22. pthread_t t;
-23. pthread_create(&t, NULL, Thread1, NULL);
-24. Set2();
-25. pthread_join(t, NULL);
-26. ...
-27. }
-```
-
-[UseTSANToDetectThreadingIssues.cpp](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/bacbf85d70037d5aad5457a63ce3cb1e9bce283b/ThreadIssueDetection/entry/src/main/ets/cpp/UseTSANToDetectThreadingIssues.cpp#L6-L32)
 
 **影响**
 
@@ -146,7 +144,7 @@ TSan能够检测出如下问题：
 
 如果有工程代码，直接开启TSan检测，debug模式运行后复现该错误，可以触发TSan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/TADj1Im8RB6T7nt6lNxbIQ/zh-cn_image_0000002537311043.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/Yx-u9u_NQsKwCv3_d6_1cw/zh-cn_image_0000002537311043.png)
 
 **修改方法**
 
@@ -164,57 +162,55 @@ TSan能够检测出如下问题：
 
 **错误代码实例**
 
+```cpp
+#include <semaphore.h>
+#include <pthread.h>
+
+struct A {
+  A() {
+    sem_init(&sem_, 0, 0);
+  }
+  virtual void F() {
+  }
+  void Done() {
+    sem_post(&sem_);
+  }
+  virtual ~A() {
+    sem_wait(&sem_);
+    sem_destroy(&sem_);
+  }
+  sem_t sem_;
+};
+
+struct B : A {
+  virtual void F() {
+  }
+  virtual ~B() { }
+};
+
+static A *obj = new B;
+
+void *Thread1(void *x) {
+  obj->F();
+  obj->Done();
+  return NULL;
+}
+
+void *Thread2(void *x) {
+  delete obj;
+  return NULL;
+}
+
+static napi_value Add(napi_env env, napi_callback_info info){
+    ...
+    pthread_t t[2];
+    pthread_create(&t[0], NULL, Thread1, NULL);
+    pthread_create(&t[1], NULL, Thread2, NULL);
+    pthread_join(t[0], NULL);
+    pthread_join(t[1], NULL);
+    ...
+}
 ```
-1. #include <semaphore.h>
-2. #include <pthread.h>
-
-5. struct A {
-6. A() {
-7. sem_init(&sem_, 0, 0);
-8. }
-9. virtual void F() {
-10. }
-11. void Done() {
-12. sem_post(&sem_);
-13. }
-14. virtual ~A() {
-15. sem_wait(&sem_);
-16. sem_destroy(&sem_);
-17. }
-18. sem_t sem_;
-19. };
-
-22. struct B : A {
-23. virtual void F() {
-24. }
-25. virtual ~B() { }
-26. };
-
-29. static A *obj = new B;
-
-32. void *Thread1(void *x) {
-33. obj->F();
-34. obj->Done();
-35. return NULL;
-36. }
-
-39. void *Thread2(void *x) {
-40. delete obj;
-41. return NULL;
-42. }
-
-45. static napi_value Add(napi_env env, napi_callback_info info){
-46. ...
-47. pthread_t t[2];
-48. pthread_create(&t[0], NULL, Thread1, NULL);
-49. pthread_create(&t[1], NULL, Thread2, NULL);
-50. pthread_join(t[0], NULL);
-51. pthread_join(t[1], NULL);
-52. ...
-53. }
-```
-
-[UseTSANToDetectThreadingIssues.cpp](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/bacbf85d70037d5aad5457a63ce3cb1e9bce283b/ThreadIssueDetection/entry/src/main/ets/cpp/UseTSANToDetectThreadingIssues.cpp#L36-L88)
 
 **影响**
 
@@ -226,7 +222,7 @@ TSan能够检测出如下问题：
 
 如果有工程代码，直接开启TSan检测，debug模式运行后复现该错误，可以触发TSan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/wGlc0JhtSp2cDeEUs-oHaw/zh-cn_image_0000002537431253.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/tH_9D9xfRquEfJZYWxlU-A/zh-cn_image_0000002537431253.png)
 
 **修改方法**
 
@@ -246,40 +242,38 @@ TSan能够检测出如下问题：
 
 **错误代码实例**
 
+```cpp
+#include <pthread.h>
+
+int *mem;
+pthread_mutex_t mtx;
+
+void *Thread1(void *x) {
+  pthread_mutex_lock(&mtx);
+  free(mem);
+  pthread_mutex_unlock(&mtx);
+  return NULL;
+}
+
+__attribute__((noinline)) void *Thread2(void *x) {
+  pthread_mutex_lock(&mtx);
+  mem[0] = 42;
+  pthread_mutex_unlock(&mtx);
+  return NULL;
+}
+
+static napi_value Add(napi_env env, napi_callback_info info){
+    ...
+    mem = (int*)malloc(100);
+    pthread_mutex_init(&mtx, 0);
+    pthread_t t;
+    pthread_create(&t, NULL, Thread1, NULL);
+    Thread2(0);
+    pthread_join(t, NULL);
+    pthread_mutex_destroy(&mtx);
+    ...
+}
 ```
-1. #include <pthread.h>
-
-4. int *mem;
-5. pthread_mutex_t mtx;
-
-8. void *Thread1(void *x) {
-9. pthread_mutex_lock(&mtx);
-10. free(mem);
-11. pthread_mutex_unlock(&mtx);
-12. return NULL;
-13. }
-
-16. __attribute__((noinline)) void *Thread2(void *x) {
-17. pthread_mutex_lock(&mtx);
-18. mem[0] = 42;
-19. pthread_mutex_unlock(&mtx);
-20. return NULL;
-21. }
-
-24. static napi_value Add(napi_env env, napi_callback_info info){
-25. ...
-26. mem = (int*)malloc(100);
-27. pthread_mutex_init(&mtx, 0);
-28. pthread_t t;
-29. pthread_create(&t, NULL, Thread1, NULL);
-30. Thread2(0);
-31. pthread_join(t, NULL);
-32. pthread_mutex_destroy(&mtx);
-33. ...
-34. }
-```
-
-[UseTSANToDetectThreadingIssues.cpp](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/bacbf85d70037d5aad5457a63ce3cb1e9bce283b/ThreadIssueDetection/entry/src/main/ets/cpp/UseTSANToDetectThreadingIssues.cpp#L92-L125)
 
 **影响**
 
@@ -291,7 +285,7 @@ TSan能够检测出如下问题：
 
 如果有工程代码，直接开启TSan检测，debug模式运行后复现该错误，可以触发TSan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/lYJZZ5qmSQykB-VRUFV2CQ/zh-cn_image_0000002537431429.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/xa6ty13JR0iM1GpH6p_g9A/zh-cn_image_0000002537431429.png)
 
 **修改方法**
 
@@ -311,47 +305,45 @@ TSan能够检测出如下问题：
 
 **错误代码实例**
 
+```cpp
+#include "napi/native_api.h"
+#include <signal.h>
+#include <sys/types.h>
+#include <errno.h>
+#include <malloc.h>
+#include <pthread.h>
+
+static void MyHandler(int, siginfo_t *s, void *c) {
+  errno = 1;
+  done = 1;
+}
+
+static void* sendsignal(void *p) {
+  pthread_kill(mainth, SIGPROF);
+  return 0;
+}
+
+static __attribute__((noinline)) void loop() {
+  while (done == 0) {
+    volatile char *p = (char*)malloc(1);
+    p[0] = 0;
+    free((void*)p);
+  }
+}
+
+static napi_value Add(napi_env env, napi_callback_info info){
+    ...
+    mainth = pthread_self();
+    struct sigaction act = {};
+    act.sa_sigaction = &MyHandler;
+    sigaction(SIGPROF, &act, 0);
+    pthread_t th;
+    pthread_create(&th, 0, sendsignal, 0);
+    loop();
+    pthread_join(th, 0);
+    ...
+}
 ```
-1. #include "napi/native_api.h"
-2. #include <signal.h>
-3. #include <sys/types.h>
-4. #include <errno.h>
-5. #include <malloc.h>
-6. #include <pthread.h>
-
-9. static void MyHandler(int, siginfo_t *s, void *c) {
-10. errno = 1;
-11. done = 1;
-12. }
-
-15. static void* sendsignal(void *p) {
-16. pthread_kill(mainth, SIGPROF);
-17. return 0;
-18. }
-
-21. static __attribute__((noinline)) void loop() {
-22. while (done == 0) {
-23. volatile char *p = (char*)malloc(1);
-24. p[0] = 0;
-25. free((void*)p);
-26. }
-27. }
-
-30. static napi_value Add(napi_env env, napi_callback_info info){
-31. ...
-32. mainth = pthread_self();
-33. struct sigaction act = {};
-34. act.sa_sigaction = &MyHandler;
-35. sigaction(SIGPROF, &act, 0);
-36. pthread_t th;
-37. pthread_create(&th, 0, sendsignal, 0);
-38. loop();
-39. pthread_join(th, 0);
-40. ...
-41. }
-```
-
-[UseTSANToDetectThreadingIssues.cpp](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/bacbf85d70037d5aad5457a63ce3cb1e9bce283b/ThreadIssueDetection/entry/src/main/ets/cpp/UseTSANToDetectThreadingIssues.cpp#L129-L169)
 
 **影响**
 
@@ -363,15 +355,15 @@ TSan能够检测出如下问题：
 
 如果有工程代码，直接开启TSan检测，debug模式运行后复现该错误，可以触发TSan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/vw6Dh4DnQc6NkZHIY7CyHw/zh-cn_image_0000002505631712.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/YC82rnc-Q42DEnM_UbGdKQ/zh-cn_image_0000002505631712.png)
 
 **修改方法**
 
-不要在信号处理函数中修改error变量
+不要在信号处理函数中修改errno变量
 
 **推荐建议**
 
-将MyHandler中的error赋值语句去掉
+将MyHandler中的errno赋值语句去掉
 
 ### signal unsafe call inside of a signal
 
@@ -381,39 +373,37 @@ TSan能够检测出如下问题：
 
 **错误代码实例**
 
+```cpp
+#include "napi/native_api.h"
+#include <signal.h>
+#include <sys/types.h>
+#include <malloc.h>
+#include <pthread.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <stdio.h> 
+
+pthread_t mainth;
+volatile int done;
+
+static void handler(int, siginfo_t*, void*) {
+  volatile char *p = (char*)malloc(1);
+  p[0] = 0;
+  free((void*)p);
+}
+
+static napi_value Add(napi_env env, napi_callback_info info)
+{
+    ...
+    struct sigaction act = {};
+    act.sa_sigaction = &handler;
+    sigaction(SIGPROF, &act, 0);
+    kill(getpid(), SIGPROF);
+    sleep(1); 
+    fprintf(stderr, "DONE\n");
+    ...
+}
 ```
-1. #include "napi/native_api.h"
-2. #include <signal.h>
-3. #include <sys/types.h>
-4. #include <malloc.h>
-5. #include <pthread.h>
-6. #include <sys/types.h>
-7. #include <unistd.h>
-8. #include <stdio.h>
-
-11. pthread_t mainth;
-12. volatile int done;
-
-15. static void handler(int, siginfo_t*, void*) {
-16. volatile char *p = (char*)malloc(1);
-17. p[0] = 0;
-18. free((void*)p);
-19. }
-
-22. static napi_value Add(napi_env env, napi_callback_info info)
-23. {
-24. ...
-25. struct sigaction act = {};
-26. act.sa_sigaction = &handler;
-27. sigaction(SIGPROF, &act, 0);
-28. kill(getpid(), SIGPROF);
-29. sleep(1);
-30. fprintf(stderr, "DONE\n");
-31. ...
-32. }
-```
-
-[UseTSANToDetectThreadingIssues.cpp](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/bacbf85d70037d5aad5457a63ce3cb1e9bce283b/ThreadIssueDetection/entry/src/main/ets/cpp/UseTSANToDetectThreadingIssues.cpp#L173-L204)
 
 **影响**
 
@@ -425,7 +415,7 @@ TSan能够检测出如下问题：
 
 如果有工程代码，直接开启TSan检测，debug模式运行后复现该错误，可以触发TSan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置**。**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/mvUVfkP-RFm9oHXKUyzgYA/zh-cn_image_0000002537311831.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/k9itaMocSru1lhNIB-Zb7w/zh-cn_image_0000002537311831.png)
 
 **修改方法**
 
@@ -445,28 +435,26 @@ TSan能够检测出如下问题：
 
 **错误代码实例**
 
+```cpp
+#include "napi/native_api.h"
+#include <pthread.h>
+#include <iostream>
+
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+
+void* unlocker(void* arg) {
+    pthread_mutex_unlock(&mutex);
+    return nullptr;
+}
+
+static napi_value Add(napi_env env, napi_callback_info info){
+    ...
+    pthread_t tid;
+    pthread_create(&tid, nullptr, unlocker, nullptr);
+    pthread_join(tid, nullptr);
+    ...
+}
 ```
-1. #include "napi/native_api.h"
-2. #include <pthread.h>
-3. #include <iostream>
-
-6. pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
-
-9. void* unlocker(void* arg) {
-10. pthread_mutex_unlock(&mutex);
-11. return nullptr;
-12. }
-
-15. static napi_value Add(napi_env env, napi_callback_info info){
-16. ...
-17. pthread_t tid;
-18. pthread_create(&tid, nullptr, unlocker, nullptr);
-19. pthread_join(tid, nullptr);
-20. ...
-21. }
-```
-
-[UseTSANToDetectThreadingIssues.cpp](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/bacbf85d70037d5aad5457a63ce3cb1e9bce283b/ThreadIssueDetection/entry/src/main/ets/cpp/UseTSANToDetectThreadingIssues.cpp#L208-L228)
 
 **影响**
 
@@ -478,7 +466,7 @@ TSan能够检测出如下问题：
 
 如果有工程代码，直接开启TSan检测，debug模式运行后复现该错误，可以触发TSan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/ASji8YXvQ1i0SZbwsJM5Gw/zh-cn_image_0000002505472236.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/Vg1rlxElRdO0g40WlE8H1g/zh-cn_image_0000002505472236.png)
 
 **修改方法**
 

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-erro
 title: error_code.h
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > C API > 头文件 > error_code.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:52+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:e5949dcf7629cb94d3fb20a2753e39c13126b7ffca53e0f6dc8e8670c7c2ef3a
+scraped_at: 2026-09-02T15:01:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:cdc858e5fc47bce8239d088450d6eea6ad36b5f0a0074f22f0c9d2b031813f32
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供文件管理模块的错误码定义。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,14 +32,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### FileManagement\_ErrCode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum FileManagement_ErrCode
+```c
+enum FileManagement_ErrCode
 ```
 
 **描述**

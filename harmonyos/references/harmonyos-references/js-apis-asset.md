@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.security.asset (关键资产存储服务)"
 breadcrumb: API参考 > 系统 > 安全 > Asset Store Kit（关键资产存储服务） > ArkTS API > @ohos.security.asset (关键资产存储服务)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:57:16+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:ebdd8cc7375088a1500ddb19dbccf9b59c34a38bc37971e501b7f6db2cb59ca6
+scraped_at: 2026-09-02T15:01:40+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5ba3ba851dbf43e8a0c5fa389ccde91e62748e33c1783094ad3b0341bc93e0ad
 ---
 
 关键资产存储服务提供了用户短敏感数据的安全存储及管理能力。其中，短敏感数据可以是密码类（账号/密码）、Token类（应用凭据）、其他关键明文（如银行卡号）等长度较短的用户敏感数据。
 
-说明
+**说明** 
 
 本模块首批接口从API version 11 开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { asset } from '@kit.AssetStoreKit';
+```typescript
+import { asset } from '@kit.AssetStoreKit';
 ```
 
 ## asset.add
-
-PhonePC/2in1TabletTVWearable
 
 add(attributes: AssetMap): Promise<void>
 
@@ -72,28 +68,26 @@ add(attributes: AssetMap): Promise<void>
 
 **示例：**
 
-```
-1. import { asset } from '@kit.AssetStoreKit';
-2. import { util } from '@kit.ArkTS';
+```typescript
+import { asset } from '@kit.AssetStoreKit';
+import { util } from '@kit.ArkTS';
 
-4. function stringToArray(str: string): Uint8Array {
-5. let textEncoder = new util.TextEncoder();
-6. return textEncoder.encodeInto(str);
-7. }
+function stringToArray(str: string): Uint8Array {
+  let textEncoder = new util.TextEncoder();
+  return textEncoder.encodeInto(str);
+}
 
-9. let attr: asset.AssetMap = new Map();
-10. attr.set(asset.Tag.SECRET, stringToArray('demo_pwd'));
-11. attr.set(asset.Tag.ALIAS, stringToArray('demo_alias'));
-12. attr.set(asset.Tag.ACCESSIBILITY, asset.Accessibility.DEVICE_FIRST_UNLOCKED);
-13. attr.set(asset.Tag.DATA_LABEL_NORMAL_1, stringToArray('demo_label'));
-14. asset.add(attr).then(() => {
-15. console.info(`Succeeded in adding Asset.`);
-16. });
+let attr: asset.AssetMap = new Map();
+attr.set(asset.Tag.SECRET, stringToArray('demo_pwd'));
+attr.set(asset.Tag.ALIAS, stringToArray('demo_alias'));
+attr.set(asset.Tag.ACCESSIBILITY, asset.Accessibility.DEVICE_FIRST_UNLOCKED);
+attr.set(asset.Tag.DATA_LABEL_NORMAL_1, stringToArray('demo_label'));
+asset.add(attr).then(() => {
+  console.info(`Succeeded in adding Asset.`);
+});
 ```
 
 ## asset.addSync12+
-
-PhonePC/2in1TabletTVWearable
 
 addSync(attributes: AssetMap): void
 
@@ -135,26 +129,101 @@ addSync(attributes: AssetMap): void
 
 **示例：**
 
+```typescript
+import { asset } from '@kit.AssetStoreKit';
+import { util } from '@kit.ArkTS';
+
+function stringToArray(str: string): Uint8Array {
+  let textEncoder = new util.TextEncoder();
+  return textEncoder.encodeInto(str);
+}
+
+let attr: asset.AssetMap = new Map();
+attr.set(asset.Tag.SECRET, stringToArray('demo_pwd'));
+attr.set(asset.Tag.ALIAS, stringToArray('demo_alias'));
+attr.set(asset.Tag.ACCESSIBILITY, asset.Accessibility.DEVICE_FIRST_UNLOCKED);
+attr.set(asset.Tag.DATA_LABEL_NORMAL_1, stringToArray('demo_label'));
+asset.addSync(attr);
 ```
-1. import { asset } from '@kit.AssetStoreKit';
-2. import { util } from '@kit.ArkTS';
 
-4. function stringToArray(str: string): Uint8Array {
-5. let textEncoder = new util.TextEncoder();
-6. return textEncoder.encodeInto(str);
-7. }
+## asset.batchAdd
 
-9. let attr: asset.AssetMap = new Map();
-10. attr.set(asset.Tag.SECRET, stringToArray('demo_pwd'));
-11. attr.set(asset.Tag.ALIAS, stringToArray('demo_alias'));
-12. attr.set(asset.Tag.ACCESSIBILITY, asset.Accessibility.DEVICE_FIRST_UNLOCKED);
-13. attr.set(asset.Tag.DATA_LABEL_NORMAL_1, stringToArray('demo_label'));
-14. asset.addSync(attr);
+batchAdd(attributesArray: Array<AssetMap>): Promise<BatchResult>
+
+批量新增关键资产。使用Promise异步回调。
+
+设置[Tag.IS\_PERSISTENT](js-apis-asset.md#tag)属性时，需要申请ohos.permission.STORE\_PERSISTENT\_DATA权限，申请方式请参考[声明权限](../harmonyos-guides/declare-permissions.md)。
+
+批量新增的关键资产必须具有相同的[Tag.GROUP\_ID](js-apis-asset.md#tag)和[Tag.REQUIRE\_ATTR\_ENCRYPTED](js-apis-asset.md#tag)属性。
+
+批量新增的关键资产数量最大值为100。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.Security.Asset
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| attributesArray | Array<[AssetMap](js-apis-asset.md#assetmap)> | 是 | 待新增关键资产的属性集合数组，包括关键资产明文、访问控制属性、自定义数据等。数组长度最大值为100。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[BatchResult](js-apis-asset.md#batchresult)> | Promise对象，返回批量操作结果，包含失败关键资产的错误信息。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[关键资产存储服务错误码](errorcode-asset.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 24000001 | The ASSET service is unavailable. |
+| 24000005 | The screen lock status does not match. |
+| 24000006 | Insufficient memory. |
+| 24000007 | The asset is corrupted. |
+| 24000008 | The database operation failed. |
+| 24000009 | The cryptography operation failed. |
+| 24000010 | IPC failed. |
+| 24000011 | Calling the Bundle Manager service failed. |
+| 24000012 | Calling the OS Account service failed. |
+| 24000013 | Calling the Access Token service failed. |
+| 24000014 | The file operation failed. |
+| 24000015 | Getting the system time failed. |
+| 24000019 | Each value of [Tag.GROUP\_ID](js-apis-asset.md#tag) and [Tag.REQUIRE\_ATTR\_ENCRYPTED](js-apis-asset.md#tag) in the array is not consistent. |
+
+**示例：**
+
+```typescript
+import { asset } from '@kit.AssetStoreKit';
+import { util } from '@kit.ArkTS';
+
+function stringToArray(str: string): Uint8Array {
+  let textEncoder = new util.TextEncoder();
+  return textEncoder.encodeInto(str);
+}
+
+let attributesArray: Array<asset.AssetMap> = [];
+let attr1: asset.AssetMap = new Map();
+attr1.set(asset.Tag.SECRET, stringToArray('demo_pwd1'));
+attr1.set(asset.Tag.ALIAS, stringToArray('demo_alias1'));
+attr1.set(asset.Tag.ACCESSIBILITY, asset.Accessibility.DEVICE_FIRST_UNLOCKED);
+attributesArray.push(attr1);
+
+let attr2: asset.AssetMap = new Map();
+attr2.set(asset.Tag.SECRET, stringToArray('demo_pwd2'));
+attr2.set(asset.Tag.ALIAS, stringToArray('demo_alias2'));
+attr2.set(asset.Tag.ACCESSIBILITY, asset.Accessibility.DEVICE_FIRST_UNLOCKED);
+attributesArray.push(attr2);
+
+asset.batchAdd(attributesArray).then((res: asset.BatchResult) => {
+  console.info(`Succeeded in batch adding Asset, failedCount: ${res.failedCount}`);
+});
 ```
 
 ## asset.remove
-
-PhonePC/2in1TabletTVWearable
 
 remove(query: AssetMap): Promise<void>
 
@@ -196,25 +265,23 @@ remove(query: AssetMap): Promise<void>
 
 **示例：**
 
-```
-1. import { asset } from '@kit.AssetStoreKit';
-2. import { util } from '@kit.ArkTS';
+```typescript
+import { asset } from '@kit.AssetStoreKit';
+import { util } from '@kit.ArkTS';
 
-4. function stringToArray(str: string): Uint8Array {
-5. let textEncoder = new util.TextEncoder();
-6. return textEncoder.encodeInto(str);
-7. }
+function stringToArray(str: string): Uint8Array {
+  let textEncoder = new util.TextEncoder();
+  return textEncoder.encodeInto(str);
+}
 
-9. let query: asset.AssetMap = new Map();
-10. query.set(asset.Tag.ALIAS, stringToArray('demo_alias'));
-11. asset.remove(query).then(() => {
-12. console.info(`Succeeded in removing Asset.`);
-13. });
+let query: asset.AssetMap = new Map();
+query.set(asset.Tag.ALIAS, stringToArray('demo_alias'));
+asset.remove(query).then(() => {
+  console.info(`Succeeded in removing Asset.`);
+});
 ```
 
 ## asset.removeSync12+
-
-PhonePC/2in1TabletTVWearable
 
 removeSync(query: AssetMap): void
 
@@ -250,23 +317,89 @@ removeSync(query: AssetMap): void
 
 **示例：**
 
+```typescript
+import { asset } from '@kit.AssetStoreKit';
+import { util } from '@kit.ArkTS';
+
+function stringToArray(str: string): Uint8Array {
+  let textEncoder = new util.TextEncoder();
+  return textEncoder.encodeInto(str);
+}
+
+let query: asset.AssetMap = new Map();
+query.set(asset.Tag.ALIAS, stringToArray('demo_alias'));
+asset.removeSync(query);
 ```
-1. import { asset } from '@kit.AssetStoreKit';
-2. import { util } from '@kit.ArkTS';
 
-4. function stringToArray(str: string): Uint8Array {
-5. let textEncoder = new util.TextEncoder();
-6. return textEncoder.encodeInto(str);
-7. }
+## asset.batchRemove
 
-9. let query: asset.AssetMap = new Map();
-10. query.set(asset.Tag.ALIAS, stringToArray('demo_alias'));
-11. asset.removeSync(query);
+batchRemove(assetsToBeRemoved: Array<AssetMap>): Promise<void>
+
+批量删除符合条件的关键资产。使用Promise异步回调。
+
+批量删除的关键资产必须具有相同的[Tag.GROUP\_ID](js-apis-asset.md#tag)和[Tag.REQUIRE\_ATTR\_ENCRYPTED](js-apis-asset.md#tag)属性。
+
+批量删除的关键资产数量最大值为100。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.Security.Asset
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| assetsToBeRemoved | Array<[AssetMap](js-apis-asset.md#assetmap)> | 是 | 待删除关键资产的搜索条件数组，如别名、访问控制属性、自定义数据等。数组长度最大值为100。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[关键资产存储服务错误码](errorcode-asset.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 24000001 | The ASSET service is unavailable. |
+| 24000006 | Insufficient memory. |
+| 24000007 | The asset is corrupted. |
+| 24000008 | The database operation failed. |
+| 24000010 | IPC failed. |
+| 24000011 | Calling the Bundle Manager service failed. |
+| 24000012 | Calling the OS Account service failed. |
+| 24000013 | Calling the Access Token service failed. |
+| 24000015 | Getting the system time failed. |
+| 24000019 | Each value of [Tag.GROUP\_ID](js-apis-asset.md#tag) and [Tag.REQUIRE\_ATTR\_ENCRYPTED](js-apis-asset.md#tag) in the array is not consistent. |
+
+**示例：**
+
+```typescript
+import { asset } from '@kit.AssetStoreKit';
+import { util } from '@kit.ArkTS';
+
+function stringToArray(str: string): Uint8Array {
+  let textEncoder = new util.TextEncoder();
+  return textEncoder.encodeInto(str);
+}
+
+let assetsToBeRemoved: Array<asset.AssetMap> = [];
+let query1: asset.AssetMap = new Map();
+query1.set(asset.Tag.ALIAS, stringToArray('demo_alias1'));
+assetsToBeRemoved.push(query1);
+
+let query2: asset.AssetMap = new Map();
+query2.set(asset.Tag.ALIAS, stringToArray('demo_alias2'));
+assetsToBeRemoved.push(query2);
+
+asset.batchRemove(assetsToBeRemoved).then(() => {
+  console.info(`Succeeded in batch removing Asset.`);
+});
 ```
 
 ## asset.update
-
-PhonePC/2in1TabletTVWearable
 
 update(query: AssetMap, attributesToUpdate: AssetMap): Promise<void>
 
@@ -311,27 +444,25 @@ update(query: AssetMap, attributesToUpdate: AssetMap): Promise<void>
 
 **示例：**
 
-```
-1. import { asset } from '@kit.AssetStoreKit';
-2. import { util } from '@kit.ArkTS';
+```typescript
+import { asset } from '@kit.AssetStoreKit';
+import { util } from '@kit.ArkTS';
 
-4. function stringToArray(str: string): Uint8Array {
-5. let textEncoder = new util.TextEncoder();
-6. return textEncoder.encodeInto(str);
-7. }
+function stringToArray(str: string): Uint8Array {
+  let textEncoder = new util.TextEncoder();
+  return textEncoder.encodeInto(str);
+}
 
-9. let query: asset.AssetMap = new Map();
-10. query.set(asset.Tag.ALIAS, stringToArray('demo_alias'));
-11. let attrsToUpdate: asset.AssetMap = new Map();
-12. attrsToUpdate.set(asset.Tag.SECRET, stringToArray('demo_pwd_new'));
-13. asset.update(query, attrsToUpdate).then(() => {
-14. console.info(`Succeeded in updating Asset.`);
-15. });
+let query: asset.AssetMap = new Map();
+query.set(asset.Tag.ALIAS, stringToArray('demo_alias'));
+let attrsToUpdate: asset.AssetMap = new Map();
+attrsToUpdate.set(asset.Tag.SECRET, stringToArray('demo_pwd_new'));
+asset.update(query, attrsToUpdate).then(() => {
+  console.info(`Succeeded in updating Asset.`);
+});
 ```
 
 ## asset.updateSync12+
-
-PhonePC/2in1TabletTVWearable
 
 updateSync(query: AssetMap, attributesToUpdate: AssetMap): void
 
@@ -370,25 +501,99 @@ updateSync(query: AssetMap, attributesToUpdate: AssetMap): void
 
 **示例：**
 
+```typescript
+import { asset } from '@kit.AssetStoreKit';
+import { util } from '@kit.ArkTS';
+
+function stringToArray(str: string): Uint8Array {
+  let textEncoder = new util.TextEncoder();
+  return textEncoder.encodeInto(str);
+}
+
+let query: asset.AssetMap = new Map();
+query.set(asset.Tag.ALIAS, stringToArray('demo_alias'));
+let attrsToUpdate: asset.AssetMap = new Map();
+attrsToUpdate.set(asset.Tag.SECRET, stringToArray('demo_pwd_new'));
+asset.updateSync(query, attrsToUpdate);
 ```
-1. import { asset } from '@kit.AssetStoreKit';
-2. import { util } from '@kit.ArkTS';
 
-4. function stringToArray(str: string): Uint8Array {
-5. let textEncoder = new util.TextEncoder();
-6. return textEncoder.encodeInto(str);
-7. }
+## asset.batchUpdate
 
-9. let query: asset.AssetMap = new Map();
-10. query.set(asset.Tag.ALIAS, stringToArray('demo_alias'));
-11. let attrsToUpdate: asset.AssetMap = new Map();
-12. attrsToUpdate.set(asset.Tag.SECRET, stringToArray('demo_pwd_new'));
-13. asset.updateSync(query, attrsToUpdate);
+batchUpdate(sourceAttributes: Array<AssetMap>, destAttributes: Array<AssetMap>): Promise<BatchResult>
+
+批量更新符合条件的关键资产。使用Promise异步回调。
+
+批量更新的关键资产必须具有相同的[Tag.GROUP\_ID](js-apis-asset.md#tag)和[Tag.REQUIRE\_ATTR\_ENCRYPTED](js-apis-asset.md#tag)属性。
+
+批量更新的关键资产数量最大值为100。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.Security.Asset
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sourceAttributes | Array<[AssetMap](js-apis-asset.md#assetmap)> | 是 | 待更新关键资产的搜索条件数组。数组最大长度为100，数组中所有元素的[Tag.GROUP\_ID](js-apis-asset.md#tag)和[Tag.REQUIRE\_ATTR\_ENCRYPTED](js-apis-asset.md#tag)属性值必须相同。 |
+| destAttributes | Array<[AssetMap](js-apis-asset.md#assetmap)> | 是 | 待更新关键资产的属性集合数组。数组最大长度为100，且应与sourceAttributes长度保持一致，数组中所有元素的[Tag.GROUP\_ID](js-apis-asset.md#tag)和[Tag.REQUIRE\_ATTR\_ENCRYPTED](js-apis-asset.md#tag)属性值必须相同。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[BatchResult](js-apis-asset.md#batchresult)> | Promise对象，返回批量操作结果，包含失败关键资产的错误信息。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[关键资产存储服务错误码](errorcode-asset.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 24000001 | The ASSET service is unavailable. |
+| 24000006 | Insufficient memory. |
+| 24000007 | The asset is corrupted. |
+| 24000008 | The database operation failed. |
+| 24000010 | IPC failed. |
+| 24000011 | Calling the Bundle Manager service failed. |
+| 24000012 | Calling the OS Account service failed. |
+| 24000013 | Calling the Access Token service failed. |
+| 24000015 | Getting the system time failed. |
+| 24000019 | Each value of [Tag.GROUP\_ID](js-apis-asset.md#tag) and [Tag.REQUIRE\_ATTR\_ENCRYPTED](js-apis-asset.md#tag) in the array is not consistent. |
+
+**示例：**
+
+```typescript
+import { asset } from '@kit.AssetStoreKit';
+import { util } from '@kit.ArkTS';
+
+function stringToArray(str: string): Uint8Array {
+  let textEncoder = new util.TextEncoder();
+  return textEncoder.encodeInto(str);
+}
+
+let srcAttrs: Array<asset.AssetMap> = [];
+let srcAttr1: asset.AssetMap = new Map();
+srcAttr1.set(asset.Tag.ALIAS, stringToArray('demo_alias1'));
+srcAttrs.push(srcAttr1);
+let srcAttr2: asset.AssetMap = new Map();
+srcAttr2.set(asset.Tag.ALIAS, stringToArray('demo_alias2'));
+srcAttrs.push(srcAttr2);
+
+let destAttrs: Array<asset.AssetMap> = [];
+let destAttr1: asset.AssetMap = new Map();
+destAttr1.set(asset.Tag.SECRET, stringToArray('demo_pwd_new1'));
+destAttrs.push(destAttr1);
+let destAttr2: asset.AssetMap = new Map();
+destAttr2.set(asset.Tag.SECRET, stringToArray('demo_pwd_new2'));
+destAttrs.push(destAttr2);
+
+asset.batchUpdate(srcAttrs, destAttrs).then((res: asset.BatchResult) => {
+  console.info(`Succeeded in batch updating Asset, failedCount: ${res.failedCount}`);
+});
 ```
 
 ## asset.preQuery
-
-PhonePC/2in1TabletTVWearable
 
 preQuery(query: AssetMap): Promise<Uint8Array>
 
@@ -433,25 +638,23 @@ preQuery(query: AssetMap): Promise<Uint8Array>
 
 **示例：**
 
-```
-1. import { asset } from '@kit.AssetStoreKit';
-2. import { util } from '@kit.ArkTS';
+```typescript
+import { asset } from '@kit.AssetStoreKit';
+import { util } from '@kit.ArkTS';
 
-4. function stringToArray(str: string): Uint8Array {
-5. let textEncoder = new util.TextEncoder();
-6. return textEncoder.encodeInto(str);
-7. }
+function stringToArray(str: string): Uint8Array {
+  let textEncoder = new util.TextEncoder();
+  return textEncoder.encodeInto(str);
+}
 
-9. let query: asset.AssetMap = new Map();
-10. query.set(asset.Tag.ALIAS, stringToArray('demo_alias'));
-11. asset.preQuery(query).then((challenge: Uint8Array) => {
-12. console.info(`Succeeded in pre-querying Asset, the challenge is: `, challenge);
-13. });
+let query: asset.AssetMap = new Map();
+query.set(asset.Tag.ALIAS, stringToArray('demo_alias'));
+asset.preQuery(query).then((challenge: Uint8Array) => {
+  console.info(`Succeeded in pre-querying Asset, the challenge is: `, challenge);
+});
 ```
 
 ## asset.preQuerySync12+
-
-PhonePC/2in1TabletTVWearable
 
 preQuerySync(query: AssetMap): Uint8Array
 
@@ -496,24 +699,22 @@ preQuerySync(query: AssetMap): Uint8Array
 
 **示例：**
 
-```
-1. import { asset } from '@kit.AssetStoreKit';
-2. import { util } from '@kit.ArkTS';
+```typescript
+import { asset } from '@kit.AssetStoreKit';
+import { util } from '@kit.ArkTS';
 
-4. function stringToArray(str: string): Uint8Array {
-5. let textEncoder = new util.TextEncoder();
-6. return textEncoder.encodeInto(str);
-7. }
+function stringToArray(str: string): Uint8Array {
+  let textEncoder = new util.TextEncoder();
+  return textEncoder.encodeInto(str);
+}
 
-9. let query: asset.AssetMap = new Map();
-10. query.set(asset.Tag.ALIAS, stringToArray('demo_alias'));
-11. let challenge: Uint8Array = asset.preQuerySync(query);
-12. console.info(`Succeeded in pre-querying with sync, the challenge is: `, challenge);
+let query: asset.AssetMap = new Map();
+query.set(asset.Tag.ALIAS, stringToArray('demo_alias'));
+let challenge: Uint8Array = asset.preQuerySync(query);
+console.info(`Succeeded in pre-querying with sync, the challenge is: `, challenge);
 ```
 
 ## asset.query
-
-PhonePC/2in1TabletTVWearable
 
 query(query: AssetMap): Promise<Array<AssetMap>>
 
@@ -560,32 +761,30 @@ query(query: AssetMap): Promise<Array<AssetMap>>
 
 **示例：**
 
-```
-1. import { asset } from '@kit.AssetStoreKit';
-2. import { util } from '@kit.ArkTS';
+```typescript
+import { asset } from '@kit.AssetStoreKit';
+import { util } from '@kit.ArkTS';
 
-4. function stringToArray(str: string): Uint8Array {
-5. let textEncoder = new util.TextEncoder();
-6. return textEncoder.encodeInto(str);
-7. }
+function stringToArray(str: string): Uint8Array {
+  let textEncoder = new util.TextEncoder();
+  return textEncoder.encodeInto(str);
+}
 
-9. let query: asset.AssetMap = new Map();
-10. query.set(asset.Tag.ALIAS, stringToArray('demo_alias'));
-11. // 如果只需要返回关键资产的属性，可以将RETURN_TYPE设置为ATTRIBUTES。返回属性不需解密，查询时间较短。
-12. query.set(asset.Tag.RETURN_TYPE, asset.ReturnType.ALL); // 此处表示需要返回关键资产的所有信息，即属性+明文。返回明文需要解密，查询时间较长。
-13. asset.query(query).then((res: Array<asset.AssetMap>) => {
-14. for (let i = 0; i < res.length; i++) {
-15. // 解析属性。
-16. let accessibility: number = res[i].get(asset.Tag.ACCESSIBILITY) as number;
-17. console.info(`Succeeded in getting accessibility, which is: ${accessibility}.`);
-18. }
-19. console.info(`Succeeded in querying Asset.`);
-20. });
+let query: asset.AssetMap = new Map();
+query.set(asset.Tag.ALIAS, stringToArray('demo_alias'));
+// 如果只需要返回关键资产的属性，可以将RETURN_TYPE设置为ATTRIBUTES。返回属性不需解密，查询时间较短。
+query.set(asset.Tag.RETURN_TYPE, asset.ReturnType.ALL); // 此处表示需要返回关键资产的所有信息，即属性+明文。返回明文需要解密，查询时间较长。
+asset.query(query).then((res: Array<asset.AssetMap>) => {
+  for (let i = 0; i < res.length; i++) {
+    // 解析属性。
+    let accessibility: number = res[i].get(asset.Tag.ACCESSIBILITY) as number;
+    console.info(`Succeeded in getting accessibility, which is: ${accessibility}.`);
+  }
+  console.info(`Succeeded in querying Asset.`);
+});
 ```
 
 ## asset.querySync12+
-
-PhonePC/2in1TabletTVWearable
 
 querySync(query: AssetMap): Array<AssetMap>
 
@@ -632,31 +831,29 @@ querySync(query: AssetMap): Array<AssetMap>
 
 **示例：**
 
-```
-1. import { asset } from '@kit.AssetStoreKit';
-2. import { util } from '@kit.ArkTS';
+```typescript
+import { asset } from '@kit.AssetStoreKit';
+import { util } from '@kit.ArkTS';
 
-4. function stringToArray(str: string): Uint8Array {
-5. let textEncoder = new util.TextEncoder();
-6. return textEncoder.encodeInto(str);
-7. }
+function stringToArray(str: string): Uint8Array {
+  let textEncoder = new util.TextEncoder();
+  return textEncoder.encodeInto(str);
+}
 
-9. let query: asset.AssetMap = new Map();
-10. query.set(asset.Tag.ALIAS, stringToArray('demo_alias'));
-11. // 如果只需要返回关键资产的属性，可以将RETURN_TYPE设置为ATTRIBUTES。返回属性不需解密，查询时间较短。
-12. query.set(asset.Tag.RETURN_TYPE, asset.ReturnType.ALL); // 此处表示需要返回关键资产的所有信息，即属性+明文。返回明文需要解密，查询时间较长。
-13. let res: Array<asset.AssetMap> = asset.querySync(query);
-14. for (let i = 0; i < res.length; i++) {
-15. // 解析属性。
-16. let accessibility: number = res[i].get(asset.Tag.ACCESSIBILITY) as number;
-17. console.info(`Succeeded in getting accessibility, which is: ${accessibility}.`);
-18. }
-19. console.info(`Succeeded in querying Asset.`);
+let query: asset.AssetMap = new Map();
+query.set(asset.Tag.ALIAS, stringToArray('demo_alias'));
+// 如果只需要返回关键资产的属性，可以将RETURN_TYPE设置为ATTRIBUTES。返回属性不需解密，查询时间较短。
+query.set(asset.Tag.RETURN_TYPE, asset.ReturnType.ALL); // 此处表示需要返回关键资产的所有信息，即属性+明文。返回明文需要解密，查询时间较长。
+let res: Array<asset.AssetMap> = asset.querySync(query);
+for (let i = 0; i < res.length; i++) {
+  // 解析属性。
+  let accessibility: number = res[i].get(asset.Tag.ACCESSIBILITY) as number;
+  console.info(`Succeeded in getting accessibility, which is: ${accessibility}.`);
+}
+console.info(`Succeeded in querying Asset.`);
 ```
 
 ## asset.postQuery
-
-PhonePC/2in1TabletTVWearable
 
 postQuery(handle: AssetMap): Promise<void>
 
@@ -694,20 +891,18 @@ postQuery(handle: AssetMap): Promise<void>
 
 **示例：**
 
-```
-1. import { asset } from '@kit.AssetStoreKit';
+```typescript
+import { asset } from '@kit.AssetStoreKit';
 
-3. let handle: asset.AssetMap = new Map();
-4. // 此处传入的new Uint8Array(32)仅作为示例，实际应传入asset.preQuery执行成功返回的挑战值。
-5. handle.set(asset.Tag.AUTH_CHALLENGE, new Uint8Array(32));
-6. asset.postQuery(handle).then(() => {
-7. console.info(`Succeeded in post-querying Asset.`);
-8. });
+let handle: asset.AssetMap = new Map();
+// 此处传入的new Uint8Array(32)仅作为示例，实际应传入asset.preQuery执行成功返回的挑战值。
+handle.set(asset.Tag.AUTH_CHALLENGE, new Uint8Array(32));
+asset.postQuery(handle).then(() => {
+  console.info(`Succeeded in post-querying Asset.`);
+});
 ```
 
 ## asset.postQuerySync12+
-
-PhonePC/2in1TabletTVWearable
 
 postQuerySync(handle: AssetMap): void
 
@@ -739,18 +934,16 @@ postQuerySync(handle: AssetMap): void
 
 **示例：**
 
-```
-1. import { asset } from '@kit.AssetStoreKit';
+```typescript
+import { asset } from '@kit.AssetStoreKit';
 
-3. let handle: asset.AssetMap = new Map();
-4. // 此处传入的new Uint8Array(32)仅作为示例，实际应传入asset.preQuerySync执行成功返回的挑战值。
-5. handle.set(asset.Tag.AUTH_CHALLENGE, new Uint8Array(32));
-6. asset.postQuerySync(handle)
+let handle: asset.AssetMap = new Map();
+// 此处传入的new Uint8Array(32)仅作为示例，实际应传入asset.preQuerySync执行成功返回的挑战值。
+handle.set(asset.Tag.AUTH_CHALLENGE, new Uint8Array(32));
+asset.postQuerySync(handle);
 ```
 
 ## asset.querySyncResult20+
-
-PhonePC/2in1TabletTVWearable
 
 querySyncResult(query: AssetMap): Promise<SyncResult>
 
@@ -787,18 +980,16 @@ querySyncResult(query: AssetMap): Promise<SyncResult>
 
 **示例：**
 
-```
-1. import { asset } from '@kit.AssetStoreKit';
+```typescript
+import { asset } from '@kit.AssetStoreKit';
 
-3. let query: asset.AssetMap = new Map();
-4. asset.querySyncResult(query).then((res: asset.SyncResult) => {
-5. console.info(`Succeeded in querying sync result: ${JSON.stringify(res)}`);
-6. });
+let query: asset.AssetMap = new Map();
+asset.querySyncResult(query).then((res: asset.SyncResult) => {
+  console.info(`Succeeded in querying sync result: ${JSON.stringify(res)}`);
+});
 ```
 
 ## TagType
-
-PhonePC/2in1TabletTVWearable
 
 枚举，关键资产属性支持的数据类型。
 
@@ -814,13 +1005,11 @@ PhonePC/2in1TabletTVWearable
 
 ## Tag
 
-PhonePC/2in1TabletTVWearable
-
 枚举，关键资产支持的属性名称类型，用作[AssetMap](js-apis-asset.md#assetmap)的键。
 
 **系统能力：** SystemCapability.Security.Asset
 
-说明
+**说明** 
 
 以下为Tag类型的全量枚举值，每个接口可传的Tag枚举及对应的Value取值范围不同，详见[各个场景的开发指导](../harmonyos-guides/asset-store-kit-overview.md)。
 
@@ -829,13 +1018,13 @@ PhonePC/2in1TabletTVWearable
 | SECRET | TagType.BYTES | 0x01 | 关键资产明文。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
 | ALIAS | TagType.BYTES | 0x02 | 关键资产别名，每条关键资产的唯一索引。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
 | ACCESSIBILITY | TagType.NUMBER | 0x03 | 基于锁屏状态的访问控制。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
-| REQUIRE\_PASSWORD\_SET | TagType.BOOL | 0x04 | 是否仅在设置了锁屏密码的情况下，可访问关键资产。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
+| REQUIRE\_PASSWORD\_SET | TagType.BOOL | 0x04 | 是否仅在设置了锁屏密码的情况下，可访问关键资产。true表示仅在设置了锁屏密码时可访问，false表示不受锁屏密码限制。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
 | AUTH\_TYPE | TagType.NUMBER | 0x05 | 访问关键资产所需的用户认证类型。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
-| AUTH\_VALIDITY\_PERIOD | TagType.NUMBER | 0x06 | 用户认证的有效期。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
+| AUTH\_VALIDITY\_PERIOD | TagType.NUMBER | 0x06 | 用户认证的有效期，单位为秒。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
 | AUTH\_CHALLENGE | TagType.BYTES | 0x07 | 用户认证的挑战值。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
 | AUTH\_TOKEN | TagType.BYTES | 0x08 | 用户认证通过的授权令牌。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
 | SYNC\_TYPE | TagType.NUMBER | 0x10 | 关键资产支持的同步类型。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
-| IS\_PERSISTENT | TagType.BOOL | 0x11 | 在应用卸载时是否保留关键资产。 |
+| IS\_PERSISTENT | TagType.BOOL | 0x11 | 在应用卸载时是否保留关键资产。true表示应用卸载时保留关键资产，false表示不保留关键资产。 |
 | DATA\_LABEL\_CRITICAL\_1 | TagType.BYTES | 0x20 | 关键资产附属信息，内容由业务自定义且**有完整性保护**。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
 | DATA\_LABEL\_CRITICAL\_2 | TagType.BYTES | 0x21 | 关键资产附属信息，内容由业务自定义且**有完整性保护**。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
 | DATA\_LABEL\_CRITICAL\_3 | TagType.BYTES | 0x22 | 关键资产附属信息，内容由业务自定义且**有完整性保护**。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
@@ -855,13 +1044,11 @@ PhonePC/2in1TabletTVWearable
 | CONFLICT\_RESOLUTION | TagType.NUMBER | 0x44 | 新增关键资产时的冲突（如：别名相同）处理策略。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
 | UPDATE\_TIME12+ | TagType.BYTES | 0x45 | 数据的更新时间（时间戳形式）。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
 | OPERATION\_TYPE12+ | TagType.NUMBER | 0x46 | 附加的操作类型。 |
-| REQUIRE\_ATTR\_ENCRYPTED14+ | TagType.BOOL | 0x47 | 是否加密业务自定义附属信息。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
-| GROUP\_ID18+ | TagType.BYTES | 0x48 | 关键资产所属群组。 |
+| REQUIRE\_ATTR\_ENCRYPTED14+ | TagType.BOOL | 0x47 | 是否加密业务自定义附属信息。true表示加密业务自定义附属信息，false表示不加密。  **说明：** 批量新增、删除、更新关键资产时，数组中的每项必须具有相同的REQUIRE\_ATTR\_ENCRYPTED属性值。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
+| GROUP\_ID18+ | TagType.BYTES | 0x48 | 关键资产所属群组。  **说明：** 批量新增、删除、更新关键资产时，数组中的每项必须具有相同的GROUP\_ID属性值。 |
 | WRAP\_TYPE18+ | TagType.NUMBER | 0x49 | 关键资产支持的加密导入导出类型。 |
 
 ## Value
-
-PhonePC/2in1TabletTVWearable
 
 type Value = boolean | number | Uint8Array
 
@@ -879,8 +1066,6 @@ type Value = boolean | number | Uint8Array
 
 ## AssetMap
 
-PhonePC/2in1TabletTVWearable
-
 type AssetMap = Map<Tag, Value>
 
 关键资产属性的键-值对集合。
@@ -895,8 +1080,6 @@ type AssetMap = Map<Tag, Value>
 
 ## Accessibility
 
-PhonePC/2in1TabletTVWearable
-
 枚举，关键资产基于锁屏状态的访问控制类型。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
@@ -906,12 +1089,10 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEVICE\_POWERED\_ON | 0 | 开机后可访问。 |
-| DEVICE\_FIRST\_UNLOCKED | 1 | 首次解锁后可访问  **说明：** 未设置锁屏密码时，等同于开机后可访问。 |
-| DEVICE\_UNLOCKED | 2 | 解锁状态时可访问  **说明：** 未设置锁屏密码时，等同于开机后可访问。 |
+| DEVICE\_FIRST\_UNLOCKED | 1 | 首次解锁后可访问。  **说明：** 未设置锁屏密码时，等同于开机后可访问。 |
+| DEVICE\_UNLOCKED | 2 | 解锁状态时可访问。  **说明：** 未设置锁屏密码时，等同于开机后可访问。 |
 
 ## AuthType
-
-PhonePC/2in1TabletTVWearable
 
 枚举，关键资产支持的用户认证类型。
 
@@ -925,8 +1106,6 @@ PhonePC/2in1TabletTVWearable
 | ANY | 0xFF | 任意一种用户认证方式（PIN码、人脸、指纹等）通过后，均可访问关键资产。 |
 
 ## SyncType
-
-PhonePC/2in1TabletTVWearable
 
 枚举，关键资产支持的同步类型。
 
@@ -943,8 +1122,6 @@ PhonePC/2in1TabletTVWearable
 
 ## ReturnType
 
-PhonePC/2in1TabletTVWearable
-
 枚举，关键资产查询返回的结果类型。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
@@ -957,8 +1134,6 @@ PhonePC/2in1TabletTVWearable
 | ATTRIBUTES | 1 | 返回关键资产属性，不含关键资产明文。  **说明：** 批量查询关键资产属性时，需设置此类型。 |
 
 ## ConflictResolution
-
-PhonePC/2in1TabletTVWearable
 
 枚举，新增关键资产时的冲突（如：别名相同）处理策略。
 
@@ -973,8 +1148,6 @@ PhonePC/2in1TabletTVWearable
 
 ## OperationType12+
 
-PhonePC/2in1TabletTVWearable
-
 枚举，附属的操作类型。
 
 **系统能力：** SystemCapability.Security.Asset
@@ -985,8 +1158,6 @@ PhonePC/2in1TabletTVWearable
 | NEED\_LOGOUT | 1 | 需要进行登出操作。 |
 
 ## WrapType18+
-
-PhonePC/2in1TabletTVWearable
 
 枚举，关键资产支持的加密导入导出类型。
 
@@ -999,8 +1170,6 @@ PhonePC/2in1TabletTVWearable
 
 ## SyncResult20+
 
-PhonePC/2in1TabletTVWearable
-
 关键资产同步的结果。
 
 **系统能力：** SystemCapability.Security.Asset
@@ -1011,9 +1180,34 @@ PhonePC/2in1TabletTVWearable
 | totalCount | number | 是 | 是 | 触发同步的关键资产总数。 |
 | failedCount | number | 是 | 是 | 关键资产同步失败的数量。 |
 
-## ErrorCode
+## BatchErrInfo
 
-PhonePC/2in1TabletTVWearable
+批量操作中单个关键资产的错误信息。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.Security.Asset
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| index | number | 否 | 否 | 关键资产的索引。 |
+| errCode | number | 否 | 否 | 批量操作的错误码。 |
+| message | string | 否 | 否 | 批量操作的错误信息。 |
+
+## BatchResult
+
+[batchAdd](js-apis-asset.md#assetbatchadd)、[batchUpdate](js-apis-asset.md#assetbatchupdate)和[batchRemove](js-apis-asset.md#assetbatchremove)批量操作的结果。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.Security.Asset
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| failedCount | number | 否 | 否 | 批量操作的失败数量，0表示全部成功。 |
+| failedErrorInfos | Array<[BatchErrInfo](js-apis-asset.md#batcherrinfo)> | 否 | 否 | 批量操作中失败的关键资产的错误信息数组，全部成功时为空数组。 |
+
+## ErrorCode
 
 表示错误码的枚举。
 
@@ -1042,3 +1236,4 @@ PhonePC/2in1TabletTVWearable
 | LIMIT\_EXCEEDED | 24000016 | 缓存数量超限。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
 | UNSUPPORTED | 24000017 | 该子功能不支持。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
 | PARAM\_VERIFICATION\_FAILED20+ | 24000018 | 参数校验失败。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
+| INCONSISTENT\_ATTRIBUTE | 24000019 | 属性值不一致。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |

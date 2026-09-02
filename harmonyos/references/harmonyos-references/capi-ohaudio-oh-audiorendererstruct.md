@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohau
 title: OH_AudioRendererStruct
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 结构体 > OH_AudioRendererStruct
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:56+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:3db5371519270688ad9441e544d873691dfd2393d72a4a72991076f99b7aa936
+scraped_at: 2026-09-02T14:52:46+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8d4f52f674b7d024428dfbb9b08ec1963e59980cd1e6c0cef9fd9641562e1cd2
 ---
 
-```
-1. typedef struct OH_AudioRendererStruct OH_AudioRenderer
+```c
+typedef struct OH_AudioRendererStruct OH_AudioRenderer;
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-声明输出音频流。输出音频流的实例被用来播放音频数据。
+声明输出音频渲染器。输出音频渲染器的实例被用来播放音频数据。
 
 **起始版本：** 10
 

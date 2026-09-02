@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-explor
 title: 应用探索测试
 breadcrumb: FAQ > DevEco Testing > 探索测试 > 应用探索测试
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:36+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:1a342bf8ca30590100d1c947e388b2bac9bb524895dca4575575e71eef18056b
+scraped_at: 2026-09-02T14:54:59+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:cae836fd420bb3fb85a48ff3143c9f8860f83b5cceb496bdcb3a9e5bbe1f2859
 ---
 
 * **[测试过程中，为什么测试页面截图会出现页面切换状态](faqs-app-exploration-test-1.md)**
@@ -17,3 +17,4 @@ content_hash: sha256:1a342bf8ca30590100d1c947e388b2bac9bb524895dca4575575e71eef1
 * **[应用为什么无法进行应用探索测试](faqs-app-exploration-test-7.md)**
 * **[执行场景压测，为什么有很多次失败？](faqs-app-exploration-test-8.md)**
 * **[应用稳定性问题定位，可以参考哪些资料](faqs-app-exploration-test-9.md)**
+* **[如何对指定的页面进行压测](faqs-app-exploration-test-10.md)**

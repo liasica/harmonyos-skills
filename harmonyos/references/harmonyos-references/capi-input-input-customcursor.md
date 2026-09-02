@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-inpu
 title: Input_CustomCursor
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > C API > 结构体 > Input_CustomCursor
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:21+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:8592deb6304fb367c9097ba27cbd0e41c51737016cdbd860a5a3ca8e1342c58d
+scraped_at: 2026-09-02T14:52:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:cf8728df6b3c50320bc6f0987fd281c3453b9261c52cce36157081cf50bb2792
 ---
 
-```
-1. typedef struct Input_CustomCursor Input_CustomCursor
+```c
+typedef struct Input_CustomCursor Input_CustomCursor
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 自定义鼠标光标像素图资源。
 

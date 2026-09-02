@@ -3,28 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.data.uniformTypeDescriptor (标准化数据定义与描述)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.uniformTypeDescriptor (标准化数据定义与描述)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:20+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:22fe527519cb7f440f3dbe47304f107bcc4c1bce543e7111fa5458b0bfa5950d
+scraped_at: 2026-09-02T15:00:40+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:dac20411ff434a38c91107562e5c1b19d625a42169271404c1d24821a0132bdc
 ---
 
-本模块对标准化数据类型进行了抽象定义与描述。
+本模块对标准化数据类型进行了抽象定义与描述，用于统一表示和管理各类数据类型的层级与归属关系（如JPEG归属于IMAGE、IMAGE归属于MEDIA等），便于跨模块/跨应用的一致化数据交互。详细设计原理参见[UTD预置列表](../harmonyos-guides/uniform-data-type-list.md)。
 
-说明
+**说明** 
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
+本模块接口仅可在Stage模型下使用。
+
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { uniformTypeDescriptor } from '@kit.ArkData';
+```js
+import { uniformTypeDescriptor } from '@kit.ArkData';
 ```
 
 ## UniformDataType
-
-PhonePC/2in1TabletTV
 
 标准化数据类型之间存在归属关系，例如JPEG图片类型归属于IMAGE类型。更多预置数据类型参考[UTD预置列表](../harmonyos-guides/uniform-data-type-list.md)。
 
@@ -44,7 +42,7 @@ PhonePC/2in1TabletTV
 | XML11+ | 'general.xml' | XML文本类型，归属类型为TEXT。 |
 | XHTML12+ | 'general.xhtml' | XHTML文本类型，归属类型为XML。 |
 | RSS12+ | 'general.rss' | RSS文本类型，归属类型为XML。 |
-| SMIL12+ | 'com.real.smil' | 同步多媒体集成语言类型，归属类型为XML文本类型。 |
+| SMIL12+ | 'com.real.smil' | 同步多媒体集成语言类型，归属类型为XML。 |
 | SOURCE\_CODE11+ | 'general.source-code' | 所有源代码的基类型，归属类型为TEXT。 |
 | SCRIPT11+ | 'general.script' | 所有脚本语言源代码的基类型，归属类型为SOURCE\_CODE。 |
 | SHELL\_SCRIPT11+ | 'general.shell-script' | shell脚本类型，归属类型为SCRIPT。 |
@@ -89,7 +87,7 @@ PhonePC/2in1TabletTV
 | EFX\_FAX12+ | 'com.js.efx-fax' | 电子传真文件类型，归属类型为FAX。 |
 | XBITMAP\_IMAGE12+ | 'general.xbitmap-image' | X Window系统（X11）中使用的位图图像格式，归属类型为IMAGE。 |
 | GIF12+ | 'general.gif' | GIF图像类型，归属类型为IMAGE。 |
-| TGA\_IMAGE12+ | 'com.truevision.tga-image' | 标签图形（TaggedGraphics）图像类型，归属类型为IMAGE。 |
+| TGA\_IMAGE12+ | 'com.truevision.tga-image' | Truevision Graphics Adapter图像文件格式，归属类型为IMAGE。 |
 | SGI\_IMAGE12+ | 'com.sgi.sgi-image' | 硅图（Silicon Graphics）图像类型，归属类型为IMAGE。 |
 | OPENEXR\_IMAGE12+ | 'com.ilm.openexr-image' | 开放标准的高动态范围图像格式类型，归属类型为IMAGE。 |
 | FLASHPIX\_IMAGE12+ | 'com.kodak.flashpix.image' | FlashPix 图像文件类型，归属类型为IMAGE。 |
@@ -214,19 +212,15 @@ PhonePC/2in1TabletTV
 
 ## TypeDescriptor11+
 
-PhonePC/2in1TabletTV
-
-标准化数据类型的描述类，它包含了一些属性和方法用于描述标准化数据类型自身以及和其他标准化数据类型之间的归属与层级关系。
+标准化数据类型的描述类，它包含了一些属性和方法用于描述标准化数据类型自身以及和其他标准化数据类型之间的归属与层级关系，例如通过typeId与belongingToTypes维护类型映射关系，并提供层级判断等方法。详细属性与方法参见下文说明。
 
 ### 属性
-
-PhonePC/2in1TabletTV
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| typeId11+ | string | 否 | 否 | 标准化数据类型的ID（即[UTD列表](js-apis-data-uniformtypedescriptor.md#uniformdatatype)中对应的枚举值），也可以是自定义UTD。 |
+| typeId11+ | string | 否 | 否 | 标准化数据类型的ID（即[UTD预置列表](../harmonyos-guides/uniform-data-type-list.md)中各类型对应的UTD-ID），也可以是自定义UTD。自定义UTD建议使用反向域名格式（如'com.example.mytype'）。 |
 | belongingToTypes11+ | Array<string> | 否 | 否 | 标准化数据类型所归属的类型typeId列表。 |
 | description11+ | string | 否 | 否 | 标准化数据类型的简要说明。 |
 | referenceURL11+ | string | 否 | 否 | 标准化数据类型的参考链接URL，用于描述类型的详细信息。 |
@@ -236,11 +230,14 @@ PhonePC/2in1TabletTV
 
 ### belongsTo11+
 
-PhonePC/2in1TabletTV
-
 belongsTo(type: string): boolean
 
 判断当前标准化数据类型是否归属于指定的标准化数据类型。
+
+**使用场景：**
+
+* 数据传输前验证数据格式是否支持
+* 内容分享时检查数据类型是否符合要求
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
 
@@ -248,7 +245,7 @@ belongsTo(type: string): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 所指定的标准化数据类型（即[UniformDataType](js-apis-data-uniformtypedescriptor.md#uniformdatatype)中对应的枚举值）。 |
+| type | string | 是 | 所指定的标准化数据类型（即[UTD预置列表](../harmonyos-guides/uniform-data-type-list.md)中各类型对应的UTD-ID或自定义UTD-ID）。 |
 
 **返回值：**
 
@@ -262,33 +259,39 @@ belongsTo(type: string): boolean
 
 | **错误码ID** | **错误信息** |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { uniformTypeDescriptor } from '@kit.ArkData';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { uniformTypeDescriptor } from '@kit.ArkData';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try{
-5. let typeObj : uniformTypeDescriptor.TypeDescriptor = uniformTypeDescriptor.getTypeDescriptor('general.type-script');
-6. let ret = typeObj.belongsTo('general.source-code');
-7. if(ret) {
-8. console.info('type general.type-script belongs to type general.source-code');
-9. }
-10. } catch(e) {
-11. let error: BusinessError = e as BusinessError;
-12. console.error(`belongsTo throws an exception. code is ${error.code}, message is ${error.message} `);
-13. }
+try {
+  // 获取TypeDescriptor对象
+  let typeObj: uniformTypeDescriptor.TypeDescriptor = uniformTypeDescriptor.getTypeDescriptor('general.type-script');
+  // 判断是否归属指定类型
+  let ret = typeObj.belongsTo('general.source-code');
+  if (ret) {
+    console.info('type general.type-script belongs to type general.source-code');
+  }
+} catch (e) {
+  let error: BusinessError = e as BusinessError;
+  console.error(`belongsTo throws an exception. code is ${error.code}, message is ${error.message} `);
+}
 ```
 
 ### isLowerLevelType11+
 
-PhonePC/2in1TabletTV
-
 isLowerLevelType(type: string): boolean
 
 判断当前标准化数据类型是否是指定标准化数据类型的低层级类型。例如TYPE\_SCRIPT为SOURCE\_CODE的低层级类型，TYPE\_SCRIPT和SOURCE\_CODE为TEXT的低层级类型。
+
+**使用场景：**
+
+* 数据格式转换时判断是否需要转换
+* 智能选择最合适的数据类型
+* 数据类型的层级校验
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
 
@@ -296,7 +299,7 @@ isLowerLevelType(type: string): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 所指定的标准化数据类型（即[UniformDataType](js-apis-data-uniformtypedescriptor.md#uniformdatatype)中对应的枚举值）。 |
+| type | string | 是 | 所指定的标准化数据类型（即[UTD预置列表](../harmonyos-guides/uniform-data-type-list.md)中各类型对应的UTD-ID或自定义UTD-ID）。 |
 
 **返回值：**
 
@@ -310,33 +313,38 @@ isLowerLevelType(type: string): boolean
 
 | **错误码ID** | **错误信息** |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { uniformTypeDescriptor } from '@kit.ArkData';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { uniformTypeDescriptor } from '@kit.ArkData';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try{
-5. let typeObj : uniformTypeDescriptor.TypeDescriptor = uniformTypeDescriptor.getTypeDescriptor('general.type-script');
-6. let ret = typeObj.isLowerLevelType('general.source-code');
-7. if(ret) {
-8. console.info('type general.type-script is lower level type of type general.source-code');
-9. }
-10. } catch(e) {
-11. let error: BusinessError = e as BusinessError;
-12. console.error(`isLowerLevelType throws an exception. code is ${error.code}, message is ${error.message} `);
-13. }
+try {
+  // 获取TypeDescriptor对象
+  let typeObj: uniformTypeDescriptor.TypeDescriptor = uniformTypeDescriptor.getTypeDescriptor('general.type-script');
+  let ret = typeObj.isLowerLevelType('general.source-code');
+  if (ret) {
+    console.info('type general.type-script is lower level type of type general.source-code');
+  }
+} catch (e) {
+  let error: BusinessError = e as BusinessError;
+  console.error(`isLowerLevelType throws an exception. code is ${error.code}, message is ${error.message} `);
+}
 ```
 
 ### isHigherLevelType11+
 
-PhonePC/2in1TabletTV
-
 isHigherLevelType(type: string): boolean
 
 判断当前标准化数据类型是否是指定标准化数据类型的高层级类型。例如SOURCE\_CODE为TYPE\_SCRIPT的高层级类型，TEXT为SOURCE\_CODE和TYPE\_SCRIPT的高层级类型。
+
+**使用场景：**
+
+* 数据类型的兼容性判断
+* 查找所有子类型的数据
+* 类型层级遍历和筛选
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
 
@@ -344,7 +352,7 @@ isHigherLevelType(type: string): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 所指定的标准化数据类型（即[UniformDataType](js-apis-data-uniformtypedescriptor.md#uniformdatatype)中对应的枚举值）。 |
+| type | string | 是 | 所指定的标准化数据类型（即[UTD预置列表](../harmonyos-guides/uniform-data-type-list.md)中各类型对应的UTD-ID或自定义UTD-ID）。 |
 
 **返回值：**
 
@@ -358,33 +366,38 @@ isHigherLevelType(type: string): boolean
 
 | **错误码ID** | **错误信息** |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { uniformTypeDescriptor } from '@kit.ArkData';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { uniformTypeDescriptor } from '@kit.ArkData';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try{
-5. let typeObj : uniformTypeDescriptor.TypeDescriptor = uniformTypeDescriptor.getTypeDescriptor('general.source-code');
-6. let ret = typeObj.isHigherLevelType('general.type-script');
-7. if(ret) {
-8. console.info('type general.source-code is higher level type of type general.type-script');
-9. }
-10. } catch(e) {
-11. let error: BusinessError = e as BusinessError;
-12. console.error(`isHigherLevelType throws an exception. code is ${error.code}, message is ${error.message} `);
-13. }
+try {
+  // 获取TypeDescriptor对象
+  let typeObj: uniformTypeDescriptor.TypeDescriptor = uniformTypeDescriptor.getTypeDescriptor('general.source-code');
+  let ret = typeObj.isHigherLevelType('general.type-script');
+  if (ret) {
+    console.info('type general.source-code is higher level type of type general.type-script');
+  }
+} catch (e) {
+  let error: BusinessError = e as BusinessError;
+  console.error(`isHigherLevelType throws an exception. code is ${error.code}, message is ${error.message} `);
+}
 ```
 
 ### equals11+
 
-PhonePC/2in1TabletTV
-
 equals(typeDescriptor: TypeDescriptor): boolean
 
 判断指定的标准化数据类型描述类对象的类型ID和当前标准化数据类型描述类对象的类型ID是否相同，即[TypeDescriptor](js-apis-data-uniformtypedescriptor.md#typedescriptor11)对象的typeId。
+
+**使用场景：**
+
+* 比较两个数据类型是否相同
+* 数据类型去重
+* 类型匹配验证
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
 
@@ -398,7 +411,7 @@ equals(typeDescriptor: TypeDescriptor): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 返回true表示所比较的标准化数据类型相同；返回false则表示不同。 |
+| boolean | 返回true表示所比较的两个TypeDescriptor相同；返回false则表示不同。 |
 
 **错误码：**
 
@@ -406,33 +419,38 @@ equals(typeDescriptor: TypeDescriptor): boolean
 
 | **错误码ID** | **错误信息** |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { uniformTypeDescriptor } from '@kit.ArkData';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { uniformTypeDescriptor } from '@kit.ArkData';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try{
-5. let typeA : uniformTypeDescriptor.TypeDescriptor = uniformTypeDescriptor.getTypeDescriptor('general.type-script');
-6. let typeB : uniformTypeDescriptor.TypeDescriptor = uniformTypeDescriptor.getTypeDescriptor('general.python-script');
-7. if(!typeA.equals(typeB)) {
-8. console.info('typeA is not equal to typeB');
-9. }
-10. } catch(e) {
-11. let error: BusinessError = e as BusinessError;
-12. console.error(`throws an exception. code is ${error.code}, message is ${error.message} `);
-13. }
+try {
+  // 获取两个TypeDescriptor对象进行比较
+  let typeA: uniformTypeDescriptor.TypeDescriptor = uniformTypeDescriptor.getTypeDescriptor('general.type-script');
+  let typeB: uniformTypeDescriptor.TypeDescriptor = uniformTypeDescriptor.getTypeDescriptor('general.python-script');
+  if (!typeA.equals(typeB)) {
+    console.info('typeA is not equal to typeB');
+  }
+} catch (e) {
+  let error: BusinessError = e as BusinessError;
+  console.error(`throws an exception. code is ${error.code}, message is ${error.message} `);
+}
 ```
 
 ## uniformTypeDescriptor.getTypeDescriptor11+
 
-PhonePC/2in1TabletTV
-
 getTypeDescriptor(typeId: string): TypeDescriptor
 
 按给定的标准化数据类型ID查询并返回对应的标准化数据类型描述类对象。
+
+**使用场景：**
+
+* 获取数据类型的详细信息（如描述、图标等）
+* 查询数据类型的归属关系
+* 构建数据类型的选择器
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
 
@@ -446,7 +464,7 @@ getTypeDescriptor(typeId: string): TypeDescriptor
 
 | 类型 | 说明 |
 | --- | --- |
-| [TypeDescriptor](js-apis-data-uniformtypedescriptor.md#typedescriptor11) | 返回标准化数据类型描述类对象，如果要查询的标准化数据类型不存在则返回null。 |
+| [TypeDescriptor](js-apis-data-uniformtypedescriptor.md#typedescriptor11) | 返回标准化数据类型描述类对象。如果要查询的标准化数据类型不存在，则返回null。 |
 
 **错误码：**
 
@@ -454,56 +472,62 @@ getTypeDescriptor(typeId: string): TypeDescriptor
 
 | **错误码ID** | **错误信息** |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { uniformTypeDescriptor } from '@kit.ArkData';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { uniformTypeDescriptor } from '@kit.ArkData';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. let typeObj : uniformTypeDescriptor.TypeDescriptor = uniformTypeDescriptor.getTypeDescriptor('com.adobe.photoshop-image');
-6. if (typeObj) {
-7. let typeId = typeObj.typeId;
-8. let belongingToTypes = typeObj.belongingToTypes;
-9. let description = typeObj.description;
-10. let referenceURL = typeObj.referenceURL;
-11. let iconFile = typeObj.iconFile;
-12. let filenameExtensions = typeObj.filenameExtensions;
-13. let mimeTypes = typeObj.mimeTypes;
-14. console.info(`typeId: ${typeId}, belongingToTypes: ${belongingToTypes}, description: ${description}, referenceURL: ${referenceURL}, iconFile: ${iconFile}, filenameExtensions: ${filenameExtensions}, mimeTypes: ${mimeTypes}`);
-15. } else {
-16. console.info('type com.adobe.photoshop-image does not exist');
-17. }
-18. } catch(e) {
-19. let error: BusinessError = e as BusinessError;
-20. console.error(`getTypeDescriptor throws an exception. code is ${error.code}, message is ${error.message} `);
-21. }
+try {
+  // 获取指定类型的TypeDescriptor对象
+  let typeObj: uniformTypeDescriptor.TypeDescriptor =
+    uniformTypeDescriptor.getTypeDescriptor('com.adobe.photoshop-image');
+  if (typeObj) {
+    let typeId = typeObj.typeId;
+    let belongingToTypes = typeObj.belongingToTypes;
+    let description = typeObj.description;
+    let referenceURL = typeObj.referenceURL;
+    let iconFile = typeObj.iconFile;
+    let filenameExtensions = typeObj.filenameExtensions;
+    let mimeTypes = typeObj.mimeTypes;
+    console.info(`typeId: ${typeId}, belongingToTypes: ${belongingToTypes}, description: ${description}, referenceURL: ${referenceURL}, iconFile: ${iconFile}, filenameExtensions: ${filenameExtensions}, mimeTypes: ${mimeTypes}`);
+  } else {
+    console.info('type com.adobe.photoshop-image does not exist');
+  }
+} catch (e) {
+  let error: BusinessError = e as BusinessError;
+  console.error(`getTypeDescriptor throws an exception. code is ${error.code}, message is ${error.message} `);
+}
 ```
 
 ## uniformTypeDescriptor.getUniformDataTypeByFilenameExtension11+
-
-PhonePC/2in1TabletTV
 
 getUniformDataTypeByFilenameExtension(filenameExtension: string, belongsTo?: string): string
 
 根据给定的文件后缀名和所归属的标准化数据类型查询标准化数据类型ID，若有多个符合条件的标准化数据类型ID，则返回第一个。
 
+**使用场景：**
+
+* 文件导入时识别文件类型
+* 文件预览时选择合适的预览方式
+* 文件上传时确定数据类型
+
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| filenameExtension | string | 是 | 文件后缀名称。 |
-| belongsTo | string | 否 | 要查询的标准化数据类型所归属类型ID，无默认值，若不传入此参数则只按照文件后缀名称查询[标准化数据类型ID](../harmonyos-guides/uniform-data-type-descriptors.md)。 |
+| filenameExtension | string | 是 | 文件后缀名称，需要包含点号，如'.ts'、'.jpg'等。 |
+| belongsTo | string | 否 | 要查询的标准化数据类型所归属类型ID，用于限定查询范围。当需要查询特定归属类型下的数据类型时传入此参数，无默认值，若不传入此参数则只按照文件后缀名称查询[标准化数据类型ID](../harmonyos-guides/uniform-data-type-descriptors.md)。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| string | 返回与给定文件后缀名以及归属类型ID（如果设置了belongsTo参数）匹配的标准化数据类型ID，如果要查询的标准化数据类型不存在则返回根据入参按指定规则生成的动态类型。 |
+| string | 返回与给定文件后缀名以及归属类型ID（如果设置了belongsTo参数）匹配的标准化数据类型ID。如果要查询的标准化数据类型不存在，则返回根据入参按指定规则生成的动态类型（动态类型是系统动态生成的类型标识，以'flex.'为前缀，用于表示未预定义的数据类型）。 |
 
 **错误码：**
 
@@ -511,43 +535,47 @@ getUniformDataTypeByFilenameExtension(filenameExtension: string, belongsTo?: str
 
 | **错误码ID** | **错误信息** |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { uniformTypeDescriptor } from '@kit.ArkData';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { uniformTypeDescriptor } from '@kit.ArkData';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. let typeId = uniformTypeDescriptor.getUniformDataTypeByFilenameExtension('.ts', 'general.source-code');
-6. if(typeId) {
-7. console.info('typeId is general.type-script');
-8. }
-9. } catch(e) {
-10. let error: BusinessError = e as BusinessError;
-11. console.error(`getUniformDataTypeByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
-12. }
+try {
+  let typeId = uniformTypeDescriptor.getUniformDataTypeByFilenameExtension('.ts', 'general.source-code');
+  if (typeId) {
+    console.info('typeId is general.type-script');
+  }
+} catch (e) {
+  let error: BusinessError = e as BusinessError;
+  console.error(`getUniformDataTypeByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+}
 
-14. // 根据“.myts”，“general.plain-text”查不到预置数据类型则按返回根据入参信息生成的动态类型。
-15. try {
-16. let typeId = uniformTypeDescriptor.getUniformDataTypeByFilenameExtension('.myts', 'general.plain-text');
-17. if(typeId) {
-18. console.info('typeId is flex.************');
-19. }
-20. } catch(e) {
-21. let error: BusinessError = e as BusinessError;
-22. console.error(`getUniformDataTypeByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
-23. }
+// 根据“.myts”，“general.plain-text”查不到预置数据类型则返回根据入参信息生成的动态类型。
+try {
+  let typeId = uniformTypeDescriptor.getUniformDataTypeByFilenameExtension('.myts', 'general.plain-text');
+  if (typeId) {
+    console.info('typeId is flex.************');
+  }
+} catch (e) {
+  let error: BusinessError = e as BusinessError;
+  console.error(`getUniformDataTypeByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+}
 ```
 
 ## uniformTypeDescriptor.getUniformDataTypeByMIMEType11+
 
-PhonePC/2in1TabletTV
-
 getUniformDataTypeByMIMEType(mimeType: string, belongsTo?: string): string
 
 根据给定的MIME类型和所归属的标准化数据类型查询标准化数据类型ID，若有多个符合条件的标准化数据类型ID，则返回第一个。
+
+**使用场景：**
+
+* 处理剪贴板数据时识别数据类型
+* 解析网络请求的Content-Type
+* 数据拖拽传输时确定数据类型
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
 
@@ -555,7 +583,7 @@ getUniformDataTypeByMIMEType(mimeType: string, belongsTo?: string): string
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| mimeType | string | 是 | MIME类型名称。 |
+| mimeType | string | 是 | MIME类型名称，格式为'type/subtype'，如'image/jpeg'、'text/plain'等。 |
 | belongsTo | string | 否 | 要查询的标准化数据类型所归属类型ID。无默认值，若不传入此参数则只按照MIME类型名称查询[标准化数据类型ID](../harmonyos-guides/uniform-data-type-descriptors.md)。 |
 
 **返回值：**
@@ -570,43 +598,47 @@ getUniformDataTypeByMIMEType(mimeType: string, belongsTo?: string): string
 
 | **错误码ID** | **错误信息** |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { uniformTypeDescriptor } from '@kit.ArkData';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { uniformTypeDescriptor } from '@kit.ArkData';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. let typeId = uniformTypeDescriptor.getUniformDataTypeByMIMEType('image/jpeg', 'general.image');
-6. if(typeId) {
-7. console.info('typeId is general.jpeg');
-8. }
-9. } catch(e) {
-10. let error: BusinessError = e as BusinessError;
-11. console.error(`getUniformDataTypeByMIMEType throws an exception. code is ${error.code}, message is ${error.message} `);
-12. }
+try {
+  let typeId = uniformTypeDescriptor.getUniformDataTypeByMIMEType('image/jpeg', 'general.image');
+  if (typeId) {
+    console.info('typeId is general.jpeg');
+  }
+} catch (e) {
+  let error: BusinessError = e as BusinessError;
+  console.error(`getUniformDataTypeByMIMEType throws an exception. code is ${error.code}, message is ${error.message} `);
+}
 
-14. // 根据“image/myimage”, “general.image”查不到预置数据类型则按返回根据入参信息生成的动态类型。
-15. try {
-16. let typeId = uniformTypeDescriptor.getUniformDataTypeByMIMEType('image/myimage', 'general.image');
-17. if(typeId) {
-18. console.info('typeId is flex.************');
-19. }
-20. } catch(e) {
-21. let error: BusinessError = e as BusinessError;
-22. console.error(`getUniformDataTypeByMIMEType throws an exception. code is ${error.code}, message is ${error.message} `);
-23. }
+// 根据“image/myimage”, “general.image”查不到预置数据类型则返回根据入参信息生成的动态类型。
+try {
+  let typeId = uniformTypeDescriptor.getUniformDataTypeByMIMEType('image/myimage', 'general.image');
+  if (typeId) {
+    console.info('typeId is flex.************');
+  }
+} catch (e) {
+  let error: BusinessError = e as BusinessError;
+  console.error(`getUniformDataTypeByMIMEType throws an exception. code is ${error.code}, message is ${error.message} `);
+}
 ```
 
 ## uniformTypeDescriptor.getUniformDataTypesByFilenameExtension13+
 
-PhonePC/2in1TabletTV
-
 getUniformDataTypesByFilenameExtension(filenameExtension: string, belongsTo?: string): Array<string>
 
 根据给定的文件后缀名和所归属的标准化数据类型查询标准化数据类型ID列表。
+
+**使用场景：**
+
+* 展示某个文件后缀对应的所有可能数据类型
+* 文件类型选择器中提供多种类型选项
+* 分析文件格式与数据类型的对应关系
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
 
@@ -629,43 +661,47 @@ getUniformDataTypesByFilenameExtension(filenameExtension: string, belongsTo?: st
 
 | **错误码ID** | **错误信息** |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { uniformTypeDescriptor } from '@kit.ArkData';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { uniformTypeDescriptor } from '@kit.ArkData';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. let typeIds = uniformTypeDescriptor.getUniformDataTypesByFilenameExtension('.ts', 'general.source-code');
-6. for (let typeId of typeIds) {
-7. console.info(`typeId is ${typeId}`);
-8. }
-9. } catch(e) {
-10. let error: BusinessError = e as BusinessError;
-11. console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
-12. }
+try {
+  let typeIds = uniformTypeDescriptor.getUniformDataTypesByFilenameExtension('.ts', 'general.source-code');
+  for (let typeId of typeIds) {
+    console.info(`typeId is ${typeId}`);
+  }
+} catch (e) {
+  let error: BusinessError = e as BusinessError;
+  console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+}
 
-14. // 根据“.myts”，“general.plain-text”查不到预置数据类型则按返回根据入参信息生成的动态类型列表。
-15. try {
-16. let flexTypeIds = uniformTypeDescriptor.getUniformDataTypesByFilenameExtension('.myts', 'general.plain-text');
-17. for (let flexTypeId of flexTypeIds) {
-18. console.info(`typeId is flex type, flex typeId is ${flexTypeId}`);
-19. }
-20. } catch(e) {
-21. let error: BusinessError = e as BusinessError;
-22. console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
-23. }
+// 根据“.myts”，“general.plain-text”查不到预置数据类型则返回根据入参信息生成的动态类型列表。
+try {
+  let flexTypeIds = uniformTypeDescriptor.getUniformDataTypesByFilenameExtension('.myts', 'general.plain-text');
+  for (let flexTypeId of flexTypeIds) {
+    console.info(`typeId is flex type, flex typeId is ${flexTypeId}`);
+  }
+} catch (e) {
+  let error: BusinessError = e as BusinessError;
+  console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+}
 ```
 
 ## uniformTypeDescriptor.getUniformDataTypesByMIMEType13+
 
-PhonePC/2in1TabletTV
-
 getUniformDataTypesByMIMEType(mimeType: string, belongsTo?: string): Array<string>
 
 根据给定的MIME类型和所归属的标准化数据类型查询标准化数据类型ID列表。
+
+**使用场景：**
+
+* 获取某个MIME类型对应的所有可能数据类型
+* 数据类型分析和映射关系展示
+* 多类型匹配和选择
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
 
@@ -673,7 +709,7 @@ getUniformDataTypesByMIMEType(mimeType: string, belongsTo?: string): Array<strin
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| mimeType | string | 是 | MIME类型名称。 |
+| mimeType | string | 是 | MIME类型名称，格式为'type/subtype'，如'image/jpeg'、'text/plain'等。 |
 | belongsTo | string | 否 | 要查询的标准化数据类型所归属类型ID。无默认值，若不传入此参数则只按照MIME类型名称查询[标准化数据类型ID](../harmonyos-guides/uniform-data-type-descriptors.md)。 |
 
 **返回值：**
@@ -688,32 +724,32 @@ getUniformDataTypesByMIMEType(mimeType: string, belongsTo?: string): Array<strin
 
 | **错误码ID** | **错误信息** |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { uniformTypeDescriptor } from '@kit.ArkData';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { uniformTypeDescriptor } from '@kit.ArkData';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. let typeIds = uniformTypeDescriptor.getUniformDataTypesByMIMEType('text/plain', 'general.text');
-6. for (let typeId of typeIds) {
-7. console.info(`typeId is ${typeId}`);
-8. }
-9. } catch(e) {
-10. let error: BusinessError = e as BusinessError;
-11. console.error(`getUniformDataTypesByMIMEType throws an exception. code is ${error.code}, message is ${error.message} `);
-12. }
+try {
+  let typeIds = uniformTypeDescriptor.getUniformDataTypesByMIMEType('text/plain', 'general.text');
+  for (let typeId of typeIds) {
+    console.info(`typeId is ${typeId}`);
+  }
+} catch (e) {
+  let error: BusinessError = e as BusinessError;
+  console.error(`getUniformDataTypesByMIMEType throws an exception. code is ${error.code}, message is ${error.message} `);
+}
 
-14. // 根据“image/myimage”, “general.image”查不到预置数据类型则按返回根据入参信息生成的动态类型列表。
-15. try {
-16. let flexTypeIds = uniformTypeDescriptor.getUniformDataTypesByMIMEType('image/myimage', 'general.image');
-17. for (let flexTypeId of flexTypeIds) {
-18. console.info(`typeId is flex type, flex typeId is ${flexTypeId}`);
-19. }
-20. } catch(e) {
-21. let error: BusinessError = e as BusinessError;
-22. console.error(`getUniformDataTypesByMIMEType throws an exception. code is ${error.code}, message is ${error.message} `);
-23. }
+// 根据“image/myimage”, “general.image”查不到预置数据类型则返回根据入参信息生成的动态类型列表。
+try {
+  let flexTypeIds = uniformTypeDescriptor.getUniformDataTypesByMIMEType('image/myimage', 'general.image');
+  for (let flexTypeId of flexTypeIds) {
+    console.info(`typeId is flex type, flex typeId is ${flexTypeId}`);
+  }
+} catch (e) {
+  let error: BusinessError = e as BusinessError;
+  console.error(`getUniformDataTypesByMIMEType throws an exception. code is ${error.code}, message is ${error.message} `);
+}
 ```

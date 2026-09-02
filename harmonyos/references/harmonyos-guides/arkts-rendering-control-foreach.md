@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-renderi
 title: ForEach：循环渲染
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式渲染控制 > ForEach：循环渲染
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:32+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:384ea2a0fe2b26ad2faa71274b7ab7eeb5946acee21d86d7cb4aea821498046d
+scraped_at: 2026-09-02T14:59:16+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:625bcf933fa7ae2eb7348006b47dd045e229eb14bd018d46cdfe9e26c8623e07
 ---
 
 ForEach接口基于数组循环渲染，需要与容器组件配合使用，且接口返回的组件应当是允许包含在ForEach父容器组件中的子组件。例如，[ListItem](../harmonyos-references/ts-container-listitem.md)组件要求ForEach的父容器组件必须为[List组件](../harmonyos-references/ts-container-list.md)。
 
 API参数说明见：[ForEach API参数说明](../harmonyos-references/ts-rendering-control-foreach.md)。
 
-说明
+**说明** 
 
 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -26,9 +26,9 @@ ArkUI框架对于ForEach的键值生成有一套特定的判断规则，这主�
 
 **图1** ForEach键值生成规则
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/1qL2tZZoSNaHWLtjlANFXw/zh-cn_image_0000002589324003.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/8udahgFmR9acEerpt6XzSw/zh-cn_image_0000002736432489.png)
 
-说明
+**说明** 
 
 1. ArkUI框架会对重复的键值发出运行时警告。在UI更新时，如果出现重复的键值，框架可能无法正常工作，具体请参见[渲染结果非预期](arkts-rendering-control-foreach.md#渲染结果非预期)。
 2. 不建议在键值中包含数据项索引index，这可能会导致[渲染结果非预期](arkts-rendering-control-foreach.md#渲染结果非预期)和[渲染性能降低](arkts-rendering-control-foreach.md#渲染性能降低)。
@@ -36,48 +36,48 @@ ArkUI框架对于ForEach的键值生成有一套特定的判断规则，这主�
 
 键值生成示例:
 
-```
-1. interface ChildItemType {
-2. str: string;
-3. num: number;
-4. }
+```typescript
+interface ChildItemType {
+  str: string;
+  num: number;
+}
 
-6. @Entry
-7. @Component
-8. struct Index {
-9. @State simpleList: Array<ChildItemType> = [
-10. { str: 'one', num: 1 },
-11. { str: 'two', num: 2 },
-12. { str: 'three', num: 3 }
-13. ];
+@Entry
+@Component
+export struct ForEachKeyGeneration {
+  @State simpleList: Array<ChildItemType> = [
+    { str: 'one', num: 1 },
+    { str: 'two', num: 2 },
+    { str: 'three', num: 3 }
+  ];
 
-15. build() {
-16. Row() {
-17. Column() {
-18. ForEach(this.simpleList, (item: ChildItemType, index: number) => {
-19. ChildItem({ str: item.str, num: index }) // 组件生成函数中使用index参数
-20. }, (item: ChildItemType, index: number) => {
-21. return item.str; // 建议在键值生成函数中使用与UI界面相关的数据属性str
-22. })
-23. }
-24. .width('100%')
-25. .height('100%')
-26. }
-27. .height('100%')
-28. .backgroundColor(0xF1F3F5)
-29. }
-30. }
+  build() {
+    Row() {
+      Column() {
+        ForEach(this.simpleList, (item: ChildItemType, index: number) => {
+          ChildItem({ str: item.str, num: index }) // 组件生成函数中使用index参数
+        }, (item: ChildItemType, index: number) => {
+          return item.str; // 建议在键值生成函数中使用与UI界面相关的数据属性str
+        })
+      }
+      .width('100%')
+      .height('100%')
+    }
+    .height('100%')
+    .backgroundColor(0xF1F3F5)
+  }
+}
 
-32. @Component
-33. struct ChildItem {
-34. @Prop str: string = '';
-35. @Prop num: number = 0;
+@Component
+export struct ChildItem {
+  @Prop str: string = '';
+  @Prop num: number = 0;
 
-37. build() {
-38. Text(this.str)
-39. .fontSize(50)
-40. }
-41. }
+  build() {
+    Text(this.str)
+      .fontSize(50)
+  }
+}
 ```
 
 在上述示例中，当组件生成函数声明index时，建议键值生成函数也声明index参数，以避免渲染性能降低和渲染结果非预期。同时建议在键值生成函数实现中使用与UI相关的数据属性，在本示例中，数据属性str与UI界面显示相关，因此建议将其作为键值生成函数的返回值。
@@ -90,89 +90,85 @@ ArkUI框架对于ForEach的键值生成有一套特定的判断规则，这主�
 
 在ForEach首次渲染时，会根据前述键值生成规则为数据源的每个数组项生成唯一键值，并创建相应的组件。
 
+```typescript
+@Entry
+@Component
+struct ForEachFirstRender {
+  @State simpleList: Array<string> = ['one', 'two', 'three'];
+
+  build() {
+    Row() {
+      Column() {
+        ForEach(this.simpleList, (item: string) => {
+          ForEachChildItem({ item: item })
+        }, (item: string) => item) // 需要保证key唯一
+      }
+      .width('100%')
+      .height('100%')
+    }
+    .height('100%')
+    .backgroundColor(0xF1F3F5)
+  }
+}
+
+@Component
+struct ForEachChildItem {
+  @Prop item: string;
+
+  build() {
+    Text(this.item)
+      .fontSize(50)
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct ForEachFirstRender {
-4. @State simpleList: Array<string> = ['one', 'two', 'three'];
-
-6. build() {
-7. Row() {
-8. Column() {
-9. ForEach(this.simpleList, (item: string) => {
-10. ForEachChildItem({ item: item })
-11. }, (item: string) => item) // 需要保证key唯一
-12. }
-13. .width('100%')
-14. .height('100%')
-15. }
-16. .height('100%')
-17. .backgroundColor(0xF1F3F5)
-18. }
-19. }
-
-21. @Component
-22. struct ForEachChildItem {
-23. @Prop item: string;
-
-25. build() {
-26. Text(this.item)
-27. .fontSize(50)
-28. }
-29. }
-```
-
-[ForEach1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingForeach/ForEach1.ets#L16-L48)
 
 运行效果如下图所示。
 
 **图2** ForEach数据项不存在相同键值案例首次渲染运行效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/G5M8TYuNQhicSGJiGC8YmQ/zh-cn_image_0000002589243943.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/KlawW8VGQpWd2SZ1n8Hvww/zh-cn_image_0000002706833336.png)
 
 在上述代码中，keyGenerator函数的返回值是item。在ForEach渲染循环时，为数组项依次生成键值one、two和three，并创建对应的ForEachChildItem组件渲染到界面上。
 
 当不同数组项生成的键值相同时，框架的行为是未定义的。例如，在以下代码中，ForEach渲染相同的数据项two时，只创建了一个SameKeyChildItem组件，而没有创建多个具有相同键值的组件。
 
+```typescript
+@Entry
+@Component
+struct ForEachSameKey {
+  @State simpleList: Array<string> = ['one', 'two', 'two', 'three'];
+
+  build() {
+    Row() {
+      Column() {
+        ForEach(this.simpleList, (item: string) => {
+          SameKeyChildItem({ item: item })
+        }, (item: string) => item)
+      }
+      .width('100%')
+      .height('100%')
+    }
+    .height('100%')
+    .backgroundColor(0xF1F3F5)
+  }
+}
+
+@Component
+struct SameKeyChildItem {
+  @Prop item: string;
+
+  build() {
+    Text(this.item)
+      .fontSize(50)
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct ForEachSameKey {
-4. @State simpleList: Array<string> = ['one', 'two', 'two', 'three'];
-
-6. build() {
-7. Row() {
-8. Column() {
-9. ForEach(this.simpleList, (item: string) => {
-10. SameKeyChildItem({ item: item })
-11. }, (item: string) => item)
-12. }
-13. .width('100%')
-14. .height('100%')
-15. }
-16. .height('100%')
-17. .backgroundColor(0xF1F3F5)
-18. }
-19. }
-
-21. @Component
-22. struct SameKeyChildItem {
-23. @Prop item: string;
-
-25. build() {
-26. Text(this.item)
-27. .fontSize(50)
-28. }
-29. }
-```
-
-[ForEach2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingForeach/ForEach2.ets#L16-L46)
 
 运行效果如下图所示。
 
 **图3** ForEach数据源存在相同值案例首次渲染运行效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/TG980oFQRyWaUlbM8DY8AQ/zh-cn_image_0000002558764136.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/bIw0Kas4Q3qzzLt6pYlDfQ/zh-cn_image_0000002736312445.png)
 
 在该示例中，最终键值生成规则为item。当ForEach遍历数据源simpleList，遍历到索引为1的two时，创建键值为two的组件并记录。当遍历到索引为2的two时，当前项的键值也为two，此时不再创建新的组件。
 
@@ -180,54 +176,52 @@ ArkUI框架对于ForEach的键值生成有一套特定的判断规则，这主�
 
 在ForEach组件进行非首次渲染时，它会检查新生成的键值是否在上次渲染中已经存在。如果键值不存在，则会创建一个新的组件；如果键值存在，则不会创建新的组件，而是直接渲染该键值所对应的组件。例如，在以下的代码示例中，通过点击事件修改了数组的第三项值为"new three"，这将触发ForEach组件进行非首次渲染。
 
+```typescript
+@Entry
+@Component
+struct ForEachNotFirstRender {
+  @State simpleList: Array<string> = ['one', 'two', 'three'];
+
+  build() {
+    Row() {
+      Column() {
+        Text('Click to change the value of the third array item')
+          .fontSize(24)
+          .fontColor(Color.Red)
+          .onClick(() => {
+            this.simpleList[2] = 'new three';
+          })
+
+        ForEach(this.simpleList, (item: string) => {
+          NotFirstRenderChildItem({ item: item })
+            .margin({ top: 20 })
+        }, (item: string) => item)
+      }
+      .justifyContent(FlexAlign.Center)
+      .width('100%')
+      .height('100%')
+    }
+    .height('100%')
+    .backgroundColor(0xF1F3F5)
+  }
+}
+
+@Component
+struct NotFirstRenderChildItem {
+  @Prop item: string;
+
+  build() {
+    Text(this.item)
+      .fontSize(30)
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct ForEachNotFirstRender {
-4. @State simpleList: Array<string> = ['one', 'two', 'three'];
-
-6. build() {
-7. Row() {
-8. Column() {
-9. Text('Click to change the value of the third array item')
-10. .fontSize(24)
-11. .fontColor(Color.Red)
-12. .onClick(() => {
-13. this.simpleList[2] = 'new three';
-14. })
-
-16. ForEach(this.simpleList, (item: string) => {
-17. NotFirstRenderChildItem({ item: item })
-18. .margin({ top: 20 })
-19. }, (item: string) => item)
-20. }
-21. .justifyContent(FlexAlign.Center)
-22. .width('100%')
-23. .height('100%')
-24. }
-25. .height('100%')
-26. .backgroundColor(0xF1F3F5)
-27. }
-28. }
-
-30. @Component
-31. struct NotFirstRenderChildItem {
-32. @Prop item: string;
-
-34. build() {
-35. Text(this.item)
-36. .fontSize(30)
-37. }
-38. }
-```
-
-[ForEach3.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingForeach/ForEach3.ets#L16-L55)
 
 运行效果如下图所示。
 
 **图4** ForEach非首次渲染案例运行效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/8vmHLAxwTtmqtE0k3Ho5Cw/zh-cn_image_0000002558604480.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/xfj04NzASgKtH44igR-urA/zh-cn_image_0000002706673400.gif)
 
 从本例可以看出[@State](arkts-state.md)能够监听到简单数据类型数组simpleList数组项的变化。
 
@@ -243,67 +237,65 @@ ForEach组件在开发过程中的主要应用场景包括：[数据源不变](a
 
 在数据源保持不变的场景中，数据源可以直接采用基本数据类型。例如，页面加载状态时，可以使用骨架屏列表进行渲染展示。
 
+```typescript
+@Entry
+@Component
+struct ArticleList {
+  @State simpleList: Array<number> = [1, 2, 3, 4, 5];
+
+  build() {
+    Column() {
+      ForEach(this.simpleList, (item: number) => {
+        ArticleSkeletonView()
+          .margin({ top: 20 })
+      }, (item: number) => item.toString())
+    }
+    .padding(20)
+    .width('100%')
+    .height('100%')
+  }
+}
+
+@Builder
+function textArea(width: number | Resource | string = '100%', height: number | Resource | string = '100%') {
+  Row()
+    .width(width)
+    .height(height)
+    .backgroundColor('#FFF2F3F4')
+}
+
+@Component
+struct ArticleSkeletonView {
+  build() {
+    Row() {
+      Column() {
+        textArea(80, 80)
+      }
+      .margin({ right: 20 })
+
+      Column() {
+        textArea('60%', 20)
+        textArea('50%', 20)
+      }
+      .alignItems(HorizontalAlign.Start)
+      .justifyContent(FlexAlign.SpaceAround)
+      .height('100%')
+    }
+    .padding(20)
+    .borderRadius(12)
+    .backgroundColor('#FFECECEC')
+    .height(120)
+    .width('100%')
+    .justifyContent(FlexAlign.SpaceBetween)
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct ArticleList {
-4. @State simpleList: Array<number> = [1, 2, 3, 4, 5];
-
-6. build() {
-7. Column() {
-8. ForEach(this.simpleList, (item: number) => {
-9. ArticleSkeletonView()
-10. .margin({ top: 20 })
-11. }, (item: number) => item.toString())
-12. }
-13. .padding(20)
-14. .width('100%')
-15. .height('100%')
-16. }
-17. }
-
-19. @Builder
-20. function textArea(width: number | Resource | string = '100%', height: number | Resource | string = '100%') {
-21. Row()
-22. .width(width)
-23. .height(height)
-24. .backgroundColor('#FFF2F3F4')
-25. }
-
-27. @Component
-28. struct ArticleSkeletonView {
-29. build() {
-30. Row() {
-31. Column() {
-32. textArea(80, 80)
-33. }
-34. .margin({ right: 20 })
-
-36. Column() {
-37. textArea('60%', 20)
-38. textArea('50%', 20)
-39. }
-40. .alignItems(HorizontalAlign.Start)
-41. .justifyContent(FlexAlign.SpaceAround)
-42. .height('100%')
-43. }
-44. .padding(20)
-45. .borderRadius(12)
-46. .backgroundColor('#FFECECEC')
-47. .height(120)
-48. .width('100%')
-49. .justifyContent(FlexAlign.SpaceBetween)
-50. }
-51. }
-```
-
-[ArticleSkeletonView.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingForeach/ArticleSkeletonView.ets#L16-L68)
 
 运行效果如下图所示。
 
 **图5** 骨架屏运行效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/3y8YCrf3S3aGmzvM1ZYOSg/zh-cn_image_0000002589324005.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/qItZ1n5NS1O0BOZkc4CV8Q/zh-cn_image_0000002736432491.png)
 
 在本示例中，采用数据项item作为键值生成规则，由于数据源simpleList的数组项各不相同，因此能够保证键值的唯一性。
 
@@ -311,109 +303,107 @@ ForEach组件在开发过程中的主要应用场景包括：[数据源不变](a
 
 在数据源数组项发生变化的场景下，如数组插入、删除操作或者数组项索引位置交换时，数据源应为对象数组类型，并使用对象的唯一ID作为键值。
 
+```typescript
+class ArticleChangeSource {
+  public id: string;
+  public title: string;
+  public brief: string;
+
+  constructor(id: string, title: string, brief: string) {
+    this.id = id;
+    this.title = title;
+    this.brief = brief;
+  }
+}
+
+@Entry
+@Component
+struct ArticleListViewChangeSource {
+  isListReachEnd: boolean = false;
+  @State articleList: Array<ArticleChangeSource> = [
+    new ArticleChangeSource('001', 'Article 1', 'Abstract'),
+    new ArticleChangeSource('002', 'Article 2', 'Abstract'),
+    new ArticleChangeSource('003', 'Article 3', 'Abstract'),
+    new ArticleChangeSource('004', 'Article 4', 'Abstract'),
+    new ArticleChangeSource('005', 'Article 5', 'Abstract'),
+    new ArticleChangeSource('006', 'Article 6', 'Abstract')
+  ];
+
+  loadMoreArticles() {
+    this.articleList.push(new ArticleChangeSource('007', 'New Article', 'Abstract'));
+  }
+
+  build() {
+    Column({ space: 5 }) {
+      List() {
+        ForEach(this.articleList, (item: ArticleChangeSource) => {
+          ListItem() {
+            ArticleCardChangeSource({ article: item })
+              .margin({ top: 20 })
+          }
+        }, (item: ArticleChangeSource) => item.id)
+      }
+      .onReachEnd(() => {
+        this.isListReachEnd = true;
+      })
+      .parallelGesture(
+        PanGesture({ direction: PanDirection.Up, distance: 80 })
+          .onActionStart(() => {
+            if (this.isListReachEnd) {
+              this.loadMoreArticles();
+              this.isListReachEnd = false;
+            }
+          })
+      )
+      .padding(20)
+      .scrollBar(BarState.Off)
+    }
+    .width('100%')
+    .height('100%')
+    .backgroundColor(0xF1F3F5)
+  }
+}
+
+@Component
+struct ArticleCardChangeSource {
+  @Prop article: ArticleChangeSource;
+
+  build() {
+    Row() {
+      // 此处'app.media.startIcon'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
+      Image($r('app.media.startIcon'))
+        .width(80)
+        .height(80)
+        .margin({ right: 20 })
+
+      Column() {
+        Text(this.article.title)
+          .fontSize(20)
+          .margin({ bottom: 8 })
+        Text(this.article.brief)
+          .fontSize(16)
+          .fontColor(Color.Gray)
+          .margin({ bottom: 8 })
+      }
+      .alignItems(HorizontalAlign.Start)
+      .width('80%')
+      .height('100%')
+    }
+    .padding(20)
+    .borderRadius(12)
+    .backgroundColor('#FFECECEC')
+    .height(120)
+    .width('100%')
+    .justifyContent(FlexAlign.SpaceBetween)
+  }
+}
 ```
-1. class ArticleChangeSource {
-2. public id: string;
-3. public title: string;
-4. public brief: string;
-
-6. constructor(id: string, title: string, brief: string) {
-7. this.id = id;
-8. this.title = title;
-9. this.brief = brief;
-10. }
-11. }
-
-13. @Entry
-14. @Component
-15. struct ArticleListViewChangeSource {
-16. isListReachEnd: boolean = false;
-17. @State articleList: Array<ArticleChangeSource> = [
-18. new ArticleChangeSource('001', 'Article 1', 'Abstract'),
-19. new ArticleChangeSource('002', 'Article 2', 'Abstract'),
-20. new ArticleChangeSource('003', 'Article 3', 'Abstract'),
-21. new ArticleChangeSource('004', 'Article 4', 'Abstract'),
-22. new ArticleChangeSource('005', 'Article 5', 'Abstract'),
-23. new ArticleChangeSource('006', 'Article 6', 'Abstract')
-24. ];
-
-26. loadMoreArticles() {
-27. this.articleList.push(new ArticleChangeSource('007', 'New Article', 'Abstract'));
-28. }
-
-30. build() {
-31. Column({ space: 5 }) {
-32. List() {
-33. ForEach(this.articleList, (item: ArticleChangeSource) => {
-34. ListItem() {
-35. ArticleCardChangeSource({ article: item })
-36. .margin({ top: 20 })
-37. }
-38. }, (item: ArticleChangeSource) => item.id)
-39. }
-40. .onReachEnd(() => {
-41. this.isListReachEnd = true;
-42. })
-43. .parallelGesture(
-44. PanGesture({ direction: PanDirection.Up, distance: 80 })
-45. .onActionStart(() => {
-46. if (this.isListReachEnd) {
-47. this.loadMoreArticles();
-48. this.isListReachEnd = false;
-49. }
-50. })
-51. )
-52. .padding(20)
-53. .scrollBar(BarState.Off)
-54. }
-55. .width('100%')
-56. .height('100%')
-57. .backgroundColor(0xF1F3F5)
-58. }
-59. }
-
-61. @Component
-62. struct ArticleCardChangeSource {
-63. @Prop article: ArticleChangeSource;
-
-65. build() {
-66. Row() {
-67. // 此处'app.media.startIcon'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
-68. Image($r('app.media.startIcon'))
-69. .width(80)
-70. .height(80)
-71. .margin({ right: 20 })
-
-73. Column() {
-74. Text(this.article.title)
-75. .fontSize(20)
-76. .margin({ bottom: 8 })
-77. Text(this.article.brief)
-78. .fontSize(16)
-79. .fontColor(Color.Gray)
-80. .margin({ bottom: 8 })
-81. }
-82. .alignItems(HorizontalAlign.Start)
-83. .width('80%')
-84. .height('100%')
-85. }
-86. .padding(20)
-87. .borderRadius(12)
-88. .backgroundColor('#FFECECEC')
-89. .height(120)
-90. .width('100%')
-91. .justifyContent(FlexAlign.SpaceBetween)
-92. }
-93. }
-```
-
-[ArticleListView.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingForeach/ArticleListView.ets#L16-L110)
 
 初始运行效果（左图）和手势上滑加载后效果（右图）如下图所示。
 
 **图6** 数据源数组项变化案例运行效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/mte5eS3PQaGumsKWvH-0uQ/zh-cn_image_0000002589243945.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/htKiZ3PPR8qBGHua3l4_CA/zh-cn_image_0000002706833338.png)
 
 在本示例中，ArticleCardChangeSource组件作为ArticleListViewChangeSource组件的子组件，通过[@Prop](arkts-prop.md)装饰器接收一个ArticleChangeSource对象，用于渲染文章卡片。
 
@@ -424,112 +414,110 @@ ForEach组件在开发过程中的主要应用场景包括：[数据源不变](a
 
 当数据源的数组项为对象数据类型，并且只修改某个数组项的属性值时，由于数据源为复杂数据类型，ArkUI框架无法监听到@State装饰器修饰的数据源数组项的属性变化，从而无法触发ForEach的重新渲染。为实现ForEach子组件重新渲染，需要结合[@Observed和@ObjectLink](arkts-observed-and-objectlink.md)装饰器使用。例如，在文章列表卡片上点击“点赞”按钮，从而修改文章的点赞数量。
 
+```typescript
+@Observed
+class ArticleChangeChild {
+  public id: string;
+  public title: string;
+  public brief: string;
+  public isLiked: boolean;
+  public likesCount: number;
+
+  constructor(id: string, title: string, brief: string, isLiked: boolean, likesCount: number) {
+    this.id = id;
+    this.title = title;
+    this.brief = brief;
+    this.isLiked = isLiked;
+    this.likesCount = likesCount;
+  }
+}
+
+@Entry
+@Component
+struct ArticleListChangeView {
+  @State articleList: Array<ArticleChangeChild> = [
+    new ArticleChangeChild('001', 'Article 0', 'Abstract', false, 100),
+    new ArticleChangeChild('002', 'Article 1', 'Abstract', false, 100),
+    new ArticleChangeChild('003', 'Article 2', 'Abstract', false, 100),
+    new ArticleChangeChild('004', 'Article 4', 'Abstract', false, 100),
+    new ArticleChangeChild('005', 'Article 5', 'Abstract', false, 100),
+    new ArticleChangeChild('006', 'Article 6', 'Abstract', false, 100),
+  ];
+
+  build() {
+    List() {
+      ForEach(this.articleList, (item: ArticleChangeChild) => {
+        ListItem() {
+          ArticleCardChangeChild({
+            article: item
+          })
+            .margin({ top: 20 })
+        }
+      }, (item: ArticleChangeChild) => item.id)
+    }
+    .padding(20)
+    .scrollBar(BarState.Off)
+    .backgroundColor(0xF1F3F5)
+  }
+}
+
+@Component
+struct ArticleCardChangeChild {
+  @ObjectLink article: ArticleChangeChild;
+
+  handleLiked() {
+    this.article.isLiked = !this.article.isLiked;
+    this.article.likesCount = this.article.isLiked ? this.article.likesCount + 1 : this.article.likesCount - 1;
+  }
+
+  build() {
+    Row() {
+      // 此处'app.media.startIcon'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
+      Image($r('app.media.startIcon'))
+        .width(80)
+        .height(80)
+        .margin({ right: 20 })
+
+      Column() {
+        Text(this.article.title)
+          .fontSize(20)
+          .margin({ bottom: 8 })
+        Text(this.article.brief)
+          .fontSize(16)
+          .fontColor(Color.Gray)
+          .margin({ bottom: 8 })
+
+        Row() {
+          // 此处'app.media.iconLiked'，'app.media.iconUnliked'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
+          Image(this.article.isLiked ? $r('app.media.iconLiked') : $r('app.media.iconUnliked'))
+            .width(24)
+            .height(24)
+            .margin({ right: 8 })
+          Text(this.article.likesCount.toString())
+            .fontSize(16)
+        }
+        .onClick(() => this.handleLiked())
+        .justifyContent(FlexAlign.Center)
+      }
+      .alignItems(HorizontalAlign.Start)
+      .width('80%')
+      .height('100%')
+    }
+    .padding(20)
+    .borderRadius(12)
+    .backgroundColor('#FFECECEC')
+    .height(120)
+    .width('100%')
+    .justifyContent(FlexAlign.SpaceBetween)
+  }
+}
 ```
-1. @Observed
-2. class ArticleChangeChild {
-3. public id: string;
-4. public title: string;
-5. public brief: string;
-6. public isLiked: boolean;
-7. public likesCount: number;
-
-9. constructor(id: string, title: string, brief: string, isLiked: boolean, likesCount: number) {
-10. this.id = id;
-11. this.title = title;
-12. this.brief = brief;
-13. this.isLiked = isLiked;
-14. this.likesCount = likesCount;
-15. }
-16. }
-
-18. @Entry
-19. @Component
-20. struct ArticleListChangeView {
-21. @State articleList: Array<ArticleChangeChild> = [
-22. new ArticleChangeChild('001', 'Article 0', 'Abstract', false, 100),
-23. new ArticleChangeChild('002', 'Article 1', 'Abstract', false, 100),
-24. new ArticleChangeChild('003', 'Article 2', 'Abstract', false, 100),
-25. new ArticleChangeChild('004', 'Article 4', 'Abstract', false, 100),
-26. new ArticleChangeChild('005', 'Article 5', 'Abstract', false, 100),
-27. new ArticleChangeChild('006', 'Article 6', 'Abstract', false, 100),
-28. ];
-
-30. build() {
-31. List() {
-32. ForEach(this.articleList, (item: ArticleChangeChild) => {
-33. ListItem() {
-34. ArticleCardChangeChild({
-35. article: item
-36. })
-37. .margin({ top: 20 })
-38. }
-39. }, (item: ArticleChangeChild) => item.id)
-40. }
-41. .padding(20)
-42. .scrollBar(BarState.Off)
-43. .backgroundColor(0xF1F3F5)
-44. }
-45. }
-
-47. @Component
-48. struct ArticleCardChangeChild {
-49. @ObjectLink article: ArticleChangeChild;
-
-51. handleLiked() {
-52. this.article.isLiked = !this.article.isLiked;
-53. this.article.likesCount = this.article.isLiked ? this.article.likesCount + 1 : this.article.likesCount - 1;
-54. }
-
-56. build() {
-57. Row() {
-58. // 此处'app.media.startIcon'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
-59. Image($r('app.media.startIcon'))
-60. .width(80)
-61. .height(80)
-62. .margin({ right: 20 })
-
-64. Column() {
-65. Text(this.article.title)
-66. .fontSize(20)
-67. .margin({ bottom: 8 })
-68. Text(this.article.brief)
-69. .fontSize(16)
-70. .fontColor(Color.Gray)
-71. .margin({ bottom: 8 })
-
-73. Row() {
-74. // 此处app.media.iconLiked'，'app.media.iconUnLiked'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
-75. Image(this.article.isLiked ? $r('app.media.iconLiked') : $r('app.media.iconUnLiked'))
-76. .width(24)
-77. .height(24)
-78. .margin({ right: 8 })
-79. Text(this.article.likesCount.toString())
-80. .fontSize(16)
-81. }
-82. .onClick(() => this.handleLiked())
-83. .justifyContent(FlexAlign.Center)
-84. }
-85. .alignItems(HorizontalAlign.Start)
-86. .width('80%')
-87. .height('100%')
-88. }
-89. .padding(20)
-90. .borderRadius(12)
-91. .backgroundColor('#FFECECEC')
-92. .height(120)
-93. .width('100%')
-94. .justifyContent(FlexAlign.SpaceBetween)
-95. }
-96. }
-```
-
-[ArticleListView2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingForeach/ArticleListView2.ets#L16-L113)
 
 上述代码的初始运行效果（左图）和点击第1个文章卡片上的点赞图标后的运行效果（右图）如下图所示。
 
 **图7** 数据源数组项子属性变化案例运行效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/r8DYhRbtQK61IvB1XENf-Q/zh-cn_image_0000002558764138.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/VwtX0zvLQ3iXWXtuFlsHLw/zh-cn_image_0000002736312447.png)
 
 在本示例中，ArticleChangeChild类被@Observed装饰器修饰。父组件ArticleListChangeView传入ArticleChangeChild对象实例给子组件ArticleCardChangeChild，子组件使用@ObjectLink装饰器接收该实例。
 
@@ -540,65 +528,63 @@ ForEach组件在开发过程中的主要应用场景包括：[数据源不变](a
 
 在List组件下使用ForEach，并设置[onMove](../harmonyos-references/ts-universal-attributes-drag-sorting.md#onmove)事件，每次迭代生成一个ListItem时，可以使能拖拽排序。拖拽排序离手后，如果组件位置发生变化，将触发onMove事件，上报组件移动原始索引号和目标索引号。在onMove事件中，需要根据上报的起始索引号和目标索引号修改数据源。数据源修改前后，要保持每个数据的键值不变，只是顺序发生变化，才能保证落位动画正常执行。
 
+```typescript
+@Entry
+@Component
+struct ForEachSort {
+  @State arr: Array<string> = [];
+
+  build() {
+    Column() {
+      // 点击此按钮会触发ForEach重新渲染
+      Button('Add one item')
+        .onClick(() => {
+          this.arr.push('10');
+        })
+        .width(300)
+        .margin(10)
+
+      List() {
+        ForEach(this.arr, (item: string) => {
+          ListItem() {
+            Text(item.toString())
+              .fontSize(16)
+              .textAlign(TextAlign.Center)
+              .size({ height: 100, width: '100%' })
+          }.margin(10)
+          .borderRadius(10)
+          .backgroundColor('#FFFFFFFF')
+        }, (item: string) => item)
+          .onMove((from: number, to: number) => {
+            // 以下两行代码是为了确保拖拽后屏幕上组件的顺序与数组arr中每一项的顺序保持一致。
+            // 若注释以下两行，第一步拖拽排序，第二步在arr末尾插入一项，触发ForEach渲染，此时屏上组件的顺序会跟数组arr中每一项的顺序一致，而不是维持第一步拖拽后的顺序，意味着拖拽排序在ForEach渲染后失效了。
+            let tmp = this.arr.splice(from, 1);
+            this.arr.splice(to, 0, tmp[0]);
+          })
+      }
+      .width('100%')
+      .height('100%')
+      .backgroundColor('#FFDCDCDC')
+    }
+  }
+
+  aboutToAppear(): void {
+    for (let i = 0; i < 10; i++) {
+      this.arr.push(i.toString());
+    }
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct ForEachSort {
-4. @State arr: Array<string> = [];
-
-6. build() {
-7. Column() {
-8. // 点击此按钮会触发ForEach重新渲染
-9. Button('Add one item')
-10. .onClick(() => {
-11. this.arr.push('10');
-12. })
-13. .width(300)
-14. .margin(10)
-
-16. List() {
-17. ForEach(this.arr, (item: string) => {
-18. ListItem() {
-19. Text(item.toString())
-20. .fontSize(16)
-21. .textAlign(TextAlign.Center)
-22. .size({ height: 100, width: '100%' })
-23. }.margin(10)
-24. .borderRadius(10)
-25. .backgroundColor('#FFFFFFFF')
-26. }, (item: string) => item)
-27. .onMove((from: number, to: number) => {
-28. // 以下两行代码是为了确保拖拽后屏幕上组件的顺序与数组arr中每一项的顺序保持一致。
-29. // 若注释以下两行，第一步拖拽排序，第二步在arr末尾插入一项，触发ForEach渲染，此时屏上组件的顺序会跟数组arr中每一项的顺序一致，而不是维持第一步拖拽后的顺序，意味着拖拽排序在ForEach渲染后失效了。
-30. let tmp = this.arr.splice(from, 1);
-31. this.arr.splice(to, 0, tmp[0]);
-32. })
-33. }
-34. .width('100%')
-35. .height('100%')
-36. .backgroundColor('#FFDCDCDC')
-37. }
-38. }
-
-40. aboutToAppear(): void {
-41. for (let i = 0; i < 10; i++) {
-42. this.arr.push(i.toString());
-43. }
-44. }
-45. }
-```
-
-[ForEachSort.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingForeach/ForEachSort.ets#L16-L62)
 
 **图8** ForEach拖拽排序效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/PgiB1N3eQd-zXf6ieiQb-A/zh-cn_image_0000002558604482.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/A87Emue_RZyJ93yKVBA4UA/zh-cn_image_0000002706673402.gif)
 
 注释掉onMove事件调用中的两行代码，点击Add one item触发渲染后的效果如下图所示。
 
 **图9** ForEach拖拽排序效果在重新渲染后没有保留
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/NZIoX1K8SgSaMTwqel6RhA/zh-cn_image_0000002589324007.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/CH3sryk3RBqG8LcARsy6JA/zh-cn_image_0000002736432493.png)
 
 ## 使用建议
 
@@ -618,50 +604,48 @@ ForEach组件在开发过程中的主要应用场景包括：[数据源不变](a
 
 在本示例中，通过设置ForEach的第三个参数KeyGenerator函数，自定义键值生成规则为数据源的索引index的字符串类型值。当点击父组件ForEachAbnormal中“Insert Item After First Item”文本组件后，界面会出现非预期的结果。
 
+```typescript
+@Entry
+@Component
+struct ForEachAbnormal {
+  @State simpleList: Array<string> = ['one', 'two', 'three'];
+
+  build() {
+    Column() {
+      Button() {
+        Text('Insert Item After First Item').fontSize(30)
+      }
+      .onClick(() => {
+        this.simpleList.splice(1, 0, 'new item');
+      })
+
+      ForEach(this.simpleList, (item: string) => {
+        ForEachAbnormalChildItem({ item: item })
+      }, (item: string, index: number) => index.toString())
+    }
+    .justifyContent(FlexAlign.Center)
+    .width('100%')
+    .height('100%')
+    .backgroundColor(0xF1F3F5)
+  }
+}
+
+@Component
+struct ForEachAbnormalChildItem {
+  @Prop item: string;
+
+  build() {
+    Text(this.item)
+      .fontSize(30)
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct ForEachAbnormal {
-4. @State simpleList: Array<string> = ['one', 'two', 'three'];
 
-6. build() {
-7. Column() {
-8. Button() {
-9. Text('Insert Item After First Item').fontSize(30)
-10. }
-11. .onClick(() => {
-12. this.simpleList.splice(1, 0, 'new item');
-13. })
-
-15. ForEach(this.simpleList, (item: string) => {
-16. ForEachAbnormalChildItem({ item: item })
-17. }, (item: string, index: number) => index.toString())
-18. }
-19. .justifyContent(FlexAlign.Center)
-20. .width('100%')
-21. .height('100%')
-22. .backgroundColor(0xF1F3F5)
-23. }
-24. }
-
-26. @Component
-27. struct ForEachAbnormalChildItem {
-28. @Prop item: string;
-
-30. build() {
-31. Text(this.item)
-32. .fontSize(30)
-33. }
-34. }
-```
-
-[AbnormalExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingForeach/AbnormalExample.ets#L16-L51)
-
-上述代码的初始渲染效果和点击“在第1项后插入新项”文本组件后的渲染效果如下图所示。
+上述代码的初始渲染效果和点击“Insert Item After First Item”文本组件后的渲染效果如下图所示。
 
 **图10** 渲染结果非预期运行效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/Vo76xpvKQbKP06fi8NVEtQ/zh-cn_image_0000002589243947.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/jg3QbSBOQCK8K-tdNU6FEA/zh-cn_image_0000002706833340.gif)
 
 ForEach在首次渲染时，创建的键值依次为"0"、"1"、"2"。
 
@@ -675,65 +659,63 @@ ForEach依次遍历新数据源，遍历数据项"one"时生成键值"0"，存�
 
 在本示例中，ForEach的第三个参数KeyGenerator函数缺省。根据上述[键值生成规则](arkts-rendering-control-foreach.md#键值生成规则)，此例使用框架默认的键值，即最终键值为字符串index + '\_\_' + JSON.stringify(item)。点击文本组件“在第1项后插入新项”后，ForEach将为第2个数组项及后面的所有数据项重新创建组件。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+const TAG = '[Sample_RenderingControl]';
+const DOMAIN = 0xF811;
+
+@Entry
+@Component
+struct ReducedRenderingPerformance {
+  @State simpleList: Array<string> = ['one', 'two', 'three'];
+
+  build() {
+    Column() {
+      Button() {
+        Text('Insert Item After First Item').fontSize(30)
+      }
+      .onClick(() => {
+        this.simpleList.splice(1, 0, 'new item');
+        hilog.info(DOMAIN, 'testTag', `[onClick]: simpleList is [${this.simpleList.join(', ')}]`);
+      })
+
+      ForEach(this.simpleList, (item: string) => {
+        ReducedChildItem({ item: item })
+      })
+    }
+    .justifyContent(FlexAlign.Center)
+    .width('100%')
+    .height('100%')
+    .backgroundColor(0xF1F3F5)
+  }
+}
+
+@Component
+struct ReducedChildItem {
+  @Prop item: string;
+
+  aboutToAppear() {
+    hilog.info(DOMAIN, TAG, `[aboutToAppear]: item is ${this.item}`);
+  }
+
+  build() {
+    Text(this.item)
+      .fontSize(50)
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. const TAG = '[Sample_RenderingControl]';
-3. const DOMAIN = 0xF811;
-
-5. @Entry
-6. @Component
-7. struct ReducedRenderingPerformance {
-8. @State simpleList: Array<string> = ['one', 'two', 'three'];
-
-10. build() {
-11. Column() {
-12. Button() {
-13. Text('Insert Item After First Item').fontSize(30)
-14. }
-15. .onClick(() => {
-16. this.simpleList.splice(1, 0, 'new item');
-17. hilog.info(DOMAIN, 'testTag', '[onClick]: simpleList is [${this.simpleList.join(', ')}]');
-18. })
-
-20. ForEach(this.simpleList, (item: string) => {
-21. ReducedChildItem({ item: item })
-22. })
-23. }
-24. .justifyContent(FlexAlign.Center)
-25. .width('100%')
-26. .height('100%')
-27. .backgroundColor(0xF1F3F5)
-28. }
-29. }
-
-31. @Component
-32. struct ReducedChildItem {
-33. @Prop item: string;
-
-35. aboutToAppear() {
-36. hilog.info(DOMAIN, TAG, '[aboutToAppear]: item is ${this.item}');
-37. }
-
-39. build() {
-40. Text(this.item)
-41. .fontSize(50)
-42. }
-43. }
-```
-
-[BadPerformance.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingForeach/BadPerformance.ets#L16-L60)
 
 以上代码的初始渲染效果和点击"Insert Item After First Item"文本组件后的渲染效果如下图所示。
 
 **图11** 渲染性能降低案例运行效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/vnyVlpVIQKmkNp7dPYXnBw/zh-cn_image_0000002558764140.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/9WroldKTQUCDMHo9JdfmMg/zh-cn_image_0000002736312449.gif)
 
 点击“Insert Item After First Item”文本组件后，DevEco Studio的日志打印结果如下所示。
 
 **图12** 渲染性能降低案例日志打印图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/M4tlZWlRS160aa68bI-JKg/zh-cn_image_0000002558604484.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/QmCmaDT0R5aoE7nUyO4pbw/zh-cn_image_0000002706673404.png)
 
 插入新项后，ForEach为new item、 two、 three三个数组项创建了对应的ReducedChildItem组件，并执行了组件的[aboutToAppear()](../harmonyos-references/ts-custom-component-lifecycle.md#abouttoappear)生命周期函数。这是因为：
 
@@ -745,263 +727,257 @@ ForEach依次遍历新数据源，遍历数据项"one"时生成键值"0"，存�
 
 正确渲染并保证效率的ForEach写法是：
 
+```typescript
+ForEach(this.simpleList, (item: string) => {
+  ForEachChildItem({ item: item })
+}, (item: string) => item) // 需要保证key唯一
 ```
-1. ForEach(this.simpleList, (item: string) => {
-2. ForEachChildItem({ item: item })
-3. }, (item: string) => item) // 需要保证key唯一
-```
-
-[ForEach1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingForeach/ForEach1.ets#L25-L29)
 
 提供了第三个参数KeyGenerator，在这个例子中，对数据源的不同数据项生成不同的key，并且对同一个数据项每次生成相同的key。
 
 ### 数据变化不渲染
 
-点击按钮Like/UnLike first article，第一个组件会切换点赞手势和后面的点赞数量，但是点击按钮Replace first article之后再点击按钮Like/UnLike first article就不生效了。原因是替换articleList[0]之后，articleList状态变量发生变化，触发ForEach重新渲染，但是新的articleList[0]生成的key没有变，ForEach不会将数据更新同步给子组件，因此第一个组件仍然绑定旧的articleList[0]。新articleList[0]的属性发生变更，第一个组件感知不到，不会重新渲染。点击点赞手势，会触发渲染。因为变更的是跟组件绑定的数组项的属性，组件会感知并重新渲染。
+点击按钮Like/Unlike first article，第一个组件会切换点赞手势和后面的点赞数量，但是点击按钮Replace first article之后再点击按钮Like/Unlike first article就不生效了。原因是替换articleList[0]之后，articleList状态变量发生变化，触发ForEach重新渲染，但是新的articleList[0]生成的key没有变，ForEach不会将数据更新同步给子组件，因此第一个组件仍然绑定旧的articleList[0]。新articleList[0]的属性发生变更，第一个组件感知不到，不会重新渲染。点击点赞手势，会触发渲染。因为变更的是跟组件绑定的数组项的属性，组件会感知并重新渲染。
 
+```typescript
+@Observed
+class ArticleChangeData {
+  public id: string;
+  public title: string;
+  public brief: string;
+  public isLiked: boolean;
+  public likesCount: number;
+
+  constructor(id: string, title: string, brief: string, isLiked: boolean, likesCount: number) {
+    this.id = id;
+    this.title = title;
+    this.brief = brief;
+    this.isLiked = isLiked;
+    this.likesCount = likesCount;
+  }
+}
+
+@Entry
+@Component
+struct ArticleListChangeData {
+  @State articleList: Array<ArticleChangeData> = [
+    new ArticleChangeData('001', 'Article 0', 'Abstract', false, 100),
+    new ArticleChangeData('002', 'Article 1', 'Abstract', false, 100),
+    new ArticleChangeData('003', 'Article 2', 'Abstract', false, 100),
+    new ArticleChangeData('004', 'Article 4', 'Abstract', false, 100),
+    new ArticleChangeData('005', 'Article 5', 'Abstract', false, 100),
+    new ArticleChangeData('006', 'Article 6', 'Abstract', false, 100),
+  ];
+
+  build() {
+    Column() {
+      Button('Replace first article')
+        .onClick(() => {
+          this.articleList[0] = new ArticleChangeData('001', 'Article 0', 'Abstract', false, 100);
+        })
+        .width(300)
+        .margin(10)
+
+      Button('Like/Unlike first article')
+        .onClick(() => {
+          this.articleList[0].isLiked = !this.articleList[0].isLiked;
+          this.articleList[0].likesCount =
+            this.articleList[0].isLiked ? this.articleList[0].likesCount + 1 : this.articleList[0].likesCount - 1;
+        })
+        .width(300)
+        .margin(10)
+
+      List() {
+        ForEach(this.articleList, (item: ArticleChangeData) => {
+          ListItem() {
+            ArticleCardChangeData({
+              article: item
+            })
+              .margin({ top: 20 })
+          }
+        }, (item: ArticleChangeData) => item.id)
+      }
+      .padding(20)
+      .scrollBar(BarState.Off)
+      .backgroundColor(0xF1F3F5)
+    }
+  }
+}
+
+@Component
+struct ArticleCardChangeData {
+  @ObjectLink article: ArticleChangeData;
+
+  handleLiked() {
+    this.article.isLiked = !this.article.isLiked;
+    this.article.likesCount = this.article.isLiked ? this.article.likesCount + 1 : this.article.likesCount - 1;
+  }
+
+  build() {
+    Row() {
+      // 此处'app.media.startIcon'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
+      Image($r('app.media.startIcon'))
+        .width(80)
+        .height(80)
+        .margin({ right: 20 })
+
+      Column() {
+        Text(this.article.title)
+          .fontSize(20)
+          .margin({ bottom: 8 })
+        Text(this.article.brief)
+          .fontSize(16)
+          .fontColor(Color.Gray)
+          .margin({ bottom: 8 })
+
+        Row() {
+          // 此处'app.media.iconLiked'，'app.media.iconUnliked'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
+          Image(this.article.isLiked ? $r('app.media.iconLiked') : $r('app.media.iconUnliked'))
+            .width(24)
+            .height(24)
+            .margin({ right: 8 })
+          Text(this.article.likesCount.toString())
+            .fontSize(16)
+        }
+        .onClick(() => this.handleLiked())
+        .justifyContent(FlexAlign.Center)
+      }
+      .alignItems(HorizontalAlign.Start)
+      .width('80%')
+      .height('100%')
+    }
+    .padding(20)
+    .borderRadius(12)
+    .backgroundColor('#FFECECEC')
+    .height(120)
+    .width('100%')
+    .justifyContent(FlexAlign.SpaceBetween)
+  }
+}
 ```
-1. @Observed
-2. class ArticleChangeData {
-3. public id: string;
-4. public title: string;
-5. public brief: string;
-6. public isLiked: boolean;
-7. public likesCount: number;
-
-9. constructor(id: string, title: string, brief: string, isLiked: boolean, likesCount: number) {
-10. this.id = id;
-11. this.title = title;
-12. this.brief = brief;
-13. this.isLiked = isLiked;
-14. this.likesCount = likesCount;
-15. }
-16. }
-
-18. @Entry
-19. @Component
-20. struct ArticleListChangeData {
-21. @State articleList: Array<ArticleChangeData> = [
-22. new ArticleChangeData('001', 'Article 0', 'Abstract', false, 100),
-23. new ArticleChangeData('002', 'Article 1', 'Abstract', false, 100),
-24. new ArticleChangeData('003', 'Article 2', 'Abstract', false, 100),
-25. new ArticleChangeData('004', 'Article 4', 'Abstract', false, 100),
-26. new ArticleChangeData('005', 'Article 5', 'Abstract', false, 100),
-27. new ArticleChangeData('006', 'Article 6', 'Abstract', false, 100),
-28. ];
-
-30. build() {
-31. Column() {
-32. Button('Replace first article')
-33. .onClick(() => {
-34. this.articleList[0] = new ArticleChangeData('001', 'Article 0', 'Abstract', false, 100);
-35. })
-36. .width(300)
-37. .margin(10)
-
-39. Button('Like/Unlike first article')
-40. .onClick(() => {
-41. this.articleList[0].isLiked = !this.articleList[0].isLiked;
-42. this.articleList[0].likesCount =
-43. this.articleList[0].isLiked ? this.articleList[0].likesCount + 1 : this.articleList[0].likesCount - 1;
-44. })
-45. .width(300)
-46. .margin(10)
-
-48. List() {
-49. ForEach(this.articleList, (item: ArticleChangeData) => {
-50. ListItem() {
-51. ArticleCardChangeData({
-52. article: item
-53. })
-54. .margin({ top: 20 })
-55. }
-56. }, (item: ArticleChangeData) => item.id)
-57. }
-58. .padding(20)
-59. .scrollBar(BarState.Off)
-60. .backgroundColor(0xF1F3F5)
-61. }
-62. }
-63. }
-
-65. @Component
-66. struct ArticleCardChangeData {
-67. @ObjectLink article: ArticleChangeData;
-
-69. handleLiked() {
-70. this.article.isLiked = !this.article.isLiked;
-71. this.article.likesCount = this.article.isLiked ? this.article.likesCount + 1 : this.article.likesCount - 1;
-72. }
-
-74. build() {
-75. Row() {
-76. // 此处'app.media.startIcon'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
-77. Image($r('app.media.startIcon'))
-78. .width(80)
-79. .height(80)
-80. .margin({ right: 20 })
-
-82. Column() {
-83. Text(this.article.title)
-84. .fontSize(20)
-85. .margin({ bottom: 8 })
-86. Text(this.article.brief)
-87. .fontSize(16)
-88. .fontColor(Color.Gray)
-89. .margin({ bottom: 8 })
-
-91. Row() {
-92. // 此处app.media.iconLiked'，'app.media.iconUnLiked'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
-93. Image(this.article.isLiked ? $r('app.media.iconLiked') : $r('app.media.iconUnLiked'))
-94. .width(24)
-95. .height(24)
-96. .margin({ right: 8 })
-97. Text(this.article.likesCount.toString())
-98. .fontSize(16)
-99. }
-100. .onClick(() => this.handleLiked())
-101. .justifyContent(FlexAlign.Center)
-102. }
-103. .alignItems(HorizontalAlign.Start)
-104. .width('80%')
-105. .height('100%')
-106. }
-107. .padding(20)
-108. .borderRadius(12)
-109. .backgroundColor('#FFECECEC')
-110. .height(120)
-111. .width('100%')
-112. .justifyContent(FlexAlign.SpaceBetween)
-113. }
-114. }
-```
-
-[ArticleListView3.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingForeach/ArticleListView3.ets#L16-L131)
 
 **图13** 数据变化不渲染
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/l5HkgHzORturEtSa0NJY4w/zh-cn_image_0000002589324009.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/lm_YnU4nSC-kryxXzkCepg/zh-cn_image_0000002736432495.png)
 
 ### 非必要内存消耗
 
 如果开发者没有定义keyGenerator函数，则ArkUI框架会使用默认的键值生成函数，即(item: Object, index: number) => { return index + '\_\_' + JSON.stringify(item); }。当item是复杂对象时，将其JSON序列化会得到长字符串，占用更多的内存。
 
+```typescript
+class MemoryData {
+  public longStr: string;
+  public key: string;
+
+  constructor(longStr: string, key: string) {
+    this.longStr = longStr;
+    this.key = key;
+  }
+}
+
+@Entry
+@Component
+struct NonNecessaryMemory {
+  @State simpleList: Array<MemoryData> = [];
+
+  aboutToAppear(): void {
+    let longStr = '';
+    for (let i = 0; i < 2000; i++) {
+      longStr += i.toString();
+    }
+    for (let index = 0; index < 3000; index++) {
+      let data: MemoryData = new MemoryData(longStr, 'a' + index.toString());
+      this.simpleList.push(data);
+    }
+  }
+
+  build() {
+    List() {
+      ForEach(this.simpleList, (item: MemoryData) => {
+        ListItem() {
+          Text(item.key)
+        }
+      }
+        // 如果不定义下面的keyGenerator函数，则ArkUI框架会使用默认的键值生成函数
+        , (item: MemoryData) => {
+          return item.key;
+        }
+      )
+    }.height('100%')
+    .width('100%')
+  }
+}
 ```
-1. class MemoryData {
-2. public longStr: string;
-3. public key: string;
-
-5. constructor(longStr: string, key: string) {
-6. this.longStr = longStr;
-7. this.key = key;
-8. }
-9. }
-
-11. @Entry
-12. @Component
-13. struct NonNecessaryMemory {
-14. @State simpleList: Array<MemoryData> = [];
-
-16. aboutToAppear(): void {
-17. let longStr = '';
-18. for (let i = 0; i < 2000; i++) {
-19. longStr += i.toString();
-20. }
-21. for (let index = 0; index < 3000; index++) {
-22. let data: MemoryData = new MemoryData(longStr, 'a' + index.toString());
-23. this.simpleList.push(data);
-24. }
-25. }
-
-27. build() {
-28. List() {
-29. ForEach(this.simpleList, (item: MemoryData) => {
-30. ListItem() {
-31. Text(item.key)
-32. }
-33. }
-34. // 如果不定义下面的keyGenerator函数，则ArkUI框架会使用默认的键值生成函数
-35. , (item: MemoryData) => {
-36. return item.key;
-37. }
-38. )
-39. }.height('100%')
-40. .width('100%')
-41. }
-42. }
-```
-
-[NonNecessaryMem.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingForeach/NonNecessaryMem.ets#L16-L59)
 
 对比自定义keyGenerator函数和使用默认键值生成函数两种情况下的内存占用（通过DevEco->Profiler->Realtime Monitor工具，可以获取相关进程的内存数据）。自定义keyGenerator函数，这个示例代码的内存占用降低了约70MB。
 
 **图14** 使用默认键值生成函数下的内存占用
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/JbbDyeV3R1yPKvGevY1qIQ/zh-cn_image_0000002589243949.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/1_bGPNN9S2OZXPTmFS8MDw/zh-cn_image_0000002706833342.png)
 
 **图15** 自定义键值生成函数下的内存占用
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/ujFJt9v7TfaxAWO44S8EVA/zh-cn_image_0000002558764142.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/sTYqky6VTtKG2NqaHCx9Dw/zh-cn_image_0000002736312451.png)
 
 ### 键值生成失败
 
 如果开发者没有定义keyGenerator函数，则ArkUI框架会使用默认的键值生成函数，即(item: Object, index: number) => { return index + '\_\_' + JSON.stringify(item); }。然而，JSON.stringify序列化在某些数据结构上会失败，导致应用发生jscrash并退出。例如，bigint无法被JSON.stringify序列化：
 
+```typescript
+class KeyData {
+  public content: bigint;
+
+  constructor(content: bigint) {
+    this.content = content;
+  }
+}
+
+@Entry
+@Component
+struct GenerationKeyExample {
+  @State simpleList: Array<KeyData> = [new KeyData(1234567890123456789n), new KeyData(2345678910987654321n)];
+
+  build() {
+    Row() {
+      Column() {
+        ForEach(this.simpleList, (item: KeyData) => {
+          GenerationKeyChildItem({ item: item.content.toString() })
+        }
+          // 如果不定义下面的keyGenerator函数，则ArkUI框架会使用默认的键值生成函数
+          // KeyData中的content: bigint在JSON序列化时失败
+          , (item: KeyData) => item.content.toString()
+        )
+      }
+      .width('100%')
+      .height('100%')
+    }
+    .height('100%')
+    .backgroundColor(0xF1F3F5)
+  }
+}
+
+@Component
+struct GenerationKeyChildItem {
+  @Prop item: string;
+
+  build() {
+    Text(this.item)
+      .fontSize(50)
+  }
+}
 ```
-1. class KeyData {
-2. public content: bigint;
-
-4. constructor(content: bigint) {
-5. this.content = content;
-6. }
-7. }
-
-9. @Entry
-10. @Component
-11. struct GenerationKeyExample {
-12. @State simpleList: Array<KeyData> = [new KeyData(1234567890123456789n), new KeyData(2345678910987654321n)];
-
-14. build() {
-15. Row() {
-16. Column() {
-17. ForEach(this.simpleList, (item: KeyData) => {
-18. GenerationKeyChildItem({ item: item.content.toString() })
-19. }
-20. // 如果不定义下面的keyGenerator函数，则ArkUI框架会使用默认的键值生成函数
-21. // KeyData中的content: bigint在JSON序列化时失败
-22. , (item: KeyData) => item.content.toString()
-23. )
-24. }
-25. .width('100%')
-26. .height('100%')
-27. }
-28. .height('100%')
-29. .backgroundColor(0xF1F3F5)
-30. }
-31. }
-
-33. @Component
-34. struct GenerationKeyChildItem {
-35. @Prop item: string;
-
-37. build() {
-38. Text(this.item)
-39. .fontSize(50)
-40. }
-41. }
-```
-
-[CrashNormalExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingForeach/CrashNormalExample.ets#L16-L58)
 
 开发者定义keyGenerator函数，应用正常启动：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/d3Tz3F4UQMWylY54X7WI3A/zh-cn_image_0000002558604486.png)
+**图16** 键值生成失败
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/XNZJoUgCT66EPTnED8P6Lw/zh-cn_image_0000002706673406.png)
 
 使用默认的键值生成函数，应用发生jscrash：
 
-```
-1. Error message:@Component 'Parent'[4]: ForEach id 7: use of default id generator function not possible on provided data structure. Need to specify id generator function (ForEach 3rd parameter). Application Error!
-2. Stacktrace:
-3. ...
-4. at anonymous (entry/src/main/ets/pages/Index.ets:18:52)
+```js
+Error message:@Component 'Parent'[4]: ForEach id 7: use of default id generator function not possible on provided data structure. Need to specify id generator function (ForEach 3rd parameter). Application Error!
+Stacktrace:
+    ...
+    at anonymous (entry/src/main/ets/pages/Index.ets:18:52)
 ```

@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: panel
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 容器组件 > panel
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:20+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:4929d8cb790c99f421fb8c5b11e1b1144e81c792c422c8a8f98580023813bea3
+scraped_at: 2026-09-02T15:01:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:60017bebc4387bb3bcd92e1b0dc860e81aa04138291df57c8c36a05d4d92c3c7
 ---
 
-说明
+**说明** 
 
 从API version 5开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -16,13 +16,9 @@ content_hash: sha256:4929d8cb790c99f421fb8c5b11e1b1144e81c792c422c8a8f9858002381
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 可以包含子组件。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-components-common-attributes.md)外，还支持如下属性：
 
@@ -35,14 +31,12 @@ PhonePC/2in1TabletTVWearable
 | halfheight | <length> | - | 否 | 指定half状态下的高度，默认为屏幕尺寸的一半。 |
 | miniheight | <length> | - | 否 | 指定mini状态下的高度，默认为48px。 |
 
-说明
+**说明** 
 
 * 不支持渲染属性，包括for、if和show。
 * 不支持focusable和disabled属性。
 
 ## 样式
-
-PhonePC/2in1TabletTVWearable
 
 仅支持如下样式：
 
@@ -67,14 +61,12 @@ PhonePC/2in1TabletTVWearable
 | background | <linear-gradient> | - | 否 | 仅支持设置[渐变样式](js-components-common-gradient.md)，与background-color、background-image不兼容。 |
 | background-color | <color> | - | 否 | 设置背景颜色。 |
 | background-image | string | - | 否 | 设置背景图片。与background-color、background不兼容；支持本地图片资源地址。 |
-| background-size | - string  - <length> <length>  - <percentage> <percentage> | auto | 否 | 设置背景图片的大小。  - string可选值：  - contain：把图像扩展至最大尺寸，以使其高度和宽度完全适用内容区域。  - cover：把背景图像扩展至足够大，以使背景图像完全覆盖背景区域；背景图像的某些部分也许无法显示在背景定位区域中。  - auto：保持原图的比例不变。  - length值参数方式：  设置背景图像的高度和宽度。第一个值设置宽度，第二个值设置高度。如果只设置一个值，则第二个值会被设置为 "auto"。  - 百分比参数方式：  以父元素的百分比来设置背景图像的宽度和高度。第一个值设置宽度，第二个值设置高度。如果只设置一个值，则第二个值会被设置为 "auto"。 |
+| background-size | - string  - <length> <length>  - <percentage> <percentage> | auto | 否 | 设置背景图片的大小。  - string可选值：  - contain：把图像扩展至最大尺寸，以使其高度和宽度完全适应内容区域。  - cover：把背景图像扩展至足够大，以使背景图像完全覆盖背景区域；背景图像的某些部分也许无法显示在背景定位区域中。  - auto：保持原图的比例不变。  - length值参数方式：  设置背景图像的高度和宽度。第一个值设置宽度，第二个值设置高度。如果只设置一个值，则第二个值会被设置为 "auto"。  - 百分比参数方式：  以父元素的百分比来设置背景图像的宽度和高度。第一个值设置宽度，第二个值设置高度。如果只设置一个值，则第二个值会被设置为 "auto"。 |
 | background-repeat | string | repeat | 否 | 针对重复背景图像样式进行设置，背景图像默认在水平和垂直方向上重复。  - repeat：在水平轴和竖直轴上同时重复绘制图片。  - repeat-x：只在水平轴上重复绘制图片。  - repeat-y：只在竖直轴上重复绘制图片。  - no-repeat：不会重复绘制图片。 |
 | background-position | - string string  - <length> <length>  - <percentage> <percentage> | 0px 0px | 否 | - 关键词方式：如果仅规定了一个关键词，那么第二个值为"center"。两个值分别定义水平方向位置和竖直方向位置。  - left：水平方向上最左侧。  - right：水平方向上最右侧。  - top：竖直方向上最顶部。  - bottom：竖直方向上最底部。  - center：水平方向或竖直方向上中间位置。  - length值参数方式：第一个值是水平位置，第二个值是垂直位置。 左上角是 0 0。单位是像素 (0px 0px) 。如果仅规定了一个值，另外一个值将是50%。  - 百分比参数方式：第一个值是水平位置，第二个值是垂直位置。左上角是 0% 0%。右下角是 100% 100%。如果仅规定了一个值，另外一个值为50%。  - 可以混合使用<percentage>和<length> |
 | opacity | number | 1 | 否 | 元素的透明度，取值范围为0到1，1表示为不透明，0表示为完全透明。 |
 
 ## 事件
-
-PhonePC/2in1TabletTVWearable
 
 仅支持如下事件：
 
@@ -83,8 +75,6 @@ PhonePC/2in1TabletTVWearable
 | sizechange | { size: { height: heightLength, width: widthLength }, mode: modeStr } | 当可滑动面板发生状态变化时触发，mode参数可选值为：  - mini：类型为minibar和foldable时，处于最小状态；  - half: 类型为foldable时，处于类半屏状态；  - full: 类全屏状态。  返回的height值为内容区高度值，当dragbar属性为true时，panel本身的高度值为dragbar高度加上内容区高度。 |
 
 ## 方法
-
-PhonePC/2in1TabletTVWearable
 
 仅支持如下方法：
 
@@ -95,87 +85,85 @@ PhonePC/2in1TabletTVWearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div class="doc-page">
-3. <div class="btn-div">
-4. <button type="capsule" value="Click here" onclick="showPanel"></button>
-5. </div>
-6. <panel id="simplepanel" type="foldable" mode="half" onsizechange="changeMode" miniheight="200px">
-7. <div class="panel-div">
-8. <div class="inner-txt">
-9. <text class="txt">Simple panel in {{ modeFlag }} mode</text>
-10. </div>
-11. <div class="inner-btn">
-12. <button type="capsule" value="Close" onclick="closePanel"></button>
-13. </div>
-14. </div>
-15. </panel>
-16. </div>
+```html
+<!-- xxx.hml -->
+<div class="doc-page">
+    <div class="btn-div">
+        <button type="capsule" value="Click here" onclick="showPanel"></button>
+    </div>
+    <panel id="simplepanel" type="foldable" mode="half" onsizechange="changeMode" miniheight="200px">
+        <div class="panel-div">
+            <div class="inner-txt">
+                <text class="txt">Simple panel in {{ modeFlag }} mode</text>
+            </div>
+            <div class="inner-btn">
+                <button type="capsule" value="Close" onclick="closePanel"></button>
+            </div>
+        </div>
+    </panel>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .doc-page {
-3. flex-direction: column;
-4. justify-content: center;
-5. align-items: center;
-6. }
+```css
+/* xxx.css */
+.doc-page {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-8. .btn-div {
-9. width: 100%;
-10. height: 200px;
-11. flex-direction: column;
-12. align-items: center;
-13. justify-content: center;
-14. }
+.btn-div {
+    width: 100%;
+    height: 200px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-16. .txt {
-17. color: #000000;
-18. font-weight: bold;
-19. font-size: 39px;
-20. }
+.txt {
+    color: #000000;
+    font-weight: bold;
+    font-size: 39px;
+}
 
-22. .panel-div {
-23. width: 100%;
-24. flex-direction: column;
-25. align-items: center;
-26. }
+.panel-div {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
 
-28. .inner-txt {
-29. width: 100%;
-30. height: 160px;
-31. flex-direction: column;
-32. align-items: center;
-33. justify-content: center;
-34. }
+.inner-txt {
+    width: 100%;
+    height: 160px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-36. .inner-btn {
-37. width: 100%;
-38. height: 120px;
-39. justify-content: center;
-40. align-items: center;
-41. }
-```
-
-```
-1. // xxx.js
-2. export default {
-3. data: {
-4. modeFlag: "half"
-5. },
-6. showPanel() {
-7. this.$element('simplepanel').show()
-8. },
-9. closePanel() {
-10. this.$element('simplepanel').close()
-11. },
-12. changeMode(e) {
-13. this.modeFlag = e.mode
-14. }
-15. }
+.inner-btn {
+    width: 100%;
+    height: 120px;
+    justify-content: center;
+    align-items: center;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/Z2j03lxuTg21tdg7jJGyzA/zh-cn_image_0000002589246517.gif)
+```js
+// xxx.js
+export default {
+  data: {
+    modeFlag: "half"
+  },
+  showPanel() {
+    this.$element('simplepanel').show()
+  },
+  closePanel() {
+    this.$element('simplepanel').close()
+  },
+  changeMode(e) {
+    this.modeFlag = e.mode
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/h5xOqtyFSIKrEhhxKL68Zw/zh-cn_image_0000002706836374.gif)

@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-clou
 title: CloudDisk_ChangesResult
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > C API > 结构体 > CloudDisk_ChangesResult
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:53+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:8ec91351ed86a91df5fc7b603d58585f6a78b9d3993c7b3fbce9859dc535519e
+scraped_at: 2026-09-02T15:01:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0c4b84b14ee243a99c0429d59d9b0199d771bbb5b1bf5d04feea7a5d2a0b5053
 ---
 
-```
-1. typedef struct CloudDisk_ChangesResult {...} CloudDisk_ChangesResult
+```c
+typedef struct CloudDisk_ChangesResult {...} CloudDisk_ChangesResult
 ```
 
 ## 概述
-
-PC/2in1Tablet
 
 查询同步根路径中文件变更的结果。该结构体包含同步根路径中文件的变更数据，包括下一个更新序列号、结尾标志以及变更数据项数组。
 
@@ -26,11 +24,7 @@ PC/2in1Tablet
 
 ## 汇总
 
-PC/2in1Tablet
-
 ### 成员变量
-
-PC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |

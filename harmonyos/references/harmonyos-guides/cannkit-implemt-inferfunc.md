@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-imple
 title: IMPLEMT_INFERFUNC
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > IMPLEMT_INFERFUNC
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:17+08:00
+scraped_at: 2026-09-02T14:50:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9dedd4e4709df751ba305a88e0ed335d1d7c4030f21d5c052257350b1154b82e
+content_hash: sha256:14bc09c47c48b643e4e399a30b2129e4f98b7039c727d4f54d943c9ab123536d
 ---
 
 ## 函数功能
@@ -26,8 +26,8 @@ content_hash: sha256:9dedd4e4709df751ba305a88e0ed335d1d7c4030f21d5c052257350b115
 
 ## 函数原型
 
-```
-1. IMPLEMT_INFERFUNC(op_name, func_name)
+```cpp
+IMPLEMT_INFERFUNC(op_name, func_name)
 ```
 
 ## 约束说明

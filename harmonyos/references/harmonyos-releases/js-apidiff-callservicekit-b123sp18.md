@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-callservicekit-b123sp18
 title: Call Service Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.2(14) > OS平台能力 > API变更清单 > Call Service Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.2(14) > OS平台能力 > API变更清单 > Call Service Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:48+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:38+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:bd7b5e8911530a463b16ef5d63aa009c6d132495372b6ec7961126d26d7a80a6
 ---
 

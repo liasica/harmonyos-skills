@@ -3,67 +3,64 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-apply
 title: 申请运动健康服务
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 开发准备 > 申请运动健康服务
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:38:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:60e12335f44850ce7d7e3f0c704a1fb0f7dbb45df1a8f2cb4d3e297673a58e5e
+scraped_at: 2026-09-02T14:59:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3a1dbc8cebfdd77bb73d8b8f5920792fe65f8455853937a33b0abfd4abd133a3
 ---
 
-申请运动健康服务前，请先参考[应用开发准备](application-dev-overview.md)，确认开发环境并完成[创建项目](../app/agc-help-create-project-0000002242804048.md)、[创建HarmonyOS应用](../app/agc-help-create-app-0000002247955506.md)、[添加公钥指纹](application-dev-overview.md#section1726913517284)等基本准备工作，再继续进行以下开发活动。
+申请运动健康服务前，请先参考[应用开发准备](application-dev-overview.md)，确认开发环境并完成[创建项目](../app/agc-help-create-project-0000002242804048.md)、[创建HarmonyOS应用](../app/agc-help-create-app-0000002247955506.md)、[添加公钥指纹](application-dev-overview.md#条件必选添加公钥指纹)等基本准备工作，再继续进行以下开发活动。
 
-1. 登录[开发者联盟网站](https://developer.huawei.com/consumer/cn/)，单击进入“管理中心”。
+1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)，选择**开发与服务**。
+2. 在项目列表选择项目，并在应用列表下选择需要申请运动健康服务的应用。
+3. 进入**项目设置** > **开放能力管理**页面，点击**运动健康服务**对应的**管理**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/tJ1zz19STqSGtU60_uvG5g/zh-cn_image_0000002558765408.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/krMCk0pRTS2ITi4rmveH0w/zh-cn_image_0000002706674988.png)
 
-   若您尚未注册开发者账号，请先完成[注册账号](../start/registration-and-verification-0000001053628148.md)和[实名认证](../start/itrna-0000001076878172.md)。开发者可实名认证为个人开发者或者企业开发者，认证前，请先了解二者的[权益区别](../start/dbiae-0000001336403980.md)。
-2. 在应用服务中，单击**Health Service Kit**卡片。如果无“Health Service Kit”卡片，请单击右上角“自定义桌面”添加卡片。
-
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/gUBWqCK4Rm-JdqQaXCXtZQ/zh-cn_image_0000002558605752.png)
-
-   说明
+   **说明** 
 
    * 暂不支持团队账号下的成员账号独立使用运动健康开发服务，详情请参见[团队账号](../start/team-account-guides-0000001053785552.md)。
-3. 单击**申请Health Service Kit服务**，同意协议后，进入数据权限申请页面。
+4. 单击**申请Health Service Kit服务**，同意协议后，进入数据权限申请页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/DK54QDYjRB2HCho3bDh1NQ/zh-cn_image_0000002589325279.png)
-4. 产品类型选择**HarmonyOS应用**，并填写申请信息，勾选产品必需申请的数据权限。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/hglzFatQTtOL5bj5lkfEaw/zh-cn_image_0000002736434077.png)
+5. 产品类型选择**HarmonyOS应用**，并填写申请信息，勾选产品必需申请的数据权限。
 
-   说明
+   **说明** 
 
    * 添加运动健康服务时，遵循权限最小化原则。数据访问权限应与业务相符，不可申请超出业务范围或者暂不使用的权限。
    * 在应用或服务发布后，华为会对权限使用情况进行不定期抽查，抽查形式包括但不限于对已发布的应用进行抽样检查、对API调用情况进行监控、派遣专员核查等。您可以通过在申请运动健康服务前签署的合作协议，了解核查标准以及核查后的处理方式。
    * 数据类型对应的OAuth权限请参见[权限说明](health-permission-description.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/rqHih7FZRnWmiwigPFr5-w/zh-cn_image_0000002589245215.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/5WMlndv9RvyiCR5i-eOKVA/zh-cn_image_0000002706834926.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/eX4RrxqbS4ST455debVZ6g/zh-cn_image_0000002558765410.png)
-5. 为保障用户隐私和数据安全，运动健康服务需要开发者反馈相关材料和信息，以确保应用向用户请求数据权限是合理的。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/hot71QnOSViclturGKzikQ/zh-cn_image_0000002736314033.png)
+6. 为保障用户隐私和数据安全，运动健康服务需要开发者反馈相关材料和信息，以确保应用向用户请求数据权限是合理的。
 
-   说明
+   **说明** 
 
    请在提交材料前先阅读[申请被驳回的常见问题](health-apply.md#申请被驳回的常见问题)，以避免在您的申请材料中出现同类问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/psXF2gPFSCa8PsvOsl5PmA/zh-cn_image_0000002558605754.png)
-6. 申请开通测试权限。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/9jxMKZQPQRe92j6WKV4IKA/zh-cn_image_0000002706674990.png)
+7. 申请开通测试权限。
 
-   您提交的申请需要经过人工审核，审核周期约15个工作日，请耐心等待，审批结果将以短信和邮件的形式通知您。
+   您提交的申请需要经过人工审核，审核周期约10个工作日，请耐心等待，审批结果将以短信和邮件的形式通知您。
 
-   * 如果提交的材料不满足要求，审批将不能通过，请您根据短信或邮件通知中的驳回原因进行修改并重新提交。重新提交的审核周期约为15个工作日，如有其他疑问，请通过[智能客服](https://developer.huawei.com/consumer/cn/customerService/#/bot-dev-top/faq-top/faq-talk-top)反馈。
+   * 如果提交的材料不满足要求，审批将不能通过，请您根据短信或邮件通知中的驳回原因进行修改并重新提交。重新提交的审核周期约为10个工作日，如有其他疑问，请通过[智能客服](https://developer.huawei.com/consumer/cn/customerService/#/bot-dev-top/faq-top/faq-talk-top)反馈。
    * 如果审批通过，即可进入“已开通测试权限”阶段，应用可调用相应的接口获取运动健康服务数据进行测试开发。
 
-     说明
+     **说明** 
 
      + 首次申请开通测试权限后权限将及时生效，若业务范围发生变动，修改权限并重新提交申请，请修改测试权限1小时后进行测试验证。
      + 当前审核通过仅以开发测试为目的，测试阶段有用户数量的限制，仅前100位用户可使用您申请应用中的华为运动健康服务。为解除用户数量的限制，请在应用完成开发测试验证后提交验证申请，具体请参见[申请验证获取正式权限](health-verification.md)提交验证申请。
-     + 测试权限开通后，请于半年内完成[申请验证获取正式权限](health-verification.md)操作，否则平台将关闭您已开通测试权限。
+     + 测试权限开通后，请于一年内完成[申请验证获取正式权限](health-verification.md)操作，否则平台将关闭您已开通的测试权限。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/2h0QGpCXQMaDFmWw30mX3Q/zh-cn_image_0000002589325281.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/mHvErARORjCBtrVVWUV6Ug/zh-cn_image_0000002736434079.png)
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/lE7_KwR1RM2na5Op0VMFsw/zh-cn_image_0000002589245217.png)
-7. 权限管理。
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/di66PwI5TWu9jgqpBIGXZw/zh-cn_image_0000002706834928.png)
+8. 权限管理。
 
    若您的业务范围发生变动，需要修改相应的数据权限，您可以单击“管理”更新权限再次提交申请。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/PZSdCDMdRVO-ldrPxBx_Rw/zh-cn_image_0000002558765412.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/gTUpswVoSYyI-rnovGvvJw/zh-cn_image_0000002736314035.png)
 
 ## 申请被驳回的常见问题
 
@@ -75,7 +72,7 @@ content_hash: sha256:60e12335f44850ce7d7e3f0c704a1fb0f7dbb45df1a8f2cb4d3e297673a
 
 解决办法：您提交的申请材料页签1和页签2中说明的权限少于所申请的权限，请检查填写的权限与所申请的权限是否一一对应，在页签1和页签2中补齐所申请的每一项权限的使用说明。
 
-说明
+**说明** 
 
 如您申请的数据读/写权限的使用场景在应用开发过程中发生变化，请在申请验证前更新申请材料清单。
 
@@ -99,7 +96,7 @@ content_hash: sha256:60e12335f44850ce7d7e3f0c704a1fb0f7dbb45df1a8f2cb4d3e297673a
 * 事业单位/政府机构申请资质要求：如果申请主体为事业单位或政府机构，可免除资金和成立年限要求。事业单位或政府机构委托的企业，需遵循企业申请资质要求。
 * 社会团体申请资质要求：社会团体以活动资金（注册资本）为准，申请访问开放等级为基础的用户数据，活动资金不低于50万元；申请访问开放等级为高阶的用户数据，活动资金不低于500万元。申请主体存续且成立时间需1年以上。
 
-说明
+**说明** 
 
 * 以上企业实缴注册资本数据以[国家企业信用信息公示系统](https://shiming.gsxt.gov.cn/socialuser-use-rllogin.html)中最新年报数据为准。
 * 数据类型开放等级请参见[数据开放总览](health-data-overview.md)。
@@ -115,7 +112,7 @@ content_hash: sha256:60e12335f44850ce7d7e3f0c704a1fb0f7dbb45df1a8f2cb4d3e297673a
   + 上市公司提供担保，需要公开披露。
 * 保证人盖章的《[担保函](https://hihealthbase-drcn.things.hicloud.com/healthkit/fileServer/getFile/protected/docTemplateZh/000/001/044/1000000000000001044.20250714003858.97794800280943716662489602627215:20750702004051:100005355:CBD4513F116D37E1E5BFE212973516547B1FE4DD61C5388E3248AC5086AEC255.docx)》。
 
-说明
+**说明** 
 
 《担保函》、《股东（大）会决议》文件中的“保证最高限额”，保留一个选项。
 

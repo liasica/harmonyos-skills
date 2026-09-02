@@ -1,24 +1,20 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-fontsizeanimation
-title: FontSizeAnimation
-breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > FontSizeAnimation
+title: Class (FontSizeAnimation)
+breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Class (FontSizeAnimation)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:15+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:f88bbfc3a3dbd849c97909a4d2a1e5a32a11eba2874b6d9b2077c434040535d2
+scraped_at: 2026-09-02T15:02:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1fe37fc3b34b37e9350eb881184763f60511fdae50f99126943f38f30ce67e80
 ---
 
 ## 导入模块
 
-PhonePC/2in1TabletWearable
-
-```
-1. import { map } from '@kit.MapKit';
+```typescript
+import { map } from '@kit.MapKit';
 ```
 
 ## FontSizeAnimation
-
-PhonePC/2in1TabletWearable
 
 控制字体大小的动画类，继承[Animation](map-map-animation.md)。
 
@@ -32,11 +28,9 @@ PhonePC/2in1TabletWearable
 
 ### constructor
 
-PhonePC/2in1TabletWearable
-
 constructor(fromSize: number, toSize: number)
 
-构造器，构造控制字体大小的动画实例。
+创建一个控制字体大小的动画实例，通过指定起始字体大小和目标字体大小来初始化该动画。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -55,6 +49,6 @@ constructor(fromSize: number, toSize: number)
 
 **示例：**
 
-```
-1. let animation: map.FontSizeAnimation = new map.FontSizeAnimation(5, 25);
+```typescript
+let animation: map.FontSizeAnimation = new map.FontSizeAnimation(5, 25);
 ```

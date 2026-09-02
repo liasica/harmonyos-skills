@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lit
 title: MindSpore Lite Kit简介
 breadcrumb: 指南 > AI > MindSpore Lite Kit（昇思推理框架服务） > MindSpore Lite Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:43:44+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:eb817c6651c048c97065bf5309899cf1150aaef5ae67af84f40195fde6600f6e
+scraped_at: 2026-09-02T14:50:45+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:949ed28c4cff6ddf52fa161c9d732cd5a1acc7c1830abd2d02a7ba995452fbe4
 ---
 
 ## 使用场景
@@ -20,33 +20,33 @@ MindSpore Lite是HarmonyOS内置的轻量化AI引擎，面向全场景构建支�
 
 ## 约束与限制
 
-* 本Kit适用于Phone、Tablet、PC/2in1、TV设备，支持使用模拟器运行调试。
+* 本Kit适用于Phone、Tablet、PC/2in1、TV和Wearable设备。其中，在Wearable设备上，仅支持CPU推理。
 
 ## 亮点/优势
 
 MindSpore Lite提供面向不同硬件设备的AI模型推理能力，使用MindSpore Lite的优势如下：
 
-* 更优性能：高效的内核算法和汇编级优化，支持CPU、NNRt专用芯片高性能推理，最大化发挥硬件算力，最小化推理时延和功耗。
+* 更优性能：高效的内核算法和汇编级优化，支持CPU、[NNRt](mindspore-lite-term.md#nnrt神经网络运行时)专用芯片高性能推理，最大化发挥硬件算力，最小化推理时延和功耗。
 * 轻量化：提供超轻量的解决方案，支持模型量化压缩，模型更小跑得更快，使能AI模型极限环境下的部署执行。
 * 全场景支持：支持多种操作系统以及嵌入式系统，适配多种软硬件智能设备上的AI应用。
-* 高效部署：支持MindSpore/TensorFlow Lite/Caffe/Onnx模型，提供模型压缩、数据处理等能力，统一训练和推理IR，方便用户快速部署。
+* 高效部署：支持MindSpore/TensorFlow Lite/Caffe/ONNX模型，提供模型压缩、数据处理等能力，统一训练和推理IR，方便用户快速部署。
 
 ## 开发流程
 
 **图 1** 使用MindSpore Lite进行模型推理的开发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/9-LfiwEmTBeUcffIKy4www/zh-cn_image_0000002558765846.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/NLZs88Q6ScmJRi0eIUnQ_A/zh-cn_image_0000002736434571.jpg)
 
 MindSpore Lite开发流程分为两个阶段：
 
-* 模型转换
+* [模型转换](mindspore-lite-term.md#model-conversion模型转换)
 
   MindSpore Lite使用.ms格式模型进行推理。对于第三方框架模型，比如 TensorFlow、TensorFlow Lite、Caffe、ONNX等，可以使用MindSpore Lite提供的模型转换工具转换为.ms模型，使用方法可参考[推理模型转换](mindspore-lite-converter-guidelines.md)。
 * 模型部署
 
   调用MindSpore Lite运行时接口，实现模型推理/训练，大致步骤如下：
 
-  1. 创建推理/训练上下文，包括指定推理/训练硬件、设置线程数等。
+  1. 创建推理/训练[上下文](mindspore-lite-term.md#context上下文)，包括指定推理/训练硬件、设置线程数等。
   2. 加载.ms模型文件。
   3. 设置模型输入数据。
   4. 执行推理/训练，读取输出。
@@ -57,6 +57,13 @@ MindSpore Lite已作为系统部件在HarmonyOS标准系统内置，基于MindSp
 
 * 方式一：[使用MindSpore Lite ArkTS API开发AI应用](mindspore-guidelines-based-js.md)。开发者直接在UI代码中调用 MindSpore Lite ArkTS API 加载模型并进行AI模型推理，此方式可快速验证效果。
 * 方式二：[使用MindSpore Lite Native API开发AI应用](mindspore-guidelines-based-native.md)。开发者将算法模型和调用 MindSpore Lite Native API 的代码封装成动态库，并通过N-API封装成ArkTS接口，供UI调用。
+
+## 模拟器支持情况
+
+本Kit支持模拟器，但与与真机存在部分能力差异，具体差异如下。
+
+* 通用差异，详情请参见“[模拟器与真机的差异](ide-emulator-specification.md)”。
+* 不支持NPU后端。
 
 ## 与其他Kit的关系
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-stability-
 title: 为什么我的应用在开始稳定性测试后一直反复拉起退出，且最后测试中断结束，报告中展示测试中断？
 breadcrumb: FAQ > DevEco Testing > 专项测试 > 稳定性基础质量测试 > 为什么我的应用在开始稳定性测试后一直反复拉起退出，且最后测试中断结束，报告中展示测试中断？
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:30+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:b9d7998b85ca88ce1751cb9c6344163567144ff5113a282ec43843efe4a578c8
 ---
 

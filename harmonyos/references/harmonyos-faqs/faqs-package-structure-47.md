@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 应用安装到设备的方式有哪些
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 应用安装到设备的方式有哪些
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:35+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:14+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:9bf904233d7f12deecf02b54bde99d1a9d3add641e70ba3d6de0188054ed6643
 ---
 

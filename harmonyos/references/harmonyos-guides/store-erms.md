@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-erms
 title: 生态查询服务
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 生态查询服务
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:37:11+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:748c874e7d5a58fdb8f349f97d5f264e58e4ba6d3ed637d2e5000ec5f951a611
+scraped_at: 2026-09-02T14:59:53+08:00
+doc_updated_at: 2026-08-03
+content_hash: sha256:abc92378c4fce0431d8a791924b267ab07337742c3cb1db2aa0026b85a218aff
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:748c874e7d5a58fdb8f349f97d5f264e58e4ba6d3ed637d2e5000ec5f95
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/CF0O_9E6SmCU7kV6cKd86g/zh-cn_image_0000002589245085.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/RiuOZfSgQSa6Umteh7YBcg/zh-cn_image_0000002736433945.png)
 
 1. 用户需要查询应用/元服务自身场景值或者查询广告验签版本。
 2. 应用调用[getSelfSceneCode](../harmonyos-references/store-scenemanager.md#scenemanagergetselfscenecode)接口和[getAdsVerificationVersion](../harmonyos-references/store-scenemanager.md#scenemanagergetadsverificationversion)接口分别获取自身场景值和广告验签版本。
@@ -42,36 +42,36 @@ content_hash: sha256:748c874e7d5a58fdb8f349f97d5f264e58e4ba6d3ed637d2e5000ec5f95
 
 1. 导入模块。
 
-   ```
-   1. import { hilog } from '@kit.PerformanceAnalysisKit';
-   2. import { sceneManager } from '@kit.AppGalleryKit';
+   ```typescript
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { sceneManager } from '@kit.AppGalleryKit';
    ```
 2. 调用[getSelfSceneCode](../harmonyos-references/store-scenemanager.md#scenemanagergetselfscenecode)方法。
 
-   ```
-   1. try {
-   2. const sceneCode: string = sceneManager.getSelfSceneCode();
-   3. hilog.info(0, 'TAG', "Succeeded in getting SelfSceneCode res = " + sceneCode);
-   4. } catch (error) {
-   5. hilog.error(0, 'TAG', `getSelfSceneCode failed. code is ${error.code}, message is ${error.message}`);
-   6. }
+   ```typescript
+   try {
+     const sceneCode: string = sceneManager.getSelfSceneCode();
+     hilog.info(0, 'TAG', 'Succeeded in getting SelfSceneCode res = ' + sceneCode);
+   } catch (error) {
+     hilog.error(0, 'TAG', `getSelfSceneCode failed. code is ${error.code}, message is ${error.message}`);
+   }
    ```
 
 ### 查询广告验签版本
 
 1. 导入模块。
 
-   ```
-   1. import { hilog } from '@kit.PerformanceAnalysisKit';
-   2. import { sceneManager } from '@kit.AppGalleryKit';
+   ```typescript
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { sceneManager } from '@kit.AppGalleryKit';
    ```
 2. 调用[getAdsVerificationVersion](../harmonyos-references/store-scenemanager.md#scenemanagergetadsverificationversion)方法。
 
-   ```
-   1. try {
-   2. const version: number = sceneManager.getAdsVerificationVersion();
-   3. hilog.info(0, 'TAG', "Succeeded in getting AdsVerificationVersion res = " + version);
-   4. } catch (error) {
-   5. hilog.error(0, 'TAG', `getAdsVerificationVersion failed. code is ${error.code}, message is ${error.message}`);
-   6. }
+   ```typescript
+   try {
+     const version: number = sceneManager.getAdsVerificationVersion();
+     hilog.info(0, 'TAG', 'Succeeded in getting AdsVerificationVersion res = ' + version);
+   } catch (error) {
+     hilog.error(0, 'TAG', `getAdsVerificationVersion failed. code is ${error.code}, message is ${error.message}`);
+   }
    ```

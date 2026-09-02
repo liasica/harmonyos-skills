@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryp
 title: CryptoArchitectureKit
 breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > C API > 模块 > CryptoArchitectureKit
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:55+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:32fd3cfc6cfe2e433880444d1325186edb9cfe0f421311f72809e3c5ffd568ef
+scraped_at: 2026-09-02T14:52:07+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7e2f9370e996e9d5359679e83f2d2fab64d41e0635cdba3af7b1e4580e495191
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供对加密头文件的访问入口。
 
@@ -19,8 +17,6 @@ PhonePC/2in1TabletTVWearable
 **起始版本：** 12
 
 ## 文件汇总
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

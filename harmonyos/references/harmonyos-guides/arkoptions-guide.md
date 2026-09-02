@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkoptions-gu
 title: 在build-profile.json5中配置arkOptions
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > 在build-profile.json5中配置arkOptions
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d96105a8fcf0e85e567ee7b0482c97e90181e2fc6160f850e3a92ff2c48c3f42
+scraped_at: 2026-09-02T14:59:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f3016648f45428d6b36298fd3e28d9ba25dc6c0f64db63fdde63ba1e2b49a509
 ---
 
 ## 概述
@@ -28,14 +28,14 @@ arkOptions中types字段示例：
 
 在模块build-profile.json5配置文件buildOption标签的arkOptions属性中添加types字段。
 
-```
-1. // 在/entry/build-profile.json5
-2. "arkOptions": {
-3. "types": ["pako", "./oh_modules/@types/mime", "./src/main/ets/pages/global"]
-4. },
+```json5
+// 在/entry/build-profile.json5
+"arkOptions": {
+  "types": ["pako", "./oh_modules/@types/mime", "./src/main/ets/pages/global"]
+}
 ```
 
-types字段支持填写包名、包所在位置的相对路径，以及声明文件所在位置的相对路径。类型的查找范围仅限于当前声明文件所在的模块内，若目录下存在同名文件（后缀不同），默认加载顺序为 .d.ets > .d.ts，即优先加载 .d.ets 后缀的文件。
+types字段支持填写包名、包所在位置的相对路径，以及声明文件所在位置的相对路径。类型的查找范围仅限于当前模块内，若目录下存在同名文件（后缀不同），默认加载顺序为 .d.ets > .d.ts，即优先加载 .d.ets 后缀的文件。
 
 1. 填写包名方式：通过包名到oh\_modules/@types/目录查找包名中定义的声明文件，如"pako"。
 2. 填写包所在相对路径方式：支持在基于build-profile.json5的相对路径中查找定义的声明文件，如"./oh\_modules/@types/mime"。
@@ -43,30 +43,30 @@ types字段支持填写包名、包所在位置的相对路径，以及声明文
 
 ### 注意事项
 
-如果在types字段中填写包名或者包所在位置的相对路径，需要在工程文件/entry/oh-package.json5中dependencies作如下配置：
+如果在types字段中填写包名或者包所在位置的相对路径，需要在entry模块下oh-package.json5文件的dependencies字段中作如下配置：
 
-```
-1. "dependencies": {
-2. "@types/pako": "latest",
-3. "@types/mime": "latest"
-4. }
+```json5
+"dependencies": {
+  "@types/pako": "latest",
+  "@types/mime": "latest"
+}
 ```
 
 如果在types字段中填写声明文件所在相对路径，前提是在模块下存在相应的声明文件，比如模块下存在src/main/ets/pages/global.d.ts声明文件，声明文件内容如下所示：
 
-```
-1. declare namespace Global {
-2. type ObjectType = string | number;
-3. }
+```typescript
+declare namespace Global {
+  type ObjectType = string | number;
+}
 ```
 
 通过types全局引入后，对全局类型的使用示例如下：
 
-```
-1. // 在entry/src/main/ets/pages/Index.ets
-2. let testPako: pako.constants = 0;
-3. let testMime: mime.TypeMap = {};
-4. let testGlobal: Global.ObjectType = 'test';
+```typescript
+// 在entry/src/main/ets/pages/Index.ets
+let testPako: pako.constants = 0;
+let testMime: mime.TypeMap = {};
+let testGlobal: Global.ObjectType = 'test';
 ```
 
 ## maxFlowDepth
@@ -85,32 +85,32 @@ arkOptions/tscConfig中maxFlowDepth字段展示。
 
 在工程级目录下的build-profile.json5配置文件buildOption标签的arkOptions/tscConfig属性中添加maxFlowDepth字段。
 
-```
-1. // 在工程名/build-profile.json5文件中。
-2. "arkOptions": {
-3. "tscConfig": {
-4. "maxFlowDepth": 2222
-5. }
-6. }
+```json5
+// 在工程名/build-profile.json5文件中。
+"arkOptions": {
+  "tscConfig": {
+    "maxFlowDepth": 2222
+  }
+}
 ```
 
 ### 注意事项
 
 * 仅可在工程级目录下build-profile.json5文件中配置maxFlowDepth字段。
-* 若开发者未对maxFlowDepth字段进行配置时，则该字段默认为2000；若开发者对maxFlowDepth字段配置的值超过可配置范围，则会出现编译构建相关报错。
+* 若开发者对maxFlowDepth字段配置的值超过可配置范围，则会出现编译构建相关报错。
 
+  ```txt
+   hvigor ERROR: Schema validate failed.
+    Detail: Please check the following fields.
+      {
+         instancePath: 'app.products[0].buildOption.arkOptions.tscConfig.maxFlowDepth',
+         keyword: 'maximum',
+         params: { comparison: '<=', limit: 65535 },
+         message: 'must be <= 65535',
+         location: 'D:/工程名/build-profile.json5:行号:列号'
+      }
   ```
-  1. hvigor ERROR: Schema validate failed.
-  2. Detail: Please check the following fields.
-  3. {
-  4. instancePath: 'app.products[0].buildOption.arkOptions.tscConfig.maxFlowDepth',
-  5. keyword: 'maximum',
-  6. params: { comparison: '<=', limit: 65535 },
-  7. message: 'must be <= 65535',
-  8. location: 'D:/工程名/build-profile.json5:行号:列号'
-  9. }
-  ```
-* 如果代码中函数或者模块过长导致控制流分析深度大于或者等于该字段所配置/默认的值，则会终止控制流分析并且报错：The containing function or module body is too large for control flow analysis.
+* 如果代码中函数或者模块过长导致控制流分析深度大于该字段所配置/默认的值，则会终止控制流分析并且报错：The containing function or module body is too large for control flow analysis.
 
 ## transformLib
 
@@ -128,15 +128,14 @@ arkOptions中transformLib字段示例：
 
 在模块build-profile.json5配置文件buildOption标签的arkOptions属性中添加transformLib字段。
 
-```
-1. // 在/entry/build-profile.json5
-2. {
-3. "buildOption": {
-4. "arkOptions": {
-5. "transformLib": "./dll/example.dll"
-6. }
-7. }
-8. }
+```json
+{
+  "buildOption": {
+    "arkOptions": {
+      "transformLib": "./dll/example.dll"
+    }
+  }
+}
 ```
 
 修改方舟字节码能力可参考[编译期自定义修改方舟字节码](customize-bytecode-during-compilation.md)。

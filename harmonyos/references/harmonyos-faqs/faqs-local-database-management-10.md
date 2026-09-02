@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-database-management-10
-title: 如何获知SQLite支持版本
-breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 如何获知SQLite支持版本
+title: 如何获知Sqlite支持版本
+breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 如何获知Sqlite支持版本
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:14+08:00
-doc_updated_at: 2026-03-17
+scraped_at: 2026-09-02T15:21:51+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:180dcc96283097e3d6f92a8fb5d1aaa120c5164977478afa445eb8c48c35410b
 ---
 

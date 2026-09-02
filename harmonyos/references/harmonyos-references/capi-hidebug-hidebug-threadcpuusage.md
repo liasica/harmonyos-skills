@@ -3,20 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hide
 title: HiDebug_ThreadCpuUsage
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > C API > 结构体 > HiDebug_ThreadCpuUsage
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:25+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:8f5838c40e79ea0c34f11d909330ba1437754f6f7475dfb7e47652eb7f8e1b95
+scraped_at: 2026-09-02T15:02:17+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f4761342aa86fb49ceeac226c90a98d22e3c11f7f75b4b680d7dd1586e6cdc5a
 ---
 
-```
-1. typedef struct HiDebug_ThreadCpuUsage {...} HiDebug_ThreadCpuUsage
+```c
+typedef struct HiDebug_ThreadCpuUsage {...} HiDebug_ThreadCpuUsage
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
+当前进程所有线程的CPU使用率结构体定义。
 
-应用程序所有线程的CPU使用率结构体定义。
+使用场景：
+
+应用性能监控：获取线程CPU使用率，监控应用的运行状态和性能瓶颈。
+
+线程性能优化：分析各线程的CPU占用情况，优化线程调度和资源分配。
+
+系统调试：在调试阶段追踪线程的CPU使用情况，定位性能问题。
 
 **起始版本：** 12
 
@@ -26,11 +32,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

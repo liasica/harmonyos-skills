@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-came
 title: camera_manager.h
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 头文件 > camera_manager.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:44+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:9c96a2f6a9adb99ca04466ab3dda5219826591b951eb96f7d62ab06e22278ae4
+scraped_at: 2026-09-02T15:02:27+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b60147677b16a76bec74abce83191615c7638f2de6df297f3c3404678be07035
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明相机管理器的概念。
 
@@ -26,19 +24,13 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [CameraManager\_Callbacks](capi-oh-camera-cameramanager-callbacks.md) | CameraManager\_Callbacks | 相机设备状态的回调。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -62,6 +54,7 @@ PhonePC/2in1TabletTVWearable
 | [Camera\_ErrorCode OH\_CameraManager\_CreateCameraInput(Camera\_Manager\* cameraManager, const Camera\_Device\* camera, Camera\_Input\*\* cameraInput)](capi-camera-manager-h.md#oh_cameramanager_createcamerainput) | - | 创建相机输入实例。 |
 | [Camera\_ErrorCode OH\_CameraManager\_CreateCameraInput\_WithPositionAndType(Camera\_Manager\* cameraManager, Camera\_Position position, Camera\_Type type, Camera\_Input\*\* cameraInput)](capi-camera-manager-h.md#oh_cameramanager_createcamerainput_withpositionandtype) | - | 创建具有位置和类型的相机输入实例。 |
 | [Camera\_ErrorCode OH\_CameraManager\_CreatePreviewOutput(Camera\_Manager\* cameraManager, const Camera\_Profile\* profile, const char\* surfaceId, Camera\_PreviewOutput\*\* previewOutput)](capi-camera-manager-h.md#oh_cameramanager_createpreviewoutput) | - | 创建预览输出实例。 |
+| [Camera\_ErrorCode OH\_CameraManager\_CreateDeferredPreviewOutput(const Camera\_Manager\* cameraManager, const Camera\_Profile\* profile, Camera\_PreviewOutput\*\* previewOutput)](capi-camera-manager-h.md#oh_cameramanager_createdeferredpreviewoutput) | - | 创建延迟预览输出实例。使用结束后，必须调用[OH\_PreviewOutput\_Release](capi-preview-output-h.md#oh_previewoutput_release)释放预览输出实例。 |
 | [Camera\_ErrorCode OH\_CameraManager\_CreatePreviewOutputUsedInPreconfig(Camera\_Manager\* cameraManager, const char\* surfaceId, Camera\_PreviewOutput\*\* previewOutput)](capi-camera-manager-h.md#oh_cameramanager_createpreviewoutputusedinpreconfig) | - | 创建在预配置流中使用的预览输出实例。 |
 | [Camera\_ErrorCode OH\_CameraManager\_CreatePhotoOutput(Camera\_Manager\* cameraManager, const Camera\_Profile\* profile, const char\* surfaceId, Camera\_PhotoOutput\*\* photoOutput)](capi-camera-manager-h.md#oh_cameramanager_createphotooutput) | - | 创建一个拍照输出实例。该接口只支持创建JPEG格式的拍照输出对象。 |
 | [Camera\_ErrorCode OH\_CameraManager\_CreatePhotoOutputUsedInPreconfig(Camera\_Manager\* cameraManager, const char\* surfaceId, Camera\_PhotoOutput\*\* photoOutput)](capi-camera-manager-h.md#oh_cameramanager_createphotooutputusedinpreconfig) | - | 创建在预配置流中使用的照片输出实例。 |
@@ -75,6 +68,8 @@ PhonePC/2in1TabletTVWearable
 | [Camera\_ErrorCode OH\_CameraManager\_IsTorchSupported(Camera\_Manager\* cameraManager, bool\* isTorchSupported)](capi-camera-manager-h.md#oh_cameramanager_istorchsupported) | - | 检查设备是否支持手电筒。 |
 | [Camera\_ErrorCode OH\_CameraManager\_IsTorchSupportedByTorchMode(Camera\_Manager\* cameraManager, Camera\_TorchMode torchMode, bool\* isTorchSupported)](capi-camera-manager-h.md#oh_cameramanager_istorchsupportedbytorchmode) | - | 检查设备是否支持指定的手电筒模式。 |
 | [Camera\_ErrorCode OH\_CameraManager\_SetTorchMode(Camera\_Manager\* cameraManager, Camera\_TorchMode torchMode)](capi-camera-manager-h.md#oh_cameramanager_settorchmode) | - | 设置相机手电筒模式。 |
+| [Camera\_ErrorCode OH\_CameraManager\_IsTorchLevelControlSupported(const Camera\_Manager\* cameraManager, bool\* isTorchLevelControlSupported)](capi-camera-manager-h.md#oh_cameramanager_istorchlevelcontrolsupported) | - | 检查设备是否支持手电筒亮度控制。 |
+| [Camera\_ErrorCode OH\_CameraManager\_SetTorchModeOnWithLevel(Camera\_Manager\* cameraManager, double torchLevel)](capi-camera-manager-h.md#oh_cameramanager_settorchmodeonwithlevel) | - | 将手电筒模式设置为打开，并设置亮度值。 |
 | [Camera\_ErrorCode OH\_CameraManager\_GetCameraDevice(Camera\_Manager\* cameraManager, Camera\_Position position, Camera\_Type type, Camera\_Device\* camera)](capi-camera-manager-h.md#oh_cameramanager_getcameradevice) | - | 根据相机位置和相机类型查询指定的相机。 |
 | [Camera\_ErrorCode OH\_CameraManager\_GetCameraDevices(Camera\_Manager\* cameraManager, Camera\_DeviceQueryInfo\* deviceQueryInfo, uint32\_t\* cameraSize, Camera\_Device\*\* cameras)](capi-camera-manager-h.md#oh_cameramanager_getcameradevices) | - | 根据相机位置、相机类型数组和连接类型查询符合条件的相机列表。 |
 | [Camera\_ErrorCode OH\_CameraManager\_DeleteCameraDevices(Camera\_Manager\* cameraManager, Camera\_Device\* cameras)](capi-camera-manager-h.md#oh_cameramanager_deletecameradevices) | - | 删除指定相机设备。 |
@@ -82,14 +77,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_CameraManager\_StatusCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_CameraManager_StatusCallback)(Camera_Manager* cameraManager, Camera_StatusInfo* status)
+```c
+typedef void (*OH_CameraManager_StatusCallback)(Camera_Manager* cameraManager, Camera_StatusInfo* status)
 ```
 
 **描述**
@@ -107,10 +98,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_TorchStatusCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_CameraManager_TorchStatusCallback)(Camera_Manager* cameraManager, Camera_TorchStatusInfo* status)
+```c
+typedef void (*OH_CameraManager_TorchStatusCallback)(Camera_Manager* cameraManager, Camera_TorchStatusInfo* status)
 ```
 
 **描述**
@@ -128,10 +117,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_OnFoldStatusInfoChange()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_CameraManager_OnFoldStatusInfoChange)(Camera_Manager* cameraManager, Camera_FoldStatusInfo* foldStatusInfo)
+```c
+typedef void (*OH_CameraManager_OnFoldStatusInfoChange)(Camera_Manager* cameraManager, Camera_FoldStatusInfo* foldStatusInfo)
 ```
 
 **描述**
@@ -149,10 +136,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_RegisterCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_RegisterCallback(Camera_Manager* cameraManager, CameraManager_Callbacks* callback)
+```c
+Camera_ErrorCode OH_CameraManager_RegisterCallback(Camera_Manager* cameraManager, CameraManager_Callbacks* callback)
 ```
 
 **描述**
@@ -176,10 +161,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_UnregisterCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_UnregisterCallback(Camera_Manager* cameraManager, CameraManager_Callbacks* callback)
+```c
+Camera_ErrorCode OH_CameraManager_UnregisterCallback(Camera_Manager* cameraManager, CameraManager_Callbacks* callback)
 ```
 
 **描述**
@@ -203,10 +186,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_RegisterTorchStatusCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_RegisterTorchStatusCallback(Camera_Manager* cameraManager, OH_CameraManager_TorchStatusCallback torchStatusCallback)
+```c
+Camera_ErrorCode OH_CameraManager_RegisterTorchStatusCallback(Camera_Manager* cameraManager, OH_CameraManager_TorchStatusCallback torchStatusCallback)
 ```
 
 **描述**
@@ -230,10 +211,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_UnregisterTorchStatusCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_UnregisterTorchStatusCallback(Camera_Manager* cameraManager, OH_CameraManager_TorchStatusCallback torchStatusCallback)
+```c
+Camera_ErrorCode OH_CameraManager_UnregisterTorchStatusCallback(Camera_Manager* cameraManager, OH_CameraManager_TorchStatusCallback torchStatusCallback)
 ```
 
 **描述**
@@ -257,10 +236,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_RegisterFoldStatusInfoCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_RegisterFoldStatusInfoCallback(Camera_Manager* cameraManager, OH_CameraManager_OnFoldStatusInfoChange foldStatusInfoCallback)
+```c
+Camera_ErrorCode OH_CameraManager_RegisterFoldStatusInfoCallback(Camera_Manager* cameraManager, OH_CameraManager_OnFoldStatusInfoChange foldStatusInfoCallback)
 ```
 
 **描述**
@@ -284,10 +261,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_UnregisterFoldStatusInfoCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_UnregisterFoldStatusInfoCallback(Camera_Manager* cameraManager, OH_CameraManager_OnFoldStatusInfoChange foldStatusInfoCallback)
+```c
+Camera_ErrorCode OH_CameraManager_UnregisterFoldStatusInfoCallback(Camera_Manager* cameraManager, OH_CameraManager_OnFoldStatusInfoChange foldStatusInfoCallback)
 ```
 
 **描述**
@@ -311,10 +286,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_GetSupportedCameras()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_GetSupportedCameras(Camera_Manager* cameraManager, Camera_Device** cameras, uint32_t* size)
+```c
+Camera_ErrorCode OH_CameraManager_GetSupportedCameras(Camera_Manager* cameraManager, Camera_Device** cameras, uint32_t* size)
 ```
 
 **描述**
@@ -339,10 +312,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_DeleteSupportedCameras()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_DeleteSupportedCameras(Camera_Manager* cameraManager, Camera_Device* cameras, uint32_t size)
+```c
+Camera_ErrorCode OH_CameraManager_DeleteSupportedCameras(Camera_Manager* cameraManager, Camera_Device* cameras, uint32_t size)
 ```
 
 **描述**
@@ -367,10 +338,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_GetSupportedCameraOutputCapability()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_GetSupportedCameraOutputCapability(Camera_Manager* cameraManager, const Camera_Device* camera, Camera_OutputCapability** cameraOutputCapability)
+```c
+Camera_ErrorCode OH_CameraManager_GetSupportedCameraOutputCapability(Camera_Manager* cameraManager, const Camera_Device* camera, Camera_OutputCapability** cameraOutputCapability)
 ```
 
 **描述**
@@ -395,10 +364,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_GetSupportedCameraOutputCapabilityWithSceneMode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode(Camera_Manager* cameraManager, const Camera_Device* camera, Camera_SceneMode sceneMode, Camera_OutputCapability** cameraOutputCapability)
+```c
+Camera_ErrorCode OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode(Camera_Manager* cameraManager, const Camera_Device* camera, Camera_SceneMode sceneMode, Camera_OutputCapability** cameraOutputCapability)
 ```
 
 **描述**
@@ -424,10 +391,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_GetSupportedFullCameraOutputCapabilityWithSceneMode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode(Camera_Manager* cameraManager, const Camera_Device* camera, Camera_SceneMode sceneMode, Camera_OutputCapability** cameraOutputCapability)
+```c
+Camera_ErrorCode OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode(Camera_Manager* cameraManager, const Camera_Device* camera, Camera_SceneMode sceneMode, Camera_OutputCapability** cameraOutputCapability)
 ```
 
 **描述**
@@ -453,10 +418,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_DeleteSupportedCameraOutputCapability()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_DeleteSupportedCameraOutputCapability(Camera_Manager* cameraManager, Camera_OutputCapability* cameraOutputCapability)
+```c
+Camera_ErrorCode OH_CameraManager_DeleteSupportedCameraOutputCapability(Camera_Manager* cameraManager, Camera_OutputCapability* cameraOutputCapability)
 ```
 
 **描述**
@@ -480,10 +443,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_IsCameraMuted()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_IsCameraMuted(Camera_Manager* cameraManager, bool* isCameraMuted)
+```c
+Camera_ErrorCode OH_CameraManager_IsCameraMuted(Camera_Manager* cameraManager, bool* isCameraMuted)
 ```
 
 **描述**
@@ -507,10 +468,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_CreateCaptureSession()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_CreateCaptureSession(Camera_Manager* cameraManager, Camera_CaptureSession** captureSession)
+```c
+Camera_ErrorCode OH_CameraManager_CreateCaptureSession(Camera_Manager* cameraManager, Camera_CaptureSession** captureSession)
 ```
 
 **描述**
@@ -534,10 +493,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_CreateCameraInput()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_CreateCameraInput(Camera_Manager* cameraManager, const Camera_Device* camera, Camera_Input** cameraInput)
+```c
+Camera_ErrorCode OH_CameraManager_CreateCameraInput(Camera_Manager* cameraManager, const Camera_Device* camera, Camera_Input** cameraInput)
 ```
 
 **描述**
@@ -564,10 +521,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_CreateCameraInput\_WithPositionAndType()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_CreateCameraInput_WithPositionAndType(Camera_Manager* cameraManager, Camera_Position position, Camera_Type type, Camera_Input** cameraInput)
+```c
+Camera_ErrorCode OH_CameraManager_CreateCameraInput_WithPositionAndType(Camera_Manager* cameraManager, Camera_Position position, Camera_Type type, Camera_Input** cameraInput)
 ```
 
 **描述**
@@ -595,10 +550,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_CreatePreviewOutput()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_CreatePreviewOutput(Camera_Manager* cameraManager, const Camera_Profile* profile, const char* surfaceId, Camera_PreviewOutput** previewOutput)
+```c
+Camera_ErrorCode OH_CameraManager_CreatePreviewOutput(Camera_Manager* cameraManager, const Camera_Profile* profile, const char* surfaceId, Camera_PreviewOutput** previewOutput)
 ```
 
 **描述**
@@ -622,12 +575,36 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功。  CAMERA\_INVALID\_ARGUMENT：参数丢失或参数类型不正确。  CAMERA\_SERVICE\_FATAL\_ERROR：相机服务异常。 |
 
+### OH\_CameraManager\_CreateDeferredPreviewOutput()
+
+```c
+Camera_ErrorCode OH_CameraManager_CreateDeferredPreviewOutput(const Camera_Manager* cameraManager, const Camera_Profile* profile, Camera_PreviewOutput** previewOutput)
+```
+
+**描述**
+
+创建延迟预览输出实例。使用结束后，必须调用[OH\_PreviewOutput\_Release](capi-preview-output-h.md#oh_previewoutput_release)释放预览输出实例。
+
+**起始版本：** 24
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [const Camera\_Manager](capi-oh-camera-camera-manager.md)\* cameraManager | 相机管理器实例。 |
+| [const Camera\_Profile](capi-oh-camera-camera-profile.md)\* profile | 用于创建Camera\_PreviewOutput实例的相机流配置文件。 |
+| [Camera\_PreviewOutput](capi-oh-camera-camera-previewoutput.md)\*\* previewOutput | 如果方法调用成功，将创建Camera\_PreviewOutput实例。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功。  CAMERA\_INVALID\_ARGUMENT：参数丢失或参数类型不正确。  CAMERA\_SERVICE\_FATAL\_ERROR：相机服务异常。 |
+
 ### OH\_CameraManager\_CreatePreviewOutputUsedInPreconfig()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_CreatePreviewOutputUsedInPreconfig(Camera_Manager* cameraManager, const char* surfaceId, Camera_PreviewOutput** previewOutput)
+```c
+Camera_ErrorCode OH_CameraManager_CreatePreviewOutputUsedInPreconfig(Camera_Manager* cameraManager, const char* surfaceId, Camera_PreviewOutput** previewOutput)
 ```
 
 **描述**
@@ -652,10 +629,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_CreatePhotoOutput()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_CreatePhotoOutput(Camera_Manager* cameraManager, const Camera_Profile* profile, const char* surfaceId, Camera_PhotoOutput** photoOutput)
+```c
+Camera_ErrorCode OH_CameraManager_CreatePhotoOutput(Camera_Manager* cameraManager, const Camera_Profile* profile, const char* surfaceId, Camera_PhotoOutput** photoOutput)
 ```
 
 **描述**
@@ -681,10 +656,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_CreatePhotoOutputUsedInPreconfig()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_CreatePhotoOutputUsedInPreconfig(Camera_Manager* cameraManager, const char* surfaceId, Camera_PhotoOutput** photoOutput)
+```c
+Camera_ErrorCode OH_CameraManager_CreatePhotoOutputUsedInPreconfig(Camera_Manager* cameraManager, const char* surfaceId, Camera_PhotoOutput** photoOutput)
 ```
 
 **描述**
@@ -709,10 +682,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_CreatePhotoOutputWithoutSurface()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_CreatePhotoOutputWithoutSurface(Camera_Manager *cameraManager, const Camera_Profile *profile, Camera_PhotoOutput **photoOutput)
+```c
+Camera_ErrorCode OH_CameraManager_CreatePhotoOutputWithoutSurface(Camera_Manager *cameraManager, const Camera_Profile *profile, Camera_PhotoOutput **photoOutput)
 ```
 
 **描述**
@@ -737,10 +708,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_CreateVideoOutput()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_CreateVideoOutput(Camera_Manager* cameraManager, const Camera_VideoProfile* profile, const char* surfaceId, Camera_VideoOutput** videoOutput)
+```c
+Camera_ErrorCode OH_CameraManager_CreateVideoOutput(Camera_Manager* cameraManager, const Camera_VideoProfile* profile, const char* surfaceId, Camera_VideoOutput** videoOutput)
 ```
 
 **描述**
@@ -766,10 +735,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_CreateVideoOutputUsedInPreconfig()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_CreateVideoOutputUsedInPreconfig(Camera_Manager* cameraManager, const char* surfaceId, Camera_VideoOutput** videoOutput)
+```c
+Camera_ErrorCode OH_CameraManager_CreateVideoOutputUsedInPreconfig(Camera_Manager* cameraManager, const char* surfaceId, Camera_VideoOutput** videoOutput)
 ```
 
 **描述**
@@ -794,10 +761,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_CreateMetadataOutput()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_CreateMetadataOutput(Camera_Manager* cameraManager, const Camera_MetadataObjectType* profile, Camera_MetadataOutput** metadataOutput)
+```c
+Camera_ErrorCode OH_CameraManager_CreateMetadataOutput(Camera_Manager* cameraManager, const Camera_MetadataObjectType* profile, Camera_MetadataOutput** metadataOutput)
 ```
 
 **描述**
@@ -822,10 +787,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_CreateMetadataOutputWithObjectTypes()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_CreateMetadataOutputWithObjectTypes(Camera_Manager* cameraManager, const Camera_MetadataObjectType* metadataObjectTypes, uint32_t size, Camera_MetadataOutput** metadataOutput)
+```c
+Camera_ErrorCode OH_CameraManager_CreateMetadataOutputWithObjectTypes(Camera_Manager* cameraManager, const Camera_MetadataObjectType* metadataObjectTypes, uint32_t size, Camera_MetadataOutput** metadataOutput)
 ```
 
 **描述**
@@ -851,10 +814,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_GetSupportedSceneModes()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_GetSupportedSceneModes(Camera_Device* camera, Camera_SceneMode** sceneModes, uint32_t* size)
+```c
+Camera_ErrorCode OH_CameraManager_GetSupportedSceneModes(Camera_Device* camera, Camera_SceneMode** sceneModes, uint32_t* size)
 ```
 
 **描述**
@@ -879,10 +840,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_DeleteSceneModes()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_DeleteSceneModes(Camera_Manager* cameraManager, Camera_SceneMode* sceneModes)
+```c
+Camera_ErrorCode OH_CameraManager_DeleteSceneModes(Camera_Manager* cameraManager, Camera_SceneMode* sceneModes)
 ```
 
 **描述**
@@ -906,10 +865,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_IsTorchSupported()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_IsTorchSupported(Camera_Manager* cameraManager, bool* isTorchSupported)
+```c
+Camera_ErrorCode OH_CameraManager_IsTorchSupported(Camera_Manager* cameraManager, bool* isTorchSupported)
 ```
 
 **描述**
@@ -933,10 +890,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_IsTorchSupportedByTorchMode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_IsTorchSupportedByTorchMode(Camera_Manager* cameraManager, Camera_TorchMode torchMode, bool* isTorchSupported)
+```c
+Camera_ErrorCode OH_CameraManager_IsTorchSupportedByTorchMode(Camera_Manager* cameraManager, Camera_TorchMode torchMode, bool* isTorchSupported)
 ```
 
 **描述**
@@ -961,10 +916,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_SetTorchMode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_SetTorchMode(Camera_Manager* cameraManager, Camera_TorchMode torchMode)
+```c
+Camera_ErrorCode OH_CameraManager_SetTorchMode(Camera_Manager* cameraManager, Camera_TorchMode torchMode)
 ```
 
 **描述**
@@ -986,12 +939,60 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功。  CAMERA\_INVALID\_ARGUMENT：参数丢失或参数类型不正确。  CAMERA\_SERVICE\_FATAL\_ERROR：相机服务异常。 |
 
+### OH\_CameraManager\_IsTorchLevelControlSupported()
+
+```c
+Camera_ErrorCode OH_CameraManager_IsTorchLevelControlSupported(const Camera_Manager* cameraManager, bool* isTorchLevelControlSupported)
+```
+
+**描述**
+
+检查设备是否支持手电筒亮度控制。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [const Camera\_Manager](capi-oh-camera-camera-manager.md)\* cameraManager | 相机管理器实例。 |
+| bool\* isTorchLevelControlSupported | 设备是否支持手电筒亮度控制。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功。  CAMERA\_INVALID\_ARGUMENT：参数丢失或参数类型不正确。  CAMERA\_SERVICE\_FATAL\_ERROR：相机服务异常。 |
+
+### OH\_CameraManager\_SetTorchModeOnWithLevel()
+
+```c
+Camera_ErrorCode OH_CameraManager_SetTorchModeOnWithLevel(Camera_Manager* cameraManager, double torchLevel)
+```
+
+**描述**
+
+将手电筒模式设置为打开，并设置亮度值。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [Camera\_Manager](capi-oh-camera-camera-manager.md)\* cameraManager | 相机管理器实例。 |
+| double torchLevel | 目标亮度水平。取值范围为[0.0, 1.0]。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功。  CAMERA\_INVALID\_ARGUMENT：参数丢失或参数类型不正确。  CAMERA\_SERVICE\_FATAL\_ERROR：相机服务异常。 |
+
 ### OH\_CameraManager\_GetCameraDevice()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_GetCameraDevice(Camera_Manager* cameraManager, Camera_Position position, Camera_Type type, Camera_Device* camera)
+```c
+Camera_ErrorCode OH_CameraManager_GetCameraDevice(Camera_Manager* cameraManager, Camera_Position position, Camera_Type type, Camera_Device* camera)
 ```
 
 **描述**
@@ -1019,10 +1020,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_GetCameraDevices()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_GetCameraDevices(Camera_Manager* cameraManager, Camera_DeviceQueryInfo* deviceQueryInfo, uint32_t* cameraSize, Camera_Device** cameras)
+```c
+Camera_ErrorCode OH_CameraManager_GetCameraDevices(Camera_Manager* cameraManager, Camera_DeviceQueryInfo* deviceQueryInfo, uint32_t* cameraSize, Camera_Device** cameras)
 ```
 
 **描述**
@@ -1048,10 +1047,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_DeleteCameraDevices()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_DeleteCameraDevices(Camera_Manager* cameraManager, Camera_Device* cameras)
+```c
+Camera_ErrorCode OH_CameraManager_DeleteCameraDevices(Camera_Manager* cameraManager, Camera_Device* cameras)
 ```
 
 **描述**
@@ -1075,10 +1072,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraManager\_GetCameraConcurrentInfos()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraManager_GetCameraConcurrentInfos(Camera_Manager* cameraManager, const Camera_Device* camera, uint32_t deviceSize, Camera_ConcurrentInfo** cameraConcurrentInfo, uint32_t* infoSize)
+```c
+Camera_ErrorCode OH_CameraManager_GetCameraConcurrentInfos(Camera_Manager* cameraManager, const Camera_Device* camera, uint32_t deviceSize, Camera_ConcurrentInfo** cameraConcurrentInfo, uint32_t* infoSize)
 ```
 
 **描述**

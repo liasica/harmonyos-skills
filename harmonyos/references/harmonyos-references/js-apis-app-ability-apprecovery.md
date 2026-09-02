@@ -3,45 +3,44 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.appRecovery (应用故障恢复)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.app.ability.appRecovery (应用故障恢复)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:30+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:75b786f7a93a3659dac19bb008d94eb224a07fbed97396409a2fbab3e90c6997
+scraped_at: 2026-09-02T15:00:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:704be2490950f15088569ab8b5b91e5acf1b3bf6358607f35df984a8c43a6f01
 ---
 
-appRecovery模块提供了应用在故障状态下的恢复能力。
+appRecovery模块提供了应用在故障状态下的恢复能力。从API version 11开始，支持应用崩溃（JS\_CRASH）、应用冻屏（APP\_FREEZE）故障场景下的应用自恢复；从API version 24开始，支持进程崩溃（CPP\_CRASH）故障场景下的应用自恢复。同时，支持应用状态保存及恢复功能，帮助开发者提升应用稳定性。
 
-说明
+**说明** 
 
-本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。API9仅支持单进程中单Ability的应用恢复。API10支持进程中包含多个Ability的场景。
+本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+
+API9仅支持单进程中单Ability的应用恢复。
+
+API10支持进程中包含多个Ability的场景。
+
+API24支持发生CPP\_CRASH时应用恢复。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { appRecovery } from '@kit.AbilityKit';
+```ts
+import { appRecovery } from '@kit.AbilityKit';
 ```
 
 ## RestartFlag
 
-PhonePC/2in1TabletTVWearable
-
 应用重启标志，[enableAppRecovery](js-apis-app-ability-apprecovery.md#apprecoveryenableapprecovery)接口重启选项参数，该类型为枚举。
-
-**元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| ALWAYS\_RESTART | 0 | 总是重启应用。 |
-| RESTART\_WHEN\_JS\_CRASH | 0x0001 | 发生JS\_CRASH时重启应用。 |
-| RESTART\_WHEN\_APP\_FREEZE | 0x0002 | 发生APP\_FREEZE时重启应用。 |
-| NO\_RESTART | 0xFFFF | 总是不重启应用。 |
+| ALWAYS\_RESTART | 0 | 总是重启应用。  **元服务API**：从API version 11开始，该接口支持在元服务中使用。 |
+| RESTART\_WHEN\_JS\_CRASH | 0x0001 | 发生JS\_CRASH时重启应用。  **元服务API**：从API version 11开始，该接口支持在元服务中使用。 |
+| RESTART\_WHEN\_APP\_FREEZE | 0x0002 | 发生APP\_FREEZE时重启应用。  **元服务API**：从API version 11开始，该接口支持在元服务中使用。 |
+| RESTART\_WHEN\_CPP\_CRASH24+ | 0x0004 | 发生CPP\_CRASH时重启应用。  **模型约束**：此接口仅可在Stage模型下使用。  **元服务API**：从API version 24开始，该接口支持在元服务中使用。 |
+| NO\_RESTART | 0xFFFF | 总是不重启应用。  **元服务API**：从API version 11开始，该接口支持在元服务中使用。 |
 
 ## SaveOccasionFlag
-
-PhonePC/2in1TabletTVWearable
 
 保存条件标志，[enableAppRecovery](js-apis-app-ability-apprecovery.md#apprecoveryenableapprecovery)接口状态保存时的选项参数，该类型为枚举。
 
@@ -56,8 +55,6 @@ PhonePC/2in1TabletTVWearable
 
 ## SaveModeFlag
 
-PhonePC/2in1TabletTVWearable
-
 状态保存标志，[enableAppRecovery](js-apis-app-ability-apprecovery.md#apprecoveryenableapprecovery)接口状态保存方式的参数，该类型为枚举。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
@@ -70,8 +67,6 @@ PhonePC/2in1TabletTVWearable
 | SAVE\_WITH\_SHARED\_MEMORY | 0x0002 | 状态先保存在内存中，应用故障退出时写入到本地文件缓存。 |
 
 ## appRecovery.enableAppRecovery
-
-PhonePC/2in1TabletTVWearable
 
 enableAppRecovery(restart?: [RestartFlag](js-apis-app-ability-apprecovery.md#restartflag), saveOccasion?: [SaveOccasionFlag](js-apis-app-ability-apprecovery.md#saveoccasionflag), saveMode?: [SaveModeFlag](js-apis-app-ability-apprecovery.md#savemodeflag)) : void
 
@@ -87,35 +82,33 @@ enableAppRecovery(restart?: [RestartFlag](js-apis-app-ability-apprecovery.md#res
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| restart | [RestartFlag](js-apis-app-ability-apprecovery.md#restartflag) | 否 | 枚举类型，发生对应故障时是否重启，默认为重启。 |
-| saveOccasion | [SaveOccasionFlag](js-apis-app-ability-apprecovery.md#saveoccasionflag) | 否 | 枚举类型，状态保存时机，默认为故障时保存。 |
-| saveMode | [SaveModeFlag](js-apis-app-ability-apprecovery.md#savemodeflag) | 否 | 枚举类型，状态保存方式， 默认为文件缓存。 |
+| restart | [RestartFlag](js-apis-app-ability-apprecovery.md#restartflag) | 否 | 枚举类型，发生对应故障时是否重启。默认值为ALWAYS\_RESTART，即总是重启应用。 |
+| saveOccasion | [SaveOccasionFlag](js-apis-app-ability-apprecovery.md#saveoccasionflag) | 否 | 枚举类型，用于指定状态保存的触发条件。默认值为SAVE\_WHEN\_ERROR，即当发生应用故障时保存。 |
+| saveMode | [SaveModeFlag](js-apis-app-ability-apprecovery.md#savemodeflag) | 否 | 枚举类型，用于指定状态保存的实现方式。默认值为SAVE\_WITH\_FILE，即每次状态保存都会写入到本地文件缓存。 |
 
 **示例：**
 
-```
-1. import { appRecovery, AbilityStage } from '@kit.AbilityKit';
+```ts
+import { appRecovery, AbilityStage } from '@kit.AbilityKit';
 
-3. export default class MyAbilityStage extends AbilityStage {
-4. onCreate() {
-5. appRecovery.enableAppRecovery(
-6. appRecovery.RestartFlag.ALWAYS_RESTART,
-7. appRecovery.SaveOccasionFlag.SAVE_WHEN_ERROR,
-8. appRecovery.SaveModeFlag.SAVE_WITH_FILE
-9. );
-10. }
-11. }
+export default class MyAbilityStage extends AbilityStage {
+  onCreate() {
+    appRecovery.enableAppRecovery(
+      appRecovery.RestartFlag.ALWAYS_RESTART,
+      appRecovery.SaveOccasionFlag.SAVE_WHEN_ERROR,
+      appRecovery.SaveModeFlag.SAVE_WITH_FILE
+    );
+  }
+}
 ```
 
 ## appRecovery.restartApp
-
-PhonePC/2in1TabletTVWearable
 
 restartApp(): void
 
 重启当前进程，并拉起应用启动时第一个Ability，如果该Ability存在已经保存的状态，这些状态数据会在Ability的onCreate生命周期回调的want参数中作为wantParam属性传入。
 
-API10时将启动由[setRestartWant](js-apis-app-ability-apprecovery.md#apprecoverysetrestartwant10)指定的Ability。如果没有指定则按以下规则启动：
+从API version 10开始将启动由[setRestartWant](js-apis-app-ability-apprecovery.md#apprecoverysetrestartwant10)指定的Ability。如果没有指定则按以下规则启动：
 
 如果当前应用前台的Ability支持恢复，则重新拉起该Ability。
 
@@ -133,31 +126,29 @@ API10时将启动由[setRestartWant](js-apis-app-ability-apprecovery.md#apprecov
 
 **示例：**
 
-```
-1. import { appRecovery, errorManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { appRecovery, errorManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let observer: errorManager.ErrorObserver = {
-5. onUnhandledException(errorMsg) {
-6. console.error('onUnhandledException, errorMsg: ', errorMsg);
-7. appRecovery.restartApp();
-8. }
-9. };
+let observer: errorManager.ErrorObserver = {
+  onUnhandledException(errorMsg) {
+    console.error('onUnhandledException, errorMsg: ', errorMsg);
+    appRecovery.restartApp();
+  }
+};
 
-11. try {
-12. errorManager.on('error', observer);
-13. } catch (paramError) {
-14. console.error(`error: ${(paramError as BusinessError).code}, ${(paramError as BusinessError).message}`);
-15. }
+try {
+  errorManager.on('error', observer);
+} catch (paramError) {
+  console.error(`error: ${(paramError as BusinessError).code}, ${(paramError as BusinessError).message}`);
+}
 ```
 
 ## appRecovery.saveAppState
 
-PhonePC/2in1TabletTVWearable
-
 saveAppState(): boolean
 
-保存当前App状态，可以配合[errorManager](js-apis-app-ability-errormanager.md)相关接口使用。
+保存当前应用的状态数据（包括Ability的状态信息等），这些数据将在应用恢复时使用。可以配合[errorManager](js-apis-app-ability-errormanager.md)相关接口使用。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
@@ -173,27 +164,25 @@ saveAppState(): boolean
 
 **示例：**
 
-```
-1. import { appRecovery, errorManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { appRecovery, errorManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let observer: errorManager.ErrorObserver = {
-5. onUnhandledException(errorMsg) {
-6. console.error('onUnhandledException, errorMsg: ', errorMsg);
-7. appRecovery.saveAppState();
-8. }
-9. };
+let observer: errorManager.ErrorObserver = {
+  onUnhandledException(errorMsg) {
+    console.error('onUnhandledException, errorMsg: ', errorMsg);
+    appRecovery.saveAppState();
+  }
+};
 
-11. try {
-12. errorManager.on('error', observer);
-13. } catch (paramError) {
-14. console.error(`error: ${(paramError as BusinessError).code}, ${(paramError as BusinessError).message}`);
-15. }
+try {
+  errorManager.on('error', observer);
+} catch (paramError) {
+  console.error(`error: ${(paramError as BusinessError).code}, ${(paramError as BusinessError).message}`);
+}
 ```
 
 ## appRecovery.saveAppState10+
-
-PhonePC/2in1TabletTVWearable
 
 saveAppState(context?: UIAbilityContext): boolean
 
@@ -219,31 +208,30 @@ saveAppState(context?: UIAbilityContext): boolean
 
 **示例：**
 
-```
-1. import { appRecovery, errorManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { appRecovery, errorManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let observer: errorManager.ErrorObserver = {
-5. onUnhandledException(errorMsg) {
-6. console.error('onUnhandledException, errorMsg: ', errorMsg);
-7. appRecovery.saveAppState(this.context);
-8. }
-9. };
+let observer: errorManager.ErrorObserver = {
+  onUnhandledException(errorMsg) {
+    console.error('onUnhandledException, errorMsg: ', errorMsg);
+    // context为UIAbility实例的context，需使用箭头函数或在回调外预先保存。
+    appRecovery.saveAppState(this.context);
+  }
+};
 
-11. try {
-12. errorManager.on('error', observer);
-13. } catch (paramError) {
-14. console.error(`error: ${(paramError as BusinessError).code}, ${(paramError as BusinessError).message}`);
-15. }
+try {
+  errorManager.on('error', observer);
+} catch (paramError) {
+  console.error(`error: ${(paramError as BusinessError).code}, ${(paramError as BusinessError).message}`);
+}
 ```
 
 ## appRecovery.setRestartWant10+
 
-PhonePC/2in1TabletTVWearable
-
 setRestartWant(want: Want): void
 
-设置下次恢复主动拉起场景下的Ability。该Ability必须为当前包下的UIAbility。
+设置下次应用恢复时要启动的Ability。该Ability必须为当前包下的UIAbility。通过[restartApp](js-apis-app-ability-apprecovery.md#apprecoveryrestartapp)方法或应用故障恢复时，将拉起此处设置的Ability。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
@@ -255,29 +243,29 @@ setRestartWant(want: Want): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| want | [Want](js-apis-app-ability-want.md) | 是 | 通过设置Want中"bundleName"和"abilityName"字段来指定恢复重启的Ability。 |
+| want | [Want](js-apis-app-ability-want.md) | 是 | 通过设置Want中"bundleName"和"abilityName"字段来指定恢复重启的Ability。需配合enableAppRecovery接口设置适当的RestartFlag，以确定何时触发重启。setRestartWant仅指定重启拉起的Ability，是否重启由RestartFlag决定。 |
 
 **示例：**
 
-```
-1. import { appRecovery, Want } from '@kit.AbilityKit';
+```ts
+import { appRecovery, Want } from '@kit.AbilityKit';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. build() {
-7. Button("启动到恢复Ability")
-8. .fontSize(40)
-9. .fontWeight(FontWeight.Bold)
-10. .onClick(()=> {
-11. // set restart want
-12. let want: Want = {
-13. bundleName: "ohos.samples.recovery",
-14. abilityName: "RecoveryAbility"
-15. };
+@Entry
+@Component
+struct Index {
+  build() {
+    Button("启动到恢复Ability")
+      .fontSize(40)
+      .fontWeight(FontWeight.Bold)
+      .onClick(() => {
+        // set restart want
+        let want: Want = {
+          bundleName: "ohos.samples.recovery",
+          abilityName: "RecoveryAbility"
+        };
 
-17. appRecovery.setRestartWant(want);
-18. })
-19. }
-20. }
+        appRecovery.setRestartWant(want);
+      })
+  }
+}
 ```

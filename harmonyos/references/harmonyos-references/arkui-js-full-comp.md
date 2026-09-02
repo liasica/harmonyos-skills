@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkui-js-
 title: 兼容JS的类Web开发范式（ArkUI.Full）
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:52+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:d151f49f786ff2af4693f98de6c68e2cf56948b4ac9eeb16e99b40519223f2c3
+scraped_at: 2026-09-02T14:51:39+08:00
+doc_updated_at: 2026-04-30
+content_hash: sha256:7f48ea2d9a84abc7f446decff7663fe4cbd3916cbb255b055548774df82313cb
 ---
 
 * **[组件通用信息](js-full-universal-comp-inform.md)**
@@ -16,5 +16,6 @@ content_hash: sha256:d151f49f786ff2af4693f98de6c68e2cf56948b4ac9eeb16e99b4051922
 * **[栅格组件](js-full-grid-comp.md)**
 * **[svg组件](js-full-svg-comp.md)**
 * **[自定义组件](js-full-custom-comp.md)**
+* **[全局接口](js-full-global-interface.md)**
 * **[动态创建组件](js-components-create-elements.md)**
 * **[数据类型说明](js-appendix-types.md)**

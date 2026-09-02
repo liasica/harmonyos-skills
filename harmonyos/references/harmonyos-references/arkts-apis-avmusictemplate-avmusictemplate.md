@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (AVMusicTemplate)
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > ArkTS API > @ohos.multimedia.avMusicTemplate (音频模板) > Class (AVMusicTemplate)
 category: harmonyos-references
-scraped_at: 2026-04-29T14:02:58+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:4f953904ae7feac630b07d3da5d03ccf04b18e31bd7d064198a3111331e6602f
+scraped_at: 2026-09-02T15:02:25+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f2c69a724aefe0c354de2210456f063f304096526c8a40a31a730de686044d78
 ---
 
-调用[avMusicTemplate.createAVMusicTemplate](arkts-apis-avmusictemplate-f.md#avmusictemplatecreateavmusictemplate)获取实例后，可获取其ID，启动音频模板界面，并配置数据获取方法。随后，同步数据给模板控制方，以完成后续操作。
+开发者调用[avMusicTemplate.createAVMusicTemplate](arkts-apis-avmusictemplate-f.md#avmusictemplatecreateavmusictemplate)获取实例后，可获取其ID，启动音频模板界面，并配置数据获取方法。随后，同步数据给模板控制方，以完成数据交互和界面更新等操作。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 23开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本模块仅适用于API version 23及以上版本的Car设备。
 
 ## 导入模块
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 ```
 
 ## 属性
@@ -34,40 +34,40 @@ content_hash: sha256:4f953904ae7feac630b07d3da5d03ccf04b18e31bd7d064198a3111331e
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. private static sInstance: TemplateManager;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private static instance: TemplateManager;
 
-7. private constructor() {
-8. }
+  private constructor() {
+  }
 
-10. /**
-11. * 获取模板控制器实例。
-12. *
-13. * @returns 模板控制器实例。
-14. */
-15. public static getInstance(): TemplateManager {
-16. if (!TemplateManager.sInstance) {
-17. TemplateManager.sInstance = new TemplateManager();
-18. }
-19. return TemplateManager.sInstance;
-20. };
+  /**
+   * 获取模板控制器实例。
+   *
+   * @returns 模板控制器实例。
+   */
+  public static getInstance(): TemplateManager {
+    if (!TemplateManager.instance) {
+      TemplateManager.instance = new TemplateManager();
+    }
+    return TemplateManager.instance;
+  }
 
-22. /**
-23. * 创建音频模板。
-24. */
-25. public createTemplate() {
-26. if (this.template) {
-27. console.warn('createTemplate: template not undefined');
-28. return
-29. }
-30. this.template = avMusicTemplate.createAVMusicTemplate(avMusicTemplate.AVMusicTemplateType.DEFAULT);
-31. console.info('Succeeded in creating template.');
-32. }
-33. }
+  /**
+   * 创建音频模板。
+   */
+  public createTemplate() {
+    if (this.template) {
+      console.warn('createTemplate: template not undefined');
+      return;
+    }
+    this.template = avMusicTemplate.createAVMusicTemplate(avMusicTemplate.AVMusicTemplateType.DEFAULT);
+    console.info('Succeeded in creating template.');
+  }
+}
 ```
 
 ## startTemplate
@@ -96,19 +96,19 @@ startTemplate(): Promise<OperResult>
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 模拟开启模板。
-8. */
-9. public startTemplate() {
-10. this.template?.startTemplate();
-11. }
-12. }
+  /**
+   * 模拟开启模板。
+   */
+  public startTemplate() {
+    this.template?.startTemplate();
+  }
+}
 ```
 
 ## onQueryMainTabs
@@ -139,43 +139,46 @@ onQueryMainTabs(callback: QueryMainTabsEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. private queryMainTabsEvent: avMusicTemplate.QueryMainTabsEvent = async () => {
-6. return new Promise<avMusicTemplate.MediaTab[]>(async (resolve, reject) => {
-7. let tabs: avMusicTemplate.MediaTab[] = await this.getMainTabs();
-8. resolve(tabs);
-9. });
-10. };
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private queryMainTabsEvent: avMusicTemplate.QueryMainTabsEvent = async () => {
+    try {
+      return await this.getMainTabs();
+    } catch (e) {
+      const msg = `Failed to queryMainTabsEvent. Code: ${e?.code}`;
+      console.error(msg);
+      throw e instanceof Error ? e : new Error(e?.message ?? msg);
+    }
+  };
 
-12. /**
-13. * 注册监听。
-14. */
-15. private registerListener() {
-16. this.template?.onQueryMainTabs(this.queryMainTabsEvent);
-17. }
+  /**
+   * 注册监听。
+   */
+  private registerListener() {
+    this.template?.onQueryMainTabs(this.queryMainTabsEvent);
+  }
 
-19. /**
-20. * 模拟获取主界面的所有TAB。
-21. *
-22. * @returns Promise类型MediaTab数组。
-23. */
-24. private async getMainTabs(): Promise<avMusicTemplate.MediaTab[]> {
-25. let homeTab: avMusicTemplate.MediaTab = {
-26. tabId: 'home',
-27. tabName: '首页'
-28. };
-29. let mineTab: avMusicTemplate.MediaTab = {
-30. tabId: 'mine',
-31. tabName: '我的'
-32. };
-33. let mainTabs: avMusicTemplate.MediaTab[] = [homeTab, mineTab];
-34. return mainTabs;
-35. };
-36. }
+  /**
+   * 模拟获取主界面的所有TAB。
+   *
+   * @returns Promise类型MediaTab数组。
+   */
+  private async getMainTabs(): Promise<avMusicTemplate.MediaTab[]> {
+    let homeTab: avMusicTemplate.MediaTab = {
+      tabId: 'home',
+      tabName: '首页'
+    };
+    let mineTab: avMusicTemplate.MediaTab = {
+      tabId: 'mine',
+      tabName: '我的'
+    };
+    let mainTabs: avMusicTemplate.MediaTab[] = [homeTab, mineTab];
+    return mainTabs;
+  };
+}
 ```
 
 ## offQueryMainTabs
@@ -206,19 +209,19 @@ offQueryMainTabs(callback?: QueryMainTabsEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 注销监听。
-8. */
-9. public unregisterListener() {
-10. this.template?.offQueryMainTabs();
-11. }
-12. }
+  /**
+   * 注销监听。
+   */
+  public unregisterListener() {
+    this.template?.offQueryMainTabs();
+  }
+}
 ```
 
 ## onQueryMediaTabContent
@@ -249,77 +252,77 @@ onQueryMediaTabContent(callback: QueryMediaTabContentEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. private queryMediaTabContentEvent: avMusicTemplate.QueryMediaTabContentEvent = async (tabId: string) => {
-6. return new Promise<avMusicTemplate.MediaTabContent>(async (resolve, reject) => {
-7. let tabContent: avMusicTemplate.MediaTabContent = await this.createMediaTabContent();
-8. resolve(tabContent);
-9. });
-10. };
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private queryMediaTabContentEvent: avMusicTemplate.QueryMediaTabContentEvent = async (tabId: string) => {
+    return new Promise<avMusicTemplate.MediaTabContent>(async (resolve, reject) => {
+      let tabContent: avMusicTemplate.MediaTabContent = await this.createMediaTabContent();
+      resolve(tabContent);
+    });
+  };
 
-12. /**
-13. * 注册监听。
-14. */
-15. private registerListener() {
-16. this.template?.onQueryMediaTabContent(this.queryMediaTabContentEvent);
-17. }
+  /**
+   * 注册监听。
+   */
+  private registerListener() {
+    this.template?.onQueryMediaTabContent(this.queryMediaTabContentEvent);
+  }
 
-19. /**
-20. * 模拟获取TAB内容。
-21. *
-22. * @returns 标签页内容。
-23. */
-24. private async createMediaTabContent(): Promise<avMusicTemplate.MediaTabContent> {
-25. let compilation: avMusicTemplate.Compilation = await this.createCompilation();
-26. let mediaTabContent: avMusicTemplate.MediaTabContent = {
-27. errorCode: 0,
-28. tabId: 'tabId',
-29. compilations: [compilation]
-30. }
-31. return mediaTabContent;
-32. };
+  /**
+   * 模拟获取TAB内容。
+   *
+   * @returns 标签页内容。
+   */
+  private async createMediaTabContent(): Promise<avMusicTemplate.MediaTabContent> {
+    let compilation: avMusicTemplate.Compilation = await this.createCompilation();
+    let mediaTabContent: avMusicTemplate.MediaTabContent = {
+      errorCode: 0,
+      tabId: 'tabId',
+      compilations: [compilation]
+    }
+    return mediaTabContent;
+  };
 
-34. /**
-35. * 模拟获取合集数据。
-36. *
-37. * @returns 合集。
-38. */
-39. private async createCompilation(): Promise<avMusicTemplate.Compilation> {
-40. let mediaEntity: avMusicTemplate.MediaEntity = await this.createMediaEntity();
-41. let compilation: avMusicTemplate.Compilation = {
-42. errorCode: 0,
-43. id: '',
-44. title: '',
-45. hasMoreData: false,
-46. totalSize: 1,
-47. memberMediaType: avMusicTemplate.EntityType.SINGLE,
-48. topElements: [mediaEntity],
-49. }
-50. return compilation;
-51. };
+  /**
+   * 模拟获取合集数据。
+   *
+   * @returns 合集。
+   */
+  private async createCompilation(): Promise<avMusicTemplate.Compilation> {
+    let mediaEntity: avMusicTemplate.MediaEntity = await this.createMediaEntity();
+    let compilation: avMusicTemplate.Compilation = {
+      errorCode: 0,
+      id: '',
+      title: '',
+      hasMoreData: false,
+      totalSize: 1,
+      memberMediaType: avMusicTemplate.EntityType.SINGLE,
+      topElements: [mediaEntity],
+    }
+    return compilation;
+  };
 
-53. /**
-54. * 模拟获取媒体数据。
-55. *
-56. * @returns 媒体数据。
-57. */
-58. private async createMediaEntity(): Promise<avMusicTemplate.MediaEntity> {
-59. let mediaEntity: avMusicTemplate.MediaEntity = {
-60. mediaId: 'mediaId',
-61. mediaType: avMusicTemplate.EntityType.SINGLE,
-62. parentId: 'parentId',
-63. parentMediaType: avMusicTemplate.EntityType.SINGLE,
-64. title: 'title',
-65. imageUrl: 'imageUrl',
-66. playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
-67. };
-68. return mediaEntity;
-69. };
-70. }
+  /**
+   * 模拟获取媒体数据。
+   *
+   * @returns 媒体数据。
+   */
+  private async createMediaEntity(): Promise<avMusicTemplate.MediaEntity> {
+    let mediaEntity: avMusicTemplate.MediaEntity = {
+      mediaId: 'mediaId',
+      mediaType: avMusicTemplate.EntityType.SINGLE,
+      parentId: 'parentId',
+      parentMediaType: avMusicTemplate.EntityType.SINGLE,
+      title: 'title',
+      imageUrl: 'imageUrl',
+      playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
+    };
+    return mediaEntity;
+  };
+}
 ```
 
 ## offQueryMediaTabContent
@@ -350,19 +353,19 @@ offQueryMediaTabContent(callback?: QueryMediaTabContentEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 注销监听。
-8. */
-9. public unregisterListener() {
-10. this.template?.offQueryMediaTabContent();
-11. }
-12. }
+  /**
+   * 注销监听。
+   */
+  public unregisterListener() {
+    this.template?.offQueryMediaTabContent();
+  }
+}
 ```
 
 ## onQueryMediaEntity
@@ -393,63 +396,63 @@ onQueryMediaEntity(callback: QueryMediaEntityEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. private queryMediaEntityEvent: avMusicTemplate.QueryMediaEntityEvent =
-6. async (params: avMusicTemplate.QueryMediaEntityParam) => {
-7. return new Promise<avMusicTemplate.PageMediaEntity>(async (resolve, reject) => {
-8. let pageMediaEntity: avMusicTemplate.PageMediaEntity = await this.createPageMediaEntity();
-9. resolve(pageMediaEntity);
-10. });
-11. };
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private queryMediaEntityEvent: avMusicTemplate.QueryMediaEntityEvent =
+    async (params: avMusicTemplate.QueryMediaEntityParam) => {
+      return new Promise<avMusicTemplate.PageMediaEntity>(async (resolve, reject) => {
+        let pageMediaEntity: avMusicTemplate.PageMediaEntity = await this.createPageMediaEntity();
+        resolve(pageMediaEntity);
+      });
+    };
 
-13. /**
-14. * 注册监听。
-15. */
-16. private registerListener() {
-17. this.template?.onQueryMediaEntity(this.queryMediaEntityEvent);
-18. }
+  /**
+   * 注册监听。
+   */
+  private registerListener() {
+    this.template?.onQueryMediaEntity(this.queryMediaEntityEvent);
+  }
 
-20. /**
-21. * 模拟获取PageMediaEntity。
-22. *
-23. * @returns PageMediaEntity实例。
-24. */
-25. private async createPageMediaEntity(): Promise<avMusicTemplate.PageMediaEntity> {
-26. let mediaEntity: avMusicTemplate.MediaEntity = await this.createMediaEntity();
-27. let pageMediaEntity: avMusicTemplate.PageMediaEntity = {
-28. errorCode: 0,
-29. pageIndex: 0,
-30. pageSize: 1,
-31. hasMoreData: false,
-32. totalSize: 1,
-33. memberMediaType: avMusicTemplate.EntityType.SINGLE,
-34. elements: [mediaEntity]
-35. }
-36. return pageMediaEntity;
-37. };
+  /**
+   * 模拟获取PageMediaEntity。
+   *
+   * @returns PageMediaEntity实例。
+   */
+  private async createPageMediaEntity(): Promise<avMusicTemplate.PageMediaEntity> {
+    let mediaEntity: avMusicTemplate.MediaEntity = await this.createMediaEntity();
+    let pageMediaEntity: avMusicTemplate.PageMediaEntity = {
+      errorCode: 0,
+      pageIndex: 0,
+      pageSize: 1,
+      hasMoreData: false,
+      totalSize: 1,
+      memberMediaType: avMusicTemplate.EntityType.SINGLE,
+      elements: [mediaEntity]
+    }
+    return pageMediaEntity;
+  };
 
-39. /**
-40. * 模拟获取媒体数据。
-41. *
-42. * @returns 媒体数据。
-43. */
-44. private async createMediaEntity(): Promise<avMusicTemplate.MediaEntity> {
-45. let mediaEntity: avMusicTemplate.MediaEntity = {
-46. mediaId: 'mediaId',
-47. mediaType: avMusicTemplate.EntityType.SINGLE,
-48. parentId: 'parentId',
-49. parentMediaType: avMusicTemplate.EntityType.SINGLE,
-50. title: 'title',
-51. imageUrl: 'imageUrl',
-52. playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
-53. };
-54. return mediaEntity;
-55. };
-56. }
+  /**
+   * 模拟获取媒体数据。
+   *
+   * @returns 媒体数据。
+   */
+  private async createMediaEntity(): Promise<avMusicTemplate.MediaEntity> {
+    let mediaEntity: avMusicTemplate.MediaEntity = {
+      mediaId: 'mediaId',
+      mediaType: avMusicTemplate.EntityType.SINGLE,
+      parentId: 'parentId',
+      parentMediaType: avMusicTemplate.EntityType.SINGLE,
+      title: 'title',
+      imageUrl: 'imageUrl',
+      playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
+    };
+    return mediaEntity;
+  };
+}
 ```
 
 ## offQueryMediaEntity
@@ -480,19 +483,19 @@ offQueryMediaEntity(callback?: QueryMediaEntityEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 注销监听。
-8. */
-9. public unregisterListener() {
-10. this.template?.offQueryMediaEntity();
-11. }
-12. }
+  /**
+   * 注销监听。
+   */
+  public unregisterListener() {
+    this.template?.offQueryMediaEntity();
+  }
+}
 ```
 
 ## onQueryCompilation
@@ -523,63 +526,63 @@ onQueryCompilation(callback: QueryCompilationEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. private queryCompilationEvent: avMusicTemplate.QueryCompilationEvent =
-6. async (compilationId: string, pageIndex: number) => {
-7. return new Promise<avMusicTemplate.PageMediaEntity>(async (resolve, reject) => {
-8. let pageMediaEntity: avMusicTemplate.PageMediaEntity = await this.createPageMediaEntity();
-9. resolve(pageMediaEntity);
-10. });
-11. };
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private queryCompilationEvent: avMusicTemplate.QueryCompilationEvent =
+    async (compilationId: string, pageIndex: number) => {
+      return new Promise<avMusicTemplate.PageMediaEntity>(async (resolve, reject) => {
+        let pageMediaEntity: avMusicTemplate.PageMediaEntity = await this.createPageMediaEntity();
+        resolve(pageMediaEntity);
+      });
+    };
 
-13. /**
-14. * 注册监听。
-15. */
-16. private registerListener() {
-17. this.template?.onQueryCompilation(this.queryCompilationEvent);
-18. }
+  /**
+   * 注册监听。
+   */
+  private registerListener() {
+    this.template?.onQueryCompilation(this.queryCompilationEvent);
+  }
 
-20. /**
-21. * 模拟获取PageMediaEntity。
-22. *
-23. * @returns PageMediaEntity实例。
-24. */
-25. private async createPageMediaEntity(): Promise<avMusicTemplate.PageMediaEntity> {
-26. let mediaEntity: avMusicTemplate.MediaEntity = await this.createMediaEntity();
-27. let pageMediaEntity: avMusicTemplate.PageMediaEntity = {
-28. errorCode: 0,
-29. pageIndex: 0,
-30. pageSize: 1,
-31. hasMoreData: false,
-32. totalSize: 1,
-33. memberMediaType: avMusicTemplate.EntityType.SINGLE,
-34. elements: [mediaEntity]
-35. }
-36. return pageMediaEntity;
-37. };
+  /**
+   * 模拟获取PageMediaEntity。
+   *
+   * @returns PageMediaEntity实例。
+   */
+  private async createPageMediaEntity(): Promise<avMusicTemplate.PageMediaEntity> {
+    let mediaEntity: avMusicTemplate.MediaEntity = await this.createMediaEntity();
+    let pageMediaEntity: avMusicTemplate.PageMediaEntity = {
+      errorCode: 0,
+      pageIndex: 0,
+      pageSize: 1,
+      hasMoreData: false,
+      totalSize: 1,
+      memberMediaType: avMusicTemplate.EntityType.SINGLE,
+      elements: [mediaEntity]
+    }
+    return pageMediaEntity;
+  };
 
-39. /**
-40. * 模拟获取媒体数据。
-41. *
-42. * @returns 媒体数据。
-43. */
-44. private async createMediaEntity(): Promise<avMusicTemplate.MediaEntity> {
-45. let mediaEntity: avMusicTemplate.MediaEntity = {
-46. mediaId: 'mediaId',
-47. mediaType: avMusicTemplate.EntityType.SINGLE,
-48. parentId: 'parentId',
-49. parentMediaType: avMusicTemplate.EntityType.SINGLE,
-50. title: 'title',
-51. imageUrl: 'imageUrl',
-52. playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
-53. };
-54. return mediaEntity;
-55. };
-56. }
+  /**
+   * 模拟获取媒体数据。
+   *
+   * @returns 媒体数据。
+   */
+  private async createMediaEntity(): Promise<avMusicTemplate.MediaEntity> {
+    let mediaEntity: avMusicTemplate.MediaEntity = {
+      mediaId: 'mediaId',
+      mediaType: avMusicTemplate.EntityType.SINGLE,
+      parentId: 'parentId',
+      parentMediaType: avMusicTemplate.EntityType.SINGLE,
+      title: 'title',
+      imageUrl: 'imageUrl',
+      playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
+    };
+    return mediaEntity;
+  };
+}
 ```
 
 ## offQueryCompilation
@@ -610,19 +613,19 @@ offQueryCompilation(callback?: QueryCompilationEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 注销监听。
-8. */
-9. public unregisterListener() {
-10. this.template?.offQueryCompilation();
-11. }
-12. }
+  /**
+   * 注销监听。
+   */
+  public unregisterListener() {
+    this.template?.offQueryCompilation();
+  }
+}
 ```
 
 ## onQueryPlaylist
@@ -653,63 +656,63 @@ onQueryPlaylist(callback: QueryPlaylistEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. private queryPlaylistEvent: avMusicTemplate.QueryPlaylistEvent =
-6. async (pageIndex: number, sort: avMusicTemplate.Sort) => {
-7. return new Promise<avMusicTemplate.PageMediaEntity>(async (resolve, reject) => {
-8. let pageMediaEntity: avMusicTemplate.PageMediaEntity = await this.createPageMediaEntity();
-9. resolve(pageMediaEntity);
-10. });
-11. };
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private queryPlaylistEvent: avMusicTemplate.QueryPlaylistEvent =
+    async (pageIndex: number, sort: avMusicTemplate.Sort) => {
+      return new Promise<avMusicTemplate.PageMediaEntity>(async (resolve, reject) => {
+        let pageMediaEntity: avMusicTemplate.PageMediaEntity = await this.createPageMediaEntity();
+        resolve(pageMediaEntity);
+      });
+    };
 
-13. /**
-14. * 注册监听。
-15. */
-16. private registerListener() {
-17. this.template?.onQueryPlaylist(this.queryPlaylistEvent);
-18. }
+  /**
+   * 注册监听。
+   */
+  private registerListener() {
+    this.template?.onQueryPlaylist(this.queryPlaylistEvent);
+  }
 
-20. /**
-21. * 模拟获取PageMediaEntity。
-22. *
-23. * @returns PageMediaEntity实例。
-24. */
-25. private async createPageMediaEntity(): Promise<avMusicTemplate.PageMediaEntity> {
-26. let mediaEntity: avMusicTemplate.MediaEntity = await this.createMediaEntity();
-27. let pageMediaEntity: avMusicTemplate.PageMediaEntity = {
-28. errorCode: 0,
-29. pageIndex: 0,
-30. pageSize: 1,
-31. hasMoreData: false,
-32. totalSize: 1,
-33. memberMediaType: avMusicTemplate.EntityType.SINGLE,
-34. elements: [mediaEntity]
-35. }
-36. return pageMediaEntity;
-37. };
+  /**
+   * 模拟获取PageMediaEntity。
+   *
+   * @returns PageMediaEntity实例。
+   */
+  private async createPageMediaEntity(): Promise<avMusicTemplate.PageMediaEntity> {
+    let mediaEntity: avMusicTemplate.MediaEntity = await this.createMediaEntity();
+    let pageMediaEntity: avMusicTemplate.PageMediaEntity = {
+      errorCode: 0,
+      pageIndex: 0,
+      pageSize: 1,
+      hasMoreData: false,
+      totalSize: 1,
+      memberMediaType: avMusicTemplate.EntityType.SINGLE,
+      elements: [mediaEntity]
+    }
+    return pageMediaEntity;
+  };
 
-39. /**
-40. * 模拟获取媒体数据。
-41. *
-42. * @returns 媒体数据。
-43. */
-44. private async createMediaEntity(): Promise<avMusicTemplate.MediaEntity> {
-45. let mediaEntity: avMusicTemplate.MediaEntity = {
-46. mediaId: 'mediaId',
-47. mediaType: avMusicTemplate.EntityType.SINGLE,
-48. parentId: 'parentId',
-49. parentMediaType: avMusicTemplate.EntityType.SINGLE,
-50. title: 'title',
-51. imageUrl: 'imageUrl',
-52. playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
-53. };
-54. return mediaEntity;
-55. };
-56. }
+  /**
+   * 模拟获取媒体数据。
+   *
+   * @returns 媒体数据。
+   */
+  private async createMediaEntity(): Promise<avMusicTemplate.MediaEntity> {
+    let mediaEntity: avMusicTemplate.MediaEntity = {
+      mediaId: 'mediaId',
+      mediaType: avMusicTemplate.EntityType.SINGLE,
+      parentId: 'parentId',
+      parentMediaType: avMusicTemplate.EntityType.SINGLE,
+      title: 'title',
+      imageUrl: 'imageUrl',
+      playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
+    };
+    return mediaEntity;
+  };
+}
 ```
 
 ## offQueryPlaylist
@@ -740,19 +743,19 @@ offQueryPlaylist(callback?: QueryPlaylistEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 注销监听。
-8. */
-9. public unregisterListener() {
-10. this.template?.offQueryPlaylist();
-11. }
-12. }
+  /**
+   * 注销监听。
+   */
+  public unregisterListener() {
+    this.template?.offQueryPlaylist();
+  }
+}
 ```
 
 ## onQueryCurrentSingle
@@ -783,74 +786,74 @@ onQueryCurrentSingle(callback: QueryCurrentSingleEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. private queryCurrentSingleEvent: avMusicTemplate.QueryCurrentSingleEvent = async () => {
-6. return new Promise<avMusicTemplate.Single>(async (resolve, reject) => {
-7. let single: avMusicTemplate.Single = await this.createCurrentSingle();
-8. resolve(single);
-9. });
-10. };
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private queryCurrentSingleEvent: avMusicTemplate.QueryCurrentSingleEvent = async () => {
+    return new Promise<avMusicTemplate.Single>(async (resolve, reject) => {
+      let single: avMusicTemplate.Single = await this.createCurrentSingle();
+      resolve(single);
+    });
+  };
 
-12. /**
-13. * 注册监听。
-14. */
-15. private registerListener() {
-16. this.template?.onQueryCurrentSingle(this.queryCurrentSingleEvent);
-17. }
+  /**
+   * 注册监听。
+   */
+  private registerListener() {
+    this.template?.onQueryCurrentSingle(this.queryCurrentSingleEvent);
+  }
 
-19. /**
-20. * 模拟获取当前单曲。
-21. *
-22. * @returns 当前单曲。
-23. */
-24. private async createCurrentSingle(): Promise<avMusicTemplate.Single> {
-25. let playInfo: avMusicTemplate.PlayInfo = {
-26. playCounts: '100w',
-27. isSupportNext: true,
-28. isSupportPrev: false,
-29. isSupportQuickForward: true,
-30. isSupportQuickBackward: true,
-31. quickForwardStep: 10,
-32. quickBackwardStep: 10,
-33. isSupportSkipHead: false,
-34. isSupportSkipTail: true,
-35. isSupportPlayMode: true,
-36. isSupportPlayRate: true,
-37. supportedPlayRate: ['1', '2', '3'],
-38. currentPlayRate: 'string;',
-39. isSupportSoundQuality: false,
-40. isSupportSoundEffect: true,
-41. totalDuration: 60,
-42. currentPlayDuration: 10,
-43. isSupportProgress: false,
-44. }
-45. let favoriteData: avMusicTemplate.FavoriteData = {
-46. isSupportFav: true,
-47. isFavorite: false,
-48. favCounts: '1000+'
-49. }
-50. let single: avMusicTemplate.Single = {
-51. mediaId: 'mediaId',
-52. mediaType: avMusicTemplate.EntityType.SINGLE,
-53. parentId: 'parentId',
-54. parentMediaType: avMusicTemplate.EntityType.SINGLE,
-55. title: '歌曲标题',
-56. desc: '歌曲描述',
-57. imageUrl: '',
-58. playState: 0,
-59. isVip: false,
-60. singer: '',
-61. tags: [],
-62. playInfo: playInfo,
-63. favSubscribeData: favoriteData
-64. }
-65. return single;
-66. };
-67. }
+  /**
+   * 模拟获取当前单曲。
+   *
+   * @returns 当前单曲。
+   */
+  private async createCurrentSingle(): Promise<avMusicTemplate.Single> {
+    let playInfo: avMusicTemplate.PlayInfo = {
+      playCounts: '100w',
+      isSupportNext: true,
+      isSupportPrev: false,
+      isSupportQuickForward: true,
+      isSupportQuickBackward: true,
+      quickForwardStep: 10,
+      quickBackwardStep: 10,
+      isSupportSkipHead: false,
+      isSupportSkipTail: true,
+      isSupportPlayMode: true,
+      isSupportPlayRate: true,
+      supportedPlayRate: ['1', '2', '3'],
+      currentPlayRate: '1',
+      isSupportSoundQuality: false,
+      isSupportSoundEffect: true,
+      totalDuration: 60,
+      currentPlayDuration: 10,
+      isSupportProgress: false,
+    }
+    let favoriteData: avMusicTemplate.FavoriteData = {
+      isSupportFav: true,
+      isFavorite: false,
+      favCounts: '1000+'
+    }
+    let single: avMusicTemplate.Single = {
+      mediaId: 'mediaId',
+      mediaType: avMusicTemplate.EntityType.SINGLE,
+      parentId: 'parentId',
+      parentMediaType: avMusicTemplate.EntityType.SINGLE,
+      title: '歌曲标题',
+      desc: '歌曲描述',
+      imageUrl: '',
+      playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE,
+      isVip: false,
+      singer: '',
+      tags: [],
+      playInfo: playInfo,
+      favSubscribeData: favoriteData
+    }
+    return single;
+  };
+}
 ```
 
 ## offQueryCurrentSingle
@@ -881,19 +884,19 @@ offQueryCurrentSingle(callback?: QueryCurrentSingleEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 注销监听。
-8. */
-9. public unregisterListener() {
-10. this.template?.offQueryCurrentSingle();
-11. }
-12. }
+  /**
+   * 注销监听。
+   */
+  public unregisterListener() {
+    this.template?.offQueryCurrentSingle();
+  }
+}
 ```
 
 ## onQueryCompilationByKeyword
@@ -924,63 +927,63 @@ onQueryCompilationByKeyword(callback: QueryCompilationByKeywordEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. private queryCompilationByKeywordEvent: avMusicTemplate.QueryCompilationByKeywordEvent = async (keyword: string) => {
-6. return new Promise<avMusicTemplate.Compilation[]>(async (resolve, reject) => {
-7. let compilation: avMusicTemplate.Compilation = await this.createCompilation();
-8. let compilations: avMusicTemplate.Compilation[] = [compilation];
-9. resolve(compilations);
-10. });
-11. };
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private queryCompilationByKeywordEvent: avMusicTemplate.QueryCompilationByKeywordEvent = async (keyword: string) => {
+    return new Promise<avMusicTemplate.Compilation[]>(async (resolve, reject) => {
+      let compilation: avMusicTemplate.Compilation = await this.createCompilation();
+      let compilations: avMusicTemplate.Compilation[] = [compilation];
+      resolve(compilations);
+    });
+  };
 
-13. /**
-14. * 注册监听。
-15. */
-16. private registerListener() {
-17. this.template?.onQueryCompilationByKeyword(this.queryCompilationByKeywordEvent);
-18. }
+  /**
+   * 注册监听。
+   */
+  private registerListener() {
+    this.template?.onQueryCompilationByKeyword(this.queryCompilationByKeywordEvent);
+  }
 
-20. /**
-21. * 模拟获取合集数据。
-22. *
-23. * @returns 合集。
-24. */
-25. private async createCompilation(): Promise<avMusicTemplate.Compilation> {
-26. let mediaEntity: avMusicTemplate.MediaEntity = await this.createMediaEntity();
-27. let compilation: avMusicTemplate.Compilation = {
-28. errorCode: 0,
-29. id: '',
-30. title: '',
-31. hasMoreData: false,
-32. totalSize: 1,
-33. memberMediaType: avMusicTemplate.EntityType.SINGLE,
-34. topElements: [mediaEntity],
-35. }
-36. return compilation;
-37. };
+  /**
+   * 模拟获取合集数据。
+   *
+   * @returns 合集。
+   */
+  private async createCompilation(): Promise<avMusicTemplate.Compilation> {
+    let mediaEntity: avMusicTemplate.MediaEntity = await this.createMediaEntity();
+    let compilation: avMusicTemplate.Compilation = {
+      errorCode: 0,
+      id: '',
+      title: '',
+      hasMoreData: false,
+      totalSize: 1,
+      memberMediaType: avMusicTemplate.EntityType.SINGLE,
+      topElements: [mediaEntity],
+    }
+    return compilation;
+  };
 
-39. /**
-40. * 模拟获取媒体数据。
-41. *
-42. * @returns 媒体数据。
-43. */
-44. private async createMediaEntity(): Promise<avMusicTemplate.MediaEntity> {
-45. let mediaEntity: avMusicTemplate.MediaEntity = {
-46. mediaId: 'mediaId',
-47. mediaType: avMusicTemplate.EntityType.SINGLE,
-48. parentId: 'parentId',
-49. parentMediaType: avMusicTemplate.EntityType.SINGLE,
-50. title: 'title',
-51. imageUrl: 'imageUrl',
-52. playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
-53. };
-54. return mediaEntity;
-55. };
-56. }
+  /**
+   * 模拟获取媒体数据。
+   *
+   * @returns 媒体数据。
+   */
+  private async createMediaEntity(): Promise<avMusicTemplate.MediaEntity> {
+    let mediaEntity: avMusicTemplate.MediaEntity = {
+      mediaId: 'mediaId',
+      mediaType: avMusicTemplate.EntityType.SINGLE,
+      parentId: 'parentId',
+      parentMediaType: avMusicTemplate.EntityType.SINGLE,
+      title: 'title',
+      imageUrl: 'imageUrl',
+      playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
+    };
+    return mediaEntity;
+  };
+}
 ```
 
 ## offQueryCompilationByKeyword
@@ -1011,19 +1014,19 @@ offQueryCompilationByKeyword(callback?: QueryCompilationByKeywordEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 注销监听。
-8. */
-9. public unregisterListener() {
-10. this.template?.offQueryCompilationByKeyword();
-11. }
-12. }
+  /**
+   * 注销监听。
+   */
+  public unregisterListener() {
+    this.template?.offQueryCompilationByKeyword();
+  }
+}
 ```
 
 ## onQueryMediaEntityByKeyword
@@ -1054,63 +1057,63 @@ onQueryMediaEntityByKeyword(callback: QueryMediaEntityByKeywordEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. private queryMediaEntityByKeywordEvent: avMusicTemplate.QueryMediaEntityByKeywordEvent =
-6. async (keyword: string, searchType: avMusicTemplate.EntityType, pageIndex: number) => {
-7. return new Promise<avMusicTemplate.PageMediaEntity>(async (resolve, reject) => {
-8. let pageMediaEntity: avMusicTemplate.PageMediaEntity = await this.createPageMediaEntity();
-9. resolve(pageMediaEntity);
-10. });
-11. };
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private queryMediaEntityByKeywordEvent: avMusicTemplate.QueryMediaEntityByKeywordEvent =
+    async (keyword: string, searchType: avMusicTemplate.EntityType, pageIndex: number) => {
+      return new Promise<avMusicTemplate.PageMediaEntity>(async (resolve, reject) => {
+        let pageMediaEntity: avMusicTemplate.PageMediaEntity = await this.createPageMediaEntity();
+        resolve(pageMediaEntity);
+      });
+    };
 
-13. /**
-14. * 注册监听。
-15. */
-16. private registerListener() {
-17. this.template?.onQueryMediaEntityByKeyword(this.queryMediaEntityByKeywordEvent);
-18. }
+  /**
+   * 注册监听。
+   */
+  private registerListener() {
+    this.template?.onQueryMediaEntityByKeyword(this.queryMediaEntityByKeywordEvent);
+  }
 
-20. /**
-21. * 模拟获取PageMediaEntity。
-22. *
-23. * @returns PageMediaEntity实例。
-24. */
-25. private async createPageMediaEntity(): Promise<avMusicTemplate.PageMediaEntity> {
-26. let mediaEntity: avMusicTemplate.MediaEntity = await this.createMediaEntity();
-27. let pageMediaEntity: avMusicTemplate.PageMediaEntity = {
-28. errorCode: 0,
-29. pageIndex: 0,
-30. pageSize: 1,
-31. hasMoreData: false,
-32. totalSize: 1,
-33. memberMediaType: avMusicTemplate.EntityType.SINGLE,
-34. elements: [mediaEntity]
-35. }
-36. return pageMediaEntity;
-37. };
+  /**
+   * 模拟获取PageMediaEntity。
+   *
+   * @returns PageMediaEntity实例。
+   */
+  private async createPageMediaEntity(): Promise<avMusicTemplate.PageMediaEntity> {
+    let mediaEntity: avMusicTemplate.MediaEntity = await this.createMediaEntity();
+    let pageMediaEntity: avMusicTemplate.PageMediaEntity = {
+      errorCode: 0,
+      pageIndex: 0,
+      pageSize: 1,
+      hasMoreData: false,
+      totalSize: 1,
+      memberMediaType: avMusicTemplate.EntityType.SINGLE,
+      elements: [mediaEntity]
+    }
+    return pageMediaEntity;
+  };
 
-39. /**
-40. * 模拟获取媒体数据。
-41. *
-42. * @returns 媒体数据。
-43. */
-44. private async createMediaEntity(): Promise<avMusicTemplate.MediaEntity> {
-45. let mediaEntity: avMusicTemplate.MediaEntity = {
-46. mediaId: 'mediaId',
-47. mediaType: avMusicTemplate.EntityType.SINGLE,
-48. parentId: 'parentId',
-49. parentMediaType: avMusicTemplate.EntityType.SINGLE,
-50. title: 'title',
-51. imageUrl: 'imageUrl',
-52. playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
-53. };
-54. return mediaEntity;
-55. };
-56. }
+  /**
+   * 模拟获取媒体数据。
+   *
+   * @returns 媒体数据。
+   */
+  private async createMediaEntity(): Promise<avMusicTemplate.MediaEntity> {
+    let mediaEntity: avMusicTemplate.MediaEntity = {
+      mediaId: 'mediaId',
+      mediaType: avMusicTemplate.EntityType.SINGLE,
+      parentId: 'parentId',
+      parentMediaType: avMusicTemplate.EntityType.SINGLE,
+      title: 'title',
+      imageUrl: 'imageUrl',
+      playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
+    };
+    return mediaEntity;
+  };
+}
 ```
 
 ## offQueryMediaEntityByKeyword
@@ -1141,19 +1144,19 @@ offQueryMediaEntityByKeyword(callback?: QueryMediaEntityByKeywordEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 注销监听。
-8. */
-9. public unregisterListener() {
-10. this.template?.offQueryMediaEntityByKeyword();
-11. }
-12. }
+  /**
+   * 注销监听。
+   */
+  public unregisterListener() {
+    this.template?.offQueryMediaEntityByKeyword();
+  }
+}
 ```
 
 ## onQueryRecommendMediaEntityList
@@ -1184,44 +1187,44 @@ onQueryRecommendMediaEntityList(callback: QueryRecommendMediaEntityListEvent): v
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. private queryRecommendMediaEntityListEvent: avMusicTemplate.QueryRecommendMediaEntityListEvent = async () => {
-6. return new Promise<avMusicTemplate.MediaEntity[]>(async (resolve, reject) => {
-7. let mediaEntity: avMusicTemplate.MediaEntity = await this.createMediaEntity();
-8. let mediaEntities: avMusicTemplate.MediaEntity[] = [mediaEntity];
-9. resolve(mediaEntities);
-10. });
-11. };
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private queryRecommendMediaEntityListEvent: avMusicTemplate.QueryRecommendMediaEntityListEvent = async () => {
+    return new Promise<avMusicTemplate.MediaEntity[]>(async (resolve, reject) => {
+      let mediaEntity: avMusicTemplate.MediaEntity = await this.createMediaEntity();
+      let mediaEntities: avMusicTemplate.MediaEntity[] = [mediaEntity];
+      resolve(mediaEntities);
+    });
+  };
 
-13. /**
-14. * 注册监听。
-15. */
-16. private registerListener() {
-17. this.template?.onQueryRecommendMediaEntityList(this.queryRecommendMediaEntityListEvent);
-18. }
+  /**
+   * 注册监听。
+   */
+  private registerListener() {
+    this.template?.onQueryRecommendMediaEntityList(this.queryRecommendMediaEntityListEvent);
+  }
 
-20. /**
-21. * 模拟获取媒体数据。
-22. *
-23. * @returns 媒体数据。
-24. */
-25. private async createMediaEntity(): Promise<avMusicTemplate.MediaEntity> {
-26. let mediaEntity: avMusicTemplate.MediaEntity = {
-27. mediaId: 'mediaId',
-28. mediaType: avMusicTemplate.EntityType.SINGLE,
-29. parentId: 'parentId',
-30. parentMediaType: avMusicTemplate.EntityType.SINGLE,
-31. title: 'title',
-32. imageUrl: 'imageUrl',
-33. playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
-34. };
-35. return mediaEntity;
-36. };
-37. }
+  /**
+   * 模拟获取媒体数据。
+   *
+   * @returns 媒体数据。
+   */
+  private async createMediaEntity(): Promise<avMusicTemplate.MediaEntity> {
+    let mediaEntity: avMusicTemplate.MediaEntity = {
+      mediaId: 'mediaId',
+      mediaType: avMusicTemplate.EntityType.SINGLE,
+      parentId: 'parentId',
+      parentMediaType: avMusicTemplate.EntityType.SINGLE,
+      title: 'title',
+      imageUrl: 'imageUrl',
+      playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
+    };
+    return mediaEntity;
+  };
+}
 ```
 
 ## offQueryRecommendMediaEntityList
@@ -1252,19 +1255,19 @@ offQueryRecommendMediaEntityList(callback?: QueryRecommendMediaEntityListEvent):
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 注销监听。
-8. */
-9. public unregisterListener() {
-10. this.template?.offQueryRecommendMediaEntityList();
-11. }
-12. }
+  /**
+   * 注销监听。
+   */
+  public unregisterListener() {
+    this.template?.offQueryRecommendMediaEntityList();
+  }
+}
 ```
 
 ## onQueryHotWords
@@ -1295,25 +1298,25 @@ onQueryHotWords(callback: QueryHotWordsEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. private queryHotWordsEvent: avMusicTemplate.QueryHotWordsEvent = async () => {
-6. return new Promise<string[]>(async (resolve, reject) => {
-7. let hotWords: string[] = ['热词1', '热词2', '热词3', '热词4', '热词5'];
-8. resolve(hotWords);
-9. });
-10. };
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private queryHotWordsEvent: avMusicTemplate.QueryHotWordsEvent = async () => {
+    return new Promise<string[]>(async (resolve, reject) => {
+      let hotWords: string[] = ['热词1', '热词2', '热词3', '热词4', '热词5'];
+      resolve(hotWords);
+    });
+  };
 
-12. /**
-13. * 注册监听。
-14. */
-15. private registerListener() {
-16. this.template?.onQueryHotWords(this.queryHotWordsEvent);
-17. }
-18. }
+  /**
+   * 注册监听。
+   */
+  private registerListener() {
+    this.template?.onQueryHotWords(this.queryHotWordsEvent);
+  }
+}
 ```
 
 ## offQueryHotWords
@@ -1344,19 +1347,19 @@ offQueryHotWords(callback?: QueryHotWordsEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 注销监听。
-8. */
-9. public unregisterListener() {
-10. this.template?.offQueryHotWords();
-11. }
-12. }
+  /**
+   * 注销监听。
+   */
+  public unregisterListener() {
+    this.template?.offQueryHotWords();
+  }
+}
 ```
 
 ## onQuerySearchHistory
@@ -1387,25 +1390,25 @@ onQuerySearchHistory(callback: QuerySearchHistoryEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. private querySearchHistoryEvent: avMusicTemplate.QuerySearchHistoryEvent = async () => {
-6. return new Promise<string[]>(async (resolve, reject) => {
-7. let searchHistory: string[] = ['搜索历史1', '搜索历史2', '搜索历史3', '搜索历史4', '搜索历史5'];
-8. resolve(searchHistory);
-9. });
-10. };
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private querySearchHistoryEvent: avMusicTemplate.QuerySearchHistoryEvent = async () => {
+    return new Promise<string[]>(async (resolve, reject) => {
+      let searchHistory: string[] = ['搜索历史1', '搜索历史2', '搜索历史3', '搜索历史4', '搜索历史5'];
+      resolve(searchHistory);
+    });
+  };
 
-12. /**
-13. * 注册监听。
-14. */
-15. private registerListener() {
-16. this.template?.onQuerySearchHistory(this.querySearchHistoryEvent);
-17. }
-18. }
+  /**
+   * 注册监听。
+   */
+  private registerListener() {
+    this.template?.onQuerySearchHistory(this.querySearchHistoryEvent);
+  }
+}
 ```
 
 ## offQuerySearchHistory
@@ -1436,19 +1439,19 @@ offQuerySearchHistory(callback?: QuerySearchHistoryEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 注销监听。
-8. */
-9. public unregisterListener() {
-10. this.template?.offQuerySearchHistory();
-11. }
-12. }
+  /**
+   * 注销监听。
+   */
+  public unregisterListener() {
+    this.template?.offQuerySearchHistory();
+  }
+}
 ```
 
 ## onClearSearchHistory
@@ -1479,37 +1482,37 @@ onClearSearchHistory(callback: ClearSearchHistoryEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. private clearSearchHistoryEvent: avMusicTemplate.ClearSearchHistoryEvent = async () => {
-6. return new Promise<avMusicTemplate.OperResult>(async (resolve, reject) => {
-7. let operResult: avMusicTemplate.OperResult = await this.createOperResult();
-8. resolve(operResult);
-9. });
-10. };
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private clearSearchHistoryEvent: avMusicTemplate.ClearSearchHistoryEvent = async () => {
+    return new Promise<avMusicTemplate.OperResult>(async (resolve, reject) => {
+      let operResult: avMusicTemplate.OperResult = await this.createOperResult();
+      resolve(operResult);
+    });
+  };
 
-12. /**
-13. * 注册监听。
-14. */
-15. private registerListener() {
-16. this.template?.onClearSearchHistory(this.clearSearchHistoryEvent);
-17. }
+  /**
+   * 注册监听。
+   */
+  private registerListener() {
+    this.template?.onClearSearchHistory(this.clearSearchHistoryEvent);
+  }
 
-19. /**
-20. * 模拟操作结果。
-21. *
-22. * @returns 操作结果。
-23. */
-24. private async createOperResult(): Promise<avMusicTemplate.OperResult> {
-25. let operResult: avMusicTemplate.OperResult = {
-26. errorCode: 0,
-27. }
-28. return operResult;
-29. };
-30. }
+  /**
+   * 模拟操作结果。
+   *
+   * @returns 操作结果。
+   */
+  private async createOperResult(): Promise<avMusicTemplate.OperResult> {
+    let operResult: avMusicTemplate.OperResult = {
+      errorCode: 0,
+    }
+    return operResult;
+  };
+}
 ```
 
 ## offClearSearchHistory
@@ -1540,19 +1543,19 @@ offClearSearchHistory(callback?: ClearSearchHistoryEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 注销监听。
-8. */
-9. public unregisterListener() {
-10. this.template?.offClearSearchHistory();
-11. }
-12. }
+  /**
+   * 注销监听。
+   */
+  public unregisterListener() {
+    this.template?.offClearSearchHistory();
+  }
+}
 ```
 
 ## onLogin
@@ -1583,44 +1586,44 @@ onLogin(callback: LoginEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. private loginEvent: avMusicTemplate.LoginEvent = async (controlType: avMusicTemplate.LoginType, id?: string) => {
-6. return new Promise<avMusicTemplate.QrCodeInfo[]>(async (resolve, reject) => {
-7. let qrCodeInfo: avMusicTemplate.QrCodeInfo = await this.createQrCodeInfo();
-8. let qrCodeInfos: avMusicTemplate.QrCodeInfo[] = [qrCodeInfo];
-9. resolve(qrCodeInfos);
-10. });
-11. };
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private loginEvent: avMusicTemplate.LoginEvent = async (controlType: avMusicTemplate.LoginType, id?: string) => {
+    return new Promise<avMusicTemplate.QrCodeInfo[]>(async (resolve, reject) => {
+      let qrCodeInfo: avMusicTemplate.QrCodeInfo = await this.createQrCodeInfo();
+      let qrCodeInfos: avMusicTemplate.QrCodeInfo[] = [qrCodeInfo];
+      resolve(qrCodeInfos);
+    });
+  };
 
-13. /**
-14. * 注册监听。
-15. */
-16. private registerListener() {
-17. this.template?.onLogin(this.loginEvent);
-18. }
+  /**
+   * 注册监听。
+   */
+  private registerListener() {
+    this.template?.onLogin(this.loginEvent);
+  }
 
-20. /**
-21. * 模拟创建二维码信息数组。
-22. *
-23. * @returns Promise类型的二维码信息数组。
-24. */
-25. private async createQrCodeInfo(): Promise<avMusicTemplate.QrCodeInfo> {
-26. let qrCodeInfo: avMusicTemplate.QrCodeInfo = {
-27. id: 'id',
-28. price: '10',
-29. titleName: 'title',
-30. detailName: 'detail',
-31. tips: 'tip',
-32. content: 'content',
-33. validPeriod: 1
-34. };
-35. return qrCodeInfo;
-36. };
-37. }
+  /**
+   * 模拟创建二维码信息数组。
+   *
+   * @returns Promise类型的二维码信息数组。
+   */
+  private async createQrCodeInfo(): Promise<avMusicTemplate.QrCodeInfo> {
+    let qrCodeInfo: avMusicTemplate.QrCodeInfo = {
+      id: 'id',
+      price: '10',
+      titleName: 'title',
+      detailName: 'detail',
+      tips: 'tip',
+      content: 'content',
+      validPeriod: 1
+    };
+    return qrCodeInfo;
+  };
+}
 ```
 
 ## offLogin
@@ -1651,19 +1654,19 @@ offLogin(callback?: LoginEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 注销监听。
-8. */
-9. public unregisterListener() {
-10. this.template?.offLogin();
-11. }
-12. }
+  /**
+   * 注销监听。
+   */
+  public unregisterListener() {
+    this.template?.offLogin();
+  }
+}
 ```
 
 ## onRequestDialogInfo
@@ -1694,50 +1697,50 @@ onRequestDialogInfo(callback: RequestDialogInfoEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. private requestDialogInfoEvent: avMusicTemplate.RequestDialogInfoEvent =
-6. async (actionType: avMusicTemplate.DialogActionType, actionInfo?: avMusicTemplate.DialogActionInfo) => {
-7. return new Promise<avMusicTemplate.DialogInfo>(async (resolve, reject) => {
-8. let dialogInfo: avMusicTemplate.DialogInfo = await this.createDialogInfo();
-9. resolve(dialogInfo);
-10. });
-11. };
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private requestDialogInfoEvent: avMusicTemplate.RequestDialogInfoEvent =
+    async (actionType: avMusicTemplate.DialogActionType, actionInfo?: avMusicTemplate.DialogActionInfo) => {
+      return new Promise<avMusicTemplate.DialogInfo>(async (resolve, reject) => {
+        let dialogInfo: avMusicTemplate.DialogInfo = await this.createDialogInfo();
+        resolve(dialogInfo);
+      });
+    };
 
-13. /**
-14. * 注册监听。
-15. */
-16. private registerListener() {
-17. this.template?.onRequestDialogInfo(this.requestDialogInfoEvent);
-18. }
+  /**
+   * 注册监听。
+   */
+  private registerListener() {
+    this.template?.onRequestDialogInfo(this.requestDialogInfoEvent);
+  }
 
-20. /**
-21. * 模拟对话框信息。
-22. *
-23. * @returns 对话框信息。
-24. */
-25. private async createDialogInfo(): Promise<avMusicTemplate.DialogInfo> {
-26. let qrCodeInfo: avMusicTemplate.QrCodeInfo[] = [{
-27. id: 'id',
-28. price: '10',
-29. titleName: 'title',
-30. detailName: 'detail',
-31. tips: 'tip',
-32. content: 'content',
-33. validPeriod: 1
-34. }
-35. ];
-36. let dialogInfo: avMusicTemplate.DialogInfo = {
-37. dialogId: 'dialogId',
-38. dialogType: avMusicTemplate.DialogType.LOGIN,
-39. qrCodes: qrCodeInfo
-40. };
-41. return dialogInfo;
-42. };
-43. }
+  /**
+   * 模拟对话框信息。
+   *
+   * @returns 对话框信息。
+   */
+  private async createDialogInfo(): Promise<avMusicTemplate.DialogInfo> {
+    let qrCodeInfo: avMusicTemplate.QrCodeInfo[] = [{
+      id: 'id',
+      price: '10',
+      titleName: 'title',
+      detailName: 'detail',
+      tips: 'tip',
+      content: 'content',
+      validPeriod: 1
+    }
+    ];
+    let dialogInfo: avMusicTemplate.DialogInfo = {
+      dialogId: 'dialogId',
+      dialogType: avMusicTemplate.DialogType.LOGIN,
+      qrCodes: qrCodeInfo
+    };
+    return dialogInfo;
+  };
+}
 ```
 
 ## offRequestDialogInfo
@@ -1768,19 +1771,19 @@ offRequestDialogInfo(callback?: RequestDialogInfoEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 注销监听。
-8. */
-9. public unregisterListener() {
-10. this.template?.offRequestDialogInfo();
-11. }
-12. }
+  /**
+   * 注销监听。
+   */
+  public unregisterListener() {
+    this.template?.offRequestDialogInfo();
+  }
+}
 ```
 
 ## onHandleMemberPurchase
@@ -1811,50 +1814,50 @@ onHandleMemberPurchase(callback: HandleMemberPurchaseEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. private handleMemberPurchaseEvent: avMusicTemplate.HandleMemberPurchaseEvent =
-6. async (info: avMusicTemplate.MemberPurchaseInfo) => {
-7. return new Promise<avMusicTemplate.DialogInfo>(async (resolve, reject) => {
-8. let dialogInfo: avMusicTemplate.DialogInfo = await this.createDialogInfo();
-9. resolve(dialogInfo);
-10. });
-11. };
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private handleMemberPurchaseEvent: avMusicTemplate.HandleMemberPurchaseEvent =
+    async (info: avMusicTemplate.MemberPurchaseInfo) => {
+      return new Promise<avMusicTemplate.DialogInfo>(async (resolve, reject) => {
+        let dialogInfo: avMusicTemplate.DialogInfo = await this.createDialogInfo();
+        resolve(dialogInfo);
+      });
+    };
 
-13. /**
-14. * 注册监听。
-15. */
-16. private registerListener() {
-17. this.template?.onHandleMemberPurchase(this.handleMemberPurchaseEvent);
-18. }
+  /**
+   * 注册监听。
+   */
+  private registerListener() {
+    this.template?.onHandleMemberPurchase(this.handleMemberPurchaseEvent);
+  }
 
-20. /**
-21. * 模拟对话框信息。
-22. *
-23. * @returns 对话框信息。
-24. */
-25. private async createDialogInfo(): Promise<avMusicTemplate.DialogInfo> {
-26. let qrCodeInfo: avMusicTemplate.QrCodeInfo[] = [{
-27. id: 'id',
-28. price: '10',
-29. titleName: 'title',
-30. detailName: 'detail',
-31. tips: 'tip',
-32. content: 'content',
-33. validPeriod: 1
-34. }
-35. ];
-36. let dialogInfo: avMusicTemplate.DialogInfo = {
-37. dialogId: 'dialogId',
-38. dialogType: avMusicTemplate.DialogType.LOGIN,
-39. qrCodes: qrCodeInfo
-40. };
-41. return dialogInfo;
-42. };
-43. }
+  /**
+   * 模拟对话框信息。
+   *
+   * @returns 对话框信息。
+   */
+  private async createDialogInfo(): Promise<avMusicTemplate.DialogInfo> {
+    let qrCodeInfo: avMusicTemplate.QrCodeInfo[] = [{
+      id: 'id',
+      price: '10',
+      titleName: 'title',
+      detailName: 'detail',
+      tips: 'tip',
+      content: 'content',
+      validPeriod: 1
+    }
+    ];
+    let dialogInfo: avMusicTemplate.DialogInfo = {
+      dialogId: 'dialogId',
+      dialogType: avMusicTemplate.DialogType.LOGIN,
+      qrCodes: qrCodeInfo
+    };
+    return dialogInfo;
+  };
+}
 ```
 
 ## offHandleMemberPurchase
@@ -1885,19 +1888,19 @@ offHandleMemberPurchase(callback?: HandleMemberPurchaseEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 注销监听。
-8. */
-9. public unregisterListener() {
-10. this.template?.offHandleMemberPurchase();
-11. }
-12. }
+  /**
+   * 注销监听。
+   */
+  public unregisterListener() {
+    this.template?.offHandleMemberPurchase();
+  }
+}
 ```
 
 ## onQueryMemberPurchase
@@ -1928,42 +1931,42 @@ onQueryMemberPurchase(callback: QueryMemberPurchaseEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. private queryMemberPurchaseEvent: avMusicTemplate.QueryMemberPurchaseEvent =
-6. async (memberPurchaseType: avMusicTemplate.MemberPurchaseType) => {
-7. return new Promise<avMusicTemplate.MemberPurchaseInfo[]>(async (resolve, reject) => {
-8. let memberPurchaseInfo: avMusicTemplate.MemberPurchaseInfo = await this.createQueryMemberPurchase();
-9. let memberPurchaseInfos: avMusicTemplate.MemberPurchaseInfo[] = [memberPurchaseInfo];
-10. resolve(memberPurchaseInfos);
-11. });
-12. };
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private queryMemberPurchaseEvent: avMusicTemplate.QueryMemberPurchaseEvent =
+    async (memberPurchaseType: avMusicTemplate.MemberPurchaseType) => {
+      return new Promise<avMusicTemplate.MemberPurchaseInfo[]>(async (resolve, reject) => {
+        let memberPurchaseInfo: avMusicTemplate.MemberPurchaseInfo = await this.createQueryMemberPurchase();
+        let memberPurchaseInfos: avMusicTemplate.MemberPurchaseInfo[] = [memberPurchaseInfo];
+        resolve(memberPurchaseInfos);
+      });
+    };
 
-14. /**
-15. * 注册监听。
-16. */
-17. private registerListener() {
-18. this.template?.onQueryMemberPurchase(this.queryMemberPurchaseEvent);
-19. }
+  /**
+   * 注册监听。
+   */
+  private registerListener() {
+    this.template?.onQueryMemberPurchase(this.queryMemberPurchaseEvent);
+  }
 
-21. /**
-22. * 模拟查询会员购买信息。
-23. *
-24. * @returns Promise类型的购买会员信息数组。
-25. */
-26. private async createQueryMemberPurchase(): Promise<avMusicTemplate.MemberPurchaseInfo> {
-27. let memberPurchaseInfo: avMusicTemplate.MemberPurchaseInfo = {
-28. id: 'id',
-29. diagramUrl: 'diagramUrl',
-30. diagramContent: 'diagramContent',
-31. memberPurchaseType: avMusicTemplate.MemberPurchaseType.NORMAL
-32. };
-33. return memberPurchaseInfo;
-34. };
-35. }
+  /**
+   * 模拟查询会员购买信息。
+   *
+   * @returns Promise类型的购买会员信息数组。
+   */
+  private async createQueryMemberPurchase(): Promise<avMusicTemplate.MemberPurchaseInfo> {
+    let memberPurchaseInfo: avMusicTemplate.MemberPurchaseInfo = {
+      id: 'id',
+      diagramUrl: 'diagramUrl',
+      diagramContent: 'diagramContent',
+      memberPurchaseType: avMusicTemplate.MemberPurchaseType.NORMAL
+    };
+    return memberPurchaseInfo;
+  };
+}
 ```
 
 ## offQueryMemberPurchase
@@ -1994,19 +1997,19 @@ offQueryMemberPurchase(callback?: QueryMemberPurchaseEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 注销监听。
-8. */
-9. public unregisterListener() {
-10. this.template?.offQueryMemberPurchase();
-11. }
-12. }
+  /**
+   * 注销监听。
+   */
+  public unregisterListener() {
+    this.template?.offQueryMemberPurchase();
+  }
+}
 ```
 
 ## onQueryCustomContent
@@ -2037,58 +2040,58 @@ onQueryCustomContent(callback: QueryCustomContentEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. private queryCustomContentEvent: avMusicTemplate.QueryCustomContentEvent =
-6. async (queryTypes: avMusicTemplate.CustomType[]) => {
-7. return new Promise<avMusicTemplate.CustomElement>(async (resolve, reject) => {
-8. let customElement: avMusicTemplate.CustomElement = await this.createCustomContent();
-9. resolve(customElement);
-10. });
-11. };
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private queryCustomContentEvent: avMusicTemplate.QueryCustomContentEvent =
+    async (queryTypes: avMusicTemplate.CustomType[]) => {
+      return new Promise<avMusicTemplate.CustomElement>(async (resolve, reject) => {
+        let customElement: avMusicTemplate.CustomElement = await this.createCustomContent();
+        resolve(customElement);
+      });
+    };
 
-13. /**
-14. * 注册监听。
-15. */
-16. private registerListener() {
-17. this.template?.onQueryCustomContent(this.queryCustomContentEvent);
-18. }
+  /**
+   * 注册监听。
+   */
+  private registerListener() {
+    this.template?.onQueryCustomContent(this.queryCustomContentEvent);
+  }
 
-20. /**
-21. * 模拟获取自定义内容。
-22. *
-23. * @returns 自定义元素。
-24. */
-25. private async createCustomContent(): Promise<avMusicTemplate.CustomElement> {
-26. let mediaEntity: avMusicTemplate.MediaEntity = {
-27. mediaId: 'mediaId',
-28. mediaType: avMusicTemplate.EntityType.SINGLE,
-29. parentId: 'parentId',
-30. parentMediaType: avMusicTemplate.EntityType.SINGLE,
-31. title: 'title',
-32. imageUrl: 'imageUrl',
-33. playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
-34. }
-35. let compilation: avMusicTemplate.Compilation = {
-36. errorCode: 0,
-37. errorMsg: 'success',
-38. id: 'id',
-39. title: 'title',
-40. hasMoreData: false,
-41. totalSize: 1,
-42. memberMediaType: avMusicTemplate.EntityType.SINGLE,
-43. topElements: [mediaEntity]
-44. };
-45. let customElement: avMusicTemplate.CustomElement = {
-46. errorCode: 0,
-47. customCompilations: [compilation],
-48. };
-49. return customElement;
-50. };
-51. }
+  /**
+   * 模拟获取自定义内容。
+   *
+   * @returns 自定义元素。
+   */
+  private async createCustomContent(): Promise<avMusicTemplate.CustomElement> {
+    let mediaEntity: avMusicTemplate.MediaEntity = {
+      mediaId: 'mediaId',
+      mediaType: avMusicTemplate.EntityType.SINGLE,
+      parentId: 'parentId',
+      parentMediaType: avMusicTemplate.EntityType.SINGLE,
+      title: 'title',
+      imageUrl: 'imageUrl',
+      playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
+    }
+    let compilation: avMusicTemplate.Compilation = {
+      errorCode: 0,
+      errorMsg: 'success',
+      id: 'id',
+      title: 'title',
+      hasMoreData: false,
+      totalSize: 1,
+      memberMediaType: avMusicTemplate.EntityType.SINGLE,
+      topElements: [mediaEntity]
+    };
+    let customElement: avMusicTemplate.CustomElement = {
+      errorCode: 0,
+      customCompilations: [compilation],
+    };
+    return customElement;
+  };
+}
 ```
 
 ## offQueryCustomContent
@@ -2119,19 +2122,19 @@ offQueryCustomContent(callback?: QueryCustomContentEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 注销监听。
-8. */
-9. public unregisterListener() {
-10. this.template?.offQueryCustomContent();
-11. }
-12. }
+  /**
+   * 注销监听。
+   */
+  public unregisterListener() {
+    this.template?.offQueryCustomContent();
+  }
+}
 ```
 
 ## onDownloadMediaEntity
@@ -2162,61 +2165,56 @@ onDownloadMediaEntity(callback: DownloadMediaEntityEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. private downloadMediaEntityEvent: avMusicTemplate.DownloadMediaEntityEvent =
-6. async (controlType: avMusicTemplate.DownloadControlType, mediaEntity: avMusicTemplate.MediaEntity) => {
-7. return new Promise<avMusicTemplate.OperResult>(async (resolve, reject) => {
-8. let operResult: avMusicTemplate.OperResult = await this.createOperResult();
-9. this.downloadMediaEntity(mediaEntity);
-10. resolve(operResult);
-11. });
-12. };
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private downloadMediaEntityEvent: avMusicTemplate.DownloadMediaEntityEvent =
+    async (controlType: avMusicTemplate.DownloadControlType, mediaEntity: avMusicTemplate.MediaEntity) => {
+      return new Promise<avMusicTemplate.OperResult>(async (resolve, reject) => {
+        let operResult: avMusicTemplate.OperResult = await this.createOperResult();
+        this.downloadMediaEntity(mediaEntity);
+        resolve(operResult);
+      });
+    };
 
-14. /**
-15. * 注册监听。
-16. */
-17. private registerListener() {
-18. this.template?.onDownloadMediaEntity(this.downloadMediaEntityEvent);
-19. }
+  /**
+   * 注册监听。
+   */
+  private registerListener() {
+    this.template?.onDownloadMediaEntity(this.downloadMediaEntityEvent);
+  }
 
-21. /**
-22. * 下载状态，进度刷新。
-23. */
-24. public setDownloadMediaEntityStatus(mediaEntity: avMusicTemplate.MediaEntity) {
-25. this.template?.setDownloadMediaEntityStatus(mediaEntity);
-26. };
+  /**
+   * 下载状态，进度刷新。
+   */
+  public setDownloadMediaEntityStatus(mediaEntity: avMusicTemplate.MediaEntity) {
+    this.template?.setDownloadMediaEntityStatus(mediaEntity);
+  };
 
-28. /**
-29. * 模拟设置改变。
-30. *
-31. * @returns Promise类型的设置条目。
-32. */
-33. /**
-34. * 模拟操作结果。
-35. *
-36. * @returns 操作结果。
-37. */
-38. private async createOperResult(): Promise<avMusicTemplate.OperResult> {
-39. let operResult: avMusicTemplate.OperResult = {
-40. errorCode: 0,
-41. }
-42. return operResult;
-43. };
+  /**
+   * 模拟操作结果。
+   *
+   * @returns 操作结果。
+   */
+  private async createOperResult(): Promise<avMusicTemplate.OperResult> {
+    let operResult: avMusicTemplate.OperResult = {
+      errorCode: 0,
+    }
+    return operResult;
+  };
 
-45. /**
-46. * 模拟下载过程。
-47. *
-48. * @param mediaEntity 媒体实体。
-49. */
-50. private async downloadMediaEntity(mediaEntity: avMusicTemplate.MediaEntity) {
-51. // 下载完成之后。
-52. this.setDownloadMediaEntityStatus(mediaEntity);
-53. };
-54. }
+  /**
+   * 模拟下载过程。
+   *
+   * @param mediaEntity 媒体实体。
+   */
+  private async downloadMediaEntity(mediaEntity: avMusicTemplate.MediaEntity) {
+    // 下载完成之后。
+    this.setDownloadMediaEntityStatus(mediaEntity);
+  };
+}
 ```
 
 ## offDownloadMediaEntity
@@ -2247,19 +2245,19 @@ offDownloadMediaEntity(callback?: DownloadMediaEntityEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 注销监听。
-8. */
-9. public unregisterListener() {
-10. this.template?.offDownloadMediaEntity();
-11. }
-12. }
+  /**
+   * 注销监听。
+   */
+  public unregisterListener() {
+    this.template?.offDownloadMediaEntity();
+  }
+}
 ```
 
 ## onSettingsChange
@@ -2290,43 +2288,43 @@ onSettingsChange(callback: SettingsChangeEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. private settingsChangeEvent: avMusicTemplate.SettingsChangeEvent =
-6. async (settingItem: avMusicTemplate.SettingItem) => {
-7. return new Promise<avMusicTemplate.SettingItem>(async (resolve, reject) => {
-8. let settingItem: avMusicTemplate.SettingItem = await this.settingsChange();
-9. resolve(settingItem);
-10. });
-11. };
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private settingsChangeEvent: avMusicTemplate.SettingsChangeEvent =
+    async (settingItem: avMusicTemplate.SettingItem) => {
+      return new Promise<avMusicTemplate.SettingItem>(async (resolve, reject) => {
+        let settingItem: avMusicTemplate.SettingItem = await this.settingsChange();
+        resolve(settingItem);
+      });
+    };
 
-13. /**
-14. * 注册监听。
-15. */
-16. private registerListener() {
-17. this.template?.onSettingsChange(this.settingsChangeEvent);
-18. }
+  /**
+   * 注册监听。
+   */
+  private registerListener() {
+    this.template?.onSettingsChange(this.settingsChangeEvent);
+  }
 
-20. /**
-21. * 模拟设置改变。
-22. *
-23. * @returns Promise类型的设置条目。
-24. */
-25. private async settingsChange(): Promise<avMusicTemplate.SettingItem> {
-26. let setting: avMusicTemplate.SettingItem = {
-27. id: 'id',
-28. title: 'title',
-29. desc: 'desc',
-30. mediaId: 'mediaId',
-31. settingType: avMusicTemplate.SettingType.SWITCH,
-32. settingValue: false
-33. }
-34. return setting;
-35. };
-36. }
+  /**
+   * 模拟设置改变。
+   *
+   * @returns Promise类型的设置条目。
+   */
+  private async settingsChange(): Promise<avMusicTemplate.SettingItem> {
+    let setting: avMusicTemplate.SettingItem = {
+      id: 'id',
+      title: 'title',
+      desc: 'desc',
+      mediaId: 'mediaId',
+      settingType: avMusicTemplate.SettingType.SWITCH,
+      settingValue: false
+    }
+    return setting;
+  };
+}
 ```
 
 ## offSettingsChange
@@ -2357,19 +2355,19 @@ offSettingsChange(callback?: SettingsChangeEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 注销监听。
-8. */
-9. public unregisterListener() {
-10. this.template?.offSettingsChange();
-11. }
-12. }
+  /**
+   * 注销监听。
+   */
+  public unregisterListener() {
+    this.template?.offSettingsChange();
+  }
+}
 ```
 
 ## onProblemAndAdvice
@@ -2400,37 +2398,37 @@ onProblemAndAdvice(callback: ProblemAndAdviceEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. private problemAndAdviceEvent: avMusicTemplate.ProblemAndAdviceEvent = async (advice: string) => {
-6. return new Promise<avMusicTemplate.OperResult>(async (resolve, reject) => {
-7. let operResult: avMusicTemplate.OperResult = await this.createOperResult();
-8. resolve(operResult);
-9. });
-10. };
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private problemAndAdviceEvent: avMusicTemplate.ProblemAndAdviceEvent = async (advice: string) => {
+    return new Promise<avMusicTemplate.OperResult>(async (resolve, reject) => {
+      let operResult: avMusicTemplate.OperResult = await this.createOperResult();
+      resolve(operResult);
+    });
+  };
 
-12. /**
-13. * 注册监听。
-14. */
-15. private registerListener() {
-16. this.template?.onProblemAndAdvice(this.problemAndAdviceEvent);
-17. }
+  /**
+   * 注册监听。
+   */
+  private registerListener() {
+    this.template?.onProblemAndAdvice(this.problemAndAdviceEvent);
+  }
 
-19. /**
-20. * 模拟操作结果。
-21. *
-22. * @returns 操作结果。
-23. */
-24. private async createOperResult(): Promise<avMusicTemplate.OperResult> {
-25. let operResult: avMusicTemplate.OperResult = {
-26. errorCode: 0,
-27. }
-28. return operResult;
-29. };
-30. }
+  /**
+   * 模拟操作结果。
+   *
+   * @returns 操作结果。
+   */
+  private async createOperResult(): Promise<avMusicTemplate.OperResult> {
+    let operResult: avMusicTemplate.OperResult = {
+      errorCode: 0,
+    }
+    return operResult;
+  };
+}
 ```
 
 ## offProblemAndAdvice
@@ -2461,19 +2459,19 @@ offProblemAndAdvice(callback?: ProblemAndAdviceEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 注销监听。
-8. */
-9. public unregisterListener() {
-10. this.template?.offProblemAndAdvice();
-11. }
-12. }
+  /**
+   * 注销监听。
+   */
+  public unregisterListener() {
+    this.template?.offProblemAndAdvice();
+  }
+}
 ```
 
 ## onPlayForSearch
@@ -2504,38 +2502,38 @@ onPlayForSearch(callback: PlayForSearchEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. private playForSearchEvent: avMusicTemplate.PlayForSearchEvent = async (command: avMusicTemplate.SearchPlayInfoType,
-6. args: avMusicTemplate.SearchPlayInfo) => {
-7. return new Promise<avMusicTemplate.OperResult>(async (resolve, reject) => {
-8. let operResult: avMusicTemplate.OperResult = await this.createOperResult();
-9. resolve(operResult);
-10. });
-11. };
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private playForSearchEvent: avMusicTemplate.PlayForSearchEvent = async (command: avMusicTemplate.SearchPlayInfoType,
+    args: avMusicTemplate.SearchPlayInfo) => {
+    return new Promise<avMusicTemplate.OperResult>(async (resolve, reject) => {
+      let operResult: avMusicTemplate.OperResult = await this.createOperResult();
+      resolve(operResult);
+    });
+  };
 
-13. /**
-14. * 注册监听。
-15. */
-16. private registerListener() {
-17. this.template?.onPlayForSearch(this.playForSearchEvent);
-18. }
+  /**
+   * 注册监听。
+   */
+  private registerListener() {
+    this.template?.onPlayForSearch(this.playForSearchEvent);
+  }
 
-20. /**
-21. * 模拟操作结果。
-22. *
-23. * @returns 操作结果。
-24. */
-25. private async createOperResult(): Promise<avMusicTemplate.OperResult> {
-26. let operResult: avMusicTemplate.OperResult = {
-27. errorCode: 0,
-28. }
-29. return operResult;
-30. };
-31. }
+  /**
+   * 模拟操作结果。
+   *
+   * @returns 操作结果。
+   */
+  private async createOperResult(): Promise<avMusicTemplate.OperResult> {
+    let operResult: avMusicTemplate.OperResult = {
+      errorCode: 0,
+    }
+    return operResult;
+  };
+}
 ```
 
 ## offPlayForSearch
@@ -2566,19 +2564,19 @@ offPlayForSearch(callback?: PlayForSearchEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 注销监听。
-8. */
-9. public unregisterListener() {
-10. this.template?.offPlayForSearch();
-11. }
-12. }
+  /**
+   * 注销监听。
+   */
+  public unregisterListener() {
+    this.template?.offPlayForSearch();
+  }
+}
 ```
 
 ## onExecuteAction
@@ -2609,25 +2607,25 @@ onExecuteAction(callback: ExecuteActionEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. private executeActionEvent: avMusicTemplate.ExecuteActionEvent = async (actionType: string, params: string) => {
-6. return new Promise<string>(async (resolve, reject) => {
-7. let result: string = 'success';
-8. resolve(result);
-9. });
-10. };
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private executeActionEvent: avMusicTemplate.ExecuteActionEvent = async (actionType: string, params: string) => {
+    return new Promise<string>(async (resolve, reject) => {
+      let result: string = 'success';
+      resolve(result);
+    });
+  };
 
-12. /**
-13. * 注册监听。
-14. */
-15. private registerListener() {
-16. this.template?.onExecuteAction(this.executeActionEvent);
-17. }
-18. }
+  /**
+   * 注册监听。
+   */
+  private registerListener() {
+    this.template?.onExecuteAction(this.executeActionEvent);
+  }
+}
 ```
 
 ## offExecuteAction
@@ -2658,19 +2656,19 @@ offExecuteAction(callback?: ExecuteActionEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 注销监听。
-8. */
-9. public unregisterListener() {
-10. this.template?.offExecuteAction();
-11. }
-12. }
+  /**
+   * 注销监听。
+   */
+  public unregisterListener() {
+    this.template?.offExecuteAction();
+  }
+}
 ```
 
 ## onPlayMediaEntity
@@ -2701,23 +2699,23 @@ onPlayMediaEntity(callback: PlayMediaEntityEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. private playMediaEntityEvent: avMusicTemplate.PlayMediaEntityEvent =
-6. async (mediaEntity: avMusicTemplate.MediaEntity) => {
-7. console.info('playMediaEntity');
-8. };
+export class TemplateManager {
+    private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+    private playMediaEntityEvent: avMusicTemplate.PlayMediaEntityEvent =
+        async (mediaEntity: avMusicTemplate.MediaEntity) => {
+            console.info('playMediaEntity');
+        };
 
-10. /**
-11. * 注册监听。
-12. */
-13. private registerListener() {
-14. this.template?.onPlayMediaEntity(this.playMediaEntityEvent);
-15. }
-16. }
+    /**
+     * 注册监听。
+     */
+    private registerListener() {
+        this.template?.onPlayMediaEntity(this.playMediaEntityEvent);
+    }
+}
 ```
 
 ## offPlayMediaEntity
@@ -2748,19 +2746,19 @@ offPlayMediaEntity(callback?: PlayMediaEntityEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 注销监听。
-8. */
-9. public unregisterListener() {
-10. this.template?.offPlayMediaEntity();
-11. }
-12. }
+  /**
+   * 注销监听。
+   */
+  public unregisterListener() {
+    this.template?.offPlayMediaEntity();
+  }
+}
 ```
 
 ## onFavoriteMediaEntity
@@ -2791,38 +2789,38 @@ onFavoriteMediaEntity(callback: FavoriteMediaEntityEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. private favoriteMediaEntityEvent: avMusicTemplate.FavoriteMediaEntityEvent =
-6. async (actionType: avMusicTemplate.MediaFavoriteType, mediaEntity: avMusicTemplate.MediaEntity) => {
-7. return new Promise<avMusicTemplate.OperResult>(async (resolve, reject) => {
-8. let operResult: avMusicTemplate.OperResult = await this.createOperResult();
-9. resolve(operResult);
-10. });
-11. };
+export class TemplateManager {
+    private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+    private favoriteMediaEntityEvent: avMusicTemplate.FavoriteMediaEntityEvent =
+        async (actionType: avMusicTemplate.MediaFavoriteType, mediaEntity: avMusicTemplate.MediaEntity) => {
+            return new Promise<avMusicTemplate.OperResult>(async (resolve, reject) => {
+                let operResult: avMusicTemplate.OperResult = await this.createOperResult();
+                resolve(operResult);
+            });
+        };
 
-13. /**
-14. * 注册监听。
-15. */
-16. private registerListener() {
-17. this.template?.onFavoriteMediaEntity(this.favoriteMediaEntityEvent);
-18. }
+    /**
+     * 注册监听。
+     */
+    private registerListener() {
+        this.template?.onFavoriteMediaEntity(this.favoriteMediaEntityEvent);
+    }
 
-20. /**
-21. * 模拟操作结果。
-22. *
-23. * @returns 操作结果。
-24. */
-25. private async createOperResult(): Promise<avMusicTemplate.OperResult> {
-26. let operResult: avMusicTemplate.OperResult = {
-27. errorCode: 0,
-28. }
-29. return operResult;
-30. };
-31. }
+    /**
+     * 模拟操作结果。
+     *
+     * @returns 操作结果。
+     */
+    private async createOperResult(): Promise<avMusicTemplate.OperResult> {
+        let operResult: avMusicTemplate.OperResult = {
+            errorCode: 0,
+        }
+        return operResult;
+    };
+}
 ```
 
 ## offFavoriteMediaEntity
@@ -2853,19 +2851,19 @@ offFavoriteMediaEntity(callback?: FavoriteMediaEntityEvent): void
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 注销监听。
-8. */
-9. public unregisterListener() {
-10. this.template?.offFavoriteMediaEntity();
-11. }
-12. }
+  /**
+   * 注销监听。
+   */
+  public unregisterListener() {
+    this.template?.offFavoriteMediaEntity();
+  }
+}
 ```
 
 ## setUserInfo
@@ -2902,38 +2900,38 @@ setUserInfo(userInfo: UserInfo): Promise<void>
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. private isLogin: boolean = false;
+export class TemplateManager {
+    private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+    private isLogin: boolean = false;
 
-7. /**
-8. * 模拟登录状态改变。
-9. *
-10. * @param isLogin 是否登录。
-11. */
-12. public setLoginState(isLogin: boolean) {
-13. this.isLogin = isLogin;
-14. this.setUserInfo();
-15. }
+    /**
+     * 模拟登录状态改变。
+     *
+     * @param isLogin 是否登录。
+     */
+    public setLoginState(isLogin: boolean) {
+        this.isLogin = isLogin;
+        this.setUserInfo();
+    }
 
-17. /**
-18. * 用户信息发生变化后通知界面刷新用户信息，如登陆账号后。
-19. */
-20. public setUserInfo() {
-21. let userInfo: avMusicTemplate.UserInfo = {
-22. userInfoId: this.isLogin ? 'userInfoId' : '',
-23. nickName: this.isLogin ? '昵称' : '',
-24. profilePicUrl: this.isLogin ? 'profilePicUrl' : '',
-25. tips: this.isLogin ? 'tips' : '',
-26. isLogin: this.isLogin,
-27. isVip: false
-28. };
-29. this.template?.setUserInfo(userInfo);
-30. };
-31. }
+    /**
+     * 用户信息发生变化后通知界面刷新用户信息，如登录账号后。
+     */
+    public setUserInfo() {
+        let userInfo: avMusicTemplate.UserInfo = {
+            userInfoId: this.isLogin ? 'userInfoId' : '',
+            nickName: this.isLogin ? '昵称' : '',
+            profilePicUrl: this.isLogin ? 'profilePicUrl' : '',
+            tips: this.isLogin ? 'tips' : '',
+            isLogin: this.isLogin,
+            isVip: false
+        };
+        this.template?.setUserInfo(userInfo);
+    };
+}
 ```
 
 ## setDialogCommand
@@ -2971,34 +2969,34 @@ setDialogCommand(type: DialogControlType, dialogInfo: DialogInfo): Promise<void>
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+    private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 对话框相关的操作，如：打开，关闭。
-8. */
-9. public setDialogCommand() {
-10. let type: avMusicTemplate.DialogControlType = 'open';
-11. let qrCodeInfo: avMusicTemplate.QrCodeInfo[] = [{
-12. id: 'id',
-13. price: '10',
-14. titleName: 'title',
-15. detailName: 'detail',
-16. tips: 'tip',
-17. content: 'content',
-18. validPeriod: 1
-19. }];
-20. let dialogInfo: avMusicTemplate.DialogInfo = {
-21. dialogId: 'dialogId',
-22. dialogType: avMusicTemplate.DialogType.LOGIN,
-23. qrCodes: qrCodeInfo
-24. };
-25. this.template?.setDialogCommand(type, dialogInfo);
-26. };
-27. }
+    /**
+     * 对话框相关的操作，如：打开，关闭。
+     */
+    public setDialogCommand() {
+        let type: avMusicTemplate.DialogControlType = 'open';
+        let qrCodeInfo: avMusicTemplate.QrCodeInfo[] = [{
+            id: 'id',
+            price: '10',
+            titleName: 'title',
+            detailName: 'detail',
+            tips: 'tip',
+            content: 'content',
+            validPeriod: 1
+        }];
+        let dialogInfo: avMusicTemplate.DialogInfo = {
+            dialogId: 'dialogId',
+            dialogType: avMusicTemplate.DialogType.LOGIN,
+            qrCodes: qrCodeInfo
+        };
+        this.template?.setDialogCommand(type, dialogInfo);
+    };
+}
 ```
 
 ## setCurrentSingle
@@ -3035,66 +3033,66 @@ setCurrentSingle(single: Single): Promise<void>
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. public async setCurrentSingle() {
-7. let single: avMusicTemplate.Single = await this.createCurrentSingle()
-8. this.template?.setCurrentSingle(single);
-9. };
+  public async setCurrentSingle() {
+    let single: avMusicTemplate.Single = await this.createCurrentSingle()
+    this.template?.setCurrentSingle(single);
+  };
 
-11. /**
-12. * 模拟获取当前单曲。
-13. *
-14. * @returns 当前单曲。
-15. */
-16. private async createCurrentSingle(): Promise<avMusicTemplate.Single> {
-17. let playInfo: avMusicTemplate.PlayInfo = {
-18. playCounts: '100w',
-19. isSupportNext: true,
-20. isSupportPrev: false,
-21. isSupportQuickForward: true,
-22. isSupportQuickBackward: true,
-23. quickForwardStep: 10,
-24. quickBackwardStep: 10,
-25. isSupportSkipHead: false,
-26. isSupportSkipTail: true,
-27. isSupportPlayMode: true,
-28. isSupportPlayRate: true,
-29. supportedPlayRate: ['1', '2', '3'],
-30. currentPlayRate: 'string;',
-31. isSupportSoundQuality: false,
-32. isSupportSoundEffect: true,
-33. totalDuration: 60,
-34. currentPlayDuration: 10,
-35. isSupportProgress: false,
-36. }
-37. let favoriteData: avMusicTemplate.FavoriteData = {
-38. isSupportFav: true,
-39. isFavorite: false,
-40. favCounts: '1000+'
-41. }
-42. let single: avMusicTemplate.Single = {
-43. mediaId: 'mediaId',
-44. mediaType: avMusicTemplate.EntityType.SINGLE,
-45. parentId: 'parentId',
-46. parentMediaType: avMusicTemplate.EntityType.SINGLE,
-47. title: '歌曲标题',
-48. desc: '歌曲描述',
-49. imageUrl: '',
-50. playState: 0,
-51. isVip: false,
-52. singer: '',
-53. tags: [],
-54. playInfo: playInfo,
-55. favSubscribeData: favoriteData
-56. }
-57. return single;
-58. };
-59. }
+  /**
+   * 模拟获取当前单曲。
+   *
+   * @returns 当前单曲。
+   */
+  private async createCurrentSingle(): Promise<avMusicTemplate.Single> {
+    let playInfo: avMusicTemplate.PlayInfo = {
+      playCounts: '100w',
+      isSupportNext: true,
+      isSupportPrev: false,
+      isSupportQuickForward: true,
+      isSupportQuickBackward: true,
+      quickForwardStep: 10,
+      quickBackwardStep: 10,
+      isSupportSkipHead: false,
+      isSupportSkipTail: true,
+      isSupportPlayMode: true,
+      isSupportPlayRate: true,
+      supportedPlayRate: ['1', '2', '3'],
+      currentPlayRate: '1',
+      isSupportSoundQuality: false,
+      isSupportSoundEffect: true,
+      totalDuration: 60,
+      currentPlayDuration: 10,
+      isSupportProgress: false,
+    }
+    let favoriteData: avMusicTemplate.FavoriteData = {
+      isSupportFav: true,
+      isFavorite: false,
+      favCounts: '1000+'
+    }
+    let single: avMusicTemplate.Single = {
+      mediaId: 'mediaId',
+      mediaType: avMusicTemplate.EntityType.SINGLE,
+      parentId: 'parentId',
+      parentMediaType: avMusicTemplate.EntityType.SINGLE,
+      title: '歌曲标题',
+      desc: '歌曲描述',
+      imageUrl: '',
+      playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE,
+      isVip: false,
+      singer: '',
+      tags: [],
+      playInfo: playInfo,
+      favSubscribeData: favoriteData
+    }
+    return single;
+  };
+}
 ```
 
 ## setMediaEntities
@@ -3131,28 +3129,28 @@ setMediaEntities(entities: MediaEntity[]): Promise<void>
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 媒体播放后信息后，如：歌单的播放状态。
-8. */
-9. public setMediaEntities() {
-10. let mediaEntities: avMusicTemplate.MediaEntity[] = [{
-11. mediaId: 'mediaId',
-12. mediaType: avMusicTemplate.EntityType.SINGLE,
-13. parentId: 'parentId',
-14. parentMediaType: avMusicTemplate.EntityType.SINGLE,
-15. title: 'title',
-16. imageUrl: 'imageUrl',
-17. playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
-18. }];
-19. this.template?.setMediaEntities(mediaEntities);
-20. };
-21. }
+  /**
+   * 向音频模板控制方同步媒体资源变更信息，如歌单播放状态。
+   */
+  public setMediaEntities() {
+    let mediaEntities: avMusicTemplate.MediaEntity[] = [{
+      mediaId: 'mediaId',
+      mediaType: avMusicTemplate.EntityType.SINGLE,
+      parentId: 'parentId',
+      parentMediaType: avMusicTemplate.EntityType.SINGLE,
+      title: 'title',
+      imageUrl: 'imageUrl',
+      playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
+    }];
+    this.template?.setMediaEntities(mediaEntities);
+  };
+}
 ```
 
 ## setTabContent
@@ -3190,43 +3188,44 @@ setTabContent(tabId: string, tabContent: MediaTabContent): Promise<void>
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-5. /**
-6. * 某个tab页签下的内容发生变化后通知界面刷新。
-7. */
-8. public setTabContent() {
-9. let mediaEntity: avMusicTemplate.MediaEntity[] = [{
-10. mediaId: 'mediaId',
-11. mediaType: avMusicTemplate.EntityType.SINGLE,
-12. parentId: 'parentId',
-13. parentMediaType: avMusicTemplate.EntityType.SINGLE,
-14. title: 'title',
-15. imageUrl: 'imageUrl',
-16. playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
-17. }]
-18. let compilation: avMusicTemplate.Compilation[] = [{
-19. errorCode: 0,
-20. errorMsg: 'success',
-21. id: 'id',
-22. title: 'title',
-23. hasMoreData: true,
-24. totalSize: 2,
-25. memberMediaType: avMusicTemplate.EntityType.SINGLE,
-26. topElements: mediaEntity
-27. }]
-28. let mediaTabContent: avMusicTemplate.MediaTabContent = {
-29. errorCode: 0,
-30. errorMsg: 'success',
-31. tabId: 'tabId',
-32. compilations: compilation
-33. }
-34. this.template?.setTabContent('tabId', mediaTabContent);
-35. };
-36. }
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+
+  /**
+   * 向音频模板控制方同步标签页内容信息，用于标签页内容变化后刷新界面。
+   */
+  public setTabContent() {
+    let mediaEntity: avMusicTemplate.MediaEntity[] = [{
+      mediaId: 'mediaId',
+      mediaType: avMusicTemplate.EntityType.SINGLE,
+      parentId: 'parentId',
+      parentMediaType: avMusicTemplate.EntityType.SINGLE,
+      title: 'title',
+      imageUrl: 'imageUrl',
+      playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
+    }]
+    let compilation: avMusicTemplate.Compilation[] = [{
+      errorCode: 0,
+      errorMsg: 'success',
+      id: 'id',
+      title: 'title',
+      hasMoreData: true,
+      totalSize: 2,
+      memberMediaType: avMusicTemplate.EntityType.SINGLE,
+      topElements: mediaEntity
+    }]
+    let mediaTabContent: avMusicTemplate.MediaTabContent = {
+      errorCode: 0,
+      errorMsg: 'success',
+      tabId: 'tabId',
+      compilations: compilation
+    }
+    this.template?.setTabContent('tabId', mediaTabContent);
+  };
+}
 ```
 
 ## setPlaylist
@@ -3263,38 +3262,38 @@ setPlaylist(playlist: PageMediaEntity): Promise<void>
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 播放列表发送变化后通知界面刷新。
-8. */
-9. public setPlaylist() {
-10. let mediaEntity: avMusicTemplate.MediaEntity = {
-11. mediaId: 'mediaId',
-12. mediaType: avMusicTemplate.EntityType.SINGLE,
-13. parentId: 'parentId',
-14. parentMediaType: avMusicTemplate.EntityType.SINGLE,
-15. title: 'title',
-16. imageUrl: 'imageUrl',
-17. playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
-18. }
-19. let pageMediaEntity: avMusicTemplate.PageMediaEntity = {
-20. errorCode: 0,
-21. errorMsg: 'success',
-22. pageIndex: 0,
-23. pageSize: 1,
-24. hasMoreData: true,
-25. totalSize: 2,
-26. memberMediaType: avMusicTemplate.EntityType.SINGLE,
-27. elements: [mediaEntity]
-28. }
-29. this.template?.setPlaylist(pageMediaEntity);
-30. };
-31. }
+  /**
+   * 向音频模板控制方同步播放列表，用于播放列表变化后刷新界面。
+   */
+  public setPlaylist() {
+    let mediaEntity: avMusicTemplate.MediaEntity = {
+      mediaId: 'mediaId',
+      mediaType: avMusicTemplate.EntityType.SINGLE,
+      parentId: 'parentId',
+      parentMediaType: avMusicTemplate.EntityType.SINGLE,
+      title: 'title',
+      imageUrl: 'imageUrl',
+      playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
+    }
+    let pageMediaEntity: avMusicTemplate.PageMediaEntity = {
+      errorCode: 0,
+      errorMsg: 'success',
+      pageIndex: 0,
+      pageSize: 1,
+      hasMoreData: true,
+      totalSize: 2,
+      memberMediaType: avMusicTemplate.EntityType.SINGLE,
+      elements: [mediaEntity]
+    }
+    this.template?.setPlaylist(pageMediaEntity);
+  };
+}
 ```
 
 ## setDownloadMediaEntityStatus
@@ -3311,7 +3310,7 @@ setDownloadMediaEntityStatus(single: MediaEntity): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| single | [MediaEntity](arkts-apis-avmusictemplate-i.md#mediaentity) | 是 | 媒体实体。 |
+| single | [MediaEntity](arkts-apis-avmusictemplate-i.md#mediaentity) | 是 | 单曲。 |
 
 **返回值：**
 
@@ -3331,29 +3330,29 @@ setDownloadMediaEntityStatus(single: MediaEntity): Promise<void>
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 下载状态，进度刷新。
-8. */
-9. public setDownloadMediaEntityStatus(mediaEntity: avMusicTemplate.MediaEntity) {
-10. this.template?.setDownloadMediaEntityStatus(mediaEntity);
-11. };
+  /**
+   * 向音频模板控制方同步单曲下载状态信息，用于刷新下载进度。
+   */
+  public setDownloadMediaEntityStatus(mediaEntity: avMusicTemplate.MediaEntity) {
+    this.template?.setDownloadMediaEntityStatus(mediaEntity);
+  };
 
-13. /**
-14. * 模拟下载过程。
-15. *
-16. * @param mediaEntity 媒体实体。
-17. */
-18. private async downloadMediaEntity(mediaEntity: avMusicTemplate.MediaEntity) {
-19. // 下载完成之后。
-20. this.setDownloadMediaEntityStatus(mediaEntity);
-21. };
-22. }
+  /**
+   * 模拟下载过程。
+   *
+   * @param mediaEntity 媒体实体。
+   */
+  private async downloadMediaEntity(mediaEntity: avMusicTemplate.MediaEntity) {
+    // 下载完成之后。
+    this.setDownloadMediaEntityStatus(mediaEntity);
+  };
+}
 ```
 
 ## setCustomElements
@@ -3392,43 +3391,43 @@ setCustomElements(actionType: ActionType, customType: CustomType, customElement:
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 自定义数据发生变化后通知。
-8. */
-9. public setCustomElements() {
-10. let mediaEntity: avMusicTemplate.MediaEntity = {
-11. mediaId: 'mediaId',
-12. mediaType: avMusicTemplate.EntityType.SINGLE,
-13. parentId: 'parentId',
-14. parentMediaType: avMusicTemplate.EntityType.SINGLE,
-15. title: 'title',
-16. imageUrl: 'imageUrl',
-17. playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
-18. }
-19. let compilation: avMusicTemplate.Compilation = {
-20. errorCode: 0,
-21. errorMsg: 'success',
-22. id: 'id',
-23. title: 'title',
-24. hasMoreData: true,
-25. totalSize: 2,
-26. memberMediaType: avMusicTemplate.EntityType.SINGLE,
-27. topElements: [mediaEntity]
-28. }
-29. let customElement: avMusicTemplate.CustomElement = {
-30. errorCode: 0,
-31. errorMsg: 'success',
-32. customCompilations: [compilation]
-33. }
-34. this.template?.setCustomElements('add', 'COMPILATION', customElement);
-35. };
-36. }
+  /**
+   * 向音频模板控制方同步自定义元素变更信息。
+   */
+  public setCustomElements() {
+    let mediaEntity: avMusicTemplate.MediaEntity = {
+      mediaId: 'mediaId',
+      mediaType: avMusicTemplate.EntityType.SINGLE,
+      parentId: 'parentId',
+      parentMediaType: avMusicTemplate.EntityType.SINGLE,
+      title: 'title',
+      imageUrl: 'imageUrl',
+      playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
+    }
+    let compilation: avMusicTemplate.Compilation = {
+      errorCode: 0,
+      errorMsg: 'success',
+      id: 'id',
+      title: 'title',
+      hasMoreData: true,
+      totalSize: 2,
+      memberMediaType: avMusicTemplate.EntityType.SINGLE,
+      topElements: [mediaEntity]
+    }
+    let customElement: avMusicTemplate.CustomElement = {
+      errorCode: 0,
+      errorMsg: 'success',
+      customCompilations: [compilation]
+    }
+    this.template?.setCustomElements('add', 'COMPILATION', customElement);
+  };
+}
 ```
 
 ## setSettings
@@ -3465,27 +3464,27 @@ setSettings(settingItems: SettingItem[]): Promise<void>
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 设置项变化后通知。
-8. */
-9. public setSettings() {
-10. let settingItems: avMusicTemplate.SettingItem[] = [{
-11. id: 'id',
-12. title: 'title',
-13. desc: 'desc',
-14. mediaId: 'mediaId',
-15. settingType: avMusicTemplate.SettingType.SWITCH,
-16. settingValue: false
-17. }];
-18. this.template?.setSettings(settingItems);
-19. };
-20. }
+  /**
+   * 向音频模板控制方同步设置信息。
+   */
+  public setSettings() {
+    let settingItems: avMusicTemplate.SettingItem[] = [{
+      id: 'id',
+      title: 'title',
+      desc: 'desc',
+      mediaId: 'mediaId',
+      settingType: avMusicTemplate.SettingType.SWITCH,
+      settingValue: false
+    }];
+    this.template?.setSettings(settingItems);
+  };
+}
 ```
 
 ## reportExecuteAction
@@ -3523,21 +3522,21 @@ reportExecuteAction(actionType: string, params: string): Promise<void>
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. /**
-7. * 模拟向媒体中心同步执行操作信息。
-8. */
-9. public reportExecuteAction() {
-10. let actionType: string = 'actionType';
-11. let params: string = 'params';
-12. this.template?.reportExecuteAction(actionType, params);
-13. };
-14. }
+  /**
+   * 向音频模板控制方同步执行操作信息。
+   */
+  public reportExecuteAction() {
+    let actionType: string = 'actionType';
+    let params: string = 'params';
+    this.template?.reportExecuteAction(actionType, params);
+  };
+}
 ```
 
 ## setExtensionAbility
@@ -3574,37 +3573,36 @@ setExtensionAbility(want: WantAgent): Promise<void>
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
-2. import { wantAgent } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
+import { wantAgent } from '@kit.AbilityKit';
 
-5. export class TemplateManager {
-6. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-8. /**
-9. * 媒体应用需要拉起应用的自定义界面时调用。
-10. */
-11. public setExtensionAbility() {
-12. let wantAgentInfo: wantAgent.WantAgentInfo = {
-13. wants: [
-14. {
-15. bundleName: "com.example.templateprovider",
-16. abilityName: 'EntryAbility',
-17. type: 'action',
-18. parameters: {
-19. 'ability.want.params.uiExtensionType': 'action'
-20. }
-21. }
-22. ],
-23. actionType: wantAgent.OperationType.START_ABILITIES,
-24. requestCode: 0
-25. }
-26. wantAgent.getWantAgent(wantAgentInfo).then((agent) => {
-27. this.template?.setExtensionAbility(agent);
-28. })
-29. };
-30. }
+  /**
+   * 媒体应用需要拉起应用的自定义界面时调用。
+   */
+  public setExtensionAbility() {
+    let wantAgentInfo: wantAgent.WantAgentInfo = {
+      wants: [
+        {
+          bundleName: "com.example.templateprovider",
+          abilityName: 'EntryAbility',
+          type: 'action',
+          parameters: {
+            'ability.want.params.uiExtensionType': 'action'
+          }
+        }
+      ],
+      actionType: wantAgent.OperationType.START_ABILITIES,
+      requestCode: 0
+    }
+    wantAgent.getWantAgent(wantAgentInfo).then((agent) => {
+      this.template?.setExtensionAbility(agent);
+    })
+  };
+}
 ```
 
 ## destroy
@@ -3633,15 +3631,15 @@ destroy(): Promise<void>
 
 **示例：**
 
-```
-1. import { avMusicTemplate } from '@kit.AVSessionKit';
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
 
-3. export class TemplateManager {
-4. private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-6. public unregisterListener() {
-7. this.template?.destroy();
-8. this.template = undefined;
-9. }
-10. }
+  public unregisterListener() {
+    this.template?.destroy();
+    this.template = undefined;
+  }
+}
 ```

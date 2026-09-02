@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/custom-font-a
 title: 自定义字体的注册和使用（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 字体管理 > 自定义字体的注册和使用（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:36:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:06e66dbb8ff5d20a398c6c87a852e5726269611f890ce076c3567893fc5a6edf
+scraped_at: 2026-09-02T14:50:20+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:fa498e3704e0fe9f2115ecb91c96bf2c33802e96e202b448d3430e683ff53cad
 ---
 
 ## 场景介绍
@@ -33,83 +33,71 @@ content_hash: sha256:06e66dbb8ff5d20a398c6c87a852e5726269611f890ce076c3567893fc5
 
 1. 导入依赖的相关模块。
 
+   ```typescript
+   import { NodeController, FrameNode, RenderNode, DrawContext } from '@kit.ArkUI'
+   import { UIContext } from '@kit.ArkUI'
+   import { text } from '@kit.ArkGraphics2D'
    ```
-   1. import { NodeController, FrameNode, RenderNode, DrawContext } from '@kit.ArkUI'
-   2. import { UIContext } from '@kit.ArkUI'
-   3. import { text } from '@kit.ArkGraphics2D'
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/CustomFont/entry/src/main/ets/pages/Index.ets#L17-L21)
 2. 注册自定义字体。有以下两种方式：
 
+   ```typescript
+   // 注册自定义字体
+   // 方式一：/system/fonts/NotoSansMalayalamUI-SemiBold.ttf文件仅为示例路径，应用根据自身实际填写文件路径
+   fontCollection.loadFontSync(familyName, 'file:///system/fonts/NotoSansMalayalamUI-SemiBold.ttf')
+   // 方式二：确保已经将自定义字体myFontFile.ttf文件放在本应用工程的entry/src/main/resources/rawfile目录
+   // fontCollection.loadFontSync(familyName, $rawfile('myFontFile.ttf'))
    ```
-   1. // 注册自定义字体
-   2. // 方式一：/system/fonts/NotoSansMalayalamUI-SemiBold.ttf文件仅为示例路径，应用根据自身实际填写文件路径
-   3. fontCollection.loadFontSync(familyName, 'file:///system/fonts/NotoSansMalayalamUI-SemiBold.ttf')
-   4. // 方式二：确保已经将自定义字体myFontFile.ttf文件放在本应用工程的entry/src/main/resources/rawfile目录
-   5. // fontCollection.loadFontSync(familyName, $rawfile('myFontFile.ttf'))
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/CustomFont/entry/src/main/ets/pages/Index.ets#L152-L158)
 3. 使用自定义字体。
 
+   ```typescript
+   // 使用自定义字体
+   let myFontFamily: Array<string> = [familyName] // 如果已经注册自定义字体，填入自定义字体的字体家族名
+   // 设置文本样式
+   let myTextStyle: text.TextStyle = {
+     color: {
+       alpha: 255,
+       red: 255,
+       green: 0,
+       blue: 0
+     },
+     fontSize: 30,
+     // 在文本样式中加入可使用的自定义字体
+     fontFamilies: myFontFamily
+   };
    ```
-   1. // 使用自定义字体
-   2. let myFontFamily: Array<string> = [familyName] // 如果已经注册自定义字体，填入自定义字体的字体家族名
-   3. // 设置文本样式
-   4. let myTextStyle: text.TextStyle = {
-   5. color: {
-   6. alpha: 255,
-   7. red: 255,
-   8. green: 0,
-   9. blue: 0
-   10. },
-   11. fontSize: 30,
-   12. // 在文本样式中加入可使用的自定义字体
-   13. fontFamilies: myFontFamily
-   14. };
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/CustomFont/entry/src/main/ets/pages/Index.ets#L32-L47)
 4. 创建段落样式，并使用字体管理器实例构造段落生成器ParagraphBuilder实例。
 
+   ```typescript
+   // 创建一个段落样式对象，以设置排版风格
+   let myParagraphStyle: text.ParagraphStyle = {
+     textStyle: myTextStyle,
+     align: 3,
+     wordBreak: text.WordBreak.NORMAL
+   };
+   // 创建一个段落生成器
+   let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection)
    ```
-   1. // 创建一个段落样式对象，以设置排版风格
-   2. let myParagraphStyle: text.ParagraphStyle = {
-   3. textStyle: myTextStyle,
-   4. align: 3,
-   5. wordBreak: text.WordBreak.NORMAL
-   6. };
-   7. // 创建一个段落生成器
-   8. let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection)
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/CustomFont/entry/src/main/ets/pages/Index.ets#L48-L57)
 5. 生成段落。
 
+   ```typescript
+   // 在段落生成器中设置文本样式
+   paragraphBuilder.pushStyle(myTextStyle);
+   // 在段落生成器中设置文本内容
+   paragraphBuilder.addText("Custom font test");
+   // 通过段落生成器生成段落
+   let paragraph = paragraphBuilder.build();
    ```
-   1. // 在段落生成器中设置文本样式
-   2. paragraphBuilder.pushStyle(myTextStyle);
-   3. // 在段落生成器中设置文本内容
-   4. paragraphBuilder.addText("Custom font test");
-   5. // 通过段落生成器生成段落
-   6. let paragraph = paragraphBuilder.build();
-   ```
+6. 如果需要注销自定义字体，可以使用unloadFontSync接口。
 
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/CustomFont/entry/src/main/ets/pages/Index.ets#L58-L65)
-6. 如果需要释放自定义字体，可以使用unloadFontSync接口。
-
+   ```typescript
+   // 注销自定义字体
+   fontCollection.unloadFontSync(familyName)
+   // 注销之后需要刷新使用该fontCollection的节点
+   newNode.invalidate()
    ```
-   1. // 注销自定义字体
-   2. fontCollection.unloadFontSync(familyName)
-   3. // 注销之后需要刷新使用该fontCollection的节点
-   4. newNode.invalidate()
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/CustomFont/entry/src/main/ets/pages/Index.ets#L170-L175)
 
 ## 效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/sqENOuooRa6_-Q8CnC5dxQ/zh-cn_image_0000002589244977.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/2CtnDPa4SnW8L1N6kNBeHQ/zh-cn_image_0000002706674730.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/0gvkgjT8RCGinQm9PBhBkg/zh-cn_image_0000002558765172.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/piIISeKnRvGCvZWFzMW-lQ/zh-cn_image_0000002736433819.png)

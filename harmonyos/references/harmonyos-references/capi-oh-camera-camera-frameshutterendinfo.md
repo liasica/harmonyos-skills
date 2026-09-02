@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: Camera_FrameShutterEndInfo
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 结构体 > Camera_FrameShutterEndInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:bf26ab3e6c7140733390bf06ddd3dbfbb1351cc0ac7930ce74f62617e7d98065
+scraped_at: 2026-09-02T15:02:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:eb852c2829731b1b8dc74180855b345c644a69feda99ecb48869ede9c7c2dcbd
 ---
 
-```
-1. typedef struct Camera_FrameShutterEndInfo {...} Camera_FrameShutterEndInfo
+```c
+typedef struct Camera_FrameShutterEndInfo {...} Camera_FrameShutterEndInfo
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 拍照曝光结束信息。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

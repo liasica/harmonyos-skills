@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-1
 title: 录制成功但回放效果不符合预期
 breadcrumb: FAQ > DevEco Studio > 应用测试 > 录制成功但回放效果不符合预期
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:20+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:18+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:39c5d1408729efecc1833def89ed9862195a2272ff12407b7af304086f690de7
 ---
 

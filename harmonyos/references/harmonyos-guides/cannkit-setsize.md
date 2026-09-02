@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-setsi
 title: SetSize
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > TensorData > SetSize
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:13+08:00
+scraped_at: 2026-09-02T14:50:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:637c5720a14700435676c492b9a61ba036a91391260c22e046e8b0d26f0eb936
+content_hash: sha256:95a1e39b82102d69e168f1721e736e22e18d7d0b5d964dcd42103c5836ee8ec1
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:637c5720a14700435676c492b9a61ba036a91391260c22e046e8b0d26f0
 
 ## 函数原型
 
-```
-1. void SetSize(const size_t size)
+```cpp
+void SetSize(const size_t size)
 ```
 
 ## 参数说明
@@ -34,9 +34,9 @@ content_hash: sha256:637c5720a14700435676c492b9a61ba036a91391260c22e046e8b0d26f0
 
 ## 调用示例
 
-```
-1. std::vector<int> a = {10};
-2. auto addr = reinterpret_cast<void *>(a.data());
-3. TensorData td(addr, HostAddrManager, 100U, kOnHost);
-4. td.SetSize(10U);
+```cpp
+std::vector<int> a = {10};
+auto addr = reinterpret_cast<void *>(a.data());
+TensorData td(addr, HostAddrManager, 100U, kOnHost);
+td.SetSize(10U);
 ```

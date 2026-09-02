@@ -1,22 +1,20 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ffrt-ffrt-fiber-t
 title: ffrt_fiber_t
-breadcrumb: API参考 > 系统 > 基础功能 > Function Flow Runtime Kit > C API > 结构体 > ffrt_fiber_t
+breadcrumb: API参考 > 系统 > 基础功能 > Function Flow Runtime Kit（任务并发调度服务） > C API > 结构体 > ffrt_fiber_t
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:11+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:5e2590bac638e02e7e827acd0e789428f30141f0dbaa1bf01315d1e916a6233b
+scraped_at: 2026-09-02T15:02:07+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8bcfabe2ada54c3f9ee141a6a88e6ebc0fd3c0a321963dc68a9596d49c2c1370
 ---
 
-```
-1. typedef struct {...} ffrt_fiber_t
+```c
+typedef struct {...} ffrt_fiber_t
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-纤程结构。
+纤程结构体，用于存储纤程执行上下文。
 
 **起始版本：** 20
 
@@ -26,12 +24,8 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
-| uintptr\_t storage[ffrt\_fiber\_storage\_size] | 纤程上下文占用空间。 |
+| uintptr\_t storage[ffrt\_fiber\_storage\_size] | 纤程执行上下文的内部存储。请勿直接访问，通过[ffrt\_fiber\_init](capi-fiber-h.md#ffrt_fiber_init)初始化，通过[ffrt\_fiber\_switch](capi-fiber-h.md#ffrt_fiber_switch)切换。 |

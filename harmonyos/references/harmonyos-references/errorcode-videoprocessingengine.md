@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 视频处理引擎错误码
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > 错误码 > 视频处理引擎错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:40+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5c720bbf77dfce51c26763a6910ae50154910055641c49d42d228bbc4ba6e46b
+scraped_at: 2026-09-02T15:02:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f71271d83f09e5f6a2ce1c1c1ba7d485a9d88dc53a3fb170a9a2a43c61276794
 ---
 
-说明
+**说明** 
 
-以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
+以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码](errorcode-universal.md)。
 
 ## 29200001 未知错误
 
@@ -34,8 +34,6 @@ Some unknown error occurred, such as GPU calculation failure or memcpy failure.
 
 ## 29200002 初始化失败
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 The global environment initialization for image processing failed, such as failure to initialize the GPU environment.
@@ -53,8 +51,6 @@ GPU初始化失败。
 查看log是否有GPU异常上报。
 
 ## 29200003 创建失败
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -74,15 +70,13 @@ Failed to create image processing instance. For example, the number of instances
 
 ## 29200004 处理失败
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 Failed to process image buffer. For example, the processing times out.
 
 **错误描述**
 
-处理图像缓冲区失败。例如，处理超时。
+处理图像失败。例如，处理超时。
 
 **可能原因**
 
@@ -90,17 +84,17 @@ Failed to process image buffer. For example, the processing times out.
 
 **处理步骤**
 
-减小负载。
+检查输入参数是否符合预期。
 
 ## 29200005 不支持的处理
 
 **错误信息**
 
-The processing is not supported. You may call OH\_ImageProcessing\_IsXXXSupported to check whether the capability is supported.
+The processing is not supported. You may call OH\_ImageProcessing\_IsSupported to check whether the capability is supported.
 
 **错误描述**
 
-不支持该处理。可以调用OH\_ImageProcessing\_IsXXXSupported来检查是否支持该能力。
+不支持该处理。可以调用OH\_ImageProcessing\_IsSupported来检查是否支持该能力。
 
 **可能原因**
 
@@ -111,8 +105,6 @@ The processing is not supported. You may call OH\_ImageProcessing\_IsXXXSupporte
 检查log打印。
 
 ## 29200006 不被允许的操作
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -131,8 +123,6 @@ The operation is not permitted. This may be caused by incorrect status.
 检查log打印。
 
 ## 29200007 内存不足
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -169,8 +159,6 @@ The image processing instance is invalid. This may be caused by null instance.
 检查实例的创建。
 
 ## 29200009 值无效
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 

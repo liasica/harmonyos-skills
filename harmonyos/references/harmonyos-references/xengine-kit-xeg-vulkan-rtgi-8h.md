@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-k
 title: xeg_vulkan_rtgi.h
 breadcrumb: API参考 > 图形 > XEngine Kit（GPU加速引擎服务） > C API > 头文件和结构体 > 头文件 > xeg_vulkan_rtgi.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:224c9c0ca31fe62d729b35304cac15b017d3ba1b365d0e3049f05c65bc2ab62d
+scraped_at: 2026-09-02T15:02:48+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3eb5adc0c686671a9b87db36736240508a049b38803056cc834dd67015f7f519
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 XEngine光线追踪全局光照特性Vulkan接口，提供动态漫反射全局光照（DDGI）及神经网络全局光照（NNGI）两种特性。使用此头文件的接口前，需要先调用[HMS\_XEG\_EnumerateDeviceExtensionProperties](xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询扩展[XEG\_RTGI\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_rtgi_extension_name)可用。
 
@@ -26,11 +24,7 @@ XEngine光线追踪全局光照特性Vulkan接口，提供动态漫反射全局�
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 结构体
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -42,8 +36,6 @@ PhonePC/2in1TabletTV
 
 ### 类型定义
 
-PhonePC/2in1TabletTV
-
 | 名称 | 描述 |
 | --- | --- |
 | VK\_DEFINE\_HANDLE([XEG\_RTGI](xengine-kit-xengine.md#xeg_rtgi)) | [XEG\_RTGI](xengine-kit-xengine.md#xeg_rtgi)的句柄。 |
@@ -54,15 +46,11 @@ PhonePC/2in1TabletTV
 
 ### 枚举
 
-PhonePC/2in1TabletTV
-
 | 名称 | 描述 |
 | --- | --- |
 | [XEG\_RTGIQualityMode](xengine-kit-xengine.md#xeg_rtgiqualitymode) { XEG\_RTGI\_QUALITY\_MODE\_QUALITY = 0, XEG\_RTGI\_QUALITY\_MODE\_BALANCED = 1, XEG\_RTGI\_QUALITY\_MODE\_PERFORMANCE = 2 } | 输出图像质量模式的枚举。 |
 
 ### 函数
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |

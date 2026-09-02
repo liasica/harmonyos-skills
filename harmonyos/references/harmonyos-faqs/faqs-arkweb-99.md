@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-99
 title: Web使用vh适配网页被缩小
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web使用vh适配网页被缩小
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:51+08:00
-doc_updated_at: 2026-04-02
+scraped_at: 2026-09-02T15:21:54+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:a650aeaf07a224e7859618dfe61b6c3a84686ed89d6df054f794aaa2fb7fab61
 ---
 

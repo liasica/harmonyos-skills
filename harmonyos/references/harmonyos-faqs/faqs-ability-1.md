@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-1
-title: 如何获取设备屏幕方向的状态变化通知
-breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 如何获取设备屏幕方向的状态变化通知
+title: 如何获取设备横竖屏的状态变化通知
+breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 如何获取设备横竖屏的状态变化通知
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:40+08:00
-doc_updated_at: 2026-03-20
+scraped_at: 2026-09-02T15:21:16+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:090285e061b79a0dced3f736251ebcdedc1c83b97fcd71390694b2aa745a6bfc
 ---
 

@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-229
 title: "使用BuilderParam在父组件调用this的方法报错：Error message: undefined is not callable"
-breadcrumb: "FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 使用BuilderParam在父组件调用this的方法报错：Error message: undefined is not callable"
+breadcrumb: "FAQ > 应用框架开发 > UI框架 > 组件使用 > 使用BuilderParam在父组件调用this的方法报错：Error message: undefined is not callable"
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:25:59+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:7f7eb2f66a5256a441cf5322fb3c413164b0ef264742f1dfcc2b88f1d0e12649
+scraped_at: 2026-09-02T14:53:59+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:4a8f3aa90162cfebb9e2922a9530e5e86fc397c1e6028c45a4f88733a84afb05
 ---
 
 **问题场景**
@@ -14,45 +14,43 @@ content_hash: sha256:7f7eb2f66a5256a441cf5322fb3c413164b0ef264742f1dfcc2b88f1d0e
 
 问题代码如下：
 
+```typescript
+@Component
+struct Child {
+  @Builder
+  FunABuilder0() {};
+
+  @BuilderParam aBuilder0: () => void = this.FunABuilder0;
+
+  build() {
+    Column() {
+      this.aBuilder0()
+    }
+  }
+}
+
+@Entry
+@Component
+struct Parent {
+  @Builder
+  componentBuilder() {
+    Text('Parent builder')
+      .onClick(() => {
+        this.test1();
+      })
+  }
+
+  test1(): void {
+    console.info('test1');
+  }
+
+  build() {
+    Column() {
+      Child({ aBuilder0: this.componentBuilder })
+    }
+  }
+}
 ```
-1. @Component
-2. struct Child {
-3. @Builder
-4. FunABuilder0() {};
-
-6. @BuilderParam aBuilder0: () => void = this.FunABuilder0;
-
-8. build() {
-9. Column() {
-10. this.aBuilder0()
-11. }
-12. }
-13. }
-
-15. @Entry
-16. @Component
-17. struct Parent {
-18. @Builder
-19. componentBuilder() {
-20. Text('Parent builder')
-21. .onClick(() => {
-22. this.test1();
-23. })
-24. }
-
-26. test1(): void {
-27. console.info('test1');
-28. }
-
-30. build() {
-31. Column() {
-32. Child({ aBuilder0: this.componentBuilder })
-33. }
-34. }
-35. }
-```
-
-[ResolvingIsNotCallable.ets](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkUI/entry/src/main/ets/pages/ResolvingIsNotCallable.ets#L21-L56)
 
 **解决方案**
 
@@ -60,15 +58,13 @@ content_hash: sha256:7f7eb2f66a5256a441cf5322fb3c413164b0ef264742f1dfcc2b88f1d0e
 
 为了解决这个问题，需要在父组件中声明子组件时，通过监听函数将 `this` 传递到子组件。应改为：
 
+```typescript
+Child({
+  aBuilder0: () => {
+    this.componentBuilder()
+  }
+})
 ```
-1. Child({
-2. aBuilder0: () => {
-3. this.componentBuilder()
-4. }
-5. })
-```
-
-[ResolvingIsNotCallable.ets](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkUI/entry/src/main/ets/pages/ResolvingIsNotCallable.ets#L71-L75)
 
 **参考链接**
 

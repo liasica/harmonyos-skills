@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-code
 title: OH_AVCodecAsyncCallback
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 结构体 > OH_AVCodecAsyncCallback
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:07+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:81315f7b4c909054e7e9ce83185c051b929a462b010403b7553be4e468fde7b0
+scraped_at: 2026-09-02T15:02:22+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:48b84eefb73a9a4f7c7194138802b6679cf0326a4b66c678ac172384475f231d
 ---
 
-```
-1. typedef struct OH_AVCodecAsyncCallback {...} OH_AVCodecAsyncCallback
+```c
+typedef struct OH_AVCodecAsyncCallback {...} OH_AVCodecAsyncCallback
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 OH\_AVCodec中所有异步回调函数指针的集合。将该结构体的实例注册到OH\_AVCodec实例中，并处理回调上报的信息，以保证OH\_AVCodec的正常运行。
 
@@ -30,11 +28,7 @@ OH\_AVCodec中所有异步回调函数指针的集合。将该结构体的实例
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

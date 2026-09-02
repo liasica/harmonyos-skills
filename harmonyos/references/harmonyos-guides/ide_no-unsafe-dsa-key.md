@@ -3,47 +3,47 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-unsafe
 title: "@security/no-unsafe-dsa-key"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 安全规则@security > @security/no-unsafe-dsa-key
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:55+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:133f287fa778ef93a07e55666454449d13c9cc679fb4beb2c2b9792353f1226b
+scraped_at: 2026-09-02T14:50:52+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8fa04ebf57ed4ed0365b0d3e8918ccb9f36dc4e72ddbb76bbe5a6720bc71b3f4
 ---
 
 该规则禁止使用不安全的DSA密钥，如DSA模数长度小于2048bit。
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@security/no-unsafe-dsa-key": "error"
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@security/no-unsafe-dsa-key": "error"
+  }
+}
 ```
 
 ## 选项
 
-该规则无需配置额外选项。
+该规则无需配置选项。
 
 ## 正例
 
-```
-1. import cryptoFramework from '@ohos.security.cryptoFramework';
-2. cryptoFramework.createAsyKeyGenerator('DSA3072');
+```screen
+import cryptoFramework from '@ohos.security.cryptoFramework';
+cryptoFramework.createAsyKeyGenerator('DSA3072');
 ```
 
 ## 反例
 
-```
-1. import cryptoFramework from '@ohos.security.cryptoFramework';
-2. cryptoFramework.createAsyKeyGenerator('DSA1024');
+```screen
+import cryptoFramework from '@ohos.security.cryptoFramework';
+cryptoFramework.createAsyKeyGenerator('DSA1024');
 ```
 
 ## 规则集
 
-```
-1. plugin:@security/recommended
-2. plugin:@security/all
+```screen
+plugin:@security/recommended
+plugin:@security/all
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

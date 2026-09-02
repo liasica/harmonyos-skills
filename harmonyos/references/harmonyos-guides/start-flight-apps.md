@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/start-flight-apps
 title: 拉起航班类应用（startAbilityByType）
-breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > 应用间跳转 > 拉起指定类型的应用 > 拉起航班类应用（startAbilityByType）
+breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起指定类型的应用 > 拉起航班类应用（startAbilityByType）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:25:53+08:00
+scraped_at: 2026-09-02T14:49:42+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:59ac555ea00c931069e4919473caa7c1830a32dd187be98ea3c221cd89a62bf7
+content_hash: sha256:6edc68af9d874c86f8008cb796e6cf7df1ec96b43667c6be34641eac9e9b16b8
 ---
 
 本章节介绍如何拉起航班类应用扩展面板。
@@ -36,59 +36,59 @@ startAbilityByType接口中type字段为flight，支持按航班号查询、按�
 
 1. 导入相关模块。
 
-   ```
-   1. import { common } from '@kit.AbilityKit';
+   ```ts
+   import { common } from '@kit.AbilityKit';
    ```
 2. 构造接口参数并调用startAbilityByType接口。
 
-   ```
-   1. @Entry
-   2. @Component
-   3. struct Index {
-   4. @State hideAbility: string = 'hideAbility'
+   ```ts
+   @Entry
+   @Component
+   struct Index {
+       @State hideAbility: string = 'hideAbility'
 
-   6. build() {
-   7. Row() {
-   8. Column() {
-   9. Text(this.hideAbility)
-   10. .fontSize(30)
-   11. .fontWeight(FontWeight.Bold)
-   12. .onClick(() => {
-   13. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-   14. let wantParam: Record<string, Object> = {
-   15. 'sceneType': 1,
-   16. 'flightNo': 'ZH1509',
-   17. 'departureDate': '2024-10-01'
-   18. };
-   19. let abilityStartCallback: common.AbilityStartCallback = {
-   20. onError: (code: number, name: string, message: string) => {
-   21. console.error(`onError code ${code} name: ${name} message: ${message}`);
-   22. },
-   23. onResult: (result) => {
-   24. console.info(`onResult result: ${JSON.stringify(result)}`);
-   25. }
-   26. }
+       build() {
+           Row() {
+               Column() {
+                   Text(this.hideAbility)
+                       .fontSize(30)
+                       .fontWeight(FontWeight.Bold)
+                       .onClick(() => {
+                           let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+                           let wantParam: Record<string, Object> = {
+                               'sceneType': 1,
+                               'flightNo': 'ZH1509',
+                               'departureDate': '2024-10-01'
+                           };
+                           let abilityStartCallback: common.AbilityStartCallback = {
+                               onError: (code: number, name: string, message: string) => {
+                                   console.error(`onError code ${code} name: ${name} message: ${message}`);
+                               },
+                               onResult: (result) => {
+                                   console.info(`onResult result: ${JSON.stringify(result)}`);
+                               }
+                           }
 
-   28. context.startAbilityByType("flight", wantParam, abilityStartCallback,
-   29. (err) => {
-   30. if (err) {
-   31. console.error(`startAbilityByType fail, err: ${JSON.stringify(err)}`);
-   32. } else {
-   33. console.info(`success`);
-   34. }
-   35. });
-   36. });
-   37. }
-   38. .width('100%')
-   39. }
-   40. .height('100%')
-   41. }
-   42. }
+                           context.startAbilityByType("flight", wantParam, abilityStartCallback,
+                               (err) => {
+                                   if (err) {
+                                       console.error(`startAbilityByType fail, err: ${JSON.stringify(err)}`);
+                                   } else {
+                                       console.info(`success`);
+                                   }
+                               });
+                       });
+               }
+               .width('100%')
+           }
+           .height('100%')
+       }
+   }
    ```
 
    效果示例图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/AdIs4r6RRuGQFsReVIYoGw/zh-cn_image_0000002589323867.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/Ca0rexmOTA-UXkwO3ANU2w/zh-cn_image_0000002736432191.png)
 
 ## 目标方开发步骤
 
@@ -102,36 +102,36 @@ startAbilityByType接口中type字段为flight，支持按航班号查询、按�
       | QueryByLocation | 声明应用支持按起降地查询航班。 |
    2. 设置scheme、host、port、path/pathStartWith属性，与Want中URI相匹配，以便区分不同功能。
 
-      ```
-      1. {
-      2. "abilities": [
-      3. {
-      4. "skills": [
-      5. {
-      6. "uris": [
-      7. {
-      8. "scheme": "flight",
-      9. "host": "queryByFlightNo",
-      10. "path": "",
-      11. "linkFeature": "QueryByFlightNo"
-      12. },
-      13. {
-      14. "scheme": "flight",
-      15. "host": "queryByLocation",
-      16. "path": "",
-      17. "linkFeature": "QueryByLocation"
-      18. }
-      19. ]
-      20. }
-      21. ]
-      22. }
-      23. ]
-      24. }
+      ```json
+      {
+          "abilities": [
+              {
+                  "skills": [
+                      {
+                          "uris": [
+                              {
+                                  "scheme": "flight",
+                                  "host": "queryByFlightNo",
+                                  "path": "",
+                                  "linkFeature": "QueryByFlightNo"
+                              },
+                              {
+                                  "scheme": "flight",
+                                  "host": "queryByLocation",
+                                  "path": "",
+                                  "linkFeature": "QueryByLocation"
+                              }
+                          ]
+                      }
+                  ]
+              }
+          ]
+      }
       ```
 2. 解析参数并做对应处理。
 
-   ```
-   1. UIAbility.onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void
+   ```ts
+   UIAbility.onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void
    ```
 
    在参数**want.uri**中会携带目标方配置的linkFeature对应的uri。
@@ -156,100 +156,100 @@ startAbilityByType接口中type字段为flight，支持按航班号查询、按�
 
 **完整示例：**
 
-```
-1. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { window } from '@kit.ArkUI';
+```ts
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { window } from '@kit.ArkUI';
 
-5. const TAG = 'EntryAbility';
+const TAG = 'EntryAbility';
 
-7. export default class EntryAbility extends UIAbility {
-8. windowStage: window.WindowStage | null = null;
+export default class EntryAbility extends UIAbility {
+    windowStage: window.WindowStage | null = null;
 
-10. uri?: string;
-11. flightNo?: string;
-12. departureDate?: string;
-13. originLocation?: string;
-14. destinationLocation?: string;
+    uri?: string;
+    flightNo?: string;
+    departureDate?: string;
+    originLocation?: string;
+    destinationLocation?: string;
 
-16. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-17. hilog.info(0x0000, TAG, `onCreate, want=${JSON.stringify(want)}`);
-18. super.onCreate(want, launchParam);
-19. this.parseWant(want);
-20. }
+    onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+        hilog.info(0x0000, TAG, `onCreate, want=${JSON.stringify(want)}`);
+        super.onCreate(want, launchParam);
+        this.parseWant(want);
+    }
 
-22. onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-23. hilog.info(0x0000, TAG, `onNewWant, want=${JSON.stringify(want)}`);
-24. super.onNewWant(want, launchParam);
-25. this.parseWant(want);
-26. if (!this.windowStage) {
-27. hilog.error(0x0000, TAG, 'windowStage is null');
-28. this.context.terminateSelf();
-29. return;
-30. }
-31. this.loadPage(this.windowStage);
-32. }
+    onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+        hilog.info(0x0000, TAG, `onNewWant, want=${JSON.stringify(want)}`);
+        super.onNewWant(want, launchParam);
+        this.parseWant(want);
+        if (!this.windowStage) {
+            hilog.error(0x0000, TAG, 'windowStage is null');
+            this.context.terminateSelf();
+            return;
+        }
+        this.loadPage(this.windowStage);
+    }
 
-34. private parseWant(want: Want): void {
-35. this.uri = want.uri as string | undefined;
-36. this.flightNo = want.parameters?.flightNo as string | undefined;
-37. this.departureDate = want.parameters?.departureDate as string | undefined;
-38. this.originLocation = want.parameters?.originLocation as string | undefined;
-39. this.destinationLocation = want.parameters?.destinationLocation as string | undefined;
-40. }
+    private parseWant(want: Want): void {
+        this.uri = want.uri as string | undefined;
+        this.flightNo = want.parameters?.flightNo as string | undefined;
+        this.departureDate = want.parameters?.departureDate as string | undefined;
+        this.originLocation = want.parameters?.originLocation as string | undefined;
+        this.destinationLocation = want.parameters?.destinationLocation as string | undefined;
+    }
 
-42. private loadPage(windowStage: window.WindowStage): void {
-43. hilog.info(0x0000, TAG, `loadPage, uri=${this.uri}`);
-44. if (this.uri === 'flight://queryByFlightNo') {
-45. // 构建按航班号查询场景参数
-46. const storage: LocalStorage = new LocalStorage({
-47. "flightNo": this.flightNo,
-48. "departureDate": this.departureDate
-49. } as Record<string, Object>);
-50. // 拉起按航班号查询页面
-51. windowStage.loadContent('pages/QueryByFlightNoPage', storage)
-52. } else if (this.uri === 'flight://queryByLocation') {
-53. // 构建按起降地查询场景参数
-54. const storage: LocalStorage = new LocalStorage({
-55. "originLocation": this.originLocation,
-56. "destinationLocation": this.destinationLocation,
-57. "departureDate": this.departureDate
-58. } as Record<string, Object>);
-59. // 拉起按起降地查询页面
-60. windowStage.loadContent('pages/QueryByLocationPage', storage)
-61. } else {
-62. // 默认拉起首页
-63. windowStage.loadContent('pages/Index', (err) => {
-64. if (err.code) {
-65. hilog.error(0x0000, TAG, 'Failed to load the content. Cause: %{public}s',
-66. JSON.stringify(err) ?? '');
-67. return;
-68. }
-69. hilog.info(0x0000, TAG, 'Succeeded in loading the content.');
-70. });
-71. }
-72. }
+    private loadPage(windowStage: window.WindowStage): void {
+        hilog.info(0x0000, TAG, `loadPage, uri=${this.uri}`);
+        if (this.uri === 'flight://queryByFlightNo') {
+            // 构建按航班号查询场景参数
+            const storage: LocalStorage = new LocalStorage({
+                "flightNo": this.flightNo,
+                "departureDate": this.departureDate
+            } as Record<string, Object>);
+            // 拉起按航班号查询页面
+            windowStage.loadContent('pages/QueryByFlightNoPage', storage)
+        } else if (this.uri === 'flight://queryByLocation') {
+            // 构建按起降地查询场景参数
+            const storage: LocalStorage = new LocalStorage({
+                "originLocation": this.originLocation,
+                "destinationLocation": this.destinationLocation,
+                "departureDate": this.departureDate
+            } as Record<string, Object>);
+            // 拉起按起降地查询页面
+            windowStage.loadContent('pages/QueryByLocationPage', storage)
+        } else {
+            // 默认拉起首页
+            windowStage.loadContent('pages/Index', (err) => {
+                if (err.code) {
+                    hilog.error(0x0000, TAG, 'Failed to load the content. Cause: %{public}s',
+                        JSON.stringify(err) ?? '');
+                    return;
+                }
+                hilog.info(0x0000, TAG, 'Succeeded in loading the content.');
+            });
+        }
+    }
 
-74. onDestroy(): void {
-75. hilog.info(0x0000, TAG, `onDestroy`);
-76. }
+    onDestroy(): void {
+        hilog.info(0x0000, TAG, `onDestroy`);
+    }
 
-78. onWindowStageCreate(windowStage: window.WindowStage): void {
-79. hilog.info(0x0000, TAG, `onWindowStageCreate`);
-80. this.windowStage = windowStage;
-81. this.loadPage(this.windowStage);
-82. }
+    onWindowStageCreate(windowStage: window.WindowStage): void {
+        hilog.info(0x0000, TAG, `onWindowStageCreate`);
+        this.windowStage = windowStage;
+        this.loadPage(this.windowStage);
+    }
 
-84. onWindowStageDestroy(): void {
-85. hilog.info(0x0000, TAG, '%{public}s', 'Ability onWindowStageDestroy');
-86. }
+    onWindowStageDestroy(): void {
+        hilog.info(0x0000, TAG, '%{public}s', 'Ability onWindowStageDestroy');
+    }
 
-88. onForeground(): void {
-89. hilog.info(0x0000, TAG, '%{public}s', 'Ability onForeground');
-90. }
+    onForeground(): void {
+        hilog.info(0x0000, TAG, '%{public}s', 'Ability onForeground');
+    }
 
-92. onBackground(): void {
-93. hilog.info(0x0000, TAG, '%{public}s', 'Ability onBackground');
-94. }
-95. }
+    onBackground(): void {
+        hilog.info(0x0000, TAG, '%{public}s', 'Ability onBackground');
+    }
+}
 ```

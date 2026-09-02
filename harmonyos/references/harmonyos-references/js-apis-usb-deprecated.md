@@ -1,16 +1,16 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-usb-deprecated
-title: "@ohos.usb (USB管理)(已停止维护)"
-breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 已停止维护的接口 > @ohos.usb (USB管理)(已停止维护)
+title: "@ohos.usb (USB管理)"
+breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 已停止维护的接口 > @ohos.usb (USB管理)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:42+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:ef51f9eaace2eab735323d2819c0112e73d88ec2ad33f5bab73e776ec64e3cfd
+scraped_at: 2026-09-02T15:02:04+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:dfa3b11c434e63d2e25be40ccb0efb4611b08535c794d39bbb95117523170a1c
 ---
 
 本模块主要提供管理USB设备的相关功能，包括查询USB设备列表、批量数据传输、控制命令传输、权限控制等。
 
-说明
+**说明** 
 
 本模块首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -18,15 +18,11 @@ content_hash: sha256:ef51f9eaace2eab735323d2819c0112e73d88ec2ad33f5bab73e776ec64
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import usb from "@ohos.usb";
+```js
+import usb from "@ohos.usb";
 ```
 
 ## usb.getDevices
-
-PhonePC/2in1TabletTV
 
 getDevices(): Array<Readonly<USBDevice>>
 
@@ -42,66 +38,64 @@ getDevices(): Array<Readonly<USBDevice>>
 
 **示例：**
 
-```
-1. let devicesList = usb.getDevices();
-2. console.info(`devicesList = ${devicesList}`);
-3. // devicesList  返回的数据结构
-4. // 此处提供一个简单的示例，如下
-5. /*
-6. [
-7. {
-8. name: "1-1",
-9. serial: "",
-10. manufacturerName: "",
-11. productName: "",
-12. version: "",
-13. vendorId: 7531,
-14. productId: 2,
-15. clazz: 9,
-16. subClass: 0,
-17. protocol: 1,
-18. devAddress: 1,
-19. busNum: 1,
-20. configs: [
-21. {
-22. id: 1,
-23. attributes: 224,
-24. isRemoteWakeup: true,
-25. isSelfPowered: true,
-26. maxPower: 0,
-27. name: "1-1",
-28. interfaces: [
-29. {
-30. id: 0,
-31. protocol: 0,
-32. clazz: 9,
-33. subClass: 0,
-34. alternateSetting: 0,
-35. name: "1-1",
-36. endpoints: [
-37. {
-38. address: 129,
-39. attributes: 3,
-40. interval: 12,
-41. maxPacketSize: 4,
-42. direction: 128,
-43. number: 1,
-44. type: 3,
-45. interfaceId: 0,
-46. },
-47. ],
-48. },
-49. ],
-50. },
-51. ],
-52. },
-53. ]
-54. */
+```js
+let devicesList = usb.getDevices();
+console.info(`devicesList = ${devicesList}`);
+// devicesList  返回的数据结构
+// 此处提供一个简单的示例，如下
+/*
+  [
+    {
+      name: "1-1",
+      serial: "",
+      manufacturerName: "",
+      productName: "",
+      version: "",
+      vendorId: 7531,
+      productId: 2,
+      clazz: 9,
+      subClass: 0,
+      protocol: 1,
+      devAddress: 1,
+      busNum: 1,
+      configs: [
+        {
+          id: 1,
+          attributes: 224,
+          isRemoteWakeup: true,
+          isSelfPowered: true,
+          maxPower: 0,
+          name: "1-1",
+          interfaces: [
+            {
+              id: 0,
+              protocol: 0,
+              clazz: 9,
+              subClass: 0,
+              alternateSetting: 0,
+              name: "1-1",
+              endpoints: [
+                {
+                  address: 129,
+                  attributes: 3,
+                  interval: 12,
+                  maxPacketSize: 4,
+                  direction: 128,
+                  number: 1,
+                  type: 3,
+                  interfaceId: 0,
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ]
+ */
 ```
 
 ## usb.connectDevice
-
-PhonePC/2in1TabletTV
 
 connectDevice(device: USBDevice): Readonly<USBDevicePipe>
 
@@ -125,14 +119,12 @@ connectDevice(device: USBDevice): Readonly<USBDevicePipe>
 
 **示例：**
 
-```
-1. let devicepipe= usb.connectDevice(device);
-2. console.info(`devicepipe = ${devicepipe}`);
+```js
+let devicepipe= usb.connectDevice(device);
+console.info(`devicepipe = ${devicepipe}`);
 ```
 
 ## usb.hasRight
-
-PhonePC/2in1TabletTV
 
 hasRight(deviceName: string): boolean
 
@@ -154,15 +146,13 @@ hasRight(deviceName: string): boolean
 
 **示例：**
 
-```
-1. let devicesName= "1-1";
-2. let bool = usb.hasRight(devicesName);
-3. console.info(`hasRight = ${bool}`);
+```js
+let devicesName= "1-1";
+let bool = usb.hasRight(devicesName);
+console.info(`hasRight = ${bool}`);
 ```
 
 ## usb.requestRight
-
-PhonePC/2in1TabletTV
 
 requestRight(deviceName: string): Promise<boolean>
 
@@ -184,16 +174,14 @@ requestRight(deviceName: string): Promise<boolean>
 
 **示例：**
 
-```
-1. let devicesName= "1-1";
-2. usb.requestRight(devicesName).then((ret) => {
-3. console.info(`requestRight = ${ret}`);
-4. });
+```js
+let devicesName= "1-1";
+usb.requestRight(devicesName).then((ret) => {
+  console.info(`requestRight = ${ret}`);
+});
 ```
 
 ## usb.claimInterface
-
-PhonePC/2in1TabletTV
 
 claimInterface(pipe: USBDevicePipe, iface: USBInterface, force ?: boolean): number
 
@@ -219,14 +207,12 @@ claimInterface(pipe: USBDevicePipe, iface: USBInterface, force ?: boolean): numb
 
 **示例：**
 
-```
-1. let ret = usb.claimInterface(devicepipe, interfaces);
-2. console.info(`claimInterface = ${ret}`);
+```js
+let ret = usb.claimInterface(devicepipe, interfaces);
+console.info(`claimInterface = ${ret}`);
 ```
 
 ## usb.releaseInterface
-
-PhonePC/2in1TabletTV
 
 releaseInterface(pipe: USBDevicePipe, iface: USBInterface): number
 
@@ -251,14 +237,12 @@ releaseInterface(pipe: USBDevicePipe, iface: USBInterface): number
 
 **示例：**
 
-```
-1. let ret = usb.releaseInterface(devicepipe, interfaces);
-2. console.info(`releaseInterface = ${ret}`);
+```js
+let ret = usb.releaseInterface(devicepipe, interfaces);
+console.info(`releaseInterface = ${ret}`);
 ```
 
 ## usb.setConfiguration
-
-PhonePC/2in1TabletTV
 
 setConfiguration(pipe: USBDevicePipe, config: USBConfig): number
 
@@ -283,14 +267,12 @@ setConfiguration(pipe: USBDevicePipe, config: USBConfig): number
 
 **示例：**
 
-```
-1. let ret = usb.setConfiguration(devicepipe, config);
-2. console.info(`setConfiguration = ${ret}`);
+```js
+let ret = usb.setConfiguration(devicepipe, config);
+console.info(`setConfiguration = ${ret}`);
 ```
 
 ## usb.setInterface
-
-PhonePC/2in1TabletTV
 
 setInterface(pipe: USBDevicePipe, iface: USBInterface): number
 
@@ -315,14 +297,12 @@ setInterface(pipe: USBDevicePipe, iface: USBInterface): number
 
 **示例：**
 
-```
-1. let ret = usb.setInterface(devicepipe, interfaces);
-2. console.info(`setInterface = ${ret}`);
+```js
+let ret = usb.setInterface(devicepipe, interfaces);
+console.info(`setInterface = ${ret}`);
 ```
 
 ## usb.getRawDescriptor
-
-PhonePC/2in1TabletTV
 
 getRawDescriptor(pipe: USBDevicePipe): Uint8Array
 
@@ -346,13 +326,11 @@ getRawDescriptor(pipe: USBDevicePipe): Uint8Array
 
 **示例：**
 
-```
-1. let ret = usb.getRawDescriptor(devicepipe);
+```js
+let ret = usb.getRawDescriptor(devicepipe);
 ```
 
 ## usb.getFileDescriptor
-
-PhonePC/2in1TabletTV
 
 getFileDescriptor(pipe: USBDevicePipe): number
 
@@ -376,13 +354,11 @@ getFileDescriptor(pipe: USBDevicePipe): number
 
 **示例：**
 
-```
-1. let ret = usb.getFileDescriptor(devicepipe);
+```js
+let ret = usb.getFileDescriptor(devicepipe);
 ```
 
 ## usb.controlTransfer
-
-PhonePC/2in1TabletTV
 
 controlTransfer(pipe: USBDevicePipe, controlparam: USBControlParams, timeout ?: number): Promise<number>
 
@@ -408,23 +384,21 @@ controlTransfer(pipe: USBDevicePipe, controlparam: USBControlParams, timeout ?: 
 
 **示例：**
 
-```
-1. let param = {
-2. request: 0,
-3. reqType: 0,
-4. target:0,
-5. value: 0,
-6. index: 0,
-7. data: null
-8. };
-9. usb.controlTransfer(devicepipe, param).then((ret) => {
-10. console.info(`controlTransfer = ${ret}`);
-11. })
+```js
+let param = {
+  request: 0,
+  reqType: 0,
+  target:0,
+  value: 0,
+  index: 0,
+  data: null
+};
+usb.controlTransfer(devicepipe, param).then((ret) => {
+ console.info(`controlTransfer = ${ret}`);
+})
 ```
 
 ## usb.bulkTransfer
-
-PhonePC/2in1TabletTV
 
 bulkTransfer(pipe: USBDevicePipe, endpoint: USBEndpoint, buffer: Uint8Array, timeout ?: number): Promise<number>
 
@@ -451,18 +425,16 @@ bulkTransfer(pipe: USBDevicePipe, endpoint: USBEndpoint, buffer: Uint8Array, tim
 
 **示例：**
 
-```
-1. //usb.getDevices 接口返回数据集合，取其中一个设备对象，并获取权限 。
-2. //把获取到的设备对象作为参数传入usb.connectDevice;当usb.connectDevice接口成功返回之后；
-3. //才可以调用第三个接口usb.claimInterface.当usb.claimInterface 调用成功以后,再调用该接口。
-4. usb.bulkTransfer(devicepipe, endpoint, buffer).then((ret) => {
-5. console.info(`bulkTransfer = ${ret}`);
-6. });
+```js
+//usb.getDevices 接口返回数据集合，取其中一个设备对象，并获取权限 。
+//把获取到的设备对象作为参数传入usb.connectDevice;当usb.connectDevice接口成功返回之后；
+//才可以调用第三个接口usb.claimInterface.当usb.claimInterface 调用成功以后,再调用该接口。
+usb.bulkTransfer(devicepipe, endpoint, buffer).then((ret) => {
+ console.info(`bulkTransfer = ${ret}`);
+});
 ```
 
 ## usb.closePipe
-
-PhonePC/2in1TabletTV
 
 closePipe(pipe: USBDevicePipe): number
 
@@ -486,14 +458,12 @@ closePipe(pipe: USBDevicePipe): number
 
 **示例：**
 
-```
-1. let ret = usb.closePipe(devicepipe);
-2. console.info(`closePipe = ${ret}`);
+```js
+let ret = usb.closePipe(devicepipe);
+console.info(`closePipe = ${ret}`);
 ```
 
 ## USBEndpoint
-
-PhonePC/2in1TabletTV
 
 通过USB发送和接收数据的端口。通过[USBInterface](js-apis-usb-deprecated.md#usbinterface)获取。
 
@@ -512,8 +482,6 @@ PhonePC/2in1TabletTV
 
 ## USBInterface
 
-PhonePC/2in1TabletTV
-
 一个[USBConfig](js-apis-usb-deprecated.md#usbconfig)中可以含有多个USBInterface，每个USBInterface提供一个功能。
 
 **系统能力：** SystemCapability.USB.USBManager
@@ -530,8 +498,6 @@ PhonePC/2in1TabletTV
 
 ## USBConfig
 
-PhonePC/2in1TabletTV
-
 USB配置，一个[USBDevice](js-apis-usb-deprecated.md#usbdevice)中可以含有多个配置。
 
 **系统能力：** SystemCapability.USB.USBManager
@@ -542,13 +508,11 @@ USB配置，一个[USBDevice](js-apis-usb-deprecated.md#usbdevice)中可以含�
 | attributes | number | 是 | 配置的属性。 |
 | maxPower | number | 是 | 最大功耗，以毫安为单位。 |
 | name | string | 是 | 配置的名称，可以为空。 |
-| isRemoteWakeup | boolean | 是 | 检查当前配置是否支持远程唤醒。 |
-| isSelfPowered | boolean | 是 | 检查当前配置是否支持独立电源。 |
+| isRemoteWakeup | boolean | 是 | 检查当前配置是否支持远程唤醒。true表示支持，false表示不支持。 |
+| isSelfPowered | boolean | 是 | 检查当前配置是否支持独立电源。true表示支持，false表示不支持。 |
 | interfaces | Array <[USBInterface](js-apis-usb-deprecated.md#usbinterface)> | 是 | 配置支持的接口属性。 |
 
 ## USBDevice
-
-PhonePC/2in1TabletTV
 
 USB设备信息。
 
@@ -560,7 +524,7 @@ USB设备信息。
 | devAddress | number | 是 | 设备地址。 |
 | serial | string | 是 | 序列号。 |
 | name | string | 是 | 设备名字。 |
-| manufacturerName | string | 是 | 产商信息。 |
+| manufacturerName | string | 是 | 厂商信息。 |
 | productName | string | 是 | 产品信息。 |
 | version | string | 是 | 版本。 |
 | vendorId | number | 是 | 厂商ID。 |
@@ -572,8 +536,6 @@ USB设备信息。
 
 ## USBDevicePipe
 
-PhonePC/2in1TabletTV
-
 USB设备消息传输通道，用于确定设备。
 
 **系统能力：** SystemCapability.USB.USBManager
@@ -584,8 +546,6 @@ USB设备消息传输通道，用于确定设备。
 | devAddress | number | 是 | 设备地址。 |
 
 ## USBControlParams
-
-PhonePC/2in1TabletTV
 
 控制传输参数。
 
@@ -602,8 +562,6 @@ PhonePC/2in1TabletTV
 
 ## USBRequestTargetType
 
-PhonePC/2in1TabletTV
-
 请求目标类型。
 
 **系统能力：** SystemCapability.USB.USBManager
@@ -617,8 +575,6 @@ PhonePC/2in1TabletTV
 
 ## USBControlRequestType
 
-PhonePC/2in1TabletTV
-
 控制请求类型。
 
 **系统能力：** SystemCapability.USB.USBManager
@@ -630,8 +586,6 @@ PhonePC/2in1TabletTV
 | USB\_REQUEST\_TYPE\_VENDOR | 2 | 厂商。 |
 
 ## USBRequestDirection
-
-PhonePC/2in1TabletTV
 
 请求方向。
 

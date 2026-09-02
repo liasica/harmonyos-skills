@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/knock-share-b
 title: 内容分享
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 碰一碰分享 > 手机与手机碰一碰分享 > 内容分享
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:40:39+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:3fa137f6222edba504f94506c453bba5295601e5e90843e81ead30b1ebb47a31
+scraped_at: 2026-09-02T15:00:02+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:99fddd9c84a629936addacf6f5e421d54ccd68c095ca9394f78cab2a4a5637ae
 ---
 
 ## 注册碰一碰事件
@@ -16,10 +16,10 @@ content_hash: sha256:3fa137f6222edba504f94506c453bba5295601e5e90843e81ead30b1ebb
 
 * 文本提示**可碰一碰分享至 HarmonyOS 5 及以上版本手机**。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/hroyLWphQNu2ZLV3a-OarA/zh-cn_image_0000002558606028.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/en4gbAqJQDGFtVP8mrZXXw/zh-cn_image_0000002736314315.png)
 * 动图提示**可碰一碰分享**。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/mYANkso5Qb6s64nsFL2Nog/zh-cn_image_0000002589325555.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/x7sTOa2STtKNN195zBQxtQ/zh-cn_image_0000002706675272.png)
 
   Share Kit提供统一的动图资源文件以方便应用接入。
 
@@ -42,12 +42,12 @@ content_hash: sha256:3fa137f6222edba504f94506c453bba5295601e5e90843e81ead30b1ebb
 
 ### 设置合适的预览图
 
-预览图的质量直接影响碰一碰卡片的显示效果。预览图太大或太小，会导致加载较慢或显示模糊等体验问题，建议开发者按照下表的推荐比例和分辨率设置合适的预览图。
+预览图的质量直接影响碰一碰卡片的显示效果。预览图太大或太小，会导致加载较慢或显示模糊等体验问题，建议开发者按照下表的推荐设置合适的预览图。
 
-| 预览图来源 | 推荐比例 | 推荐分辨率（单位：px） |
-| --- | --- | --- |
-| 应用创作的海报 | 3:4 | 最小分辨率：600\*800  最大分辨率：3000\*4000 |
-| 用户上传的图片 | 不限制 | 最小分辨率：不限制  最大分辨率：3000\*4000 |
+| 预览图来源 | 推荐比例 | 推荐分辨率（单位：px） | 推荐大小（单位：KB） |
+| --- | --- | --- | --- |
+| 应用创作的海报 | 3:4 | 最小分辨率：600\*800  最大分辨率：3000\*4000 | 512KB，若超过会被压缩 |
+| 用户上传的图片 | 不限制 | 最小分辨率：不限制  最大分辨率：3000\*4000 | 512KB，若超过会被压缩 |
 
 ### 使用预览图更新能力
 
@@ -59,51 +59,51 @@ content_hash: sha256:3fa137f6222edba504f94506c453bba5295601e5e90843e81ead30b1ebb
 2. Share Kit会提供默认的预览图用于卡片展示。
 3. 待云端存储的图片下载完成时，调用[sharableTarget.updateShareData](../harmonyos-references/share-harmony-share.md#updatesharedata)接口更新预览图信息。
 
-```
-1. import { uniformTypeDescriptor as utd } from '@kit.ArkData';
-2. import { systemShare, harmonyShare } from '@kit.ShareKit';
-3. import { fileUri } from '@kit.CoreFileKit';
+```typescript
+import { uniformTypeDescriptor as utd } from '@kit.ArkData';
+import { systemShare, harmonyShare } from '@kit.ShareKit';
+import { fileUri } from '@kit.CoreFileKit';
 
-5. @Component
-6. export default struct Index {
-7. aboutToAppear(): void {
-8. let capabilityRegistry: harmonyShare.SendCapabilityRegistry = {
-9. windowId: 999, // 此值仅为示例 实际使用时请替换正确的windowId
-10. }
-11. harmonyShare.on('knockShare', capabilityRegistry, (sharableTarget: harmonyShare.SharableTarget) => {
-12. let shareData: systemShare.SharedData = new systemShare.SharedData({
-13. utd: utd.UniformDataType.HYPERLINK,
-14. content: 'https://sharekitdemo.drcn.agconnect.link/ZB3p',
-15. // 根据title,description,thumbnailUri会生成不同的卡片模板，具体可参考设置配套的卡片样式。
-16. title: '碰一碰分享卡片标题',
-17. description: '碰一碰分享卡片描述'
-18. });
-19. // 若云端预览图无法及时下载 可先发送数据
-20. sharableTarget.share(shareData);
+@Component
+export default struct Index {
+  aboutToAppear(): void {
+    let capabilityRegistry: harmonyShare.SendCapabilityRegistry = {
+      windowId: 999 // 此值仅为示例 实际使用时请替换正确的windowId
+    }
+    harmonyShare.on('knockShare', capabilityRegistry, (sharableTarget: harmonyShare.SharableTarget) => {
+      let shareData: systemShare.SharedData = new systemShare.SharedData({
+        utd: utd.UniformDataType.HYPERLINK,
+        content: 'https://sharekitdemo.drcn.agconnect.link/ZB3p',
+        // 根据title,description,thumbnailUri会生成不同的卡片模板，具体可参考设置配套的卡片样式。
+        title: '碰一碰分享卡片标题',
+        description: '碰一碰分享卡片描述'
+      });
+      // 若云端预览图无法及时下载 可先发送数据
+      sharableTarget.share(shareData);
 
-22. setTimeout(() => {
-23. // 待预览图下载完成后 补充更新预览图
-24. let uiContext: UIContext = this.getUIContext();
-25. let contextFaker: Context = uiContext.getHostContext() as Context;
-26. let filePath = contextFaker.filesDir + '/exampleKnock1.jpg'; // 仅为示例 请替换正确的文件路径
-27. sharableTarget.updateShareData({
-28. thumbnailUri: fileUri.getUriFromPath(filePath)
-29. });
-30. }, 5000);
-31. });
-32. }
+      setTimeout(() => {
+        // 待预览图下载完成后 补充更新预览图
+        let uiContext: UIContext = this.getUIContext();
+        let contextFaker: Context = uiContext.getHostContext() as Context;
+        let filePath = contextFaker.filesDir + '/exampleKnock1.jpg'; // 仅为示例 请替换正确的文件路径
+        sharableTarget.updateShareData({
+          thumbnailUri: fileUri.getUriFromPath(filePath)
+        });
+      }, 5000);
+    });
+  }
 
-34. aboutToDisappear(): void {
-35. let capabilityRegistry: harmonyShare.SendCapabilityRegistry = {
-36. windowId: 999, // 此值仅为示例 实际使用时请替换正确的windowId
-37. }
-38. // 解除碰一碰分享'knockShare'监听事件
-39. harmonyShare.off('knockShare', capabilityRegistry);
-40. }
+  aboutToDisappear(): void {
+    let capabilityRegistry: harmonyShare.SendCapabilityRegistry = {
+      windowId: 999 // 此值仅为示例 实际使用时请替换正确的windowId
+    }
+    // 解除碰一碰分享'knockShare'监听事件
+    harmonyShare.off('knockShare', capabilityRegistry);
+  }
 
-42. build() {
-43. }
-44. }
+  build() {
+  }
+}
 ```
 
 ### 安全策略
@@ -132,64 +132,64 @@ content_hash: sha256:3fa137f6222edba504f94506c453bba5295601e5e90843e81ead30b1ebb
 
 示例代码：
 
-```
-1. import { uniformTypeDescriptor as utd } from '@kit.ArkData';
-2. import { harmonyShare, systemShare } from '@kit.ShareKit';
-3. import { fileUri } from '@kit.CoreFileKit';
+```typescript
+import { uniformTypeDescriptor as utd } from '@kit.ArkData';
+import { harmonyShare, systemShare } from '@kit.ShareKit';
+import { fileUri } from '@kit.CoreFileKit';
 
-5. @Component
-6. export struct HarmonyShareScenes {
-7. // Entry Component 代码片段
-8. onPageHide(): void {
-9. let uiContext: UIContext = this.getUIContext();
-10. let context: Context = uiContext.getHostContext() as Context;
-11. context.eventHub.emit('onBackGround');
-12. }
+@Component
+export struct HarmonyShareScenes {
+  // Entry Component 代码片段
+  onPageHide(): void {
+    let uiContext: UIContext = this.getUIContext();
+    let context: Context = uiContext.getHostContext() as Context;
+    context.eventHub.emit('onBackGround');
+  }
 
-14. aboutToAppear(): void {
-15. this.immersiveListening();
-16. let uiContext: UIContext = this.getUIContext();
-17. let context: Context = uiContext.getHostContext() as Context;
-18. context.eventHub.on('onBackGround', this.onBackGround);
-19. }
+  aboutToAppear(): void {
+    this.immersiveListening();
+    let uiContext: UIContext = this.getUIContext();
+    let context: Context = uiContext.getHostContext() as Context;
+    context.eventHub.on('onBackGround', this.onBackGround);
+  }
 
-21. aboutToDisappear(): void {
-22. this.immersiveDisablingListening();
-23. let uiContext: UIContext = this.getUIContext();
-24. let context: Context = uiContext.getHostContext() as Context;
-25. context.eventHub.off('onBackGround', this.onBackGround);
-26. }
+  aboutToDisappear(): void {
+    this.immersiveDisablingListening();
+    let uiContext: UIContext = this.getUIContext();
+    let context: Context = uiContext.getHostContext() as Context;
+    context.eventHub.off('onBackGround', this.onBackGround);
+  }
 
-28. build() {
-29. }
+  build() {
+  }
 
-31. private onBackGround = () => {
-32. this.immersiveDisablingListening();
-33. }
+  private onBackGround = () => {
+    this.immersiveDisablingListening();
+  }
 
-35. private immersiveCallback = (sharableTarget: harmonyShare.SharableTarget) => {
-36. let uiContext: UIContext = this.getUIContext();
-37. let contextFaker: Context = uiContext.getHostContext() as Context;
-38. let filePath = contextFaker.filesDir + '/exampleKnock1.jpg'; // 仅为示例 请替换正确的文件路径
-39. let shareData: systemShare.SharedData = new systemShare.SharedData({
-40. utd: utd.UniformDataType.HYPERLINK,
-41. content: 'https://sharekitdemo.drcn.agconnect.link/ZB3p',
-42. // 根据title,description,thumbnailUri会生成不同的卡片模板，具体可参考设置配套的卡片样式。
-43. thumbnailUri: fileUri.getUriFromPath(filePath),
-44. title: '碰一碰分享卡片标题',
-45. description: '碰一碰分享卡片描述'
-46. });
-47. sharableTarget.share(shareData);
-48. }
+  private immersiveCallback = (sharableTarget: harmonyShare.SharableTarget) => {
+    let uiContext: UIContext = this.getUIContext();
+    let contextFaker: Context = uiContext.getHostContext() as Context;
+    let filePath = contextFaker.filesDir + '/exampleKnock1.jpg'; // 仅为示例 请替换正确的文件路径
+    let shareData: systemShare.SharedData = new systemShare.SharedData({
+      utd: utd.UniformDataType.HYPERLINK,
+      content: 'https://sharekitdemo.drcn.agconnect.link/ZB3p',
+      // 根据title,description,thumbnailUri会生成不同的卡片模板，具体可参考设置配套的卡片样式。
+      thumbnailUri: fileUri.getUriFromPath(filePath),
+      title: '碰一碰分享卡片标题',
+      description: '碰一碰分享卡片描述'
+    });
+    sharableTarget.share(shareData);
+  }
 
-50. private immersiveListening() {
-51. harmonyShare.on('knockShare', this.immersiveCallback);
-52. }
+  private immersiveListening() {
+    harmonyShare.on('knockShare', this.immersiveCallback);
+  }
 
-54. private immersiveDisablingListening() {
-55. harmonyShare.off('knockShare', this.immersiveCallback);
-56. }
-57. }
+  private immersiveDisablingListening() {
+    harmonyShare.off('knockShare', this.immersiveCallback);
+  }
+}
 ```
 
 ### Deep Linking
@@ -208,18 +208,18 @@ content_hash: sha256:3fa137f6222edba504f94506c453bba5295601e5e90843e81ead30b1ebb
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Nphv7lvURyi-ubC-gUZTxQ/zh-cn_image_0000002589325559.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/v2swwkY4TE-NWcIP-no9iQ/zh-cn_image_0000002706675276.png)
 
 示例代码：
 
-```
-1. import { harmonyShare } from '@kit.ShareKit';
+```typescript
+import { harmonyShare } from '@kit.ShareKit';
 
-3. aboutToAppear(): void {
-4. harmonyShare.on('knockShare', (sharableTarget: harmonyShare.SharableTarget) => {
-5. sharableTarget.clarifyNonShare({ message: '请在支持碰一碰分享的界面再试' });
-6. });
-7. }
+aboutToAppear(): void {
+  harmonyShare.on('knockShare', (sharableTarget: harmonyShare.SharableTarget) => {
+    sharableTarget.clarifyNonShare({ message: '请在支持碰一碰分享的界面再试' });
+  });
+}
 ```
 
 ### 分享内容下载失败等其他异常场景
@@ -228,12 +228,12 @@ content_hash: sha256:3fa137f6222edba504f94506c453bba5295601e5e90843e81ead30b1ebb
 
 示例代码：
 
-```
-1. import { harmonyShare } from '@kit.ShareKit';
+```typescript
+import { harmonyShare } from '@kit.ShareKit';
 
-3. aboutToAppear(): void {
-4. harmonyShare.on('knockShare', (sharableTarget: harmonyShare.SharableTarget) => {
-5. sharableTarget.reject(harmonyShare.SharableErrorCode.DOWNLOAD_ERROR);
-6. });
-7. }
+aboutToAppear(): void {
+  harmonyShare.on('knockShare', (sharableTarget: harmonyShare.SharableTarget) => {
+    sharableTarget.reject(harmonyShare.SharableErrorCode.DOWNLOAD_ERROR);
+  });
+}
 ```

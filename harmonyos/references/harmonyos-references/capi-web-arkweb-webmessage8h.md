@@ -3,20 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-web-
 title: ArkWeb_WebMessage*
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > C API > 结构体 > ArkWeb_WebMessage*
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:29+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:ceccc4081d11d7154ccf4c7586d0a537c6e0c834bbd9e2a3b1aa0f3812b583d0
+scraped_at: 2026-09-02T14:51:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:80a6d0b9d0195427577257a51f2053eb87dae6056536e49f6ce59136dab29dcb
 ---
 
-```
-1. typedef struct ArkWeb_WebMessage* ArkWeb_WebMessagePtr
+```c
+typedef struct ArkWeb_WebMessage* ArkWeb_WebMessagePtr
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
+ArkWeb\_WebMessage是用于跨上下文消息通信的Web消息结构体，定义了消息的基本格式和数据承载能力。该结构体是Web消息通信的基础数据单元，支持在Native代码和Web页面之间传递字符串和二进制数据。
 
-Post Message数据结构体指针。
+**使用场景：**
+
+用于在Native端和Web页面之间进行消息通信，例如：
+
+* Native端向Web页面发送控制指令或数据。
+* Web页面向Native端发送用户操作结果或请求数据。
+* 跨上下文的异步消息传递和数据同步。
 
 **起始版本：** 12
 

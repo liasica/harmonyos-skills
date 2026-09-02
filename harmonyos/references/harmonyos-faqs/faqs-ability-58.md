@@ -3,56 +3,54 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-58
 title: 如何拉起浏览器应用
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 如何拉起浏览器应用
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:46+08:00
-doc_updated_at: 2026-03-20
-content_hash: sha256:427d9dc0e3aa44837e6f239ffbf8cc5101ad6fb4f3b6619168e18cb9050291d5
+scraped_at: 2026-09-02T14:53:55+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:50f11415902b0dc7d9443a5cd07248faa6e5b5f139cddbd42e4dd16fb2c17ce3
 ---
 
 开发者可以通过在 want 参数中隐式指定 action 为 ohos.want.action.viewData 来启动浏览器应用，并在 want的 uri 参数中配置要打开的网页链接。此时，系统将启动设备上的默认浏览器。如果设备上存在多个浏览器应用，并且希望用户能够自行选择要使用的浏览器，需要在 parameters 中设置 ohos.ability.params.showDefaultPicker 为 true。具体代码如下所示。
 
+```screen
+import { common, Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function startBrowsableAbility(context: common.UIAbilityContext): void {
+  let want: Want = {
+    action: 'ohos.want.action.viewData',
+    entities: ['entity.system.browsable'],
+    uri: 'https://www.huawei.com/',
+    parameters: {
+      'ohos.ability.params.showDefaultPicker': true
+    }
+  };
+  context.startAbility(want)
+    .then(() => {
+      console.info('Start browsableAbility successfully.');
+    })
+    .catch((err: BusinessError) => {
+      console.error(`Failed to startAbility. Code: ${err.code}, message: ${err.message}`);
+    });
+}
+
+@Entry
+@Component
+struct BrowsableAbilityView {
+  @State message: string = 'Pull up the browser and open the Huawei official website';
+
+  build() {
+    Row() {
+      Column() {
+        Button(this.message)
+          .fontSize(24)
+          .fontWeight(FontWeight.Bold)
+          .onClick(() => {
+            const context: common.UIAbilityContext = this.getUIContext().getHostContext()! as common.UIAbilityContext;
+            startBrowsableAbility(context);
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-1. import { common, Want } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-
-4. function startBrowsableAbility(context: common.UIAbilityContext): void {
-5. let want: Want = {
-6. action: 'ohos.want.action.viewData',
-7. entities: ['entity.system.browsable'],
-8. uri: 'https://www.huawei.com/',
-9. parameters: {
-10. 'ohos.ability.params.showDefaultPicker': true
-11. }
-12. };
-13. context.startAbility(want)
-14. .then(() => {
-15. console.info('Start browsableAbility successfully.');
-16. })
-17. .catch((err: BusinessError) => {
-18. console.error(`Failed to startAbility. Code: ${err.code}, message: ${err.message}`);
-19. });
-20. }
-
-22. @Entry
-23. @Component
-24. struct BrowsableAbilityView {
-25. @State message: string = 'Pull up the browser and open the Huawei official website';
-
-27. build() {
-28. Row() {
-29. Column() {
-30. Button(this.message)
-31. .fontSize(24)
-32. .fontWeight(FontWeight.Bold)
-33. .onClick(() => {
-34. const context: common.UIAbilityContext = this.getUIContext().getHostContext()! as common.UIAbilityContext;
-35. startBrowsableAbility(context);
-36. })
-37. }
-38. .width('100%')
-39. }
-40. .height('100%')
-41. }
-42. }
-```
-
-[PullUpBrowserApplication.ets](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/AbilityKit/entry/src/main/ets/pages/PullUpBrowserApplication.ets#L21-L63)

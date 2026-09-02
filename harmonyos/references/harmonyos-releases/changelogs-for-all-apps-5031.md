@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-for-all-apps-5031
 title: OS平台API行为的变更
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.3(15) > OS平台能力 > OS平台行为变更说明 > HarmonyOS 5.0.3(15) Beta1引入的行为变更 > OS平台API行为的变更
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.3(15) > OS平台能力 > OS平台行为变更说明 > HarmonyOS 5.0.3(15) Beta1引入的行为变更 > OS平台API行为的变更
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:31+08:00
-doc_updated_at: 2026-01-16
-content_hash: sha256:7bc3fe77ddb97a323486d0cbd215daa1009e83fbdf39c34c2776a3c8539fcb65
+scraped_at: 2026-09-02T14:58:49+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:bbfd999e1087964e6b0b5a66a4d392506b4899d3ae3704f828f28d9d2d12d506
 ---
 
 ## Ability
@@ -129,30 +129,30 @@ musl/signal.h中sigaction接口
 
 示例代码：
 
-```
-1. // 情况一：若应用预期是信号处理方法注册后只生效一次，其后恢复为默认值SIG_DFL，需要显式指定SA_RESETHAND标志位
-2. struct sigaction sa;
+```cpp
+// 情况一：若应用预期是信号处理方法注册后只生效一次，其后恢复为默认值SIG_DFL，需要显式指定SA_RESETHAND标志位
+struct sigaction sa;
 
-4. // 请重点排查sigaction结构体的sa_flags标志位，该示例中显式指定SA_RESETHAND标志位，此处可根据业务需要，合理添加其它标志位
-5. sa.sa.sa_flags = SA_RESETHAND;
-6. sa.sa_handler = func;
-7. ret = sigaction(SIGUSR1, &sa, NULL);
-8. if (ret < 0) {
-9. perror("sigaction error");
-10. return -1;
-11. }
+// 请重点排查sigaction结构体的sa_flags标志位，该示例中显式指定SA_RESETHAND标志位，此处可根据业务需要，合理添加其它标志位
+sa.sa.sa_flags = SA_RESETHAND;
+sa.sa_handler = func;
+ret = sigaction(SIGUSR1, &sa, NULL);
+if (ret < 0) {
+    perror("sigaction error");
+    return -1;
+}
 
-13. //情况二：若应用预期是信号处理方法注册后持续生效，则sa_flags不允许包含SA_RESETHAND标志位
-14. struct sigaction sa;
+//情况二：若应用预期是信号处理方法注册后持续生效，则sa_flags不允许包含SA_RESETHAND标志位
+struct sigaction sa;
 
-16. // 请重点排查sigaction结构体的sa_flags标志位，确保不包含SA_RESETHAND标志位，此处可根据业务需要，合理添加其它标志位，此处示例为0
-17. sa.sa_flags = 0
-18. sa.sa_handler = func;
-19. ret = sigaction(SIGUSR1, &sa, NULL);
-20. if (ret < 0) {
-21. perror("sigaction error");
-22. return -1;
-23. }
+// 请重点排查sigaction结构体的sa_flags标志位，确保不包含SA_RESETHAND标志位，此处可根据业务需要，合理添加其它标志位，此处示例为0
+sa.sa_flags = 0              
+sa.sa_handler = func;
+ret = sigaction(SIGUSR1, &sa, NULL);
+if (ret < 0) {
+    perror("sigaction error");
+    return -1;
+}
 ```
 
 ## ArkUI
@@ -165,7 +165,7 @@ musl/signal.h中sigaction接口
 
 **变更影响**
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.3(15)时生效。
 
@@ -175,43 +175,43 @@ musl/signal.h中sigaction接口
 
 父节点设为不可见、子节点设为可见时，如果子节点和父节点之间存在UINode类型节点，调用isVisible接口返回值结果变更前后会不一致，例如：
 
-```
-1. import { FrameNode } from '@kit.ArkUI'
+```ts
+import { FrameNode } from '@kit.ArkUI'
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. private stackNode: FrameNode | null = null
-7. private columnNode: FrameNode | null = null
+@Entry
+@Component
+struct Index {
+  private stackNode: FrameNode | null = null
+  private columnNode: FrameNode | null = null
 
-9. build() {
-10. Column() {
-11. Stack() {
-12. if (true) {
-13. Column()
-14. .id("column")
-15. .visibility(Visibility.Visible)
-16. }
-17. }
-18. .id("stack")
-19. .visibility(Visibility.Hidden)
+  build() {
+    Column() {
+      Stack() {
+        if (true) {
+          Column()
+            .id("column")
+            .visibility(Visibility.Visible)
+        }
+      }
+      .id("stack")
+      .visibility(Visibility.Hidden)
 
-21. Button("print")
-22. .onClick(() => {
-23. this.stackNode = this.getUIContext().getFrameNodeById("stack")
-24. this.columnNode = this.getUIContext().getFrameNodeById("column")
-25. if (this.stackNode) {
-26. // Stack节点的可见性，为false
-27. console.log("stackNode.isVisible:", this.stackNode.isVisible())
-28. }
-29. if (this.columnNode) {
-30. // Column节点的可见性，变更前为true，变更后为false
-31. console.log("columnNode.isVisible:", this.columnNode.isVisible())
-32. }
-33. })
-34. }
-35. }
-36. }
+      Button("print")
+        .onClick(() => {
+          this.stackNode = this.getUIContext().getFrameNodeById("stack")
+          this.columnNode = this.getUIContext().getFrameNodeById("column")
+          if (this.stackNode) {
+            // Stack节点的可见性，为false
+            console.log("stackNode.isVisible:", this.stackNode.isVisible())
+          }
+          if (this.columnNode) {
+            // Column节点的可见性，变更前为true，变更后为false
+            console.log("columnNode.isVisible:", this.columnNode.isVisible())
+          }
+        })
+    }
+  }
+}
 ```
 
 **起始API Level**
@@ -264,7 +264,7 @@ FrameNode.d.ts文件isVisible接口。
 
 此变更不涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.3(15)时生效。
 
@@ -326,7 +326,7 @@ i18n.System.getDisplayLanguage
 
 此变更不涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.3(15)时生效。
 
@@ -358,7 +358,7 @@ PC/2in1设备上，在module.json5的[supportWindowMode](../harmonyos-guides/mod
 
 该变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.3(15)时生效。
 
@@ -418,7 +418,7 @@ hilog目前商用版本在打开开发者模式时日志级别设置为Info，�
 
 具体可参考：[hilog查看和设置日志级别](../harmonyos-guides/hilog.md#查看和设置日志级别)
 
-说明
+**说明** 
 
 商用版本（nolog版本）确认方法：
 

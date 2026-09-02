@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-arkts-b105
 title: ArkTS
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.1(13) > OS平台能力 > API变更清单 > HarmonyOS 5.0.1(13) Beta3引入的API > ArkTS
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.1(13) > OS平台能力 > API变更清单 > HarmonyOS 5.0.1(13) Beta3引入的API > ArkTS
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:36:02+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:39+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:9678cd98e634b04d5917af215286aacd109903a34469b7fb39c3f8744a7fe1b8
 ---
 

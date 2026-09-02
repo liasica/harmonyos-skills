@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-lo
 title: 使用日志记录
 breadcrumb: 指南 > 构建应用 > 构建报错排查 > 使用日志记录
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:25+08:00
+scraped_at: 2026-09-02T15:00:28+08:00
 doc_updated_at: 2026-03-17
 content_hash: sha256:dd59a16c9dd85fbb4781ab56ecfc906bec4b2c0afcef7cdf30d78366952132ad
 ---

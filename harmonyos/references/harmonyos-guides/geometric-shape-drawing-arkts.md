@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/geometric-sha
 title: 几何形状绘制（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 图元绘制 > 几何形状绘制（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:36:10+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4201929f1a9d66c11c90695ead68c4e0346814d5b1658737cbb1b8dde63ef1c9
+scraped_at: 2026-09-02T14:50:20+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:b4d4b1a83c30189e156c8f1fe45e40ece7ea2f2708f6e05c6a58c718374d3c2c
 ---
 
 ## 场景介绍
@@ -42,30 +42,28 @@ content_hash: sha256:4201929f1a9d66c11c90695ead68c4e0346814d5b1658737cbb1b8dde63
 
 简单示例如下：
 
+```typescript
+// 设置画笔
+let pen = new drawing.Pen();
+// 设置颜色
+pen.setColor(0xFF, 0xFF, 0x00, 0x00);
+// 设置线宽
+pen.setStrokeWidth(40);
+// 设置画笔描边效果
+canvas.attachPen(pen);
+// 绘制5个点
+canvas.drawPoint(VALUE_200, VALUE_200);
+canvas.drawPoint(VALUE_400, VALUE_400);
+canvas.drawPoint(VALUE_600, VALUE_600);
+canvas.drawPoint(VALUE_800, VALUE_800);
+canvas.drawPoint(VALUE_1000, VALUE_1000);
+// 去除描边效果
+canvas.detachPen();
 ```
-1. // 设置画笔
-2. let pen = new drawing.Pen();
-3. // 设置颜色
-4. pen.setColor(0xFF, 0xFF, 0x00, 0x00);
-5. // 设置线宽
-6. pen.setStrokeWidth(40);
-7. // 设置画笔描边效果
-8. canvas.attachPen(pen);
-9. // 绘制5个点
-10. canvas.drawPoint(VALUE_200, VALUE_200);
-11. canvas.drawPoint(VALUE_400, VALUE_400);
-12. canvas.drawPoint(VALUE_600, VALUE_600);
-13. canvas.drawPoint(VALUE_800, VALUE_800);
-14. canvas.drawPoint(VALUE_1000, VALUE_1000);
-15. // 去除描边效果
-16. canvas.detachPen();
-```
-
-[ShapeDrawing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/ShapeDrawing.ets#L34-L51)
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/CpVJ8D4xRByQpXVblsYBJg/zh-cn_image_0000002589244961.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/uAjgvGVHQlW9C8qIACTBfA/zh-cn_image_0000002706674714.jpg)
 
 ## 绘制圆弧
 
@@ -75,38 +73,36 @@ content_hash: sha256:4201929f1a9d66c11c90695ead68c4e0346814d5b1658737cbb1b8dde63
 
 此处以使用画笔绘制圆弧为例，简单示例如下：
 
+```typescript
+// 创建画笔
+let pen = new drawing.Pen();
+// 设置颜色
+pen.setColor({
+  alpha: 0xFF,
+  red: 0xFF,
+  green: 0x00,
+  blue: 0x00
+});
+// 设置线宽
+pen.setStrokeWidth(20);
+// 设置画笔描边效果
+canvas.attachPen(pen);
+// 创建矩形对象
+const rect: common2D.Rect = {
+  left: VALUE_100,
+  top: VALUE_200,
+  right: VALUE_1000,
+  bottom: VALUE_600
+};
+// 绘制圆弧
+canvas.drawArc(rect, 0, 180);
+// 去除描边效果
+canvas.detachPen();
 ```
-1. // 创建画笔
-2. let pen = new drawing.Pen();
-3. // 设置颜色
-4. pen.setColor({
-5. alpha: 0xFF,
-6. red: 0xFF,
-7. green: 0x00,
-8. blue: 0x00
-9. });
-10. // 设置线宽
-11. pen.setStrokeWidth(20);
-12. // 设置画笔描边效果
-13. canvas.attachPen(pen);
-14. // 创建矩形对象
-15. const rect: common2D.Rect = {
-16. left: VALUE_100,
-17. top: VALUE_200,
-18. right: VALUE_1000,
-19. bottom: VALUE_600
-20. };
-21. // 绘制矩形
-22. canvas.drawArc(rect, 0, 180);
-23. // 去除描边效果
-24. canvas.detachPen();
-```
-
-[ShapeDrawing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/ShapeDrawing.ets#L55-L80)
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/13DnAkF-Rp6eYUHWyDUoQw/zh-cn_image_0000002558765156.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/VQDIDITFTUC73OmLJA-Ubw/zh-cn_image_0000002736433803.png)
 
 ## 绘制圆
 
@@ -116,31 +112,29 @@ content_hash: sha256:4201929f1a9d66c11c90695ead68c4e0346814d5b1658737cbb1b8dde63
 
 此处以使用画笔绘制圆为例，简单示例如下：
 
+```typescript
+// 创建画笔
+let pen = new drawing.Pen();
+// 设置颜色
+pen.setColor({
+  alpha: 0xFF,
+  red: 0xFF,
+  green: 0x00,
+  blue: 0x00
+});
+// 设置线宽
+pen.setStrokeWidth(20);
+// 设置画笔描边效果
+canvas.attachPen(pen);
+// 绘制圆
+canvas.drawCircle(VALUE_630, VALUE_630, VALUE_500);
+// 去除描边效果
+canvas.detachPen();
 ```
-1. // 创建画笔
-2. let pen = new drawing.Pen();
-3. // 设置颜色
-4. pen.setColor({
-5. alpha: 0xFF,
-6. red: 0xFF,
-7. green: 0x00,
-8. blue: 0x00
-9. });
-10. // 设置线宽
-11. pen.setStrokeWidth(20);
-12. // 设置画笔描边效果
-13. canvas.attachPen(pen);
-14. // 绘制圆
-15. canvas.drawCircle(VALUE_630, VALUE_630, VALUE_500);
-16. // 去除描边效果
-17. canvas.detachPen();
-```
-
-[ShapeDrawing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/ShapeDrawing.ets#L84-L102)
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/SB4GohUIQjyO2CJQqmmCVw/zh-cn_image_0000002558605500.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/3fEDI0lJTbqB7eC_sW1P5w/zh-cn_image_0000002706834652.jpg)
 
 ## 绘制路径
 
@@ -154,62 +148,60 @@ content_hash: sha256:4201929f1a9d66c11c90695ead68c4e0346814d5b1658737cbb1b8dde63
 
 此处以使用画笔和画刷绘制五角星为例，简单示例如下：
 
+```typescript
+let height_ = VALUE_1800;
+let width_ = VALUE_1800;
+let len = height_ / 4;
+let aX = width_ / 3;
+let aY = height_ / 6;
+let dX = aX - len * Math.sin(18.0);
+let dY = aY + len * Math.cos(18.0);
+let cX = aX + len * Math.sin(18.0);
+let cY = dY;
+let bX = aX + (len / 2.0);
+let bY = aY + Math.sqrt((cX - dX) * (cX - dX) + (len / 2.0) * (len / 2.0));
+let eX = aX - (len / 2.0);
+let eY = bY;
+
+// 创建一个path对象，然后使用接口连接成一个五角星形状
+let path = new drawing.Path();
+// 指定path的起始位置
+path.moveTo(aX, aY);
+// 用直线连接到目标点
+path.lineTo(bX, bY);
+path.lineTo(cX, cY);
+path.lineTo(dX, dY);
+path.lineTo(eX, eY);
+// 闭合形状，path绘制完毕
+path.close();
+
+// 创建画笔对象
+let pen = new drawing.Pen();
+// 设置抗锯齿
+pen.setAntiAlias(true);
+// 设置描边颜色
+pen.setColor(0xFF, 0xFF, 0x00, 0x00);
+// 设置线宽
+pen.setStrokeWidth(10.0);
+// 设置画笔描边效果
+canvas.attachPen(pen);
+// 创建画刷
+let brush = new drawing.Brush();
+// 设置填充颜色
+brush.setColor(0xFF, 0x00, 0xFF, 0x00);
+// 设置画刷填充效果
+canvas.attachBrush(brush);
+// 绘制路径
+canvas.drawPath(path);
+// 去除填充效果
+canvas.detachBrush();
+// 去除描边效果
+canvas.detachPen();
 ```
-1. let height_ = VALUE_1800;
-2. let width_ = VALUE_1800;
-3. let len = height_ / 4;
-4. let aX = width_ / 3;
-5. let aY = height_ / 6;
-6. let dX = aX - len * Math.sin(18.0);
-7. let dY = aY + len * Math.cos(18.0);
-8. let cX = aX + len * Math.sin(18.0);
-9. let cY = dY;
-10. let bX = aX + (len / 2.0);
-11. let bY = aY + Math.sqrt((cX - dX) * (cX - dX) + (len / 2.0) * (len / 2.0));
-12. let eX = aX - (len / 2.0);
-13. let eY = bY;
-
-15. // 创建一个path对象，然后使用接口连接成一个五角星形状
-16. let path = new drawing.Path();
-17. // 指定path的起始位置
-18. path.moveTo(aX, aY);
-19. // 用直线连接到目标点
-20. path.lineTo(bX, bY);
-21. path.lineTo(cX, cY);
-22. path.lineTo(dX, dY);
-23. path.lineTo(eX, eY);
-24. // 闭合形状，path绘制完毕
-25. path.close();
-
-27. // 创建画笔对象
-28. let pen = new drawing.Pen();
-29. // 设置抗锯齿
-30. pen.setAntiAlias(true);
-31. // 设置描边颜色
-32. pen.setColor(0xFF, 0xFF, 0x00, 0x00);
-33. // 设置线宽
-34. pen.setStrokeWidth(10.0);
-35. // 设置画笔描边效果
-36. canvas.attachPen(pen);
-37. // 创建画刷
-38. let brush = new drawing.Brush();
-39. // 设置填充颜色
-40. brush.setColor(0xFF, 0x00, 0xFF, 0x00);
-41. // 设置画刷填充效果
-42. canvas.attachBrush(brush);
-43. // 绘制路径
-44. canvas.drawPath(path);
-45. // 去除填充效果
-46. canvas.detachBrush();
-47. // 去除描边效果
-48. canvas.detachPen();
-```
-
-[ShapeDrawing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/ShapeDrawing.ets#L106-L155)
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/IQuY5_OdSqS77-hrlkTzTQ/zh-cn_image_0000002589325027.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/ZgyOJw8HR9O0neJypSLQLA/zh-cn_image_0000002736313759.jpg)
 
 ## 绘制区域
 
@@ -219,32 +211,30 @@ content_hash: sha256:4201929f1a9d66c11c90695ead68c4e0346814d5b1658737cbb1b8dde63
 
 此处以使用画刷绘制矩形的组合区域为例，示例如下：
 
+```typescript
+// 创建画刷
+let brush = new drawing.Brush();
+// 设置颜色
+brush.setColor(0xFF, 0xFF, 0x00, 0x00);
+// 设置画刷填充效果
+canvas.attachBrush(brush);
+// 创建左上角的region1
+let region1 = new drawing.Region();
+region1.setRect(VALUE_100, VALUE_100, VALUE_600, VALUE_600);
+// 创建右下角的region2
+let region2 = new drawing.Region();
+region2.setRect(VALUE_300, VALUE_300, VALUE_900, VALUE_900);
+// 将两个区域以XOR的方式组合
+region1.op(region2, drawing.RegionOp.XOR);
+// 绘制区域
+canvas.drawRegion(region1);
+// 去除填充效果
+canvas.detachBrush();
 ```
-1. // 创建画刷
-2. let brush = new drawing.Brush();
-3. // 设置颜色
-4. brush.setColor(0xFF, 0xFF, 0x00, 0x00);
-5. // 设置画刷填充效果
-6. canvas.attachBrush(brush);
-7. // 创建左上角的region1
-8. let region1 = new drawing.Region();
-9. region1.setRect(VALUE_100, VALUE_100, VALUE_600, VALUE_600);
-10. // 创建右下角的region2
-11. let region2 = new drawing.Region();
-12. region2.setRect(VALUE_300, VALUE_300, VALUE_900, VALUE_900);
-13. // 将两个区域以XOR的方式组合
-14. region1.op(region2, drawing.RegionOp.XOR);
-15. // 绘制区域
-16. canvas.drawRegion(region1);
-17. // 去除填充效果
-18. canvas.detachBrush();
-```
-
-[ShapeDrawing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/ShapeDrawing.ets#L159-L178)
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/Zq9hmz6gS6OwZZUhAWsl7w/zh-cn_image_0000002589244963.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/LwqjIZgwRl-nmB67WGI4Pw/zh-cn_image_0000002706674716.jpg)
 
 ## 绘制矩形
 
@@ -252,24 +242,22 @@ content_hash: sha256:4201929f1a9d66c11c90695ead68c4e0346814d5b1658737cbb1b8dde63
 
 此处以使用画刷绘制矩形为例，简单示例如下：
 
+```typescript
+// 创建画刷
+let brush = new drawing.Brush();
+// 设置颜色
+brush.setColor(0xFF, 0xFF, 0x00, 0x00);
+// 设置画刷填充效果
+canvas.attachBrush(brush);
+// 绘制矩形
+canvas.drawRect(VALUE_200, VALUE_200, VALUE_1000, VALUE_700);
+// 去除填充效果
+canvas.detachBrush();
 ```
-1. // 创建画刷
-2. let brush = new drawing.Brush();
-3. // 设置颜色
-4. brush.setColor(0xFF, 0xFF, 0x00, 0x00);
-5. // 设置画刷填充效果
-6. canvas.attachBrush(brush);
-7. // 绘制矩形
-8. canvas.drawRect(VALUE_200, VALUE_200, VALUE_1000, VALUE_700);
-9. // 去除填充效果
-10. canvas.detachBrush();
-```
-
-[ShapeDrawing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/ShapeDrawing.ets#L182-L193)
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/RMB0C9muQ9KmxRR7AMgORA/zh-cn_image_0000002558765158.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/0IJo9Z3MS-Kayn8w1Eub7w/zh-cn_image_0000002736433805.png)
 
 ## 绘制圆角矩形
 
@@ -283,34 +271,32 @@ content_hash: sha256:4201929f1a9d66c11c90695ead68c4e0346814d5b1658737cbb1b8dde63
 
 此处以使用画刷绘制圆角矩形为例，简单示例代码如下：
 
+```typescript
+// 创建画刷
+let brush = new drawing.Brush();
+// 设置颜色
+brush.setColor(0xFF, 0xFF, 0x00, 0x00);
+// 设置画刷填充效果
+canvas.attachBrush(brush);
+// 创建矩形对象
+let rect: common2D.Rect = {
+  left: VALUE_200,
+  top: VALUE_200,
+  right: VALUE_1000,
+  bottom: VALUE_700
+};
+console.info('rect:', rect.right);
+// 创建圆角矩形对象
+let rrect = new drawing.RoundRect(rect, 30, 30);
+// 绘制圆角矩形
+canvas.drawRoundRect(rrect);
+// 去除填充效果
+canvas.detachBrush();
 ```
-1. // 创建画刷
-2. let brush = new drawing.Brush();
-3. // 设置颜色
-4. brush.setColor(0xFF, 0xFF, 0x00, 0x00);
-5. // 设置画刷填充效果
-6. canvas.attachBrush(brush);
-7. // 创建矩形对象
-8. let rect: common2D.Rect = {
-9. left: VALUE_200,
-10. top: VALUE_200,
-11. right: VALUE_1000,
-12. bottom: VALUE_700
-13. };
-14. console.info('rect:', rect.right);
-15. // 创建圆角矩形对象
-16. let rrect = new drawing.RoundRect(rect, 30, 30);
-17. // 绘制圆角矩形
-18. canvas.drawRoundRect(rrect);
-19. // 去除填充效果
-20. canvas.detachBrush();
-```
-
-[ShapeDrawing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/ShapeDrawing.ets#L197-L218)
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/jCNjwz1GSiKdL5TbWbnfKQ/zh-cn_image_0000002558605502.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/p1yDVwJBQpuCwc8I8vO9LQ/zh-cn_image_0000002706834654.png)
 
 ## 示例代码
 

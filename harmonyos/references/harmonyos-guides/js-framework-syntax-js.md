@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-framework-
 title: JS语法参考
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 框架说明 > 语法 > JS语法参考
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:42+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:2ee14b6269c1b0c977c17773de5a03b4260c78c13bbe3af851130d8c6fc42f3f
+scraped_at: 2026-09-02T14:49:53+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:9d24b998af9e8b1fb532abeb5a35fa17ec4d9736214c0ac0bcd7ed88a26437ad
 ---
 
 JS文件用来定义HML页面的业务逻辑，支持ECMA规范的JavaScript语言。基于JavaScript语言的动态化能力，可以使应用更加富有表现力，具备更加灵活的设计能力。下面讲述JS文件的编译和运行的支持情况。
@@ -18,15 +18,15 @@ JS文件用来定义HML页面的业务逻辑，支持ECMA规范的JavaScript语�
 
   使用import方法引入功能模块：
 
-  ```
-  1. import router from '@ohos.router';
+  ```js
+  import router from '@ohos.router';
   ```
 * 代码引用
 
   使用import方法导入js代码：
 
-  ```
-  1. import utils from '../../common/utils.js';
+  ```js
+  import utils from '../../common/utils.js';
   ```
 
 ## 对象
@@ -39,44 +39,44 @@ JS文件用来定义HML页面的业务逻辑，支持ECMA规范的JavaScript语�
 
   示例代码
 
-  ```
-  1. // app.js
-  2. export default {
-  3. onCreate() {
-  4. console.info('Application onCreate');
-  5. },
-  6. onDestroy() {
-  7. console.info('Application onDestroy');
-  8. },
-  9. globalData: {
-  10. appData: 'appData',
-  11. appVersion: '2.0',
-  12. },
-  13. globalMethod() {
-  14. console.info('This is a global method!');
-  15. this.globalData.appVersion = '3.0';
-  16. }
-  17. };
+  ```js
+  // app.js
+  export default {
+    onCreate() {
+      console.info('Application onCreate');
+    },
+    onDestroy() {
+      console.info('Application onDestroy');
+    },
+    globalData: {
+      appData: 'appData',
+      appVersion: '2.0',
+    },
+    globalMethod() {
+      console.info('This is a global method!');
+      this.globalData.appVersion = '3.0';
+    }
+  };
   ```
 
-  ```
-  1. // index.js页面逻辑代码
-  2. export default {
-  3. data: {
-  4. appData: 'localData',
-  5. appVersion:'1.0',
-  6. },
-  7. onInit() {
-  8. this.appData = this.$app.$def.globalData.appData;
-  9. this.appVersion = this.$app.$def.globalData.appVersion;
-  10. },
-  11. invokeGlobalMethod() {
-  12. this.$app.$def.globalMethod();
-  13. },
-  14. getAppVersion() {
-  15. this.appVersion = this.$app.$def.globalData.appVersion;
-  16. }
-  17. }
+  ```js
+  // index.js页面逻辑代码
+  export default {
+    data: {
+      appData: 'localData',
+      appVersion:'1.0',
+    },
+    onInit() {
+      this.appData = this.$app.$def.globalData.appData;
+      this.appVersion = this.$app.$def.globalData.appVersion;
+    },
+    invokeGlobalMethod() {
+      this.$app.$def.globalMethod();
+    },
+    getAppVersion() {
+      this.appVersion = this.$app.$def.globalData.appVersion;
+    }
+  }
   ```
 * 页面对象
 
@@ -100,23 +100,23 @@ JS文件用来定义HML页面的业务逻辑，支持ECMA规范的JavaScript语�
 
   示例代码
 
-  ```
-  1. // index.js
-  2. export default {
-  3. data: {
-  4. keyMap: {
-  5. OS: 'OS',
-  6. Version: '2.0',
-  7. },
-  8. },
-  9. getAppVersion() {
-  10. this.$set('keyMap.Version', '3.0');
-  11. console.info("keyMap.Version = " + this.keyMap.Version); // keyMap.Version = 3.0
+  ```js
+  // index.js
+  export default {
+    data: {
+      keyMap: {
+        OS: 'OS',
+        Version: '2.0',
+      },
+    },
+    getAppVersion() {
+      this.$set('keyMap.Version', '3.0');
+      console.info("keyMap.Version = " + this.keyMap.Version); // keyMap.Version = 3.0
 
-  13. this.$delete('keyMap');
-  14. console.info("keyMap.Version = " + this.keyMap); // log print: keyMap.Version = undefined
-  15. }
-  16. }
+      this.$delete('keyMap');
+      console.info("keyMap.Version = " + this.keyMap); // log print: keyMap.Version = undefined
+    }
+  }
   ```
 * 公共方法
 
@@ -150,162 +150,162 @@ JS文件用来定义HML页面的业务逻辑，支持ECMA规范的JavaScript语�
 
   示例：
 
-  ```
-  1. this.$rootElement().scrollTo({ position: 0 });
-  2. this.$rootElement().scrollTo({ id: 'id', duration: 200, timingFunction: 'ease-in', complete: () => {
-  3. console.info('滚动已完成');
-  4. } });
+  ```js
+  this.$rootElement().scrollTo({ position: 0 });
+  this.$rootElement().scrollTo({ id: 'id', duration: 200, timingFunction: 'ease-in', complete: () => {
+      console.info('滚动已完成');
+  } });
   ```
 
 ## 获取DOM元素
 
 1. 通过$refs获取DOM元素
 
-   ```
-   1. <!-- index.hml -->
-   2. <div class="container">
-   3. <image-animator class="image-player" ref="animator" images="{{images}}" duration="1s" onclick="handleClick"></image-animator>
-   4. </div>
+   ```html
+   <!-- index.hml -->
+   <div class="container">
+     <image-animator class="image-player" ref="animator" images="{{images}}" duration="1s" onclick="handleClick"></image-animator>
+   </div>
    ```
 
-   ```
-   1. // index.js
-   2. export default {
-   3. data: {
-   4. images: [
-   5. { src: '/common/frame1.png' },
-   6. { src: '/common/frame2.png' },
-   7. { src: '/common/frame3.png' }
-   8. ]
-   9. },
-   10. handleClick() {
-   11. const animator = this.$refs.animator; // 获取ref属性为animator的DOM元素
-   12. const state = animator.getState();
-   13. if (state === 'Paused') {
-   14. animator.resume();
-   15. } else if (state === 'Stopped') {
-   16. animator.start();
-   17. } else {
-   18. animator.pause();
-   19. }
-   20. },
-   21. };
+   ```js
+   // index.js
+   export default {
+     data: {
+       images: [
+         { src: '/common/frame1.png' },
+         { src: '/common/frame2.png' },
+         { src: '/common/frame3.png' }
+       ]
+     },
+     handleClick() {
+       const animator = this.$refs.animator; // 获取ref属性为animator的DOM元素
+       const state = animator.getState();
+       if (state === 'Paused') {
+         animator.resume();
+       } else if (state === 'Stopped') {
+         animator.start();
+       } else {
+         animator.pause();
+       }
+     },
+   };
    ```
 2. 通过$element获取DOM元素
 
-   ```
-   1. <!-- index.hml -->
-   2. <div class="container" style="width:500px;height: 700px; margin: 100px;">
-   3. <image-animator class="image-player" id="animator" images="{{images}}" duration="1s" onclick="handleClick"></image-animator>
-   4. </div>
-   ```
-
-   ```
-   1. // index.js
-   2. export default {
-   3. data: {
-   4. images: [
-   5. { src: '/common/frame1.png' },
-   6. { src: '/common/frame2.png' },
-   7. { src: '/common/frame3.png' }
-   8. ]
-   9. },
-   10. handleClick() {
-   11. const animator = this.$element('animator'); // 获取id属性为animator的DOM元素
-   12. const state = animator.getState();
-   13. if (state === 'Paused') {
-   14. animator.resume();
-   15. } else if (state === 'Stopped') {
-   16. animator.start();
-   17. } else {
-   18. animator.pause();
-   19. }
-   20. },
-   21. };
+   ```html
+   <!-- index.hml -->
+   <div class="container" style="width:500px;height: 700px; margin: 100px;">
+     <image-animator class="image-player" id="animator" images="{{images}}" duration="1s" onclick="handleClick"></image-animator>
+   </div>
    ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/CgKC9WopT62SHLCl1AWMRA/zh-cn_image_0000002558764570.gif)
+   ```js
+   // index.js
+   export default {
+     data: {
+       images: [
+         { src: '/common/frame1.png' },
+         { src: '/common/frame2.png' },
+         { src: '/common/frame3.png' }
+       ]
+     },
+     handleClick() {
+       const animator = this.$element('animator'); // 获取id属性为animator的DOM元素
+       const state = animator.getState();
+       if (state === 'Paused') {
+         animator.resume();
+       } else if (state === 'Stopped') {
+         animator.start();
+       } else {
+         animator.pause();
+       }
+     },
+   };
+   ```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/BCAemLfHRgejj4EoO2IwHg/zh-cn_image_0000002736433065.gif)
 
 ## 获取ViewModel
 
 根节点所在页面：
 
-```
-1. <!-- root.hml -->
-2. <element name='parentComp' src='../../common/component/parent/parent.hml'></element>
-3. <div class="container">
-4. <div class="container">
-5. <text>{{text}}</text>
-6. <parentComp></parentComp>
-7. </div>
-8. </div>
-```
-
-```
-1. // root.js
-2. export default {
-3. data: {
-4. text: 'I am root!',
-5. },
-6. }
+```html
+<!-- root.hml -->
+<element name='parentComp' src='../../common/component/parent/parent.hml'></element>
+<div class="container">
+  <div class="container">
+    <text>{{text}}</text>
+    <parentComp></parentComp>
+  </div>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/gcUoiNaUT5KTCiRSdGptDg/zh-cn_image_0000002558604914.png)
+```js
+// root.js
+export default {
+  data: {
+    text: 'I am root!',
+  },
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/hrJmvPZkRO-ZAV7IepTZSQ/zh-cn_image_0000002706833910.png)
 
 自定义parent组件：
 
-```
-1. <!-- parent.hml -->
-2. <element name='childComp' src='../child/child.hml'></element>
-3. <div class="item" onclick="textClicked">
-4. <text class="text-style" onclick="parentClicked">parent component click</text>
-5. <text class="text-style" if="{{showValue}}">hello parent component!</text>
-6. <childComp id = "selfDefineChild"></childComp>
-7. </div>
+```html
+<!-- parent.hml -->
+<element name='childComp' src='../child/child.hml'></element>
+<div class="item" onclick="textClicked">
+  <text class="text-style" onclick="parentClicked">parent component click</text>
+  <text class="text-style" if="{{showValue}}">hello parent component!</text>
+  <childComp id = "selfDefineChild"></childComp>
+</div>
 ```
 
-```
-1. // parent.js
-2. export default {
-3. data: {
-4. showValue: false,
-5. text: 'I am parent component!',
-6. },
-7. parentClicked () {
-8. this.showValue = !this.showValue;
-9. console.info('parent component get parent text');
-10. console.info(`${this.$parent().text}`);
-11. console.info("parent component get child function");
-12. console.info(`${this.$child('selfDefineChild').childClicked()}`);
-13. },
-14. }
+```js
+// parent.js
+export default {
+  data: {
+    showValue: false,
+    text: 'I am parent component!',
+  },
+  parentClicked () {
+    this.showValue = !this.showValue;
+    console.info('parent component get parent text');
+    console.info(`${this.$parent().text}`);
+    console.info("parent component get child function");
+    console.info(`${this.$child('selfDefineChild').childClicked()}`);
+  },
+}
 ```
 
 自定义child组件：
 
-```
-1. <!-- child.hml -->
-2. <div class="item" onclick="textClicked">
-3. <text class="text-style" onclick="childClicked">child component clicked</text>
-4. <text class="text-style" if="{{isShow}}">hello child component</text>
-5. </div>
-```
-
-```
-1. // child.js
-2. export default {
-3. data: {
-4. isShow: false,
-5. text: 'I am child component!',
-6. },
-7. childClicked () {
-8. this.isShow = !this.isShow;
-9. console.info('child component get parent text');
-10. console.info('${this.$parent().text}');
-11. console.info('child component get root text');
-12. console.info('${this.$root().text}');
-13. },
-14. }
+```html
+<!-- child.hml -->
+<div class="item" onclick="textClicked">
+  <text class="text-style" onclick="childClicked">child component clicked</text>
+  <text class="text-style" if="{{isShow}}">hello child component</text>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/VYjNYw2UTnesgzo5xtrFdg/zh-cn_image_0000002589324439.gif)
+```js
+// child.js
+export default {
+  data: {
+    isShow: false,
+    text: 'I am child component!',
+  },
+  childClicked () {
+    this.isShow = !this.isShow;
+    console.info('child component get parent text');
+    console.info(`${this.$parent().text}`);
+    console.info('child component get root text');
+    console.info(`${this.$root().text}`);
+  },
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/ixb_ezs_TQONFUcdvzps2Q/zh-cn_image_0000002736313017.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-type
 title: 切换地图类型
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 创建地图 > 切换地图类型
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:01+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:719bdcec73e8b1231fd60f9cfa576fc06dd3c68bf7d382ca2567daaeb8f39544
+scraped_at: 2026-09-02T14:50:28+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:4b5e9eda337592909e0b4f7213e6168b38a89c3b0dca6d4daffe6b47ab7e011f
 ---
 
 ## 场景介绍
@@ -17,28 +17,28 @@ Map Kit支持以下地图类型：
 * STANDARD：标准地图，展示道路、建筑物以及河流等重要的自然特征。
 * NONE：空地图，没有加载任何数据的地图。
 * TERRAIN：地形图，在保留了行政区划边界、POI、楼块等地图要素的基础上，呈现完整清晰描绘地形走势的标准地图。
-* SATELLITE：卫星图，显示卫星照片的地图，只支持中国。
-* HYBRID：混合地图，在显示卫星照片的同时也显示路网信息。
+* SATELLITE：卫星图，显示卫星照片的地图，只支持中国。适用于需要高精度地理信息的场景。
+* HYBRID：混合地图，在显示卫星照片的同时也显示路网信息。适用于需要结合卫星图像与路网信息的导航应用等，以增强实用性与指导性。
 
 **图1** 标准地图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/Wz3HvvvETb2aYXzStcbthw/zh-cn_image_0000002589325379.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/dGN10HKTQyeOCAocijx7kw/zh-cn_image_0000002736434177.jpg "点击放大")
 
 **图2** 空地图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/tOmcFEIfRMa-zW9ibVgOFw/zh-cn_image_0000002589245315.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/U-OEH2YrQMO3VFn8jKu-Sw/zh-cn_image_0000002706835026.jpg "点击放大")
 
 **图3** 地形图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/R6Jc-f2UT7K9pK2yzreJHg/zh-cn_image_0000002558765510.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/e7In-bC4RW-_UHaBAf-RzQ/zh-cn_image_0000002736314133.jpg "点击放大")
 
 **图4** 卫星图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/eHexRAf_QKKqFqE3tbUM-w/zh-cn_image_0000002558605854.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/jUUai6ctR3WrZYQyWshnrQ/zh-cn_image_0000002706675090.jpg "点击放大")
 
 **图5** 混合地图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/rHyIYoD8Qtq28wTHBpxJLA/zh-cn_image_0000002589325381.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/mWN900YcRYilaVJAkySt7g/zh-cn_image_0000002736434179.jpg "点击放大")
 
 ## 接口说明
 
@@ -52,7 +52,7 @@ Map Kit提供2种方式设置地图类型：
 
 方式二：地图创建后，可通过[setMapType](../harmonyos-references/map-map-mapcomponentcontroller.md#setmaptype)方法动态设置地图类型。
 
-| 方法名 | 描述 |
+| 接口名 | 描述 |
 | --- | --- |
 | [setMapType](../harmonyos-references/map-map-mapcomponentcontroller.md#setmaptype)(mapType: [mapCommon.MapType](../harmonyos-references/map-common.md#maptype)): void | 设置地图类型。 |
 
@@ -60,8 +60,8 @@ Map Kit提供2种方式设置地图类型：
 
 1. 导入相关模块。
 
-   ```
-   1. import { mapCommon } from '@kit.MapKit';
+   ```typescript
+   import { mapCommon } from '@kit.MapKit';
    ```
 2. 设置地图类型。
 
@@ -69,29 +69,29 @@ Map Kit提供2种方式设置地图类型：
 
    在地图初始化的时候，在mapOptions参数中新增mapType属性：[mapCommon.MapType](../harmonyos-references/map-common.md#maptype).STANDARD（标准地图）。
 
-   ```
-   1. this.mapOptions = {
-   2. position: {
-   3. target: {
-   4. latitude: 31.984410259206815,
-   5. longitude: 118.76625379397866
-   6. },
-   7. zoom: 15
-   8. },
-   9. mapType: mapCommon.MapType.STANDARD
-   10. };
+   ```typescript
+   this.mapOptions = {
+     position: {
+       target: {
+         latitude: 31.984410259206815,
+         longitude: 118.76625379397866
+       },
+       zoom: 15
+     },
+     mapType: mapCommon.MapType.STANDARD
+   };
    ```
 
    显示效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/y-ucjhbwTcmTSAJbQTW2Kg/zh-cn_image_0000002589245317.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/ITDexlDMT8Gw7Tlf6h2nxg/zh-cn_image_0000002706835028.jpg "点击放大")
 
    方式二：地图创建后，调用[setMapType](../harmonyos-references/map-map-mapcomponentcontroller.md#setmaptype)方法设置地图类型为地形图。设置为地形图时，为了获得最佳显示效果，推荐将地图缩放层级保持在5至14之间。
 
-   ```
-   1. this.mapController.setMapType(mapCommon.MapType.TERRAIN);
+   ```typescript
+   this.mapController.setMapType(mapCommon.MapType.TERRAIN);
    ```
 
    显示效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/8bv4PbRJS3iWjqs7vNPRDw/zh-cn_image_0000002558765512.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/BtfvlH0eRIqy9sPFV2YdNQ/zh-cn_image_0000002736314135.jpg "点击放大")

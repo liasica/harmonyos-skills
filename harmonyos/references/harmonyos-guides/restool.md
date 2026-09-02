@@ -3,14 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restool
 title: restool工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > restool工具
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:26+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:33b2511e518ecf5113df76a664635679a7719887ea36ac57f5c42056ec7a0970
+scraped_at: 2026-09-02T14:59:41+08:00
+doc_updated_at: 2026-08-24
+content_hash: sha256:6e995bc8df501b4800ccb211f70d8f647148ba11ecee385c6352327bfb81ba8b
 ---
 
 ## 简介
 
-restool是一种应用工程资源编译工具，通过编译资源文件创建资源索引、解析资源，开发者可以调用[资源管理接口](../harmonyos-references/js-apis-resource-manager.md)获取到对应资源。restool工具保存在sdk安装目录下的toolchains子目录。
+restool是应用资源编译工具，会解析应用资源文件生成资源索引文件和资源二进制文件等产物，生成的产物由[打包工具](packing-tool.md)打包到应用包中，在应用运行阶段开发者可以通过[资源管理](../harmonyos-references/js-apis-resource-manager.md)接口获取应用包中的资源。
+
+restool工具存放在SDK安装目录下的toolchains文件夹中。
 
 ## 参数说明
 
@@ -88,81 +90,81 @@ Locale匹配规则：Locale匹配需满足以下三条规则。
 
 在DevEco Studio配置[纹理压缩](ide-hvigor-build-profile.md#section2095319147103)的编译配置参数，编译后会在模块的build\default\intermediates\res\default下生成restool的纹理压缩配置文件opt-compression.json，文件结构如下：
 
-```
-1. {
-2. "context": {
-3. // 纹理压缩库的绝对路径
-4. "extensionPath": "xxx\\xxx\\libimage_transcoder_shared.dll"
-5. },
-6. "compression": {
-7. // 是否对预置media图片资源启用纹理压缩。true：启用，false：不启用。
-8. "media": {
-9. "enable": true
-10. },
-11. // filters是预置media图片资源的过滤配置参数
-12. "filters": [
-13. {
-14. // 纹理压缩的方式，type为转换类型，支持"astc"、"sut"
-15. // block为转换扩展参数，决定画质和压缩率，当前仅支持"4x4"
-16. "method": {
-17. "blocks": "4x4",
-18. "type": "astc"
-19. },
-20. // 需要压缩的media图片资源文件绝对路径
-21. "path": [
-22. "xxx\\MyApplication\\entry\\src\\main\\resources\\base\\media\\startIcon.png",
-23. "xxx\\MyApplication\\entry\\src\\main\\resources\\base\\media\\icon.png",
-24. ],
-25. // 需要过滤的media图片资源文件绝对路径
-26. "exclude_path": [],
-27. // 按大小和分辨率匹配path中的图片资源文件路径，符合条件的文件将被压缩
-28. "rules_origin": {
-29. // 二维数组，数组中每个元素表示一个大小范围，单位为字节
-30. "size": [
-31. [
-32. 0,
-33. 10485760
-34. ]
-35. ],
-36. // 二维数组，数组中每个元素表示一个分辨率范围，如下表示分辨率从0x0到1024x1024
-37. "resolution": [
-38. [
-39. {
-40. "height": 0,
-41. "width": 0
-42. },
-43. {
-44. "height": 1024,
-45. "width": 1024
-46. }
-47. ]
-48. ]
-49. },
-50. // 按大小和分辨率匹配exclude_path中的图片资源文件，符合条件的文件将被过滤
-51. "rules_exclude": {
-52. "size": [
-53. [
-54. 0,
-55. 1048576
-56. ]
-57. ],
-58. "resolution": [
-59. [
-60. {
-61. "height": 0,
-62. "width": 0
-63. },
-64. {
-65. "height": 64,
-66. "width": 64
-67. }
-68. ]
-69. ]
-70. }
-71. }
-72. ]
-73. }
-74. }
+```json5
+{
+  "context": {
+    // 纹理压缩库的绝对路径
+    "extensionPath": "xxx\\xxx\\libimage_transcoder_shared.dll"
+  },
+  "compression": {
+    // 是否对预置media图片资源启用纹理压缩。true：启用，false：不启用。
+    "media": {
+      "enable": true
+    },
+    // filters是预置media图片资源的过滤配置参数
+    "filters": [
+      {
+        // 纹理压缩的方式，type为转换类型，支持"astc"、"sut"
+        // block为转换扩展参数，决定画质和压缩率，当前仅支持"4x4"
+        "method": {
+          "blocks": "4x4",
+          "type": "astc"
+        },
+        // 需要压缩的media图片资源文件绝对路径
+        "path": [
+          "xxx\\MyApplication\\entry\\src\\main\\resources\\base\\media\\startIcon.png",
+          "xxx\\MyApplication\\entry\\src\\main\\resources\\base\\media\\icon.png",
+        ],
+        // 需要过滤的media图片资源文件绝对路径
+        "exclude_path": [],
+        // 按大小和分辨率匹配path中的图片资源文件路径，符合条件的文件将被压缩
+        "rules_origin": {
+          // 二维数组，数组中每个元素表示一个大小范围，单位为字节
+          "size": [
+            [
+              0,
+              10485760
+            ]
+          ],
+          // 二维数组，数组中每个元素表示一个分辨率范围，如下表示分辨率从0x0到1024x1024
+          "resolution": [
+            [
+              {
+                "height": 0,
+                "width": 0
+              },
+              {
+                "height": 1024,
+                "width": 1024
+              }
+            ]
+          ]
+        },
+        // 按大小和分辨率匹配exclude_path中的图片资源文件，符合条件的文件将被过滤
+        "rules_exclude": {
+          "size": [
+            [
+              0,
+              1048576
+            ]
+          ],
+          "resolution": [
+            [
+              {
+                "height": 0,
+                "width": 0
+              },
+              {
+                "height": 64,
+                "width": 64
+              }
+            ]
+          ]
+        }
+      }
+    ]
+  }
+}
 ```
 
 ### restool支持的子命令
@@ -173,8 +175,8 @@ Locale匹配规则：Locale匹配需满足以下三条规则。
 
 **dump命令**
 
-```
-1. restool dump [-h] [config] filePath
+```sh
+restool dump [-h] [config] filePath
 ```
 
 dump命令参数列表：
@@ -186,27 +188,27 @@ dump命令参数列表：
 
 示例：
 
-```
-1. # 打印HAP包中所有的资源信息
-2. restool dump entry.hap
-3. # 打印HAP包中资源的限定词信息
-4. restool dump config entry.hap
+```sh
+# 打印HAP包中所有的资源信息
+restool dump entry.hap
+# 打印HAP包中资源的限定词信息
+restool dump config entry.hap
 ```
 
 ## 使用实例
 
 例如，entry目录结构如下：
 
-```
-1. entry/src/main
-2. |    |----resource
-3. |    |    |----base
-4. |    |    |    |----element
-5. |    |    |    |----media
-6. |    |    |    |----profile
-7. |    |    |----rawfile
-8. |    |    |----resfile
-9. |    |----config.json/module.json
+```text
+entry/src/main
+|    |----resource
+|    |    |----base
+|    |    |    |----element
+|    |    |    |----media
+|    |    |    |----profile
+|    |    |----rawfile
+|    |    |----resfile
+|    |----config.json/module.json
 ```
 
 ### 编译资源
@@ -215,29 +217,29 @@ dump命令参数列表：
 
 1、全量资源编译，命令如下：
 
-```
-1. restool -i entry/src/main -j entry/src/main/module.json -p com.ohos.demo -o out -r out/ResourceTable.txt -f
+```sh
+restool -i entry/src/main -j entry/src/main/module.json -p com.ohos.demo -o out -r out/ResourceTable.txt -f
 ```
 
 2、增量资源编译，具体步骤如下：
 
 步骤一：生成资源中间件，命令如下:
 
-```
-1. restool -x entry/src/main/resource -o out
+```sh
+restool -x entry/src/main/resource -o out
 ```
 
 步骤二：编译资源中间件，命令如下:
 
-```
-1. restool -i out1 -i out2 -o out -p com.ohos.demo -r out/ResourceTable.txt -j entry/src/main/module.json -f -z
+```sh
+restool -i out1 -i out2 -o out -p com.ohos.demo -r out/ResourceTable.txt -j entry/src/main/module.json -f -z
 ```
 
 3、叠加资源编译，命令如下：
 
-```
-1. # hapResource为解压后的HAP包路径
-2. restool -i entry/src/main -i hapResource -j entry/src/main/module.json -p com.ohos.demo -o out -r out/ResourceTable.txt -f
+```sh
+# hapResource为解压后的HAP包路径
+restool -i entry/src/main -i hapResource -j entry/src/main/module.json -p com.ohos.demo -o out -r out/ResourceTable.txt -f
 ```
 
 ### 固定资源ID
@@ -248,37 +250,37 @@ dump命令参数列表：
 
 * 方式一：通过命令行生成此文件，命令如下：
 
-```
-1. restool -i entry/src/main -j entry/src/main/module.json -p com.ohos.demo -o out -r out/ResourceTable.txt --ids out -f
+```sh
+restool -i entry/src/main -j entry/src/main/module.json -p com.ohos.demo -o out -r out/ResourceTable.txt --ids out -f
 ```
 
 * 方式二：自定义文件，文件名必须是id\_defined.json，文件内容如下：
 
-```
-1. {
-2. "record" :
-3. [
-4. {
-5. "id" : "0x01000000", // 资源需要固定的ID值
-6. "name" : "app_name", // 资源名称
-7. "type" : "string" // 资源类型
-8. }
-9. ]
-10. }
+```json5
+{
+    "record" :
+    [
+        {
+            "id" : "0x01000000", // 资源需要固定的ID值
+            "name" : "app_name", // 资源名称
+            "type" : "string" // 资源类型
+        }
+    ]
+}
 ```
 
 步骤二：完成资源ID固定。完成固定的方式有两种，通过命令一完成固定或者将自定义的id\_defined.json放在resource/base/element/目录下后通过命令二完成固定。
 
 * 命令一：
 
-```
-1. restool -i entry/src/main -j entry/src/main/module.json -p com.ohos.demo -o out1 -r out1/ResourceTable.txt --defined-ids out/id_defined.json -f
+```sh
+restool -i entry/src/main -j entry/src/main/module.json -p com.ohos.demo -o out1 -r out1/ResourceTable.txt --defined-ids out/id_defined.json -f
 ```
 
 * 命令二：
 
-```
-1. restool -i entry/src/main -j entry/src/main/module.json -p com.ohos.demo -o out1 -r out1/ResourceTable.txt  -f
+```sh
+restool -i entry/src/main -j entry/src/main/module.json -p com.ohos.demo -o out1 -r out1/ResourceTable.txt  -f
 ```
 
 ## restool工具错误码
@@ -447,7 +449,14 @@ Failed to create the directory or file 'xxx'.
 
 **处理步骤**
 
-检查文件路径是否准确且有访问权限。
+1. 检查文件路径是否准确。
+2. 检查文件权限。若文件权限为只读，修改文件权限为可读可写。具体操作如下：
+   * Windows：选中文件，点击鼠标右键，选择属性，取消勾选"只读"属性。
+   * Linux/MacOS：执行chmod命令"chmod 644 文件路径"。
+
+     **说明** 
+
+     若报错的文件路径为编译产物build目录下的路径，需先手动删除报错的文件，再修改其对应的源文件的权限。如报错路径为"entry\build\default\intermediates\res\default\resources\base\profile\form\_config.json"，则修改对应的源文件"entry\src\main\resources\base\profile\form\_config.json"的权限。
 
 ### 11204003 删除文件失败
 
@@ -465,7 +474,14 @@ Failed to delete the directory or file 'xxx'.
 
 **处理步骤**
 
-检查文件路径是否准确且有访问权限。
+1. 检查文件路径是否准确。
+2. 检查文件权限。若文件权限为只读，修改文件权限为可读可写。具体操作如下：
+   * Windows：选中文件，点击鼠标右键，选择属性，取消勾选"只读"属性。
+   * Linux/MacOS：执行chmod命令"chmod 644 文件路径"。
+
+     **说明** 
+
+     若报错的文件路径为编译产物build目录下的路径，需先手动删除报错的文件，再修改其对应的源文件的权限。如报错路径为"entry\build\default\intermediates\res\default\resources\base\profile\form\_config.json"，则修改对应的源文件"entry\src\main\resources\base\profile\form\_config.json"的权限。
 
 ### 11204004 拷贝文件失败
 
@@ -483,7 +499,14 @@ Failed to copy the file from 'xxx' to 'xxx'.
 
 **处理步骤**
 
-检查文件路径是否准确且有访问权限。
+1. 检查文件路径是否准确。
+2. 检查文件权限。若文件权限为只读，修改文件权限为可读可写。具体操作如下：
+   * Windows：选中文件，点击鼠标右键，选择属性，取消勾选"只读"属性。
+   * Linux/MacOS：执行chmod命令"chmod 644 文件路径"。
+
+     **说明** 
+
+     若报错的文件路径为编译产物build目录下的路径，需先手动删除报错的文件，再修改其对应的源文件的权限。如报错路径为"entry\build\default\intermediates\res\default\resources\base\profile\form\_config.json"，则修改对应的源文件"entry\src\main\resources\base\profile\form\_config.json"的权限。
 
 ### 11204005 打开文件失败
 
@@ -501,7 +524,14 @@ Failed to open the file 'xxx'.
 
 **处理步骤**
 
-检查文件路径是否准确且有访问权限。
+1. 检查文件路径是否准确。
+2. 检查文件权限。若文件权限为只读，修改文件权限为可读可写。具体操作如下：
+   * Windows：选中文件，点击鼠标右键，选择属性，取消勾选"只读"属性。
+   * Linux/MacOS：执行chmod命令"chmod 644 文件路径"。
+
+     **说明** 
+
+     若报错的文件路径为编译产物build目录下的路径，需先手动删除报错的文件，再修改其对应的源文件的权限。如报错路径为"entry\build\default\intermediates\res\default\resources\base\profile\form\_config.json"，则修改对应的源文件"entry\src\main\resources\base\profile\form\_config.json"的权限。
 
 ### 11204006 读取文件失败
 
@@ -729,7 +759,7 @@ The paths 'xxx' and 'xxx' of the module.json (in the stage model) or config.json
 
 **错误描述**
 
-应用配置文件[module.json（Stage模型）](module-configuration-file.md)或[config.json（FA模型）](application-configuration-file-overview-fa.md)的路径存在冲突。
+应用配置文件[module.json（Stage模型）](module-configuration-file.md)或[config.json（FA模型）](../lite-wearable-guides/application-configuration-file-overview-fa.md)的路径存在冲突。
 
 **可能原因**
 
@@ -1017,7 +1047,7 @@ There are multiple input paths, but the path of the module.json (in the stage mo
 
 **错误描述**
 
-缺少应用配置文件[module.json（Stage模型）](module-configuration-file.md)或[config.json（FA模型）](application-configuration-file-overview-fa.md)的路径。
+缺少应用配置文件[module.json（Stage模型）](module-configuration-file.md)或[config.json（FA模型）](../lite-wearable-guides/application-configuration-file-overview-fa.md)的路径。
 
 **可能原因**
 
@@ -1039,7 +1069,7 @@ Invalid module type 'xxx'. Valid values: ["entry", "har", "shared", "feature"].
 
 **可能原因**
 
-应用配置文件[module.json（Stage模型）](module-configuration-file.md)或[config.json（FA模型）](application-configuration-file-overview-fa.md)中指定的模块类型错误，取值不在["entry", "har", "shared", "feature"]范围内。
+应用配置文件[module.json（Stage模型）](module-configuration-file.md)或[config.json（FA模型）](../lite-wearable-guides/application-configuration-file-overview-fa.md)中指定的模块类型错误，取值不在["entry", "har", "shared", "feature"]范围内。
 
 **处理步骤**
 
@@ -1136,7 +1166,7 @@ The module name 'xxx' is not found in ["yyy","zzz"], which is specified by -m/--
 **可能原因**
 
 1. -m/--modules指定的模块名称列表错误。
-2. 应用配置文件[module.json（Stage模型）](module-configuration-file.md)或[config.json（FA模型）](application-configuration-file-overview-fa.md)中name指定的模块名称错误。
+2. 应用配置文件[module.json（Stage模型）](module-configuration-file.md)或[config.json（FA模型）](../lite-wearable-guides/application-configuration-file-overview-fa.md)中name指定的模块名称错误。
 
 **处理步骤**
 
@@ -1288,38 +1318,38 @@ theme资源的parent值为空。
 
 theme资源的parent属性是可选的，其值需配置为其他theme资源的名称，不能是空字符串。如下正确示例：
 
-```
-1. {
-2. "theme": [
-3. {
-4. "name": "base",
-5. "value": [
-6. {
-7. "name": "width",
-8. "value": "wrap_content"
-9. },
-10. {
-11. "name": "height",
-12. "value": "wrap_content"
-13. },
-14. {
-15. "name": "size",
-16. "value": "25dp"
-17. }
-18. ]
-19. },
-20. {
-21. "name": "child",
-22. "parent": "base",
-23. "value": [
-24. {
-25. "name": "noTitle",
-26. "value": "yes"
-27. }
-28. ]
-29. }
-30. ]
-31. }
+```json
+{
+  "theme": [
+    {
+      "name": "base",
+      "value": [
+        {
+          "name": "width",
+          "value": "wrap_content"
+        },
+        {
+          "name": "height",
+          "value": "wrap_content"
+        },
+        {
+          "name": "size",
+          "value": "25dp"
+        }
+      ]
+    },
+    {
+      "name": "child",
+      "parent": "base",
+      "value": [
+        {
+          "name": "noTitle",
+          "value": "yes"
+        }
+      ]
+    }
+  ]
+}
 ```
 
 其中声明了两个theme资源base和child，base不包含parent属性，child的parent配置为"base"。
@@ -1378,28 +1408,28 @@ Duplicated quantity 'xxx' of the plural resource 'xxx'.
 
 单复数资源中重复声明了相同的类别，如下错误示例中eat\_apple重复声明了类别one：
 
-```
-1. {
-2. "plural": [
-3. {
-4. "name": "eat_apple",
-5. "value": [
-6. {
-7. "quantity": "one",
-8. "value": "%d apple"
-9. },
-10. {
-11. "quantity": "one",
-12. "value": "%d apple"
-13. },
-14. {
-15. "quantity": "other",
-16. "value": "%d apples"
-17. }
-18. ]
-19. }
-20. ]
-21. }
+```json
+{
+  "plural": [
+    {
+      "name": "eat_apple",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "%d apple"
+        },
+        {
+          "quantity": "one",
+          "value": "%d apple"
+        },
+        {
+          "quantity": "other",
+          "value": "%d apples"
+        }
+      ]
+    }
+  ]
+}
 ```
 
 **处理步骤**

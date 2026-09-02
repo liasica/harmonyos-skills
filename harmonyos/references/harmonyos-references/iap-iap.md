@@ -3,12 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-iap
 title: IAP
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > ArkTS API > IAP
 category: harmonyos-references
-scraped_at: 2026-04-29T14:07:37+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:9a8819507f8ab1bdf7225f92d12957b46a42f3f0cbfc0c1ced235b2fa6143e09
+scraped_at: 2026-09-02T14:53:19+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6b4f3a335fb66433e11f6e3254657870f30ce98f079d5d784fc0c6ea7b482487
 ---
 
-本模块提供应用内支付的能力。
+应用内购买（In-App Purchase，IAP）模块为HarmonyOS应用提供数字商品（虚拟商品）的全链路支付能力，包括商品查询、购买、发货确认、订阅管理及退款等。
+
+当应用需要向用户销售虚拟商品（如游戏道具、会员权益）或提供订阅服务时，可接入本模块。在发起商品查询或购买前，建议先调用[iap.queryEnvironmentStatus](iap-iap.md#iapqueryenvironmentstatus)检查当前用户账号所在地区是否支持IAP服务，以避免后续流程异常。
+
+开发者可通过本模块实现以下功能：
+
+* 查询商品详情：获取商品名称、价格、描述等信息。
+* 发起购买：调起支付收银台完成商品购买。
+* 确认发货：在商品成功交付后调用接口完成交易确认。
+* 查询已购记录：获取用户当前已拥有的商品或权益。
+* 订阅管理：查看用户订阅列表、处理退订。
+* 退款申请：发起退款流程。
+* 沙盒测试：在沙盒环境下模拟支付流程，完成端到端测试。
 
 **模型约束：** 本模块接口仅可在Stage模型下使用。
 
@@ -16,21 +28,15 @@ content_hash: sha256:9a8819507f8ab1bdf7225f92d12957b46a42f3f0cbfc0c1ced235b2fa61
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { iap } from '@kit.IAPKit';
+```typescript
+import { iap } from '@kit.IAPKit';
 ```
 
 ## ProductType
 
-PhonePC/2in1TabletTVWearable
-
 商品类型。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Payment.IAP
 
@@ -38,14 +44,12 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| CONSUMABLE | 0 | 消耗型商品。 |
-| NONCONSUMABLE | 1 | 非消耗型商品。 |
-| AUTORENEWABLE | 2 | 自动续期订阅商品。  该属性不支持Wearable设备。  **起始版本：** 4.1.0(11) |
-| NONRENEWABLE | 3 | 非续期订阅商品。  该属性不支持Wearable设备。  **元服务API：** 从版本5.0.2(14)开始，该接口支持在元服务中使用。  **起始版本：** 5.0.2(14) |
+| CONSUMABLE | 0 | 消耗型商品。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| NONCONSUMABLE | 1 | 非消耗型商品。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| AUTORENEWABLE | 2 | 自动续期订阅商品。  该属性不支持Wearable设备。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。  **起始版本：** 4.1.0(11) |
+| NONRENEWABLE | 3 | 非续期订阅商品。  该属性不支持Wearable设备。  **元服务API：** 从API版本5.0.2(14)开始，该接口支持在元服务中使用。  **起始版本：** 5.0.2(14) |
 
 ## PurchaseQueryType
-
-PhonePC/2in1TabletTVWearable
 
 查询购买信息的类型。
 
@@ -64,8 +68,6 @@ PhonePC/2in1TabletTVWearable
 | CURRENT\_ENTITLEMENT | 2 | 已购非消耗型商品和当前生效的自动续期订阅商品。 |
 
 ## PeriodUnit
-
-PhonePC/2in1TabletTVWearable
 
 自动续期订阅商品的周期单位。
 
@@ -87,13 +89,9 @@ PhonePC/2in1TabletTVWearable
 
 ## OfferPaymentMode
 
-PhonePC/2in1TabletTVWearable
-
 促销的付费方式。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Payment.IAP
 
@@ -101,14 +99,12 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| FREE\_TRIAL | 1 | 免费试用。 |
-| PAY\_AS\_YOU\_GO | 2 | 随用随付。 |
-| PAY\_UP\_FRONT | 3 | 提前支付。 |
-| SINGLE\_PROMOTION | 5 | 单次优惠，仅适用于消耗型/非消耗型/非续期订阅商品。  **元服务API：** 从版本5.0.5(17)开始，该接口支持在元服务中使用。  **起始版本：** 5.0.5(17) |
+| FREE\_TRIAL | 1 | 免费试用。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| PAY\_AS\_YOU\_GO | 2 | 随用随付。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| PAY\_UP\_FRONT | 3 | 提前支付。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| SINGLE\_PROMOTION | 5 | 单次优惠，仅适用于消耗型/非消耗型/非续期订阅商品。  **元服务API：** 从API版本5.0.5(17)开始，该接口支持在元服务中使用。  **起始版本：** 5.0.5(17) |
 
 ## OfferType
-
-PhonePC/2in1TabletTVWearable
 
 促销类型。
 
@@ -127,13 +123,9 @@ PhonePC/2in1TabletTVWearable
 
 ## IAPErrorCode
 
-PhonePC/2in1TabletTVWearable
-
 错误码枚举。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Payment.IAP
 
@@ -141,31 +133,29 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| USER\_CANCELED | 1001860000 | 用户取消当前操作。 |
-| SYSTEM\_ERROR | 1001860001 | 通用失败错误码。 |
-| APP\_NOT\_AUTHORIZED | 1001860002 | 应用未被授权访问接口。 |
-| INVALID\_PRODUCT | 1001860003 | 无效的商品信息。 |
-| FREQUENT\_CALLS | 1001860004 | 接口访问过频。 |
-| NETWORK\_ERROR | 1001860005 | 网络连接异常。 |
-| PRODUCT\_TERRITORY\_NOT\_SUPPORTED | 1001860007 | 商品所属的应用未在指定国家/地区上架。 |
-| ACCOUNT\_NOT\_LOGGED\_IN | 1001860050 | 未登录华为账号。 |
-| PRODUCT\_OWNED | 1001860051 | 由于已经拥有该商品，购买失败。 |
-| PURCHASE\_NOT\_PAID | 1001860052 | 由于未拥有该商品，发货失败。 |
-| PURCHASE\_FINISHED | 1001860053 | 此次购买已经完成发货，无需重复发货。 |
-| ACCOUNT\_TERRITORY\_NOT\_SUPPORTED | 1001860054 | 用户账号所在服务地暂不支持IAP。 |
-| USER\_NOT\_ALLOWED | 1001860056 | 用户交易被拒绝。 |
-| APP\_NOT\_DEBUG | 1001860057 | 当前应用不是debug签名的应用。  **起始版本：** 5.0.0(12) |
-| ACCOUNT\_NOT\_TEST | 1001860058 | 华为账号不是沙盒测试账号。  **起始版本：** 5.0.0(12) |
-| INVALID\_PROMOTIONAL\_OFFER | 1001860059 | 无效的优惠信息。  **起始版本：** 5.0.0(12) |
-| INVALID\_PURCHASE\_SIGNATURE | 1001860060 | 无效的签名信息。  **起始版本：** 5.0.0(12) |
-| PURCHASE\_ALREADY\_REFUNDED | 1001860061 | 商品已退款或退款中。  **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。  **起始版本：** 5.0.3(15) |
-| REFUND\_NOT\_ALLOWED | 1001860062 | 不允许退款。  **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。  **起始版本：** 5.0.3(15) |
-| PURCHASE\_NOT\_FOUND | 1001860064 | 在登录的华为账号上找不到该笔订单。  **元服务API：** 从版本6.1.0(23)开始，该接口支持在元服务中使用。  **起始版本：** 6.1.0(23) |
-| OPERATION\_NOT\_SUPPORTED | 1001860065 | 不支持开票操作。  **元服务API：** 从版本6.1.0(23)开始，该接口支持在元服务中使用。  **起始版本：** 6.1.0(23) |
+| USER\_CANCELED | 1001860000 | 用户取消当前操作。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| SYSTEM\_ERROR | 1001860001 | 系统内部错误。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| APP\_NOT\_AUTHORIZED | 1001860002 | 应用未被授权访问接口。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| INVALID\_PRODUCT | 1001860003 | 无效的商品信息。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| FREQUENT\_CALLS | 1001860004 | 接口访问过频。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| NETWORK\_ERROR | 1001860005 | 网络连接异常。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| PRODUCT\_TERRITORY\_NOT\_SUPPORTED | 1001860007 | 商品所属的应用未在指定国家/地区上架。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| ACCOUNT\_NOT\_LOGGED\_IN | 1001860050 | 未登录华为账号。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| PRODUCT\_OWNED | 1001860051 | 由于已经拥有该商品，购买失败。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| PURCHASE\_NOT\_PAID | 1001860052 | 由于未拥有该商品，发货失败。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| PURCHASE\_FINISHED | 1001860053 | 此次购买已经完成发货，无需重复发货。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| ACCOUNT\_TERRITORY\_NOT\_SUPPORTED | 1001860054 | 用户账号所在服务地暂不支持IAP。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| USER\_NOT\_ALLOWED | 1001860056 | 用户交易被拒绝。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| APP\_NOT\_DEBUG | 1001860057 | 当前应用不是debug签名的应用。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。  **起始版本：** 5.0.0(12) |
+| ACCOUNT\_NOT\_TEST | 1001860058 | 华为账号不是沙盒测试账号。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。  **起始版本：** 5.0.0(12) |
+| INVALID\_PROMOTIONAL\_OFFER | 1001860059 | 无效的优惠信息。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。  **起始版本：** 5.0.0(12) |
+| INVALID\_PURCHASE\_SIGNATURE | 1001860060 | 无效的签名信息。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。  **起始版本：** 5.0.0(12) |
+| PURCHASE\_ALREADY\_REFUNDED | 1001860061 | 商品已退款或退款中。  **元服务API：** 从API版本5.0.3(15)开始，该接口支持在元服务中使用。  **起始版本：** 5.0.3(15) |
+| REFUND\_NOT\_ALLOWED | 1001860062 | 不允许退款。  **元服务API：** 从API版本5.0.3(15)开始，该接口支持在元服务中使用。  **起始版本：** 5.0.3(15) |
+| PURCHASE\_NOT\_FOUND | 1001860064 | 在登录的华为账号上找不到该笔订单。  **元服务API：** 从API版本6.1.0(23)开始，该接口支持在元服务中使用。  **起始版本：** 6.1.0(23) |
+| OPERATION\_NOT\_SUPPORTED | 1001860065 | 不支持开票操作。  **元服务API：** 从API版本6.1.0(23)开始，该接口支持在元服务中使用。  **起始版本：** 6.1.0(23) |
 
 ## WindowScreenMode
-
-PhonePC/2in1TabletTVWearable
 
 界面窗口模式。
 
@@ -184,8 +174,6 @@ PhonePC/2in1TabletTVWearable
 
 ## ProductStatus
 
-PhonePC/2in1TabletTVWearable
-
 商品状态枚举。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -203,8 +191,6 @@ PhonePC/2in1TabletTVWearable
 | OFFLINE | 3 | 下线状态，不能订阅，但老用户仍可续订。 |
 
 ## iap.queryEnvironmentStatus
-
-PhonePC/2in1TabletTVWearable
 
 queryEnvironmentStatus(context: common.Context): Promise<void>
 
@@ -234,15 +220,15 @@ queryEnvironmentStatus(context: common.Context): Promise<void>
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-iap.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
-| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities.  **适用版本：** 6.1.0(23)+ |
 | 1001860000 | The operation was canceled by the user. |
 | 1001860001 | System internal error. |
-| 1001860002 | The application is not authorized. |
+| 1001860002 | The application is not authorized.  **适用版本：** 5.0.0(12)+ |
 | 1001860004 | Too frequent API calls. |
 | 1001860005 | Network connection error. |
 | 1001860050 | The HUAWEI ID is not signed in. |
@@ -250,31 +236,29 @@ queryEnvironmentStatus(context: common.Context): Promise<void>
 
 **示例**：
 
-```
-1. import { iap } from '@kit.IAPKit';
-2. import { common } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { iap } from '@kit.IAPKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. test() {
-9. iap.queryEnvironmentStatus(this.getUIContext().getHostContext() as common.UIAbilityContext).then(() => {
-10. // 请求成功
-11. console.info('Succeeded in querying environment status.');
-12. }).catch((err: BusinessError) => {
-13. // 请求失败
-14. console.error(`Failed to query environment status. Code is ${err.code}, message is ${err.message}`);
-15. });
-16. }
+@Entry
+@Component
+struct Index {
+    test() {
+        iap.queryEnvironmentStatus(this.getUIContext().getHostContext() as common.UIAbilityContext).then(() => {
+            // 请求成功
+            console.info('Succeeded in querying environment status.');
+        }).catch((err: BusinessError) => {
+            // 请求失败
+            console.error(`Failed to query environment status. Code is ${err.code}, message is ${err.message}`);
+        });
+    }
 
-18. build() {}
-19. }
+    build() {}
+}
 ```
 
 ## iap.queryEnvironmentStatus
-
-PhonePC/2in1TabletTVWearable
 
 queryEnvironmentStatus(context: common.Context, callback: AsyncCallback<void>): void
 
@@ -297,12 +281,12 @@ queryEnvironmentStatus(context: common.Context, callback: AsyncCallback<void>): 
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-iap.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
-| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities.  **适用版本：** 6.1.0(23)+ |
 | 1001860000 | The operation was canceled by the user. |
 | 1001860001 | System internal error. |
 | 1001860004 | Too frequent API calls. |
@@ -312,33 +296,31 @@ queryEnvironmentStatus(context: common.Context, callback: AsyncCallback<void>): 
 
 **示例**：
 
-```
-1. import { iap } from '@kit.IAPKit';
-2. import { common } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { iap } from '@kit.IAPKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. test() {
-9. iap.queryEnvironmentStatus(this.getUIContext().getHostContext() as common.UIAbilityContext, (err: BusinessError) => {
-10. if (err) {
-11. // 请求失败
-12. console.error(`Failed to query environment status. Code is ${err.code}, message is ${err.message}`);
-13. return;
-14. }
-15. // 请求成功
-16. console.info('Succeeded in querying environment status.');
-17. });
-18. }
+@Entry
+@Component
+struct Index {
+    test() {
+        iap.queryEnvironmentStatus(this.getUIContext().getHostContext() as common.UIAbilityContext, (err: BusinessError) => {
+            if (err) {
+                // 请求失败
+                console.error(`Failed to query environment status. Code is ${err.code}, message is ${err.message}`);
+                return;
+            }
+            // 请求成功
+            console.info('Succeeded in querying environment status.');
+        });
+    }
 
-20. build() {}
-21. }
+    build() {}
+}
 ```
 
 ## iap.queryProducts
-
-PhonePC/2in1TabletTVWearable
 
 queryProducts(context: common.UIAbilityContext, parameter: QueryProductsParameter): Promise<Array<Product>>
 
@@ -367,12 +349,12 @@ queryProducts(context: common.UIAbilityContext, parameter: QueryProductsParamete
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-iap.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
-| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities.  **适用版本：** 6.1.0(23)+ |
 | 1001860001 | System internal error. |
 | 1001860002 | The application is not authorized. |
 | 1001860003 | Invalid product information. |
@@ -384,40 +366,38 @@ queryProducts(context: common.UIAbilityContext, parameter: QueryProductsParamete
 
 **示例**：
 
-```
-1. import { iap } from '@kit.IAPKit';
-2. import { common } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { iap } from '@kit.IAPKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. test() {
-9. const parameter: iap.QueryProductsParameter = {
-10. // iap.ProductType.CONSUMABLE：消耗型商品
-11. // iap.ProductType.NONCONSUMABLE：非消耗型商品
-12. // iap.ProductType.AUTORENEWABLE：自动续期订阅商品
-13. // iap.ProductType.NONRENEWABLE：非续期订阅商品
-14. productType: iap.ProductType.CONSUMABLE,
-15. // productIds中的商品需要替换成开发者在AppGallery Connect网站配置的商品
-16. productIds: ['testConsumeProduct01', 'testConsumeProduct02']
-17. }
-18. iap.queryProducts(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter).then((data: Array<iap.Product>) => {
-19. // 请求成功
-20. console.info(`Succeeded in querying products. data length: ${data?.length}`);
-21. }).catch((err: BusinessError) => {
-22. // 请求失败
-23. console.error(`Failed to query products. Code is ${err.code}, message is ${err.message}`);
-24. });
-25. }
+@Entry
+@Component
+struct Index {
+    test() {
+        const parameter: iap.QueryProductsParameter = {
+            // iap.ProductType.CONSUMABLE：消耗型商品
+            // iap.ProductType.NONCONSUMABLE：非消耗型商品
+            // iap.ProductType.AUTORENEWABLE：自动续期订阅商品
+            // iap.ProductType.NONRENEWABLE：非续期订阅商品
+            productType: iap.ProductType.CONSUMABLE,
+            // productIds中的商品需要替换成开发者在AppGallery Connect网站配置的商品
+            productIds: ['testConsumeProduct01', 'testConsumeProduct02']
+        }
+        iap.queryProducts(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter).then((data: Array<iap.Product>) => {
+            // 请求成功
+            console.info(`Succeeded in querying products. data length: ${data?.length}`);
+        }).catch((err: BusinessError) => {
+            // 请求失败
+            console.error(`Failed to query products. Code is ${err.code}, message is ${err.message}`);
+        });
+    }
 
-27. build() {}
-28. }
+    build() {}
+}
 ```
 
 ## iap.queryProducts
-
-PhonePC/2in1TabletTVWearable
 
 queryProducts(context: common.UIAbilityContext, parameter: QueryProductsParameter, callback: AsyncCallback<Array<Product>>): void
 
@@ -439,12 +419,12 @@ queryProducts(context: common.UIAbilityContext, parameter: QueryProductsParamete
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-iap.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
-| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities.  **适用版本：** 6.1.0(23)+ |
 | 1001860001 | System internal error. |
 | 1001860002 | The application is not authorized. |
 | 1001860003 | Invalid product information. |
@@ -456,42 +436,40 @@ queryProducts(context: common.UIAbilityContext, parameter: QueryProductsParamete
 
 **示例**：
 
-```
-1. import { iap } from '@kit.IAPKit';
-2. import { common } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { iap } from '@kit.IAPKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. test() {
-9. const parameter: iap.QueryProductsParameter = {
-10. // iap.ProductType.CONSUMABLE：消耗型商品
-11. // iap.ProductType.NONCONSUMABLE：非消耗型商品
-12. // iap.ProductType.AUTORENEWABLE：自动续期订阅商品
-13. // iap.ProductType.NONRENEWABLE：非续期订阅商品
-14. productType: iap.ProductType.CONSUMABLE,
-15. // productIds中的商品需要替换成开发者在AppGallery Connect网站配置的商品
-16. productIds: ['testConsumeProduct01', 'testConsumeProduct02']
-17. }
-18. iap.queryProducts(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter, (err: BusinessError, data: Array<iap.Product>) => {
-19. if (err) {
-20. // 请求失败
-21. console.error(`Failed to query products. Code is ${err.code}, message is ${err.message}`);
-22. return;
-23. }
-24. // 请求成功
-25. console.info(`Succeeded in querying products. data length: ${data?.length}`);
-26. });
-27. }
+@Entry
+@Component
+struct Index {
+    test() {
+        const parameter: iap.QueryProductsParameter = {
+            // iap.ProductType.CONSUMABLE：消耗型商品
+            // iap.ProductType.NONCONSUMABLE：非消耗型商品
+            // iap.ProductType.AUTORENEWABLE：自动续期订阅商品
+            // iap.ProductType.NONRENEWABLE：非续期订阅商品
+            productType: iap.ProductType.CONSUMABLE,
+            // productIds中的商品需要替换成开发者在AppGallery Connect网站配置的商品
+            productIds: ['testConsumeProduct01', 'testConsumeProduct02']
+        }
+        iap.queryProducts(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter, (err: BusinessError, data: Array<iap.Product>) => {
+            if (err) {
+                // 请求失败
+                console.error(`Failed to query products. Code is ${err.code}, message is ${err.message}`);
+                return;
+            }
+            // 请求成功
+            console.info(`Succeeded in querying products. data length: ${data?.length}`);
+        });
+    }
 
-29. build() {}
-30. }
+    build() {}
+}
 ```
 
 ## iap.queryProducts
-
-PhonePC/2in1TabletTVWearable
 
 queryProducts(context: common.UIAbilityContext, productIds: string[]): Promise<Array<Product>>
 
@@ -520,11 +498,11 @@ queryProducts(context: common.UIAbilityContext, productIds: string[]): Promise<A
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-iap.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities.  **适用版本：** 6.1.0(23)+ |
 | 1001860001 | System internal error. |
 | 1001860002 | The application is not authorized. |
 | 1001860003 | Invalid product information. |
@@ -536,33 +514,31 @@ queryProducts(context: common.UIAbilityContext, productIds: string[]): Promise<A
 
 **示例**：
 
-```
-1. import { iap } from '@kit.IAPKit';
-2. import { common } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { iap } from '@kit.IAPKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. test() {
-9. // productIds中的商品需要替换成开发者在AppGallery Connect网站配置的商品
-10. const productIds: string[] = ['testConsumeProduct01', 'testConsumeProduct02'];
-11. iap.queryProducts(this.getUIContext().getHostContext() as common.UIAbilityContext, productIds).then((data: Array<iap.Product>) => {
-12. // 请求成功
-13. console.info(`Succeeded in querying products. data length: ${data?.length}`);
-14. }).catch((err: BusinessError) => {
-15. // 请求失败
-16. console.error(`Failed to query products. Code is ${err.code}, message is ${err.message}`);
-17. })
-18. }
+@Entry
+@Component
+struct Index {
+    test() {
+        // productIds中的商品需要替换成开发者在AppGallery Connect网站配置的商品
+        const productIds: string[] = ['testConsumeProduct01', 'testConsumeProduct02'];
+        iap.queryProducts(this.getUIContext().getHostContext() as common.UIAbilityContext, productIds).then((data: Array<iap.Product>) => {
+            // 请求成功
+            console.info(`Succeeded in querying products. data length: ${data?.length}`);
+        }).catch((err: BusinessError) => {
+            // 请求失败
+            console.error(`Failed to query products. Code is ${err.code}, message is ${err.message}`);
+        })
+    }
 
-20. build() {}
-21. }
+    build() {}
+}
 ```
 
 ## iap.purchase(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 purchase(context: common.UIAbilityContext, parameter: PurchaseParameter): Promise<PurchaseResult>
 
@@ -595,7 +571,7 @@ purchase(context: common.UIAbilityContext, parameter: PurchaseParameter): Promis
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-iap.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -613,39 +589,37 @@ purchase(context: common.UIAbilityContext, parameter: PurchaseParameter): Promis
 
 **示例**：
 
-```
-1. import { iap } from '@kit.IAPKit';
-2. import { common } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { iap } from '@kit.IAPKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. test() {
-9. const parameter: iap.PurchaseParameter = {
-10. // iap.ProductType.CONSUMABLE：消耗型商品
-11. // iap.ProductType.NONCONSUMABLE：非消耗型商品
-12. productType: iap.ProductType.CONSUMABLE,
-13. // productId需要替换成开发者在AppGallery Connect网站配置商品信息时设置的“商品ID”
-14. productId: 'testConsumeProduct01',
-15. developerPayload: 'test developer payload string.'
-16. }
-17. iap.purchase(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter).then((data: iap.PurchaseResult) => {
-18. // 请求成功
-19. console.info(`Succeeded in purchasing. data: ${data.inAppPurchaseData}`);
-20. }).catch((err: BusinessError) => {
-21. // 请求失败
-22. console.error(`Failed to purchase. Code is ${err.code}, message is ${err.message}`);
-23. });
-24. }
+@Entry
+@Component
+struct Index {
+    test() {
+        const parameter: iap.PurchaseParameter = {
+            // iap.ProductType.CONSUMABLE：消耗型商品
+            // iap.ProductType.NONCONSUMABLE：非消耗型商品
+            productType: iap.ProductType.CONSUMABLE,
+            // productId需要替换成开发者在AppGallery Connect网站配置商品信息时设置的“商品ID”
+            productId: 'testConsumeProduct01',
+            developerPayload: 'test developer payload string.'
+        }
+        iap.purchase(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter).then((data: iap.PurchaseResult) => {
+            // 请求成功
+            console.info(`Succeeded in purchasing. data: ${data.inAppPurchaseData}`);
+        }).catch((err: BusinessError) => {
+            // 请求失败
+            console.error(`Failed to purchase. Code is ${err.code}, message is ${err.message}`);
+        });
+    }
 
-26. build() {}
-27. }
+    build() {}
+}
 ```
 
 ## iap.purchase(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 purchase(context: common.UIAbilityContext, parameter: PurchaseParameter, callback: AsyncCallback<PurchaseResult>): void
 
@@ -659,7 +633,7 @@ purchase(context: common.UIAbilityContext, parameter: PurchaseParameter, callbac
 
 **系统能力：** SystemCapability.Payment.IAP
 
-**设备行为差异：** 该接口在Phone、Tablet、2in1设备中可正常调用，在其他设备中返回1001860001错误码。
+**设备行为差异：** 该接口在Phone、Tablet、2in1设备中可正常调用，在其他设备中无响应。
 
 **起始版本：** 4.0.0(10)
 
@@ -673,7 +647,7 @@ purchase(context: common.UIAbilityContext, parameter: PurchaseParameter, callbac
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-iap.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -691,41 +665,39 @@ purchase(context: common.UIAbilityContext, parameter: PurchaseParameter, callbac
 
 **示例**：
 
-```
-1. import { iap } from '@kit.IAPKit';
-2. import { common } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { iap } from '@kit.IAPKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. test() {
-9. const parameter: iap.PurchaseParameter = {
-10. // iap.ProductType.CONSUMABLE：消耗型商品
-11. // iap.ProductType.NONCONSUMABLE：非消耗型商品
-12. productType: iap.ProductType.CONSUMABLE,
-13. // productId需要替换成开发者在AppGallery Connect网站配置商品信息时设置的“商品ID”
-14. productId: 'testConsumeProduct01',
-15. developerPayload: 'test developer payload string.'
-16. }
-17. iap.purchase(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter, (err: BusinessError, data: iap.PurchaseResult) => {
-18. if (err) {
-19. // 请求失败
-20. console.error(`Failed to purchase. Code is ${err.code}, message is ${err.message}`);
-21. return;
-22. }
-23. // 请求成功
-24. console.info(`Succeeded in purchasing. data: ${data.inAppPurchaseData}`);
-25. });
-26. }
+@Entry
+@Component
+struct Index {
+    test() {
+        const parameter: iap.PurchaseParameter = {
+            // iap.ProductType.CONSUMABLE：消耗型商品
+            // iap.ProductType.NONCONSUMABLE：非消耗型商品
+            productType: iap.ProductType.CONSUMABLE,
+            // productId需要替换成开发者在AppGallery Connect网站配置商品信息时设置的“商品ID”
+            productId: 'testConsumeProduct01',
+            developerPayload: 'test developer payload string.'
+        }
+        iap.purchase(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter, (err: BusinessError, data: iap.PurchaseResult) => {
+            if (err) {
+                // 请求失败
+                console.error(`Failed to purchase. Code is ${err.code}, message is ${err.message}`);
+                return;
+            }
+            // 请求成功
+            console.info(`Succeeded in purchasing. data: ${data.inAppPurchaseData}`);
+        });
+    }
 
-28. build() {}
-29. }
+    build() {}
+}
 ```
 
 ## iap.createPurchase
-
-PhonePC/2in1TabletTVWearable
 
 createPurchase(context: common.UIAbilityContext, parameter: PurchaseParameter): Promise<CreatePurchaseResult>
 
@@ -756,12 +728,12 @@ createPurchase(context: common.UIAbilityContext, parameter: PurchaseParameter): 
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-iap.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
-| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities.  **适用版本：** 6.1.0(23)+ |
 | 1001860000 | The operation was canceled by the user. |
 | 1001860001 | System internal error. |
 | 1001860002 | The application is not authorized. |
@@ -772,46 +744,44 @@ createPurchase(context: common.UIAbilityContext, parameter: PurchaseParameter): 
 | 1001860051 | Failed to purchase a product because the user already owns the product. |
 | 1001860054 | The country or region of the signed-in HUAWEI ID does not support IAP. |
 | 1001860056 | The user is not allowed to make purchase. |
-| 1001860059 | Invalid promotional offer id. |
-| 1001860060 | Invalid purchase signature. |
+| 1001860059 | Invalid promotional offer id.  **适用版本：** 5.0.0(12)+ |
+| 1001860060 | Invalid purchase signature.  **适用版本：** 5.0.0(12)+ |
 
 **示例**：
 
-```
-1. import { iap } from '@kit.IAPKit';
-2. import { common } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { iap } from '@kit.IAPKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. test() {
-9. const parameter: iap.PurchaseParameter = {
-10. // iap.ProductType.CONSUMABLE：消耗型商品
-11. // iap.ProductType.NONCONSUMABLE：非消耗型商品
-12. // iap.ProductType.AUTORENEWABLE：自动续期订阅商品
-13. // iap.ProductType.NONRENEWABLE：非续期订阅商品
-14. productType: iap.ProductType.AUTORENEWABLE,
-15. // productId需要替换成开发者在AppGallery Connect网站配置商品信息时设置的“商品ID”
-16. productId: 'testProduct01',
-17. developerPayload: 'test developer payload string.'
-18. }
-19. iap.createPurchase(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter).then((data: iap.CreatePurchaseResult) => {
-20. // 请求成功
-21. console.info(`Succeeded in creating purchase. data: ${data.purchaseData}`);
-22. }).catch((err: BusinessError) => {
-23. // 请求失败
-24. console.error(`Failed to create purchase. Code is ${err.code}, message is ${err.message}`);
-25. });
-26. }
+@Entry
+@Component
+struct Index {
+    test() {
+        const parameter: iap.PurchaseParameter = {
+            // iap.ProductType.CONSUMABLE：消耗型商品
+            // iap.ProductType.NONCONSUMABLE：非消耗型商品
+            // iap.ProductType.AUTORENEWABLE：自动续期订阅商品
+            // iap.ProductType.NONRENEWABLE：非续期订阅商品
+            productType: iap.ProductType.AUTORENEWABLE,
+            // productId需要替换成开发者在AppGallery Connect网站配置商品信息时设置的“商品ID”
+            productId: 'testProduct01',
+            developerPayload: 'test developer payload string.'
+        }
+        iap.createPurchase(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter).then((data: iap.CreatePurchaseResult) => {
+            // 请求成功
+            console.info(`Succeeded in creating purchase. data: ${data.purchaseData}`);
+        }).catch((err: BusinessError) => {
+            // 请求失败
+            console.error(`Failed to create purchase. Code is ${err.code}, message is ${err.message}`);
+        });
+    }
 
-28. build() {}
-29. }
+    build() {}
+}
 ```
 
 ## iap.createPurchase
-
-PhonePC/2in1TabletTVWearable
 
 createPurchase(context: common.UIAbilityContext, parameter: PurchaseParameter, callback: AsyncCallback<CreatePurchaseResult>): void
 
@@ -835,12 +805,12 @@ createPurchase(context: common.UIAbilityContext, parameter: PurchaseParameter, c
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-iap.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
-| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities.  **适用版本：** 6.1.0(23)+ |
 | 1001860000 | The operation was canceled by the user. |
 | 1001860001 | System internal error. |
 | 1001860002 | The application is not authorized. |
@@ -851,48 +821,46 @@ createPurchase(context: common.UIAbilityContext, parameter: PurchaseParameter, c
 | 1001860051 | Failed to purchase a product because the user already owns the product. |
 | 1001860054 | The country or region of the signed-in HUAWEI ID does not support IAP. |
 | 1001860056 | The user is not allowed to make purchase. |
-| 1001860059 | Invalid promotional offer id. |
-| 1001860060 | Invalid purchase signature. |
+| 1001860059 | Invalid promotional offer id.  **适用版本：** 5.0.0(12)+ |
+| 1001860060 | Invalid purchase signature.  **适用版本：** 5.0.0(12)+ |
 
 **示例**：
 
-```
-1. import { iap } from '@kit.IAPKit';
-2. import { common } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { iap } from '@kit.IAPKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. test() {
-9. const parameter: iap.PurchaseParameter = {
-10. // iap.ProductType.CONSUMABLE：消耗型商品
-11. // iap.ProductType.NONCONSUMABLE：非消耗型商品
-12. // iap.ProductType.AUTORENEWABLE：自动续期订阅商品
-13. // iap.ProductType.NONRENEWABLE：非续期订阅商品
-14. productType: iap.ProductType.AUTORENEWABLE,
-15. // productId需要替换成开发者在AppGallery Connect网站配置商品信息时设置的“商品ID”
-16. productId: 'testProduct01',
-17. developerPayload: 'test developer payload string.'
-18. }
-19. iap.createPurchase(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter, (err: BusinessError, data: iap.CreatePurchaseResult) => {
-20. if (err) {
-21. // 请求失败
-22. console.error(`Failed to create purchase. Code is ${err.code}, message is ${err.message}`);
-23. return;
-24. }
-25. // 请求成功
-26. console.info(`Succeeded in creating purchase. data: ${data.purchaseData}`);
-27. });
-28. }
+@Entry
+@Component
+struct Index {
+    test() {
+        const parameter: iap.PurchaseParameter = {
+            // iap.ProductType.CONSUMABLE：消耗型商品
+            // iap.ProductType.NONCONSUMABLE：非消耗型商品
+            // iap.ProductType.AUTORENEWABLE：自动续期订阅商品
+            // iap.ProductType.NONRENEWABLE：非续期订阅商品
+            productType: iap.ProductType.AUTORENEWABLE,
+            // productId需要替换成开发者在AppGallery Connect网站配置商品信息时设置的“商品ID”
+            productId: 'testProduct01',
+            developerPayload: 'test developer payload string.'
+        }
+        iap.createPurchase(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter, (err: BusinessError, data: iap.CreatePurchaseResult) => {
+            if (err) {
+                // 请求失败
+                console.error(`Failed to create purchase. Code is ${err.code}, message is ${err.message}`);
+                return;
+            }
+            // 请求成功
+            console.info(`Succeeded in creating purchase. data: ${data.purchaseData}`);
+        });
+    }
 
-30. build() {}
-31. }
+    build() {}
+}
 ```
 
 ## iap.consumePurchase(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 consumePurchase(context: common.UIAbilityContext, parameter: ConsumePurchaseParameter): Promise<ConsumeResult>
 
@@ -923,7 +891,7 @@ consumePurchase(context: common.UIAbilityContext, parameter: ConsumePurchasePara
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-iap.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -940,35 +908,33 @@ consumePurchase(context: common.UIAbilityContext, parameter: ConsumePurchasePara
 
 **示例**：
 
-```
-1. import { iap } from '@kit.IAPKit';
-2. import { common } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { iap } from '@kit.IAPKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. test() {
-9. const parameter: iap.ConsumePurchaseParameter = {
-10. purchaseToken: '***',
-11. developerChallenge: 'developerChallenge'
-12. }
-13. iap.consumePurchase(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter).then((data: iap.ConsumeResult) => {
-14. // 请求成功
-15. console.info(`Succeeded in consuming purchases. data: ${data.consumedPurchaseData}`);
-16. }).catch((err: BusinessError) => {
-17. // 请求失败
-18. console.error(`Failed to consume purchase. Code is ${err.code}, message is ${err.message}`);
-19. });
-20. }
+@Entry
+@Component
+struct Index {
+    test() {
+        const parameter: iap.ConsumePurchaseParameter = {
+            purchaseToken: '***',
+            developerChallenge: 'developerChallenge'
+        }
+        iap.consumePurchase(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter).then((data: iap.ConsumeResult) => {
+            // 请求成功
+            console.info(`Succeeded in consuming purchases. data: ${data.consumedPurchaseData}`);
+        }).catch((err: BusinessError) => {
+            // 请求失败
+            console.error(`Failed to consume purchase. Code is ${err.code}, message is ${err.message}`);
+        });
+    }
 
-22. build() {}
-23. }
+    build() {}
+}
 ```
 
 ## iap.consumePurchase(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 consumePurchase(context: common.UIAbilityContext, parameter: ConsumePurchaseParameter, callback: AsyncCallback<ConsumeResult>): void
 
@@ -994,7 +960,7 @@ consumePurchase(context: common.UIAbilityContext, parameter: ConsumePurchasePara
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-iap.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1011,37 +977,35 @@ consumePurchase(context: common.UIAbilityContext, parameter: ConsumePurchasePara
 
 **示例**：
 
-```
-1. import { iap } from '@kit.IAPKit';
-2. import { common } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { iap } from '@kit.IAPKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. test() {
-9. const parameter: iap.ConsumePurchaseParameter = {
-10. purchaseToken: '***',
-11. developerChallenge: 'developerChallenge'
-12. }
-13. iap.consumePurchase(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter, (err: BusinessError, data: iap.ConsumeResult) => {
-14. if (err) {
-15. // 请求失败
-16. console.error(`Failed to consume purchase. Code is ${err.code}, message is ${err.message}`);
-17. return;
-18. }
-19. // 请求成功
-20. console.info(`Succeeded in consuming purchases. data: ${data.consumedPurchaseData}`);
-21. });
-22. }
+@Entry
+@Component
+struct Index {
+    test() {
+        const parameter: iap.ConsumePurchaseParameter = {
+            purchaseToken: '***',
+            developerChallenge: 'developerChallenge'
+        }
+        iap.consumePurchase(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter, (err: BusinessError, data: iap.ConsumeResult) => {
+            if (err) {
+                // 请求失败
+                console.error(`Failed to consume purchase. Code is ${err.code}, message is ${err.message}`);
+                return;
+            }
+            // 请求成功
+            console.info(`Succeeded in consuming purchases. data: ${data.consumedPurchaseData}`);
+        });
+    }
 
-24. build() {}
-25. }
+    build() {}
+}
 ```
 
 ## iap.finishPurchase
-
-PhonePC/2in1TabletTVWearable
 
 finishPurchase(context: common.UIAbilityContext, parameter: FinishPurchaseParameter): Promise<void>
 
@@ -1070,12 +1034,12 @@ finishPurchase(context: common.UIAbilityContext, parameter: FinishPurchaseParame
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-iap.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
-| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities.  **适用版本：** 6.1.0(23)+ |
 | 1001860001 | System internal error. |
 | 1001860002 | The application is not authorized. |
 | 1001860004 | Too frequent API calls. |
@@ -1087,40 +1051,38 @@ finishPurchase(context: common.UIAbilityContext, parameter: FinishPurchaseParame
 
 **示例**：
 
-```
-1. import { iap } from '@kit.IAPKit';
-2. import { common } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { iap } from '@kit.IAPKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. test() {
-9. const finishPurchaseParam: iap.FinishPurchaseParameter = {
-10. // iap.ProductType.CONSUMABLE：消耗型商品
-11. // iap.ProductType.NONCONSUMABLE：非消耗型商品
-12. // iap.ProductType.AUTORENEWABLE：自动续期订阅商品
-13. // iap.ProductType.NONRENEWABLE：非续期订阅商品
-14. productType: iap.ProductType.CONSUMABLE,
-15. purchaseToken: '***',
-16. purchaseOrderId: '***'
-17. };
-18. iap.finishPurchase(this.getUIContext().getHostContext() as common.UIAbilityContext, finishPurchaseParam).then(() => {
-19. // 请求成功
-20. console.info('Succeeded in finishing purchase.');
-21. }).catch((err: BusinessError) => {
-22. // 请求失败
-23. console.error(`Failed to finish purchase. Code is ${err.code}, message is ${err.message}`);
-24. });
-25. }
+@Entry
+@Component
+struct Index {
+    test() {
+        const finishPurchaseParam: iap.FinishPurchaseParameter = {
+            // iap.ProductType.CONSUMABLE：消耗型商品
+            // iap.ProductType.NONCONSUMABLE：非消耗型商品
+            // iap.ProductType.AUTORENEWABLE：自动续期订阅商品
+            // iap.ProductType.NONRENEWABLE：非续期订阅商品
+            productType: iap.ProductType.CONSUMABLE,
+            purchaseToken: '***',
+            purchaseOrderId: '***'
+        };
+        iap.finishPurchase(this.getUIContext().getHostContext() as common.UIAbilityContext, finishPurchaseParam).then(() => {
+            // 请求成功
+            console.info('Succeeded in finishing purchase.');
+        }).catch((err: BusinessError) => {
+            // 请求失败
+            console.error(`Failed to finish purchase. Code is ${err.code}, message is ${err.message}`);
+        });
+    }
 
-27. build() {}
-28. }
+    build() {}
+}
 ```
 
 ## iap.finishPurchase
-
-PhonePC/2in1TabletTVWearable
 
 finishPurchase(context: common.UIAbilityContext, parameter: FinishPurchaseParameter, callback: AsyncCallback<void>): void
 
@@ -1142,12 +1104,12 @@ finishPurchase(context: common.UIAbilityContext, parameter: FinishPurchaseParame
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-iap.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
-| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities.  **适用版本：** 6.1.0(23)+ |
 | 1001860001 | System internal error. |
 | 1001860002 | The application is not authorized. |
 | 1001860004 | Too frequent API calls. |
@@ -1159,42 +1121,40 @@ finishPurchase(context: common.UIAbilityContext, parameter: FinishPurchaseParame
 
 **示例**：
 
-```
-1. import { iap } from '@kit.IAPKit';
-2. import { common } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { iap } from '@kit.IAPKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. test() {
-9. const finishPurchaseParam: iap.FinishPurchaseParameter = {
-10. // iap.ProductType.CONSUMABLE：消耗型商品
-11. // iap.ProductType.NONCONSUMABLE：非消耗型商品
-12. // iap.ProductType.AUTORENEWABLE：自动续期订阅商品
-13. // iap.ProductType.NONRENEWABLE：非续期订阅商品
-14. productType: iap.ProductType.CONSUMABLE,
-15. purchaseToken: '***',
-16. purchaseOrderId: '***'
-17. };
-18. iap.finishPurchase(this.getUIContext().getHostContext() as common.UIAbilityContext, finishPurchaseParam, (err: BusinessError) => {
-19. if (err) {
-20. // 请求失败
-21. console.error(`Failed to finish purchase. Code is ${err.code}, message is ${err.message}`);
-22. return;
-23. }
-24. // 请求成功
-25. console.info('Succeeded in finishing purchase.');
-26. });
-27. }
+@Entry
+@Component
+struct Index {
+    test() {
+        const finishPurchaseParam: iap.FinishPurchaseParameter = {
+            // iap.ProductType.CONSUMABLE：消耗型商品
+            // iap.ProductType.NONCONSUMABLE：非消耗型商品
+            // iap.ProductType.AUTORENEWABLE：自动续期订阅商品
+            // iap.ProductType.NONRENEWABLE：非续期订阅商品
+            productType: iap.ProductType.CONSUMABLE,
+            purchaseToken: '***',
+            purchaseOrderId: '***'
+        };
+        iap.finishPurchase(this.getUIContext().getHostContext() as common.UIAbilityContext, finishPurchaseParam, (err: BusinessError) => {
+            if (err) {
+                // 请求失败
+                console.error(`Failed to finish purchase. Code is ${err.code}, message is ${err.message}`);
+                return;
+            }
+            // 请求成功
+            console.info('Succeeded in finishing purchase.');
+        });
+    }
 
-29. build() {}
-30. }
+    build() {}
+}
 ```
 
 ## iap.queryOwnedPurchases(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 queryOwnedPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesParameter): Promise<QueryPurchasesResult>
 
@@ -1230,7 +1190,7 @@ queryOwnedPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesP
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-iap.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1247,34 +1207,32 @@ queryOwnedPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesP
 
 **示例**：
 
-```
-1. import { iap } from '@kit.IAPKit';
-2. import { common } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { iap } from '@kit.IAPKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. test() {
-9. const parameter: iap.QueryPurchasesParameter = {
-10. productType: iap.ProductType.CONSUMABLE
-11. }
-12. iap.queryOwnedPurchases(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter).then((data: iap.QueryPurchasesResult) => {
-13. // 请求成功
-14. console.info(`Succeeded in querying owned purchases. data len: ${data.productList?.length}`);
-15. }).catch((err: BusinessError) => {
-16. // 请求失败
-17. console.error(`Failed to query owned purchases. Code is ${err.code}, message is ${err.message}`);
-18. });
-19. }
+@Entry
+@Component
+struct Index {
+    test() {
+        const parameter: iap.QueryPurchasesParameter = {
+            productType: iap.ProductType.CONSUMABLE
+        }
+        iap.queryOwnedPurchases(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter).then((data: iap.QueryPurchasesResult) => {
+            // 请求成功
+            console.info(`Succeeded in querying owned purchases. data len: ${data.productList?.length}`);
+        }).catch((err: BusinessError) => {
+            // 请求失败
+            console.error(`Failed to query owned purchases. Code is ${err.code}, message is ${err.message}`);
+        });
+    }
 
-21. build() {}
-22. }
+    build() {}
+}
 ```
 
 ## iap.queryOwnedPurchases(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 queryOwnedPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesParameter, callback: AsyncCallback<QueryPurchasesResult>): void
 
@@ -1305,7 +1263,7 @@ queryOwnedPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesP
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-iap.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1322,36 +1280,34 @@ queryOwnedPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesP
 
 **示例**：
 
-```
-1. import { iap } from '@kit.IAPKit';
-2. import { common } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { iap } from '@kit.IAPKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. test() {
-9. const parameter: iap.QueryPurchasesParameter = {
-10. productType: iap.ProductType.CONSUMABLE
-11. }
-12. iap.queryOwnedPurchases(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter, (err: BusinessError, data: iap.QueryPurchasesResult) => {
-13. if (err) {
-14. // 请求失败
-15. console.error(`Failed to query owned purchases. Code is ${err.code}, message is ${err.message}`);
-16. return;
-17. }
-18. // 请求成功
-19. console.info(`Succeeded in querying owned purchases. data len: ${data.productList?.length}`);
-20. });
-21. }
+@Entry
+@Component
+struct Index {
+    test() {
+        const parameter: iap.QueryPurchasesParameter = {
+            productType: iap.ProductType.CONSUMABLE
+        }
+        iap.queryOwnedPurchases(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter, (err: BusinessError, data: iap.QueryPurchasesResult) => {
+            if (err) {
+                // 请求失败
+                console.error(`Failed to query owned purchases. Code is ${err.code}, message is ${err.message}`);
+                return;
+            }
+            // 请求成功
+            console.info(`Succeeded in querying owned purchases. data len: ${data.productList?.length}`);
+        });
+    }
 
-23. build() {}
-24. }
+    build() {}
+}
 ```
 
 ## iap.queryPurchaseRecords(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 queryPurchaseRecords(context: common.UIAbilityContext, parameter: QueryPurchasesParameter): Promise<QueryPurchasesResult>
 
@@ -1382,7 +1338,7 @@ queryPurchaseRecords(context: common.UIAbilityContext, parameter: QueryPurchases
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-iap.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1395,34 +1351,32 @@ queryPurchaseRecords(context: common.UIAbilityContext, parameter: QueryPurchases
 
 **示例**：
 
-```
-1. import { iap } from '@kit.IAPKit';
-2. import { common } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { iap } from '@kit.IAPKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. test() {
-9. const parameter: iap.QueryPurchasesParameter = {
-10. productType: iap.ProductType.CONSUMABLE
-11. }
-12. iap.queryPurchaseRecords(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter).then((data: iap.QueryPurchasesResult) => {
-13. // 请求成功
-14. console.info(`Succeeded in querying purchase records. data len: ${data.productList?.length}`);
-15. }).catch((err: BusinessError) => {
-16. // 请求失败
-17. console.error(`Failed to query purchase records. Code is ${err.code}, message is ${err.message}`);
-18. });
-19. }
+@Entry
+@Component
+struct Index {
+    test() {
+        const parameter: iap.QueryPurchasesParameter = {
+            productType: iap.ProductType.CONSUMABLE
+        }
+        iap.queryPurchaseRecords(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter).then((data: iap.QueryPurchasesResult) => {
+            // 请求成功
+            console.info(`Succeeded in querying purchase records. data len: ${data.productList?.length}`);
+        }).catch((err: BusinessError) => {
+            // 请求失败
+            console.error(`Failed to query purchase records. Code is ${err.code}, message is ${err.message}`);
+        });
+    }
 
-21. build() {}
-22. }
+    build() {}
+}
 ```
 
 ## iap.queryPurchaseRecords(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 queryPurchaseRecords(context: common.UIAbilityContext, parameter: QueryPurchasesParameter, callback: AsyncCallback<QueryPurchasesResult>): void
 
@@ -1448,7 +1402,7 @@ queryPurchaseRecords(context: common.UIAbilityContext, parameter: QueryPurchases
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-iap.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1461,36 +1415,34 @@ queryPurchaseRecords(context: common.UIAbilityContext, parameter: QueryPurchases
 
 **示例**：
 
-```
-1. import { iap } from '@kit.IAPKit';
-2. import { common } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { iap } from '@kit.IAPKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. test() {
-9. const parameter: iap.QueryPurchasesParameter = {
-10. productType: iap.ProductType.CONSUMABLE
-11. }
-12. iap.queryPurchaseRecords(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter, (err: BusinessError, data: iap.QueryPurchasesResult) => {
-13. if (err) {
-14. // 请求失败
-15. console.error(`Failed to query purchase records. Code is ${err.code}, message is ${err.message}`);
-16. return;
-17. }
-18. // 请求成功
-19. console.info(`Succeeded in querying purchase records. data len: ${data.productList?.length}`);
-20. });
-21. }
+@Entry
+@Component
+struct Index {
+    test() {
+        const parameter: iap.QueryPurchasesParameter = {
+            productType: iap.ProductType.CONSUMABLE
+        }
+        iap.queryPurchaseRecords(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter, (err: BusinessError, data: iap.QueryPurchasesResult) => {
+            if (err) {
+                // 请求失败
+                console.error(`Failed to query purchase records. Code is ${err.code}, message is ${err.message}`);
+                return;
+            }
+            // 请求成功
+            console.info(`Succeeded in querying purchase records. data len: ${data.productList?.length}`);
+        });
+    }
 
-23. build() {}
-24. }
+    build() {}
+}
 ```
 
 ## iap.queryPurchases
-
-PhonePC/2in1TabletTVWearable
 
 queryPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesParameter): Promise<QueryPurchaseResult>
 
@@ -1524,12 +1476,12 @@ queryPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesParame
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-iap.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
-| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities.  **适用版本：** 6.1.0(23)+ |
 | 1001860001 | System internal error. |
 | 1001860002 | The application is not authorized. |
 | 1001860004 | Too frequent API calls. |
@@ -1539,35 +1491,33 @@ queryPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesParame
 
 **示例**：
 
-```
-1. import { iap } from '@kit.IAPKit';
-2. import { common } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { iap } from '@kit.IAPKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. test() {
-9. const parameter: iap.QueryPurchasesParameter = {
-10. productType: iap.ProductType.CONSUMABLE,
-11. queryType: iap.PurchaseQueryType.UNFINISHED
-12. }
-13. iap.queryPurchases(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter).then((data: iap.QueryPurchaseResult) => {
-14. // 请求成功
-15. console.info(`Succeeded in querying purchases. data len: ${data.purchaseDataList?.length}`);
-16. }).catch((err: BusinessError) => {
-17. // 请求失败
-18. console.error(`Failed to query purchases. Code is ${err.code}, message is ${err.message}`);
-19. });
-20. }
+@Entry
+@Component
+struct Index {
+    test() {
+        const parameter: iap.QueryPurchasesParameter = {
+            productType: iap.ProductType.CONSUMABLE,
+            queryType: iap.PurchaseQueryType.UNFINISHED
+        }
+        iap.queryPurchases(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter).then((data: iap.QueryPurchaseResult) => {
+            // 请求成功
+            console.info(`Succeeded in querying purchases. data len: ${data.purchaseDataList?.length}`);
+        }).catch((err: BusinessError) => {
+            // 请求失败
+            console.error(`Failed to query purchases. Code is ${err.code}, message is ${err.message}`);
+        });
+    }
 
-22. build() {}
-23. }
+    build() {}
+}
 ```
 
 ## iap.queryPurchases
-
-PhonePC/2in1TabletTVWearable
 
 queryPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesParameter, callback: AsyncCallback<QueryPurchaseResult>): void
 
@@ -1594,12 +1544,12 @@ queryPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesParame
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-iap.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
-| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities.  **适用版本：** 6.1.0(23)+ |
 | 1001860001 | System internal error. |
 | 1001860002 | The application is not authorized. |
 | 1001860004 | Too frequent API calls. |
@@ -1609,37 +1559,35 @@ queryPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesParame
 
 **示例**：
 
-```
-1. import { iap } from '@kit.IAPKit';
-2. import { common } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { iap } from '@kit.IAPKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. test() {
-9. const parameter: iap.QueryPurchasesParameter = {
-10. productType: iap.ProductType.CONSUMABLE,
-11. queryType: iap.PurchaseQueryType.UNFINISHED
-12. }
-13. iap.queryPurchases(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter, (err: BusinessError, data: iap.QueryPurchaseResult) => {
-14. if (err) {
-15. // 请求失败
-16. console.error(`Failed to query purchases. Code is ${err.code}, message is ${err.message}`);
-17. return;
-18. }
-19. // 请求成功
-20. console.info(`Succeeded in querying purchases. data len: ${data.purchaseDataList?.length}`);
-21. });
-22. }
+@Entry
+@Component
+struct Index {
+    test() {
+        const parameter: iap.QueryPurchasesParameter = {
+            productType: iap.ProductType.CONSUMABLE,
+            queryType: iap.PurchaseQueryType.UNFINISHED
+        }
+        iap.queryPurchases(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter, (err: BusinessError, data: iap.QueryPurchaseResult) => {
+            if (err) {
+                // 请求失败
+                console.error(`Failed to query purchases. Code is ${err.code}, message is ${err.message}`);
+                return;
+            }
+            // 请求成功
+            console.info(`Succeeded in querying purchases. data len: ${data.purchaseDataList?.length}`);
+        });
+    }
 
-24. build() {}
-25. }
+    build() {}
+}
 ```
 
 ## iap.showManagedSubscriptions
-
-PhonePC/2in1TabletTVWearable
 
 showManagedSubscriptions(context: common.Context, uiParameter: UIWindowParameter, groupId?: string): Promise<void>
 
@@ -1671,12 +1619,12 @@ showManagedSubscriptions(context: common.Context, uiParameter: UIWindowParameter
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-iap.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
-| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities.  **适用版本：** 5.1.0(18)+ |
 | 1001860001 | System internal error. |
 | 1001860002 | The application is not authorized. |
 | 1001860004 | Too frequent API calls. |
@@ -1686,35 +1634,33 @@ showManagedSubscriptions(context: common.Context, uiParameter: UIWindowParameter
 
 **示例**：
 
-```
-1. import { iap } from '@kit.IAPKit';
-2. import { common } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { iap } from '@kit.IAPKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. test() {
-9. const uiWindowParameter: iap.UIWindowParameter = {
-10. windowScreenMode: iap.WindowScreenMode.DIALOG_BOX
-11. }
-12. const groupId = '***';
-13. iap.showManagedSubscriptions(this.getUIContext().getHostContext() as common.UIAbilityContext, uiWindowParameter, groupId).then(() => {
-14. // 请求成功
-15. console.info('Succeeded in showing subscription page.');
-16. }).catch((err: BusinessError) => {
-17. // 请求失败
-18. console.error(`Failed to show subscription page. Code is ${err.code}, message is ${err.message}`);
-19. });
-20. }
+@Entry
+@Component
+struct Index {
+    test() {
+        const uiWindowParameter: iap.UIWindowParameter = {
+            windowScreenMode: iap.WindowScreenMode.DIALOG_BOX
+        }
+        const groupId = '***';
+        iap.showManagedSubscriptions(this.getUIContext().getHostContext() as common.UIAbilityContext, uiWindowParameter, groupId).then(() => {
+            // 请求成功
+            console.info('Succeeded in showing subscription page.');
+        }).catch((err: BusinessError) => {
+            // 请求失败
+            console.error(`Failed to show subscription page. Code is ${err.code}, message is ${err.message}`);
+        });
+    }
 
-22. build() {}
-23. }
+    build() {}
+}
 ```
 
 ## iap.isSandboxActivated
-
-PhonePC/2in1TabletTVWearable
 
 isSandboxActivated(context: common.Context): Promise<boolean>
 
@@ -1742,12 +1688,12 @@ isSandboxActivated(context: common.Context): Promise<boolean>
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-iap.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
-| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities.  **适用版本：** 6.1.0(23)+ |
 | 1001860001 | System internal error. |
 | 1001860002 | The application is not authorized. |
 | 1001860004 | Too frequent API calls. |
@@ -1759,31 +1705,29 @@ isSandboxActivated(context: common.Context): Promise<boolean>
 
 **示例**：
 
-```
-1. import { iap } from '@kit.IAPKit';
-2. import { common } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { iap } from '@kit.IAPKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. test() {
-9. iap.isSandboxActivated(this.getUIContext().getHostContext() as common.UIAbilityContext).then((isActivated: boolean) => {
-10. // 请求成功
-11. console.info(`Succeeded in checking the sandbox status. is activate: ${isActivated}`);
-12. }).catch((err: BusinessError) => {
-13. // 请求失败
-14. console.error(`Failed to check the sandbox status. Code is ${err.code}, message is ${err.message}`);
-15. });
-16. }
+@Entry
+@Component
+struct Index {
+    test() {
+        iap.isSandboxActivated(this.getUIContext().getHostContext() as common.UIAbilityContext).then((isActivated: boolean) => {
+            // 请求成功
+            console.info(`Succeeded in checking the sandbox status. is activate: ${isActivated}`);
+        }).catch((err: BusinessError) => {
+            // 请求失败
+            console.error(`Failed to check the sandbox status. Code is ${err.code}, message is ${err.message}`);
+        });
+    }
 
-18. build() {}
-19. }
+    build() {}
+}
 ```
 
 ## iap.createRefundRequest
-
-PhonePC/2in1TabletTVWearable
 
 createRefundRequest(context: common.Context, purchaseOrderId: string): Promise<void>
 
@@ -1814,7 +1758,7 @@ createRefundRequest(context: common.Context, purchaseOrderId: string): Promise<v
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-iap.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1831,39 +1775,37 @@ createRefundRequest(context: common.Context, purchaseOrderId: string): Promise<v
 
 **示例**：
 
-```
-1. import { iap } from '@kit.IAPKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { common } from '@kit.AbilityKit';
+```typescript
+import { iap } from '@kit.IAPKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-5. @Entry
-6. @Component
-7. struct IapTest {
-8. /**
-9. * 拉起退款界面
-10. */
-11. createRefundRequest() {
-12. const context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-13. // 调用iap.createRefundRequest拉起退款，传入context和purchaseOrderId
-14. let purchaseOrderId = '';
-15. iap.createRefundRequest(context, purchaseOrderId).then(() => {
-16. // 退款成功
-17. console.info('Succeeded in create refund request.');
-18. // ...
-19. }).catch((err: BusinessError) => {
-20. // 退款失败
-21. console.error(`Failed to create refund request. Code is ${err.code}, message is ${err.message}`);
-22. // ...
-23. });
-24. }
-25. build() {
-26. }
-27. }
+@Entry
+@Component
+struct IapTest {
+  /**
+   * 拉起退款界面
+   */
+  createRefundRequest() {
+    const context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    // 调用iap.createRefundRequest拉起退款，传入context和purchaseOrderId
+    let purchaseOrderId = '';
+    iap.createRefundRequest(context, purchaseOrderId).then(() => {
+      // 退款成功
+      console.info('Succeeded in create refund request.');
+      // ...
+    }).catch((err: BusinessError) => {
+      // 退款失败
+      console.error(`Failed to create refund request. Code is ${err.code}, message is ${err.message}`);
+      // ...
+    });
+  }
+  build() {
+  }
+}
 ```
 
 ## iap.showManagedInvoices
-
-PhonePC/2in1Tablet
 
 showManagedInvoices(context: common.Context, purchaseOrderId: string): Promise<void>
 
@@ -1894,7 +1836,7 @@ showManagedInvoices(context: common.Context, purchaseOrderId: string): Promise<v
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](iap-error-code.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-iap.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1908,39 +1850,37 @@ showManagedInvoices(context: common.Context, purchaseOrderId: string): Promise<v
 
 **示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
-3. import { iap } from '@kit.IAPKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
+import { iap } from '@kit.IAPKit';
 
-5. @Entry
-6. @Component
-7. struct IapTest {
-8. /**
-9. * 拉起开发票界面
-10. */
-11. showManagedInvoices() {
-12. const context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-13. // 调用iap.showManagedInvoices拉起开发票页面，传入context和purchaseOrderId
-14. let purchaseOrderId = '';
-15. iap.showManagedInvoices(context, purchaseOrderId).then(() => {
-16. // 请求成功
-17. console.info('Succeeded in showing invoice page.');
-18. // ...
-19. }).catch((err: BusinessError) => {
-20. // 请求失败
-21. console.error(`Failed to show invoice page. Code is ${err.code}, message is ${err.message}`);
-22. // ...
-23. });
-24. }
-25. build() {
-26. }
-27. }
+@Entry
+@Component
+struct IapTest {
+    /**
+     * 拉起开发票界面
+     */
+    showManagedInvoices() {
+        const context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+        // 调用iap.showManagedInvoices拉起开发票页面，传入context和purchaseOrderId
+        let purchaseOrderId = '';
+        iap.showManagedInvoices(context, purchaseOrderId).then(() => {
+            // 请求成功
+            console.info('Succeeded in showing invoice page.');
+            // ...
+        }).catch((err: BusinessError) => {
+            // 请求失败
+            console.error(`Failed to show invoice page. Code is ${err.code}, message is ${err.message}`);
+            // ...
+        });
+    }
+    build() {
+    }
+}
 ```
 
 ## QueryProductsParameter
-
-PhonePC/2in1TabletTVWearable
 
 [queryProducts](iap-iap.md#iapqueryproducts)接口的请求参数。
 
@@ -1958,8 +1898,6 @@ PhonePC/2in1TabletTVWearable
 | productIds | string[] | 否 | 否 | 待查询商品ID列表。商品ID必须已经在当前应用中创建且唯一。  商品ID来源于开发者在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中配置商品信息时设置的商品ID，请参见[配置商品信息](../harmonyos-guides/iap-config-product.md)。  **说明：** 一次查询最多支持200个商品，商品数量较多时建议分批查询。 |
 
 ## Product
-
-PhonePC/2in1TabletTVWearable
 
 包含单个商品详细信息。
 
@@ -1988,8 +1926,6 @@ PhonePC/2in1TabletTVWearable
 
 ## PromotionalOffer
 
-PhonePC/2in1TabletTVWearable
-
 订阅商品支持的自定义优惠信息。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -2011,8 +1947,6 @@ PhonePC/2in1TabletTVWearable
 
 ## SubscriptionInfo
 
-PhonePC/2in1TabletTVWearable
-
 订阅信息。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -2028,13 +1962,11 @@ PhonePC/2in1TabletTVWearable
 | periodUnit | [PeriodUnit](iap-iap.md#periodunit) | 否 | 否 | 订阅周期单位。 |
 | periodCount | number | 否 | 否 | 订阅周期数量。 |
 | groupId | string | 否 | 否 | 订阅组ID。 |
-| groupLevel | number | 否 | 否 | 商品的订阅等级。 |
+| groupLevel | number | 否 | 否 | 商品的[订阅等级](../app/non-subscription-0000001958955109.md#section16510205212316)。 |
 | hasEligibilityForIntroOffer | boolean | 否 | 是 | 用户是否享受过推介促销。取值如下：  - true：已享受过  - false：未享受过  其他：未获取到状态 |
 | introductoryOffer | [SubscriptionOffer](iap-iap.md#subscriptionoffer) | 否 | 是 | 促销信息。 |
 
 ## SubscriptionOffer
-
-PhonePC/2in1TabletTVWearable
 
 促销信息。
 
@@ -2057,13 +1989,9 @@ PhonePC/2in1TabletTVWearable
 
 ## PurchaseParameter
 
-PhonePC/2in1TabletTVWearable
-
 [purchase](iap-iap.md#iappurchasedeprecated)接口和[createPurchase](iap-iap.md#iapcreatepurchase)接口的请求参数。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Payment.IAP
 
@@ -2071,18 +1999,16 @@ PhonePC/2in1TabletTVWearable
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| productId | string | 否 | 否 | 待支付的商品ID。每个产品ID必须在当前应用中存在且唯一。商品ID来源于开发者在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中配置商品信息时设置的“商品ID”，具体请参见[配置商品信息](../harmonyos-guides/iap-config-product.md)。 |
-| productType | [ProductType](iap-iap.md#producttype) | 否 | 否 | 需要查询的商品类型。  - CONSUMABLE：消耗型商品  - NONCONSUMABLE：非消耗型商品  - AUTORENEWABLE：自动续期订阅商品  - NONRENEWABLE：非续期订阅商品 |
-| developerPayload | string | 否 | 是 | 商户侧保留信息。  若该字段有值，在支付成功后的回调结果中会原样返回给应用。  **说明：** 该参数长度限制为[0, 256]。如超过长度限制，在支付成功后将返回被截断的数据。建议在发起请求前自行验证字段长度，避免非预期截断。 |
-| reservedInfo | string | 否 | 是 | 要求JSON String格式，商户可以将额外需要传入的字段以key-value的形式设置在JSON String中，并通过该参数传入。  例如：let reservedInfo = "{\"key1\":\"value1\",\"key2\":\"value2\"}";  **说明：** 该字段为预留字段，可选传入，开发者暂时无需关注。 |
-| promotionalOfferId | string | 否 | 是 | 优惠ID。优惠ID来源于开发者为商品[提供优惠-配置优惠促销](../harmonyos-guides/iap-subscription-functions.md#提供优惠)时设置的促销优惠标志符。在传递jwsRepresentation（[生成优惠签名购买参数](iap-server-subscribe-offer-sign.md)）使用促销优惠时必须同时传递本字段，否则将报错。  **起始版本：** 5.0.0(12) |
-| applicationUserName | string | 否 | 是 | 用户账户相关联的混淆字符串，唯一标识用户。传递优惠ID场景，可以传递该字段。在传递jwsRepresentation（[生成优惠签名购买参数](iap-server-subscribe-offer-sign.md)）使用促销优惠时，若jwsRepresentation中包含[applicationUserName](iap-server-data-model.md#offerinfo)则必须传递本字段，否则将报错。  **起始版本：** 5.0.0(12) |
-| jwsRepresentation | string | 否 | 是 | 包含购买参数信息的JWS格式签名数据。购买参数，如优惠促销等。详细说明见[生成优惠签名购买参数](iap-server-subscribe-offer-sign.md)。  **起始版本：** 5.0.0(12) |
+| productId | string | 否 | 否 | 待支付的商品ID。每个产品ID必须在当前应用中存在且唯一。商品ID来源于开发者在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中配置商品信息时设置的“商品ID”，具体请参见[配置商品信息](../harmonyos-guides/iap-config-product.md)。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| productType | [ProductType](iap-iap.md#producttype) | 否 | 否 | 需要查询的商品类型。  - CONSUMABLE：消耗型商品  - NONCONSUMABLE：非消耗型商品  - AUTORENEWABLE：自动续期订阅商品  - NONRENEWABLE：非续期订阅商品  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| developerPayload | string | 否 | 是 | 商户侧保留信息。  若该字段有值，在支付成功后的回调结果中会原样返回给应用。  **说明：** 该参数长度限制为[0, 256]。如超过长度限制，在支付成功后将返回被截断的数据。建议在发起请求前自行验证字段长度，避免非预期截断。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| reservedInfo | string | 否 | 是 | 要求JSON String格式，商户可以将额外需要传入的字段以key-value的形式设置在JSON String中，并通过该参数传入。  例如：let reservedInfo = "{\"key1\":\"value1\",\"key2\":\"value2\"}";  **说明：** 该字段为预留字段，可选传入，开发者暂时无需关注。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| promotionalOfferId | string | 否 | 是 | 优惠ID。优惠ID来源于开发者为商品[提供优惠-配置优惠促销](../harmonyos-guides/iap-subscription-functions.md#提供优惠)时设置的促销优惠标志符。在传递jwsRepresentation（[生成优惠签名购买参数](iap-server-subscribe-offer-sign.md)）使用促销优惠时必须同时传递本字段，否则将报错。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。  **起始版本：** 5.0.0(12) |
+| applicationUserName | string | 否 | 是 | 用户账户相关联的混淆字符串，唯一标识用户。传递优惠ID场景，可以传递该字段。在传递jwsRepresentation（[生成优惠签名购买参数](iap-server-subscribe-offer-sign.md)）使用促销优惠时，若jwsRepresentation中包含[applicationUserName](iap-server-data-model.md#offerinfo)则必须传递本字段，否则将报错。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。  **起始版本：** 5.0.0(12) |
+| jwsRepresentation | string | 否 | 是 | 包含购买参数信息的JWS格式签名数据。购买参数，如优惠促销等。详细说明见[生成优惠签名购买参数](iap-server-subscribe-offer-sign.md)。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。  **起始版本：** 5.0.0(12) |
 | quantity | number | 否 | 是 | 购买参数。表示所购买消耗型/非续期订阅商品的数量，需满足以下限制。  - 一次仅针对单商品类型，不支持不同类型混合  - 一次请求数量不超过10个  **说明：** 如果开发者使用了quantity参数以支持商品的批量购买，则需要在发货时校验下单的商品数量和最终发货商品数量是否一致，避免造成漏发、多发的情况。  **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。  **起始版本：** 5.0.3(15) |
 
 ## PurchaseResult(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 [purchase](iap-iap.md#iappurchasedeprecated)接口的返回结果。
 
@@ -2102,8 +2028,6 @@ PhonePC/2in1TabletTVWearable
 
 ## CreatePurchaseResult
 
-PhonePC/2in1TabletTVWearable
-
 [createPurchase](iap-iap.md#iapcreatepurchase)接口的返回结果。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -2119,8 +2043,6 @@ PhonePC/2in1TabletTVWearable
 | purchaseData | string | 否 | 否 | 包含支付结果的JSON字符串，包含的参数请参见[PurchaseData](iap-data-model.md#purchasedata)。 |
 
 ## ConsumePurchaseParameter(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 [consumePurchase](iap-iap.md#iapconsumepurchasedeprecated)接口的请求参数。
 
@@ -2138,8 +2060,6 @@ PhonePC/2in1TabletTVWearable
 | developerChallenge | string | 否 | 是 | 开发者自定义的挑战字，唯一标识此次消耗请求。消耗成功后此挑战字会记录在购买数据中并返回。  **说明：** 该参数长度限制为[0, 64]。 |
 
 ## ConsumeResult(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 [consumePurchase](iap-iap.md#iapconsumepurchasedeprecated)接口的返回结果。
 
@@ -2159,8 +2079,6 @@ PhonePC/2in1TabletTVWearable
 
 ## FinishPurchaseParameter
 
-PhonePC/2in1TabletTVWearable
-
 [finishPurchase](iap-iap.md#iapfinishpurchase)接口请求参数。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -2179,8 +2097,6 @@ PhonePC/2in1TabletTVWearable
 
 ## QueryPurchasesParameter
 
-PhonePC/2in1TabletTVWearable
-
 [queryOwnedPurchases](iap-iap.md#iapqueryownedpurchasesdeprecated)、[queryPurchaseRecords](iap-iap.md#iapquerypurchaserecordsdeprecated)和[queryPurchases](iap-iap.md#iapquerypurchases)接口的请求参数。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -2198,8 +2114,6 @@ PhonePC/2in1TabletTVWearable
 | queryType | [PurchaseQueryType](iap-iap.md#purchasequerytype) | 否 | 是 | 查询类型。默认值为UNFINISHED。  - ALL：消耗型商品、非消耗型商品、自动续期订阅商品和非续期订阅商品的所有购买记录。  - UNFINISHED：已购买但未交付的消耗型商品、非消耗型商品、自动续期订阅商品和非续期订阅商品。  - CURRENT\_ENTITLEMENT：购买的非消耗型商品或当前有效的自动续期订阅商品。  **说明：** [queryOwnedPurchases](iap-iap.md#iapqueryownedpurchasesdeprecated)、[queryPurchaseRecords](iap-iap.md#iapquerypurchaserecordsdeprecated)场景无需关注此字段。  **起始版本：** 4.1.0(11) |
 
 ## QueryPurchasesResult(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 [queryOwnedPurchases](iap-iap.md#iapqueryownedpurchasesdeprecated)和[queryPurchaseRecords](iap-iap.md#iapquerypurchaserecordsdeprecated)接口的返回结果。
 
@@ -2221,8 +2135,6 @@ PhonePC/2in1TabletTVWearable
 
 ## QueryPurchaseResult
 
-PhonePC/2in1TabletTVWearable
-
 [queryPurchases](iap-iap.md#iapquerypurchases)接口的返回结果。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -2239,8 +2151,6 @@ PhonePC/2in1TabletTVWearable
 | continuationToken | string | 否 | 是 | 支持分页查询的数据定位标志。  如果用户拥有的商品数量非常大，当响应中存在continuationToken时，应用必须对当前方法发起另一个调用，并传入本次接收到的continuationToken。如果商品仍未查完，仍需要继续发起调用，直到不再返回continuationToken，表示已经返回全部商品。 |
 
 ## UIWindowParameter
-
-PhonePC/2in1TabletTVWearable
 
 [iap.showManagedSubscriptions](iap-iap.md#iapshowmanagedsubscriptions)接口界面窗口参数。
 

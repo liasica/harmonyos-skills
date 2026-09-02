@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-formkit-hdc
 title: Form Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Developer Beta1引入的API > Form Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Developer Beta1引入的API > Form Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:37:04+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:52+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:238831151b487257608ba9555b68451519b18b9ff72628f5c8b9ded0ea55e657
 ---
 

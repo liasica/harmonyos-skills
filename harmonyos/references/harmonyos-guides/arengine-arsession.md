@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-arse
 title: 管理AR会话（ArkTS）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 管理AR会话 > 管理AR会话（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:35:49+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:0d19b56e1116c1fcd5df5c303d42fce2e5a76edb32d0a29e403eeeb727d720bd
+scraped_at: 2026-09-02T14:59:48+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:76780b6e1d9b695053401937a192f8d1ad95a1e61361dba216a83acb11051be5
 ---
 
 本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/HarmonyOS_Samples/arengine_samplecode_clientdemo_arkts)。
@@ -28,7 +28,7 @@ AR会话主要依赖[ARViewContext](../harmonyos-references/arengine-api-arviewc
 | [ARViewContext.scene](../harmonyos-references/arengine-api-arviewcontroller.md#arviewcontextscene-1) | 获得的AR呈现场景，用于管理空间节点。 |
 | [ARViewContext.session](../harmonyos-references/arengine-api-arviewcontroller.md#arviewcontextsession) | 获取AR会话，用于获取相关AR环境跟踪、相机跟踪、命中检测等能力，如相机位姿、平面信息、创建锚点等。 |
 | [ARViewContext.config](../harmonyos-references/arengine-api-arviewcontroller.md#arviewcontextconfig) | 设置AR会话的配置文件，如北向坐标、性能模式等。 |
-| [ARViewContext.callback](../harmonyos-references/arengine-api-arviewcontroller.md#arviewcontextcallback) | 设置回调函数，以根据回调功能实现对应业务逻辑。 |
+| [ARViewContext.callback](../harmonyos-references/arengine-api-arviewcontroller.md#arviewcontextcallback) | 设置回调函数，可根据回调功能实现对应业务逻辑。 |
 
 ## 开发步骤
 
@@ -40,10 +40,11 @@ AR会话主要依赖[ARViewContext](../harmonyos-references/arengine-api-arviewc
 
 导入AR Engine相关模块，导入方法如下。
 
-```
-1. import { arEngine, ARView, arViewController } from '@kit.AREngine';
-2. import { Node, Scene } from '@kit.ArkGraphics3D';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { arEngine, ARView, arViewController } from '@kit.AREngine';
+import {CubeGeometry, CustomGeometry, Geometry, Material, MaterialType, MeshResource, Node,
+  PrimitiveTopology, Scene, SceneResourceFactory, Shader, ShaderMaterial, Vec3} from '@kit.ArkGraphics3D';
+import { BusinessError } from '@kit.BasicServicesKit';
 ```
 
 ### 初始化AR会话和AR场景
@@ -54,162 +55,157 @@ AR会话主要依赖[ARViewContext](../harmonyos-references/arengine-api-arviewc
 
 AR会话及场景创建好后使用[组件导航（Navigation）](arkts-navigation-navigation.md)组件及[ARView](../harmonyos-references/arengine-api-component-arview.md#arview)组件在设备上显示AR场景，关于[组件导航（Navigation）](arkts-navigation-navigation.md)具体指导可参考[前置准备](arengine-preparations.md#前置准备)。
 
-```
-1. @Builder
-2. export function ARWorldBuilder(): void {
-3. ARWorld();
-4. }
-
-6. @Component
-7. struct ARWorld {
-8. @State arContext?: arViewController.ARViewContext = undefined;
-
-10. // 创建UI窗口，显示AR场景
-11. build(): void {
-12. NavDestination() {
-13. RelativeContainer() {
-14. if (this.arContext) {
-15. ARView({ context: this.arContext })
-16. .height('100%')
-17. .width('100%')
-18. .alignRules({
-19. center: { anchor: '__container__', align: VerticalAlign.Center },
-20. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-21. })
-22. }
-23. }
-24. }
-25. .onAppear(() => {
-26. this.initARView();
-27. })
-28. .onWillDisappear(() => {
-29. this.stopARView();
-30. })
-31. .onShown(() => {
-32. this.resumeARView();
-33. })
-34. .onHidden(() => {
-35. this.pauseARView();
-36. })
-37. .hideTitleBar(true)
-38. .hideBackButton(true)
-39. .hideToolBar(true)
-40. }
-
-42. private initARView(): void {
-43. Scene.load().then((scene: Scene) => {
-44. let viewContext: arViewController.ARViewContext = new arViewController.ARViewContext();
-45. viewContext.scene = scene;
-46. viewContext.callback = new ARViewCallbackImpl(); // 通过回调实现业务场景
-47. viewContext.config = {
-48. type: arEngine.ARType.WORLD,
-49. planeFindingMode: arEngine.ARPlaneFindingMode.HORIZONTAL_AND_VERTICAL,
-50. powerMode: arEngine.ARPowerMode.NORMAL,
-51. semanticMode: arEngine.ARSemanticMode.NONE,
-52. poseMode: arEngine.ARPoseMode.GRAVITY,
-53. depthMode: arEngine.ARDepthMode.AUTOMATIC,
-54. meshMode: arEngine.ARMeshMode.DISABLED,
-55. focusMode: arEngine.ARFocusMode.AUTO
-56. };
-57. viewContext.init().then(() => {
-58. this.arContext = viewContext;
-59. console.info('Succeeded in initializing ARView.');
-60. }).catch((err: BusinessError) => {
-61. console.error(`Failed to init ARView. Code is ${err.code}, message is ${err.message}.`);
-62. });
-63. });
-64. }
-65. }
+```typescript
+@Builder
+export function ARWorldBuilder(): void {
+  ARWorld();
+}
+// ...
+@Component
+struct ARWorld {
+  @State arContext?: arViewController.ARViewContext = undefined;
+  @State context: Context = this.getUIContext().getHostContext() as Context;
+  @State statusBarHeight: number = 0;
+  // ...
+  build(): void {
+    NavDestination() {
+      RelativeContainer() {
+        if (this.arContext) {
+          ARView({ context: this.arContext })
+            .height('100%')
+            .width('100%')
+            .alignRules({
+              center: { anchor: '__container__', align: VerticalAlign.Center },
+              middle: { anchor: '__container__', align: HorizontalAlign.Center }
+            })
+            // ...
+        }
+      }
+    }
+    .onAppear(async () => {
+      this.initARView();
+    })
+    .onWillDisappear(async () => {
+      await this.stopARView();
+    })
+    .onShown(() => {
+      this.resumeARView();
+    })
+    .onHidden(() => {
+      this.pauseARView();
+    })
+    .hideTitleBar(true)
+    .hideBackButton(true)
+    .hideToolBar(true)
+  }
+  // ...
+  private initARView(): void {
+    Scene.load().then(async (scene: Scene) => {
+      let viewContext: arViewController.ARViewContext = new arViewController.ARViewContext();
+      viewContext.scene = scene;
+      viewContext.callback = new ARViewCallbackImpl();
+      viewContext.config = {
+        type: arEngine.ARType.WORLD,
+        planeFindingMode: arEngine.ARPlaneFindingMode.HORIZONTAL_AND_VERTICAL,
+        powerMode: arEngine.ARPowerMode.NORMAL,
+        semanticMode: arEngine.ARSemanticMode.NONE,
+        poseMode: arEngine.ARPoseMode.GRAVITY,
+        depthMode: arEngine.ARDepthMode.AUTOMATIC,
+        meshMode: arEngine.ARMeshMode.DISABLED,
+        focusMode: arEngine.ARFocusMode.AUTO
+      }
+      viewContext.init().then(() => {
+        this.arContext = viewContext;
+        logger.info('Succeeded in initting ARView.');
+      }).catch((err: BusinessError) => {
+        logger.error(`Failed to init ARView. Code is ${err.code}, message is ${err.message}.`);
+      })
+    })
+  }
+  // ...
+}
 ```
 
 ### 使用AR会话对象处理业务
 
 调用[ARViewCallback](../harmonyos-references/arengine-api-arviewcontroller.md#arviewcallback)，使用其中的[onFrameUpdate](../harmonyos-references/arengine-api-arviewcontroller.md#arviewcallbackonframeupdate)方法获取AR会话对象，之后可根据开发者所需的具体业务编写处理逻辑。
 
-```
-1. class ARViewCallbackImpl extends arViewController.ARViewCallback {
-2. onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
-3. // ...
-4. }
+```typescript
+class ARViewCallbackImpl extends arViewController.ARViewCallback {
+  // ...
+  onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
+  }
 
-6. onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
-7. // ...
-8. }
+  onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
+  }
 
-10. async onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): Promise<void> {
-11. if (!ctx.session) {
-12. return;
-13. }
+  async onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): Promise<void> {
+    if (!ctx.session) {
+      return;
+    }
 
-15. let arSession: arEngine.ARSession = ctx.session; // 获取AR会话
-
-17. try {
-18. // 示例为一个帧对象的获取与销毁
-19. let frame: arEngine.ARFrame = arSession.getFrame();
-20. await frame.release();
-
-22. } catch (error) {
-23. const err: BusinessError = error as BusinessError;
-24. console.error(`Failed to update data. Code is ${err.code}, message is ${err.message}.`);
-25. }
-26. }
-27. }
+    let session: arEngine.ARSession = ctx.session;
+    // ...
+  }
+}
 ```
 
 ### 暂停AR会话
 
 要暂停AR会话，开发者可以使用[ARViewContext.pause](../harmonyos-references/arengine-api-arviewcontroller.md#arviewcontextpause)方法，在应用置为后台时可以暂停AR会话和暂停AR场景。
 
-```
-1. private pauseARView(): void {
-2. if (!this.arContext) {
-3. return;
-4. }
-5. try {
-6. this.arContext.pause();
-7. } catch (error) {
-8. const err: BusinessError = error as BusinessError;
-9. console.error(`Failed to pause context. Code is ${err.code}, message is ${err.message}.`);
-10. }
-11. }
+```typescript
+private pauseARView(): void {
+  if (!this.arContext) {
+    return;
+  }
+  try {
+    this.arContext.pause();
+    isStopFrameUpdate = true;
+  } catch (error) {
+    const err: BusinessError = error as BusinessError;
+    logger.error(`Failed to pause context. Code is ${err.code}, message is ${err.message}.`);
+  }
+}
 ```
 
 ### 恢复AR会话
 
 要恢复暂停的AR会话和AR场景，开发者可以使用[ARViewContext.resume](../harmonyos-references/arengine-api-arviewcontroller.md#arviewcontextresume)方法。
 
-```
-1. private resumeARView(): void {
-2. if (!this.arContext) {
-3. return;
-4. }
-5. try {
-6. this.arContext.resume();
-7. } catch (error) {
-8. const err: BusinessError = error as BusinessError;
-9. console.error(`Failed to resume context. Code is ${err.code}, message is ${err.message}.`);
-10. }
-11. }
+```typescript
+private resumeARView(): void {
+  if (!this.arContext) {
+    return;
+  }
+  try {
+    this.arContext.resume();
+    isStopFrameUpdate = false;
+  } catch (error) {
+    const err: BusinessError = error as BusinessError;
+    logger.error(`Failed to resume context. Code is ${err.code}, message is ${err.message}.`);
+  }
+}
 ```
 
 ### 销毁AR会话
 
 退出AR会话和AR场景时，开发者可以使用[ARViewContext.destroy](../harmonyos-references/arengine-api-arviewcontroller.md#arviewcontextdestroy)方法同时销毁AR会话及AR场景。
 
-```
-1. private stopARView(): void {
-2. if (!this.arContext) {
-3. return;
-4. }
-5. try {
-6. this.arContext.destroy();
-7. } catch (error) {
-8. const err: BusinessError = error as BusinessError;
-9. console.error(`Failed to stop context. Code is ${err.code}, message is ${err.message}`);
-10. }
-11. }
+```typescript
+private async stopARView(): Promise<void> {
+  if (!this.arContext) {
+    return;
+  }
+  try {
+    await this.arContext.destroy();
+  } catch (error) {
+    const err: BusinessError = error as BusinessError;
+    logger.error(`Failed to stop context. Code is ${err.code}, message is ${err.message}`);
+  }
+}
 ```
 
-说明
+**说明** 
 
-组件生命周期的方法，除[aboutToAppear](../harmonyos-references/ts-custom-component-lifecycle.md#abouttoappear)、[aboutToDisappear](../harmonyos-references/ts-custom-component-lifecycle.md#abouttodisappear)、[onPageShow](../harmonyos-references/ts-custom-component-lifecycle.md#onpageshow)、[onPageHide](../harmonyos-references/ts-custom-component-lifecycle.md#onpagehide)外，还可以使用[Navigation](../harmonyos-references/ts-basic-components-navigation.md)的[页面生命周期](arkts-navigation-navigation.md#页面生命周期)所示方法，开发者可根据需要进行选择。
+组件生命周期的方法，除[aboutToAppear](../harmonyos-references/ts-custom-component-lifecycle.md#abouttoappear)、[aboutToDisappear](../harmonyos-references/ts-custom-component-lifecycle.md#abouttodisappear)、[onPageShow](../harmonyos-references/ts-custom-component-lifecycle.md#onpageshow)、[onPageHide](../harmonyos-references/ts-custom-component-lifecycle.md#onpagehide)外，还可以使用[Navigation](../harmonyos-references/ts-basic-components-navigation.md)的[页面生命周期](arkts-navigation-navdestination.md#页面生命周期)所示方法，开发者可根据需要进行选择。

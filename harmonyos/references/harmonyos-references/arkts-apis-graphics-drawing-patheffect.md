@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (PathEffect)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (PathEffect)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:41+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:49955ddaf396f0ad030c18b4105e673c018142ef867d2e529364d9ea6ce9bf54
+scraped_at: 2026-09-02T15:02:41+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:ffe1d866be7a0190647ed5d234a2caf45841ba2eb9ef38cc3e83c45dde2fb4b7
 ---
 
-路径效果对象。
+路径效果对象，用于创建多种路径效果，包括虚线、圆角、离散、叠加和组合路径效果等。可通过[Pen.setPathEffect](arkts-apis-graphics-drawing-pen.md#setpatheffect12)将其应用到画笔上，从而在绘制路径时改变路径的渲染样式。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Class首批接口从API version 12开始支持。
@@ -19,19 +19,15 @@ content_hash: sha256:49955ddaf396f0ad030c18b4105e673c018142ef867d2e529364d9ea6ce
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 ```
 
 ## createDashPathEffect12+
 
-PhonePC/2in1TabletTVWearable
-
 static createDashPathEffect(intervals: Array<number>, phase: number): PathEffect
 
-创建将路径变为虚线的路径效果对象。
+创建将路径变为虚线的路径效果对象，通过指定ON/OFF长度数组生成规则间距的虚线。当需要自定义形状作为虚线段填充时，可使用[createPathDashEffect](arkts-apis-graphics-drawing-patheffect.md#createpathdasheffect18)。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
@@ -39,14 +35,14 @@ static createDashPathEffect(intervals: Array<number>, phase: number): PathEffect
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| intervals | Array<number> | 是 | 表示虚线的ON（实线部分）和OFF（空白部分）长度的数组，数组个数必须是偶数，且>=2，该参数为正整数。 |
-| phase | number | 是 | 绘制时的偏移量，该参数为浮点数。 |
+| intervals | Array<number> | 是 | 表示虚线的ON（实线部分）和OFF（空白部分）长度的数组，数组元素个数必须是偶数且>=2，数组元素为正整数。单位为物理像素px。 |
+| phase | number | 是 | 绘制时的偏移量，用于调整虚线图案沿路径的起始位置，该参数为浮点数，偏移量会相对于intervals定义的虚线模式产生位移效果。单位为物理像素px。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [PathEffect](arkts-apis-graphics-drawing-patheffect.md) | 返回创建的路径效果对象。 |
+| [PathEffect](arkts-apis-graphics-drawing-patheffect.md) | 返回创建的虚线路径效果对象，可通过[Pen.setPathEffect](arkts-apis-graphics-drawing-pen.md#setpatheffect12)将其应用到画笔上以改变路径渲染样式。 |
 
 **错误码：**
 
@@ -58,26 +54,23 @@ static createDashPathEffect(intervals: Array<number>, phase: number): PathEffect
 
 **示例：**
 
-```
-1. import { RenderNode } from '@kit.ArkUI';
-2. import { common2D, drawing } from '@kit.ArkGraphics2D';
+```ts
+import { RenderNode } from '@kit.ArkUI';
+import { drawing } from '@kit.ArkGraphics2D';
 
-4. class DrawingRenderNode extends RenderNode {
-5. draw(context : DrawContext) {
-6. const canvas = context.canvas;
-7. let intervals = [10, 5];
-8. let effect = drawing.PathEffect.createDashPathEffect(intervals, 5);
-9. }
-10. }
+class DrawingRenderNode extends RenderNode {
+  draw(context : DrawContext) {
+    let intervals = [10, 5];
+    let effect = drawing.PathEffect.createDashPathEffect(intervals, 5);
+  }
+}
 ```
 
 ## createPathDashEffect18+
 
-PhonePC/2in1TabletTVWearable
-
 static createPathDashEffect(path: Path, advance: number, phase: number, style: PathDashStyle): PathEffect
 
-通过路径描述的形状创建一个虚线路径效果。
+创建一个虚线路径效果对象，通过路径描述的形状生成。与[createDashPathEffect](arkts-apis-graphics-drawing-patheffect.md#createdashpatheffect12)使用intervals数组指定ON/OFF长度创建规则间距虚线不同，本接口通过Path指定虚线段的图形形状。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
@@ -86,15 +79,15 @@ static createPathDashEffect(path: Path, advance: number, phase: number, style: P
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | [Path](arkts-apis-graphics-drawing-path.md) | 是 | 通过该路径生成一个图形，用来填充每个虚线段。 |
-| advance | number | 是 | 虚线段的步长，该参数为大于0的浮点数，否则会抛错误码。 |
-| phase | number | 是 | 表示虚线段内图形在虚线步长范围内的偏移量，该参数为浮点数，效果为先对偏移量取绝对值，然后对步长取模。 |
-| style | [PathDashStyle](arkts-apis-graphics-drawing-e.md#pathdashstyle18) | 是 | 指定虚线效果的样式。 |
+| advance | number | 是 | 虚线段的步长，取值范围>0，否则会抛错误码。单位为物理像素px。 |
+| phase | number | 是 | 表示虚线段内图形在虚线步长范围内的偏移量，该参数为浮点数，效果为先对偏移量取绝对值，然后对步长取模。单位为物理像素px。 |
+| style | [PathDashStyle](arkts-apis-graphics-drawing-e.md#pathdashstyle18) | 是 | 指定虚线效果的样式，决定虚线段图形在路径上的变换方式。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [PathEffect](arkts-apis-graphics-drawing-patheffect.md) | 返回创建的路径效果对象。 |
+| [PathEffect](arkts-apis-graphics-drawing-patheffect.md) | 返回创建的虚线路径效果对象，可通过[Pen.setPathEffect](arkts-apis-graphics-drawing-pen.md#setpatheffect12)将其应用到画笔上以改变路径渲染样式。 |
 
 **错误码：**
 
@@ -106,49 +99,46 @@ static createPathDashEffect(path: Path, advance: number, phase: number, style: P
 
 **示例：**
 
-```
-1. import { RenderNode } from '@kit.ArkUI';
-2. import { common2D, drawing } from '@kit.ArkGraphics2D';
+```ts
+import { RenderNode, DrawContext } from '@kit.ArkUI';
+import { common2D, drawing } from '@kit.ArkGraphics2D';
 
-4. class DrawingRenderNode extends RenderNode {
-5. draw(context : DrawContext) {
-6. const canvas = context.canvas;
-7. let pen = new drawing.Pen();
-8. const penColor: common2D.Color = { alpha: 255, red: 255, green: 0, blue: 0 }
-9. pen.setColor(penColor);
-10. pen.setStrokeWidth(10);
-11. canvas.attachPen(pen);
-12. pen.setAntiAlias(true);
+class DrawingRenderNode extends RenderNode {
+  draw(context : DrawContext) {
+    const canvas = context.canvas;
+    let pen = new drawing.Pen();
+    const penColor: common2D.Color = { alpha: 255, red: 255, green: 0, blue: 0 };
+    pen.setColor(penColor);
+    pen.setStrokeWidth(10);
+    pen.setAntiAlias(true);
 
-14. const path = new drawing.Path();
-15. path.moveTo(100, 100);
-16. path.lineTo(150, 50);
-17. path.lineTo(200, 100);
+    const path = new drawing.Path();
+    path.moveTo(100, 100);
+    path.lineTo(150, 50);
+    path.lineTo(200, 100);
 
-19. const path1 = new drawing.Path();
-20. path1.moveTo(0, 0);
-21. path1.lineTo(10, 0);
-22. path1.lineTo(20, 10);
-23. path1.lineTo(0,10);
+    const dashShapePath = new drawing.Path();
+    dashShapePath.moveTo(0, 0);
+    dashShapePath.lineTo(10, 0);
+    dashShapePath.lineTo(20, 10);
+    dashShapePath.lineTo(0, 10);
 
-25. let pathEffect1: drawing.PathEffect = drawing.PathEffect.createPathDashEffect(path1, 50, -30,
-26. drawing.PathDashStyle.MORPH);
-27. pen.setPathEffect(pathEffect1);
+    let pathEffect: drawing.PathEffect = drawing.PathEffect.createPathDashEffect(dashShapePath, 50, -30,
+        drawing.PathDashStyle.MORPH);
+    pen.setPathEffect(pathEffect);
 
-29. canvas.attachPen(pen);
-30. canvas.drawPath(path);
-31. canvas.detachPen();
-32. }
-33. }
+    canvas.attachPen(pen);
+    canvas.drawPath(path);
+    canvas.detachPen();
+  }
+}
 ```
 
 ## createSumPathEffect18+
 
-PhonePC/2in1TabletTVWearable
-
 static createSumPathEffect(firstPathEffect: PathEffect, secondPathEffect: PathEffect): PathEffect
 
-创建一个叠加的路径效果。与createComposePathEffect不同，此接口会分别对两个参数的效果各自独立进行表现，然后将两个效果简单重叠显示。
+创建一个叠加的路径效果。与[createComposePathEffect](arkts-apis-graphics-drawing-patheffect.md#createcomposepatheffect18)不同，此接口会分别对两个参数的效果各自独立进行表现，然后将两个效果简单重叠显示。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
@@ -163,32 +153,30 @@ static createSumPathEffect(firstPathEffect: PathEffect, secondPathEffect: PathEf
 
 | 类型 | 说明 |
 | --- | --- |
-| [PathEffect](arkts-apis-graphics-drawing-patheffect.md) | 返回创建的路径效果对象。 |
+| [PathEffect](arkts-apis-graphics-drawing-patheffect.md) | 返回创建的叠加路径效果对象，可通过[Pen.setPathEffect](arkts-apis-graphics-drawing-pen.md#setpatheffect12)将其应用到画笔上以改变路径渲染样式。 |
 
 **示例：**
 
-```
-1. import { RenderNode } from '@kit.ArkUI';
-2. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { RenderNode } from '@kit.ArkUI';
+import { drawing } from '@kit.ArkGraphics2D';
 
-4. class DrawingRenderNode extends RenderNode {
-5. draw(context : DrawContext) {
-6. const canvas = context.canvas;
-7. let intervals = [10, 5];
-8. let pathEffectOne = drawing.PathEffect.createDashPathEffect(intervals, 5);
-9. let pathEffectTwo = drawing.PathEffect.createDashPathEffect(intervals, 10);
-10. let effect = drawing.PathEffect.createSumPathEffect(pathEffectOne, pathEffectTwo);
-11. }
-12. }
+class DrawingRenderNode extends RenderNode {
+  draw(context : DrawContext) {
+    const canvas = context.canvas;
+    let intervals = [10, 5];
+    let firstPathEffect = drawing.PathEffect.createDashPathEffect(intervals, 5);
+    let secondPathEffect = drawing.PathEffect.createDashPathEffect(intervals, 10);
+    let effect = drawing.PathEffect.createSumPathEffect(firstPathEffect, secondPathEffect);
+  }
+}
 ```
 
 ## createCornerPathEffect12+
 
-PhonePC/2in1TabletTVWearable
-
 static createCornerPathEffect(radius: number): PathEffect
 
-创建将路径的夹角变成指定半径的圆角的路径效果对象。
+创建将路径的夹角变成指定半径的圆角的路径效果对象。该效果会在路径的每个夹角处插入指定半径的弧线段，将原有的尖锐转角替换为平滑的圆角过渡。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
@@ -196,13 +184,13 @@ static createCornerPathEffect(radius: number): PathEffect
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| radius | number | 是 | 圆角的半径，必须大于0，该参数为浮点数。 |
+| radius | number | 是 | 圆角的半径，取值范围>0，该参数为浮点数。单位为物理像素px。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [PathEffect](arkts-apis-graphics-drawing-patheffect.md) | 返回创建的路径效果对象。 |
+| [PathEffect](arkts-apis-graphics-drawing-patheffect.md) | 返回创建的圆角路径效果对象，可通过[Pen.setPathEffect](arkts-apis-graphics-drawing-pen.md#setpatheffect12)将其应用到画笔上以改变路径渲染样式。 |
 
 **错误码：**
 
@@ -214,25 +202,23 @@ static createCornerPathEffect(radius: number): PathEffect
 
 **示例：**
 
-```
-1. import { RenderNode } from '@kit.ArkUI';
-2. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { RenderNode } from '@kit.ArkUI';
+import { drawing } from '@kit.ArkGraphics2D';
 
-4. class DrawingRenderNode extends RenderNode {
-5. draw(context : DrawContext) {
-6. const canvas = context.canvas;
-7. let effect = drawing.PathEffect.createCornerPathEffect(30);
-8. }
-9. }
+class DrawingRenderNode extends RenderNode {
+  draw(context : DrawContext) {
+    const canvas = context.canvas;
+    let effect = drawing.PathEffect.createCornerPathEffect(30);
+  }
+}
 ```
 
 ## createDiscretePathEffect18+
 
-PhonePC/2in1TabletTVWearable
-
 static createDiscretePathEffect(segLength: number, dev: number, seedAssist?: number): PathEffect
 
-创建一种将路径打散，并且在路径上产生不规则分布的效果。
+创建将路径打散为离散线段并对端点进行随机偏移的路径效果对象。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
@@ -240,37 +226,35 @@ static createDiscretePathEffect(segLength: number, dev: number, seedAssist?: num
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| segLength | number | 是 | 路径中每进行一次打散操作的长度，该长度为浮点数，负数和0时无效果。 |
-| dev | number | 是 | 绘制时的末端点的最大移动偏离量，该偏移量为浮点数。 |
-| seedAssist | number | 否 | 生成效果伪随机种子辅助变量，默认值为0，该参数为32位无符号整数。 |
+| segLength | number | 是 | 路径中每进行一次打散操作的长度，该参数为浮点数，传入负数或0时无效果。单位为物理像素px。 |
+| dev | number | 是 | 绘制时每个离散线段端点的最大移动偏离量，该偏离量为浮点数。单位为物理像素px。 |
+| seedAssist | number | 否 | 用于生成离散效果的伪随机种子，影响路径打散的随机分布模式。当需要可复现的离散效果时传入指定种子值；当不需要特定随机分布模式时可省略此参数，省略时默认值为0。该参数为32位无符号整数。超出范围时，该参数值按32位无符号整数溢出回绕规则处理。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [PathEffect](arkts-apis-graphics-drawing-patheffect.md) | 返回创建的路径效果对象。 |
+| [PathEffect](arkts-apis-graphics-drawing-patheffect.md) | 返回创建的离散路径效果对象，可通过[Pen.setPathEffect](arkts-apis-graphics-drawing-pen.md#setpatheffect12)将其应用到画笔上以改变路径渲染样式。 |
 
 **示例：**
 
-```
-1. import { RenderNode } from '@kit.ArkUI';
-2. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { RenderNode } from '@kit.ArkUI';
+import { drawing } from '@kit.ArkGraphics2D';
 
-4. class DrawingRenderNode extends RenderNode {
-5. draw(context : DrawContext) {
-6. const canvas = context.canvas;
-7. let effect = drawing.PathEffect.createDiscretePathEffect(100, -50, 0);
-8. }
-9. }
+class DrawingRenderNode extends RenderNode {
+  draw(context : DrawContext) {
+    const canvas = context.canvas;
+    let effect = drawing.PathEffect.createDiscretePathEffect(100, -50, 0);
+  }
+}
 ```
 
 ## createComposePathEffect18+
 
-PhonePC/2in1TabletTVWearable
-
 static createComposePathEffect(outer: PathEffect, inner: PathEffect): PathEffect
 
-创建路径组合的路径效果对象，首先应用内部路径效果，然后应用外部路径效果。
+创建组合路径效果对象，首先应用内部路径效果，然后应用外部路径效果。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
@@ -278,27 +262,27 @@ static createComposePathEffect(outer: PathEffect, inner: PathEffect): PathEffect
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| outer | [PathEffect](arkts-apis-graphics-drawing-patheffect.md) | 是 | 组合路径效果中外部路径效果。 |
-| inner | [PathEffect](arkts-apis-graphics-drawing-patheffect.md) | 是 | 组合路径效果中内部路径效果。 |
+| outer | [PathEffect](arkts-apis-graphics-drawing-patheffect.md) | 是 | 组合路径效果中的外部路径效果，在内部路径效果应用之后进行叠加处理，决定最终呈现的叠加效果。 |
+| inner | [PathEffect](arkts-apis-graphics-drawing-patheffect.md) | 是 | 组合路径效果中的内部路径效果，首先应用于原始路径，作为第一层效果处理，随后再由外部路径效果进行叠加。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [PathEffect](arkts-apis-graphics-drawing-patheffect.md) | 返回创建的路径效果对象。 |
+| [PathEffect](arkts-apis-graphics-drawing-patheffect.md) | 返回创建的组合路径效果对象，可通过[Pen.setPathEffect](arkts-apis-graphics-drawing-pen.md#setpatheffect12)将其应用到画笔上以改变路径渲染样式。 |
 
 **示例：**
 
-```
-1. import { RenderNode } from '@kit.ArkUI';
-2. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { RenderNode } from '@kit.ArkUI';
+import { drawing } from '@kit.ArkGraphics2D';
 
-4. class DrawingRenderNode extends RenderNode {
-5. draw(context : DrawContext) {
-6. const canvas = context.canvas;
-7. let pathEffect1 = drawing.PathEffect.createCornerPathEffect(100);
-8. let pathEffect2 = drawing.PathEffect.createCornerPathEffect(10);
-9. let effect = drawing.PathEffect.createComposePathEffect(pathEffect1, pathEffect2);
-10. }
-11. }
+class DrawingRenderNode extends RenderNode {
+  draw(context : DrawContext) {
+    const canvas = context.canvas;
+    let outerPathEffect = drawing.PathEffect.createCornerPathEffect(100);
+    let innerPathEffect = drawing.PathEffect.createCornerPathEffect(10);
+    let effect = drawing.PathEffect.createComposePathEffect(outerPathEffect, innerPathEffect);
+  }
+}
 ```

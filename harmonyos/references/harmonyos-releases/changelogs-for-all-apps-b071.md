@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-for-all-apps-b071
 title: 针对所有应用的变更
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Release引入的接口行为变更 > 针对所有应用的变更
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Release引入的接口行为变更 > 针对所有应用的变更
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:36:08+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:0957e4d1e2a80a0b4192b57c042d050b328ed9650e93491975c95ecfb7ccf381
+scraped_at: 2026-09-02T14:58:53+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:d1448382d77801f77df03e0dc037e6a9d61532b0de4bad102a5975883fc81520
 ---
 
 ## Ability Kit
@@ -165,7 +165,7 @@ WindowExtensionContext:
 
 为了优化资产的保存逻辑，修改了媒体库对于“资产-相册”的对应关系。修改前一个图片/视频资源可以通过关系映射存在于多个逻辑相册中，修改后一张照片仅能归属一个实体相册。
 
-说明
+**说明** 
 
 该变更在10月18日更新的系统ROM版本引入，ROM版本号为NEXT.0.0.72。
 

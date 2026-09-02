@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_avmuxer.h
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 头文件 > native_avmuxer.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:05+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:df77f81c2da7c66c13add11efcbd8c3397d0ab41c9f08825b00c6c8fa461fc55
+scraped_at: 2026-09-02T15:02:22+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0b0e3e3827f5778b8301b436a5a58473003d9e186994d6b9304b696e41a00707
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明用于音视频封装的Native API。
 
@@ -28,19 +26,13 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [OH\_AVMuxer](capi-avmuxer-oh-avmuxer.md) | OH\_AVMuxer | 定义封装接口native层对象类型。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -56,14 +48,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AVMuxer\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVMuxer *OH_AVMuxer_Create(int32_t fd, OH_AVOutputFormat format)
+```c
+OH_AVMuxer *OH_AVMuxer_Create(int32_t fd, OH_AVOutputFormat format)
 ```
 
 **描述**
@@ -89,10 +77,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMuxer\_SetRotation()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVMuxer_SetRotation(OH_AVMuxer *muxer, int32_t rotation)
+```c
+OH_AVErrCode OH_AVMuxer_SetRotation(OH_AVMuxer *muxer, int32_t rotation)
 ```
 
 **描述**
@@ -118,15 +104,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMuxer\_SetFormat()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVMuxer_SetFormat(OH_AVMuxer *muxer, OH_AVFormat *format)
+```c
+OH_AVErrCode OH_AVMuxer_SetFormat(OH_AVMuxer *muxer, OH_AVFormat *format)
 ```
 
 **描述**
 
-设置format数据到封装器。
+设置format数据到封装器。该接口必须在[OH\_AVMuxer\_Start](capi-native-avmuxer-h.md#oh_avmuxer_start)前调用。
 
 API version 14起，支持设置创建时间OH\_MD\_KEY\_CREATION\_TIME。若创建时间未写入成功，请排查OH\_MD\_KEY\_CREATION\_TIME字符串设置是否符合ISO 8601标准的时间格式且为UTC时间。
 
@@ -154,10 +138,8 @@ API version 20起，支持：
 
 ### OH\_AVMuxer\_AddTrack()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVMuxer_AddTrack(OH_AVMuxer *muxer, int32_t *trackIndex, OH_AVFormat *trackFormat)
+```c
+OH_AVErrCode OH_AVMuxer_AddTrack(OH_AVMuxer *muxer, int32_t *trackIndex, OH_AVFormat *trackFormat)
 ```
 
 **描述**
@@ -184,10 +166,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMuxer\_Start()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVMuxer_Start(OH_AVMuxer *muxer)
+```c
+OH_AVErrCode OH_AVMuxer_Start(OH_AVMuxer *muxer)
 ```
 
 **描述**
@@ -212,10 +192,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMuxer\_WriteSample()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVMuxer_WriteSample(OH_AVMuxer *muxer, uint32_t trackIndex, OH_AVMemory *sample, OH_AVCodecBufferAttr info)
+```c
+OH_AVErrCode OH_AVMuxer_WriteSample(OH_AVMuxer *muxer, uint32_t trackIndex, OH_AVMemory *sample, OH_AVCodecBufferAttr info)
 ```
 
 **描述**
@@ -235,7 +213,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AVMuxer](capi-avmuxer-oh-avmuxer.md) \*muxer | 指向OH\_AVMuxer实例的指针。 |
-| uint32\_t trackIndex | 数据对应的音视频轨的索引。 |
+| uint32\_t trackIndex | 数据对应的音视频轨的索引，取值范围为已成功添加的音视频轨索引。 |
 | [OH\_AVMemory](capi-core-oh-avmemory.md) \*sample | 编码或解封装得到的数据。 |
 | [OH\_AVCodecBufferAttr](capi-core-oh-avcodecbufferattr.md) info | sample对应的描述信息。 |
 
@@ -247,10 +225,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMuxer\_WriteSampleBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVMuxer_WriteSampleBuffer(OH_AVMuxer *muxer, uint32_t trackIndex, const OH_AVBuffer *sample)
+```c
+OH_AVErrCode OH_AVMuxer_WriteSampleBuffer(OH_AVMuxer *muxer, uint32_t trackIndex, const OH_AVBuffer *sample)
 ```
 
 **描述**
@@ -266,7 +242,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AVMuxer](capi-avmuxer-oh-avmuxer.md) \*muxer | 指向OH\_AVMuxer实例的指针。 |
-| uint32\_t trackIndex | 数据对应的音视频轨的索引。 |
+| uint32\_t trackIndex | 数据对应的音视频轨的索引，取值范围为已成功添加的音视频轨索引。 |
 | const [OH\_AVBuffer](capi-core-oh-avbuffer.md) \*sample | 编码或解封装得到的数据及属性。 |
 
 **返回：**
@@ -277,15 +253,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMuxer\_Stop()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVMuxer_Stop(OH_AVMuxer *muxer)
+```c
+OH_AVErrCode OH_AVMuxer_Stop(OH_AVMuxer *muxer)
 ```
 
 **描述**
 
-停止封装。封装器停止后不支持重新开始。
+停止封装。该接口必须在[OH\_AVMuxer\_Start](capi-native-avmuxer-h.md#oh_avmuxer_start)后调用，封装器停止后不支持重新开始。
 
 **系统能力：** SystemCapability.Multimedia.Media.Muxer
 
@@ -305,10 +279,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMuxer\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVMuxer_Destroy(OH_AVMuxer *muxer)
+```c
+OH_AVErrCode OH_AVMuxer_Destroy(OH_AVMuxer *muxer)
 ```
 
 **描述**

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: drawing_sampling_options.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > drawing_sampling_options.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:59+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:1449812fcc033900ac5aca99a389121a7942f985d74e35187165b496fc415bd8
+scraped_at: 2026-09-02T15:02:44+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:152f354e7cfcfab67e9ae946d24fe32bbb50b33c5ba0d006eeae59c8d2d5c202
 ---
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
 文件中定义了与采样相关的功能函数。用于图片或者纹理等图像的采样。
+
+本模块为单线程模型策略，需要调用方自行管理线程安全和上下文状态的切换。
 
 **引用文件：** <native\_drawing/drawing\_sampling\_options.h>
 
@@ -26,11 +26,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -39,24 +35,18 @@ PhonePC/2in1TabletTVWearable
 
 ### 函数
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 描述 |
 | --- | --- |
 | [OH\_Drawing\_SamplingOptions\* OH\_Drawing\_SamplingOptionsCreate(OH\_Drawing\_FilterMode filterMode,OH\_Drawing\_MipmapMode mipmapMode)](capi-drawing-sampling-options-h.md#oh_drawing_samplingoptionscreate) | 创建一个采样选项对象。  本接口会产生错误码，可以通过[OH\_Drawing\_ErrorCodeGet](capi-drawing-error-code-h.md#oh_drawing_errorcodeget)查看错误码的取值。  mipmapMode不在枚举范围内时返回OH\_DRAWING\_ERROR\_PARAMETER\_OUT\_OF\_RANGE。 |
 | [OH\_Drawing\_SamplingOptions\* OH\_Drawing\_SamplingOptionsCopy(OH\_Drawing\_SamplingOptions\* samplingOptions)](capi-drawing-sampling-options-h.md#oh_drawing_samplingoptionscopy) | 创建一个采样选项对象副本[OH\_Drawing\_SamplingOptions](capi-drawing-oh-drawing-samplingoptions.md)，用于拷贝一个已有采样选项对象。  本接口会产生错误码，可以通过[OH\_Drawing\_ErrorCodeGet](capi-drawing-error-code-h.md#oh_drawing_errorcodeget)查看错误码的取值。  samplingOptions为NULL时返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER。 |
-| [void OH\_Drawing\_SamplingOptionsDestroy(OH\_Drawing\_SamplingOptions\* samplingOptions)](capi-drawing-sampling-options-h.md#oh_drawing_samplingoptionsdestroy) | 销毁采样选项对象并回收该对象占有内存。 |
+| [void OH\_Drawing\_SamplingOptionsDestroy(OH\_Drawing\_SamplingOptions\* samplingOptions)](capi-drawing-sampling-options-h.md#oh_drawing_samplingoptionsdestroy) | 销毁采样选项对象并回收该对象占用内存。 |
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Drawing\_FilterMode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_Drawing_FilterMode
+```c
+enum OH_Drawing_FilterMode
 ```
 
 **描述**
@@ -72,10 +62,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_MipmapMode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_Drawing_MipmapMode
+```c
+enum OH_Drawing_MipmapMode
 ```
 
 **描述**
@@ -92,14 +80,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Drawing\_SamplingOptionsCreate()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_SamplingOptions* OH_Drawing_SamplingOptionsCreate(OH_Drawing_FilterMode filterMode,OH_Drawing_MipmapMode mipmapMode)
+```c
+OH_Drawing_SamplingOptions* OH_Drawing_SamplingOptionsCreate(OH_Drawing_FilterMode filterMode,OH_Drawing_MipmapMode mipmapMode)
 ```
 
 **描述**
@@ -129,10 +113,8 @@ mipmapMode不在枚举范围内时返回OH\_DRAWING\_ERROR\_PARAMETER\_OUT\_OF\_
 
 ### OH\_Drawing\_SamplingOptionsCopy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_SamplingOptions* OH_Drawing_SamplingOptionsCopy(OH_Drawing_SamplingOptions* samplingOptions)
+```c
+OH_Drawing_SamplingOptions* OH_Drawing_SamplingOptionsCopy(OH_Drawing_SamplingOptions* samplingOptions)
 ```
 
 **描述**
@@ -161,15 +143,13 @@ samplingOptions为NULL时返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER。
 
 ### OH\_Drawing\_SamplingOptionsDestroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Drawing_SamplingOptionsDestroy(OH_Drawing_SamplingOptions* samplingOptions)
+```c
+void OH_Drawing_SamplingOptionsDestroy(OH_Drawing_SamplingOptions* samplingOptions)
 ```
 
 **描述**
 
-销毁采样选项对象并回收该对象占有内存。
+销毁采样选项对象并回收该对象占用内存。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
 

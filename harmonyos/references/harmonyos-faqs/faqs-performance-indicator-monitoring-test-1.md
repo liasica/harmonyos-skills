@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: trace采集功能如何使用
 breadcrumb: FAQ > DevEco Testing > 专项测试 > 性能指标监控测试 > trace采集功能如何使用
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:27+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:800476aa2b1210eaf28d0e846e71e4597f73b77bd361d7719303ab9f190a3d4f
 ---
 

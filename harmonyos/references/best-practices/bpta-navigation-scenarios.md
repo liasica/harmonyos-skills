@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-navigation
 title: 导航定位场景低功耗规则
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 > 前台资源合理使用 > 导航定位场景低功耗规则
 category: best-practices
-scraped_at: 2026-04-29T14:13:50+08:00
+scraped_at: 2026-09-02T14:53:45+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:693f96dc2621178d012e6455e0a20ded0cce9c77ea1ac51c2edbab2280ce7e96
+content_hash: sha256:2634f4745876342bea9cee41af65359f801d5a2941505bb19cb3a4f7925cbb36
 ---
 
 ## 规则
@@ -17,55 +17,53 @@ content_hash: sha256:693f96dc2621178d012e6455e0a20ded0cce9c77ea1ac51c2edbab2280c
 
 为了避免导航类应用无法使用系统低功耗方案，确保正确设置usage类型。配置音频渲染参数并创建AudioRenderer实例时，设置usage类型为audio.StreamUsage.STREAM\_USAGE\_NAVIGATION。
 
-```
-1. import { audio } from '@kit.AudioKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { audio } from '@kit.AudioKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. let audioStreamInfo: audio.AudioStreamInfo = {
-5. samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
-6. channels: audio.AudioChannel.CHANNEL_1,
-7. sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-8. encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
-9. };
-10. let audioRendererInfo: audio.AudioRendererInfo = {
-11. usage: audio.StreamUsage.STREAM_USAGE_NAVIGATION,
-12. rendererFlags: 0
-13. };
-14. let audioRendererOptions: audio.AudioRendererOptions = {
-15. streamInfo: audioStreamInfo,
-16. rendererInfo: audioRendererInfo
-17. };
-18. audio.createAudioRenderer(audioRendererOptions, (err, data) => {
-19. if (err) {
-20. hilog.error(0x0000, 'Sample', `Invoke createAudioRenderer failed, code is ${err.code}, message is ${err.message}`);
-21. return;
-22. } else {
-23. hilog.info(0x0000, 'Sample', 'Invoke createAudioRenderer succeeded.');
-24. let audioRenderer = data;
-25. }
-26. });
+let audioStreamInfo: audio.AudioStreamInfo = {
+  samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+  channels: audio.AudioChannel.CHANNEL_1,
+  sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+  encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+};
+let audioRendererInfo: audio.AudioRendererInfo = {
+  usage: audio.StreamUsage.STREAM_USAGE_NAVIGATION,
+  rendererFlags: 0
+};
+let audioRendererOptions: audio.AudioRendererOptions = {
+  streamInfo: audioStreamInfo,
+  rendererInfo: audioRendererInfo
+};
+audio.createAudioRenderer(audioRendererOptions, (err, data) => {
+  if (err) {
+    hilog.error(0x0000, 'Sample', `Invoke createAudioRenderer failed, code is ${err.code}, message is ${err.message}`);
+    return;
+  } else {
+    hilog.info(0x0000, 'Sample', 'Invoke createAudioRenderer succeeded.');
+    let audioRenderer = data;
+  }
+});
 ```
-
-[NavigationAndPositioningRule.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/RationalUseOfFrontEndResources/entry/src/main/ets/pages/NavigationAndPositioningRule.ets#L21-L46)
 
 ## 调测验证
 
 * 通过以下命令查看日志确认：
 
-  ```
-  1. hdc shell
-  2. hilog | grep usage
+  ```screen
+  hdc shell
+  hilog | grep usage
   ```
 * 执行效果如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/kvUH7LF-Qu-rRoeKGUtx1g/zh-cn_image_0000002229450993.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/79KRNWATQiOgRCefL-rhhA/zh-cn_image_0000002229450993.png "点击放大")
 
 ## 结果对比
 
 * 优化前：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/eUtu96aMTNWBjow2jq9xiA/zh-cn_image_0000002193851136.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/tSmdpp1ZT8W76vEjZcOT4g/zh-cn_image_0000002193851136.png "点击放大")
 
 * 优化后，图中字段证明系统低功耗方案使能成功（根据实验室测试功耗，功耗负载降低约43.89%。）：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/aypZ4dwRQQ-V-Psn4XLbKg/zh-cn_image_0000002194010716.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/cKND9THWSKy8vX6LmL6Wyw/zh-cn_image_0000002194010716.png "点击放大")

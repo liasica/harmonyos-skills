@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: webSocket错误码
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 错误码 > webSocket错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:43+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:cdfdc128bd1ec7b517d362c118cefcfe4244888885def80b70cbd0862fdcc222
+scraped_at: 2026-09-02T15:01:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:942b50d9a8913cbebb6e7f8f909d1d41ccbdecf199c59cc99348ce2fff758c3b
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码](errorcode-universal.md)说明文档。
 
@@ -24,16 +24,19 @@ WebSocket连接失败。
 
 **可能原因**
 
-1. 服务器拒绝客户端连接、协议出现问题导致握手失败或证书验证失败。
-2. 客户端或服务端断开连接时无状态码。
+1. 连接建立失败：可能是服务器拒绝客户端连接、协议出现问题导致握手失败或证书验证失败。
+2. 链路异常断开：客户端或服务端断开连接时无正常状态码。
+3. 握手阶段消息头处理异常：在添加header过程中发生错误。
+4. 系统内部异常。
 
 **处理步骤**
 
-检查协议是否有效、证书校验是否通过，重新连接。
+1. 检查协议是否有效、证书校验是否通过，重新连接。
+2. 检查网络是否异常，或切换网络重新连接。
+3. 检查添加header是否正确。
+4. 如果问题仍然存在，收集完整日志后联系技术支持获取帮助。
 
 ## 2302001 Websocket URL错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -49,13 +52,11 @@ WebSocket URL错误。
 
 **处理步骤**
 
-1.检查URL是否为空或者未包含正确的协议（ws://或wss://)。
+1.检查URL是否为空或者未包含正确的协议（ws://或wss://）。
 
 2.检查URL长度是否超过2048个字符。
 
 ## 2302002 Websocket 证书不存在
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -77,8 +78,6 @@ WebSocket 证书不存在。
 
 ## 2302003 Websocket 连接已经存在
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Websocket connection already exists.
@@ -97,8 +96,6 @@ WebSocket 连接已经建立。
 
 ## 2302004 WebsocketServer 无法在指定的NIC（网络接口）上进行网络监听
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Can't listen to the given NIC.
@@ -109,15 +106,13 @@ WebSocketServer无法在指定的NIC上进行网络监听。
 
 **可能原因**
 
-WebSocketServer服务器配置文件中的ip地址无效。
+WebSocketServer服务器配置文件中的IP地址无效。
 
 **处理步骤**
 
-检查网络连接是否正常，检查ip地址有效性。
+检查网络连接是否正常，检查IP地址有效性。
 
 ## 2302005 WebsocketServer 无法在指定的端口上进行网络监听
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -135,9 +130,25 @@ WebSocketServer服务器配置文件中的端口号无效。
 
 检查端口号的有效性。
 
-## 2302998 不允许访问域名
+## 2302007 WebsocketServer当前监听的端口已被占用
 
-PhonePC/2in1TabletTVWearable
+**错误信息**
+
+Websocket port already occupied.
+
+**错误描述**
+
+WebsocketServer当前监听的端口已经被占用。
+
+**可能原因**
+
+指定的监听端口已被其他进程占用。
+
+**处理步骤**
+
+更换一个未被占用的端口。
+
+## 2302998 不允许访问域名
 
 **错误信息**
 
@@ -156,8 +167,6 @@ It is not allowed to access this domain.
 可参考[配置服务器域名](../atomic-guides/agc-help-harmonyos-server-domain.md)文档完成服务器域名相关配置。
 
 ## 2302999 内部错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 

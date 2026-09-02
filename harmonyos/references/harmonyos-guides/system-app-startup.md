@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/system-app-startup
 title: 拉起系统应用
-breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > 应用间跳转 > 拉起系统应用
+breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起系统应用
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:52+08:00
-doc_updated_at: 2026-04-08
-content_hash: sha256:62a36bf3d5b768460880c5cd36b791923303bbdaa36ae4c4ba090d81560482e8
+scraped_at: 2026-09-02T14:59:10+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:2a719c1a5db0de7bcb1145ab8d424c9ba3241b8fc0ea869b8c18d0f0d5ee1f00
 ---
 
 本章节介绍拉起系统应用的方式，以及支持跳转系统应用的能力清单。
@@ -20,7 +20,7 @@ content_hash: sha256:62a36bf3d5b768460880c5cd36b791923303bbdaa36ae4c4ba090d81560
 
   应用拉起系统Picker组件（文件选择器、照片选择器、联系人选择器等）后，由用户在Picker上选择对应的文件、照片、联系人等资源，应用即可获取到Picker的返回结果。例如，一个音频播放器应用可以通过AudioViewPicker让用户选择音频文件，然后获取所选的音频文件路径进行播放。
 
-  说明
+  **说明** 
 
   由于系统Picker已经获取了对应权限的预授权，开发者使用系统Picker时，无需再次申请权限也可临时受限访问对应的资源。例如，当应用需要读取用户图片时，可通过使用照片Picker，在用户选择所需要的图片资源后，直接返回该图片资源，而不需要授予应用读取图片文件的权限。
 
@@ -45,16 +45,16 @@ content_hash: sha256:62a36bf3d5b768460880c5cd36b791923303bbdaa36ae4c4ba090d81560
   + 拉起音乐和音频权限设置弹窗
   + 拉起通讯录权限设置弹窗
   + 拉起日历权限设置弹窗
-* **通知管理：** 当应用通过[requestEnableNotification()](../harmonyos-references/js-apis-notificationmanager.md#notificationmanagerrequestenablenotification10)接口拉起通知授权弹框时，如果用户拒绝授权，将无法使用该接口再次拉起弹框，需要调用[openNotificationSettings()](../harmonyos-references/js-apis-notificationmanager.md#notificationmanageropennotificationsettings13)接口，支持拉起通知管理弹窗。
+* **通知管理：** 当应用通过[requestEnableNotification()](../harmonyos-references/js-apis-notificationmanager.md#notificationmanagerrequestenablenotification10)接口拉起通知授权弹框时，如果用户拒绝授权，将无法使用该接口再次拉起弹框，需要调用[openNotificationSettingsWithResult()](../harmonyos-references/js-apis-notificationmanager.md#notificationmanageropennotificationsettingswithresult)接口，支持拉起通知管理弹窗。
 * **网络管理：** 当应用需要通过WLAN连接网络时，可以通过[openNetworkManagerSettings()](../harmonyos-references/js-apis-settings.md#settingsopennetworkmanagersettings18)接口拉起WLAN设置弹窗。
 
 ### 应用市场
 
-[AppGallery Kit](store-introduction.md)支持通过[loadProduct()](../harmonyos-references/store-productviewmanager.md#section144826162913)接口、App Linking等多种方式拉起应用详情页。详见[应用详情页展示](store-productview.md#section729012543213)。
+[AppGallery Kit](store-introduction.md)支持通过[loadProduct()](../harmonyos-references/store-productviewmanager.md#productviewmanagerloadproduct)接口、App Linking等多种方式拉起应用详情页。详见[应用详情页展示](appgallery-productview-loadproduct.md)。
 
 ### 钱包
 
-[Payment Kit](payment-introduction.md)提供了[requestPayment](../harmonyos-references/payment-paymentservice.md#paymentservicerequestpayment)接口，可以实现单次支付、支付并签约。
+[Payment Kit](payment-introduction.md)提供了[requestPayment](../harmonyos-references/payment-paymentservice.md#requestpayment)接口，可以实现单次支付、支付并签约。
 
 ### 电话
 

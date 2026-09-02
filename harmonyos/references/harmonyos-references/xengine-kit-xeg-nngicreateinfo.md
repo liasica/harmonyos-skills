@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-k
 title: XEG_NNGICreateInfo
 breadcrumb: API参考 > 图形 > XEngine Kit（GPU加速引擎服务） > C API > 头文件和结构体 > 结构体 > XEG_NNGICreateInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:01+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:cdc50b62df6540013c3b595dc731f1cfdaa4efac64ab2ed188055523d57fc5f0
+scraped_at: 2026-09-02T15:02:49+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4914486e19d32fc8ab94141c4939cc0348b9adcef993c70e1c40c68a9b055588
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 此结构体描述创建具有NNGI特性的[XEG\_RTGI](xengine-kit-xengine.md#xeg_rtgi)对象的信息，当结构体中的信息变化时，需要创建新的[XEG\_RTGI](xengine-kit-xengine.md#xeg_rtgi)对象。
 
@@ -22,11 +20,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 成员变量
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -39,14 +33,10 @@ PhonePC/2in1TabletTV
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTV
-
 ### inferenceInputSize
 
-PhonePC/2in1TabletTV
-
-```
-1. VkExtent2D XEG_NNGICreateInfo::inferenceInputSize
+```cpp
+VkExtent2D XEG_NNGICreateInfo::inferenceInputSize
 ```
 
 **描述**
@@ -55,10 +45,8 @@ PhonePC/2in1TabletTV
 
 ### inferenceOutputSize
 
-PhonePC/2in1TabletTV
-
-```
-1. VkExtent2D XEG_NNGICreateInfo::inferenceOutputSize
+```cpp
+VkExtent2D XEG_NNGICreateInfo::inferenceOutputSize
 ```
 
 **描述**
@@ -67,10 +55,8 @@ PhonePC/2in1TabletTV
 
 ### pNext
 
-PhonePC/2in1TabletTV
-
-```
-1. const void* XEG_NNGICreateInfo::pNext
+```cpp
+const void* XEG_NNGICreateInfo::pNext
 ```
 
 **描述**
@@ -79,10 +65,8 @@ PhonePC/2in1TabletTV
 
 ### qualityMode
 
-PhonePC/2in1TabletTV
-
-```
-1. XEG_RTGIQualityMode XEG_NNGICreateInfo::qualityMode
+```cpp
+XEG_RTGIQualityMode XEG_NNGICreateInfo::qualityMode
 ```
 
 **描述**
@@ -91,10 +75,8 @@ PhonePC/2in1TabletTV
 
 ### sType
 
-PhonePC/2in1TabletTV
-
-```
-1. XEG_StructureType XEG_NNGICreateInfo::sType
+```cpp
+XEG_StructureType XEG_NNGICreateInfo::sType
 ```
 
 **描述**
@@ -103,10 +85,8 @@ PhonePC/2in1TabletTV
 
 ### trainingSize
 
-PhonePC/2in1TabletTV
-
-```
-1. VkExtent2D XEG_NNGICreateInfo::trainingSize
+```cpp
+VkExtent2D XEG_NNGICreateInfo::trainingSize
 ```
 
 **描述**

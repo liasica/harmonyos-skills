@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: oh_commonevent_support.h
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > C API > 头文件 > oh_commonevent_support.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:47+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1fbad9e5b048cd08d05b5d219178c2e604412c995e66b90cf3520929b7b9741a
+scraped_at: 2026-09-02T15:02:05+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8ec2ea438940383c48c8b0fba728b02e951c8bad6ba96a82da7bfd9983d01007
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供系统定义的公共事件常量。
 
@@ -26,15 +24,11 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 常量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
-| static const char \* const COMMON\_EVENT\_SHUTDOWN = "usual.event.SHUTDOWN" | 表示设备正在关闭并将继续直至最终关闭的公共事件。  **起始版本：** 12  **系统能力：** SystemCapability.Notification.CommonEvent |
+| static const char \* const COMMON\_EVENT\_SHUTDOWN = "usual.event.SHUTDOWN" | 表示设备正在关闭并将继续直至最终关闭的公共事件。  **起始版本：** 12 |
 | static const char \* const COMMON\_EVENT\_BATTERY\_CHANGED = "usual.event.BATTERY\_CHANGED" | 表示电池充电状态、电平和其他信息发生变化的公共事件。  **起始版本：** 12 |
 | static const char \* const COMMON\_EVENT\_BATTERY\_LOW = "usual.event.BATTERY\_LOW" | 表示电池电量低的公共事件。  **起始版本：** 12 |
 | static const char \* const COMMON\_EVENT\_BATTERY\_OKAY = "usual.event.BATTERY\_OKAY" | 表示电池退出低电平状态的公共事件。  **起始版本：** 12 |
@@ -53,7 +47,7 @@ PhonePC/2in1TabletTVWearable
 | static const char \* const COMMON\_EVENT\_BUNDLE\_REMOVED = "usual.event.BUNDLE\_REMOVED" | 表示已从设备中卸载已安装的捆绑包，但应用程序数据仍保留的公共事件。  **起始版本：** 12 |
 | static const char \* const COMMON\_EVENT\_PACKAGE\_FULLY\_REMOVED = "usual.event.PACKAGE\_FULLY\_REMOVED" | 表示已从设备中完全卸载已安装的应用程序（包括应用程序数据和代码）的公共事件。  **起始版本：** 12 |
 | static const char \* const COMMON\_EVENT\_PACKAGE\_CHANGED = "usual.event.PACKAGE\_CHANGED" | 表示应用包已更改的公共事件（例如，包中的组件已启用或禁用）。  **起始版本：** 12 |
-| static const char \* const COMMON\_EVENT\_PACKAGE\_RESTARTED = "usual.event.PACKAGE\_RESTARTED" | 表示用户重启应用包并杀死其所有进程的普通事件的动作。  **起始版本：** 12 |
+| static const char \* const COMMON\_EVENT\_PACKAGE\_RESTARTED = "usual.event.PACKAGE\_RESTARTED" | 表示用户重启应用包并杀死其所有进程的公共事件的动作。  **起始版本：** 12 |
 | static const char \* const COMMON\_EVENT\_PACKAGE\_DATA\_CLEARED = "usual.event.PACKAGE\_DATA\_CLEARED" | 表示用户清除应用包数据的公共事件的动作。  **起始版本：** 12 |
 | static const char \* const COMMON\_EVENT\_PACKAGE\_CACHE\_CLEARED = "usual.event.PACKAGE\_CACHE\_CLEARED" | 表示用户清除应用包缓存数据的公共事件。  **起始版本：** 12 |
 | static const char \* const COMMON\_EVENT\_PACKAGES\_SUSPENDED = "usual.event.PACKAGES\_SUSPENDED" | 表示应用包已挂起的公共事件。  **起始版本：** 12 |
@@ -97,7 +91,7 @@ PhonePC/2in1TabletTVWearable
 | static const char \* const COMMON\_EVENT\_QUICK\_FIX\_REVOKE\_RESULT = "usual.event.QUICK\_FIX\_REVOKE\_RESULT" | 表示撤销快速修复的公共事件。  **起始版本：** 12 |
 | static const char \* const COMMON\_EVENT\_USER\_INFO\_UPDATED = "usual.event.USER\_INFO\_UPDATED" | 表示用户信息已更新的公共事件。  **起始版本：** 12 |
 | static const char \* const COMMON\_EVENT\_SIM\_STATE\_CHANGED = "usual.event.SIM\_STATE\_CHANGED" | 表示SIM卡状态更新的公共事件。  **起始版本：** 12 |
-| static const char \* const COMMON\_EVENT\_CALL\_STATE\_CHANGED = "usual.event.CALL\_STATE\_CHANGED" | 表示呼叫状态更新的公共事件。  **起始版本：** 12 |
+| static const char \* const COMMON\_EVENT\_CALL\_STATE\_CHANGED = "usual.event.CALL\_STATE\_CHANGED" | 表示呼叫状态更新的公共事件。  **订阅者所需权限：** ohos.permission.GET\_TELEPHONY\_STATE  **起始版本：** 12 |
 | static const char \* const COMMON\_EVENT\_NETWORK\_STATE\_CHANGED = "usual.event.NETWORK\_STATE\_CHANGED" | 表示网络状态更新的公共事件。  **起始版本：** 12 |
 | static const char \* const COMMON\_EVENT\_SIGNAL\_INFO\_CHANGED = "usual.event.SIGNAL\_INFO\_CHANGED" | 表示信号信息更新的公共事件。  **起始版本：** 12 |
 | static const char \* const COMMON\_EVENT\_SCREEN\_UNLOCKED = "usual.event.SCREEN\_UNLOCKED" | 表示屏幕解锁的公共事件。  **起始版本：** 12 |
@@ -109,3 +103,7 @@ PhonePC/2in1TabletTVWearable
 | static const char \* const COMMON\_EVENT\_MANAGED\_BROWSER\_POLICY\_CHANGED = "usual.event.MANAGED\_BROWSER\_POLICY\_CHANGED" | 表示浏览器托管策略已更改。  **起始版本：** 15 |
 | static const char\* const COMMON\_EVENT\_TABLET\_MODE\_CHANGED = "usual.event.TABLET\_MODE\_CHANGED" | 表示可感知支架开合的设备，其支架开合状态变化的公共事件。  **起始版本：** 23 |
 | static const char\* const COMMON\_EVENT\_LID\_STATE\_CHANGED = "usual.event.LID\_STATE\_CHANGED" | 表示可感知开合盖子的设备，其开合盖状态变化的公共事件。  **起始版本：** 23 |
+| static const char\* const COMMON\_EVENT\_VOLUME\_DECRYPTED = "usual.event.VOLUME\_DECRYPTED" | 表示设备上的特定卷已被解密。  **起始版本：** 26.0.0 |
+| static const char\* const COMMON\_EVENT\_VOLUME\_ENCRYPTED = "usual.event.VOLUME\_ENCRYPTED" | 表示设备上的特定卷已被加密。  **起始版本：** 26.0.0 |
+| static const char\* const COMMON\_EVENT\_VOLUME\_ENCRYPTION\_POLICY\_SET = "usual.event.VOLUME\_ENCRYPTION\_POLICY\_SET" | 表示设备上的特定卷已设置其加密策略。  **起始版本：** 26.0.0 |
+| static const char\* const COMMON\_EVENT\_SKILL\_CHANGED = "usual.event.SKILL\_CHANGED" | 表示设备上应用的skill发生变化的公共事件。  **起始版本：** 26.0.0 |

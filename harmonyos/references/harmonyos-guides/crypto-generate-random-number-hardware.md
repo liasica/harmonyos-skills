@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-genera
 title: 使用硬件熵源生成安全随机数(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 随机数 > 使用硬件熵源生成安全随机数(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fefe4a87f5af130fca7c50bfabf404625b780637f6de115dd92f529a24cead92
+scraped_at: 2026-09-02T14:50:01+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:46b343123548d70d8ff7d6bb26f849608afe854bea4c2ba4246fe518a79fd774
 ---
 
-从API version 21开始，可以选择使用硬件熵源生成安全随机数。
+从API版本21开始，可以选择使用硬件熵源生成安全随机数。
 
 随机数主要用于临时会话密钥生成和非对称加密算法密钥生成等场景。在加解密场景中，安全随机数生成器需要具备随机性、不可预测性和不可重现性。
 
@@ -52,43 +52,39 @@ content_hash: sha256:fefe4a87f5af130fca7c50bfabf404625b780637f6de115dd92f529a24c
 
 * 通过await返回异步结果：
 
-  ```
-  1. import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  ```typescript
+  import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
-  3. async function doRand() {
-  4. let rand = cryptoFramework.createRandom();
-  5. rand.enableHardwareEntropy();
-  6. let seed = new Uint8Array([1, 2, 3]);
-  7. rand.setSeed({ data: seed });
-  8. let len = 12;
-  9. let randOutput = await rand.generateRandom(len);
-  10. console.info('rand output: ' + randOutput.data);
-  11. }
+  async function doRand() {
+      let rand = cryptoFramework.createRandom();
+      rand.enableHardwareEntropy();
+      let seed = new Uint8Array([1, 2, 3]);
+      rand.setSeed({ data: seed });
+      let len = 12;
+      let randOutput = await rand.generateRandom(len);
+      console.info('rand output: ' + randOutput.data);
+    }
   ```
-
-  [Await.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Security/CryptoArchitectureKit/SecureHardWareRandomNumberGeneration/entry/src/main/ets/pages/Await.ets#L15-L28)
 * 同步返回结果：
 
-  ```
-  1. import { cryptoFramework } from '@kit.CryptoArchitectureKit';
-  2. import { BusinessError } from '@kit.BasicServicesKit';
+  ```typescript
+  import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
 
-  4. function doRandBySync() {
-  5. let rand = cryptoFramework.createRandom();
-  6. rand.enableHardwareEntropy();
-  7. let len = 24; // Generate a 24-byte random number.
-  8. try {
-  9. let randData = rand.generateRandomSync(len);
-  10. if (randData.data.length !== 0) {
-  11. console.info('[Sync]: rand result: ' + randData.data);
-  12. } else {
-  13. console.error('[Sync]: get rand result: fail!');
-  14. }
-  15. } catch (error) {
-  16. let e: BusinessError = error as BusinessError;
-  17. console.error(`do rand failed: errCode: ${e.code}, message: ${e.message}`);
-  18. }
-  19. }
+  function doRandBySync() {
+    let rand = cryptoFramework.createRandom();
+    rand.enableHardwareEntropy();
+    let len = 24; // Generate a 24-byte random number.
+    try {
+      let randData = rand.generateRandomSync(len);
+      if (randData.data.length !== 0) {
+        console.info('[Sync]: rand result: ' + randData.data);
+      } else {
+        console.error('[Sync]: get rand result: fail!');
+      }
+    } catch (error) {
+      let e: BusinessError = error as BusinessError;
+      console.error(`do rand failed: errCode: ${e.code}, message: ${e.message}`);
+    }
+  }
   ```
-
-  [Sync.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Security/CryptoArchitectureKit/SecureHardWareRandomNumberGeneration/entry/src/main/ets/pages/Sync.ets#L15-L36)

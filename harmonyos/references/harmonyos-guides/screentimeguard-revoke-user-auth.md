@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 取消用户授权
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 用户授权管理 > 取消用户授权
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:40:26+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:48718061bdeee264325dc7dea40330073b838b0e69c56a90e27247fb7d1e3182
+scraped_at: 2026-09-02T14:50:32+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:2f094385a69598b6d266334dfb9c7b1c30c58755f98eaf42168dd0a05b8a8129
 ---
 
 ## 场景介绍
 
-当开发者希望取消应用的Screen Time Guard Kit授权时，可以通过调用取消用户授权的接口进行取消。一旦权限被取消，应用将无法再访问或使用对用户设备的时间管理等功能。如果应用尝试继续调用与屏幕守护时间模块相关的接口，系统会返回用户未授权使用的错误码，以确保功能的安全性和隐私保护。
+当管控应用希望取消用户的授权时，可以调用取消用户授权的接口。一旦权限被取消，管控应用将无法再使用屏幕时间守护功能。如果管控应用尝试继续调用屏幕时间守护模块的相关接口，系统会返回用户未授权使用的错误码，以确保功能的安全性和隐私保护。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/dtuDcQ1vRHSL0NH7BMZQ2A/zh-cn_image_0000002558765666.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/GnPpmxAJSuysonlJEFcLQw/zh-cn_image_0000002736314297.png)
 
 流程说明：
 
@@ -34,35 +34,35 @@ content_hash: sha256:48718061bdeee264325dc7dea40330073b838b0e69c56a90e27247fb7d1
 
 1. 导入相关模块。
 
-   ```
-   1. import { guardService } from '@kit.ScreenTimeGuardKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { guardService } from '@kit.ScreenTimeGuardKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 调用revokeUserAuth，取消用户授权。
 
-   ```
-   1. async function testRevokeUserAuth() {
-   2. try {
-   3. await guardService.revokeUserAuth();
-   4. } catch (err) {
-   5. const message = (err as BusinessError).message;
-   6. const code = (err as BusinessError).code;
-   7. hilog.error(0x0000, `ScreenTimeGuard:revokeUserAuth`, `revokeUserAuth failed with error code: ${code}, message: ${message}`);
-   8. }
-   9. }
+   ```typescript
+   public async revokeUserAuth(): Promise<void> {
+     try {
+       await guardService.revokeUserAuth();
+     } catch (error) {
+       let err: BusinessError = error as BusinessError;
+       hilog.error(0x0000, 'GuardService',
+         `revokeUserAuth failed, errCode is ${err.code}, errMessage is ${err.message}`);
+     }
+   }
    ```
 3. 获取用户授权状态。
 
-   ```
-   1. async function testGetUserAuthStatus() {
-   2. try {
-   3. const status = await guardService.getUserAuthStatus();
-   4. hilog.info(0x0000, `ScreenTimeGuard:getUserAuthStatus`, `user auth status: ${status}`);
-   5. } catch (err) {
-   6. const message = (err as BusinessError).message;
-   7. const code = (err as BusinessError).code;
-   8. hilog.error(0x0000, `ScreenTimeGuard:getUserAuthStatus`, `getUserAuthStatus failed with error code: ${code}, message: ${message}`);
-   9. }
-   10. }
+   ```typescript
+   public async getUserAuthStatus(): Promise<void> {
+     try {
+       const status = await guardService.getUserAuthStatus();
+       hilog.info(0x0000, 'GuardService', `user auth status: ${status}`);
+     } catch (error) {
+       let err: BusinessError = error as BusinessError;
+       hilog.error(0x0000, 'GuardService',
+         `getUserAuthStatus failed, errCode is ${err.code}, errMessage is ${err.message}`);
+     }
+   }
    ```

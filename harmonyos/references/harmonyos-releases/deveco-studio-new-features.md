@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/deveco-studio-new-features
 title: DevEco Studio
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.5(17) > DevEco Studio
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.5(17) > DevEco Studio
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:20+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:8822691208b83918b9c49ceee3e87968aa72175fe47d72821b8dc3d824e98071
+scraped_at: 2026-09-02T14:49:23+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8a0c6204a0453439139f60e873c5a927e53e335f9740f93721f10c8ac0ac652b
 ---
 
 ## DevEco Studio 5.0.5 Release（5.0.13.240）兼容性配套关系
@@ -185,7 +185,7 @@ DevEco Studio 5.0.13.200配套使用的命令行工具列表、支持的API范�
 * DevEco Studio支持开发API 17工程。
 * hvigor-config.json5文件的properties下新增ohos.uiTransform.Optimization字段，用于指定是否对ArkTS编译转换后的产物中的bundleName字段开启优化，开启后，bundleName字段的值是变量。具体请参考[hvigor-config.json5文件](../harmonyos-guides/ide-hvigor-set-options.md)。
 
-* 新增部分ACL权限支持通过自动签名快速申请。具体请参考[支持ACL权限](../harmonyos-guides/ide-signing.md#section5301916183411)。
+* 新增部分ACL权限支持通过自动签名快速申请。具体请参考[支持ACL权限](../harmonyos-guides/ide-signing-auto.md#section5301916183411)。
 * 工程级和模块级build-profile.json5文件buildOption/arkOptions下新增reExportCheckMode，用于指定以下场景，编译时是否进行拦截报错：使用lazy import导入的变量，在同文件中被再次导出。具体请参考[工程级build-profile.json5文件](../harmonyos-guides/ide-hvigor-build-profile-app.md)和[模块级build-profile.json5文件](../harmonyos-guides/ide-hvigor-build-profile.md)。
 * DevEco Studio支持自动监听WebView进程并转发端口。具体请参考[自动映射WebView调试链接](../harmonyos-guides/ide-run-debug-configurations.md#section48387420516)。
 * 模拟器新增支持2in1设备。具体请参考[设备支持类型](../harmonyos-guides/ide-emulator-devicetype.md)。

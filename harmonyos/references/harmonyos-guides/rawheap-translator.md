@@ -3,29 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/rawheap-trans
 title: rawheap-translator工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > 命令行工具 > rawheap-translator工具
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:29+08:00
-doc_updated_at: 2026-04-10
-content_hash: sha256:c2da7361263453257fccb1830021aab774ef6c13f2ee07e3b0fe45ffde4e15e4
+scraped_at: 2026-09-02T14:59:42+08:00
+doc_updated_at: 2026-08-11
+content_hash: sha256:7bd61dd1a106045763c18d43c4ff1d2333214e5164968dcf9764f10a8c57d40f
 ---
 
 ## 使用场景
 
-为方便开发者定位问题，应用在ArkTS内存OOM（Out of Memory）时会自动进行HeapDump。此操作会将虚拟机当前堆上的所有对象信息保存在后缀为.rawheap的二进制文件中。开发者可使用rawheap\_translator工具解析.rawheap文件，生成.heapsnapshot文件。该文件可通过DevEco Studio的[Heap Snapshot离线导入](ide-snapshot-basic-operations.md#section6760173514388)或Chrome浏览器的开发者工具中的内存工具导入并查看。
+为方便开发者定位问题，应用在ArkTS内存OOM（Out of Memory）时会自动进行HeapDump。此操作会将虚拟机当前堆上的所有对象信息保存在后缀为.rawheap的二进制文件中。此外，使用接口[hidebug.dumpJsRawHeapData](../harmonyos-references/js-apis-hidebug.md#hidebugdumpjsrawheapdata18)能获取当前线程的rawheap文件，或使用命令行[hidumper --mem-jsheap pid [-T tid] --raw](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hidumper#查询虚拟机堆内存)能主动获取指定进程或指定JS线程的rawheap文件。开发者可使用rawheap\_translator工具解析.rawheap文件，生成.heapsnapshot文件。该文件可通过DevEco Studio的[Heap Snapshot离线导入](ide-snapshot-basic-operations.md#section6760173514388)或Chrome浏览器的开发者工具中的内存工具导入并查看。
 
 ## 使用指导
 
 ### 工具获取
 
-此工具支持OHOS、Windows、Linux和MacOS平台，获取方法如下：
+此工具支持Windows、Linux和MacOS平台，获取方法如下：
 
-* 设备内获取：/bin/rawheap\_translator，仅适用于OHOS设备。
 * SDK中获取：sdk/default/openharmony/toolchains/rawheap\_translator，适用于各平台。
 
 ### 环境配置
 
-对于OHOS平台，由于其已在系统路径下内置了rawheap\_translator工具，因此可以在终端中直接使用此工具。
-
-对于非OHOS平台，建议将从SDK中获取的rawheap\_translator工具放置在稳定的路径下，并将该路径配置为系统环境变量。这样可以在终端中直接使用工具，无需每次指定路径。
+建议将从SDK中获取的rawheap\_translator工具放置在稳定的路径下，并将该路径配置为系统环境变量。这样可以在终端中直接使用工具，无需每次指定路径。
 
 在不同系统中，环境变量的配置方法存在差异。以下提供一些配置示例，供开发者参考。
 
@@ -43,31 +40,31 @@ content_hash: sha256:c2da7361263453257fccb1830021aab774ef6c13f2ee07e3b0fe45ffde4
 
   1. 打开终端工具，执行以下命令。
 
-     ```
-     1. echo $SHELL
+     ```bash
+     echo $SHELL
      ```
   2. 根据步骤1的返回结果做如下对应处理。
 
      a. 如果返回结果为/bin/bash，则执行以下命令：
 
-     ```
-     1. echo 'export PATH=$PATH:/path/to/your/rawheap_translator' >> ~/.bash_profile
-     2. source ~/.bash_profile
+     ```bash
+     echo 'export PATH=$PATH:/path/to/your/rawheap_translator' >> ~/.bash_profile
+     source ~/.bash_profile
      ```
 
      b. 如果返回结果为/bin/zsh，则执行以下命令：
 
-     ```
-     1. echo 'export PATH=$PATH:/path/to/your/rawheap_translator' >> ~/.zshrc
-     2. source ~/.zshrc
+     ```bash
+     echo 'export PATH=$PATH:/path/to/your/rawheap_translator' >> ~/.zshrc
+     source ~/.zshrc
      ```
 
 ## 使用方法
 
 ### 解析命令
 
-```
-1. rawheap_translator [rawheap_file] [heapsnapshot_file]
+```bash
+rawheap_translator [rawheap_file] [heapsnapshot_file]
 ```
 
 ### 参数列表
@@ -75,69 +72,61 @@ content_hash: sha256:c2da7361263453257fccb1830021aab774ef6c13f2ee07e3b0fe45ffde4
 | 选项 | 必选 | 描述 |
 | --- | --- | --- |
 | [rawheap\_file] | 是 | 需要解析的应用OOM时生成的.rawheap文件路径。 |
-| [heapsnapshot\_file] | 否 | 解析生成的heapsnapshot文件路径，路径必须具有读写权限。  参数缺省时，默认为当前执行命令的路径。  参数给定时，文件的后缀名必须是heapsnapshot。 |
+| [heapsnapshot\_file] | 否 | 解析生成的heapsnapshot文件路径，路径必须具有读写权限。  参数缺省时，默认为当前执行命令的路径，生成文件名为hprof\_yyyy-MM-dd-HH-mm-ss.heapsnapshot，其中yyyy-MM-dd-HH-mm-ss为当前解析文件的时间。  参数给定时，文件的后缀名必须是heapsnapshot。 |
 
 ## 解析命令示例
 
 ### 解析示例
 
-OHOS设备中解析示例
-
-OHOS设备内工具路径：/bin/rawheap\_translator，推荐指定生成heapsnapshot文件路径为/data/local/tmp，其他路径可能面临没有写权限问题。
-
-```
-1. > /bin/rawheap_translator /data/log/reliability/resource_leak/memory_leak/memleak-js-com.example.myapplication-7979-7979-20241215191332.rawheap /data/local/tmp/myapplication-7979-7979.heapsnapshot
-```
-
 Windows系统中解析示例
 
 打开cmd并进入rawheap文件路径，调用解析工具命令，指定在当前路径下生成heapsnapshot文件。
 
-```
-1. > rawheap_translator.exe memleak-js-com.example.myapplication-7979-7979-20241215191332.rawheap myapplication-7979-7979.heapsnapshot
+```bash
+> rawheap_translator.exe memleak-js-com.example.myapplication-7979-7979-20241215191332.rawheap myapplication-7979-7979.heapsnapshot
 ```
 
 Linux系统中解析示例
 
 进入rawheap文件路径，调用解析工具命令，指定在当前路径下生成heapsnapshot文件。
 
-```
-1. > ./rawheap_translator memory_leak/memleak-js-com.example.myapplication-7979-7979-20241215191332.rawheap myapplication-7979-7979.heapsnapshot
+```bash
+> rawheap_translator memleak-js-com.example.myapplication-7979-7979-20241215191332.rawheap myapplication-7979-7979.heapsnapshot
 ```
 
 MacOS系统中解析示例
 
 打开终端并进入rawheap文件路径，调用解析工具命令，指定在当前路径下生成heapsnapshot文件。
 
-```
-1. > rawheap_translator memory_leak/memleak-js-com.example.myapplication-7979-7979-20241215191332.rawheap myapplication-7979-7979.heapsnapshot
+```bash
+> rawheap_translator memleak-js-com.example.myapplication-7979-7979-20241215191332.rawheap myapplication-7979-7979.heapsnapshot
 ```
 
 参考输出
 
-```
-1. [INFO ] ParseVersion            current metadata version is 1.0.0
-2. [INFO ] ParseTypeEnums          total JSType count 214
-3. [INFO ] ParseTypeList           total metadata count 220
-4. [INFO ] SetBitField             set BitField offset 8
-5. [INFO ] SetBitField             set BindingSize offset 32
-6. [INFO ] SetBitField             set Length offset 8
-7. [INFO ] SetBitField             set Data offset 16
-8. [INFO ] ReadVersion             current rawheap version is 1.0.0
-9. [INFO ] RawHeap                 start to translate rawheap
-10. [INFO ] ReadRootTable           root node count 6244
-11. [INFO ] ReadStringTable         string table count 11208
-12. [INFO ] ReadObjTable            section objects count 96432
-13. [INFO ] Translate               success
-14. [INFO ] Serialize               start to serialize
-15. [INFO ] Translate               file save to /data/local/tmp/myapplication-7979-7979.heapsnapshot
+```bash
+[INFO ] ParseVersion            current metadata version is 1.0.0
+[INFO ] ParseTypeEnums          total JSType count 214
+[INFO ] ParseTypeList           total metadata count 220
+[INFO ] SetBitField             set BitField offset 8
+[INFO ] SetBitField             set BindingSize offset 32
+[INFO ] SetBitField             set Length offset 8
+[INFO ] SetBitField             set Data offset 16
+[INFO ] ReadVersion             current rawheap version is 1.0.0
+[INFO ] RawHeap                 start to translate rawheap
+[INFO ] ReadRootTable           root node count 6244
+[INFO ] ReadStringTable         string table count 11208
+[INFO ] ReadObjTable            section objects count 96432
+[INFO ] Translate               success
+[INFO ] Serialize               start to serialize
+[INFO ] Translate               file save to /data/local/tmp/myapplication-7979-7979.heapsnapshot
 ```
 
 ## 文件参考规格
 
 rawheap文件的大小和生成耗时与当前ArkTS堆内存大小及存活对象数量呈强正相关。当ArkTS堆内存占用较大、存活对象数量较多时，生成的rawheap文件会更大，耗时也会更长。开发者可以订阅[资源泄漏事件](hiappevent-watcher-resourceleak-events.md)，自定义事件处理逻辑。
 
-从API version 20开始，虚拟机支持两种规格的HeapDump，具体切换操作可参考[设置当前进程转储虚拟机原始堆快照的裁剪级别](../harmonyos-references/js-apis-hidebug.md#hidebugsetjsrawheaptrimlevel20)。
+从API version 20开始，虚拟机支持两种规格的HeapDump，具体切换操作可参考[setJsRawHeapTrimLevel](../harmonyos-references/js-apis-hidebug.md#hidebugsetjsrawheaptrimlevel20)接口设置当前进程转储虚拟机原始堆快照的裁剪级别。
 
 从API version 22开始，TRIM\_LEVEL\_1模式新增对象属性名解析能力，生成的rawheap文件相对于原先会变大，具体增长大小与对象属性名数量和字符串大小有关。
 
@@ -165,16 +154,16 @@ rawheap文件的大小和生成耗时与当前ArkTS堆内存大小及存活对�
 
 工具解析时会提示：原始堆文件的版本 2.0.0 与当前的原始堆文件翻译器不匹配，请使用最新版本的翻译器。
 
-```
-1. [INFO ] ParseVersion            current metadata version is 1.0.0
-2. [INFO ] ParseTypeEnums          total JSType count 214
-3. [INFO ] ParseTypeList           total metadata count 220
-4. [INFO ] SetBitField             set BitField offset 8
-5. [INFO ] SetBitField             set BindingSize offset 32
-6. [INFO ] SetBitField             set Length offset 8
-7. [INFO ] SetBitField             set Data offset 16
-8. [INFO ] ReadVersion             current rawheap version is 2.0.0
-9. [ERROR] ParseRawheap            The rawheap file's version 2.0.0 is not matched the current rawheap translator, please use the newest version of the translator!
+```bash
+[INFO ] ParseVersion            current metadata version is 1.0.0
+[INFO ] ParseTypeEnums          total JSType count 214
+[INFO ] ParseTypeList           total metadata count 220
+[INFO ] SetBitField             set BitField offset 8
+[INFO ] SetBitField             set BindingSize offset 32
+[INFO ] SetBitField             set Length offset 8
+[INFO ] SetBitField             set Data offset 16
+[INFO ] ReadVersion             current rawheap version is 2.0.0
+[ERROR] ParseRawheap            The rawheap file's version 2.0.0 is not matched the current rawheap translator, please use the newest version of the translator!
 ```
 
 **原因**
@@ -191,21 +180,21 @@ rawheap文件的大小和生成耗时与当前ArkTS堆内存大小及存活对�
 
 工具解析时，提示：open file failed
 
-```
-1. [INFO ] ParseVersion            current metadata version is 1.0.0
-2. [INFO ] ParseTypeEnums          total JSType count 214
-3. [INFO ] ParseTypeList           total metadata count 220
-4. [INFO ] SetBitField             set BitField offset 8
-5. [INFO ] SetBitField             set BindingSize offset 32
-6. [INFO ] SetBitField             set Length offset 8
-7. [INFO ] SetBitField             set Data offset 16
-8. [INFO ] ReadVersion             current rawheap version is 1.0.0
-9. [INFO ] RawHeap                 start to translate rawheap
-10. [INFO ] ReadRootTable           root node count 6244
-11. [INFO ] ReadStringTable         string table count 11208
-12. [INFO ] ReadObjTable            section objects count 96432
-13. [INFO ] Translate               success
-14. [ERROR] Initialize              open file failed
+```bash
+[INFO ] ParseVersion            current metadata version is 1.0.0
+[INFO ] ParseTypeEnums          total JSType count 214
+[INFO ] ParseTypeList           total metadata count 220
+[INFO ] SetBitField             set BitField offset 8
+[INFO ] SetBitField             set BindingSize offset 32
+[INFO ] SetBitField             set Length offset 8
+[INFO ] SetBitField             set Data offset 16
+[INFO ] ReadVersion             current rawheap version is 1.0.0
+[INFO ] RawHeap                 start to translate rawheap
+[INFO ] ReadRootTable           root node count 6244
+[INFO ] ReadStringTable         string table count 11208
+[INFO ] ReadObjTable            section objects count 96432
+[INFO ] Translate               success
+[ERROR] Initialize              open file failed
 ```
 
 **原因**
@@ -215,3 +204,32 @@ rawheap文件的大小和生成耗时与当前ArkTS堆内存大小及存活对�
 **解决措施**
 
 更改到有写权限的路径可以解决。
+
+### 文件解析失败
+
+**问题现象**
+
+工具解析完成，进行转换时失败，未生成heapsnapshot文件。
+
+```bash
+[INFO ] ParseVersion            current metadata version is 1.0.0
+[INFO ] ParseTypeEnums          total JSType count 214
+[INFO ] ParseTypeList           total metadata count 220
+[INFO ] SetBitField             set BitField offset 8
+[INFO ] SetBitField             set BindingSize offset 32
+[INFO ] SetBitField             set Length offset 8
+[INFO ] SetBitField             set Data offset 16
+[INFO ] ReadVersion             current rawheap version is 1.0.0
+[INFO ] RawHeap                 start to translate rawheap
+[INFO ] ReadRootTable           root node count 6244
+[INFO ] ReadStringTable         string table count 11208
+[INFO ] ReadObjTable            section objects count 96432
+```
+
+**原因**
+
+解析工具版本过低。
+
+**解决措施**
+
+使用[DevEco Studio 6.1.1 Release](https://developer.huawei.com/consumer/cn/download/deveco-studio)及以上版本的工具。

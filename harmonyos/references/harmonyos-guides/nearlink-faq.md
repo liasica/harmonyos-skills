@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-faq
 title: NearLink Kit常见问题
 breadcrumb: 指南 > 系统 > 网络 > NearLink Kit（星闪服务） > NearLink Kit常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:50+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fe8852541a7d64f955eef89f9bc6f9cd1cda6c8b20fd6ef89cc7afcde64dda2d
+scraped_at: 2026-09-02T14:50:05+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:fbba9d2466b516da6ed719426ab5e963daf8bdef2801268653477891769cdfdc
 ---
 
 ## 连续进行数据传输时数据发送失败的问题
@@ -21,3 +21,9 @@ content_hash: sha256:fe8852541a7d64f955eef89f9bc6f9cd1cda6c8b20fd6ef89cc7afcde64
 星闪目前支持的UUID格式形如：37BEA880-FC70-11EA-B720-00000000FDEE，包含128比特。其中前112比特由基础标识决定，128比特基础标识为固定值：37BEA880-FC70-11EA-B720-000000000000；后16比特通用唯一标识指示标准服务或标准服务成员。
 
 标准服务或标准服务成员使用的 16 比特通用唯一标识由星闪联盟统一进行分配，具有全局的唯一性。通过标识，客户端可以明确条目承载的是某一个服务、属性、方法、事件和引用了某一个服务。详情可查阅“[星闪标准服务标识](https://sparklink.org.cn/trial/identCid/identListSsid)”。
+
+## 星闪数据传输方式的选择
+
+星闪提供了基于[SSAP交互](nearlink-ssap-server-connect.md)和基于[端口数据传输](nearlink-start-data-transfer.md)两种数据传输方式。
+
+其中，对于低功耗、小数据量场景，建议使用基于SSAP的数据传输；对于高吞吐量、大文件传输场景，建议使用基于端口的数据传输。

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_image.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > native_image.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:06+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:2cb99b57502c2ad000e43d1bd7febaf84452a8c5842c4ac722f96426c0a403ce
+scraped_at: 2026-09-02T15:02:44+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:aa85b3eeaf6ad2c13346318dfa3eb807da5a781b9dac5b4637b25769dafcc641
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义获取和使用NativeImage的相关函数。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -41,8 +35,6 @@ PhonePC/2in1TabletTVWearable
 
 ### 函数
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [typedef void (\*OH\_OnFrameAvailable)(void \*context)](capi-native-image-h.md#oh_onframeavailable) | OH\_OnFrameAvailable | 有buffer可获取时触发的回调函数。 |
@@ -52,7 +44,7 @@ PhonePC/2in1TabletTVWearable
 | [int32\_t OH\_NativeImage\_DetachContext(OH\_NativeImage\* image)](capi-native-image-h.md#oh_nativeimage_detachcontext) | - | 将OH\_NativeImage实例从当前OpenGL ES上下文分离。  本接口为非线程安全类型接口。 |
 | [int32\_t OH\_NativeImage\_UpdateSurfaceImage(OH\_NativeImage\* image)](capi-native-image-h.md#oh_nativeimage_updatesurfaceimage) | - | 通过OH\_NativeImage获取最新帧更新相关联的OpenGL ES纹理。  本接口需要在OpenGL ES环境上下文的线程中调用。  本接口需要在接收到[OH\_OnFrameAvailableListener](capi-oh-nativeimage-oh-onframeavailablelistener.md)回调后调用。  本接口为非线程安全类型接口。 |
 | [int64\_t OH\_NativeImage\_GetTimestamp(OH\_NativeImage\* image)](capi-native-image-h.md#oh_nativeimage_gettimestamp) | - | 获取最近调用OH\_NativeImage\_UpdateSurfaceImage的纹理图像的相关时间戳。  本接口为非线程安全类型接口。 |
-| [int32\_t OH\_NativeImage\_GetTransformMatrix(OH\_NativeImage\* image, float matrix[16])](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-image-h#oh_nativeimage_gettransformmatrix) | - | 获取最近调用OH\_NativeImage\_UpdateSurfaceImage的纹理图像的变化矩阵。 |
+| [int32\_t OH\_NativeImage\_GetTransformMatrix(OH\_NativeImage\* image, float matrix[16])](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-image-h#oh_nativeimage_gettransformmatrix) | - | 获取最近调用OH\_NativeImage\_UpdateSurfaceImage的纹理图像的变换矩阵。  本接口为非线程安全类型接口。 |
 | [int32\_t OH\_NativeImage\_GetSurfaceId(OH\_NativeImage\* image, uint64\_t\* surfaceId)](capi-native-image-h.md#oh_nativeimage_getsurfaceid) | - | 获取OH\_NativeImage的surface编号。  本接口为非线程安全类型接口。 |
 | [int32\_t OH\_NativeImage\_SetOnFrameAvailableListener(OH\_NativeImage\* image, OH\_OnFrameAvailableListener listener)](capi-native-image-h.md#oh_nativeimage_setonframeavailablelistener) | - | 设置帧可用回调。  不允许在回调函数中调用本模块的其他接口。  本接口为非线程安全类型接口。 |
 | [int32\_t OH\_NativeImage\_UnsetOnFrameAvailableListener(OH\_NativeImage\* image)](capi-native-image-h.md#oh_nativeimage_unsetonframeavailablelistener) | - | 取消设置帧可用回调。  本接口为非线程安全类型接口。 |
@@ -69,20 +61,16 @@ PhonePC/2in1TabletTVWearable
 | [OH\_NativeImage\* OH\_ConsumerSurface\_CreateWithSingleBufferMode(bool singleBufferMode)](capi-native-image-h.md#oh_consumersurface_createwithsinglebuffermode) | - | 不使用纹理ID创建一个[OH\_NativeImage](capi-oh-nativeimage-oh-nativeimage.md)实例，作为surface的消费端，并选择是否设置单buffer模式。  本接口仅用于surface消费端的内存轮转，创建的[OH\_NativeImage](capi-oh-nativeimage-oh-nativeimage.md)内部不会主动进行内存渲染处理。  本接口不能与[OH\_NativeImage\_UpdateSurfaceImage](capi-native-image-h.md#oh_nativeimage_updatesurfaceimage)接口同时使用。  本接口需要和[OH\_NativeImage\_Destroy](capi-native-image-h.md#oh_nativeimage_destroy)接口配合使用，否则会存在内存泄露。  本接口为非线程安全类型接口。 |
 | [int32\_t OH\_NativeImage\_ReleaseTextImage(OH\_NativeImage\* image)](capi-native-image-h.md#oh_nativeimage_releasetextimage) | - | 解除SurfaceBuffer与纹理的绑定，将纹理恢复到未使用状态。  单buffer模式下，需要调用该接口释放纹理，否则生产者下次无法申请buffer。  本接口为非线程安全类型接口。 |
 | [int32\_t OH\_NativeImage\_GetColorSpace(OH\_NativeImage\* image, OH\_NativeBuffer\_ColorSpace\* colorSpace)](capi-native-image-h.md#oh_nativeimage_getcolorspace) | - | 获取最近调用[OH\_NativeImage\_UpdateSurfaceImage](capi-native-image-h.md#oh_nativeimage_updatesurfaceimage)的纹理图像的相关色彩空间。  本接口为非线程安全类型接口。 |
-| [int32\_t OH\_NativeImage\_AcquireLatestNativeWindowBuffer(OH\_NativeImage\* image, OHNativeWindowBuffer\*\* nativeWindowBuffer, int\* fenceFd)](capi-native-image-h.md#oh_nativeimage_acquirelatestnativewindowbuffer) | - | 通过消费端的OH\_NativeImage获取一个生产者最近生产的OHNativeWindowBuffer，并将其余buffer丢弃。  消费端可以通过[OH\_OnFrameAvailableListener](capi-oh-nativeimage-oh-onframeavailablelistener.md)注册的回调，收到所有可用buffer（包括被丢弃的buffer)的回调。  本接口不能与[OH\_NativeImage\_UpdateSurfaceImage](capi-native-image-h.md#oh_nativeimage_updatesurfaceimage)接口同时使用。  本接口为非线程安全类型接口。 |
+| [int32\_t OH\_NativeImage\_AcquireLatestNativeWindowBuffer(OH\_NativeImage\* image, OHNativeWindowBuffer\*\* nativeWindowBuffer, int\* fenceFd)](capi-native-image-h.md#oh_nativeimage_acquirelatestnativewindowbuffer) | - | 通过消费端的OH\_NativeImage获取一个生产者最近生产的OHNativeWindowBuffer，并将其余buffer丢弃。  消费端可以通过[OH\_OnFrameAvailableListener](capi-oh-nativeimage-oh-onframeavailablelistener.md)注册的回调，收到所有可用buffer（包括被丢弃的buffer）的回调。  本接口不能与[OH\_NativeImage\_UpdateSurfaceImage](capi-native-image-h.md#oh_nativeimage_updatesurfaceimage)接口同时使用。  本接口为非线程安全类型接口。 |
 | [int32\_t OH\_NativeImage\_IsReleased(OH\_NativeImage\* image, bool\* isReleased)](capi-native-image-h.md#oh_nativeimage_isreleased) | - | 查询与[OH\_NativeImage](capi-oh-nativeimage-oh-nativeimage.md)关联的纹理是否已释放。  本接口为非线程安全类型接口。 |
 | [int32\_t OH\_NativeImage\_Release(OH\_NativeImage\* image)](capi-native-image-h.md#oh_nativeimage_release) | - | 清除所有[OHNativeWindow](capi-nativewindow-nativewindow.md)的OHNativeWindowBuffer缓存，并将[OH\_NativeImage](capi-oh-nativeimage-oh-nativeimage.md)从OpenGL ES上下文中分离。  本接口为非线程安全类型接口。 |
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_OnFrameAvailable()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_OnFrameAvailable)(void *context)
+```c
+typedef void (*OH_OnFrameAvailable)(void *context)
 ```
 
 **描述**
@@ -101,10 +89,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeImage\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_NativeImage* OH_NativeImage_Create(uint32_t textureId, uint32_t textureTarget)
+```c
+OH_NativeImage* OH_NativeImage_Create(uint32_t textureId, uint32_t textureTarget)
 ```
 
 **描述**
@@ -134,10 +120,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeImage\_AcquireNativeWindow()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OHNativeWindow* OH_NativeImage_AcquireNativeWindow(OH_NativeImage* image)
+```c
+OHNativeWindow* OH_NativeImage_AcquireNativeWindow(OH_NativeImage* image)
 ```
 
 **描述**
@@ -166,10 +150,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeImage\_AttachContext()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeImage_AttachContext(OH_NativeImage* image, uint32_t textureId)
+```c
+int32_t OH_NativeImage_AttachContext(OH_NativeImage* image, uint32_t textureId)
 ```
 
 **描述**
@@ -197,10 +179,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeImage\_DetachContext()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeImage_DetachContext(OH_NativeImage* image)
+```c
+int32_t OH_NativeImage_DetachContext(OH_NativeImage* image)
 ```
 
 **描述**
@@ -227,10 +207,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeImage\_UpdateSurfaceImage()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeImage_UpdateSurfaceImage(OH_NativeImage* image)
+```c
+int32_t OH_NativeImage_UpdateSurfaceImage(OH_NativeImage* image)
 ```
 
 **描述**
@@ -261,10 +239,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeImage\_GetTimestamp()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int64_t OH_NativeImage_GetTimestamp(OH_NativeImage* image)
+```c
+int64_t OH_NativeImage_GetTimestamp(OH_NativeImage* image)
 ```
 
 **描述**
@@ -291,15 +267,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeImage\_GetTransformMatrix()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeImage_GetTransformMatrix(OH_NativeImage* image, float matrix[16])
+```c
+int32_t OH_NativeImage_GetTransformMatrix(OH_NativeImage* image, float matrix[16])
 ```
 
 **描述**
 
-获取最近调用OH\_NativeImage\_UpdateSurfaceImage的纹理图像的变化矩阵。
+获取最近调用OH\_NativeImage\_UpdateSurfaceImage的纹理图像的变换矩阵。
+
+本接口为非线程安全类型接口。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeImage
 
@@ -324,10 +300,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeImage\_GetSurfaceId()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeImage_GetSurfaceId(OH_NativeImage* image, uint64_t* surfaceId)
+```c
+int32_t OH_NativeImage_GetSurfaceId(OH_NativeImage* image, uint64_t* surfaceId)
 ```
 
 **描述**
@@ -355,10 +329,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeImage\_SetOnFrameAvailableListener()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeImage_SetOnFrameAvailableListener(OH_NativeImage* image, OH_OnFrameAvailableListener listener)
+```c
+int32_t OH_NativeImage_SetOnFrameAvailableListener(OH_NativeImage* image, OH_OnFrameAvailableListener listener)
 ```
 
 **描述**
@@ -388,10 +360,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeImage\_UnsetOnFrameAvailableListener()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeImage_UnsetOnFrameAvailableListener(OH_NativeImage* image)
+```c
+int32_t OH_NativeImage_UnsetOnFrameAvailableListener(OH_NativeImage* image)
 ```
 
 **描述**
@@ -418,10 +388,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeImage\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_NativeImage_Destroy(OH_NativeImage** image)
+```c
+void OH_NativeImage_Destroy(OH_NativeImage** image)
 ```
 
 **描述**
@@ -440,19 +408,17 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_NativeImage](capi-oh-nativeimage-oh-nativeimage.md)\*\* image | 指向OH\_NativeImage实例的指针。 |
+| [OH\_NativeImage](capi-oh-nativeimage-oh-nativeimage.md)\*\* image | 指向OH\_NativeImage实例指针的指针。 |
 
 ### OH\_NativeImage\_GetTransformMatrixV2()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeImage_GetTransformMatrixV2(OH_NativeImage* image, float matrix[16])
+```c
+int32_t OH_NativeImage_GetTransformMatrixV2(OH_NativeImage* image, float matrix[16])
 ```
 
 **描述**
 
-根据生产端设置的旋转角度，获取最近调用OH\_NativeImage\_UpdateSurfaceImage的纹理图像的变化矩阵。
+根据生产端设置的旋转角度，获取最近调用OH\_NativeImage\_UpdateSurfaceImage的纹理图像的变换矩阵。
 
 matrix在[OH\_NativeImage\_UpdateSurfaceImage](capi-native-image-h.md#oh_nativeimage_updatesurfaceimage)接口调用后，才会更新。
 
@@ -467,7 +433,7 @@ matrix在[OH\_NativeImage\_UpdateSurfaceImage](capi-native-image-h.md#oh_nativei
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_NativeImage](capi-oh-nativeimage-oh-nativeimage.md)\* image | 指向OH\_NativeImage实例的指针。 |
-| matrix | 用来存储要获取的4\*4的变化矩阵。 |
+| float matrix[16] | 用来存储要获取的4\*4的变换矩阵。 |
 
 **返回：**
 
@@ -477,10 +443,8 @@ matrix在[OH\_NativeImage\_UpdateSurfaceImage](capi-native-image-h.md#oh_nativei
 
 ### OH\_NativeImage\_GetBufferMatrix()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeImage_GetBufferMatrix(OH_NativeImage* image, float matrix[16])
+```c
+int32_t OH_NativeImage_GetBufferMatrix(OH_NativeImage* image, float matrix[16])
 ```
 
 **描述**
@@ -510,10 +474,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeImage\_AcquireNativeWindowBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeImage_AcquireNativeWindowBuffer(OH_NativeImage* image,OHNativeWindowBuffer** nativeWindowBuffer, int* fenceFd)
+```c
+int32_t OH_NativeImage_AcquireNativeWindowBuffer(OH_NativeImage* image, OHNativeWindowBuffer** nativeWindowBuffer, int* fenceFd)
 ```
 
 **描述**
@@ -548,10 +510,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeImage\_ReleaseNativeWindowBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeImage_ReleaseNativeWindowBuffer(OH_NativeImage* image,OHNativeWindowBuffer* nativeWindowBuffer, int fenceFd)
+```c
+int32_t OH_NativeImage_ReleaseNativeWindowBuffer(OH_NativeImage* image,OHNativeWindowBuffer* nativeWindowBuffer, int fenceFd)
 ```
 
 **描述**
@@ -574,7 +534,7 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | [OH\_NativeImage](capi-oh-nativeimage-oh-nativeimage.md)\* image | 指向OH\_NativeImage实例的指针。 |
 | [OHNativeWindowBuffer](capi-nativewindow-nativewindowbuffer.md)\* nativeWindowBuffer | 指向OHNativeWindowBuffer实例的指针。 |
-| int fenceFd | 指向文件描述符句柄, 用于并发同步控制。 |
+| int fenceFd | 文件描述符句柄，用于并发同步控制。 |
 
 **返回：**
 
@@ -584,10 +544,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ConsumerSurface\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_NativeImage* OH_ConsumerSurface_Create(void)
+```c
+OH_NativeImage* OH_ConsumerSurface_Create(void)
 ```
 
 **描述**
@@ -616,10 +574,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ConsumerSurface\_SetDefaultUsage()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ConsumerSurface_SetDefaultUsage(OH_NativeImage* image, uint64_t usage)
+```c
+int32_t OH_ConsumerSurface_SetDefaultUsage(OH_NativeImage* image, uint64_t usage)
 ```
 
 **描述**
@@ -647,10 +603,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ConsumerSurface\_SetDefaultSize()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ConsumerSurface_SetDefaultSize(OH_NativeImage* image, int32_t width, int32_t height)
+```c
+int32_t OH_ConsumerSurface_SetDefaultSize(OH_NativeImage* image, int32_t width, int32_t height)
 ```
 
 **描述**
@@ -679,10 +633,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeImage\_SetDropBufferMode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeImage_SetDropBufferMode(OH_NativeImage* image, bool isOpen)
+```c
+int32_t OH_NativeImage_SetDropBufferMode(OH_NativeImage* image, bool isOpen)
 ```
 
 **描述**
@@ -720,10 +672,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeImage\_CreateWithSingleBufferMode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_NativeImage* OH_NativeImage_CreateWithSingleBufferMode(uint32_t textureId, uint32_t textureTarget, bool singleBufferMode)
+```c
+OH_NativeImage* OH_NativeImage_CreateWithSingleBufferMode(uint32_t textureId, uint32_t textureTarget, bool singleBufferMode)
 ```
 
 **描述**
@@ -754,10 +704,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ConsumerSurface\_CreateWithSingleBufferMode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_NativeImage* OH_ConsumerSurface_CreateWithSingleBufferMode(bool singleBufferMode)
+```c
+OH_NativeImage* OH_ConsumerSurface_CreateWithSingleBufferMode(bool singleBufferMode)
 ```
 
 **描述**
@@ -790,10 +738,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeImage\_ReleaseTextImage()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeImage_ReleaseTextImage(OH_NativeImage* image)
+```c
+int32_t OH_NativeImage_ReleaseTextImage(OH_NativeImage* image)
 ```
 
 **描述**
@@ -822,10 +768,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeImage\_GetColorSpace()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeImage_GetColorSpace(OH_NativeImage* image, OH_NativeBuffer_ColorSpace* colorSpace)
+```c
+int32_t OH_NativeImage_GetColorSpace(OH_NativeImage* image, OH_NativeBuffer_ColorSpace* colorSpace)
 ```
 
 **描述**
@@ -853,17 +797,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeImage\_AcquireLatestNativeWindowBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeImage_AcquireLatestNativeWindowBuffer(OH_NativeImage* image, OHNativeWindowBuffer** nativeWindowBuffer, int* fenceFd)
+```c
+int32_t OH_NativeImage_AcquireLatestNativeWindowBuffer(OH_NativeImage* image, OHNativeWindowBuffer** nativeWindowBuffer, int* fenceFd)
 ```
 
 **描述**
 
 通过消费端的OH\_NativeImage获取一个生产者最近生产的OHNativeWindowBuffer，并将其余buffer丢弃。
 
-消费端可以通过[OH\_OnFrameAvailableListener](capi-oh-nativeimage-oh-onframeavailablelistener.md)注册的回调，收到所有可用buffer（包括被丢弃的buffer)的回调。
+消费端可以通过[OH\_OnFrameAvailableListener](capi-oh-nativeimage-oh-onframeavailablelistener.md)注册的回调，收到所有可用buffer（包括被丢弃的buffer）的回调。
 
 本接口不能与[OH\_NativeImage\_UpdateSurfaceImage](capi-native-image-h.md#oh_nativeimage_updatesurfaceimage)接口同时使用。
 
@@ -897,10 +839,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeImage\_IsReleased()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeImage_IsReleased(OH_NativeImage* image, bool* isReleased)
+```c
+int32_t OH_NativeImage_IsReleased(OH_NativeImage* image, bool* isReleased)
 ```
 
 **描述**
@@ -928,10 +868,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeImage\_Release()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeImage_Release(OH_NativeImage* image)
+```c
+int32_t OH_NativeImage_Release(OH_NativeImage* image)
 ```
 
 **描述**

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-vide
 title: VideoProcessing
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 模块 > VideoProcessing
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:50+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7451ede4646a4aefa6c8a0644d74b0d559ef100a4a0376ef55c1c1a23805d823
+scraped_at: 2026-09-02T14:52:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a82a7ab8011b5c5518f80a9d20c6de43fde18846ab01ea840a43c09609bd4027
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 提供用于视频处理的API函数。
 
@@ -23,8 +21,6 @@ PhonePC/2in1TabletTV
 **起始版本：** 12
 
 ## 文件汇总
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |

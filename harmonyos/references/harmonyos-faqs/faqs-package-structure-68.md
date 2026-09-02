@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: sign包和unsign包产物之间是否有差异
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > sign包和unsign包产物之间是否有差异
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:39+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:14+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:f92d9225009e8eaa2712a66861cd3038414726f22569c7e7c3eb8daac1999f64
 ---
 

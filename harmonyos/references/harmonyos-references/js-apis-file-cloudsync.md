@@ -3,32 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.file.cloudSync (端云同步能力)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > @ohos.file.cloudSync (端云同步能力)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:855ad70fd5026afff1e1863efa7a25183eccc8921ce34ef8adbdc22ce4b5419f
+scraped_at: 2026-09-02T15:01:32+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:effe357a0d77d1524c8e254702822a56b5dd7755ae5f125c15a5e6453295f299
 ---
 
 该模块向应用提供端云同步能力，包括启动/停止端云同步以及启动/停止原图下载功能。
 
-说明
+**说明** 
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { cloudSync } from '@kit.CoreFileKit';
+```ts
+import { cloudSync } from '@kit.CoreFileKit';
 ```
 
 ## SyncState12+
 
-PhonePC/2in1TabletTVWearable
-
 端云同步状态，为枚举类型。
 
-说明
+**说明** 
 
 以下同步状态发生变更时，如果应用注册了同步过程事件监听，则通过回调通知应用。
 
@@ -40,12 +36,10 @@ PhonePC/2in1TabletTVWearable
 | UPLOAD\_FAILED | 1 | 上行同步失败。 |
 | DOWNLOADING | 2 | 下行同步中。 |
 | DOWNLOAD\_FAILED | 3 | 下行同步失败。 |
-| COMPLETED | 4 | 同步成功。 |
+| COMPLETED | 4 | 同步成功或首次注册同步状态回调成功均返回。 |
 | STOPPED | 5 | 同步已停止。 |
 
 ## ErrorType12+
-
-PhonePC/2in1TabletTVWearable
 
 端云同步失败类型，为枚举类型。
 
@@ -70,13 +64,9 @@ PhonePC/2in1TabletTVWearable
 
 ## SyncProgress12+
 
-PhonePC/2in1TabletTVWearable
-
 端云同步过程。
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
@@ -86,8 +76,6 @@ PhonePC/2in1TabletTVWearable
 | error | [ErrorType](js-apis-file-cloudsync.md#errortype12) | 否 | 否 | 枚举值，同步失败错误类型。 |
 
 ## State11+
-
-PhonePC/2in1TabletTVWearable
 
 云文件下载状态，为枚举类型。
 
@@ -102,35 +90,27 @@ PhonePC/2in1TabletTVWearable
 
 ## DownloadProgress11+
 
-PhonePC/2in1TabletTVWearable
-
 云文件下载过程。
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | state | [State](js-apis-file-cloudsync.md#state11) | 否 | 否 | 枚举值，云文件下载状态。 |
-| processed | number | 否 | 否 | 已下载数据大小，取值范围[0，9223372036854775807]（单位：Byte）。 |
-| size | number | 否 | 否 | 当前云文件大小，取值范围[0，9223372036854775807]（单位：Byte）。 |
+| processed | number | 否 | 否 | 已下载数据大小，取值范围[0, 9223372036854775807]（单位：Byte）。 |
+| size | number | 否 | 否 | 当前云文件大小，取值范围[0, 9223372036854775807]（单位：Byte）。 |
 | uri | string | 否 | 否 | 当前云文件URI。 |
 | error | [DownloadErrorType](js-apis-file-cloudsync.md#downloaderrortype11) | 否 | 否 | 下载的错误类型。 |
 
 ## FileSync12+
-
-PhonePC/2in1TabletTVWearable
 
 云盘同步对象，用于支撑文件管理器应用完成云盘文件的端云同步流程。在使用前，需要先创建FileSync实例。
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
 ### constructor12+
-
-PhonePC/2in1TabletTVWearable
 
 constructor()
 
@@ -148,17 +128,17 @@ constructor()
 
 **示例：**
 
-```
-1. let fileSync = new cloudSync.FileSync()
+```ts
+let fileSync = new cloudSync.FileSync()
 ```
 
 ### on('progress')12+
 
-PhonePC/2in1TabletTVWearable
-
 on(event: 'progress', callback: Callback<SyncProgress>): void
 
 云盘同步对象添加同步过程事件监听。
+
+当应用首次注册callback时，SyncProgress中的SyncState初始返回值为4，代表COMPLETED；后续重新注册时，该值将反映实际同步结果，例如若上次上行失败，返回值为1，代表UPLOAD\_FAILED。
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
@@ -180,18 +160,16 @@ on(event: 'progress', callback: Callback<SyncProgress>): void
 
 **示例：**
 
-```
-1. let fileSync = new cloudSync.FileSync();
-2. let callback = (pg: cloudSync.SyncProgress) => {
-3. console.info("file sync state: " + pg.state + "error type: " + pg.error);
-4. }
+```ts
+let fileSync = new cloudSync.FileSync();
+let callback = (pg: cloudSync.SyncProgress) => {
+  console.info("file sync state: " + pg.state + "error type: " + pg.error);
+}
 
-6. fileSync.on('progress', callback);
+fileSync.on('progress', callback);
 ```
 
 ### off('progress')12+
-
-PhonePC/2in1TabletTVWearable
 
 off(event: 'progress', callback?: Callback<SyncProgress>): void
 
@@ -217,21 +195,19 @@ off(event: 'progress', callback?: Callback<SyncProgress>): void
 
 **示例：**
 
-```
-1. let fileSync = new cloudSync.FileSync();
+```ts
+let fileSync = new cloudSync.FileSync();
 
-3. let callback = (pg: cloudSync.SyncProgress) => {
-4. console.info("file sync state: " + pg.state + "error type: " + pg.error);
-5. }
+let callback = (pg: cloudSync.SyncProgress) => {
+  console.info("file sync state: " + pg.state + "error type: " + pg.error);
+}
 
-7. fileSync.on('progress', callback);
+fileSync.on('progress', callback);
 
-9. fileSync.off('progress', callback);
+fileSync.off('progress', callback);
 ```
 
 ### start12+
-
-PhonePC/2in1TabletTVWearable
 
 start(): Promise<void>
 
@@ -259,27 +235,25 @@ start(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let fileSync = new cloudSync.FileSync();
+let fileSync = new cloudSync.FileSync();
 
-5. let callback = (pg: cloudSync.SyncProgress) => {
-6. console.info("file sync state: " + pg.state + "error type: " + pg.error);
-7. }
+let callback = (pg: cloudSync.SyncProgress) => {
+  console.info("file sync state: " + pg.state + "error type: " + pg.error);
+}
 
-9. fileSync.on('progress', callback);
+fileSync.on('progress', callback);
 
-11. fileSync.start().then(() => {
-12. console.info("start sync successfully");
-13. }).catch((err: BusinessError) => {
-14. console.error("start sync failed with error message: " + err.message + ", error code: " + err.code);
-15. });
+fileSync.start().then(() => {
+  console.info("start sync successfully");
+}).catch((err: BusinessError) => {
+  console.error("start sync failed with error message: " + err.message + ", error code: " + err.code);
+});
 ```
 
 ### start12+
-
-PhonePC/2in1TabletTVWearable
 
 start(callback: AsyncCallback<void>): void
 
@@ -307,23 +281,21 @@ start(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let fileSync = new cloudSync.FileSync();
+let fileSync = new cloudSync.FileSync();
 
-5. fileSync.start((err: BusinessError) => {
-6. if (err) {
-7. console.error("start sync failed with error message: " + err.message + ", error code: " + err.code);
-8. } else {
-9. console.info("start sync successfully");
-10. }
-11. });
+fileSync.start((err: BusinessError) => {
+  if (err) {
+    console.error("start sync failed with error message: " + err.message + ", error code: " + err.code);
+  } else {
+    console.info("start sync successfully");
+  }
+});
 ```
 
 ### stop12+
-
-PhonePC/2in1TabletTVWearable
 
 stop(): Promise<void>
 
@@ -350,21 +322,19 @@ stop(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let fileSync = new cloudSync.FileSync();
+let fileSync = new cloudSync.FileSync();
 
-5. fileSync.stop().then(() => {
-6. console.info("stop sync successfully");
-7. }).catch((err: BusinessError) => {
-8. console.error("stop sync failed with error message: " + err.message + ", error code: " + err.code);
-9. });
+fileSync.stop().then(() => {
+  console.info("stop sync successfully");
+}).catch((err: BusinessError) => {
+  console.error("stop sync failed with error message: " + err.message + ", error code: " + err.code);
+});
 ```
 
 ### stop12+
-
-PhonePC/2in1TabletTVWearable
 
 stop(callback: AsyncCallback<void>): void
 
@@ -391,23 +361,21 @@ stop(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let fileSync = new cloudSync.FileSync();
+let fileSync = new cloudSync.FileSync();
 
-5. fileSync.stop((err: BusinessError) => {
-6. if (err) {
-7. console.error("stop sync failed with error message: " + err.message + ", error code: " + err.code);
-8. } else {
-9. console.info("stop sync successfully");
-10. }
-11. });
+fileSync.stop((err: BusinessError) => {
+  if (err) {
+    console.error("stop sync failed with error message: " + err.message + ", error code: " + err.code);
+  } else {
+    console.info("stop sync successfully");
+  }
+});
 ```
 
 ### getLastSyncTime12+
-
-PhonePC/2in1TabletTVWearable
 
 getLastSyncTime(): Promise<number>
 
@@ -432,22 +400,20 @@ getLastSyncTime(): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let fileSync = new cloudSync.FileSync();
+let fileSync = new cloudSync.FileSync();
 
-5. fileSync.getLastSyncTime().then((timeStamp: number) => {
-6. let date = new Date(timeStamp);
-7. console.info("get last sync time successfully: "+ date);
-8. }).catch((err: BusinessError) => {
-9. console.error("get last sync time failed with error message: " + err.message + ", error code: " + err.code);
-10. });
+fileSync.getLastSyncTime().then((timeStamp: number) => {
+  let date = new Date(timeStamp);
+  console.info("get last sync time successfully: "+ date);
+}).catch((err: BusinessError) => {
+  console.error("get last sync time failed with error message: " + err.message + ", error code: " + err.code);
+});
 ```
 
 ### getLastSyncTime12+
-
-PhonePC/2in1TabletTVWearable
 
 getLastSyncTime(callback: AsyncCallback<number>): void
 
@@ -472,32 +438,28 @@ getLastSyncTime(callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let fileSync = new cloudSync.FileSync();
+let fileSync = new cloudSync.FileSync();
 
-5. fileSync.getLastSyncTime((err: BusinessError, timeStamp: number) => {
-6. if (err) {
-7. console.error("get last sync time with error message: " + err.message + ", error code: " + err.code);
-8. } else {
-9. let date = new Date(timeStamp);
-10. console.info("get last sync time successfully: "+ date);
-11. }
-12. });
+fileSync.getLastSyncTime((err: BusinessError, timeStamp: number) => {
+  if (err) {
+    console.error("get last sync time with error message: " + err.message + ", error code: " + err.code);
+  } else {
+    let date = new Date(timeStamp);
+    console.info("get last sync time successfully: "+ date);
+  }
+});
 ```
 
 ## CloudFileCache11+
-
-PhonePC/2in1TabletTVWearable
 
 云盘文件缓存对象，用来支撑文件管理应用原文件下载流程。
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
-### construct11+
-
-PhonePC/2in1TabletTVWearable
+### constructor11+
 
 constructor()
 
@@ -515,13 +477,11 @@ constructor()
 
 **示例：**
 
-```
-1. let fileCache = new cloudSync.CloudFileCache();
+```ts
+let fileCache = new cloudSync.CloudFileCache();
 ```
 
 ### on('progress')11+
-
-PhonePC/2in1TabletTVWearable
 
 on(event: 'progress', callback: Callback<DownloadProgress>): void
 
@@ -547,25 +507,23 @@ on(event: 'progress', callback: Callback<DownloadProgress>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let fileCache = new cloudSync.CloudFileCache();
-4. let callback = (pg: cloudSync.DownloadProgress) => {
-5. console.info("download state: " + pg.state);
-6. };
+let fileCache = new cloudSync.CloudFileCache();
+let callback = (pg: cloudSync.DownloadProgress) => {
+  console.info("download state: " + pg.state);
+};
 
-8. try {
-9. fileCache.on('progress', callback);
-10. } catch (e) {
-11. const error = e as BusinessError;
-12. console.error(`Error code: ${error.code}, message: ${error.message}`);
-13. }
+try {
+  fileCache.on('progress', callback);
+} catch (e) {
+  const error = e as BusinessError;
+  console.error(`Error code: ${error.code}, message: ${error.message}`);
+}
 ```
 
 ### on('batchDownload')20+
-
-PhonePC/2in1TabletTVWearable
 
 on(event: 'batchDownload', callback: Callback<MultiDownloadProgress>): void
 
@@ -578,7 +536,7 @@ on(event: 'batchDownload', callback: Callback<MultiDownloadProgress>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件类型，取值为'batchDownload'，表示批量缓存过程事件。 |
-| callback | Callback<[MultiDownloadProgress](js-apis-file-cloudsync.md#multidownloadprogress20)> | 是 | 回调函数。云文件批量缓存过程的事件。 |
+| callback | Callback<[MultiDownloadProgress](js-apis-file-cloudsync.md#multidownloadprogress20)> | 是 | 回调函数。云文件批量缓存过程事件。 |
 
 **错误码：**
 
@@ -591,30 +549,28 @@ on(event: 'batchDownload', callback: Callback<MultiDownloadProgress>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let fileCache = new cloudSync.CloudFileCache();
-4. let callback = (data: cloudSync.MultiDownloadProgress) => {
-5. console.info(`Batch download progress: downloadedSize: ${data.downloadedSize}, totalSize: ${data.totalSize}`);
-6. if (data.state == cloudSync.State.COMPLETED) {
-7. console.info('Batch download finished.');
-8. } else if (data.state == cloudSync.State.FAILED) {
-9. console.info(`Batch download stopped, error type: ${data.errType}.`);
-10. }
-11. };
+let fileCache = new cloudSync.CloudFileCache();
+let callback = (data: cloudSync.MultiDownloadProgress) => {
+  console.info(`Batch download progress: downloadedSize: ${data.downloadedSize}, totalSize: ${data.totalSize}`);
+  if (data.state == cloudSync.State.COMPLETED) {
+    console.info('Batch download finished.');
+  } else if (data.state == cloudSync.State.FAILED) {
+    console.info(`Batch download stopped, error type: ${data.errType}.`);
+  }
+};
 
-13. try {
-14. fileCache.on('batchDownload', callback);
-15. } catch (e) {
-16. let error = e as BusinessError;
-17. console.error(`Failed to register download callback, error code: ${error.code}, message: ${error.message}`);
-18. }
+try {
+  fileCache.on('batchDownload', callback);
+} catch (e) {
+  let error = e as BusinessError;
+  console.error(`Failed to register download callback, error code: ${error.code}, message: ${error.message}`);
+}
 ```
 
 ### off('progress')11+
-
-PhonePC/2in1TabletTVWearable
 
 off(event: 'progress', callback?: Callback<DownloadProgress>): void
 
@@ -640,27 +596,25 @@ off(event: 'progress', callback?: Callback<DownloadProgress>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let fileCache = new cloudSync.CloudFileCache();
+let fileCache = new cloudSync.CloudFileCache();
 
-5. let callback = (pg: cloudSync.DownloadProgress) => {
-6. console.info("download state: " + pg.state);
-7. }
+let callback = (pg: cloudSync.DownloadProgress) => {
+  console.info("download state: " + pg.state);
+}
 
-9. try {
-10. fileCache.on('progress', callback);
-11. fileCache.off('progress', callback);
-12. } catch (e) {
-13. const error = e as BusinessError;
-14. console.error(`Error code: ${error.code}, message: ${error.message}`);
-15. }
+try {
+  fileCache.on('progress', callback);
+  fileCache.off('progress', callback);
+} catch (e) {
+  const error = e as BusinessError;
+  console.error(`Error code: ${error.code}, message: ${error.message}`);
+}
 ```
 
 ### off('batchDownload')20+
-
-PhonePC/2in1TabletTVWearable
 
 off(event: 'batchDownload', callback?: Callback<MultiDownloadProgress>): void
 
@@ -686,26 +640,24 @@ off(event: 'batchDownload', callback?: Callback<MultiDownloadProgress>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let fileCache = new cloudSync.CloudFileCache();
-4. let callback = (pg: cloudSync.MultiDownloadProgress) => {
-5. console.info("download state: " + pg.state);
-6. }
+let fileCache = new cloudSync.CloudFileCache();
+let callback = (pg: cloudSync.MultiDownloadProgress) => {
+  console.info("download state: " + pg.state);
+}
 
-8. try {
-9. fileCache.on('batchDownload', callback);
-10. fileCache.off('batchDownload', callback);
-11. } catch (e) {
-12. let error = e as BusinessError;
-13. console.error(`Failed to unregister download callback, error code: ${error.code}, message: ${error.message}`);
-14. }
+try {
+  fileCache.on('batchDownload', callback);
+  fileCache.off('batchDownload', callback);
+} catch (e) {
+  let error = e as BusinessError;
+  console.error(`Failed to unregister download callback, error code: ${error.code}, message: ${error.message}`);
+}
 ```
 
 ### start11+
-
-PhonePC/2in1TabletTVWearable
 
 start(uri: string): Promise<void>
 
@@ -739,33 +691,31 @@ start(uri: string): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { fileUri } from '@kit.CoreFileKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileUri } from '@kit.CoreFileKit';
 
-4. let fileCache = new cloudSync.CloudFileCache();
-5. let path = "/data/storage/el2/cloud/1.txt";
-6. let uri = fileUri.getUriFromPath(path);
+let fileCache = new cloudSync.CloudFileCache();
+let path = "/data/storage/el2/cloud/1.txt";
+let uri = fileUri.getUriFromPath(path);
 
-8. try {
-9. fileCache.on('progress', (pg: cloudSync.DownloadProgress) => {
-10. console.info("download state: " + pg.state);
-11. });
-12. } catch (e) {
-13. const error = e as BusinessError;
-14. console.error(`Error code: ${error.code}, message: ${error.message}`);
-15. }
+try {
+  fileCache.on('progress', (pg: cloudSync.DownloadProgress) => {
+    console.info("download state: " + pg.state);
+  });
+} catch (e) {
+  const error = e as BusinessError;
+  console.error(`Error code: ${error.code}, message: ${error.message}`);
+}
 
-17. fileCache.start(uri).then(() => {
-18. console.info("start download successfully");
-19. }).catch((err: BusinessError) => {
-20. console.error("start download failed with error message: " + err.message + ", error code: " + err.code);
-21. });
+fileCache.start(uri).then(() => {
+  console.info("start download successfully");
+}).catch((err: BusinessError) => {
+  console.error("start download failed with error message: " + err.message + ", error code: " + err.code);
+});
 ```
 
 ### start11+
-
-PhonePC/2in1TabletTVWearable
 
 start(uri: string, callback: AsyncCallback<void>): void
 
@@ -794,26 +744,24 @@ start(uri: string, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { fileUri } from '@kit.CoreFileKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileUri } from '@kit.CoreFileKit';
 
-4. let fileCache = new cloudSync.CloudFileCache();
-5. let path = "/data/storage/el2/cloud/1.txt";
-6. let uri = fileUri.getUriFromPath(path);
+let fileCache = new cloudSync.CloudFileCache();
+let path = "/data/storage/el2/cloud/1.txt";
+let uri = fileUri.getUriFromPath(path);
 
-8. fileCache.start(uri, (err: BusinessError) => {
-9. if (err) {
-10. console.error("start download failed with error message: " + err.message + ", error code: " + err.code);
-11. } else {
-12. console.info("start download successfully");
-13. }
-14. });
+fileCache.start(uri, (err: BusinessError) => {
+  if (err) {
+    console.error("start download failed with error message: " + err.message + ", error code: " + err.code);
+  } else {
+    console.info("start download successfully");
+  }
+});
 ```
 
 ### startBatch20+
-
-PhonePC/2in1TabletTVWearable
 
 startBatch(uris: Array<string>, fileType?: DownloadFileType): Promise<number>
 
@@ -850,30 +798,28 @@ startBatch(uris: Array<string>, fileType?: DownloadFileType): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let fileCache = new cloudSync.CloudFileCache();
-4. try {
-5. fileCache.on('batchDownload', (pg: cloudSync.MultiDownloadProgress) => {
-6. console.info(`batch download state: ${pg.state}`);
-7. });
-8. } catch (e) {
-9. let error = e as BusinessError;
-10. console.error(`Failed to unregister download callback, error code: ${error.code}, message: ${error.message}`);
-11. }
+let fileCache = new cloudSync.CloudFileCache();
+try {
+  fileCache.on('batchDownload', (pg: cloudSync.MultiDownloadProgress) => {
+    console.info(`batch download state: ${pg.state}`);
+  });
+} catch (e) {
+  let error = e as BusinessError;
+  console.error(`Failed to unregister download callback, error code: ${error.code}, message: ${error.message}`);
+}
 
-13. let uriList: Array<string> = [];
-14. fileCache.startBatch(uriList, cloudSync.DownloadFileType.CONTENT).then((downloadId: number) => {
-15. console.info(`start batch download successfully, taskId: ${downloadId}`);
-16. }).catch((err: BusinessError) => {
-17. console.error(`start download failed with error message: ${err.message}, error code: ${err.code}`);
-18. });
+let uriList: Array<string> = [];
+fileCache.startBatch(uriList, cloudSync.DownloadFileType.CONTENT).then((downloadId: number) => {
+  console.info(`start batch download successfully, taskId: ${downloadId}`);
+}).catch((err: BusinessError) => {
+  console.error(`start download failed with error message: ${err.message}, error code: ${err.code}`);
+});
 ```
 
 ### stop11+
-
-PhonePC/2in1TabletTVWearable
 
 stop(uri: string, needClean?: boolean): Promise<void>
 
@@ -888,7 +834,7 @@ stop(uri: string, needClean?: boolean): Promise<void>
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | string | 是 | 待下载文件uri。 |
-| needClean12+ | boolean | 否 | 是否删除已下载的文件。默认值为false表示不删除；true表示删除。  从API version12开始支持该参数。 |
+| needClean12+ | boolean | 否 | 是否删除已下载的文件。默认值为false表示不删除；true表示删除。  从API version 12开始支持该参数。 |
 
 **返回值：**
 
@@ -909,24 +855,22 @@ stop(uri: string, needClean?: boolean): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { fileUri } from '@kit.CoreFileKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileUri } from '@kit.CoreFileKit';
 
-4. let fileCache = new cloudSync.CloudFileCache();
-5. let path = "/data/storage/el2/cloud/1.txt";
-6. let uri = fileUri.getUriFromPath(path);
+let fileCache = new cloudSync.CloudFileCache();
+let path = "/data/storage/el2/cloud/1.txt";
+let uri = fileUri.getUriFromPath(path);
 
-8. fileCache.stop(uri, true).then(() => {
-9. console.info("stop download successfully");
-10. }).catch((err: BusinessError) => {
-11. console.error("stop download failed with error message: " + err.message + ", error code: " + err.code);
-12. });
+fileCache.stop(uri, true).then(() => {
+  console.info("stop download successfully");
+}).catch((err: BusinessError) => {
+  console.error("stop download failed with error message: " + err.message + ", error code: " + err.code);
+});
 ```
 
 ### stop11+
-
-PhonePC/2in1TabletTVWearable
 
 stop(uri: string, callback: AsyncCallback<void>): void
 
@@ -956,26 +900,24 @@ stop(uri: string, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { fileUri } from '@kit.CoreFileKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileUri } from '@kit.CoreFileKit';
 
-4. let fileCache = new cloudSync.CloudFileCache();
-5. let path = "/data/storage/el2/cloud/1.txt";
-6. let uri = fileUri.getUriFromPath(path);
+let fileCache = new cloudSync.CloudFileCache();
+let path = "/data/storage/el2/cloud/1.txt";
+let uri = fileUri.getUriFromPath(path);
 
-8. fileCache.stop(uri, (err: BusinessError) => {
-9. if (err) {
-10. console.error("stop download failed with error message: " + err.message + ", error code: " + err.code);
-11. } else {
-12. console.info("stop download successfully");
-13. }
-14. });
+fileCache.stop(uri, (err: BusinessError) => {
+  if (err) {
+    console.error("stop download failed with error message: " + err.message + ", error code: " + err.code);
+  } else {
+    console.info("stop download successfully");
+  }
+});
 ```
 
 ### stopBatch20+
-
-PhonePC/2in1TabletTVWearable
 
 stopBatch(downloadId: number, needClean?: boolean): Promise<void>
 
@@ -1010,32 +952,30 @@ stopBatch(downloadId: number, needClean?: boolean): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let taskId = -1;
-4. let uriList: Array<string> = [];
-5. let fileCache = new cloudSync.CloudFileCache();
-6. fileCache.startBatch(uriList, cloudSync.DownloadFileType.CONTENT).then((downloadId: number) => {
-7. taskId = downloadId;
-8. console.info("start batch download successfully");
-9. }).catch((err: BusinessError) => {
-10. console.error(`start batch download failed with error message: ${err.message}, error code: ${err.code}`);
-11. });
+let taskId = -1;
+let uriList: Array<string> = [];
+let fileCache = new cloudSync.CloudFileCache();
+fileCache.startBatch(uriList, cloudSync.DownloadFileType.CONTENT).then((downloadId: number) => {
+  taskId = downloadId;
+  console.info("start batch download successfully");
+}).catch((err: BusinessError) => {
+  console.error(`start batch download failed with error message: ${err.message}, error code: ${err.code}`);
+});
 
-13. let needStop = true;
-14. if (needStop && taskId > 0) {
-15. fileCache.stopBatch(taskId, true).then(() => {
-16. console.info("stop batch download successfully");
-17. }).catch((err: BusinessError) => {
-18. console.error(`stop batch download failed with error message: ${err.message}, error code: ${err.code}`);
-19. });
-20. }
+let needStop = true;
+if (needStop && taskId > 0) {
+  fileCache.stopBatch(taskId, true).then(() => {
+    console.info("stop batch download successfully");
+  }).catch((err: BusinessError) => {
+    console.error(`stop batch download failed with error message: ${err.message}, error code: ${err.code}`);
+  });
+}
 ```
 
 ### cleanFileCache20+
-
-PhonePC/2in1TabletTVWearable
 
 cleanFileCache(uri: string): void
 
@@ -1065,25 +1005,105 @@ cleanFileCache(uri: string): void
 
 **示例：**
 
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileUri } from '@kit.CoreFileKit';
+
+let fileCache = new cloudSync.CloudFileCache();
+let path = "/data/storage/el2/cloud/1.txt";
+let uri = fileUri.getUriFromPath(path);
+
+try {
+  fileCache.cleanFileCache(uri);
+} catch (err) {
+  let error:BusinessError = err as BusinessError;
+  console.error("clean file cache failed with error message: " + err.message + ", error code: " + err.code);
+}
 ```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { fileUri } from '@kit.CoreFileKit';
 
-4. let fileCache = new cloudSync.CloudFileCache();
-5. let path = "/data/storage/el2/cloud/1.txt";
-6. let uri = fileUri.getUriFromPath(path);
+### cleanAllFileCache
 
-8. try {
-9. fileCache.cleanFileCache(uri);
-10. } catch (err) {
-11. let error:BusinessError = err as BusinessError;
-12. console.error("clean file cache failed with error message: " + err.message + ", error code: " + err.code);
-13. }
+cleanAllFileCache(): Promise<void>
+
+删除所有已缓存文件，未上云文件、写打开文件及缩略图文件不会被删除。使用Promise异步回调。
+
+**起始版本：** 26.0.0
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[文件管理错误码](errorcode-filemanagement.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13900010 | Try again. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileUri } from '@kit.CoreFileKit';
+
+let fileCache = new cloudSync.CloudFileCache();
+
+fileCache.cleanAllFileCache().then(() => {
+  console.info("clean file cache successfully");
+}).catch((err: BusinessError) => {
+  console.error("clean file cache failed with error message: " + err.message + ", error code: " + err.code);
+});
+```
+
+### getCachedTotalSize
+
+getCachedTotalSize(): Promise<number>
+
+获取已缓存文件的总大小，包含本地新增未上云文件、本地新增已上云文件及已下载文件大小，不包含缩略图文件大小。使用Promise异步回调。
+
+**起始版本：** 26.0.0
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回已缓存文件总大小。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[文件管理错误码](errorcode-filemanagement.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 13900010 | Try again. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileUri } from '@kit.CoreFileKit';
+
+let fileCache = new cloudSync.CloudFileCache();
+
+fileCache.getCachedTotalSize().then((totalDownloadSize: number) => {
+  console.info("totalDownloadSize: " + totalDownloadSize);
+}).catch((err: BusinessError) => {
+  console.error("get totalDownloadSize failed with error message: " + err.message + ", error code: " + err.code);
+});
 ```
 
 ## DownloadErrorType11+
-
-PhonePC/2in1TabletTVWearable
 
 端云下载错误类型，为枚举类型。
 
@@ -1100,8 +1120,6 @@ PhonePC/2in1TabletTVWearable
 
 ## DownloadFileType20+
 
-PhonePC/2in1TabletTVWearable
-
 云盘缓存文件类型的枚举。
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
@@ -1114,8 +1132,6 @@ PhonePC/2in1TabletTVWearable
 
 ## FailedFileInfo20+
 
-PhonePC/2in1TabletTVWearable
-
 云文件批量缓存失败列表及失败原因。
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
@@ -1127,13 +1143,9 @@ PhonePC/2in1TabletTVWearable
 
 ## MultiDownloadProgress20+
 
-PhonePC/2in1TabletTVWearable
-
 云文件批量缓存的进度信息。
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
@@ -1149,8 +1161,6 @@ PhonePC/2in1TabletTVWearable
 | errType | [DownloadErrorType](js-apis-file-cloudsync.md#downloaderrortype11) | 否 | 否 | 返回批量缓存任务执行失败时的错误类型。 |
 
 ### getFailedFiles20+
-
-PhonePC/2in1TabletTVWearable
 
 getFailedFiles(): Array<FailedFileInfo>
 
@@ -1174,39 +1184,37 @@ getFailedFiles(): Array<FailedFileInfo>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let taskId = -1;
-4. let failedList: Array<cloudSync.FailedFileInfo> = [];
-5. let fileCache = new cloudSync.CloudFileCache();
-6. let callback = (data: cloudSync.MultiDownloadProgress) => {
-7. console.info(`Batch download progress: downloadedSize: ${data.downloadedSize}, totalSize: ${data.totalSize}`);
-8. if (data.state == cloudSync.State.FAILED) {
-9. console.info(`Batch download stopped, error type: ${data.errType}.`);
-10. failedList = data.getFailedFiles();
-11. }
-12. };
+let taskId = -1;
+let failedList: Array<cloudSync.FailedFileInfo> = [];
+let fileCache = new cloudSync.CloudFileCache();
+let callback = (data: cloudSync.MultiDownloadProgress) => {
+  console.info(`Batch download progress: downloadedSize: ${data.downloadedSize}, totalSize: ${data.totalSize}`);
+  if (data.state == cloudSync.State.FAILED) {
+    console.info(`Batch download stopped, error type: ${data.errType}.`);
+    failedList = data.getFailedFiles();
+  }
+};
 
-14. try {
-15. fileCache.on('batchDownload', callback);
-16. } catch (e) {
-17. let error = e as BusinessError;
-18. console.error(`Failed to register download callback, error code: ${error.code}, message: ${error.message}`);
-19. }
+try {
+  fileCache.on('batchDownload', callback);
+} catch (e) {
+  let error = e as BusinessError;
+  console.error(`Failed to register download callback, error code: ${error.code}, message: ${error.message}`);
+}
 
-21. let uriList: Array<string> = [];
-22. fileCache.startBatch(uriList, cloudSync.DownloadFileType.CONTENT).then((downloadId: number) => {
-23. taskId = downloadId;
-24. console.info("start batch download successfully");
-25. }).catch((err: BusinessError) => {
-26. console.error(`start batch download failed with error message: ${err.message}, error code: ${err.code}`);
-27. });
+let uriList: Array<string> = [];
+fileCache.startBatch(uriList, cloudSync.DownloadFileType.CONTENT).then((downloadId: number) => {
+  taskId = downloadId;
+  console.info("start batch download successfully");
+}).catch((err: BusinessError) => {
+  console.error(`start batch download failed with error message: ${err.message}, error code: ${err.code}`);
+});
 ```
 
 ### getSuccessfulFiles20+
-
-PhonePC/2in1TabletTVWearable
 
 getSuccessfulFiles(): Array<string>
 
@@ -1230,37 +1238,35 @@ getSuccessfulFiles(): Array<string>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let finishedList: Array<string> = [];
-4. let fileCache = new cloudSync.CloudFileCache();
-5. let callback = (data: cloudSync.MultiDownloadProgress) => {
-6. console.info(`Batch download progress: downloadedSize: ${data.downloadedSize}, totalSize: ${data.totalSize}`);
-7. if (data.state == cloudSync.State.COMPLETED) {
-8. console.info(`Batch download stopped, error type: ${data.errType}.`);
-9. finishedList = data.getSuccessfulFiles();
-10. }
-11. };
+let finishedList: Array<string> = [];
+let fileCache = new cloudSync.CloudFileCache();
+let callback = (data: cloudSync.MultiDownloadProgress) => {
+  console.info(`Batch download progress: downloadedSize: ${data.downloadedSize}, totalSize: ${data.totalSize}`);
+  if (data.state == cloudSync.State.COMPLETED) {
+    console.info(`Batch download stopped, error type: ${data.errType}.`);
+    finishedList = data.getSuccessfulFiles();
+  }
+};
 
-13. try {
-14. fileCache.on('batchDownload', callback);
-15. } catch (e) {
-16. const error = e as BusinessError;
-17. console.error(`Failed to register download callback, error code: ${error.code}, message: ${error.message}`);
-18. }
+try {
+  fileCache.on('batchDownload', callback);
+} catch (e) {
+  const error = e as BusinessError;
+  console.error(`Failed to register download callback, error code: ${error.code}, message: ${error.message}`);
+}
 
-20. let uriList: Array<string> = [];
-21. fileCache.startBatch(uriList, cloudSync.DownloadFileType.CONTENT).then((downloadId: number) => {
-22. console.info(`start batch download successfully, taskId: ${downloadId}`);
-23. }).catch((err: BusinessError) => {
-24. console.error(`start batch download failed with error message: ${err.message}, error code: ${err.code}`);
-25. });
+let uriList: Array<string> = [];
+fileCache.startBatch(uriList, cloudSync.DownloadFileType.CONTENT).then((downloadId: number) => {
+  console.info(`start batch download successfully, taskId: ${downloadId}`);
+}).catch((err: BusinessError) => {
+  console.error(`start batch download failed with error message: ${err.message}, error code: ${err.code}`);
+});
 ```
 
 ## cloudSync.registerChange12+
-
-PhonePC/2in1TabletTVWearable
 
 registerChange(uri: string, recursion: boolean, callback: Callback<ChangeData>): void
 
@@ -1274,7 +1280,7 @@ registerChange(uri: string, recursion: boolean, callback: Callback<ChangeData>):
 | --- | --- | --- | --- |
 | uri | string | 是 | 待下载文件uri。 |
 | recursion | boolean | 是 | true为监听该URI以及子文件和子目录，false为仅监听该URI文件。 |
-| callback | Callback<[ChangeData](js-apis-file-cloudsync.md#changedata12)> | 是 | 回调函数。返回更改的数据。 |
+| callback | Callback<[ChangeData](js-apis-file-cloudsync.md#changedata12)> | 是 | 回调函数，返回更改的数据。 |
 
 **错误码：**
 
@@ -1290,26 +1296,24 @@ registerChange(uri: string, recursion: boolean, callback: Callback<ChangeData>):
 
 **示例：**
 
-```
-1. import { fileUri } from '@kit.CoreFileKit';
+```ts
+import { fileUri } from '@kit.CoreFileKit';
 
-3. let path = "/data/storage/el2/cloud/1.txt";
-4. let uri = fileUri.getUriFromPath(path);
-5. let onCallback1 = (changeData: cloudSync.ChangeData) => {
-6. if (changeData.type == cloudSync.NotifyType.NOTIFY_ADDED) {
-7. // file has been added, do something
-8. } else if (changeData.type== cloudSync.NotifyType.NOTIFY_DELETED) {
-9. // file has been removed, do something
-10. }
-11. }
-12. cloudSync.registerChange(uri, false, onCallback1);
-13. // 取消注册监听
-14. cloudSync.unregisterChange(uri);
+let path = "/data/storage/el2/cloud/1.txt";
+let uri = fileUri.getUriFromPath(path);
+let onCallback1 = (changeData: cloudSync.ChangeData) => {
+  if (changeData.type == cloudSync.NotifyType.NOTIFY_ADDED) {
+    // file has been added, do something
+  } else if (changeData.type== cloudSync.NotifyType.NOTIFY_DELETED) {
+    // file has been removed, do something
+  }
+}
+cloudSync.registerChange(uri, false, onCallback1);
+// 取消注册监听
+cloudSync.unregisterChange(uri);
 ```
 
 ## cloudSync.unregisterChange12+
-
-PhonePC/2in1TabletTVWearable
 
 unregisterChange(uri: string): void
 
@@ -1337,26 +1341,24 @@ unregisterChange(uri: string): void
 
 **示例：**
 
-```
-1. import { fileUri } from '@kit.CoreFileKit';
+```ts
+import { fileUri } from '@kit.CoreFileKit';
 
-3. let path = "/data/storage/el2/cloud/1.txt";
-4. let uri = fileUri.getUriFromPath(path);
-5. let onCallback1 = (changeData: cloudSync.ChangeData) => {
-6. if (changeData.type == cloudSync.NotifyType.NOTIFY_ADDED) {
-7. // file has been added, do something
-8. } else if (changeData.type== cloudSync.NotifyType.NOTIFY_DELETED) {
-9. // file has been removed, do something
-10. }
-11. }
-12. cloudSync.registerChange(uri, false, onCallback1);
-13. // 取消注册监听
-14. cloudSync.unregisterChange(uri);
+let path = "/data/storage/el2/cloud/1.txt";
+let uri = fileUri.getUriFromPath(path);
+let onCallback1 = (changeData: cloudSync.ChangeData) => {
+  if (changeData.type == cloudSync.NotifyType.NOTIFY_ADDED) {
+    // file has been added, do something
+  } else if (changeData.type== cloudSync.NotifyType.NOTIFY_DELETED) {
+    // file has been removed, do something
+  }
+}
+cloudSync.registerChange(uri, false, onCallback1);
+// 取消注册监听
+cloudSync.unregisterChange(uri);
 ```
 
 ## NotifyType12+
-
-PhonePC/2in1TabletTVWearable
 
 数据变更通知类型。
 
@@ -1371,8 +1373,6 @@ PhonePC/2in1TabletTVWearable
 
 ## ChangeData12+
 
-PhonePC/2in1TabletTVWearable
-
 定义变更数据。
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
@@ -1385,19 +1385,15 @@ PhonePC/2in1TabletTVWearable
 
 ## HistoryVersion20+
 
-PhonePC/2in1TabletTVWearable
-
 端云文件历史版本信息，调用端云文件版本管理类[FileVersion](js-apis-file-cloudsync.md#fileversion20)的[gethistoryversionlist](js-apis-file-cloudsync.md#gethistoryversionlist20)方法时，历史版本列表中的属性。
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| editedTime | number | 否 | 否 | 文件内容修改时间。 |
+| editedTime | number | 否 | 否 | 文件内容修改的时间戳，单位：ms。 |
 | fileSize | number | 否 | 否 | 文件大小，单位：Byte。 |
 | versionId | string | 否 | 否 | 文件版本号。 |
 | originalFileName | string | 否 | 否 | 当前版本对应的文件名。 |
@@ -1408,43 +1404,35 @@ PhonePC/2in1TabletTVWearable
 
 配置文件cloudkit\_config.json样例：
 
-```
-1. {
-2. "cloudKitConfig": {
-3. "cloudFileSyncConfig": {
-4. "manualConflictResolutionEnable": "true"
-5. }
-6. }
-7. }
+```json
+{
+  "cloudKitConfig": {
+    "cloudFileSyncConfig": {
+      "manualConflictResolutionEnable": "true"
+    }
+  }
+}
 ```
 
 ## VersionDownloadProgress20+
 
-PhonePC/2in1TabletTVWearable
-
 历史版本文件下载状态和进度信息，调用端云文件版本管理类[FileVersion](js-apis-file-cloudsync.md#fileversion20)的[downloadHistoryVersion](js-apis-file-cloudsync.md#downloadhistoryversion20)方法时，回调函数的入参类型。
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | state | [State](js-apis-file-cloudsync.md#state11) | 否 | 否 | 所选版本云文件的下载状态。 |
-| progress | number | 否 | 否 | 下载进度。 |
+| progress | number | 否 | 否 | 下载进度，单位：百分比。 |
 | errType | [DownloadErrorType](js-apis-file-cloudsync.md#downloaderrortype11) | 否 | 否 | 若出现下载失败，失败的错误类型。 |
 
 ## FileVersion20+
 
-PhonePC/2in1TabletTVWearable
-
 端云文件版本管理类。支持对端云文件的历史版本进行管理，提供获取文件历史版本信息列表的能力，通过历史版本信息，可将历史版本下载到本地；并提供历史版本文件替换当前本地文件的能力，针对版本冲突，提供查询冲突标志，解除冲突标志的能力。
 
-### construct20+
-
-PhonePC/2in1TabletTVWearable
+### constructor20+
 
 constructor()
 
@@ -1462,13 +1450,11 @@ constructor()
 
 **示例：**
 
-```
-1. let fileVersion = new cloudSync.FileVersion();
+```ts
+let fileVersion = new cloudSync.FileVersion();
 ```
 
 ### getHistoryVersionList20+
-
-PhonePC/2in1TabletTVWearable
 
 getHistoryVersionList(uri: string, versionNumLimit: number): Promise<Array<HistoryVersion>>
 
@@ -1510,28 +1496,26 @@ getHistoryVersionList(uri: string, versionNumLimit: number): Promise<Array<Histo
 
 **示例：**
 
-```
-1. import { fileUri } from '@kit.CoreFileKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { fileUri } from '@kit.CoreFileKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let fileVersion = new cloudSync.FileVersion();
+let fileVersion = new cloudSync.FileVersion();
 
-6. let path = "/data/storage/el2/cloud/1.txt";
-7. let uri = fileUri.getUriFromPath(path);
-8. let limit = 10;
+let path = "/data/storage/el2/cloud/1.txt";
+let uri = fileUri.getUriFromPath(path);
+let limit = 10;
 
-10. fileVersion.getHistoryVersionList(uri, limit).then((versionList: Array<cloudSync.HistoryVersion>) => {
-11. for(let i = 0, len = versionList.length; i < len; i++) {
-12. console.info("get history versionId: " + versionList[i].versionId);
-13. }
-14. }).catch((err: BusinessError) => {
-15. console.error("get history version failed with error message: " + err.message + ", error code: " + err.code);
-16. });
+fileVersion.getHistoryVersionList(uri, limit).then((versionList: Array<cloudSync.HistoryVersion>) => {
+  for(let i = 0, len = versionList.length; i < len; i++) {
+    console.info("get history versionId: " + versionList[i].versionId);
+  }
+}).catch((err: BusinessError) => {
+  console.error("get history version failed with error message: " + err.message + ", error code: " + err.code);
+});
 ```
 
 ### downloadHistoryVersion20+
-
-PhonePC/2in1TabletTVWearable
 
 downloadHistoryVersion(uri: string, versionId: string, callback: Callback<[VersionDownloadProgress](js-apis-file-cloudsync.md#versiondownloadprogress20)>): Promise<string>
 
@@ -1545,7 +1529,7 @@ downloadHistoryVersion(uri: string, versionId: string, callback: Callback<[Versi
 | --- | --- | --- | --- |
 | uri | string | 是 | 文件的URI。 |
 | versionId | string | 是 | 文件某一版本的版本号，格式以接口[gethistoryversionlist](js-apis-file-cloudsync.md#gethistoryversionlist20)返回为准。 |
-| callback | Callback<[VersionDownloadProgress](js-apis-file-cloudsync.md#versiondownloadprogress20)> | 是 | 回调函数。返回下载进度。 |
+| callback | Callback<[VersionDownloadProgress](js-apis-file-cloudsync.md#versiondownloadprogress20)> | 是 | 回调函数，返回下载进度。 |
 
 **返回值：**
 
@@ -1570,36 +1554,34 @@ downloadHistoryVersion(uri: string, versionId: string, callback: Callback<[Versi
 
 **示例：**
 
-```
-1. import { fileUri } from '@kit.CoreFileKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { fileUri } from '@kit.CoreFileKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let fileVersion = new cloudSync.FileVersion();
+let fileVersion = new cloudSync.FileVersion();
 
-6. let path = "/data/storage/el2/cloud/1.txt";
-7. let uri = fileUri.getUriFromPath(path);
-8. let versionId = '123456'; // 以 getHistoryVersionList 方法返回的格式为准，此处仅作为 demo 示例。
+let path = "/data/storage/el2/cloud/1.txt";
+let uri = fileUri.getUriFromPath(path);
+let versionId = '123456'; // 以 getHistoryVersionList 方法返回的格式为准，此处仅作为 demo 示例。
 
-10. let callback = (data: cloudSync.VersionDownloadProgress) => {
-11. if (data.state == cloudSync.State.RUNNING) {
-12. console.info("download progress: " + data.progress);
-13. } else if (data.state == cloudSync.State.FAILED) {
-14. console.info("download failed errType: " + data.errType);
-15. } else if (data.state == cloudSync.State.COMPLETED) {
-16. console.info("download version file success");
-17. }
-18. };
+let callback = (data: cloudSync.VersionDownloadProgress) => {
+  if (data.state == cloudSync.State.RUNNING) {
+    console.info("download progress: " + data.progress);
+  } else if (data.state == cloudSync.State.FAILED) {
+    console.info("download failed errType: " + data.errType);
+  } else if (data.state == cloudSync.State.COMPLETED) {
+    console.info("download version file success");
+  }
+};
 
-20. fileVersion.downloadHistoryVersion(uri, versionId, callback).then((fileUri: string) => {
-21. console.info("success to begin download, downloadFileUri: " + fileUri);
-22. }).catch((err: BusinessError) => {
-23. console.error("download history version file failed with error message: " + err.message + ", error code: " + err.code);
-24. });
+fileVersion.downloadHistoryVersion(uri, versionId, callback).then((fileUri: string) => {
+  console.info("success to begin download, downloadFileUri: " + fileUri);
+}).catch((err: BusinessError) => {
+  console.error("download history version file failed with error message: " + err.message + ", error code: " + err.code);
+});
 ```
 
 ### replaceFileWithHistoryVersion20+
-
-PhonePC/2in1TabletTVWearable
 
 replaceFileWithHistoryVersion(originalUri: string, versionUri: string): Promise<void>
 
@@ -1639,43 +1621,41 @@ replaceFileWithHistoryVersion(originalUri: string, versionUri: string): Promise<
 
 **示例：**
 
-```
-1. import { fileUri } from '@kit.CoreFileKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { fileUri } from '@kit.CoreFileKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let fileVersion = new cloudSync.FileVersion();
+let fileVersion = new cloudSync.FileVersion();
 
-6. let path = "/data/storage/el2/cloud/1.txt";
-7. let uri = fileUri.getUriFromPath(path);
-8. let versionId = '123456'; // 以 getHistoryVersionList 方法返回的格式为准，此处仅作为 demo 示例。
+let path = "/data/storage/el2/cloud/1.txt";
+let uri = fileUri.getUriFromPath(path);
+let versionId = '123456'; // 以 getHistoryVersionList 方法返回的格式为准，此处仅作为 demo 示例。
 
-10. let callback = (data: cloudSync.VersionDownloadProgress) => {
-11. if (data.state == cloudSync.State.RUNNING) {
-12. console.info("download progress: " + data.progress);
-13. } else if (data.state == cloudSync.State.FAILED) {
-14. console.info("download failed errType: " + data.errType);
-15. } else if (data.state == cloudSync.State.COMPLETED) {
-16. console.info("download version file success");
-17. }
-18. };
+let callback = (data: cloudSync.VersionDownloadProgress) => {
+  if (data.state == cloudSync.State.RUNNING) {
+    console.info("download progress: " + data.progress);
+  } else if (data.state == cloudSync.State.FAILED) {
+    console.info("download failed errType: " + data.errType);
+  } else if (data.state == cloudSync.State.COMPLETED) {
+    console.info("download version file success");
+  }
+};
 
-20. let versionUri = "";
-21. fileVersion.downloadHistoryVersion(uri, versionId, callback).then((fileUri: string) => {
-22. versionUri = fileUri;
-23. console.info("success to begin download, downloadFileUri: " + fileUri);
-24. }).catch((err: BusinessError) => {
-25. console.error(`download history version file failed with error message: ${err.message}, error code: ${err.code}`);
-26. });
-27. fileVersion.replaceFileWithHistoryVersion(uri, versionUri).then(() => {
-28. console.info("replace file with history version success.");
-29. }).catch((err: BusinessError) => {
-30. console.error("replace file with history version failed with error message: " + err.message + ", error code: " + err.code);
-31. });
+let versionUri = "";
+fileVersion.downloadHistoryVersion(uri, versionId, callback).then((fileUri: string) => {
+  versionUri = fileUri;
+  console.info("success to begin download, downloadFileUri: " + fileUri);
+}).catch((err: BusinessError) => {
+  console.error(`download history version file failed with error message: ${err.message}, error code: ${err.code}`);
+});
+fileVersion.replaceFileWithHistoryVersion(uri, versionUri).then(() => {
+  console.info("replace file with history version success.");
+}).catch((err: BusinessError) => {
+  console.error("replace file with history version failed with error message: " + err.message + ", error code: " + err.code);
+});
 ```
 
 ### isFileConflict20+
-
-PhonePC/2in1TabletTVWearable
 
 isFileConflict(uri: string): Promise<boolean>
 
@@ -1713,25 +1693,23 @@ isFileConflict(uri: string): Promise<boolean>
 
 **示例：**
 
-```
-1. import { fileUri } from '@kit.CoreFileKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { fileUri } from '@kit.CoreFileKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let fileVersion = new cloudSync.FileVersion();
+let fileVersion = new cloudSync.FileVersion();
 
-6. let path = "/data/storage/el2/cloud/1.txt";
-7. let uri = fileUri.getUriFromPath(path);
+let path = "/data/storage/el2/cloud/1.txt";
+let uri = fileUri.getUriFromPath(path);
 
-9. fileVersion.isFileConflict(uri).then((isConflict: boolean) => {
-10. console.info("current file is conflict: " + isConflict);
-11. }).catch((err: BusinessError) => {
-12. console.error("get current file conflict flag failed with error message: " + err.message + ", error code: " + err.code);
-13. });
+fileVersion.isFileConflict(uri).then((isConflict: boolean) => {
+  console.info("current file is conflict: " + isConflict);
+}).catch((err: BusinessError) => {
+  console.error("get current file conflict flag failed with error message: " + err.message + ", error code: " + err.code);
+});
 ```
 
 ### clearFileConflict20+
-
-PhonePC/2in1TabletTVWearable
 
 clearFileConflict(uri: string): Promise<void>
 
@@ -1767,32 +1745,30 @@ clearFileConflict(uri: string): Promise<void>
 
 **示例：**
 
-```
-1. import { fileUri } from '@kit.CoreFileKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { fileUri } from '@kit.CoreFileKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let fileVersion = new cloudSync.FileVersion();
+let fileVersion = new cloudSync.FileVersion();
 
-6. let path = "/data/storage/el2/cloud/1.txt";
-7. let uri = fileUri.getUriFromPath(path);
+let path = "/data/storage/el2/cloud/1.txt";
+let uri = fileUri.getUriFromPath(path);
 
-9. let isConflict = false;
-10. fileVersion.isFileConflict(uri).then((isConflictRet: boolean) => {
-11. isConflict = isConflictRet;
-12. console.info("current file is conflict: " + isConflictRet);
-13. }).catch((err: BusinessError) => {
-14. console.error(`get current file conflict flag failed with error message: ${err.message}, error code: ${err.code}`);
-15. });
-16. fileVersion.clearFileConflict(uri).then(() => {
-17. console.info("clean file conflict flag success");
-18. }).catch((err: BusinessError) => {
-19. console.error("clean file conflict flag failed with error message: " + err.message + ", error code: " + err.code);
-20. });
+let isConflict = false;
+fileVersion.isFileConflict(uri).then((isConflictRet: boolean) => {
+  isConflict = isConflictRet;
+  console.info("current file is conflict: " + isConflictRet);
+}).catch((err: BusinessError) => {
+  console.error(`get current file conflict flag failed with error message: ${err.message}, error code: ${err.code}`);
+});
+fileVersion.clearFileConflict(uri).then(() => {
+  console.info("clean file conflict flag success");
+}).catch((err: BusinessError) => {
+  console.error("clean file conflict flag failed with error message: " + err.message + ", error code: " + err.code);
+});
 ```
 
 ## cloudSync.getCoreFileSyncState20+
-
-PhonePC/2in1TabletTVWearable
 
 getCoreFileSyncState(uri: string): FileState
 
@@ -1830,23 +1806,21 @@ getCoreFileSyncState(uri: string): FileState
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { fileUri } from '@kit.CoreFileKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileUri } from '@kit.CoreFileKit';
 
-4. let path = "/data/storage/el2/cloud/1.txt";
-5. let uri = fileUri.getUriFromPath(path);
-6. try {
-7. let state = cloudSync.getCoreFileSyncState(uri);
-8. } catch (err) {
-9. let error:BusinessError = err as BusinessError;
-10. console.error(`getCoreFileSyncState failed with error ${error.code}, message is ${error.message}`);
-11. }
+let path = "/data/storage/el2/cloud/1.txt";
+let uri = fileUri.getUriFromPath(path);
+try {
+  let state = cloudSync.getCoreFileSyncState(uri);
+} catch (err) {
+  let error:BusinessError = err as BusinessError;
+  console.error(`getCoreFileSyncState failed with error ${error.code}, message is ${error.message}`);
+}
 ```
 
 ## FileState20+
-
-PhonePC/2in1TabletTVWearable
 
 端云文件同步状态，为枚举类型。
 

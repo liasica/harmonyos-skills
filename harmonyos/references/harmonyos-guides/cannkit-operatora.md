@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-opera
 title: operator==
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > Shape > operator==
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:07+08:00
+scraped_at: 2026-09-02T14:50:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:40e03d3670e3f71282fcf7450f36dae4e564dbb35c83f3f3969747285d1e4ab7
+content_hash: sha256:e0e3d35e082e8a39502c7120cc133e29b236e292356ec8b9b6235e0fc9dc7885
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:40e03d3670e3f71282fcf7450f36dae4e564dbb35c83f3f3969747285d1
 
 ## 函数原型
 
-```
-1. bool operator==(const Shape &rht) const
+```cpp
+bool operator==(const Shape &rht) const
 ```
 
 ## 参数说明
@@ -36,8 +36,8 @@ false：不相等。
 
 ## 调用示例
 
-```
-1. Shape shape0({3, 256, 256});
-2. Shape shape1({1, 3, 256, 256});
-3. auto is_same_shape = shape0 == shape1; // 返回值为false，不相等
+```cpp
+Shape shape0({3, 256, 256});
+Shape shape1({1, 3, 256, 256});
+auto is_same_shape = shape0 == shape1; // 返回值为false，不相等
 ```

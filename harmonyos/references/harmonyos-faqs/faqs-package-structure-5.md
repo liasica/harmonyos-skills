@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 如何理解App、HAP、HAR、HSP的关系
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 如何理解App、HAP、HAR、HSP的关系
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:27+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:13+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:994896d2eb599780549189e3e34a1ac51e224c3a6b45d772c258177dd6e18f68
 ---
 

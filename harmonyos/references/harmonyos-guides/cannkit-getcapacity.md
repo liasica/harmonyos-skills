@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getca
 title: GetCapacity
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > TilingData > GetCapacity
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:21+08:00
+scraped_at: 2026-09-02T14:50:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:12087ca20cadb28189a5b6ff9a8c1d7ee4d758ce2051df60db06155b6871b3d4
+content_hash: sha256:3f854205c065bffe7bd00ace661e13bbf12ef73fd55db7ad4c2ac288c3c24525
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:12087ca20cadb28189a5b6ff9a8c1d7ee4d758ce2051df60db06155b687
 
 ## 函数原型
 
-```
-1. size_t GetCapacity() const;
+```cpp
+size_t GetCapacity() const;
 ```
 
 ## 参数说明
@@ -32,8 +32,8 @@ content_hash: sha256:12087ca20cadb28189a5b6ff9a8c1d7ee4d758ce2051df60db06155b687
 
 ## 调用示例
 
-```
-1. auto td_buf = TilingData::CreateCap(100U);
-2. auto td = reinterpret_cast<TilingData *>(td_buf.get());
-3. size_t cap = td->GetCapacity(); // 100U
+```cpp
+auto td_buf = TilingData::CreateCap(100U);
+auto td = reinterpret_cast<TilingData *>(td_buf.get());
+size_t cap = td->GetCapacity(); // 100U
 ```

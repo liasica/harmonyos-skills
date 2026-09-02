@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdstabs
-title: HdsTabs
-breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsTabs
+title: HdsTabs (底部页签)
+breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsTabs (底部页签)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:57:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:04e544cafc1b6357c21a2e44a6e27654403c59ed295ab69ff648c818b931642a
+scraped_at: 2026-09-02T15:01:39+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b729371088c9020c91f8a3fd6c99eaa0aea6ac4046c37a53b52486af52bc51d7
 ---
 
 本模块提供Tabs容器组件的分割线样式，模糊样式和页签侧边栏半屏居中对齐样式的效果。
@@ -16,36 +16,30 @@ HdsTabs组件是根视图容器，一般作为Page页面的根容器使用。Hds
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-说明
+**说明** 
 
 * HdsTabsAttribute是用于配置HdsTabs组件属性的关键接口。6.0.1(21)及之前版本，导入HdsTabs组件后需要开发者手动导入HdsTabsAttribute，否则会编译报错。从6.0.2(22)版本开始，编译工具链识别到导入HdsTabs组件后，会自动导入HdsTabsAttribute，无需开发者手动导入。
 * 如果开发者手动导入HdsTabsAttribute，DevEco Studio会显示置灰，6.0.1(21)及之前版本删除会编译报错，从6.0.2(22)版本开始，删除对功能无影响。
 
 6.0.1(21)及之前版本：
 
-```
-1. import { HdsTabs, HdsTabsAttribute, HdsTabsController } from '@kit.UIDesignKit';
+```typescript
+import { HdsTabs, HdsTabsAttribute, HdsTabsController, bleedIconStyle, CustomTabBuilder } from '@kit.UIDesignKit';
 ```
 
 6.0.2(22)及之后版本：
 
-```
-1. import { HdsTabs, HdsTabsController } from '@kit.UIDesignKit';
+```typescript
+import { HdsTabs, HdsTabsController, bleedIconStyle, CustomTabBuilder } from '@kit.UIDesignKit';
 ```
 
 ## 子组件
-
-PhonePC/2in1TabletTV
 
 子组件为[TabContent](ts-container-tabcontent.md)。
 
 **设备行为差异：** 该接口在TV无效果，在其他设备类型中可正常调用。
 
 ## 接口
-
-PhonePC/2in1TabletTV
 
 HdsTabs(options?: HdsTabsOptions)
 
@@ -67,8 +61,6 @@ HdsTabs(options?: HdsTabsOptions)
 
 ## HdsTabsOptions
 
-PhonePC/2in1TabletTV
-
 HdsTabs组件参数，继承自[TabsOptions](ts-container-tabs.md#tabsoptions15)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -85,8 +77,6 @@ HdsTabs组件参数，继承自[TabsOptions](ts-container-tabs.md#tabsoptions15)
 
 ## HdsTabsController
 
-PhonePC/2in1TabletTV
-
 HdsTabs组件的控制器，用于控制HdsTabs组件进行页签切换。不支持一个HdsTabsController控制多个HdsTabs组件，继承自[TabsController](ts-container-tabs.md#tabscontroller)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -98,8 +88,6 @@ HdsTabs组件的控制器，用于控制HdsTabs组件进行页签切换。不支
 **起始版本：** 6.0.0(20)
 
 ### bindScroller
-
-PhonePC/2in1TabletTV
 
 bindScroller(value: number, scroller: Scroller, parentScroller?: Scroller): void
 
@@ -123,8 +111,6 @@ HdsTabs的控制器绑定内容区的滚动组件。
 
 ### unbindScroller
 
-PhonePC/2in1TabletTV
-
 unbindScroller(scroller: Scroller): void
 
 HdsTabs的控制器解除绑定内容区的滚动组件。
@@ -144,8 +130,6 @@ HdsTabs的控制器解除绑定内容区的滚动组件。
 | scroller | [Scroller](ts-container-scroll.md#scroller) | 是 | 滚动组件的控制器。 |
 
 ### applyMiniBarStyle
-
-PhonePC/2in1TabletTV
 
 applyMiniBarStyle(style: HdsBarStyle): void
 
@@ -167,8 +151,6 @@ HdsTabs的控制器更新[迷你栏](../harmonyos-guides/ui-design-hds-tabs-bar-
 
 ### applyHideAnimation
 
-PhonePC/2in1TabletTV
-
 applyHideAnimation(mode: HdsAnimationMode): void
 
 HdsTabs的控制器调用页签栏和[迷你栏](../harmonyos-guides/ui-design-hds-tabs-bar-floating.md#迷你栏)的隐藏动效。
@@ -185,11 +167,9 @@ HdsTabs的控制器调用页签栏和[迷你栏](../harmonyos-guides/ui-design-h
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| mode | [HdsAnimationMode](ui-design-hdstabs.md#hdsanimationmode) | 是 | 动效模式 |
+| mode | [HdsAnimationMode](ui-design-hdstabs.md#hdsanimationmode) | 是 | 动效模式。 |
 
 ### applyShowAnimation
-
-PhonePC/2in1TabletTV
 
 applyShowAnimation(mode: HdsAnimationMode): void
 
@@ -207,19 +187,15 @@ HdsTabs的控制器调用页签栏和[迷你栏](../harmonyos-guides/ui-design-h
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| mode | [HdsAnimationMode](ui-design-hdstabs.md#hdsanimationmode) | 是 | 动效模式 |
+| mode | [HdsAnimationMode](ui-design-hdstabs.md#hdsanimationmode) | 是 | 动效模式。 |
 
 ## 属性
-
-PhonePC/2in1TabletTV
 
 除支持[通用属性](ts-component-general-attributes.md)外，还支持以下属性：
 
 **设备行为差异：** 该接口在TV无效果，在其他设备类型中可正常调用。
 
 ### vertical
-
-PhonePC/2in1TabletTV
 
 vertical(value: boolean)
 
@@ -241,8 +217,6 @@ vertical(value: boolean)
 
 ### barPosition
 
-PhonePC/2in1TabletTV
-
 barPosition(value: BarPosition)
 
 设置Tabs的页签位置。
@@ -262,8 +236,6 @@ barPosition(value: BarPosition)
 | value | [BarPosition](ts-container-tabs.md#barposition枚举说明) | 是 | 设置Tabs的页签位置。  默认值：BarPosition.Start。 |
 
 ### scrollable
-
-PhonePC/2in1TabletTV
 
 scrollable(value: boolean)
 
@@ -285,8 +257,6 @@ scrollable(value: boolean)
 
 ### barWidth
 
-PhonePC/2in1TabletTV
-
 barWidth(value: Length)
 
 设置TabBar的宽度值。
@@ -303,11 +273,9 @@ barWidth(value: Length)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Length](ts-types.md#length) | 是 | TabBar的宽度值，单位：vp。若设置值小于0或大于Tabs宽度值时，按默认值显示。  默认值：  - 未设置[SubTabBarStyle](ts-container-tabcontent.md#subtabbarstyle9)和[BottomTabBarStyle](ts-container-tabcontent.md#bottomtabbarstyle9)的TabBar且vertical属性为false时，默认值为Tabs的宽度。  - 未设置SubTabBarStyle和BottomTabBarStyle的TabBar且vertical属性为true时，默认值为56vp。  - 设置SubTabBarStyle样式且vertical属性为false时，默认值为Tabs的宽度。  - 设置SubTabBarStyle样式且vertical属性为true时，默认值为56vp。  - 设置BottomTabBarStyle样式且vertical属性为true时，默认值为96vp。  - 设置BottomTabBarStyle样式且vertical属性为false时，默认值为Tabs的宽度。 |
+| value | [Length](ts-types.md#length) | 是 | TabBar的宽度值，单位：vp。若设置值小于0或大于Tabs宽度值时，按默认值显示。  默认值：  - 设置属性vertical为false时，默认值为HdsTabs组件的宽度。  - 设置属性vertical为true时，默认值为96vp。 |
 
 ### barHeight
-
-PhonePC/2in1TabletTV
 
 barHeight(value: Length)
 
@@ -325,11 +293,9 @@ barHeight(value: Length)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Length](ts-types.md#length) | 是 | TabBar的高度值。单位：vp。设置为'auto'时，TabBar自适应子组件高度，仅在横向Tabs下有效。设置为小于0或大于Tabs高度值时，按默认值显示。  默认值：  - 未设置带样式的TabBar且vertical属性为false时，默认值为48vp。  - 未设置带样式的TabBar且vertical属性为true时，默认值为Tabs的高度。  - 设置[SubTabBarStyle](ts-container-tabcontent.md#subtabbarstyle9)样式且vertical属性为false时，默认值为48vp。设置SubTabBarStyle样式且vertical属性为true时，默认值为Tabs的高度。  - 设置[BottomTabBarStyle](ts-container-tabcontent.md#bottomtabbarstyle9)样式且vertical属性为true时，默认值为Tabs的高度。  - 设置BottomTabBarStyle样式且vertical属性为false时，默认值为48vp。 |
+| value | [Length](ts-types.md#length) | 是 | TabBar的高度值。单位：vp。设置为'auto'时，TabBar自适应子组件高度，仅在横向Tabs下有效。设置为小于0或大于Tabs高度值时，按默认值显示。  默认值：  - 设置属性vertical为false时，默认值为48vp。  - 设置属性vertical为true时，默认值为HdsTabs组件的高度。  - 设置HdsTabs为[悬浮样式](ui-design-hdstabs.md#barfloatingstyle)时，默认值为56vp。 |
 
 ### animationDuration
-
-PhonePC/2in1TabletTV
 
 animationDuration(value: number)
 
@@ -351,8 +317,6 @@ animationDuration(value: number)
 
 ### barOverlap
 
-PhonePC/2in1TabletTV
-
 barOverlap(value: boolean)
 
 设置TabBar是否背后变模糊并叠加在TabContent之上。
@@ -373,8 +337,6 @@ barOverlap(value: boolean)
 
 ### barBackgroundColor
 
-PhonePC/2in1TabletTV
-
 barBackgroundColor(value: ResourceColor)
 
 设置TabBar的背景颜色。
@@ -394,8 +356,6 @@ barBackgroundColor(value: ResourceColor)
 | value | [ResourceColor](ts-types.md#resourcecolor) | 是 | TabBar的背景颜色。  默认值：Color.Transparent。 |
 
 ### barBackgroundBlurStyle
-
-PhonePC/2in1TabletTV
 
 barBackgroundBlurStyle(style: BlurStyle, options?: BackgroundBlurStyleOptions)
 
@@ -418,8 +378,6 @@ barBackgroundBlurStyle(style: BlurStyle, options?: BackgroundBlurStyleOptions)
 
 ### barBackgroundEffect
 
-PhonePC/2in1TabletTV
-
 barBackgroundEffect(options: BackgroundEffectOptions)
 
 设置TabBar背景属性，包含背景模糊半径，亮度，饱和度，颜色等参数。
@@ -439,8 +397,6 @@ barBackgroundEffect(options: BackgroundEffectOptions)
 | options | [BackgroundEffectOptions](ts-universal-attributes-background.md#backgroundeffectoptions11) | 是 | 设置TabBar背景属性包括：模糊半径、亮度、饱和度、颜色等。 |
 
 ### barMode
-
-PhonePC/2in1TabletTV
 
 barMode(value: HdsBarMode, options?: ScrollableBarModeOptions)
 
@@ -463,8 +419,6 @@ barMode(value: HdsBarMode, options?: ScrollableBarModeOptions)
 
 ### divider
 
-PhonePC/2in1TabletTV
-
 divider(value: Optional<HdsDividerStyle>)
 
 设置区分TabBar和TabContent的分割线样式。
@@ -483,7 +437,7 @@ divider(value: Optional<HdsDividerStyle>)
 | --- | --- | --- | --- |
 | value | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[HdsDividerStyle](ui-design-hdstabs.md#hdsdividerstyle)> | 是 | 分割线样式，默认跟手渐变。  mode：分割线模式，可以设置为常隐，常显和跟手渐变显隐（当内容区超过页签栏）。  style：分割线的样式。 |
 
-说明
+**说明** 
 
 1.依赖页签栏位于容器底部，barPosition设置为BarPosition.End，vertical设置为false。
 
@@ -492,8 +446,6 @@ divider(value: Optional<HdsDividerStyle>)
 3.跟手滑动效果依赖HdsTabs控制器绑定需要设置的list滑动控制器。
 
 ### barBackgroundStyle
-
-PhonePC/2in1TabletTV
 
 barBackgroundStyle(backgroundStyle: Optional<HdsTabsBackgroundStyle>)
 
@@ -511,9 +463,9 @@ barBackgroundStyle(backgroundStyle: Optional<HdsTabsBackgroundStyle>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| backgroundStyle | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[HdsTabsBackgroundStyle](ui-design-hdstabs.md#hdstabsbackgroundstyle)> | 是 | 设置模糊的颜色和高度，默认模糊效果失效。 |
+| backgroundStyle | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[HdsTabsBackgroundStyle](ui-design-hdstabs.md#hdstabsbackgroundstyle)> | 是 | 设置模糊的颜色和高度。  默认值：渐变模糊颜色浅色模式#CCFFFFFF，深色模式#CC000000。渐变模糊高度等于TabBar组件高度+32vp。 |
 
-说明
+**说明** 
 
 1.依赖页签栏位于容器底部，barPosition设置为BarPosition.End，vertical设置为false。
 
@@ -522,8 +474,6 @@ barBackgroundStyle(backgroundStyle: Optional<HdsTabsBackgroundStyle>)
 3.去掉TabBar节点默认设置的模糊值barBackgroundBlurStyle的值为BlurStyle.NONE。
 
 ### blurStrategy
-
-PhonePC/2in1TabletTV
 
 blurStrategy(value: BlurStrategy)
 
@@ -544,8 +494,6 @@ blurStrategy(value: BlurStrategy)
 | value | [BlurStrategy](ui-design-hdsnavigation.md#blurstrategy) | 是 | 设置页签栏的模糊生效策略。  默认值：BlurStrategy.ADAPTIVE。 |
 
 ### cachedMaxCount
-
-PhonePC/2in1TabletTV
 
 cachedMaxCount(count: number, mode: TabsCacheMode)
 
@@ -568,8 +516,6 @@ cachedMaxCount(count: number, mode: TabsCacheMode)
 
 ### barFloatingStyle
 
-PhonePC/2in1TabletTV
-
 barFloatingStyle(barFloatingStyle?: Optional<HdsTabsFloatingStyle>)
 
 设置页签栏为悬浮样式。
@@ -590,8 +536,6 @@ barFloatingStyle(barFloatingStyle?: Optional<HdsTabsFloatingStyle>)
 
 ## HdsTabsFloatingStyle
 
-PhonePC/2in1TabletTV
-
 设置页签栏的悬浮样式属性。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -604,20 +548,18 @@ PhonePC/2in1TabletTV
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| barWidth | [HdsBarWidthRangeOptions](ui-design-hdstabs.md#hdsbarwidthrangeoptions) | 否 | 是 | 页签栏分档宽度。  默认值：页签个数小于等于3时，且HdsTabs宽度小于600vp，单个页签宽度76vp，当HdsTabs宽度大于等于600vp时，单个页签宽度80vp。页签个数大于等于4时，页签栏最大宽度不超过328vp。 |
-| barSideMargin | [Length](ts-types.md#length) | 否 | 是 | 页签栏与HdsTabs左右边距。  默认值：HdsTabs宽度小于600vp时，默认边距16vp；HdsTabs宽度在600vp-840vp之间，默认边距24vp，HdsTabs宽度大于840vp，默认边距32vp。 |
-| barBottomMargin | [Length](ts-types.md#length) | 否 | 是 | 页签栏与HdsTabs底部距离。  默认值：页签栏距离底部0vp。 |
-| gradientMask | [HdsTabsBackgroundStyle](ui-design-hdstabs.md#hdstabsbackgroundstyle) | 否 | 是 | 背板蒙层的样式设置，可用来设置背板蒙层的高度和颜色。  默认值：蒙层颜色浅色模式是#CCF1F3F5，深色模式是#99000000。蒙层高度等于页签栏默认高度加16vp。 |
+| barWidth | [HdsBarWidthRangeOptions](ui-design-hdstabs.md#hdsbarwidthrangeoptions) | 否 | 是 | 页签栏分档宽度。  默认值：页签个数小于等于3时，且HdsTabs宽度小于600vp，页签栏宽度等于76vp\*页签个数+8vp，当HdsTabs宽度大于等于600vp时，页签栏宽度等于80vp\*页签个数+8vp。页签个数大于等于4时，页签栏最大宽度不超过328vp。 |
+| barSideMargin | [Length](ts-types.md#length) | 否 | 是 | 页签栏与HdsTabs左右边距，不支持设置百分比单位。  默认值：HdsTabs宽度小于600vp时，默认边距16vp；HdsTabs宽度在600vp-840vp之间，默认边距24vp，HdsTabs宽度大于840vp，默认边距32vp。 |
+| barBottomMargin | [Length](ts-types.md#length) | 否 | 是 | 页签栏与HdsTabs底部距离，不支持设置百分比单位。  默认值：页签栏默认距离HdsTabs底部0vp。 |
+| gradientMask | [HdsTabsBackgroundStyle](ui-design-hdstabs.md#hdstabsbackgroundstyle) | 否 | 是 | 背板蒙层的样式设置，可用来设置背板蒙层的高度和颜色。  默认值：蒙层颜色浅色模式是#CCF1F3F5，深色模式是#99000000。蒙层高度等于页签栏默认高度加16vp。  **说明：** 蒙层高度不可设置为0。 |
 | miniBar | [HdsTabsMiniBar](ui-design-hdstabs.md#hdstabsminibar) | 否 | 是 | 迷你栏的属性配置。  默认值：undefined，表示没有迷你栏。 |
-| adaptToHandedness | boolean | 否 | 是 | 左右跟手开关。  true：跟手。  false：不跟手。  默认值：false。 |
+| adaptToHandedness | boolean | 否 | 是 | 左右跟手开关。  true：跟手。  false：不跟手。  默认值：false。  **说明：** 左右手跟手能力依赖底层硬件，部分历史设备硬件能力不支持。 |
 | lightColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 页签栏光效颜色。  默认值：深色模式#33E5E5E5，浅色模式#33fffffff。 |
-| barOpacity | number | 否 | 是 | 页签栏透明度，1表示不透明，0表示完全透明。  默认值：1。 |
+| barOpacity | number | 否 | 是 | 页签栏透明度，1表示不透明，0表示完全透明，取值范围为[0, 1]。  默认值：1。 |
 | thermoCtrl | boolean | 否 | 是 | 温控开关。  true：开启温控。  false：不开启温控。  默认值：false。 |
 | systemMaterialEffect | [SystemMaterialParams](ui-design-hdstabs.md#systemmaterialparams) | 否 | 是 | 材质参数。  默认值：undefined，没有新材质。 |
 
 ## HdsBarWidthRangeOptions
-
-PhonePC/2in1TabletTV
 
 设置页签栏或[迷你栏](../harmonyos-guides/ui-design-hds-tabs-bar-floating.md#迷你栏)的分档宽度。
 
@@ -631,13 +573,11 @@ PhonePC/2in1TabletTV
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| smallWidth | [Length](ts-types.md#length) | 否 | 是 | 当HdsTabs宽度小于440vp时，页签栏或迷你栏的宽度。  默认值：页签个数小于等于3，且HdsTabs宽度小于600vp时，单个页签宽度76vp。页签个数大于等于4时，页签栏最大宽度不超过328vp。迷你栏最大宽度不超过328vp。 |
-| mediumWidth | [Length](ts-types.md#length) | 否 | 是 | 当HdsTabs宽度在440vp-600vp之间，或宽度在600-840vp之间且高宽比小于0.8时，页签栏或迷你栏的宽度。  默认值：页签个数小于等于3，且HdsTabs宽度小于600vp时，单个页签宽度76vp，HdsTabs宽度大于600vp时，单个页签宽度80vp。页签个数大于等于4时，页签栏最大宽度不超过328vp。迷你栏最大宽度不超过328vp。 |
-| largeWidth | [Length](ts-types.md#length) | 否 | 是 | 当HdsTabs宽度大于840vp，或宽度在600vp-840vp之间且高宽比大于0.8时，页签栏或迷你栏的宽度。  默认值：页签个数小于等于3，单个页签宽度80vp。页签个数大于等于4时，页签栏最大宽度不超过328vp。迷你栏最大宽度不超过328vp。 |
+| smallWidth | [Length](ts-types.md#length) | 否 | 是 | 当HdsTabs宽度小于440vp时，页签栏或迷你栏的宽度，不支持设置百分比单位。  默认值：页签个数小于等于3，且HdsTabs宽度小于600vp时，页签栏宽度等于76vp\*页签个数+8vp。页签个数大于等于4时，页签栏最大宽度不超过328vp。迷你栏最大宽度不超过328vp。 |
+| mediumWidth | [Length](ts-types.md#length) | 否 | 是 | 当HdsTabs宽度在440vp-600vp之间，或宽度在600-840vp之间且高宽比小于0.8时，页签栏或迷你栏的宽度，不支持设置百分比单位。  默认值：页签个数小于等于3，且HdsTabs宽度小于600vp时，页签栏宽度等于76vp\*页签个数+8vp，HdsTabs宽度大于600vp时，页签栏宽度等于80vp\*页签个数+8vp。页签个数大于等于4时，页签栏最大宽度不超过328vp。迷你栏最大宽度不超过328vp。 |
+| largeWidth | [Length](ts-types.md#length) | 否 | 是 | 当HdsTabs宽度大于840vp，或宽度在600vp-840vp之间且高宽比大于0.8时，页签栏或迷你栏的宽度，不支持设置百分比单位。  默认值：页签个数小于等于3，页签栏宽度等于80vp\*页签个数+8vp。页签个数大于等于4时，页签栏最大宽度不超过328vp。迷你栏最大宽度不超过328vp。 |
 
 ## HdsTabsMiniBar
-
-PhonePC/2in1TabletTV
 
 设置迷你栏的属性。
 
@@ -660,10 +600,17 @@ PhonePC/2in1TabletTV
 | onTabBarAnimationStart | [TabBarAnimationStartCallback](ui-design-hdstabs.md#tabbaranimationstartcallback) | 否 | 是 | 页签栏折叠展开动效开始回调。 |
 | enableMiniBarBackground | boolean | 否 | 是 | 迷你栏背景。  true：迷你栏跟随页签栏背景。  false：迷你栏背景无色透明。  默认值：true。 |
 | enableMiniBarClip | boolean | 否 | 是 | 迷你栏是否裁剪miniBarBuilder内容。  true：裁剪miniBarBuilder内容。  false：不裁剪miniBarBuilder内容。  默认值：true。 |
+| barLayoutMode | [HdsBarLayoutMode](ui-design-hdstabs.md#hdsbarlayoutmode) | 否 | 是 | 设置minibar和tabbar的布局模式。  - 未设置时：minibar和tabbar默认是左右布局。  - 设置为HORIZONTAL时：minibar和tabbar是水平左右布局模式。  - 设置为VERTICAL时：minibar和tabbar是垂直上下布局模式。  **起始版本：** 6.1.1(24) |
+
+**说明** 
+
+迷你栏和页签栏处于左右布局场景时：
+
+* 若HdsTabs组件宽度小于440vp，且出现“迷你栏展开、页签栏折叠”或“迷你栏折叠、页签栏展开”的情况，页签栏和迷你栏将整体底部居中显示。
+* 若HdsTabs组件宽度在440vp-600vp之间，且出现“迷你栏展开、页签栏折叠”或“迷你栏折叠、页签栏展开”的情况，展开的页签栏或迷你栏将底部居中显示。
+* 若HdsTabs组件宽度大于600vp，且出现页签栏和迷你栏同时展开的情况，页签栏和迷你栏将整体底部居中显示。
 
 ## SystemMaterialParams
-
-PhonePC/2in1TabletTV
 
 材质效果参数。
 
@@ -671,7 +618,7 @@ PhonePC/2in1TabletTV
 
 **系统能力：** SystemCapability.UIDesign.HDSComponent.Core
 
-**设备行为差异：** 该接口在TV无效果，在其他设备类型中可正常调用。
+**设备行为差异：** 该接口在TV无效果，在Phone、Tablet中可正常调用，在PC/2in1设备调用时需先调用[getSystemMaterialTypes()](ui-design-hdsmaterial.md#getsystemmaterialtypes)接口查询当前设备支持的材质能力。
 
 **起始版本：** 6.1.0(23)
 
@@ -681,8 +628,6 @@ PhonePC/2in1TabletTV
 | materialLevel | [hdsMaterial.MaterialLevel](ui-design-hdsmaterial.md#materiallevel) | 否 | 是 | 设置材质等级。  默认值：hdsMaterial.MaterialLevel.ADAPTIVE。  **说明**：  **推荐使用默认值ADAPTIVE档位：** 该模式下，系统会根据当前设备的算力动态调整组件的材质效果，实现性能与显示效果的最佳平衡体验。  **若未采用系统自适应能力：** 请先调用[getSystemMaterialTypes()](ui-design-hdsmaterial.md#getsystemmaterialtypes)接口查询当前设备支持的材质能力，再根据查询结果选用相应的材质效果枚举：  1. 如果查询结果显示当前设备支持IMMERSIVE材质类型，可选用EXQUISITE或GENTLE效果。  2.如果查询结果显示当前设备不支持IMMERSIVE材质类型，则建议使用SMOOTH效果，以降低卡顿和发热风险，保障用户体验。  **详细使用指导：** 请参见[HDS组件使用沉浸光感材质指南](../harmonyos-guides/ui-design-hds-component-material.md#使用自定义沉浸光感效果)。 |
 
 ## HdsAnimationMode
-
-PhonePC/2in1TabletTV
 
 显示隐藏动效模式。
 
@@ -701,8 +646,6 @@ PhonePC/2in1TabletTV
 
 ## HdsBarStyle
 
-PhonePC/2in1TabletTV
-
 页签栏和[迷你栏](../harmonyos-guides/ui-design-hds-tabs-bar-floating.md#迷你栏)样式类型枚举。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -718,9 +661,24 @@ PhonePC/2in1TabletTV
 | COLLAPSE | 0 | 折叠样式。 |
 | EXPAND | 1 | 展开样式。 |
 
-## HdsTabsBarChangeMode
+## HdsBarLayoutMode
 
-PhonePC/2in1TabletTV
+minibar和tabbar的布局模式枚举。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.UIDesign.HDSComponent.Core
+
+**设备行为差异：** 该接口在TV无效果，在其他设备类型中可正常调用。
+
+**起始版本：** 6.1.1(24)
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| HORIZONTAL | 0 | 水平布局：minibar和tabbar是水平左右布局模式。 |
+| VERTICAL | 1 | 垂直布局：minibar和tabbar是垂直上下布局模式。 |
+
+## HdsTabsBarChangeMode
 
 页签栏和[迷你栏](../harmonyos-guides/ui-design-hds-tabs-bar-floating.md#迷你栏)更新模式。
 
@@ -740,9 +698,7 @@ PhonePC/2in1TabletTV
 
 ## BarStyleChangeCallback
 
-PhonePC/2in1TabletTV
-
-BarStyleChangeCallback = (miniBarStyle: HdsBarStyle, tabBarStyle: HdsBarStyle, miniBarWidth: number, tabBarWidth: number, mode: HdsTabsBarChangeMode) => void
+type BarStyleChangeCallback = (miniBarStyle: HdsBarStyle, tabBarStyle: HdsBarStyle, miniBarWidth: number, tabBarWidth: number, mode: HdsTabsBarChangeMode) => void
 
 [迷你栏](../harmonyos-guides/ui-design-hds-tabs-bar-floating.md#迷你栏)或者页签栏样式更新时触发回调。
 
@@ -760,15 +716,13 @@ BarStyleChangeCallback = (miniBarStyle: HdsBarStyle, tabBarStyle: HdsBarStyle, m
 | --- | --- | --- | --- |
 | miniBarStyle | [HdsBarStyle](ui-design-hdstabs.md#hdsbarstyle) | 是 | 迷你栏样式。 |
 | tabBarStyle | [HdsBarStyle](ui-design-hdstabs.md#hdsbarstyle) | 是 | 页签栏样式。 |
-| miniBarWidth | number | 是 | 迷你栏宽度，单位vp。 |
-| tabBarWidth | number | 是 | 页签栏宽度，单位vp。 |
+| miniBarWidth | number | 是 | 迷你栏宽度，单位：vp。 |
+| tabBarWidth | number | 是 | 页签栏宽度，单位：vp。 |
 | mode | [HdsTabsBarChangeMode](ui-design-hdstabs.md#hdstabsbarchangemode) | 是 | 样式更新类型。 |
 
 ## MiniBarAnimationStartCallback
 
-PhonePC/2in1TabletTV
-
-MiniBarAnimationStartCallback = (style: HdsBarStyle, width: number) => void
+type MiniBarAnimationStartCallback = (style: HdsBarStyle, width: number) => void
 
 [迷你栏](../harmonyos-guides/ui-design-hds-tabs-bar-floating.md#迷你栏)折叠展开动效开始时回调。
 
@@ -785,13 +739,11 @@ MiniBarAnimationStartCallback = (style: HdsBarStyle, width: number) => void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | [HdsBarStyle](ui-design-hdstabs.md#hdsbarstyle) | 是 | 动效开始时迷你栏的状态。 |
-| width | number | 是 | 动效结束时迷你栏的宽度，单位vp。 |
+| width | number | 是 | 动效结束时迷你栏的宽度，单位：vp。 |
 
 ## MiniBarAnimationEndCallback
 
-PhonePC/2in1TabletTV
-
-MiniBarAnimationEndCallback = (style: HdsBarStyle) => void
+type MiniBarAnimationEndCallback = (style: HdsBarStyle) => void
 
 [迷你栏](../harmonyos-guides/ui-design-hds-tabs-bar-floating.md#迷你栏)折叠展开动效结束时回调。
 
@@ -811,9 +763,7 @@ MiniBarAnimationEndCallback = (style: HdsBarStyle) => void
 
 ## TabBarAnimationStartCallback
 
-PhonePC/2in1TabletTV
-
-TabBarAnimationStartCallback = (style: HdsBarStyle, width: number) => void
+type TabBarAnimationStartCallback = (style: HdsBarStyle, width: number) => void
 
 底部页签折叠展开动效开始时回调。
 
@@ -830,11 +780,9 @@ TabBarAnimationStartCallback = (style: HdsBarStyle, width: number) => void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | [HdsBarStyle](ui-design-hdstabs.md#hdsbarstyle) | 是 | 动效开始时页签栏的状态。 |
-| width | number | 是 | 动效结束时页签栏的宽度，单位vp。 |
+| width | number | 是 | 动效结束时页签栏的宽度，单位：vp。 |
 
 ## HdsDividerStyle
-
-PhonePC/2in1TabletTV
 
 页签栏分割线配置。
 
@@ -849,13 +797,11 @@ PhonePC/2in1TabletTV
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | mode | [DividerMode](ui-design-hdstabs.md#dividermode) | 否 | 否 | 页签栏分割线显示类型。  默认值：DividerMode.FOLLOW\_SCROLL。 |
-| style | [DividerStyle](ts-container-tabs.md#dividerstyle10对象说明) | 否 | 是 | 页签栏分割线样式。  默认值：  {strokeWidth: '1px'，color: '#33000000'}。 |
+| style | [DividerStyle](ts-container-tabs.md#dividerstyle10对象说明) | 否 | 是 | 页签栏分割线样式。  默认值：  {strokeWidth: '1px', color: '#33000000'}. |
 
 ## HdsTabsBackgroundStyle
 
-PhonePC/2in1TabletTV
-
-渐变模糊样式。
+页签背景样式。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -867,16 +813,12 @@ PhonePC/2in1TabletTV
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| maskColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 渐变模糊的颜色设置。  默认值：#CCFFFFFF。 |
-| maskHeight | number | 否 | 是 | 渐变模糊的高度设置。  默认值：组件高度（包含底部TabBar高度）+32vp。 |
+| maskColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 页签背景颜色。 |
+| maskHeight | number | 否 | 是 | 页签背景高度。 |
 
 ## 事件
 
-PhonePC/2in1TabletTV
-
 ### onChange
-
-PhonePC/2in1TabletTV
 
 onChange(event: Callback<number>)
 
@@ -898,8 +840,6 @@ onChange(event: Callback<number>)
 
 ### onAnimationStart
 
-PhonePC/2in1TabletTV
-
 onAnimationStart(handler: OnTabsAnimationStartCallback)
 
 切换动画开始时触发该回调。当[animationDuration](ui-design-hdstabs.md#animationduration)为0时动画关闭，不触发该回调。
@@ -919,8 +859,6 @@ onAnimationStart(handler: OnTabsAnimationStartCallback)
 | handler | [OnTabsAnimationStartCallback](ts-container-tabs.md#ontabsanimationstartcallback18) | 是 | 切换的动画开始时触发该事件。 |
 
 ### onContentWillChange
-
-PhonePC/2in1TabletTV
 
 onContentWillChange(handler: OnTabsContentWillChangeCallback)
 
@@ -950,11 +888,9 @@ onContentWillChange(handler: OnTabsContentWillChangeCallback)
 
 ### onTabBarClick
 
-PhonePC/2in1TabletTV
-
 onTabBarClick(event: Callback<number>)
 
-Tab页签点击后触发的事件。
+Tab页签点击后触发的事件回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -968,11 +904,9 @@ Tab页签点击后触发的事件。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | [Callback](ts-types.md#callback12)<number> | 是 | 被点击的index索引，索引从0开始计算。 |
+| event | [Callback](ts-types.md#callback12)<number> | 是 | 返回被点击的页签索引，索引从0开始计算。 |
 
 ### onSelected
-
-PhonePC/2in1TabletTV
 
 onSelected(event: Callback<number>)
 
@@ -1001,8 +935,6 @@ onSelected(event: Callback<number>)
 
 ### onUnselected
 
-PhonePC/2in1TabletTV
-
 onUnselected(event: Callback<number>)
 
 当选中元素改变时触发该回调，返回值为将要隐藏的元素的索引值。
@@ -1030,8 +962,6 @@ onUnselected(event: Callback<number>)
 
 ## ExtendBarMode
 
-PhonePC/2in1TabletTV
-
 页签栏布局模式枚举。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1047,8 +977,6 @@ PhonePC/2in1TabletTV
 | HALF\_SCREEN\_FIXED | 100 | 页签栏布局模式：半屏居中布局。 |
 
 ## DividerMode
-
-PhonePC/2in1TabletTV
 
 页签栏分割线显示类型枚举。
 
@@ -1068,8 +996,6 @@ PhonePC/2in1TabletTV
 
 ## HdsBarMode
 
-PhonePC/2in1TabletTV
-
 type HdsBarMode= ExtendBarMode | BarMode
 
 HdsBarMode页签栏的布局模式和扩展模式设置。
@@ -1088,8 +1014,6 @@ HdsBarMode页签栏的布局模式和扩展模式设置。
 | [BarMode](ts-container-tabs.md#barmode枚举说明) | TabBar布局模式。 |
 
 ## bleedIconStyle
-
-PhonePC/2in1TabletTV
 
 bleedIconStyle(builder: CustomTabBuilder): void
 
@@ -1113,8 +1037,6 @@ bleedIconStyle(builder: CustomTabBuilder): void
 
 ## CustomTabBuilder
 
-PhonePC/2in1TabletTV
-
 type CustomTabBuilder= () => void
 
 自定义组件。
@@ -1129,8 +1051,6 @@ type CustomTabBuilder= () => void
 
 ## HdsTabsModifier
 
-PhonePC/2in1TabletTV
-
 动态设置HdsTabs组件的属性和样式，继承自[HdsTabsAttribute](ui-design-hdstabs.md#属性)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -1142,8 +1062,6 @@ PhonePC/2in1TabletTV
 **起始版本：** 6.1.0(23)
 
 ### applyNormalAttribute
-
-PhonePC/2in1TabletTV
 
 applyNormalAttribute?(instance: HdsTabsAttribute): void
 
@@ -1165,108 +1083,106 @@ applyNormalAttribute?(instance: HdsTabsAttribute): void
 
 ## 示例
 
-PhonePC/2in1TabletTV
-
 ### 支持分割线出现和消失
 
 通过设置分割线属性中的类型 ，控制分割线的常显、常隐、跟手效果。
 
 **设备行为差异：** 该接口在TV无效果，在其他设备类型中可正常调用。
 
-```
-1. // 从6.0.2(22)版本开始，无需手动导入HdsTabsAttribute。具体请参考HdsTabs的导入模块说明。
-2. import {
-3. HdsTabs, HdsTabsAttribute, HdsTabsController, DividerMode
-4. } from '@kit.UIDesignKit';
+```typescript
+// 从6.0.2(22)版本开始，无需手动导入HdsTabsAttribute。具体请参考HdsTabs的导入模块说明。
+import {
+  HdsTabs, HdsTabsAttribute, HdsTabsController, DividerMode
+} from '@kit.UIDesignKit';
 
-6. @Entry
-7. @Component
-8. struct Index {
-9. private controller: HdsTabsController = new HdsTabsController();
-10. private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-11. @State mode: DividerMode = DividerMode.FOLLOW_SCROLL;
-12. listScroller0: ListScroller = new ListScroller();
-13. listScroller1: ListScroller = new ListScroller();
+@Entry
+@Component
+struct Index {
+  private controller: HdsTabsController = new HdsTabsController();
+  private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+  @State mode: DividerMode = DividerMode.FOLLOW_SCROLL;
+  listScroller0: ListScroller = new ListScroller();
+  listScroller1: ListScroller = new ListScroller();
 
-15. aboutToAppear(): void {
-16. this.controller.bindScroller(0, this.listScroller0);
-17. this.controller.bindScroller(1, this.listScroller1);
-18. }
+  aboutToAppear(): void {
+    this.controller.bindScroller(0, this.listScroller0);
+    this.controller.bindScroller(1, this.listScroller1);
+  }
 
-20. aboutToDisappear(): void {
-21. this.controller.unbindScroller(this.listScroller0);
-22. this.controller.unbindScroller(this.listScroller1);
-23. }
+  aboutToDisappear(): void {
+    this.controller.unbindScroller(this.listScroller0);
+    this.controller.unbindScroller(this.listScroller1);
+  }
 
-25. build() {
-26. Column() {
-27. Column() {
-28. Row() {
-29. Text('分割线展示:')
-30. .width('25%')
-31. Button('Visible')
-32. .onClick(() => {
-33. this.mode = DividerMode.VISIBLE; // 将分割线显示类型设置为常显
-34. })
-35. Button('None')
-36. .onClick(() => {
-37. this.mode = DividerMode.NONE; // 将分割线显示类型设置为常隐
-38. })
-39. Button('Follow Scroll')
-40. .onClick(() => {
-41. this.mode = DividerMode.FOLLOW_SCROLL; // 将分割线显示类型设置为跟手
-42. })
-43. }
-44. }
-45. .justifyContent(FlexAlign.Center)
-46. .width('100%')
-47. .height('10%')
+  build() {
+    Column() {
+      Column() {
+        Row() {
+          Text('分割线展示：')
+            .width('25%')
+          Button('Visible')
+            .onClick(() => {
+              this.mode = DividerMode.VISIBLE; // 将分割线显示类型设置为常显
+            })
+          Button('None')
+            .onClick(() => {
+              this.mode = DividerMode.NONE; // 将分割线显示类型设置为常隐
+            })
+          Button('Follow Scroll')
+            .onClick(() => {
+              this.mode = DividerMode.FOLLOW_SCROLL; // 将分割线显示类型设置为跟手
+            })
+        }
+      }
+      .justifyContent(FlexAlign.Center)
+      .width('100%')
+      .height('10%')
 
-49. HdsTabs({ controller: this.controller }) {
-50. TabContent() {
-51. this.ContentBuilder(this.listScroller0)
-52. }
-53. .tabBar({ icon: $r('app.media.startIcon'), text: '页签1' })
+      HdsTabs({ controller: this.controller }) {
+        TabContent() {
+          this.ContentBuilder(this.listScroller0)
+        }
+        .tabBar({ icon: $r('app.media.startIcon'), text: '页签1' })
 
-55. TabContent() {
-56. this.ContentBuilder(this.listScroller1)
-57. }
-58. .tabBar({ icon: $r('app.media.startIcon'), text: '页签2' })
-59. }
-60. .barOverlap(true)
-61. .barPosition(BarPosition.End)
-62. .vertical(false)
-63. .divider({
-64. mode: this.mode,
-65. style: {
-66. color: Color.Black,
-67. strokeWidth: 1,
-68. startMargin: 0,
-69. endMargin: 0
-70. }
-71. })
-72. .width('100%')
-73. .height('90%')
-74. }
-75. }
+        TabContent() {
+          this.ContentBuilder(this.listScroller1)
+        }
+        .tabBar({ icon: $r('app.media.startIcon'), text: '页签2' })
+      }
+      .barOverlap(true)
+      .barPosition(BarPosition.End)
+      .vertical(false)
+      .divider({
+        mode: this.mode,
+        style: {
+          color: Color.Black,
+          strokeWidth: 1,
+          startMargin: 0,
+          endMargin: 0
+        }
+      })
+      .width('100%')
+      .height('90%')
+    }
+  }
 
-77. @Builder
-78. ContentBuilder(listScroller: Scroller) {
-79. List({ scroller: listScroller }) {
-80. ForEach(this.arr, (item: number) => {
-81. ListItem() {
-82. Text("item" + item)
-83. .height(96)
-84. .width('100%')
-85. .backgroundColor(item % 2 === 0 ? Color.Pink : Color.Yellow)
-86. .textAlign(TextAlign.Center)
-87. }
-88. }, (item: string) => item)
-89. }
-90. .width('100%')
-91. .height('100%')
-92. }
-93. }
+  @Builder
+  ContentBuilder(listScroller: Scroller) {
+    List({ scroller: listScroller }) {
+      ForEach(this.arr, (item: number) => {
+        ListItem() {
+          Text("item" + item)
+            .height(96)
+            .width('100%')
+            .backgroundColor(item % 2 === 0 ? Color.Pink : Color.Yellow)
+            .textAlign(TextAlign.Center)
+        }
+      }, (item: string) => item)
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 **表1** 效果
@@ -1281,43 +1197,43 @@ PhonePC/2in1TabletTV
 
 **设备行为差异：** 该接口在TV无效果，在其他设备类型中可正常调用。
 
-```
-1. // 从6.0.2(22)版本开始，无需手动导入HdsTabsAttribute。具体请参考HdsTabs的导入模块说明。
-2. import { HdsTabs, HdsTabsAttribute, HdsTabsController } from '@kit.UIDesignKit';
+```typescript
+// 从6.0.2(22)版本开始，无需手动导入HdsTabsAttribute。具体请参考HdsTabs的导入模块说明。
+import { HdsTabs, HdsTabsAttribute, HdsTabsController } from '@kit.UIDesignKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. private controller: HdsTabsController = new HdsTabsController();
+@Entry
+@Component
+struct Index {
+  private controller: HdsTabsController = new HdsTabsController();
 
-9. build() {
-10. Column() {
-11. HdsTabs({ controller: this.controller }) {
-12. TabContent() {
-13. Column().width('100%').height('100%').backgroundColor(Color.White)
-14. }
-15. .tabBar({ icon: $r('app.media.startIcon'), text: '页签1' })
+  build() {
+    Column() {
+      HdsTabs({ controller: this.controller }) {
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.White)
+        }
+        .tabBar({ icon: $r('app.media.startIcon'), text: '页签1' })
 
-17. TabContent() {
-18. Column().width('100%').height('100%').backgroundColor(Color.White)
-19. }
-20. .tabBar({ icon: $r('app.media.startIcon'), text: '页签2' })
-21. }
-22. .barOverlap(true)
-23. .barPosition(BarPosition.End)
-24. .vertical(false)
-25. .barBackgroundStyle({
-26. maskColor: Color.Orange,
-27. maskHeight: 80
-28. })
-29. }
-30. }
-31. }
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.White)
+        }
+        .tabBar({ icon: $r('app.media.startIcon'), text: '页签2' })
+      }
+      .barOverlap(true)
+      .barPosition(BarPosition.End)
+      .vertical(false)
+      .barBackgroundStyle({
+        maskColor: Color.Orange,
+        maskHeight: 80
+      })
+    }
+  }
+}
 ```
 
 效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/N8OI6sDxTUuMYNx3gzbjeQ/zh-cn_image_0000002589246863.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/BVJtuMmWRHSP-voD6IzWXQ/zh-cn_image_0000002736315829.png)
 
 ### 支持出血效果
 
@@ -1325,48 +1241,48 @@ PhonePC/2in1TabletTV
 
 **设备行为差异：** 该接口在TV无效果，在其他设备类型中可正常调用。
 
-```
-1. // 从6.0.2(22)版本开始，无需手动导入HdsTabsAttribute。具体请参考HdsTabs的导入模块说明。
-2. import { HdsTabs, HdsTabsAttribute, bleedIconStyle } from '@kit.UIDesignKit';
+```typescript
+// 从6.0.2(22)版本开始，无需手动导入HdsTabsAttribute。具体请参考HdsTabs的导入模块说明。
+import { HdsTabs, HdsTabsAttribute, bleedIconStyle } from '@kit.UIDesignKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. Column() {
-9. HdsTabs() {
-10. TabContent() {
-11. Column().width('100%').height('100%').backgroundColor(Color.Yellow)
-12. }
-13. .tabBar(bleedIconStyle(() => {
-14. this.tabBuilder()
-15. }))
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      HdsTabs() {
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Yellow)
+        }
+        .tabBar(bleedIconStyle(() => {
+          this.tabBuilder()
+        }))
 
-17. TabContent() {
-18. Column().width('100%').height('100%').backgroundColor(Color.Blue)
-19. }
-20. .tabBar(this.tabBuilder())
-21. }
-22. .vertical(false)
-23. .barPosition(BarPosition.End)
-24. }
-25. }
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Blue)
+        }
+        .tabBar(this.tabBuilder())
+      }
+      .vertical(false)
+      .barPosition(BarPosition.End)
+    }
+  }
 
-27. @Builder
-28. tabBuilder() {
-29. Column() {
-30. Image($r('app.media.startIcon'))
-31. .width(48)
-32. .height(48)
-33. .borderRadius(24)
-34. }
-35. }
-36. }
+  @Builder
+  tabBuilder() {
+    Column() {
+      Image($r('app.media.startIcon'))
+        .width(48)
+        .height(48)
+        .borderRadius(24)
+    }
+  }
+}
 ```
 
 效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/obsJLnDeR5mGuz4x2aTUjw/zh-cn_image_0000002558767056.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/cVE6DEzQTLuBJ6MvpDg1Aw/zh-cn_image_0000002706676786.jpg)
 
 ### 页签半屏居中对齐布局
 
@@ -1374,42 +1290,128 @@ PhonePC/2in1TabletTV
 
 **设备行为差异：** 该接口在TV无效果，在其他设备类型中可正常调用。
 
-```
-1. // 从6.0.2(22)版本开始，无需手动导入HdsTabsAttribute。具体请参考HdsTabs的导入模块说明。
-2. import { HdsTabs, HdsTabsAttribute, ExtendBarMode } from '@kit.UIDesignKit';
+```typescript
+// 从6.0.2(22)版本开始，无需手动导入HdsTabsAttribute。具体请参考HdsTabs的导入模块说明。
+import { HdsTabs, HdsTabsAttribute, ExtendBarMode } from '@kit.UIDesignKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. @State isVertical: boolean = true;
+@Entry
+@Component
+struct Index {
+  @State isVertical: boolean = true;
 
-9. build() {
-10. Column() {
-11. HdsTabs({ barPosition: BarPosition.End }) {
-12. TabContent() {
-13. Column().width('100%').height('100%').backgroundColor(Color.Yellow)
-14. }
-15. .tabBar(new BottomTabBarStyle($r('sys.media.ohos_app_icon'), 'Yellow'))
+  build() {
+    Column() {
+      HdsTabs({ barPosition: BarPosition.End }) {
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Yellow)
+        }
+        .tabBar(new BottomTabBarStyle($r('sys.media.ohos_app_icon'), 'Yellow'))
 
-17. TabContent() {
-18. Column().width('100%').height('100%').backgroundColor(Color.Blue)
-19. }
-20. .tabBar(new BottomTabBarStyle($r('sys.media.ohos_app_icon'), 'Blue'))
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Blue)
+        }
+        .tabBar(new BottomTabBarStyle($r('sys.media.ohos_app_icon'), 'Blue'))
 
-22. TabContent() {
-23. Column().width('100%').height('100%').backgroundColor(Color.Pink)
-24. }
-25. .tabBar(new BottomTabBarStyle($r('sys.media.ohos_app_icon'), 'Pink'))
-26. }
-27. .vertical(this.isVertical)
-28. .barMode(ExtendBarMode.HALF_SCREEN_FIXED)
-29. .width('100%')
-30. .height('100%')
-31. }
-32. }
-33. }
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Pink)
+        }
+        .tabBar(new BottomTabBarStyle($r('sys.media.ohos_app_icon'), 'Pink'))
+      }
+      .vertical(this.isVertical)
+      .barMode(ExtendBarMode.HALF_SCREEN_FIXED)
+      .width('100%')
+      .height('100%')
+    }
+  }
+}
 ```
 
 效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/bpuQYQRnQm6O-58rXB3AiQ/zh-cn_image_0000002558607396.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/HZsKE2maTZK_aAUpA4wNlA/zh-cn_image_0000002736435877.jpg)
+
+### 页签栏悬浮样式
+
+通过设置HdsTabs组件的barFloatingStyle样式，并设置barOverlap为true，vertical为false，barPosition为BarPosition.End，可实现页签栏的悬浮样式。若在barFloatingStyle中设置miniBar，则可实现迷你栏。
+
+```typescript
+import { HdsTabs, HdsTabsAttribute, HdsTabsController, hdsMaterial } from '@kit.UIDesignKit';
+
+@Entry
+@Component
+struct Index {
+  // 初始化HdsTabs控制器。
+  private controller: HdsTabsController = new HdsTabsController();
+
+  @Builder
+  miniBarBuilder() {
+    Row() {
+      Column() {
+        Image($r('app.media.alarm_stop'))
+          .width(40)
+          .height(40)
+          .borderRadius(40)
+      }.width(48).height(48).justifyContent(FlexAlign.Center).margin({left: 4, right: 4})
+
+      Text('Hello')
+
+      Column() {
+        Image($r('sys.media.ohos_ic_public_pause'))
+          .width(40)
+          .height(40)
+          .borderRadius(40)
+      }.width(48).height(48).justifyContent(FlexAlign.Center)
+    }
+  }
+
+  build() {
+    Column() {
+      HdsTabs({ controller: this.controller }) {
+        TabContent() {
+          Scroll() {
+            Column(){
+              Image($r('app.media.ocean'))
+              Image($r('app.media.desert'))
+              Image($r('app.media.mountain'))
+              Image($r('app.media.sunset'))
+            }
+          }
+        }
+        .tabBar(new BottomTabBarStyle($r('sys.media.ohos_ic_public_clock'), 'Green'))
+
+        TabContent() {
+          Image($r('app.media.ocean'))
+        }
+        .tabBar(new BottomTabBarStyle($r('sys.media.wifi_router_fill'), 'Blue'))
+
+        TabContent() {
+          Image($r('app.media.ocean'))
+        }
+        .tabBar(new BottomTabBarStyle($r('sys.media.ohos_ic_public_clock'), 'Yellow'))
+      }
+      // 设置barOverlap为true，vertical为false，barPosition为BarPosition.End
+      .barOverlap(true)
+      .barPosition(BarPosition.End)
+      .vertical(false)
+      // 设置页签栏悬浮样式。
+      .barFloatingStyle({
+        barWidth: { smallWidth: 200, mediumWidth: 300, largeWidth: 400 },
+        barBottomMargin: 28,
+        gradientMask: { maskColor: '#66F1F3F5', maskHeight: 92 },
+        systemMaterialEffect: {
+          materialType: hdsMaterial.MaterialType.IMMERSIVE,
+          materialLevel: hdsMaterial.MaterialLevel.ADAPTIVE
+        },
+        // 设置迷你栏，若不设置，则仅有页签栏。
+        miniBar: {
+          miniBarBuilder: () => this.miniBarBuilder()
+        }
+      })
+    }
+  }
+}
+```
+
+效果：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/pFlpHaoRTCqdB8UKXjd7Cg/zh-cn_image_0000002706836722.gif)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-skill
 title: 接入Skill说明
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 接入Skill说明
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:27+08:00
+scraped_at: 2026-09-02T14:59:59+08:00
 doc_updated_at: 2026-04-28
 content_hash: sha256:950fdb3b8bb665ae3a09ff339687d009f87734e66ba0286608947fcd8f46e613
 ---

@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-medi
 title: OH_MediaAssetChangeRequest
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > C API > 结构体 > OH_MediaAssetChangeRequest
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:23+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:884f28631d14c020324c3f2d54e86ccde4fe0b93016497c742dbf03c250de347
+scraped_at: 2026-09-02T14:53:03+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3dc124e8356d93b9a290b8b7b910d2ff1c29fca6337426e2376f316008ee269a
 ---
 
-```
-1. typedef struct OH_MediaAssetChangeRequest OH_MediaAssetChangeRequest
+```c
+typedef struct OH_MediaAssetChangeRequest OH_MediaAssetChangeRequest
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 定义媒体资产更改请求。
 

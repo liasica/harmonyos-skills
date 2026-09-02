@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-loop-f
 title: "@typescript-eslint/no-loop-func"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-loop-func
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:35+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:4b89b8e26658c7c5b82ecfaff631edaa740a60166b9947277ba6951167bccabb
+scraped_at: 2026-09-02T14:50:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b0b63ace4e82f2d0554628aeb7ebeb967bb878d44f8332b86ba253a7d0f8346f
 ---
 
 禁止在循环语句内包含不安全引用的函数声明。
@@ -14,76 +14,76 @@ content_hash: sha256:4b89b8e26658c7c5b82ecfaff631edaa740a60166b9947277ba6951167b
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@typescript-eslint/no-loop-func": "error"
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@typescript-eslint/no-loop-func": "error"
+  }
+}
 ```
 
 ## 选项
 
-该规则无需配置额外选项。
+该规则无需配置选项。
 
 ## 正例
 
-```
-1. const a = function(): void {
-2. console.info('hello');
-3. };
+```screen
+const a = function(): void {
+  console.info('hello');
+};
 
-5. for (let i = 10; i; i--) {
-6. a();
-7. }
+for (let i = 10; i; i--) {
+  a();
+}
 
-9. for (let i = 10; i; i--) {
-10. const b = function(): void {
-11. a();
-12. }; // OK, no references to variables in the outer scopes.
-13. b();
-14. }
+for (let i = 10; i; i--) {
+  const b = function(): void {
+    a();
+  }; // OK, no references to variables in the outer scopes.
+  b();
+}
 ```
 
 ## 反例
 
-```
-1. const num = 10;
-2. for (let i = num; i; i--) {
-3. // 变量i是不安全的引用
-4. (function(): number {
-5. return i;
-6. })();
-7. }
+```screen
+const num = 10;
+for (let i = num; i; i--) {
+  // 变量i是不安全的引用
+  (function(): number {
+    return i;
+  })();
+}
 
-9. let i1 = 0;
-10. while (i1 < num) {
-11. // 变量i是不安全的引用
-12. const a = function(): number {
-13. return i1;
-14. };
-15. a();
+let i1 = 0;
+while (i1 < num) {
+  // 变量i是不安全的引用
+  const a = function(): number {
+    return i1;
+  };
+  a();
 
-17. i1++;
-18. }
+  i1++;
+}
 
-20. let i2 = 0;
-21. do {
-22. // 变量i是不安全的引用
-23. function a(): number {
-24. return i2;
-25. }
-26. a();
+let i2 = 0;
+do {
+  // 变量i是不安全的引用
+  function a(): number {
+    return i2;
+  }
+  a();
 
-28. i2++;
-29. } while (i2 < num);
+  i2++;
+} while (i2 < num);
 ```
 
 ## 规则集
 
-```
-1. plugin:@typescript-eslint/all
+```screen
+plugin:@typescript-eslint/all
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-503
 title: 版本概览
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.3(15) > 版本概览
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.3(15) > 版本概览
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:29+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:cd618b6d79611add7762b3835b3e3aa75fb29c710ffdb20e897d6ae1729ea219
+scraped_at: 2026-09-02T14:58:49+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:443f477596445cae697da197ab830aadabb6cf6c621444ad9bfb8d93d1e7e80c
 ---
 
 HarmonyOS 5.0.3(15)在此前发布的HarmonyOS 5.0.2(14)的基础上，通过新增API进一步丰富了开发场景，例如ArkUI进一步丰富了组件可定义的属性、可调用的能力、可识别的手势等；新增了对游戏手柄的识别和事件响应能力；增强了地图服务的细节功能；提供更多面向PC/2in1设备特点的开放功能、增强上传下载的基础能力等等。同时也进一步丰富了C API。
@@ -14,7 +14,7 @@ HarmonyOS 5.0.3(15)在此前发布的HarmonyOS 5.0.2(14)的基础上，通过新
 
 ## 版本信息
 
-说明
+**说明** 
 
 使用正确的配套关系进行应用开发可以获得更流畅的开发体验。
 
@@ -29,7 +29,7 @@ HarmonyOS 5.0.3(15)在此前发布的HarmonyOS 5.0.2(14)的基础上，通过新
 | 5.0.9.310 | 2025/05/14 |
 | SDK | Release | HarmonyOS 5.0.3 Release SDK | 基于OpenHarmony SDK Ohos\_sdk\_public 5.0.3.135(API 15 Release) | 2025/03/15 |
 
-说明
+**说明** 
 
 * **API版本**请在设备的“设置”中点击设备名称，进入“**关于本机**”进行查询。
 

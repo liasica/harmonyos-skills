@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-n
 title: 开发准备
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏近场快传（可选） > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:38:12+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:4bc8d475c56b63df0b48ca2e4e2cdb13796bfc1f820c8989683aefa260373595
+scraped_at: 2026-09-02T14:50:26+08:00
+doc_updated_at: 2026-07-17
+content_hash: sha256:8f8f19fdd7f5b251ee2cc93cc55bbaaea259ebceb72ccd4c814b50d9695d679b
 ---
 
 ## 创建游戏
@@ -15,36 +15,6 @@ content_hash: sha256:4bc8d475c56b63df0b48ca2e4e2cdb13796bfc1f820c8989683aefa2603
 * “应用类型”：选择“HarmonyOS应用”。
 * “应用分类”：选择“游戏”。
 
-## 申请近场快传开放能力
-
-基于安全考虑，系统侧对近场快传功能做了权限保护处理，使用相关接口开发者需先提交“近场快传”能力开关的申请，在申请通过后，再使用该能力开关。
-
-1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)，点击“开发与服务”。在项目列表中找到项目，并点击选择需要申请权限的游戏。
-2. 在“项目设置”页面，选择“开放能力管理”页签，开始为游戏申请近场快传开放能力。
-
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/ZmT10CkST32NDbRxELrgsQ/zh-cn_image_0000002558605744.png)
-3. 搜索“近场快传”，点击对应能力后面的“申请”，打开“新建业务申请”窗口。
-
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/tb9OhEp7R1adllfG-6yTyQ/zh-cn_image_0000002589325271.png)
-4. 在“新建业务申请”窗口填写申请信息，然后点击“提交”。
-
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/6Iu9gZfrSdShN0V99CdPkQ/zh-cn_image_0000002589245207.png)
-
-   | 配置项 | 必填/选填 | 说明 |
-   | --- | --- | --- |
-   | 申请原因 | 必填 | 申请近场快传的原因，请按照模板填写相关信息，字数不超过512个字符。 |
-   | 上传附件 | 选填 | 仅可上传1个附件，大小不超过500MB。支持文本、表格、图片、视频、压缩包格式。 |
-5. 进入互动中心页面，可以看到申请已提交的消息。
-
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/UpEWY8DoQ1mMfZgN6UdkXA/zh-cn_image_0000002558765402.png)
-
-   返回“开放能力管理”页面，近场快传显示“申请中”，1-3个工作日反馈申请结果。
-
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/9M49sVupRyKSzaRkDqZzNA/zh-cn_image_0000002558605746.png)
-6. 申请审批通过后，互动中心将会发送通知给您，同时近场快传的能力开关会为您自动开启，“申请中”也会变为置灰显示的“申请”。至此，游戏已成功开启近场快传开放能力。
-
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/SesXOa6CREeVu0S-vgUxAg/zh-cn_image_0000002589325273.png)
-
 ## 生成签名证书
 
 数字证书和Profile文件等签名信息可以确保游戏的完整性，请参见[配置签名信息](application-dev-overview.md#配置签名信息)完成配置。
@@ -53,47 +23,47 @@ content_hash: sha256:4bc8d475c56b63df0b48ca2e4e2cdb13796bfc1f820c8989683aefa2603
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)平台，在“开发与服务”中选择目标应用，获取“项目设置 > 常规 > 应用”的**APP ID**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/FPNZcTRdRNKEKUD6Iu6fsQ/zh-cn_image_0000002589245209.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/8eTjLH6iRCiJM-F6hEtD3A/zh-cn_image_0000002736434071.png)
 2. 在工程的entry模块module.json5文件中，新增metadata并配置app\_id，同时新增requestPermissions并配置如下权限。
 
-   ```
-   1. "module": {
-   2. "name": "entry",
-   3. "type": "entry",
-   4. "description": "xxxx",
-   5. "mainElement": "xxxx",
-   6. "deviceTypes": [
-   7. "phone"
-   8. ],
-   9. "deliveryWithInstall": true,
-   10. "pages": "$profile:main_pages",
-   11. "abilities": [],
-   12. "metadata": [ // 配置如下信息
-   13. {
-   14. "name": "app_id",
-   15. "value": "xxxxxx" // 配置为前面步骤中获取的APP ID
-   16. }
-   17. ],
-   18. "requestPermissions": [ // 配置权限
-   19. {
-   20. "name": "ohos.permission.INTERNET" // 允许使用Internet网络权限
-   21. },
-   22. {
-   23. "name": "ohos.permission.GET_NETWORK_INFO"  // 允许应用获取数据网络信息权限
-   24. },
-   25. {
-   26. "name": "ohos.permission.SET_NETWORK_INFO" // 允许应用配置数据网络权限
-   27. },
-   28. {
-   29. "name": "ohos.permission.DISTRIBUTED_DATASYNC", // 允许不同设备间的数据交换权限
-   30. "reason": "$string:distributed_permission",
-   31. "usedScene": {
-   32. "abilities": [
-   33. "EntryAbility"
-   34. ],
-   35. "when": "inuse"
-   36. }
-   37. }
-   38. ]
-   39. }
+   ```typescript
+   "module": {
+     "name": "entry",
+     "type": "entry",
+     "description": "xxxx",
+     "mainElement": "xxxx",
+     "deviceTypes": [
+       "phone"
+     ],
+     "deliveryWithInstall": true,
+     "pages": "$profile:main_pages",
+     "abilities": [],
+     "metadata": [ // 配置如下信息
+       {
+         "name": "app_id",
+         "value": "xxxxxx" // 配置为前面步骤中获取的APP ID
+       }
+     ],
+      "requestPermissions": [ // 配置权限
+        {
+          "name": "ohos.permission.INTERNET" // 允许使用Internet网络权限
+        },
+        {
+          "name": "ohos.permission.GET_NETWORK_INFO"  // 允许应用获取数据网络信息权限
+        },
+        {
+          "name": "ohos.permission.SET_NETWORK_INFO" // 允许应用配置数据网络权限
+        },
+        {
+          "name": "ohos.permission.DISTRIBUTED_DATASYNC", // 允许不同设备间的数据交换权限
+          "reason": "$string:distributed_permission",
+          "usedScene": {
+            "abilities": [
+              "EntryAbility"
+            ],
+            "when": "inuse"
+          }
+        }
+      ]
+   }
    ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-api-compa
 title: "@compatibility/api-compatibility-check"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 兼容性规则@compatibility > @compatibility/api-compatibility-check
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:32+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:644274382a6243c80dd07087b5e74cee671ccf4cac0daceeeace2d13baee0e8d
+scraped_at: 2026-09-02T14:50:53+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9da3419eb4079eafd566f0f9ebfb1ae8f3c14557edc3fd72ec79e1ec8fe3a717
 ---
 
 从DevEco Studio 6.0.1 Beta1开始，Code Linter新增版本兼容性规则扫描。
@@ -14,105 +14,105 @@ content_hash: sha256:644274382a6243c80dd07087b5e74cee671ccf4cac0daceeeace2d13bae
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@compatibility/api-compatibility-check": "warn"
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@compatibility/api-compatibility-check": "warn"
+  }
+}
 ```
 
 ## 选项
 
-该规则无需配置额外选项。
+该规则无需配置选项。
 
 ## 正例
 
 **示例一**：API调用前，增加SDK版本判断。
 
-```
-1. import { dataUriUtils } from '@kit.AbilityKit';
-2. import { deviceInfo } from '@kit.BasicServicesKit';
+```screen
+import { dataUriUtils } from '@kit.AbilityKit';
+import { deviceInfo } from '@kit.BasicServicesKit';
 
-4. @Component
-5. struct Test {
-6. build() {
-7. Text('hello').onClick(() => {
-8. // 使用接口前增加SDK版本的判断，SDK版本计算方式具体请参考应用升级targetSDKVersion兼容低版本指导
-9. if (deviceInfo.distributionOSApiVersion >= 60000) {
-10. dataUriUtils.getId('');
-11. }
+@Component
+struct Test {
+  build() {
+    Text('hello').onClick(() => {
+      // 使用接口前增加SDK版本的判断，SDK版本计算方式具体请参考应用升级targetSDKVersion兼容低版本指导
+      if (deviceInfo.distributionOSApiVersion >= 60000) {
+        dataUriUtils.getId('');
+      }
 
-13. // 使用接口前增加SDK版本的判断
-14. if (deviceInfo.sdkApiVersion >= 20) {
-15. dataUriUtils.getId('');
-16. }
-17. })
-18. }
-19. }
+      // 使用接口前增加SDK版本的判断
+      if (deviceInfo.sdkApiVersion >= 20) {
+        dataUriUtils.getId('');
+      }
+    })
+  }
+}
 ```
 
 **示例二**：API调用前，增加判空。
 
-```
-1. import { dataUriUtils } from '@kit.AbilityKit';
+```screen
+import { dataUriUtils } from '@kit.AbilityKit';
 
-3. @Component
-4. struct Test {
-5. build() {
-6. Text("hello").onClick(() => {
-7. // 判空
-8. if (dataUriUtils.getId !== undefined) {
-9. dataUriUtils.getId('');
-10. }
-11. })
-12. }
-13. }
+@Component
+struct Test {
+  build() {
+    Text("hello").onClick(() => {
+      // 判空
+      if (dataUriUtils.getId !== undefined) {
+        dataUriUtils.getId('');
+      }
+    })
+  }
+}
 ```
 
 **示例三**：API调用前，使用try-catch异常处理。
 
-```
-1. import { dataUriUtils } from '@kit.AbilityKit'
+```screen
+import { dataUriUtils } from '@kit.AbilityKit'
 
-3. @Component
-4. struct Test {
-5. build() {
-6. Text('hello').onClick(() => {
-7. // 使用try-catch语法
-8. try {
-9. dataUriUtils.getId('');
-10. } catch (error) {
-11. // 异常处理
-12. }
-13. })
-14. }
-15. }
+@Component
+struct Test {
+  build() {
+    Text('hello').onClick(() => {
+      // 使用try-catch语法
+      try {
+        dataUriUtils.getId('');
+      } catch (error) {
+        // 异常处理
+      }
+    })
+  }
+}
 ```
 
 ## 反例
 
-```
-1. // 工程中compatibleSdkVersion配置为5.0.5(17)
-2. import { ScrollEffectType } from '@kit.UIDesignKit';
+```screen
+// 工程中compatibleSdkVersion配置为5.0.5(17)
+import { ScrollEffectType } from '@kit.UIDesignKit';
 
-4. @Component
-5. struct Test {
-6. build() {
-7. Text('hello').onClick(() => {
-8. // ScrollEffectType.COMMON_BLUR从5.1.0(18)开始支持，不可直接调用
-9. const value = ScrollEffectType.COMMON_BLUR
-10. console.info(value.toString())
-11. })
-12. }
-13. }
+@Component
+struct Test {
+  build() {
+    Text('hello').onClick(() => {
+      // ScrollEffectType.COMMON_BLUR从5.1.0(18)开始支持，不可直接调用
+      const value = ScrollEffectType.COMMON_BLUR
+      console.info(value.toString())
+    })
+  }
+}
 ```
 
 ## 规则集
 
-```
-1. plugin:@compatibility/all
+```screen
+plugin:@compatibility/all
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

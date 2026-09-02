@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 个人数据处理说明
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 个人数据处理说明
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:50+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6bc35bd24e0d7dedf00c0b95e33951bd5d7416ebc3f24ba4c69fd2542e906e23
+scraped_at: 2026-09-02T14:50:32+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:30daa35b0d797e5855946efcee483d9aa362f9ea751a15630da73257b77012d9
 ---
 
 此文档针对华为作为最终用户数据处理者，开发者作为最终用户数据控制者的数据处理进行说明，包括：
@@ -38,4 +38,4 @@ content_hash: sha256:6bc35bd24e0d7dedf00c0b95e33951bd5d7416ebc3f24ba4c69fd2542e9
 * **指导开发者如何帮助最终用户实现对数据的控制**
 
   1. 开发者通过智能填充服务获取的用户数据，需要开发者自行提供对应的数据主体权利。
-  2. 智能填充服务存储的用户个人数据请参考《[关于智能填充与隐私的声明](https://legal.cloud.huawei.com/terms/scope/huawei/autofill/privacy-statement.htm?code=CN&language=zh-CN&version=20250521)》。
+  2. 智能填充服务存储的用户个人数据请参考《[关于智能填充与隐私的声明](https://legal.cloud.huawei.com/terms/scope/huawei/autofill/privacy-statement.htm?code=CN&language=zh-CN&version=20260514)》。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendabl
 title: Sendable对象简介
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信对象 > Sendable对象 > Sendable对象简介
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:26:36+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:05dcf14f15b50b9e3d666c13425b9e3ecfa222aad91fca1430e2a28d733dad19
+scraped_at: 2026-09-02T14:59:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f0f9eaf580fe0e074dd06d06aa3b884be6020639903761d7361a12f3ce676218
 ---
 
 在传统JS引擎中，要优化对象的并发通信开销，唯一的方法是将实现下沉到Native侧，通过[Transferable对象](transferabled-object.md)的转移或共享来降低开销。然而，开发者仍有大量对象并发通信的需求，这个问题在业界JS引擎中尚未解决。
@@ -14,7 +14,7 @@ ArkTS提供了Sendable对象类型，它是一种可在ArkTS并发实例间安�
 
 Sendable对象可共享，跨线程前后指向同一个JS对象。如果Sendable对象通过调用Napi接口与一个Native对象绑定，当共享传递Sendable对象时，其绑定的Native对象也会一并共享传递。通信过程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/3aqewxvDSoCqlOC4dnRt9w/zh-cn_image_0000002589323893.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/vTw7NKXSSz2X3lPOG-VNRg/zh-cn_image_0000002736432233.png)
 
 与其它ArkTS数据对象不同，符合Sendable协议的数据对象在运行时应为类型固定的对象。
 
@@ -32,11 +32,11 @@ Sendable协议定义了ArkTS的可共享对象体系及其规格约束。符合S
 
 ### ISendable
 
-在ArkTS语言基础库[@arkts.lang](../harmonyos-references/js-apis-arkts-lang.md)中引入了interface ISendable，没有任何方法或属性。ISendable是所有Sendable类型（除了null和undefined）的父类型。ISendable主要用于开发者自定义Sendable数据结构的场景中。类装饰器[@Sendable装饰器](arkts-sendable.md#sendable装饰器)是implement ISendable的语法糖。
+在ArkTS语言基础库[@arkts.lang](../harmonyos-references/js-apis-arkts-lang.md)中引入了interface ISendable，没有任何方法或属性。ISendable是所有Sendable类型（除了null和undefined）的父类型。ISendable主要用于开发者自定义Sendable数据结构的场景中。类装饰器[@Sendable装饰器](arkts-sendable.md#sendable装饰器)是implements ISendable的语法糖。
 
 ### Sendable class
 
-说明
+**说明** 
 
 从API version 11开始，支持使用@Sendable装饰器校验Sendable class。
 
@@ -47,9 +47,8 @@ Sendable class需同时满足以下两个规则：
 
 ### Sendable function
 
-说明
+**说明** 
 
-* 从API version 12开始，支持使用@Sendable装饰器校验Sendable function。
 * 针对API version 12的工程，开发者使用@Sendable装饰器校验Sendable function时，需在工程中配置"compatibleSdkVersionStage": "beta3"，否则其Sendable特性将不生效。参考[build-profile.json5配置文件说明](../harmonyos-guides-V5/ide-hvigor-build-profile-V5.md)。
 * 针对API version大于12的工程，可直接使用@Sendable装饰器校验Sendable function，无需再进行其他配置。
 
@@ -72,7 +71,7 @@ Sendable interface需同时满足以下两个规则：
 * ArkTS语言标准库中定义的[容器类型数据](arkts-collections-introduction.md)（须显式引入[@arkts.collections](../harmonyos-references/arkts-apis-arkts-collections.md)）。
 * ArkTS语言标准库中定义的[异步锁对象](arkts-async-lock-introduction.md)（须显式引入[@arkts.utils](../harmonyos-references/arkts-apis-arkts-utils.md)）。
 * ArkTS语言标准库中定义的[异步等待对象](arkts-condition-variable-introduction.md)（须显式引入[@arkts.utils](../harmonyos-references/arkts-apis-arkts-utils.md)）。
-* ArkTS语言标准库中定义的[SendableLruCache对象](../harmonyos-references/arkts-apis-arkts-utils-sendablelrucache.md)（须显式引入[@arkts.utils](../harmonyos-references/arkts-apis-arkts-utils.md)）。
+* ArkTS语言标准库中定义的[SendableLruCache](../harmonyos-references/arkts-apis-arkts-utils-sendablelrucache.md)对象（须显式引入[@arkts.utils](../harmonyos-references/arkts-apis-arkts-utils.md)）。
 * 继承了[ISendable](arkts-sendable.md#isendable)的interface。
 * 标注了[@Sendable装饰器](arkts-sendable.md#sendable装饰器)的class。
 * 标注了[@Sendable装饰器](arkts-sendable.md#sendable装饰器)的function。
@@ -82,76 +81,75 @@ Sendable interface需同时满足以下两个规则：
   + [可共享的色彩管理](../harmonyos-references/js-apis-sendablecolorspacemanager.md)
   + [基于Sendable对象的图片处理](../harmonyos-references/js-apis-sendableimage.md)
   + [资源管理](../harmonyos-references/js-apis-sendable-resource-manager.md)
-  + [SendableContext对象管理](../harmonyos-references/js-apis-app-ability-sendablecontextmanager.md)
+  + [Sendable上下文管理](../harmonyos-references/js-apis-app-ability-sendablecontextmanager.md)
 * 元素均为Sendable类型的union type数据。
 * 开发者自定义的Native Sendable对象。ArkTS支持开发者自定义Native Sendable对象，详情参见[自定义Native Sendable对象的多线程操作场景](napi-define-sendable-object.md)。
 
-说明
+**说明** 
 
 * JS内置对象在并发实例间传递时遵循结构化克隆算法，跨线程行为是拷贝传递。因此，JS内置对象的实例不是Sendable类型。
 * 对象字面量和数组字面量在并发实例间传递时遵循结构化克隆算法，跨线程行为是拷贝传递。因此，对象字面量和数组字面量不是Sendable类型。
 
 **Sendable支持const enum类型使用示例：**
 
+```typescript
+export const enum ModelState {
+  ACTIVE,
+  INACTIVE
+}
 ```
-1. // Test.ets
-2. export const enum ModelState {
-3. ACTIVE,
-4. INACTIVE
-5. }
-```
 
-```
-1. // Index.ets
-2. import { taskpool } from "@kit.ArkTS";
-3. import { ModelState } from "./Test";
+```typescript
+import { taskpool } from '@kit.ArkTS';
+import { ModelState } from './Test';
 
-5. @Sendable
-6. class Model {
-7. state: ModelState = ModelState.ACTIVE;
+@Sendable
+class Model {
+  public state: ModelState = ModelState.ACTIVE;
 
-9. getState() {
-10. console.info("model state is " + this.state);
-11. }
+  getState() {
+    console.info('model state is ' + this.state);
+  }
 
-13. setState(state: ModelState) {
-14. this.state = state;
-15. }
-16. }
+  setState(state: ModelState) {
+    this.state = state;
+  }
+}
 
-18. @Concurrent
-19. function setModelState(model: Model) {
-20. model.setState(ModelState.INACTIVE);
-21. model.getState();
-22. }
+@Concurrent
+function setModelState(model: Model) {
+  model.setState(ModelState.INACTIVE);
+  model.getState();
+}
 
-24. @Entry
-25. @Component
-26. struct Index {
-27. @State message: string = 'Hello World';
-28. @State num: number = 0;
+@Entry
+@Component
+struct enumusage {
+  @State message: string = 'Hello World';
+  @State num: number = 0;
 
-30. build() {
-31. RelativeContainer() {
-32. Text(this.message)
-33. .id('HelloWorld')
-34. .fontSize(50)
-35. .fontWeight(FontWeight.Bold)
-36. .alignRules({
-37. center: { anchor: '__container__', align: VerticalAlign.Center },
-38. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-39. })
-40. .onClick(async () => {
-41. let model = new Model();
-42. model.getState();
-43. let task = new taskpool.Task(setModelState, model);
-44. await taskpool.execute(task);
-45. })
-46. }
-47. .height('100%')
-48. .width('100%')
-49. }
-50. }
+  build() {
+    RelativeContainer() {
+      Text(this.message)
+        .id('HelloWorld')
+        .fontSize(50)
+        .fontWeight(FontWeight.Bold)
+        .alignRules({
+          center: { anchor: '__container__', align: VerticalAlign.Center },
+          middle: { anchor: '__container__', align: HorizontalAlign.Center }
+        })
+        .onClick(async () => {
+          let model = new Model();
+          model.getState();
+          let task = new taskpool.Task(setModelState, model);
+          await taskpool.execute(task);
+          this.message = 'success';
+        })
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 ## Sendable的实现原理
@@ -162,7 +160,7 @@ Sendable interface需同时满足以下两个规则：
 
 **SharedHeap与LocalHeap关系图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/-Dwmnp_vSc2Zsi9WsD5oAA/zh-cn_image_0000002589243833.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/fV5n5FhPRLCucRzjs4Rl4A/zh-cn_image_0000002706833078.png)
 
 各个并发实例的LocalHeap是隔离的。SharedHeap是进程级别的堆，可以被所有并发实例共享，但SharedHeap不能引用LocalHeap中的对象。
 
@@ -179,64 +177,65 @@ Sendable interface需同时满足以下两个规则：
 | 装饰的对象内的属性类型限制 | 1. 支持string、number、boolean、bigint、null、undefined、const enum、Sendable class、collections容器集、ArkTSUtils.locks.AsyncLock、ArkTSUtils.SendableLruCache、ArkTSUtils.locks.ConditionVariable以及自定义的Sendable函数类型。  2. 禁止使用闭包变量，定义在顶层的Sendable class和Sendable function除外。  3. 不支持通过#定义私有属性，需用private。  4. 不支持计算属性。  5. 不支持类型别名。 |
 | 装饰的对象内的属性的其他限制 | 1. 成员属性必须显式初始化，不能使用感叹号。  2. 不支持增加或删除属性，允许修改属性，修改前后属性的类型必须一致，不支持修改方法。 |
 | 装饰的函数或类对象内的方法参数限制 | 允许使用local变量、入参和通过import引入的变量。禁止使用闭包变量，但定义在顶层的Sendable class和Sendable function除外。从API version 18开始，支持访问本文件导出的变量。 |
-| 适用场景 | 1. 在TaskPool或Worker中使用类方法或Sendable函数。  2. 传输对象数据量较大的场景。序列化耗时会随着数据量增大而增大，使用Sendable对数据进行改造后，传输100KB数据效率提升约20倍，传输1M数据效率提升约100倍。 |
+| 适用场景 | 1. 在TaskPool或Worker中使用类方法或Sendable函数。  2. 传输对象数据量较大的场景。序列化耗时会随着数据量增大而增大，使用Sendable对数据进行改造后，传输100KB数据效率提升约20倍，传输1MB数据效率提升约100倍。 |
 
 **装饰器修饰Class使用示例：**
 
-```
-1. @Sendable
-2. class SendableTestClass {
-3. desc: string = "sendable: this is SendableTestClass ";
-4. num: number = 5;
-5. printName() {
-6. console.info("sendable: SendableTestClass desc is: " + this.desc);
-7. }
-8. getNum(): number {
-9. return this.num;
-10. }
-11. }
+```typescript
+@Sendable
+class SendableTestClass {
+  desc: string = 'sendable: this is SendableTestClass ';
+  num: number = 5;
+  printName() {
+    console.info(`sendable: SendableTestClass desc is: ${this.desc}`);
+  }
+  get getNum(): number {
+    return this.num;
+  }
+}
+
+let object = new SendableTestClass();
+export { object }
 ```
 
 **装饰器修饰Function使用示例：**
 
-```
-1. @Sendable
-2. type SendableFuncType = () => void;
+```typescript
+@Sendable
+type SendableFuncType = () => void;
 
-4. @Sendable
-5. class TopLevelSendableClass {
-6. num: number = 1;
-7. PrintNum() {
-8. console.info("Top level sendable class");
-9. }
-10. }
+@Sendable
+class TopLevelSendableClass {
+  num: number = 1;
 
-12. @Sendable
-13. function TopLevelSendableFunction() {
-14. console.info("Top level sendable function");
-15. }
+  printNum() {
+    console.info('Top level sendable class');
+  }
+}
 
-17. @Sendable
-18. function SendableTestFunction() {
-19. const topClass = new TopLevelSendableClass(); // 顶层sendable class
-20. topClass.PrintNum();
-21. TopLevelSendableFunction(); // 顶层sendable function
-22. console.info("Sendable test function");
-23. }
+@Sendable
+function topLevelSendableFunction() {
+  console.info('Top level sendable function');
+}
 
-25. @Sendable
-26. class SendableTestClass {
-27. constructor(func: SendableFuncType) {
-28. this.callback = func;
-29. }
-30. callback: SendableFuncType; // 顶层sendable function
+@Sendable
+function sendableTestFunction() {
+  const topClass = new TopLevelSendableClass(); // 顶层sendable class
+  topClass.printNum();
+  topLevelSendableFunction(); // 顶层sendable function
+  console.info('Sendable test function');
+}
 
-32. CallSendableFunc() {
-33. SendableTestFunction(); // 顶层sendable function
-34. }
-35. }
+@Sendable
+class SendableTestClass {
+  constructor(func: SendableFuncType) {
+    this.callback = func;
+  }
 
-37. let sendableClass = new SendableTestClass(SendableTestFunction);
-38. sendableClass.callback();
-39. sendableClass.CallSendableFunc();
+  callback: SendableFuncType; // 顶层sendable function
+
+  callSendableFunc() {
+    sendableTestFunction(); // 顶层sendable function
+  }
+}
 ```

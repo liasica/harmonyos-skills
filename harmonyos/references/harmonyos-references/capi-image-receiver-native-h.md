@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: image_receiver_native.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > image_receiver_native.h
 category: harmonyos-references
-scraped_at: 2026-04-29T14:03:54+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:52f5fbe1f474e820c763bbc0fd2e6d77aeefb1345d253de9fff6a7052e91f69f
+scraped_at: 2026-09-02T15:02:31+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:bfbfd10c835aa1be77e1afd800bf7555785b8766cf86149327aabe980f543c13
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明从native层获取图片数据的方法。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,8 +32,6 @@ PhonePC/2in1TabletTVWearable
 | [OH\_ImageReceiverOptions](capi-image-nativemodule-oh-imagereceiveroptions.md) | OH\_ImageReceiverOptions | 用于定义OH\_ImageReceiverOptions数据类型名称。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -65,14 +57,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_ImageReceiver\_OnCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_ImageReceiver_OnCallback)(OH_ImageReceiverNative *receiver)
+```c
+typedef void (*OH_ImageReceiver_OnCallback)(OH_ImageReceiverNative *receiver)
 ```
 
 **描述**
@@ -83,10 +71,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageReceiver\_ImageArriveCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_ImageReceiver_ImageArriveCallback)(OH_ImageReceiverNative *receiver, void *userData)
+```c
+typedef void (*OH_ImageReceiver_ImageArriveCallback)(OH_ImageReceiverNative *receiver, void *userData)
 ```
 
 **描述**
@@ -97,10 +83,8 @@ ImageArrive事件的回调方法。
 
 ### OH\_ImageReceiverOptions\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageReceiverOptions_Create(OH_ImageReceiverOptions **options)
+```c
+Image_ErrorCode OH_ImageReceiverOptions_Create(OH_ImageReceiverOptions **options)
 ```
 
 **描述**
@@ -123,10 +107,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageReceiverOptions\_GetSize()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageReceiverOptions_GetSize(OH_ImageReceiverOptions* options, Image_Size* size)
+```c
+Image_ErrorCode OH_ImageReceiverOptions_GetSize(OH_ImageReceiverOptions* options, Image_Size* size)
 ```
 
 **描述**
@@ -150,10 +132,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageReceiverOptions\_SetSize()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageReceiverOptions_SetSize(OH_ImageReceiverOptions* options, Image_Size size)
+```c
+Image_ErrorCode OH_ImageReceiverOptions_SetSize(OH_ImageReceiverOptions* options, Image_Size size)
 ```
 
 **描述**
@@ -167,7 +147,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_ImageReceiverOptions](capi-image-nativemodule-oh-imagereceiveroptions.md)\* options | 表示OH\_ImageReceiverOptions对象的指针。 |
-| [Image\_Size](capi-image-nativemodule-image-size.md) size | 表示Image\_Size对象的指针。 |
+| [Image\_Size](capi-image-nativemodule-image-size.md) size | 表示将设置的Image\_Size对象。 |
 
 **返回：**
 
@@ -177,10 +157,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageReceiverOptions\_GetCapacity()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageReceiverOptions_GetCapacity(OH_ImageReceiverOptions* options, int32_t* capacity)
+```c
+Image_ErrorCode OH_ImageReceiverOptions_GetCapacity(OH_ImageReceiverOptions* options, int32_t* capacity)
 ```
 
 **描述**
@@ -204,10 +182,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageReceiverOptions\_SetCapacity()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageReceiverOptions_SetCapacity(OH_ImageReceiverOptions* options, int32_t capacity)
+```c
+Image_ErrorCode OH_ImageReceiverOptions_SetCapacity(OH_ImageReceiverOptions* options, int32_t capacity)
 ```
 
 **描述**
@@ -231,10 +207,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageReceiverOptions\_Release()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageReceiverOptions_Release(OH_ImageReceiverOptions* options)
+```c
+Image_ErrorCode OH_ImageReceiverOptions_Release(OH_ImageReceiverOptions* options)
 ```
 
 **描述**
@@ -257,10 +231,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageReceiverNative\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageReceiverNative_Create(OH_ImageReceiverOptions* options, OH_ImageReceiverNative** receiver)
+```c
+Image_ErrorCode OH_ImageReceiverNative_Create(OH_ImageReceiverOptions* options, OH_ImageReceiverNative** receiver)
 ```
 
 **描述**
@@ -284,10 +256,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageReceiverNative\_GetReceivingSurfaceId()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageReceiverNative_GetReceivingSurfaceId(OH_ImageReceiverNative* receiver, uint64_t* surfaceId)
+```c
+Image_ErrorCode OH_ImageReceiverNative_GetReceivingSurfaceId(OH_ImageReceiverNative* receiver, uint64_t* surfaceId)
 ```
 
 **描述**
@@ -311,17 +281,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageReceiverNative\_ReadLatestImage()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageReceiverNative_ReadLatestImage(OH_ImageReceiverNative* receiver, OH_ImageNative** image)
+```c
+Image_ErrorCode OH_ImageReceiverNative_ReadLatestImage(OH_ImageReceiverNative* receiver, OH_ImageNative** image)
 ```
 
 **描述**
 
 通过OH\_ImageReceiverNative获取最新的一张图片。
 
-说明
+**说明** 
 
 * 此接口需要在[OH\_ImageReceiver\_OnCallback](capi-image-receiver-native-h.md#oh_imagereceiver_oncallback)回调后调用，才能正常的接收到数据。
 * 此接口返回的OH\_ImageNative使用完毕后需要调用[OH\_ImageNative\_Release](capi-image-native-h.md#oh_imagenative_release)方法释放，释放后才可以继续接收新的数据。
@@ -344,17 +312,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageReceiverNative\_ReadNextImage()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageReceiverNative_ReadNextImage(OH_ImageReceiverNative* receiver, OH_ImageNative** image)
+```c
+Image_ErrorCode OH_ImageReceiverNative_ReadNextImage(OH_ImageReceiverNative* receiver, OH_ImageNative** image)
 ```
 
 **描述**
 
 通过OH\_ImageReceiverNative获取下一张图片。
 
-说明
+**说明** 
 
 * 此接口需要在[OH\_ImageReceiver\_OnCallback](capi-image-receiver-native-h.md#oh_imagereceiver_oncallback)回调后调用，才能正常的接收到数据。
 * 此接口返回的OH\_ImageNative使用完毕后需要调用[OH\_ImageNative\_Release](capi-image-native-h.md#oh_imagenative_release)方法释放，释放后才可以继续接收新的数据。
@@ -377,10 +343,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageReceiverNative\_On()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageReceiverNative_On(OH_ImageReceiverNative* receiver, OH_ImageReceiver_OnCallback callback)
+```c
+Image_ErrorCode OH_ImageReceiverNative_On(OH_ImageReceiverNative* receiver, OH_ImageReceiver_OnCallback callback)
 ```
 
 **描述**
@@ -406,10 +370,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageReceiverNative\_Off()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageReceiverNative_Off(OH_ImageReceiverNative* receiver)
+```c
+Image_ErrorCode OH_ImageReceiverNative_Off(OH_ImageReceiverNative* receiver)
 ```
 
 **描述**
@@ -434,10 +396,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageReceiverNative\_GetSize()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageReceiverNative_GetSize(OH_ImageReceiverNative* receiver, Image_Size* size)
+```c
+Image_ErrorCode OH_ImageReceiverNative_GetSize(OH_ImageReceiverNative* receiver, Image_Size* size)
 ```
 
 **描述**
@@ -461,10 +421,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageReceiverNative\_GetCapacity()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageReceiverNative_GetCapacity(OH_ImageReceiverNative* receiver, int32_t* capacity)
+```c
+Image_ErrorCode OH_ImageReceiverNative_GetCapacity(OH_ImageReceiverNative* receiver, int32_t* capacity)
 ```
 
 **描述**
@@ -488,17 +446,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageReceiverNative\_Release()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageReceiverNative_Release(OH_ImageReceiverNative* receiver)
+```c
+Image_ErrorCode OH_ImageReceiverNative_Release(OH_ImageReceiverNative* receiver)
 ```
 
 **描述**
 
 释放Native OH\_ImageReceiverNative对象。
 
-说明
+**说明** 
 
 此接口需加锁保证释放后OH\_ImageReceiverNative对象不被其他接口使用，具体使用方法可参考开发指南[使用imagereceiver完成图片接收](../harmonyos-guides/image-receiver-c.md)。
 
@@ -518,10 +474,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageReceiverNative\_OnImageArrive()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageReceiverNative_OnImageArrive(OH_ImageReceiverNative *receiver,OH_ImageReceiver_ImageArriveCallback callback, void *userData)
+```c
+Image_ErrorCode OH_ImageReceiverNative_OnImageArrive(OH_ImageReceiverNative *receiver,OH_ImageReceiver_ImageArriveCallback callback, void *userData)
 ```
 
 **描述**
@@ -546,10 +500,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageReceiverNative\_OffImageArrive()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageReceiverNative_OffImageArrive(OH_ImageReceiverNative *receiver,OH_ImageReceiver_ImageArriveCallback callback)
+```c
+Image_ErrorCode OH_ImageReceiverNative_OffImageArrive(OH_ImageReceiverNative *receiver,OH_ImageReceiver_ImageArriveCallback callback)
 ```
 
 **描述**
@@ -563,7 +515,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_ImageReceiverNative](capi-image-nativemodule-oh-imagereceivernative.md) \*receiver | 处理回调的OH\_ImageReceiverNative对象。 |
-| [OH\_ImageReceiver\_ImageArriveCallback](capi-image-receiver-native-h.md#oh_imagereceiver_imagearrivecallback) callback | 要注册的OH\_ImageReceiver\_ImageArriveCallback回调。 |
+| [OH\_ImageReceiver\_ImageArriveCallback](capi-image-receiver-native-h.md#oh_imagereceiver_imagearrivecallback) callback | 要注销的OH\_ImageReceiver\_ImageArriveCallback回调。 |
 
 **返回：**
 

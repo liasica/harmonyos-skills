@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_open_g_t
 title: OpenGTX_Vector3
 breadcrumb: API参考 > 图形 > Graphics Accelerate Kit（图形加速服务） > C API > 头文件和结构体 > 结构体 > OpenGTX_Vector3
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:49+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:907465cd2e5b983dbe2500540eae868eb07c9a20712bd9ea8760434bbbbe22f1
+scraped_at: 2026-09-02T15:02:48+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9e5ca6c7b3b52d834b094905d56f3d8b367eb1bfa7601dc16fcf7b789ab4ac88
 ---
 
 ## 概述
-
-PhoneTabletTV
 
 此结构体描述OpenGTX三维向量。
 
@@ -22,11 +20,7 @@ PhoneTabletTV
 
 ## 汇总
 
-PhoneTabletTV
-
 ### 成员变量
-
-PhoneTabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -36,14 +30,10 @@ PhoneTabletTV
 
 ## 结构体成员变量说明
 
-PhoneTabletTV
-
 ### x
 
-PhoneTabletTV
-
-```
-1. float OpenGTX_Vector3::x
+```c
+float OpenGTX_Vector3::x
 ```
 
 **描述**
@@ -52,10 +42,8 @@ PhoneTabletTV
 
 ### y
 
-PhoneTabletTV
-
-```
-1. float OpenGTX_Vector3::y
+```c
+float OpenGTX_Vector3::y
 ```
 
 **描述**
@@ -64,10 +52,8 @@ PhoneTabletTV
 
 ### z
 
-PhoneTabletTV
-
-```
-1. float OpenGTX_Vector3::z
+```c
+float OpenGTX_Vector3::z
 ```
 
 **描述**

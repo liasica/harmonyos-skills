@@ -3,10 +3,25 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-codelinte
 title: 规则变更说明
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 规则变更说明
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:22+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:04baaa70849a39291fe2c44d3564969c2c58ea114f9f9a3cbbe5b3d288ddf4c8
+scraped_at: 2026-09-02T14:50:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3fd4c1415b45a2b4bb68975f1886212e22831ac7588897565bcb6afd80b27329
 ---
+
+## 26.0.0.621
+
+新增规则
+
+* [@compatibility/deprecate-api-check](ide-deprecate-api-check.md)
+
+## 26.0.0.461
+
+新增规则
+
+* [@correctness/accessibility-label-check](ide-accessibility-label-check.md)
+* [@correctness/accessibility-focus-redundancy-check](ide-accessibility-focus-redundancy-check.md)
+* [@correctness/accessibility-type-redundancy-check](ide-accessibility-type-redundancy-check.md)
+* [@correctness/accessibility-status-missing-check](ide-accessibility-status-missing-check.md)
 
 ## 6.1.0.609
 
@@ -147,7 +162,7 @@ content_hash: sha256:04baaa70849a39291fe2c44d3564969c2c58ea114f9f9a3cbbe5b3d288d
 * [@performance/hp-arkts-no-use-any-export-other](ide-hp-arkts-no-use-any-export-other.md)，该规则新增至recommended规则集中。
 * [@performance/hp-arkui-avoid-empty-callback](ide_hp-arkui-avoid-empty-callback.md)告警级别由warn改为suggestion。
 * [@performance/hp-arkui-avoid-update-auto-state-var-in-aboutToReuse](ide_hp-arkui-abouttoreuse.md)，该规则新增至recommended规则集中。
-* [@performance/hp-arkui-image-async-load](ide_hp-arkui-image-async-load.md)所属规则集由recommend改为all。
+* [@performance/hp-arkui-image-async-load](ide_hp-arkui-image-async-load.md)所属规则集由recommended改为all。
 * [@performance/hp-arkui-load-on-demand](ide_hp-arkui-load-on-demand.md)告警级别由suggestion改为warn。
 * [@performance/hp-arkui-no-stringify-in-lazyforeach-key-generator](ide_hp-arkui-no-stringify-lazyforeach-key.md)告警级别由suggestion改为warn，该规则新增至recommended规则集中。
 * [@performance/hp-arkui-remove-container-without-property](ide_hp-arkui-remove-container-without-property.md)告警级别由warn改为suggestion。
@@ -190,96 +205,96 @@ content_hash: sha256:04baaa70849a39291fe2c44d3564969c2c58ea114f9f9a3cbbe5b3d288d
 
 * [@typescript-eslint/no-unnecessary-condition](ide_no-unnecessary-condition.md)
 
-```
-1. // 场景一：支持逻辑表达式的检查
-2. interface GeneratedTypeLiteralInterface {}
-3. declare let foo: GeneratedTypeLiteralInterface;
-4. foo ??= 1; // 升级前不报错，升级后报错
-5. // 场景二：链式表达式中可以推断为非空的场景下，不需要增加判空
-6. interface GeneratedTypeLiteralInterface {
-7. bar: () => number;
-8. }
-9. type Foo = GeneratedTypeLiteralInterface | null;
-10. declare const foo: Foo;
-11. foo?.bar()?.toExponential(); // 升级前不报错，升级后报错
-```
+  ```screen
+  // 场景一：支持逻辑表达式的检查
+  interface GeneratedTypeLiteralInterface {}
+  declare let foo: GeneratedTypeLiteralInterface;
+  foo ??= 1; // 升级前不报错，升级后报错
+  // 场景二：链式表达式中可以推断为非空的场景下，不需要增加判空
+  interface GeneratedTypeLiteralInterface {
+    bar: () => number;
+  }
+  type Foo = GeneratedTypeLiteralInterface | null;
+  declare const foo: Foo;
+  foo?.bar()?.toExponential(); // 升级前不报错，升级后报错
+  ```
 
 * [@typescript-eslint/promise-function-async](ide_promise-function-async.md)
 
-```
-1. // 函数返回值没有显式定义类型，并且返回值可能为Promise的场景下，函数需要定义为async
-2. function promiseInUnionWithoutExplicitReturnType(p: boolean) { // 升级前不报错，升级后报错
-3. return p ? Promise.resolve(5) : 5;
-4. }
-```
+  ```screen
+  // 函数返回值没有显式定义类型，并且返回值可能为Promise的场景下，函数需要定义为async
+  function promiseInUnionWithoutExplicitReturnType(p: boolean) { // 升级前不报错，升级后报错
+    return p ? Promise.resolve(5) : 5;
+  }
+  ```
 
 * [@typescript-eslint/member-ordering](ide_member-ordering.md)
 
-```
-1. // 配置了optionalityOrder选项，并且类属性中不包含可选变量的场景下，规则中配置的order选项在历史版本中失效了
-2. // 规则配置为"@typescript-eslint/member-ordering": ["error", {"default": {"memberTypes": 'never', "order": 'natural-case-insensitive', "optionalityOrder": 'required-first',}}]
-3. class X {
-4. b: string = '';
-5. a: string = ''; // 升级前不报错，升级后报错
-6. }
-```
+  ```screen
+  // 配置了optionalityOrder选项，并且类属性中不包含可选变量的场景下，规则中配置的order选项在历史版本中失效了
+  // 规则配置为"@typescript-eslint/member-ordering": ["error", {"default": {"memberTypes": 'never', "order": 'natural-case-insensitive', "optionalityOrder": 'required-first',}}]
+  class X {
+    b: string = '';
+    a: string = ''; // 升级前不报错，升级后报错
+  }
+  ```
 
 * [@typescript-eslint/naming-convention](ide_naming-convention.md)
 
-```
-1. // 支持检查interface中的typeMethod
-2. // 规则配置为："@typescript-eslint/naming-convention": ["error", {selector: 'typeMethod', format: ['PascalCase']}]
-3. interface SOME_INTERFACE {
-4. someMethod: () => void; // 升级前不报错，升级后报错
-5. some_property: string;
-6. }
-```
+  ```screen
+  // 支持检查interface中的typeMethod
+  // 规则配置为："@typescript-eslint/naming-convention": ["error", {selector: 'typeMethod', format: ['PascalCase']}]
+  interface SOME_INTERFACE {
+    someMethod: () => void; // 升级前不报错，升级后报错
+    some_property: string;
+  }
+  ```
 
 * [@typescript-eslint/ban-types](ide_ban-types.md)
 
-```
-1. // 支持检查extend、implements后的类型
-2. // 规则配置为："@typescript-eslint/ban-types": ["error",{"types": {"Bar": {"message": ""}}}]
-3. interface Bar {}
-4. interface Baz {}
-5. interface Foo extends Bar, Baz {} // 升级前不报错，升级后报错
-```
+  ```screen
+  // 支持检查extend、implements后的类型
+  // 规则配置为："@typescript-eslint/ban-types": ["error",{"types": {"Bar": {"message": ""}}}]
+  interface Bar {}
+  interface Baz {}
+  interface Foo extends Bar, Baz {} // 升级前不报错，升级后报错
+  ```
 
 * [@typescript-eslint/no-floating-promises](ide_no-floating-promises.md)
 
-```
-1. // 场景一：.finally()被认为是没有有效处理Promise中可能发生的异常
-2. Promise.reject().finally(() => {}) // 升级前不报错，升级后报错
-3. // 场景二：.then()中的第二个参数如果是undefined或者null，被认为是没有有效处理Promise中可能发生的异常
-4. Promise.resolve().then(() => {}, undefined); // 升级前不报错，升级后报错
-5. Promise.resolve().then(() => {}, null); // 升级前不报错，升级后报错
-```
+  ```screen
+  // 场景一：.finally()被认为是没有有效处理Promise中可能发生的异常
+  Promise.reject().finally(() => {}) // 升级前不报错，升级后报错
+  // 场景二：.then()中的第二个参数如果是undefined或者null，被认为是没有有效处理Promise中可能发生的异常
+  Promise.resolve().then(() => {}, undefined); // 升级前不报错，升级后报错
+  Promise.resolve().then(() => {}, null); // 升级前不报错，升级后报错
+  ```
 
 * [@typescript-eslint/no-inferrable-types](ide_no-inferrable-types.md)
 
-```
-1. // 支持检查构造函数中的参数类型
-2. class Foo {
-3. constructor(param: boolean = true) {} // 升级前不报错，升级后报错
-4. }
-```
+  ```screen
+  // 支持检查构造函数中的参数类型
+  class Foo {
+    constructor(param: boolean = true) {} // 升级前不报错，升级后报错
+  }
+  ```
 
 * [@typescript-eslint/prefer-readonly](ide_prefer-readonly.md)
 
-```
-1. interface GeneratedObjectLiteralInterface {
-2. prop?: string
-3. }
+  ```screen
+  interface GeneratedObjectLiteralInterface {
+    prop?: string
+  }
 
-5. class Test {
-6. // 支持检查私有属性
-7. #testObj: GeneratedObjectLiteralInterface = {}; // 升级前不报错，升级后报错
+  class Test {
+    // 支持检查私有属性
+    #testObj: GeneratedObjectLiteralInterface = {}; // 升级前不报错，升级后报错
 
-9. public test(): void {
-10. this.#testObj?.prop;
-11. }
-12. }
-```
+    public test(): void {
+      this.#testObj?.prop;
+    }
+  }
+  ```
 
 ## 5.0.3.500
 

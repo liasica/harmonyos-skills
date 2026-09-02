@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_method-si
 title: "@typescript-eslint/method-signature-style"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/method-signature-style
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:28+08:00
+scraped_at: 2026-09-02T14:50:51+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:e0b1ee20426e25d756a713d316102a5327b8e2527896169bc4266be01e7b49ad
+content_hash: sha256:2b49925013adb9e7b36b3783ead8b2e41dec9c6f69ac75cfd5007f18319eaccc
 ---
 
 定义函数类型的属性时，强制使用特定的风格。
@@ -16,13 +16,13 @@ content_hash: sha256:e0b1ee20426e25d756a713d316102a5327b8e2527896169bc4266be01e7
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@typescript-eslint/method-signature-style": "error"
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@typescript-eslint/method-signature-style": "error"
+  }
+}
 ```
 
 ## 选项
@@ -31,26 +31,26 @@ content_hash: sha256:e0b1ee20426e25d756a713d316102a5327b8e2527896169bc4266be01e7
 
 ## 正例
 
-```
-1. // 默认要求定义为属性
-2. export interface T1 {
-3. func: (arg: string) => number;
-4. }
+```screen
+// 默认要求定义为属性
+export interface T1 {
+  func: (arg: string) => number;
+}
 ```
 
 ## 反例
 
-```
-1. // 默认要求定义为属性
-2. export interface T1 {
-3. func(arg: string): number;
-4. }
+```screen
+// 默认要求定义为属性
+export interface T1 {
+  func(arg: string): number;
+}
 ```
 
 ## 规则集
 
-```
-1. plugin:@typescript-eslint/all
+```screen
+plugin:@typescript-eslint/all
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

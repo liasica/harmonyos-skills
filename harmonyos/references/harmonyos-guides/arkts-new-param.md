@@ -1,18 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-param
-title: "@Param：组件外部输入"
-breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理组件拥有的状态 > @Param：组件外部输入
+title: "@Param装饰器：组件外部输入"
+breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理组件拥有的状态 > @Param装饰器：组件外部输入
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:17+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:7f0186d8bd75f4179f08ae4a2756a524ba22daf788f94c15d6f4e20cd7706be6
+scraped_at: 2026-09-02T14:59:15+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:eed54d1c919779a5547462df6a4fb4a19dd88e4b91b4e5e2e94224960987c6bf
 ---
 
-为了增强子组件接受外部参数输入的能力，开发者可以使用@Param装饰器。
+为了增强子组件接受外部参数输入的能力，开发者可以使用[@Param](../harmonyos-references/ts-state-management-param.md#param)装饰器。
 
 @Param不仅可以接受组件外部输入，还可以接受@Local的同步变化。在阅读本文档前，建议提前阅读：[@Local](arkts-new-local.md)。
 
-说明
+**说明** 
 
 从API version 12开始，在@ComponentV2装饰的自定义组件中支持使用@Param装饰器。
 
@@ -36,68 +36,76 @@ content_hash: sha256:7f0186d8bd75f4179f08ae4a2756a524ba22daf788f94c15d6f4e20cd77
 
 状态管理V1存在多种可接受外部传入的装饰器，常用的有[@State](arkts-state.md)、[@Prop](arkts-prop.md)、[@Link](arkts-link.md)、[@ObjectLink](arkts-observed-and-objectlink.md)。这些装饰器使用有限制且不易区分，不当使用会导致性能问题。
 
+```typescript
+@Observed
+class Region {
+  public x: number;
+  public y: number;
+
+  constructor(x: number, y: number) {
+    this.x = x;
+    this.y = y;
+  }
+}
+
+@Observed
+class Info {
+  public region: Region;
+
+  constructor(x: number, y: number) {
+    this.region = new Region(x, y);
+  }
+}
+
+@Entry
+@Component
+struct Index {
+  @State info: Info = new Info(0, 0);
+
+  build() {
+    Column() {
+      Button('change Info')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.info = new Info(100, 100);
+        })
+      Child({
+        region: this.info.region,
+        regionProp: this.info.region,
+        infoProp: this.info,
+        infoLink: this.info,
+        infoState: this.info
+      })
+    }
+    .width('100%')
+  }
+}
+
+@Component
+struct Child {
+  // V1版本接受外部传入的装饰器汇总
+  @ObjectLink region: Region;
+  @Prop regionProp: Region;
+  @Prop infoProp: Info;
+  @Link infoLink: Info;
+  @State infoState: Info = new Info(1, 1);
+
+  build() {
+    Column() {
+      Text(`ObjectLink region: ${this.region.x}-${this.region.y}`)
+        .fontSize(20)
+        .margin(10)
+      Text(`Prop regionProp: ${this.regionProp.x}-${this.regionProp.y}`)
+        .fontSize(20)
+        .margin(10)
+    }
+    .width('100%')
+  }
+}
 ```
-1. @Observed
-2. class Region {
-3. public x: number;
-4. public y: number;
 
-6. constructor(x: number, y: number) {
-7. this.x = x;
-8. this.y = y;
-9. }
-10. }
-
-12. @Observed
-13. class Info {
-14. public region: Region;
-
-16. constructor(x: number, y: number) {
-17. this.region = new Region(x, y);
-18. }
-19. }
-
-21. @Entry
-22. @Component
-23. struct Index {
-24. @State info: Info = new Info(0, 0);
-
-26. build() {
-27. Column() {
-28. Button('change Info')
-29. .onClick(() => {
-30. this.info = new Info(100, 100);
-31. })
-32. Child({
-33. region: this.info.region,
-34. regionProp: this.info.region,
-35. infoProp: this.info,
-36. infoLink: this.info,
-37. infoState: this.info
-38. })
-39. }
-40. }
-41. }
-
-43. @Component
-44. struct Child {
-45. // V1版本接受外部传入的装饰器汇总
-46. @ObjectLink region: Region;
-47. @Prop regionProp: Region;
-48. @Prop infoProp: Info;
-49. @Link infoLink: Info;
-50. @State infoState: Info = new Info(1, 1);
-
-52. build() {
-53. Column() {
-54. Text(`ObjectLink region: ${this.region.x}-${this.region.y}`)
-55. Text(`Prop regionProp: ${this.regionProp.x}-${this.regionProp.y}`)
-56. }
-57. }
-58. }
-```
-
-[ParamDecoratorLimitations.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/param/ParamDecoratorLimitations.ets#L30-L88)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/w403uyKKRjqwXDWx8N_Rqg/zh-cn_image_0000002736312349.gif)
 
 在上面的示例中，@State仅能在初始化时接收info的引用，改变info之后无法同步。@Prop虽然能够进行单向同步，但是对于较复杂的类型来说，深拷贝性能较差。@Link能够接受传入的引用进行双向同步，但它必须要求数据源也是状态变量，因此无法接受info中的成员属性region。@ObjectLink能够接受类成员属性，但是要求该属性类型必须为@Observed装饰的类。装饰器的不同限制使得父子组件之间的传值规则复杂、不易使用。因此推出@Param装饰器，表示组件从外部传入的状态。
 
@@ -125,266 +133,346 @@ content_hash: sha256:7f0186d8bd75f4179f08ae4a2756a524ba22daf788f94c15d6f4e20cd77
 
 * 当装饰的变量类型为boolean、string、number类型时，可观察数据源同步变化。
 
+  ```typescript
+  @Entry
+  @ComponentV2
+  struct Index {
+    // 点击的次数
+    @Local count: number = 0;
+    @Local message: string = 'Hello';
+    @Local flag: boolean = false;
+
+    build() {
+      Column() {
+        Text(`Local ${this.count}`)
+          .fontSize(20)
+          .margin(10)
+        Text(`Local ${this.message}`)
+          .fontSize(20)
+          .margin(10)
+        Text(`Local ${this.flag}`)
+          .fontSize(20)
+          .margin(10)
+        Button('change Local')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            // 对数据源的更改会同步给子组件
+            this.count++;
+            this.message += ' World';
+            this.flag = !this.flag;
+          })
+        Child({
+          count: this.count,
+          message: this.message,
+          flag: this.flag
+        })
+      }
+      .width('100%')
+    }
+  }
+
+  @ComponentV2
+  struct Child {
+    @Require @Param count: number;
+    @Require @Param message: string;
+    @Require @Param flag: boolean;
+
+    build() {
+      Column() {
+        Text(`Param ${this.count}`)
+          .fontSize(20)
+          .margin(10)
+        Text(`Param ${this.message}`)
+          .fontSize(20)
+          .margin(10)
+        Text(`Param ${this.flag}`)
+          .fontSize(20)
+          .margin(10)
+      }
+      .width('100%')
+    }
+  }
   ```
-  1. @Entry
-  2. @ComponentV2
-  3. struct Index {
-  4. // 点击的次数
-  5. @Local count: number = 0;
-  6. @Local message: string = 'Hello';
-  7. @Local flag: boolean = false;
 
-  9. build() {
-  10. Column() {
-  11. Text(`Local ${this.count}`)
-  12. Text(`Local ${this.message}`)
-  13. Text(`Local ${this.flag}`)
-  14. Button('change Local')
-  15. .onClick(() => {
-  16. // 对数据源的更改会同步给子组件
-  17. this.count++;
-  18. this.message += ' World';
-  19. this.flag = !this.flag;
-  20. })
-  21. Child({
-  22. count: this.count,
-  23. message: this.message,
-  24. flag: this.flag
-  25. })
-  26. }
-  27. }
-  28. }
-
-  30. @ComponentV2
-  31. struct Child {
-  32. @Require @Param count: number;
-  33. @Require @Param message: string;
-  34. @Require @Param flag: boolean;
-
-  36. build() {
-  37. Column() {
-  38. Text(`Param ${this.count}`)
-  39. Text(`Param ${this.message}`)
-  40. Text(`Param ${this.flag}`)
-  41. }
-  42. }
-  43. }
-  ```
-
-  [ParamObserveChangeVariable.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/param/ParamObserveChangeVariable.ets#L30-L74)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/iPl0X-dzSneJLD8u0YqiWA/zh-cn_image_0000002706673306.gif)
 * 当装饰的变量类型为类对象时，仅可以观察到对类对象整体赋值的变化，无法直接观察到对类成员属性赋值的变化，对类成员属性的观察依赖[@ObservedV2](arkts-new-observedv2-and-trace.md)和[@Trace](arkts-new-observedv2-and-trace.md)装饰器，也可以使用[makeObserved](arkts-new-makeobserved.md)将该对象变为可观察对象。
 
+  ```typescript
+  class RawObject {
+    public name: string;
+
+    constructor(name: string) {
+      this.name = name;
+    }
+  }
+
+  @ObservedV2
+  class ObservedObject {
+    @Trace public name: string;
+
+    constructor(name: string) {
+      this.name = name;
+    }
+  }
+
+  @Entry
+  @ComponentV2
+  struct Index {
+    @Local rawObject: RawObject = new RawObject('rawObject');
+    @Local observedObject: ObservedObject = new ObservedObject('observedObject');
+
+    build() {
+      Column() {
+        Text(`${this.rawObject.name}`)
+          .fontSize(20)
+          .margin(10)
+        Text(`${this.observedObject.name}`)
+          .fontSize(20)
+          .margin(10)
+        Button('change object')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            // 对类对象整体的修改均能观察到
+            this.rawObject = new RawObject('new rawObject');
+            this.observedObject = new ObservedObject('new observedObject');
+          })
+        Button('change name')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            // @Local与@Param均不具备观察类对象属性的能力，因此对rawObject.name的修改无法观察到
+            this.rawObject.name = 'new rawObject name';
+            // 由于ObservedObject的name属性被@Trace装饰，因此对observedObject.name的修改能被观察到
+            this.observedObject.name = 'new observedObject name';
+          })
+        Child({
+          rawObject: this.rawObject,
+          observedObject: this.observedObject
+        })
+      }
+      .width('100%')
+    }
+  }
+
+  @ComponentV2
+  struct Child {
+    @Require @Param rawObject: RawObject;
+    @Require @Param observedObject: ObservedObject;
+
+    build() {
+      Column() {
+        Text(`${this.rawObject.name}`)
+          .fontSize(20)
+          .margin(10)
+        Text(`${this.observedObject.name}`)
+          .fontSize(20)
+          .margin(10)
+      }
+      .width('100%')
+    }
+  }
   ```
-  1. class RawObject {
-  2. public name: string;
 
-  4. constructor(name: string) {
-  5. this.name = name;
-  6. }
-  7. }
-
-  9. @ObservedV2
-  10. class ObservedObject {
-  11. @Trace public name: string;
-
-  13. constructor(name: string) {
-  14. this.name = name;
-  15. }
-  16. }
-
-  18. @Entry
-  19. @ComponentV2
-  20. struct Index {
-  21. @Local rawObject: RawObject = new RawObject('rawObject');
-  22. @Local observedObject: ObservedObject = new ObservedObject('observedObject');
-
-  24. build() {
-  25. Column() {
-  26. Text(`${this.rawObject.name}`)
-  27. Text(`${this.observedObject.name}`)
-  28. Button('change object')
-  29. .onClick(() => {
-  30. // 对类对象整体的修改均能观察到
-  31. this.rawObject = new RawObject('new rawObject');
-  32. this.observedObject = new ObservedObject('new observedObject');
-  33. })
-  34. Button('change name')
-  35. .onClick(() => {
-  36. // @Local与@Param均不具备观察类对象属性的能力，因此对rawObject.name的修改无法观察到
-  37. this.rawObject.name = 'new rawObject name';
-  38. // 由于ObservedObject的name属性被@Trace装饰，因此对observedObject.name的修改能被观察到
-  39. this.observedObject.name = 'new observedObject name';
-  40. })
-  41. Child({
-  42. rawObject: this.rawObject,
-  43. observedObject: this.observedObject
-  44. })
-  45. }
-  46. }
-  47. }
-
-  49. @ComponentV2
-  50. struct Child {
-  51. @Require @Param rawObject: RawObject;
-  52. @Require @Param observedObject: ObservedObject;
-
-  54. build() {
-  55. Column() {
-  56. Text(`${this.rawObject.name}`)
-  57. Text(`${this.observedObject.name}`)
-  58. }
-  59. }
-  60. }
-  ```
-
-  [ParamObserveChangeClass.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/param/ParamObserveChangeClass.ets#L30-L91)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/o58EtQFEQLmr1aiUr307AA/zh-cn_image_0000002736432397.gif)
 * 装饰的变量为简单类型数组时，可观察数组整体或数组项变化。
 
+  ```typescript
+  @Entry
+  @ComponentV2
+  struct Index {
+    @Local numArr: number[] = [1, 2, 3, 4, 5];
+    @Local dimensionTwo: number[][] = [[1, 2, 3], [4, 5, 6]];
+
+    build() {
+      Column() {
+        Text(`${this.numArr[0]}`)
+          .fontSize(20)
+          .margin(10)
+        Text(`${this.numArr[1]}`)
+          .fontSize(20)
+          .margin(10)
+        Text(`${this.numArr[2]}`)
+          .fontSize(20)
+          .margin(10)
+        Text(`${this.dimensionTwo[0][0]}`)
+          .fontSize(20)
+          .margin(10)
+        Text(`${this.dimensionTwo[1][1]}`)
+          .fontSize(20)
+          .margin(10)
+        // 装饰的变量为简单类型数组时，可观察到数组项变化
+        Button('change array item')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.numArr[0]++;
+            this.numArr[1] += 2;
+            this.dimensionTwo[0][0] = 0;
+            this.dimensionTwo[1][1] = 0;
+          })
+        // 装饰的变量为简单类型数组时，可观察到数组整体变化
+        Button('change whole array')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.numArr = [5, 4, 3, 2, 1];
+            this.dimensionTwo = [[7, 8, 9], [0, 1, 2]];
+          })
+        Child({
+          numArr: this.numArr,
+          dimensionTwo: this.dimensionTwo
+        })
+      }
+      .width('100%')
+    }
+  }
+
+  @ComponentV2
+  struct Child {
+    @Require @Param numArr: number[];
+    @Require @Param dimensionTwo: number[][];
+
+    build() {
+      Column() {
+        Text(`${this.numArr[0]}`)
+          .fontSize(20)
+          .margin(10)
+        Text(`${this.numArr[1]}`)
+          .fontSize(20)
+          .margin(10)
+        Text(`${this.numArr[2]}`)
+          .fontSize(20)
+          .margin(10)
+        Text(`${this.dimensionTwo[0][0]}`)
+          .fontSize(20)
+          .margin(10)
+        Text(`${this.dimensionTwo[1][1]}`)
+          .fontSize(20)
+          .margin(10)
+      }
+      .width('100%')
+    }
+  }
   ```
-  1. @Entry
-  2. @ComponentV2
-  3. struct Index {
-  4. @Local numArr: number[] = [1, 2, 3, 4, 5];
-  5. @Local dimensionTwo: number[][] = [[1, 2, 3], [4, 5, 6]];
 
-  7. build() {
-  8. Column() {
-  9. Text(`${this.numArr[0]}`)
-  10. Text(`${this.numArr[1]}`)
-  11. Text(`${this.numArr[2]}`)
-  12. Text(`${this.dimensionTwo[0][0]}`)
-  13. Text(`${this.dimensionTwo[1][1]}`)
-  14. // 装饰的变量为简单类型数组时，可观察到数组项变化
-  15. Button('change array item')
-  16. .onClick(() => {
-  17. this.numArr[0]++;
-  18. this.numArr[1] += 2;
-  19. this.dimensionTwo[0][0] = 0;
-  20. this.dimensionTwo[1][1] = 0;
-  21. })
-  22. // 装饰的变量为简单类型数组时，可观察到数组整体变化
-  23. Button('change whole array')
-  24. .onClick(() => {
-  25. this.numArr = [5, 4, 3, 2, 1];
-  26. this.dimensionTwo = [[7, 8, 9], [0, 1, 2]];
-  27. })
-  28. Child({
-  29. numArr: this.numArr,
-  30. dimensionTwo: this.dimensionTwo
-  31. })
-  32. }
-  33. }
-  34. }
-
-  36. @ComponentV2
-  37. struct Child {
-  38. @Require @Param numArr: number[];
-  39. @Require @Param dimensionTwo: number[][];
-
-  41. build() {
-  42. Column() {
-  43. Text(`${this.numArr[0]}`)
-  44. Text(`${this.numArr[1]}`)
-  45. Text(`${this.numArr[2]}`)
-  46. Text(`${this.dimensionTwo[0][0]}`)
-  47. Text(`${this.dimensionTwo[1][1]}`)
-  48. }
-  49. }
-  50. }
-  ```
-
-  [ParamObserveChangeArray.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/param/ParamObserveChangeArray.ets#L30-L79)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/J3t1aJQ-QvyxjjxtbAf1rg/zh-cn_image_0000002706833244.gif)
 * 当装饰的变量是嵌套类或对象数组时，@Param无法观察深层对象属性的变化。对深层对象属性的观测依赖@ObservedV2与@Trace装饰器。
 
+  ```typescript
+  @ObservedV2
+  class Region {
+    @Trace public x: number;
+    @Trace public y: number;
+
+    constructor(x: number, y: number) {
+      this.x = x;
+      this.y = y;
+    }
+  }
+
+  @ObservedV2
+  class Info {
+    @Trace public region: Region;
+    @Trace public name: string;
+
+    constructor(name: string, x: number, y: number) {
+      this.name = name;
+      this.region = new Region(x, y);
+    }
+  }
+
+  @Entry
+  @ComponentV2
+  struct Index {
+    @Local infoArr: Info[] = [new Info('Ocean', 28, 120), new Info('Mountain', 26, 20)];
+    @Local originInfo: Info = new Info('Origin', 0, 0);
+
+    build() {
+      Column() {
+        ForEach(this.infoArr, (info: Info) => {
+          Row() {
+            Text(`name: ${info.name}`)
+              .fontSize(15)
+              .margin(10)
+            Text(`region: ${info.region.x}-${info.region.y}`)
+              .fontSize(15)
+              .margin(10)
+          }
+        })
+        Row() {
+          Text(`Origin name: ${this.originInfo.name}`)
+            .fontSize(15)
+            .margin(10)
+          Text(`Origin region: ${this.originInfo.region.x}-${this.originInfo.region.y}`)
+            .fontSize(15)
+            .margin(10)
+        }
+
+        Button('change infoArr item')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            // 由于属性name被@Trace装饰，所以能够观察到
+            this.infoArr[0].name = 'Win';
+          })
+        Button('change originInfo')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            // 由于变量originInfo被@Local装饰，所以能够观察到
+            this.originInfo = new Info('Origin', 100, 100);
+          })
+        Button('change originInfo region')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            // 由于属性x、y被@Trace装饰，所以能够观察到
+            this.originInfo.region.x = 25;
+            this.originInfo.region.y = 25;
+          })
+        Child({
+          infoArr: this.infoArr,
+          originInfo: this.originInfo
+        })
+      }
+      .width('100%')
+    }
+  }
+
+  @ComponentV2
+  struct Child {
+    @Param infoArr: Info[] = [];
+    @Param originInfo: Info = new Info('O', 0, 0);
+
+    build() {
+      Column() {
+        ForEach(this.infoArr, (info: Info) => {
+          Row() {
+            Text(`name: ${info.name}`)
+              .fontSize(15)
+              .margin(10)
+            Text(`region: ${info.region.x}-${info.region.y}`)
+              .fontSize(15)
+              .margin(10)
+          }
+        })
+        Row() {
+          Text(`Origin name: ${this.originInfo.name}`)
+            .fontSize(15)
+            .margin(10)
+          Text(`Origin region: ${this.originInfo.region.x}-${this.originInfo.region.y}`)
+            .fontSize(15)
+            .margin(10)
+        }
+      }
+      .width('100%')
+    }
+  }
   ```
-  1. @ObservedV2
-  2. class Region {
-  3. @Trace public x: number;
-  4. @Trace public y: number;
 
-  6. constructor(x: number, y: number) {
-  7. this.x = x;
-  8. this.y = y;
-  9. }
-  10. }
-
-  12. @ObservedV2
-  13. class Info {
-  14. @Trace public region: Region;
-  15. @Trace public name: string;
-
-  17. constructor(name: string, x: number, y: number) {
-  18. this.name = name;
-  19. this.region = new Region(x, y);
-  20. }
-  21. }
-
-  23. @Entry
-  24. @ComponentV2
-  25. struct Index {
-  26. @Local infoArr: Info[] = [new Info('Ocean', 28, 120), new Info('Mountain', 26, 20)];
-  27. @Local originInfo: Info = new Info('Origin', 0, 0);
-
-  29. build() {
-  30. Column() {
-  31. ForEach(this.infoArr, (info: Info) => {
-  32. Row() {
-  33. Text(`name: ${info.name}`)
-  34. Text(`region: ${info.region.x}-${info.region.y}`)
-  35. }
-  36. })
-  37. Row() {
-  38. Text(`Origin name: ${this.originInfo.name}`)
-  39. Text(`Origin region: ${this.originInfo.region.x}-${this.originInfo.region.y}`)
-  40. }
-
-  42. Button('change infoArr item')
-  43. .onClick(() => {
-  44. // 由于属性name被@Trace装饰，所以能够观察到
-  45. this.infoArr[0].name = 'Win';
-  46. })
-  47. Button('change originInfo')
-  48. .onClick(() => {
-  49. // 由于变量originInfo被@Local装饰，所以能够观察到
-  50. this.originInfo = new Info('Origin', 100, 100);
-  51. })
-  52. Button('change originInfo region')
-  53. .onClick(() => {
-  54. // 由于属性x、y被@Trace装饰，所以能够观察到
-  55. this.originInfo.region.x = 25;
-  56. this.originInfo.region.y = 25;
-  57. })
-  58. Child({
-  59. infoArr: this.infoArr,
-  60. originInfo: this.originInfo
-  61. })
-  62. }
-  63. }
-  64. }
-
-  66. @ComponentV2
-  67. struct Child {
-  68. @Param infoArr: Info[] = [];
-  69. @Param originInfo: Info = new Info('O', 0, 0);
-
-  71. build() {
-  72. Column() {
-  73. ForEach(this.infoArr, (info: Info) => {
-  74. Row() {
-  75. Text(`name: ${info.name}`)
-  76. Text(`region: ${info.region.x}-${info.region.y}`)
-  77. }
-  78. })
-  79. Row() {
-  80. Text(`Origin name: ${this.originInfo.name}`)
-  81. Text(`Origin region: ${this.originInfo.region.x}-${this.originInfo.region.y}`)
-  82. }
-  83. }
-  84. }
-  85. }
-  ```
-
-  [ParamObserveChangeNestedClass.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/param/ParamObserveChangeNestedClass.ets#L30-L116)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/mkW5xJXDRJG4_phSmbeNJw/zh-cn_image_0000002736312353.gif)
 * 装饰的变量为内置类型时，可观察变量整体赋值和API调用的变化。
 
   | 类型 | 可观测变化的API |
@@ -400,96 +488,96 @@ content_hash: sha256:7f0186d8bd75f4179f08ae4a2756a524ba22daf788f94c15d6f4e20cd77
 
 * @Param装饰器只能在[@ComponentV2](arkts-create-custom-components.md#componentv2)装饰器的自定义组件中使用。
 
-  ```
-  1. @ComponentV2
-  2. struct MyComponent {
-  3. @Param message: string = 'Hello World'; // 正确用法
-  4. build() {
-  5. }
-  6. }
-  7. @Component
-  8. struct TestComponent {
-  9. @Param message: string = 'Hello World'; // 错误用法，编译时报错
-  10. build() {
-  11. }
-  12. }
+  ```ts
+  @ComponentV2
+  struct MyComponent {
+    @Param message: string = 'Hello World'; // 正确用法
+    build() {
+    }
+  }
+  @Component
+  struct TestComponent {
+    @Param message: string = 'Hello World'; // 错误用法，编译时报错
+    build() {
+    }
+  }
   ```
 * @Param装饰的变量表示组件外部输入，需要初始化。支持使用本地初始值或外部传入值进行初始化。当存在外部传入值时，优先使用外部传入值。不允许既不使用本地初始值，也不使用外部传入值。
 
-  ```
-  1. @ComponentV2
-  2. struct ChildComponent {
-  3. @Param param1: string = 'Initialize local';
-  4. @Param param2: string = 'Initialize local and put in';
-  5. @Require @Param param3: string;
-  6. @Param param4: string; // 错误用法，外部未传入初始化且本地也无初始值，编译报错
-  7. build() {
-  8. Column() {
-  9. Text(`${this.param1}`) // 本地初始化，显示Initialize local
-  10. Text(`${this.param2}`) // 外部传入初始化，显示Put in
-  11. Text(`${this.param3}`) // 外部传入初始化，显示Put in
-  12. }
-  13. }
-  14. }
-  15. @Entry
-  16. @ComponentV2
-  17. struct MyComponent {
-  18. @Local message: string = 'Put in';
-  19. build() {
-  20. Column() {
-  21. ChildComponent({
-  22. param2: this.message,
-  23. param3: this.message
-  24. })
-  25. }
-  26. }
-  27. }
+  ```ts
+  @ComponentV2
+  struct ChildComponent {
+    @Param param1: string = 'Initialize local';
+    @Param param2: string = 'Initialize local and put in';
+    @Require @Param param3: string;
+    @Param param4: string; // 错误用法，外部未传入初始化且本地也无初始值，编译报错
+    build() {
+      Column() {
+        Text(`${this.param1}`) // 本地初始化，显示Initialize local
+        Text(`${this.param2}`) // 外部传入初始化，显示Put in
+        Text(`${this.param3}`) // 外部传入初始化，显示Put in
+      }
+    }
+  }
+  @Entry
+  @ComponentV2
+  struct MyComponent {
+    @Local message: string = 'Put in';
+    build() {
+      Column() {
+        ChildComponent({
+          param2: this.message,
+          param3: this.message
+        })
+      }
+    }
+  }
   ```
 * 使用@Param装饰的变量在子组件中无法被直接修改。但是，如果装饰的变量是对象类型，在子组件中可以修改对象的属性。
 
-  ```
-  1. @ObservedV2
-  2. class Info {
-  3. @Trace name: string;
-  4. constructor(name: string) {
-  5. this.name = name;
-  6. }
-  7. }
-  8. @Entry
-  9. @ComponentV2
-  10. struct Index {
-  11. @Local info: Info = new Info('Tom');
-  12. build() {
-  13. Column() {
-  14. Text(`Parent info.name ${this.info.name}`)
-  15. Button('Parent change info')
-  16. .onClick(() => {
-  17. // 父组件更改@Local变量，会同步子组件对应@Param变量
-  18. this.info = new Info('Lucy');
-  19. })
-  20. Child({ info: this.info })
-  21. }
-  22. }
-  23. }
-  24. @ComponentV2
-  25. struct Child {
-  26. @Require @Param info: Info;
-  27. build() {
-  28. Column() {
-  29. Text(`info.name: ${this.info.name}`)
-  30. Button('change info')
-  31. .onClick(() => {
-  32. // 错误用法，不允许在子组件中更改@Param变量，编译时会报错
-  33. this.info = new Info('Jack');
-  34. })
-  35. Button('Child change info.name')
-  36. .onClick(() => {
-  37. // 允许在子组件中更改对象中属性，该修改会同步到父组件数据源上，当属性被@Trace装饰时，可观测到对应UI刷新
-  38. this.info.name = 'Jack';
-  39. })
-  40. }
-  41. }
-  42. }
+  ```ts
+  @ObservedV2
+  class Info {
+    @Trace name: string;
+    constructor(name: string) {
+      this.name = name;
+    }
+  }
+  @Entry
+  @ComponentV2
+  struct Index {
+    @Local info: Info = new Info('Tom');
+    build() {
+      Column() {
+        Text(`Parent info.name ${this.info.name}`)
+        Button('Parent change info')
+          .onClick(() => {
+            // 父组件更改@Local变量，会同步子组件对应@Param变量
+            this.info = new Info('Lucy');
+        })
+        Child({ info: this.info })
+      }
+    }
+  }
+  @ComponentV2
+  struct Child {
+    @Require @Param info: Info;
+    build() {
+      Column() {
+        Text(`info.name: ${this.info.name}`)
+        Button('change info')
+          .onClick(() => {
+            // 错误用法，不允许在子组件中更改@Param变量，编译时会报错
+            this.info = new Info('Jack');
+          })
+        Button('Child change info.name')
+          .onClick(() => {
+            // 允许在子组件中更改对象中属性，该修改会同步到父组件数据源上，当属性被@Trace装饰时，可观测到对应UI刷新
+            this.info.name = 'Jack';
+          })
+      }
+    }
+  }
   ```
 
 ## 使用场景
@@ -498,353 +586,422 @@ content_hash: sha256:7f0186d8bd75f4179f08ae4a2756a524ba22daf788f94c15d6f4e20cd77
 
 @Param能够接受父组件@Local或@Param传递的数据并与之变化同步。
 
+```typescript
+@ObservedV2
+class Region {
+  @Trace public x: number;
+  @Trace public y: number;
+
+  constructor(x: number, y: number) {
+    this.x = x;
+    this.y = y;
+  }
+}
+
+@ObservedV2
+class Info {
+  @Trace public name: string;
+  @Trace public age: number;
+  @Trace public region: Region;
+
+  constructor(name: string, age: number, x: number, y: number) {
+    this.name = name;
+    this.age = age;
+    this.region = new Region(x, y);
+  }
+}
+
+@Entry
+@ComponentV2
+struct Index {
+  // 使用@Local装饰infoList数组，作为数据源传递给子组件的@Param。
+  @Local infoList: Info[] = [new Info('Alice', 8, 0, 0), new Info('Barry', 10, 1, 20), new Info('Cindy', 18, 24, 40)];
+
+  build() {
+    Column() {
+      ForEach(this.infoList, (info: Info) => {
+        MiddleComponent({ info: info })
+      })
+      // 修改数组元素及对象属性，触发MiddleComponent和SubComponent更新。
+      Button('change')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.infoList[0] = new Info('Atom', 40, 27, 90);
+          this.infoList[1].name = 'Bob';
+          this.infoList[2].region = new Region(7, 9);
+        })
+    }
+    .width('100%')
+  }
+}
+
+@ComponentV2
+struct MiddleComponent {
+  // 使用@Param接收父组件传入的Info对象，数据源变化时触发子组件更新。
+  @Require @Param info: Info;
+
+  build() {
+    Column() {
+      Text(`name: ${this.info.name}`)
+        .fontSize(20)
+        .margin(10)
+      Text(`age: ${this.info.age}`)
+        .fontSize(20)
+        .margin(10)
+      // 将Region对象继续传递给子组件的@Param。
+      SubComponent({ region: this.info.region })
+    }
+    .width('100%')
+  }
+}
+
+@ComponentV2
+struct SubComponent {
+  // @Param接收父组件传入的Region对象，数据源变化时触发子组件更新。
+  @Require @Param region: Region;
+
+  build() {
+    Column() {
+      Text(`region: ${this.region.x}-${this.region.y}`)
+        .fontSize(20)
+        .margin(10)
+    }
+    .width('100%')
+  }
+}
 ```
-1. @ObservedV2
-2. class Region {
-3. @Trace public x: number;
-4. @Trace public y: number;
 
-6. constructor(x: number, y: number) {
-7. this.x = x;
-8. this.y = y;
-9. }
-10. }
-
-12. @ObservedV2
-13. class Info {
-14. @Trace public name: string;
-15. @Trace public age: number;
-16. @Trace public region: Region;
-
-18. constructor(name: string, age: number, x: number, y: number) {
-19. this.name = name;
-20. this.age = age;
-21. this.region = new Region(x, y);
-22. }
-23. }
-
-25. @Entry
-26. @ComponentV2
-27. struct Index {
-28. // 使用@Local装饰infoList数组，作为数据源传递给子组件的@Param。
-29. @Local infoList: Info[] = [new Info('Alice', 8, 0, 0), new Info('Barry', 10, 1, 20), new Info('Cindy', 18, 24, 40)];
-
-31. build() {
-32. Column() {
-33. ForEach(this.infoList, (info: Info) => {
-34. MiddleComponent({ info: info })
-35. })
-36. // 修改数组元素及对象属性，触发MiddleComponent和SubComponent更新。
-37. Button('change')
-38. .onClick(() => {
-39. this.infoList[0] = new Info('Atom', 40, 27, 90);
-40. this.infoList[1].name = 'Bob';
-41. this.infoList[2].region = new Region(7, 9);
-42. })
-43. }
-44. }
-45. }
-
-47. @ComponentV2
-48. struct MiddleComponent {
-49. // 使用@Param接收父组件传入的Info对象，数据源变化时触发子组件更新。
-50. @Require @Param info: Info;
-
-52. build() {
-53. Column() {
-54. Text(`name: ${this.info.name}`)
-55. Text(`age: ${this.info.age}`)
-56. // 将Region对象继续传递给子组件的@Param。
-57. SubComponent({ region: this.info.region })
-58. }
-59. }
-60. }
-
-62. @ComponentV2
-63. struct SubComponent {
-64. // @Param接收父组件传入的Region对象，数据源变化时触发子组件更新。
-65. @Require @Param region: Region;
-
-67. build() {
-68. Column() {
-69. Text(`region: ${this.region.x}-${this.region.y}`)
-70. }
-71. }
-72. }
-```
-
-[ParamUseSceneParentToChild.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/param/ParamUseSceneParentToChild.ets#L30-L103)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/_7sctQTSQG242AEfHjh-jg/zh-cn_image_0000002706673308.gif)
 
 ### 装饰Array类型变量
 
 @Param装饰Array类型变量，可以观察到数据源对Array整体的赋值，以及调用Array的接口push, pop, shift, unshift, splice, copyWithin, fill, reverse, sort带来的变化。
 
+```typescript
+@ComponentV2
+struct Child {
+  // 使用@Param接收父组件传入的Array类型变量。
+  @Require @Param count: number[];
+
+  build() {
+    Column() {
+      ForEach(this.count, (item: number) => {
+        Text(`${item}`)
+          .fontSize(30)
+          .margin(10)
+        Divider()
+      })
+    }
+    .width('100%')
+  }
+}
+
+@Entry
+@ComponentV2
+struct Index {
+  // 使用@Local装饰Array类型变量，作为数据源传递给子组件的@Param。
+  @Local count: number[] = [1, 2, 3];
+
+  build() {
+    Row() {
+      Column() {
+        Child({ count: this.count })
+        // 对数组整体重新赋值，触发子组件更新。
+        Button('init array')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.count = [9, 8, 7];
+          })
+        // 新增数组元素，触发子组件更新。
+        Button('push')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.count.push(0);
+          })
+        // 翻转数组元素，触发子组件更新。
+        Button('reverse')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.count.reverse();
+          })
+        // 使用同一元素填充数组，触发子组件更新。
+        Button('fill')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.count.fill(6);
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-1. @ComponentV2
-2. struct Child {
-3. // 使用@Param接收父组件传入的Array类型变量。
-4. @Require @Param count: number[];
 
-6. build() {
-7. Column() {
-8. ForEach(this.count, (item: number) => {
-9. Text(`${item}`).fontSize(30)
-10. Divider()
-11. })
-12. }
-13. .width('100%')
-14. }
-15. }
-
-17. @Entry
-18. @ComponentV2
-19. struct Index {
-20. // 使用@Local装饰Array类型变量，作为数据源传递给子组件的@Param。
-21. @Local count: number[] = [1, 2, 3];
-
-23. build() {
-24. Row() {
-25. Column() {
-26. Child({ count: this.count })
-27. // 对数组整体重新赋值，触发子组件更新。
-28. Button('init array').onClick(() => {
-29. this.count = [9, 8, 7];
-30. })
-31. // 新增数组元素，触发子组件更新。
-32. Button('push').onClick(() => {
-33. this.count.push(0);
-34. })
-35. // 翻转数组元素，触发子组件更新。
-36. Button('reverse').onClick(() => {
-37. this.count.reverse();
-38. })
-39. // 使用同一元素填充数组，触发子组件更新。
-40. Button('fill').onClick(() => {
-41. this.count.fill(6);
-42. })
-43. }
-44. .width('100%')
-45. }
-46. .height('100%')
-47. }
-48. }
-```
-
-[ParamUseSceneArray.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/param/ParamUseSceneArray.ets#L30-L79)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/9DGgjSJvQguM0bH2L3rykQ/zh-cn_image_0000002736432399.gif)
 
 ### 装饰Date类型变量
 
 @Param装饰Date类型变量，可以观察到数据源对Date整体的赋值，以及调用Date的接口setFullYear, setMonth, setDate, setHours, setMinutes, setSeconds, setMilliseconds, setTime, setUTCFullYear, setUTCMonth, setUTCDate, setUTCHours, setUTCMinutes, setUTCSeconds, setUTCMilliseconds带来的变化。
 
+```typescript
+@ComponentV2
+struct DateComponent {
+  // 使用@Param接收父组件传入的Date类型变量。
+  @Param selectedDate: Date = new Date('2024-01-01');
+
+  build() {
+    Column() {
+      DatePicker({
+        start: new Date('1970-1-1'),
+        end: new Date('2100-1-1'),
+        selected: this.selectedDate
+      })
+    }
+    .width('100%')
+  }
+}
+
+@Entry
+@ComponentV2
+struct Index {
+  // 使用@Local装饰Date类型变量，作为数据源传递给子组件的@Param。
+  @Local parentSelectedDate: Date = new Date('2021-08-08');
+
+  build() {
+    Column() {
+      // 对Date类型变量整体重新赋值，触发子组件更新。
+      Button('parent update the new date')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.parentSelectedDate = new Date('2023-07-07');
+        })
+      // 调用Date的setFullYear方法修改年份，触发子组件更新。
+      Button('increase the year by 1')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.parentSelectedDate.setFullYear(this.parentSelectedDate.getFullYear() + 1);
+        })
+      // 调用Date的setMonth方法修改月份，触发子组件更新。
+      Button('increase the month by 1')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.parentSelectedDate.setMonth(this.parentSelectedDate.getMonth() + 1);
+        })
+      // 调用Date的setDate方法修改日期，触发子组件更新。
+      Button('parent increase the day by 1')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.parentSelectedDate.setDate(this.parentSelectedDate.getDate() + 1);
+        })
+      DateComponent({ selectedDate: this.parentSelectedDate })
+    }
+    .width('100%')
+  }
+}
 ```
-1. @ComponentV2
-2. struct DateComponent {
-3. // 使用@Param接收父组件传入的Date类型变量。
-4. @Param selectedDate: Date = new Date('2024-01-01');
 
-6. build() {
-7. Column() {
-8. DatePicker({
-9. start: new Date('1970-1-1'),
-10. end: new Date('2100-1-1'),
-11. selected: this.selectedDate
-12. })
-13. }
-14. }
-15. }
-
-17. @Entry
-18. @ComponentV2
-19. struct Index {
-20. // 使用@Local装饰Date类型变量，作为数据源传递给子组件的@Param。
-21. @Local parentSelectedDate: Date = new Date('2021-08-08');
-
-23. build() {
-24. Column() {
-25. // 对Date类型变量整体重新赋值，触发子组件更新。
-26. Button('parent update the new date')
-27. .margin(10)
-28. .onClick(() => {
-29. this.parentSelectedDate = new Date('2023-07-07');
-30. })
-31. // 调用Date的setFullYear方法修改年份，触发子组件更新。
-32. Button('increase the year by 1')
-33. .margin(10)
-34. .onClick(() => {
-35. this.parentSelectedDate.setFullYear(this.parentSelectedDate.getFullYear() + 1);
-36. })
-37. // 调用Date的setMonth方法修改月份，触发子组件更新。
-38. Button('increase the month by 1')
-39. .margin(10)
-40. .onClick(() => {
-41. this.parentSelectedDate.setMonth(this.parentSelectedDate.getMonth() + 1);
-42. })
-43. // 调用Date的setDate方法修改日期，触发子组件更新。
-44. Button('parent increase the day by 1')
-45. .margin(10)
-46. .onClick(() => {
-47. this.parentSelectedDate.setDate(this.parentSelectedDate.getDate() + 1);
-48. })
-49. DateComponent({ selectedDate: this.parentSelectedDate })
-50. }
-51. }
-52. }
-```
-
-[ParamUseSceneDate.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/param/ParamUseSceneDate.ets#L30-L83)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/vI2RSG4RRVGw--Qa0-F4Zw/zh-cn_image_0000002706833246.gif)
 
 ### 装饰Map类型变量
 
 @Param装饰Map类型变量，可以观察到数据源对Map整体的赋值，以及调用Map的接口set, clear, delete带来的变化。
 
+```typescript
+@ComponentV2
+struct Child {
+  // 使用@Param接收父组件传入的Map类型变量。
+  @Param value: Map<number, string> = new Map();
+
+  build() {
+    Column() {
+      ForEach(Array.from(this.value.entries()), (item: [number, string]) => {
+        Text(`${item[0]}`)
+          .fontSize(30)
+          .margin(10)
+        Text(`${item[1]}`)
+          .fontSize(30)
+          .margin(10)
+        Divider()
+      })
+    }
+    .width('100%')
+  }
+}
+
+@Entry
+@ComponentV2
+struct Index {
+  // 使用@Local装饰Map类型变量，作为数据源传递给子组件的@Param。
+  @Local message: Map<number, string> = new Map([[0, 'a'], [1, 'b'], [3, 'c']]);
+
+  build() {
+    Row() {
+      Column() {
+        Child({ value: this.message })
+        // 对Map整体重新赋值，触发子组件更新。
+        Button('init map')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.message = new Map([[0, 'a'], [1, 'b'], [3, 'c']]);
+          })
+        // 新增键值对，触发子组件更新。
+        Button('set new one')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.message.set(4, 'd');
+          })
+        // 清空Map，触发子组件更新。
+        Button('clear')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.message.clear();
+          })
+        // 更新键值对，触发子组件更新。
+        Button('replace the first one')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.message.set(0, 'aa');
+          })
+        // 删除键值对，触发子组件更新。
+        Button('delete the first one')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.message.delete(0);
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-1. @ComponentV2
-2. struct Child {
-3. // 使用@Param接收父组件传入的Map类型变量。
-4. @Param value: Map<number, string> = new Map();
 
-6. build() {
-7. Column() {
-8. ForEach(Array.from(this.value.entries()), (item: [number, string]) => {
-9. Text(`${item[0]}`).fontSize(30)
-10. Text(`${item[1]}`).fontSize(30)
-11. Divider()
-12. })
-13. }
-14. }
-15. }
-
-17. @Entry
-18. @ComponentV2
-19. struct Index {
-20. // 使用@Local装饰Map类型变量，作为数据源传递给子组件的@Param。
-21. @Local message: Map<number, string> = new Map([[0, 'a'], [1, 'b'], [3, 'c']]);
-
-23. build() {
-24. Row() {
-25. Column() {
-26. Child({ value: this.message })
-27. // 对Map整体重新赋值，触发子组件更新。
-28. Button('init map').onClick(() => {
-29. this.message = new Map([[0, 'a'], [1, 'b'], [3, 'c']]);
-30. })
-31. // 新增键值对，触发子组件更新。
-32. Button('set new one').onClick(() => {
-33. this.message.set(4, 'd');
-34. })
-35. // 清空Map，触发子组件更新。
-36. Button('clear').onClick(() => {
-37. this.message.clear();
-38. })
-39. // 更新键值对，触发子组件更新。
-40. Button('replace the first one').onClick(() => {
-41. this.message.set(0, 'aa');
-42. })
-43. // 删除键值对，触发子组件更新。
-44. Button('delete the first one').onClick(() => {
-45. this.message.delete(0);
-46. })
-47. }
-48. .width('100%')
-49. }
-50. .height('100%')
-51. }
-52. }
-```
-
-[ParamUseSceneMap.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/param/ParamUseSceneMap.ets#L30-L83)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/nmzt8nn2TKG1t3G0hAOiWQ/zh-cn_image_0000002736312355.gif)
 
 ### 装饰Set类型变量
 
 @Param装饰Set类型变量，可以观察到数据源对Set整体的赋值，以及调用Set的接口add, clear, delete带来的变化。
 
+```typescript
+@ComponentV2
+struct Child {
+  // 使用@Param接收父组件传入的Set类型变量。
+  @Param message: Set<number> = new Set();
+
+  build() {
+    Column() {
+      ForEach(Array.from(this.message.entries()), (item: [number, number]) => {
+        Text(`${item[0]}`)
+          .fontSize(30)
+          .margin(10)
+        Divider()
+      })
+    }
+    .width('100%')
+  }
+}
+
+@Entry
+@ComponentV2
+struct Index {
+  // 使用@Local装饰Set类型变量，作为数据源传递给子组件的@Param。
+  @Local message: Set<number> = new Set([0, 1, 2, 3, 4]);
+
+  build() {
+    Row() {
+      Column() {
+        Child({ message: this.message })
+        // 对Set整体重新赋值，触发子组件更新。
+        Button('init set')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.message = new Set([0, 1, 2, 3, 4]);
+          })
+        // 新增元素，触发子组件更新。
+        Button('set new one')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.message.add(5);
+          })
+        // 清空Set，触发子组件更新。
+        Button('clear')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.message.clear();
+          })
+        // 删除元素，触发子组件更新。
+        Button('delete the first one')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.message.delete(0);
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-1. @ComponentV2
-2. struct Child {
-3. // 使用@Param接收父组件传入的Set类型变量。
-4. @Param message: Set<number> = new Set();
 
-6. build() {
-7. Column() {
-8. ForEach(Array.from(this.message.entries()), (item: [number, number]) => {
-9. Text(`${item[0]}`).fontSize(30)
-10. Divider()
-11. })
-12. }
-13. .width('100%')
-14. }
-15. }
-
-17. @Entry
-18. @ComponentV2
-19. struct Index {
-20. // 使用@Local装饰Set类型变量，作为数据源传递给子组件的@Param。
-21. @Local message: Set<number> = new Set([0, 1, 2, 3, 4]);
-
-23. build() {
-24. Row() {
-25. Column() {
-26. Child({ message: this.message })
-27. // 对Set整体重新赋值，触发子组件更新。
-28. Button('init set').onClick(() => {
-29. this.message = new Set([0, 1, 2, 3, 4]);
-30. })
-31. // 新增元素，触发子组件更新。
-32. Button('set new one').onClick(() => {
-33. this.message.add(5);
-34. })
-35. // 清空Set，触发子组件更新。
-36. Button('clear').onClick(() => {
-37. this.message.clear();
-38. })
-39. // 删除元素，触发子组件更新。
-40. Button('delete the first one').onClick(() => {
-41. this.message.delete(0);
-42. })
-43. }
-44. .width('100%')
-45. }
-46. .height('100%')
-47. }
-48. }
-```
-
-[ParamUseSceneSet.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/param/ParamUseSceneSet.ets#L30-L79)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/u0tdvrAdQmqcyJerZcNVcA/zh-cn_image_0000002706673310.gif)
 
 ### 联合类型
 
 @Param支持null、undefined以及联合类型。以下示例中，count类型为number | undefined，点击改变count的类型时，UI会自动刷新。
 
+```typescript
+@Entry
+@ComponentV2
+struct Index {
+  // 使用@Local装饰联合类型变量，作为数据源传递给子组件的@Param。
+  @Local count: number | undefined = 0;
+
+  build() {
+    Column() {
+      MyComponent({ count: this.count })
+      // 修改联合类型值，触发子组件更新。
+      Button('change')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.count = undefined;
+        })
+    }
+  }
+}
+
+@ComponentV2
+struct MyComponent {
+  // 使用@Param接收父组件传入的联合类型变量。
+  @Param count: number | undefined = 0;
+
+  build() {
+    Column() {
+      Text(`count(${this.count})`)
+        .fontSize(30)
+        .margin(10)
+    }
+  }
+}
 ```
-1. @Entry
-2. @ComponentV2
-3. struct Index {
-4. // 使用@Local装饰联合类型变量，作为数据源传递给子组件的@Param。
-5. @Local count: number | undefined = 0;
 
-7. build() {
-8. Column() {
-9. MyComponent({ count: this.count })
-10. // 修改联合类型值，触发子组件更新。
-11. Button('change')
-12. .onClick(() => {
-13. this.count = undefined;
-14. })
-15. }
-16. }
-17. }
-
-19. @ComponentV2
-20. struct MyComponent {
-21. // 使用@Param接收父组件传入的联合类型变量。
-22. @Param count: number | undefined = 0;
-
-24. build() {
-25. Column() {
-26. Text(`count(${this.count})`)
-27. }
-28. }
-29. }
-```
-
-[ParamUseSceneUnite.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/param/ParamUseSceneUnite.ets#L30-L60)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/fMH4Sv5MTw2EvrD1CBs6ow/zh-cn_image_0000002736432401.gif)

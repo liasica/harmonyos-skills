@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“module.json5 file not found.”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“module.json5 file not found.”
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:20:56+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:5a3f5485046b1189fa026d420190bfbdf5a8a21f37f785e3ecc3dd869a56b242
+scraped_at: 2026-09-02T14:54:55+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:c0c37bbcda6d49a9b8e074daac8ae5c8ddb304e0dc2608aaf8fe68ead740fd8a
 ---
 
 **错误描述**
@@ -16,7 +16,7 @@ content_hash: sha256:5a3f5485046b1189fa026d420190bfbdf5a8a21f37f785e3ecc3dd869a5
 
 模块下的module.json5文件缺失。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/n6Ha62LKS-SmG8UqLW07wQ/zh-cn_image_0000002229604093.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/iSlTH2clSiGE3XVVrKNbhg/zh-cn_image_0000002624638540.png)
 
 **解决措施**
 

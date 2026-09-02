@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-overview
 title: UIAbility组件概述
-breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > Stage模型应用组件 > UIAbility组件 > UIAbility组件概述
+breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > UIAbility组件 > UIAbility组件概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:40+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7d613fadcd66757ec18cad21ff0e978ea31bf038f6fcf4a43a889c8051520118
+scraped_at: 2026-09-02T14:59:09+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6e777b0992f1739997b27e1abc84420832169e886bc70b6866aaf504ec65976f
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ UIAbility组件是系统调度的基本单元，为应用提供绘制界面的�
 
   例如，即时通讯类应用中的消息列表与音视频通话采用不同的UIAbility进行开发，既可以方便地切换任务窗口，又可以实现应用的两个任务窗口在一个屏幕上分屏显示。
 
-说明
+**说明** 
 
 任务视图用于快速查看和管理当前设备上运行的所有任务或应用。
 
@@ -38,25 +38,23 @@ UIAbility组件是系统调度的基本单元，为应用提供绘制界面的�
 
 为使应用能够正常使用UIAbility，需要在[module.json5配置文件](module-configuration-file.md)的[abilities标签](module-configuration-file.md#abilities标签)中声明UIAbility的名称、入口、标签等相关信息。
 
+```json5
+{
+  "module": {
+    // ···
+    "abilities": [
+      {
+        "name": "EntryAbility", // UIAbility组件的名称
+        "srcEntry": "./ets/entryability/EntryAbility.ets", // UIAbility组件的代码路径
+        "description": "$string:EntryAbility_desc", // UIAbility组件的描述信息
+        "icon": "$media:layered_image", // UIAbility组件的图标
+        "label": "$string:EntryAbility_label", // UIAbility组件的标签
+        "startWindowIcon": "$media:startIcon", // UIAbility组件启动页面图标资源文件的索引
+        "startWindowBackground": "$color:start_window_background", // UIAbility组件启动页面背景颜色资源文件的索引
+        // ···
+      }
+    ],
+    // ···
+  }
+}
 ```
-1. {
-2. "module": {
-3. // ···
-4. "abilities": [
-5. {
-6. "name": "EntryAbility", // UIAbility组件的名称
-7. "srcEntry": "./ets/entryability/EntryAbility.ets", // UIAbility组件的代码路径
-8. "description": "$string:EntryAbility_desc", // UIAbility组件的描述信息
-9. "icon": "$media:layered_image", // UIAbility组件的图标
-10. "label": "$string:EntryAbility_label", // UIAbility组件对用户显示的名称
-11. "startWindowIcon": "$media:startIcon", // UIAbility组件启动页面图标资源文件的索引
-12. "startWindowBackground": "$color:start_window_background", // UIAbility组件启动页面背景颜色资源文件的索引
-13. // ···
-14. }
-15. ]
-16. // ···
-17. }
-18. }
-```
-
-[module.json5](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/UIAbilityLifecycle/entry/src/main/module.json5#L16-L74)

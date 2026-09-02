@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: Camera_Manager
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 结构体 > Camera_Manager
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:53+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:af935a0bad06324e3202b7bcb88100604c41429e820414382042481ec24380e1
+scraped_at: 2026-09-02T14:52:53+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b3bdb16f89a41b0c304683293766b542e9635402e4898bfec92027b985772e10
 ---
 
-```
-1. typedef struct Camera_Manager Camera_Manager
+```c
+typedef struct Camera_Manager Camera_Manager
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 相机管理器对象。
 

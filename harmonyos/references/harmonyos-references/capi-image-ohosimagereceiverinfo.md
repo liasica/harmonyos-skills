@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: OhosImageReceiverInfo
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 结构体 > OhosImageReceiverInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:32+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:b76c087860c53ce47522adcfdf24252167f16b7d7050d1634a6c150c04872be6
+scraped_at: 2026-09-02T15:02:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:af84060bd702cfef3d3125ea155d0cc2cce7ba4fe44b39da775bd4efab68f1c3
 ---
 
-```
-1. struct OhosImageReceiverInfo {...}
+```c
+struct OhosImageReceiverInfo {...}
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义ImageReceiver的相关信息。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

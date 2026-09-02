@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-m
 title: 辅助接口
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 辅助接口
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:12+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:17:02+08:00
+doc_updated_at: 2026-06-05
 content_hash: sha256:6ea9d87708338c6503a129a45942b8d4dd6038df82a504f12653117242bfe041
 ---
 

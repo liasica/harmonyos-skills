@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-walletkit-b031
 title: Wallet Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Developer Beta2引入的API > Wallet Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Developer Beta2引入的API > Wallet Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:36:45+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:45+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:e1b2cf171a7428114f601d3f385779479cc0c6e2c909640db5fee08c2c303d4f
 ---
 

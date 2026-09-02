@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-neur
 title: OH_NN_Tensor
 breadcrumb: API参考 > AI > Neural Network Runtime Kit（Neural Network运行时服务） > C API > 结构体 > OH_NN_Tensor
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:10+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7e3bdf6d4b5de3f018a1b3b35f4252f1528ffe2efac4c65d5abe622018966ddd
+scraped_at: 2026-09-02T15:03:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f877b84d255131dd217fde3acba5ead0d43b3f749c44b06dc0d0b118082bd77d
 ---
 
-```
-1. typedef struct OH_NN_Tensor {...} OH_NN_Tensor
+```c
+typedef struct OH_NN_Tensor {...} OH_NN_Tensor
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 张量结构体。
 
@@ -32,11 +30,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 成员变量
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |

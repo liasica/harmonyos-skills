@@ -3,36 +3,30 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: AbilityDelegator
 breadcrumb: API参考 > 系统 > 调测调优 > Test Kit（应用测试服务） > ArkTS API > 接口依赖的元素及定义 > AbilityDelegator
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:34+08:00
-doc_updated_at: 2026-03-26
-content_hash: sha256:55b3b81c8a3105be82ff87c874defe468d2a620eaecf3165191aae92a9aec3ad
+scraped_at: 2026-09-02T15:02:17+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c9d723b71c37bce7032b44e308b5899339cf3f0b2a466c55d646a5db7e8f7cfd
 ---
 
-AbilityDelegator模块可以通过[AbilityMonitor](js-apis-inner-application-abilitymonitor.md)实例来监听和管理[UIAbility](js-apis-app-ability-uiability.md)生命周期的变化。例如获取UIAbility当前状态（如是否已创建/是否在前台等）、查询当前获焦的UIAbility、等待UIAbility进入某个生命周期节点（如等待UIAbility进入onForeground）、启动指定UIAbility、设置超时机制等功能。
+AbilityDelegator是用于调度和管理UIAbility测试生命周期的代理控制器，它通过AbilityMonitor机制来监听和管理[UIAbility](js-apis-app-ability-uiability.md)生命周期的变化。例如获取UIAbility当前状态（如是否已创建/是否在前台等）、查询当前获焦的UIAbility、等待UIAbility进入某个生命周期节点（如等待UIAbility进入onForeground）、启动指定UIAbility、设置超时机制等功能。
 
-AbilityDelegator可以通过[getAbilityDelegator](js-apis-app-ability-abilitydelegatorregistry.md#abilitydelegatorregistrygetabilitydelegator)方法获取。
+该模块适用于UIAbility单元测试和集成测试场景，用于验证生命周期行为正确性和模拟用户操作序列。需要注意的是，其接口仅限测试环境使用，不应在正式业务代码中调用。
 
-说明
+**说明** 
 
-本模块首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 本模块接口仅可在[单元测试框架](../harmonyos-guides/unittest-guidelines.md)中使用。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
 ```
 
 ## AbilityDelegator
 
-PhonePC/2in1TabletTVWearable
-
-### addAbilityMonitor9+
-
-PhonePC/2in1TabletTVWearable
+### addAbilityMonitor
 
 addAbilityMonitor(monitor: AbilityMonitor, callback: AsyncCallback<void>): void
 
@@ -55,35 +49,37 @@ addAbilityMonitor(monitor: AbilityMonitor, callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling AddAbilityMonitor failed. |
 
 **示例：**
 
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+// 声明AbilityDelegator对象
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+// 创建AbilityMonitor实例，设置监听的Ability名称和onAbilityCreate生命周期回调
+let monitor: abilityDelegatorRegistry.AbilityMonitor = {
+  abilityName: 'abilityName',
+  onAbilityCreate: onAbilityCreateCallback
+};
+
+let onAbilityCreateCallback = (data: UIAbility) => {
+  console.info(`onAbilityCreateCallback, data: ${JSON.stringify(data)}`);
+}
+
+// 获取AbilityDelegator实例
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+// 调用addAbilityMonitor方法添加监听
+abilityDelegator.addAbilityMonitor(monitor, (error: BusinessError) => {
+  console.error(`addAbilityMonitor fail, error: ${JSON.stringify(error)}`);
+});
 ```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { UIAbility } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-6. let monitor: abilityDelegatorRegistry.AbilityMonitor = {
-7. abilityName: 'abilityName',
-8. onAbilityCreate: onAbilityCreateCallback
-9. };
-
-11. function onAbilityCreateCallback(data: UIAbility) {
-12. console.info(`onAbilityCreateCallback, data: ${JSON.stringify(data)}`);
-13. }
-
-15. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-16. abilityDelegator.addAbilityMonitor(monitor, (error: BusinessError) => {
-17. console.error(`addAbilityMonitor fail, error: ${JSON.stringify(error)}`);
-18. });
-```
-
-### addAbilityMonitor9+
-
-PhonePC/2in1TabletTVWearable
+### addAbilityMonitor
 
 addAbilityMonitor(monitor: AbilityMonitor): Promise<void>
 
@@ -111,33 +107,31 @@ addAbilityMonitor(monitor: AbilityMonitor): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling AddAbilityMonitor failed. |
 
 **示例：**
 
-```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { UIAbility } from '@kit.AbilityKit';
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { UIAbility } from '@kit.AbilityKit';
 
-4. function onAbilityCreateCallback(data: UIAbility) {
-5. console.info('onAbilityCreateCallback');
-6. }
+function onAbilityCreateCallback(data: UIAbility) {
+  console.info('onAbilityCreateCallback');
+}
 
-8. let monitor: abilityDelegatorRegistry.AbilityMonitor = {
-9. abilityName: 'abilityName',
-10. onAbilityCreate: onAbilityCreateCallback
-11. };
-12. let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+let monitor: abilityDelegatorRegistry.AbilityMonitor = {
+  abilityName: 'abilityName',
+  onAbilityCreate: onAbilityCreateCallback
+};
+let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
-14. abilityDelegator.addAbilityMonitor(monitor).then(() => {
-15. console.info('addAbilityMonitor promise');
-16. });
+abilityDelegator.addAbilityMonitor(monitor).then(() => {
+  console.info('addAbilityMonitor promise');
+});
 ```
 
 ### addAbilityMonitorSync10+
-
-PhonePC/2in1TabletTVWearable
 
 addAbilityMonitorSync(monitor: AbilityMonitor): void
 
@@ -159,37 +153,35 @@ addAbilityMonitorSync(monitor: AbilityMonitor): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling AddAbilityMonitorSync failed. |
 
 **示例：**
 
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { UIAbility } from '@kit.AbilityKit';
+
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+
+function onAbilityCreateCallback(data: UIAbility) {
+  console.info('onAbilityCreateCallback');
+}
+
+let monitor: abilityDelegatorRegistry.AbilityMonitor = {
+  abilityName: 'abilityName',
+  onAbilityCreate: onAbilityCreateCallback
+};
+
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.addAbilityMonitorSync(monitor);
 ```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { UIAbility } from '@kit.AbilityKit';
 
-4. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-
-6. function onAbilityCreateCallback(data: UIAbility) {
-7. console.info('onAbilityCreateCallback');
-8. }
-
-10. let monitor: abilityDelegatorRegistry.AbilityMonitor = {
-11. abilityName: 'abilityName',
-12. onAbilityCreate: onAbilityCreateCallback
-13. };
-
-15. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-16. abilityDelegator.addAbilityMonitorSync(monitor);
-```
-
-### removeAbilityMonitor9+
-
-PhonePC/2in1TabletTVWearable
+### removeAbilityMonitor
 
 removeAbilityMonitor(monitor: AbilityMonitor, callback: AsyncCallback<void>): void
 
-删除已经添加的AbilityMonitor实例。使用callback异步回调。
+删除已经添加的AbilityMonitor实例。使用callback异步回调。不支持多线程并发调用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -208,36 +200,34 @@ removeAbilityMonitor(monitor: AbilityMonitor, callback: AsyncCallback<void>): vo
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling RemoveAbilityMonitor failed. |
 
 **示例：**
 
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+
+function onAbilityCreateCallback(data: UIAbility) {
+  console.info('onAbilityCreateCallback');
+}
+
+let monitor: abilityDelegatorRegistry.AbilityMonitor = {
+  abilityName: 'abilityName',
+  onAbilityCreate: onAbilityCreateCallback
+};
+
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.removeAbilityMonitor(monitor, (error: BusinessError) => {
+  console.error(`removeAbilityMonitor fail, error: ${JSON.stringify(error)}`);
+});
 ```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { UIAbility } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-
-7. function onAbilityCreateCallback(data: UIAbility) {
-8. console.info('onAbilityCreateCallback');
-9. }
-
-11. let monitor: abilityDelegatorRegistry.AbilityMonitor = {
-12. abilityName: 'abilityName',
-13. onAbilityCreate: onAbilityCreateCallback
-14. };
-
-16. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-17. abilityDelegator.removeAbilityMonitor(monitor, (error: BusinessError) => {
-18. console.error(`removeAbilityMonitor fail, error: ${JSON.stringify(error)}`);
-19. });
-```
-
-### removeAbilityMonitor9+
-
-PhonePC/2in1TabletTVWearable
+### removeAbilityMonitor
 
 removeAbilityMonitor(monitor: AbilityMonitor): Promise<void>
 
@@ -265,34 +255,32 @@ removeAbilityMonitor(monitor: AbilityMonitor): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling RemoveAbilityMonitor failed. |
 
-* 示例
+**示例**：
 
-```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { UIAbility } from '@kit.AbilityKit';
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { UIAbility } from '@kit.AbilityKit';
 
-4. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-5. let monitor: abilityDelegatorRegistry.AbilityMonitor = {
-6. abilityName: 'abilityName',
-7. onAbilityCreate: onAbilityCreateCallback
-8. };
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+let monitor: abilityDelegatorRegistry.AbilityMonitor = {
+  abilityName: 'abilityName',
+  onAbilityCreate: onAbilityCreateCallback
+};
 
-10. function onAbilityCreateCallback(data: UIAbility) {
-11. console.info('onAbilityCreateCallback');
-12. }
+function onAbilityCreateCallback(data: UIAbility) {
+  console.info('onAbilityCreateCallback');
+}
 
-14. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-15. abilityDelegator.removeAbilityMonitor(monitor).then(() => {
-16. console.info('removeAbilityMonitor promise');
-17. });
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.removeAbilityMonitor(monitor).then(() => {
+  console.info('removeAbilityMonitor promise');
+});
 ```
 
 ### removeAbilityMonitorSync10+
-
-PhonePC/2in1TabletTVWearable
 
 removeAbilityMonitorSync(monitor: AbilityMonitor): void
 
@@ -314,32 +302,30 @@ removeAbilityMonitorSync(monitor: AbilityMonitor): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling RemoveAbilityMonitorSync failed. |
 
 **示例：**
 
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { UIAbility } from '@kit.AbilityKit';
+
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+let monitor: abilityDelegatorRegistry.AbilityMonitor = {
+  abilityName: 'abilityName',
+  onAbilityCreate: onAbilityCreateCallback
+};
+
+function onAbilityCreateCallback(data: UIAbility) {
+  console.info('onAbilityCreateCallback');
+}
+
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.removeAbilityMonitorSync(monitor);
 ```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { UIAbility } from '@kit.AbilityKit';
 
-4. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-5. let monitor: abilityDelegatorRegistry.AbilityMonitor = {
-6. abilityName: 'abilityName',
-7. onAbilityCreate: onAbilityCreateCallback
-8. };
-
-10. function onAbilityCreateCallback(data: UIAbility) {
-11. console.info('onAbilityCreateCallback');
-12. }
-
-14. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-15. abilityDelegator.removeAbilityMonitorSync(monitor);
-```
-
-### waitAbilityMonitor9+
-
-PhonePC/2in1TabletTVWearable
+### waitAbilityMonitor
 
 waitAbilityMonitor(monitor: AbilityMonitor, callback: AsyncCallback<UIAbility>): void
 
@@ -362,39 +348,37 @@ waitAbilityMonitor(monitor: AbilityMonitor, callback: AsyncCallback<UIAbility>):
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling WaitAbilityMonitor failed. |
 
 **示例：**
 
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+let monitor: abilityDelegatorRegistry.AbilityMonitor = {
+  abilityName: 'abilityName',
+  onAbilityCreate: onAbilityCreateCallback
+};
+
+let onAbilityCreateCallback = (data: UIAbility) => {
+  console.info(`onAbilityCreateCallback, data: ${JSON.stringify(data)}`);
+}
+
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.waitAbilityMonitor(monitor, (error: BusinessError, data: UIAbility) => {
+  if (error) {
+    console.error(`waitAbilityMonitor fail, error: ${JSON.stringify(error)}`);
+  } else {
+    console.info(`waitAbilityMonitor success, data: ${JSON.stringify(data)}`);
+  }
+});
 ```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { UIAbility } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-6. let monitor: abilityDelegatorRegistry.AbilityMonitor = {
-7. abilityName: 'abilityName',
-8. onAbilityCreate: onAbilityCreateCallback
-9. };
-
-11. function onAbilityCreateCallback(data: UIAbility) {
-12. console.info(`onAbilityCreateCallback, data: ${JSON.stringify(data)}`);
-13. }
-
-15. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-16. abilityDelegator.waitAbilityMonitor(monitor, (error: BusinessError, data: UIAbility) => {
-17. if (error) {
-18. console.error(`waitAbilityMonitor fail, error: ${JSON.stringify(error)}`);
-19. } else {
-20. console.info(`waitAbilityMonitor success, data: ${JSON.stringify(data)}`);
-21. }
-22. });
-```
-
-### waitAbilityMonitor9+
-
-PhonePC/2in1TabletTVWearable
+### waitAbilityMonitor
 
 waitAbilityMonitor(monitor: AbilityMonitor, timeout: number, callback: AsyncCallback<UIAbility>): void
 
@@ -418,40 +402,43 @@ waitAbilityMonitor(monitor: AbilityMonitor, timeout: number, callback: AsyncCall
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling WaitAbilityMonitor failed. |
 
 **示例：**
 
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+// 声明AbilityDelegator对象
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+// 设置最大等待时间（毫秒）
+let timeout = 100;
+// 创建AbilityMonitor实例，设置监听的Ability名称
+let monitor: abilityDelegatorRegistry.AbilityMonitor = {
+  abilityName: 'abilityName',
+  onAbilityCreate: onAbilityCreateCallback
+};
+
+function onAbilityCreateCallback(data: UIAbility) {
+  console.info(`onAbilityCreateCallback, data: ${JSON.stringify(data)}.`);
+}
+
+// 获取AbilityDelegator实例
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+// 调用waitAbilityMonitor并传入超时参数等待匹配Ability
+abilityDelegator.waitAbilityMonitor(monitor, timeout, (error: BusinessError, data: UIAbility) => {
+  if (error && error.code !== 0) {
+    console.error(`waitAbilityMonitor fail, error: ${JSON.stringify(error)}`);
+  } else {
+    console.info(`waitAbilityMonitor success, data: ${JSON.stringify(data)}`);
+  }
+});
 ```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { UIAbility } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-6. let timeout = 100;
-7. let monitor: abilityDelegatorRegistry.AbilityMonitor = {
-8. abilityName: 'abilityName',
-9. onAbilityCreate: onAbilityCreateCallback
-10. };
-
-12. function onAbilityCreateCallback(data: UIAbility) {
-13. console.info(`onAbilityCreateCallback, data: ${JSON.stringify(data)}.`);
-14. }
-
-16. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-17. abilityDelegator.waitAbilityMonitor(monitor, timeout, (error: BusinessError, data: UIAbility) => {
-18. if (error && error.code !== 0) {
-19. console.error(`waitAbilityMonitor fail, error: ${JSON.stringify(error)}`);
-20. } else {
-21. console.info(`waitAbilityMonitor success, data: ${JSON.stringify(data)}`);
-22. }
-23. });
-```
-
-### waitAbilityMonitor9+
-
-PhonePC/2in1TabletTVWearable
+### waitAbilityMonitor
 
 waitAbilityMonitor(monitor: AbilityMonitor, timeout?: number): Promise<UIAbility>
 
@@ -480,34 +467,32 @@ waitAbilityMonitor(monitor: AbilityMonitor, timeout?: number): Promise<UIAbility
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling WaitAbilityMonitor failed. |
 
 **示例：**
 
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { UIAbility } from '@kit.AbilityKit';
+
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+let monitor: abilityDelegatorRegistry.AbilityMonitor = {
+  abilityName: 'abilityName',
+  onAbilityCreate: onAbilityCreateCallback
+};
+
+function onAbilityCreateCallback(data: UIAbility) {
+  console.info('onAbilityCreateCallback');
+}
+
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.waitAbilityMonitor(monitor).then((data: UIAbility) => {
+  console.info('waitAbilityMonitor promise');
+});
 ```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { UIAbility } from '@kit.AbilityKit';
 
-4. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-5. let monitor: abilityDelegatorRegistry.AbilityMonitor = {
-6. abilityName: 'abilityName',
-7. onAbilityCreate: onAbilityCreateCallback
-8. };
-
-10. function onAbilityCreateCallback(data: UIAbility) {
-11. console.info('onAbilityCreateCallback');
-12. }
-
-14. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-15. abilityDelegator.waitAbilityMonitor(monitor).then((data: UIAbility) => {
-16. console.info('waitAbilityMonitor promise');
-17. });
-```
-
-### getAppContext9+
-
-PhonePC/2in1TabletTVWearable
+### getAppContext
 
 getAppContext(): Context
 
@@ -525,23 +510,21 @@ getAppContext(): Context
 
 **示例：**
 
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+
+let context = abilityDelegator.getAppContext();
 ```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
 
-3. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-
-5. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-
-7. let context = abilityDelegator.getAppContext();
-```
-
-### getAbilityState9+
-
-PhonePC/2in1TabletTVWearable
+### getAbilityState
 
 getAbilityState(ability: UIAbility): number
 
-获取指定ability的生命周期状态。
+获取指定Ability的生命周期状态。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -565,34 +548,32 @@ getAbilityState(ability: UIAbility): number
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 
 **示例：**
 
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+let ability: UIAbility;
+
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.getCurrentTopAbility((err: BusinessError, data: UIAbility) => {
+  console.info('getCurrentTopAbility callback');
+  ability = data;
+  let state = abilityDelegator.getAbilityState(ability);
+  console.info(`getAbilityState ${state}`);
+});
 ```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { UIAbility } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-6. let ability: UIAbility;
-
-8. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-9. abilityDelegator.getCurrentTopAbility((err: BusinessError, data: UIAbility) => {
-10. console.info('getCurrentTopAbility callback');
-11. ability = data;
-12. let state = abilityDelegator.getAbilityState(ability);
-13. console.info(`getAbilityState ${state}`);
-14. });
-```
-
-### getCurrentTopAbility9+
-
-PhonePC/2in1TabletTVWearable
+### getCurrentTopAbility
 
 getCurrentTopAbility(callback: AsyncCallback<UIAbility>): void
 
-获取当前应用顶部Ability。使用callback异步回调。不支持Worker线程调用。
+获取当前应用顶部Ability。使用callback异步回调。不支持Worker线程调用。不支持多线程并发调用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -610,33 +591,31 @@ getCurrentTopAbility(callback: AsyncCallback<UIAbility>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling GetCurrentTopAbility failed. |
 
 **示例：**
 
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+let ability: UIAbility;
+
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.getCurrentTopAbility((err: BusinessError, data: UIAbility) => {
+  console.info('getCurrentTopAbility callback');
+  ability = data;
+});
 ```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { UIAbility } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-6. let ability: UIAbility;
-
-8. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-9. abilityDelegator.getCurrentTopAbility((err: BusinessError, data: UIAbility) => {
-10. console.info('getCurrentTopAbility callback');
-11. ability = data;
-12. });
-```
-
-### getCurrentTopAbility9+
-
-PhonePC/2in1TabletTVWearable
+### getCurrentTopAbility
 
 getCurrentTopAbility(): Promise<UIAbility>
 
-获取当前应用顶部Ability。使用Promise异步回调。不支持Worker线程调用。
+获取当前应用顶部Ability。使用Promise异步回调。不支持Worker线程调用。不支持多线程并发调用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -646,7 +625,7 @@ getCurrentTopAbility(): Promise<UIAbility>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[UIAbility](js-apis-app-ability-uiability.md)> | Promise对象，返回前应用顶部Ability。 |
+| Promise<[UIAbility](js-apis-app-ability-uiability.md)> | Promise对象，返回当前应用顶部Ability。 |
 
 **错误码**：
 
@@ -658,27 +637,25 @@ getCurrentTopAbility(): Promise<UIAbility>
 
 **示例：**
 
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { UIAbility } from '@kit.AbilityKit';
+
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+let ability: UIAbility;
+
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.getCurrentTopAbility().then((data: UIAbility) => {
+  console.info('getCurrentTopAbility promise');
+  ability = data;
+});
 ```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { UIAbility } from '@kit.AbilityKit';
 
-4. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-5. let ability: UIAbility;
-
-7. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-8. abilityDelegator.getCurrentTopAbility().then((data: UIAbility) => {
-9. console.info('getCurrentTopAbility promise');
-10. ability = data;
-11. });
-```
-
-### startAbility9+
-
-PhonePC/2in1TabletTVWearable
+### startAbility
 
 startAbility(want: Want, callback: AsyncCallback<void>): void
 
-启动指定Ability。使用callback异步回调。
+启动指定Ability。使用callback异步回调。不支持多线程并发调用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -697,7 +674,7 @@ startAbility(want: Want, callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000001 | The specified ability does not exist. |
 | 16000002 | Incorrect ability type. |
 | 16000004 | Cannot start an invisible component. |
@@ -707,8 +684,8 @@ startAbility(want: Want, callback: AsyncCallback<void>): void
 | 16000009 | An ability cannot be started or stopped in Wukong mode. |
 | 16000010 | The call with the continuation and prepare continuation flag is forbidden. |
 | 16000011 | The context does not exist. |
-| 16000012 | The application is controlled. |
-| 16000013 | The application is controlled by EDM. |
+| 16000012 | The application is controlled.  适用版本：10+ |
+| 16000013 | The application is controlled by EDM.  适用版本：10+ |
 | 16000050 | Internal error. |
 | 16000053 | The ability is not on the top of the UI. |
 | 16000055 | Installation-free timed out. |
@@ -716,30 +693,32 @@ startAbility(want: Want, callback: AsyncCallback<void>): void
 
 **示例：**
 
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+// 声明AbilityDelegator对象
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+// 构造Want参数，指定目标Ability的bundleName和abilityName
+let want: Want = {
+  bundleName: 'bundleName',
+  abilityName: 'abilityName'
+};
+
+// 获取AbilityDelegator实例
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+// 调用startAbility启动指定Ability
+abilityDelegator.startAbility(want, (err: BusinessError, data: void) => {
+  console.info('startAbility callback');
+});
 ```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { Want } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-6. let want: Want = {
-7. bundleName: 'bundleName',
-8. abilityName: 'abilityName'
-9. };
-
-11. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-12. abilityDelegator.startAbility(want, (err: BusinessError, data: void) => {
-13. console.info('startAbility callback');
-14. });
-```
-
-### startAbility9+
-
-PhonePC/2in1TabletTVWearable
+### startAbility
 
 startAbility(want: Want): Promise<void>
 
-启动指定Ability。使用Promise异步回调。
+启动指定Ability。使用Promise异步回调。不支持多线程并发调用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -763,7 +742,7 @@ startAbility(want: Want): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000001 | The specified ability does not exist. |
 | 16000002 | Incorrect ability type. |
 | 16000004 | Cannot start an invisible component. |
@@ -773,8 +752,8 @@ startAbility(want: Want): Promise<void>
 | 16000009 | An ability cannot be started or stopped in Wukong mode. |
 | 16000010 | The call with the continuation and prepare continuation flag is forbidden. |
 | 16000011 | The context does not exist. |
-| 16000012 | The application is controlled. |
-| 16000013 | The application is controlled by EDM. |
+| 16000012 | The application is controlled.  适用版本：10+ |
+| 16000013 | The application is controlled by EDM.  适用版本：10+ |
 | 16000050 | Internal error. |
 | 16000053 | The ability is not on the top of the UI. |
 | 16000055 | Installation-free timed out. |
@@ -782,29 +761,27 @@ startAbility(want: Want): Promise<void>
 
 **示例：**
 
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { Want } from '@kit.AbilityKit';
+
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+let want: Want = {
+  bundleName: 'bundleName',
+  abilityName: 'abilityName'
+};
+
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.startAbility(want).then((data: void) => {
+  console.info('startAbility promise');
+});
 ```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { Want } from '@kit.AbilityKit';
 
-4. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-5. let want: Want = {
-6. bundleName: 'bundleName',
-7. abilityName: 'abilityName'
-8. };
-
-10. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-11. abilityDelegator.startAbility(want).then((data: void) => {
-12. console.info('startAbility promise');
-13. });
-```
-
-### doAbilityForeground9+
-
-PhonePC/2in1TabletTVWearable
+### doAbilityForeground
 
 doAbilityForeground(ability: UIAbility, callback: AsyncCallback<void>): void
 
-调度指定Ability生命周期状态到Foreground状态。使用callback异步回调。
+调度指定Ability生命周期状态到Foreground状态。使用callback异步回调。不支持多线程并发调用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -823,36 +800,42 @@ doAbilityForeground(ability: UIAbility, callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling DoAbilityForeground failed. |
 
 **示例：**
 
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+let ability: UIAbility;
+
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.getCurrentTopAbility((err: BusinessError, data: UIAbility) => {
+  if (err) {
+    console.error(`getCurrentTopAbility fail. Code: ${err.code}, message: ${err.message}`);
+  } else {
+    console.info('getCurrentTopAbility callback');
+    ability = data;
+    abilityDelegator.doAbilityForeground(ability, (err: BusinessError) => {
+      if (err) {
+        console.error(`doAbilityForeground fail. Code: ${err.code}, message: ${err.message}`);
+      } else {
+        console.info('doAbilityForeground callback');
+      }
+    });
+  }
+});
 ```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { UIAbility } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-6. let ability: UIAbility;
-
-8. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-9. abilityDelegator.getCurrentTopAbility((err: BusinessError, data: UIAbility) => {
-10. console.info('getCurrentTopAbility callback');
-11. ability = data;
-12. abilityDelegator.doAbilityForeground(ability, (err: BusinessError) => {
-13. console.info("doAbilityForeground callback");
-14. });
-15. });
-```
-
-### doAbilityForeground9+
-
-PhonePC/2in1TabletTVWearable
+### doAbilityForeground
 
 doAbilityForeground(ability: UIAbility): Promise<void>
 
-调度指定Ability生命周期状态到Foreground状态。使用Promise异步回调。
+调度指定Ability生命周期状态到Foreground状态。使用Promise异步回调。不支持多线程并发调用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -876,36 +859,34 @@ doAbilityForeground(ability: UIAbility): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling DoAbilityForeground failed. |
 
 **示例：**
 
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+let ability: UIAbility;
+
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.getCurrentTopAbility((err: BusinessError, data: UIAbility) => {
+  console.info('getCurrentTopAbility callback');
+  ability = data;
+  abilityDelegator.doAbilityForeground(ability).then(() => {
+    console.info("doAbilityForeground promise");
+  });
+});
 ```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { UIAbility } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-6. let ability: UIAbility;
-
-8. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-9. abilityDelegator.getCurrentTopAbility((err: BusinessError, data: UIAbility) => {
-10. console.info('getCurrentTopAbility callback');
-11. ability = data;
-12. abilityDelegator.doAbilityForeground(ability).then(() => {
-13. console.info("doAbilityForeground promise");
-14. });
-15. });
-```
-
-### doAbilityBackground9+
-
-PhonePC/2in1TabletTVWearable
+### doAbilityBackground
 
 doAbilityBackground(ability: UIAbility, callback: AsyncCallback<void>): void
 
-调度指定Ability生命周期状态到Background状态。使用callback异步回调。
+调度指定Ability生命周期状态到Background状态。使用callback异步回调。不支持多线程并发调用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -924,36 +905,34 @@ doAbilityBackground(ability: UIAbility, callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling DoAbilityBackground failed. |
 
 **示例：**
 
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+let ability: UIAbility;
+
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.getCurrentTopAbility((err: BusinessError, data: UIAbility) => {
+  console.info('getCurrentTopAbility callback');
+  ability = data;
+  abilityDelegator.doAbilityBackground(ability, (err: BusinessError) => {
+    console.info("doAbilityBackground callback");
+  });
+});
 ```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { UIAbility } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-6. let ability: UIAbility;
-
-8. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-9. abilityDelegator.getCurrentTopAbility((err: BusinessError, data: UIAbility) => {
-10. console.info('getCurrentTopAbility callback');
-11. ability = data;
-12. abilityDelegator.doAbilityBackground(ability, (err: BusinessError) => {
-13. console.info("doAbilityBackground callback");
-14. });
-15. });
-```
-
-### doAbilityBackground9+
-
-PhonePC/2in1TabletTVWearable
+### doAbilityBackground
 
 doAbilityBackground(ability: UIAbility): Promise<void>
 
-调度指定Ability生命周期状态到Background状态。使用Promise异步回调。
+调度指定Ability生命周期状态到Background状态。使用Promise异步回调。不支持多线程并发调用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -977,32 +956,30 @@ doAbilityBackground(ability: UIAbility): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling DoAbilityBackground failed. |
 
 **示例：**
 
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+let ability: UIAbility;
+
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.getCurrentTopAbility((err: BusinessError, data: UIAbility) => {
+  console.info('getCurrentTopAbility callback');
+  ability = data;
+  abilityDelegator.doAbilityBackground(ability).then(() => {
+    console.info("doAbilityBackground promise");
+  });
+});
 ```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { UIAbility } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-6. let ability: UIAbility;
-
-8. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-9. abilityDelegator.getCurrentTopAbility((err: BusinessError, data: UIAbility) => {
-10. console.info('getCurrentTopAbility callback');
-11. ability = data;
-12. abilityDelegator.doAbilityBackground(ability).then(() => {
-13. console.info("doAbilityBackground promise");
-14. });
-15. });
-```
-
-### printSync9+
-
-PhonePC/2in1TabletTVWearable
+### printSync
 
 printSync(msg: string): void
 
@@ -1024,23 +1001,21 @@ printSync(msg: string): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 
 **示例：**
 
-```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
 
-3. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-4. let msg = 'msg';
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+let msg = 'msg';
 
-6. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-7. abilityDelegator.printSync(msg);
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.printSync(msg);
 ```
 
 ### print
-
-PhonePC/2in1TabletTVWearable
 
 print(msg: string, callback: AsyncCallback<void>): void
 
@@ -1059,22 +1034,20 @@ print(msg: string, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-5. let msg = 'msg';
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+let msg = 'msg';
 
-7. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-8. abilityDelegator.print(msg, (err: BusinessError) => {
-9. console.info('print callback');
-10. });
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.print(msg, (err: BusinessError) => {
+  console.info('print callback');
+});
 ```
 
 ### print
-
-PhonePC/2in1TabletTVWearable
 
 print(msg: string): Promise<void>
 
@@ -1098,27 +1071,25 @@ print(msg: string): Promise<void>
 
 **示例：**
 
-```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
 
-3. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-4. let msg = 'msg';
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+let msg = 'msg';
 
-6. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-7. abilityDelegator.print(msg).then(() => {
-8. console.info('print promise');
-9. });
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.print(msg).then(() => {
+  console.info('print promise');
+});
 ```
 
 ### executeShellCommand
 
-PhonePC/2in1TabletTVWearable
-
 executeShellCommand(cmd: string, callback: AsyncCallback<ShellCmdResult>): void
 
-执行指定的shell命令。使用callback异步回调。
+执行指定的shell命令。使用callback异步回调。不支持多线程并发调用。
 
-仅支持如下shell命令：aa, bm, cp, mkdir, rm, uinput, hilog, ppwd, echo, uitest, acm, hidumper, wukong, pkill, ps, pidof
+仅支持如下shell命令：aa, bm, cp, mkdir, rm, uinput, hilog, ppwd, echo, uitest, acm, hidumper, wukong, pkill, ps, pidof。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1133,28 +1104,29 @@ executeShellCommand(cmd: string, callback: AsyncCallback<ShellCmdResult>): void
 
 **示例：**
 
-```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-5. let cmd = 'cmd';
+// 声明AbilityDelegator对象
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+// 设置要执行的shell命令字符串
+let cmd = 'cmd';
 
-7. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-8. abilityDelegator.executeShellCommand(cmd, (err: BusinessError, data: abilityDelegatorRegistry.ShellCmdResult) => {
-9. console.info('executeShellCommand callback');
-10. });
+// 获取AbilityDelegator实例并执行shell命令
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.executeShellCommand(cmd, (err: BusinessError, data: abilityDelegatorRegistry.ShellCmdResult) => {
+  console.info('executeShellCommand callback');
+});
 ```
 
 ### executeShellCommand
 
-PhonePC/2in1TabletTVWearable
-
 executeShellCommand(cmd: string, timeoutSecs: number, callback: AsyncCallback<ShellCmdResult>): void
 
-指定超时时间，并执行指定的shell命令。使用callback异步回调。
+指定超时时间，并执行指定的shell命令。使用callback异步回调。不支持多线程并发调用。
 
-仅支持如下shell命令：aa, bm, cp, mkdir, rm, uinput, hilog, ppwd, echo, uitest, acm, hidumper, wukong, pkill, ps, pidof
+仅支持如下shell命令：aa, bm, cp, mkdir, rm, uinput, hilog, ppwd, echo, uitest, acm, hidumper, wukong, pkill, ps, pidof。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1170,29 +1142,27 @@ executeShellCommand(cmd: string, timeoutSecs: number, callback: AsyncCallback<Sh
 
 **示例：**
 
-```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-5. let cmd = 'cmd';
-6. let timeout = 100;
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+let cmd = 'cmd';
+let timeout = 100;
 
-8. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-9. abilityDelegator.executeShellCommand(cmd, timeout, (err: BusinessError, data: abilityDelegatorRegistry.ShellCmdResult) => {
-10. console.info('executeShellCommand callback');
-11. });
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.executeShellCommand(cmd, timeout, (err: BusinessError, data: abilityDelegatorRegistry.ShellCmdResult) => {
+  console.info('executeShellCommand callback');
+});
 ```
 
 ### executeShellCommand
 
-PhonePC/2in1TabletTVWearable
-
 executeShellCommand(cmd: string, timeoutSecs?: number): Promise<ShellCmdResult>
 
-指定超时时间，并执行指定的shell命令。使用Promise异步回调。
+指定超时时间，并执行指定的shell命令。使用Promise异步回调。不支持多线程并发调用。
 
-仅支持如下shell命令：aa, bm, cp, mkdir, rm, uinput, hilog, ppwd, echo, uitest, acm, hidumper, wukong, pkill, ps, pidof
+仅支持如下shell命令：aa, bm, cp, mkdir, rm, uinput, hilog, ppwd, echo, uitest, acm, hidumper, wukong, pkill, ps, pidof。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1213,22 +1183,20 @@ executeShellCommand(cmd: string, timeoutSecs?: number): Promise<ShellCmdResult>
 
 **示例：**
 
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+let cmd = 'cmd';
+let timeout = 100;
+
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.executeShellCommand(cmd, timeout).then((data) => {
+  console.info('executeShellCommand promise');
+});
 ```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
 
-3. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-4. let cmd = 'cmd';
-5. let timeout = 100;
-
-7. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-8. abilityDelegator.executeShellCommand(cmd, timeout).then((data) => {
-9. console.info('executeShellCommand promise');
-10. });
-```
-
-### finishTest9+
-
-PhonePC/2in1TabletTVWearable
+### finishTest
 
 finishTest(msg: string, code: number, callback: AsyncCallback<void>): void
 
@@ -1252,27 +1220,25 @@ finishTest(msg: string, code: number, callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling FinishTest failed. |
 
 **示例：**
 
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+let msg = 'msg';
+
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.finishTest(msg, 0, (err: BusinessError) => {
+  console.info('finishTest callback');
+});
 ```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-5. let msg = 'msg';
-
-7. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-8. abilityDelegator.finishTest(msg, 0, (err: BusinessError) => {
-9. console.info('finishTest callback');
-10. });
-```
-
-### finishTest9+
-
-PhonePC/2in1TabletTVWearable
+### finishTest
 
 finishTest(msg: string, code: number): Promise<void>
 
@@ -1301,30 +1267,28 @@ finishTest(msg: string, code: number): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling FinishTest failed. |
 
 **示例：**
 
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+let msg = 'msg';
+
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.finishTest(msg, 0).then(() => {
+  console.info('finishTest promise');
+});
 ```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
 
-3. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-4. let msg = 'msg';
-
-6. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-7. abilityDelegator.finishTest(msg, 0).then(() => {
-8. console.info('finishTest promise');
-9. });
-```
-
-### addAbilityStageMonitor9+
-
-PhonePC/2in1TabletTVWearable
+### addAbilityStageMonitor
 
 addAbilityStageMonitor(monitor: AbilityStageMonitor, callback: AsyncCallback<void>): void
 
-添加一个AbilityStageMonitor对象，用于监视指定AbilityStage的生命周期状态更改。使用callback异步回调。
+添加一个AbilityStageMonitor对象，用于监视指定AbilityStage的生命周期状态更改。使用callback异步回调。不支持多线程并发调用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1343,29 +1307,27 @@ addAbilityStageMonitor(monitor: AbilityStageMonitor, callback: AsyncCallback<voi
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling AddAbilityStageMonitor failed. |
 
 **示例：**
 
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.addAbilityStageMonitor({
+  moduleName: 'moduleName',
+  srcEntrance: 'srcEntrance',
+}, (err: BusinessError) => {
+  console.info('addAbilityStageMonitor callback');
+});
 ```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-
-6. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-7. abilityDelegator.addAbilityStageMonitor({
-8. moduleName: 'moduleName',
-9. srcEntrance: 'srcEntrance',
-10. }, (err: BusinessError) => {
-11. console.info('addAbilityStageMonitor callback');
-12. });
-```
-
-### addAbilityStageMonitor9+
-
-PhonePC/2in1TabletTVWearable
+### addAbilityStageMonitor
 
 addAbilityStageMonitor(monitor: AbilityStageMonitor): Promise<void>
 
@@ -1393,28 +1355,26 @@ addAbilityStageMonitor(monitor: AbilityStageMonitor): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling AddAbilityStageMonitor failed. |
 
 **示例：**
 
-```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
 
-3. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
 
-5. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-6. abilityDelegator.addAbilityStageMonitor({
-7. moduleName: 'moduleName',
-8. srcEntrance: 'srcEntrance',
-9. }).then(() => {
-10. console.info('addAbilityStageMonitor promise');
-11. });
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.addAbilityStageMonitor({
+  moduleName: 'moduleName',
+  srcEntrance: 'srcEntrance',
+}).then(() => {
+  console.info('addAbilityStageMonitor promise');
+});
 ```
 
 ### addAbilityStageMonitorSync10+
-
-PhonePC/2in1TabletTVWearable
 
 addAbilityStageMonitorSync(monitor: AbilityStageMonitor): void
 
@@ -1436,26 +1396,24 @@ addAbilityStageMonitorSync(monitor: AbilityStageMonitor): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling AddAbilityStageMonitorSync failed. |
 
 **示例：**
 
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.addAbilityStageMonitorSync({
+  moduleName: 'moduleName',
+  srcEntrance: 'srcEntrance',
+});
 ```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
 
-3. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-
-5. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-6. abilityDelegator.addAbilityStageMonitorSync({
-7. moduleName: 'moduleName',
-8. srcEntrance: 'srcEntrance',
-9. });
-```
-
-### removeAbilityStageMonitor9+
-
-PhonePC/2in1TabletTVWearable
+### removeAbilityStageMonitor
 
 removeAbilityStageMonitor(monitor: AbilityStageMonitor, callback: AsyncCallback<void>): void
 
@@ -1478,29 +1436,27 @@ removeAbilityStageMonitor(monitor: AbilityStageMonitor, callback: AsyncCallback<
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling RemoveAbilityStageMonitor failed. |
 
 **示例：**
 
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.removeAbilityStageMonitor({
+  moduleName: 'moduleName',
+  srcEntrance: 'srcEntrance',
+}, (err: BusinessError) => {
+  console.info('removeAbilityStageMonitor callback');
+});
 ```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-
-6. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-7. abilityDelegator.removeAbilityStageMonitor({
-8. moduleName: 'moduleName',
-9. srcEntrance: 'srcEntrance',
-10. }, (err: BusinessError) => {
-11. console.info('removeAbilityStageMonitor callback');
-12. });
-```
-
-### removeAbilityStageMonitor9+
-
-PhonePC/2in1TabletTVWearable
+### removeAbilityStageMonitor
 
 removeAbilityStageMonitor(monitor: AbilityStageMonitor): Promise<void>
 
@@ -1528,28 +1484,26 @@ removeAbilityStageMonitor(monitor: AbilityStageMonitor): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling RemoveAbilityStageMonitor failed. |
 
 **示例：**
 
-```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
 
-3. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
 
-5. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-6. abilityDelegator.removeAbilityStageMonitor({
-7. moduleName: 'moduleName',
-8. srcEntrance: 'srcEntrance',
-9. }).then(() => {
-10. console.info('removeAbilityStageMonitor promise');
-11. });
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.removeAbilityStageMonitor({
+  moduleName: 'moduleName',
+  srcEntrance: 'srcEntrance',
+}).then(() => {
+  console.info('removeAbilityStageMonitor promise');
+});
 ```
 
 ### removeAbilityStageMonitorSync10+
-
-PhonePC/2in1TabletTVWearable
 
 removeAbilityStageMonitorSync(monitor: AbilityStageMonitor): void
 
@@ -1571,26 +1525,24 @@ removeAbilityStageMonitorSync(monitor: AbilityStageMonitor): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling RemoveAbilityStageMonitorSync failed. |
 
 **示例：**
 
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.removeAbilityStageMonitorSync({
+  moduleName: 'moduleName',
+  srcEntrance: 'srcEntrance',
+});
 ```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
 
-3. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-
-5. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-6. abilityDelegator.removeAbilityStageMonitorSync({
-7. moduleName: 'moduleName',
-8. srcEntrance: 'srcEntrance',
-9. });
-```
-
-### waitAbilityStageMonitor9+
-
-PhonePC/2in1TabletTVWearable
+### waitAbilityStageMonitor
 
 waitAbilityStageMonitor(monitor: AbilityStageMonitor, callback: AsyncCallback<AbilityStage>): void
 
@@ -1613,30 +1565,28 @@ waitAbilityStageMonitor(monitor: AbilityStageMonitor, callback: AsyncCallback<Ab
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling WaitAbilityStageMonitor failed. |
 
 **示例：**
 
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { AbilityStage } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.waitAbilityStageMonitor({
+  moduleName: 'moduleName',
+  srcEntrance: 'srcEntrance',
+}, (err: BusinessError, data: AbilityStage) => {
+  console.info('waitAbilityStageMonitor callback');
+});
 ```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { AbilityStage } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-
-7. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-8. abilityDelegator.waitAbilityStageMonitor({
-9. moduleName: 'moduleName',
-10. srcEntrance: 'srcEntrance',
-11. }, (err: BusinessError, data: AbilityStage) => {
-12. console.info('waitAbilityStageMonitor callback');
-13. });
-```
-
-### waitAbilityStageMonitor9+
-
-PhonePC/2in1TabletTVWearable
+### waitAbilityStageMonitor
 
 waitAbilityStageMonitor(monitor: AbilityStageMonitor, timeout?: number): Promise<AbilityStage>
 
@@ -1665,29 +1615,27 @@ waitAbilityStageMonitor(monitor: AbilityStageMonitor, timeout?: number): Promise
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling WaitAbilityStageMonitor failed. |
 
 **示例：**
 
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { AbilityStage } from '@kit.AbilityKit';
+
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.waitAbilityStageMonitor({
+  moduleName: 'moduleName',
+  srcEntrance: 'srcEntrance',
+}).then((data: AbilityStage) => {
+  console.info('waitAbilityStageMonitor promise');
+});
 ```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { AbilityStage } from '@kit.AbilityKit';
 
-4. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-
-6. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-7. abilityDelegator.waitAbilityStageMonitor({
-8. moduleName: 'moduleName',
-9. srcEntrance: 'srcEntrance',
-10. }).then((data: AbilityStage) => {
-11. console.info('waitAbilityStageMonitor promise');
-12. });
-```
-
-### waitAbilityStageMonitor9+
-
-PhonePC/2in1TabletTVWearable
+### waitAbilityStageMonitor
 
 waitAbilityStageMonitor(monitor: AbilityStageMonitor, timeout: number, callback: AsyncCallback<AbilityStage>): void
 
@@ -1711,31 +1659,29 @@ waitAbilityStageMonitor(monitor: AbilityStageMonitor, timeout: number, callback:
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling WaitAbilityStageMonitor failed. |
 
 **示例：**
 
-```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { AbilityStage } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { AbilityStage } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-6. let timeout = 100;
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+let timeout = 100;
 
-8. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-9. abilityDelegator.waitAbilityStageMonitor({
-10. moduleName: 'moduleName',
-11. srcEntrance: 'srcEntrance',
-12. }, timeout, (err: BusinessError, data: AbilityStage) => {
-13. console.info('waitAbilityStageMonitor callback');
-14. });
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.waitAbilityStageMonitor({
+  moduleName: 'moduleName',
+  srcEntrance: 'srcEntrance',
+}, timeout, (err: BusinessError, data: AbilityStage) => {
+  console.info('waitAbilityStageMonitor callback');
+});
 ```
 
 ### setMockList11+
-
-PhonePC/2in1TabletTVWearable
 
 setMockList(mockList: Record<string, string>): void
 
@@ -1757,20 +1703,23 @@ setMockList(mockList: Record<string, string>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000050 | Internal error. |
 
 **示例：**
 
-```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
 
-3. let mockList: Record<string, string> = {
-4. '@ohos.router': 'src/main/mock/ohos/router.mock',
-5. 'common.time': 'src/main/mock/common/time.mock',
-6. };
-7. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+// 创建mock替换关系的键值对象，key为待替换的目标路径，value为mock实现文件路径
+let mockList: Record<string, string> = {
+  '@ohos.router': 'src/main/mock/ohos/router.mock',
+  'common.time': 'src/main/mock/common/time.mock',
+};
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
 
-9. abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-10. abilityDelegator.setMockList(mockList);
+// 获取AbilityDelegator实例
+abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+// 调用setMockList设置mock替换关系
+abilityDelegator.setMockList(mockList);
 ```

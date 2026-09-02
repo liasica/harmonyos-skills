@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-issha
 title: IsSharedWith
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > TensorData > IsSharedWith
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:16+08:00
+scraped_at: 2026-09-02T14:50:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:cdaa22d9cfd0e19d7a46a39d20636c9a4fd7c5317404f3f3e6b0709038324a0b
+content_hash: sha256:0df3d74801f66d151eb09c1ffdf8c73e21f11e713f3ba16ddf018acb787a1679
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:cdaa22d9cfd0e19d7a46a39d20636c9a4fd7c5317404f3f3e6b07090383
 
 ## 函数原型
 
-```
-1. bool IsSharedWith(const TensorData &other) const
+```cpp
+bool IsSharedWith(const TensorData &other) const
 ```
 
 ## 参数说明
@@ -36,9 +36,9 @@ false反之。
 
 ## 调用示例
 
-```
-1. auto addr = reinterpret_cast<void *>(0x10);
-2. TensorData td1(addr, HostAddrManager, 100U, kOnHost);
-3. TensorData td2(addr, HostAddrManager, 100U, kOnHost);
-4. bool is_shared_td = td1.IsSharedWith(td2); // true
+```cpp
+auto addr = reinterpret_cast<void *>(0x10);
+TensorData td1(addr, HostAddrManager, 100U, kOnHost);
+TensorData td2(addr, HostAddrManager, 100U, kOnHost);
+bool is_shared_td = td1.IsSharedWith(td2); // true
 ```

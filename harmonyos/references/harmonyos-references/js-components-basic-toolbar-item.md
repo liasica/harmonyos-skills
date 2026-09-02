@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: toolbar-item
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > toolbar-item
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:29+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:2580a8b3befaf6228b9ceceb0bf5e6d243df0e3b7238f95867cb44b015b6119b
+scraped_at: 2026-09-02T15:01:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5fc70b3f699cc7104ac5dbcf3e398d954fad183c42b04b31e5d6cbccddc44823
 ---
 
-说明
+**说明** 
 
 从API version 5开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -16,13 +16,9 @@ content_hash: sha256:2580a8b3befaf6228b9ceceb0bf5e6d243df0e3b7238f95867cb44b015b
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-components-common-attributes.md)外，还支持如下属性：
 
@@ -32,8 +28,6 @@ PhonePC/2in1TabletTVWearable
 | icon | string | - | 是 | 该操作项图标资源路径，该图标展示在选项文本上，支持本地路径，格式为png，jpg和svg。 |
 
 ## 样式
-
-PhonePC/2in1TabletTVWearable
 
 仅支持如下样式：
 
@@ -49,7 +43,7 @@ PhonePC/2in1TabletTVWearable
 | background | <linear-gradient> | - | 否 | 仅支持设置[渐变样式](js-components-common-gradient.md)，与background-color、background-image不兼容。 |
 | background-color | <color> | - | 否 | 设置背景颜色。 |
 | background-image | string | - | 否 | 设置背景图片。与background-color、background不兼容；支持网络图片资源和本地图片资源地址。 |
-| background-size | - string  - <length> <length>  - <percentage> <percentage> | auto | 否 | 设置背景图片的大小。  - string可选值：  - contain：把图像扩展至最大尺寸，以使其高度和宽度完全适用内容区域。  - cover：把背景图像扩展至足够大，以使背景图像完全覆盖背景区域；背景图像的某些部分也许无法显示在背景定位区域中。  - auto：保持原图的比例不变。  - length参数方式：  设置背景图像的高度和宽度。第一个值设置宽度，第二个值设置高度。如果只设置一个值，则第二个值会被设置为 "auto"。  - 百分比参数方式：  以父元素的百分比来设置背景图像的宽度和高度。第一个值设置宽度，第二个值设置高度。如果只设置一个值，则第二个值会被设置为 "auto"。 |
+| background-size | - string  - <length> <length>  - <percentage> <percentage> | auto | 否 | 设置背景图片的大小。  - string可选值：  - contain：把图像扩展至最大尺寸，以使其高度和宽度完全适应内容区域。  - cover：把背景图像扩展至足够大，以使背景图像完全覆盖背景区域；背景图像的某些部分也许无法显示在背景定位区域中。  - auto：保持原图的比例不变。  - length参数方式：  设置背景图像的高度和宽度。第一个值设置宽度，第二个值设置高度。如果只设置一个值，则第二个值会被设置为 "auto"。  - 百分比参数方式：  以父元素的百分比来设置背景图像的宽度和高度。第一个值设置宽度，第二个值设置高度。如果只设置一个值，则第二个值会被设置为 "auto"。 |
 | background-repeat | string | repeat | 否 | 针对重复背景图片的样式进行设置，背景图片默认在水平和垂直方向上重复。  - repeat：在水平轴和竖直轴上同时重复绘制图片。  - repeat-x：只在水平轴上重复绘制图片。  - repeat-y：只在竖直轴上重复绘制图片。  - no-repeat：不会重复绘制图片。 |
 | background-position | - string string  - <length> <length>  - <percentage> <percentage> | 0px 0px | 否 | 设置背景图片位置。  - 关键词方式：如果仅规定了一个关键词，那么第二个值为"center"。两个值分别定义水平方向位置和竖直方向位置。  - left：水平方向上最左侧。  - right：水平方向上最右侧。  - top：竖直方向上最顶部。  - bottom：竖直方向上最底部。  - center：水平方向或竖直方向上中间位置。  - length值参数方式：第一个值是水平位置，第二个值是垂直位置。 左上角是 0 0。单位是像素 (0px 0px)。如果仅规定了一个值，另外一个值将是50%。  - 百分比参数方式：第一个值是水平位置，第二个值是垂直位置。左上角是 0% 0%。右下角是 100% 100%。如果仅规定了一个值，另外一个值为50%。  - 可以混合使用<percentage>和<length>。 |
 | opacity | number | 1 | 否 | 元素的透明度，取值范围为0到1，1表示为不透明，0表示为完全透明。 |
@@ -58,30 +52,24 @@ PhonePC/2in1TabletTVWearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用事件](js-components-common-events.md)。
 
 ## 方法
-
-PhonePC/2in1TabletTVWearable
 
 不支持。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <toolbar style="position: fixed; bottom: 0px;">
-3. <toolbar-item icon="common/Icon/location.png" value='Option 1'></toolbar-item>
-4. <toolbar-item icon="common/Icon/heart.png" value='Option 2'></toolbar-item>
-5. <toolbar-item icon="common/Icon/diamond.png" value='Option 3'></toolbar-item>
-6. <toolbar-item icon="common/Icon/heart.png" value='Option 4'></toolbar-item>
-7. <toolbar-item icon="common/Icon/heart.png" value='Option 5'></toolbar-item>
-8. <toolbar-item icon="common/Icon/heart.png" value='Option 6'></toolbar-item>
-9. </toolbar>
+```html
+<!-- xxx.hml -->
+<toolbar style="position: fixed; bottom: 0px;">
+    <toolbar-item icon="common/Icon/location.png" value='Option 1'></toolbar-item>
+    <toolbar-item icon="common/Icon/heart.png" value='Option 2'></toolbar-item>
+    <toolbar-item icon="common/Icon/diamond.png" value='Option 3'></toolbar-item>
+    <toolbar-item icon="common/Icon/heart.png" value='Option 4'></toolbar-item>
+    <toolbar-item icon="common/Icon/heart.png" value='Option 5'></toolbar-item>
+    <toolbar-item icon="common/Icon/heart.png" value='Option 6'></toolbar-item>
+</toolbar>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/rV5dekq6Tc2TV7GRiQSm7A/zh-cn_image_0000002589326595.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/HwzqSJ9dSo-d-fZGbgxFGA/zh-cn_image_0000002736435545.jpg)

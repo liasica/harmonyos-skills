@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: 关闭会话（ArkTS）
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 使用HTTP协议进行网络通信 > 发起HTTP请求，获取响应 > 关闭会话（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:03+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7b5bf25ade85ef4b3a005559c95592f11dad47b955b00c84bd7eaad2021c0797
+scraped_at: 2026-09-02T14:50:06+08:00
+doc_updated_at: 2026-08-07
+content_hash: sha256:b3b7fc0b4f60e1811a29c81d2afc261d0850ee51993e454b17c874824044aa95
 ---
 
 当一个HTTP请求完成，即数据已经成功发送并收到确认，或者在某些情况下，由于超时或其他错误原因，通信尝试失败，此时应立即调用相应的“关闭会话”或“释放资源”方法。这一操作的主要目的是：
@@ -33,24 +33,25 @@ content_hash: sha256:7b5bf25ade85ef4b3a005559c95592f11dad47b955b00c84bd7eaad2021
 
 1. 导入模块。
 
-   ```
-   1. import { rcp } from '@kit.RemoteCommunicationKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { rcp } from '@kit.RemoteCommunicationKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 创建会话，会话发起请求后关闭会话。
 
-   ```
-   1. // 1、创建会话
-   2. const session = rcp.createSession();
-   3. // 2、创建Request，"http://www.example.com"请根据实际情况替换为想要请求的URL地址。
-   4. let req = new rcp.Request("http://www.example.com/fetch", "GET");
-   5. // 3、利用fetch发起网络请求
-   6. session.fetch(req).then((response) => {
-   7. // 4、对响应的处理，此处为示例，只做打印处理
-   8. console.info(`Response succeeded: ${response}`);
-   9. }).catch((err: BusinessError) => {
-   10. // 5、请求错误处理
-   11. console.error(`Response error code is ${err.code}, error data is ${err.data}`);
-   12. });
-   13. session.close();
+   ```typescript
+   // 1、创建会话
+   const session = rcp.createSession();
+   // 2、创建Request，"http://www.example.com/fetch"请根据实际情况替换为想要请求的URL地址。
+   let req = new rcp.Request('http://www.example.com/fetch', 'GET');
+   // 3、利用fetch发起网络请求
+   session.fetch(req).then((response) => {
+     // 4、对响应的处理，此处为示例，只做打印处理
+     console.info(`Response succeeded: ${response}`);
+     // ...
+   }).catch((err: BusinessError) => {
+     // 5、请求错误处理
+     console.error(`Response error code is ${err.code}, error data is ${err.data}`);
+   });
+   session.close();
    ```

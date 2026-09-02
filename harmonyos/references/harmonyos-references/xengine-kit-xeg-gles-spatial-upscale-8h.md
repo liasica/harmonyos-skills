@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-k
 title: xeg_gles_spatial_upscale.h
 breadcrumb: API参考 > 图形 > XEngine Kit（GPU加速引擎服务） > C API > 头文件和结构体 > 头文件 > xeg_gles_spatial_upscale.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:55+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5e08dad6537b9bfab5411aa33889b557f2307ff26e70f4124a1c1054ad6c7268
+scraped_at: 2026-09-02T15:02:48+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:799e1cf21c3b7d172379e37051f952404812fbb65ea290f6744e829b3deed64a
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 XEngine空域GPU超分特性OpenGL ES接口。使用此头文件的接口前需要通过[HMS\_XEG\_GetString](xengine-kit-xengine.md#hms_xeg_getstring)接口查询[XEG\_SPATIAL\_UPSCALE\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_spatial_upscale_extension_name)扩展可用。
 
@@ -26,11 +24,7 @@ XEngine空域GPU超分特性OpenGL ES接口。使用此头文件的接口前需�
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 宏定义
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -39,16 +33,12 @@ PhonePC/2in1TabletTV
 
 ### 类型定义
 
-PhonePC/2in1TabletTV
-
 | 名称 | 描述 |
 | --- | --- |
 | typedef void(GL\_APIENTRYP [PFN\_HMS\_XEG\_SPATIALUPSCALEPARAMETER](xengine-kit-xengine.md#pfn_hms_xeg_spatialupscaleparameter)) (GLenum pname, GLvoid \*param) | 设置空域GPU超分输入参数的函数指针定义。 |
 | typedef void(GL\_APIENTRYP [PFN\_HMS\_XEG\_RENDERSPATIALUPSCALE](xengine-kit-xengine.md#pfn_hms_xeg_renderspatialupscale)) (GLuint inputTexture) | 执行空域GPU超分渲染命令的函数指针定义。 |
 
 ### 函数
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |

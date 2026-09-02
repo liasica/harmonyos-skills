@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-nested-sc
 title: Web组件嵌套滚动
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 > Web组件嵌套滚动
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8f31a2fe9cfc6a7f3dad7375838eff0cf3c99a245ae79f4be894ec849596d0cc
+scraped_at: 2026-09-02T14:59:23+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:77ff990014e63230a6f3c06dce07a7cc1d38ba3ba716ae087077cae89e8ebe3c
 ---
 
 Web组件嵌套滚动的典型应用场景为，在页面中，多个独立区域需进行滚动，当用户滚动Web区域内容时，可联动其他滚动区域，实现上下左右全方位滑动页面的嵌套滚动体验。内嵌于可滚动容器（[Grid](../harmonyos-references/ts-container-grid.md)、[List](../harmonyos-references/ts-container-list.md)、[Scroll](../harmonyos-references/ts-container-scroll.md)、[Swiper](../harmonyos-references/ts-container-swiper.md)、[Tabs](../harmonyos-references/ts-container-tabs.md)、[WaterFlow](../harmonyos-references/ts-container-waterflow.md)、[Refresh](../harmonyos-references/ts-container-refresh.md)、[bindSheet](../harmonyos-references/ts-universal-attributes-sheet-transition.md#bindsheet)）中的Web组件，接收到滑动手势事件后，需要设置ArkUI的[NestedScrollMode](../harmonyos-references/ts-appendix-enums.md#nestedscrollmode10)枚举属性，实现Web组件与ArkUI可滚动容器的嵌套滚动。
 
 Web组件嵌套滚动可通过[方案1：使用nestedScroll属性实现嵌套滚动](web-nested-scrolling.md#使用nestedscroll属性实现嵌套滚动)或[方案2：滚动偏移量由滚动父组件统一派发](web-nested-scrolling.md#滚动偏移量由滚动父组件统一派发)两个方案实现，方案的选择应取决于应用嵌套滚动的具体业务场景。如果只是简单的Web组件与其他父组件联动滚动建议通过方案1实现；如果应用需要自定义控制Web组件和其他滚动组件滚动，以及一些复杂场景建议使用方案2。
 
-说明
+**说明** 
 
 如果Web组件用到了全量展开的场景（layoutMode为WebLayoutMode.FIT\_CONTENT），需要显式指明渲染模式(RenderMode.SYNC\_RENDER)，详见[layoutMode](../harmonyos-references/arkts-basic-components-web-attributes.md#layoutmode11)。
 
@@ -22,92 +22,95 @@ Web组件嵌套滚动可通过[方案1：使用nestedScroll属性实现嵌套滚
 
 **完整代码**
 
+```typescript
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@ComponentV2
+struct NestedScroll {
+  private scrollerForScroll: Scroller = new Scroller();
+  controller: webview.WebviewController = new webview.WebviewController();
+  @Local arr: Array<number> = [];
+
+  aboutToAppear(): void {
+    for (let i = 0; i < 10; i++) {
+      this.arr.push(i);
+    }
+  }
+
+  build() {
+    Scroll(this.scrollerForScroll) {
+      Column() {
+        Web({ src: $rawfile('scroll.html'), controller: this.controller })
+          .nestedScroll({
+            scrollUp: NestedScrollMode.PARENT_FIRST, // 向上滚动父组件优先
+            scrollDown: NestedScrollMode.SELF_FIRST, // 向下滚动子组件优先
+          }).height('100%')
+        Repeat<number>(this.arr)
+          .each((item: RepeatItem<number>) => {
+            Text('Scroll Area')
+              .width('100%')
+              .height('40%')
+              .backgroundColor(0x330000FF)
+              .fontSize(16)
+              .textAlign(TextAlign.Center)
+          })
+      }
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-
-3. @Entry
-4. @ComponentV2
-5. struct NestedScroll {
-6. private scrollerForScroll: Scroller = new Scroller();
-7. private listScroller: Scroller = new Scroller();
-8. controller: webview.WebviewController = new webview.WebviewController();
-9. @Local arr: Array<number> = [];
-
-11. aboutToAppear(): void {
-12. for (let i = 0; i < 10; i++) {
-13. this.arr.push(i);
-14. }
-15. }
-
-17. build() {
-18. Scroll(this.scrollerForScroll) {
-19. Column() {
-20. Web({ src: $rawfile('scroll.html'), controller: this.controller })
-21. .nestedScroll({
-22. scrollUp: NestedScrollMode.PARENT_FIRST, // 向上滚动父组件优先
-23. scrollDown: NestedScrollMode.SELF_FIRST, // 向下滚动子组件优先
-24. }).height('100%')
-25. Repeat<number>(this.arr)
-26. .each((item: RepeatItem<number>) => {
-27. Text('Scroll Area')
-28. .width('100%')
-29. .height('40%')
-30. .backgroundColor(0x330000FF)
-31. .fontSize(16)
-32. .textAlign(TextAlign.Center)
-33. })
-34. }
-35. }
-36. }
-37. }
-```
-
-[ImpNestedScroll.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ManageWebPageInteracts/entry/src/main/ets/pages/ImpNestedScroll.ets#L16-L54)
 
 加载的html文件。
 
+```html
+<!-- scroll.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .blue {
+            background-color: lightblue;
+        }
+
+        .green {
+            background-color: lightgreen;
+        }
+
+        .blue,
+        .green {
+            font-size: 16px;
+            height: 200px;
+            text-align: center;
+            /* 水平居中 */
+            line-height: 200px;
+            /* 垂直居中（值等于容器高度） */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="blue">webArea</div>
+    <div class="green">webArea</div>
+    <div class="blue">webArea</div>
+    <div class="green">webArea</div>
+    <div class="blue">webArea</div>
+    <div class="green">webArea</div>
+    <div class="blue">webArea</div>
+</body>
+
+</html>
 ```
-1. <!-- scroll.html -->
-2. <!DOCTYPE html>
-3. <html>
 
-5. <head>
-6. <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0">
-7. <style>
-8. .blue {
-9. background-color: lightblue;
-10. }
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/e_6J3iNLTXKZM5GYuM4HSw/zh-cn_image_0000002736433211.gif)
 
-12. .green {
-13. background-color: lightgreen;
-14. }
+## 使用nestedScroll常见问题
 
-16. .blue,
-17. .green {
-18. font-size: 16px;
-19. height: 200px;
-20. text-align: center;
-21. /* 水平居中 */
-22. line-height: 200px;
-23. /* 垂直居中（值等于容器高度） */
-24. }
-25. </style>
-26. </head>
+### 在父组件优先滚动的场景中，当Web组件进行惯性滚动（抛滑）时，若父组件到达边界且未完全消耗滚动速度，会导致Web组件停止滚动
 
-28. <body>
-29. <div class="blue">webArea</div>
-30. <div class="green">webArea</div>
-31. <div class="blue">webArea</div>
-32. <div class="green">webArea</div>
-33. <div class="blue">webArea</div>
-34. <div class="green">webArea</div>
-35. <div class="blue">webArea</div>
-36. </body>
-
-38. </html>
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/g7nPxekWRRKb91ya3fnIvA/zh-cn_image_0000002589244513.gif)
+该问题存在于API 26.0.0以下版本，已在API 26.0.0中修复。若需在低版本实现“父组件优先且不中断 Web 滚动”的效果，建议采用[方案2：滚动偏移量由滚动父组件统一派发](web-nested-scrolling.md#滚动偏移量由滚动父组件统一派发)。
 
 ## 滚动偏移量由滚动父组件统一派发
 
@@ -134,24 +137,24 @@ Web组件嵌套滚动可通过[方案1：使用nestedScroll属性实现嵌套滚
 
    (1) 首先调用Web组件滚动控制器方法，设置Web禁用触摸（[setScrollable](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#setscrollable12)）的滚动。
 
-   ```
-   1. this.webController.setScrollable(false, webview.ScrollType.EVENT);
+   ```ts
+   this.webController.setScrollable(false, webview.ScrollType.EVENT);
    ```
 
    (2) 再使用[onGestureRecognizerJudgeBegin](../harmonyos-references/ts-gesture-blocking-enhancement.md#ongesturerecognizerjudgebegin13)方法，禁止Web组件自带的滚动手势触发。
 
-   ```
-   1. .onGestureRecognizerJudgeBegin((event: BaseGestureEvent, current: GestureRecognizer, otherArray<GestureRecognizer>) => {
-   2. if (current.isBuiltIn() && current.getType() == GestureControl.GestureType.PAN_GESTURE) {
-   3. return GestureJudgeResult.REJECT;
-   4. }
-   5. return GestureJudgeResult.CONTINUE;
-   6. })
+   ```ts
+   .onGestureRecognizerJudgeBegin((event: BaseGestureEvent, current: GestureRecognizer, otherArray<GestureRecognizer>) => {
+     if (current.isBuiltIn() && current.getType() == GestureControl.GestureType.PAN_GESTURE) {
+       return GestureJudgeResult.REJECT;
+     }
+     return GestureJudgeResult.CONTINUE;
+   })
    ```
 2. 如何禁用[List](../harmonyos-references/ts-container-list.md)组件的手势。
 
-   ```
-   1. .enableScrollInteraction(false)
+   ```ts
+   .enableScrollInteraction(false)
    ```
 3. 如何检测List组件、Scroll组件是否滚动到边界。
 
@@ -176,163 +179,165 @@ Web组件嵌套滚动可通过[方案1：使用nestedScroll属性实现嵌套滚
    Scroll组件绑定[onScrollFrameBegin](../harmonyos-references/ts-container-scroll.md#onscrollframebegin9)事件，将剩余滚动偏移量返回0，Scroll组件就不滚动，也不会停止惯性滚动动画。
 6. 滚动偏移量如何派发给List组件。
 
-   ```
-   1. this.listScroller.scrollBy(0, offset)
+   ```ts
+   this.listScroller.scrollBy(0, offset)
    ```
 7. 滚动偏移量如何派发给Web组件。
 
-   ```
-   1. this.webController.scrollBy(0, offset)
+   ```ts
+   this.webController.scrollBy(0, offset)
    ```
 8. 设置Web组件[bypassVsyncCondition](../harmonyos-references/arkts-basic-components-web-attributes.md#bypassvsynccondition20)为WebBypassVsyncCondition.SCROLLBY\_FROM\_ZERO\_OFFSET，加快Web组件首帧滚动绘制。
 
-   ```
-   1. .bypassVsyncCondition(WebBypassVsyncCondition.SCROLLBY_FROM_ZERO_OFFSET)
+   ```ts
+   .bypassVsyncCondition(WebBypassVsyncCondition.SCROLLBY_FROM_ZERO_OFFSET)
    ```
 
 **完整代码**
 
+```typescript
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@ComponentV2
+struct Index {
+  private scroller: Scroller = new Scroller()
+  private listScroller: Scroller = new Scroller()
+  private webController: webview.WebviewController = new webview.WebviewController()
+  private isWebAtEnd: boolean = false
+  private webHeight: number = 0
+  @Local arr: Array<number> = []
+
+  aboutToAppear(): void {
+    for (let i = 0; i < 10; i++) {
+      this.arr.push(i)
+    }
+  }
+
+  getWebHeight() {
+    try {
+      this.webController?.runJavaScriptExt('window.innerHeight',
+        (error, result) => {
+          if (error || !result) {
+            return;
+          }
+          if (result.getType() === webview.JsMessageType.NUMBER) {
+            this.webHeight = result.getNumber()
+          }
+        })
+    } catch (error) {
+    }
+  }
+
+  checkScrollBottom() {
+    this.isWebAtEnd = false;
+    try {
+      if (this.webController.getPageOffset().y + this.webHeight >= this.webController.getPageHeight()) {
+        this.isWebAtEnd = true;
+      }
+    } catch (err) {
+      console.error(`checkScrollBottom failed with error: ${err.code}, ${err.message}`);
+    }
+  }
+
+  build() {
+    Scroll(this.scroller) {
+      Column() {
+        Web({
+          src: $rawfile('scroll.html'),
+          controller: this.webController,
+        }).height('100%')
+          .bypassVsyncCondition(WebBypassVsyncCondition.SCROLLBY_FROM_ZERO_OFFSET)
+          .onPageEnd(() => {
+            this.webController.setScrollable(false, webview.ScrollType.EVENT);
+            this.getWebHeight();
+          })
+          // 在识别器即将要成功时，根据当前组件状态，设置识别器使能状态
+          .onGestureRecognizerJudgeBegin((event: BaseGestureEvent, current: GestureRecognizer,
+            others: Array<GestureRecognizer>) => {
+            if (current.isBuiltIn() && current.getType() == GestureControl.GestureType.PAN_GESTURE) {
+              return GestureJudgeResult.REJECT;
+            }
+            return GestureJudgeResult.CONTINUE;
+          })
+        List({ scroller: this.listScroller }) {
+          Repeat<number>(this.arr)
+            .each((item: RepeatItem<number>) => {
+              ListItem() {
+                Text('Scroll Area')
+                  .width('100%')
+                  .height('40%')
+                  .backgroundColor(0x330000FF)
+                  .fontSize(16)
+                  .textAlign(TextAlign.Center)
+              }
+            })
+        }.height('100%')
+        .maintainVisibleContentPosition(true)
+        .enableScrollInteraction(false)
+      }
+    }
+    .onScrollFrameBegin((offset: number, state: ScrollState) => {
+      this.checkScrollBottom();
+      if (offset > 0) {
+        if (!this.isWebAtEnd) {
+          this.webController.scrollBy(0, offset)
+          return { offsetRemain: 0 }
+        } else if (this.scroller.isAtEnd()) {
+          this.listScroller.scrollBy(0, offset)
+          return { offsetRemain: 0 }
+        }
+      } else if (offset < 0) {
+        if (this.listScroller.currentOffset().yOffset > 0) {
+          this.listScroller.scrollBy(0, offset)
+          return { offsetRemain: 0 }
+        } else if (this.scroller.currentOffset().yOffset <= 0) {
+          this.webController.scrollBy(0, offset)
+          return { offsetRemain: 0 }
+        }
+      }
+      return { offsetRemain: offset }
+    })
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-
-3. @Entry
-4. @ComponentV2
-5. struct Index {
-6. private scroller: Scroller = new Scroller()
-7. private listScroller: Scroller = new Scroller()
-8. private webController: webview.WebviewController = new webview.WebviewController()
-9. private isWebAtEnd: boolean = false
-10. private webHeight: number = 0
-11. @Local arr: Array<number> = []
-
-13. aboutToAppear(): void {
-14. for (let i = 0; i < 10; i++) {
-15. this.arr.push(i)
-16. }
-17. }
-
-19. getWebHeight() {
-20. try {
-21. this.webController?.runJavaScriptExt('window.innerHeight',
-22. (error, result) => {
-23. if (error || !result) {
-24. return;
-25. }
-26. if (result.getType() === webview.JsMessageType.NUMBER) {
-27. this.webHeight = result.getNumber()
-28. }
-29. })
-30. } catch (error) {
-31. }
-32. }
-
-34. checkScrollBottom() {
-35. this.isWebAtEnd = false;
-36. if (this.webController.getPageOffset().y + this.webHeight >= this.webController.getPageHeight()) {
-37. this.isWebAtEnd = true;
-38. }
-39. }
-
-41. build() {
-42. Scroll(this.scroller) {
-43. Column() {
-44. Web({
-45. src: $rawfile('scroll.html'),
-46. controller: this.webController,
-47. }).height('100%')
-48. .bypassVsyncCondition(WebBypassVsyncCondition.SCROLLBY_FROM_ZERO_OFFSET)
-49. .onPageEnd(() => {
-50. this.webController.setScrollable(false, webview.ScrollType.EVENT);
-51. this.getWebHeight();
-52. })
-53. // 在识别器即将要成功时，根据当前组件状态，设置识别器使能状态
-54. .onGestureRecognizerJudgeBegin((event: BaseGestureEvent, current: GestureRecognizer,
-55. others: Array<GestureRecognizer>) => {
-56. if (current.isBuiltIn() && current.getType() == GestureControl.GestureType.PAN_GESTURE) {
-57. return GestureJudgeResult.REJECT;
-58. }
-59. return GestureJudgeResult.CONTINUE;
-60. })
-61. List({ scroller: this.listScroller }) {
-62. Repeat<number>(this.arr)
-63. .each((item: RepeatItem<number>) => {
-64. ListItem() {
-65. Text('Scroll Area')
-66. .width('100%')
-67. .height('40%')
-68. .backgroundColor(0x330000FF)
-69. .fontSize(16)
-70. .textAlign(TextAlign.Center)
-71. }
-72. })
-73. }.height('100%')
-74. .maintainVisibleContentPosition(true)
-75. .enableScrollInteraction(false)
-76. }
-77. }
-78. .onScrollFrameBegin((offset: number, state: ScrollState) => {
-79. this.checkScrollBottom();
-80. if (offset > 0) {
-81. if (!this.isWebAtEnd) {
-82. this.webController.scrollBy(0, offset)
-83. return { offsetRemain: 0 }
-84. } else if (this.scroller.isAtEnd()) {
-85. this.listScroller.scrollBy(0, offset)
-86. return { offsetRemain: 0 }
-87. }
-88. } else if (offset < 0) {
-89. if (this.listScroller.currentOffset().yOffset > 0) {
-90. this.listScroller.scrollBy(0, offset)
-91. return { offsetRemain: 0 }
-92. } else if (this.scroller.currentOffset().yOffset <= 0) {
-93. this.webController.scrollBy(0, offset)
-94. return { offsetRemain: 0 }
-95. }
-96. }
-97. return { offsetRemain: offset }
-98. })
-99. }
-100. }
-```
-
-[WebNestedScroll.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ManageWebPageInteracts/entry/src/main/ets/pages/WebNestedScroll.ets#L16-L118)
 
 加载的html文件。
 
-```
-1. <!-- scroll.html -->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0">
-6. <style>
-7. .blue {
-8. background-color: lightblue;
-9. }
-10. .green {
-11. background-color: lightgreen;
-12. }
-13. .blue, .green {
-14. font-size:16px;
-15. height:200px;
-16. text-align: center;       /* 水平居中 */
-17. line-height: 200px;       /* 垂直居中（值等于容器高度） */
-18. }
-19. </style>
-20. </head>
-21. <body>
-22. <div class="blue" >webArea</div>
-23. <div class="green">webArea</div>
-24. <div class="blue">webArea</div>
-25. <div class="green">webArea</div>
-26. <div class="blue">webArea</div>
-27. <div class="green">webArea</div>
-28. <div class="blue">webArea</div>
-29. </body>
-30. </html>
+```html
+<!-- scroll.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .blue {
+          background-color: lightblue;
+        }
+        .green {
+          background-color: lightgreen;
+        }
+        .blue, .green {
+         font-size:16px;
+         height:200px;
+         text-align: center;       /* 水平居中 */
+         line-height: 200px;       /* 垂直居中（值等于容器高度） */
+        }
+    </style>
+</head>
+<body>
+<div class="blue" >webArea</div>
+<div class="green">webArea</div>
+<div class="blue">webArea</div>
+<div class="green">webArea</div>
+<div class="blue">webArea</div>
+<div class="green">webArea</div>
+<div class="blue">webArea</div>
+</body>
+</html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/i91sA_q0QuGsiOazsD6LJQ/zh-cn_image_0000002558764706.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/QckjTsWgRQyact8qP8JbMw/zh-cn_image_0000002706834056.gif)
 
 ## 示例代码
 

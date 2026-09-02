@@ -3,14 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cannkit-s
 title: HiAISingleOpDescriptor_ConvolutionParam
 breadcrumb: API参考 > AI > CANN Kit（CANN异构计算框架服务） > C API > 头文件和结构体 > 结构体 > HiAISingleOpDescriptor_ConvolutionParam
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:cb21595b9f9bdcc55dcb6629ad006365fd53e0a4ccbfbce032e554d209f77f89
+scraped_at: 2026-09-02T15:03:10+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:19eddc3156f24b3a67b7eeee8677530ff5fe0acd1767aef8b023d21e2556db6f
 ---
 
-## 概述
+```cpp
+typedef struct HiAISingleOpDescriptor_ConvolutionParam {...} HiAISingleOpDescriptor_ConvolutionParam
+```
 
-PhonePC/2in1TabletTV
+## 概述
 
 [HMS\_HiAISingleOpDescriptor\_CreateConvolution](cannkit.md#hms_hiaisingleopdescriptor_createconvolution)输入参数。
 
@@ -22,11 +24,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 成员变量
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -39,14 +37,10 @@ PhonePC/2in1TabletTV
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTV
-
 ### convMode
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_SingleOpConvMode HiAISingleOpDescriptor_ConvolutionParam::convMode
+```cpp
+HiAI_SingleOpConvMode HiAISingleOpDescriptor_ConvolutionParam::convMode
 ```
 
 **描述**
@@ -55,10 +49,8 @@ PhonePC/2in1TabletTV
 
 ### dilations
 
-PhonePC/2in1TabletTV
-
-```
-1. int64_t HiAISingleOpDescriptor_ConvolutionParam::dilations[2]
+```cpp
+int64_t HiAISingleOpDescriptor_ConvolutionParam::dilations[2]
 ```
 
 **描述**
@@ -67,10 +59,8 @@ PhonePC/2in1TabletTV
 
 ### groups
 
-PhonePC/2in1TabletTV
-
-```
-1. int64_t HiAISingleOpDescriptor_ConvolutionParam::groups
+```cpp
+int64_t HiAISingleOpDescriptor_ConvolutionParam::groups
 ```
 
 **描述**
@@ -79,10 +69,8 @@ PhonePC/2in1TabletTV
 
 ### padMode
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_SingleOpPadMode HiAISingleOpDescriptor_ConvolutionParam::padMode
+```cpp
+HiAI_SingleOpPadMode HiAISingleOpDescriptor_ConvolutionParam::padMode
 ```
 
 **描述**
@@ -91,10 +79,8 @@ PhonePC/2in1TabletTV
 
 ### pads
 
-PhonePC/2in1TabletTV
-
-```
-1. int64_t HiAISingleOpDescriptor_ConvolutionParam::pads[4]
+```cpp
+int64_t HiAISingleOpDescriptor_ConvolutionParam::pads[4]
 ```
 
 **描述**
@@ -103,10 +89,8 @@ PhonePC/2in1TabletTV
 
 ### strides
 
-PhonePC/2in1TabletTV
-
-```
-1. int64_t HiAISingleOpDescriptor_ConvolutionParam::strides[2]
+```cpp
+int64_t HiAISingleOpDescriptor_ConvolutionParam::strides[2]
 ```
 
 **描述**

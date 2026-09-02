@@ -3,34 +3,30 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-r
 title: "@ohos.request (上传下载)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 数据文件处理 > @ohos.request (上传下载)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:36+08:00
-doc_updated_at: 2026-03-27
-content_hash: sha256:d7e97d2b03f0c427420d806d97ab149e81ec557b433b8a1844ba828f2264d7e5
+scraped_at: 2026-09-02T15:02:02+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:042e28abefec33af291c309edc0a54e8efc646808f542429b1147b730ea12392
 ---
 
-request模块给应用提供上传下载文件、后台代理传输的基础功能。
+request模块给应用提供上传下载文件、后台代理传输的基础功能，支持HTTP/HTTPS协议，提供任务进度监控、断点续传、后台任务管理、网络类型选择等能力，适用于应用内文件上传下载、后台持续传输等场景。
 
 * request暂不支持在Extension中调用。
 
-说明
+**说明** 
 
 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { request } from '@kit.BasicServicesKit';
+```js
+import { request } from '@kit.BasicServicesKit';
 ```
 
 ## 常量
 
-PhonePC/2in1TabletTVWearable
-
 **系统能力**：SystemCapability.MiscServices.Download
 
-说明
+**说明** 
 
 **网络类型**：下载支持自定义网络类型，可以在[DownloadConfig](js-apis-request.md#downloadconfig)中通过networkType配置成以下网络类型。
 
@@ -45,7 +41,7 @@ PhonePC/2in1TabletTVWearable
 | EXCEPTION\_PERMISSION9+ | number | 201 | 通用错误码：权限校验失败。 |
 | EXCEPTION\_PARAMCHECK9+ | number | 401 | 通用错误码：参数检查失败。 |
 | EXCEPTION\_UNSUPPORTED9+ | number | 801 | 通用错误码：该设备不支持此API。 |
-| EXCEPTION\_FILEIO9+ | number | 13400001 | 特有错误码：文件操作异常。 |
+| EXCEPTION\_FILEIO9+ | number | 13400001 | 特有错误码：文件操作异常。具体请参考[13400001错误的处理方法](../harmonyos-faqs/faq-basics-service-kit-20.md)。 |
 | EXCEPTION\_FILEPATH9+ | number | 13400002 | 特有错误码：文件路径异常。 |
 | EXCEPTION\_SERVICE9+ | number | 13400003 | 特有错误码：服务异常。 |
 | EXCEPTION\_OTHERS9+ | number | 13499999 | 特有错误码：其他错误。 |
@@ -59,7 +55,7 @@ PhonePC/2in1TabletTVWearable
 | ERROR\_INSUFFICIENT\_SPACE7+ | number | 5 | 下载任务错误码：存储空间不足。 |
 | ERROR\_TOO\_MANY\_REDIRECTS7+ | number | 6 | 下载任务错误码：网络重定向过多导致的错误。 |
 | ERROR\_UNHANDLED\_HTTP\_CODE7+ | number | 7 | 下载任务错误码：无法识别的HTTP代码。 |
-| ERROR\_UNKNOWN7+ | number | 8 | 下载任务错误码：未知错误。  例如：API version 12及以下版本，系统仅支持串行地尝试连接域名相关IP，不支持单个IP的连接时间控制。若DNS返回的首个IP被阻塞，可能会由于握手超时导致ERROR\_UNKNOWN错误。 |
+| ERROR\_UNKNOWN7+ | number | 8 | 下载任务错误码：未知错误。  例如：API version 12及以下版本，系统仅支持串行地尝试连接域名相关IP，不支持单个IP的连接时间控制。若DNS返回的首个IP被阻塞，可能会由于握手超时导致ERROR\_UNKNOWN错误。具体请参考[ERROR\_UNKNOWN错误的处理方法](../harmonyos-faqs/faq-basics-service-kit-73.md)。 |
 | ERROR\_OFFLINE9+ | number | 9 | 下载任务错误码：网络未连接。 |
 | ERROR\_UNSUPPORTED\_NETWORK\_TYPE9+ | number | 10 | 下载任务错误码：网络类型不匹配。 |
 | PAUSED\_QUEUED\_FOR\_WIFI7+ | number | 0 | 下载任务暂停原因：文件大小超过了使用蜂窝网络会话允许的最大值，下载被暂停并等待WLAN连接。 |
@@ -75,17 +71,15 @@ PhonePC/2in1TabletTVWearable
 
 ## request.uploadFile9+
 
-PhonePC/2in1TabletTVWearable
-
 uploadFile(context: BaseContext, config: UploadConfig): Promise<UploadTask>
 
-创建并启动一个上传任务，使用Promise异步回调，支持HTTP协议。通过[on('complete'|'fail')](js-apis-request.md#oncomplete--fail9)可获取任务上传时的成功信息或错误信息。
+创建并启动一个上传任务，使用Promise异步回调，支持HTTP协议。通过[on('complete' | 'fail')](js-apis-request.md#oncomplete--fail9)可获取任务上传时的成功信息或错误信息。
 
 **需要权限**：ohos.permission.INTERNET
 
 **系统能力**：SystemCapability.MiscServices.Upload
 
-说明
+**说明** 
 
 示例中context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
@@ -114,44 +108,42 @@ uploadFile(context: BaseContext, config: UploadConfig): Promise<UploadTask>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let uploadTask: request.UploadTask;
-7. let uploadConfig: request.UploadConfig = {
-8. url: 'http://www.example.com', // 需要手动将url替换为真实服务器的HTTP协议地址
-9. header: { 'Accept': '*/*' },
-10. method: "POST",
-11. files: [{ filename: "test", name: "test", uri: "internal://cache/test.jpg", type: "image/jpeg" }], // 建议type填写HTTP协议规范的MIME类型
-12. data: [{ name: "name123", value: "123" }],
-13. };
-14. try {
-15. request.uploadFile(context, uploadConfig).then((data: request.UploadTask) => {
-16. uploadTask = data;
-17. }).catch((err: BusinessError) => {
-18. console.error(`Failed to request the upload. Code: ${err.code}, message: ${err.message}`);
-19. });
-20. } catch (err) {
-21. console.error(`Failed to request the upload. Code: ${err.code}, message: ${err.message}`);
-22. }
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let uploadTask: request.UploadTask;
+let uploadConfig: request.UploadConfig = {
+  url: 'http://www.example.com', // 需要手动将url替换为真实服务器的HTTP协议地址
+  header: { 'Accept': '*/*' },
+  method: 'POST',
+  files: [{ filename: 'test', name: 'test', uri: 'internal://cache/test.jpg', type: 'image/jpeg' }], // 建议type填写HTTP协议规范的MIME类型
+  data: [{ name: 'name123', value: '123' }],
+};
+try {
+  request.uploadFile(context, uploadConfig).then((data: request.UploadTask) => {
+    uploadTask = data;
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to request the upload. Code: ${err.code}, message: ${err.message}`);
+  });
+} catch (err) {
+  console.error(`Failed to request the upload. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## request.uploadFile9+
 
-PhonePC/2in1TabletTVWearable
-
 uploadFile(context: BaseContext, config: UploadConfig, callback: AsyncCallback<UploadTask>): void
 
-创建并启动一个上传任务，使用callback异步回调，支持HTTP协议。通过[on('complete'|'fail')](js-apis-request.md#oncomplete--fail9)可获取任务上传时的成功信息或错误信息。
+创建并启动一个上传任务，使用callback异步回调，支持HTTP协议。通过[on('complete' | 'fail')](js-apis-request.md#oncomplete--fail9)可获取任务上传时的成功信息或错误信息。
 
 **需要权限**：ohos.permission.INTERNET
 
 **系统能力**：SystemCapability.MiscServices.Upload
 
-说明
+**说明** 
 
 示例中context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
@@ -175,36 +167,34 @@ uploadFile(context: BaseContext, config: UploadConfig, callback: AsyncCallback<U
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let uploadTask: request.UploadTask;
-7. let uploadConfig: request.UploadConfig = {
-8. url: 'http://www.example.com', // 需要手动将url替换为真实服务器的HTTP协议地址
-9. header: { 'Accept': '*/*' },
-10. method: "POST",
-11. files: [{ filename: "test", name: "test", uri: "internal://cache/test.jpg", type: "image/jpeg" }], // 建议type填写HTTP协议规范的MIME类型
-12. data: [{ name: "name123", value: "123" }],
-13. };
-14. try {
-15. request.uploadFile(context, uploadConfig, (err: BusinessError, data: request.UploadTask) => {
-16. if (err) {
-17. console.error(`Failed to request the upload. Code: ${err.code}, message: ${err.message}`);
-18. return;
-19. }
-20. uploadTask = data;
-21. });
-22. } catch (err) {
-23. console.error(`Failed to request the upload. Code: ${err.code}, message: ${err.message}`);
-24. }
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let uploadTask: request.UploadTask;
+let uploadConfig: request.UploadConfig = {
+  url: 'http://www.example.com', // 需要手动将url替换为真实服务器的HTTP协议地址
+  header: { 'Accept': '*/*' },
+  method: 'POST',
+  files: [{ filename: 'test', name: 'test', uri: 'internal://cache/test.jpg', type: 'image/jpeg' }], // 建议type填写HTTP协议规范的MIME类型
+  data: [{ name: 'name123', value: '123' }],
+};
+try {
+  request.uploadFile(context, uploadConfig, (err: BusinessError, data: request.UploadTask) => {
+    if (err) {
+      console.error(`Failed to request the upload. Code: ${err.code}, message: ${err.message}`);
+      return;
+    }
+    uploadTask = data;
+  });
+} catch (err) {
+  console.error(`Failed to request the upload. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## request.upload(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 upload(config: UploadConfig): Promise<UploadTask>
 
@@ -216,9 +206,9 @@ upload(config: UploadConfig): Promise<UploadTask>
 
 **系统能力**：SystemCapability.MiscServices.Upload
 
-说明
+**说明** 
 
-从API version 6 开始支持，从API version 9 开始废弃，建议使用[request.uploadFile](js-apis-request.md#requestuploadfile9)替代。
+从API version 6开始支持，从API version 9开始废弃。建议使用[request.uploadFile](js-apis-request.md#requestuploadfile9)替代。
 
 **参数：**
 
@@ -242,25 +232,23 @@ upload(config: UploadConfig): Promise<UploadTask>
 
 **示例：**
 
-```
-1. let uploadTask: request.UploadTask;
-2. let uploadConfig: request.UploadConfig = {
-3. url: 'http://www.example.com', // 需要手动将url替换为真实服务器的HTTP协议地址
-4. header: { 'Accept': '*/*' },
-5. method: "POST",
-6. files: [{ filename: "test", name: "test", uri: "internal://cache/test.jpg", type: "image/jpeg" }], // 建议type填写HTTP协议规范的MIME类型
-7. data: [{ name: "name123", value: "123" }],
-8. };
-9. request.upload(uploadConfig).then((data: request.UploadTask) => {
-10. uploadTask = data;
-11. }).catch((err: BusinessError) => {
-12. console.error(`Failed to request the upload. Code: ${err.code}, message: ${err.message}`);
-13. })
+```js
+let uploadTask: request.UploadTask;
+let uploadConfig: request.UploadConfig = {
+  url: 'http://www.example.com', // 需要手动将url替换为真实服务器的HTTP协议地址
+  header: { 'Accept': '*/*' },
+  method: 'POST',
+  files: [{ filename: 'test', name: 'test', uri: 'internal://cache/test.jpg', type: 'image/jpeg' }], // 建议type填写HTTP协议规范的MIME类型
+  data: [{ name: 'name123', value: '123' }],
+};
+request.upload(uploadConfig).then((data: request.UploadTask) => {
+  uploadTask = data;
+}).catch((err: BusinessError) => {
+  console.error(`Failed to request the upload. Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## request.upload(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 upload(config: UploadConfig, callback: AsyncCallback<UploadTask>): void
 
@@ -272,9 +260,9 @@ upload(config: UploadConfig, callback: AsyncCallback<UploadTask>): void
 
 **系统能力**：SystemCapability.MiscServices.Upload
 
-说明
+**说明** 
 
-从API version 6 开始支持，从API version 9 开始废弃，建议使用[request.uploadFile](js-apis-request.md#requestuploadfile9)替代。
+从API version 6开始支持，从API version 9开始废弃。建议使用[request.uploadFile](js-apis-request.md#requestuploadfile9)替代。
 
 **参数：**
 
@@ -293,33 +281,29 @@ upload(config: UploadConfig, callback: AsyncCallback<UploadTask>): void
 
 **示例：**
 
-```
-1. let uploadTask: request.UploadTask;
-2. let uploadConfig: request.UploadConfig = {
-3. url: 'http://www.example.com', // 需要手动将url替换为真实服务器的HTTP协议地址
-4. header: { 'Accept': '*/*' },
-5. method: "POST",
-6. files: [{ filename: "test", name: "test", uri: "internal://cache/test.jpg", type: "image/jpeg" }], // 建议type填写HTTP协议规范的MIME类型
-7. data: [{ name: "name123", value: "123" }],
-8. };
-9. request.upload(uploadConfig, (err: BusinessError, data: request.UploadTask) => {
-10. if (err) {
-11. console.error(`Failed to request the upload. Code: ${err.code}, message: ${err.message}`);
-12. return;
-13. }
-14. uploadTask = data;
-15. });
+```js
+let uploadTask: request.UploadTask;
+let uploadConfig: request.UploadConfig = {
+  url: 'http://www.example.com', // 需要手动将url替换为真实服务器的HTTP协议地址
+  header: { 'Accept': '*/*' },
+  method: 'POST',
+  files: [{ filename: 'test', name: 'test', uri: 'internal://cache/test.jpg', type: 'image/jpeg' }], // 建议type填写HTTP协议规范的MIME类型
+  data: [{ name: 'name123', value: '123' }],
+};
+request.upload(uploadConfig, (err: BusinessError, data: request.UploadTask) => {
+  if (err) {
+    console.error(`Failed to request the upload. Code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  uploadTask = data;
+});
 ```
 
 ## UploadTask
 
-PhonePC/2in1TabletTVWearable
-
-上传任务，使用下列方法前，需要先获取UploadTask对象，promise形式通过[request.uploadFile](js-apis-request.md#requestuploadfile9)获取，callback形式通过[request.uploadFile](js-apis-request.md#requestuploadfile9-1)获取。
+上传任务，使用下列方法前，需要先获取UploadTask对象，Promise形式通过[request.uploadFile](js-apis-request.md#requestuploadfile9)获取，callback形式通过[request.uploadFile](js-apis-request.md#requestuploadfile9-1)获取。
 
 ### on('progress')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'progress', callback: (uploadedSize: number, totalSize: number) => void): void
 
@@ -327,7 +311,7 @@ on(type: 'progress', callback: (uploadedSize: number, totalSize: number) => void
 
 **系统能力**：SystemCapability.MiscServices.Upload
 
-说明
+**说明** 
 
 应用处于后台时，为满足功耗性能要求，不支持调用此接口进行回调。
 
@@ -336,14 +320,7 @@ on(type: 'progress', callback: (uploadedSize: number, totalSize: number) => void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。取值为'progress'，表示上传的进度信息，任务进度有进展时触发该事件。 |
-| callback | function | 是 | 上传任务进度的回调函数，返回已上传文件大小和上传文件总大小。 |
-
-回调函数的参数：
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| uploadedSize | number | 是 | 当前已上传文件大小，单位为字节（B）。 |
-| totalSize | number | 是 | 上传文件的总大小，单位为字节（B）。 |
+| callback | (uploadedSize: number, totalSize: number) => void | 是 | 上传任务进度的回调函数，返回已上传文件大小和上传文件总大小，单位为字节（B）。 |
 
 **错误码：**
 
@@ -351,20 +328,18 @@ on(type: 'progress', callback: (uploadedSize: number, totalSize: number) => void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | The parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed. |
+| 401 | The parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed.  适用版本：12+ |
 
 **示例：**
 
-```
-1. let upProgressCallback = (uploadedSize: number, totalSize: number) => {
-2. console.info("upload totalSize:" + totalSize + "  uploadedSize:" + uploadedSize);
-3. };
-4. uploadTask.on('progress', upProgressCallback);
+```ts
+let upProgressCallback = (uploadedSize: number, totalSize: number) => {
+  console.info("upload totalSize:" + totalSize + "  uploadedSize:" + uploadedSize);
+};
+uploadTask.on('progress', upProgressCallback);
 ```
 
 ### on('headerReceive')7+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'headerReceive', callback: (header: object) => void): void
 
@@ -377,13 +352,7 @@ on(type: 'headerReceive', callback: (header: object) => void): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。  - 取值为'headerReceive'，HTTP请求接收到响应时触发该事件。 |
-| callback | function | 是 | HTTP Response事件的回调函数，返回响应请求内容。 |
-
-回调函数的参数：
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| header | object | 是 | HTTP响应。 |
+| callback | (header: object) => void | 是 | HTTP Response事件的回调函数，返回响应请求内容。 |
 
 **错误码：**
 
@@ -391,20 +360,18 @@ on(type: 'headerReceive', callback: (header: object) => void): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | The parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed. |
+| 401 | The parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed.  适用版本：12+ |
 
 **示例：**
 
-```
-1. let headerCallback = (headers: object) => {
-2. console.info("upOnHeader headers:" + JSON.stringify(headers));
-3. };
-4. uploadTask.on('headerReceive', headerCallback);
+```ts
+let headerCallback = (headers: object) => {
+  console.info("upOnHeader headers:" + JSON.stringify(headers));
+};
+uploadTask.on('headerReceive', headerCallback);
 ```
 
 ### on('complete' | 'fail')9+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'complete' | 'fail', callback: Callback<Array<TaskState>>): void
 
@@ -425,29 +392,27 @@ on(type: 'complete' | 'fail', callback: Callback<Array<TaskState>>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | The parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed. |
+| 401 | The parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed.  适用版本：12+ |
 
 **示例：**
 
-```
-1. let upCompleteCallback = (taskStates: Array<request.TaskState>) => {
-2. for (let i = 0; i < taskStates.length; i++) {
-3. console.info("upOnComplete taskState:" + JSON.stringify(taskStates[i]));
-4. }
-5. };
-6. uploadTask.on('complete', upCompleteCallback);
+```ts
+let upCompleteCallback = (taskStates: Array<request.TaskState>) => {
+  for (let i = 0; i < taskStates.length; i++) {
+    console.info("upOnComplete taskState:" + JSON.stringify(taskStates[i]));
+  }
+};
+uploadTask.on('complete', upCompleteCallback);
 
-8. let upFailCallback = (taskStates: Array<request.TaskState>) => {
-9. for (let i = 0; i < taskStates.length; i++) {
-10. console.info("upOnFail taskState:" + JSON.stringify(taskStates[i]));
-11. }
-12. };
-13. uploadTask.on('fail', upFailCallback);
+let upFailCallback = (taskStates: Array<request.TaskState>) => {
+  for (let i = 0; i < taskStates.length; i++) {
+    console.info("upOnFail taskState:" + JSON.stringify(taskStates[i]));
+  }
+};
+uploadTask.on('fail', upFailCallback);
 ```
 
 ### off('progress')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'progress', callback?: (uploadedSize: number, totalSize: number) => void): void
 
@@ -460,14 +425,7 @@ off(type: 'progress', callback?: (uploadedSize: number, totalSize: number) => vo
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消订阅的事件类型。  - 取值为'progress'，表示上传的进度信息。 |
-| callback | function | 否 | 需要取消订阅的回调函数。若无此参数，则取消订阅当前类型的所有回调函数。 |
-
-回调函数的参数
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| uploadedSize | number | 是 | 当前已上传文件大小，单位为字节（B）。 |
-| totalSize | number | 是 | 上传文件的总大小，单位为字节（B）。 |
+| callback | (uploadedSize: number, totalSize: number) => void | 否 | 需要取消订阅的回调函数。若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码：**
 
@@ -475,28 +433,26 @@ off(type: 'progress', callback?: (uploadedSize: number, totalSize: number) => vo
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | The parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed. |
+| 401 | The parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed.  适用版本：12+ |
 
 **示例：**
 
-```
-1. let upProgressCallback1 = (uploadedSize: number, totalSize: number) => {
-2. console.info('Upload delete progress notification.' + 'totalSize:' + totalSize + 'uploadedSize:' + uploadedSize);
-3. };
-4. let upProgressCallback2 = (uploadedSize: number, totalSize: number) => {
-5. console.info('Upload delete progress notification.' + 'totalSize:' + totalSize + 'uploadedSize:' + uploadedSize);
-6. };
-7. uploadTask.on('progress', upProgressCallback1);
-8. uploadTask.on('progress', upProgressCallback2);
-9. // 表示取消upProgressCallback1的订阅
-10. uploadTask.off('progress', upProgressCallback1);
-11. // 表示取消订阅上传任务进度事件的所有回调
-12. uploadTask.off('progress');
+```ts
+let upProgressCallback1 = (uploadedSize: number, totalSize: number) => {
+  console.info('Upload delete progress notification.' + 'totalSize:' + totalSize + 'uploadedSize:' + uploadedSize);
+};
+let upProgressCallback2 = (uploadedSize: number, totalSize: number) => {
+  console.info('Upload delete progress notification.' + 'totalSize:' + totalSize + 'uploadedSize:' + uploadedSize);
+};
+uploadTask.on('progress', upProgressCallback1);
+uploadTask.on('progress', upProgressCallback2);
+// 表示取消upProgressCallback1的订阅
+uploadTask.off('progress', upProgressCallback1);
+// 表示取消订阅上传任务进度事件的所有回调
+uploadTask.off('progress');
 ```
 
 ### off('headerReceive')7+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'headerReceive', callback?: (header: object) => void): void
 
@@ -509,13 +465,7 @@ off(type: 'headerReceive', callback?: (header: object) => void): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消订阅的事件类型。  - 取值为'headerReceive'，表示HTTP请求接收到响应。 |
-| callback | function | 否 | 需要取消订阅的回调函数。若无此参数，则取消订阅当前类型的所有回调函数。 |
-
-回调函数的参数：
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| header | object | 是 | HTTP响应。 |
+| callback | (header: object) => void | 否 | 需要取消订阅的回调函数。若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码：**
 
@@ -523,28 +473,26 @@ off(type: 'headerReceive', callback?: (header: object) => void): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | The parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed. |
+| 401 | The parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed.  适用版本：12+ |
 
 **示例：**
 
-```
-1. let headerCallback1 = (header: object) => {
-2. console.info(`Upload delete headerReceive notification. header: ${JSON.stringify(header)}`);
-3. };
-4. let headerCallback2 = (header: object) => {
-5. console.info(`Upload delete headerReceive notification. header: ${JSON.stringify(header)}`);
-6. };
-7. uploadTask.on('headerReceive', headerCallback1);
-8. uploadTask.on('headerReceive', headerCallback2);
-9. // 表示取消headerCallback1的订阅
-10. uploadTask.off('headerReceive', headerCallback1);
-11. // 表示取消订阅上传任务HTTP标头事件的所有回调
-12. uploadTask.off('headerReceive');
+```ts
+let headerCallback1 = (header: object) => {
+  console.info(`Upload delete headerReceive notification. header: ${JSON.stringify(header)}`);
+};
+let headerCallback2 = (header: object) => {
+  console.info(`Upload delete headerReceive notification. header: ${JSON.stringify(header)}`);
+};
+uploadTask.on('headerReceive', headerCallback1);
+uploadTask.on('headerReceive', headerCallback2);
+// 表示取消headerCallback1的订阅
+uploadTask.off('headerReceive', headerCallback1);
+// 表示取消订阅上传任务HTTP标头事件的所有回调
+uploadTask.off('headerReceive');
 ```
 
 ### off('complete' | 'fail')9+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'complete' | 'fail', callback?: Callback<Array<TaskState>>): void
 
@@ -565,53 +513,51 @@ off(type: 'complete' | 'fail', callback?: Callback<Array<TaskState>>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | the parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed. |
+| 401 | the parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed.  适用版本：12+ |
 
 **示例：**
 
-```
-1. let upCompleteCallback1 = (taskStates: Array<request.TaskState>) => {
-2. console.info('Upload delete complete notification.');
-3. for (let i = 0; i < taskStates.length; i++) {
-4. console.info('taskState:' + JSON.stringify(taskStates[i]));
-5. }
-6. };
-7. let upCompleteCallback2 = (taskStates: Array<request.TaskState>) => {
-8. console.info('Upload delete complete notification.');
-9. for (let i = 0; i < taskStates.length; i++) {
-10. console.info('taskState:' + JSON.stringify(taskStates[i]));
-11. }
-12. };
-13. uploadTask.on('complete', upCompleteCallback1);
-14. uploadTask.on('complete', upCompleteCallback2);
-15. // 表示取消headerCallback1的订阅
-16. uploadTask.off('complete', upCompleteCallback1);
-17. // 表示取消订阅上传任务完成的所有回调
-18. uploadTask.off('complete');
+```ts
+let upCompleteCallback1 = (taskStates: Array<request.TaskState>) => {
+  console.info('Upload delete complete notification.');
+  for (let i = 0; i < taskStates.length; i++) {
+    console.info('taskState:' + JSON.stringify(taskStates[i]));
+  }
+};
+let upCompleteCallback2 = (taskStates: Array<request.TaskState>) => {
+  console.info('Upload delete complete notification.');
+  for (let i = 0; i < taskStates.length; i++) {
+    console.info('taskState:' + JSON.stringify(taskStates[i]));
+  }
+};
+uploadTask.on('complete', upCompleteCallback1);
+uploadTask.on('complete', upCompleteCallback2);
+// 表示取消upCompleteCallback1的订阅
+uploadTask.off('complete', upCompleteCallback1);
+// 表示取消订阅上传任务完成的所有回调
+uploadTask.off('complete');
 
-20. let upFailCallback1 = (taskStates: Array<request.TaskState>) => {
-21. console.info('Upload delete fail notification.');
-22. for (let i = 0; i < taskStates.length; i++) {
-23. console.info('taskState:' + JSON.stringify(taskStates[i]));
-24. }
-25. };
-26. let upFailCallback2 = (taskStates: Array<request.TaskState>) => {
-27. console.info('Upload delete fail notification.');
-28. for (let i = 0; i < taskStates.length; i++) {
-29. console.info('taskState:' + JSON.stringify(taskStates[i]));
-30. }
-31. };
-32. uploadTask.on('fail', upFailCallback1);
-33. uploadTask.on('fail', upFailCallback2);
-34. // 表示取消headerCallback1的订阅
-35. uploadTask.off('fail', upFailCallback1);
-36. // 表示取消订阅上传任务失败的所有回调
-37. uploadTask.off('fail');
+let upFailCallback1 = (taskStates: Array<request.TaskState>) => {
+  console.info('Upload delete fail notification.');
+  for (let i = 0; i < taskStates.length; i++) {
+    console.info('taskState:' + JSON.stringify(taskStates[i]));
+  }
+};
+let upFailCallback2 = (taskStates: Array<request.TaskState>) => {
+  console.info('Upload delete fail notification.');
+  for (let i = 0; i < taskStates.length; i++) {
+    console.info('taskState:' + JSON.stringify(taskStates[i]));
+  }
+};
+uploadTask.on('fail', upFailCallback1);
+uploadTask.on('fail', upFailCallback2);
+// 表示取消upFailCallback1的订阅
+uploadTask.off('fail', upFailCallback1);
+// 表示取消订阅上传任务失败的所有回调
+uploadTask.off('fail');
 ```
 
 ### delete9+
-
-PhonePC/2in1TabletTVWearable
 
 delete(): Promise<boolean>
 
@@ -621,9 +567,9 @@ delete(): Promise<boolean>
 
 **系统能力**：SystemCapability.MiscServices.Upload
 
-说明
+**说明** 
 
-由于不存在401报错场景，在api12中 401 the parameters check fails 这个错误码被移除。
+由于不存在401报错场景，在API version 12中 401 the parameters check fails 这个错误码被移除。
 
 **返回值：**
 
@@ -641,17 +587,15 @@ delete(): Promise<boolean>
 
 **示例：**
 
-```
-1. uploadTask.delete().then((result: boolean) => {
-2. console.info('Succeeded in deleting the upload task.');
-3. }).catch((err: BusinessError) => {
-4. console.error(`Failed to delete the upload task. Code: ${err.code}, message: ${err.message}`);
-5. });
+```ts
+uploadTask.delete().then((result: boolean) => {
+  console.info('Succeeded in deleting the upload task.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to delete the upload task. Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### delete9+
-
-PhonePC/2in1TabletTVWearable
 
 delete(callback: AsyncCallback<boolean>): void
 
@@ -661,9 +605,9 @@ delete(callback: AsyncCallback<boolean>): void
 
 **系统能力**：SystemCapability.MiscServices.Upload
 
-说明
+**说明** 
 
-由于不存在401报错场景，在api12中 401 the parameters check fails 这个错误码被移除。
+由于不存在401报错场景，在API version 12中 401 the parameters check fails 这个错误码被移除。
 
 **参数：**
 
@@ -681,19 +625,17 @@ delete(callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. uploadTask.delete((err: BusinessError, result: boolean) => {
-2. if (err) {
-3. console.error(`Failed to delete the upload task. Code: ${err.code}, message: ${err.message}`);
-4. return;
-5. }
-6. console.info('Succeeded in deleting the upload task.');
-7. });
+```ts
+uploadTask.delete((err: BusinessError, result: boolean) => {
+  if (err) {
+    console.error(`Failed to delete the upload task. Code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in deleting the upload task.');
+});
 ```
 
 ### remove(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 remove(): Promise<boolean>
 
@@ -703,9 +645,9 @@ remove(): Promise<boolean>
 
 **系统能力**：SystemCapability.MiscServices.Upload
 
-说明
+**说明** 
 
-从API version 6开始支持，从API version 9开始废弃，建议使用[delete](js-apis-request.md#delete9)替代。
+从API version 6开始支持，从API version 9开始废弃。建议使用[delete](js-apis-request.md#delete9)替代。
 
 **返回值：**
 
@@ -723,17 +665,15 @@ remove(): Promise<boolean>
 
 **示例：**
 
-```
-1. uploadTask.remove().then((result: boolean) => {
-2. console.info('Succeeded in removing the upload task.');
-3. }).catch((err: BusinessError) => {
-4. console.error(`Failed to remove the upload task. Code: ${err.code}, message: ${err.message}`);
-5. });
+```js
+uploadTask.remove().then((result: boolean) => {
+  console.info('Succeeded in removing the upload task.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to remove the upload task. Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### remove(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 remove(callback: AsyncCallback<boolean>): void
 
@@ -743,9 +683,9 @@ remove(callback: AsyncCallback<boolean>): void
 
 **系统能力**：SystemCapability.MiscServices.Upload
 
-说明
+**说明** 
 
-从API version 6开始支持，从API version 9开始废弃，建议使用[delete](js-apis-request.md#delete9-1)替代。
+从API version 6开始支持，从API version 9开始废弃。建议使用[delete](js-apis-request.md#delete9-1)替代。
 
 **参数：**
 
@@ -763,21 +703,19 @@ remove(callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. uploadTask.remove((err: BusinessError, result: boolean) => {
-2. if (err) {
-3. console.error(`Failed to remove the upload task. Code: ${err.code}, message: ${err.message}`);
-4. return;
-5. }
-6. if (result) {
-7. console.info('Succeeded in removing the upload task.');
-8. }
-9. });
+```js
+uploadTask.remove((err: BusinessError, result: boolean) => {
+  if (err) {
+    console.error(`Failed to remove the upload task. Code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  if (result) {
+    console.info('Succeeded in removing the upload task.');
+  }
+});
 ```
 
 ## UploadConfig
-
-PhonePC/2in1TabletTVWearable
 
 上传任务的配置信息。
 
@@ -785,18 +723,16 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| url | string | 否 | 否 | 资源地址。从API 6到API 14，最大长度为2048个字符；从API 15开始，最大长度为8192个字符。支持[HTTP拦截](../harmonyos-guides/app-file-upload-download.md#http拦截)功能。 |
-| header | Object | 否 | 否 | 添加要包含在上传请求中的HTTP或HTTPS标志头。 |
+| url | string | 否 | 否 | 资源地址。从API 6到API 14，最大长度为2048个字符；从API 15开始，最大长度为8192个字符。超出最大长度时任务创建失败。支持[HTTP拦截](../harmonyos-guides/app-file-upload-download.md#http拦截)功能。 |
+| header | Object | 否 | 否 | 添加要包含在上传请求中的HTTP或HTTPS标头。 |
 | method | string | 否 | 否 | HTTP请求方法：POST、PUT，缺省为POST。使用POST新增资源，使用PUT修改资源。 |
-| index11+ | number | 否 | 是 | 任务的路径索引，默认值为0。 |
-| begins11+ | number | 否 | 是 | 上传任务开始时读取的文件起点，单位为字节（B）。默认值为0，取值范围为闭区间，表示从头开始传输。 |
-| ends11+ | number | 否 | 是 | 上传任务结束时读取的文件终点，单位为字节（B）。默认值为-1，取值范围为闭区间，表示传输到整个文件末尾结束。 |
+| index11+ | number | 否 | 是 | 任务的路径索引，通常用于断点续传场景指定文件路径索引，默认值为0。 |
+| begins11+ | number | 否 | 是 | 上传任务开始时读取的文件起点，单位为字节（B），通常用于断点续传场景。默认值为0，取值范围为[0, 文件大小]，取值范围为闭区间，表示从头开始传输。超出范围时任务创建失败。 |
+| ends11+ | number | 否 | 是 | 上传任务结束时读取的文件终点，单位为字节（B），通常用于断点续传场景。默认值为-1，取值范围为[-1, 文件大小]，取值范围为闭区间，表示传输到整个文件末尾结束。超出范围时任务创建失败。 |
 | files | Array<[File](js-apis-request.md#file)> | 否 | 否 | 要上传的文件列表。文件以HTTP的multipart/form-data格式提交。 |
 | data | Array<[RequestData](js-apis-request.md#requestdata)> | 否 | 否 | 请求的表单数据。 |
 
 ## TaskState9+
-
-PhonePC/2in1TabletTVWearable
 
 上传任务的任务信息，是[on('complete' | 'fail')](js-apis-request.md#oncomplete--fail9)和[off('complete' | 'fail')](js-apis-request.md#offcomplete--fail9)接口的回调参数。
 
@@ -805,8 +741,10 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | path | string | 否 | 否 | 文件路径。 |
-| responseCode | number | 否 | 否 | 上传任务返回码。返回0表示上传任务成功，返回其它值表示上传任务失败，具体请参见message参数中的上传任务结果描述信息。  此处推荐使用[request.agent.create](js-apis-request.md#requestagentcreate10-1)创建上传任务，并获取标准错误码处理异常分支。 |
+| responseCode | number | 否 | 否 | 上传任务返回码。返回0表示上传任务成功，返回其它值表示上传任务未成功完成（包括失败、暂停或停止等），具体请参见下方的返回码表及message参数中的上传任务结果描述信息。  此处推荐使用[request.agent.create](js-apis-request.md#requestagentcreate10-1)创建上传任务，并获取标准错误码处理异常分支。 |
 | message | string | 否 | 否 | 上传任务结果描述信息。 |
+
+**错误码：**
 
 其中，responseCode包含的返回码值如下。
 
@@ -828,8 +766,6 @@ PhonePC/2in1TabletTVWearable
 
 ## File
 
-PhonePC/2in1TabletTVWearable
-
 [UploadConfig](js-apis-request.md#uploadconfig)中的文件列表。
 
 **系统能力**：SystemCapability.MiscServices.Download
@@ -843,8 +779,6 @@ PhonePC/2in1TabletTVWearable
 
 ## RequestData
 
-PhonePC/2in1TabletTVWearable
-
 [UploadConfig](js-apis-request.md#uploadconfig)中的表单数据。
 
 **系统能力**：SystemCapability.MiscServices.Download
@@ -856,17 +790,15 @@ PhonePC/2in1TabletTVWearable
 
 ## request.downloadFile9+
 
-PhonePC/2in1TabletTVWearable
-
 downloadFile(context: BaseContext, config: DownloadConfig): Promise<DownloadTask>
 
-创建并启动一个下载任务，使用Promise异步回调，支持HTTP协议。通过[on('complete'|'pause'|'remove')](js-apis-request.md#oncompletepauseremove7)可以获取任务下载时的状态信息，包括任务完成、暂停或移除。通过[on('fail')](js-apis-request.md#onfail7)可以获取任务下载时的错误信息。
+创建并启动一个下载任务，使用Promise异步回调，支持HTTP协议。通过[on('complete' | 'pause' | 'remove')](js-apis-request.md#oncomplete--pause--remove7)可以获取任务下载时的状态信息，包括任务完成、暂停或移除。通过[on('fail')](js-apis-request.md#onfail7)可以获取任务下载时的错误信息。
 
 **需要权限**：ohos.permission.INTERNET
 
 **系统能力**：SystemCapability.MiscServices.Download
 
-说明
+**说明** 
 
 示例中context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
@@ -897,37 +829,35 @@ downloadFile(context: BaseContext, config: DownloadConfig): Promise<DownloadTask
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. try {
-7. // 需要手动将url替换为真实服务器的HTTP协议地址
-8. request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
-9. let downloadTask: request.DownloadTask = data;
-10. }).catch((err: BusinessError) => {
-11. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-12. })
-13. } catch (err) {
-14. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-15. }
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+try {
+  // 需要手动将url替换为真实服务器的HTTP协议地址
+  request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
+     let downloadTask: request.DownloadTask = data;
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+  });
+} catch (err) {
+  console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## request.downloadFile9+
 
-PhonePC/2in1TabletTVWearable
-
 downloadFile(context: BaseContext, config: DownloadConfig, callback: AsyncCallback<DownloadTask>): void
 
-创建并启动一个下载任务，使用callback异步回调，支持HTTP协议。通过[on('complete'|'pause'|'remove')](js-apis-request.md#oncompletepauseremove7)可获取任务下载时的状态信息，包括任务完成、暂停或移除。通过[on('fail')](js-apis-request.md#onfail7)可获取任务下载时的错误信息。
+创建并启动一个下载任务，使用callback异步回调，支持HTTP协议。通过[on('complete' | 'pause' | 'remove')](js-apis-request.md#oncomplete--pause--remove7)可获取任务下载时的状态信息，包括任务完成、暂停或移除。通过[on('fail')](js-apis-request.md#onfail7)可获取任务下载时的错误信息。
 
 **需要权限**：ohos.permission.INTERNET
 
 **系统能力**：SystemCapability.MiscServices.Download
 
-说明
+**说明** 
 
 示例中context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
@@ -953,31 +883,29 @@ downloadFile(context: BaseContext, config: DownloadConfig, callback: AsyncCallba
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. try {
-7. // 需要手动将url替换为真实服务器的HTTP协议地址
-8. request.downloadFile(context, {
-9. url: 'https://xxxx/xxxxx.hap',
-10. filePath: 'xxx/xxxxx.hap'
-11. }, (err: BusinessError, data: request.DownloadTask) => {
-12. if (err) {
-13. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-14. return;
-15. }
-16. });
-17. } catch (err) {
-18. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-19. }
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+try {
+  // 需要手动将url替换为真实服务器的HTTP协议地址
+  request.downloadFile(context, {
+    url: 'https://xxxx/xxxxx.hap',
+    filePath: 'xxx/xxxxx.hap'
+  }, (err: BusinessError, data: request.DownloadTask) => {
+    if (err) {
+      console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+      return;
+    }
+  });
+} catch (err) {
+  console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## request.download(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 download(config: DownloadConfig): Promise<DownloadTask>
 
@@ -989,9 +917,9 @@ download(config: DownloadConfig): Promise<DownloadTask>
 
 **系统能力**：SystemCapability.MiscServices.Download
 
-说明
+**说明** 
 
-从API version 6 开始支持，从API version 9 开始废弃，建议使用[request.downloadFile](js-apis-request.md#requestdownloadfile9)替代。
+从API version 6开始支持，从API version 9开始废弃。建议使用[request.downloadFile](js-apis-request.md#requestdownloadfile9)替代。
 
 **参数：**
 
@@ -1015,19 +943,17 @@ download(config: DownloadConfig): Promise<DownloadTask>
 
 **示例：**
 
-```
-1. let downloadTask: request.DownloadTask;
-2. // 需要手动将url替换为真实服务器的HTTP协议地址
-3. request.download({ url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
-4. downloadTask = data;
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-7. })
+```js
+let downloadTask: request.DownloadTask;
+// 需要手动将url替换为真实服务器的HTTP协议地址
+request.download({ url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
+  downloadTask = data;
+}).catch((err: BusinessError) => {
+  console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+})
 ```
 
 ## request.download(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 download(config: DownloadConfig, callback: AsyncCallback<DownloadTask>): void
 
@@ -1039,9 +965,9 @@ download(config: DownloadConfig, callback: AsyncCallback<DownloadTask>): void
 
 **系统能力**：SystemCapability.MiscServices.Download
 
-说明
+**说明** 
 
-从API version 6 开始支持，从API version 9 开始废弃，建议使用[request.downloadFile](js-apis-request.md#requestdownloadfile9-1)替代。
+从API version 6开始支持，从API version 9开始废弃。建议使用[request.downloadFile](js-apis-request.md#requestdownloadfile9-1)替代。
 
 **参数：**
 
@@ -1060,28 +986,24 @@ download(config: DownloadConfig, callback: AsyncCallback<DownloadTask>): void
 
 **示例：**
 
-```
-1. let downloadTask: request.DownloadTask;
-2. // 需要手动将url替换为真实服务器的HTTP协议地址
-3. request.download({ url: 'https://xxxx/xxxxx.hap',
-4. filePath: 'xxx/xxxxx.hap'}, (err: BusinessError, data: request.DownloadTask) => {
-5. if (err) {
-6. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-7. return;
-8. }
-9. downloadTask = data;
-10. });
+```js
+let downloadTask: request.DownloadTask;
+// 需要手动将url替换为真实服务器的HTTP协议地址
+request.download({ url: 'https://xxxx/xxxxx.hap',
+filePath: 'xxx/xxxxx.hap'}, (err: BusinessError, data: request.DownloadTask) => {
+  if (err) {
+    console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  downloadTask = data;
+});
 ```
 
 ## DownloadTask
 
-PhonePC/2in1TabletTVWearable
-
-下载任务，使用下列方法前，需要先获取DownloadTask对象，promise形式通过[request.downloadFile](js-apis-request.md#requestdownloadfile9)获取，callback形式通过[request.downloadFile](js-apis-request.md#requestdownloadfile9-1)获取。
+下载任务，使用下列方法前，需要先获取DownloadTask对象，Promise形式通过[request.downloadFile](js-apis-request.md#requestdownloadfile9)获取，callback形式通过[request.downloadFile](js-apis-request.md#requestdownloadfile9-1)获取。
 
 ### on('progress')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'progress', callback: (receivedSize: number, totalSize: number) => void): void
 
@@ -1089,7 +1011,7 @@ on(type: 'progress', callback: (receivedSize: number, totalSize: number) => void
 
 **系统能力**：SystemCapability.MiscServices.Download
 
-说明
+**说明** 
 
 应用处于后台时，为满足功耗性能要求，不支持调用此接口进行回调。
 
@@ -1098,14 +1020,7 @@ on(type: 'progress', callback: (receivedSize: number, totalSize: number) => void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。  - 取值为'progress'，表示下载的进度信息，当任务进度有进展时触发该事件。 |
-| callback | function | 是 | 下载任务进度的回调函数，返回已上传文件大小和上传文件大小总和。 |
-
-回调函数的参数：
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| receivedSize | number | 是 | 当前下载的进度，单位为字节（B）。 |
-| totalSize | number | 是 | 下载文件的总大小，单位为字节（B）。在下载过程中，若服务器使用chunk方式传输导致无法从请求头中获取文件总大小时，totalSize为 -1。 |
+| callback | (receivedSize: number, totalSize: number) => void | 是 | 下载任务进度的回调函数，返回已下载文件大小和下载文件总大小，单位为字节（B）。在下载过程中，若服务器使用chunk方式传输导致无法从响应头中获取文件总大小时，totalSize为 -1。 |
 
 **错误码：**
 
@@ -1113,35 +1028,33 @@ on(type: 'progress', callback: (receivedSize: number, totalSize: number) => void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | The parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed. |
+| 401 | The parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed.  适用版本：12+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. try {
-7. // 需要手动将url替换为真实服务器的HTTP协议地址
-8. request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
-9. let downloadTask: request.DownloadTask = data;
-10. let progressCallback = (receivedSize: number, totalSize: number) => {
-11. console.info("download receivedSize:" + receivedSize + " totalSize:" + totalSize);
-12. };
-13. downloadTask.on('progress', progressCallback);
-14. }).catch((err: BusinessError) => {
-15. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-16. })
-17. } catch (err) {
-18. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-19. }
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+try {
+  // 需要手动将url替换为真实服务器的HTTP协议地址
+  request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
+    let downloadTask: request.DownloadTask = data;
+    let progressCallback = (receivedSize: number, totalSize: number) => {
+      console.info("download receivedSize:" + receivedSize + " totalSize:" + totalSize);
+    };
+    downloadTask.on('progress', progressCallback);
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+  })
+} catch (err) {
+  console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ### off('progress')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'progress', callback?: (receivedSize: number, totalSize: number) => void): void
 
@@ -1154,14 +1067,7 @@ off(type: 'progress', callback?: (receivedSize: number, totalSize: number) => vo
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消订阅的事件类型。  - 取值为'progress'，表示下载的进度信息。 |
-| callback | function | 否 | 需要取消订阅的回调函数。若无此参数，则取消订阅当前类型的所有回调函数。 |
-
-回调函数的参数：
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| receivedSize | number | 是 | 当前下载的进度，单位为字节（B）。 |
-| totalSize | number | 是 | 下载文件的总大小，单位为字节（B）。在下载过程中，若服务器使用chunk方式传输导致无法从请求头中获取文件总大小时，totalSize为 -1。 |
+| callback | (receivedSize: number, totalSize: number) => void | 否 | 需要取消订阅的回调函数。若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码：**
 
@@ -1169,47 +1075,45 @@ off(type: 'progress', callback?: (receivedSize: number, totalSize: number) => vo
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | The parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed. |
+| 401 | The parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed.  适用版本：12+ |
 
 **示例：**
 
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
+
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+try {
+  // 需要手动将url替换为真实服务器的HTTP协议地址
+  request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
+    let downloadTask: request.DownloadTask = data;
+    let progressCallback1 = (receivedSize: number, totalSize: number) => {
+      console.info('Download delete progress notification.' + 'receivedSize:' + receivedSize + 'totalSize:' + totalSize);
+    };
+    let progressCallback2 = (receivedSize: number, totalSize: number) => {
+      console.info('Download delete progress notification.' + 'receivedSize:' + receivedSize + 'totalSize:' + totalSize);
+    };
+    downloadTask.on('progress', progressCallback1);
+    downloadTask.on('progress', progressCallback2);
+    // 表示取消progressCallback1的订阅
+    downloadTask.off('progress', progressCallback1);
+    // 表示取消订阅下载任务进度事件的所有回调
+    downloadTask.off('progress');
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+  })
+} catch (err) {
+  console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+}
 ```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. try {
-7. // 需要手动将url替换为真实服务器的HTTP协议地址
-8. request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
-9. let downloadTask: request.DownloadTask = data;
-10. let progressCallback1 = (receivedSize: number, totalSize: number) => {
-11. console.info('Download delete progress notification.' + 'receivedSize:' + receivedSize + 'totalSize:' + totalSize);
-12. };
-13. let progressCallback2 = (receivedSize: number, totalSize: number) => {
-14. console.info('Download delete progress notification.' + 'receivedSize:' + receivedSize + 'totalSize:' + totalSize);
-15. };
-16. downloadTask.on('progress', progressCallback1);
-17. downloadTask.on('progress', progressCallback2);
-18. // 表示取消progressCallback1的订阅
-19. downloadTask.off('progress', progressCallback1);
-20. // 表示取消订阅下载任务进度事件的所有回调
-21. downloadTask.off('progress');
-22. }).catch((err: BusinessError) => {
-23. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-24. })
-25. } catch (err) {
-26. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-27. }
-```
+### on('complete' | 'pause' | 'remove')7+
 
-### on('complete'|'pause'|'remove')7+
+on(type: 'complete' | 'pause' | 'remove', callback: () => void): void
 
-PhonePC/2in1TabletTVWearable
-
-on(type: 'complete'|'pause'|'remove', callback: () => void): void
-
-订阅下载任务相关的事件，使用callback异步回调。
+订阅下载任务完成、暂停或移除事件，使用callback异步回调。
 
 **系统能力**：SystemCapability.MiscServices.Download
 
@@ -1226,49 +1130,47 @@ on(type: 'complete'|'pause'|'remove', callback: () => void): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | The parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed. |
+| 401 | The parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed.  适用版本：12+ |
 
 **示例：**
 
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
+
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+try {
+  // 需要手动将url替换为真实服务器的HTTP协议地址
+  request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
+    let downloadTask: request.DownloadTask = data;
+    let completeCallback = () => {
+      console.info('Download task completed.');
+    };
+    downloadTask.on('complete', completeCallback);
+
+    let pauseCallback = () => {
+      console.info('Download task pause.');
+    };
+    downloadTask.on('pause', pauseCallback);
+
+    let removeCallback = () => {
+      console.info('Download task remove.');
+    };
+    downloadTask.on('remove', removeCallback);
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+  })
+} catch (err) {
+  console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+}
 ```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. try {
-7. // 需要手动将url替换为真实服务器的HTTP协议地址
-8. request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
-9. let downloadTask: request.DownloadTask = data;
-10. let completeCallback = () => {
-11. console.info('Download task completed.');
-12. };
-13. downloadTask.on('complete', completeCallback);
+### off('complete' | 'pause' | 'remove')7+
 
-15. let pauseCallback = () => {
-16. console.info('Download task pause.');
-17. };
-18. downloadTask.on('pause', pauseCallback);
+off(type: 'complete' | 'pause' | 'remove', callback?: () => void): void
 
-20. let removeCallback = () => {
-21. console.info('Download task remove.');
-22. };
-23. downloadTask.on('remove', removeCallback);
-24. }).catch((err: BusinessError) => {
-25. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-26. })
-27. } catch (err) {
-28. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-29. }
-```
-
-### off('complete'|'pause'|'remove')7+
-
-PhonePC/2in1TabletTVWearable
-
-off(type: 'complete'|'pause'|'remove', callback?: () => void): void
-
-取消订阅下载任务相关的事件。
+取消订阅下载任务完成、暂停或移除事件。
 
 **系统能力**：SystemCapability.MiscServices.Download
 
@@ -1285,69 +1187,67 @@ off(type: 'complete'|'pause'|'remove', callback?: () => void): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | The parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed. |
+| 401 | The parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed.  适用版本：12+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. try {
-7. // 需要手动将url替换为真实服务器的HTTP协议地址
-8. request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
-9. let downloadTask: request.DownloadTask = data;
-10. let completeCallback1 = () => {
-11. console.info('Download delete complete notification.');
-12. };
-13. let completeCallback2 = () => {
-14. console.info('Download delete complete notification.');
-15. };
-16. downloadTask.on('complete', completeCallback1);
-17. downloadTask.on('complete', completeCallback2);
-18. // 表示取消completeCallback1的订阅
-19. downloadTask.off('complete', completeCallback1);
-20. // 表示取消订阅下载任务完成的所有回调
-21. downloadTask.off('complete');
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+try {
+  // 需要手动将url替换为真实服务器的HTTP协议地址
+  request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
+    let downloadTask: request.DownloadTask = data;
+    let completeCallback1 = () => {
+      console.info('Download delete complete notification.');
+    };
+    let completeCallback2 = () => {
+      console.info('Download delete complete notification.');
+    };
+    downloadTask.on('complete', completeCallback1);
+    downloadTask.on('complete', completeCallback2);
+    // 表示取消completeCallback1的订阅
+    downloadTask.off('complete', completeCallback1);
+    // 表示取消订阅下载任务完成的所有回调
+    downloadTask.off('complete');
 
-23. let pauseCallback1 = () => {
-24. console.info('Download delete pause notification.');
-25. };
-26. let pauseCallback2 = () => {
-27. console.info('Download delete pause notification.');
-28. };
-29. downloadTask.on('pause', pauseCallback1);
-30. downloadTask.on('pause', pauseCallback2);
-31. // 表示取消pauseCallback1的订阅
-32. downloadTask.off('pause', pauseCallback1);
-33. // 表示取消订阅下载任务暂停的所有回调
-34. downloadTask.off('pause');
+    let pauseCallback1 = () => {
+      console.info('Download delete pause notification.');
+    };
+    let pauseCallback2 = () => {
+      console.info('Download delete pause notification.');
+    };
+    downloadTask.on('pause', pauseCallback1);
+    downloadTask.on('pause', pauseCallback2);
+    // 表示取消pauseCallback1的订阅
+    downloadTask.off('pause', pauseCallback1);
+    // 表示取消订阅下载任务暂停的所有回调
+    downloadTask.off('pause');
 
-36. let removeCallback1 = () => {
-37. console.info('Download delete remove notification.');
-38. };
-39. let removeCallback2 = () => {
-40. console.info('Download delete remove notification.');
-41. };
-42. downloadTask.on('remove', removeCallback1);
-43. downloadTask.on('remove', removeCallback2);
-44. // 表示取消removeCallback1的订阅
-45. downloadTask.off('remove', removeCallback1);
-46. // 表示取消订阅下载任务移除的所有回调
-47. downloadTask.off('remove');
-48. }).catch((err: BusinessError) => {
-49. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-50. })
-51. } catch (err) {
-52. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-53. }
+    let removeCallback1 = () => {
+      console.info('Download delete remove notification.');
+    };
+    let removeCallback2 = () => {
+      console.info('Download delete remove notification.');
+    };
+    downloadTask.on('remove', removeCallback1);
+    downloadTask.on('remove', removeCallback2);
+    // 表示取消removeCallback1的订阅
+    downloadTask.off('remove', removeCallback1);
+    // 表示取消订阅下载任务移除的所有回调
+    downloadTask.off('remove');
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+  })
+} catch (err) {
+  console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ### on('fail')7+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'fail', callback: (err: number) => void): void
 
@@ -1360,13 +1260,7 @@ on(type: 'fail', callback: (err: number) => void): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。  - 取值为'fail'，表示下载失败，任务失败时触发该事件。 |
-| callback | function | 是 | 下载失败的回调函数。 |
-
-回调函数的参数：
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| err | number | 是 | 下载失败的错误码，错误原因见[下载任务的错误码](js-apis-request.md#常量)。 |
+| callback | (err: number) => void | 是 | 下载失败的回调函数。错误原因见下载任务的错误码[常量](js-apis-request.md#常量)。 |
 
 **错误码：**
 
@@ -1374,35 +1268,33 @@ on(type: 'fail', callback: (err: number) => void): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | The parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed. |
+| 401 | The parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed.  适用版本：12+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. try {
-7. // 需要手动将url替换为真实服务器的HTTP协议地址
-8. request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
-9. let downloadTask: request.DownloadTask = data;
-10. let failCallback = (err: number) => {
-11. console.error(`Failed to download the task. Code: ${err}`);
-12. };
-13. downloadTask.on('fail', failCallback);
-14. }).catch((err: BusinessError) => {
-15. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-16. })
-17. } catch (err) {
-18. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-19. }
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+try {
+  // 需要手动将url替换为真实服务器的HTTP协议地址
+  request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
+    let downloadTask: request.DownloadTask = data;
+    let failCallback = (err: number) => {
+      console.error(`Failed to download the task. Code: ${err}`);
+    };
+    downloadTask.on('fail', failCallback);
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+  })
+} catch (err) {
+  console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ### off('fail')7+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'fail', callback?: (err: number) => void): void
 
@@ -1415,13 +1307,7 @@ off(type: 'fail', callback?: (err: number) => void): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消订阅的事件类型。  - 取值为'fail'，表示下载失败。 |
-| callback | function | 否 | 需要取消订阅的回调函数。若无此参数，则取消订阅当前类型的所有回调函数。 |
-
-回调函数的参数：
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| err | number | 是 | 下载失败的错误码，错误原因见[下载任务的错误码](js-apis-request.md#常量)。 |
+| callback | (err: number) => void | 否 | 需要取消订阅的回调函数。若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **错误码：**
 
@@ -1429,43 +1315,41 @@ off(type: 'fail', callback?: (err: number) => void): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | The parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed. |
+| 401 | The parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed.  适用版本：12+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. try {
-7. // 需要手动将url替换为真实服务器的HTTP协议地址
-8. request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
-9. let downloadTask: request.DownloadTask = data;
-10. let failCallback1 = (err: number) => {
-11. console.error(`Failed to download the task. Code: ${err}`);
-12. };
-13. let failCallback2 = (err: number) => {
-14. console.error(`Failed to download the task. Code: ${err}`);
-15. };
-16. downloadTask.on('fail', failCallback1);
-17. downloadTask.on('fail', failCallback2);
-18. // 表示取消failCallback1的订阅
-19. downloadTask.off('fail', failCallback1);
-20. // 表示取消订阅下载任务失败的所有回调
-21. downloadTask.off('fail');
-22. }).catch((err: BusinessError) => {
-23. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-24. })
-25. } catch (err) {
-26. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-27. }
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+try {
+  // 需要手动将url替换为真实服务器的HTTP协议地址
+  request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
+    let downloadTask: request.DownloadTask = data;
+    let failCallback1 = (err: number) => {
+      console.error(`Failed to download the task. Code: ${err}`);
+    };
+    let failCallback2 = (err: number) => {
+      console.error(`Failed to download the task. Code: ${err}`);
+    };
+    downloadTask.on('fail', failCallback1);
+    downloadTask.on('fail', failCallback2);
+    // 表示取消failCallback1的订阅
+    downloadTask.off('fail', failCallback1);
+    // 表示取消订阅下载任务失败的所有回调
+    downloadTask.off('fail');
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+  })
+} catch (err) {
+  console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ### delete9+
-
-PhonePC/2in1TabletTVWearable
 
 delete(): Promise<boolean>
 
@@ -1475,9 +1359,9 @@ delete(): Promise<boolean>
 
 **系统能力**：SystemCapability.MiscServices.Download
 
-说明
+**说明** 
 
-由于不存在401报错场景，在api12中 401 the parameters check fails 这个错误码被移除。
+由于不存在401报错场景，在API version 12中 401 the parameters check fails 这个错误码被移除。
 
 **返回值：**
 
@@ -1495,31 +1379,29 @@ delete(): Promise<boolean>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. try {
-7. // 需要手动将url替换为真实服务器的HTTP协议地址
-8. request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
-9. data.delete().then((result: boolean) => {
-10. console.info('Succeeded in removing the download task.');
-11. }).catch((err: BusinessError) => {
-12. console.error(`Failed to remove the download task. Code: ${err.code}, message: ${err.message}`);
-13. });
-14. }).catch((err: BusinessError) => {
-15. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-16. })
-17. } catch (err) {
-18. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-19. }
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+try {
+  // 需要手动将url替换为真实服务器的HTTP协议地址
+  request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
+    data.delete().then((result: boolean) => {
+      console.info('Succeeded in removing the download task.');
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to remove the download task. Code: ${err.code}, message: ${err.message}`);
+    });
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+  })
+} catch (err) {
+  console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ### delete9+
-
-PhonePC/2in1TabletTVWearable
 
 delete(callback: AsyncCallback<boolean>): void
 
@@ -1529,9 +1411,9 @@ delete(callback: AsyncCallback<boolean>): void
 
 **系统能力**：SystemCapability.MiscServices.Download
 
-说明
+**说明** 
 
-由于不存在401报错场景，在api12中 401 the parameters check fails 这个错误码被移除。
+由于不存在401报错场景，在API version 12中 401 the parameters check fails 这个错误码被移除。
 
 **参数：**
 
@@ -1549,34 +1431,32 @@ delete(callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. try {
-7. // 需要手动将url替换为真实服务器的HTTP协议地址
-8. request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
-9. let downloadTask: request.DownloadTask = data;
-10. downloadTask.delete((err: BusinessError, result: boolean) => {
-11. if (err) {
-12. console.error(`Failed to remove the download task. Code: ${err.code}, message: ${err.message}`);
-13. return;
-14. }
-15. console.info('Succeeded in removing the download task.');
-16. });
-17. }).catch((err: BusinessError) => {
-18. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-19. })
-20. } catch (err) {
-21. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-22. }
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+try {
+  // 需要手动将url替换为真实服务器的HTTP协议地址
+  request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
+    let downloadTask: request.DownloadTask = data;
+    downloadTask.delete((err: BusinessError, result: boolean) => {
+      if (err) {
+        console.error(`Failed to remove the download task. Code: ${err.code}, message: ${err.message}`);
+        return;
+      }
+      console.info('Succeeded in removing the download task.');
+    });
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+  })
+} catch (err) {
+  console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ### getTaskInfo9+
-
-PhonePC/2in1TabletTVWearable
 
 getTaskInfo(): Promise<DownloadInfo>
 
@@ -1586,15 +1466,15 @@ getTaskInfo(): Promise<DownloadInfo>
 
 **系统能力**：SystemCapability.MiscServices.Download
 
-说明
+**说明** 
 
-由于不存在401报错场景，在api12中 401 the parameters check fails 这个错误码被移除。
+由于不存在401报错场景，在API version 12中 401 the parameters check fails 这个错误码被移除。
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[DownloadInfo](js-apis-request.md#downloadinfo7)> | Promise对象，返回DownloadInfo对象。 |
+| Promise<[DownloadInfo](js-apis-request.md#downloadinfo7)> | Promise对象，返回包含下载任务信息的DownloadInfo对象。 |
 
 **错误码：**
 
@@ -1606,44 +1486,42 @@ getTaskInfo(): Promise<DownloadInfo>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. try {
-7. // 需要手动将url替换为真实服务器的HTTP协议地址
-8. request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
-9. let downloadTask: request.DownloadTask = data;
-10. downloadTask.getTaskInfo().then((downloadInfo: request.DownloadInfo) => {
-11. console.info('Succeeded in querying the download task')
-12. }).catch((err: BusinessError) => {
-13. console.error(`Failed to query the download task. Code: ${err.code}, message: ${err.message}`)
-14. });
-15. }).catch((err: BusinessError) => {
-16. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-17. })
-18. } catch (err) {
-19. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-20. }
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+try {
+  // 需要手动将url替换为真实服务器的HTTP协议地址
+  request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
+    let downloadTask: request.DownloadTask = data;
+    downloadTask.getTaskInfo().then((downloadInfo: request.DownloadInfo) => {
+      console.info('Succeeded in querying the download task');
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to query the download task. Code: ${err.code}, message: ${err.message}`);
+    });
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+  })
+} catch (err) {
+  console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ### getTaskInfo9+
 
-PhonePC/2in1TabletTVWearable
-
 getTaskInfo(callback: AsyncCallback<DownloadInfo>): void
 
-查询下载的任务，使用callback异步回调。
+查询下载任务的信息，使用callback异步回调。
 
 **需要权限**：ohos.permission.INTERNET
 
 **系统能力**：SystemCapability.MiscServices.Download
 
-说明
+**说明** 
 
-由于不存在401报错场景，在api12中 401 the parameters check fails 这个错误码被移除。
+由于不存在401报错场景，在API version 12中 401 the parameters check fails 这个错误码被移除。
 
 **参数：**
 
@@ -1661,46 +1539,44 @@ getTaskInfo(callback: AsyncCallback<DownloadInfo>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. try {
-7. // 需要手动将url替换为真实服务器的HTTP协议地址
-8. request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
-9. let downloadTask: request.DownloadTask = data;
-10. downloadTask.getTaskInfo((err: BusinessError, downloadInfo: request.DownloadInfo) => {
-11. if (err) {
-12. console.error(`Failed to query the download mimeType. Code: ${err.code}, message: ${err.message}`);
-13. } else {
-14. console.info('Succeeded in querying the download mimeType');
-15. }
-16. });
-17. }).catch((err: BusinessError) => {
-18. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-19. })
-20. } catch (err) {
-21. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-22. }
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+try {
+  // 需要手动将url替换为真实服务器的HTTP协议地址
+  request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
+    let downloadTask: request.DownloadTask = data;
+    downloadTask.getTaskInfo((err: BusinessError, downloadInfo: request.DownloadInfo) => {
+      if (err) {
+        console.error(`Failed to query the download task. Code: ${err.code}, message: ${err.message}`);
+      } else {
+        console.info('Succeeded in querying the download task');
+      }
+    });
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+  })
+} catch (err) {
+  console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ### getTaskMimeType9+
 
-PhonePC/2in1TabletTVWearable
-
 getTaskMimeType(): Promise<string>
 
-查询下载的任务的MimeType(HTTP中表示资源的媒体类型)，使用Promise异步回调。
+查询下载任务的MimeType（HTTP中表示资源的媒体类型），使用Promise异步回调。
 
 **需要权限**：ohos.permission.INTERNET
 
 **系统能力**：SystemCapability.MiscServices.Download
 
-说明
+**说明** 
 
-由于不存在401报错场景，在api12中 401 the parameters check fails 这个错误码被移除。
+由于不存在401报错场景，在API version 12中 401 the parameters check fails 这个错误码被移除。
 
 **返回值：**
 
@@ -1718,32 +1594,30 @@ getTaskMimeType(): Promise<string>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. try {
-7. // 需要手动将url替换为真实服务器的HTTP协议地址
-8. request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
-9. let downloadTask: request.DownloadTask = data;
-10. downloadTask.getTaskMimeType().then((data: string) => {
-11. console.info('Succeeded in querying the download MimeType');
-12. }).catch((err: BusinessError) => {
-13. console.error(`Failed to query the download MimeType. Code: ${err.code}, message: ${err.message}`)
-14. });
-15. }).catch((err: BusinessError) => {
-16. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-17. })
-18. } catch (err) {
-19. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-20. }
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+try {
+  // 需要手动将url替换为真实服务器的HTTP协议地址
+  request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
+    let downloadTask: request.DownloadTask = data;
+    downloadTask.getTaskMimeType().then((data: string) => {
+      console.info('Succeeded in querying the download MimeType');
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to query the download MimeType. Code: ${err.code}, message: ${err.message}`);
+    });
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+  })
+} catch (err) {
+  console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ### getTaskMimeType9+
-
-PhonePC/2in1TabletTVWearable
 
 getTaskMimeType(callback: AsyncCallback<string>): void
 
@@ -1753,9 +1627,9 @@ getTaskMimeType(callback: AsyncCallback<string>): void
 
 **系统能力**：SystemCapability.MiscServices.Download
 
-说明
+**说明** 
 
-由于不存在401报错场景，在api12中 401 the parameters check fails 这个错误码被移除。
+由于不存在401报错场景，在API version 12中 401 the parameters check fails 这个错误码被移除。
 
 **参数：**
 
@@ -1773,34 +1647,32 @@ getTaskMimeType(callback: AsyncCallback<string>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. try {
-7. // 需要手动将url替换为真实服务器的HTTP协议地址
-8. request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
-9. let downloadTask: request.DownloadTask = data;
-10. downloadTask.getTaskMimeType((err: BusinessError, data: string) => {
-11. if (err) {
-12. console.error(`Failed to query the download mimeType. Code: ${err.code}, message: ${err.message}`);
-13. } else {
-14. console.info('Succeeded in querying the download mimeType');
-15. }
-16. });
-17. }).catch((err: BusinessError) => {
-18. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-19. })
-20. } catch (err) {
-21. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-22. }
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+try {
+  // 需要手动将url替换为真实服务器的HTTP协议地址
+  request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
+    let downloadTask: request.DownloadTask = data;
+    downloadTask.getTaskMimeType((err: BusinessError, data: string) => {
+      if (err) {
+        console.error(`Failed to query the download mimeType. Code: ${err.code}, message: ${err.message}`);
+      } else {
+        console.info('Succeeded in querying the download mimeType');
+      }
+    });
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+  })
+} catch (err) {
+  console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ### suspend9+
-
-PhonePC/2in1TabletTVWearable
 
 suspend(): Promise<boolean>
 
@@ -1810,9 +1682,9 @@ suspend(): Promise<boolean>
 
 **系统能力**：SystemCapability.MiscServices.Download
 
-说明
+**说明** 
 
-由于不存在401报错场景，在api12中 401 the parameters check fails 这个错误码被移除。
+由于不存在401报错场景，在API version 12中 401 the parameters check fails 这个错误码被移除。
 
 **返回值：**
 
@@ -1830,32 +1702,30 @@ suspend(): Promise<boolean>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. try {
-7. // 需要手动将url替换为真实服务器的HTTP协议地址
-8. request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
-9. let downloadTask: request.DownloadTask = data;
-10. downloadTask.suspend().then((result: boolean) => {
-11. console.info('Succeeded in pausing the download task.');
-12. }).catch((err: BusinessError) => {
-13. console.error(`Failed to pause the download task. Code: ${err.code}, message: ${err.message}`);
-14. });
-15. }).catch((err: BusinessError) => {
-16. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-17. })
-18. } catch (err) {
-19. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-20. }
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+try {
+  // 需要手动将url替换为真实服务器的HTTP协议地址
+  request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
+    let downloadTask: request.DownloadTask = data;
+    downloadTask.suspend().then((result: boolean) => {
+      console.info('Succeeded in pausing the download task.');
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to pause the download task. Code: ${err.code}, message: ${err.message}`);
+    });
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+  })
+} catch (err) {
+  console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ### suspend9+
-
-PhonePC/2in1TabletTVWearable
 
 suspend(callback: AsyncCallback<boolean>): void
 
@@ -1865,9 +1735,9 @@ suspend(callback: AsyncCallback<boolean>): void
 
 **系统能力**：SystemCapability.MiscServices.Download
 
-说明
+**说明** 
 
-由于不存在401报错场景，在api12中 401 the parameters check fails 这个错误码被移除。
+由于不存在401报错场景，在API version 12中 401 the parameters check fails 这个错误码被移除。
 
 **参数：**
 
@@ -1885,34 +1755,32 @@ suspend(callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. try {
-7. // 需要手动将url替换为真实服务器的HTTP协议地址
-8. request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
-9. let downloadTask: request.DownloadTask = data;
-10. downloadTask.suspend((err: BusinessError, result: boolean) => {
-11. if (err) {
-12. console.error(`Failed to pause the download task. Code: ${err.code}, message: ${err.message}`);
-13. return;
-14. }
-15. console.info('Succeeded in pausing the download task.');
-16. });
-17. }).catch((err: BusinessError) => {
-18. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-19. })
-20. } catch (err) {
-21. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-22. }
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+try {
+  // 需要手动将url替换为真实服务器的HTTP协议地址
+  request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
+    let downloadTask: request.DownloadTask = data;
+    downloadTask.suspend((err: BusinessError, result: boolean) => {
+      if (err) {
+        console.error(`Failed to pause the download task. Code: ${err.code}, message: ${err.message}`);
+        return;
+      }
+      console.info('Succeeded in pausing the download task.');
+    });
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+  })
+} catch (err) {
+  console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ### restore9+
-
-PhonePC/2in1TabletTVWearable
 
 restore(): Promise<boolean>
 
@@ -1922,9 +1790,9 @@ restore(): Promise<boolean>
 
 **系统能力**：SystemCapability.MiscServices.Download
 
-说明
+**说明** 
 
-由于不存在401报错场景，在api12中 401 the parameters check fails 这个错误码被移除。
+由于不存在401报错场景，在API version 12中 401 the parameters check fails 这个错误码被移除。
 
 **返回值：**
 
@@ -1942,32 +1810,30 @@ restore(): Promise<boolean>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. try {
-7. // 需要手动将url替换为真实服务器的HTTP协议地址
-8. request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
-9. let downloadTask: request.DownloadTask = data;
-10. downloadTask.restore().then((result: boolean) => {
-11. console.info('Succeeded in resuming the download task.')
-12. }).catch((err: BusinessError) => {
-13. console.error(`Failed to resume the download task. Code: ${err.code}, message: ${err.message}`);
-14. });
-15. }).catch((err: BusinessError) => {
-16. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-17. })
-18. } catch (err) {
-19. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-20. }
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+try {
+  // 需要手动将url替换为真实服务器的HTTP协议地址
+  request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
+    let downloadTask: request.DownloadTask = data;
+    downloadTask.restore().then((result: boolean) => {
+      console.info('Succeeded in resuming the download task.');
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to resume the download task. Code: ${err.code}, message: ${err.message}`);
+    });
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+  })
+} catch (err) {
+  console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ### restore9+
-
-PhonePC/2in1TabletTVWearable
 
 restore(callback: AsyncCallback<boolean>): void
 
@@ -1977,9 +1843,9 @@ restore(callback: AsyncCallback<boolean>): void
 
 **系统能力**：SystemCapability.MiscServices.Download
 
-说明
+**说明** 
 
-由于不存在401报错场景，在api12中 401 the parameters check fails 这个错误码被移除。
+由于不存在401报错场景，在API version 12中 401 the parameters check fails 这个错误码被移除。
 
 **参数：**
 
@@ -1997,34 +1863,32 @@ restore(callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. try {
-7. // 需要手动将url替换为真实服务器的HTTP协议地址
-8. request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
-9. let downloadTask: request.DownloadTask = data;
-10. downloadTask.restore((err: BusinessError, result: boolean) => {
-11. if (err) {
-12. console.error(`Failed to resume the download task. Code: ${err.code}, message: ${err.message}`);
-13. return;
-14. }
-15. console.info('Succeeded in resuming the download task.');
-16. });
-17. }).catch((err: BusinessError) => {
-18. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-19. })
-20. } catch (err) {
-21. console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
-22. }
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+try {
+  // 需要手动将url替换为真实服务器的HTTP协议地址
+  request.downloadFile(context, { url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadTask) => {
+    let downloadTask: request.DownloadTask = data;
+    downloadTask.restore((err: BusinessError, result: boolean) => {
+      if (err) {
+        console.error(`Failed to resume the download task. Code: ${err.code}, message: ${err.message}`);
+        return;
+      }
+      console.info('Succeeded in resuming the download task.');
+    });
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+  })
+} catch (err) {
+  console.error(`Failed to request the download. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ### remove(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 remove(): Promise<boolean>
 
@@ -2034,9 +1898,9 @@ remove(): Promise<boolean>
 
 **系统能力**：SystemCapability.MiscServices.Download
 
-说明
+**说明** 
 
-从API version 6开始支持，从API version 9开始废弃，建议使用[delete](js-apis-request.md#delete9-2)替代。
+从API version 6开始支持，从API version 9开始废弃。建议使用[delete](js-apis-request.md#delete9-2)替代。
 
 **返回值：**
 
@@ -2054,17 +1918,15 @@ remove(): Promise<boolean>
 
 **示例：**
 
-```
-1. downloadTask.remove().then((result) => {
-2. console.info('Succeeded in removing the download task.');
-3. }).catch ((err: BusinessError) => {
-4. console.error(`Failed to remove the download task. Code: ${err.code}, message: ${err.message}`);
-5. });
+```js
+downloadTask.remove().then((result) => {
+  console.info('Succeeded in removing the download task.');
+}).catch ((err: BusinessError) => {
+  console.error(`Failed to remove the download task. Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### remove(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 remove(callback: AsyncCallback<boolean>): void
 
@@ -2074,9 +1936,9 @@ remove(callback: AsyncCallback<boolean>): void
 
 **系统能力**：SystemCapability.MiscServices.Download
 
-说明
+**说明** 
 
-从API version 6开始支持，从API version 9开始废弃，建议使用[delete](js-apis-request.md#delete9-3)替代。
+从API version 6开始支持，从API version 9开始废弃。建议使用[delete](js-apis-request.md#delete9-3)替代。
 
 **参数：**
 
@@ -2094,19 +1956,17 @@ remove(callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. downloadTask.remove((err, result)=>{
-2. if(err) {
-3. console.error(`Failed to remove the download task. Code: ${err.code}, message: ${err.message}`);
-4. return;
-5. }
-6. console.info('Succeeded in removing the download task.');
-7. });
+```js
+downloadTask.remove((err, result) => {
+  if (err) {
+    console.error(`Failed to remove the download task. Code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in removing the download task.');
+});
 ```
 
 ### query(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 query(): Promise<DownloadInfo>
 
@@ -2116,15 +1976,15 @@ query(): Promise<DownloadInfo>
 
 **系统能力**：SystemCapability.MiscServices.Download
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃,建议使用[getTaskInfo](js-apis-request.md#gettaskinfo9)替代。
+从API version 7开始支持，从API version 9开始废弃。建议使用[getTaskInfo](js-apis-request.md#gettaskinfo9)替代。
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[DownloadInfo](js-apis-request.md#downloadinfo7)> | Promise对象。返回DownloadInfo。 |
+| Promise<[DownloadInfo](js-apis-request.md#downloadinfo7)> | Promise对象。返回包含下载任务信息的DownloadInfo。 |
 
 **错误码：**
 
@@ -2136,17 +1996,15 @@ query(): Promise<DownloadInfo>
 
 **示例：**
 
-```
-1. downloadTask.query().then((downloadInfo) => {
-2. console.info('Succeeded in querying the download task.')
-3. }).catch((err: BusinessError) => {
-4. console.error(`Failed to query the download task. Code: ${err.code}, message: ${err.message}`)
-5. });
+```js
+downloadTask.query().then((downloadInfo) => {
+  console.info('Succeeded in querying the download task.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to query the download task. Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### query(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 query(callback: AsyncCallback<DownloadInfo>): void
 
@@ -2156,9 +2014,9 @@ query(callback: AsyncCallback<DownloadInfo>): void
 
 **系统能力**：SystemCapability.MiscServices.Download
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃，建议使用[getTaskInfo](js-apis-request.md#gettaskinfo9-1)替代。
+从API version 7开始支持，从API version 9开始废弃。建议使用[getTaskInfo](js-apis-request.md#gettaskinfo9-1)替代。
 
 **参数：**
 
@@ -2176,19 +2034,17 @@ query(callback: AsyncCallback<DownloadInfo>): void
 
 **示例：**
 
-```
-1. downloadTask.query((err: BusinessError, downloadInfo: request.DownloadInfo)=>{
-2. if(err) {
-3. console.error(`Failed to query the download mimeType. Code: ${err.code}, message: ${err.message}`);
-4. } else {
-5. console.info('Succeeded in querying the download task.');
-6. }
-7. });
+```js
+downloadTask.query((err: BusinessError, downloadInfo: request.DownloadInfo) => {
+  if (err) {
+    console.error(`Failed to query the download task. Code: ${err.code}, message: ${err.message}`);
+  } else {
+    console.info('Succeeded in querying the download task.');
+  }
+});
 ```
 
 ### queryMimeType(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 queryMimeType(): Promise<string>
 
@@ -2198,9 +2054,9 @@ queryMimeType(): Promise<string>
 
 **系统能力**：SystemCapability.MiscServices.Download
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃，建议使用[getTaskMimeType](js-apis-request.md#gettaskmimetype9)替代。
+从API version 7开始支持，从API version 9开始废弃。建议使用[getTaskMimeType](js-apis-request.md#gettaskmimetype9)替代。
 
 **返回值：**
 
@@ -2218,29 +2074,27 @@ queryMimeType(): Promise<string>
 
 **示例：**
 
-```
-1. downloadTask.queryMimeType().then((data: string) => {
-2. console.info('Succeeded in querying the download MimeType.');
-3. }).catch((err: BusinessError) => {
-4. console.error(`Failed to query the download MimeType. Code: ${err.code}, message: ${err.message}`)
-5. });
+```js
+downloadTask.queryMimeType().then((data: string) => {
+  console.info('Succeeded in querying the download MimeType.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to query the download MimeType. Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### queryMimeType(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 queryMimeType(callback: AsyncCallback<string>): void
 
-查询下载的任务的MimeType，使用callback异步回调。
+查询下载任务的MimeType，使用callback异步回调。
 
 **需要权限**：ohos.permission.INTERNET
 
 **系统能力**：SystemCapability.MiscServices.Download
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃，建议使用[getTaskMimeType](js-apis-request.md#gettaskmimetype9-1)替代。
+从API version 7开始支持，从API version 9开始废弃。建议使用[getTaskMimeType](js-apis-request.md#gettaskmimetype9-1)替代。
 
 **参数：**
 
@@ -2258,19 +2112,17 @@ queryMimeType(callback: AsyncCallback<string>): void
 
 **示例：**
 
-```
-1. downloadTask.queryMimeType((err: BusinessError, data: string)=>{
-2. if(err) {
-3. console.error(`Failed to query the download mimeType. Code: ${err.code}, message: ${err.message}`);
-4. } else {
-5. console.info('Succeeded in querying the download mimeType.');
-6. }
-7. });
+```js
+downloadTask.queryMimeType((err: BusinessError, data: string) => {
+  if (err) {
+    console.error(`Failed to query the download mimeType. Code: ${err.code}, message: ${err.message}`);
+  } else {
+    console.info('Succeeded in querying the download mimeType.');
+  }
+});
 ```
 
 ### pause(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 pause(): Promise<void>
 
@@ -2280,9 +2132,9 @@ pause(): Promise<void>
 
 **系统能力**：SystemCapability.MiscServices.Download
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃，建议使用[suspend](js-apis-request.md#suspend9)替代。
+从API version 7开始支持，从API version 9开始废弃。建议使用[suspend](js-apis-request.md#suspend9)替代。
 
 **返回值：**
 
@@ -2300,17 +2152,15 @@ pause(): Promise<void>
 
 **示例：**
 
-```
-1. downloadTask.pause().then(() => {
-2. console.info('Succeeded in pausing the download task.');
-3. }).catch((err: BusinessError) => {
-4. console.error(`Failed to pause the download task. Code: ${err.code}, message: ${err.message}`);
-5. });
+```js
+downloadTask.pause().then(() => {
+  console.info('Succeeded in pausing the download task.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to pause the download task. Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### pause(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 pause(callback: AsyncCallback<void>): void
 
@@ -2320,9 +2170,9 @@ pause(callback: AsyncCallback<void>): void
 
 **系统能力**：SystemCapability.MiscServices.Download
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃，建议使用[suspend](js-apis-request.md#suspend9-1)替代。
+从API version 7开始支持，从API version 9开始废弃。建议使用[suspend](js-apis-request.md#suspend9-1)替代。
 
 **参数：**
 
@@ -2340,19 +2190,17 @@ pause(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. downloadTask.pause((err: BusinessError) => {
-2. if(err) {
-3. console.error(`Failed to pause the download task. Code: ${err.code}, message: ${err.message}`);
-4. return;
-5. }
-6. console.info('Succeeded in pausing the download task.');
-7. });
+```js
+downloadTask.pause((err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to pause the download task. Code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in pausing the download task.');
+});
 ```
 
 ### resume(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 resume(): Promise<void>
 
@@ -2362,9 +2210,9 @@ resume(): Promise<void>
 
 **系统能力**：SystemCapability.MiscServices.Download
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃，建议使用[restore](js-apis-request.md#restore9)替代。
+从API version 7开始支持，从API version 9开始废弃。建议使用[restore](js-apis-request.md#restore9)替代。
 
 **返回值：**
 
@@ -2382,17 +2230,15 @@ resume(): Promise<void>
 
 **示例：**
 
-```
-1. downloadTask.resume().then(() => {
-2. console.info('Succeeded in resuming the download task.')
-3. }).catch((err: BusinessError) => {
-4. console.error(`Failed to resume the download task. Code: ${err.code}, message: ${err.message}`);
-5. });
+```js
+downloadTask.resume().then(() => {
+  console.info('Succeeded in resuming the download task.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to resume the download task. Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### resume(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 resume(callback: AsyncCallback<void>): void
 
@@ -2402,9 +2248,9 @@ resume(callback: AsyncCallback<void>): void
 
 **系统能力**：SystemCapability.MiscServices.Download
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃，建议使用[restore](js-apis-request.md#restore9-1)替代。
+从API version 7开始支持，从API version 9开始废弃。建议使用[restore](js-apis-request.md#restore9-1)替代。
 
 **参数：**
 
@@ -2422,19 +2268,17 @@ resume(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. downloadTask.resume((err: BusinessError) => {
-2. if (err) {
-3. console.error(`Failed to resume the download task. Code: ${err.code}, message: ${err.message}`);
-4. return;
-5. }
-6. console.info('Succeeded in resuming the download task.');
-7. });
+```js
+downloadTask.resume((err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to resume the download task. Code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info('Succeeded in resuming the download task.');
+});
 ```
 
 ## DownloadConfig
-
-PhonePC/2in1TabletTVWearable
 
 下载任务的配置信息。
 
@@ -2442,19 +2286,17 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| url | string | 否 | 否 | 资源地址。从API 6到API 14，最大长度为2048个字符；从API 15开始，最大长度为8192个字符。支持[HTTP拦截](../harmonyos-guides/app-file-upload-download.md#http拦截)功能。 |
-| header | Object | 否 | 是 | 添加要包含在下载请求中的HTTPS标志头。默认值为空。 |
-| enableMetered | boolean | 否 | 是 | 表示设置是否允许在按流量计费的连接下下载任务的配置信息。true表示允许，false表示不允许。默认值为false。  **说明：**  Wi-Fi为非计费网络，数据流量为计费网络。 |
-| enableRoaming | boolean | 否 | 是 | 表示设置是否允许在漫游网络中下载任务的配置信息。true表示允许，false表示不允许。默认值为false。 |
+| url | string | 否 | 否 | 资源地址。从API 6到API 14，最大长度为2048个字符；从API 15开始，最大长度为8192个字符。超出最大长度时任务创建失败。支持[HTTP拦截](../harmonyos-guides/app-file-upload-download.md#http拦截)功能。 |
+| header | Object | 否 | 是 | 添加要包含在下载请求中的HTTP或HTTPS标头。默认值为空。 |
+| enableMetered | boolean | 否 | 是 | 表示设置是否允许在按流量计费的连接下下载任务的配置信息。true表示允许，false表示不允许。默认值为false。当networkType为NETWORK\_MOBILE | NETWORK\_WIFI时，此参数不生效。  **说明：**  Wi-Fi为非计费网络，数据流量为计费网络。 |
+| enableRoaming | boolean | 否 | 是 | 表示设置是否允许在漫游网络中下载任务的配置信息。true表示允许，false表示不允许。默认值为false。  当networkType为NETWORK\_MOBILE | NETWORK\_WIFI时，该参数不生效。 |
 | description | string | 否 | 是 | 设置下载会话的描述。默认值为空字符串。 |
 | filePath7+ | string | 否 | 是 | 设置下载路径。默认为调用方（即传入的context）对应的缓存路径。默认文件名从url的最后一个"/"后截取。  - FA模型下使用[Context.getCacheDir](js-apis-inner-app-context.md#contextgetcachedir)方法获取应用存储路径。  - Stage模型下使用[Context (Stage模型的上下文基类)](js-apis-inner-application-context.md)中AbilityContext的类获取文件路径。 |
-| networkType | number | 否 | 是 | 设置允许下载的网络类型，通过[网络类型常量](js-apis-request.md#常量)的位运算方式决定允许的网络类型，支持如下几种设置方式:  - 仅支持蜂窝网络下载，参数为NETWORK\_MOBILE或0x00000001  - 仅支持WLAN网络下载，参数为NETWORK\_WIFI或0x00010000  - 参数默认值，支持蜂窝/WLAN网络下载，参数为NETWORK\_MOBILE | NETWORK\_WIFI或0x00010001。  当参数为NETWORK\_MOBILE | NETWORK\_WIFI时，enableMetered和enableRoaming参数不生效。 |
+| networkType | number | 否 | 是 | 设置允许下载的网络类型，通过[网络类型常量](js-apis-request.md#常量)的位运算方式决定允许的网络类型，支持如下几种设置方式：  - 仅支持蜂窝网络下载，参数为NETWORK\_MOBILE或0x00000001  - 仅支持WLAN网络下载，参数为NETWORK\_WIFI或0x00010000  - 参数默认值，支持蜂窝/WLAN网络下载，参数为NETWORK\_MOBILE | NETWORK\_WIFI或0x00010001。  当参数为NETWORK\_MOBILE | NETWORK\_WIFI时，enableMetered和enableRoaming参数不生效。 |
 | title | string | 否 | 是 | 设置下载任务名称。默认值为download。 |
 | background9+ | boolean | 否 | 是 | 后台任务通知开关，启用后可在通知中显示下载状态。true表示启用，false表示禁用。默认值为false。 |
 
 ## DownloadInfo7+
-
-PhonePC/2in1TabletTVWearable
 
 下载任务信息，[getTaskInfo](js-apis-request.md#gettaskinfo9)接口的回调参数。
 
@@ -2463,24 +2305,22 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | downloadId | number | 否 | 否 | 下载任务id。 |
-| failedReason | number | 否 | 否 | 下载失败原因，可以是任何[下载任务的错误码](js-apis-request.md#常量)常量。 |
+| failedReason | number | 否 | 否 | 下载失败原因，可以是任何下载任务的错误码[常量](js-apis-request.md#常量)。 |
 | fileName | string | 否 | 否 | 下载的文件名。 |
 | filePath | string | 否 | 否 | 存储文件的URI。 |
-| pausedReason | number | 否 | 否 | 会话暂停的原因，可以是任何[下载任务暂停原因](js-apis-request.md#常量)常量。 |
-| status | number | 否 | 否 | 下载状态码，可以是任何[下载任务状态码](js-apis-request.md#常量)常量。 |
+| pausedReason | number | 否 | 否 | 会话暂停的原因，可以是任何下载任务暂停原因[常量](js-apis-request.md#常量)。 |
+| status | number | 否 | 否 | 下载状态码，可以是任何下载任务状态码[常量](js-apis-request.md#常量)。 |
 | targetURI | string | 否 | 否 | 下载文件的URI。 |
 | downloadTitle | string | 否 | 否 | 下载任务名称。 |
 | downloadTotalBytes | number | 否 | 否 | 下载的文件的总大小，单位为字节（B）。 |
 | description | string | 否 | 否 | 待下载任务的描述信息。 |
 | downloadedBytes | number | 否 | 否 | 实时下载大小，单位为字节（B）。 |
 
-## request.agent10+
+## agent10+
 
-PhonePC/2in1TabletTVWearable
+request.agent提供基于任务的后台上传下载代理能力。开发者通过[request.agent.create](js-apis-request.md#requestagentcreate10)创建任务并排入队列，通过[Task](js-apis-request.md#requestagenttask10)对象管理任务生命周期（启动、暂停、恢复、停止、移除）。支持前台和后台两种任务模式：前台任务在应用切到后台一段时间后会显示失败或暂停，后台任务不受影响。支持断点续传、网络条件控制、自动重试、超时控制等特性。与基础的[request.uploadFile](js-apis-request.md#requestuploadfile9)/[request.downloadFile](js-apis-request.md#requestdownloadfile9)相比，request.agent提供更完善的任务管理和状态查询能力。
 
 ### 常量
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
@@ -2490,8 +2330,6 @@ PhonePC/2in1TabletTVWearable
 | VISIBILITY\_PROGRESS21+ | number | 2 | [通知栏](js-apis-request.md#requestagentnotification15)展示类型：显示进度通知 |
 
 ## request.agent.Action10+
-
-PhonePC/2in1TabletTVWearable
 
 定义操作选项。
 
@@ -2506,11 +2344,9 @@ PhonePC/2in1TabletTVWearable
 
 ## request.agent.Mode10+
 
-PhonePC/2in1TabletTVWearable
-
 定义模式选项。
 
-当应用的前台任务切换到后台一段时间后会显示运行失败或暂停，而后台任务不受此操作影响。
+当应用的前台任务切换到后台一段时间（取决于系统资源管理策略）后会显示运行失败或暂停，而后台任务不受此操作影响。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -2522,8 +2358,6 @@ PhonePC/2in1TabletTVWearable
 | FOREGROUND | 1 | 表示前台任务。 |
 
 ## request.agent.Network10+
-
-PhonePC/2in1TabletTVWearable
 
 定义网络选项。
 
@@ -2541,8 +2375,6 @@ PhonePC/2in1TabletTVWearable
 
 ## request.agent.BroadcastEvent11+
 
-PhonePC/2in1TabletTVWearable
-
 定义自定义系统事件。用户可以使用公共事件接口获取该事件。
 
 上传下载SA具有'ohos.permission.SEND\_TASK\_COMPLETE\_EVENT'权限，用户可以配置事件的metadata指向的二级配置文件来拦截其他事件发送者。
@@ -2557,8 +2389,6 @@ PhonePC/2in1TabletTVWearable
 
 ## request.agent.FileSpec10+
 
-PhonePC/2in1TabletTVWearable
-
 表单项的文件信息。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
@@ -2566,14 +2396,12 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | path | string | 否 | 否 | 文件路径。  - 相对路径，位于调用方的缓存路径下。  例如："./xxx/yyy/zzz.html"、"xxx/yyy/zzz.html"。  - internal协议路径，支持"internal://"及其子路径。internal为调用方（即传入的context）对应路径，"internal://cache"对应context.cacheDir。  例如："internal://cache/path/to/file.txt"。  - 应用沙箱目录，只支持到base及其子目录下。  例如："/data/storage/el1/base/path/to/file.txt"。  - file协议路径，必须匹配应用包名，只支持到base及其子目录下。  例如："file://com.example.test/data/storage/el2/base/file.txt"。  - 用户公共文件，仅支持上传任务。  例如："file://media/Photo/path/to/file.img"。仅支持前台任务。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| mimeType(deprecated) | string | 否 | 是 | 文件的mimeType，通过文件名获取，默认值为文件名后缀。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。  从 API version 18 开始废弃，建议使用contentType替代。 |
+| mimeType(deprecated) | string | 否 | 是 | 文件的mimeType，通过文件名获取，默认值为文件名后缀。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。  从API version 10开始支持，从 API version 18开始废弃。建议使用contentType替代。 |
 | contentType18+ | string | 否 | 是 | 文件内容类型，默认值为文件名后缀。该选项会被填写到HTTP表单指定的Content-Type字段中。 |
 | filename | string | 否 | 是 | 文件名，默认值通过路径获取。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | extras | object | 否 | 是 | 文件信息的附加内容，该参数不会体现在HTTP请求中。默认值为空。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 
 ## request.agent.FormItem10+
-
-PhonePC/2in1TabletTVWearable
 
 任务的表单项信息。
 
@@ -2588,8 +2416,6 @@ PhonePC/2in1TabletTVWearable
 
 ## request.agent.Config10+
 
-PhonePC/2in1TabletTVWearable
-
 上传/下载任务的配置信息。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
@@ -2597,37 +2423,35 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | action | [Action](js-apis-request.md#requestagentaction10) | 否 | 否 | 任务操作选项。  - UPLOAD表示上传任务。  - DOWNLOAD表示下载任务。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| url | string | 否 | 否 | 资源地址。从API 6到API 14，最大长度为2048个字符；从API 15开始，最大长度为8192个字符。支持[HTTP拦截](../harmonyos-guides/app-file-upload-download.md#http拦截)功能。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| title | string | 否 | 是 | 任务标题，其最大长度为256个字符，默认值为小写的 upload 或 download，与上面的 action 保持一致。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| description | string | 否 | 是 | 任务的详细信息，其最大长度为1024个字符，默认值为空字符串。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| mode | [Mode](js-apis-request.md#requestagentmode10) | 否 | 是 | 任务模式，默认为后台任务。从API version 20开始，下载到用户文件场景必须为request.agent.Mode.FOREGROUND。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| url | string | 否 | 否 | 资源地址。从API 6到API 14，最大长度为2048个字符；从API 15开始，最大长度为8192个字符。超出最大长度时任务创建失败。支持[HTTP拦截](../harmonyos-guides/app-file-upload-download.md#http拦截)功能。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| title | string | 否 | 是 | 任务标题，其最大长度为256个字符，默认值为小写的 upload 或 download，与上面的 action 保持一致。超出最大长度时任务创建失败。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| description | string | 否 | 是 | 任务的详细信息，其最大长度为1024个字符，默认值为空字符串。超出最大长度时任务创建失败。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| mode | [Mode](js-apis-request.md#requestagentmode10) | 否 | 是 | 任务模式，支持设置前台和后台任务，默认为后台任务。  - FOREGROUND表示前台任务。  - BACKGROUND表示后台任务。  从API version 20开始，下载到用户文件场景必须为request.agent.Mode.FOREGROUND，否则任务将无法正常创建或执行。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | overwrite | boolean | 否 | 是 | 下载过程中路径已存在时的解决方案选择，默认为false。  - true，覆盖已存在的文件。  - false，下载失败。  从API version 20开始，下载到用户文件场景必须为true。  设置为 true 时，不建议创建多个任务同时往同一个文件下载内容，会导致文件内容混乱。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | method | string | 否 | 是 | 上传或下载HTTP的标准方法，包括GET、POST和PUT，不区分大小写。  - 上传时，使用PUT或POST，默认值为PUT。  - 下载时，使用GET或POST，默认值为GET。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| headers | object | 否 | 是 | 添加要包含在任务中的HTTP协议标志头。  - 上传请求，默认的Content-Type为"multipart/form-data"。  - 下载请求，默认的Content-Type为"application/json"。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| data | string | Array<[FormItem](js-apis-request.md#requestagentformitem10)> | 否 | 是 | - 下载时，data为字符串类型，通常情况下使用json格式（object将被转换为json文本），默认为空。  - 上传时，data是表单项数组Array<[FormItem](js-apis-request.md#requestagentformitem10)>。从API version 15开始，创建单个任务可以上传最多100个文件。默认为空。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| headers | object | 否 | 是 | 添加要包含在任务中的HTTP协议标头。  - 上传请求，默认的Content-Type为"multipart/form-data"。  - 下载请求，默认的Content-Type为"application/json"。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| data | string | Array<[FormItem](js-apis-request.md#requestagentformitem10)> | 否 | 是 | - 下载时，data为字符串类型，通常情况下使用json格式（object将被转换为json文本），默认为空。  - 上传时，data是表单项数组Array<[FormItem](js-apis-request.md#requestagentformitem10)>。从API version 15开始，创建单个任务可以上传最多100个文件。默认为空。超出文件数量限制时任务创建失败。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | saveas | string | 否 | 是 | 保存下载文件的路径，包括如下几种：  - 相对路径，位于调用方的缓存路径下，如"./xxx/yyy/zzz.html"、"xxx/yyy/zzz.html"。  - internal协议路径，支持"internal://"及其子路径，internal为调用方（传入的context）对应路径，"internal://cache"对应context.cacheDir。如"internal://cache/path/to/file.txt"。  - 应用沙箱目录，只支持到base及其子目录下，如"/data/storage/el1/base/path/to/file.txt"。  - file协议路径，支持应用文件和用户文件，应用文件必须匹配应用包名，只支持到base及其子目录下，如"file://com.example.test/data/storage/el2/base/file.txt"。用户文件必须为调用方创建好的用户文件uri。  从API version 20开始，除[下载网络资源文件至用户文件](../harmonyos-guides/app-file-upload-download.md#下载网络资源文件至用户文件)外，其他可默认为调用方（即传入的context）对应的缓存路径。默认文件名从url的最后一个"/"后截取。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | network | [Network](js-apis-request.md#requestagentnetwork10) | 否 | 是 | 网络选项，当前支持无线网络WIFI和蜂窝数据网络CELLULAR，默认为ANY（WIFI或CELLULAR）。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | metered | boolean | 否 | 是 | 是否允许在按流量计费的网络中工作，默认为false。  - true：是  - false：否  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | roaming | boolean | 否 | 是 | 是否允许在漫游网络中工作，默认为true。  - true：是  - false：否  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | retry | boolean | 否 | 是 | 是否为后台任务启用自动重试，仅应用于后台任务，默认为true。  - true：是  - false：否  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | redirect | boolean | 否 | 是 | 是否允许重定向，默认为true。  - true：是  - false：否  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| proxy12+ | string | 否 | 是 | 设置代理地址，其最大长度为512个字符，默认为空。  代理地址格式:"http://<domain or address>:<port>" |
+| proxy12+ | string | 否 | 是 | 设置代理地址，其最大长度为512个字符，默认为空。超出最大长度时任务创建失败。  代理地址格式："http://<domain or address>:<port>" |
 | index | number | 否 | 是 | 任务的路径索引，通常情况下用于任务断点续传，默认为0。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| begins | number | 否 | 是 | 文件起点，单位为字节（B），通常情况下用于断点续传。默认值为0，取值为闭区间，表示从头开始传输。  - 下载时，请求读取服务器开始下载文件时的起点位置（HTTP协议中设置"Range"选项）。  - 上传时，读取需上传的文件的起点位置。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| ends | number | 否 | 是 | 文件终点，单位为字节（B），通常情况下用于断点续传。默认值为-1，取值为闭区间，表示传输到整个文件末尾结束。  - 下载时，请求读取服务器开始下载文件时的结束位置（HTTP协议中设置"Range"选项）。  - 上传时，读取需上传的文件的结束位置。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| gauge | boolean | 否 | 是 | 后台任务的过程进度通知策略，仅应用于后台任务，默认值为false。  - false：代表仅完成或失败的通知。  - true：发出每个进度已完成或失败的通知。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| begins | number | 否 | 是 | 文件起点，单位为字节（B），通常情况下用于断点续传。默认值为0，取值范围为[0, 文件大小]，表示从头开始传输。超出范围时任务创建失败。  - 下载时，请求读取服务器开始下载文件时的起点位置（HTTP协议中设置"Range"选项）。  - 上传时，读取需上传的文件的起点位置。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| ends | number | 否 | 是 | 文件终点，单位为字节（B），通常情况下用于断点续传。默认值为-1，取值范围为[-1, 文件大小]，表示传输到整个文件末尾结束。超出范围时任务创建失败。  - 下载时，请求读取服务器开始下载文件时的结束位置（HTTP协议中设置"Range"选项）。  - 上传时，读取需上传的文件的结束位置。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| gauge | boolean | 否 | 是 | 后台任务的进度通知策略，仅应用于后台任务。  - false：仅发送完成或失败的通知。  - true：发送进度、完成和失败的通知。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | precise | boolean | 否 | 是 | - 如果设置为true，在上传/下载无法获取文件大小时任务失败。  - 如果设置为false，将文件大小设置为-1时任务继续。  默认值为false。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| token | string | 否 | 是 | 任务令牌。查询带有token的任务需提供token并通过[request.agent.touch](js-apis-request.md#requestagenttouch10)查询，否则无法查询到指定任务。其最小为8个字节，最大为2048个字节。默认为空。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| token | string | 否 | 是 | 任务令牌。查询带有token的任务需提供token并通过[request.agent.touch](js-apis-request.md#requestagenttouch10)查询，否则无法查询到指定任务。其最小为8个字节，最大为2048个字节。默认为空。超出范围时任务创建失败并返回错误码。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | priority11+ | number | 否 | 是 | 任务的优先级。前台任务的优先级比后台任务高。任务模式相同的情况下，该配置项的数字越小优先级越高，默认值为0。 |
 | extras | object | 否 | 是 | 配置的附加功能，默认为空。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | multipart15+ | boolean | 否 | 是 | 是否使用单个请求进行上传，单个请求上传时必定使用multipart/form-data。  - false：每个文件使用一个请求传输。  - true：使用多文件单请求上传。  默认值为false。 |
 | notification15+ | [Notification](js-apis-request.md#requestagentnotification15) | 否 | 是 | 通知栏自定义设置。默认值为{}。 |
 | minSpeed20+ | [MinSpeed](js-apis-request.md#requestagentminspeed20) | 否 | 是 | 最低限速自定义设置，默认不启用最低限速。 |
-| timeout20+ | [Timeout](js-apis-request.md#requestagenttimeout20) | 否 | 是 | 超时时间自定义设置，连接超时时间默认60秒，总超时时间默认604800秒（1周）。当retry参数为true时，[timeout](js-apis-request.md#requestagenttimeout20)事件会触发立即重试，导致[timeout](js-apis-request.md#requestagenttimeout20)在外部观察中被重试动作所掩盖，但内部[timeout](js-apis-request.md#requestagenttimeout20)条件已实际触发。若需显性观察[timeout](js-apis-request.md#requestagenttimeout20)事件，需关闭retry参数。 |
+| timeout20+ | [Timeout](js-apis-request.md#requestagenttimeout20) | 否 | 是 | 超时时间自定义设置，连接超时时间默认60秒，总超时时间默认604800秒（1周）。当retry参数为true时，[timeout](js-apis-request.md#requestagenttimeout20)事件会触发立即重试，导致[timeout](js-apis-request.md#requestagenttimeout20)在外部观察中被重试动作所掩盖，但内部[timeout](js-apis-request.md#requestagenttimeout20)条件已实际触发。若需显式观察[timeout](js-apis-request.md#requestagenttimeout20)事件，需关闭retry参数。 |
 
 ## request.agent.State10+
-
-PhonePC/2in1TabletTVWearable
 
 定义任务当前的状态。
 
@@ -2649,8 +2473,6 @@ PhonePC/2in1TabletTVWearable
 
 ## request.agent.Progress10+
 
-PhonePC/2in1TabletTVWearable
-
 任务进度的数据结构。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -2662,20 +2484,20 @@ PhonePC/2in1TabletTVWearable
 | state | [State](js-apis-request.md#requestagentstate10) | 是 | 否 | 任务当前的状态。 |
 | index | number | 是 | 否 | 任务中当前正在处理的文件索引。 |
 | processed | number | 是 | 否 | 任务中当前文件的已处理数据大小，单位为字节（B）。 |
-| sizes | Array<number> | 是 | 否 | 任务中文件的大小，单位为字节（B）。在下载过程中，若服务器使用chunk方式传输导致无法从请求头中获取文件总大小时，sizes为 -1。 |
+| sizes | Array<number> | 是 | 否 | 任务中当前文件的大小，单位为字节（B）。在下载过程中，若服务器使用chunk方式传输导致无法从响应头中获取文件总大小时，sizes为 -1。 |
 | extras | object | 是 | 是 | 交互的额外内容，例如：来自服务器的响应的header和body。默认值为空。 |
 
 ## request.agent.Faults10+
-
-PhonePC/2in1TabletTVWearable
 
 定义任务失败的原因。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
-说明
+**说明** 
 
-API version 12及以下版本，只支持串行的尝试连接域名相关ip，且不支持单个ip的连接时间控制，如果DNS返回的首个ip是阻塞的，可能会导致握手超时，进而引发TIMEOUT错误。
+API version 12及以下版本，只支持串行地尝试连接域名相关IP，且不支持单个IP的连接时间控制，如果DNS返回的首个IP是阻塞的，可能会导致握手超时，进而引发TIMEOUT错误。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2693,8 +2515,6 @@ API version 12及以下版本，只支持串行的尝试连接域名相关ip，�
 
 ## request.agent.Filter10+
 
-PhonePC/2in1TabletTVWearable
-
 过滤条件。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
@@ -2709,37 +2529,33 @@ PhonePC/2in1TabletTVWearable
 
 ## request.agent.TaskInfo10+
 
-PhonePC/2in1TabletTVWearable
-
-查询结果的任务信息数据结构，提供普通查询和系统查询，两种字段的可见范围不同。
+查询结果的任务信息数据结构，提供普通查询（通过request.agent.show、request.agent.touch等接口查询）和系统查询（系统应用级别的查询），两种查询方式下字段的可见范围不同。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| saveas | string | 是 | 是 | 保存下载文件的路径。 |
+| saveas | string | 是 | 是 | 保存下载文件的路径。默认值为空。  通过[request.agent.show](js-apis-request.md#requestagentshow10-1)、[request.agent.touch](js-apis-request.md#requestagenttouch10-1)进行查询。 |
 | url | string | 是 | 是 | 任务的url。  - 通过[request.agent.show](js-apis-request.md#requestagentshow10-1)、[request.agent.touch](js-apis-request.md#requestagenttouch10-1)进行查询。 |
-| data | string | Array<[FormItem](js-apis-request.md#requestagentformitem10)> | 是 | 是 | 任务值。  - 通过[request.agent.show](js-apis-request.md#requestagentshow10-1)、[request.agent.touch](js-apis-request.md#requestagenttouch10-1)进行查询。 |
+| data | string | Array<[FormItem](js-apis-request.md#requestagentformitem10)> | 是 | 是 | 任务的数据内容。  - 下载时，data为字符串类型，通常情况下使用json格式。  - 上传时，data是表单项数组Array<FormItem>。  - 通过[request.agent.show](js-apis-request.md#requestagentshow10-1)、[request.agent.touch](js-apis-request.md#requestagenttouch10-1)进行查询。 |
 | tid | string | 是 | 否 | 任务id。 |
 | title | string | 是 | 否 | 任务标题。 |
 | description | string | 是 | 否 | 任务描述。 |
 | action | [Action](js-apis-request.md#requestagentaction10) | 是 | 否 | 任务操作选项。  - UPLOAD表示上传任务。  - DOWNLOAD表示下载任务。 |
 | mode | [Mode](js-apis-request.md#requestagentmode10) | 是 | 否 | 任务模式。  - FOREGROUND表示前台任务。  - BACKGROUND表示后台任务。 |
 | priority11+ | number | 是 | 否 | 任务配置中的优先级。前台任务的优先级比后台任务高。相同模式的任务，数字越小优先级越高。 |
-| mimeType | string | 是 | 否 | 任务配置中的mimetype。 |
+| mimeType | string | 是 | 否 | 任务配置中的MimeType。 |
 | progress | [Progress](js-apis-request.md#requestagentprogress10) | 是 | 否 | 任务的过程进度。 |
-| gauge | boolean | 是 | 否 | 后台任务的进度通知策略。  - false：代表仅完成或失败的通知。  - true，发出每个进度已完成或失败的通知。 |
+| gauge | boolean | 是 | 否 | 后台任务的进度通知策略，仅应用于后台任务。  - false：仅发送完成或失败的通知。  - true：发送进度、完成和失败的通知。 |
 | ctime | number | 是 | 否 | 创建任务的Unix时间戳（毫秒），由当前设备的系统生成。  说明：使用[request.agent.search](js-apis-request.md#requestagentsearch10-1)进行查询时，该值需处于[after,before]区间内才可正常查询到任务id，before和after信息详见[Filter](js-apis-request.md#requestagentfilter10)。 |
 | mtime | number | 是 | 否 | 任务状态改变时的Unix时间戳（毫秒），由当前设备的系统生成。 |
 | retry | boolean | 是 | 否 | 任务的重试开关，仅应用于后台任务。  - true：是  - false：否 |
 | tries | number | 是 | 否 | 任务的尝试次数。 |
 | faults | [Faults](js-apis-request.md#requestagentfaults10) | 是 | 否 | 任务的失败原因。 |
 | reason | string | 是 | 否 | 等待/失败/停止/暂停任务的原因。 |
-| extras | object | 是 | 是 | 任务的额外部分。 |
+| extras | object | 是 | 是 | 任务的额外部分。默认值为空。  通过[request.agent.show](js-apis-request.md#requestagentshow10-1)、[request.agent.touch](js-apis-request.md#requestagenttouch10-1)进行查询。 |
 
 ## request.agent.HttpResponse12+
-
-PhonePC/2in1TabletTVWearable
 
 任务响应头的数据结构。
 
@@ -2749,14 +2565,12 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| version | string | 是 | 否 | Http版本。 |
-| statusCode | number | 是 | 否 | Http响应状态码。 |
-| reason | string | 是 | 否 | Http响应原因。 |
-| headers | Map<string, Array<string>> | 是 | 否 | Http响应头部。 |
+| version | string | 是 | 否 | HTTP版本。 |
+| statusCode | number | 是 | 否 | HTTP响应状态码。 |
+| reason | string | 是 | 否 | HTTP响应原因。 |
+| headers | Map<string, Array<string>> | 是 | 否 | HTTP响应头部。 |
 
 ## request.agent.Notification15+
-
-PhonePC/2in1TabletTVWearable
 
 通知栏自定义信息。
 
@@ -2764,66 +2578,64 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| title | string | 否 | 是 | 通知栏自定义标题。若不设置则使用默认显示方式。title长度上限为1024B。 |
-| text | string | 否 | 是 | 通知栏自定义正文。若不设置则使用默认显示方式。text长度上限为3072B。 |
+| title | string | 否 | 是 | 通知栏自定义标题。若不设置则使用默认显示方式。title长度上限为1024B，超出长度上限时使用默认显示方式。 |
+| text | string | 否 | 是 | 通知栏自定义正文。若不设置则使用默认显示方式。text长度上限为3072B，超出长度上限时使用默认显示方式。 |
 | visibility21+ | number | 否 | 是 | 设置任务的通知栏显示方式，通过[VISIBILITY常量](js-apis-request.md#常量-1)的位运算方式决定显示方式，任务通知的显示方式，包括如下几种：  - 仅显示完成通知，参数为VISIBILITY\_COMPLETION或1，任务完成/失败后展示对应通知。  - 仅显示进度通知，参数为VISIBILITY\_PROGRESS或2，任务在进行中显示进度通知，当任务下载成功/失败后会直接退出进度通知，不会显示完成通知。  - 显示进度通知/完成通知，参数为VISIBILITY\_COMPLETION | VISIBILITY\_PROGRESS或3，任务在进行中显示进度通知，当任务下载成功/失败后会退出进度通知，并显示完成通知。  若不设置该参数，则根据gauge字段来判断；若无gauge字段，则仅显示完成通知。 |
 | wantAgent22+ | [WantAgent](js-apis-app-ability-wantagent.md) | 否 | 是 | 通知参数，用于实现点击任务通知后跳转的功能。默认值为空。 |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common, wantAgent, WantAgent } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common, wantAgent, WantAgent } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let wantAgentInfo: wantAgent.WantAgentInfo = {
-7. wants: [
-8. {
-9. deviceId: '',
-10. bundleName: 'com.example.request',
-11. abilityName: 'EntryAbility',
-12. action: '',
-13. entities: [],
-14. uri: '',
-15. parameters: {}
-16. }
-17. ],
-18. actionType: wantAgent.OperationType.START_ABILITY,
-19. requestCode: 0,
-20. wantAgentFlags:[wantAgent.WantAgentFlags.CONSTANT_FLAG]
-21. };
-22. let config: request.agent.Config = {
-23. action: request.agent.Action.DOWNLOAD,
-24. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-25. title: 'taskOnNotification',
-26. description: 'Sample code for event listening',
-27. mode: request.agent.Mode.BACKGROUND,
-28. overwrite: true,
-29. method: "PUT",
-30. saveas: "./",
-31. network: request.agent.Network.ANY,
-32. gauge: true,
-33. notification: {
-34. visibility: request.agent.VISIBILITY_COMPLETION | request.agent.VISIBILITY_PROGRESS,
-35. wantAgent: await wantAgent.getWantAgent(wantAgentInfo),
-36. }
-37. };
-38. let createOnCallback = (progress: request.agent.Progress) => {
-39. console.info('download task progress.');
-40. };
-41. request.agent.create(context, config).then((task: request.agent.Task) => {
-42. task.on('progress', createOnCallback);
-43. console.info(`Succeeded in creating a download task. result: ${task.tid}`);
-44. task.start();
-45. }).catch((err: BusinessError) => {
-46. console.error(`Failed to create a download task, Code: ${err.code}, message: ${err.message}`);
-47. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let wantAgentInfo: wantAgent.WantAgentInfo = {
+  wants: [
+    {
+      deviceId: '',
+      bundleName: 'com.example.request',
+      abilityName: 'EntryAbility',
+      action: '',
+      entities: [],
+      uri: '',
+      parameters: {}
+    }
+  ],
+  actionType: wantAgent.OperationType.START_ABILITY,
+  requestCode: 0,
+  wantAgentFlags:[wantAgent.WantAgentFlags.CONSTANT_FLAG]
+};
+let config: request.agent.Config = {
+  action: request.agent.Action.DOWNLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'taskOnNotification',
+  description: 'Sample code for event listening',
+  mode: request.agent.Mode.BACKGROUND,
+  overwrite: true,
+  method: "GET",
+  saveas: "./",
+  network: request.agent.Network.ANY,
+  gauge: true,
+  notification: {
+    visibility: request.agent.VISIBILITY_COMPLETION | request.agent.VISIBILITY_PROGRESS,
+    wantAgent: await wantAgent.getWantAgent(wantAgentInfo),
+  }
+};
+let createOnCallback = (progress: request.agent.Progress) => {
+  console.info('download task progress.');
+};
+request.agent.create(context, config).then((task: request.agent.Task) => {
+  task.on('progress', createOnCallback);
+  console.info(`Succeeded in creating a download task. result: ${task.tid}`);
+  task.start();
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a download task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## request.agent.GroupConfig15+
-
-PhonePC/2in1TabletTVWearable
 
 下载任务分组配置选项。
 
@@ -2831,12 +2643,10 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| gauge | boolean | 否 | 是 | 后台任务的进度通知策略。  - true，显示进度、成功、失败通知。  - false，仅显示成功、失败通知。  默认为false。 |
+| gauge | boolean | 否 | 是 | 后台任务的进度通知策略，仅应用于后台任务。  - true，显示进度、成功、失败通知。  - false，仅显示成功、失败通知。  默认为false。 |
 | notification15+ | [Notification](js-apis-request.md#requestagentnotification15) | 否 | 否 | 通知栏自定义设置。默认值为{} |
 
 ## request.agent.WaitingReason20+
-
-PhonePC/2in1TabletTVWearable
 
 枚举，定义任务等待的原因。
 
@@ -2851,39 +2661,31 @@ PhonePC/2in1TabletTVWearable
 
 ## request.agent.MinSpeed20+
 
-PhonePC/2in1TabletTVWearable
-
 任务的最低限速配置。若任务速度持续低于设定值并达到指定时长，则任务失败，失败原因为[LOW\_SPEED](js-apis-request.md#requestagentfaults10)。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| speed | number | 否 | 否 | 任务最低速度，单位为字节每秒（B/s）。若任务速度持续低于该值达到指定时长，则任务失败。设置为0表示不启用最低速度限制。 |
-| duration | number | 否 | 否 | 允许低于最低速度的持续时间，单位为秒。若任务速度持续低于设定值达到该时长，则任务失败。设置为0表示不启用最低速度限制。 |
+| speed | number | 否 | 否 | 任务最低速度，单位为字节每秒（B/s），取值范围为[0, +∞)。若任务速度持续低于该值达到指定时长，则任务失败。设置为0表示不启用最低速度限制。 |
+| duration | number | 否 | 否 | 允许低于最低速度的持续时间，单位为秒，取值范围为[0, +∞)。若任务速度持续低于设定值达到该时长，则任务失败。设置为0表示不启用最低速度限制。 |
 
 ## request.agent.Timeout20+
 
-PhonePC/2in1TabletTVWearable
-
-任务的超时配置。任务处于等待状态的时间不参与计算，上传下载任务会存在以下任务等待的原因:[WaitingReason20+](js-apis-request.md#requestagentwaitingreason20)。
+任务的超时配置。任务处于等待状态的时间不参与计算，上传下载任务会存在以下任务等待的原因：[WaitingReason20+](js-apis-request.md#requestagentwaitingreason20)。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| connectionTimeout | number | 否 | 是 | 任务连接超时时间，单位为秒。连接超时是指客户端与服务器建立连接的最大耗时。若不设置则使用默认值60秒，允许设置的最小值为1秒。 |
-| totalTimeout | number | 否 | 是 | 任务总超时时间，单位为秒。总超时包括建立连接、发送请求和接收响应的全部时间。未指定时使用默认值604800秒（1周）。允许设置的最小值为1秒，最大值为604800秒（1周）。 |
+| connectionTimeout | number | 否 | 是 | 任务连接超时时间，单位为秒。连接超时是指客户端与服务器建立连接的最大耗时。若不设置则使用默认值60秒，允许设置的最小值为1秒，取值范围为[1, +∞)。设置小于最小值时参数校验失败并返回错误码。 |
+| totalTimeout | number | 否 | 是 | 任务总超时时间，单位为秒。总超时包括建立连接、发送请求和接收响应的全部时间。未指定时使用默认值604800秒（1周）。允许设置的最小值为1秒，最大值为604800秒（1周）。超出范围时参数校验失败并返回错误码。 |
 
 ## request.agent.Task10+
 
-PhonePC/2in1TabletTVWearable
-
-上传或下载任务。使用该方法前需要先获取Task对象，promise形式通过[request.agent.create](js-apis-request.md#requestagentcreate10-1)获取，callback形式通过[request.agent.create](js-apis-request.md#requestagentcreate10)获取。
+上传或下载任务。使用下列方法前，需要先获取Task对象，Promise形式通过[request.agent.create](js-apis-request.md#requestagentcreate10-1)获取，callback形式通过[request.agent.create](js-apis-request.md#requestagentcreate10)获取。
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 包括任务id和任务的配置信息。
 
@@ -2891,7 +2693,7 @@ PhonePC/2in1TabletTVWearable
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
-说明
+**说明** 
 
 Task对象及其挂载回调函数会在调用remove方法后释放并被系统自动回收。
 
@@ -2902,9 +2704,7 @@ Task对象及其挂载回调函数会在调用remove方法后释放并被系统�
 
 ### on('progress')10+
 
-PhonePC/2in1TabletTVWearable
-
-on(event: 'progress', callback: (progress: [Progress](js-apis-request.md#requestagentprogress10)) => void): void
+on(event: 'progress', callback: (progress: Progress) => void): void
 
 订阅任务进度的事件，使用callback异步回调。
 
@@ -2912,7 +2712,7 @@ on(event: 'progress', callback: (progress: [Progress](js-apis-request.md#request
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
-说明
+**说明** 
 
 示例中context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
@@ -2921,13 +2721,7 @@ on(event: 'progress', callback: (progress: [Progress](js-apis-request.md#request
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件类型。  - 取值为'progress'，表示任务进度，任务进度有进展时触发该事件。 |
-| callback | function | 是 | 回调函数，发生相关的事件时触发该回调方法。 |
-
-回调函数的参数：
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| progress | [Progress](js-apis-request.md#requestagentprogress10) | 是 | 表示任务的进度信息。 |
+| callback | (progress: [Progress](js-apis-request.md#requestagentprogress10)) => void | 是 | 回调函数，当任务进度有进展时触发该回调方法。回调参数为progress，包含任务当前状态、文件索引、已处理数据大小等信息，详见[Progress](js-apis-request.md#requestagentprogress10)。 |
 
 **错误码：**
 
@@ -2936,61 +2730,60 @@ on(event: 'progress', callback: (progress: [Progress](js-apis-request.md#request
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed. |
+| 21900005 | task mode error.  适用版本：10-10 |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let attachments: Array<request.agent.FormItem> = [{
-7. name: "taskOnTest",
-8. value: {
-9. filename: "taskOnTest.avi",
-10. path: "./taskOnTest.avi",
-11. }
-12. }];
-13. let config: request.agent.Config = {
-14. action: request.agent.Action.UPLOAD,
-15. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-16. title: 'taskOnTest',
-17. description: 'Sample code for event listening',
-18. mode: request.agent.Mode.FOREGROUND,
-19. overwrite: false,
-20. method: "PUT",
-21. data: attachments,
-22. saveas: "./",
-23. network: request.agent.Network.CELLULAR,
-24. metered: false,
-25. roaming: true,
-26. retry: true,
-27. redirect: true,
-28. index: 0,
-29. begins: 0,
-30. ends: -1,
-31. gauge: false,
-32. precise: false,
-33. token: "it is a secret"
-34. };
-35. let createOnCallback = (progress: request.agent.Progress) => {
-36. console.info('upload task progress.');
-37. };
-38. request.agent.create(context, config).then((task: request.agent.Task) => {
-39. task.on('progress', createOnCallback);
-40. console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
-41. task.start();
-42. }).catch((err: BusinessError) => {
-43. console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
-44. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let attachments: Array<request.agent.FormItem> = [{
+  name: "taskOnTest",
+  value: {
+    filename: "taskOnTest.avi",
+    path: "./taskOnTest.avi",
+  }
+}];
+let config: request.agent.Config = {
+  action: request.agent.Action.UPLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'taskOnTest',
+  description: 'Sample code for event listening',
+  mode: request.agent.Mode.FOREGROUND,
+  overwrite: false,
+  method: "PUT",
+  data: attachments,
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+let createOnCallback = (progress: request.agent.Progress) => {
+  console.info('upload task progress.');
+};
+request.agent.create(context, config).then((task: request.agent.Task) => {
+  task.on('progress', createOnCallback);
+  console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
+  task.start();
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### on('completed')10+
 
-PhonePC/2in1TabletTVWearable
-
-on(event: 'completed', callback: (progress: [Progress](js-apis-request.md#requestagentprogress10)) => void): void
+on(event: 'completed', callback: (progress: Progress) => void): void
 
 订阅任务完成事件，使用callback异步回调。
 
@@ -2998,7 +2791,7 @@ on(event: 'completed', callback: (progress: [Progress](js-apis-request.md#reques
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
-说明
+**说明** 
 
 示例中context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
@@ -3007,13 +2800,7 @@ on(event: 'completed', callback: (progress: [Progress](js-apis-request.md#reques
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件类型。  - 取值为'completed'，表示任务完成，任务完成时触发该事件。 |
-| callback | function | 是 | 回调函数，发生相关的事件时触发该回调方法。 |
-
-回调函数的参数：
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| progress | [Progress](js-apis-request.md#requestagentprogress10) | 是 | 表示任务的进度信息。 |
+| callback | (progress: [Progress](js-apis-request.md#requestagentprogress10)) => void | 是 | 回调函数，当任务完成时触发该回调方法。回调参数为progress，包含任务完成时的进度信息，详见[Progress](js-apis-request.md#requestagentprogress10)。 |
 
 **错误码：**
 
@@ -3022,61 +2809,60 @@ on(event: 'completed', callback: (progress: [Progress](js-apis-request.md#reques
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed. |
+| 21900005 | task mode error.  适用版本：10-10 |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let attachments: Array<request.agent.FormItem> = [{
-7. name: "taskOnTest",
-8. value: {
-9. filename: "taskOnTest.avi",
-10. path: "./taskOnTest.avi",
-11. }
-12. }];
-13. let config: request.agent.Config = {
-14. action: request.agent.Action.UPLOAD,
-15. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-16. title: 'taskOnTest',
-17. description: 'Sample code for event listening',
-18. mode: request.agent.Mode.FOREGROUND,
-19. overwrite: false,
-20. method: "PUT",
-21. data: attachments,
-22. saveas: "./",
-23. network: request.agent.Network.CELLULAR,
-24. metered: false,
-25. roaming: true,
-26. retry: true,
-27. redirect: true,
-28. index: 0,
-29. begins: 0,
-30. ends: -1,
-31. gauge: false,
-32. precise: false,
-33. token: "it is a secret"
-34. };
-35. let createOnCallback = (progress: request.agent.Progress) => {
-36. console.info('upload task completed.');
-37. };
-38. request.agent.create(context, config).then((task: request.agent.Task) => {
-39. task.on('completed', createOnCallback);
-40. console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
-41. task.start();
-42. }).catch((err: BusinessError) => {
-43. console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
-44. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let attachments: Array<request.agent.FormItem> = [{
+  name: "taskOnTest",
+  value: {
+    filename: "taskOnTest.avi",
+    path: "./taskOnTest.avi",
+  }
+}];
+let config: request.agent.Config = {
+  action: request.agent.Action.UPLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'taskOnTest',
+  description: 'Sample code for event listening',
+  mode: request.agent.Mode.FOREGROUND,
+  overwrite: false,
+  method: "PUT",
+  data: attachments,
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+let createOnCallback = (progress: request.agent.Progress) => {
+  console.info('upload task completed.');
+};
+request.agent.create(context, config).then((task: request.agent.Task) => {
+  task.on('completed', createOnCallback);
+  console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
+  task.start();
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### on('failed')10+
 
-PhonePC/2in1TabletTVWearable
-
-on(event: 'failed', callback: (progress: [Progress](js-apis-request.md#requestagentprogress10)) => void): void
+on(event: 'failed', callback: (progress: Progress) => void): void
 
 订阅任务失败事件，使用callback异步回调。可通过调用[request.agent.show](js-apis-request.md#requestagentshow10-1)查看错误原因。
 
@@ -3084,7 +2870,7 @@ on(event: 'failed', callback: (progress: [Progress](js-apis-request.md#requestag
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
-说明
+**说明** 
 
 示例中context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
@@ -3093,13 +2879,7 @@ on(event: 'failed', callback: (progress: [Progress](js-apis-request.md#requestag
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件类型。  - 取值为'failed'，表示任务失败，任务失败时触发该事件。 |
-| callback | function | 是 | 回调函数，发生相关的事件时触发该回调方法。 |
-
-回调函数的参数：
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| progress | [Progress](js-apis-request.md#requestagentprogress10) | 是 | 表示任务的进度信息。 |
+| callback | (progress: [Progress](js-apis-request.md#requestagentprogress10)) => void | 是 | 回调函数，当任务失败时触发该回调方法。回调参数为progress，包含任务失败时的进度信息，可通过[request.agent.show](js-apis-request.md#requestagentshow10-1)查看错误原因，详见[Progress](js-apis-request.md#requestagentprogress10)。 |
 
 **错误码：**
 
@@ -3108,67 +2888,66 @@ on(event: 'failed', callback: (progress: [Progress](js-apis-request.md#requestag
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed. |
+| 21900005 | Operation with wrong task mode.  适用版本：10-10 |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let attachments: Array<request.agent.FormItem> = [{
-7. name: "taskOnTest",
-8. value: {
-9. filename: "taskOnTest.avi",
-10. path: "./taskOnTest.avi",
-11. }
-12. }];
-13. let config: request.agent.Config = {
-14. action: request.agent.Action.UPLOAD,
-15. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-16. title: 'taskOnTest',
-17. description: 'Sample code for event listening',
-18. mode: request.agent.Mode.FOREGROUND,
-19. overwrite: false,
-20. method: "PUT",
-21. data: attachments,
-22. saveas: "./",
-23. network: request.agent.Network.CELLULAR,
-24. metered: false,
-25. roaming: true,
-26. retry: true,
-27. redirect: true,
-28. index: 0,
-29. begins: 0,
-30. ends: -1,
-31. gauge: false,
-32. precise: false,
-33. token: "it is a secret"
-34. };
-35. let createOnCallback = (progress: request.agent.Progress) => {
-36. console.info('upload task failed.');
-37. };
-38. request.agent.create(context, config).then((task: request.agent.Task) => {
-39. task.on('failed', createOnCallback);
-40. console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
-41. task.start();
-42. }).catch((err: BusinessError) => {
-43. console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
-44. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let attachments: Array<request.agent.FormItem> = [{
+  name: "taskOnTest",
+  value: {
+    filename: "taskOnTest.avi",
+    path: "./taskOnTest.avi",
+  }
+}];
+let config: request.agent.Config = {
+  action: request.agent.Action.UPLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'taskOnTest',
+  description: 'Sample code for event listening',
+  mode: request.agent.Mode.FOREGROUND,
+  overwrite: false,
+  method: "PUT",
+  data: attachments,
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+let createOnCallback = (progress: request.agent.Progress) => {
+  console.info('upload task failed.');
+};
+request.agent.create(context, config).then((task: request.agent.Task) => {
+  task.on('failed', createOnCallback);
+  console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
+  task.start();
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### on('pause')11+
 
-PhonePC/2in1TabletTVWearable
-
-on(event: 'pause', callback: (progress: [Progress](js-apis-request.md#requestagentprogress10)) => void): void
+on(event: 'pause', callback: (progress: Progress) => void): void
 
 订阅任务暂停事件，使用callback异步回调。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
-说明
+**说明** 
 
 示例中context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
@@ -3177,13 +2956,7 @@ on(event: 'pause', callback: (progress: [Progress](js-apis-request.md#requestage
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件类型。  - 取值为'pause'，表示任务已暂停，任务暂停时触发该事件。 |
-| callback | function | 是 | 回调函数，发生相关的事件时触发该回调方法。 |
-
-回调函数的参数：
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| progress | [Progress](js-apis-request.md#requestagentprogress10) | 是 | 表示任务的进度信息。 |
+| callback | (progress: [Progress](js-apis-request.md#requestagentprogress10)) => void | 是 | 回调函数，当任务暂停时触发该回调方法。回调参数为progress，包含任务暂停时的进度信息，详见[Progress](js-apis-request.md#requestagentprogress10)。 |
 
 **错误码：**
 
@@ -3195,69 +2968,67 @@ on(event: 'pause', callback: (progress: [Progress](js-apis-request.md#requestage
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let attachments: Array<request.agent.FormItem> = [{
-7. name: "taskOnTest",
-8. value: {
-9. filename: "taskOnTest.avi",
-10. path: "./taskOnTest.avi",
-11. }
-12. }];
-13. let config: request.agent.Config = {
-14. action: request.agent.Action.UPLOAD,
-15. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-16. title: 'taskOnTest',
-17. description: 'Sample code for event listening',
-18. mode: request.agent.Mode.FOREGROUND,
-19. overwrite: false,
-20. method: "POST",
-21. data: attachments,
-22. saveas: "./",
-23. network: request.agent.Network.CELLULAR,
-24. metered: false,
-25. roaming: true,
-26. retry: true,
-27. redirect: true,
-28. index: 0,
-29. begins: 0,
-30. ends: -1,
-31. gauge: false,
-32. precise: false,
-33. token: "it is a secret"
-34. };
-35. let createOnCallback = (progress: request.agent.Progress) => {
-36. console.info('upload task pause.');
-37. };
-38. request.agent.create(context, config).then(async (task: request.agent.Task) => {
-39. task.on('pause', createOnCallback);
-40. console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
-41. task.start();
-42. // 等待1秒再执行下一步操作，以防异步乱序
-43. await new Promise<void>((resolve) => {
-44. setTimeout(() => resolve(),1000)
-45. })
-46. task.pause();
-47. }).catch((err: BusinessError) => {
-48. console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
-49. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let attachments: Array<request.agent.FormItem> = [{
+  name: "taskOnTest",
+  value: {
+    filename: "taskOnTest.avi",
+    path: "./taskOnTest.avi",
+  }
+}];
+let config: request.agent.Config = {
+  action: request.agent.Action.UPLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'taskOnTest',
+  description: 'Sample code for event listening',
+  mode: request.agent.Mode.FOREGROUND,
+  overwrite: false,
+  method: "POST",
+  data: attachments,
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+let createOnCallback = (progress: request.agent.Progress) => {
+  console.info('upload task pause.');
+};
+request.agent.create(context, config).then(async (task: request.agent.Task) => {
+  task.on('pause', createOnCallback);
+  console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
+  task.start();
+  // 等待1秒再执行下一步操作，以防异步乱序
+  await new Promise<void>((resolve) => {
+    setTimeout(() => resolve(), 1000);
+  })
+  task.pause();
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### on('resume')11+
 
-PhonePC/2in1TabletTVWearable
-
-on(event: 'resume', callback: (progress: [Progress](js-apis-request.md#requestagentprogress10)) => void): void
+on(event: 'resume', callback: (progress: Progress) => void): void
 
 订阅任务恢复事件，使用callback异步回调。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
-说明
+**说明** 
 
 示例中context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
@@ -3266,13 +3037,7 @@ on(event: 'resume', callback: (progress: [Progress](js-apis-request.md#requestag
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件类型。  - 取值为'resume'，表示任务恢复，任务恢复时触发该事件。 |
-| callback | function | 是 | 回调函数，发生相关的事件时触发该回调方法。 |
-
-回调函数的参数：
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| progress | [Progress](js-apis-request.md#requestagentprogress10) | 是 | 表示任务的进度信息。 |
+| callback | (progress: [Progress](js-apis-request.md#requestagentprogress10)) => void | 是 | 回调函数，当任务恢复时触发该回调方法。回调参数为progress，包含任务恢复时的进度信息，详见[Progress](js-apis-request.md#requestagentprogress10)。 |
 
 **错误码：**
 
@@ -3284,74 +3049,72 @@ on(event: 'resume', callback: (progress: [Progress](js-apis-request.md#requestag
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let attachments: Array<request.agent.FormItem> = [{
-7. name: "taskOnTest",
-8. value: {
-9. filename: "taskOnTest.avi",
-10. path: "./taskOnTest.avi",
-11. }
-12. }];
-13. let config: request.agent.Config = {
-14. action: request.agent.Action.UPLOAD,
-15. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-16. title: 'taskOnTest',
-17. description: 'Sample code for event listening',
-18. mode: request.agent.Mode.FOREGROUND,
-19. overwrite: false,
-20. method: "PUT",
-21. data: attachments,
-22. saveas: "./",
-23. network: request.agent.Network.CELLULAR,
-24. metered: false,
-25. roaming: true,
-26. retry: true,
-27. redirect: true,
-28. index: 0,
-29. begins: 0,
-30. ends: -1,
-31. gauge: false,
-32. precise: false,
-33. token: "it is a secret"
-34. };
-35. let createOnCallback = (progress: request.agent.Progress) => {
-36. console.info('upload task resume.');
-37. };
-38. request.agent.create(context, config).then(async (task: request.agent.Task) => {
-39. task.on('resume', createOnCallback);
-40. console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
-41. task.start();
-42. // 等待1秒再执行下一步操作，以防异步乱序
-43. await new Promise<void>((resolve) => {
-44. setTimeout(() => resolve(),1000)
-45. })
-46. task.pause();
-47. // 等待1秒再执行下一步操作，以防异步乱序
-48. await new Promise<void>((resolve) => {
-49. setTimeout(() => resolve(),1000)
-50. })
-51. task.resume();
-52. }).catch((err: BusinessError) => {
-53. console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
-54. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let attachments: Array<request.agent.FormItem> = [{
+  name: "taskOnTest",
+  value: {
+    filename: "taskOnTest.avi",
+    path: "./taskOnTest.avi",
+  }
+}];
+let config: request.agent.Config = {
+  action: request.agent.Action.UPLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'taskOnTest',
+  description: 'Sample code for event listening',
+  mode: request.agent.Mode.FOREGROUND,
+  overwrite: false,
+  method: "PUT",
+  data: attachments,
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+let createOnCallback = (progress: request.agent.Progress) => {
+  console.info('upload task resume.');
+};
+request.agent.create(context, config).then(async (task: request.agent.Task) => {
+  task.on('resume', createOnCallback);
+  console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
+  task.start();
+  // 等待1秒再执行下一步操作，以防异步乱序
+  await new Promise<void>((resolve) => {
+    setTimeout(() => resolve(), 1000);
+  })
+  task.pause();
+  // 等待1秒再执行下一步操作，以防异步乱序
+  await new Promise<void>((resolve) => {
+    setTimeout(() => resolve(), 1000);
+  })
+  task.resume();
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### on('remove')11+
 
-PhonePC/2in1TabletTVWearable
-
-on(event: 'remove', callback: (progress: [Progress](js-apis-request.md#requestagentprogress10)) => void): void
+on(event: 'remove', callback: (progress: Progress) => void): void
 
 订阅任务移除事件，使用callback异步回调。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
-说明
+**说明** 
 
 示例中context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
@@ -3360,13 +3123,7 @@ on(event: 'remove', callback: (progress: [Progress](js-apis-request.md#requestag
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件类型。  - 取值为'remove'，表示任务被移除，任务移除时触发该事件。 |
-| callback | function | 是 | 回调函数，发生相关的事件时触发该回调方法。 |
-
-回调函数的参数：
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| progress | [Progress](js-apis-request.md#requestagentprogress10) | 是 | 表示任务的进度信息。 |
+| callback | (progress: [Progress](js-apis-request.md#requestagentprogress10)) => void | 是 | 回调函数，当任务被移除时触发该回调方法。回调参数为progress，包含任务移除时的进度信息，详见[Progress](js-apis-request.md#requestagentprogress10)。 |
 
 **错误码：**
 
@@ -3378,61 +3135,59 @@ on(event: 'remove', callback: (progress: [Progress](js-apis-request.md#requestag
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let attachments: Array<request.agent.FormItem> = [{
-7. name: "taskOnTest",
-8. value: {
-9. filename: "taskOnTest.avi",
-10. path: "./taskOnTest.avi",
-11. }
-12. }];
-13. let config: request.agent.Config = {
-14. action: request.agent.Action.UPLOAD,
-15. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-16. title: 'taskOnTest',
-17. description: 'Sample code for event listening',
-18. mode: request.agent.Mode.FOREGROUND,
-19. overwrite: false,
-20. method: "PUT",
-21. data: attachments,
-22. saveas: "./",
-23. network: request.agent.Network.CELLULAR,
-24. metered: false,
-25. roaming: true,
-26. retry: true,
-27. redirect: true,
-28. index: 0,
-29. begins: 0,
-30. ends: -1,
-31. gauge: false,
-32. precise: false,
-33. token: "it is a secret"
-34. };
-35. let createOnCallback = (progress: request.agent.Progress) => {
-36. console.info('upload task remove.');
-37. };
-38. request.agent.create(context, config).then(async (task: request.agent.Task) => {
-39. task.on('remove', createOnCallback);
-40. console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
-41. task.start();
-42. // 等待1秒再执行下一步操作，以防异步乱序
-43. await new Promise<void>((resolve) => {
-44. setTimeout(() => resolve(),1000)
-45. })
-46. request.agent.remove(task.tid);
-47. }).catch((err: BusinessError) => {
-48. console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
-49. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let attachments: Array<request.agent.FormItem> = [{
+  name: "taskOnTest",
+  value: {
+    filename: "taskOnTest.avi",
+    path: "./taskOnTest.avi",
+  }
+}];
+let config: request.agent.Config = {
+  action: request.agent.Action.UPLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'taskOnTest',
+  description: 'Sample code for event listening',
+  mode: request.agent.Mode.FOREGROUND,
+  overwrite: false,
+  method: "PUT",
+  data: attachments,
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+let createOnCallback = (progress: request.agent.Progress) => {
+  console.info('upload task remove.');
+};
+request.agent.create(context, config).then(async (task: request.agent.Task) => {
+  task.on('remove', createOnCallback);
+  console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
+  task.start();
+  // 等待1秒再执行下一步操作，以防异步乱序
+  await new Promise<void>((resolve) => {
+    setTimeout(() => resolve(), 1000);
+  })
+  request.agent.remove(task.tid);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### on('response')12+
-
-PhonePC/2in1TabletTVWearable
 
 on(event: 'response', callback: Callback<HttpResponse>): void
 
@@ -3442,7 +3197,7 @@ on(event: 'response', callback: Callback<HttpResponse>): void
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
-说明
+**说明** 
 
 示例中context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
@@ -3463,56 +3218,54 @@ on(event: 'response', callback: Callback<HttpResponse>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let attachments: Array<request.agent.FormItem> = [{
-7. name: "taskOnTest",
-8. value: {
-9. filename: "taskOnTest.avi",
-10. path: "./taskOnTest.avi",
-11. }
-12. }];
-13. let config: request.agent.Config = {
-14. action: request.agent.Action.UPLOAD,
-15. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-16. title: 'taskOnTest',
-17. description: 'Sample code for event listening',
-18. mode: request.agent.Mode.FOREGROUND,
-19. overwrite: false,
-20. method: "PUT",
-21. data: attachments,
-22. saveas: "./",
-23. network: request.agent.Network.CELLULAR,
-24. metered: false,
-25. roaming: true,
-26. retry: true,
-27. redirect: true,
-28. index: 0,
-29. begins: 0,
-30. ends: -1,
-31. gauge: false,
-32. precise: false,
-33. token: "it is a secret"
-34. };
-35. let createOnCallback = (response: request.agent.HttpResponse) => {
-36. console.info('upload task response.');
-37. };
-38. request.agent.create(context, config).then((task: request.agent.Task) => {
-39. task.on('response', createOnCallback);
-40. console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
-41. task.start();
-42. }).catch((err: BusinessError) => {
-43. console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
-44. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let attachments: Array<request.agent.FormItem> = [{
+  name: "taskOnTest",
+  value: {
+    filename: "taskOnTest.avi",
+    path: "./taskOnTest.avi",
+  }
+}];
+let config: request.agent.Config = {
+  action: request.agent.Action.UPLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'taskOnTest',
+  description: 'Sample code for event listening',
+  mode: request.agent.Mode.FOREGROUND,
+  overwrite: false,
+  method: "PUT",
+  data: attachments,
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+let createOnCallback = (response: request.agent.HttpResponse) => {
+  console.info('upload task response.');
+};
+request.agent.create(context, config).then((task: request.agent.Task) => {
+  task.on('response', createOnCallback);
+  console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
+  task.start();
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### on('faultOccur')20+
-
-PhonePC/2in1TabletTVWearable
 
 on(event: 'faultOccur', callback: Callback<Faults>): void
 
@@ -3520,7 +3273,7 @@ on(event: 'faultOccur', callback: Callback<Faults>): void
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
-说明
+**说明** 
 
 示例中context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
@@ -3541,56 +3294,54 @@ on(event: 'faultOccur', callback: Callback<Faults>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-5. let attachments: Array<request.agent.FormItem> = [{
-6. name: "taskOnTest",
-7. value: {
-8. filename: "taskOnTest.avi",
-9. mimeType: "application/octet-stream",
-10. path: "./taskOnTest.avi",
-11. }
-12. }];
-13. let config: request.agent.Config = {
-14. action: request.agent.Action.UPLOAD,
-15. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-16. title: 'taskOnTest',
-17. description: 'Sample code for event listening',
-18. mode: request.agent.Mode.FOREGROUND,
-19. overwrite: false,
-20. method: "PUT",
-21. data: attachments,
-22. saveas: "./",
-23. network: request.agent.Network.CELLULAR,
-24. metered: false,
-25. roaming: true,
-26. retry: true,
-27. redirect: true,
-28. index: 0,
-29. begins: 0,
-30. ends: -1,
-31. gauge: false,
-32. precise: false,
-33. token: "it is a secret"
-34. };
-35. let faultOnCallback = (faults: request.agent.Faults) => {
-36. console.info('upload task failed.');
-37. };
-38. request.agent.create(context, config).then((task: request.agent.Task) => {
-39. task.on('faultOccur', faultOnCallback);
-40. console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
-41. task.start();
-42. }).catch((err: BusinessError) => {
-43. console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
-44. });
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let attachments: Array<request.agent.FormItem> = [{
+  name: "taskOnTest",
+  value: {
+    filename: "taskOnTest.avi",
+    mimeType: "application/octet-stream",
+    path: "./taskOnTest.avi",
+  }
+}];
+let config: request.agent.Config = {
+  action: request.agent.Action.UPLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'taskOnTest',
+  description: 'Sample code for event listening',
+  mode: request.agent.Mode.FOREGROUND,
+  overwrite: false,
+  method: "PUT",
+  data: attachments,
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+let faultOnCallback = (faults: request.agent.Faults) => {
+  console.info('upload task failed.');
+};
+request.agent.create(context, config).then((task: request.agent.Task) => {
+  task.on('faultOccur', faultOnCallback);
+  console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
+  task.start();
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### on('wait')20+
-
-PhonePC/2in1TabletTVWearable
 
 on(event: 'wait', callback: Callback<WaitingReason>): void
 
@@ -3598,7 +3349,7 @@ on(event: 'wait', callback: Callback<WaitingReason>): void
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
-说明
+**说明** 
 
 示例中context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
@@ -3619,58 +3370,56 @@ on(event: 'wait', callback: Callback<WaitingReason>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-5. let attachments: Array<request.agent.FormItem> = [{
-6. name: "taskOnTest",
-7. value: {
-8. filename: "taskOnTest.avi",
-9. mimeType: "application/octet-stream",
-10. path: "./taskOnTest.avi",
-11. }
-12. }];
-13. let config: request.agent.Config = {
-14. action: request.agent.Action.UPLOAD,
-15. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-16. title: 'taskOnTest',
-17. description: 'Sample code for event listening',
-18. mode: request.agent.Mode.FOREGROUND,
-19. overwrite: false,
-20. method: "PUT",
-21. data: attachments,
-22. saveas: "./",
-23. network: request.agent.Network.CELLULAR,
-24. metered: false,
-25. roaming: true,
-26. retry: true,
-27. redirect: true,
-28. index: 0,
-29. begins: 0,
-30. ends: -1,
-31. gauge: false,
-32. precise: false,
-33. token: "it is a secret"
-34. };
-35. let waitOnCallback = (reason: request.agent.WaitingReason) => {
-36. console.info('upload task waiting.');
-37. };
-38. request.agent.create(context, config).then((task: request.agent.Task) => {
-39. task.on('wait', waitOnCallback);
-40. console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
-41. task.start();
-42. }).catch((err: BusinessError) => {
-43. console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
-44. });
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let attachments: Array<request.agent.FormItem> = [{
+  name: "taskOnTest",
+  value: {
+    filename: "taskOnTest.avi",
+    mimeType: "application/octet-stream",
+    path: "./taskOnTest.avi",
+  }
+}];
+let config: request.agent.Config = {
+  action: request.agent.Action.UPLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'taskOnTest',
+  description: 'Sample code for event listening',
+  mode: request.agent.Mode.FOREGROUND,
+  overwrite: false,
+  method: "PUT",
+  data: attachments,
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+let waitOnCallback = (reason: request.agent.WaitingReason) => {
+  console.info('upload task waiting.');
+};
+request.agent.create(context, config).then((task: request.agent.Task) => {
+  task.on('wait', waitOnCallback);
+  console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
+  task.start();
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### off('progress')10+
 
-PhonePC/2in1TabletTVWearable
-
-off(event: 'progress', callback?: (progress: [Progress](js-apis-request.md#requestagentprogress10)) => void): void
+off(event: 'progress', callback?: (progress: Progress) => void): void
 
 取消订阅任务进度事件。
 
@@ -3678,7 +3427,7 @@ off(event: 'progress', callback?: (progress: [Progress](js-apis-request.md#reque
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
-说明
+**说明** 
 
 示例中context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
@@ -3687,13 +3436,7 @@ off(event: 'progress', callback?: (progress: [Progress](js-apis-request.md#reque
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 取消订阅的事件类型。  - 取值为'progress'，表示任务进度。 |
-| callback | function | 否 | 回调函数，发生相关的事件时触发该回调方法。若无此参数，则取消订阅的所有进度回调函数。 |
-
-回调函数的参数：
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| progress | [Progress](js-apis-request.md#requestagentprogress10) | 是 | 表示任务的进度信息。 |
+| callback | (progress: [Progress](js-apis-request.md#requestagentprogress10)) => void | 否 | 回调函数，发生相关的事件时触发该回调方法。若无此参数，则取消订阅的所有进度回调函数。 |
 
 **错误码：**
 
@@ -3702,69 +3445,68 @@ off(event: 'progress', callback?: (progress: [Progress](js-apis-request.md#reque
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed. |
+| 21900005 | task mode error.  适用版本：10-10 |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let attachments: Array<request.agent.FormItem> = [{
-7. name: "taskOffTest",
-8. value: {
-9. filename: "taskOffTest.avi",
-10. path: "./taskOffTest.avi",
-11. }
-12. }];
-13. let config: request.agent.Config = {
-14. action: request.agent.Action.UPLOAD,
-15. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-16. title: 'taskOffTest',
-17. description: 'Sample code for event listening',
-18. mode: request.agent.Mode.FOREGROUND,
-19. overwrite: false,
-20. method: "PUT",
-21. data: attachments,
-22. saveas: "./",
-23. network: request.agent.Network.CELLULAR,
-24. metered: false,
-25. roaming: true,
-26. retry: true,
-27. redirect: true,
-28. index: 0,
-29. begins: 0,
-30. ends: -1,
-31. gauge: false,
-32. precise: false,
-33. token: "it is a secret"
-34. };
-35. let createOffCallback1 = (progress: request.agent.Progress) => {
-36. console.info('upload task progress.');
-37. };
-38. let createOffCallback2 = (progress: request.agent.Progress) => {
-39. console.info('upload task progress.');
-40. };
-41. request.agent.create(context, config).then((task: request.agent.Task) => {
-42. task.on('progress', createOffCallback1);
-43. task.on('progress', createOffCallback2);
-44. // 表示取消createOffCallback1的订阅
-45. task.off('progress', createOffCallback1);
-46. // 表示取消订阅任务进度的所有回调
-47. task.off('progress');
-48. console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
-49. task.start();
-50. }).catch((err: BusinessError) => {
-51. console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
-52. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let attachments: Array<request.agent.FormItem> = [{
+  name: "taskOffTest",
+  value: {
+    filename: "taskOffTest.avi",
+    path: "./taskOffTest.avi",
+  }
+}];
+let config: request.agent.Config = {
+  action: request.agent.Action.UPLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'taskOffTest',
+  description: 'Sample code for event listening',
+  mode: request.agent.Mode.FOREGROUND,
+  overwrite: false,
+  method: "PUT",
+  data: attachments,
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+let createOffCallback1 = (progress: request.agent.Progress) => {
+  console.info('upload task progress.');
+};
+let createOffCallback2 = (progress: request.agent.Progress) => {
+  console.info('upload task progress.');
+};
+request.agent.create(context, config).then((task: request.agent.Task) => {
+  task.on('progress', createOffCallback1);
+  task.on('progress', createOffCallback2);
+  // 表示取消createOffCallback1的订阅
+  task.off('progress', createOffCallback1);
+  // 表示取消订阅任务进度的所有回调
+  task.off('progress');
+  console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
+  task.start();
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### off('completed')10+
 
-PhonePC/2in1TabletTVWearable
-
-off(event: 'completed', callback?: (progress: [Progress](js-apis-request.md#requestagentprogress10)) => void): void
+off(event: 'completed', callback?: (progress: Progress) => void): void
 
 取消订阅任务完成事件。
 
@@ -3772,7 +3514,7 @@ off(event: 'completed', callback?: (progress: [Progress](js-apis-request.md#requ
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
-说明
+**说明** 
 
 示例中context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
@@ -3781,13 +3523,7 @@ off(event: 'completed', callback?: (progress: [Progress](js-apis-request.md#requ
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 取消订阅的事件类型。  - 取值为'completed'，表示任务完成。 |
-| callback | function | 否 | 回调函数，发生相关的事件时触发该回调方法。若无此参数，则取消订阅的所有完成回调函数。 |
-
-回调函数的参数：
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| progress | [Progress](js-apis-request.md#requestagentprogress10) | 是 | 表示任务的进度信息。 |
+| callback | (progress: [Progress](js-apis-request.md#requestagentprogress10)) => void | 否 | 回调函数，发生相关的事件时触发该回调方法。若无此参数，则取消订阅的所有完成回调函数。 |
 
 **错误码：**
 
@@ -3796,69 +3532,68 @@ off(event: 'completed', callback?: (progress: [Progress](js-apis-request.md#requ
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed. |
+| 21900005 | Operation with wrong task mode.  适用版本：10-10 |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let attachments: Array<request.agent.FormItem> = [{
-7. name: "taskOffTest",
-8. value: {
-9. filename: "taskOffTest.avi",
-10. path: "./taskOffTest.avi",
-11. }
-12. }];
-13. let config: request.agent.Config = {
-14. action: request.agent.Action.UPLOAD,
-15. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-16. title: 'taskOffTest',
-17. description: 'Sample code for event listening',
-18. mode: request.agent.Mode.FOREGROUND,
-19. overwrite: false,
-20. method: "PUT",
-21. data: attachments,
-22. saveas: "./",
-23. network: request.agent.Network.CELLULAR,
-24. metered: false,
-25. roaming: true,
-26. retry: true,
-27. redirect: true,
-28. index: 0,
-29. begins: 0,
-30. ends: -1,
-31. gauge: false,
-32. precise: false,
-33. token: "it is a secret"
-34. };
-35. let createOffCallback1 = (progress: request.agent.Progress) => {
-36. console.info('upload task completed.');
-37. };
-38. let createOffCallback2 = (progress: request.agent.Progress) => {
-39. console.info('upload task completed.');
-40. };
-41. request.agent.create(context, config).then((task: request.agent.Task) => {
-42. task.on('completed', createOffCallback1);
-43. task.on('completed', createOffCallback2);
-44. // 表示取消createOffCallback1的订阅
-45. task.off('completed', createOffCallback1);
-46. // 表示取消订阅任务完成的所有回调
-47. task.off('completed');
-48. console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
-49. task.start();
-50. }).catch((err: BusinessError) => {
-51. console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
-52. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let attachments: Array<request.agent.FormItem> = [{
+  name: "taskOffTest",
+  value: {
+    filename: "taskOffTest.avi",
+    path: "./taskOffTest.avi",
+  }
+}];
+let config: request.agent.Config = {
+  action: request.agent.Action.UPLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'taskOffTest',
+  description: 'Sample code for event listening',
+  mode: request.agent.Mode.FOREGROUND,
+  overwrite: false,
+  method: "PUT",
+  data: attachments,
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+let createOffCallback1 = (progress: request.agent.Progress) => {
+  console.info('upload task completed.');
+};
+let createOffCallback2 = (progress: request.agent.Progress) => {
+  console.info('upload task completed.');
+};
+request.agent.create(context, config).then((task: request.agent.Task) => {
+  task.on('completed', createOffCallback1);
+  task.on('completed', createOffCallback2);
+  // 表示取消createOffCallback1的订阅
+  task.off('completed', createOffCallback1);
+  // 表示取消订阅任务完成的所有回调
+  task.off('completed');
+  console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
+  task.start();
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### off('failed')10+
 
-PhonePC/2in1TabletTVWearable
-
-off(event: 'failed', callback?: (progress: [Progress](js-apis-request.md#requestagentprogress10)) => void): void
+off(event: 'failed', callback?: (progress: Progress) => void): void
 
 取消订阅任务失败事件。
 
@@ -3866,7 +3601,7 @@ off(event: 'failed', callback?: (progress: [Progress](js-apis-request.md#request
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
-说明
+**说明** 
 
 示例中context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
@@ -3875,13 +3610,7 @@ off(event: 'failed', callback?: (progress: [Progress](js-apis-request.md#request
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 取消订阅的事件类型。  - 取值为'failed'，表示任务失败。 |
-| callback | function | 否 | 回调函数，发生相关的事件时触发该回调方法。若无此参数，则取消订阅的所有失败回调函数。 |
-
-回调函数的参数：
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| progress | [Progress](js-apis-request.md#requestagentprogress10) | 是 | 表示任务的进度信息 |
+| callback | (progress: [Progress](js-apis-request.md#requestagentprogress10)) => void | 否 | 回调函数，发生相关的事件时触发该回调方法。若无此参数，则取消订阅的所有失败回调函数。 |
 
 **错误码：**
 
@@ -3890,75 +3619,74 @@ off(event: 'failed', callback?: (progress: [Progress](js-apis-request.md#request
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed. |
+| 21900005 | Operation with wrong task mode.  适用版本：10-10 |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let attachments: Array<request.agent.FormItem> = [{
-7. name: "taskOffTest",
-8. value: {
-9. filename: "taskOffTest.avi",
-10. path: "./taskOffTest.avi",
-11. }
-12. }];
-13. let config: request.agent.Config = {
-14. action: request.agent.Action.UPLOAD,
-15. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-16. title: 'taskOffTest',
-17. description: 'Sample code for event listening',
-18. mode: request.agent.Mode.FOREGROUND,
-19. overwrite: false,
-20. method: "PUT",
-21. data: attachments,
-22. saveas: "./",
-23. network: request.agent.Network.CELLULAR,
-24. metered: false,
-25. roaming: true,
-26. retry: true,
-27. redirect: true,
-28. index: 0,
-29. begins: 0,
-30. ends: -1,
-31. gauge: false,
-32. precise: false,
-33. token: "it is a secret"
-34. };
-35. let createOffCallback1 = (progress: request.agent.Progress) => {
-36. console.info('upload task failed.');
-37. };
-38. let createOffCallback2 = (progress: request.agent.Progress) => {
-39. console.info('upload task failed.');
-40. };
-41. request.agent.create(context, config).then((task: request.agent.Task) => {
-42. task.on('failed', createOffCallback1);
-43. task.on('failed', createOffCallback2);
-44. // 表示取消createOffCallback1的订阅
-45. task.off('failed', createOffCallback1);
-46. // 表示取消订阅任务失败的所有回调
-47. task.off('failed');
-48. console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
-49. task.start();
-50. }).catch((err: BusinessError) => {
-51. console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
-52. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let attachments: Array<request.agent.FormItem> = [{
+  name: "taskOffTest",
+  value: {
+    filename: "taskOffTest.avi",
+    path: "./taskOffTest.avi",
+  }
+}];
+let config: request.agent.Config = {
+  action: request.agent.Action.UPLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'taskOffTest',
+  description: 'Sample code for event listening',
+  mode: request.agent.Mode.FOREGROUND,
+  overwrite: false,
+  method: "PUT",
+  data: attachments,
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+let createOffCallback1 = (progress: request.agent.Progress) => {
+  console.info('upload task failed.');
+};
+let createOffCallback2 = (progress: request.agent.Progress) => {
+  console.info('upload task failed.');
+};
+request.agent.create(context, config).then((task: request.agent.Task) => {
+  task.on('failed', createOffCallback1);
+  task.on('failed', createOffCallback2);
+  // 表示取消createOffCallback1的订阅
+  task.off('failed', createOffCallback1);
+  // 表示取消订阅任务失败的所有回调
+  task.off('failed');
+  console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
+  task.start();
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### off('pause')11+
 
-PhonePC/2in1TabletTVWearable
-
-off(event: 'pause', callback?: (progress: [Progress](js-apis-request.md#requestagentprogress10)) => void): void
+off(event: 'pause', callback?: (progress: Progress) => void): void
 
 取消订阅任务暂停事件。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
-说明
+**说明** 
 
 示例中context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
@@ -3967,13 +3695,7 @@ off(event: 'pause', callback?: (progress: [Progress](js-apis-request.md#requesta
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 取消订阅的事件类型。  - 取值为'pause'，表示任务暂停。 |
-| callback | function | 否 | 回调函数，发生相关的事件时触发该回调方法。若无此参数，则取消订阅的所有暂停回调函数。 |
-
-回调函数的参数：
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| progress | [Progress](js-apis-request.md#requestagentprogress10) | 是 | 表示任务的进度信息。 |
+| callback | (progress: [Progress](js-apis-request.md#requestagentprogress10)) => void | 否 | 回调函数，发生相关的事件时触发该回调方法。若无此参数，则取消订阅的所有暂停回调函数。 |
 
 **错误码：**
 
@@ -3985,72 +3707,70 @@ off(event: 'pause', callback?: (progress: [Progress](js-apis-request.md#requesta
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let attachments: Array<request.agent.FormItem> = [{
-7. name: "taskOffTest",
-8. value: {
-9. filename: "taskOffTest.avi",
-10. path: "./taskOffTest.avi",
-11. }
-12. }];
-13. let config: request.agent.Config = {
-14. action: request.agent.Action.UPLOAD,
-15. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-16. title: 'taskOffTest',
-17. description: 'Sample code for event listening',
-18. mode: request.agent.Mode.FOREGROUND,
-19. overwrite: false,
-20. method: "PUT",
-21. data: attachments,
-22. saveas: "./",
-23. network: request.agent.Network.CELLULAR,
-24. metered: false,
-25. roaming: true,
-26. retry: true,
-27. redirect: true,
-28. index: 0,
-29. begins: 0,
-30. ends: -1,
-31. gauge: false,
-32. precise: false,
-33. token: "it is a secret"
-34. };
-35. let createOffCallback1 = (progress: request.agent.Progress) => {
-36. console.info('upload task pause.');
-37. };
-38. let createOffCallback2 = (progress: request.agent.Progress) => {
-39. console.info('upload task pause.');
-40. };
-41. request.agent.create(context, config).then((task: request.agent.Task) => {
-42. task.on('pause', createOffCallback1);
-43. task.on('pause', createOffCallback2);
-44. // 表示取消createOffCallback1的订阅
-45. task.off('pause', createOffCallback1);
-46. // 表示取消订阅任务暂停的所有回调
-47. task.off('pause');
-48. console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
-49. task.start();
-50. }).catch((err: BusinessError) => {
-51. console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
-52. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let attachments: Array<request.agent.FormItem> = [{
+  name: "taskOffTest",
+  value: {
+    filename: "taskOffTest.avi",
+    path: "./taskOffTest.avi",
+  }
+}];
+let config: request.agent.Config = {
+  action: request.agent.Action.UPLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'taskOffTest',
+  description: 'Sample code for event listening',
+  mode: request.agent.Mode.FOREGROUND,
+  overwrite: false,
+  method: "PUT",
+  data: attachments,
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+let createOffCallback1 = (progress: request.agent.Progress) => {
+  console.info('upload task pause.');
+};
+let createOffCallback2 = (progress: request.agent.Progress) => {
+  console.info('upload task pause.');
+};
+request.agent.create(context, config).then((task: request.agent.Task) => {
+  task.on('pause', createOffCallback1);
+  task.on('pause', createOffCallback2);
+  // 表示取消createOffCallback1的订阅
+  task.off('pause', createOffCallback1);
+  // 表示取消订阅任务暂停的所有回调
+  task.off('pause');
+  console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
+  task.start();
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### off('resume')11+
 
-PhonePC/2in1TabletTVWearable
-
-off(event: 'resume', callback?: (progress: [Progress](js-apis-request.md#requestagentprogress10)) => void): void
+off(event: 'resume', callback?: (progress: Progress) => void): void
 
 取消订阅任务恢复事件。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
-说明
+**说明** 
 
 示例中context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
@@ -4059,13 +3779,7 @@ off(event: 'resume', callback?: (progress: [Progress](js-apis-request.md#request
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 取消订阅的事件类型。  - 取值为'resume'，表示任务恢复。 |
-| callback | function | 否 | 回调函数，发生相关的事件时触发该回调方法。若无此参数，则取消订阅的所有恢复回调函数。 |
-
-回调函数的参数：
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| progress | [Progress](js-apis-request.md#requestagentprogress10) | 是 | 表示任务的进度信息。 |
+| callback | (progress: [Progress](js-apis-request.md#requestagentprogress10)) => void | 否 | 回调函数，发生相关的事件时触发该回调方法。若无此参数，则取消订阅的所有恢复回调函数。 |
 
 **错误码：**
 
@@ -4077,72 +3791,70 @@ off(event: 'resume', callback?: (progress: [Progress](js-apis-request.md#request
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let attachments: Array<request.agent.FormItem> = [{
-7. name: "taskOffTest",
-8. value: {
-9. filename: "taskOffTest.avi",
-10. path: "./taskOffTest.avi",
-11. }
-12. }];
-13. let config: request.agent.Config = {
-14. action: request.agent.Action.UPLOAD,
-15. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-16. title: 'taskOffTest',
-17. description: 'Sample code for event listening',
-18. mode: request.agent.Mode.FOREGROUND,
-19. overwrite: false,
-20. method: "PUT",
-21. data: attachments,
-22. saveas: "./",
-23. network: request.agent.Network.CELLULAR,
-24. metered: false,
-25. roaming: true,
-26. retry: true,
-27. redirect: true,
-28. index: 0,
-29. begins: 0,
-30. ends: -1,
-31. gauge: false,
-32. precise: false,
-33. token: "it is a secret"
-34. };
-35. let createOffCallback1 = (progress: request.agent.Progress) => {
-36. console.info('upload task resume.');
-37. };
-38. let createOffCallback2 = (progress: request.agent.Progress) => {
-39. console.info('upload task resume.');
-40. };
-41. request.agent.create(context, config).then((task: request.agent.Task) => {
-42. task.on('resume', createOffCallback1);
-43. task.on('resume', createOffCallback2);
-44. // 表示取消createOffCallback1的订阅
-45. task.off('resume', createOffCallback1);
-46. // 表示取消订阅任务恢复的所有回调
-47. task.off('resume');
-48. console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
-49. task.start();
-50. }).catch((err: BusinessError) => {
-51. console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
-52. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let attachments: Array<request.agent.FormItem> = [{
+  name: "taskOffTest",
+  value: {
+    filename: "taskOffTest.avi",
+    path: "./taskOffTest.avi",
+  }
+}];
+let config: request.agent.Config = {
+  action: request.agent.Action.UPLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'taskOffTest',
+  description: 'Sample code for event listening',
+  mode: request.agent.Mode.FOREGROUND,
+  overwrite: false,
+  method: "PUT",
+  data: attachments,
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+let createOffCallback1 = (progress: request.agent.Progress) => {
+  console.info('upload task resume.');
+};
+let createOffCallback2 = (progress: request.agent.Progress) => {
+  console.info('upload task resume.');
+};
+request.agent.create(context, config).then((task: request.agent.Task) => {
+  task.on('resume', createOffCallback1);
+  task.on('resume', createOffCallback2);
+  // 表示取消createOffCallback1的订阅
+  task.off('resume', createOffCallback1);
+  // 表示取消订阅任务恢复的所有回调
+  task.off('resume');
+  console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
+  task.start();
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### off('remove')11+
 
-PhonePC/2in1TabletTVWearable
-
-off(event: 'remove', callback?: (progress: [Progress](js-apis-request.md#requestagentprogress10)) => void): void
+off(event: 'remove', callback?: (progress: Progress) => void): void
 
 取消订阅任务移除事件。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
-说明
+**说明** 
 
 示例中context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
@@ -4151,13 +3863,7 @@ off(event: 'remove', callback?: (progress: [Progress](js-apis-request.md#request
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 取消订阅的事件类型。  - 取值为'remove'，表示任务被移除。 |
-| callback | function | 否 | 回调函数，发生相关的事件时触发该回调方法。若无此参数，则取消订阅的所有移除回调函数。 |
-
-回调函数的参数：
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| progress | [Progress](js-apis-request.md#requestagentprogress10) | 是 | 表示任务的进度信息。 |
+| callback | (progress: [Progress](js-apis-request.md#requestagentprogress10)) => void | 否 | 回调函数，发生相关的事件时触发该回调方法。若无此参数，则取消订阅的所有移除回调函数。 |
 
 **错误码：**
 
@@ -4165,68 +3871,66 @@ off(event: 'remove', callback?: (progress: [Progress](js-apis-request.md#request
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let attachments: Array<request.agent.FormItem> = [{
-7. name: "taskOffTest",
-8. value: {
-9. filename: "taskOffTest.avi",
-10. path: "./taskOffTest.avi",
-11. }
-12. }];
-13. let config: request.agent.Config = {
-14. action: request.agent.Action.UPLOAD,
-15. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-16. title: 'taskOffTest',
-17. description: 'Sample code for event listening',
-18. mode: request.agent.Mode.FOREGROUND,
-19. overwrite: false,
-20. method: "PUT",
-21. data: attachments,
-22. saveas: "./",
-23. network: request.agent.Network.CELLULAR,
-24. metered: false,
-25. roaming: true,
-26. retry: true,
-27. redirect: true,
-28. index: 0,
-29. begins: 0,
-30. ends: -1,
-31. gauge: false,
-32. precise: false,
-33. token: "it is a secret"
-34. };
-35. let createOffCallback1 = (progress: request.agent.Progress) => {
-36. console.info('upload task remove.');
-37. };
-38. let createOffCallback2 = (progress: request.agent.Progress) => {
-39. console.info('upload task remove.');
-40. };
-41. request.agent.create(context, config).then((task: request.agent.Task) => {
-42. task.on('remove', createOffCallback1);
-43. task.on('remove', createOffCallback2);
-44. // 表示取消createOffCallback1的订阅
-45. task.off('remove', createOffCallback1);
-46. // 表示取消订阅任务移除的所有回调
-47. task.off('remove');
-48. console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
-49. task.start();
-50. }).catch((err: BusinessError) => {
-51. console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
-52. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let attachments: Array<request.agent.FormItem> = [{
+  name: "taskOffTest",
+  value: {
+    filename: "taskOffTest.avi",
+    path: "./taskOffTest.avi",
+  }
+}];
+let config: request.agent.Config = {
+  action: request.agent.Action.UPLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'taskOffTest',
+  description: 'Sample code for event listening',
+  mode: request.agent.Mode.FOREGROUND,
+  overwrite: false,
+  method: "PUT",
+  data: attachments,
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+let createOffCallback1 = (progress: request.agent.Progress) => {
+  console.info('upload task remove.');
+};
+let createOffCallback2 = (progress: request.agent.Progress) => {
+  console.info('upload task remove.');
+};
+request.agent.create(context, config).then((task: request.agent.Task) => {
+  task.on('remove', createOffCallback1);
+  task.on('remove', createOffCallback2);
+  // 表示取消createOffCallback1的订阅
+  task.off('remove', createOffCallback1);
+  // 表示取消订阅任务移除的所有回调
+  task.off('remove');
+  console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
+  task.start();
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### off('response')12+
-
-PhonePC/2in1TabletTVWearable
 
 off(event: 'response', callback?: Callback<HttpResponse>): void
 
@@ -4236,7 +3940,7 @@ off(event: 'response', callback?: Callback<HttpResponse>): void
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
-说明
+**说明** 
 
 示例中context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
@@ -4257,64 +3961,62 @@ off(event: 'response', callback?: Callback<HttpResponse>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let attachments: Array<request.agent.FormItem> = [{
-7. name: "taskOffTest",
-8. value: {
-9. filename: "taskOffTest.avi",
-10. path: "./taskOffTest.avi",
-11. }
-12. }];
-13. let config: request.agent.Config = {
-14. action: request.agent.Action.UPLOAD,
-15. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-16. title: 'taskOffTest',
-17. description: 'Sample code for event listening',
-18. mode: request.agent.Mode.FOREGROUND,
-19. overwrite: false,
-20. method: "PUT",
-21. data: attachments,
-22. saveas: "./",
-23. network: request.agent.Network.CELLULAR,
-24. metered: false,
-25. roaming: true,
-26. retry: true,
-27. redirect: true,
-28. index: 0,
-29. begins: 0,
-30. ends: -1,
-31. gauge: false,
-32. precise: false,
-33. token: "it is a secret"
-34. };
-35. let createOffCallback1 = (progress: request.agent.HttpResponse) => {
-36. console.info('upload task response.');
-37. };
-38. let createOffCallback2 = (progress: request.agent.HttpResponse) => {
-39. console.info('upload task response.');
-40. };
-41. request.agent.create(context, config).then((task: request.agent.Task) => {
-42. task.on('response', createOffCallback1);
-43. task.on('response', createOffCallback2);
-44. // 表示取消createOffCallback1的订阅
-45. task.off('response', createOffCallback1);
-46. // 表示取消订阅任务移除的所有回调
-47. task.off('response');
-48. console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
-49. task.start();
-50. }).catch((err: BusinessError) => {
-51. console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
-52. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let attachments: Array<request.agent.FormItem> = [{
+  name: "taskOffTest",
+  value: {
+    filename: "taskOffTest.avi",
+    path: "./taskOffTest.avi",
+  }
+}];
+let config: request.agent.Config = {
+  action: request.agent.Action.UPLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'taskOffTest',
+  description: 'Sample code for event listening',
+  mode: request.agent.Mode.FOREGROUND,
+  overwrite: false,
+  method: "PUT",
+  data: attachments,
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+let createOffCallback1 = (progress: request.agent.HttpResponse) => {
+  console.info('upload task response.');
+};
+let createOffCallback2 = (progress: request.agent.HttpResponse) => {
+  console.info('upload task response.');
+};
+request.agent.create(context, config).then((task: request.agent.Task) => {
+  task.on('response', createOffCallback1);
+  task.on('response', createOffCallback2);
+  // 表示取消createOffCallback1的订阅
+  task.off('response', createOffCallback1);
+  // 表示取消订阅任务响应的所有回调
+  task.off('response');
+  console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
+  task.start();
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### off('faultOccur')20+
-
-PhonePC/2in1TabletTVWearable
 
 off(event: 'faultOccur', callback?: Callback<Faults>): void
 
@@ -4322,7 +4024,7 @@ off(event: 'faultOccur', callback?: Callback<Faults>): void
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
-说明
+**说明** 
 
 示例中context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
@@ -4343,64 +4045,62 @@ off(event: 'faultOccur', callback?: Callback<Faults>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-5. let attachments: Array<request.agent.FormItem> = [{
-6. name: "taskOffTest",
-7. value: {
-8. filename: "taskOffTest.avi",
-9. mimeType: "application/octet-stream",
-10. path: "./taskOffTest.avi",
-11. }
-12. }];
-13. let config: request.agent.Config = {
-14. action: request.agent.Action.UPLOAD,
-15. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-16. title: 'taskOffTest',
-17. description: 'Sample code for event listening',
-18. mode: request.agent.Mode.FOREGROUND,
-19. overwrite: false,
-20. method: "PUT",
-21. data: attachments,
-22. saveas: "./",
-23. network: request.agent.Network.CELLULAR,
-24. metered: false,
-25. roaming: true,
-26. retry: true,
-27. redirect: true,
-28. index: 0,
-29. begins: 0,
-30. ends: -1,
-31. gauge: false,
-32. precise: false,
-33. token: "it is a secret"
-34. };
-35. let faultOffCallback1 = (faults: request.agent.Faults) => {
-36. console.info('upload task failed.');
-37. };
-38. let faultOffCallback2 = (faults: request.agent.Faults) => {
-39. console.info('upload task failed.');
-40. };
-41. request.agent.create(context, config).then((task: request.agent.Task) => {
-42. task.on('faultOccur', faultOffCallback1);
-43. task.on('faultOccur', faultOffCallback2);
-44. // 表示取消faultOffCallback1的订阅
-45. task.off('faultOccur', faultOffCallback1);
-46. // 表示取消订阅任务移除的所有回调
-47. task.off('faultOccur');
-48. console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
-49. task.start();
-50. }).catch((err: BusinessError) => {
-51. console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
-52. });
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let attachments: Array<request.agent.FormItem> = [{
+  name: "taskOffTest",
+  value: {
+    filename: "taskOffTest.avi",
+    mimeType: "application/octet-stream",
+    path: "./taskOffTest.avi",
+  }
+}];
+let config: request.agent.Config = {
+  action: request.agent.Action.UPLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'taskOffTest',
+  description: 'Sample code for event listening',
+  mode: request.agent.Mode.FOREGROUND,
+  overwrite: false,
+  method: "PUT",
+  data: attachments,
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+let faultOffCallback1 = (faults: request.agent.Faults) => {
+  console.info('upload task failed.');
+};
+let faultOffCallback2 = (faults: request.agent.Faults) => {
+  console.info('upload task failed.');
+};
+request.agent.create(context, config).then((task: request.agent.Task) => {
+  task.on('faultOccur', faultOffCallback1);
+  task.on('faultOccur', faultOffCallback2);
+  // 表示取消faultOffCallback1的订阅
+  task.off('faultOccur', faultOffCallback1);
+  // 表示取消订阅任务失败原因的所有回调
+  task.off('faultOccur');
+  console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
+  task.start();
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### off('wait')20+
-
-PhonePC/2in1TabletTVWearable
 
 off(event: 'wait', callback?: Callback<WaitingReason>): void
 
@@ -4408,7 +4108,7 @@ off(event: 'wait', callback?: Callback<WaitingReason>): void
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
-说明
+**说明** 
 
 示例中context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
@@ -4429,64 +4129,62 @@ off(event: 'wait', callback?: Callback<WaitingReason>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-5. let attachments: Array<request.agent.FormItem> = [{
-6. name: "taskOffTest",
-7. value: {
-8. filename: "taskOffTest.avi",
-9. mimeType: "application/octet-stream",
-10. path: "./taskOffTest.avi",
-11. }
-12. }];
-13. let config: request.agent.Config = {
-14. action: request.agent.Action.UPLOAD,
-15. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-16. title: 'taskOffTest',
-17. description: 'Sample code for event listening',
-18. mode: request.agent.Mode.FOREGROUND,
-19. overwrite: false,
-20. method: "PUT",
-21. data: attachments,
-22. saveas: "./",
-23. network: request.agent.Network.CELLULAR,
-24. metered: false,
-25. roaming: true,
-26. retry: true,
-27. redirect: true,
-28. index: 0,
-29. begins: 0,
-30. ends: -1,
-31. gauge: false,
-32. precise: false,
-33. token: "it is a secret"
-34. };
-35. let waitOffCallback1 = (reason: request.agent.WaitingReason) => {
-36. console.info('upload task waiting.');
-37. };
-38. let waitOffCallback2 = (reason: request.agent.WaitingReason) => {
-39. console.info('upload task waiting.');
-40. };
-41. request.agent.create(context, config).then((task: request.agent.Task) => {
-42. task.on('wait', waitOffCallback1);
-43. task.on('wait', waitOffCallback2);
-44. // 表示取消waitOffCallback1的订阅
-45. task.off('wait', waitOffCallback1);
-46. // 表示取消订阅任务移除的所有回调
-47. task.off('wait');
-48. console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
-49. task.start();
-50. }).catch((err: BusinessError) => {
-51. console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
-52. });
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let attachments: Array<request.agent.FormItem> = [{
+  name: "taskOffTest",
+  value: {
+    filename: "taskOffTest.avi",
+    mimeType: "application/octet-stream",
+    path: "./taskOffTest.avi",
+  }
+}];
+let config: request.agent.Config = {
+  action: request.agent.Action.UPLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'taskOffTest',
+  description: 'Sample code for event listening',
+  mode: request.agent.Mode.FOREGROUND,
+  overwrite: false,
+  method: "PUT",
+  data: attachments,
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+let waitOffCallback1 = (reason: request.agent.WaitingReason) => {
+  console.info('upload task waiting.');
+};
+let waitOffCallback2 = (reason: request.agent.WaitingReason) => {
+  console.info('upload task waiting.');
+};
+request.agent.create(context, config).then((task: request.agent.Task) => {
+  task.on('wait', waitOffCallback1);
+  task.on('wait', waitOffCallback2);
+  // 表示取消waitOffCallback1的订阅
+  task.off('wait', waitOffCallback1);
+  // 表示取消订阅任务等待的所有回调
+  task.off('wait');
+  console.info(`Succeeded in creating a upload task. result: ${task.tid}`);
+  task.start();
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a upload task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### start10+
-
-PhonePC/2in1TabletTVWearable
 
 start(callback: AsyncCallback<void>): void
 
@@ -4503,7 +4201,7 @@ start(callback: AsyncCallback<void>): void
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
-说明
+**说明** 
 
 示例中context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
@@ -4525,51 +4223,49 @@ start(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let config: request.agent.Config = {
-7. action: request.agent.Action.DOWNLOAD,
-8. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-9. title: 'taskStartTest',
-10. description: 'Sample code for start the download task',
-11. mode: request.agent.Mode.BACKGROUND,
-12. overwrite: false,
-13. method: "GET",
-14. data: "",
-15. saveas: "./",
-16. network: request.agent.Network.CELLULAR,
-17. metered: false,
-18. roaming: true,
-19. retry: true,
-20. redirect: true,
-21. index: 0,
-22. begins: 0,
-23. ends: -1,
-24. gauge: false,
-25. precise: false,
-26. token: "it is a secret"
-27. };
-28. request.agent.create(context, config).then((task: request.agent.Task) => {
-29. task.start((err: BusinessError) => {
-30. if (err) {
-31. console.error(`Failed to start the download task, Code: ${err.code}, message: ${err.message}`);
-32. return;
-33. }
-34. console.info(`Succeeded in starting a download task.`);
-35. });
-36. console.info(`Succeeded in creating a download task. result: ${task.tid}`);
-37. }).catch((err: BusinessError) => {
-38. console.error(`Failed to create a download task, Code: ${err.code}, message: ${err.message}`);
-39. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let config: request.agent.Config = {
+  action: request.agent.Action.DOWNLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'taskStartTest',
+  description: 'Sample code for start the download task',
+  mode: request.agent.Mode.BACKGROUND,
+  overwrite: false,
+  method: "GET",
+  data: "",
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+request.agent.create(context, config).then((task: request.agent.Task) => {
+  task.start((err: BusinessError) => {
+    if (err) {
+      console.error(`Failed to start the download task, Code: ${err.code}, message: ${err.message}`);
+      return;
+    }
+    console.info(`Succeeded in starting a download task.`);
+  });
+  console.info(`Succeeded in creating a download task. result: ${task.tid}`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a download task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### start10+
-
-PhonePC/2in1TabletTVWearable
 
 start(): Promise<void>
 
@@ -4586,7 +4282,7 @@ start(): Promise<void>
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
-说明
+**说明** 
 
 示例中context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
@@ -4608,49 +4304,47 @@ start(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let config: request.agent.Config = {
-7. action: request.agent.Action.DOWNLOAD,
-8. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-9. title: 'taskStartTest',
-10. description: 'Sample code for start the download task',
-11. mode: request.agent.Mode.BACKGROUND,
-12. overwrite: false,
-13. method: "GET",
-14. data: "",
-15. saveas: "./",
-16. network: request.agent.Network.CELLULAR,
-17. metered: false,
-18. roaming: true,
-19. retry: true,
-20. redirect: true,
-21. index: 0,
-22. begins: 0,
-23. ends: -1,
-24. gauge: false,
-25. precise: false,
-26. token: "it is a secret"
-27. };
-28. request.agent.create(context, config).then((task: request.agent.Task) => {
-29. task.start().then(() => {
-30. console.info(`Succeeded in starting a download task.`);
-31. }).catch((err: BusinessError) => {
-32. console.error(`Failed to start the download task, Code: ${err.code}, message: ${err.message}`);
-33. });
-34. console.info(`Succeeded in creating a download task. result: ${task.tid}`);
-35. }).catch((err: BusinessError) => {
-36. console.error(`Failed to create a download task, Code: ${err.code}, message: ${err.message}`);
-37. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let config: request.agent.Config = {
+  action: request.agent.Action.DOWNLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'taskStartTest',
+  description: 'Sample code for start the download task',
+  mode: request.agent.Mode.BACKGROUND,
+  overwrite: false,
+  method: "GET",
+  data: "",
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+request.agent.create(context, config).then((task: request.agent.Task) => {
+  task.start().then(() => {
+    console.info(`Succeeded in starting a download task.`);
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to start the download task, Code: ${err.code}, message: ${err.message}`);
+  });
+  console.info(`Succeeded in creating a download task. result: ${task.tid}`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a download task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### pause10+
-
-PhonePC/2in1TabletTVWearable
 
 pause(callback: AsyncCallback<void>): void
 
@@ -4671,60 +4365,59 @@ pause(callback: AsyncCallback<void>): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 13400003 | Task service ability error. |
+| 21900005 | Operation with wrong task mode.  适用版本：10-10 |
 | 21900007 | Operation with wrong task state. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let config: request.agent.Config = {
-7. action: request.agent.Action.DOWNLOAD,
-8. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-9. title: 'taskPauseTest',
-10. description: 'Sample code for pause the download task',
-11. mode: request.agent.Mode.BACKGROUND,
-12. overwrite: false,
-13. method: "GET",
-14. data: "",
-15. saveas: "./",
-16. network: request.agent.Network.CELLULAR,
-17. metered: false,
-18. roaming: true,
-19. retry: true,
-20. redirect: true,
-21. index: 0,
-22. begins: 0,
-23. ends: -1,
-24. gauge: false,
-25. precise: false,
-26. token: "it is a secret"
-27. };
-28. request.agent.create(context, config).then(async (task: request.agent.Task) => {
-29. task.start();
-30. // 等待1秒再执行下一步操作，以防异步乱序
-31. await new Promise<void>((resolve) => {
-32. setTimeout(() => resolve(),1000)
-33. })
-34. task.pause((err: BusinessError) => {
-35. if (err) {
-36. console.error(`Failed to pause the download task, Code: ${err.code}, message: ${err.message}`);
-37. return;
-38. }
-39. console.info(`Succeeded in pausing a download task. `);
-40. });
-41. console.info(`Succeeded in creating a download task. result: ${task.tid}`);
-42. }).catch((err: BusinessError) => {
-43. console.error(`Failed to create a download task, Code: ${err.code}, message: ${err.message}`);
-44. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let config: request.agent.Config = {
+  action: request.agent.Action.DOWNLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'taskPauseTest',
+  description: 'Sample code for pause the download task',
+  mode: request.agent.Mode.BACKGROUND,
+  overwrite: false,
+  method: "GET",
+  data: "",
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+request.agent.create(context, config).then(async (task: request.agent.Task) => {
+  task.start();
+  // 等待1秒再执行下一步操作，以防异步乱序
+  await new Promise<void>((resolve) => {
+    setTimeout(() => resolve(), 1000);
+  })
+  task.pause((err: BusinessError) => {
+    if (err) {
+      console.error(`Failed to pause the download task, Code: ${err.code}, message: ${err.message}`);
+      return;
+    }
+    console.info(`Succeeded in pausing a download task. `);
+  });
+  console.info(`Succeeded in creating a download task. result: ${task.tid}`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a download task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### pause10+
-
-PhonePC/2in1TabletTVWearable
 
 pause(): Promise<void>
 
@@ -4745,58 +4438,57 @@ pause(): Promise<void>
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 13400003 | Task service ability error. |
+| 21900005 | Operation with wrong task mode.  适用版本：10-10 |
 | 21900007 | Operation with wrong task state. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let config: request.agent.Config = {
-7. action: request.agent.Action.DOWNLOAD,
-8. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-9. title: 'taskPauseTest',
-10. description: 'Sample code for pause the download task',
-11. mode: request.agent.Mode.BACKGROUND,
-12. overwrite: false,
-13. method: "GET",
-14. data: "",
-15. saveas: "./",
-16. network: request.agent.Network.CELLULAR,
-17. metered: false,
-18. roaming: true,
-19. retry: true,
-20. redirect: true,
-21. index: 0,
-22. begins: 0,
-23. ends: -1,
-24. gauge: false,
-25. precise: false,
-26. token: "it is a secret"
-27. };
-28. request.agent.create(context, config).then(async (task: request.agent.Task) => {
-29. task.start();
-30. // 等待1秒再执行下一步操作，以防异步乱序
-31. await new Promise<void>((resolve) => {
-32. setTimeout(() => resolve(),1000)
-33. })
-34. task.pause().then(() => {
-35. console.info(`Succeeded in pausing a download task. `);
-36. }).catch((err: BusinessError) => {
-37. console.error(`Failed to pause the download task, Code: ${err.code}, message: ${err.message}`);
-38. });
-39. console.info(`Succeeded in creating a download task. result: ${task.tid}`);
-40. }).catch((err: BusinessError) => {
-41. console.error(`Failed to create a download task, Code: ${err.code}, message: ${err.message}`);
-42. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let config: request.agent.Config = {
+  action: request.agent.Action.DOWNLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'taskPauseTest',
+  description: 'Sample code for pause the download task',
+  mode: request.agent.Mode.BACKGROUND,
+  overwrite: false,
+  method: "GET",
+  data: "",
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+request.agent.create(context, config).then(async (task: request.agent.Task) => {
+  task.start();
+  // 等待1秒再执行下一步操作，以防异步乱序
+  await new Promise<void>((resolve) => {
+    setTimeout(() => resolve(), 1000);
+  })
+  task.pause().then(() => {
+    console.info(`Succeeded in pausing a download task. `);
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to pause the download task, Code: ${err.code}, message: ${err.message}`);
+  });
+  console.info(`Succeeded in creating a download task. result: ${task.tid}`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a download task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### resume10+
-
-PhonePC/2in1TabletTVWearable
 
 resume(callback: AsyncCallback<void>): void
 
@@ -4820,65 +4512,64 @@ resume(callback: AsyncCallback<void>): void
 | --- | --- |
 | 201 | Permission denied. |
 | 13400003 | Task service ability error. |
+| 21900005 | Operation with wrong task mode.  适用版本：10-10 |
 | 21900007 | Operation with wrong task state. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let config: request.agent.Config = {
-7. action: request.agent.Action.DOWNLOAD,
-8. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-9. title: 'taskResumeTest',
-10. description: 'Sample code for resume the download task',
-11. mode: request.agent.Mode.BACKGROUND,
-12. overwrite: false,
-13. method: "GET",
-14. data: "",
-15. saveas: "./",
-16. network: request.agent.Network.CELLULAR,
-17. metered: false,
-18. roaming: true,
-19. retry: true,
-20. redirect: true,
-21. index: 0,
-22. begins: 0,
-23. ends: -1,
-24. gauge: false,
-25. precise: false,
-26. token: "it is a secret"
-27. };
-28. request.agent.create(context, config).then(async (task: request.agent.Task) => {
-29. task.start();
-30. // 等待1秒再执行下一步操作，以防异步乱序
-31. await new Promise<void>((resolve) => {
-32. setTimeout(() => resolve(),1000)
-33. })
-34. task.pause();
-35. // 等待1秒再执行下一步操作，以防异步乱序
-36. await new Promise<void>((resolve) => {
-37. setTimeout(() => resolve(),1000)
-38. })
-39. task.resume((err: BusinessError) => {
-40. if (err) {
-41. console.error(`Failed to resume the download task, Code: ${err.code}, message: ${err.message}`);
-42. return;
-43. }
-44. console.info(`Succeeded in resuming a download task. `);
-45. });
-46. console.info(`Succeeded in creating a download task. result: ${task.tid}`);
-47. }).catch((err: BusinessError) => {
-48. console.error(`Failed to create a download task, Code: ${err.code}, message: ${err.message}`);
-49. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let config: request.agent.Config = {
+  action: request.agent.Action.DOWNLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'taskResumeTest',
+  description: 'Sample code for resume the download task',
+  mode: request.agent.Mode.BACKGROUND,
+  overwrite: false,
+  method: "GET",
+  data: "",
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+request.agent.create(context, config).then(async (task: request.agent.Task) => {
+  task.start();
+  // 等待1秒再执行下一步操作，以防异步乱序
+  await new Promise<void>((resolve) => {
+    setTimeout(() => resolve(), 1000);
+  })
+  task.pause();
+  // 等待1秒再执行下一步操作，以防异步乱序
+  await new Promise<void>((resolve) => {
+    setTimeout(() => resolve(), 1000);
+  })
+  task.resume((err: BusinessError) => {
+    if (err) {
+      console.error(`Failed to resume the download task, Code: ${err.code}, message: ${err.message}`);
+      return;
+    }
+    console.info(`Succeeded in resuming a download task. `);
+  });
+  console.info(`Succeeded in creating a download task. result: ${task.tid}`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a download task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### resume10+
-
-PhonePC/2in1TabletTVWearable
 
 resume(): Promise<void>
 
@@ -4902,63 +4593,62 @@ resume(): Promise<void>
 | --- | --- |
 | 201 | Permission denied. |
 | 13400003 | Task service ability error. |
+| 21900005 | Operation with wrong task mode.  适用版本：10-10 |
 | 21900007 | Operation with wrong task state. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let config: request.agent.Config = {
-7. action: request.agent.Action.DOWNLOAD,
-8. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-9. title: 'taskResumeTest',
-10. description: 'Sample code for resume the download task',
-11. mode: request.agent.Mode.BACKGROUND,
-12. overwrite: false,
-13. method: "GET",
-14. data: "",
-15. saveas: "./",
-16. network: request.agent.Network.CELLULAR,
-17. metered: false,
-18. roaming: true,
-19. retry: true,
-20. redirect: true,
-21. index: 0,
-22. begins: 0,
-23. ends: -1,
-24. gauge: false,
-25. precise: false,
-26. token: "it is a secret"
-27. };
-28. request.agent.create(context, config).then(async (task: request.agent.Task) => {
-29. task.start();
-30. // 等待1秒再执行下一步操作，以防异步乱序
-31. await new Promise<void>((resolve) => {
-32. setTimeout(() => resolve(),1000)
-33. })
-34. task.pause();
-35. // 等待1秒再执行下一步操作，以防异步乱序
-36. await new Promise<void>((resolve) => {
-37. setTimeout(() => resolve(),1000)
-38. })
-39. task.resume().then(() => {
-40. console.info(`Succeeded in resuming a download task. `);
-41. }).catch((err: BusinessError) => {
-42. console.error(`Failed to resume the download task, Code: ${err.code}, message: ${err.message}`);
-43. });
-44. console.info(`Succeeded in creating a download task. result: ${task.tid}`);
-45. }).catch((err: BusinessError) => {
-46. console.error(`Failed to create a download task, Code: ${err.code}, message: ${err.message}`);
-47. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let config: request.agent.Config = {
+  action: request.agent.Action.DOWNLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'taskResumeTest',
+  description: 'Sample code for resume the download task',
+  mode: request.agent.Mode.BACKGROUND,
+  overwrite: false,
+  method: "GET",
+  data: "",
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+request.agent.create(context, config).then(async (task: request.agent.Task) => {
+  task.start();
+  // 等待1秒再执行下一步操作，以防异步乱序
+  await new Promise<void>((resolve) => {
+    setTimeout(() => resolve(), 1000);
+  })
+  task.pause();
+  // 等待1秒再执行下一步操作，以防异步乱序
+  await new Promise<void>((resolve) => {
+    setTimeout(() => resolve(), 1000);
+  })
+  task.resume().then(() => {
+    console.info(`Succeeded in resuming a download task. `);
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to resume the download task, Code: ${err.code}, message: ${err.message}`);
+  });
+  console.info(`Succeeded in creating a download task. result: ${task.tid}`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a download task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### stop10+
-
-PhonePC/2in1TabletTVWearable
 
 stop(callback: AsyncCallback<void>): void
 
@@ -4985,56 +4675,54 @@ stop(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let config: request.agent.Config = {
-7. action: request.agent.Action.DOWNLOAD,
-8. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-9. title: 'taskStopTest',
-10. description: 'Sample code for stop the download task',
-11. mode: request.agent.Mode.BACKGROUND,
-12. overwrite: false,
-13. method: "GET",
-14. data: "",
-15. saveas: "./",
-16. network: request.agent.Network.CELLULAR,
-17. metered: false,
-18. roaming: true,
-19. retry: true,
-20. redirect: true,
-21. index: 0,
-22. begins: 0,
-23. ends: -1,
-24. gauge: false,
-25. precise: false,
-26. token: "it is a secret"
-27. };
-28. request.agent.create(context, config).then(async (task: request.agent.Task) => {
-29. task.start();
-30. // 等待1秒再执行下一步操作，以防异步乱序
-31. await new Promise<void>((resolve) => {
-32. setTimeout(() => resolve(),1000)
-33. })
-34. task.stop((err: BusinessError) => {
-35. if (err) {
-36. console.error(`Failed to stop the download task, Code: ${err.code}, message: ${err.message}`);
-37. return;
-38. }
-39. console.info(`Succeeded in stopping a download task. `);
-40. });
-41. console.info(`Succeeded in creating a download task. result: ${task.tid}`);
-42. }).catch((err: BusinessError) => {
-43. console.error(`Failed to create a download task, Code: ${err.code}, message: ${err.message}`);
-44. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let config: request.agent.Config = {
+  action: request.agent.Action.DOWNLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'taskStopTest',
+  description: 'Sample code for stop the download task',
+  mode: request.agent.Mode.BACKGROUND,
+  overwrite: false,
+  method: "GET",
+  data: "",
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+request.agent.create(context, config).then(async (task: request.agent.Task) => {
+  task.start();
+  // 等待1秒再执行下一步操作，以防异步乱序
+  await new Promise<void>((resolve) => {
+    setTimeout(() => resolve(), 1000);
+  })
+  task.stop((err: BusinessError) => {
+    if (err) {
+      console.error(`Failed to stop the download task, Code: ${err.code}, message: ${err.message}`);
+      return;
+    }
+    console.info(`Succeeded in stopping a download task. `);
+  });
+  console.info(`Succeeded in creating a download task. result: ${task.tid}`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a download task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### stop10+
-
-PhonePC/2in1TabletTVWearable
 
 stop(): Promise<void>
 
@@ -5061,54 +4749,52 @@ stop(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let config: request.agent.Config = {
-7. action: request.agent.Action.DOWNLOAD,
-8. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-9. title: 'taskStopTest',
-10. description: 'Sample code for stop the download task',
-11. mode: request.agent.Mode.BACKGROUND,
-12. overwrite: false,
-13. method: "GET",
-14. data: "",
-15. saveas: "./",
-16. network: request.agent.Network.CELLULAR,
-17. metered: false,
-18. roaming: true,
-19. retry: true,
-20. redirect: true,
-21. index: 0,
-22. begins: 0,
-23. ends: -1,
-24. gauge: false,
-25. precise: false,
-26. token: "it is a secret"
-27. };
-28. request.agent.create(context, config).then(async (task: request.agent.Task) => {
-29. task.start();
-30. // 等待1秒再执行下一步操作，以防异步乱序
-31. await new Promise<void>((resolve) => {
-32. setTimeout(() => resolve(),1000)
-33. })
-34. task.stop().then(() => {
-35. console.info(`Succeeded in stopping a download task. `);
-36. }).catch((err: BusinessError) => {
-37. console.error(`Failed to stop the download task, Code: ${err.code}, message: ${err.message}`);
-38. });
-39. console.info(`Succeeded in creating a download task. result: ${task.tid}`);
-40. }).catch((err: BusinessError) => {
-41. console.error(`Failed to create a download task, Code: ${err.code}, message: ${err.message}`);
-42. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let config: request.agent.Config = {
+  action: request.agent.Action.DOWNLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'taskStopTest',
+  description: 'Sample code for stop the download task',
+  mode: request.agent.Mode.BACKGROUND,
+  overwrite: false,
+  method: "GET",
+  data: "",
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+request.agent.create(context, config).then(async (task: request.agent.Task) => {
+  task.start();
+  // 等待1秒再执行下一步操作，以防异步乱序
+  await new Promise<void>((resolve) => {
+    setTimeout(() => resolve(), 1000);
+  })
+  task.stop().then(() => {
+    console.info(`Succeeded in stopping a download task. `);
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to stop the download task, Code: ${err.code}, message: ${err.message}`);
+  });
+  console.info(`Succeeded in creating a download task. result: ${task.tid}`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a download task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ### setMaxSpeed18+
-
-PhonePC/2in1TabletTVWearable
 
 setMaxSpeed(speed: number): Promise<void>
 
@@ -5120,7 +4806,7 @@ setMaxSpeed(speed: number): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| speed | number | 是 | 设置任务每秒能传输的字节数上限，单位为字节（B），最小值为16384字节，同时该值不得低于[MinSpeed](js-apis-request.md#requestagentminspeed20)设置的最低速度。 |
+| speed | number | 是 | 设置任务每秒能传输的字节数上限，单位为字节每秒（B/s），最小值为16384字节每秒，取值范围为[16384, +∞)，同时该值不得低于[MinSpeed](js-apis-request.md#requestagentminspeed20)设置的最低速度。传入小于最小值的参数时返回错误码。 |
 
 **返回值：**
 
@@ -5139,36 +4825,34 @@ setMaxSpeed(speed: number): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let config: request.agent.Config = {
-7. action: request.agent.Action.DOWNLOAD,
-8. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-9. saveas: "./",
-10. };
-11. request.agent.create(context, config).then((task: request.agent.Task) => {
-12. // 设置任务速度上限。
-13. task.setMaxSpeed(10 * 1024 * 1024).then(() => {
-14. console.info(`Succeeded in setting the max speed of the task. result: ${task.tid}`);
-15. }).catch((err: BusinessError) => {
-16. console.error(`Failed to set the max speed of the task. result: ${task.tid}`);
-17. });
-18. }).catch((err: BusinessError) => {
-19. console.error(`Failed to create a download task, Code: ${err.code}, message: ${err.message}`);
-20. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let config: request.agent.Config = {
+  action: request.agent.Action.DOWNLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  saveas: "./",
+};
+request.agent.create(context, config).then((task: request.agent.Task) => {
+  // 设置任务速度上限。
+  task.setMaxSpeed(10 * 1024 * 1024).then(() => {
+    console.info(`Succeeded in setting the max speed of the task. result: ${task.tid}`);
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to set the max speed of the task. Code: ${err.code}, message: ${err.message}`);
+  });
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a download task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## request.agent.create10+
 
-PhonePC/2in1TabletTVWearable
-
 create(context: BaseContext, config: Config, callback: AsyncCallback<Task>): void
 
-创建需要上传或下载的任务，并将其排入队列。支持HTTP/HTTPS协议，使用callback异步回调。
+创建需要上传或下载的任务，并将其排入队列。支持HTTP/HTTPS协议，使用callback异步回调。创建任务后，需要调用[start](js-apis-request.md#start10)方法启动任务，任务才会开始运行。
 
 **需要权限**：ohos.permission.INTERNET
 
@@ -5176,7 +4860,7 @@ create(context: BaseContext, config: Config, callback: AsyncCallback<Task>): voi
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
-说明
+**说明** 
 
 示例中context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
@@ -5203,60 +4887,58 @@ create(context: BaseContext, config: Config, callback: AsyncCallback<Task>): voi
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let attachments: Array<request.agent.FormItem> = [{
-7. name: "createTest",
-8. value: {
-9. filename: "createTest.avi",
-10. path: "./createTest.avi",
-11. }
-12. }];
-13. let config: request.agent.Config = {
-14. action: request.agent.Action.UPLOAD,
-15. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-16. title: 'createTest',
-17. description: 'Sample code for create task',
-18. mode: request.agent.Mode.BACKGROUND,
-19. overwrite: false,
-20. method: "PUT",
-21. data: attachments,
-22. saveas: "./",
-23. network: request.agent.Network.CELLULAR,
-24. metered: false,
-25. roaming: true,
-26. retry: true,
-27. redirect: true,
-28. index: 0,
-29. begins: 0,
-30. ends: -1,
-31. gauge: false,
-32. precise: false,
-33. token: "it is a secret"
-34. };
-35. request.agent.create(context, config, async (err: BusinessError, task: request.agent.Task) => {
-36. if (err) {
-37. console.error(`Failed to create a download task, Code: ${err.code}, message: ${err.message}`);
-38. return;
-39. }
-40. console.info(`Succeeded in creating a download task. result: ${task.config}`);
-41. await task.start();
-42. // 用户需要手动调用remove从而结束task对象的生命周期
-43. request.agent.remove(task.tid);
-44. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let attachments: Array<request.agent.FormItem> = [{
+  name: "createTest",
+  value: {
+    filename: "createTest.avi",
+    path: "./createTest.avi",
+  }
+}];
+let config: request.agent.Config = {
+  action: request.agent.Action.UPLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'createTest',
+  description: 'Sample code for create task',
+  mode: request.agent.Mode.BACKGROUND,
+  overwrite: false,
+  method: "PUT",
+  data: attachments,
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+request.agent.create(context, config, async (err: BusinessError, task: request.agent.Task) => {
+  if (err) {
+    console.error(`Failed to create an upload task, Code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info(`Succeeded in creating an upload task. result: ${task.config}`);
+  await task.start();
+  // 用户需要手动调用remove从而结束task对象的生命周期
+  request.agent.remove(task.tid);
+});
 ```
 
 ## request.agent.create10+
 
-PhonePC/2in1TabletTVWearable
-
 create(context: BaseContext, config: Config): Promise<Task>
 
-创建需要上传或下载的任务，并将其排入队列。支持HTTP/HTTPS协议，使用Promise异步回调。
+创建需要上传或下载的任务，并将其排入队列。支持HTTP/HTTPS协议，使用Promise异步回调。创建任务后，需要调用[start](js-apis-request.md#start10)方法启动任务，任务才会开始运行。
 
 **需要权限**：ohos.permission.INTERNET
 
@@ -5264,7 +4946,7 @@ create(context: BaseContext, config: Config): Promise<Task>
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
-说明
+**说明** 
 
 示例中context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
@@ -5279,7 +4961,7 @@ create(context: BaseContext, config: Config): Promise<Task>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[Task](js-apis-request.md#requestagenttask10)> | Promise对象。返回任务配置信息的Promise对象。 |
+| Promise<[Task](js-apis-request.md#requestagenttask10)> | Promise对象。返回Task对象的Promise对象。 |
 
 **错误码：**
 
@@ -5296,54 +4978,52 @@ create(context: BaseContext, config: Config): Promise<Task>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let attachments: Array<request.agent.FormItem> = [{
-7. name: "createTest",
-8. value: {
-9. filename: "createTest.avi",
-10. path: "./createTest.avi",
-11. }
-12. }];
-13. let config: request.agent.Config = {
-14. action: request.agent.Action.UPLOAD,
-15. url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
-16. title: 'createTest',
-17. description: 'Sample code for create task',
-18. mode: request.agent.Mode.BACKGROUND,
-19. overwrite: false,
-20. method: "PUT",
-21. data: attachments,
-22. saveas: "./",
-23. network: request.agent.Network.CELLULAR,
-24. metered: false,
-25. roaming: true,
-26. retry: true,
-27. redirect: true,
-28. index: 0,
-29. begins: 0,
-30. ends: -1,
-31. gauge: false,
-32. precise: false,
-33. token: "it is a secret"
-34. };
-35. request.agent.create(context, config).then(async (task: request.agent.Task) => {
-36. console.info(`Succeeded in creating a download task. result: ${task.config}`);
-37. await task.start();
-38. // 用户需要手动调用remove从而结束task对象的生命周期
-39. request.agent.remove(task.tid);
-40. }).catch((err: BusinessError) => {
-41. console.error(`Failed to create a download task, Code: ${err.code}, message: ${err.message}`);
-42. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let attachments: Array<request.agent.FormItem> = [{
+  name: "createTest",
+  value: {
+    filename: "createTest.avi",
+    path: "./createTest.avi",
+  }
+}];
+let config: request.agent.Config = {
+  action: request.agent.Action.UPLOAD,
+  url: 'http://127.0.0.1', // 需要手动将url替换为真实服务器的HTTP协议地址
+  title: 'createTest',
+  description: 'Sample code for create task',
+  mode: request.agent.Mode.BACKGROUND,
+  overwrite: false,
+  method: "PUT",
+  data: attachments,
+  saveas: "./",
+  network: request.agent.Network.CELLULAR,
+  metered: false,
+  roaming: true,
+  retry: true,
+  redirect: true,
+  index: 0,
+  begins: 0,
+  ends: -1,
+  gauge: false,
+  precise: false,
+  token: "it is a secret"
+};
+request.agent.create(context, config).then(async (task: request.agent.Task) => {
+  console.info(`Succeeded in creating an upload task. result: ${task.config}`);
+  await task.start();
+  // 用户需要手动调用remove从而结束task对象的生命周期
+  request.agent.remove(task.tid);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create an upload task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## request.agent.getTask11+
-
-PhonePC/2in1TabletTVWearable
 
 getTask(context: BaseContext, id: string, token?: string): Promise<Task>
 
@@ -5357,7 +5037,7 @@ getTask(context: BaseContext, id: string, token?: string): Promise<Task>
 | --- | --- | --- | --- |
 | context | [BaseContext](js-apis-inner-application-basecontext.md) | 是 | 基于应用程序的上下文。 |
 | id | string | 是 | 任务id。 |
-| token | string | 否 | 任务查询token。默认值为空。 |
+| token | string | 否 | 任务查询token。当任务创建时设置了token，查询该任务需提供对应token，否则无法查询到指定任务。默认值为空（不传入时仅可查询未设置token的任务）。 |
 
 **返回值：**
 
@@ -5377,22 +5057,20 @@ getTask(context: BaseContext, id: string, token?: string): Promise<Task>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-5. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. request.agent.getTask(context, "123456").then((task: request.agent.Task) => {
-7. console.info(`Succeeded in querying a task. result: ${task.tid}`);
-8. }).catch((err: BusinessError) => {
-9. console.error(`Failed to query a task, Code: ${err.code}, message: ${err.message}`);
-10. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+request.agent.getTask(context, '123456').then((task: request.agent.Task) => {
+  console.info(`Succeeded in querying a task. result: ${task.tid}`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to query a task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## request.agent.remove10+
-
-PhonePC/2in1TabletTVWearable
 
 remove(id: string, callback: AsyncCallback<void>): void
 
@@ -5421,21 +5099,19 @@ remove(id: string, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. request.agent.remove("123456", (err: BusinessError) => {
-4. if (err) {
-5. console.error(`Failed to remove a download task, Code: ${err.code}, message: ${err.message}`);
-6. return;
-7. }
-8. console.info(`Succeeded in removing a download task.`);
-9. });
+request.agent.remove('123456', (err: BusinessError) => {
+  if (err) {
+    console.error(`Failed to remove a download task, Code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info(`Succeeded in removing a download task.`);
+});
 ```
 
 ## request.agent.remove10+
-
-PhonePC/2in1TabletTVWearable
 
 remove(id: string): Promise<void>
 
@@ -5469,19 +5145,17 @@ remove(id: string): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. request.agent.remove("123456").then(() => {
-4. console.info(`Succeeded in removing a download task. `);
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to remove a download task, Code: ${err.code}, message: ${err.message}`);
-7. });
+request.agent.remove('123456').then(() => {
+  console.info(`Succeeded in removing a download task. `);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to remove a download task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## request.agent.show10+
-
-PhonePC/2in1TabletTVWearable
 
 show(id: string, callback: AsyncCallback<TaskInfo>): void
 
@@ -5508,21 +5182,19 @@ show(id: string, callback: AsyncCallback<TaskInfo>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. request.agent.show("123456", (err: BusinessError, taskInfo: request.agent.TaskInfo) => {
-4. if (err) {
-5. console.error(`Failed to show a upload task, Code: ${err.code}, message: ${err.message}`);
-6. return;
-7. }
-8. console.info(`Succeeded in showing a upload task.`);
-9. });
+request.agent.show('123456', (err: BusinessError, taskInfo: request.agent.TaskInfo) => {
+  if (err) {
+    console.error(`Failed to show a upload task, Code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info(`Succeeded in showing a upload task.`);
+});
 ```
 
 ## request.agent.show10+
-
-PhonePC/2in1TabletTVWearable
 
 show(id: string): Promise<TaskInfo>
 
@@ -5554,19 +5226,17 @@ show(id: string): Promise<TaskInfo>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. request.agent.show("123456").then((taskInfo: request.agent.TaskInfo) => {
-4. console.info(`Succeeded in showing a upload task.`);
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to show a upload task, Code: ${err.code}, message: ${err.message}`);
-7. });
+request.agent.show('123456').then((taskInfo: request.agent.TaskInfo) => {
+  console.info(`Succeeded in showing a upload task.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to show a upload task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## request.agent.touch10+
-
-PhonePC/2in1TabletTVWearable
 
 touch(id: string, token: string, callback: AsyncCallback<TaskInfo>): void
 
@@ -5594,21 +5264,19 @@ touch(id: string, token: string, callback: AsyncCallback<TaskInfo>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. request.agent.touch("123456", "token", (err: BusinessError, taskInfo: request.agent.TaskInfo) => {
-4. if (err) {
-5. console.error(`Failed to touch a upload task, Code: ${err.code}, message: ${err.message}`);
-6. return;
-7. }
-8. console.info(`Succeeded in touching a upload task.`);
-9. });
+request.agent.touch('123456', "token", (err: BusinessError, taskInfo: request.agent.TaskInfo) => {
+  if (err) {
+    console.error(`Failed to touch a upload task, Code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info(`Succeeded in touching a upload task.`);
+});
 ```
 
 ## request.agent.touch10+
-
-PhonePC/2in1TabletTVWearable
 
 touch(id: string, token: string): Promise<TaskInfo>
 
@@ -5641,19 +5309,17 @@ touch(id: string, token: string): Promise<TaskInfo>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. request.agent.touch("123456", "token").then((taskInfo: request.agent.TaskInfo) => {
-4. console.info(`Succeeded in touching a upload task. `);
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to touch a upload task, Code: ${err.code}, message: ${err.message}`);
-7. });
+request.agent.touch('123456', "token").then((taskInfo: request.agent.TaskInfo) => {
+  console.info(`Succeeded in touching a upload task. `);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to touch a upload task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## request.agent.search10+
-
-PhonePC/2in1TabletTVWearable
 
 search(callback: AsyncCallback<Array<string>>): void
 
@@ -5678,21 +5344,19 @@ search(callback: AsyncCallback<Array<string>>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. request.agent.search((err: BusinessError, data: Array<string>) => {
-4. if (err) {
-5. console.error(`Failed to search a upload task, Code: ${err.code}, message: ${err.message}`);
-6. return;
-7. }
-8. console.info(`Succeeded in searching a upload task. `);
-9. });
+request.agent.search((err: BusinessError, data: Array<string>) => {
+  if (err) {
+    console.error(`Failed to search a upload task, Code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info(`Succeeded in searching a upload task. `);
+});
 ```
 
 ## request.agent.search10+
-
-PhonePC/2in1TabletTVWearable
 
 search(filter: Filter, callback: AsyncCallback<Array<string>>): void
 
@@ -5718,25 +5382,23 @@ search(filter: Filter, callback: AsyncCallback<Array<string>>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let filter: request.agent.Filter = {
-4. action: request.agent.Action.UPLOAD,
-5. mode: request.agent.Mode.BACKGROUND
-6. }
-7. request.agent.search(filter, (err: BusinessError, data: Array<string>) => {
-8. if (err) {
-9. console.error(`Failed to search a upload task, Code: ${err.code}, message: ${err.message}`);
-10. return;
-11. }
-12. console.info(`Succeeded in searching a upload task. `);
-13. });
+let filter: request.agent.Filter = {
+  action: request.agent.Action.UPLOAD,
+  mode: request.agent.Mode.BACKGROUND
+};
+request.agent.search(filter, (err: BusinessError, data: Array<string>) => {
+  if (err) {
+    console.error(`Failed to search a upload task, Code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  console.info(`Succeeded in searching a upload task. `);
+});
 ```
 
 ## request.agent.search10+
-
-PhonePC/2in1TabletTVWearable
 
 search(filter?: Filter): Promise<Array<string>>
 
@@ -5767,27 +5429,25 @@ search(filter?: Filter): Promise<Array<string>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let filter: request.agent.Filter = {
-4. action: request.agent.Action.UPLOAD,
-5. mode: request.agent.Mode.BACKGROUND
-6. }
-7. request.agent.search(filter).then((data: Array<string>) => {
-8. console.info(`Succeeded in searching a upload task. `);
-9. }).catch((err: BusinessError) => {
-10. console.error(`Failed to search a upload task, Code: ${err.code}, message: ${err.message}`);
-11. });
+let filter: request.agent.Filter = {
+  action: request.agent.Action.UPLOAD,
+  mode: request.agent.Mode.BACKGROUND
+}
+request.agent.search(filter).then((data: Array<string>) => {
+  console.info(`Succeeded in searching a upload task. `);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to search a upload task, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## request.agent.createGroup15+
 
-PhonePC/2in1TabletTVWearable
-
 createGroup(config: GroupConfig): Promise<string>
 
-根据[GroupConfig](js-apis-request.md#requestagentgroupconfig15)分组条件创建分组，并返回分组id。使用Promise异步回调。
+根据[GroupConfig](js-apis-request.md#requestagentgroupconfig15)分组条件创建分组，并返回分组id。适用于需要将多个下载任务的通知合并展示、统一管理任务进度通知的场景。使用Promise异步回调。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
@@ -5814,30 +5474,28 @@ createGroup(config: GroupConfig): Promise<string>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. // 准备分组配置选项 GroupConfig 对象。
-4. let config: request.agent.GroupConfig = {
-5. notification: {},
-6. };
-7. // 调用 createGroup 接口创建分组。
-8. request.agent.createGroup(config).then((gid: string) => {
-9. console.info(`Succeeded in creating a download task group. `);
-10. }).catch((err: BusinessError) => {
-11. console.error(`Failed to create a download group, Code: ${err.code}, message: ${err.message}`);
-12. });
+// 准备分组配置选项 GroupConfig 对象。
+let config: request.agent.GroupConfig = {
+    notification: {},
+};
+// 调用 createGroup 接口创建分组。
+request.agent.createGroup(config).then((gid: string) => {
+  console.info(`Succeeded in creating a download task group. `);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create a download group, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## request.agent.attachGroup15+
 
-PhonePC/2in1TabletTVWearable
-
 attachGroup(gid: string, tids: string[]): Promise<void>
 
-向指定分组id中绑定多个下载任务id。使用Promise异步回调。
+向指定分组id中绑定多个下载任务id，用于将多个下载任务归入同一分组以统一管理通知展示。使用Promise异步回调。
 
-如果任意一个任务id不满足添加条件，则所有列表中的任务都不会添加到分组中。
+如果任意一个任务id不满足添加条件（如任务不存在、任务状态不匹配、任务模式不匹配等），则所有列表中的任务都不会添加到分组中。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
@@ -5869,23 +5527,21 @@ attachGroup(gid: string, tids: string[]): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. // 准备分组id和任务id列表。
-4. let groupId: string = "123456789";
-5. let taskIds: string[] = ["1111", "2222", "3333", "4444"];
-6. // 调用 attachGroup 接口向分组中添加任务id列表。
-7. request.agent.attachGroup(groupId, taskIds).then(() => {
-8. console.info(`Succeeded in attaching tasks to the download task group.`);
-9. }).catch((err: BusinessError) => {
-10. console.error(`Failed to attach tasks to the download group, Code: ${err.code}, message: ${err.message}`);
-11. });
+// 准备分组id和任务id列表。
+let groupId: string = '123456789';
+let taskIds: string[] = ['1111', '2222', '3333', '4444'];
+// 调用 attachGroup 接口向分组中添加任务id列表。
+request.agent.attachGroup(groupId, taskIds).then(() => {
+  console.info(`Succeeded in attaching tasks to the download task group.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to attach tasks to the download group, Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## request.agent.deleteGroup15+
-
-PhonePC/2in1TabletTVWearable
 
 deleteGroup(gid: string): Promise<void>
 
@@ -5919,16 +5575,16 @@ deleteGroup(gid: string): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. // 准备分组id。
-4. let groupId: string = "123456789";
+// 准备分组id。
+let groupId: string = '123456789';
 
-6. // 调用 deleteGroup 接口移除分组。
-7. request.agent.deleteGroup(groupId).then(() => {
-8. console.info(`Succeeded in deleting the download task group.`);
-9. }).catch((err: BusinessError) => {
-10. console.error(`Failed to delete the download group, Code: ${err.code}, message: ${err.message}`);
-11. });
+// 调用 deleteGroup 接口移除分组。
+request.agent.deleteGroup(groupId).then(() => {
+  console.info(`Succeeded in deleting the download task group.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to delete the download group, Code: ${err.code}, message: ${err.message}`);
+});
 ```

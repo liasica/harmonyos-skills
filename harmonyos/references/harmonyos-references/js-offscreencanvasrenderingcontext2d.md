@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-offscr
 title: OffscreenCanvasRenderingContext2D对象
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 画布组件 > OffscreenCanvasRenderingContext2D对象
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:35+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:be37c09318964b951ed1e2a3b68dd29ba2645627446190139b04028df9c2d005
+scraped_at: 2026-09-02T15:01:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ba54af35184f4838da9298c9418c64bc0525b3a0be5616b7cb34efabcded3d3c
 ---
 
-说明
+**说明** 
 
 从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 使用OffscreenCanvasRenderingContext2D在[OffscreenCanvas对象](js-components-canvas-offscreencanvas.md)上进行绘制，绘制对象可以是矩形、文本、图片等。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持与[CanvasRenderingContext2D对象](js-components-canvas-canvasrenderingcontext2d.md)相同的属性外，还支持如下属性：
 
@@ -26,70 +24,66 @@ PhonePC/2in1TabletTVWearable
 
 **示例：**
 
-```
-1. <!-- xxx.hml -->
-2. <div style="width: 500px; height: 500px;">
-3. <canvas ref="canvasId" style="width: 500px; height: 500px; padding: 80px; background-color: rgb(213, 213, 213);"></canvas>
-4. </div>
-```
-
-```
-1. // xxx.js
-2. export default {
-3. onShow(){
-4. var ctx = this.$refs.canvasId.getContext('2d');
-5. var offscreen = new OffscreenCanvas(360, 500);
-6. var offCanvas2 = offscreen.getContext("2d");
-7. var img = new Image();
-8. // 'common/images/flower.jpg'需要替换为开发者所需的图像资源文件
-9. img.src = 'common/images/flower.jpg';
-10. offCanvas2.drawImage(img, 0, 0, 100, 100);
-11. offCanvas2.filter = 'blur(5px)';
-12. offCanvas2.drawImage(img, 100, 0, 100, 100);
-
-14. offCanvas2.filter = 'grayscale(50%)';
-15. offCanvas2.drawImage(img, 200, 0, 100, 100);
-
-17. offCanvas2.filter = 'hue-rotate(90deg)';
-18. offCanvas2.drawImage(img, 0, 100, 100, 100);
-
-20. offCanvas2.filter = 'invert(100%)';
-21. offCanvas2.drawImage(img, 100, 100, 100, 100);
-
-23. offCanvas2.filter = 'drop-shadow(8px 8px 10px green)';
-24. offCanvas2.drawImage(img, 200, 100, 100, 100);
-
-26. offCanvas2.filter = 'brightness(0.4)';
-27. offCanvas2.drawImage(img, 0, 200, 100, 100);
-
-29. offCanvas2.filter = 'opacity(25%)';
-30. offCanvas2.drawImage(img, 100, 200, 100, 100);
-
-32. offCanvas2.filter = 'saturate(30%)';
-33. offCanvas2.drawImage(img, 200, 200, 100, 100);
-
-35. offCanvas2.filter = 'sepia(60%)';
-36. offCanvas2.drawImage(img, 0, 300, 100, 100);
-
-38. offCanvas2.filter = 'contrast(200%)';
-39. offCanvas2.drawImage(img, 100, 300, 100, 100);
-40. var bitmap = offscreen.transferToImageBitmap();
-41. ctx.transferFromImageBitmap(bitmap);
-42. }
-43. }
+```html
+<!-- xxx.hml -->
+<div style="width: 500px; height: 500px;">
+  <canvas ref="canvasId" style="width: 500px; height: 500px; padding: 80px; background-color: rgb(213, 213, 213);"></canvas>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/YhgStEXeQBSpC2JGTCK76Q/zh-cn_image_0000002589246571.png)
+```js
+// xxx.js
+export default {
+  onShow(){
+    var ctx = this.$refs.canvasId.getContext('2d');
+    var offscreen = new OffscreenCanvas(360, 500);
+    var offCanvas2 = offscreen.getContext("2d");
+    var img = new Image();
+    // 'common/images/flower.jpg'需要替换为开发者所需的图像资源文件
+    img.src = 'common/images/flower.jpg';
+    offCanvas2.drawImage(img, 0, 0, 100, 100);
+    offCanvas2.filter = 'blur(5px)';
+    offCanvas2.drawImage(img, 100, 0, 100, 100);
+
+    offCanvas2.filter = 'grayscale(50%)';
+    offCanvas2.drawImage(img, 200, 0, 100, 100);
+
+    offCanvas2.filter = 'hue-rotate(90deg)';
+    offCanvas2.drawImage(img, 0, 100, 100, 100);
+
+    offCanvas2.filter = 'invert(100%)';
+    offCanvas2.drawImage(img, 100, 100, 100, 100);
+
+    offCanvas2.filter = 'drop-shadow(8px 8px 10px green)';
+    offCanvas2.drawImage(img, 200, 100, 100, 100);
+
+    offCanvas2.filter = 'brightness(0.4)';
+    offCanvas2.drawImage(img, 0, 200, 100, 100);
+
+    offCanvas2.filter = 'opacity(25%)';
+    offCanvas2.drawImage(img, 100, 200, 100, 100);
+
+    offCanvas2.filter = 'saturate(30%)';
+    offCanvas2.drawImage(img, 200, 200, 100, 100);
+
+    offCanvas2.filter = 'sepia(60%)';
+    offCanvas2.drawImage(img, 0, 300, 100, 100);
+
+    offCanvas2.filter = 'contrast(200%)';
+    offCanvas2.drawImage(img, 100, 300, 100, 100);
+    var bitmap = offscreen.transferToImageBitmap();
+    ctx.transferFromImageBitmap(bitmap);
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/_UYQkb65QDGXQ5jFghX1nw/zh-cn_image_0000002706836428.png)
 
 ## 方法
-
-PhonePC/2in1TabletTVWearable
 
 除支持与CanvasRenderingContext2D对象相同的方法外，还支持如下方法：
 
 ### isPointInPath
-
-PhonePC/2in1TabletTVWearable
 
 isPointInPath(path?: Path2D, x: number, y: number): boolean
 
@@ -111,68 +105,66 @@ isPointInPath(path?: Path2D, x: number, y: number): boolean
 
 **示例：**
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container" style="width: 500px; height: 500px;">
-3. <text class="textsize">In path:{{textValue}}</text>
-4. <canvas ref="canvas" style="width: 500px; height: 500px; background-color: #ffff00;"></canvas>
-5. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. display: flex;
-4. flex-direction: column;
-5. background-color: #F1F3F5;
-6. align-items: center;
-7. justify-content: center;
-8. width: 100%;
-9. height: 100%;
-10. }
-
-12. canvas {
-13. width: 600px;
-14. height: 600px;
-15. background-color: #fdfdfd;
-16. border: none;
-17. }
-
-19. .textsize {
-20. font-size: 40px;
-21. }
+```html
+<!-- xxx.hml -->
+<div class="container" style="width: 500px; height: 500px;">
+    <text class="textsize">In path:{{textValue}}</text>
+    <canvas ref="canvas" style="width: 500px; height: 500px; background-color: #ffff00;"></canvas>
+</div>
 ```
 
+```css
+/* xxx.css */
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: #F1F3F5;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+canvas {
+    width: 600px;
+    height: 600px;
+    background-color: #fdfdfd;
+    border: none;
+}
+
+.textsize {
+    font-size: 40px;
+}
 ```
-1. // xxx.js
-2. export default {
-3. data: {
-4. textValue: false
-5. },
-6. onShow(){
-7. var canvas = this.$refs.canvas.getContext('2d');
-8. var offscreen = new OffscreenCanvas(500,500);
-9. var offscreenCanvasCtx = offscreen.getContext("2d");
 
-11. offscreenCanvasCtx.rect(10, 10, 100, 100);
-12. offscreenCanvasCtx.fill();
-13. this.textValue = offscreenCanvasCtx.isPointInPath(30, 70);
+```js
+// xxx.js
+export default {
+  data: {
+    textValue: false
+  },
+  onShow(){
+    var canvas = this.$refs.canvas.getContext('2d');
+    var offscreen = new OffscreenCanvas(500,500);
+    var offscreenCanvasCtx = offscreen.getContext("2d");
 
-15. var bitmap = offscreen.transferToImageBitmap();
-16. canvas.transferFromImageBitmap(bitmap);
-17. }
-18. }
+    offscreenCanvasCtx.rect(10, 10, 100, 100);
+    offscreenCanvasCtx.fill();
+    this.textValue = offscreenCanvasCtx.isPointInPath(30, 70);
+
+    var bitmap = offscreen.transferToImageBitmap();
+    canvas.transferFromImageBitmap(bitmap);
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/_lHlSnaXRACq2jEZF2nb6A/zh-cn_image_0000002558766764.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/5XJdFoStQkCjrcdGV5gBgQ/zh-cn_image_0000002736315533.png)
 
 ### isPointInStroke
 
-PhonePC/2in1TabletTVWearable
-
 isPointInStroke(path?: Path2D, x: number, y: number): boolean
 
-判断指定点是否在路径的边缘线上。
+判断指定点是否位于路径描边区域内。
 
 **参数：**
 
@@ -186,131 +178,131 @@ isPointInStroke(path?: Path2D, x: number, y: number): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 指定点是否在路径的区域内。 |
+| boolean | 指定点是否位于路径描边区域内。返回true时，指定点在路径描边区域内。返回false时，指定点不在路径描边区域内。 |
 
 **示例：**
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container" style="width: 500px; height: 500px;">
-3. <text class="textsize">In stroke:{{textValue}}</text>
-4. <canvas ref="canvas" style="width: 500px; height: 500px; background-color: #ffff00;"></canvas>
-5. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. display: flex;
-4. flex-direction: column;
-5. background-color: #F1F3F5;
-6. align-items: center;
-7. justify-content: center;
-8. width: 100%;
-9. height: 100%;
-10. }
-
-12. canvas {
-13. width: 600px;
-14. height: 600px;
-15. background-color: #fdfdfd;
-16. border: none;
-17. }
-
-19. .textsize {
-20. font-size: 40px;
-21. }
+```html
+<!-- xxx.hml -->
+<div class="container" style="width: 500px; height: 500px;">
+    <text class="textsize">In stroke:{{textValue}}</text>
+    <canvas ref="canvas" style="width: 500px; height: 500px; background-color: #ffff00;"></canvas>
+</div>
 ```
 
+```css
+/* xxx.css */
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: #F1F3F5;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+canvas {
+    width: 600px;
+    height: 600px;
+    background-color: #fdfdfd;
+    border: none;
+}
+
+.textsize {
+    font-size: 40px;
+}
 ```
-1. // xxx.js
-2. export default {
-3. data: {
-4. textValue: false
-5. },
-6. onShow(){
-7. var canvas = this.$refs.canvas.getContext('2d');
-8. var offscreen = new OffscreenCanvas(500,500);
-9. var offscreenCanvasCtx = offscreen.getContext("2d");
 
-11. offscreenCanvasCtx.rect(10, 10, 100, 100);
-12. offscreenCanvasCtx.stroke();
-13. this.textValue = offscreenCanvasCtx.isPointInStroke(50, 10);
+```js
+// xxx.js
+export default {
+  data: {
+    textValue: false
+  },
+  onShow(){
+    var canvas = this.$refs.canvas.getContext('2d');
+    var offscreen = new OffscreenCanvas(500,500);
+    var offscreenCanvasCtx = offscreen.getContext("2d");
 
-15. var bitmap = offscreen.transferToImageBitmap();
-16. canvas.transferFromImageBitmap(bitmap);
-17. }
-18. }
+    offscreenCanvasCtx.rect(10, 10, 100, 100);
+    offscreenCanvasCtx.stroke();
+    this.textValue = offscreenCanvasCtx.isPointInStroke(50, 10);
+
+    var bitmap = offscreen.transferToImageBitmap();
+    canvas.transferFromImageBitmap(bitmap);
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/BLFEYXVvRw6kDK037Qwlcg/zh-cn_image_0000002558607104.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/csjuXn64T1GzTmW4SCPlBg/zh-cn_image_0000002706676494.png)
 
 ### resetTransform
 
-PhonePC/2in1TabletTVWearable
-
 resetTransform(): void
+
+重置当前变换矩阵为单位矩阵。
 
 **示例：**
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container" style="width: 500px; height: 500px;">
-3. <text class="textsize">In path:{{textValue}}</text>
-4. <canvas ref="canvas" style="width: 500px; height: 500px; background-color: #ffff00;"></canvas>
-5. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. display: flex;
-4. flex-direction: column;
-5. background-color: #F1F3F5;
-6. align-items: center;
-7. justify-content: center;
-8. width: 100%;
-9. height: 100%;
-10. }
-
-12. canvas {
-13. width: 600px;
-14. height: 600px;
-15. background-color: #fdfdfd;
-16. border: none;
-17. }
-
-19. .textsize {
-20. font-size: 40px;
-21. }
+```html
+<!-- xxx.hml -->
+<div class="container" style="width: 500px; height: 500px;">
+    <text class="textsize">In path:{{textValue}}</text>
+    <canvas ref="canvas" style="width: 500px; height: 500px; background-color: #ffff00;"></canvas>
+</div>
 ```
 
-```
-1. // xxx.js
-2. export default {
-3. data:{
-4. textValue:0
-5. },
-6. onShow(){
-7. var canvas = this.$refs.canvas.getContext('2d');
-8. var offscreen = new OffscreenCanvas(500,500);
-9. var offscreenCanvasCtx = offscreen.getContext("2d");
+```css
+/* xxx.css */
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: #F1F3F5;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
 
-11. offscreenCanvasCtx.transform(1, 0, 1.7, 1, 0, 0);
-12. offscreenCanvasCtx.fillStyle = '#a9a9a9';
-13. offscreenCanvasCtx.fillRect(40, 40, 50, 20);
-14. offscreenCanvasCtx.fillRect(40, 90, 50, 20);
+canvas {
+    width: 600px;
+    height: 600px;
+    background-color: #fdfdfd;
+    border: none;
+}
 
-16. // Non-skewed rectangles
-17. offscreenCanvasCtx.resetTransform();
-18. offscreenCanvasCtx.fillStyle = '#ff0000';
-19. offscreenCanvasCtx.fillRect(40, 40, 50, 20);
-20. offscreenCanvasCtx.fillRect(40, 90, 50, 20);
-
-22. var bitmap = offscreen.transferToImageBitmap();
-23. canvas.transferFromImageBitmap(bitmap);
-24. }
-25. }
+.textsize {
+    font-size: 40px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/0ZL9l4ALSRmO_lz20oCdow/zh-cn_image_0000002589326631.png)
+```js
+// xxx.js
+export default {
+  data:{
+   textValue:0
+  },
+  onShow(){
+   var canvas = this.$refs.canvas.getContext('2d');
+   var offscreen = new OffscreenCanvas(500,500);
+   var offscreenCanvasCtx = offscreen.getContext("2d");
+
+   offscreenCanvasCtx.transform(1, 0, 1.7, 1, 0, 0);
+   offscreenCanvasCtx.fillStyle = '#a9a9a9';
+   offscreenCanvasCtx.fillRect(40, 40, 50, 20);
+   offscreenCanvasCtx.fillRect(40, 90, 50, 20);
+
+   // Non-skewed rectangles
+   offscreenCanvasCtx.resetTransform();
+   offscreenCanvasCtx.fillStyle = '#ff0000';
+   offscreenCanvasCtx.fillRect(40, 40, 50, 20);
+   offscreenCanvasCtx.fillRect(40, 90, 50, 20);
+
+   var bitmap = offscreen.transferToImageBitmap();
+   canvas.transferFromImageBitmap(bitmap);
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/eu-k-UK_QxqAS_SPsGb92Q/zh-cn_image_0000002736435581.png)

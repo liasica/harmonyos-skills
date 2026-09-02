@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-
 title: arEngine（AR增强现实能力）
 breadcrumb: API参考 > 图形 > AR Engine（AR引擎服务） > ArkTS API > arEngine（AR增强现实能力）
 category: harmonyos-references
-scraped_at: 2026-04-29T14:05:05+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:96c007d82a81e4b20562bf4409c5470c77115f94c9b15b73528e9ec9adb1edbd
+scraped_at: 2026-09-02T15:02:39+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:87f354e22392e5a2c6563442107f1d4436051cb4254086298d7b8e2c9103f444
 ---
 
 本模块提供AR Engine（AR引擎服务）的arEngine（AR增强现实能力）相关接口。
@@ -16,15 +16,11 @@ content_hash: sha256:96c007d82a81e4b20562bf4409c5470c77115f94c9b15b73528e9ec9adb
 
 ## 导入模块
 
-PhoneTabletTV
-
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 ```
 
 ## ARFeatureType
-
-PhoneTabletTV
 
 枚举，AR特性类别。
 
@@ -36,7 +32,7 @@ PhoneTabletTV
 
 | **名称** | **值** | **说明** |
 | --- | --- | --- |
-| ARENGINE\_FEATURE\_TYPE\_SLAM | 0 | 运动跟踪及平面识别特性。 |
+| ARENGINE\_FEATURE\_TYPE\_SLAM | 0 | 运动跟踪、命中检测及平面识别特性。 |
 | ARENGINE\_FEATURE\_TYPE\_DEPTH | 1 | 深度估计特性。 |
 | ARENGINE\_FEATURE\_TYPE\_MESH | 2 | 环境Mesh识别特性。 |
 | ARENGINE\_FEATURE\_TYPE\_IMAGE | 3 | 图像跟踪特性。 |
@@ -46,8 +42,6 @@ PhoneTabletTV
 | ARENGINE\_FEATURE\_TYPE\_BODY | 7 | 人体骨骼点识别与跟踪特性。 |
 
 ## ARAddAugmentedImageMode
-
-PhoneTabletTV
 
 枚举，添加图片模式。
 
@@ -59,12 +53,10 @@ PhoneTabletTV
 
 | **名称** | **值** | **说明** |
 | --- | --- | --- |
-| NORMAL | 0 | 正常模式。  当添加的图片数量超过默认的最多图片数量（50）时，AR Engine会报告错误，错误信息见[1009200011](arengine-error-code.md#section1009200011-添加的图片数量超过最大数量)。 |
+| NORMAL | 0 | 正常模式。  当添加的图片数量超过默认的最多图片数量（50）时，AR Engine会报告错误，错误信息见[1009200011](errorcode-ar-engine.md#section1009200011-添加的图片数量超过最大数量)。 |
 | UPDATE | 1 | 更新模式。  当添加的图片数量超过默认的最多图片数量（50）时，AR Engine会删除原有的最旧数据，以添加新的图片。 |
 
 ## ARAddAugmentedImageReason
-
-PhoneTabletTV
 
 枚举，添加图像失败原因。
 
@@ -77,7 +69,7 @@ PhoneTabletTV
 | **名称** | **值** | **说明** |
 | --- | --- | --- |
 | NONE | 0 | 无失败原因，图像成功添加。 |
-| SIZE\_NOT\_MATCH | 1 | 图像尺寸不正确。  **说明：** 图像尺寸评价从宽高比、分辨率两个维度进行。建议宽高比、分辨率的评价为Unfit以上。 |
+| SIZE\_NOT\_MATCH | 1 | 图像尺寸不正确。  **说明：** 图像尺寸评价从宽高比、分辨率两个维度进行。建议宽高比、分辨率的评价优于Unfit。 |
 | LIGHT\_ANOMALY | 2 | 图像亮度过亮或过暗。 |
 | FEATURE\_LIMIT | 3 | 图像颜色单一，如纯色图片。 |
 | OTHER | 4 | 其他原因，如图片有反光、光斑，重复性内容等。 |
@@ -109,8 +101,6 @@ PhoneTabletTV
 
 ## ARAnimojiTriangleLabel
 
-PhoneTabletTV
-
 枚举，人脸Mesh三角面标签。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -134,8 +124,6 @@ PhoneTabletTV
 
 ## ARBlendShapeType
 
-PhoneTabletTV
-
 枚举，微表情类型。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -157,18 +145,18 @@ PhoneTabletTV
 | EYE\_LOOK\_DOWN\_RIGHT | 8 | 右上眼皮微下垂。 |
 | EYE\_LOOK\_IN\_RIGHT | 9 | 右眼内部眼皮向右扩。 |
 | EYE\_LOOK\_OUT\_RIGHT | 10 | 右眼睑向右扩。 |
-| EYE\_LOOK\_UP\_RIGHT | 11 | 右眼上眼皮微上抬 |
+| EYE\_LOOK\_UP\_RIGHT | 11 | 右眼上眼皮微上抬。 |
 | EYE\_SQUINT\_RIGHT | 12 | 右下眼睑上抬。 |
 | EYE\_WIDE\_RIGHT | 13 | 右眼瞪大眼。 |
 | JAW\_FORWARD | 14 | 下巴朝前。 |
-| JAW\_LEFT | 15 | 下巴朝左 |
+| JAW\_LEFT | 15 | 下巴朝左。 |
 | JAW\_RIGHT | 16 | 下巴朝右。 |
 | JAW\_OPEN | 17 | 张嘴。 |
 | MOUTH\_FUNNEL | 18 | O型嘴。 |
 | MOUTH\_PUCKER | 19 | 噘嘴。 |
 | MOUTH\_LEFT | 20 | 嘴巴向左。 |
 | MOUTH\_RIGHT | 21 | 嘴巴向右。 |
-| MOUTH\_SMILE\_LEFT | 22 | 左嘴角向左 |
+| MOUTH\_SMILE\_LEFT | 22 | 左嘴角向左。 |
 | MOUTH\_SMILE\_RIGHT | 23 | 右嘴角向右歪。 |
 | MOUTH\_FROWN\_LEFT | 24 | 左嘴角下拉 |
 | MOUTH\_FROWN\_RIGHT | 25 | 右嘴角下拉。 |
@@ -186,7 +174,7 @@ PhoneTabletTV
 | BROW\_DOWN\_LEFT | 37 | 左侧眉毛朝下。 |
 | BROW\_DOWN\_RIGHT | 38 | 右侧眉毛朝下。 |
 | BROW\_INNER\_UP | 39 | 双侧眉毛抬眉。 |
-| BROW\_OUTER\_UP\_LEFT | 40 | 左眉外侧向上抬 |
+| BROW\_OUTER\_UP\_LEFT | 40 | 左眉外侧向上抬。 |
 | BROW\_OUTER\_UP\_RIGHT | 41 | 右眉外侧向上抬。 |
 | CHEEK\_PUFF | 42 | 鼓腮。 |
 | CHEEK\_SQUINT\_LEFT | 43 | 左脸颊上抬。 |
@@ -213,8 +201,6 @@ PhoneTabletTV
 
 ## ARCameraLensFacing
 
-PhoneTabletTV
-
 枚举，摄像机镜头的朝向。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -229,8 +215,6 @@ PhoneTabletTV
 | FRONT | 1 | 前置摄像头。 |
 
 ## ARDepthMode
-
-PhoneTabletTV
 
 枚举，深度模式。
 
@@ -247,8 +231,6 @@ PhoneTabletTV
 
 ## ARFocusMode
 
-PhoneTabletTV
-
 枚举，对焦模式。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -263,8 +245,6 @@ PhoneTabletTV
 | AUTO | 1 | 自动对焦模式。 |
 
 ## ARImageFormat
-
-PhoneTabletTV
 
 枚举，图像数据格式。
 
@@ -283,8 +263,6 @@ PhoneTabletTV
 
 ## ARMeshMode
 
-PhoneTabletTV
-
 枚举，网格模式。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -300,8 +278,6 @@ PhoneTabletTV
 
 ## ARMultiFaceMode
 
-PhoneTabletTV
-
 枚举，多人脸检测模式。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -316,8 +292,6 @@ PhoneTabletTV
 | MULTIFACE\_ENABLE | 0x800 | 多人脸模式开启。 |
 
 ## ARBodyLandmarkType
-
-PhoneTabletTV
 
 枚举，人体关键点类型。
 
@@ -352,8 +326,6 @@ PhoneTabletTV
 
 ## ARPlaneFindingMode
 
-PhoneTabletTV
-
 枚举，平面检测模式。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -371,8 +343,6 @@ PhoneTabletTV
 
 ## ARPlaneType
 
-PhoneTabletTV
-
 枚举，平面类型。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -385,12 +355,10 @@ PhoneTabletTV
 | --- | --- | --- |
 | FACING\_HORIZONTAL\_UPWARD | 0 | 朝上的水平面，如地面和桌面平台。 |
 | FACING\_HORIZONTAL\_DOWNWARD | 1 | 朝下的水平面，如天花板。 |
-| FACING\_VERTICAL | 2 | 垂直的水平面，如墙壁。 |
+| FACING\_VERTICAL | 2 | 垂直平面，如墙壁。 |
 | FACING\_INVALID | 3 | 无效或不支持的平面类型。  这可能是由于环境变化、光线条件或其他因素导致。 |
 
 ## ARPointOrientationMode
-
-PhoneTabletTV
 
 枚举，朝向模式。
 
@@ -407,8 +375,6 @@ PhoneTabletTV
 
 ## ARPoseMode
 
-PhoneTabletTV
-
 枚举，创建世界坐标系的方式。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -423,8 +389,6 @@ PhoneTabletTV
 | GRAVITY\_AND\_HEADING | 1 | 由重力和指南针确定。  世界坐标系的Y轴与重力方向一致，X轴指向指南针北向，原点为设备所在的原始位置。参见[坐标系说明](../harmonyos-guides/arengine-overview.md#坐标系说明)。  **说明：** 该选项当前仅支持省电模式，请将[ARPowerMode](arengine-api-arengine.md#arpowermode)置为POWER\_SAVING以启动该选项。 |
 
 ## ARPoseType
-
-PhoneTabletTV
 
 枚举，位姿类型。
 
@@ -443,8 +407,6 @@ PhoneTabletTV
 
 ## ARPowerMode
 
-PhoneTabletTV
-
 枚举，电源功耗模式。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -461,9 +423,22 @@ PhoneTabletTV
 | BOOST | 3 | 仅输出设备姿态信息模式。  AR Engine仅输出设备的位姿信息，电源消耗低于正常模式。在此模式下，[ARPlaneFindingMode](arengine-api-arengine.md#arplanefindingmode)等与平面相关的设置不起作用。 |
 | ULTRA\_POWER\_SAVING | 11 | 超级节能模式。  AR Engine进一步优化电源消耗，提供比节能模式更低的电源消耗，这可能会损失更多的性能。 |
 
-## ARSemanticDenseMode
+## ARRemoteSensorMode
 
-PhoneTabletTV
+枚举，远程传感器模式。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.AREngine.Core
+
+**起始版本：** 26.0.0
+
+| **名称** | **值** | **说明** |
+| --- | --- | --- |
+| LOCAL\_SENSOR | 0 | 使用本地相机和传感器。 |
+| REMOTE\_SENSOR\_AI\_GLASS | 1 | 使用AI眼镜相机和传感器。 |
+
+## ARSemanticDenseMode
 
 枚举，高精几何重建识别模式。
 
@@ -482,8 +457,6 @@ PhoneTabletTV
 
 ## ARSemanticMode
 
-PhoneTabletTV
-
 枚举，语义模式。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -498,8 +471,6 @@ PhoneTabletTV
 | PLANE | 1 | 使用平面语义模式。 |
 
 ## ARSemanticPlaneLabel
-
-PhoneTabletTV
 
 枚举，当前平面识别到的语义类型。
 
@@ -526,8 +497,6 @@ PhoneTabletTV
 
 ## ARTrackingState
 
-PhoneTabletTV
-
 枚举，可追踪对象的追踪状态。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -544,8 +513,6 @@ PhoneTabletTV
 
 ## ARTrackingStateReason
 
-PhoneTabletTV
-
 枚举，追踪失败的原因。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -561,8 +528,6 @@ PhoneTabletTV
 | INSUFFICIENT\_FEATURES | 2 | 视觉特征不足。  可追踪对象的视觉特征不够丰富，如纹理不明显、颜色过于单一等，导致AR Engine无法准确识别和跟踪。 |
 
 ## ARTrackableType
-
-PhoneTabletTV
 
 枚举，可追踪对象类型，如平面、点等。
 
@@ -583,8 +548,6 @@ PhoneTabletTV
 
 ## ARType
 
-PhoneTabletTV
-
 枚举，AR能力类型。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -602,8 +565,6 @@ PhoneTabletTV
 
 ## Distortion
 
-PhoneTabletTV
-
 type Distortion = [number, number, number, number, number]
 
 类型别名，用于表示一个包含五个数字的数组，为相机的畸变系数。
@@ -612,7 +573,7 @@ type Distortion = [number, number, number, number, number]
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -621,8 +582,6 @@ type Distortion = [number, number, number, number, number]
 | number | 表示值类型为数字，相机内参，取值范围无限制。  其中Distortion [0]~Distortion [2]表示k1，k2，k3（径向畸变系数），Distortion [3]~Distortion [4]是切向畸变系数。 |
 
 ## ARAugmentedImageDatabase
-
-PhoneTabletTV
 
 增强图像数据库对象。
 
@@ -636,13 +595,11 @@ PhoneTabletTV
 
 ### ARAugmentedImageDatabase.deserialize
 
-PhoneTabletTV
-
 deserialize(buffer: ArrayBuffer): Promise<void>
 
 将增强图像数据库数据反序列化为一个新的增强图像数据库对象。使用Promise异步回调。
 
-说明
+**说明** 
 
 这个操作是耗时的，建议在后台线程中运行。
 
@@ -666,7 +623,7 @@ deserialize(buffer: ArrayBuffer): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -676,17 +633,15 @@ deserialize(buffer: ArrayBuffer): Promise<void>
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. let buffer: ArrayBuffer = new ArrayBuffer(0);
-4. let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
-5. await imageDatabase.deserialize(buffer);
+let buffer: ArrayBuffer = new ArrayBuffer(0);
+let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
+await imageDatabase.deserialize(buffer);
 ```
 
 ### ARAugmentedImageDatabase.serialize
-
-PhoneTabletTV
 
 serialize(): Promise<ArrayBuffer>
 
@@ -706,7 +661,7 @@ serialize(): Promise<ArrayBuffer>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -714,16 +669,14 @@ serialize(): Promise<ArrayBuffer>
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
-4. await imageDatabase.serialize();
+let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
+await imageDatabase.serialize();
 ```
 
 ### ARAugmentedImageDatabase.addImage
-
-PhoneTabletTV
 
 addImage(name: string, pixelMap: image.PixelMap, widthInMeters: number): Promise<ARAddAugmentedImageResult>
 
@@ -751,7 +704,7 @@ addImage(name: string, pixelMap: image.PixelMap, widthInMeters: number): Promise
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -763,24 +716,22 @@ addImage(name: string, pixelMap: image.PixelMap, widthInMeters: number): Promise
 
 **示例：**
 
-```
-1. import { image } from '@kit.ImageKit';
-2. import { arEngine } from '@kit.AREngine';
+```typescript
+import { image } from '@kit.ImageKit';
+import { arEngine } from '@kit.AREngine';
 
-4. let color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4
-5. let opts: image.InitializationOptions = {
-6. editable: true,
-7. pixelFormat: image.PixelMapFormat.RGBA_8888,
-8. size: { height: 4, width: 6 }
-9. };
-10. let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
-11. let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
-12. await imageDatabase.addImage('xx', pixelMap, 0.3);
+let color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4
+let opts: image.InitializationOptions = {
+  editable: true,
+  pixelFormat: image.PixelMapFormat.RGBA_8888,
+  size: { height: 4, width: 6 }
+};
+let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
+let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
+await imageDatabase.addImage('xx', pixelMap, 0.3);
 ```
 
 ### ARAugmentedImageDatabase.getImageCount
-
-PhoneTabletTV
 
 getImageCount(): number
 
@@ -800,7 +751,7 @@ getImageCount(): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -808,16 +759,14 @@ getImageCount(): number
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
-4. imageDatabase.getImageCount();
+let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
+imageDatabase.getImageCount();
 ```
 
 ### ARAugmentedImageDatabase.getCapacity
-
-PhoneTabletTV
 
 getCapacity(): number
 
@@ -837,7 +786,7 @@ getCapacity(): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -845,16 +794,14 @@ getCapacity(): number
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
-4. imageDatabase.getCapacity();
+let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
+imageDatabase.getCapacity();
 ```
 
 ### ARAugmentedImageDatabase.getImageAddMode
-
-PhoneTabletTV
 
 getImageAddMode(): ARAddAugmentedImageMode
 
@@ -874,7 +821,7 @@ getImageAddMode(): ARAddAugmentedImageMode
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -882,16 +829,14 @@ getImageAddMode(): ARAddAugmentedImageMode
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
-4. imageDatabase.getImageAddMode();
+let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
+imageDatabase.getImageAddMode();
 ```
 
 ### ARAugmentedImageDatabase.setImageAddMode
-
-PhoneTabletTV
 
 setImageAddMode(mode: ARAddAugmentedImageMode): void
 
@@ -911,7 +856,7 @@ setImageAddMode(mode: ARAddAugmentedImageMode): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -919,16 +864,14 @@ setImageAddMode(mode: ARAddAugmentedImageMode): void
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
-4. imageDatabase.setImageAddMode(arEngine.ARAddAugmentedImageMode.UPDATE);
+let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
+imageDatabase.setImageAddMode(arEngine.ARAddAugmentedImageMode.UPDATE);
 ```
 
 ### ARAugmentedImageDatabase.release
-
-PhoneTabletTV
 
 release(): Promise<void>
 
@@ -948,7 +891,7 @@ release(): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -956,16 +899,14 @@ release(): Promise<void>
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
-4. await imageDatabase.release();
+let imageDatabase: arEngine.ARAugmentedImageDatabase = await arEngine.createARAugmentedImageDatabase();
+await imageDatabase.release();
 ```
 
 ## ARCameraIntrinsics
-
-PhoneTabletTV
 
 相机内参。
 
@@ -975,7 +916,7 @@ PhoneTabletTV
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -989,15 +930,13 @@ PhoneTabletTV
 
 ## ARConfig
 
-PhoneTabletTV
-
 [ARSession](arengine-api-arengine.md#arsession)的功能配置参数。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -1016,11 +955,10 @@ PhoneTabletTV
 | semanticDenseMode | [ARSemanticDenseMode](arengine-api-arengine.md#arsemanticdensemode) | 否 | 是 | 高精几何重建识别模式。  默认DISABLED。  **起始版本：** 6.0.0(20) |
 | cameraLensFacing | [ARCameraLensFacing](arengine-api-arengine.md#arcameralensfacing) | 否 | 是 | 相机镜头朝向配置项。当cameraLensFacing配置为FRONT时，type配置为[ARType](arengine-api-arengine.md#artype).FACE或[ARType](arengine-api-arengine.md#artype).BODY才生效。  默认为REAR。  **起始版本：** 6.1.0(23) |
 | multiFaceMode | [ARMultiFaceMode](arengine-api-arengine.md#armultifacemode) | 否 | 是 | 多人脸模式配置项。  默认为MULTIFACE\_DISABLE。  **起始版本：** 6.1.0(23) |
-| maxDetectedBodyNum | number | 否 | 是 | 当类型为ARType.Body 时，需要检测的人体数量最大值。  默认为1，最大为2，超过2默认为2。  **起始版本：** 6.1.0(23) |
+| maxDetectedBodyNum | number | 否 | 是 | 当类型为ARType.BODY 时，需要检测的人体数量最大值。  默认为1，最大为2，超过2默认为2。  **起始版本：** 6.1.0(23) |
+| remoteSensorMode | [ARRemoteSensorMode](arengine-api-arengine.md#arremotesensormode) | 否 | 是 | 远程相机和sensor模式。  默认为LOCAL\_SENSOR。  **起始版本：** 26.0.0 |
 
 ## ARPointCloud
-
-PhoneTabletTV
 
 可跟踪的3D点云集合。
 
@@ -1028,7 +966,7 @@ PhoneTabletTV
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -1039,15 +977,13 @@ PhoneTabletTV
 
 ## ARSemanticDenseCubeData
 
-PhoneTabletTV
-
 高精几何重建对象的立方体数据。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 6.0.0(20)
 
@@ -1061,15 +997,13 @@ PhoneTabletTV
 
 ## ARSemanticDensePointData
 
-PhoneTabletTV
-
 高精几何重建对象的稠密点云数据。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 6.0.0(20)
 
@@ -1081,21 +1015,17 @@ PhoneTabletTV
 
 ## ARSession
 
-PhoneTabletTV
-
 管理AR Engine的系统状态。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
 ### ARSession.getFrame
-
-PhoneTabletTV
 
 getFrame(): ARFrame
 
@@ -1105,7 +1035,7 @@ getFrame(): ARFrame
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -1117,7 +1047,7 @@ getFrame(): ARFrame
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1125,35 +1055,33 @@ getFrame(): ARFrame
 
 **示例：**
 
-```
-1. import { arEngine, arViewController } from '@kit.AREngine';
-2. import { Node } from '@kit.ArkGraphics3D';
+```typescript
+import { arEngine, arViewController } from '@kit.AREngine';
+import { Node } from '@kit.ArkGraphics3D';
 
-4. class ARViewCallbackImpl extends arViewController.ARViewCallback {
-5. onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
-6. // ...
-7. }
+class ARViewCallbackImpl extends arViewController.ARViewCallback {
+  onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
+    // ...
+  }
 
-9. onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
-10. // ...
-11. }
+  onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
+    // ...
+  }
 
-13. async onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): Promise<void> {
-14. if (!ctx.session) {
-15. // 如果没有创建session则退出，关于如何创建session请参考开发指南
-16. return;
-17. }
+  async onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): Promise<void> {
+    if (!ctx.session) {
+      // 如果没有创建session则退出，关于如何创建session请参考开发指南
+      return;
+    }
 
-19. let arSession: arEngine.ARSession = ctx.session;
-20. let frame: arEngine.ARFrame = arSession.getFrame();
-21. await frame.release();
-22. }
-23. }
+    let arSession: arEngine.ARSession = ctx.session;
+    let frame: arEngine.ARFrame = arSession.getFrame();
+    await frame.release();
+  }
+}
 ```
 
 ### ARSession.createAnchor
-
-PhoneTabletTV
 
 createAnchor(pose: ARPose): ARAnchor
 
@@ -1163,7 +1091,7 @@ createAnchor(pose: ARPose): ARAnchor
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -1181,7 +1109,7 @@ createAnchor(pose: ARPose): ARAnchor
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1190,31 +1118,29 @@ createAnchor(pose: ARPose): ARAnchor
 
 **示例：**
 
-```
-1. import { Quaternion, Vec3 } from '@kit.ArkGraphics3D';
-2. import { arEngine } from '@kit.AREngine';
+```typescript
+import { Quaternion, Vec3 } from '@kit.ArkGraphics3D';
+import { arEngine } from '@kit.AREngine';
 
-4. let r: Quaternion = {
-5. x: 0,
-6. y: 0,
-7. z: 0,
-8. w: 0
-9. }
-10. let t: Vec3 = { x: 0, y: 0, z: 0 };
-11. let pose: arEngine.ARPose = arEngine.createARPose(r, t);
-12. // arSession创建参考ARSession.getFrame接口示例代码
-13. arSession.createAnchor(pose);
+let r: Quaternion = {
+  x: 0,
+  y: 0,
+  z: 0,
+  w: 0
+}
+let t: Vec3 = { x: 0, y: 0, z: 0 };
+let pose: arEngine.ARPose = arEngine.createARPose(r, t);
+// arSession创建参考ARSession.getFrame接口示例代码
+arSession.createAnchor(pose);
 ```
 
 ### ARSession.detachAnchor
-
-PhoneTabletTV
 
 detachAnchor(anchor: ARAnchor): void
 
 停止追踪并解绑锚点。
 
-说明
+**说明** 
 
 由于此函数并没有释放锚点[ARAnchor](arengine-api-arengine.md#aranchor)，开发者需要通过调用[ARAnchor.release](arengine-api-arengine.md#aranchorrelease)来释放锚点。
 
@@ -1222,7 +1148,7 @@ detachAnchor(anchor: ARAnchor): void
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -1234,7 +1160,7 @@ detachAnchor(anchor: ARAnchor): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1243,18 +1169,16 @@ detachAnchor(anchor: ARAnchor): void
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let pose: arEngine.ARPose = arSession.getFrame().getCamera().getPose();
-5. let anchor: arEngine.ARAnchor = arSession.createAnchor(pose);
-6. arSession.detachAnchor(anchor);
+// arSession创建参考ARSession.getFrame接口示例代码
+let pose: arEngine.ARPose = arSession.getFrame().getCamera().getPose();
+let anchor: arEngine.ARAnchor = arSession.createAnchor(pose);
+arSession.detachAnchor(anchor);
 ```
 
 ### ARSession.getAllAnchors
-
-PhoneTabletTV
 
 getAllAnchors(): Array<ARAnchor>
 
@@ -1264,7 +1188,7 @@ getAllAnchors(): Array<ARAnchor>
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -1276,7 +1200,7 @@ getAllAnchors(): Array<ARAnchor>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1285,14 +1209,12 @@ getAllAnchors(): Array<ARAnchor>
 
 **示例：**
 
-```
-1. // arSession创建参考ARSession.getFrame接口示例代码
-2. arSession.getAllAnchors();
+```typescript
+// arSession创建参考ARSession.getFrame接口示例代码
+arSession.getAllAnchors();
 ```
 
 ### ARSession.getAllTrackables
-
-PhoneTabletTV
 
 getAllTrackables(type: ARTrackableType): Array<ARTrackable>
 
@@ -1302,7 +1224,7 @@ getAllTrackables(type: ARTrackableType): Array<ARTrackable>
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -1320,7 +1242,7 @@ getAllTrackables(type: ARTrackableType): Array<ARTrackable>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1330,14 +1252,12 @@ getAllTrackables(type: ARTrackableType): Array<ARTrackable>
 
 **示例：**
 
-```
-1. // arSession创建参考ARSession.getFrame接口示例代码
-2. arSession.getAllTrackables(arEngine.ARTrackableType.BASE);
+```typescript
+// arSession创建参考ARSession.getFrame接口示例代码
+arSession.getAllTrackables(arEngine.ARTrackableType.BASE);
 ```
 
 ### ARSession.openFlash
-
-PhoneTabletTV
 
 openFlash(): Promise<boolean>
 
@@ -1347,7 +1267,7 @@ openFlash(): Promise<boolean>
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -1359,7 +1279,7 @@ openFlash(): Promise<boolean>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1367,14 +1287,12 @@ openFlash(): Promise<boolean>
 
 **示例：**
 
-```
-1. // arSession创建参考ARSession.getFrame接口示例代码
-2. await arSession.openFlash();
+```typescript
+// arSession创建参考ARSession.getFrame接口示例代码
+await arSession.openFlash();
 ```
 
 ### ARSession.closeFlash
-
-PhoneTabletTV
 
 closeFlash(): Promise<boolean>
 
@@ -1384,7 +1302,7 @@ closeFlash(): Promise<boolean>
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -1396,7 +1314,7 @@ closeFlash(): Promise<boolean>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1404,14 +1322,12 @@ closeFlash(): Promise<boolean>
 
 **示例：**
 
-```
-1. // arSession创建参考ARSession.getFrame接口示例代码
-2. await arSession.closeFlash();
+```typescript
+// arSession创建参考ARSession.getFrame接口示例代码
+await arSession.closeFlash();
 ```
 
 ### ARSession.release
-
-PhoneTabletTV
 
 release(): Promise<void>
 
@@ -1421,7 +1337,7 @@ release(): Promise<void>
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -1433,7 +1349,7 @@ release(): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1441,14 +1357,12 @@ release(): Promise<void>
 
 **示例：**
 
-```
-1. // arSession创建参考ARSession.getFrame接口示例代码
-2. await arSession.release();
+```typescript
+// arSession创建参考ARSession.getFrame接口示例代码
+await arSession.release();
 ```
 
 ## ImageComponent
-
-PhoneTabletTV
 
 图像组件的基本结构参数。
 
@@ -1456,7 +1370,7 @@ PhoneTabletTV
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -1468,15 +1382,13 @@ PhoneTabletTV
 
 ## ARAddAugmentedImageResult
 
-PhoneTabletTV
-
 添加增强图像的结果。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -1488,8 +1400,6 @@ PhoneTabletTV
 
 ## ARAnchor
 
-PhoneTabletTV
-
 锚点对象。
 
 锚点描述与可追踪对象相关联的空间位置。
@@ -1498,7 +1408,7 @@ PhoneTabletTV
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -1511,8 +1421,6 @@ PhoneTabletTV
 
 ### ARAnchor.getPose
 
-PhoneTabletTV
-
 getPose(): ARPose
 
 获取锚点在世界坐标系中的位姿信息。
@@ -1521,7 +1429,7 @@ getPose(): ARPose
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -1533,7 +1441,7 @@ getPose(): ARPose
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1541,23 +1449,21 @@ getPose(): ARPose
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let anchors: Array<arEngine.ARAnchor> = arSession.getAllAnchors();
-5. anchors[0].getPose();
+// arSession创建参考ARSession.getFrame接口示例代码
+let anchors: Array<arEngine.ARAnchor> = arSession.getAllAnchors();
+anchors[0].getPose();
 ```
 
 ### ARAnchor.detach
-
-PhoneTabletTV
 
 detach(): void
 
 停止追踪并解绑锚点。
 
-说明
+**说明** 
 
 这个函数不会释放锚点，开发者需要通过调用[ARAnchor.release](arengine-api-arengine.md#aranchorrelease)方法来释放锚点。
 
@@ -1565,13 +1471,13 @@ detach(): void
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1579,17 +1485,15 @@ detach(): void
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let anchors: Array<arEngine.ARAnchor> = arSession.getAllAnchors();
-5. anchors[0].detach();
+// arSession创建参考ARSession.getFrame接口示例代码
+let anchors: Array<arEngine.ARAnchor> = arSession.getAllAnchors();
+anchors[0].detach();
 ```
 
 ### ARAnchor.release
-
-PhoneTabletTV
 
 release(): Promise<void>
 
@@ -1599,7 +1503,7 @@ release(): Promise<void>
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -1611,7 +1515,7 @@ release(): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1619,17 +1523,15 @@ release(): Promise<void>
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let anchors: Array<arEngine.ARAnchor> = arSession.getAllAnchors();
-5. await anchors[0].release();
+// arSession创建参考ARSession.getFrame接口示例代码
+let anchors: Array<arEngine.ARAnchor> = arSession.getAllAnchors();
+await anchors[0].release();
 ```
 
 ## ARAugmentedImage
-
-PhoneTabletTV
 
 增强图像对象。
 
@@ -1639,7 +1541,7 @@ PhoneTabletTV
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -1651,8 +1553,6 @@ PhoneTabletTV
 | name | string | 是 | 否 | 表示增强图像的图像名称，最大为255Byte，该值可能不唯一。 |
 
 ## ARBlendShapes
-
-PhoneTabletTV
 
 用于管理人脸微表情，包含若干个表情参数。
 
@@ -1670,11 +1570,9 @@ PhoneTabletTV
 
 ### ARBlendShapes.getData
 
-PhoneTabletTV
-
 getData(): ArrayBuffer
 
-获取所有的表情参数。
+获取所有的微表情参数。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -1688,11 +1586,11 @@ getData(): ArrayBuffer
 
 | **类型** | **说明** |
 | --- | --- |
-| ArrayBuffer | 微表情数据。 |
+| ArrayBuffer | 微表情参数数据。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1700,23 +1598,21 @@ getData(): ArrayBuffer
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-5. let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-6. let faceBlendShapes: arEngine.ARBlendShapes = face.getBlendShapes();
-7. faceBlendShapes.getData();
+// arSession创建参考ARSession.getFrame接口示例代码
+let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+let faceBlendShapes: arEngine.ARBlendShapes = face.getBlendShapes();
+faceBlendShapes.getData();
 ```
 
 ### ARBlendShapes.getTypes
 
-PhoneTabletTV
-
 getTypes(): Array<ARBlendShapeType>
 
-获取所有表情参数类型。
+获取所有微表情类型。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -1734,7 +1630,7 @@ getTypes(): Array<ARBlendShapeType>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1742,19 +1638,17 @@ getTypes(): Array<ARBlendShapeType>
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-5. let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-6. let faceBlendShapes: arEngine.ARBlendShapes = face.getBlendShapes();
-7. faceBlendShapes.getTypes();
+// arSession创建参考ARSession.getFrame接口示例代码
+let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+let faceBlendShapes: arEngine.ARBlendShapes = face.getBlendShapes();
+faceBlendShapes.getTypes();
 ```
 
 ### ARBlendShapes.release
-
-PhoneTabletTV
 
 release(): Promise<void>
 
@@ -1776,7 +1670,7 @@ release(): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1784,19 +1678,17 @@ release(): Promise<void>
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-5. let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-6. let faceBlendShapes: arEngine.ARBlendShapes = face.getBlendShapes();
-7. faceBlendShapes.release();
+// arSession创建参考ARSession.getFrame接口示例代码
+let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+let faceBlendShapes: arEngine.ARBlendShapes = face.getBlendShapes();
+faceBlendShapes.release();
 ```
 
 ## ARLandmark
-
-PhoneTabletTV
 
 用于管理人脸关键点对象。
 
@@ -1813,8 +1705,6 @@ PhoneTabletTV
 | count | number | 是 | 否 | 表示人脸关键点的个数，固定为84。 |
 
 ### ARLandmark.getVertices2D
-
-PhoneTabletTV
 
 getVertices2D(): ArrayBuffer
 
@@ -1836,7 +1726,7 @@ getVertices2D(): ArrayBuffer
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1844,19 +1734,17 @@ getVertices2D(): ArrayBuffer
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-5. let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-6. let faceLandmark: arEngine.ARLandmark = face.getLandmark();
-7. faceLandmark.getVertices2D();
+// arSession创建参考ARSession.getFrame接口示例代码
+let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+let faceLandmark: arEngine.ARLandmark = face.getLandmark();
+faceLandmark.getVertices2D();
 ```
 
 ### ARLandmark.getVertices3D
-
-PhoneTabletTV
 
 getVertices3D(): ArrayBuffer
 
@@ -1878,7 +1766,7 @@ getVertices3D(): ArrayBuffer
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1886,19 +1774,17 @@ getVertices3D(): ArrayBuffer
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-5. let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-6. let faceLandmark: arEngine.ARLandmark = face.getLandmark();
-7. faceLandmark.getVertices3D();
+// arSession创建参考ARSession.getFrame接口示例代码
+let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+let faceLandmark: arEngine.ARLandmark = face.getLandmark();
+faceLandmark.getVertices3D();
 ```
 
 ### ARLandmark.release
-
-PhoneTabletTV
 
 release(): Promise<void>
 
@@ -1920,7 +1806,7 @@ release(): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1928,19 +1814,17 @@ release(): Promise<void>
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-5. let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-6. let faceLandmark: arEngine.ARLandmark = face.getLandmark();
-7. await faceLandmark.release();
+// arSession创建参考ARSession.getFrame接口示例代码
+let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+let faceLandmark: arEngine.ARLandmark = face.getLandmark();
+await faceLandmark.release();
 ```
 
 ## ARCamera
-
-PhoneTabletTV
 
 当前帧的摄像机信息。
 
@@ -1948,7 +1832,7 @@ PhoneTabletTV
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -1962,8 +1846,6 @@ PhoneTabletTV
 
 ### ARCamera.getPose
 
-PhoneTabletTV
-
 getPose(): ARPose
 
 获取摄像机在世界空间中的位姿。
@@ -1976,7 +1858,7 @@ getPose(): ARPose
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -1988,7 +1870,7 @@ getPose(): ARPose
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1996,18 +1878,16 @@ getPose(): ARPose
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let frame: arEngine.ARFrame = arSession.getFrame();
-5. let camera: arEngine.ARCamera = frame.getCamera();
-6. camera.getPose();
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+let camera: arEngine.ARCamera = frame.getCamera();
+camera.getPose();
 ```
 
 ### ARCamera.getDisplayOrientedPose
-
-PhoneTabletTV
 
 getDisplayOrientedPose(): ARPose
 
@@ -2021,7 +1901,7 @@ getDisplayOrientedPose(): ARPose
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -2033,7 +1913,7 @@ getDisplayOrientedPose(): ARPose
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2041,18 +1921,16 @@ getDisplayOrientedPose(): ARPose
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let frame: arEngine.ARFrame = arSession.getFrame();
-5. let camera: arEngine.ARCamera = frame.getCamera();
-6. camera.getDisplayOrientedPose();
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+let camera: arEngine.ARCamera = frame.getCamera();
+camera.getDisplayOrientedPose();
 ```
 
 ### ARCamera.getProjectionMatrix
-
-PhoneTabletTV
 
 getProjectionMatrix(near: number, far: number): Matrix4
 
@@ -2062,7 +1940,7 @@ getProjectionMatrix(near: number, far: number): Matrix4
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -2081,7 +1959,7 @@ getProjectionMatrix(near: number, far: number): Matrix4
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2090,18 +1968,16 @@ getProjectionMatrix(near: number, far: number): Matrix4
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let frame: arEngine.ARFrame = arSession.getFrame();
-5. let camera: arEngine.ARCamera = frame.getCamera();
-6. camera.getProjectionMatrix(0, 1);
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+let camera: arEngine.ARCamera = frame.getCamera();
+camera.getProjectionMatrix(0, 1);
 ```
 
 ### ARCamera.getImageIntrinsics
-
-PhoneTabletTV
 
 getImageIntrinsics(): ARCameraIntrinsics
 
@@ -2113,7 +1989,7 @@ getImageIntrinsics(): ARCameraIntrinsics
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -2125,7 +2001,7 @@ getImageIntrinsics(): ARCameraIntrinsics
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2133,18 +2009,16 @@ getImageIntrinsics(): ARCameraIntrinsics
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let frame: arEngine.ARFrame = arSession.getFrame();
-5. let camera: arEngine.ARCamera = frame.getCamera();
-6. camera.getImageIntrinsics();
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+let camera: arEngine.ARCamera = frame.getCamera();
+camera.getImageIntrinsics();
 ```
 
 ## ARFace
-
-PhoneTabletTV
 
 用于人脸跟踪时返回人脸跟踪的结果。
 
@@ -2157,8 +2031,6 @@ PhoneTabletTV
 **起始版本：** 6.1.0(23)
 
 ### ARFace.getGeometry
-
-PhoneTabletTV
 
 getGeometry(): ARGeometry
 
@@ -2180,7 +2052,7 @@ getGeometry(): ARGeometry
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2188,18 +2060,16 @@ getGeometry(): ARGeometry
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-5. let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-6. face.getGeometry();
+// arSession创建参考ARSession.getFrame接口示例代码
+let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+face.getGeometry();
 ```
 
 ### ARFace.getBlendShapes
-
-PhoneTabletTV
 
 getBlendShapes(): ARBlendShapes
 
@@ -2221,7 +2091,7 @@ getBlendShapes(): ARBlendShapes
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2229,18 +2099,16 @@ getBlendShapes(): ARBlendShapes
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-5. let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-6. face.getBlendShapes();
+// arSession创建参考ARSession.getFrame接口示例代码
+let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+face.getBlendShapes();
 ```
 
 ### ARFace.getLandmark
-
-PhoneTabletTV
 
 getLandmark(): ARLandmark
 
@@ -2262,7 +2130,7 @@ getLandmark(): ARLandmark
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2270,18 +2138,16 @@ getLandmark(): ARLandmark
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-5. let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-6. face.getLandmark();
+// arSession创建参考ARSession.getFrame接口示例代码
+let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+face.getLandmark();
 ```
 
 ## ARFaceAnchor
-
-PhoneTabletTV
 
 一个人脸类型的锚点对象。
 
@@ -2294,8 +2160,6 @@ PhoneTabletTV
 **起始版本：** 6.1.0(23)
 
 ### ARFaceAnchor.getFace
-
-PhoneTabletTV
 
 getFace(): ARFace
 
@@ -2317,7 +2181,7 @@ getFace(): ARFace
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2325,21 +2189,19 @@ getFace(): ARFace
 
 **示例：**
 
-```
-1. import { arEngine, arViewController } from '@kit.AREngine';
-2. import { Node } from '@kit.ArkGraphics3D';
+```typescript
+import { arEngine, arViewController } from '@kit.AREngine';
+import { Node } from '@kit.ArkGraphics3D';
 
-4. // 该方法在ARViewCallback中使用
-5. async onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): Promise<void> {
-6. let faceAnchor: arEngine.ARFaceAnchor = anchor as arEngine.ARFaceAnchor;
-7. let face: arEngine.ARFace = faceAnchor.getFace();
-8. await face.release();
-9. }
+// 该方法在ARViewCallback中使用
+async onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): Promise<void> {
+  let faceAnchor: arEngine.ARFaceAnchor = anchor as arEngine.ARFaceAnchor;
+  let face: arEngine.ARFace = faceAnchor.getFace();
+  await face.release();
+}
 ```
 
 ## ARBodyLandmark2D
-
-PhoneTabletTV
 
 人体骨骼关键点信息基本结构参数。
 
@@ -2359,8 +2221,6 @@ PhoneTabletTV
 
 ## ARBody
 
-PhoneTabletTV
-
 用于人体跟踪时返回跟踪结果，包含人体骨骼关键点数据。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -2375,8 +2235,6 @@ PhoneTabletTV
 | timeStamp | number | 是 | 否 | 当前帧的时间戳，单位ns |
 
 ### ARBody.getLandmarks2D
-
-PhoneTabletTV
 
 getLandmarks2D(): Array<ARBodyLandmark2D>
 
@@ -2398,7 +2256,7 @@ getLandmarks2D(): Array<ARBodyLandmark2D>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2406,20 +2264,18 @@ getLandmarks2D(): Array<ARBodyLandmark2D>
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. const frame: arEngine.ARFrame = arSession.getFrame();
-5. const arbodys: arEngine.ARBody[] = frame.acquireBodySkeleton();
-6. if (arbodys.length > 0) {
-7. arbodys[0].getLandmarks2D();
-8. }
+// arSession创建参考ARSession.getFrame接口示例代码
+const frame: arEngine.ARFrame = arSession.getFrame();
+const arbodys: arEngine.ARBody[] = frame.acquireBodySkeleton();
+if (arbodys.length > 0) {
+    arbodys[0].getLandmarks2D();
+}
 ```
 
 ## ARFrame
-
-PhoneTabletTV
 
 AR Engine处理的一帧数据。
 
@@ -2427,7 +2283,7 @@ AR Engine处理的一帧数据。
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -2438,8 +2294,6 @@ AR Engine处理的一帧数据。
 
 ### ARFrame.getCamera
 
-PhoneTabletTV
-
 getCamera(): ARCamera
 
 获取当前帧的相机对象。
@@ -2448,7 +2302,7 @@ getCamera(): ARCamera
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -2460,7 +2314,7 @@ getCamera(): ARCamera
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2468,17 +2322,15 @@ getCamera(): ARCamera
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let frame: arEngine.ARFrame = arSession.getFrame();
-5. frame.getCamera();
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+frame.getCamera();
 ```
 
 ### ARFrame.getUpdatedTrackables
-
-PhoneTabletTV
 
 getUpdatedTrackables(type: ARTrackableType): Array<ARTrackable>
 
@@ -2488,7 +2340,7 @@ getUpdatedTrackables(type: ARTrackableType): Array<ARTrackable>
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -2506,7 +2358,7 @@ getUpdatedTrackables(type: ARTrackableType): Array<ARTrackable>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2515,17 +2367,15 @@ getUpdatedTrackables(type: ARTrackableType): Array<ARTrackable>
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let frame: arEngine.ARFrame = arSession.getFrame();
-5. frame.getUpdatedTrackables(arEngine.ARTrackableType.BASE);
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+frame.getUpdatedTrackables(arEngine.ARTrackableType.BASE);
 ```
 
 ### ARFrame.hitTest
-
-PhoneTabletTV
 
 hitTest(x: number, y: number): Array<ARHitResult>
 
@@ -2535,7 +2385,7 @@ hitTest(x: number, y: number): Array<ARHitResult>
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -2554,7 +2404,7 @@ hitTest(x: number, y: number): Array<ARHitResult>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2564,17 +2414,15 @@ hitTest(x: number, y: number): Array<ARHitResult>
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let frame: arEngine.ARFrame = arSession.getFrame();
-5. frame.hitTest(0, 0);
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+frame.hitTest(0, 0);
 ```
 
 ### ARFrame.acquireSceneMesh
-
-PhoneTabletTV
 
 acquireSceneMesh(): ARSceneMesh
 
@@ -2584,7 +2432,7 @@ acquireSceneMesh(): ARSceneMesh
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -2596,7 +2444,7 @@ acquireSceneMesh(): ARSceneMesh
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2605,17 +2453,15 @@ acquireSceneMesh(): ARSceneMesh
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let frame: arEngine.ARFrame = arSession.getFrame();
-5. frame.acquireSceneMesh();
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+frame.acquireSceneMesh();
 ```
 
 ### ARFrame.acquireDepthImage16Bits
-
-PhoneTabletTV
 
 acquireDepthImage16Bits(): ARImage
 
@@ -2627,7 +2473,7 @@ acquireDepthImage16Bits(): ARImage
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -2639,7 +2485,7 @@ acquireDepthImage16Bits(): ARImage
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2647,17 +2493,15 @@ acquireDepthImage16Bits(): ARImage
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let frame: arEngine.ARFrame = arSession.getFrame();
-5. frame.acquireDepthImage16Bits();
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+frame.acquireDepthImage16Bits();
 ```
 
 ### ARFrame.acquireDepthConfidenceImage
-
-PhoneTabletTV
 
 acquireDepthConfidenceImage(): ARImage
 
@@ -2669,7 +2513,7 @@ acquireDepthConfidenceImage(): ARImage
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -2681,7 +2525,7 @@ acquireDepthConfidenceImage(): ARImage
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2689,17 +2533,15 @@ acquireDepthConfidenceImage(): ARImage
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let frame: arEngine.ARFrame = arSession.getFrame();
-5. frame.acquireDepthConfidenceImage();
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+frame.acquireDepthConfidenceImage();
 ```
 
 ### ARFrame.acquireSemanticDense
-
-PhoneTabletTV
 
 acquireSemanticDense(): ARSemanticDenseData
 
@@ -2709,7 +2551,7 @@ acquireSemanticDense(): ARSemanticDenseData
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 6.0.0(20)
 
@@ -2721,7 +2563,7 @@ acquireSemanticDense(): ARSemanticDenseData
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2729,17 +2571,15 @@ acquireSemanticDense(): ARSemanticDenseData
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let frame: arEngine.ARFrame = arSession.getFrame();
-5. frame.acquireSemanticDense();
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+frame.acquireSemanticDense();
 ```
 
 ### ARFrame.acquireBodySkeleton
-
-PhoneTabletTV
 
 acquireBodySkeleton(): Array<ARBody>
 
@@ -2761,7 +2601,7 @@ acquireBodySkeleton(): Array<ARBody>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2769,17 +2609,53 @@ acquireBodySkeleton(): Array<ARBody>
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let frame: arEngine.ARFrame = arSession.getFrame();
-5. frame.acquireBodySkeleton();
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+frame.acquireBodySkeleton();
+```
+
+### ARFrame.acquireCameraImage
+
+acquireCameraImage(): ARImage
+
+获取相机的当前帧的图像。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.AREngine.Core
+
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+
+**起始版本：** 26.0.0
+
+**返回值：**
+
+| **类型** | **说明** |
+| --- | --- |
+| [ARImage](arengine-api-arengine.md#arimage) | 返回相机视频流帧对象。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1009200001 | Failure. |
+
+**示例：**
+
+```typescript
+import { arEngine } from '@kit.AREngine';
+
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+let arImage: arEngine.ARImage = frame.acquireCameraImage();
 ```
 
 ### ARFrame.release
-
-PhoneTabletTV
 
 release(): Promise<void>
 
@@ -2789,7 +2665,7 @@ release(): Promise<void>
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -2801,7 +2677,7 @@ release(): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2809,17 +2685,15 @@ release(): Promise<void>
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let frame: arEngine.ARFrame = arSession.getFrame();
-5. await frame.release();
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+await frame.release();
 ```
 
 ## ARGeometry
-
-PhoneTabletTV
 
 用于描述人脸拓扑结构，即人脸Mesh。
 
@@ -2841,8 +2715,6 @@ PhoneTabletTV
 
 ### ARGeometry.getVertices
 
-PhoneTabletTV
-
 getVertices(): ArrayBuffer
 
 获取人脸Mesh顶点数组。
@@ -2863,7 +2735,7 @@ getVertices(): ArrayBuffer
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2871,19 +2743,17 @@ getVertices(): ArrayBuffer
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-5. let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-6. let faceGeometry: arEngine.ARGeometry = face.getGeometry();
-7. faceGeometry.getVertices();
+// arSession创建参考ARSession.getFrame接口示例代码
+let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+let faceGeometry: arEngine.ARGeometry = face.getGeometry();
+faceGeometry.getVertices();
 ```
 
 ### ARGeometry.getTexCoord
-
-PhoneTabletTV
 
 getTexCoord(): ArrayBuffer
 
@@ -2905,7 +2775,7 @@ getTexCoord(): ArrayBuffer
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2913,19 +2783,17 @@ getTexCoord(): ArrayBuffer
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-5. let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-6. let faceGeometry: arEngine.ARGeometry = face.getGeometry();
-7. faceGeometry.getTexCoord();
+// arSession创建参考ARSession.getFrame接口示例代码
+let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+let faceGeometry: arEngine.ARGeometry = face.getGeometry();
+faceGeometry.getTexCoord();
 ```
 
 ### ARGeometry.getIndices
-
-PhoneTabletTV
 
 getIndices(): ArrayBuffer
 
@@ -2947,7 +2815,7 @@ getIndices(): ArrayBuffer
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2955,19 +2823,17 @@ getIndices(): ArrayBuffer
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-5. let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-6. let faceGeometry: arEngine.ARGeometry = face.getGeometry();
-7. faceGeometry.getIndices();
+// arSession创建参考ARSession.getFrame接口示例代码
+let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+let faceGeometry: arEngine.ARGeometry = face.getGeometry();
+faceGeometry.getIndices();
 ```
 
 ### ARGeometry.getTriangleLabels
-
-PhoneTabletTV
 
 getTriangleLabels(): ArrayBuffer
 
@@ -2989,7 +2855,7 @@ getTriangleLabels(): ArrayBuffer
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2997,19 +2863,17 @@ getTriangleLabels(): ArrayBuffer
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-5. let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-6. let faceGeometry: arEngine.ARGeometry = face.getGeometry();
-7. faceGeometry.getTriangleLabels();
+// arSession创建参考ARSession.getFrame接口示例代码
+let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+let faceGeometry: arEngine.ARGeometry = face.getGeometry();
+faceGeometry.getTriangleLabels();
 ```
 
 ### ARGeometry.release
-
-PhoneTabletTV
 
 release(): Promise<void>
 
@@ -3031,7 +2895,7 @@ release(): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3039,19 +2903,17 @@ release(): Promise<void>
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
-5. let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
-6. let faceGeometry: arEngine.ARGeometry = face.getGeometry();
-7. await faceGeometry.release();
+// arSession创建参考ARSession.getFrame接口示例代码
+let trackables: Array<arEngine.ARTrackable> = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+let face: arEngine.ARFace = trackables[0] as arEngine.ARFace;
+let faceGeometry: arEngine.ARGeometry = face.getGeometry();
+await faceGeometry.release();
 ```
 
 ## ARHitResult
-
-PhoneTabletTV
 
 命中检测结果对象，描述单个可跟踪对象的命中检测结果。
 
@@ -3059,7 +2921,7 @@ PhoneTabletTV
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3070,8 +2932,6 @@ PhoneTabletTV
 | distance | number | 是 | 否 | 从相机到命中位置的距离，单位为m，其值范围0~65535。 |
 
 ### ARHitResult.getHitPose
-
-PhoneTabletTV
 
 getHitPose(): ARPose
 
@@ -3087,7 +2947,7 @@ getHitPose(): ARPose
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3099,7 +2959,7 @@ getHitPose(): ARPose
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3107,18 +2967,16 @@ getHitPose(): ARPose
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let frame: arEngine.ARFrame = arSession.getFrame();
-5. let hitResult: Array<arEngine.ARHitResult> = frame.hitTest(0, 0);
-6. hitResult[0].getHitPose();
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+let hitResult: Array<arEngine.ARHitResult> = frame.hitTest(0, 0);
+hitResult[0].getHitPose();
 ```
 
 ### ARHitResult.getTrackable
-
-PhoneTabletTV
 
 getTrackable(): ARTrackable
 
@@ -3128,7 +2986,7 @@ getTrackable(): ARTrackable
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3140,7 +2998,7 @@ getTrackable(): ARTrackable
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3148,18 +3006,16 @@ getTrackable(): ARTrackable
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let frame: arEngine.ARFrame = arSession.getFrame();
-5. let hitResult: Array<arEngine.ARHitResult> = frame.hitTest(0, 0);
-6. hitResult[0].getTrackable();
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+let hitResult: Array<arEngine.ARHitResult> = frame.hitTest(0, 0);
+hitResult[0].getTrackable();
 ```
 
 ### ARHitResult.createAnchor
-
-PhoneTabletTV
 
 createAnchor(): ARAnchor
 
@@ -3169,7 +3025,7 @@ createAnchor(): ARAnchor
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3181,7 +3037,7 @@ createAnchor(): ARAnchor
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3189,18 +3045,16 @@ createAnchor(): ARAnchor
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let frame: arEngine.ARFrame = arSession.getFrame();
-5. let hitResult: Array<arEngine.ARHitResult> = frame.hitTest(0, 0);
-6. hitResult[0].createAnchor();
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+let hitResult: Array<arEngine.ARHitResult> = frame.hitTest(0, 0);
+hitResult[0].createAnchor();
 ```
 
 ### ARHitResult.release
-
-PhoneTabletTV
 
 release(): Promise<void>
 
@@ -3210,7 +3064,7 @@ release(): Promise<void>
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3222,7 +3076,7 @@ release(): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3230,18 +3084,16 @@ release(): Promise<void>
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let frame: arEngine.ARFrame = arSession.getFrame();
-5. let hitResult: Array<arEngine.ARHitResult> = frame.hitTest(0, 0);
-6. await hitResult[0].release();
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+let hitResult: Array<arEngine.ARHitResult> = frame.hitTest(0, 0);
+await hitResult[0].release();
 ```
 
 ## ARImage
-
-PhoneTabletTV
 
 相机视频流帧对象。
 
@@ -3249,7 +3101,7 @@ PhoneTabletTV
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3263,8 +3115,6 @@ PhoneTabletTV
 
 ### ARImage.release
 
-PhoneTabletTV
-
 release(): Promise<void>
 
 释放相机视频流帧对象[ARImage](arengine-api-arengine.md#arimage)占用的内存。使用Promise异步回调。
@@ -3273,7 +3123,7 @@ release(): Promise<void>
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3285,7 +3135,7 @@ release(): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3293,18 +3143,16 @@ release(): Promise<void>
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let frame: arEngine.ARFrame = arSession.getFrame();
-5. let image: arEngine.ARImage = frame.acquireDepthImage16Bits();
-6. await image.release();
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+let image: arEngine.ARImage = frame.acquireDepthImage16Bits();
+await image.release();
 ```
 
 ## ARPlane
-
-PhoneTabletTV
 
 平面对象，描述被检测到的可跟踪平面信息。
 
@@ -3314,7 +3162,7 @@ PhoneTabletTV
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3327,8 +3175,6 @@ PhoneTabletTV
 
 ### ARPlane.getPolygonXZ
 
-PhoneTabletTV
-
 getPolygonXZ(): ArrayBuffer
 
 获取检测到的平面2D顶点数组。
@@ -3337,7 +3183,7 @@ getPolygonXZ(): ArrayBuffer
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3349,7 +3195,7 @@ getPolygonXZ(): ArrayBuffer
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3357,18 +3203,16 @@ getPolygonXZ(): ArrayBuffer
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.PLANE);
-5. let plane = trackables[0] as arEngine.ARPlane;
-6. plane.getPolygonXZ();
+// arSession创建参考ARSession.getFrame接口示例代码
+let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.PLANE);
+let plane = trackables[0] as arEngine.ARPlane;
+plane.getPolygonXZ();
 ```
 
 ### ARPlane.getSubsumedBy
-
-PhoneTabletTV
 
 getSubsumedBy(): ARPlane
 
@@ -3378,7 +3222,7 @@ getSubsumedBy(): ARPlane
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3390,7 +3234,7 @@ getSubsumedBy(): ARPlane
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3398,18 +3242,16 @@ getSubsumedBy(): ARPlane
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.PLANE);
-5. let plane: arEngine.ARPlane = trackables[0] as arEngine.ARPlane;
-6. plane.getSubsumedBy();
+// arSession创建参考ARSession.getFrame接口示例代码
+let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.PLANE);
+let plane: arEngine.ARPlane = trackables[0] as arEngine.ARPlane;
+plane.getSubsumedBy();
 ```
 
 ### ARPlane.isPoseInExtents
-
-PhoneTabletTV
 
 isPoseInExtents(pose: ARPose): boolean
 
@@ -3419,7 +3261,7 @@ isPoseInExtents(pose: ARPose): boolean
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3437,7 +3279,7 @@ isPoseInExtents(pose: ARPose): boolean
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3446,19 +3288,17 @@ isPoseInExtents(pose: ARPose): boolean
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.PLANE);
-5. let pose: arEngine.ARPose = trackables[0].getPose();
-6. let plane: arEngine.ARPlane = trackables[0] as arEngine.ARPlane;
-7. plane.isPoseInExtents(pose);
+// arSession创建参考ARSession.getFrame接口示例代码
+let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.PLANE);
+let pose: arEngine.ARPose = trackables[0].getPose();
+let plane: arEngine.ARPlane = trackables[0] as arEngine.ARPlane;
+plane.isPoseInExtents(pose);
 ```
 
 ### ARPlane.isPoseInPolygon
-
-PhoneTabletTV
 
 isPoseInPolygon(pose: ARPose): boolean
 
@@ -3468,7 +3308,7 @@ isPoseInPolygon(pose: ARPose): boolean
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3486,7 +3326,7 @@ isPoseInPolygon(pose: ARPose): boolean
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3495,19 +3335,17 @@ isPoseInPolygon(pose: ARPose): boolean
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.PLANE);
-5. let pose: arEngine.ARPose = trackables[0].getPose();
-6. let plane: arEngine.ARPlane = trackables[0] as arEngine.ARPlane;
-7. plane.isPoseInPolygon(pose);
+// arSession创建参考ARSession.getFrame接口示例代码
+let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.PLANE);
+let pose: arEngine.ARPose = trackables[0].getPose();
+let plane: arEngine.ARPlane = trackables[0] as arEngine.ARPlane;
+plane.isPoseInPolygon(pose);
 ```
 
 ## ARPlaneAnchor
-
-PhoneTabletTV
 
 一个平面类型的锚点对象。
 
@@ -3517,13 +3355,11 @@ PhoneTabletTV
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
 ### ARPlaneAnchor.getPlane
-
-PhoneTabletTV
 
 getPlane(): ARPlane
 
@@ -3533,7 +3369,7 @@ getPlane(): ARPlane
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3545,7 +3381,7 @@ getPlane(): ARPlane
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3553,20 +3389,18 @@ getPlane(): ARPlane
 
 **示例：**
 
-```
-1. import { arEngine, ARView, arViewController } from '@kit.AREngine';
-2. import { Node } from '@kit.ArkGraphics3D';
-3. // 该方法在ARViewCallback中使用
-4. async onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): Promise<void> {
-5. let planeAnchor: arEngine.ARPlaneAnchor = anchor as arEngine.ARPlaneAnchor;
-6. let plane: arEngine.ARPlane = planeAnchor.getPlane();
-7. await plane.release();
-8. }
+```typescript
+import { arEngine, ARView, arViewController } from '@kit.AREngine';
+import { Node } from '@kit.ArkGraphics3D';
+// 该方法在ARViewCallback中使用
+async onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): Promise<void> {
+  let planeAnchor: arEngine.ARPlaneAnchor = anchor as arEngine.ARPlaneAnchor;
+  let plane: arEngine.ARPlane = planeAnchor.getPlane();
+  await plane.release();
+}
 ```
 
 ## ARPoint
-
-PhoneTabletTV
 
 可被追踪的3D点云对象。
 
@@ -3576,7 +3410,7 @@ PhoneTabletTV
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3586,8 +3420,6 @@ PhoneTabletTV
 
 ## ARPose
 
-PhoneTabletTV
-
 位姿对象。
 
 代表从一个坐标系到另一个坐标系的不可改变刚性变换，如平移或旋转。
@@ -3596,7 +3428,7 @@ PhoneTabletTV
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3607,8 +3439,6 @@ PhoneTabletTV
 
 ### ARPose.getMatrix
 
-PhoneTabletTV
-
 getMatrix(): Matrix4
 
 将位姿数据转换为一个4x4的矩阵。
@@ -3617,7 +3447,7 @@ getMatrix(): Matrix4
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3629,7 +3459,7 @@ getMatrix(): Matrix4
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3637,19 +3467,17 @@ getMatrix(): Matrix4
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let frame: arEngine.ARFrame = arSession.getFrame();
-5. let camera: arEngine.ARCamera = frame.getCamera();
-6. let pose: arEngine.ARPose = camera.getPose();
-7. pose.getMatrix();
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+let camera: arEngine.ARCamera = frame.getCamera();
+let pose: arEngine.ARPose = camera.getPose();
+pose.getMatrix();
 ```
 
 ### ARPose.release
-
-PhoneTabletTV
 
 release(): Promise<void>
 
@@ -3659,7 +3487,7 @@ release(): Promise<void>
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3671,7 +3499,7 @@ release(): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3679,19 +3507,17 @@ release(): Promise<void>
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let frame: arEngine.ARFrame = arSession.getFrame();
-5. let camera: arEngine.ARCamera = frame.getCamera();
-6. let pose: arEngine.ARPose = camera.getPose();
-7. await pose.release();
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+let camera: arEngine.ARCamera = frame.getCamera();
+let pose: arEngine.ARPose = camera.getPose();
+await pose.release();
 ```
 
 ## ARSceneMesh
-
-PhoneTabletTV
 
 环境网格数据集合。
 
@@ -3699,7 +3525,7 @@ PhoneTabletTV
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3710,8 +3536,6 @@ PhoneTabletTV
 
 ### ARSceneMesh.getVertices
 
-PhoneTabletTV
-
 getVertices(): ArrayBuffer
 
 获取场景网格中的顶点坐标数据。
@@ -3720,7 +3544,7 @@ getVertices(): ArrayBuffer
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3732,7 +3556,7 @@ getVertices(): ArrayBuffer
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3740,18 +3564,16 @@ getVertices(): ArrayBuffer
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let frame: arEngine.ARFrame = arSession.getFrame();
-5. let sceneMesh: arEngine.ARSceneMesh = frame.acquireSceneMesh();
-6. sceneMesh.getVertices();
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+let sceneMesh: arEngine.ARSceneMesh = frame.acquireSceneMesh();
+sceneMesh.getVertices();
 ```
 
 ### ARSceneMesh.getVertexNormals
-
-PhoneTabletTV
 
 getVertexNormals(): ArrayBuffer
 
@@ -3761,7 +3583,7 @@ getVertexNormals(): ArrayBuffer
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3773,7 +3595,7 @@ getVertexNormals(): ArrayBuffer
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3781,18 +3603,16 @@ getVertexNormals(): ArrayBuffer
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let frame: arEngine.ARFrame = arSession.getFrame();
-5. let sceneMesh: arEngine.ARSceneMesh = frame.acquireSceneMesh();
-6. sceneMesh.getVertexNormals();
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+let sceneMesh: arEngine.ARSceneMesh = frame.acquireSceneMesh();
+sceneMesh.getVertexNormals();
 ```
 
 ### ARSceneMesh.getTriangleIndices
-
-PhoneTabletTV
 
 getTriangleIndices(): ArrayBuffer
 
@@ -3802,7 +3622,7 @@ getTriangleIndices(): ArrayBuffer
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3814,7 +3634,7 @@ getTriangleIndices(): ArrayBuffer
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3822,18 +3642,16 @@ getTriangleIndices(): ArrayBuffer
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let frame: arEngine.ARFrame = arSession.getFrame();
-5. let sceneMesh: arEngine.ARSceneMesh = frame.acquireSceneMesh();
-6. sceneMesh.getTriangleIndices();
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+let sceneMesh: arEngine.ARSceneMesh = frame.acquireSceneMesh();
+sceneMesh.getTriangleIndices();
 ```
 
 ### ARSceneMesh.release
-
-PhoneTabletTV
 
 release(): Promise<void>
 
@@ -3843,7 +3661,7 @@ release(): Promise<void>
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3855,7 +3673,7 @@ release(): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3863,18 +3681,16 @@ release(): Promise<void>
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let frame: arEngine.ARFrame = arSession.getFrame();
-5. let sceneMesh: arEngine.ARSceneMesh = frame.acquireSceneMesh();
-6. await sceneMesh.release();
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+let sceneMesh: arEngine.ARSceneMesh = frame.acquireSceneMesh();
+await sceneMesh.release();
 ```
 
 ## ARSemanticDenseData
-
-PhoneTabletTV
 
 表示高精几何重建对象数据的集合。
 
@@ -3882,7 +3698,7 @@ PhoneTabletTV
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 6.0.0(20)
 
@@ -3894,8 +3710,6 @@ PhoneTabletTV
 
 ### ARSemanticDenseData.acquirePointData
 
-PhoneTabletTV
-
 acquirePointData(): ARSemanticDensePointData
 
 高精几何重建对象数据中稠密点云数据信息。
@@ -3904,7 +3718,7 @@ acquirePointData(): ARSemanticDensePointData
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 6.0.0(20)
 
@@ -3916,7 +3730,7 @@ acquirePointData(): ARSemanticDensePointData
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3924,18 +3738,16 @@ acquirePointData(): ARSemanticDensePointData
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let frame: arEngine.ARFrame = arSession.getFrame();
-5. let semanticData: arEngine.ARSemanticDenseData = frame.acquireSemanticDense();
-6. semanticData.acquirePointData();
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+let semanticData: arEngine.ARSemanticDenseData = frame.acquireSemanticDense();
+semanticData.acquirePointData();
 ```
 
 ### ARSemanticDenseData.acquireCubeData
-
-PhoneTabletTV
 
 acquireCubeData(): Array<ARSemanticDenseCubeData>
 
@@ -3945,7 +3757,7 @@ acquireCubeData(): Array<ARSemanticDenseCubeData>
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 6.0.0(20)
 
@@ -3957,7 +3769,7 @@ acquireCubeData(): Array<ARSemanticDenseCubeData>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3965,18 +3777,16 @@ acquireCubeData(): Array<ARSemanticDenseCubeData>
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let frame: arEngine.ARFrame = arSession.getFrame();
-5. let semanticData: arEngine.ARSemanticDenseData = frame.acquireSemanticDense();
-6. semanticData.acquireCubeData();
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+let semanticData: arEngine.ARSemanticDenseData = frame.acquireSemanticDense();
+semanticData.acquireCubeData();
 ```
 
 ### ARSemanticDenseData.release
-
-PhoneTabletTV
 
 release(): Promise<void>
 
@@ -3986,7 +3796,7 @@ release(): Promise<void>
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 6.0.0(20)
 
@@ -3998,7 +3808,7 @@ release(): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4006,18 +3816,16 @@ release(): Promise<void>
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let frame: arEngine.ARFrame = arSession.getFrame();
-5. let semanticData: arEngine.ARSemanticDenseData = frame.acquireSemanticDense();
-6. await semanticData.release();
+// arSession创建参考ARSession.getFrame接口示例代码
+let frame: arEngine.ARFrame = arSession.getFrame();
+let semanticData: arEngine.ARSemanticDenseData = frame.acquireSemanticDense();
+await semanticData.release();
 ```
 
 ## ARTrackable
-
-PhoneTabletTV
 
 可追踪的对象。
 
@@ -4025,7 +3833,7 @@ PhoneTabletTV
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -4036,8 +3844,6 @@ PhoneTabletTV
 
 ### ARTrackable.getPose
 
-PhoneTabletTV
-
 getPose(): ARPose
 
 获取追踪对象的位姿信息。
@@ -4046,7 +3852,7 @@ getPose(): ARPose
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -4058,7 +3864,7 @@ getPose(): ARPose
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4066,17 +3872,15 @@ getPose(): ARPose
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.BASE);
-5. trackables[0].getPose();
+// arSession创建参考ARSession.getFrame接口示例代码
+let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.BASE);
+trackables[0].getPose();
 ```
 
 ### ARTrackable.getAnchors
-
-PhoneTabletTV
 
 getAnchors(): Array<ARAnchor>
 
@@ -4086,7 +3890,7 @@ getAnchors(): Array<ARAnchor>
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -4098,7 +3902,7 @@ getAnchors(): Array<ARAnchor>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4106,17 +3910,15 @@ getAnchors(): Array<ARAnchor>
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.BASE);
-5. trackables[0].getAnchors();
+// arSession创建参考ARSession.getFrame接口示例代码
+let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.BASE);
+trackables[0].getAnchors();
 ```
 
 ### ARTrackable.createAnchor
-
-PhoneTabletTV
 
 createAnchor(pose: ARPose): ARAnchor
 
@@ -4126,7 +3928,7 @@ createAnchor(pose: ARPose): ARAnchor
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -4144,7 +3946,7 @@ createAnchor(pose: ARPose): ARAnchor
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4153,18 +3955,16 @@ createAnchor(pose: ARPose): ARAnchor
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.BASE);
-5. let pose: arEngine.ARPose = trackables[0].getPose();
-6. trackables[0].createAnchor(pose);
+// arSession创建参考ARSession.getFrame接口示例代码
+let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.BASE);
+let pose: arEngine.ARPose = trackables[0].getPose();
+trackables[0].createAnchor(pose);
 ```
 
 ### ARTrackable.release
-
-PhoneTabletTV
 
 release(): Promise<void>
 
@@ -4174,7 +3974,7 @@ release(): Promise<void>
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -4186,7 +3986,7 @@ release(): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4194,17 +3994,15 @@ release(): Promise<void>
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. // arSession创建参考ARSession.getFrame接口示例代码
-4. let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.BASE);
-5. await trackables[0].release();
+// arSession创建参考ARSession.getFrame接口示例代码
+let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.BASE);
+await trackables[0].release();
 ```
 
 ## arEngine.createARAugmentedImageDatabase
-
-PhoneTabletTV
 
 createARAugmentedImageDatabase(): Promise<ARAugmentedImageDatabase>
 
@@ -4224,7 +4022,7 @@ createARAugmentedImageDatabase(): Promise<ARAugmentedImageDatabase>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4232,15 +4030,13 @@ createARAugmentedImageDatabase(): Promise<ARAugmentedImageDatabase>
 
 **示例：**
 
-```
-1. import { arEngine } from '@kit.AREngine';
+```typescript
+import { arEngine } from '@kit.AREngine';
 
-3. await arEngine.createARAugmentedImageDatabase();
+await arEngine.createARAugmentedImageDatabase();
 ```
 
 ## arEngine.createARPose
-
-PhoneTabletTV
 
 createARPose(rotation: Quaternion, translation: Vec3): ARPose
 
@@ -4267,7 +4063,7 @@ createARPose(rotation: Quaternion, translation: Vec3): ARPose
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4276,16 +4072,16 @@ createARPose(rotation: Quaternion, translation: Vec3): ARPose
 
 **示例：**
 
-```
-1. import { Quaternion, Vec3 } from '@kit.ArkGraphics3D';
-2. import { arEngine } from '@kit.AREngine';
+```typescript
+import { Quaternion, Vec3 } from '@kit.ArkGraphics3D';
+import { arEngine } from '@kit.AREngine';
 
-4. let r: Quaternion = {
-5. x: 0,
-6. y: 0,
-7. z: 0,
-8. w: 0
-9. };
-10. let t: Vec3 = { x: 0, y: 0, z: 0 };
-11. arEngine.createARPose(r, t);
+let r: Quaternion = {
+  x: 0,
+  y: 0,
+  z: 0,
+  w: 0
+};
+let t: Vec3 = { x: 0, y: 0, z: 0 };
+arEngine.createARPose(r, t);
 ```

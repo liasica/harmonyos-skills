@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 升级react-native-openharmony编译出错
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 升级react-native-openharmony编译出错
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:21:05+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:06379c8b5e7af2739d388dbbd403ce159815eea4fefae76d2f6ce58eb53f3db2
+scraped_at: 2026-09-02T14:54:55+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:74a5304e1c2bd4958f401a937226f00e2bacdd2c48ccb390c6e1257b2597653c
 ---
 
 **问题现象**
 
 升级react-native-openharmony编译出错，类似如下报错：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/1tpFiQmBQ4Kl9kpDiQStfw/zh-cn_image_0000002304734606.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/JuvodfiVTDOUtDbO5laJWw/zh-cn_image_0000002624638608.png)
 
 **问题原因**
 

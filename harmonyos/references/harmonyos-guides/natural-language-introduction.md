@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/natural-langu
 title: Natural Language Kit简介
 breadcrumb: 指南 > AI > Natural Language Kit（自然语言理解服务） > Natural Language Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:49+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:22b4bf90abbe4b9f5f99cb4798291ddf5486b1dd3983505ca3ccc06d2a1fde71
+scraped_at: 2026-09-02T15:00:15+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:99c508f9be89b29675fb16a12f5b1f03f178499fee82f63f857d1e73d759b6b5
 ---
 
 Natural Language Kit（自然语言理解服务）提供了多项文本语义理解相关的基础能力，帮助开发者更好地处理和分析文本数据。具体包括以下几个方面：
@@ -32,10 +32,10 @@ Phone、Tablet、PC/2in1。
 | 分词 | - 支持的语言：简体中文、中文语境下的英文、繁体中文。  - 文本长度：不超过1000字符。 |
 | 实体抽取 | - 支持的语言：简体中文、中文语境下的英文、繁体中文。  - 支持的实体：时间、地点、邮箱、快递单号、航班号、人名、电话号码、网址链接、验证码、证件号。  - 文本长度：不超过1000字符。 |
 
-说明
+**说明** 
 
-Natural Language Kit的特性支持多用户同时接入，但是不支持同一用户并发调用同一个特性，如同一个特性被同一进程同一时间多次调用，则返回系统繁忙错误，不同进程调用同一特性，则同一时间只有一个进程业务在处理，其他进程进入队列排队。
+Natural Language Kit的特性支持多应用同时接入，但是不支持同一应用并发调用同一个特性，如同一个特性被同一进程同一时间多次调用，则返回系统繁忙错误（错误码：1011200002），不同进程调用同一特性，则同一时间只有一个进程业务在处理，其他进程进入队列排队。
 
 ## 模拟器支持情况
 
-本kit暂不支持模拟器。
+本Kit暂不支持模拟器。

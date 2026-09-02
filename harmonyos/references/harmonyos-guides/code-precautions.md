@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/code-precauti
 title: 应用升级过程代码开发注意事项
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用数据备份恢复 > 设备升级应用数据迁移适配指导 > 应用升级过程代码开发注意事项
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:43+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:63e28b1a15e9d1607c19e1f12b0dd1b02a3280e1b796f364234a1adccd5cb349
+scraped_at: 2026-09-02T14:59:24+08:00
+doc_updated_at: 2026-05-18
+content_hash: sha256:c0e956c04e9117517ca239fec6daf10b8ea5783a6aa2e05299af3b7bf404d16e
 ---
 
 ## 区分升级场景和克隆场景
@@ -14,68 +14,68 @@ content_hash: sha256:63e28b1a15e9d1607c19e1f12b0dd1b02a3280e1b796f364234a1adccd5
 
 示例代码如下所示：
 
-```
-1. import { BackupExtensionAbility, BundleVersion } from '@kit.CoreFileKit';
+```ts
+import { BackupExtensionAbility, BundleVersion } from '@kit.CoreFileKit';
 
-3. const TAG = `BackupExtensionAbility`;
+const TAG = `BackupExtensionAbility`;
 
-5. interface ErrorInfo {
-6. type: string,
-7. errorCode: number,
-8. errorInfo: string
-9. }
+interface ErrorInfo {
+  type: string,
+  errorCode: number,
+  errorInfo: string
+}
 
-11. interface DetailInfo {
-12. type: string,
-13. detail: string
-14. }
+interface DetailInfo {
+  type: string,
+  detail: string
+}
 
-16. export default class EntryBackupAbility extends BackupExtensionAbility {
-17. async onBackup() {
-18. console.info(TAG, 'onBackup ok');
-19. }
+export default class EntryBackupAbility extends BackupExtensionAbility {
+  async onBackup() {
+    console.info(TAG, 'onBackup ok');
+  }
 
-21. async onRestoreEx(bundleVersion: BundleVersion, restoreInfo: string): Promise<string> {
-22. console.info(TAG, `onRestoreEx ok ${JSON.stringify(bundleVersion)}`);
-23. let errorInfo: ErrorInfo = {
-24. type: "ErrorInfo",
-25. errorCode: 0,
-26. errorInfo: "app diy error info"
-27. }
-28. if (bundleVersion.name.startsWith("0.0.0.0")){
-29. // 在此处实现终端设备从HarmonyOS 4.x到HarmonyOS NEXT的应用数据处理。
-30. // 涉及异步操作请进行同步等待
-31. console.info(TAG, `HarmonyOS to HarmonyOS NEXT scenario`);
+  async onRestoreEx(bundleVersion: BundleVersion, restoreInfo: string): Promise<string> {
+    console.info(TAG, `onRestoreEx ok ${JSON.stringify(bundleVersion)}`);
+    let errorInfo: ErrorInfo = {
+      type: "ErrorInfo",
+      errorCode: 0,
+      errorInfo: "app diy error info"
+    }
+    if (bundleVersion.name.startsWith("0.0.0.0")){
+      // 在此处实现终端设备从HarmonyOS 4.x到HarmonyOS NEXT的应用数据处理。
+      // 涉及异步操作请进行同步等待
+      console.info(TAG, `HarmonyOS to HarmonyOS NEXT scenario`);
 
-33. // 如果升级场景与克隆场景没有差异化数据处理诉求，此处可以忽略。
-34. if (this.IsOtaScenario(restoreInfo)) {
-35. // 在此处实现终端设备从HarmonyOS 4.x到HarmonyOS NEXT升级场景的特有数据处理。无特殊要求，此处可以忽略。
-36. console.info(TAG, `Ota Scenario`)
-37. } else {
-38. // 在此处实现终端设备从HarmonyOS 4.x到HarmonyOS NEXT克隆场景的特有数据处理。无特殊要求，此处可以忽略。
-39. console.info(TAG, `Clone Scenario`)
-40. }
-41. } else {
-42. // 在此处实现从HarmonyOS NEXT设备迁移到HarmonyOS NEXT设备后，应用数据的处理。无特殊要求，可以空实现。
-43. // 涉及异步操作请进行同步等待
-44. console.info(TAG, `Other scenario`);
-45. }
-46. return JSON.stringify(errorInfo);
-47. }
+      // 如果升级场景与克隆场景没有差异化数据处理诉求，此处可以忽略。
+      if (this.IsOtaScenario(restoreInfo)) {
+        // 在此处实现终端设备从HarmonyOS 4.x到HarmonyOS NEXT升级场景的特有数据处理。无特殊要求，此处可以忽略。
+        console.info(TAG, `Ota Scenario`)
+      } else {
+        // 在此处实现终端设备从HarmonyOS 4.x到HarmonyOS NEXT克隆场景的特有数据处理。无特殊要求，此处可以忽略。
+        console.info(TAG, `Clone Scenario`)
+      }
+    } else {
+      // 在此处实现从HarmonyOS NEXT设备迁移到HarmonyOS NEXT设备后，应用数据的处理。无特殊要求，可以空实现。
+      // 涉及异步操作请进行同步等待
+      console.info(TAG, `Other scenario`);
+    }
+    return JSON.stringify(errorInfo);
+  }
 
-49. /**
-50. * 判断是否是升级场景
-51. * @param restoreInfo 预留字段，应用恢复过程中需要的扩展参数
-52. * @returns 升级场景返回true，否则返回false
-53. */
-54. IsOtaScenario(restoreInfo: string): boolean {
-55. let details:Array<DetailInfo> = JSON.parse(restoreInfo);
-56. return details.some((detailInfo) => {
-57. //设备从HarmonyOS 4.x升级到HarmonyOS NEXT/5.0.x场景判断条件
-58. return detailInfo.type == 'isSameDevice' && detailInfo.detail == 'true';
-59. });
-60. }
-61. }
+  /**
+   * 判断是否是升级场景
+   * @param restoreInfo 预留字段，应用恢复过程中需要的扩展参数
+   * @returns 升级场景返回true，否则返回false
+   */
+  IsOtaScenario(restoreInfo: string): boolean {
+    let details:Array<DetailInfo> = JSON.parse(restoreInfo);
+    return details.some((detailInfo) => {
+      // 设备从HarmonyOS 4.x升级到HarmonyOS NEXT/5.0.x场景判断条件
+      return detailInfo.type == 'isSameDevice' && detailInfo.detail == 'true';
+    });
+  }
+}
 ```
 
 ## 公共目录文件URI继承
@@ -86,12 +86,12 @@ content_hash: sha256:63e28b1a15e9d1607c19e1f12b0dd1b02a3280e1b796f364234a1adccd5
 
 为解决该问题，系统提供数据迁移公共目录文件继承方案，支持应用将记录的HarmonyOS公共媒体库文件URI或者路径转换为对应的HarmonyOS NEXT公共媒体库文件URI或者路径，并且返回对应文件类型。当应用需要在HarmonyOS NEXT中访问公共媒体库中的文件时，可以使用转换后的HarmonyOS NEXT公共媒体库文件URI或者路径，通过HarmonyOS NEXT提供的公共媒体库API进行授权访问。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/ARaupraWQPyNJU2x0zM7PA/zh-cn_image_0000002589244577.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/0UStgaQRTR-pM_A0uEswRw/zh-cn_image_0000002706834130.png)
 
 ### 代码实现
 
-应用可以调用Scenario Fusion Kit的接口[convertFileUris()](../harmonyos-references/scenario-fusion-fileuriresult.md#section1272664195920)，将记录的HarmonyOS公共媒体库文件URI或者路径转换为HarmonyOS NEXT可访问的URI或者路径，并获取到对应文件类型。其中媒体文件类型请参考[继承媒体文件访问权限](medialibrary-request-photouris-permission.md)，其他类型文件可通过[基础文件接口](app-file-access.md)进行操作。convertFileUris()接口详细使用指导请参考：[基于融合场景服务实现文件路径转换参考指导](scenario-fusion-api-path-conversion.md)。
+应用可以调用Scenario Fusion Kit的接口[convertFileUris()](../harmonyos-references/scenario-fusion-fileuriresult.md#convertfileuris)，将记录的HarmonyOS公共媒体库文件URI或者路径转换为HarmonyOS NEXT可访问的URI或者路径，并获取到对应文件类型。其中媒体文件类型请参考[继承媒体文件访问权限](medialibrary-request-photouris-permission.md)，其他类型文件可通过[基础文件接口](app-file-access.md)进行操作。convertFileUris()接口详细使用指导请参考：[基于融合场景服务实现文件路径转换参考指导](scenario-fusion-api-path-conversion.md)。
 
-说明
+**说明** 
 
 开发者可以在数据迁移的过程中，通过该接口将HarmonyOS公共媒体库文件URI或者路径转换为对应的HarmonyOS NEXT公共媒体库文件URI或者路径，并重新保存，便于后续使用。

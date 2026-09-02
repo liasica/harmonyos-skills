@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-api-healthfields
-title: healthFields(运动健康数据字段)
-breadcrumb: API参考 > 应用服务 > Health Service Kit（运动健康服务） > ArkTS API > 运动健康数据类型常量及模型定义 > healthFields(运动健康数据字段)
+title: healthFields (运动健康数据字段)
+breadcrumb: API参考 > 应用服务 > Health Service Kit（运动健康服务） > ArkTS API > 运动健康数据类型常量及模型定义 > healthFields (运动健康数据字段)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:52+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5f94d612f3b2758004536d782f6eb8b44852c5f67afb74536dcb6ed28aef9ecb
+scraped_at: 2026-09-02T15:02:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7a6e9d6afa5be45d7e4d6ba74e524b9808bc052f6329387289ae2f024d275b2b
 ---
 
 本模块提供运动健康数据字段列表。
@@ -14,25 +14,23 @@ content_hash: sha256:5f94d612f3b2758004536d782f6eb8b44852c5f67afb74536dcb6ed28ae
 
 ## 导入模块
 
-PhoneTabletWearable
-
-```
-1. import { healthStore } from '@kit.HealthServiceKit';
+```typescript
+import { healthStore } from '@kit.HealthServiceKit';
 ```
 
-说明
+**说明** 
 
 此模块为healthStore子模块，需通过healthStore.healthFields方式使用。
 
 ## AdventuresDetail
-
-PhoneTabletWearable
 
 户外探险详情数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -41,13 +39,13 @@ PhoneTabletWearable
 
 ## AdventuresSummary
 
-PhoneTabletWearable
-
 户外探险统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -59,21 +57,19 @@ PhoneTabletWearable
 
 ## Altitude
 
-PhoneTabletWearable
-
 海拔详情数据字段列表，继承[healthStore.SequencePoint](health-api-healthstore.md#sequencepoint)。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| altitude | number | 否 | 否 | 海拔。  单位：米 |
+| altitude | number | 否 | 否 | 海拔。  单位：m |
 
 ## AltitudeSummary
-
-PhoneTabletWearable
 
 海拔统计数据字段列表。
 
@@ -81,23 +77,25 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| max | number | 否 | 否 | 最大值。  单位：米 |
-| min | number | 否 | 否 | 最小值。  单位：米 |
-| avg | number | 否 | 是 | 平均值，若未填写，默认为空。  单位：米 |
-| totalAscent | number | 否 | 是 | 累计爬升，若未填写，默认为空。  单位：米  取值范围：[0, ∞) |
-| totalDescent | number | 否 | 是 | 累计下降，若未填写，默认为空。  单位：米  取值范围：[0, ∞) |
+| max | number | 否 | 否 | 最大值。  单位：m |
+| min | number | 否 | 否 | 最小值。  单位：m |
+| avg | number | 否 | 是 | 平均值，若未填写，默认为空。  单位：m |
+| totalAscent | number | 否 | 是 | 累计爬升，若未填写，默认为空。  单位：m  取值范围：[0, ∞) |
+| totalDescent | number | 否 | 是 | 累计下降，若未填写，默认为空。  单位：m  取值范围：[0, ∞) |
 
 ## BasketballDetail
-
-PhoneTabletWearable
 
 篮球详情数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -107,13 +105,13 @@ PhoneTabletWearable
 
 ## BasketballFeature
 
-PhoneTabletWearable
-
 篮球特征数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -126,13 +124,13 @@ PhoneTabletWearable
 
 ## BasketballSummary
 
-PhoneTabletWearable
-
 篮球统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -143,13 +141,13 @@ PhoneTabletWearable
 
 ## BiathlonDetail
 
-PhoneTabletWearable
-
 冬季两项详情数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -158,13 +156,15 @@ PhoneTabletWearable
 
 ## BiathlonSummary
 
-PhoneTabletWearable
+type BiathlonSummary = SportsSummary
 
 冬季两项统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -173,21 +173,19 @@ PhoneTabletWearable
 
 ## BloodOxygenSaturation
 
-PhoneTabletWearable
-
 血氧采样数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| spo2 | number | 否 | 否 | 血氧饱和度。  单位：百分比  取值范围：(0, 100]。 |
+| spo2 | number | 否 | 否 | 血氧饱和度。  单位：%  取值范围：(0, 100] |
 
 ## BloodOxygenSaturationAggregation
-
-PhoneTabletWearable
 
 血氧聚合统计数据字段列表。
 
@@ -195,19 +193,21 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | spo2 | Omit<[AggregateMetrics](health-api-healthstore.md#aggregatemetrics), 'sum' | 'count'> | 否 | 否 | 血氧饱和度聚合统计。 |
 
 ## BloodPressure
 
-PhoneTabletWearable
-
 血压采样数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -219,21 +219,19 @@ PhoneTabletWearable
 
 ## BodyTemperature
 
-PhoneTabletWearable
-
 体温采样数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| bodyTemperature | number | 否 | 否 | 体温。  单位：摄氏度  取值范围：[34, 42]。 |
+| bodyTemperature | number | 否 | 否 | 体温。  单位：°C  取值范围：[34, 42] |
 
 ## BodyTemperatureAggregation
-
-PhoneTabletWearable
 
 体温聚合统计数据字段列表。
 
@@ -241,13 +239,15 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | bodyTemperature | Omit<[AggregateMetrics](health-api-healthstore.md#aggregatemetrics), 'sum' | 'last'> | 否 | 否 | 体温聚合统计。 |
 
 ## BreathHoldingTestDetail
 
-PhoneTabletWearable
+type BreathHoldingTestDetail = SportsDetail
 
 闭气测试详情数据字段列表。
 
@@ -255,13 +255,13 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | exerciseHeartRate | [ExerciseHeartRate](health-api-healthfields.md#exerciseheartrate)[] | 否 | 是 | 运动心率详情列表，若未填写，默认为空。 |
 
 ## BreathHoldingTestFeature
-
-PhoneTabletWearable
 
 闭气测试特征数据字段列表。
 
@@ -269,19 +269,21 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| diaphragmTime | number | 否 | 否 | 横膈膜打点时间。  单位：秒 |
+| diaphragmTime | number | 否 | 否 | 横膈膜打点时间。  单位：s |
 
 ## BreathHoldingTestSummary
-
-PhoneTabletWearable
 
 闭气测试统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -290,7 +292,7 @@ PhoneTabletWearable
 
 ## BreathHoldingTrainDetail
 
-PhoneTabletWearable
+type BreathHoldingTrainDetail = SportsDetail
 
 闭气训练详情数据字段列表。
 
@@ -298,13 +300,13 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | exerciseHeartRate | [ExerciseHeartRate](health-api-healthfields.md#exerciseheartrate)[] | 否 | 是 | 运动心率详情列表，若未填写，默认为空。 |
 
 ## BreathHoldingTrainFeature
-
-PhoneTabletWearable
 
 闭气训练特征数据字段列表。
 
@@ -312,21 +314,23 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| breathTime | number | 否 | 否 | 呼吸时间。  单位：秒 |
-| breathHoldingTime | number | 否 | 否 | 闭气时间。  单位：秒 |
+| breathTime | number | 否 | 否 | 呼吸时间。  单位：s |
+| breathHoldingTime | number | 否 | 否 | 闭气时间。  单位：s |
 | breathHoldingTrainRhythm | number | 否 | 是 | 闭气训练节奏数，若未填写，默认为空。  单位：次 |
 
 ## BreathHoldingTrainSummary
-
-PhoneTabletWearable
 
 闭气训练统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -335,13 +339,13 @@ PhoneTabletWearable
 
 ## Cadence
 
-PhoneTabletWearable
-
 步频详情数据字段列表，继承[healthStore.SequencePoint](health-api-healthstore.md#sequencepoint)。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -349,13 +353,15 @@ PhoneTabletWearable
 
 ## CadenceSummary
 
-PhoneTabletWearable
+type CadenceSummary = QuantitySummary
 
 步频统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -365,27 +371,41 @@ PhoneTabletWearable
 
 ## CalorieSummary
 
-PhoneTabletWearable
-
 卡路里统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| totalCalories | number | 否 | 否 | 卡路里总和。  单位：卡  取值范围：(0, ∞) |
+| totalCalories | number | 否 | 否 | 卡路里总和。  单位：cal  取值范围：(0, ∞) |
+
+## CervicalMucus
+
+私处分泌物采样数据字段列表，继承[healthStore.SequencePoint](health-api-healthstore.md#sequencepoint)。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 6.1.1(24)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 只读 | 可选 | **说明** |
+| --- | --- | --- | --- | --- |
+| cervicalMucus | number | 否 | 否 | 私处分泌物。  取值参考如下：  0：未选中  1：干燥  2：粘稠  3：蛋清状  4：水状  5：乳液状 |
 
 ## CyclingDetail
-
-PhoneTabletWearable
 
 骑行详情数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -399,13 +419,13 @@ PhoneTabletWearable
 
 ## CyclingSummary
 
-PhoneTabletWearable
-
 骑行统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -421,28 +441,26 @@ PhoneTabletWearable
 
 ## DailyActivities
 
-PhoneTabletWearable
-
 日常活动采样数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | step | number | 否 | 否 | 步数。  单位：步  取值范围：[0, 500) |
-| calorie | number | 否 | 否 | 热量。  单位：卡  取值范围：[0, 65536) |
-| distance | number | 否 | 否 | 距离。  单位：米  取值范围：[0, ∞) |
-| duration | number | 否 | 是 | 时长，若未填写，默认为空。  单位：分钟  取值范围：0 或 1 |
+| calorie | number | 否 | 否 | 热量。  单位：cal  取值范围：[0, 65536) |
+| distance | number | 否 | 否 | 距离。  单位：m  取值范围：[0, ∞) |
+| duration | number | 否 | 是 | 时长，若未填写，默认为空。  单位：min  取值范围：0 或 1 |
 | status | number | 否 | 是 | 状态（走、跑、骑、爬等），若未填写，默认为空。  取值范围：  2： 登山  3： 骑行  4： 跑步  5：走路  9：游泳  10：健身  13：站立 |
 | isIntensity | number | 否 | 是 | 是否中高强度，若未填写，默认为空。  取值范围：  0：否  1：是 |
-| climbHighAltitude | number | 否 | 是 | 爬高海拔差（支持正负），若未填写，默认为空。  单位：米 |
+| climbHighAltitude | number | 否 | 是 | 爬高海拔差（支持正负），若未填写，默认为空。  单位：m |
 | isStand | number | 否 | 是 | 是否站立（一个小时有活动记录，就标志这个小时的第一分钟为1），若未填写，默认为空。  取值范围：  0：否  1：是 |
 
 ## DailyActivitiesAggregation
-
-PhoneTabletWearable
 
 日常活动聚合统计数据字段列表。
 
@@ -451,6 +469,8 @@ PhoneTabletWearable
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -463,21 +483,19 @@ PhoneTabletWearable
 
 ## DistanceSummary
 
-PhoneTabletWearable
-
 距离统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| totalDistance | number | 否 | 否 | 距离统计。  单位：米  取值范围：(0, ∞) |
+| totalDistance | number | 否 | 否 | 距离统计。  单位：m  取值范围：(0, ∞) |
 
 ## DivingDepth
-
-PhoneTabletWearable
 
 潜水深度详情数据字段列表，继承[healthStore.SequencePoint](health-api-healthstore.md#sequencepoint)。
 
@@ -485,13 +503,15 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| depth | number | 否 | 否 | 潜水深度。  单位：米 |
+| depth | number | 否 | 否 | 潜水深度。  单位：m |
 
 ## DivingDepthSummary
 
-PhoneTabletWearable
+type DivingDepthSummary = Omit<QuantitySummary, 'min'>
 
 潜水深度统计数据字段列表。
 
@@ -499,20 +519,22 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| avg | number | 否 | 否 | 平均值。  单位：米  取值范围：[0, ∞) |
-| max | number | 否 | 否 | 最大值。  单位：米  取值范围：[0, ∞) |
+| avg | number | 否 | 否 | 平均值。  单位：m  取值范围：[0, ∞) |
+| max | number | 否 | 否 | 最大值。  单位：m  取值范围：[0, ∞) |
 
 ## DivingDetail
-
-PhoneTabletWearable
 
 自由潜水详情数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -521,36 +543,36 @@ PhoneTabletWearable
 
 ## DivingFeature
 
-PhoneTabletWearable
-
 自由潜水特征数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| divingTime | number | 否 | 否 | 潜水时间。  单位：秒 |
+| divingTime | number | 否 | 否 | 潜水时间。  单位：s |
 | divingCount | number | 否 | 否 | 潜水次数。 |
 | divingMode | number | 否 | 否 | 潜水模式。  取值参考如下：  0：自由潜水  1：休闲水肺潜水  2：技术水肺潜水  3：仪表潜水 |
-| maxUnderwaterTime | number | 否 | 是 | 单次水下最长时间，若未填写，默认为空。  单位：秒 |
-| underwaterTime | number | 否 | 是 | 水下时间，若未填写，默认为空。  单位：秒 |
-| noFlyTime | number | 否 | 是 | 禁飞时间，若未填写，默认为空。  单位：小时 |
+| maxUnderwaterTime | number | 否 | 是 | 单次水下最长时间，若未填写，默认为空。  单位：s |
+| underwaterTime | number | 否 | 是 | 水下时间，若未填写，默认为空。  单位：s |
+| noFlyTime | number | 否 | 是 | 禁飞时间，若未填写，默认为空。  单位：h |
 | waterType | number | 否 | 是 | 水体类型，若未填写，默认为空。  取值参考如下：  0：自定义  1：淡水  2：海水 |
-| waterDensity | number | 否 | 是 | 水密度，若未填写，默认为空。  单位：千克/升 |
-| maxAscentSpeed | number | 否 | 是 | 最大上升速度，若未填写，默认为空。  单位：米/秒 |
-| maxDescentSpeed | number | 否 | 是 | 最大下降速度，若未填写，默认为空。  单位：米/秒 |
+| waterDensity | number | 否 | 是 | 水密度，若未填写，默认为空。  单位：kg/L |
+| maxAscentSpeed | number | 否 | 是 | 最大上升速度，若未填写，默认为空。  单位：m/s |
+| maxDescentSpeed | number | 否 | 是 | 最大下降速度，若未填写，默认为空。  单位：m/s |
 
 ## DivingSummary
-
-PhoneTabletWearable
 
 自由潜水统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -559,15 +581,29 @@ PhoneTabletWearable
 | divingDepth | [DivingDepthSummary](health-api-healthfields.md#divingdepthsummary) | 否 | 是 | 潜水深度统计，若未填写，默认为空。 |
 | waterTemperature | [WaterTemperatureSummary](health-api-healthfields.md#watertemperaturesummary) | 否 | 是 | 水温统计，若未填写，默认为空。 |
 
-## EllipticalDetail
+## Dysmenorrhea
 
-PhoneTabletWearable
+痛经程度采样数据字段列表，继承[healthStore.SequencePoint](health-api-healthstore.md#sequencepoint)。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 6.1.1(24)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 只读 | 可选 | **说明** |
+| --- | --- | --- | --- | --- |
+| level | number | 否 | 否 | 痛经程度。  取值参考如下：  0：未选中  1：轻  2：中  3：重 |
+
+## EllipticalDetail
 
 椭圆机详情数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -579,13 +615,13 @@ PhoneTabletWearable
 
 ## EllipticalSummary
 
-PhoneTabletWearable
-
 椭圆机统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -601,13 +637,13 @@ PhoneTabletWearable
 
 ## Emotion
 
-PhoneTabletWearable
-
 情绪采样数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.1.0(18)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -615,13 +651,13 @@ PhoneTabletWearable
 
 ## ExerciseHeartRate
 
-PhoneTabletWearable
-
 运动心率详情数据字段列表，继承[healthStore.SequencePoint](health-api-healthstore.md#sequencepoint)。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -629,13 +665,15 @@ PhoneTabletWearable
 
 ## ExerciseHeartRateSummary
 
-PhoneTabletWearable
+type ExerciseHeartRateSummary = QuantitySummary
 
 运动心率统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -645,13 +683,13 @@ PhoneTabletWearable
 
 ## GolfCourseModelDetail
 
-PhoneTabletWearable
-
 高尔夫场地模式详情数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -660,13 +698,13 @@ PhoneTabletWearable
 
 ## GolfCourseModelFeature
 
-PhoneTabletWearable
-
 高尔夫场地模式特征数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -696,13 +734,13 @@ PhoneTabletWearable
 
 ## GolfCourseModelSummary
 
-PhoneTabletWearable
-
 高尔夫场地模式统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -716,7 +754,7 @@ PhoneTabletWearable
 
 ## GolfPracticeDetail
 
-PhoneTabletWearable
+type GolfPracticeDetail = SportsDetail
 
 高尔夫练习场模式详情数据字段列表。
 
@@ -724,13 +762,13 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | exerciseHeartRate | [ExerciseHeartRate](health-api-healthfields.md#exerciseheartrate)[] | 否 | 是 | 运动心率详情列表，若未填写，默认为空。 |
 
 ## GolfPracticeFeature
-
-PhoneTabletWearable
 
 高尔夫练习场模式特征数据字段列表。
 
@@ -738,24 +776,26 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | golfSwingCount | number | 否 | 否 | 总挥杆数。 |
-| golfSwingSpeed | number | 否 | 是 | 平均挥杆速度，若未填写，默认为空。  单位：厘米/秒 |
-| golfMaxSwingSpeed | number | 否 | 是 | 最大挥杆速度，若未填写，默认为空。  单位：厘米/秒 |
+| golfSwingSpeed | number | 否 | 是 | 平均挥杆速度，若未填写，默认为空。  单位：cm/s |
+| golfMaxSwingSpeed | number | 否 | 是 | 最大挥杆速度，若未填写，默认为空。  单位：cm/s |
 | golfSwingTempo | number | 否 | 是 | 平均挥杆节奏（平均上杆时间/平均下杆时间），若未填写，默认为空。 |
-| golfDownSwingTime | number | 否 | 是 | 平均下杆时间，若未填写，默认为空。  单位：毫秒 |
-| golfBackSwingTime | number | 否 | 是 | 平均上杆时间，若未填写，默认为空。  单位：毫秒 |
+| golfDownSwingTime | number | 否 | 是 | 平均下杆时间，若未填写，默认为空。  单位：ms |
+| golfBackSwingTime | number | 否 | 是 | 平均上杆时间，若未填写，默认为空。  单位：ms |
 
 ## GolfPracticeSummary
-
-PhoneTabletWearable
 
 高尔夫练习场模式统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -765,13 +805,13 @@ PhoneTabletWearable
 
 ## HeartRate
 
-PhoneTabletWearable
-
 动态心率采样数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -779,13 +819,13 @@ PhoneTabletWearable
 
 ## HeartRateAggregation
 
-PhoneTabletWearable
-
 动态心率聚合统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -793,21 +833,19 @@ PhoneTabletWearable
 
 ## HeartRateVariability
 
-PhoneTabletWearable
-
 心率变异性采样数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.1.0(18)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| heartRateVariabilityRMSSD | number | 否 | 否 | 心率变异性。  单位：毫秒  取值范围：(0, 200] |
+| heartRateVariabilityRMSSD | number | 否 | 否 | 心率变异性。  单位：ms  取值范围：(0, 200] |
 
 ## Height
-
-PhoneTabletWearable
 
 身高采样数据字段列表。
 
@@ -815,13 +853,13 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| height | number | 否 | 否 | 身高。  单位：厘米 |
+| height | number | 否 | 否 | 身高。  单位：cm |
 
 ## Jump
-
-PhoneTabletWearable
 
 跳跃详情数据字段列表，继承[healthStore.SequencePoint](health-api-healthstore.md#sequencepoint)。
 
@@ -829,20 +867,22 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| jumpHeight | number | 否 | 否 | 纵跃高度。  单位：米 |
-| passageDuration | number | 否 | 否 | 滞空时间。  单位：毫秒 |
+| jumpHeight | number | 否 | 否 | 纵跃高度。  单位：m |
+| passageDuration | number | 否 | 否 | 滞空时间。  单位：ms |
 
 ## JumpingRopeDetail
-
-PhoneTabletWearable
 
 跳绳详情数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -851,13 +891,13 @@ PhoneTabletWearable
 
 ## JumpingRopeFeature
 
-PhoneTabletWearable
-
 跳绳特征数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -869,13 +909,13 @@ PhoneTabletWearable
 
 ## JumpingRopeSummary
 
-PhoneTabletWearable
-
 跳绳统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -886,29 +926,29 @@ PhoneTabletWearable
 
 ## JumpSummary
 
-PhoneTabletWearable
-
 跳跃统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | jumpTimes | number | 否 | 否 | 跳跃次数。 |
-| maxJumpHeight | number | 否 | 是 | 最大跳跃高度，若未填写，默认为空。  单位：米 |
-| maxPassageDuration | number | 否 | 是 | 最大滞空时间，若未填写，默认为空。  单位：毫秒 |
+| maxJumpHeight | number | 否 | 是 | 最大跳跃高度，若未填写，默认为空。  单位：m |
+| maxPassageDuration | number | 否 | 是 | 最大滞空时间，若未填写，默认为空。  单位：ms |
 
 ## Location
-
-PhoneTabletWearable
 
 位置详情数据字段列表，继承[healthStore.SequencePoint](health-api-healthstore.md#sequencepoint)。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -917,13 +957,13 @@ PhoneTabletWearable
 
 ## LocationSummary
 
-PhoneTabletWearable
-
 位置统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -935,13 +975,13 @@ PhoneTabletWearable
 
 ## MarkPoint
 
-PhoneTabletWearable
-
 标记点采样数据字段列表，继承[healthStore.SequencePoint](health-api-healthstore.md#sequencepoint)。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -952,15 +992,79 @@ PhoneTabletWearable
 | mode | number | 否 | 否 | 标记方式。  取值参考如下：  0：自动  1：手动 |
 | color | number | 否 | 是 | 颜色，若未填写，默认为空。  取值参考如下：  0：橙色  1：红色  2：蓝色  3：黄色  4：灰色  5：绿色  255：自动标记点颜色 |
 
-## MountainHikeDetail
+## MenstrualCycle
 
-PhoneTabletWearable
+生理周期数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 6.1.1(24)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 只读 | 可选 | **说明** |
+| --- | --- | --- | --- | --- |
+| status | number | 否 | 否 | 当日状态。  取值参考如下：  0：普通状态  100：普通经期  101：经期第一天  102：经期最后一天  2：排卵日  300：普通预测经期  301：预测经期第一天  302：预测经期最后一天  400：普通易孕期  401：易孕期第一天  402：易孕期最后一天  403：易孕期只有一天 |
+| remarks | string | 否 | 是 | 备注。 |
+
+## MenstrualCycleDetail
+
+生理周期详情数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 6.1.1(24)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 只读 | 可选 | **说明** |
+| --- | --- | --- | --- | --- |
+| menstrualFlow | [MenstrualFlow](health-api-healthfields.md#menstrualflow)[] | 否 | 是 | 月经流量采样列表，若未填写，默认为空。 |
+| dysmenorrhea | [Dysmenorrhea](health-api-healthfields.md#dysmenorrhea)[] | 否 | 是 | 痛经程度采样列表，若未填写，默认为空。 |
+| physicalSymptoms | [PhysicalSymptoms](health-api-healthfields.md#physicalsymptoms)[] | 否 | 是 | 身体状况采样列表，若未填写，默认为空。 |
+| mood | [Mood](health-api-healthfields.md#mood)[] | 否 | 是 | 心情采样列表，若未填写，默认为空。 |
+| skin | [Skin](health-api-healthfields.md#skin)[] | 否 | 是 | 皮肤状态采样列表，若未填写，默认为空。 |
+| sexuality | [Sexuality](health-api-healthfields.md#sexuality)[] | 否 | 是 | 性行为采样列表，若未填写，默认为空。 |
+| ovulationTestPaper | [OvulationTestPaper](health-api-healthfields.md#ovulationtestpaper)[] | 否 | 是 | 排卵试纸采样列表，若未填写，默认为空。 |
+| cervicalMucus | [CervicalMucus](health-api-healthfields.md#cervicalmucus)[] | 否 | 是 | 私处分泌物采样列表，若未填写，默认为空。 |
+
+## MenstrualFlow
+
+月经流量采样数据字段列表，继承[healthStore.SequencePoint](health-api-healthstore.md#sequencepoint)。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 6.1.1(24)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 只读 | 可选 | **说明** |
+| --- | --- | --- | --- | --- |
+| volume | number | 否 | 否 | 月经流量。  取值参考如下：  0：未选中  1：少  2：正常  3：多 |
+
+## Mood
+
+心情采样数据字段列表，继承[healthStore.SequencePoint](health-api-healthstore.md#sequencepoint)。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 6.1.1(24)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 只读 | 可选 | **说明** |
+| --- | --- | --- | --- | --- |
+| mood | string | 否 | 否 | 心情。  取值为逗号间隔的字符串，例：'1,2,3'。  取值参考如下：  0：开心  1：悲伤  2：敏感  3：焦虑  4：生气  5：兴奋  6：压抑  7：放松 |
+
+## MountainHikeDetail
 
 登山详情数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -971,13 +1075,13 @@ PhoneTabletWearable
 
 ## MountainHikeSummary
 
-PhoneTabletWearable
-
 登山统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -989,13 +1093,13 @@ PhoneTabletWearable
 
 ## OpenWaterSwimDetail
 
-PhoneTabletWearable
-
 开放水域游泳详情数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1007,13 +1111,13 @@ PhoneTabletWearable
 
 ## OpenWaterSwimFeature
 
-PhoneTabletWearable
-
 开放水域游泳特征数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1022,13 +1126,13 @@ PhoneTabletWearable
 
 ## OpenWaterSwimSummary
 
-PhoneTabletWearable
-
 开放水域游泳统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1039,9 +1143,21 @@ PhoneTabletWearable
 | swimStrokeRate | [SwimStrokeRateSummary](health-api-healthfields.md#swimstrokeratesummary) | 否 | 是 | 划水频率统计，若未填写，默认为空。 |
 | swolf | [SwolfSummary](health-api-healthfields.md#swolfsummary) | 否 | 是 | SWOLF统计，若未填写，默认为空。 |
 
-## PedalingCadence
+## OvulationTestPaper
 
-PhoneTabletWearable
+排卵试纸采样数据字段列表，继承[healthStore.SequencePoint](health-api-healthstore.md#sequencepoint)。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 6.1.1(24)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 只读 | 可选 | **说明** |
+| --- | --- | --- | --- | --- |
+| result | number | 否 | 否 | 结果。  取值参考如下：  0：未选中  1：阴  2：弱阳  3：强阳 |
+
+## PedalingCadence
 
 踏频详情数据字段列表，继承[healthStore.SequencePoint](health-api-healthstore.md#sequencepoint)。
 
@@ -1049,13 +1165,15 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | rpm | number | 否 | 否 | 踏频详情。  单位：转/分钟  取值范围：[0, ∞) |
 
 ## PedalingCadenceSummary
 
-PhoneTabletWearable
+type PedalingCadenceSummary = QuantitySummary
 
 踏频统计数据字段列表。
 
@@ -1063,21 +1181,37 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | avg | number | 否 | 否 | 平均值。  单位：转/分钟  取值范围：[0, ∞) |
 | max | number | 否 | 否 | 最大值。  单位：转/分钟  取值范围：[0, ∞) |
 | min | number | 否 | 是 | 最小值，若未填写，默认为空。  单位：转/分钟  取值范围：[0, ∞) |
 
-## PoolSwimDetail
+## PhysicalSymptoms
 
-PhoneTabletWearable
+身体症状采样数据字段列表，继承[healthStore.SequencePoint](health-api-healthstore.md#sequencepoint)。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 6.1.1(24)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 只读 | 可选 | **说明** |
+| --- | --- | --- | --- | --- |
+| physicalSymptoms | string | 否 | 否 | 身体症状。  取值为逗号间隔的字符串，例：'1,2,3'。  取值参考如下：  1：腹部胀痛  2：疲劳  3：呕吐  4：腰背酸痛  6：眩晕  7：头痛  8：乳房胀痛  9：腹部绞痛  10：一切正常  11：抽筋  12：浮肿  13：失眠  14：腹泻  15：小腹坠疼  16：潮热  17：点滴出血 |
+
+## PoolSwimDetail
 
 泳池游泳详情数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1088,30 +1222,30 @@ PhoneTabletWearable
 
 ## PoolSwimFeature
 
-PhoneTabletWearable
-
 泳池游泳特征数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | pullTimes | number | 否 | 否 | 划水次数。 |
 | tripTimes | number | 否 | 否 | 趟数。 |
-| poolLength | number | 否 | 是 | 泳池长度，若未填写，默认为空。  单位：米 |
+| poolLength | number | 否 | 是 | 泳池长度，若未填写，默认为空。  单位：m |
 | swimmingStroke | number | 否 | 是 | 主泳姿，若未填写，默认为空。  取值参考如下：  1：蛙泳  2：自由泳  3：蝶泳  4：仰泳  5：混合泳 |
 
 ## PoolSwimSummary
-
-PhoneTabletWearable
 
 泳池游泳统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1125,21 +1259,21 @@ PhoneTabletWearable
 
 ## Power
 
-PhoneTabletWearable
-
 功率详情数据字段列表，继承[healthStore.SequencePoint](health-api-healthstore.md#sequencepoint)。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| power | number | 否 | 否 | 功率详情。  单位：瓦  取值范围：[0, ∞) |
+| power | number | 否 | 否 | 功率详情。  单位：W  取值范围：[0, ∞) |
 
 ## PowerSummary
 
-PhoneTabletWearable
+type PowerSummary = QuantitySummary
 
 功率统计数据字段列表。
 
@@ -1147,21 +1281,23 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| avg | number | 否 | 否 | 平均值。  单位：瓦  取值范围：[0, ∞) |
-| max | number | 否 | 否 | 最大值。  单位：瓦  取值范围：[0, ∞) |
-| min | number | 否 | 是 | 最小值，若未填写，默认为空。  单位：瓦  取值范围：[0, ∞) |
+| avg | number | 否 | 否 | 平均值。  单位：W  取值范围：[0, ∞) |
+| max | number | 否 | 否 | 最大值。  单位：W  取值范围：[0, ∞) |
+| min | number | 否 | 是 | 最小值，若未填写，默认为空。  单位：W  取值范围：[0, ∞) |
 
 ## QuantitySummary
-
-PhoneTabletWearable
 
 统计基类数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1171,13 +1307,13 @@ PhoneTabletWearable
 
 ## Resistance
 
-PhoneTabletWearable
-
 阻力详情数据字段列表，继承[healthStore.SequencePoint](health-api-healthstore.md#sequencepoint)。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1185,13 +1321,13 @@ PhoneTabletWearable
 
 ## ResistanceSummary
 
-PhoneTabletWearable
-
 阻力统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1201,23 +1337,23 @@ PhoneTabletWearable
 | resLv4LowerLimit | number | 否 | 否 | 阻力区间4下限。  取值范围：[1, 100] |
 | resLv5LowerLimit | number | 否 | 否 | 阻力区间5下限。  取值范围：[1, 100] |
 | resLv5UpperLimit | number | 否 | 否 | 阻力区间5上限。  取值范围：[1, 100] |
-| resLv1Duration | number | 否 | 否 | 在阻力区间1内运动时长。  单位：分钟  取值范围：[0, ∞) |
-| resLv2Duration | number | 否 | 否 | 在阻力区间2内运动时长。  单位：分钟  取值范围：[0, ∞) |
-| resLv3Duration | number | 否 | 否 | 在阻力区间3内运动时长。  单位：分钟  取值范围：[0, ∞) |
-| resLv4Duration | number | 否 | 否 | 在阻力区间4内运动时长。  单位：分钟  取值范围：[0, ∞) |
-| resLv5Duration | number | 否 | 否 | 在阻力区间5内运动时长。  单位：分钟  取值范围：[0, ∞) |
+| resLv1Duration | number | 否 | 否 | 在阻力区间1内运动时长。  单位：min  取值范围：[0, ∞) |
+| resLv2Duration | number | 否 | 否 | 在阻力区间2内运动时长。  单位：min  取值范围：[0, ∞) |
+| resLv3Duration | number | 否 | 否 | 在阻力区间3内运动时长。  单位：min  取值范围：[0, ∞) |
+| resLv4Duration | number | 否 | 否 | 在阻力区间4内运动时长。  单位：min  取值范围：[0, ∞) |
+| resLv5Duration | number | 否 | 否 | 在阻力区间5内运动时长。  单位：min  取值范围：[0, ∞) |
 | maxRes | number | 否 | 是 | 设备可设置的最大阻力级别，若未填写，默认为空。  取值范围：[1, 100] |
 | minRes | number | 否 | 是 | 设备可设置的最小阻力级别，若未填写，默认为空。  取值范围：[1, 100] |
 
 ## RestingHeartRate
 
-PhoneTabletWearable
-
-静息心率数据字段列表.
+静息心率数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1225,13 +1361,13 @@ PhoneTabletWearable
 
 ## RestingHeartRateAggregation
 
-PhoneTabletWearable
-
 静息心率聚合统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1239,13 +1375,13 @@ PhoneTabletWearable
 
 ## RowerDetail
 
-PhoneTabletWearable
-
 划船机详情数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1257,7 +1393,7 @@ PhoneTabletWearable
 
 ## RowerFeature
 
-PhoneTabletWearable
+type RowerFeature = RowingFeature
 
 划船机特征数据字段列表。
 
@@ -1265,19 +1401,21 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | strokesNum | number | 否 | 否 | 累计桨次。 |
 
 ## RowerSummary
 
-PhoneTabletWearable
-
 划船机统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1292,13 +1430,13 @@ PhoneTabletWearable
 
 ## RowingDetail
 
-PhoneTabletWearable
-
 赛艇详情数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1307,13 +1445,13 @@ PhoneTabletWearable
 
 ## RowingFeature
 
-PhoneTabletWearable
-
 赛艇特征数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1321,13 +1459,13 @@ PhoneTabletWearable
 
 ## RowingSummary
 
-PhoneTabletWearable
-
 赛艇统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1339,13 +1477,13 @@ PhoneTabletWearable
 
 ## RunningDetail
 
-PhoneTabletWearable
-
 跑步详情数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1358,24 +1496,22 @@ PhoneTabletWearable
 
 ## RunningFeature
 
-PhoneTabletWearable
-
 跑步特征数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| avgPace | number | 否 | 否 | 平均配速。  取值范围：[0, ∞)  单位：秒/公里 |
-| bestPace | number | 否 | 否 | 最快配速。  取值范围：[0, ∞)  单位：秒/公里 |
-| paceMap | [healthStore.PaceValueType](health-api-healthstore.md#pacevaluetype) | 否 | 是 | 每公里的配速，若未填写，默认为空。单位：秒/公里  例如  '1.0':407.945  '2.0':473.98846  '2.170':473.98846  最后不满一公里的部分，按比例换算为整公里的配速存入。 |
+| avgPace | number | 否 | 否 | 平均配速。  取值范围：[0, ∞)  单位：s/km |
+| bestPace | number | 否 | 否 | 最快配速。  取值范围：[0, ∞)  单位：s/km |
+| paceMap | [healthStore.PaceValueType](health-api-healthstore.md#pacevaluetype) | 否 | 是 | 每公里的配速，若未填写，默认为空。单位：s/km  例如  '1.0':407.945  '2.0':473.98846  '2.170':473.98846  最后不满一公里的部分，按比例换算为整公里的配速存入。 |
 | partTimeMap | [healthStore.PaceValueType](health-api-healthstore.md#pacevaluetype) | 否 | 是 | 公制分段数据表（key：公里，value：秒），若未填写，默认为空。  其中公里保留到小数点后4位。  Value是一个累积到当前公里的时间如：  - '1.0':3.0  - '2.0':6.0  - '3.0':9.0  - '21.0975':7020.0  - '42.195':18000.0  其中，21.0975，42.195分别为半马和全马的距离（仅半马全马key值小数点后不为0）。 |
 
 ## RunningForm
-
-PhoneTabletWearable
 
 跑姿详情数据字段列表，继承[healthStore.SequencePoint](health-api-healthstore.md#sequencepoint)。
 
@@ -1383,25 +1519,25 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| groundContactTime | number | 否 | 否 | 触地时间。  单位：毫秒  取值范围：[0, 5000] |
+| groundContactTime | number | 否 | 否 | 触地时间。  单位：ms  取值范围：[0, 5000] |
 | groundImpactAcceleration | number | 否 | 是 | 着地冲击，若未填写，默认为空。  单位：g（重力加速度）  取值范围：[0, 50] |
 | swingAngle | number | 否 | 是 | 摆动角度，若未填写，默认为空。  单位：度  取值范围：[0, 360] |
 | eversionExcursion | number | 否 | 是 | 外翻幅度，若未填写，默认为空。  单位：度  取值范围：[-100, 100] |
-| hangTime | number | 否 | 是 | 腾空时间，若未填写，默认为空。  单位：毫秒  取值范围：[0, 500] |
+| hangTime | number | 否 | 是 | 腾空时间，若未填写，默认为空。  单位：ms  取值范围：[0, 500] |
 | groundHangTimeRate | number | 否 | 是 | 触地腾空比，若未填写，默认为空。  取值范围：[0, 500] |
 | foreFootStrikePattern | number | 否 | 是 | 触地方式中的前脚掌触地次数，若未填写，默认为空。  取值范围：[0, 100] |
 | hindFootStrikePattern | number | 否 | 是 | 触地方式中的后脚掌触地次数，若未填写，默认为空。  取值范围：[0, 100] |
 | wholeFootStrikePattern | number | 否 | 是 | 触地方式中的全脚掌触地次数，若未填写，默认为空。  取值范围：[0, 100] |
 | impactPeak | number | 否 | 是 | 触地峰值，若未填写，默认为空。  单位：BW（体重倍数）  取值范围：[0, 10] |
-| verticalOscillation | number | 否 | 是 | 垂直振幅，若未填写，默认为空。  单位：厘米  取值范围：[0, 25.6] |
-| verticalRatio | number | 否 | 是 | 垂直步幅比，若未填写，默认为空。  单位：百分比  取值范围：[0, 100] |
-| gcTimeBalance | number | 否 | 是 | 左右触地平衡，若未填写，默认为空。  单位：百分比（返回数据为左脚的触地平衡，右脚需自行计算，二者之和为100%）  取值范围：[0, 100] |
+| verticalOscillation | number | 否 | 是 | 垂直振幅，若未填写，默认为空。  单位：cm  取值范围：[0, 25.6] |
+| verticalRatio | number | 否 | 是 | 垂直步幅比，若未填写，默认为空。  单位：%  取值范围：[0, 100] |
+| gcTimeBalance | number | 否 | 是 | 左右触地平衡，若未填写，默认为空。  单位：%（返回数据为左脚的触地平衡，右脚需自行计算，二者之和为100%）  取值范围：[0, 100] |
 
 ## RunningFormSummary
-
-PhoneTabletWearable
 
 跑姿统计数据字段列表。
 
@@ -1409,32 +1545,34 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| avgGroundContactTime | number | 否 | 否 | 平均触地时间。  单位：毫秒  取值范围：[0, 5000] |
+| avgGroundContactTime | number | 否 | 否 | 平均触地时间。  单位：ms  取值范围：[0, 5000] |
 | avgGroundImpactAcceleration | number | 否 | 是 | 平均着地冲击，若未填写，默认为空。  单位：g（重力加速度） |
 | avgSwingAngle | number | 否 | 是 | 平均摆动角度，若未填写，默认为空。  单位：度 |
 | avgEversionExcursion | number | 否 | 是 | 平均外翻幅度，若未填写，默认为空。  单位：度 |
-| avgHangTime | number | 否 | 是 | 平均腾空时间，若未填写，默认为空。  单位：毫秒 |
+| avgHangTime | number | 否 | 是 | 平均腾空时间，若未填写，默认为空。  单位：ms |
 | avgGroundHangTimeRate | number | 否 | 是 | 平均触地腾空比，若未填写，默认为空。 |
 | foreFootStrikePattern | number | 否 | 是 | 触地方式中的前脚掌触地次数，若未填写，默认为空。 |
 | hindFootStrikePattern | number | 否 | 是 | 触地方式中的后脚掌触地次数，若未填写，默认为空。 |
 | wholeFootStrikePattern | number | 否 | 是 | 触地方式中的全脚掌触地次数，若未填写，默认为空。 |
 | avgImpactPeak | number | 否 | 是 | 平均触地峰值，若未填写，默认为空。  单位：BW（体重倍数） |
 | avgVerticalImpactRate | number | 否 | 是 | 平均冲击负载率，若未填写，默认为空。  单位：BW/S |
-| avgVerticalOscillation | number | 否 | 是 | 平均垂直振幅，若未填写，默认为空。  单位：厘米 |
-| avgVerticalRatio | number | 否 | 是 | 平均垂直步幅比，若未填写，默认为空。  单位：百分比 |
-| avgGcTimeBalance | number | 否 | 是 | 平均左右触地平衡，若未填写，默认为空。  单位：百分比（返回数据为左脚的触地平衡，右脚需自行计算，二者之和为100%） |
+| avgVerticalOscillation | number | 否 | 是 | 平均垂直振幅，若未填写，默认为空。  单位：cm |
+| avgVerticalRatio | number | 否 | 是 | 平均垂直步幅比，若未填写，默认为空。  单位：% |
+| avgGcTimeBalance | number | 否 | 是 | 平均左右触地平衡，若未填写，默认为空。  单位：%（返回数据为左脚的触地平衡，右脚需自行计算，二者之和为100%） |
 
 ## RunningSummary
-
-PhoneTabletWearable
 
 跑步统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1451,13 +1589,13 @@ PhoneTabletWearable
 
 ## ScubaDivingDetail
 
-PhoneTabletWearable
-
 水肺潜水详情数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1466,38 +1604,38 @@ PhoneTabletWearable
 
 ## ScubaDivingFeature
 
-PhoneTabletWearable
-
 水肺潜水特征数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| divingTime | number | 否 | 否 | 潜水时间。  单位：秒 |
+| divingTime | number | 否 | 否 | 潜水时间。  单位：s |
 | divingCount | number | 否 | 否 | 潜水次数。 |
 | divingMode | number | 否 | 否 | 潜水模式。  取值参考如下：  0：自由潜水  1：休闲水肺潜水  2：技术水肺潜水  3：仪表潜水 |
-| maxUnderwaterTime | number | 否 | 是 | 单次水下最长时间，若未填写，默认为空。  单位：秒 |
-| underwaterTime | number | 否 | 是 | 水下时间，若未填写，默认为空。  单位：秒 |
-| noFlyTime | number | 否 | 是 | 禁飞时间，若未填写，默认为空。  单位：小时 |
+| maxUnderwaterTime | number | 否 | 是 | 单次水下最长时间，若未填写，默认为空。  单位：s |
+| underwaterTime | number | 否 | 是 | 水下时间，若未填写，默认为空。  单位：s |
+| noFlyTime | number | 否 | 是 | 禁飞时间，若未填写，默认为空。  单位：h |
 | cns | number | 否 | 是 | CNS(中枢神经系统毒性等级)，若未填写，默认为空。  等级：  一：0%-79%  二：80%-99%  三：大于等于100% |
 | otu | number | 否 | 是 | OTU(氧气毒性单元)，若未填写，默认为空。  等级：  一：0-249  二：250-299  三：大于等于300 |
 | waterType | number | 否 | 是 | 水体类型，若未填写，默认为空。  取值参考如下：  0：自定义  1：淡水  2：海水 |
-| waterDensity | number | 否 | 是 | 水密度，若未填写，默认为空。  单位：千克/升 |
-| maxAscentSpeed | number | 否 | 是 | 最大上升速度，若未填写，默认为空。  单位：米/秒 |
-| maxDescentSpeed | number | 否 | 是 | 最大下降速度，若未填写，默认为空。  单位：米/秒 |
+| waterDensity | number | 否 | 是 | 水密度，若未填写，默认为空。  单位：kg/L |
+| maxAscentSpeed | number | 否 | 是 | 最大上升速度，若未填写，默认为空。  单位：m/s |
+| maxDescentSpeed | number | 否 | 是 | 最大下降速度，若未填写，默认为空。  单位：m/s |
 
 ## ScubaDivingSummary
-
-PhoneTabletWearable
 
 水肺潜水统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1506,15 +1644,31 @@ PhoneTabletWearable
 | divingDepth | [DivingDepthSummary](health-api-healthfields.md#divingdepthsummary) | 否 | 是 | 潜水深度统计，若未填写，默认为空。 |
 | waterTemperature | [WaterTemperatureSummary](health-api-healthfields.md#watertemperaturesummary) | 否 | 是 | 水温统计，若未填写，默认为空。 |
 
+## Sexuality
+
+性行为采样数据字段列表，继承[healthStore.SequencePoint](health-api-healthstore.md#sequencepoint)。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 6.1.1(24)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 只读 | 可选 | **说明** |
+| --- | --- | --- | --- | --- |
+| sexuality | number | 否 | 否 | 性行为。  取值参考如下：  0：未选中  1：无  2：有保护  3：无保护 |
+
 ## SkiingDetail
 
-PhoneTabletWearable
+type SkiingDetail = MountainHikeDetail
 
 滑雪详情数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1525,31 +1679,31 @@ PhoneTabletWearable
 
 ## SkiingFeature
 
-PhoneTabletWearable
-
 滑雪特征数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | tripTimes | number | 否 | 否 | 趟数。 |
 | maxSlopePercent | number | 否 | 是 | 滑雪最大坡度百分比，若未填写，默认为空。 |
 | maxSlopeDegree | number | 否 | 是 | 滑雪最大坡，若未填写，默认为空。  单位：度 |
-| totalTime | number | 否 | 是 | 滑行时间，若未填写，默认为空。  单位：毫秒 |
-| totalDistance | number | 否 | 是 | 滑行距离，若未填写，默认为空。  单位：米 |
+| totalTime | number | 否 | 是 | 滑行时间，若未填写，默认为空。  单位：ms |
+| totalDistance | number | 否 | 是 | 滑行距离，若未填写，默认为空。  单位：m |
 
 ## SkiingSummary
-
-PhoneTabletWearable
 
 滑雪统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1559,9 +1713,21 @@ PhoneTabletWearable
 | altitude | [AltitudeSummary](health-api-healthfields.md#altitudesummary) | 否 | 是 | 海拔统计，若未填写，默认为空。 |
 | exerciseHeartRate | [ExerciseHeartRateSummary](health-api-healthfields.md#exerciseheartratesummary) | 否 | 是 | 运动心率统计，若未填写，默认为空。 |
 
-## SkinTemperature
+## Skin
 
-PhoneTabletWearable
+皮肤状态采样数据字段列表，继承[healthStore.SequencePoint](health-api-healthstore.md#sequencepoint)。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 6.1.1(24)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 只读 | 可选 | **说明** |
+| --- | --- | --- | --- | --- |
+| skinStatus | string | 否 | 否 | 皮肤状态。  取值参考如下：  0：未选中  1：好  2：出油  4：干燥  8：粉刺  16：冒痘 |
+
+## SkinTemperature
 
 皮肤体温详情数据字段列表。
 
@@ -1569,13 +1735,13 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| skinTemperature | number | 否 | 否 | 皮肤温度。  单位：摄氏度  取值范围：[20, 42] |
+| skinTemperature | number | 否 | 否 | 皮肤温度。  单位：°C  取值范围：[20, 42] |
 
 ## SkinTemperatureAggregation
-
-PhoneTabletWearable
 
 皮肤体温聚合统计数据字段列表。
 
@@ -1583,13 +1749,13 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | skinTemperature | Omit<[AggregateMetrics](health-api-healthstore.md#aggregatemetrics), 'sum' | 'last'> | 否 | 否 | 皮肤体温聚合统计。 |
 
 ## SkipSpeed
-
-PhoneTabletWearable
 
 跳绳速度详情数据字段列表，继承[healthStore.SequencePoint](health-api-healthstore.md#sequencepoint)。
 
@@ -1597,19 +1763,23 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | skipSpeed | number | 否 | 否 | 跳绳速度详情。  单位：个/分钟  取值范围：[0, ∞) |
 
 ## SkipSpeedSummary
 
-PhoneTabletWearable
+type SkipSpeedSummary = QuantitySummary
 
 跳绳速度统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1619,13 +1789,13 @@ PhoneTabletWearable
 
 ## SledDetail
 
-PhoneTabletWearable
-
 滑雪橇详情数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1634,13 +1804,15 @@ PhoneTabletWearable
 
 ## SledSummary
 
-PhoneTabletWearable
+type SledSummary = SportsSummary
 
 滑雪橇统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1649,29 +1821,29 @@ PhoneTabletWearable
 
 ## Sleep
 
-PhoneTabletWearable
-
 夜间睡眠数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| fallAsleepTime | number | 否 | 否 | 分期睡眠最早入睡时间点。  单位：毫秒  取值范围：[0, ∞) |
-| wakeupTime | number | 否 | 否 | 分期睡眠最晚醒来时间点。  单位：毫秒  取值范围：[0, ∞) |
-| duration | number | 否 | 否 | 夜间/普通睡眠时长（不含零星小睡时长）。  单位：秒  取值范围：[0, ∞) |
+| fallAsleepTime | number | 否 | 否 | 分期睡眠最早入睡时间点。  单位：ms  取值范围：[0, ∞) |
+| wakeupTime | number | 否 | 否 | 分期睡眠最晚醒来时间点。  单位：ms  取值范围：[0, ∞) |
+| duration | number | 否 | 否 | 夜间/普通睡眠时长（不含零星小睡时长）。  单位：s  取值范围：[0, ∞) |
 | bedTime | number | 否 | 是 | 最早上床时间点，若未填写，默认为空。  取值范围：[0, ∞) |
 | risingTime | number | 否 | 是 | 最晚起床时间点，若未填写，默认为空。  取值范围：[0, ∞) |
-| prepareSleepTime | number | 否 | 是 | 准备入睡时间点，若未填写，默认为空。  单位：毫秒  取值范围：[0, ∞) |
-| shallowDuration | number | 否 | 是 | 浅睡时长，若未填写，默认为空。  单位：秒  取值范围：[0, ∞) |
-| deepDuration | number | 否 | 是 | 深睡时长，若未填写，默认为空。  单位：秒  取值范围：[0, ∞) |
-| dreamDuration | number | 否 | 是 | REM时长，若未填写，默认为空。  单位：秒  取值范围：[0, ∞) |
-| wakeDuration | number | 否 | 是 | 清醒时长，若未填写，默认为空。  单位：秒  取值范围：[0, ∞) |
+| prepareSleepTime | number | 否 | 是 | 准备入睡时间点，若未填写，默认为空。  单位：ms  取值范围：[0, ∞) |
+| shallowDuration | number | 否 | 是 | 浅睡时长，若未填写，默认为空。  单位：s  取值范围：[0, ∞) |
+| deepDuration | number | 否 | 是 | 深睡时长，若未填写，默认为空。  单位：s  取值范围：[0, ∞) |
+| dreamDuration | number | 否 | 是 | REM时长，若未填写，默认为空。  单位：s  取值范围：[0, ∞) |
+| wakeDuration | number | 否 | 是 | 清醒时长，若未填写，默认为空。  单位：s  取值范围：[0, ∞) |
 | wakeCount | number | 否 | 是 | 清醒次数，若未填写，默认为空。  取值范围：[0, ∞) |
-| onBedDuration | number | 否 | 是 | 卧床时长，若未填写，默认为空。  单位：秒  取值范围：[0, ∞) |
-| recordDuration | number | 否 | 是 | 睡眠记录时长，若未填写，默认为记录结束时间减去开始时间。  单位：秒  取值范围：[0, ∞) |
+| onBedDuration | number | 否 | 是 | 卧床时长，若未填写，默认为空。  单位：s  取值范围：[0, ∞) |
+| recordDuration | number | 否 | 是 | 睡眠记录时长，若未填写，默认为记录结束时间减去开始时间。  单位：s  取值范围：[0, ∞) |
 | sleepEfficiency | number | 否 | 是 | 睡眠效率，若未填写，默认为空。  取值范围：[0, 100] |
 | sleepScore | number | 否 | 是 | 睡眠得分，若未填写，默认为空。  取值范围：[0, 100] |
 | deepSleepContinuity | number | 否 | 是 | 深睡连续性，若未填写，默认为空。  取值范围：[0, 100] |
@@ -1683,13 +1855,13 @@ PhoneTabletWearable
 
 ## SleepDetail
 
-PhoneTabletWearable
-
 睡眠详情数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1697,22 +1869,20 @@ PhoneTabletWearable
 
 ## SleepNap
 
-PhoneTabletWearable
-
 零星小睡数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| noonDuration | number | 否 | 否 | 午睡时长(零星小睡）。  单位：秒  取值范围：[0, ∞) |
-| noonRecordDuration | number | 否 | 是 | 零星小睡记录时长，若未填写，默认为记录结束时间减去开始时间。  单位：秒  取值范围：[0, ∞) |
+| noonDuration | number | 否 | 否 | 午睡时长(零星小睡）。  单位：s  取值范围：[0, ∞) |
+| noonRecordDuration | number | 否 | 是 | 零星小睡记录时长，若未填写，默认为记录结束时间减去开始时间。  单位：s  取值范围：[0, ∞) |
 
 ## SleepSegment
-
-PhoneTabletWearable
 
 睡眠状态采样数据字段列表，继承[healthStore.SequencePoint](health-api-healthstore.md#sequencepoint)。
 
@@ -1720,20 +1890,24 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | sleepStatus | number | 否 | 否 | 睡眠状态。  取值范围：  0：未知  1：深睡  2：浅睡  3：REM  4：清醒  5：午睡（零星小睡）  6：卧床  7：睡眠（手工） |
-| endTime | number | 否 | 否 | 结束时间。  单位：毫秒  取值范围：[0, ∞) |
+| endTime | number | 否 | 否 | 结束时间。  单位：ms  取值范围：[0, ∞) |
 
 ## SnowboardingDetail
 
-PhoneTabletWearable
+type SnowboardingDetail = MountainHikeDetail
 
 单板滑雪详情数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1744,7 +1918,7 @@ PhoneTabletWearable
 
 ## SnowboardingFeature
 
-PhoneTabletWearable
+type SnowboardingFeature = SkiingFeature
 
 单板滑雪特征数据字段列表。
 
@@ -1752,23 +1926,25 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | tripTimes | number | 否 | 否 | 趟数。 |
 | maxSlopePercent | number | 否 | 是 | 滑雪最大坡度百分比，若未填写，默认为空。 |
 | maxSlopeDegree | number | 否 | 是 | 滑雪最大坡，若未填写，默认为空。  单位：度 |
-| totalTime | number | 否 | 是 | 滑行时间，若未填写，默认为空。  单位：毫秒 |
-| totalDistance | number | 否 | 是 | 滑行距离，若未填写，默认为空。  单位：米 |
+| totalTime | number | 否 | 是 | 滑行时间，若未填写，默认为空。  单位：ms |
+| totalDistance | number | 否 | 是 | 滑行距离，若未填写，默认为空。  单位：m |
 
 ## SnowboardingSummary
-
-PhoneTabletWearable
 
 单板滑雪统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1780,21 +1956,21 @@ PhoneTabletWearable
 
 ## Speed
 
-PhoneTabletWearable
-
 速度详情数据字段列表，继承[healthStore.SequencePoint](health-api-healthstore.md#sequencepoint)。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| speed | number | 否 | 否 | 速度详情。  单位：米/秒  取值范围：[0, ∞) |
+| speed | number | 否 | 否 | 速度详情。  单位：m/s  取值范围：[0, ∞) |
 
 ## SpeedSummary
 
-PhoneTabletWearable
+type SpeedSummary = QuantitySummary
 
 速度统计数据字段列表。
 
@@ -1802,15 +1978,15 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| avg | number | 否 | 否 | 平均值。  单位：米/秒  取值范围：[0, ∞) |
-| max | number | 否 | 否 | 最大值。  单位：米/秒  取值范围：[0, ∞) |
-| min | number | 否 | 是 | 最小值，若未填写，默认为空。  单位：米/秒  取值范围：[0, ∞) |
+| avg | number | 否 | 否 | 平均值。  单位：m/s  取值范围：[0, ∞) |
+| max | number | 否 | 否 | 最大值。  单位：m/s  取值范围：[0, ∞) |
+| min | number | 否 | 是 | 最小值，若未填写，默认为空。  单位：m/s  取值范围：[0, ∞) |
 
 ## SportsDetail
-
-PhoneTabletWearable
 
 通用详情数据字段列表。
 
@@ -1818,19 +1994,21 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | exerciseHeartRate | [ExerciseHeartRate](health-api-healthfields.md#exerciseheartrate)[] | 否 | 是 | 运动心率详情列表，若未填写，默认为空。 |
 
 ## SportsSummary
 
-PhoneTabletWearable
-
 通用统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1839,13 +2017,13 @@ PhoneTabletWearable
 
 ## StepSummary
 
-PhoneTabletWearable
-
 步数统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1853,13 +2031,13 @@ PhoneTabletWearable
 
 ## Stress
 
-PhoneTabletWearable
-
 压力采样数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1867,13 +2045,13 @@ PhoneTabletWearable
 
 ## StressAggregation
 
-PhoneTabletWearable
-
 压力得分聚合统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1881,13 +2059,13 @@ PhoneTabletWearable
 
 ## StrokeRate
 
-PhoneTabletWearable
-
 桨频采样数据字段列表，继承[healthStore.SequencePoint](health-api-healthstore.md#sequencepoint)。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1895,13 +2073,15 @@ PhoneTabletWearable
 
 ## StrokeRateSummary
 
-PhoneTabletWearable
+type StrokeRateSummary = Omit<QuantitySummary, 'min'>
 
 桨频统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1910,13 +2090,13 @@ PhoneTabletWearable
 
 ## SwimStrokeRate
 
-PhoneTabletWearable
-
 划水频率采样数据字段列表，继承[healthStore.SequencePoint](health-api-healthstore.md#sequencepoint)。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1924,7 +2104,7 @@ PhoneTabletWearable
 
 ## SwimStrokeRateSummary
 
-PhoneTabletWearable
+type SwimStrokeRateSummary = Omit<QuantitySummary, 'max' | 'min'>
 
 划水频率统计数据字段列表。
 
@@ -1932,13 +2112,13 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | avg | number | 否 | 否 | 平均值。  单位：次/分钟  取值范围: [0, ∞) |
 
 ## Swolf
-
-PhoneTabletWearable
 
 SWOLF采样数据字段列表，继承[healthStore.SequencePoint](health-api-healthstore.md#sequencepoint)。
 
@@ -1946,19 +2126,23 @@ SWOLF采样数据字段列表，继承[healthStore.SequencePoint](health-api-hea
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | swolf | number | 否 | 否 | SWOLF. |
 
 ## SwolfSummary
 
-PhoneTabletWearable
+type SwolfSummary = QuantitySummary
 
 SWOLF统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1968,13 +2152,13 @@ SWOLF统计数据字段列表。
 
 ## WalkingDetail
 
-PhoneTabletWearable
-
 健走详情数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -1986,13 +2170,13 @@ PhoneTabletWearable
 
 ## WalkingSummary
 
-PhoneTabletWearable
-
 健走统计数据字段列表。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
@@ -2007,21 +2191,21 @@ PhoneTabletWearable
 
 ## WaterTemperature
 
-PhoneTabletWearable
-
 水温采样数据字段列表，继承[healthStore.SequencePoint](health-api-healthstore.md#sequencepoint)。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| temperature | number | 否 | 否 | 温度。  单位：摄氏度 |
+| temperature | number | 否 | 否 | 温度。  单位：°C |
 
 ## WaterTemperatureSummary
 
-PhoneTabletWearable
+type WaterTemperatureSummary = Omit<QuantitySummary, 'avg'>
 
 水温统计数据字段列表。
 
@@ -2029,14 +2213,14 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| max | number | 否 | 否 | 最大值。  单位：摄氏度  取值范围: [0, ∞) |
-| min | number | 否 | 是 | 最小值，若未填写，默认为空。  单位：摄氏度  取值范围: [0, ∞) |
+| max | number | 否 | 否 | 最大值。  单位：°C  取值范围: [0, ∞) |
+| min | number | 否 | 是 | 最小值，若未填写，默认为空。  单位：°C  取值范围: [0, ∞) |
 
 ## Weight
-
-PhoneTabletWearable
 
 体重采样数据字段列表。
 
@@ -2044,20 +2228,22 @@ PhoneTabletWearable
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| bodyWeight | number | 否 | 否 | 体重。  单位：千克  取值范围：[0.1, 500] |
-| bmi | number | 否 | 是 | 身体质量指数，若未填写，默认为空。  单位：千克/平方米  取值范围：[1,200] |
-| bodyFat | number | 否 | 是 | 体脂量，若未填写，默认为空。  单位：千克  取值范围：[0, 500] |
-| bodyFatRate | number | 否 | 是 | 体脂率，若未填写，默认为空。  单位：百分比  取值范围：[0, 100] |
-| muscleMass | number | 否 | 是 | 肌肉量，若未填写，默认为空。  单位：千克  取值范围：[0.1, 150] |
-| basalMetabolism | number | 否 | 是 | 基础代谢，若未填写，默认为空。  单位：千卡/天  取值范围：[0, ∞) |
-| moisture | number | 否 | 是 | 水分量，若未填写，默认为空。  单位：千克  取值范围：[0, 500] |
-| moistureRate | number | 否 | 是 | 水分率，若未填写，默认为空。  单位：百分比  取值范围：[0, 100] |
+| bodyWeight | number | 否 | 否 | 体重。  单位：kg  取值范围：[0.1, 500] |
+| bmi | number | 否 | 是 | 身体质量指数，若未填写，默认为空。  单位：kg/m²  取值范围：[1,200] |
+| bodyFat | number | 否 | 是 | 体脂量，若未填写，默认为空。  单位：kg  取值范围：[0, 500] |
+| bodyFatRate | number | 否 | 是 | 体脂率，若未填写，默认为空。  单位：%  取值范围：[0, 100] |
+| muscleMass | number | 否 | 是 | 肌肉量，若未填写，默认为空。  单位：kg  取值范围：[0.1, 150] |
+| basalMetabolism | number | 否 | 是 | 基础代谢，若未填写，默认为空。  单位：kcal/day  取值范围：[0, ∞) |
+| moisture | number | 否 | 是 | 水分量，若未填写，默认为空。  单位：kg  取值范围：[0, 500] |
+| moistureRate | number | 否 | 是 | 水分率，若未填写，默认为空。  单位：%  取值范围：[0, 100] |
 | visceralFatLevel | number | 否 | 是 | 内脏脂肪等级，若未填写，默认为空。  取值范围：[1, 59] |
-| boneSalt | number | 否 | 是 | 骨盐量，若未填写，默认为空。  单位：千克  取值范围：[0.5, 5] |
-| proteinRate | number | 否 | 是 | 蛋白质率，若未填写，默认为空。  单位：百分比  取值范围：[0, 100] |
-| bodyScore | number | 否 | 是 | 身体得分，若未填写，默认为空。  单位：百分比  取值范围：[0, 100] |
+| boneSalt | number | 否 | 是 | 骨盐量，若未填写，默认为空。  单位：kg  取值范围：[0.5, 5] |
+| proteinRate | number | 否 | 是 | 蛋白质率，若未填写，默认为空。  单位：%  取值范围：[0, 100] |
+| bodyScore | number | 否 | 是 | 身体得分，若未填写，默认为空。  单位：%  取值范围：[0, 100] |
 | bodyAge | number | 否 | 是 | 身体年龄，若未填写，默认为空。  取值范围：[5, 99] |
-| skeletalMuscleMass | number | 否 | 是 | 骨骼肌量，若未填写，默认为空。  单位：千克  取值范围：[1, 150] |
+| skeletalMuscleMass | number | 否 | 是 | 骨骼肌量，若未填写，默认为空。  单位：kg  取值范围：[1, 150] |
 | impedance | number | 否 | 是 | 阻抗。  单位：欧姆  取值范围：[0.1, 100000] |

@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 如何避免模块下文件打包进HAR包后，存在的不可预期的资料、配置或信息安全风险
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 如何避免模块下文件打包进HAR包后，存在的不可预期的资料、配置或信息安全风险
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:14:47+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:f8c2481aa67739da085934afba0068176adba2a8a52296be1bf5b9311b001cdd
+scraped_at: 2026-09-02T14:53:52+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:9b61e3e171ecc348242fff0681ff761979ea89308a993ef89f1c6cdcc2b01379
 ---
 
 1. 配置ohpmignore文件：如果部分工程源文件无需构建到HAR包中，可在module目录下新建.ohpmignore文件，用于配置打包时要忽略的文件。将无需打包的文件或文件夹名称写入.ohpmignore文件中，DevEco Studio构建时将过滤掉这些文件目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/lvFd51G6RviWkQmlRjTdLg/zh-cn_image_0000002194318100.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/-hL9Z_jQTH-dxRyaP46m-g/zh-cn_image_0000002654835173.png "点击放大")
 
    更改 .ohpmignore 配置后，需清空相应模块的 build 文件夹，或在DevEco Studio中选择 Build -> clean project，然后再进行打包。
 2. 构建闭源HAR：DevEco Studio支持闭源HAR构建，通过对代码进行编译混淆，生成闭源HAR。在不共享源码的情况下，通过闭源HAR对外提供组件、资源等，可以实现多个模块或多个工程共享组件、资源等。具体实现方式可以参考：[以release模式构建](../harmonyos-guides/ide-hvigor-build-har.md#section19788284410)。
@@ -23,30 +23,28 @@ content_hash: sha256:f8c2481aa67739da085934afba0068176adba2a8a52296be1bf5b9311b0
 
    配置如下：
 
+   ```json
+   {
+     "apiType": "stageMode",
+     "buildOption": {
+     },
+     "buildOptionSet": [
+       {
+         "name": "release",
+         "arkOptions": {
+           "obfuscation": {
+             "ruleOptions": {
+               "enable": true,
+               "files": [
+                 "./obfuscation-rules.txt"
+               ]
+             }
+           }
+         }
+       },
+     ],
+     // ...
+   }
    ```
-   1. {
-   2. "apiType": "stageMode",
-   3. "buildOption": {
-   4. },
-   5. "buildOptionSet": [
-   6. {
-   7. "name": "release",
-   8. "arkOptions": {
-   9. "obfuscation": {
-   10. "ruleOptions": {
-   11. "enable": true,
-   12. "files": [
-   13. "./obfuscation-rules.txt"
-   14. ]
-   15. }
-   16. }
-   17. }
-   18. },
-   19. ],
-   20. // ...
-   21. }
-   ```
-
-   [build-profile.json5](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/PackageStructureKit/entry/build-profile.json5#L3-L32)
 
    具体内容可参考链接：[混淆加固](../harmonyos-guides/ide-build-obfuscation.md)。

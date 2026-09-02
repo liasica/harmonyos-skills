@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-m
 title: 组件内状态管理常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理常见问题 > 组件内状态管理常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:30+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:d6c731287db7b4a6052b4a80645323ac50e31f309628b3503dc318eb5618e42a
+scraped_at: 2026-09-02T14:59:16+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:680b6c5a5b4ee081c8c1e2143b0d88b6c070e044feb6938a5a2a07af37866880
 ---
 
 在ArkUI应用开发中，组件内状态管理的合理使用直接影响应用的性能和开发效率。然而，开发者在实践中常因更新机制理解不足，导致组件行为异常或渲染效率下降。本文将介绍组件内状态管理的常见问题与解决方案。
@@ -25,60 +25,56 @@ content_hash: sha256:d6c731287db7b4a6052b4a80645323ac50e31f309628b3503dc318eb561
    * 刷新过程中组件不会再标脏自己。
    * Text最终显示为2。
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. @State count: number = 1;
+```typescript
+@Entry
+@Component
+struct Index {
+  @State count: number = 1;
 
-6. build() {
-7. Column() {
-8. // 应避免直接在Text组件内改变count的值
-9. Text(`${this.count++}`)
-10. .width(50)
-11. .height(50)
-12. }
-13. }
-14. }
+  build() {
+    Column() {
+      // 应避免直接在Text组件内改变count的值
+      Text(`${this.count++}`)
+        .width(50)
+        .height(50)
+    }
+  }
+}
 ```
-
-[StateProblemNotUpdateInBuildError01.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/state/StateProblemNotUpdateInBuildError01.ets#L16-L31)
 
 在首次创建的过程中，Text组件被多渲染了一次，最终显示为2。
 
 框架识别到在build里改变状态变量会打error日志，error日志为：
 
-```
-1. FIX THIS APPLICATION ERROR: @Component 'Index': State variable 'count' has changed during render! It's illegal to change @Component state while build (initial render or re-render) is on-going. Application error!
+```ts
+FIX THIS APPLICATION ERROR: @Component 'Index': State variable 'count' has changed during render! It's illegal to change @Component state while build (initial render or re-render) is on-going. Application error!
 ```
 
 在上述示例中，Text组件多渲染了一次。这个错误行为不会造成严重的后果，所以许多开发者忽略了这个日志。
 
 但是，此行为是严重错误的，随着工程的复杂度升级，隐患将逐渐增大。见下一个例子。
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. @State message: number = 20;
+```typescript
+@Entry
+@Component
+struct Index {
+  @State message: number = 20;
 
-6. build() {
-7. Column() {
-8. // 典型错误，会导致appfreeze
-9. Text(`${this.message++}`)
-10. Text(`${this.message++}`)
-11. }
-12. .height('100%')
-13. .width('100%')
-14. }
-15. }
+  build() {
+    Column() {
+      // 典型错误，会导致appfreeze
+      Text(`${this.message++}`)
+      Text(`${this.message++}`)
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
-
-[StateProblemNotUpdateInBuildError02.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/state/StateProblemNotUpdateInBuildError02.ets#L16-L31)
 
 上面示例的渲染过程为：
 
-1. 创建第一个Text组件，触发this.message改变，[标脏](arkts-state-management-glossary.md#标脏mark-dirty)第一个Text组件。
+1. 创建第一个Text组件，触发this.message改变，[标脏](arkts-state-management-glossary.md#mark-dirty标脏)第一个Text组件。
 2. 创建第二个Text组件，触发this.message改变，标脏两个Text组件。
 3. 下一帧到来时，刷新脏系统组件。
 4. 刷新第一个Text组件，触发this.message改变，不会标脏自己，仅标脏第二个Text组件。
@@ -92,64 +88,61 @@ content_hash: sha256:d6c731287db7b4a6052b4a80645323ac50e31f309628b3503dc318eb561
 
 开发者可以在[aboutToAppear](../harmonyos-references/ts-custom-component-lifecycle.md#abouttoappear)中注册箭头函数，以此改变组件中的状态变量。
 
-注意
+**注意** 
 
 需要在[aboutToDisappear](../harmonyos-references/ts-custom-component-lifecycle.md#abouttodisappear)中将注册的函数置空，以避免箭头函数捕获自定义组件的this实例，导致自定义组件无法被释放，从而造成内存泄漏。
 
+```typescript
+import { common } from '@kit.AbilityKit';
+
+class Model {
+  private callback: (() => void) | undefined = () => {
+  };
+
+  add(callback: () => void): void {
+    this.callback = callback;
+  }
+
+  delete(): void {
+    this.callback = undefined;
+  }
+
+  call(): void {
+    if (this.callback) {
+      this.callback();
+    }
+  }
+}
+
+let model: Model = new Model();
+
+@Entry
+@Component
+struct Test {
+  @State count: number = 10;
+
+  aboutToAppear(): void {
+    model.add(() => {
+      this.count++;
+    })
+  }
+
+  build() {
+    Column() {
+      // 请在resources\base\element\string.json文件中配置name为'state_countvalue_text1' ，value为非空字符串的资源
+      Text(resource.resourceToString($r('app.string.state_countvalue_text1')) + `${this.count}`)
+      Button('change')
+        .onClick(() => {
+          model.call();
+        })
+    }
+  }
+
+  aboutToDisappear(): void {
+    model.delete();
+  }
+}
 ```
-1. import { common } from '@kit.AbilityKit';
-
-3. class Model {
-4. private callback: (() => void) | undefined = () => {
-5. };
-
-7. add(callback: () => void): void {
-8. this.callback = callback;
-9. }
-
-11. delete(): void {
-12. this.callback = undefined;
-13. }
-
-15. call(): void {
-16. if (this.callback) {
-17. this.callback();
-18. }
-19. }
-20. }
-
-22. let model: Model = new Model();
-
-24. @Entry
-25. @Component
-26. struct Test {
-27. @State count: number = 10;
-28. private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-
-30. aboutToAppear(): void {
-31. model.add(() => {
-32. this.count++;
-33. })
-34. }
-
-36. build() {
-37. Column() {
-38. // 请在resources\base\element\string.json文件中配置name为'state_countvalue_text1' ，value为非空字符串的资源
-39. Text(resource.resourceToString($r('app.string.state_countvalue_text1')) + `${this.count}`)
-40. Button('change')
-41. .onClick(() => {
-42. model.call();
-43. })
-44. }
-45. }
-
-47. aboutToDisappear(): void {
-48. model.delete();
-49. }
-50. }
-```
-
-[StateProblemUnregisterStateCallback.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/state/StateProblemUnregisterStateCallback.ets#L16-L67)
 
 此外，也可以使用 LocalStorage在[自定义组件外改变状态变量](arkts-localstorage.md#自定义组件外改变状态变量)。
 
@@ -159,50 +152,48 @@ content_hash: sha256:d6c731287db7b4a6052b4a80645323ac50e31f309628b3503dc318eb561
 
 【反例】
 
+```typescript
+class Balloon {
+  public volume: number;
+
+  constructor(volume: number) {
+    this.volume = volume;
+  }
+
+  static increaseVolume(balloon: Balloon) {
+    balloon.volume += 2;
+  }
+}
+
+@Entry
+@Component
+struct Index {
+  @State balloon: Balloon = new Balloon(10);
+
+  reduceVolume(balloon: Balloon) {
+    balloon.volume -= 1;
+  }
+
+  build() {
+    Column({ space: 8 }) {
+      Text(`The volume of the balloon is ${this.balloon.volume} cubic centimeters.`)
+        .fontSize(30)
+      Button(`increaseVolume`)
+        .onClick(() => {
+          // 通过静态方法调用，无法触发UI刷新
+          Balloon.increaseVolume(this.balloon);
+        })
+      Button(`reduceVolume`)
+        .onClick(() => {
+          // 使用this通过自定义组件内部方法调用，无法触发UI刷新
+          this.reduceVolume(this.balloon);
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
-1. class Balloon {
-2. public volume: number;
-
-4. constructor(volume: number) {
-5. this.volume = volume;
-6. }
-
-8. static increaseVolume(balloon: Balloon) {
-9. balloon.volume += 2;
-10. }
-11. }
-
-13. @Entry
-14. @Component
-15. struct Index {
-16. @State balloon: Balloon = new Balloon(10);
-
-18. reduceVolume(balloon: Balloon) {
-19. balloon.volume -= 1;
-20. }
-
-22. build() {
-23. Column({ space: 8 }) {
-24. Text(`The volume of the balloon is ${this.balloon.volume} cubic centimeters.`)
-25. .fontSize(30)
-26. Button(`increaseVolume`)
-27. .onClick(() => {
-28. // 通过静态方法调用，无法触发UI刷新
-29. Balloon.increaseVolume(this.balloon);
-30. })
-31. Button(`reduceVolume`)
-32. .onClick(() => {
-33. // 使用this通过自定义组件内部方法调用，无法触发UI刷新
-34. this.reduceVolume(this.balloon);
-35. })
-36. }
-37. .width('100%')
-38. .height('100%')
-39. }
-40. }
-```
-
-[StateProblemABCallUiRefreshOpposite.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/state/StateProblemABCallUiRefreshOpposite.ets#L16-L57)
 
 状态变量观察类属性变化是通过代理捕获其变化的，当使用a.b(this.object)调用时，框架会将代理对象转换为原始对象。修改原始对象属性，无法观察，因此UI不会刷新。开发者可以使用如下方法修改：
 
@@ -213,52 +204,50 @@ content_hash: sha256:d6c731287db7b4a6052b4a80645323ac50e31f309628b3503dc318eb561
 
 【正例】
 
+```typescript
+class Balloon {
+  public volume: number;
+
+  constructor(volume: number) {
+    this.volume = volume;
+  }
+
+  static increaseVolume(balloon: Balloon) {
+    balloon.volume += 2;
+  }
+}
+
+@Entry
+@Component
+struct Index {
+  @State balloon: Balloon = new Balloon(10);
+
+  reduceVolume(balloon: Balloon) {
+    balloon.volume -= 1;
+  }
+
+  build() {
+    Column({ space: 8 }) {
+      Text(`The volume of the balloon is ${this.balloon.volume} cubic centimeters.`)
+        .fontSize(30)
+      Button(`increaseVolume`)
+        .onClick(() => {
+          // 通过赋值给临时变量保留Proxy代理
+          let balloon1 = this.balloon;
+          Balloon.increaseVolume(balloon1);
+        })
+      Button(`reduceVolume`)
+        .onClick(() => {
+          // 通过赋值给临时变量保留Proxy代理
+          let balloon2 = this.balloon;
+          this.reduceVolume(balloon2);
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
-1. class Balloon {
-2. public volume: number;
-
-4. constructor(volume: number) {
-5. this.volume = volume;
-6. }
-
-8. static increaseVolume(balloon: Balloon) {
-9. balloon.volume += 2;
-10. }
-11. }
-
-13. @Entry
-14. @Component
-15. struct Index {
-16. @State balloon: Balloon = new Balloon(10);
-
-18. reduceVolume(balloon: Balloon) {
-19. balloon.volume -= 1;
-20. }
-
-22. build() {
-23. Column({ space: 8 }) {
-24. Text(`The volume of the balloon is ${this.balloon.volume} cubic centimeters.`)
-25. .fontSize(30)
-26. Button(`increaseVolume`)
-27. .onClick(() => {
-28. // 通过赋值给临时变量保留Proxy代理
-29. let balloon1 = this.balloon;
-30. Balloon.increaseVolume(balloon1);
-31. })
-32. Button(`reduceVolume`)
-33. .onClick(() => {
-34. // 通过赋值给临时变量保留Proxy代理
-35. let balloon2 = this.balloon;
-36. this.reduceVolume(balloon2);
-37. })
-38. }
-39. .width('100%')
-40. .height('100%')
-41. }
-42. }
-```
-
-[StateProblemABCallUiRefreshPositive.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/state/StateProblemABCallUiRefreshPositive.ets#L16-L59)
 
 ## 复杂类型常量重复赋值给状态变量触发不必要的刷新
 
@@ -266,56 +255,54 @@ content_hash: sha256:d6c731287db7b4a6052b4a80645323ac50e31f309628b3503dc318eb561
 
 在状态管理V1中，会给被@Observed装饰的类对象以及使用状态变量装饰器如@State装饰的Class、Date、Map、Set、Array类型的对象添加一层代理，用于观测一层属性或API调用产生的变化。当复杂类型常量重复赋值给状态变量时，可能会由于加了代理而判断为新旧值不相等，导致不必要的刷新。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+class DataObj {
+  public name: string = 'default name';
+
+  constructor(name: string) {
+    this.name = name;
+  }
+}
+
+@Entry
+@Component
+struct Index {
+  list: DataObj[] = [new DataObj('a'), new DataObj('b'), new DataObj('c')];
+  @State dataObjFromList: DataObj = this.list[0];
+
+  build() {
+    Column() {
+      ConsumerChild({ dataObj: this.dataObjFromList })
+      Button('change to self').onClick(() => {
+        // 把相同的类实例赋值给一个Class类型的状态变量，会触发刷新
+        this.dataObjFromList = this.list[0];
+      })
+    }
+  }
+}
+
+@Component
+struct ConsumerChild {
+  @Link @Watch('onDataObjChange') dataObj: DataObj;
+
+  onDataObjChange() {
+    hilog.info(0xFF00, 'testTag', '%{public}s', 'dataObj changed');
+  }
+
+  getContent() {
+    hilog.info(0xFF00, 'testTag', '%{public}s', `this.dataObj.name change: ${this.dataObj.name}`);
+    return this.dataObj.name;
+  }
+
+  build() {
+    Column() {
+      Text(this.getContent()).fontSize(30)
+    }
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-3. class DataObj {
-4. public name: string = 'default name';
-
-6. constructor(name: string) {
-7. this.name = name;
-8. }
-9. }
-
-11. @Entry
-12. @Component
-13. struct Index {
-14. list: DataObj[] = [new DataObj('a'), new DataObj('b'), new DataObj('c')];
-15. @State dataObjFromList: DataObj = this.list[0];
-
-17. build() {
-18. Column() {
-19. ConsumerChild({ dataObj: this.dataObjFromList })
-20. Button('change to self').onClick(() => {
-21. // 把相同的类实例赋值给一个Class类型的状态变量，会触发刷新
-22. this.dataObjFromList = this.list[0];
-23. })
-24. }
-25. }
-26. }
-
-28. @Component
-29. struct ConsumerChild {
-30. @Link @Watch('onDataObjChange') dataObj: DataObj;
-
-32. onDataObjChange() {
-33. hilog.info(0xFF00, 'testTag', '%{public}s', 'dataObj changed');
-34. }
-
-36. getContent() {
-37. hilog.info(0xFF00, 'testTag', '%{public}s', `this.dataObj.name change: ${this.dataObj.name}`);
-38. return this.dataObj.name;
-39. }
-
-41. build() {
-42. Column() {
-43. Text(this.getContent()).fontSize(30)
-44. }
-45. }
-46. }
-```
-
-[StateProblemComplexConstantRepeatRefresh.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/state/StateProblemComplexConstantRepeatRefresh.ets#L15-L61)
 
 以上示例每次点击Button('change to self')，把相同的类实例赋值给一个Class类型的状态变量，会触发刷新并输出this.dataObj.name change: a日志。这是因为当再次赋值list[0]时，dataObjFromList已经是Proxy类型，而list[0]是Object类型，因此判断两者不相等，会触发赋值和刷新。
 
@@ -323,106 +310,102 @@ content_hash: sha256:d6c731287db7b4a6052b4a80645323ac50e31f309628b3503dc318eb561
 
 方法一：增加@Observed
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Observed
+class DataObj {
+  public name: string = 'default name';
+
+  constructor(name: string) {
+    this.name = name;
+  }
+}
+
+@Entry
+@Component
+struct Index {
+  list: DataObj[] = [new DataObj('a'), new DataObj('b'), new DataObj('c')];
+  @State dataObjFromList: DataObj = this.list[0];
+
+  build() {
+    Column() {
+      ConsumerChild({ dataObj: this.dataObjFromList })
+      Button('change to self').onClick(() => {
+        // DataObj被@Observed装饰，list[0]也是Proxy类型
+        // 再次赋值相同的对象时，不会触发刷新
+        this.dataObjFromList = this.list[0];
+      })
+    }
+  }
+}
+
+@Component
+struct ConsumerChild {
+  @Link @Watch('onDataObjChange') dataObj: DataObj;
+
+  onDataObjChange() {
+    hilog.info(0xFF00, 'testTag', '%{public}s', 'dataObj changed');
+  }
+
+  build() {
+    Column() {
+      Text(this.dataObj.name).fontSize(30)
+    }
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-3. @Observed
-4. class DataObj {
-5. public name: string = 'default name';
-
-7. constructor(name: string) {
-8. this.name = name;
-9. }
-10. }
-
-12. @Entry
-13. @Component
-14. struct Index {
-15. list: DataObj[] = [new DataObj('a'), new DataObj('b'), new DataObj('c')];
-16. @State dataObjFromList: DataObj = this.list[0];
-
-18. build() {
-19. Column() {
-20. ConsumerChild({ dataObj: this.dataObjFromList })
-21. Button('change to self').onClick(() => {
-22. // DataObj被@Observed装饰，list[0]也是Proxy类型
-23. // 再次赋值相同的对象时，不会触发刷新
-24. this.dataObjFromList = this.list[0];
-25. })
-26. }
-27. }
-28. }
-
-30. @Component
-31. struct ConsumerChild {
-32. @Link @Watch('onDataObjChange') dataObj: DataObj;
-
-34. onDataObjChange() {
-35. hilog.info(0xFF00, 'testTag', '%{public}s', 'dataObj changed');
-36. }
-
-38. build() {
-39. Column() {
-40. Text(this.dataObj.name).fontSize(30)
-41. }
-42. }
-43. }
-```
-
-[StateProblemComplexSolution01.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/state/StateProblemComplexSolution01.ets#L15-L57)
 
 以上示例，给对应的类增加了@Observed装饰器后，list[0]已经是Proxy类型了，这样再次赋值时，相同的对象，就不会触发刷新。
 
 方法二：使用[UIUtils.getTarget()](arkts-new-gettarget.md)获取原始对象
 
+```typescript
+import { UIUtils } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+class DataObj {
+  public name: string = 'default name';
+
+  constructor(name: string) {
+    this.name = name;
+  }
+}
+
+@Entry
+@Component
+struct Index {
+  list: DataObj[] = [new DataObj('a'), new DataObj('b'), new DataObj('c')];
+  @State dataObjFromList: DataObj = this.list[0];
+
+  build() {
+    Column() {
+      ConsumerChild({ dataObj: this.dataObjFromList })
+      Button('change to self').onClick(() => {
+        // 获取原始对象来和新值做对比
+        if (UIUtils.getTarget(this.dataObjFromList) !== this.list[0]) {
+          this.dataObjFromList = this.list[0];
+        }
+      })
+    }
+  }
+}
+
+@Component
+struct ConsumerChild {
+  @Link @Watch('onDataObjChange') dataObj: DataObj;
+
+  onDataObjChange() {
+    hilog.info(0xFF00, 'testTag', '%{public}s', 'dataObj changed');
+  }
+
+  build() {
+    Column() {
+      Text(this.dataObj.name).fontSize(30)
+    }
+  }
+}
 ```
-1. import { UIUtils } from '@kit.ArkUI';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-4. class DataObj {
-5. public name: string = 'default name';
-
-7. constructor(name: string) {
-8. this.name = name;
-9. }
-10. }
-
-12. @Entry
-13. @Component
-14. struct Index {
-15. list: DataObj[] = [new DataObj('a'), new DataObj('b'), new DataObj('c')];
-16. @State dataObjFromList: DataObj = this.list[0];
-
-18. build() {
-19. Column() {
-20. ConsumerChild({ dataObj: this.dataObjFromList })
-21. Button('change to self').onClick(() => {
-22. // 获取原始对象来和新值做对比
-23. if (UIUtils.getTarget(this.dataObjFromList) !== this.list[0]) {
-24. this.dataObjFromList = this.list[0];
-25. }
-26. })
-27. }
-28. }
-29. }
-
-31. @Component
-32. struct ConsumerChild {
-33. @Link @Watch('onDataObjChange') dataObj: DataObj;
-
-35. onDataObjChange() {
-36. hilog.info(0xFF00, 'testTag', '%{public}s', 'dataObj changed');
-37. }
-
-39. build() {
-40. Column() {
-41. Text(this.dataObj.name).fontSize(30)
-42. }
-43. }
-44. }
-```
-
-[StateProblemComplexSolution02.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/state/StateProblemComplexSolution02.ets#L16-L61)
 
 以上示例，在赋值前，使用getTarget获取了对应状态变量的原始对象，经过对比后，如果和当前对象一样，就不赋值，不触发刷新。
 
@@ -430,32 +413,30 @@ content_hash: sha256:d6c731287db7b4a6052b4a80645323ac50e31f309628b3503dc318eb561
 
 在状态管理V2中，会给使用状态变量装饰器如@Trace、@Local装饰的Date、Map、Set、Array添加一层代理用于观测API调用产生的变化。当复杂类型常量重复赋值给状态变量时，可能会由于加了代理而判断为新旧值不相等，导致不必要的刷新。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@ComponentV2
+struct Index {
+  list: string[][] = [['a'], ['b'], ['c']];
+  @Local dataObjFromList: string[] = this.list[0];
+
+  @Monitor('dataObjFromList')
+  onStrChange(monitor: IMonitor) {
+    hilog.info(0xFF00, 'testTag', '%{public}s', 'dataObjFromList has changed');
+  }
+
+  build() {
+    Column() {
+      Button('change to self').onClick(() => {
+        // 新值和本地初始化的值相同
+        this.dataObjFromList = this.list[0];
+      })
+    }
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-3. @Entry
-4. @ComponentV2
-5. struct Index {
-6. list: string[][] = [['a'], ['b'], ['c']];
-7. @Local dataObjFromList: string[] = this.list[0];
-
-9. @Monitor('dataObjFromList')
-10. onStrChange(monitor: IMonitor) {
-11. hilog.info(0xFF00, 'testTag', '%{public}s', 'dataObjFromList has changed');
-12. }
-
-14. build() {
-15. Column() {
-16. Button('change to self').onClick(() => {
-17. // 新值和本地初始化的值相同
-18. this.dataObjFromList = this.list[0];
-19. })
-20. }
-21. }
-22. }
-```
-
-[LocalQuestionSparkUpdate.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/local/LocalQuestionSparkUpdate.ets#L15-L38)
 
 以上示例每次点击Button('change to self')，把相同的Array类型常量赋值给一个Array类型的状态变量，都会触发刷新。这是因为当再次赋值list[0]时，dataObjFromList已经是Proxy类型，而list[0]是Array类型。由于类型不相等，会触发赋值和刷新。
 
@@ -463,37 +444,35 @@ content_hash: sha256:d6c731287db7b4a6052b4a80645323ac50e31f309628b3503dc318eb561
 
 使用UIUtils.getTarget()方法示例。
 
+```typescript
+import { UIUtils } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN = 0x0000;
+
+@Entry
+@ComponentV2
+struct Index {
+  list: string[][] = [['a'], ['b'], ['c']];
+  @Local dataObjFromList: string[] = this.list[0];
+
+  @Monitor('dataObjFromList')
+  onStrChange(monitor: IMonitor) {
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'dataObjFromList has changed');
+  }
+
+  build() {
+    Column() {
+      Button('change to self').onClick(() => {
+        // 获取原始对象来和新值做对比
+        if (UIUtils.getTarget(this.dataObjFromList) !== this.list[0]) {
+          this.dataObjFromList = this.list[0];
+        }
+      })
+    }
+  }
+}
 ```
-1. import { UIUtils } from '@kit.ArkUI';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-4. const DOMAIN = 0x0000;
-
-6. @Entry
-7. @ComponentV2
-8. struct Index {
-9. list: string[][] = [['a'], ['b'], ['c']];
-10. @Local dataObjFromList: string[] = this.list[0];
-
-12. @Monitor('dataObjFromList')
-13. onStrChange(monitor: IMonitor) {
-14. hilog.info(DOMAIN, 'testTag', '%{public}s', 'dataObjFromList has changed');
-15. }
-
-17. build() {
-18. Column() {
-19. Button('change to self').onClick(() => {
-20. // 获取原始对象来和新值做对比
-21. if (UIUtils.getTarget(this.dataObjFromList) !== this.list[0]) {
-22. this.dataObjFromList = this.list[0];
-23. }
-24. })
-25. }
-26. }
-27. }
-```
-
-[LocalQuestionUIUtils.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/local/LocalQuestionUIUtils.ets#L17-L45)
 
 ## 子组件无需修改状态变量时，使用@Prop导致不必要的深拷贝
 
@@ -501,215 +480,207 @@ content_hash: sha256:d6c731287db7b4a6052b4a80645323ac50e31f309628b3503dc318eb561
 
 【反例】
 
+```typescript
+@Observed
+class DeepReMyClass {
+  public num: number = 0;
+
+  constructor(num: number) {
+    this.num = num;
+  }
+}
+
+@Component
+struct DeepRePropChild {
+  @Prop testClass: DeepReMyClass; // @Prop装饰状态变量会深拷贝。
+
+  build() {
+    Text(`PropChild testNum ${this.testClass.num}`)
+  }
+}
+
+@Entry
+@Component
+struct DeepReParent {
+  @State testClass: DeepReMyClass[] = [new DeepReMyClass(1)];
+
+  build() {
+    Column() {
+      Text(`DeepReParent testNum ${this.testClass[0].num}`)
+        .onClick(() => {
+          this.testClass[0].num += 1;
+        })
+
+      // DeepRePropChild没有改变@Prop testClass: DeepReMyClass的值，所以这时最优的选择是使用@ObjectLink。
+      DeepRePropChild({ testClass: this.testClass[0] })
+    }
+  }
+}
 ```
-1. @Observed
-2. class DeepReMyClass {
-3. public num: number = 0;
 
-5. constructor(num: number) {
-6. this.num = num;
-7. }
-8. }
-
-10. @Component
-11. struct DeepRePropChild {
-12. @Prop testClass: DeepReMyClass; // @Prop装饰状态变量会深拷贝。
-
-14. build() {
-15. Text(`PropChild testNum ${this.testClass.num}`)
-16. }
-17. }
-
-19. @Entry
-20. @Component
-21. struct DeepReParent {
-22. @State testClass: DeepReMyClass[] = [new DeepReMyClass(1)];
-
-24. build() {
-25. Column() {
-26. Text(`DeepReParent testNum ${this.testClass[0].num}`)
-27. .onClick(() => {
-28. this.testClass[0].num += 1;
-29. })
-
-31. // DeepRePropChild没有改变@Prop testClass: DeepReMyClass的值，所以这时最优的选择是使用@ObjectLink。
-32. DeepRePropChild({ testClass: this.testClass[0] })
-33. }
-34. }
-35. }
-```
-
-[DeepCopyReverse.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateManagement/entry/src/main/ets/pages/DeepCopyReverse.ets#L16-L52)
-
-在以上示例中，DeepRePropChild组件没有改变@Prop testClass: MyClass的值，因此使用@ObjectLink更为合适。因为@Prop会深拷贝数据带来性能开销，所以@ObjectLink是比@Prop更优的选择。
+在以上示例中，DeepRePropChild组件没有改变@Prop testClass: DeepReMyClass的值，因此使用@ObjectLink更为合适。因为@Prop会深拷贝数据带来性能开销，所以@ObjectLink是比@Prop更优的选择。
 
 【正例】
 
+```typescript
+@Observed
+class MyClass {
+  public num: number = 0;
+
+  constructor(num: number) {
+    this.num = num;
+  }
+}
+
+@Component
+struct PropChild {
+  @ObjectLink testClass: MyClass; // @ObjectLink装饰状态变量不会深拷贝。
+
+  build() {
+    Text(`PropChild testNum ${this.testClass.num}`)
+  }
+}
+
+@Entry
+@Component
+struct Parent {
+  @State testClass: MyClass[] = [new MyClass(1)];
+
+  build() {
+    Column() {
+      Text(`Parent testNum ${this.testClass[0].num}`)
+        .onClick(() => {
+          this.testClass[0].num += 1;
+        })
+
+      // 当子组件不需要本地修改状态时，应优先使用@ObjectLink，因为@Prop会执行深拷贝并带来性能开销，此时@ObjectLink是比@Link和@Prop更优的选择。
+      PropChild({ testClass: this.testClass[0] })
+    }
+  }
+}
 ```
-1. @Observed
-2. class MyClass {
-3. public num: number = 0;
-
-5. constructor(num: number) {
-6. this.num = num;
-7. }
-8. }
-
-10. @Component
-11. struct PropChild {
-12. @ObjectLink testClass: MyClass; // @ObjectLink装饰状态变量不会深拷贝。
-
-14. build() {
-15. Text(`PropChild testNum ${this.testClass.num}`)
-16. }
-17. }
-
-19. @Entry
-20. @Component
-21. struct Parent {
-22. @State testClass: MyClass[] = [new MyClass(1)];
-
-24. build() {
-25. Column() {
-26. Text(`Parent testNum ${this.testClass[0].num}`)
-27. .onClick(() => {
-28. this.testClass[0].num += 1;
-29. })
-
-31. // 当子组件不需要本地修改状态时，应优先使用@ObjectLink，因为@Prop会执行深拷贝并带来性能开销，此时@ObjectLink是比@Link和@Prop更优的选择。
-32. PropChild({ testClass: this.testClass[0] })
-33. }
-34. }
-35. }
-```
-
-[DeepCopyCorrect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateManagement/entry/src/main/ets/pages/DeepCopyCorrect.ets#L16-L52)
 
 ## 状态变量关联的组件数过多导致性能下降
 
-建议每个状态变量关联的组件数少于20个。精准控制状态变量关联的组件数量可减少不必要的组件刷新，提升刷新效率。有时开发者会将同一状态变量绑定于多个同级组件属性，状态变化时将导致这些组件同步更新，产生不必要的刷新，当组件复杂度较高时会显著影响整体性能。相反，将该状态变量绑定在这些组件的父组件上，可以减少需要刷新的组件数，提高性能。在应用开发中，可以通过HiDumper查看状态变量关联的组件数。具体可参考[状态变量组件定位工具实践](https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/performance/state_variable_dfx_pratice.md)。
+建议每个状态变量关联的组件数少于20个。精准控制状态变量关联的组件数量可减少不必要的组件刷新，提升刷新效率。有时开发者会将同一状态变量绑定于多个同级组件属性，状态变化时将导致这些组件同步更新，产生不必要的刷新，当组件复杂度较高时会显著影响整体性能。相反，将该状态变量绑定在这些组件的父组件上，可以减少需要刷新的组件数，提高性能。在应用开发中，可以通过HiDumper查看状态变量关联的组件数。
 
 【反例】
 
+```typescript
+@Observed
+class Translate {
+  public translateX: number = 20;
+}
+
+@Component
+struct Title {
+  @ObjectLink translateObj: Translate;
+
+  build() {
+    Row() {
+      // $r('app.media.background')需要替换为开发者所需的资源文件。
+      Image($r('app.media.background'))
+        .width(50)
+        .height(50)
+        .translate({
+          x: this.translateObj.translateX // this.translateObj.translateX 绑定在Image和Text组件上。
+        })
+      Text('Title')
+        .fontSize(20)
+        .translate({
+          x: this.translateObj.translateX
+        })
+    }
+  }
+}
+
+@Entry
+@Component
+struct Page {
+  @State translateObj: Translate = new Translate();
+
+  build() {
+    Column() {
+      Title({
+        translateObj: this.translateObj
+      })
+      Stack() {
+      }
+      .backgroundColor('black')
+      .width(200)
+      .height(400)
+      .translate({
+        x: this.translateObj.translateX // this.translateObj.translateX 绑定在Stack和Button组件上。
+      })
+      Button('move')
+        .translate({
+          x: this.translateObj.translateX
+        })
+        .onClick(() => {
+          this.getUIContext().animateTo({
+            duration: 50
+          }, () => {
+            this.translateObj.translateX = (this.translateObj.translateX + 50) % 150;
+          });
+        })
+    }
+  }
+}
 ```
-1. @Observed
-2. class Translate {
-3. public translateX: number = 20;
-4. }
-
-6. @Component
-7. struct Title {
-8. @ObjectLink translateObj: Translate;
-
-10. build() {
-11. Row() {
-12. // $r('app.media.background')需要替换为开发者所需的资源文件。
-13. Image($r('app.media.background'))
-14. .width(50)
-15. .height(50)
-16. .translate({
-17. x: this.translateObj.translateX // this.translateObj.translateX 绑定在Image和Text组件上。
-18. })
-19. Text('Title')
-20. .fontSize(20)
-21. .translate({
-22. x: this.translateObj.translateX
-23. })
-24. }
-25. }
-26. }
-
-28. @Entry
-29. @Component
-30. struct Page {
-31. @State translateObj: Translate = new Translate();
-
-33. build() {
-34. Column() {
-35. Title({
-36. translateObj: this.translateObj
-37. })
-38. Stack() {
-39. }
-40. .backgroundColor('black')
-41. .width(200)
-42. .height(400)
-43. .translate({
-44. x: this.translateObj.translateX // this.translateObj.translateX 绑定在Stack和Button组件上。
-45. })
-46. Button('move')
-47. .translate({
-48. x: this.translateObj.translateX
-49. })
-50. .onClick(() => {
-51. this.getUIContext().animateTo({
-52. duration: 50
-53. }, () => {
-54. this.translateObj.translateX = (this.translateObj.translateX + 50) % 150;
-55. });
-56. })
-57. }
-58. }
-59. }
-```
-
-[PreciseControlCounterexamples.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateManagement/entry/src/main/ets/pages/PreciseControlCounterexamples.ets#L16-L76)
 
 在上面的示例中，状态变量this.translateObj.translateX被用在多个同级的子组件下，当this.translateObj.translateX变化时，会导致所有关联它的组件一起刷新，但实际上由于这些组件的变化是相同的，因此可以将这个属性绑定到他们共同的父组件上，来实现减少组件的刷新数量。经过分析，所有子组件均位于Page组件的Column下，因此将所有子组件相同的translate属性统一到Column上，来实现精准控制状态变量关联的组件数。
 
 【正例】
 
+```typescript
+@Observed
+class PageTranslate {
+  public translateX: number = 20;
+}
+
+@Component
+struct PageTitle {
+  build() {
+    Row() {
+      // $r('app.media.background')需要替换为开发者所需的图像资源文件。
+      Image($r('app.media.background'))
+        .width(50)
+        .height(50)
+      Text('Title')
+        .fontSize(20)
+    }
+  }
+}
+
+@Entry
+@Component
+struct Page1 {
+  @State translateObj: PageTranslate = new PageTranslate();
+
+  build() {
+    Column() {
+      PageTitle()
+      Stack() {
+      }
+      .backgroundColor('black')
+      .width(200)
+      .height(400)
+      Button('move')
+        .onClick(() => {
+          this.getUIContext().animateTo({
+            duration: 50
+          }, () => {
+            this.translateObj.translateX = (this.translateObj.translateX + 50) % 150;
+          });
+        })
+    }
+    .translate({
+      // 子组件Stack和Button设置了同一个translate属性，可以统一到Column上设置。
+      x: this.translateObj.translateX
+    })
+  }
+}
 ```
-1. @Observed
-2. class PageTranslate {
-3. public translateX: number = 20;
-4. }
-
-6. @Component
-7. struct PageTitle {
-8. build() {
-9. Row() {
-10. // $r('app.media.background')需要替换为开发者所需的图像资源文件。
-11. Image($r('app.media.background'))
-12. .width(50)
-13. .height(50)
-14. Text('Title')
-15. .fontSize(20)
-16. }
-17. }
-18. }
-
-20. @Entry
-21. @Component
-22. struct Page1 {
-23. @State translateObj: PageTranslate = new PageTranslate();
-
-25. build() {
-26. Column() {
-27. PageTitle()
-28. Stack() {
-29. }
-30. .backgroundColor('black')
-31. .width(200)
-32. .height(400)
-33. Button('move')
-34. .onClick(() => {
-35. this.getUIContext().animateTo({
-36. duration: 50
-37. }, () => {
-38. this.translateObj.translateX = (this.translateObj.translateX + 50) % 150;
-39. });
-40. })
-41. }
-42. .translate({
-43. // 子组件Stack和Button设置了同一个translate属性，可以统一到Column上设置。
-44. x: this.translateObj.translateX
-45. })
-46. }
-47. }
-```
-
-[PreciseControlPositiveCases.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateManagement/entry/src/main/ets/pages/PreciseControlPositiveCases.ets#L16-L64)
 
 ## 在for、while等循环逻辑中频繁读取状态变量导致性能下降
 
@@ -717,78 +688,74 @@ content_hash: sha256:d6c731287db7b4a6052b4a80645323ac50e31f309628b3503dc318eb561
 
 【反例】
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@Component
+struct Index {
+  @State message: string = '';
+
+  build() {
+    Column() {
+      Button('Click to print log')
+        .onClick(() => {
+          for (let i = 0; i < 10; i++) {
+            // 循环逻辑中频繁读取状态变量
+            hilog.info(0x0000, 'TAG', '%{public}s', this.message);
+          }
+        })
+        .width('90%')
+        .backgroundColor(Color.Blue)
+        .fontColor(Color.White)
+        .margin({
+          top: 10
+        })
+    }
+    .justifyContent(FlexAlign.Start)
+    .alignItems(HorizontalAlign.Center)
+    .margin({
+      top: 15
+    })
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-3. @Entry
-4. @Component
-5. struct Index {
-6. @State message: string = '';
-
-8. build() {
-9. Column() {
-10. Button('Click to print log')
-11. .onClick(() => {
-12. for (let i = 0; i < 10; i++) {
-13. // 循环逻辑中频繁读取状态变量
-14. hilog.info(0x0000, 'TAG', '%{public}s', this.message);
-15. }
-16. })
-17. .width('90%')
-18. .backgroundColor(Color.Blue)
-19. .fontColor(Color.White)
-20. .margin({
-21. top: 10
-22. })
-23. }
-24. .justifyContent(FlexAlign.Start)
-25. .alignItems(HorizontalAlign.Center)
-26. .margin({
-27. top: 15
-28. })
-29. }
-30. }
-```
-
-[LoopStateInefficient.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateManagement/entry/src/main/ets/pages/LoopStateInefficient.ets#L16-L46)
 
 【正例】
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@Component
+struct Index {
+  @State message: string = '';
+
+  build() {
+    Column() {
+      Button('Click to print log')
+        .onClick(() => {
+          // 正确做法，在循环逻辑外读取状态变量
+          let logMessage: string = this.message;
+          for (let i = 0; i < 10; i++) {
+            hilog.info(0x0000, 'TAG', '%{public}s', logMessage);
+          }
+        })
+        .width('90%')
+        .backgroundColor(Color.Blue)
+        .fontColor(Color.White)
+        .margin({
+          top: 10
+        })
+    }
+    .justifyContent(FlexAlign.Start)
+    .alignItems(HorizontalAlign.Center)
+    .margin({
+      top: 15
+    })
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-3. @Entry
-4. @Component
-5. struct Index {
-6. @State message: string = '';
-
-8. build() {
-9. Column() {
-10. Button('Click to print log')
-11. .onClick(() => {
-12. // 正确做法，在循环逻辑外读取状态变量
-13. let logMessage: string = this.message;
-14. for (let i = 0; i < 10; i++) {
-15. hilog.info(0x0000, 'TAG', '%{public}s', logMessage);
-16. }
-17. })
-18. .width('90%')
-19. .backgroundColor(Color.Blue)
-20. .fontColor(Color.White)
-21. .margin({
-22. top: 10
-23. })
-24. }
-25. .justifyContent(FlexAlign.Start)
-26. .alignItems(HorizontalAlign.Center)
-27. .margin({
-28. top: 15
-29. })
-30. }
-31. }
-```
-
-[LoopStateOptimized.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateManagement/entry/src/main/ets/pages/LoopStateOptimized.ets#L16-L47)
 
 ## 频繁修改状态变量导致性能下降
 
@@ -798,103 +765,99 @@ content_hash: sha256:d6c731287db7b4a6052b4a80645323ac50e31f309628b3503dc318eb561
 
 【反例】
 
+```typescript
+import { hiTraceMeter } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@Component
+struct Index {
+  @State message: string = '';
+
+  appendMsg(newMsg: string) {
+    // 性能打点
+    hiTraceMeter.startTrace('StateVariable', 1);
+    this.message += newMsg;
+    this.message += ';';
+    this.message += '<br/>';
+    hiTraceMeter.finishTrace('StateVariable', 1);
+  }
+
+  build() {
+    Column() {
+      Button('Click to print log')
+        .onClick(() => {
+          this.appendMsg('Operating state variable');
+        })
+        .width('90%')
+        .backgroundColor(Color.Blue)
+        .fontColor(Color.White)
+        .margin({
+          top: 10
+        })
+    }
+    .justifyContent(FlexAlign.Start)
+    .alignItems(HorizontalAlign.Center)
+    .margin({
+      top: 15
+    })
+  }
+}
 ```
-1. import { hiTraceMeter } from '@kit.PerformanceAnalysisKit';
-
-3. @Entry
-4. @Component
-5. struct Index {
-6. @State message: string = '';
-
-8. appendMsg(newMsg: string) {
-9. // 性能打点
-10. hiTraceMeter.startTrace('StateVariable', 1);
-11. this.message += newMsg;
-12. this.message += ';';
-13. this.message += '<br/>';
-14. hiTraceMeter.finishTrace('StateVariable', 1);
-15. }
-
-17. build() {
-18. Column() {
-19. Button('Click to print log')
-20. .onClick(() => {
-21. this.appendMsg('Operating state variable');
-22. })
-23. .width('90%')
-24. .backgroundColor(Color.Blue)
-25. .fontColor(Color.White)
-26. .margin({
-27. top: 10
-28. })
-29. }
-30. .justifyContent(FlexAlign.Start)
-31. .alignItems(HorizontalAlign.Center)
-32. .margin({
-33. top: 15
-34. })
-35. }
-36. }
-```
-
-[CalculationDirectState.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateManagement/entry/src/main/ets/pages/CalculationDirectState.ets#L16-L53)
 
 直接操作状态变量，三次触发计算函数，运行[耗时](ui-inspector-profiler.md#trace调试能力)结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/coClQtqrSI2ge6DXB32feA/zh-cn_image_0000002558764124.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/DB-R91oST7iwqqIsU3JktQ/zh-cn_image_0000002736312433.png)
 
 【正例】
 
+```typescript
+import { hiTraceMeter } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@Component
+struct Index {
+  @State message: string = '';
+
+  appendMsg(newMsg: string) {
+    // 性能打点。
+    hiTraceMeter.startTrace('TemporaryVariable', 2);
+    let message = this.message;
+    message += newMsg;
+    message += ';';
+    message += '<br/>';
+    this.message = message;
+    hiTraceMeter.finishTrace('TemporaryVariable', 2);
+  }
+
+  build() {
+    Column() {
+      Button('Click to print log')
+        .onClick(() => {
+          this.appendMsg('Operating temporary variable');
+        })
+        .width('90%')
+        .backgroundColor(Color.Blue)
+        .fontColor(Color.White)
+        .margin({
+          top: 10
+        })
+    }
+    .justifyContent(FlexAlign.Start)
+    .alignItems(HorizontalAlign.Center)
+    .margin({
+      top: 15
+    })
+  }
+}
 ```
-1. import { hiTraceMeter } from '@kit.PerformanceAnalysisKit';
-
-3. @Entry
-4. @Component
-5. struct Index {
-6. @State message: string = '';
-
-8. appendMsg(newMsg: string) {
-9. // 性能打点。
-10. hiTraceMeter.startTrace('TemporaryVariable', 2);
-11. let message = this.message;
-12. message += newMsg;
-13. message += ';';
-14. message += '<br/>';
-15. this.message = message;
-16. hiTraceMeter.finishTrace('TemporaryVariable', 2);
-17. }
-
-19. build() {
-20. Column() {
-21. Button('Click to print log')
-22. .onClick(() => {
-23. this.appendMsg('Operating temporary variable');
-24. })
-25. .width('90%')
-26. .backgroundColor(Color.Blue)
-27. .fontColor(Color.White)
-28. .margin({
-29. top: 10
-30. })
-31. }
-32. .justifyContent(FlexAlign.Start)
-33. .alignItems(HorizontalAlign.Center)
-34. .margin({
-35. top: 15
-36. })
-37. }
-38. }
-```
-
-[CalculationTempVariable.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateManagement/entry/src/main/ets/pages/CalculationTempVariable.ets#L16-L55)
 
 使用临时变量取代状态变量的计算，三次触发计算函数，运行耗时结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/uzaoZwhVQnKd8Dce_JtzqA/zh-cn_image_0000002558604468.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/di668dX7SZ-LlnLw0MexOA/zh-cn_image_0000002706673388.png)
 
 【总结】
 
-| **计算方式** | **耗时(局限不同设备和场景，数据仅供参考)** | **说明** |
+| **计算方式** | **耗时（因不同设备和场景而异，数据仅供参考）** | **说明** |
 | --- | --- | --- |
 | 直接操作状态变量 | 1.01ms | 增加了ArkUI不必要的查询和渲染行为，导致性能劣化。 |
 | 使用临时变量计算 | 0.63ms | 减少了ArkUI不必要的行为，优化性能。 |
@@ -903,301 +866,297 @@ content_hash: sha256:d6c731287db7b4a6052b4a80645323ac50e31f309628b3503dc318eb561
 
 开发过程中通常会将[LazyForEach](arkts-rendering-control-lazyforeach.md)和状态变量结合起来使用。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN_NUMBER: number = 0XFF00;
+const TAG: string = '[Sample_StateManagement]';
+
+class BasicDataSource implements IDataSource {
+  private listeners: DataChangeListener[] = [];
+  private originDataArray: StringData[] = [];
+
+  public totalCount(): number {
+    return 0;
+  }
+
+  public getData(index: number): StringData {
+    return this.originDataArray[index];
+  }
+
+  registerDataChangeListener(listener: DataChangeListener): void {
+    if (this.listeners.indexOf(listener) < 0) {
+      hilog.info(DOMAIN_NUMBER, TAG, 'add listener');
+      this.listeners.push(listener);
+    }
+  }
+
+  unregisterDataChangeListener(listener: DataChangeListener): void {
+    const pos = this.listeners.indexOf(listener);
+    if (pos >= 0) {
+      hilog.info(DOMAIN_NUMBER, TAG, 'remove listener');
+      this.listeners.splice(pos, 1);
+    }
+  }
+
+  notifyDataReload(): void {
+    this.listeners.forEach(listener => {
+      listener.onDataReloaded();
+    })
+  }
+
+  notifyDataAdd(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataAdd(index);
+    })
+  }
+
+  notifyDataChange(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataChange(index);
+    })
+  }
+
+  notifyDataDelete(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataDelete(index);
+    })
+  }
+
+  notifyDataMove(from: number, to: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataMove(from, to);
+    })
+  }
+}
+
+class MyDataSource extends BasicDataSource {
+  private dataArray: StringData[] = [];
+
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
+
+  public getData(index: number): StringData {
+    return this.dataArray[index];
+  }
+
+  public addData(index: number, data: StringData): void {
+    this.dataArray.splice(index, 0, data);
+    this.notifyDataAdd(index);
+  }
+
+  public pushData(data: StringData): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
+
+  public reloadData(): void {
+    this.notifyDataReload();
+  }
+}
+
+class StringData {
+  public message: string;
+  public imgSrc: Resource;
+
+  constructor(message: string, imgSrc: Resource) {
+    this.message = message;
+    this.imgSrc = imgSrc;
+  }
+}
+
+@Entry
+@Component
+struct MyComponent {
+  private data: MyDataSource = new MyDataSource();
+
+  aboutToAppear() {
+    for (let i = 0; i <= 9; i++) {
+      // 此处'app.media.icon'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
+      this.data.pushData(new StringData(`Click to add ${i}`, $r('app.media.icon')));
+    }
+  }
+
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (item: StringData, index: number) => {
+        ListItem() {
+          Column() {
+            Text(item.message).fontSize(20)
+              .onAppear(() => {
+                hilog.info(DOMAIN_NUMBER, TAG, 'text appear:' + item.message);
+              })
+            Image(item.imgSrc)
+              .width(100)
+              .height(100)
+              .onAppear(() => {
+                hilog.info(DOMAIN_NUMBER, TAG, 'image appear');
+              })
+          }.margin({ left: 10, right: 10 })
+        }
+        .onClick(() => {
+          item.message += '0';
+          this.data.reloadData();
+        })
+      }, (item: StringData, index: number) => JSON.stringify(item))
+    }.cachedCount(5)
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-3. const DOMAIN_NUMBER: number = 0XFF00;
-4. const TAG: string = '[Sample_StateManagement]';
-
-6. class BasicDataSource implements IDataSource {
-7. private listeners: DataChangeListener[] = [];
-8. private originDataArray: StringData[] = [];
-
-10. public totalCount(): number {
-11. return 0;
-12. }
-
-14. public getData(index: number): StringData {
-15. return this.originDataArray[index];
-16. }
-
-18. registerDataChangeListener(listener: DataChangeListener): void {
-19. if (this.listeners.indexOf(listener) < 0) {
-20. hilog.info(DOMAIN_NUMBER, TAG, 'add listener');
-21. this.listeners.push(listener);
-22. }
-23. }
-
-25. unregisterDataChangeListener(listener: DataChangeListener): void {
-26. const pos = this.listeners.indexOf(listener);
-27. if (pos >= 0) {
-28. hilog.info(DOMAIN_NUMBER, TAG, 'remove listener');
-29. this.listeners.splice(pos, 1);
-30. }
-31. }
-
-33. notifyDataReload(): void {
-34. this.listeners.forEach(listener => {
-35. listener.onDataReloaded();
-36. })
-37. }
-
-39. notifyDataAdd(index: number): void {
-40. this.listeners.forEach(listener => {
-41. listener.onDataAdd(index);
-42. })
-43. }
-
-45. notifyDataChange(index: number): void {
-46. this.listeners.forEach(listener => {
-47. listener.onDataChange(index);
-48. })
-49. }
-
-51. notifyDataDelete(index: number): void {
-52. this.listeners.forEach(listener => {
-53. listener.onDataDelete(index);
-54. })
-55. }
-
-57. notifyDataMove(from: number, to: number): void {
-58. this.listeners.forEach(listener => {
-59. listener.onDataMove(from, to);
-60. })
-61. }
-62. }
-
-64. class MyDataSource extends BasicDataSource {
-65. private dataArray: StringData[] = [];
-
-67. public totalCount(): number {
-68. return this.dataArray.length;
-69. }
-
-71. public getData(index: number): StringData {
-72. return this.dataArray[index];
-73. }
-
-75. public addData(index: number, data: StringData): void {
-76. this.dataArray.splice(index, 0, data);
-77. this.notifyDataAdd(index);
-78. }
-
-80. public pushData(data: StringData): void {
-81. this.dataArray.push(data);
-82. this.notifyDataAdd(this.dataArray.length - 1);
-83. }
-
-85. public reloadData(): void {
-86. this.notifyDataReload();
-87. }
-88. }
-
-90. class StringData {
-91. public message: string;
-92. public imgSrc: Resource;
-
-94. constructor(message: string, imgSrc: Resource) {
-95. this.message = message;
-96. this.imgSrc = imgSrc;
-97. }
-98. }
-
-100. @Entry
-101. @Component
-102. struct MyComponent {
-103. private data: MyDataSource = new MyDataSource();
-
-105. aboutToAppear() {
-106. for (let i = 0; i <= 9; i++) {
-107. // 此处'app.media.icon'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
-108. this.data.pushData(new StringData(`Click to add ${i}`, $r('app.media.icon')));
-109. }
-110. }
-
-112. build() {
-113. List({ space: 3 }) {
-114. LazyForEach(this.data, (item: StringData, index: number) => {
-115. ListItem() {
-116. Column() {
-117. Text(item.message).fontSize(20)
-118. .onAppear(() => {
-119. hilog.info(DOMAIN_NUMBER, TAG, 'text appear:' + item.message);
-120. })
-121. Image(item.imgSrc)
-122. .width(100)
-123. .height(100)
-124. .onAppear(() => {
-125. hilog.info(DOMAIN_NUMBER, TAG, 'image appear');
-126. })
-127. }.margin({ left: 10, right: 10 })
-128. }
-129. .onClick(() => {
-130. item.message += '0';
-131. this.data.reloadData();
-132. })
-133. }, (item: StringData, index: number) => JSON.stringify(item))
-134. }.cachedCount(5)
-135. }
-136. }
-```
-
-[StateArrayLazy.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/statemanagementproject/entry/src/main/ets/pages/statemanagementguide/StateArrayLazy.ets#L15-L152)
 
 上述代码运行效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/qx-jGq38TRaqAauND0qKPw/zh-cn_image_0000002589323993.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/AUq3D5NyRFmjy4EFEb5uQg/zh-cn_image_0000002736432479.gif)
 
 可以观察到在点击更改message之后，图片“闪烁”了一下，同时输出了组件的onAppear日志，这说明组件进行了重建。这是因为在更改message之后，导致LazyForEach中这一项的key值发生了变化，使得LazyForEach在reloadData的时候将这一项ListItem进行了重建。Text组件仅仅更改显示的内容却发生了重建，而不是更新。而尽管Image组件没有需要重新绘制的内容，但是因为触发LazyForEach的重建，会使得同样位于ListItem下的Image组件重新创建。
 
 当前LazyForEach与状态变量都能触发UI的刷新，两者的性能开销是不一样的。使用LazyForEach刷新会对组件进行重建，如果包含了多个组件，则会产生比较大的性能开销。使用状态变量刷新会对组件进行刷新，具体到状态变量关联的组件上，相对于LazyForEach的重建来说，范围更小更精确。因此，推荐使用状态变量来触发LazyForEach中的组件刷新，这就需要使用自定义组件。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN_NUMBER: number = 0XFF00;
+const TAG: string = '[Sample_StateManagement]';
+
+class BasicDataSource implements IDataSource {
+  private listeners: DataChangeListener[] = [];
+  private originDataArray: StringData[] = [];
+
+  public totalCount(): number {
+    return 0;
+  }
+
+  public getData(index: number): StringData {
+    return this.originDataArray[index];
+  }
+
+  registerDataChangeListener(listener: DataChangeListener): void {
+    if (this.listeners.indexOf(listener) < 0) {
+      hilog.info(DOMAIN_NUMBER, TAG, 'add listener');
+      this.listeners.push(listener);
+    }
+  }
+
+  unregisterDataChangeListener(listener: DataChangeListener): void {
+    const pos = this.listeners.indexOf(listener);
+    if (pos >= 0) {
+      hilog.info(DOMAIN_NUMBER, TAG, 'remove listener');
+      this.listeners.splice(pos, 1);
+    }
+  }
+
+  notifyDataReload(): void {
+    this.listeners.forEach(listener => {
+      listener.onDataReloaded();
+    })
+  }
+
+  notifyDataAdd(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataAdd(index);
+    })
+  }
+
+  notifyDataChange(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataChange(index);
+    })
+  }
+
+  notifyDataDelete(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataDelete(index);
+    })
+  }
+
+  notifyDataMove(from: number, to: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataMove(from, to);
+    })
+  }
+}
+
+class MyDataSource extends BasicDataSource {
+  private dataArray: StringData[] = [];
+
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
+
+  public getData(index: number): StringData {
+    return this.dataArray[index];
+  }
+
+  public addData(index: number, data: StringData): void {
+    this.dataArray.splice(index, 0, data);
+    this.notifyDataAdd(index);
+  }
+
+  public pushData(data: StringData): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
+}
+
+@Observed
+class StringData {
+  @Track public message: string;
+  @Track public imgSrc: Resource;
+
+  constructor(message: string, imgSrc: Resource) {
+    this.message = message;
+    this.imgSrc = imgSrc;
+  }
+}
+
+@Entry
+@Component
+struct MyComponent {
+  @State data: MyDataSource = new MyDataSource();
+
+  aboutToAppear() {
+    for (let i = 0; i <= 9; i++) {
+      // 此处'app.media.icon'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
+      this.data.pushData(new StringData(`Click to add ${i}`, $r('app.media.icon')));
+    }
+  }
+
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (item: StringData, index: number) => {
+        ListItem() {
+          ChildComponent({ data: item })
+        }
+        .onClick(() => {
+          item.message += '0';
+        })
+      }, (item: StringData, index: number) => index.toString())
+    }.cachedCount(5)
+  }
+}
+
+@Component
+struct ChildComponent {
+  @ObjectLink data: StringData;
+
+  build() {
+    Column() {
+      Text(this.data.message).fontSize(20)
+        .onAppear(() => {
+          hilog.info(DOMAIN_NUMBER, TAG, 'text appear:' + this.data.message);
+        })
+      Image(this.data.imgSrc)
+        .width(100)
+        .height(100)
+    }.margin({ left: 10, right: 10 })
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-3. const DOMAIN_NUMBER: number = 0XFF00;
-4. const TAG: string = '[Sample_StateManagement]';
-
-6. class BasicDataSource implements IDataSource {
-7. private listeners: DataChangeListener[] = [];
-8. private originDataArray: StringData[] = [];
-
-10. public totalCount(): number {
-11. return 0;
-12. }
-
-14. public getData(index: number): StringData {
-15. return this.originDataArray[index];
-16. }
-
-18. registerDataChangeListener(listener: DataChangeListener): void {
-19. if (this.listeners.indexOf(listener) < 0) {
-20. hilog.info(DOMAIN_NUMBER, TAG, 'add listener');
-21. this.listeners.push(listener);
-22. }
-23. }
-
-25. unregisterDataChangeListener(listener: DataChangeListener): void {
-26. const pos = this.listeners.indexOf(listener);
-27. if (pos >= 0) {
-28. hilog.info(DOMAIN_NUMBER, TAG, 'remove listener');
-29. this.listeners.splice(pos, 1);
-30. }
-31. }
-
-33. notifyDataReload(): void {
-34. this.listeners.forEach(listener => {
-35. listener.onDataReloaded();
-36. })
-37. }
-
-39. notifyDataAdd(index: number): void {
-40. this.listeners.forEach(listener => {
-41. listener.onDataAdd(index);
-42. })
-43. }
-
-45. notifyDataChange(index: number): void {
-46. this.listeners.forEach(listener => {
-47. listener.onDataChange(index);
-48. })
-49. }
-
-51. notifyDataDelete(index: number): void {
-52. this.listeners.forEach(listener => {
-53. listener.onDataDelete(index);
-54. })
-55. }
-
-57. notifyDataMove(from: number, to: number): void {
-58. this.listeners.forEach(listener => {
-59. listener.onDataMove(from, to);
-60. })
-61. }
-62. }
-
-64. class MyDataSource extends BasicDataSource {
-65. private dataArray: StringData[] = [];
-
-67. public totalCount(): number {
-68. return this.dataArray.length;
-69. }
-
-71. public getData(index: number): StringData {
-72. return this.dataArray[index];
-73. }
-
-75. public addData(index: number, data: StringData): void {
-76. this.dataArray.splice(index, 0, data);
-77. this.notifyDataAdd(index);
-78. }
-
-80. public pushData(data: StringData): void {
-81. this.dataArray.push(data);
-82. this.notifyDataAdd(this.dataArray.length - 1);
-83. }
-84. }
-
-86. @Observed
-87. class StringData {
-88. @Track public message: string;
-89. @Track public imgSrc: Resource;
-
-91. constructor(message: string, imgSrc: Resource) {
-92. this.message = message;
-93. this.imgSrc = imgSrc;
-94. }
-95. }
-
-97. @Entry
-98. @Component
-99. struct MyComponent {
-100. @State data: MyDataSource = new MyDataSource();
-
-102. aboutToAppear() {
-103. for (let i = 0; i <= 9; i++) {
-104. // 此处'app.media.icon'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
-105. this.data.pushData(new StringData(`Click to add ${i}`, $r('app.media.icon')));
-106. }
-107. }
-
-109. build() {
-110. List({ space: 3 }) {
-111. LazyForEach(this.data, (item: StringData, index: number) => {
-112. ListItem() {
-113. ChildComponent({ data: item })
-114. }
-115. .onClick(() => {
-116. item.message += '0';
-117. })
-118. }, (item: StringData, index: number) => index.toString())
-119. }.cachedCount(5)
-120. }
-121. }
-
-123. @Component
-124. struct ChildComponent {
-125. @ObjectLink data: StringData;
-
-127. build() {
-128. Column() {
-129. Text(this.data.message).fontSize(20)
-130. .onAppear(() => {
-131. hilog.info(DOMAIN_NUMBER, TAG, 'text appear:' + this.data.message);
-132. })
-133. Image(this.data.imgSrc)
-134. .width(100)
-135. .height(100)
-136. }.margin({ left: 10, right: 10 })
-137. }
-138. }
-```
-
-[StateArrayLazy2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/statemanagementproject/entry/src/main/ets/pages/statemanagementguide/StateArrayLazy2.ets#L15-L154)
 
 上述代码运行效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/Pw0t4z2uQxyUNnmghVW2uw/zh-cn_image_0000002589243933.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/GdzIW3IxSp6ZKeVB-WEv2w/zh-cn_image_0000002706833326.gif)
 
 可以观察到UI能够正常刷新，图片没有“闪烁”，且没有输出日志信息，说明没有对Text组件和Image组件进行重建。
 
@@ -1207,136 +1166,132 @@ content_hash: sha256:d6c731287db7b4a6052b4a80645323ac50e31f309628b3503dc318eb561
 
 开发过程中经常会使用对象数组和[ForEach](arkts-rendering-control-foreach.md)结合起来使用，但是写法不当的话会出现UI不刷新的情况。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN_NUMBER: number = 0XFF00;
+const TAG: string = '[Sample_StateManagement]';
+
+@Observed
+class StyleList extends Array<TextStyles> {
+}
+
+@Observed
+class TextStyles {
+  public fontSize: number;
+
+  constructor(fontSize: number) {
+    this.fontSize = fontSize;
+  }
+}
+
+@Entry
+@Component
+struct Page {
+  @State styleList: StyleList = new StyleList();
+
+  aboutToAppear() {
+    for (let i = 15; i < 50; i++) {
+      this.styleList.push(new TextStyles(i));
+    }
+  }
+
+  build() {
+    Column() {
+      Text('Font Size List')
+        .fontSize(50)
+        .onClick(() => {
+          for (let i = 0; i < this.styleList.length; i++) {
+            this.styleList[i].fontSize++;
+          }
+          hilog.info(DOMAIN_NUMBER, TAG, 'change font size');
+        })
+      List() {
+        // ForEach中生成的item是一个常量，点击改变item中的内容时没有办法观测到UI刷新
+        ForEach(this.styleList, (item: TextStyles) => {
+          ListItem() {
+            Text('Hello World')
+              .fontSize(item.fontSize)
+          }
+        })
+      }
+    }
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-3. const DOMAIN_NUMBER: number = 0XFF00;
-4. const TAG: string = '[Sample_StateManagement]';
-
-6. @Observed
-7. class StyleList extends Array<TextStyles> {
-8. }
-
-10. @Observed
-11. class TextStyles {
-12. public fontSize: number;
-
-14. constructor(fontSize: number) {
-15. this.fontSize = fontSize;
-16. }
-17. }
-
-19. @Entry
-20. @Component
-21. struct Page {
-22. @State styleList: StyleList = new StyleList();
-
-24. aboutToAppear() {
-25. for (let i = 15; i < 50; i++) {
-26. this.styleList.push(new TextStyles(i));
-27. }
-28. }
-
-30. build() {
-31. Column() {
-32. Text('Font Size List')
-33. .fontSize(50)
-34. .onClick(() => {
-35. for (let i = 0; i < this.styleList.length; i++) {
-36. this.styleList[i].fontSize++;
-37. }
-38. hilog.info(DOMAIN_NUMBER, TAG, 'change font size');
-39. })
-40. List() {
-41. // ForEach中生成的item是一个常量，点击改变item中的内容时没有办法观测到UI刷新
-42. ForEach(this.styleList, (item: TextStyles) => {
-43. ListItem() {
-44. Text('Hello World')
-45. .fontSize(item.fontSize)
-46. }
-47. })
-48. }
-49. }
-50. }
-51. }
-```
-
-[StateArrayForeach.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/statemanagementproject/entry/src/main/ets/pages/statemanagementguide/StateArrayForeach.ets#L15-L66)
 
 上述代码运行效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/jPZxiH1WR7KAupufPNmSOg/zh-cn_image_0000002558764126.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/DKmjaW5ZRFesuvcXD_4ekA/zh-cn_image_0000002736312435.gif)
 
 由于ForEach中生成的item是一个常量，因此当点击改变item中的内容时，没有办法观测到UI刷新，尽管日志表明item的值已改变（这体现在打印了“change font size”的日志）。因此，需要使用自定义组件，配合@ObjectLink来实现观测的能力。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN_NUMBER: number = 0XFF00;
+const TAG: string = '[Sample_StateManagement]';
+
+@Observed
+class StyleList extends Array<TextStyles> {
+}
+
+@Observed
+class TextStyles {
+  public fontSize: number;
+
+  constructor(fontSize: number) {
+    this.fontSize = fontSize;
+  }
+}
+
+@Component
+struct TextComponent {
+  @ObjectLink textStyle: TextStyles;
+
+  build() {
+    Text('Hello World')
+      .fontSize(this.textStyle.fontSize)
+  }
+}
+
+@Entry
+@Component
+struct Page {
+  @State styleList: StyleList = new StyleList();
+
+  aboutToAppear() {
+    for (let i = 15; i < 50; i++) {
+      this.styleList.push(new TextStyles(i));
+    }
+  }
+
+  build() {
+    Column() {
+      Text('Font Size List')
+        .fontSize(50)
+        .onClick(() => {
+          for (let i = 0; i < this.styleList.length; i++) {
+            this.styleList[i].fontSize++;
+          }
+          hilog.info(DOMAIN_NUMBER, TAG, 'change font size');
+        })
+      List() {
+        // 使用@ObjectLink接受传入的item，TextComponent组件内的textStyle变量具有了被观测的能力
+        ForEach(this.styleList, (item: TextStyles) => {
+          ListItem() {
+            TextComponent({ textStyle: item })
+          }
+        })
+      }
+    }
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-3. const DOMAIN_NUMBER: number = 0XFF00;
-4. const TAG: string = '[Sample_StateManagement]';
-
-6. @Observed
-7. class StyleList extends Array<TextStyles> {
-8. }
-
-10. @Observed
-11. class TextStyles {
-12. public fontSize: number;
-
-14. constructor(fontSize: number) {
-15. this.fontSize = fontSize;
-16. }
-17. }
-
-19. @Component
-20. struct TextComponent {
-21. @ObjectLink textStyle: TextStyles;
-
-23. build() {
-24. Text('Hello World')
-25. .fontSize(this.textStyle.fontSize)
-26. }
-27. }
-
-29. @Entry
-30. @Component
-31. struct Page {
-32. @State styleList: StyleList = new StyleList();
-
-34. aboutToAppear() {
-35. for (let i = 15; i < 50; i++) {
-36. this.styleList.push(new TextStyles(i));
-37. }
-38. }
-
-40. build() {
-41. Column() {
-42. Text('Font Size List')
-43. .fontSize(50)
-44. .onClick(() => {
-45. for (let i = 0; i < this.styleList.length; i++) {
-46. this.styleList[i].fontSize++;
-47. }
-48. hilog.info(DOMAIN_NUMBER, TAG, 'change font size');
-49. })
-50. List() {
-51. // 使用@ObjectLink接受传入的item，TextComponent组件内的textStyle变量具有了被观测的能力
-52. ForEach(this.styleList, (item: TextStyles) => {
-53. ListItem() {
-54. TextComponent({ textStyle: item })
-55. }
-56. })
-57. }
-58. }
-59. }
-60. }
-```
-
-[StateArrayForeach2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/statemanagementproject/entry/src/main/ets/pages/statemanagementguide/StateArrayForeach2.ets#L15-L75)
 
 上述代码的运行效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/KNkH_dxWQrm9V-QzFZI4Xg/zh-cn_image_0000002558604470.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/IgXNi6-5SuyuWD5NJTZeHQ/zh-cn_image_0000002706673390.gif)
 
 使用@ObjectLink接受传入的item后，使得TextComponent组件内的textStyle变量具有了被观测的能力。在父组件更改styleList中的值时，由于@ObjectLink是引用传递，所以会观测到styleList每一个数据项的地址指向的对应item的fontSize的值被改变，因此触发UI的刷新。
 

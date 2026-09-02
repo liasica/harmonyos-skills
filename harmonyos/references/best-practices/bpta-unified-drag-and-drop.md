@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-unified-dr
 title: 统一拖拽
 breadcrumb: 最佳实践 > 自由流转 > 多端协同 > 统一拖拽
 category: best-practices
-scraped_at: 2026-04-29T14:12:52+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:97194f8f506688bec44a5c70ea5e8beb483c3291d584fd56bbf6d099e31ec007
+scraped_at: 2026-09-02T15:03:19+08:00
+doc_updated_at: 2026-06-23
+content_hash: sha256:75ca728c6ad3cfe7e4af455ad1cc729c29e46ddf9224f9144a4f8df7ad0e71ab
 ---
 
 ## 概述
@@ -53,24 +53,22 @@ content_hash: sha256:97194f8f506688bec44a5c70ea5e8beb483c3291d584fd56bbf6d099e31
 
 [默认支持拖出能力的组件](../harmonyos-references/ts-universal-events-drag-drop.md)，如[Search](../harmonyos-references/ts-basic-components-search.md)、[Hyperlink](../harmonyos-references/ts-container-hyperlink.md)等，在拖出时会使用组件的默认拖出响应。其中[Search](../harmonyos-references/ts-basic-components-search.md)组件默认拖拽内容为选中的文字，[Hyperlink](../harmonyos-references/ts-container-hyperlink.md)组件默认拖拽内容为超链接地址。如果想自定义组件的拖拽内容，需要在组件的[onDragStart()](../harmonyos-references/ts-universal-events-drag-drop.md#ondragstart)接口中将自定义数据封装成[UnifiedData](../harmonyos-references/js-apis-data-unifieddatachannel.md#unifieddata)数据对象，通过[DragEvent](../harmonyos-references/ts-universal-events-drag-drop.md#dragevent7)的[setData()](../harmonyos-references/ts-universal-events-drag-drop.md#setdata10)接口设置拖出数据。对于其他非默认组件或自定义组件，如果想实现其拖出功能，需要将组件的[draggable()](../harmonyos-references/ts-universal-attributes-drag-drop.md#draggable)属性设置为true，并自定义组件的拖拽内容。以RichEditor组件为例：
 
+```screen
+RichEditor({ controller: this.sourceController })
+// ...
+  .onDragStart((event) => {
+    try {
+      const selection = this.sourceController.getSelection();
+      // construct drag data
+      this.buildUnifiedRecords(selection);
+      event.setData(this.unifiedData);
+    } catch (error) {
+      const err = error as BusinessError;
+      hilog.error(0x0000, TAG, `%{public}s`, err.code, err.message);
+    }
+  })
+  // ...
 ```
-1. RichEditor({ controller: this.sourceController })
-2. // ...
-3. .onDragStart((event) => {
-4. try {
-5. const selection = this.sourceController.getSelection();
-6. // construct drag data
-7. this.buildUnifiedRecords(selection);
-8. event.setData(this.unifiedData);
-9. } catch (error) {
-10. const err = error as BusinessError;
-11. hilog.error(0x0000, TAG, `%{public}s`, err.code, err.message);
-12. }
-13. })
-14. // ...
-```
-
-[MultiEntry.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/textandimage/MultiEntry.ets#L275-L316)
 
 可以在[onDragStart()](../harmonyos-references/ts-universal-events-drag-drop.md#ondragstart)接口中处理拖拽信息，例如为图片添加水印，详情见[拖拽图像增加水印](bpta-unified-drag-and-drop.md#section197593813453)。
 
@@ -80,47 +78,43 @@ content_hash: sha256:97194f8f506688bec44a5c70ea5e8beb483c3291d584fd56bbf6d099e31
 
 自定义拖拽背板图
 
+```screen
+Image($r('app.media.mount'))
+// ...
+  .onDragStart(() => {
+    let dragItemInfo: DragItemInfo = {
+      pixelMap: this.pixelMap,
+      builder: () => {
+        this.pixelMapBuilder()
+      },
+    };
+    return dragItemInfo;
+  })
+  // ...
 ```
-1. Image($r('app.media.mount'))
-2. // ...
-3. .onDragStart(() => {
-4. let dragItemInfo: DragItemInfo = {
-5. pixelMap: this.pixelMap,
-6. builder: () => {
-7. this.pixelMapBuilder()
-8. },
-9. };
-10. return dragItemInfo;
-11. })
-12. // ...
-```
-
-[Background.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/background/Background.ets#L99-L142)
 
 可以将拖拽背板图设置为自定义的图片或者文字，详情见[自定义拖拽背板图](bpta-unified-drag-and-drop.md#section350662014143)。
 
 获取拖拽移动中的坐标等信息
 
-```
-1. Column() {
-2. // ...
-3. }
-4. // ...
-5. .allowDrop([uniformTypeDescriptor.UniformDataType.IMAGE])
-6. .onDrop((event?: DragEvent) => {
-7. // ...
-8. })
-9. .onDragMove((event: DragEvent) => {
-10. hilog.info(0x0000, TAG, `The x-coordinate of the display is ${event.getDisplayX()}.`);
-11. hilog.info(0x0000, TAG, `The y-coordinate of the display is ${event.getDisplayY()}.`);
-12. hilog.info(0x0000, TAG, `The x-coordinate of the window is ${event.getWindowX()}.`);
-13. hilog.info(0x0000, TAG, `The y-coordinate of the window is ${event.getWindowY()}.`);
-14. })
+```screen
+Column() {
+  // ...
+}
+// ...
+.allowDrop([uniformTypeDescriptor.UniformDataType.IMAGE])
+.onDrop((event?: DragEvent) => {
+  // ...
+})
+.onDragMove((event: DragEvent) => {
+  hilog.info(0x0000, TAG, `The x-coordinate of the display is ${event.getDisplayX()}.`);
+  hilog.info(0x0000, TAG, `The y-coordinate of the display is ${event.getDisplayY()}.`);
+  hilog.info(0x0000, TAG, `The x-coordinate of the window is ${event.getWindowX()}.`);
+  hilog.info(0x0000, TAG, `The y-coordinate of the window is ${event.getWindowY()}.`);
+})
 ```
 
-[Background.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/background/Background.ets#L157-L209)
-
-说明
+**说明** 
 
 只有监听了[onDrop()](../harmonyos-references/ts-universal-events-drag-drop.md#ondrop)事件，拖拽在组件范围内移动时，才会触发[onDragMove()](../harmonyos-references/ts-universal-events-drag-drop.md#ondragmove)事件。
 
@@ -128,33 +122,31 @@ content_hash: sha256:97194f8f506688bec44a5c70ea5e8beb483c3291d584fd56bbf6d099e31
 
 [默认支持拖入能力的组件](../harmonyos-references/ts-universal-events-drag-drop.md#ondragstart)，如[Search](../harmonyos-references/ts-basic-components-search.md)组件等，将目标拖入组件区域内会使用默认拖入响应。如果想自定义组件的拖入响应，需要将组件的[allowDrop()](../harmonyos-references/ts-universal-attributes-drag-drop.md#allowdrop)属性设置为允许拖入的数据类型，并在其[onDrop()](../harmonyos-references/ts-universal-events-drag-drop.md#ondrop)接口中通过[DragEvent](../harmonyos-references/ts-universal-events-drag-drop.md#dragevent7)的[getData()](../harmonyos-references/ts-universal-events-drag-drop.md#getdata10)接口获取拖入数据后，读取其中的UnifiedRecord记录的集合。对于每条记录，调用[getTypes()](../harmonyos-references/js-apis-data-unifieddatachannel.md#gettypes12)方法获取其中包含的数据类型，取出所需要的数据。以Text组件获取拖拽文字为例：
 
+```screen
+Column() {
+  Text(this.dropContent)
+    // ...
+}
+// ...
+.allowDrop([uniformTypeDescriptor.UniformDataType.TEXT,
+  uniformTypeDescriptor.UniformDataType.PLAIN_TEXT])
+.onDrop((event: DragEvent) => {
+  try {
+    let dragData = event.getData();
+    let records = dragData.getRecords();
+    for (let record of records) {
+      let types = record.getTypes();
+      if (types.includes(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT)) {
+        const plainTextUds =
+          record.getEntry(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT) as uniformDataStruct.PlainText;
+        this.dropContent = plainTextUds.textContent;
+        event.setResult(DragResult.DRAG_SUCCESSFUL);
+      }
+    }
+  }
+  // ...
+})
 ```
-1. Column() {
-2. Text(this.dropContent)
-3. // ...
-4. }
-5. // ...
-6. .allowDrop([uniformTypeDescriptor.UniformDataType.TEXT,
-7. uniformTypeDescriptor.UniformDataType.PLAIN_TEXT])
-8. .onDrop((event: DragEvent) => {
-9. try {
-10. let dragData = event.getData();
-11. let records = dragData.getRecords();
-12. for (let record of records) {
-13. let types = record.getTypes();
-14. if (types.includes(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT)) {
-15. const plainTextUds =
-16. record.getEntry(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT) as uniformDataStruct.PlainText;
-17. this.dropContent = plainTextUds.textContent;
-18. event.setResult(DragResult.DRAG_SUCCESSFUL);
-19. }
-20. }
-21. }
-22. // ...
-23. })
-```
-
-[TextInput.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/textInput/TextInput.ets#L78-L123)
 
 可以在[onDrop()](../harmonyos-references/ts-universal-events-drag-drop.md#ondrop)接口中处理接收到的数据，例如将图片识别为文字以显示在只支持文字的组件上，详情见[AI识别拖拽内容](bpta-unified-drag-and-drop.md#section4125035104613)。
 
@@ -165,7 +157,7 @@ content_hash: sha256:97194f8f506688bec44a5c70ea5e8beb483c3291d584fd56bbf6d099e31
 **运行效果**
 
 **图1** 拖拽图片增加水印  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/NMye_NrIQcir7dg_t7m5pQ/zh-cn_image_0000002315615638.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/Nq4k19BIQrOic9171zAbeA/zh-cn_image_0000002315615638.gif "点击放大")
 
 **实现原理**
 
@@ -175,116 +167,106 @@ content_hash: sha256:97194f8f506688bec44a5c70ea5e8beb483c3291d584fd56bbf6d099e31
 
 1. 将拖出方Image组件的[draggable()](../harmonyos-references/ts-universal-attributes-drag-drop.md#draggable)属性设置为true。
 
+   ```screen
+   Image($rawfile('river.png'))
+     // ...
+     .draggable(true)
    ```
-   1. Image($rawfile('river.png'))
-   2. // ...
-   3. .draggable(true)
-   ```
-
-   [Watermark.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/watermark/Watermark.ets#L145-L158)
 2. 在拖出对象的[onDragStart()](../harmonyos-references/ts-universal-events-drag-drop.md#ondragstart)接口中，获取图像信息并将其转换成[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)。
 
+   ```screen
+   Image($rawfile('river.png'))
+     // ...
+     .onDragStart((event: DragEvent) => {
+       const resourceMgr: resourceManager.ResourceManager = this.context!.resourceManager;
+       let rawFileDescriptor = resourceMgr.getRawFdSync('river.png');
+       const imageSourceApi: image.ImageSource = image.createImageSource(rawFileDescriptor);
+       let pixelMap: image.PixelMap = imageSourceApi.createPixelMapSync();
+       // ...
+     })
    ```
-   1. Image($rawfile('river.png'))
-   2. // ...
-   3. .onDragStart((event: DragEvent) => {
-   4. const resourceMgr: resourceManager.ResourceManager = this.context!.resourceManager;
-   5. let rawFileDescriptor = resourceMgr.getRawFdSync('river.png');
-   6. const imageSourceApi: image.ImageSource = image.createImageSource(rawFileDescriptor);
-   7. let pixelMap: image.PixelMap = imageSourceApi.createPixelMapSync();
-   8. // ...
-   9. })
-   ```
-
-   [Watermark.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/watermark/Watermark.ets#L146-L199)
 3. 将图片绘制到[Canvas](../harmonyos-references/ts-components-canvas-canvas.md)画布上，并获取拖拽时间作为水印绘制到画布上的指定位置，得到添加水印的图像。
 
-   ```
-   1. Image($rawfile('river.png'))
-   2. // ...
-   3. .onDragStart((event: DragEvent) => {
-   4. // ...
-   5. this.time = this.getTimeWatermark(systemDateTime.getTime(false));
-   6. let markPixelMap: image.PixelMap = this.addWaterMark(this.time, pixelMap);
-   7. // ...
-   8. })
-   ```
-
-   [Watermark.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/watermark/Watermark.ets#L147-L200)
-
-   ```
-   1. addWaterMark(watermark: string, pixelMap: image.PixelMap) {
-   2. try {
-   3. if (!canIUse('SystemCapability.Graphics.Drawing')) {
-   4. hilog.error(0x0000, TAG, `%{public}s`, `watermark is not supported`);
-   5. return pixelMap;
-   6. }
-   7. watermark = this.context!.resourceManager.getStringSync($r('app.string.drag_time').id) + watermark;
-   8. const imageInfo: image.Size = pixelMap.getImageInfoSync().size;
-   9. const imageWidth: number = imageInfo.width;
-   10. const imageHeight: number = imageInfo.height;
-   11. const imageScale: number = imageWidth / display.getDefaultDisplaySync().width;
-   12. const canvas: drawing.Canvas = new drawing.Canvas(pixelMap);
-   13. const pen: drawing.Pen = new drawing.Pen();
-   14. const brush: drawing.Brush = new drawing.Brush();
-   15. pen.setColor({
-   16. alpha: 102,
-   17. red: 255,
-   18. green: 255,
-   19. blue: 255
-   20. });
-   21. brush.setColor({
-   22. alpha: 102,
-   23. red: 255,
-   24. green: 255,
-   25. blue: 255
-   26. });
-   27. const font: drawing.Font = new drawing.Font();
-   28. font.setSize(48 * imageScale);
-   29. let textWidth: number = font.measureText(watermark, drawing.TextEncoding.TEXT_ENCODING_UTF8);
-   30. const textBlob: drawing.TextBlob =
-   31. drawing.TextBlob.makeFromString(watermark, font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
-   32. canvas.attachBrush(brush);
-   33. canvas.attachPen(pen);
-   34. canvas.drawTextBlob(textBlob, imageWidth - 24 * imageScale - textWidth, imageHeight - 32 * imageScale);
-   35. canvas.detachBrush();
-   36. canvas.detachPen();
-   37. } catch (error) {
-   38. hilog.error(0x0000, TAG, '%{public}s', 'addWaterMark failed:', (error as BusinessError).message);
-   39. }
-   40. return pixelMap;
-   41. }
+   ```screen
+   Image($rawfile('river.png'))
+     // ...
+     .onDragStart((event: DragEvent) => {
+       // ...
+       this.time = this.getTimeWatermark(systemDateTime.getTime(false));
+       let markPixelMap: image.PixelMap = this.addWaterMark(this.time, pixelMap);
+       // ...
+     })
    ```
 
-   [Watermark.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/watermark/Watermark.ets#L95-L136)
+   ```screen
+   addWaterMark(watermark: string, pixelMap: image.PixelMap) {
+     try {
+       if (!canIUse('SystemCapability.Graphics.Drawing')) {
+         hilog.error(0x0000, TAG, `%{public}s`, `watermark is not supported`);
+         return pixelMap;
+       }
+       watermark = this.context!.resourceManager.getStringSync($r('app.string.drag_time').id) + watermark;
+       const imageInfo: image.Size = pixelMap.getImageInfoSync().size;
+       const imageWidth: number = imageInfo.width;
+       const imageHeight: number = imageInfo.height;
+       const imageScale: number = imageWidth / display.getDefaultDisplaySync().width;
+       const canvas: drawing.Canvas = new drawing.Canvas(pixelMap);
+       const pen: drawing.Pen = new drawing.Pen();
+       const brush: drawing.Brush = new drawing.Brush();
+       pen.setColor({
+         alpha: 102,
+         red: 255,
+         green: 255,
+         blue: 255
+       });
+       brush.setColor({
+         alpha: 102,
+         red: 255,
+         green: 255,
+         blue: 255
+       });
+       const font: drawing.Font = new drawing.Font();
+       font.setSize(48 * imageScale);
+       let textWidth: number = font.measureText(watermark, drawing.TextEncoding.TEXT_ENCODING_UTF8);
+       const textBlob: drawing.TextBlob =
+         drawing.TextBlob.makeFromString(watermark, font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
+       canvas.attachBrush(brush);
+       canvas.attachPen(pen);
+       canvas.drawTextBlob(textBlob, imageWidth - 24 * imageScale - textWidth, imageHeight - 32 * imageScale);
+       canvas.detachBrush();
+       canvas.detachPen();
+     } catch (error) {
+       hilog.error(0x0000, TAG, '%{public}s', 'addWaterMark failed:', (error as BusinessError).message);
+     }
+     return pixelMap;
+   }
+   ```
 4. 将图像打包保存在文件中，调用[DragEvent](../harmonyos-references/ts-universal-events-drag-drop.md#dragevent7)的[setData()](../harmonyos-references/ts-universal-events-drag-drop.md#setdata10)接口将水印图像设置为拖拽数据。
 
+   ```screen
+   Image($rawfile('river.png'))
+     // ...
+     .onDragStart((event: DragEvent) => {
+       // ...
+       let packOpts: image.PackingOption = { format: 'image/png', quality: 20 };
+       let file: fileIo.File =
+         fileIo.openSync(`${this.context!.filesDir}/watermark.png`, fileIo.OpenMode.CREATE | fileIo.OpenMode.READ_WRITE);
+       const imagePackerApi: image.ImagePacker = image.createImagePacker();
+       imagePackerApi.packToFile(markPixelMap, file.fd, packOpts);
+       imagePackerApi?.release();
+       let imgData: uniformDataStruct.FileUri = {
+         uniformDataType: 'general.file-uri',
+         oriUri: fileUri.getUriFromPath(`${this.context!.filesDir}/watermark.png`),
+         fileType: 'general.image'
+       }
+       let unifiedRecord =
+         new unifiedDataChannel.UnifiedRecord(uniformTypeDescriptor.UniformDataType.FILE_URI, imgData);
+       let unifiedData = new unifiedDataChannel.UnifiedData(unifiedRecord);
+       event.setData(unifiedData);
+       fileIo.closeSync(file.fd);
+       // ...
+     })
    ```
-   1. Image($rawfile('river.png'))
-   2. // ...
-   3. .onDragStart((event: DragEvent) => {
-   4. // ...
-   5. let packOpts: image.PackingOption = { format: 'image/png', quality: 20 };
-   6. let file: fs.File =
-   7. fs.openSync(`${this.context!.filesDir}/watermark.png`, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
-   8. const imagePackerApi: image.ImagePacker = image.createImagePacker();
-   9. imagePackerApi.packToFile(markPixelMap, file.fd, packOpts);
-   10. imagePackerApi?.release();
-   11. let imgData: uniformDataStruct.FileUri = {
-   12. uniformDataType: 'general.file-uri',
-   13. oriUri: fileUri.getUriFromPath(`${this.context!.filesDir}/watermark.png`),
-   14. fileType: 'general.image'
-   15. }
-   16. let unifiedRecord =
-   17. new unifiedDataChannel.UnifiedRecord(uniformTypeDescriptor.UniformDataType.FILE_URI, imgData);
-   18. let unifiedData = new unifiedDataChannel.UnifiedData(unifiedRecord);
-   19. event.setData(unifiedData);
-   20. fs.closeSync(file.fd);
-   21. // ...
-   22. })
-   ```
-
-   [Watermark.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/watermark/Watermark.ets#L148-L201)
 
 ## 自定义拖拽背板图
 
@@ -293,7 +275,7 @@ content_hash: sha256:97194f8f506688bec44a5c70ea5e8beb483c3291d584fd56bbf6d099e31
 **运行效果**
 
 **图2** 自定义拖拽背板  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/7Egk3hUhRdSjhpjpk39_3g/zh-cn_image_0000002349574333.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/f8eN-rsgSWKGYrTkj8yhmg/zh-cn_image_0000002349574333.gif "点击放大")
 
 **实现原理**
 
@@ -303,86 +285,76 @@ content_hash: sha256:97194f8f506688bec44a5c70ea5e8beb483c3291d584fd56bbf6d099e31
 
 1. 创建自定义组件。
 
+   ```screen
+   @Builder
+   pixelMapBuilder() {
+     Column() {
+       Text($r('app.string.background_content'))
+         .fontSize('16fp')
+         .margin({
+           left: '16vp',
+           right: '16vp',
+           top: '8vp',
+           bottom: '8vp'
+         })
+     }
+     .backgroundColor($r('sys.color.comp_background_primary'))
+     .borderRadius(16)
+   }
    ```
-   1. @Builder
-   2. pixelMapBuilder() {
-   3. Column() {
-   4. Text($r('app.string.background_content'))
-   5. .fontSize('16fp')
-   6. .margin({
-   7. left: '16vp',
-   8. right: '16vp',
-   9. top: '8vp',
-   10. bottom: '8vp'
-   11. })
-   12. }
-   13. .backgroundColor($r('sys.color.comp_background_primary'))
-   14. .borderRadius(16)
-   15. }
-   ```
-
-   [Background.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/background/Background.ets#L45-L60)
 2. 将自定义组件转换成PixelMap，作为拖拽过程中显示的图片。
 
-   ```
-   1. private getComponentSnapshot(): void {
-   2. this.getUIContext().getComponentSnapshot().createFromBuilder(() => {
-   3. this.pixelMapBuilder()
-   4. }, (error: Error, pixmap: image.PixelMap) => {
-   5. if (error) {
-   6. hilog.error(0x0000, TAG, `%{public}s`, error.message);
-   7. return;
-   8. }
-   9. this.pixelMap = pixmap;
-   10. })
-   11. }
+   ```screen
+   private getComponentSnapshot(): void {
+     this.getUIContext().getComponentSnapshot().createFromBuilder(() => {
+       this.pixelMapBuilder()
+     }, (error: Error, pixmap: image.PixelMap) => {
+       if (error) {
+         hilog.error(0x0000, TAG, `%{public}s`, error.message);
+         return;
+       }
+       this.pixelMap = pixmap;
+     })
+   }
    ```
 
-   [Background.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/background/Background.ets#L64-L75)
-
-   说明
+   **说明** 
 
    由于[CustomBuilder](../harmonyos-references/ts-types.md#custombuilder8)需要离线渲染之后才能使用，存在一定的性能开销和时延，因此推荐开发者优先使用[DragItemInfo](../harmonyos-references/ts-universal-events-drag-drop.md#dragiteminfo)中的[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)方式返回背板图。
 3. 在拖出对象的[onPreDrag()](../harmonyos-references/ts-universal-events-drag-drop.md#onpredrag12)接口中，预先创建背板图。
 
-   ```
-   1. Image($r('app.media.mount'))
-   2. // ...
-   3. .onPreDrag((status: PreDragStatus) => {
-   4. this.PreDragChange(status);
-   5. })
-   6. // ...
-   ```
-
-   [Background.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/background/Background.ets#L98-L140)
-
-   ```
-   1. private PreDragChange(preDragStatus: PreDragStatus): void {
-   2. if (preDragStatus == PreDragStatus.ACTION_DETECTING_STATUS) {
-   3. this.getComponentSnapshot();
-   4. }
-   5. }
+   ```screen
+   Image($r('app.media.mount'))
+   // ...
+     .onPreDrag((status: PreDragStatus) => {
+       this.PreDragChange(status);
+     })
+     // ...
    ```
 
-   [Background.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/background/Background.ets#L79-L84)
+   ```screen
+   private PreDragChange(preDragStatus: PreDragStatus): void {
+     if (preDragStatus == PreDragStatus.ACTION_DETECTING_STATUS) {
+       this.getComponentSnapshot();
+     }
+   }
+   ```
 4. 在拖出对象的[onDragStart()](../harmonyos-references/ts-universal-events-drag-drop.md#ondragstart)接口中，将回调的PixelMap作为拖拽过程中的背板图。
 
+   ```screen
+   Image($r('app.media.mount'))
+   // ...
+     .onDragStart(() => {
+       let dragItemInfo: DragItemInfo = {
+         pixelMap: this.pixelMap,
+         builder: () => {
+           this.pixelMapBuilder()
+         },
+       };
+       return dragItemInfo;
+     })
+     // ...
    ```
-   1. Image($r('app.media.mount'))
-   2. // ...
-   3. .onDragStart(() => {
-   4. let dragItemInfo: DragItemInfo = {
-   5. pixelMap: this.pixelMap,
-   6. builder: () => {
-   7. this.pixelMapBuilder()
-   8. },
-   9. };
-   10. return dragItemInfo;
-   11. })
-   12. // ...
-   ```
-
-   [Background.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/background/Background.ets#L97-L141)
 
 ## AI识别拖拽内容
 
@@ -391,7 +363,7 @@ content_hash: sha256:97194f8f506688bec44a5c70ea5e8beb483c3291d584fd56bbf6d099e31
 **运行效果**
 
 **图3** AI识别拖拽内容  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/LhPsxYUZQC-VsLosjQI4ow/zh-cn_image_0000002349614541.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/wCj36bPERN-pkOO7xDd-mA/zh-cn_image_0000002349614541.gif "点击放大")
 
 **实现原理**
 
@@ -401,134 +373,126 @@ content_hash: sha256:97194f8f506688bec44a5c70ea5e8beb483c3291d584fd56bbf6d099e31
 
 1. 在拖拽释放区域的[allowDrop()](../harmonyos-references/ts-universal-attributes-drag-drop.md#allowdrop)接口中设置允许拖入的数据类型为[uniformTypeDescriptor.UniformDataType.IMAGE](../harmonyos-references/js-apis-data-uniformtypedescriptor.md#uniformdatatype)。
 
+   ```screen
+   Column() {
+     Text(this.textContent)
+     // ...
+   }
+   // ...
+   .allowDrop([uniformTypeDescriptor.UniformDataType.IMAGE])
+   // ...
    ```
-   1. Column() {
-   2. Text(this.textContent)
-   3. // ...
-   4. }
-   5. // ...
-   6. .allowDrop([uniformTypeDescriptor.UniformDataType.IMAGE])
-   7. // ...
-   ```
-
-   [AIRecognition.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/aiRecognition/AIRecognition.ets#L80-L184)
 2. 在拖入对象的[onDrop()](../harmonyos-references/ts-universal-events-drag-drop.md#ondrop)接口中，调用[DragEvent](../harmonyos-references/ts-universal-events-drag-drop.md#dragevent7)的[getData()](../harmonyos-references/ts-universal-events-drag-drop.md#getdata10)接口获取拖拽数据。
 
+   ```screen
+   Column() {
+     Text(this.textContent)
+     // ...
+   }
+   // ...
+   .onDrop(async (event?: DragEvent) => {
+     try {
+       let dragData: UnifiedData = (event as DragEvent).getData() as UnifiedData;
+       if (dragData === undefined) {
+         hilog.info(0x0000, TAG, `%{public}s`, `ondrop undefined data`);
+         return;
+       }
+       let records: unifiedDataChannel.UnifiedRecord[] = dragData.getRecords();
+       // ...
+     } catch (error) {
+       const err = error as BusinessError;
+       hilog.error(0x0000, TAG, `onDrop error, error code: ${err.code}, errorMessage: ${err.message}`);
+     }
+   })
    ```
-   1. Column() {
-   2. Text(this.textContent)
-   3. // ...
-   4. }
-   5. // ...
-   6. .onDrop(async (event?: DragEvent) => {
-   7. try {
-   8. let dragData: UnifiedData = (event as DragEvent).getData() as UnifiedData;
-   9. if (dragData === undefined) {
-   10. hilog.info(0x0000, TAG, `%{public}s`, `ondrop undefined data`);
-   11. return;
-   12. }
-   13. let records: unifiedDataChannel.UnifiedRecord[] = dragData.getRecords();
-   14. // ...
-   15. } catch (error) {
-   16. const err = error as BusinessError;
-   17. hilog.error(0x0000, TAG, `onDrop error, error code: ${err.code}, errorMessage: ${err.message}`);
-   18. }
-   19. })
-   ```
-
-   [AIRecognition.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/aiRecognition/AIRecognition.ets#L81-L185)
 3. 将拖拽数据转换成颜色数据格式为BGRA\_8888的[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)类型的视觉信息。
 
+   ```screen
+   Column() {
+     Text(this.textContent)
+     // ...
+   }
+   // ...
+   .onDrop(async (event?: DragEvent) => {
+     try {
+       // ...
+       for (let i = 0; i < records.length; i++) {
+         let types = records[i].getTypes();
+         if (types.includes(uniformTypeDescriptor.UniformDataType.FILE_URI)) {
+           const fileUriUds =
+             records[i].getEntry(uniformTypeDescriptor.UniformDataType.FILE_URI) as uniformDataStruct.FileUri;
+           let typeDescriptor = uniformTypeDescriptor.getTypeDescriptor(fileUriUds.fileType);
+           if (typeDescriptor.belongsTo(uniformTypeDescriptor.UniformDataType.IMAGE)) {
+             const resourceReg = new RegExp('resource');
+             if (resourceReg.test(fileUriUds.oriUri)) {
+               const numberReg = new RegExp('[0-9]+');
+               let idArray = fileUriUds.oriUri.match(numberReg);
+               if (idArray !== null) {
+                 let id = idArray[0];
+                 let drawableDescriptor =
+                   this.context.getHostContext()!.resourceManager.getDrawableDescriptor(Number(id), 0, 1);
+                 let pixelMapInit = drawableDescriptor.getPixelMap() as image.PixelMap;
+                 let imageHeight = pixelMapInit.getImageInfoSync().size.height;
+                 let imageWidth = pixelMapInit.getImageInfoSync().size.width;
+                 const readBuffer: ArrayBuffer = new ArrayBuffer(imageHeight * imageWidth * 4);
+                 pixelMapInit.readPixelsToBufferSync(readBuffer);
+                 let opts: image.InitializationOptions = {
+                   editable: true,
+                   size: { height: imageHeight, width: imageWidth },
+                   srcPixelFormat: pixelMapInit.getImageInfoSync().pixelFormat,
+                   pixelFormat: 3,
+                   alphaType: pixelMapInit.getImageInfoSync().alphaType,
+                   scaleMode: 0
+                 };
+                 let pixelMap: image.PixelMap = image.createPixelMapSync(readBuffer, opts);
+                 // ...
+               }
+             }
+           }
+         }
+       }
+     } catch (error) {
+       const err = error as BusinessError;
+       hilog.error(0x0000, TAG, `onDrop error, error code: ${err.code}, errorMessage: ${err.message}`);
+     }
+   })
    ```
-   1. Column() {
-   2. Text(this.textContent)
-   3. // ...
-   4. }
-   5. // ...
-   6. .onDrop(async (event?: DragEvent) => {
-   7. try {
-   8. // ...
-   9. for (let i = 0; i < records.length; i++) {
-   10. let types = records[i].getTypes();
-   11. if (types.includes(uniformTypeDescriptor.UniformDataType.FILE_URI)) {
-   12. const fileUriUds =
-   13. records[i].getEntry(uniformTypeDescriptor.UniformDataType.FILE_URI) as uniformDataStruct.FileUri;
-   14. let typeDescriptor = uniformTypeDescriptor.getTypeDescriptor(fileUriUds.fileType);
-   15. if (typeDescriptor.belongsTo(uniformTypeDescriptor.UniformDataType.IMAGE)) {
-   16. const resourceReg = new RegExp('resource');
-   17. if (resourceReg.test(fileUriUds.oriUri)) {
-   18. const numberReg = new RegExp('[0-9]+');
-   19. let idArray = fileUriUds.oriUri.match(numberReg);
-   20. if (idArray !== null) {
-   21. let id = idArray[0];
-   22. let drawableDescriptor =
-   23. this.context.getHostContext()!.resourceManager.getDrawableDescriptor(Number(id), 0, 1);
-   24. let pixelMapInit = drawableDescriptor.getPixelMap() as image.PixelMap;
-   25. let imageHeight = pixelMapInit.getImageInfoSync().size.height;
-   26. let imageWidth = pixelMapInit.getImageInfoSync().size.width;
-   27. const readBuffer: ArrayBuffer = new ArrayBuffer(imageHeight * imageWidth * 4);
-   28. pixelMapInit.readPixelsToBufferSync(readBuffer);
-   29. let opts: image.InitializationOptions = {
-   30. editable: true,
-   31. size: { height: imageHeight, width: imageWidth },
-   32. srcPixelFormat: pixelMapInit.getImageInfoSync().pixelFormat,
-   33. pixelFormat: 3,
-   34. alphaType: pixelMapInit.getImageInfoSync().alphaType,
-   35. scaleMode: 0
-   36. };
-   37. let pixelMap: image.PixelMap = image.createPixelMapSync(readBuffer, opts);
-   38. // ...
-   39. }
-   40. }
-   41. }
-   42. }
-   43. }
-   44. } catch (error) {
-   45. const err = error as BusinessError;
-   46. hilog.error(0x0000, TAG, `onDrop error, error code: ${err.code}, errorMessage: ${err.message}`);
-   47. }
-   48. })
-   ```
-
-   [AIRecognition.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/aiRecognition/AIRecognition.ets#L82-L183)
 4. 调用系统文字识别能力textRecognition获取拖拽数据中的文字信息。
 
+   ```screen
+   Column() {
+     Text(this.textContent)
+     // ...
+   }
+   // ...
+   .onDrop(async (event?: DragEvent) => {
+     try {
+       // ...
+       for (let i = 0; i < records.length; i++) {
+         let types = records[i].getTypes();
+         if (types.includes(uniformTypeDescriptor.UniformDataType.FILE_URI)) {
+           // ...
+           if (typeDescriptor.belongsTo(uniformTypeDescriptor.UniformDataType.IMAGE)) {
+             // ...
+             if (resourceReg.test(fileUriUds.oriUri)) {
+               // ...
+               if (idArray !== null) {
+                 // ...
+                 let visionInfo: textRecognition.VisionInfo = { pixelMap: pixelMap };
+                 let data = await textRecognition.recognizeText(visionInfo);
+                 let recognitionString = data.value;
+                 this.textContent = recognitionString;
+               }
+             }
+           }
+         }
+       }
+     } catch (error) {
+       const err = error as BusinessError;
+       hilog.error(0x0000, TAG, `onDrop error, error code: ${err.code}, errorMessage: ${err.message}`);
+     }
+   })
    ```
-   1. Column() {
-   2. Text(this.textContent)
-   3. // ...
-   4. }
-   5. // ...
-   6. .onDrop(async (event?: DragEvent) => {
-   7. try {
-   8. // ...
-   9. for (let i = 0; i < records.length; i++) {
-   10. let types = records[i].getTypes();
-   11. if (types.includes(uniformTypeDescriptor.UniformDataType.FILE_URI)) {
-   12. // ...
-   13. if (typeDescriptor.belongsTo(uniformTypeDescriptor.UniformDataType.IMAGE)) {
-   14. // ...
-   15. if (resourceReg.test(fileUriUds.oriUri)) {
-   16. // ...
-   17. if (idArray !== null) {
-   18. // ...
-   19. let visionInfo: textRecognition.VisionInfo = { pixelMap: pixelMap };
-   20. let data = await textRecognition.recognizeText(visionInfo);
-   21. let recognitionString = data.value;
-   22. this.textContent = recognitionString;
-   23. }
-   24. }
-   25. }
-   26. }
-   27. }
-   28. } catch (error) {
-   29. const err = error as BusinessError;
-   30. hilog.error(0x0000, TAG, `onDrop error, error code: ${err.code}, errorMessage: ${err.message}`);
-   31. }
-   32. })
-   ```
-
-   [AIRecognition.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/aiRecognition/AIRecognition.ets#L83-L181)
 
 ## 文件拖拽
 
@@ -545,7 +509,7 @@ content_hash: sha256:97194f8f506688bec44a5c70ea5e8beb483c3291d584fd56bbf6d099e31
 **运行效果**
 
 **图4** 在线图片拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/gsP-GRmIQniTk7Pam6O81Q/zh-cn_image_0000002315775454.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/_EO8t_f2QraD1f1fik12pg/zh-cn_image_0000002315775454.gif "点击放大")
 
 **使用说明**
 
@@ -559,105 +523,97 @@ content_hash: sha256:97194f8f506688bec44a5c70ea5e8beb483c3291d584fd56bbf6d099e31
 
 1. 开启网络权限。
 
+   ```screen
+   "requestPermissions": [
+     {
+       "name": "ohos.permission.INTERNET",
+       "reason": "$string:internet_reason",
+       "usedScene": {
+         "abilities": [
+           "EntryAbility"
+         ],
+         "when": "inuse"
+       }
+     }
+   ],
    ```
-   1. "requestPermissions": [
-   2. {
-   3. "name": "ohos.permission.INTERNET",
-   4. "reason": "$string:internet_reason",
-   5. "usedScene": {
-   6. "abilities": [
-   7. "EntryAbility"
-   8. ],
-   9. "when": "inuse"
-   10. }
-   11. }
-   12. ],
-   ```
-
-   [module.json5](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/module.json5#L63-L74)
 2. 设置拖出方Image组件的[draggable()](../harmonyos-references/ts-universal-attributes-drag-drop.md#draggable)属性为true。
 
+   ```screen
+   Image('https://www-file.huawei.com/-/media/corp2020/home/banner/12/pura-x-1.jpg')
+   // ...
+     .draggable(true)
+     // ...
    ```
-   1. Image('https://www-file.huawei.com/-/media/corp2020/home/banner/12/pura-x-1.jpg')
-   2. // ...
-   3. .draggable(true)
-   4. // ...
-   ```
-
-   [OnlineImage.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/onlineimage/OnlineImage.ets#L53-L69)
 3. 在落入方Image组件的[onDrop()](../harmonyos-references/ts-universal-events-drag-drop.md#ondrop)回调中获取图片的uri，绑定到落入方组件上，触发UI刷新。
 
+   ```screen
+   Column() {
+     Image(this.targetImage)
+     // ...
+   }
+   // ...
+   .onDrop((event?: DragEvent) => {
+     try {
+       let dragData = event?.getData() as unifiedDataChannel.UnifiedData;
+       if (dragData) {
+         let records: Array<unifiedDataChannel.UnifiedRecord> = dragData.getRecords();
+         for (let i = 0; i < records.length; i++) {
+           let types = records[i].getTypes();
+           if (types.includes(uniformTypeDescriptor.UniformDataType.FILE_URI)) {
+             const fileUriUds =
+               records[i].getEntry(uniformTypeDescriptor.UniformDataType.FILE_URI) as uniformDataStruct.FileUri;
+             let typeDescriptor = uniformTypeDescriptor.getTypeDescriptor(fileUriUds.fileType);
+             if (typeDescriptor.belongsTo(uniformTypeDescriptor.UniformDataType.IMAGE)) {
+               this.targetImage = fileUriUds.oriUri;
+               // ...
+             }
+           }
+         }
+       }
+     }
+     // ...
+   });
    ```
-   1. Column() {
-   2. Image(this.targetImage)
-   3. // ...
-   4. }
-   5. // ...
-   6. .onDrop((event?: DragEvent) => {
-   7. try {
-   8. let dragData = event?.getData() as unifiedDataChannel.UnifiedData;
-   9. if (dragData) {
-   10. let records: Array<unifiedDataChannel.UnifiedRecord> = dragData.getRecords();
-   11. for (let i = 0; i < records.length; i++) {
-   12. let types = records[i].getTypes();
-   13. if (types.includes(uniformTypeDescriptor.UniformDataType.FILE_URI)) {
-   14. const fileUriUds =
-   15. records[i].getEntry(uniformTypeDescriptor.UniformDataType.FILE_URI) as uniformDataStruct.FileUri;
-   16. let typeDescriptor = uniformTypeDescriptor.getTypeDescriptor(fileUriUds.fileType);
-   17. if (typeDescriptor.belongsTo(uniformTypeDescriptor.UniformDataType.IMAGE)) {
-   18. this.targetImage = fileUriUds.oriUri;
-   19. // ...
-   20. }
-   21. }
-   22. }
-   23. }
-   24. }
-   25. // ...
-   26. });
-   ```
-
-   [OnlineImage.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/onlineimage/OnlineImage.ets#L84-L148)
 4. 在落入方Image组件的[onDrop()](../harmonyos-references/ts-universal-events-drag-drop.md#ondrop)回调里调用[request](../harmonyos-references/js-apis-request.md#导入模块)的[downloadFile()](../harmonyos-references/js-apis-request.md#requestdownloadfile9)方法下载图片资源。
 
+   ```screen
+   Column() {
+     Image(this.targetImage)
+     // ...
+   }
+   // ...
+   .onDrop((event?: DragEvent) => {
+     try {
+       let dragData = event?.getData() as unifiedDataChannel.UnifiedData;
+       if (dragData) {
+         let records: Array<unifiedDataChannel.UnifiedRecord> = dragData.getRecords();
+         for (let i = 0; i < records.length; i++) {
+           let types = records[i].getTypes();
+           if (types.includes(uniformTypeDescriptor.UniformDataType.FILE_URI)) {
+             // ...
+             if (typeDescriptor.belongsTo(uniformTypeDescriptor.UniformDataType.IMAGE)) {
+               // ...
+               request.downloadFile(this.context, {
+                 url: fileUriUds.oriUri,
+                 filePath: this.filesDir + '/test.png'
+               }).then(() => {
+                 const file = fileIo.openSync(this.filesDir + '/test.png', fileIo.OpenMode.READ_WRITE);
+                 const arrayBuffer = new ArrayBuffer(1024);
+                 const readLen = fileIo.readSync(file.fd, arrayBuffer);
+                 buffer.from(arrayBuffer, 0, readLen);
+                 fileIo.closeSync(file);
+               }).catch((error: BusinessError) => {
+                 hilog.error(0x0000, TAG, `%{public}s`, error.code, error.message);
+               })
+             }
+           }
+         }
+       }
+     }
+     // ...
+   });
    ```
-   1. Column() {
-   2. Image(this.targetImage)
-   3. // ...
-   4. }
-   5. // ...
-   6. .onDrop((event?: DragEvent) => {
-   7. try {
-   8. let dragData = event?.getData() as unifiedDataChannel.UnifiedData;
-   9. if (dragData) {
-   10. let records: Array<unifiedDataChannel.UnifiedRecord> = dragData.getRecords();
-   11. for (let i = 0; i < records.length; i++) {
-   12. let types = records[i].getTypes();
-   13. if (types.includes(uniformTypeDescriptor.UniformDataType.FILE_URI)) {
-   14. // ...
-   15. if (typeDescriptor.belongsTo(uniformTypeDescriptor.UniformDataType.IMAGE)) {
-   16. // ...
-   17. request.downloadFile(this.context, {
-   18. url: fileUriUds.oriUri,
-   19. filePath: this.filesDir + '/test.png'
-   20. }).then(() => {
-   21. const file = fileIo.openSync(this.filesDir + '/test.png', fileIo.OpenMode.READ_WRITE);
-   22. const arrayBuffer = new ArrayBuffer(1024);
-   23. const readLen = fileIo.readSync(file.fd, arrayBuffer);
-   24. buffer.from(arrayBuffer, 0, readLen);
-   25. fileIo.closeSync(file);
-   26. }).catch((error: BusinessError) => {
-   27. hilog.error(0x0000, TAG, `%{public}s`, error.code, error.message);
-   28. })
-   29. }
-   30. }
-   31. }
-   32. }
-   33. }
-   34. // ...
-   35. });
-   ```
-
-   [OnlineImage.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/onlineimage/OnlineImage.ets#L85-L149)
 
 ## 本地文件拖拽保存
 
@@ -666,7 +622,7 @@ content_hash: sha256:97194f8f506688bec44a5c70ea5e8beb483c3291d584fd56bbf6d099e31
 **运行效果**
 
 **图5** 本地视频拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/5ncRH5DgRV6wpnDf1-Z0MA/zh-cn_image_0000002315615654.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/OYv1M8tmTk2ukEW90UgNYw/zh-cn_image_0000002315615654.gif "点击放大")
 
 **实现原理**
 
@@ -676,100 +632,94 @@ content_hash: sha256:97194f8f506688bec44a5c70ea5e8beb483c3291d584fd56bbf6d099e31
 
 1. 设置拖出方Video组件的[draggable()](../harmonyos-references/ts-universal-attributes-drag-drop.md#draggable)属性为true。
 
+   ```screen
+   Video({
+     src: $rawfile('video.mp4'),
+     controller: new VideoController()
+   })
+     // ...
+     .draggable(true)
+       // ...
    ```
-   1. Video({
-   2. src: $rawfile('video.mp4'),
-   3. controller: new VideoController()
-   4. })
-   5. // ...
-   6. .draggable(true)
-   7. // ...
-   ```
-
-   [LocalVideo.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/localvideo/LocalVideo.ets#L50-L94)
 2. 在拖出视频的[onDragStart()](../harmonyos-references/ts-universal-events-drag-drop.md#ondragstart)回调中，将视频文件复制到沙箱目录。构造[uniformDataStruct.FileUri](../harmonyos-references/js-apis-data-uniformdatastruct.md#fileuri15)类型的数据，将oriUri设置为沙箱路径下视频文件的uri。
 
+   ```screen
+   Video({
+     src: $rawfile('video.mp4'),
+     controller: new VideoController()
+   })
+     // ...
+     .onDragStart((event: DragEvent) => {
+       try {
+         let data = this.context!.resourceManager.getRawFdSync('video.mp4');
+         let filePath = this.context?.filesDir + '/video.mp4';
+         let dest = fileIo.openSync(filePath, fileIo.OpenMode.CREATE | fileIo.OpenMode.READ_WRITE);
+         let bufferSize = data.length as number;
+         let buf = new ArrayBuffer(bufferSize);
+         fileIo.readSync(data.fd, buf, { offset: data.offset, length: bufferSize });
+         fileIo.writeSync(dest.fd, buf, { offset: 0, length: bufferSize });
+         fileIo.close(dest.fd);
+         this.context!.resourceManager.closeRawFd('video.mp4');
+         this.originalVideoUri = fileUri.getUriFromPath(filePath);
+         let unifiedData = new unifiedDataChannel.UnifiedData();
+         let unifiedRecord = new unifiedDataChannel.UnifiedRecord();
+         let video: uniformDataStruct.FileUri = {
+           uniformDataType: 'general.file-uri',
+           oriUri: this.originalVideoUri,
+           fileType: 'general.video'
+         }
+         unifiedRecord.addEntry(uniformTypeDescriptor.UniformDataType.VIDEO, video);
+         unifiedData.addRecord(unifiedRecord);
+         event.setData(unifiedData);
+       } catch (error) {
+         const err = error as BusinessError;
+         hilog.error(0x0000, TAG, `%{public}s`, err.code, err.message);
+       }
+     })
    ```
-   1. Video({
-   2. src: $rawfile('video.mp4'),
-   3. controller: new VideoController()
-   4. })
-   5. // ...
-   6. .onDragStart((event: DragEvent) => {
-   7. try {
-   8. let data = this.context!.resourceManager.getRawFdSync('video.mp4');
-   9. let filePath = this.context?.filesDir + '/video.mp4';
-   10. let dest = fileIo.openSync(filePath, fileIo.OpenMode.CREATE | fileIo.OpenMode.READ_WRITE);
-   11. let bufferSize = data.length as number;
-   12. let buf = new ArrayBuffer(bufferSize);
-   13. fileIo.readSync(data.fd, buf, { offset: data.offset, length: bufferSize });
-   14. fileIo.writeSync(dest.fd, buf, { offset: 0, length: bufferSize });
-   15. fileIo.close(dest.fd);
-   16. this.context!.resourceManager.closeRawFd('video.mp4');
-   17. this.originalVideoUri = fileUri.getUriFromPath(filePath);
-   18. let unifiedData = new unifiedDataChannel.UnifiedData();
-   19. let unifiedRecord = new unifiedDataChannel.UnifiedRecord();
-   20. let video: uniformDataStruct.FileUri = {
-   21. uniformDataType: 'general.file-uri',
-   22. oriUri: this.originalVideoUri,
-   23. fileType: 'general.video'
-   24. }
-   25. unifiedRecord.addEntry(uniformTypeDescriptor.UniformDataType.VIDEO, video);
-   26. unifiedData.addRecord(unifiedRecord);
-   27. event.setData(unifiedData);
-   28. } catch (error) {
-   29. const err = error as BusinessError;
-   30. hilog.error(0x0000, TAG, `%{public}s`, err.code, err.message);
-   31. }
-   32. })
-   ```
-
-   [LocalVideo.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/localvideo/LocalVideo.ets#L51-L92)
 3. 在拖入方Video组件的[onDrop()](../harmonyos-references/ts-universal-events-drag-drop.md#ondrop)回调里调用[startDataLoading()](../harmonyos-references/ts-universal-events-drag-drop.md#startdataloading15)接口获取拖拽的数据，提取uri并绑定到落入方Video组件上。同时由于设置了[datasyncoptions](../harmonyos-references/ts-universal-events-drag-drop.md#datasyncoptions15)中的destUri参数，UDMF会将视频保存到本地的沙箱路径中。
 
+   ```screen
+   Column() {
+     Video({ src: this.targetVideoUri, controller: new VideoController() })
+       // ...
+   }
+   // ...
+   .onDrop((event?: DragEvent) => {
+     try {
+       let progressListener: unifiedDataChannel.DataProgressListener =
+         (_progress: unifiedDataChannel.ProgressInfo, dragData: UnifiedData | null) => {
+           if (dragData) {
+             let records: Array<unifiedDataChannel.UnifiedRecord> = dragData.getRecords();
+             for (let i = 0; i < records.length; i++) {
+               let types = records[i].getTypes();
+               if (types.includes(uniformTypeDescriptor.UniformDataType.FILE_URI)) {
+                 const fileUriUds =
+                   records[i].getEntry(uniformTypeDescriptor.UniformDataType.FILE_URI) as uniformDataStruct.FileUri;
+                 let typeDescriptor = uniformTypeDescriptor.getTypeDescriptor(fileUriUds.fileType);
+                 if (typeDescriptor.belongsTo(uniformTypeDescriptor.UniformDataType.VIDEO)) {
+                   this.targetVideoUri = fileUriUds.oriUri;
+                 }
+               }
+             }
+           } else {
+             hilog.info(0x0000, TAG, 'dragData is undefined');
+           }
+         };
+       const destUri = fileUri.getUriFromPath(this.context!.distributedFilesDir);
+       let options: DataSyncOptions = {
+         destUri: destUri,
+         fileConflictOptions: unifiedDataChannel.FileConflictOptions.OVERWRITE,
+         progressIndicator: unifiedDataChannel.ProgressIndicator.DEFAULT,
+         dataProgressListener: progressListener,
+       };
+       (event as DragEvent).startDataLoading(options);
+     } catch (error) {
+       const err = error as BusinessError;
+       hilog.error(0x0000, TAG, `startDataLoading errorCode: ${err.code}, errorMessage: ${err.message}`);
+     }
+   }, { disableDataPrefetch: true })
    ```
-   1. Column() {
-   2. Video({ src: this.targetVideoUri, controller: new VideoController() })
-   3. // ...
-   4. }
-   5. // ...
-   6. .onDrop((event?: DragEvent) => {
-   7. try {
-   8. let progressListener: unifiedDataChannel.DataProgressListener =
-   9. (_progress: unifiedDataChannel.ProgressInfo, dragData: UnifiedData | null) => {
-   10. if (dragData) {
-   11. let records: Array<unifiedDataChannel.UnifiedRecord> = dragData.getRecords();
-   12. for (let i = 0; i < records.length; i++) {
-   13. let types = records[i].getTypes();
-   14. if (types.includes(uniformTypeDescriptor.UniformDataType.FILE_URI)) {
-   15. const fileUriUds =
-   16. records[i].getEntry(uniformTypeDescriptor.UniformDataType.FILE_URI) as uniformDataStruct.FileUri;
-   17. let typeDescriptor = uniformTypeDescriptor.getTypeDescriptor(fileUriUds.fileType);
-   18. if (typeDescriptor.belongsTo(uniformTypeDescriptor.UniformDataType.VIDEO)) {
-   19. this.targetVideoUri = fileUriUds.oriUri;
-   20. }
-   21. }
-   22. }
-   23. } else {
-   24. hilog.info(0x0000, TAG, 'dragData is undefined');
-   25. }
-   26. };
-   27. const destUri = fileUri.getUriFromPath(this.context!.distributedFilesDir);
-   28. let options: DataSyncOptions = {
-   29. destUri: destUri,
-   30. fileConflictOptions: unifiedDataChannel.FileConflictOptions.OVERWRITE,
-   31. progressIndicator: unifiedDataChannel.ProgressIndicator.DEFAULT,
-   32. dataProgressListener: progressListener,
-   33. };
-   34. (event as DragEvent).startDataLoading(options);
-   35. } catch (error) {
-   36. const err = error as BusinessError;
-   37. hilog.error(0x0000, TAG, `startDataLoading errorCode: ${err.code}, errorMessage: ${err.message}`);
-   38. }
-   39. }, { disableDataPrefetch: true })
-   ```
-
-   [LocalVideo.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/localvideo/LocalVideo.ets#L110-L160)
 
 ## 图文混排拖拽
 
@@ -782,156 +732,150 @@ content_hash: sha256:97194f8f506688bec44a5c70ea5e8beb483c3291d584fd56bbf6d099e31
 **运行效果如下所示**
 
 **图6** Text组件图文混排拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/davBtnSjShGw1jdBVsCWVg/zh-cn_image_0000002349574337.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/assH1IPyRmmrH108M6t1tg/zh-cn_image_0000002349574337.gif "点击放大")
 
 **实现原理**
 
 [Text](../harmonyos-references/ts-basic-components-text.md#接口)组件默认具有拖出能力，在拖入区域中分别接收文本和图片对应的UnifiedRecord数据，绑定至拖入Text组件的[Span](../harmonyos-references/ts-basic-components-span.md#接口)和[ImageSpan](../harmonyos-references/ts-basic-components-imagespan.md#接口)子组件上，实现较为简单，但是不支持交互式编辑，且拖入方组件需要预先和拖出方组件保持一致的样式，灵活性较差。
 
+```screen
+Column() {
+  Text() {
+    // ...
+  }
+  // ...
+}
+// ...
+.onDrop(async (event?: DragEvent) => {
+  try {
+    let dragData: UnifiedData = (event as DragEvent).getData() as UnifiedData;
+    if (dragData !== undefined) {
+      let records: Array<unifiedDataChannel.UnifiedRecord> = dragData.getRecords();
+      if (records.length > 0) {
+        for (let i = 0; i < records.length; i++) {
+          let types = records[i].getTypes();
+          if (types.includes(uniformTypeDescriptor.UniformDataType.FILE_URI)) {
+            const fileUriUds =
+              records[i].getEntry(uniformTypeDescriptor.UniformDataType.FILE_URI) as uniformDataStruct.FileUri;
+            let typeDescriptor = uniformTypeDescriptor.getTypeDescriptor(fileUriUds.fileType);
+            if (typeDescriptor.belongsTo(uniformTypeDescriptor.UniformDataType.IMAGE)) {
+              this.targetImage = fileUriUds.oriUri;
+            }
+            continue;
+          }
+          if (types.includes(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT)) {
+            const plainTextUds =
+              records[i].getEntry(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT) as uniformDataStruct.PlainText;
+            this.targetTextContent = plainTextUds.textContent;
+            continue;
+          }
+          if (types.includes(uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP)) {
+            const pixelMapUds =
+              records[i].getEntry(uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP) as uniformDataStruct.PixelMap;
+            this.targetImage = pixelMapUds.pixelMap;
+            continue;
+          }
+        }
+      }
+      // ...
+    }
+    // ...
+    event?.setResult(0);
+  }
+  // ...
+})
 ```
-1. Column() {
-2. Text() {
-3. // ...
-4. }
-5. // ...
-6. }
-7. // ...
-8. .onDrop(async (event?: DragEvent) => {
-9. try {
-10. let dragData: UnifiedData = (event as DragEvent).getData() as UnifiedData;
-11. if (dragData !== undefined) {
-12. let records: Array<unifiedDataChannel.UnifiedRecord> = dragData.getRecords();
-13. if (records.length > 0) {
-14. for (let i = 0; i < records.length; i++) {
-15. let types = records[i].getTypes();
-16. if (types.includes(uniformTypeDescriptor.UniformDataType.FILE_URI)) {
-17. const fileUriUds =
-18. records[i].getEntry(uniformTypeDescriptor.UniformDataType.FILE_URI) as uniformDataStruct.FileUri;
-19. let typeDescriptor = uniformTypeDescriptor.getTypeDescriptor(fileUriUds.fileType);
-20. if (typeDescriptor.belongsTo(uniformTypeDescriptor.UniformDataType.IMAGE)) {
-21. this.targetImage = fileUriUds.oriUri;
-22. }
-23. continue;
-24. }
-25. if (types.includes(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT)) {
-26. const plainTextUds =
-27. records[i].getEntry(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT) as uniformDataStruct.PlainText;
-28. this.targetTextContent = plainTextUds.textContent;
-29. continue;
-30. }
-31. if (types.includes(uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP)) {
-32. const pixelMapUds =
-33. records[i].getEntry(uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP) as uniformDataStruct.PixelMap;
-34. this.targetImage = pixelMapUds.pixelMap;
-35. continue;
-36. }
-37. }
-38. }
-39. // ...
-40. }
-41. // ...
-42. event?.setResult(0);
-43. }
-44. // ...
-45. })
-```
-
-[Text.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/textandimage/Text.ets#L90-L172)
 
 ### 基于RichEditor组件的图文混排拖拽
 
 **运行效果展示**
 
 **图7** RichEditor组件图文混排拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/wJsK6zBEQp-T1AwAKggXTA/zh-cn_image_0000002349614553.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/xZo6oP_oQeyYlZCUH-4QyA/zh-cn_image_0000002349614553.gif "点击放大")
 
 **实现原理**
 
 RichEditor组件默认具备拖出的能力，并且支持交互式编辑，在拖出方不需要手动构造拖拽的数据，在拖入方通过[addImageSpan()](../harmonyos-references/ts-basic-components-richeditor.md#addimagespan)方法和[addTextSpan()](../harmonyos-references/ts-basic-components-richeditor.md#addtextspan)方法动态地将图片和文字的内容添加到拖入方RichEditor组件上。通过这种方式，在拖入方声明RichEditor组件即可，接收到的图文内容可以动态地添加，使用起来更加方便灵活，代码开发较为简单，核心代码如下：
 
-```
-1. RichEditor({ controller: this.targetController })
-2. // ...
-3. .allowDrop([uniformTypeDescriptor.UniformDataType.IMAGE,
-4. uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP, uniformTypeDescriptor.UniformDataType.TEXT,
-5. uniformTypeDescriptor.UniformDataType.PLAIN_TEXT])
-6. .onDrop((event: DragEvent) => {
-7. try {
-8. event.setResult(0);
-9. this.receiveDragData(event);
-10. } catch (error) {
-11. const err = error as BusinessError;
-12. hilog.error(0x0000, TAG, `on drop error, errorCode: ${err.code}, errorMessage: ${err.message}`);
-13. }
-14. })
-```
-
-[RichEditor.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/textandimage/RichEditor.ets#L161-L178)
-
-```
-1. async receiveDragData(event: DragEvent) {
-2. try {
-3. let dragData: UnifiedData = (event as DragEvent).getData() as UnifiedData;
-4. if (dragData !== undefined) {
-5. let records: Array<unifiedDataChannel.UnifiedRecord> = dragData.getRecords();
-6. if (records.length > 0) {
-7. for (let i = 0; i < records.length; i++) {
-8. let types = records[i].getTypes();
-9. if (types.includes(uniformTypeDescriptor.UniformDataType.FILE_URI)) {
-10. const fileUriUds =
-11. records[i].getEntry(uniformTypeDescriptor.UniformDataType.FILE_URI) as uniformDataStruct.FileUri;
-12. let typeDescriptor = uniformTypeDescriptor.getTypeDescriptor(fileUriUds.fileType);
-13. if (typeDescriptor.belongsTo(uniformTypeDescriptor.UniformDataType.IMAGE)) {
-14. this.targetController.addImageSpan(fileUriUds.oriUri,
-15. {
-16. imageStyle: this.imageStyle,
-17. offset: this.targetController.getCaretOffset()
-18. })
-19. }
-20. continue;
-21. }
-22. if (types.includes(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT)) {
-23. const plainTextUds =
-24. records[i].getEntry(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT) as uniformDataStruct.PlainText;
-25. this.targetController.addTextSpan(plainTextUds.textContent,
-26. {
-27. style: this.textStyle,
-28. offset: this.targetController.getCaretOffset(),
-29. })
-30. continue;
-31. }
-32. if (types.includes(uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP)) {
-33. const pixelMapUds =
-34. records[i].getEntry(uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP) as uniformDataStruct.PixelMap;
-35. this.targetController.addImageSpan(pixelMapUds.pixelMap,
-36. {
-37. imageStyle: this.imageStyle,
-38. offset: this.targetController.getCaretOffset()
-39. })
-40. continue;
-41. }
-42. }
-43. }
-44. // ...
-45. }
-46. // ...
-47. }
-48. // ...
-49. }
+```screen
+RichEditor({ controller: this.targetController })
+// ...
+  .allowDrop([uniformTypeDescriptor.UniformDataType.IMAGE,
+    uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP, uniformTypeDescriptor.UniformDataType.TEXT,
+    uniformTypeDescriptor.UniformDataType.PLAIN_TEXT])
+  .onDrop((event: DragEvent) => {
+    try {
+      event.setResult(0);
+      this.receiveDragData(event);
+    } catch (error) {
+      const err = error as BusinessError;
+      hilog.error(0x0000, TAG, `on drop error, errorCode: ${err.code}, errorMessage: ${err.message}`);
+    }
+  })
 ```
 
-[RichEditor.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/textandimage/RichEditor.ets#L55-L117)
+```screen
+async receiveDragData(event: DragEvent) {
+  try {
+    let dragData: UnifiedData = (event as DragEvent).getData() as UnifiedData;
+    if (dragData !== undefined) {
+      let records: Array<unifiedDataChannel.UnifiedRecord> = dragData.getRecords();
+      if (records.length > 0) {
+        for (let i = 0; i < records.length; i++) {
+          let types = records[i].getTypes();
+          if (types.includes(uniformTypeDescriptor.UniformDataType.FILE_URI)) {
+            const fileUriUds =
+              records[i].getEntry(uniformTypeDescriptor.UniformDataType.FILE_URI) as uniformDataStruct.FileUri;
+            let typeDescriptor = uniformTypeDescriptor.getTypeDescriptor(fileUriUds.fileType);
+            if (typeDescriptor.belongsTo(uniformTypeDescriptor.UniformDataType.IMAGE)) {
+              this.targetController.addImageSpan(fileUriUds.oriUri,
+                {
+                  imageStyle: this.imageStyle,
+                  offset: this.targetController.getCaretOffset()
+                })
+            }
+            continue;
+          }
+          if (types.includes(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT)) {
+            const plainTextUds =
+              records[i].getEntry(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT) as uniformDataStruct.PlainText;
+            this.targetController.addTextSpan(plainTextUds.textContent,
+              {
+                style: this.textStyle,
+                offset: this.targetController.getCaretOffset(),
+              })
+            continue;
+          }
+          if (types.includes(uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP)) {
+            const pixelMapUds =
+              records[i].getEntry(uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP) as uniformDataStruct.PixelMap;
+            this.targetController.addImageSpan(pixelMapUds.pixelMap,
+              {
+                imageStyle: this.imageStyle,
+                offset: this.targetController.getCaretOffset()
+              })
+            continue;
+          }
+        }
+      }
+      // ...
+    }
+    // ...
+  }
+  // ...
+}
+```
 
-说明
+**说明** 
 
-使用RichEditor组件时，需要在[onDrop()](../harmonyos-references/ts-universal-events-drag-drop.md#ondrop)回调里手动调用[DragEvent](../harmonyos-references/ts-universal-events-drag-drop.md#dragevent7)的[setResult()](../harmonyos-references/ts-universal-events-drag-drop.md#setdata10)接口设置拖拽结果，否则会执行系统默认的[onDrop()](../harmonyos-references/ts-universal-events-drag-drop.md#ondrop)接口导致文字落入两次。参见[onDrop()](../harmonyos-references/ts-universal-events-drag-drop.md#ondrop)接口。
+使用RichEditor组件时，需要在[onDrop()](../harmonyos-references/ts-universal-events-drag-drop.md#ondrop)回调里手动调用[DragEvent](../harmonyos-references/ts-universal-events-drag-drop.md#dragevent7)的[setResult()](../harmonyos-references/ts-universal-events-drag-drop.md#setresult10)接口设置拖拽结果，否则会执行系统默认的[onDrop()](../harmonyos-references/ts-universal-events-drag-drop.md#ondrop)接口导致文字落入两次。参见[onDrop()](../harmonyos-references/ts-universal-events-drag-drop.md#ondrop)接口。
 
 ### 基于UDMF多Entry的图文混排拖拽
 
 **运行效果如下所示**
 
 **图8** 多Entry图文混排拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/VrKJkVyzRIqAtJEy7PvWEg/zh-cn_image_0000002315775466.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/fmKjDebfSgOKxJ99mHaGhA/zh-cn_image_0000002315775466.gif "点击放大")
 
 **实现原理**
 
@@ -941,244 +885,228 @@ RichEditor组件默认具备拖出的能力，并且支持交互式编辑，在�
 
 1. 在拖出方RichEditor组件的[onDragStart()](../harmonyos-references/ts-universal-events-drag-drop.md#ondragstart)回调中，根据选中的内容构造拖拽数据。
 
+   ```screen
+   RichEditor({ controller: this.sourceController })
+   // ...
+     .onSelectionChange((value: RichEditorRange) => {
+       this.selectedStartIndex = value.start as number;
+       this.selectedEndIndex = value.end as number;
+     })
+     // ...
+     .onDragStart((event) => {
+       try {
+         const selection = this.sourceController.getSelection();
+         // construct drag data
+         this.buildUnifiedRecords(selection);
+         event.setData(this.unifiedData);
+       } catch (error) {
+         const err = error as BusinessError;
+         hilog.error(0x0000, TAG, `%{public}s`, err.code, err.message);
+       }
+     })
+     // ...
    ```
-   1. RichEditor({ controller: this.sourceController })
-   2. // ...
-   3. .onSelectionChange((value: RichEditorRange) => {
-   4. this.selectedStartIndex = value.start as number;
-   5. this.selectedEndIndex = value.end as number;
-   6. })
-   7. // ...
-   8. .onDragStart((event) => {
-   9. try {
-   10. const selection = this.sourceController.getSelection();
-   11. // construct drag data
-   12. this.buildUnifiedRecords(selection);
-   13. event.setData(this.unifiedData);
-   14. } catch (error) {
-   15. const err = error as BusinessError;
-   16. hilog.error(0x0000, TAG, `%{public}s`, err.code, err.message);
-   17. }
-   18. })
-   19. // ...
-   ```
-
-   [MultiEntry.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/textandimage/MultiEntry.ets#L274-L317)
 2. 封装buildUnifiedRecords()函数，构造图片和文字内容的拖拽数据。
 
+   ```screen
+   buildUnifiedRecords(selection: RichEditorSelection) {
+     try {
+       selection.spans.forEach(async (item) => {
+         if (typeof (item as RichEditorImageSpanResult)['imageStyle'] != 'undefined') {
+           let originImageUri = this.getOriginImageUri();
+           const imageData: uniformDataStruct.FileUri = {
+             uniformDataType: 'general.file-uri',
+             oriUri: originImageUri,
+             fileType: 'general.image'
+           }
+           const unifiedRecord =
+             new unifiedDataChannel.UnifiedRecord(uniformTypeDescriptor.UniformDataType.FILE_URI, imageData);
+           let createdPixelMap = this.getOriginPixelMap();
+           if (createdPixelMap) {
+             let pixelMap: uniformDataStruct.PixelMap = {
+               uniformDataType: 'openharmony.pixel-map',
+               pixelMap: createdPixelMap,
+             }
+             unifiedRecord.addEntry(uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP, pixelMap);
+             this.unifiedData.addRecord(unifiedRecord);
+           }
+           // ...
+         } else {
+           if (typeof (item as RichEditorTextSpanResult)['value'] != 'undefined') {
+             const selectedText = this.getSelectedText(item as RichEditorTextSpanResult);
+             const textData: uniformDataStruct.PlainText = {
+               uniformDataType: 'general.plain-text',
+               textContent: selectedText
+             }
+             const unifiedRecord =
+               new unifiedDataChannel.UnifiedRecord(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT, textData);
+             this.unifiedData.addRecord(unifiedRecord);
+           }
+         }
+       })
+     }
+     // ...
+   }
    ```
-   1. buildUnifiedRecords(selection: RichEditorSelection) {
-   2. try {
-   3. selection.spans.forEach(async (item) => {
-   4. if (typeof (item as RichEditorImageSpanResult)['imageStyle'] != 'undefined') {
-   5. let originImageUri = this.getOriginImageUri();
-   6. const imageData: uniformDataStruct.FileUri = {
-   7. uniformDataType: 'general.file-uri',
-   8. oriUri: originImageUri,
-   9. fileType: 'general.image'
-   10. }
-   11. const unifiedRecord =
-   12. new unifiedDataChannel.UnifiedRecord(uniformTypeDescriptor.UniformDataType.FILE_URI, imageData);
-   13. let createdPixelMap = this.getOriginPixelMap();
-   14. if (createdPixelMap) {
-   15. let pixelMap: uniformDataStruct.PixelMap = {
-   16. uniformDataType: 'openharmony.pixel-map',
-   17. pixelMap: createdPixelMap,
-   18. }
-   19. unifiedRecord.addEntry(uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP, pixelMap);
-   20. this.unifiedData.addRecord(unifiedRecord);
-   21. }
-   22. // ...
-   23. } else {
-   24. if (typeof (item as RichEditorTextSpanResult)['value'] != 'undefined') {
-   25. const selectedText = this.getSelectedText(item as RichEditorTextSpanResult);
-   26. const textData: uniformDataStruct.PlainText = {
-   27. uniformDataType: 'general.plain-text',
-   28. textContent: selectedText
-   29. }
-   30. const unifiedRecord =
-   31. new unifiedDataChannel.UnifiedRecord(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT, textData);
-   32. this.unifiedData.addRecord(unifiedRecord);
-   33. }
-   34. }
-   35. })
-   36. }
-   37. // ...
-   38. }
-   ```
-
-   [MultiEntry.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/textandimage/MultiEntry.ets#L66-L113)
 3. 封装getOriginImageUri()函数，getOriginPixelMap()函数，和getSelectedText()函数。
 
-   ```
-   1. getOriginImageUri(): string {
-   2. let filePath = this.context.filesDir + '/river.png';
-   3. try {
-   4. let data = this.context.resourceManager.getRawFdSync('river.png');
-   5. let dest = fileIo.openSync(filePath, fileIo.OpenMode.CREATE | fileIo.OpenMode.READ_WRITE);
-   6. let bufferSize = data.length as number;
-   7. let buf = new ArrayBuffer(bufferSize);
-   8. fileIo.readSync(data.fd, buf, { offset: data.offset, length: bufferSize });
-   9. fileIo.writeSync(dest.fd, buf, { offset: 0, length: bufferSize });
-   10. fileIo.close(dest.fd).catch((err: BusinessError) => {
-   11. hilog.error(0x0000, TAG, `getOriginImageUri failed. code=${err.code}, message=${err.message}`);
-   12. });
-   13. this.context.resourceManager.closeRawFd('river.png');
-   14. } catch (error) {
-   15. let err = error as BusinessError;
-   16. hilog.error(0x0000, TAG, `getOriginImageUri failed. code=${err.code}, message=${err.message}`);
-   17. }
-   18. const originImageUri = fileUri.getUriFromPath(filePath);
-   19. return originImageUri;
-   20. }
-   ```
-
-   [MultiEntry.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/textandimage/MultiEntry.ets#L117-L137)
-
-   ```
-   1. getOriginPixelMap(): PixelMap | undefined {
-   2. try {
-   3. let data = this.context.resourceManager.getRawFileContentSync('river.png');
-   4. let arrayBuffer = data.buffer.slice(0);
-   5. let imageSource: image.ImageSource = image.createImageSource(arrayBuffer);
-   6. let value = imageSource.getImageInfoSync();
-   7. let opts: image.DecodingOptions = {
-   8. editable: true,
-   9. desiredSize: {
-   10. height: value.size.height,
-   11. width: value.size.width
-   12. }
-   13. };
-   14. let pixelMap = imageSource.createPixelMapSync(opts);
-   15. return pixelMap;
-   16. }
-   17. // ...
-   18. }
+   ```screen
+   getOriginImageUri(): string {
+     let filePath = this.context.filesDir + '/river.png';
+     try {
+       let data = this.context.resourceManager.getRawFdSync('river.png');
+       let dest = fileIo.openSync(filePath, fileIo.OpenMode.CREATE | fileIo.OpenMode.READ_WRITE);
+       let bufferSize = data.length as number;
+       let buf = new ArrayBuffer(bufferSize);
+       fileIo.readSync(data.fd, buf, { offset: data.offset, length: bufferSize });
+       fileIo.writeSync(dest.fd, buf, { offset: 0, length: bufferSize });
+       fileIo.close(dest.fd).catch((err: BusinessError) => {
+         hilog.error(0x0000, TAG, `getOriginImageUri failed. code=${err.code}, message=${err.message}`);
+       });
+       this.context.resourceManager.closeRawFd('river.png');
+     } catch (error) {
+       let err = error as BusinessError;
+       hilog.error(0x0000, TAG, `getOriginImageUri failed. code=${err.code}, message=${err.message}`);
+     }
+     const originImageUri = fileUri.getUriFromPath(filePath);
+     return originImageUri;
+   }
    ```
 
-   [MultiEntry.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/textandimage/MultiEntry.ets#L141-L165)
-
+   ```screen
+   getOriginPixelMap(): PixelMap | undefined {
+     try {
+       let data = this.context.resourceManager.getRawFileContentSync('river.png');
+       let arrayBuffer = data.buffer.slice(0);
+       let imageSource: image.ImageSource = image.createImageSource(arrayBuffer);
+       let value = imageSource.getImageInfoSync();
+       let opts: image.DecodingOptions = {
+         editable: true,
+         desiredSize: {
+           height: value.size.height,
+           width: value.size.width
+         }
+       };
+       let pixelMap = imageSource.createPixelMapSync(opts);
+       return pixelMap;
+     }
+     // ...
+   }
    ```
-   1. getSelectedText(item: RichEditorTextSpanResult): string {
-   2. const textStart: number = item.spanPosition.spanRange[0];
-   3. const textEnd: number = item.spanPosition.spanRange[1];
-   4. let textSelected: string = '';
-   5. if (textStart >= this.selectedStartIndex) {
-   6. const begin = 0;
-   7. const end = Math.min(textEnd, this.selectedEndIndex) - textStart;
-   8. textSelected = item.value.substring(begin, end);
-   9. } else {
-   10. const begin = this.selectedStartIndex - textStart;
-   11. const end = Math.min(this.selectedEndIndex, textEnd) - textStart;
-   12. textSelected = item.value.substring(begin, end);
-   13. }
-   14. return textSelected;
-   15. }
-   ```
 
-   [MultiEntry.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/textandimage/MultiEntry.ets#L169-L184)
+   ```screen
+   getSelectedText(item: RichEditorTextSpanResult): string {
+     const textStart: number = item.spanPosition.spanRange[0];
+     const textEnd: number = item.spanPosition.spanRange[1];
+     let textSelected: string = '';
+     if (textStart >= this.selectedStartIndex) {
+       const begin = 0;
+       const end = Math.min(textEnd, this.selectedEndIndex) - textStart;
+       textSelected = item.value.substring(begin, end);
+     } else {
+       const begin = this.selectedStartIndex - textStart;
+       const end = Math.min(this.selectedEndIndex, textEnd) - textStart;
+       textSelected = item.value.substring(begin, end);
+     }
+     return textSelected;
+   }
+   ```
 4. 在落入方[onDrop()](../harmonyos-references/ts-universal-events-drag-drop.md#ondrop)回调里获取拖拽数据，调用[getEntry()](../harmonyos-references/js-apis-data-unifieddatachannel.md#getentry15)接口读取所需要格式的数据。
 
-   ```
-   1. RichEditor({ controller: this.targetController1 })
-   2. // ...
-   3. .allowDrop([uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP,
-   4. uniformTypeDescriptor.UniformDataType.PLAIN_TEXT, uniformTypeDescriptor.UniformDataType.TEXT])
-   5. .onDrop((event: DragEvent) => {
-   6. event.setResult(0);
-   7. this.receiveDragData(event, DROP_AREA.PIXELMAP_AREA);
-   8. })
-   ```
-
-   [MultiEntry.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/textandimage/MultiEntry.ets#L330-L341)
-
-   ```
-   1. RichEditor({ controller: this.targetController2 })
-   2. // ...
-   3. .allowDrop([uniformTypeDescriptor.UniformDataType.PLAIN_TEXT, uniformTypeDescriptor.UniformDataType.TEXT,
-   4. uniformTypeDescriptor.UniformDataType.IMAGE])
-   5. .onDrop((event: DragEvent) => {
-   6. try {
-   7. event.setResult(0);
-   8. this.receiveDragData(event, DROP_AREA.URI_AREA);
-   9. } catch (error) {
-   10. const err = error as BusinessError;
-   11. hilog.error(0x0000, TAG, `startDataLoading errorCode: ${err.code}, errorMessage: ${err.message}`);
-   12. }
-   13. })
+   ```screen
+   RichEditor({ controller: this.targetController1 })
+   // ...
+     .allowDrop([uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP,
+       uniformTypeDescriptor.UniformDataType.PLAIN_TEXT, uniformTypeDescriptor.UniformDataType.TEXT])
+     .onDrop((event: DragEvent) => {
+       event.setResult(0);
+       this.receiveDragData(event, DROP_AREA.PIXELMAP_AREA);
+     })
    ```
 
-   [MultiEntry.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/textandimage/MultiEntry.ets#L354-L370)
-
-   ```
-   1. receiveDragData(event: DragEvent, area: DROP_AREA) {
-   2. try {
-   3. let dragData: UnifiedData = (event as DragEvent).getData() as UnifiedData;
-   4. if (dragData !== undefined) {
-   5. let records: Array<unifiedDataChannel.UnifiedRecord> = dragData.getRecords();
-   6. if (records.length > 0) {
-   7. for (let i = 0; i < records.length; i++) {
-   8. let types = records[i].getTypes();
-   9. if (area === DROP_AREA.URI_AREA) {
-   10. if (types.includes(uniformTypeDescriptor.UniformDataType.FILE_URI)) {
-   11. const fileUriUds =
-   12. records[i].getEntry(uniformTypeDescriptor.UniformDataType.FILE_URI) as uniformDataStruct.FileUri;
-   13. let typeDescriptor = uniformTypeDescriptor.getTypeDescriptor(fileUriUds.fileType);
-   14. if (typeDescriptor.belongsTo(uniformTypeDescriptor.UniformDataType.IMAGE)) {
-   15. let targetImage = fileUriUds.oriUri;
-   16. this.targetController2.addImageSpan(targetImage,
-   17. {
-   18. imageStyle: this.imageStyle,
-   19. offset: this.targetController2.getCaretOffset()
-   20. })
-   21. }
-   22. continue;
-   23. }
-   24. if (types.includes(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT)) {
-   25. const plainTextUds =
-   26. records[i].getEntry(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT) as uniformDataStruct.PlainText;
-   27. this.targetController2.addTextSpan(plainTextUds.textContent,
-   28. {
-   29. style: this.textStyle,
-   30. offset: this.targetController2.getCaretOffset()
-   31. })
-   32. continue;
-   33. }
-   34. } else {
-   35. if (types.includes(uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP)) {
-   36. const pixelMapUds =
-   37. records[i].getEntry(uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP) as uniformDataStruct.PixelMap;
-   38. let targetImage = pixelMapUds.pixelMap;
-   39. this.targetController1.addImageSpan(targetImage,
-   40. {
-   41. imageStyle: this.imageStyle,
-   42. offset: this.targetController1.getCaretOffset()
-   43. })
-   44. continue;
-   45. }
-   46. if (types.includes(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT)) {
-   47. const plainTextUds =
-   48. records[i].getEntry(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT) as uniformDataStruct.PlainText;
-   49. this.targetController1.addTextSpan(plainTextUds.textContent,
-   50. {
-   51. style: this.textStyle,
-   52. offset: this.targetController1.getCaretOffset()
-   53. })
-   54. continue;
-   55. }
-   56. }
-   57. }
-   58. }
-   59. // ...
-   60. }
-   61. // ...
-   62. event.setResult(DragResult.DRAG_SUCCESSFUL);
-   63. }
-   64. // ...
-   65. }
+   ```screen
+   RichEditor({ controller: this.targetController2 })
+   // ...
+     .allowDrop([uniformTypeDescriptor.UniformDataType.PLAIN_TEXT, uniformTypeDescriptor.UniformDataType.TEXT,
+       uniformTypeDescriptor.UniformDataType.IMAGE])
+     .onDrop((event: DragEvent) => {
+       try {
+         event.setResult(0);
+         this.receiveDragData(event, DROP_AREA.URI_AREA);
+       } catch (error) {
+         const err = error as BusinessError;
+         hilog.error(0x0000, TAG, `startDataLoading errorCode: ${err.code}, errorMessage: ${err.message}`);
+       }
+     })
    ```
 
-   [MultiEntry.ets](https://gitcode.com/HarmonyOS_Samples/DragFramework/blob/master/entry/src/main/ets/pages/textandimage/MultiEntry.ets#L188-L266)
+   ```screen
+   receiveDragData(event: DragEvent, area: DROP_AREA) {
+     try {
+       let dragData: UnifiedData = (event as DragEvent).getData() as UnifiedData;
+       if (dragData !== undefined) {
+         let records: Array<unifiedDataChannel.UnifiedRecord> = dragData.getRecords();
+         if (records.length > 0) {
+           for (let i = 0; i < records.length; i++) {
+             let types = records[i].getTypes();
+             if (area === DROP_AREA.URI_AREA) {
+               if (types.includes(uniformTypeDescriptor.UniformDataType.FILE_URI)) {
+                 const fileUriUds =
+                   records[i].getEntry(uniformTypeDescriptor.UniformDataType.FILE_URI) as uniformDataStruct.FileUri;
+                 let typeDescriptor = uniformTypeDescriptor.getTypeDescriptor(fileUriUds.fileType);
+                 if (typeDescriptor.belongsTo(uniformTypeDescriptor.UniformDataType.IMAGE)) {
+                   let targetImage = fileUriUds.oriUri;
+                   this.targetController2.addImageSpan(targetImage,
+                     {
+                       imageStyle: this.imageStyle,
+                       offset: this.targetController2.getCaretOffset()
+                     })
+                 }
+                 continue;
+               }
+               if (types.includes(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT)) {
+                 const plainTextUds =
+                   records[i].getEntry(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT) as uniformDataStruct.PlainText;
+                 this.targetController2.addTextSpan(plainTextUds.textContent,
+                   {
+                     style: this.textStyle,
+                     offset: this.targetController2.getCaretOffset()
+                   })
+                 continue;
+               }
+             } else {
+               if (types.includes(uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP)) {
+                 const pixelMapUds =
+                   records[i].getEntry(uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP) as uniformDataStruct.PixelMap;
+                 let targetImage = pixelMapUds.pixelMap;
+                 this.targetController1.addImageSpan(targetImage,
+                   {
+                     imageStyle: this.imageStyle,
+                     offset: this.targetController1.getCaretOffset()
+                   })
+                 continue;
+               }
+               if (types.includes(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT)) {
+                 const plainTextUds =
+                   records[i].getEntry(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT) as uniformDataStruct.PlainText;
+                 this.targetController1.addTextSpan(plainTextUds.textContent,
+                   {
+                     style: this.textStyle,
+                     offset: this.targetController1.getCaretOffset()
+                   })
+                 continue;
+               }
+             }
+           }
+         }
+         // ...
+       }
+       // ...
+       event.setResult(DragResult.DRAG_SUCCESSFUL);
+     }
+     // ...
+   }
+   ```
 
 ## 分屏拖拽
 
@@ -1186,12 +1114,12 @@ RichEditor组件默认具备拖出的能力，并且支持交互式编辑，在�
 
 **使用说明**
 
-需要应用[声明支持分屏](../harmonyos-guides/multi-window-support.md#section2205081316)，并根据需求自定义拖拽响应。
+需要应用[声明支持分屏](../harmonyos-guides/multi-window-support.md#声明支持分屏)，并根据需求自定义拖拽响应。
 
 **运行效果如下图所示**
 
 **图9** 分屏拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/27DhmxyQRs-pyz4Ox5P7fw/zh-cn_image_0000002315615670.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/gdypck3KQtWY3kUFTvOmoA/zh-cn_image_0000002315615670.gif "点击放大")
 
 ## 跨设备拖拽
 
@@ -1199,12 +1127,12 @@ RichEditor组件默认具备拖出的能力，并且支持交互式编辑，在�
 
 **使用说明**
 
-需要满足跨设备拖拽开发指导中的[使用限制条件](../harmonyos-guides/distributed-drag-guide.md#section17575828642)，并根据需求自定义拖拽响应。
+需要满足跨设备拖拽开发指导中的[约束与限制](bpta-distribute-drag-cast.md#section990465462314)，并根据需求自定义拖拽响应。
 
 **结果展示**
 
 **图10** 跨设备拖拽效果展示  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/77Tldp5bQs2WNG1NHddt0w/zh-cn_image_0000002349574349.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/47vhxetPRUq9CKd_0qx1hg/zh-cn_image_0000002349574349.gif "点击放大")
 
 ## 拖入小艺和中转站
 
@@ -1217,16 +1145,16 @@ RichEditor组件默认具备拖出的能力，并且支持交互式编辑，在�
 **运行效果如下图所示**
 
 **图11** 将数据拖入小艺  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/lPNNnwdFQKixoZCY_LgisA/zh-cn_image_0000002349614565.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/drH111G9T6Cki1cydNsAQg/zh-cn_image_0000002349614565.gif "点击放大")
 
 **图12** 将数据拖入中转站  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/aUPV5lF1TLSfMVdM9neTcg/zh-cn_image_0000002315775482.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/l_7W1ioQSWutEpqln99SiQ/zh-cn_image_0000002315775482.gif "点击放大")
 
 ## 常见问题
 
 ### 模拟器无法识别AI拖拽内容
 
-模拟器不支持[textRecognition](../harmonyos-guides/core-vision-text-recognition.md)接口的调用，建议使用真机进行调试，详细请参见[通用文字识别约束与限制](../harmonyos-guides/core-vision-text-recognition.md#section2020122517405)。
+模拟器不支持[textRecognition](../harmonyos-guides/core-vision-text-recognition.md)接口的调用，建议使用真机进行调试，详细请参见基础视觉服务[模拟器支持情况](../harmonyos-guides/core-vision-introduction.md#模拟器支持情况)。
 
 ### 拖拽的触发手势长按浮起与长按手势之间存在冲突
 

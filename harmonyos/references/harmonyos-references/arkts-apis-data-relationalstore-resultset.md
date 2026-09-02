@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (ResultSet)
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.relationalStore (关系型数据库) > Interface (ResultSet)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:15+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:087026a6d9b731e928eadb495358bdda549213da6de1856bca967ec8a5170ed5
+scraped_at: 2026-09-02T15:00:40+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:edf9f5d3588979e856251bac56cb253cc96f2c90a4d3d2e7b14a6f496836bfff
 ---
 
 提供通过查询数据库生成的数据库结果集的访问方法。结果集是指用户调用关系型数据库查询接口之后返回的结果集合，提供了多种灵活的数据访问方式，以便用户获取各项数据。
@@ -14,21 +14,17 @@ ResultSet实例不会实时刷新。使用结果集后，如果数据库中的�
 
 下列API示例中，都需先使用[query](arkts-apis-data-relationalstore-rdbstore.md#query)、[querySql](arkts-apis-data-relationalstore-rdbstore.md#querysql)、[remoteQuery](arkts-apis-data-relationalstore-rdbstore.md#remotequery-1)、[queryLockedRow](arkts-apis-data-relationalstore-rdbstore.md#querylockedrow12)等query类方法中任一方法获取到ResultSet实例，再通过此实例调用对应方法。
 
-说明
+**说明** 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { relationalStore } from '@kit.ArkData';
+```ts
+import { relationalStore } from '@kit.ArkData';
 ```
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
@@ -45,8 +41,6 @@ PhonePC/2in1TabletTVWearable
 | isClosed | boolean | 是 | 否 | 检查当前结果集是否关闭，true表示结果集已关闭，false表示结果集未关闭。 |
 
 ## getColumnNames23+
-
-PhonePC/2in1TabletTVWearable
 
 getColumnNames(): Array<string>
 
@@ -81,21 +75,20 @@ getColumnNames(): Array<string>
 
 **示例：**
 
-```
-1. try {
-2. // 联表查询EMPLOYEE1和EMPLOYEE2，并获取重名的列名。store为获取到的RdbStore实例。
-3. let resultSet: relationalStore.ResultSet = await store.querySql("SELECT e1.NAME, e2.NAME, e1.AGE, e2.AGE FROM EMPLOYEE1 e1 LEFT JOIN EMPLOYEE2 e2 ON e1.SALARY=e2.SALARY");
-4. if (resultSet != undefined) {
-5. const names = resultSet.getColumnNames();
-6. }
-7. } catch (err) {
-8. console.error(`Failed to get column names: code:${err.code}, message:${err.message}`);
-9. }
+```ts
+try {
+  // 联表查询EMPLOYEE1和EMPLOYEE2，并获取重名的列名。store为获取到的RdbStore实例。
+  let resultSet: relationalStore.ResultSet = await store.querySql("SELECT e1.NAME, e2.NAME, e1.AGE, e2.AGE FROM EMPLOYEE1 e1 LEFT JOIN EMPLOYEE2 e2 ON e1.SALARY=e2.SALARY");
+  if (resultSet != undefined) {
+    const names = resultSet.getColumnNames();
+    resultSet.close();
+  }
+} catch (err) {
+  console.error(`Failed to get column names: code:${err.code}, message:${err.message}`);
+}
 ```
 
 ## getColumnIndex
-
-PhonePC/2in1TabletTVWearable
 
 getColumnIndex(columnName: string): number
 
@@ -122,40 +115,38 @@ getColumnIndex(columnName: string): number
 | **错误码ID** | **错误信息** |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 14800000 | Inner error. |
-| 14800011 | The current operation failed because the database is corrupted. |
+| 14800000 | Inner error.  适用版本：12+ |
+| 14800011 | The current operation failed because the database is corrupted.  适用版本：12+ |
 | 14800013 | Column index is out of bounds. |
-| 14800014 | The target instance is already closed. |
-| 14800019 | The SQL must be a query statement. |
-| 14800021 | SQLite: Generic error. |
-| 14800022 | SQLite: Callback routine requested an abort. |
-| 14800023 | SQLite: Access permission denied. |
-| 14800024 | SQLite: The database file is locked. |
-| 14800025 | SQLite: A table in the database is locked. |
-| 14800026 | SQLite: The database is out of memory. |
-| 14800027 | SQLite: Attempt to write a readonly database. |
-| 14800028 | SQLite: Some kind of disk I/O error occurred. |
-| 14800029 | SQLite: The database is full. |
-| 14800030 | SQLite: Unable to open the database file. |
-| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
-| 14800032 | SQLite: Abort due to constraint violation. |
-| 14800033 | SQLite: Data type mismatch. |
-| 14800034 | SQLite: Library used incorrectly. |
+| 14800014 | The target instance is already closed.  适用版本：12+ |
+| 14800019 | The SQL must be a query statement.  适用版本：12+ |
+| 14800021 | SQLite: Generic error.  适用版本：12+ |
+| 14800022 | SQLite: Callback routine requested an abort.  适用版本：12+ |
+| 14800023 | SQLite: Access permission denied.  适用版本：12+ |
+| 14800024 | SQLite: The database file is locked.  适用版本：12+ |
+| 14800025 | SQLite: A table in the database is locked.  适用版本：12+ |
+| 14800026 | SQLite: The database is out of memory.  适用版本：12+ |
+| 14800027 | SQLite: Attempt to write a readonly database.  适用版本：12+ |
+| 14800028 | SQLite: Some kind of disk I/O error occurred.  适用版本：12+ |
+| 14800029 | SQLite: The database is full.  适用版本：12+ |
+| 14800030 | SQLite: Unable to open the database file.  适用版本：12+ |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit.  适用版本：12+ |
+| 14800032 | SQLite: Abort due to constraint violation.  适用版本：12+ |
+| 14800033 | SQLite: Data type mismatch.  适用版本：12+ |
+| 14800034 | SQLite: Library used incorrectly.  适用版本：12+ |
 
 **示例：**
 
-```
-1. if (resultSet != undefined) {
-2. const id = resultSet.getLong(resultSet.getColumnIndex("ID"));
-3. const name = resultSet.getString(resultSet.getColumnIndex("NAME"));
-4. const age = resultSet.getLong(resultSet.getColumnIndex("AGE"));
-5. const salary = resultSet.getDouble(resultSet.getColumnIndex("SALARY"));
-6. }
+```ts
+if (resultSet != undefined) {
+  const id = resultSet.getLong(resultSet.getColumnIndex("ID"));
+  const name = resultSet.getString(resultSet.getColumnIndex("NAME"));
+  const age = resultSet.getLong(resultSet.getColumnIndex("AGE"));
+  const salary = resultSet.getDouble(resultSet.getColumnIndex("SALARY"));
+}
 ```
 
 ## getColumnName
-
-PhonePC/2in1TabletTVWearable
 
 getColumnName(columnIndex: number): string
 
@@ -182,39 +173,37 @@ getColumnName(columnIndex: number): string
 | **错误码ID** | **错误信息** |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 14800000 | Inner error. |
-| 14800011 | The current operation failed because the database is corrupted. |
+| 14800000 | Inner error.  适用版本：12+ |
+| 14800011 | The current operation failed because the database is corrupted.  适用版本：12+ |
 | 14800013 | Column index is out of bounds. |
-| 14800014 | The target instance is already closed. |
-| 14800019 | The SQL must be a query statement. |
-| 14800021 | SQLite: Generic error. |
-| 14800022 | SQLite: Callback routine requested an abort. |
-| 14800023 | SQLite: Access permission denied. |
-| 14800024 | SQLite: The database file is locked. |
-| 14800025 | SQLite: A table in the database is locked. |
-| 14800026 | SQLite: The database is out of memory. |
-| 14800027 | SQLite: Attempt to write a readonly database. |
-| 14800028 | SQLite: Some kind of disk I/O error occurred. |
-| 14800029 | SQLite: The database is full. |
-| 14800030 | SQLite: Unable to open the database file. |
-| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
-| 14800032 | SQLite: Abort due to constraint violation. |
-| 14800033 | SQLite: Data type mismatch. |
-| 14800034 | SQLite: Library used incorrectly. |
+| 14800014 | The target instance is already closed.  适用版本：12+ |
+| 14800019 | The SQL must be a query statement.  适用版本：12+ |
+| 14800021 | SQLite: Generic error.  适用版本：12+ |
+| 14800022 | SQLite: Callback routine requested an abort.  适用版本：12+ |
+| 14800023 | SQLite: Access permission denied.  适用版本：12+ |
+| 14800024 | SQLite: The database file is locked.  适用版本：12+ |
+| 14800025 | SQLite: A table in the database is locked.  适用版本：12+ |
+| 14800026 | SQLite: The database is out of memory.  适用版本：12+ |
+| 14800027 | SQLite: Attempt to write a readonly database.  适用版本：12+ |
+| 14800028 | SQLite: Some kind of disk I/O error occurred.  适用版本：12+ |
+| 14800029 | SQLite: The database is full.  适用版本：12+ |
+| 14800030 | SQLite: Unable to open the database file.  适用版本：12+ |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit.  适用版本：12+ |
+| 14800032 | SQLite: Abort due to constraint violation.  适用版本：12+ |
+| 14800033 | SQLite: Data type mismatch.  适用版本：12+ |
+| 14800034 | SQLite: Library used incorrectly.  适用版本：12+ |
 
 **示例：**
 
-```
-1. if (resultSet != undefined) {
-2. const id = (resultSet as relationalStore.ResultSet).getColumnName(0);
-3. const name = (resultSet as relationalStore.ResultSet).getColumnName(1);
-4. const age = (resultSet as relationalStore.ResultSet).getColumnName(2);
-5. }
+```ts
+if (resultSet != undefined) {
+  const id = (resultSet as relationalStore.ResultSet).getColumnName(0);
+  const name = (resultSet as relationalStore.ResultSet).getColumnName(1);
+  const age = (resultSet as relationalStore.ResultSet).getColumnName(2);
+}
 ```
 
 ## getColumnType18+
-
-PhonePC/2in1TabletTVWearable
 
 getColumnType(columnIdentifier: number | string): Promise<ColumnType>
 
@@ -226,13 +215,13 @@ getColumnType(columnIdentifier: number | string): Promise<ColumnType>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| columnIdentifier | number | string | 是 | 表示结果集中指定列的索引或名称。索引必须是非负整数，最大不能超过属性columnNames的长度。列名必须是属性columnNames内的名称。 |
+| columnIdentifier | number | string | 是 | 表示结果集中指定列的索引或列名。索引必须是非负整数，且必须小于属性columnNames的长度。列名必须是属性columnNames内的名称。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[ColumnType](arkts-apis-data-relationalstore-e.md#columntype18)> | Promise对象。返回指定列的数据类型。当结果集中包含重名列时，通过列名获取的结果会不符合预期。 |
+| Promise<[ColumnType](arkts-apis-data-relationalstore-e.md#columntype18)> | Promise对象。返回指定列的数据类型。当结果集中包含重名列时，通过列名获取的结果会不符合预期，建议使用列索引形式获取。 |
 
 **错误码：**
 
@@ -264,23 +253,21 @@ getColumnType(columnIdentifier: number | string): Promise<ColumnType>
 
 **示例：**
 
-```
-1. if (resultSet != undefined) {
-2. let idType = await (resultSet as relationalStore.ResultSet).getColumnType("ID") as relationalStore.ColumnType;
-3. let nameType = await (resultSet as relationalStore.ResultSet).getColumnType("NAME") as relationalStore.ColumnType;
-4. let ageType = await (resultSet as relationalStore.ResultSet).getColumnType("AGE") as relationalStore.ColumnType;
-5. let salaryType = await (resultSet as relationalStore.ResultSet).getColumnType("SALARY") as relationalStore.ColumnType;
-6. let codesType = await (resultSet as relationalStore.ResultSet).getColumnType("CODES") as relationalStore.ColumnType;
-7. let identityType = await (resultSet as relationalStore.ResultSet).getColumnType(5) as relationalStore.ColumnType;
-8. let assetDataType = await (resultSet as relationalStore.ResultSet).getColumnType(6) as relationalStore.ColumnType;
-9. let assetsDataType = await (resultSet as relationalStore.ResultSet).getColumnType(7) as relationalStore.ColumnType;
-10. let floatArrayType = await (resultSet as relationalStore.ResultSet).getColumnType(8) as relationalStore.ColumnType;
-11. }
+```ts
+if (resultSet != undefined) {
+  let idType = await (resultSet as relationalStore.ResultSet).getColumnType("ID") as relationalStore.ColumnType;
+  let nameType = await (resultSet as relationalStore.ResultSet).getColumnType("NAME") as relationalStore.ColumnType;
+  let ageType = await (resultSet as relationalStore.ResultSet).getColumnType("AGE") as relationalStore.ColumnType;
+  let salaryType = await (resultSet as relationalStore.ResultSet).getColumnType("SALARY") as relationalStore.ColumnType;
+  let codesType = await (resultSet as relationalStore.ResultSet).getColumnType("CODES") as relationalStore.ColumnType;
+  let identityType = await (resultSet as relationalStore.ResultSet).getColumnType(5) as relationalStore.ColumnType;
+  let assetDataType = await (resultSet as relationalStore.ResultSet).getColumnType(6) as relationalStore.ColumnType;
+  let assetsDataType = await (resultSet as relationalStore.ResultSet).getColumnType(7) as relationalStore.ColumnType;
+  let floatArrayType = await (resultSet as relationalStore.ResultSet).getColumnType(8) as relationalStore.ColumnType;
+}
 ```
 
 ## getColumnTypeSync18+
-
-PhonePC/2in1TabletTVWearable
 
 getColumnTypeSync(columnIdentifier: number | string): ColumnType
 
@@ -298,7 +285,7 @@ getColumnTypeSync(columnIdentifier: number | string): ColumnType
 
 | 类型 | 说明 |
 | --- | --- |
-| [ColumnType](arkts-apis-data-relationalstore-e.md#columntype18) | 返回指定列的数据类型。当结果集中包含重名列时，通过列名获取的结果会不符合预期。 |
+| [ColumnType](arkts-apis-data-relationalstore-e.md#columntype18) | 返回指定列的数据类型。当结果集中包含重名列时，通过列名获取的结果会不符合预期，建议使用列索引形式获取。 |
 
 **错误码：**
 
@@ -330,23 +317,21 @@ getColumnTypeSync(columnIdentifier: number | string): ColumnType
 
 **示例：**
 
-```
-1. if (resultSet != undefined) {
-2. let idType = (resultSet as relationalStore.ResultSet).getColumnTypeSync("ID") as relationalStore.ColumnType;
-3. let nameType = (resultSet as relationalStore.ResultSet).getColumnTypeSync("NAME") as relationalStore.ColumnType;
-4. let ageType = (resultSet as relationalStore.ResultSet).getColumnTypeSync("AGE") as relationalStore.ColumnType;
-5. let salaryType = (resultSet as relationalStore.ResultSet).getColumnTypeSync("SALARY") as relationalStore.ColumnType;
-6. let codesType = (resultSet as relationalStore.ResultSet).getColumnTypeSync("CODES") as relationalStore.ColumnType;
-7. let identityType = (resultSet as relationalStore.ResultSet).getColumnTypeSync(5) as relationalStore.ColumnType;
-8. let assetDataType = (resultSet as relationalStore.ResultSet).getColumnTypeSync(6) as relationalStore.ColumnType;
-9. let assetsDataType = (resultSet as relationalStore.ResultSet).getColumnTypeSync(7) as relationalStore.ColumnType;
-10. let floatArrayType = (resultSet as relationalStore.ResultSet).getColumnTypeSync(8) as relationalStore.ColumnType;
-11. }
+```ts
+if (resultSet != undefined) {
+  let idType = (resultSet as relationalStore.ResultSet).getColumnTypeSync("ID") as relationalStore.ColumnType;
+  let nameType = (resultSet as relationalStore.ResultSet).getColumnTypeSync("NAME") as relationalStore.ColumnType;
+  let ageType = (resultSet as relationalStore.ResultSet).getColumnTypeSync("AGE") as relationalStore.ColumnType;
+  let salaryType = (resultSet as relationalStore.ResultSet).getColumnTypeSync("SALARY") as relationalStore.ColumnType;
+  let codesType = (resultSet as relationalStore.ResultSet).getColumnTypeSync("CODES") as relationalStore.ColumnType;
+  let identityType = (resultSet as relationalStore.ResultSet).getColumnTypeSync(5) as relationalStore.ColumnType;
+  let assetDataType = (resultSet as relationalStore.ResultSet).getColumnTypeSync(6) as relationalStore.ColumnType;
+  let assetsDataType = (resultSet as relationalStore.ResultSet).getColumnTypeSync(7) as relationalStore.ColumnType;
+  let floatArrayType = (resultSet as relationalStore.ResultSet).getColumnTypeSync(8) as relationalStore.ColumnType;
+}
 ```
 
 ## goTo
-
-PhonePC/2in1TabletTVWearable
 
 goTo(offset:number): boolean
 
@@ -373,37 +358,35 @@ goTo(offset:number): boolean
 | **错误码ID** | **错误信息** |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 14800000 | Inner error. |
-| 14800011 | The current operation failed because the database is corrupted. |
+| 14800000 | Inner error.  适用版本：12+ |
+| 14800011 | The current operation failed because the database is corrupted.  适用版本：12+ |
 | 14800012 | ResultSet is empty or pointer index is out of bounds. |
-| 14800014 | The target instance is already closed. |
-| 14800019 | The SQL must be a query statement. |
-| 14800021 | SQLite: Generic error. |
-| 14800022 | SQLite: Callback routine requested an abort. |
-| 14800023 | SQLite: Access permission denied. |
-| 14800024 | SQLite: The database file is locked. |
-| 14800025 | SQLite: A table in the database is locked. |
-| 14800026 | SQLite: The database is out of memory. |
-| 14800027 | SQLite: Attempt to write a readonly database. |
-| 14800028 | SQLite: Some kind of disk I/O error occurred. |
-| 14800029 | SQLite: The database is full. |
-| 14800030 | SQLite: Unable to open the database file. |
-| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
-| 14800032 | SQLite: Abort due to constraint violation. |
-| 14800033 | SQLite: Data type mismatch. |
-| 14800034 | SQLite: Library used incorrectly. |
+| 14800014 | The target instance is already closed.  适用版本：12+ |
+| 14800019 | The SQL must be a query statement.  适用版本：12+ |
+| 14800021 | SQLite: Generic error.  适用版本：12+ |
+| 14800022 | SQLite: Callback routine requested an abort.  适用版本：12+ |
+| 14800023 | SQLite: Access permission denied.  适用版本：12+ |
+| 14800024 | SQLite: The database file is locked.  适用版本：12+ |
+| 14800025 | SQLite: A table in the database is locked.  适用版本：12+ |
+| 14800026 | SQLite: The database is out of memory.  适用版本：12+ |
+| 14800027 | SQLite: Attempt to write a readonly database.  适用版本：12+ |
+| 14800028 | SQLite: Some kind of disk I/O error occurred.  适用版本：12+ |
+| 14800029 | SQLite: The database is full.  适用版本：12+ |
+| 14800030 | SQLite: Unable to open the database file.  适用版本：12+ |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit.  适用版本：12+ |
+| 14800032 | SQLite: Abort due to constraint violation.  适用版本：12+ |
+| 14800033 | SQLite: Data type mismatch.  适用版本：12+ |
+| 14800034 | SQLite: Library used incorrectly.  适用版本：12+ |
 
 **示例：**
 
-```
-1. if (resultSet != undefined) {
-2. (resultSet as relationalStore.ResultSet).goTo(1);
-3. }
+```ts
+if (resultSet != undefined) {
+  (resultSet as relationalStore.ResultSet).goTo(1);
+}
 ```
 
 ## goToRow
-
-PhonePC/2in1TabletTVWearable
 
 goToRow(position: number): boolean
 
@@ -430,37 +413,35 @@ goToRow(position: number): boolean
 | **错误码ID** | **错误信息** |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 14800000 | Inner error. |
-| 14800011 | The current operation failed because the database is corrupted. |
+| 14800000 | Inner error.  适用版本：12+ |
+| 14800011 | The current operation failed because the database is corrupted.  适用版本：12+ |
 | 14800012 | ResultSet is empty or pointer index is out of bounds. |
-| 14800014 | The target instance is already closed. |
-| 14800019 | The SQL must be a query statement. |
-| 14800021 | SQLite: Generic error. |
-| 14800022 | SQLite: Callback routine requested an abort. |
-| 14800023 | SQLite: Access permission denied. |
-| 14800024 | SQLite: The database file is locked. |
-| 14800025 | SQLite: A table in the database is locked. |
-| 14800026 | SQLite: The database is out of memory. |
-| 14800027 | SQLite: Attempt to write a readonly database. |
-| 14800028 | SQLite: Some kind of disk I/O error occurred. |
-| 14800029 | SQLite: The database is full. |
-| 14800030 | SQLite: Unable to open the database file. |
-| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
-| 14800032 | SQLite: Abort due to constraint violation. |
-| 14800033 | SQLite: Data type mismatch. |
-| 14800034 | SQLite: Library used incorrectly. |
+| 14800014 | The target instance is already closed.  适用版本：12+ |
+| 14800019 | The SQL must be a query statement.  适用版本：12+ |
+| 14800021 | SQLite: Generic error.  适用版本：12+ |
+| 14800022 | SQLite: Callback routine requested an abort.  适用版本：12+ |
+| 14800023 | SQLite: Access permission denied.  适用版本：12+ |
+| 14800024 | SQLite: The database file is locked.  适用版本：12+ |
+| 14800025 | SQLite: A table in the database is locked.  适用版本：12+ |
+| 14800026 | SQLite: The database is out of memory.  适用版本：12+ |
+| 14800027 | SQLite: Attempt to write a readonly database.  适用版本：12+ |
+| 14800028 | SQLite: Some kind of disk I/O error occurred.  适用版本：12+ |
+| 14800029 | SQLite: The database is full.  适用版本：12+ |
+| 14800030 | SQLite: Unable to open the database file.  适用版本：12+ |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit.  适用版本：12+ |
+| 14800032 | SQLite: Abort due to constraint violation.  适用版本：12+ |
+| 14800033 | SQLite: Data type mismatch.  适用版本：12+ |
+| 14800034 | SQLite: Library used incorrectly.  适用版本：12+ |
 
 **示例：**
 
-```
-1. if (resultSet != undefined) {
-2. (resultSet as relationalStore.ResultSet).goToRow(5);
-3. }
+```ts
+if (resultSet != undefined) {
+  (resultSet as relationalStore.ResultSet).goToRow(5);
+}
 ```
 
 ## goToFirstRow
-
-PhonePC/2in1TabletTVWearable
 
 goToFirstRow(): boolean
 
@@ -480,37 +461,35 @@ goToFirstRow(): boolean
 
 | **错误码ID** | **错误信息** |
 | --- | --- |
-| 14800000 | Inner error. |
-| 14800011 | The current operation failed because the database is corrupted. |
+| 14800000 | Inner error.  适用版本：12+ |
+| 14800011 | The current operation failed because the database is corrupted.  适用版本：12+ |
 | 14800012 | ResultSet is empty or pointer index is out of bounds. |
-| 14800014 | The target instance is already closed. |
-| 14800019 | The SQL must be a query statement. |
-| 14800021 | SQLite: Generic error. |
-| 14800022 | SQLite: Callback routine requested an abort. |
-| 14800023 | SQLite: Access permission denied. |
-| 14800024 | SQLite: The database file is locked. |
-| 14800025 | SQLite: A table in the database is locked. |
-| 14800026 | SQLite: The database is out of memory. |
-| 14800027 | SQLite: Attempt to write a readonly database. |
-| 14800028 | SQLite: Some kind of disk I/O error occurred. |
-| 14800029 | SQLite: The database is full. |
-| 14800030 | SQLite: Unable to open the database file. |
-| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
-| 14800032 | SQLite: Abort due to constraint violation. |
-| 14800033 | SQLite: Data type mismatch. |
-| 14800034 | SQLite: Library used incorrectly. |
+| 14800014 | The target instance is already closed.  适用版本：12+ |
+| 14800019 | The SQL must be a query statement.  适用版本：12+ |
+| 14800021 | SQLite: Generic error.  适用版本：12+ |
+| 14800022 | SQLite: Callback routine requested an abort.  适用版本：12+ |
+| 14800023 | SQLite: Access permission denied.  适用版本：12+ |
+| 14800024 | SQLite: The database file is locked.  适用版本：12+ |
+| 14800025 | SQLite: A table in the database is locked.  适用版本：12+ |
+| 14800026 | SQLite: The database is out of memory.  适用版本：12+ |
+| 14800027 | SQLite: Attempt to write a readonly database.  适用版本：12+ |
+| 14800028 | SQLite: Some kind of disk I/O error occurred.  适用版本：12+ |
+| 14800029 | SQLite: The database is full.  适用版本：12+ |
+| 14800030 | SQLite: Unable to open the database file.  适用版本：12+ |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit.  适用版本：12+ |
+| 14800032 | SQLite: Abort due to constraint violation.  适用版本：12+ |
+| 14800033 | SQLite: Data type mismatch.  适用版本：12+ |
+| 14800034 | SQLite: Library used incorrectly.  适用版本：12+ |
 
 **示例：**
 
-```
-1. if (resultSet != undefined) {
-2. (resultSet as relationalStore.ResultSet).goToFirstRow();
-3. }
+```ts
+if (resultSet != undefined) {
+  (resultSet as relationalStore.ResultSet).goToFirstRow();
+}
 ```
 
 ## goToLastRow
-
-PhonePC/2in1TabletTVWearable
 
 goToLastRow(): boolean
 
@@ -530,37 +509,35 @@ goToLastRow(): boolean
 
 | **错误码ID** | **错误信息** |
 | --- | --- |
-| 14800000 | Inner error. |
-| 14800011 | The current operation failed because the database is corrupted. |
+| 14800000 | Inner error.  适用版本：12+ |
+| 14800011 | The current operation failed because the database is corrupted.  适用版本：12+ |
 | 14800012 | ResultSet is empty or pointer index is out of bounds. |
-| 14800014 | The target instance is already closed. |
-| 14800019 | The SQL must be a query statement. |
-| 14800021 | SQLite: Generic error. |
-| 14800022 | SQLite: Callback routine requested an abort. |
-| 14800023 | SQLite: Access permission denied. |
-| 14800024 | SQLite: The database file is locked. |
-| 14800025 | SQLite: A table in the database is locked. |
-| 14800026 | SQLite: The database is out of memory. |
-| 14800027 | SQLite: Attempt to write a readonly database. |
-| 14800028 | SQLite: Some kind of disk I/O error occurred. |
-| 14800029 | SQLite: The database is full. |
-| 14800030 | SQLite: Unable to open the database file. |
-| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
-| 14800032 | SQLite: Abort due to constraint violation. |
-| 14800033 | SQLite: Data type mismatch. |
-| 14800034 | SQLite: Library used incorrectly. |
+| 14800014 | The target instance is already closed.  适用版本：12+ |
+| 14800019 | The SQL must be a query statement.  适用版本：12+ |
+| 14800021 | SQLite: Generic error.  适用版本：12+ |
+| 14800022 | SQLite: Callback routine requested an abort.  适用版本：12+ |
+| 14800023 | SQLite: Access permission denied.  适用版本：12+ |
+| 14800024 | SQLite: The database file is locked.  适用版本：12+ |
+| 14800025 | SQLite: A table in the database is locked.  适用版本：12+ |
+| 14800026 | SQLite: The database is out of memory.  适用版本：12+ |
+| 14800027 | SQLite: Attempt to write a readonly database.  适用版本：12+ |
+| 14800028 | SQLite: Some kind of disk I/O error occurred.  适用版本：12+ |
+| 14800029 | SQLite: The database is full.  适用版本：12+ |
+| 14800030 | SQLite: Unable to open the database file.  适用版本：12+ |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit.  适用版本：12+ |
+| 14800032 | SQLite: Abort due to constraint violation.  适用版本：12+ |
+| 14800033 | SQLite: Data type mismatch.  适用版本：12+ |
+| 14800034 | SQLite: Library used incorrectly.  适用版本：12+ |
 
 **示例：**
 
-```
-1. if (resultSet != undefined) {
-2. (resultSet as relationalStore.ResultSet).goToLastRow();
-3. }
+```ts
+if (resultSet != undefined) {
+  (resultSet as relationalStore.ResultSet).goToLastRow();
+}
 ```
 
 ## goToNextRow
-
-PhonePC/2in1TabletTVWearable
 
 goToNextRow(): boolean
 
@@ -580,37 +557,35 @@ goToNextRow(): boolean
 
 | **错误码ID** | **错误信息** |
 | --- | --- |
-| 14800000 | Inner error. |
-| 14800011 | The current operation failed because the database is corrupted. |
+| 14800000 | Inner error.  适用版本：12+ |
+| 14800011 | The current operation failed because the database is corrupted.  适用版本：12+ |
 | 14800012 | ResultSet is empty or pointer index is out of bounds. |
-| 14800014 | The target instance is already closed. |
-| 14800019 | The SQL must be a query statement. |
-| 14800021 | SQLite: Generic error. |
-| 14800022 | SQLite: Callback routine requested an abort. |
-| 14800023 | SQLite: Access permission denied. |
-| 14800024 | SQLite: The database file is locked. |
-| 14800025 | SQLite: A table in the database is locked. |
-| 14800026 | SQLite: The database is out of memory. |
-| 14800027 | SQLite: Attempt to write a readonly database. |
-| 14800028 | SQLite: Some kind of disk I/O error occurred. |
-| 14800029 | SQLite: The database is full. |
-| 14800030 | SQLite: Unable to open the database file. |
-| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
-| 14800032 | SQLite: Abort due to constraint violation. |
-| 14800033 | SQLite: Data type mismatch. |
-| 14800034 | SQLite: Library used incorrectly. |
+| 14800014 | The target instance is already closed.  适用版本：12+ |
+| 14800019 | The SQL must be a query statement.  适用版本：12+ |
+| 14800021 | SQLite: Generic error.  适用版本：12+ |
+| 14800022 | SQLite: Callback routine requested an abort.  适用版本：12+ |
+| 14800023 | SQLite: Access permission denied.  适用版本：12+ |
+| 14800024 | SQLite: The database file is locked.  适用版本：12+ |
+| 14800025 | SQLite: A table in the database is locked.  适用版本：12+ |
+| 14800026 | SQLite: The database is out of memory.  适用版本：12+ |
+| 14800027 | SQLite: Attempt to write a readonly database.  适用版本：12+ |
+| 14800028 | SQLite: Some kind of disk I/O error occurred.  适用版本：12+ |
+| 14800029 | SQLite: The database is full.  适用版本：12+ |
+| 14800030 | SQLite: Unable to open the database file.  适用版本：12+ |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit.  适用版本：12+ |
+| 14800032 | SQLite: Abort due to constraint violation.  适用版本：12+ |
+| 14800033 | SQLite: Data type mismatch.  适用版本：12+ |
+| 14800034 | SQLite: Library used incorrectly.  适用版本：12+ |
 
 **示例：**
 
-```
-1. if (resultSet != undefined) {
-2. (resultSet as relationalStore.ResultSet).goToNextRow();
-3. }
+```ts
+if (resultSet != undefined) {
+  (resultSet as relationalStore.ResultSet).goToNextRow();
+}
 ```
 
 ## goToPreviousRow
-
-PhonePC/2in1TabletTVWearable
 
 goToPreviousRow(): boolean
 
@@ -630,41 +605,39 @@ goToPreviousRow(): boolean
 
 | **错误码ID** | **错误信息** |
 | --- | --- |
-| 14800000 | Inner error. |
-| 14800011 | The current operation failed because the database is corrupted. |
+| 14800000 | Inner error.  适用版本：12+ |
+| 14800011 | The current operation failed because the database is corrupted.  适用版本：12+ |
 | 14800012 | ResultSet is empty or pointer index is out of bounds. |
-| 14800014 | The target instance is already closed. |
-| 14800019 | The SQL must be a query statement. |
-| 14800021 | SQLite: Generic error. |
-| 14800022 | SQLite: Callback routine requested an abort. |
-| 14800023 | SQLite: Access permission denied. |
-| 14800024 | SQLite: The database file is locked. |
-| 14800025 | SQLite: A table in the database is locked. |
-| 14800026 | SQLite: The database is out of memory. |
-| 14800027 | SQLite: Attempt to write a readonly database. |
-| 14800028 | SQLite: Some kind of disk I/O error occurred. |
-| 14800029 | SQLite: The database is full. |
-| 14800030 | SQLite: Unable to open the database file. |
-| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
-| 14800032 | SQLite: Abort due to constraint violation. |
-| 14800033 | SQLite: Data type mismatch. |
-| 14800034 | SQLite: Library used incorrectly. |
+| 14800014 | The target instance is already closed.  适用版本：12+ |
+| 14800019 | The SQL must be a query statement.  适用版本：12+ |
+| 14800021 | SQLite: Generic error.  适用版本：12+ |
+| 14800022 | SQLite: Callback routine requested an abort.  适用版本：12+ |
+| 14800023 | SQLite: Access permission denied.  适用版本：12+ |
+| 14800024 | SQLite: The database file is locked.  适用版本：12+ |
+| 14800025 | SQLite: A table in the database is locked.  适用版本：12+ |
+| 14800026 | SQLite: The database is out of memory.  适用版本：12+ |
+| 14800027 | SQLite: Attempt to write a readonly database.  适用版本：12+ |
+| 14800028 | SQLite: Some kind of disk I/O error occurred.  适用版本：12+ |
+| 14800029 | SQLite: The database is full.  适用版本：12+ |
+| 14800030 | SQLite: Unable to open the database file.  适用版本：12+ |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit.  适用版本：12+ |
+| 14800032 | SQLite: Abort due to constraint violation.  适用版本：12+ |
+| 14800033 | SQLite: Data type mismatch.  适用版本：12+ |
+| 14800034 | SQLite: Library used incorrectly.  适用版本：12+ |
 
 **示例：**
 
-```
-1. if (resultSet != undefined) {
-2. (resultSet as relationalStore.ResultSet).goToPreviousRow();
-3. }
+```ts
+if (resultSet != undefined) {
+  (resultSet as relationalStore.ResultSet).goToPreviousRow();
+}
 ```
 
 ## getValue12+
 
-PhonePC/2in1TabletTVWearable
-
 getValue(columnIndex: number): ValueType
 
-获取当前行中指定列的值，如果值类型是ValueType中指定的任意类型，返回指定类型的值，否则返回14800000。如果值类型为INTEGER，值大于 Number.MAX\_SAFE\_INTEGER 或小于 Number.MIN\_SAFE\_INTEGER 且不希望丢失精度，建议使用[getString](arkts-apis-data-relationalstore-resultset.md#getstring)接口获取。
+获取当前行中指定列的值，如果值类型是ValueType中指定的任意类型，返回指定类型的值，否则抛出错误码14800000。如果值类型为INTEGER，值大于 Number.MAX\_SAFE\_INTEGER 或小于 Number.MIN\_SAFE\_INTEGER 且不希望丢失精度，建议使用[getString](arkts-apis-data-relationalstore-resultset.md#getstring)接口获取。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
@@ -709,25 +682,23 @@ getValue(columnIndex: number): ValueType
 
 **示例：**
 
-```
-1. if (resultSet !== undefined) {
-2. while (resultSet.goToNextRow()) {
-3. const colIndex = resultSet.getColumnIndex("NAME");
-4. if (colIndex > -1) {
-5. const name = resultSet.getValue(colIndex);
-6. console.info(`Get value success, name is ${name}`);
-7. }
-8. }
-9. }
+```ts
+if (resultSet !== undefined) {
+  while (resultSet.goToNextRow()) {
+    const colIndex = resultSet.getColumnIndex("NAME");
+    if (colIndex > -1) {
+      const name = resultSet.getValue(colIndex);
+      console.info(`Get value success, name is ${name}`);
+    }
+  }
+}
 ```
 
 ## getBlob
 
-PhonePC/2in1TabletTVWearable
-
 getBlob(columnIndex: number): Uint8Array
 
-以字节数组的形式获取当前行中指定列的值，如果当前列的数据类型为INTEGER、DOUBLE、TEXT、BLOB类型，会转成字节数组类型返回指定值，如果该列内容为空时，会返回空字节数组，其他类型则返回14800000。
+以字节数组的形式获取当前行中指定列的值，如果当前列的数据类型为INTEGER、DOUBLE、TEXT、BLOB类型，会转成字节数组类型返回指定值，如果该列内容为空时，会返回空字节数组，其他类型则抛出错误码14800000。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
@@ -750,41 +721,39 @@ getBlob(columnIndex: number): Uint8Array
 | **错误码ID** | **错误信息** |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 14800000 | Inner error. |
-| 14800011 | The current operation failed because the database is corrupted. |
-| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800000 | Inner error.  适用版本：12+ |
+| 14800011 | The current operation failed because the database is corrupted.  适用版本：12+ |
+| 14800012 | ResultSet is empty or pointer index is out of bounds.  适用版本：12+ |
 | 14800013 | Column index is out of bounds. |
-| 14800014 | The target instance is already closed. |
-| 14800021 | SQLite: Generic error. |
-| 14800022 | SQLite: Callback routine requested an abort. |
-| 14800023 | SQLite: Access permission denied. |
-| 14800024 | SQLite: The database file is locked. |
-| 14800025 | SQLite: A table in the database is locked. |
-| 14800026 | SQLite: The database is out of memory. |
-| 14800027 | SQLite: Attempt to write a readonly database. |
-| 14800028 | SQLite: Some kind of disk I/O error occurred. |
-| 14800029 | SQLite: The database is full. |
-| 14800030 | SQLite: Unable to open the database file. |
-| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
-| 14800032 | SQLite: Abort due to constraint violation. |
-| 14800033 | SQLite: Data type mismatch. |
-| 14800034 | SQLite: Library used incorrectly. |
+| 14800014 | The target instance is already closed.  适用版本：12+ |
+| 14800021 | SQLite: Generic error.  适用版本：12+ |
+| 14800022 | SQLite: Callback routine requested an abort.  适用版本：12+ |
+| 14800023 | SQLite: Access permission denied.  适用版本：12+ |
+| 14800024 | SQLite: The database file is locked.  适用版本：12+ |
+| 14800025 | SQLite: A table in the database is locked.  适用版本：12+ |
+| 14800026 | SQLite: The database is out of memory.  适用版本：12+ |
+| 14800027 | SQLite: Attempt to write a readonly database.  适用版本：12+ |
+| 14800028 | SQLite: Some kind of disk I/O error occurred.  适用版本：12+ |
+| 14800029 | SQLite: The database is full.  适用版本：12+ |
+| 14800030 | SQLite: Unable to open the database file.  适用版本：12+ |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit.  适用版本：12+ |
+| 14800032 | SQLite: Abort due to constraint violation.  适用版本：12+ |
+| 14800033 | SQLite: Data type mismatch.  适用版本：12+ |
+| 14800034 | SQLite: Library used incorrectly.  适用版本：12+ |
 
 **示例：**
 
-```
-1. if (resultSet != undefined) {
-2. const codes = (resultSet as relationalStore.ResultSet).getBlob((resultSet as relationalStore.ResultSet).getColumnIndex("CODES"));
-3. }
+```ts
+if (resultSet != undefined) {
+  const codes = (resultSet as relationalStore.ResultSet).getBlob((resultSet as relationalStore.ResultSet).getColumnIndex("CODES"));
+}
 ```
 
 ## getString
 
-PhonePC/2in1TabletTVWearable
-
 getString(columnIndex: number): string
 
-以字符串形式获取当前行中指定列的值，如果当前列中的值为INTEGER、DOUBLE、TEXT、BLOB类型，会以字符串形式返回指定值，如果是当前列中的值为INTEGER，并且为空，则会返回空字符串""，其他类型则返回14800000。如果当前列中的值为DOUBLE类型，可能存在精度的丢失，建议使用[getDouble](arkts-apis-data-relationalstore-resultset.md#getdouble)接口获取。
+以字符串形式获取当前行中指定列的值，如果当前列中的值为INTEGER、DOUBLE、TEXT、BLOB类型，会以字符串形式返回指定值，如果是当前列中的值为INTEGER，并且为空，则会返回空字符串""，其他类型则抛出错误码14800000。如果当前列中的值为DOUBLE类型，可能存在精度的丢失，建议使用[getDouble](arkts-apis-data-relationalstore-resultset.md#getdouble)接口获取。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
@@ -807,41 +776,39 @@ getString(columnIndex: number): string
 | **错误码ID** | **错误信息** |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 14800000 | Inner error. |
-| 14800011 | The current operation failed because the database is corrupted. |
-| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800000 | Inner error.  适用版本：12+ |
+| 14800011 | The current operation failed because the database is corrupted.  适用版本：12+ |
+| 14800012 | ResultSet is empty or pointer index is out of bounds.  适用版本：12+ |
 | 14800013 | Column index is out of bounds. |
-| 14800014 | The target instance is already closed. |
-| 14800021 | SQLite: Generic error. |
-| 14800022 | SQLite: Callback routine requested an abort. |
-| 14800023 | SQLite: Access permission denied. |
-| 14800024 | SQLite: The database file is locked. |
-| 14800025 | SQLite: A table in the database is locked. |
-| 14800026 | SQLite: The database is out of memory. |
-| 14800027 | SQLite: Attempt to write a readonly database. |
-| 14800028 | SQLite: Some kind of disk I/O error occurred. |
-| 14800029 | SQLite: The database is full. |
-| 14800030 | SQLite: Unable to open the database file. |
-| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
-| 14800032 | SQLite: Abort due to constraint violation. |
-| 14800033 | SQLite: Data type mismatch. |
-| 14800034 | SQLite: Library used incorrectly. |
+| 14800014 | The target instance is already closed.  适用版本：12+ |
+| 14800021 | SQLite: Generic error.  适用版本：12+ |
+| 14800022 | SQLite: Callback routine requested an abort.  适用版本：12+ |
+| 14800023 | SQLite: Access permission denied.  适用版本：12+ |
+| 14800024 | SQLite: The database file is locked.  适用版本：12+ |
+| 14800025 | SQLite: A table in the database is locked.  适用版本：12+ |
+| 14800026 | SQLite: The database is out of memory.  适用版本：12+ |
+| 14800027 | SQLite: Attempt to write a readonly database.  适用版本：12+ |
+| 14800028 | SQLite: Some kind of disk I/O error occurred.  适用版本：12+ |
+| 14800029 | SQLite: The database is full.  适用版本：12+ |
+| 14800030 | SQLite: Unable to open the database file.  适用版本：12+ |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit.  适用版本：12+ |
+| 14800032 | SQLite: Abort due to constraint violation.  适用版本：12+ |
+| 14800033 | SQLite: Data type mismatch.  适用版本：12+ |
+| 14800034 | SQLite: Library used incorrectly.  适用版本：12+ |
 
 **示例：**
 
-```
-1. if (resultSet != undefined) {
-2. const name = resultSet.getString(resultSet.getColumnIndex("NAME"));
-3. }
+```ts
+if (resultSet != undefined) {
+  const name = resultSet.getString(resultSet.getColumnIndex("NAME"));
+}
 ```
 
 ## getLong
 
-PhonePC/2in1TabletTVWearable
-
 getLong(columnIndex: number): number
 
-以Long形式获取当前行中指定列的值，如果当前列的数据类型为INTEGER、DOUBLE、TEXT、BLOB类型，会转成Long类型返回指定值，如果该列内容为空时，会返回0，其他类型则返回14800000。如果当前列的数据类型为INTEGER，值大于 Number.MAX\_SAFE\_INTEGER 或小于 Number.MIN\_SAFE\_INTEGER 且不希望丢失精度，建议使用[getString](arkts-apis-data-relationalstore-resultset.md#getstring)接口获取。如果当前列的数据类型为DOUBLE且不希望丢失精度，建议使用[getDouble](arkts-apis-data-relationalstore-resultset.md#getdouble)接口获取。
+以Long形式获取当前行中指定列的值，如果当前列的数据类型为INTEGER、DOUBLE、TEXT、BLOB类型，会转成Long类型返回指定值，如果该列内容为空时，会返回0，其他类型则抛出错误码14800000。如果当前列的数据类型为INTEGER，值大于 Number.MAX\_SAFE\_INTEGER 或小于 Number.MIN\_SAFE\_INTEGER 且不希望丢失精度，建议使用[getString](arkts-apis-data-relationalstore-resultset.md#getstring)接口获取。如果当前列的数据类型为DOUBLE且不希望丢失精度，建议使用[getDouble](arkts-apis-data-relationalstore-resultset.md#getdouble)接口获取。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
@@ -864,47 +831,45 @@ getLong(columnIndex: number): number
 | **错误码ID** | **错误信息** |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 14800000 | Inner error. |
-| 14800011 | The current operation failed because the database is corrupted. |
-| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800000 | Inner error.  适用版本：12+ |
+| 14800011 | The current operation failed because the database is corrupted.  适用版本：12+ |
+| 14800012 | ResultSet is empty or pointer index is out of bounds.  适用版本：12+ |
 | 14800013 | Column index is out of bounds. |
-| 14800014 | The target instance is already closed. |
-| 14800021 | SQLite: Generic error. |
-| 14800022 | SQLite: Callback routine requested an abort. |
-| 14800023 | SQLite: Access permission denied. |
-| 14800024 | SQLite: The database file is locked. |
-| 14800025 | SQLite: A table in the database is locked. |
-| 14800026 | SQLite: The database is out of memory. |
-| 14800027 | SQLite: Attempt to write a readonly database. |
-| 14800028 | SQLite: Some kind of disk I/O error occurred. |
-| 14800029 | SQLite: The database is full. |
-| 14800030 | SQLite: Unable to open the database file. |
-| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
-| 14800032 | SQLite: Abort due to constraint violation. |
-| 14800033 | SQLite: Data type mismatch. |
-| 14800034 | SQLite: Library used incorrectly. |
+| 14800014 | The target instance is already closed.  适用版本：12+ |
+| 14800021 | SQLite: Generic error.  适用版本：12+ |
+| 14800022 | SQLite: Callback routine requested an abort.  适用版本：12+ |
+| 14800023 | SQLite: Access permission denied.  适用版本：12+ |
+| 14800024 | SQLite: The database file is locked.  适用版本：12+ |
+| 14800025 | SQLite: A table in the database is locked.  适用版本：12+ |
+| 14800026 | SQLite: The database is out of memory.  适用版本：12+ |
+| 14800027 | SQLite: Attempt to write a readonly database.  适用版本：12+ |
+| 14800028 | SQLite: Some kind of disk I/O error occurred.  适用版本：12+ |
+| 14800029 | SQLite: The database is full.  适用版本：12+ |
+| 14800030 | SQLite: Unable to open the database file.  适用版本：12+ |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit.  适用版本：12+ |
+| 14800032 | SQLite: Abort due to constraint violation.  适用版本：12+ |
+| 14800033 | SQLite: Data type mismatch.  适用版本：12+ |
+| 14800034 | SQLite: Library used incorrectly.  适用版本：12+ |
 
 **示例：**
 
-```
-1. if (resultSet !== undefined) {
-2. while (resultSet.goToNextRow()) {
-3. const colIndex = resultSet.getColumnIndex("AGE");
-4. if (colIndex > -1) {
-5. const age = resultSet.getLong(colIndex);
-6. console.info(`Get long success, age is ${age}`);
-7. }
-8. }
-9. }
+```ts
+if (resultSet !== undefined) {
+  while (resultSet.goToNextRow()) {
+    const colIndex = resultSet.getColumnIndex("AGE");
+    if (colIndex > -1) {
+      const age = resultSet.getLong(colIndex);
+      console.info(`Get long success, age is ${age}`);
+    }
+  }
+}
 ```
 
 ## getDouble
 
-PhonePC/2in1TabletTVWearable
-
 getDouble(columnIndex: number): number
 
-以double形式获取当前行中指定列的值，如果当前列的数据类型为INTEGER、DOUBLE、TEXT、BLOB类型，会转成double类型返回指定值，如果该列内容为空时，会返回0.0，其他类型则返回14800000。
+以double形式获取当前行中指定列的值，如果当前列的数据类型为INTEGER、DOUBLE、TEXT、BLOB类型，会转成double类型返回指定值，如果该列内容为空时，会返回0.0，其他类型则抛出错误码14800000。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
@@ -927,47 +892,45 @@ getDouble(columnIndex: number): number
 | **错误码ID** | **错误信息** |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 14800000 | Inner error. |
-| 14800011 | The current operation failed because the database is corrupted. |
-| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800000 | Inner error.  适用版本：12+ |
+| 14800011 | The current operation failed because the database is corrupted.  适用版本：12+ |
+| 14800012 | ResultSet is empty or pointer index is out of bounds.  适用版本：12+ |
 | 14800013 | Column index is out of bounds. |
-| 14800014 | The target instance is already closed. |
-| 14800021 | SQLite: Generic error. |
-| 14800022 | SQLite: Callback routine requested an abort. |
-| 14800023 | SQLite: Access permission denied. |
-| 14800024 | SQLite: The database file is locked. |
-| 14800025 | SQLite: A table in the database is locked. |
-| 14800026 | SQLite: The database is out of memory. |
-| 14800027 | SQLite: Attempt to write a readonly database. |
-| 14800028 | SQLite: Some kind of disk I/O error occurred. |
-| 14800029 | SQLite: The database is full. |
-| 14800030 | SQLite: Unable to open the database file. |
-| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
-| 14800032 | SQLite: Abort due to constraint violation. |
-| 14800033 | SQLite: Data type mismatch. |
-| 14800034 | SQLite: Library used incorrectly. |
+| 14800014 | The target instance is already closed.  适用版本：12+ |
+| 14800021 | SQLite: Generic error.  适用版本：12+ |
+| 14800022 | SQLite: Callback routine requested an abort.  适用版本：12+ |
+| 14800023 | SQLite: Access permission denied.  适用版本：12+ |
+| 14800024 | SQLite: The database file is locked.  适用版本：12+ |
+| 14800025 | SQLite: A table in the database is locked.  适用版本：12+ |
+| 14800026 | SQLite: The database is out of memory.  适用版本：12+ |
+| 14800027 | SQLite: Attempt to write a readonly database.  适用版本：12+ |
+| 14800028 | SQLite: Some kind of disk I/O error occurred.  适用版本：12+ |
+| 14800029 | SQLite: The database is full.  适用版本：12+ |
+| 14800030 | SQLite: Unable to open the database file.  适用版本：12+ |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit.  适用版本：12+ |
+| 14800032 | SQLite: Abort due to constraint violation.  适用版本：12+ |
+| 14800033 | SQLite: Data type mismatch.  适用版本：12+ |
+| 14800034 | SQLite: Library used incorrectly.  适用版本：12+ |
 
 **示例：**
 
-```
-1. if (resultSet !== undefined) {
-2. while (resultSet.goToNextRow()) {
-3. const colIndex = resultSet.getColumnIndex("SALARY");
-4. if (colIndex > -1) {
-5. const salary = resultSet.getDouble(colIndex);
-6. console.info(`Get double success, salary is ${salary}`);
-7. }
-8. }
-9. }
+```ts
+if (resultSet !== undefined) {
+  while (resultSet.goToNextRow()) {
+    const colIndex = resultSet.getColumnIndex("SALARY");
+    if (colIndex > -1) {
+      const salary = resultSet.getDouble(colIndex);
+      console.info(`Get double success, salary is ${salary}`);
+    }
+  }
+}
 ```
 
 ## getAsset10+
 
-PhonePC/2in1TabletTVWearable
-
 getAsset(columnIndex: number): Asset
 
-以[Asset](arkts-apis-data-relationalstore-i.md#asset10)形式获取当前行中指定列的值，如果当前列的数据类型为Asset类型，会以Asset类型返回指定值，如果当前列中的值为null时，会返回null，其他类型则返回14800000。
+以[Asset](arkts-apis-data-relationalstore-i.md#asset10)形式获取当前行中指定列的值，如果当前列的数据类型为Asset类型，会以Asset类型返回指定值，如果当前列中的值为null时，会返回null，其他类型则抛出错误码14800000。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
@@ -990,41 +953,39 @@ getAsset(columnIndex: number): Asset
 | **错误码ID** | **错误信息** |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 14800000 | Inner error. |
-| 14800011 | The current operation failed because the database is corrupted. |
-| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800000 | Inner error.  适用版本：12+ |
+| 14800011 | The current operation failed because the database is corrupted.  适用版本：12+ |
+| 14800012 | ResultSet is empty or pointer index is out of bounds.  适用版本：12+ |
 | 14800013 | Column index is out of bounds. |
-| 14800014 | The target instance is already closed. |
-| 14800021 | SQLite: Generic error. |
-| 14800022 | SQLite: Callback routine requested an abort. |
-| 14800023 | SQLite: Access permission denied. |
-| 14800024 | SQLite: The database file is locked. |
-| 14800025 | SQLite: A table in the database is locked. |
-| 14800026 | SQLite: The database is out of memory. |
-| 14800027 | SQLite: Attempt to write a readonly database. |
-| 14800028 | SQLite: Some kind of disk I/O error occurred. |
-| 14800029 | SQLite: The database is full. |
-| 14800030 | SQLite: Unable to open the database file. |
-| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
-| 14800032 | SQLite: Abort due to constraint violation. |
-| 14800033 | SQLite: Data type mismatch. |
-| 14800034 | SQLite: Library used incorrectly. |
+| 14800014 | The target instance is already closed.  适用版本：12+ |
+| 14800021 | SQLite: Generic error.  适用版本：12+ |
+| 14800022 | SQLite: Callback routine requested an abort.  适用版本：12+ |
+| 14800023 | SQLite: Access permission denied.  适用版本：12+ |
+| 14800024 | SQLite: The database file is locked.  适用版本：12+ |
+| 14800025 | SQLite: A table in the database is locked.  适用版本：12+ |
+| 14800026 | SQLite: The database is out of memory.  适用版本：12+ |
+| 14800027 | SQLite: Attempt to write a readonly database.  适用版本：12+ |
+| 14800028 | SQLite: Some kind of disk I/O error occurred.  适用版本：12+ |
+| 14800029 | SQLite: The database is full.  适用版本：12+ |
+| 14800030 | SQLite: Unable to open the database file.  适用版本：12+ |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit.  适用版本：12+ |
+| 14800032 | SQLite: Abort due to constraint violation.  适用版本：12+ |
+| 14800033 | SQLite: Data type mismatch.  适用版本：12+ |
+| 14800034 | SQLite: Library used incorrectly.  适用版本：12+ |
 
 **示例：**
 
-```
-1. if (resultSet != undefined) {
-2. const doc = (resultSet as relationalStore.ResultSet).getAsset((resultSet as relationalStore.ResultSet).getColumnIndex("DOC"));
-3. }
+```ts
+if (resultSet != undefined) {
+  const doc = (resultSet as relationalStore.ResultSet).getAsset((resultSet as relationalStore.ResultSet).getColumnIndex("DOC"));
+}
 ```
 
 ## getAssets10+
 
-PhonePC/2in1TabletTVWearable
-
 getAssets(columnIndex: number): Assets
 
-以[Assets](arkts-apis-data-relationalstore-t.md#assets10)形式获取当前行中指定列的值，如果当前列的数据类型为Assets类型，会以Assets类型返回指定值，如果当前列中的值为null时，会返回null，其他类型则返回14800000。
+以[Assets](arkts-apis-data-relationalstore-t.md#assets10)形式获取当前行中指定列的值，如果当前列的数据类型为Assets类型，会以Assets类型返回指定值，如果当前列中的值为null时，会返回null，其他类型则抛出14800000。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
@@ -1047,37 +1008,35 @@ getAssets(columnIndex: number): Assets
 | **错误码ID** | **错误信息** |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 14800000 | Inner error. |
-| 14800011 | The current operation failed because the database is corrupted. |
-| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800000 | Inner error.  适用版本：12+ |
+| 14800011 | The current operation failed because the database is corrupted.  适用版本：12+ |
+| 14800012 | ResultSet is empty or pointer index is out of bounds.  适用版本：12+ |
 | 14800013 | Column index is out of bounds. |
-| 14800014 | The target instance is already closed. |
-| 14800021 | SQLite: Generic error. |
-| 14800022 | SQLite: Callback routine requested an abort. |
-| 14800023 | SQLite: Access permission denied. |
-| 14800024 | SQLite: The database file is locked. |
-| 14800025 | SQLite: A table in the database is locked. |
-| 14800026 | SQLite: The database is out of memory. |
-| 14800027 | SQLite: Attempt to write a readonly database. |
-| 14800028 | SQLite: Some kind of disk I/O error occurred. |
-| 14800029 | SQLite: The database is full. |
-| 14800030 | SQLite: Unable to open the database file. |
-| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
-| 14800032 | SQLite: Abort due to constraint violation. |
-| 14800033 | SQLite: Data type mismatch. |
-| 14800034 | SQLite: Library used incorrectly. |
+| 14800014 | The target instance is already closed.  适用版本：12+ |
+| 14800021 | SQLite: Generic error.  适用版本：12+ |
+| 14800022 | SQLite: Callback routine requested an abort.  适用版本：12+ |
+| 14800023 | SQLite: Access permission denied.  适用版本：12+ |
+| 14800024 | SQLite: The database file is locked.  适用版本：12+ |
+| 14800025 | SQLite: A table in the database is locked.  适用版本：12+ |
+| 14800026 | SQLite: The database is out of memory.  适用版本：12+ |
+| 14800027 | SQLite: Attempt to write a readonly database.  适用版本：12+ |
+| 14800028 | SQLite: Some kind of disk I/O error occurred.  适用版本：12+ |
+| 14800029 | SQLite: The database is full.  适用版本：12+ |
+| 14800030 | SQLite: Unable to open the database file.  适用版本：12+ |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit.  适用版本：12+ |
+| 14800032 | SQLite: Abort due to constraint violation.  适用版本：12+ |
+| 14800033 | SQLite: Data type mismatch.  适用版本：12+ |
+| 14800034 | SQLite: Library used incorrectly.  适用版本：12+ |
 
 **示例：**
 
-```
-1. if (resultSet != undefined) {
-2. const docs = (resultSet as relationalStore.ResultSet).getAssets((resultSet as relationalStore.ResultSet).getColumnIndex("DOCS"));
-3. }
+```ts
+if (resultSet != undefined) {
+  const docs = (resultSet as relationalStore.ResultSet).getAssets((resultSet as relationalStore.ResultSet).getColumnIndex("DOCS"));
+}
 ```
 
 ## getRow11+
-
-PhonePC/2in1TabletTVWearable
 
 getRow(): ValuesBucket
 
@@ -1098,36 +1057,34 @@ getRow(): ValuesBucket
 | **错误码ID** | **错误信息** |
 | --- | --- |
 | 14800000 | Inner error. |
-| 14800011 | The current operation failed because the database is corrupted. |
-| 14800012 | ResultSet is empty or pointer index is out of bounds. |
-| 14800013 | Column index is out of bounds. |
-| 14800014 | The target instance is already closed. |
-| 14800021 | SQLite: Generic error. |
-| 14800022 | SQLite: Callback routine requested an abort. |
-| 14800023 | SQLite: Access permission denied. |
-| 14800024 | SQLite: The database file is locked. |
-| 14800025 | SQLite: A table in the database is locked. |
-| 14800026 | SQLite: The database is out of memory. |
-| 14800027 | SQLite: Attempt to write a readonly database. |
-| 14800028 | SQLite: Some kind of disk I/O error occurred. |
-| 14800029 | SQLite: The database is full. |
-| 14800030 | SQLite: Unable to open the database file. |
-| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
-| 14800032 | SQLite: Abort due to constraint violation. |
-| 14800033 | SQLite: Data type mismatch. |
-| 14800034 | SQLite: Library used incorrectly. |
+| 14800011 | The current operation failed because the database is corrupted.  适用版本：12+ |
+| 14800012 | ResultSet is empty or pointer index is out of bounds.  适用版本：12+ |
+| 14800013 | Column index is out of bounds.  适用版本：12+ |
+| 14800014 | The target instance is already closed.  适用版本：12+ |
+| 14800021 | SQLite: Generic error.  适用版本：12+ |
+| 14800022 | SQLite: Callback routine requested an abort.  适用版本：12+ |
+| 14800023 | SQLite: Access permission denied.  适用版本：12+ |
+| 14800024 | SQLite: The database file is locked.  适用版本：12+ |
+| 14800025 | SQLite: A table in the database is locked.  适用版本：12+ |
+| 14800026 | SQLite: The database is out of memory.  适用版本：12+ |
+| 14800027 | SQLite: Attempt to write a readonly database.  适用版本：12+ |
+| 14800028 | SQLite: Some kind of disk I/O error occurred.  适用版本：12+ |
+| 14800029 | SQLite: The database is full.  适用版本：12+ |
+| 14800030 | SQLite: Unable to open the database file.  适用版本：12+ |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit.  适用版本：12+ |
+| 14800032 | SQLite: Abort due to constraint violation.  适用版本：12+ |
+| 14800033 | SQLite: Data type mismatch.  适用版本：12+ |
+| 14800034 | SQLite: Library used incorrectly.  适用版本：12+ |
 
 **示例：**
 
-```
-1. if (resultSet != undefined) {
-2. const row = (resultSet as relationalStore.ResultSet).getRow();
-3. }
+```ts
+if (resultSet != undefined) {
+  const row = (resultSet as relationalStore.ResultSet).getRow();
+}
 ```
 
 ## getRows18+
-
-PhonePC/2in1TabletTVWearable
 
 getRows(maxCount: number, position?: number): Promise<Array<ValuesBucket>>
 
@@ -1146,7 +1103,7 @@ getRows(maxCount: number, position?: number): Promise<Array<ValuesBucket>>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<Array<[ValuesBucket](arkts-apis-data-relationalstore-t.md#valuesbucket)>> | 返回maxCount条数据，剩余数据不足maxCount条则返回剩余数据，返回空数组时代表已经遍历到结果集的末尾。当结果集中包含重名列时，返回值会不符合预期，建议使用[getRowsData](arkts-apis-data-relationalstore-resultset.md#getrowsdata23)接口获取。 |
+| Promise<Array<[ValuesBucket](arkts-apis-data-relationalstore-t.md#valuesbucket)>> | Promise对象，返回maxCount条数据，剩余数据不足maxCount条则返回剩余数据，返回空数组时代表已经遍历到结果集的末尾。当结果集中包含重名列时，返回值会不符合预期，建议使用[getRowsData](arkts-apis-data-relationalstore-resultset.md#getrowsdata23)接口获取。 |
 
 **错误码：**
 
@@ -1174,36 +1131,34 @@ getRows(maxCount: number, position?: number): Promise<Array<ValuesBucket>>
 
 **示例：**
 
-```
-1. // 以查到100条数据为例
-2. async function processRows(resultSet: relationalStore.ResultSet) {
-3. // 示例1：仅指定maxCount
-4. if (resultSet != undefined) {
-5. let rows: Array<relationalStore.ValuesBucket>;
-6. let maxCount: number = 50;
-7. // 从结果集的当前行（默认首次获取数据时为当前结果集的第一行，后续为上次获取数据结束位置的下一行）开始获取数据
-8. // getRows会自动移动结果集当前行到上次getRows获取结束位置的下一行，无需使用goToFirstRow、goToNextRow等接口移动
-9. while ((rows = await (resultSet as relationalStore.ResultSet).getRows(maxCount)).length != 0) {
-10. console.info(JSON.stringify(rows[0]));
-11. }
-12. }
+```ts
+// 以查到100条数据为例
+async function processRows(resultSet: relationalStore.ResultSet) {
+  // 示例1：仅指定maxCount
+  if (resultSet != undefined) {
+    let rows: Array<relationalStore.ValuesBucket>;
+    let maxCount: number = 50;
+    // 从结果集的当前行（默认首次获取数据时为当前结果集的第一行，后续为上次获取数据结束位置的下一行）开始获取数据
+    // getRows会自动移动结果集当前行到上次getRows获取结束位置的下一行，无需使用goToFirstRow、goToNextRow等接口移动
+    while ((rows = await (resultSet as relationalStore.ResultSet).getRows(maxCount)).length != 0) {
+      console.info(JSON.stringify(rows[0]));
+    }
+  }
 
-14. // 示例2：指定maxCount和起始的position
-15. if (resultSet != undefined) {
-16. let rows: Array<relationalStore.ValuesBucket>;
-17. let maxCount: number = 50;
-18. let position: number = 50;
-19. while ((rows = await (resultSet as relationalStore.ResultSet).getRows(maxCount, position)).length != 0) {
-20. console.info(JSON.stringify(rows[0]));
-21. position += rows.length;
-22. }
-23. }
-24. }
+  // 示例2：指定maxCount和起始的position
+  if (resultSet != undefined) {
+    let rows: Array<relationalStore.ValuesBucket>;
+    let maxCount: number = 50;
+    let position: number = 50;
+    while ((rows = await (resultSet as relationalStore.ResultSet).getRows(maxCount, position)).length != 0) {
+      console.info(JSON.stringify(rows[0]));
+      position += rows.length;
+    }
+  }
+}
 ```
 
 ## getCurrentRowData23+
-
-PhonePC/2in1TabletTVWearable
 
 getCurrentRowData(): RowData
 
@@ -1237,22 +1192,21 @@ getCurrentRowData(): RowData
 
 **示例：**
 
-```
-1. try {
-2. // 联表查询EMPLOYEE1和EMPLOYEE2，并获取当前行包含重名列名的值。store为获取到的RdbStore实例。
-3. let resultSet: relationalStore.ResultSet = await store.querySql("SELECT e1.NAME, e2.NAME, e1.AGE, e2.AGE FROM EMPLOYEE1 e1 LEFT JOIN EMPLOYEE2 e2 ON e1.SALARY=e2.SALARY");
-4. if (resultSet != undefined) {
-5. resultSet.goToFirstRow();
-6. const rowData = resultSet.getCurrentRowData();
-7. }
-8. } catch (err) {
-9. console.error(`Failed to get row data: code:${err.code}, message:${err.message}`);
-10. }
+```ts
+try {
+  // 联表查询EMPLOYEE1和EMPLOYEE2，并获取当前行包含重名列名的值。store为获取到的RdbStore实例。
+  let resultSet: relationalStore.ResultSet = await store.querySql("SELECT e1.NAME, e2.NAME, e1.AGE, e2.AGE FROM EMPLOYEE1 e1 LEFT JOIN EMPLOYEE2 e2 ON e1.SALARY=e2.SALARY");
+  if (resultSet != undefined) {
+    resultSet.goToFirstRow();
+    const rowData = resultSet.getCurrentRowData();
+    resultSet.close();
+  }
+} catch (err) {
+  console.error(`Failed to get row data: code:${err.code}, message:${err.message}`);
+}
 ```
 
 ## getRowsData23+
-
-PhonePC/2in1TabletTVWearable
 
 getRowsData(maxCount: number, position?: number): Promise<RowsData>
 
@@ -1273,7 +1227,7 @@ getRowsData(maxCount: number, position?: number): Promise<RowsData>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[RowsData](arkts-apis-data-relationalstore-t.md#rowsdata23)> | 返回maxCount条数据，剩余数据不足maxCount条则返回剩余数据，返回空数组时代表已经遍历到结果集的末尾。支持获取包含重名列的值。 |
+| Promise<[RowsData](arkts-apis-data-relationalstore-t.md#rowsdata23)> | Promise对象，返回maxCount条数据，剩余数据不足maxCount条则返回剩余数据，返回空数组时代表已经遍历到结果集的末尾。支持获取包含重名列的值。 |
 
 **错误码：**
 
@@ -1294,48 +1248,47 @@ getRowsData(maxCount: number, position?: number): Promise<RowsData>
 
 **示例：**
 
-```
-1. try {
-2. // 联表查询EMPLOYEE1和EMPLOYEE2，并获取多行包含重名列名的值。store为获取到的RdbStore实例。
-3. let resultSet: relationalStore.ResultSet = await store.querySql("SELECT e1.NAME, e2.NAME, e1.AGE, e2.AGE FROM EMPLOYEE1 e1 LEFT JOIN EMPLOYEE2 e2 ON e1.SALARY=e2.SALARY");
-4. // 以查到50条数据为例
-5. // 示例1：仅指定maxCount
-6. if (resultSet != undefined) {
-7. let rowsData: relationalStore.RowsData;
-8. // 从结果集的当前行（默认首次获取数据时为当前结果集的第一行，后续为上次获取数据结束位置的下一行）开始获取数据
-9. // getRowsData会自动移动结果集当前行到上次getRowsData获取结束位置的下一行，无需使用goToFirstRow、goToNextRow等接口移动
-10. let maxCount: number = 50;
-11. let rowCount: number = 0;
-12. while ((rowsData = await resultSet.getRowsData(maxCount)).length != 0) {
-13. rowsData.forEach((rowData, index) => {
-14. // 第rowCount + index + 1行的查询结果
-15. console.info(`${rowCount + index + 1}：${rowData}`);
-16. });
-17. rowCount += rowsData.length;
-18. }
-19. }
+```ts
+try {
+  // 联表查询EMPLOYEE1和EMPLOYEE2，并获取多行包含重名列名的值。store为获取到的RdbStore实例。
+  let resultSet: relationalStore.ResultSet = await store.querySql("SELECT e1.NAME, e2.NAME, e1.AGE, e2.AGE FROM EMPLOYEE1 e1 LEFT JOIN EMPLOYEE2 e2 ON e1.SALARY=e2.SALARY");
+  // 以查到50条数据为例
+  // 示例1：仅指定maxCount
+  if (resultSet != undefined) {
+    let rowsData: relationalStore.RowsData;
+    // 从结果集的当前行（默认首次获取数据时为当前结果集的第一行，后续为上次获取数据结束位置的下一行）开始获取数据
+    // getRowsData会自动移动结果集当前行到上次getRowsData获取结束位置的下一行，无需使用goToFirstRow、goToNextRow等接口移动
+    let maxCount: number = 50;
+    let rowCount: number = 0;
+    while ((rowsData = await resultSet.getRowsData(maxCount)).length != 0) {
+      rowsData.forEach((rowData, index) => {
+        // 第rowCount + index + 1行的查询结果
+        console.info(`${rowCount + index + 1}：${rowData}`);
+      });
+      rowCount += rowsData.length;
+    }
+  }
 
-21. // 示例2：指定maxCount和起始的position
-22. if (resultSet != undefined) {
-23. let rowsData: relationalStore.RowsData;
-24. let maxCount: number = 50;
-25. let position: number = 50;
-26. while ((rowsData = await resultSet.getRowsData(maxCount, position)).length != 0) {
-27. rowsData.forEach((rowData, index) => {
-28. // 第position + index + 1行的查询结果
-29. console.info(`${position + index + 1}：${rowData}`);
-30. });
-31. position += rowsData.length;
-32. }
-33. }
-34. } catch (err) {
-35. console.error(`Failed to get rows data: code:${err.code}, message:${err.message}`);
-36. }
+  // 示例2：指定maxCount和起始的position
+  if (resultSet != undefined) {
+    let rowsData: relationalStore.RowsData;
+    let maxCount: number = 50;
+    let position: number = 50;
+    while ((rowsData = await resultSet.getRowsData(maxCount, position)).length != 0) {
+      rowsData.forEach((rowData, index) => {
+        // 第position + index + 1行的查询结果
+        console.info(`${position + index + 1}：${rowData}`);
+      });
+      position += rowsData.length;
+    }
+  }
+  resultSet.close();
+} catch (err) {
+  console.error(`Failed to get rows data: code:${err.code}, message:${err.message}`);
+}
 ```
 
 ## getSendableRow12+
-
-PhonePC/2in1TabletTVWearable
 
 getSendableRow(): sendableRelationalStore.ValuesBucket
 
@@ -1379,52 +1332,53 @@ getSendableRow(): sendableRelationalStore.ValuesBucket
 
 示例代码中this.context定义见Stage模型的应用[Context](js-apis-inner-application-context.md)。
 
-```
-1. import { window } from '@kit.ArkUI';
-2. import { UIAbility } from '@kit.AbilityKit';
-3. import { relationalStore } from '@kit.ArkData';
-4. import { taskpool } from '@kit.ArkTS';
-5. import { common } from '@kit.AbilityKit';
-6. import { sendableRelationalStore } from '@kit.ArkData';
+```ts
+// EntryAbility.ets
+import { window } from '@kit.ArkUI';
+import { UIAbility } from '@kit.AbilityKit';
+import { relationalStore } from '@kit.ArkData';
+import { taskpool } from '@kit.ArkTS';
+import { common } from '@kit.AbilityKit';
+import { sendableRelationalStore } from '@kit.ArkData';
 
-8. @Concurrent
-9. async function getDataByName(name: string, context: common.UIAbilityContext) {
-10. const STORE_CONFIG: relationalStore.StoreConfig = {
-11. name: "RdbTest.db",
-12. securityLevel: relationalStore.SecurityLevel.S3
-13. };
-14. const store = await relationalStore.getRdbStore(context, STORE_CONFIG);
-15. const predicates = new relationalStore.RdbPredicates("EMPLOYEE");
-16. predicates.equalTo("NAME", name);
-17. const resultSet = store.querySync(predicates);
+@Concurrent
+async function getDataByName(name: string, context: common.UIAbilityContext) {
+  const STORE_CONFIG: relationalStore.StoreConfig = {
+    name: "RdbTest.db",
+    securityLevel: relationalStore.SecurityLevel.S3
+  };
+  const store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+  const predicates = new relationalStore.RdbPredicates("EMPLOYEE");
+  predicates.equalTo("NAME", name);
+  const resultSet = store.querySync(predicates);
 
-19. if (resultSet.rowCount > 0) {
-20. resultSet.goToFirstRow();
-21. const sendableValuesBucket = resultSet.getSendableRow();
-22. return sendableValuesBucket;
-23. } else {
-24. return null;
-25. }
-26. }
+  if (resultSet.rowCount > 0) {
+    resultSet.goToFirstRow();
+    const sendableValuesBucket = resultSet.getSendableRow();
+    resultSet.close();
+    return sendableValuesBucket;
+  } else {
+    resultSet.close();
+    return null;
+  }
+}
 
-28. export default class EntryAbility extends UIAbility {
-29. async onWindowStageCreate(windowStage: window.WindowStage) {
-30. const task = new taskpool.Task(getDataByName, 'Lisa', this.context);
-31. const sendableValuesBucket = await taskpool.execute(task) as sendableRelationalStore.ValuesBucket;
+export default class EntryAbility extends UIAbility {
+  async onWindowStageCreate(windowStage: window.WindowStage) {
+    const task = new taskpool.Task(getDataByName, 'Lisa', this.context);
+    const sendableValuesBucket = await taskpool.execute(task) as sendableRelationalStore.ValuesBucket;
 
-33. if (sendableValuesBucket) {
-34. const columnCount = sendableValuesBucket.size;
-35. const age = sendableValuesBucket.get('age');
-36. const name = sendableValuesBucket.get('name');
-37. console.info(`Query data in taskpool succeeded, name is "${name}", age is "${age}"`);
-38. }
-39. }
-40. }
+    if (sendableValuesBucket) {
+      const columnCount = sendableValuesBucket.size;
+      const age = sendableValuesBucket.get('age');
+      const name = sendableValuesBucket.get('name');
+      console.info(`Query data in taskpool succeeded, name is "${name}", age is "${age}"`);
+    }
+  }
+}
 ```
 
 ## isColumnNull
-
-PhonePC/2in1TabletTVWearable
 
 isColumnNull(columnIndex: number): boolean
 
@@ -1451,56 +1405,54 @@ isColumnNull(columnIndex: number): boolean
 | **错误码ID** | **错误信息** |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 14800000 | Inner error. |
-| 14800011 | The current operation failed because the database is corrupted. |
-| 14800012 | ResultSet is empty or pointer index is out of bounds. |
+| 14800000 | Inner error.  适用版本：12+ |
+| 14800011 | The current operation failed because the database is corrupted.  适用版本：12+ |
+| 14800012 | ResultSet is empty or pointer index is out of bounds.  适用版本：12+ |
 | 14800013 | Column index is out of bounds. |
-| 14800014 | The target instance is already closed. |
-| 14800021 | SQLite: Generic error. |
-| 14800022 | SQLite: Callback routine requested an abort. |
-| 14800023 | SQLite: Access permission denied. |
-| 14800024 | SQLite: The database file is locked. |
-| 14800025 | SQLite: A table in the database is locked. |
-| 14800026 | SQLite: The database is out of memory. |
-| 14800027 | SQLite: Attempt to write a readonly database. |
-| 14800028 | SQLite: Some kind of disk I/O error occurred. |
-| 14800029 | SQLite: The database is full. |
-| 14800030 | SQLite: Unable to open the database file. |
-| 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
-| 14800032 | SQLite: Abort due to constraint violation. |
-| 14800033 | SQLite: Data type mismatch. |
-| 14800034 | SQLite: Library used incorrectly. |
+| 14800014 | The target instance is already closed.  适用版本：12+ |
+| 14800021 | SQLite: Generic error.  适用版本：12+ |
+| 14800022 | SQLite: Callback routine requested an abort.  适用版本：12+ |
+| 14800023 | SQLite: Access permission denied.  适用版本：12+ |
+| 14800024 | SQLite: The database file is locked.  适用版本：12+ |
+| 14800025 | SQLite: A table in the database is locked.  适用版本：12+ |
+| 14800026 | SQLite: The database is out of memory.  适用版本：12+ |
+| 14800027 | SQLite: Attempt to write a readonly database.  适用版本：12+ |
+| 14800028 | SQLite: Some kind of disk I/O error occurred.  适用版本：12+ |
+| 14800029 | SQLite: The database is full.  适用版本：12+ |
+| 14800030 | SQLite: Unable to open the database file.  适用版本：12+ |
+| 14800031 | SQLite: TEXT or BLOB exceeds size limit.  适用版本：12+ |
+| 14800032 | SQLite: Abort due to constraint violation.  适用版本：12+ |
+| 14800033 | SQLite: Data type mismatch.  适用版本：12+ |
+| 14800034 | SQLite: Library used incorrectly.  适用版本：12+ |
 
 **示例：**
 
-```
-1. if (resultSet !== undefined) {
-2. while (resultSet.goToNextRow()) {
-3. const colIndex = resultSet.getColumnIndex("CODES");
-4. if (colIndex > -1) {
-5. const isColumnNull = resultSet.isColumnNull(colIndex);
-6. console.info(`Column is null: ${isColumnNull}`);
-7. }
-8. }
-9. }
+```ts
+if (resultSet !== undefined) {
+  while (resultSet.goToNextRow()) {
+    const colIndex = resultSet.getColumnIndex("CODES");
+    if (colIndex > -1) {
+      const isColumnNull = resultSet.isColumnNull(colIndex);
+      console.info(`Column is null: ${isColumnNull}`);
+    }
+  }
+}
 ```
 
 ## close
 
-PhonePC/2in1TabletTVWearable
-
 close(): void
 
-关闭结果集，若不关闭可能会引起fd泄露和内存泄露。
+关闭结果集，若不关闭可能会引起FD（File Descriptor）泄漏和内存泄漏。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **示例：**
 
-```
-1. if (resultSet != undefined) {
-2. (resultSet as relationalStore.ResultSet).close();
-3. }
+```ts
+if (resultSet != undefined) {
+  (resultSet as relationalStore.ResultSet).close();
+}
 ```
 
 **错误码：**
@@ -1509,5 +1461,5 @@ close(): void
 
 | **错误码ID** | **错误信息** |
 | --- | --- |
-| 14800000 | Inner error. |
+| 14800000 | Inner error.  适用版本：12+ |
 | 14800012 | ResultSet is empty or pointer index is out of bounds. |

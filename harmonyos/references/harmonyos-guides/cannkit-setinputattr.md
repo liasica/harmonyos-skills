@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-setin
 title: SetInputAttr
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator > SetInputAttr
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:46+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2c3ef8a4f309cbf03189dfa5076d96399ec9fc76e3af33cafdee9555525af475
+content_hash: sha256:5bdae6007435b7c67834178eb52a87a56e4d9ecfa08132a848cce7d100c4ac3a
 ---
 
 ## 函数功能
@@ -18,16 +18,16 @@ content_hash: sha256:2c3ef8a4f309cbf03189dfa5076d96399ec9fc76e3af33cafdee9555525
 
   以int64\_t为例：
 
-  ```
-  1. SetInputAttr(const char_t *dst_name, const char_t *name, int64_t attr_value);
-  2. SetInputAttr(const int32_t index, const char_t *name, int64_t attr_value);
+  ```cpp
+  SetInputAttr(const char_t *dst_name, const char_t *name, int64_t attr_value);
+  SetInputAttr(const int32_t index, const char_t *name, int64_t attr_value);
   ```
 
   设置属性值：
 
-  ```
-  1. GetInputAttr(const int32_t index, const char_t *name, int64_t &attr_value) const;
-  2. GetInputAttr(const char_t *dst_name, const char_t *name, int64_t &attr_value) const;
+  ```cpp
+  GetInputAttr(const int32_t index, const char_t *name, int64_t &attr_value) const;
+  GetInputAttr(const char_t *dst_name, const char_t *name, int64_t &attr_value) const;
   ```
 
   取值时，开发者需保证整型数据没有截断，同理针对int32\_t和uint32\_t混用时需要保证不被截断。
@@ -40,33 +40,33 @@ content_hash: sha256:2c3ef8a4f309cbf03189dfa5076d96399ec9fc76e3af33cafdee9555525
 
 ## 函数原型
 
-```
-1. Operator &SetInputAttr(const int32_t index, const char_t *name, const char_t *attr_value);
-2. Operator &SetInputAttr(const char_t *dst_name, const char_t *name, const char_t *attr_value);
-3. Operator &SetInputAttr(const int32_t index, const char_t *name, const AscendString &attr_value);
-4. Operator &SetInputAttr(const char_t *dst_name, const char_t *name, const AscendString &attr_value);
-5. Operator &SetInputAttr(const int32_t index, const char_t *name, int64_t attr_value);
-6. Operator &SetInputAttr(const char_t *dst_name, const char_t *name, int64_t attr_value);
-7. Operator &SetInputAttr(const int32_t index, const char_t *name, int32_t attr_value);
-8. Operator &SetInputAttr(const char_t *dst_name, const char_t *name, int32_t attr_value);
-9. Operator &SetInputAttr(const int32_t index, const char_t *name, uint32_t attr_value);
-10. Operator &SetInputAttr(const char_t *dst_name, const char_t *name, uint32_t attr_value);
-11. Operator &SetInputAttr(const int32_t index, const char_t *name, bool attr_value);
-12. Operator &SetInputAttr(const char_t *dst_name, const char_t *name, bool attr_value);
-13. Operator &SetInputAttr(const int32_t index, const char_t *name, float32_t attr_value);
-14. Operator &SetInputAttr(const char_t *dst_name, const char_t *name, float32_t attr_value);
-15. Operator &SetInputAttr(const int32_t index, const char_t *name, const std::vector<AscendString> &attr_value);
-16. Operator &SetInputAttr(const char_t *dst_name, const char_t *name, const std::vector<AscendString> &attr_value);
-17. Operator &SetInputAttr(const int32_t index, const char_t *name, const std::vector<int64_t> &attr_value);
-18. Operator &SetInputAttr(const char_t *dst_name, const char_t *name, const std::vector<int64_t> &attr_value);
-19. Operator &SetInputAttr(const int32_t index, const char_t *name, const std::vector<int32_t> &attr_value);
-20. Operator &SetInputAttr(const char_t *dst_name, const char_t *name, const std::vector<int32_t> &attr_value);
-21. Operator &SetInputAttr(const int32_t index, const char_t *name, const std::vector<uint32_t> &attr_value);
-22. Operator &SetInputAttr(const char_t *dst_name, const char_t *name, const std::vector<uint32_t> &attr_value);
-23. Operator &SetInputAttr(const int32_t index, const char_t *name, const std::vector<bool> &attr_value);
-24. Operator &SetInputAttr(const char_t *dst_name, const char_t *name, const std::vector<bool> &attr_value);
-25. Operator &SetInputAttr(const int32_t index, const char_t *name, const std::vector<float32_t> &attr_value);
-26. Operator &SetInputAttr(const char_t *dst_name, const char_t *name, const std::vector<float32_t> &attr_value);
+```cpp
+Operator &SetInputAttr(const int32_t index, const char_t *name, const char_t *attr_value);
+Operator &SetInputAttr(const char_t *dst_name, const char_t *name, const char_t *attr_value);
+Operator &SetInputAttr(const int32_t index, const char_t *name, const AscendString &attr_value);
+Operator &SetInputAttr(const char_t *dst_name, const char_t *name, const AscendString &attr_value);
+Operator &SetInputAttr(const int32_t index, const char_t *name, int64_t attr_value);
+Operator &SetInputAttr(const char_t *dst_name, const char_t *name, int64_t attr_value);
+Operator &SetInputAttr(const int32_t index, const char_t *name, int32_t attr_value);
+Operator &SetInputAttr(const char_t *dst_name, const char_t *name, int32_t attr_value);
+Operator &SetInputAttr(const int32_t index, const char_t *name, uint32_t attr_value);
+Operator &SetInputAttr(const char_t *dst_name, const char_t *name, uint32_t attr_value);
+Operator &SetInputAttr(const int32_t index, const char_t *name, bool attr_value);
+Operator &SetInputAttr(const char_t *dst_name, const char_t *name, bool attr_value);
+Operator &SetInputAttr(const int32_t index, const char_t *name, float32_t attr_value);
+Operator &SetInputAttr(const char_t *dst_name, const char_t *name, float32_t attr_value);
+Operator &SetInputAttr(const int32_t index, const char_t *name, const std::vector<AscendString> &attr_value);
+Operator &SetInputAttr(const char_t *dst_name, const char_t *name, const std::vector<AscendString> &attr_value);
+Operator &SetInputAttr(const int32_t index, const char_t *name, const std::vector<int64_t> &attr_value);
+Operator &SetInputAttr(const char_t *dst_name, const char_t *name, const std::vector<int64_t> &attr_value);
+Operator &SetInputAttr(const int32_t index, const char_t *name, const std::vector<int32_t> &attr_value);
+Operator &SetInputAttr(const char_t *dst_name, const char_t *name, const std::vector<int32_t> &attr_value);
+Operator &SetInputAttr(const int32_t index, const char_t *name, const std::vector<uint32_t> &attr_value);
+Operator &SetInputAttr(const char_t *dst_name, const char_t *name, const std::vector<uint32_t> &attr_value);
+Operator &SetInputAttr(const int32_t index, const char_t *name, const std::vector<bool> &attr_value);
+Operator &SetInputAttr(const char_t *dst_name, const char_t *name, const std::vector<bool> &attr_value);
+Operator &SetInputAttr(const int32_t index, const char_t *name, const std::vector<float32_t> &attr_value);
+Operator &SetInputAttr(const char_t *dst_name, const char_t *name, const std::vector<float32_t> &attr_value);
 ```
 
 ## 参数说明

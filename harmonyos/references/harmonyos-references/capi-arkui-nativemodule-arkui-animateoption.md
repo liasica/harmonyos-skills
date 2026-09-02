@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_AnimateOption
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_AnimateOption
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:03+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:f1533408b0fce8818f1845a81af3d8136f9314bdfac815f5d81f12137c22afb2
+scraped_at: 2026-09-02T14:51:50+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e8d10bc466f2772b26b891aec1878805385a2abece48e4c005b4dee0eb60a605
 ---
 
-```
-1. typedef struct ArkUI_AnimateOption ArkUI_AnimateOption
+```c
+typedef struct ArkUI_AnimateOption ArkUI_AnimateOption
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-设置动画效果相关参数。
+定义动画效果的配置参数，用于配置动画的相关属性。
 
 **起始版本：** 12
 

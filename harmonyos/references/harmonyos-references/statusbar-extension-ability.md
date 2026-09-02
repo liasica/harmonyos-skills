@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/statusbar
 title: StatusBarViewExtensionAbility（状态栏扩展Ability）
 breadcrumb: API参考 > 系统 > 基础功能 > Desktop Extension Kit（桌面拓展服务） > ArkTS API > StatusBarViewExtensionAbility（状态栏扩展Ability）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:01+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:65007b41e347de6a7e1eac6520a05caceb21b1c74cb6c46cb443a93659d2ce3a
+scraped_at: 2026-09-02T15:02:06+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:08b6c16ebb99cadb54ff03d8cb2af4eeca2a7958fa0ae1e95295fb5e481d7477
 ---
 
 StatusBarViewExtensionAbility为状态栏扩展Ability，继承自[UIExtensionAbility](js-apis-app-ability-uiextensionability.md#uiextensionability)，用于给应用提供接入状态栏图标左键业务弹窗的能力。
 
-说明
+**说明** 
 
 本模块接口仅可在Stage模型下使用。
 
@@ -20,44 +20,48 @@ StatusBarViewExtensionAbility为状态栏扩展Ability，继承自[UIExtensionAb
 
 ## 导入模块
 
-PC/2in1
-
-```
-1. import { StatusBarViewExtensionAbility } from '@kit.DeskTopExtensionKit';
+```typescript
+import { StatusBarViewExtensionAbility } from '@kit.DeskTopExtensionKit';
 ```
 
 **示例：**
 
-```
-1. import { StatusBarViewExtensionAbility } from '@kit.DeskTopExtensionKit';
-2. import { UIExtensionContentSession, Want } from '@kit.AbilityKit';
+```typescript
+import { StatusBarViewExtensionAbility } from '@kit.DeskTopExtensionKit';
+import { UIExtensionContentSession, Want } from '@kit.AbilityKit';
 
-4. let TAG = "MyStatusBarViewAbility";
+let TAG = 'MyStatusBarViewAbility';
 
-6. export default class MyStatusBarViewAbility extends StatusBarViewExtensionAbility {
-7. onCreate() {
-8. console.info(TAG, `onCreate`);
-9. }
+export default class MyStatusBarViewAbility extends StatusBarViewExtensionAbility {
+  // 当StatusBarViewExtensionAbility组件实例完成创建时，系统会触发该回调。
+  onCreate() {
+    console.info(TAG, 'onCreate');
+  }
 
-11. onSessionCreate(want: Want, session: UIExtensionContentSession) {
-12. console.info(TAG, `onSessionCreate, want: ${want.abilityName}`);
-13. session.loadContent('pages/Index');
-14. }
+  // 当UIExtensionContentSession实例创建完成后，系统会触发该回调。
+  onSessionCreate(want: Want, session: UIExtensionContentSession) {
+    console.info(TAG, `onSessionCreate, want: ${JSON.stringify(want)}`);
+    session.loadContent('pages/StatusBarPage');
+  }
 
-16. onForeground() {
-17. console.info(TAG, `onForeground`);
-18. }
+  // 当StatusBarViewExtensionAbility组件首次启动到前台或者从后台转入到前台时，系统触发该回调。
+  onForeground() {
+    console.info(TAG, 'onForeground');
+  }
 
-20. onBackground() {
-21. console.info(TAG, `onBackground`);
-22. }
+  // 当StatusBarViewExtensionAbility组件从前台转入到后台时，系统触发该回调。
+  onBackground() {
+    console.info(TAG, 'onBackground');
+  }
 
-24. onSessionDestroy(session: UIExtensionContentSession) {
-25. console.info(TAG, `onSessionDestroy`);
-26. }
+  // 当UIExtensionContentSession实例销毁后，系统触发该回调。
+  onSessionDestroy(session: UIExtensionContentSession) {
+    console.info(TAG, 'onSessionDestroy');
+  }
 
-28. onDestroy() {
-29. console.info(TAG, `onDestroy`);
-30. }
-31. }
+  // 当StatusBarViewExtensionAbility组件被销毁时，系统触发该回调。
+  onDestroy() {
+    console.info(TAG, 'onDestroy');
+  }
+}
 ```

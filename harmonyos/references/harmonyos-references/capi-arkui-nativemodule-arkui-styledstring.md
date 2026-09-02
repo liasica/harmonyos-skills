@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_StyledString
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_StyledString
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:34+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:84555aac89e2726245e2f5a9657d2c0c78fcd1cecb16807f697c749180565023
+scraped_at: 2026-09-02T14:51:52+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5aad7faa6c9ae72b2ce8acace6be224fc720c1e1c42095666e4e588faaba1521
 ---
 
-```
-1. typedef struct ArkUI_StyledString ArkUI_StyledString
+```c
+typedef struct ArkUI_StyledString ArkUI_StyledString
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-定义文本组件支持的格式化字符串数据对象。
+定义文本组件支持的样式化字符串数据对象，支持为文本内容设置多种样式属性，适用于需要在Native侧构建和管理富文本展示的场景。
 
 **起始版本：** 12
 

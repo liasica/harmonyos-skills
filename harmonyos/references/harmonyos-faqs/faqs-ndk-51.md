@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-51
 title: ArkTS侧如何释放绑定的C++侧对象
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > ArkTS侧如何释放绑定的C++侧对象
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:38+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:7a74d4fd65cd3fd447057e77deea061f297d5ea951edd611c1d17cf439c3f886
+scraped_at: 2026-09-02T14:53:57+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:973b51b6c6595ee8807dcd5ad567de9d8036cae156132b4e22696f8d1d31115b
 ---
 
 **问题现象**
@@ -20,16 +20,14 @@ ArkTS无法直接回收C++对象。在ArkTS侧业务完成后，可以通过接�
 
 具体接口使用示例如下：
 
+```cpp
+napi_wrap(
+    env, ArkTSDemo, CDemo,
+    // Define a callback function for ArkTS object recycling to destroy C++objects and prevent memory leaks
+    [](napi_env env, void *finalize_data, void *finalize_hint) {
+        MyDemo *cDemo = (MyDemo *)finalize_data;
+        delete cDemo;
+        cDemo = nullptr;
+    },
+    nullptr, nullptr);
 ```
-1. napi_wrap(
-2. env, ArkTSDemo, CDemo,
-3. // Define a callback function for ArkTS object recycling to destroy C++objects and prevent memory leaks
-4. [](napi_env env, void *finalize_data, void *finalize_hint) {
-5. MyDemo *cDemo = (MyDemo *)finalize_data;
-6. delete cDemo;
-7. cDemo = nullptr;
-8. },
-9. nullptr, nullptr);
-```
-
-[BindCObject.cpp](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/Ndk/Ndk2/entry/src/main/cpp/BindCObject/BindCObject.cpp#L51-L59)

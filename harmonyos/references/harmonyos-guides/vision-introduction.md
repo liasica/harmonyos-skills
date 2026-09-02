@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/vision-introd
 title: Vision Kit简介
 breadcrumb: 指南 > AI > Vision Kit（场景化视觉服务） > Vision Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:53+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:474169c8cd06a298a60d1889ac3545c43be7b414b7234dbee6047c8825588e66
+scraped_at: 2026-09-02T15:00:15+08:00
+doc_updated_at: 2026-04-30
+content_hash: sha256:c0b6c1f957709476b2dba8c4125e32fa84bbbe1e90ec29a03078fea2ea61e535
 ---
 
 Vision Kit（场景化视觉服务）集成了视觉类AI能力，包括人脸活体检测（interactiveLiveness）能力、卡证识别（CardRecognition）能力、文档扫描（DocumentScanner）能力、AI识图控件（visionImageAnalyzer）能力。人脸活体检测能力便于用户与设备进行互动，验证用户是否为真实活体；卡证识别能力可提供身份证、行驶证、驾驶证、护照、银行卡等证件的结构化识别服务；文档扫描控件可提供拍摄文档并转换为高清扫描件的服务；AI识图控件可提供场景化的文本识别、主体分割、识图搜索功能。其中动作活体检测能力、卡证识别能力实施试用期免费的计费政策，试用期至2026年12月31日。开始正式收费前，华为将会提前通过正式途径发布计费调整通告。
@@ -45,4 +45,4 @@ Vision Kit提供了人脸活体检测能力、卡证识别能力、文档扫描�
 
 ## 模拟器支持情况
 
-本kit暂不支持模拟器。
+本Kit暂不支持模拟器。

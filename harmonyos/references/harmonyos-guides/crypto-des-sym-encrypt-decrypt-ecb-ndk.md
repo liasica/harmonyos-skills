@@ -1,28 +1,30 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-des-sym-encrypt-decrypt-ecb-ndk
-title: 使用DES对称密钥（ECB模式）加解密(C/C++)
-breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密 > 加解密开发指导 > 使用DES对称密钥（ECB模式）加解密(C/C++)
+title: 使用DES对称密钥加解密(C/C++)
+breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密介绍 > 使用DES对称密钥加解密(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:25+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:45d6cf320af87719128ce18b96f900d59676e69c788819a327235be361239732
+scraped_at: 2026-09-02T14:59:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:646575b9c590c2c3ca81703dac6550bf1c4d1753ab99496f5c9d1c9d90ee47d9
 ---
 
-对应的算法规格请查看[对称密钥加解密算法规格：DES](crypto-sym-encrypt-decrypt-spec.md#des)。
+对应的算法规格请查看[对称密钥加解密算法规格：DES](crypto-encryption-decryption.md#des)。
 
 ## 在CMake脚本中链接相关动态库
 
-```
-1. target_link_libraries(entry PUBLIC libohcrypto.so)
+```txt
+target_link_libraries(entry PUBLIC libohcrypto.so)
 ```
 
 ## 开发步骤
+
+### 使用DES对称密钥（ECB模式）加解密
 
 **创建对象**
 
 调用[OH\_CryptoSymKeyGenerator\_Create](../harmonyos-references/capi-crypto-sym-key-h.md#oh_cryptosymkeygenerator_create)、[OH\_CryptoSymKeyGenerator\_Generate](../harmonyos-references/capi-crypto-sym-key-h.md#oh_cryptosymkeygenerator_generate)，生成密钥算法为DES、密钥长度为64位的对称密钥（OH\_CryptoSymKey）。
 
-如何生成DES对称密钥，开发者可参考下文示例，并结合[对称密钥生成和转换规格：DES](crypto-sym-key-generation-conversion-spec.md#des)和[指定二进制数据转换对称密钥](crypto-convert-binary-data-to-sym-key-ndk.md)理解，参考文档与当前示例可能存在入参差异，请在阅读时注意区分。
+如何生成DES对称密钥，开发者可参考下文示例，并结合[对称密钥生成和转换规格：DES](crypto-key-generation-conversion.md#des)和[指定二进制数据转换对称密钥](crypto-convert-binary-data-to-sym-key-ndk.md)理解，参考文档与当前示例可能存在入参差异，请在阅读时注意区分。
 
 **加密**
 
@@ -47,7 +49,7 @@ content_hash: sha256:45d6cf320af87719128ce18b96f900d59676e69c788819a327235be3612
 
    * 当数据量较小时，可以在init完成后直接调用final。
    * 当数据量较大时，可以多次调用update，即分段解密。
-   * 数据量大小可以使用者自行决定。比如大于20字节使用update。
+   * 用户可以根据数据量大小自行决定操作方式。比如大于20字节使用update。
 4. 调用[OH\_CryptoSymCipher\_Final](../harmonyos-references/capi-crypto-sym-cipher-h.md#oh_cryptosymcipher_final)，获取解密后的数据。
 
    * 如果使用update接口传入数据，此处data传入null。如果使用final接口传入数据，此处data传入密文数据。
@@ -58,68 +60,66 @@ content_hash: sha256:45d6cf320af87719128ce18b96f900d59676e69c788819a327235be3612
 调用[OH\_CryptoSymKeyGenerator\_Destroy](../harmonyos-references/capi-crypto-sym-key-h.md#oh_cryptosymkeygenerator_destroy)、[OH\_CryptoSymCipher\_Destroy](../harmonyos-references/capi-crypto-sym-cipher-h.md#oh_cryptosymcipher_destroy)、[OH\_CryptoSymKey\_Destroy](../harmonyos-references/capi-crypto-sym-key-h.md#oh_cryptosymkey_destroy)、[OH\_Crypto\_FreeDataBlob](../harmonyos-references/capi-crypto-common-h.md#oh_crypto_freedatablob)释放申请的内存，销毁对象。
 
 ```
-1. #include "CryptoArchitectureKit/crypto_common.h"
-2. #include "CryptoArchitectureKit/crypto_sym_cipher.h"
-3. #include <cstring>
-4. #include "file.h"
+#include "CryptoArchitectureKit/crypto_common.h"
+#include "CryptoArchitectureKit/crypto_sym_cipher.h"
+#include <cstring>
+#include "file.h"
 
-6. OH_Crypto_ErrCode doTestDesEcb()
-7. {
-8. OH_CryptoSymKeyGenerator *genCtx = nullptr;
-9. OH_CryptoSymCipher *encCtx = nullptr;
-10. OH_CryptoSymCipher *decCtx = nullptr;
-11. OH_CryptoSymKey *keyCtx = nullptr;
-12. char *plainText = const_cast<char *>("this is test!");
-13. Crypto_DataBlob input = {.data = (uint8_t *)(plainText), .len = strlen(plainText)};
-14. Crypto_DataBlob encData = {.data = nullptr, .len = 0};
-15. Crypto_DataBlob decData = {.data = nullptr, .len = 0};
+OH_Crypto_ErrCode doTestDesEcb()
+{
+    OH_CryptoSymKeyGenerator *genCtx = nullptr;
+    OH_CryptoSymCipher *encCtx = nullptr;
+    OH_CryptoSymCipher *decCtx = nullptr;
+    OH_CryptoSymKey *keyCtx = nullptr;
+    char *plainText = const_cast<char *>("this is test!");
+    Crypto_DataBlob input = {.data = (uint8_t *)(plainText), .len = strlen(plainText)};
+    Crypto_DataBlob encData = {.data = nullptr, .len = 0};
+    Crypto_DataBlob decData = {.data = nullptr, .len = 0};
 
-17. // 随机生成对称密钥。
-18. OH_Crypto_ErrCode ret = OH_CryptoSymKeyGenerator_Create("DES64", &genCtx);
-19. if (ret != CRYPTO_SUCCESS) {
-20. goto end;
-21. }
-22. ret = OH_CryptoSymKeyGenerator_Generate(genCtx, &keyCtx);
-23. if (ret != CRYPTO_SUCCESS) {
-24. goto end;
-25. }
+    // 随机生成对称密钥。
+    OH_Crypto_ErrCode ret = OH_CryptoSymKeyGenerator_Create("DES64", &genCtx);
+    if (ret != CRYPTO_SUCCESS) {
+        goto end;
+    }
+    ret = OH_CryptoSymKeyGenerator_Generate(genCtx, &keyCtx);
+    if (ret != CRYPTO_SUCCESS) {
+        goto end;
+    }
 
-27. // 加密操作。
-28. ret = OH_CryptoSymCipher_Create("DES64|ECB|PKCS7", &encCtx);
-29. if (ret != CRYPTO_SUCCESS) {
-30. goto end;
-31. }
-32. ret = OH_CryptoSymCipher_Init(encCtx, CRYPTO_ENCRYPT_MODE, keyCtx, nullptr);
-33. if (ret != CRYPTO_SUCCESS) {
-34. goto end;
-35. }
-36. ret = OH_CryptoSymCipher_Final(encCtx, &input, &encData);
-37. if (ret != CRYPTO_SUCCESS) {
-38. goto end;
-39. }
+    // 加密操作。
+    ret = OH_CryptoSymCipher_Create("DES64|ECB|PKCS7", &encCtx);
+    if (ret != CRYPTO_SUCCESS) {
+        goto end;
+    }
+    ret = OH_CryptoSymCipher_Init(encCtx, CRYPTO_ENCRYPT_MODE, keyCtx, nullptr);
+    if (ret != CRYPTO_SUCCESS) {
+        goto end;
+    }
+    ret = OH_CryptoSymCipher_Final(encCtx, &input, &encData);
+    if (ret != CRYPTO_SUCCESS) {
+        goto end;
+    }
 
-41. // 解密操作。
-42. ret = OH_CryptoSymCipher_Create("DES64|ECB|PKCS7", &decCtx);
-43. if (ret != CRYPTO_SUCCESS) {
-44. goto end;
-45. }
-46. ret = OH_CryptoSymCipher_Init(decCtx, CRYPTO_DECRYPT_MODE, keyCtx, nullptr);
-47. if (ret != CRYPTO_SUCCESS) {
-48. goto end;
-49. }
-50. ret = OH_CryptoSymCipher_Final(decCtx, &encData, &decData);
-51. if (ret != CRYPTO_SUCCESS) {
-52. goto end;
-53. }
-54. end:
-55. OH_CryptoSymCipher_Destroy(encCtx);
-56. OH_CryptoSymCipher_Destroy(decCtx);
-57. OH_CryptoSymKeyGenerator_Destroy(genCtx);
-58. OH_CryptoSymKey_Destroy(keyCtx);
-59. OH_Crypto_FreeDataBlob(&encData);
-60. OH_Crypto_FreeDataBlob(&decData);
-61. return ret;
-62. }
+    // 解密操作。
+    ret = OH_CryptoSymCipher_Create("DES64|ECB|PKCS7", &decCtx);
+    if (ret != CRYPTO_SUCCESS) {
+        goto end;
+    }
+    ret = OH_CryptoSymCipher_Init(decCtx, CRYPTO_DECRYPT_MODE, keyCtx, nullptr);
+    if (ret != CRYPTO_SUCCESS) {
+        goto end;
+    }
+    ret = OH_CryptoSymCipher_Final(decCtx, &encData, &decData);
+    if (ret != CRYPTO_SUCCESS) {
+        goto end;
+    }
+end:
+    OH_CryptoSymCipher_Destroy(encCtx);
+    OH_CryptoSymCipher_Destroy(decCtx);
+    OH_CryptoSymKeyGenerator_Destroy(genCtx);
+    OH_CryptoSymKey_Destroy(keyCtx);
+    OH_Crypto_FreeDataBlob(&encData);
+    OH_Crypto_FreeDataBlob(&decData);
+    return ret;
+}
 ```
-
-[des\_ecb\_encryption\_decryption.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Security/CryptoArchitectureKit/EncryptionDecryption/EncryptionDecryptionGuidanceDES/entry/src/main/cpp/types/project/des_ecb_encryption_decryption.cpp#L16-L79)

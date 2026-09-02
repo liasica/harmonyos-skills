@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 用户首选项错误码
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > 错误码 > 用户首选项错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:48+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:da918093dd15afe2eeffb3b26762cc7af025f0998aca5e8baf39d45551b5f916
+scraped_at: 2026-09-02T15:00:44+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7dd9f7d1094081856f843cf50d5936cbe03e14fd2a9819b7c066867041e744f7
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 15500000 内部错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -40,8 +38,6 @@ Inner error.
 
 ## 15500010 删除用户首选项持久化文件失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to delete the user preferences persistence file.
@@ -64,8 +60,6 @@ Failed to delete the user preferences persistence file.
 
 ## 15500019 获取订阅服务失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to obtain the subscription service.
@@ -84,8 +78,6 @@ Failed to obtain the subscription service.
 
 ## 15501001 上下文环境非Stage模型
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The operations is supported in stage mode only.
@@ -103,8 +95,6 @@ The operations is supported in stage mode only.
 请切换当前上下文环境，使用Stage模型。
 
 ## 15501002 Options中传入的dataGroupId参数非法
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 

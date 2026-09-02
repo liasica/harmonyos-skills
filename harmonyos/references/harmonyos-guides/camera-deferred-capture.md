@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-deferr
 title: 分段式拍照(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 分段式拍照(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:58+08:00
-doc_updated_at: 2026-03-23
-content_hash: sha256:8f1749c766fbe1c0788b49d4dd498ab2b1c2a600bfe4091b31792529afca965b
+scraped_at: 2026-09-02T14:59:45+08:00
+doc_updated_at: 2026-06-03
+content_hash: sha256:5ff36940702d44fff38971421824b2e8d8203409fffed3f93284be2bbee11e6e
 ---
 
 分段式拍照是相机的重要功能之一，即应用下发拍照任务后，系统将分多阶段上报不同质量的图片。
@@ -20,7 +20,7 @@ content_hash: sha256:8f1749c766fbe1c0788b49d4dd498ab2b1c2a600bfe4091b31792529afc
 * 通过PhotoOutput，监听photoAssetAvailable回调，获取[photoAccessHelper](../harmonyos-references/arkts-apis-photoaccesshelper.md)的PhotoAsset对象。
 * 通过PhotoAsset对象，调用媒体库相关接口，读取或落盘图片。
 
-说明
+**说明** 
 
 * 分段式拍照能力由**设备**和**模式**决定，不同的设备支持的模式各异，对应分段式能力也有所差异，因此应用在切换设备或模式后分段式能力可能会发生变化。
 * 应用无需主动使能分段式拍照能力，相机框架会在配流期间判断设备和模式是否支持分段式，如果支持会使能该功能。
@@ -31,105 +31,105 @@ content_hash: sha256:8f1749c766fbe1c0788b49d4dd498ab2b1c2a600bfe4091b31792529afc
 
 1. 导入依赖，需要导入相机框架、媒体库、图片相关领域依赖。
 
-   ```
-   1. import { camera } from '@kit.CameraKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
-   3. import { photoAccessHelper } from '@kit.MediaLibraryKit';
+   ```ts
+   import { camera } from '@kit.CameraKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { photoAccessHelper } from '@kit.MediaLibraryKit';
    ```
 2. 确定拍照输出流。
 
    通过[CameraOutputCapability](../harmonyos-references/arkts-apis-camera-i.md#cameraoutputcapability)中的photoProfiles属性，可获取当前设备支持的拍照输出流，通过[createPhotoOutput](../harmonyos-references/arkts-apis-camera-cameramanager.md#createphotooutput11)方法创建拍照输出流。
 
-   ```
-   1. function getPhotoOutput(cameraManager: camera.CameraManager,
-   2. cameraOutputCapability: camera.CameraOutputCapability): camera.PhotoOutput | undefined {
-   3. let photoProfilesArray: Array<camera.Profile> = cameraOutputCapability.photoProfiles;
-   4. if (photoProfilesArray===null || photoProfilesArray===undefined) {
-   5. console.error("createOutput photoProfilesArray is null!");
-   6. return undefined;
-   7. }
-   8. let photoOutput: camera.PhotoOutput | undefined = undefined;
-   9. try {
-   10. if (photoProfilesArray.length > 0) {
-   11. photoOutput = cameraManager.createPhotoOutput(photoProfilesArray[0]);
-   12. } else {
-   13. console.error("the length of photoProfilesArray<=0!");
-   14. return undefined;
-   15. }
-   16. } catch (error) {
-   17. let err = error as BusinessError;
-   18. console.error(`Failed to createPhotoOutput. error: ${err}`);
-   19. }
-   20. return photoOutput;
-   21. }
+   ```ts
+   function getPhotoOutput(cameraManager: camera.CameraManager,
+     cameraOutputCapability: camera.CameraOutputCapability): camera.PhotoOutput | undefined {
+     let photoProfilesArray: Array<camera.Profile> = cameraOutputCapability.photoProfiles;
+     if (photoProfilesArray===null || photoProfilesArray===undefined) {
+       console.error("createOutput photoProfilesArray is null!");
+       return undefined;
+     }
+     let photoOutput: camera.PhotoOutput | undefined = undefined;
+     try {
+      if (photoProfilesArray.length > 0) {
+          photoOutput = cameraManager.createPhotoOutput(photoProfilesArray[0]);
+      } else {
+          console.error("the length of photoProfilesArray<=0!");
+          return undefined;
+      }
+     } catch (error) {
+       let err = error as BusinessError;
+       console.error(`Failed to createPhotoOutput. error: ${err}`);
+     }
+     return photoOutput;
+   }
    ```
 3. 设置拍照photoAssetAvailable的回调。
 
-   注意
+   **注意** 
 
    如果已经注册了photoAssetAvailable回调，并且在Session开始之后又注册了photoAvailable回调，photoAssetAvailable和photoAvailable同时注册，会导致流被重启，仅photoAssetAvailable生效。
 
    不建议开发者同时注册[photoAvailable](../harmonyos-references/arkts-apis-camera-photooutput.md#onphotoavailable11)和[photoAssetAvailable](../harmonyos-references/arkts-apis-camera-photooutput.md#onphotoassetavailable12)。
 
+   ```ts
+   function getPhotoAccessHelper(context: Context): photoAccessHelper.PhotoAccessHelper {
+     let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
+     return phAccessHelper;
+   }
+
+   function onPhotoOutputPhotoAssetAvailable(photoOutput: camera.PhotoOutput, context: Context): void {
+     photoOutput.on('photoAssetAvailable', (err: BusinessError, photoAsset: photoAccessHelper.PhotoAsset) => {
+       if (err) {
+         console.error(`photoAssetAvailable error: ${err}.`);
+         return;
+       }
+       console.info('photoOutPutCallBack photoAssetAvailable');
+       // 开发者可通过photoAsset调用媒体库相关接口，自定义处理图片。
+       // 处理方式一：调用媒体库落盘接口保存一阶段图，二阶段图就绪后媒体库会主动帮应用替换落盘图片。
+       mediaLibSavePhoto(photoAsset, getPhotoAccessHelper(context));
+       // 处理方式二：调用媒体库接口请求图片并注册一阶段图或二阶段图buffer回调，自定义使用。
+       mediaLibRequestBuffer(photoAsset, context);
+     });
+   }
+
+   async function mediaLibSavePhoto(photoAsset: photoAccessHelper.PhotoAsset,
+     phAccessHelper: photoAccessHelper.PhotoAccessHelper): Promise<void> {
+     try {
+       let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = new photoAccessHelper.MediaAssetChangeRequest(photoAsset);
+       assetChangeRequest.saveCameraPhoto();
+       await phAccessHelper.applyChanges(assetChangeRequest);
+       console.info('apply saveCameraPhoto successfully');
+     } catch (err) {
+       console.error(`apply saveCameraPhoto failed with error: ${err.code}, ${err.message}`);
+     }
+   }
+
+   class MediaDataHandler implements photoAccessHelper.MediaAssetDataHandler<ArrayBuffer> {
+     onDataPrepared(data: ArrayBuffer) {
+       if (data === undefined) {
+         console.error('Error occurred when preparing data');
+         return;
+       }
+       // 应用获取到图片buffer后可自定义处理。
+       console.info('on image data prepared');
+     }
+   }
+
+   async function mediaLibRequestBuffer(photoAsset: photoAccessHelper.PhotoAsset, context: Context) {
+     let requestOptions: photoAccessHelper.RequestOptions = {
+       // 按照业务需求配置回图模式。
+       // FAST_MODE：仅接收一阶段低质量图回调。
+       // HIGH_QUALITY_MODE：仅接收二阶段全质量图回调。
+       // BALANCE_MODE：接收一阶段及二阶段图片回调。
+       deliveryMode: photoAccessHelper.DeliveryMode.FAST_MODE,
+     }
+     const handler = new MediaDataHandler();
+     await photoAccessHelper.MediaAssetManager.requestImageData(context, photoAsset, requestOptions, handler);
+     console.info('requestImageData successfully');
+   }
    ```
-   1. function getPhotoAccessHelper(context: Context): photoAccessHelper.PhotoAccessHelper {
-   2. let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
-   3. return phAccessHelper;
-   4. }
 
-   6. function onPhotoOutputPhotoAssetAvailable(photoOutput: camera.PhotoOutput, context: Context): void {
-   7. photoOutput.on('photoAssetAvailable', (err: BusinessError, photoAsset: photoAccessHelper.PhotoAsset) => {
-   8. if (err) {
-   9. console.error(`photoAssetAvailable error: ${err}.`);
-   10. return;
-   11. }
-   12. console.info('photoOutPutCallBack photoAssetAvailable');
-   13. // 开发者可通过photoAsset调用媒体库相关接口，自定义处理图片。
-   14. // 处理方式一：调用媒体库落盘接口保存一阶段图，二阶段图就绪后媒体库会主动帮应用替换落盘图片。
-   15. mediaLibSavePhoto(photoAsset, getPhotoAccessHelper(context));
-   16. // 处理方式二：调用媒体库接口请求图片并注册一阶段图或二阶段图buffer回调，自定义使用。
-   17. mediaLibRequestBuffer(photoAsset, context);
-   18. });
-   19. }
-
-   21. async function mediaLibSavePhoto(photoAsset: photoAccessHelper.PhotoAsset,
-   22. phAccessHelper: photoAccessHelper.PhotoAccessHelper): Promise<void> {
-   23. try {
-   24. let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = new photoAccessHelper.MediaAssetChangeRequest(photoAsset);
-   25. assetChangeRequest.saveCameraPhoto();
-   26. await phAccessHelper.applyChanges(assetChangeRequest);
-   27. console.info('apply saveCameraPhoto successfully');
-   28. } catch (err) {
-   29. console.error(`apply saveCameraPhoto failed with error: ${err.code}, ${err.message}`);
-   30. }
-   31. }
-
-   33. class MediaDataHandler implements photoAccessHelper.MediaAssetDataHandler<ArrayBuffer> {
-   34. onDataPrepared(data: ArrayBuffer) {
-   35. if (data === undefined) {
-   36. console.error('Error occurred when preparing data');
-   37. return;
-   38. }
-   39. // 应用获取到图片buffer后可自定义处理。
-   40. console.info('on image data prepared');
-   41. }
-   42. }
-
-   44. async function mediaLibRequestBuffer(photoAsset: photoAccessHelper.PhotoAsset, context: Context) {
-   45. let requestOptions: photoAccessHelper.RequestOptions = {
-   46. // 按照业务需求配置回图模式。
-   47. // FAST_MODE：仅接收一阶段低质量图回调。
-   48. // HIGH_QUALITY_MODE：仅接收二阶段全质量图回调。
-   49. // BALANCE_MODE：接收一阶段及二阶段图片回调。
-   50. deliveryMode: photoAccessHelper.DeliveryMode.FAST_MODE,
-   51. }
-   52. const handler = new MediaDataHandler();
-   53. await photoAccessHelper.MediaAssetManager.requestImageData(context, photoAsset, requestOptions, handler);
-   54. console.info('requestImageData successfully');
-   55. }
-   ```
-
-   落盘图片参考媒体库接口：[saveCameraPhoto](../harmonyos-references/kts-apis-photoaccesshelper-mediaassetchangerequest.md#savecameraphoto12)
+   落盘图片参考媒体库接口：[saveCameraPhoto](../harmonyos-references/arkts-apis-photoaccesshelper-mediaassetchangerequest.md#savecameraphoto12)
 
    请求图片参考媒体库接口：[requestImageData](../harmonyos-references/arkts-apis-photoaccesshelper-mediaassetmanager.md#requestimagedata11) 和 [onDataPrepared](../harmonyos-references/arkts-apis-photoaccesshelper-mediaassetdatahandler.md#ondataprepared11)
 4. 拍照时的会话配置及触发拍照的方式，与普通拍照相同，请参考[拍照](camera-shooting.md)的步骤4-5。
@@ -140,47 +140,47 @@ content_hash: sha256:8f1749c766fbe1c0788b49d4dd498ab2b1c2a600bfe4091b31792529afc
 
 * 通过注册固定的captureStartWithInfo回调函数获取监听拍照开始结果，photoOutput创建成功时即可监听，相机设备已经准备开始这次拍照时触发，该事件返回此次拍照的captureId。
 
-  ```
-  1. function onPhotoOutputCaptureStart(photoOutput: camera.PhotoOutput): void {
-  2. photoOutput.on('captureStartWithInfo', (err: BusinessError, captureStartInfo: camera.CaptureStartInfo) => {
-  3. if (err !== undefined && err.code !== 0) {
-  4. return;
-  5. }
-  6. console.info(`photo capture started, captureId : ${captureStartInfo.captureId}`);
-  7. });
-  8. }
+  ```ts
+  function onPhotoOutputCaptureStart(photoOutput: camera.PhotoOutput): void {
+    photoOutput.on('captureStartWithInfo', (err: BusinessError, captureStartInfo: camera.CaptureStartInfo) => {
+      if (err !== undefined && err.code !== 0) {
+        return;
+      }
+      console.info(`photo capture started, captureId : ${captureStartInfo.captureId}`);
+    });
+  }
   ```
 * 通过注册固定的captureEnd回调函数获取监听拍照结束结果，photoOutput创建成功时即可监听，该事件返回结果为拍照完全结束后的相关信息[CaptureEndInfo](../harmonyos-references/arkts-apis-camera-i.md#captureendinfo)。
 
-  ```
-  1. function onPhotoOutputCaptureEnd(photoOutput: camera.PhotoOutput): void {
-  2. photoOutput.on('captureEnd', (err: BusinessError, captureEndInfo: camera.CaptureEndInfo) => {
-  3. if (err !== undefined && err.code !== 0) {
-  4. return;
-  5. }
-  6. console.info(`photo capture end, captureId : ${captureEndInfo.captureId}`);
-  7. console.info(`frameCount : ${captureEndInfo.frameCount}`);
-  8. });
-  9. }
+  ```ts
+  function onPhotoOutputCaptureEnd(photoOutput: camera.PhotoOutput): void {
+    photoOutput.on('captureEnd', (err: BusinessError, captureEndInfo: camera.CaptureEndInfo) => {
+      if (err !== undefined && err.code !== 0) {
+        return;
+      }
+      console.info(`photo capture end, captureId : ${captureEndInfo.captureId}`);
+      console.info(`frameCount : ${captureEndInfo.frameCount}`);
+    });
+  }
   ```
 * 通过注册固定的captureReady回调函数获取监听可拍下一张结果，photoOutput创建成功时即可监听，当下一张可拍时触发，该事件返回结果为下一张可拍的相关信息。
 
-  ```
-  1. function onPhotoOutputCaptureReady(photoOutput: camera.PhotoOutput): void {
-  2. photoOutput.on('captureReady', (err: BusinessError) => {
-  3. if (err !== undefined && err.code !== 0) {
-  4. return;
-  5. }
-  6. console.info(`photo capture ready`);
-  7. });
-  8. }
+  ```ts
+  function onPhotoOutputCaptureReady(photoOutput: camera.PhotoOutput): void {
+    photoOutput.on('captureReady', (err: BusinessError) => {
+      if (err !== undefined && err.code !== 0) {
+        return;
+      }
+      console.info(`photo capture ready`);
+    });
+  }
   ```
 * 通过注册固定的error回调函数获取监听拍照输出流的错误结果。callback返回拍照输出接口使用错误时的对应错误码，错误码类型参见[CameraErrorCode](../harmonyos-references/arkts-apis-camera-e.md#cameraerrorcode)。
 
-  ```
-  1. function onPhotoOutputError(photoOutput: camera.PhotoOutput): void {
-  2. photoOutput.on('error', (error: BusinessError) => {
-  3. console.error(`Photo output error code: ${error.code}`);
-  4. });
-  5. }
+  ```ts
+  function onPhotoOutputError(photoOutput: camera.PhotoOutput): void {
+    photoOutput.on('error', (error: BusinessError) => {
+      console.error(`Photo output error code: ${error.code}`);
+    });
+  }
   ```

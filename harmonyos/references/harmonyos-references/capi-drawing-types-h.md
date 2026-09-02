@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: drawing_types.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > drawing_types.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:03+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0ed248f8c5e9f6a83b21584c10082fe77cb7ab71f4100ddc3498b7e8fe280175
+scraped_at: 2026-09-02T15:02:44+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:40497524d468001cc03f49f2ff2fe002e4e10aaa13421af4fcf58273f723ae98
 ---
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
+文件中定义了用于绘制2D图形的数据类型，包括画布、画笔、画刷、位图和路径。这些数据类型提供了2D图形绘制能力，适用于需要在画布上绑定画笔和画刷绘制各种形状、图片和文字的场景，可以灵活定义路径和位图，帮助开发者高效实现自定义图形绘制、图像处理等功能，满足复杂的2D图形绘制需求。
 
-文件中定义了用于绘制2d图形的数据类型，包括画布、画笔、画刷、位图和路径。
+本模块为单线程模型策略，需要调用方自行管理线程安全和上下文状态的切换。
 
 **引用文件：** <native\_drawing/drawing\_types.h>
 
@@ -26,11 +26,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -56,7 +52,7 @@ PhonePC/2in1TabletTVWearable
 | [OH\_Drawing\_RoundRect](capi-drawing-oh-drawing-roundrect.md) | OH\_Drawing\_RoundRect | 用于描述圆角矩形。 |
 | [OH\_Drawing\_Matrix](capi-drawing-oh-drawing-matrix.md) | OH\_Drawing\_Matrix | 定义一个矩阵，用于描述坐标变换。 |
 | [OH\_Drawing\_ShaderEffect](capi-drawing-oh-drawing-shadereffect.md) | OH\_Drawing\_ShaderEffect | 定义一个着色器，用于描述绘制内容的源颜色。 |
-| [OH\_Drawing\_ShadowLayer](capi-drawing-oh-drawing-shadowlayer.md) | OH\_Drawing\_ShadowLayer | 定义一个阴影层，用于描述绘制内容的阴影层。 |
+| [OH\_Drawing\_ShadowLayer](capi-drawing-oh-drawing-shadowlayer.md) | OH\_Drawing\_ShadowLayer | 定义一个阴影层，用于描述绘制内容的阴影效果。 |
 | [OH\_Drawing\_Filter](capi-drawing-oh-drawing-filter.md) | OH\_Drawing\_Filter | 定义一个滤波器，用于存储颜色滤波器，蒙版滤波器和图像滤波器。 |
 | [OH\_Drawing\_MaskFilter](capi-drawing-oh-drawing-maskfilter.md) | OH\_Drawing\_MaskFilter | 定义蒙版滤波器。 |
 | [OH\_Drawing\_ColorFilter](capi-drawing-oh-drawing-colorfilter.md) | OH\_Drawing\_ColorFilter | 定义颜色滤波器，传入一个颜色并返回一个新的颜色。 |
@@ -64,23 +60,21 @@ PhonePC/2in1TabletTVWearable
 | [OH\_Drawing\_FontFeatures](capi-drawing-oh-drawing-fontfeatures.md) | OH\_Drawing\_FontFeatures | 用于描述字体特征容器。字体特征是字体内置的排版规则，控制字形显示。例如：连字、替代字形、上下标等。 |
 | [OH\_Drawing\_MemoryStream](capi-drawing-oh-drawing-memorystream.md) | OH\_Drawing\_MemoryStream | 用于描述内存流。 |
 | [OH\_Drawing\_FontArguments](capi-drawing-oh-drawing-fontarguments.md) | OH\_Drawing\_FontArguments | 用于描述字型参数。 |
-| [OH\_Drawing\_Typeface](capi-drawing-oh-drawing-typeface.md) | OH\_Drawing\_Typeface | 用于描述字形。 |
+| [OH\_Drawing\_Typeface](capi-drawing-oh-drawing-typeface.md) | OH\_Drawing\_Typeface | 用于描述字体。 |
 | [OH\_Drawing\_TextBlob](capi-drawing-oh-drawing-textblob.md) | OH\_Drawing\_TextBlob | 定义一个文本对象，表示将多个文本组合到一个不可变的容器中。每个文本行由字形和位置组成。 |
-| [OH\_Drawing\_Image](capi-drawing-oh-drawing-image.md) | OH\_Drawing\_Image | 定义一个用于描述绘制二维像素数组的图片。 |
-| [OH\_Drawing\_ImageFilter](capi-drawing-oh-drawing-imagefilter.md) | OH\_Drawing\_ImageFilter | 定义图像滤波器, 用于对构成图像像素的所有颜色位进行操作。 |
+| [OH\_Drawing\_Image](capi-drawing-oh-drawing-image.md) | OH\_Drawing\_Image | 定义一个表示二维像素数组的图片，用于绘制操作。 |
+| [OH\_Drawing\_ImageFilter](capi-drawing-oh-drawing-imagefilter.md) | OH\_Drawing\_ImageFilter | 定义图像滤波器，用于对构成图像像素的所有颜色位进行操作。 |
 | [OH\_Drawing\_SamplingOptions](capi-drawing-oh-drawing-samplingoptions.md) | OH\_Drawing\_SamplingOptions | 定义一个采样选项，用于描述图片、位图等图像的采样方法。 |
 | [OH\_Drawing\_TextBlobBuilder](capi-drawing-oh-drawing-textblobbuilder.md) | OH\_Drawing\_TextBlobBuilder | 定义文本构建器，用于构建文本。 |
 | [OH\_Drawing\_GpuContext](capi-drawing-oh-drawing-gpucontext.md) | OH\_Drawing\_GpuContext | 定义图形处理器上下文，用于描述图形处理器后端上下文。 |
 | [OH\_Drawing\_Surface](capi-drawing-oh-drawing-surface.md) | OH\_Drawing\_Surface | 定义surface，用于管理画布绘制的内容。 |
-| [OH\_Drawing\_FontMgr](capi-drawing-oh-drawing-fontmgr.md) | OH\_Drawing\_FontMgr | 定义字体管理类, 用于字体管理。 |
-| [OH\_Drawing\_FontStyleSet](capi-drawing-oh-drawing-fontstyleset.md) | OH\_Drawing\_FontStyleSet | 定义字体样式集, 用于字体样式族匹配。 |
+| [OH\_Drawing\_FontMgr](capi-drawing-oh-drawing-fontmgr.md) | OH\_Drawing\_FontMgr | 定义字体管理类，用于字体管理。 |
+| [OH\_Drawing\_FontStyleSet](capi-drawing-oh-drawing-fontstyleset.md) | OH\_Drawing\_FontStyleSet | 定义字体样式集，用于字体样式族匹配。 |
 | [OH\_Drawing\_RecordCmdUtils](capi-drawing-oh-drawing-recordcmdutils.md) | OH\_Drawing\_RecordCmdUtils | 定义指令录制工具，用于生成录制指令。 |
-| [OH\_Drawing\_RecordCmd](capi-drawing-oh-drawing-recordcmd.md) | OH\_Drawing\_RecordCmd | 定义录制指令类, 用于存储录制指令的集合。 |
-| [OH\_Drawing\_Array](capi-drawing-oh-drawing-array.md) | OH\_Drawing\_Array | 定义数组对象, 用于存储多个同类型对象。 |
+| [OH\_Drawing\_RecordCmd](capi-drawing-oh-drawing-recordcmd.md) | OH\_Drawing\_RecordCmd | 定义录制指令类，用于存储录制指令的集合。 |
+| [OH\_Drawing\_Array](capi-drawing-oh-drawing-array.md) | OH\_Drawing\_Array | 定义数组对象，用于存储多个同类型对象。 |
 
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -91,14 +85,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Drawing\_ColorFormat
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_Drawing_ColorFormat
+```c
+enum OH_Drawing_ColorFormat
 ```
 
 **描述**
@@ -118,10 +108,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_AlphaFormat
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_Drawing_AlphaFormat
+```c
+enum OH_Drawing_AlphaFormat
 ```
 
 **描述**
@@ -134,15 +122,13 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | ALPHA\_FORMAT\_UNKNOWN | 未知格式。 |
 | ALPHA\_FORMAT\_OPAQUE | 位图无透明度。 |
-| ALPHA\_FORMAT\_PREMUL | 每个像素的颜色组件由透明度分量预先乘以。 |
-| ALPHA\_FORMAT\_UNPREMUL | 每个像素的颜色组件未由透明度分量预先乘以。 |
+| ALPHA\_FORMAT\_PREMUL | 每个像素的颜色组件已预先乘以透明度分量。 |
+| ALPHA\_FORMAT\_UNPREMUL | 每个像素的颜色组件未预先乘以透明度分量。 |
 
 ### OH\_Drawing\_BlendMode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_Drawing_BlendMode
+```c
+enum OH_Drawing_BlendMode
 ```
 
 **描述**
@@ -188,27 +174,25 @@ rc : 如果操作3个颜色通道，用rc表示。
 | BLEND\_MODE\_PLUS | r = min(s + d, 1)。 |
 | BLEND\_MODE\_MODULATE | r = s \* d。 |
 | BLEND\_MODE\_SCREEN | 滤色模式，r = s + d - s \* d。 |
-| BLEND\_MODE\_OVERLAY | 叠加模式。 |
+| BLEND\_MODE\_OVERLAY | 叠加模式，根据目标像素的亮度，选择性地应用MULTIPLY或SCREEN模式，增强对比度。 |
 | BLEND\_MODE\_DARKEN | 变暗模式，rc = s + d - max(s \* da, d \* sa), ra = s + (1 - sa) \* d。 |
 | BLEND\_MODE\_LIGHTEN | 变亮模式，rc = s + d - min(s \* da, d \* sa), ra = s + (1 - sa) \* d。 |
-| BLEND\_MODE\_COLOR\_DODGE | 颜色减淡模式。 |
-| BLEND\_MODE\_COLOR\_BURN | 颜色加深模式。 |
-| BLEND\_MODE\_HARD\_LIGHT | 强光模式。 |
-| BLEND\_MODE\_SOFT\_LIGHT | 柔光模式。 |
+| BLEND\_MODE\_COLOR\_DODGE | 颜色减淡模式，通过减小对比度使目标像素变亮以反映源像素。 |
+| BLEND\_MODE\_COLOR\_BURN | 颜色加深模式，通过增加对比度使目标像素变暗以反映源像素。 |
+| BLEND\_MODE\_HARD\_LIGHT | 强光模式，根据源像素的亮度，选择性地应用MULTIPLY或SCREEN模式。 |
+| BLEND\_MODE\_SOFT\_LIGHT | 柔光模式，根据源像素的亮度，柔和地变亮或变暗目标像素。 |
 | BLEND\_MODE\_DIFFERENCE | 差值模式，rc = s + d - 2 \* (min(s \* da, d \* sa)), ra = s + (1 - sa) \* d。 |
 | BLEND\_MODE\_EXCLUSION | 排除模式，rc = s + d - two(s \* d), ra = s + (1 - sa) \* d。 |
 | BLEND\_MODE\_MULTIPLY | 正片叠底，r = s \* (1 - da) + d \* (1 - sa) + s \* d。 |
-| BLEND\_MODE\_HUE | 色相模式。 |
-| BLEND\_MODE\_SATURATION | 饱和度模式。 |
-| BLEND\_MODE\_COLOR | 颜色模式。 |
-| BLEND\_MODE\_LUMINOSITY | 亮度模式。 |
+| BLEND\_MODE\_HUE | 色相模式，使用源像素的色相，目标像素的饱和度和亮度。 |
+| BLEND\_MODE\_SATURATION | 饱和度模式，使用源像素的饱和度，目标像素的色相和亮度。 |
+| BLEND\_MODE\_COLOR | 颜色模式，使用源像素的色相和饱和度，目标像素的亮度。 |
+| BLEND\_MODE\_LUMINOSITY | 亮度模式，使用源像素的亮度，目标像素的色相和饱和度。 |
 
 ### OH\_Drawing\_TextEncoding
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_Drawing_TextEncoding
+```c
+enum OH_Drawing_TextEncoding
 ```
 
 **描述**

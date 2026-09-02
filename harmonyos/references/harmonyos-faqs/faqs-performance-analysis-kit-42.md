@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 如何解决Mac电脑不能识别hdc命令的问题
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > 如何解决Mac电脑不能识别hdc命令的问题
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:14:34+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:c0e3953ff0f40120cc1ec1fdc61e0b75bf8093382545aca9eb01374ff6d96065
+scraped_at: 2026-09-02T14:53:51+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:e9a830a3402fb42c6b25e430be3df5b2b467dfb029f7e7014d8b60ce11d11995
 ---
 
 1. 环境变量因素的解决方法参考如下：
@@ -13,7 +13,7 @@ content_hash: sha256:c0e3953ff0f40120cc1ec1fdc61e0b75bf8093382545aca9eb01374ff6d
    2. 按住Ctrl键，点击左侧窗格中的用户账户名称，然后选择“高级选项”。
    3. 点击"Login Shell"下拉框，然后选择"/bin/bash"以将Bash作为默认shell。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/WduVOVmtSGirJ-30a8DIxw/zh-cn_image_0000002194318532.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/pgrFnrhzSjOcNgqjoojxAw/zh-cn_image_0000002654795831.png "点击放大")
 2. 非环境变量因素的解决方法参见：
    1. 打开终端，输入 cd ~。
    2. 使用 sudo vim .bash\_profile 命令编辑文件。

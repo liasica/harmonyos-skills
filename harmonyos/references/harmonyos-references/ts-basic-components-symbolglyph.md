@@ -3,26 +3,23 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: SymbolGlyph
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > SymbolGlyph
 category: harmonyos-references
-scraped_at: 2026-04-29T13:52:13+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:3ca1f50a08fa899ebc1c62c5767acb609a35dbedfcc0b5853f8950c7f1243bc5
+scraped_at: 2026-09-02T15:01:03+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:0df2128945ce556b486865e09a4bc5124ed76bd52db7da821121f877660f7b81
 ---
 
-显示图标小符号的组件。相关资源可参考[系统图标](../design-guides/system-icons-0000001929854962.md)。
+SymbolGlyph组件用于显示系统预置的图标小符号，支持设置颜色、大小、粗细、渲染策略、动效策略等样式属性，适用于需要在应用中展示系统图标的场景，如导航栏图标、按钮图标、状态指示图标等。相比使用图片资源，SymbolGlyph具有体积小、可动态着色、支持动效等优势。相关资源可参考[系统图标](../design-guides/system-icons-0000001929854962.md)。
 
-说明
+**说明** 
 
-该组件从API version 11开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 该组件从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+* 本模块接口仅可在Stage模型下使用。
 
 ## 子组件
-
-PhonePC/2in1TabletTVWearable
 
 不支持子组件。
 
 ## 接口
-
-PhonePC/2in1TabletTVWearable
 
 SymbolGlyph(value?: Resource)
 
@@ -36,27 +33,23 @@ SymbolGlyph(value?: Resource)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Resource](ts-types.md#resource) | 否 | SymbolGlyph组件的资源名，如 $r('sys.symbol.ohos\_wifi')。 |
+| value | [Resource](ts-types.md#resource) | 否 | SymbolGlyph组件的资源名，如 $r('sys.symbol.ohos\_wifi')。不传入时不显示图标。 |
 
-说明
+**说明** 
 
 $r('sys.symbol.ohos\_wifi')中引用的资源为系统预置，SymbolGlyph仅支持系统预置的symbol资源名，引用非symbol资源将显示异常。
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用属性](ts-component-general-attributes.md)，不支持文本通用属性，仅支持以下特有属性：
 
 ### fontColor
 
-PhonePC/2in1TabletTVWearable
-
 fontColor(value: Array<ResourceColor>)
 
-设置SymbolGlyph组件颜色。
+设置SymbolGlyph组件字体颜色。
 
-说明
+**说明** 
 
 从API version 12开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
@@ -70,19 +63,41 @@ fontColor(value: Array<ResourceColor>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | Array<[ResourceColor](ts-types.md#resourcecolor)> | 是 | SymbolGlyph组件颜色。  默认值：不同渲染策略下默认值不同。 |
+| value | Array<[ResourceColor](ts-types.md#resourcecolor)> | 是 | SymbolGlyph组件字体颜色。  当value为undefined时，使用图标的默认颜色，默认颜色跟随主题。  不同渲染策略下颜色设置效果不同，详见[SymbolRenderingStrategy](ts-basic-components-symbolglyph.md#symbolrenderingstrategy11枚举说明)枚举说明。 |
+
+### fontColor
+
+fontColor(value: Array<ResourceColor | ColorMetrics> | undefined)
+
+设置SymbolGlyph组件的字体颜色，相比[fontColor](ts-basic-components-symbolglyph.md#fontcolor)接口，本接口支持传入[ColorMetrics](js-apis-arkui-graphics.md#colormetrics12)类型参数。
+
+**说明** 
+
+该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
+
+**起始版本：** 26.0.0
+
+**卡片能力：** 从API版本26.0.0开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | Array<[ResourceColor](ts-types.md#resourcecolor) | [ColorMetrics](js-apis-arkui-graphics.md#colormetrics12)> | undefined | 是 | SymbolGlyph组件字体颜色。支持传入ResourceColor或ColorMetrics类型的数组。  当value为undefined时，使用图标的默认颜色，默认颜色跟随主题。 |
 
 ### fontSize
 
-PhonePC/2in1TabletTVWearable
-
 fontSize(value: number | string | Resource)
 
-设置SymbolGlyph组件大小。设置string类型时，支持number类型取值的字符串形式，可以附带单位，例如"10"、"10fp"。
+设置SymbolGlyph组件字体大小。设置string类型时，支持number类型取值的字符串形式，可以附带单位，例如"10"、"10fp"。
 
-组件的图标显示大小由fontSize控制，设置width或height后，其他通用属性仅对组件的占位大小生效。
+组件的图标显示大小由fontSize控制，设置width或height后，其他通用属性仅对组件的占位大小生效。未通过该接口设置时，默认字体大小为16fp。
 
-说明
+**说明** 
 
 从API version 12开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
@@ -96,19 +111,17 @@ fontSize(value: number | string | Resource)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | string | [Resource](ts-types.md#resource) | 是 | SymbolGlyph组件大小。  默认值：16fp  单位：[fp](ts-pixel-units.md)  不支持设置百分比字符串。 |
+| value | number | string | [Resource](ts-types.md#resource) | 是 | SymbolGlyph组件字体大小。  取值范围：[0, +∞)  单位：[fp](ts-pixel-units.md#基本像素单位)  不支持设置百分比字符串。 |
 
 ### fontWeight
 
-PhonePC/2in1TabletTVWearable
-
 fontWeight(value: number | FontWeight | string)
 
-设置SymbolGlyph组件粗细。number类型取值[100,900]，取值间隔为100，默认为400，取值越大，字体越粗。string类型仅支持number类型取值的字符串形式，例如“400”，以及“bold”、“bolder”、“lighter”、“regular” 、“medium”分别对应FontWeight中相应的枚举值。
+设置SymbolGlyph组件字体粗细。未通过该接口设置时，默认字体粗细为FontWeight.Normal（正常粗细，对应数值400）。
 
 sys.symbol.ohos\_lungs图标不支持设置fontWeight。
 
-说明
+**说明** 
 
 从API version 12开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
@@ -122,17 +135,36 @@ sys.symbol.ohos\_lungs图标不支持设置fontWeight。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | [FontWeight](ts-appendix-enums.md#fontweight) | string | 是 | SymbolGlyph组件粗细。  默认值：FontWeight.Normal |
+| value | number | [FontWeight](ts-appendix-enums.md#fontweight) | string | 是 | SymbolGlyph组件字体粗细。  number类型取值[100, 900]，取值间隔为100，默认为400，取值越大，字体越粗。string类型支持number类型取值的字符串形式，例如“400”，以及“bold”、“bolder”、“lighter”、“regular”、“medium”，分别对应FontWeight中相应的枚举值。设置过大可能会在不同字体下有截断。  **说明：**  传入超出取值范围的值时取默认值。传入不符合间隔要求的值时也取默认值（仅支持100整数倍的值）。 |
+
+### fontWeight
+
+fontWeight(value: number | FontWeight | ResourceStr, fontWeightConfigs?: FontWeightConfigs)
+
+设置SymbolGlyph组件图标小符号的粗细，支持通过FontWeightConfigs配置是否开启可变字重调节（启用后可设置非100整数倍的精细字重值，如220、660）、是否开启随设备的字体粗细级别自动更新字重（启用后组件字重随系统字体粗细设置自动调整）。未通过该接口设置时，默认字体粗细为FontWeight.Normal（正常粗细，对应数值400）。
+
+**起始版本：** 26.0.0
+
+**卡片能力：** 从API版本26.0.0开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | [FontWeight](ts-appendix-enums.md#fontweight) | [ResourceStr](ts-types.md#resourcestr) | 是 | SymbolGlyph组件图标小符号的粗细。  number类型取值[100, 900]，取值间隔为100，默认为400，取值越大，字体越粗。string类型仅支持number类型取值的字符串形式，例如“400”，以及“bold”、“bolder”、“lighter”、“regular”、“medium”，分别对应FontWeight中相应的枚举值。设置过大可能会在不同字体下有截断。  传入超出取值范围的值时取默认值。传入不符合间隔要求的值时，若设置fontWeightConfigs的enableVariableFontWeight为true，使用传入值；若设置为false，使用默认值。 |
+| fontWeightConfigs | [FontWeightConfigs](ts-text-common.md#fontweightconfigs24对象说明) | 否 | 字体粗细配置。当需要启用可变字重调节（设置非100整数倍的精细字重值如220、660）或跟随设备字体粗细级别自动更新字重时传入此参数。默认值继承[FontWeightConfigs](ts-text-common.md#fontweightconfigs24对象说明)。 |
 
 ### renderingStrategy
 
-PhonePC/2in1TabletTVWearable
-
 renderingStrategy(value: SymbolRenderingStrategy)
 
-设置SymbolGlyph组件渲染策略。
+设置SymbolGlyph组件渲染策略。未通过该接口设置时，默认渲染策略为SymbolRenderingStrategy.SINGLE。
 
-说明
+**说明** 
 
 从API version 12开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
@@ -146,23 +178,23 @@ renderingStrategy(value: SymbolRenderingStrategy)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [SymbolRenderingStrategy](ts-basic-components-symbolglyph.md#symbolrenderingstrategy11枚举说明) | 是 | SymbolGlyph组件渲染策略。  默认值：SymbolRenderingStrategy.SINGLE |
+| value | [SymbolRenderingStrategy](ts-basic-components-symbolglyph.md#symbolrenderingstrategy11枚举说明) | 是 | SymbolGlyph组件渲染策略。 |
 
 不同渲染策略效果可参考以下示意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/Kw7XpkjATGej2kgntVQkYA/zh-cn_image_0000002558766338.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/s4mXGCDUROOymDSYH_agYw/zh-cn_image_0000002706676054.png)
 
 ### effectStrategy
 
-PhonePC/2in1TabletTVWearable
-
 effectStrategy(value: SymbolEffectStrategy)
 
-设置SymbolGlyph组件动效策略。
+设置SymbolGlyph组件动效策略。未通过该接口设置时，默认动效策略为SymbolEffectStrategy.NONE。
 
-说明
+**说明** 
 
-从API version 12开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
+* 从API version 12开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
+* 动效属性，仅支持使用effectStrategy属性或单个symbolEffect属性，不支持多种动效属性混合使用。
+* 本接口仅支持NONE、SCALE、HIERARCHICAL三种预置动效类型，设置后动效自动播放。如需使用更丰富的动效类型（如出现、消失、弹跳、替换、脉冲动效等）或控制动效的播放状态和触发时机，请使用[symbolEffect](ts-basic-components-symbolglyph.md#symboleffect12)接口。两者不可同时使用，详见[symbolEffect](ts-basic-components-symbolglyph.md#symboleffect12)接口说明。
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
@@ -174,15 +206,17 @@ effectStrategy(value: SymbolEffectStrategy)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [SymbolEffectStrategy](ts-basic-components-symbolglyph.md#symboleffectstrategy11枚举说明) | 是 | SymbolGlyph组件动效策略。  默认值：SymbolEffectStrategy.NONE |
+| value | [SymbolEffectStrategy](ts-basic-components-symbolglyph.md#symboleffectstrategy11枚举说明) | 是 | SymbolGlyph组件动效策略。 |
 
 ### symbolEffect12+
-
-PhonePC/2in1TabletTVWearable
 
 symbolEffect(symbolEffect: SymbolEffect, isActive?: boolean)
 
-设置SymbolGlyph组件动效策略及播放状态。
+设置SymbolGlyph组件动效策略及播放状态。未通过该接口设置时，默认动效为SymbolEffect对象，默认播放状态为false。
+
+**说明** 
+
+动效属性，仅支持使用effectStrategy属性或单个symbolEffect属性，不支持多种动效属性混合使用。
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
@@ -194,16 +228,14 @@ symbolEffect(symbolEffect: SymbolEffect, isActive?: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| symbolEffect | [SymbolEffect](ts-basic-components-symbolglyph.md#symboleffect12对象说明) | 是 | SymbolGlyph组件动效策略。  默认值：[SymbolEffect](ts-basic-components-symbolglyph.md#symboleffect12对象说明) |
-| isActive | boolean | 否 | SymbolGlyph组件动效播放状态。  true表示播放，false表示不播放。  默认值：false |
+| symbolEffect | [SymbolEffect](ts-basic-components-symbolglyph.md#symboleffect12对象说明) | 是 | SymbolGlyph组件动效策略。 |
+| isActive | boolean | 否 | SymbolGlyph组件动效播放状态。  true表示播放，false表示不播放。 |
 
 ### symbolEffect12+
 
-PhonePC/2in1TabletTVWearable
-
 symbolEffect(symbolEffect: SymbolEffect, triggerValue?: number)
 
-设置SymbolGlyph组件动效策略及播放触发器。
+设置SymbolGlyph组件动效策略及播放触发器。未通过该接口设置时，默认动效为SymbolEffect对象，默认触发器值为-1。
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
@@ -215,20 +247,18 @@ symbolEffect(symbolEffect: SymbolEffect, triggerValue?: number)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| symbolEffect | [SymbolEffect](ts-basic-components-symbolglyph.md#symboleffect12对象说明) | 是 | SymbolGlyph组件动效策略。  默认值：[SymbolEffect](ts-basic-components-symbolglyph.md#symboleffect12对象说明) |
+| symbolEffect | [SymbolEffect](ts-basic-components-symbolglyph.md#symboleffect12对象说明) | 是 | SymbolGlyph组件动效策略。 |
 | triggerValue | number | 否 | SymbolGlyph组件动效播放触发器，在数值变更时触发动效。  如果首次不希望触发动效，设置-1。 |
 
-说明
+**说明** 
 
 动效属性，仅支持使用effectStrategy属性或单个symbolEffect属性，不支持多种动效属性混合使用。
 
 ### minFontScale18+
 
-PhonePC/2in1TabletTVWearable
-
 minFontScale(scale: Optional<number | Resource>)
 
-设置SymbolGlyph组件最小的字体缩放倍数。
+设置SymbolGlyph组件最小的字体缩放倍数。适用于需要防止图标在用户字体缩放设置过小时变得不可识别的场景，例如确保图标在任意系统字体设置下仍保持最小可读尺寸。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -238,15 +268,13 @@ minFontScale(scale: Optional<number | Resource>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| scale | [Optional](ts-universal-attributes-custom-property.md#optionalt)<number | [Resource](ts-types.md#resource)> | 是 | SymbolGlyph组件最小的字体缩放倍数。  取值范围：[0, 1]  设置为0，缩放最小。  **说明：**  设置的值小于0时，按值为0处理。设置的值大于1，按值为1处理。异常值默认不生效。 |
+| scale | [Optional](ts-universal-attributes-custom-property.md#optionalt)<number | [Resource](ts-types.md#resource)> | 是 | SymbolGlyph组件最小的字体缩放倍数。  取值范围：[0, 1]  设置为0，缩放最小。  **说明：**  设置的值小于0时，按值为0处理。设置的值大于1时，按值为1处理。异常值默认不生效。未设置时，不限制最小缩放倍数。 |
 
 ### maxFontScale18+
 
-PhonePC/2in1TabletTVWearable
-
 maxFontScale(scale: Optional<number | Resource>)
 
-设置SymbolGlyph组件最大的字体缩放倍数。
+设置SymbolGlyph组件最大的字体缩放倍数。适用于需要防止图标在用户字体缩放设置过大时超出布局容器或破坏界面一致性的场景，例如限制图标在小尺寸容器中的最大显示尺寸。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -256,17 +284,15 @@ maxFontScale(scale: Optional<number | Resource>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| scale | [Optional](ts-universal-attributes-custom-property.md#optionalt)<number | [Resource](ts-types.md#resource)> | 是 | SymbolGlyph组件最大的字体缩放倍数。  取值范围：[1, +∞)  **说明：**  设置的值小于1时，按值为1处理，异常值默认不生效。 |
+| scale | [Optional](ts-universal-attributes-custom-property.md#optionalt)<number | [Resource](ts-types.md#resource)> | 是 | SymbolGlyph组件最大的字体缩放倍数。  取值范围：[1, +∞)  **说明：**  设置的值小于1时，按值为1处理。未设置时，不限制最大缩放倍数。 |
 
 ### shaderStyle20+
-
-PhonePC/2in1TabletTVWearable
 
 shaderStyle(shader: Array<ShaderStyle | undefined> | ShaderStyle)
 
 设置SymbolGlyph组件的渐变色效果。
 
-可以显示为径向渐变[RadialGradientStyle](ts-text-common.md#radialgradientstyle20)或线性渐变[LinearGradientStyle](ts-text-common.md#lineargradientstyle20)或纯色[ColorShaderStyle](ts-text-common.md#colorshaderstyle20)的效果，shaderStyle的优先级高于[fontColor](ts-basic-components-symbolspan.md#fontcolor)和AI识别，纯色建议使用[fontColor](ts-basic-components-symbolspan.md#fontcolor)。
+可以显示为径向渐变[RadialGradientStyle](ts-text-common.md#radialgradientstyle20)或线性渐变[LinearGradientStyle](ts-text-common.md#lineargradientstyle20)或纯色[ColorShaderStyle](ts-text-common.md#colorshaderstyle20)，shaderStyle的优先级高于[fontColor](ts-basic-components-symbolglyph.md#fontcolor)和AI识别，纯色建议使用[fontColor](ts-basic-components-symbolglyph.md#fontcolor)。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -276,15 +302,13 @@ shaderStyle(shader: Array<ShaderStyle | undefined> | ShaderStyle)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| shader | Array<[ShaderStyle](ts-text-common.md#shaderstyle20) | undefined> | [ShaderStyle](ts-text-common.md#shaderstyle20) | 是 | 径向渐变或线性渐变或纯色。  传入ShaderStyle时，覆盖所有层；传入数组时，数据项是ShaderStyle，则应用该层；数组项是undefined，则该层使用SymbolGlyph默认颜色，未设置的层也应用默认颜色。根据传入的参数区分处理径向渐变[RadialGradientStyle](ts-text-common.md#radialgradientstyle20)或线性渐变[LinearGradientStyle](ts-text-common.md#lineargradientstyle20)或纯色[ColorShaderStyle](ts-text-common.md#colorshaderstyle20)，最终设置到SymbolGlyph组件上显示为渐变色效果。  **说明：**  单位：[vp](ts-pixel-units.md)  中心点请按百分比使用。如果使用的是非百分比（例如10PX），效果等同于设置1000%。  半径建议使用百分比。  百分比是基于图标大小的百分比，建议取值范围[0, 1)。 |
+| shader | Array<[ShaderStyle](ts-text-common.md#shaderstyle20) | undefined> | [ShaderStyle](ts-text-common.md#shaderstyle20) | 是 | 径向渐变或线性渐变或纯色。  传入ShaderStyle时，覆盖所有层；传入数组时，数据项是ShaderStyle，则应用该层；数组项是undefined，则该层使用SymbolGlyph默认颜色，未设置的层也应用默认颜色。根据传入的参数区分处理径向渐变[RadialGradientStyle](ts-text-common.md#radialgradientstyle20)或线性渐变[LinearGradientStyle](ts-text-common.md#lineargradientstyle20)或纯色[ColorShaderStyle](ts-text-common.md#colorshaderstyle20)，最终设置到SymbolGlyph组件上显示为渐变色效果。  **说明：**  中心点请按百分比使用。如果使用的是非百分比（例如10PX），效果等同于设置1000%。  半径建议使用百分比。  百分比是基于图标大小的百分比，建议取值范围[0, 1)。 |
 
 ### symbolShadow20+
 
-PhonePC/2in1TabletTVWearable
-
 symbolShadow(shadow: Optional<ShadowOptions>)
 
-设置SymbolGlyph组件的阴影效果。
+设置SymbolGlyph组件的阴影效果。未通过该接口设置时，默认阴影效果为{radius: 0,color: Color.Black,offsetX: 0,offsetY: 0}。
 
 **卡片能力：** 从API version 20开始，该接口支持在ArkTS卡片中使用。
 
@@ -296,11 +320,9 @@ symbolShadow(shadow: Optional<ShadowOptions>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| shadow | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[ShadowOptions](ts-universal-attributes-image-effect.md#shadowoptions对象说明)> | 是 | SymbolGlyph组件的阴影效果。  单位：[vp](ts-pixel-units.md)  默认值：{  radius：0,  color：Color.Black,  offsetX：0,  offsetY：0  }  不支持fill、type属性和color中的ColoringStrategy枚举值。 |
+| shadow | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[ShadowOptions](ts-universal-attributes-image-effect.md#shadowoptions对象说明)> | 是 | SymbolGlyph组件的阴影效果。  单位：[vp](ts-pixel-units.md#基本像素单位)  **说明：**  仅支持ShadowOptions中的radius、color、offsetX、offsetY属性，不支持fill、type属性和color中的ColoringStrategy枚举值。 |
 
 ## ScaleSymbolEffect12+
-
-PhonePC/2in1TabletTVWearable
 
 ScaleSymbolEffect继承自父类SymbolEffect。
 
@@ -314,12 +336,10 @@ ScaleSymbolEffect继承自父类SymbolEffect。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| scope | [EffectScope](ts-basic-components-symbolglyph.md#effectscope12枚举说明) | 否 | 是 | 动效范围。  默认值：EffectScope.LAYER |
-| direction | [EffectDirection](ts-basic-components-symbolglyph.md#effectdirection12枚举说明) | 否 | 是 | 动效方向。  默认值：EffectDirection.DOWN |
+| scope | [EffectScope](ts-basic-components-symbolglyph.md#effectscope12枚举说明) | 否 | 是 | 动效范围。具体枚举值及说明请参考EffectScope枚举说明。  默认值：EffectScope.LAYER |
+| direction | [EffectDirection](ts-basic-components-symbolglyph.md#effectdirection12枚举说明) | 否 | 是 | 动效方向。具体枚举值及说明请参考EffectDirection枚举说明。  默认值：EffectDirection.DOWN |
 
 ### constructor12+
-
-PhonePC/2in1TabletTVWearable
 
 constructor(scope?: EffectScope, direction?: EffectDirection)
 
@@ -335,12 +355,10 @@ ScaleSymbolEffect的构造函数，缩放动效。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| scope | [EffectScope](ts-basic-components-symbolglyph.md#effectscope12枚举说明) | 否 | 动效范围。  默认值：EffectScope.LAYER |
-| direction | [EffectDirection](ts-basic-components-symbolglyph.md#effectdirection12枚举说明) | 否 | 动效方向。  默认值：EffectDirection.DOWN |
+| scope | [EffectScope](ts-basic-components-symbolglyph.md#effectscope12枚举说明) | 否 | 动效范围。具体枚举值及说明请参考EffectScope枚举说明。  默认值：EffectScope.LAYER |
+| direction | [EffectDirection](ts-basic-components-symbolglyph.md#effectdirection12枚举说明) | 否 | 动效方向。具体枚举值及说明请参考EffectDirection枚举说明。  默认值：EffectDirection.DOWN |
 
 ## HierarchicalSymbolEffect12+
-
-PhonePC/2in1TabletTVWearable
 
 HierarchicalSymbolEffect继承自父类SymbolEffect。
 
@@ -358,8 +376,6 @@ HierarchicalSymbolEffect继承自父类SymbolEffect。
 
 ### constructor12+
 
-PhonePC/2in1TabletTVWearable
-
 constructor(fillStyle?: EffectFillStyle)
 
 HierarchicalSymbolEffect的构造函数，层级动效。
@@ -374,11 +390,9 @@ HierarchicalSymbolEffect的构造函数，层级动效。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| fillStyle | [EffectFillStyle](ts-basic-components-symbolglyph.md#effectfillstyle12枚举说明) | 否 | 动效模式。  默认值：EffectFillStyle.CUMULATIVE |
+| fillStyle | [EffectFillStyle](ts-basic-components-symbolglyph.md#effectfillstyle12枚举说明) | 否 | 动效模式。具体枚举值及说明请参考EffectFillStyle枚举说明。  默认值：EffectFillStyle.CUMULATIVE |
 
 ## AppearSymbolEffect12+
-
-PhonePC/2in1TabletTVWearable
 
 AppearSymbolEffect继承自父类SymbolEffect。
 
@@ -392,11 +406,9 @@ AppearSymbolEffect继承自父类SymbolEffect。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| scope | [EffectScope](ts-basic-components-symbolglyph.md#effectscope12枚举说明) | 否 | 是 | 动效范围。  默认值：EffectScope.LAYER |
+| scope | [EffectScope](ts-basic-components-symbolglyph.md#effectscope12枚举说明) | 否 | 是 | 动效范围。具体枚举值及说明请参考EffectScope枚举说明。  默认值：EffectScope.LAYER |
 
 ### constructor12+
-
-PhonePC/2in1TabletTVWearable
 
 constructor(scope?: EffectScope)
 
@@ -412,11 +424,9 @@ AppearSymbolEffect的构造函数，出现动效。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| scope | [EffectScope](ts-basic-components-symbolglyph.md#effectscope12枚举说明) | 否 | 动效范围。  默认值：EffectScope.LAYER |
+| scope | [EffectScope](ts-basic-components-symbolglyph.md#effectscope12枚举说明) | 否 | 动效范围。具体枚举值及说明请参考EffectScope枚举说明。  默认值：EffectScope.LAYER |
 
 ## DisappearSymbolEffect12+
-
-PhonePC/2in1TabletTVWearable
 
 DisappearSymbolEffect继承自父类SymbolEffect。
 
@@ -430,11 +440,9 @@ DisappearSymbolEffect继承自父类SymbolEffect。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| scope | [EffectScope](ts-basic-components-symbolglyph.md#effectscope12枚举说明) | 否 | 是 | 动效范围。  默认值：EffectScope.LAYER |
+| scope | [EffectScope](ts-basic-components-symbolglyph.md#effectscope12枚举说明) | 否 | 是 | 动效范围。具体枚举值及说明请参考EffectScope枚举说明。  默认值：EffectScope.LAYER |
 
 ### constructor12+
-
-PhonePC/2in1TabletTVWearable
 
 constructor(scope?: EffectScope)
 
@@ -450,11 +458,9 @@ DisappearSymbolEffect的构造函数，消失动效。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| scope | [EffectScope](ts-basic-components-symbolglyph.md#effectscope12枚举说明) | 否 | 动效范围。  默认值：EffectScope.LAYER |
+| scope | [EffectScope](ts-basic-components-symbolglyph.md#effectscope12枚举说明) | 否 | 动效范围。具体枚举值及说明请参考EffectScope枚举说明。  默认值：EffectScope.LAYER |
 
 ## BounceSymbolEffect12+
-
-PhonePC/2in1TabletTVWearable
 
 BounceSymbolEffect继承自父类SymbolEffect。
 
@@ -468,12 +474,10 @@ BounceSymbolEffect继承自父类SymbolEffect。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| scope | [EffectScope](ts-basic-components-symbolglyph.md#effectscope12枚举说明) | 否 | 是 | 动效范围。  默认值：EffectScope.LAYER |
-| direction | [EffectDirection](ts-basic-components-symbolglyph.md#effectdirection12枚举说明) | 否 | 是 | 动效方向。  默认值：EffectDirection.DOWN |
+| scope | [EffectScope](ts-basic-components-symbolglyph.md#effectscope12枚举说明) | 否 | 是 | 动效范围。具体枚举值及说明请参考EffectScope枚举说明。  默认值：EffectScope.LAYER |
+| direction | [EffectDirection](ts-basic-components-symbolglyph.md#effectdirection12枚举说明) | 否 | 是 | 动效方向。具体枚举值及说明请参考EffectDirection枚举说明。  默认值：EffectDirection.DOWN |
 
 ### constructor12+
-
-PhonePC/2in1TabletTVWearable
 
 constructor(scope?: EffectScope, direction?: EffectDirection)
 
@@ -489,12 +493,10 @@ BounceSymbolEffect的构造函数，弹跳动效。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| scope | [EffectScope](ts-basic-components-symbolglyph.md#effectscope12枚举说明) | 否 | 动效范围。  默认值：EffectScope.LAYER |
-| direction | [EffectDirection](ts-basic-components-symbolglyph.md#effectdirection12枚举说明) | 否 | 动效方向。  默认值：EffectDirection.DOWN |
+| scope | [EffectScope](ts-basic-components-symbolglyph.md#effectscope12枚举说明) | 否 | 动效范围。具体枚举值及说明请参考EffectScope枚举说明。  默认值：EffectScope.LAYER |
+| direction | [EffectDirection](ts-basic-components-symbolglyph.md#effectdirection12枚举说明) | 否 | 动效方向。具体枚举值及说明请参考EffectDirection枚举说明。  默认值：EffectDirection.DOWN |
 
 ## ReplaceSymbolEffect12+
-
-PhonePC/2in1TabletTVWearable
 
 ReplaceSymbolEffect继承自父类SymbolEffect。
 
@@ -506,18 +508,12 @@ ReplaceSymbolEffect继承自父类SymbolEffect。
 
 ### 属性
 
-PhonePC/2in1TabletTVWearable
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| scope | [EffectScope](ts-basic-components-symbolglyph.md#effectscope12枚举说明) | 否 | 是 | 动效范围。  默认值：EffectScope.LAYER  **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| replaceType20+ | [ReplaceEffectType](ts-basic-components-symbolglyph.md#replaceeffecttype20枚举说明) | 否 | 是 | 替换动效类型。  默认值：ReplaceEffectType.SEQUENTIAL  **卡片能力：** 从API version 20开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
+| scope | [EffectScope](ts-basic-components-symbolglyph.md#effectscope12枚举说明) | 否 | 是 | 动效范围。具体枚举值及说明请参考EffectScope枚举说明。  默认值：EffectScope.LAYER  **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| replaceType20+ | [ReplaceEffectType](ts-basic-components-symbolglyph.md#replaceeffecttype20枚举说明) | 否 | 是 | 替换动效类型。具体枚举值及说明请参考ReplaceEffectType枚举说明。  默认值：ReplaceEffectType.SEQUENTIAL  **卡片能力：** 从API version 20开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
 
 ### constructor12+
-
-PhonePC/2in1TabletTVWearable
 
 constructor(scope?: EffectScope)
 
@@ -533,11 +529,9 @@ ReplaceSymbolEffect的构造函数，替换动效。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| scope | [EffectScope](ts-basic-components-symbolglyph.md#effectscope12枚举说明) | 否 | 动效范围。  默认值：EffectScope.LAYER |
+| scope | [EffectScope](ts-basic-components-symbolglyph.md#effectscope12枚举说明) | 否 | 动效范围。具体枚举值及说明请参考EffectScope枚举说明。  默认值：EffectScope.LAYER |
 
 ### constructor20+
-
-PhonePC/2in1TabletTVWearable
 
 constructor(scope?: EffectScope, replaceType?: ReplaceEffectType)
 
@@ -558,8 +552,6 @@ ReplaceSymbolEffect的构造函数，替换动效。支持指定具体的替换�
 
 ## SymbolEffectStrategy11+枚举说明
 
-PhonePC/2in1TabletTVWearable
-
 动效类型的枚举值。设置动效后，动效启动即生效，无需触发。
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
@@ -575,8 +567,6 @@ PhonePC/2in1TabletTVWearable
 | HIERARCHICAL | 2 | 层级动效。 |
 
 ## SymbolRenderingStrategy11+枚举说明
-
-PhonePC/2in1TabletTVWearable
 
 渲染模式的枚举值。
 
@@ -594,8 +584,6 @@ PhonePC/2in1TabletTVWearable
 
 ## SymbolEffect12+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 定义SymbolEffect类。
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
@@ -606,8 +594,6 @@ PhonePC/2in1TabletTVWearable
 
 ## PulseSymbolEffect12+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 PulseSymbolEffect继承自父类SymbolEffect，脉冲动效。
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
@@ -617,8 +603,6 @@ PulseSymbolEffect继承自父类SymbolEffect，脉冲动效。
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ## EffectDirection12+枚举说明
-
-PhonePC/2in1TabletTVWearable
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
@@ -633,8 +617,6 @@ PhonePC/2in1TabletTVWearable
 
 ## EffectScope12+枚举说明
 
-PhonePC/2in1TabletTVWearable
-
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -648,8 +630,6 @@ PhonePC/2in1TabletTVWearable
 
 ## EffectFillStyle12+枚举说明
 
-PhonePC/2in1TabletTVWearable
-
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -662,8 +642,6 @@ PhonePC/2in1TabletTVWearable
 | ITERATIVE | 1 | 迭代模式。 |
 
 ## ReplaceEffectType20+枚举说明
-
-PhonePC/2in1TabletTVWearable
 
 替换动效类型的枚举值。
 
@@ -681,344 +659,454 @@ PhonePC/2in1TabletTVWearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用事件](ts-component-general-events.md)。
 
 ## 示例
-
-PhonePC/2in1TabletTVWearable
 
 ### 示例1（设置渲染和动效策略）
 
 从API version 11开始，该示例通过[renderingStrategy](ts-basic-components-symbolglyph.md#renderingstrategy)、[effectStrategy](ts-basic-components-symbolglyph.md#effectstrategy)属性展示了不同的渲染和动效策略。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Row() {
+        Column() {
+          Text('Light')
+          SymbolGlyph($r('sys.symbol.ohos_trash'))
+            .fontWeight(FontWeight.Lighter)
+            .fontSize(96)
+        }
+
+        Column() {
+          Text('Normal')
+          SymbolGlyph($r('sys.symbol.ohos_trash'))
+            .fontWeight(FontWeight.Normal)
+            .fontSize(96)
+        }
+
+        Column() {
+          Text('Bold')
+          SymbolGlyph($r('sys.symbol.ohos_trash'))
+            .fontWeight(FontWeight.Bold)
+            .fontSize(96)
+        }
+      }
+
+      Row() {
+        Column() {
+          Text('单色')
+          SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
+            .fontSize(96)
+            .renderingStrategy(SymbolRenderingStrategy.SINGLE)
+            .fontColor([Color.Black, Color.Green, Color.White])
+        }
+
+        Column() {
+          Text('多色')
+          SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
+            .fontSize(96)
+            .renderingStrategy(SymbolRenderingStrategy.MULTIPLE_COLOR)
+            .fontColor([Color.Black, Color.Green, Color.White])
+        }
+
+        Column() {
+          Text('分层')
+          SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
+            .fontSize(96)
+            .renderingStrategy(SymbolRenderingStrategy.MULTIPLE_OPACITY)
+            .fontColor([Color.Black, Color.Green, Color.White])
+        }
+      }
+
+      Row() {
+        Column() {
+          Text('无动效')
+          SymbolGlyph($r('sys.symbol.ohos_wifi'))
+            .fontSize(96)
+            .effectStrategy(SymbolEffectStrategy.NONE)
+        }
+
+        Column() {
+          Text('整体缩放动效')
+          SymbolGlyph($r('sys.symbol.ohos_wifi'))
+            .fontSize(96)
+            .effectStrategy(SymbolEffectStrategy.SCALE)
+        }
+
+        Column() {
+          Text('层级动效')
+          SymbolGlyph($r('sys.symbol.ohos_wifi'))
+            .fontSize(96)
+            .effectStrategy(SymbolEffectStrategy.HIERARCHICAL)
+        }
+      }
+    }
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct Index {
-5. build() {
-6. Column() {
-7. Row() {
-8. Column() {
-9. Text("Light")
-10. SymbolGlyph($r('sys.symbol.ohos_trash'))
-11. .fontWeight(FontWeight.Lighter)
-12. .fontSize(96)
-13. }
 
-15. Column() {
-16. Text("Normal")
-17. SymbolGlyph($r('sys.symbol.ohos_trash'))
-18. .fontWeight(FontWeight.Normal)
-19. .fontSize(96)
-20. }
-
-22. Column() {
-23. Text("Bold")
-24. SymbolGlyph($r('sys.symbol.ohos_trash'))
-25. .fontWeight(FontWeight.Bold)
-26. .fontSize(96)
-27. }
-28. }
-
-30. Row() {
-31. Column() {
-32. Text("单色")
-33. SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
-34. .fontSize(96)
-35. .renderingStrategy(SymbolRenderingStrategy.SINGLE)
-36. .fontColor([Color.Black, Color.Green, Color.White])
-37. }
-
-39. Column() {
-40. Text("多色")
-41. SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
-42. .fontSize(96)
-43. .renderingStrategy(SymbolRenderingStrategy.MULTIPLE_COLOR)
-44. .fontColor([Color.Black, Color.Green, Color.White])
-45. }
-
-47. Column() {
-48. Text("分层")
-49. SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
-50. .fontSize(96)
-51. .renderingStrategy(SymbolRenderingStrategy.MULTIPLE_OPACITY)
-52. .fontColor([Color.Black, Color.Green, Color.White])
-53. }
-54. }
-
-56. Row() {
-57. Column() {
-58. Text("无动效")
-59. SymbolGlyph($r('sys.symbol.ohos_wifi'))
-60. .fontSize(96)
-61. .effectStrategy(SymbolEffectStrategy.NONE)
-62. }
-
-64. Column() {
-65. Text("整体缩放动效")
-66. SymbolGlyph($r('sys.symbol.ohos_wifi'))
-67. .fontSize(96)
-68. .effectStrategy(SymbolEffectStrategy.SCALE)
-69. }
-
-71. Column() {
-72. Text("层级动效")
-73. SymbolGlyph($r('sys.symbol.ohos_wifi'))
-74. .fontSize(96)
-75. .effectStrategy(SymbolEffectStrategy.HIERARCHICAL)
-76. }
-77. }
-78. }
-79. }
-80. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/_ghKFWWiQkqHZ7Fwx2bFYg/zh-cn_image_0000002589246149.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/ObNBM0N0RluNhHaH3hiZ1A/zh-cn_image_0000002706676056.gif)
 
 ### 示例2（设置动效和阴影）
 
-从API version 12开始，该示例通过[symbolEffect](ts-basic-components-symbolglyph.md#symboleffect12)属性展示了各种动效的效果以及结合[symbolShadow](ts-basic-components-symbolglyph.md#symbolshadow20)（从API version 20开始）的阴影效果。
+从API version 12开始，该示例通过[symbolEffect](ts-basic-components-symbolglyph.md#symboleffect12)属性展示了各种动效的效果以及结合[symbolShadow](ts-basic-components-symbolglyph.md#symbolshadow20)（从API version 20开始）的阴影效果。其中禁用动效和快速替换动效需要API version 20及以上版本支持。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct Index {
+  @State isActive: boolean = true;
+  @State triggerValueReplace: number = 0;
+  @State triggerValueReplace1: number = 0;
+  @State triggerValueReplace2: number = 0;
+  @State renderMode: SymbolRenderingStrategy = SymbolRenderingStrategy.MULTIPLE_COLOR;
+
+  replaceFlag: boolean = true;
+  replaceFlag1: boolean = true;
+  replaceFlag2: boolean = true;
+
+  options: ShadowOptions = {
+    radius: 10.0,
+    color: Color.Blue,
+    offsetX: 10,
+    offsetY: 10,
+  };
+
+  build() {
+    Column() {
+      Row() {
+        Column() {
+          Text('可变颜色动效')
+          SymbolGlyph($r('sys.symbol.ohos_wifi'))
+            .fontSize(96)
+            .symbolEffect(new HierarchicalSymbolEffect(EffectFillStyle.ITERATIVE), this.isActive)
+          Button(this.isActive ? '关闭' : '播放')
+            .onClick(() => {
+              this.isActive = !this.isActive;
+            })
+        }
+        .margin({ right: 20 })
+        Column() {
+          Text('替换动效')
+          SymbolGlyph(this.replaceFlag ? $r('sys.symbol.checkmark_circle') : $r('sys.symbol.repeat_1'))
+            .fontSize(96)
+            .symbolEffect(new ReplaceSymbolEffect(EffectScope.WHOLE), this.triggerValueReplace)
+          Button('trigger')
+            .onClick(() => {
+              this.replaceFlag = !this.replaceFlag;
+              this.triggerValueReplace = this.triggerValueReplace + 1;
+            })
+        }
+        .margin({ right: 20 })
+      }
+
+      Row() {
+        Column() {
+          Text('禁用动效')
+          SymbolGlyph(this.replaceFlag1 ? $r('sys.symbol.eye_slash') : $r('sys.symbol.eye'))
+            .fontSize(96)
+            .renderingStrategy(this.renderMode)
+            .symbolEffect(new ReplaceSymbolEffect(EffectScope.LAYER, ReplaceEffectType.SLASH_OVERLAY), this.triggerValueReplace1)
+          Button('trigger')
+            .onClick(() => {
+              this.replaceFlag1 = !this.replaceFlag1;
+              this.triggerValueReplace1 = this.triggerValueReplace1 + 1;
+            })
+        }
+        .margin({ right: 20 })
+        Column() {
+          Text('快速替换动效')
+          SymbolGlyph(this.replaceFlag2 ? $r('sys.symbol.checkmark_circle') : $r('sys.symbol.repeat_1'))
+            .fontSize(96)
+            .symbolEffect(new ReplaceSymbolEffect(EffectScope.WHOLE, ReplaceEffectType.CROSS_FADE), this.triggerValueReplace2)
+          Button('trigger')
+            .onClick(() => {
+              this.replaceFlag2 = !this.replaceFlag2;
+              this.triggerValueReplace2 = this.triggerValueReplace2 + 1;
+            })
+        }
+        .margin({ right: 20 })
+        Column() {
+          Text('阴影能力')
+          SymbolGlyph($r('sys.symbol.ohos_wifi'))
+            .fontSize(96)
+            .symbolEffect(new HierarchicalSymbolEffect(EffectFillStyle.ITERATIVE), this.isActive)
+            .symbolShadow(this.options)
+          Button(this.isActive ? '关闭' : '播放')
+            .onClick(() => {
+              this.isActive = !this.isActive;
+            })
+        }
+        .margin({ right: 20 })
+      }
+    }
+    .margin({
+      left: 45,
+      top: 50
+    })
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct Index {
-5. @State isActive: boolean = true;
-6. @State triggerValueReplace: number = 0;
-7. @State triggerValueReplace1: number = 0;
-8. @State triggerValueReplace2: number = 0;
-9. @State renderMode: number = 1;
 
-11. replaceFlag: boolean = true;
-12. replaceFlag1: boolean = true;
-13. replaceFlag2: boolean = true;
-
-15. options: ShadowOptions = {
-16. radius: 10.0,
-17. color: Color.Blue,
-18. offsetX: 10,
-19. offsetY: 10,
-20. };
-
-22. build() {
-23. Column() {
-24. Row() {
-25. Column() {
-26. Text("可变颜色动效")
-27. SymbolGlyph($r('sys.symbol.ohos_wifi'))
-28. .fontSize(96)
-29. .symbolEffect(new HierarchicalSymbolEffect(EffectFillStyle.ITERATIVE), this.isActive)
-30. Button(this.isActive ? '关闭' : '播放')
-31. .onClick(() => {
-32. this.isActive = !this.isActive;
-33. })
-34. }
-35. .margin({ right: 20 })
-36. Column() {
-37. Text("替换动效")
-38. SymbolGlyph(this.replaceFlag ? $r('sys.symbol.checkmark_circle') : $r('sys.symbol.repeat_1'))
-39. .fontSize(96)
-40. .symbolEffect(new ReplaceSymbolEffect(EffectScope.WHOLE), this.triggerValueReplace)
-41. Button('trigger')
-42. .onClick(() => {
-43. this.replaceFlag = !this.replaceFlag;
-44. this.triggerValueReplace = this.triggerValueReplace + 1;
-45. })
-46. }
-47. .margin({ right: 20 })
-48. }
-
-50. Row() {
-51. Column() {
-52. Text("禁用动效")
-53. SymbolGlyph(this.replaceFlag1 ? $r('sys.symbol.eye_slash') : $r('sys.symbol.eye'))
-54. .fontSize(96)
-55. .renderingStrategy(this.renderMode)
-56. .symbolEffect(new ReplaceSymbolEffect(EffectScope.LAYER, ReplaceEffectType.SLASH_OVERLAY), this.triggerValueReplace1)
-57. Button('trigger')
-58. .onClick(() => {
-59. this.replaceFlag1 = !this.replaceFlag1;
-60. this.triggerValueReplace1 = this.triggerValueReplace1 + 1;
-61. })
-62. }
-63. .margin({ right: 20 })
-64. Column() {
-65. Text("快速替换动效")
-66. SymbolGlyph(this.replaceFlag2 ? $r('sys.symbol.checkmark_circle') : $r('sys.symbol.repeat_1'))
-67. .fontSize(96)
-68. .symbolEffect(new ReplaceSymbolEffect(EffectScope.WHOLE, ReplaceEffectType.CROSS_FADE), this.triggerValueReplace2)
-69. Button('trigger')
-70. .onClick(() => {
-71. this.replaceFlag2 = !this.replaceFlag2;
-72. this.triggerValueReplace2 = this.triggerValueReplace2 + 1;
-73. })
-74. }
-75. .margin({ right: 20 })
-76. Column() {
-77. Text("阴影能力")
-78. SymbolGlyph($r('sys.symbol.ohos_wifi'))
-79. .fontSize(96)
-80. .symbolEffect(new HierarchicalSymbolEffect(EffectFillStyle.ITERATIVE), this.isActive)
-81. .symbolShadow(this.options)
-82. Button(this.isActive ? '关闭' : '播放')
-83. .onClick(() => {
-84. this.isActive = !this.isActive;
-85. })
-86. }
-87. .margin({ right: 20 })
-88. }
-89. }
-90. .margin({
-91. left: 45,
-92. top: 50
-93. })
-94. }
-95. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/zaPNiWCnT9-Jo_gl2Ey4dg/zh-cn_image_0000002558766340.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/qeQRv9boTlGwfrA6vdT2nw/zh-cn_image_0000002736435143.gif)
 
 ### 示例3（设置颜色渐变）
 
-从API version 20开始，该示例通过[shaderStyle](ts-basic-components-symbolglyph.md#shaderstyle20)接口实现了symbolGlyph组件显示为渐变色的功能。
+从API version 20开始，该示例通过[shaderStyle](ts-basic-components-symbolglyph.md#shaderstyle20)接口实现了SymbolGlyph组件显示为渐变色的功能。
 
+```ts
+@Entry
+@Component
+struct Index {
+
+  linearGradientOptions1: LinearGradientOptions = {
+    angle: 45,
+    colors: [[Color.Red, 0.0], [Color.Blue, 0.3], [Color.Green, 0.5]]
+  };
+
+  linearGradientOptions2: LinearGradientOptions = {
+    direction: GradientDirection.LeftTop,
+    colors: [[Color.Red, 0.0], [Color.Blue, 0.3], [Color.Green, 0.5]],
+    repeating: true,
+  };
+
+  radialGradientOptions: RadialGradientOptions = {
+    center: ['50%', '50%'],
+    radius: '20%',
+    colors: [[Color.Red, 0.0], [Color.Blue, 0.3], [Color.Green, 0.5]],
+    repeating: true,
+  };
+
+  build() {
+    Column() {
+      Row() {
+        Column() {
+          Text('angle为45°的线性渐变')
+            .fontSize(18)
+            .fontColor(0xCCCCCC)
+            .textAlign(TextAlign.Center)
+          SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
+            .fontSize(96)
+            .shaderStyle([new LinearGradientStyle(this.linearGradientOptions1)])
+        }
+        .margin({ right: 20 })
+        Column() {
+          Text('LeftTop的线性渐变')
+            .fontSize(18)
+            .fontColor(0xCCCCCC)
+            .textAlign(TextAlign.Center)
+          SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
+            .fontSize(96)
+            .shaderStyle([new LinearGradientStyle(this.linearGradientOptions2)])
+        }
+        .margin({ right: 20 })
+      }
+
+      Row() {
+        Column() {
+          Text('径向渐变')
+            .fontSize(18)
+            .fontColor(0xCCCCCC)
+            .textAlign(TextAlign.Center)
+          SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
+            .fontSize(96)
+            .shaderStyle([new RadialGradientStyle(this.radialGradientOptions)])
+        }
+        .margin({ right: 20 })
+        Column() {
+          Text('纯色')
+            .fontSize(18)
+            .fontColor(0xCCCCCC)
+            .textAlign(TextAlign.Center)
+          SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
+            .fontSize(96)
+            .shaderStyle([new ColorShaderStyle(Color.Red)])
+        }
+        .margin({ right: 20 })
+        Column() {
+          Text('线性和径向渐变')
+            .fontSize(18)
+            .fontColor(0xCCCCCC)
+            .textAlign(TextAlign.Center)
+          SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
+            .fontSize(96)
+            .shaderStyle([
+              new LinearGradientStyle(this.linearGradientOptions2),
+              new LinearGradientStyle(this.linearGradientOptions2),
+              new RadialGradientStyle(this.radialGradientOptions)
+            ])
+            .renderingStrategy(SymbolRenderingStrategy.MULTIPLE_OPACITY)
+        }
+        .margin({ right: 20 })
+      }
+
+      Row() {
+        Column() {
+          Text('数组单层渐变')
+            .fontSize(18)
+            .fontColor(0xCCCCCC)
+            .textAlign(TextAlign.Center)
+          SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
+            .fontSize(96)
+            .shaderStyle([
+              new LinearGradientStyle(this.linearGradientOptions2),
+            ])
+            .renderingStrategy(SymbolRenderingStrategy.MULTIPLE_OPACITY)
+        }.margin({ right: 20 })
+
+        Column() {
+          Text('非数组覆盖全部')
+            .fontSize(18)
+            .fontColor(0xCCCCCC)
+            .textAlign(TextAlign.Center)
+          SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
+            .fontSize(96)
+            .shaderStyle(new RadialGradientStyle(this.radialGradientOptions))
+            .renderingStrategy(SymbolRenderingStrategy.MULTIPLE_OPACITY)
+        }.margin({ right: 20 })
+
+        Column() {
+          Text('首层为默认')
+            .fontSize(18)
+            .fontColor(0xCCCCCC)
+            .textAlign(TextAlign.Center)
+          SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
+            .fontSize(96)
+            .shaderStyle([
+              undefined,
+              new LinearGradientStyle(this.linearGradientOptions2),
+            ])
+            .renderingStrategy(SymbolRenderingStrategy.MULTIPLE_OPACITY)
+        }.margin({ right: 20 })
+      }
+    }
+    .margin({
+      left: 20,
+      top: 50
+    })
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct Index {
-4. @State message: string = 'Hello World';
 
-6. linearGradientOptions1: LinearGradientOptions = {
-7. angle: 45,
-8. colors: [[Color.Red, 0.0], [Color.Blue, 0.3], [Color.Green, 0.5]]
-9. };
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/Xv9AcwEJTmy6ucX-bqS0Sw/zh-cn_image_0000002706835996.jpeg)
 
-11. linearGradientOptions2: LinearGradientOptions = {
-12. direction: GradientDirection.LeftTop,
-13. colors: [[Color.Red, 0.0], [Color.Blue, 0.3], [Color.Green, 0.5]],
-14. repeating: true,
-15. };
+### 示例4（设置SymbolGlyph颜色）
 
-17. radialGradientOptions: RadialGradientOptions = {
-18. center: ["50%", "50%"],
-19. radius: "20%",
-20. colors: [[Color.Red, 0.0], [Color.Blue, 0.3], [Color.Green, 0.5]],
-21. repeating: true,
-22. };
+该示例通过[fontColor](ts-basic-components-symbolglyph.md#fontcolor-1)属性传入[ColorMetrics](js-apis-arkui-graphics.md#colormetrics12)类型参数，设置SymbolGlyph组件的颜色。
 
-24. build() {
-25. Column() {
-26. Row() {
-27. Column() {
-28. Text('angle为45°的线性渐变')
-29. .fontSize(18)
-30. .fontColor(0xCCCCCC)
-31. .textAlign(TextAlign.Center)
-32. SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
-33. .fontSize(96)
-34. .shaderStyle([new LinearGradientStyle(this.linearGradientOptions1)])
-35. }
-36. .margin({ right: 20 })
-37. Column() {
-38. Text('LeftTop的线性渐变')
-39. .fontSize(18)
-40. .fontColor(0xCCCCCC)
-41. .textAlign(TextAlign.Center)
-42. SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
-43. .fontSize(96)
-44. .shaderStyle([new LinearGradientStyle(this.linearGradientOptions2)])
-45. }
-46. .margin({ right: 20 })
-47. }
+从API版本26.0.0开始，新增支持[fontColor](ts-basic-components-symbolglyph.md#fontcolor-1)。
 
-49. Row() {
-50. Column() {
-51. Text('径向渐变')
-52. .fontSize(18)
-53. .fontColor(0xCCCCCC)
-54. .textAlign(TextAlign.Center)
-55. SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
-56. .fontSize(96)
-57. .shaderStyle([new RadialGradientStyle(this.radialGradientOptions)])
-58. }
-59. .margin({ right: 20 })
-60. Column() {
-61. Text('纯色')
-62. .fontSize(18)
-63. .fontColor(0xCCCCCC)
-64. .textAlign(TextAlign.Center)
-65. SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
-66. .fontSize(96)
-67. .shaderStyle([new ColorShaderStyle(Color.Red)])
-68. }
-69. .margin({ right: 20 })
-70. Column() {
-71. Text('线性和径向渐变')
-72. .fontSize(18)
-73. .fontColor(0xCCCCCC)
-74. .textAlign(TextAlign.Center)
-75. SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
-76. .fontSize(96)
-77. .shaderStyle([
-78. new LinearGradientStyle(this.linearGradientOptions2),
-79. new LinearGradientStyle(this.linearGradientOptions2),
-80. new RadialGradientStyle(this.radialGradientOptions)
-81. ])
-82. .renderingStrategy(SymbolRenderingStrategy.MULTIPLE_OPACITY)
-83. }
-84. .margin({ right: 20 })
-85. }
+```ts
+// xxx.ets
+import { ColorMetrics } from '@kit.ArkUI';
 
-87. Row() {
-88. Column() {
-89. Text('数组单层渐变')
-90. .fontSize(18)
-91. .fontColor(0xCCCCCC)
-92. .textAlign(TextAlign.Center)
-93. SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
-94. .fontSize(96)
-95. .shaderStyle([
-96. new LinearGradientStyle(this.linearGradientOptions2),
-97. ])
-98. .renderingStrategy(SymbolRenderingStrategy.MULTIPLE_OPACITY)
-99. }.margin({ right: 20 })
+@Entry
+@Component
+struct Index {
+  blueColor: ColorMetrics[] = [ColorMetrics.resourceColor(Color.Blue)];
+  greenColor: ColorMetrics[] = [ColorMetrics.numeric(0x00FF00)];
+  blackColor: ColorMetrics[] = [ColorMetrics.rgba(0, 0, 0, 1.0)];
 
-101. Column() {
-102. Text('非数组覆盖全部')
-103. .fontSize(18)
-104. .fontColor(0xCCCCCC)
-105. .textAlign(TextAlign.Center)
-106. SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
-107. .fontSize(96)
-108. .shaderStyle(new RadialGradientStyle(this.radialGradientOptions))
-109. .renderingStrategy(SymbolRenderingStrategy.MULTIPLE_OPACITY)
-110. }.margin({ right: 20 })
+  build() {
+    Column() {
+      Row({ space: 20 }) {
+        Column() {
+          Text('resourceColor蓝色')
+          SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
+            .fontSize(96)
+            .renderingStrategy(SymbolRenderingStrategy.SINGLE)
+            .fontColor(this.blueColor)
+        }
 
-112. Column() {
-113. Text('首层为默认')
-114. .fontSize(18)
-115. .fontColor(0xCCCCCC)
-116. .textAlign(TextAlign.Center)
-117. SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
-118. .fontSize(96)
-119. .shaderStyle([
-120. undefined,
-121. new LinearGradientStyle(this.linearGradientOptions2),
-122. ])
-123. .renderingStrategy(SymbolRenderingStrategy.MULTIPLE_OPACITY)
-124. }.margin({ right: 20 })
-125. }
-126. }
-127. .margin({
-128. left: 20,
-129. top: 50
-130. })
-131. }
-132. }
+        Column() {
+          Text('numeric绿色')
+          SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
+            .fontSize(96)
+            .renderingStrategy(SymbolRenderingStrategy.SINGLE)
+            .fontColor(this.greenColor)
+        }
+
+        Column() {
+          Text('rgba黑色')
+          SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
+            .fontSize(96)
+            .renderingStrategy(SymbolRenderingStrategy.SINGLE)
+            .fontColor(this.blackColor)
+        }
+      }.width('100%')
+    }.width('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/bmts0TcpQ7GspNiGtS3vkw/zh-cn_image_0000002558606682.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/URmXNgF-S3C2nKMJVHZUSA/zh-cn_image_0000002736315101.jpeg)
+
+### 示例5（设置字体粗细）
+
+该示例通过[fontWeight](ts-basic-components-symbolglyph.md#fontweight-1)属性展示SymbolGlyph不同粗细配置下的效果：第一行图标小符号展示启用可变字重后，分别设置字重值为220和660的效果；第二行图标小符号展示在将设备的系统字体粗细设置为粗体后，分别设置跟随和不跟随设备的字体粗细级别自动更新的效果。
+
+从API版本26.0.0开始，新增[fontWeight](ts-basic-components-symbolglyph.md#fontweight-1)属性。
+
+```ts
+// xxx.ets
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Row() {
+        Column() {
+          Text('font weight: 220')
+          // ohos_trash为系统预置的垃圾桶小符号
+          SymbolGlyph($r('sys.symbol.ohos_trash'))
+            .fontWeight(220, { enableVariableFontWeight: true })
+            .fontSize(96)
+        }
+        Column() {
+          Text('            ')
+        }
+        Column() {
+          Text('font weight: 660')
+          // ohos_trash为系统预置的垃圾桶小符号
+          SymbolGlyph($r('sys.symbol.ohos_trash'))
+            .fontWeight(660, { enableVariableFontWeight: true })
+            .fontSize(96)
+        }
+      }
+      Row() {
+        Text('    ')
+      }
+      Row() {
+        Text('After set system text weight: Bold')
+      }
+      Row() {
+        Column() {
+          Text('device category: true')
+          // ohos_trash为系统预置的垃圾桶小符号
+          SymbolGlyph($r('sys.symbol.ohos_trash'))
+            .fontWeight(FontWeight.Normal, { enableDeviceFontWeightCategory: true })
+            .fontSize(96)
+        }
+        Column() {
+          Text('    ')
+        }
+        Column() {
+          Text('device category: false')
+          // ohos_trash为系统预置的垃圾桶小符号
+          SymbolGlyph($r('sys.symbol.ohos_trash'))
+            .fontWeight(FontWeight.Normal, { enableDeviceFontWeightCategory: false })
+            .fontSize(96)
+        }
+      }
+    }
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/tGjqNA0MTkWFWOMJlIf94w/zh-cn_image_0000002706676058.png)

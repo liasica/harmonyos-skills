@@ -3,12 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-source-
 title: 使用Image_NativeModule完成多图对象解码
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(C/C++) > 图片解码 > 使用Image_NativeModule完成多图对象解码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:18+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7b00e7fe37bc744344f4aeacddce3adafb20717007d0ff0dd7c0dd5a74130ca2
+scraped_at: 2026-09-02T14:59:46+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8ffacc47d738bc3ee40d54911f90b7b7adcfee7c34bbb8bd4b44baae46329235
 ---
 
-创建ImageSource实例，解码获取Picture，然后释放ImageSource实例。
+创建ImageSource实例，将所支持格式的图片文件解码成Picture多图对象，以便在应用或系统中进行HDR图片显示、辅助图处理等操作。当前支持的图片文件格式包括JPEG、HEIF。
+
+Picture是包含主图、辅助图和元数据的多图对象。主图包含主要图像信息，辅助图用于存储与主图相关的附加信息（如HDR增益图GAINMAP），元数据用于存储与图片相关的其他信息。Picture适用于HDR图片处理、HEIF专业格式解码等场景。
+
+## Picture与PixelMap的区别
+
+Picture和PixelMap是两种不同的图片解码对象，适用于不同的场景：
+
+| 对象类型 | 适用场景 | 特性 |
+| --- | --- | --- |
+| [PixelMap](../harmonyos-references/capi-image-nativemodule-oh-pixelmapnative.md) | 单图显示、基础图片处理 | 单一像素数据，支持图像变换（裁剪、缩放、旋转等）、位图操作。 |
+| [Picture](../harmonyos-references/capi-image-nativemodule-oh-picturenative.md) | HDR图片、HEIF专业格式、辅助图处理 | 包含主图+辅助图+元数据，可提取主图/增益图/合成HDR图为PixelMap后显示或处理，支持辅助图和元数据操作。 |
+
+**选择建议：**
+
+* 需要直接显示单张图片或进行裁剪、缩放、旋转等图像处理时，使用PixelMap。
+* 需要处理HDR图片、获取辅助图（如GAINMAP）、操作图片元数据时，使用Picture。如需对Picture的内容进行裁剪缩放，可通过[OH\_PictureNative\_GetMainPixelmap()](../harmonyos-references/capi-picture-native-h.md#oh_picturenative_getmainpixelmap)等接口提取PixelMap后再处理。
 
 ## 开发步骤
 
@@ -16,8 +32,8 @@ content_hash: sha256:7b00e7fe37bc744344f4aeacddce3adafb20717007d0ff0dd7c0dd5a741
 
 在进行应用开发之前，开发者需要打开native工程的src/main/cpp/CMakeLists.txt，在target\_link\_libraries依赖中添加libimage\_source.so 以及日志依赖libhilog\_ndk.z.so。
 
-```
-1. target_link_libraries(entry PUBLIC libhilog_ndk.z.so libimage_source.so)
+```txt
+target_link_libraries(entry PUBLIC libhilog_ndk.z.so libimage_source.so)
 ```
 
 ### Native接口调用
@@ -28,223 +44,228 @@ content_hash: sha256:7b00e7fe37bc744344f4aeacddce3adafb20717007d0ff0dd7c0dd5a741
 
 **解码接口使用示例**
 
-说明
+**说明** 
 
 部分接口在API version 20以后才支持，需要开发者在进行开发时选择合适的API版本。
 
 1. 导入相关头文件。
 
    ```
-   1. #include <hilog/log.h>
-   2. #include <multimedia/image_framework/image/image_native.h>
-   3. #include <multimedia/image_framework/image/image_packer_native.h>
-   4. #include <multimedia/image_framework/image/image_source_native.h>
-   5. #include <multimedia/image_framework/image/picture_native.h>
-   6. #include <multimedia/image_framework/image/pixelmap_native.h>
+   #include <hilog/log.h>
+   #include <multimedia/image_framework/image/image_native.h>
+   #include <multimedia/image_framework/image/image_packer_native.h>
+   #include <multimedia/image_framework/image/image_source_native.h>
+   #include <multimedia/image_framework/image/picture_native.h>
+   #include <multimedia/image_framework/image/pixelmap_native.h>
    ```
-
-   [loadPicture.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Media/Image/ImageNativeSample/entry/src/main/cpp/loadPicture.cpp#L15-L22)
 2. 日志宏定义可参考下述代码按实际需求自行修改。
 
    ```
-   1. #undef LOG_DOMAIN
-   2. #undef LOG_TAG
-   3. #define LOG_DOMAIN 0x3200
-   4. #define LOG_TAG "IMAGE_SAMPLE"
+   #undef LOG_DOMAIN
+   #undef LOG_TAG
+   #define LOG_DOMAIN 0x3200
+   #define LOG_TAG "IMAGE_SAMPLE"
    ```
-
-   [loadImageSource.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Media/Image/ImageNativeSample/entry/src/main/cpp/loadImageSource.cpp#L31-L36)
 3. 定义ImagePictureNative类。
 
+   ```c
+   class ImagePictureNative {
+   public:
+       Image_ErrorCode errorCode = IMAGE_SUCCESS;
+       OH_DecodingOptionsForPicture *options = nullptr;
+       OH_ImagePackerNative *imagePacker = nullptr;
+       OH_PackingOptions *packerOptions = nullptr;
+       OH_PictureNative *picture = nullptr;
+       OH_ImageSourceNative *source = nullptr;
+       ImagePictureNative() {}
+       ~ImagePictureNative() {}
+   };
    ```
-   1. class ImagePictureNative {
-   2. public:
-   3. Image_ErrorCode errorCode = IMAGE_SUCCESS;
-   4. OH_DecodingOptionsForPicture *options = nullptr;
-   5. OH_ImagePackerNative *imagePacker = nullptr;
-   6. OH_PackingOptions *packerOptions = nullptr;
-   7. OH_PictureNative *picture = nullptr;
-   8. OH_ImageSourceNative *source = nullptr;
-   9. ImagePictureNative() {}
-   10. ~ImagePictureNative() {}
-   11. };
-   ```
-
-   [imageKits.h](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Media/Image/ImageNativeSample/entry/src/main/cpp/imageKits.h#L70-L82)
 4. 创建一个ImagePictureNative实例。
 
    ```
-   1. static ImagePictureNative *g_thisPicture = new ImagePictureNative();
+   static ImagePictureNative *g_thisPicture = new ImagePictureNative();
    ```
-
-   [loadPicture.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Media/Image/ImageNativeSample/entry/src/main/cpp/loadPicture.cpp#L30-L32)
 5. 定义ImageAuxiliaryPictureNative类。
 
+   ```c
+   class ImageAuxiliaryPictureNative {
+   public:
+       Image_ErrorCode errorCode = IMAGE_SUCCESS;
+       Image_AuxiliaryPictureType type = AUXILIARY_PICTURE_TYPE_GAINMAP;
+       OH_AuxiliaryPictureNative *auxiliaryPicture = nullptr;
+       size_t buffSize = 640 * 480 * 4; // 辅助图size：`长 * 宽 * 每个像素占用的字节数`。
+       ImageAuxiliaryPictureNative() {}
+       ~ImageAuxiliaryPictureNative() {}
+   };
    ```
-   1. class ImageAuxiliaryPictureNative {
-   2. public:
-   3. Image_ErrorCode errorCode = IMAGE_SUCCESS;
-   4. Image_AuxiliaryPictureType type = AUXILIARY_PICTURE_TYPE_GAINMAP;
-   5. OH_AuxiliaryPictureNative *auxiliaryPicture = nullptr;
-   6. size_t buffSize = 640 * 480 * 4; // 辅助图size：`长 * 宽 * 每个像素占用的字节数`。
-   7. ImageAuxiliaryPictureNative() {}
-   8. ~ImageAuxiliaryPictureNative() {}
-   9. };
-   ```
-
-   [imageKits.h](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Media/Image/ImageNativeSample/entry/src/main/cpp/imageKits.h#L84-L94)
 6. 创建一个ImageAuxiliaryPictureNative实例。
 
    ```
-   1. static ImageAuxiliaryPictureNative *g_thisAuxiliaryPicture  = new ImageAuxiliaryPictureNative();
+   static ImageAuxiliaryPictureNative *g_thisAuxiliaryPicture  = new ImageAuxiliaryPictureNative();
    ```
-
-   [loadPicture.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Media/Image/ImageNativeSample/entry/src/main/cpp/loadPicture.cpp#L33-L35)
 7. 创建GetJsResult函数处理napi返回值。
 
    ```
-   1. // 处理napi返回值。
-   2. napi_value GetJsResult(napi_env env, int result)
-   3. {
-   4. napi_value resultNapi = nullptr;
-   5. napi_create_int32(env, result, &resultNapi);
-   6. return resultNapi;
-   7. }
+   // 处理napi返回值。
+   napi_value GetJsResult(napi_env env, int result)
+   {
+       napi_value resultNapi = nullptr;
+       napi_create_int32(env, result, &resultNapi);
+       return resultNapi;
+   }
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Media/Image/ImageNativeSample/entry/src/main/cpp/napi_init.cpp#L21-L29)
 8. 创建解码参数，配置解码参数，调用解码接口进行解码并获取辅助图。
 
+   解码时可指定需要解码的辅助图类型。辅助图本身不作为独立图像直接显示，而是作为辅助数据参与图像处理（如HDR合成、深度信息提取等）。常见的辅助图类型包括：
+
+   | 辅助图类型 | 说明 |
+   | --- | --- |
+   | GAINMAP | 增益图，用于HDR图像的高动态范围渲染。 |
+   | DEPTH\_MAP | 深度图，存储像素距离信息，用于3D重建、背景分离等场景。 |
+   | UNREFOCUS\_MAP | 未重对焦原图，用于人像虚化后期处理。 |
+   | LINEAR\_MAP | 线性图，用于视觉效果增强与色彩后期处理。 |
+   | FRAGMENT\_MAP | 水印裁剪图，用于水印移除、原图恢复等场景。 |
+
+   **说明** 
+
+   并非所有图片都包含辅助图。在获取辅助图前，应先调用OH\_PictureNative\_GetAuxiliaryPicture接口尝试获取。其他辅助图类型请参考[Image\_AuxiliaryPictureType](../harmonyos-references/capi-picture-native-h.md#image_auxiliarypicturetype)。
+
    ```
-   1. // 释放ImageSource。
-   2. napi_value ReleasePictureSource(napi_env env, napi_callback_info info)
-   3. {
-   4. if (g_thisPicture->source != nullptr) {
-   5. g_thisPicture->errorCode = OH_ImageSourceNative_Release(g_thisPicture->source);
-   6. g_thisPicture->source = nullptr;
-   7. return GetJsResult(env, g_thisPicture->errorCode);
-   8. }
+   // 释放ImageSource。
+   napi_value ReleasePictureSource(napi_env env, napi_callback_info info)
+   {
+       if (g_thisPicture->source != nullptr) {
+           g_thisPicture->errorCode = OH_ImageSourceNative_Release(g_thisPicture->source);
+           g_thisPicture->source = nullptr;
+           return GetJsResult(env, g_thisPicture->errorCode);
+       }
+       
+       if (g_thisPicture->picture != nullptr) {
+           g_thisPicture->errorCode = OH_PictureNative_Release(g_thisPicture->picture);
+           g_thisPicture->picture = nullptr;
+           return GetJsResult(env, g_thisPicture->errorCode);
+       }
+       
+       OH_LOG_DEBUG(LOG_APP, "ReleasePictureSource source is null !");
+       return GetJsResult(env, g_thisPicture->errorCode);
+   }
 
-   10. if (g_thisPicture->picture != nullptr) {
-   11. g_thisPicture->errorCode = OH_PictureNative_Release(g_thisPicture->picture);
-   12. g_thisPicture->picture = nullptr;
-   13. return GetJsResult(env, g_thisPicture->errorCode);
-   14. }
+   // 创造解码参数。
+   napi_value CreateDecodingOptions(napi_env env, napi_callback_info info)
+   {
+       g_thisPicture->errorCode = OH_DecodingOptionsForPicture_Create(&g_thisPicture->options);
 
-   16. OH_LOG_DEBUG(LOG_APP, "ReleasePictureSource source is null !");
-   17. return GetJsResult(env, g_thisPicture->errorCode);
-   18. }
+       if (g_thisPicture->errorCode != IMAGE_SUCCESS) {
+           OH_LOG_ERROR(LOG_APP, "OH_DecodingOptionsForPicture_Create failed, errCode: %{public}d.",
+                        g_thisPicture->errorCode);
+           return GetJsResult(env, g_thisPicture->errorCode);
+       } else {
+           OH_LOG_DEBUG(LOG_APP, "OH_DecodingOptionsForPicture_Create success !");
+       }
 
-   20. // 创造解码参数。
-   21. napi_value CreateDecodingOptions(napi_env env, napi_callback_info info)
-   22. {
-   23. g_thisPicture->errorCode = OH_DecodingOptionsForPicture_Create(&g_thisPicture->options);
+       return GetJsResult(env, g_thisPicture->errorCode);
+   }
 
-   25. if (g_thisPicture->errorCode != IMAGE_SUCCESS) {
-   26. OH_LOG_ERROR(LOG_APP, "OH_DecodingOptionsForPicture_Create failed, errCode: %{public}d.",
-   27. g_thisPicture->errorCode);
-   28. return GetJsResult(env, g_thisPicture->errorCode);
-   29. } else {
-   30. OH_LOG_DEBUG(LOG_APP, "OH_DecodingOptionsForPicture_Create success !");
-   31. }
+   // 配置解码参数 从应用层传入。
+   napi_value SetDesiredAuxiliaryPictures(napi_env env, napi_callback_info info)
+   {
+       size_t argc = 1;
+       napi_value args[1] = {nullptr};
+       if (napi_get_cb_info(env, info, &argc, args, nullptr, nullptr) != napi_ok || argc < 1 || args[0] == nullptr) {
+           OH_LOG_ERROR(LOG_APP, "napi_get_cb_info failed !");
+           return GetJsResult(env, IMAGE_BAD_PARAMETER);
+       }
 
-   33. return GetJsResult(env, g_thisPicture->errorCode);
-   34. }
+       uint32_t length = 0;
+       napi_get_array_length(env, args[0], &length);
+       if (length <= 0) {
+           OH_LOG_INFO(LOG_APP, "Desired auxiliary picture type list is empty.");
+           return GetJsResult(env, IMAGE_BAD_PARAMETER);
+       }
+       Image_AuxiliaryPictureType typeList[length];
+       for (int index = 0; index < length; index++) {
+           napi_value element;
+           uint32_t ulType = 0;
+           napi_get_element(env, args[0], index, &element);
+           napi_get_value_uint32(env, element, &ulType);
+           typeList[index] = static_cast<Image_AuxiliaryPictureType>(ulType);
+           OH_LOG_DEBUG(LOG_APP, "ulType is :%{public}d", ulType);
+       }
+       
+       // 调用OH_DecodingOptionsForPicture_Create接口创建DecodingOptions。
+       CreateDecodingOptions(env, info);
+       g_thisPicture->errorCode =
+           OH_DecodingOptionsForPicture_SetDesiredAuxiliaryPictures(g_thisPicture->options, typeList, length);
+       if (g_thisPicture->errorCode != IMAGE_SUCCESS) {
+           OH_LOG_ERROR(LOG_APP, "OH_DecodingOptionsForPicture_SetDesiredAuxiliaryPictures failed,errCode: %{public}d.",
+                        g_thisPicture->errorCode);
+           return GetJsResult(env, g_thisPicture->errorCode);
+       } else {
+           OH_LOG_DEBUG(LOG_APP, "OH_DecodingOptionsForPicture_SetDesiredAuxiliaryPictures success !");
+       }
 
-   36. // 配置解码参数 从应用层传入。
-   37. napi_value SetDesiredAuxiliaryPictures(napi_env env, napi_callback_info info)
-   38. {
-   39. size_t argc = 1;
-   40. napi_value args[1] = {nullptr};
-   41. if (napi_get_cb_info(env, info, &argc, args, nullptr, nullptr) != napi_ok || argc < 1 || args[0] == nullptr) {
-   42. OH_LOG_ERROR(LOG_APP, "napi_get_cb_info failed !");
-   43. return GetJsResult(env, IMAGE_BAD_PARAMETER);
-   44. }
+       return GetJsResult(env, g_thisPicture->errorCode);
+   }
 
-   46. uint32_t length = 0;
-   47. napi_get_array_length(env, args[0], &length);
-   48. if (length <= 0) {
-   49. OH_LOG_ERROR(LOG_APP, "napi_get_array_length failed !");
-   50. return GetJsResult(env, IMAGE_UNKNOWN_ERROR);
-   51. }
-   52. Image_AuxiliaryPictureType typeList[length];
-   53. for (int index = 0; index < length; index++) {
-   54. napi_value element;
-   55. uint32_t ulType = 0;
-   56. napi_get_element(env, args[0], index, &element);
-   57. napi_get_value_uint32(env, element, &ulType);
-   58. typeList[index] = static_cast<Image_AuxiliaryPictureType>(ulType);
-   59. OH_LOG_DEBUG(LOG_APP, "ulType is :%{public}d", ulType);
-   60. }
+   // 解码。
+   napi_value CreatePictureByImageSource(napi_env env, napi_callback_info info)
+   {
+       size_t argc = 1;
+       napi_value args[1] = {nullptr};
 
-   62. // 调用OH_DecodingOptionsForPicture_Create接口创建DecodingOptions。
-   63. CreateDecodingOptions(env, info);
-   64. g_thisPicture->errorCode =
-   65. OH_DecodingOptionsForPicture_SetDesiredAuxiliaryPictures(g_thisPicture->options, typeList, length);
-   66. if (g_thisPicture->errorCode != IMAGE_SUCCESS) {
-   67. OH_LOG_ERROR(LOG_APP, "OH_DecodingOptionsForPicture_SetDesiredAuxiliaryPictures failed,errCode: %{public}d.",
-   68. g_thisPicture->errorCode);
-   69. return GetJsResult(env, g_thisPicture->errorCode);
-   70. } else {
-   71. OH_LOG_DEBUG(LOG_APP, "OH_DecodingOptionsForPicture_SetDesiredAuxiliaryPictures success !");
-   72. }
+       if (napi_get_cb_info(env, info, &argc, args, nullptr, nullptr) != napi_ok || argc < 1 || args[0] == nullptr) {
+           OH_LOG_ERROR(LOG_APP, "CreatePicture_ napi_get_cb_info failed !");
+           return GetJsResult(env, IMAGE_BAD_PARAMETER);
+       }
+       
+       char filePath[MAX_SIZE] = {0};
+       size_t pathSize = 0;
+       if (napi_get_value_string_utf8(env, args[0], filePath, sizeof(filePath), &pathSize) != napi_ok) {
+           OH_LOG_ERROR(LOG_APP, "CreatePictureByImageSource napi_get_value_string_utf8 failed !");
+           return GetJsResult(env, IMAGE_BAD_PARAMETER);
+       }
+       filePath[MAX_SIZE - 1] = '\0';
 
-   74. return GetJsResult(env, g_thisPicture->errorCode);
-   75. }
-
-   77. // 解码。
-   78. napi_value CreatePictureByImageSource(napi_env env, napi_callback_info info)
-   79. {
-   80. size_t argc = 1;
-   81. napi_value args[1] = {nullptr};
-
-   83. if (napi_get_cb_info(env, info, &argc, args, nullptr, nullptr) != napi_ok || argc < 1 || args[0] == nullptr) {
-   84. OH_LOG_ERROR(LOG_APP, "CreatePicture_ napi_get_cb_info failed !");
-   85. return GetJsResult(env, IMAGE_BAD_PARAMETER);
-   86. }
-
-   88. char filePath[MAX_SIZE];
-   89. size_t pathSize;
-   90. napi_get_value_string_utf8(env, args[0], filePath, MAX_SIZE, &pathSize);
-
-   92. g_thisPicture->errorCode = OH_ImageSourceNative_CreateFromUri(filePath, pathSize, &g_thisPicture->source);
-   93. if (g_thisPicture->errorCode != IMAGE_SUCCESS) {
-   94. OH_LOG_ERROR(LOG_APP, "OH_ImageSourceNative_CreateFromUri failed, errCode: %{public}d.",
-   95. g_thisPicture->errorCode);
-   96. return GetJsResult(env, g_thisPicture->errorCode);
-   97. } else {
-   98. OH_LOG_DEBUG(LOG_APP, "OH_ImageSourceNative_CreateFromUri success !");
-   99. }
-
-   101. // 先创建解码参数，再进行解码，此处创建解码参数的接口在SetDesiredAuxiliaryPictures实现。
-   102. g_thisPicture->errorCode =
-   103. OH_ImageSourceNative_CreatePicture(g_thisPicture->source, g_thisPicture->options, &g_thisPicture->picture);
-
-   105. // 释放options。
-   106. OH_DecodingOptionsForPicture_Release(g_thisPicture->options);
-   107. g_thisPicture->options = nullptr;
-
-   109. g_thisAuxiliaryPicture ->errorCode = OH_PictureNative_GetAuxiliaryPicture(g_thisPicture->picture,
-   110. g_thisAuxiliaryPicture ->type, &g_thisAuxiliaryPicture ->auxiliaryPicture);
-   111. if (g_thisAuxiliaryPicture ->errorCode == IMAGE_SUCCESS) {
-   112. uint8_t* buff = new uint8_t[g_thisAuxiliaryPicture ->buffSize];
-   113. OH_AuxiliaryPictureNative_ReadPixels(g_thisAuxiliaryPicture ->auxiliaryPicture, buff,
-   114. &g_thisAuxiliaryPicture ->buffSize);
-   115. OH_AuxiliaryPictureNative_Release(g_thisAuxiliaryPicture ->auxiliaryPicture);
-   116. g_thisAuxiliaryPicture ->auxiliaryPicture = nullptr;
-   117. delete []buff;
-   118. }
-
-   120. if (g_thisPicture->errorCode != IMAGE_SUCCESS) {
-   121. OH_LOG_ERROR(LOG_APP, "ImageSourceNative_CreatePicture failed, errCode: %{public}d.",
-   122. g_thisPicture->errorCode);
-   123. return GetJsResult(env, g_thisPicture->errorCode);
-   124. } else {
-   125. OH_LOG_DEBUG(LOG_APP, "ImageSourceNative_CreatePicture success !");
-   126. }
-
-   128. return GetJsResult(env, g_thisPicture->errorCode);
-   129. }
+       g_thisPicture->errorCode = OH_ImageSourceNative_CreateFromUri(filePath, pathSize, &g_thisPicture->source);
+       if (g_thisPicture->errorCode != IMAGE_SUCCESS) {
+           OH_LOG_ERROR(LOG_APP, "OH_ImageSourceNative_CreateFromUri failed, errCode: %{public}d.",
+                        g_thisPicture->errorCode);
+           return GetJsResult(env, g_thisPicture->errorCode);
+       } else {
+           OH_LOG_DEBUG(LOG_APP, "OH_ImageSourceNative_CreateFromUri success !");
+       }
+       
+       // 先创建解码参数，再进行解码，此处创建解码参数的接口在SetDesiredAuxiliaryPictures实现。
+       g_thisPicture->errorCode =
+           OH_ImageSourceNative_CreatePicture(g_thisPicture->source, g_thisPicture->options, &g_thisPicture->picture);
+       
+       // 释放options。
+       OH_DecodingOptionsForPicture_Release(g_thisPicture->options);
+       g_thisPicture->options = nullptr;
+       
+       g_thisAuxiliaryPicture ->errorCode = OH_PictureNative_GetAuxiliaryPicture(g_thisPicture->picture,
+           g_thisAuxiliaryPicture ->type, &g_thisAuxiliaryPicture ->auxiliaryPicture);
+       if (g_thisAuxiliaryPicture ->errorCode == IMAGE_SUCCESS) {
+           uint8_t* buff = new uint8_t[g_thisAuxiliaryPicture ->buffSize];
+           Image_ErrorCode readCode = OH_AuxiliaryPictureNative_ReadPixels(g_thisAuxiliaryPicture ->auxiliaryPicture, buff,
+               &g_thisAuxiliaryPicture ->buffSize);
+           if (readCode != IMAGE_SUCCESS) {
+               OH_LOG_ERROR(LOG_APP, "OH_AuxiliaryPictureNative_ReadPixels failed, errCode: %{public}d.", readCode);
+           }
+           OH_AuxiliaryPictureNative_Release(g_thisAuxiliaryPicture ->auxiliaryPicture);
+           g_thisAuxiliaryPicture ->auxiliaryPicture = nullptr;
+           delete []buff;
+       }
+       
+       if (g_thisPicture->errorCode != IMAGE_SUCCESS) {
+           OH_LOG_ERROR(LOG_APP, "ImageSourceNative_CreatePicture failed, errCode: %{public}d.",
+                        g_thisPicture->errorCode);
+           return GetJsResult(env, g_thisPicture->errorCode);
+       } else {
+           OH_LOG_DEBUG(LOG_APP, "ImageSourceNative_CreatePicture success !");
+       }
+       
+       return GetJsResult(env, g_thisPicture->errorCode);
+   }
    ```
-
-   [loadPicture.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Media/Image/ImageNativeSample/entry/src/main/cpp/loadPicture.cpp#L37-L167)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“In FormExtensionAbility, metadata must contain an object with its name set to 'ohos.extension.form' and resource set to a second-level resource reference.”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“In FormExtensionAbility, metadata must contain an object with its name set to 'ohos.extension.form' and resource set to a second-level resource reference.”
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:21:00+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:26e487cd41c3d6012302b977fddfd4aaed262eac92644aa72689c4c4f295fd37
+scraped_at: 2026-09-02T14:54:55+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:2878db363d95033b6c64f264804a96e795d831997c4242cbbf1dba6cfba0edf5
 ---
 
 **错误描述**
@@ -16,7 +16,7 @@ content_hash: sha256:26e487cd41c3d6012302b977fddfd4aaed262eac92644aa72689c4c4f29
 
 module.json5中type为form的ExtensionAbility中的metadata缺少name为ohos.extension.form的对象值，或者缺少resource字段。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/-mOvw_i9Qcq6_uwvsfSlWw/zh-cn_image_0000002229758517.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/ESyTYLiLS0m6sU0M5jvXVg/zh-cn_image_0000002624478648.png)
 
 **解决措施**
 

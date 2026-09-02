@@ -3,48 +3,46 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/core-visi
 title: faceDetector（人脸检测）
 breadcrumb: API参考 > AI > Core Vision Kit（基础视觉服务） > ArkTS API > faceDetector（人脸检测）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:55+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d9c9c32bdc8232d6750dba9a3766ff310e37468f38c588acdd4e6cc78ea0cc34
+scraped_at: 2026-09-02T14:53:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f4cefa6d46e10a3ac3c94091947a17cfa82bd064b15ef6c77d03111b573704d2
 ---
 
 人脸检测支持2D人脸检测框的检测能力。检测给定图片中的人脸数量、人脸位置、特征点（左右眼中心、鼻子、左右嘴角）和姿态（pitch、roll、yaw）信息。人脸检测框按照大小排序。
 
-与Vision Kit的活体检测的区别是：活体检测用于视频，人脸检测用于图片。
+与[Vision Kit](vision-api.md)的活体检测的区别是：活体检测用于视频，人脸检测用于图片。
 
 **起始版本：** 5.0.0(12)
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { faceDetector } from '@kit.CoreVisionKit';
+```typescript
+import { faceDetector } from '@kit.CoreVisionKit';
 ```
 
 ## VisionInfo
 
-PhonePC/2in1Tablet
-
-待识别的视觉信息，目前仅支持颜色数据格式为RGBA\_8888的PixelMap类型的视觉信息。
+待识别的视觉信息，目前仅支持颜色数据格式为RGBA\_8888的[PixelMap](arkts-apis-image-pixelmap.md)类型的视觉信息。
 
 **元服务API：** 从版本5.0.2(14)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.AI.Face.Detector
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **起始版本：** 5.0.0(12)
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| pixelMap | [image.PixelMap](arkts-apis-image-pixelmap.md) | 是 | 否 | 待识别的图片。  具体规格请参考[约束与限制](../harmonyos-guides/core-vision-introduction.md#约束与限制)。 |
+| pixelMap | [image.PixelMap](arkts-apis-image-pixelmap.md) | 是 | 否 | 待识别的图片。对于图片的要求请参见[约束与限制](../harmonyos-guides/core-vision-introduction.md#约束与限制)。 |
 
 ## FaceRecognitionConfiguration
 
-PhonePC/2in1Tablet
-
-人脸遮挡检测的配置项。
+人脸遮挡检测的配置项。如果配置在初始化和检测期间指定，将启用额外的检测功能。
 
 **系统能力：** SystemCapability.AI.Face.Detector
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.2(14)
 
@@ -54,11 +52,11 @@ PhonePC/2in1Tablet
 
 ## FaceBlock
 
-PhonePC/2in1Tablet
-
 人脸遮挡检测结果的枚举类。
 
 **系统能力：** SystemCapability.AI.Face.Detector
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.2(14)
 
@@ -70,13 +68,13 @@ PhonePC/2in1Tablet
 
 ## FacePoint
 
-PhonePC/2in1Tablet
-
 指示像素点的位置。
 
 **元服务API：** 从版本5.0.2(14)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.AI.Face.Detector
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -87,13 +85,13 @@ PhonePC/2in1Tablet
 
 ## FacePose
 
-PhonePC/2in1Tablet
-
 描述人脸在三维空间中的方向。坐标系可参考[世界坐标系](../harmonyos-guides/core-vision-face-detector.md#世界坐标系)。
 
 **元服务API：** 从版本5.0.2(14)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.AI.Face.Detector
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -105,13 +103,13 @@ PhonePC/2in1Tablet
 
 ## FaceRectangle
 
-PhonePC/2in1Tablet
-
-表示人脸的矩形框。
+表示人脸的矩形框。描述人脸矩形框的位置和大小，包括左上角坐标、宽度和高度。
 
 **元服务API：** 从版本5.0.2(14)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.AI.Face.Detector
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -119,30 +117,28 @@ PhonePC/2in1Tablet
 | --- | --- | --- | --- | --- |
 | left | number | 是 | 否 | 人脸矩形框左上角x坐标。 |
 | top | number | 是 | 否 | 人脸矩形框左上角y坐标。 |
-| width | number | 是 | 否 | 人脸框宽，单位：pixel。 |
-| height | number | 是 | 否 | 人脸框高，单位：pixel。 |
+| width | number | 是 | 否 | 人脸框宽，单位：px。 |
+| height | number | 是 | 否 | 人脸框高，单位：px。 |
 
 ## Face
 
-PhonePC/2in1Tablet
-
-表示人脸的信息列表。
+表示人脸检测的结果信息，包括人脸数量、坐标信息、人脸姿态和检测结果置信度。
 
 **系统能力：** SystemCapability.AI.Face.Detector
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| probability | number | 是 | 否 | 表示人脸检测结果的置信度，取值范围为(0,1)的浮点数，数值越大代表置信度越高。  **元服务API**：从版本5.0.2(14)开始，该接口支持在元服务中使用。 |
-| block | [FaceBlock](core-vision-face-detector-api.md#faceblock) | 是 | 是 | 人脸遮挡结果。  **起始版本**：5.0.2(14)。 |
+| probability | number | 是 | 否 | 表示人脸检测结果的置信度，取值范围为0~1的浮点数，数值越大代表置信度越高。  **元服务API**：从版本5.0.2(14)开始，该接口支持在元服务中使用。 |
+| block | [FaceBlock](core-vision-face-detector-api.md#faceblock) | 是 | 是 | 人脸遮挡结果。默认值为FaceBlock.UNINITIALIZED，表示未开启人脸遮挡检测；若初始化时通过[FaceRecognitionConfiguration](core-vision-face-detector-api.md#facerecognitionconfiguration)将faceBlock设置为true开启了遮挡检测，则返回FaceBlock.UNBLOCKED（无遮挡）或FaceBlock.BLOCKED（有遮挡）。  **起始版本**：5.0.2(14)。 |
 | pose | [FacePose](core-vision-face-detector-api.md#facepose) | 是 | 否 | 人脸头型航向。  **元服务API**：从版本5.0.2(14)开始，该接口支持在元服务中使用。 |
 | rect | [FaceRectangle](core-vision-face-detector-api.md#facerectangle) | 是 | 否 | 人脸框列表。  **元服务API**：从版本5.0.2(14)开始，该接口支持在元服务中使用。 |
 | points | Array<[FacePoint](core-vision-face-detector-api.md#facepoint)> | 是 | 否 | 人脸五官位置数组，包括：左右眼中心、鼻子、左右嘴角。参数顺序为：左眼中心，右眼中心，鼻子，左嘴角，右嘴角。  **元服务API**：从版本5.0.2(14)开始，该接口支持在元服务中使用。 |
 
 ## faceDetector.init
-
-PhonePC/2in1Tablet
 
 init(): Promise<boolean>
 
@@ -151,6 +147,8 @@ init(): Promise<boolean>
 **元服务API：** 从版本5.0.2(14)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.AI.Face.Detector
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -162,52 +160,52 @@ init(): Promise<boolean>
 
 **示例：**
 
-```
-1. import { faceDetector } from '@kit.CoreVisionKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { faceDetector } from '@kit.CoreVisionKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. async function initAndReleaseFaceDetector() {
-5. // 初始化人脸检测服务
-6. const initResult = await faceDetector.init();
-7. hilog.info(0x0000, 'faceDetectorSample', `Face detector initialization result:${initResult}`);
+async function initAndReleaseFaceDetector() {
+  // 初始化人脸检测服务
+  const initResult = await faceDetector.init();
+  hilog.info(0x0000, 'faceDetectorSample', `Face detector initialization result:${initResult}`);
 
-9. if (initResult) {
-10. hilog.info(0x0000, 'faceDetectorSample', 'Face detector initialized successfully');
+  if (initResult) {
+    hilog.info(0x0000, 'faceDetectorSample', 'Face detector initialized successfully');
 
-12. // 这里可以添加使用人脸检测服务的代码
+    // 这里可以添加使用人脸检测服务的代码
 
-14. // 使用完毕后，释放人脸检测服务
-15. await faceDetector.release();
-16. hilog.info(0x0000, 'faceDetectorSample', 'Face detector released successfully');
-17. } else {
-18. hilog.error(0x0000, 'faceDetectorSample', 'Failed to initialize face detector');
-19. }
-20. }
+    // 使用完毕后，释放人脸检测服务
+    await faceDetector.release();
+    hilog.info(0x0000, 'faceDetectorSample', 'Face detector released successfully');
+  } else {
+    hilog.error(0x0000, 'faceDetectorSample', 'Failed to initialize face detector');
+  }
+}
 
-22. @Entry
-23. @Component
-24. struct Page {
+@Entry
+@Component
+struct Page {
 
-26. build() {
-27. Column(){
-28. Button('initAndReleaseFaceDetector').onClick(() => {
-29. // 调用函数
-30. void initAndReleaseFaceDetector();
-31. })
-32. }
-33. }
-34. }
+  build() {
+    Column(){
+      Button('initAndReleaseFaceDetector').onClick(() => {
+        // 调用函数
+        void initAndReleaseFaceDetector();
+      })
+    }
+  }
+}
 ```
 
 ## faceDetector.init
-
-PhonePC/2in1Tablet
 
 init(faceRecognitionConfiguration: FaceRecognitionConfiguration): Promise<boolean>
 
 初始化人脸遮挡检测分析器服务。同一个进程内只要有人脸检测服务开启了遮挡检测，在该人脸检测服务未release这段时间内，这个进程内的其他所有人脸检测服务都等同于开启了遮挡检测。使用Promise异步回调。
 
 **系统能力：** SystemCapability.AI.Face.Detector
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.2(14)
 
@@ -225,7 +223,7 @@ init(faceRecognitionConfiguration: FaceRecognitionConfiguration): Promise<boolea
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Core Vision Kit错误码](core-vision-error-code.md)。
+以下错误码的详细介绍请参见[Core Vision Kit错误码](errorcode-core-vision.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -233,49 +231,47 @@ init(faceRecognitionConfiguration: FaceRecognitionConfiguration): Promise<boolea
 
 **示例：**
 
-```
-1. import { faceDetector } from '@kit.CoreVisionKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { faceDetector } from '@kit.CoreVisionKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. async function initAndReleaseFaceDetector() {
-5. let config: faceDetector.FaceRecognitionConfiguration = {
-6. faceBlock: true
-7. }
-8. // 初始化人脸遮挡检测服务
-9. const initResult = await faceDetector.init(config);
-10. hilog.info(0x0000, 'faceDetectorSample', `Face detector initialization result:${initResult}`);
+async function initAndReleaseFaceDetector() {
+  let config: faceDetector.FaceRecognitionConfiguration = {
+    faceBlock: true
+  };
+  // 初始化人脸遮挡检测服务
+  const initResult = await faceDetector.init(config);
+  hilog.info(0x0000, 'faceDetectorSample', `Face detector initialization result:${initResult}`);
 
-12. if (initResult) {
-13. hilog.info(0x0000, 'faceDetectorSample', 'Face detector initialized successfully');
+  if (initResult) {
+    hilog.info(0x0000, 'faceDetectorSample', 'Face detector initialized successfully');
 
-15. // 这里可以添加使用人脸检测服务的代码
+    // 这里可以添加使用人脸检测服务的代码
 
-17. // 使用完毕后，释放人脸检测服务
-18. await faceDetector.release();
-19. hilog.info(0x0000, 'faceDetectorSample', 'Face detector released successfully');
-20. } else {
-21. hilog.error(0x0000, 'faceDetectorSample', 'Failed to initialize face detector');
-22. }
-23. }
+    // 使用完毕后，释放人脸检测服务
+    await faceDetector.release();
+    hilog.info(0x0000, 'faceDetectorSample', 'Face detector released successfully');
+  } else {
+    hilog.error(0x0000, 'faceDetectorSample', 'Failed to initialize face detector');
+  }
+}
 
-25. @Entry
-26. @Component
-27. struct Page {
+@Entry
+@Component
+struct Page {
 
-29. build() {
-30. Column(){
-31. Button('initAndReleaseFaceDetector').onClick(() => {
-32. // 调用函数
-33. void initAndReleaseFaceDetector();
-34. })
-35. }
-36. }
-37. }
+  build() {
+    Column(){
+      Button('initAndReleaseFaceDetector').onClick(() => {
+        // 调用函数
+        void initAndReleaseFaceDetector();
+      })
+    }
+  }
+}
 ```
 
 ## faceDetector.release
-
-PhonePC/2in1Tablet
 
 release(): Promise<void>
 
@@ -285,56 +281,56 @@ release(): Promise<void>
 
 **系统能力：** SystemCapability.AI.Face.Detector
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **起始版本：** 5.0.0(12)
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象，释放接口无返回值。 |
+| Promise<void> | 无返回结果的Promise对象。 |
 
 **示例：**
 
-```
-1. import { faceDetector } from '@kit.CoreVisionKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { faceDetector } from '@kit.CoreVisionKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. async function initAndReleaseFaceDetector() {
-5. // 初始化人脸检测服务
-6. const initResult = await faceDetector.init();
-7. hilog.info(0x0000, 'faceDetectorSample', `Face detector initialization result:${initResult}`);
+async function initAndReleaseFaceDetector() {
+  // 初始化人脸检测服务
+  const initResult = await faceDetector.init();
+  hilog.info(0x0000, 'faceDetectorSample', `Face detector initialization result:${initResult}`);
 
-9. if (initResult) {
-10. hilog.info(0x0000, 'faceDetectorSample', 'Face detector initialized successfully');
+  if (initResult) {
+    hilog.info(0x0000, 'faceDetectorSample', 'Face detector initialized successfully');
 
-12. // 这里可以添加使用人脸检测服务的代码
+    // 这里可以添加使用人脸检测服务的代码
 
-14. // 使用完毕后，释放人脸检测服务
-15. await faceDetector.release();
-16. hilog.info(0x0000, 'faceDetectorSample', 'Face detector released successfully');
-17. } else {
-18. hilog.error(0x0000, 'faceDetectorSample', 'Failed to initialize face detector');
-19. }
-20. }
+    // 使用完毕后，释放人脸检测服务
+    await faceDetector.release();
+    hilog.info(0x0000, 'faceDetectorSample', 'Face detector released successfully');
+  } else {
+    hilog.error(0x0000, 'faceDetectorSample', 'Failed to initialize face detector');
+  }
+}
 
-22. @Entry
-23. @Component
-24. struct Page {
+@Entry
+@Component
+struct Page {
 
-26. build() {
-27. Column(){
-28. Button('initAndReleaseFaceDetector').onClick(() => {
-29. // 调用函数
-30. void initAndReleaseFaceDetector();
-31. })
-32. }
-33. }
-34. }
+  build() {
+    Column(){
+      Button('initAndReleaseFaceDetector').onClick(() => {
+        // 调用函数
+        void initAndReleaseFaceDetector();
+      })
+    }
+  }
+}
 ```
 
 ## faceDetector.detect
-
-PhonePC/2in1Tablet
 
 detect(visionInfo: VisionInfo): Promise<Array<Face>>
 
@@ -343,6 +339,8 @@ detect(visionInfo: VisionInfo): Promise<Array<Face>>
 **元服务API：** 从版本5.0.2(14)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.AI.Face.Detector
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -360,82 +358,82 @@ detect(visionInfo: VisionInfo): Promise<Array<Face>>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Core Vision Kit错误码](core-vision-error-code.md)。
+以下错误码的详细介绍请参见[Core Vision Kit错误码](errorcode-core-vision.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 200 | Run timed out, please try again later. |
 | 401 | The parameter check failed. |
-| 1008800001 | Failed to run, please try again. |
-| 1008800002 | The service is abnormal. |
+| 1008800001 | Failed to run face detector, please try again. |
+| 1008800002 | The face detector service is abnormal. |
 
 **示例：**
 
-```
-1. import { faceDetector } from '@kit.CoreVisionKit';
-2. import { image } from '@kit.ImageKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
-5. import { fileIo } from '@kit.CoreFileKit';
-6. import { photoAccessHelper } from '@kit.MediaLibraryKit';
+```typescript
+import { faceDetector } from '@kit.CoreVisionKit';
+import { image } from '@kit.ImageKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { fileIo } from '@kit.CoreFileKit';
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
-8. let imageSource: image.ImageSource | undefined = undefined;
-9. let chooseImage: PixelMap | undefined = undefined;
+async function faceDetectTest() {
+  let imageSource: image.ImageSource | undefined = undefined;
+  let chooseImage: PixelMap | undefined = undefined;
 
-11. // 将图片转换为PixelMap，可以通过图库获取
-12. let photoPicker: photoAccessHelper.PhotoViewPicker = new photoAccessHelper.PhotoViewPicker();
-13. photoPicker.select({
-14. MIMEType: photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE,
-15. maxSelectNumber: 1
-16. }).then((res: photoAccessHelper.PhotoSelectResult) => {
-17. let uri = res.photoUris[0];
-18. if (uri === undefined) {
-19. hilog.info(0x0000, 'faceDetectorSample', 'uri is undefined');
-20. return
-21. }
-22. setTimeout(async () => {
-23. let file = await fileIo.open(uri, fileIo.OpenMode.READ_ONLY);
-24. imageSource = image.createImageSource(file.fd);
-25. chooseImage = await imageSource.createPixelMap();
-26. hilog.info(0x0000, 'faceDetectorSample', 'chooseImage:', chooseImage);
-27. if (!chooseImage) {
-28. return
-29. }
-30. // 调用人脸检测接口
-31. let visionInfo: faceDetector.VisionInfo = {
-32. pixelMap: chooseImage
-33. };
-34. let data: faceDetector.Face[] = await faceDetector.detect(visionInfo);
-35. if (data.length === 0) {
-36. hilog.info(0x0000, 'faceDetectorSample', 'No face is detected in the image.');
-37. } else {
-38. let faceString = JSON.stringify(data);
-39. hilog.info(0x0000, 'faceDetectorSample', 'faceString data is ' + faceString);
-40. }
+  // 通过图库选择一张图片
+  let photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
+  photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
+  photoSelectOptions.maxSelectNumber = 1;
+  let photoPicker: photoAccessHelper.PhotoViewPicker = new photoAccessHelper.PhotoViewPicker();
+  let photoSelectResult = await photoPicker.select(photoSelectOptions);
+  let uri = photoSelectResult.photoUris[0];
+  if (uri === undefined) {
+    hilog.info(0x0000, 'faceDetectorSample', 'uri is undefined');
+    return;
+  }
 
-42. if (chooseImage && imageSource) {
-43. void chooseImage.release();
-44. void imageSource.release();
-45. }
-46. if (file) {
-47. try {
-48. await fileIo.close(file);
-49. } catch (err) {
-50. hilog.error(0x0000, 'faceDetectorSample', `Failed to close fileSource. Code: ${err.code}, message: ${err.message}`);
-51. }
-52. }
-53. }, 100);
-54. }).catch((err: BusinessError) => {
-55. hilog.error(0x0000, 'faceDetectorSample', `Failed to get photo image uri. code: ${err.code}, message: ${err.message}`);
-56. });
+  // 将图片转换为PixelMap
+  let file = await fileIo.open(uri, fileIo.OpenMode.READ_ONLY);
+  imageSource = image.createImageSource(file.fd);
+  chooseImage = await imageSource.createPixelMap();
+  hilog.info(0x0000, 'faceDetectorSample', 'chooseImage:', chooseImage);
+  if (!chooseImage) {
+    return;
+  }
 
-58. @Entry
-59. @Component
-60. struct Page {
+  // 调用人脸检测接口
+  let visionInfo: faceDetector.VisionInfo = {
+    pixelMap: chooseImage
+  };
+  let data: faceDetector.Face[] = await faceDetector.detect(visionInfo);
+  if (data.length === 0) {
+    hilog.info(0x0000, 'faceDetectorSample', 'No face is detected in the image.');
+  } else {
+    let faceString = JSON.stringify(data);
+    hilog.info(0x0000, 'faceDetectorSample', 'faceString data is ' + faceString);
+  }
 
-62. build() {
-63. Column(){
-64. }
-65. }
-66. }
+  // 释放资源
+  if (chooseImage && imageSource) {
+    void chooseImage.release();
+    void imageSource.release();
+  }
+  if (file) {
+    await fileIo.close(file);
+  }
+}
+
+@Entry
+@Component
+struct Page {
+
+  build() {
+    Column(){
+      Button('faceDetectTest').onClick(() => {
+        // 调用函数
+        void faceDetectTest();
+      })
+    }
+  }
+}
 ```

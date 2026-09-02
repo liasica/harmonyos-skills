@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___st
 title: Rcp_StaticDnsRuleItem
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > C API > 结构体 > Rcp_StaticDnsRuleItem
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:09+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:17f1687a2934197023c758d950091c82360f0b5347f51b50077f32a22abdb649
+scraped_at: 2026-09-02T15:01:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:eef05f65077394b74643eafe9b14188d98b868d9691bbba7b9975f960222e950
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 描述单个静态DNS规则。
 
@@ -22,11 +20,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -36,14 +30,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTVWearable
-
 ### host
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. char Rcp_StaticDnsRuleItem::host[RCP_HOST_MAX_LEN]
+```cpp
+char Rcp_StaticDnsRuleItem::host[RCP_HOST_MAX_LEN]
 ```
 
 **描述**
@@ -52,10 +42,8 @@ PhonePC/2in1TabletTVWearable
 
 ### ipAddresses
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Rcp_IpAddress* Rcp_StaticDnsRuleItem::ipAddresses
+```cpp
+Rcp_IpAddress* Rcp_StaticDnsRuleItem::ipAddresses
 ```
 
 **描述**
@@ -64,10 +52,8 @@ PhonePC/2in1TabletTVWearable
 
 ### port
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. uint16_t Rcp_StaticDnsRuleItem::port
+```cpp
+uint16_t Rcp_StaticDnsRuleItem::port
 ```
 
 **描述**

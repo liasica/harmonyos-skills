@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/deveco-studio-new-features-510-release
 title: 新增和增强特性
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.1.0(18) > DevEco Studio > 新增和增强特性
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.0(18) > DevEco Studio > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:17+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:4c3e470548cd352b3b52664239172b767e1c1a982aab963b31bf01015ea31822
+scraped_at: 2026-09-02T14:49:22+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6949174f285e86694526090242414d67217b44f8f4906956f1065f77659c1f04
 ---
 
 ## DevEco Studio 5.1.0 Release（5.1.0.849）兼容性配套关系
@@ -148,7 +148,7 @@ DevEco Studio 5.1.0.828配套使用的命令行工具列表、支持的API范围
 * DevEco Studio支持开发API 18工程。
 * DevEco Studio支持使用MacOS 15系统版本进行开发。
 * DevEco Studio支持TV、Wearable设备开发。
-* 新增部分ACL权限支持通过自动签名快速申请。具体请参考[支持ACL权限](../harmonyos-guides/ide-signing.md#section5301916183411)。
+* 新增部分ACL权限支持通过自动签名快速申请。具体请参考[支持ACL权限](../harmonyos-guides/ide-signing-auto.md#section5301916183411)。
 * Code Linter支持配置自定义检查规则。具体请参考[配置代码检查规则](../harmonyos-guides/ide-code-linter.md#section19310459444)。
 * 支持查询工程中所用到的API的变更情况。具体请参考[API变更查询](../harmonyos-guides/ide-editer-overview.md#section234174215231)。
 * CodeGenie支持对选中的ArkTS方法名称生成对应单元测试用例，提升测试覆盖率。具体请参考[单元测试用例生成](../harmonyos-guides/ide-ut-generation.md)。
@@ -175,7 +175,7 @@ DevEco Studio 5.1.0.828配套使用的命令行工具列表、支持的API范围
 * 模拟器新增错误码。具体请参考[模拟器错误码](../harmonyos-guides/ide-emulator-faqs.md)。
 * DevEco Profiler调优工具能力增强：
   + 新增Energy能耗分析模板。具体请参考[能耗诊断：Energy分析](../harmonyos-guides/ide-profiler-energy.md)。
-  + Frame模板支持查看指定Frame页面布局信息。具体请参考[查看指定Frame页面布局信息](../harmonyos-guides/ide-insight-session-frame.md#section58691959194312)。
+  + Frame模板支持查看指定Frame页面布局信息。具体请参考[查看指定Frame页面布局信息](../harmonyos-guides/ide-insight-session-frame.md)。
   + Snapshot分析支持一键向引用链最小的引用距离方向展开。具体请参考[Snapshot模板基本操作](../harmonyos-guides/ide-snapshot-basic-operations.md)。
 * 黑盒覆盖率测试新增支持实时生成覆盖率数据，无须退出应用，测试过程执行命令hdc shell aa dump -c -l即可生成覆盖率数据。具体请参考[黑盒覆盖率测试](../harmonyos-guides/ide-ui-test.md)。
 * 黑盒覆盖率测试支持开发者自定义需要参与覆盖率测试的文件。具体请参考[配置覆盖率过滤文件](../harmonyos-guides/ide-ui-test.md#section13756446154)。

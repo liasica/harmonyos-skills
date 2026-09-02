@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 驱动错误码
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > 错误码 > 驱动错误码
 category: harmonyos-references
-scraped_at: 2026-04-29T14:01:35+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:07ca1b304e8663ada38a80997462b3ce2a9637677f75f4cc2b8368ed01a5fb33
+scraped_at: 2026-09-02T15:02:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e0d0994ebf8f9a1c05565e5ecdb2a9dead5b47aee8cc673280d1a4284bf526b4
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 22900001 扩展外设驱动服务异常或busType参数错误
-
-PC/2in1
 
 **错误信息**
 
@@ -28,7 +26,7 @@ ExternalDeviceManager service exception or busType parameter error.
 
 1. 产品形态不正确，仅支持PC/2in1。
 2. 服务内部遇到通信输入输出异常。
-3. 若接口存在busType参数，请检查参数是否错误。
+3. 若接口存在busType参数，该参数取值不在合法枚举范围内。
 
 **处理步骤**
 
@@ -37,8 +35,6 @@ ExternalDeviceManager service exception or busType parameter error.
 3. 通过[deviceManager.BusType](js-apis-driver-devicemanager.md#bustype)查询支持的枚举值。
 
 ## 26300001 扩展外设驱动服务异常
-
-PC/2in1
 
 **错误信息**
 
@@ -60,8 +56,6 @@ ExternalDeviceManager service exception.
 
 ## 26300002 驱动服务端不允许驱动客户端绑定
 
-PC/2in1
-
 **错误信息**
 
 The driver service does not allow any client to bind.
@@ -72,15 +66,13 @@ The driver service does not allow any client to bind.
 
 **可能原因**
 
-非标外设驱动源码工程目录下的 entry/src/main/module.json5 文件下，类型type为"driver"的extensionAbilities结构中，metadata属性下，name为"ohos.permission.ACCESS\_DDK\_ALLOWED"的value值配置错误。
+非标外设驱动源码工程目录下的 entry/src/main/module.json5 文件中，类型type为"driver"的extensionAbilities结构中，metadata属性下，name为"ohos.permission.ACCESS\_DDK\_ALLOWED"的value值配置错误。
 
 **处理步骤**
 
-打开非标外设源码工程，找到entry/src/main/module.json5文件，将类型type为"driver"的extensionAbilities结构中metadata属性下，name为"ohos.permission.ACCESS\_DDK\_ALLOWED"的value值修改为"true"。
+打开非标外设驱动源码工程，找到entry/src/main/module.json5文件，将类型type为"driver"的extensionAbilities结构中metadata属性下，name为"ohos.permission.ACCESS\_DDK\_ALLOWED"的value值修改为"true"。
 
 ## 26300003 驱动客户端未绑定任何驱动服务端
-
-PC/2in1
 
 **错误信息**
 
@@ -96,4 +88,4 @@ There is no binding relationship.
 
 **处理步骤**
 
-请按照接口调用顺序，先调用 bindDriverWithDeviceId 接口，并确认调用成功的情况下，调用 unbindDriverWithDeviceId 接口。
+请按照接口调用顺序，先调用[bindDriverWithDeviceId](js-apis-driver-devicemanager.md#devicemanagerbinddriverwithdeviceid19)接口，并确认调用成功的情况下，调用[unbindDriverWithDeviceId](js-apis-driver-devicemanager.md#devicemanagerunbinddriverwithdeviceid19)接口。

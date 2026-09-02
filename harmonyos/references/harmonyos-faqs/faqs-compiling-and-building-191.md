@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 新建工程/模块无法加载ets目录下的资源
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 新建工程/模块无法加载ets目录下的资源
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:49+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:bfae57e925e2afaeee0aaf03f101983d02018cdae367b79c87834b4a30247049
+scraped_at: 2026-09-02T14:54:55+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:fb5b7e21bd8f0f35c68cfe9f5ab891def1757f6d3a609f9d0c07e30b7dc1e258
 ---
 
 **问题现象**
@@ -18,73 +18,68 @@ content_hash: sha256:bfae57e925e2afaeee0aaf03f101983d02018cdae367b79c87834b4a302
 
 **解决措施**
 
-1. 将ets目录中的资源文件放置到resources目录中,通过$r的方式引用，参考:
+1. 将ets目录中的资源文件放置到resources目录中,通过$r的方式引用，参考：
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct VideoPlayer {
-5. private controller: VideoController = new VideoController()
-6. private previewUris: Resource = $r('app.media.preview')
-7. private innerResource: Resource = $rawfile('videoTest.mp4')
+   ```typescript
+   // xxx.ets
+   @Entry
+   @Component
+   struct VideoPlayer {
+     private controller: VideoController = new VideoController()
+     private previewUris: Resource = $r('app.media.preview')
+     private innerResource: Resource = $rawfile('videoTest.mp4')
 
-9. build() {
-10. Column() {
-11. Video({
-12. src: this.innerResource,
-13. previewUri: this.previewUris,
-14. controller: this.controller
-15. })
-16. .onUpdate((event) => { // Triggered when the playback progress changes.
-17. console.info("Video update.");
-18. })
-19. .onPrepared((event) => { // Triggered when video preparation is complete.
-20. console.info("Video prepared.");
-21. })
-22. .onError(() => { // Triggered when the video playback fails.
-23. console.error("Video error.");
-24. })
-25. .onStop(() => { // Triggered when the video playback stops.
-26. console.info("Video stopped.");
-27. })
-28. }
-29. }
-30. }
-```
+     build() {
+       Column() {
+         Video({
+           src: this.innerResource,
+           previewUri: this.previewUris,
+           controller: this.controller
+         })
+           .onUpdate((event) => { // Triggered when the playback progress changes.
+             console.info("Video update.");
+           })
+           .onPrepared((event) => { // Triggered when video preparation is complete.
+             console.info("Video prepared.");
+           })
+           .onError(() => { // Triggered when the video playback fails.
+             console.error("Video error.");
+           })
+           .onStop(() => { // Triggered when the video playback stops.
+             console.info("Video stopped.");
+           })
+       }
+     }
+   }
+   ```
+2. 若使用的组件不支持直接使用$r的写法,可以通过resourceManager资源接口获取和使用resources资源目录中的资源，参考：
 
-[GetResources.ets](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkUI/entry/src/main/ets/pages/GetResources.ets#L21-L50)
+   ```typescript
+   // xxx.ets
+   @Entry
+   @Component
+   struct ImageExample {
+     private settings: RenderingContextSettings = new RenderingContextSettings(true);
+     private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings);
+     // Replace "common/images/example.jpg" with the image resource file you use.
+     // private img: ImageBitmap = new ImageBitmap("common/images/example.jpg"); // This relative path writing will make it impossible to record pictures in the new template
+        private img: ImageBitmap = new ImageBitmap(this.getUIContext().getHostContext()?.resourceManager
+       .getDrawableDescriptorByName("example")
+       .getPixelMap()); // You can refer to the interface for using resourceManager
 
-2. 若使用的组件不支持直接使用$r的写法,可以通过resourceManager资源接口获取和使用resources资源目录中的资源，参考:
-
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct ImageExample {
-5. private settings: RenderingContextSettings = new RenderingContextSettings(true);
-6. private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings);
-7. // Replace "common/images/example.jpg" with the image resource file you use.
-8. // private img: ImageBitmap = new ImageBitmap("common/images/example.jpg"); // This relative path writing will make it impossible to record pictures in the new template
-9. private img: ImageBitmap = new ImageBitmap(this.getUIContext().getHostContext()?.resourceManager
-10. .getDrawableDescriptorByName("example")
-11. .getPixelMap()); // You can refer to the interface for using resourceManager
-
-13. build() {
-14. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-15. Canvas(this.context)
-16. .width('100%')
-17. .height('100%')
-18. .backgroundColor('#ffff00')
-19. .onReady(() => {
-20. this.context.drawImage(this.img, 0, 0, 500, 500, 0, 0, 400, 200)
-21. this.img.close()
-22. })
-23. }
-24. .width('100%')
-25. .height('100%')
-26. }
-27. }
-```
-
-[GetResourceManager.ets](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/ArkUI/entry/src/main/ets/pages/GetResourceManager.ets#L21-L47)
+     build() {
+       Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+         Canvas(this.context)
+           .width('100%')
+           .height('100%')
+           .backgroundColor('#ffff00')
+           .onReady(() => {
+             this.context.drawImage(this.img, 0, 0, 500, 500, 0, 0, 400, 200)
+             this.img.close()
+           })
+       }
+       .width('100%')
+       .height('100%')
+     }
+   }
+   ```

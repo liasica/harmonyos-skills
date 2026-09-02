@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/drm-overview
 title: DRM Kit 简介
 breadcrumb: 指南 > 媒体 > DRM Kit（数字版权保护服务） > DRM Kit 简介
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:35:09+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:8203c3b159219a1bd5a39f6b7b4de47e6f9367722cf03140858e6a09385200e0
+scraped_at: 2026-09-02T14:59:45+08:00
+doc_updated_at: 2026-08-18
+content_hash: sha256:e393aace2e1bc0dc69926130bb45db8851b346006cf068a1aa832d9f2a4f9225
 ---
 
 DRM Kit（Digital Rights Management Kit，数字版权保护服务）提供了DRM加密节目授权解密的功能，包括DRM插件管理、DRM证书管理、DRM许可证管理、DRM节目授权、DRM节目解密等功能，可实现DRM解决方案的集成、DRM解决方案的证书下载、节目的授权及解密。
@@ -14,19 +14,13 @@ DRM Kit（Digital Rights Management Kit，数字版权保护服务）提供了DR
 
 通过DRM Kit，DRM解决方案集成方可以完成DRM解决方案的集成，应用开发者可以通过调用对应的DRM解决方案，实现DRM加密节目授权解密的功能，实现DRM节目的播放。
 
-* DRM插件管理: 通过实现DRM Kit提供的DRM HDI接口，实现对不同的DRM解决方案的支持，一般由DRM解决方案集成方实现。
+* DRM插件管理：通过实现DRM Kit提供的DRM HDI接口，实现对不同的DRM解决方案的支持，一般由DRM解决方案集成方实现。
 * DRM证书管理：支持DRM解决方案的设备证书的请求、处理，实现对应DRM解决方案的证书下载（Provision）功能。
 * DRM许可证管理：支持离线许可证的请求、处理及删除等。
 * DRM节目授权：支持在线许可证请求及处理、离线许可证的加载、媒体密钥状态查询，并支持按照DRM许可证的权限要求对DRM节目授权。
-* DRM节目解密：支持的媒体协议：HLS、DASH；封装格式：MP4、TS；视频编码格式：H264、H265<!--RP2End->
+* DRM节目解密：支持的媒体协议：HLS、DASH；封装格式：MP4、TS；视频编码格式：H264、H265；音频编码格式：AAC。
 
-、H265<!--RP2End->
-
-## 模拟器支持情况
-
-本Kit暂不支持模拟器。；音频编码格式：AAC。
-
-注意
+**注意** 
 
 DRM证书管理、DRM许可证管理、DRM节目授权、DRM节目解密依赖对应的DRM解决方案的实现。应用开发者可以自行扩展支持的媒体协议、封装格式、视音频编码格式。
 
@@ -80,7 +74,7 @@ DRM插件管理功能一般由DRM解决方案集成方实现。
 
 应用集成DRM Kit工作流程如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/Yy1lLj5jQ56tpgxkEb3o5A/zh-cn_image_0000002558765084.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/wFFOKnzEQDS4BBNuLj0eiA/zh-cn_image_0000002706674624.png)
 
 工作流程主要包括：
 
@@ -89,8 +83,6 @@ DRM插件管理功能一般由DRM解决方案集成方实现。
 3. 许可证获取：应用根据DRM事件中的pssh数据调用MediaKeySession的许可证相关接口完成DRM许可证的请求、处理。
 4. DRM节目解密：应用将MediaKeySession设置到Media Kit或AVCodec Kit，用于支持DRM节目解密。采用AVCodec Kit时，可以设置视音频数据帧的cencinfo，并设置到AVBuffer中，在调用PushInputBuffer的时候实现视音频数据帧的解密、解码。
 5. 许可证更新或过期：在节目播放过程中，在许可证需要更新的情况下，MediaKeySession将抛出许可证更新事件（keyRequired），此时需要重新请求DRM许可证。MediaKeySession如抛出许可证过期事件（keyExpired），则需要停止DRM节目播放。
-
-、H265<!--RP2End->
 
 ## 模拟器支持情况
 

@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 设置数据项错误码
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 错误码 > 设置数据项错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:00+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1c61506c5a42243506b9a2fe4737dce6ee97c1868e6f2f204a1dbb8b21d0b6c9
+scraped_at: 2026-09-02T15:02:06+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:40e8c8a5027e91ce204a346eb60ef298070dcdfa44ce219ba5c596ebd3e7711a
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 14800000 参数检查失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -36,8 +34,6 @@ Parameter error. Possible causes: 1. Parameter verification failed.
 
 ## 14800010 上下文参数不是UIAbility类型
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Original service error.
@@ -56,8 +52,6 @@ Original service error.
 
 ## 16900010 参数检查失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Parameter error.
@@ -74,3 +68,21 @@ Parameter error.
 **处理步骤**
 
 请检查必选参数是否传入。如果参数校验失败，请阅读参数规格约束，并根据可能原因进行排查。
+
+## 16900020 打开设置页面失败
+
+**错误信息**
+
+Failed to open the settings page via redirection.
+
+**错误描述**
+
+打开设置页面失败。
+
+**可能原因**
+
+系统内部异常。
+
+**处理步骤**
+
+重启应用或者设备，再次尝试。

@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-netc
 title: NetConn_NetHandle
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 结构体 > NetConn_NetHandle
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:34+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:5095b3dc94a8a45967884811e051c36160a0d30b37e30fa68d33945f3feb6648
+scraped_at: 2026-09-02T15:01:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:002e7815ed767cf0310f29dea7861b1db9a9bb74c9e0fa04c956f9a43f56521c
 ---
 
-```
-1. typedef struct NetConn_NetHandle {...} NetConn_NetHandle
+```c
+typedef struct NetConn_NetHandle {...} NetConn_NetHandle
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 存放网络ID。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

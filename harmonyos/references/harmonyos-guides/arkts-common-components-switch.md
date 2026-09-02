@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 切换按钮 (Toggle)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 按钮与选择 > 切换按钮 (Toggle)
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5d1c36f9c5c55dee9685375ec3c81cba52444a9d140077a63a96f3a5756b72fc
+scraped_at: 2026-09-02T14:49:50+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e8413821def7631d21ef8bcce26f0414767021d6db14a2b08913e279ba52873c
 ---
 
 Toggle组件提供状态按钮样式、勾选框样式和开关样式，一般用于两种状态之间的切换。具体用法请参考[Toggle](../harmonyos-references/ts-basic-components-toggle.md)。
@@ -14,11 +14,11 @@ Toggle组件提供状态按钮样式、勾选框样式和开关样式，一般�
 
 Toggle通过调用[ToggleOptions](../harmonyos-references/ts-basic-components-toggle.md#toggleoptions18对象说明)来创建，具体调用形式如下：
 
-```
-1. Toggle(options: { type: ToggleType, isOn?: boolean })
+```ts
+Toggle(options: { type: ToggleType, isOn?: boolean })
 ```
 
-其中，ToggleType为开关类型，包括Button、Checkbox和Switch，isOn为切换按钮的状态。
+其中，ToggleType为切换类型，包括Button、Checkbox和Switch，isOn为切换按钮的状态。
 
 API version 11开始，Checkbox默认样式由圆角方形变为圆形。
 
@@ -28,153 +28,139 @@ API version 11开始，Checkbox默认样式由圆角方形变为圆形。
 
   当ToggleType为Checkbox或者Switch时，用于创建不包含子组件的Toggle：
 
-  ```
-  1. Toggle({ type: ToggleType.Checkbox, isOn: false }).id('toggle1') // 请开发者替换为实际的id
-  2. Toggle({ type: ToggleType.Checkbox, isOn: true }).id('toggle2') // 请开发者替换为实际的id
-  ```
-
-  [CreateToggle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/toggle/CreateToggle.ets#L30-L33)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/yPBszsovQxOhX2UftGTg3w/zh-cn_image_0000002589244183.png)
-
-  ```
-  1. Toggle({ type: ToggleType.Switch, isOn: false }).id('toggle3') // 请开发者替换为实际的id
-  2. Toggle({ type: ToggleType.Switch, isOn: true }).id('toggle4') // 请开发者替换为实际的id
+  ```typescript
+  Toggle({ type: ToggleType.Checkbox, isOn: false }).id('toggle1') // 请开发者替换为实际的id
+  Toggle({ type: ToggleType.Checkbox, isOn: true }).id('toggle2') // 请开发者替换为实际的id
   ```
 
-  [CreateToggle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/toggle/CreateToggle.ets#L39-L42)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/TwspkPJ8QnmpXOc_EyQG2A/zh-cn_image_0000002706673724.png)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/LhL7s_eJTvurJsiEE6MdUg/zh-cn_image_0000002558764376.png)
+  ```typescript
+  Toggle({ type: ToggleType.Switch, isOn: false }).id('toggle3') // 请开发者替换为实际的id
+  Toggle({ type: ToggleType.Switch, isOn: true }).id('toggle4') // 请开发者替换为实际的id
+  ```
+
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/P4ncbZcDRBqabEsNV6Mz4Q/zh-cn_image_0000002736432815.png)
 * 创建包含子组件的Toggle。
 
   当ToggleType为Button时，只能包含一个子组件，如果子组件有文本设置，则相应的文本内容会显示在按钮上。
 
+  ```typescript
+  Toggle({ type: ToggleType.Button, isOn: false }) {
+    Text('status button')
+      .fontColor('#182431')
+      .fontSize(12)
+  }.width(100).id('toggle5') // 请开发者替换为实际的id
+
+  Toggle({ type: ToggleType.Button, isOn: true }) {
+    Text('status button')
+      .fontColor('#182431')
+      .fontSize(12)
+  }.width(100).id('toggle6') // 请开发者替换为实际的id
   ```
-  1. Toggle({ type: ToggleType.Button, isOn: false }) {
-  2. Text('status button')
-  3. .fontColor('#182431')
-  4. .fontSize(12)
-  5. }.width(100).id('toggle5') // 请开发者替换为实际的id
 
-  7. Toggle({ type: ToggleType.Button, isOn: true }) {
-  8. Text('status button')
-  9. .fontColor('#182431')
-  10. .fontSize(12)
-  11. }.width(100).id('toggle6') // 请开发者替换为实际的id
-  ```
-
-  [CreateToggle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/toggle/CreateToggle.ets#L61-L73)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/l0269XtpRh2g_tgjtcvzvg/zh-cn_image_0000002558604720.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/Vd0BrfG1ScqRjqT0LAx7Sw/zh-cn_image_0000002706833660.png)
 
 ## 自定义样式
 
 * 通过selectedColor属性设置Toggle打开选中后的背景颜色。
 
+  ```typescript
+    Toggle({ type: ToggleType.Button, isOn: true }) {
+      Text('status button')
+        .fontColor('#182431')
+        .fontSize(12)
+    }.width(100)
+    .selectedColor(Color.Pink)
+  // ···
+
+    Toggle({ type: ToggleType.Checkbox, isOn: true })
+      .selectedColor(Color.Pink)
+      // ···
+    Toggle({ type: ToggleType.Switch, isOn: true })
+      .selectedColor(Color.Pink)
+      // ···
   ```
-  1. Toggle({ type: ToggleType.Button, isOn: true }) {
-  2. Text('status button')
-  3. .fontColor('#182431')
-  4. .fontSize(12)
-  5. }.width(100)
-  6. .selectedColor(Color.Pink)
-  7. // ···
 
-  9. Toggle({ type: ToggleType.Checkbox, isOn: true })
-  10. .selectedColor(Color.Pink)
-  11. // ···
-  12. Toggle({ type: ToggleType.Switch, isOn: true })
-  13. .selectedColor(Color.Pink)
-  14. // ···
-  ```
-
-  [ToggleCustomStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/toggle/ToggleCustomStyle.ets#L31-L52)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/1qJjudpcT7uGIbuIlAyxjg/zh-cn_image_0000002589324245.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/N9kznYyKRUeQUG9e6iUKzg/zh-cn_image_0000002736312769.png)
 * 通过switchPointColor属性设置Switch类型的圆形滑块颜色，仅对type为ToggleType.Switch生效。
 
-  ```
-  1. Toggle({ type: ToggleType.Switch, isOn: false })
-  2. .switchPointColor(Color.Pink)
-  3. // ···
-  4. Toggle({ type: ToggleType.Switch, isOn: true })
-  5. .switchPointColor(Color.Pink)
-  6. // ···
+  ```typescript
+  Toggle({ type: ToggleType.Switch, isOn: false })
+    .switchPointColor(Color.Pink)
+    // ···
+  Toggle({ type: ToggleType.Switch, isOn: true })
+    .switchPointColor(Color.Pink)
+    // ···
   ```
 
-  [ToggleCustomStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/toggle/ToggleCustomStyle.ets#L60-L71)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/FQgqcDnzTEmZ0O5zcScJaQ/zh-cn_image_0000002589244185.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/4FCIM5VgTfiOlu_pEj9B4g/zh-cn_image_0000002706673726.png)
 
 ## 添加事件
 
 除支持[通用事件](../harmonyos-references/ts-component-general-events.md)外，Toggle还用于选中和取消选中后触发某些操作，可以绑定onChange事件来响应操作后的自定义行为。
 
+```typescript
+Toggle({ type: ToggleType.Switch, isOn: false })
+  .onChange((isOn: boolean) => {
+    if(isOn) {
+      // 需要执行的操作
+      // ···
+    }
+  })
 ```
-1. Toggle({ type: ToggleType.Switch, isOn: false })
-2. .onChange((isOn: boolean) => {
-3. if(isOn) {
-4. // 需要执行的操作
-5. // ···
-6. }
-7. })
-```
-
-[CreateToggle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/toggle/CreateToggle.ets#L44-L54)
 
 ## 场景示例
 
 Toggle用于切换蓝牙开关状态。
 
+```typescript
+// xxx.ets
+import { promptAction } from '@kit.ArkUI';
+
+@Entry
+@Component
+export struct ToggleSample {
+  @State message: string = 'off';
+  pathStack: NavPathStack = new NavPathStack();
+
+  build() {
+    NavDestination() {
+      Column({ space: 8 }) {
+        Column({ space: 8 }) {
+          Text('Bluetooth Mode: ' + this.message)
+            .id('message')
+          Row() {
+            Text('Bluetooth')
+            Blank()
+            Toggle({ type: ToggleType.Switch })
+              .id('toggle') // 请开发者替换为实际的id
+              .onChange((isOn: boolean) => {
+                if (isOn) {
+                  this.message = 'on';
+                  promptAction.openToast({ 'message': 'Bluetooth is on.' });
+                } else {
+                  this.message = 'off';
+                  promptAction.openToast({ 'message': 'Bluetooth is off.' });
+                }
+              })
+          }.width('100%')
+        }
+        .alignItems(HorizontalAlign.Start)
+        .backgroundColor('#fff')
+        .borderRadius(12)
+        .padding(12)
+        .width('100%')
+      }
+      .width('100%')
+      .height('100%')
+      .padding({ left: 12, right: 12 })
+    }
+    .backgroundColor('#f1f2f3')
+    // 请将$r('app.string.ToggleCaseExample_title')替换为实际资源文件，在本示例中该资源文件的value值为"toggle蓝牙示例"
+    .title($r('app.string.ToggleCaseExample_title'))
+  }
+}
 ```
-1. // xxx.ets
-2. import { promptAction } from '@kit.ArkUI';
 
-4. @Entry
-5. @Component
-6. export struct ToggleSample {
-7. @State message: string = 'off';
-8. pathStack: NavPathStack = new NavPathStack();
-
-10. build() {
-11. NavDestination() {
-12. Column({ space: 8 }) {
-13. Column({ space: 8 }) {
-14. Text('Bluetooth Mode: ' + this.message)
-15. .id('message')
-16. Row() {
-17. Text('Bluetooth')
-18. Blank()
-19. Toggle({ type: ToggleType.Switch })
-20. .id('toggle') // 请开发者替换为实际的id
-21. .onChange((isOn: boolean) => {
-22. if (isOn) {
-23. this.message = 'on';
-24. promptAction.openToast({ 'message': 'Bluetooth is on.' });
-25. } else {
-26. this.message = 'off';
-27. promptAction.openToast({ 'message': 'Bluetooth is off.' });
-28. }
-29. })
-30. }.width('100%')
-31. }
-32. .alignItems(HorizontalAlign.Start)
-33. .backgroundColor('#fff')
-34. .borderRadius(12)
-35. .padding(12)
-36. .width('100%')
-37. }
-38. .width('100%')
-39. .height('100%')
-40. .padding({ left: 12, right: 12 })
-41. }
-42. .backgroundColor('#f1f2f3')
-43. // 请将$r('app.string.ToggleCaseExample_title')替换为实际资源文件，在本示例中该资源文件的value值为"toggle蓝牙示例"
-44. .title($r('app.string.ToggleCaseExample_title'))
-45. }
-46. }
-```
-
-[ToggleCaseExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ChooseComponent/entry/src/main/ets/pages/toggle/ToggleCaseExample.ets#L16-L69)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/CMJ5cdRrSguuWHz1rUeB7g/zh-cn_image_0000002558764378.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/_9XAlPtiSr6mh87XOO6A0Q/zh-cn_image_0000002736432817.gif)

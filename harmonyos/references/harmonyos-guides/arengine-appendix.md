@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-appe
 title: 附录
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 附录
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:00+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:17:35+08:00
+doc_updated_at: 2026-08-29
 content_hash: sha256:6c78d8891edcbf9ad0657d3cd18d79705983f65ab739feaaf1216282305f17d5
 ---
 

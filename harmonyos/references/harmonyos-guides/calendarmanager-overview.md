@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/calendarmanag
 title: Calendar Kit简介
 breadcrumb: 指南 > 应用服务 > Calendar Kit（日历服务） > Calendar Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:33+08:00
-doc_updated_at: 2026-04-03
-content_hash: sha256:9cd2012248b0fc4532091eb50f4ebe7aceffe90d40ad22aaede1b76c560043bd
+scraped_at: 2026-09-02T14:50:24+08:00
+doc_updated_at: 2026-04-29
+content_hash: sha256:32357f6c08df430382a9a63bdd02c1d226c13a1f1b076f26bdf600220b7aaacd
 ---
 
 Calendar Kit（日历服务）提供日历与日程管理能力，通常是指可以用于访问和操作日历数据的API（应用程序接口）。这些接口允许开发者将其他应用中的工作、生活中与时间相关的日程服务（如出行、餐饮、运动、娱乐等）与系统日历进行集成，从而实现日程管理、事件创建、查询等功能。
@@ -62,6 +62,10 @@ Calendar Kit为用户提供了一系列接口来获取日历账户，并使用�
   | ohos.permission.WRITE\_CALENDAR | - 添加、删除或修改当前应用创建的日历账户 | - 添加、删除或修改系统默认日历账户下当前应用创建的日程  - 添加、删除或修改当前应用创建的日历账户下当前应用创建的日程 |
   | ohos.permission.READ\_WHOLE\_CALENDAR | - 读取所有日历账户 | - 读取所有应用创建的日程 |
   | ohos.permission.WRITE\_WHOLE\_CALENDAR | - 添加、删除或修改所有日历账户 | - 添加、删除或修改所有应用创建的日程 |
+
+## 支持的国家和地区
+
+当前仅支持在中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）提供服务。
 
 ## 模拟器支持情况
 

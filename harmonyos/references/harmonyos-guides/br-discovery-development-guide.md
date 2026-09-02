@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/br-discovery-
 title: 查找设备
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 蓝牙 > 传统蓝牙 > 查找设备
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:32:28+08:00
+scraped_at: 2026-09-02T14:59:33+08:00
 doc_updated_at: 2026-03-20
-content_hash: sha256:97a47d321ba8fccbb46fec07289f19a0bc7f5ff09c7bb8248a28490ccacb3a8b
+content_hash: sha256:b75db1046daed97bfaf3e621cd491279564825e5d5d3212e4a7baf9a10b117e3
 ---
 
 ## 简介
@@ -22,9 +22,9 @@ content_hash: sha256:97a47d321ba8fccbb46fec07289f19a0bc7f5ff09c7bb8248a28490ccac
 
 导入connection和错误码模块。
 
-```
-1. import { connection } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 ```
 
 ### 扫描周边蓝牙设备
@@ -35,75 +35,75 @@ content_hash: sha256:97a47d321ba8fccbb46fec07289f19a0bc7f5ff09c7bb8248a28490ccac
 
 * 推荐使用API version 18开始支持的扫描结果上报方式。该方式可获取到更多设备信息，包括设备地址、设备信号强度、设备名称和设备类型。详情请见[connection.on('discoveryResult')](../harmonyos-references/js-apis-bluetooth-connection.md#connectionondiscoveryresult18)。
 
-```
-1. // 定义扫描结果上报回调函数
-2. function onReceiveEvent(data: Array<connection.DiscoveryResult>) {
-3. console.info('bluetooth device: '+ JSON.stringify(data));
-4. }
+```ts
+// 定义扫描结果上报回调函数
+function onReceiveEvent(data: Array<connection.DiscoveryResult>) {
+  console.info('bluetooth device: '+ JSON.stringify(data));
+}
 
-6. try {
-7. // 发起订阅
-8. connection.on('discoveryResult', onReceiveEvent);
-9. } catch (err) {
-10. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-11. }
+try {
+  // 发起订阅
+  connection.on('discoveryResult', onReceiveEvent);
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 * API version 17及以前的扫描结果上报方式只支持获取设备地址信息。详情请见[connection.on('bluetoothDeviceFind')](../harmonyos-references/js-apis-bluetooth-connection.md#connectiononbluetoothdevicefind)。
 
-```
-1. // 定义扫描结果上报回调函数
-2. function onReceiveEvent(data: Array<string>) {
-3. console.info('bluetooth device: '+ JSON.stringify(data));
-4. }
+```ts
+// 定义扫描结果上报回调函数
+function onReceiveEvent(data: Array<string>) {
+  console.info('bluetooth device: '+ JSON.stringify(data));
+}
 
-6. try {
-7. // 发起订阅
-8. connection.on('bluetoothDeviceFind', onReceiveEvent);
-9. } catch (err) {
-10. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-11. }
+try {
+  // 发起订阅
+  connection.on('bluetoothDeviceFind', onReceiveEvent);
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 **2. 发起设备扫描**
 
 应用发起扫描后，整个扫描过程大约持续12s。应用可以对扫描到的蓝牙设备发起配对、连接和传输数据流程。具体操作请参考[配对与连接设备](br-pair-device-development-guide.md)、[连接和传输数据](spp-development-guide.md)。
 
-```
-1. try {
-2. // 判断本机设备是否正在进行扫描
-3. let scan = connection.isBluetoothDiscovering();
-4. if (!scan) {
-5. // 若当前不处于扫描过程，则开始扫描设备
-6. connection.startBluetoothDiscovery();
-7. }
-8. } catch (err) {
-9. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-10. }
+```ts
+try {
+  // 判断本机设备是否正在进行扫描
+  let scan = connection.isBluetoothDiscovering();
+  if (!scan) {
+    // 若当前不处于扫描过程，则开始扫描设备
+    connection.startBluetoothDiscovery();
+  }
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 **3. 停止设备扫描**
 
 扫描是一个很消耗蓝牙硬件资源的过程。当扫描到应用所需的蓝牙设备后，在发起连接前，必须停止设备扫描。
 
-```
-1. // 定义扫描结果上报回调函数
-2. function onReceiveEvent(data: Array<string>) {
-3. console.info('bluetooth device: '+ JSON.stringify(data));
-4. }
+```ts
+// 定义扫描结果上报回调函数
+function onReceiveEvent(data: Array<string>) {
+  console.info('bluetooth device: '+ JSON.stringify(data));
+}
 
-6. try {
-7. // 判断本机设备是否正在进行扫描
-8. let scan = connection.isBluetoothDiscovering();
-9. if (scan) {
-10. // 若当前处于扫描过程，则停止扫描设备
-11. connection.stopBluetoothDiscovery();
-12. }
-13. // 若不再需要使用扫描，可以取消订阅扫描上报结果
-14. connection.off('bluetoothDeviceFind', onReceiveEvent);
-15. } catch (err) {
-16. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-17. }
+try {
+  // 判断本机设备是否正在进行扫描
+  let scan = connection.isBluetoothDiscovering();
+  if (scan) {
+    // 若当前处于扫描过程，则停止扫描设备
+    connection.stopBluetoothDiscovery();
+  }
+  // 若不再需要使用扫描，可以取消订阅扫描上报结果
+  connection.off('bluetoothDeviceFind', onReceiveEvent);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ### 设置本机蓝牙扫描模式
@@ -113,114 +113,114 @@ content_hash: sha256:97a47d321ba8fccbb46fec07289f19a0bc7f5ff09c7bb8248a28490ccac
 * 系统设置应用打开蓝牙后，若系统蓝牙设置界面在前台，会将本机蓝牙扫描模式设置为可被扫描和可被连接，即[SCAN\_MODE\_CONNECTABLE\_GENERAL\_DISCOVERABLE](../harmonyos-references/js-apis-bluetooth-connection.md#scanmode)。
 * 系统设置应用打开蓝牙后，若系统蓝牙设置界面在后台，会将本机蓝牙扫描模式设置为可被连接，即[SCAN\_MODE\_CONNECTABLE](../harmonyos-references/js-apis-bluetooth-connection.md#scanmode)。
 
-```
-1. try {
-2. // 获取当前本机的扫描模式
-3. let scanMode: connection.ScanMode = connection.getBluetoothScanMode();
-4. console.info('scanMode: ' + scanMode);
-5. if (scanMode != connection.ScanMode.SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE) {
-6. // 将本机设备的扫描模式设置为可被发现和可被连接
-7. connection.setBluetoothScanMode(connection.ScanMode.SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE, 0);
-8. }
-9. } catch (err) {
-10. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-11. }
+```ts
+try {
+  // 获取当前本机的扫描模式
+  let scanMode: connection.ScanMode = connection.getBluetoothScanMode();
+  console.info('scanMode: ' + scanMode);
+  if (scanMode != connection.ScanMode.SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE) {
+    // 将本机设备的扫描模式设置为可被发现和可被连接
+    connection.setBluetoothScanMode(connection.ScanMode.SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE, 0);
+  }
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ### 查找已配对设备信息
 
 在发起扫描设备前，可以查找该设备是否是已配对的设备，以减少扫描设备的流程。也可以对已配对设备发起连接和传输数据流程，具体操作请参考[配对与连接设备](br-pair-device-development-guide.md)和[传输数据](spp-development-guide.md)。
 
-```
-1. try {
-2. // 获取已配对设备信息
-3. let devices = connection.getPairedDevices();
-4. console.info('pairedDevices: ' + JSON.stringify(devices));
-5. // 若已知设备地址，可主动查询该设备是否是已配对的
-6. if (devices.length > 0) {
-7. let pairState = connection.getPairState(devices[0]);
-8. console.info('device: '+ devices[0] + ' pairState is ' + pairState);
-9. }
-10. } catch (err) {
-11. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-12. }
+```ts
+try {
+  // 获取已配对设备信息
+  let devices = connection.getPairedDevices();
+  console.info('pairedDevices: ' + JSON.stringify(devices));
+  // 若已知设备地址，可主动查询该设备是否是已配对的
+  if (devices.length > 0) {
+    let pairState = connection.getPairState(devices[0]);
+    console.info('device: '+ devices[0] + ' pairState is ' + pairState);
+  }
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## 完整示例
 
-```
-1. import { connection } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export class DiscoveryDeviceManager {
-5. // 定义扫描结果上报回调函数
-6. onReceiveEvent = (data: Array<string>) => {
-7. console.info('bluetooth device: '+ JSON.stringify(data));
-8. };
+export class DiscoveryDeviceManager {
+  // 定义扫描结果上报回调函数
+  onReceiveEvent = (data: Array<string>) => {
+    console.info('bluetooth device: '+ JSON.stringify(data));
+  };
 
-10. public startDiscovery() {
-11. try {
-12. connection.on('bluetoothDeviceFind', this.onReceiveEvent);
-13. } catch (err) {
-14. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-15. }
-16. try {
-17. // 判断本机设备是否正在进行扫描
-18. let scan = connection.isBluetoothDiscovering();
-19. if (!scan) {
-20. // 若当前不处于扫描过程，则开始扫描设备
-21. connection.startBluetoothDiscovery();
-22. }
-23. } catch (err) {
-24. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-25. }
-26. }
+  public startDiscovery() {
+    try {
+      connection.on('bluetoothDeviceFind', this.onReceiveEvent);
+    } catch (err) {
+      console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+    }
+    try {
+      // 判断本机设备是否正在进行扫描
+      let scan = connection.isBluetoothDiscovering();
+      if (!scan) {
+        // 若当前不处于扫描过程，则开始扫描设备
+        connection.startBluetoothDiscovery();
+      }
+    } catch (err) {
+      console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+    }
+  }
 
-28. public stopDiscovery() {
-29. try {
-30. // 判断本机设备是否正在进行扫描
-31. let scan = connection.isBluetoothDiscovering();
-32. if (scan) {
-33. // 若当前处于扫描过程，则停止扫描设备
-34. connection.stopBluetoothDiscovery();
-35. }
-36. // 若不再需要使用扫描，可以取消订阅扫描上报结果
-37. connection.off('bluetoothDeviceFind', this.onReceiveEvent);
-38. } catch (err) {
-39. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-40. }
-41. }
+  public stopDiscovery() {
+    try {
+      // 判断本机设备是否正在进行扫描
+      let scan = connection.isBluetoothDiscovering();
+      if (scan) {
+        // 若当前处于扫描过程，则停止扫描设备
+        connection.stopBluetoothDiscovery();
+      }
+      // 若不再需要使用扫描，可以取消订阅扫描上报结果
+      connection.off('bluetoothDeviceFind', this.onReceiveEvent);
+    } catch (err) {
+      console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+    }
+  }
 
-43. public setScanMode() {
-44. try {
-45. // 获取当前本机的扫描模式
-46. let scanMode: connection.ScanMode = connection.getBluetoothScanMode();
-47. console.info('scanMode: ' + scanMode);
-48. if (scanMode != connection.ScanMode.SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE) {
-49. // 将本机设备的扫描模式设为可被发现和可被连接
-50. connection.setBluetoothScanMode(connection.ScanMode.SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE, 0);
-51. }
-52. } catch (err) {
-53. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-54. }
-55. }
+  public setScanMode() {
+    try {
+      // 获取当前本机的扫描模式
+      let scanMode: connection.ScanMode = connection.getBluetoothScanMode();
+      console.info('scanMode: ' + scanMode);
+      if (scanMode != connection.ScanMode.SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE) {
+        // 将本机设备的扫描模式设为可被发现和可被连接
+        connection.setBluetoothScanMode(connection.ScanMode.SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE, 0);
+      }
+    } catch (err) {
+      console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+    }
+  }
 
-57. public getPairedDevices() {
-58. try {
-59. // 获取已配对设备信息
-60. let devices = connection.getPairedDevices();
-61. console.info('pairedDevices: ' + JSON.stringify(devices));
-62. // 若已知设备地址，可主动查询该设备是否是已配对的
-63. if (devices.length > 0) {
-64. let pairState = connection.getPairState(devices[0]);
-65. console.info('device: '+ devices[0] + ' pairState is ' + pairState);
-66. }
-67. } catch (err) {
-68. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-69. }
-70. }
-71. }
+  public getPairedDevices() {
+    try {
+      // 获取已配对设备信息
+      let devices = connection.getPairedDevices();
+      console.info('pairedDevices: ' + JSON.stringify(devices));
+      // 若已知设备地址，可主动查询该设备是否是已配对的
+      if (devices.length > 0) {
+        let pairState = connection.getPairState(devices[0]);
+        console.info('device: '+ devices[0] + ' pairState is ' + pairState);
+      }
+    } catch (err) {
+      console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+    }
+  }
+}
 
-73. let discoveryDeviceManager = new DiscoveryDeviceManager();
-74. export default discoveryDeviceManager as DiscoveryDeviceManager;
+let discoveryDeviceManager = new DiscoveryDeviceManager();
+export default discoveryDeviceManager as DiscoveryDeviceManager;
 ```

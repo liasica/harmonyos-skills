@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: NativeDisplayManager_Rect
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > NativeDisplayManager_Rect
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:38+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:013b4ebd7dfcde65f04399b05d11d9de06a031159b3f6e31de95086fbb3e7970
+scraped_at: 2026-09-02T15:01:24+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2152c751025bc565427fdef90df717f862bbb34e51f61bf281270679cf4b1642
 ---
 
-```
-1. typedef struct {...} NativeDisplayManager_Rect
+```c
+typedef struct {...} NativeDisplayManager_Rect
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 矩形区域。
 
@@ -26,15 +24,11 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
-| int32\_t left | 矩形区域左边界。 |
-| int32\_t top | 矩形区域上边界。 |
-| uint32\_t width | 矩形区域宽度。 |
-| uint32\_t height | 矩形区域高度。 |
+| int32\_t left | 矩形区域的左边界，单位为px。 |
+| int32\_t top | 矩形区域的上边界，单位为px。 |
+| uint32\_t width | 矩形区域的宽度，单位为px。 |
+| uint32\_t height | 矩形区域的高度，单位为px。 |

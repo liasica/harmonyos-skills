@@ -3,29 +3,25 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-h
 title: "@ohos.hiAppEvent (应用打点)"
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > ArkTS API > 已停止维护的接口 > @ohos.hiAppEvent (应用打点)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:18+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:c40e32c5a7b0808cc24e7a4593d08905fd4ee8ded026e320774d330fd8ca0d6c
+scraped_at: 2026-09-02T15:02:15+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f190ed3848547f180107cc776f6bfb244ed9caab8f7fc1e96452a0bc0c24751f
 ---
 
 本模块提供了应用事件打点能力，包括对打点数据的落盘，以及对打点功能的管理配置。
 
-说明
+**说明** 
 
 * 本模块接口从API version 9开始废弃，建议使用新接口[@ohos.hiviewdfx.hiAppEvent](js-apis-hiviewdfx-hiappevent.md)替代。
 * 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import hiAppEvent from '@ohos.hiAppEvent';
+```ts
+import hiAppEvent from '@ohos.hiAppEvent';
 ```
 
 ## 使用说明
-
-PhonePC/2in1TabletTVWearable
 
 开发者在使用应用事件打点功能前，需要首先了解应用事件相关的参数规格定义。
 
@@ -58,8 +54,6 @@ PhonePC/2in1TabletTVWearable
 
 ## hiAppEvent.write
 
-PhonePC/2in1TabletTVWearable
-
 write(eventName: string, eventType: EventType, keyValues: object, callback: AsyncCallback<void>): void
 
 应用事件打点方法，将事件写入到当天的事件文件中，使用callback方式作为异步回调。
@@ -77,28 +71,26 @@ write(eventName: string, eventType: EventType, keyValues: object, callback: Asyn
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { BusinessError } from '@ohos.base';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. let eventParams: Record<string, number | string> = {
-5. "int_data": 100,
-6. "str_data": "strValue",
-7. };
-8. hiAppEvent.write("test_event", hiAppEvent.EventType.FAULT, eventParams, (err: BusinessError) => {
-9. if (err) {
-10. // 事件写入异常：事件存在异常参数时忽略异常参数后继续写入，或者事件校验失败时不执行写入
-11. hilog.error(0x0000, 'hiAppEvent', `failed to write event, code: ${err.code}, message: ${err.message}`);
-12. return;
-13. }
-14. // 事件写入正常
-15. hilog.info(0x0000, 'hiAppEvent', `success to write event`);
-16. });
+let eventParams: Record<string, number | string> = {
+  "int_data": 100,
+  "str_data": "strValue",
+};
+hiAppEvent.write("test_event", hiAppEvent.EventType.FAULT, eventParams, (err: BusinessError) => {
+  if (err) {
+    // 事件写入异常：事件存在异常参数时忽略异常参数后继续写入，或者事件校验失败时不执行写入
+    hilog.error(0x0000, 'hiAppEvent', `failed to write event, code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+  // 事件写入正常
+  hilog.info(0x0000, 'hiAppEvent', `success to write event`);
+});
 ```
 
 ## hiAppEvent.write
-
-PhonePC/2in1TabletTVWearable
 
 write(eventName: string, eventType: EventType, keyValues: object): Promise<void>
 
@@ -122,26 +114,24 @@ write(eventName: string, eventType: EventType, keyValues: object): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { BusinessError } from '@ohos.base';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. let eventParams: Record<string, number | string> = {
-5. "int_data": 100,
-6. "str_data": "strValue",
-7. };
-8. hiAppEvent.write("test_event", hiAppEvent.EventType.FAULT, eventParams).then(() => {
-9. // 事件写入正常
-10. hilog.info(0x0000, 'hiAppEvent', `success to write event`);
-11. }).catch((err: BusinessError) => {
-12. // 事件写入异常：事件存在异常参数时忽略异常参数后继续写入，或者事件校验失败时不执行写入
-13. hilog.error(0x0000, 'hiAppEvent', `code: ${err.code}, message: ${err.message}`);
-14. });
+let eventParams: Record<string, number | string> = {
+  "int_data": 100,
+  "str_data": "strValue",
+};
+hiAppEvent.write("test_event", hiAppEvent.EventType.FAULT, eventParams).then(() => {
+  // 事件写入正常
+  hilog.info(0x0000, 'hiAppEvent', `success to write event`);
+}).catch((err: BusinessError) => {
+  // 事件写入异常：事件存在异常参数时忽略异常参数后继续写入，或者事件校验失败时不执行写入
+  hilog.error(0x0000, 'hiAppEvent', `code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## hiAppEvent.configure
-
-PhonePC/2in1TabletTVWearable
 
 configure(config: ConfigOption): boolean
 
@@ -163,23 +153,21 @@ configure(config: ConfigOption): boolean
 
 **示例：**
 
-```
-1. // 配置应用事件打点功能开关
-2. let config1: hiAppEvent.ConfigOption = {
-3. disable: true,
-4. };
-5. hiAppEvent.configure(config1);
+```ts
+// 配置应用事件打点功能开关
+let config1: hiAppEvent.ConfigOption = {
+  disable: true,
+};
+hiAppEvent.configure(config1);
 
-7. // 配置事件文件目录存储限额大小
-8. let config2: hiAppEvent.ConfigOption = {
-9. maxStorage: '100M',
-10. };
-11. hiAppEvent.configure(config2);
+// 配置事件文件目录存储限额大小
+let config2: hiAppEvent.ConfigOption = {
+  maxStorage: '100MB',
+};
+hiAppEvent.configure(config2);
 ```
 
 ## ConfigOption
-
-PhonePC/2in1TabletTVWearable
 
 此接口提供了应用打点的配置选项。
 
@@ -187,12 +175,10 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| disable | boolean | 否 | 是 | 应用打点功能开关。配置值为true表示关闭打点功能，false表示不关闭打点功能。 |
-| maxStorage | string | 否 | 是 | 打点数据本地存储文件所在目录的配额大小，默认限额为“10M”。所在目录大小超出限额后会对目录进行清理操作，会按从旧到新的顺序逐个删除打点数据文件，直到目录大小不超出限额时停止。 |
+| disable | boolean | 否 | 是 | 应用打点功能开关，默认值为false。配置值为true表示关闭打点功能，false表示不关闭打点功能。 |
+| maxStorage | string | 否 | 是 | 打点数据本地存储文件所在目录的配额大小，默认限额为“10MB”。所在目录大小超出限额后会对目录进行清理操作，会按从旧到新的顺序逐个删除打点数据文件，直到目录大小不超出限额时停止。 |
 
 ## EventType
-
-PhonePC/2in1TabletTVWearable
 
 事件类型枚举。
 
@@ -207,8 +193,6 @@ PhonePC/2in1TabletTVWearable
 
 ## Event
 
-PhonePC/2in1TabletTVWearable
-
 此接口提供了所有预定义事件的事件名称常量。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
@@ -220,8 +204,6 @@ PhonePC/2in1TabletTVWearable
 | DISTRIBUTED\_SERVICE\_START | string | 是 | 否 | 分布式服务启动事件。 |
 
 ## Param
-
-PhonePC/2in1TabletTVWearable
 
 此接口提供了所有预定义参数的参数名称常量。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-matmu
 title: 使用说明
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 高阶API > 矩阵相乘 > Matmul Tiling > 使用说明
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:30+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:2db0f5f94111c98a631825e120e5733992211c7df13c7817d2dd6ce9ebe61316
+scraped_at: 2026-09-02T14:50:37+08:00
+doc_updated_at: 2026-05-12
+content_hash: sha256:6eaf0b8087dc58703650bf673d92a882f06e154d31bc0ac63e94975312c38510
 ---
 
 AscendC提供一组Matmul Tiling API，方便开发者获取Matmul kernel计算时所需的Tiling参数。开发者只需要传入A/B/C矩阵等信息，调用API接口，即可获取到Init中TCubeTiling结构体中的相关参数。
@@ -20,55 +20,55 @@ Matmul Tiling API分为Matmul单核Tiling接口、多核Tiling接口和BatchMatm
 
 * Matmul单核Tiling
 
-  ```
-  1. auto ascendcPlatform = platform_ascendc::PlatformAscendC(context->GetPlatformInfo());
-  2. matmul_tiling::MatmulApiTiling tiling(ascendcPlatform);
-  3. tiling.SetAType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT16);
-  4. tiling.SetBType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT16);
-  5. tiling.SetCType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT);
-  6. tiling.SetBiasType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT);
-  7. tiling.SetShape(1024, 1024, 1024);
-  8. tiling.SetOrgShape(1024, 1024, 1024); // 或Ka,Kb不等长，如tiling.SetOrgShape(1024, 1024, 1024, 1280)
-  9. tiling.SetBias(true);
-  10. tiling.SetBufferSpace(-1, -1, -1);  // 设定允许使用的空间，缺省使用该AI处理器所有空间
-  11. optiling::TCubeTiling tilingData;
-  12. int ret = tiling.GetTiling(tilingData);    // if ret = -1, get tiling failed
+  ```cpp
+  auto ascendcPlatform = platform_ascendc::PlatformAscendC(context->GetPlatformInfo());
+  matmul_tiling::MatmulApiTiling tiling(ascendcPlatform);
+  tiling.SetAType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT16);
+  tiling.SetBType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT16);
+  tiling.SetCType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT);
+  tiling.SetBiasType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT);
+  tiling.SetShape(1024, 1024, 1024);
+  tiling.SetOrgShape(1024, 1024, 1024); // 或Ka,Kb不等长，如tiling.SetOrgShape(1024, 1024, 1024, 1280)
+  tiling.SetBias(true);
+  tiling.SetBufferSpace(-1, -1, -1); // 设定允许使用的空间，缺省使用该AI处理器所有空间
+  optiling::TCubeTiling tilingData;
+  int ret = tiling.GetTiling(tilingData); // if ret = -1, get tiling failed
   ```
 * 多核Tiling
 
-  ```
-  1. auto ascendcPlatform = platform_ascendc::PlatformAscendC(context->GetPlatformInfo());
-  2. matmul_tiling::MultiCoreMatmulTiling tiling(ascendcPlatform);
-  3. tiling.SetDim(1);
-  4. tiling.SetAType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT16);
-  5. tiling.SetBType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT16);
-  6. tiling.SetCType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT);
-  7. tiling.SetBiasType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT);
-  8. tiling.SetShape(1024, 1024, 1024);
-  9. tiling.SetSingleShape(1024, 1024, 1024);
-  10. tiling.SetOrgShape(1024, 1024, 1024);
-  11. tiling.SetBias(true);
-  12. tiling.SetBufferSpace(-1, -1, -1);  // 设定允许使用的空间，缺省使用该AI处理器所有空间
-  13. optiling::TCubeTiling tilingData;
-  14. int ret = tiling.GetTiling(tilingData);    // if ret = -1, get tiling failed
+  ```cpp
+  auto ascendcPlatform = platform_ascendc::PlatformAscendC(context->GetPlatformInfo());
+  matmul_tiling::MultiCoreMatmulTiling tiling(ascendcPlatform);
+  tiling.SetDim(1);
+  tiling.SetAType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT16);
+  tiling.SetBType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT16);
+  tiling.SetCType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT);
+  tiling.SetBiasType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT);
+  tiling.SetShape(1024, 1024, 1024);
+  tiling.SetSingleShape(1024, 1024, 1024);
+  tiling.SetOrgShape(1024, 1024, 1024);
+  tiling.SetBias(true);
+  tiling.SetBufferSpace(-1, -1, -1); // 设定允许使用的空间，缺省使用该AI处理器所有空间
+  optiling::TCubeTiling tilingData;
+  int ret = tiling.GetTiling(tilingData); // if ret = -1, get tiling failed
   ```
 * BatchMatmul Tiling
 
-  ```
-  1. auto ascendcPlatform = platform_ascendc::PlatformAscendC(context->GetPlatformInfo());
-  2. matmul_tiling::BatchMatmulTiling bmmTiling(ascendcPlatform);
-  3. bmmTiling.SetDim(1);
-  4. bmmTiling.SetAType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT16);
-  5. bmmTiling.SetBType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT16);
-  6. bmmTiling.SetCType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT);
-  7. bmmTiling.SetBiasType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT);
-  8. bmmTiling.SetBias(true);
-  9. bmmTiling.SetShape(1024, 1024, 1024);
-  10. bmmTiling.SetSingleShape(1024, 1024, 1024);
-  11. bmmTiling.SetOrgShape(1024, 1024, 1024);
-  12. bmmTiling.SetBufferSpace(-1, -1, -1);  // 设定允许使用的空间，缺省使用该AI处理器所有空间
-  13. optiling::TCubeTiling tilingData;
-  14. int ret = bmmTiling.GetTiling(tilingData);    // if ret = -1, get tiling failed
+  ```cpp
+  auto ascendcPlatform = platform_ascendc::PlatformAscendC(context->GetPlatformInfo());
+  matmul_tiling::BatchMatmulTiling bmmTiling(ascendcPlatform);
+  bmmTiling.SetDim(1);
+  bmmTiling.SetAType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT16);
+  bmmTiling.SetBType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT16);
+  bmmTiling.SetCType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT);
+  bmmTiling.SetBiasType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT);
+  bmmTiling.SetBias(true);
+  bmmTiling.SetShape(1024, 1024, 1024);
+  bmmTiling.SetSingleShape(1024, 1024, 1024);
+  bmmTiling.SetOrgShape(1024, 1024, 1024);
+  bmmTiling.SetBufferSpace(-1, -1, -1); // 设定允许使用的空间，缺省使用该AI处理器所有空间
+  optiling::TCubeTiling tilingData;
+  int ret = bmmTiling.GetTiling(tilingData); // if ret = -1, get tiling failed
   ```
 
 接口列表如下。

@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-ux-b060
 title: UX样式或效果的变更
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Developer Beta5引入的接口行为变更 > UX样式或效果的变更
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Developer Beta5引入的接口行为变更 > UX样式或效果的变更
 category: harmonyos-releases
-scraped_at: 2026-04-29T13:24:09+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:01a59da5a9c723dc0d1c7a616d138fd31fd0a2ac09b2d106adc0d71bbbf6a6f1
+scraped_at: 2026-09-02T14:49:27+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:6bb5d97aae446352e7439426bf015b7a94889eca13eb7745cf83595d8d0c9a15
 ---
 
 ## 移动窗口布局模式瀑布流行为变更
@@ -72,37 +72,37 @@ WaterFlow组件布局模式WaterFlowLayoutMode.SLIDING\_WINDOW。
 
 无需适配，如果滚动速度过快导致性能问题，可以使用[flingSpeedLimit](../harmonyos-references-V5/ts-container-scrollable-common-V5.md#flingspeedlimit11)接口设置最大抛划限速。
 
-```
-1. @Entry
-2. @Component
-3. struct ListItemExample {
-4. private arr: number[] = []
+```ts
+@Entry
+@Component
+struct ListItemExample {
+  private arr: number[] = []
 
-6. aboutToAppear(): void {
-7. for (let i = 0; i < 50; i++) {
-8. this.arr.push(i)
-9. }
-10. }
+  aboutToAppear(): void {
+    for (let i = 0; i < 50; i++) {
+      this.arr.push(i)
+    }
+  }
 
-12. build() {
-13. Column() {
-14. List({ space: 20, initialIndex: 0 }) {
-15. ForEach(this.arr, (item: number) => {
-16. ListItem() {
-17. Text('' + item)
-18. .width('100%')
-19. .height(100)
-20. .fontSize(16)
-21. .textAlign(TextAlign.Center)
-22. .borderRadius(10)
-23. .backgroundColor(0xFFFFFF)
-24. }
-25. }, (item: string) => item)
-26. }.width('90%')
-27. .flingSpeedLimit(4200) // 设置抛划限速
-28. }.width('100%').height('100%').backgroundColor(0xDCDCDC).padding({ top: 5 })
-29. }
-30. }
+  build() {
+    Column() {
+      List({ space: 20, initialIndex: 0 }) {
+        ForEach(this.arr, (item: number) => {
+          ListItem() {
+            Text('' + item)
+              .width('100%')
+              .height(100)
+              .fontSize(16)
+              .textAlign(TextAlign.Center)
+              .borderRadius(10)
+              .backgroundColor(0xFFFFFF)
+          }
+        }, (item: string) => item)
+      }.width('90%')
+      .flingSpeedLimit(4200) // 设置抛划限速
+    }.width('100%').height('100%').backgroundColor(0xDCDCDC).padding({ top: 5 })
+  }
+}
 ```
 
 ## RichEditor收起键盘后，选中区状态变更
@@ -117,11 +117,11 @@ UX规格变更
 
 变更前：RichEditor非用户手动点击收起键盘按钮收起键盘时，触发组件失焦，关闭菜单，复位选中区。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/XWkiOBOWSzGQwa1DTJzdpQ/zh-cn_image_0000002027415465.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/SwYeDDnyTTuPF1TggOJQmg/zh-cn_image_0000002027415465.gif)
 
 变更后：RichEditor非用户手动点击收起键盘按钮收起键盘时，仅小窗模式下触发组件失焦，其他场景不触发组件失焦，不关闭菜单，不复位选中区。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/oDNEoch8SaiswtPeEuRXMg/zh-cn_image_0000002027334989.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/1J606kZeS8iI2pnMsisgfg/zh-cn_image_0000002027334989.gif)
 
 **起始API Level**
 
@@ -203,7 +203,7 @@ UX默认行为变更，无需适配。可以通过[promptAction中ShowToastOptio
 
 在适老化场景，Menu集成保存控件“保存图片”，由于字体的尺寸增大，保存控件的实际布局宽度会大于所设定宽度，可能会出现截断情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/6bXy4Z_2TiCZjpBhiR28Dw/zh-cn_image_0000002027415469.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/ja9G7ugAR9mppEk2Tcd8Sg/zh-cn_image_0000002027415469.png)
 
 变更后：
 
@@ -213,7 +213,7 @@ UX默认行为变更，无需适配。可以通过[promptAction中ShowToastOptio
 
 变更后，在相同的参数条件下，安全控件完整显示的最小宽度超过所设定的宽度，按钮文本信息会自动换行，控件高度会自适应增大，以保证安全控件显示的完整性。换行后，组件的高度增大，如果布局不满足实际要求，需要根据实际需要对安全控件的宽度和高度做调整。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/sgYEzHanRNq-qkUdk2trQg/zh-cn_image_0000002027334993.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/ShyXHq6pS2Cy3c0CwhPPrw/zh-cn_image_0000002027334993.png)
 
 **起始API Level**
 

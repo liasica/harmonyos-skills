@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-shape
 title: SetDim
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Shape > SetDim
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:55+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:86b6c1f0d9d3e5d739d3ccd02ee752b7b6a2dc7799bbd2d6695e521b68e20a4d
+content_hash: sha256:4b915cf65b020f2a50315310874c225bf2ddecc08487aebddce660f7330ffa99
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:86b6c1f0d9d3e5d739d3ccd02ee752b7b6a2dc7799bbd2d6695e521b68e
 
 ## 函数原型
 
-```
-1. graphStatus SetDim(size_t idx, int64_t value);
+```cpp
+graphStatus SetDim(size_t idx, int64_t value);
 ```
 
 ## 参数说明

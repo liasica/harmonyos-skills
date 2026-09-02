@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-de
 title: 属性修改器 (AttributeModifier)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > Modifier机制 > 属性修改器 (AttributeModifier)
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:24+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3ce1566e9382b96a11f3cdbc5d06b11b298002a3657b1a0d57292eede46f9f28
+scraped_at: 2026-09-02T14:59:19+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e353e17c8bcd94c639df71edec09371700e0fbc47543d6e97b355b5cbd85f6b0
 ---
 
 ## 概述
@@ -35,45 +35,41 @@ content_hash: sha256:3ce1566e9382b96a11f3cdbc5d06b11b298002a3657b1a0d57292eede46
 
 ## 接口定义
 
+```typescript
+declare interface AttributeModifier<T> {
+
+  applyNormalAttribute?(instance: T): void;
+
+  applyPressedAttribute?(instance: T): void;
+
+  applyFocusedAttribute?(instance: T): void;
+
+  applyDisabledAttribute?(instance: T): void;
+
+  applySelectedAttribute?(instance: T): void;
+
+}
 ```
-1. declare interface AttributeModifier<T> {
-
-3. applyNormalAttribute?(instance: T): void;
-
-5. applyPressedAttribute?(instance: T): void;
-
-7. applyFocusedAttribute?(instance: T): void;
-
-9. applyDisabledAttribute?(instance: T): void;
-
-11. applySelectedAttribute?(instance: T): void;
-
-13. }
-```
-
-[ButtonModifier01.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ButtonAttribute/entry/src/main/ets/Common/ButtonModifier01.ets#L15-L29)
 
 AttributeModifier是一个接口，开发者需要实现其中的applyXxxAttribute方法来实现对应场景的属性设置。Xxx表示多态的场景，支持默认态（Normal）、按压态（Pressed）、焦点态（Focused）、禁用态（Disabled）、选择态（Selected）。T是组件的属性类型，开发者可以在回调中获取到属性对象，通过该对象设置属性。
 
+```typescript
+declare class CommonMethod<T> {
+  attributeModifier(modifier: AttributeModifier<T>): T;
+}
 ```
-1. declare class CommonMethod<T> {
-2. attributeModifier(modifier: AttributeModifier<T>): T;
-3. }
-```
-
-[ButtonModifier01.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ButtonAttribute/entry/src/main/ets/Common/ButtonModifier01.ets#L31-L35)
 
 组件的通用方法增加了attributeModifier方法，支持传入自定义的Modifier。由于组件在实例化时会明确T的类型，所以调用该方法时，T必须指定为组件对应的Attribute类型，或者是CommonAttribute。
 
 ## 使用说明
 
-* 组件通用方法attributeModifier支持传入一个实现AttributeModifier<T>接口的实例，T必须指定为组件对应的Attribute类型，或者是CommonAttribute。
+* 组件通用方法attributeModifier支持传入一个实现AttributeModifier<T>接口的实例，T必须指定为组件对应的Attribute类型，或者是[通用属性](../harmonyos-references/ts-component-general-attributes.md)（CommonAttribute）。
 * 在组件首次初始化或者关联的状态变量发生变化时，如果传入的实例实现了对应接口，会触发applyNormalAttribute。
-* 回调applyNormalAttribute时，会传入组件属性对象，通过该对象可以设置当前组件的属性/事件。
+* 回调[applyNormalAttribute](../harmonyos-references/ts-universal-attributes-attribute-modifier.md#applynormalattribute)时，会传入组件属性对象，通过该对象可以设置当前组件的属性/事件。
 * 暂未支持的属性/事件，执行时会抛异常。
 * 属性变化触发applyXxxAttribute函数时，该组件之前已设置的属性，在本次变化后未设置的属性会恢复为属性的默认值。
-* 可以通过该接口使用多态样式的功能，例如如果需要在组件进入按压态时设置某些属性，就可以通过自定义实现applyPressedAttribute方法完成。
-* 一个组件上同时使用属性方法和applyNormalAttribute设置相同的属性，遵循属性覆盖原则，即后设置的属性生效。
+* 可以通过该接口使用多态样式的功能，例如如果需要在组件进入按压态时设置某些属性，就可以通过自定义实现[applyPressedAttribute](../harmonyos-references/ts-universal-attributes-attribute-modifier.md#applypressedattribute)方法完成。
+* 在attributeModifier中设置的属性尽量不要与其他方法设置的属性相同，避免在页面刷新时attributeModifier不生效。
 * 一个Modifier实例对象可以在多个组件上使用。
 * 一个组件上多次使用applyNormalAttribute设置不同的Modifier实例，每次状态变量刷新均会按顺序执行这些实例的方法属性设置，同样遵循属性覆盖原则。
 
@@ -81,250 +77,230 @@ AttributeModifier是一个接口，开发者需要实现其中的applyXxxAttribu
 
 AttributeModifier可以分离UI与样式，支持参数传递及业务逻辑编写，并且通过状态变量触发刷新。
 
-```
-1. export class MyButtonModifier implements AttributeModifier<ButtonAttribute> {
-2. // 可以实现一个Modifier，定义私有的成员变量，外部可动态修改
-3. public isDark: boolean = false
+```typescript
+export class MyButtonModifier implements AttributeModifier<ButtonAttribute> {
+  // 可以实现一个Modifier，定义私有的成员变量，外部可动态修改
+  public isDark: boolean = false
 
-5. // 通过构造函数，创建时传参
-6. constructor(dark?: boolean) {
-7. this.isDark = dark ?? false
-8. }
+  // 通过构造函数，创建时传参
+  constructor(dark?: boolean) {
+    this.isDark = dark ?? false
+  }
 
-10. applyNormalAttribute(instance: ButtonAttribute): void {
-11. // instance为Button的属性对象，可以通过instance对象对属性进行修改
-12. if (this.isDark) { // 支持业务逻辑的编写
-13. // 属性变化触发apply函数时，变化前已设置并且变化后未设置的属性会恢复为默认值
-14. instance.backgroundColor('#707070')
-15. } else {
-16. // 支持属性的链式调用
-17. instance.backgroundColor('#17A98D')
-18. .borderColor('#707070')
-19. .borderWidth(2)
-20. }
-21. }
-22. }
-```
-
-[ButtonModifier01.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ButtonAttribute/entry/src/main/ets/Common/ButtonModifier01.ets#L37-L60)
-
-```
-1. // pages/Button1.ets
-2. import { MyButtonModifier } from '../Common/ButtonModifier01'
-
-4. @Entry
-5. @Component
-6. struct Button1 {
-7. // 支持用状态装饰器修饰，行为和普通的对象一致
-8. @State modifier: MyButtonModifier = new MyButtonModifier(true);
-
-10. build() {
-11. Row() {
-12. Column() {
-13. Button('Button')
-14. .attributeModifier(this.modifier)
-15. .onClick(() => {
-16. // 对象的一层属性被修改时，会触发UI刷新，重新执行applyNormalAttribute
-17. this.modifier.isDark = !this.modifier.isDark
-18. })
-19. }
-20. .width('100%')
-21. }
-22. .height('100%')
-23. }
-24. }
+  applyNormalAttribute(instance: ButtonAttribute): void {
+    // instance为Button的属性对象，可以通过instance对象对属性进行修改
+    if (this.isDark) { // 支持业务逻辑的编写
+      // 属性变化触发apply函数时，变化前已设置并且变化后未设置的属性会恢复为默认值
+      instance.backgroundColor('#707070')
+    } else {
+      // 支持属性的链式调用
+      instance.backgroundColor('#17A98D')
+        .borderColor('#707070')
+        .borderWidth(2)
+    }
+  }
+}
 ```
 
-[Button1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ButtonAttribute/entry/src/main/ets/pages/Button1.ets#L15-L41)
+```typescript
+// pages/Button1.ets
+import { MyButtonModifier } from '../Common/ButtonModifier01'
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/eRggxFb1RfCoWhPN_b4RDA/zh-cn_image_0000002558604862.gif)
+@Entry
+@Component
+struct Button1 {
+  // 支持用状态装饰器修饰，行为和普通的对象一致
+  @State modifier: MyButtonModifier = new MyButtonModifier(true);
 
-当一个组件上同时使用属性方法和applyNormalAttribute设置相同的属性时，遵循属性覆盖原则，即后设置的属性生效。
-
-```
-1. export class MyButtonModifier implements AttributeModifier<ButtonAttribute> {
-2. // 可以实现一个Modifier，定义私有的成员变量，外部可动态修改
-3. public isDark: boolean = false
-
-5. // 通过构造函数，创建时传参
-6. constructor(dark?: boolean) {
-7. this.isDark = dark ?? false
-8. }
-
-10. applyNormalAttribute(instance: ButtonAttribute): void {
-11. // instance为Button的属性对象，可以通过instance对象对属性进行修改
-12. if (this.isDark) { // 支持业务逻辑的编写
-13. // 属性变化触发apply函数时，变化前已设置并且变化后未设置的属性会恢复为默认值
-14. instance.backgroundColor('#707070')
-15. } else {
-16. // 支持属性的链式调用
-17. instance.backgroundColor('#17A98D')
-18. .borderColor('#707070')
-19. .borderWidth(2)
-20. }
-21. }
-22. }
+  build() {
+    Row() {
+      Column() {
+        Button('Button')
+          .attributeModifier(this.modifier)
+          .onClick(() => {
+            // 对象的一层属性被修改时，会触发UI刷新，重新执行applyNormalAttribute
+            this.modifier.isDark = !this.modifier.isDark
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
-[ButtonModifier01.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ButtonAttribute/entry/src/main/ets/Common/ButtonModifier01.ets#L37-L60)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/B98raQoGTiOb-v9eoSkIfg/zh-cn_image_0000002736433005.gif)
 
-```
-1. // pages/Button2.ets
-2. import { MyButtonModifier } from '../Common/ButtonModifier01'
+```typescript
+export class MyButtonModifier implements AttributeModifier<ButtonAttribute> {
+  // 可以实现一个Modifier，定义私有的成员变量，外部可动态修改
+  public isDark: boolean = false
 
-4. @Entry
-5. @Component
-6. struct Button2 {
-7. @State modifier: MyButtonModifier = new MyButtonModifier(true);
+  // 通过构造函数，创建时传参
+  constructor(dark?: boolean) {
+    this.isDark = dark ?? false
+  }
 
-9. build() {
-10. Row() {
-11. Column() {
-12. // 先设置属性，后设置modifier，按钮颜色会跟随modifier的值改变
-13. Button('Button')
-14. .backgroundColor('#2787D9')
-15. .attributeModifier(this.modifier)
-16. .onClick(() => {
-17. this.modifier.isDark = !this.modifier.isDark
-18. })
-19. }
-20. .width('100%')
-21. }
-22. .height('100%')
-23. }
-24. }
+  applyNormalAttribute(instance: ButtonAttribute): void {
+    // instance为Button的属性对象，可以通过instance对象对属性进行修改
+    if (this.isDark) { // 支持业务逻辑的编写
+      // 属性变化触发apply函数时，变化前已设置并且变化后未设置的属性会恢复为默认值
+      instance.backgroundColor('#707070')
+    } else {
+      // 支持属性的链式调用
+      instance.backgroundColor('#17A98D')
+        .borderColor('#707070')
+        .borderWidth(2)
+    }
+  }
+}
 ```
 
-[Button2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ButtonAttribute/entry/src/main/ets/pages/Button2.ets#L15-L41)
+```typescript
+// pages/Button2.ets
+import { MyButtonModifier } from '../Common/ButtonModifier01'
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/3XfvbDTPR5C2M1oM92Fruw/zh-cn_image_0000002589324387.gif)
+@Entry
+@Component
+struct Button2 {
+  @State modifier: MyButtonModifier = new MyButtonModifier(true);
+
+  build() {
+    Row() {
+      Column() {
+        // 先设置属性，后设置modifier，按钮颜色会跟随modifier的值改变
+        Button('Button')
+          .backgroundColor('#2787D9')
+          .attributeModifier(this.modifier)
+          .onClick(() => {
+            this.modifier.isDark = !this.modifier.isDark
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/Hj08hRd0TPKTqgsnwZuyvA/zh-cn_image_0000002706833850.gif)
 
 当一个组件上多次使用applyNormalAttribute设置不同的Modifier实例时，每次状态变量刷新均会按顺序执行这些实例的方法属性设置，遵循属性覆盖原则，即后设置的属性生效。
 
-```
-1. export class MyButtonModifier2 implements AttributeModifier<ButtonAttribute> {
-2. public isDark: boolean = false
+```typescript
+export class MyButtonModifier2 implements AttributeModifier<ButtonAttribute> {
+  public isDark: boolean = false
 
-4. constructor(dark?: boolean) {
-5. this.isDark = dark ?? false
-6. }
+  constructor(dark?: boolean) {
+    this.isDark = dark ?? false
+  }
 
-8. applyNormalAttribute(instance: ButtonAttribute): void {
-9. if (this.isDark) {
-10. instance.backgroundColor(Color.Black)
-11. .width(200)
-12. } else {
-13. instance.backgroundColor(Color.Red)
-14. .width(100)
-15. }
-16. }
-17. }
-```
-
-[ButtonModifier02.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ButtonAttribute/entry/src/main/ets/Common/ButtonModifier02.ets#L16-L34)
-
-```
-1. export class MyButtonModifier3 implements AttributeModifier<ButtonAttribute> {
-2. public isDark2: boolean = false
-
-4. constructor(dark?: boolean) {
-5. this.isDark2 = dark ? dark : false
-6. }
-
-8. applyNormalAttribute(instance: ButtonAttribute): void {
-9. if (this.isDark2) {
-10. instance.backgroundColor('#2787D9')
-11. } else {
-12. instance.backgroundColor('#707070')
-13. }
-14. }
-15. }
+  applyNormalAttribute(instance: ButtonAttribute): void {
+    if (this.isDark) {
+      instance.backgroundColor(Color.Black)
+        .width(200)
+    } else {
+      instance.backgroundColor(Color.Red)
+        .width(100)
+    }
+  }
+}
 ```
 
-[ButtonModifier03.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ButtonAttribute/entry/src/main/ets/Common/ButtonModifier03.ets#L16-L32)
+```typescript
+export class MyButtonModifier3 implements AttributeModifier<ButtonAttribute> {
+  public isDark2: boolean = false
 
-```
-1. // pages/Button3.ets
-2. import { MyButtonModifier2 } from '../Common/ButtonModifier02';
-3. import { MyButtonModifier3 } from '../Common/ButtonModifier03';
+  constructor(dark?: boolean) {
+    this.isDark2 = dark ? dark : false
+  }
 
-5. @Entry
-6. @Component
-7. struct Button3 {
-8. @State modifier: MyButtonModifier2 = new MyButtonModifier2(true);
-9. @State modifier2: MyButtonModifier3 = new MyButtonModifier3(true);
-
-11. build() {
-12. Row() {
-13. Column() {
-14. Button('Button')
-15. .attributeModifier(this.modifier)
-16. .attributeModifier(this.modifier2)
-17. .onClick(() => {
-18. this.modifier.isDark = !this.modifier.isDark
-19. this.modifier2.isDark2 = !this.modifier2.isDark2
-20. })
-21. }
-22. .width('100%')
-23. }
-24. .height('100%')
-25. }
-26. }
+  applyNormalAttribute(instance: ButtonAttribute): void {
+    if (this.isDark2) {
+      instance.backgroundColor('#2787D9')
+    } else {
+      instance.backgroundColor('#707070')
+    }
+  }
+}
 ```
 
-[Button3.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ButtonAttribute/entry/src/main/ets/pages/Button3.ets#L15-L43)
+```typescript
+// pages/Button3.ets
+import { MyButtonModifier2 } from '../Common/ButtonModifier02';
+import { MyButtonModifier3 } from '../Common/ButtonModifier03';
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/DFOdMw6mS2etBp5YU8kSZQ/zh-cn_image_0000002589244327.gif)
+@Entry
+@Component
+struct Button3 {
+  @State modifier: MyButtonModifier2 = new MyButtonModifier2(true);
+  @State modifier2: MyButtonModifier3 = new MyButtonModifier3(true);
+
+  build() {
+    Row() {
+      Column() {
+        Button('Button')
+          .attributeModifier(this.modifier)
+          .attributeModifier(this.modifier2)
+          .onClick(() => {
+            this.modifier.isDark = !this.modifier.isDark
+            this.modifier2.isDark2 = !this.modifier2.isDark2
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/yd1erJ0PQjKRRxxIQ9pgMQ/zh-cn_image_0000002736312959.gif)
 
 ## 设置多态样式、事件
 
 使用AttributeModifier设置多态样式、事件，实现事件逻辑的复用，支持默认态（Normal）、按压态（Pressed）、焦点态（Focused）、禁用态（Disabled）、选择态（Selected）。例如如果需要在组件进入按压态时设置某些属性，就可以通过自定义实现applyPressedAttribute方法完成。
 
-```
-1. export class MyButtonModifier4 implements AttributeModifier<ButtonAttribute> {
-2. applyNormalAttribute(instance: ButtonAttribute): void {
-3. // instance为Button的属性对象，设置正常状态下属性值
-4. instance.backgroundColor('#17A98D')
-5. .borderColor('#707070')
-6. .borderWidth(2)
-7. }
+```typescript
+export class MyButtonModifier4 implements AttributeModifier<ButtonAttribute> {
+  applyNormalAttribute(instance: ButtonAttribute): void {
+    // instance为Button的属性对象，设置正常状态下属性值
+    instance.backgroundColor('#17A98D')
+      .borderColor('#707070')
+      .borderWidth(2)
+  }
 
-9. applyPressedAttribute(instance: ButtonAttribute): void {
-10. // instance为Button的属性对象，设置按压状态下属性值
-11. instance.backgroundColor('#2787D9')
-12. .borderColor('#FFC000')
-13. .borderWidth(5)
-14. }
-15. }
-```
-
-[ButtonModifier04.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ButtonAttribute/entry/src/main/ets/Common/ButtonModifier04.ets#L16-L32)
-
-```
-1. // pages/Button4.ets
-2. import { MyButtonModifier4 } from '../Common/ButtonModifier04'
-
-4. @Entry
-5. @Component
-6. struct Button4 {
-7. @State modifier: MyButtonModifier4 = new MyButtonModifier4();
-
-9. build() {
-10. Row() {
-11. Column() {
-12. Button('Button')
-13. .attributeModifier(this.modifier)
-14. }
-15. .width('100%')
-16. }
-17. .height('100%')
-18. }
-19. }
+  applyPressedAttribute(instance: ButtonAttribute): void {
+    // instance为Button的属性对象，设置按压状态下属性值
+    instance.backgroundColor('#2787D9')
+      .borderColor('#FFC000')
+      .borderWidth(5)
+  }
+}
 ```
 
-[Button4.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ButtonAttribute/entry/src/main/ets/pages/Button4.ets#L15-L36)
+```typescript
+// pages/Button4.ets
+import { MyButtonModifier4 } from '../Common/ButtonModifier04'
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/Ccc7YdslT0aCO0lP_GglIQ/zh-cn_image_0000002558764520.gif)
+@Entry
+@Component
+struct Button4 {
+  @State modifier: MyButtonModifier4 = new MyButtonModifier4();
+
+  build() {
+    Row() {
+      Column() {
+        Button('Button')
+          .attributeModifier(this.modifier)
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/LmK7DGKETyeF-khFF89YRQ/zh-cn_image_0000002706673918.gif)
 
 ## 属性或事件对attributeModifier的支持情况
 
@@ -341,7 +317,6 @@ AttributeModifier可以分离UI与样式，支持参数传递及业务逻辑编�
 | CommonAttribute | [animation](../harmonyos-references/ts-animatorproperty.md#animation) | Method not implemented. | 不支持animation相关属性。 |
 | CommonAttribute | [attributeModifier](../harmonyos-references/ts-universal-attributes-attribute-modifier.md#attributemodifier) | - | attributeModifier不支持嵌套使用，不生效。 |
 | CommonAttribute | [backgroundFilter](../harmonyos-references/ts-universal-attributes-filter-effect.md#backgroundfilter) | is not callable | - |
-| CommonAttribute | [chainWeight](../harmonyos-references/ts-universal-attributes-location.md#chainweight14) | is not callable | - |
 | CommonAttribute | [compositingFilter](../harmonyos-references/ts-universal-attributes-filter-effect.md#compositingfilter) | is not callable | - |
 | CommonAttribute | [drawModifier](../harmonyos-references/ts-universal-attributes-draw-modifier.md#drawmodifier) | is not callable | 不支持modifier相关的属性。 |
 | CommonAttribute | [foregroundFilter](../harmonyos-references/ts-universal-attributes-filter-effect.md#foregroundfilter) | is not callable | - |

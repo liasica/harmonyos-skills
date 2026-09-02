@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/floatingball-guide
-title: 全局闪控球开发指导
-breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 全局闪控球开发指导
+title: 闪控球开发指导
+breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 闪控球开发指导
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:08+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:b50f04a14a7c31125f03d9bdbd5399be7d030da5fbe6ac5fd615512cc7578d83
+scraped_at: 2026-09-02T14:59:22+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8a1f14e89c8a861c1a096bfb446c9c788f828301c2f7faf804725533a4228bab
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:b50f04a14a7c31125f03d9bdbd5399be7d030da5fbe6ac5fd615512cc75
 
 应用可以将关键信息以小窗（闪控球）模式呈现。切换为小窗（闪控球）模式后，用户可以进行其他界面操作，提升使用体验。
 
-说明
+**说明** 
 
 * 从API version 20开始，支持使用闪控球能力。
 * 支持在DevEco Studio 6.0.1 Release及以上版本的模拟器中使用闪控球相关功能。
@@ -24,7 +24,7 @@ content_hash: sha256:b50f04a14a7c31125f03d9bdbd5399be7d030da5fbe6ac5fd615512cc75
 * 基于安全考虑，仅允许应用在前台时启动闪控球，并且需要具有[ohos.permission.USE\_FLOAT\_BALL](restricted-permissions.md#ohospermissionuse_float_ball)权限，具体可见[申请受限权限](declare-permissions-in-acl.md)。
 * 当前仅对跨应用的题目搜索、账单记录、商品比价、抢单、翻译场景，以及金融类应用的实时盯盘场景开放此权限。接入后需在以上场景范围内使用，否则将会进行相关处罚与限制。
 * 同一个应用只能启动一个闪控球，同一个设备最多同时存在两个闪控球，在超出闪控球最大个数限制时，打开新的闪控球会替换最早启动的闪控球。
-* 仅支持手机和平板设备。
+* 支持在Phone、Tablet、PC/2in1设备上使用。
 
 ## 接口说明
 
@@ -68,49 +68,49 @@ content_hash: sha256:b50f04a14a7c31125f03d9bdbd5399be7d030da5fbe6ac5fd615512cc75
 
 **图1** 静态布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/uG0dUp1nTIqpbrTvReFD_g/zh-cn_image_0000002558764672.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/cMHXYTKCQyyty2NxLK8Cyg/zh-cn_image_0000002736433159.png)
 
 **图2** 静态布局-超长文本标题
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/qDMTIcc8TXG0IWShW0WlXA/zh-cn_image_0000002558605018.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/YNNTo7u7SWu-8gONkw1S5A/zh-cn_image_0000002706834004.png)
 
 **图3** 普通文本布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/3ZXI7mlnR_OJUl994kM-4g/zh-cn_image_0000002589324543.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/IQdGcyKDSRm74MlLJvs0Gw/zh-cn_image_0000002736313113.png)
 
 **图4** 普通文本布局-超长文本内容
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/AJnR08hCRhugV88ipkt8XA/zh-cn_image_0000002589244481.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/r_x8uWOpRmOSbreqpSI-JQ/zh-cn_image_0000002706674070.png)
 
 **图5** 强调文本布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/ABiEIswWQZmcwRvZDZ9Zgg/zh-cn_image_0000002558764674.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/1fKbAgocRviwBrHU6ZZgww/zh-cn_image_0000002736433161.png)
 
 **图6** 强调文本布局-超长文本内容
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/bVRLZ_MfStuiHnYbpSnv1A/zh-cn_image_0000002558605020.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/bfHiTDNfRn63xiqMH5R0Hg/zh-cn_image_0000002706834006.png)
 
 **图7** 强调文本布局-图标
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/pDDByHFcSLOPTHnHb6ZCiw/zh-cn_image_0000002589324545.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/yOXxaheQTwubjbvF9p4xMA/zh-cn_image_0000002736313115.png)
 
 **图8** 强调文本布局-图标和超长文本内容
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/v7oT1VtbS8yGAtL8kxT4kQ/zh-cn_image_0000002589244483.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/4QKycBSHQL-ymD0gvKSyhg/zh-cn_image_0000002706674072.png)
 
 **图9** 纯文本布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/b0psRErjQuye8IGfqUyjKw/zh-cn_image_0000002558764676.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/C0DoS-v_RiiylbIERTeKhQ/zh-cn_image_0000002736433163.png)
 
 **图10** 纯文本布局-超长文本标题
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/V50KnkvhRw-SbSAFsGoAHQ/zh-cn_image_0000002558605022.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/ZCWxukKCTOyUZi77j6VoIA/zh-cn_image_0000002706834008.png)
 
 当有两个应用启动了闪控球后，闪控球将合并展示，如下图所示。整体高度为76vp。
 
 **图11** 闪控球上下合并展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/ITWFn8XiTWGyOJCKLXpeIg/zh-cn_image_0000002589324547.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/gPasC92US_GQSmgunfsoqw/zh-cn_image_0000002736313117.png)
 
 ## 开发步骤
 
@@ -119,314 +119,322 @@ content_hash: sha256:b50f04a14a7c31125f03d9bdbd5399be7d030da5fbe6ac5fd615512cc75
 3. 通过[updateFloatingBall()](../harmonyos-references/js-apis-floatingball.md#updatefloatingball)更新闪控球信息，以此控制闪控球展示的内容。
 4. 通过[stopFloatingBall()](../harmonyos-references/js-apis-floatingball.md#stopfloatingball)停止闪控球。当不再需要显示闪控球时，可根据业务需要关闭闪控球。
 
+```typescript
+// Utils.ts
+// 该页面提供工具类，展示闪控球的创建、更新、关闭逻辑
+import hilog from '@ohos.hilog';
+import image from '@ohos.multimedia.image';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { floatingBall } from '@kit.ArkUI';
+import { Want } from '@kit.AbilityKit';
+import { ContextUtil } from './ContextUtil';
+
+const DOMAIN: number = 0xF811;
+const TAG: string = '[Sample_FloatingBall]';
+const BUNDLE_NAME: string = ContextUtil.context.abilityInfo.bundleName;
+
+export class Utils {
+    public static getRawfilePixelMapSync(path: string): image.PixelMap {
+        try {
+            const BUFFER = ContextUtil.context.resourceManager.getRawFileContentSync(path);
+            const IMAGE_SOURCE: image.ImageSource = image.createImageSource(BUFFER.buffer as ArrayBuffer);
+            hilog.debug(DOMAIN, TAG, `Get rawfile pixelMap path '${path}' successfully`);
+            return IMAGE_SOURCE.createPixelMapSync();
+        } catch (e) {
+            hilog.error(DOMAIN, TAG, `Get rawfile pixelMap path '${path}' failed, error: ${e}`);
+            throw e as Error;
+        }
+    }
+
+    // 闪控球启动逻辑
+    public static async onClickCreateFloatingBall(
+        floatingBallController: floatingBall.FloatingBallController | undefined,
+        template: floatingBall.FloatingBallTemplate,
+        onActiveRowChange: (value: number) => void,  // 接收状态更新回调函数
+        title: string = 'title',
+        content: string = 'content',
+        backgroundColor: string = '#0ff77c',
+        icon?: image.PixelMap): Promise<void> {
+        // 注册 监听点击回调事件
+        try {
+            floatingBallController?.on('click', () => {
+                hilog.debug(DOMAIN, TAG, `FloatingBall onClickEvent`);
+                let want: Want = {
+                    bundleName: BUNDLE_NAME,
+                    abilityName: 'MainAbility'
+                }
+                // 使用promise异步回调
+                floatingBallController?.restoreMainWindow(want)
+                .then(() => {
+                    hilog.debug(DOMAIN, TAG, `Success in restoring FloatingBall main window`);
+                }).catch((err: BusinessError) => {
+                    hilog.error(DOMAIN, TAG, `failed to restore FloatingBall main window. code: ${err.code}, message: ${err.message}`);
+                })
+            })
+        } catch (e) {
+            hilog.error(DOMAIN, TAG, `Failed to register click listener: ${e}`);
+        }
+        // 注册 监听状态变化事件
+        try {
+            floatingBallController?.on('stateChange',
+            (state: floatingBall.FloatingBallState) => {
+                hilog.debug(DOMAIN, TAG, `FloatingBall stateCange: ${state}`);
+                if(state === floatingBall.FloatingBallState.STOPPED) {
+                    floatingBallController?.off('click')
+                    floatingBallController?.off('stateChange')
+                    floatingBallController = undefined;
+                    // 执行状态更新回调
+                    onActiveRowChange?.(-1);
+                }
+            })
+        } catch (e) {
+            hilog.error(DOMAIN, TAG, `Failed to register stateChange listener: ${e}`);
+        }
+        // 最后启动闪控球
+        let startParams: floatingBall.FloatingBallParams = icon? {
+            template: template,
+            title: title,
+            content: content,
+            backgroundColor: backgroundColor,
+            icon: icon
+        } : {
+            template: template,
+            title: title,
+            content: content,
+            backgroundColor: backgroundColor
+        }
+        try {
+            floatingBallController?.startFloatingBall(startParams)
+            .then(() => {
+                hilog.debug(DOMAIN, TAG, `succeed in starting FloatingBall`);
+            }).catch((err: BusinessError) => {
+                hilog.error(DOMAIN, TAG, `failed to start FloatingBall. code: ${err.code}, message: ${err.message}`);
+            })
+        } catch (e) {
+            console.error('startFloatingBall Error', e)
+        }
+    }
+
+// 闪控球更新逻辑
+public static onClickUpdateFloatingBall(
+    floatingBallController: floatingBall.FloatingBallController | undefined,
+    template: floatingBall.FloatingBallTemplate,
+    title: string = 'newTitle',
+    content: string = 'newContent',
+    icon?: image.PixelMap): void {
+        // 更新时给标题、内容 随机使用数字后缀
+        let random_string: string = Math.floor(Math.random() * 100).toString();
+        let updateParams: floatingBall.FloatingBallParams = icon ? {
+            template: template,
+            title: title + random_string,
+            content: content + random_string,
+            backgroundColor: '#f6ea0a',
+            icon: icon
+        } : {
+            template: template,
+            title: title + random_string,
+            content: content + random_string,
+            backgroundColor: '#f6ea0a',
+        }
+        try {
+            floatingBallController?.updateFloatingBall(updateParams).then(() => {
+                hilog.debug(DOMAIN, TAG, `Succeed in updating FloatingBall`);
+            }).catch((err: BusinessError) => {
+                hilog.error(DOMAIN, TAG, `failed to update FloatingBall. code: ${err.code}, message: ${err.message}`);
+            })
+        } catch (e) {
+            console.error('updateFloatingBall Error:', e)
+        }
+    }
+
+    // 闪控球停止逻辑
+    public static onClickStopFloatingBall(floatingBallController: floatingBall.FloatingBallController | undefined): void {
+        // stop 是异步流程，需要通过 stateChange 状态回调获取实际删除结果
+        floatingBallController?.stopFloatingBall().then(() => {
+            hilog.debug(DOMAIN, TAG, `Succeed in stopping FloatingBall`);
+        }).catch((err: BusinessError) => {
+            hilog.error(DOMAIN, TAG, `failed to stop FloatingBall. code: ${err.code}, message: ${err.message}`);
+        })
+    }
+}
 ```
-1. // Utils.ts
-2. // 该页面提供工具类，展示闪控球的创建、更新、关闭逻辑
-3. import hilog from '@ohos.hilog';
-4. import image from '@ohos.multimedia.image';
-5. import { BusinessError } from '@kit.BasicServicesKit';
-6. import { floatingBall } from '@kit.ArkUI';
-7. import { Want } from '@kit.AbilityKit';
-8. import { ContextUtil } from './ContextUtil';
 
-10. const DOMAIN: number = 0xF811;
-11. const TAG: string = '[Sample_FloatingBall]';
-12. const BUNDLE_NAME: string = ContextUtil.context.abilityInfo.bundleName;
+```ts
+// Index.ets
+// 该页面利用按钮点击事件展示闪控球基本操作
+import hilog from '@ohos.hilog';
+import image from '@ohos.multimedia.image';
+import { floatingBall } from '@kit.ArkUI';
+import { Utils } from '../util/Utils';
 
-14. export class Utils {
-15. public static getRawfilePixelMapSync(path: string): image.PixelMap {
-16. try {
-17. const BUFFER = ContextUtil.context.resourceManager.getRawFileContentSync(path);
-18. const IMAGE_SOURCE: image.ImageSource = image.createImageSource(BUFFER.buffer as ArrayBuffer);
-19. hilog.debug(DOMAIN, TAG, `Get rawfile pixelMap path '${path}' successfully`);
-20. return IMAGE_SOURCE.createPixelMapSync();
-21. } catch (e) {
-22. hilog.error(DOMAIN, TAG, `Get rawfile pixelMap path '${path}' failed, error: ${e}`);
-23. throw e as Error;
-24. }
-25. }
+const DOMAIN: number = 0xF811;
+const TAG: string = '[Sample_FloatingBall]';
 
-27. // 闪控球启动逻辑
-28. public static async onClickCreateFloatingBall(
-29. floatingBallController: floatingBall.FloatingBallController | undefined,
-30. template: floatingBall.FloatingBallTemplate,
-31. onActiveRowChange: (value: number) => void,  // 接收状态更新回调函数
-32. title: string = 'title',
-33. content: string = 'content',
-34. backgroundColor: string = '#0ff77c',
-35. icon?: image.PixelMap): Promise<void> {
-36. // 注册 监听点击回调事件
-37. floatingBallController?.on('click', () => {
-38. hilog.debug(DOMAIN, TAG, `FloatingBall onClickEvent`);
-39. let want: Want = {
-40. bundleName: BUNDLE_NAME,
-41. abilityName: 'MainAbility'
-42. }
-43. // 使用promise异步回调
-44. floatingBallController?.restoreMainWindow(want)
-45. .then(() => {
-46. hilog.debug(DOMAIN, TAG, `Success in restoring FloatingBall main window`);
-47. }).catch((err: BusinessError) => {
-48. hilog.error(DOMAIN, TAG, `failed to restore FloatingBall main window. code: ${err.code}, message: ${err.message}`);
-49. })
-50. })
-51. // 注册 监听状态变化事件
-52. floatingBallController?.on('stateChange',
-53. (state: floatingBall.FloatingBallState) => {
-54. hilog.debug(DOMAIN, TAG, `FloatingBall stateCange: ${state}`);
-55. if(state === floatingBall.FloatingBallState.STOPPED) {
-56. floatingBallController?.off('click')
-57. floatingBallController?.off('stateChange')
-58. floatingBallController = undefined;
-59. // 执行状态更新回调
-60. onActiveRowChange?.(-1);
-61. }
-62. })
-63. // 最后启动闪控球
-64. let startParams: floatingBall.FloatingBallParams = icon? {
-65. template: template,
-66. title: title,
-67. content: content,
-68. backgroundColor: backgroundColor,
-69. icon: icon
-70. } : {
-71. template: template,
-72. title: title,
-73. content: content,
-74. backgroundColor: backgroundColor
-75. }
-76. try {
-77. floatingBallController?.startFloatingBall(startParams)
-78. .then(() => {
-79. hilog.debug(DOMAIN, TAG, `succeed in starting FloatingBall`);
-80. }).catch((err: BusinessError) => {
-81. hilog.error(DOMAIN, TAG, `failed to start FloatingBall. code: ${err.code}, message: ${err.message}`);
-82. })
-83. } catch (e) {
-84. console.error('startFloatingBall Error', e)
-85. }
-86. }
+@Entry
+@Component
+struct Index {
+  // 当前可用的行，-1 表示全部行可见
+  @State private activeRow: number = -1;
+  // 声明闪控球控制器
+  private floatingBallController: floatingBall.FloatingBallController | undefined = undefined;
+  // 缓存 icon 图标（静态布局）
+  private cachedIcon1: image.PixelMap | undefined = undefined;
+  // 缓存 icon 图标（强调文本布局）
+  private cachedIcon2: image.PixelMap | undefined = undefined;
 
-88. // 闪控球更新逻辑
-89. public static onClickUpdateFloatingBall(
-90. floatingBallController: floatingBall.FloatingBallController | undefined,
-91. template: floatingBall.FloatingBallTemplate,
-92. title: string = 'newTitle',
-93. content: string = 'newContent',
-94. icon?: image.PixelMap): void {
-95. // 更新时给标题、内容 随机使用数字后缀
-96. let random_string: string = Math.floor(Math.random() * 100).toString();
-97. let updateParams: floatingBall.FloatingBallParams = icon ? {
-98. template: template,
-99. title: title + random_string,
-100. content: content + random_string,
-101. backgroundColor: '#f6ea0a',
-102. icon: icon
-103. } : {
-104. template: template,
-105. title: title + random_string,
-106. content: content + random_string,
-107. backgroundColor: '#f6ea0a',
-108. }
-109. try {
-110. floatingBallController?.updateFloatingBall(updateParams).then(() => {
-111. hilog.debug(DOMAIN, TAG, `Succeed in updating FloatingBall`);
-112. }).catch((err: BusinessError) => {
-113. hilog.error(DOMAIN, TAG, `failed to update FloatingBall. code: ${err.code}, message: ${err.message}`);
-114. })
-115. } catch (e) {
-116. console.error('updateFloatingBall Error:', e)
-117. }
-118. }
+  // activeRow 的状态更新函数（确保闪控球销毁时，activeRow的值更新为-1）
+  private activeRowChange = (value: number) => {this.activeRow = value};
 
-120. // 闪控球停止逻辑
-121. public static onClickStopFloatingBall(floatingBallController: floatingBall.FloatingBallController | undefined): void {
-122. // stop 是异步流程，需要通过 stateChange 状态回调获取实际删除结果
-123. floatingBallController?.stopFloatingBall().then(() => {
-124. hilog.debug(DOMAIN, TAG, `Succeed in stopping FloatingBall`);
-125. }).catch((err: BusinessError) => {
-126. hilog.error(DOMAIN, TAG, `failed to stop FloatingBall. code: ${err.code}, message: ${err.message}`);
-127. })
-128. }
-129. }
-```
+  // 判断某个布局是否可用（是否置灰）
+  private isEnabled(rowInex: number): boolean {
+    return this.activeRow === -1 || this.activeRow === rowInex;
+  }
 
-```
-1. // Index.ets
-2. // 该页面利用按钮点击事件展示闪控球基本操作
-3. import hilog from '@ohos.hilog';
-4. import image from '@ohos.multimedia.image';
-5. import { floatingBall } from '@kit.ArkUI';
-6. import { Utils } from '../util/Utils';
+  build() {
+    Column({space: 12}) {
+      // 静态布局，支持标题和图标，该布局在创建后无法修改
+      Row({space: 6}) {
+        Button('STATIC').onClick( async () => {
+          // 请在组件内获取context，确保this.getUIContext().getHostContext()返回的结果是UIAbilityContext
+          if (!this.floatingBallController) {
+            this.floatingBallController = await floatingBall.create({
+              context: this.getUIContext().getHostContext()
+            })
+          }
+          if (this.floatingBallController) {
+            // 仅当没有缓存 cachedIcon1 时才加载；有缓存时，直接使用；
+            if (!this.cachedIcon1) {
+              let pixelMap = Utils.getRawfilePixelMapSync('books.png');  // 图片尺寸有最大限制
+              if (pixelMap) {
+                this.cachedIcon1 = pixelMap;  // 把图标缓存起了
+                hilog.debug(DOMAIN, TAG, `Success to load icon PixelMap`);
+              } else {
+                hilog.error(DOMAIN, TAG, `Failed to load icon PixelMap`);
+              }
+            }
+            Utils.onClickCreateFloatingBall(this.floatingBallController,
+              floatingBall.FloatingBallTemplate.STATIC, this.activeRowChange, 'title', 'content', '#0ff77c', this.cachedIcon1)
+              this.activeRow = 0;
+          }
+        })
+        .enabled(this.isEnabled(0))
+        // 更新闪控球信息（该布局在创建后无法更新，按钮永久置灰）
+        Button('Update1').enabled(false)
+        // 关闭闪控球
+        Button('Close1').onClick(() => {
+          Utils.onClickStopFloatingBall(this.floatingBallController);
+          this.activeRow = -1;  // 关闭后恢复所有行显示
+        })
+        .enabled(this.isEnabled(0))
+      }
+      .width('100%')
+      .justifyContent(FlexAlign.Center)
+      
+    // 普通文本布局，支持标题和内容
+    Row({space: 6}) {
+      Button('NORMAL').onClick( async () => {
+        // 请在组件内获取context，确保this.getUIContext().getHostContext()返回的结果是UIAbilityContext
+        if (!this.floatingBallController) {
+          this.floatingBallController = await floatingBall.create({
+            context: this.getUIContext().getHostContext()
+          })
+        }
+        if (this.floatingBallController) {
+          Utils.onClickCreateFloatingBall(this.floatingBallController,
+            floatingBall.FloatingBallTemplate.NORMAL, this.activeRowChange, 'title', 'content')
+            this.activeRow = 1;
+        }
+      })
+      .enabled(this.isEnabled(1))
+      // 更新闪控球信息
+      Button('Update2').onClick(() => Utils.onClickUpdateFloatingBall(this.floatingBallController,
+        floatingBall.FloatingBallTemplate.NORMAL))
+        .enabled(this.isEnabled(1))
+      // 关闭闪控球
+      Button('Close2').onClick(() => {
+        Utils.onClickStopFloatingBall(this.floatingBallController);
+        this.activeRow = -1;  // 关闭后恢复所有行显示
+      })
+      .enabled(this.isEnabled(1))
+    }
+    .width('100%')
+    .justifyContent(FlexAlign.Center)
+    
+     // 强调文本布局，支持标题、图标和内容
+     Row({space: 6}) {
+      Button('EMPHATIC').onClick( async () => {
+        // 请在组件内获取context，确保this.getUIContext().getHostContext()返回的结果是UIAbilityContext
+        if (!this.floatingBallController) {
+          this.floatingBallController = await floatingBall.create({
+            context: this.getUIContext().getHostContext()
+          })
+        }
+        if (this.floatingBallController) {
+          // 仅当没有缓存 cachedIcon2 时才加载；有缓存时，直接使用；
+          if(!this.cachedIcon2) {
+            let pixelMap = Utils.getRawfilePixelMapSync('video.png');  // 图片尺寸有最大限制
+            if (pixelMap) {
+              this.cachedIcon2 = pixelMap;  // 把图标缓存起了
+              hilog.debug(DOMAIN, TAG, `Success to load icon PixelMap`);
+            } else {
+              hilog.debug(DOMAIN, TAG, `Failed to load icon PixelMap`);
+            }
+          }
+          Utils.onClickCreateFloatingBall(this.floatingBallController,
+            floatingBall.FloatingBallTemplate.EMPHATIC, this.activeRowChange, '16', 'Min', '#0ff77c', this.cachedIcon2)
+            this.activeRow = 2;
+        }
+      })
+      .enabled(this.isEnabled(2))
+      // 更新闪控球信息
+      Button('Update3').onClick(() => Utils.onClickUpdateFloatingBall(this.floatingBallController,
+        floatingBall.FloatingBallTemplate.EMPHATIC, '', 'Min', this.cachedIcon2))
+        .enabled(this.isEnabled(2))
+      // 关闭闪控球
+      Button('Close3').onClick(() => {
+        Utils.onClickStopFloatingBall(this.floatingBallController);
+        this.activeRow = -1;  // 关闭后恢复所有行显示
+      })
+      .enabled(this.isEnabled(2))
+    }
+    .width('100%')
+    .justifyContent(FlexAlign.Center)
 
-8. const DOMAIN: number = 0xF811;
-9. const TAG: string = '[Sample_FloatingBall]';
-
-11. @Entry
-12. @Component
-13. struct Index {
-14. // 当前可用的行，-1 表示全部行可见
-15. @State private activeRow: number = -1;
-16. // 声明闪控球控制器
-17. private floatingBallController: floatingBall.FloatingBallController | undefined = undefined;
-18. // 缓存 icon 图标（静态布局）
-19. private cachedIcon1: image.PixelMap | undefined = undefined;
-20. // 缓存 icon 图标（强调文本布局）
-21. private cachedIcon2: image.PixelMap | undefined = undefined;
-
-23. // activeRow 的状态更新函数（确保闪控球销毁时，activeRow的值更新为-1）
-24. private activeRowChange = (value: number) => {this.activeRow = value};
-
-26. // 判断某个布局是否可用（是否置灰）
-27. private isEnabled(rowInex: number): boolean {
-28. return this.activeRow === -1 || this.activeRow === rowInex;
-29. }
-
-31. build() {
-32. Column({space: 12}) {
-33. // 静态布局，支持标题和图标，该布局在创建后无法修改
-34. Row({space: 6}) {
-35. Button('STATIC').onClick( async () => {
-36. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回的结果是UIAbilityContext
-37. if (!this.floatingBallController) {
-38. this.floatingBallController = await floatingBall.create({
-39. context: this.getUIContext().getHostContext()
-40. })
-41. }
-42. if (this.floatingBallController) {
-43. // 仅当没有缓存 cachedIcon1 时才加载；有缓存时，直接使用；
-44. if (!this.cachedIcon1) {
-45. let pixelMap = Utils.getRawfilePixelMapSync('books.png');  // 图片尺寸有最大限制
-46. if (pixelMap) {
-47. this.cachedIcon1 = pixelMap;  // 把图标缓存起了
-48. hilog.debug(DOMAIN, TAG, `Success to load icon PixelMap`);
-49. } else {
-50. hilog.error(DOMAIN, TAG, `Failed to load icon PixelMap`);
-51. }
-52. }
-53. Utils.onClickCreateFloatingBall(this.floatingBallController,
-54. floatingBall.FloatingBallTemplate.STATIC, this.activeRowChange, 'title', 'content', '#0ff77c', this.cachedIcon1)
-55. this.activeRow = 0;
-56. }
-57. })
-58. .enabled(this.isEnabled(0))
-59. // 更新闪控球信息（该布局在创建后无法更新，按钮永久置灰）
-60. Button('Update1').enabled(false)
-61. // 关闭闪控球
-62. Button('Close1').onClick(() => {
-63. Utils.onClickStopFloatingBall(this.floatingBallController);
-64. this.activeRow = -1;  // 关闭后恢复所有行显示
-65. })
-66. .enabled(this.isEnabled(0))
-67. }
-68. .width('100%')
-69. .justifyContent(FlexAlign.Center)
-
-71. // 普通文本布局，支持标题和内容
-72. Row({space: 6}) {
-73. Button('NORMAL').onClick( async () => {
-74. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回的结果是UIAbilityContext
-75. if (!this.floatingBallController) {
-76. this.floatingBallController = await floatingBall.create({
-77. context: this.getUIContext().getHostContext()
-78. })
-79. }
-80. if (this.floatingBallController) {
-81. Utils.onClickCreateFloatingBall(this.floatingBallController,
-82. floatingBall.FloatingBallTemplate.NORMAL, this.activeRowChange, 'title', 'content')
-83. this.activeRow = 1;
-84. }
-85. })
-86. .enabled(this.isEnabled(1))
-87. // 更新闪控球信息
-88. Button('Update2').onClick(() => Utils.onClickUpdateFloatingBall(this.floatingBallController,
-89. floatingBall.FloatingBallTemplate.NORMAL))
-90. .enabled(this.isEnabled(1))
-91. // 关闭闪控球
-92. Button('Close2').onClick(() => {
-93. Utils.onClickStopFloatingBall(this.floatingBallController);
-94. this.activeRow = -1;  // 关闭后恢复所有行显示
-95. })
-96. .enabled(this.isEnabled(1))
-97. }
-98. .width('100%')
-99. .justifyContent(FlexAlign.Center)
-
-101. // 强调文本布局，支持标题、图标和内容
-102. Row({space: 6}) {
-103. Button('EMPHATIC').onClick( async () => {
-104. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回的结果是UIAbilityContext
-105. if (!this.floatingBallController) {
-106. this.floatingBallController = await floatingBall.create({
-107. context: this.getUIContext().getHostContext()
-108. })
-109. }
-110. if (this.floatingBallController) {
-111. // 仅当没有缓存 cachedIcon2 时才加载；有缓存时，直接使用；
-112. if(!this.cachedIcon2) {
-113. let pixelMap = Utils.getRawfilePixelMapSync('video.png');  // 图片尺寸有最大限制
-114. if (pixelMap) {
-115. this.cachedIcon2 = pixelMap;  // 把图标缓存起了
-116. hilog.debug(DOMAIN, TAG, `Success to load icon PixelMap`);
-117. } else {
-118. hilog.debug(DOMAIN, TAG, `Failed to load icon PixelMap`);
-119. }
-120. }
-121. Utils.onClickCreateFloatingBall(this.floatingBallController,
-122. floatingBall.FloatingBallTemplate.EMPHATIC, this.activeRowChange, '16', 'Min', '#0ff77c', this.cachedIcon2)
-123. this.activeRow = 2;
-124. }
-125. })
-126. .enabled(this.isEnabled(2))
-127. // 更新闪控球信息
-128. Button('Update3').onClick(() => Utils.onClickUpdateFloatingBall(this.floatingBallController,
-129. floatingBall.FloatingBallTemplate.EMPHATIC, '', 'Min', this.cachedIcon2))
-130. .enabled(this.isEnabled(2))
-131. // 关闭闪控球
-132. Button('Close3').onClick(() => {
-133. Utils.onClickStopFloatingBall(this.floatingBallController);
-134. this.activeRow = -1;  // 关闭后恢复所有行显示
-135. })
-136. .enabled(this.isEnabled(2))
-137. }
-138. .width('100%')
-139. .justifyContent(FlexAlign.Center)
-
-141. // 纯文本布局，只支持标题
-142. Row({space: 6}) {
-143. Button('SIMPLE').onClick( async () => {
-144. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回的结果是UIAbilityContext
-145. if (!this.floatingBallController) {
-146. this.floatingBallController = await floatingBall.create({
-147. context: this.getUIContext().getHostContext()
-148. })
-149. }
-150. if (this.floatingBallController) {
-151. Utils.onClickCreateFloatingBall(this.floatingBallController,
-152. floatingBall.FloatingBallTemplate.SIMPLE, this.activeRowChange, 'title')
-153. this.activeRow = 3;
-154. }
-155. })
-156. .enabled(this.isEnabled(3))
-157. // 更新闪控球信息
-158. Button('Update4').onClick(() => Utils.onClickUpdateFloatingBall(this.floatingBallController,
-159. floatingBall.FloatingBallTemplate.SIMPLE))
-160. .enabled(this.isEnabled(3))
-161. // 关闭闪控球
-162. Button('Close4').onClick(() => {
-163. Utils.onClickStopFloatingBall(this.floatingBallController);
-164. this.activeRow = -1;  // 关闭后恢复所有行显示
-165. })
-166. .enabled(this.isEnabled(3))
-167. }
-168. .width('100%')
-169. .justifyContent(FlexAlign.Center)
-170. }
-171. .width('100%')
-172. .height('100%')
-173. .justifyContent(FlexAlign.Center)
-174. }
-175. }
+    // 纯文本布局，只支持标题
+    Row({space: 6}) {
+      Button('SIMPLE').onClick( async () => {
+        // 请在组件内获取context，确保this.getUIContext().getHostContext()返回的结果是UIAbilityContext
+        if (!this.floatingBallController) {
+          this.floatingBallController = await floatingBall.create({
+            context: this.getUIContext().getHostContext()
+          })
+        }
+        if (this.floatingBallController) {
+          Utils.onClickCreateFloatingBall(this.floatingBallController,
+            floatingBall.FloatingBallTemplate.SIMPLE, this.activeRowChange, 'title')
+            this.activeRow = 3;
+        }
+      })
+      .enabled(this.isEnabled(3))
+      // 更新闪控球信息
+      Button('Update4').onClick(() => Utils.onClickUpdateFloatingBall(this.floatingBallController,
+        floatingBall.FloatingBallTemplate.SIMPLE))
+        .enabled(this.isEnabled(3))
+      // 关闭闪控球
+      Button('Close4').onClick(() => {
+        Utils.onClickStopFloatingBall(this.floatingBallController);
+        this.activeRow = -1;  // 关闭后恢复所有行显示
+      })
+      .enabled(this.isEnabled(3))
+    }
+    .width('100%')
+    .justifyContent(FlexAlign.Center)
+    }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
 
 ## 示例代码

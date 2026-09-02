@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-get-
 title: 检测环境中的平面（ArkTS）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 平面识别 > 检测环境中的平面（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:50+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:9ccc1c05c58ed7d7bea9e7e4a0c0144d06723703368a70e9454ab0e008e1e156
+scraped_at: 2026-09-02T14:59:48+08:00
+doc_updated_at: 2026-08-14
+content_hash: sha256:14e672726d0b9c76c0576bffc7a46b4341d67406a3e35cf3b8a4724d93c647e6
 ---
 
 本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/HarmonyOS_Samples/arengine_samplecode_clientdemo_arkts)。
 
 ## 约束与限制
 
-检测环境平面能力支持部分Phone、部分Tablet设备。请参考[硬件要求](arengine-preparations.md#硬件要求)判断设备是否支持运动跟踪及平面识别特性（[ARENGINE\_FEATURE\_TYPE\_SLAM](../harmonyos-references/arengine-api-arengine.md#arfeaturetype)）。
+从5.1.0(18)开始，检测环境平面能力支持部分Phone、部分Tablet设备。请参考[硬件要求](arengine-preparations.md#硬件要求)判断设备是否支持运动跟踪及平面识别特性（[ARENGINE\_FEATURE\_TYPE\_SLAM](../harmonyos-references/arengine-api-arengine.md#arfeaturetype)）。
 
 ## 接口说明
 
@@ -38,132 +38,176 @@ AR Engine仅输出识别到的平面数据。为便于用户观察，可使用AG
 
 平面检测能力所需的模块导入如下：
 
-```
-1. import { arEngine, ARView, arViewController } from '@kit.AREngine';
-2. import { Node, Scene, Vec3 } from '@kit.ArkGraphics3D';
-3. import { BusinessError } from '@kit.BasicServicesKit';
-4. import { Matrix4 } from '@kit.ArkUI';
+```typescript
+import { arEngine, ARView, arViewController } from '@kit.AREngine';
+import {CubeGeometry, CustomGeometry, Geometry, Material, MaterialType, MeshResource, Node,
+  PrimitiveTopology, Scene, SceneResourceFactory, Shader, ShaderMaterial, Vec3} from '@kit.ArkGraphics3D';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { Matrix4, window } from '@kit.ArkUI';
 ```
 
 ### 显示预览流
 
 首先初始化AR会话和AR场景，可以参考[初始化AR会话和AR场景](arengine-arsession.md#初始化ar会话和ar场景)章节。
 
-```
-1. @Builder
-2. export function ARPlaneBuilder(): void {
-3. ARPlane();
-4. }
-
-6. @Component
-7. struct ARPlane {
-8. @State arContext?: arViewController.ARViewContext = undefined;
-
-10. build(): void {
-11. // ...
-12. }
-
-14. private initARView(): void {
-15. // ...
-16. }
-17. private stopARView(): void {
-18. // ...
-19. }
-20. private resumeARView(): void {
-21. // ...
-22. }
-23. private pauseARView(): void {
-24. // ...
-25. }
-26. }
+```typescript
+@Builder
+export function ARWorldBuilder(): void {
+  ARWorld();
+}
+// ...
+@Component
+struct ARWorld {
+  @State arContext?: arViewController.ARViewContext = undefined;
+  @State context: Context = this.getUIContext().getHostContext() as Context;
+  @State statusBarHeight: number = 0;
+  // ...
+  build(): void {
+    NavDestination() {
+      RelativeContainer() {
+        if (this.arContext) {
+          ARView({ context: this.arContext })
+            .height('100%')
+            .width('100%')
+            .alignRules({
+              center: { anchor: '__container__', align: VerticalAlign.Center },
+              middle: { anchor: '__container__', align: HorizontalAlign.Center }
+            })
+            // ...
+        }
+      }
+    }
+    .onAppear(async () => {
+      this.initARView();
+    })
+    .onWillDisappear(async () => {
+      await this.stopARView();
+    })
+    .onShown(() => {
+      this.resumeARView();
+    })
+    .onHidden(() => {
+      this.pauseARView();
+    })
+    .hideTitleBar(true)
+    .hideBackButton(true)
+    .hideToolBar(true)
+  }
+  // ...
+  private initARView(): void {
+    Scene.load().then(async (scene: Scene) => {
+      let viewContext: arViewController.ARViewContext = new arViewController.ARViewContext();
+      viewContext.scene = scene;
+      viewContext.callback = new ARViewCallbackImpl();
+      viewContext.config = {
+        type: arEngine.ARType.WORLD,
+        planeFindingMode: arEngine.ARPlaneFindingMode.HORIZONTAL_AND_VERTICAL,
+        powerMode: arEngine.ARPowerMode.NORMAL,
+        semanticMode: arEngine.ARSemanticMode.NONE,
+        poseMode: arEngine.ARPoseMode.GRAVITY,
+        depthMode: arEngine.ARDepthMode.AUTOMATIC,
+        meshMode: arEngine.ARMeshMode.DISABLED,
+        focusMode: arEngine.ARFocusMode.AUTO
+      }
+      viewContext.init().then(() => {
+        this.arContext = viewContext;
+        logger.info('Succeeded in initting ARView.');
+      }).catch((err: BusinessError) => {
+        logger.error(`Failed to init ARView. Code is ${err.code}, message is ${err.message}.`);
+      })
+    })
+  }
+  // ...
+}
 ```
 
 ### 检测环境平面
 
 调用[ARViewCallback](../harmonyos-references/arengine-api-arviewcontroller.md#arviewcallback)，使用其中的[onFrameUpdate](../harmonyos-references/arengine-api-arviewcontroller.md#arviewcallbackonframeupdate)方法进行帧数据更新，通过[ARSession.getAllTrackables](../harmonyos-references/arengine-api-arengine.md#arsessiongetalltrackables)方法获取所有识别到的平面。
 
-```
-1. class ARViewCallbackImpl extends arViewController.ARViewCallback {
-2. onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
-3. // ...
-4. }
+```typescript
+class ARViewCallbackImpl extends arViewController.ARViewCallback {
+  // ...
+  onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
+  }
 
-6. onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
-7. // ...
-8. }
+  onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
+  }
 
-10. onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): void {
-11. if (!ctx.session) {
-12. return;
-13. }
+  async onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): Promise<void> {
+    if (!ctx.session) {
+      return;
+    }
 
-15. let arSession: arEngine.ARSession = ctx.session;
+    let session: arEngine.ARSession = ctx.session;
+    try {
+      let frame = session.getFrame();
+      let camera: arEngine.ARCamera = frame.getCamera();
+      let trackables: arEngine.ARTrackable[] = [];
 
-17. try {
-18. let frame: arEngine.ARFrame = arSession.getFrame();
-19. let camera: arEngine.ARCamera = frame.getCamera();
-20. let trackable: arEngine.ARTrackable[] = [];
-
-22. if (camera.state === arEngine.ARTrackingState.TRACKING) {
-23. trackable = arSession.getAllTrackables(arEngine.ARTrackableType.PLANE);
-24. console.info(`Succeeded in getting tracking plane, length is: ${trackable.length}`);  // 打印当前识别到的平面数量
-25. }
-
-27. } catch (error) {
-28. const err: BusinessError = error as BusinessError;
-29. console.error(`Failed to update data. Code is ${err.code}, message is ${err.message}.`);
-30. }
-31. }
-32. }
+      if (camera.state === arEngine.ARTrackingState.TRACKING) {
+        trackables = session.getAllTrackables(arEngine.ARTrackableType.PLANE);
+        isDisplayCube = true;
+      } else {
+        isDisplayCube = false;
+      }
+      // ...
+    } catch (error) {
+      const err: BusinessError = error as BusinessError;
+      logger.error(`Failed to update data. Code is ${err.code}, message is ${err.message}.`);
+    }
+  }
+}
 ```
 
 ### 检测平面的自定义方法
 
 自定义方法获取顶点数据getVertices、创建索引generateMeshIndex、创建mesh数据generateMeshInput。
 
-```
-1. // 获取三维空间顶点坐标，第一个入参的位姿矩阵按垂直列排列，第二个坐标点为(x, 0, z, 1)，对应x-z平面。
-2. export function getVertices(mat: Matrix4, point: number[]): Vec3[] {
-3. let result: Vec3[] = [];
-4. for (let i = 0; i < point.length; i += 2) {
-5. let single: Vec3 = {
-6. x: (mat[2] * point[i] + mat[6] * 0
-7. + mat[10] * point[i + 1] + mat[14] * 1.0),
-8. y: mat[1] * point[i] + mat[5] * 0
-9. + mat[9] * point[i + 1] + mat[13] * 1.0,
-10. z: -(mat[0] * point[i] + mat[4] * 0
-11. + mat[8] * point[i + 1] + mat[12] * 1.0),
-12. }
-13. result.push(single);
-14. }
-15. return result;
-16. }
-17. // 创建 ARWorld 的 mesh索引。由于平面是由三角形拼接而成的，因此每个平面上的每个三角形的首个顶点索引都是相同的。
-18. export function generateMeshIndex(input: Vec3[][]): number[] {
-19. let result: number[] = [];
-20. let start: number = 0;
+```typescript
+export function getVertices(mat: Matrix4, point: number[]): Vec3[] {
+  let result: Vec3[] = [];
+  for (let i = 0; i < point.length; i += 2) {
+    let single: Vec3 = {
+      x: (mat[2] * point[i] + mat[6] * 0 + mat[10] * point[i + 1] + mat[14] * 1.0),
+      y: mat[1] * point[i] + mat[5] * 0 + mat[9] * point[i + 1] + mat[13] * 1.0,
+      z: -(mat[0] * point[i] + mat[4] * 0 + mat[8] * point[i + 1] + mat[12] * 1.0)
+    }
+    result.push(single);
+  }
+  return result;
+}
 
-22. for (let i = 0; i < input.length; i++) {
-23. let length: number = input[i].length;
+/*
+ * 创建ARWorld的meshIndex，
+ * 由于平面是由三角形拼接而成，
+ * 因此，每个平面上每个三角形的第一个顶点索引是相同的。
+ */
+export function generateMeshIndex(input: Vec3[][]): number[] {
+  let result: number[] = [];
+  let start: number = 0;
 
-25. for (let j = start + 1; j < start + length - 1; j++) {
-26. result.push(start);
-27. result.push(j);
-28. result.push(j + 1);
-29. }
-30. start += length;
-31. }
-32. return result;
-33. }
+  for (let i = 0; i < input.length; i++) {
+    let len: number = input[i].length;
 
-35. export function generateMeshInput(vex: Vec3[][]): Vec3[] {
-36. let result: Vec3[] = [];
-37. for (let i = 0; i < vex.length; i++) {
-38. let tmp: Vec3[] = vex[i];
-39. for (let j = 0; j < tmp.length; j++) {
-40. result.push(tmp[j]);
-41. }
-42. }
-43. return result;
-44. }
+    for (let j = start + 1; j < start + len - 1; j++) {
+      result.push(start);
+      result.push(j);
+      result.push(j + 1);
+    }
+    start += len;
+  }
+  return result;
+}
+
+export function generateMeshInput(vex: Vec3[][]): Vec3[] {
+  let result: Vec3[] = [];
+  for (let i = 0; i < vex.length; i++) {
+    let tmp: Vec3[] = vex[i];
+    for (let j = 0; j < tmp.length; j++) {
+      result.push(tmp[j]);
+    }
+  }
+  return result;
+}
 ```

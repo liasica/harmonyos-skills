@@ -3,44 +3,44 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: 绘制路径
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > svg开发指导 > 绘制路径
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:54+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:306a34a9c503a7bbbc3942329e43c49e42e02f3ad97758a48b990d88f43d4e96
+scraped_at: 2026-09-02T14:59:21+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:9b06c6068e1d961f999155ec095d22172a657d7dd0a37beaa2000fa33883a644
 ---
 
 [svg](../harmonyos-references/js-components-svg.md)组件绘制路径时，通过Path中的M（起点）、H（水平线）、a（绘制弧形到指定位置）路径控制指令，并填充颜色实现饼状图效果。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <svg fill="#00FF00" x="100" y="400">
-4. <path d="M300,200 h-150 a150 150 0 1 0 150 -150 z" fill="red" stroke="blue" stroke-width="5" >
-5. </path>
-6. <path d="M275,175 v-150 a150 150 0 0 0 -150 150 z" fill="yellow" stroke="blue" stroke-width="5">
-7. </path>
-8. </svg>
-9. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. flex-direction: row;
-4. justify-content: flex-start;
-5. align-items: flex-start;
-6. height: 1200px;
-7. width: 600px;
-8. background-color: #F1F3F5;
-9. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <svg fill="#00FF00" x="100" y="400">
+    <path d="M300,200 h-150 a150 150 0 1 0 150 -150 z" fill="red" stroke="blue" stroke-width="5" >    
+    </path> 
+    <path d="M275,175 v-150 a150 150 0 0 0 -150 150 z" fill="yellow" stroke="blue" stroke-width="5">    
+    </path>
+  </svg>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/so38CkV7TzCAutDYaDnWLw/zh-cn_image_0000002589244439.png)
+```css
+/* xxx.css */
+.container {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 1200px;
+  width: 600px;
+  background-color: #F1F3F5;
+}
+```
 
-说明
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/0r6vJksuR0aBMWV6Ag1Ugg/zh-cn_image_0000002736313079.png)
+
+**说明** 
 
 * M/m = moveto 参数x和y表示需要移动到点的x轴和y轴的坐标。在使用M命令移动画笔后，只会移动画笔，但不会在两点之间画线。所以M命令经常出现在路径的开始处，用来指明从何处开始画。
 * L/l = lineto 参数x和y表示一个点的x轴和y轴坐标，L命令将会在当前位置和新位置（L前面画笔所在的点）之间画一条线段。
-* H/h = horizontal lineto 绘制平行线。
+* H/h = horizontal lineto 绘制水平线。
 * V/v = vertical lineto 绘制垂直线。
 * C/c = curveto 三次贝塞尔曲线 设置三组坐标参数： x1 y1, x2 y2, x y。
 * S/s = smooth curveto 三次贝塞尔曲线命令 设置两组坐标参数： x2 y2, x y。

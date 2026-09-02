@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-465
 title: Navigation组件，页面切换时，两个页面的生命周期时序关系是什么
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > Navigation组件，页面切换时，两个页面的生命周期时序关系是什么
+breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Navigation组件，页面切换时，两个页面的生命周期时序关系是什么
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:02+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:50+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:c258f374ae05e84b176f2edc625b0c69334b7e2337ab51d14724cd4c72bb4ca2
 ---
 

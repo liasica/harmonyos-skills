@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-commi
 title: DumpAccChkPoint功能
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子调试调优 > 调测功能介绍 > 更多功能 > DumpAccChkPoint功能
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:32+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a0850970f183fe1cb8dc5a2b37d63b45a1abdcd0dd3bcc58fe47da836622e820
+scraped_at: 2026-09-02T15:00:05+08:00
+doc_updated_at: 2026-05-18
+content_hash: sha256:df6d3316e98aa32033f17b7f0b8b30baae63b7fc1b27947ae971325d9a695170
 ---
 
 ## 功能介绍
@@ -14,7 +14,7 @@ content_hash: sha256:a0850970f183fe1cb8dc5a2b37d63b45a1abdcd0dd3bcc58fe47da83662
 
 当Tensor数据较大时，可通过DumpAccChkPoint指定偏移位置，截取指定长度的元素值打印。
 
-说明
+**说明** 
 
 * simulator调测场景下的Dump偏移位置Tensor，受dump mode参数控制。
 * 固定为每个核分配的打印数据的最大可使用空间为1M，目前该大小不支持修改，若打印超过1M，打印内容不再显示，请开发者控制待打印的数据量。
@@ -23,13 +23,13 @@ content_hash: sha256:a0850970f183fe1cb8dc5a2b37d63b45a1abdcd0dd3bcc58fe47da83662
 
 1. 在核函数代码中按需在需要打印Tensor偏移数据的地方调用DumpAccChkPoint接口，详情请参见接口说明，样例如下。
 
-   ```
-   1. DumpAccChkPoint(srcLocal, 5, 32, dataLen);
+   ```cpp
+   DumpAccChkPoint(srcLocal,5,32,dataLen);
    ```
 2. simulator调测场景执行如下命令，使能Dump开关。
 
-   ```
-   1. ascendebug kernel --backend simulator --dump-mode acc_chk ... {其他simulator调测参数}
+   ```shell
+   ascendebug kernel --backend simulator --dump-mode acc_chk ... {其他simulator调测参数}
    ```
 
    --dump-mode取acc\_chk，开启偏移位置打印Tensor模式，其他参数参考[NPU调测参数](cannkit-cli-parameters.md#npu调测参数)按需配置。
@@ -64,6 +64,6 @@ DumpAccChkPoint接口说明如下。
   + 每次Dump的大小(dataNum\*sizeof(T))需要32B对齐。
 * **调用示例：**
 
-  ```
-  1. DumpAccChkPoint(srcLocal, 7, 32 , 128);
+  ```cpp
+  DumpAccChkPoint(srcLocal, 7, 32 , 128);
   ```

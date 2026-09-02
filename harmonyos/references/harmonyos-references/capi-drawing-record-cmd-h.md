@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: drawing_record_cmd.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > drawing_record_cmd.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:58+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:8547632a3a5170378de33ecbc565928fe22bde567f7467b4d0d2bf334210fdb9
+scraped_at: 2026-09-02T15:02:43+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:56e56903ec097f7d1aa3a4ef45aaa3b1638ceecb41b0d81a050056f8dcf0c9e7
 ---
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
+文件中定义了与录制指令对象相关的功能函数。用于录制和回放绘制指令序列，支持创建录制画布、记录绘制操作、生成可回放的指令对象。
 
-文件中定义了与录制指令对象相关的功能函数。
+本模块为单线程模型策略，需要调用方自行管理线程安全和上下文状态的切换。
 
 **引用文件：** <native\_drawing/drawing\_record\_cmd.h>
 
@@ -26,35 +26,27 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
-| [OH\_Drawing\_RecordCmdUtils\* OH\_Drawing\_RecordCmdUtilsCreate(void)](capi-drawing-record-cmd-h.md#oh_drawing_recordcmdutilscreate) | 创建一个录制指令工具对象。 |
-| [OH\_Drawing\_ErrorCode OH\_Drawing\_RecordCmdUtilsDestroy(OH\_Drawing\_RecordCmdUtils\* recordCmdUtils)](capi-drawing-record-cmd-h.md#oh_drawing_recordcmdutilsdestroy) | 销毁一个录制指令工具对象，并回收该对象占用的内存。 |
+| [OH\_Drawing\_RecordCmdUtils\* OH\_Drawing\_RecordCmdUtilsCreate(void)](capi-drawing-record-cmd-h.md#oh_drawing_recordcmdutilscreate) | 创建一个指令录制工具对象。 |
+| [OH\_Drawing\_ErrorCode OH\_Drawing\_RecordCmdUtilsDestroy(OH\_Drawing\_RecordCmdUtils\* recordCmdUtils)](capi-drawing-record-cmd-h.md#oh_drawing_recordcmdutilsdestroy) | 销毁一个指令录制工具对象，并回收该对象占用的内存。 |
 | [OH\_Drawing\_ErrorCode OH\_Drawing\_RecordCmdUtilsBeginRecording(OH\_Drawing\_RecordCmdUtils\* recordCmdUtils,int32\_t width, int32\_t height, OH\_Drawing\_Canvas\*\* canvas)](capi-drawing-record-cmd-h.md#oh_drawing_recordcmdutilsbeginrecording) | 开始录制。此接口需要与[OH\_Drawing\_RecordCmdUtilsFinishRecording](capi-drawing-record-cmd-h.md#oh_drawing_recordcmdutilsfinishrecording)接口成对使用。  指令录制工具生成录制类型的画布对象，可调用drawing的绘制接口，记录接下来所有的绘制指令。 |
 | [OH\_Drawing\_ErrorCode OH\_Drawing\_RecordCmdUtilsFinishRecording(OH\_Drawing\_RecordCmdUtils\* recordCmdUtils,OH\_Drawing\_RecordCmd\*\* recordCmd)](capi-drawing-record-cmd-h.md#oh_drawing_recordcmdutilsfinishrecording) | 结束录制。在调用此接口前，需要先调用[OH\_Drawing\_RecordCmdUtilsBeginRecording](capi-drawing-record-cmd-h.md#oh_drawing_recordcmdutilsbeginrecording)接口。  指令录制工具结束录制指令，将录制类型画布对象记录的绘制指令存入生成的录制指令对象。 |
 | [OH\_Drawing\_ErrorCode OH\_Drawing\_RecordCmdDestroy(OH\_Drawing\_RecordCmd\* recordCmd)](capi-drawing-record-cmd-h.md#oh_drawing_recordcmddestroy) | 销毁录制指令对象，并回收该对象占用的内存。 |
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Drawing\_RecordCmdUtilsCreate()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_RecordCmdUtils* OH_Drawing_RecordCmdUtilsCreate(void)
+```c
+OH_Drawing_RecordCmdUtils* OH_Drawing_RecordCmdUtilsCreate(void)
 ```
 
 **描述**
 
-创建一个录制指令工具对象。
+创建一个指令录制工具对象。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
 
@@ -68,15 +60,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_RecordCmdUtilsDestroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ErrorCode OH_Drawing_RecordCmdUtilsDestroy(OH_Drawing_RecordCmdUtils* recordCmdUtils)
+```c
+OH_Drawing_ErrorCode OH_Drawing_RecordCmdUtilsDestroy(OH_Drawing_RecordCmdUtils* recordCmdUtils)
 ```
 
 **描述**
 
-销毁一个录制指令工具对象，并回收该对象占用的内存。
+销毁一个指令录制工具对象，并回收该对象占用的内存。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
 
@@ -86,7 +76,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_Drawing\_RecordCmdUtils](capi-drawing-oh-drawing-recordcmdutils.md)\* recordCmdUtils | 指向录制指令工具对象[OH\_Drawing\_RecordCmdUtils](capi-drawing-oh-drawing-recordcmdutils.md)的指针。 |
+| [OH\_Drawing\_RecordCmdUtils](capi-drawing-oh-drawing-recordcmdutils.md)\* recordCmdUtils | 指向指令录制工具对象[OH\_Drawing\_RecordCmdUtils](capi-drawing-oh-drawing-recordcmdutils.md)的指针。 |
 
 **返回：**
 
@@ -96,10 +86,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_RecordCmdUtilsBeginRecording()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ErrorCode OH_Drawing_RecordCmdUtilsBeginRecording(OH_Drawing_RecordCmdUtils* recordCmdUtils,int32_t width, int32_t height, OH_Drawing_Canvas** canvas)
+```c
+OH_Drawing_ErrorCode OH_Drawing_RecordCmdUtilsBeginRecording(OH_Drawing_RecordCmdUtils* recordCmdUtils, int32_t width, int32_t height, OH_Drawing_Canvas** canvas)
 ```
 
 **描述**
@@ -116,23 +104,21 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_Drawing\_RecordCmdUtils](capi-drawing-oh-drawing-recordcmdutils.md)\* recordCmdUtils | 指向录制工具对象[OH\_Drawing\_RecordCmdUtils](capi-drawing-oh-drawing-recordcmdutils.md)的指针。 |
-| int32\_t width | 画布的宽度。 |
-| int32\_t height | 画布的高度。 |
+| [OH\_Drawing\_RecordCmdUtils](capi-drawing-oh-drawing-recordcmdutils.md)\* recordCmdUtils | 指向指令录制工具对象[OH\_Drawing\_RecordCmdUtils](capi-drawing-oh-drawing-recordcmdutils.md)的指针。 |
+| int32\_t width | 画布的宽度，必须大于0。 |
+| int32\_t height | 画布的高度，必须大于0。 |
 | [OH\_Drawing\_Canvas](capi-drawing-oh-drawing-canvas.md)\*\* canvas | 指向画布对象[OH\_Drawing\_Canvas](capi-drawing-oh-drawing-canvas.md)的二级指针，作为出参，开发者无需释放。  该画布对象不支持嵌套调用[OH\_Drawing\_CanvasDrawRecordCmd](capi-drawing-canvas-h.md#oh_drawing_canvasdrawrecordcmd)接口。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_Drawing\_ErrorCode](capi-drawing-error-code-h.md#oh_drawing_errorcode) | 函数返回执行错误码。  返回OH\_DRAWING\_SUCCESS, 表示执行成功。  返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER, 表示参数recordCmdUtils或者canvas为空。  当width和height小于等于0的时，也会返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER。  返回OH\_DRAWING\_ERROR\_ALLOCATION\_FAILED，表示系统内存不足。 |
+| [OH\_Drawing\_ErrorCode](capi-drawing-error-code-h.md#oh_drawing_errorcode) | 函数返回执行错误码。  返回OH\_DRAWING\_SUCCESS，表示执行成功。  返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER，表示参数recordCmdUtils或者canvas为空。  当width和height小于等于0时，也会返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER。  返回OH\_DRAWING\_ERROR\_ALLOCATION\_FAILED，表示系统内存不足。 |
 
 ### OH\_Drawing\_RecordCmdUtilsFinishRecording()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ErrorCode OH_Drawing_RecordCmdUtilsFinishRecording(OH_Drawing_RecordCmdUtils* recordCmdUtils,OH_Drawing_RecordCmd** recordCmd)
+```c
+OH_Drawing_ErrorCode OH_Drawing_RecordCmdUtilsFinishRecording(OH_Drawing_RecordCmdUtils* recordCmdUtils, OH_Drawing_RecordCmd** recordCmd)
 ```
 
 **描述**
@@ -149,7 +135,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_Drawing\_RecordCmdUtils](capi-drawing-oh-drawing-recordcmdutils.md)\* recordCmdUtils | 指向录制指令工具对象[OH\_Drawing\_RecordCmdUtils](capi-drawing-oh-drawing-recordcmdutils.md)的指针。 |
+| [OH\_Drawing\_RecordCmdUtils](capi-drawing-oh-drawing-recordcmdutils.md)\* recordCmdUtils | 指向指令录制工具对象[OH\_Drawing\_RecordCmdUtils](capi-drawing-oh-drawing-recordcmdutils.md)的指针，不能为空。 |
 | [OH\_Drawing\_RecordCmd](capi-drawing-oh-drawing-recordcmd.md)\*\* recordCmd | 指向录制指令对象[OH\_Drawing\_RecordCmd](capi-drawing-oh-drawing-recordcmd.md)的二级指针，作为出参，开发者调用[OH\_Drawing\_CanvasDrawRecordCmd](capi-drawing-canvas-h.md#oh_drawing_canvasdrawrecordcmd)接口绘制该对象。需要调用[OH\_Drawing\_RecordCmdDestroy](capi-drawing-record-cmd-h.md#oh_drawing_recordcmddestroy)接口释放。 |
 
 **返回：**
@@ -160,10 +146,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_RecordCmdDestroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ErrorCode OH_Drawing_RecordCmdDestroy(OH_Drawing_RecordCmd* recordCmd)
+```c
+OH_Drawing_ErrorCode OH_Drawing_RecordCmdDestroy(OH_Drawing_RecordCmd* recordCmd)
 ```
 
 **描述**
@@ -178,7 +162,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_Drawing\_RecordCmd](capi-drawing-oh-drawing-recordcmd.md)\* recordCmd | 指向对象[OH\_Drawing\_RecordCmd](capi-drawing-oh-drawing-recordcmd.md)的指针。 |
+| [OH\_Drawing\_RecordCmd](capi-drawing-oh-drawing-recordcmd.md)\* recordCmd | 指向录制指令对象[OH\_Drawing\_RecordCmd](capi-drawing-oh-drawing-recordcmd.md)的指针。 |
 
 **返回：**
 

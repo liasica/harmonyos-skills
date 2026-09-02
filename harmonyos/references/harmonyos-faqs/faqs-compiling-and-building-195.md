@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错：pnpm安装失败等问题汇总
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错：pnpm安装失败等问题汇总
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:50+08:00
-doc_updated_at: 2026-04-27
-content_hash: sha256:cc5f2f9eff196897ad904394dde6790ce098839eabfbc1ab9275b6bcc0814a1a
+scraped_at: 2026-09-02T14:54:55+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:64600c42d53c671884794f8b64389bb7d1a0bccd802cfcb01402f261a16dccc4
 ---
 
 **问题现象**
@@ -22,16 +22,16 @@ content_hash: sha256:cc5f2f9eff196897ad904394dde6790ce098839eabfbc1ab9275b6bcc08
 
 **报错现象：**
 
-```
-1. > hvigor ERROR: 00308019 Operation Error
-2. Error Message: C:\Users\xxx\.hvigor\wrapper\tools\node_modules\.bin\pnpm.cmd install execute failed. More details:
-3. ERR_PNPM_FETCH_404  GET https://xxx/npm-central-repo/testX:  - 404
-4. This error happened while installing a direct dependency of C:\Users\xxx\.hvigor\project_caches\4cfxxx4f5\workspace
-5. testX is not in the npm registry, or you have no permission to fetch it.
-6. No authorization header was set for the request.
-7. * Try the following:
-8. > Check whether the failed package exists in the npm repository.
-9. > More info: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-and-building-195
+```codeblock
+> hvigor ERROR: 00308019 Operation Error
+Error Message: C:\Users\xxx\.hvigor\wrapper\tools\node_modules\.bin\pnpm.cmd install execute failed. More details:
+ ERR_PNPM_FETCH_404  GET https://xxx/npm-central-repo/testX:  - 404
+This error happened while installing a direct dependency of C:\Users\xxx\.hvigor\project_caches\4cfxxx4f5\workspace
+testX is not in the npm registry, or you have no permission to fetch it.
+No authorization header was set for the request.
+* Try the following: 
+  > Check whether the failed package exists in the npm repository.
+  > More info: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-and-building-195
 ```
 
 **常见原因：**
@@ -48,16 +48,16 @@ hvigor-config.json5中dependencies字段中配置了形如 testX: '3.3.10'的包
 
 **报错现象：**
 
-```
-1. > hvigor ERROR: 00308020 Operation Error
-2. Error Message: C:\Users\xxx\.hvigor\wrapper\tools\node_modules\.bin\pnpm.cmd install execute failed. More details:
-3. ERR_PNPM_NO_MATCHING_VERSION  No matching version found for test@3.3.10 while fetching it from https://xxx/npm-central-repo/
-4. This error happened while installing a direct dependency of C:\Users\xxx\.hvigor\project_caches\4cf***4f5\workspace
-5. The latest release of test is "3.3.0". Published at 2023/12/8
-6. If you need the full list of all 3 published versions run "$ pnpm view test versions".
-7. * Try the following:
-8. > Check whether the version of the failed package exists in the npm repository.
-9. > More info: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-and-building-195
+```codeblock
+> hvigor ERROR: 00308020 Operation Error
+Error Message: C:\Users\xxx\.hvigor\wrapper\tools\node_modules\.bin\pnpm.cmd install execute failed. More details:
+ ERR_PNPM_NO_MATCHING_VERSION  No matching version found for test@3.3.10 while fetching it from https://xxx/npm-central-repo/
+This error happened while installing a direct dependency of C:\Users\xxx\.hvigor\project_caches\4cf***4f5\workspace
+The latest release of test is "3.3.0". Published at 2023/12/8
+If you need the full list of all 3 published versions run "$ pnpm view test versions".
+* Try the following: 
+  > Check whether the version of the failed package exists in the npm repository.
+  > More info: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-and-building-195
 ```
 
 **常见原因：**
@@ -74,17 +74,17 @@ hvigor-config.json5中dependencies字段中配置了 test: '3.3.10'的包，hvig
 
 **报错现象：**
 
-```
-1. > hvigor ERROR: 00308021 Operation Error
-2. Error Message: C:\Users\xxx\.hvigor\wrapper\tools\node_modules\.bin\pnpm.cmd install execute failed. More details:
-3. WARN  GET https://xxx/test error (ETIMEDOUT). Will retry in 10 seconds. 2 retries left.
-4. WARN  GET https://xxx/test error (ETIMEDOUT). Will retry in 1 minute. 1 retries left.
-5. ERR_PNPM_META_FETCH_FAIL  GET https://xxx/test: request to https://xxx/test failed, reason: connect ETIMEDOUT xxx.xxx.xxx.xxx:443.
-6. This error happened while installing a direct dependency of xxx.
-7. * Try the following:
-8. > Ensure that the npm repository address is accessible.
-9. > Contact the repository provider or replace the npm repository address.
-10. > More info: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-and-building-195
+```codeblock
+> hvigor ERROR: 00308021 Operation Error
+Error Message: C:\Users\xxx\.hvigor\wrapper\tools\node_modules\.bin\pnpm.cmd install execute failed. More details:
+WARN  GET https://xxx/test error (ETIMEDOUT). Will retry in 10 seconds. 2 retries left.
+WARN  GET https://xxx/test error (ETIMEDOUT). Will retry in 1 minute. 1 retries left.
+ERR_PNPM_META_FETCH_FAIL  GET https://xxx/test: request to https://xxx/test failed, reason: connect ETIMEDOUT xxx.xxx.xxx.xxx:443.
+This error happened while installing a direct dependency of xxx.
+* Try the following: 
+  > Ensure that the npm repository address is accessible.
+  > Contact the repository provider or replace the npm repository address.
+  > More info: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-and-building-195
 ```
 
 **常见原因：**
@@ -103,15 +103,15 @@ hvigor-config.json5中dependencies字段中配置了test包，hvigor初始化时
 
 **报错现象：**
 
-```
-1. > hvigor ERROR: 00308022 Operation Error
-2. Error Message: C:\Users\xxx\.hvigor\wrapper\tools\node_modules\.bin\pnpm.cmd install execute failed. More details:
-3. ERR_PNPM_NO_OFFLINE_META Failed to resolve test@1.2.3 in package mirror xxx.
-4. This error happened while installing a direct dependency of xxx.
-5. * Try the following:
-6. > Check whether the offline package has been completely downloaded before the migration.
-7. > Refer to 'Setting Up the Development Environment Offline': https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-no-network
-8. > More info: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-and-building-195
+```codeblock
+> hvigor ERROR: 00308022 Operation Error
+Error Message: C:\Users\xxx\.hvigor\wrapper\tools\node_modules\.bin\pnpm.cmd install execute failed. More details:
+ERR_PNPM_NO_OFFLINE_META Failed to resolve test@1.2.3 in package mirror xxx.
+This error happened while installing a direct dependency of xxx.
+* Try the following: 
+  > Check whether the offline package has been completely downloaded before the migration.
+  > Refer to 'Setting Up the Development Environment Offline': https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-no-network
+  > More info: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-and-building-195
 ```
 
 **常见原因：**
@@ -128,16 +128,16 @@ hvigor-config.json5中dependencies字段中配置了test包，且使用离线安
 
 **报错现象：**
 
-```
-1. > hvigor ERROR: 00308023 Operation Error
-2. Error Message: C:\Users\xxx\.hvigor\wrapper\tools\node_modules\.bin\pnpm.cmd install execute failed. More details:
-3. npm ERR! code CERT_HAS_EXPIRED
-4. npm ERR! errno CERT_HAS_EXPIRED
-5. npm ERR! request to https://xxx failed, reason: certificate has expired
-6. npm ERR! A complete log of this run can be found in: xxx
-7. * Try the following:
-8. > Contact the npm repository provider to ensure that the certificate of the repository server is valid, or replace the repository address with a new one.
-9. > More info: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-and-building-195
+```codeblock
+> hvigor ERROR: 00308023 Operation Error
+Error Message: C:\Users\xxx\.hvigor\wrapper\tools\node_modules\.bin\pnpm.cmd install execute failed. More details:
+npm ERR! code CERT_HAS_EXPIRED
+npm ERR! errno CERT_HAS_EXPIRED
+npm ERR! request to https://xxx failed, reason: certificate has expired
+npm ERR! A complete log of this run can be found in: xxx
+* Try the following: 
+  > Contact the npm repository provider to ensure that the certificate of the repository server is valid, or replace the repository address with a new one.
+  > More info: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-and-building-195
 ```
 
 **常见原因：**
@@ -152,17 +152,17 @@ hvigor-config.json5中dependencies字段中配置了test包，但是hvigor初始
 
 **报错现象：**
 
-```
-1. > hvigor ERROR: 00308024 Operation Error
-2. Error Message: C:\Users\xxx\.hvigor\wrapper\tools\node_modules\.bin\pnpm.cmd install execute failed. More details:
-3. npm ERR! code ETIMEDOUT
-4. npm ERR! errno ETIMEDOUT
-5. npm ERR! request to https://xxx failed, reason: connect ETIMEDOUT xxx.xxx.xxx.xxx:443
-6. This error happened while installing a direct dependency of xxx.
-7. * Try the following:
-8. > Ensure that the npm repository address is accessible.
-9. > Contact the repository provider or replace the npm repository address.
-10. > More info: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-and-building-195
+```codeblock
+> hvigor ERROR: 00308024 Operation Error
+Error Message: C:\Users\xxx\.hvigor\wrapper\tools\node_modules\.bin\pnpm.cmd install execute failed. More details:
+npm ERR! code ETIMEDOUT
+npm ERR! errno ETIMEDOUT
+npm ERR! request to https://xxx failed, reason: connect ETIMEDOUT xxx.xxx.xxx.xxx:443
+This error happened while installing a direct dependency of xxx.
+* Try the following: 
+  > Ensure that the npm repository address is accessible.
+  > Contact the repository provider or replace the npm repository address.
+  > More info: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-and-building-195
 ```
 
 **常见原因：**

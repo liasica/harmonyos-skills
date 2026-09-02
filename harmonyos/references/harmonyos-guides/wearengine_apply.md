@@ -3,28 +3,33 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wearengine_ap
 title: 申请接入Wear Engine服务
 breadcrumb: 指南 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > 手机侧应用开发 > 接入准备 > 申请接入Wear Engine服务
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:33:43+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:67b86953b6c4151f8ac301b33fda68c30322a080dddb8d18cf40e260d166575d
+scraped_at: 2026-09-02T14:59:38+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:633bccb5db1e6ce3fb243dda20d90a1b32fc8d8b9bccb64720cb38c8256b2a64
 ---
 
 申请Wear Engine服务前，请先参考[应用开发准备](application-dev-overview.md)（开发者需实名认证为个人开发者或者企业开发者，认证前，请先了解二者的[权益区别](../start/dbiae-0000001336403980.md)），确认开发环境并完成创建项目、创建HarmonyOS应用等基本准备工作，再继续进行以下开发活动。
 
-1. 进入华为开发者联盟的“管理中心”，点击“[应用服务](https://developer.huawei.com/consumer/cn/console/service/AppService)”页签下的“Wear Engine”卡片。
+1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)，选择“开发与服务”。
+2. 在项目列表选择项目，并在应用列表下选择需要申请的应用。
+3. 进入“项目设置 > 开放能力管理”页面，点击“Wear Engine”对应的“管理”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/b4w9w1q3TwuXD6fFNRcQqg/zh-cn_image_0000002589244791.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/tnC96yaJTGGCWddNM4optQ/zh-cn_image_0000002706674482.png)
+4. 进入华为开发者联盟的“管理中心”，点击“[应用服务](https://developer.huawei.com/consumer/cn/console/service/AppService)”页签下的“Wear Engine”卡片。
 
-   说明
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/uGAEy6Y8QKWS0Su_f9bwXw/zh-cn_image_0000002736433571.png)
+
+   **说明** 
 
    如果无“Wear Engine”卡片，请点击右上角“自定义桌面”添加卡片。
-2. 点击“申请Wear Engine服务”，同意协议后，进入权限申请页面。
+5. 点击“申请Wear Engine服务”，同意协议后，进入权限申请页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/HPCoPY4mQE-R2nU_Ysnytw/zh-cn_image_0000002558764986.png)
-3. 点击“HarmonyOS应用”并选择产品后，勾选必需申请的权限（个人开发者当前只可申请设备基础信息、消息通知两个基本的权限）。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/TmVwU6B5TPin3OkbCl1mZA/zh-cn_image_0000002706834420.png)
+6. 点击“HarmonyOS应用”并选择产品后，勾选必需申请的权限（个人开发者当前只可申请设备基础信息、消息通知两个基本的权限）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/twk_CKWITrO3jPoP5I17cg/zh-cn_image_0000002558605330.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/CKFl5SScTM6MJiuf-fznGQ/zh-cn_image_0000002736313527.png)
 
-   说明
+   **说明** 
 
    * 如选中兼容按钮，通信会将本地包名和指纹转换为兼容应用在云端存储的包名和指纹。
    * 若选择需要兼容与旧版本穿戴应用通信的手机移动应用，则需填写归属于同账户下的**待兼容应用**与**待兼容应用包名**。
@@ -70,7 +75,7 @@ content_hash: sha256:67b86953b6c4151f8ac301b33fda68c30322a080dddb8d18cf40e260d16
 
    * 设备标识符
      + 获取设备序列号：获取已连接穿戴设备序列号。
-4. 上传申请数据权限及使用说明、用户授权路径说明，选择授权入口是否展示华为品牌LOGO后提交。
+7. 上传申请数据权限及使用说明、用户授权路径说明，选择授权入口是否展示华为品牌LOGO后提交。
 
    **申请数据权限及使用说明**
 
@@ -82,7 +87,12 @@ content_hash: sha256:67b86953b6c4151f8ac301b33fda68c30322a080dddb8d18cf40e260d16
 
    * 提供获取用户授权的界面截图及界面操作路径的文字描述。
    * 如果应用内提供了修改授权的功能，请提供修改授权的界面截图及界面操作路径的文字描述。可选。
-5. 等待申请通过。
+
+   **说明** 
+
+   * 数据使用说明：[申请数据权限及使用说明（范例）个人开发者.xlsx](https://hihealthbase-drcn.things.hicloud.com/healthkit/fileServer/getFile/plain/usageDescForIndividual/000/001/044/1000000000000001044.20251209032349.74589818940681309738674024154756:20751127032356:100005355:24B697F375223CCF34910C9D8DA18079134D1018EC6FEE201016FFC73DCE3CFA.xlsx)、[申请数据权限及使用说明（范例）企业开发者.xlsx](https://hihealthbase-drcn.things.hicloud.com/healthkit/fileServer/getFile/plain/usageDescForEnterprise/000/001/044/1000000000000001044.20251209032231.78198893037413673087257560319146:20751127032255:100005355:C2F902BA7C9CF53088CDFDA5B72F4CCE2B34C11FB8BC48637D97244075BF17B9.xlsx)。
+   * 用户授权路径说明：[用户授权路径说明（范例）](https://hihealthbase-drcn.things.hicloud.com/healthkit/fileServer/getFile/plain/authDisplayDesc/000/001/062/1000000000000001062.20260228015622.62864815611324569060780795144875:20760216015648:100005355:4D88BD3183D7B4DE07ACDD94FFFD8BD10BD271850BFB585F1215324979201B64.xlsx)。
+8. 等待申请通过。
 
    权限审批一般需要1到2周，具体时间取决于申请的权限类型和应用发布地区。我们将视应用发布地区的相关要求进行权限开放的评估。
 
@@ -90,4 +100,4 @@ content_hash: sha256:67b86953b6c4151f8ac301b33fda68c30322a080dddb8d18cf40e260d16
 
    若您的业务范围发生变动，需要修改相应的数据权限，您可以点击“修改”重新提交申请。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/eUTKfTOESsmR8Y-9yEiVYQ/zh-cn_image_0000002589324855.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/1UV0LbQyT3y7MRylUhkJrA/zh-cn_image_0000002706674484.png)

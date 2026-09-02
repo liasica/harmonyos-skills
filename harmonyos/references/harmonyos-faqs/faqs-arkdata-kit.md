@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkdata-ki
 title: 本地数据库管理
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:11+08:00
-doc_updated_at: 2026-03-25
-content_hash: sha256:5120c6a58bebfd44432888d71d3b30e1ac2f91b042d4e393ee1b359810e4a13f
+scraped_at: 2026-09-02T14:54:29+08:00
+doc_updated_at: 2026-08-13
+content_hash: sha256:111c978f8f6d99347a5ca5d1273cfcb1065f62b5f1ec67d029bf4cdc0b108201
 ---
 
 * **[如何将PixelMap的数据存储到数据库中](faqs-local-database-management-3.md)**
@@ -14,7 +14,7 @@ content_hash: sha256:5120c6a58bebfd44432888d71d3b30e1ac2f91b042d4e393ee1b359810e
 * **[卡片开发中如何实现数据持久化](faqs-local-database-management-6.md)**
 * **[如何从数据库中获得特定类型的文件列表](faqs-local-database-management-7.md)**
 * **[如何使用Sqlite全文检索能力](faqs-local-database-management-9.md)**
-* **[如何获知SQLite支持版本](faqs-local-database-management-10.md)**
+* **[如何获知Sqlite支持版本](faqs-local-database-management-10.md)**
 * **[通过RdbStore.query()获取resultSet对象，出现resultSet的rowCount返回结果为-1](faqs-local-database-management-11.md)**
 * **[如何读取本地/预制数据库](faqs-local-database-management-12.md)**
 * **[用sqlite开发时，怎么保证数据库同一时间只能支持一个写操作？怎么创建索引](faqs-local-database-management-14.md)**
@@ -28,7 +28,7 @@ content_hash: sha256:5120c6a58bebfd44432888d71d3b30e1ac2f91b042d4e393ee1b359810e
 * **[应用的数据库db文件的目录的绝对路径](faqs-local-database-management-22.md)**
 * **[关系型数据库RDB支持哪些搜索能力](faqs-local-database-management-23.md)**
 * **[创建KVManager时bundleName必须是本应用的包名吗](faqs-local-database-management-24.md)**
-* **[分布式对象必须将默认对象的每个属性值初始化为undefined，以防止数据倒灌](faqs-local-database-management-26.md)**
+* **[分布式对象必须要把默认obj的属性的每一个项值都设置undefined否则都会倒灌](faqs-local-database-management-26.md)**
 * **[setSessionId加入组网和on启动监听前后设置的区别](faqs-local-database-management-27.md)**
 * **[@ohos.data.preferences在App退出重启后，持久化数据丢失](faqs-local-database-management-28.md)**
 * **[非UI页面使用用户首选项时context如何获取](faqs-local-database-management-29.md)**
@@ -36,7 +36,7 @@ content_hash: sha256:5120c6a58bebfd44432888d71d3b30e1ac2f91b042d4e393ee1b359810e
 * **[首选项错误码：code:"401" err: Error: Parameter error. The type of 'value' must be ValueType. 如何排查问题](faqs-local-database-management-31.md)**
 * **[如何查看或导出持久化数据](faqs-local-database-management-32.md)**
 * **[如何获知数据存储沙箱路径](faqs-local-database-management-33.md)**
-* **[插入数据之后，RDB数据库的WAL文件体积异常](faqs-local-database-management-34.md)**
+* **[插入数据之后，RDB数据库的wal文件体积异常](faqs-local-database-management-34.md)**
 * **[用户首选项是线程安全的吗](faqs-local-database-management-35.md)**
 * **[为什么在关系型数据库中调用deleteRdbStore函数后并未真实删除数据库，对数据库的操作依旧可用](faqs-local-database-management-36.md)**
 * **[HarmonyOS应用数据存储仍采用沙箱机制，各个APP有自己数据可见范围，为什么不将各APP产生的数据统一存储（同一个目录或者DB下）](faqs-local-database-management-37.md)**
@@ -50,3 +50,24 @@ content_hash: sha256:5120c6a58bebfd44432888d71d3b30e1ac2f91b042d4e393ee1b359810e
 * **[@ohos.data.distributedKVStore接口中的deleteKVStore，第一个参数appId需要传递什么值](faqs-local-database-management-46.md)**
 * **[关于对relationalStore.RdbStore的使用问题：如何查询数据库，需要开一个子线程吗](faqs-local-database-management-47.md)**
 * **[ValuesBucket是否有可动态添加字段的方式](faqs-local-database-management-48.md)**
+* **[应用每次登录都需要确认隐私协议](faqs-local-database-management-49.md)**
+* **[preferences实现数据跨进程读取](faqs-local-database-management-50.md)**
+* **[如何处理数据库的句柄资源过载异常问题](faqs-local-database-management-51.md)**
+* **[非持久化存储导致数据丢失问题](faqs-local-database-management-52.md)**
+* **[PersistentStorage、Preferences、键值型数据库、关系型数据库的区别及适用场景](faqs-local-database-management-53.md)**
+* **[如何解决传入错误的上下文对象而导致获取首选项实例失败的问题](faqs-local-database-management-54.md)**
+* **[如何解决Preferences存储时报错的问题](faqs-local-database-management-55.md)**
+* **[如何导出并查看数据库文件](faqs-local-database-management-56.md)**
+* **[如何解决preferences中报错15501002问题](faqs-local-database-management-57.md)**
+* **[首选项保存数据时报错：Cannot read property putSync of undefined](faqs-local-database-management-58.md)**
+* **[关系型数据库如何存取bigint型数据](faqs-local-database-management-59.md)**
+* **[如何解决PersistentStorage在EntryAbility中获取持久化数据失败的问题](faqs-local-database-management-60.md)**
+* **[如何在指定文件夹内备份关系型数据库](faqs-local-database-management-61.md)**
+* **[如何将数据库的中number类型升级为BigInt](faqs-local-database-management-62.md)**
+* **[如何使用公共目录下的数据库文件](faqs-local-database-management-63.md)**
+* **[如何通过关系型数据库实现全文检索](faqs-local-database-management-64.md)**
+* **[如何在服务卡片与主应用之间共享持久化数据](faqs-local-database-management-65.md)**
+* **[如何在卡片和应用间共享UI状态](faqs-local-database-management-66.md)**
+* **[如何实现后台定时器](faqs-local-database-management-67.md)**
+* **[如何读取项目工程下预置的SQLite数据库](faqs-local-database-management-68.md)**
+* **[应用被用户主动退出/清理时如何保存数据](faqs-local-database-management-69.md)**

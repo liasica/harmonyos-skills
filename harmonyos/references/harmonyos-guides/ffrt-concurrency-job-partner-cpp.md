@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ffrt-concurre
 title: Function Flow Runtime任务伙伴(C++)
 breadcrumb: 指南 > 系统 > 基础功能 > Function Flow Runtime Kit（任务并发调度服务） > Function Flow Runtime开发样例(C++) > Function Flow Runtime任务伙伴(C++)
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:33:22+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:a35394cc6fdf7c4e32c4435a9e5d2f687abf23a04f3aac04c64ff904af163cb0
+scraped_at: 2026-09-02T14:59:36+08:00
+doc_updated_at: 2026-08-07
+content_hash: sha256:5654439f889236c79b3061a04e0a7dee3e0730dacfb47ebb2d5c06ac1f71d4f3
 ---
 
 ## 概述
@@ -17,7 +17,7 @@ content_hash: sha256:a35394cc6fdf7c4e32c4435a9e5d2f687abf23a04f3aac04c64ff904af1
 
 为解决以上问题，Job Partner并发范式应运而生。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/hgRyW9pgS4eqgWswlCMsvA/zh-cn_image_0000002558605300.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/yRjqrfp_RBeHTOi3STtEFg/zh-cn_image_0000002706674450.png)
 
 Job Partner并发范式中定义原先的线程为master线程，并支持动态管理partner线程（伙伴线程）。它有两个特性：
 
@@ -30,46 +30,46 @@ Job Partner并发范式中定义原先的线程为master线程，并支持动态
 
 以下是原有伪代码实现：
 
-```
-1. namespace market_system {
-2. // 批量创建节点，在js线程上被调用
-3. void create_nodes(std::array<Node>& nodes)
-4. {
-5. for (int i = 0; i < nodes.size(); i++) {
-6. code1(); // 可以在任意线程上执行的代码片段
-7. code2(); // 必须在js线程上执行的代码片段
-8. code3(); // 可以在任意线程上执行的代码片段
-9. }
-10. }
-11. };
+```cpp
+namespace market_system {
+    // 批量创建节点，在js线程上被调用
+    void create_nodes(std::array<Node>& nodes)
+    {
+        for (int i = 0; i < nodes.size(); i++) {
+            code1(); // 可以在任意线程上执行的代码片段
+            code2(); // 必须在js线程上执行的代码片段
+            code3(); // 可以在任意线程上执行的代码片段
+        }
+    }
+};
 ```
 
 使用Job Partner并行化后的伪代码如下：
 
-```
-1. #include <array>
-2. #include <memory>
-3. #include "ffrt/ffrt.h" // 来自 OpenHarmony 第三方库 "@ppd/ffrt"
+```cpp
+#include <array>
+#include <memory>
+#include "ffrt/ffrt.h" // 来自 OpenHarmony 第三方库 "@ppd/ffrt"
 
-5. namespace market_system {
-6. // 批量创建节点，在js线程上被调用
-7. void create_nodes(std::array<Node>& nodes)
-8. {
-9. constexpr uint64_t stack_size = 16 * 1024;
-10. auto stack = std::make_unique<std::array<char, stack_size>[]>(nodes.size()); // 创建job_num个执行栈
-11. auto partner = ffrt::job_partner<>::get_partner_of_this_thread(); // 获得当前js线程的伙伴
-12. for (int i = 0; i < nodes.size(); i++) {
-13. partner->submit([&] { // 每个节点的创建提交给partner
-14. code1(); // 可以在任意线程上执行的代码片段
-15. ffrt::job_partner<>::submit_to_master([&] { // 遇到必须在master线程执行的任务时发给主线程并同步等待
-16. code2(); // 必须在js线程上执行的代码片段
-17. });
-18. code3(); // 可以在任意线程上执行的代码片段
-19. }, &stack[i], stack_size);
-20. }
-21. partner->wait(); // 等待所有节点创建完成
-22. }
-23. };
+namespace market_system {
+    // 批量创建节点，在js线程上被调用
+    void create_nodes(std::array<Node>& nodes)
+    {
+        constexpr uint64_t stack_size = 16 * 1024;
+        auto stack = std::make_unique<std::array<char, stack_size>[]>(nodes.size()); // 创建job_num个执行栈
+        auto partner = ffrt::job_partner<>::get_partner_of_this_thread(); // 获得当前js线程的伙伴
+        for (int i = 0; i < nodes.size(); i++) {
+            partner->submit([&] { // 每个节点的创建提交给partner
+                code1(); // 可以在任意线程上执行的代码片段
+                ffrt::job_partner<>::submit_to_master([&] { // 遇到必须在master线程执行的任务时发给主线程并同步等待
+                    code2(); // 必须在js线程上执行的代码片段
+                });
+                code3(); // 可以在任意线程上执行的代码片段
+            }, &stack[i], stack_size);
+        }
+        partner->wait(); // 等待所有节点创建完成
+    }
+};
 ```
 
 ## 接口说明
@@ -80,9 +80,9 @@ Job Partner并发范式中定义原先的线程为master线程，并支持动态
 | --- | --- |
 | [job\_partner](https://gitcode.com/openharmony/resourceschedule_ffrt/blob/master/docs/ffrt-api-guideline-cpp.md#job_partner) | 细粒度任务伙伴接口。 |
 
-说明
+**说明** 
 
-* 如何使用FFRT C++ API详见：[FFRT C++接口三方库使用指导](ffrt-development-guideline.md#using-ffrt-c-api-1)。
+* 如何使用FFRT C++ API详见：[FFRT C++接口三方库使用指导](ffrt-development-guideline.md#使用ffrt-c-api-1)。
 * 使用FFRT C接口或C++接口时，都可以通过FFRT C++接口三方库简化头文件包含，即使用#include "ffrt/ffrt.h"头文件包含语句。
 
 ## 约束限制

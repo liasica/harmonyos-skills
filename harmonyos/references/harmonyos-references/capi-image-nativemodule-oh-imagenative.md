@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: OH_ImageNative
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 结构体 > OH_ImageNative
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:28+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:f84517635c7fbd1f62e31149cd2b5dfe9694c009457988d1ef05d24f54e56f37
+scraped_at: 2026-09-02T14:52:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7b66a895db69631935ccbaf6c42ed191d6ecdad0a932c63a1fc34d6b28b4d5da
 ---
 
-```
-1. typedef struct OH_ImageNative OH_ImageNative
+```c
+typedef struct OH_ImageNative OH_ImageNative
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 为图像接口定义native层图像对象的别名。
 

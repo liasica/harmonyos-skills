@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-mind
 title: OH_AI_ContextHandle
 breadcrumb: API参考 > AI > MindSpore Lite Kit（昇思推理框架服务） > C API > 结构体 > OH_AI_ContextHandle
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:05+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:42218fbb9eb9d56ce9ef19c1d57e33a9fd3e8a2101f0965979a990ab5d60d25c
+scraped_at: 2026-09-02T14:53:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:bfdbad07ac77d003b60414b2de8a171dee561e444d2320585c2349dbf826b46d
 ---
 
-```
-1. typedef void *OH_AI_ContextHandle
+```c
+typedef void *OH_AI_ContextHandle
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 MindSpore上下文信息的指针，该指针会指向Context。
 

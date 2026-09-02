@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: ArkTS卡片界面开发概述
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS卡片UI界面开发 > ArkTS卡片界面开发概述
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:54+08:00
+scraped_at: 2026-09-02T14:49:57+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:cd42f1fe2eb8cee6dc7316fa54d885abb6a3d9b3c80829e1a814dc8b5779675c
+content_hash: sha256:9b0d97fb8637915a1053301ed74888e072786571832e00b712a510fa8d7b77d0
 ---
 
 ArkTS卡片开发采用通用[ArkTS语言](learning-arkts.md)，开发者可以使用[ArkTS声明式开发范式](arkts-ui-development-overview.md)开发ArkTS卡片页面。
 
 如下卡片页面由DevEco Studio模板自动生成，开发者可以根据自身的业务场景进行调整。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/G4PvtyvuSJCV9hckkU5AFA/zh-cn_image_0000002589244595.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/laWrzz3pTbuTtHgXc-BeJA/zh-cn_image_0000002736313257.png)
 
 ## ArkTS卡片支持的页面能力
 
@@ -22,4 +22,4 @@ ArkTS卡片具备JS卡片的全量能力，并且新增了动效能力和自定�
 
 例如：以下说明表示CircleShape可在ArkTS卡片中使用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/KaO3DoTZSnGtYTWdqYl0cA/zh-cn_image_0000002558764790.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/wDaqVn0yRgiAVcq3I3dxMg/zh-cn_image_0000002706674214.png)

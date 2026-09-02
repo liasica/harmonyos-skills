@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/intents-r
 title: 意图共享
 breadcrumb: API参考 > AI > Intents Kit（意图框架服务） > REST API > 意图共享
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b2d95958f2ea14b51095bcfb6886d0b15bbdef63b297f8ebba31ea75201dc9ad
+scraped_at: 2026-09-02T14:53:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:26c7e7a5af7b5cb01a2f1912c6d08a07ed0a32c2e0d797349bbe54254a09090b
 ---
 
 ## 功能介绍
@@ -36,7 +36,7 @@ content_hash: sha256:b2d95958f2ea14b51095bcfb6886d0b15bbdef63b297f8ebba31ea75201
 | --- | --- | --- | --- |
 | x-appid | 是 | String | 开发者在华为开发者联盟注册的应用编号，可从应用服务>AppGallery Connect（应用市场）>我的项目>选中应用后查看，x-appid即选项的Client ID。 |
 | Authorization | 是 | String | 用于身份认证的应用级AccessToken。需通过OAuth 2.0接口获取，并在传输时使用Bearer认证方案，即在Token前添加"Bearer "前缀。（具体获取方式详见下文：x-appid和Authorization的获取步骤描述）。 |
-| Content-Type | 是 | String | 固定值，填application/json。 |
+| Content-Type | 是 | String | 固定值，填application/json。  **说明：**  Request Body传参，请务必遵循此请求头格式，否则可能导致请求失败。 |
 | Accept | 是 | String | 固定值，填application/json。 |
 | x-event-type | 否 | String | 事件类型，USER表示用户事件，COMMON表示通用事件。 |
 
@@ -45,7 +45,7 @@ content_hash: sha256:b2d95958f2ea14b51095bcfb6886d0b15bbdef63b297f8ebba31ea75201
 | **参数** | **是否必选** | **类型** | **描述** |
 | --- | --- | --- | --- |
 | events | 是 | List<Object> | 详细参考请求体样例。 |
-| userAgree | 是 | Boolean | 固定值为true，表示同意。 |
+| userAgree | 是 | Boolean | 表示是否同意捐赠，若要使用该意图功能，则固定填true。 |
 
 **请求体字段样例**
 
@@ -90,15 +90,13 @@ content_hash: sha256:b2d95958f2ea14b51095bcfb6886d0b15bbdef63b297f8ebba31ea75201
 
 **x-appid**是来自于[AppGallery Connect网站](https://developer.huawei.com/consumer/cn/console/service/AppService)，可从应用服务>AppGallery Connect（应用市场）>我的项目>选中应用后查看，**x-appid**即Client ID。
 
-**Authorization**通过调用Oauth2.0的接口获得，需要请求如下接口：
-
-https://oauth-login.cloud.huawei.com/oauth2/v3/token。
+**Authorization**通过调用Oauth2.0的接口获得，接口地址为：https://oauth-login.cloud.huawei.com/oauth2/v3/token。
 
 **Request Header**
 
 | **参数** | **是否必选** | **类型** | **描述** |
 | --- | --- | --- | --- |
-| Content-Type | 是 | String | 固定值，填application/x-www-form-urlencoded。 |
+| Content-Type | 是 | String | 固定值，填application/x-www-form-urlencoded。  **说明：**  Request Body传参，请务必遵循此请求头格式，否则可能导致请求失败。 |
 
 **Request Body**
 
@@ -114,51 +112,57 @@ https://oauth-login.cloud.huawei.com/oauth2/v3/token。
 
 完整的请求头样例如下：
 
-```
-1. Content-Type:application/json
-2. Authorization:Bearer DQEBAGf5Mtm9rZl3W1W8sACVmWo0WhGUE3ANb/+KgRHjvmJqacjI3aF++jLEqbZsJ4H472MknoysUMaQrr8FgAHKPCU1YY4EKxUhsA==
-3. x-appid: 100012345
-4. Accept:application/json
-5. x-event-type:USER
+```yaml
+POST /open-ability/v2/service-events/notify HTTP/1.1
+Host: hag.cloud.huawei.com
+Content-Type: application/json
+Authorization: Bearer DQEBAGf5Mtm9rZl3W1W8sACVmWo0WhGUE3ANb/+KgRHjvmJqacjI3aF++jLEqbZsJ4H472MknoysUMaQrr8FgAHKPCU1YY4EKxUhsA==
+x-appid: 1***12345
+Accept: application/json
+x-event-type: USER
 ```
 
-以ViewRepayment意图为例，完整的请求体样例如下:
+以ViewRepayment意图为例，完整的请求体样例如下：
 
-```
-1. {
-2. "events": [{
-3. "requestTime": "20240229143501798",  // 请求报文的发送时间，格式：yyyyMMddhhmmssSSS（UTC）
-4. "abilityId": "389ccb86317f41c19c2aa8762345069c", //通知的服务ID
-5. "sid": "0bda3b89e3f44a44940eaad6b863dcc6",   //华为分配的,第三方账号与华为账号的关联ID（非账号绑定场景）。
-6. "overwriteByEventName": false,   //是否根据事件名覆盖本用户同Ability的其他卡片。默认不覆盖
-7. "overwriteByAbility": false,  //是否覆盖本用户同Ability的其他卡片。默认为true
-8. "content": {  //事件内容数据列表
-9. "contentData": [{  //事件内容数据列表
-10. "header": {  //内容定义信息
-11. "namespace": "Intent",  //内容定义命名空间，填写Intent
-12. "name": "ViewRepayment"  //意图名称
-13. },
-14. "payload": {  //内容信息
-15. "identifier": "uuid", //事件的唯一标识
-16. "intentEntityInfo": {   //意图实体
-17. "repaymentType":"CreditCard",
-18. "statementDate": "2023-10-01",
-19. "repaymentDate": "2023-10-08",
-20. "bankName": "xxx银行",
-21. "bankNameAbbreviation": "xx银行/xx行",
-22. "availableBeginTime": "2023-10-08T00:00:00+08:00",
-23. "availableEndTime": "2023-10-08T23:59:59+08:00",
-24. "eventStatus": "Repayment",
-25. "eventImage": "https://www-file.abc.com/-/media/corporate/images/home/logo/abc_logo.png",
-26. "cardTailNumber": "1234",
-27. "cardType": "CreditCard"
-28. }
-29. }
-30. }]
-31. }
-32. }],
-33. "userAgree": true
-34. }
+```json5
+POST /open-ability/v2/service-events/notify HTTP/1.1
+Host: hag.cloud.huawei.com
+Content-Type: application/json
+
+{
+  "events": [{
+    "requestTime": "20240229143501798", // 请求报文的发送时间，格式：yyyyMMddhhmmssSSS（UTC）
+    "abilityId": "389ccb86317f41c19c2aa8762345069c", // 通知的服务ID
+    "sid": "0bda3b89e3f44a44940eaad6b863dcc6", // 华为分配的第三方账号与华为账号的关联ID（非账号绑定场景）
+    "overwriteByEventName": false, // 是否根据事件名覆盖本用户同Ability的其他卡片。默认不覆盖
+    "overwriteByAbility": false, // 是否覆盖本用户同Ability的其他卡片。默认为true
+    "content": { // 事件内容数据列表
+      "contentData": [{ // 事件内容数据列表
+        "header": { // 内容定义信息
+          "namespace": "Intent", // 内容定义命名空间，填写Intent
+          "name": "ViewRepayment" // 意图名称
+        },
+        "payload": { // 内容信息
+          "identifier": "uuid", // 事件的唯一标识
+          "intentEntityInfo": { // 意图实体
+            "repaymentType":"CreditCard",
+            "statementDate": "2023-10-01",
+            "repaymentDate": "2023-10-08",
+            "bankName": "xxx银行",
+            "bankNameAbbreviation": "xx银行/xx行",
+            "availableBeginTime": "2023-10-08T00:00:00+08:00",
+            "availableEndTime": "2023-10-08T23:59:59+08:00",
+            "eventStatus": "Repayment",
+            "eventImage": "https://www-file.abc.com/-/media/corporate/images/home/logo/abc_logo.png",
+            "cardTailNumber": "1234",
+            "cardType": "CreditCard"
+          }
+        }
+      }]
+    }
+  }],
+  "userAgree": true
+}
 ```
 
 ## 响应参数
@@ -194,30 +198,36 @@ https://oauth-login.cloud.huawei.com/oauth2/v3/token。
 * 调用成功，响应码为200，响应体为空。
 * 调用失败，响应码为400，以生失效时间无效错误为例，响应体格式如下：
 
-  ```
-  1. {
-  2. "errorEvents":  [{
-  3. "requestId": "02240416001",
-  4. "resultInfo": {
-  5. "code": "invalidParam",
-  6. "desc": "expireTime can not before nowTime"
-  7. }
-  8. }]
-  9. }
+  ```json
+  HTTP/1.1 400 Bad Request
+  Content-Type: application/json
+
+  {
+    "errorEvents":  [{
+      "requestId": "02240416001",
+      "resultInfo": {
+        "code": "invalidParam",
+        "desc": "expireTime can not before nowTime"
+      }
+    }]
+  }
   ```
 
   + 调用出错（鉴权信息无效或过期），响应码为401，响应体为空。
   + 调用出错（网关验证开发者权限失败），响应码为403，响应体为空。
   + 调用失败，响应码为404，表示外部推送的sid没有获取到对应的uid，响应体格式如下：
 
-    ```
-    1. {
-    2. "errorEvents": [{
-    3. "requestId": "02240416001",
-    4. "resultInfo": {
-    5. "code": "userNotFound",
-    6. "desc": "User is not found"
-    7. }
-    8. }]
-    9. }
+    ```json
+    HTTP/1.1 404 Bad Request
+    Content-Type: application/json
+
+    {
+      "errorEvents": [{
+        "requestId": "02240416001",
+        "resultInfo": {
+          "code": "userNotFound",
+          "desc": "User is not found"
+        }
+      }]
+    }
     ```

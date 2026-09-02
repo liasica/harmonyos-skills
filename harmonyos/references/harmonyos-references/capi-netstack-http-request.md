@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nets
 title: Http_Request
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 结构体 > Http_Request
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:42+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:d4932aff9d0da31640e4a6827fcb7ad5560da5353088aa69d4d3ffde099f1494
+scraped_at: 2026-09-02T15:01:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:421773e6419f873152efd6963ebf48c265b7919facce1ad65b1a44dce6804737
 ---
 
-```
-1. typedef struct Http_Request {...} Http_Request
+```c
+typedef struct Http_Request {...} Http_Request
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 HTTP请求结构体。
 
@@ -26,11 +24,7 @@ HTTP请求结构体。
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

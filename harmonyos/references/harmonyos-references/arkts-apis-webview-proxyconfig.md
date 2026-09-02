@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (ProxyConfig)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (ProxyConfig)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:02+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:43e414da366f273cbcdbfc6e937300e17a5dbfb757202548839bc548ff920d46
+scraped_at: 2026-09-02T15:01:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:728eb2fdf22b585dfaf5bc500abe61edd1439e4c2ed3f56dea15b997f26f9165
 ---
 
-可以通过该类提供的接口对代理进行配置。
+ProxyConfig是ArkWeb框架中用于配置网络代理规则的类，配合[ProxyController](arkts-apis-webview-proxycontroller.md)实现对应用中所有Web组件网络请求的代理控制。通过ProxyConfig，开发者可以灵活定义多种代理规则：指定特定URL使用特定代理服务器、指定某些URL直连服务器、定义绕过代理的规则等。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 9开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 本Class首批接口从API version 15开始支持。
@@ -18,11 +18,27 @@ content_hash: sha256:43e414da366f273cbcdbfc6e937300e17a5dbfb757202548839bc548ff9
 
 ## insertProxyRule15+
 
-PhonePC/2in1TabletTVWearable
-
 insertProxyRule(proxyRule: string, schemeFilter?: ProxySchemeFilter): void
 
-插入一条代理规则，与schemeFilter匹配的URL都会使用指定代理。如果schemeFilter为空，所有URL都将使用指定代理。
+插入一条代理规则，与schemeFilter匹配的URL都会使用指定代理。如果未指定schemeFilter参数，将使用默认值MATCH\_ALL\_SCHEMES，所有URL都将使用指定代理。
+
+代理格式为[scheme://]host[:port]。
+
+scheme是可选的，必须是HTTP、HTTPS或SOCKS。scheme默认值为HTTP。
+
+host是带括号的IPv6字面量、IPv4字面量或由点分隔的一个或多个标签。
+
+端口号是可选的，默认HTTP为80、HTTPS为443、SOCKS为1080。
+
+例如：
+
+* example.com host: example.com
+* <https://example.com> scheme: https host: example.com
+* example.com:8888 host: example.com port: 8888
+* <https://example.com:8888> scheme: https host: example.com port: 8888
+* 192.168.1.1 host: 192.168.1.1
+* 192.168.1.1:8888 host: 192.168.1.1 port: 8888
+* [10:20:30:40:50:60:70:80]
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -47,11 +63,13 @@ insertProxyRule(proxyRule: string, schemeFilter?: ProxySchemeFilter): void
 
 ## insertDirectRule15+
 
-PhonePC/2in1TabletTVWearable
-
 insertDirectRule(schemeFilter?: ProxySchemeFilter): void
 
-插入一条代理规则，指明符合schemeFilter条件的URL将直接连接到服务器。
+插入一条直连规则，指明符合schemeFilter条件的URL将直接连接到服务器。
+
+**说明** 
+
+* 与[insertBypassRule](arkts-apis-webview-proxyconfig.md#insertbypassrule15)和[bypassHostnamesWithoutPeriod](arkts-apis-webview-proxyconfig.md#bypasshostnameswithoutperiod15)均可实现URL直连，区别在于匹配维度：本方法通过schemeFilter按协议类型匹配；insertBypassRule通过bypassRule字符串按URL模式匹配；bypassHostnamesWithoutPeriod无需传参，自动对不含点号的域名直连。可根据需要直连的URL范围选择合适的方法。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -75,11 +93,9 @@ insertDirectRule(schemeFilter?: ProxySchemeFilter): void
 
 ## insertBypassRule15+
 
-PhonePC/2in1TabletTVWearable
-
 insertBypassRule(bypassRule: string): void
 
-插入一条bypass规则，指明哪些URL应该绕过代理并直接连接到服务器。
+插入一条bypass规则，指明哪些URL应该绕过代理并直接连接到服务器。当[enableReverseBypass](arkts-apis-webview-proxyconfig.md#enablereversebypass15)设置为true时，与bypassRule匹配的URL会使用代理而非绕过代理。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -87,7 +103,7 @@ insertBypassRule(bypassRule: string): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| bypassRule | string | 是 | 与bypassRule匹配的URL会绕过代理。 |
+| bypassRule | string | 是 | bypass规则字符串，用于指定绕过代理的URL匹配规则，支持主机名或域名格式（如"example.com"匹配该域名及其子域名）。与bypassRule匹配的URL会绕过代理。 |
 
 **错误码：**
 
@@ -103,11 +119,9 @@ insertBypassRule(bypassRule: string): void
 
 ## bypassHostnamesWithoutPeriod15+
 
-PhonePC/2in1TabletTVWearable
-
 bypassHostnamesWithoutPeriod(): void
 
-没有点字符的域名将跳过代理并直接连接到服务器。
+没有点字符的域名将绕过代理并直接连接到服务器。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -116,8 +130,6 @@ bypassHostnamesWithoutPeriod(): void
 完整示例代码参考[removeProxyOverride](arkts-apis-webview-proxycontroller.md#removeproxyoverride15)。
 
 ## clearImplicitRules15+
-
-PhonePC/2in1TabletTVWearable
 
 clearImplicitRules(): void
 
@@ -130,8 +142,6 @@ clearImplicitRules(): void
 完整示例代码参考[removeProxyOverride](arkts-apis-webview-proxycontroller.md#removeproxyoverride15)。
 
 ## enableReverseBypass15+
-
-PhonePC/2in1TabletTVWearable
 
 enableReverseBypass(reverse: boolean): void
 
@@ -159,8 +169,6 @@ enableReverseBypass(reverse: boolean): void
 
 ## getBypassRules15+
 
-PhonePC/2in1TabletTVWearable
-
 getBypassRules(): Array<string>
 
 获取不使用代理的URL列表。
@@ -179,8 +187,6 @@ getBypassRules(): Array<string>
 
 ## getProxyRules15+
 
-PhonePC/2in1TabletTVWearable
-
 getProxyRules(): Array<ProxyRule>
 
 获取代理规则。
@@ -191,15 +197,13 @@ getProxyRules(): Array<ProxyRule>
 
 | 类型 | 说明 |
 | --- | --- |
-| Array<[ProxyRule](arkts-apis-webview-proxyrule.md)> | 代理规则。 |
+| Array<[ProxyRule](arkts-apis-webview-proxyrule.md)> | 代理规则，每个ProxyRule对象表示一条已配置的代理规则。 |
 
 **示例：**
 
 完整示例代码参考[removeProxyOverride](arkts-apis-webview-proxycontroller.md#removeproxyoverride15)。
 
 ## isReverseBypassEnabled15+
-
-PhonePC/2in1TabletTVWearable
 
 isReverseBypassEnabled(): boolean
 

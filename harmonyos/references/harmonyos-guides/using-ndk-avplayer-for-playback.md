@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-avp
 title: 使用AVPlayer播放音频(C/C++)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 播放 > 使用AVPlayer播放音频(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:35:27+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:efff1b5362cf21e6c88e4a84fd5a2a3edd67a236180897b859368ad9b839aec8
+scraped_at: 2026-09-02T14:50:18+08:00
+doc_updated_at: 2026-08-07
+content_hash: sha256:cef60f2cade37fbd281d7ba7cd431e65b0bdb2f8f87f4265377022755b70caee
 ---
 
 使用[AVPlayer](media-kit-intro.md#avplayer)可以实现端到端播放原始媒体资源，本开发指导将以完整地播放一首音乐作为示例，向开发者讲解AVPlayer音频播放相关功能。
@@ -16,7 +16,7 @@ content_hash: sha256:efff1b5362cf21e6c88e4a84fd5a2a3edd67a236180897b859368ad9b83
 
 **图1** 播放状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/gvD_s1HkST-7NMW4Clv8Pw/zh-cn_image_0000002558605442.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/NCxAaVxUQXuPEuUTaJduTg/zh-cn_image_0000002736433743.png)
 
 状态的详细说明请参考[AVPlayerState](../harmonyos-references/capi-avplayer-base-h.md#avplayerstate)。当播放处于prepared / playing / paused / completed状态时，播放引擎处于工作状态，这需要占用系统较多的运行内存。当客户端暂时不使用播放器时，调用reset()或release()回收内存资源，做好资源利用。
 
@@ -35,25 +35,25 @@ content_hash: sha256:efff1b5362cf21e6c88e4a84fd5a2a3edd67a236180897b859368ad9b83
 在CMake脚本中链接动态库：
 
 ```
-1. target_link_libraries(sample PUBLIC libavplayer.so)
+target_link_libraries(sample PUBLIC libavplayer.so)
 ```
 
 使用[OH\_AVPlayer\_SetOnInfoCallback()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setoninfocallback)、[OH\_AVPlayer\_SetOnErrorCallback()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setonerrorcallback)接口设置信息监听回调函数和错误监听回调函数，需要在 CMake 脚本中链接如下动态库：
 
 ```
-1. target_link_libraries(sample PUBLIC libnative_media_core.so)
+target_link_libraries(sample PUBLIC libnative_media_core.so)
 ```
 
 开发者使用系统日志能力时，需引入如下头文件：
 
 ```
-1. #include <hilog/log.h>
+#include <hilog/log.h>
 ```
 
-并需要在CMake脚本中链接如下动态库:
+并需要在CMake脚本中链接如下动态库：
 
 ```
-1. target_link_libraries(sample PUBLIC libhilog_ndk.z.so)
+target_link_libraries(sample PUBLIC libhilog_ndk.z.so)
 ```
 
 开发者通过引入[avplayer.h](../harmonyos-references/capi-avplayer-h.md)、[avplayer\_base.h](../harmonyos-references/capi-avplayer-base-h.md)和[native\_averrors.h](../harmonyos-references/capi-native-averrors-h.md)头文件，使用音频播放相关API。
@@ -82,28 +82,28 @@ content_hash: sha256:efff1b5362cf21e6c88e4a84fd5a2a3edd67a236180897b859368ad9b83
 
 1. 新建工程，下载[示例工程](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/Media/AVPlayer/AVPlayerNDKAudio)，并将示例工程的以下资源复制到对应目录。
 
-   ```
-   1. AVPlayerNDKAudio
-   2. entry/src/main/ets/
-   3. └── pages
-   4. └── Index.ets (播放界面)
-   5. entry/src/main/
-   6. ├── cpp
-   7. │   ├── types
-   8. │   │   └── libentry
-   9. │   │       └── Index.d.ts (NDK函数对应的js映射)
-   10. │   ├── CMakeLists.txt (CMake脚本)
-   11. │   └── napi_init.cpp  (NDK函数)
-   12. └── resources
-   13. ├── base
-   14. │   ├── element
-   15. │   │   ├── color.json
-   16. │   │   ├── float.json
-   17. │   │   └── string.json
-   18. │   └── media
-   19. │       ├── ic_video_play.svg  (播放键图片资源)
-   20. │       └── ic_video_pause.svg (暂停键图片资源)
-   21. └── rawfile
-   22. └── test_01.mp3 （音频资源）
+   ```txt
+   AVPlayerNDKAudio
+   entry/src/main/ets/
+   └── pages
+       └── Index.ets (播放界面)
+   entry/src/main/
+   ├── cpp
+   │   ├── types
+   │   │   └── libentry
+   │   │       └── Index.d.ts (NDK函数对应的js映射)
+   │   ├── CMakeLists.txt (CMake脚本)
+   │   └── napi_init.cpp  (NDK函数)
+   └── resources
+       ├── base
+       │   ├── element
+       │   │   ├── color.json
+       │   │   ├── float.json
+       │   │   └── string.json
+       │   └── media
+       │       ├── ic_video_play.svg  (播放键图片资源)
+       │       └── ic_video_pause.svg (暂停键图片资源)
+       └── rawfile
+           └── test_01.mp3 （音频资源）
    ```
 2. 编译新建工程并运行。

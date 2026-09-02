@@ -3,31 +3,27 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (ControlCenter)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (ControlCenter)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:34+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b10933d7778aca260efeef0bf93e620abc3d7136d9339aafa50fb53f1b6d39cd
+scraped_at: 2026-09-02T15:02:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:997b6a5a74d2943dd8fbe78165e4d54c8a4fa997a073858bd9af77b3eac436f8
 ---
 
-ControlCenter 继承自 [ControlCenterQuery](arkts-apis-camera-controlcenterquery.md)。
+ControlCenter继承自[ControlCenterQuery](arkts-apis-camera-controlcenterquery.md)。
 
 控制中心类，用于使能相机控制器。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Interface首批接口从API version 20开始支持。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { camera } from '@kit.CameraKit';
+```ts
+import { camera } from '@kit.CameraKit';
 ```
 
 ## enableControlCenter20+
-
-PhonePC/2in1TabletTVWearable
 
 enableControlCenter(enabled: boolean): void
 
@@ -53,11 +49,11 @@ enableControlCenter(enabled: boolean): void
 
 **示例：**
 
-```
-1. function enableControlCenter(videoSession: camera.VideoSession, enable: boolean): void {
-2. let isSupported: boolean = videoSession.isControlCenterSupported();
-3. if (isSupported) {
-4. videoSession.enableControlCenter(enable);
-5. }
-6. }
+```ts
+function enableControlCenter(videoSession: camera.VideoSession, enable: boolean): void {
+    let isSupported: boolean = videoSession.isControlCenterSupported();
+    if (isSupported) {
+        videoSession.enableControlCenter(enable);
+    }
+}
 ```

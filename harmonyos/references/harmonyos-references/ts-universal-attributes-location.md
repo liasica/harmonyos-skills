@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 位置设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 布局与边框 > 位置设置
 category: harmonyos-references
-scraped_at: 2026-04-29T13:51:16+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:37f4b9af1b9c10aeb1503b67a7e99e39654b1da97ccbba50b4b2f9a98bc14746
+scraped_at: 2026-09-02T15:00:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:97d34553e4929f7cc0445d419e5933d76543e8047876cdeb595eb36ff8d91aeb
 ---
 
 设置组件对齐方式、布局方向及显示位置。
 
-说明
+**说明** 
 
 * 从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## align
-
-PhonePC/2in1TabletTVWearable
 
 align(value: Alignment): T
 
@@ -42,8 +40,6 @@ align(value: Alignment): T
 
 ## align20+
 
-PhonePC/2in1TabletTVWearable
-
 align(alignment: Alignment | LocalizedAlignment): T
 
 设置当前组件绘制区域内的子组件的对齐方式，增加支持镜像的能力，支持[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)动态设置属性方法。
@@ -51,6 +47,8 @@ align(alignment: Alignment | LocalizedAlignment): T
 **卡片能力：** 从API version 20开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -67,8 +65,6 @@ align(alignment: Alignment | LocalizedAlignment): T
 | T | 返回当前组件。 |
 
 ## direction
-
-PhonePC/2in1TabletTVWearable
 
 direction(value: Direction): T
 
@@ -94,13 +90,11 @@ direction(value: Direction): T
 
 ## position
 
-PhonePC/2in1TabletTVWearable
-
 position(value: Position | Edges | LocalizedEdges): T
 
 绝对定位，确定子组件相对父组件内容区的位置，支持[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)动态设置属性方法。
 
-说明
+**说明** 
 
 * position对位置的影响作用在组件的尺寸测量完成之后。
 * 当父组件为[Row](ts-container-row.md)、[Column](ts-container-column.md)或[Flex](ts-container-flex.md)时，设置position的子组件不占位。在上述场景中，如果父组件包含的所有子组件均设置了position，此时父组件尺寸无法通过其他子组件确定，将基于尺寸(0, 0)进行布局测算。
@@ -130,8 +124,6 @@ position(value: Position | Edges | LocalizedEdges): T
 
 ## markAnchor
 
-PhonePC/2in1TabletTVWearable
-
 markAnchor(value: Position | LocalizedPosition): T
 
 设置元素在位置定位时的锚点，支持[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)动态设置属性方法。
@@ -155,8 +147,6 @@ markAnchor(value: Position | LocalizedPosition): T
 | T | 返回当前组件。 |
 
 ## offset
-
-PhonePC/2in1TabletTVWearable
 
 offset(value: Position | Edges | LocalizedEdges): T
 
@@ -182,8 +172,6 @@ offset(value: Position | Edges | LocalizedEdges): T
 
 ## alignRules9+
 
-PhonePC/2in1TabletTVWearable
-
 alignRules(value: AlignRuleOption): T
 
 指定设置在相对布局组件中子组件的对齐规则，仅当父组件为[RelativeContainer](ts-container-relativecontainer.md)时生效，支持[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)动态设置属性方法。
@@ -208,8 +196,6 @@ alignRules(value: AlignRuleOption): T
 
 ## alignRules12+
 
-PhonePC/2in1TabletTVWearable
-
 alignRules(alignRule: LocalizedAlignRuleOptions): T
 
 指定设置在相对布局组件中子组件的对齐规则，仅当父组件为[RelativeContainer](ts-container-relativecontainer.md)时生效。该方法水平方向上以start和end分别替代原方法的left和right，以便在RTL模式下能镜像显示，建议使用该方法指定设置在相对布局组件中子组件的对齐规则，支持[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)动态设置属性方法。
@@ -217,6 +203,8 @@ alignRules(alignRule: LocalizedAlignRuleOptions): T
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -234,15 +222,15 @@ alignRules(alignRule: LocalizedAlignRuleOptions): T
 
 ## layoutGravity20+
 
-PhonePC/2in1TabletTVWearable
-
 layoutGravity(alignment: LocalizedAlignment): T
 
-单独设置Stack组件中子组件的对齐规则，仅当父组件为Stack时生效。与align属性同时使用时，layoutGravity优先级更高，支持[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)动态设置属性方法。
+单独设置Stack组件中子组件的对齐方式，仅当父组件为Stack时生效。与align属性同时使用时，layoutGravity优先级更高，支持[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)动态设置属性方法。
 
 **卡片能力：** 从API version 20开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -260,8 +248,6 @@ layoutGravity(alignment: LocalizedAlignment): T
 
 ## AlignRuleOption9+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
@@ -273,22 +259,22 @@ PhonePC/2in1TabletTVWearable
 | middle | [HorizontalAlignParam](ts-universal-attributes-location.md#horizontalalignparam23对象说明) | 否 | 是 | 设置横向居中对齐方式的参数。  API version 23之前，入参类型为{ anchor: string, align: [HorizontalAlign](ts-appendix-enums.md#horizontalalign) }。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | top | [VerticalAlignParam](ts-universal-attributes-location.md#verticalalignparam23对象说明) | 否 | 是 | 设置顶部对齐的参数。  API version 23之前，入参类型为{ anchor: string, align: [VerticalAlign](ts-appendix-enums.md#verticalalign) }。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | bottom | [VerticalAlignParam](ts-universal-attributes-location.md#verticalalignparam23对象说明) | 否 | 是 | 设置底部对齐的参数。  API version 23之前，入参类型为{ anchor: string, align: [VerticalAlign](ts-appendix-enums.md#verticalalign) }。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| center | [VerticalAlignParam](ts-universal-attributes-location.md#verticalalignparam23对象说明) | 否 | 是 | 设置纵向居中对齐方式的参数。  API version 23，之前入参类型为{ anchor: string, align: [VerticalAlign](ts-appendix-enums.md#verticalalign) }。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| bias11+ | [Bias](ts-types.md#bias对象说明) | 否 | 是 | 设置组件在锚点约束下的偏移参数，其值为到左/上侧锚点的距离与锚点间总距离的比值。  **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| center | [VerticalAlignParam](ts-universal-attributes-location.md#verticalalignparam23对象说明) | 否 | 是 | 设置纵向居中对齐方式的参数。  API version 23之前，入参类型为{ anchor: string, align: [VerticalAlign](ts-appendix-enums.md#verticalalign) }。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| bias11+ | [Bias](ts-types.md#bias11对象说明) | 否 | 是 | 设置组件在锚点约束下的偏移参数，其值为到左/上侧锚点的距离与锚点间总距离的比值。  **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## HorizontalAlignParam23+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 定义在相对布局组件中子组件在水平方向上的对齐规则。
 
-说明
+**说明** 
 
 为规范匿名对象的定义，从API version 23开始，修改了此处的元素定义。其中，保留了历史匿名对象的起始版本信息，会出现外层元素@since版本号高于内层元素版本号的情况，但这不影响接口的使用。
 
 **卡片能力：** 从API version 23开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -299,17 +285,17 @@ PhonePC/2in1TabletTVWearable
 
 ## VerticalAlignParam23+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 定义在相对布局组件中子组件在垂直方向上的对齐规则。
 
-说明
+**说明** 
 
 为规范匿名对象的定义，从API version 23开始，修改了此处的元素定义。其中，保留了历史匿名对象的起始版本信息，会出现外层元素@since版本号高于内层元素版本号的情况，但这不影响接口的使用。
 
 **卡片能力：** 从API version 23开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -320,9 +306,9 @@ PhonePC/2in1TabletTVWearable
 
 ## LocalizedAlignRuleOptions12+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -334,13 +320,13 @@ PhonePC/2in1TabletTVWearable
 | top | [LocalizedVerticalAlignParam](ts-universal-attributes-location.md#localizedverticalalignparam12对象说明) | 否 | 是 | 设置纵向顶部对齐的参数。 |
 | bottom | [LocalizedVerticalAlignParam](ts-universal-attributes-location.md#localizedverticalalignparam12对象说明) | 否 | 是 | 设置纵向底部对齐的参数。 |
 | center | [LocalizedVerticalAlignParam](ts-universal-attributes-location.md#localizedverticalalignparam12对象说明) | 否 | 是 | 设置纵向居中对齐方式的参数。 |
-| bias | [Bias](ts-types.md#bias对象说明) | 否 | 是 | 设置组件在锚点约束下的偏移参数，其值为到左/上侧锚点的距离与锚点间总距离的比值。 |
+| bias | [Bias](ts-types.md#bias11对象说明) | 否 | 是 | 设置组件在锚点约束下的偏移参数，其值为到左/上侧锚点的距离与锚点间总距离的比值。 |
 
 ## LocalizedHorizontalAlignParam12+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -351,9 +337,9 @@ PhonePC/2in1TabletTVWearable
 
 ## LocalizedVerticalAlignParam12+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -364,8 +350,6 @@ PhonePC/2in1TabletTVWearable
 
 ## chainMode12+
 
-PhonePC/2in1TabletTVWearable
-
 chainMode(direction: Axis, style: ChainStyle): T
 
 指定以该组件为链头所构成的链的参数，仅当父组件为[RelativeContainer](ts-container-relativecontainer.md)时生效。链头指满足成链规则时链的第一个组件（水平方向从左边起始，镜像语言下从右边起始；竖直方向从上边起始）。
@@ -373,6 +357,8 @@ chainMode(direction: Axis, style: ChainStyle): T
 详细用法请参考[RelativeContainer示例7（设置链）](ts-container-relativecontainer.md#示例7设置链)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -391,35 +377,35 @@ chainMode(direction: Axis, style: ChainStyle): T
 
 ## ChainStyle12+
 
-PhonePC/2in1TabletTVWearable
-
 定义链的风格，支持[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)动态设置属性方法。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-| 名称 | 说明 |
-| --- | --- |
-| SPREAD | 组件在约束锚点间均匀分布。详细用法请参考[RelativeContainer示例7（设置链）](ts-container-relativecontainer.md#示例7设置链)。 |
-| SPREAD\_INSIDE | 除首尾2个子组件的其他组件在约束锚点间均匀分布。详细用法请参考[RelativeContainer示例7（设置链）](ts-container-relativecontainer.md#示例7设置链)。 |
-| PACKED | 链内子组件无间隙。详细用法请参考[RelativeContainer示例7（设置链）](ts-container-relativecontainer.md#示例7设置链)。 |
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SPREAD | 0 | 组件在约束锚点间均匀分布。详细用法请参考[RelativeContainer示例7（设置链）](ts-container-relativecontainer.md#示例7设置链)。 |
+| SPREAD\_INSIDE | 1 | 除首尾2个子组件的其他组件在约束锚点间均匀分布。详细用法请参考[RelativeContainer示例7（设置链）](ts-container-relativecontainer.md#示例7设置链)。 |
+| PACKED | 2 | 链内子组件无间隙。详细用法请参考[RelativeContainer示例7（设置链）](ts-container-relativecontainer.md#示例7设置链)。 |
 
-说明
+**说明** 
 
 使用链时，RelativeContainer会为链中的相互依赖的组件定义一个大小计算顺序，大小计算完成后再确定使用ChainStyle的位置。因此使用SPREAD或PACKED风格时，只以链头组件为锚点进行布局的非链组件A和链中其他节点有相同布局优先级，当组件A的id的字典排序靠前时，此时组件A的alignRules先于链的ChainStyle生效。
 
 ## chainWeight14+
 
-PhonePC/2in1TabletTVWearable
-
 chainWeight(chainWeight: ChainWeightOptions): T
 
 对形成链的组件进行重新布局。仅当父组件为[RelativeContainer](ts-container-relativecontainer.md)时生效。
 
-说明
+**说明** 
 
 从API version 23开始，支持[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)动态设置属性方法。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -443,461 +429,459 @@ chainWeight(chainWeight: ChainWeightOptions): T
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 ### 示例1（对齐方式和主轴方向上的布局）
 
 设置内容在元素内的对齐方式和子元素在父组件主轴方向上的布局。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct PositionExample1 {
-5. build() {
-6. Column() {
-7. Column({ space: 10 }) {
-8. // 元素内容<元素宽高，设置内容在与元素内的对齐方式
-9. Text('align').fontSize(9).fontColor(0xCCCCCC).width('90%')
-10. Stack() {
-11. Text('First show in bottom end').height('65%').backgroundColor(0xD2B48C)
-12. Text('Second show in bottom end').backgroundColor(0xF5DEB3).opacity(0.9)
-13. }.width('90%').height(50).margin({ top: 5 }).backgroundColor(0xFFE4C4)
-14. .align(Alignment.BottomEnd)
-15. Stack() {
-16. Text('top start')
-17. }.width('90%').height(50).margin({ top: 5 }).backgroundColor(0xFFE4C4)
-18. .align(Alignment.TopStart)
+```ts
+// xxx.ets
+@Entry
+@Component
+struct PositionExample1 {
+  build() {
+    Column() {
+      Column({ space: 10 }) {
+        // 元素内容 < 元素宽高，设置内容在元素内的对齐方式
+        Text('align').fontSize(9).fontColor(0xCCCCCC).width('90%')
+        Stack() {
+          Text('First show in bottom end').height('65%').backgroundColor(0xD2B48C)
+          Text('Second show in bottom end').backgroundColor(0xF5DEB3).opacity(0.9)
+        }.width('90%').height(50).margin({ top: 5 }).backgroundColor(0xFFE4C4)
+        .align(Alignment.BottomEnd)
+        Stack() {
+          Text('top start')
+        }.width('90%').height(50).margin({ top: 5 }).backgroundColor(0xFFE4C4)
+        .align(Alignment.TopStart)
 
-20. // 父组件设置direction为Direction.Ltr，子元素从左到右排列
-21. Text('direction').fontSize(9).fontColor(0xCCCCCC).width('90%')
-22. Row() {
-23. Text('1').height(50).width('25%').fontSize(16).backgroundColor(0xF5DEB3)
-24. Text('2').height(50).width('25%').fontSize(16).backgroundColor(0xD2B48C)
-25. Text('3').height(50).width('25%').fontSize(16).backgroundColor(0xF5DEB3)
-26. Text('4').height(50).width('25%').fontSize(16).backgroundColor(0xD2B48C)
-27. }
-28. .width('90%')
-29. .direction(Direction.Ltr)
-30. // 父组件设置direction为Direction.Rtl，子元素从右到左排列
-31. Row() {
-32. Text('1').height(50).width('25%').fontSize(16).backgroundColor(0xF5DEB3).textAlign(TextAlign.End)
-33. Text('2').height(50).width('25%').fontSize(16).backgroundColor(0xD2B48C).textAlign(TextAlign.End)
-34. Text('3').height(50).width('25%').fontSize(16).backgroundColor(0xF5DEB3).textAlign(TextAlign.End)
-35. Text('4').height(50).width('25%').fontSize(16).backgroundColor(0xD2B48C).textAlign(TextAlign.End)
-36. }
-37. .width('90%')
-38. .direction(Direction.Rtl)
-39. }
-40. }
-41. .width('100%').margin({ top: 5 })
-42. }
-43. }
+        // 父组件设置direction为Direction.Ltr，子元素从左到右排列
+        Text('direction').fontSize(9).fontColor(0xCCCCCC).width('90%')
+        Row() {
+          Text('1').height(50).width('25%').fontSize(16).backgroundColor(0xF5DEB3)
+          Text('2').height(50).width('25%').fontSize(16).backgroundColor(0xD2B48C)
+          Text('3').height(50).width('25%').fontSize(16).backgroundColor(0xF5DEB3)
+          Text('4').height(50).width('25%').fontSize(16).backgroundColor(0xD2B48C)
+        }
+        .width('90%')
+        .direction(Direction.Ltr)
+        // 父组件设置direction为Direction.Rtl，子元素从右到左排列
+        Row() {
+          Text('1').height(50).width('25%').fontSize(16).backgroundColor(0xF5DEB3).textAlign(TextAlign.End)
+          Text('2').height(50).width('25%').fontSize(16).backgroundColor(0xD2B48C).textAlign(TextAlign.End)
+          Text('3').height(50).width('25%').fontSize(16).backgroundColor(0xF5DEB3).textAlign(TextAlign.End)
+          Text('4').height(50).width('25%').fontSize(16).backgroundColor(0xD2B48C).textAlign(TextAlign.End)
+        }
+        .width('90%')
+        .direction(Direction.Rtl)
+      }
+    }
+    .width('100%').margin({ top: 5 })
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/9DDHoiSNRPqrEMJVLCezvA/zh-cn_image_0000002558606354.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/X_XNHXKOTkGgqILLORlSLw/zh-cn_image_0000002736314729.png)
 
 ### 示例2（位置偏移）
 
 基于父组件、相对定位、锚点作出位置偏移。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct PositionExample2 {
+  build() {
+    Column({ space: 20 }) {
+      // 设置子组件左上角相对于父组件左上角的偏移位置
+      Text('position').fontSize(12).fontColor(0xCCCCCC).width('90%')
+      Row() {
+        Text('1').size({ width: '30%', height: '50' }).backgroundColor(0xdeb887).border({ width: 1 }).fontSize(16)
+          .textAlign(TextAlign.Center)
+        Text('2 position(30, 10)')
+          .size({ width: '60%', height: '30' })
+          .backgroundColor(0xbbb2cb)
+          .border({ width: 1 })
+          .fontSize(16)
+          .align(Alignment.Start)
+          .position({ x: 30, y: 10 })
+        Text('3').size({ width: '45%', height: '50' }).backgroundColor(0xdeb887).border({ width: 1 }).fontSize(16)
+          .textAlign(TextAlign.Center)
+        Text('4 position(50%, 70%)')
+          .size({ width: '50%', height: '50' })
+          .backgroundColor(0xbbb2cb)
+          .border({ width: 1 })
+          .fontSize(16)
+          .position({ x: '50%', y: '70%' })
+      }.width('90%').height(100).border({ width: 1, style: BorderStyle.Dashed })
+
+      // 相对于起点偏移，其中x为最终定位点距离起点水平方向间距，x>0往左，反之向右。
+      // y为最终定位点距离起点垂直方向间距，y>0向上，反之向下
+      Text('markAnchor').fontSize(12).fontColor(0xCCCCCC).width('90%')
+      Stack({ alignContent: Alignment.TopStart }) {
+        Row()
+          .size({ width: '100', height: '100' })
+          .backgroundColor(0xdeb887)
+        Text('text')
+          .fontSize('30px')
+          .textAlign(TextAlign.Center)
+          .size({ width: 25, height: 25 })
+          .backgroundColor(Color.Green)
+          .markAnchor({ x: 25, y: 25 })
+        Text('text')
+          .fontSize('30px')
+          .textAlign(TextAlign.Center)
+          .size({ width: 25, height: 25 })
+          .backgroundColor(Color.Green)
+          .markAnchor({ x: -100, y: -25 })
+        Text('text')
+          .fontSize('30px')
+          .textAlign(TextAlign.Center)
+          .size({ width: 25, height: 25 })
+          .backgroundColor(Color.Green)
+          .markAnchor({ x: 25, y: -25 })
+      }.margin({ top: 25 }).border({ width: 1, style: BorderStyle.Dashed })
+
+      // 相对定位，x>0向右偏移，反之向左，y>0向下偏移，反之向上
+      Text('offset').fontSize(12).fontColor(0xCCCCCC).width('90%')
+      Row() {
+        Text('1').size({ width: '15%', height: '50' }).backgroundColor(0xdeb887).border({ width: 1 }).fontSize(16)
+          .textAlign(TextAlign.Center)
+        Text('2  offset(15, 30)')
+          .size({ width: 120, height: '50' })
+          .backgroundColor(0xbbb2cb)
+          .border({ width: 1 })
+          .fontSize(16)
+          .align(Alignment.Start)
+          .offset({ x: 15, y: 30 })
+        Text('3').size({ width: '15%', height: '50' }).backgroundColor(0xdeb887).border({ width: 1 }).fontSize(16)
+          .textAlign(TextAlign.Center)
+        Text('4 offset(-5%, 20%)')
+          .size({ width: 100, height: '50' })
+          .backgroundColor(0xbbb2cb)
+          .border({ width: 1 })
+          .fontSize(16)
+          .offset({ x: '-5%', y: '20%' })
+      }.width('90%').height(100).border({ width: 1, style: BorderStyle.Dashed })
+    }
+    .width('100%').margin({ top: 25 })
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct PositionExample2 {
-5. build() {
-6. Column({ space: 20 }) {
-7. // 设置子组件左上角相对于父组件左上角的偏移位置
-8. Text('position').fontSize(12).fontColor(0xCCCCCC).width('90%')
-9. Row() {
-10. Text('1').size({ width: '30%', height: '50' }).backgroundColor(0xdeb887).border({ width: 1 }).fontSize(16)
-11. .textAlign(TextAlign.Center)
-12. Text('2 position(30, 10)')
-13. .size({ width: '60%', height: '30' })
-14. .backgroundColor(0xbbb2cb)
-15. .border({ width: 1 })
-16. .fontSize(16)
-17. .align(Alignment.Start)
-18. .position({ x: 30, y: 10 })
-19. Text('3').size({ width: '45%', height: '50' }).backgroundColor(0xdeb887).border({ width: 1 }).fontSize(16)
-20. .textAlign(TextAlign.Center)
-21. Text('4 position(50%, 70%)')
-22. .size({ width: '50%', height: '50' })
-23. .backgroundColor(0xbbb2cb)
-24. .border({ width: 1 })
-25. .fontSize(16)
-26. .position({ x: '50%', y: '70%' })
-27. }.width('90%').height(100).border({ width: 1, style: BorderStyle.Dashed })
 
-29. // 相对于起点偏移，其中x为最终定位点距离起点水平方向间距，x>0往左，反之向右。
-30. // y为最终定位点距离起点垂直方向间距，y>0向上，反之向下
-31. Text('markAnchor').fontSize(12).fontColor(0xCCCCCC).width('90%')
-32. Stack({ alignContent: Alignment.TopStart }) {
-33. Row()
-34. .size({ width: '100', height: '100' })
-35. .backgroundColor(0xdeb887)
-36. Text('text')
-37. .fontSize('30px')
-38. .textAlign(TextAlign.Center)
-39. .size({ width: 25, height: 25 })
-40. .backgroundColor(Color.Green)
-41. .markAnchor({ x: 25, y: 25 })
-42. Text('text')
-43. .fontSize('30px')
-44. .textAlign(TextAlign.Center)
-45. .size({ width: 25, height: 25 })
-46. .backgroundColor(Color.Green)
-47. .markAnchor({ x: -100, y: -25 })
-48. Text('text')
-49. .fontSize('30px')
-50. .textAlign(TextAlign.Center)
-51. .size({ width: 25, height: 25 })
-52. .backgroundColor(Color.Green)
-53. .markAnchor({ x: 25, y: -25 })
-54. }.margin({ top: 25 }).border({ width: 1, style: BorderStyle.Dashed })
-
-56. // 相对定位，x>0向右偏移，反之向左，y>0向下偏移，反之向上
-57. Text('offset').fontSize(12).fontColor(0xCCCCCC).width('90%')
-58. Row() {
-59. Text('1').size({ width: '15%', height: '50' }).backgroundColor(0xdeb887).border({ width: 1 }).fontSize(16)
-60. .textAlign(TextAlign.Center)
-61. Text('2  offset(15, 30)')
-62. .size({ width: 120, height: '50' })
-63. .backgroundColor(0xbbb2cb)
-64. .border({ width: 1 })
-65. .fontSize(16)
-66. .align(Alignment.Start)
-67. .offset({ x: 15, y: 30 })
-68. Text('3').size({ width: '15%', height: '50' }).backgroundColor(0xdeb887).border({ width: 1 }).fontSize(16)
-69. .textAlign(TextAlign.Center)
-70. Text('4 offset(-5%, 20%)')
-71. .size({ width: 100, height: '50' })
-72. .backgroundColor(0xbbb2cb)
-73. .border({ width: 1 })
-74. .fontSize(16)
-75. .offset({ x: '-5%', y: '20%' })
-76. }.width('90%').height(100).border({ width: 1, style: BorderStyle.Dashed })
-77. }
-78. .width('100%').margin({ top: 25 })
-79. }
-80. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/NGs0MVa5SYqPGXwqRyTp4g/zh-cn_image_0000002589325881.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/NhiHtIfNQumglUClhklQAg/zh-cn_image_0000002706675686.png)
 
 ### 示例3（绝对定位和相对偏移）
 
 使用position设置绝对定位，确定子组件相对父组件的位置。使用offset设置相对偏移，组件相对原本的布局位置进行偏移。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct Example3 {
-5. build() {
-6. Column({ space: 20 }) {
-7. Text('position use Edges').fontSize(12).fontColor(0xCCCCCC).width('90%')
-8. Row() {
-9. Text('bottom:0, right:0')
-10. .size({ width: '30%', height: '50' })
-11. .backgroundColor(0xdeb887)
-12. .border({ width: 1 })
-13. .fontSize(16)
-14. .textAlign(TextAlign.Center)
-15. .position({ bottom: 0, right: 0 })
-16. Text('top:0, left:0')
-17. .size({ width: '30%', height: '50' })
-18. .backgroundColor(0xdeb887)
-19. .border({ width: 1 })
-20. .fontSize(16)
-21. .textAlign(TextAlign.Center)
-22. .position({ top: 0, left: 0 })
-23. Text('top:10%, left:50%')
-24. .size({ width: '50%', height: '30' })
-25. .backgroundColor(0xbbb2cb)
-26. .border({ width: 1 })
-27. .fontSize(16)
-28. .textAlign(TextAlign.Center)
-29. .position({ top: '10%', left: '50%' })
-30. Text('bottom:0, left:30')
-31. .size({ width: '50%', height: '30' })
-32. .backgroundColor(0xbbb2cb)
-33. .border({ width: 1 })
-34. .fontSize(16)
-35. .textAlign(TextAlign.Center)
-36. .position({ bottom: 0, left: 30 })
-37. }.width('90%').height(100).border({ width: 1, style: BorderStyle.Dashed })
+```ts
+// xxx.ets
+@Entry
+@Component
+struct Example3 {
+  build() {
+    Column({ space: 20 }) {
+      Text('position use Edges').fontSize(12).fontColor(0xCCCCCC).width('90%')
+      Row() {
+        Text('bottom:0, right:0')
+          .size({ width: '30%', height: '50' })
+          .backgroundColor(0xdeb887)
+          .border({ width: 1 })
+          .fontSize(16)
+          .textAlign(TextAlign.Center)
+          .position({ bottom: 0, right: 0 })
+        Text('top:0, left:0')
+          .size({ width: '30%', height: '50' })
+          .backgroundColor(0xdeb887)
+          .border({ width: 1 })
+          .fontSize(16)
+          .textAlign(TextAlign.Center)
+          .position({ top: 0, left: 0 })
+        Text('top:10%, left:50%')
+          .size({ width: '50%', height: '30' })
+          .backgroundColor(0xbbb2cb)
+          .border({ width: 1 })
+          .fontSize(16)
+          .textAlign(TextAlign.Center)
+          .position({ top: '10%', left: '50%' })
+        Text('bottom:0, left:30')
+          .size({ width: '50%', height: '30' })
+          .backgroundColor(0xbbb2cb)
+          .border({ width: 1 })
+          .fontSize(16)
+          .textAlign(TextAlign.Center)
+          .position({ bottom: 0, left: 30 })
+      }.width('90%').height(100).border({ width: 1, style: BorderStyle.Dashed })
 
-40. Text('offset use Edges').fontSize(12).fontColor(0xCCCCCC).width('90%')
-41. Row() {
-42. Text('1')
-43. .size({ width: '25%', height: 50 })
-44. .backgroundColor(0xdeb887)
-45. .border({ width: 1 })
-46. .fontSize(16)
-47. .textAlign(TextAlign.Center)
-48. Text('2 top:30, left:0')
-49. .size({ width: '25%', height: 50 })
-50. .backgroundColor(0xbbb2cb)
-51. .border({ width: 1 })
-52. .fontSize(16)
-53. .textAlign(TextAlign.Center)
-54. .offset({ top: 30, left: 0 })
-55. Text('3')
-56. .size({ width: '25%', height: 50 })
-57. .backgroundColor(0xdeb887)
-58. .border({ width: 1 })
-59. .fontSize(16)
-60. .textAlign(TextAlign.Center)
-61. Text('4 bottom:10, right:30')
-62. .size({ width: '25%', height: 50 })
-63. .backgroundColor(0xbbb2cb)
-64. .border({ width: 1 })
-65. .fontSize(12)
-66. .textAlign(TextAlign.Center)
-67. .offset({ bottom: 10, right: 30 })
-68. }.width('90%').height(150).border({ width: 1, style: BorderStyle.Dashed })
-69. }.width('100%').margin({ top: 25 })
-70. }
-71. }
+      Text('offset use Edges').fontSize(12).fontColor(0xCCCCCC).width('90%')
+      Row() {
+        Text('1')
+          .size({ width: '25%', height: 50 })
+          .backgroundColor(0xdeb887)
+          .border({ width: 1 })
+          .fontSize(16)
+          .textAlign(TextAlign.Center)
+        Text('2 top:30, left:0')
+          .size({ width: '25%', height: 50 })
+          .backgroundColor(0xbbb2cb)
+          .border({ width: 1 })
+          .fontSize(16)
+          .textAlign(TextAlign.Center)
+          .offset({ top: 30, left: 0 })
+        Text('3')
+          .size({ width: '25%', height: 50 })
+          .backgroundColor(0xdeb887)
+          .border({ width: 1 })
+          .fontSize(16)
+          .textAlign(TextAlign.Center)
+        Text('4 bottom:10, right:30')
+          .size({ width: '25%', height: 50 })
+          .backgroundColor(0xbbb2cb)
+          .border({ width: 1 })
+          .fontSize(12)
+          .textAlign(TextAlign.Center)
+          .offset({ bottom: 10, right: 30 })
+      }.width('90%').height(150).border({ width: 1, style: BorderStyle.Dashed })
+    }.width('100%').margin({ top: 25 })
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/UnowCIy3RJSTF72mdVkxuQ/zh-cn_image_0000002589245823.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/rCKOVoTbSGmzYNRDWG25tw/zh-cn_image_0000002736434773.jpeg)
 
 ### 示例4（镜像效果）
 
 通用布局属性支持[使用镜像能力](../harmonyos-guides/arkts-internationalization.md#使用镜像能力)。下述示例从上到下依次通过[position](ts-universal-attributes-location.md#position)、[offset](ts-universal-attributes-location.md#offset)和[markAnchor](ts-universal-attributes-location.md#markanchor)实现镜像效果，为对比镜像前后的差异，浅蓝色对应镜像前效果，深蓝色对应镜像后效果。
 
-```
-1. // xxx.ets
-2. import { LengthMetrics } from '@kit.ArkUI';
+```ts
+// xxx.ets
+import { LengthMetrics } from '@kit.ArkUI';
 
-4. @Entry
-5. @Component
-6. struct Example4 {
-7. private scroller: Scroller = new Scroller()
+@Entry
+@Component
+struct Example4 {
+  private scroller: Scroller = new Scroller()
 
-9. build() {
-10. Column() {
-11. Stack({ alignContent: Alignment.End }) {
-12. Scroll(this.scroller) {
-13. Flex({ direction: FlexDirection.Column }) {
-14. RelativeContainer() {
-15. Row() {
-16. }
-17. .position({ start: LengthMetrics.px(200), top: LengthMetrics.px(100) }) // position接口中的参数使用LocalizedEdges类型，支持镜像翻转效果
-18. .width("30%")
-19. .height("20%")
-20. .backgroundColor('rgb(0, 74, 175)')
-21. .padding(50)
-22. .margin(50)
+  build() {
+    Column() {
+      Stack({ alignContent: Alignment.End }) {
+        Scroll(this.scroller) {
+          Flex({ direction: FlexDirection.Column }) {
+            RelativeContainer() {
+              Row() {
+              }
+              .position({ start: LengthMetrics.px(200), top: LengthMetrics.px(100) }) // position接口中的参数使用LocalizedEdges类型，支持镜像翻转效果
+              .width("30%")
+              .height("20%")
+              .backgroundColor('rgb(0, 74, 175)')
+              .padding(50)
+              .margin(50)
 
-24. Row() {
-25. }
-26. .position({ left: '200px', top: '100px' }) // position接口中的参数使用Edges类型，不支持镜像翻转效果
-27. .width("30%")
-28. .height("20%")
-29. .backgroundColor('rgb(39, 135, 217)')
-30. .padding(50)
-31. .margin(50)
+              Row() {
+              }
+              .position({ left: '200px', top: '100px' }) // position接口中的参数使用Edges类型，不支持镜像翻转效果
+              .width("30%")
+              .height("20%")
+              .backgroundColor('rgb(39, 135, 217)')
+              .padding(50)
+              .margin(50)
 
-33. Row() {
-34. }
-35. .offset({ start: LengthMetrics.vp(100), top: LengthMetrics.vp(200) }) // offset接口中的参数使用LocalizedEdges类型，支持镜像翻转效果
-36. .width("30%")
-37. .height("20%")
-38. .backgroundColor('rgb(0, 74, 175)')
-39. .padding(50)
-40. .margin(50)
+              Row() {
+              }
+              .offset({ start: LengthMetrics.vp(100), top: LengthMetrics.vp(200) }) // offset接口中的参数使用LocalizedEdges类型，支持镜像翻转效果
+              .width("30%")
+              .height("20%")
+              .backgroundColor('rgb(0, 74, 175)')
+              .padding(50)
+              .margin(50)
 
-42. Row() {
-43. }
-44. .offset({ left: 100, top: 200 }) // offset接口中的参数使用Edges类型，不支持镜像翻转效果
-45. .width("30%")
-46. .height("20%")
-47. .backgroundColor('rgb(39, 135, 217)')
-48. .padding(50)
-49. .margin(50)
+              Row() {
+              }
+              .offset({ left: 100, top: 200 }) // offset接口中的参数使用Edges类型，不支持镜像翻转效果
+              .width("30%")
+              .height("20%")
+              .backgroundColor('rgb(39, 135, 217)')
+              .padding(50)
+              .margin(50)
 
-51. Row() {
-52. }
-53. .markAnchor({
-54. start: LengthMetrics.fp(100),
-55. top: LengthMetrics.fp(-350)
-56. }) // markAnchor接口中的参数使用LocalizedPosition类型，支持镜像翻转效果
-57. .width("30%")
-58. .height("20%")
-59. .backgroundColor('rgb(0, 74, 175)')
-60. .padding(50)
-61. .margin(50)
+              Row() {
+              }
+              .markAnchor({
+                start: LengthMetrics.fp(100),
+                top: LengthMetrics.fp(-350)
+              }) // markAnchor接口中的参数使用LocalizedPosition类型，支持镜像翻转效果
+              .width("30%")
+              .height("20%")
+              .backgroundColor('rgb(0, 74, 175)')
+              .padding(50)
+              .margin(50)
 
-63. Row() {
-64. }
-65. .markAnchor({ x: '100fp', y: '-350fp' }) // markAnchor接口中的参数使用Position类型，不支持镜像翻转效果
-66. .width("30%")
-67. .height("20%")
-68. .backgroundColor('rgb(39, 135, 217)')
-69. .padding(50)
-70. .margin(50)
-71. }
-72. .backgroundColor(Color.White)
-73. .padding(50)
-74. .margin(50)
-75. }
-76. }
-77. .width('100%')
-78. .scrollBar(BarState.Off)
-79. .scrollable(ScrollDirection.Vertical)
+              Row() {
+              }
+              .markAnchor({ x: '100fp', y: '-350fp' }) // markAnchor接口中的参数使用Position类型，不支持镜像翻转效果
+              .width("30%")
+              .height("20%")
+              .backgroundColor('rgb(39, 135, 217)')
+              .padding(50)
+              .margin(50)
+            }
+            .backgroundColor(Color.White)
+            .padding(50)
+            .margin(50)
+          }
+        }
+        .width('100%')
+        .scrollBar(BarState.Off)
+        .scrollable(ScrollDirection.Vertical)
 
-81. ScrollBar({ scroller: this.scroller, direction: ScrollBarDirection.Vertical, state: BarState.Auto }) {
-82. Text()
-83. .width(20)
-84. .height(100)
-85. .borderRadius(10)
-86. .backgroundColor('#C0C0C0')
-87. }.width(20).backgroundColor('#ededed')
-88. }
-89. }.height('90%')
-90. }
-91. }
+        ScrollBar({ scroller: this.scroller, direction: ScrollBarDirection.Vertical, state: BarState.Auto }) {
+          Text()
+            .width(20)
+            .height(100)
+            .borderRadius(10)
+            .backgroundColor('#C0C0C0')
+        }.width(20).backgroundColor('#ededed')
+      }
+    }.height('90%')
+  }
+}
 ```
 
 镜像前效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/64KrWwtMToaUv3Sdc89k2w/zh-cn_image_0000002558766014.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/b8q6lbPvRYOFANLxfhS4HQ/zh-cn_image_0000002706835626.png)
 
 镜像后效果如下，镜像生效条件请参考[使用镜像能力](../harmonyos-guides/arkts-internationalization.md#使用镜像能力)：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/KcM5jfA1QBmbpSJDe95_ug/zh-cn_image_0000002558606356.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/TtJFlhOBQCe9C_CtfM3XyQ/zh-cn_image_0000002736314731.png)
 
 ### 示例5（align属性适配镜像特性）
 
 设置内容在元素内的对齐方式和子元素在父组件主轴方向上的布局。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct buttonTestDemo {
+  @State isLocalizedAlignment: LocalizedAlignment[] =
+    [LocalizedAlignment.TOP_START, LocalizedAlignment.TOP, LocalizedAlignment.TOP_END, LocalizedAlignment.START,
+      LocalizedAlignment.CENTER, LocalizedAlignment.END, LocalizedAlignment.BOTTOM_START, LocalizedAlignment.BOTTOM,
+      LocalizedAlignment.BOTTOM_END]
+  @State isLocalizedAlignmentIndex: number = 4
+  @State isDirection: Direction[] = [Direction.Ltr, Direction.Rtl, Direction.Auto]
+  @State isDirectionIndex: number = 0
+
+  build() {
+    Row() {
+      Column() {
+
+        Row({ space: 5 }) {
+          Button('START')
+            .onClick(() => {
+              this.isLocalizedAlignmentIndex = 3
+            })
+          Button('CENTER')
+            .onClick(() => {
+              this.isLocalizedAlignmentIndex = 4
+            })
+          Button('END')
+            .onClick(() => {
+              this.isLocalizedAlignmentIndex = 5
+            })
+        }.margin(20)
+
+        Row({ space: 5 }) {
+          Button('Ltr')
+            .onClick(() => {
+              this.isDirectionIndex = 0
+            })
+          Button('Rtl')
+            .onClick(() => {
+              this.isDirectionIndex = 1
+            })
+          Button('Auto')
+            .onClick(() => {
+              this.isDirectionIndex = 2
+            })
+        }.margin(20)
+
+        Row() {
+          Button('OK', { type: ButtonType.Capsule, stateEffect: true })
+            .backgroundColor(0x317aff)
+            .width(200)
+            .height(100)
+            .direction(this.isDirection[this.isDirectionIndex])
+            .align(this.isLocalizedAlignment[this.isLocalizedAlignmentIndex])
+        }.margin(20)
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct buttonTestDemo {
-5. @State isLocalizedAlignment: LocalizedAlignment[] =
-6. [LocalizedAlignment.TOP_START, LocalizedAlignment.TOP, LocalizedAlignment.TOP_END, LocalizedAlignment.START,
-7. LocalizedAlignment.CENTER, LocalizedAlignment.END, LocalizedAlignment.BOTTOM_START, LocalizedAlignment.BOTTOM,
-8. LocalizedAlignment.BOTTOM_END]
-9. @State isLocalizedAlignmentIndex: number = 4
-10. @State isDirection: Direction[] = [Direction.Ltr, Direction.Rtl, Direction.Auto]
-11. @State isDirectionIndex: number = 0
 
-13. build() {
-14. Row() {
-15. Column() {
-
-17. Row({ space: 5 }) {
-18. Button('START')
-19. .onClick(() => {
-20. this.isLocalizedAlignmentIndex = 3
-21. })
-22. Button('CENTER')
-23. .onClick(() => {
-24. this.isLocalizedAlignmentIndex = 4
-25. })
-26. Button('END')
-27. .onClick(() => {
-28. this.isLocalizedAlignmentIndex = 5
-29. })
-30. }.margin(20)
-
-32. Row({ space: 5 }) {
-33. Button('Ltr')
-34. .onClick(() => {
-35. this.isDirectionIndex = 0
-36. })
-37. Button('Rtl')
-38. .onClick(() => {
-39. this.isDirectionIndex = 1
-40. })
-41. Button('Auto')
-42. .onClick(() => {
-43. this.isDirectionIndex = 2
-44. })
-45. }.margin(20)
-
-47. Row() {
-48. Button('OK', { type: ButtonType.Capsule, stateEffect: true })
-49. .backgroundColor(0x317aff)
-50. .width(200)
-51. .height(100)
-52. .direction(this.isDirection[this.isDirectionIndex])
-53. .align(this.isLocalizedAlignment[this.isLocalizedAlignmentIndex])
-54. }.margin(20)
-55. }
-56. .width('100%')
-57. }
-58. .height('100%')
-59. }
-60. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/lllNiYjDTEaer87UQ9DG3A/zh-cn_image_0000002589325883.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/5tcPDSQeSxGTNH3Y3d9ojA/zh-cn_image_0000002706675688.gif)
 
 ### 示例6（layoutGravity属性单独设置Stack组件中子组件的对齐规则）
 
 更改Stack中Text的位置。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct Index5 {
+  private layoutGravityArr: LocalizedAlignment[] = [
+    LocalizedAlignment.TOP_START, LocalizedAlignment.TOP, LocalizedAlignment.TOP_END,
+    LocalizedAlignment.START, LocalizedAlignment.CENTER, LocalizedAlignment.END,
+    LocalizedAlignment.BOTTOM_START, LocalizedAlignment.BOTTOM, LocalizedAlignment.BOTTOM_END];
+  @State layoutGravityIndex: number = 0;
+  private directionArr: Direction[] = [Direction.Ltr, Direction.Rtl, Direction.Auto];
+  @State directionIndex: number = 0;
+
+  build() {
+    Row() {
+      Column() {
+        Stack({
+          alignContent: Alignment.TopStart
+        }) {
+          Text('StackChildAlign_TopStart').fontSize(15)
+          Text('Child Text')
+            .width(150)
+            .height(150)
+            .backgroundColor(Color.Yellow)
+            .fontSize(15)
+            .layoutGravity(this.layoutGravityArr[this.layoutGravityIndex])
+        }
+        .width('100%')
+        .height(400)
+        .backgroundColor(Color.Grey)
+        .margin({ top: 10, bottom: 10 })
+        .direction(this.directionArr[this.directionIndex])
+
+        Button("LayoutGravity: " + this.layoutGravityArr[this.layoutGravityIndex])
+          .width(300)
+          .fontSize(16)
+          .onClick(() => {
+            this.layoutGravityIndex = ++this.layoutGravityIndex % this.layoutGravityArr.length;
+          })
+          .margin({ bottom: 10 })
+
+        Button("Direction: " + this.directionArr[this.directionIndex])
+          .width(150)
+          .fontSize(16)
+          .onClick(() => {
+            this.directionIndex = ++this.directionIndex % this.directionArr.length;
+          })
+          .margin({ bottom: 10 })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct Index5 {
-5. private layoutGravityArr: LocalizedAlignment[] = [
-6. LocalizedAlignment.TOP_START, LocalizedAlignment.TOP, LocalizedAlignment.TOP_END,
-7. LocalizedAlignment.START, LocalizedAlignment.CENTER, LocalizedAlignment.END,
-8. LocalizedAlignment.BOTTOM_START, LocalizedAlignment.BOTTOM, LocalizedAlignment.BOTTOM_END];
-9. @State layoutGravityIndex: number = 0;
-10. private directionArr: Direction[] = [Direction.Ltr, Direction.Rtl, Direction.Auto];
-11. @State directionIndex: number = 0;
 
-13. build() {
-14. Row() {
-15. Column() {
-16. Stack({
-17. alignContent: Alignment.TopStart
-18. }) {
-19. Text('StackChildAlign_TopStart').fontSize(15)
-20. Text('Child Text')
-21. .width(150)
-22. .height(150)
-23. .backgroundColor(Color.Yellow)
-24. .fontSize(15)
-25. .layoutGravity(this.layoutGravityArr[this.layoutGravityIndex])
-26. }
-27. .width('100%')
-28. .height(400)
-29. .backgroundColor(Color.Grey)
-30. .margin({ top: 10, bottom: 10 })
-31. .direction(this.directionArr[this.directionIndex])
-
-33. Button("LayoutGravity: " + this.layoutGravityArr[this.layoutGravityIndex])
-34. .width(300)
-35. .fontSize(16)
-36. .onClick(() => {
-37. this.layoutGravityIndex = ++this.layoutGravityIndex % this.layoutGravityArr.length;
-38. })
-39. .margin({ bottom: 10 })
-
-41. Button("Direction: " + this.directionArr[this.directionIndex])
-42. .width(150)
-43. .fontSize(16)
-44. .onClick(() => {
-45. this.directionIndex = ++this.directionIndex % this.directionArr.length;
-46. })
-47. .margin({ bottom: 10 })
-48. }
-49. .width('100%')
-50. }
-51. .height('100%')
-52. }
-53. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/uFAXCAtLT8ih7burY6nKFA/zh-cn_image_0000002589245825.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/eLk8AP8wTJqXK-9DAKnLBQ/zh-cn_image_0000002736434775.gif)

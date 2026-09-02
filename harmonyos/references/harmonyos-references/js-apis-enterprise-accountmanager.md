@@ -1,16 +1,16 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-accountmanager
-title: "@ohos.enterprise.accountManager（账户管理）"
-breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.accountManager（账户管理）
+title: "@ohos.enterprise.accountManager（账号管理）"
+breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.accountManager（账号管理）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:23+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6500bb659622aa88324fa38300177081a95d20cc9739d43b1dbd137897b9edfb
+scraped_at: 2026-09-02T15:02:09+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2c25bb1cfc60b278d69570c59e6465c2ad2f044ff76b6342185d42e44d573985
 ---
 
-本模块提供设备账户管理能力，包括禁止创建本地用户等。
+本模块提供设备账号管理能力，包括禁止创建本地账号等。
 
-说明
+**说明** 
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -20,19 +20,15 @@ content_hash: sha256:6500bb659622aa88324fa38300177081a95d20cc9739d43b1dbd137897b
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { accountManager } from '@kit.MDMKit';
+```ts
+import { accountManager } from '@kit.MDMKit';
 ```
 
 ## accountManager.disallowOsAccountAddition
 
-PhonePC/2in1Tablet
-
 disallowOsAccountAddition(admin: Want, disallow: boolean, accountId?: number): void
 
-禁止用户添加账号。
+禁止用户添加账号。调用成功后，系统将禁止指定用户或所有用户添加新账号。适用于企业设备管理场景，如防止员工随意创建本地账号、加强设备安全管理等。
 
 **需要权限：** ohos.permission.ENTERPRISE\_SET\_ACCOUNT\_POLICY
 
@@ -47,8 +43,8 @@ disallowOsAccountAddition(admin: Want, disallow: boolean, accountId?: number): v
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| disallow | boolean | 是 | 是否禁止创建本地用户，true表示禁止创建，false表示允许创建。 |
-| accountId | number | 否 | 用户ID，指定具体用户。当不传入此参数时，表示禁止所有用户添加账号；当传入此参数时，表示禁止指定用户添加账号。取值范围：大于等于0。  accountId可以通过[getOsAccountLocalId](js-apis-osaccount.md#getosaccountlocalid9)等接口来获取。 |
+| disallow | boolean | 是 | 是否禁止创建本地账号，true表示禁止创建，false表示允许创建。 |
+| accountId | number | 否 | 用户ID，指定具体用户。当不传入此参数时，表示禁止所有用户添加账号；当传入此参数时，表示禁止指定用户添加账号。取值范围：大于等于0。  accountId可以通过[getOsAccountLocalId](js-apis-osaccount.md#getosaccountlocalid9-1)等接口来获取。 |
 
 **错误码**：
 
@@ -63,32 +59,32 @@ disallowOsAccountAddition(admin: Want, disallow: boolean, accountId?: number): v
 
 **示例：**
 
-```
-1. import { accountManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { accountManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
 
-10. try {
-11. // 参数需根据实际情况进行替换
-12. accountManager.disallowOsAccountAddition(wantTemp, true, 100);
-13. console.info('Succeeded in disallowing os account addition.');
-14. } catch (err) {
-15. console.error(`Failed to disallow os account addition. Code: ${err.code}, message: ${err.message}`);
-16. }
+try {
+  // 参数需根据实际情况进行替换
+  accountManager.disallowOsAccountAddition(wantTemp, true, 100);
+  console.info('Succeeded in disallowing os account addition.');
+} catch (err) {
+  console.error(`Failed to disallow os account addition. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## accountManager.isOsAccountAdditionDisallowed
 
-PhonePC/2in1Tablet
-
 isOsAccountAdditionDisallowed(admin: Want, accountId?: number): boolean
 
-查询是否禁止用户添加账号。
+查询是否禁止用户添加账号。适用于企业审计和合规检查场景，帮助管理员确认账号策略执行情况。
+
+本接口通过传入Want查询对应企业设备管理应用设置的策略，如需查询实际生效的策略，请使用[accountManager.isOsAccountAdditionDisallowed](js-apis-enterprise-accountmanager.md#accountmanagerisosaccountadditiondisallowed-1)接口。
 
 **需要权限：** ohos.permission.ENTERPRISE\_SET\_ACCOUNT\_POLICY
 
@@ -101,7 +97,7 @@ isOsAccountAdditionDisallowed(admin: Want, accountId?: number): boolean
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| accountId | number | 否 | 用户ID，指定具体用户。当不传入此参数时，表示查询所有用户是否禁止添加账号；当传入此参数时，表示查询指定用户是否禁止添加账号。取值范围：大于等于0。  accountId可以通过[getOsAccountLocalId](js-apis-osaccount.md#getosaccountlocalid9)等接口来获取。 |
+| accountId | number | 否 | 用户ID，指定具体用户。当不传入此参数时，表示查询所有用户是否禁止添加账号；当传入此参数时，表示查询指定用户是否禁止添加账号。取值范围：大于等于0。  accountId可以通过[getOsAccountLocalId](js-apis-osaccount.md#getosaccountlocalid9-1)等接口来获取。 |
 
 **返回值：**
 
@@ -122,36 +118,86 @@ isOsAccountAdditionDisallowed(admin: Want, accountId?: number): boolean
 
 **示例：**
 
+```ts
+import { accountManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
+
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+
+try {
+  // 参数需根据实际情况进行替换
+  let isDisallowed: boolean = accountManager.isOsAccountAdditionDisallowed(wantTemp, 100);
+  console.info(`Succeeded in querying the os account addition or not: ${isDisallowed}`);
+} catch (err) {
+  console.error(`Failed to query the os account addition or not. Code: ${err.code}, message: ${err.message}`);
+}
 ```
-1. import { accountManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
+## accountManager.isOsAccountAdditionDisallowed
 
-10. try {
-11. // 参数需根据实际情况进行替换
-12. let isDisallowed: boolean = accountManager.isOsAccountAdditionDisallowed(wantTemp, 100);
-13. console.info(`Succeeded in querying the os account addition or not: ${isDisallowed}`);
-14. } catch (err) {
-15. console.error(`Failed to query the os account addition or not. Code: ${err.code}, message: ${err.message}`);
-16. }
+isOsAccountAdditionDisallowed(admin: Want | null, accountId?: number): boolean
+
+查询是否禁止用户添加账号。适用于企业审计和合规检查场景，帮助管理员确认账号策略执行情况。
+
+**起始版本：** 26.0.0
+
+**需要权限：** ohos.permission.ENTERPRISE\_SET\_ACCOUNT\_POLICY
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | [Want](js-apis-app-ability-want.md) | null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。  当设备存在多个MDM应用时，传入Want时查询对应企业设备管理应用设置的策略，传入null时查询实际生效的策略。 |
+| accountId | number | 否 | 用户ID，指定具体用户。当不传入此参数时，表示查询所有用户是否禁止添加账号；当传入此参数时，表示查询指定用户是否禁止添加账号。取值范围：大于等于0。  accountId可以通过[getOsAccountLocalId](js-apis-osaccount.md#getosaccountlocalid9-1)等接口来获取。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 是否禁止添加账号。返回true表示禁止添加账号。  返回false表示允许添加账号。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[企业设备管理错误码](errorcode-enterprisedevicemanager.md)和[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
+**示例：**
+
+```ts
+import { accountManager } from '@kit.MDMKit';
+
+try {
+  // 参数需根据实际情况进行替换
+  let isDisallowed: boolean = accountManager.isOsAccountAdditionDisallowed(null, 100);
+  console.info(`Succeeded in querying the os account addition or not: ${isDisallowed}`);
+} catch (err) {
+  console.error(`Failed to query the os account addition or not. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## accountManager.addOsAccountAsync
 
-PhonePC/2in1Tablet
-
 addOsAccountAsync(admin: Want, name: string, type: osAccount.OsAccountType): Promise<osAccount.OsAccountInfo>
 
-后台添加账号。使用promise异步回调。
+后台添加账号。使用Promise异步回调。适用于企业批量创建账号或远程管理场景，无需用户交互即可完成账号创建，提升管理效率。
 
-说明
+**说明** 
 
-该接口比较耗时，当调用此接口后，后续如果在应用主线程调用其他同步接口时需要等待该接口异步返回。
+创建账号的流程比较耗时，当调用此接口后，后续如果在应用主线程调用其他同步接口时需要等待该接口异步返回。
 
 **需要权限：** ohos.permission.ENTERPRISE\_SET\_ACCOUNT\_POLICY
 
@@ -166,7 +212,7 @@ addOsAccountAsync(admin: Want, name: string, type: osAccount.OsAccountType): Pro
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| name | string | 是 | 账号名，指要添加的账号的名称。无法创建同名、名称为空的账号。 |
+| name | string | 是 | 账号名，指要添加的账号的名称。无法创建同名、名称为空的账号，创建同名账号时会报错误码9201003，创建名称为空的账号时会报错误码401。 |
 | type | [osAccount.OsAccountType](js-apis-osaccount.md#osaccounttype) | 是 | 要添加的账号的类型。  取值范围：ADMIN、NORMAL、GUEST。  · ADMIN：管理员账号。  · NORMAL：普通账号。  · GUEST：访客账号。 |
 
 **返回值：**
@@ -189,28 +235,26 @@ addOsAccountAsync(admin: Want, name: string, type: osAccount.OsAccountType): Pro
 
 **示例**：
 
-```
-1. import { accountManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
-3. import { BusinessError, osAccount } from '@kit.BasicServicesKit';
+```ts
+import { accountManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
+import { BusinessError, osAccount } from '@kit.BasicServicesKit';
 
-5. let wantTemp: Want = {
-6. // 需根据实际情况进行替换
-7. bundleName: 'com.example.myapplication',
-8. abilityName: 'EnterpriseAdminAbility'
-9. };
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
 
-11. // 参数需根据实际情况进行替换
-12. accountManager.addOsAccountAsync(wantTemp, "TestAccountName", osAccount.OsAccountType.NORMAL).then((info) => {
-13. console.info(`Succeeded in creating os account: ${JSON.stringify(info)}`);
-14. }).catch((err: BusinessError) => {
-15. console.error(`Failed to create os account. Code: ${err.code}, message: ${err.message}`);
-16. });
+// 参数需根据实际情况进行替换
+accountManager.addOsAccountAsync(wantTemp, "TestAccountName", osAccount.OsAccountType.NORMAL).then((info) => {
+  console.info(`Succeeded in creating os account: ${JSON.stringify(info)}`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create os account. Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## accountManager.setDomainAccountPolicy19+
-
-PhonePC/2in1Tablet
 
 setDomainAccountPolicy(admin: Want, domainAccountInfo: osAccount.DomainAccountInfo, policy: DomainAccountPolicy): void
 
@@ -224,15 +268,15 @@ setDomainAccountPolicy(admin: Want, domainAccountInfo: osAccount.DomainAccountIn
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-**冲突规则：** [从严管控](../harmonyos-guides/mdm-kit-multi-mdm.md#规则1从严管控)。
+**冲突规则：** [配置](../harmonyos-guides/mdm-kit-multi-mdm.md#规则3配置)。
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| domainAccountInfo | [osAccount.DomainAccountInfo](js-apis-osaccount.md#domainaccountinfo8) | 是 | 域账号信息。  若传入的domainAccountInfo内部属性均为空，则会设置为全局域账号策略。全局策略对所有的域账号生效。  若传入的domainAccountInfo内部属性不为空，则为指定域账号设置策略。  指定域账号策略的优先级高于全局策略，若指定域账号已有域账号策略，则全局策略对其不生效。  **说明**：若为指定域账号设置策略，DomainAccountInfo的serverConfigId字段必填。 |
-| policy | [DomainAccountPolicy](js-apis-enterprise-accountmanager.md#domainaccountpolicy19) | 是 | 域账号策略。  **说明**：设置域账号策略后须在设备侧修改域账号密码，若未修改密码，则DomainAccountPolicy中的passwordValidityPeriod、passwordExpirationNotification配置不生效。 |
+| domainAccountInfo | [osAccount.DomainAccountInfo](js-apis-osaccount.md#domainaccountinfo8) | 是 | 域账号信息。  若传入的domainAccountInfo内部属性均为空，则会设置为全局域账号策略。全局策略对所有的域账号生效。  若传入的domainAccountInfo内部属性不为空，则为指定域账号设置策略。  指定域账号策略的优先级高于全局策略，若指定域账号已有域账号策略，则全局策略对其不生效。  \*\*说明：\*\*若为指定域账号设置策略，DomainAccountInfo的serverConfigId字段必填。 |
+| policy | [DomainAccountPolicy](js-apis-enterprise-accountmanager.md#domainaccountpolicy19) | 是 | 域账号策略。  \*\*说明：\*\*设置域账号策略后须在设备侧修改域账号密码，若未修改密码，则DomainAccountPolicy中的passwordValidityPeriod、passwordExpirationNotification配置不生效。 |
 
 **错误码**：
 
@@ -247,65 +291,63 @@ setDomainAccountPolicy(admin: Want, domainAccountInfo: osAccount.DomainAccountIn
 
 **示例：**
 
-```
-1. import { accountManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
-3. import { BusinessError, osAccount } from '@kit.BasicServicesKit';
+```ts
+import { accountManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
+import { BusinessError, osAccount } from '@kit.BasicServicesKit';
 
-5. async function setDomainAccountPolicy() {
-6. let wantTemp: Want = {
-7. // 需根据实际情况进行替换
-8. bundleName: 'com.example.myapplication',
-9. abilityName: 'EnterpriseAdminAbility'
-10. };
-11. let policy: accountManager.DomainAccountPolicy = {
-12. // 需根据实际情况进行替换
-13. authenticationValidityPeriod: 300,
-14. passwordValidityPeriod: 420,
-15. passwordExpirationNotification: 60
-16. };
-17. // 设置全局域账号策略
-18. let accountInfo: osAccount.DomainAccountInfo = {
-19. domain: '',
-20. accountName: '',
-21. serverConfigId: ''
-22. };
-23. try {
-24. accountManager.setDomainAccountPolicy(wantTemp, accountInfo, policy);
-25. console.info('Succeeded in setting global domainAccount policy.');
-26. } catch (err) {
-27. console.error(`Failed to set domainAccount policy. Code: ${err.code}, message: ${err.message}`);
-28. }
-29. // 设置指定域账号策略
-30. let accountInfo2: osAccount.DomainAccountInfo = {
-31. domain: '',
-32. accountName: '',
-33. serverConfigId: ''
-34. };
-35. // 需根据实际情况替换
-36. let userId: number = 100;
-37. await osAccount.getAccountManager().getOsAccountDomainInfo(userId)
-38. .then((domainAccountInfo: osAccount.DomainAccountInfo) => {
-39. accountInfo2 = domainAccountInfo;
-40. }).catch((err: BusinessError) => {
-41. console.error(`Failed to get account domain info. Code: ${err.code}, message: ${err.message}`);
-42. })
-43. try {
-44. accountManager.setDomainAccountPolicy(wantTemp, accountInfo2, policy);
-45. console.info('Succeeded in setting domain account policy.');
-46. } catch (err) {
-47. console.error(`Failed to set domain account policy. Code: ${err.code}, message: ${err.message}`);
-48. }
-49. }
+async function setDomainAccountPolicy() {
+  let wantTemp: Want = {
+    // 需根据实际情况进行替换
+    bundleName: 'com.example.myapplication',
+    abilityName: 'EnterpriseAdminAbility'
+  };
+  let policy: accountManager.DomainAccountPolicy = {
+    // 需根据实际情况进行替换
+    authenticationValidityPeriod: 300,
+    passwordValidityPeriod: 420,
+    passwordExpirationNotification: 60
+  };
+  // 设置全局域账号策略
+  let accountInfo: osAccount.DomainAccountInfo = {
+    domain: '',
+    accountName: '',
+    serverConfigId: ''
+  };
+  try {
+    accountManager.setDomainAccountPolicy(wantTemp, accountInfo, policy);
+    console.info('Succeeded in setting global domainAccount policy.');
+  } catch (err) {
+    console.error(`Failed to set domainAccount policy. Code: ${err.code}, message: ${err.message}`);
+  }
+  // 设置指定域账号策略
+  let accountInfo2: osAccount.DomainAccountInfo = {
+    domain: '',
+    accountName: '',
+    serverConfigId: ''
+  };
+  // 需根据实际情况替换
+  let userId: number = 100;
+  await osAccount.getAccountManager().getOsAccountDomainInfo(userId)
+    .then((domainAccountInfo: osAccount.DomainAccountInfo) => {
+      accountInfo2 = domainAccountInfo;
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to get account domain info. Code: ${err.code}, message: ${err.message}`);
+    });
+  try {
+    accountManager.setDomainAccountPolicy(wantTemp, accountInfo2, policy);
+    console.info('Succeeded in setting domain account policy.');
+  } catch (err) {
+    console.error(`Failed to set domain account policy. Code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ## accountManager.getDomainAccountPolicy19+
 
-PhonePC/2in1Tablet
-
 getDomainAccountPolicy(admin: Want, domainAccountInfo: osAccount.DomainAccountInfo): DomainAccountPolicy
 
-获取域账号策略。
+获取域账号策略。适用于企业管理场景，如查询当前域账号策略配置、策略合规性审计等。
 
 **需要权限：** ohos.permission.ENTERPRISE\_SET\_ACCOUNT\_POLICY
 
@@ -320,7 +362,7 @@ getDomainAccountPolicy(admin: Want, domainAccountInfo: osAccount.DomainAccountIn
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| domainAccountInfo | [osAccount.DomainAccountInfo](js-apis-osaccount.md#domainaccountinfo8) | 是 | 域账号信息。  若传入的domainAccountInfo内部属性均为空，则查询全局域账号策略。  若传入的domainAccountInfo内部属性不为空，则查询指定域账号策略。  **说明**：若查询指定域账号策略，DomainAccountInfo的serverConfigId字段必填。 |
+| domainAccountInfo | [osAccount.DomainAccountInfo](js-apis-osaccount.md#domainaccountinfo8) | 是 | 域账号信息。  若传入的domainAccountInfo内部属性均为空，则查询全局域账号策略。  若传入的domainAccountInfo内部属性不为空，则查询指定域账号策略。  \*\*说明：\*\*若查询指定域账号策略，DomainAccountInfo的serverConfigId字段必填。 |
 
 **返回值：**
 
@@ -341,65 +383,273 @@ getDomainAccountPolicy(admin: Want, domainAccountInfo: osAccount.DomainAccountIn
 
 **示例：**
 
-```
-1. import { accountManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
-3. import { BusinessError, osAccount } from '@kit.BasicServicesKit';
+```ts
+import { accountManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
+import { BusinessError, osAccount } from '@kit.BasicServicesKit';
 
-5. async function getDomainAccountPolicy() {
-6. let wantTemp: Want = {
-7. // 需根据实际情况进行替换
-8. bundleName: 'com.example.myapplication',
-9. abilityName: 'EnterpriseAdminAbility'
-10. };
-11. let domainAccountPolicy: accountManager.DomainAccountPolicy = {};
-12. // 查询全局域账号策略
-13. let accountInfo: osAccount.DomainAccountInfo = {
-14. domain: '',
-15. accountName: '',
-16. serverConfigId: ''
-17. };
-18. try {
-19. domainAccountPolicy = accountManager.getDomainAccountPolicy(wantTemp, accountInfo);
-20. console.info('Succeeded in getting global domain account policy.');
-21. } catch (err) {
-22. console.error(`Failed to get domain account policy. Code: ${err.code}, message: ${err.message}`);
-23. }
-24. // 查询指定域账号策略
-25. let accountInfo2: osAccount.DomainAccountInfo = {
-26. domain: '',
-27. accountName: '',
-28. serverConfigId: ''
-29. };
-30. // 需根据实际情况进行替换
-31. let userId: number = 100;
-32. await osAccount.getAccountManager()
-33. .getOsAccountDomainInfo(userId)
-34. .then((domainAccountInfo: osAccount.DomainAccountInfo) => {
-35. accountInfo2 = domainAccountInfo;
-36. })
-37. .catch((err: BusinessError) => {
-38. console.error(`Failed to get account domain info. Code: ${err.code}, message: ${err.message}`);
-39. })
-40. try {
-41. domainAccountPolicy = accountManager.getDomainAccountPolicy(wantTemp, accountInfo2);
-42. console.info('Succeeded in getting domain account policy.');
-43. } catch (err) {
-44. console.error(`Failed to get domain account policy. Code: ${err.code}, message: ${err.message}`);
-45. }
-46. }
+async function getDomainAccountPolicy() {
+  let wantTemp: Want = {
+    // 需根据实际情况进行替换
+    bundleName: 'com.example.myapplication',
+    abilityName: 'EnterpriseAdminAbility'
+  };
+  let domainAccountPolicy: accountManager.DomainAccountPolicy = {};
+  // 查询全局域账号策略
+  let accountInfo: osAccount.DomainAccountInfo = {
+    domain: '',
+    accountName: '',
+    serverConfigId: ''
+  };
+  try {
+    domainAccountPolicy = accountManager.getDomainAccountPolicy(wantTemp, accountInfo);
+    console.info('Succeeded in getting global domain account policy.');
+  } catch (err) {
+    console.error(`Failed to get domain account policy. Code: ${err.code}, message: ${err.message}`);
+  }
+  // 查询指定域账号策略
+  let accountInfo2: osAccount.DomainAccountInfo = {
+    domain: '',
+    accountName: '',
+    serverConfigId: ''
+  };
+  // 需根据实际情况进行替换
+  let userId: number = 100;
+  await osAccount.getAccountManager()
+    .getOsAccountDomainInfo(userId)
+    .then((domainAccountInfo: osAccount.DomainAccountInfo) => {
+      accountInfo2 = domainAccountInfo;
+    })
+    .catch((err: BusinessError) => {
+      console.error(`Failed to get account domain info. Code: ${err.code}, message: ${err.message}`);
+    });
+  try {
+    domainAccountPolicy = accountManager.getDomainAccountPolicy(wantTemp, accountInfo2);
+    console.info('Succeeded in getting domain account policy.');
+  } catch (err) {
+    console.error(`Failed to get domain account policy. Code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ## DomainAccountPolicy19+
-
-PhonePC/2in1Tablet
 
 域账号策略。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| authenticationValidityPeriod | number | 否 | 是 | 表示域账号认证Token的有效期（单位：s），取值范围是[-1,2147483647]。有效期起始时间为最后一次域账号的认证时间点，如登录、锁屏后解锁等。  默认值为-1，表示Token永久有效。取值为0，表示Token立即失效。Token过期/失效后，用户进入系统时必须进行域账号认证，验证域账号和密码。 |
-| passwordValidityPeriod | number | 否 | 是 | 表示域账号密码有效期（单位：s），取值范围是[-1,2147483647]，有效期起始时间为设备侧最后一次修改密码的时间点。  默认值为-1，表示域账号密码永久有效。 |
-| passwordExpirationNotification | number | 否 | 是 | 表示域账号密码过期前提示时间（单位：s），取值范围是[0,2147483647]。  默认值为0，表示域账号密码过期不提示。  **说明**：passwordExpirationNotification需与passwordValidityPeriod配合使用，当系统时间大于或等于（设备侧最后一次修改域账号密码时间 + passwordValidityPeriod - passwordExpirationNotification）时，会发页面通知提示密码即将过期。 |
+| authenticationValidityPeriod | number | 否 | 是 | 表示域账号认证Token的有效期（单位：s），用于控制用户在Token有效期内无需重复认证即可访问系统资源。取值范围是[-1, 2147483647]。有效期起始时间为最后一次域账号的认证时间点，如登录、锁屏后解锁等。  默认值为-1，表示Token永久有效。取值为0，表示Token立即失效。Token过期/失效后，用户进入系统时必须进行域账号认证，验证域账号和密码。 |
+| passwordValidityPeriod | number | 否 | 是 | 表示域账号密码有效期（单位：s），用于用户定期修改密码以提升账号安全性。取值范围是[-1, 2147483647]，有效期起始时间为设备侧最后一次修改密码的时间点。  默认值为-1，表示域账号密码永久有效。 |
+| passwordExpirationNotification | number | 否 | 是 | 表示域账号密码过期前提示时间（单位：s），取值范围是[0, 2147483647]。  默认值为0，表示域账号密码过期不提示。  \*\*说明：\*\*passwordExpirationNotification需与passwordValidityPeriod配合使用，当系统时间大于或等于（设备侧最后一次修改域账号密码时间 + passwordValidityPeriod - passwordExpirationNotification）时，会发页面通知提示密码即将过期。 |
+
+## accountManager.createNormalOsAccount
+
+createNormalOsAccount(admin: Want, name: string): Promise<osAccount.OsAccountInfo>
+
+创建普通系统账号。使用Promise异步回调。最多可以创建2个normal类型的系统账号 ([osAccount.OsAccountType](js-apis-osaccount.md#osaccounttype)) 。
+
+**说明** 
+
+创建账号的流程比较耗时，当调用此接口后，后续如果在应用主线程调用其他同步接口时需要等待该接口异步返回。
+
+创建系统账号对设备的性能影响较大，此接口仅支持12GB及以上运行内存的手机、平板设备使用。
+
+**起始版本：** 26.0.0
+
+**需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_LOCAL\_ACCOUNTS
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| name | string | 是 | 系统账号名称。系统账号名称不能重复且不能为空，会报错误码9200012。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[osAccount.OsAccountInfo](js-apis-osaccount.md#osaccountinfo)> | Promise对象，返回创建的系统账号信息。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[企业设备管理错误码](errorcode-enterprisedevicemanager.md)和[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 9200012 | Parameter verification failed. |
+| 9201003 | Failed to add an OS account. |
+| 9201040 | The number of accounts reaches the upper limit. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 204 | Access denied due to user access control policy. Possible causes: 1. The operation is restricted by the OS-account constraint; 2. The required privilege for the operation has not been granted. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+
+**示例**：
+
+```ts
+import { accountManager } from '@kit.MDMKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { osAccount } from '@kit.BasicServicesKit';
+import { Want } from '@kit.AbilityKit';
+
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+
+// 创建普通系统账号，需要传入账号名称
+accountManager.createNormalOsAccount(wantTemp, "TestAccountName").then((accountInfo: osAccount.OsAccountInfo) => {
+  console.info('Succeeded in creating normal os account, accountInfo: ' + JSON.stringify(accountInfo));
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create normal os account: code is ${err.code}, message is ${err.message}`);
+});
+```
+
+## accountManager.removeOsAccount
+
+removeOsAccount(admin: Want, accountId: number): Promise<void>
+
+移除系统账号。使用Promise异步回调。当前仅支持手机、平板设备使用，可以移除使用[createNormalOsAccount](js-apis-enterprise-accountmanager.md#accountmanagercreatenormalosaccount)创建的普通系统账号（normal类型）和[addOsAccountAsync](js-apis-enterprise-accountmanager.md#accountmanageraddosaccountasync)创建的系统账号（admin、normal、guest类型），不可移除默认系统账号（ID为100）。
+
+**起始版本：** 26.0.0
+
+**需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_LOCAL\_ACCOUNTS
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| accountId | number | 是 | 系统账号ID，指将被移除系统账号的ID。不可移除默认系统账号 (ID为100) ，会报错误码9201041。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。当移除系统账号失败时，会抛出错误对象。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[企业设备管理错误码](errorcode-enterprisedevicemanager.md)和[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 9200012 | Parameter verification failed. |
+| 9200016 | Service timeout. |
+| 9201041 | Restricted account. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 204 | Access denied due to user access control policy. Possible causes: 1. The operation is restricted by the OS-account constraint; 2. The required privilege for the operation has not been granted. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+
+**示例**：
+
+```ts
+import { accountManager } from '@kit.MDMKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { osAccount } from '@kit.BasicServicesKit';
+import { Want } from '@kit.AbilityKit';
+
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+
+// 创建普通系统账号
+accountManager.createNormalOsAccount(wantTemp, "TestAccountName").then((accountInfo: osAccount.OsAccountInfo) => {
+  console.info('Succeeded in creating normal os account, accountInfo: ' + JSON.stringify(accountInfo));
+  // 根据系统账号ID移除创建的账号
+  let accountId: number = accountInfo.localId;
+  return accountManager.removeOsAccount(wantTemp, accountId);
+}).then(() => {
+  console.info('Succeeded in removing os account');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create and remove normal os account: code is ${err.code}, message is ${err.message}`);
+});
+```
+
+## accountManager.activateOsAccount
+
+activateOsAccount(admin: Want, accountId: number): Promise<void>
+
+切换系统账号。使用Promise异步回调。当前仅支持手机、平板设备使用，只能在[createNormalOsAccount](js-apis-enterprise-accountmanager.md#accountmanagercreatenormalosaccount)创建的普通系统账号和默认系统账号 (ID为100) 之间切换。
+
+**起始版本：** 26.0.0
+
+**需要权限：** ohos.permission.ENTERPRISE\_INTERACT\_ACROSS\_LOCAL\_ACCOUNTS
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| accountId | number | 是 | 系统账号ID。切换不存在的系统账号，会报错误码9200012。切换受限制的系统账号，例如使用[addOsAccountAsync](js-apis-enterprise-accountmanager.md#accountmanageraddosaccountasync)创建的系统账号，会报错误码9201041。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。当切换系统账号失败时，会抛出错误对象。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[企业设备管理错误码](errorcode-enterprisedevicemanager.md)和[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 9200012 | Parameter verification failed. |
+| 9200016 | Service timeout. |
+| 9201041 | Restricted account. |
+| 9201046 | The number of signed-in accounts reaches the upper limit. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+
+**示例**：
+
+```ts
+import { accountManager } from '@kit.MDMKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { osAccount } from '@kit.BasicServicesKit';
+import { Want } from '@kit.AbilityKit';
+
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+
+// 创建普通系统账号
+accountManager.createNormalOsAccount(wantTemp, "TestAccountName").then((accountInfo: osAccount.OsAccountInfo) => {
+  console.info('Succeeded in creating normal os account, accountInfo: ' + JSON.stringify(accountInfo));
+  // 根据系统账号ID切换账号
+  let accountId: number = accountInfo.localId;
+  return accountManager.activateOsAccount(wantTemp, accountId);
+}).then(() => {
+  console.info('Succeeded in activating os account');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create and activate normal os account: code is ${err.code}, message is ${err.message}`);
+});
+```

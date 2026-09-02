@@ -1,8 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-basic-api
 title: 基础API迁移指导
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC昇腾到麒麟兼容性迁移指南 > Ascend910B/Ascend910C到KirinX90/Kirin9030迁移指导 > 基础API迁移指导
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:21+08:00
+scraped_at: 2026-09-02T15:17:59+08:00
 doc_updated_at: 2026-03-09
 content_hash: sha256:e017169e8ab19ba2ff2470aa90c0a2e96c6c1df8e6dfbf331e6d61d841d28157
 ---

@@ -3,22 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-file
 title: FileIO
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > C API > 模块 > FileIO
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:49+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:76f804c6e03af31b8bd4360028cd4d7c8831a6e19ebd1cf2203feff3dc949b89
+scraped_at: 2026-09-02T14:51:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a1c551ddd4494b05d5adda4265d77776de2658135bedce43327755fe9485b763
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供文件基础操作的能力。
 
 **起始版本：** 12
 
 ## 文件汇总
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

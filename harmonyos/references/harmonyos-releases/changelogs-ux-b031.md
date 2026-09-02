@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-ux-b031
 title: UX样式或效果的变更
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Developer Beta2引入的接口行为变更 > UX样式或效果的变更
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Developer Beta2引入的接口行为变更 > UX样式或效果的变更
 category: harmonyos-releases
-scraped_at: 2026-04-29T13:24:12+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:93984d10c512471717dc7486ec166874159fb58fe668db8e5365f9d11454cbd7
+scraped_at: 2026-09-02T14:49:27+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:805ee921382a90f6aa06c4e947787345842edd80ad5c50a9096122a5bed92409
 ---
 
 ## TextInput、TextArea 设置TextAlign.Center且显示PlaceHolder文字时，光标位置的变更
@@ -78,35 +78,35 @@ bindSheet组件
 
 需要开发者适配。例如，在半模态面板中嵌套List组件场景，@Builder内容可以参考如下示例。
 
-```
-1. private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-2. @Builder
-3. myBuilder() {
-4. Column() {
-5. List({ space: 20, initialIndex: 0 }) {
-6. ForEach(this.arr, (item: number) => {
-7. ListItem() {
-8. Text('' + item)
-9. .width('100%')
-10. .height(100)
-11. .fontSize(16)
-12. .textAlign(TextAlign.Center)
-13. .borderRadius(10)
-14. .backgroundColor(0xFFFFFF)
-15. }
-16. }, (item: string) => item)
-17. }
-18. .listDirection(Axis.Vertical) // 排列方向
-19. .edgeEffect(EdgeEffect.None)
-20. .nestedScroll({
-21. scrollForward: NestedScrollMode.PARENT_FIRST,
-22. scrollBackward: NestedScrollMode.SELF_FIRST
-23. }) // 嵌套模式
-24. .backgroundColor(Color.Gray)
-25. .width('90%')
-26. .height('100%')
-27. }
-28. }
+```ts
+private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+@Builder
+myBuilder() {
+  Column() {
+    List({ space: 20, initialIndex: 0 }) {
+        ForEach(this.arr, (item: number) => {
+          ListItem() {
+            Text('' + item)
+              .width('100%')
+              .height(100)
+              .fontSize(16)
+              .textAlign(TextAlign.Center)
+              .borderRadius(10)
+              .backgroundColor(0xFFFFFF)
+          }
+        }, (item: string) => item)
+      }
+      .listDirection(Axis.Vertical) // 排列方向
+      .edgeEffect(EdgeEffect.None)
+      .nestedScroll({
+        scrollForward: NestedScrollMode.PARENT_FIRST,
+        scrollBackward: NestedScrollMode.SELF_FIRST
+      }) // 嵌套模式
+      .backgroundColor(Color.Gray)
+      .width('90%')
+      .height('100%')
+  }
+}
 ```
 
 ## ListItem横滑跟手比变更
@@ -182,11 +182,11 @@ popupPosition属性设置为undefined时应该重置为默认值，但当前实�
 
 API version 12之前，popupPosition属性设置为undefined时会保持现有状态，提示弹窗位置不发生变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/iw5DsVr-RzqmwQVlxtbQyQ/zh-cn_image_0000001987151785.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/juWoq5u5RLiekdtrlSV7Aw/zh-cn_image_0000001987151785.png)
 
 API version 12及以后，popupPosition属性设置为undefined时会重置为默认值，提示弹窗位置会发生变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/0zjPVPjrTMatFz54l8CApg/zh-cn_image_0000001953232366.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/Ac5-mFFzQSqmp-R2eM6MmQ/zh-cn_image_0000001953232366.png)
 
 **变更的接口/组件**
 
@@ -262,24 +262,24 @@ RichEditor组件
 
 开发者如果需要使用变更之前的抛滑效果，可以将friction接口的参数设置为0.7。
 
-```
-1. @Entry
-2. @Component
-3. struct FrictionExample {
-4. build() {
-5. List() {
-6. ForEach([1, 2, 3, 4, 5], (item: number) => {
-7. ListItem() {
-8. Text('' + item)
-9. .width('100%').height(200).fontSize(16)
-10. .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(0xFFFFFF)
-11. }
-12. }, (item: string) => item)
-13. }
-14. .height(500)
-15. .friction(0.7)
-16. }
-17. }
+```ts
+@Entry
+@Component
+struct FrictionExample {
+  build() {
+    List() {
+      ForEach([1, 2, 3, 4, 5], (item: number) => {
+        ListItem() {
+          Text('' + item)
+            .width('100%').height(200).fontSize(16)
+            .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(0xFFFFFF)
+        }
+      }, (item: string) => item)
+    }
+    .height(500)
+    .friction(0.7)
+  }
+}
 ```
 
 ## ListItem卡片样式行为变更
@@ -296,106 +296,106 @@ RichEditor组件
 
 变更后：ListItem在LazyForEach下使用时，卡片样式设置可以生效。
 
-```
-1. // Basic implementation of IDataSource to handle data listener
-2. abstract class BasicDataSource<T> implements IDataSource {
-3. private listeners: DataChangeListener[] = []
+```ts
+// Basic implementation of IDataSource to handle data listener
+abstract class BasicDataSource<T> implements IDataSource {
+  private listeners: DataChangeListener[] = []
 
-5. public totalCount(): number {
-6. return 0
-7. }
-8. abstract getData(index: number): T;
+  public totalCount(): number {
+    return 0
+  }
+  abstract getData(index: number): T;
 
-10. registerDataChangeListener(listener: DataChangeListener): void {
-11. if (this.listeners.indexOf(listener) < 0) {
-12. this.listeners.push(listener)
-13. }
-14. }
-15. unregisterDataChangeListener(listener: DataChangeListener): void {
-16. const pos = this.listeners.indexOf(listener);
-17. if (pos >= 0) {
-18. this.listeners.splice(pos, 1)
-19. }
-20. }
+  registerDataChangeListener(listener: DataChangeListener): void {
+    if (this.listeners.indexOf(listener) < 0) {
+      this.listeners.push(listener)
+    }
+  }
+  unregisterDataChangeListener(listener: DataChangeListener): void {
+   const pos = this.listeners.indexOf(listener);
+   if (pos >= 0) {
+     this.listeners.splice(pos, 1)
+   }
+  }
 
-22. notifyDataReload(): void {
-23. this.listeners.forEach(listener => {
-24. listener.onDataReloaded()
-25. })
-26. }
-27. notifyDataAdd(index: number): void {
-28. this.listeners.forEach(listener => {
-29. listener.onDataAdd(index)
-30. })
-31. }
-32. notifyDataChange(index: number): void {
-33. this.listeners.forEach(listener => {
-34. listener.onDataChange(index)
-35. })
-36. }
-37. notifyDataDelete(index: number): void {
-38. this.listeners.forEach(listener => {
-39. listener.onDataDelete(index)
-40. })
-41. }
-42. notifyDataMove(from: number, to: number): void {
-43. this.listeners.forEach(listener => {
-44. listener.onDataMove(from, to)
-45. })
-46. }
-47. }
+  notifyDataReload(): void {
+    this.listeners.forEach(listener => {
+      listener.onDataReloaded()
+    })
+  }
+  notifyDataAdd(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataAdd(index)
+    })
+  }
+  notifyDataChange(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataChange(index)
+    })
+  }
+  notifyDataDelete(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataDelete(index)
+    })
+  }
+  notifyDataMove(from: number, to: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataMove(from, to)
+    })
+  }
+}
 
-49. class MyDataSource<T> extends BasicDataSource<T> {
-50. public dataArray: T[] = [];
+class MyDataSource<T> extends BasicDataSource<T> {
+  public dataArray: T[] = [];
 
-52. public totalCount(): number {
-53. return this.dataArray.length
-54. }
-55. public getData(index: number): T {
-56. return this.dataArray[index]
-57. }
+  public totalCount(): number {
+    return this.dataArray.length
+  }
+  public getData(index: number): T {
+    return this.dataArray[index]
+  }
 
-59. public addData(index: number, data: T): void {
-60. this.dataArray.splice(index, 0, data)
-61. this.notifyDataAdd(index)
-62. }
-63. public popFirstData(): void {
-64. this.dataArray.shift()
-65. this.notifyDataDelete(0)
-66. }
-67. public pushData(data: T): void {
-68. this.dataArray.push(data)
-69. this.notifyDataAdd(this.dataArray.length - 1)
-70. }
-71. public popData(): void {
-72. this.dataArray.pop()
-73. this.notifyDataDelete(this.dataArray.length)
-74. }
-75. }
+  public addData(index: number, data: T): void {
+    this.dataArray.splice(index, 0, data)
+    this.notifyDataAdd(index)
+  }
+  public popFirstData(): void {
+    this.dataArray.shift()
+    this.notifyDataDelete(0)
+  }
+  public pushData(data: T): void {
+    this.dataArray.push(data)
+    this.notifyDataAdd(this.dataArray.length - 1)
+  }
+  public popData(): void {
+    this.dataArray.pop()
+    this.notifyDataDelete(this.dataArray.length)
+  }
+}
 
-77. @Entry
-78. @Component
-79. struct Index {
-80. arr:MyDataSource<number> = new MyDataSource<number>();
-81. aboutToAppear(): void {
-82. for (let i = 0; i < 10; i++) {
-83. this.arr.pushData(i)
-84. }
-85. }
+@Entry
+@Component
+struct Index {
+  arr:MyDataSource<number> = new MyDataSource<number>();
+  aboutToAppear(): void {
+    for (let i = 0; i < 10; i++) {
+      this.arr.pushData(i)
+    }
+  }
 
-87. build() {
-88. List() {
-89. ListItemGroup({ style: ListItemGroupStyle.CARD }) {
-90. LazyForEach(this.arr, (item: number) => {
-91. ListItem({ style: ListItemStyle.CARD }) {
-92. Text("item" + item.toString())
-93. }
-94. })
-95. }
-96. }.backgroundColor("#DCDCDC")
-97. .height("100%")
-98. }
-99. }
+  build() {
+    List() {
+      ListItemGroup({ style: ListItemGroupStyle.CARD }) {
+        LazyForEach(this.arr, (item: number) => {
+          ListItem({ style: ListItemStyle.CARD }) {
+            Text("item" + item.toString())
+          }
+        })
+      }
+    }.backgroundColor("#DCDCDC")
+    .height("100%")
+  }
+}
 ```
 
 | 变更前效果 | 变更后效果 |
@@ -412,38 +412,38 @@ RichEditor组件
 
 如下代码变更前设置卡片样式不生效，变更后生效卡片样式导致显示界面变化。
 
-```
-1. build() {
-2. List() {
-3. ListItemGroup({ style: ListItemGroupStyle.CARD }) {
-4. LazyForEach(this.arr, (item: number) => {
-5. ListItem({ style: ListItemStyle.CARD }) {
-6. Text("item" + item.toString())
-7. .height(64)
-8. }
-9. })
-10. }
-11. }.backgroundColor("#DCDCDC")
-12. .height("100%")
-13. }
+```ts
+build() {
+  List() {
+    ListItemGroup({ style: ListItemGroupStyle.CARD }) {
+      LazyForEach(this.arr, (item: number) => {
+        ListItem({ style: ListItemStyle.CARD }) {
+          Text("item" + item.toString())
+            .height(64)
+        }
+      })
+    }
+  }.backgroundColor("#DCDCDC")
+  .height("100%")
+}
 ```
 
 删除ListItem卡片样式可以恢复变更前效果。
 
-```
-1. build() {
-2. List() {
-3. ListItemGroup({ style: ListItemGroupStyle.CARD }) {
-4. LazyForEach(this.arr, (item: number) => {
-5. ListItem() {
-6. Text("item" + item.toString())
-7. .height(64)
-8. }
-9. })
-10. }
-11. }.backgroundColor("#DCDCDC")
-12. .height("100%")
-13. }
+```ts
+build() {
+  List() {
+    ListItemGroup({ style: ListItemGroupStyle.CARD }) {
+      LazyForEach(this.arr, (item: number) => {
+        ListItem() {
+          Text("item" + item.toString())
+            .height(64)
+        }
+      })
+    }
+  }.backgroundColor("#DCDCDC")
+  .height("100%")
+}
 ```
 
 ## List的constraintSize设置生效
@@ -460,25 +460,25 @@ List的布局行为和当前通用的布局约束优先的规格不一致。
 
 变更后，List不设置Height时，constraintSize的minHeight设置会生效。
 
-```
-1. @Entry
-2. @Component
-3. struct ListExample {
-4. build() {
-5. List({ space: 5 }) {
-6. ForEach([1, 2, 3, 4, 5], (item: number) => {
-7. ListItem() {
-8. Text('' + item)
-9. .width('100%').height(50)
-10. .textAlign(TextAlign.Center).backgroundColor(0xFFFFFF)
-11. }
-12. }, (item: string) => item)
-13. }
-14. .padding(5)
-15. .constraintSize({ minHeight: 500 })
-16. .backgroundColor(0xDCDCDC)
-17. }
-18. }
+```ts
+@Entry
+@Component
+struct ListExample {
+  build() {
+    List({ space: 5 }) {
+      ForEach([1, 2, 3, 4, 5], (item: number) => {
+        ListItem() {
+          Text('' + item)
+            .width('100%').height(50)
+            .textAlign(TextAlign.Center).backgroundColor(0xFFFFFF)
+        }
+      }, (item: string) => item)
+    }
+    .padding(5)
+    .constraintSize({ minHeight: 500 })
+    .backgroundColor(0xDCDCDC)
+  }
+}
 ```
 
 如下是以上示例代码变更前后效果对比：
@@ -497,48 +497,48 @@ List组件的constraintSize接口。
 
 如下代码，变更前constraintSize的minHeight属性不生效，变更后constraintSize的minHeight属性生效导致显示界面变化。
 
-```
-1. @Entry
-2. @Component
-3. struct ListExample {
-4. build() {
-5. List({ space: 5 }) {
-6. ForEach([1, 2, 3, 4, 5], (item: number) => {
-7. ListItem() {
-8. Text('' + item)
-9. .width('100%').height(50)
-10. .textAlign(TextAlign.Center).backgroundColor(0xFFFFFF)
-11. }
-12. }, (item: string) => item)
-13. }
-14. .padding(5)
-15. .constraintSize({ minHeight: 500, maxHeight: 1000 })
-16. .backgroundColor(0xDCDCDC)
-17. }
-18. }
+```ts
+@Entry
+@Component
+struct ListExample {
+  build() {
+    List({ space: 5 }) {
+      ForEach([1, 2, 3, 4, 5], (item: number) => {
+        ListItem() {
+          Text('' + item)
+            .width('100%').height(50)
+            .textAlign(TextAlign.Center).backgroundColor(0xFFFFFF)
+        }
+      }, (item: string) => item)
+    }
+    .padding(5)
+    .constraintSize({ minHeight: 500, maxHeight: 1000 })
+    .backgroundColor(0xDCDCDC)
+  }
+}
 ```
 
 删除constraintSize接口minHeight设置可以恢复之前的效果。
 
-```
-1. @Entry
-2. @Component
-3. struct ListExample {
-4. build() {
-5. List({ space: 5 }) {
-6. ForEach([1, 2, 3, 4, 5], (item: number) => {
-7. ListItem() {
-8. Text('' + item)
-9. .width('100%').height(50)
-10. .textAlign(TextAlign.Center).backgroundColor(0xFFFFFF)
-11. }
-12. }, (item: string) => item)
-13. }
-14. .padding(5)
-15. .constraintSize({ maxHeight: 1000 })
-16. .backgroundColor(0xDCDCDC)
-17. }
-18. }
+```ts
+@Entry
+@Component
+struct ListExample {
+  build() {
+    List({ space: 5 }) {
+      ForEach([1, 2, 3, 4, 5], (item: number) => {
+        ListItem() {
+          Text('' + item)
+            .width('100%').height(50)
+            .textAlign(TextAlign.Center).backgroundColor(0xFFFFFF)
+        }
+      }, (item: string) => item)
+    }
+    .padding(5)
+    .constraintSize({ maxHeight: 1000 })
+    .backgroundColor(0xDCDCDC)
+  }
+}
 ```
 
 ## AlphabetIndexer组件autoCollapse属性默认值由false改为true
@@ -553,11 +553,11 @@ List组件的constraintSize接口。
 
 API version 12之前：autoCollapse属性默认值为false，当AlphabetIndexer组件高度不足时，不会折叠显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/gVhJRN-CQAevX9oJlhgsoA/zh-cn_image_0000001987311653.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/6Vbv00EVSP28X3MxJxVPNQ/zh-cn_image_0000001987311653.png)
 
 API version 12及之后：autoCollapse属性默认值为true，当AlphabetIndexer组件高度不足时，会折叠显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/63yzc1hfQH-At4LMOjsXog/zh-cn_image_0000001987151797.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/aKmsVfhFSvugDiePNP22sQ/zh-cn_image_0000001987151797.png)
 
 **变更的接口/组件**
 
@@ -637,14 +637,14 @@ AlphabetIndexer组件
 
 此变更涉及应用适配。
 
-```
-1. <svg width="100" height="100" viewBox="0 0 300 300" version="1.1">
-2. <defs>
-3. <circle id = "circleId" cx="100" cy="50" r="40"  fill="red"/>
-4. </defs>
-5. <polygon points="220,100 300,210 170,250 123,234" style="fill:#cccccc;stroke:#000000;stroke-width:1"/>
-6. <use href="#circleId" x = "300" y= "150" width="50" height="50"/>
-7. </svg>
+```xml
+<svg width="100" height="100" viewBox="0 0 300 300" version="1.1">
+    <defs>
+        <circle id = "circleId" cx="100" cy="50" r="40"  fill="red"/>
+    </defs>
+    <polygon points="220,100 300,210 170,250 123,234" style="fill:#cccccc;stroke:#000000;stroke-width:1"/>
+    <use href="#circleId" x = "300" y= "150" width="50" height="50"/>
+</svg>
 ```
 
 | 变更前 | 变更后 |
@@ -670,33 +670,33 @@ AlphabetIndexer组件
 
 此变更涉及应用适配。
 
-```
-1. @Extend(SymbolSpan) function style() {
-2. .fontWeight(FontWeight.Lighter)
-3. .fontSize(96)
-4. }
-5. @Entry
-6. @Component
-7. struct Index {
-8. build() {
-9. Column() {
-10. Text() {
-11. SymbolSpan($r('sys.symbol.ohos_wifi')).style()
-12. SymbolSpan($r('sys.symbol.ohos_trash')).style()
-13. SymbolSpan($r('sys.symbol.ohos_trash_circle')).style()
-14. SymbolSpan($r('sys.symbol.ohos_photo')).style()
-15. SymbolSpan($r('sys.symbol.ohos_folder_badge_plus')).style()
-16. SymbolSpan($r('sys.symbol.ohos_lungs')).style()
-17. SymbolSpan($r('sys.symbol.ohos_mic')).style()
-18. SymbolSpan($r('sys.symbol.ohos_circle')).style()
+```screen
+@Extend(SymbolSpan) function style() {
+  .fontWeight(FontWeight.Lighter)
+  .fontSize(96)
+}
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Text() {
+        SymbolSpan($r('sys.symbol.ohos_wifi')).style()
+        SymbolSpan($r('sys.symbol.ohos_trash')).style()
+        SymbolSpan($r('sys.symbol.ohos_trash_circle')).style()
+        SymbolSpan($r('sys.symbol.ohos_photo')).style()
+        SymbolSpan($r('sys.symbol.ohos_folder_badge_plus')).style()
+        SymbolSpan($r('sys.symbol.ohos_lungs')).style()
+        SymbolSpan($r('sys.symbol.ohos_mic')).style()
+        SymbolSpan($r('sys.symbol.ohos_circle')).style()
 
-20. SymbolSpan($r('sys.symbol.ohos_lock')).style()
-21. SymbolSpan($r('sys.symbol.ohos_star')).style()
-22. SymbolSpan($r('sys.symbol.ohos_arrow_up')).style()
-23. }
-24. }.width('100%')
-25. }
-26. }
+        SymbolSpan($r('sys.symbol.ohos_lock')).style()
+        SymbolSpan($r('sys.symbol.ohos_star')).style()
+        SymbolSpan($r('sys.symbol.ohos_arrow_up')).style()
+      }
+    }.width('100%')
+  }
+}
 ```
 
 下表例举资源变更前后对比效果：

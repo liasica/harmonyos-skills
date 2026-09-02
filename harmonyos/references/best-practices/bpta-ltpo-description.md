@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-ltpo-descr
 title: 基于LTPO的低功耗设计
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 > 基于LTPO的低功耗设计
 category: best-practices
-scraped_at: 2026-04-29T14:13:49+08:00
+scraped_at: 2026-09-02T15:03:22+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:51262dc131c2b94f61dd5a4c1f243b1e20d77b5c655a9e912204513f48a02cb9
+content_hash: sha256:73f087cfb697c502d0f7eec20178f7065701ae79252c295b03b7419bbc2919bb
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ LTPO的全称是“Low Temperature Polycrystalline Oxide”，中文译为“低
 
 LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和功耗。
 
-说明
+**说明** 
 
 适配LTPO的好处包括：精细化场景帧率控制，降低场景负载，减少偶发卡顿，降低场景功耗。
 
@@ -52,7 +52,7 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
 
 打开开发者模式中的"显示刷新频率"开关。具体操作：设置中搜索"开发者" -> "显示刷新频率"。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/eaF5fa5FRvOExc2Nt0x7MA/zh-cn_image_0000002194009772.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/xnt2rBk0RsidsQaKH3AP_g/zh-cn_image_0000002229335585.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/UUhHtQk4SSufLb1UvxJXpw/zh-cn_image_0000002194009772.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/1Dmd_7ijQS6xf4htBBd1EQ/zh-cn_image_0000002229335585.png)
 
 ### Profiler工具测试手机功耗
 
@@ -60,7 +60,7 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
 
 2. 打开工具Profiler，并按图示选择需要监控的设备、app、进程。未启动app会出现设备、app等选项为空的情况，此时不能进行Profiler性能分析。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Fi9wosYcS6Cqvk0mnHIZcw/zh-cn_image_0000002229335569.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/1FnCgq68TkOZZD7uj31xqA/zh-cn_image_0000002229335569.png "点击放大")
 
 图中的黄色折线展示整机的电量消耗，斜率为正表示设备耗电，斜率为负表示设备充电。
 
@@ -68,7 +68,7 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
 
 4. 将鼠标悬浮在关注的泳道数据上时，界面上会显示当前时间点的时间标线和详细数据的Tooltips。当鼠标悬浮在时间轴上时，实时监控页面内的所有泳道均会以Tooltips显示该时刻的数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/mHZdNNmORRWqT06Rw1iw-g/zh-cn_image_0000002194009788.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/MaID5NmHR1mZsQ3xnhrn4w/zh-cn_image_0000002194009788.png "点击放大")
 
 本文采用的测试方式是让应用运行30秒，每3秒记录一次功耗数据，取设备从第6秒到第21秒的5个节点的平均功耗。此时设备已平稳运行，功耗也趋于稳定。
 
@@ -86,7 +86,7 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
 
 基于以上使用场景，结合众多实际开发案例，本文选取两个有代表性的案例展开介绍。
 
-说明
+**说明** 
 
 设置的期望帧率值可能无法完全实现，因为会受到系统能力和屏幕刷新率的限制。
 
@@ -96,11 +96,11 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
 
 **效果展示**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/jFwFQkZQT82h69PKrKKJbQ/zh-cn_image_0000002229335581.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/-AxEdT9uRr-sCMquXbPA0Q/zh-cn_image_0000002229335581.png)
 
 **功耗对比**
 
-说明
+**说明** 
 
 使用DisplaySync去实现转盘动画，通过主动设置可变帧率，可以获取功耗的差异。
 
@@ -108,7 +108,7 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
 
 打开手机屏幕刷新率设置，可以查看刷新率变化。使用Profiler工具，可以查看功耗变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/L_cFGz2pSem2rOPgHskZyg/zh-cn_image_0000002229450069.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/94QgS4vVQCuXlZGs3RYrGg/zh-cn_image_0000002229450069.png "点击放大")
 
 从图中可以发现，当屏幕刷新率降低时，功耗也会降低。
 
@@ -118,153 +118,141 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
 
 首先，导入模块。
 
+```typescript
+import { displaySync } from '@kit.ArkGraphics2D';
 ```
-1. import { displaySync } from '@kit.ArkGraphics2D';
-```
-
-[segment.ets](https://gitcode.com/harmonyos_samples/fluent-blog/blob/master/entry/src/main/ets/segment/segment.ets#L3-L3)
 
 定义并构建DisplaySync对象。
 
+```typescript
+private backDisplaySyncSlow: displaySync.DisplaySync | undefined = undefined;
+private backDisplaySyncFast: displaySync.DisplaySync | undefined = undefined;
 ```
-1. private backDisplaySyncSlow: displaySync.DisplaySync | undefined = undefined;
-2. private backDisplaySyncFast: displaySync.DisplaySync | undefined = undefined;
-```
-
-[segment.ets](https://gitcode.com/harmonyos_samples/fluent-blog/blob/master/entry/src/main/ets/segment/segment.ets#L13-L14)
 
 定义图片组件，添加旋转方法。
 
+```typescript
+Row() {
+  Image($r('app.media.avatar'))
+    .height(40)
+    .width(40)
+}
+.rotate({
+  x: 0,
+  y: 0,
+  z: 1,
+  centerX: '50%',
+  centerY: '50%',
+  angle: this.rotateAngle
+})
 ```
-1. Row() {
-2. Image($r('app.media.avatar'))
-3. .height(40)
-4. .width(40)
-5. }
-6. .rotate({
-7. x: 0,
-8. y: 0,
-9. z: 1,
-10. centerX: '50%',
-11. centerY: '50%',
-12. angle: this.rotateAngle
-13. })
-```
-
-[segment.ets](https://gitcode.com/harmonyos_samples/fluent-blog/blob/master/entry/src/main/ets/segment/segment.ets#L58-L70)
 
 使用DisplaySync实例设置帧率并注册订阅函数。
 
+```typescript
+let range: ExpectedFrameRateRange = {
+  expected: 30,
+  min: 0,
+  max: 120
+};
+this.backDisplaySyncSlow.setExpectedFrameRateRange(range); // Setting the frame rate
 ```
-1. let range: ExpectedFrameRateRange = {
-2. expected: 30,
-3. min: 0,
-4. max: 120
-5. };
-6. this.backDisplaySyncSlow.setExpectedFrameRateRange(range); // Setting the frame rate
-```
-
-[segment.ets](https://gitcode.com/harmonyos_samples/fluent-blog/blob/master/entry/src/main/ets/segment/segment.ets#L33-L38)
 
 全部代码实现如下
 
+```typescript
+import { displaySync } from '@kit.ArkGraphics2D';
+
+@Entry
+@Component
+struct Index {
+  @State drawFirstSize: number = 25;
+  @State rotateAngle: number = 1;
+  @State drawSecondSize: number = 25;
+  private backDisplaySyncSlow: displaySync.DisplaySync | undefined = undefined;
+  private backDisplaySyncFast: displaySync.DisplaySync | undefined = undefined;
+  private isBigger30: boolean = true;
+
+  aboutToDisappear() {
+    if (this.backDisplaySyncSlow) {
+      this.backDisplaySyncSlow.stop(); // DisplaySync enable off
+      this.backDisplaySyncSlow = undefined; // Empty the instance
+    }
+    if (this.backDisplaySyncFast) {
+      this.backDisplaySyncFast.stop(); // DisplaySync enable off
+      this.backDisplaySyncFast = undefined; // Empty the instance
+    }
+  }
+
+  CreateDisplaySyncSlow() {
+    // Defining the Desired Drawing Frame Rate
+    this.backDisplaySyncSlow = displaySync.create(); // Creating a DisplaySync Instance
+    let range: ExpectedFrameRateRange = {
+      expected: 30,
+      min: 0,
+      max: 120
+    };
+    this.backDisplaySyncSlow.setExpectedFrameRateRange(range); // Setting the frame rate
+
+    let draw30 = (intervalInfo: displaySync.IntervalInfo) => {
+      if (this.isBigger30) {
+        this.rotateAngle += 1;
+      } else {
+        this.rotateAngle -= 1;
+        if (this.rotateAngle < 25) {
+          this.isBigger30 = true;
+        }
+      }
+    };
+
+    this.backDisplaySyncSlow.on("frame", draw30); // Subscribing to frame events and registering subscription functions
+  }
+
+  build() {
+    Column() {
+      Row() {
+        Image($r('app.media.avatar'))
+          .height(40)
+          .width(40)
+      }
+      .rotate({
+        x: 0,
+        y: 0,
+        z: 1,
+        centerX: '50%',
+        centerY: '50%',
+        angle: this.rotateAngle
+      })
+
+      Row() {
+        Button('Start')
+          .onClick(() => {
+            if (this.backDisplaySyncSlow === undefined) {
+              this.CreateDisplaySyncSlow();
+            }
+            if (this.backDisplaySyncSlow) {
+              this.backDisplaySyncSlow.start(); // DisplaySync enable off
+            }
+          })
+      }
+    }
+  }
+}
 ```
-1. import { displaySync } from '@kit.ArkGraphics2D';
-
-3. @Entry
-4. @Component
-5. struct Index {
-6. @State drawFirstSize: number = 25;
-7. @State rotateAngle: number = 1;
-8. @State drawSecondSize: number = 25;
-9. private backDisplaySyncSlow: displaySync.DisplaySync | undefined = undefined;
-10. private backDisplaySyncFast: displaySync.DisplaySync | undefined = undefined;
-11. private isBigger30: boolean = true;
-
-13. aboutToDisappear() {
-14. if (this.backDisplaySyncSlow) {
-15. this.backDisplaySyncSlow.stop(); // DisplaySync enable off
-16. this.backDisplaySyncSlow = undefined; // Empty the instance
-17. }
-18. if (this.backDisplaySyncFast) {
-19. this.backDisplaySyncFast.stop(); // DisplaySync enable off
-20. this.backDisplaySyncFast = undefined; // Empty the instance
-21. }
-22. }
-
-24. CreateDisplaySyncSlow() {
-25. // Defining the Desired Drawing Frame Rate
-26. this.backDisplaySyncSlow = displaySync.create(); // Creating a DisplaySync Instance
-27. let range: ExpectedFrameRateRange = {
-28. expected: 30,
-29. min: 0,
-30. max: 120
-31. };
-32. this.backDisplaySyncSlow.setExpectedFrameRateRange(range); // Setting the frame rate
-
-34. let draw30 = (intervalInfo: displaySync.IntervalInfo) => {
-35. if (this.isBigger30) {
-36. this.rotateAngle += 1;
-37. } else {
-38. this.rotateAngle -= 1;
-39. if (this.rotateAngle < 25) {
-40. this.isBigger30 = true;
-41. }
-42. }
-43. };
-
-45. this.backDisplaySyncSlow.on("frame", draw30); // Subscribing to frame events and registering subscription functions
-46. }
-
-48. build() {
-49. Column() {
-50. Row() {
-51. Image($r('app.media.avatar'))
-52. .height(40)
-53. .width(40)
-54. }
-55. .rotate({
-56. x: 0,
-57. y: 0,
-58. z: 1,
-59. centerX: '50%',
-60. centerY: '50%',
-61. angle: this.rotateAngle
-62. })
-
-64. Row() {
-65. Button('Start')
-66. .onClick(() => {
-67. if (this.backDisplaySyncSlow === undefined) {
-68. this.CreateDisplaySyncSlow();
-69. }
-70. if (this.backDisplaySyncSlow) {
-71. this.backDisplaySyncSlow.start(); // DisplaySync enable off
-72. }
-73. })
-74. }
-75. }
-76. }
-77. }
-```
-
-[segment.ets](https://gitcode.com/harmonyos_samples/fluent-blog/blob/master/entry/src/main/ets/segment/segment.ets#L2-L86)
 
 上述代码中，设置DisplaySync的可变帧率ExpectedFrameRateRange可以让系统调整屏幕刷新率。若要取消设置可变帧率，可注释以下代码：
 
-```
-1. // Note the following lines
-2. // let range : ExpectedFrameRateRange = {
-3. //     expected: 30,
-4. //     min: 0,
-5. //     max: 120
-6. // };
-7. // this.backDisplaySyncSlow.setExpectedFrameRateRange(range);
+```typescript
+// Note the following lines
+// let range : ExpectedFrameRateRange = {
+//     expected: 30,
+//     min: 0,
+//     max: 120
+// };
+// this.backDisplaySyncSlow.setExpectedFrameRateRange(range);
 ```
 
-[segment.ets](https://gitcode.com/harmonyos_samples/fluent-blog/blob/master/entry/src/main/ets/segment/segment.ets#L90-L96)
-
-说明
+**说明** 
 
 不建议将ExpectedFrameRateRange中的expected、min、max都设置为120，这会干扰系统的可变帧率机制，增加负载，影响整机性能和功耗。
 
@@ -274,11 +262,11 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
 
 **效果展示**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/_DilYC4CQxmVIOBbdMzZTQ/zh-cn_image_0000002193850184.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/JBQHwk1yRieijY9qbxOi_Q/zh-cn_image_0000002193850184.png)
 
 **功耗对比**
 
-说明
+**说明** 
 
 使用animateTo实现滑动动画，通过设置可变帧率，可以观察功耗差异。
 
@@ -286,7 +274,7 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
 
 开启手机帧率设置，查看帧率变化；使用Profiler工具，查看功耗变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/cf66-jliSfKm6WwrM7-JXg/zh-cn_image_0000002229450057.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/yur9jC9RTCKjeZk1RE-ouA/zh-cn_image_0000002229450057.png "点击放大")
 
 屏幕刷新率降低时，功耗也会降低。
 
@@ -296,37 +284,35 @@ LTPO是自适应刷新率技术，按需调整显示刷新率，优化性能和�
 
 在滑动条中添加onVisibleAreaChange事件，并在回调函数中将滑块的当前值增加到100。
 
+```typescript
+Slider({ value: this.curTime, min: 0, max: 100 })
+  .enabled(false)
+  .height(4)
+  .width(320)
+  .trackThickness(3)
+  .blockColor(Color.Red)
+  .blockSize({ width: 4, height: 4 })
+  .onVisibleAreaChange([0.0, 1.0], (isVisible: boolean, currentRatio: number) => {
+    if (isVisible) {
+      this.getUIContext().animateTo({
+        duration: DURATION,
+        iterations: -1,
+        expectedFrameRateRange: {
+          expected: 30,
+          min: 0,
+          max: 120,
+        },
+      }, () => {
+        if (this.curTime >= 100) {
+          this.curTime = 0;
+        }
+        for (let i = 0; i < 101; i++) {
+          this.curTime += 1;
+        }
+      })
+    }
+  })
 ```
-1. Slider({ value: this.curTime, min: 0, max: 100 })
-2. .enabled(false)
-3. .height(4)
-4. .width(320)
-5. .trackThickness(3)
-6. .blockColor(Color.Red)
-7. .blockSize({ width: 4, height: 4 })
-8. .onVisibleAreaChange([0.0, 1.0], (isVisible: boolean, currentRatio: number) => {
-9. if (isVisible) {
-10. this.getUIContext().animateTo({
-11. duration: DURATION,
-12. iterations: -1,
-13. expectedFrameRateRange: {
-14. expected: 30,
-15. min: 0,
-16. max: 120,
-17. },
-18. }, () => {
-19. if (this.curTime >= 100) {
-20. this.curTime = 0;
-21. }
-22. for (let i = 0; i < 101; i++) {
-23. this.curTime += 1;
-24. }
-25. })
-26. }
-27. })
-```
-
-[SampleUnitAVPlayView.ets](https://gitcode.com/harmonyos_samples/fluent-blog/blob/master/entry/src/main/ets/view/SampleUnitAVPlayView.ets#L101-L127)
 
 ## 总结
 

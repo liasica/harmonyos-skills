@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-51
 title: webview是否支持CodeCache
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > webview是否支持CodeCache
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:42+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:53+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:c153005e841102dd15d669ff060023b22b147129f88223bc5e0eae99b4d26297
 ---
 

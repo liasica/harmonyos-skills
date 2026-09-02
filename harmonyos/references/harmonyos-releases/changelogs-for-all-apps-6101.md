@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-for-all-apps-6101
 title: 针对所有应用的变更
-breadcrumb: 版本说明 > HarmonyOS 6.1.0(23) > OS平台能力 > OS平台行为变更说明 > 针对所有应用的变更
+breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > OS平台能力 > OS平台行为变更说明 > 针对所有应用的变更
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:18+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:21ea024d97d613680ebc4c8183aff3464619b117865210be12eff034322e18c8
+scraped_at: 2026-09-02T14:58:34+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:a52c86728d5385aeaa2c04e0240ae5c6e8e372d00ced9e7ed36357040692197e
 ---
 
 ## ArkUI
@@ -20,7 +20,7 @@ Progress的渐变色能力增强，新增支持通过color设置Linear和Capsule
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于6.1.0(23)时生效。
 
@@ -30,30 +30,30 @@ Progress的渐变色能力增强，新增支持通过color设置Linear和Capsule
 
 例如使用下面代码，通过color设置Linear和Capsule样式进度条的前景色为渐变色，变更前均显示为默认主题色蓝色，变更后可以显示为实际的设置效果。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct ProgressExample {
-5. private gradientColor: LinearGradient = new LinearGradient([{ color: "#E5B87B", offset: 0.5 },
-6. { color: "#E05F2A", offset: 1.0 }])
-7. public gradientColor2: LinearGradient = new LinearGradient([{ color: "#99CD78", offset: 0.5 },
-8. { color: "#53BA49", offset: 1.0 }])
+```ts
+// xxx.ets
+@Entry
+@Component
+struct ProgressExample {
+  private gradientColor: LinearGradient = new LinearGradient([{ color: "#E5B87B", offset: 0.5 },
+    { color: "#E05F2A", offset: 1.0 }])
+  public gradientColor2: LinearGradient = new LinearGradient([{ color: "#99CD78", offset: 0.5 },
+    { color: "#53BA49", offset: 1.0 }])
 
-10. build() {
-11. Column({ space: 15 }) {
-12. Text('Linear：').fontSize(9).width('90%')
-13. Progress({ value: 70, total: 100, type: ProgressType.Linear })
-14. .width(200).style({ strokeWidth: 10 })
-15. .color(this.gradientColor)
+  build() {
+    Column({ space: 15 }) {
+      Text('Linear：').fontSize(9).width('90%')
+      Progress({ value: 70, total: 100, type: ProgressType.Linear })
+        .width(200).style({ strokeWidth: 10 })
+        .color(this.gradientColor)
 
-17. Text('Capsule：').fontSize(9).width('90%')
-18. Progress({ value: 50, total: 100, type: ProgressType.Capsule })
-19. .width(200).style({ strokeWidth: 40 })
-20. .color(this.gradientColor2)
-21. }.width('100%').padding({ top: 5 })
-22. }
-23. }
+      Text('Capsule：').fontSize(9).width('90%')
+      Progress({ value: 50, total: 100, type: ProgressType.Capsule })
+        .width(200).style({ strokeWidth: 40 })
+        .color(this.gradientColor2)
+    }.width('100%').padding({ top: 5 })
+  }
+}
 ```
 
 | 变更前 | 变更后 |
@@ -72,23 +72,23 @@ Progress组件的color属性。
 
 开发者需根据实际需求进行适配，如果期望进度条设置为单色，color中value参数的类型需为ResourceColor，参考示例如下。如果期望设置为渐变色，value参数的类型需为LinearGradient。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct ProgressExample {
-5. build() {
-6. Column({ space: 15 }) {
-7. Text('Linear Progress').fontSize(9).fontColor(0xCCCCCC).width('90%')
-8. Progress({ value: 20, total: 150, type: ProgressType.Linear }).color(Color.Grey).value(50).width(200)
+```ts
+// xxx.ets
+@Entry
+@Component
+struct ProgressExample {
+  build() {
+    Column({ space: 15 }) {
+      Text('Linear Progress').fontSize(9).fontColor(0xCCCCCC).width('90%')
+      Progress({ value: 20, total: 150, type: ProgressType.Linear }).color(Color.Grey).value(50).width(200)
 
-10. Text('Capsule Progress').fontSize(9).fontColor(0xCCCCCC).width('90%')
-11. Row({ space: 40 }) {
-12. Progress({ value: 20, total: 150, type: ProgressType.Capsule }).color(Color.Grey).value(50).width(100).height(50)
-13. }
-14. }.width('100%').margin({ top: 30 })
-15. }
-16. }
+      Text('Capsule Progress').fontSize(9).fontColor(0xCCCCCC).width('90%')
+      Row({ space: 40 }) {
+        Progress({ value: 20, total: 150, type: ProgressType.Capsule }).color(Color.Grey).value(50).width(100).height(50)
+      }
+    }.width('100%').margin({ top: 30 })
+  }
+}
 ```
 
 ### 横屏悬浮窗尺寸优化
@@ -118,6 +118,64 @@ Progress组件的color属性。
 **适配指导**
 
 默认效果变更，开发者需审视此变更是否对自身相关业务代码逻辑产生影响，若有影响需根据自身业务代码进行对应适配。
+
+### 新增状态管理V1校验报错
+
+**变更原因**
+
+自定义组件struct中使用状态管理V1的装饰器装饰Function类型的变量时，会出现运行时crash异常，提示开发者不支持装饰Function类型。为提升开发者运行时代码的稳定性，新增编译报错：如果自定义组件struct中使用状态管理V1的装饰器装饰Function类型的变量，则编译报错并中断编译。
+
+**变更影响**
+
+此变更涉及应用适配。
+
+变更前：自定义组件struct中使用状态管理V1装饰器装饰Function类型的变量时，编译能通过，但运行时会出现crash，并提示不支持该装饰方式。
+
+变更后：新增编译报错：如果自定义组件struct中使用状态管理V1的装饰器装饰Function类型的变量，则编译报错并中断编译，编译报错：The V1 decorator 'xxx' cannot be applied to a Function-type variable 'yyy'。
+
+**起始 API Level**
+
+不涉及API
+
+**变更的接口/组件**
+
+ArkUI状态管理V1装饰器：
+
+@State, @Prop, @Link, @Provide, @Consume, @StorageLink, @LocalStorageLink, @StorageProp, @LocalStorageProp, @ObjectLink
+
+**适配指导**
+
+当被状态管理V1的装饰器装饰的变量类型为Function类型（如下示例为Function类型）时，可以将对应的状态管理V1的装饰器移除，使用常规变量声明修复编译与运行时异常。
+
+编译报错示例：
+
+```screen
+@Entry
+@Component
+struct Index {
+  @State func1: Function = () => {}; // 编译报错
+  @State func2: (input: number) => void = (input: number) => {}; // 编译报错
+
+  build() {
+    // 业务代码
+  }
+}
+```
+
+将@State移除后可修复编译报错：
+
+```screen
+@Entry
+@Component
+struct Index {
+  func1: Function = () => {};
+  func2: (input: number) => void = (input: number) => {};
+
+  build() {
+    // 业务代码
+  }
+}
+```
 
 ## ArkGraphics 2D（该变更同时涉及ArkUI）
 
@@ -201,6 +259,103 @@ API 6
 **适配指导**
 
 接口默认效果变更，但开发者需审视此变更是否对自身相关业务展示效果产生影响，若有影响需根据自身业务代码进行对应适配。
+
+## Media Library Kit
+
+### 动态照片资源的PhotoKeys.DURATION字段值变更
+
+**变更原因**
+
+图库应用需获取动态照片中附带视频片段的时长，并根据该时长判断是否支持生成3D动态照片。因此动态照片PhotoKeys.DURATION字段的取值由图片资源的默认值0变更为动态照片附带视频片段的时长。
+
+**变更影响**
+
+变更前：动态照片（PhotoKeys.PHOTO\_SUBTYPE=PhotoSubtype.MOVING\_PHOTO）的PhotoKeys.DURATION字段值为0。
+
+变更后：动态照片（PhotoKeys.PHOTO\_SUBTYPE=PhotoSubtype.MOVING\_PHOTO）的PhotoKeys.DURATION字段值为视频部分的时长；若无法解析则为-1。
+
+如果应用使用PhotoKeys.DURATION字段进行业务逻辑判断，如判断图片和视频的分类，则需要进行适配，改为使用其他接口进行判断。
+
+**起始 API Level**
+
+14
+
+**变更的接口/组件**
+
+PhotoKeys.DURATION
+
+**适配指导**
+
+DURATION字段值仅可用于表示视频或动态照片中附带视频片段的时长，若需要判断图片和视频的分类，建议使用mimeType字段或PhotoKeys.PHOTO\_TYPE字段进行判断。具体判断方法和示例代码如下：
+
+* 使用mimeType字段判断图片和视频资源类型，具体判断方式如下：
+
+  + 当mimeType以'image/'开头时，表示该媒体文件为图片。
+  + 当mimeType以'video/'开头时，表示该媒体文件为视频。
+
+  示例：
+
+  ```typescript
+  function getMediaTypeByMimeType(mimeType: string): string {
+    if (mimeType.startsWith('video/')) {
+      return 'video';
+    } else if (mimeType.startsWith('image/')) {
+      return 'image';
+    }
+    return 'unknown';
+  }
+  ```
+* 使用PhotoKeys.PHOTO\_TYPE字段判断图片和视频资源类型，具体判断方式如下：
+
+  + 当PhotoKeys.PHOTO\_TYPE为PhotoType.IMAGE时，表示该媒体文件为图片。
+  + 当PhotoKeys.PHOTO\_TYPE为PhotoType.VIDEO时，表示该媒体文件为视频。
+
+  调用getAssets接口查询指定URI对应的图片或视频的PhotoKeys.PHOTO\_TYPE，以区分媒体类型，需要申请'ohos.permission.READ\_IMAGEVIDEO'权限。
+
+  通过picker的方式调用getAssets接口查询指定URI对应的图片或视频的PhotoKeys.PHOTO\_TYPE，以区分媒体类型，则不需要申请此权限，详情请参考[指定URI获取图片或视频资源](../harmonyos-guides/photoaccesshelper-photoviewpicker.md#指定uri获取图片或视频资源)。
+
+  示例：
+
+  ```typescript
+  import { photoAccessHelper } from '@kit.MediaLibraryKit';
+  import { dataSharePredicates } from '@kit.ArkData';
+
+  async function getMediaTypeByPhotoType(phAccessHelper: photoAccessHelper.PhotoAccessHelper, uri: string): Promise<string> {
+    let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+    predicates.equalTo(photoAccessHelper.PhotoKeys.URI, uri);
+    let fetchOptions: photoAccessHelper.FetchOptions = {
+      fetchColumns: [
+        photoAccessHelper.PhotoKeys.PHOTO_TYPE
+      ],
+      predicates: predicates
+    };
+    try {
+      let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOptions);
+      if (fetchResult !== undefined) {
+        console.info('fetchResult success');
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        if (photoAsset !== undefined) {
+          console.info('photoAsset.displayName :' + photoAsset.displayName);
+          let photoType: photoAccessHelper.PhotoKeys = photoAccessHelper.PhotoKeys.PHOTO_TYPE;
+          let photoAssetPhotoType : number = Number(photoAsset.get(photoType.toString()))
+          if (photoAssetPhotoType === photoAccessHelper.PhotoType.VIDEO) {
+            return 'video';
+          } else if (photoAssetPhotoType === photoAccessHelper.PhotoType.IMAGE) {
+            return 'image';
+          }
+          return 'unknown';
+        }
+      }
+    } catch (err) {
+      console.error(`getAssets failed, error: ${err.code}, ${err.message}`);
+    }
+    return 'undefined';
+  }
+  ```
+
+**说明** 
+
+如果应用需要判断媒体资源是否为动态照片，建议使用PhotoKeys.PHOTO\_SUBTYPE字段进行判断。可参考上述判断图片和视频资源类型的示例，调用getAssets接口查询指定URI对应的图片或视频的PhotoKeys.PHOTO\_SUBTYPE字段，当PhotoKeys.PHOTO\_SUBTYPE为PhotoSubtype.MOVING\_PHOTO时，表示该媒体文件为动态照片。
 
 ## Performance Analysis Kit
 

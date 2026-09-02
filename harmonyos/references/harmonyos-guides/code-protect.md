@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/code-protect
 title: 应用加密
 breadcrumb: 指南 > 系统 > 安全 > 应用加密
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:30:41+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:eed1058649417bff3f23dc12f051351847e93a3b52fe6ad7ab4404327406176f
+scraped_at: 2026-09-02T14:59:27+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:5fa90b30a719515ff4e8e46d2862e1532a3ccd5a05a00b6a88d4c5394974cfec
 ---
 
-注意
+**注意** 
 
 应用加密特性可以有效提高应用代码文件逆向分析的难度，但应用代码防逆向是一个持续攻防对抗的过程，如对代码文件保护有更高的要求，需要结合其他安全加固措施，进一步提高逆向分析应用的难度。
 
@@ -16,7 +16,7 @@ content_hash: sha256:eed1058649417bff3f23dc12f051351847e93a3b52fe6ad7ab440432740
 
 为了保护应用代码安全，保护开发者的核心资产，HarmonyOS提供了端到端的应用代码保护机制，该机制以系统安全为基础，构建内核级应用生命周期内的代码安全保护能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/MNmPwtEgScO1Mr3LFPHcMA/zh-cn_image_0000002589324741.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/XQp_icAMTCKVBzrBoZhqkw/zh-cn_image_0000002706834268.png)
 
 开发者向应用市场提交上架申请，上传应用包后可[选择是否加密](../app/agc-help-release-app-choose-pkg-0000002278981434.md)。
 
@@ -27,12 +27,16 @@ content_hash: sha256:eed1058649417bff3f23dc12f051351847e93a3b52fe6ad7ab440432740
 * 内核级的安全保护，应用端到端加密，应用启动后再按需解密执行。
 * 系统级的解密优化，相对于传统加壳等加固方式对性能的影响更小。
 
+## 支持的国家/地区
+
+中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）
+
 ## 加密影响
 
 1. 加密后的应用在程序启动和运行过程中可能会小幅度增加性能开销。
 2. 加密后的应用相比于不加密的应用体积更大，可能会小幅度增加下载和安装时间。
 
-注意
+**注意** 
 
 应用加密后的影响已经进行过系统级的优化，在部分优化后的版本上应用加密前后的性能与包体大小几乎无变化。
 
@@ -44,7 +48,7 @@ content_hash: sha256:eed1058649417bff3f23dc12f051351847e93a3b52fe6ad7ab440432740
 
 应用加密特性在应用上架时加密，应用运行时按需解密。安全增强的同时，确保开发者、消费者无感的安全体验，避免应用开发者适配工作，保障用户无感的纯净安全体验。
 
-注意
+**注意** 
 
 当前ArkTS卡片服务对应的widgets.abc文件暂不支持加密服务。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-o
 title: 关闭订单
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 直连商户 > 基础支付 > 关闭订单
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c05aa18305b88a41897f6d276ba6bef88b8961cbe92028e6c8c6faf0bc4d01e7
+scraped_at: 2026-09-02T14:53:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c8261e08bf3373a2322ed04834bfd839c90c81b49bbc525daf45b7c2c1120e0d
 ---
 
 ## 功能介绍
@@ -46,14 +46,14 @@ content_hash: sha256:c05aa18305b88a41897f6d276ba6bef88b8961cbe92028e6c8c6faf0bc4
 
 ## 请求示例
 
-```
-1. POST /api/v1/aggr/transactions/orders/close HTTP/1.1
-2. Content-Type: application/json;charset=UTF-8
-3. PayMercAuth: {"callerId":"10132120***","traceId":"202305151026422776499","time":1684117602555,"authId":"120291744647139***","headerSign":"u+H1Oe3fXV9mGCES89XA7tSjp8+********************lOG7eAFfwjEWJu5JyvY5KunSeE6DiKs=","bodySign":"yWDtXOBqDoItPgHmF57L6U5G7F/*******************asPj10iUIFeaszpiRT2aQDaqLGaxvta6J5UxIUmAp+wGdV/juGEvQ="}
-4. Accept: application/json
-5. {
-6. "mercOrderNo": "czl00120240705***"
-7. }
+```json
+POST /api/v1/aggr/transactions/orders/close HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+PayMercAuth: {"callerId":"10132120***","traceId":"202305151026422776499","time":1684117602555,"authId":"120291744647139***","headerSign":"u+H1Oe3fXV9mGCES89XA7tSjp8+********************lOG7eAFfwjEWJu5JyvY5KunSeE6DiKs=","bodySign":"yWDtXOBqDoItPgHmF57L6U5G7F/*******************asPj10iUIFeaszpiRT2aQDaqLGaxvta6J5UxIUmAp+wGdV/juGEvQ="}
+Accept: application/json
+{
+  "mercOrderNo": "czl00120240705***"
+}
 ```
 
 ## 响应参数
@@ -76,14 +76,14 @@ content_hash: sha256:c05aa18305b88a41897f6d276ba6bef88b8961cbe92028e6c8c6faf0bc4
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json; charset=UTF-8
-3. {
-4. "resultCode": "000000",
-5. "resultDesc": "Success.",
-6. "sign": "MEQCIEIWzdpziRyTi8vhwWHFu********************0YAMabeCgTDG77e+2XJItvq/ZkIcCN5/B20pQ=="
-7. }
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+{
+  "resultCode": "000000",
+  "resultDesc": "Success.",
+  "sign": "MEQCIEIWzdpziRyTi8vhwWHFu********************0YAMabeCgTDG77e+2XJItvq/ZkIcCN5/B20pQ=="
+}
 ```
 
 ## 错误码

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cloudfoun
 title: cloudResPrefetch（预加载模块）
 breadcrumb: API参考 > 应用服务 > Cloud Foundation Kit（云开发服务） > ArkTS API > cloudResPrefetch（预加载模块）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:32+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:ee775f8e205a4e609ad2b9867642d013b9295882b5039545f428a77ef2be7dae
+scraped_at: 2026-09-02T14:53:16+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1628c0112d3989ff9658d8a07fdc825d5bd9cbfb572e87008894dee7a7605070
 ---
 
 本模块提供调用预加载的能力。
@@ -14,19 +14,15 @@ content_hash: sha256:ee775f8e205a4e609ad2b9867642d013b9295882b5039545f428a77ef2b
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { cloudResPrefetch } from '@kit.CloudFoundationKit';
+```typescript
+import { cloudResPrefetch } from '@kit.CloudFoundationKit';
 ```
 
 ## registerPrefetchTask
 
-PhonePC/2in1Tablet
-
 registerPrefetchTask(options: PrefetchOptions): void
 
-注册周期性预加载任务。周期性预加载适用，安装预加载不涉及。在应用启动后，需显式调用本接口，调用成功后才可触发周期性预加载任务。
+注册一个周期性的预加载任务，适用于需要定期更新云端资源的应用场景。在应用启动后，需显式调用本接口，调用成功后才可触发周期性预加载任务。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -44,7 +40,7 @@ registerPrefetchTask(options: PrefetchOptions): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-cloudfoundation.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-cloudfoundation.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -53,24 +49,22 @@ registerPrefetchTask(options: PrefetchOptions): void
 
 **示例：**
 
-```
-1. import { cloudResPrefetch } from '@kit.CloudFoundationKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudResPrefetch } from '@kit.CloudFoundationKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. try {
-5. cloudResPrefetch.registerPrefetchTask({
-6. token: "testToken",
-7. params: "testParams"
-8. });
-9. hilog.info(0x0000, 'testTag', `Succeeded in registering prefetch task`);
-10. } catch (err) {
-11. hilog.error(0x0000, 'testTag', `Failed to register prefetch task`);
-12. }
+try {
+  cloudResPrefetch.registerPrefetchTask({
+    token: 'testToken',
+    params: 'testParams'
+  });
+  hilog.info(0x0000, 'testTag', `Succeeded in registering prefetch task`);
+} catch (err) {
+  hilog.error(0x0000, 'testTag', `Failed to register prefetch task`);
+}
 ```
 
 ## PrefetchOptions
-
-PhonePC/2in1Tablet
 
 周期性预加载任务初始化配置参数。
 
@@ -88,8 +82,6 @@ PhonePC/2in1Tablet
 | params | string | Object | 否 | 是 | 自定义参数。会携带透传至开发者自己的函数中，由开发者自行定义并解析。 |
 
 ## getPrefetchResult
-
-PhonePC/2in1Tablet
 
 getPrefetchResult(mode: PrefetchMode, callback: AsyncCallback<PrefetchResult>, params?: PrefetchParams): void
 
@@ -111,7 +103,7 @@ getPrefetchResult(mode: PrefetchMode, callback: AsyncCallback<PrefetchResult>, p
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-cloudfoundation.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-cloudfoundation.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -120,53 +112,51 @@ getPrefetchResult(mode: PrefetchMode, callback: AsyncCallback<PrefetchResult>, p
 
 **示例：**
 
-```
-1. import { cloudResPrefetch } from '@kit.CloudFoundationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudResPrefetch } from '@kit.CloudFoundationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. // 获取安装预加载数据
-6. cloudResPrefetch.getPrefetchResult(cloudResPrefetch.PrefetchMode.INSTALL_PREFETCH,
-7. (err: BusinessError, data: cloudResPrefetch.PrefetchResult) => {
-8. if (err) {
-9. hilog.error(0x0000, 'testTag', `Failed to get install prefetch data, code: ${err.code}, message: ${err.message}`);
-10. } else {
-11. hilog.info(0x0000, 'testTag',
-12. `Succeeded in getting install prefetch data, result: ${JSON.stringify(data.result)}`);
-13. }
-14. });
+// 获取安装预加载数据
+cloudResPrefetch.getPrefetchResult(cloudResPrefetch.PrefetchMode.INSTALL_PREFETCH,
+  (err: BusinessError, data: cloudResPrefetch.PrefetchResult) => {
+    if (err) {
+      hilog.error(0x0000, 'testTag', `Failed to get install prefetch data, code: ${err.code}, message: ${err.message}`);
+    } else {
+      hilog.info(0x0000, 'testTag',
+        `Succeeded in getting install prefetch data, result: ${JSON.stringify(data.result)}`);
+    }
+  });
 
-16. // 获取周期性预加载数据
-17. cloudResPrefetch.getPrefetchResult(cloudResPrefetch.PrefetchMode.PERIODIC_PREFETCH,
-18. (err: BusinessError, data: cloudResPrefetch.PrefetchResult) => {
-19. if (err) {
-20. hilog.error(0x0000, 'testTag',
-21. `Failed to get periodic prefetch data, code: ${err.code}, message: ${err.message}`);
-22. } else {
-23. hilog.info(0x0000, 'testTag',
-24. `Succeeded in getting periodic prefetch data, result: ${JSON.stringify(data.result)}`);
-25. }
-26. });
+// 获取周期性预加载数据
+cloudResPrefetch.getPrefetchResult(cloudResPrefetch.PrefetchMode.PERIODIC_PREFETCH,
+  (err: BusinessError, data: cloudResPrefetch.PrefetchResult) => {
+    if (err) {
+      hilog.error(0x0000, 'testTag',
+        `Failed to get periodic prefetch data, code: ${err.code}, message: ${err.message}`);
+    } else {
+      hilog.info(0x0000, 'testTag',
+        `Succeeded in getting periodic prefetch data, result: ${JSON.stringify(data.result)}`);
+    }
+  });
 
-28. // 获取跳链安装预加载数据
-29. let params: cloudResPrefetch.PrefetchParams = {
-30. link: 'link' // 需要替换为延迟链接
-31. }
-32. cloudResPrefetch.getPrefetchResult(cloudResPrefetch.PrefetchMode.LINK_PREFETCH,
-33. (err: BusinessError, data: cloudResPrefetch.PrefetchResult) => {
-34. if (err) {
-35. hilog.error(0x0000, 'testTag',
-36. `Failed to get link prefetch data, code: ${err.code}, message: ${err.message}`);
-37. } else {
-38. hilog.info(0x0000, 'testTag',
-39. `Succeeded in getting link prefetch data, result: ${JSON.stringify(data.result)}`);
-40. }
-41. }, params);
+// 获取跳链安装预加载数据
+let params: cloudResPrefetch.PrefetchParams = {
+  link: 'link' // 需要替换为延迟链接
+}
+cloudResPrefetch.getPrefetchResult(cloudResPrefetch.PrefetchMode.LINK_PREFETCH,
+  (err: BusinessError, data: cloudResPrefetch.PrefetchResult) => {
+    if (err) {
+      hilog.error(0x0000, 'testTag',
+        `Failed to get link prefetch data, code: ${err.code}, message: ${err.message}`);
+    } else {
+      hilog.info(0x0000, 'testTag',
+        `Succeeded in getting link prefetch data, result: ${JSON.stringify(data.result)}`);
+    }
+  }, params);
 ```
 
 ## getPrefetchResult
-
-PhonePC/2in1Tablet
 
 getPrefetchResult(mode: PrefetchMode, params?: PrefetchParams): Promise<PrefetchResult>
 
@@ -193,7 +183,7 @@ getPrefetchResult(mode: PrefetchMode, params?: PrefetchParams): Promise<Prefetch
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-cloudfoundation.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-cloudfoundation.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -202,47 +192,45 @@ getPrefetchResult(mode: PrefetchMode, params?: PrefetchParams): Promise<Prefetch
 
 **示例：**
 
-```
-1. import { cloudResPrefetch } from '@kit.CloudFoundationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudResPrefetch } from '@kit.CloudFoundationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. // 获取安装预加载数据
-6. cloudResPrefetch.getPrefetchResult(cloudResPrefetch.PrefetchMode.INSTALL_PREFETCH)
-7. .then((data: cloudResPrefetch.PrefetchResult) => {
-8. hilog.info(0x0000, 'testTag', `Succeeded in getting install prefetch data, result: ${JSON.stringify(data.result)}`);
-9. })
-10. .catch((err: BusinessError) => {
-11. hilog.error(0x0000, 'testTag', `Failed to get install prefetch data, code: ${err.code}, message: ${err.message}`);
-12. });
+// 获取安装预加载数据
+cloudResPrefetch.getPrefetchResult(cloudResPrefetch.PrefetchMode.INSTALL_PREFETCH)
+  .then((data: cloudResPrefetch.PrefetchResult) => {
+    hilog.info(0x0000, 'testTag', `Succeeded in getting install prefetch data, result: ${JSON.stringify(data.result)}`);
+  })
+  .catch((err: BusinessError) => {
+    hilog.error(0x0000, 'testTag', `Failed to get install prefetch data, code: ${err.code}, message: ${err.message}`);
+  });
 
-14. // 获取周期性预加载数据
-15. cloudResPrefetch.getPrefetchResult(cloudResPrefetch.PrefetchMode.PERIODIC_PREFETCH)
-16. .then((data: cloudResPrefetch.PrefetchResult) => {
-17. hilog.info(0x0000, 'testTag',
-18. `Succeeded in getting periodic prefetch data, result: ${JSON.stringify(data.result)}`);
-19. })
-20. .catch((err: BusinessError) => {
-21. hilog.error(0x0000, 'testTag', `Failed to get periodic prefetch data, code: ${err.code}, message: ${err.message}`);
-22. });
+// 获取周期性预加载数据
+cloudResPrefetch.getPrefetchResult(cloudResPrefetch.PrefetchMode.PERIODIC_PREFETCH)
+  .then((data: cloudResPrefetch.PrefetchResult) => {
+    hilog.info(0x0000, 'testTag',
+      `Succeeded in getting periodic prefetch data, result: ${JSON.stringify(data.result)}`);
+  })
+  .catch((err: BusinessError) => {
+    hilog.error(0x0000, 'testTag', `Failed to get periodic prefetch data, code: ${err.code}, message: ${err.message}`);
+  });
 
-24. // 获取跳链安装预加载数据
-25. let params: cloudResPrefetch.PrefetchParams = {
-26. link: 'link' // 需要替换为延迟链接
-27. }
-28. cloudResPrefetch.getPrefetchResult(cloudResPrefetch.PrefetchMode.LINK_PREFETCH, params)
-29. .then((data: cloudResPrefetch.PrefetchResult) => {
-30. hilog.info(0x0000, 'testTag',
-31. `Succeeded in getting link prefetch data, result: ${JSON.stringify(data.result)}`);
-32. })
-33. .catch((err: BusinessError) => {
-34. hilog.error(0x0000, 'testTag', `Failed to get link prefetch data, code: ${err.code}, message: ${err.message}`);
-35. });
+// 获取跳链安装预加载数据
+let params: cloudResPrefetch.PrefetchParams = {
+  link: 'link' // 需要替换为延迟链接
+}
+cloudResPrefetch.getPrefetchResult(cloudResPrefetch.PrefetchMode.LINK_PREFETCH, params)
+  .then((data: cloudResPrefetch.PrefetchResult) => {
+    hilog.info(0x0000, 'testTag',
+      `Succeeded in getting link prefetch data, result: ${JSON.stringify(data.result)}`);
+  })
+  .catch((err: BusinessError) => {
+    hilog.error(0x0000, 'testTag', `Failed to get link prefetch data, code: ${err.code}, message: ${err.message}`);
+  });
 ```
 
 ## PrefetchMode
-
-PhonePC/2in1Tablet
 
 枚举， 预加载类型。
 
@@ -260,8 +248,6 @@ PhonePC/2in1Tablet
 
 ## PrefetchParams
 
-PhonePC/2in1Tablet
-
 预加载参数。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -275,8 +261,6 @@ PhonePC/2in1Tablet
 | link | string | 否 | 是 | 跳链安装预加载延迟链接。  **说明：** 元服务不支持该字段。 |
 
 ## PrefetchResult
-
-PhonePC/2in1Tablet
 
 获取预加载数据返回的结果。
 

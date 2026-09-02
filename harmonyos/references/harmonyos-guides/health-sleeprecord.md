@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-sleepr
 title: 睡眠
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 数据类型 > 健康记录数据 > 睡眠
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:21+08:00
+scraped_at: 2026-09-02T14:59:56+08:00
 doc_updated_at: 2026-04-20
 content_hash: sha256:ef46e24e35a631dfc276633b162a24b195625ee5c5bf56c7458d80761bf02460
 ---

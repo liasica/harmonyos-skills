@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-sensorservicekit-6021
 title: Sensor Service Kit
-breadcrumb: 版本说明 > HarmonyOS 6.0.2(22) > OS平台能力 > API变更清单 > Sensor Service Kit
+breadcrumb: 版本说明 > 更多版本 > 6.0.2(22) > OS平台能力 > API变更清单 > Sensor Service Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:49+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:25+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:82efa9f2ac10df40b89da11e4923b7ce021e76edc76baa036ec659b10f171586
 ---
 

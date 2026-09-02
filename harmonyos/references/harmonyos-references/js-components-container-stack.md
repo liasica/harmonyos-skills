@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: stack
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 容器组件 > stack
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:20+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:9fc145e45de8e06d2c6e9f073ae3de7b0d862166d5e600a2611ab672b1926c8d
+scraped_at: 2026-09-02T15:01:11+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1f58a0aef449cf2c6f965b11958e17b4f2b508338a6966d89b4ddd2a606b8219
 ---
 
-说明
+**说明** 
 
 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -16,82 +16,68 @@ content_hash: sha256:9fc145e45de8e06d2c6e9f073ae3de7b0d862166d5e600a2611ab672b19
 
 ## 权限列表
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## 子组件
-
-PhonePC/2in1TabletTVWearable
 
 支持。
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用属性](js-components-common-attributes.md)。
 
 ## 样式
-
-PhonePC/2in1TabletTVWearable
 
 支持[通用样式](js-components-common-styles.md)。
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用事件](js-components-common-events.md)。
 
 ## 方法
-
-PhonePC/2in1TabletTVWearable
 
 支持[通用方法](js-components-common-methods.md)。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <stack class="stack-parent">
-3. <div class="back-child bd-radius"></div>
-4. <div class="positioned-child bd-radius"></div>
-5. <div class="front-child bd-radius"></div>
-6. </stack>
+```html
+<!-- xxx.hml -->
+<stack class="stack-parent">
+  <div class="back-child bd-radius"></div>
+  <div class="positioned-child bd-radius"></div>
+  <div class="front-child bd-radius"></div>
+</stack>
 ```
 
-```
-1. /* xxx.css */
-2. .stack-parent {
-3. width: 400px;
-4. height: 400px;
-5. background-color: #ffffff;
-6. border-width: 1px;
-7. border-style: solid;
-8. }
-9. .back-child {
-10. width: 300px;
-11. height: 300px;
-12. background-color: #3f56ea;
-13. }
-14. .front-child {
-15. width: 100px;
-16. height: 100px;
-17. background-color: #00bfc9;
-18. }
-19. .positioned-child {
-20. width: 100px;
-21. height: 100px;
-22. left: 50px;
-23. top: 50px;
-24. background-color: #47cc47;
-25. }
-26. .bd-radius {
-27. border-radius: 16px;
-28. }
+```css
+/* xxx.css */
+.stack-parent {
+  width: 400px;
+  height: 400px;
+  background-color: #ffffff;
+  border-width: 1px;
+  border-style: solid;
+}
+.back-child {
+  width: 300px;
+  height: 300px;
+  background-color: #3f56ea;
+}
+.front-child {
+  width: 100px;
+  height: 100px;
+  background-color: #00bfc9;
+}
+.positioned-child {
+  width: 100px;
+  height: 100px;
+  left: 50px;
+  top: 50px;
+  background-color: #47cc47;
+}
+.bd-radius {
+  border-radius: 16px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/ehdjQuNgQ1i0HxmyUK0DRQ/zh-cn_image_0000002589326577.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/0OVta9kGRASjK0FVYCHqVw/zh-cn_image_0000002736435527.png)

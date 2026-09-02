@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-opera
 title: GetOutputDesc
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator > GetOutputDesc
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:45+08:00
+scraped_at: 2026-09-02T15:00:12+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:bd4b61b6409febeb933d1e467e3b96acb87dfaa016440fa14721671139f696a6
+content_hash: sha256:c7c7cc2b1b564a870448d4f5b1c20c5b1bad66635e8dc3c79422454c874f541f
 ---
 
 ## 函数功能
@@ -14,14 +14,14 @@ content_hash: sha256:bd4b61b6409febeb933d1e467e3b96acb87dfaa016440fa14721671139f
 
 ## 函数原型
 
-说明
+**说明** 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 
-```
-1. TensorDesc GetOutputDesc(const std::string &name) const;
-2. TensorDesc GetOutputDescByName(const char_t *name) const;
-3. TensorDesc GetOutputDesc(uint32_t index) const;
+```cpp
+TensorDesc GetOutputDesc(const std::string &name) const;
+TensorDesc GetOutputDescByName(const char_t *name) const;
+TensorDesc GetOutputDesc(uint32_t index) const;
 ```
 
 ## 参数说明

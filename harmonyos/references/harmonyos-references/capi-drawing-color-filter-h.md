@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: drawing_color_filter.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > drawing_color_filter.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:52+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:02444044bea188cb7bd67351e7a9e4c27b8dc3de09f1dc2094c5c929681e7a40
+scraped_at: 2026-09-02T15:02:42+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:90fdd6fc5d5b1cc410a6efc0791b161d3fbc18c56143df1a479f5c196907451c
 ---
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
 声明与绘图模块中的颜色滤波器对象相关的函数。
+
+本模块为单线程模型策略，需要调用方自行管理线程安全和上下文状态的切换。
 
 **引用文件：** <native\_drawing/drawing\_color\_filter.h>
 
@@ -26,11 +26,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -45,14 +41,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Drawing\_ColorFilterCreateBlendMode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateBlendMode(uint32_t color, OH_Drawing_BlendMode blendMode)
+```c
+OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateBlendMode(uint32_t color, OH_Drawing_BlendMode blendMode)
 ```
 
 **描述**
@@ -78,10 +70,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_ColorFilterCreateCompose()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateCompose(OH_Drawing_ColorFilter* outerColorFilter,OH_Drawing_ColorFilter* innerColorFilter)
+```c
+OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateCompose(OH_Drawing_ColorFilter* outerColorFilter,OH_Drawing_ColorFilter* innerColorFilter)
 ```
 
 **描述**
@@ -111,10 +101,8 @@ outerColorFilter、innerColorFilter任意一个为NULL时返回OH\_DRAWING\_ERRO
 
 ### OH\_Drawing\_ColorFilterCreateMatrix()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateMatrix(const float matrix[20])
+```c
+OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateMatrix(const float matrix[20])
 ```
 
 **描述**
@@ -143,10 +131,8 @@ matrix为NULL时返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER。
 
 ### OH\_Drawing\_ColorFilterCreateLinearToSrgbGamma()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateLinearToSrgbGamma(void)
+```c
+OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateLinearToSrgbGamma(void)
 ```
 
 **描述**
@@ -165,10 +151,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_ColorFilterCreateSrgbGammaToLinear()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateSrgbGammaToLinear(void)
+```c
+OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateSrgbGammaToLinear(void)
 ```
 
 **描述**
@@ -187,10 +171,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_ColorFilterCreateLuma()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateLuma(void)
+```c
+OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateLuma(void)
 ```
 
 **描述**
@@ -209,10 +191,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_ColorFilterCreateLighting()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateLighting(uint32_t mulColor, uint32_t addColor)
+```c
+OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateLighting(uint32_t mulColor, uint32_t addColor)
 ```
 
 **描述**
@@ -238,10 +218,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_ColorFilterDestroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Drawing_ColorFilterDestroy(OH_Drawing_ColorFilter* colorFilter)
+```c
+void OH_Drawing_ColorFilterDestroy(OH_Drawing_ColorFilter* colorFilter)
 ```
 
 **描述**

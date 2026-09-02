@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: OH_Drawing_LineTypography
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 结构体 > OH_Drawing_LineTypography
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:21+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:d45580f10c5e99b2169dd5799af8e843a3a1c090d57641c8ecdbbc77bf2cce5d
+scraped_at: 2026-09-02T14:53:10+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e54fbc410e7b2164881ea8950b532a583b66b5ceb854a0fc5a669d6e46295d28
 ---
 
-```
-1. typedef struct OH_Drawing_LineTypography OH_Drawing_LineTypography
+```c
+typedef struct OH_Drawing_LineTypography OH_Drawing_LineTypography
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 用于从一段文字中提取单行数据进行排版。
 

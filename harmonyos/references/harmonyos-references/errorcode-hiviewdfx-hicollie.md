@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: HiCollie错误码
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 错误码 > HiCollie错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:30+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:95460221d28bb9485d5dd09068e6eb842165c70429e83c2d3f8e95eee364c277
+scraped_at: 2026-09-02T15:02:17+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2b7012fe378d1e8a778aa8d4978be63b9c98529d30100316257739b51216a210
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
@@ -16,15 +16,15 @@ content_hash: sha256:95460221d28bb9485d5dd09068e6eb842165c70429e83c2d3f8e95eee36
 
 **错误信息**
 
-Wrong thread context.The function can not be called from main thread.
+Wrong thread context. The function cannot be called from main thread.
 
 **错误描述**
 
-调用接口线程错误。
+在错误的线程中调用接口。
 
 **可能原因**
 
-无法从主线程调用该接口服务。
+该接口服务无法从主线程调用。
 
 **处理步骤**
 
@@ -110,7 +110,7 @@ Wrong timer id output param.
 
 **错误描述**
 
-错误的任务id值参数。
+错误的timer id值参数。
 
 **可能原因**
 
@@ -120,4 +120,4 @@ Wrong timer id output param.
 **处理步骤**
 
 * 检查传入的id参数，确保其为非空整型指针；
-* 重试或减少该进程中hicollie检测机制的在其他地方的调用。
+* 如果达到最大值限制，请减少该进程中hicollie检测机制的在其他地方的调用后重试。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/c-cpp-overvie
 title: C/C++标准库机制概述
 breadcrumb: 指南 > NDK开发 > 代码开发 > C/C++标准库 > C/C++标准库机制概述
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:43:55+08:00
-doc_updated_at: 2026-03-20
-content_hash: sha256:9a3c17bda52ce9a306431a62360002c1d216aff41e3a7fd3ee58c4018f052cdc
+scraped_at: 2026-09-02T15:00:15+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:48b0a88b32c14a124a9bc0e31ce31f6660da5efb9d5a169af8df4709e6b3de09
 ---
 
 HarmonyOS NDK提供业界标准库[libc标准库](../harmonyos-references/musl.md)、[c++标准库](../harmonyos-references/cpp.md)，本文用于介绍C/C++标准库在HarmonyOS中的机制，开发者了解这些机制有助于在NDK开发过程中避免相关问题。
@@ -19,7 +19,7 @@ HarmonyOS NDK提供业界标准库[libc标准库](../harmonyos-references/musl.m
 
 两个库使用不同的C++命名空间。libc++.so使用\_\_h，libc++\_shared.so使用\_\_n1。
 
-注意
+**注意** 
 
 系统和应用的C++标准库不能混用。Native API接口只能是C接口，用于隔离C++运行环境。如果HAR包中的libc++\_shared.so版本不同于应用，可能导致不兼容问题。解决方法是使用相同SDK版本更新HAR包。
 
@@ -46,7 +46,7 @@ HarmonyOS中动态库加载namespace配置的情况
 1. default ns和ndk ns可以互相访问全部so，不能访问app ns的so。
 2. app ns能访问ndk ns的全部so，不能访问default ns的so。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/z3YD8g9CSpa3Cy7jZ0tObg/zh-cn_image_0000002558765868.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/wxFYIJofTNO_Kv-hjIVpxw/zh-cn_image_0000002736314555.png)
 
 ### rpath机制
 
@@ -56,12 +56,12 @@ rpath（run-time path）是在运行时指定共享库搜索路径的机制。�
 
 例如，应用安装目录lib/arm64下的libhello.so依赖新创建路径lib/arm64/module下的libworld.so，那么在应用的CMakeLists.txt里设置上rpath编译选项后编译，使用readelf查看libhello.so的rpath配置如图所示，$ORIGIN为libhello.so所在路径，运行时即可正常加载module目录下的libworld.so。
 
-```
-1. SET(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
-2. SET(CMAKE_INSTALL_RPATH "\${ORIGIN}/module")
+```txt
+SET(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
+SET(CMAKE_INSTALL_RPATH "\${ORIGIN}/module")
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/PsGyWyQ8SsCyZdXivd9Nmg/zh-cn_image_0000002558606212.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/gH70kxn8TpqSHNc_3MjvIw/zh-cn_image_0000002706675512.png)
 
 ### 支持dlclose
 
@@ -79,19 +79,34 @@ symbol-version是libc在**动态链接-符号重定位**阶段的符号检索机
 
 ### 全球化支持
 
-自API12起，newlocale及setlocale接口支持将locale设置C、C.UTF-8、en\_US、en\_US.UTF-8、zh\_CN及zh\_CN.UTF-8。新增在zh\_CN及zh\_CN.UTF-8的locale设置下对strtod\_l、wcstod\_l和localeconv的支持。注意strtod\_l及wcstod\_l不支持对十六进制及十六进制小数的转换。
+自API12起，newlocale及setlocale接口支持将locale设置为C、C.UTF-8、en\_US、en\_US.UTF-8、zh\_CN及zh\_CN.UTF-8。新增在zh\_CN及zh\_CN.UTF-8的locale设置下对strtod\_l、wcstod\_l和localeconv的支持。注意strtod\_l及wcstod\_l不支持对十六进制及十六进制小数的转换。
 
 ### fdsan功能
 
 [fdsan使用指导](fdsan.md)可以帮助检测文件的重复关闭和关闭后使用问题。
+
+### 网络使用
+
+由于route netlink类型创建的socket通过send、sendto、sendmsg、getifaddrs、if\_nameindex接口调用RTM\_GETLINK（网络接口信息的核心消息类型）功能存在安全风险，因此不推荐使用。推荐使用C库ioctl接口，使用对应的cmd查询网络接口信息。
+
+鸿蒙内部ioctl接口cmd含义如下：
+
+| 名称 | 备注 |
+| --- | --- |
+| SIOCGIFINDEX | 获取网络接口索引 |
+| SIOCGIFFLAGS | 获取网络接口的标志（状态） |
+| SIOCGIFADDR | 获取网络接口的地址 |
+| SIOCGIFBRDADDR | 获取网络接口的广播地址 |
+| SIOCGIFNAME | 通过索引获取网络接口名称 |
+| SIOCGIFCONF | 获取所有网络接口的列表 |
 
 ## 信号使用
 
 为避免与系统保留信号冲突，开发者在使用信号时需遵循以下规则：
 
 * 信号编号 1～34：为系统内部保留信号，禁止使用；
-* 信号编号 35～45: 截止到目前 API 19，这些信号已被系统内部模块（如内存、DFX、运行时、系统服务等）占用，为避免与系统行为冲突并导致不可预期的问题，请勿使用该范围内的信号。
-* SIGRTMIN和\_\_libc\_current\_sigrtmin的值是35, 表示可供应用程序使用的实时信号起始编号(应用实际只能使用46及以上的信号)。
+* 信号编号 35～45：截止到目前 API 19，这些信号已被系统内部模块（如内存、DFX、运行时、系统服务等）占用，为避免与系统行为冲突并导致不可预期的问题，请勿使用该范围内的信号。
+* SIGRTMIN和\_\_libc\_current\_sigrtmin的值是35，表示可供应用程序使用的实时信号起始编号（应用实际只能使用46及以上的信号）。
 
 鸿蒙内部信号使用统计如下：
 

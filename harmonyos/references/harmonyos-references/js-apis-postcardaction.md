@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: postCardAction
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > postCardAction
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:34+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:221e165efdf023ac29a021b0a298433e5a086e850e266532c2f8672385f63a52
+scraped_at: 2026-09-02T15:00:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9ed861877a04a7b28163f7df8e6c3a26c7b654401598a1496e6b3defa91f9b0f
 ---
 
 用于卡片内部和提供方应用间的交互，当前支持router、message和call三种类型的事件，仅在卡片中可以调用。
 
-说明
+**说明** 
 
 本接口从API version 9开始支持。
 
 ## postCardAction
-
-PhonePC/2in1TabletTVWearable
 
 postCardAction(component: Object, action: Object): void
 
@@ -48,72 +46,72 @@ action参数说明：
 | uri11+ | string | 否 | action为router 类型时跳转的UIAbility的统一资源标识符。uri和abilityName同时存在时，abilityName优先。 |
 | params | Object | 否 | 当前action携带的额外参数，内容使用JSON格式的键值对形式。 |
 
-说明
+**说明** 
 
 "action"为"call" 类型时，"params"需填入参数'method'，且类型需为string类型，用于触发UIAbility中对应的方法。
 
 **示例：**
 
-```
-1. Button('跳转')
-2. .width('40%')
-3. .height('20%')
-4. .onClick(() => {
-5. postCardAction(this, {
-6. action: 'router',
-7. bundleName: 'com.example.myapplication',
-8. abilityName: 'EntryAbility',
-9. params: {
-10. message: 'testForRouter' // 自定义要发送的message
-11. }
-12. });
-13. })
+```ts
+Button('跳转')
+  .width('40%')
+  .height('20%')
+  .onClick(() => {
+    postCardAction(this, {
+      action: 'router',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility',
+      params: {
+        message: 'testForRouter' // 自定义要发送的message
+      }
+    });
+  })
 
-15. Button('拉至后台')
-16. .width('40%')
-17. .height('20%')
-18. .onClick(() => {
-19. postCardAction(this, {
-20. action: 'call',
-21. bundleName: 'com.example.myapplication',
-22. abilityName: 'EntryAbility',
-23. params: {
-24. method: 'fun', // 自定义调用的方法名，必填
-25. message: 'testForCall' // 自定义要发送的message
-26. }
-27. });
-28. })
+Button('拉至后台')
+  .width('40%')
+  .height('20%')
+  .onClick(() => {
+    postCardAction(this, {
+      action: 'call',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility',
+      params: {
+        method: 'fun', // 自定义调用的方法名，必填
+        message: 'testForCall' // 自定义要发送的message
+      }
+    });
+  })
 
-30. Button('URI跳转')
-31. .width('40%')
-32. .height('20%')
-33. .onClick(() => {
-34. postCardAction(this, {
-35. action: 'router',
-36. uri: 'example://uri.ohos.com/link_page',
-37. params: {
-38. message: 'router msg for dynamic uri deeplink' // 自定义要发送的message
-39. }
-40. });
-41. })
+Button('URI跳转')
+  .width('40%')
+  .height('20%')
+  .onClick(() => {
+    postCardAction(this, {
+      action: 'router',
+      uri: 'example://uri.ohos.com/link_page',
+      params: {
+        message: 'router msg for dynamic uri deeplink' // 自定义要发送的message
+      }
+    });
+  })
 ```
 
 **待跳转应用 [module.json5](../harmonyos-guides/module-configuration-file.md#skills标签) uris 配置示例：**
 
-```
-1. "abilities": [
-2. {
-3. "skills": [
-4. {
-5. "uris": [
-6. {
-7. "scheme": "example",
-8. "host": "uri.ohos.com",
-9. "path": "link_page"
-10. }
-11. ]
-12. }
-13. ]
-14. }
-15. ]
+```json
+"abilities": [
+  {
+    "skills": [
+      {
+        "uris": [
+          {
+            "scheme": "example",
+            "host": "uri.ohos.com",
+            "path": "link_page"
+          }
+        ]
+      }
+    ]
+  }
+]
 ```

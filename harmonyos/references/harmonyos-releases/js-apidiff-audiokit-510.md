@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-audiokit-510
 title: Audio Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.1.0(18) > OS平台能力 > API变更清单 > Audio Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.0(18) > OS平台能力 > API变更清单 > Audio Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:03+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:33+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:4cb18e3079cf24502f38d7393bf9dc16a541d83c00cf722745b2d853e6420f52
 ---
 

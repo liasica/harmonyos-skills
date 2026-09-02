@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-for-all-apps-b060
 title: 针对所有应用的变更
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Developer Beta5引入的接口行为变更 > 针对所有应用的变更
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Developer Beta5引入的接口行为变更 > 针对所有应用的变更
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:36:11+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:074bf87dd8e3ab24814b2f6c45a434544f3513854355df8b3fb0f6491bc2e679
+scraped_at: 2026-09-02T14:58:53+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:1047c9d7b39ee5a41f01b682d8075440da30c79003b953efea598aaa70976d50
 ---
 
 ## Ability Kit
@@ -94,37 +94,37 @@ util.TextDecoder模块ignoreBOM参数未使能，无法对存在BOM标记的数�
 
 新增接口与废弃接口功能保持一致，主要是对于接受的数据进行解码，新增了ignoreBOM功能。
 
-```
-1. import { util } from '@kit.ArkTS';
+```ts
+import { util } from '@kit.ArkTS';
 
-3. let textDecoderOptions: util.TextDecoderOptions = {
-4. fatal: false,
-5. ignoreBOM : true
-6. }
-7. let decodeToStringOptions: util.DecodeToStringOptions = {
-8. stream: false
-9. }
-10. let textDecoder = util.TextDecoder.create('utf-8', textDecoderOptions);
-11. let result = new Uint8Array(6);
-12. result[0] = 0xEF;
-13. result[1] = 0xBB;
-14. result[2] = 0xBF;
-15. result[3] = 0x61;
-16. result[4] = 0x62;
-17. result[5] = 0x63;
+let textDecoderOptions: util.TextDecoderOptions = {
+  fatal: false,
+  ignoreBOM : true
+}
+let decodeToStringOptions: util.DecodeToStringOptions = {
+  stream: false
+}
+let textDecoder = util.TextDecoder.create('utf-8', textDecoderOptions);
+let result = new Uint8Array(6);
+result[0] = 0xEF;
+result[1] = 0xBB;
+result[2] = 0xBF;
+result[3] = 0x61;
+result[4] = 0x62;
+result[5] = 0x63;
 
-19. // 废弃接口decodeWithStream表现:
-20. // let decodeWithStreamOptions: util.DecodeWithStreamOptions = {
-21. //   stream: false
-22. // }
-23. // let retStr = textDecoder.decodeWithStream(result , decodeWithStreamOptions);
-24. // console.info("retStr length: " + retStr.length); // retStr length: 4
-25. // console.info("retStr value: " + retStr); // retStr value: abc
+// 废弃接口decodeWithStream表现:
+// let decodeWithStreamOptions: util.DecodeWithStreamOptions = {
+//   stream: false
+// }
+// let retStr = textDecoder.decodeWithStream(result , decodeWithStreamOptions);
+// console.info("retStr length: " + retStr.length); // retStr length: 4
+// console.info("retStr value: " + retStr); // retStr value: abc
 
-27. // 新增接口decodeToString表现:
-28. let retStr = textDecoder.decodeToString(result , decodeToStringOptions);
-29. console.info("retStr length: " + retStr.length); // retStr length: 3
-30. console.info("retStr value: " + retStr); // retStr value: abc
+// 新增接口decodeToString表现:
+let retStr = textDecoder.decodeToString(result , decodeToStringOptions);
+console.info("retStr length: " + retStr.length); // retStr length: 3
+console.info("retStr value: " + retStr); // retStr value: abc
 ```
 
 ### Base64Helper、StringDecoder模块部分接口参数异常错误码由undefined变更为401
@@ -181,35 +181,35 @@ util.TextDecoder模块ignoreBOM参数未使能，无法对存在BOM标记的数�
 
 变更前：应用使用后台代理提醒创建延时提醒，调用接口成功，返回提醒 id。
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let timer: reminderAgentManager.ReminderRequestTimer = {
-4. reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
-5. triggerTimeInSeconds: 10
-6. }
+let timer: reminderAgentManager.ReminderRequestTimer = {
+  reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
+  triggerTimeInSeconds: 10
+}
 
-8. reminderAgentManager.publishReminder(timer, (err: BusinessError, reminderId: number) => {
-9. // 变更前，接口返回成功，reminderId > 0，提醒发布成功
-10. });
+reminderAgentManager.publishReminder(timer, (err: BusinessError, reminderId: number) => {
+  // 变更前，接口返回成功，reminderId > 0，提醒发布成功
+});
 ```
 
 变更后：应用使用后台代理提醒创建延时提醒，调用接口失败，返回错误码 1700002。
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let timer: reminderAgentManager.ReminderRequestTimer = {
-4. reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
-5. triggerTimeInSeconds: 10
-6. }
+let timer: reminderAgentManager.ReminderRequestTimer = {
+  reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
+  triggerTimeInSeconds: 10
+}
 
-8. reminderAgentManager.publishReminder(timer, (err: BusinessError, reminderId: number) => {
-9. // 变更后，接口返回失败，errcode 为 1700002，发布提醒失败
-10. if (err.code == 1700002) {
-11. // 受管控，无法使用代理提醒
-12. }
-13. });
+reminderAgentManager.publishReminder(timer, (err: BusinessError, reminderId: number) => {
+  // 变更后，接口返回失败，errcode 为 1700002，发布提醒失败
+  if (err.code == 1700002) {
+      // 受管控，无法使用代理提醒
+  }
+});
 ```
 
 **起始API Level**

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“The name of the 'xxx' module must be a string, but received a value of type 'xxx'.”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“The name of the 'xxx' module must be a string, but received a value of type 'xxx'.”
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:41+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:15+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:6da22ede061a57ecd7de578a5ff1249c1b65d5123b2224c554eb8c2fdb1836d4
 ---
 

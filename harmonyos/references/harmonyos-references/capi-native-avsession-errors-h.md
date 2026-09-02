@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_avsession_errors.h
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > C API > 头文件 > native_avsession_errors.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:26+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5568a79c7314d19f52593e0dc575eb826ed15a73073e6f4fabbe0123e0de39ef
+scraped_at: 2026-09-02T15:02:24+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:980912ef00eae00af89ed91c1c2a74e2aad15dcb434b9897a212b05653183171
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供播控错误码的定义。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -41,14 +35,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### AVSession\_ErrCode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum AVSession_ErrCode
+```c
+enum AVSession_ErrCode
 ```
 
 **描述**
@@ -65,7 +55,7 @@ PhonePC/2in1TabletTVWearable
 | AV\_SESSION\_ERR\_CODE\_SESSION\_NOT\_EXIST = 6600102 | 会话不存在。 |
 | AV\_SESSION\_ERR\_CODE\_COMMAND\_INVALID = 6600105 | 无效会话命令。 |
 | AV\_SESSION\_ERR\_CODE\_SESSION\_INACTIVE = 6600106 | 会话未激活。 |
-| AV\_SESSION\_ERR\_CODE\_MESSAGE\_OVERLOAD = 6600107 | 命令&消息过载。 |
+| AV\_SESSION\_ERR\_CODE\_MESSAGE\_OVERLOAD = 6600107 | 命令和消息过载。 |
 | AV\_SESSION\_ERR\_CODE\_REMOTE\_CONNECTION\_NOT\_EXIST = 6600109 | 远端会话不存在。  **起始版本：** 23 |
 | AV\_SESSION\_ERR\_CODE\_CAST\_CONTROL\_UNSPECIFIED = 6611000 | 投播控制器出现未知错误。  **起始版本：** 23 |
 | AV\_SESSION\_ERR\_CODE\_CAST\_CONTROL\_REMOTE\_ERROR = 6611001 | 远端设备出现未知错误。  **起始版本：** 23 |
@@ -102,12 +92,12 @@ PhonePC/2in1TabletTVWearable
 | AV\_SESSION\_ERR\_CODE\_CAST\_CONTROL\_PARSING\_CONTAINER\_MALFORMED = 6613001 | 媒体容器格式码流解析错误。  **起始版本：** 23 |
 | AV\_SESSION\_ERR\_CODE\_CAST\_CONTROL\_PARSING\_MANIFEST\_MALFORMED = 6613002 | 媒体清单解析错误。  **起始版本：** 23 |
 | AV\_SESSION\_ERR\_CODE\_CAST\_CONTROL\_PARSING\_CONTAINER\_UNSUPPORTED = 6613003 | 提取文件失败，不支持该媒体容器格式。  **起始版本：** 23 |
-| AV\_SESSION\_ERR\_CODE\_CAST\_CONTROL\_PARSING\_MANIFEST\_UNSUPPORTED = 6613004 | 媒体无法读取，如介质有灰尘、划痕。  **起始版本：** 23 |
+| AV\_SESSION\_ERR\_CODE\_CAST\_CONTROL\_PARSING\_MANIFEST\_UNSUPPORTED = 6613004 | 媒体清单中不支持此功能。  **起始版本：** 23 |
 | AV\_SESSION\_ERR\_CODE\_CAST\_CONTROL\_DECODING\_UNSPECIFIED = 6614000 | 未知的解码错误。  **起始版本：** 23 |
 | AV\_SESSION\_ERR\_CODE\_CAST\_CONTROL\_DECODING\_INIT\_FAILED = 6614001 | 解码器初始化失败。  **起始版本：** 23 |
 | AV\_SESSION\_ERR\_CODE\_CAST\_CONTROL\_DECODING\_QUERY\_FAILED = 6614002 | 解码器查询失败。  **起始版本：** 23 |
 | AV\_SESSION\_ERR\_CODE\_CAST\_CONTROL\_DECODING\_FAILED = 6614003 | 解码媒体样本时失败。  **起始版本：** 23 |
-| AV\_SESSION\_ERR\_CODE\_CAST\_CONTROL\_DECODING\_FORMAT\_EXCEEDS\_CAPABILITIES = 6614004 | 内容请求使用次数达最大限制。  **起始版本：** 23 |
+| AV\_SESSION\_ERR\_CODE\_CAST\_CONTROL\_DECODING\_FORMAT\_EXCEEDS\_CAPABILITIES = 6614004 | 所需解码的内容格式超出设备能力导致失败。  **起始版本：** 23 |
 | AV\_SESSION\_ERR\_CODE\_CAST\_CONTROL\_DECODING\_FORMAT\_UNSUPPORTED = 6614005 | 解码不支持的内容格式。  **起始版本：** 23 |
 | AV\_SESSION\_ERR\_CODE\_CAST\_CONTROL\_AUDIO\_RENDERER\_UNSPECIFIED = 6615000 | 音频渲染器出现未明确具体类型的异常错误。  **起始版本：** 23 |
 | AV\_SESSION\_ERR\_CODE\_CAST\_CONTROL\_AUDIO\_RENDERER\_INIT\_FAILED = 6615001 | 音频渲染器初始化异常。  **起始版本：** 23 |
@@ -115,10 +105,8 @@ PhonePC/2in1TabletTVWearable
 
 ### AVSessionCallback\_Result
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum AVSessionCallback_Result
+```c
+enum AVSessionCallback_Result
 ```
 
 **描述**
@@ -134,10 +122,8 @@ PhonePC/2in1TabletTVWearable
 
 ### AVMetadata\_Result
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum AVMetadata_Result
+```c
+enum AVMetadata_Result
 ```
 
 **描述**
@@ -154,10 +140,8 @@ PhonePC/2in1TabletTVWearable
 
 ### AVQueueItem\_Result
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum AVQueueItem_Result
+```c
+enum AVQueueItem_Result
 ```
 
 **描述**

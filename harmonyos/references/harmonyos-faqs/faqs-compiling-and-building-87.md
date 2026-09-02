@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错：platform/OHOS to use this system, please post your config file on discourse.cmake.org so it
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错：platform/OHOS to use this system, please post your config file on discourse.cmake.org so it
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:26+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:15+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:cb8d795a8f5070b275db293b452e31dd7fe543cf00e801de5949a7dcd11736c5
 ---
 

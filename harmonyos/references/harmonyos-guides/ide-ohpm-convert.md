@@ -3,21 +3,21 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-conv
 title: ohpm convert
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm convert
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:47:55+08:00
-doc_updated_at: 2026-04-22
-content_hash: sha256:5215068435c6bcd705fc2dea8841a33c83b37dd71235cf8e38052d834e8181e5
+scraped_at: 2026-09-02T15:00:29+08:00
+doc_updated_at: 2026-07-15
+content_hash: sha256:c2d2af0c424382e4b2e4a1b96b80bc551135080b9767163342068cc346647acc
 ---
 
 将npm三方库转换为ohpm三方库。因为语法差异，转换时仅对文件进行格式转换，不修改原npm包的代码逻辑。若HAR包在转换后出现代码不兼容的报错，开发者需修改原npm包的代码做适配。
 
 ## 命令格式
 
-```
-1. ohpm convert [[<@group>/]<pkg>[@<version> | @tag:<tag>]] --registry <string> [--publish]
-2. ohpm convert <node_modules_path> [--publish]
+```screen
+ohpm convert [[<@group>/]<pkg>[@<version> | @tag:<tag>]] --registry <string> [--publish]
+ohpm convert <node_modules_path> [--publish]
 ```
 
-说明
+**说明** 
 
 * @group：三方库的命名空间，可选。
 * pkg：三方库名称，必选。
@@ -37,11 +37,11 @@ content_hash: sha256:5215068435c6bcd705fc2dea8841a33c83b37dd71235cf8e38052d834e8
 
   示例：
 
-  ```
-  1. ohpm convert ./xxxx/node_modules
+  ```screen
+  ohpm convert ./xxxx/node_modules
   ```
 
-说明
+**说明** 
 
 ohpm convert命令仅保留npm包中package.json配置文件中的name、version、main、types、license、description、author、keywords、homepage、repository、artifactType、dependencies、devDependencies、dynamicDependencies、overrides、scripts、hooks，module、packageType、typesVersions、exports和jsnext:main字段，具体字段说明请参考[oh-package.json5 字段说明](ide-oh-package-json5.md#zh-cn_topic_0000001792256137_oh-packagejson5-字段说明)。
 
@@ -57,21 +57,21 @@ ohpm convert命令仅保留npm包中package.json配置文件中的name、version
 ### publish
 
 * 默认值：false
-* 类型： Boolean
+* 类型：Boolean
 
 可以在 convert命令后面配置 --publish 参数 ，若指定该参数，执行convert命令前请确认.ohpmrc推包相关配置无误，当所有包转换完成后将根据.ohpmrc中的配置依次进行推包。
 
 ### log\_level
 
 * 默认值：无
-* 类型： String
+* 类型：String
 
 从ohpm 6.0.2.636版本开始，可以在convert命令后配置--log\_level <string>参数，指定执行当前命令的日志级别（info、debug、warn、error），如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
 ### debug
 
 * 默认值：false
-* 类型： Boolean
+* 类型：Boolean
 
 从ohpm 6.0.2.636版本开始，可以在命令后配置--debug参数，指定执行当前命令的日志级别为debug，该配置仅在当前命令行生效，不修改.ohpmrc中的日志级别，如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
@@ -81,43 +81,43 @@ ohpm convert命令仅保留npm包中package.json配置文件中的name、version
 
 转换npm三方库中的axios包，执行以下命令：
 
-```
-1. ohpm convert axios --registry https://registry.npmjs.org/
+```screen
+ohpm convert axios --registry https://registry.npmjs.org/
 ```
 
 结果示例：
 
-```
-1. PS C:\Users\xxxxx\Desktop> ohpm convert axios --registry https://registry.npmjs.org
-2. ...
-3. ohpm INFO: > start convert package: asynckit@0.4.0
-4. ohpm INFO: > start convert package: axios@1.6.8
-5. ohpm INFO: > start convert package: combined-stream@1.0.8
-6. ...
-7. ohpm INFO: A total of 9 packets are converted successfully.
-8. ohpm INFO: Converted packages are saved to the "C:\Users\xxxxx\Desktop\convert_1712127991590" directory.
+```screen
+PS C:\Users\xxxxx\Desktop> ohpm convert axios --registry https://registry.npmjs.org
+...
+ohpm INFO: > start convert package: asynckit@0.4.0
+ohpm INFO: > start convert package: axios@1.6.8
+ohpm INFO: > start convert package: combined-stream@1.0.8
+...
+ohpm INFO: A total of 9 packets are converted successfully.
+ohpm INFO: Converted packages are saved to the "C:\Users\xxxxx\Desktop\convert_1712127991590" directory.
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/zanbUNf6QL2CauH8MzRSTg/zh-cn_image_0000002561833683.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/RKlO-wzySaGT2hvl_iAT2Q/zh-cn_image_0000002701663792.png "点击放大")
 
 **转换本地node\_modules目录中的包**
 
 执行npm install uuid后，转换本地node\_modules目录中的包，执行以下命令：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/GNmZI-QWSRK6iKrLKrv1Tg/zh-cn_image_0000002561753703.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/Al8CwNiJQfyuxolYq26-0A/zh-cn_image_0000002731542991.png)
 
-```
-1. ohpm convert C:\Users\xxxxx\Desktop\uuidInstallDir\node_modules
+```screen
+ohpm convert C:\Users\xxxxx\Desktop\uuidInstallDir\node_modules
 ```
 
 结果示例：
 
-```
-1. PS C:\Users\xxxxx\Desktop> ohpm convert C:\Users\xxxxx\Desktop\uuidInstallDir\node_modules
-2. ohpm INFO: > start convert package: uuid
-3. ...
-4. ohpm INFO: A total of 1 package(s) are converted successfully.
-5. ohpm INFO: Converted packages are saved to the "C:\Users\xxxxx\Desktop\convert_1712128912583" directory.
+```screen
+PS C:\Users\xxxxx\Desktop> ohpm convert C:\Users\xxxxx\Desktop\uuidInstallDir\node_modules
+ohpm INFO: > start convert package: uuid
+...
+ohpm INFO: A total of 1 package(s) are converted successfully.
+ohpm INFO: Converted packages are saved to the "C:\Users\xxxxx\Desktop\convert_1712128912583" directory.
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/JyxZ210KRumDC693HHJ2kg/zh-cn_image_0000002530913760.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/GdwfIzABToSW7msYT914Ug/zh-cn_image_0000002701823718.png)

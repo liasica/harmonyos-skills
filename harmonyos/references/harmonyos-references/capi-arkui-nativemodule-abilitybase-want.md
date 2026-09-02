@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: AbilityBase_Want
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > AbilityBase_Want
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:29+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:e8e57b7b51a88e159d5dfbab61aa25b52d045d2e6d4db3ce555d32c59e17cbed
+scraped_at: 2026-09-02T14:51:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:40405cd429a802a0c1f16ad05d8435f9a90f09a6f67ebfd1246127cc7df0f264
 ---
 
-```
-1. typedef struct AbilityBase_Want AbilityBase_Want
+```c
+typedef struct AbilityBase_Want AbilityBase_Want
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明元能力want结构。
 
@@ -22,4 +20,4 @@ PhonePC/2in1TabletTVWearable
 
 **相关模块：** [ArkUI\_NativeModule](capi-arkui-nativemodule.md)
 
-**所在头文件：** [native\_type.h](capi-native-type-h.md)
+**所在头文件：** [embedded\_component.h](capi-embedded-component-h.md)

@@ -3,16 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-devi
 title: deviceinfo.h
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > C API > 头文件 > deviceinfo.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:47+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:757e854d31e19e6a48619600a0031d923e3e37614bcfaf31212359a9f629fa06
+scraped_at: 2026-09-02T15:02:05+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:153331393680e20234299b7b785139484341c802cc44a20285eef390122877d9
 ---
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-声明用于查询终端设备信息的API。
+声明用于查询终端设备信息的API。该模块提供了获取设备类型、制造商、品牌、型号、版本信息等设备基础信息的能力，适用于需要根据设备特性进行适配、统计设备信息或进行设备管理的场景。这些API通过读取系统属性获取设备信息，返回值为指向常量字符串的指针。该指针指向系统内部存储的数据，调用者无需释放内存。
 
 **引用文件：** <deviceinfo.h>
 
@@ -26,18 +24,14 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
 | [const char \*OH\_GetDeviceType(void)](capi-deviceinfo-h.md#oh_getdevicetype) | 获取设备类型。 |
 | [const char \*OH\_GetManufacture(void)](capi-deviceinfo-h.md#oh_getmanufacture) | 获取设备制造商。 |
 | [const char \*OH\_GetBrand(void)](capi-deviceinfo-h.md#oh_getbrand) | 获取设备品牌。 |
-| [const char \*OH\_GetMarketName(void)](capi-deviceinfo-h.md#oh_getmarketname) | 获取外部产品系列。 |
+| [const char \*OH\_GetMarketName(void)](capi-deviceinfo-h.md#oh_getmarketname) | 获取外部产品系列，即外部产品名称。 |
 | [const char \*OH\_GetProductSeries(void)](capi-deviceinfo-h.md#oh_getproductseries) | 获取产品系列。 |
 | [const char \*OH\_GetProductModel(void)](capi-deviceinfo-h.md#oh_getproductmodel) | 获取认证型号。 |
 | [const char \*OH\_GetSoftwareModel(void)](capi-deviceinfo-h.md#oh_getsoftwaremodel) | 获取内部软件子型号。 |
@@ -57,26 +51,22 @@ PhonePC/2in1TabletTVWearable
 | [const char \*OH\_GetBuildHost(void)](capi-deviceinfo-h.md#oh_getbuildhost) | 获取系统的构建主机。 |
 | [const char \*OH\_GetBuildTime(void)](capi-deviceinfo-h.md#oh_getbuildtime) | 获取系统的构建时间。 |
 | [const char \*OH\_GetBuildRootHash(void)](capi-deviceinfo-h.md#oh_getbuildroothash) | 获取系统的构建版本Hash。 |
-| [const char \*OH\_GetDistributionOSName(void)](capi-deviceinfo-h.md#oh_getdistributionosname) | 获取ISV发行系统版本名称。独立软件供应商（ISV）可以使用自己定义的系统名称。 |
+| [const char \*OH\_GetDistributionOSName(void)](capi-deviceinfo-h.md#oh_getdistributionosname) | 获取ISV发行版系统名称。独立软件供应商（ISV）可以使用自定义的系统名称。 |
 | [const char \*OH\_GetDistributionOSVersion(void)](capi-deviceinfo-h.md#oh_getdistributionosversion) | 获取ISV发行版系统版本号。 |
-| [int OH\_GetDistributionOSApiVersion(void)](capi-deviceinfo-h.md#oh_getdistributionosapiversion) | 获取ISV发行版系统api版本。 |
+| [int OH\_GetDistributionOSApiVersion(void)](capi-deviceinfo-h.md#oh_getdistributionosapiversion) | 获取ISV发行版系统API版本。 |
 | [const char \*OH\_GetDistributionOSReleaseType(void)](capi-deviceinfo-h.md#oh_getdistributionosreleasetype) | 获取ISV发行版系统类型。 |
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_GetDeviceType()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char *OH_GetDeviceType(void)
+```c
+const char *OH_GetDeviceType(void)
 ```
 
 **描述**
 
-获取设备类型。
+获取设备类型。返回预定义的设备类型字符串。
 
 **起始版本：** 10
 
@@ -84,14 +74,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| const char | "phone"(或"default")  "wearable",  "liteWearable",  "tablet",  "tv",  "car",  "smartVision"。 |
+| const char\* | 返回设备类型字符串。可能的值包括：  • "phone"  • "default"（设备类型无法识别时的默认返回值）  • "wearable"  • "liteWearable"  • "tablet"  • "tv"  • "car"  • "smartVision" |
 
 ### OH\_GetManufacture()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char *OH_GetManufacture(void)
+```c
+const char *OH_GetManufacture(void)
 ```
 
 **描述**
@@ -108,10 +96,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_GetBrand()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char *OH_GetBrand(void)
+```c
+const char *OH_GetBrand(void)
 ```
 
 **描述**
@@ -128,15 +114,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_GetMarketName()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char *OH_GetMarketName(void)
+```c
+const char *OH_GetMarketName(void)
 ```
 
 **描述**
 
-获取外部产品系列。
+获取外部产品系列，即外部产品名称。
 
 **起始版本：** 10
 
@@ -148,10 +132,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_GetProductSeries()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char *OH_GetProductSeries(void)
+```c
+const char *OH_GetProductSeries(void)
 ```
 
 **描述**
@@ -168,10 +150,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_GetProductModel()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char *OH_GetProductModel(void)
+```c
+const char *OH_GetProductModel(void)
 ```
 
 **描述**
@@ -188,15 +168,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_GetSoftwareModel()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char *OH_GetSoftwareModel(void)
+```c
+const char *OH_GetSoftwareModel(void)
 ```
 
 **描述**
 
-获取内部软件子型号。
+获取内部软件子型号，当多个硬件型号共用同一软件版本时，该字段用于区分不同的软件分支。
 
 **起始版本：** 10
 
@@ -208,10 +186,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_GetHardwareModel()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char *OH_GetHardwareModel(void)
+```c
+const char *OH_GetHardwareModel(void)
 ```
 
 **描述**
@@ -224,14 +200,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| const char\* | 字符串类型的硬件版本号。 |
+| const char\* | 字符串类型的硬件版本号。常见的取值包括："TASA00CVN1"等。 |
 
 ### OH\_GetBootloaderVersion()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char *OH_GetBootloaderVersion(void)
+```c
+const char *OH_GetBootloaderVersion(void)
 ```
 
 **描述**
@@ -244,14 +218,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| const char\* | 字符串类型的Bootloader版本号。 |
+| const char\* | 字符串类型的Bootloader版本号。常见的取值包括："bootloader"等。 |
 
 ### OH\_GetAbiList()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char *OH_GetAbiList(void)
+```c
+const char *OH_GetAbiList(void)
 ```
 
 **描述**
@@ -264,14 +236,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| const char\* | 字符串类型的应用二进制接口（Abi）。 |
+| const char\* | 字符串类型的应用二进制接口（Abi）。返回支持的ABI列表，多个取值以英文逗号分隔。常见的取值包括："arm64-v8a"等。 |
 
 ### OH\_GetSecurityPatchTag()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char *OH_GetSecurityPatchTag(void)
+```c
+const char *OH_GetSecurityPatchTag(void)
 ```
 
 **描述**
@@ -284,14 +254,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| const char\* | 字符串类型的安全补丁级别。 |
+| const char\* | 字符串类型的安全补丁级别。格式通常为"YYYY/MM/DD"，表示安全补丁的发布日期，例如"2023/10/05"。 |
 
 ### OH\_GetDisplayVersion()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char *OH_GetDisplayVersion(void)
+```c
+const char *OH_GetDisplayVersion(void)
 ```
 
 **描述**
@@ -304,14 +272,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| const char\* | 字符串类型的产品版本。 |
+| const char\* | 产品版本号，返回设备产品版本的字符串标识。 |
 
 ### OH\_GetIncrementalVersion()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char *OH_GetIncrementalVersion(void)
+```c
+const char *OH_GetIncrementalVersion(void)
 ```
 
 **描述**
@@ -324,19 +290,17 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| const char\* | 字符串类型的获取差异版本。 |
+| const char\* | 字符串类型的差异版本。常见的取值包括："6.1.1.120"等。 |
 
 ### OH\_GetOsReleaseType()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char *OH_GetOsReleaseType(void)
+```c
+const char *OH_GetOsReleaseType(void)
 ```
 
 **描述**
 
-获取系统的发布类型。
+获取系统的发布类型。返回预定义的发布类型字符串。
 
 **起始版本：** 10
 
@@ -344,14 +308,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| const char\* | 操作系统发布类别包括"release"、"Beta"和"Canary"。  具体的发布类型可能是"release"，"Beta1"，或其他类似的。 |
+| const char\* | 操作系统发布类别包括"Release"、"Beta"和"Canary"。  具体的发布类型可能是"release"，"Beta1"，或其他类似的。  - Canary：面向特定开发者发布的早期预览版本，不承诺API稳定性。  - Beta：面向开发者公开发布的Beta版本，不承诺API稳定性。  - Release：面向开发者公开发布的正式版本，承诺API稳定性。 |
 
 ### OH\_GetOSFullName()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char *OH_GetOSFullName(void)
+```c
+const char *OH_GetOSFullName(void)
 ```
 
 **描述**
@@ -364,14 +326,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| const char\* | 字符串类型的完整的系统版本名。 |
+| const char\* | 字符串类型的完整的系统版本名。版本格式 HarmonyOS-x.x.x.x。 |
 
 ### OH\_GetSdkApiVersion()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_GetSdkApiVersion(void)
+```c
+int OH_GetSdkApiVersion(void)
 ```
 
 **描述**
@@ -384,19 +344,17 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 系统软件API版本。 |
+| int | 系统软件API版本，取值范围为整数。常见的取值包括：12等。 |
 
 ### OH\_GetFirstApiVersion()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_GetFirstApiVersion(void)
+```c
+int OH_GetFirstApiVersion(void)
 ```
 
 **描述**
 
-获取首个版本系统软件API版本。
+获取首个版本系统软件API版本。指设备首次发布时所支持的系统软件API版本。
 
 **起始版本：** 10
 
@@ -404,14 +362,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 首个版本系统软件API版本。 |
+| int | 首个版本系统软件API版本。指设备首次发布时所支持的系统软件API版本，取值范围为整数。 常见的取值包括：3等。 |
 
 ### OH\_GetVersionId()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char *OH_GetVersionId(void)
+```c
+const char *OH_GetVersionId(void)
 ```
 
 **描述**
@@ -428,10 +384,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_GetBuildType()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char *OH_GetBuildType(void)
+```c
+const char *OH_GetBuildType(void)
 ```
 
 **描述**
@@ -444,14 +398,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| const char\* | 字符串类型的系统的构建类型。 |
+| const char\* | 字符串类型的系统的构建类型。默认值为：default。 |
 
 ### OH\_GetBuildUser()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char *OH_GetBuildUser(void)
+```c
+const char *OH_GetBuildUser(void)
 ```
 
 **描述**
@@ -464,14 +416,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| const char\* | 字符串类型的系统的构建用户。 |
+| const char\* | 字符串类型的系统的构建用户。默认值为：default。 |
 
 ### OH\_GetBuildHost()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char *OH_GetBuildHost(void)
+```c
+const char *OH_GetBuildHost(void)
 ```
 
 **描述**
@@ -484,14 +434,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| const char\* | 字符串类型的系统的构建主机。 |
+| const char\* | 字符串类型的系统的构建主机。默认值为：default。 |
 
 ### OH\_GetBuildTime()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char *OH_GetBuildTime(void)
+```c
+const char *OH_GetBuildTime(void)
 ```
 
 **描述**
@@ -504,14 +452,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| const char\* | 字符串类型的系统的构建时间。 |
+| const char\* | 字符串类型的系统的构建时间，表示系统版本构建的时间戳。常见的取值包括："1783430505910"等。 |
 
 ### OH\_GetBuildRootHash()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char *OH_GetBuildRootHash(void)
+```c
+const char *OH_GetBuildRootHash(void)
 ```
 
 **描述**
@@ -524,19 +470,17 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| const char\* | 字符串类型的系统的构建版本Hash。 |
+| const char\* | 字符串类型的系统的构建版本Hash。默认值为：default。 |
 
 ### OH\_GetDistributionOSName()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char *OH_GetDistributionOSName(void)
+```c
+const char *OH_GetDistributionOSName(void)
 ```
 
 **描述**
 
-获取ISV发行系统版本名称。独立软件供应商（ISV）可以使用自己定义的系统名称。
+获取ISV发行版系统名称。独立软件供应商（ISV）可以使用自定义的系统名称。
 
 **起始版本：** 10
 
@@ -544,14 +488,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| const char\* | ISV发行系统版本名称。  如果没有指定ISV，它将返回一个空字符串。 |
+| const char\* | ISV发行版系统名称。  如果没有指定ISV，它将返回一个空字符串。 |
 
 ### OH\_GetDistributionOSVersion()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char *OH_GetDistributionOSVersion(void)
+```c
+const char *OH_GetDistributionOSVersion(void)
 ```
 
 **描述**
@@ -568,15 +510,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_GetDistributionOSApiVersion()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_GetDistributionOSApiVersion(void)
+```c
+int OH_GetDistributionOSApiVersion(void)
 ```
 
 **描述**
 
-获取ISV发行版系统api版本。
+获取ISV发行版系统API版本。
 
 **起始版本：** 10
 
@@ -584,14 +524,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | ISV发行版系统api版本。  如果没有指定ISV，它将返回与[OH\_GetOSFullName](capi-deviceinfo-h.md#oh_getosfullname)相同的值。 |
+| int | ISV发行版系统API版本。  如果没有指定ISV，它将返回与[OH\_GetSdkApiVersion](capi-deviceinfo-h.md#oh_getsdkapiversion)相同的值。 |
 
 ### OH\_GetDistributionOSReleaseType()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char *OH_GetDistributionOSReleaseType(void)
+```c
+const char *OH_GetDistributionOSReleaseType(void)
 ```
 
 **描述**
@@ -604,4 +542,4 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| const char | ISV发行版系统类型。  如果没有指定ISV，它将返回与[OH\_GetOsReleaseType](capi-deviceinfo-h.md#oh_getosreleasetype)相同的值。 |
+| const char\* | ISV发行版系统类型。  如果没有指定ISV，它将返回与[OH\_GetOsReleaseType](capi-deviceinfo-h.md#oh_getosreleasetype)相同的值。 |

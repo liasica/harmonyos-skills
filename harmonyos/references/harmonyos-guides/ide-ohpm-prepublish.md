@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-prep
 title: ohpm prepublish
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm prepublish
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:42+08:00
-doc_updated_at: 2026-04-22
-content_hash: sha256:7d971f0b0026f709dd60c96a31ebea0237fdc827b946c1b892128403bccfa525
+scraped_at: 2026-09-02T15:00:29+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:a2cfc144b8065c6d0c079090a11c14c793c4f0ebdd77be1c4b86665f0f4948f7
 ---
 
 预发布一个三方库。
 
 ## 命令格式
 
-```
-1. ohpm prepublish [options] <har_or_tgz_file>
+```screen
+ohpm prepublish [options] <har_or_tgz_file>
 ```
 
-说明
+**说明** 
 
 * har\_or\_tgz\_file：压缩包路径，可以是 .har 包格式和由 hsp 模块打包出来的 .tgz 包格式，必选参数。
 * ohpm v1.8.0 版本开始支持prepublish命令。
@@ -32,14 +32,14 @@ content_hash: sha256:7d971f0b0026f709dd60c96a31ebea0237fdc827b946c1b892128403bcc
 ### log\_level
 
 * 默认值：无
-* 类型： String
+* 类型：String
 
 从ohpm 6.0.2.636版本开始，可以在 prepublish 命令后配置--log\_level <string>参数，指定执行当前命令的日志级别（info、debug、warn、error），如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
 ### debug
 
 * 默认值：false
-* 类型： Boolean
+* 类型：Boolean
 
 从ohpm 6.0.2.636版本开始，可以在命令后配置--debug参数，指定执行当前命令的日志级别为debug，该配置仅在当前命令行生效，不修改.ohpmrc中的日志级别，如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
@@ -47,13 +47,13 @@ content_hash: sha256:7d971f0b0026f709dd60c96a31ebea0237fdc827b946c1b892128403bcc
 
 预发布工作目录下的三方库，执行以下命令：
 
-```
-1. ohpm prepublish publish_test.har
+```screen
+ohpm prepublish publish_test.har
 ```
 
 结果示例：
 
-```
-1. C:\Program Files\Huawei\DevEco Studio\tools\ohpm\bin> ohpm prepublish D:\publish_test.har
-2. prepublish publish_test 1.0.0 succeed.
+```screen
+C:\Program Files\Huawei\DevEco Studio\tools\ohpm\bin> ohpm prepublish D:\publish_test.har
+prepublish publish_test 1.0.0 succeed.
 ```

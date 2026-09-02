@@ -3,34 +3,30 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (PreviewOutput)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (PreviewOutput)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:39+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:2abcd8a36d691f880ef3da282a1a61a0d4ab798e707850579c8fa9348cc3d2ad
+scraped_at: 2026-09-02T15:02:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2af36dd9233d4e164e6938e0164c2e7f88c12101a0369ac1231ade18299bcdd4
 ---
 
 预览输出类。继承[CameraOutput](arkts-apis-camera-cameraoutput.md)。
 
-说明
+**说明** 
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { camera } from '@kit.CameraKit';
+```ts
+import { camera } from '@kit.CameraKit';
 ```
 
 ## on('frameStart')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'frameStart', callback: AsyncCallback<void>): void
 
 监听预览帧启动，通过注册回调函数获取结果。使用callback异步回调。
 
-说明
+**说明** 
 
 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
@@ -47,25 +43,23 @@ on(type: 'frameStart', callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function callback(err: BusinessError): void {
-4. if (err !== undefined && err.code !== 0) {
-5. console.error(`Callback Error, errorCode: ${err.code}`);
-6. return;
-7. }
-8. console.info('Preview frame started');
-9. }
+function callback(err: BusinessError): void {
+  if (err !== undefined && err.code !== 0) {
+    console.error(`Callback Error, errorCode: ${err.code}`);
+    return;
+  }
+  console.info('Preview frame started');
+}
 
-11. function registerPreviewOutputFrameStart(previewOutput: camera.PreviewOutput): void {
-12. previewOutput.on('frameStart', callback);
-13. }
+function registerPreviewOutputFrameStart(previewOutput: camera.PreviewOutput): void {
+  previewOutput.on('frameStart', callback);
+}
 ```
 
 ## off('frameStart')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'frameStart', callback?: AsyncCallback<void>): void
 
@@ -84,21 +78,19 @@ off(type: 'frameStart', callback?: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. function unregisterPreviewOutputFrameStart(previewOutput: camera.PreviewOutput): void {
-2. previewOutput.off('frameStart');
-3. }
+```ts
+function unregisterPreviewOutputFrameStart(previewOutput: camera.PreviewOutput): void {
+  previewOutput.off('frameStart');
+}
 ```
 
 ## on('frameEnd')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'frameEnd', callback: AsyncCallback<void>): void
 
 监听预览帧结束，通过注册回调函数获取结果。使用callback异步回调。
 
-说明
+**说明** 
 
 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
@@ -115,25 +107,23 @@ on(type: 'frameEnd', callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function callback(err: BusinessError): void {
-4. if (err !== undefined && err.code !== 0) {
-5. console.error(`Callback Error, errorCode: ${err.code}`);
-6. return;
-7. }
-8. console.info('Preview frame ended');
-9. }
+function callback(err: BusinessError): void {
+  if (err !== undefined && err.code !== 0) {
+    console.error(`Callback Error, errorCode: ${err.code}`);
+    return;
+  }
+  console.info('Preview frame ended');
+}
 
-11. function registerPreviewOutputFrameEnd(previewOutput: camera.PreviewOutput): void {
-12. previewOutput.on('frameEnd', callback);
-13. }
+function registerPreviewOutputFrameEnd(previewOutput: camera.PreviewOutput): void {
+  previewOutput.on('frameEnd', callback);
+}
 ```
 
 ## off('frameEnd')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'frameEnd', callback?: AsyncCallback<void>): void
 
@@ -152,21 +142,19 @@ off(type: 'frameEnd', callback?: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. function unregisterPreviewOutputFrameEnd(previewOutput: camera.PreviewOutput): void {
-2. previewOutput.off('frameEnd');
-3. }
+```ts
+function unregisterPreviewOutputFrameEnd(previewOutput: camera.PreviewOutput): void {
+  previewOutput.off('frameEnd');
+}
 ```
 
 ## on('error')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'error', callback: ErrorCallback): void
 
 监听预览输出的错误事件，通过注册回调函数获取结果。使用callback异步回调。
 
-说明
+**说明** 
 
 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
@@ -183,21 +171,19 @@ on(type: 'error', callback: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function callback(previewOutputError: BusinessError): void {
-4. console.error(`Preview output error code: ${previewOutputError.code}`);
-5. }
+function callback(previewOutputError: BusinessError): void {
+  console.error(`Preview output error code: ${previewOutputError.code}`);
+}
 
-7. function registerPreviewOutputError(previewOutput: camera.PreviewOutput): void {
-8. previewOutput.on('error', callback)
-9. }
+function registerPreviewOutputError(previewOutput: camera.PreviewOutput): void {
+  previewOutput.on('error', callback)
+}
 ```
 
 ## off('error')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -216,15 +202,13 @@ off(type: 'error', callback?: ErrorCallback): void
 
 **示例：**
 
-```
-1. function unregisterPreviewOutputError(previewOutput: camera.PreviewOutput): void {
-2. previewOutput.off('error');
-3. }
+```ts
+function unregisterPreviewOutputError(previewOutput: camera.PreviewOutput): void {
+  previewOutput.off('error');
+}
 ```
 
 ## getSupportedFrameRates12+
-
-PhonePC/2in1TabletTVWearable
 
 getSupportedFrameRates(): Array<FrameRateRange>
 
@@ -242,16 +226,14 @@ getSupportedFrameRates(): Array<FrameRateRange>
 
 **示例：**
 
-```
-1. function getSupportedFrameRates(previewOutput: camera.PreviewOutput): Array<camera.FrameRateRange> {
-2. let supportedFrameRatesArray: Array<camera.FrameRateRange> = previewOutput.getSupportedFrameRates();
-3. return supportedFrameRatesArray;
-4. }
+```ts
+function getSupportedFrameRates(previewOutput: camera.PreviewOutput): Array<camera.FrameRateRange> {
+  let supportedFrameRatesArray: Array<camera.FrameRateRange> = previewOutput.getSupportedFrameRates();
+  return supportedFrameRatesArray;
+}
 ```
 
 ## setFrameRate12+
-
-PhonePC/2in1TabletTVWearable
 
 setFrameRate(minFps: number, maxFps: number): void
 
@@ -259,7 +241,7 @@ setFrameRate(minFps: number, maxFps: number): void
 
 进行设置前，可通过[getSupportedFrameRates](arkts-apis-camera-previewoutput.md#getsupportedframerates12)接口查询支持的帧率范围。
 
-说明
+**说明** 
 
 仅在[PhotoSession](arkts-apis-camera-photosession.md)或[VideoSession](arkts-apis-camera-videosession.md)模式下支持。
 
@@ -285,15 +267,13 @@ setFrameRate(minFps: number, maxFps: number): void
 
 **示例：**
 
-```
-1. function setFrameRateRange(previewOutput: camera.PreviewOutput, frameRateRange: Array<number>): void {
-2. previewOutput.setFrameRate(frameRateRange[0], frameRateRange[1]);
-3. }
+```ts
+function setFrameRateRange(previewOutput: camera.PreviewOutput, frameRateRange: Array<number>): void {
+  previewOutput.setFrameRate(frameRateRange[0], frameRateRange[1]);
+}
 ```
 
 ## getActiveFrameRate12+
-
-PhonePC/2in1TabletTVWearable
 
 getActiveFrameRate(): FrameRateRange
 
@@ -313,16 +293,14 @@ getActiveFrameRate(): FrameRateRange
 
 **示例：**
 
-```
-1. function getActiveFrameRate(previewOutput: camera.PreviewOutput): camera.FrameRateRange {
-2. let activeFrameRate: camera.FrameRateRange = previewOutput.getActiveFrameRate();
-3. return activeFrameRate;
-4. }
+```ts
+function getActiveFrameRate(previewOutput: camera.PreviewOutput): camera.FrameRateRange {
+  let activeFrameRate: camera.FrameRateRange = previewOutput.getActiveFrameRate();
+  return activeFrameRate;
+}
 ```
 
 ## getActiveProfile12+
-
-PhonePC/2in1TabletTVWearable
 
 getActiveProfile(): Profile
 
@@ -348,25 +326,23 @@ getActiveProfile(): Profile
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function testGetActiveProfile(previewOutput: camera.PreviewOutput): camera.Profile | undefined {
-4. let activeProfile: camera.Profile | undefined = undefined;
-5. try {
-6. activeProfile = previewOutput.getActiveProfile();
-7. } catch (error) {
-8. // 失败返回错误码error.code并处理。
-9. let err = error as BusinessError;
-10. console.error(`The previewOutput.getActiveProfile call failed. error code: ${err.code}`);
-11. }
-12. return activeProfile;
-13. }
+function testGetActiveProfile(previewOutput: camera.PreviewOutput): camera.Profile | undefined {
+  let activeProfile: camera.Profile | undefined = undefined;
+  try {
+    activeProfile = previewOutput.getActiveProfile();
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The previewOutput.getActiveProfile call failed. error code: ${err.code}`);
+  }
+  return activeProfile;
+}
 ```
 
 ## getPreviewRotation12+
-
-PhonePC/2in1TabletTVWearable
 
 getPreviewRotation(displayRotation?: number): ImageRotation
 
@@ -374,7 +350,7 @@ getPreviewRotation(displayRotation?: number): ImageRotation
 
 * 设备自然方向：设备默认使用方向。例如，直板机默认使用方向为竖屏（充电口向下）。
 * 相机镜头角度：值等于相机图像顺时针旋转到设备自然方向的角度。例如，直板机后置相机传感器是横屏安装的，所以需要顺时针旋转90度到设备自然方向。
-* [屏幕旋转角度](../best-practices/bpta-multi-device-window-direction.md#section15598121101615)：显示设备的屏幕顺时针旋转角度。
+* [屏幕旋转角度](../best-practices/bpta-multi-device-window-direction.md#section737072712182)：显示设备的屏幕顺时针旋转角度。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -386,7 +362,7 @@ getPreviewRotation(displayRotation?: number): ImageRotation
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| displayRotation | number | 否 | 显示设备的屏幕旋转角度，通过[display.getDefaultDisplaySync](js-apis-display.md#displaygetdefaultdisplaysync9)获得。  从API version 23开始，入参displayRotation为可选参数，当不传入参数时，由系统获取displayRotation进行预览旋转角度计算。 |
+| displayRotation | number | 否 | 显示设备的屏幕旋转角度，通过[display.getDefaultDisplaySync](js-apis-display.md#displaygetdefaultdisplaysync9)获得。  从API version 23开始，入参displayRotation为可选参数，当不传入参数时，由系统获取displayRotation进行预览旋转角度计算。  单位为度数（degree），取值范围为[0, 360]。 |
 
 **返回值：**
 
@@ -400,43 +376,42 @@ getPreviewRotation(displayRotation?: number): ImageRotation
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 7400101 | Parameter missing or parameter type incorrect.  适用版本：12-22 |
 | 7400201 | Camera service fatal error. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function testGetPreviewRotation(previewOutput: camera.PreviewOutput, imageRotation : camera.ImageRotation): camera.ImageRotation {
-4. let previewRotation: camera.ImageRotation = camera.ImageRotation.ROTATION_0;
-5. try {
-6. previewRotation = previewOutput.getPreviewRotation(imageRotation);
-7. console.info(`Preview rotation is: ${previewRotation}`);
-8. } catch (error) {
-9. // 失败返回错误码error.code并处理。
-10. let err = error as BusinessError;
-11. console.error(`The previewOutput.getPreviewRotation call failed. error code: ${err.code}`);
-12. }
-13. return previewRotation;
-14. }
+function testGetPreviewRotation(previewOutput: camera.PreviewOutput, imageRotation : camera.ImageRotation): camera.ImageRotation {
+  let previewRotation: camera.ImageRotation = camera.ImageRotation.ROTATION_0;
+  try {
+    previewRotation = previewOutput.getPreviewRotation(imageRotation);
+    console.info(`Preview rotation is: ${previewRotation}`);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The previewOutput.getPreviewRotation call failed. error code: ${err.code}`);
+  }
+  return previewRotation;
+}
 
-16. function testGetPreviewRotationWithOutParam(previewOutput: camera.PreviewOutput): camera.ImageRotation {
-17. let previewRotation: camera.ImageRotation = camera.ImageRotation.ROTATION_0;
-18. try {
-19. previewRotation = previewOutput.getPreviewRotation();
-20. console.info(`Preview rotation is: ${previewRotation}`);
-21. } catch (error) {
-22. // 失败返回错误码error.code并处理。
-23. let err = error as BusinessError;
-24. console.error(`The previewOutput.testGetPreviewRotationWithOutParam call failed. error code: ${err.code}`);
-25. }
-26. return previewRotation;
-27. }
+function testGetPreviewRotationWithOutParam(previewOutput: camera.PreviewOutput): camera.ImageRotation {
+  let previewRotation: camera.ImageRotation = camera.ImageRotation.ROTATION_0;
+  try {
+    previewRotation = previewOutput.getPreviewRotation();
+    console.info(`Preview rotation is: ${previewRotation}`);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The previewOutput.testGetPreviewRotationWithOutParam call failed. error code: ${err.code}`);
+  }
+  return previewRotation;
+}
 ```
 
 ## setPreviewRotation12+
-
-PhonePC/2in1TabletTVWearable
 
 setPreviewRotation(previewRotation: ImageRotation, isDisplayLocked?: boolean): void
 
@@ -464,30 +439,28 @@ setPreviewRotation(previewRotation: ImageRotation, isDisplayLocked?: boolean): v
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function testSetPreviewRotation(previewOutput: camera.PreviewOutput, previewRotation : camera.ImageRotation, isDisplayLocked: boolean): void {
-4. try {
-5. previewOutput.setPreviewRotation(previewRotation, isDisplayLocked);
-6. } catch (error) {
-7. // 失败返回错误码error.code并处理。
-8. let err = error as BusinessError;
-9. console.error(`The previewOutput.setPreviewRotation call failed. error code: ${err.code}`);
-10. }
-11. return;
-12. }
+function testSetPreviewRotation(previewOutput: camera.PreviewOutput, previewRotation : camera.ImageRotation, isDisplayLocked: boolean): void {
+  try {
+    previewOutput.setPreviewRotation(previewRotation, isDisplayLocked);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The previewOutput.setPreviewRotation call failed. error code: ${err.code}`);
+  }
+  return;
+}
 ```
 
 ## start(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 start(callback: AsyncCallback<void>): void
 
 开始输出预览流，通过注册回调函数获取结果。使用callback异步回调。
 
-说明
+**说明** 
 
 从 API version 10开始支持，从API version 11开始废弃。建议使用[Session.start](arkts-apis-camera-session.md#start11)替代。
 
@@ -509,29 +482,27 @@ start(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function startPreviewOutput(previewOutput: camera.PreviewOutput): void {
-4. previewOutput.start((err: BusinessError) => {
-5. if (err) {
-6. console.error(`Failed to start the preview output, error code: ${err.code}.`);
-7. return;
-8. }
-9. console.info('Callback returned with preview output started.');
-10. });
-11. }
+function startPreviewOutput(previewOutput: camera.PreviewOutput): void {
+  previewOutput.start((err: BusinessError) => {
+    if (err) {
+      console.error(`Failed to start the preview output, error code: ${err.code}.`);
+      return;
+    }
+    console.info('Callback returned with preview output started.');
+  });
+}
 ```
 
 ## start(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 start(): Promise<void>
 
 开始输出预览流。使用Promise异步回调。
 
-说明
+**说明** 
 
 从 API version 10开始支持，从API version 11开始废弃。建议使用[Session.start](arkts-apis-camera-session.md#start11-1)替代。
 
@@ -553,27 +524,25 @@ start(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function startPreviewOutput(previewOutput: camera.PreviewOutput): void {
-4. previewOutput.start().then(() => {
-5. console.info('Promise returned with preview output started.');
-6. }).catch((error: BusinessError) => {
-7. console.error(`Failed to preview output start, error code: ${error.code}.`);
-8. });
-9. }
+function startPreviewOutput(previewOutput: camera.PreviewOutput): void {
+  previewOutput.start().then(() => {
+    console.info('Promise returned with preview output started.');
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to preview output start, error code: ${error.code}.`);
+  });
+}
 ```
 
 ## stop(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 stop(callback: AsyncCallback<void>): void
 
 停止输出预览流，通过注册回调函数获取结果。使用callback异步回调。
 
-说明
+**说明** 
 
 从 API version 10开始支持，从API version 11开始废弃。建议使用[Session.stop](arkts-apis-camera-session.md#stop11)替代。
 
@@ -587,29 +556,27 @@ stop(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function stopPreviewOutput(previewOutput: camera.PreviewOutput): void {
-4. previewOutput.stop((err: BusinessError) => {
-5. if (err) {
-6. console.error(`Failed to stop the preview output, error code: ${err.code}.`);
-7. return;
-8. }
-9. console.info('Returned with preview output stopped.');
-10. })
-11. }
+function stopPreviewOutput(previewOutput: camera.PreviewOutput): void {
+  previewOutput.stop((err: BusinessError) => {
+    if (err) {
+      console.error(`Failed to stop the preview output, error code: ${err.code}.`);
+      return;
+    }
+    console.info('Returned with preview output stopped.');
+  })
+}
 ```
 
 ## stop(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 stop(): Promise<void>
 
 停止输出预览流。使用Promise异步回调。
 
-说明
+**说明** 
 
 从 API version 10开始支持，从API version 11开始废弃。建议使用[Session.stop](arkts-apis-camera-session.md#stop11-1)替代。
 
@@ -623,21 +590,19 @@ stop(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function stopPreviewOutput(previewOutput: camera.PreviewOutput): void {
-4. previewOutput.stop().then(() => {
-5. console.info('Callback returned with preview output stopped.');
-6. }).catch((error: BusinessError) => {
-7. console.error(`Failed to preview output stop, error code: ${error.code}.`);
-8. });
-9. }
+function stopPreviewOutput(previewOutput: camera.PreviewOutput): void {
+  previewOutput.stop().then(() => {
+    console.info('Callback returned with preview output stopped.');
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to preview output stop, error code: ${error.code}.`);
+  });
+}
 ```
 
 ## isBandwidthCompressionSupported23+
-
-PhonePC/2in1TabletTVWearable
 
 isBandwidthCompressionSupported(): boolean
 
@@ -655,25 +620,23 @@ isBandwidthCompressionSupported(): boolean
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function isBandwidthCompressionSupported(previewOutput: camera.PreviewOutput): boolean {
-4. let supported: boolean = false;
-5. try {
-6. supported = previewOutput.isBandwidthCompressionSupported();
-7. } catch (error) {
-8. // 失败返回错误码error.code并处理。
-9. let err = error as BusinessError;
-10. console.error(`The previewOutput.isBandwidthCompressionSupported call failed. error code: ${err.code}`);
-11. }
-12. return supported;
-13. }
+function isBandwidthCompressionSupported(previewOutput: camera.PreviewOutput): boolean {
+  let supported: boolean = false;
+  try {
+    supported = previewOutput.isBandwidthCompressionSupported();
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The previewOutput.isBandwidthCompressionSupported call failed. error code: ${err.code}`);
+  }
+  return supported;
+}
 ```
 
 ## enableBandwidthCompression23+
-
-PhonePC/2in1TabletTVWearable
 
 enableBandwidthCompression(enabled: boolean): void
 
@@ -681,7 +644,7 @@ enableBandwidthCompression(enabled: boolean): void
 
 使能之前，可先使用方法[isBandwidthCompressionSupported](arkts-apis-camera-previewoutput.md#isbandwidthcompressionsupported23)对设备是否支持预览带宽压缩进行检查。
 
-说明
+**说明** 
 
 该接口只能在使用[Session.commitConfig](arkts-apis-camera-session.md#commitconfig11)接口之前调用，否则会影响预览流出流格式。
 
@@ -707,16 +670,159 @@ enableBandwidthCompression(enabled: boolean): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function enableBandwidthCompression(previewOutput: camera.PreviewOutput, enabled: boolean): void {
-4. try {
-5. previewOutput.enableBandwidthCompression(enabled);
-6. } catch (error) {
-7. // 失败返回错误码error.code并处理。
-8. let err = error as BusinessError;
-9. console.error(`The previewOutput.enableBandwidthCompression call failed. error code: ${err.code}`);
-10. }
-11. }
+function enableBandwidthCompression(previewOutput: camera.PreviewOutput, enabled: boolean): void {
+  try {
+    previewOutput.enableBandwidthCompression(enabled);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The previewOutput.enableBandwidthCompression call failed. error code: ${err.code}`);
+  }
+}
+```
+
+## addDeferredSurface24+
+
+addDeferredSurface(surfaceId: string): void
+
+配置延迟预览的Surface，可以在[commitConfig](arkts-apis-camera-session.md#commitconfig11-1)配流和[start](arkts-apis-camera-session.md#start11-1)启流之后运行。
+
+**元服务API：** 从API version 24开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| surfaceId | string | 是 | 从[XComponent](ts-basic-components-xcomponent.md)组件获取的surfaceId。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](errorcode-camera.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400101 | Parameter missing or parameter type incorrect. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+async function preview(cameraManager: camera.CameraManager, cameraInfo: camera.CameraDevice, previewProfile: camera.Profile, photoProfile: camera.Profile, mode: camera.SceneMode, previewSurfaceId: string): Promise<void> {
+  let cameraInput: camera.CameraInput = cameraManager.createCameraInput(cameraInfo);
+  let previewOutput: camera.PreviewOutput = cameraManager.createDeferredPreviewOutput(previewProfile);
+  let photoOutput: camera.PhotoOutput = cameraManager.createPhotoOutput(photoProfile);
+  let session: camera.Session  = cameraManager.createSession(mode);
+  session.beginConfig();
+  session.addInput(cameraInput);
+  session.addOutput(previewOutput);
+  session.addOutput(photoOutput);
+  await session.commitConfig();
+  try {
+    await session.start();
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`start session failed. error code: ${err.code}`);
+  }
+  previewOutput.addDeferredSurface(previewSurfaceId);
+}
+```
+
+## isLogViewAssistSupported
+
+isLogViewAssistSupported(): boolean
+
+LOG视频下，查询是否支持辅助监看功能。辅助监看开启后，预览画面将还原至原色域，录制出的视频仍然是LOG视频格式。
+
+**说明** 
+
+辅助监看效果仅支持1080P及以下分辨率。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 是否支持辅助监看功能。true表示支持，false表示不支持。 |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function isLogViewAssistSupported(previewOutput: camera.PreviewOutput): boolean {
+  let supported: boolean = false;
+  try {
+      supported = previewOutput.isLogViewAssistSupported();
+  } catch (error) {
+      // 失败返回错误码error.code并处理。
+      let err = error as BusinessError;
+      console.error(`The previewOutput.isLogViewAssistSupported call failed. error code: ${err.code}`);
+  }
+  return supported;
+}
+```
+
+## setLogViewAssistEnable
+
+setLogViewAssistEnable(enable: boolean): void
+
+LOG视频下，使能辅助监看之前，可先使用方法[isLogViewAssistSupported](arkts-apis-camera-previewoutput.md#islogviewassistsupported)查询设备是否支持预览辅助监看。
+
+**说明** 
+
+* 该接口只能在使用[Session.commitConfig](arkts-apis-camera-session.md#commitconfig11)接口之后调用。
+* 预览辅助监看效果仅支持1080P及以下分辨率。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enable | boolean | 是 | 是否使能辅助监看。true表示使能，false表示不使能。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](errorcode-camera.md)和[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 7400103 | Session not config. |
+| 7400201 | Camera service fatal error. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function setLogViewAssistEnable(previewOutput: camera.PreviewOutput, enable: boolean): void {
+  try {
+      previewOutput.setLogViewAssistEnable(enable);
+  } catch (error) {
+      // 失败返回错误码error.code并处理。
+      let err = error as BusinessError;
+      console.error(`The previewOutput.setLogViewAssistEnable call failed. error code: ${err.code}`);
+  }
+}
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-autom
 title: AutoMappingSubgraphIOIndexFuncRegister
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > AutoMappingSubgraphIOIndexFuncRegister
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:29+08:00
+scraped_at: 2026-09-02T14:50:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e7c9bccfa55d34805f4d8203a92f3ffb05b3ea47326cc75f47baa5b4c24874ca
+content_hash: sha256:ae57843ad5c239f2059cedf441a00f09276a74b57a57b3541ff368d496da5be7
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ FrameworkRegistry类的封装，通过类的构造函数调用FrameworkRegistry�
 
 ## 函数原型
 
-```
-1. AutoMappingSubgraphIOIndexFuncRegister(domi::FrameworkType framework, AutoMappingSubgraphIOIndexFunc fun)
+```cpp
+AutoMappingSubgraphIOIndexFuncRegister(domi::FrameworkType framework, AutoMappingSubgraphIOIndexFunc fun)
 ```
 
 ## 参数说明

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 地址越界检测能力概述
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 地址越界类问题检测 > 地址越界检测能力概述
 category: best-practices
-scraped_at: 2026-04-28T08:22:48+08:00
+scraped_at: 2026-09-02T15:03:22+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:086d3428e310a83fb17046a3ea367f2334dfc50ce53af330f120ac6a16fa1133
+content_hash: sha256:1b3011cf887650ca1bff4ccdedaca7b085edc8b0233c3b38c300a96d06fcb6cd
 ---
 
 地址越界检测功能主要用于帮助开发者在调试和压力测试阶段发现内存非法访问问题，如越界读写、Use-After-Free、Double-Free等。这些问题通常难以通过崩溃日志直接确定根本原因。为此，DevEco Studio提供了ASan（Address Sanitizer）、HWASan（Hardware-Assisted Address Sanitizer）、MemDebug（Memory Debug）、GWP-ASan等多种检测工具，在运行时监控内存访问行为，及时捕获并报告潜在的地址越界问题，提高问题发现的效率和定位的准确性。这些工具在检测精度、性能开销和适用场景上各有侧重，分别适用于开发调试和商用发布的不同阶段。
@@ -17,7 +17,7 @@ content_hash: sha256:086d3428e310a83fb17046a3ea367f2334dfc50ce53af330f120ac6a16f
 | **劣势** | 1. 需要应用适配插桩。 2. 2倍CPU和内存开销。 | 1. 需要应用适配插桩。 2. 2倍CPU开销和10%~35%的内存影响。 | 1. 检测能力有限。 2. 10-20%性能和内存影响。 | 检测能力有限。 |
 | **适用场景** | 开发态（调试压测）。 | 开发态（调试压测）。 | 开发态（调试压测）。 | 运行态（商用）。 |
 
-说明
+**说明** 
 
 1. ASan、HWASan、MemDebug对应用性能有影响，仅适用于开发调试和压力测试阶段。在应用上架前，请确保已关闭这些功能（检查方法：解压hap包，检查module.json文件中是否包含asanEnable或hwasanEnable字段，并且字段值为true）。
 2. ASan相较于HWASan资源消耗更大，建议优先使用HWASan。

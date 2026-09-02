@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-effe
 title: effect_filter.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > effect_filter.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:05+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:6dd4cb4af89a22ad3b38e569c9251940e70090392d5ba1ff3b8a9fa2f9666766
+scraped_at: 2026-09-02T15:02:44+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:56b8ea2cc5d94f7d6f2d6861c2f5cdad7e40053e22b82c9a9a720731542dbe7c
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明滤镜效果的接口。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -46,14 +40,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Filter\_CreateEffect()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. EffectErrorCode OH_Filter_CreateEffect(OH_PixelmapNative* pixelmap, OH_Filter** filter)
+```c
+EffectErrorCode OH_Filter_CreateEffect(OH_PixelmapNative* pixelmap, OH_Filter** filter)
 ```
 
 **描述**
@@ -77,10 +67,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Filter\_Release()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. EffectErrorCode OH_Filter_Release(OH_Filter* filter)
+```c
+EffectErrorCode OH_Filter_Release(OH_Filter* filter)
 ```
 
 **描述**
@@ -103,10 +91,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Filter\_Blur()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. EffectErrorCode OH_Filter_Blur(OH_Filter* filter, float radius)
+```c
+EffectErrorCode OH_Filter_Blur(OH_Filter* filter, float radius)
 ```
 
 **描述**
@@ -130,10 +116,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Filter\_BlurWithTileMode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. EffectErrorCode OH_Filter_BlurWithTileMode(OH_Filter* filter, float radius, EffectTileMode tileMode)
+```c
+EffectErrorCode OH_Filter_BlurWithTileMode(OH_Filter* filter, float radius, EffectTileMode tileMode)
 ```
 
 **描述**
@@ -158,10 +142,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Filter\_Brighten()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. EffectErrorCode OH_Filter_Brighten(OH_Filter* filter, float brightness)
+```c
+EffectErrorCode OH_Filter_Brighten(OH_Filter* filter, float brightness)
 ```
 
 **描述**
@@ -185,10 +167,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Filter\_GrayScale()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. EffectErrorCode OH_Filter_GrayScale(OH_Filter* filter)
+```c
+EffectErrorCode OH_Filter_GrayScale(OH_Filter* filter)
 ```
 
 **描述**
@@ -211,10 +191,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Filter\_Invert()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. EffectErrorCode OH_Filter_Invert(OH_Filter* filter)
+```c
+EffectErrorCode OH_Filter_Invert(OH_Filter* filter)
 ```
 
 **描述**
@@ -237,10 +215,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Filter\_SetColorMatrix()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. EffectErrorCode OH_Filter_SetColorMatrix(OH_Filter* filter, OH_Filter_ColorMatrix* matrix)
+```c
+EffectErrorCode OH_Filter_SetColorMatrix(OH_Filter* filter, OH_Filter_ColorMatrix* matrix)
 ```
 
 **描述**
@@ -264,10 +240,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Filter\_GetEffectPixelMap()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. EffectErrorCode OH_Filter_GetEffectPixelMap(OH_Filter* filter, OH_PixelmapNative** pixelmap)
+```c
+EffectErrorCode OH_Filter_GetEffectPixelMap(OH_Filter* filter, OH_PixelmapNative** pixelmap)
 ```
 
 **描述**

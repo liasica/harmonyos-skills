@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-inpu
 title: Input_AxisEvent
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > C API > 结构体 > Input_AxisEvent
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:20+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:ece07300115d3923e6a2a7dc4d615a20a2fdc928fafeafcea014c97b5f04f9e8
+scraped_at: 2026-09-02T14:52:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5afc88e8f5daeb677c7b71b388fb84f4eb676936f40c63ba5860761c42b560c7
 ---
 
-```
-1. typedef struct Input_AxisEvent Input_AxisEvent
+```c
+typedef struct Input_AxisEvent Input_AxisEvent
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-轴事件对象。
+轴事件对象。用于表示输入设备的轴事件数据，如游戏手柄的摇杆移动、鼠标滚轮滚动等场景。开发者可以通过轴事件获取输入设备的轴值变化，实现精细的输入控制，提升用户交互体验。
 
 **起始版本：** 12
 

@@ -3,32 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: RelativeContainer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 行列与堆叠 > RelativeContainer
 category: harmonyos-references
-scraped_at: 2026-04-29T13:51:41+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:df973884754f3973148553e4a1aa32e9dba4873580c5cbd30339ac084814ae3f
+scraped_at: 2026-09-02T15:00:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:857c9eee4a5c17ac729785a5b681a1916f65c8a46478dd66c2c0d5c1a82b7d54
 ---
 
-相对布局组件，用于复杂场景中元素对齐的布局。
+相对布局组件，用于复杂场景中元素对齐的布局。通过设置子组件的对齐规则，实现子组件相对于容器或其他子组件的对齐，适用于需要灵活布局、减少嵌套层级的复杂界面。
 
 子组件可以通过设置[alignRules](ts-universal-attributes-location.md#alignrules9)来设置自身在相对容器中的对齐规则。
 
-说明
+**说明** 
 
-* 该组件从API version 9开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 该组件从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 在RelativeContainer组件中，不设置[width](ts-universal-attributes-size.md#width)、[height](ts-universal-attributes-size.md#height)时，对应属性布局表现与设置为100%相同。
 * 从API version 11开始，在RelativeContainer组件中，[width](ts-universal-attributes-size.md#width)、[height](ts-universal-attributes-size.md#height)设置"auto"表示自适应子组件。当width设置"auto"时，如果水平方向上子组件以容器作为锚点，则"auto"不生效（即视为不设置width），垂直方向上同理。
 * 从API version 20开始，在RelativeContainer组件中，[width](ts-universal-attributes-size.md#width15)、[height](ts-universal-attributes-size.md#height15)设置LayoutPolicy.wrapContent表示自适应子组件且被祖先节点尺寸约束，设置LayoutPolicy.fixAtIdealSize表示自适应子组件且不被祖先节点尺寸约束。当width设置wrapContent或fixAtIdealSize时，如果水平方向上子组件直接或间接以容器作为锚点，则容器在该方向上的尺寸不自适应该组件，垂直方向上同理。
-* 相对布局容器内的子组件的[margin](ts-universal-attributes-size.md#margin)含义不同于通用属性的margin，其含义为到该方向上的锚点的距离。若该方向上没有锚点，则该方向的margin不生效。
+* RelativeContainer中子组件的[margin](ts-universal-attributes-size.md#margin)不同于通用属性margin，指子组件到该方向上锚点的距离。例如，当alignRules设置了left锚点时，margin.left表示子组件到left锚点的距离。若alignRules未设置某个边界方向的锚点（如未设置left或right锚点），则该方向的margin不生效。
 
 ## 子组件
-
-PhonePC/2in1TabletTVWearable
 
 支持多个子组件。
 
 ## 接口
-
-PhonePC/2in1TabletTVWearable
 
 RelativeContainer()
 
@@ -42,19 +38,21 @@ RelativeContainer()
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用属性](ts-component-general-attributes.md)外，还支持如下属性：
+
+**说明** 
+
+RelativeContainer中子组件的margin属性有特殊生效条件，详见上方说明。
 
 ### guideLine12+
 
-PhonePC/2in1TabletTVWearable
-
 guideLine(value: Array<GuideLineStyle>)
 
-设置RelativeContainer容器内的[辅助线](../harmonyos-guides/arkts-layout-development-relative-layout.md#使用辅助线辅助定位子组件)，Array中每个项目即为一条guideLine。
+设置RelativeContainer容器内的[辅助线](../harmonyos-guides/arkts-layout-development-relative-layout.md#使用辅助线辅助定位子组件)，数组中每个元素代表一条辅助线。典型使用场景：子组件基于虚拟参考线对齐、创建可灵活调整的参考线定位、多个子组件基于同一基准线布局。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -62,17 +60,17 @@ guideLine(value: Array<GuideLineStyle>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | Array<[GuideLineStyle](ts-container-relativecontainer.md#guidelinestyle12对象说明)> | 是 | RelativeContainer容器内的辅助线。 |
+| value | Array<[GuideLineStyle](ts-container-relativecontainer.md#guidelinestyle12对象说明)> | 是 | RelativeContainer容器内的辅助线，定义guideLine的id、方向和位置，用于辅助定位子组件。 |
 
 ### barrier12+
-
-PhonePC/2in1TabletTVWearable
 
 barrier(value: Array<BarrierStyle>)
 
-设置RelativeContainer容器内的[屏障](../harmonyos-guides/arkts-layout-development-relative-layout.md#多个组件的屏障)，Array中每个项目即为一条barrier。
+设置RelativeContainer容器内的[屏障](../harmonyos-guides/arkts-layout-development-relative-layout.md#多个组件的屏障)，子组件可以以屏障为锚点进行对齐定位。数组中每个元素代表一条屏障。典型使用场景：避免子组件重叠、基于组件边缘创建虚拟边界、实现组件间自动间隔。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -80,17 +78,17 @@ barrier(value: Array<BarrierStyle>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | Array<[BarrierStyle](ts-container-relativecontainer.md#barrierstyle12对象说明)> | 是 | RelativeContainer容器内的屏障。 |
+| value | Array<[BarrierStyle](ts-container-relativecontainer.md#barrierstyle12对象说明)> | 是 | RelativeContainer容器内的屏障，用于定义屏障的id、方向和依赖组件，子组件可以以屏障为锚点进行对齐定位。 |
 
 ### barrier12+
 
-PhonePC/2in1TabletTVWearable
-
 barrier(barrierStyle: Array<LocalizedBarrierStyle>)
 
-设置RelativeContainer容器内的屏障，Array中每个项目即为一条barrier，支持定义镜像模式的屏障线。
+设置RelativeContainer容器内的屏障，子组件可以以屏障为锚点进行对齐定位，支持定义镜像模式的屏障线。数组中每个元素代表一条屏障。典型使用场景：RTL语言布局适配、镜像界面设计、根据阅读方向自动调整屏障位置。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -98,62 +96,62 @@ barrier(barrierStyle: Array<LocalizedBarrierStyle>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| barrierStyle | Array<[LocalizedBarrierStyle](ts-container-relativecontainer.md#localizedbarrierstyle12对象说明)> | 是 | RelativeContainer容器内的屏障。 |
+| barrierStyle | Array<[LocalizedBarrierStyle](ts-container-relativecontainer.md#localizedbarrierstyle12对象说明)> | 是 | RelativeContainer容器内的屏障，支持定义镜像模式的屏障线。 |
 
 ## GuideLineStyle12+对象说明
 
-PhonePC/2in1TabletTVWearable
-
-guideLine参数，用于定义一条guideLine的id、方向和位置。
+guideLine参数，用于定义一条guideLine的id、方向和位置，辅助子组件在RelativeContainer中进行定位和对齐。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| id | string | 否 | 否 | guideLine的id，必须是唯一的并且不可与容器内组件重名。 |
-| direction | [Axis](ts-appendix-enums.md#axis) | 否 | 否 | 指定guideLine的方向。  垂直方向的guideLine仅能作为组件水平方向的锚点，作为垂直方向的锚点时值为0；水平方向的guideLine仅能作为组件垂直方向的锚点，作为水平方向的锚点时值为0。  默认值：Axis.Vertical  非法值：按默认值处理。 |
-| position | [GuideLinePosition](ts-container-relativecontainer.md#guidelineposition12对象说明) | 否 | 否 | 指定guideLine的位置。  当未声明或声明异常值（如undefined）时，guideLine的位置默认为start: 0。start和end两种声明方式选择一种即可。若同时声明，仅start生效。若容器在某个方向的size被声明为"auto"，则该方向上guideLine的位置只能使用start方式声明（不允许使用百分比）。  默认值：  {  start: 0  }  非法值：按默认值处理。 |
+| id | string | 否 | 否 | guideLine的id，用于标识辅助线，子组件可通过此id引用该辅助线作为锚点。必须是唯一的并且不可与容器内组件重名。 |
+| direction | [Axis](ts-appendix-enums.md#axis) | 否 | 否 | 指定guideLine的方向。Axis.Vertical表示垂直辅助线，仅能作为组件水平方向的锚点；Axis.Horizontal表示水平辅助线，仅能作为组件垂直方向的锚点。  默认值：Axis.Vertical  非法值：按默认值处理。 |
+| position | [GuideLinePosition](ts-container-relativecontainer.md#guidelineposition12对象说明) | 否 | 否 | 指定guideLine的位置。  当未声明或声明异常值（如undefined）时，guideLine的位置默认为start: 0。start和end两种声明方式选择一种即可。若同时声明，仅start生效。若容器的width被声明为"auto"，则Axis.Vertical类型guideLine的位置只能使用start方式声明（不允许使用百分比）；若容器的height被声明为"auto"，则Axis.Horizontal类型guideLine的位置只能使用start方式声明（不允许使用百分比）。  默认值：  {  start: 0  }  非法值：按默认值处理。 |
 
 ## GuideLinePosition12+对象说明
-
-PhonePC/2in1TabletTVWearable
 
 guideLine位置参数，用于定义guideLine的位置。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| start | [Dimension](ts-types.md#dimension10) | 否 | 是 | guideLine距离容器左侧或者顶部的距离。 |
-| end | [Dimension](ts-types.md#dimension10) | 否 | 是 | guideLine距离容器右侧或者底部的距离。 |
+| start | [Dimension](ts-types.md#dimension10) | 否 | 是 | guideLine距离容器左侧或者顶部的距离。单位：vp。  默认值：0。与end二选一，若同时声明则仅start生效。若容器的width被声明为"auto"，则Axis.Vertical类型的guideLine只能使用start方式声明（不允许使用百分比）；若容器的height被声明为"auto"，则Axis.Horizontal类型的guideLine只能使用start方式声明（不允许使用百分比）。 |
+| end | [Dimension](ts-types.md#dimension10) | 否 | 是 | guideLine距离容器右侧或者底部的距离。单位：vp。与start二选一，若同时声明则仅start生效。若容器的width被声明为"auto"，则Axis.Vertical类型的guideLine不支持使用end方式声明；若容器的height被声明为"auto"，则Axis.Horizontal类型的guideLine不支持使用end方式声明。 |
 
 ## BarrierStyle12+对象说明
 
-PhonePC/2in1TabletTVWearable
-
-barrier参数，用于定义一条barrier的id、方向和生成时所依赖的组件。
+barrier参数，用于定义一条barrier的id、方向和生成时所依赖的组件，子组件可通过barrier的id引用屏障作为锚点进行对齐定位。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| id | string | 否 | 否 | barrier的id，必须是唯一的并且不可与容器内组件重名。 |
-| direction | [BarrierDirection](ts-container-relativecontainer.md#barrierdirection12枚举说明) | 否 | 否 | 指定barrier的方向。  垂直方向（TOP，BOTTOM）的barrier仅能作为组件的水平方向锚点，用作垂直方向锚点时值为0；水平方向（LEFT，RIGHT）的barrier仅能作为组件的垂直方向锚点，用作水平方向锚点时值为0。  默认值：BarrierDirection.LEFT  非法值：按默认值处理。 |
-| referencedId | Array<string> | 否 | 否 | 指定生成barrier所依赖的组件。 |
+| id | string | 否 | 否 | barrier的id，用于标识屏障，子组件可通过此id引用该屏障作为锚点。必须是唯一的并且不可与容器内组件重名。 |
+| direction | [BarrierDirection](ts-container-relativecontainer.md#barrierdirection12枚举说明) | 否 | 否 | 指定barrier的方向。  水平屏障线（TOP/BOTTOM）仅能作为组件垂直方向锚点（top或bottom），用于水平方向锚点时位置视为0。垂直屏障线（LEFT/RIGHT）仅能作为组件水平方向锚点（left或right），用于垂直方向锚点时位置视为0。  默认值：BarrierDirection.LEFT  非法值：按默认值处理。 |
+| referencedId | Array<string> | 否 | 否 | 指定生成barrier所依赖的组件。将需要作为屏障基准的组件id放入数组，至少包含一个有效组件ID，不存在的ID会被忽略。barrier根据组件边界计算位置：LEFT取最左侧，RIGHT取最右侧，TOP取最上方，BOTTOM取最下方。 |
 
 ## BarrierDirection12+枚举说明
-
-PhonePC/2in1TabletTVWearable
 
 定义屏障线的方向。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -166,775 +164,773 @@ PhonePC/2in1TabletTVWearable
 
 ## LocalizedBarrierStyle12+对象说明
 
-PhonePC/2in1TabletTVWearable
-
-barrier参数，用于定义一条barrier的id、方向和生成时所依赖的组件。
+barrier参数，用于定义一条支持镜像模式的barrier的id、方向和生成时所依赖的组件，子组件可通过barrier的id引用屏障作为锚点进行对齐定位。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| id | string | 否 | 否 | barrier的id，必须是唯一的并且不可与容器内组件重名。 |
-| localizedDirection | [LocalizedBarrierDirection](ts-container-relativecontainer.md#localizedbarrierdirection12枚举说明) | 否 | 否 | 指定barrier的方向。  垂直方向（TOP，BOTTOM）的barrier仅能作为组件的水平方向锚点，作为垂直方向锚点时值为0。水平方向（START，END）的barrier仅能作为组件的垂直方向锚点，作为水平方向锚点时值为0。 |
-| referencedId | Array<string> | 否 | 否 | 指定生成barrier所依赖的组件。 |
+| id | string | 否 | 否 | barrier的id，用于标识屏障，子组件可通过此id引用该屏障作为锚点。必须是唯一的并且不可与容器内组件重名。 |
+| localizedDirection | [LocalizedBarrierDirection](ts-container-relativecontainer.md#localizedbarrierdirection12枚举说明) | 否 | 否 | 指定barrier的方向。  水平屏障线（TOP/BOTTOM）仅能作为组件垂直方向锚点（top或bottom），用于水平方向锚点时位置视为0。垂直屏障线（START/END，支持LTR/RTL镜像）仅能作为组件水平方向锚点（start或end），用于垂直方向锚点时位置视为0。  默认值：LocalizedBarrierDirection.START  非法值：按默认值处理。 |
+| referencedId | Array<string> | 否 | 否 | 指定生成barrier所依赖的组件。将需要作为屏障基准的组件id放入数组，至少包含一个有效组件ID，不存在的ID会被忽略。支持镜像模式的屏障根据LTR/RTL模式下的实际位置计算屏障位置。 |
 
 ## LocalizedBarrierDirection12+枚举说明
-
-PhonePC/2in1TabletTVWearable
 
 定义支持镜像模式的屏障线的方向。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| START | 0 | 屏障在其所有[referencedId](ts-container-relativecontainer.md#localizedbarrierstyle12对象说明)的最左/右侧，LTR模式时为最左侧，RTL模式时为最右侧。 |
-| END | 1 | 屏障在其所有[referencedId](ts-container-relativecontainer.md#localizedbarrierstyle12对象说明)的最左/右侧, LTR模式时为最右侧，RTL模式时为最左侧。 |
+| START | 0 | 屏障在其所有[referencedId](ts-container-relativecontainer.md#localizedbarrierstyle12对象说明)的起始侧，LTR模式时为最左侧，RTL模式时为最右侧。 |
+| END | 1 | 屏障在其所有[referencedId](ts-container-relativecontainer.md#localizedbarrierstyle12对象说明)的结束侧，LTR模式时为最右侧，RTL模式时为最左侧。 |
 | TOP | 2 | 屏障在其所有[referencedId](ts-container-relativecontainer.md#localizedbarrierstyle12对象说明)的最上方。 |
 | BOTTOM | 3 | 屏障在其所有[referencedId](ts-container-relativecontainer.md#localizedbarrierstyle12对象说明)的最下方。 |
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用事件](ts-component-general-events.md)。
 
 ## 示例
-
-PhonePC/2in1TabletTVWearable
 
 ### 示例1（以容器和容器内组件作为锚点进行布局）
 
 本示例通过alignRules接口实现了以容器和容器内组件作为锚点进行布局的功能。
 
+```ts
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      RelativeContainer() {
+        Row() {
+          Text('row1')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(100)
+        .height(100)
+        .backgroundColor('#a3cf62')
+        .alignRules({
+          top: { anchor: "__container__", align: VerticalAlign.Top },
+          left: { anchor: "__container__", align: HorizontalAlign.Start }
+        })
+        .id("row1")
+
+        Row() {
+          Text('row2')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(100)
+        .height(100)
+        .backgroundColor('#00ae9d')
+        .alignRules({
+          top: { anchor: "__container__", align: VerticalAlign.Top },
+          right: { anchor: "__container__", align: HorizontalAlign.End }
+        })
+        .id("row2")
+
+        Row() {
+          Text('row3')
+        }
+        .justifyContent(FlexAlign.Center)
+        .height(100)
+        .backgroundColor('#0a59f7')
+        .alignRules({
+          top: { anchor: "row1", align: VerticalAlign.Bottom },
+          left: { anchor: "row1", align: HorizontalAlign.End },
+          right: { anchor: "row2", align: HorizontalAlign.Start }
+        })
+        .id("row3")
+
+        Row() {
+          Text('row4')
+        }.justifyContent(FlexAlign.Center)
+        .backgroundColor('#2ca9e0')
+        .alignRules({
+          top: { anchor: "row3", align: VerticalAlign.Bottom },
+          bottom: { anchor: "__container__", align: VerticalAlign.Bottom },
+          left: { anchor: "__container__", align: HorizontalAlign.Start },
+          right: { anchor: "row1", align: HorizontalAlign.End }
+        })
+        .id("row4")
+
+        Row() {
+          Text('row5')
+        }.justifyContent(FlexAlign.Center)
+        .backgroundColor('#30c9f7')
+        .alignRules({
+          top: { anchor: "row3", align: VerticalAlign.Bottom },
+          bottom: { anchor: "__container__", align: VerticalAlign.Bottom },
+          left: { anchor: "row2", align: HorizontalAlign.Start },
+          right: { anchor: "__container__", align: HorizontalAlign.End }
+        })
+        .id("row5")
+      }
+      .width(300).height(300)
+      .margin({ left: 50 })
+      .border({ width: 2, color: "#6699FF" })
+    }
+    .height('100%')
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct Index {
-4. build() {
-5. Row() {
-6. RelativeContainer() {
-7. Row() {
-8. Text('row1')
-9. }
-10. .justifyContent(FlexAlign.Center)
-11. .width(100)
-12. .height(100)
-13. .backgroundColor('#a3cf62')
-14. .alignRules({
-15. top: { anchor: "__container__", align: VerticalAlign.Top },
-16. left: { anchor: "__container__", align: HorizontalAlign.Start }
-17. })
-18. .id("row1")
 
-20. Row() {
-21. Text('row2')
-22. }
-23. .justifyContent(FlexAlign.Center)
-24. .width(100)
-25. .height(100)
-26. .backgroundColor('#00ae9d')
-27. .alignRules({
-28. top: { anchor: "__container__", align: VerticalAlign.Top },
-29. right: { anchor: "__container__", align: HorizontalAlign.End }
-30. })
-31. .id("row2")
-
-33. Row() {
-34. Text('row3')
-35. }
-36. .justifyContent(FlexAlign.Center)
-37. .height(100)
-38. .backgroundColor('#0a59f7')
-39. .alignRules({
-40. top: { anchor: "row1", align: VerticalAlign.Bottom },
-41. left: { anchor: "row1", align: HorizontalAlign.End },
-42. right: { anchor: "row2", align: HorizontalAlign.Start }
-43. })
-44. .id("row3")
-
-46. Row() {
-47. Text('row4')
-48. }.justifyContent(FlexAlign.Center)
-49. .backgroundColor('#2ca9e0')
-50. .alignRules({
-51. top: { anchor: "row3", align: VerticalAlign.Bottom },
-52. bottom: { anchor: "__container__", align: VerticalAlign.Bottom },
-53. left: { anchor: "__container__", align: HorizontalAlign.Start },
-54. right: { anchor: "row1", align: HorizontalAlign.End }
-55. })
-56. .id("row4")
-
-58. Row() {
-59. Text('row5')
-60. }.justifyContent(FlexAlign.Center)
-61. .backgroundColor('#30c9f7')
-62. .alignRules({
-63. top: { anchor: "row3", align: VerticalAlign.Bottom },
-64. bottom: { anchor: "__container__", align: VerticalAlign.Bottom },
-65. left: { anchor: "row2", align: HorizontalAlign.Start },
-66. right: { anchor: "__container__", align: HorizontalAlign.End }
-67. })
-68. .id("row5")
-69. }
-70. .width(300).height(300)
-71. .margin({ left: 50 })
-72. .border({ width: 2, color: "#6699FF" })
-73. }
-74. .height('100%')
-75. }
-76. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/D_gnIa74S1ezmysdJWjoHQ/zh-cn_image_0000002558766118.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/wPJsBwAXTWW_BcQ5gRBFVQ/zh-cn_image_0000002736314847.png)
 
 ### 示例2（子组件设置外边距）
 
 本示例展示容器内子组件设置外边距的方法。
 
+```ts
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      RelativeContainer() {
+        Row() {
+          Text('row1')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(100)
+        .height(100)
+        .backgroundColor('#a3cf62')
+        .alignRules({
+          top: { anchor: "__container__", align: VerticalAlign.Top },
+          left: { anchor: "__container__", align: HorizontalAlign.Start }
+        })
+        .id("row1")
+        .margin(10)
+
+        Row() {
+          Text('row2')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(100)
+        .height(100)
+        .backgroundColor('#00ae9d')
+        .alignRules({
+          left: { anchor: "row1", align: HorizontalAlign.End },
+          top: { anchor: "row1", align: VerticalAlign.Top }
+        })
+        .id("row2")
+
+        Row() {
+          Text('row3')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(100)
+        .height(100)
+        .backgroundColor('#0a59f7')
+        .alignRules({
+          left: { anchor: "row1", align: HorizontalAlign.Start },
+          top: { anchor: "row1", align: VerticalAlign.Bottom }
+        })
+        .id("row3")
+
+        Row() {
+          Text('row4')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(100)
+        .height(100)
+        .backgroundColor('#2ca9e0')
+        .alignRules({
+          left: { anchor: "row3", align: HorizontalAlign.End },
+          top: { anchor: "row2", align: VerticalAlign.Bottom }
+        })
+        .id("row4")
+        .margin(10)
+      }
+      .width(300).height(300)
+      .margin({ left: 50 })
+      .border({ width: 2, color: "#6699FF" })
+    }
+    .height('100%')
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct Index {
-4. build() {
-5. Row() {
-6. RelativeContainer() {
-7. Row() {
-8. Text('row1')
-9. }
-10. .justifyContent(FlexAlign.Center)
-11. .width(100)
-12. .height(100)
-13. .backgroundColor('#a3cf62')
-14. .alignRules({
-15. top: { anchor: "__container__", align: VerticalAlign.Top },
-16. left: { anchor: "__container__", align: HorizontalAlign.Start }
-17. })
-18. .id("row1")
-19. .margin(10)
 
-21. Row() {
-22. Text('row2')
-23. }
-24. .justifyContent(FlexAlign.Center)
-25. .width(100)
-26. .height(100)
-27. .backgroundColor('#00ae9d')
-28. .alignRules({
-29. left: { anchor: "row1", align: HorizontalAlign.End },
-30. top: { anchor: "row1", align: VerticalAlign.Top }
-31. })
-32. .id("row2")
-
-34. Row() {
-35. Text('row3')
-36. }
-37. .justifyContent(FlexAlign.Center)
-38. .width(100)
-39. .height(100)
-40. .backgroundColor('#0a59f7')
-41. .alignRules({
-42. left: { anchor: "row1", align: HorizontalAlign.Start },
-43. top: { anchor: "row1", align: VerticalAlign.Bottom }
-44. })
-45. .id("row3")
-
-47. Row() {
-48. Text('row4')
-49. }
-50. .justifyContent(FlexAlign.Center)
-51. .width(100)
-52. .height(100)
-53. .backgroundColor('#2ca9e0')
-54. .alignRules({
-55. left: { anchor: "row3", align: HorizontalAlign.End },
-56. top: { anchor: "row2", align: VerticalAlign.Bottom }
-57. })
-58. .id("row4")
-59. .margin(10)
-60. }
-61. .width(300).height(300)
-62. .margin({ left: 50 })
-63. .border({ width: 2, color: "#6699FF" })
-64. }
-65. .height('100%')
-66. }
-67. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/WjCVlmOuRC2YRCNsnk6s4A/zh-cn_image_0000002558606460.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/iuJ4NG49ST2FrazaGaqp9g/zh-cn_image_0000002706675804.png)
 
 ### 示例3（设置容器大小自适应内容）
 
 本示例展示了容器大小适应内容（声明width或height为"auto"）的用法。
 
+```ts
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      RelativeContainer() {
+        Row() {
+          Text('row1')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(100)
+        .height(100)
+        .backgroundColor('#a3cf62')
+        .id("row1")
+
+        Row() {
+          Text('row2')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(100)
+        .height(100)
+        .backgroundColor('#00ae9d')
+        .alignRules({
+          left: { anchor: "row1", align: HorizontalAlign.End },
+          top: { anchor: "row1", align: VerticalAlign.Top }
+        })
+        .id("row2")
+
+        Row() {
+          Text('row3')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(100)
+        .height(100)
+        .backgroundColor('#0a59f7')
+        .alignRules({
+          left: { anchor: "row1", align: HorizontalAlign.Start },
+          top: { anchor: "row1", align: VerticalAlign.Bottom }
+        })
+        .id("row3")
+
+        Row() {
+          Text('row4')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(100)
+        .height(100)
+        .backgroundColor('#2ca9e0')
+        .alignRules({
+          left: { anchor: "row3", align: HorizontalAlign.End },
+          top: { anchor: "row2", align: VerticalAlign.Bottom }
+        })
+        .id("row4")
+      }
+      .width("auto").height("auto")
+      .margin({ left: 50 })
+      .border({ width: 2, color: "#6699FF" })
+    }
+    .height('100%')
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct Index {
-4. build() {
-5. Row() {
-6. RelativeContainer() {
-7. Row() {
-8. Text('row1')
-9. }
-10. .justifyContent(FlexAlign.Center)
-11. .width(100)
-12. .height(100)
-13. .backgroundColor('#a3cf62')
-14. .id("row1")
 
-16. Row() {
-17. Text('row2')
-18. }
-19. .justifyContent(FlexAlign.Center)
-20. .width(100)
-21. .height(100)
-22. .backgroundColor('#00ae9d')
-23. .alignRules({
-24. left: { anchor: "row1", align: HorizontalAlign.End },
-25. top: { anchor: "row1", align: VerticalAlign.Top }
-26. })
-27. .id("row2")
-
-29. Row() {
-30. Text('row3')
-31. }
-32. .justifyContent(FlexAlign.Center)
-33. .width(100)
-34. .height(100)
-35. .backgroundColor('#0a59f7')
-36. .alignRules({
-37. left: { anchor: "row1", align: HorizontalAlign.Start },
-38. top: { anchor: "row1", align: VerticalAlign.Bottom }
-39. })
-40. .id("row3")
-
-42. Row() {
-43. Text('row4')
-44. }
-45. .justifyContent(FlexAlign.Center)
-46. .width(100)
-47. .height(100)
-48. .backgroundColor('#2ca9e0')
-49. .alignRules({
-50. left: { anchor: "row3", align: HorizontalAlign.End },
-51. top: { anchor: "row2", align: VerticalAlign.Bottom }
-52. })
-53. .id("row4")
-54. }
-55. .width("auto").height("auto")
-56. .margin({ left: 50 })
-57. .border({ width: 2, color: "#6699FF" })
-58. }
-59. .height('100%')
-60. }
-61. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/s4-tpKsORH-t64s5HXkGug/zh-cn_image_0000002589325987.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/o1BTr-ghT-qG4WxDfJDsXg/zh-cn_image_0000002736434891.png)
 
 ### 示例4（设置偏移）
 
-本示例通过[bias](ts-types.md#bias对象说明)实现了子组件的位置在垂直方向的两个锚点间偏移的效果。
+本示例通过[bias](ts-types.md#bias11对象说明)实现了子组件的位置在垂直方向的两个锚点间偏移的效果。
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. build() {
-5. Row() {
-6. RelativeContainer() {
-7. Row()
-8. .width(100)
-9. .height(100)
-10. .backgroundColor('#a3cf62')
-11. .alignRules({
-12. top: { anchor: "__container__", align: VerticalAlign.Top },
-13. bottom: { anchor: "__container__", align: VerticalAlign.Bottom },
-14. left: { anchor: "__container__", align: HorizontalAlign.Start },
-15. right: { anchor: "__container__", align: HorizontalAlign.End },
-16. bias: { vertical: 0.3 }
-17. })
-18. .id("row1")
-19. }
-20. .width(300).height(300)
-21. .margin({ left: 50 })
-22. .border({ width: 2, color: "#6699FF" })
-23. }
-24. .height('100%')
-25. }
-26. }
+```ts
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      RelativeContainer() {
+        Row()
+          .width(100)
+          .height(100)
+          .backgroundColor('#a3cf62')
+          .alignRules({
+            top: { anchor: "__container__", align: VerticalAlign.Top },
+            bottom: { anchor: "__container__", align: VerticalAlign.Bottom },
+            left: { anchor: "__container__", align: HorizontalAlign.Start },
+            right: { anchor: "__container__", align: HorizontalAlign.End },
+            bias: { vertical: 0.3 }
+          })
+          .id("row1")
+      }
+      .width(300).height(300)
+      .margin({ left: 50 })
+      .border({ width: 2, color: "#6699FF" })
+    }
+    .height('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/938k9TEFQO-JCLAvf8VKgQ/zh-cn_image_0000002589245929.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/tTpI3NGUTgSe4-KFVZ-m5g/zh-cn_image_0000002706835744.png)
 
 ### 示例5（设置辅助线）
 
 本示例展示了相对布局组件通过[guideLine](ts-container-relativecontainer.md#guideline12)接口设置辅助线，子组件以辅助线为锚点的功能。
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. build() {
-5. Row() {
-6. RelativeContainer() {
-7. Row()
-8. .width(100)
-9. .height(100)
-10. .backgroundColor('#a3cf62')
-11. .alignRules({
-12. left: { anchor: "guideline1", align: HorizontalAlign.End },
-13. top: { anchor: "guideline2", align: VerticalAlign.Top }
-14. })
-15. .id("row1")
-16. }
-17. .width(300)
-18. .height(300)
-19. .margin({ left: 50 })
-20. .border({ width: 2, color: "#6699FF" })
-21. .guideLine([{ id: "guideline1", direction: Axis.Vertical, position: { start: 50 } },
-22. { id: "guideline2", direction: Axis.Horizontal, position: { start: 50 } }])
-23. }
-24. .height('100%')
-25. }
-26. }
+```ts
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      RelativeContainer() {
+        Row()
+          .width(100)
+          .height(100)
+          .backgroundColor('#a3cf62')
+          .alignRules({
+            left: { anchor: "guideline1", align: HorizontalAlign.End },
+            top: { anchor: "guideline2", align: VerticalAlign.Top }
+          })
+          .id("row1")
+      }
+      .width(300)
+      .height(300)
+      .margin({ left: 50 })
+      .border({ width: 2, color: "#6699FF" })
+      .guideLine([{ id: "guideline1", direction: Axis.Vertical, position: { start: 50 } },
+        { id: "guideline2", direction: Axis.Horizontal, position: { start: 50 } }])
+    }
+    .height('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/9pVLsk5AQK-bpa0GOaQpaw/zh-cn_image_0000002558766120.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/ROlL1zQoRcST4F2gyy7gGA/zh-cn_image_0000002736314849.png)
 
 ### 示例6（设置屏障）
 
 本示例展示了相对布局组件通过[barrier](ts-container-relativecontainer.md#barrier12)接口设置屏障，子组件以屏障为锚点的用法。
 
+```ts
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      RelativeContainer() {
+        Row() {
+          Text('row1')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(100)
+        .height(100)
+        .backgroundColor('#a3cf62')
+        .id("row1")
+
+        Row() {
+          Text('row2')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(100)
+        .height(100)
+        .backgroundColor('#00ae9d')
+        .alignRules({
+          middle: { anchor: "row1", align: HorizontalAlign.End },
+          top: { anchor: "row1", align: VerticalAlign.Bottom }
+        })
+        .id("row2")
+
+        Row() {
+          Text('row3')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(100)
+        .height(100)
+        .backgroundColor('#0a59f7')
+        .alignRules({
+          left: { anchor: "barrier1", align: HorizontalAlign.End },
+          top: { anchor: "row1", align: VerticalAlign.Top }
+        })
+        .id("row3")
+
+        Row() {
+          Text('row4')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(50)
+        .height(50)
+        .backgroundColor('#2ca9e0')
+        .alignRules({
+          left: { anchor: "row1", align: HorizontalAlign.Start },
+          top: { anchor: "barrier2", align: VerticalAlign.Bottom }
+        })
+        .id("row4")
+      }
+      .width(300)
+      .height(300)
+      .margin({ left: 50 })
+      .border({ width: 2, color: "#6699FF" })
+      .barrier([{ id: "barrier1", direction: BarrierDirection.RIGHT, referencedId: ["row1", "row2"] },
+        { id: "barrier2", direction: BarrierDirection.BOTTOM, referencedId: ["row1", "row2"] }])
+    }
+    .height('100%')
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct Index {
-4. build() {
-5. Row() {
-6. RelativeContainer() {
-7. Row() {
-8. Text('row1')
-9. }
-10. .justifyContent(FlexAlign.Center)
-11. .width(100)
-12. .height(100)
-13. .backgroundColor('#a3cf62')
-14. .id("row1")
 
-16. Row() {
-17. Text('row2')
-18. }
-19. .justifyContent(FlexAlign.Center)
-20. .width(100)
-21. .height(100)
-22. .backgroundColor('#00ae9d')
-23. .alignRules({
-24. middle: { anchor: "row1", align: HorizontalAlign.End },
-25. top: { anchor: "row1", align: VerticalAlign.Bottom }
-26. })
-27. .id("row2")
-
-29. Row() {
-30. Text('row3')
-31. }
-32. .justifyContent(FlexAlign.Center)
-33. .width(100)
-34. .height(100)
-35. .backgroundColor('#0a59f7')
-36. .alignRules({
-37. left: { anchor: "barrier1", align: HorizontalAlign.End },
-38. top: { anchor: "row1", align: VerticalAlign.Top }
-39. })
-40. .id("row3")
-
-42. Row() {
-43. Text('row4')
-44. }
-45. .justifyContent(FlexAlign.Center)
-46. .width(50)
-47. .height(50)
-48. .backgroundColor('#2ca9e0')
-49. .alignRules({
-50. left: { anchor: "row1", align: HorizontalAlign.Start },
-51. top: { anchor: "barrier2", align: VerticalAlign.Bottom }
-52. })
-53. .id("row4")
-54. }
-55. .width(300)
-56. .height(300)
-57. .margin({ left: 50 })
-58. .border({ width: 2, color: "#6699FF" })
-59. .barrier([{ id: "barrier1", direction: BarrierDirection.RIGHT, referencedId: ["row1", "row2"] },
-60. { id: "barrier2", direction: BarrierDirection.BOTTOM, referencedId: ["row1", "row2"] }])
-61. }
-62. .height('100%')
-63. }
-64. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/fMh7OWuVTL2ajCzvUjWu-A/zh-cn_image_0000002558606462.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/R0zl5x-OReSoS9JBlUgrRg/zh-cn_image_0000002706675806.png)
 
 ### 示例7（设置链）
 
-本示例通过[chainMode](ts-universal-attributes-location.md#chainmode12)接口从上至下分别实现了水平方向的[SPREAD链，SPREAD\_INSIDE链和PACKED链](ts-universal-attributes-location.md#chainstyle12)。
+本示例通过[chainMode](ts-universal-attributes-location.md#chainmode12)接口从上至下分别实现了水平方向的[SPREAD](ts-universal-attributes-location.md#chainstyle12)链、[SPREAD\_INSIDE](ts-universal-attributes-location.md#chainstyle12)链和[PACKED](ts-universal-attributes-location.md#chainstyle12)链。
 
+```ts
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      RelativeContainer() {
+        Row() {
+          Text('row1')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(80)
+        .height(80)
+        .backgroundColor('#a3cf62')
+        .alignRules({
+          left: { anchor: "__container__", align: HorizontalAlign.Start },
+          right: { anchor: "row2", align: HorizontalAlign.Start },
+          top: { anchor: "__container__", align: VerticalAlign.Top }
+        })
+        .id("row1")
+        .chainMode(Axis.Horizontal, ChainStyle.SPREAD)
+
+        Row() {
+          Text('row2')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(80)
+        .height(80)
+        .backgroundColor('#00ae9d')
+        .alignRules({
+          left: { anchor: "row1", align: HorizontalAlign.End },
+          right: { anchor: "row3", align: HorizontalAlign.Start },
+          top: { anchor: "row1", align: VerticalAlign.Top }
+        })
+        .id("row2")
+
+        Row() {
+          Text('row3')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(80)
+        .height(80)
+        .backgroundColor('#0a59f7')
+        .alignRules({
+          left: { anchor: "row2", align: HorizontalAlign.End },
+          right: { anchor: "__container__", align: HorizontalAlign.End },
+          top: { anchor: "row1", align: VerticalAlign.Top }
+        })
+        .id("row3")
+
+        Row() {
+          Text('row4')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(80)
+        .height(80)
+        .backgroundColor('#a3cf62')
+        .alignRules({
+          left: { anchor: "__container__", align: HorizontalAlign.Start },
+          right: { anchor: "row5", align: HorizontalAlign.Start },
+          center: { anchor: "__container__", align: VerticalAlign.Center }
+        })
+        .id("row4")
+        .chainMode(Axis.Horizontal, ChainStyle.SPREAD_INSIDE)
+
+        Row() {
+          Text('row5')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(80)
+        .height(80)
+        .backgroundColor('#00ae9d')
+        .alignRules({
+          left: { anchor: "row4", align: HorizontalAlign.End },
+          right: { anchor: "row6", align: HorizontalAlign.Start },
+          top: { anchor: "row4", align: VerticalAlign.Top }
+        })
+        .id("row5")
+
+        Row() {
+          Text('row6')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(80)
+        .height(80)
+        .backgroundColor('#0a59f7')
+        .alignRules({
+          left: { anchor: "row5", align: HorizontalAlign.End },
+          right: { anchor: "__container__", align: HorizontalAlign.End },
+          top: { anchor: "row4", align: VerticalAlign.Top }
+        })
+        .id("row6")
+
+        Row() {
+          Text('row7')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(80)
+        .height(80)
+        .backgroundColor('#a3cf62')
+        .alignRules({
+          left: { anchor: "__container__", align: HorizontalAlign.Start },
+          right: { anchor: "row8", align: HorizontalAlign.Start },
+          bottom: { anchor: "__container__", align: VerticalAlign.Bottom }
+        })
+        .id("row7")
+        .chainMode(Axis.Horizontal, ChainStyle.PACKED)
+
+        Row() {
+          Text('row8')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(80)
+        .height(80)
+        .backgroundColor('#00ae9d')
+        .alignRules({
+          left: { anchor: "row7", align: HorizontalAlign.End },
+          right: { anchor: "row9", align: HorizontalAlign.Start },
+          top: { anchor: "row7", align: VerticalAlign.Top }
+        })
+        .id("row8")
+
+        Row() {
+          Text('row9')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(80)
+        .height(80)
+        .backgroundColor('#0a59f7')
+        .alignRules({
+          left: { anchor: "row8", align: HorizontalAlign.End },
+          right: { anchor: "__container__", align: HorizontalAlign.End },
+          top: { anchor: "row7", align: VerticalAlign.Top }
+        })
+        .id("row9")
+      }
+      .width(300).height(300)
+      .margin({ left: 50 })
+      .border({ width: 2, color: "#6699FF" })
+    }
+    .height('100%')
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct Index {
-4. build() {
-5. Row() {
-6. RelativeContainer() {
-7. Row() {
-8. Text('row1')
-9. }
-10. .justifyContent(FlexAlign.Center)
-11. .width(80)
-12. .height(80)
-13. .backgroundColor('#a3cf62')
-14. .alignRules({
-15. left: { anchor: "__container__", align: HorizontalAlign.Start },
-16. right: { anchor: "row2", align: HorizontalAlign.Start },
-17. top: { anchor: "__container__", align: VerticalAlign.Top }
-18. })
-19. .id("row1")
-20. .chainMode(Axis.Horizontal, ChainStyle.SPREAD)
 
-22. Row() {
-23. Text('row2')
-24. }
-25. .justifyContent(FlexAlign.Center)
-26. .width(80)
-27. .height(80)
-28. .backgroundColor('#00ae9d')
-29. .alignRules({
-30. left: { anchor: "row1", align: HorizontalAlign.End },
-31. right: { anchor: "row3", align: HorizontalAlign.Start },
-32. top: { anchor: "row1", align: VerticalAlign.Top }
-33. })
-34. .id("row2")
-
-36. Row() {
-37. Text('row3')
-38. }
-39. .justifyContent(FlexAlign.Center)
-40. .width(80)
-41. .height(80)
-42. .backgroundColor('#0a59f7')
-43. .alignRules({
-44. left: { anchor: "row2", align: HorizontalAlign.End },
-45. right: { anchor: "__container__", align: HorizontalAlign.End },
-46. top: { anchor: "row1", align: VerticalAlign.Top }
-47. })
-48. .id("row3")
-
-50. Row() {
-51. Text('row4')
-52. }
-53. .justifyContent(FlexAlign.Center)
-54. .width(80)
-55. .height(80)
-56. .backgroundColor('#a3cf62')
-57. .alignRules({
-58. left: { anchor: "__container__", align: HorizontalAlign.Start },
-59. right: { anchor: "row5", align: HorizontalAlign.Start },
-60. center: { anchor: "__container__", align: VerticalAlign.Center }
-61. })
-62. .id("row4")
-63. .chainMode(Axis.Horizontal, ChainStyle.SPREAD_INSIDE)
-
-65. Row() {
-66. Text('row5')
-67. }
-68. .justifyContent(FlexAlign.Center)
-69. .width(80)
-70. .height(80)
-71. .backgroundColor('#00ae9d')
-72. .alignRules({
-73. left: { anchor: "row4", align: HorizontalAlign.End },
-74. right: { anchor: "row6", align: HorizontalAlign.Start },
-75. top: { anchor: "row4", align: VerticalAlign.Top }
-76. })
-77. .id("row5")
-
-79. Row() {
-80. Text('row6')
-81. }
-82. .justifyContent(FlexAlign.Center)
-83. .width(80)
-84. .height(80)
-85. .backgroundColor('#0a59f7')
-86. .alignRules({
-87. left: { anchor: "row5", align: HorizontalAlign.End },
-88. right: { anchor: "__container__", align: HorizontalAlign.End },
-89. top: { anchor: "row4", align: VerticalAlign.Top }
-90. })
-91. .id("row6")
-
-93. Row() {
-94. Text('row7')
-95. }
-96. .justifyContent(FlexAlign.Center)
-97. .width(80)
-98. .height(80)
-99. .backgroundColor('#a3cf62')
-100. .alignRules({
-101. left: { anchor: "__container__", align: HorizontalAlign.Start },
-102. right: { anchor: "row8", align: HorizontalAlign.Start },
-103. bottom: { anchor: "__container__", align: VerticalAlign.Bottom }
-104. })
-105. .id("row7")
-106. .chainMode(Axis.Horizontal, ChainStyle.PACKED)
-
-108. Row() {
-109. Text('row8')
-110. }
-111. .justifyContent(FlexAlign.Center)
-112. .width(80)
-113. .height(80)
-114. .backgroundColor('#00ae9d')
-115. .alignRules({
-116. left: { anchor: "row7", align: HorizontalAlign.End },
-117. right: { anchor: "row9", align: HorizontalAlign.Start },
-118. top: { anchor: "row7", align: VerticalAlign.Top }
-119. })
-120. .id("row8")
-
-122. Row() {
-123. Text('row9')
-124. }
-125. .justifyContent(FlexAlign.Center)
-126. .width(80)
-127. .height(80)
-128. .backgroundColor('#0a59f7')
-129. .alignRules({
-130. left: { anchor: "row8", align: HorizontalAlign.End },
-131. right: { anchor: "__container__", align: HorizontalAlign.End },
-132. top: { anchor: "row7", align: VerticalAlign.Top }
-133. })
-134. .id("row9")
-135. }
-136. .width(300).height(300)
-137. .margin({ left: 50 })
-138. .border({ width: 2, color: "#6699FF" })
-139. }
-140. .height('100%')
-141. }
-142. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/j3G6l6JRQUSEsa2oTWXuzw/zh-cn_image_0000002589325989.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/6XJog544TN6HHNeknhqgOw/zh-cn_image_0000002736434893.png)
 
 ### 示例8（链中设置偏移）
 
-本示例通过[chainMode](ts-universal-attributes-location.md#chainmode12)和[bias](ts-types.md#bias对象说明)接口实现了水平方向的带偏移的[PACKED链](ts-universal-attributes-location.md#chainstyle12)。
+本示例通过[chainMode](ts-universal-attributes-location.md#chainmode12)和[bias](ts-types.md#bias11对象说明)接口实现了水平方向的带偏移的[PACKED](ts-universal-attributes-location.md#chainstyle12)链。
 
+```ts
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      RelativeContainer() {
+        Row() {
+          Text('row1')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(80)
+        .height(80)
+        .backgroundColor('#a3cf62')
+        .alignRules({
+          left: { anchor: "__container__", align: HorizontalAlign.Start },
+          right: { anchor: "row2", align: HorizontalAlign.Start },
+          center: { anchor: "__container__", align: VerticalAlign.Center },
+          bias: { horizontal: 0 }
+        })
+        .id("row1")
+        .chainMode(Axis.Horizontal, ChainStyle.PACKED)
+
+        Row() {
+          Text('row2')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(80)
+        .height(80)
+        .backgroundColor('#00ae9d')
+        .alignRules({
+          left: { anchor: "row1", align: HorizontalAlign.End },
+          right: { anchor: "row3", align: HorizontalAlign.Start },
+          top: { anchor: "row1", align: VerticalAlign.Top }
+        })
+        .id("row2")
+
+        Row() {
+          Text('row3')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(80)
+        .height(80)
+        .backgroundColor('#0a59f7')
+        .alignRules({
+          left: { anchor: "row2", align: HorizontalAlign.End },
+          right: { anchor: "__container__", align: HorizontalAlign.End },
+          top: { anchor: "row1", align: VerticalAlign.Top }
+        })
+        .id("row3")
+      }
+      .width(300).height(300)
+      .margin({ left: 50 })
+      .border({ width: 2, color: "#6699FF" })
+    }
+    .height('100%')
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct Index {
-4. build() {
-5. Row() {
-6. RelativeContainer() {
-7. Row() {
-8. Text('row1')
-9. }
-10. .justifyContent(FlexAlign.Center)
-11. .width(80)
-12. .height(80)
-13. .backgroundColor('#a3cf62')
-14. .alignRules({
-15. left: { anchor: "__container__", align: HorizontalAlign.Start },
-16. right: { anchor: "row2", align: HorizontalAlign.Start },
-17. center: { anchor: "__container__", align: VerticalAlign.Center },
-18. bias: { horizontal: 0 }
-19. })
-20. .id("row1")
-21. .chainMode(Axis.Horizontal, ChainStyle.PACKED)
 
-23. Row() {
-24. Text('row2')
-25. }
-26. .justifyContent(FlexAlign.Center)
-27. .width(80)
-28. .height(80)
-29. .backgroundColor('#00ae9d')
-30. .alignRules({
-31. left: { anchor: "row1", align: HorizontalAlign.End },
-32. right: { anchor: "row3", align: HorizontalAlign.Start },
-33. top: { anchor: "row1", align: VerticalAlign.Top }
-34. })
-35. .id("row2")
-
-37. Row() {
-38. Text('row3')
-39. }
-40. .justifyContent(FlexAlign.Center)
-41. .width(80)
-42. .height(80)
-43. .backgroundColor('#0a59f7')
-44. .alignRules({
-45. left: { anchor: "row2", align: HorizontalAlign.End },
-46. right: { anchor: "__container__", align: HorizontalAlign.End },
-47. top: { anchor: "row1", align: VerticalAlign.Top }
-48. })
-49. .id("row3")
-50. }
-51. .width(300).height(300)
-52. .margin({ left: 50 })
-53. .border({ width: 2, color: "#6699FF" })
-54. }
-55. .height('100%')
-56. }
-57. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/DA_V1jmwRsubq2dtvqohhA/zh-cn_image_0000002589245931.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/A4RuL9uYRs2tA9r93BRCQw/zh-cn_image_0000002706835746.png)
 
 ### 示例9（设置镜像模式）
 
 本示例展示了在镜像模式（direction声明Direction.Rtl）下以屏障为锚点时使用[LocalizedAlignRuleOptions](ts-universal-attributes-location.md#localizedalignruleoptions12对象说明)和[LocalizedBarrierDirection](ts-container-relativecontainer.md#localizedbarrierdirection12枚举说明)设置对齐方式的用法。
 
+```ts
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      RelativeContainer() {
+        Row() {
+          Text('row1')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(100)
+        .height(100)
+        .backgroundColor('#a3cf62')
+        .id("row1")
+
+        Row() {
+          Text('row2')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(100)
+        .height(100)
+        .backgroundColor('#00ae9d')
+        .alignRules({
+          middle: { anchor: "row1", align: HorizontalAlign.End },
+          top: { anchor: "row1", align: VerticalAlign.Bottom }
+        })
+        .id("row2")
+
+        Row() {
+          Text('row3')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(100)
+        .height(100)
+        .backgroundColor('#0a59f7')
+        .alignRules({
+          start: { anchor: "barrier1", align: HorizontalAlign.End },
+          top: { anchor: "row1", align: VerticalAlign.Top }
+        })
+        .id("row3")
+
+        Row() {
+          Text('row4')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(50)
+        .height(50)
+        .backgroundColor('#2ca9e0')
+        .alignRules({
+          start: { anchor: "row1", align: HorizontalAlign.Start },
+          top: { anchor: "barrier2", align: VerticalAlign.Bottom }
+        })
+        .id("row4")
+      }
+      .direction(Direction.Rtl)
+      .width(300)
+      .height(300)
+      .margin({ left: 50 })
+      .border({ width: 2, color: "#6699FF" })
+      .barrier([{ id: "barrier1", localizedDirection: LocalizedBarrierDirection.END, referencedId: ["row1", "row2"] },
+        { id: "barrier2", localizedDirection: LocalizedBarrierDirection.BOTTOM, referencedId: ["row1", "row2"] }])
+    }
+    .height('100%')
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct Index {
-4. build() {
-5. Row() {
-6. RelativeContainer() {
-7. Row() {
-8. Text('row1')
-9. }
-10. .justifyContent(FlexAlign.Center)
-11. .width(100)
-12. .height(100)
-13. .backgroundColor('#a3cf62')
-14. .id("row1")
 
-16. Row() {
-17. Text('row2')
-18. }
-19. .justifyContent(FlexAlign.Center)
-20. .width(100)
-21. .height(100)
-22. .backgroundColor('#00ae9d')
-23. .alignRules({
-24. middle: { anchor: "row1", align: HorizontalAlign.End },
-25. top: { anchor: "row1", align: VerticalAlign.Bottom }
-26. })
-27. .id("row2")
-
-29. Row() {
-30. Text('row3')
-31. }
-32. .justifyContent(FlexAlign.Center)
-33. .width(100)
-34. .height(100)
-35. .backgroundColor('#0a59f7')
-36. .alignRules({
-37. start: { anchor: "barrier1", align: HorizontalAlign.End },
-38. top: { anchor: "row1", align: VerticalAlign.Top }
-39. })
-40. .id("row3")
-
-42. Row() {
-43. Text('row4')
-44. }
-45. .justifyContent(FlexAlign.Center)
-46. .width(50)
-47. .height(50)
-48. .backgroundColor('#2ca9e0')
-49. .alignRules({
-50. start: { anchor: "row1", align: HorizontalAlign.Start },
-51. top: { anchor: "barrier2", align: VerticalAlign.Bottom }
-52. })
-53. .id("row4")
-54. }
-55. .direction(Direction.Rtl)
-56. .width(300)
-57. .height(300)
-58. .margin({ left: 50 })
-59. .border({ width: 2, color: "#6699FF" })
-60. .barrier([{ id: "barrier1", localizedDirection: LocalizedBarrierDirection.END, referencedId: ["row1", "row2"] },
-61. { id: "barrier2", localizedDirection: LocalizedBarrierDirection.BOTTOM, referencedId: ["row1", "row2"] }])
-62. }
-63. .height('100%')
-64. }
-65. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Msv9Q7xLQ6-WdLurPoyMdA/zh-cn_image_0000002558766122.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/7QKKuBdzTLSDIsFKHUovJg/zh-cn_image_0000002736314851.png)
 
 ### 示例10（设置链中节点权重）
 
 本示例展示了链中节点使用[chainWeight](ts-universal-attributes-location.md#chainweight14)设置尺寸权重的用法。
 
+必须先通过alignRules设置子组件的链式对齐规则（确保组件在水平或垂直方向形成链），再通过chainMode设置链样式（如SPREAD、SPREAD\_INSIDE、PACKED），chainWeight仅在链模式下生效。
+
+```ts
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      RelativeContainer() {
+        Row() {
+          Text('row1')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(80)
+        .height(80)
+        .backgroundColor('#a3cf62')
+        .alignRules({
+          left: { anchor: "__container__", align: HorizontalAlign.Start },
+          right: { anchor: "row2", align: HorizontalAlign.Start },
+          center: { anchor: "__container__", align: VerticalAlign.Center },
+        })
+        .id("row1")
+        .chainMode(Axis.Horizontal, ChainStyle.PACKED)
+
+        Row() {
+          Text('row2')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(80)
+        .height(80)
+        .backgroundColor('#00ae9d')
+        .alignRules({
+          left: { anchor: "row1", align: HorizontalAlign.End },
+          right: { anchor: "row3", align: HorizontalAlign.Start },
+          top: { anchor: "row1", align: VerticalAlign.Top }
+        })
+        .id("row2")
+        .chainWeight({ horizontal: 1 })
+
+        Row() {
+          Text('row3')
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(80)
+        .height(80)
+        .backgroundColor('#0a59f7')
+        .alignRules({
+          left: { anchor: "row2", align: HorizontalAlign.End },
+          right: { anchor: "__container__", align: HorizontalAlign.End },
+          top: { anchor: "row1", align: VerticalAlign.Top }
+        })
+        .id("row3")
+        .chainWeight({ horizontal: 2 })
+      }
+      .width(300).height(300)
+      .margin({ left: 50 })
+      .border({ width: 2, color: "#6699FF" })
+    }
+    .height('100%')
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct Index {
-4. build() {
-5. Row() {
-6. RelativeContainer() {
-7. Row() {
-8. Text('row1')
-9. }
-10. .justifyContent(FlexAlign.Center)
-11. .width(80)
-12. .height(80)
-13. .backgroundColor('#a3cf62')
-14. .alignRules({
-15. left: { anchor: "__container__", align: HorizontalAlign.Start },
-16. right: { anchor: "row2", align: HorizontalAlign.Start },
-17. center: { anchor: "__container__", align: VerticalAlign.Center },
-18. })
-19. .id("row1")
-20. .chainMode(Axis.Horizontal, ChainStyle.PACKED)
 
-22. Row() {
-23. Text('row2')
-24. }
-25. .justifyContent(FlexAlign.Center)
-26. .width(80)
-27. .height(80)
-28. .backgroundColor('#00ae9d')
-29. .alignRules({
-30. left: { anchor: "row1", align: HorizontalAlign.End },
-31. right: { anchor: "row3", align: HorizontalAlign.Start },
-32. top: { anchor: "row1", align: VerticalAlign.Top }
-33. })
-34. .id("row2")
-35. .chainWeight({ horizontal: 1 })
-
-37. Row() {
-38. Text('row3')
-39. }
-40. .justifyContent(FlexAlign.Center)
-41. .width(80)
-42. .height(80)
-43. .backgroundColor('#0a59f7')
-44. .alignRules({
-45. left: { anchor: "row2", align: HorizontalAlign.End },
-46. right: { anchor: "__container__", align: HorizontalAlign.End },
-47. top: { anchor: "row1", align: VerticalAlign.Top }
-48. })
-49. .id("row3")
-50. .chainWeight({ horizontal: 2 })
-51. }
-52. .width(300).height(300)
-53. .margin({ left: 50 })
-54. .border({ width: 2, color: "#6699FF" })
-55. }
-56. .height('100%')
-57. }
-58. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/e809aTtRSNmHDTquiX1TwA/zh-cn_image_0000002558606464.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/Mi9GCXbNTwGGRJxHariYJQ/zh-cn_image_0000002706675808.png)

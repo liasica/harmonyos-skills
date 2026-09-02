@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-mapkit-b031
 title: Map Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Developer Beta2引入的API > Map Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Developer Beta2引入的API > Map Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:36:41+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:44+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:8f015039cd6dd8f945c0ab43cb497880a8a1df71f931c34035785b78fcc208e2
 ---
 

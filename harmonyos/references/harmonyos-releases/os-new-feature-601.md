@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-601
 title: OS新增和增强特性
-breadcrumb: 版本说明 > HarmonyOS 6.0.1(21) > OS平台能力 > OS新增和增强特性
+breadcrumb: 版本说明 > 更多版本 > 6.0.1(21) > OS平台能力 > OS新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e7a687b75e73f60478839bd2d7a2823e23f023ac3c560f042c36de148ab26147
+scraped_at: 2026-09-02T14:58:38+08:00
+doc_updated_at: 2026-08-04
+content_hash: sha256:81ac648c2a6150092283b2fc71fae768892fd779598a38a857d241ea3004a229
 ---
 
 ## 6.0.1(21) Release关键特性
@@ -190,7 +190,7 @@ C API新增支持设置子进程配置信息对象的uid是否隔离。（[API�
 ### MDM Kit
 
 * 企业应用的应用管理（[API参考](../harmonyos-references/js-apis-enterprise-applicationmanager.md)）和包管理（[API参考](../harmonyos-references/js-apis-enterprise-bundlemanager.md)）的相关接口在需要传入appIds参数时均新增支持使用appIdentifier参数作为入参，代替原先使用appId的方式。可在对应模块的API参考中搜索“appIds”了解详情。
-* 可设置禁用/启用的特性新增如下（[API参考](../harmonyos-references/js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicy)）：
+* 可设置禁用/启用的特性新增如下（[API参考](../harmonyos-references/js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicydeprecated)）：
   + 应用分身能力（appClone）
   + 外置存储能力（externalStorageCard）
   + Wi-Fi链接时使用随机MAC（randomMac）
@@ -231,7 +231,7 @@ FIDO新增支持业务切换自定义认证方式。（[API参考](../harmonyos-
 
 ### Spatial Recon Kit
 
-【新增Kit】Spatial Recon Kit（空间建模套件）集成了3DGS（3D Gaussian Splatting）模型的渲染、运算等能力，支持3DGS模型的加载和渲染功能、3DGS渲染的复古风格、漫画风格和比特风格特效。（[指南](../harmonyos-guides/spatial-recon-introduction.md)、[API参考](../harmonyos-references/spatial-recon-gsnode.md)）
+【新增Kit】Spatial Recon Kit（空间建模套件）集成了3DGS（3D Gaussian Splatting）模型的渲染、运算等能力，支持3DGS模型的加载和渲染功能、3DGS渲染的复古风格、漫画风格和比特风格特效。（[指南](../harmonyos-guides/spatial-recon-introduction.md)、[API参考](../harmonyos-references/spatial-recon-api.md)）
 
 ### Speech Kit
 

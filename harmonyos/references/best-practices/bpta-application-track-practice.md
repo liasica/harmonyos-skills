@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-applicatio
 title: 应用埋点
 breadcrumb: 最佳实践 > 应用框架 > ArkTS语言 > 应用埋点
 category: best-practices
-scraped_at: 2026-04-29T14:10:47+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:827c21a9901ef863e8109e99ea13297dc8ef28954e024c0a93420559cc0038fe
+scraped_at: 2026-09-02T15:03:16+08:00
+doc_updated_at: 2026-05-09
+content_hash: sha256:4eb01a11250ea45ffe8a966a0313a987db36d7d77980ef54f7a511f2ef53e0ac
 ---
 
 ## 概述
@@ -25,50 +25,50 @@ content_hash: sha256:827c21a9901ef863e8109e99ea13297dc8ef28954e024c0a93420559cc0
 * 曝光埋点：统计页面局部区域是否被用户有效浏览，例如瀑布流中的每个卡片的曝光比例和曝光时长，这是被动行为。
 * 页面埋点：统计用户在固定页面的停留时间，页面加载性能以及页面跳转时的来源页和去向页信息。
 
+  **说明** 
+
+  应用事件打点方法hiAppEvent.write()，可将AppEventInfo类型事件进行存储，并通过callback方式实现异步回调。若上报失败，建议采用缓存机制进行后续处理；或重新调用hiappEvent.write埋点，待下次回调时再处理。
+
 ## 方案介绍
 
 接下来会从（1）组件动态绑定埋点数据；（2）点击埋点方案；（3）曝光埋点方案；（4）页面埋点方案四部分介绍。整体方案使用全局无感监听能力[UIObserver](../harmonyos-references/arkts-apis-uicontext-uiobserver.md)和[setOnVisibleAreaApproximateChange](../harmonyos-references/ts-uicommonevent.md#setonvisibleareaapproximatechange)属性实现埋点功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/PZ6XLdRxRcK5C2ntOJ8EoA/zh-cn_image_0000002194010920.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/2bYaMqAzRj-WojbXwnXk3Q/zh-cn_image_0000002194010920.png "点击放大")
 
 ### 绑定埋点数据
 
 首先，为需要埋点的组件指定对应的ID值和埋点数据。例如，Button组件的ID可以设为“button-1”，并通过customProperty属性设置key和value，其中key为组件ID，value为埋点数据。为了方便获取，可以将埋点数据统一定义在DataResource中。
 
+```typescript
+// entry\src\main\ets\pages\ClickPage.ets
+Button('Click Tracing Point - Single Component')
+  .width('100%')
+  .id('button-1')
+  .fontWeight(FontWeight.Bold)
+  .customProperty('button-1', DataResource['Index']['button-1'])
+  .onClick(() => {
+    hilog.info(0x0000, 'ApplicationTrack', '%{public}s', 'btn');
+  })
 ```
-1. // entry\src\main\ets\pages\ClickPage.ets
-2. Button('Click Tracing Point - Single Component')
-3. .width('100%')
-4. .id('button-1')
-5. .fontWeight(FontWeight.Bold)
-6. .customProperty('button-1', DataResource['Index']['button-1'])
-7. .onClick(() => {
-8. hilog.info(0x0000, 'ApplicationTrack', '%{public}s', 'btn');
-9. })
-```
-
-[ClickPage.ets](https://gitcode.com/HarmonyOS_Samples/application-track/blob/master/entry/src/main/ets/pages/ClickPage.ets#L82-L90)
 
 DataResource根据Page名、组件名和索引封装，Page名为最外层key，组件名+索引为里层key。value值根据实际业务配置。
 
-```
-1. // entry\src\main\ets\viewModel\DataResource.ets
-2. export const DataResource: Record<string, Record<string, DataResourceType>> = {
-3. 'Index': {
-4. 'button-1': { id: 'button-1' },
-5. 'button-2': { id: 'button-2' }
-6. },
-7. 'Page2': {
-8. 'component-1': { id: 'text-2' }
-9. }
-10. }
+```typescript
+// entry\src\main\ets\viewModel\DataResource.ets
+export const DataResource: Record<string, Record<string, DataResourceType>> = {
+  'Index': {
+    'button-1': { id: 'button-1' },
+    'button-2': { id: 'button-2' }
+  },
+  'Page2': {
+    'component-1': { id: 'text-2' }
+  }
+}
 
-12. export interface DataResourceType {
-13. id: string
-14. }
+export interface DataResourceType {
+  id: string
+}
 ```
-
-[DataResource.ets](https://gitcode.com/HarmonyOS_Samples/application-track/blob/master/entry/src/main/ets/viewModel/DataResource.ets#L21-L35)
 
 ### 点击埋点
 
@@ -84,167 +84,153 @@ DataResource根据Page名、组件名和索引封装，Page名为最外层key，
 
 1. 首先实现一个简单页面，在组件上绑定ID和埋点数据。ID可以根据组件名-索引命名，例如代码示例中的两个组件，ID值分别为“button-1”和“button-2”。
 
-   ```
-   1. // entry\src\main\ets\pages\ClickPage.ets
-   2. Row() {
-   3. Text('Click Tracing Point - Composite Component')
-   4. // ...
-   5. Image($r('app.media.ic_public_arrow_right'))
-   6. // ...
-   7. }
-   8. // ...
-   9. .id('button-2')
-   10. .margin({ top: 12 })
-   11. .customProperty('button-2', DataResource['Index']['button-2'])
-   12. .onClick(() => {
-   13. hilog.info(0x0000, 'ApplicationTrack', '%{public}s', 'row');
-   14. })
+   ```screen
+   // entry\src\main\ets\pages\ClickPage.ets
+   Row() {
+     Text('Click Tracing Point - Composite Component')
+       // ...
+     Image($r('app.media.ic_public_arrow_right'))
+       // ...
+   }
+   // ...
+   .id('button-2')
+   .margin({ top: 12 })
+   .customProperty('button-2', DataResource['Index']['button-2'])
+   .onClick(() => {
+     hilog.info(0x0000, 'ApplicationTrack', '%{public}s', 'row');
+   })
 
-   16. Row() {
-   17. // entry\src\main\ets\pages\ClickPage.ets
-   18. Button('Click Tracing Point - Single Component')
-   19. .width('100%')
-   20. .id('button-1')
-   21. .fontWeight(FontWeight.Bold)
-   22. .customProperty('button-1', DataResource['Index']['button-1'])
-   23. .onClick(() => {
-   24. hilog.info(0x0000, 'ApplicationTrack', '%{public}s', 'btn');
-   25. })
-   26. }
+   Row() {
+     // entry\src\main\ets\pages\ClickPage.ets
+     Button('Click Tracing Point - Single Component')
+       .width('100%')
+       .id('button-1')
+       .fontWeight(FontWeight.Bold)
+       .customProperty('button-1', DataResource['Index']['button-1'])
+       .onClick(() => {
+         hilog.info(0x0000, 'ApplicationTrack', '%{public}s', 'btn');
+       })
+   }
    ```
-
-   [ClickPage.ets](https://gitcode.com/HarmonyOS_Samples/application-track/blob/master/entry/src/main/ets/pages/ClickPage.ets#L47-L92)
 2. 在EntryAbility中注册UIObserver的willClick事件监听，并在事件回调中获取触发的组件节点FrameNode。
 
+   ```typescript
+   // entry\src\main\ets\entryability\EntryAbility.ets
+   uiContext.getUIObserver()?.on('willClick', (_event: ClickEvent, node?: FrameNode) => {
+     const clickCallback = CallbackManager.getInstance().getClickCallback();
+     clickCallback(node, uiContext);
+   })
    ```
-   1. // entry\src\main\ets\entryability\EntryAbility.ets
-   2. uiContext.getUIObserver()?.on('willClick', (_event: ClickEvent, node?: FrameNode) => {
-   3. const clickCallback = CallbackManager.getInstance().getClickCallback();
-   4. clickCallback(node, uiContext);
-   5. })
-   ```
-
-   [EntryAbility.ets](https://gitcode.com/HarmonyOS_Samples/application-track/blob/master/entry/src/main/ets/entryability/EntryAbility.ets#L49-L53)
 3. 接着可以根据FrameNode获取当前组件所在的Page和ID值，并且通过[getCustomProperty](../harmonyos-references/js-apis-arkui-framenode.md#getcustomproperty12)获取当前组件绑定的埋点数据。此外FrameNode还提供一些方法获取组件的基础属性，比如组件大小、组件位置以及是否可见等一些信息。具体可以参考[FrameNode](../harmonyos-references/js-apis-arkui-framenode.md#framenode-1)官方文档。
 
+   ```typescript
+   // entry\src\main\ets\viewModel\CallBackManager.ets
+   /**
+    * Obtains the ClickCallback callback.
+    *
+    */
+   public getClickCallback() {
+     return (node: FrameNode | undefined, uiContext: UIContext) => {
+       hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `FrameNode: ${node}`);
+       const uniqueId = node?.getUniqueId();
+       const ID = node?.getId();
+       const pageInfo = uiContext.getPageInfoByUniqueId(uniqueId);
+       const trackData = node?.getCustomProperty(ID);
+       let eventParams: Record<string, string | number> = {
+         'component_id': ID ?? '',
+         'pageInfo': JSON.stringify(pageInfo ?? {}),
+         'trackData': JSON.stringify(trackData ?? {})
+       };
+       hiAppEvent.write({
+         domain: 'test_domain',
+         name: 'test_event',
+         eventType: hiAppEvent.EventType.FAULT,
+         params: eventParams
+       }, (err: BusinessError) => {
+         if (err) {
+           hilog.error(0x0000, 'CallBackManager', '%{public}s', `code: ${err.code}, message: ${err.message}`);
+           return;
+         }
+         hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `getClickCallback, success to write event`);
+       });
+     };
+   }
    ```
-   1. // entry\src\main\ets\viewModel\CallBackManager.ets
-   2. /**
-   3. * Obtains the ClickCallback callback.
-   4. *
-   5. */
-   6. public getClickCallback() {
-   7. return (node: FrameNode | undefined, uiContext: UIContext) => {
-   8. hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `FrameNode: ${node}`);
-   9. const uniqueId = node?.getUniqueId();
-   10. const ID = node?.getId();
-   11. const pageInfo = uiContext.getPageInfoByUniqueId(uniqueId);
-   12. const trackData = node?.getCustomProperty(ID);
-   13. let eventParams: Record<string, string | number> = {
-   14. 'component_id': ID ?? '',
-   15. 'pageInfo': JSON.stringify(pageInfo ?? {}),
-   16. 'trackData': JSON.stringify(trackData ?? {})
-   17. };
-   18. hiAppEvent.write({
-   19. domain: 'test_domain',
-   20. name: 'test_event',
-   21. eventType: hiAppEvent.EventType.FAULT,
-   22. params: eventParams
-   23. }, (err: BusinessError) => {
-   24. if (err) {
-   25. hilog.error(0x0000, 'CallBackManager', '%{public}s', `code: ${err.code}, message: ${err.message}`);
-   26. return;
-   27. }
-   28. hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `getClickCallback, success to write event`);
-   29. });
-   30. };
-   31. }
-   ```
-
-   [CallBackManager.ets](https://gitcode.com/HarmonyOS_Samples/application-track/blob/master/entry/src/main/ets/viewModel/CallBackManager.ets#L54-L86)
 4. 然后通过@kit.PerformanceAnalysisKit的[write()](../harmonyos-references/js-apis-hiviewdfx-hiappevent.md#hiappeventwrite)方法将需要的数据写入当天的事件文件中。需要注意的是eventParams的参数值只能是number、string、boolean以及数组类型。
 
+   ```typescript
+   hiAppEvent.write({
+     domain: 'test_domain',
+     name: 'test_event',
+     eventType: hiAppEvent.EventType.FAULT,
+     params: eventParams
+   }, (err: BusinessError) => {
+     if (err) {
+       hilog.error(0x0000, 'CallBackManager', '%{public}s', `code: ${err.code}, message: ${err.message}`);
+       return;
+     }
+     hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `getClickCallback, success to write event`);
+   });
    ```
-   1. hiAppEvent.write({
-   2. domain: 'test_domain',
-   3. name: 'test_event',
-   4. eventType: hiAppEvent.EventType.FAULT,
-   5. params: eventParams
-   6. }, (err: BusinessError) => {
-   7. if (err) {
-   8. hilog.error(0x0000, 'CallBackManager', '%{public}s', `code: ${err.code}, message: ${err.message}`);
-   9. return;
-   10. }
-   11. hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `getClickCallback, success to write event`);
-   12. });
-   ```
-
-   [CallBackManager.ets](https://gitcode.com/HarmonyOS_Samples/application-track/blob/master/entry/src/main/ets/viewModel/CallBackManager.ets#L72-L83)
 5. 最后在onWindowStageDestroy()调用UIObserver的[off()](../harmonyos-references/arkts-apis-uicontext-uiobserver.md#offwillclick12)接口取消监听事件。
 
+   ```typescript
+   // entry\src\main\ets\entryability\EntryAbility.ets
+   onWindowStageDestroy(): void {
+     const uiContext: UIContext | undefined = AppStorage.get('uiContext');
+     uiContext?.getUIObserver().off('willClick');
+     uiContext?.getUIObserver().off('scrollEvent');
+     uiContext?.getUIObserver().off('navDestinationSwitch');
+     uiContext?.getUIObserver().off('routerPageUpdate');
+     // Main window is destroyed, release UI related resources
+     hilog.info(0x0000, 'ApplicationTrack', '%{public}s', 'Ability onWindowStageDestroy');
+   }
    ```
-   1. // entry\src\main\ets\entryability\EntryAbility.ets
-   2. onWindowStageDestroy(): void {
-   3. const uiContext: UIContext | undefined = AppStorage.get('uiContext');
-   4. uiContext?.getUIObserver().off('willClick');
-   5. uiContext?.getUIObserver().off('scrollEvent');
-   6. uiContext?.getUIObserver().off('navDestinationSwitch');
-   7. uiContext?.getUIObserver().off('routerPageUpdate');
-   8. // Main window is destroyed, release UI related resources
-   9. hilog.info(0x0000, 'ApplicationTrack', '%{public}s', 'Ability onWindowStageDestroy');
-   10. }
-   ```
-
-   [EntryAbility.ets](https://gitcode.com/HarmonyOS_Samples/application-track/blob/master/entry/src/main/ets/entryability/EntryAbility.ets#L104-L113)
 
 除了点击事件外，UIObserver还可以通过[on('scrollEvent')](../harmonyos-references/arkts-apis-uicontext-uiobserver.md#onscrollevent12)监听组件滑动。在滑动开始与结束触发回调并得到滑动偏移量。以[瀑布流](../harmonyos-references/ts-container-waterflow.md#子组件)为例，对WaterFlow和FlowItem设置组件ID。
 
+```typescript
+// entry\src\main\ets\pages\WaterFlowPage.ets
+TrackNode({ track: new Track().id('WaterFlow-1') }) {
+  WaterFlow() {
+    LazyForEach(this.dataSource, (item: number, index: number) => {
+      FlowItem() {
+        TrackNode({ track: new Track().id(`flowItem_${index}`) }) {
+          WaterFlowCard({ item: item, index: index }).id(`flowItem_${index}`)
+        }
+      }
+      // ...
+    }, (item: number) => item.toString())
+  }
+  .id('WaterFlow-1')
+  // ...
+  .onReachStart(() => {
+    hilog.info(0x0000, 'ApplicationTrack', '%{public}s', 'waterFlow reach start');
+  })
+  .onScrollStart(() => {
+    hilog.info(0x0000, 'ApplicationTrack', '%{public}s', 'waterFlow scroll start');
+  })
+  .onScrollStop(() => {
+    hilog.info(0x0000, 'ApplicationTrack', '%{public}s', 'waterFlow scroll stop');
+  })
+  .onScrollFrameBegin((offset: number, state: ScrollState) => {
+    hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `waterFlow scrollFrameBegin offset: ${offset}`);
+    hilog.info(0x0000, 'ApplicationTrack', '%{public}s',
+      `waterFlow scrollFrameBegin state: ${state.toString()}`);
+    return { offsetRemain: offset };
+  })
+}
 ```
-1. // entry\src\main\ets\pages\WaterFlowPage.ets
-2. TrackNode({ track: new Track().id('WaterFlow-1') }) {
-3. WaterFlow() {
-4. LazyForEach(this.dataSource, (item: number, index: number) => {
-5. FlowItem() {
-6. TrackNode({ track: new Track().id(`flowItem_${index}`) }) {
-7. WaterFlowCard({ item: item, index: index }).id(`flowItem_${index}`)
-8. }
-9. }
-10. // ...
-11. }, (item: number) => item.toString())
-12. }
-13. .id('WaterFlow-1')
-14. // ...
-15. .onReachStart(() => {
-16. hilog.info(0x0000, 'ApplicationTrack', '%{public}s', 'waterFlow reach start');
-17. })
-18. .onScrollStart(() => {
-19. hilog.info(0x0000, 'ApplicationTrack', '%{public}s', 'waterFlow scroll start');
-20. })
-21. .onScrollStop(() => {
-22. hilog.info(0x0000, 'ApplicationTrack', '%{public}s', 'waterFlow scroll stop');
-23. })
-24. .onScrollFrameBegin((offset: number, state: ScrollState) => {
-25. hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `waterFlow scrollFrameBegin offset: ${offset}`);
-26. hilog.info(0x0000, 'ApplicationTrack', '%{public}s',
-27. `waterFlow scrollFrameBegin state: ${state.toString()}`);
-28. return { offsetRemain: offset };
-29. })
-30. }
-```
-
-[WaterFlowPage.ets](https://gitcode.com/HarmonyOS_Samples/application-track/blob/master/entry/src/main/ets/pages/WaterFlowPage.ets#L80-L121)
 
 接着在EntryAbility里统一注册scrollEvent的事件监听，在回调中获取[ScrollEventInfo](../harmonyos-references/js-apis-arkui-observer.md#scrolleventinfo12)信息，包括id、uniqueId、scrollEvent以及offset。
 
-```
-1. // entry\src\main\ets\entryability\EntryAbility.ets
-2. uiContext.getUIObserver()
-3. .on('scrollEvent', (info) => CallbackManager.getInstance().getScrollEvent(info))
+```typescript
+// entry\src\main\ets\entryability\EntryAbility.ets
+uiContext.getUIObserver()
+  .on('scrollEvent', (info) => CallbackManager.getInstance().getScrollEvent(info))
 ```
 
-[EntryAbility.ets](https://gitcode.com/HarmonyOS_Samples/application-track/blob/master/entry/src/main/ets/entryability/EntryAbility.ets#L56-L58)
-
-说明
+**说明** 
 
 在scrollEvent监听事件中，回调参数的id值仅能精确到外层组件WaterFlow，无法精确到内层FlowItem。 若要在滑动过程中获取各Item组件的曝光比例，请参考第三小节的曝光埋点。
 
@@ -264,198 +250,190 @@ DataResource根据Page名、组件名和索引封装，Page名为最外层key，
 
    在aboutToDisappear()生命周期中，调用TrackManager的removeTrack()方法删除当前组件信息。
 
+   ```typescript
+   // entry\src\main\ets\viewModel\TrackNode.ets
+   // onDidBuild Life Cycle.
+   onDidBuild(): void {
+     // Construct the virtual tree of the tracing point.
+     // The obtained node is the root node of the current page (row in the test case).
+     let uid = this.getUniqueId();
+     let node: FrameNode | null = this.getUIContext().getFrameNodeByUniqueId(uid);
+     hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `Track onDidBuild node:${node?.getNodeType()}`);
+     if (node === null) {
+       return;
+     }
+     this.trackShadow.node = node;
+     this.trackShadow.id = node?.getId();
+     this.trackShadow.track = this.track;
+     TrackManager.get().addTrack(this.trackShadow.id, this.trackShadow);
+     // The setOnVisibleAreaApproximateChange monitors and records the visible area of the tracing point component.
+     node?.commonEvent.setOnVisibleAreaApproximateChange(
+       { ratios: [0, 0.5, 1], expectedUpdateInterval: 500 },
+       (ratioInc: boolean, ratio: number) => {
+         const areaChangeCb = CallbackManager.getInstance().getAreaChangeCallback();
+         areaChangeCb(node, ratio);
+         this.trackShadow.visibleRatio = ratio;
+         hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `ratioInc: ${ratioInc}`);
+         hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `ratio: ${ratio}`);
+       });
+
+     let parent: FrameNode | null = node?.getParent();
+     hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `Parent getId: ${parent?.getId()}`);
+
+     let attachTrackToParent: (parent: FrameNode | null) => boolean =
+       (parent: FrameNode | null) => {
+         while (parent !== null) {
+           let parentTrack = TrackManager.get().getTrackById(parent?.getId());
+           if (parentTrack !== undefined) {
+             parentTrack.childIds.add(this.trackShadow.id);
+             this.trackShadow.parentId = parentTrack.id;
+             return true;
+           }
+           parent = parent.getParent();
+         }
+         return false;
+       };
+     let attached = attachTrackToParent(parent);
+
+     if (!attached) {
+       node?.commonEvent.setOnAppear(() => {
+         let attached = attachTrackToParent(parent);
+         if (attached) {
+           hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `Track lazy attached: ${this.trackShadow.id}`);
+         }
+       });
+     }
+   }
    ```
-   1. // entry\src\main\ets\viewModel\TrackNode.ets
-   2. // onDidBuild Life Cycle.
-   3. onDidBuild(): void {
-   4. // Construct the virtual tree of the tracing point.
-   5. // The obtained node is the root node of the current page (row in the test case).
-   6. let uid = this.getUniqueId();
-   7. let node: FrameNode | null = this.getUIContext().getFrameNodeByUniqueId(uid);
-   8. hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `Track onDidBuild node:${node?.getNodeType()}`);
-   9. if (node === null) {
-   10. return;
-   11. }
-   12. this.trackShadow.node = node;
-   13. this.trackShadow.id = node?.getId();
-   14. this.trackShadow.track = this.track;
-   15. TrackManager.get().addTrack(this.trackShadow.id, this.trackShadow);
-   16. // The setOnVisibleAreaApproximateChange monitors and records the visible area of the tracing point component.
-   17. node?.commonEvent.setOnVisibleAreaApproximateChange(
-   18. { ratios: [0, 0.5, 1], expectedUpdateInterval: 500 },
-   19. (ratioInc: boolean, ratio: number) => {
-   20. const areaChangeCb = CallbackManager.getInstance().getAreaChangeCallback();
-   21. areaChangeCb(node, ratio);
-   22. this.trackShadow.visibleRatio = ratio;
-   23. hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `ratioInc: ${ratioInc}`);
-   24. hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `ratio: ${ratio}`);
-   25. });
-
-   27. let parent: FrameNode | null = node?.getParent();
-   28. hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `Parent getId: ${parent?.getId()}`);
-
-   30. let attachTrackToParent: (parent: FrameNode | null) => boolean =
-   31. (parent: FrameNode | null) => {
-   32. while (parent !== null) {
-   33. let parentTrack = TrackManager.get().getTrackById(parent?.getId());
-   34. if (parentTrack !== undefined) {
-   35. parentTrack.childIds.add(this.trackShadow.id);
-   36. this.trackShadow.parentId = parentTrack.id;
-   37. return true;
-   38. }
-   39. parent = parent.getParent();
-   40. }
-   41. return false;
-   42. };
-   43. let attached = attachTrackToParent(parent);
-
-   45. if (!attached) {
-   46. node?.commonEvent.setOnAppear(() => {
-   47. let attached = attachTrackToParent(parent);
-   48. if (attached) {
-   49. hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `Track lazy attached: ${this.trackShadow.id}`);
-   50. }
-   51. });
-   52. }
-   53. }
-   ```
-
-   [TrackNode.ets](https://gitcode.com/HarmonyOS_Samples/application-track/blob/master/entry/src/main/ets/viewModel/TrackNode.ets#L41-L93)
 2. TrackManager封装了埋点钩子的操作方法，包括绑定、删除和导出。绑定是将当前组件ID与TrackShadow对象存入全局Map中。导出是以根节点为起点，递归输出所有子组件的曝光比例。删除是根据具体ID值从Map中移除对应数据。
 
+   ```typescript
+   // entry\src\main\ets\viewModel\TrackNode.ets
+   /**
+    * Tracing point data operation class
+    */
+   export class TrackManager {
+     static instance: TrackManager;
+     private trackMap: Map<string, TrackShadow> = new Map();
+     private rootTrack: TrackShadow | null = null;
+
+     static get(): TrackManager {
+       if (TrackManager.instance !== undefined) {
+         return TrackManager.instance;
+       }
+       TrackManager.instance = new TrackManager();
+       return TrackManager.instance;
+     }
+
+     addTrack(id: string, track: TrackShadow): void {
+       if (this.trackMap.size === 0) {
+         this.rootTrack = track;
+       }
+       hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `Track add id: ${id}`);
+       this.trackMap.set(id, track);
+     }
+
+     removeTrack(id: string): void {
+       let current = this.getTrackById(id);
+       if (current !== undefined) {
+         this.trackMap.delete(id);
+         let parent = this.getTrackById(current?.parentId);
+         parent?.childIds.delete(id);
+       }
+     }
+
+     getTrackById(id: string): TrackShadow | undefined {
+       return this.trackMap.get(id);
+     }
+
+     dump(): void {
+       this.rootTrack?.dump(0);
+     }
+   }
    ```
-   1. // entry\src\main\ets\viewModel\TrackNode.ets
-   2. /**
-   3. * Tracing point data operation class
-   4. */
-   5. export class TrackManager {
-   6. static instance: TrackManager;
-   7. private trackMap: Map<string, TrackShadow> = new Map();
-   8. private rootTrack: TrackShadow | null = null;
-
-   10. static get(): TrackManager {
-   11. if (TrackManager.instance !== undefined) {
-   12. return TrackManager.instance;
-   13. }
-   14. TrackManager.instance = new TrackManager();
-   15. return TrackManager.instance;
-   16. }
-
-   18. addTrack(id: string, track: TrackShadow): void {
-   19. if (this.trackMap.size === 0) {
-   20. this.rootTrack = track;
-   21. }
-   22. hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `Track add id: ${id}`);
-   23. this.trackMap.set(id, track);
-   24. }
-
-   26. removeTrack(id: string): void {
-   27. let current = this.getTrackById(id);
-   28. if (current !== undefined) {
-   29. this.trackMap.delete(id);
-   30. let parent = this.getTrackById(current?.parentId);
-   31. parent?.childIds.delete(id);
-   32. }
-   33. }
-
-   35. getTrackById(id: string): TrackShadow | undefined {
-   36. return this.trackMap.get(id);
-   37. }
-
-   39. dump(): void {
-   40. this.rootTrack?.dump(0);
-   41. }
-   42. }
-   ```
-
-   [TrackNode.ets](https://gitcode.com/HarmonyOS_Samples/application-track/blob/master/entry/src/main/ets/viewModel/TrackNode.ets#L142-L183)
 3. TrackShadow对象包含FrameNode、track、childIds和parentId。FrameNode表示组件节点，track包含ID值，childIds表示子组件列表，parentId表示父组件的ID值。
 
+   ```typescript
+   // entry\src\main\ets\viewModel\TrackNode.ets
+   export class Track {
+     public areaPercent: number = 0;
+     public trackId: string = '';
+
+     constructor() {
+     }
+
+     id(newId: string): Track {
+       this.trackId = newId;
+       return this;
+     }
+   }
+
+   /**
+    * Tracing point data.
+    */
+   export class TrackShadow {
+     public node: FrameNode | null = null;
+     public id: string = '';
+     public track: Track | null = null;
+     public childIds: Set<string> = new Set();
+     public parentId: string = '';
+     public visibleRect: common2D.Rect = {
+       left: 0,
+       top: 0,
+       right: 0,
+       bottom: 0
+     };
+     public visibleRatio: number = 0;
+
+     // Output the information about the tracing point tree through global dump.
+     dump(depth: number = 0): void {
+       hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `Track Dp: ${depth}`);
+       hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `AreaPer: ${this.track?.areaPercent}`);
+       hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `VisibleRatio: ${this.visibleRatio}`);
+       this.childIds.forEach((value: string) => {
+         TrackManager.get().getTrackById(value)?.dump(depth + 1);
+       });
+     }
+   }
    ```
-   1. // entry\src\main\ets\viewModel\TrackNode.ets
-   2. export class Track {
-   3. public areaPercent: number = 0;
-   4. public trackId: string = '';
-
-   6. constructor() {
-   7. }
-
-   9. id(newId: string): Track {
-   10. this.trackId = newId;
-   11. return this;
-   12. }
-   13. }
-
-   15. /**
-   16. * Tracing point data.
-   17. */
-   18. export class TrackShadow {
-   19. public node: FrameNode | null = null;
-   20. public id: string = '';
-   21. public track: Track | null = null;
-   22. public childIds: Set<string> = new Set();
-   23. public parentId: string = '';
-   24. public visibleRect: common2D.Rect = {
-   25. left: 0,
-   26. top: 0,
-   27. right: 0,
-   28. bottom: 0
-   29. };
-   30. public visibleRatio: number = 0;
-
-   32. // Output the information about the tracing point tree through global dump.
-   33. dump(depth: number = 0): void {
-   34. hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `Track Dp: ${depth}`);
-   35. hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `AreaPer: ${this.track?.areaPercent}`);
-   36. hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `VisibleRatio: ${this.visibleRatio}`);
-   37. this.childIds.forEach((value: string) => {
-   38. TrackManager.get().getTrackById(value)?.dump(depth + 1);
-   39. });
-   40. }
-   41. }
-   ```
-
-   [TrackNode.ets](https://gitcode.com/HarmonyOS_Samples/application-track/blob/master/entry/src/main/ets/viewModel/TrackNode.ets#L98-L138)
 4. 根据上述TrackNode组件改造瀑布流代码：使用TrackNode钩子将WaterFlow和FlowItem组件包裹起来，并传递一个包含id的track对象，id作为组件的唯一标识。
 
+   ```typescript
+   // entry\src\main\ets\pages\WaterFlowPage.ets
+   TrackNode({ track: new Track().id('WaterFlow-1') }) {
+     WaterFlow() {
+       LazyForEach(this.dataSource, (item: number, index: number) => {
+         FlowItem() {
+           TrackNode({ track: new Track().id(`flowItem_${index}`) }) {
+             WaterFlowCard({ item: item, index: index }).id(`flowItem_${index}`)
+           }
+         }
+         // ...
+       }, (item: number) => item.toString())
+     }
+     .id('WaterFlow-1')
+     // ...
+     .onReachStart(() => {
+       hilog.info(0x0000, 'ApplicationTrack', '%{public}s', 'waterFlow reach start');
+     })
+     .onScrollStart(() => {
+       hilog.info(0x0000, 'ApplicationTrack', '%{public}s', 'waterFlow scroll start');
+     })
+     .onScrollStop(() => {
+       hilog.info(0x0000, 'ApplicationTrack', '%{public}s', 'waterFlow scroll stop');
+     })
+     .onScrollFrameBegin((offset: number, state: ScrollState) => {
+       hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `waterFlow scrollFrameBegin offset: ${offset}`);
+       hilog.info(0x0000, 'ApplicationTrack', '%{public}s',
+         `waterFlow scrollFrameBegin state: ${state.toString()}`);
+       return { offsetRemain: offset };
+     })
+   }
    ```
-   1. // entry\src\main\ets\pages\WaterFlowPage.ets
-   2. TrackNode({ track: new Track().id('WaterFlow-1') }) {
-   3. WaterFlow() {
-   4. LazyForEach(this.dataSource, (item: number, index: number) => {
-   5. FlowItem() {
-   6. TrackNode({ track: new Track().id(`flowItem_${index}`) }) {
-   7. WaterFlowCard({ item: item, index: index }).id(`flowItem_${index}`)
-   8. }
-   9. }
-   10. // ...
-   11. }, (item: number) => item.toString())
-   12. }
-   13. .id('WaterFlow-1')
-   14. // ...
-   15. .onReachStart(() => {
-   16. hilog.info(0x0000, 'ApplicationTrack', '%{public}s', 'waterFlow reach start');
-   17. })
-   18. .onScrollStart(() => {
-   19. hilog.info(0x0000, 'ApplicationTrack', '%{public}s', 'waterFlow scroll start');
-   20. })
-   21. .onScrollStop(() => {
-   22. hilog.info(0x0000, 'ApplicationTrack', '%{public}s', 'waterFlow scroll stop');
-   23. })
-   24. .onScrollFrameBegin((offset: number, state: ScrollState) => {
-   25. hilog.info(0x0000, 'ApplicationTrack', '%{public}s', `waterFlow scrollFrameBegin offset: ${offset}`);
-   26. hilog.info(0x0000, 'ApplicationTrack', '%{public}s',
-   27. `waterFlow scrollFrameBegin state: ${state.toString()}`);
-   28. return { offsetRemain: offset };
-   29. })
-   30. }
-   ```
-
-   [WaterFlowPage.ets](https://gitcode.com/HarmonyOS_Samples/application-track/blob/master/entry/src/main/ets/pages/WaterFlowPage.ets#L80-L121)
 
 滚动瀑布流时，不仅可以监听每个Item的曝光比例，还可以追溯到根节点，统计根节点中每个子组件的曝光比例。
 
-说明
+**说明** 
 
 * 滑动容器中的子组件曝光，例如List、Grid、Swiper、WaterFlow，可以参考本章节进行实现。
 * 当该曝光埋点在组件未发生变化时，不会触发回调记录一次有效曝光。例如：在瀑布流场景下，如果某个Item已经达到设定的500ms，但用户后续不再滑动或直接退出应用，则此次曝光将不会被记录。
@@ -468,15 +446,13 @@ DataResource根据Page名、组件名和索引封装，Page名为最外层key，
 
 针对Navigation方案，UIObserver提供`navDestinationSwitch`事件，用于监听页面切换，并支持在回调中获取当前页面的切换信息。在`EntryAbility`中统一注册`UIObserver`的`navDestinationSwitch`事件监听。
 
+```typescript
+// entry\src\main\ets\entryability\EntryAbility.ets
+uiContext.getUIObserver().on('navDestinationSwitch', (info) => {
+  const switchCallback = CallbackManager.getInstance().getSwitchCallback();
+  switchCallback(info);
+})
 ```
-1. // entry\src\main\ets\entryability\EntryAbility.ets
-2. uiContext.getUIObserver().on('navDestinationSwitch', (info) => {
-3. const switchCallback = CallbackManager.getInstance().getSwitchCallback();
-4. switchCallback(info);
-5. })
-```
-
-[EntryAbility.ets](https://gitcode.com/HarmonyOS_Samples/application-track/blob/master/entry/src/main/ets/entryability/EntryAbility.ets#L61-L65)
 
 回调函数中的info包含context、from、to和operation，用于标识页面的来源和去向。
 
@@ -493,15 +469,13 @@ DataResource根据Page名、组件名和索引封装，Page名为最外层key，
 
 针对Router路由方案，UIObserver提供了[on('routerPageUpdate')](../harmonyos-references/arkts-apis-uicontext-uiobserver.md#onrouterpageupdate11)监听事件，在页面切换过程中触发相应回调。
 
+```typescript
+// entry\src\main\ets\entryability\EntryAbility.ets
+uiContext.getUIObserver().on('routerPageUpdate', (info) => {
+  const switchCallback = CallbackManager.getInstance().getSwitchCallback();
+  switchCallback(info);
+})
 ```
-1. // entry\src\main\ets\entryability\EntryAbility.ets
-2. uiContext.getUIObserver().on('routerPageUpdate', (info) => {
-3. const switchCallback = CallbackManager.getInstance().getSwitchCallback();
-4. switchCallback(info);
-5. })
-```
-
-[EntryAbility.ets](https://gitcode.com/HarmonyOS_Samples/application-track/blob/master/entry/src/main/ets/entryability/EntryAbility.ets#L68-L72)
 
 比如调用pushPath()从A页面跳转到B页面时，该回调会被触发三次：第一次触发的页面名称为PageB，页面状态为[ABOUT\_TO\_APPEAR](../harmonyos-references/js-apis-arkui-observer.md#routerpagestate)即将显示；第二次触发的页面名称为PageA，页面状态为ON\_PAGE\_HIDE页面隐藏；第三次触发的页面名称为PageB，页面状态为ON\_PAGE\_SHOW页面显示。回调传参同样包含页面上下文、触发事件的页面名称等等。
 
@@ -518,99 +492,95 @@ DataResource根据Page名、组件名和索引封装，Page名为最外层key，
 
 页面加载性能可以通过计算首帧绘制与绘制结束的时间差来判断。UIObserver同样提供了on("willDraw")事件和on("didLayout")事件，可以在首帧监听中记录初始时间，在完成绘制时记录结束时间。此事件监听需要在页面中注册，Navigation与Router路由相同，本示例以Navigation为例。在aboutToAppear注册on("willDraw")和on("didLayout")事件。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { router } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct NavigationPage {
+  // ...
+
+  aboutToAppear(): void {
+    const uiContext = this.getUIContext();
+    // Registering a Listening Event
+    uiContext.getUIObserver().on('willDraw', () => {
+      this.startTime = Date.now();
+    })
+    uiContext.getUIObserver().on('didLayout', () => {
+      this.endTime = Date.now();
+    })
+  }
+
+  // ...
+  getResourceString(resource: Resource): string {
+    let resourceString: string = '';
+    try {
+      resourceString = this.getUIContext().getHostContext()!.resourceManager.getStringSync(resource.id);
+    } catch (error) {
+      hilog.error(0x0000, '[getResourceString]', `getResourceString err: ${JSON.stringify(error)}`);
+    }
+    return resourceString;
+  }
+  // ...
+  build() {
+    Navigation(this.pageInfos) {
+      Column() {
+        Button('pushPath', { stateEffect: true, type: ButtonType.Capsule })
+          .width('100%')
+          .onClick(() => {
+            // Put the NavDestination page information specified by name into the stack.
+            this.pageInfos.pushPath({ name: 'pageOne' });
+          })
+        Button('Use interception', { stateEffect: true, type: ButtonType.Capsule })
+          // ...
+          .onClick(() => {
+            this.isUseInterception = !this.isUseInterception;
+            if (this.isUseInterception) {
+              // Register Interceptor.
+              this.registerInterception();
+            } else {
+              // Do not use interceptors.
+              this.pageInfos.setInterception(undefined);
+            }
+          })
+        Button($r('app.string.back'), { stateEffect: true, type: ButtonType.Capsule })
+          // ...
+          .onClick(() => {
+            this.getUIContext().getRouter().back();
+          })
+      }
+      // ...
+    }
+    // ...
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { router } from '@kit.ArkUI';
-
-4. @Entry
-5. @Component
-6. struct NavigationPage {
-7. // ...
-
-9. aboutToAppear(): void {
-10. const uiContext = this.getUIContext();
-11. // Registering a Listening Event
-12. uiContext.getUIObserver().on('willDraw', () => {
-13. this.startTime = Date.now();
-14. })
-15. uiContext.getUIObserver().on('didLayout', () => {
-16. this.endTime = Date.now();
-17. })
-18. }
-
-20. // ...
-21. getResourceString(resource: Resource): string {
-22. let resourceString: string = '';
-23. try {
-24. resourceString = this.getUIContext().getHostContext()!.resourceManager.getStringSync(resource.id);
-25. } catch (error) {
-26. hilog.error(0x0000, '[getResourceString]', `getResourceString err: ${JSON.stringify(error)}`);
-27. }
-28. return resourceString;
-29. }
-30. // ...
-31. build() {
-32. Navigation(this.pageInfos) {
-33. Column() {
-34. Button('pushPath', { stateEffect: true, type: ButtonType.Capsule })
-35. .width('100%')
-36. .onClick(() => {
-37. // Put the NavDestination page information specified by name into the stack.
-38. this.pageInfos.pushPath({ name: 'pageOne' });
-39. })
-40. Button('Use interception', { stateEffect: true, type: ButtonType.Capsule })
-41. // ...
-42. .onClick(() => {
-43. this.isUseInterception = !this.isUseInterception;
-44. if (this.isUseInterception) {
-45. // Register Interceptor.
-46. this.registerInterception();
-47. } else {
-48. // Do not use interceptors.
-49. this.pageInfos.setInterception(undefined);
-50. }
-51. })
-52. Button($r('app.string.back'), { stateEffect: true, type: ButtonType.Capsule })
-53. // ...
-54. .onClick(() => {
-55. this.getUIContext().getRouter().back();
-56. })
-57. }
-58. // ...
-59. }
-60. // ...
-61. }
-62. }
-```
-
-[NavigationPage.ets](https://gitcode.com/HarmonyOS_Samples/application-track/blob/master/entry/src/main/ets/pages/NavigationPage.ets#L17-L164)
 
 ## 埋点数据上传
 
 如果需要将埋点数据上传至服务器，可以通过[@kit.PerformanceAnalysisKit](../harmonyos-references/js-apis-hiviewdfx-hiappevent.md)的[addWatcher()](../harmonyos-references/js-apis-hiviewdfx-hiappevent.md#hiappeventaddwatcher)方法添加订阅事件观察者、onTrigger()回调以及回调触发条件。可以自定义设置回调触发条件，比如在示例代码中当事件size大于等于1000字节时才会触发，然后在onTrigger()回调中调用http的request方法发起网络请求，将示例中的EXAMPLE\_URL替换为服务器的IP地址即可。
 
+```typescript
+// entry\src\main\ets\entryability\EntryAbility.ets
+const onTrigger = CallbackManager.getInstance().getOnTrigger();
+hiAppEvent.addWatcher({
+  name: 'watcher1',
+  appEventFilters: [
+    {
+      domain: 'test_domain',
+      eventTypes: [hiAppEvent.EventType.FAULT, hiAppEvent.EventType.BEHAVIOR]
+    }
+  ],
+  triggerCondition: {
+    row: 10,
+    size: 1000,
+    timeOut: 1
+  },
+  onTrigger: onTrigger
+})
+hilog.info(0x0000, 'ApplicationTrack', '%{public}s', 'Succeeded in loading the content.');
 ```
-1. // entry\src\main\ets\entryability\EntryAbility.ets
-2. const onTrigger = CallbackManager.getInstance().getOnTrigger();
-3. hiAppEvent.addWatcher({
-4. name: 'watcher1',
-5. appEventFilters: [
-6. {
-7. domain: 'test_domain',
-8. eventTypes: [hiAppEvent.EventType.FAULT, hiAppEvent.EventType.BEHAVIOR]
-9. }
-10. ],
-11. triggerCondition: {
-12. row: 10,
-13. size: 1000,
-14. timeOut: 1
-15. },
-16. onTrigger: onTrigger
-17. })
-18. hilog.info(0x0000, 'ApplicationTrack', '%{public}s', 'Succeeded in loading the content.');
-```
-
-[EntryAbility.ets](https://gitcode.com/HarmonyOS_Samples/application-track/blob/master/entry/src/main/ets/entryability/EntryAbility.ets#L80-L97)
 
 ## 总结
 

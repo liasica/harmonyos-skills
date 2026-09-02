@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohau
 title: OH_AudioSession_DeactivatedEvent
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 结构体 > OH_AudioSession_DeactivatedEvent
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:51+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:2f230f20b6ae0c2408c52286c8017c7e0b12a1d27042a58651a0b417c3cd9d67
+scraped_at: 2026-09-02T15:02:21+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9346575def33681dca1acde0743085d97518cac5e21f63c38b81ce90d6987722
 ---
 
-```
-1. typedef struct OH_AudioSession_DeactivatedEvent {...} OH_AudioSession_DeactivatedEvent
+```c
+typedef struct OH_AudioSession_DeactivatedEvent {...} OH_AudioSession_DeactivatedEvent
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 音频会话已停用事件。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-hmos-live-
 title: 基于媒体能力实现直播单播功能
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 基于媒体能力实现直播单播功能
 category: best-practices
-scraped_at: 2026-04-29T14:13:11+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:f95b951b91218dd75b211dbf13caf1b5f825dc8427107f8ff20a685bb3606207
+scraped_at: 2026-09-02T15:03:20+08:00
+doc_updated_at: 2026-08-10
+content_hash: sha256:09b3c8f5a8386cd0dea93a21f5f4ce554aae1e14f172f260f1e405dfe9b48719
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:f95b951b91218dd75b211dbf13caf1b5f825dc8427107f8ff20a685bb36
 
 本文基于系统的媒体底座能力，为开发者提供媒体直播系统的解决方案。系统在音视频采集、编解码、播放等方面能够高效处理多种格式的音视频数据，有效提升了音视频的质量和流畅度，助力开发者构建高清采集、高效编码及流畅播放等能力。本文主要涉及开播端的音视频采集与编码、看播端的流媒体播放与音画同步等技术方案。关于直播推拉流协议、云上服务器转码与分发等内容，本文暂不涉及。直播系统的完整链路可参考下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/FrnzirwJR-OLwidKPoq_gA/zh-cn_image_0000002455689320.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/skSQRqS0Ri2UDPqCzaQuCA/zh-cn_image_0000002455689320.png "点击放大")
 
 ## 开播端解决方案
 
@@ -22,7 +22,7 @@ content_hash: sha256:f95b951b91218dd75b211dbf13caf1b5f825dc8427107f8ff20a685bb36
 
 ### 开播端架构设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/obnbkTSuRMicSTPZgFwjZw/zh-cn_image_0000002488808969.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/QXhdnTtiQDuSLSknxIKgXQ/zh-cn_image_0000002488808969.png "点击放大")
 
 开播端架构设计如上图所示。图中将直播系统划分为云端、应用、系统与硬件四个逻辑层次。本文重点介绍应用SDK层如何通过调用底层媒体能力完成直播音视频基础能力的构建。应用SDK层主要为应用业务层提供平台技术的基础能力，通常可分为音频SDK和视频SDK两部分：
 
@@ -56,54 +56,52 @@ content_hash: sha256:f95b951b91218dd75b211dbf13caf1b5f825dc8427107f8ff20a685bb36
 | 使用限制 | 无回声消除或降噪能力 | 音频带宽较低 | 无法录制本机下行播放的声音 |
 | 适用场景 | 直播单播场景，非通话的录音场景 | 直播连麦、通话、会议等场景 | 直播高清连麦、线上音乐教育场景 |
 
-应用接入AUDIOSTREAM\_SOURCE\_TYPE\_LIVE录音流类型后，在未连接外设的情况下，将使用设备麦克风拾音，并具备48kHz回声抵消能力；而在连接有线或蓝牙耳机时，则会使用耳机麦克风拾音，具体拾音规格取决于耳机麦克风能力。关于录音流类型的详细使用方法，请参考[《使用合适的音频流类型》](../harmonyos-guides/using-right-streamusage-and-sourcetype.md)。
+应用接入AUDIOSTREAM\_SOURCE\_TYPE\_LIVE录音流类型后，在未连接外设的情况下，将使用设备麦克风拾音，并具备48kHz回声抵消能力；而在连接有线或蓝牙耳机时，则会使用耳机麦克风拾音，具体拾音规格取决于耳机麦克风能力。
 
-注意
+**注意** 
 
 高保真AEC的能力并非所有产品均支持，建议开发者在使用AUDIOSTREAM\_SOURCE\_TYPE\_LIVE录音流类型前，先通过[OH\_AudioStreamManager\_IsAcousticEchoCancelerSupported](../harmonyos-references/capi-native-audio-stream-manager-h.md#oh_audiostreammanager_isacousticechocancelersupported)接口查询当前设备是否支持回声消除能力。
 
 音频采集开发流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/8PpLeIDaQdmC_-MCzZgXOg/zh-cn_image_0000002455529676.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/v_fwaPLjReacw1LcizxLEw/zh-cn_image_0000002455529676.png "点击放大")
 
 音频采集开发详细步骤，可参考[《使用OHAudio开发音频录制功能》](../harmonyos-guides/using-ohaudio-for-recording.md)。其中，开发者使用直播录音（AUDIOSTREAM\_SOURCE\_TYPE\_LIVE）类型的回声消除能力的关键代码如下：
 
+```cpp
+if (sampleInfo.audioInfo.isOpenEchoCancel) {
+    // Echo cancellation (audio pickup path): Setting the audio stream type to
+    // AUDIOSTREAM_SOURCE_TYPE_VOICE_COMMUNICATION or AUDIOSTREAM_SOURCE_TYPE_LIVE (live streaming scenario) enables
+    // built-in echo cancellation.
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_COMMUNICATION;
+    OH_AudioStreamManager *streamManager = nullptr;
+    if (ApiCompat_OH_AudioManager_GetAudioStreamManager.IsAvailable() &&
+        ApiCompat_OH_AudioStreamManager_IsAcousticEchoCancelerSupported.IsAvailable()) {
+        // Logic for handling higher API versions: Pass input parameters directly, fully consistent with native
+        // calling method
+        int result = ApiCompat_OH_AudioManager_GetAudioStreamManager(&streamManager);
+        (void)result;
+        bool isSupportAec = false;
+        (void)ApiCompat_OH_AudioStreamManager_IsAcousticEchoCancelerSupported(
+            streamManager, AUDIOSTREAM_SOURCE_TYPE_LIVE, &isSupportAec);
+        if (isSupportAec) {
+            sourceType = AUDIOSTREAM_SOURCE_TYPE_LIVE;
+            SAMPLE_LOGI("high api:%{public}d version, audio stream source set to live type",
+                        ohos::compatibility::GetSystemApiVersion());
+        } else {
+            sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_COMMUNICATION;
+            SAMPLE_LOGI("high api:%{public}d version, audio stream source set to voip type",
+                        ohos::compatibility::GetSystemApiVersion());
+        }
+    } else {
+        // Logic for handling lower API versions
+        sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_COMMUNICATION;
+        SAMPLE_LOGI("low api:%{public}d version, audio stream source set to voip type",
+                    ohos::compatibility::GetSystemApiVersion());
+    }
+    OH_AudioStreamBuilder_SetCapturerInfo(builder_, sourceType);
+}
 ```
-1. if (sampleInfo.audioInfo.isOpenEchoCancel) {
-2. // Echo cancellation (audio pickup path): Setting the audio stream type to
-3. // AUDIOSTREAM_SOURCE_TYPE_VOICE_COMMUNICATION or AUDIOSTREAM_SOURCE_TYPE_LIVE (live streaming scenario) enables
-4. // built-in echo cancellation.
-5. OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_COMMUNICATION;
-6. OH_AudioStreamManager *streamManager = nullptr;
-7. if (ApiCompat_OH_AudioManager_GetAudioStreamManager.IsAvailable() &&
-8. ApiCompat_OH_AudioStreamManager_IsAcousticEchoCancelerSupported.IsAvailable()) {
-9. // Logic for handling higher API versions: Pass input parameters directly, fully consistent with native
-10. // calling method
-11. int result = ApiCompat_OH_AudioManager_GetAudioStreamManager(&streamManager);
-12. (void)result;
-13. bool isSupportAec = false;
-14. (void)ApiCompat_OH_AudioStreamManager_IsAcousticEchoCancelerSupported(
-15. streamManager, AUDIOSTREAM_SOURCE_TYPE_LIVE, &isSupportAec);
-16. if (isSupportAec) {
-17. sourceType = AUDIOSTREAM_SOURCE_TYPE_LIVE;
-18. SAMPLE_LOGI("high api:%{public}d version, audio stream source set to live type",
-19. ohos::compatibility::GetSystemApiVersion());
-20. } else {
-21. sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_COMMUNICATION;
-22. SAMPLE_LOGI("high api:%{public}d version, audio stream source set to voip type",
-23. ohos::compatibility::GetSystemApiVersion());
-24. }
-25. } else {
-26. // Logic for handling lower API versions
-27. sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_COMMUNICATION;
-28. SAMPLE_LOGI("low api:%{public}d version, audio stream source set to voip type",
-29. ohos::compatibility::GetSystemApiVersion());
-30. }
-31. OH_AudioStreamBuilder_SetCapturerInfo(builder_, sourceType);
-32. }
-```
-
-[AudioCapturer.cpp](https://gitcode.com/harmonyos_samples/HMOS_LiveStream/blob/master/entry/src/main/cpp/capbilities/codec/AudioCapturer.cpp#L81-L112)
 
 ### 直播音频编码
 
@@ -111,7 +109,7 @@ content_hash: sha256:f95b951b91218dd75b211dbf13caf1b5f825dc8427107f8ff20a685bb36
 
 音频编码的全流程主要包括：创建编码器、设置编码参数（采样率、码率、声道数等）、开始、刷新、重置、销毁资源。在应用开发过程中，开发者应按一定顺序调用方法，执行对应操作，否则系统可能会抛出异常或生成其他未定义的行为。关于音频编码的具体开发步骤，开发者可以参考[《音频编码》](../harmonyos-guides/audio-encoding.md)。
 
-说明
+**说明** 
 
 根据直播业务类型，一般建议开发者在单播场景下选择AAC编码格式，而对于低时延实时通信的连麦场景，建议选择OPUS编码格式。
 
@@ -121,11 +119,11 @@ content_hash: sha256:f95b951b91218dd75b211dbf13caf1b5f825dc8427107f8ff20a685bb36
 
 **（1）音频文件 -> 解封装 -> 音频解码**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/4w6xz-gmQOyEAQHBdPsh-Q/zh-cn_image_0000002488689009.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/oSc_6FnnQFibQqv8arCF0Q/zh-cn_image_0000002488689009.png "点击放大")
 
 **（2）音频解码 -> 播放**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/wKdpCf3_Rz2Uwwlj37onWA/zh-cn_image_0000002455689324.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/ficeeg0fRUiT-KAlDG6AhQ/zh-cn_image_0000002455689324.png "点击放大")
 
 开播端主播可能会使用本机扬声器或耳机进行音频文件收听。若主播播放的音频文件由应用提供，则应用需同时将该音频文件编码后推流发送，以方便看播端的观众同步收听。
 
@@ -142,33 +140,29 @@ content_hash: sha256:f95b951b91218dd75b211dbf13caf1b5f825dc8427107f8ff20a685bb36
 
 关于音频焦点冲突处理的详细原理和解决方案，开发者可以参考[《音频焦点管理》](bpta-audio-focus-management.md)，关键代码如下所示：
 
-```
-1. // Customize the audio interrupt event function
-2. static int32_t AudioCapturerOnInterruptEvent(OH_AudioCapturer *capturer, [[maybe_unused]]void* userData,
-3. OH_AudioInterrupt_ForceType type, OH_AudioInterrupt_Hint hint)
-4. {
-5. if ((type == AUDIOSTREAM_INTERRUPT_SHARE) && (hint == AUDIOSTREAM_INTERRUPT_HINT_RESUME)) {
-6. OH_AudioCapturer_Start(capturer);
-7. }
-8. return 0;
-9. }
-```
-
-[AudioCapturer.cpp](https://gitcode.com/harmonyos_samples/HMOS_LiveStream/blob/master/entry/src/main/cpp/capbilities/codec/AudioCapturer.cpp#L56-L64)
-
-```
-1. // Customize the audio interrupt event function
-2. static int32_t OnRenderInterruptEvent(OH_AudioRenderer *renderer, [[maybe_unused]]void *userData,
-3. OH_AudioInterrupt_ForceType type, OH_AudioInterrupt_Hint hint)
-4. {
-5. if ((type == AUDIOSTREAM_INTERRUPT_SHARE) && (hint == AUDIOSTREAM_INTERRUPT_HINT_RESUME)) {
-6. OH_AudioRenderer_Start(renderer);
-7. }
-8. return 0;
-9. }
+```cpp
+// Customize the audio interrupt event function
+static int32_t AudioCapturerOnInterruptEvent(OH_AudioCapturer *capturer, [[maybe_unused]]void* userData,
+    OH_AudioInterrupt_ForceType type, OH_AudioInterrupt_Hint hint)
+{
+    if ((type == AUDIOSTREAM_INTERRUPT_SHARE) && (hint == AUDIOSTREAM_INTERRUPT_HINT_RESUME)) {
+        OH_AudioCapturer_Start(capturer);
+    }
+    return 0;
+}
 ```
 
-[AudioRender.cpp](https://gitcode.com/harmonyos_samples/HMOS_LiveStream/blob/master/entry/src/main/cpp/capbilities/codec/AudioRender.cpp#L30-L38)
+```cpp
+// Customize the audio interrupt event function
+static int32_t OnRenderInterruptEvent(OH_AudioRenderer *renderer, [[maybe_unused]]void *userData, 
+    OH_AudioInterrupt_ForceType type, OH_AudioInterrupt_Hint hint)
+{
+    if ((type == AUDIOSTREAM_INTERRUPT_SHARE) && (hint == AUDIOSTREAM_INTERRUPT_HINT_RESUME)) {
+        OH_AudioRenderer_Start(renderer);
+    }
+    return 0;
+}
+```
 
 ### 直播SDR视频采集
 
@@ -176,99 +170,93 @@ content_hash: sha256:f95b951b91218dd75b211dbf13caf1b5f825dc8427107f8ff20a685bb36
 
 在直播的视频采集场景中，建议应用仅采集一路预览流，以降低直播功耗和时延。同时，在SDR直播场景下，颜色空间可配置为BT709\_LIMIT，以获得更广泛的设备支持。相机视频采集流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/pUPQ8p1RSR6t_IdWxinW0A/zh-cn_image_0000002488808973.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/srjQ5aXdRB-vMTT8R-DCog/zh-cn_image_0000002488808973.png "点击放大")
 
 关于相机视频采集的具体开发步骤，开发者可参考[《相机录像实践》](../harmonyos-guides/camera-recording-case.md)。其中，配置颜色空间的关键代码如下所示：
 
+```typescript
+// Set the color space
+setColorSpaceBeforeCommitConfig(session: camera.VideoSession, isHdr: number): void {
+  let colorSpace: colorSpaceManager.ColorSpace =
+    isHdr ? colorSpaceManager.ColorSpace.BT2020_HLG_LIMIT : colorSpaceManager.ColorSpace.BT709_LIMIT;
+  let colorSpaces: Array<colorSpaceManager.ColorSpace> = this.getSupportedColorSpaces(session);
+  let isSupportedColorSpaces = colorSpaces.indexOf(colorSpace) >= 0;
+  if (isSupportedColorSpaces) {
+    Logger.info(TAG, `setColorSpace: ${colorSpace}`);
+    try {
+      session.setColorSpace(colorSpace);
+    } catch (error) {
+      Logger.error(TAG, `setColorSpace fail ${error}`)
+    }
+    let activeColorSpace: colorSpaceManager.ColorSpace;
+    try {
+      activeColorSpace = session.getActiveColorSpace();
+      if (activeColorSpace != colorSpace) {
+        Logger.error(TAG, `activeColorSpace: ${activeColorSpace}, but wait: ${colorSpace}`);
+      }
+      Logger.info(TAG, `activeColorSpace: ${activeColorSpace}`);
+    } catch (error) {
+      Logger.error(TAG, `getActiveColorSpace fail ${error}`);
+    }
+  } else {
+    Logger.info(TAG, `colorSpace: ${colorSpace} is not support`);
+  }
+}
 ```
-1. // Set the color space
-2. setColorSpaceBeforeCommitConfig(session: camera.VideoSession, isHdr: number): void {
-3. let colorSpace: colorSpaceManager.ColorSpace =
-4. isHdr ? colorSpaceManager.ColorSpace.BT2020_HLG_LIMIT : colorSpaceManager.ColorSpace.BT709_LIMIT;
-5. let colorSpaces: Array<colorSpaceManager.ColorSpace> = this.getSupportedColorSpaces(session);
-6. let isSupportedColorSpaces = colorSpaces.indexOf(colorSpace) >= 0;
-7. if (isSupportedColorSpaces) {
-8. Logger.info(TAG, `setColorSpace: ${colorSpace}`);
-9. try {
-10. session.setColorSpace(colorSpace);
-11. } catch (error) {
-12. Logger.error(TAG, `setColorSpace fail ${error}`)
-13. }
-14. let activeColorSpace: colorSpaceManager.ColorSpace;
-15. try {
-16. activeColorSpace = session.getActiveColorSpace();
-17. if (activeColorSpace != colorSpace) {
-18. Logger.error(TAG, `activeColorSpace: ${activeColorSpace}, but wait: ${colorSpace}`);
-19. }
-20. Logger.info(TAG, `activeColorSpace: ${activeColorSpace}`);
-21. } catch (error) {
-22. Logger.error(TAG, `getActiveColorSpace fail ${error}`);
-23. }
-24. } else {
-25. Logger.info(TAG, `colorSpace: ${colorSpace} is not support`);
-26. }
-27. }
-```
-
-[CameraController.ets](https://gitcode.com/harmonyos_samples/HMOS_LiveStream/blob/master/entry/src/main/ets/controller/CameraController.ets#L488-L514)
 
 **（二）SDR视频处理**
 
 在视频处理过程中，开发者需要完成NativeImage的创建、SurfaceId的获取及帧可用性监听设置，为后续相机数据的处理（如美颜、滤镜等）提供基础图像载体，确保相机生产的数据能被正确接收与处理。本文建议开发者通过NativeImage绑定外部OpenGL纹理并关联相机采集数据，由系统完成视频数据的流转，开发者可重点关注shader算法的实现。具体流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/Wk3exL1wR9WqsC0jHjpfHA/zh-cn_image_0000002455529680.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/DA03wr8LQy2A0i_aI1QqJA/zh-cn_image_0000002455529680.png "点击放大")
 
 该环节的关键代码如下所示：
 
+```cpp
+bool RenderThread::CreateNativeImage()
+{
+    nativeImage_ = OH_NativeImage_Create(-1, GL_TEXTURE_EXTERNAL_OES);
+    if (nativeImage_ == nullptr) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "RenderThread", "OH_NativeImage_Create failed.");
+        return false;
+    }
+    int ret = 0;
+    {
+        std::lock_guard<std::mutex> lock(nativeImageSurfaceIdMutex_);
+        nativeImageWindow_ = OH_NativeImage_AcquireNativeWindow(nativeImage_);
+        ret = OH_NativeImage_GetSurfaceId(nativeImage_, &nativeImageSurfaceId_);
+    }
+    if (ret != 0) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "RenderThread",
+            "OH_NativeImage_GetSurfaceId failed, ret is %{public}d.", ret);
+        return false;
+    }
+
+    nativeImageFrameAvailableListener_.context = this;
+    nativeImageFrameAvailableListener_.onFrameAvailable = &RenderThread::OnNativeImageFrameAvailable;
+    ret = OH_NativeImage_SetOnFrameAvailableListener(nativeImage_, nativeImageFrameAvailableListener_);
+    if (ret != 0) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "RenderThread",
+                     "OH_NativeImage_SetOnFrameAvailableListener failed, ret is %{public}d.", ret);
+        return false;
+    }
+
+    return true;
+}
 ```
-1. bool RenderThread::CreateNativeImage()
-2. {
-3. nativeImage_ = OH_NativeImage_Create(-1, GL_TEXTURE_EXTERNAL_OES);
-4. if (nativeImage_ == nullptr) {
-5. OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "RenderThread", "OH_NativeImage_Create failed.");
-6. return false;
-7. }
-8. int ret = 0;
-9. {
-10. std::lock_guard<std::mutex> lock(nativeImageSurfaceIdMutex_);
-11. nativeImageWindow_ = OH_NativeImage_AcquireNativeWindow(nativeImage_);
-12. ret = OH_NativeImage_GetSurfaceId(nativeImage_, &nativeImageSurfaceId_);
-13. }
-14. if (ret != 0) {
-15. OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "RenderThread",
-16. "OH_NativeImage_GetSurfaceId failed, ret is %{public}d.", ret);
-17. return false;
-18. }
-
-20. nativeImageFrameAvailableListener_.context = this;
-21. nativeImageFrameAvailableListener_.onFrameAvailable = &RenderThread::OnNativeImageFrameAvailable;
-22. ret = OH_NativeImage_SetOnFrameAvailableListener(nativeImage_, nativeImageFrameAvailableListener_);
-23. if (ret != 0) {
-24. OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "RenderThread",
-25. "OH_NativeImage_SetOnFrameAvailableListener failed, ret is %{public}d.", ret);
-26. return false;
-27. }
-
-29. return true;
-30. }
-```
-
-[render\_thread.cpp](https://gitcode.com/harmonyos_samples/HMOS_LiveStream/blob/master/entry/src/main/cpp/capbilities/render/render_thread.cpp#L434-L463)
 
 **（三）色彩空间配置**
 
 在SDR直播场景下，视频编码及显示环节需注意渲染和显示的色彩空间也应配置为BT709\_LIMIT，与相机采集时保持一致。关键代码如下所示：
 
+```screen
+// SDR set BT709
+int32_t ret = OH_NativeWindow_SetColorSpace(nativeWindow_, OH_COLORSPACE_BT709_LIMIT);
 ```
-1. // SDR set BT709
-2. int32_t ret = OH_NativeWindow_SetColorSpace(nativeWindow_, OH_COLORSPACE_BT709_LIMIT);
-```
-
-[render\_thread.cpp](https://gitcode.com/harmonyos_samples/HMOS_LiveStream/blob/master/entry/src/main/cpp/capbilities/render/render_thread.cpp#L264-L265)
 
 **（四）使用系统红枫摄像能力**
 
-系统级的红枫色彩算法已全面开放给生态应用，三方应用基于上述标准统一的录像会话及预览流接口，即可获取标准原色高清图像，实现与系统相机一致的红枫色彩效果。同时，建议应用接入系统相机的自动对焦、长焦、微距等能力，充分发挥相机硬件的综合能力，全面获得系统级拍摄的优秀体验。此能力仅限支持红枫摄像的华为产品使用，不同产品的能力适配情况，根据设备自身规格而定。关于实现系统相机级别的效果和能力，开发者可以参考[自定义相机预览](bpta-custom-camera-preview.md)。
+系统级的红枫色彩算法已全面开放给生态应用，三方应用基于上述标准统一的录像会话及预览流接口，即可获取标准原色高清图像，实现与系统相机一致的红枫色彩效果。同时，建议应用接入系统相机的自动对焦、长焦、微距等能力，充分发挥相机硬件的综合能力，全面获得系统级拍摄的优秀体验。此能力仅限支持红枫摄像的华为产品使用，不同产品的能力适配情况，根据设备自身规格而定。关于实现系统相机级别的效果和能力，开发者可以参考[预览(ArkTS)](../harmonyos-guides/camera-preview.md)。
 
 ### 直播HDR Vivid视频采集
 
@@ -309,77 +297,73 @@ ROI（Region of Interesting）编码是指对感兴趣区域和非感兴趣区�
 
 ROI区域的坐标范围可由开发者自主指定。例如，开发者可以借助“美颜模块”的人脸识别功能，将检测输出的人脸区域范围作为ROI区域，并随视频的每一帧同步输出。开发者也可以利用相机的人脸区域检测能力来获取ROI区域（实际应用需先确认该能力是否受支持）。关于ROI编码具体开发指导，开发者可以参考[《ROI编码》](../harmonyos-guides/video-encoding-roi.md)。
 
+```cpp
+// Static callback function: Used to handle encoder requests for input parameters
+static void OnNeedInputParameter(OH_AVCodec *codec, uint32_t index, OH_AVFormat *parameter, void *userData)
+{
+    // Retrieve CodecUserRoi instance from user data
+    VideoEncoder::CodecUserRoi* roiUserData = static_cast<VideoEncoder::CodecUserRoi*>(userData);
+    if (!roiUserData || !roiUserData->vencoder) {
+        SAMPLE_LOGE("Invalid user data in OnNeedInputParameter");
+        OH_VideoEncoder_PushInputParameter(codec, index);
+        return;
+    }
+
+    VideoEncoder* encoder = roiUserData->vencoder;
+    FaceIntInfo faceInfo = encoder->GetLatestFaceInfo();
+    std::string roiInfo;
+
+    // If valid face information is available, use the face region as the ROI
+    if (faceInfo.valid) {
+        int32_t left = faceInfo.topLeftX;
+        int32_t top = faceInfo.topLeftY;
+        int32_t right = faceInfo.topLeftX + faceInfo.width;
+        int32_t bottom = faceInfo.topLeftY + faceInfo.height;
+
+        // Construct ROI information string, lowering the QP value in facial regions to enhance image quality
+        char roiBuffer[100];
+        int len = snprintf(roiBuffer, sizeof(roiBuffer), "%d,%d-%d,%d=-4", left, top, right, bottom);
+        if (len > 0 && len < static_cast<int>(sizeof(roiBuffer))) {
+            roiInfo = std::string(roiBuffer, len);
+        } else {
+            SAMPLE_LOGE("Failed to format ROI string, buffer size: %zu", sizeof(roiBuffer));
+        }
+#if ONLY_TEST_ROI_INFO
+        SAMPLE_LOGI("HMOS_LiveStream: ROI face  timestamp: %{public}d, ROI: %{public}s",
+            faceInfo.timestamp, roiBuffer);
+#endif
+    } else {
+        // If no face information is available, do not set any ROI, allowing the encoder to use global default
+        // parameters
+        SAMPLE_LOGI("No valid face info, no ROI set.");
+    }
+
+    // Set ROI parameters
+    const char* roiKey = ApiCompat_OH_MD_KEY_VIDEO_ENCODER_ROI_PARAMS;
+    OH_AVFormat_SetStringValue(parameter, roiKey, roiInfo.c_str());
+    OH_VideoEncoder_PushInputParameter(codec, index);
+}
 ```
-1. // Static callback function: Used to handle encoder requests for input parameters
-2. static void OnNeedInputParameter(OH_AVCodec *codec, uint32_t index, OH_AVFormat *parameter, void *userData)
-3. {
-4. // Retrieve CodecUserRoi instance from user data
-5. VideoEncoder::CodecUserRoi* roiUserData = static_cast<VideoEncoder::CodecUserRoi*>(userData);
-6. if (!roiUserData || !roiUserData->vencoder) {
-7. SAMPLE_LOGE("Invalid user data in OnNeedInputParameter");
-8. OH_VideoEncoder_PushInputParameter(codec, index);
-9. return;
-10. }
-
-12. VideoEncoder* encoder = roiUserData->vencoder;
-13. FaceIntInfo faceInfo = encoder->GetLatestFaceInfo();
-14. std::string roiInfo;
-
-16. // If valid face information is available, use the face region as the ROI
-17. if (faceInfo.valid) {
-18. int32_t left = faceInfo.topLeftX;
-19. int32_t top = faceInfo.topLeftY;
-20. int32_t right = faceInfo.topLeftX + faceInfo.width;
-21. int32_t bottom = faceInfo.topLeftY + faceInfo.height;
-
-23. // Construct ROI information string, lowering the QP value in facial regions to enhance image quality
-24. char roiBuffer[100];
-25. int len = snprintf(roiBuffer, sizeof(roiBuffer), "%d,%d-%d,%d=-4", left, top, right, bottom);
-26. if (len > 0 && len < static_cast<int>(sizeof(roiBuffer))) {
-27. roiInfo = std::string(roiBuffer, len);
-28. } else {
-29. SAMPLE_LOGE("Failed to format ROI string, buffer size: %zu", sizeof(roiBuffer));
-30. }
-31. #if ONLY_TEST_ROI_INFO
-32. SAMPLE_LOGI("HMOS_LiveStream: ROI face  timestamp: %{public}d, ROI: %{public}s",
-33. faceInfo.timestamp, roiBuffer);
-34. #endif
-35. } else {
-36. // If no face information is available, do not set any ROI, allowing the encoder to use global default
-37. // parameters
-38. SAMPLE_LOGI("No valid face info, no ROI set.");
-39. }
-
-41. // Set ROI parameters
-42. const char* roiKey = ApiCompat_OH_MD_KEY_VIDEO_ENCODER_ROI_PARAMS;
-43. OH_AVFormat_SetStringValue(parameter, roiKey, roiInfo.c_str());
-44. OH_VideoEncoder_PushInputParameter(codec, index);
-45. }
-```
-
-[VideoEncoder.cpp](https://gitcode.com/harmonyos_samples/HMOS_LiveStream/blob/master/entry/src/main/cpp/capbilities/codec/VideoEncoder.cpp#L177-L221)
 
 ### 直播系统压力反馈
 
 直播作为典型的应用重负载场景，其系统性能设计直接影响设备续航、发热等关键指标，从而进一步影响用户体验。系统提供压力反馈监测方案，以帮助应用优化直播场景的性能及功耗。开发者可使用系统提供的压力反馈接口[on('systemPressureLevelChange')](../harmonyos-references/arkts-apis-camera-videosession.md#onsystempressurelevelchange20)，根据系统压力动态调整直播场景负载，例如在系统压力过大时主动进行动态应用负载降级。
 
-```
-1. systemPressureLevelChangeCallback(err: BusinessError, systemPressureLevel: camera.SystemPressureLevel): void {
-2. if (err !== undefined && err.code !== 0) {
-3. Logger.error(TAG, `Callback Error, errorCode: ${err.code}`);
-4. return;
-5. }
-6. Logger.info(TAG, `systemPressureLevel: ${systemPressureLevel}`);
-7. }
+```typescript
+systemPressureLevelChangeCallback(err: BusinessError, systemPressureLevel: camera.SystemPressureLevel): void {
+  if (err !== undefined && err.code !== 0) {
+    Logger.error(TAG, `Callback Error, errorCode: ${err.code}`);
+    return;
+  }
+  Logger.info(TAG, `systemPressureLevel: ${systemPressureLevel}`);
+}
 
-10. registerSystemPressureLevelChangeCallback(videoSession: camera.VideoSession): void {
-11. if (deviceInfo.sdkApiVersion >= 20) {
-12. videoSession.on('systemPressureLevelChange', this.systemPressureLevelChangeCallback);
-13. }
-14. }
+registerSystemPressureLevelChangeCallback(videoSession: camera.VideoSession): void {
+  if (deviceInfo.sdkApiVersion >= 20) {
+    videoSession.on('systemPressureLevelChange', this.systemPressureLevelChangeCallback);
+  }
+}
 ```
-
-[CameraController.ets](https://gitcode.com/harmonyos_samples/HMOS_LiveStream/blob/master/entry/src/main/ets/controller/CameraController.ets#L518-L531)
 
 ### 开播端开发常见问题FAQ
 
@@ -403,13 +387,13 @@ ROI区域的坐标范围可由开发者自主指定。例如，开发者可以�
 
 该场景下，建议应用可在直播推后台时发送一张如“主播暂时离开”的画面垫片以告知看播端观众此时主播离开，音视频采集暂停。同时为满足后台存活需求，业务需向系统申请一个数据传输的[长时任务](../harmonyos-guides/continuous-task.md)，且持续发送直播画面垫片以满足数据传输长时任务的流量监控需求，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/FkThqbWzSoSmDk5gJ-4D3Q/zh-cn_image_0000002488689013.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/MFAhiwPESEq7HAS4AhAPhA/zh-cn_image_0000002488689013.png "点击放大")
 
 **（5）同一页面内的相机切换生命周期如何管理？**
 
 直播类应用经常会涉及在同一页面内切换不同的相机调用业务，例如，中间Tab页的业务需要用相机拍摄内容后发布到内容社区，右侧Tab页的业务则是直播页面需启动相机预览。在不同Tab页面切换时，需要特别注意相机使用的生命周期管理。
 
-在系统中，相机是单例的，每个页面只能运行一个，运行另一个自定义相机时需要将之前创建的自定义相机资源全部销毁。因此每个Tab页的业务需在感知窗口切换后即时释放相机资源，避免与另一Tab页的相机资源申请产生冲突。此外，在相机前后台切换时也需注意，如果切换后台再切回来，必须要重新初始化相机才可以。因为切后台，相机资源被全部回收，导致再回到相机页面也无法预览画面。关于相机前后台切换和资源释放的开发指导，开发者可参考[《相机前后台切换》](../architecture-guides/photo-v1_2-ts_12-0000002298869489.md)和[《正确关闭释放相机流》](../architecture-guides/architecture-v1-3_2-ts_10-0000002363076293.md)。
+在系统中，相机是单例的，每个页面只能运行一个，运行另一个自定义相机时需要将之前创建的自定义相机资源全部销毁。因此每个Tab页的业务需在感知窗口切换后即时释放相机资源，避免与另一Tab页的相机资源申请产生冲突。此外，在相机前后台切换时也需注意，如果切换后台再切回来，必须要重新初始化相机才可以。因为切后台，相机资源被全部回收，导致再回到相机页面也无法预览画面。关于相机前后台切换和资源释放的开发指导，开发者可参考[《相机前后台切换》](../architecture-guides/photo-v1_2-ts_12-0000002298869489.md)和[《如何正确关闭释放相机流》](../harmonyos-faqs/faqs-camera-33.md)。
 
 **（6）美颜线程需要在新建的子线程中进行吗？**
 
@@ -425,9 +409,9 @@ ROI区域的坐标范围可由开发者自主指定。例如，开发者可以�
 
 在看播端，通常音频渲染的时延大于视频硬件送显的时延，因此建议应用获取音频实际渲染的时间戳，调整视频送帧时延以匹配音频实际播放时延，从而实现音画同步。
 
-获取音频流时间戳的接口推荐使用最新的[OH\_AudioRenderer\_GetAudioTimestampInfo()](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_getaudiotimestampinfo)，该接口适配了倍速播放能力，相比[OH\_AudioRenderer\_GetTimestamp()](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_gettimestamp)功能更为完备。关于音画同步的具体开发指导，开发者可参考[《音画同步最佳实践》](bpta-audio-video-synchronization.md)。
+获取音频流时间戳的接口推荐使用最新的[OH\_AudioRenderer\_GetAudioTimestampInfo()](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_getaudiotimestampinfo)，该接口适配了倍速播放能力，相比[OH\_AudioRenderer\_GetTimestamp()](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_gettimestamp)功能更为完备。关于音画同步的具体开发指导，开发者可参考[《音画同步最佳实践》](../harmonyos-guides/audio-video-synchronization.md)。
 
-注意
+**注意** 
 
 * 在音频启动前，timestamp和framePosition返回结果为0。为避免卡顿等问题，建议开发者此时暂不同步，视频帧可直接送显。当获取到实际音频渲染时间戳时，再根据视频帧PTS和音频渲染位置计算延迟。
 * 当framePosition和timestamp以稳定的速度前进后，建议调用OH\_AudioRenderer\_GetAudioTimestampInfo接口的频率不要过于频繁。推荐每200ms调用一次，也可以每分钟调用一次，最好不要低于200ms一次，频繁调用可能会带来功耗问题。因此在能保证音画同步效果的情况下，不需要频繁地查询时间戳。

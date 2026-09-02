@@ -3,32 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-bas
 title: Class (WebResourceResponse)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS 组件 > Web > Class (WebResourceResponse)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:22+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:a8242f902bc75c6421f6bdbb5e70eb4e126ba77fdb1ee8adc90930962bfb54c8
+scraped_at: 2026-09-02T15:01:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:055ab83cb771ab2d69991191f641a1ad1d60a023e368df14c55d26b4105b3d85
 ---
 
-Web组件资源响应对象。示例代码参考[onHttpErrorReceive事件](arkts-basic-components-web-events.md#onhttperrorreceive)。
+WebResourceResponse是Web组件中表示HTTP响应并允许自定义网页资源响应的类。它在onHttpErrorReceive等事件中向应用提供服务器返回响应的状态码、状态描述、响应头、响应数据、编码、MIME类型等信息；在资源请求拦截场景中允许应用自定义响应的状态码、状态描述、响应头、响应数据、编码、MIME类型及数据就绪状态，从而由应用接管特定资源的返回内容。示例代码参考[onHttpErrorReceive事件](arkts-basic-components-web-events.md#onhttperrorreceive)。
 
-说明
+**说明** 
 
-* 该组件首批接口从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-* 本Class首批接口从API version 8开始支持。
+* 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 本Class从API version 8开始支持。
 * 示例效果请以真机运行为准。
 
 ## constructor
 
-PhonePC/2in1TabletTVWearable
-
 constructor()
 
-WebResourceResponse的构造函数。
+WebResourceResponse的构造函数。用于创建HTTP响应对象，常用于资源请求拦截场景中自定义响应内容。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 ## getReasonMessage
-
-PhonePC/2in1TabletTVWearable
 
 getReasonMessage(): string
 
@@ -40,11 +36,9 @@ getReasonMessage(): string
 
 | 类型 | 说明 |
 | --- | --- |
-| string | 返回资源响应的状态码描述。 |
+| string | 返回资源响应的状态码描述，如'OK'、'Not Found'等。 |
 
 ## getResponseCode
-
-PhonePC/2in1TabletTVWearable
 
 getResponseCode(): number
 
@@ -56,11 +50,9 @@ getResponseCode(): number
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 返回资源响应的状态码。 |
+| number | 返回资源响应的状态码，如200表示成功，404表示未找到。 |
 
 ## getResponseData
-
-PhonePC/2in1TabletTVWearable
 
 getResponseData(): string
 
@@ -72,11 +64,9 @@ getResponseData(): string
 
 | 类型 | 说明 |
 | --- | --- |
-| string | 返回资源响应数据。 |
+| string | 返回资源响应数据，为HTML格式的字符串内容。 |
 
 ## getResponseEncoding
-
-PhonePC/2in1TabletTVWearable
 
 getResponseEncoding(): string
 
@@ -88,11 +78,9 @@ getResponseEncoding(): string
 
 | 类型 | 说明 |
 | --- | --- |
-| string | 返回资源响应的编码。 |
+| string | 返回资源响应的编码，如'utf-8'、'gbk'等字符集编码。 |
 
 ## getResponseHeader
-
-PhonePC/2in1TabletTVWearable
 
 getResponseHeader() : Array<Header>
 
@@ -108,8 +96,6 @@ getResponseHeader() : Array<Header>
 
 ## getResponseMimeType
 
-PhonePC/2in1TabletTVWearable
-
 getResponseMimeType(): string
 
 获取资源响应的媒体（MIME）类型。
@@ -120,15 +106,13 @@ getResponseMimeType(): string
 
 | 类型 | 说明 |
 | --- | --- |
-| string | 返回资源响应的媒体（MIME）类型。 |
+| string | 返回资源响应的媒体（MIME）类型，如'text/html'、'application/json'等。 |
 
 ## getResponseDataEx13+
 
-PhonePC/2in1TabletTVWearable
-
 getResponseDataEx(): string | number | ArrayBuffer | Resource | undefined
 
-获取资源响应数据，支持多种数据类型。
+获取资源响应数据，支持多种数据类型。与getResponseData相比，该方法支持返回number（文件句柄）、ArrayBuffer（二进制数据）、Resource（$rawfile资源）等多种类型，建议在需要灵活数据类型支持时优先使用。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -139,8 +123,6 @@ getResponseDataEx(): string | number | ArrayBuffer | Resource | undefined
 | string | number | ArrayBuffer | [Resource](ts-types.md#resource) | undefined | string返回HTML格式的字符串。 number返回文件句柄。 ArrayBuffer返回二进制数据。 Resource返回$rawfile资源。 如果没有可用数据，返回undefined。 |
 
 ## getResponseIsReady13+
-
-PhonePC/2in1TabletTVWearable
 
 getResponseIsReady(): boolean
 
@@ -156,8 +138,6 @@ getResponseIsReady(): boolean
 
 ## setResponseData9+
 
-PhonePC/2in1TabletTVWearable
-
 setResponseData(data: string | number | Resource | ArrayBuffer): void
 
 设置资源响应数据。
@@ -172,8 +152,6 @@ setResponseData(data: string | number | Resource | ArrayBuffer): void
 
 ## setResponseEncoding9+
 
-PhonePC/2in1TabletTVWearable
-
 setResponseEncoding(encoding: string): void
 
 设置资源响应的编码。
@@ -184,11 +162,9 @@ setResponseEncoding(encoding: string): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| encoding | string | 是 | 要设置的资源响应的编码。 |
+| encoding | string | 是 | 要设置的资源响应的编码。编码格式需要与响应数据的实际编码保持一致，编码格式会影响浏览器或客户端对响应内容的解析和展示。 |
 
 ## setResponseMimeType9+
-
-PhonePC/2in1TabletTVWearable
 
 setResponseMimeType(mimeType: string): void
 
@@ -200,11 +176,9 @@ setResponseMimeType(mimeType: string): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| mimeType | string | 是 | 要设置的资源响应的媒体（MIME）类型。 |
+| mimeType | string | 是 | 要设置的资源响应的媒体（MIME）类型。常见的MIME类型包括：text/html（HTML文档）、application/json（JSON数据）、image/png（PNG图片）等。 |
 
 ## setReasonMessage9+
-
-PhonePC/2in1TabletTVWearable
 
 setReasonMessage(reason: string): void
 
@@ -216,11 +190,9 @@ setReasonMessage(reason: string): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| reason | string | 是 | 要设置的资源响应的状态码描述。 |
+| reason | string | 是 | 要设置的资源响应的状态码描述。状态码描述是对状态码的文本说明，通常与状态码对应使用，例如状态码为200时描述可设为“OK”，状态码为404时描述可设为“Not Found”。该描述会包含在HTTP响应中，便于客户端或开发者了解响应结果。 |
 
 ## setResponseHeader9+
-
-PhonePC/2in1TabletTVWearable
 
 setResponseHeader(header: Array<Header>): void
 
@@ -232,11 +204,9 @@ setResponseHeader(header: Array<Header>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| header | Array<[Header](arkts-basic-components-web-i.md#header)> | 是 | 要设置的资源响应头。 |
+| header | Array<[Header](arkts-basic-components-web-i.md#header)> | 是 | 要设置的资源响应头。响应头用于传递HTTP协议头信息，例如设置“Cache-Control”控制缓存策略，设置“Access-Control-Allow-Origin”实现跨域访问，设置“Content-Type”指定内容类型。设置响应头会影响浏览器或客户端对资源的处理方式。 |
 
 ## setResponseCode9+
-
-PhonePC/2in1TabletTVWearable
 
 setResponseCode(code: number): void
 
@@ -248,15 +218,19 @@ setResponseCode(code: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| code | number | 是 | 要设置的资源响应的状态码。如果该资源以错误结束，请参考[@ohos.web.netErrorList](arkts-apis-neterrorlist.md)设置相应错误码，避免设置错误码为 ERR\_IO\_PENDING，设置为该错误码可能会导致XMLHttpRequest同步请求阻塞。 |
+| code | number | 是 | 要设置的资源响应的状态码。如果该资源请求失败或响应状态为错误状态，请参考[@ohos.web.netErrorList](arkts-apis-neterrorlist.md)设置相应错误码，避免设置错误码为 ERR\_IO\_PENDING，设置为该错误码可能会导致XMLHttpRequest同步请求阻塞。 |
 
 ## setResponseIsReady9+
-
-PhonePC/2in1TabletTVWearable
 
 setResponseIsReady(IsReady: boolean): void
 
 设置资源响应数据是否已经就绪。
+
+**说明** 
+
+* 在资源请求拦截场景中，应先调用setResponseData()、setResponseEncoding()、setResponseMimeType()、setResponseHeader()、setResponseCode()、setReasonMessage()等方法设置响应的各个属性。最后调用setResponseIsReady(true)来触发资源返回。
+* 异步数据场景：需先调用setResponseIsReady(false)，待数据准备好后调用setResponseData()等设置方法，最后调用setResponseIsReady(true)来触发资源返回。
+* 如果不正确设置调用顺序，可能导致XMLHttpRequest同步请求阻塞。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 

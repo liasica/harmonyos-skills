@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 如何解决SDK与镜像不匹配导致abc文件无法正常运行的问题
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 如何解决SDK与镜像不匹配导致abc文件无法正常运行的问题
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:17+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:14+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:45c8ade503ab0475d6c0e0ae1c6b81aea86f16ee3766accebc8053ea80172628
 ---
 

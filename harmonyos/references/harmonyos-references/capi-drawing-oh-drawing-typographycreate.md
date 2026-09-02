@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: OH_Drawing_TypographyCreate
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 结构体 > OH_Drawing_TypographyCreate
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:21+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:af444574b2e57c79d6b8cc2cb496efb48dd19a618efbc3fecac32af809ce722a
+scraped_at: 2026-09-02T14:53:10+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:efd7b24415db52a8d3c4a9545932874d637612b65aae6f903c70a51c60909328
 ---
 
-```
-1. typedef struct OH_Drawing_TypographyCreate OH_Drawing_TypographyCreate
+```c
+typedef struct OH_Drawing_TypographyCreate OH_Drawing_TypographyCreate
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 用于创建[OH\_Drawing\_Typography](capi-drawing-oh-drawing-typography.md)。
 

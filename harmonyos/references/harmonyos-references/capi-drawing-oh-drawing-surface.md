@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: OH_Drawing_Surface
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 结构体 > OH_Drawing_Surface
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:31+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:c2d4ade5deddd6c2bd7bd5a1d79fac56a921da7d98738aa5b4032cf09bba684c
+scraped_at: 2026-09-02T14:53:10+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3020ac6014b8000cfffbe8f8d93877f3ba0f3f470de1e20e8a797b7d81067a2a
 ---
 
-```
-1. typedef struct OH_Drawing_Surface OH_Drawing_Surface
+```c
+typedef struct OH_Drawing_Surface OH_Drawing_Surface
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义surface，用于管理画布绘制的内容。
 

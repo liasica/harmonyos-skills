@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: Image_Scale
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 结构体 > Image_Scale
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:39+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:2f95340b4798b116984fb01a2fc60b283cacfdc60c1a9aad69fc6184d617d936
+scraped_at: 2026-09-02T15:02:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0a4ee9876e2591f7d96a5e148f7e6b5353513d0e05d59902a743bc7babe8050e
 ---
 
-```
-1. typedef struct Image_Scale {...} Image_Scale
+```c
+typedef struct Image_Scale {...} Image_Scale
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 图像缩放倍数。
 
@@ -26,13 +24,9 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
-| float x | 宽度的缩放倍数。不能为0。 |
-| float y | 高度的缩放倍数。不能为0。 |
+| float x | 宽度的缩放倍数。  取值不能为0，建议取正数，否则会产生翻转效果。 |
+| float y | 高度的缩放倍数。  取值不能为0，建议取正数，否则会产生翻转效果。 |

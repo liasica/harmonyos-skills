@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nets
 title: Http_Proxy
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 结构体 > Http_Proxy
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:40+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:c7b8f157f71030c0c2f8f625582a72c2da6d407c0fc8403a4228adb06c71af90
+scraped_at: 2026-09-02T15:01:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:14f3bfe71143c2c946ce7a0cfdf4b5e8f375cd1696bed47d198214899e4ff469
 ---
 
-```
-1. typedef struct Http_Proxy {...} Http_Proxy
+```c
+typedef struct Http_Proxy {...} Http_Proxy
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 代理配置结构体。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

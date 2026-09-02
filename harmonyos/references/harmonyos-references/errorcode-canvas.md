@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: Canvas组件错误码
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > 错误码 > UI界面 > Canvas组件错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:55+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:45d193b55406a174cbf40707e576c9c38da1c9ab4a5c89f03789480707189520
+scraped_at: 2026-09-02T15:01:25+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:073b0b9cbef3b5fe505ba40b9ebaca4f464d87865b2358af5e63099956e7e537
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码](errorcode-universal.md)。
 

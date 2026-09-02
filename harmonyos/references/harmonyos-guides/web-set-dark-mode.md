@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-set-dark-
 title: Web深色模式适配
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 设置基本属性和事件 > Web深色模式适配
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:15+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:80743d1043860d2517229a56b26d1e63f68ecc3c14f9f04241a32aea8a09f710
+scraped_at: 2026-09-02T14:59:22+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e64e770a39eafa6a45e4ff63b6572e7b3d3e5bad836098c32ba88785bab47989
 ---
 
 系统提供浅色和深色的主题模式供用户选择。深色模式在低光环境下能够降低屏幕亮度，减少光线刺激，改善阅读体验。Web组件根据网页样式进行渲染。若网页未适配深色模式，会造成与系统主题的割裂感。网页开发者应考虑用户的主题偏好，适配深色模式，以保证用户体验的一致性。
@@ -22,85 +22,85 @@ ArkWeb提供灵活控制Web组件深色模式的能力，支持独立于系统�
 
   color-scheme未设置时，默认为normal，表示未指定配色方案，使用Web组件的默认配色方案，表现与light一致。使用样例如下：
 
-  ```
-  1. /* 使用方式1：使用meta标签全局设置 */
-  2. <meta name="color-scheme" content="light"> /* 只支持浅色模式 */
+  ```html
+  /* 使用方式1：使用meta标签全局设置 */
+  <meta name="color-scheme" content="light"> /* 只支持浅色模式 */
 
-  4. /* 使用方式2：使用style全局设置 */
-  5. :root {
-  6. color-scheme: light dark; /* 支持浅色和深色模式，跟随系统切换 */
-  7. }
+  /* 使用方式2：使用style全局设置 */
+  :root {
+    color-scheme: light dark; /* 支持浅色和深色模式，跟随系统切换 */
+  }
 
-  9. /* 使用方式3：使用style针对特定元素设置 */
-  10. div {
-  11. color-scheme: light; /* 只支持浅色模式 */
-  12. }
+  /* 使用方式3：使用style针对特定元素设置 */
+  div {
+    color-scheme: light; /* 只支持浅色模式 */
+  }
   ```
 
   例如，color-scheme.html页面在Web深色模式关闭和开启时的渲染效果如下图所示。关闭深色模式，网页采用浅色配色方案，input2应用自定义背景样式。开启深色模式，网页采用深色配色方案，input2保持自定义样式，而网页背景、字体、表单、进度条及按钮的颜色均自动切换为深色配色。
 
-  ```
-  1. <!-- color-scheme.html -->
-  2. <!DOCTYPE html>
-  3. <html>
-  4. <head>
-  5. <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  6. <meta name="color-scheme" content="light dark">
-  7. </head>
-  8. <body>
-  9. <h1>Example page</h1>
-  10. <input name="input1" type="text" placeholder="please enter text">
-  11. <br><br>
-  12. <input name="input2" type="text" placeholder="please enter text" style="background-color: lightgray;">
-  13. <br><br>
-  14. <progress value="50" max="100"></progress>
-  15. <br><br>
-  16. <input type="checkbox">
-  17. <input type="checkbox" checked>
-  18. <br><br>
-  19. <button>submit</button>
-  20. </body>
-  21. </html>
+  ```html
+  <!-- color-scheme.html -->
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <meta name="color-scheme" content="light dark">
+  </head>
+  <body>
+    <h1>Example page</h1>
+    <input name="input1" type="text" placeholder="please enter text">
+    <br><br>
+    <input name="input2" type="text" placeholder="please enter text" style="background-color: lightgray;">
+    <br><br>
+    <progress value="50" max="100"></progress>
+    <br><br>
+    <input type="checkbox">
+    <input type="checkbox" checked>
+    <br><br>
+    <button>submit</button>
+  </body>
+  </html>
   ```
 
   **图1** color-scheme效果图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/AizjUAD5RtmzNssx17-GmA/zh-cn_image_0000002558764698.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/fgae_zLzQR2oIhfEQeF8jQ/zh-cn_image_0000002706834048.png)
 * prefers-color-scheme是CSS中的一个媒体查询功能，可以检测系统的主题颜色。网页开发者可以通过该特性，为不同的系统主题颜色定义不同的网页CSS样式，以适应用户的主题偏好。使用样例如下：
 
-  ```
-  1. <style>
-  2. /* 默认样式 */
-  3. body { background-color: White; }
+  ```html
+  <style>
+    /* 默认样式 */
+    body { background-color: White; }
 
-  5. /* 浅色样式，Web关闭深色模式时覆盖默认样式 */
-  6. @media (prefers-color-scheme: light) {
-  7. body { background-color: Gray; }
-  8. }
+    /* 浅色样式，Web关闭深色模式时覆盖默认样式 */
+    @media (prefers-color-scheme: light) {
+      body { background-color: Gray; }
+    }
 
-  10. /* 深色样式，Web开启深色模式时覆盖默认样式 */
-  11. @media (prefers-color-scheme: dark) {
-  12. body { background-color: Black; }
-  13. }
-  14. </style>
+    /* 深色样式，Web开启深色模式时覆盖默认样式 */
+    @media (prefers-color-scheme: dark) {
+      body { background-color: Black; }
+    }
+  </style>
   ```
 
   color-scheme可声明网页配色方案，切换网页元素的默认样式。然而，其作用范围有限，使用prefers-color-scheme可以更灵活地定义网页深色模式。prefers-color-scheme可以结合color-scheme使用。
 
   例如，在color-scheme.html中增加以下样式定义。当Web深色模式开启时，网页将应用深色配色，并应用@media (prefers-color-scheme: dark)中定义的样式，渲染效果如图2所示。
 
-  ```
-  1. <style>
-  2. @media (prefers-color-scheme: dark) {
-  3. body { background-color: Gray; color: LightYellow; }
-  4. input { background-color: Lightgray; }
-  5. }
-  6. </style>
+  ```html
+  <style>
+    @media (prefers-color-scheme: dark) {
+      body { background-color: Gray; color: LightYellow; }
+      input { background-color: Lightgray; }
+    }
+  </style>
   ```
 
   **图2** prefers-color-scheme效果图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/W6u11Br-QHyn31wizUzIfQ/zh-cn_image_0000002558605044.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/phPnN6YGStKCd9vyZKGWfw/zh-cn_image_0000002736313157.png)
 
 ## Web深色模式设置
 
@@ -112,7 +112,7 @@ ArkWeb提供灵活控制Web组件深色模式的能力，支持独立于系统�
 
 在强制深色模式下，高亮度色值将被转换为适合低光环境的色值，低亮度色值则保持不变。具体色值转换算法沿用Chromium内核标准，随Chromium内核的更新迭代。色值转换只针对不支持深色配色方案的元素。如果网页全局声明支持深色配色方案，则整个网页的色值均不会被Web转换。
 
-说明
+**说明** 
 
 若在@media(prefers-color-scheme: dark)中定义了元素的深色样式但未通过color-scheme声明支持深色配色方案，Web会在该深色样式的色值基础上进行转换，如表1所示。
 
@@ -127,57 +127,55 @@ ArkWeb提供灵活控制Web组件深色模式的能力，支持独立于系统�
 
 [forceDarkAccess()](../harmonyos-references/arkts-basic-components-web-attributes.md#forcedarkaccess9)接口仅在Web深色模式开启时生效。在下面的示例中，应用设置Web深色模式跟随系统。系统开启深色模式时，Web进入强制深色模式。
 
+```typescript
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State mode: WebDarkMode = WebDarkMode.Auto;
+  @State access: boolean = true;
+
+  build() {
+    Column() {
+      Web({ src: $rawfile('darkModePage.html'), controller: this.controller })
+        .darkMode(this.mode)
+        .forceDarkAccess(this.access)
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-
-3. @Entry
-4. @Component
-5. struct WebComponent {
-6. controller: webview.WebviewController = new webview.WebviewController();
-7. @State mode: WebDarkMode = WebDarkMode.Auto;
-8. @State access: boolean = true;
-
-10. build() {
-11. Column() {
-12. Web({ src: $rawfile('darkModePage.html'), controller: this.controller })
-13. .darkMode(this.mode)
-14. .forceDarkAccess(this.access)
-15. }
-16. }
-17. }
-```
-
-[DarkMode\_two.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/SetBasicAttrsEvts/SetBasicAttrsEvtsOne/entry/src/main/ets/pages/DarkMode_two.ets#L16-L34)
 
 resources/rawfile/darkModePage.html页面代码如下：
 
-```
-1. <!-- darkModePage.html -->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-6. <style type="text/css">
-7. body { background: LightBlue; color: Black; }
-8. @media (prefers-color-scheme: dark) {
-9. body { background: LightGray; color: Brown; }
-10. }
-11. </style>
-12. </head>
-13. <body class="contentCss">
-14. <p>Dark mode debug page</p>
-15. <input name="input1" placeholder="please enter text" style="color-scheme: light dark;">
-16. <br><br>
-17. <input name="input2" placeholder="please enter text">
-18. </body>
-19. </html>
+```html
+<!-- darkModePage.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style type="text/css">
+        body { background: LightBlue; color: Black; }
+        @media (prefers-color-scheme: dark) {
+            body { background: LightGray; color: Brown; }
+        }
+    </style>
+</head>
+<body class="contentCss">
+  <p>Dark mode debug page</p>
+  <input name="input1" placeholder="please enter text" style="color-scheme: light dark;">
+  <br><br>
+  <input name="input2" placeholder="please enter text">
+</body>
+</html>
 ```
 
 darkModePage.html页面在深色模式关闭、深色模式开启及强制深色模式开启时的样式如图3所示。关闭深色模式，网页采用默认样式。开启深色模式，input1的配色方案切换为深色，网页应用@media(prefers-color-scheme: dark)中定义的灰色背景、棕色文字样式。开启强制深色模式，input1的配色方案为深色，未被Web转换，而网页背景色、文字颜色及input2背景色均依据（2）中色值转换为（3）所示。
 
 **图3** Web深色模式和强制深色模式效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/sqSOF7jDS4al35sRkAHj4w/zh-cn_image_0000002589324569.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/7UwWmJEWRHiDNyQEHCRPnw/zh-cn_image_0000002706674114.png)
 
 ## Web组件背景色适配
 
@@ -187,83 +185,78 @@ Web组件背景色可通过[backgroundColor()](../harmonyos-references/ts-univer
 
 * 应用侧设置[WebDarkMode.On](../harmonyos-references/arkts-basic-components-web-e.md#webdarkmode9)和[WebDarkMode.Off](../harmonyos-references/arkts-basic-components-web-e.md#webdarkmode9)控制深色模式开启和关闭时，背景色跟随深色模式开启和关闭状态改变。
 
+  ```typescript
+  import { webview } from '@kit.ArkWeb';
+
+  @Entry
+  @Component
+  struct WebComponent {
+    controller: webview.WebviewController = new webview.WebviewController();
+    @State isDark: boolean = false;
+
+    build() {
+      Column() {
+        Web({ src: $rawfile('darkModePage.html'), controller: this.controller })
+          .darkMode(this.isDark ? WebDarkMode.On : WebDarkMode.Off)
+          .backgroundColor(this.isDark ? Color.Black : Color.White)
+      }
+    }
+  }
   ```
-  1. import { webview } from '@kit.ArkWeb';
-
-  3. @Entry
-  4. @Component
-  5. struct WebComponent {
-  6. controller: webview.WebviewController = new webview.WebviewController();
-  7. @State isDark: boolean = false;
-
-  9. build() {
-  10. Column() {
-  11. Web({ src: $rawfile('darkModePage.html'), controller: this.controller })
-  12. .darkMode(this.isDark ? WebDarkMode.On : WebDarkMode.Off)
-  13. .backgroundColor(this.isDark ? Color.Black : Color.White)
-  14. }
-  15. }
-  16. }
-  ```
-
-  [DarkMode\_three.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/SetBasicAttrsEvts/SetBasicAttrsEvtsOne/entry/src/main/ets/pages/DarkMode_three.ets#L16-L33)
 * 应用侧设置[WebDarkMode.Auto](../harmonyos-references/arkts-basic-components-web-e.md#webdarkmode9)跟随系统深色模式时，监听系统设置，背景色跟随系统改变。
 
-  ```
-  1. import { AbilityConstant, ConfigurationConstant, UIAbility, Want, Configuration } from '@kit.AbilityKit';
-  2. import { hilog } from '@kit.PerformanceAnalysisKit';
+  ```typescript
+  import { window } from '@kit.ArkUI';
+  import { AbilityConstant, ConfigurationConstant, UIAbility, Want, Configuration } from '@kit.AbilityKit';
+  import { hilog } from '@kit.PerformanceAnalysisKit';
 
-  4. export default class EntryAbility extends UIAbility {
-  5. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-  6. // 将当前colorMode放在AppStorage中。
-  7. AppStorage.setOrCreate<ConfigurationConstant.ColorMode>('currentColorMode', this.context.config.colorMode);
-  8. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-  9. }
-  10. // ...
-  11. onConfigurationUpdate(newConfig: Configuration): void {
-  12. // 动态更新深浅色状态。
-  13. const currentColorMode: ConfigurationConstant.ColorMode | undefined = AppStorage.get('currentColorMode');
-  14. if (currentColorMode !== newConfig.colorMode) {
-  15. AppStorage.setOrCreate<ConfigurationConstant.ColorMode>('currentColorMode', newConfig.colorMode);
-  16. }
-  17. }
-  18. }
-  ```
-
-  [EntryAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/SetBasicAttrsEvts/SetBasicAttrsEvtsOne/entry/src/main/ets/entryability/EntryAbility.ets#L17-L68)
-
-  ```
-  1. import { webview } from '@kit.ArkWeb';
-  2. import { ConfigurationConstant } from '@kit.AbilityKit';
-
-  4. @Entry
-  5. @Component
-  6. struct WebComponent {
-  7. controller: webview.WebviewController = new webview.WebviewController();
-  8. @State bgColor: Color = Color.White;
-  9. @StorageProp('currentColorMode') @Watch('onCurrentColorModeChange')
-  10. currentColorMode: ConfigurationConstant.ColorMode = ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET;
-
-  12. build() {
-  13. Column() {
-  14. Web({ src: $rawfile('darkModePage.html'), controller: this.controller })
-  15. .darkMode(WebDarkMode.Auto)
-  16. .backgroundColor(this.bgColor)
-  17. }
-  18. }
-
-  20. onCurrentColorModeChange(): void {
-  21. // 根据系统设置切换背景色。
-  22. if (this.currentColorMode === ConfigurationConstant.ColorMode.COLOR_MODE_DARK) {
-  23. this.bgColor = Color.Black;
-  24. } else {
-  25. this.bgColor = Color.White;
-  26. }
-  27. }
-  28. }
+  export default class EntryAbility extends UIAbility {
+    onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+      // 将当前colorMode放在AppStorage中。
+      AppStorage.setOrCreate<ConfigurationConstant.ColorMode>('currentColorMode', this.context.config.colorMode);
+      hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+    }
+    // ...
+    onConfigurationUpdate(newConfig: Configuration): void {
+      // 动态更新深浅色状态。
+      const currentColorMode: ConfigurationConstant.ColorMode | undefined = AppStorage.get('currentColorMode');
+      if (currentColorMode !== newConfig.colorMode) {
+        AppStorage.setOrCreate<ConfigurationConstant.ColorMode>('currentColorMode', newConfig.colorMode);
+      }
+    }
+  }
   ```
 
-  [DarkMode\_Four.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/SetBasicAttrsEvts/SetBasicAttrsEvtsOne/entry/src/main/ets/pages/DarkMode_Four.ets#L16-L45)
+  ```typescript
+  import { webview } from '@kit.ArkWeb';
+  import { ConfigurationConstant } from '@kit.AbilityKit';
+
+  @Entry
+  @Component
+  struct WebComponent {
+    controller: webview.WebviewController = new webview.WebviewController();
+    @State bgColor: Color = Color.White;
+    @StorageProp('currentColorMode') @Watch('onCurrentColorModeChange')
+    currentColorMode: ConfigurationConstant.ColorMode = ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET;
+
+    build() {
+      Column() {
+        Web({ src: $rawfile('darkModePage.html'), controller: this.controller })
+          .darkMode(WebDarkMode.Auto)
+          .backgroundColor(this.bgColor)
+      }
+    }
+    
+    onCurrentColorModeChange(): void {
+      // 根据系统设置切换背景色。
+      if (this.currentColorMode === ConfigurationConstant.ColorMode.COLOR_MODE_DARK) {
+        this.bgColor = Color.Black;
+      } else {
+        this.bgColor = Color.White;
+      }
+    }
+  }
+  ```
 
 ## 常见问题
 

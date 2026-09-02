@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-permission
 title: 应用权限申请
 breadcrumb: 最佳实践 > 应用安全 > 应用权限申请
 category: best-practices
-scraped_at: 2026-04-29T14:13:16+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:85d82de44c6a44f1cb0fb8375e344738966b149e624fd35db0d4f8575e5c585b
+scraped_at: 2026-09-02T15:03:20+08:00
+doc_updated_at: 2026-07-09
+content_hash: sha256:1f90f4cd92c0d883e20b079fa5b724798010d416ae99f8d0e3b299072479824f
 ---
 
 ## 概述
@@ -59,7 +59,7 @@ content_hash: sha256:85d82de44c6a44f1cb0fb8375e344738966b149e624fd35db0d4f8575e5
 * 核心原则：尊重用户选择权，不应强制授予权限。
 * 实施策略：如果用户拒绝了某项权限申请，应用不应再次弹窗请求该权限。应在页面的适当位置添加明确的提示，指导用户开启权限或退出当前需要该权限的场景，直到用户重新触发时再引导其完成授权。例如，权限申请被拒绝后，按钮上方显示提示文字，具体效果见下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/0QJu2mS3RK2icQTXrqmopQ/zh-cn_image_0000002194010136.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/XkyJA9niQeKBV7lZK5gUOg/zh-cn_image_0000002194010136.png "点击放大")
 
 ## 明确声明原因
 
@@ -86,7 +86,7 @@ content_hash: sha256:85d82de44c6a44f1cb0fb8375e344738966b149e624fd35db0d4f8575e5
 
   解释：此示例清晰地说明了应用为何需要位置信息（展示您的当前位置信息），并承诺了信息的使用范围及用途（仅用于本应用的展示），确保了信息的保密性，符合规范且易于用户理解。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/MFjYwk2uQpyBTyjvH-3k1A/zh-cn_image_0000002193850544.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/tbKYfG12T36miUCKwXuhPg/zh-cn_image_0000002193850544.png "点击放大")
 
 * 正例2
 
@@ -119,7 +119,7 @@ content_hash: sha256:85d82de44c6a44f1cb0fb8375e344738966b149e624fd35db0d4f8575e5
 
 当用户触发需要使用权限的场景时，首先需要判断当前是否已经授权，如果已经授权，则可以直接访问目标操作，否则需要向用户申请授权。调用[requestPermissionsFromUser()](../harmonyos-references/js-apis-abilityaccessctrl.md#requestpermissionsfromuser9)方法可以向用户申请授权，通过判断返回结果authResults字段为0则表示用户已经授权，则可以继续访问目标操作，authResults字段为-1则表示用户没有授权，这时需要判断返回结果的dialogShownResults，当结果为true表示有弹框表明已经向用户展示请求授权的弹窗但是用户拒绝了授权，那应用需要在页面内合适的位置添加提示语引导用户开启权限或者退出该场景，dialogShownResults结果为false表示当前应用没有被授权且没有向用户展示请求授权的弹框，那应用可以调用[requestPermissionOnSetting()](../harmonyos-references/js-apis-abilityaccessctrl.md#requestpermissiononsetting12)方法直接拉起权限设置弹框，引导用户授予权限。
 
-注意
+**须知** 
 
 在调用requestPermissionOnSetting()方法前，需先调用requestPermissionsFromUser()方法。
 
@@ -131,123 +131,117 @@ content_hash: sha256:85d82de44c6a44f1cb0fb8375e344738966b149e624fd35db0d4f8575e5
 2. 本次使用允许：点击后将会对应用授予临时的权限，详情请参考[向用户申请单次授权](../harmonyos-guides/one-time-authorization.md)，若临时权限被取消，再次调用requestPermissionsFromUser()方法将会拉起该权限设置弹框；
 3. 不允许：点击后应用无法获取该权限，且再次调用requestPermissionsFromUser()方法无法拉起该权限设置弹框。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/x7HXpEFgTfOxjPQcg7p5VQ/zh-cn_image_0000002194010128.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/hL97enVBS7meSu4UhMYL7Q/zh-cn_image_0000002194010128.png "点击放大")
 
 具体流程图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/mJ7agLNTSMWSLAO8MqdSdw/zh-cn_image_0000002267532549.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/hmmkNa_2Q_2BCdRXUMLCDA/zh-cn_image_0000002267532549.jpg "点击放大")
 
 **示例代码**
 
 判断当前应用是否已经被授权。
 
-```
-1. // Verify if the application has been granted permission.
-2. checkPermissionGrant(): void {
-3. let hasPermission = false;
-4. let tokenId: number = 0;
-5. try {
-6. let bundleInfo: bundleManager.BundleInfo =
-7. bundleManager.getBundleInfoForSelfSync(bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION);
-8. let appInfo: bundleManager.ApplicationInfo = bundleInfo.appInfo;
-9. tokenId = appInfo.accessTokenId;
-10. } catch (error) {
-11. const err: BusinessError = error as BusinessError;
-12. hilog.error(0x0000, 'Index',
-13. `Failed to get bundle info for self. Code is ${err.code}, message is ${err.message}`);
-14. }
+```typescript
+// Verify if the application has been granted permission.
+checkPermissionGrant(): void {
+  let hasPermission = false;
+  let tokenId: number = 0;
+  try {
+    let bundleInfo: bundleManager.BundleInfo =
+      bundleManager.getBundleInfoForSelfSync(bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION);
+    let appInfo: bundleManager.ApplicationInfo = bundleInfo.appInfo;
+    tokenId = appInfo.accessTokenId;
+  } catch (error) {
+    const err: BusinessError = error as BusinessError;
+    hilog.error(0x0000, 'Index',
+      `Failed to get bundle info for self. Code is ${err.code}, message is ${err.message}`);
+  }
 
-16. try {
-17. let atManager = abilityAccessCtrl.createAtManager();
-18. let approximatelyLocation = atManager.checkAccessTokenSync(tokenId, 'ohos.permission.APPROXIMATELY_LOCATION');
-19. let location = atManager.checkAccessTokenSync(tokenId, 'ohos.permission.LOCATION');
-20. hasPermission = approximatelyLocation === abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED &&
-21. location === abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED;
-22. } catch (error) {
-23. const err: BusinessError = error as BusinessError;
-24. hilog.error(0x0000, 'Index', `Failed to check access token. Code is ${err.code}, message is ${err.message}`);
-25. }
-26. if (hasPermission) {
-27. this.isLocationToggle();
-28. } else {
-29. this.requestPermissions();
-30. }
-31. }
+  try {
+    let atManager = abilityAccessCtrl.createAtManager();
+    let approximatelyLocation = atManager.checkAccessTokenSync(tokenId, 'ohos.permission.APPROXIMATELY_LOCATION');
+    let location = atManager.checkAccessTokenSync(tokenId, 'ohos.permission.LOCATION');
+    hasPermission = approximatelyLocation === abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED &&
+      location === abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED;
+  } catch (error) {
+    const err: BusinessError = error as BusinessError;
+    hilog.error(0x0000, 'Index', `Failed to check access token. Code is ${err.code}, message is ${err.message}`);
+  }
+  if (hasPermission) {
+    this.isLocationToggle();
+  } else {
+    this.requestPermissions();
+  }
+}
 ```
-
-[Index.ets](https://gitcode.com/harmonyos_samples/PermissionApplication/blob/master/entry/src/main/ets/pages/Index.ets#L149-L179)
 
 向用户申请授权。
 
+```typescript
+// Requests location permissions from the user.
+requestPermissions(): void {
+  let atManager = abilityAccessCtrl.createAtManager();
+  try {
+    atManager.requestPermissionsFromUser(this.context, ['ohos.permission.APPROXIMATELY_LOCATION',
+      'ohos.permission.LOCATION']).then((data) => {
+      if (data.authResults[0] === -1 || data.authResults[1] === -1) {
+        if (data.dialogShownResults && (data.dialogShownResults[0] || data.dialogShownResults[1])) {
+          this.isShowPermissions = true;
+          if(data.authResults[0] === -1){
+            this.permissionsMessage = $r('app.string.obtain_location_permission');
+          } else {
+            this.permissionsMessage = $r('app.string.obtain_precise_positioning')
+          }
+        } else {
+          this.openPermissionsSetting();
+          return;
+        }
+      } else {
+        this.isShowPermissions = false;
+      }
+      if (data.authResults[0] !== 0) {
+        return;
+      }
+      this.isLocationToggle();
+    }).catch((err: Error) => {
+      hilog.error(0x0000, 'Index', 'requestPermissionsFromUser err:' + JSON.stringify(err));
+    });
+  } catch (err) {
+    hilog.error(0x0000, 'Index', 'requestPermissionsFromUser err:' + JSON.stringify(err));
+  }
+}
 ```
-1. // Requests location permissions from the user.
-2. requestPermissions(): void {
-3. let atManager = abilityAccessCtrl.createAtManager();
-4. try {
-5. atManager.requestPermissionsFromUser(this.context, ['ohos.permission.APPROXIMATELY_LOCATION',
-6. 'ohos.permission.LOCATION']).then((data) => {
-7. if (data.authResults[0] === -1 || data.authResults[1] === -1) {
-8. if (data.dialogShownResults && (data.dialogShownResults[0] || data.dialogShownResults[1])) {
-9. this.isShowPermissions = true;
-10. if(data.authResults[0] === -1){
-11. this.permissionsMessage = $r('app.string.obtain_location_permission');
-12. } else {
-13. this.permissionsMessage = $r('app.string.obtain_precise_positioning')
-14. }
-15. } else {
-16. this.openPermissionsSetting();
-17. return;
-18. }
-19. } else {
-20. this.isShowPermissions = false;
-21. }
-22. if (data.authResults[0] !== 0) {
-23. return;
-24. }
-25. this.isLocationToggle();
-26. }).catch((err: Error) => {
-27. hilog.error(0x0000, 'Index', 'requestPermissionsFromUser err:' + JSON.stringify(err));
-28. });
-29. } catch (err) {
-30. hilog.error(0x0000, 'Index', 'requestPermissionsFromUser err:' + JSON.stringify(err));
-31. }
-32. }
-```
-
-[Index.ets](https://gitcode.com/harmonyos_samples/PermissionApplication/blob/master/entry/src/main/ets/pages/Index.ets#L183-L214)
 
 引导用户授权。
 
+```typescript
+// The permission setting dialog box is displayed.
+private openPermissionsSetting(): void {
+  let atManager = abilityAccessCtrl.createAtManager();
+  atManager.requestPermissionOnSetting(this.context, ['ohos.permission.APPROXIMATELY_LOCATION',
+    'ohos.permission.LOCATION']).then((data: Array<abilityAccessCtrl.GrantStatus>) => {
+    if (data[0] === -1 && data[1] === -1) {
+      this.isShowPermissions = true;
+      this.permissionsMessage = $r('app.string.obtain_location_permission');
+      return;
+    } else if (data[0] === 0 && data[1] === -1) {
+      this.isShowPermissions = true;
+      this.permissionsMessage = $r('app.string.obtain_precise_positioning');
+    } else {
+      this.isShowPermissions = false;
+    }
+    this.isLocationToggle();
+  }).catch((err: BusinessError) => {
+    hilog.error(0x0000, 'Index', 'data:' + JSON.stringify(err));
+  });
+}
 ```
-1. // The permission setting dialog box is displayed.
-2. private openPermissionsSetting(): void {
-3. let atManager = abilityAccessCtrl.createAtManager();
-4. atManager.requestPermissionOnSetting(this.context, ['ohos.permission.APPROXIMATELY_LOCATION',
-5. 'ohos.permission.LOCATION']).then((data: Array<abilityAccessCtrl.GrantStatus>) => {
-6. if (data[0] === -1 && data[1] === -1) {
-7. this.isShowPermissions = true;
-8. this.permissionsMessage = $r('app.string.obtain_location_permission');
-9. return;
-10. } else if (data[0] === 0 && data[1] === -1) {
-11. this.isShowPermissions = true;
-12. this.permissionsMessage = $r('app.string.obtain_precise_positioning');
-13. } else {
-14. this.isShowPermissions = false;
-15. }
-16. this.isLocationToggle();
-17. }).catch((err: BusinessError) => {
-18. hilog.error(0x0000, 'Index', 'data:' + JSON.stringify(err));
-19. });
-20. }
-```
-
-[Index.ets](https://gitcode.com/harmonyos_samples/PermissionApplication/blob/master/entry/src/main/ets/pages/Index.ets#L126-L145)
 
 ## 功能被禁用处理方式
 
 用户可以在系统设置中，打开超级隐私模式或者关闭相机、麦克风、位置的全局开关，此时，即使应用已经被授权相关权限，也不能完成访问目标的操作。应用需要检测到这种状态，并通过适当的方式（如拉起全局开关的弹窗或一段描述性文字引导用户开启全局开关等）来提醒用户并辅助开启对应的全局开关。所以需要在调用接口前判断全局开关是否被关闭，如果全局开关被关闭，则需要调用[requestGlobalSwitch()](../harmonyos-references/js-apis-abilityaccessctrl.md#requestglobalswitch12)方法来打开它，之后才能继续调用所需的接口，具体流程图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/1qE0VM0pRwKlN4mSrVtU7Q/zh-cn_image_0000002267612717.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/ZPM1LN7BQOO_xOjeKONOJQ/zh-cn_image_0000002267612717.jpg "点击放大")
 
 以下为判断各全局开关是否打开的方法：
 
@@ -261,65 +255,63 @@ content_hash: sha256:85d82de44c6a44f1cb0fb8375e344738966b149e624fd35db0d4f8575e5
 
 以位置权限为例，功能被禁用的处理方式代码如下：
 
-```
-1. // Obtain current location switch status and pull up the global switch to set the pop-up box.
-2. isLocationToggle(): void {
-3. let atManager = abilityAccessCtrl.createAtManager();
-4. let isLocationEnabled = true;
-5. try {
-6. isLocationEnabled = geoLocationManager.isLocationEnabled();
-7. } catch (error) {
-8. let err = error as BusinessError;
-9. hilog.error(0x0000, 'Index', `isLocationEnabled failed, error code=${err.code}, message=${err.message}`);
-10. }
-11. if (!isLocationEnabled) {
-12. atManager.requestGlobalSwitch(this.context, abilityAccessCtrl.SwitchType.LOCATION).then((data: boolean) => {
-13. if (data) {
-14. this.isShowLocation = false;
-15. this.getLocation();
-16. } else {
-17. this.isShowLocation = true;
-18. this.locationServiceMessage = $r('app.string.open_location_services');
-19. }
-20. }).catch((err: BusinessError) => {
-21. hilog.error(0x0000, 'Index', 'data:' + JSON.stringify(err));
-22. });
-23. } else {
-24. this.isShowLocation = false;
-25. this.getLocation();
-26. }
-27. }
+```typescript
+// Obtain current location switch status and pull up the global switch to set the pop-up box.
+isLocationToggle(): void {
+  let atManager = abilityAccessCtrl.createAtManager();
+  let isLocationEnabled = true;
+  try {
+    isLocationEnabled = geoLocationManager.isLocationEnabled();
+  } catch (error) {
+    let err = error as BusinessError;
+    hilog.error(0x0000, 'Index', `isLocationEnabled failed, error code=${err.code}, message=${err.message}`);
+  }
+  if (!isLocationEnabled) {
+    atManager.requestGlobalSwitch(this.context, abilityAccessCtrl.SwitchType.LOCATION).then((data: boolean) => {
+      if (data) {
+        this.isShowLocation = false;
+        this.getLocation();
+      } else {
+        this.isShowLocation = true;
+        this.locationServiceMessage = $r('app.string.open_location_services');
+      }
+    }).catch((err: BusinessError) => {
+      hilog.error(0x0000, 'Index', 'data:' + JSON.stringify(err));
+    });
+  } else {
+    this.isShowLocation = false;
+    this.getLocation();
+  }
+}
 
-29. getLocation(): void {
-30. let request: geoLocationManager.SingleLocationRequest = {
-31. 'locatingTimeoutMs': 10000,
-32. 'locatingPriority': geoLocationManager.LocatingPriority.PRIORITY_LOCATING_SPEED
-33. };
-34. // Get current location.
-35. geoLocationManager.getCurrentLocation(request).then((location) => {
-36. this.latitude = location.latitude;
-37. this.longitude = location.longitude;
-38. let reverseGeocodeRequest: geoLocationManager.ReverseGeoCodeRequest = {
-39. 'locale': this.systemLanguages.toString().includes('zh') ? 'zh' : 'en',
-40. 'latitude': this.latitude,
-41. 'longitude': this.longitude,
-42. 'maxItems': 1
-43. };
-44. // Call the inverse geocoding service to convert coordinates into geographic descriptions.
-45. geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest).then((data) => {
-46. if (data[0].placeName) {
-47. this.currentLocation = data[0].placeName;
-48. }
-49. }).catch((err: BusinessError) => {
-50. hilog.error(0x0000, 'Index', 'GetAddressesFromLocation err:' + JSON.stringify(err));
-51. });
-52. }).catch((err: BusinessError) => {
-53. hilog.error(0x0000, 'Index', 'Promise getCurrentLocation err:' + JSON.stringify(err));
-54. })
-55. }
+getLocation(): void {
+  let request: geoLocationManager.SingleLocationRequest = {
+    'locatingTimeoutMs': 10000,
+    'locatingPriority': geoLocationManager.LocatingPriority.PRIORITY_LOCATING_SPEED
+  };
+  // Get current location.
+  geoLocationManager.getCurrentLocation(request).then((location) => {
+    this.latitude = location.latitude;
+    this.longitude = location.longitude;
+    let reverseGeocodeRequest: geoLocationManager.ReverseGeoCodeRequest = {
+      'locale': this.systemLanguages.toString().includes('zh') ? 'zh' : 'en',
+      'latitude': this.latitude,
+      'longitude': this.longitude,
+      'maxItems': 1
+    };
+    // Call the inverse geocoding service to convert coordinates into geographic descriptions.
+    geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest).then((data) => {
+      if (data[0].placeName) {
+        this.currentLocation = data[0].placeName;
+      }
+    }).catch((err: BusinessError) => {
+      hilog.error(0x0000, 'Index', 'GetAddressesFromLocation err:' + JSON.stringify(err));
+    });
+  }).catch((err: BusinessError) => {
+    hilog.error(0x0000, 'Index', 'Promise getCurrentLocation err:' + JSON.stringify(err));
+  })
+}
 ```
-
-[Index.ets](https://gitcode.com/harmonyos_samples/PermissionApplication/blob/master/entry/src/main/ets/pages/Index.ets#L218-L272)
 
 ## 示例代码
 

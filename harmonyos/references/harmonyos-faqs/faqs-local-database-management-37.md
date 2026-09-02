@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: HarmonyOS应用数据存储仍采用沙箱机制，各个APP有自己数据可见范围，为什么不将各APP产生的数据统一存储（同一个目录或者DB下）
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > HarmonyOS应用数据存储仍采用沙箱机制，各个APP有自己数据可见范围，为什么不将各APP产生的数据统一存储（同一个目录或者DB下）
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:19+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:51+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:a7b65a9382fc195720e7a0c4e8197a7045c727aca6cc10003f466159081dbbe9
 ---
 

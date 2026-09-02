@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅崩溃事件（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 崩溃事件 > 订阅崩溃事件（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:03+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b4e1eab7a9d689de1a9c5b10c55bd84099af411058421538985993a65215ea12
+scraped_at: 2026-09-02T14:59:39+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e7c6214cc7288149f251a7b1515bc7c074ff575faf407658cdff9f63c2590599
 ---
 
 ## 简介
 
 本文介绍如何使用HiAppEvent提供的ArkTS接口订阅应用崩溃事件。接口的详细使用说明（参数限制、取值范围等）请参考[@ohos.hiviewdfx.hiAppEvent](../harmonyos-references/js-apis-hiviewdfx-hiappevent.md)。
 
-说明
+**说明** 
 
 使用ArkTS接口可以订阅JsError和NativeCrash两种崩溃事件。
 
@@ -31,103 +31,122 @@ content_hash: sha256:b4e1eab7a9d689de1a9c5b10c55bd84099af411058421538985993a6521
 
 以订阅用户点击按钮触发崩溃生成的崩溃事件为例，说明开发步骤。
 
-1. DevEco Studio新建Native C++模板工程，编辑“entry > src > main > ets > entryability > EntryAbility.ets”文件，导入依赖模块。示例代码如下：
+1. 在DevEco Studio新建Native C++模板工程，编辑“entry > src > main > ets > entryability > EntryAbility.ets”文件，导入依赖模块。示例代码如下：
 
+   ```typescript
+   import { hiAppEvent, hilog } from '@kit.PerformanceAnalysisKit';
+   import { deviceInfo } from '@kit.BasicServicesKit';
    ```
-   1. import { hiAppEvent, hilog } from '@kit.PerformanceAnalysisKit';
-   2. import { deviceInfo } from '@kit.BasicServicesKit';
-   ```
-2. 编辑工程中的“entry > src > main > ets > entryability > EntryAbility.ets”文件，在onCreate函数中设置事件的[崩溃事件自定义参数](hiappevent-watcher-crash-events.md#崩溃事件自定义参数设置)和[崩溃日志规格自定义参数](hiappevent-watcher-crash-events.md#崩溃日志规格自定义参数设置)，示例代码如下：
+2. 编辑工程中的“entry > src > main > ets > entryability > EntryAbility.ets”文件，在onCreate函数中设置事件的[崩溃事件自定义参数](hiappevent-watcher-crash-events.md#崩溃事件自定义参数设置)和崩溃日志[自定义规格设置](hiappevent-watcher-crash-events.md#自定义规格设置)，示例代码如下：
 
-   ```
-   1. // 构建崩溃事件的自定义参数
-   2. let crashParams: Record<string, hiAppEvent.ParamType> = {
-   3. "test_data": 100, // test_data为自定义数据，开发者可根据实际需求自定义params参数。
-   4. };
-   5. // 开发者可以设置崩溃事件的自定义参数
-   6. hiAppEvent.setEventParam(crashParams, hiAppEvent.domain.OS, hiAppEvent.event.APP_CRASH).then(() => {
-   7. hilog.info(0x0000, 'testTag', `HiAppEvent success to set event param`);
-   8. }).catch((err: BusinessError) => {
-   9. hilog.error(0x0000, 'testTag', `HiAppEvent code: ${err.code}, message: ${err.message}`);
-   10. });
+   ```typescript
+   // 构建崩溃事件的自定义参数
+   let crashParams: Record<string, hiAppEvent.ParamType> = {
+     "test_data": 100, // test_data为自定义数据，开发者可根据实际需求自定义params参数。
+   };
+   // 开发者可以设置崩溃事件的自定义参数
+   hiAppEvent.setEventParam(crashParams, hiAppEvent.domain.OS, hiAppEvent.event.APP_CRASH).then(() => {
+     hilog.info(0x0000, 'testTag', `HiAppEvent success to set event param`);
+   }).catch((err: BusinessError) => {
+     hilog.error(0x0000, 'testTag', `HiAppEvent code: ${err.code}, message: ${err.message}`);
+   });
 
-   12. if (deviceInfo.sdkApiVersion >= 20) {  // API Version 20及以后版本，支持设置崩溃日志配置参数
-   13. // 构建崩溃日志规格自定义参数
-   14. let crashConfigParams: Record<string, hiAppEvent.ParamType> = {
-   15. "extend_pc_lr_printing": true, // 使能扩展打印pc和lr寄存器附近的内存值
-   16. "log_file_cutoff_sz_bytes": 1024000, // 截断崩溃日志到1000KB
-   17. "simplify_vma_printing": true // 使能精简打印maps
-   18. };
-   19. // 开发者可以设置崩溃日志配置参数
-   20. hiAppEvent.setEventConfig(hiAppEvent.event.APP_CRASH, crashConfigParams).then(() => {
-   21. hilog.info(0x0000, 'testTag', `HiAppEvent success to set event config.`);
-   22. }).catch((err: BusinessError) => {
-   23. hilog.error(0x0000, 'testTag', `HiAppEvent code: ${err.code}, message: ${err.message}`);
-   24. });
-   25. }
-   ```
+   if (deviceInfo.sdkApiVersion >= 20) {  // API Version 20及以后版本，支持设置崩溃日志配置参数
+     // 构建崩溃日志规格自定义参数
+     let crashConfigParams: Record<string, hiAppEvent.ParamType> = {
+       "extend_pc_lr_printing": true, // 使能扩展打印pc和lr寄存器附近的内存值
+       "log_file_cutoff_sz_bytes": 1024000, // 截断崩溃日志到1000KB
+       "simplify_vma_printing": true // 使能精简打印maps
+     };
+     // 开发者可以设置崩溃日志配置参数
+     hiAppEvent.setEventConfig(hiAppEvent.event.APP_CRASH, crashConfigParams).then(() => {
+       hilog.info(0x0000, 'testTag', `HiAppEvent success to set event config.`);
+     }).catch((err: BusinessError) => {
+       hilog.error(0x0000, 'testTag', `HiAppEvent code: ${err.code}, message: ${err.message}`);
+     });
+   }
 
-   [EntryAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/PerformanceAnalysisKit/HiAppEvent/EventSub/entry/src/main/ets/entryability/EntryAbility.ets#L100-L106)
+   if (deviceInfo.sdkApiVersion >= 24) {
+     let crashEventPolicy : hiAppEvent.EventPolicy = {
+       "appCrashPolicy": { // 崩溃事件配置策略
+         "pageSwitchLogEnable": true, // 从API版本24开始，支持使能页面切换日志
+         "collectMinidump": true // 从API版本26.0.0开始，支持使能minidump
+       }
+     };
+     // 开发者可以设置崩溃事件配置策略
+     hiAppEvent.configEventPolicy(crashEventPolicy).then(() => {
+       hilog.info(0x0000, 'testTag', `HiAppEvent success to config event policy.`);
+     }).catch((err: BusinessError) => {
+       hilog.error(0x0000, 'testTag', `HiAppEvent code: ${err.code}, message: ${err.message}`);
+     });
+   }
+   ```
 3. 编辑工程中的“entry > src > main > ets > entryability > EntryAbility.ets”文件，在 onCreate 函数中订阅系统事件。示例代码如下：
 
+   ```typescript
+   // 添加崩溃事件观察者
+   let watcher: hiAppEvent.Watcher = {
+     // 开发者可以自定义观察者名称，系统会使用名称来标识不同的观察者
+     name: 'crashEventWatcher',
+     // 开发者可以订阅感兴趣的系统事件，此处是订阅了崩溃事件
+     appEventFilters: [
+       {
+         domain: hiAppEvent.domain.OS,
+         names: [hiAppEvent.event.APP_CRASH]
+       }
+     ],
+     // 开发者可以自行实现订阅实时回调函数，以便对订阅获取到的事件数据进行自定义处理
+     onReceive: (domain: string, appEventGroups: Array<hiAppEvent.AppEventGroup>) => {
+       hilog.info(0x0000, 'testTag', `HiAppEvent onReceive: domain=${domain}`);
+       for (const eventGroup of appEventGroups) {
+         // 开发者可以根据事件集合中的事件名称区分不同的系统事件
+         hilog.info(0x0000, 'testTag', `HiAppEvent eventName=${eventGroup.name}`);
+         for (const eventInfo of eventGroup.appEventInfos) {
+           // 开发者可以对事件集合中的事件数据进行自定义处理，此处是将事件数据打印在日志中
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.domain=${eventInfo.domain}`);
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.name=${eventInfo.name}`);
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.eventType=${eventInfo.eventType}`);
+           // 开发者可以获取到崩溃事件发生的时间戳
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.time=${eventInfo.params['time']}`);
+           // 开发者可以获取到崩溃事件发生的崩溃类型
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.crash_type=${eventInfo.params['crash_type']}`);
+           // 开发者可以获取到崩溃应用的前后台状态
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.foreground=${eventInfo.params['foreground']}`);
+           // 开发者可以获取到崩溃应用类型
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.release_type=${eventInfo.params['release_type']}`);
+           // 开发者可以获取到崩溃应用的二进制接口类型
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.cpu_abi=${eventInfo.params['cpu_abi']}`);
+           // 开发者可以获取到崩溃事件发生的应用运行时唯一关联id
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.app_running_unique_id=${eventInfo.params['app_running_unique_id']}`);
+           // 开发者可以获取到崩溃应用的版本信息
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.bundle_version=${eventInfo.params['bundle_version']}`);
+           // 开发者可以获取到崩溃应用的包名
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.bundle_name=${eventInfo.params['bundle_name']}`);
+           // 开发者可以获取到崩溃应用的进程id
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.pid=${eventInfo.params['pid']}`);
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.uid=${eventInfo.params['uid']}`);
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.uuid=${eventInfo.params['uuid']}`);
+           // 开发者可以获取到崩溃事件发生的异常类型、异常原因和异常调用栈
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.exception=${JSON.stringify(eventInfo.params['exception'])}`);
+           // 开发者可以获取到崩溃事件发生时日志信息
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.hilog.size=${eventInfo.params['hilog'].length}`);
+           // 开发者可以获取到崩溃事件的故障进程存活时间
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.process_life_time=${eventInfo.params['process_life_time']}`);
+           // 开发者可以获取到崩溃事件发生时内存信息
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.memory=${JSON.stringify(eventInfo.params['memory'])}`);
+           // 开发者可以获取到崩溃事件发生时的崩溃日志文件
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.external_log=${JSON.stringify(eventInfo.params['external_log'])}`);
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.log_over_limit=${eventInfo.params['log_over_limit']}`);
+           // 开发者可以获取到崩溃事件的页面切换日志
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.page_switch_log=${JSON.stringify(eventInfo.params['page_switch_log'])}`);
+           // 开发者可以获取到崩溃事件的自定义数据test_data
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.test_data=${eventInfo.params['test_data']}`);
+         }
+       }
+     }
+   };
+   hiAppEvent.addWatcher(watcher);
    ```
-   1. // 添加崩溃事件观察者
-   2. let watcher: hiAppEvent.Watcher = {
-   3. // 开发者可以自定义观察者名称，系统会使用名称来标识不同的观察者
-   4. name: 'crashEventWatcher',
-   5. // 开发者可以订阅感兴趣的系统事件，此处是订阅了崩溃事件
-   6. appEventFilters: [
-   7. {
-   8. domain: hiAppEvent.domain.OS,
-   9. names: [hiAppEvent.event.APP_CRASH]
-   10. }
-   11. ],
-   12. // 开发者可以自行实现订阅实时回调函数，以便对订阅获取到的事件数据进行自定义处理
-   13. onReceive: (domain: string, appEventGroups: Array<hiAppEvent.AppEventGroup>) => {
-   14. hilog.info(0x0000, 'testTag', `HiAppEvent onReceive: domain=${domain}`);
-   15. for (const eventGroup of appEventGroups) {
-   16. // 开发者可以根据事件集合中的事件名称区分不同的系统事件
-   17. hilog.info(0x0000, 'testTag', `HiAppEvent eventName=${eventGroup.name}`);
-   18. for (const eventInfo of eventGroup.appEventInfos) {
-   19. // 开发者可以对事件集合中的事件数据进行自定义处理，此处是将事件数据打印在日志中
-   20. hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.domain=${eventInfo.domain}`);
-   21. hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.name=${eventInfo.name}`);
-   22. hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.eventType=${eventInfo.eventType}`);
-   23. // 开发者可以获取到崩溃事件发生的时间戳
-   24. hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.time=${eventInfo.params['time']}`);
-   25. // 开发者可以获取到崩溃事件发生的崩溃类型
-   26. hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.crash_type=${eventInfo.params['crash_type']}`);
-   27. // 开发者可以获取到崩溃应用的前后台状态
-   28. hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.foreground=${eventInfo.params['foreground']}`);
-   29. // 开发者可以获取到崩溃应用的版本信息
-   30. hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.bundle_version=${eventInfo.params['bundle_version']}`);
-   31. // 开发者可以获取到崩溃应用的包名
-   32. hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.bundle_name=${eventInfo.params['bundle_name']}`);
-   33. // 开发者可以获取到崩溃应用的进程id
-   34. hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.pid=${eventInfo.params['pid']}`);
-   35. hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.uid=${eventInfo.params['uid']}`);
-   36. hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.uuid=${eventInfo.params['uuid']}`);
-   37. // 开发者可以获取到崩溃事件发生的异常类型、异常原因和异常调用栈
-   38. hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.exception=${JSON.stringify(eventInfo.params['exception'])}`);
-   39. // 开发者可以获取到崩溃事件发生时日志信息
-   40. hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.hilog.size=${eventInfo.params['hilog'].length}`);
-   41. // 开发者可以获取到崩溃事件的故障进程存活时间
-   42. hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.process_life_time=${eventInfo.params['process_life_time']}`);
-   43. // 开发者可以获取到崩溃事件发生时内存信息
-   44. hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.memory=${JSON.stringify(eventInfo.params['memory'])}`);
-   45. // 开发者可以获取到崩溃事件发生时的崩溃日志文件
-   46. hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.external_log=${JSON.stringify(eventInfo.params['external_log'])}`);
-   47. hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.log_over_limit=${eventInfo.params['log_over_limit']}`);
-   48. // 开发者可以获取到崩溃事件的自定义数据test_data
-   49. hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.test_data=${eventInfo.params['test_data']}`);
-   50. }
-   51. }
-   52. }
-   53. };
-   54. hiAppEvent.addWatcher(watcher);
-   ```
-
-   [EntryAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/PerformanceAnalysisKit/HiAppEvent/EventSub/entry/src/main/ets/entryability/EntryAbility.ets#L114-L168)
 4. 构造崩溃场景
 
    * 构造NativeCrash类型崩溃
@@ -135,70 +154,70 @@ content_hash: sha256:b4e1eab7a9d689de1a9c5b10c55bd84099af411058421538985993a6521
      编辑工程中的“entry > src > main > cpp > napi\_init.cpp”文件，添加TestNullptr方法，并将TestNullptr注册为ArkTS接口，增加如下代码：
 
      ```
-     1. static napi_value TestNullptr(napi_env env, napi_callback_info info)
-     2. {
-     3. int *p = nullptr;
-     4. int a = *p; // 空指针解引用，程序会在此处崩溃
-     5. return {};
-     6. }
+     static napi_value TestNullptr(napi_env env, napi_callback_info info)
+     {
+         int *p = nullptr;
+         int a = *p; // 空指针解引用，程序会在此处崩溃
+         return {};
+     }
      ```
 
      ```
-     1. static napi_value Init(napi_env env, napi_value exports)
-     2. {
-     3. napi_property_descriptor desc[] = {
-     4. // ···
-     5. { "testNullptr", nullptr, TestNullptr, nullptr, nullptr, nullptr, napi_default, nullptr },
-     6. // ···
-     7. };
-     8. napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
-     9. return exports;
-     10. }
+     static napi_value Init(napi_env env, napi_value exports)
+     {
+         napi_property_descriptor desc[] = {
+             // ···
+             { "testNullptr", nullptr, TestNullptr, nullptr, nullptr, nullptr, napi_default, nullptr },
+             // ···
+         };
+         napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+         return exports;
+     }
      ```
 
-     在"index.d.ts"文件中，定义ArkTS接口：
+     在"entry > src > main > cpp > types > libentry > Index.d.ts"文件中，定义ArkTS接口：
 
-     ```
-     1. export const testNullptr: () => void;
+     ```typescript
+     export const testNullptr: () => void;
      ```
 
      编辑工程中的“entry > src > main > ets > pages > Index.ets”文件，添加按钮并在其onClick函数中构造崩溃场景，以触发崩溃事件。示例代码如下：
 
-     ```
-     1. Button('NativeCrash')
-     2. .type(ButtonType.Capsule)
-     3. .margin({
-     4. top: 20
-     5. })
-     6. .backgroundColor('#0D9FFB')
-     7. .width('80%')
-     8. .height('5%')
-     9. .onClick(() => {
-     10. // 在按钮点击函数中构造一个crash场景，触发应用崩溃事件
-     11. testNapi.testNullptr();
-     12. })
+     ```typescript
+     Button('NativeCrash')
+       .type(ButtonType.Capsule)
+       .margin({
+         top: 20
+       })
+       .backgroundColor('#0D9FFB')
+       .width('80%')
+       .height('5%')
+       .onClick(() => {
+         // 在按钮点击函数中构造一个crash场景，触发应用崩溃事件
+         testNapi.testNullptr();
+       })
      ```
    * 构造JsError类型崩溃
 
      编辑工程中的“entry > src > main > ets > pages > Index.ets”文件，添加按钮并在其onClick函数中构造崩溃场景，以触发崩溃事件。示例代码如下：
 
-     ```
-     1. Button('JsError')
-     2. .type(ButtonType.Capsule)
-     3. .margin({
-     4. top: 20
-     5. })
-     6. .backgroundColor('#0D9FFB')
-     7. .width('80%')
-     8. .height('5%')
-     9. .onClick(() => {
-     10. // 在按钮点击函数中构造一个crash场景，触发应用崩溃事件
-     11. JSON.parse('');
-     12. })
+     ```typescript
+     Button('JsError')
+       .type(ButtonType.Capsule)
+       .margin({
+         top: 20
+       })
+       .backgroundColor('#0D9FFB')
+       .width('80%')
+       .height('5%')
+       .onClick(() => {
+         // 在按钮点击函数中构造一个crash场景，触发应用崩溃事件
+         JSON.parse('');
+       })
      ```
 5. 点击DevEco Studio界面的运行按钮，启动应用工程。在应用界面中点击“NativeCrash”或“JsError”按钮，触发崩溃事件。系统根据崩溃类型生成相应的日志并进行回调。
 
-说明
+**说明** 
 
 JsError通过进程内采集故障信息触发回调，速度快，而NativeCrash采取进程外采集故障信息，平均耗时约2秒，具体受业务线程数量和进程间通信影响。开发者可订阅崩溃事件，故障信息采集完成后异步上报，不阻塞当前业务。
 
@@ -223,32 +242,36 @@ JsError通过进程内采集故障信息触发回调，速度快，而NativeCras
 
 在开发调试阶段，HiAppEvent上报事件完成回调后，可以在DevEco Studio的HiLog窗口查看JsError类型崩溃事件内容。NativeCrash类型崩溃事件内容略有不同，具体参见[崩溃事件字段说明](hiappevent-watcher-crash-events.md#事件字段说明)。JsError类型崩溃事件内容样例如下：
 
-```
-1. HiAppEvent onReceive: domain=OS
-2. HiAppEvent eventName=APP_CRASH
-3. HiAppEvent eventInfo.domain=OS
-4. HiAppEvent eventInfo.name=APP_CRASH
-5. HiAppEvent eventInfo.eventType=1
-6. HiAppEvent eventInfo.params.time=1503045716054
-7. HiAppEvent eventInfo.params.crash_type=JsError
-8. HiAppEvent eventInfo.params.foreground=true
-9. HiAppEvent eventInfo.params.bundle_version=1.0.0
-10. HiAppEvent eventInfo.params.bundle_name=com.samples.eventsub
-11. HiAppEvent eventInfo.params.pid=2610
-12. HiAppEvent eventInfo.params.uid=20010044
-13. HiAppEvent eventInfo.params.uuid=7c3b1579c8ca8629af3858f8145254c2867ee402dc16ee18034337aae258620b
-14. HiAppEvent eventInfo.params.exception={"message":"Unexpected Text in JSON: Empty Text","name":"SyntaxError","stack":"    at anonymous (entry|entry|1.0.0|src/main/ets/pages/Index.ts:163:22)\n","thread_name":"amples.eventsub"}
-15. HiAppEvent eventInfo.params.hilog.size=100
-16. HiAppEvent eventInfo.params.process_life_time=25
-17. HiAppEvent eventInfo.params.memory={"rss":181964,"sys_avail_mem":1230456,"sys_free_mem":676940,"sys_total_mem":2001932}
-18. HiAppEvent eventInfo.params.external_log=["/data/storage/el2/log/hiappevent/APP_CRASH_1503045716408_2610.log"]
-19. HiAppEvent eventInfo.params.log_over_limit=false
-20. HiAppEvent eventInfo.params.test_data=100
+```text
+HiAppEvent onReceive: domain=OS
+HiAppEvent eventName=APP_CRASH
+HiAppEvent eventInfo.domain=OS
+HiAppEvent eventInfo.name=APP_CRASH
+HiAppEvent eventInfo.eventType=1
+HiAppEvent eventInfo.params.time=1503045716054
+HiAppEvent eventInfo.params.crash_type=JsError
+HiAppEvent eventInfo.params.foreground=true
+HiAppEvent eventInfo.params.release_type=debug
+HiAppEvent eventInfo.params.cpu_abi=armeabi-v7a
+HiAppEvent eventInfo.params.app_running_unique_id=216365426236541722
+HiAppEvent eventInfo.params.bundle_version=1.0.0
+HiAppEvent eventInfo.params.bundle_name=com.samples.eventsub
+HiAppEvent eventInfo.params.pid=2610
+HiAppEvent eventInfo.params.uid=20010044
+HiAppEvent eventInfo.params.uuid=7c3b1579c8ca8629af3858f8145254c2867ee402dc16ee18034337aae258620b
+HiAppEvent eventInfo.params.exception={"message":"Unexpected Text in JSON: Empty Text","name":"SyntaxError","stack":"    at anonymous (entry|entry|1.0.0|src/main/ets/pages/Index.ts:163:22)\n","thread_name":"amples.eventsub"}
+HiAppEvent eventInfo.params.hilog.size=100
+HiAppEvent eventInfo.params.process_life_time=25
+HiAppEvent eventInfo.params.memory={"rss":181964,"sys_avail_mem":1230456,"sys_free_mem":676940,"sys_total_mem":2001932}
+HiAppEvent eventInfo.params.external_log=["/data/storage/el2/log/hiappevent/APP_CRASH_1503045716408_2610.log"]
+HiAppEvent eventInfo.params.log_over_limit=false
+HiAppEvent eventInfo.params.page_switch_log=["/data/storage/el2/log/page_switch/snapshot/page_switch.20260420-134923-267.1.log"]
+HiAppEvent eventInfo.params.test_data=100
 ```
 
 ## 从Faultlogger接口迁移崩溃事件
 
-[@ohos.faultLogger (故障日志获取)](../harmonyos-references/js-apis-faultlogger.md)接口从API version 18开始废弃使用, 不再维护。后续版本推荐使用[@ohos.hiviewdfx.hiAppEvent](../harmonyos-references/js-apis-hiviewdfx-hiappevent.md)订阅崩溃事件。该章节指导开发者从Faultlogger接口迁移至hiAppEvent接口，来订阅崩溃事件。
+[@ohos.faultLogger (故障日志获取)](../harmonyos-references/js-apis-faultlogger.md)接口从API version 18开始废弃使用，不再维护。后续版本推荐使用[@ohos.hiviewdfx.hiAppEvent](../harmonyos-references/js-apis-hiviewdfx-hiappevent.md)订阅崩溃事件。该章节指导开发者从Faultlogger接口迁移至hiAppEvent接口，来订阅崩溃事件。
 
 在Faultlogger的[FaultType](../harmonyos-references/js-apis-faultlogger.md#faulttype)里定义的CPP\_CRASH和JS\_CRASH都属于崩溃故障类型。
 
@@ -276,6 +299,6 @@ JsError通过进程内采集故障信息触发回调，速度快，而NativeCras
 | reason | external\_log文件内容中的Reason字段 | 无 |
 | summary | external\_log文件内容中的一部分 | CPP\_CRASH的summary对应external\_log文件内容中的Fault thread info字段；JS\_CRASH的summary对应external\_log文件内容中的Error name、Error message、 Stacktrace、HybridStack字段。 |
 
-[FaultLogger.query(使用callback回调)](../harmonyos-references/js-apis-faultlogger.md#faultloggerquery9)和[FaultLogger.query(使用Promise回调)](../harmonyos-references/js-apis-faultlogger.md#faultloggerquery9-1)都可以使用[hiAppEvent.addWatcher](../harmonyos-references/js-apis-hiviewdfx-hiappevent.md#hiappeventaddwatcher)实现相同功能。
+使用callback回调的[FaultLogger.query](../harmonyos-references/js-apis-faultlogger.md#faultloggerquery9)和使用Promise回调的[FaultLogger.query](../harmonyos-references/js-apis-faultlogger.md#faultloggerquery9-1)都可以使用[hiAppEvent.addWatcher](../harmonyos-references/js-apis-hiviewdfx-hiappevent.md#hiappeventaddwatcher)实现相同功能。
 
 查阅[开发步骤](hiappevent-watcher-crash-events-arkts.md#开发步骤)和[验证观察者是否订阅到崩溃事件](hiappevent-watcher-crash-events-arkts.md#验证观察者是否订阅到崩溃事件)，了解使用hiAppEvent订阅崩溃事件（ArkTS）的具体步骤。

@@ -1,24 +1,20 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-basepriorityoverlay
-title: BasePriorityOverlay
-breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > BasePriorityOverlay
+title: Interface (BasePriorityOverlay)
+breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (BasePriorityOverlay)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:12+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:ae94c2dfa78c9a14e5b053ede6931a005ec2a5dd9c9bf92f33bbbefe59c5ac74
+scraped_at: 2026-09-02T15:02:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:365dc314f90194954d56efca9af8244b3acd2196e6af4df1c99243208bef34a5
 ---
 
 ## 导入模块
 
-PhonePC/2in1TabletWearable
-
-```
-1. import { map, mapCommon } from '@kit.MapKit';
+```typescript
+import { map, mapCommon } from '@kit.MapKit';
 ```
 
 ## BasePriorityOverlay
-
-PhonePC/2in1TabletWearable
 
 具有优先级控制的覆盖物基础类，继承[BaseOverlay](map-map-baseoverlay.md)。[PointAnnotation](map-map-pointannotation.md)和[Bubble](map-map-bubble.md)继承该基础类。
 
@@ -31,8 +27,6 @@ PhonePC/2in1TabletWearable
 **起始版本：** 4.1.0(11)
 
 ### getMaxZoom
-
-PhonePC/2in1TabletWearable
 
 getMaxZoom(): number
 
@@ -54,26 +48,24 @@ getMaxZoom(): number
 
 **示例：**
 
-```
-1. // 以pointAnnotation为例
-2. let pointAnnotationOptions: mapCommon.PointAnnotationParams = {
-3. position: {
-4. latitude: 32.120750,
-5. longitude: 118.788765
-6. },
-7. titles: [{
-8. content: "南京夫子庙"
-9. }],
-10. // 图标需存放在resources/rawfile目录下
-11. icon: 'icon.png'
-12. };
-13. let pointAnnotation: map.PointAnnotation = await this.mapController.addPointAnnotation(pointAnnotationOptions);
-14. let maxZoom: number = pointAnnotation.getMaxZoom();
+```typescript
+// 以pointAnnotation为例
+let pointAnnotationOptions: mapCommon.PointAnnotationParams = {
+  position: {
+    latitude: 32.120750,
+    longitude: 118.788765
+  },
+  titles: [{
+    content: "南京夫子庙"
+  }],
+  // 图标需存放在resources/rawfile目录下
+  icon: 'icon.png'
+};
+let pointAnnotation: map.PointAnnotation = await this.mapController.addPointAnnotation(pointAnnotationOptions);
+let maxZoom: number = pointAnnotation.getMaxZoom();
 ```
 
 ### getMinZoom
-
-PhonePC/2in1TabletWearable
 
 getMinZoom(): number
 
@@ -95,14 +87,12 @@ getMinZoom(): number
 
 **示例：**
 
-```
-1. // 以pointAnnotation为例
-2. let minZoom: number = pointAnnotation.getMinZoom();
+```typescript
+// 以pointAnnotation为例
+let minZoom: number = pointAnnotation.getMinZoom();
 ```
 
 ### setPriority
-
-PhonePC/2in1TabletWearable
 
 setPriority(priority: number): void
 
@@ -120,18 +110,16 @@ setPriority(priority: number): void
 
 | 参数名 | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
-| priority | number | 是 | 设置覆盖物的碰撞优先级。 |
+| priority | number | 是 | 覆盖物的碰撞优先级，值越大优先级越低。 |
 
 **示例：**
 
-```
-1. // 以pointAnnotation为例
-2. pointAnnotation.setPriority(100);
+```typescript
+// 以pointAnnotation为例
+pointAnnotation.setPriority(100);
 ```
 
 ### setZoom
-
-PhonePC/2in1TabletWearable
 
 setZoom(minZoom: number, maxZoom: number): void
 
@@ -154,14 +142,12 @@ setZoom(minZoom: number, maxZoom: number): void
 
 **示例：**
 
-```
-1. // 以pointAnnotation为例
-2. pointAnnotation.setZoom(3, 10);
+```typescript
+// 以pointAnnotation为例
+pointAnnotation.setZoom(3, 10);
 ```
 
 ### setAnimation
-
-PhonePC/2in1TabletWearable
 
 setAnimation(animation: Animation): void
 
@@ -183,36 +169,34 @@ setAnimation(animation: Animation): void
 
 **示例：**
 
-```
-1. // 创建一个透明度动画，从0.2到1
-2. let animation: map.AlphaAnimation = new map.AlphaAnimation(0.2, 1);
-3. // 设置动画持续时间为3000毫秒
-4. animation.setDuration(3000);
-5. // 定义动画开始时的回调函数
-6. let callbackStart = () => {
-7. console.info("animationStart", `callback`);
-8. };
-9. // 定义动画结束时的回调函数
-10. let callbackEnd = () => {
-11. console.info("animationEnd", `callback`);
-12. };
-13. // 注册动画开始事件监听器
-14. animation.on("animationStart", callbackStart);
-15. // 注册动画结束事件监听器
-16. animation.on("animationEnd", callbackEnd);
-17. // 设置动画填充模式为BACKWARDS，表示动画结束后回到初始状态
-18. animation.setFillMode(map.AnimationFillMode.BACKWARDS);
-19. // 设置动画重复模式为RESTART，表示每次重复从头开始
-20. animation.setRepeatMode(map.AnimationRepeatMode.RESTART);
-21. // 设置动画重复次数为100次
-22. animation.setRepeatCount(100);
-23. // 将动画应用到点注释上
-24. pointAnnotation.setAnimation(animation);
+```typescript
+// 创建一个透明度动画，从0.2到1
+let animation: map.AlphaAnimation = new map.AlphaAnimation(0.2, 1);
+// 设置动画持续时间为3000毫秒
+animation.setDuration(3000);
+// 定义动画开始时的回调函数
+let callbackStart = () => {
+  console.info("animationStart", `callback`);
+};
+// 定义动画结束时的回调函数
+let callbackEnd = () => {
+  console.info("animationEnd", `callback`);
+};
+// 注册动画开始事件监听器
+animation.on("animationStart", callbackStart);
+// 注册动画结束事件监听器
+animation.on("animationEnd", callbackEnd);
+// 设置动画填充模式为BACKWARDS，表示动画结束后回到初始状态
+animation.setFillMode(map.AnimationFillMode.BACKWARDS);
+// 设置动画重复模式为RESTART，表示每次重复从头开始
+animation.setRepeatMode(map.AnimationRepeatMode.RESTART);
+// 设置动画重复次数为100次
+animation.setRepeatCount(100);
+// 将动画应用到点注释上
+pointAnnotation.setAnimation(animation);
 ```
 
 ### startAnimation
-
-PhonePC/2in1TabletWearable
 
 startAnimation(): void
 
@@ -228,38 +212,36 @@ startAnimation(): void
 
 **示例：**
 
-```
-1. // 创建一个透明度动画，从0.2到1
-2. let animation: map.AlphaAnimation = new map.AlphaAnimation(0.2, 1);
-3. // 设置动画持续时间为3000毫秒
-4. animation.setDuration(3000);
-5. // 定义动画开始时的回调函数
-6. let callbackStart = () => {
-7. console.info("animationStart", `callback`);
-8. };
-9. // 定义动画结束时的回调函数
-10. let callbackEnd = () => {
-11. console.info("animationEnd", `callback`);
-12. };
-13. // 注册动画开始事件监听器
-14. animation.on("animationStart", callbackStart);
-15. // 注册动画结束事件监听器
-16. animation.on("animationEnd", callbackEnd);
-17. // 设置动画填充模式为BACKWARDS，表示动画结束后回到初始状态
-18. animation.setFillMode(map.AnimationFillMode.BACKWARDS);
-19. // 设置动画重复模式为RESTART，表示每次重复从头开始
-20. animation.setRepeatMode(map.AnimationRepeatMode.RESTART);
-21. // 设置动画重复次数为100次
-22. animation.setRepeatCount(100);
-23. // 将动画应用到点注释上
-24. pointAnnotation.setAnimation(animation);
-25. // 启动动画
-26. pointAnnotation.startAnimation();
+```typescript
+// 创建一个透明度动画，从0.2到1
+let animation: map.AlphaAnimation = new map.AlphaAnimation(0.2, 1);
+// 设置动画持续时间为3000毫秒
+animation.setDuration(3000);
+// 定义动画开始时的回调函数
+let callbackStart = () => {
+  console.info("animationStart", `callback`);
+};
+// 定义动画结束时的回调函数
+let callbackEnd = () => {
+  console.info("animationEnd", `callback`);
+};
+// 注册动画开始事件监听器
+animation.on("animationStart", callbackStart);
+// 注册动画结束事件监听器
+animation.on("animationEnd", callbackEnd);
+// 设置动画填充模式为BACKWARDS，表示动画结束后回到初始状态
+animation.setFillMode(map.AnimationFillMode.BACKWARDS);
+// 设置动画重复模式为RESTART，表示每次重复从头开始
+animation.setRepeatMode(map.AnimationRepeatMode.RESTART);
+// 设置动画重复次数为100次
+animation.setRepeatCount(100);
+// 将动画应用到点注释上
+pointAnnotation.setAnimation(animation);
+// 启动动画
+pointAnnotation.startAnimation();
 ```
 
 ### clearAnimation
-
-PhonePC/2in1TabletWearable
 
 clearAnimation(): void
 
@@ -275,6 +257,6 @@ clearAnimation(): void
 
 **示例：**
 
-```
-1. pointAnnotation.clearAnimation();
+```typescript
+pointAnnotation.clearAnimation();
 ```

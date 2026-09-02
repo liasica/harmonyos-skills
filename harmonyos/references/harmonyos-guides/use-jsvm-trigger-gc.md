@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-trig
 title: 使用JSVM-API感知JSVM引擎生命周期管理
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API感知JSVM引擎生命周期管理
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:22+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:03a122913375f12c1bebd1d7c07c770c05da02a20a88abaa333fc39480f2fccc
+scraped_at: 2026-09-02T15:00:17+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:61be7f671fefdf42bf497854b93b1d7aea93aa182732d3fd28a3f4c0bbdf85e6
 ---
 
 ## 简介
@@ -37,126 +37,126 @@ JSVM-API接口开发流程参考[使用JSVM-API实现JS与C/C++语言交互开�
 
 **cpp部分代码**
 
-```
-1. // hello.cpp
-2. #include <iostream>
+```cpp
+// hello.cpp
+#include <iostream>
 
-4. static bool before_flag1 = false;
-5. static bool before_flag2 = false;
-6. static bool after_flag1 = false;
-7. static bool after_flag2 = false;
+static bool before_flag1 = false;
+static bool before_flag2 = false;
+static bool after_flag1 = false;
+static bool after_flag2 = false;
 
-9. void OnBeforeGC(JSVM_VM vm, JSVM_GCType gcType, JSVM_GCCallbackFlags flags, void *data)
-10. {
-11. OH_LOG_INFO(LOG_APP, "== before GC ==");
-12. OH_LOG_INFO(LOG_APP, "gc type: %{public}d", gcType);
-13. OH_LOG_INFO(LOG_APP, "gc flag: %{public}d", flags);
-14. before_flag1 = true;
-15. }
+void OnBeforeGC(JSVM_VM vm, JSVM_GCType gcType, JSVM_GCCallbackFlags flags, void *data)
+{
+    OH_LOG_INFO(LOG_APP, "== before GC ==");
+    OH_LOG_INFO(LOG_APP, "gc type: %{public}d", gcType);
+    OH_LOG_INFO(LOG_APP, "gc flag: %{public}d", flags);
+    before_flag1 = true;
+}
 
-17. void OnBeforeGC2(JSVM_VM vm, JSVM_GCType gcType, JSVM_GCCallbackFlags flags, void *data)
-18. {
-19. OH_LOG_INFO(LOG_APP, "== before GC2 ==");
-20. OH_LOG_INFO(LOG_APP, "gc type: %{public}d", gcType);
-21. OH_LOG_INFO(LOG_APP, "gc flag: %{public}d", flags);
-22. OH_LOG_INFO(LOG_APP, "data: %{public}d", *(int*)data);
-23. if (*(int*)data == 2024) {
-24. before_flag2 = true;
-25. }
-26. }
+void OnBeforeGC2(JSVM_VM vm, JSVM_GCType gcType, JSVM_GCCallbackFlags flags, void *data)
+{
+    OH_LOG_INFO(LOG_APP, "== before GC2 ==");
+    OH_LOG_INFO(LOG_APP, "gc type: %{public}d", gcType);
+    OH_LOG_INFO(LOG_APP, "gc flag: %{public}d", flags);
+    OH_LOG_INFO(LOG_APP, "data: %{public}d", *(int*)data);
+    if (*(int*)data == 2024) {
+        before_flag2 = true;
+    }
+}
 
-28. void OnAfterGC(JSVM_VM vm, JSVM_GCType gcType, JSVM_GCCallbackFlags flags, void *data)
-29. {
-30. after_flag1 = true;
-31. }
+void OnAfterGC(JSVM_VM vm, JSVM_GCType gcType, JSVM_GCCallbackFlags flags, void *data)
+{
+    after_flag1 = true;
+}
 
-33. void OnAfterGC2(JSVM_VM vm, JSVM_GCType gcType, JSVM_GCCallbackFlags flags, void *data)
-34. {
-35. after_flag2 = true;
-36. }
+void OnAfterGC2(JSVM_VM vm, JSVM_GCType gcType, JSVM_GCCallbackFlags flags, void *data)
+{
+    after_flag2 = true;
+}
 
-38. void OnAfterGC3(JSVM_VM vm, JSVM_GCType gcType, JSVM_GCCallbackFlags flags, void *data)
-39. {
-40. after_flag2 = true;
-41. }
+void OnAfterGC3(JSVM_VM vm, JSVM_GCType gcType, JSVM_GCCallbackFlags flags, void *data)
+{
+    after_flag2 = true;
+}
 
-43. static JSVM_Value TriggerGC(JSVM_Env env, JSVM_CallbackInfo info)
-44. {
-45. bool remove_repeated = false;
-46. bool remove_notAdded = false;
-47. bool add_repeated = false;
-48. before_flag1 = false;
-49. before_flag2 = false;
-50. after_flag1 = false;
-51. after_flag2 = false;
-52. JSVM_VM vm;
-53. OH_JSVM_GetVM(env, &vm);
-54. // 设置两个回调函数，在GC执行之前触发回调
-55. int data = 2024;
-56. JSVM_CALL(OH_JSVM_AddHandlerForGC(vm, JSVM_CB_TRIGGER_BEFORE_GC, OnBeforeGC, JSVM_GC_TYPE_ALL, NULL));
-57. JSVM_CALL(OH_JSVM_AddHandlerForGC(vm, JSVM_CB_TRIGGER_BEFORE_GC, OnBeforeGC2, JSVM_GC_TYPE_ALL, (void*)(&data)));
-58. // 设置两个回调函数，在GC执行之后触发回调
-59. JSVM_CALL(OH_JSVM_AddHandlerForGC(vm, JSVM_CB_TRIGGER_AFTER_GC, OnAfterGC, JSVM_GC_TYPE_ALL, NULL));
-60. JSVM_CALL(OH_JSVM_AddHandlerForGC(vm, JSVM_CB_TRIGGER_AFTER_GC, OnAfterGC2, JSVM_GC_TYPE_ALL, NULL));
-61. // (OnAfterGC2, NULL)的组合已经注册过了，重复注册为无效行为
-62. if (OH_JSVM_AddHandlerForGC(vm, JSVM_CB_TRIGGER_AFTER_GC, OnAfterGC2, JSVM_GC_TYPE_ALL, NULL) == JSVM_INVALID_ARG) {
-63. add_repeated = true;
-64. }
-65. // 移除OnAfter2回调函数
-66. JSVM_CALL(OH_JSVM_RemoveHandlerForGC(vm, JSVM_CB_TRIGGER_AFTER_GC, OnAfterGC2, NULL));
-67. // 重复移除OnAfter2属于无效用法
-68. if (OH_JSVM_RemoveHandlerForGC(vm, JSVM_CB_TRIGGER_AFTER_GC, OnAfterGC2, NULL) == JSVM_INVALID_ARG) {
-69. remove_repeated = true;
-70. }
-71. // 移除从未设置过的函数属于无效用法
-72. if (OH_JSVM_RemoveHandlerForGC(vm, JSVM_CB_TRIGGER_AFTER_GC, OnAfterGC3, NULL) == JSVM_INVALID_ARG) {
-73. remove_notAdded = true;
-74. }
-75. // 通知引擎当前存在比较大的内存压力，能大概率触发JS引擎的GC流程。
-76. JSVM_CALL(OH_JSVM_MemoryPressureNotification(env, JSVM_MEMORY_PRESSURE_LEVEL_CRITICAL));
-77. if ((before_flag1) &&
-78. (before_flag2) &&
-79. (after_flag1) &&
-80. (!after_flag2) &&
-81. (remove_repeated) &&
-82. (remove_notAdded) &&
-83. (add_repeated)) {
-84. OH_LOG_INFO(LOG_APP, "JSVM Trigger GC: success");
-85. } else {
-86. OH_LOG_ERROR(LOG_APP, "JSVM Trigger GC: failed");
-87. }
-88. JSVM_Value checked;
-89. OH_JSVM_GetBoolean(env, true, &checked);
-90. return checked;
-91. }
+static JSVM_Value TriggerGC(JSVM_Env env, JSVM_CallbackInfo info)
+{
+    bool remove_repeated = false;
+    bool remove_notAdded = false;
+    bool add_repeated = false;
+    before_flag1 = false;
+    before_flag2 = false;
+    after_flag1 = false;
+    after_flag2 = false;
+    JSVM_VM vm;
+    OH_JSVM_GetVM(env, &vm);
+    // 设置两个回调函数，在GC执行之前触发回调
+    int data = 2024;
+    JSVM_CALL(OH_JSVM_AddHandlerForGC(vm, JSVM_CB_TRIGGER_BEFORE_GC, OnBeforeGC, JSVM_GC_TYPE_ALL, NULL));
+    JSVM_CALL(OH_JSVM_AddHandlerForGC(vm, JSVM_CB_TRIGGER_BEFORE_GC, OnBeforeGC2, JSVM_GC_TYPE_ALL, (void*)(&data)));
+    // 设置两个回调函数，在GC执行之后触发回调
+    JSVM_CALL(OH_JSVM_AddHandlerForGC(vm, JSVM_CB_TRIGGER_AFTER_GC, OnAfterGC, JSVM_GC_TYPE_ALL, NULL));
+    JSVM_CALL(OH_JSVM_AddHandlerForGC(vm, JSVM_CB_TRIGGER_AFTER_GC, OnAfterGC2, JSVM_GC_TYPE_ALL, NULL));
+    // (OnAfterGC2, NULL)的组合已经注册过了，重复注册为无效行为
+    if (OH_JSVM_AddHandlerForGC(vm, JSVM_CB_TRIGGER_AFTER_GC, OnAfterGC2, JSVM_GC_TYPE_ALL, NULL) == JSVM_INVALID_ARG) {
+        add_repeated = true;
+    }
+    // 移除OnAfterGC2回调函数
+    JSVM_CALL(OH_JSVM_RemoveHandlerForGC(vm, JSVM_CB_TRIGGER_AFTER_GC, OnAfterGC2, NULL));
+    // 重复移除OnAfterGC2属于无效用法
+    if (OH_JSVM_RemoveHandlerForGC(vm, JSVM_CB_TRIGGER_AFTER_GC, OnAfterGC2, NULL) == JSVM_INVALID_ARG) {
+        remove_repeated = true;
+    }
+    // 移除从未设置过的函数属于无效用法
+    if (OH_JSVM_RemoveHandlerForGC(vm, JSVM_CB_TRIGGER_AFTER_GC, OnAfterGC3, NULL) == JSVM_INVALID_ARG) {
+        remove_notAdded = true;
+    }
+    // 通知引擎当前存在比较大的内存压力，能大概率触发JS引擎的GC流程。
+    JSVM_CALL(OH_JSVM_MemoryPressureNotification(env, JSVM_MEMORY_PRESSURE_LEVEL_CRITICAL));
+    if ((before_flag1) &&
+        (before_flag2) &&
+        (after_flag1) &&
+        (!after_flag2) &&
+        (remove_repeated) &&
+        (remove_notAdded) &&
+        (add_repeated)) {
+        OH_LOG_INFO(LOG_APP, "JSVM Trigger GC: success");
+    } else {
+        OH_LOG_ERROR(LOG_APP, "JSVM Trigger GC: failed");
+    }
+    JSVM_Value checked;
+    OH_JSVM_GetBoolean(env, true, &checked);
+    return checked;
+}
 
-93. static JSVM_CallbackStruct param[] = {
-94. {.data = nullptr, .callback = TriggerGC},
-95. };
-96. static JSVM_CallbackStruct *method = param;
+static JSVM_CallbackStruct param[] = {
+    {.data = nullptr, .callback = TriggerGC},
+};
+static JSVM_CallbackStruct *method = param;
 
-98. static JSVM_PropertyDescriptor descriptor[] = {
-99. {"triggerGC", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
-100. };
+static JSVM_PropertyDescriptor descriptor[] = {
+    {"triggerGC", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
+};
 ```
 
 **样例测试JS**
 
-```
-1. const char *srcCallNative = R"JS(triggerGC();)JS";
+```cpp
+const char *srcCallNative = R"JS(triggerGC();)JS";
 ```
 
 **执行结果**
 
 在LOG中输出下面结果：
 
-```
-1. == before GC ==
-2. gc type: 4
-3. gc flag: 4
-4. == before GC2 ==
-5. gc type: 4
-6. gc flag: 4
-7. data: 2024
-8. JSVM Trigger GC: success
+```cpp
+== before GC ==
+gc type: 4
+gc flag: 4
+== before GC2 ==
+gc type: 4
+gc flag: 4
+data: 2024
+JSVM Trigger GC: success
 ```

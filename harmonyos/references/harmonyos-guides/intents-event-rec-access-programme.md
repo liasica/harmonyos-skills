@@ -3,25 +3,25 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-event
 title: 接入方案
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 事件推荐方案 > 接入方案
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:43:32+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8c4b9aa9d330e2d9e0ed37f4c06c00a6cdb52495432d4eb17eef627bdbf4518f
+scraped_at: 2026-09-02T15:00:14+08:00
+doc_updated_at: 2026-05-19
+content_hash: sha256:8468ff3fa803d2b37694cf2abcbd0bebaa66142f99fef3c15ae1804230f4c950
 ---
 
 ## 方案概述
 
 当开发者有事件想要通知到用户时，可通过应用/元服务的云侧服务器向智慧分发平台推送事件内容（意图共享）。系统通过智慧决策判断事件发生的条件，在满足条件时，向用户推荐事件提醒卡片，当用户点击卡片后，可跳转到应用/元服务的详情页查看事件详情（意图调用）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/TaLYFCLAS4u30fHwolBdGg/zh-cn_image_0000002589245627.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/IS14E2PmQha40MBdnSyIXw/zh-cn_image_0000002736434533.png)
 
 ## 流程图
 
 1. 开发者获取云侧事件捐赠所需的SID（Service OpenID）。
 2. 当用户有订单事件后，开发者云将事件内容和SID同步到业务云。
-3. 华为内部会根据事件和具体场景制定事件服务推出规则和时机。
+3. 华为侧会根据事件和具体场景制定事件服务推出规则和时机。
 4. 在满足制定规则场景下展示对应用户事件，增加服务曝光率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/-jcCO2nZRJSNDmlxyFkAiw/zh-cn_image_0000002558765818.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/L0iNM5vXRdqADlQM2r3K0A/zh-cn_image_0000002706835386.png)
 
 ## 意图注册
 
@@ -29,58 +29,76 @@ content_hash: sha256:8c4b9aa9d330e2d9e0ed37f4c06c00a6cdb52495432d4eb17eef627bdbf
 
 开发者需要编辑对应的意图配置insight\_intent.json文件实现意图声明。insight\_intent.json文件需要放置在任意一个module下面的指定目录：src/main/resources/base/profile/insight\_intent.json，并且整个工程中只能存在一个insight\_intent.json文件。
 
-```
-1. {
-2. // 应用支持的意图列表
-3. // 必须声明应用支持插件包含的必选意图，应用上架时会进行校验
-4. "insightIntents": [
-5. {
-6. // 意图名称
-7. // 名称应当遵循意图框架规范，当前仅支持预置垂域意图，不允许自定义
-8. // 应用内意图名称唯一，不允许出现相同的名称定义
-9. "intentName": "ViewRepayment",
-10. // 意图所属的垂域
-11. "domain": "BankingDomain",
-12. // 意图版本号
-13. // 插件引用意图时会校验该版本号，只有和插件定义的版本号一致才能正常调用
-14. "intentVersion": "1.0.1",
-15. // 意图调用逻辑入口
-16. "srcEntry": "./ets/entryability/InsightIntentExecutorImpl.ets",
-17. "uiAbility": {
-18. // 意图所在ability
-19. "ability": "EntryAbility",
-20. // UIAbility支持前后台两种执行模式
-21. "executeMode": [
-22. "background",
-23. "foreground"
-24. ]
-25. }
-26. }
-27. ]
-28. }
+```json5
+{
+  // 应用支持的意图列表
+  // 必须声明应用支持插件包含的必选意图，应用上架时会进行校验
+  "insightIntents": [
+    {
+      // 意图名称
+      // 名称应当遵循意图框架规范，当前仅支持预置垂域意图，不允许自定义
+      // 应用内意图名称唯一，不允许出现相同的名称定义
+      "intentName": "ViewRepayment",
+      // 意图所属的垂域
+      "domain": "BankingDomain",
+      // 意图版本号
+      // 插件引用意图时会校验该版本号，只有和插件定义的版本号一致才能正常调用
+      "intentVersion": "1.0.1",
+      // 意图调用逻辑入口
+      "srcEntry": "./ets/entryability/InsightIntentExecutorImpl.ets",
+      "uiAbility": {
+        // 意图所在ability
+        "ability": "EntryAbility",
+        // UIAbility支持前后台两种执行模式
+        "executeMode": [
+          "background",
+          "foreground"
+        ]
+      }
+    }
+  ]
+}
 ```
 
 ## 获取SID
 
-说明
+**说明** 
 
-API文档参见：[意图框架API参考 > getSid](../harmonyos-references/intents-arkts-api-insightintent.md#insightintentgetsid)。
+API文档参见：[意图框架API参考 > getSid](../harmonyos-references/intents-arkts-api-insightintent.md#getsid)。
 
 云侧事件捐赠凭证SID（Service OpenID）优先从缓存获取，当缓存获取失败可以强制从云侧获取新的SID。
 
-```
-1. import { insightIntent } from '@kit.IntentsKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { insightIntent } from '@kit.IntentsKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 根据实际代码上下文自行传入合适的context
-5. insightIntent.getSid(context, false) // 优先获取缓存SID，改为true则强制从云侧获取新SID
-6. .then((sid: string) => {
-7. // 获取SID成功
-8. console.info('getSid succeed!');
-9. }).catch((error: BusinessError) => {
-10. // 获取SID失败
-11. console.error(`getSid failed! error=${error.code} reason=${error.message}`);
-12. });
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Row() {
+        Button('getSid')
+          .onClick(() => {
+            // 根据实际代码上下文自行传入合适的context
+            insightIntent.getSid(this.getUIContext().getHostContext(), false) // 优先获取缓存SID，改为true则强制从云侧获取新SID
+              .then((sid: string) => {
+                // 获取SID成功
+                console.info('getSid succeed!');
+              }).catch((error: BusinessError) => {
+              // 获取SID失败
+              console.error(`getSid failed! Code: ${error?.code} message: ${error?.message}`);
+            });
+          })
+      }
+      .justifyContent(FlexAlign.Center)
+      .alignItems(VerticalAlign.Center)
+      .width('100%')
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 ## 云侧意图共享
@@ -104,74 +122,75 @@ API文档参见：[意图框架API参考 > getSid](../harmonyos-references/inten
 3. 通过意图名称，识别查看还款意图（ViewRepayment）。
 4. 在对应的方法中传递意图参数（param），并拉起对应落地页（如还款页面）。
 
-   ```
-   1. import { insightIntent, InsightIntentExecutor } from '@kit.AbilityKit';
-   2. import { window } from '@kit.ArkUI';
-   3. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { insightIntent, InsightIntentExecutor } from '@kit.AbilityKit';
+   import { window } from '@kit.ArkUI';
+   import { BusinessError } from '@kit.BasicServicesKit';
 
-   5. /**
-   6. * 意图调用样例 */
-   7. export default class InsightIntentExecutorImpl extends InsightIntentExecutor {
-   8. private static readonly VIEW_REPAYMENT = 'ViewRepayment';
-   9. /**
-   10. * override 执行前台UIAbility意图
-   11. *
-   12. * @param name 意图名称
-   13. * @param param 意图参数
-   14. * @param pageLoader 窗口
-   15. * @returns 意图调用结果
-   16. */
-   17. onExecuteInUIAbilityForegroundMode(name: string, param: Record<string, Object>, pageLoader: window.WindowStage):
-   18. Promise<insightIntent.ExecuteResult> {
-   19. // 根据意图名称分发处理逻辑。接入方可根据实际业务实现页面跳转
-   20. switch (name) {
-   21. case InsightIntentExecutorImpl.VIEW_REPAYMENT:
-   22. return this.viewRepayment(param, pageLoader);
-   23. default:
-   24. break;
-   25. }
-   26. return Promise.resolve({
-   27. code: -1,
-   28. result: {
-   29. message: 'unknown intent'
-   30. }
-   31. } as insightIntent.ExecuteResult)
-   32. }
+   /**
+    * 意图调用样例
+    */
+   export default class InsightIntentExecutorImpl extends InsightIntentExecutor {
+     private static readonly VIEW_REPAYMENT = 'ViewRepayment';
+     /**
+      * override 执行前台UIAbility意图
+      *
+      * @param name 意图名称
+      * @param param 意图参数
+      * @param pageLoader 窗口
+      * @returns 意图调用结果
+      */
+     onExecuteInUIAbilityForegroundMode(name: string, param: Record<string, Object>, pageLoader: window.WindowStage):
+       Promise<insightIntent.ExecuteResult> {
+       // 根据意图名称分发处理逻辑。接入方可根据实际业务实现页面跳转
+       switch (name) {
+         case InsightIntentExecutorImpl.VIEW_REPAYMENT:
+           return this.viewRepayment(param, pageLoader);
+         default:
+           break;
+       }
+       const data: insightIntent.ExecuteResult = {
+         code: -1,
+         result: {
+           message: 'unknown intent'
+         }
+       };
+       return Promise.resolve(data);
+     }
 
-   34. /**
-   35. * 实现调用查看还款功能
-   36. *
-   37. * @param param 意图参数
-   38. * @param pageLoader 窗口
-   39. */
-   40. private viewRepayment(param: Record<string, Object>, pageLoader: window.WindowStage): Promise<insightIntent.ExecuteResult> {
-   41. return new Promise((resolve, reject) => {
-   42. let para: Record<string, string> = {
-   43. 'result': JSON.stringify(param)
-   44. };
-   45. let localStorage: LocalStorage = new LocalStorage(para);
-   46. // TODO 实现意图调用，loadContent的入参为查看还款落地页路径，例如：'pages/Index'
-   47. pageLoader.loadContent('pages/Index', localStorage)
-   48. .then(() => {
-   49. let entityId: string = (param.items as Array<object>)?.[0]?.['entityId'];
-   50. // TODO 调用成功的情况，此处可以打印日志
-   51. resolve({
-   52. code: 0,
-   53. result: {
-   54. message: 'Intent execute succeed'
-   55. }
-   56. });
-   57. })
-   58. .catch((err: BusinessError) => {
-   59. // TODO 调用失败的情况
-   60. resolve({
-   61. code: -1,
-   62. result: {
-   63. message: 'Intent execute failed'
-   64. }
-   65. })
-   66. });
-   67. })
-   68. }
-   69. }
+     /**
+      * 实现调用查看还款功能
+      *
+      * @param param 意图参数
+      * @param pageLoader 窗口
+      */
+     private viewRepayment(param: Record<string, Object>, pageLoader: window.WindowStage): Promise<insightIntent.ExecuteResult> {
+       return new Promise((resolve, reject) => {
+         let localStorage: LocalStorage = new LocalStorage(param);
+         // TODO 实现意图调用，loadContent的入参为查看还款落地页路径，例如：'pages/Index'
+         pageLoader.loadContent('pages/Index', localStorage)
+           .then(() => {
+             const entityId: string = (typeof param.entityId === 'string') ? param.entityId : '';
+             console.info(`Intent param, entityId: ${entityId}`);
+             const data: insightIntent.ExecuteResult = {
+               code: 0,
+               result: {
+                 message: 'Intent execute succeed'
+               }
+             };
+             resolve(data);
+           })
+           .catch((err: BusinessError) => {
+             console.error(`Intent execute failed, Code: ${err?.code}, message: ${err?.message}`);
+             const data: insightIntent.ExecuteResult = {
+               code: -1,
+               result: {
+                 message: 'Intent execute failed'
+               }
+             };
+             reject(data);
+           });
+       })
+     }
+   }
    ```

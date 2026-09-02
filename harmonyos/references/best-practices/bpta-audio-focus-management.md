@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-focu
 title: 音频焦点管理解决方案
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频焦点管理解决方案
 category: best-practices
-scraped_at: 2026-04-29T14:11:36+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:1f1e8656694d98f06e091a2308b2260281b920eef2d9eec71b7ac167cc5f5e2f
+scraped_at: 2026-09-02T15:03:18+08:00
+doc_updated_at: 2026-08-17
+content_hash: sha256:adc30406ef669914e05016f154cbd6c3e9b5cd01749ee23a17093a4a32469572
 ---
 
 ## 概述
@@ -25,15 +25,15 @@ content_hash: sha256:1f1e8656694d98f06e091a2308b2260281b920eef2d9eec71b7ac167cc5
 * [自定义焦点策略设置](bpta-audio-focus-management.md#section048671914296)：使用AudioSession进行自定义焦点策略设置，可以定制化地满足用户预期的播放体验。
 * [焦点中断事件正确处理](bpta-audio-focus-management.md#section1664171514332)：正确处理焦点中断事件，可以避免出现中断后不恢复或播放UI状态错误的现象。
 * [应用内多音频流焦点处理](bpta-audio-focus-management.md#section168291861114)：同一应用内创建多个音频流时，可实现自主管控，定制不同场景下的多音频流播放体验。
-* [常见焦点场景的问题分析](bpta-audio-focus-management.md#section8750452171110)：通过分析典型问题场景，有助于开发者获取解决方案，以提升开发效率。
+* [典型问题场景](bpta-audio-focus-management.md#section8750452171110)：通过分析典型问题场景，有助于开发者获取解决方案，以提升开发效率。
 
-说明
+**说明** 
 
 移动端与电脑端的音频焦点在系统默认策略上存在差异。在移动端，默认策略为新应用播放时会中断或降低先前应用的音量，以避免同时大声播放。例如，用户在听音乐时打开短视频App，音乐将自动暂停或音量显著降低，确保短视频声音清晰。而在电脑端，默认策略允许多个应用的音频同时输出，音量叠加。例如，用户可以一边听音乐，一边观看游戏直播，通过调整不同窗口的音量来实现平衡。
 
 不同应用可通过设置不同的音频焦点策略，以适配各种体验场景，满足用户良好的应用体验。同一应用内，则可通过调整焦点模式，适配不同体验场景，确保多音频播放的优质体验。同时本篇文章配套的sample覆盖了上述所有场景，效果如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/4fP-u0wYTjK8yosI8CxDzw/zh-cn_image_0000002531280209.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/KtDbbqerR6ikd-h4I18KIA/zh-cn_image_0000002624617405.gif "点击放大")
 
 ## 实现原理
 
@@ -50,7 +50,7 @@ content_hash: sha256:1f1e8656694d98f06e091a2308b2260281b920eef2d9eec71b7ac167cc5
 
 在详细了解音频焦点管理机制之前，开发者应先了解多音频流抢占焦点的时序流程。流程图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/06PTp9p7Ql2bOQj6YXJwkA/zh-cn_image_0000002531200167.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/x_xWUVmDSlmc0N_bK2PDhw/zh-cn_image_0000002531200167.png "点击放大")
 
 从上图可以看出系统音频焦点管理机制，开发者在开发音频相关功能时需要关注以下3点：
 
@@ -77,17 +77,17 @@ content_hash: sha256:1f1e8656694d98f06e091a2308b2260281b920eef2d9eec71b7ac167cc5
 
 **音频流类型对音频焦点策略的影响原理**
 
-系统根据先播和后播音频流类型，查询[默认策略表](bpta-audio-focus-management.md#section17923135513547)。不同策略对应着不同的焦点处理方式，具体如下流程图：
+系统根据先播和后播音频流类型，查询默认焦点策略。不同策略对应着不同的焦点处理方式，具体如下流程图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/IQfLGiNdT1C43qM_7hT-Kg/zh-cn_image_0000002499520260.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/NhRBp-LqRCCCIzhcgOJahg/zh-cn_image_0000002499520260.png "点击放大")
 
 **音频流类型设置方法**
 
-应用可采用多种方法实现音频播放或录音功能，例如AudioRenderer、OHAudio、AVPlayer、SoundPool等。因此，设置音频流类型的方式也各不相同。比如，当开发者[使用AudioRenderer开发音频播放功能](../harmonyos-guides/using-audiorenderer-for-playback.md)时，可以在调用[createAudioRenderer](../harmonyos-references/arkts-apis-audio-f.md#audiocreateaudiorenderer8)时，使用[StreamUsage](../harmonyos-references/arkts-apis-audio-e.md#streamusage)来设置音频流类型。具体开发细节可参考[使用AudioRenderer开发音频播放功能](../harmonyos-guides/using-audiorenderer-for-playback.md#完整示例)。另外，更多正确设置音频流类型的方法和详细细节，可以参考指南[设置音频流类型](../harmonyos-guides/using-right-streamusage-and-sourcetype.md#设置音频流类型)。其他方式可参考[使用OHAudio开发音频播放功能(C/C++)](../harmonyos-guides/using-ohaudio-for-playback.md)、[使用AVPlayer播放音频(ArkTS)](../harmonyos-guides/using-avplayer-for-playback.md)、[使用SoundPool播放短音频(ArkTS)](../harmonyos-guides/using-soundpool-for-playback.md)。
+应用可采用多种方法实现音频播放或录音功能，例如AudioRenderer、OHAudio、AVPlayer、SoundPool等。因此，设置音频流类型的方式也各不相同。比如，当开发者[使用AudioRenderer开发音频播放功能(ArkTs)](../harmonyos-guides/using-audiorenderer-for-playback.md)时，可以在调用[createAudioRenderer](../harmonyos-references/arkts-apis-audio-f.md#audiocreateaudiorenderer8)时，使用[StreamUsage](../harmonyos-references/arkts-apis-audio-e.md#streamusage)来设置音频流类型。具体开发细节可参考[使用AudioRenderer开发音频播放功能(ArkTs)](../harmonyos-guides/using-audiorenderer-for-playback.md)中的[完整示例](../harmonyos-guides/using-audiorenderer-for-playback.md#完整示例)。另外，更多正确设置音频流类型的方法和详细细节，可以参考指南[设置播放流类型](../harmonyos-guides/using-right-streamusage-for-playback.md#设置播放流类型)。其他方式可参考[推荐使用OHAudio开发音频播放功能(C/C++)](../harmonyos-guides/using-ohaudio-for-playback.md)、[使用AVPlayer播放音频(ArkTS)](../harmonyos-guides/using-avplayer-for-playback.md)、[使用SoundPool播放短音频(ArkTS)](../harmonyos-guides/using-soundpool-for-playback.md)。
 
 **音频流类型与典型业务场景映射表**
 
-为了开发者能够更好地选择正确的音频流类型，本文提供了常见音频流及其对应业务场景映射表以供参考。开发者也可以根据音频流类型，查询对应的[系统默认策略](bpta-audio-focus-management.md#section17923135513547)。
+为了开发者能够更好地选择正确的音频流类型，本文提供了常见音频流及其对应业务场景映射表以供参考。
 
 |  |  |
 | --- | --- |
@@ -116,7 +116,7 @@ content_hash: sha256:1f1e8656694d98f06e091a2308b2260281b920eef2d9eec71b7ac167cc5
 
 AudioSession提供的四种会话策略（即自定义焦点策略），具体如下：
 
-1. **默认模式（CONCURRENCY\_DEFAULT）：**即系统默认的音频焦点策略，默认焦点策略详见本章[系统默认焦点策略表](bpta-audio-focus-management.md#section17923135513547)。
+1. **默认模式（CONCURRENCY\_DEFAULT）：**即系统默认的音频焦点策略。
 2. **并发模式（CONCURRENCY\_MIX\_WITH\_OTHERS）：**和其他音频流并发。
 3. **降低音量模式（CONCURRENCY\_DUCK\_OTHERS）：**和其他音频流并发，并且降低其他音频流的音量。
 4. **暂停模式（CONCURRENCY\_PAUSE\_OTHERS）：**暂停其他音频流，待释放焦点后通知其他音频流恢复。
@@ -125,7 +125,7 @@ AudioSession提供的四种会话策略（即自定义焦点策略），具体�
 
 AudioSession的自定义焦点策略原理主要通过降低音频流优先级在系统默认策略上进行调整的。例如音频A stop 音频B，说明音频A优先级大于音频B优先级，此时开发者可以降低音频A优先级，自定义焦点策略为并发模式，使其能够与音频B进行并发播放。其原理流程图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/51U79xIbSsCBVgDD3k8qgw/zh-cn_image_0000002499360276.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/SfMU-_h2QDubMPHRV8QIQw/zh-cn_image_0000002499360276.png "点击放大")
 
 以上文的内嵌短视频播放中断后台音乐场景为例，短视频音频流类型为STREAM\_USAGE\_MOVIE，后台音乐音频流类型为STREAM\_USAGE\_MUSIC，系统默认策略为Stop模式，用户预期策略为Pause模式。
 
@@ -134,7 +134,7 @@ AudioSession的自定义焦点策略原理主要通过降低音频流优先级�
 3. 内嵌短视频的AudioSession会话策略为Pause模式，其优先级低于默认策略Stop模式，满足AudioSession调整原则；
 4. 系统按照内嵌短视频Pause后台音乐的策略执行中断操作。
 
-注意
+**注意** 
 
 AudioSession自定义焦点策略的原则主要为以下2点：
 
@@ -143,7 +143,7 @@ AudioSession自定义焦点策略的原则主要为以下2点：
 
 因此，当应用通过AudioSession使用上述各种模式时，系统将尽量满足其焦点策略，并非所有场景能够保证完全满足。例如，使用CONCURRENCY\_PAUSE\_OTHERS模式时，STREAM\_USAGE\_MOVIE流申请音频焦点，如果STREAM\_USAGE\_MUSIC流正在播放，则STREAM\_USAGE\_MUSIC流会被暂停。此时，如果STREAM\_USAGE\_VOICE\_COMMUNICATION流正在播放，则STREAM\_USAGE\_VOICE\_COMMUNICATION流不会被暂停。
 
-关于AudioSession的具体使用方法，可以参考[使用AudioSession管理应用音频焦点(ArkTS)](../harmonyos-guides/audio-session-management.md)，完成音频会话从创建到激活并监听的过程。
+关于AudioSession的具体使用方法，可以参考[使用音频会话修改焦点策略](../harmonyos-guides/audio-session-management.md#使用音频会话修改焦点策略)，完成音频会话从创建到激活并监听的过程。
 
 ### 焦点中断事件正确处理
 
@@ -202,13 +202,13 @@ AudioSession自定义焦点策略的原则主要为以下2点：
 
 应用可根据需求选择合适的焦点模式。在创建音频流时，系统默认采用共享焦点模式（SHARE\_MODE），多音频流间可以并发播放，若设置为独立模式，则音频流之前的打断策略使用系统默认焦点策略。应用可根据不同场景需求主动设置所需的焦点模式。下面以同应用内有两条音频流A和B为例，展示下在不同焦点模式下A和B的播放差异。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/ntFOBo4rSNijKBYvloYX3Q/zh-cn_image_0000002531280215.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/faHPfVgsSreTwziM5Jg9IQ/zh-cn_image_0000002531280215.png "点击放大")
 
 设置焦点模式的方法：
 
 * 若[使用AVPlayer开发音频播放功能(ArkTS)](../harmonyos-guides/using-avplayer-for-playback.md)，则可以通过修改AVPlayer的[InterruptMode](../harmonyos-references/arkts-apis-audio-e.md#interruptmode9)属性进行设置。
 * 若[使用AVPlayer开发音频播放功能(C/C++)](../harmonyos-guides/using-ndk-avplayer-for-playback.md)，则可以调用[OH\_AVPlayer\_SetAudioInterruptMode](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setaudiointerruptmode)函数进行设置。
-* 若[使用AudioRenderer开发音频播放功能](../harmonyos-guides/using-audiorenderer-for-playback.md)，则可以调用[setInterruptMode](../harmonyos-references/arkts-apis-audio-audiorenderer.md#setinterruptmode9)函数进行设置。
+* 若[使用AudioRenderer开发音频播放功能(ArkTs)](../harmonyos-guides/using-audiorenderer-for-playback.md)，则可以调用[setInterruptMode](../harmonyos-references/arkts-apis-audio-audiorenderer.md#setinterruptmode9)函数进行设置。
 * 若[使用OHAudio开发音频播放功能(C/C++)](../harmonyos-guides/using-ohaudio-for-playback.md)，则可以调用[OH\_AudioStreamBuilder\_SetRendererInterruptMode](../harmonyos-references/capi-native-audiostreambuilder-h.md#oh_audiostreambuilder_setrendererinterruptmode)函数进行设置。
 
 ## 不同应用间音频焦点冲突处理
@@ -221,75 +221,74 @@ AudioSession自定义焦点策略的原则主要为以下2点：
 
 通过给后播短视频设置自定义焦点策略，可以实现[场景描述](bpta-audio-focus-management.md#section938014296464)中的更优体验。主要的开发步骤如下。
 
-1. 在播放视频前，利用[音频会话管理](../harmonyos-guides/audio-session-management.md)，设置此次音频流所采用的音频焦点策略为暂停模式（CONCURRENCY\_PAUSE\_OTHERS）。
+1. 在播放视频前，利用[音频会话管理(ArkTS)](../harmonyos-guides/audio-session-management.md)，设置此次音频流所采用的音频焦点策略为暂停模式（CONCURRENCY\_PAUSE\_OTHERS）。
 2. 播放暂停或结束后，需要释放音频焦点。
 
 ### 开发步骤
 
 1. 播放时，设置音频流所采用的音频焦点策略为暂停模式。
 
-```
-1. async mediaPlay() {
-2. // ...
-3. await this.activateAudioSession();
-4. await this.avPlayer.play().catch((error: BusinessError) => {
-5. Logger.error(TAG,
-6. `play failed, code is ${error.code}, message is ${error.message}`);
-7. });
-8. // ...
-9. }
-```
-
-[AVPlayerController.ets](https://gitcode.com/harmonyos_samples/audio-focus/blob/master/entry/src/main/ets/common/util/AVPlayerController.ets#L392-L424)
-
-```
-1. async activateAudioSession() {
-2. try {
-3. this.audioSessionManager.setAudioSessionScene(audio.AudioSessionScene.AUDIO_SESSION_SCENE_MEDIA)
-4. let strategy: audio.AudioSessionStrategy = {
-5. concurrencyMode: this.isMuted ? audio.AudioConcurrencyMode.CONCURRENCY_MIX_WITH_OTHERS :
-6. AppStorage.get('audioConcurrencyMode') as audio.AudioConcurrencyMode
-7. };
-8. await this.audioSessionManager.activateAudioSession(strategy).catch(() => {
-9. Logger.info('activateAudioSession SUCCESS');
-10. }).then(() => {
-11. Logger.info('activateAudioSession SUCCESS');
-12. });
-13. } catch (error) {
-14. Logger.error(TAG, `activateAudioSession failed,code is ${error.code},message is ${error.message}}`);
-15. }
-16. }
+```typescript
+async mediaPlay() {
+  // ...
+  await this.activateAudioSession();
+  await this.avPlayer.play().catch((error: BusinessError) => {
+    Logger.error(TAG,
+      `play failed, code is ${error.code}, message is ${error.message}`);
+  });
+  // ...
+}
 ```
 
-[AVPlayerController.ets](https://gitcode.com/harmonyos_samples/audio-focus/blob/master/entry/src/main/ets/common/util/AVPlayerController.ets#L716-L732)
+```typescript
+async activateAudioSession() {
+  try {
+    this.audioSessionManager.setAudioSessionScene(audio.AudioSessionScene.AUDIO_SESSION_SCENE_MEDIA)
+    let concurrencyMode: audio.AudioConcurrencyMode = this.isMuted ?
+      audio.AudioConcurrencyMode.CONCURRENCY_MIX_WITH_OTHERS :
+      AppStorage.get(CommonConstants.KEY_AUDIO_CONCURRENCY_MODE) as audio.AudioConcurrencyMode;
+    // The default concurrency mode (system default focus policy) would interrupt the
+    // currently playing background audio, so it is mapped to mix with others to allow
+    // simultaneous playback.
+    if (concurrencyMode === audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT) {
+      concurrencyMode = audio.AudioConcurrencyMode.CONCURRENCY_MIX_WITH_OTHERS;
+    }
+    let strategy: audio.AudioSessionStrategy = {
+      concurrencyMode: concurrencyMode
+    };
+    await this.audioSessionManager.activateAudioSession(strategy);
+    Logger.info(TAG, 'activateAudioSession SUCCESS');
+  } catch (error) {
+    Logger.error(TAG, `activateAudioSession failed,code is ${error.code},message is ${error.message}`);
+  }
+}
+```
 
 2. 播放暂停或结束后，调用[deactivateAudioSession()](../harmonyos-references/arkts-apis-audio-audiosessionmanager.md#deactivateaudiosession12)释放音频焦点。
 
+```typescript
+async mediaPause() {
+  if (this.avPlayer && this.avPlayer.state !== 'paused') {
+    try {
+      await this.avPlayer.pause().catch((error: BusinessError) => {
+        Logger.error(TAG,
+          `pause failed, code is ${error.code}, message is ${error.message}`);
+      });
+      // ...
+      let isScrolling: boolean | undefined = AppStorage.get(CommonConstants.KEY_IS_SCROLLING)
+      if (!isScrolling) {
+        this.deactivateAudioSession();
+        Logger.info(TAG, 'mediaPause success and deactivateAudioSession')
+      }
+      Logger.info(TAG, 'mediaPause');
+    } catch (error) {
+      if (error.code !== null && error.message !== null) {
+        Logger.error(TAG, `mediaPause failed, code is ${error.code}, message is ${error.message}`);
+      }
+    }
+  }
+}
 ```
-1. async mediaPause() {
-2. if (this.avPlayer && this.avPlayer.state !== 'paused') {
-3. try {
-4. await this.avPlayer.pause().catch((error: BusinessError) => {
-5. Logger.error(TAG,
-6. `pause failed, code is ${error.code}, message is ${error.message}`);
-7. });
-8. // ...
-9. let isScrolling: boolean | undefined = AppStorage.get('isScrolling')
-10. if (!isScrolling) {
-11. this.deactivateAudioSession();
-12. Logger.info(TAG, 'mediaPause success and deactivateAudioSession')
-13. }
-14. Logger.info(TAG, 'mediaPause');
-15. } catch (error) {
-16. if (error.code !== null && error.message !== null) {
-17. Logger.error(TAG, `mediaPause failed, code is ${error.code}, message is ${error.message}`);
-18. }
-19. }
-20. }
-21. }
-```
-
-[AVPlayerController.ets](https://gitcode.com/harmonyos_samples/audio-focus/blob/master/entry/src/main/ets/common/util/AVPlayerController.ets#L428-L461)
 
 ## 同应用内多音频流焦点冲突处理
 
@@ -311,63 +310,60 @@ AudioSession自定义焦点策略的原则主要为以下2点：
 
 1. 定义播放实例类，每个实例类初始化时都需要创建一个单独的AudioRender实例，播放传入的音频流。
 
-```
-1. export class AudioItem {
-2. // ...
-3. audioRenderController: AudioRenderController | undefined = undefined;
-4. constructor(img: Resource, audioUrl: string, isPlaying: boolean, tag: string,
-5. avSessionController: AVSessionController) {
-6. // ...
-7. this.audioRenderController = new AudioRenderController(this.tag);
-8. // ...
-9. }
-10. // ...
-11. }
-```
+```typescript
+export class AudioItem {
+  // ...
+  public audioRenderController: AudioRenderController | undefined = undefined;
 
-[AudioItem.ets](https://gitcode.com/harmonyos_samples/audio-focus/blob/master/entry/src/main/ets/pages/multiAudioStreamPlayScene/viewModel/AudioItem.ets#L11-L113)
+  constructor(img: Resource, audioUrl: string, isPlaying: boolean, tag: string,
+    avSessionController: AVSessionController) {
+    // ...
+    this.audioRenderController = new AudioRenderController(this.tag);
+    // ...
+  }
+
+  // ...
+}
+```
 
 2. 初始化不同播放实例类，每个实例类传入不同对应音频流，保证一个AudioRender实例控制和渲染一条音频流。
 
+```typescript
+@Component
+struct MultiAudioStreamPlayScene {
+  private avSessionController: AVSessionController = new AVSessionController();
+  // Instantiate three audio streams,
+  // with each AudioRender instance independently controlling the rendering of one audio stream.
+  @State audioItems: AudioItem[] =
+    [new AudioItem($r('app.media.ic_avatar12'), AudioNameTag.FIRST_SONG_NAME + CommonConstants.AUDIO_TYPE, false,
+      AudioNameTag.FIRST_SONG_NAME, this.avSessionController),
+      new AudioItem($r('app.media.ic_avatar13'), AudioNameTag.SECOND_SONG_NAME + CommonConstants.AUDIO_TYPE, false,
+        AudioNameTag.SECOND_SONG_NAME, this.avSessionController),
+      new AudioItem($r('app.media.ic_avatar14'), AudioNameTag.THIRD_SONG_NAME + CommonConstants.AUDIO_TYPE, false,
+        AudioNameTag.THIRD_SONG_NAME, this.avSessionController)]
+  // ...
+}
 ```
-1. @Component
-2. struct MultiAudioStreamPlayScene {
-3. private avSessionController: AVSessionController = new AVSessionController();
-4. // Instantiate three audio streams, with each AudioRender instance independently controlling the rendering of one audio stream.
-5. @State audioItems: AudioItem[] =
-6. [new AudioItem($r('app.media.ic_avatar12'), AudioNameTag.FIRST_SONG_NAME + CommonConstants.AUDIO_TYPE, false,
-7. AudioNameTag.FIRST_SONG_NAME, this.avSessionController),
-8. new AudioItem($r('app.media.ic_avatar13'), AudioNameTag.SECOND_SONG_NAME + CommonConstants.AUDIO_TYPE, false,
-9. AudioNameTag.SECOND_SONG_NAME, this.avSessionController),
-10. new AudioItem($r('app.media.ic_avatar14'), AudioNameTag.THIRD_SONG_NAME + CommonConstants.AUDIO_TYPE, false,
-11. AudioNameTag.THIRD_SONG_NAME, this.avSessionController)]
-12. // ...
-13. }
-```
-
-[MultiAudioStreamPlayScene.ets](https://gitcode.com/harmonyos_samples/audio-focus/blob/master/entry/src/main/ets/pages/multiAudioStreamPlayScene/view/MultiAudioStreamPlayScene.ets#L30-L94)
 
 3. 调用[setInterruptMode](../harmonyos-references/arkts-apis-audio-audiorenderer.md#setinterruptmode9)函数设置焦点模式。
 
+```typescript
+setInterruptMode(mode: audio.InterruptMode) {
+  if (!this.audioRenderer) {
+    Logger.info(TAG, 'set interrupt callback failed, audioRenderer is null.');
+    return;
+  }
+  this.audioRenderer.setInterruptMode(mode).then(() => {
+    Logger.info(TAG, 'setInterruptMode Success!');
+  }).catch((err: BusinessError) => {
+    Logger.info(TAG, `setInterruptMode Fail: ${err}`);
+  });
+}
 ```
-1. setInterruptMode(mode: audio.InterruptMode) {
-2. if (!this.audioRenderer) {
-3. Logger.info(TAG, 'set interrupt callback failed, audioRenderer is null.');
-4. return;
-5. }
-6. this.audioRenderer.setInterruptMode(mode).then(() => {
-7. Logger.info(TAG, 'setInterruptMode Success!');
-8. }).catch((err: BusinessError) => {
-9. Logger.info(TAG, `setInterruptMode Fail: ${err}`);
-10. });
-11. }
-```
-
-[AudioRenderController.ets](https://gitcode.com/harmonyos_samples/audio-focus/blob/master/entry/src/main/ets/common/util/AudioRenderController.ets#L162-L172)
 
 ## 典型问题场景
 
-### 直播或广告被中断后不恢复问题
+## 直播或广告被中断后不恢复问题
 
 **问题现象**
 
@@ -391,20 +387,18 @@ AudioSession自定义焦点策略的原则主要为以下2点：
 * 如果先播应用从后台切换到前台，开发者需要在生命周期方法onPageShow()中主动调用播放接口以恢复播放。具体参考[使用AVPlayer播放视频时，如何实现应用从后台切回前台时继续播放原视频](../harmonyos-faqs/faqs-media-4.md)。
 * 如果先播应用在前台被stop，那么需要应用适配交互行为，让用户主动触发以恢复播放。
 
+```typescript
+XComponent({
+  id: 'VideoPlayer',
+  type: XComponentType.SURFACE,
+  controller: this.xComponentController
+})
+  .onLoad(() => {
+    this.initAVResource();
+  })
+  .width('100%')
+  .height('100%')
 ```
-1. XComponent({
-2. id: 'VideoPlayer',
-3. type: XComponentType.SURFACE,
-4. controller: this.xComponentController
-5. })
-6. .onLoad(() => {
-7. this.initAVResource();
-8. })
-9. .width('100%')
-10. .height('100%')
-```
-
-[VideoScene.ets](https://gitcode.com/harmonyos_samples/audio-focus/blob/master/entry/src/main/ets/pages/videoScene/view/VideoScene.ets#L72-L81)
 
 ### VoIP通话被中断后不恢复问题
 
@@ -437,143 +431,132 @@ VoIP通话场景中，播放对端通话声音的音频流类型应当设置为S
 1. **音频流类型设置解决方案**
    * 了解音频流类型与系统默认策略关联原理。
    * 参考[音频流类型正确配置](bpta-audio-focus-management.md#section2888185819153)，选择正确的音频流类型。
-   * 根据所用的音频开发方法，正确[设置音频流类型](../harmonyos-guides/using-right-streamusage-and-sourcetype.md#设置音频流类型)。
+   * 根据所用的音频开发方法，正确[设置播放流类型](../harmonyos-guides/using-right-streamusage-for-playback.md#设置播放流类型)。
 
-   ```
-   1. async initAVResource() {
-   2. // Create an instance of AudioRenderer and set the audio stream type to STREAM_USAGE_VOICE_COMMUNICATION
-   3. this.audioRenderController.createAndInitAudioRender(this.avSessionController, this.renderFileName,
-   4. audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION);
-   5. // Create an AudioRCapturer instance and set the audio stream type to SOURCE_TYPE_VOICE_COMMUNICATION
-   6. this.audioCapturerController.createAndInitAudioCapturer(this.avSessionController, this.captureFileName,
-   7. audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION);
-   8. Logger.info('initAVResource SUCCESS');
-   9. }
-   ```
-
-   [VoIPScene.ets](https://gitcode.com/harmonyos_samples/audio-focus/blob/master/entry/src/main/ets/pages/voipScene/view/VoIPScene.ets#L62-L71)
-
-   ```
-   1. async createAndInitAudioRender(
-   2. avSessionController: AVSessionController, audioUrl: string, mediaUsage: audio.StreamUsage) {
-   3. // Set up AVSession
-   4. this.avSessionController = avSessionController;
-   5. // Set the audio encoding information
-   6. let audioStreamInfo: audio.AudioStreamInfo = {
-   7. samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
-   8. channels: audio.AudioChannel.CHANNEL_2,
-   9. sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-   10. encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
-   11. };
-   12. // Set the audio stream type
-   13. let audioRendererInfo: audio.AudioRendererInfo = {
-   14. usage: mediaUsage,
-   15. rendererFlags: 0
-   16. };
-
-   18. let audioRendererOptions: audio.AudioRendererOptions = {
-   19. streamInfo: audioStreamInfo,
-   20. rendererInfo: audioRendererInfo
-   21. };
-   22. // Create an AudioRender instance
-   23. this.audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
-   24. await this.setAudioFdSrcByName(audioUrl);
-   25. this.setWriteDataCallback();
-   26. this.setAudioStateChangeCallBack();
-   27. this.setAudioInterruptCallBack();
-   28. let playbackState: avSession.AVPlaybackState = {
-   29. state: avSession.PlaybackState.PLAYBACK_STATE_PAUSE,
-   30. loopMode: avSession.LoopMode.LOOP_MODE_SINGLE
-   31. };
-   32. try {
-   33. await this.avSessionController?.session?.setAVPlaybackState(playbackState);
-   34. } catch (error) {
-   35. Logger.error(TAG, `setAVPlaybackState fail. code is ${error.code}, error message is ${error.message}`);
-   36. }
-   37. }
+   ```typescript
+   initAVResource() {
+     // Create an instance of AudioRenderer and set the audio stream type to STREAM_USAGE_VOICE_COMMUNICATION
+     this.audioRenderController.createAndInitAudioRender(this.avSessionController, this.renderFileName,
+       audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION);
+     // Create an AudioRCapturer instance and set the audio stream type to SOURCE_TYPE_VOICE_COMMUNICATION
+     this.audioCapturerController.createAndInitAudioCapturer(this.avSessionController, this.captureFileName,
+       audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION);
+     Logger.info('initAVResource SUCCESS');
+   }
    ```
 
-   [AudioRenderController.ets](https://gitcode.com/harmonyos_samples/audio-focus/blob/master/entry/src/main/ets/common/util/AudioRenderController.ets#L42-L79)
-
-   ```
-   1. async createAndInitAudioCapturer(
-   2. avSessionController: AVSessionController, audioName: string, sourceType: audio.SourceType) {
-   3. // Set up AVSession
-   4. this.avSessionController = avSessionController;
-   5. // Set the audio encoding information
-   6. let audioStreamInfo: audio.AudioStreamInfo = {
-   7. samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
-   8. channels: audio.AudioChannel.CHANNEL_2,
-   9. sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-   10. encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
-   11. };
-   12. // Set the audio stream type
-   13. let audioCapturerInfo: audio.AudioCapturerInfo = {
-   14. source: sourceType,
-   15. capturerFlags: 0
-   16. };
-
-   18. let audioCapturerOptions: audio.AudioCapturerOptions = {
-   19. streamInfo: audioStreamInfo,
-   20. capturerInfo: audioCapturerInfo
-   21. };
-   22. // Create an AudioCapturer instance
-   23. this.audioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
-   24. await this.setAudioFdSrcByName(audioName);
-   25. this.setReadDataCallback();
-   26. this.setAudioStateChangeCallBack();
-   27. this.setAudioInterruptCallBack();
-   28. let playbackState: avSession.AVPlaybackState = {
-   29. state: avSession.PlaybackState.PLAYBACK_STATE_PAUSE,
-   30. loopMode: avSession.LoopMode.LOOP_MODE_SINGLE
-   31. };
-   32. try {
-   33. await this.avSessionController?.session?.setAVPlaybackState(playbackState);
-   34. } catch (error) {
-   35. Logger.error(TAG, `setAVPlaybackState failed, code is ${error.code}, message is ${error.message}}`);
-   36. }
-   37. }
+   ```typescript
+   async createAndInitAudioRender(
+     avSessionController: AVSessionController, audioUrl: string, mediaUsage: audio.StreamUsage) {
+     // Set up AVSession
+     this.avSessionController = avSessionController;
+     // Set the audio encoding information
+     let audioStreamInfo: audio.AudioStreamInfo = {
+       samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+       channels: audio.AudioChannel.CHANNEL_2,
+       sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+       encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+     };
+     // Set the audio stream type
+     let audioRendererInfo: audio.AudioRendererInfo = {
+       usage: mediaUsage,
+       rendererFlags: 0
+     };
+     let audioRendererOptions: audio.AudioRendererOptions = {
+       streamInfo: audioStreamInfo,
+       rendererInfo: audioRendererInfo
+     };
+     // Create an AudioRender instance
+     this.audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+     await this.setAudioFdSrcByName(audioUrl);
+     this.setWriteDataCallback();
+     this.setAudioStateChangeCallBack();
+     this.setAudioInterruptCallBack();
+     let playbackState: avSession.AVPlaybackState = {
+       state: avSession.PlaybackState.PLAYBACK_STATE_PAUSE,
+       loopMode: avSession.LoopMode.LOOP_MODE_SINGLE
+     };
+     try {
+       await this.avSessionController?.session?.setAVPlaybackState(playbackState);
+     } catch (error) {
+       Logger.error(TAG, `setAVPlaybackState fail. code is ${error.code}, error message is ${error.message}`);
+     }
+   }
    ```
 
-   [AudioCapturerController.ets](https://gitcode.com/HarmonyOS_Samples/audio-focus/blob/master/entry/src/main/ets/common/util/AudioCapturerController.ets#L35-L72)
+   ```typescript
+   async createAndInitAudioCapturer(
+     avSessionController: AVSessionController, audioName: string, sourceType: audio.SourceType) {
+     // Set up AVSession
+     this.avSessionController = avSessionController;
+     // Set the audio encoding information
+     let audioStreamInfo: audio.AudioStreamInfo = {
+       samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+       channels: audio.AudioChannel.CHANNEL_2,
+       sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+       encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+     };
+     // Set the audio stream type
+     let audioCapturerInfo: audio.AudioCapturerInfo = {
+       source: sourceType,
+       capturerFlags: 0
+     };
+     let audioCapturerOptions: audio.AudioCapturerOptions = {
+       streamInfo: audioStreamInfo,
+       capturerInfo: audioCapturerInfo
+     };
+     // Create an AudioCapturer instance
+     this.audioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+     this.setAudioFdSrcByName(audioName);
+     this.setReadDataCallback();
+     this.setAudioStateChangeCallBack();
+     this.setAudioInterruptCallBack();
+     let playbackState: avSession.AVPlaybackState = {
+       state: avSession.PlaybackState.PLAYBACK_STATE_PAUSE,
+       loopMode: avSession.LoopMode.LOOP_MODE_SINGLE
+     };
+     try {
+       await this.avSessionController?.session?.setAVPlaybackState(playbackState);
+     } catch (error) {
+       Logger.error(TAG, `setAVPlaybackState failed, code is ${error.code}, message is ${error.message}`);
+     }
+   }
+   ```
 2. **焦点中断事件处理解决方案**
    * 由于恢复事件属于非强制类型，系统不会自动恢复先播音频播放。先播应用收到中断提示为InterruptHint.INTERRUPT\_HINT\_RESUME（音频恢复）后，需要主动在相应的事件中调用播放接口完成恢复。具体操作参考[处理音频焦点变化](../harmonyos-guides/audio-playback-concurrency.md#处理音频焦点变化)。
 
+   ```typescript
+   setAudioInterruptCallBack() {
+     if (!this.audioRenderer) {
+       Logger.info(TAG, 'set interrupt callback failed, audioRenderer is null.');
+       return;
+     }
+     Logger.info(TAG, 'setAudioInterruptCallBack.');
+     try {
+       this.audioRenderer.on('audioInterrupt', async (interruptInfo: audio.InterruptEvent) => {
+         let playbackState: avSession.AVPlaybackState = {
+           state: avSession.PlaybackState.PLAYBACK_STATE_PLAY,
+           loopMode: avSession.LoopMode.LOOP_MODE_SINGLE
+         };
+         if (interruptInfo.forceType === audio.InterruptForceType.INTERRUPT_SHARE &&
+           interruptInfo.hintType === audio.InterruptHint.INTERRUPT_HINT_RESUME) {
+           Logger.info('audio resume play.');
+           this.mediaPlay()
+         } else if (interruptInfo.forceType === audio.InterruptForceType.INTERRUPT_FORCE &&
+           (interruptInfo.hintType === audio.InterruptHint.INTERRUPT_HINT_PAUSE ||
+             interruptInfo.hintType === audio.InterruptHint.INTERRUPT_HINT_STOP)) {
+           playbackState.state = avSession.PlaybackState.PLAYBACK_STATE_PAUSE;
+           this.mediaPause()
+           Logger.info(TAG,
+             `tag--->${this.tag},interruptInfo.forceType--->${interruptInfo.forceType},interruptInfo.hintType--->${interruptInfo.hintType}`)
+         }
+         await this.avSessionController?.session?.setAVPlaybackState(playbackState);
+       })
+     } catch (error) {
+       Logger.error(TAG, `setAudioInterruptCallBack fail. code is ${error.code}, error message is ${error.message}`);
+     }
+   }
    ```
-   1. setAudioInterruptCallBack() {
-   2. if (!this.audioRenderer) {
-   3. Logger.info(TAG, 'set interrupt callback failed, audioRenderer is null.');
-   4. return;
-   5. }
-   6. Logger.info(TAG, 'setAudioInterruptCallBack.');
-   7. try {
-   8. this.audioRenderer.on('audioInterrupt', async (interruptInfo: audio.InterruptEvent) => {
-
-   10. let playbackState: avSession.AVPlaybackState = {
-   11. state: avSession.PlaybackState.PLAYBACK_STATE_PLAY,
-   12. loopMode: avSession.LoopMode.LOOP_MODE_SINGLE
-   13. };
-   14. if (interruptInfo.forceType === audio.InterruptForceType.INTERRUPT_SHARE &&
-   15. interruptInfo.hintType === audio.InterruptHint.INTERRUPT_HINT_RESUME) {
-   16. Logger.info('audio resume play.');
-   17. this.mediaPlay()
-   18. } else if (interruptInfo.forceType === audio.InterruptForceType.INTERRUPT_FORCE &&
-   19. (interruptInfo.hintType === audio.InterruptHint.INTERRUPT_HINT_PAUSE ||
-   20. interruptInfo.hintType === audio.InterruptHint.INTERRUPT_HINT_STOP)) {
-   21. playbackState.state = avSession.PlaybackState.PLAYBACK_STATE_PAUSE;
-   22. this.mediaPause()
-   23. Logger.info(TAG,
-   24. `tag--->${this.tag},interruptInfo.forceType--->${interruptInfo.forceType},interruptInfo.hintType--->${interruptInfo.hintType}`)
-   25. }
-   26. await this.avSessionController?.session?.setAVPlaybackState(playbackState);
-   27. })
-   28. } catch (error) {
-   29. Logger.error(TAG, `setAudioInterruptCallBack fail. code is ${error.code}, error message is ${error.message}`);
-   30. }
-   31. }
-   ```
-
-   [AudioRenderController.ets](https://gitcode.com/harmonyos_samples/audio-focus/blob/master/entry/src/main/ets/common/util/AudioRenderController.ets#L176-L206)
 
 ### 信息流内嵌短视频中断先播音频不恢复问题
 
@@ -598,9 +581,9 @@ VoIP通话场景中，播放对端通话声音的音频流类型应当设置为S
 
 **解决方案**
 
-短视频应该配置的音频流类型是STREAM\_USAGE\_MOVIE，根据所用的音频开发方法，正确[设置音频流类型](../harmonyos-guides/using-right-streamusage-and-sourcetype.md#设置音频流类型)。
+短视频应该配置的音频流类型是STREAM\_USAGE\_MOVIE，根据所用的音频开发方法，正确[设置播放流类型](../harmonyos-guides/using-right-streamusage-for-playback.md#设置播放流类型)。
 
-注意
+**注意** 
 
 * 如果使用AVPlayer进行短视频应用开发，可以通过设置AVPlayer的属性audioRenderInfo来设置音频流类型。
 * 如果未主动设置该属性，AVPlayer将默认使用STREAM\_USAGE\_MUSIC类型。但是，当媒体源包含视频时，默认值为STREAM\_USAGE\_MOVIE。
@@ -608,44 +591,149 @@ VoIP通话场景中，播放对端通话声音的音频流类型应当设置为S
 后播音频流是内嵌在信息流中的短视频，比如新闻、公众号文章中插入的短视频。当先播音频流类型为STREAM\_USAGE\_MUSIC、STREAM\_USAGE\_MOVIE、STREAM\_USAGE\_AUDIOBOOK时，用户通常期望在短视频播放完毕后，先播音频能恢复播放。此时系统的默认音频焦点策略不能解决这个问题，需要使用AudioSession进行自定义焦点策略。
 
 * 根据业务需求，选择适当的[音频会话策略](../harmonyos-guides/audio-session-management.md#音频会话策略)以满足用户播放预期。对于该场景，应选择暂停模式（CONCURRENCY\_PAUSE\_OTHERS）。
-* 参考[使用AudioSession管理应用音频焦点(ArkTS)](../harmonyos-guides/audio-session-management.md)进行业务实现。
+* 参考[使用音频会话修改焦点策略](../harmonyos-guides/audio-session-management.md#使用音频会话修改焦点策略)进行业务实现。
 
-```
-1. async mediaPlay() {
-2. // ...
-3. await this.activateAudioSession();
-4. await this.avPlayer.play().catch((error: BusinessError) => {
-5. Logger.error(TAG,
-6. `play failed, code is ${error.code}, message is ${error.message}`);
-7. });
-8. // ...
-9. }
-```
-
-[AVPlayerController.ets](https://gitcode.com/harmonyos_samples/audio-focus/blob/master/entry/src/main/ets/common/util/AVPlayerController.ets#L392-L424)
-
-```
-1. async activateAudioSession() {
-2. try {
-3. this.audioSessionManager.setAudioSessionScene(audio.AudioSessionScene.AUDIO_SESSION_SCENE_MEDIA)
-4. let strategy: audio.AudioSessionStrategy = {
-5. concurrencyMode: this.isMuted ? audio.AudioConcurrencyMode.CONCURRENCY_MIX_WITH_OTHERS :
-6. AppStorage.get('audioConcurrencyMode') as audio.AudioConcurrencyMode
-7. };
-8. await this.audioSessionManager.activateAudioSession(strategy).catch(() => {
-9. Logger.info('activateAudioSession SUCCESS');
-10. }).then(() => {
-11. Logger.info('activateAudioSession SUCCESS');
-12. });
-13. } catch (error) {
-14. Logger.error(TAG, `activateAudioSession failed,code is ${error.code},message is ${error.message}}`);
-15. }
-16. }
+```typescript
+async mediaPlay() {
+  // ...
+  await this.activateAudioSession();
+  await this.avPlayer.play().catch((error: BusinessError) => {
+    Logger.error(TAG,
+      `play failed, code is ${error.code}, message is ${error.message}`);
+  });
+  // ...
+}
 ```
 
-[AVPlayerController.ets](https://gitcode.com/harmonyos_samples/audio-focus/blob/master/entry/src/main/ets/common/util/AVPlayerController.ets#L716-L732)
+```typescript
+async activateAudioSession() {
+  try {
+    this.audioSessionManager.setAudioSessionScene(audio.AudioSessionScene.AUDIO_SESSION_SCENE_MEDIA)
+    let concurrencyMode: audio.AudioConcurrencyMode = this.isMuted ?
+      audio.AudioConcurrencyMode.CONCURRENCY_MIX_WITH_OTHERS :
+      AppStorage.get(CommonConstants.KEY_AUDIO_CONCURRENCY_MODE) as audio.AudioConcurrencyMode;
+    // The default concurrency mode (system default focus policy) would interrupt the
+    // currently playing background audio, so it is mapped to mix with others to allow
+    // simultaneous playback.
+    if (concurrencyMode === audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT) {
+      concurrencyMode = audio.AudioConcurrencyMode.CONCURRENCY_MIX_WITH_OTHERS;
+    }
+    let strategy: audio.AudioSessionStrategy = {
+      concurrencyMode: concurrencyMode
+    };
+    await this.audioSessionManager.activateAudioSession(strategy);
+    Logger.info(TAG, 'activateAudioSession SUCCESS');
+  } catch (error) {
+    Logger.error(TAG, `activateAudioSession failed,code is ${error.code},message is ${error.message}`);
+  }
+}
+```
 
-### 短视频上下滑动间隙漏音问题
+### 应用内短视频与VoIP通话焦点冲突问题
+
+**问题现象**
+
+短视频播放时收到应用内好友来电，VoIP通话和短视频音频流存在焦点冲突。
+
+**分析思路**
+
+本小节针对部分场景结合用户体验，建议具体焦点策略如下：
+
+| 场景 | 全屏模式策略 | 小窗模式策略 | 用户体验 |
+| --- | --- | --- | --- |
+| 全屏专注通话 | 暂停短视频播放 | 降低短视频音量 | 全屏专注通话，小窗边看边听 |
+| 全屏暂停+小窗混音 | 暂停短视频播放 | 混音播放 | 全屏暂停，小窗继续播放 |
+| 全屏降低+小窗混音 | 降低短视频音量 | 混音播放 | 全屏音量降低，小窗正常播放 |
+| 全屏停止+小窗暂停 | 停止短视频播放 | 暂停短视频播放 | 全屏需手动播放，小窗自动播放 |
+
+**解决方案**
+
+该场景主要涉及VoIP通话与短视频之间的音频焦点冲突处理。根据VoIP通话窗口模式的不同，采用不同的音频焦点策略，以VoIP全屏专注通话场景为例（其他场景音频焦点策略设置参考：[自定义焦点策略设置](bpta-audio-focus-management.md#section048671914296)）：
+
+| 通话模式 | 短视频行为 | 音频焦点策略 |
+| --- | --- | --- |
+| VoIP全屏通话 | 暂停播放 | CONCURRENCY\_PAUSE\_OTHERS |
+| VoIP小窗通话 | 继续播放，压低短视频音量 | CONCURRENCY\_DUCK\_OTHERS |
+
+VoIP全屏专注通话场景具体实现：
+
+1. 通过[voipCall.reportIncomingCall()](../harmonyos-references/call-voipcall.md#voipcallreportincomingcall)激活VoIP来电消息。
+
+   ```typescript
+   // Activate VoIP incoming message.
+   async startVoIPCall() {
+     this.callId = 'short_video_call_' + Date.now();
+
+     let voipCallAttribute: voipCall.VoipCallAttribute = {
+       callId: this.callId,
+       voipCallType: voipCall.VoipCallType.VOIP_CALL_VOICE,
+       userName: 'Short Video User',
+       userProfile: image.createPixelMapSync(new ArrayBuffer(100), { size: { width: 90, height: 90 } }),
+       abilityName: 'VoIPCallAbility',
+       voipCallState: voipCall.VoipCallState.VOIP_CALL_STATE_RINGING
+     };
+
+     try {
+       // Initiate a call request.
+       await voipCall.reportIncomingCall(voipCallAttribute);
+       this.voipCallState = voipCall.VoipCallState.VOIP_CALL_STATE_RINGING;
+       AppStorage.setOrCreate(CommonConstants.KEY_VOIP_CALL_STATE, voipCall.VoipCallState.VOIP_CALL_STATE_RINGING);
+       AppStorage.setOrCreate(CommonConstants.KEY_VOIP_CALL_ID, this.callId);
+       Logger.info(TAG, 'VoIP call reportIncomingCall SUCCESS');
+     } catch (error) {
+       Logger.error(TAG, `reportIncomingCall failed, code is ${error.code}, message is ${error.message}`);
+     }
+   }
+   ```
+2. 根据VoIP通话状态及通话窗口模式采用对应焦点策略。
+   * VoIP激活状态：全屏通话时，设置音频并发模式为CONCURRENCY\_PAUSE\_OTHERS，并通过自定义mediaPause()方法暂停短视频播放；小窗通话时，设置音频并发模式为CONCURRENCY\_DUCK\_OTHERS，压低短视频音量。
+   * VoIP通话断开：通过avPlayerController.mediaPlay()方法恢复短视频播放。
+
+   ```typescript
+   // VoIP call status change event.
+   async handleCallStateChange() {
+     if (this.voipCallState === voipCall.VoipCallState.VOIP_CALL_STATE_ACTIVE) {
+       // ...
+       let concurrencyMode: audio.AudioConcurrencyMode = audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT;
+
+       if (this.isVoIPFullScreen) {
+         // Short video pause.
+         concurrencyMode = audio.AudioConcurrencyMode.CONCURRENCY_PAUSE_OTHERS;
+         this.avPlayerController.mediaPause();
+       } else {
+         // Reduce the volume of short videos.
+         concurrencyMode = audio.AudioConcurrencyMode.CONCURRENCY_DUCK_OTHERS;
+       }
+
+       let strategy: audio.AudioSessionStrategy = {
+         concurrencyMode: concurrencyMode // Audio concurrent mode.
+       };
+       try {
+         // Activate audio session.
+         await this.audioSessionManager.activateAudioSession(strategy);
+       } catch (error) {
+         Logger.error(TAG, `VoIP audio session activate fail. error message is ${error.message}`);
+       }
+       // ...
+     } else if (this.voipCallState === voipCall.VoipCallState.VOIP_CALL_STATE_DISCONNECTED) {
+       // ...
+       // Stop VoIP call Ability.
+       setTimeout(() => {
+         this.voipCallState = voipCall.VoipCallState.VOIP_CALL_STATE_IDLE;
+         AppStorage.setOrCreate(CommonConstants.KEY_VOIP_CALL_STATE, voipCall.VoipCallState.VOIP_CALL_STATE_IDLE);
+         AppStorage.get<common.UIAbilityContext>(CommonConstants.KEY_VOIP_CALL_ABILITY_CONTEXT)?.terminateSelf()
+           .catch(() => {
+             Logger.error(TAG, 'AppStorage get VoIPCallAbilityContext failed');
+           })
+       }, 1000);
+
+       // After a VoIP call hangs up, play a short video.
+       this.avPlayerController.mediaPlay();
+     }
+   }
+   ```
+
+## 短视频上下滑动间隙漏音问题
 
 **问题现象**
 
@@ -658,7 +746,7 @@ VoIP通话场景中，播放对端通话声音的音频流类型应当设置为S
 
 该问题主要是因为上下两个短视频保持焦点不连贯，导致在滑动间隙后台音频重新获取焦点恢复播放。上文提到的音频会话（AudioSession）机制除了能够自定义焦点策略以外，还具有延迟焦点释放的功能。原理流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/IQZ9pNSBRTCs39hxXej3gQ/zh-cn_image_0000002531200173.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/MyCVg6_xRXmhxw5JHg8rlw/zh-cn_image_0000002531200173.png "点击放大")
 
 1. 若AudioSession处于激活状态，应用的音频流全部停止时，不会立刻释放音频焦点，系统会保持音频焦点进入静默等待状态，直到音频会话停用或者该应用有新的音频流申请焦点。
 2. 若应用存在音频流处于运行状态，AudioSession停用后，不会立刻释放音频焦点，系统会保持音频焦点，直到应用所有音频流均停止。
@@ -674,60 +762,56 @@ VoIP通话场景中，播放对端通话声音的音频流类型应当设置为S
 
 * 根据业务需要，选择合适的[音频会话策略](../harmonyos-guides/audio-session-management.md#音频会话策略)以满足用户播放预期。针对该场景应当选择暂停模式（CONCURRENCY\_PAUSE\_OTHERS），同时监听短视频列表的滚动状态，在滚动时即使视频暂停，也不立刻释放焦点，滚动结束后再释放焦点，达到延时释放的效果。
 
-  ```
-  1. Swiper(this.swiperController) {
-  2. LazyForEach(this.source, (item: VideoData, index: number) => {
-  3. VideoPlayer({
-  4. curSource: item,
-  5. curIndex: this.curIndex,
-  6. index: index,
-  7. avSessionController: this.avSessionController,
-  8. avPlayerController: this.avPlayerController
-  9. })
-  10. })
-  11. }
-  12. // ...
-  13. .onScrollStateChanged((state: ScrollState) => {
-  14. AppStorage.setOrCreate('isScrolling', true);
-  15. if (state === ScrollState.Idle) {
-  16. AppStorage.setOrCreate('isScrolling', false);
-  17. }
-  18. Logger.info(TAG, `scroll state is ${state}`)
-  19. })
-  ```
-
-  [ShortVideoScene.ets](https://gitcode.com/HarmonyOS_Samples/audio-focus/blob/master/entry/src/main/ets/pages/shortVideoScene/view/ShortVideoScene.ets#L97-L125)
-
-  ```
-  1. async mediaPause() {
-  2. if (this.avPlayer && this.avPlayer.state !== 'paused') {
-  3. try {
-  4. await this.avPlayer.pause().catch((error: BusinessError) => {
-  5. Logger.error(TAG,
-  6. `pause failed, code is ${error.code}, message is ${error.message}`);
-  7. });
-  8. // ...
-  9. let isScrolling: boolean | undefined = AppStorage.get('isScrolling')
-  10. if (!isScrolling) {
-  11. this.deactivateAudioSession();
-  12. Logger.info(TAG, 'mediaPause success and deactivateAudioSession')
-  13. }
-  14. Logger.info(TAG, 'mediaPause');
-  15. } catch (error) {
-  16. if (error.code !== null && error.message !== null) {
-  17. Logger.error(TAG, `mediaPause failed, code is ${error.code}, message is ${error.message}`);
-  18. }
-  19. }
-  20. }
-  21. }
+  ```typescript
+  Swiper(this.swiperController) {
+    LazyForEach(this.source, (item: VideoData, index: number) => {
+      VideoPlayer({
+        curSource: item,
+        curIndex: this.curIndex,
+        index: index,
+        avSessionController: this.avSessionController,
+        avPlayerController: this.avPlayerController
+      })
+    })
+  }
+  // ...
+  .onScrollStateChanged((state: ScrollState) => {
+    AppStorage.setOrCreate(CommonConstants.KEY_IS_SCROLLING, true);
+    if (state === ScrollState.Idle) {
+      AppStorage.setOrCreate(CommonConstants.KEY_IS_SCROLLING, false);
+    }
+    Logger.info(TAG, `scroll state is ${state}`)
+  })
   ```
 
-  [AVPlayerController.ets](https://gitcode.com/harmonyos_samples/audio-focus/blob/master/entry/src/main/ets/common/util/AVPlayerController.ets#L428-L461)
+  ```typescript
+  async mediaPause() {
+    if (this.avPlayer && this.avPlayer.state !== 'paused') {
+      try {
+        await this.avPlayer.pause().catch((error: BusinessError) => {
+          Logger.error(TAG,
+            `pause failed, code is ${error.code}, message is ${error.message}`);
+        });
+        // ...
+        let isScrolling: boolean | undefined = AppStorage.get(CommonConstants.KEY_IS_SCROLLING)
+        if (!isScrolling) {
+          this.deactivateAudioSession();
+          Logger.info(TAG, 'mediaPause success and deactivateAudioSession')
+        }
+        Logger.info(TAG, 'mediaPause');
+      } catch (error) {
+        if (error.code !== null && error.message !== null) {
+          Logger.error(TAG, `mediaPause failed, code is ${error.code}, message is ${error.message}`);
+        }
+      }
+    }
+  }
+  ```
 
-**2. 参考[使用AudioSession管理应用音频焦点(ArkTS)](../harmonyos-guides/audio-session-management.md)进行页面级AudioSession业务实现。**
+**2. 参考[使用音频会话修改焦点策略](../harmonyos-guides/audio-session-management.md#使用音频会话修改焦点策略)进行页面级AudioSession业务实现。**
 
-* 在进入页面时，在对应的生命周期（比如自定组件的生命周期onDidBuild或NavDestination的生命周期onWillAppear）中[激活音频会话](../harmonyos-guides/using-ohaudio-for-session.md#激活音频会话)，针对该场景应当选择暂停模式（CONCURRENCY\_PAUSE\_OTHERS）。
-* 在离开页面时，在对应的生命周期（比如自定组件的生命周期aboutToDisappear或NavDestination的生命周期onWillDisappear）中[停用音频会话](../harmonyos-guides/using-ohaudio-for-session.md#停用音频会话)。
+* 在进入页面时，在对应的生命周期（比如自定组件的生命周期onDidBuild或NavDestination的生命周期onWillAppear）中激活音频会话（参见[开发步骤](../harmonyos-guides/audio-session-management.md#开发步骤-1)中步骤1），针对该场景应当选择暂停模式（CONCURRENCY\_PAUSE\_OTHERS）。
+* 在离开页面时，在对应的生命周期（比如自定组件的生命周期aboutToDisappear或NavDestination的生命周期onWillDisappear）中停用音频会话（参见[开发步骤](../harmonyos-guides/audio-session-management.md#开发步骤-1)中步骤4）。
 
 ### 短音中断先播音频不恢复问题
 
@@ -761,7 +845,7 @@ VoIP通话场景中，播放对端通话声音的音频流类型应当设置为S
 1. **音频流类型设置解决方案**
    * 了解音频流类型与系统默认策略关联原理。
    * 参考[音频流类型正确配置](bpta-audio-focus-management.md#section2888185819153)，选择正确的音频流类型。
-   * 根据所用的音频开发方法，正确[设置音频流类型](../harmonyos-guides/using-right-streamusage-and-sourcetype.md#设置音频流类型)。
+   * 根据所用的音频开发方法，正确[设置播放流类型](../harmonyos-guides/using-right-streamusage-for-playback.md#设置播放流类型)。
 2. **系统默认焦点策略不满足业务预期策略解决方案**
    * 使用AudioSession自定义焦点策略，根据业务需要，选择合适的[音频会话策略](../harmonyos-guides/audio-session-management.md#音频会话策略)以满足用户播放预期。
    * [使用SoundPool播放短音频(ArkTS)](../harmonyos-guides/using-soundpool-for-playback.md)，且[StreamUsage](../harmonyos-references/arkts-apis-audio-e.md#streamusage)指定为STREAM\_USAGE\_MUSIC、STREAM\_USAGE\_MOVIE、STREAM\_USAGE\_AUDIOBOOK等类型播放短音，则其申请焦点时默认为并发模式，不会影响其他音频。
@@ -790,9 +874,9 @@ VoIP通话场景中，播放对端通话声音的音频流类型应当设置为S
 
 1. 当使用系统静音并发接口开发时，该接口让应用以静音状态开始播放音频（或视频），并且静音阶段不影响其他音频，当后续解除静音的时候，再以正常策略申请音频焦点。各类音频开发方法中的静音接口如下：
    * [使用AVPlayer播放音频(ArkTS)](../harmonyos-guides/using-avplayer-for-playback.md)，可以调用[setMediaMuted](../harmonyos-references/arkts-apis-media-avplayer.md#setmediamuted12)函数。
-   * [使用AudioRenderer开发音频播放功能](../harmonyos-guides/using-audiorenderer-for-playback.md)，可调用[setSilentModeAndMixWithOthers](../harmonyos-references/arkts-apis-audio-audiorenderer.md#setsilentmodeandmixwithothers12)函数。
-   * [使用OHAudio开发音频播放功能(C/C++)](../harmonyos-guides/using-ohaudio-for-playback.md)，可调用[OH\_AudioRenderer\_SetSilentModeAndMixWithOthers](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_setsilentmodeandmixwithothers)函数。
-2. 当不使用系统静音接口开发时，则可以使用AudioSession自定义焦点策略为CONCURRENCY\_MIX\_WITH\_OTHERS（并发模式），并手动设置自身应用音量为0即可。具体参考[使用AudioSession管理应用音频焦点(ArkTS)](../harmonyos-guides/audio-session-management.md)进行业务实现。
+   * [使用AudioRenderer开发音频播放功能(ArkTs)](../harmonyos-guides/using-audiorenderer-for-playback.md)，可调用[setSilentModeAndMixWithOthers](../harmonyos-references/arkts-apis-audio-audiorenderer.md#setsilentmodeandmixwithothers12)函数。
+   * [推荐使用OHAudio开发音频播放功能(C/C++)](../harmonyos-guides/using-ohaudio-for-playback.md)，可调用[OH\_AudioRenderer\_SetSilentModeAndMixWithOthers](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_setsilentmodeandmixwithothers)函数。
+2. 当不使用系统静音接口开发时，则可以使用AudioSession自定义焦点策略为CONCURRENCY\_MIX\_WITH\_OTHERS（并发模式），并手动设置自身应用音量为0即可。具体参考[使用音频会话修改焦点策略](../harmonyos-guides/audio-session-management.md#使用音频会话修改焦点策略)进行业务实现。
 
 ### 游戏音效与其他音频冲突问题
 
@@ -814,10 +898,10 @@ VoIP通话场景中，播放对端通话声音的音频流类型应当设置为S
 
 因此，从系统默认焦点策略来看，可能原因如下：
 
-* **游戏配乐、配音中断后台音乐，预期是并发播放，**可参考上文[短音中断场景分析思路](bpta-audio-focus-management.md#section8811136185118)
+* **游戏配乐、配音中断后台音乐，预期是并发播放，**可参考上文[短音中断先播音频不恢复问题](bpta-audio-focus-management.md#section8811136185118)的分析思路。
   + 音频流类型设置错误，导致系统默认策略错误。
   + 系统默认策略不符合用户播放预期。
-* **游戏语音中断后台音乐不恢复**，可参考上文[VoIP通话场景分析思路](bpta-audio-focus-management.md#section195701439164615)
+* **游戏语音中断后台音乐不恢复**，可参考上文[VoIP通话被中断后不恢复问题](bpta-audio-focus-management.md#section195701439164615)的分析思路。
   + 音频流类型设置错误，导致系统默认策略错误。
   + 应用未正确处理中断事件，导致音频中断不恢复。
 * **游戏应用内，VOIP通话音频与游戏音效存在中断，预期是并发播放。**可参考[应用内多音频流焦点处理](bpta-audio-focus-management.md#section168291861114)
@@ -830,14 +914,14 @@ VoIP通话场景中，播放对端通话声音的音频流类型应当设置为S
 1. **音频流类型设置解决方案**
    * 了解音频流类型与系统默认策略关联原理。
    * 参考[音频流类型正确配置](bpta-audio-focus-management.md#section2888185819153)，选择正确的音频流类型。
-   * 根据所用的音频开发方法，正确[设置音频流类型](../harmonyos-guides/using-right-streamusage-and-sourcetype.md#设置音频流类型)。
+   * 根据所用的音频开发方法，正确[设置播放流类型](../harmonyos-guides/using-right-streamusage-for-playback.md#设置播放流类型)。
 2. **游戏动效声音使用了STREAM\_USAGE\_MUSIC类型调整焦点策略方案**
    * 使用AudioSession自定义焦点策略，根据业务需要，选择合适的[音频会话策略](../harmonyos-guides/audio-session-management.md#音频会话策略)以满足用户播放预期。
    * [使用SoundPool播放短音频(ArkTS)](../harmonyos-guides/using-soundpool-for-playback.md)，且[StreamUsage](../harmonyos-references/arkts-apis-audio-e.md#streamusage)指定为STREAM\_USAGE\_MUSIC、STREAM\_USAGE\_MOVIE、STREAM\_USAGE\_AUDIOBOOK等类型播放短音，则其申请焦点时默认为并发模式，不会影响其他音频。
 3. **焦点中断事件处理解决方案**
    * 由于恢复事件属于非强制类型，系统不会自动恢复先播音频播放。先播应用收到中断提示为InterruptHint.INTERRUPT\_HINT\_RESUME（音频恢复）后，需要主动在相应的事件中调用播放接口完成恢复。具体操作参考[处理音频焦点变化](../harmonyos-guides/audio-playback-concurrency.md#处理音频焦点变化)。
 4. **焦点模式设置解决方案**
-   * 通过设置[焦点模式（InterruptMode）](../harmonyos-references/arkts-apis-audio-e.md#interruptmode9)，可以实现同应用内不同音频流之间的并发或中断效果。参考上文[应用内多音频流焦点处理](bpta-audio-focus-management.md#section168291861114)
+   * 通过设置[焦点模式（InterruptMode）](../harmonyos-references/arkts-apis-audio-e.md#interruptmode9)，可以实现同应用内不同音频流之间的并发或中断效果。参考上文[应用内多音频流焦点处理](bpta-audio-focus-management.md#section168291861114)。
 
 ### 后台长时任务与音频焦点管理的问题
 
@@ -849,7 +933,7 @@ VoIP通话场景中，播放对端通话声音的音频流类型应当设置为S
 
 **分析思路**
 
-后台长时任务的申请和取消具有一定的运行限制。应用若不遵守规范接入，则将会被系统管控，比如静音冻结、进程挂起等。长时任务具体使用场景和运行限制，请参考[后台长时任务使用场景和运行限制](../harmonyos-guides/continuous-task.md#使用场景)。
+后台长时任务的申请和取消具有一定的运行限制。应用若不遵守规范接入，则将会被系统管控，比如静音冻结、进程挂起等。长时任务具体使用场景和运行限制，请参考[后台长时任务使用场景和运行限制](../harmonyos-guides/continuous-task.md#使用场景)中的[使用场景](../harmonyos-guides/continuous-task.md#使用场景)和[约束与限制](../harmonyos-guides/continuous-task.md#约束与限制)。
 
 **解决方案**
 
@@ -876,9 +960,9 @@ VoIP通话场景中，播放对端通话声音的音频流类型应当设置为S
 1. 后播视频播放时需要先使用[音频会话管理](../harmonyos-guides/audio-session-management.md)设置焦点策略为暂停模式（CONCURRENCY\_PAUSE\_OTHERS）。
 2. 当结束或者暂停播放时，需要使用停用音频会话以[释放音频焦点](../harmonyos-guides/audio-playback-concurrency.md#释放音频焦点)。
 
-说明
+**说明** 
 
-当应用[使用AudioRenderer开发音频播放功能](../harmonyos-guides/using-audiorenderer-for-playback.md)或[使用AVPlayer播放视频(ArkTS)](../harmonyos-guides/video-playback.md)，当暂停或者结束播放时，系统会自动为相应的音频流释放音频焦点。
+当应用[使用AudioRenderer开发音频播放功能(ArkTs)](../harmonyos-guides/using-audiorenderer-for-playback.md)或[使用AVPlayer播放视频(ArkTS)](../harmonyos-guides/video-playback.md)，当暂停或者结束播放时，系统会自动为相应的音频流释放音频焦点。
 
 如果应用通过激活[音频会话管理](../harmonyos-guides/audio-session-management.md)申请过焦点，当暂停或者结束播放时，则需要结束AudioSession以释放焦点。
 
@@ -888,29 +972,6 @@ VoIP通话场景中，播放对端通话声音的音频流类型应当设置为S
 
 1. 使用AudioSession的[activateAudioSession](../harmonyos-references/arkts-apis-audio-audiosessionmanager.md#activateaudiosession12)接口激活音频音频会话，并设置音频会话策略为暂停模式（CONCURRENCY\_PAUSE\_OTHERS）。
 2. 如果后播应用从前台切换到后台，开发者需要在生命周期方法onPageShow()或者[NavDestination](../harmonyos-references/ts-basic-components-navdestination.md)页面的生命周期方法[onHidden()](../harmonyos-references/ts-basic-components-navdestination.md#onhidden10)中调用AudioSession的[deactivateAudioSession](../harmonyos-references/arkts-apis-audio-audiosessionmanager.md#deactivateaudiosession12)停用音频会话，及时释放焦点。
-
-## 系统默认焦点策略表
-
-上文提供了[音频流类型正确配置](bpta-audio-focus-management.md#section2888185819153)，用以帮助开发者根据业务场景选择正确的音频流类型。下文将提供手机场景下常见音频流类型与系统默认焦点策略之间的关联矩阵表，用以帮助开发者选择合适的音频会话（AudioSession）策略，从而满足用户预期播放行为。为方便阅读，去掉了播放音频流类型的“STREAM\_USAGE\_”前缀。
-
-|  |  |  |  |  |  |  |  |  |  |  |  |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-|  | 后 播 音 频 流 | | | | | | | | | | |
-| 先播音频流 | 音频类型 | MUSIC  （音乐） | COMMUNICATION  （VoIP通话） | VOICE\_ASSISTANT  （语音播报） | ALARM  （闹钟） | VOICE\_MESSAGE  （语音消息） | NOTIFICATION  （通知消息） | MOVIE  （视频） | GAME  （游戏） | AUDIOBOOK  （电子书） | NAVIGATION  （导航） |
-| MUSIC（音乐） | 停止先播音频流 | 暂停先播音频流 | 降低先播音频流音量 | 暂停先播音频流 | 暂停先播音频流 | 降低先播音频流音量 | 停止先播音频流 | 同时播放 | 停止先播音频流 | 降低先播音频流音量 |
-| VOICE\_COMMUNICATION（VoIP通话） | 降低后播音频流音量 | 暂停先播音频流 | 拒绝后播音频流 | 降低后播音频流音量 | 降低后播音频流音量 | 同时播放 | 降低后播音频流音量 | 降低后播音频流音量 | 降低后播音频流音量 | 同时播放 |
-| VOICE\_ASSISTANT  （语音播报） | 降低后播音频流音量 | 停止先播音频流 | 停止先播音频流 | 降低后播音频流音量 | 降低后播音频流音量 | 同时播放 | 降低后播音频流音量 | 停止先播音频流 | 降低后播音频流音量 | 停止先播音频流 |
-| ALARM  （闹钟） | 停止先播音频流 | 停止先播音频流 | 降低先播音频流音量 | 停止先播音频流 | 停止先播音频流 | 同时播放 | 停止先播音频流 | 停止先播音频流 | 停止先播音频流 | 同时播放 |
-| VOICE\_MESSAGE  （语音消息） | 停止先播音频流 | 停止先播音频流 | 降低先播音频流音量 | 停止先播音频流 | 停止先播音频流 | 降低先播音频流音量 | 停止先播音频流 | 同时播放 | 停止先播音频流 | 降低后播音频流音量 |
-| NOTIFICATION  （通知消息） | 同时播放 | 停止先播音频流 | 停止先播音频流 | 同时播放 | 同时播放 | 停止先播音频流 | 同时播放 | 同时播放 | 同时播放 | 同时播放 |
-| MOVIE  （视频） | 停止先播音频流 | 暂停先播音频流 | 降低先播音频流音量 | 暂停先播音频流 | 暂停先播音频流 | 降低先播音频流音量 | 停止先播音频流 | 同时播放 | 停止先播音频流 | 降低先播音频流音量 |
-| GAME  （游戏） | 同时播放 | 暂停先播音频流 | 降低先播音频流音量 | 暂停先播音频流 | 暂停先播音频流 | 降低先播音频流音量 | 同时播放 | 停止先播音频流 | 同时播放 | 降低先播音频流音量 |
-| AUDIOBOOK  （电子书） | 停止先播音频流 | 暂停先播音频流 | 降低先播音频流音量 | 暂停先播音频流 | 暂停先播音频流 | 降低先播音频流音量 | 停止先播音频流 | 同时播放 | 停止先播音频流 | 降低先播音频流音量 |
-| NAVIGATION  （导航） | 降低后播音频流音量 | 停止先播音频流 | 停止先播音频流 | 同时播放 | 降低先播音频流音量 | 同时播放 | 降低后播音频流音量 | 降低后播音频流音量 | 降低后播音频流音量 | 停止先播音频流 |
-| SOURCE\_TYPE\_MIC  （普通录音） | 同时播放 | 同时播放 | 同时播放 | 同时播放 | 同时播放 | 拒绝后播音频流 | 同时播放 | 同时播放 | 同时播放 | 同时播放 |
-| SOURCE\_TYPE\_VOICE\_RECOGNITION  （VOIP通话） | 同时播放 | 同时播放 | 同时播放 | 同时播放 | 同时播放 | 同时播放 | 同时播放 | 同时播放 | 同时播放 | 同时播放 |
-| SOURCE\_TYPE\_PLAYBACK\_CAPTURE  （屏幕录音） | 同时播放 | 同时播放 | 同时播放 | 同时播放 | 同时播放 | 同时播放 | 同时播放 | 同时播放 | 同时播放 | 同时播放 |
-| SOURCE\_TYPE\_VOICE\_MESSAGE  （语音消息） | 同时播放 | 同时播放 | 同时播放 | 同时播放 | 同时播放 | 同时播放 | 同时播放 | 同时播放 | 同时播放 | 同时播放 |
 
 ## 示例代码
 

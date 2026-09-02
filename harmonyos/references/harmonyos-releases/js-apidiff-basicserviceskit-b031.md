@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-basicserviceskit-b031
 title: Basic Services Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Developer Beta2引入的API > Basic Services Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Developer Beta2引入的API > Basic Services Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:36:36+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:44+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:679561620f11de63dbc361acfa8605b03b3b3a61b7988411f24b89ffff28fb45
 ---
 

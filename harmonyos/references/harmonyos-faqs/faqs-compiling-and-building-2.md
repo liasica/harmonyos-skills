@@ -3,34 +3,34 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: Linux环境下编译报错“JavaScript heap out of memory”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > Linux环境下编译报错“JavaScript heap out of memory”
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:07+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:7ff7aee6dff88257c172b2f4fdd75f1efd4194c26b85ca87793dfff834319acb
+scraped_at: 2026-09-02T14:54:54+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:5b7a4a3865953db4aa4f6c64fada8142c6b433a7cc0b73c47018c035a8825425
 ---
 
 **问题现象**
 
 在Linux环境下，系统内存为64G，Hvigorw脚本中配置--max-old-space-size=40960，但在编译构建时，实际在使用内存未达到配置的内存（例如使用到20G左右）就出现报错“JavaScript heap out of memory”。
 
-```
-1. FATAL ERROR: NewSpace::Rebalance Allocation failed - JavaScript heap out of memory
-2. Writing Node.js report to file: report.20200512.172528.47517.24.011.json
-3. Node.js report completed
-4. 1: 0xa295e0 node::Abort() [node]
-5. 2: 0x9782df node::FatalError(char const*, char const*) [node]
-6. 3: 0xb99c2e v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, bool) [node]
-7. 4: 0xb99fa7 v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [node]
-8. 5: 0xd3a3b5 [node]
-9. 6: 0xd74f27 [node]
-10. 7: 0xd84707 v8::internal::MarkCompactCollector::CollectGarbage() [node]
-11. 8: 0xd481b9 v8::internal::Heap::MarkCompact() [node]
-12. 9: 0xd48f0b v8::internal::Heap::PerformGarbageCollection(v8::internal::GarbageCollector, v8::GCCallbackFlags) [node]
-13. 10: 0xd499a5 v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [node]
-14. 11: 0xd4aebf v8::internal::Heap::HandleGCRequest() [node]
-15. 12: 0xcf5f97 v8::internal::StackGuard::HandleInterrupts() [node]
-16. 13: 0x104b803 v8::internal::Runtime_StackGuard(int, unsigned long*, v8::internal::Isolate*) [node]
-17. 14: 0x13a5a99 [node]
-18. Aborted (core dumped)
+```text
+FATAL ERROR: NewSpace::Rebalance Allocation failed - JavaScript heap out of memory
+Writing Node.js report to file: report.20200512.172528.47517.24.011.json
+Node.js report completed
+1: 0xa295e0 node::Abort() [node]
+2: 0x9782df node::FatalError(char const*, char const*) [node]
+3: 0xb99c2e v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, bool) [node]
+4: 0xb99fa7 v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [node]
+5: 0xd3a3b5 [node]
+6: 0xd74f27 [node]
+7: 0xd84707 v8::internal::MarkCompactCollector::CollectGarbage() [node]
+8: 0xd481b9 v8::internal::Heap::MarkCompact() [node]
+9: 0xd48f0b v8::internal::Heap::PerformGarbageCollection(v8::internal::GarbageCollector, v8::GCCallbackFlags) [node]
+10: 0xd499a5 v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [node]
+11: 0xd4aebf v8::internal::Heap::HandleGCRequest() [node]
+12: 0xcf5f97 v8::internal::StackGuard::HandleInterrupts() [node]
+13: 0x104b803 v8::internal::Runtime_StackGuard(int, unsigned long*, v8::internal::Isolate*) [node]
+14: 0x13a5a99 [node]
+Aborted (core dumped)
 ```
 
 **问题原因**
@@ -47,19 +47,19 @@ vm.max\_map\_count是一个与内核虚拟内存子系统相关的参数，用�
 
 * 临时修改，建议设置为262144（即默认值的4倍）或更高，具体数值需根据应用需求调整：
 
-  ```
-  1. sysctl -w vm.max_map_count=新值
+  ```powershell
+  sysctl -w vm.max_map_count=新值
   ```
 * 永久修改：如果希望永久修改参数的值，可以编辑/etc/sysctl.conf文件，并添加或修改以下行：
 
-  ```
-  1. # 需要root权限执行
-  2. # 修改后需重启服务或执行sysctl -p生效
-  3. vm.max_map_count=新值
+  ```powershell
+  # 需要root权限执行
+  # 修改后需重启服务或执行sysctl -p生效
+  vm.max_map_count=新值
   ```
 
   保存文件后，使用以下命令使更改生效：
 
-  ```
-  1. sysctl -p
+  ```powershell
+  sysctl -p
   ```

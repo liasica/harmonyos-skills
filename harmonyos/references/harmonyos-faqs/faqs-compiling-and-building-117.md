@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: CPP编译报错“A 'unknown type name' error has occurred”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > CPP编译报错“A 'unknown type name' error has occurred”
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:20:45+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:58ce05f71aa36e8f413773e43978755a7632e9c5b6306d0e5f17dbeeddbbc32a
+scraped_at: 2026-09-02T14:54:54+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:92d77bfcf44fef8f6d8c0e5a8522ea58748cd0effc5c7eed7fb523eabd9a967b
 ---
 
 **问题现象**
@@ -22,29 +22,25 @@ content_hash: sha256:58ce05f71aa36e8f413773e43978755a7632e9c5b6306d0e5f17dbeeddb
 
 **示例：**
 
-```
-1. #include "myLibrary.h"
-2. int main() {
-3. MyType obj;
-4. // Use custom types
-5. return 0;
-6. }
-```
-
-[mian.cpp](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/Ndk/Ndk2/UnknownType/src/main/cpp/mian.cpp#L3-L8)
-
-```
-1. #ifndef MY_LIBRARY_H
-2. #define MY_LIBRARY_H
-3. class MyType {
-4. public:
-5. MyType() {}
-6. void doSomething();
-7. };
-8. #endif
+```cpp
+#include "myLibrary.h" 
+int main() {
+     MyType obj;
+     // Use custom types
+     return 0;
+}
 ```
 
-[myLibrary.h](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/Ndk/Ndk2/UnknownType/src/main/cpp/myLibrary.h#L3-L10)
+```cpp
+#ifndef MY_LIBRARY_H
+#define MY_LIBRARY_H
+class MyType {
+public:
+     MyType() {}
+     void doSomething();
+};
+#endif
+```
 
 2. 检查头文件路径。
 
@@ -52,24 +48,22 @@ content_hash: sha256:58ce05f71aa36e8f413773e43978755a7632e9c5b6306d0e5f17dbeeddb
 
 **示例CMakeLists.txt：**
 
+```text
+cmake_minimum_required(VERSION 3.10)
+project(MyProject)
+set(CMAKE_CXX_STANDARD 17)
+# Add header file directory
+include_directories(${CMAKE_SOURCE_DIR}/include)
+# Add source file
+add_library(myProgram SHARED src/main.cpp src/myLibrary.cpp)
 ```
-1. cmake_minimum_required(VERSION 3.10)
-2. project(MyProject)
-3. set(CMAKE_CXX_STANDARD 17)
-4. # Add header file directory
-5. include_directories(${CMAKE_SOURCE_DIR}/include)
-6. # Add source file
-7. add_library(myProgram SHARED src/main.cpp src/myLibrary.cpp)
-```
-
-[CMakeLists.txt](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/Ndk/Ndk2/UnknownType/src/main/cpp/CMakeLists.txt#L3-L9)
 
 3. 清理和重新生成构建文件。
 
 有时，构建文件可能会损坏或丢失符号定义。尝试清理构建目录并重新生成构建文件：
 
-```
-1. hvigorw clean
+```powershell
+hvigorw clean
 ```
 
 或手动删除模块下.cxx目录。
@@ -78,18 +72,16 @@ content_hash: sha256:58ce05f71aa36e8f413773e43978755a7632e9c5b6306d0e5f17dbeeddb
 
 为了解详细的编译过程，可以启用更详细的输出。在CMakeLists.txt 中添加以下内容：
 
+```text
+set(CMAKE_VERBOSE_MAKEFILE ON)
 ```
-1. set(CMAKE_VERBOSE_MAKEFILE ON)
-```
-
-[CMakeLists1.txt](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/Ndk/Ndk2/UndefinedSymbol/src/main/cpp/CMakeLists1.txt#L16-L16)
 
 5. 检查编译输出日志。
 
 Ninja 默认生成 .ninja\_log文件，其中包含构建过程的详细信息。你可以检查这个日志文件以了解构建过程中的问题。
 
-```
-1. cat .cxx/default/default/arm64-v8a/.ninja_log
+```text
+cat .cxx/default/default/arm64-v8a/.ninja_log
 ```
 
 6. 使用CMake的 message 函数调试。
@@ -98,16 +90,14 @@ Ninja 默认生成 .ninja\_log文件，其中包含构建过程的详细信息�
 
 **示例：**
 
+```screen
+message(STATUS "Source directory: ${CMAKE_SOURCE_DIR}")
+message(STATUS "Include directories: ${CMAKE_INCLUDE_PATH}")
 ```
-1. message(STATUS "Source directory: ${CMAKE_SOURCE_DIR}")
-2. message(STATUS "Include directories: ${CMAKE_INCLUDE_PATH}")
-```
-
-[CMakeLists.txt](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/Ndk/Ndk2/UnknownType/src/main/cpp/CMakeLists.txt#L17-L18)
 
 7.如果报错接口是系统API，查询该接口在当前版本是否可用。例如OH\_AudioWorkgroup\_AddCurrentThread从API 20开始支持。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/jsEBzD9gTluysyYZh2aCew/zh-cn_image_0000002350221468.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/CWZuDpTGQW6QoqSmbY972Q/zh-cn_image_0000002624638502.png)
 
 **结论**
 

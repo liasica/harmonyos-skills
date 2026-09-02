@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryp
 title: OH_CryptoRand
 breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > C API > 结构体 > OH_CryptoRand
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:04+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:157e12957b5fb67babf6ed067c71c00b2f80f5dbaec7c5e67225676c53c79db3
+scraped_at: 2026-09-02T14:52:08+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:cb5bb17e077a2ff74b9b2caa7a6fd81f94655a340f8f6576e2df1260edb97fc1
 ---
 
-```
-1. typedef struct OH_CryptoRand OH_CryptoRand
+```c
+typedef struct OH_CryptoRand OH_CryptoRand
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义随机数生成器结构。
 

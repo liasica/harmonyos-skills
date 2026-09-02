@@ -3,30 +3,29 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 多态样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 多态样式
 category: harmonyos-references
-scraped_at: 2026-04-29T13:51:27+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:2c71fce173a9b79fe5367360cdf795291b4c75a53583e94dad55f7f10f7a46f4
+scraped_at: 2026-09-02T15:00:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0b3bab1844b72d2ff7a059285bdcce398d3ef59f085da99bf6f78f57d482efa9
 ---
 
-设置组件不同状态下的样式。
+设置组件在不同状态下的样式，适用于需要根据各种交互状态动态切换组件样式的场景，帮助开发者统一管理组件状态样式。
 
-说明
+**说明** 
 
-* 从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-* 从API version 11开始支持另一种写法[attributeModifier](ts-universal-attributes-attribute-modifier.md)，可根据开发者需要动态设置属性。
+* 从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+* 从API version 11开始支持另一种写法[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)，可根据开发者需要动态设置属性。
 * 多态样式仅支持[通用属性](ts-component-general-attributes.md)。如果多态样式不生效，则该属性可能为组件的私有属性，例如：fontColor、[TextInput](ts-basic-components-textinput.md)组件的[backgroundColor](ts-universal-attributes-background.md#backgroundcolor18)等。此时，可以通过attributeModifier动态设置组件属性来解决此问题。
-* 当前多态样式实现依赖于组件自定义节点的刷新机制。因Builder不具备独立的自定义父节点，无法直接触发刷新，致使多态样式无法直接在Builder中生效。解决方法是将多态样式封装至自定义组件内部，再将此组件置于@Builder中，以此来间接实现多态样式。示例代码可参考[示例3设置Builder多态样式](ts-universal-attributes-polymorphic-style.md#示例3设置builder多态样式)。
+* 当前多态样式实现依赖于组件自定义节点的刷新机制。因Builder不具备独立的自定义父节点，无法直接触发刷新，致使多态样式无法直接在Builder中生效。解决方法是将多态样式封装至自定义组件内部，再将此组件置于@Builder中，以此来间接实现多态样式。示例代码可参考[示例3（设置Builder多态样式）](ts-universal-attributes-polymorphic-style.md#示例3设置builder多态样式)。
 * 多态样式的焦点态只有在[焦点激活态](../harmonyos-guides/arkts-common-events-focus-event.md#基础概念)开启时生效。
+* 如果组件同时处于多种状态，并且分别在各自的状态里设置了相同属性，那么最终生效样式由开发者设置顺序决定，后设置的样式生效。
 
 ## stateStyles
-
-PhonePC/2in1TabletTVWearable
 
 stateStyles(value: StateStyles): T
 
 设置组件不同状态的样式。
 
-说明
+**说明** 
 
 该接口不支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
@@ -50,20 +49,17 @@ stateStyles(value: StateStyles): T
 
 ## StateStyles
 
-PhonePC/2in1TabletTVWearable
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| normal | any | 否 | 是 | 组件无状态时的样式。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。 |
-| pressed | any | 否 | 是 | 组件按下状态的样式。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。 |
-| disabled | any | 否 | 是 | 组件禁用状态的样式。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。 |
-| focused | any | 否 | 是 | 组件获焦状态的样式。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。 |
-| clicked | any | 否 | 是 | 组件点击状态的样式。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。 |
-| selected10+ | object | 否 | 是 | 组件选中状态的样式。  **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。 |
+| normal | any | 否 | 是 | 组件无状态时的样式。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| pressed | any | 否 | 是 | 组件按下状态的样式。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| disabled | any | 否 | 是 | 组件禁用状态的样式。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| focused | any | 否 | 是 | 组件获焦状态的样式。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| clicked | any | 否 | 是 | 组件点击状态的样式。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| selected10+ | object | 否 | 是 | 组件选中状态的样式。  **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| hovered | object | 否 | 是 | 组件悬浮状态的样式。  **起始版本：** 26.0.0  **卡片能力：** 从API版本26.0.0开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 **selected选中状态说明**
 
@@ -86,237 +82,266 @@ PhonePC/2in1TabletTVWearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 ### 示例1（设置Text多态样式）
 
-该示例展示了状态为pressed和disabled时Text组件的样式变化。
+该示例展示了[stateStyles](ts-universal-attributes-polymorphic-style.md#statestyles)设置状态为hovered、pressed和disabled时Text组件的样式变化。
 
+从API版本26.0.0开始，[stateStyles](ts-universal-attributes-polymorphic-style.md#statestyles)新增hovered属性。
+
+```ts
+// xxx.ets
+@Entry
+@Component
+struct StyleExample {
+  @State isEnable: boolean = true
+
+  @Styles
+  hoveredStyles(): void {
+    .backgroundColor('#12db70')
+    .borderRadius(10)
+    .borderStyle(BorderStyle.Dashed)
+    .borderWidth(2)
+    .borderColor('#33000000')
+    .width(120)
+    .height(30)
+    .opacity(1)
+  }
+
+  @Styles
+  pressedStyles(): void {
+    .backgroundColor('#ED6F21')
+    .borderRadius(10)
+    .borderStyle(BorderStyle.Dashed)
+    .borderWidth(2)
+    .borderColor('#33000000')
+    .width(120)
+    .height(30)
+    .opacity(1)
+  }
+
+  @Styles
+  disabledStyles(): void {
+    .backgroundColor('#E5E5E5')
+    .borderRadius(10)
+    .borderStyle(BorderStyle.Solid)
+    .borderWidth(2)
+    .borderColor('#2a4c1919')
+    .width(90)
+    .height(25)
+    .opacity(1)
+  }
+
+  @Styles
+  normalStyles(): void {
+    .backgroundColor('#0A59F7')
+    .borderRadius(10)
+    .borderStyle(BorderStyle.Solid)
+    .borderWidth(2)
+    .borderColor('#33000000')
+    .width(100)
+    .height(25)
+    .opacity(1)
+  }
+
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center }) {
+      Text('normal')
+        .fontSize(14)
+        .fontColor(Color.White)
+        .opacity(0.5)
+        // stateStyles设置组件无状态时的样式
+        .stateStyles({
+          normal: this.normalStyles,
+        })
+        .margin({ bottom: 20 })
+        .textAlign(TextAlign.Center)
+      Text('hovered')
+        .backgroundColor('#0A59F7')
+        .borderRadius(20)
+        .borderStyle(BorderStyle.Dotted)
+        .borderWidth(2)
+        .borderColor(Color.Red)
+        .width(100)
+        .height(25)
+        .opacity(1)
+        .fontSize(14)
+        .fontColor(Color.White)
+        // stateStyles设置组件鼠标悬浮状态时的样式
+        .stateStyles({
+          hovered: this.hoveredStyles,
+        })
+        .margin({ bottom: 20 })
+        .textAlign(TextAlign.Center)
+      Text('pressed')
+        .backgroundColor('#0A59F7')
+        .borderRadius(20)
+        .borderStyle(BorderStyle.Dotted)
+        .borderWidth(2)
+        .borderColor(Color.Red)
+        .width(100)
+        .height(25)
+        .opacity(1)
+        .fontSize(14)
+        .fontColor(Color.White)
+        // stateStyles设置组件按下状态时的样式
+        .stateStyles({
+          pressed: this.pressedStyles,
+        })
+        .margin({ bottom: 20 })
+        .textAlign(TextAlign.Center)
+      Text(this.isEnable ? 'effective' : 'disabled')
+        .backgroundColor('#0A59F7')
+        .borderRadius(20)
+        .borderStyle(BorderStyle.Solid)
+        .borderWidth(2)
+        .borderColor(Color.Gray)
+        .width(100)
+        .height(25)
+        .opacity(1)
+        .fontSize(14)
+        .fontColor(Color.White)
+        .enabled(this.isEnable)
+        // stateStyles设置组件禁用状态时的样式
+        .stateStyles({
+          disabled: this.disabledStyles,
+        })
+        .textAlign(TextAlign.Center)
+      Text('control disabled')
+        .onClick(() => {
+          this.isEnable = !this.isEnable;
+          console.info(`${this.isEnable}`);
+        })
+    }
+    .width(350).height(300)
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct StyleExample {
-5. @State isEnable: boolean = true
 
-7. @Styles
-8. pressedStyles(): void {
-9. .backgroundColor("#ED6F21")
-10. .borderRadius(10)
-11. .borderStyle(BorderStyle.Dashed)
-12. .borderWidth(2)
-13. .borderColor("#33000000")
-14. .width(120)
-15. .height(30)
-16. .opacity(1)
-17. }
-
-19. @Styles
-20. disabledStyles(): void {
-21. .backgroundColor("#E5E5E5")
-22. .borderRadius(10)
-23. .borderStyle(BorderStyle.Solid)
-24. .borderWidth(2)
-25. .borderColor("#2a4c1919")
-26. .width(90)
-27. .height(25)
-28. .opacity(1)
-29. }
-
-31. @Styles
-32. normalStyles(): void {
-33. .backgroundColor("#0A59F7")
-34. .borderRadius(10)
-35. .borderStyle(BorderStyle.Solid)
-36. .borderWidth(2)
-37. .borderColor("#33000000")
-38. .width(100)
-39. .height(25)
-40. .opacity(1)
-41. }
-
-43. build() {
-44. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center }) {
-45. Text("normal")
-46. .fontSize(14)
-47. .fontColor(Color.White)
-48. .opacity(0.5)
-49. // stateStyles设置组件无状态时的样式
-50. .stateStyles({
-51. normal: this.normalStyles,
-52. })
-53. .margin({ bottom: 20 })
-54. .textAlign(TextAlign.Center)
-55. Text("pressed")
-56. .backgroundColor("#0A59F7")
-57. .borderRadius(20)
-58. .borderStyle(BorderStyle.Dotted)
-59. .borderWidth(2)
-60. .borderColor(Color.Red)
-61. .width(100)
-62. .height(25)
-63. .opacity(1)
-64. .fontSize(14)
-65. .fontColor(Color.White)
-66. // stateStyles设置组件按下状态时的样式
-67. .stateStyles({
-68. pressed: this.pressedStyles,
-69. })
-70. .margin({ bottom: 20 })
-71. .textAlign(TextAlign.Center)
-72. Text(this.isEnable == true ? "effective" : "disabled")
-73. .backgroundColor("#0A59F7")
-74. .borderRadius(20)
-75. .borderStyle(BorderStyle.Solid)
-76. .borderWidth(2)
-77. .borderColor(Color.Gray)
-78. .width(100)
-79. .height(25)
-80. .opacity(1)
-81. .fontSize(14)
-82. .fontColor(Color.White)
-83. .enabled(this.isEnable)
-84. // stateStyles设置组件禁用状态时的样式
-85. .stateStyles({
-86. disabled: this.disabledStyles,
-87. })
-88. .textAlign(TextAlign.Center)
-89. Text("control disabled")
-90. .onClick(() => {
-91. this.isEnable = !this.isEnable
-92. console.info(`${this.isEnable}`)
-93. })
-94. }
-95. .width(350).height(300)
-96. }
-97. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/jykaxAGpR_uYOXY3jzke6A/zh-cn_image_0000002589245877.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/9gKM52z0QsKl3z-5oTxY5w/zh-cn_image_0000002736314787.gif)
 
 ### 示例2（设置Radio多态样式）
 
 该示例展示了状态为selected时Radio组件的样式变化。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct Index {
+  @State isRadio1Selected: boolean = false
+  @State isRadio2Selected: boolean = false
+
+  @Styles
+  normalStyles(): void {
+    .backgroundColor('#E5E5E1')
+  }
+
+  @Styles
+  selectStyles(): void {
+    .backgroundColor('#ED6F21')
+    .borderWidth(2)
+  }
+
+  build() {
+    Flex({ direction: FlexDirection.Row, justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
+      Column() {
+        Text('Radio1')
+          .fontSize(25)
+        Radio({ value: 'Radio1', group: 'radioGroup1' })
+          .checked(this.isRadio1Selected)
+          .height(50)
+          .width(50)
+          .borderWidth(0)
+          .borderRadius(30)
+          .onClick(() => {
+            this.isRadio1Selected = !this.isRadio1Selected;
+          })
+          .stateStyles({
+            normal: this.normalStyles,
+            selected: this.selectStyles,
+          })
+      }
+      .margin(30)
+
+      Column() {
+        Text('Radio2')
+          .fontSize(25)
+        Radio({ value: 'Radio2', group: 'radioGroup2' })
+          .checked($$this.isRadio2Selected)
+          .height(50)
+          .width(50)
+          .borderWidth(0)
+          .borderRadius(30)
+          .stateStyles({
+            normal: this.normalStyles,
+            selected: this.selectStyles,
+          })
+      }
+      .margin(30)
+    }.padding({ top: 30 })
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct Index {
-5. @State value: boolean = false
-6. @State value2: boolean = false
 
-8. @Styles
-9. normalStyles(): void{
-10. .backgroundColor("#E5E5E1")
-11. }
-
-13. @Styles
-14. selectStyles(): void{
-15. .backgroundColor("#ED6F21")
-16. .borderWidth(2)
-17. }
-
-19. build() {
-20. Flex({ direction: FlexDirection.Row, justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
-21. Column() {
-22. Text('Radio1')
-23. .fontSize(25)
-24. Radio({ value: 'Radio1', group: 'radioGroup1' })
-25. .checked(this.value)
-26. .height(50)
-27. .width(50)
-28. .borderWidth(0)
-29. .borderRadius(30)
-30. .onClick(() => {
-31. this.value = !this.value
-32. })
-33. .stateStyles({
-34. normal: this.normalStyles,
-35. selected: this.selectStyles,
-36. })
-37. }
-38. .margin(30)
-
-40. Column() {
-41. Text('Radio2')
-42. .fontSize(25)
-43. Radio({ value: 'Radio2', group: 'radioGroup2' })
-44. .checked($$this.value2)
-45. .height(50)
-46. .width(50)
-47. .borderWidth(0)
-48. .borderRadius(30)
-49. .stateStyles({
-50. normal: this.normalStyles,
-51. selected: this.selectStyles,
-52. })
-53. }
-54. .margin(30)
-55. }.padding({ top: 30 })
-56. }
-57. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/dXQxFeVMQLapfR_zePdaJQ/zh-cn_image_0000002558766068.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/HK1I45XOR-SoaHEBmdynLA/zh-cn_image_0000002706675746.gif)
 
 ### 示例3（设置Builder多态样式）
 
-该示例展示了状态为pressed时Builder组件的样式变化。
+该示例展示了状态为pressed时@Builder中自定义组件的样式变化。
 
+```ts
+import { ComponentContent } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+@Component
+struct Child {
+  build() {
+    Row()
+      .zIndex(10)
+      .width(200)
+      .height(200)
+      .stateStyles({
+        normal: {
+          .backgroundColor(Color.Blue)
+        },
+        pressed: {
+          .backgroundColor(Color.Black)
+        }
+      })
+  }
+}
+
+@Builder
+function buildText() {
+  Child()
+}
+
+@Entry
+@Component
+struct Index {
+  private contentNode: ComponentContent<Object> =
+    new ComponentContent(this.getUIContext(), wrapBuilder(buildText));
+
+  build() {
+    Column() {
+      Button().margin({ top: 200 }).onClick(() => {
+        this.getUIContext()
+          .getPromptAction()
+          .openCustomDialog(this.contentNode)
+          .then(() => {
+            console.info('OpenCustomDialog complete.');
+          })
+          .catch((error: BusinessError) => {
+            let message = error.message;
+            let code = error.code;
+            console.error(`OpenCustomDialog args error code is ${code}, message is ${message}`);
+          });
+      })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
-1. import { ComponentContent } from '@kit.ArkUI';
-2. import { BusinessError } from '@kit.BasicServicesKit';
 
-4. @Component
-5. struct Child {
-6. build() {
-7. Row()
-8. .zIndex(10)
-9. .width(200)
-10. .height(200)
-11. .stateStyles({
-12. normal: {
-13. .backgroundColor(Color.Blue)
-14. },
-15. pressed: {
-16. .backgroundColor(Color.Black)
-17. }
-18. })
-19. }
-20. }
-
-22. @Builder
-23. function buildText() {
-24. Child()
-25. }
-
-27. @Entry
-28. @Component
-29. struct Index {
-30. private contentNode: ComponentContent<Object> =
-31. new ComponentContent(this.getUIContext(), wrapBuilder(buildText));
-
-33. build() {
-34. Column() {
-35. Button().margin({ top: 200 }).onClick((event: ClickEvent) => {
-36. this.getUIContext()
-37. .getPromptAction()
-38. .openCustomDialog(this.contentNode)
-39. .then(() => {
-40. console.info('OpenCustomDialog complete.')
-41. })
-42. .catch((error: BusinessError) => {
-43. let message = (error as BusinessError).message;
-44. let code = (error as BusinessError).code;
-45. console.error(`OpenCustomDialog args error code is ${code}, message is ${message}`);
-46. })
-47. })
-48. }
-49. .width('100%')
-50. .height('100%')
-51. }
-52. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/s8AHkfpYQiqUswFHoTxqWA/zh-cn_image_0000002558606410.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/P9Nm7Yq9TguAe0cgWl1PBg/zh-cn_image_0000002736434831.gif)

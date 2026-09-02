@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-inpu
 title: Input_MouseEvent
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > C API > 结构体 > Input_MouseEvent
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:19+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:eac0c2b0617817a437c80d5c0e78eec1d0b629610557edc222b73365c7e23c16
+scraped_at: 2026-09-02T14:52:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:46d487502302e69c43e9e9931de7515719e4e7eb6b0f8fe3f84f56e48d31082c
 ---
 
-```
-1. typedef struct Input_MouseEvent Input_MouseEvent
+```c
+typedef struct Input_MouseEvent Input_MouseEvent
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-鼠标事件对象。
+鼠标事件对象，用于表示用户鼠标操作产生的输入事件，包含点击信息、坐标、点击动作事件等信息，可用于处理鼠标事件输入和实现鼠标事件响应的功能。
 
 **起始版本：** 12
 

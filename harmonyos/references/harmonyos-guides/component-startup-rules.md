@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules
-title: 组件启动规则（Stage模型）
-breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > Stage模型应用组件 > 组件启动规则（Stage模型）
+title: 组件启动规则
+breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > 组件启动规则
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:25:47+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:4f8f8411f140aa4d24001f5f62c662efebb99accb8f2759e2f3bd4d28cfb86f9
+scraped_at: 2026-09-02T14:59:09+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4d45808b3b5e2377353e3bd123ef97c302274c70a32c80aba93696e466f3da87
 ---
 
 启动组件是指一切启动或连接应用组件的行为：
@@ -18,7 +18,7 @@ content_hash: sha256:4f8f8411f140aa4d24001f5f62c662efebb99accb8f2759e2f3bd4d28cf
 为了保证用户具有更好的使用体验，对以下几种易影响用户体验与系统安全的行为做了限制：
 
 * 后台应用任意弹框，如各种广告弹窗，影响用户使用。
-* 后台应用相互唤醒，不合理的占用系统资源，导致系统功耗增加或系统卡顿。
+* 后台应用相互唤醒，不合理地占用系统资源，导致系统功耗增加或系统卡顿。
 * 前台应用任意跳转至其他应用，如随意跳转到其他应用的支付页面，存在安全风险。
 
 鉴于此，制定了一套组件启动规则，主要包括：
@@ -28,7 +28,7 @@ content_hash: sha256:4f8f8411f140aa4d24001f5f62c662efebb99accb8f2759e2f3bd4d28cf
   若目标组件exported字段配置为true，表示可以被其他应用调用；若目标组件exported字段配置为false，表示不可以被其他应用调用，还需进一步校验ohos.permission.START\_INVISIBLE\_ABILITY权限（该权限仅系统应用可申请）。组件exported字段说明可参考[abilities标签](module-configuration-file.md#abilities标签)。
 * **位于后台的UIAbility应用，启动组件需校验BACKGROUND权限ohos.permission.START\_ABILITIES\_FROM\_BACKGROUND（该权限仅系统应用可申请）。**
 
-  说明
+  **说明** 
 
   + 前后台应用的判断依据：若应用进程获焦或所属的UIAbility组件位于前台则判定为前台应用，否则为后台应用。
   + 对于2in1和Tablet设备：
@@ -44,13 +44,13 @@ content_hash: sha256:4f8f8411f140aa4d24001f5f62c662efebb99accb8f2759e2f3bd4d28cf
 
 * 启动UIAbility。
 * 启动ServiceExtensionAbility、DataShareExtensionAbility。
-* 通过[startAbilityByCall](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#startabilitybycall)接口启动UIAbility。
+* 通过[startAbilityByCall()](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#startabilitybycall)接口启动UIAbility。
 
-说明
+**说明** 
 
 下图中的BACKGROUND权限是指ohos.permission.START\_ABILITIES\_FROM\_BACKGROUND，CALL权限是指ohos.permission.ABILITY\_BACKGROUND\_COMMUNICATION。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/ptUbUAk-SAOVS0_P7d7lLg/zh-cn_image_0000002589243795.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/sLtSGJexSbqRGom4f31L7Q/zh-cn_image_0000002736432173.png)
 
 ## 分布式跨设备组件启动规则
 
@@ -58,10 +58,10 @@ content_hash: sha256:4f8f8411f140aa4d24001f5f62c662efebb99accb8f2759e2f3bd4d28cf
 
 * 启动UIAbility。
 * 启动ServiceExtensionAbility、DataShareExtensionAbility。
-* 通过[startAbilityByCall](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#startabilitybycall)接口启动UIAbility。
+* 通过[startAbilityByCall()](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#startabilitybycall)接口启动UIAbility。
 
-说明
+**说明** 
 
 下图中的BACKGROUND权限是指ohos.permission.START\_ABILITIES\_FROM\_BACKGROUND，DATASYNC权限是指ohos.permission.DISTRIBUTED\_DATASYNC。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/EgW6ih1xQQeI_Lc7DL7Ewg/zh-cn_image_0000002558763990.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/ymH8RREoR7uRzo2dqr_E4Q/zh-cn_image_0000002706833018.png)

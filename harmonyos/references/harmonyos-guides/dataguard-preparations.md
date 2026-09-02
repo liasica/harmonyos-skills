@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dataguard-pre
 title: 开发准备
 breadcrumb: 指南 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:05+08:00
+scraped_at: 2026-09-02T14:50:02+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:7fd1a0a49ad95b48793a7e2952ead92832dd82d3e25857de490eb44068ec7164
+content_hash: sha256:396f731e25eb37235e7bbb021e28c06c65835bc331349b881299bcdaf4bfcb2c
 ---
 
 ## 环境准备
@@ -33,16 +33,16 @@ content_hash: sha256:7fd1a0a49ad95b48793a7e2952ead92832dd82d3e25857de490eb44068e
 
 例如：
 
-```
-1. "requestPermissions": [
-2. {
-3. "name": "ohos.permission.FILE_GUARD_MANAGER"
-4. },
-5. {
-6. "name": "ohos.permission.SET_FILE_GUARD_POLICY"
-7. },
-8. {
-9. "name": "ohos.permission.ENTERPRISE_RECOVERY_KEY"
-10. }
-11. ]
+```typescript
+"requestPermissions": [
+  {
+    "name": "ohos.permission.FILE_GUARD_MANAGER"
+  },
+  {
+    "name": "ohos.permission.SET_FILE_GUARD_POLICY"
+  },
+  {
+    "name": "ohos.permission.ENTERPRISE_RECOVERY_KEY"
+  }
+]
 ```

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-bund
 title: bundle_manager_common.h
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > C API > 头文件 > bundle_manager_common.h
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:00+08:00
-doc_updated_at: 2026-04-10
-content_hash: sha256:18834579f4767be50fe14538461d080b172779cf65043b6694d315674aa626fe
+scraped_at: 2026-09-02T15:00:37+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a42d8d335d831632d527fb9fc8a5e7b691a8eed0e59089af13f454abc88cbaf1
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明BundleManager定义的相关错误码。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,14 +32,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### BundleManager\_ErrorCode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum BundleManager_ErrorCode
+```c
+enum BundleManager_ErrorCode
 ```
 
 **描述**

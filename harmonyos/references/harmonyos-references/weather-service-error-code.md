@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/weather-s
 title: ArkTS API错误码
 breadcrumb: API参考 > 应用服务 > Weather Service Kit（天气服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:46+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:26c1fe4a7402873657a70adc559130825ec1beeb26f9c09919c108ceccf86c32
+scraped_at: 2026-09-02T15:03:09+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6876ab8993fe382937776f951eed44b903f9d5bdde9fc35b13f9149a476131b2
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码](errorcode-universal.md)说明文档。
 
 ## 1011900001 未开通天气服务
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -40,8 +38,6 @@ Capability is not configured.
 
 ## 1011900002 天气数据缺失
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The requested longitude and latitude grid point lacks data.
@@ -61,8 +57,6 @@ The requested longitude and latitude grid point lacks data.
 2、通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题，华为支持人员会及时处理。
 
 ## 1011900003 网络错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -84,8 +78,6 @@ Network error.
 
 ## 1011900004 系统内部错误
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 System error.
@@ -96,8 +88,12 @@ System error.
 
 **可能原因**
 
-连接服务失败或其他内部错误。
+1、使用[weatherService.getWeather(request)](weather-service-weatherservice.md#weatherservicegetweather)接口获取天气信息时，无法自动获取到Context信息。
+
+2、连接服务失败或其他内部错误。
 
 **处理步骤**
 
-通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题，华为支持人员会及时处理。
+1、使用[weatherService.getWeatherWithContext(context, request)](weather-service-weatherservice.md#weatherservicegetweatherwithcontext)接口替换[weatherService.getWeather(request)](weather-service-weatherservice.md#weatherservicegetweather)接口，主动传入Context信息。
+
+2、通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题，华为支持人员会及时处理。

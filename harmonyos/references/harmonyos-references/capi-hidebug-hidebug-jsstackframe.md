@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hide
 title: HiDebug_JsStackFrame
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > C API > 结构体 > HiDebug_JsStackFrame
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:27+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:6dd11238dd3313a9772ad8ee7acedee968ef385e1b900d8872baf63492021fca
+scraped_at: 2026-09-02T15:02:17+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9e4639e8e013f1daffbac74d531b4409c7c2c66a583c04c73b9e522105075e42
 ---
 
-```
-1. typedef struct HiDebug_JsStackFrame {...} HiDebug_JsStackFrame
+```c
+typedef struct HiDebug_JsStackFrame {...} HiDebug_JsStackFrame
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-js栈帧内容的定义。
+js栈帧内容的定义。用于在性能分析和调试场景中，记录js调用栈的帧信息，包括代码位置、函数名称、映射区域等关键信息。
 
 **起始版本：** 20
 
@@ -26,11 +24,7 @@ js栈帧内容的定义。
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

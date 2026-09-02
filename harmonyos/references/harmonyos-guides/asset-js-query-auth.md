@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/asset-js-quer
 title: 查询需要用户认证的关键资产(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Asset Store Kit（关键资产存储服务） > Asset Store Kit开发指导(ArkTS) > 查询需要用户认证的关键资产(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:12+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:9f16981be7cb2a482d5f2656c367931f82098627d5dee752de95fca0cca6f0d4
+scraped_at: 2026-09-02T14:59:27+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8d561e38e8133a87ddb8122dcf9c97ce3d2126f653862ff4156d7b0d0217cd44
 ---
 
 ## 接口介绍
@@ -20,7 +20,7 @@ content_hash: sha256:9f16981be7cb2a482d5f2656c367931f82098627d5dee752de95fca0cca
 
 查询需要用户认证的关键资产时，关键资产属性的内容（AssetMap）参数如下表所示：
 
-注意
+**注意** 
 
 下表中“ALIAS”和名称包含“DATA\_LABEL”的关键资产属性，用于存储业务自定义信息，其内容不会被加密，请勿存放敏感个人数据。
 
@@ -35,14 +35,14 @@ content_hash: sha256:9f16981be7cb2a482d5f2656c367931f82098627d5dee752de95fca0cca
   | AUTH\_VALIDITY\_PERIOD | 类型为number，取值范围：1-600，单位为秒。 | 可选 | 用户认证的有效期，默认值为60。 |
   | SYNC\_TYPE | 类型为number，取值范围详见[SyncType](../harmonyos-references/js-apis-asset.md#synctype)。 | 可选 | 关键资产支持的同步类型。 |
   | IS\_PERSISTENT | 类型为boolean。 | 可选 | 在应用卸载时是否需要保留关键资产。为true时表示查询应用卸载后会被保留的关键资产；为false时表示查询应用卸载后会被删除的关键资产。 |
-  | DATA\_LABEL\_CRITICAL\_1 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且有完整性保护。  **说明：** API12前长度为1-512字节。 |
-  | DATA\_LABEL\_CRITICAL\_2 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且有完整性保护。  **说明：** API12前长度为1-512字节。 |
-  | DATA\_LABEL\_CRITICAL\_3 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且有完整性保护。  **说明：** API12前长度为1-512字节。 |
-  | DATA\_LABEL\_CRITICAL\_4 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且有完整性保护。  **说明：** API12前长度为1-512字节。 |
-  | DATA\_LABEL\_NORMAL\_1 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且无完整性保护。  **说明：** API12前长度为1-512字节。 |
-  | DATA\_LABEL\_NORMAL\_2 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且无完整性保护。  **说明：** API12前长度为1-512字节。 |
-  | DATA\_LABEL\_NORMAL\_3 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且无完整性保护。  **说明：** API12前长度为1-512字节。 |
-  | DATA\_LABEL\_NORMAL\_4 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且无完整性保护。  **说明：** API12前长度为1-512字节。 |
+  | DATA\_LABEL\_CRITICAL\_1 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且有完整性保护。  **说明：** 在API version 12及之前版本，长度为1-512字节。 |
+  | DATA\_LABEL\_CRITICAL\_2 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且有完整性保护。  **说明：** 在API version 12及之前版本，长度为1-512字节。 |
+  | DATA\_LABEL\_CRITICAL\_3 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且有完整性保护。  **说明：** 在API version 12及之前版本，长度为1-512字节。 |
+  | DATA\_LABEL\_CRITICAL\_4 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且有完整性保护。  **说明：** 在API version 12及之前版本，长度为1-512字节。 |
+  | DATA\_LABEL\_NORMAL\_1 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且无完整性保护。  **说明：** 在API version 12及之前版本，长度为1-512字节。 |
+  | DATA\_LABEL\_NORMAL\_2 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且无完整性保护。  **说明：** 在API version 12及之前版本，长度为1-512字节。 |
+  | DATA\_LABEL\_NORMAL\_3 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且无完整性保护。  **说明：** 在API version 12及之前版本，长度为1-512字节。 |
+  | DATA\_LABEL\_NORMAL\_4 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且无完整性保护。  **说明：** 在API version 12及之前版本，长度为1-512字节。 |
   | DATA\_LABEL\_NORMAL\_LOCAL\_112+ | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属的本地信息，内容由业务自定义且无完整性保护，该项信息不会进行同步。 |
   | DATA\_LABEL\_NORMAL\_LOCAL\_212+ | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属的本地信息，内容由业务自定义且无完整性保护，该项信息不会进行同步。 |
   | DATA\_LABEL\_NORMAL\_LOCAL\_312+ | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属的本地信息，内容由业务自定义且无完整性保护，该项信息不会进行同步。 |
@@ -62,14 +62,14 @@ content_hash: sha256:9f16981be7cb2a482d5f2656c367931f82098627d5dee752de95fca0cca
   | AUTH\_TYPE | 类型为number，取值范围详见[AuthType](../harmonyos-references/js-apis-asset.md#authtype)。 | 可选 | 访问关键资产所需的用户认证类型。 |
   | SYNC\_TYPE | 类型为number，取值范围详见[SyncType](../harmonyos-references/js-apis-asset.md#synctype)。 | 可选 | 关键资产支持的同步类型。 |
   | IS\_PERSISTENT | 类型为boolean。 | 可选 | 在应用卸载时是否需要保留关键资产。为true时表示查询应用卸载后会被保留的关键资产；为false时表示查询应用卸载后会被删除的关键资产。 |
-  | DATA\_LABEL\_CRITICAL\_1 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且有完整性保护。  **说明：** API12前长度为1-512字节。 |
-  | DATA\_LABEL\_CRITICAL\_2 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且有完整性保护。  **说明：** API12前长度为1-512字节。 |
-  | DATA\_LABEL\_CRITICAL\_3 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且有完整性保护。  **说明：** API12前长度为1-512字节。 |
-  | DATA\_LABEL\_CRITICAL\_4 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且有完整性保护。  **说明：** API12前长度为1-512字节。 |
-  | DATA\_LABEL\_NORMAL\_1 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且无完整性保护。  **说明：** API12前长度为1-512字节。 |
-  | DATA\_LABEL\_NORMAL\_2 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且无完整性保护。  **说明：** API12前长度为1-512字节。 |
-  | DATA\_LABEL\_NORMAL\_3 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且无完整性保护。  **说明：** API12前长度为1-512字节。 |
-  | DATA\_LABEL\_NORMAL\_4 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且无完整性保护。  **说明：** API12前长度为1-512字节。 |
+  | DATA\_LABEL\_CRITICAL\_1 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且有完整性保护。  **说明：** 在API version 12及之前版本，长度为1-512字节。 |
+  | DATA\_LABEL\_CRITICAL\_2 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且有完整性保护。  **说明：** 在API version 12及之前版本，长度为1-512字节。 |
+  | DATA\_LABEL\_CRITICAL\_3 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且有完整性保护。  **说明：** 在API version 12及之前版本，长度为1-512字节。 |
+  | DATA\_LABEL\_CRITICAL\_4 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且有完整性保护。  **说明：** 在API version 12及之前版本，长度为1-512字节。 |
+  | DATA\_LABEL\_NORMAL\_1 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且无完整性保护。  **说明：** 在API version 12及之前版本，长度为1-512字节。 |
+  | DATA\_LABEL\_NORMAL\_2 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且无完整性保护。  **说明：** 在API version 12及之前版本，长度为1-512字节。 |
+  | DATA\_LABEL\_NORMAL\_3 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且无完整性保护。  **说明：** 在API version 12及之前版本，长度为1-512字节。 |
+  | DATA\_LABEL\_NORMAL\_4 | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属信息，内容由业务自定义且无完整性保护。  **说明：** 在API version 12及之前版本，长度为1-512字节。 |
   | DATA\_LABEL\_NORMAL\_LOCAL\_112+ | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属的本地信息，内容由业务自定义且无完整性保护，该项信息不会进行同步。 |
   | DATA\_LABEL\_NORMAL\_LOCAL\_212+ | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属的本地信息，内容由业务自定义且无完整性保护，该项信息不会进行同步。 |
   | DATA\_LABEL\_NORMAL\_LOCAL\_312+ | 类型为Uint8Array，长度为1-2048字节。 | 可选 | 关键资产附属的本地信息，内容由业务自定义且无完整性保护，该项信息不会进行同步。 |
@@ -85,7 +85,7 @@ content_hash: sha256:9f16981be7cb2a482d5f2656c367931f82098627d5dee752de95fca0cca
 
 ## 代码示例
 
-说明
+**说明** 
 
 本模块提供了异步和同步两套接口，以下为异步接口的使用示例，同步接口详见[@ohos.security.asset (关键资产存储服务)](../harmonyos-references/js-apis-asset.md)。
 
@@ -95,122 +95,118 @@ content_hash: sha256:9f16981be7cb2a482d5f2656c367931f82098627d5dee752de95fca0cca
 
 1. 引用头文件，定义工具函数。
 
+   ```typescript
+   import { asset } from '@kit.AssetStoreKit';
+   import { util } from '@kit.ArkTS';
+   import { userAuth } from '@kit.UserAuthenticationKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+
+   function stringToArray(str: string): Uint8Array {
+     let textEncoder = new util.TextEncoder();
+     return textEncoder.encodeInto(str);
+   }
+
+   function arrayToString(arr: Uint8Array): string {
+     let textDecoder = util.TextDecoder.create('utf-8', { ignoreBOM: true });
+     let str = textDecoder.decodeToString(arr, { stream: false });
+     return str;
+   }
    ```
-   1. import { asset } from '@kit.AssetStoreKit';
-   2. import { util } from '@kit.ArkTS';
-   3. import { userAuth } from '@kit.UserAuthenticationKit';
-   4. import { BusinessError } from '@kit.BasicServicesKit';
-
-   6. function stringToArray(str: string): Uint8Array {
-   7. let textEncoder = new util.TextEncoder();
-   8. return textEncoder.encodeInto(str);
-   9. }
-
-   11. function arrayToString(arr: Uint8Array): string {
-   12. let textDecoder = util.TextDecoder.create('utf-8', { ignoreBOM: true });
-   13. let str = textDecoder.decodeToString(arr, { stream: false });
-   14. return str;
-   15. }
-   ```
-
-   [query\_auth.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Security/AssetStoreKit/AssetStoreArkTS/entry/src/main/ets/operations/query_auth.ets#L16-L32)
 2. 参考如下示例代码，进行业务功能开发。
 
+   ```typescript
+   async function userAuthenticate(challenge: Uint8Array): Promise<Uint8Array> {
+     return new Promise((resolve, reject) => {
+       const authParam: userAuth.AuthParam = {
+         challenge: challenge,
+         authType: [userAuth.UserAuthType.PIN],
+         authTrustLevel: userAuth.AuthTrustLevel.ATL1,
+       };
+       const widgetParam: userAuth.WidgetParam = { title: '请输入锁屏密码' };
+       try {
+         let userAuthInstance = userAuth.getUserAuthInstance(authParam, widgetParam);
+         userAuthInstance.on('result', {
+           onResult(result) {
+             if (result.result == userAuth.UserAuthResultCode.SUCCESS) {
+               console.info(`User identity authentication succeeded.`);
+               resolve(result.token);
+             } else {
+               console.error(`User identity authentication failed.`);
+               reject();
+             }
+           }
+         });
+         userAuthInstance.start();
+       } catch (error) {
+         let err = error as BusinessError;
+         console.error(`User identity authentication failed. Code is ${err.code}, message is ${err.message}`);
+         reject();
+       }
+     })
+   }
+
+   function preQueryAsset(): Promise<Uint8Array> {
+     return new Promise((resolve, reject) => {
+       try {
+         let query: asset.AssetMap = new Map();
+         query.set(asset.Tag.ALIAS, stringToArray('user_auth_asset'));
+         asset.preQuery(query).then((challenge: Uint8Array) => {
+           resolve(challenge);
+         }).catch(() => {
+           reject();
+         })
+       } catch (error) {
+         let err = error as BusinessError;
+         console.error(`Failed to pre-query Asset. Code is ${err.code}, message is ${err.message}`);
+         reject();
+       }
+     });
+   }
+
+   async function postQueryAsset(challenge: Uint8Array) {
+     let handle: asset.AssetMap = new Map();
+     handle.set(asset.Tag.AUTH_CHALLENGE, challenge);
+     try {
+       await asset.postQuery(handle);
+       console.info(`Succeeded in post-querying Asset.`);
+     } catch (error) {
+       let err = error as BusinessError;
+       console.error(`Failed to post-query Asset. Code is ${err.code}, message is ${err.message}`);
+     }
+   }
+
+   export async function queryUserAuthAsset(): Promise<string> {
+     let result: string = '';
+     // step1. 调用asset.preQuery获取挑战值。
+     await preQueryAsset().then(async (challenge: Uint8Array) => {
+       try {
+         // step2. 传入挑战值，拉起用户认证框。
+         let authToken: Uint8Array = await userAuthenticate(challenge);
+         // step3 用户认证通过后，传入挑战值和授权令牌，查询关键资产明文。
+         let query: asset.AssetMap = new Map();
+         query.set(asset.Tag.ALIAS, stringToArray('user_auth_asset'));
+         query.set(asset.Tag.RETURN_TYPE, asset.ReturnType.ALL);
+         query.set(asset.Tag.AUTH_CHALLENGE, challenge);
+         query.set(asset.Tag.AUTH_TOKEN, authToken);
+         let res: asset.AssetMap[] = await asset.query(query);
+         for (let i = 0; i < res.length; i++) {
+           // 解析secret。
+           let secret: Uint8Array = res[i].get(asset.Tag.SECRET) as Uint8Array;
+           // 将Uint8Array转换为string类型。
+           let secretStr: string = arrayToString(secret);
+         }
+         // step4. 关键资产明文查询成功后，需要调用asset.postQuery进行查询的后置处理。
+         postQueryAsset(challenge);
+         result = 'Succeeded in querying user-auth Asset';
+       } catch (error) {
+         // step5. preQuery成功，后续操作失败，也需要调用asset.postQuery进行查询的后置处理。
+         postQueryAsset(challenge);
+         result = 'Failed to query user-auth Asset';
+       }
+     }).catch((err: BusinessError) => {
+       console.error(`Failed to pre-query Asset. Code is ${err.code}, message is ${err.message}`);
+       result = 'Failed to query user-auth Asset';
+     })
+     return result;
+   }
    ```
-   1. async function userAuthenticate(challenge: Uint8Array): Promise<Uint8Array> {
-   2. return new Promise((resolve, reject) => {
-   3. const authParam: userAuth.AuthParam = {
-   4. challenge: challenge,
-   5. authType: [userAuth.UserAuthType.PIN],
-   6. authTrustLevel: userAuth.AuthTrustLevel.ATL1,
-   7. };
-   8. const widgetParam: userAuth.WidgetParam = { title: '请输入锁屏密码' };
-   9. try {
-   10. let userAuthInstance = userAuth.getUserAuthInstance(authParam, widgetParam);
-   11. userAuthInstance.on('result', {
-   12. onResult(result) {
-   13. if (result.result == userAuth.UserAuthResultCode.SUCCESS) {
-   14. console.info(`User identity authentication succeeded.`);
-   15. resolve(result.token);
-   16. } else {
-   17. console.error(`User identity authentication failed.`);
-   18. reject();
-   19. }
-   20. }
-   21. });
-   22. userAuthInstance.start();
-   23. } catch (error) {
-   24. let err = error as BusinessError;
-   25. console.error(`User identity authentication failed. Code is ${err.code}, message is ${err.message}`);
-   26. reject();
-   27. }
-   28. })
-   29. }
-
-   31. function preQueryAsset(): Promise<Uint8Array> {
-   32. return new Promise((resolve, reject) => {
-   33. try {
-   34. let query: asset.AssetMap = new Map();
-   35. query.set(asset.Tag.ALIAS, stringToArray('user_auth_asset'));
-   36. asset.preQuery(query).then((challenge: Uint8Array) => {
-   37. resolve(challenge);
-   38. }).catch(() => {
-   39. reject();
-   40. })
-   41. } catch (error) {
-   42. let err = error as BusinessError;
-   43. console.error(`Failed to pre-query Asset. Code is ${err.code}, message is ${err.message}`);
-   44. reject();
-   45. }
-   46. });
-   47. }
-
-   49. async function postQueryAsset(challenge: Uint8Array) {
-   50. let handle: asset.AssetMap = new Map();
-   51. handle.set(asset.Tag.AUTH_CHALLENGE, challenge);
-   52. try {
-   53. await asset.postQuery(handle);
-   54. console.info(`Succeeded in post-querying Asset.`);
-   55. } catch (error) {
-   56. let err = error as BusinessError;
-   57. console.error(`Failed to post-query Asset. Code is ${err.code}, message is ${err.message}`);
-   58. }
-   59. }
-
-   61. export async function queryUserAuthAsset(): Promise<string> {
-   62. let result: string = '';
-   63. // step1. 调用asset.preQuery获取挑战值。
-   64. await preQueryAsset().then(async (challenge: Uint8Array) => {
-   65. try {
-   66. // step2. 传入挑战值，拉起用户认证框。
-   67. let authToken: Uint8Array = await userAuthenticate(challenge);
-   68. // step3 用户认证通过后，传入挑战值和授权令牌，查询关键资产明文。
-   69. let query: asset.AssetMap = new Map();
-   70. query.set(asset.Tag.ALIAS, stringToArray('user_auth_asset'));
-   71. query.set(asset.Tag.RETURN_TYPE, asset.ReturnType.ALL);
-   72. query.set(asset.Tag.AUTH_CHALLENGE, challenge);
-   73. query.set(asset.Tag.AUTH_TOKEN, authToken);
-   74. let res: asset.AssetMap[] = await asset.query(query);
-   75. for (let i = 0; i < res.length; i++) {
-   76. // 解析secret。
-   77. let secret: Uint8Array = res[i].get(asset.Tag.SECRET) as Uint8Array;
-   78. // 将Uint8Array转换为string类型。
-   79. let secretStr: string = arrayToString(secret);
-   80. }
-   81. // step4. 关键资产明文查询成功后，需要调用asset.postQuery进行查询的后置处理。
-   82. postQueryAsset(challenge);
-   83. result = 'Succeeded in querying user-auth Asset';
-   84. } catch (error) {
-   85. // step5. preQuery成功，后续操作失败，也需要调用asset.postQuery进行查询的后置处理。
-   86. postQueryAsset(challenge);
-   87. result = 'Failed to query user-auth Asset';
-   88. }
-   89. }).catch((err: BusinessError) => {
-   90. console.error(`Failed to pre-query Asset. Code is ${err.code}, message is ${err.message}`);
-   91. result = 'Failed to query user-auth Asset';
-   92. })
-   93. return result;
-   94. }
-   ```
-
-   [query\_auth.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Security/AssetStoreKit/AssetStoreArkTS/entry/src/main/ets/operations/query_auth.ets#L34-L129)

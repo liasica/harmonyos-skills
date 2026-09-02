@@ -3,25 +3,27 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-bas
 title: 事件
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS 组件 > Web > 事件
 category: harmonyos-references
-scraped_at: 2026-04-29T13:55:45+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:e9d262e105d357f1791fb2feb3d46b0a6962b35bcea8f7cd461109d7e502e753
+scraped_at: 2026-09-02T15:01:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5da22c4cc34926fb2e1e57b092b3343d6986cfdcae60bf48d6cf5ebb8f75b294
 ---
+
+Web组件事件模块是ArkWeb框架中Web组件的事件回调接口集合，为开发者提供监听和响应Web组件各类运行时事件的机制。这些事件覆盖了Web页面加载的完整生命周期（从加载开始到完成）、JavaScript对话框交互、资源请求拦截与错误处理、安全认证（HTTP Auth、SSL错误、客户端证书）、权限管理、渲染进程状态、UI交互（上下文菜单、滚动、缩放、全屏）、窗口管理、同层渲染、性能度量以及多媒体设备状态等场景。开发者通过注册对应的事件回调，可以在Web组件运行过程中获取关键信息、拦截或自定义处理逻辑，实现应用对Web内容的精细管控和用户体验优化。
+
+在嵌入式Web场景中，若需对网页行为进行拦截、自定义或监控（如自定义JavaScript弹窗样式、拦截URL请求返回本地数据、处理SSL证书错误、管理摄像头/麦克风权限、监听页面加载进度、感知渲染进程异常、实现同层渲染交互），应使用本模块提供的各事件回调API。
 
 通用事件仅支持[onAppear](ts-universal-events-show-hide.md#onappear)、[onDisAppear](ts-universal-events-show-hide.md#ondisappear)、[onBlur](ts-universal-focus-event.md#onblur)、[onFocus](ts-universal-focus-event.md#onfocus)、[onDragEnd](ts-universal-events-drag-drop.md#ondragend10)、[onDragEnter](ts-universal-events-drag-drop.md#ondragenter)、[onDragStart](ts-universal-events-drag-drop.md#ondragstart)、[onDragMove](ts-universal-events-drag-drop.md#ondragmove)、[onDragLeave](ts-universal-events-drag-drop.md#ondragleave)、[onDrop](ts-universal-events-drag-drop.md#ondrop)、[onHover](ts-universal-events-hover.md#onhover)、[onMouse](ts-universal-mouse-key.md#onmouse)、[onKeyEvent](ts-universal-events-key.md#onkeyevent)、[onTouch](ts-universal-events-touch.md#ontouch)、[onVisibleAreaChange](ts-universal-component-visible-area-change-event.md#onvisibleareachange)。
 
-说明
+**说明** 
 
-* 该组件首批接口从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 示例效果请以真机运行为准。
 
 ## onAlert
 
-PhonePC/2in1TabletTVWearable
-
 onAlert(callback: Callback<OnAlertEvent, boolean>)
 
-网页触发alert()告警弹窗时触发回调。若不调用[handleCancel](arkts-basic-components-web-jsresult.md#handlecancel)或[handleConfirm](arkts-basic-components-web-jsresult.md#handleconfirm)接口，会造成render进程阻塞。
+网页触发alert()告警弹窗时触发回调。若不调用[handleCancel](arkts-basic-components-web-jsresult.md#handlecancel)或[handleConfirm](arkts-basic-components-web-jsresult.md#handleconfirm)接口，会造成渲染进程阻塞。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -29,78 +31,77 @@ onAlert(callback: Callback<OnAlertEvent, boolean>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | Callback<[OnAlertEvent](arkts-basic-components-web-i.md#onalertevent12), boolean> | 是 | 网页触发alert()告警弹窗时触发。  返回值boolean。当回调返回true时，应用可以调用自定义弹窗能力（包括确认和取消），并且需要根据用户的确认或取消操作调用JsResult通知Web组件最终确认结果。当回调返回false时，弹窗的处理结果会被视为取消。 |
+| callback | Callback<[OnAlertEvent](arkts-basic-components-web-i.md#onalertevent12), boolean> | 是 | 网页触发alert()告警弹窗时触发。  返回值boolean。当回调返回true时，应用可调用自定义弹窗能力（包括确认和取消），并根据用户的确认或取消操作调用JsResult通知Web组件最终确认结果。当回调返回false时，弹窗的处理结果会被视为取消。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. uiContext: UIContext = this.getUIContext();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  uiContext: UIContext = this.getUIContext();
 
-10. build() {
-11. Column() {
-12. Web({ src: $rawfile("index.html"), controller: this.controller })
-13. .onAlert((event) => {
-14. if (event) {
-15. console.info("event.url:" + event.url);
-16. console.info("event.message:" + event.message);
-17. this.uiContext.showAlertDialog({
-18. title: 'onAlert',
-19. message: 'text',
-20. primaryButton: {
-21. value: 'ok',
-22. action: () => {
-23. event.result.handleConfirm();
-24. }
-25. },
-26. cancel: () => {
-27. event.result.handleCancel();
-28. }
-29. })
-30. }
-31. return true;
-32. })
-33. }
-34. }
-35. }
+  build() {
+    Column() {
+      Web({ src: $rawfile("index.html"), controller: this.controller })
+        .onAlert((event) => {
+          if (event) {
+            console.info('event.url:' + event.url);
+            console.info('event.message:' + event.message);
+            this.uiContext.showAlertDialog({
+              title: 'onAlert',
+              message: 'text',
+              primaryButton: {
+                value: 'ok',
+                action: () => {
+                  // 用户点击确认，调用handleConfirm通知Web组件确认结果
+                  event.result.handleConfirm();
+                }
+              },
+              cancel: () => {
+                event.result.handleCancel();
+              }
+            })
+          }
+          return true;
+        })
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-6. </head>
-7. <body>
-8. <h1>WebView onAlert Demo</h1>
-9. <button onclick="myFunction()">Click here</button>
-10. <script>
-11. function myFunction() {
-12. alert("Hello World");
-13. }
-14. </script>
-15. </body>
-16. </html>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <h1>WebView onAlert Demo</h1>
+  <button onclick="myFunction()">Click here</button>
+  <script>
+    function myFunction() {
+      alert("Hello World");
+    }
+  </script>
+</body>
+</html>
 ```
 
 ## onBeforeUnload
-
-PhonePC/2in1TabletTVWearable
 
 onBeforeUnload(callback: Callback<OnBeforeUnloadEvent, boolean>)
 
 即将完成页面刷新或关闭当前页面时触发此回调。
 
-说明
+**说明** 
 
 * 如果当前Web组件没有得到焦点，刷新或关闭当前页面时onBeforeUnload不会触发。
 
@@ -114,79 +115,77 @@ onBeforeUnload(callback: Callback<OnBeforeUnloadEvent, boolean>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. uiContext: UIContext = this.getUIContext();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  uiContext: UIContext = this.getUIContext();
 
-10. build() {
-11. Column() {
-12. Web({ src: $rawfile("index.html"), controller: this.controller })
-13. .onBeforeUnload((event) => {
-14. if (event) {
-15. console.info("event.url:" + event.url);
-16. console.info("event.message:" + event.message);
-17. console.info("event.isReload:" + event?.isReload ?? 'false');
-18. this.uiContext.showAlertDialog({
-19. title: 'onBeforeUnload',
-20. message: 'text',
-21. primaryButton: {
-22. value: 'cancel',
-23. action: () => {
-24. event.result.handleCancel();
-25. }
-26. },
-27. secondaryButton: {
-28. value: 'ok',
-29. action: () => {
-30. event.result.handleConfirm();
-31. }
-32. },
-33. cancel: () => {
-34. event.result.handleCancel();
-35. }
-36. })
-37. }
-38. return true;
-39. })
-40. }
-41. }
-42. }
+  build() {
+    Column() {
+      Web({ src: $rawfile("index.html"), controller: this.controller })
+        .onBeforeUnload((event) => {
+          if (event) {
+            console.info("event.url:" + event.url);
+            console.info("event.message:" + event.message);
+            console.info("event.isReload:" + event?.isReload ?? 'false');
+            this.uiContext.showAlertDialog({
+              title: 'onBeforeUnload',
+              message: 'text',
+              primaryButton: {
+                value: 'cancel',
+                action: () => {
+                  event.result.handleCancel();
+                }
+              },
+              secondaryButton: {
+                value: 'ok',
+                action: () => {
+                  event.result.handleConfirm();
+                }
+              },
+              cancel: () => {
+                event.result.handleCancel();
+              }
+            })
+          }
+          return true;
+        })
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-6. </head>
-7. <body onbeforeunload="return myFunction()">
-8. <h1>WebView onBeforeUnload Demo</h1>
-9. <a href="https://www.example.com">Click here</a>
-10. <script>
-11. function myFunction() {
-12. return "onBeforeUnload Event";
-13. }
-14. </script>
-15. </body>
-16. </html>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body onbeforeunload="return myFunction()">
+  <h1>WebView onBeforeUnload Demo</h1>
+  <a href="https://www.example.com">Click here</a>
+  <script>
+    function myFunction() {
+      return "onBeforeUnload Event";
+    }
+  </script>
+</body>
+</html>
 ```
 
 ## onConfirm
 
-PhonePC/2in1TabletTVWearable
-
 onConfirm(callback: Callback<OnConfirmEvent, boolean>)
 
-网页调用confirm()告警时触发此回调。若不调用[handleCancel](arkts-basic-components-web-jsresult.md#handlecancel)或[handleConfirm](arkts-basic-components-web-jsresult.md#handleconfirm)接口，会造成render进程阻塞。
+网页调用confirm()告警时触发此回调。若不调用[handleCancel](arkts-basic-components-web-jsresult.md#handlecancel)或[handleConfirm](arkts-basic-components-web-jsresult.md#handleconfirm)接口，会造成渲染进程阻塞。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -198,87 +197,87 @@ onConfirm(callback: Callback<OnConfirmEvent, boolean>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. uiContext: UIContext = this.getUIContext();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  uiContext: UIContext = this.getUIContext();
 
-10. build() {
-11. Column() {
-12. Web({ src: $rawfile("index.html"), controller: this.controller })
-13. .onConfirm((event) => {
-14. if (event) {
-15. console.info("event.url:" + event.url);
-16. console.info("event.message:" + event.message);
-17. this.uiContext.showAlertDialog({
-18. title: 'onConfirm',
-19. message: 'text',
-20. primaryButton: {
-21. value: 'cancel',
-22. action: () => {
-23. event.result.handleCancel();
-24. }
-25. },
-26. secondaryButton: {
-27. value: 'ok',
-28. action: () => {
-29. event.result.handleConfirm();
-30. }
-31. },
-32. cancel: () => {
-33. event.result.handleCancel();
-34. }
-35. })
-36. }
-37. return true;
-38. })
-39. }
-40. }
-41. }
+  build() {
+    Column() {
+      Web({ src: $rawfile("index.html"), controller: this.controller })
+        .onConfirm((event) => {
+          if (event) {
+            console.info('event.url:' + event.url);
+            console.info('event.message:' + event.message);
+            this.uiContext.showAlertDialog({
+              title: 'onConfirm',
+              message: 'text',
+              primaryButton: {
+                value: 'cancel',
+                action: () => {
+                  // 用户点击取消，调用handleCancel通知Web组件取消结果
+                  event.result.handleCancel();
+                }
+              },
+              secondaryButton: {
+                value: 'ok',
+                action: () => {
+                  // 用户点击确认，调用handleConfirm通知Web组件确认结果
+                  event.result.handleConfirm();
+                }
+              },
+              cancel: () => {
+                event.result.handleCancel();
+              }
+            })
+          }
+          return true;
+        })
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-6. </head>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
-8. <body>
-9. <h1>WebView onConfirm Demo</h1>
-10. <button onclick="myFunction()">Click here</button>
-11. <p id="demo"></p>
-12. <script>
-13. function myFunction() {
-14. let x;
-15. let r = confirm("click button!");
-16. if (r == true) {
-17. x = "ok";
-18. } else {
-19. x = "cancel";
-20. }
-21. document.getElementById("demo").innerHTML = x;
-22. }
-23. </script>
-24. </body>
-25. </html>
+<body>
+  <h1>WebView onConfirm Demo</h1>
+  <button onclick="myFunction()">Click here</button>
+  <p id="demo"></p>
+  <script>
+    function myFunction() {
+      let x;
+      let r = confirm("click button!");
+      if (r == true) {
+        x = "ok";
+      } else {
+        x = "cancel";
+      }
+      document.getElementById("demo").innerHTML = x;
+    }
+  </script>
+</body>
+</html>
 ```
 
 ## onPrompt9+
 
-PhonePC/2in1TabletTVWearable
-
 onPrompt(callback: Callback<OnPromptEvent, boolean>)
 
-网页调用prompt()告警时触发此回调。若不调用[handleCancel](arkts-basic-components-web-jsresult.md#handlecancel)或[handlePromptConfirm](arkts-basic-components-web-jsresult.md#handlepromptconfirm9)接口，会造成render进程阻塞。
+网页调用prompt()告警时触发此回调。若不调用[handleCancel](arkts-basic-components-web-jsresult.md#handlecancel)或[handlePromptConfirm](arkts-basic-components-web-jsresult.md#handlepromptconfirm9)接口，会造成渲染进程阻塞。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -290,113 +289,114 @@ onPrompt(callback: Callback<OnPromptEvent, boolean>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { CustomContentDialog } from '@kit.ArkUI';
-3. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { CustomContentDialog } from '@kit.ArkUI';
+import { webview } from '@kit.ArkWeb';
 
-5. @Entry
-6. @Component
-7. struct WebComponent {
-8. @State message: string = 'Hello World';
-9. @State title: string = 'Hello World';
-10. @State result: JsResult | null = null;
-11. promptResult: string = '';
-12. webviewController: webview.WebviewController = new webview.WebviewController();
-13. dialogController: CustomDialogController = new CustomDialogController({
-14. builder: CustomContentDialog({
-15. primaryTitle: this.title,
-16. contentBuilder: () => {
-17. this.buildContent();
-18. },
-19. buttons: [
-20. {
-21. value: '取消',
-22. buttonStyle: ButtonStyleMode.TEXTUAL,
-23. action: () => {
-24. console.info('Callback when the button is clicked');
-25. this.result?.handleCancel()
-26. }
-27. },
-28. {
-29. value: '确认',
-30. buttonStyle: ButtonStyleMode.TEXTUAL,
-31. action: () => {
-32. this.result?.handlePromptConfirm(this.promptResult);
-33. }
-34. }
-35. ],
-36. }),
-37. onWillDismiss: () => {
-38. this.result?.handleCancel();
-39. this.dialogController.close();
-40. }
-41. });
+@Entry
+@Component
+struct WebComponent {
+  @State message: string = 'Hello World';
+  @State title: string = 'Hello World';
+  @State result: JsResult | null = null;
+  promptResult: string = '';
+  webviewController: webview.WebviewController = new webview.WebviewController();
+  dialogController: CustomDialogController = new CustomDialogController({
+    builder: CustomContentDialog({
+      primaryTitle: this.title,
+      contentBuilder: () => {
+        this.buildContent();
+      },
+      buttons: [
+        {
+          value: '取消',
+          buttonStyle: ButtonStyleMode.TEXTUAL,
+          action: () => {
+            console.info('Callback when the button is clicked');
+            // 用户点击取消，调用handleCancel通知Web组件取消结果
+            this.result?.handleCancel()
+          }
+        },
+        {
+          value: '确认',
+          buttonStyle: ButtonStyleMode.TEXTUAL,
+          action: () => {
+            // 用户点击确认，调用handlePromptConfirm通知Web组件确认结果并传入用户输入的内容
+            this.result?.handlePromptConfirm(this.promptResult);
+          }
+        }
+      ],
+    }),
+    onWillDismiss: () => {
+      // 弹窗被取消，调用handleCancel通知Web组件取消结果
+      this.result?.handleCancel();
+      this.dialogController.close();
+    }
+  });
 
-43. // 自定义弹出框的内容区
-44. @Builder
-45. buildContent(): void {
-46. Column() {
-47. Text(this.message)
-48. TextInput()
-49. .onChange((value) => {
-50. this.promptResult = value;
-51. })
-52. .defaultFocus(true)
-53. }
-54. .width('100%')
-55. }
+  // 自定义弹出框的内容区
+  @Builder
+  buildContent(): void {
+    Column() {
+      Text(this.message)
+      TextInput()
+        .onChange((value) => {
+          this.promptResult = value;
+        })
+        .defaultFocus(true)
+    }
+    .width('100%')
+  }
 
-57. build() {
-58. Column() {
-59. Web({ src: $rawfile('index.html'), controller: this.webviewController })
-60. .onPrompt((event) => {
-61. if (event) {
-62. console.info("event.url:" + event.url);
-63. console.info("event.message:" + event.message);
-64. console.info("event.value:" + event.value);
-65. this.title = "来自" + event.url + "的消息";
-66. this.message = event.message;
-67. this.promptResult = event.value;
-68. this.result = event.result;
-69. this.dialogController.open();
-70. }
-71. return true;
-72. })
-73. }
-74. }
-75. }
+  build() {
+    Column() {
+      Web({ src: $rawfile('index.html'), controller: this.webviewController })
+        .onPrompt((event) => {
+          if (event) {
+            console.info("event.url:" + event.url);
+            console.info("event.message:" + event.message);
+            console.info("event.value:" + event.value);
+            this.title = "来自" + event.url + "的消息";
+            this.message = event.message;
+            this.promptResult = event.value;
+            this.result = event.result;
+            this.dialogController.open();
+          }
+          return true;
+        })
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-6. </head>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
-8. <body>
-9. <h1>WebView onPrompt Demo</h1>
-10. <button onclick="myFunction()">Click here</button>
-11. <p id="demo"></p>
-12. <script>
-13. function myFunction() {
-14. let message = prompt("Message info", "Hello World");
-15. if (message != null && message != "") {
-16. document.getElementById("demo").innerHTML = message;
-17. }
-18. }
-19. </script>
-20. </body>
-21. </html>
+<body>
+  <h1>WebView onPrompt Demo</h1>
+  <button onclick="myFunction()">Click here</button>
+  <p id="demo"></p>
+  <script>
+    function myFunction() {
+      let message = prompt("Message info", "Hello World");
+      if (message != null && message != "") {
+        document.getElementById("demo").innerHTML = message;
+      }
+    }
+  </script>
+</body>
+</html>
 ```
 
 ## onConsole
-
-PhonePC/2in1TabletTVWearable
 
 onConsole(callback: Callback<OnConsoleEvent, boolean>)
 
@@ -412,60 +412,58 @@ onConsole(callback: Callback<OnConsoleEvent, boolean>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Button('onconsole message')
-12. .onClick(() => {
-13. this.controller.runJavaScript('myFunction()');
-14. })
-15. Web({ src: $rawfile('index.html'), controller: this.controller })
-16. .onConsole((event) => {
-17. if (event) {
-18. console.info('getMessage:' + event.message.getMessage());
-19. console.info('getSourceId:' + event.message.getSourceId());
-20. console.info('getLineNumber:' + event.message.getLineNumber());
-21. console.info('getMessageLevel:' + event.message.getMessageLevel());
-22. console.info('getSource:' + event.message.getSource());
-23. }
-24. return false;
-25. })
-26. }
-27. }
-28. }
+  build() {
+    Column() {
+      Button('onconsole message')
+        .onClick(() => {
+          this.controller.runJavaScript('myFunction()');
+        })
+      Web({ src: $rawfile('index.html'), controller: this.controller })
+        .onConsole((event) => {
+          if (event) {
+            console.info('getMessage:' + event.message.getMessage());
+            console.info('getSourceId:' + event.message.getSourceId());
+            console.info('getLineNumber:' + event.message.getLineNumber());
+            console.info('getMessageLevel:' + event.message.getMessageLevel());
+            console.info('getSource:' + event.message.getSource());
+          }
+          return false;
+        })
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!-- index.html -->
-2. <!DOCTYPE html>
-3. <html>
-4. <body>
-5. <script>
-6. function myFunction() {
-7. console.info("onconsole printf");
-8. }
-9. </script>
-10. </body>
-11. </html>
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+    function myFunction() {
+        console.info("onconsole printf");
+    }
+</script>
+</body>
+</html>
 ```
 
 ## onDownloadStart
 
-PhonePC/2in1TabletTVWearable
-
 onDownloadStart(callback: Callback<OnDownloadStartEvent>)
 
-通知主应用开始下载一个文件。
+通知主应用开始下载文件。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -473,39 +471,37 @@ onDownloadStart(callback: Callback<OnDownloadStartEvent>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | Callback<[OnDownloadStartEvent](arkts-basic-components-web-i.md#ondownloadstartevent12)> | 是 | 开始下载时触发。 |
+| callback | Callback<[OnDownloadStartEvent](arkts-basic-components-web-i.md#ondownloadstartevent12)> | 是 | 开始下载时触发此回调。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onDownloadStart((event) => {
-13. if (event) {
-14. console.info('url:' + event.url)
-15. console.info('userAgent:' + event.userAgent)
-16. console.info('contentDisposition:' + event.contentDisposition)
-17. console.info('contentLength:' + event.contentLength)
-18. console.info('mimetype:' + event.mimetype)
-19. }
-20. })
-21. }
-22. }
-23. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onDownloadStart((event) => {
+          if (event) {
+            console.info('url:' + event.url)
+            console.info('userAgent:' + event.userAgent)
+            console.info('contentDisposition:' + event.contentDisposition)
+            console.info('contentLength:' + event.contentLength)
+            console.info('mimetype:' + event.mimetype)
+          }
+        })
+    }
+  }
+}
 ```
 
 ## onErrorReceive
-
-PhonePC/2in1TabletTVWearable
 
 onErrorReceive(callback: Callback<OnErrorReceiveEvent>)
 
@@ -521,42 +517,40 @@ onErrorReceive(callback: Callback<OnErrorReceiveEvent>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onErrorReceive((event) => {
-13. if (event) {
-14. console.info('getErrorInfo:' + event.error.getErrorInfo());
-15. console.info('getErrorCode:' + event.error.getErrorCode());
-16. console.info('url:' + event.request.getRequestUrl());
-17. console.info('isMainFrame:' + event.request.isMainFrame());
-18. console.info('isRedirect:' + event.request.isRedirect());
-19. console.info('isRequestGesture:' + event.request.isRequestGesture());
-20. console.info('getRequestHeader_headerKey:' + event.request.getRequestHeader().toString());
-21. let result = event.request.getRequestHeader();
-22. console.info('The request header result size is ' + result.length);
-23. for (let i of result) {
-24. console.info('The request header key is : ' + i.headerKey + ', value is : ' + i.headerValue);
-25. }
-26. }
-27. })
-28. }
-29. }
-30. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onErrorReceive((event) => {
+          if (event) {
+            console.info('getErrorInfo:' + event.error.getErrorInfo());
+            console.info('getErrorCode:' + event.error.getErrorCode());
+            console.info('url:' + event.request.getRequestUrl());
+            console.info('isMainFrame:' + event.request.isMainFrame());
+            console.info('isRedirect:' + event.request.isRedirect());
+            console.info('isRequestGesture:' + event.request.isRequestGesture());
+            console.info('getRequestHeader_headerKey:' + event.request.getRequestHeader().toString());
+            let result = event.request.getRequestHeader();
+            console.info('The request header result size is ' + result.length);
+            for (let i of result) {
+              console.info('The request header key is : ' + i.headerKey + ', value is : ' + i.headerValue);
+            }
+          }
+        })
+    }
+  }
+}
 ```
 
 ## onHttpErrorReceive
-
-PhonePC/2in1TabletTVWearable
 
 onHttpErrorReceive(callback: Callback<OnHttpErrorReceiveEvent>)
 
@@ -572,49 +566,47 @@ onHttpErrorReceive(callback: Callback<OnHttpErrorReceiveEvent>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onHttpErrorReceive((event) => {
-13. if (event) {
-14. console.info('url:' + event.request.getRequestUrl());
-15. console.info('isMainFrame:' + event.request.isMainFrame());
-16. console.info('isRedirect:' + event.request.isRedirect());
-17. console.info('isRequestGesture:' + event.request.isRequestGesture());
-18. console.info('getResponseData:' + event.response.getResponseData());
-19. console.info('getResponseEncoding:' + event.response.getResponseEncoding());
-20. console.info('getResponseMimeType:' + event.response.getResponseMimeType());
-21. console.info('getResponseCode:' + event.response.getResponseCode());
-22. console.info('getReasonMessage:' + event.response.getReasonMessage());
-23. let result = event.request.getRequestHeader();
-24. console.info('The request header result size is ' + result.length);
-25. for (let i of result) {
-26. console.info('The request header key is : ' + i.headerKey + ' , value is : ' + i.headerValue);
-27. }
-28. let resph = event.response.getResponseHeader();
-29. console.info('The response header result size is ' + resph.length);
-30. for (let i of resph) {
-31. console.info('The response header key is : ' + i.headerKey + ' , value is : ' + i.headerValue);
-32. }
-33. }
-34. })
-35. }
-36. }
-37. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onHttpErrorReceive((event) => {
+          if (event) {
+            console.info('url:' + event.request.getRequestUrl());
+            console.info('isMainFrame:' + event.request.isMainFrame());
+            console.info('isRedirect:' + event.request.isRedirect());
+            console.info('isRequestGesture:' + event.request.isRequestGesture());
+            console.info('getResponseData:' + event.response.getResponseData());
+            console.info('getResponseEncoding:' + event.response.getResponseEncoding());
+            console.info('getResponseMimeType:' + event.response.getResponseMimeType());
+            console.info('getResponseCode:' + event.response.getResponseCode());
+            console.info('getReasonMessage:' + event.response.getReasonMessage());
+            let result = event.request.getRequestHeader();
+            console.info('The request header result size is ' + result.length);
+            for (let i of result) {
+              console.info('The request header key is : ' + i.headerKey + ' , value is : ' + i.headerValue);
+            }
+            let resph = event.response.getResponseHeader();
+            console.info('The response header result size is ' + resph.length);
+            for (let i of resph) {
+              console.info('The response header key is : ' + i.headerKey + ' , value is : ' + i.headerValue);
+            }
+          }
+        })
+    }
+  }
+}
 ```
 
 ## onPageBegin
-
-PhonePC/2in1TabletTVWearable
 
 onPageBegin(callback: Callback<OnPageBeginEvent>)
 
@@ -630,31 +622,29 @@ onPageBegin(callback: Callback<OnPageBeginEvent>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onPageBegin((event) => {
-13. if (event) {
-14. console.info('url:' + event.url);
-15. }
-16. })
-17. }
-18. }
-19. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onPageBegin((event) => {
+          if (event) {
+            console.info('url:' + event.url);
+          }
+        })
+    }
+  }
+}
 ```
 
 ## onPageEnd
-
-PhonePC/2in1TabletTVWearable
 
 onPageEnd(callback: Callback<OnPageEndEvent>)
 
@@ -670,37 +660,35 @@ onPageEnd(callback: Callback<OnPageEndEvent>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onPageEnd((event) => {
-13. if (event) {
-14. console.info('url:' + event.url);
-15. }
-16. })
-17. }
-18. }
-19. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onPageEnd((event) => {
+          if (event) {
+            console.info('url:' + event.url);
+          }
+        })
+    }
+  }
+}
 ```
 
 ## onLoadStarted20+
-
-PhonePC/2in1TabletTVWearable
 
 onLoadStarted(callback: Callback<OnLoadStartedEvent>)
 
 通知宿主应用页面开始加载。此方法在每次主frame加载时调用一次，因此对于包含iframes或frameset的页面，onLoadStarted仅针对主frame调用一次。这意味着当嵌入式frame的内容发生变化时，如点击iframe中的链接或Fragment跳转（即跳转到#fragment\_id的导航）等，不会调用onLoadStarted。
 
-说明
+**说明** 
 
 * 当弹出窗口的文档在加载之前被JavaScript修改时，它将模拟触发onLoadStarted，并将URL设置为空，因为显示当前正在加载的URL可能不安全。onPageBegin将不会被模拟。
 
@@ -714,37 +702,35 @@ onLoadStarted(callback: Callback<OnLoadStartedEvent>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onLoadStarted((event) => {
-13. if (event) {
-14. console.info('url:' + event.url);
-15. }
-16. })
-17. }
-18. }
-19. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onLoadStarted((event) => {
+          if (event) {
+            console.info('url:' + event.url);
+          }
+        })
+    }
+  }
+}
 ```
 
 ## onLoadFinished20+
-
-PhonePC/2in1TabletTVWearable
 
 onLoadFinished(callback: Callback<OnLoadFinishedEvent>)
 
 通知宿主应用页面已加载完成。此方法仅在主frame加载完成时被调用。对于片段跳转（即导航至#fragment\_id），onLoadFinished同样会被触发。
 
-说明
+**说明** 
 
 * 片段导航也会触发onLoadFinished，但onPageEnd不会被触发。
 * 如果主框架在页面完全加载之前被自动重定向，onLoadFinished只会触发一次。onPageEnd会在每次主框架导航时触发。
@@ -760,31 +746,29 @@ onLoadFinished(callback: Callback<OnLoadFinishedEvent>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onLoadFinished((event) => {
-13. if (event) {
-14. console.info('url:' + event.url);
-15. }
-16. })
-17. }
-18. }
-19. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onLoadFinished((event) => {
+          if (event) {
+            console.info('url:' + event.url);
+          }
+        })
+    }
+  }
+}
 ```
 
 ## onProgressChange
-
-PhonePC/2in1TabletTVWearable
 
 onProgressChange(callback: Callback<OnProgressChangeEvent>)
 
@@ -800,30 +784,28 @@ onProgressChange(callback: Callback<OnProgressChangeEvent>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. @Entry
-4. @Component
-5. struct WebComponent {
-6. controller: webview.WebviewController = new webview.WebviewController();
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-8. build() {
-9. Column() {
-10. Web({ src: 'www.example.com', controller: this.controller })
-11. .onProgressChange((event) => {
-12. if (event) {
-13. console.info('newProgress:' + event.newProgress);
-14. }
-15. })
-16. }
-17. }
-18. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onProgressChange((event) => {
+          if (event) {
+            console.info('newProgress:' + event.newProgress);
+          }
+        })
+    }
+  }
+}
 ```
 
 ## onTitleReceive
-
-PhonePC/2in1TabletTVWearable
 
 onTitleReceive(callback: Callback<OnTitleReceiveEvent>)
 
@@ -839,32 +821,30 @@ onTitleReceive(callback: Callback<OnTitleReceiveEvent>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onTitleReceive((event) => {
-13. if (event) {
-14. console.info('title:' + event.title);
-15. console.info('isRealTitle:' + event.isRealTitle);
-16. }
-17. })
-18. }
-19. }
-20. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onTitleReceive((event) => {
+          if (event) {
+            console.info('title:' + event.title);
+            console.info('isRealTitle:' + event.isRealTitle);
+          }
+        })
+    }
+  }
+}
 ```
 
 ## onRefreshAccessedHistory
-
-PhonePC/2in1TabletTVWearable
 
 onRefreshAccessedHistory(callback: Callback<OnRefreshAccessedHistoryEvent>)
 
@@ -880,32 +860,30 @@ onRefreshAccessedHistory(callback: Callback<OnRefreshAccessedHistoryEvent>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onRefreshAccessedHistory((event) => {
-13. if (event) {
-14. console.info('url:' + event.url + ' isReload:' + event.isRefreshed);
-15. console.info('isMainFrame:' + event.isMainFrame);
-16. }
-17. })
-18. }
-19. }
-20. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onRefreshAccessedHistory((event) => {
+          if (event) {
+            console.info('url:' + event.url + ' isReload:' + event.isRefreshed);
+            console.info('isMainFrame:' + event.isMainFrame);
+          }
+        })
+    }
+  }
+}
 ```
 
 ## onRenderExited9+
-
-PhonePC/2in1TabletTVWearable
 
 onRenderExited(callback: Callback<OnRenderExitedEvent>)
 
@@ -927,31 +905,29 @@ onRenderExited(callback: Callback<OnRenderExitedEvent>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'chrome://crash/', controller: this.controller })
-12. .onRenderExited((event) => {
-13. if (event) {
-14. console.info('reason:' + event.renderExitReason);
-15. }
-16. })
-17. }
-18. }
-19. }
+  build() {
+    Column() {
+      Web({ src: 'chrome://crash/', controller: this.controller })
+        .onRenderExited((event) => {
+          if (event) {
+            console.info('reason:' + event.renderExitReason);
+          }
+        })
+    }
+  }
+}
 ```
 
 ## onRenderProcessNotResponding12+
-
-PhonePC/2in1TabletTVWearable
 
 onRenderProcessNotResponding(callback: OnRenderProcessNotRespondingCallback)
 
@@ -971,30 +947,28 @@ onRenderProcessNotResponding(callback: OnRenderProcessNotRespondingCallback)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onRenderProcessNotResponding((data) => {
-13. console.info("onRenderProcessNotResponding: [jsStack]= " + data.jsStack +
-14. ", [process]=" + data.pid + ", [reason]=" + data.reason);
-15. })
-16. }
-17. }
-18. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onRenderProcessNotResponding((data) => {
+          console.info("onRenderProcessNotResponding: [jsStack]= " + data.jsStack +
+            ", [process]=" + data.pid + ", [reason]=" + data.reason);
+        })
+    }
+  }
+}
 ```
 
 ## onRenderProcessResponding12+
-
-PhonePC/2in1TabletTVWearable
 
 onRenderProcessResponding(callback: OnRenderProcessRespondingCallback)
 
@@ -1010,33 +984,31 @@ onRenderProcessResponding(callback: OnRenderProcessRespondingCallback)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onRenderProcessResponding(() => {
-13. console.info("onRenderProcessResponding again");
-14. })
-15. }
-16. }
-17. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onRenderProcessResponding(() => {
+          console.info("onRenderProcessResponding again");
+        })
+    }
+  }
+}
 ```
 
 ## onShowFileSelector9+
 
-PhonePC/2in1TabletTVWearable
-
 onShowFileSelector(callback: Callback<OnShowFileSelectorEvent, boolean>)
 
-调用此函数以处理具有“文件”输入类型的HTML表单。若不调用此函数或返回false，Web组件会提供默认的“选择文件”处理界面。若返回true，应用可以自定义“选择文件”的响应行为。
+用于处理具有“文件”输入类型的HTML表单。若不调用此函数或返回false，Web组件会提供默认的“选择文件”处理界面。若返回true，应用可以自定义“选择文件”的响应行为。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -1044,153 +1016,151 @@ onShowFileSelector(callback: Callback<OnShowFileSelectorEvent, boolean>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | Callback<[OnShowFileSelectorEvent](arkts-basic-components-web-i.md#onshowfileselectorevent12), boolean> | 是 | 用于通知Web组件文件选择的结果。  返回值boolean。当返回值为true时，用户可以调用系统提供的弹窗能力。当返回值为false时，函数中绘制的自定义弹窗无效。 |
+| callback | Callback<[OnShowFileSelectorEvent](arkts-basic-components-web-i.md#onshowfileselectorevent12), boolean> | 是 | 通知Web组件文件选择的结果。  返回值boolean。当返回值为true时，应用可以自定义“选择文件”的响应行为。当返回值为false时，函数中绘制的自定义弹窗无效，Web组件将使用系统默认的“选择文件”处理界面。 |
 
 **示例：**
 
 1. 拉起文件选择器。
 
-   ```
-   1. // xxx.ets
-   2. import { webview } from '@kit.ArkWeb';
-   3. import { picker } from '@kit.CoreFileKit';
-   4. import { BusinessError } from '@kit.BasicServicesKit';
+   ```ts
+   // xxx.ets
+   import { webview } from '@kit.ArkWeb';
+   import { picker } from '@kit.CoreFileKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
 
-   6. @Entry
-   7. @Component
-   8. struct WebComponent {
-   9. controller: webview.WebviewController = new webview.WebviewController()
+   @Entry
+   @Component
+   struct WebComponent {
+     controller: webview.WebviewController = new webview.WebviewController()
 
-   11. build() {
-   12. Column() {
-   13. Web({ src: $rawfile('index.html'), controller: this.controller })
-   14. .onShowFileSelector((event) => {
-   15. console.info('MyFileUploader onShowFileSelector invoked')
-   16. const documentSelectOptions = new picker.DocumentSelectOptions();
-   17. let uri: string | null = null;
-   18. const documentViewPicker = new picker.DocumentViewPicker();
-   19. documentViewPicker.select(documentSelectOptions).then((documentSelectResult) => {
-   20. uri = documentSelectResult[0];
-   21. console.info('documentViewPicker.select to file succeed and uri is:' + uri);
-   22. if (event) {
-   23. event.result.handleFileList([uri]);
-   24. }
-   25. }).catch((err: BusinessError) => {
-   26. console.error(`Invoke documentViewPicker.select failed, code is ${err.code},  message is ${err.message}`);
-   27. })
-   28. return true;
-   29. })
-   30. }
-   31. }
-   32. }
+     build() {
+       Column() {
+         Web({ src: $rawfile('index.html'), controller: this.controller })
+           .onShowFileSelector((event) => {
+             console.info('MyFileUploader onShowFileSelector invoked')
+             const documentSelectOptions = new picker.DocumentSelectOptions();
+             let uri: string | null = null;
+             const documentViewPicker = new picker.DocumentViewPicker();
+             documentViewPicker.select(documentSelectOptions).then((documentSelectResult) => {
+               uri = documentSelectResult[0];
+               console.info('documentViewPicker.select to file succeed and uri is:' + uri);
+               if (event) {
+                 event.result.handleFileList([uri]);
+               }
+             }).catch((err: BusinessError) => {
+               console.error(`Invoke documentViewPicker.select failed, code is ${err.code},  message is ${err.message}`);
+             })
+             return true;
+           })
+       }
+     }
+   }
    ```
 2. 拉起图库选择器。
 
-   ```
-   1. // xxx.ets
-   2. import { webview } from '@kit.ArkWeb';
-   3. import { picker } from '@kit.CoreFileKit';
-   4. import { photoAccessHelper } from '@kit.MediaLibraryKit';
+   ```ts
+   // xxx.ets
+   import { webview } from '@kit.ArkWeb';
+   import { picker } from '@kit.CoreFileKit';
+   import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
-   6. @Entry
-   7. @Component
-   8. struct WebComponent {
-   9. controller: webview.WebviewController = new webview.WebviewController();
+   @Entry
+   @Component
+   struct WebComponent {
+     controller: webview.WebviewController = new webview.WebviewController();
 
-   11. async selectFile(result: FileSelectorResult): Promise<void> {
-   12. let photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
-   13. let photoPicker = new photoAccessHelper.PhotoViewPicker();
-   14. // 过滤选择媒体文件类型为IMAGE_VIDEO
-   15. photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
-   16. // 设置最大选择数量
-   17. photoSelectOptions.maxSelectNumber = 5;
-   18. let chooseFile: photoAccessHelper.PhotoSelectResult = await photoPicker.select(photoSelectOptions);
-   19. // 获取选择的文件列表
-   20. result.handleFileList(chooseFile.photoUris);
-   21. }
+     async selectFile(result: FileSelectorResult): Promise<void> {
+       let photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
+       let photoPicker = new photoAccessHelper.PhotoViewPicker();
+       // 过滤选择媒体文件类型为IMAGE_VIDEO
+       photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
+       // 设置最大选择数量
+       photoSelectOptions.maxSelectNumber = 5;
+       let chooseFile: photoAccessHelper.PhotoSelectResult = await photoPicker.select(photoSelectOptions);
+       // 获取选择的文件列表
+       result.handleFileList(chooseFile.photoUris);
+     }
 
-   23. build() {
-   24. Column() {
-   25. Web({ src: $rawfile('index.html'), controller: this.controller })
-   26. .onShowFileSelector((event) => {
-   27. if (event) {
-   28. this.selectFile(event.result);
-   29. }
-   30. return true;
-   31. })
-   32. }
-   33. }
-   34. }
+     build() {
+       Column() {
+         Web({ src: $rawfile('index.html'), controller: this.controller })
+           .onShowFileSelector((event) => {
+             if (event) {
+               this.selectFile(event.result);
+             }
+             return true;
+           })
+       }
+     }
+   }
    ```
 3. 拉起相机选择器。
 
-   ```
-   1. // xxx.ets
-   2. import { webview } from '@kit.ArkWeb';
-   3. import { cameraPicker, camera } from '@kit.CameraKit';
-   4. import { BusinessError } from '@kit.BasicServicesKit';
-   5. import { common } from '@kit.AbilityKit';
+   ```ts
+   // xxx.ets
+   import { webview } from '@kit.ArkWeb';
+   import { cameraPicker, camera } from '@kit.CameraKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { common } from '@kit.AbilityKit';
 
-   7. async function openCamera(callback: Callback<string>, uiContext: UIContext) {
-   8. let mContext = uiContext.getHostContext() as common.Context;
-   9. try {
-   10. let pickerProfile: cameraPicker.PickerProfile = {
-   11. cameraPosition: camera.CameraPosition.CAMERA_POSITION_BACK
-   12. };
-   13. let pickerResult: cameraPicker.PickerResult = await cameraPicker.pick(mContext,
-   14. [cameraPicker.PickerMediaType.PHOTO, cameraPicker.PickerMediaType.VIDEO], pickerProfile);
-   15. callback(pickerResult.resultUri);
-   16. } catch (error) {
-   17. let err = error as BusinessError;
-   18. console.error(`the pick call failed. error code: ${err.code}`);
-   19. }
-   20. }
+   async function openCamera(callback: Callback<string>, uiContext: UIContext) {
+    let mContext = uiContext.getHostContext() as common.Context;
+     try {
+       let pickerProfile: cameraPicker.PickerProfile = {
+         cameraPosition: camera.CameraPosition.CAMERA_POSITION_BACK
+       };
+       let pickerResult: cameraPicker.PickerResult = await cameraPicker.pick(mContext,
+         [cameraPicker.PickerMediaType.PHOTO, cameraPicker.PickerMediaType.VIDEO], pickerProfile);
+       callback(pickerResult.resultUri);
+     } catch (error) {
+       let err = error as BusinessError;
+       console.error(`the pick call failed. error code: ${err.code}`);
+     }
+   }
 
-   22. @Entry
-   23. @Component
-   24. struct WebComponent {
-   25. controller: webview.WebviewController = new webview.WebviewController();
+   @Entry
+   @Component
+   struct WebComponent {
+     controller: webview.WebviewController = new webview.WebviewController();
 
-   27. build() {
-   28. Column() {
-   29. Web({ src: $rawfile('index.html'), controller: this.controller })
-   30. .onShowFileSelector((event) => {
-   31. openCamera((result) => {
-   32. if (event) {
-   33. console.info('Title is ' + event.fileSelector.getTitle());
-   34. console.info('Mode is ' + event.fileSelector.getMode());
-   35. console.info('Accept types are ' + event.fileSelector.getAcceptType());
-   36. console.info('Capture is ' + event.fileSelector.isCapture());
-   37. console.info('Mime types are ' + event.fileSelector.getMimeTypes());
-   38. event.result.handleFileList([result]);
-   39. }
-   40. }, this.getUIContext())
-   41. return true;
-   42. })
-   43. }
-   44. }
-   45. }
+     build() {
+       Column() {
+         Web({ src: $rawfile('index.html'), controller: this.controller })
+           .onShowFileSelector((event) => {
+             openCamera((result) => {
+               if (event) {
+                 console.info('Title is ' + event.fileSelector.getTitle());
+                 console.info('Mode is ' + event.fileSelector.getMode());
+                 console.info('Accept types are ' + event.fileSelector.getAcceptType());
+                 console.info('Capture is ' + event.fileSelector.isCapture());
+                 console.info('Mime types are ' + event.fileSelector.getMimeTypes());
+                 event.result.handleFileList([result]);
+               }
+             }, this.getUIContext())
+             return true;
+           })
+       }
+     }
+   }
    ```
 
    加载的html文件。
 
-   ```
-   1. <!DOCTYPE html>
-   2. <html>
-   3. <head>
-   4. <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-   5. </head>
-   6. <body>
-   7. <form id="upload-form" enctype="multipart/form-data">
-   8. <input type="file" id="upload" name="upload" accept="image/*, video/*"/>
-   9. </form>
-   10. </body>
-   11. </html>
+   ```html
+   <!DOCTYPE html>
+   <html>
+   <head>
+     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+     <form id="upload-form" enctype="multipart/form-data">
+       <input type="file" id="upload" name="upload" accept="image/*, video/*"/>
+       </form>
+   </body>
+   </html>
    ```
 
 ## onResourceLoad9+
-
-PhonePC/2in1TabletTVWearable
 
 onResourceLoad(callback: Callback<OnResourceLoadEvent>)
 
@@ -1206,33 +1176,31 @@ onResourceLoad(callback: Callback<OnResourceLoadEvent>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onResourceLoad((event) => {
-13. console.info('onResourceLoad: ' + event.url);
-14. })
-15. }
-16. }
-17. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onResourceLoad((event) => {
+          console.info('onResourceLoad: ' + event.url);
+        })
+    }
+  }
+}
 ```
 
 ## onScaleChange9+
 
-PhonePC/2in1TabletTVWearable
-
 onScaleChange(callback: Callback<OnScaleChangeEvent>)
 
-当页面显示比例发生变化时，触发该回调。
+当页面显示比例发生变化时，触发该回调。用于监听用户缩放行为，提供更好的页面缩放体验。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -1244,29 +1212,27 @@ onScaleChange(callback: Callback<OnScaleChangeEvent>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onScaleChange((event) => {
-13. console.info('onScaleChange changed from ' + event.oldScale + ' to ' + event.newScale);
-14. })
-15. }
-16. }
-17. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onScaleChange((event) => {
+          console.info('onScaleChange changed from ' + event.oldScale + ' to ' + event.newScale);
+        })
+    }
+  }
+}
 ```
 
 ## onInterceptRequest9+
-
-PhonePC/2in1TabletTVWearable
 
 onInterceptRequest(callback: Callback<OnInterceptRequestEvent, WebResourceResponse>)
 
@@ -1278,77 +1244,75 @@ onInterceptRequest(callback: Callback<OnInterceptRequestEvent, WebResourceRespon
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | Callback<[OnInterceptRequestEvent](arkts-basic-components-web-i.md#oninterceptrequestevent12), [WebResourceResponse](arkts-basic-components-web-webresourceresponse.md)> | 是 | 当Web组件加载url之前触发。  返回值[WebResourceResponse](arkts-basic-components-web-webresourceresponse.md)。返回响应数据则按照响应数据加载，无响应数据则返回null表示按照原来的方式加载。 |
+| callback | Callback<[OnInterceptRequestEvent](arkts-basic-components-web-i.md#oninterceptrequestevent12), [WebResourceResponse](arkts-basic-components-web-webresourceresponse.md)> | 是 | 当Web组件加载url之前触发此回调。  返回值[WebResourceResponse](arkts-basic-components-web-webresourceresponse.md)。返回响应数据则按照响应数据加载，无响应数据则返回null表示按照原来的方式加载。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. responseWeb: WebResourceResponse = new WebResourceResponse();
-9. heads: Header[] = new Array();
-10. webData: string = "<!DOCTYPE html>\n" +
-11. "<html>\n" +
-12. "<head>\n" +
-13. "<title>intercept test</title>\n" +
-14. "</head>\n" +
-15. "<body>\n" +
-16. "<h1>intercept test</h1>\n" +
-17. "</body>\n" +
-18. "</html>";
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  responseWeb: WebResourceResponse = new WebResourceResponse();
+  heads: Header[] = new Array();
+  webData: string = "<!DOCTYPE html>\n" +
+    "<html>\n" +
+    "<head>\n" +
+    "<title>intercept test</title>\n" +
+    "</head>\n" +
+    "<body>\n" +
+    "<h1>intercept test</h1>\n" +
+    "</body>\n" +
+    "</html>";
 
-20. build() {
-21. Column() {
-22. Web({ src: 'www.example.com', controller: this.controller })
-23. .onInterceptRequest((event) => {
-24. if (event) {
-25. console.info('url:' + event.request.getRequestUrl());
-26. }
-27. let head1: Header = {
-28. headerKey: "Connection",
-29. headerValue: "keep-alive"
-30. }
-31. let head2: Header = {
-32. headerKey: "Cache-Control",
-33. headerValue: "no-cache"
-34. }
-35. // 将新元素追加到数组的末尾，并返回数组的新长度。
-36. let length = this.heads.push(head1);
-37. length = this.heads.push(head2);
-38. console.info('The response header result length is :' + length);
-39. const promise: Promise<String> = new Promise((resolve: Function, reject: Function) => {
-40. this.responseWeb.setResponseHeader(this.heads);
-41. this.responseWeb.setResponseData(this.webData);
-42. this.responseWeb.setResponseEncoding('utf-8');
-43. this.responseWeb.setResponseMimeType('text/html');
-44. this.responseWeb.setResponseCode(200);
-45. this.responseWeb.setReasonMessage('OK');
-46. resolve("success");
-47. })
-48. promise.then(() => {
-49. console.info("prepare response ready");
-50. this.responseWeb.setResponseIsReady(true);
-51. })
-52. this.responseWeb.setResponseIsReady(false);
-53. return this.responseWeb;
-54. })
-55. }
-56. }
-57. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onInterceptRequest((event) => {
+          if (event) {
+            console.info('url:' + event.request.getRequestUrl());
+          }
+          let head1: Header = {
+            headerKey: "Connection",
+            headerValue: "keep-alive"
+          }
+          let head2: Header = {
+            headerKey: "Cache-Control",
+            headerValue: "no-cache"
+          }
+          // 将新元素追加到数组的末尾，并返回数组的新长度。
+          let length = this.heads.push(head1);
+          length = this.heads.push(head2);
+          console.info('The response header result length is :' + length);
+          const promise: Promise<String> = new Promise((resolve: Function, reject: Function) => {
+            this.responseWeb.setResponseHeader(this.heads);
+            this.responseWeb.setResponseData(this.webData);
+            this.responseWeb.setResponseEncoding('utf-8');
+            this.responseWeb.setResponseMimeType('text/html');
+            this.responseWeb.setResponseCode(200);
+            this.responseWeb.setReasonMessage('OK');
+            resolve("success");
+          })
+          promise.then(() => {
+            console.info("prepare response ready");
+            this.responseWeb.setResponseIsReady(true);
+          })
+          this.responseWeb.setResponseIsReady(false);
+          return this.responseWeb;
+        })
+    }
+  }
+}
 ```
 
 ## onHttpAuthRequest9+
 
-PhonePC/2in1TabletTVWearable
-
 onHttpAuthRequest(callback: Callback<OnHttpAuthRequestEvent, boolean>)
 
-通知收到http auth认证请求。
+通知收到HTTP认证请求。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -1356,65 +1320,63 @@ onHttpAuthRequest(callback: Callback<OnHttpAuthRequestEvent, boolean>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | Callback<[OnHttpAuthRequestEvent](arkts-basic-components-web-i.md#onhttpauthrequestevent12), boolean> | 是 | 当浏览器需要用户的凭据时触发。  返回值boolean。返回true表示http auth认证成功，返回false表示http auth认证失败。 |
+| callback | Callback<[OnHttpAuthRequestEvent](arkts-basic-components-web-i.md#onhttpauthrequestevent12), boolean> | 是 | 当浏览器需要用户的凭据时触发。  返回值boolean。返回true表示HTTP认证成功，返回false表示HTTP认证失败。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. uiContext: UIContext = this.getUIContext();
-9. httpAuth: boolean = false;
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  uiContext: UIContext = this.getUIContext();
+  httpAuth: boolean = false;
 
-11. build() {
-12. Column() {
-13. Web({ src: 'www.example.com', controller: this.controller })
-14. .onHttpAuthRequest((event) => {
-15. if (event) {
-16. this.uiContext.showAlertDialog({
-17. title: 'onHttpAuthRequest',
-18. message: 'text',
-19. primaryButton: {
-20. value: 'cancel',
-21. action: () => {
-22. event.handler.cancel();
-23. }
-24. },
-25. secondaryButton: {
-26. value: 'ok',
-27. action: () => {
-28. this.httpAuth = event.handler.isHttpAuthInfoSaved();
-29. if (this.httpAuth == false) {
-30. webview.WebDataBase.saveHttpAuthCredentials(
-31. event.host,
-32. event.realm,
-33. "2222",
-34. "2222"
-35. )
-36. event.handler.cancel();
-37. }
-38. }
-39. },
-40. cancel: () => {
-41. event.handler.cancel();
-42. }
-43. })
-44. }
-45. return true;
-46. })
-47. }
-48. }
-49. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onHttpAuthRequest((event) => {
+          if (event) {
+            this.uiContext.showAlertDialog({
+              title: 'onHttpAuthRequest',
+              message: 'text',
+              primaryButton: {
+                value: 'cancel',
+                action: () => {
+                  event.handler.cancel();
+                }
+              },
+              secondaryButton: {
+                value: 'ok',
+                action: () => {
+                  this.httpAuth = event.handler.isHttpAuthInfoSaved();
+                  if (this.httpAuth == false) {
+                    webview.WebDataBase.saveHttpAuthCredentials(
+                      event.host,
+                      event.realm,
+                      "2222",
+                      "2222"
+                    )
+                    event.handler.cancel();
+                  }
+                }
+              },
+              cancel: () => {
+                event.handler.cancel();
+              }
+            })
+          }
+          return true;
+        })
+    }
+  }
+}
 ```
 
 ## onSslErrorEventReceive9+
-
-PhonePC/2in1TabletTVWearable
 
 onSslErrorEventReceive(callback: Callback<OnSslErrorEventReceiveEvent>)
 
@@ -1422,7 +1384,7 @@ onSslErrorEventReceive(callback: Callback<OnSslErrorEventReceiveEvent>)
 
 如果需要支持子资源，请使用[OnSslErrorEvent](arkts-basic-components-web-events.md#onsslerrorevent12)接口。
 
-说明
+**说明** 
 
 * 主资源：浏览器加载网页的入口文件，通常是HTML文档。
 * 子资源：主资源中引用的依赖文件，由主资源解析过程中遇到特定标签时触发加载。
@@ -1439,97 +1401,95 @@ onSslErrorEventReceive(callback: Callback<OnSslErrorEventReceiveEvent>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { cert } from '@kit.DeviceCertificateKit';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { cert } from '@kit.DeviceCertificateKit';
 
-5. function LogCertInfo(certChainData : Array<Uint8Array> | undefined) {
-6. if (!(certChainData instanceof Array)) {
-7. console.error('failed, cert chain data type is not array');
-8. return;
-9. }
+function LogCertInfo(certChainData : Array<Uint8Array> | undefined) {
+  if (!(certChainData instanceof Array)) {
+    console.error('failed, cert chain data type is not array');
+    return;
+  }
 
-11. for (let i = 0; i < certChainData.length; i++) {
-12. let encodeBlobData: cert.EncodingBlob = {
-13. data: certChainData[i],
-14. encodingFormat: cert.EncodingFormat.FORMAT_DER
-15. }
-16. cert.createX509Cert(encodeBlobData, (error, x509Cert) => {
-17. if (error) {
-18. console.error('Index : ' + i + ',createX509Cert failed, errCode: ' + error.code + ', errMsg: ' + error.message);
-19. } else {
-20. console.info('createX509Cert success');
-21. console.info(ParseX509CertInfo(x509Cert));
-22. }
-23. });
-24. }
-25. return;
-26. }
+  for (let i = 0; i < certChainData.length; i++) {
+    let encodeBlobData: cert.EncodingBlob = {
+      data: certChainData[i],
+      encodingFormat: cert.EncodingFormat.FORMAT_DER
+    }
+    cert.createX509Cert(encodeBlobData, (error, x509Cert) => {
+      if (error) {
+        console.error('Index : ' + i + ',createX509Cert failed, errCode: ' + error.code + ', errMsg: ' + error.message);
+      } else {
+        console.info('createX509Cert success');
+        console.info(ParseX509CertInfo(x509Cert));
+      }
+    });
+  }
+  return;
+}
 
-28. function Uint8ArrayToString(dataArray: Uint8Array) {
-29. let dataString = '';
-30. for (let i = 0; i < dataArray.length; i++) {
-31. dataString += String.fromCharCode(dataArray[i]);
-32. }
-33. return dataString;
-34. }
+function Uint8ArrayToString(dataArray: Uint8Array) {
+  let dataString = '';
+  for (let i = 0; i < dataArray.length; i++) {
+    dataString += String.fromCharCode(dataArray[i]);
+  }
+  return dataString;
+}
 
-36. function ParseX509CertInfo(x509Cert: cert.X509Cert) {
-37. let res: string = 'getCertificate success, '
-38. + 'issuer name = '
-39. + Uint8ArrayToString(x509Cert.getIssuerName().data) + ', subject name = '
-40. + Uint8ArrayToString(x509Cert.getSubjectName().data) + ', valid start = '
-41. + x509Cert.getNotBeforeTime()
-42. + ', valid end = ' + x509Cert.getNotAfterTime();
-43. return res;
-44. }
+function ParseX509CertInfo(x509Cert: cert.X509Cert) {
+  let res: string = 'getCertificate success, '
+    + 'issuer name = '
+    + Uint8ArrayToString(x509Cert.getIssuerName().data) + ', subject name = '
+    + Uint8ArrayToString(x509Cert.getSubjectName().data) + ', valid start = '
+    + x509Cert.getNotBeforeTime()
+    + ', valid end = ' + x509Cert.getNotAfterTime();
+  return res;
+}
 
-46. @Entry
-47. @Component
-48. struct WebComponent {
-49. controller: webview.WebviewController = new webview.WebviewController();
-50. uiContext: UIContext = this.getUIContext();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  uiContext: UIContext = this.getUIContext();
 
-52. build() {
-53. Column() {
-54. Web({ src: 'www.example.com', controller: this.controller })
-55. .onSslErrorEventReceive((event) => {
-56. LogCertInfo(event.certChainData);
-57. this.uiContext.showAlertDialog({
-58. title: 'onSslErrorEventReceive',
-59. message: 'text',
-60. primaryButton: {
-61. value: 'confirm',
-62. action: () => {
-63. event.handler.handleConfirm();
-64. }
-65. },
-66. secondaryButton: {
-67. value: 'cancel',
-68. action: () => {
-69. event.handler.handleCancel();
-70. }
-71. },
-72. cancel: () => {
-73. event.handler.handleCancel();
-74. }
-75. })
-76. })
-77. }
-78. }
-79. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onSslErrorEventReceive((event) => {
+          LogCertInfo(event.certChainData);
+          this.uiContext.showAlertDialog({
+            title: 'onSslErrorEventReceive',
+            message: 'text',
+            primaryButton: {
+              value: 'confirm',
+              action: () => {
+                event.handler.handleConfirm();
+              }
+            },
+            secondaryButton: {
+              value: 'cancel',
+              action: () => {
+                event.handler.handleCancel();
+              }
+            },
+            cancel: () => {
+              event.handler.handleCancel();
+            }
+          })
+        })
+    }
+  }
+}
 ```
 
 ## onSslErrorEvent12+
-
-PhonePC/2in1TabletTVWearable
 
 onSslErrorEvent(callback: OnSslErrorEventCallback)
 
 通知用户加载资源（主资源+子资源）时发生SSL错误，如果只想处理主资源的SSL错误，请用[isMainFrame](arkts-basic-components-web-webresourcerequest.md#ismainframe)字段进行区分。
 
-说明
+**说明** 
 
 * 主资源：浏览器加载网页的入口文件，通常是HTML文档。
 * 子资源：主资源中引用的依赖文件，由主资源解析过程中遇到特定标签时触发加载。
@@ -1544,106 +1504,104 @@ onSslErrorEvent(callback: OnSslErrorEventCallback)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { cert } from '@kit.DeviceCertificateKit';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { cert } from '@kit.DeviceCertificateKit';
 
-5. function LogCertInfo(certChainData : Array<Uint8Array> | undefined) {
-6. if (!(certChainData instanceof Array)) {
-7. console.error('failed, cert chain data type is not array');
-8. return;
-9. }
+function LogCertInfo(certChainData : Array<Uint8Array> | undefined) {
+  if (!(certChainData instanceof Array)) {
+    console.error('failed, cert chain data type is not array');
+    return;
+  }
 
-11. for (let i = 0; i < certChainData.length; i++) {
-12. let encodeBlobData: cert.EncodingBlob = {
-13. data: certChainData[i],
-14. encodingFormat: cert.EncodingFormat.FORMAT_DER
-15. }
-16. cert.createX509Cert(encodeBlobData, (error, x509Cert) => {
-17. if (error) {
-18. console.error('Index : ' + i + ',createX509Cert failed, errCode: ' + error.code + ', errMsg: ' + error.message);
-19. } else {
-20. console.info('createX509Cert success');
-21. console.info(ParseX509CertInfo(x509Cert));
-22. }
-23. });
-24. }
-25. return;
-26. }
+  for (let i = 0; i < certChainData.length; i++) {
+    let encodeBlobData: cert.EncodingBlob = {
+      data: certChainData[i],
+      encodingFormat: cert.EncodingFormat.FORMAT_DER
+    }
+    cert.createX509Cert(encodeBlobData, (error, x509Cert) => {
+      if (error) {
+        console.error('Index : ' + i + ',createX509Cert failed, errCode: ' + error.code + ', errMsg: ' + error.message);
+      } else {
+        console.info('createX509Cert success');
+        console.info(ParseX509CertInfo(x509Cert));
+      }
+    });
+  }
+  return;
+}
 
-28. function Uint8ArrayToString(dataArray: Uint8Array) {
-29. let dataString = '';
-30. for (let i = 0; i < dataArray.length; i++) {
-31. dataString += String.fromCharCode(dataArray[i]);
-32. }
-33. return dataString;
-34. }
+function Uint8ArrayToString(dataArray: Uint8Array) {
+  let dataString = '';
+  for (let i = 0; i < dataArray.length; i++) {
+    dataString += String.fromCharCode(dataArray[i]);
+  }
+  return dataString;
+}
 
-36. function ParseX509CertInfo(x509Cert: cert.X509Cert) {
-37. let res: string = 'getCertificate success, '
-38. + 'issuer name = '
-39. + Uint8ArrayToString(x509Cert.getIssuerName().data) + ', subject name = '
-40. + Uint8ArrayToString(x509Cert.getSubjectName().data) + ', valid start = '
-41. + x509Cert.getNotBeforeTime()
-42. + ', valid end = ' + x509Cert.getNotAfterTime();
-43. return res;
-44. }
+function ParseX509CertInfo(x509Cert: cert.X509Cert) {
+  let res: string = 'getCertificate success, '
+    + 'issuer name = '
+    + Uint8ArrayToString(x509Cert.getIssuerName().data) + ', subject name = '
+    + Uint8ArrayToString(x509Cert.getSubjectName().data) + ', valid start = '
+    + x509Cert.getNotBeforeTime()
+    + ', valid end = ' + x509Cert.getNotAfterTime();
+  return res;
+}
 
-46. @Entry
-47. @Component
-48. struct WebComponent {
-49. controller: webview.WebviewController = new webview.WebviewController();
-50. uiContext: UIContext = this.getUIContext();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  uiContext: UIContext = this.getUIContext();
 
-52. build() {
-53. Column() {
-54. Web({ src: 'www.example.com', controller: this.controller })
-55. .onSslErrorEvent((event: SslErrorEvent) => {
-56. console.info("onSslErrorEvent url: " + event.url);
-57. console.info("onSslErrorEvent error: " + event.error);
-58. console.info("onSslErrorEvent originalUrl: " + event.originalUrl);
-59. console.info("onSslErrorEvent referrer: " + event.referrer);
-60. console.info("onSslErrorEvent isFatalError: " + event.isFatalError);
-61. console.info("onSslErrorEvent isMainFrame: " + event.isMainFrame);
-62. LogCertInfo(event.certChainData);
-63. this.uiContext.showAlertDialog({
-64. title: 'onSslErrorEvent',
-65. message: 'text',
-66. primaryButton: {
-67. value: 'confirm',
-68. action: () => {
-69. event.handler.handleConfirm();
-70. }
-71. },
-72. secondaryButton: {
-73. value: 'cancel',
-74. action: () => {
-75. // true表示停止加载页面，停留在当前页面，使用false表示继续加载页面，并展示错误页面
-76. event.handler.handleCancel(true);
-77. }
-78. },
-79. cancel: () => {
-80. event.handler.handleCancel();
-81. }
-82. })
-83. })
-84. }
-85. }
-86. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onSslErrorEvent((event: SslErrorEvent) => {
+          console.info("onSslErrorEvent url: " + event.url);
+          console.info("onSslErrorEvent error: " + event.error);
+          console.info("onSslErrorEvent originalUrl: " + event.originalUrl);
+          console.info("onSslErrorEvent referrer: " + event.referrer);
+          console.info("onSslErrorEvent isFatalError: " + event.isFatalError);
+          console.info("onSslErrorEvent isMainFrame: " + event.isMainFrame);
+          LogCertInfo(event.certChainData);
+          this.uiContext.showAlertDialog({
+            title: 'onSslErrorEvent',
+            message: 'text',
+            primaryButton: {
+              value: 'confirm',
+              action: () => {
+                event.handler.handleConfirm();
+              }
+            },
+            secondaryButton: {
+              value: 'cancel',
+              action: () => {
+                // true表示停止加载页面，停留在当前页面，使用false表示继续加载页面，并展示错误页面
+                event.handler.handleCancel(true);
+              }
+            },
+            cancel: () => {
+              event.handler.handleCancel();
+            }
+          })
+        })
+    }
+  }
+}
 ```
 
 ## onClientAuthenticationRequest9+
-
-PhonePC/2in1TabletTVWearable
 
 onClientAuthenticationRequest(callback: Callback<OnClientAuthenticationEvent>)
 
 通知用户收到SSL客户端证书请求事件。
 
-说明
+**说明** 
 
-* Web组件有三种响应方式：[ClientAuthenticationHandler.confirm](s-basic-components-web-clientauthenticationhandler.md#confirm10)（继续）、[ClientAuthenticationHandler.cancel](s-basic-components-web-clientauthenticationhandler.md#cancel9)（取消）或[ClientAuthenticationHandler.ignore](s-basic-components-web-clientauthenticationhandler.md#ignore9)（忽略）。
+* Web组件有三种响应方式：[ClientAuthenticationHandler.confirm](arkts-basic-components-web-clientauthenticationhandler.md#confirm10)（继续）、[ClientAuthenticationHandler.cancel](arkts-basic-components-web-clientauthenticationhandler.md#cancel9)（取消）或[ClientAuthenticationHandler.ignore](arkts-basic-components-web-clientauthenticationhandler.md#ignore9)（忽略）。
 * 如果调用ClientAuthenticationHandler.confirm或ClientAuthenticationHandler.cancel，ArkWeb会将认证结果存储在内存中（在应用程序的生命周期内），并且不会对相同的主机和端口再次调用onClientAuthenticationRequest()。如果调用onClientAuthenticationRequest.ignore，ArkWeb则不会存储该认证结果。
 * 需配置"ohos.permission.ACCESS\_CERT\_MANAGER"权限。
 
@@ -1659,285 +1617,283 @@ onClientAuthenticationRequest(callback: Callback<OnClientAuthenticationEvent>)
 
 安装私有凭证以实现双向认证。
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { common } from '@kit.AbilityKit';
-4. import { certificateManager } from '@kit.DeviceCertificateKit';
-5. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { common } from '@kit.AbilityKit';
+import { certificateManager } from '@kit.DeviceCertificateKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-7. @Entry
-8. @Component
-9. struct Index {
-10. controller: WebviewController = new webview.WebviewController();
-11. uiContext : UIContext = this.getUIContext();
-12. context : Context | undefined = this.uiContext.getHostContext() as common.UIAbilityContext;
-13. uri: string = ''
+@Entry
+@Component
+struct Index {
+  controller: webview.WebviewController = new webview.WebviewController();
+  uiContext : UIContext = this.getUIContext();
+  context : Context | undefined = this.uiContext.getHostContext() as common.UIAbilityContext;
+  uri: string = ''
 
-15. aboutToAppear(): void {
-16. webview.WebviewController.setRenderProcessMode(webview.RenderProcessMode.MULTIPLE)
-17. }
+  aboutToAppear(): void {
+    webview.WebviewController.setRenderProcessMode(webview.RenderProcessMode.MULTIPLE)
+  }
 
-19. build() {
-20. Column() {
-21. Button("installPrivateCertificate").onClick(() => {
-22. if (!this.context) {
-23. return;
-24. }
+  build() {
+    Column() {
+      Button("installPrivateCertificate").onClick(() => {
+        if (!this.context) {
+          return;
+        }
 
-26. // 注：badssl.com-client.p12需要替换为实际使用的证书文件
-27. let value: Uint8Array = this.context.resourceManager.getRawFileContentSync("badssl.com-client.p12");
-28. certificateManager.installPrivateCertificate(value, 'badssl.com', "1",
-29. async (err: BusinessError, data: certificateManager.CMResult) => {
-30. console.info(`installPrivateCertificate, uri==========${JSON.stringify(data.uri)}`)
-31. if (!err && data.uri) {
-32. this.uri = data.uri;
-33. }
-34. });
-35. })
-36. Button('加载需要客户端SSL证书的网站')
-37. .onClick(() => {
-38. this.controller.loadUrl("https://client.badssl.com")
-39. })
-40. Web({
-41. src: "https://www.bing.com/",
-42. controller: this.controller,
-43. }).domStorageAccess(true)
-44. .fileAccess(true)
-45. .onPageBegin(event => {
-46. console.info("extensions onpagebegin url " + event.url);
-47. })
-48. .onClientAuthenticationRequest((event) => {
-49. console.info("onClientAuthenticationRequest ");
-50. event.handler.confirm(this.uri);
-51. })
-52. .onSslErrorEventReceive(e => {
-53. console.info(`onSslErrorEventReceive->${e.error.toString()}`);
-54. })
-55. .onErrorReceive((event) => {
-56. if (event) {
-57. this.getUIContext().getPromptAction().showToast({
-58. message: `ErrorCode: ${event.error.getErrorCode()}, ErrorInfo: ${event.error.getErrorInfo()}`,
-59. alignment: Alignment.Center
-60. })
-61. console.info('getErrorInfo:' + event.error.getErrorInfo());
-62. console.info('getErrorCode:' + event.error.getErrorCode());
-63. console.info('url:' + event.request.getRequestUrl());
-64. }
-65. })
-66. .onTitleReceive(event  => {
-67. console.info("title received " + event.title);
-68. })
+        // 注：badssl.com-client.p12需要替换为实际使用的证书文件
+        let value: Uint8Array = this.context.resourceManager.getRawFileContentSync("badssl.com-client.p12");
+        certificateManager.installPrivateCertificate(value, 'badssl.com', "1",
+          async (err: BusinessError, data: certificateManager.CMResult) => {
+            console.info(`installPrivateCertificate, uri==========${JSON.stringify(data.uri)}`)
+            if (!err && data.uri) {
+              this.uri = data.uri;
+            }
+          });
+      })
+      Button('加载需要客户端SSL证书的网站')
+        .onClick(() => {
+          this.controller.loadUrl("https://client.badssl.com")
+        })
+      Web({
+        src: "https://www.bing.com/",
+        controller: this.controller,
+      }).domStorageAccess(true)
+        .fileAccess(true)
+        .onPageBegin(event => {
+          console.info("extensions onpagebegin url " + event.url);
+        })
+        .onClientAuthenticationRequest((event) => {
+          console.info("onClientAuthenticationRequest ");
+          event.handler.confirm(this.uri);
+        })
+        .onSslErrorEventReceive(e => {
+          console.info(`onSslErrorEventReceive->${e.error.toString()}`);
+        })
+        .onErrorReceive((event) => {
+          if (event) {
+            this.getUIContext().getPromptAction().showToast({
+              message: `ErrorCode: ${event.error.getErrorCode()}, ErrorInfo: ${event.error.getErrorInfo()}`,
+              alignment: Alignment.Center
+            })
+            console.info('getErrorInfo:' + event.error.getErrorInfo());
+            console.info('getErrorCode:' + event.error.getErrorCode());
+            console.info('url:' + event.request.getRequestUrl());
+          }
+        })
+        .onTitleReceive(event  => {
+          console.info("title received " + event.title);
+        })
 
-70. }
-71. }
-72. }
+    }
+  }
+}
 ```
 
 对接证书管理，实现双向认证功能。
 
 1. 构造 GlobalContext 单例对象。
 
-   ```
-   1. // GlobalContext.ets
-   2. export class GlobalContext {
-   3. private constructor() {}
-   4. private static instance: GlobalContext;
-   5. private _objects = new Map<string, Object>();
+   ```ts
+   // GlobalContext.ets
+   export class GlobalContext {
+     private constructor() {}
+     private static instance: GlobalContext;
+     private _objects = new Map<string, Object>();
 
-   7. public static getContext(): GlobalContext {
-   8. if (!GlobalContext.instance) {
-   9. GlobalContext.instance = new GlobalContext();
-   10. }
-   11. return GlobalContext.instance;
-   12. }
+     public static getContext(): GlobalContext {
+       if (!GlobalContext.instance) {
+         GlobalContext.instance = new GlobalContext();
+       }
+       return GlobalContext.instance;
+     }
 
-   14. getObject(value: string): Object | undefined {
-   15. return this._objects.get(value);
-   16. }
+     getObject(value: string): Object | undefined {
+       return this._objects.get(value);
+     }
 
-   18. setObject(key: string, objectClass: Object): void {
-   19. this._objects.set(key, objectClass);
-   20. }
-   21. }
+     setObject(key: string, objectClass: Object): void {
+       this._objects.set(key, objectClass);
+     }
+   }
    ```
 2. 构造 CertManagerService 对象以对接证书管理。
 
-   ```
-   1. // CertMgrService.ets
-   2. import { bundleManager, common, Want } from "@kit.AbilityKit";
-   3. import { BusinessError } from "@kit.BasicServicesKit";
-   4. import { GlobalContext } from './GlobalContext';
+   ```ts
+   // CertMgrService.ets
+   import { bundleManager, common, Want } from "@kit.AbilityKit";
+   import { BusinessError } from "@kit.BasicServicesKit";
+   import { GlobalContext } from './GlobalContext';
 
-   6. export default class CertManagerService {
-   7. private static sInstance: CertManagerService;
-   8. private authUri = "";
-   9. private appUid = "";
+   export default class CertManagerService {
+     private static sInstance: CertManagerService;
+     private authUri = "";
+     private appUid = "";
 
-   11. public static getInstance(): CertManagerService {
-   12. if (CertManagerService.sInstance == null) {
-   13. CertManagerService.sInstance = new CertManagerService();
-   14. }
-   15. return CertManagerService.sInstance;
-   16. }
+     public static getInstance(): CertManagerService {
+       if (CertManagerService.sInstance == null) {
+         CertManagerService.sInstance = new CertManagerService();
+       }
+       return CertManagerService.sInstance;
+     }
 
-   18. async grantAppPm(): Promise<string> {
-   19. let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_DEFAULT | bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION;
-   20. // 注：com.example.myapplication需要写实际应用名称
-   21. try {
-   22. const data = await bundleManager.getBundleInfoForSelf(bundleFlags)
-   23. .catch((err: BusinessError) => {
-   24. console.error('getBundleInfoForSelf failed. Cause: %{public}s', err.message);
-   25. return null;
-   26. });
-   27. this.appUid = data?.appInfo?.uid?.toString() ?? '';
-   28. console.info('getBundleInfoForSelf successfully. Data: %{public}s', JSON.stringify(data));
-   29. } catch (err) {
-   30. let message = (err as BusinessError).message;
-   31. console.error('getBundleInfoForSelf failed: %{public}s', message);
-   32. }
+     async grantAppPm(): Promise<string> {
+       let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_DEFAULT | bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION;
+       // 注：com.example.myapplication需要写实际应用名称
+       try {
+         const data = await bundleManager.getBundleInfoForSelf(bundleFlags)
+           .catch((err: BusinessError) => {
+             console.error('getBundleInfoForSelf failed. Cause: %{public}s', err.message);
+             return null;
+           });
+         this.appUid = data?.appInfo?.uid?.toString() ?? '';
+         console.info('getBundleInfoForSelf successfully. Data: %{public}s', JSON.stringify(data));
+       } catch (err) {
+         let message = (err as BusinessError).message;
+         console.error('getBundleInfoForSelf failed: %{public}s', message);
+       }
 
-   34. // 注：需要在MainAbility.ts文件的onCreate函数里添加GlobalContext.getContext().setObject("AbilityContext", this.context)
-   35. let abilityContext = GlobalContext.getContext().getObject("AbilityContext") as common.UIAbilityContext;
-   36. await abilityContext.startAbilityForResult(
-   37. {
-   38. bundleName: "com.ohos.certmanager",
-   39. abilityName: "MainAbility",
-   40. uri: "requestAuthorize",
-   41. parameters: {
-   42. appUid: this.appUid, // 传入申请应用的appUid
-   43. }
-   44. } as Want)
-   45. .then((data: common.AbilityResult) => {
-   46. if (!data.resultCode && data.want) {
-   47. if (data.want.parameters) {
-   48. this.authUri = data.want.parameters.authUri as string; // 授权成功后获取返回的authUri
-   49. }
-   50. }
-   51. })
-   52. return this.authUri;
-   53. }
-   54. }
+       // 注：需要在MainAbility.ts文件的onCreate函数里添加GlobalContext.getContext().setObject("AbilityContext", this.context)
+       let abilityContext = GlobalContext.getContext().getObject("AbilityContext") as common.UIAbilityContext;
+       await abilityContext.startAbilityForResult(
+         {
+           bundleName: "com.ohos.certmanager",
+           abilityName: "MainAbility",
+           uri: "requestAuthorize",
+           parameters: {
+             appUid: this.appUid, // 传入申请应用的appUid
+           }
+         } as Want)
+         .then((data: common.AbilityResult) => {
+           if (!data.resultCode && data.want) {
+             if (data.want.parameters) {
+               this.authUri = data.want.parameters.authUri as string; // 授权成功后获取返回的authUri
+             }
+           }
+         })
+       return this.authUri;
+     }
+   }
    ```
 3. 将当前Ability的上下文存储到GlobalContext中。
 
-   ```
-   1. // EntryAbility.ets
-   2. import { AbilityConstant, ConfigurationConstant, UIAbility, Want } from '@kit.AbilityKit';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
-   4. import { window } from '@kit.ArkUI';
-   5. import { GlobalContext } from '../pages/GlobalContext';
+   ```ts
+   // EntryAbility.ets
+   import { AbilityConstant, ConfigurationConstant, UIAbility, Want } from '@kit.AbilityKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { window } from '@kit.ArkUI';
+   import { GlobalContext } from '../pages/GlobalContext';
 
-   7. const DOMAIN = 0x0000;
+   const DOMAIN = 0x0000;
 
-   9. export default class EntryAbility extends UIAbility {
-   10. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-   11. try {
-   12. this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
-   13. GlobalContext.getContext().setObject("AbilityContext", this.context);
-   14. } catch (err) {
-   15. hilog.error(DOMAIN, 'testTag', 'Failed to set colorMode. Cause: %{public}s', JSON.stringify(err));
-   16. }
-   17. hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onCreate');
-   18. }
+   export default class EntryAbility extends UIAbility {
+     onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+       try {
+         this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
+         GlobalContext.getContext().setObject("AbilityContext", this.context);
+       } catch (err) {
+         hilog.error(DOMAIN, 'testTag', 'Failed to set colorMode. Cause: %{public}s', JSON.stringify(err));
+       }
+       hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onCreate');
+     }
 
-   20. onDestroy(): void {
-   21. hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onDestroy');
-   22. }
+     onDestroy(): void {
+       hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onDestroy');
+     }
 
-   24. onWindowStageCreate(windowStage: window.WindowStage): void {
-   25. // Main window is created, set main page for this ability
-   26. hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+     onWindowStageCreate(windowStage: window.WindowStage): void {
+       // Main window is created, set main page for this ability
+       hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-   28. windowStage.loadContent('pages/Index', (err) => {
-   29. if (err.code) {
-   30. hilog.error(DOMAIN, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err));
-   31. return;
-   32. }
-   33. hilog.info(DOMAIN, 'testTag', 'Succeeded in loading the content.');
-   34. });
-   35. }
+       windowStage.loadContent('pages/Index', (err) => {
+         if (err.code) {
+           hilog.error(DOMAIN, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err));
+           return;
+         }
+         hilog.info(DOMAIN, 'testTag', 'Succeeded in loading the content.');
+       });
+     }
 
-   37. onWindowStageDestroy(): void {
-   38. // Main window is destroyed, release UI related resources
-   39. hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
-   40. }
+     onWindowStageDestroy(): void {
+       // Main window is destroyed, release UI related resources
+       hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
+     }
 
-   42. onForeground(): void {
-   43. // Ability has brought to foreground
-   44. hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onForeground');
-   45. }
+     onForeground(): void {
+       // Ability has brought to foreground
+       hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onForeground');
+     }
 
-   47. onBackground(): void {
-   48. // Ability has back to background
-   49. hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onBackground');
-   50. }
-   51. }
+     onBackground(): void {
+       // Ability has back to background
+       hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onBackground');
+     }
+   }
    ```
 4. 实现双向认证功能。
 
-   ```
-   1. import { webview } from '@kit.ArkWeb';
-   2. import CertManagerService from './CertMgrService';
+   ```ts
+   import { webview } from '@kit.ArkWeb';
+   import CertManagerService from './CertMgrService';
 
-   4. @Entry
-   5. @Component
-   6. struct Index {
-   7. controller: WebviewController = new webview.WebviewController();
-   8. certManager = CertManagerService.getInstance();
+   @Entry
+   @Component
+   struct Index {
+     controller: webview.WebviewController = new webview.WebviewController();
+     certManager = CertManagerService.getInstance();
 
-   10. aboutToAppear(): void {
-   11. webview.WebviewController.setRenderProcessMode(webview.RenderProcessMode.MULTIPLE)
-   12. }
+     aboutToAppear(): void {
+       webview.WebviewController.setRenderProcessMode(webview.RenderProcessMode.MULTIPLE)
+     }
 
-   14. build() {
-   15. Column() {
-   16. Button('加载需要客户端SSL证书的网站')
-   17. .onClick(() => {
-   18. this.controller.loadUrl("https://client.badssl.com")
-   19. })
-   20. Web({
-   21. src: "https://www.bing.com/",
-   22. controller: this.controller,
-   23. }).domStorageAccess(true)
-   24. .fileAccess(true)
-   25. .onPageBegin(event => {
-   26. console.info("extensions onpagebegin url " + event.url);
-   27. })
-   28. .onClientAuthenticationRequest((event) => {
-   29. console.info("onClientAuthenticationRequest ");
+     build() {
+       Column() {
+         Button('加载需要客户端SSL证书的网站')
+           .onClick(() => {
+             this.controller.loadUrl("https://client.badssl.com")
+           })
+         Web({
+           src: "https://www.bing.com/",
+           controller: this.controller,
+         }).domStorageAccess(true)
+           .fileAccess(true)
+           .onPageBegin(event => {
+             console.info("extensions onpagebegin url " + event.url);
+           })
+           .onClientAuthenticationRequest((event) => {
+             console.info("onClientAuthenticationRequest ");
 
-   31. this.certManager.grantAppPm().then(result => {
-   32. console.info(`grantAppPm, URI==========${result}`);
-   33. event.handler.confirm(result);
-   34. })
-   35. })
-   36. .onSslErrorEventReceive(e => {
-   37. console.info(`onSslErrorEventReceive->${e.error.toString()}`);
-   38. })
-   39. .onErrorReceive((event) => {
-   40. if (event) {
-   41. this.getUIContext().getPromptAction().showToast({
-   42. message: `ErrorCode: ${event.error.getErrorCode()}, ErrorInfo: ${event.error.getErrorInfo()}`,
-   43. alignment: Alignment.Center
-   44. })
-   45. console.info('getErrorInfo:' + event.error.getErrorInfo());
-   46. console.info('getErrorCode:' + event.error.getErrorCode());
-   47. console.info('url:' + event.request.getRequestUrl());
-   48. }
-   49. })
-   50. .onTitleReceive(event  => {
-   51. console.info("title received " + event.title);
-   52. })
+             this.certManager.grantAppPm().then(result => {
+               console.info(`grantAppPm, URI==========${result}`);
+               event.handler.confirm(result);
+             })
+           })
+           .onSslErrorEventReceive(e => {
+             console.info(`onSslErrorEventReceive->${e.error.toString()}`);
+           })
+           .onErrorReceive((event) => {
+             if (event) {
+               this.getUIContext().getPromptAction().showToast({
+                 message: `ErrorCode: ${event.error.getErrorCode()}, ErrorInfo: ${event.error.getErrorInfo()}`,
+                 alignment: Alignment.Center
+               })
+               console.info('getErrorInfo:' + event.error.getErrorInfo());
+               console.info('getErrorCode:' + event.error.getErrorCode());
+               console.info('url:' + event.request.getRequestUrl());
+             }
+           })
+           .onTitleReceive(event  => {
+             console.info("title received " + event.title);
+           })
 
-   54. }
-   55. }
-   56. }
+       }
+     }
+   }
    ```
 
 ## onVerifyPin22+
-
-PhonePC/2in1TabletTVWearable
 
 onVerifyPin(callback: OnVerifyPinCallback)
 
@@ -1953,103 +1909,101 @@ onVerifyPin(callback: OnVerifyPinCallback)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { common } from '@kit.AbilityKit';
-4. import { certificateManagerDialog } from '@kit.DeviceCertificateKit';
-5. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { common } from '@kit.AbilityKit';
+import { certificateManagerDialog } from '@kit.DeviceCertificateKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-7. @Entry
-8. @Component
-9. struct Index {
-10. controller: WebviewController = new webview.WebviewController();
-11. uiContext : UIContext = this.getUIContext();
-12. context : Context | undefined = this.uiContext.getHostContext() as common.UIAbilityContext;
+@Entry
+@Component
+struct Index {
+  controller: webview.WebviewController = new webview.WebviewController();
+  uiContext : UIContext = this.getUIContext();
+  context : Context | undefined = this.uiContext.getHostContext() as common.UIAbilityContext;
 
-14. aboutToAppear(): void {
-15. webview.WebviewController.setRenderProcessMode(webview.RenderProcessMode.MULTIPLE)
-16. }
+  aboutToAppear(): void {
+    webview.WebviewController.setRenderProcessMode(webview.RenderProcessMode.MULTIPLE)
+  }
 
-18. build() {
-19. Column() {
-20. Button('加载需要客户端SSL证书的网站')
-21. .onClick(() => {
-22. this.controller.loadUrl("https://client.badssl.com")
-23. })
-24. Web({
-25. src: "https://www.bing.com/",
-26. controller: this.controller,
-27. }).domStorageAccess(true)
-28. .fileAccess(true)
-29. .onPageBegin(event => {
-30. console.info("extensions onpagebegin url " + event.url);
-31. })
-32. .onClientAuthenticationRequest((event) => {
-33. // 收到客户端证书请求事件
-34. console.info(`onClientAuthenticationRequest`);
-35. try {
-36. let certTypes: Array<certificateManagerDialog.CertificateType> = [
-37. certificateManagerDialog.CertificateType.CREDENTIAL_UKEY
-38. ];
-39. // 调用证书管理，打开证书选择框
-40. certificateManagerDialog.openAuthorizeDialog(this.context, { certTypes: certTypes })
-41. .then((data: certificateManagerDialog.CertReference) => {
-42. console.info(`openAuthorizeDialog request cred auth success`)
-43. // 通知web选择的为ukey证书
-44. event.handler.confirm(data.keyUri, CredentialType.CREDENTIAL_UKEY);
-45. }).catch((err: BusinessError) => {
-46. console.error(`openAuthorizeDialog request cred auth failed, err: ${JSON.stringify(err)}`);
-47. })
-48. } catch (e) {
-49. console.error(`openAuthorizeDialog request cred auth failed, err: ${JSON.stringify(e)}`);
-50. }
-51. })
-52. .onVerifyPin((event) => {
-53. // 收到PIN码认证请求事件
-54. console.info(`onVerifyPin`);
-55. // 调用证书管理，打开PIN码输入框
-56. certificateManagerDialog.openUkeyAuthDialog(this.context, {keyUri: event.identity})
-57. .then(() => {
-58. // 通知webPIN码认证成功
-59. console.info(`onVerifyPin success`);
-60. event.handler.confirm(PinVerifyResult.PIN_VERIFICATION_SUCCESS);
-61. }).catch((err: BusinessError) => {
-62. // 通知webPIN码认证失败
-63. console.info(`onVerifyPin fail`);
-64. event.handler.confirm(PinVerifyResult.PIN_VERIFICATION_FAILED);
-65. })
-66. })
-67. .onSslErrorEventReceive(e => {
-68. console.info(`onSslErrorEventReceive->${e.error.toString()}`);
-69. })
-70. .onErrorReceive((event) => {
-71. if (event) {
-72. this.getUIContext().getPromptAction().showToast({
-73. message: `ErrorCode: ${event.error.getErrorCode()}, ErrorInfo: ${event.error.getErrorInfo()}`,
-74. alignment: Alignment.Center
-75. })
-76. console.info('getErrorInfo:' + event.error.getErrorInfo());
-77. console.info('getErrorCode:' + event.error.getErrorCode());
-78. console.info('url:' + event.request.getRequestUrl());
-79. }
-80. })
-81. .onTitleReceive(event  => {
-82. console.info("title received " + event.title);
-83. })
+  build() {
+    Column() {
+      Button('加载需要客户端SSL证书的网站')
+        .onClick(() => {
+          this.controller.loadUrl("https://client.badssl.com")
+        })
+      Web({
+        src: "https://www.bing.com/",
+        controller: this.controller,
+      }).domStorageAccess(true)
+        .fileAccess(true)
+        .onPageBegin(event => {
+          console.info("extensions onpagebegin url " + event.url);
+        })
+        .onClientAuthenticationRequest((event) => {
+          // 收到客户端证书请求事件
+          console.info(`onClientAuthenticationRequest`);
+          try {
+            let certTypes: Array<certificateManagerDialog.CertificateType> = [
+              certificateManagerDialog.CertificateType.CREDENTIAL_UKEY
+            ];
+            // 调用证书管理，打开证书选择框
+            certificateManagerDialog.openAuthorizeDialog(this.context, { certTypes: certTypes })
+              .then((data: certificateManagerDialog.CertReference) => {
+                console.info(`openAuthorizeDialog request cred auth success`)
+                // 通知web选择的为ukey证书
+                event.handler.confirm(data.keyUri, CredentialType.CREDENTIAL_UKEY);
+              }).catch((err: BusinessError) => {
+              console.error(`openAuthorizeDialog request cred auth failed, err: ${JSON.stringify(err)}`);
+            })
+          } catch (e) {
+            console.error(`openAuthorizeDialog request cred auth failed, err: ${JSON.stringify(e)}`);
+          }
+        })
+        .onVerifyPin((event) => {
+          // 收到PIN码认证请求事件
+          console.info(`onVerifyPin`);
+          // 调用证书管理，打开PIN码输入框
+          certificateManagerDialog.openUkeyAuthDialog(this.context, {keyUri: event.identity})
+            .then(() => {
+              // 通知webPIN码认证成功
+              console.info(`onVerifyPin success`);
+              event.handler.confirm(PinVerifyResult.PIN_VERIFICATION_SUCCESS);
+            }).catch((err: BusinessError) => {
+            // 通知webPIN码认证失败
+            console.info(`onVerifyPin fail`);
+            event.handler.confirm(PinVerifyResult.PIN_VERIFICATION_FAILED);
+          })
+        })
+        .onSslErrorEventReceive(e => {
+          console.info(`onSslErrorEventReceive->${e.error.toString()}`);
+        })
+        .onErrorReceive((event) => {
+          if (event) {
+            this.getUIContext().getPromptAction().showToast({
+              message: `ErrorCode: ${event.error.getErrorCode()}, ErrorInfo: ${event.error.getErrorInfo()}`,
+              alignment: Alignment.Center
+            })
+            console.info('getErrorInfo:' + event.error.getErrorInfo());
+            console.info('getErrorCode:' + event.error.getErrorCode());
+            console.info('url:' + event.request.getRequestUrl());
+          }
+        })
+        .onTitleReceive(event  => {
+          console.info("title received " + event.title);
+        })
 
-85. }
-86. }
-87. }
+    }
+  }
+}
 ```
 
 ## onPermissionRequest9+
 
-PhonePC/2in1TabletTVWearable
-
 onPermissionRequest(callback: Callback<OnPermissionRequestEvent>)
 
-通知收到获取权限请求，需配置"ohos.permission.CAMERA"、"ohos.permission.MICROPHONE"权限。
+通知收到获取权限请求，需配置"ohos.permission.CAMERA"、"ohos.permission.MICROPHONE"权限。用于自定义权限申请弹窗样式、实现细粒度的权限控制、在特定条件下拒绝或授予权限请求，提供更好的权限管理体验。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -2057,112 +2011,113 @@ onPermissionRequest(callback: Callback<OnPermissionRequestEvent>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | Callback<[OnPermissionRequestEvent](arkts-basic-components-web-i.md#onpermissionrequestevent12)> | 是 | 通知收到获取权限请求触发。 |
+| callback | Callback<[OnPermissionRequestEvent](arkts-basic-components-web-i.md#onpermissionrequestevent12)> | 是 | 收到权限请求时触发。事件对象包含请求的权限类型（如摄像头、麦克风）、请求来源等信息。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { BusinessError } from '@kit.BasicServicesKit';
-4. import { abilityAccessCtrl } from '@kit.AbilityKit';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { abilityAccessCtrl } from '@kit.AbilityKit';
 
-6. @Entry
-7. @Component
-8. struct WebComponent {
-9. controller: webview.WebviewController = new webview.WebviewController();
-10. uiContext: UIContext = this.getUIContext();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  uiContext: UIContext = this.getUIContext();
 
-12. aboutToAppear() {
-13. // 配置Web开启调试模式
-14. webview.WebviewController.setWebDebuggingAccess(true);
-15. let atManager = abilityAccessCtrl.createAtManager();
-16. atManager.requestPermissionsFromUser(this.uiContext.getHostContext(), ['ohos.permission.CAMERA', 'ohos.permission.MICROPHONE'])
-17. .then((data) => {
-18. console.info('data:' + JSON.stringify(data));
-19. console.info('data permissions:' + data.permissions);
-20. console.info('data authResults:' + data.authResults);
-21. }).catch((error: BusinessError) => {
-22. console.error(`Failed to request permissions from user. Code is ${error.code}, message is ${error.message}`);
-23. })
-24. }
+  aboutToAppear() {
+    // 配置Web开启调试模式
+    webview.WebviewController.setWebDebuggingAccess(true);
+    let atManager = abilityAccessCtrl.createAtManager();
+    atManager.requestPermissionsFromUser(this.uiContext.getHostContext(), ['ohos.permission.CAMERA', 'ohos.permission.MICROPHONE'])
+      .then((data) => {
+        console.info('data:' + JSON.stringify(data));
+        console.info('data permissions:' + data.permissions);
+        console.info('data authResults:' + data.authResults);
+      }).catch((error: BusinessError) => {
+      console.error(`Failed to request permissions from user. Code is ${error.code}, message is ${error.message}`);
+    })
+  }
 
-26. build() {
-27. Column() {
-28. Web({ src: $rawfile('index.html'), controller: this.controller })
-29. .onPermissionRequest((event) => {
-30. if (event) {
-31. this.uiContext.showAlertDialog({
-32. title: 'title',
-33. message: 'text',
-34. primaryButton: {
-35. value: 'deny',
-36. action: () => {
-37. event.request.deny();
-38. }
-39. },
-40. secondaryButton: {
-41. value: 'onConfirm',
-42. action: () => {
-43. event.request.grant(event.request.getAccessibleResource());
-44. }
-45. },
-46. cancel: () => {
-47. event.request.deny();
-48. }
-49. })
-50. }
-51. })
-52. }
-53. }
-54. }
+  build() {
+    Column() {
+      Web({ src: $rawfile('index.html'), controller: this.controller })
+        .onPermissionRequest((event) => {
+          if (event) {
+            this.uiContext.showAlertDialog({
+              title: 'title',
+              message: 'text',
+              primaryButton: {
+                value: 'deny',
+                action: () => {
+                  // 用户点击拒绝，调用deny通知Web组件拒绝权限请求
+                  event.request.deny();
+                }
+              },
+              secondaryButton: {
+                value: 'onConfirm',
+                action: () => {
+                  // 用户点击确认，调用grant通知Web组件授予权限
+                  event.request.grant(event.request.getAccessibleResource());
+                }
+              },
+              cancel: () => {
+                // 用户取消对话框，调用deny通知Web组件拒绝权限请求
+                event.request.deny();
+              }
+            })
+          }
+        })
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!-- index.html -->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta charset="UTF-8">
-6. </head>
-7. <body>
-8. <video id="video" width="500px" height="500px" autoplay></video>
-9. <canvas id="canvas" width="500px" height="500px"></canvas>
-10. <br>
-11. <input type="button" title="HTML5摄像头" value="开启摄像头" onclick="getMedia()"/>
-12. <script>
-13. function getMedia()
-14. {
-15. let constraints = {
-16. video: {width: 500, height: 500},
-17. audio: true
-18. };
-19. // 获取video摄像头区域
-20. let video = document.getElementById("video");
-21. // 返回的Promise对象
-22. let promise = navigator.mediaDevices.getUserMedia(constraints);
-23. // then()异步，调用MediaStream对象作为参数
-24. promise.then(function (MediaStream) {
-25. video.srcObject = MediaStream;
-26. video.play();
-27. }).catch(function(error) {
-28. console.error("Error accessing media devices.", error);
-29. });
-30. }
-31. </script>
-32. </body>
-33. </html>
+```html
+ <!-- index.html -->
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+ </head>
+ <body>
+ <video id="video" width="500px" height="500px" autoplay></video>
+ <canvas id="canvas" width="500px" height="500px"></canvas>
+ <br>
+ <input type="button" title="HTML5摄像头" value="开启摄像头" onclick="getMedia()"/>
+ <script>
+   function getMedia()
+   {
+     let constraints = {
+       video: {width: 500, height: 500},
+       audio: true
+     };
+     // 获取video摄像头区域
+     let video = document.getElementById("video");
+     // 返回的Promise对象
+     let promise = navigator.mediaDevices.getUserMedia(constraints);
+     // then()异步，调用MediaStream对象作为参数
+     promise.then(function (MediaStream) {
+       video.srcObject = MediaStream;
+       video.play();
+     }).catch(function(error) {
+       console.error("Error accessing media devices.", error);
+     });
+   }
+ </script>
+ </body>
+ </html>
 ```
 
 ## onContextMenuShow9+
 
-PhonePC/2in1TabletTVWearable
-
 onContextMenuShow(callback: Callback<OnContextMenuShowEvent, boolean>)
 
-长按特定元素（例如图片，链接）或鼠标右键，弹出菜单。
+长按特定元素（例如图片，链接）或鼠标右键，弹出菜单。用于自定义右键菜单项、实现复制、保存、分享等功能、隐藏默认菜单项，提供更好的上下文交互体验。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -2170,180 +2125,188 @@ onContextMenuShow(callback: Callback<OnContextMenuShowEvent, boolean>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | Callback<[OnContextMenuShowEvent](arkts-basic-components-web-i.md#oncontextmenushowevent12), boolean> | 是 | 调用时触发的回调，以允许自定义显示上下文菜单。  返回值boolean。返回true表示触发自定义菜单，返回false表示触发的自定义菜单无效。 |
+| callback | Callback<[OnContextMenuShowEvent](arkts-basic-components-web-i.md#oncontextmenushowevent12), boolean> | 是 | 调用时触发的回调，以允许自定义显示上下文菜单。  返回值boolean。返回true表示触发自定义菜单，返回false表示触发的自定义菜单无效，将使用系统默认菜单。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { pasteboard } from '@kit.BasicServicesKit';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { pasteboard } from '@kit.BasicServicesKit';
 
-5. const TAG = 'ContextMenu';
+const TAG = 'ContextMenu';
 
-7. @Entry
-8. @Component
-9. struct WebComponent {
-10. controller: webview.WebviewController = new webview.WebviewController();
-11. private result: WebContextMenuResult | undefined = undefined;
-12. @State linkUrl: string = '';
-13. @State offsetX: number = 0;
-14. @State offsetY: number = 0;
-15. @State showMenu: boolean = false;
-16. uiContext: UIContext = this.getUIContext();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  private result: WebContextMenuResult | undefined = undefined;
+  @State linkUrl: string = '';
+  @State offsetX: number = 0;
+  @State offsetY: number = 0;
+  @State showMenu: boolean = false;
+  uiContext: UIContext = this.getUIContext();
 
-18. @Builder
-19. // 构建自定义菜单及触发功能接口
-20. MenuBuilder() {
-21. // 以垂直列表形式显示的菜单。
-22. Menu() {
-23. // 展示菜单Menu中具体的item菜单项。
-24. MenuItem({
-25. content: '撤销',
-26. })
-27. .width(100)
-28. .height(50)
-29. .onClick(() => {
-30. this.result?.undo();
-31. this.showMenu = false;
-32. })
-33. MenuItem({
-34. content: '重做',
-35. })
-36. .width(100)
-37. .height(50)
-38. .onClick(() => {
-39. this.result?.redo();
-40. this.showMenu = false;
-41. })
-42. MenuItem({
-43. content: '粘贴为纯文本',
-44. })
-45. .width(100)
-46. .height(50)
-47. .onClick(() => {
-48. this.result?.pasteAndMatchStyle();
-49. this.showMenu = false;
-50. })
-51. MenuItem({
-52. content: '复制图片',
-53. })
-54. .width(100)
-55. .height(50)
-56. .onClick(() => {
-57. this.result?.copyImage();
-58. this.showMenu = false;
-59. })
-60. MenuItem({
-61. content: '剪切',
-62. })
-63. .width(100)
-64. .height(50)
-65. .onClick(() => {
-66. this.result?.cut();
-67. this.showMenu = false;
-68. })
-69. MenuItem({
-70. content: '复制',
-71. })
-72. .width(100)
-73. .height(50)
-74. .onClick(() => {
-75. this.result?.copy();
-76. this.showMenu = false;
-77. })
-78. MenuItem({
-79. content: '粘贴',
-80. })
-81. .width(100)
-82. .height(50)
-83. .onClick(() => {
-84. this.result?.paste();
-85. this.showMenu = false;
-86. })
-87. MenuItem({
-88. content: '复制链接',
-89. })
-90. .width(100)
-91. .height(50)
-92. .onClick(() => {
-93. let pasteData = pasteboard.createData('text/plain', this.linkUrl);
-94. pasteboard.getSystemPasteboard().setData(pasteData, (error) => {
-95. if (error) {
-96. return;
-97. }
-98. })
-99. this.showMenu = false;
-100. })
-101. MenuItem({
-102. content: '全选',
-103. })
-104. .width(100)
-105. .height(50)
-106. .onClick(() => {
-107. this.result?.selectAll();
-108. this.showMenu = false;
-109. })
-110. }
-111. .width(150)
-112. .height(450)
-113. }
+  @Builder
+  // 构建自定义菜单及触发功能接口
+  MenuBuilder() {
+    // 以垂直列表形式显示的菜单。
+    Menu() {
+      // 展示菜单Menu中具体的item菜单项。
+      MenuItem({
+        content: '撤销',
+      })
+        .width(100)
+        .height(50)
+        .onClick(() => {
+          this.result?.undo();
+          this.showMenu = false;
+        })
+      MenuItem({
+        content: '重做',
+      })
+        .width(100)
+        .height(50)
+        .onClick(() => {
+          this.result?.redo();
+          this.showMenu = false;
+        })
+      MenuItem({
+        content: '粘贴为纯文本',
+      })
+        .width(100)
+        .height(50)
+        .onClick(() => {
+          this.result?.pasteAndMatchStyle();
+          this.showMenu = false;
+        })
+      MenuItem({
+        content: '复制图片',
+      })
+        .width(100)
+        .height(50)
+        .onClick(() => {
+          this.result?.copyImage();
+          this.showMenu = false;
+        })
+      MenuItem({
+        content: '保存图片',
+      })
+        .width(100)
+        .height(50)
+        .onClick(() => {
+          this.result?.saveImage();
+          this.showMenu = false;
+        })
+      MenuItem({
+        content: '剪切',
+      })
+        .width(100)
+        .height(50)
+        .onClick(() => {
+          this.result?.cut();
+          this.showMenu = false;
+        })
+      MenuItem({
+        content: '复制',
+      })
+        .width(100)
+        .height(50)
+        .onClick(() => {
+          this.result?.copy();
+          this.showMenu = false;
+        })
+      MenuItem({
+        content: '粘贴',
+      })
+        .width(100)
+        .height(50)
+        .onClick(() => {
+          this.result?.paste();
+          this.showMenu = false;
+        })
+      MenuItem({
+        content: '复制链接',
+      })
+        .width(100)
+        .height(50)
+        .onClick(() => {
+          let pasteData = pasteboard.createData('text/plain', this.linkUrl);
+          pasteboard.getSystemPasteboard().setData(pasteData, (error) => {
+            if (error) {
+              return;
+            }
+          })
+          this.showMenu = false;
+        })
+      MenuItem({
+        content: '全选',
+      })
+        .width(100)
+        .height(50)
+        .onClick(() => {
+          this.result?.selectAll();
+          this.showMenu = false;
+        })
+    }
+    .width(150)
+    .height(450)
+  }
 
-115. build() {
-116. Column() {
-117. Web({ src: $rawfile("index.html"), controller: this.controller })
-118. // 触发自定义弹窗
-119. .onContextMenuShow((event) => {
-120. if (event) {
-121. this.result = event.result
-122. console.info(TAG + "x coord = " + event.param.x());
-123. console.info(TAG + "link url = " + event.param.getLinkUrl());
-124. this.linkUrl = event.param.getLinkUrl();
-125. }
-126. console.info(TAG, `x: ${this.offsetX}, y: ${this.offsetY}`);
-127. this.showMenu = true;
-128. this.offsetX = 0;
-129. this.offsetY = Math.max(this.uiContext!.px2vp(event?.param.y() ?? 0) - 0, 0);
-130. return true;
-131. })
-132. .bindPopup(this.showMenu,
-133. {
-134. builder: this.MenuBuilder(),
-135. enableArrow: false,
-136. placement: Placement.LeftTop,
-137. offset: { x: this.offsetX, y: this.offsetY },
-138. mask: false,
-139. onStateChange: (e) => {
-140. if (!e.isVisible) {
-141. this.showMenu = false;
-142. this.result!.closeContextMenu();
-143. }
-144. }
-145. })
-146. }
-147. }
-148. }
+  build() {
+    Column() {
+      Web({ src: $rawfile("index.html"), controller: this.controller })
+        // 触发自定义弹窗
+        .onContextMenuShow((event) => {
+          if (event) {
+            // 保存result供后续菜单操作使用
+            this.result = event.result
+            console.info(TAG + "x coord = " + event.param.x());
+            console.info(TAG + "link url = " + event.param.getLinkUrl());
+            this.linkUrl = event.param.getLinkUrl();
+          }
+          console.info(TAG, `x: ${this.offsetX}, y: ${this.offsetY}`);
+          this.showMenu = true;
+          this.offsetX = 0;
+          this.offsetY = Math.max(this.uiContext!.px2vp(event?.param.y() ?? 0) - 0, 0);
+          return true;
+        })
+        .bindPopup(this.showMenu,
+          {
+            builder: this.MenuBuilder(),
+            enableArrow: false,
+            placement: Placement.LeftTop,
+            offset: { x: this.offsetX, y: this.offsetY },
+            mask: false,
+            onStateChange: (e) => {
+              if (!e.isVisible) {
+                this.showMenu = false;
+                this.result!.closeContextMenu();
+              }
+            }
+          })
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!-- index.html -->
-2. <!DOCTYPE html>
-3. <html lang="en">
-4. <body>
-5. <h1>onContextMenuShow</h1>
-6. <a href="http://www.example.com" style="font-size:27px">链接www.example.com</a>
-7. <!-- rawfile下放任意一张图片命名为example.png -->
-8. <div><img src="example.png"></div>
-9. <p>选中文字鼠标右键弹出菜单</p>
-10. </body>
-11. </html>
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <h1>onContextMenuShow</h1>
+  <a href="http://www.example.com" style="font-size:27px">链接www.example.com</a>
+  <!-- rawfile下放任意一张图片命名为example.png -->
+  <div><img src="example.png"></div>
+  <p>选中文字鼠标右键弹出菜单</p>
+</body>
+</html>
 ```
 
 ## onContextMenuHide11+
-
-PhonePC/2in1TabletTVWearable
 
 onContextMenuHide(callback: OnContextMenuHideCallback)
 
@@ -2355,39 +2318,37 @@ onContextMenuHide(callback: OnContextMenuHideCallback)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | [OnContextMenuHideCallback](arkts-basic-components-web-t.md#oncontextmenuhidecallback11) | 是 | 菜单相关回调。 |
+| callback | [OnContextMenuHideCallback](arkts-basic-components-web-t.md#oncontextmenuhidecallback11) | 是 | 上下文菜单隐藏时触发。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onContextMenuHide(() => {
-13. console.info("onContextMenuHide callback");
-14. })
-15. }
-16. }
-17. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onContextMenuHide(() => {
+          console.info("onContextMenuHide callback");
+        })
+    }
+  }
+}
 ```
 
 ## onScroll9+
-
-PhonePC/2in1TabletTVWearable
 
 onScroll(callback: Callback<OnScrollEvent>)
 
 通知网页全局滚动位置。
 
-说明
+**说明** 
 
 通知的是页面全局滚动位置，局部滚动位置的变化是无法触发此回调。
 
@@ -2405,34 +2366,32 @@ onScroll(callback: Callback<OnScrollEvent>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onScroll((event) => {
-13. console.info("x = " + event.xOffset);
-14. console.info("y = " + event.yOffset);
-15. })
-16. }
-17. }
-18. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onScroll((event) => {
+          console.info("x = " + event.xOffset);
+          console.info("y = " + event.yOffset);
+        })
+    }
+  }
+}
 ```
 
 ## onGeolocationShow
 
-PhonePC/2in1TabletTVWearable
-
 onGeolocationShow(callback: Callback<OnGeolocationShowEvent>)
 
-通知用户收到地理位置信息获取请求，需配置"ohos.permission.LOCATION"、"ohos.permission.APPROXIMATELY\_LOCATION"权限。使用callback异步回调。
+通知用户收到地理位置信息获取请求，需配置"ohos.permission.LOCATION"、"ohos.permission.APPROXIMATELY\_LOCATION"权限。使用callback异步回调。用于显示自定义的位置权限申请弹窗、实现位置服务说明、根据应用需求选择是否授权，提供更好的位置权限管理体验。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -2444,96 +2403,98 @@ onGeolocationShow(callback: Callback<OnGeolocationShowEvent>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { BusinessError } from '@kit.BasicServicesKit';
-4. import { abilityAccessCtrl, common } from '@kit.AbilityKit';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { abilityAccessCtrl, common } from '@kit.AbilityKit';
 
-6. let atManager = abilityAccessCtrl.createAtManager();
+let atManager = abilityAccessCtrl.createAtManager();
 
-8. @Entry
-9. @Component
-10. struct WebComponent {
-11. controller: webview.WebviewController = new webview.WebviewController();
-12. uiContext: UIContext = this.getUIContext();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  uiContext: UIContext = this.getUIContext();
 
-14. // 组件的声明周期函数，创建组件实例后触发
-15. aboutToAppear(): void {
-16. let context : Context | undefined = this.uiContext.getHostContext() as common.UIAbilityContext;
-17. if (!context) {
-18. console.error("context is undefined");
-19. return;
-20. }
-21. // 向用户请求位置权限
-22. atManager.requestPermissionsFromUser(context, ["ohos.permission.LOCATION", "ohos.permission.APPROXIMATELY_LOCATION"]).then((data) => {
-23. console.info('data:' + JSON.stringify(data));
-24. console.info('data permissions:' + data.permissions);
-25. console.info('data authResults:' + data.authResults);
-26. }).catch((error: BusinessError) => {
-27. console.error(`Failed to request permissions from user. Code is ${error.code}, message is ${error.message}`);
-28. })
-29. }
+  // 组件的生命周期函数，创建组件实例后触发
+  aboutToAppear(): void {
+    let context : Context | undefined = this.uiContext.getHostContext() as common.UIAbilityContext;
+    if (!context) {
+      console.error("context is undefined");
+      return;
+    }
+    // 请求位置权限，对整个应用生效
+    atManager.requestPermissionsFromUser(context, ["ohos.permission.LOCATION", "ohos.permission.APPROXIMATELY_LOCATION"]).then((data) => {
+      console.info('data:' + JSON.stringify(data));
+      console.info('data permissions:' + data.permissions);
+      console.info('data authResults:' + data.authResults);
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to request permissions from user. Code is ${error.code}, message is ${error.message}`);
+    })
+  }
 
-31. build() {
-32. Column() {
-33. Web({ src: $rawfile('index.html'), controller: this.controller })
-34. .geolocationAccess(true)
-35. .onGeolocationShow((event) => {
-36. if (event) {
-37. this.uiContext.showAlertDialog({
-38. title: 'title',
-39. message: 'text',
-40. confirm: {
-41. value: 'onConfirm',
-42. action: () => {
-43. // invoke的第三个参数表示是否记住当前弹窗的选择状态，如果传入true，则下次不再弹出对话框
-44. event.geolocation.invoke(event.origin, true, false);
-45. }
-46. },
-47. cancel: () => {
-48. // invoke的第三个参数表示是否记住当前弹窗的选择状态，如果传入true，则下次不再弹出对话框
-49. event.geolocation.invoke(event.origin, false, false);
-50. }
-51. })
-52. }
-53. })
-54. }
-55. }
-56. }
+  build() {
+    Column() {
+      // Web组件的geolocationAccess属性默认为true，可以显式配置为false以禁止Web组件获取地理位置信息
+      Web({ src: $rawfile('index.html'), controller: this.controller })
+        .geolocationAccess(true)
+        .onGeolocationShow((event) => {
+          // 位置权限申请通知仅对当前Web组件生效，应用内的其他Web组件不受影响
+          if (event) {
+            this.uiContext.showAlertDialog({
+              title: 'title',
+              message: 'text',
+              confirm: {
+                value: 'onConfirm',
+                action: () => {
+                  // 允许此站点位置权限请求
+                  // invoke的第三个参数表示是否记住当前弹窗的选择状态，传入true则下次不再弹出对话框
+                  event.geolocation.invoke(event.origin, true, false);
+                }
+              },
+              cancel: () => {
+                // 不允许此站点位置权限请求
+                // invoke的第三个参数表示是否记住当前弹窗的选择状态，传入true则下次不再弹出对话框
+                event.geolocation.invoke(event.origin, false, false);
+              }
+            })
+          }
+        })
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!DOCTYPE html>
-2. <html>
-3. <body>
-4. <p id="locationInfo">位置信息</p>
-5. <button onclick="getLocation()">获取位置</button>
-6. <script>
-7. var locationInfo=document.getElementById("locationInfo");
-8. function getLocation(){
-9. if (navigator.geolocation) {
-10. // 前端页面访问设备地理位置
-11. navigator.geolocation.getCurrentPosition(showPosition);
-12. }
-13. }
-14. function showPosition(position){
-15. locationInfo.innerHTML="Latitude: " + position.coords.latitude + "<br />Longitude: " + position.coords.longitude;
-16. }
-17. </script>
-18. </body>
-19. </html>
+```html
+<!DOCTYPE html>
+<html>
+<body>
+<p id="locationInfo">位置信息</p>
+<button onclick="getLocation()">获取位置</button>
+<script>
+var locationInfo=document.getElementById("locationInfo");
+function getLocation(){
+  if (navigator.geolocation) {
+    // 前端页面访问设备地理位置
+    navigator.geolocation.getCurrentPosition(showPosition);
+  }
+}
+function showPosition(position){
+  locationInfo.innerHTML="Latitude: " + position.coords.latitude + "<br />Longitude: " + position.coords.longitude;
+}
+</script>
+</body>
+</html>
 ```
 
 ## onGeolocationHide
 
-PhonePC/2in1TabletTVWearable
-
 onGeolocationHide(callback: () => void)
 
-通知用户先前被调用[onGeolocationShow](arkts-basic-components-web-events.md#ongeolocationshow)时收到地理位置信息获取请求已被取消。
+通知用户先前被调用[onGeolocationShow](arkts-basic-components-web-events.md#ongeolocationshow)时收到地理位置信息获取请求已被取消。用于清理定位相关资源，优化资源使用。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -2545,34 +2506,32 @@ onGeolocationHide(callback: () => void)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .geolocationAccess(true)
-13. .onGeolocationHide(() => {
-14. console.info("onGeolocationHide...");
-15. })
-16. }
-17. }
-18. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .geolocationAccess(true)
+        .onGeolocationHide(() => {
+          console.info("onGeolocationHide...");
+        })
+    }
+  }
+}
 ```
 
 ## onFullScreenEnter9+
 
-PhonePC/2in1TabletTVWearable
-
 onFullScreenEnter(callback: OnFullScreenEnterCallback)
 
-通知开发者Web组件进入全屏模式。
+通知开发者Web组件进入全屏模式。用于隐藏状态栏和导航栏、调整页面布局以适应全屏、实现沉浸式视频播放等全屏体验。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -2580,41 +2539,39 @@ onFullScreenEnter(callback: OnFullScreenEnterCallback)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | [OnFullScreenEnterCallback](arkts-basic-components-web-t.md#onfullscreenentercallback12) | 是 | Web组件进入全屏时的回调信息。 |
+| callback | [OnFullScreenEnterCallback](arkts-basic-components-web-t.md#onfullscreenentercallback12) | 是 | Web组件进入全屏时的回调信息，包含videoWidth、videoHeight和handler字段。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. handler: FullScreenExitHandler | null = null;
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  handler: FullScreenExitHandler | null = null;
 
-10. build() {
-11. Column() {
-12. Web({ src: 'www.example.com', controller: this.controller })
-13. .onFullScreenEnter((event) => {
-14. console.info("onFullScreenEnter videoWidth: " + event.videoWidth +
-15. ", videoHeight: " + event.videoHeight);
-16. // 应用可以通过 this.handler.exitFullScreen() 主动退出全屏。
-17. this.handler = event.handler;
-18. })
-19. }
-20. }
-21. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onFullScreenEnter((event) => {
+          console.info("onFullScreenEnter videoWidth: " + event.videoWidth +
+            ", videoHeight: " + event.videoHeight);
+          // 保存handler供后续退出全屏使用
+          this.handler = event.handler;
+        })
+    }
+  }
+}
 ```
 
 ## onFullScreenExit9+
 
-PhonePC/2in1TabletTVWearable
-
 onFullScreenExit(callback: () => void)
 
-通知开发者Web组件退出全屏模式。
+通知开发者Web组件退出全屏模式。用于恢复状态栏和导航栏、调整页面布局恢复正常显示、实现全屏与正常显示的平滑切换，提供更好的全屏交互体验。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -2622,46 +2579,44 @@ onFullScreenExit(callback: () => void)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | () => void | 是 | 退出全屏模式时的回调函数。 |
+| callback | () => void | 是 | 退出全屏模式时的回调函数，无参数。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. handler: FullScreenExitHandler | null = null;
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  handler: FullScreenExitHandler | null = null;
 
-10. build() {
-11. Column() {
-12. Web({ src: 'www.example.com', controller: this.controller })
-13. .onFullScreenExit(() => {
-14. console.info("onFullScreenExit...")
-15. if (this.handler) {
-16. this.handler.exitFullScreen();
-17. }
-18. })
-19. .onFullScreenEnter((event) => {
-20. this.handler = event.handler;
-21. })
-22. }
-23. }
-24. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onFullScreenExit(() => {
+          console.info("onFullScreenExit...")
+          if (this.handler) {
+            this.handler.exitFullScreen(); // 退出全屏模式
+          }
+        })
+        .onFullScreenEnter((event) => {
+          this.handler = event.handler;
+        })
+    }
+  }
+}
 ```
 
 ## onWindowNew9+
 
-PhonePC/2in1TabletTVWearable
-
 onWindowNew(callback: Callback<OnWindowNewEvent>)
 
-使能multiWindowAccess情况下，通知用户新建窗口请求。
+在开启multiWindowAccess（多窗口访问）属性的情况下，通知应用有新建窗口请求。如需获取更丰富的窗口信息建议使用onWindowNewExt。
 
-若不调用[setWebController](arkts-basic-components-web-controllerhandler.md#setwebcontroller9)接口，会造成render进程阻塞。
+若不调用[setWebController](arkts-basic-components-web-controllerhandler.md#setwebcontroller9)接口，会造成渲染进程阻塞。
 
 如果没有创建新窗口，调用[setWebController](arkts-basic-components-web-controllerhandler.md#setwebcontroller9)接口时设置成null，通知Web没有创建新窗口。
 
@@ -2679,94 +2634,92 @@ onWindowNew(callback: Callback<OnWindowNewEvent>)
 
 **示例：**
 
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+
+// 在同一page页有两个Web组件。在WebComponent新开窗口时，会跳转到NewWebViewComp。
+@CustomDialog
+struct NewWebViewComp {
+  controller?: CustomDialogController;
+  webviewController1: webview.WebviewController = new webview.WebviewController();
+
+  build() {
+    Column() {
+      Web({ src: "www.example.com", controller: this.webviewController1 })
+        .javaScriptAccess(true)
+        .multiWindowAccess(false)
+        .onWindowExit(() => {
+          console.info("NewWebViewComp onWindowExit");
+          if (this.controller) {
+            this.controller.close();
+          }
+        })
+    }
+  }
+}
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  dialogController: CustomDialogController | null = null;
+
+  build() {
+    Column() {
+      Web({ src: $rawfile("window.html"), controller: this.controller })
+        .javaScriptAccess(true)
+        // 需要使能multiWindowAccess
+        .multiWindowAccess(true)
+        .allowWindowOpenMethod(true)
+        .onWindowNew((event) => {
+          if (this.dialogController) {
+            this.dialogController.close();
+          }
+          let popController: webview.WebviewController = new webview.WebviewController();
+          // 将新窗口对应WebviewController返回给Web内核。
+          // 若不调用event.handler.setWebController接口，会造成渲染进程阻塞。
+          // 如果没有创建新窗口，调用event.handler.setWebController接口时设置成null，通知Web没有创建新窗口。
+          event.handler.setWebController(popController);
+          this.dialogController = new CustomDialogController({
+            builder: NewWebViewComp({ webviewController1: popController })
+          })
+          this.dialogController.open();
+        })
+    }
+  }
+}
 ```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
 
-4. // 在同一page页有两个Web组件。在WebComponent新开窗口时，会跳转到NewWebViewComp。
-5. @CustomDialog
-6. struct NewWebViewComp {
-7. controller?: CustomDialogController;
-8. webviewController1: webview.WebviewController = new webview.WebviewController();
-
-10. build() {
-11. Column() {
-12. Web({ src: "www.example.com", controller: this.webviewController1 })
-13. .javaScriptAccess(true)
-14. .multiWindowAccess(false)
-15. .onWindowExit(() => {
-16. console.info("NewWebViewComp onWindowExit");
-17. if (this.controller) {
-18. this.controller.close();
-19. }
-20. })
-21. }
-22. }
-23. }
-
-25. @Entry
-26. @Component
-27. struct WebComponent {
-28. controller: webview.WebviewController = new webview.WebviewController();
-29. dialogController: CustomDialogController | null = null;
-
-31. build() {
-32. Column() {
-33. Web({ src: $rawfile("window.html"), controller: this.controller })
-34. .javaScriptAccess(true)
-35. // 需要使能multiWindowAccess
-36. .multiWindowAccess(true)
-37. .allowWindowOpenMethod(true)
-38. .onWindowNew((event) => {
-39. if (this.dialogController) {
-40. this.dialogController.close();
-41. }
-42. let popController: webview.WebviewController = new webview.WebviewController();
-43. this.dialogController = new CustomDialogController({
-44. builder: NewWebViewComp({ webviewController1: popController })
-45. })
-46. this.dialogController.open();
-47. // 将新窗口对应WebviewController返回给Web内核。
-48. // 若不调用event.handler.setWebController接口，会造成render进程阻塞。
-49. // 如果没有创建新窗口，调用event.handler.setWebController接口时设置成null，通知Web没有创建新窗口。
-50. event.handler.setWebController(popController);
-51. })
-52. }
-53. }
-54. }
-```
-
-```
-1. <!-- window.html页面代码 -->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta charset="UTF-8">
-6. <meta name="viewport" content="width=device-width, initial-scale=1.0">
-7. </head>
-8. <body>
-9. <a href="#" onclick="openNewWindow('https://www.example.com')">打开新页面</a>
-10. <script type="text/javascript">
-11. function openNewWindow(url) {
-12. window.open(url, 'example');
-13. return false;
-14. }
-15. </script>
-16. </body>
-17. </html>
+```html
+<!-- window.html页面代码 -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<a href="#" onclick="openNewWindow('https://www.example.com')">打开新页面</a>
+<script type="text/javascript">
+    function openNewWindow(url) {
+      window.open(url, 'example');
+      return false;
+    }
+</script>
+</body>
+</html>
 ```
 
 ## onWindowNewExt23+
 
-PhonePC/2in1TabletTVWearable
-
 onWindowNewExt(callback: Callback<OnWindowNewExtEvent>)
 
-在启用[multiWindowAccess](arkts-basic-components-web-attributes.md#multiwindowaccess9)的情况下，通知用户新建窗口请求。
+在启用[multiWindowAccess](arkts-basic-components-web-attributes.md#multiwindowaccess9)的情况下，通知应用有新建窗口请求。
 
-说明
+**说明** 
 
-* 若不调用[setWebController](arkts-basic-components-web-controllerhandler.md#setwebcontroller9)接口，会造成render进程阻塞。
+* 若不调用[setWebController](arkts-basic-components-web-controllerhandler.md#setwebcontroller9)接口，会造成渲染进程阻塞。
 * 若未创建新窗口，调用[setWebController](arkts-basic-components-web-controllerhandler.md#setwebcontroller9)接口并设置成null，通知Web未创建新窗口。
 * 新窗口需避免直接覆盖在原Web组件上，且应与主页面以相同形式明确显示其URL（如地址栏）以防止用户混淆。若无法确保URL的显示和验证机制可靠，则需考虑禁止创建新窗口。
 * 新窗口请求来源无法可靠追溯，可能由第三方iframe发起，应用需默认采取沙箱隔离、限制权限等防御性措施以确保安全。
@@ -2781,96 +2734,94 @@ onWindowNewExt(callback: Callback<OnWindowNewExtEvent>)
 
 **示例：**
 
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+
+// 在同一page页有两个Web组件。在WebComponent新开窗口时，会跳转到NewWebViewComp。
+@CustomDialog
+struct NewWebViewComp {
+controller?: CustomDialogController;
+webviewController1: webview.WebviewController = new webview.WebviewController();
+
+build() {
+  Column() {
+    Web({ src: "www.example.com", controller: this.webviewController1 })
+      .javaScriptAccess(true)
+      .multiWindowAccess(false)
+      .onWindowExit(() => {
+        console.info("NewWebViewComp onWindowExit");
+        if (this.controller) {
+          this.controller.close();
+        }
+      })
+    }
+  }
+}
+
+@Entry
+@Component
+struct WebComponent {
+controller: webview.WebviewController = new webview.WebviewController();
+dialogController: CustomDialogController | null = null;
+
+build() {
+  Column() {
+    Web({ src: $rawfile("window.html"), controller: this.controller })
+      .javaScriptAccess(true)
+      // 需要开启multiWindowAccess
+      .multiWindowAccess(true)
+      .allowWindowOpenMethod(true)
+      .onWindowNewExt((event) => {
+        // 以event.navigationPolicy请求的方式打开新窗口
+        console.info("navigationAction: ", event.navigationPolicy)
+        // 以event.windowFeatures中的大小及位置信息创建新窗口
+        console.info("windowFeatures: ", JSON.stringify(event.windowFeatures))
+        if (this.dialogController) {
+          this.dialogController.close();
+        }
+        let popController: webview.WebviewController = new webview.WebviewController();
+        // 将新窗口对应WebviewController返回给Web内核。
+        // 若不调用event.handler.setWebController接口，会造成渲染进程阻塞。
+        // 如果没有创建新窗口，在调用event.handler.setWebController接口时应设置成null，以通知Web没有创建新窗口。
+        event.handler.setWebController(popController);
+        this.dialogController = new CustomDialogController({
+          builder: NewWebViewComp({ webviewController1: popController })
+        })
+        this.dialogController.open();
+      })
+    }
+  }
+}
 ```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
 
-4. // 在同一page页有两个Web组件。在WebComponent新开窗口时，会跳转到NewWebViewComp。
-5. @CustomDialog
-6. struct NewWebViewComp {
-7. controller?: CustomDialogController;
-8. webviewController1: webview.WebviewController = new webview.WebviewController();
-
-10. build() {
-11. Column() {
-12. Web({ src: "www.example.com", controller: this.webviewController1 })
-13. .javaScriptAccess(true)
-14. .multiWindowAccess(false)
-15. .onWindowExit(() => {
-16. console.info("NewWebViewComp onWindowExit");
-17. if (this.controller) {
-18. this.controller.close();
-19. }
-20. })
-21. }
-22. }
-23. }
-
-25. @Entry
-26. @Component
-27. struct WebComponent {
-28. controller: webview.WebviewController = new webview.WebviewController();
-29. dialogController: CustomDialogController | null = null;
-
-31. build() {
-32. Column() {
-33. Web({ src: $rawfile("window.html"), controller: this.controller })
-34. .javaScriptAccess(true)
-35. // 需要开启multiWindowAccess
-36. .multiWindowAccess(true)
-37. .allowWindowOpenMethod(true)
-38. .onWindowNewExt((event) => {
-39. // 以event.navigationPolicy请求的方式打开新窗口
-40. console.info("navigationAction: ", event.navigationPolicy)
-41. // 以event.windowFeatures中的大小及位置信息创建新窗口
-42. console.info("windowFeatures: ", JSON.stringify(event.windowFeatures))
-43. if (this.dialogController) {
-44. this.dialogController.close();
-45. }
-46. let popController: webview.WebviewController = new webview.WebviewController();
-47. this.dialogController = new CustomDialogController({
-48. builder: NewWebViewComp({ webviewController1: popController })
-49. })
-50. this.dialogController.open();
-51. // 将新窗口对应WebviewController返回给Web内核。
-52. // 若不调用event.handler.setWebController接口，会造成render进程阻塞。
-53. // 如果没有创建新窗口，在调用event.handler.setWebController接口时应设置成null，以通知Web没有创建新窗口。
-54. event.handler.setWebController(popController);
-55. })
-56. }
-57. }
-58. }
-```
-
-```
-1. <!-- window.html页面代码 -->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta charset="UTF-8">
-6. <meta name="viewport" content="width=device-width, initial-scale=1.0">
-7. </head>
-8. <body>
-9. <a href="#" onclick="openNewWindow('https://www.example.com')">打开新页面</a>
-10. <script type="text/javascript">
-11. function openNewWindow(url) {
-12. window.open(url, 'example', 'left=60,top=80,width=800,height=600');
-13. return false;
-14. }
-15. </script>
-16. </body>
-17. </html>
+```html
+<!-- window.html页面代码 -->
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+  <a href="#" onclick="openNewWindow('https://www.example.com')">打开新页面</a>
+  <script type="text/javascript">
+      function openNewWindow(url) {
+        window.open(url, 'example', 'left=60,top=80,width=800,height=600');
+        return false;
+      }
+  </script>
+  </body>
+  </html>
 ```
 
 ## onActivateContent20+
 
-PhonePC/2in1TabletTVWearable
-
 onActivateContent(callback: Callback<void>)
 
-当Web页面触发window.open(url, name)时，会根据name查找是否存在已绑定的Web实例。若存在，该实例将收到此回调以通知应用需将其展示至前端；若不存在，则通过[onWindowNew](arkts-basic-components-web-events.md#onwindownew9)通知应用创建新Web实例。
+Web页面触发window.open(url, name)时，会根据name查找是否存在已绑定的Web实例。若存在，该实例将收到此回调以通知应用需将其展示至前端；若不存在，则通过[onWindowNew](arkts-basic-components-web-events.md#onwindownew9)通知应用创建新Web实例。
 
-说明
+**说明** 
 
 * 通过name绑定Web实例‌：需在[onWindowNew](arkts-basic-components-web-events.md#onwindownew9)回调中调用event.handler.setWebController方法，并传入新Web实例的controller，以完成绑定。
 * name‌命名需符合正则表达式[a-zA-Z0-9\_]+。当该name被用作<a>或<form>标签的target属性值时，已绑定的Web实例同样会触发此回调。
@@ -2885,94 +2836,92 @@ onActivateContent(callback: Callback<void>)
 
 **示例：**
 
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+
+// 在同一page页有两个Web组件。在WebComponent新开窗口时，会跳转到NewWebViewComp。
+@CustomDialog
+struct NewWebViewComp {
+  controller?: CustomDialogController;
+  webviewController1: webview.WebviewController = new webview.WebviewController();
+
+  build() {
+    Column() {
+      Web({ src: "https://www.example.com", controller: this.webviewController1 })
+        .javaScriptAccess(true)
+        .multiWindowAccess(false)
+        .onWindowExit(() => {
+          if (this.controller) {
+            this.controller.close();
+          }
+        })
+        .onActivateContent(() => {
+          // 该Web需要展示到前面，建议应用在这里进行tab或window切换的动作展示此web
+          console.info("NewWebViewComp onActivateContent")
+        })
+    }.height("50%")
+  }
+}
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  dialogController: CustomDialogController | null = null;
+
+  build() {
+    Column() {
+      Web({ src: $rawfile("window.html"), controller: this.controller })
+        .javaScriptAccess(true)
+        .allowWindowOpenMethod(true)
+        // 需要使能multiWindowAccess
+        .multiWindowAccess(true)
+        .onWindowNew((event) => {
+          if (this.dialogController) {
+            this.dialogController.close()
+          }
+          let popController: webview.WebviewController = new webview.WebviewController();
+          // 将新窗口对应WebviewController返回给Web内核。
+          // 若不调用event.handler.setWebController接口，会造成渲染进程阻塞。
+          event.handler.setWebController(popController);
+          this.dialogController = new CustomDialogController({
+            builder: NewWebViewComp({ webviewController1: popController }),
+            isModal: false
+          })
+          this.dialogController.open();
+        })
+    }
+  }
+}
 ```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
 
-4. // 在同一page页有两个Web组件。在WebComponent新开窗口时，会跳转到NewWebViewComp。
-5. @CustomDialog
-6. struct NewWebViewComp {
-7. controller?: CustomDialogController;
-8. webviewController1: webview.WebviewController = new webview.WebviewController();
-
-10. build() {
-11. Column() {
-12. Web({ src: "https://www.example.com", controller: this.webviewController1 })
-13. .javaScriptAccess(true)
-14. .multiWindowAccess(false)
-15. .onWindowExit(() => {
-16. if (this.controller) {
-17. this.controller.close();
-18. }
-19. })
-20. .onActivateContent(() => {
-21. // 该Web需要展示到前面，建议应用在这里进行tab或window切换的动作展示此web
-22. console.info("NewWebViewComp onActivateContent")
-23. })
-24. }.height("50%")
-25. }
-26. }
-
-28. @Entry
-29. @Component
-30. struct WebComponent {
-31. controller: webview.WebviewController = new webview.WebviewController();
-32. dialogController: CustomDialogController | null = null;
-
-34. build() {
-35. Column() {
-36. Web({ src: $rawfile("window.html"), controller: this.controller })
-37. .javaScriptAccess(true)
-38. .allowWindowOpenMethod(true)
-39. // 需要使能multiWindowAccess
-40. .multiWindowAccess(true)
-41. .onWindowNew((event) => {
-42. if (this.dialogController) {
-43. this.dialogController.close()
-44. }
-45. let popController: webview.WebviewController = new webview.WebviewController();
-46. this.dialogController = new CustomDialogController({
-47. builder: NewWebViewComp({ webviewController1: popController }),
-48. isModal: false
-49. })
-50. this.dialogController.open();
-51. // 将新窗口对应WebviewController返回给Web内核。
-52. // 若不调用event.handler.setWebController接口，会造成render进程阻塞。
-53. event.handler.setWebController(popController);
-54. })
-55. }
-56. }
-57. }
-```
-
-```
-1. <!-- window.html页面代码 -->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta charset="UTF-8">
-6. <meta name="viewport" content="width=device-width, initial-scale=1.0">
-7. <title>ActivateContentEvent</title>
-8. </head>
-9. <body>
-10. <a href="#" onclick="openNewWindow('https://www.example.com')">打开新页面</a>
-11. <script type="text/javascript">
-12. function openNewWindow(url) {
-13. window.open(url, 'example');
-14. return false;
-15. }
-16. </script>
-17. </body>
-18. </html>
+```html
+<!-- window.html页面代码 -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ActivateContentEvent</title>
+</head>
+<body>
+<a href="#" onclick="openNewWindow('https://www.example.com')">打开新页面</a>
+<script type="text/javascript">
+    function openNewWindow(url) {
+      window.open(url, 'example');
+      return false;
+    }
+</script>
+</body>
+</html>
 ```
 
 ## onWindowExit9+
 
-PhonePC/2in1TabletTVWearable
-
 onWindowExit(callback: () => void)
 
-通知用户窗口关闭请求。和[onWindowNew](arkts-basic-components-web-events.md#onwindownew9)一样，从安全角度讲，应用应该确保用户可以知道他们交互的页面已关闭。
+通知应用有窗口关闭请求。和[onWindowNew](arkts-basic-components-web-events.md#onwindownew9)一样，从安全角度考虑，应用应确保用户可以知道他们交互的页面已关闭。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -2984,29 +2933,27 @@ onWindowExit(callback: () => void)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onWindowExit(() => {
-13. console.info("onWindowExit...");
-14. })
-15. }
-16. }
-17. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onWindowExit(() => {
+          console.info("onWindowExit...");
+        })
+    }
+  }
+}
 ```
 
 ## onSearchResultReceive9+
-
-PhonePC/2in1TabletTVWearable
 
 onSearchResultReceive(callback: Callback<OnSearchResultReceiveEvent>)
 
@@ -3022,36 +2969,34 @@ onSearchResultReceive(callback: Callback<OnSearchResultReceiveEvent>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onSearchResultReceive(ret => {
-13. if (ret) {
-14. console.info("on search result receive:" + "[cur]" + ret.activeMatchOrdinal +
-15. "[total]" + ret.numberOfMatches + "[isDone]" + ret.isDoneCounting);
-16. }
-17. })
-18. }
-19. }
-20. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onSearchResultReceive(ret => {
+          if (ret) {
+            console.info("on search result receive:" + "[cur]" + ret.activeMatchOrdinal +
+              "[total]" + ret.numberOfMatches + "[isDone]" + ret.isDoneCounting);
+          }
+        })
+    }
+  }
+}
 ```
 
 ## onDataResubmitted9+
 
-PhonePC/2in1TabletTVWearable
-
 onDataResubmitted(callback: Callback<OnDataResubmittedEvent>)
 
-设置网页表单可以重新提交时触发的回调函数。
+当网页表单可以重新提交时触发的回调函数。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -3063,58 +3008,56 @@ onDataResubmitted(callback: Callback<OnDataResubmittedEvent>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct WebComponent {
-8. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-10. build() {
-11. Column() {
-12. // 在网页中点击提交之后，点击refresh按钮可以重新提交时的触发函数。
-13. Button('refresh')
-14. .onClick(() => {
-15. try {
-16. this.controller.refresh();
-17. } catch (error) {
-18. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-19. }
-20. })
-21. Web({ src: $rawfile('index.html'), controller: this.controller })
-22. .onDataResubmitted((event) => {
-23. console.info('onDataResubmitted');
-24. event.handler.resend();
-25. })
-26. }
-27. }
-28. }
+  build() {
+    Column() {
+      // 在网页中点击提交之后，点击refresh按钮可以重新提交时的触发函数。
+      Button('refresh')
+        .onClick(() => {
+          try {
+            this.controller.refresh();
+          } catch (error) {
+            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+          }
+        })
+      Web({ src: $rawfile('index.html'), controller: this.controller })
+        .onDataResubmitted((event) => {
+          console.info('onDataResubmitted');
+          event.handler.resend();
+        })
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!-- index.html -->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta charset="utf-8">
-6. </head>
-7. <body>
-8. <form action="http://httpbin.org/post" method="post">
-9. <input type="text" name="username">
-10. <input type="submit" name="提交">
-11. </form>
-12. </body>
-13. </html>
+```html
+ <!-- index.html -->
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="utf-8">
+ </head>
+ <body>
+   <form action="http://httpbin.org/post" method="post">
+     <input type="text" name="username">
+     <input type="submit" name="提交">
+   </form>
+ </body>
+ </html>
 ```
 
 ## onPageVisible9+
-
-PhonePC/2in1TabletTVWearable
 
 onPageVisible(callback: Callback<OnPageVisibleEvent>)
 
@@ -3130,29 +3073,27 @@ onPageVisible(callback: Callback<OnPageVisibleEvent>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onPageVisible((event) => {
-13. console.info('onPageVisible url:' + event.url);
-14. })
-15. }
-16. }
-17. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onPageVisible((event) => {
+          console.info('onPageVisible url:' + event.url);
+        })
+    }
+  }
+}
 ```
 
 ## onInterceptKeyEvent9+
-
-PhonePC/2in1TabletTVWearable
 
 onInterceptKeyEvent(callback: (event: KeyEvent) => boolean)
 
@@ -3168,37 +3109,35 @@ onInterceptKeyEvent(callback: (event: KeyEvent) => boolean)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onInterceptKeyEvent((event) => {
-13. if (event.keyCode == 2017 || event.keyCode == 2018) {
-14. console.info(`onInterceptKeyEvent get event.keyCode ${event.keyCode}`);
-15. return true;
-16. }
-17. return false;
-18. })
-19. }
-20. }
-21. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onInterceptKeyEvent((event) => {
+          if (event.keyCode == 2017 || event.keyCode == 2018) {
+            console.info(`onInterceptKeyEvent get event.keyCode ${event.keyCode}`);
+            return true;
+          }
+          return false;
+        })
+    }
+  }
+}
 ```
 
 ## onTouchIconUrlReceived9+
 
-PhonePC/2in1TabletTVWearable
-
 onTouchIconUrlReceived(callback: Callback<OnTouchIconUrlReceivedEvent>)
 
-设置接收到apple-touch-icon url地址时的回调函数。
+接收到apple-touch-icon URL地址时触发的回调函数。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -3206,33 +3145,31 @@ onTouchIconUrlReceived(callback: Callback<OnTouchIconUrlReceivedEvent>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | Callback<[OnTouchIconUrlReceivedEvent](arkts-basic-components-web-i.md#ontouchiconurlreceivedevent12)> | 是 | 接收到的apple-touch-icon url地址时触发。 |
+| callback | Callback<[OnTouchIconUrlReceivedEvent](arkts-basic-components-web-i.md#ontouchiconurlreceivedevent12)> | 是 | 接收到的apple-touch-icon URL地址时触发。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.baidu.com', controller: this.controller })
-12. .onTouchIconUrlReceived((event) => {
-13. console.info('onTouchIconUrlReceived:' + JSON.stringify(event));
-14. })
-15. }
-16. }
-17. }
+  build() {
+    Column() {
+      Web({ src: 'www.baidu.com', controller: this.controller })
+        .onTouchIconUrlReceived((event) => {
+          console.info('onTouchIconUrlReceived:' + JSON.stringify(event));
+        })
+    }
+  }
+}
 ```
 
 ## onFaviconReceived9+
-
-PhonePC/2in1TabletTVWearable
 
 onFaviconReceived(callback: Callback<OnFaviconReceivedEvent>)
 
@@ -3248,32 +3185,30 @@ onFaviconReceived(callback: Callback<OnFaviconReceivedEvent>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { image } from '@kit.ImageKit';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { image } from '@kit.ImageKit';
 
-5. @Entry
-6. @Component
-7. struct WebComponent {
-8. controller: webview.WebviewController = new webview.WebviewController();
-9. @State icon: image.PixelMap | undefined = undefined;
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State icon: image.PixelMap | undefined = undefined;
 
-11. build() {
-12. Column() {
-13. Web({ src: 'www.example.com', controller: this.controller })
-14. .onFaviconReceived((event) => {
-15. console.info('onFaviconReceived');
-16. this.icon = event.favicon;
-17. })
-18. }
-19. }
-20. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onFaviconReceived((event) => {
+          console.info('onFaviconReceived');
+          this.icon = event.favicon;
+        })
+    }
+  }
+}
 ```
 
 ## onAudioStateChanged10+
-
-PhonePC/2in1TabletTVWearable
 
 onAudioStateChanged(callback: Callback<OnAudioStateChangedEvent>)
 
@@ -3289,35 +3224,34 @@ onAudioStateChanged(callback: Callback<OnAudioStateChangedEvent>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. @State playing: boolean = false;
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State playing: boolean = false;
 
-10. build() {
-11. Column() {
-12. Web({ src: 'www.example.com', controller: this.controller })
-13. .onAudioStateChanged(event => {
-14. this.playing = event.playing;
-15. console.info('onAudioStateChanged playing: ' + this.playing);
-16. })
-17. }
-18. }
-19. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onAudioStateChanged(event => {
+          // 更新音频播放状态供后续使用
+          this.playing = event.playing;
+          console.info('onAudioStateChanged playing: ' + this.playing);
+        })
+    }
+  }
+}
 ```
 
 ## onFirstContentfulPaint10+
 
-PhonePC/2in1TabletTVWearable
-
 onFirstContentfulPaint(callback: Callback<OnFirstContentfulPaintEvent>)
 
-设置网页首次内容绘制回调函数。
+设置网页首次内容绘制时触发的回调函数。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -3325,37 +3259,35 @@ onFirstContentfulPaint(callback: Callback<OnFirstContentfulPaintEvent>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | Callback<[OnFirstContentfulPaintEvent](arkts-basic-components-web-i.md#onfirstcontentfulpaintevent12)> | 是 | 网页首次内容绘制回调函数。 |
+| callback | Callback<[OnFirstContentfulPaintEvent](arkts-basic-components-web-i.md#onfirstcontentfulpaintevent12)> | 是 | 回调函数，返回导航开始时间戳、首次内容绘制耗时等性能指标。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onFirstContentfulPaint(event => {
-13. if (event) {
-14. console.info("onFirstContentfulPaint:" + "[navigationStartTick]:" +
-15. event.navigationStartTick + ", [firstContentfulPaintMs]:" +
-16. event.firstContentfulPaintMs);
-17. }
-18. })
-19. }
-20. }
-21. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onFirstContentfulPaint(event => {
+          if (event) {
+            console.info("onFirstContentfulPaint:" + "[navigationStartTick]:" +
+            event.navigationStartTick + ", [firstContentfulPaintMs]:" +
+            event.firstContentfulPaintMs);
+          }
+        })
+    }
+  }
+}
 ```
 
 ## onFirstMeaningfulPaint12+
-
-PhonePC/2in1TabletTVWearable
 
 onFirstMeaningfulPaint(callback: [OnFirstMeaningfulPaintCallback](arkts-basic-components-web-t.md#onfirstmeaningfulpaintcallback12))
 
@@ -3371,30 +3303,28 @@ onFirstMeaningfulPaint(callback: [OnFirstMeaningfulPaintCallback](arkts-basic-co
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onFirstMeaningfulPaint((details) => {
-13. console.info("onFirstMeaningfulPaint: [navigationStartTime]= " + details.navigationStartTime +
-14. ", [firstMeaningfulPaintTime]=" + details.firstMeaningfulPaintTime);
-15. })
-16. }
-17. }
-18. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onFirstMeaningfulPaint((details) => {
+          console.info("onFirstMeaningfulPaint: [navigationStartTime]= " + details.navigationStartTime +
+            ", [firstMeaningfulPaintTime]=" + details.firstMeaningfulPaintTime);
+        })
+    }
+  }
+}
 ```
 
 ## onLargestContentfulPaint12+
-
-PhonePC/2in1TabletTVWearable
 
 onLargestContentfulPaint(callback: [OnLargestContentfulPaintCallback](arkts-basic-components-web-t.md#onlargestcontentfulpaintcallback12))
 
@@ -3410,41 +3340,42 @@ onLargestContentfulPaint(callback: [OnLargestContentfulPaintCallback](arkts-basi
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onLargestContentfulPaint((details) => {
-13. console.info("onLargestContentfulPaint: [navigationStartTime]= " + details.navigationStartTime +
-14. ", [largestImagePaintTime]=" + details.largestImagePaintTime +
-15. ", [largestTextPaintTime]=" + details.largestTextPaintTime +
-16. ", [largestImageLoadStartTime]=" + details.largestImageLoadStartTime +
-17. ", [largestImageLoadEndTime]=" + details.largestImageLoadEndTime +
-18. ", [imageBPP]=" + details.imageBPP);
-19. })
-20. }
-21. }
-22. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onLargestContentfulPaint((details) => {
+          console.info("onLargestContentfulPaint: [navigationStartTime]= " + details.navigationStartTime +
+            ", [largestImagePaintTime]=" + details.largestImagePaintTime +
+            ", [largestTextPaintTime]=" + details.largestTextPaintTime +
+            ", [largestImageLoadStartTime]=" + details.largestImageLoadStartTime +
+            ", [largestImageLoadEndTime]=" + details.largestImageLoadEndTime +
+            ", [imageBPP]=" + details.imageBPP);
+        })
+    }
+  }
+}
 ```
 
 ## onLoadIntercept10+
-
-PhonePC/2in1TabletTVWearable
 
 onLoadIntercept(callback: Callback<OnLoadInterceptEvent, boolean>)
 
 当Web组件加载url之前触发该回调，用于判断是否阻止此次访问。
 
-说明
+**说明** 
 
+* onLoadIntercept是在页面导航前同步触发的回调，回调返回前当前导航处于挂起状态。
+* 禁止在回调中直接调用会触发新导航的接口（如[refresh()](arkts-apis-webview-webviewcontroller.md#refresh)、[loadurl()](arkts-apis-webview-webviewcontroller.md#loadurl)、[setCustomUserAgent()](arkts-apis-webview-webviewcontroller.md#setcustomuseragent10)等），否则会导致回调重入或导航状态混乱。
+* 如需在拦截后重新加载页面，应在回调返回后通过[setTimeout()](js-apis-timer.md#settimeout)等异步方法延迟调用。
 * onLoadIntercept无法获取到完整的headers，如需获取完整headers建议在[onInterceptRequest](arkts-basic-components-web-events.md#oninterceptrequest9)或者通过WebSchemeHandler的[onRequestStart](arkts-apis-webview-webschemehandler.md#onrequeststart12)中获取。
 
 **系统能力：** SystemCapability.Web.Webview.Core
@@ -3457,33 +3388,31 @@ onLoadIntercept(callback: Callback<OnLoadInterceptEvent, boolean>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onLoadIntercept((event) => {
-13. console.info('url:' + event.data.getRequestUrl());
-14. console.info('isMainFrame:' + event.data.isMainFrame());
-15. console.info('isRedirect:' + event.data.isRedirect());
-16. console.info('isRequestGesture:' + event.data.isRequestGesture());
-17. return true;
-18. })
-19. }
-20. }
-21. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onLoadIntercept((event) => {
+          console.info('url:' + event.data.getRequestUrl());
+          console.info('isMainFrame:' + event.data.isMainFrame());
+          console.info('isRedirect:' + event.data.isRedirect());
+          console.info('isRequestGesture:' + event.data.isRequestGesture());
+          return true;
+        })
+    }
+  }
+}
 ```
 
 ## onRequestSelected
-
-PhonePC/2in1TabletTVWearable
 
 onRequestSelected(callback: () => void)
 
@@ -3499,33 +3428,31 @@ onRequestSelected(callback: () => void)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onRequestSelected(() => {
-13. console.info('onRequestSelected');
-14. })
-15. }
-16. }
-17. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onRequestSelected(() => {
+          console.info('onRequestSelected');
+        })
+    }
+  }
+}
 ```
 
 ## onScreenCaptureRequest10+
 
-PhonePC/2in1TabletTVWearable
-
 onScreenCaptureRequest(callback: Callback<OnScreenCaptureRequestEvent>)
 
-通知收到屏幕捕获请求。
+通知收到屏幕捕获请求。用于控制页面截图权限、实现隐私保护、防止敏感信息泄露，保护用户隐私和数据安全。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -3533,54 +3460,55 @@ onScreenCaptureRequest(callback: Callback<OnScreenCaptureRequestEvent>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | Callback<[OnScreenCaptureRequestEvent](arkts-basic-components-web-i.md#onscreencapturerequestevent12)> | 是 | 通知收到屏幕捕获请求。 |
+| callback | Callback<[OnScreenCaptureRequestEvent](arkts-basic-components-web-i.md#onscreencapturerequestevent12)> | 是 | 收到屏幕捕获请求时触发。事件对象包含请求来源URL、请求的捕获模式等信息。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. uiContext: UIContext = this.getUIContext();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  uiContext: UIContext = this.getUIContext();
 
-10. build() {
-11. Column() {
-12. Web({ src: 'www.example.com', controller: this.controller })
-13. .onScreenCaptureRequest((event) => {
-14. if (event) {
-15. this.uiContext.showAlertDialog({
-16. title: 'title: ' + event.handler.getOrigin(),
-17. message: 'text',
-18. primaryButton: {
-19. value: 'deny',
-20. action: () => {
-21. event.handler.deny();
-22. }
-23. },
-24. secondaryButton: {
-25. value: 'onConfirm',
-26. action: () => {
-27. event.handler.grant({ captureMode: WebCaptureMode.HOME_SCREEN });
-28. }
-29. },
-30. cancel: () => {
-31. event.handler.deny();
-32. }
-33. })
-34. }
-35. })
-36. }
-37. }
-38. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onScreenCaptureRequest((event) => {
+          if (event) {
+            this.uiContext.showAlertDialog({
+              title: 'title: ' + event.handler.getOrigin(),
+              message: 'text',
+              primaryButton: {
+                value: 'deny',
+                action: () => {
+                  // 用户点击拒绝，调用deny通知Web组件拒绝屏幕捕获请求
+                  event.handler.deny();
+                }
+              },
+              secondaryButton: {
+                value: 'onConfirm',
+                action: () => {
+                  // 用户点击确认，调用grant通知Web组件允许屏幕捕获，并指定捕获模式为HOME_SCREEN
+                  event.handler.grant({ captureMode: WebCaptureMode.HOME_SCREEN });
+                }
+              },
+              cancel: () => {
+                // 用户取消对话框，调用deny通知Web组件拒绝屏幕捕获请求
+                event.handler.deny();
+              }
+            })
+          }
+        })
+    }
+  }
+}
 ```
 
 ## onOverScroll10+
-
-PhonePC/2in1TabletTVWearable
 
 onOverScroll(callback: Callback<OnOverScrollEvent>)
 
@@ -3596,30 +3524,28 @@ onOverScroll(callback: Callback<OnOverScrollEvent>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onOverScroll((event) => {
-13. console.info("x = " + event.xOffset);
-14. console.info("y = " + event.yOffset);
-15. })
-16. }
-17. }
-18. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onOverScroll((event) => {
+          console.info("x = " + event.xOffset);
+          console.info("y = " + event.yOffset);
+        })
+    }
+  }
+}
 ```
 
 ## onControllerAttached10+
-
-PhonePC/2in1TabletTVWearable
 
 onControllerAttached(callback: () => void)
 
@@ -3641,71 +3567,69 @@ onControllerAttached(callback: () => void)
 
 在该回调中使用loadUrl加载网页
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: '', controller: this.controller })
-12. .onControllerAttached(() => {
-13. this.controller.loadUrl($rawfile("index.html"));
-14. })
-15. }
-16. }
-17. }
+  build() {
+    Column() {
+      Web({ src: '', controller: this.controller })
+        .onControllerAttached(() => {
+          this.controller.loadUrl($rawfile("index.html"));
+        })
+    }
+  }
+}
 ```
 
 在该回调中使用getWebId
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct WebComponent {
-8. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-10. build() {
-11. Column() {
-12. Web({ src: $rawfile("index.html"), controller: this.controller })
-13. .onControllerAttached(() => {
-14. try {
-15. let id = this.controller.getWebId();
-16. console.info("id: " + id);
-17. } catch (error) {
-18. let code = (error as BusinessError).code;
-19. let message = (error as BusinessError).message;
-20. console.error(`ErrorCode: ${code},  Message: ${message}`);
-21. }
-22. })
-23. }
-24. }
-25. }
+  build() {
+    Column() {
+      Web({ src: $rawfile("index.html"), controller: this.controller })
+        .onControllerAttached(() => {
+          try {
+            let id = this.controller.getWebId();
+            console.info("id: " + id);
+          } catch (error) {
+            let code = (error as BusinessError).code;
+            let message = (error as BusinessError).message;
+            console.error(`ErrorCode: ${code},  Message: ${message}`);
+          }
+        })
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!-- index.html -->
-2. <!DOCTYPE html>
-3. <html>
-4. <body>
-5. <p>Hello World</p>
-6. </body>
-7. </html>
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Hello World</p>
+    </body>
+</html>
 ```
 
 ## onNavigationEntryCommitted11+
-
-PhonePC/2in1TabletTVWearable
 
 onNavigationEntryCommitted(callback: [OnNavigationEntryCommittedCallback](arkts-basic-components-web-t.md#onnavigationentrycommittedcallback11))
 
@@ -3721,39 +3645,37 @@ onNavigationEntryCommitted(callback: [OnNavigationEntryCommittedCallback](arkts-
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onNavigationEntryCommitted((details) => {
-13. console.info("onNavigationEntryCommitted: [isMainFrame]= " + details.isMainFrame +
-14. ", [isSameDocument]=" + details.isSameDocument +
-15. ", [didReplaceEntry]=" + details.didReplaceEntry +
-16. ", [navigationType]=" + details.navigationType +
-17. ", [url]=" + details.url);
-18. })
-19. }
-20. }
-21. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onNavigationEntryCommitted((details) => {
+          console.info("onNavigationEntryCommitted: [isMainFrame]= " + details.isMainFrame +
+            ", [isSameDocument]=" + details.isSameDocument +
+            ", [didReplaceEntry]=" + details.didReplaceEntry +
+            ", [navigationType]=" + details.navigationType +
+            ", [url]=" + details.url);
+        })
+    }
+  }
+}
 ```
 
 ## onSafeBrowsingCheckResult11+
-
-PhonePC/2in1TabletTVWearable
 
 onSafeBrowsingCheckResult(callback: OnSafeBrowsingCheckResultCallback)
 
 收到网站安全风险检查结果时触发的回调。
 
-说明
+**说明** 
 
 * 需要使用release包，debug包不生效。
 * 开启未成年模式，设置网页内容拦截，触发回调。
@@ -3768,36 +3690,34 @@ onSafeBrowsingCheckResult(callback: OnSafeBrowsingCheckResultCallback)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onSafeBrowsingCheckResult((callback) => {
-13. let json: ThreatType = JSON.parse(JSON.stringify(callback)).threatType;
-14. console.info("onSafeBrowsingCheckResult: [threatType]= " + json);
-15. })
-16. }
-17. }
-18. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onSafeBrowsingCheckResult((callback) => {
+          let json: ThreatType = JSON.parse(JSON.stringify(callback)).threatType;
+          console.info("onSafeBrowsingCheckResult: [threatType]= " + json);
+        })
+    }
+  }
+}
 ```
 
 ## onSafeBrowsingCheckFinish21+
-
-PhonePC/2in1TabletTVWearable
 
 onSafeBrowsingCheckFinish(callback: OnSafeBrowsingCheckResultCallback)
 
 网站安全风险检查结束时触发的回调。
 
-说明
+**说明** 
 
 * 需要使用release包，debug包不生效。
 * 开启未成年模式，设置网页内容拦截，触发回调。
@@ -3812,34 +3732,40 @@ onSafeBrowsingCheckFinish(callback: OnSafeBrowsingCheckResultCallback)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onSafeBrowsingCheckFinish((callback) => {
-13. let json: ThreatType = JSON.parse(JSON.stringify(callback)).threatType;
-14. console.info("onSafeBrowsingCheckFinish: [threatType]= " + json);
-15. })
-16. }
-17. }
-18. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onSafeBrowsingCheckFinish((callback) => {
+          let json: ThreatType = JSON.parse(JSON.stringify(callback)).threatType;
+          console.info("onSafeBrowsingCheckFinish: [threatType]= " + json);
+        })
+    }
+  }
+}
 ```
 
 ## onNativeEmbedLifecycleChange11+
 
-PhonePC/2in1TabletTVWearable
-
 onNativeEmbedLifecycleChange(callback: (event: NativeEmbedDataInfo) => void)
 
 当同层标签生命周期变化时触发该回调。
+
+**说明** 
+
+* 本接口与onNativeEmbedVisibilityChange都监控同层标签状态，但监控维度不同。
+
+  onNativeEmbedLifecycleChange监控生命周期状态（如CREATE/UPDATE/DESTROY/ENTER\_BFCACHE/LEAVE\_BFCACHE），适用于处理标签的创建、销毁、缓存等生命周期事件。
+
+  onNativeEmbedVisibilityChange监控视口内的可见性变化（Visible/Hidden），适用于处理标签滚动进出视口的场景。两者可根据实际需求配合使用或单独使用。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -3851,169 +3777,167 @@ onNativeEmbedLifecycleChange(callback: (event: NativeEmbedDataInfo) => void)
 
 **示例：**
 
+```ts
+// EntryAbility.ets
+
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { window } from '@kit.ArkUI';
+import { webview } from '@kit.ArkWeb';
+
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+    // API12新增：开启同层渲染BFCache开关
+    let features = new webview.BackForwardCacheSupportedFeatures();
+    features.nativeEmbed = true;
+    features.mediaTakeOver = true;
+    webview.WebviewController.enableBackForwardCache(features);
+    webview.WebviewController.initializeWebEngine();
+  }
+
+  onDestroy(): void {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
+  }
+
+  onWindowStageCreate(windowStage: window.WindowStage): void {
+    // Main window is created, set main page for this ability
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+
+    windowStage.loadContent('pages/Index', (err) => {
+      if (err.code) {
+        hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
+        return;
+      }
+      hilog.info(0x0000, 'testTag', 'Succeeded in loading the content.');
+    });
+  }
+
+  onWindowStageDestroy(): void {
+    // Main window is destroyed, release UI related resources
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
+  }
+
+  onForeground(): void {
+    // Ability has brought to foreground
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
+  }
+
+  onBackground(): void {
+    // Ability has back to background
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
+  }
+}
 ```
-1. // EntryAbility.ets
 
-3. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-4. import { hilog } from '@kit.PerformanceAnalysisKit';
-5. import { window } from '@kit.ArkUI';
-6. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-8. export default class EntryAbility extends UIAbility {
-9. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-10. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-11. // API12新增：开启同层渲染BFCache开关
-12. let features = new webview.BackForwardCacheSupportedFeatures();
-13. features.nativeEmbed = true;
-14. features.mediaTakeOver = true;
-15. webview.WebviewController.enableBackForwardCache(features);
-16. webview.WebviewController.initializeWebEngine();
-17. }
+@Entry
+@Component
+struct WebComponent {
+  @State embedStatus: string = '';
+  controller: webview.WebviewController = new webview.WebviewController();
 
-19. onDestroy(): void {
-20. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
-21. }
+  build() {
+    Column() {
+      // 默认行为：点击按钮跳转页面，关闭index页面，使同层标签销毁。
+      // API12新增：使能同层渲染所在的页面支持BFCache后，点击按钮跳转页面，关闭index页面，使同层标签进入BFCache。
+      Button('Destroy')
+      .onClick(() => {
+        try {
+          this.controller.loadUrl("www.example.com");
+        } catch (error) {
+          console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+        }
+      })
 
-23. onWindowStageCreate(windowStage: window.WindowStage): void {
-24. // Main window is created, set main page for this ability
-25. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+      // API12新增：使能同层渲染所在的页面支持BFCache后，点击按钮返回页面，使同层标签离开BFCache。
+      Button('backward')
+      .onClick(() => {
+        try {
+          this.controller.backward();
+        } catch (error) {
+          console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+        }
+      })
 
-27. windowStage.loadContent('pages/Index', (err) => {
-28. if (err.code) {
-29. hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
-30. return;
-31. }
-32. hilog.info(0x0000, 'testTag', 'Succeeded in loading the content.');
-33. });
-34. }
+      // API12新增：使能同层渲染所在的页面支持BFCache后，点击按钮前进页面，使同层标签进入BFCache。
+      Button('forward')
+      .onClick(() => {
+        try {
+          this.controller.forward();
+        } catch (error) {
+          console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+        }
+      })
 
-36. onWindowStageDestroy(): void {
-37. // Main window is destroyed, release UI related resources
-38. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
-39. }
-
-41. onForeground(): void {
-42. // Ability has brought to foreground
-43. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
-44. }
-
-46. onBackground(): void {
-47. // Ability has back to background
-48. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
-49. }
-50. }
-```
-
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { BusinessError } from '@kit.BasicServicesKit';
-
-5. @Entry
-6. @Component
-7. struct WebComponent {
-8. @State embedStatus: string = '';
-9. controller: webview.WebviewController = new webview.WebviewController();
-
-11. build() {
-12. Column() {
-13. // 默认行为：点击按钮跳转页面，关闭index页面，使同层标签销毁。
-14. // API12新增：使能同层渲染所在的页面支持BFCache后，点击按钮跳转页面，关闭index页面，使同层标签进入BFCache。
-15. Button('Destroy')
-16. .onClick(() => {
-17. try {
-18. this.controller.loadUrl("www.example.com");
-19. } catch (error) {
-20. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-21. }
-22. })
-
-24. // API12新增：使能同层渲染所在的页面支持BFCache后，点击按钮返回页面，使同层标签离开BFCache。
-25. Button('backward')
-26. .onClick(() => {
-27. try {
-28. this.controller.backward();
-29. } catch (error) {
-30. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-31. }
-32. })
-
-34. // API12新增：使能同层渲染所在的页面支持BFCache后，点击按钮前进页面，使同层标签进入BFCache。
-35. Button('forward')
-36. .onClick(() => {
-37. try {
-38. this.controller.forward();
-39. } catch (error) {
-40. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-41. }
-42. })
-
-45. // API12新增同层标签进入离开BFCache状态：非http与https协议加载的网页，Web内核不支持进入BFCache;
-46. // 因此如果要测试ENTER_BFCACHE/LEAVE_BFCACHE状态，需要将index.html放到Web服务器上，使用http或者https协议加载，如：
-47. // Web({ src: "http://xxxx/index.html", controller: this.controller })
-48. Web({ src: $rawfile("index.html"), controller: this.controller })
-49. .enableNativeEmbedMode(true)
-50. .onNativeEmbedLifecycleChange((event) => {
-51. // 当加载页面中有同层标签会触发Create。
-52. if (event.status == NativeEmbedStatus.CREATE) {
-53. this.embedStatus = 'Create';
-54. }
-55. // 当页面中同层标签移动或者缩放时会触发Update。
-56. if (event.status == NativeEmbedStatus.UPDATE) {
-57. this.embedStatus = 'Update';
-58. }
-59. // 退出页面时会触发Destroy。
-60. if (event.status == NativeEmbedStatus.DESTROY) {
-61. this.embedStatus = 'Destroy';
-62. }
-63. // 同层标签所在的页面进入BFCache时，会触发Enter BFCache。
-64. if (event.status == NativeEmbedStatus.ENTER_BFCACHE) {
-65. this.embedStatus = 'Enter BFCache';
-66. }
-67. // 同层标签所在的页面离开BFCache时，会触发Leave BFCache。
-68. if (event.status == NativeEmbedStatus.LEAVE_BFCACHE) {
-69. this.embedStatus = 'Leave BFCache';
-70. }
-71. console.info("status = " + this.embedStatus);
-72. console.info("surfaceId = " + event.surfaceId);
-73. console.info("embedId = " + event.embedId);
-74. if (event.info) {
-75. console.info("id = " + event.info.id);
-76. console.info("type = " + event.info.type);
-77. console.info("src = " + event.info.src);
-78. console.info("width = " + event.info.width);
-79. console.info("height = " + event.info.height);
-80. console.info("url = " + event.info.url);
-81. }
-82. })
-83. }
-84. }
-85. }
+      // API12新增同层标签进入离开BFCache状态：非http与https协议加载的网页，Web内核不支持进入BFCache;
+      // 因此如果要测试ENTER_BFCACHE/LEAVE_BFCACHE状态，需要将index.html放到Web服务器上，使用http或者https协议加载，如：
+      // Web({ src: "http://xxxx/index.html", controller: this.controller })
+      Web({ src: $rawfile("index.html"), controller: this.controller })
+        .enableNativeEmbedMode(true)
+        .onNativeEmbedLifecycleChange((event) => {
+          // 当加载页面中有同层标签会触发Create。
+          if (event.status == NativeEmbedStatus.CREATE) {
+            this.embedStatus = 'Create';
+          }
+          // 当页面中同层标签移动或者缩放时会触发Update。
+          if (event.status == NativeEmbedStatus.UPDATE) {
+            this.embedStatus = 'Update';
+          }
+          // 退出页面时会触发Destroy。
+          if (event.status == NativeEmbedStatus.DESTROY) {
+            this.embedStatus = 'Destroy';
+          }
+          // 同层标签所在的页面进入BFCache时，会触发Enter BFCache。
+          if (event.status == NativeEmbedStatus.ENTER_BFCACHE) {
+            this.embedStatus = 'Enter BFCache';
+          }
+          // 同层标签所在的页面离开BFCache时，会触发Leave BFCache。
+          if (event.status == NativeEmbedStatus.LEAVE_BFCACHE) {
+            this.embedStatus = 'Leave BFCache';
+          }
+          console.info("status = " + this.embedStatus);
+          console.info("surfaceId = " + event.surfaceId);
+          console.info("embedId = " + event.embedId);
+          if (event.info) {
+            console.info("id = " + event.info.id);
+            console.info("type = " + event.info.type);
+            console.info("src = " + event.info.src);
+            console.info("width = " + event.info.width);
+            console.info("height = " + event.info.height);
+            console.info("url = " + event.info.url);
+          }
+        })
+    }
+  }
+}
 ```
 
 加载的html文件
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <title>同层渲染测试html</title>
-6. <meta name="viewport">
-7. </head>
-8. <body>
-9. <div>
-10. <div id="bodyId">
-11. <embed id="nativeButton" type = "native/button" width="800" height="800" src="test? params1=1" style = "background-color:red"/>
-12. </div>
-13. </div>
-14. </body>
-15. </html>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>同层渲染测试html</title>
+    <meta name="viewport">
+</head>
+<body>
+<div>
+    <div id="bodyId">
+        <embed id="nativeButton" type = "native/button" width="800" height="800" src="test? params1=1" style = "background-color:red"/>
+    </div>
+</div>
+</body>
+</html>
 ```
 
 ## onNativeEmbedGestureEvent11+
-
-PhonePC/2in1TabletTVWearable
 
 onNativeEmbedGestureEvent(callback: (event: NativeEmbedTouchInfo) => void)
 
@@ -4029,161 +3953,159 @@ onNativeEmbedGestureEvent(callback: (event: NativeEmbedTouchInfo) => void)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { NodeController, BuilderNode, NodeRenderType, FrameNode, UIContext } from "@kit.ArkUI";
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { NodeController, BuilderNode, NodeRenderType, FrameNode, UIContext } from "@kit.ArkUI";
 
-5. declare class Params {
-6. text: string;
-7. width: number;
-8. height: number;
-9. }
+declare class Params {
+  text: string;
+  width: number;
+  height: number;
+}
 
-11. declare class NodeControllerParams {
-12. surfaceId: string;
-13. renderType: NodeRenderType;
-14. width: number;
-15. height: number;
-16. }
+declare class NodeControllerParams {
+  surfaceId: string;
+  renderType: NodeRenderType;
+  width: number;
+  height: number;
+}
 
-18. class MyNodeController extends NodeController {
-19. private rootNode: BuilderNode<[Params]> | undefined | null;
-20. private surfaceId_: string = "";
-21. private renderType_: NodeRenderType = NodeRenderType.RENDER_TYPE_DISPLAY;
-22. private width_: number = 0;
-23. private height_: number = 0;
+class MyNodeController extends NodeController {
+  private rootNode: BuilderNode<[Params]> | undefined | null;
+  private surfaceId_: string = "";
+  private renderType_: NodeRenderType = NodeRenderType.RENDER_TYPE_DISPLAY;
+  private width_: number = 0;
+  private height_: number = 0;
 
-25. setRenderOption(params: NodeControllerParams) {
-26. this.surfaceId_ = params.surfaceId;
-27. this.renderType_ = params.renderType;
-28. this.width_ = params.width;
-29. this.height_ = params.height;
-30. }
+  setRenderOption(params: NodeControllerParams) {
+    this.surfaceId_ = params.surfaceId;
+    this.renderType_ = params.renderType;
+    this.width_ = params.width;
+    this.height_ = params.height;
+  }
 
-32. makeNode(uiContext: UIContext): FrameNode | null {
-33. this.rootNode = new BuilderNode(uiContext, { surfaceId: this.surfaceId_, type: this.renderType_ });
-34. this.rootNode.build(wrapBuilder(ButtonBuilder), { text: "myButton", width: this.width_, height: this.height_ });
-35. return this.rootNode.getFrameNode();
-36. }
+  makeNode(uiContext: UIContext): FrameNode | null {
+    this.rootNode = new BuilderNode(uiContext, { surfaceId: this.surfaceId_, type: this.renderType_ });
+    this.rootNode.build(wrapBuilder(ButtonBuilder), { text: "myButton", width: this.width_, height: this.height_ });
+    return this.rootNode.getFrameNode();
+  }
 
-38. postEvent(event: TouchEvent | undefined): boolean {
-39. return this.rootNode?.postTouchEvent(event) as boolean;
-40. }
-41. }
+  postEvent(event: TouchEvent | undefined): boolean {
+    return this.rootNode?.postTouchEvent(event) as boolean;
+  }
+}
 
-43. @Component
-44. struct ButtonComponent {
-45. @Prop params: Params;
-46. @State bkColor: Color = Color.Red;
+@Component
+struct ButtonComponent {
+  @Prop params: Params;
+  @State bkColor: Color = Color.Red;
 
-48. build() {
-49. Column() {
-50. Button(this.params.text)
-51. .height(50)
-52. .width(200)
-53. .border({ width: 2, color: Color.Red })
-54. .backgroundColor(this.bkColor)
+  build() {
+    Column() {
+      Button(this.params.text)
+        .height(50)
+        .width(200)
+        .border({ width: 2, color: Color.Red })
+        .backgroundColor(this.bkColor)
 
-56. }
-57. .width(this.params.width)
-58. .height(this.params.height)
-59. }
-60. }
+    }
+    .width(this.params.width)
+    .height(this.params.height)
+  }
+}
 
-62. @Builder
-63. function ButtonBuilder(params: Params) {
-64. ButtonComponent({ params: params })
-65. .backgroundColor(Color.Green)
-66. }
+@Builder
+function ButtonBuilder(params: Params) {
+  ButtonComponent({ params: params })
+    .backgroundColor(Color.Green)
+}
 
-68. @Entry
-69. @Component
-70. struct WebComponent {
-71. @State eventType: string = '';
-72. controller: webview.WebviewController = new webview.WebviewController();
-73. private nodeController: MyNodeController = new MyNodeController();
-74. uiContext: UIContext = this.getUIContext();
+@Entry
+@Component
+struct WebComponent {
+  @State eventType: string = '';
+  controller: webview.WebviewController = new webview.WebviewController();
+  private nodeController: MyNodeController = new MyNodeController();
+  uiContext: UIContext = this.getUIContext();
 
-76. build() {
-77. Column() {
-78. Stack() {
-79. NodeContainer(this.nodeController)
-80. Web({ src: $rawfile("index.html"), controller: this.controller })
-81. .enableNativeEmbedMode(true)
-82. .onNativeEmbedLifecycleChange((embed) => {
-83. if (embed.status == NativeEmbedStatus.CREATE) {
-84. this.nodeController.setRenderOption({
-85. surfaceId: embed.surfaceId as string,
-86. renderType: NodeRenderType.RENDER_TYPE_TEXTURE,
-87. width: this.uiContext!.px2vp(embed.info?.width),
-88. height: this.uiContext!.px2vp(embed.info?.height)
-89. });
-90. this.nodeController.rebuild();
-91. }
-92. })
-93. .onNativeEmbedGestureEvent((event) => {
-94. if (event && event.touchEvent) {
-95. if (event.touchEvent.type == TouchType.Down) {
-96. this.eventType = 'Down'
-97. }
-98. if (event.touchEvent.type == TouchType.Up) {
-99. this.eventType = 'Up'
-100. }
-101. if (event.touchEvent.type == TouchType.Move) {
-102. this.eventType = 'Move'
-103. }
-104. if (event.touchEvent.type == TouchType.Cancel) {
-105. this.eventType = 'Cancel'
-106. }
-107. let ret = this.nodeController.postEvent(event.touchEvent)
-108. if (event.result) {
-109. event.result.setGestureEventResult(ret, true);
-110. }
-111. console.info("embedId = " + event.embedId);
-112. console.info("touchType = " + this.eventType);
-113. console.info("x = " + event.touchEvent.touches[0].x);
-114. console.info("y = " + event.touchEvent.touches[0].y);
-115. console.info("Component globalPos:(" + event.touchEvent.target.area.globalPosition.x + "," + event.touchEvent.target.area.globalPosition.y + ")");
-116. console.info("width = " + event.touchEvent.target.area.width);
-117. console.info("height = " + event.touchEvent.target.area.height);
-118. }
-119. })
-120. }
-121. }
-122. }
-123. }
+  build() {
+    Column() {
+      Stack() {
+        NodeContainer(this.nodeController)
+        Web({ src: $rawfile("index.html"), controller: this.controller })
+          .enableNativeEmbedMode(true)
+          .onNativeEmbedLifecycleChange((embed) => {
+            if (embed.status == NativeEmbedStatus.CREATE) {
+              this.nodeController.setRenderOption({
+                surfaceId: embed.surfaceId as string,
+                renderType: NodeRenderType.RENDER_TYPE_TEXTURE,
+                width: this.uiContext!.px2vp(embed.info?.width),
+                height: this.uiContext!.px2vp(embed.info?.height)
+              });
+              this.nodeController.rebuild();
+            }
+          })
+          .onNativeEmbedGestureEvent((event) => {
+            if (event && event.touchEvent) {
+              if (event.touchEvent.type == TouchType.Down) {
+                this.eventType = 'Down'
+              }
+              if (event.touchEvent.type == TouchType.Up) {
+                this.eventType = 'Up'
+              }
+              if (event.touchEvent.type == TouchType.Move) {
+                this.eventType = 'Move'
+              }
+              if (event.touchEvent.type == TouchType.Cancel) {
+                this.eventType = 'Cancel'
+              }
+              let ret = this.nodeController.postEvent(event.touchEvent)
+              if (event.result) {
+                event.result.setGestureEventResult(ret, true);
+              }
+              console.info("embedId = " + event.embedId);
+              console.info("touchType = " + this.eventType);
+              console.info("x = " + event.touchEvent.touches[0].x);
+              console.info("y = " + event.touchEvent.touches[0].y);
+              console.info("Component globalPos:(" + event.touchEvent.target.area.globalPosition.x + "," + event.touchEvent.target.area.globalPosition.y + ")");
+              console.info("width = " + event.touchEvent.target.area.width);
+              console.info("height = " + event.touchEvent.target.area.height);
+            }
+          })
+      }
+    }
+  }
+}
 ```
 
 加载的html文件
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <title>同层渲染测试html</title>
-6. <meta name="viewport">
-7. </head>
-8. <body>
-9. <div>
-10. <div id="bodyId">
-11. <embed id="nativeButton" type = "native/button" width="800" height="800" src="test?params1=1" style = "background-color:red"/>
-12. </div>
-13. </div>
-14. </body>
-15. </html>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>同层渲染测试html</title>
+    <meta name="viewport">
+</head>
+<body>
+<div>
+    <div id="bodyId">
+       <embed id="nativeButton" type = "native/button" width="800" height="800" src="test?params1=1" style = "background-color:red"/>
+    </div>
+</div>
+</body>
+</html>
 ```
 
 ## onIntelligentTrackingPreventionResult12+
-
-PhonePC/2in1TabletTVWearable
 
 onIntelligentTrackingPreventionResult(callback: OnIntelligentTrackingPreventionCallback)
 
 智能防跟踪功能使能时，当追踪者cookie被拦截时触发该回调。
 
-说明
+**说明** 
 
 * 需要使用release包，debug包不生效。
 
@@ -4197,46 +4119,44 @@ onIntelligentTrackingPreventionResult(callback: OnIntelligentTrackingPreventionC
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct WebComponent {
-8. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-10. build() {
-11. Column() {
-12. // 需要打开智能防跟踪功能，才会触发onIntelligentTrackingPreventionResult回调
-13. Button('enableIntelligentTrackingPrevention')
-14. .onClick(() => {
-15. try {
-16. this.controller.enableIntelligentTrackingPrevention(true);
-17. } catch (error) {
-18. console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-19. }
-20. })
-21. Web({ src: 'www.example.com', controller: this.controller })
-22. .onIntelligentTrackingPreventionResult((details) => {
-23. console.info("onIntelligentTrackingPreventionResult: [websiteHost]= " + details.host +
-24. ", [trackerHost]=" + details.trackerHost);
-25. })
-26. }
-27. }
-28. }
+  build() {
+    Column() {
+      // 需要打开智能防跟踪功能，才会触发onIntelligentTrackingPreventionResult回调
+      Button('enableIntelligentTrackingPrevention')
+        .onClick(() => {
+          try {
+            this.controller.enableIntelligentTrackingPrevention(true);
+          } catch (error) {
+            console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
+          }
+        })
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onIntelligentTrackingPreventionResult((details) => {
+          console.info("onIntelligentTrackingPreventionResult: [websiteHost]= " + details.host +
+            ", [trackerHost]=" + details.trackerHost);
+        })
+    }
+  }
+}
 ```
 
 ## onOverrideUrlLoading12+
-
-PhonePC/2in1TabletTVWearable
 
 onOverrideUrlLoading(callback: OnOverrideUrlLoadingCallback)
 
 当URL将要加载到当前Web中时触发该回调，让宿主应用程序有机会获得控制权，判断是否阻止Web加载URL。
 
-说明
+**说明** 
 
 * POST请求不会触发该回调。
 * iframe加载HTTP(s)协议或about:blank时不会触发该回调，而加载非HTTP(s)协议的跳转会触发；调用loadUrl(url: string)主动触发的跳转不会触发该回调。
@@ -4252,48 +4172,46 @@ onOverrideUrlLoading(callback: OnOverrideUrlLoadingCallback)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: $rawfile("index.html"), controller: this.controller })
-12. .onOverrideUrlLoading((webResourceRequest: WebResourceRequest) => {
-13. if (webResourceRequest && webResourceRequest.getRequestUrl() == "about:blank") {
-14. return true;
-15. }
-16. return false;
-17. })
-18. }
-19. }
-20. }
+  build() {
+    Column() {
+      Web({ src: $rawfile("index.html"), controller: this.controller })
+        .onOverrideUrlLoading((webResourceRequest: WebResourceRequest) => {
+          if (webResourceRequest && webResourceRequest.getRequestUrl() == "about:blank") {
+            return true;
+          }
+          return false;
+        })
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <title>测试网页</title>
-6. </head>
-7. <body>
-8. <h1>onOverrideUrlLoading Demo</h1>
-9. <a href="about:blank">Click here</a>// 访问about:blank。
-10. </body>
-11. </html>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>测试网页</title>
+</head>
+<body>
+  <h1>onOverrideUrlLoading Demo</h1>
+  <a href="about:blank">Click here</a>// 访问about:blank。
+</body>
+</html>
 ```
 
 ## onViewportFitChanged12+
-
-PhonePC/2in1TabletTVWearable
 
 onViewportFitChanged(callback: OnViewportFitChangedCallback)
 
@@ -4309,56 +4227,54 @@ onViewportFitChanged(callback: OnViewportFitChangedCallback)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: $rawfile('index.html'), controller: this.controller })
-12. .onViewportFitChanged((data) => {
-13. let jsonData = JSON.stringify(data);
-14. let viewportFit: ViewportFit = JSON.parse(jsonData).viewportFit;
-15. if (viewportFit === ViewportFit.COVER) {
-16. // index.html网页支持沉浸式布局，可调用expandSafeArea调整web控件布局视口覆盖避让区域(状态栏或导航条)。
-17. } else if (viewportFit === ViewportFit.CONTAINS) {
-18. // index.html网页不支持沉浸式布局，可调用expandSafeArea调整web控件布局视口为安全区域。
-19. } else {
-20. // 默认值，可不作处理。
-21. }
-22. })
-23. }
-24. }
-25. }
+  build() {
+    Column() {
+      Web({ src: $rawfile('index.html'), controller: this.controller })
+        .onViewportFitChanged((data) => {
+          let jsonData = JSON.stringify(data);
+          let viewportFit: ViewportFit = JSON.parse(jsonData).viewportFit;
+          if (viewportFit === ViewportFit.COVER) {
+            // index.html网页支持沉浸式布局，可调用expandSafeArea调整web控件布局视口覆盖避让区域(状态栏或导航条)。
+          } else if (viewportFit === ViewportFit.CONTAINS) {
+            // index.html网页不支持沉浸式布局，可调用expandSafeArea调整web控件布局视口为安全区域。
+          } else {
+            // 默认值，可不作处理。
+          }
+        })
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!-- index.html -->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta name="viewport" content="width=device-width,viewport-fit=cover">
-6. </head>
-7. <body>
-8. <div style="position: absolute; bottom: 0; margin-bottom: env(safe-area-inset-bottom)"></div>
-9. </body>
-10. </html>
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,viewport-fit=cover">
+  </head>
+  <body>
+    <div style="position: absolute; bottom: 0; margin-bottom: env(safe-area-inset-bottom)"></div>
+  </body>
+</html>
 ```
 
 ## onInterceptKeyboardAttach12+
 
-PhonePC/2in1TabletTVWearable
-
 onInterceptKeyboardAttach(callback: WebKeyboardCallback)
 
-网页中可编辑元素（如input标签）拉起软键盘之前会回调该接口，应用可以使用该接口拦截系统软键盘的弹出，配置应用定制的软键盘（应用根据该接口可以决定使用系统默认软键盘/定制enter键的系统软键盘/全部由应用自定义的软键盘）。
+当网页中的可编辑元素（如input标签）需要弹出软键盘时触发此回调。应用可以在回调中拦截系统软键盘的弹出，配置应用定制的软键盘（应用根据该接口可以决定使用系统默认软键盘/定制enter键的系统软键盘/全部由应用自定义的软键盘）。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -4370,176 +4286,174 @@ onInterceptKeyboardAttach(callback: WebKeyboardCallback)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { inputMethodEngine } from '@kit.IMEKit';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { inputMethodEngine } from '@kit.IMEKit';
 
-5. @Entry
-6. @Component
-7. struct WebComponent {
-8. controller: webview.WebviewController = new webview.WebviewController();
-9. webKeyboardController: WebKeyboardController = new WebKeyboardController()
-10. inputAttributeMap: Map<string, number> = new Map([
-11. ['UNSPECIFIED', inputMethodEngine.ENTER_KEY_TYPE_UNSPECIFIED],
-12. ['GO', inputMethodEngine.ENTER_KEY_TYPE_GO],
-13. ['SEARCH', inputMethodEngine.ENTER_KEY_TYPE_SEARCH],
-14. ['SEND', inputMethodEngine.ENTER_KEY_TYPE_SEND],
-15. ['NEXT', inputMethodEngine.ENTER_KEY_TYPE_NEXT],
-16. ['DONE', inputMethodEngine.ENTER_KEY_TYPE_DONE],
-17. ['PREVIOUS', inputMethodEngine.ENTER_KEY_TYPE_PREVIOUS]
-18. ])
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  webKeyboardController: WebKeyboardController = new WebKeyboardController()
+  inputAttributeMap: Map<string, number> = new Map([
+      ['UNSPECIFIED', inputMethodEngine.ENTER_KEY_TYPE_UNSPECIFIED],
+      ['GO', inputMethodEngine.ENTER_KEY_TYPE_GO],
+      ['SEARCH', inputMethodEngine.ENTER_KEY_TYPE_SEARCH],
+      ['SEND', inputMethodEngine.ENTER_KEY_TYPE_SEND],
+      ['NEXT', inputMethodEngine.ENTER_KEY_TYPE_NEXT],
+      ['DONE', inputMethodEngine.ENTER_KEY_TYPE_DONE],
+      ['PREVIOUS', inputMethodEngine.ENTER_KEY_TYPE_PREVIOUS]
+    ])
 
-20. /**
-21. * 自定义键盘组件Builder
-22. */
-23. @Builder
-24. customKeyboardBuilder() {
-25. // 这里实现自定义键盘组件，对接WebKeyboardController实现输入、删除、关闭等操作。
-26. Row() {
-27. Text("完成")
-28. .fontSize(20)
-29. .fontColor(Color.Blue)
-30. .onClick(() => {
-31. this.webKeyboardController.close();
-32. })
-33. // 插入字符。
-34. Button("insertText").onClick(() => {
-35. this.webKeyboardController.insertText('insert ');
-36. }).margin({
-37. bottom: 200,
-38. })
-39. // 从后往前删除length参数指定长度的字符。
-40. Button("deleteForward").onClick(() => {
-41. this.webKeyboardController.deleteForward(1);
-42. }).margin({
-43. bottom: 200,
-44. })
-45. // 从前往后删除length参数指定长度的字符。
-46. Button("deleteBackward").onClick(() => {
-47. this.webKeyboardController.deleteBackward(1);
-48. }).margin({
-49. left: -220,
-50. })
-51. // 插入功能按键。
-52. Button("sendFunctionKey").onClick(() => {
-53. this.webKeyboardController.sendFunctionKey(6);
-54. })
-55. }
-56. }
+    /**
+     * 自定义键盘组件Builder
+     */
+    @Builder
+    customKeyboardBuilder() {
+        // 这里实现自定义键盘组件，对接WebKeyboardController实现输入、删除、关闭等操作。
+      Row() {
+        Text("完成")
+          .fontSize(20)
+          .fontColor(Color.Blue)
+          .onClick(() => {
+            this.webKeyboardController.close();
+          })
+        // 插入字符。
+        Button("insertText").onClick(() => {
+          this.webKeyboardController.insertText('insert ');
+        }).margin({
+          bottom: 200,
+        })
+        // 从后往前删除length参数指定长度的字符。
+        Button("deleteForward").onClick(() => {
+          this.webKeyboardController.deleteForward(1);
+        }).margin({
+          bottom: 200,
+        })
+        // 从前往后删除length参数指定长度的字符。
+        Button("deleteBackward").onClick(() => {
+          this.webKeyboardController.deleteBackward(1);
+        }).margin({
+          left: -220,
+        })
+        // 插入功能按键。
+        Button("sendFunctionKey").onClick(() => {
+          this.webKeyboardController.sendFunctionKey(6);
+        })
+      }
+    }
 
-58. build() {
-59. Column() {
-60. Web({ src: $rawfile('index.html'), controller: this.controller })
-61. .onInterceptKeyboardAttach((KeyboardCallbackInfo) => {
-62. // option初始化，默认使用系统默认键盘
-63. let option: WebKeyboardOptions = {
-64. useSystemKeyboard: true,
-65. };
-66. if (!KeyboardCallbackInfo) {
-67. return option;
-68. }
+  build() {
+    Column() {
+      Web({ src: $rawfile('index.html'), controller: this.controller })
+      .onInterceptKeyboardAttach((KeyboardCallbackInfo) => {
+        // option初始化，默认使用系统默认键盘
+        let option: WebKeyboardOptions = {
+          useSystemKeyboard: true,
+        };
+        if (!KeyboardCallbackInfo) {
+          return option;
+        }
 
-70. // 保存WebKeyboardController，使用自定义键盘时候，需要使用该handler控制输入、删除、软键盘关闭等行为
-71. this.webKeyboardController = KeyboardCallbackInfo.controller
-72. let attributes: Record<string, string> = KeyboardCallbackInfo.attributes
-73. // 遍历attributes
-74. let attributeKeys = Object.keys(attributes)
-75. for (let i = 0; i < attributeKeys.length; i++) {
-76. console.info('WebCustomKeyboard key = ' + attributeKeys[i] + ', value = ' + attributes[attributeKeys[i]])
-77. }
+        // 保存WebKeyboardController，使用自定义键盘时候，需要使用该handler控制输入、删除、软键盘关闭等行为
+        this.webKeyboardController = KeyboardCallbackInfo.controller
+        let attributes: Record<string, string> = KeyboardCallbackInfo.attributes
+        // 遍历attributes
+        let attributeKeys = Object.keys(attributes)
+        for (let i = 0; i < attributeKeys.length; i++) {
+          console.info('WebCustomKeyboard key = ' + attributeKeys[i] + ', value = ' + attributes[attributeKeys[i]])
+        }
 
-79. if (attributes) {
-80. if (attributes['data-keyboard'] == 'customKeyboard') {
-81. // 根据html可编辑元素的属性，判断使用不同的软键盘，例如这里如果属性包含有data-keyboard，且值为customKeyboard，则使用自定义键盘
-82. console.info('WebCustomKeyboard use custom keyboard')
-83. option.useSystemKeyboard = false;
-84. // 设置自定义键盘builder
-85. option.customKeyboard = () => {
-86. this.customKeyboardBuilder()
-87. }
-88. return option;
-89. }
+        if (attributes) {
+          if (attributes['data-keyboard'] == 'customKeyboard') {
+            // 根据html可编辑元素的属性，判断使用不同的软键盘，例如这里如果属性包含有data-keyboard，且值为customKeyboard，则使用自定义键盘
+            console.info('WebCustomKeyboard use custom keyboard')
+            option.useSystemKeyboard = false;
+            // 设置自定义键盘builder
+            option.customKeyboard = () => {
+              this.customKeyboardBuilder()
+            }
+            return option;
+          }
 
-91. if (attributes['keyboard-return'] != undefined) {
-92. // 根据html可编辑元素的属性，判断使用不同的软键盘，例如这里如果属性包含有keyboard-return，使用系统键盘，并且指定系统软键盘enterKey类型
-93. option.useSystemKeyboard = true;
-94. let enterKeyType: number | undefined = this.inputAttributeMap.get(attributes['keyboard-return'])
-95. if (enterKeyType != undefined) {
-96. option.enterKeyType = enterKeyType
-97. }
-98. return option;
-99. }
-100. }
+          if (attributes['keyboard-return'] != undefined) {
+            // 根据html可编辑元素的属性，判断使用不同的软键盘，例如这里如果属性包含有keyboard-return，使用系统键盘，并且指定系统软键盘enterKey类型
+            option.useSystemKeyboard = true;
+            let enterKeyType: number | undefined = this.inputAttributeMap.get(attributes['keyboard-return'])
+            if (enterKeyType != undefined) {
+              option.enterKeyType = enterKeyType
+            }
+            return option;
+          }
+        }
 
-102. return option;
-103. })
-104. }
-105. }
-106. }
+        return option;
+      })
+    }
+  }
+}
 ```
 
 加载的html文件。
 
-```
-1. <!-- index.html -->
-2. <!DOCTYPE html>
-3. <html>
+```html
+<!-- index.html -->
+  <!DOCTYPE html>
+  <html>
 
-5. <head>
-6. <meta charset="utf-8">
-7. <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0">
-8. </head>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0">
+  </head>
 
-10. <body>
+  <body>
 
-12. <p style="font-size:12px">input标签，原有默认行为：</p>
-13. <input type="text" style="width: 300px; height: 20px"><br>
-14. <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+  <p style="font-size:12px">input标签，原有默认行为：</p>
+  <input type="text" style="width: 300px; height: 20px"><br>
+  <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
-16. <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key UNSPECIFIED：</p>
-17. <input type="text" keyboard-return="UNSPECIFIED" style="width: 300px; height: 20px"><br>
-18. <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+  <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key UNSPECIFIED：</p>
+  <input type="text" keyboard-return="UNSPECIFIED" style="width: 300px; height: 20px"><br>
+  <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
-20. <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key GO：</p>
-21. <input type="text" keyboard-return="GO" style="width: 300px; height: 20px"><br>
-22. <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+  <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key GO：</p>
+  <input type="text" keyboard-return="GO" style="width: 300px; height: 20px"><br>
+  <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
-24. <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key SEARCH：</p>
-25. <input type="text" keyboard-return="SEARCH" style="width: 300px; height: 20px"><br>
-26. <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+  <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key SEARCH：</p>
+  <input type="text" keyboard-return="SEARCH" style="width: 300px; height: 20px"><br>
+  <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
-28. <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key SEND：</p>
-29. <input type="text" keyboard-return="SEND" style="width: 300px; height: 20px"><br>
-30. <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+  <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key SEND：</p>
+  <input type="text" keyboard-return="SEND" style="width: 300px; height: 20px"><br>
+  <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
-32. <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key NEXT：</p>
-33. <input type="text" keyboard-return="NEXT" style="width: 300px; height: 20px"><br>
-34. <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+  <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key NEXT：</p>
+  <input type="text" keyboard-return="NEXT" style="width: 300px; height: 20px"><br>
+  <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
-36. <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key DONE：</p>
-37. <input type="text" keyboard-return="DONE" style="width: 300px; height: 20px"><br>
-38. <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+  <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key DONE：</p>
+  <input type="text" keyboard-return="DONE" style="width: 300px; height: 20px"><br>
+  <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
-40. <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key PREVIOUS：</p>
-41. <input type="text" keyboard-return="PREVIOUS" style="width: 300px; height: 20px"><br>
-42. <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+  <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key PREVIOUS：</p>
+  <input type="text" keyboard-return="PREVIOUS" style="width: 300px; height: 20px"><br>
+  <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
-44. <p style="font-size:12px">input标签，应用自定义键盘：</p>
-45. <input type="text" data-keyboard="customKeyboard" style="width: 300px; height: 20px"><br>
+  <p style="font-size:12px">input标签，应用自定义键盘：</p>
+  <input type="text" data-keyboard="customKeyboard" style="width: 300px; height: 20px"><br>
 
-47. </body>
+  </body>
 
-49. </html>
+  </html>
 ```
 
 ## onNativeEmbedVisibilityChange12+
 
-PhonePC/2in1TabletTVWearable
-
 onNativeEmbedVisibilityChange(callback: OnNativeEmbedVisibilityChangeCallback)
 
-当网页中同层标签（例如<embed>标签或<object>标签）在视口内的可见性发生变化时，将触发该回调。同层标签默认不可见，若在页面首次加载时已可见，则会上报；若不可见，则不会上报。同层标签全部不可见才视为不可见，部分可见或全部可见则视为可见。若要获取因同层标签CSS属性（包括visibility、display以及尺寸变化）导致的可见状态变化，需配置[nativeEmbedOptions](arkts-basic-components-web-attributes.md#nativeembedoptions16)，并将[EmbedOptions](arkts-basic-components-web-i.md#embedoptions16)中的supportCssDisplayChange参数设为true。
+当网页中同层标签（例如<embed>标签或<object>标签）在视口内的可见性发生变化时，将触发该回调。同层标签默认不可见，若在页面首次加载时已可见，则会上报；若不可见，则不会上报。同层标签全部不可见才视为不可见，部分可见或全部可见则视为可见。获取因同层标签CSS属性（包括visibility、display以及尺寸变化）导致的可见状态变化，需配置[nativeEmbedOptions](arkts-basic-components-web-attributes.md#nativeembedoptions16)，并将[EmbedOptions](arkts-basic-components-web-i.md#embedoptions16)中的supportCssDisplayChange参数设为true。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -4551,137 +4465,135 @@ onNativeEmbedVisibilityChange(callback: OnNativeEmbedVisibilityChangeCallback)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { NodeController, BuilderNode, NodeRenderType, FrameNode, UIContext } from "@kit.ArkUI";
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { NodeController, BuilderNode, NodeRenderType, FrameNode, UIContext } from "@kit.ArkUI";
 
-5. declare class Params {
-6. text: string;
-7. width: number;
-8. height: number;
-9. }
+declare class Params {
+  text: string;
+  width: number;
+  height: number;
+}
 
-11. declare class NodeControllerParams {
-12. surfaceId: string;
-13. renderType: NodeRenderType;
-14. width: number;
-15. height: number;
-16. }
+declare class NodeControllerParams {
+  surfaceId: string;
+  renderType: NodeRenderType;
+  width: number;
+  height: number;
+}
 
-18. class MyNodeController extends NodeController {
-19. private rootNode: BuilderNode<[Params]> | undefined | null;
-20. private surfaceId_: string = "";
-21. private renderType_: NodeRenderType = NodeRenderType.RENDER_TYPE_DISPLAY;
-22. private width_: number = 0;
-23. private height_: number = 0;
+class MyNodeController extends NodeController {
+  private rootNode: BuilderNode<[Params]> | undefined | null;
+  private surfaceId_: string = "";
+  private renderType_: NodeRenderType = NodeRenderType.RENDER_TYPE_DISPLAY;
+  private width_: number = 0;
+  private height_: number = 0;
 
-25. setRenderOption(params: NodeControllerParams) {
-26. this.surfaceId_ = params.surfaceId;
-27. this.renderType_ = params.renderType;
-28. this.width_ = params.width;
-29. this.height_ = params.height;
-30. }
+  setRenderOption(params: NodeControllerParams) {
+    this.surfaceId_ = params.surfaceId;
+    this.renderType_ = params.renderType;
+    this.width_ = params.width;
+    this.height_ = params.height;
+  }
 
-32. makeNode(uiContext: UIContext): FrameNode | null {
-33. this.rootNode = new BuilderNode(uiContext, { surfaceId: this.surfaceId_, type: this.renderType_ });
-34. this.rootNode.build(wrapBuilder(ButtonBuilder), { text: "myButton", width: this.width_, height: this.height_ });
-35. return this.rootNode.getFrameNode();
-36. }
+  makeNode(uiContext: UIContext): FrameNode | null {
+    this.rootNode = new BuilderNode(uiContext, { surfaceId: this.surfaceId_, type: this.renderType_ });
+    this.rootNode.build(wrapBuilder(ButtonBuilder), { text: "myButton", width: this.width_, height: this.height_ });
+    return this.rootNode.getFrameNode();
+  }
 
-38. postEvent(event: TouchEvent | undefined): boolean {
-39. return this.rootNode?.postTouchEvent(event) as boolean;
-40. }
-41. }
+  postEvent(event: TouchEvent | undefined): boolean {
+    return this.rootNode?.postTouchEvent(event) as boolean;
+  }
+}
 
-43. @Component
-44. struct ButtonComponent {
-45. @Prop params: Params;
-46. @State bkColor: Color = Color.Red;
+@Component
+struct ButtonComponent {
+  @Prop params: Params;
+  @State bkColor: Color = Color.Red;
 
-48. build() {
-49. Column() {
-50. Button(this.params.text)
-51. .height(50)
-52. .width(200)
-53. .border({ width: 2, color: Color.Red })
-54. .backgroundColor(this.bkColor)
+  build() {
+    Column() {
+      Button(this.params.text)
+        .height(50)
+        .width(200)
+        .border({ width: 2, color: Color.Red })
+        .backgroundColor(this.bkColor)
 
-56. }
-57. .width(this.params.width)
-58. .height(this.params.height)
-59. }
-60. }
+    }
+    .width(this.params.width)
+    .height(this.params.height)
+  }
+}
 
-62. @Builder
-63. function ButtonBuilder(params: Params) {
-64. ButtonComponent({ params: params })
-65. .backgroundColor(Color.Green)
-66. }
+@Builder
+function ButtonBuilder(params: Params) {
+  ButtonComponent({ params: params })
+    .backgroundColor(Color.Green)
+}
 
-68. @Entry
-69. @Component
-70. struct WebComponent {
-71. @State embedVisibility: string = '';
-72. controller: webview.WebviewController = new webview.WebviewController();
-73. private nodeController: MyNodeController = new MyNodeController();
-74. uiContext: UIContext = this.getUIContext();
+@Entry
+@Component
+struct WebComponent {
+  @State embedVisibility: string = '';
+  controller: webview.WebviewController = new webview.WebviewController();
+  private nodeController: MyNodeController = new MyNodeController();
+  uiContext: UIContext = this.getUIContext();
 
-76. build() {
-77. Column() {
-78. Stack() {
-79. NodeContainer(this.nodeController)
-80. Web({ src: $rawfile("index.html"), controller: this.controller })
-81. .enableNativeEmbedMode(true)
-82. .onNativeEmbedLifecycleChange((embed) => {
-83. if (embed.status == NativeEmbedStatus.CREATE) {
-84. this.nodeController.setRenderOption({
-85. surfaceId: embed.surfaceId as string,
-86. renderType: NodeRenderType.RENDER_TYPE_TEXTURE,
-87. width: this.uiContext!.px2vp(embed.info?.width),
-88. height: this.uiContext!.px2vp(embed.info?.height)
-89. });
-90. this.nodeController.rebuild();
-91. }
-92. })
-93. .onNativeEmbedVisibilityChange((embed) => {
-94. if (embed.visibility) {
-95. this.embedVisibility = 'Visible';
-96. } else {
-97. this.embedVisibility = 'Hidden';
-98. }
-99. console.info("embedId = " + embed.embedId);
-100. console.info("visibility = " + embed.visibility);
-101. })
-102. }
-103. }
-104. }
-105. }
+  build() {
+    Column() {
+      Stack() {
+        NodeContainer(this.nodeController)
+        Web({ src: $rawfile("index.html"), controller: this.controller })
+          .enableNativeEmbedMode(true)
+          .onNativeEmbedLifecycleChange((embed) => {
+            if (embed.status == NativeEmbedStatus.CREATE) {
+              this.nodeController.setRenderOption({
+                surfaceId: embed.surfaceId as string,
+                renderType: NodeRenderType.RENDER_TYPE_TEXTURE,
+                width: this.uiContext!.px2vp(embed.info?.width),
+                height: this.uiContext!.px2vp(embed.info?.height)
+              });
+              this.nodeController.rebuild();
+            }
+          })
+          .onNativeEmbedVisibilityChange((embed) => {
+            if (embed.visibility) {
+              this.embedVisibility = 'Visible';
+            } else {
+              this.embedVisibility = 'Hidden';
+            }
+            console.info("embedId = " + embed.embedId);
+            console.info("visibility = " + embed.visibility);
+          })
+      }
+    }
+  }
+}
 ```
 
 加载的html文件
 
-```
-1. <!-- index.html -->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <title>同层渲染测试html</title>
-6. <meta name="viewport">
-7. </head>
-8. <body>
-9. <div>
-10. <div id="bodyId">
-11. <embed id="nativeButton" type = "native/button" width="800" height="800" src="test?params1=1" style = "background-color:red"/>
-12. </div>
-13. </div>
-14. </body>
-15. </html>
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>同层渲染测试html</title>
+    <meta name="viewport">
+</head>
+<body>
+<div>
+    <div id="bodyId">
+        <embed id="nativeButton" type = "native/button" width="800" height="800" src="test?params1=1" style = "background-color:red"/>
+    </div>
+</div>
+</body>
+</html>
 ```
 
 ## onNativeEmbedMouseEvent20+
-
-PhonePC/2in1TabletTVWearable
 
 onNativeEmbedMouseEvent(callback: MouseInfoCallback)
 
@@ -4700,137 +4612,135 @@ onNativeEmbedMouseEvent(callback: MouseInfoCallback)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { NodeController, BuilderNode, NodeRenderType, FrameNode, UIContext } from "@kit.ArkUI";
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { NodeController, BuilderNode, NodeRenderType, FrameNode, UIContext } from "@kit.ArkUI";
 
-5. declare class Params {
-6. text: string;
-7. width: number;
-8. height: number;
-9. }
+declare class Params {
+  text: string;
+  width: number;
+  height: number;
+}
 
-11. declare class NodeControllerParams {
-12. surfaceId: string;
-13. renderType: NodeRenderType;
-14. width: number;
-15. height: number;
-16. }
+declare class NodeControllerParams {
+  surfaceId: string;
+  renderType: NodeRenderType;
+  width: number;
+  height: number;
+}
 
-18. class MyNodeController extends NodeController {
-19. private rootNode: BuilderNode<[Params]> | undefined | null;
-20. private surfaceId_: string = "";
-21. private renderType_: NodeRenderType = NodeRenderType.RENDER_TYPE_DISPLAY;
-22. private width_: number = 0;
-23. private height_: number = 0;
+class MyNodeController extends NodeController {
+  private rootNode: BuilderNode<[Params]> | undefined | null;
+  private surfaceId_: string = "";
+  private renderType_: NodeRenderType = NodeRenderType.RENDER_TYPE_DISPLAY;
+  private width_: number = 0;
+  private height_: number = 0;
 
-25. setRenderOption(params: NodeControllerParams) {
-26. this.surfaceId_ = params.surfaceId;
-27. this.renderType_ = params.renderType;
-28. this.width_ = params.width;
-29. this.height_ = params.height;
-30. }
+  setRenderOption(params: NodeControllerParams) {
+    this.surfaceId_ = params.surfaceId;
+    this.renderType_ = params.renderType;
+    this.width_ = params.width;
+    this.height_ = params.height;
+  }
 
-32. makeNode(uiContext: UIContext): FrameNode | null {
-33. this.rootNode = new BuilderNode(uiContext, { surfaceId: this.surfaceId_, type: this.renderType_ });
-34. this.rootNode.build(wrapBuilder(ButtonBuilder), { text: "myButton", width: this.width_, height: this.height_ });
-35. return this.rootNode.getFrameNode();
-36. }
+  makeNode(uiContext: UIContext): FrameNode | null {
+    this.rootNode = new BuilderNode(uiContext, { surfaceId: this.surfaceId_, type: this.renderType_ });
+    this.rootNode.build(wrapBuilder(ButtonBuilder), { text: "myButton", width: this.width_, height: this.height_ });
+    return this.rootNode.getFrameNode();
+  }
 
-38. postInputEvent(event: TouchEvent | MouseEvent | undefined): boolean {
-39. return this.rootNode?.postInputEvent(event) as boolean;
-40. }
-41. }
+  postInputEvent(event: TouchEvent | MouseEvent | undefined): boolean {
+    return this.rootNode?.postInputEvent(event) as boolean;
+  }
+}
 
-43. @Component
-44. struct ButtonComponent {
-45. @Prop params: Params;
-46. @State bkColor: Color = Color.Red;
+@Component
+struct ButtonComponent {
+  @Prop params: Params;
+  @State bkColor: Color = Color.Red;
 
-48. build() {
-49. Column() {
-50. Button(this.params.text)
-51. .height(50)
-52. .width(200)
-53. .border({ width: 2, color: Color.Red })
-54. .backgroundColor(this.bkColor)
+  build() {
+    Column() {
+      Button(this.params.text)
+        .height(50)
+        .width(200)
+        .border({ width: 2, color: Color.Red })
+        .backgroundColor(this.bkColor)
 
-56. }
-57. .width(this.params.width)
-58. .height(this.params.height)
-59. }
-60. }
+    }
+    .width(this.params.width)
+    .height(this.params.height)
+  }
+}
 
-62. @Builder
-63. function ButtonBuilder(params: Params) {
-64. ButtonComponent({ params: params })
-65. .backgroundColor(Color.Green)
-66. }
+@Builder
+function ButtonBuilder(params: Params) {
+  ButtonComponent({ params: params })
+    .backgroundColor(Color.Green)
+}
 
-68. @Entry
-69. @Component
-70. struct WebComponent {
-71. @State mouseAction: string = '';
-72. @State mouseButton: string = '';
-73. controller: webview.WebviewController = new webview.WebviewController();
-74. private nodeController: MyNodeController = new MyNodeController();
-75. uiContext: UIContext = this.getUIContext();
+@Entry
+@Component
+struct WebComponent {
+  @State mouseAction: string = '';
+  @State mouseButton: string = '';
+  controller: webview.WebviewController = new webview.WebviewController();
+  private nodeController: MyNodeController = new MyNodeController();
+  uiContext: UIContext = this.getUIContext();
 
-77. build() {
-78. Column() {
-79. Stack() {
-80. NodeContainer(this.nodeController)
-81. Web({ src: $rawfile("index.html"), controller: this.controller })
-82. .enableNativeEmbedMode(true)
-83. .onNativeEmbedLifecycleChange((embed) => {
-84. if (embed.status == NativeEmbedStatus.CREATE) {
-85. this.nodeController.setRenderOption({
-86. surfaceId: embed.surfaceId as string,
-87. renderType: NodeRenderType.RENDER_TYPE_TEXTURE,
-88. width: this.uiContext!.px2vp(embed.info?.width),
-89. height: this.uiContext!.px2vp(embed.info?.height)
-90. });
-91. this.nodeController.rebuild();
-92. }
-93. })
-94. .onNativeEmbedMouseEvent((event) => {
-95. if (event && event.mouseEvent) {
-96. let ret = this.nodeController.postInputEvent(event.mouseEvent)
-97. if (event.result) {
-98. event.result.setMouseEventResult(ret, true);
-99. }
-100. }
-101. })
-102. }
-103. }
-104. }
-105. }
+  build() {
+    Column() {
+      Stack() {
+        NodeContainer(this.nodeController)
+        Web({ src: $rawfile("index.html"), controller: this.controller })
+          .enableNativeEmbedMode(true)
+          .onNativeEmbedLifecycleChange((embed) => {
+            if (embed.status == NativeEmbedStatus.CREATE) {
+              this.nodeController.setRenderOption({
+                surfaceId: embed.surfaceId as string,
+                renderType: NodeRenderType.RENDER_TYPE_TEXTURE,
+                width: this.uiContext!.px2vp(embed.info?.width),
+                height: this.uiContext!.px2vp(embed.info?.height)
+              });
+              this.nodeController.rebuild();
+            }
+          })
+          .onNativeEmbedMouseEvent((event) => {
+            if (event && event.mouseEvent) {
+              let ret = this.nodeController.postInputEvent(event.mouseEvent)
+              if (event.result) {
+                event.result.setMouseEventResult(ret, true);
+              }
+            }
+          })
+      }
+    }
+  }
+}
 ```
 
 加载的html文件
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <title>同层渲染测试</title>
-6. <meta name="viewport">
-7. </head>
-8. <body>
-9. <div>
-10. <div id="bodyId">
-11. <embed id="nativeButton" type ="native/button" width="800" height="800" style="background-color:red"/>
-12. </div>
-13. </div>
-14. </body>
-15. </html>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>同层渲染测试</title>
+    <meta name="viewport">
+</head>
+<body>
+<div>
+    <div id="bodyId">
+        <embed id="nativeButton" type ="native/button" width="800" height="800" style="background-color:red"/>
+    </div>
+</div>
+</body>
+</html>
 ```
 
 ## onNativeEmbedObjectParamChange21+
-
-PhonePC/2in1TabletTVWearable
 
 onNativeEmbedObjectParamChange(callback: OnNativeEmbedObjectParamChangeCallback)
 
@@ -4846,149 +4756,147 @@ onNativeEmbedObjectParamChange(callback: OnNativeEmbedObjectParamChangeCallback)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { NodeController, BuilderNode, NodeRenderType, FrameNode, UIContext } from '@kit.ArkUI';
+```ts
+  // xxx.ets
+  import { webview } from '@kit.ArkWeb';
+  import { NodeController, BuilderNode, NodeRenderType, FrameNode, UIContext } from '@kit.ArkUI';
 
-5. declare class Params {
-6. text: string;
-7. width: number;
-8. height: number;
-9. }
+  declare class Params {
+    text: string;
+    width: number;
+    height: number;
+  }
 
-11. declare class NodeControllerParams {
-12. surfaceId: string;
-13. renderType: NodeRenderType;
-14. width: number;
-15. height: number;
-16. }
+  declare class NodeControllerParams {
+    surfaceId: string;
+    renderType: NodeRenderType;
+    width: number;
+    height: number;
+  }
 
-18. class MyNodeController extends NodeController {
-19. private rootNode: BuilderNode<[Params]> | undefined | null;
-20. private surfaceId_: string = "";
-21. private renderType_: NodeRenderType = NodeRenderType.RENDER_TYPE_DISPLAY;
-22. private width_: number = 0;
-23. private height_: number = 0;
+  class MyNodeController extends NodeController {
+    private rootNode: BuilderNode<[Params]> | undefined | null;
+    private surfaceId_: string = "";
+    private renderType_: NodeRenderType = NodeRenderType.RENDER_TYPE_DISPLAY;
+    private width_: number = 0;
+    private height_: number = 0;
 
-25. setRenderOption(params: NodeControllerParams) {
-26. this.surfaceId_ = params.surfaceId;
-27. this.renderType_ = params.renderType;
-28. this.width_ = params.width;
-29. this.height_ = params.height;
-30. }
+    setRenderOption(params: NodeControllerParams) {
+      this.surfaceId_ = params.surfaceId;
+      this.renderType_ = params.renderType;
+      this.width_ = params.width;
+      this.height_ = params.height;
+    }
 
-32. makeNode(uiContext: UIContext): FrameNode | null {
-33. this.rootNode = new BuilderNode(uiContext, { surfaceId: this.surfaceId_, type: this.renderType_ });
-34. this.rootNode.build(wrapBuilder(ButtonBuilder), { text: "myButton", width: this.width_, height: this.height_ });
-35. return this.rootNode.getFrameNode();
-36. }
+    makeNode(uiContext: UIContext): FrameNode | null {
+      this.rootNode = new BuilderNode(uiContext, { surfaceId: this.surfaceId_, type: this.renderType_ });
+      this.rootNode.build(wrapBuilder(ButtonBuilder), { text: "myButton", width: this.width_, height: this.height_ });
+      return this.rootNode.getFrameNode();
+    }
 
-38. postInputEvent(event: TouchEvent | MouseEvent | undefined): boolean {
-39. return this.rootNode?.postInputEvent(event) as boolean;
-40. }
-41. }
+    postInputEvent(event: TouchEvent | MouseEvent | undefined): boolean {
+      return this.rootNode?.postInputEvent(event) as boolean;
+    }
+  }
 
-43. @Component
-44. struct ButtonComponent {
-45. @Prop params: Params;
-46. @State bkColor: Color = Color.Red;
+  @Component
+  struct ButtonComponent {
+    @Prop params: Params;
+    @State bkColor: Color = Color.Red;
 
-48. build() {
-49. Column() {
-50. Button(this.params.text)
-51. .height(50)
-52. .width(200)
-53. .border({ width: 2, color: Color.Red })
-54. .backgroundColor(this.bkColor)
+    build() {
+      Column() {
+        Button(this.params.text)
+          .height(50)
+          .width(200)
+          .border({ width: 2, color: Color.Red })
+          .backgroundColor(this.bkColor)
 
-56. }
-57. .width(this.params.width)
-58. .height(this.params.height)
-59. }
-60. }
+      }
+      .width(this.params.width)
+      .height(this.params.height)
+    }
+  }
 
-62. @Builder
-63. function ButtonBuilder(params: Params) {
-64. ButtonComponent({ params: params })
-65. .backgroundColor(Color.Green)
-66. }
+  @Builder
+  function ButtonBuilder(params: Params) {
+    ButtonComponent({ params: params })
+      .backgroundColor(Color.Green)
+  }
 
-68. @Entry
-69. @Component
-70. struct WebComponent {
-71. controller: webview.WebviewController = new webview.WebviewController();
-72. private nodeController: MyNodeController = new MyNodeController();
-73. uiContext: UIContext = this.getUIContext();
+  @Entry
+  @Component
+  struct WebComponent {
+    controller: webview.WebviewController = new webview.WebviewController();
+    private nodeController: MyNodeController = new MyNodeController();
+    uiContext: UIContext = this.getUIContext();
 
-75. build() {
-76. Column() {
-77. Stack() {
-78. NodeContainer(this.nodeController)
-79. Web({ src: $rawfile('index.html'), controller: this.controller })
-80. .enableNativeEmbedMode(true)
-81. .registerNativeEmbedRule("object", "native")
-82. .onNativeEmbedLifecycleChange((embed) => {
-83. if (embed.status == NativeEmbedStatus.CREATE) {
-84. this.nodeController.setRenderOption({
-85. surfaceId: embed.surfaceId as string,
-86. renderType: NodeRenderType.RENDER_TYPE_TEXTURE,
-87. width: this.uiContext!.px2vp(embed.info?.width),
-88. height: this.uiContext!.px2vp(embed.info?.height)
-89. });
-90. this.nodeController.rebuild();
-91. }
-92. })
-93. .onNativeEmbedObjectParamChange((event) => {
-94. console.info("embed id: " + event.embedId);
-95. let paramItems = event.paramItems;
-96. if (paramItems) {
-97. for (let i = 0; i < paramItems.length; ++i) {
-98. console.info("param info: " + JSON.stringify(paramItems[i]));
-99. }
-100. }
-101. })
-102. }
-103. }
-104. }
-105. }
+    build() {
+      Column() {
+        Stack() {
+          NodeContainer(this.nodeController)
+          Web({ src: $rawfile('index.html'), controller: this.controller })
+            .enableNativeEmbedMode(true)
+            .registerNativeEmbedRule("object", "native")
+            .onNativeEmbedLifecycleChange((embed) => {
+              if (embed.status == NativeEmbedStatus.CREATE) {
+                this.nodeController.setRenderOption({
+                  surfaceId: embed.surfaceId as string,
+                  renderType: NodeRenderType.RENDER_TYPE_TEXTURE,
+                  width: this.uiContext!.px2vp(embed.info?.width),
+                  height: this.uiContext!.px2vp(embed.info?.height)
+                });
+                this.nodeController.rebuild();
+              }
+            })
+            .onNativeEmbedObjectParamChange((event) => {
+              console.info("embed id: " + event.embedId);
+              let paramItems = event.paramItems;
+              if (paramItems) {
+                for (let i = 0; i < paramItems.length; ++i) {
+                  console.info("param info: " + JSON.stringify(paramItems[i]));
+                }
+              }
+            })
+        }
+      }
+    }
+  }
 ```
 
 加载的html文件。
 
-```
-1. <!--index.html-->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <title>同层渲染测试</title>
-6. <meta name="viewport" content="width=device-width, initial-scale=1.0">
-7. </head>
-8. <body>
-9. <div>
-10. <div id="bodyId">
-11. <object id="nativeButton" type ="native/button" width="300" height="300" style="background-color:red">
-12. <param id="param-1" name="name-1" value="value1"/>
-13. </object>
-14. </div>
-15. </div>
-16. </body>
-17. </html>
+```html
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>同层渲染测试</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div>
+    <div id="bodyId">
+        <object id="nativeButton" type ="native/button" width="300" height="300" style="background-color:red">
+          <param id="param-1" name="name-1" value="value1"/>
+        </object>
+    </div>
+</div>
+</body>
+</html>
 ```
 
 ## onOverrideErrorPage20+
 
-PhonePC/2in1TabletTVWearable
-
 onOverrideErrorPage(callback: OnOverrideErrorPageCallback)
 
-网页加载遇到错误时触发，只有主资源出错才会回调该接口，可以使用该接口自定义错误展示页。
+网页加载遇到错误时触发该回调，可用于设置自定义错误页替换ArkWeb提供的默认错误页。默认仅mainframe加载出错时触发；启用subframe错误页功能后，subframe加载出错时也会触发。
 
-说明
+**说明** 
 
-该功能需通过调用[setErrorPageEnabled](arkts-apis-webview-webviewcontroller.md#seterrorpageenabled20)接口启用默认错误页后，才会生效。
-
-通过[errorPageEvent.error.getErrorCode()](arkts-basic-components-web-webresourceerror.md#geterrorcode)获取的错误码大于0代表http协议错误，小于0代表网络错误。
+* 该功能需通过调用[setErrorPageEnabled](arkts-apis-webview-webviewcontroller.md#seterrorpageenabled20)20+启用mainframe错误页功能后才会生效。如需同时启用subframe错误页功能，请调用[setErrorPageEnabled](arkts-apis-webview-webviewcontroller.md#seterrorpageenabled)接口并将includeSubframe设置为true。
+* 通过[errorPageEvent.request.isMainFrame()](arkts-basic-components-web-webresourcerequest.md#ismainframe)判断请求来源是mainframe还是subframe，以便在回调中分别设置对应的自定义错误页。
+* 通过[errorPageEvent.error.getErrorCode()](arkts-basic-components-web-webresourceerror.md#geterrorcode)获取的错误码大于0代表http协议错误，小于0代表网络错误。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -5000,42 +4908,45 @@ onOverrideErrorPage(callback: OnOverrideErrorPageCallback)
 
 **示例：**
 
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+
+  build() {
+    Column() {
+      Web({ src: $rawfile("iframe_error.html"), controller: this.controller })
+        .onControllerAttached(() => {
+          // 启用mainframe错误页功能，并同时启用subframe错误页功能
+          this.controller.setErrorPageEnabled(true, true);
+        })
+        .onOverrideErrorPage((event) => {
+          let errorCode: number = event.error.getErrorCode();
+          if (event.request.isMainFrame()) {
+            // mainframe加载失败，返回mainframe自定义错误页
+            return "<html><body><h1>主页面加载失败</h1><p>错误码：" + errorCode + "</p></body></html>";
+          }
+          // subframe加载失败，返回subframe自定义错误页
+          return "<html><body><h1>子页面加载失败</h1><p>错误码：" + errorCode + "</p></body></html>";
+        })
+    }
+  }
+}
 ```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. @Entry
-4. @Component
-5. struct WebComponent {
-6. controller: webview.WebviewController = new webview.WebviewController();
-7. build() {
-8. Column() {
-9. Web({ src: "www.error-test.com", controller: this.controller })
-10. .onControllerAttached(() => {
-11. this.controller.setErrorPageEnabled(true);
-12. if (!this.controller.getErrorPageEnabled()) {
-13. this.controller.setErrorPageEnabled(true);
-14. }
-15. })
-16. .onOverrideErrorPage(event => {
-17. let htmlStr = "<html><h1>error occur : ";
-18. htmlStr += event.error.getErrorCode();
-19. htmlStr += "</h1></html>";
-20. return htmlStr;
-21. })
-22. }
-23. }
-24. }
-```
+
+**说明**
 
 ## onSslErrorReceive(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 onSslErrorReceive(callback: (event?: { handler: Function, error: object }) => void)
 
 通知用户加载资源时发生SSL错误。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[onSslErrorEventReceive9+](arkts-basic-components-web-events.md#onsslerroreventreceive9)替代。
 
@@ -5049,13 +4960,11 @@ onSslErrorReceive(callback: (event?: { handler: Function, error: object }) => vo
 
 ## onFileSelectorShow(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 onFileSelectorShow(callback: (event?: { callback: Function, fileSelector: object }) => void)
 
 调用此函数以处理具有“文件”输入类型的HTML表单，以响应用户按下的“选择文件”按钮。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[onShowFileSelector9+](arkts-basic-components-web-events.md#onshowfileselector9)替代。
 
@@ -5069,15 +4978,13 @@ onFileSelectorShow(callback: (event?: { callback: Function, fileSelector: object
 
 ## onUrlLoadIntercept(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 onUrlLoadIntercept(callback: (event?: { data:string | WebResourceRequest }) => boolean)
 
 当Web组件加载url之前触发该回调，用于判断是否阻止此次访问。
 
-说明
+**说明** 
 
-API version 8开始支持，从API version 10开始废弃，建议使用[onLoadIntercept10+](arkts-basic-components-web-events.md#onloadintercept10)代替。
+从API version 8开始支持，从API version 10开始废弃，建议使用[onLoadIntercept10+](arkts-basic-components-web-events.md#onloadintercept10)代替。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -5089,32 +4996,30 @@ API version 8开始支持，从API version 10开始废弃，建议使用[onLoadI
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onUrlLoadIntercept((event) => {
-13. if (event) {
-14. console.info('onUrlLoadIntercept ' + event.data.toString());
-15. }
-16. return true
-17. })
-18. }
-19. }
-20. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onUrlLoadIntercept((event) => {
+          if (event) {
+            console.info('onUrlLoadIntercept ' + event.data.toString());
+          }
+          return true
+        })
+    }
+  }
+}
 ```
 
 ## onPdfLoadEvent20+
-
-PhonePC/2in1TabletTVWearable
 
 onPdfLoadEvent(callback: Callback<OnPdfLoadEvent>)
 
@@ -5130,30 +5035,28 @@ onPdfLoadEvent(callback: Callback<OnPdfLoadEvent>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. // 使用时需将'https://www.example.com/xxx.pdf'替换为真实可访问的地址
-12. Web({ src: 'https://www.example.com/xxx.pdf', controller: this.controller })
-13. .onPdfLoadEvent((eventInfo: OnPdfLoadEvent) => {
-14. console.info(`Load event callback called. url: ${eventInfo.url}, result: ${eventInfo.result}.`)
-15. })
-16. }
-17. }
-18. }
+  build() {
+    Column() {
+      // 使用时需将'https://www.example.com/xxx.pdf'替换为真实可访问的地址
+      Web({ src: 'https://www.example.com/xxx.pdf', controller: this.controller })
+        .onPdfLoadEvent((eventInfo: OnPdfLoadEvent) => {
+          console.info(`Load event callback called. url: ${eventInfo.url}, result: ${eventInfo.result}.`)
+        })
+    }
+  }
+}
 ```
 
 ## onPdfScrollAtBottom20+
-
-PhonePC/2in1TabletTVWearable
 
 onPdfScrollAtBottom(callback: Callback<OnPdfScrollEvent>)
 
@@ -5169,36 +5072,34 @@ onPdfScrollAtBottom(callback: Callback<OnPdfScrollEvent>)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. // 使用时需将'https://www.example.com/xxx.pdf'替换为真实可访问的地址
-12. Web({ src: 'https://www.example.com/xxx.pdf', controller: this.controller })
-13. .onPdfScrollAtBottom((eventInfo: OnPdfScrollEvent) => {
-14. console.info(`Scroll at bottom callback called. url: ${eventInfo.url}.`)
-15. })
-16. }
-17. }
-18. }
+  build() {
+    Column() {
+      // 使用时需将'https://www.example.com/xxx.pdf'替换为真实可访问的地址
+      Web({ src: 'https://www.example.com/xxx.pdf', controller: this.controller })
+        .onPdfScrollAtBottom((eventInfo: OnPdfScrollEvent) => {
+          console.info(`Scroll at bottom callback called. url: ${eventInfo.url}.`)
+        })
+    }
+  }
+}
 ```
 
 ## onDetectedBlankScreen22+
-
-PhonePC/2in1TabletTVWearable
 
 onDetectedBlankScreen(callback: OnDetectBlankScreenCallback)
 
 Web组件检测到白屏时触发此回调。
 
-说明
+**说明** 
 
 * 需配合[blankScreenDetectionConfig](arkts-basic-components-web-attributes.md#blankscreendetectionconfig22)使用。否则，默认关闭白屏检测功能，不会返回检测到白屏时的回调函数。
 
@@ -5208,41 +5109,39 @@ Web组件检测到白屏时触发此回调。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | [OnDetectBlankScreenCallback](arkts-basic-components-web-t.md#ondetectblankscreencallback22) | 是 | Web组件检测到白屏时的回调函数。 |
+| callback | [OnDetectBlankScreenCallback](arkts-basic-components-web-t.md#ondetectblankscreencallback22) | 是 | 检测到白屏时触发。事件对象包含页面URL、白屏原因、检测到的内容节点数等诊断信息。 |
 
 **示例：**
 
-```
-1. // onDetectedBlankScreen.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// onDetectedBlankScreen.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .blankScreenDetectionConfig({
-13. enable: true,
-14. detectionTiming: [2, 4, 6, 8],
-15. contentfulNodesCountThreshold: 4,
-16. detectionMethods:[BlankScreenDetectionMethod.DETECTION_CONTENTFUL_NODES_SEVENTEEN]
-17. })
-18. .onDetectedBlankScreen((event: BlankScreenDetectionEventInfo)=>{
-19. console.info(`Found blank screen on ${event.url}.`);
-20. console.info(`The blank screen reason is ${event.blankScreenReason}.`);
-21. console.info(`The blank screen detail is ${event.blankScreenDetails?.detectedContentfulNodesCount}.`);
-22. })
-23. }
-24. }
-25. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .blankScreenDetectionConfig({
+          enable: true,
+          detectionTiming: [2, 4, 6, 8],
+          contentfulNodesCountThreshold: 4,
+          detectionMethods:[BlankScreenDetectionMethod.DETECTION_CONTENTFUL_NODES_SEVENTEEN]
+        })
+        .onDetectedBlankScreen((event: BlankScreenDetectionEventInfo)=>{
+          console.info(`Found blank screen on ${event.url}.`);
+          console.info(`The blank screen reason is ${event.blankScreenReason}.`);
+          console.info(`The blank screen detail is ${event.blankScreenDetails?.detectedContentfulNodesCount}.`);
+        })
+    }
+  }
+}
 ```
 
 ## onRenderExited(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 onRenderExited(callback: (event?: { detail: object }) => boolean)
 
@@ -5254,7 +5153,7 @@ onRenderExited(callback: (event?: { detail: object }) => boolean)
 
 详情可参考[Web组件的生命周期](../harmonyos-guides/web-event-sequence.md)。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[onRenderExited9+](arkts-basic-components-web-events.md#onrenderexited9)代替。
 
@@ -5268,15 +5167,13 @@ onRenderExited(callback: (event?: { detail: object }) => boolean)
 
 ## onCameraCaptureStateChange23+
 
-PhonePC/2in1TabletTVWearable
-
 onCameraCaptureStateChange(callback: OnCameraCaptureStateChangeCallback)
 
-通知用户当前网页的摄像头状态，摄像头有三个状态，无状态（None），捕获中（Active），暂停中（Paused）。使用callback异步回调。
+通知应用当前网页的摄像头状态，摄像头有三个状态：未工作、捕获中、暂停中。使用callback异步回调。
 
 可以通过startCamera，stopCamera，closeCamera这三个接口来切换摄像头的状态。这三个接口分别对应开启，暂停，停止摄像头功能。示例使用场景详见[startCamera](arkts-apis-webview-webviewcontroller.md#startcamera12)。
 
-说明
+**说明** 
 
 当前网页正在使用摄像头时，返回在捕获中状态。
 
@@ -5294,129 +5191,127 @@ onCameraCaptureStateChange(callback: OnCameraCaptureStateChangeCallback)
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { BusinessError } from '@kit.BasicServicesKit';
-4. import { abilityAccessCtrl, PermissionRequestResult, common } from '@kit.AbilityKit';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { abilityAccessCtrl, PermissionRequestResult, common } from '@kit.AbilityKit';
 
-6. let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
 
-8. @Entry
-9. @Component
-10. struct WebComponent {
-11. controller: webview.WebviewController = new webview.WebviewController();
-12. uiContext: UIContext = this.getUIContext();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  uiContext: UIContext = this.getUIContext();
 
-14. aboutToAppear(): void {
-15. let context: Context | undefined = this.uiContext.getHostContext() as common.UIAbilityContext;
-16. atManager.requestPermissionsFromUser(context, ['ohos.permission.CAMERA'], (err: BusinessError, data: PermissionRequestResult) => {
-17. console.info('data:' + JSON.stringify(data));
-18. console.info('data permissions:' + data.permissions);
-19. console.info('data authResults:' + data.authResults);
-20. })
-21. }
+  aboutToAppear(): void {
+    let context: Context | undefined = this.uiContext.getHostContext() as common.UIAbilityContext;
+    atManager.requestPermissionsFromUser(context, ['ohos.permission.CAMERA'], (err: BusinessError, data: PermissionRequestResult) => {
+      console.info('data:' + JSON.stringify(data));
+      console.info('data permissions:' + data.permissions);
+      console.info('data authResults:' + data.authResults);
+    })
+  }
 
-23. build() {
-24. Column() {
-25. Button("startCamera").onClick(() => {
-26. try {
-27. this.controller.startCamera();
-28. } catch (error) {
-29. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-30. }
-31. })
-32. Button("stopCamera").onClick(() => {
-33. try {
-34. this.controller.stopCamera();
-35. } catch (error) {
-36. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-37. }
-38. })
-39. Button("closeCamera").onClick(() => {
-40. try {
-41. this.controller.closeCamera();
-42. } catch (error) {
-43. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-44. }
-45. })
-46. Web({ src: $rawfile('index.html'), controller: this.controller })
-47. .onPermissionRequest((event) => {
-48. if (event) {
-49. this.uiContext.showAlertDialog({
-50. title: 'title',
-51. message: 'text',
-52. primaryButton: {
-53. value: 'deny',
-54. action: () => {
-55. event.request.deny();
-56. }
-57. },
-58. secondaryButton: {
-59. value: 'onConfirm',
-60. action: () => {
-61. event.request.grant(event.request.getAccessibleResource());
-62. }
-63. },
-64. cancel: () => {
-65. event.request.deny();
-66. }
-67. })
-68. }
-69. })
-70. .onCameraCaptureStateChange((event: CameraCaptureStateChangeInfo) => {
-71. console.info("CameraCapture from ", event.originalState, " to ", event.newState);
-72. })
-73. }
-74. }
-75. }
+  build() {
+    Column() {
+      Button("startCamera").onClick(() => {
+        try {
+          this.controller.startCamera();
+        } catch (error) {
+          console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+        }
+      })
+      Button("stopCamera").onClick(() => {
+        try {
+          this.controller.stopCamera();
+        } catch (error) {
+          console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+        }
+      })
+      Button("closeCamera").onClick(() => {
+        try {
+          this.controller.closeCamera();
+        } catch (error) {
+          console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+        }
+      })
+      Web({ src: $rawfile('index.html'), controller: this.controller })
+        .onPermissionRequest((event) => {
+          if (event) {
+            this.uiContext.showAlertDialog({
+              title: 'title',
+              message: 'text',
+              primaryButton: {
+                value: 'deny',
+                action: () => {
+                  event.request.deny();
+                }
+              },
+              secondaryButton: {
+                value: 'onConfirm',
+                action: () => {
+                  event.request.grant(event.request.getAccessibleResource());
+                }
+              },
+              cancel: () => {
+                event.request.deny();
+              }
+            })
+          }
+        })
+       .onCameraCaptureStateChange((event: CameraCaptureStateChangeInfo) => {
+          console.info("CameraCapture from ", event.originalState, " to ", event.newState);
+       })
+    }
+  }
+}
 ```
 
 加载的html文件
 
-```
-1. <!-- index.html -->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta charset="UTF-8">
-6. </head>
-7. <body>
-8. <video id="video" width="400px" height="400px" autoplay="autoplay">
-9. </video>
-10. <input type="button" title="HTML5摄像头" value="开启摄像头" onclick="getMedia()" />
-11. <script>
-12. function getMedia() {
-13. let constraints = {
-14. video: {
-15. width: 500,
-16. height: 500
-17. },
-18. audio: true
-19. }
-20. let video = document.getElementById("video");
-21. let promise = navigator.mediaDevices.getUserMedia(constraints);
-22. promise.then(function(MediaStream) {
-23. video.srcObject = MediaStream;
-24. video.play();
-25. })
-26. }
-27. </script>
-28. </body>
-29. </html>
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="UTF-8">
+ </head>
+ <body>
+   <video id="video" width="400px" height="400px" autoplay="autoplay">
+   </video>
+   <input type="button" title="HTML5摄像头" value="开启摄像头" onclick="getMedia()" />
+   <script>
+     function getMedia() {
+       let constraints = {
+         video: {
+           width: 500,
+           height: 500
+         },
+         audio: true
+       }
+       let video = document.getElementById("video");
+       let promise = navigator.mediaDevices.getUserMedia(constraints);
+       promise.then(function(MediaStream) {
+         video.srcObject = MediaStream;
+         video.play();
+       })
+     }
+   </script>
+ </body>
+</html>
 ```
 
 ## onMicrophoneCaptureStateChange23+
 
-PhonePC/2in1TabletTVWearable
-
 onMicrophoneCaptureStateChange(callback: OnMicrophoneCaptureStateChangeCallback)
 
-通知用户当前网页中麦克风状态，麦克风有三个状态，未工作（None），捕获中（Active），暂停中（Paused）。使用callback异步回调。
+通知应用当前网页中麦克风状态，麦克风有三个状态：未工作、捕获中、暂停中。使用callback异步回调。
 
-可以通过resumeMicrophone，pauseMicrophone，stopMicrophone这三个接口来切换麦克风的状态。这三个接口功能分别对应解除暂停，暂停，停止麦克风。示例使用场景详见[网页中麦克风的使用](arkts-apis-webview-webviewcontroller.md#resumemicrophone23)。
+可以通过resumeMicrophone，pauseMicrophone，stopMicrophone这三个接口来切换麦克风的状态。这三个接口功能分别对应解除暂停，暂停，停止麦克风。示例使用场景详见[resumeMicrophone23+](arkts-apis-webview-webviewcontroller.md#resumemicrophone23)。
 
-说明
+**说明** 
 
 当前网页正在使用麦克风时，返回捕获中状态；当前网页暂停使用麦克风时，返回暂停中状态；当前网页完全没有使用麦克风时，返回未工作状态。
 
@@ -5436,131 +5331,129 @@ onMicrophoneCaptureStateChange(callback: OnMicrophoneCaptureStateChangeCallback)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | [OnMicrophoneCaptureStateChangeCallback](arkts-basic-components-web-t.md#onmicrophonecapturestatechangecallback23) | 是 | 回调函数。当麦克风捕获状态改变时触发该回调，返回原来的状态和改变后的状态。 |
+| callback | [OnMicrophoneCaptureStateChangeCallback](arkts-basic-components-web-t.md#onmicrophonecapturestatechangecallback23) | 是 | 回调函数。当麦克风捕获状态改变时触发，返回原来的状态和改变后的状态。 |
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { BusinessError } from '@kit.BasicServicesKit';
-4. import { abilityAccessCtrl, PermissionRequestResult, common } from '@kit.AbilityKit';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { abilityAccessCtrl, PermissionRequestResult, common } from '@kit.AbilityKit';
 
-6. let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
 
-8. @Entry
-9. @Component
-10. struct WebComponent {
-11. controller: webview.WebviewController = new webview.WebviewController();
-12. uiContext: UIContext = this.getUIContext();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  uiContext: UIContext = this.getUIContext();
 
-14. aboutToAppear(): void {
-15. let context: Context | undefined = this.uiContext.getHostContext() as common.UIAbilityContext;
-16. atManager.requestPermissionsFromUser(context, ['ohos.permission.MICROPHONE'], (err: BusinessError, data: PermissionRequestResult) => {
-17. console.info('data:' + JSON.stringify(data));
-18. console.info('data permissions:' + data.permissions);
-19. console.info('data authResults:' + data.authResults);
-20. })
-21. }
+  aboutToAppear(): void {
+    let context: Context | undefined = this.uiContext.getHostContext() as common.UIAbilityContext;
+    atManager.requestPermissionsFromUser(context, ['ohos.permission.MICROPHONE'], (err: BusinessError, data: PermissionRequestResult) => {
+      console.info('data:' + JSON.stringify(data));
+      console.info('data permissions:' + data.permissions);
+      console.info('data authResults:' + data.authResults);
+    })
+  }
 
-23. build() {
-24. Column() {
-25. Button("resumeMicrophone").onClick(() => {
-26. try {
-27. this.controller.resumeMicrophone();
-28. } catch (error) {
-29. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-30. }
-31. })
-32. Button("pauseMicrophone").onClick(() => {
-33. try {
-34. this.controller.pauseMicrophone();
-35. } catch (error) {
-36. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-37. }
-38. })
-39. Button("stopMicrophone").onClick(() => {
-40. try {
-41. this.controller.stopMicrophone();
-42. } catch (error) {
-43. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-44. }
-45. })
-46. Web({ src: $rawfile('index.html'), controller: this.controller })
-47. .onPermissionRequest((event) => {
-48. if (event) {
-49. this.uiContext.showAlertDialog({
-50. title: 'title',
-51. message: 'text',
-52. primaryButton: {
-53. value: 'deny',
-54. action: () => {
-55. event.request.deny();
-56. }
-57. },
-58. secondaryButton: {
-59. value: 'onConfirm',
-60. action: () => {
-61. event.request.grant(event.request.getAccessibleResource());
-62. }
-63. },
-64. cancel: () => {
-65. event.request.deny();
-66. }
-67. })
-68. }
-69. })
-70. .onMicrophoneCaptureStateChange((event: MicrophoneCaptureStateChangeInfo) => {
-71. console.info("MicrophoneCapture from ", event.originalState, " to ", event.newState);
-72. })
-73. }
-74. }
-75. }
+  build() {
+    Column() {
+      Button("resumeMicrophone").onClick(() => {
+        try {
+          this.controller.resumeMicrophone();
+        } catch (error) {
+          console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+        }
+      })
+      Button("pauseMicrophone").onClick(() => {
+        try {
+          this.controller.pauseMicrophone();
+        } catch (error) {
+          console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+        }
+      })
+      Button("stopMicrophone").onClick(() => {
+        try {
+          this.controller.stopMicrophone();
+        } catch (error) {
+          console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+        }
+      })
+      Web({ src: $rawfile('index.html'), controller: this.controller })
+        .onPermissionRequest((event) => {
+          if (event) {
+            this.uiContext.showAlertDialog({
+              title: 'title',
+              message: 'text',
+              primaryButton: {
+                value: 'deny',
+                action: () => {
+                  event.request.deny();
+                }
+              },
+              secondaryButton: {
+                value: 'onConfirm',
+                action: () => {
+                  event.request.grant(event.request.getAccessibleResource());
+                }
+              },
+              cancel: () => {
+                event.request.deny();
+              }
+            })
+          }
+        })
+        .onMicrophoneCaptureStateChange((event: MicrophoneCaptureStateChangeInfo) => {
+          console.info("MicrophoneCapture from ", event.originalState, " to ", event.newState);
+      })
+    }
+  }
+}
 ```
 
 加载的html文件
 
-```
-1. <!-- index.html -->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <meta charset="UTF-8">
-6. </head>
-7. <body>
-8. <video id="video" width="400px" height="400px" autoplay="autoplay">
-9. </video>
-10. <input type="button" title="HTML5麦克风" value="开启麦克风" onclick="getMedia()" />
-11. <script>
-12. function getMedia() {
-13. let constraints = {
-14. video: {
-15. width: 500,
-16. height: 500
-17. },
-18. audio: true
-19. }
-20. let video = document.getElementById("video");
-21. let promise = navigator.mediaDevices.getUserMedia(constraints);
-22. promise.then(function(MediaStream) {
-23. video.srcObject = MediaStream;
-24. video.play();
-25. })
-26. }
-27. </script>
-28. </body>
-29. </html>
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="UTF-8">
+ </head>
+ <body>
+   <video id="video" width="400px" height="400px" autoplay="autoplay">
+   </video>
+   <input type="button" title="HTML5麦克风" value="开启麦克风" onclick="getMedia()" />
+   <script>
+     function getMedia() {
+       let constraints = {
+         video: {
+           width: 500,
+           height: 500
+         },
+         audio: true
+       }
+       let video = document.getElementById("video");
+       let promise = navigator.mediaDevices.getUserMedia(constraints);
+       promise.then(function(MediaStream) {
+         video.srcObject = MediaStream;
+         video.play();
+       })
+     }
+   </script>
+ </body>
+</html>
 ```
 
 ## onTextSelectionChange23+
 
-PhonePC/2in1TabletTVWearable
-
 onTextSelectionChange(callback: TextSelectionChangeCallback)
 
-设置Web组件选区文本改变时的回调函数，使用callback异步回调。
+设置Web组件选区文本改变时的回调函数。
 
-说明
+**说明** 
 
 * 支持手势选中、鼠标选中以及JS选中选区。
 * 使用上述方式选中内容结束后触发回调。
@@ -5572,54 +5465,52 @@ onTextSelectionChange(callback: TextSelectionChangeCallback)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | [TextSelectionChangeCallback](arkts-basic-components-web-t.md#textselectionchangecallback23) | 是 | 回调函数，所选区域文本内容改变时触发。 |
+| callback | [TextSelectionChangeCallback](arkts-basic-components-web-t.md#textselectionchangecallback23) | 是 | 文本选区变化时触发。回调参数包含当前选中的文本内容。 |
 
 **示例：**
 
-```
-1. // onTextSelectionChange.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// onTextSelectionChange.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: $rawfile('index.html'), controller: this.controller })
-12. .onTextSelectionChange((selectionText: string) => {
-13. console.info(`Selected text is ${selectionText}.`);
-14. })
-15. }
-16. }
-17. }
+  build() {
+    Column() {
+      Web({ src: $rawfile('index.html'), controller: this.controller })
+        .onTextSelectionChange((selectionText: string) => {
+          console.info(`Selected text is ${selectionText}.`);
+        })
+    }
+  }
+}
 ```
 
 加载的html文件
 
-```
-1. <!-- index.html -->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <title>示例页面</title>
-6. </head>
-7. <body>
-8. 示例文本
-9. </body>
-10. </html>
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>示例页面</title>
+</head>
+<body>
+    示例文本
+</body>
+</html>
 ```
 
 ## onFirstScreenPaint23+
-
-PhonePC/2in1TabletTVWearable
 
 onFirstScreenPaint(callback: OnFirstScreenPaintCallback)
 
 网页首屏渲染结束时触发此回调，使用callback异步回调。
 
-说明
+**说明** 
 
 * 首屏渲染（First Screen Paint，FSP），记录了视口内图片、文本或视频元素完成渲染所需的时间，是衡量页面首次加载到渲染完成的核心性能指标。当一定时间内视口内没有可见元素超出历史绘制区域时，将视口内元素绘制的历史最大的时刻视为首屏渲染完成时刻。
 * 接口在首屏绘制完成后，需要等待一定时间没有新的渲染信息需要处理后，才会上报回调。接口回调时刻和首屏渲染完成时刻不同。
@@ -5632,28 +5523,83 @@ onFirstScreenPaint(callback: OnFirstScreenPaintCallback)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | [OnFirstScreenPaintCallback](arkts-basic-components-web-t.md#onfirstscreenpaintcallback23) | 是 | 回调函数，设置Web组件的检测到首屏渲染。 |
+| callback | [OnFirstScreenPaintCallback](arkts-basic-components-web-t.md#onfirstscreenpaintcallback23) | 是 | 首屏渲染完成时触发。事件对象包含页面URL、导航开始时间、首屏渲染时间等性能指标。 |
 
 **示例：**
 
+```ts
+// onFirstScreenPaint.ets
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onFirstScreenPaint((event: FirstScreenPaint)=>{
+          console.info(`Found first screen paint on ${event.url}.`);
+          console.info(`The navigation start time is ${event.navigationStartTime}.`);
+          console.info(`The first screen paint time is ${event.firstScreenPaintTime}.`);
+        })
+    }
+  }
+}
 ```
-1. // onFirstScreenPaint.ets
-2. import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+## onInputmethodAttached
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onFirstScreenPaint((event: FirstScreenPaint)=>{
-13. console.info(`Found first screen paint on ${event.url}.`);
-14. console.info(`The navigation start time is ${event.navigationStartTime}.`);
-15. console.info(`The first screen paint time is ${event.firstScreenPaintTime}.`);
-16. })
-17. }
-18. }
-19. }
+onInputmethodAttached(callback: OnInputmethodAttachedCallback)
+
+网页绑定输入法成功时触发此回调，使用callback异步回调。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | [OnInputmethodAttachedCallback](arkts-basic-components-web-t.md#oninputmethodattachedcallback) | 是 | 设置Web组件检测到输入法绑定成功时的回调函数。 |
+
+**示例：**
+
+```ts
+import { webview } from '@kit.ArkWeb'
+import { inputMethod } from '@kit.IMEKit';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller }).onInputmethodAttached(() => {
+        inputMethod.getController().showTextInput();
+      })
+    }
+  }
+}
+```
+
+加载的html文件。
+
+```html
+<!--test.html-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta charset="UTF-8"><title>示例页面</title></head>
+  <body>
+    <div>
+      <label for="main-input">输入框</label>
+      <input type="text" id="main-input" name="keyword" placeholder="请输入关键词..." autofocus>
+    </div>
+  </body>
+</html>
 ```

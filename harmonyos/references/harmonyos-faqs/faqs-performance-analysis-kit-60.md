@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 如何使用ErrorManager捕获异常
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > 如何使用ErrorManager捕获异常
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:22+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:fe296d17af274b20e1109a855859a1a92dfac643ec114862b9533fcd0be7c141
+scraped_at: 2026-09-02T14:53:51+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:96e03253508c91bc5f82e17ee26392cfce3fee6fea31c87a9c23537bf12678db
 ---
 
 ErrorManager提供错误观察器的注册和注销。
@@ -21,83 +21,79 @@ ErrorManager提供错误观察器的注册和注销。
 
 Index.ets中：
 
-```
-1. @Entry
-2. @Component
-3. struct ErrorManagerPage {
-4. @State message: string = 'Capture exceptions';
+```typescript
+@Entry
+@Component
+struct ErrorManagerPage {
+  @State message: string = 'Capture exceptions';
 
-6. build() {
-7. Row() {
-8. Column() {
-9. Button(this.message)
-10. .onClick(() => {
-11. let tempList = ['0', '1'];
-12. tempList[5].toString();
-13. })
-14. }
-15. .width('100%')
-16. }
-17. .height('100%')
-18. }
-19. }
+  build() {
+    Row() {
+      Column() {
+        Button(this.message)
+          .onClick(() => {
+            let tempList = ['0', '1'];
+            tempList[5].toString();
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-
-[ErrorManagerPage.ets](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/AnalysisKit/entry/src/main/ets/pages/ErrorManagerPage.ets#L21-L39)
 
 EntryAbility.ets中：
 
+```typescript
+import { AbilityConstant, errorManager, UIAbility, Want } from '@kit.AbilityKit';
+import { ConfigurationConstant } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { window } from '@kit.ArkUI';
+
+let callback: errorManager.ErrorObserver = {
+  onUnhandledException: (errMsg) => {
+    console.log('Callback when an uncaught exception occurs,onUnhandledException:', errMsg);
+  },
+  onException: (errorObj) => {
+    console.log('The callback when an exception is reported to the JS layer,onException');
+    console.log('onException, name: ', errorObj.name);
+    console.log('onException, message: ', errorObj.message);
+    if (typeof (errorObj.stack) === 'string') {
+      console.log('onException, stack: ', errorObj.stack);
+    }
+  }
+}
+
+let abilityWant: Want;
+let registerId = -1;
+const DOMAIN = 0x0000;
+
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    try {
+      this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
+      hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onCreate');
+      console.log('[Demo] EntryAbility onCreate');
+      registerId = errorManager.on('error', callback);
+      abilityWant = want;
+      console.log('registerId:', registerId);
+    } catch (err) {
+      hilog.error(DOMAIN, 'testTag', `setColorMode failed, code is ${err.code}, message is ${err.message}`);
+    }
+  }
+
+  onDestroy(): void {
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onDestroy');
+    console.log('[Demo] EntryAbility onDestroy');
+    errorManager.off('error', registerId, (result) => {
+      console.log(`[Demo] result:${result}`);
+    });
+  }
+
+  // ...
+}
 ```
-1. import { AbilityConstant, errorManager, UIAbility, Want } from '@kit.AbilityKit';
-2. import { ConfigurationConstant } from '@kit.AbilityKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { window } from '@kit.ArkUI';
-
-6. let callback: errorManager.ErrorObserver = {
-7. onUnhandledException: (errMsg) => {
-8. console.log('Callback when an uncaught exception occurs,onUnhandledException:', errMsg);
-9. },
-10. onException: (errorObj) => {
-11. console.log('The callback when an exception is reported to the JS layer,onException');
-12. console.log('onException, name: ', errorObj.name);
-13. console.log('onException, message: ', errorObj.message);
-14. if (typeof (errorObj.stack) === 'string') {
-15. console.log('onException, stack: ', errorObj.stack);
-16. }
-17. }
-18. }
-
-20. let abilityWant: Want;
-21. let registerId = -1;
-22. const DOMAIN = 0x0000;
-
-24. export default class EntryAbility extends UIAbility {
-25. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-26. try {
-27. this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
-28. hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onCreate');
-29. console.log('[Demo] EntryAbility onCreate');
-30. registerId = errorManager.on('error', callback);
-31. abilityWant = want;
-32. console.log('registerId:', registerId);
-33. } catch (err) {
-34. hilog.error(DOMAIN, 'testTag', `setColorMode failed, code is ${err.code}, message is ${err.message}`);
-35. }
-36. }
-
-38. onDestroy(): void {
-39. hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onDestroy');
-40. console.log('[Demo] EntryAbility onDestroy');
-41. errorManager.off('error', registerId, (result) => {
-42. console.log(`[Demo] result:${result}`);
-43. });
-44. }
-
-46. // ...
-47. }
-```
-
-[EntryAbility.ets](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/AnalysisKit/entry/src/main/ets/entryability/EntryAbility.ets#L19-L95)
 
 **参考链接**
 

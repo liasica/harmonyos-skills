@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/speech-produc
 title: Speech Kit简介
 breadcrumb: 指南 > AI > Speech Kit（场景化语音服务） > Speech Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:53+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:81950c024070610db4b7f0007119d64fa15912135d906a5445bc9c97995a4e9a
+scraped_at: 2026-09-02T15:00:15+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:ca4e3156cdd3551c8d2175a3d156792160da0c8a46f4df1e6977c66731e4343f
 ---
 
 Speech Kit（场景化语音服务）集成了语音类AI能力，包括朗读控件（TextReader）和AI字幕控件（AICaptionComponent）能力，便于用户与设备进行互动，为用户实现朗读文章。
@@ -30,8 +30,8 @@ Phone、Tablet、PC/2in1。
 | AI能力 | 约束 |
 | --- | --- |
 | 朗读控件 | 支持的语种类型：中文。 |
-| AI字幕控件 | 支持的语种类型：中英文。  支持的音频流：  - 音频类型：当前仅支持 "pcm"编码。  - 音频采样率：当前仅支持16000采样率。  - 音频声道：当前仅支持1个通道。  - 音频采样位深：当前仅支持16位。  部分机型暂不支持，调用失败返回对应错误码[初始化失败](../harmonyos-references/speech-errorcode.md#section1010600011-初始化失败)。 |
+| AI字幕控件 | 支持的语种类型：中英文。  支持的音频流：  - 音频类型：当前仅支持 "pcm"编码。  - 音频采样率：当前仅支持16000采样率。  - 音频声道：当前仅支持1个通道。  - 音频采样位深：当前仅支持16位。  部分机型暂不支持，调用失败返回对应错误码[初始化失败](../harmonyos-references/errorcode-speech.md#section1010600011-初始化失败)。 |
 
 ## 模拟器支持情况
 
-本kit暂不支持模拟器。
+本Kit暂不支持模拟器。

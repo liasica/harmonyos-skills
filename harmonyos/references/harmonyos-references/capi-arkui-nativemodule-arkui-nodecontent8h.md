@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_NodeContent*
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_NodeContent*
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:27+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:24f1b4dccfef2b4d6b76956ba8a27572ce7a7da47b942aa32ae191b3fb3b0e4e
+scraped_at: 2026-09-02T14:51:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b2ed11d7d3f8adf091dc318b00fc03339715e7b3977170a4c2404a425e5b507a
 ---
 
-```
-1. typedef struct ArkUI_NodeContent* ArkUI_NodeContentHandle
+```c
+typedef struct ArkUI_NodeContent* ArkUI_NodeContentHandle
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-定义ArkUI NodeContent实例在Native侧的实例对象指针定义。
+定义ArkUI\_NodeContent在Native侧的实例对象指针，用于在Native接口中引用和传递NodeContent实例。
 
 **起始版本：** 12
 

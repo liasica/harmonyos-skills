@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-f
 title: oh_fileio.h
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > C API > 头文件 > oh_fileio.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:52+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:93618455af4013d317dc4542286183c865f98e1a7fb1377cc9819bfb530d919b
+scraped_at: 2026-09-02T15:01:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1816438d40e4c285a479097c416f82dac5670ebf747a3b35c354125d92d26280
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 fileio模块接口定义，提供获取文件存储位置的native接口。
 
@@ -26,11 +24,7 @@ fileio模块接口定义，提供获取文件存储位置的native接口。
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,22 +32,16 @@ PhonePC/2in1TabletTVWearable
 
 ### 函数
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 描述 |
 | --- | --- |
 | [FileManagement\_ErrCode OH\_FileIO\_GetFileLocation(char \*uri, int uriLength, FileIO\_FileLocation \*location)](capi-oh-fileio-h.md#oh_fileio_getfilelocation) | 获取文件存储位置。 |
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### FileIO\_FileLocation
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum FileIO_FileLocation
+```c
+enum FileIO_FileLocation
 ```
 
 **描述**
@@ -70,14 +58,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_FileIO\_GetFileLocation()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. FileManagement_ErrCode OH_FileIO_GetFileLocation(char *uri, int uriLength, FileIO_FileLocation *location)
+```c
+FileManagement_ErrCode OH_FileIO_GetFileLocation(char *uri, int uriLength, FileIO_FileLocation *location)
 ```
 
 **描述**

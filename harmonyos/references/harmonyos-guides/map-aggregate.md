@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-aggregate
 title: 点聚合
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 点聚合
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:10+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:49c5ca4fa020431b6211adfdd09ba5c20a4b0f115002c120c7e4f8bd5bf37704
+scraped_at: 2026-09-02T14:50:28+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:4f87ce9186659d557c3780193d59e38c3d1a6ed284b0aeacf79e8f53a4239610
 ---
 
 ## 场景介绍
@@ -24,7 +24,7 @@ content_hash: sha256:49c5ca4fa020431b6211adfdd09ba5c20a4b0f115002c120c7e4f8bd5bf
 
 5.0.3(15)开始，支持聚合标记点击事件监听功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/SteZ7IeuQJO_Wyk5TXar_w/zh-cn_image_0000002589245351.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/kkg2Hb-PR0q5XHommy3-WA/zh-cn_image_0000002706835064.jpg "点击放大")
 
 ## 接口说明
 
@@ -40,149 +40,150 @@ content_hash: sha256:49c5ca4fa020431b6211adfdd09ba5c20a4b0f115002c120c7e4f8bd5bf
 
 1. 导入相关模块。
 
-   ```
-   1. import { map, mapCommon, MapComponent } from '@kit.MapKit';
-   2. import { AsyncCallback } from '@kit.BasicServicesKit';
+   ```typescript
+   import { map, mapCommon, MapComponent } from '@kit.MapKit';
+   import { AsyncCallback } from '@kit.BasicServicesKit';
    ```
 2. 新增聚合图层。
 
-   ```
-   1. @Entry
-   2. @Component
-   3. struct ClusterOverlayDemo {
-   4. private mapOptions?: mapCommon.MapOptions;
-   5. private mapController?: map.MapComponentController;
-   6. private callback?: AsyncCallback<map.MapComponentController>;
+   ```typescript
+   @Entry
+   @Component
+   struct ClusterOverlayDemo {
+     private mapOptions?: mapCommon.MapOptions;
+     private mapController?: map.MapComponentController;
+     private callback?: AsyncCallback<map.MapComponentController>;
 
-   8. aboutToAppear(): void {
-   9. this.mapOptions = {
-   10. position: {
-   11. target: {
-   12. latitude: 31.98,
-   13. longitude: 118.7
-   14. },
-   15. zoom: 7
-   16. }
-   17. }
+     aboutToAppear(): void {
+       this.mapOptions = {
+         position: {
+           target: {
+             latitude: 31.98,
+             longitude: 118.7
+           },
+           zoom: 7
+         }
+       }
 
-   19. this.callback = async (err, mapController) => {
-   20. if (!err) {
-   21. this.mapController = mapController;
-   22. // 生成待聚合点
-   23. let clusterItem1: mapCommon.ClusterItem = {
-   24. position: {
-   25. latitude: 31.98,
-   26. longitude: 118.7
-   27. }
-   28. };
-   29. let clusterItem2: mapCommon.ClusterItem = {
-   30. position: {
-   31. latitude: 32.99,
-   32. longitude: 118.9
-   33. }
-   34. };
-   35. let clusterItem3: mapCommon.ClusterItem = {
-   36. position: {
-   37. latitude: 31.5,
-   38. longitude: 118.7
-   39. }
-   40. };
-   41. let clusterItem4: mapCommon.ClusterItem = {
-   42. position: {
-   43. latitude: 30,
-   44. longitude: 118.7
-   45. }
-   46. };
-   47. let clusterItem5: mapCommon.ClusterItem = {
-   48. position: {
-   49. latitude: 29.98,
-   50. longitude: 117.7
-   51. }
-   52. };
-   53. let clusterItem6: mapCommon.ClusterItem = {
-   54. position: {
-   55. latitude: 31.98,
-   56. longitude: 120.7
-   57. }
-   58. };
-   59. let clusterItem7: mapCommon.ClusterItem = {
-   60. position: {
-   61. latitude: 25.98,
-   62. longitude: 119.7
-   63. }
-   64. };
-   65. let clusterItem8: mapCommon.ClusterItem = {
-   66. position: {
-   67. latitude: 30.98,
-   68. longitude: 110.7
-   69. }
-   70. };
-   71. let clusterItem9: mapCommon.ClusterItem = {
-   72. position: {
-   73. latitude: 30.98,
-   74. longitude: 115.7
-   75. }
-   76. };
-   77. let clusterItem10: mapCommon.ClusterItem = {
-   78. position: {
-   79. latitude: 28.98,
-   80. longitude: 122.7
-   81. }
-   82. };
-   83. let array: Array<mapCommon.ClusterItem> = [
-   84. clusterItem1,
-   85. clusterItem2,
-   86. clusterItem3,
-   87. clusterItem4,
-   88. clusterItem5,
-   89. clusterItem6,
-   90. clusterItem7,
-   91. clusterItem8,
-   92. clusterItem9,
-   93. clusterItem10
-   94. ]
-   95. for(let index = 0; index < 100; index++){
-   96. array.push(clusterItem1)
-   97. }
-   98. for(let index = 0; index < 10; index++){
-   99. array.push(clusterItem2)
-   100. }
-   101. // 生成聚合图层的入参 聚合distance设置为100vp
-   102. let clusterOverlayParams: mapCommon.ClusterOverlayParams = {
-   103. distance: 100,
-   104. clusterItems: array
-   105. };
-   106. try {
-   107. // 调用addClusterOverlay生成聚合图层
-   108. await this.mapController.addClusterOverlay(clusterOverlayParams);
-   109. } catch (e) {
-   110. console.error(`code:${e.code}, message:${e.message}`);
-   111. }
-   112. } else {
-   113. console.error(`Failed to initialize the map, code is：${err.code}, message is ${err.message}`);
-   114. }
-   115. }
-   116. }
+       this.callback = async (err, mapController) => {
+         if (!err) {
+           this.mapController = mapController;
+           // 生成待聚合点
+           let clusterItem1: mapCommon.ClusterItem = {
+             position: {
+               latitude: 31.98,
+               longitude: 118.7
+             }
+           };
+           let clusterItem2: mapCommon.ClusterItem = {
+             position: {
+               latitude: 32.99,
+               longitude: 118.9
+             }
+           };
+           let clusterItem3: mapCommon.ClusterItem = {
+             position: {
+               latitude: 31.5,
+               longitude: 118.7
+             }
+           };
+           let clusterItem4: mapCommon.ClusterItem = {
+             position: {
+               latitude: 30,
+               longitude: 118.7
+             }
+           };
+           let clusterItem5: mapCommon.ClusterItem = {
+             position: {
+               latitude: 29.98,
+               longitude: 117.7
+             }
+           };
+           let clusterItem6: mapCommon.ClusterItem = {
+             position: {
+               latitude: 31.98,
+               longitude: 120.7
+             }
+           };
+           let clusterItem7: mapCommon.ClusterItem = {
+             position: {
+               latitude: 25.98,
+               longitude: 119.7
+             }
+           };
+           let clusterItem8: mapCommon.ClusterItem = {
+             position: {
+               latitude: 30.98,
+               longitude: 110.7
+             }
+           };
+           let clusterItem9: mapCommon.ClusterItem = {
+             position: {
+               latitude: 30.98,
+               longitude: 115.7
+             }
+           };
+           let clusterItem10: mapCommon.ClusterItem = {
+             position: {
+               latitude: 28.98,
+               longitude: 122.7
+             }
+           };
+           let array: Array<mapCommon.ClusterItem> = [
+             clusterItem1,
+             clusterItem2,
+             clusterItem3,
+             clusterItem4,
+             clusterItem5,
+             clusterItem6,
+             clusterItem7,
+             clusterItem8,
+             clusterItem9,
+             clusterItem10
+           ]
+           // 为了演示大量点聚合的效果，添加了100个clusterItem1和10个clusterItem2
+           for(let index = 0; index < 100; index++){
+             array.push(clusterItem1)
+           }
+           for(let index = 0; index < 10; index++){
+             array.push(clusterItem2)
+           }
+           // 生成聚合图层的入参 聚合distance设置为100vp
+           let clusterOverlayParams: mapCommon.ClusterOverlayParams = {
+             distance: 100,
+             clusterItems: array
+           };
+           try {
+             // 调用addClusterOverlay生成聚合图层
+             let clusterOverlay = await this.mapController.addClusterOverlay(clusterOverlayParams);
+           } catch (e) {
+             console.error(`code:${e.code}, message:${e.message}`);
+           }
+         } else {
+           console.error(`Failed to initialize the map, code is：${err.code}, message is ${err.message}`);
+         }
+       }
+     }
 
-   118. build() {
-   119. Stack() {
-   120. Column() {
-   121. MapComponent({ mapOptions: this.mapOptions, mapCallback: this.callback })
-   122. .width('100%')
-   123. .height('100%');
-   124. }.width('100%')
-   125. }.height('100%')
-   126. }
-   127. }
+     build() {
+       Stack() {
+         Column() {
+           MapComponent({ mapOptions: this.mapOptions, mapCallback: this.callback })
+             .width('100%')
+             .height('100%');
+         }.width('100%')
+       }.height('100%')
+     }
+   }
    ```
 3. 聚合标记点击事件监听。
 
-   ```
-   1. let callback1 = (markerClusterInfo: map.MarkerClusterInfo) => {
-   2. console.info("markerClusterClick", `callback1 markerClusterInfo`);
-   3. };
-   4. // 添加监听
-   5. clusterOverlay.on("markerClusterClick", callback1);
-   6. // 取消监听
-   7. clusterOverlay.off("markerClusterClick", callback1);
+   ```typescript
+   let callback1 = (markerClusterInfo: map.MarkerClusterInfo) => {
+     console.info("markerClusterClick", `callback1 markerClusterInfo`);
+   };
+   // 添加监听
+   clusterOverlay.on("markerClusterClick", callback1);
+   // 取消监听
+   clusterOverlay.off("markerClusterClick", callback1);
    ```

@@ -3,28 +3,25 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: LoadingProgress
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > LoadingProgress
 category: harmonyos-references
-scraped_at: 2026-04-29T13:52:20+08:00
-doc_updated_at: 2026-03-23
-content_hash: sha256:01f740c44cc324b0eafc9cc35258b2967263efbdfa0fe29540cb67263898a0f8
+scraped_at: 2026-09-02T15:01:04+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:d06464672253c1d8d632eaa9c55efcb559079f0ee0612548a7ea70e6c575ec60
 ---
 
-用于显示加载动效的组件。
+LoadingProgress是用于显示加载进度条的组件，在数据加载过程中为用户提供视觉反馈，提升用户体验。该组件支持设置前景色、控制动画显示状态等特性，适用于需要在应用内展示加载进度的场景。
 
-加载动效在组件不可见时停止，组件的可见状态基于[onVisibleAreaChange](ts-universal-component-visible-area-change-event.md#onvisibleareachange)处理，可见阈值ratios大于0即视为可见状态。
+加载进度条的动效在组件不可见时停止，组件的可见状态基于[onVisibleAreaChange](ts-universal-component-visible-area-change-event.md#onvisibleareachange)处理，可见阈值ratios大于0即视为可见状态。
 
-说明
+**说明** 
 
-该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 该组件从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+* 该组件从API版本26.0.0开始支持[WithTheme](ts-container-with-theme.md)。
 
 ## 子组件
-
-PhonePC/2in1TabletTVWearable
 
 无
 
 ## 接口
-
-PhonePC/2in1TabletTVWearable
 
 LoadingProgress()
 
@@ -38,17 +35,13 @@ LoadingProgress()
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用属性](ts-component-general-attributes.md)外，还支持以下属性：
 
-说明
+**说明** 
 
-组件应设置合理的宽高，当组件宽高设置过大时加载动效可能不符合预期效果。
+组件应设置合理的宽高，当组件宽高设置过大时加载进度条的动效可能不符合预期效果。
 
 ### color
-
-PhonePC/2in1TabletTVWearable
 
 color(value: ResourceColor)
 
@@ -68,13 +61,13 @@ color(value: ResourceColor)
 
 ### enableLoading10+
 
-PhonePC/2in1TabletTVWearable
-
 enableLoading(value: boolean)
 
 设置LoadingProgress动画是否显示。LoadingProgress动画不显示时，该组件依旧占位。通用属性[Visibility](ts-appendix-enums.md#visibility).Hidden隐藏的是包括[border](ts-universal-attributes-border.md#border)、[padding](ts-universal-attributes-size.md#padding)等整个组件范围，而enableLoading=false只隐藏LoadingProgress本身动画内容，不包括border等。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -86,13 +79,13 @@ enableLoading(value: boolean)
 
 ### contentModifier12+
 
-PhonePC/2in1TabletTVWearable
-
 contentModifier(modifier: ContentModifier<LoadingProgressConfiguration>)
 
 定制LoadingProgress内容区的方法。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -100,21 +93,19 @@ contentModifier(modifier: ContentModifier<LoadingProgressConfiguration>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| modifier | ContentModifier<[LoadingProgressConfiguration](ts-basic-components-loadingprogress.md#loadingprogressconfiguration12对象说明)> | 是 | 在LoadingProgress组件上，定制内容区的方法。  modifier： 内容修改器，开发者需要自定义class实现ContentModifier接口。 |
+| modifier | ContentModifier<[LoadingProgressConfiguration](ts-basic-components-loadingprogress.md#loadingprogressconfiguration12对象说明)> | 是 | 在LoadingProgress组件上，定制内容区的方法。  modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。 |
 
 ## 事件
-
-PhonePC/2in1TabletTVWearable
 
 支持[通用事件](ts-component-general-events.md)。
 
 ## LoadingProgressConfiguration12+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 开发者需要自定义class实现ContentModifier接口。继承自[CommonConfiguration](ts-universal-attributes-content-modifier.md#commonconfigurationt)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -123,8 +114,6 @@ PhonePC/2in1TabletTVWearable
 | enableLoading | boolean | 否 | 否 | LoadingProgress动画是否显示。  默认值：true，true表示显示LoadingProgress动画，false表示不显示LoadingProgress动画。 |
 
 ## LoadingProgressStyle枚举说明
-
-PhonePC/2in1TabletTVWearable
 
 表示LoadingProgress的样式类型，不推荐使用。
 
@@ -142,177 +131,170 @@ PhonePC/2in1TabletTVWearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 ### 示例1（设置颜色）
 
-该示例通过[color](ts-basic-components-loadingprogress.md#color)接口，实现了设置加载动效颜色的功能。
+该示例通过[color](ts-basic-components-loadingprogress.md#color)接口，实现了设置加载进度条颜色的功能。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct LoadingProgressExample {
-5. build() {
-6. Column({ space: 5 }) {
-7. Text('Orbital LoadingProgress ').fontSize(9).fontColor(0xCCCCCC).width('90%')
-8. LoadingProgress()
-9. .color(Color.Blue)
-10. .layoutWeight(1)
-11. }.width('100%').margin({ top: 5 })
-12. }
-13. }
+```ts
+// xxx.ets
+@Entry
+@Component
+struct LoadingProgressExample {
+  build() {
+    Column({ space: 5 }) {
+      Text('Orbital LoadingProgress ').fontSize(9).fontColor(0xCCCCCC).width('90%')
+      LoadingProgress()
+        .color(Color.Blue)
+        .layoutWeight(1)
+    }.width('100%').margin({ top: 5 })
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/wL2PoNGbSqKbegnchABHqw/zh-cn_image_0000002558766436.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/AxMpfbITR8GaJXvYenBRNQ/zh-cn_image_0000002736435239.gif)
 
 ### 示例2（设置定制内容区）
 
-该示例通过[contentModifier](ts-basic-components-loadingprogress.md#contentmodifier12)接口，实现了定制内容区的功能，并通过[enableLoading](ts-basic-components-loadingprogress.md#enableloading10)接口实现了通过按钮切换是否显示LoadingProgress的效果。
+该示例通过[contentModifier](ts-basic-components-loadingprogress.md#contentmodifier12)接口，实现了定制内容区的功能，并展示了如何基于[LoadingProgressConfiguration](ts-basic-components-loadingprogress.md#loadingprogressconfiguration12对象说明)的[enableLoading](ts-basic-components-loadingprogress.md#enableloading10)属性切换自定义内容的显示效果。
 
-```
-1. // xxx.ets
-2. import { UIContext } from '@kit.ArkUI';
+```ts
+// xxx.ets
+import { UIContext } from '@kit.ArkUI';
 
-4. class MyLoadingProgressStyle implements ContentModifier<LoadingProgressConfiguration> {
-5. enableLoading: boolean = false;
-6. ctx: UIContext | undefined = undefined;
+class MyLoadingProgressStyle implements ContentModifier<LoadingProgressConfiguration> {
+  enableLoading: boolean = false;
+  ctx: UIContext | undefined = undefined;
 
-8. constructor(enableLoading: boolean, ctx: UIContext) {
-9. this.enableLoading = enableLoading;
-10. this.ctx = ctx;
-11. }
+  constructor(enableLoading: boolean, ctx: UIContext) {
+    this.enableLoading = enableLoading;
+    this.ctx = ctx;
+  }
 
-13. applyContent(): WrappedBuilder<[LoadingProgressConfiguration]> {
-14. return wrapBuilder(buildLoadingProgress);
-15. }
-16. }
+  applyContent(): WrappedBuilder<[LoadingProgressConfiguration]> {
+    return wrapBuilder(buildLoadingProgress);
+  }
+}
 
-18. let arr1: string[] =
-19. ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19'];
-20. let arr2: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+let arr: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
-22. @Builder
-23. function buildLoadingProgress(config: LoadingProgressConfiguration) {
-24. Column({ space: 8 }) {
-25. Row() {
-26. Column() {
-27. Circle({
-28. width: ((config.contentModifier as MyLoadingProgressStyle).enableLoading) ? 100 : 80,
-29. height: ((config.contentModifier as MyLoadingProgressStyle).enableLoading) ? 100 : 80
-30. })
-31. .fill(((config.contentModifier as MyLoadingProgressStyle).enableLoading) ? Color.Grey : 0x2577e3)
-32. }.width('50%')
+@Builder
+function buildLoadingProgress(config: LoadingProgressConfiguration) {
+  Column({ space: 8 }) {
+    Row() {
+      Column() {
+        Circle({
+          width: ((config.contentModifier as MyLoadingProgressStyle).enableLoading) ? 100 : 80,
+          height: ((config.contentModifier as MyLoadingProgressStyle).enableLoading) ? 100 : 80
+        })
+          .fill(((config.contentModifier as MyLoadingProgressStyle).enableLoading) ? Color.Grey : 0x2577e3)
+      }.width('50%')
 
-34. Column() {
-35. Button('' + ((config.contentModifier as MyLoadingProgressStyle).enableLoading))
-36. .onClick((event: ClickEvent) => {
-37. let uiContext = (config.contentModifier as MyLoadingProgressStyle).ctx;
-38. if (uiContext) {
-39. uiContext.getPromptAction().showToast({
-40. message: ((config.contentModifier as MyLoadingProgressStyle).enableLoading) + ''
-41. });
-42. }
-43. })
-44. .fontColor(Color.White)
-45. .backgroundColor(((config.contentModifier as MyLoadingProgressStyle).enableLoading) ? Color.Grey : 0x2577e3)
-46. }.width('50%')
+      Column() {
+        Button('' + ((config.contentModifier as MyLoadingProgressStyle).enableLoading))
+          .onClick((event: ClickEvent) => {
+            let uiContext = (config.contentModifier as MyLoadingProgressStyle).ctx;
+            if (uiContext) {
+              uiContext.getPromptAction().showToast({
+                message: ((config.contentModifier as MyLoadingProgressStyle).enableLoading) + ''
+              });
+            }
+          })
+          .fontColor(Color.White)
+          .backgroundColor(((config.contentModifier as MyLoadingProgressStyle).enableLoading) ? Color.Grey : 0x2577e3)
+      }.width('50%')
 
-48. }
+    }
 
-50. Row() {
-51. Column() {
-52. Gauge({
-53. value: (config.contentModifier as MyLoadingProgressStyle).enableLoading ? 50 : 30, min: 11, max: 100
-54. }) {
-55. Column() {
-56. Text('60')
-57. .maxFontSize('180sp')
-58. .minFontSize('160.0vp')
-59. .fontWeight(FontWeight.Medium)
-60. .fontColor('#ff182431')
-61. .width('40%')
-62. .height('30%')
-63. .textAlign(TextAlign.Center)
-64. .margin({ top: '22.2%' })
-65. .textOverflow({ overflow: TextOverflow.Ellipsis })
-66. .maxLines(1)
-67. }.width('100%').height('100%')
-68. }
-69. .colors(((config.contentModifier as MyLoadingProgressStyle).enableLoading) ? Color.Grey : 0x2577e3)
-70. .width(200)
-71. .strokeWidth(18)
-72. .padding(5)
-73. .trackShadow({ radius: 7, offsetX: 7, offsetY: 7 })
-74. .height(200)
-75. }.width('100%')
+    Row() {
+      Column() {
+        Gauge({
+          value: (config.contentModifier as MyLoadingProgressStyle).enableLoading ? 50 : 30, min: 11, max: 100
+        }) {
+          Column() {
+            Text('60')
+              .maxFontSize('180sp')
+              .minFontSize('160.0vp')
+              .fontWeight(FontWeight.Medium)
+              .fontColor('#ff182431')
+              .width('40%')
+              .height('30%')
+              .textAlign(TextAlign.Center)
+              .margin({ top: '22.2%' })
+              .textOverflow({ overflow: TextOverflow.Ellipsis })
+              .maxLines(1)
+          }.width('100%').height('100%')
+        }
+        .colors(((config.contentModifier as MyLoadingProgressStyle).enableLoading) ? Color.Grey : 0x2577e3)
+        .width(200)
+        .strokeWidth(18)
+        .padding(5)
+        .trackShadow({ radius: 7, offsetX: 7, offsetY: 7 })
+        .height(200)
+      }.width('100%')
 
-77. }
+    }
 
-79. Column() {
-80. List({ space: 20, initialIndex: 0 }) {
-81. ForEach(arr2, (item: string) => {
-82. ListItem() {
-83. Text((config.contentModifier as MyLoadingProgressStyle).enableLoading ? '' + item : Number(item) * 2 + '')
-84. .width('100%')
-85. .height('100%')
-86. .fontColor((config.contentModifier as MyLoadingProgressStyle).enableLoading ? Color.White : Color.Orange)
-87. .fontSize((config.contentModifier as MyLoadingProgressStyle).enableLoading ? 16 : 20)
-88. .textAlign(TextAlign.Center)
-89. .backgroundColor((config.contentModifier as MyLoadingProgressStyle).enableLoading ? Color.Grey : 0x2577e3)
-90. }
-91. .height(110)
-92. .border({
-93. width: 2,
-94. color: Color.White
-95. })
-96. }, (item: string) => item)
-97. }
-98. .height(200)
-99. .width('100%')
-100. .friction(0.6)
+    Column() {
+      List({ space: 20, initialIndex: 0 }) {
+        ForEach(arr, (item: string) => {
+          ListItem() {
+            Text((config.contentModifier as MyLoadingProgressStyle).enableLoading ? '' + item : Number(item) * 2 + '')
+              .width('100%')
+              .height('100%')
+              .fontColor((config.contentModifier as MyLoadingProgressStyle).enableLoading ? Color.White : Color.Orange)
+              .fontSize((config.contentModifier as MyLoadingProgressStyle).enableLoading ? 16 : 20)
+              .textAlign(TextAlign.Center)
+              .backgroundColor((config.contentModifier as MyLoadingProgressStyle).enableLoading ? Color.Grey : 0x2577e3)
+          }
+          .height(110)
+          .border({
+            width: 2,
+            color: Color.White
+          })
+        }, (item: string) => item)
+      }
+      .height(200)
+      .width('100%')
+      .friction(0.6)
 
-102. .lanes({
-103. minLength: (config.contentModifier as MyLoadingProgressStyle).enableLoading ? 40 : 80,
-104. maxLength: (config.contentModifier as MyLoadingProgressStyle).enableLoading ? 40 : 80
-105. })
-106. .scrollBar(BarState.Off)
-107. }
+      .lanes({
+        minLength: (config.contentModifier as MyLoadingProgressStyle).enableLoading ? 40 : 80,
+        maxLength: (config.contentModifier as MyLoadingProgressStyle).enableLoading ? 40 : 80
+      })
+      .scrollBar(BarState.Off)
+    }
 
-109. }.width('100%').padding(10)
-110. }
+  }.width('100%').padding(10)
+}
 
-113. @Entry
-114. @Component
-115. struct LoadingProgressDemoExample {
-116. @State loadingProgressList: (boolean | undefined | null)[] = [undefined, true, null, false];
-117. @State widthList: (number | string)[] = ['110%', 220, '40%', 80];
-118. @State loadingProgressIndex: number = 0;
-119. @State clickFlag: number = 0;
-120. scroller: Scroller = new Scroller();
+@Entry
+@Component
+struct LoadingProgressDemoExample {
+  @State loadingProgressList: (boolean | undefined | null)[] = [undefined, true, null, false];
+  @State loadingProgressIndex: number = 0;
+  scroller: Scroller = new Scroller();
 
-122. build() {
-123. Column() {
-124. Scroll(this.scroller) {
-125. Column({ space: 5 }) {
-126. Column() {
-127. LoadingProgress()
-128. .color('#106836')
-129. .size({ width: '100%' })
-130. .contentModifier(new MyLoadingProgressStyle(this.loadingProgressList[this.loadingProgressIndex], this.getUIContext()))
-131. }.width('100%').backgroundColor(0xdcdcdc)
-132. }.width('100%').margin({ top: 5 })
-133. }.height('85%')
+  build() {
+    Column() {
+      Scroll(this.scroller) {
+        Column({ space: 5 }) {
+          Column() {
+            LoadingProgress()
+              .color('#106836')
+              .size({ width: '100%' })
+              .contentModifier(new MyLoadingProgressStyle(this.loadingProgressList[this.loadingProgressIndex], this.getUIContext()))
+          }.width('100%').backgroundColor(0xdcdcdc)
+        }.width('100%').margin({ top: 5 })
+      }.height('85%')
 
-135. Button('点击切换config.enableloading').onClick(() => {
-136. this.clickFlag++;
-137. this.loadingProgressIndex = (this.loadingProgressIndex + 1) % this.loadingProgressList.length;
-138. console.info('enableLoading:' + this.loadingProgressList[this.loadingProgressIndex]);
-139. }).margin(20)
-140. }
+      Button('点击切换config.enableLoading').onClick(() => {
+        this.loadingProgressIndex = (this.loadingProgressIndex + 1) % this.loadingProgressList.length;
+        console.info('enableLoading:' + this.loadingProgressList[this.loadingProgressIndex]);
+      }).margin(20)
+    }
 
-142. }
-143. }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/mKskHLmUTvuUDE6VwlEeiw/zh-cn_image_0000002558606776.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/Am7t5MNMR4OEZxU_okm7bQ/zh-cn_image_0000002706836092.gif)

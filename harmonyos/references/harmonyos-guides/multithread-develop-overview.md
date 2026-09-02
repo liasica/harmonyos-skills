@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multithread-d
 title: 应用多线程开发概述
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 应用多线程开发概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:36+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:ad018f4fdaec80c9f03bb1ebd4e20f9ff37054629809e129b77fac0a7af4b6d7
+scraped_at: 2026-09-02T14:49:45+08:00
+doc_updated_at: 2026-08-18
+content_hash: sha256:f28f88064c6aeb85b078e7603aea925dfc97e6c0c2806046b462672080070f78
 ---
 
-在ArkTS应用开发中，不同业务场景需要不同的并发能力和任务类型。
+在ArkTS应用开发中，不同业务场景需要使用不同的并发能力和任务类型。
 
 常见的业务场景分为三种并发任务：
 

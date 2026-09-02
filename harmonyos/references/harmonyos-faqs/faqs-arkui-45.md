@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-45
 title: 组件支持的参数类型及参数单位类型：PX、 VP、 FP 、LPX、Percentage、Resource 详细区别是什么
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 组件支持的参数类型及参数单位类型：PX、 VP、 FP 、LPX、Percentage、Resource 详细区别是什么
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 组件支持的参数类型及参数单位类型：PX、 VP、 FP 、LPX、Percentage、Resource 详细区别是什么
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:25:08+08:00
-doc_updated_at: 2026-03-17
+scraped_at: 2026-09-02T15:21:20+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:72158d8b10f7c1595fc70a4474a28e753ace4af8f3171bd8d17aa8e026f3cd66
 ---
 

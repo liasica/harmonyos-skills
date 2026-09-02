@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/camera-st
 title: 结构体
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:46+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:9e782051b1266952435b9ad85bd6e342ff049635dc641544d7aafd9a4219d0be
+scraped_at: 2026-09-02T14:52:51+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:a15e546f0cf1e0a6dfa67314c21d2db9bfd48666fda27a14efa5c1915d427d2a
 ---
 
 * **[Camera\_Size](capi-oh-camera-camera-size.md)**
@@ -19,10 +19,13 @@ content_hash: sha256:9e782051b1266952435b9ad85bd6e342ff049635dc641544d7aafd9a421
 * **[Camera\_Point](capi-oh-camera-camera-point.md)**
 * **[Camera\_Location](capi-oh-camera-camera-location.md)**
 * **[Camera\_PhotoCaptureSetting](capi-oh-camera-camera-photocapturesetting.md)**
+* **[OH\_Camera\_PhotoCaptureSettingExt](capi-oh-camera-camera-photocapturesettingext.md)**
 * **[Camera\_FrameShutterInfo](capi-oh-camera-camera-frameshutterinfo.md)**
 * **[Camera\_CaptureEndInfo](capi-oh-camera-camera-captureendinfo.md)**
 * **[Camera\_Rect](capi-oh-camera-camera-rect.md)**
+* **[OH\_Camera\_Rect\_Ext](capi-oh-camera-oh-camera-rect-ext.md)**
 * **[Camera\_MetadataObject](capi-oh-camera-camera-metadataobject.md)**
+* **[OH\_Camera\_MetadataObjectExt](capi-oh-camera-oh-camera-metadataobjectext.md)**
 * **[Camera\_TorchStatusInfo](capi-oh-camera-camera-torchstatusinfo.md)**
 * **[Camera\_SmoothZoomInfo](capi-oh-camera-camera-smoothzoominfo.md)**
 * **[Camera\_CaptureStartInfo](capi-oh-camera-camera-capturestartinfo.md)**
@@ -47,3 +50,6 @@ content_hash: sha256:9e782051b1266952435b9ad85bd6e342ff049635dc641544d7aafd9a421
 * **[VideoOutput\_Callbacks](capi-oh-camera-videooutput-callbacks.md)**
 * **[Camera\_VideoOutput](capi-oh-camera-camera-videooutput.md)**
 * **[Camera\_OcclusionDetectionResult](capi-oh-camera-camera-occlusiondetectionresult.md)**
+* **[OH\_Camera\_ZoomRange](capi-oh-camera-oh-camera-zoomrange.md)**
+* **[OH\_Camera\_PhysicalAperture](capi-oh-camera-oh-camera-physicalaperture.md)**
+* **[OH\_Camera\_ZoomPointInfo](capi-oh-camera-oh-camera-zoompointinfo.md)**

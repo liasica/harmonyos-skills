@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-nearlinkkit-510
 title: NearLink Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.1.0(18) > OS平台能力 > API变更清单 > NearLink Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.0(18) > OS平台能力 > API变更清单 > NearLink Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:14+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:16:35+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:766c21d923146331a28b91b2ef5620e893022bfcfd2f7b0a7cf0c0e654f131df
 ---
 

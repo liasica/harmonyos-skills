@@ -1,28 +1,24 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-tileoverlay
-title: TileOverlay
-breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > TileOverlay
+title: Interface (TileOverlay)
+breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (TileOverlay)
 category: harmonyos-references
-scraped_at: 2026-04-29T14:08:01+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:5a8a4c2a7524c842ccb79faa22c75aa02e98a38f5064d765f691ca00a7107ad4
+scraped_at: 2026-09-02T15:02:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:85e48b9e04e0262deb6b8ccfcda3370e33c46525067391d10585fc42f444f8e8
 ---
 
 ## 导入模块
 
-PhonePC/2in1TabletWearable
-
-```
-1. import { map, mapCommon } from '@kit.MapKit';
+```typescript
+import { map, mapCommon } from '@kit.MapKit';
 ```
 
 ## TileOverlay
 
-PhonePC/2in1TabletWearable
-
 瓦片图层，继承[BaseOverlay](map-map-baseoverlay.md)。瓦片图层是一种基于[BaseOverlay](map-map-baseoverlay.md)实现的地图覆盖层，用于展示自定义瓦片。
 
-说明
+**说明** 
 
 由于性能考虑，建议最多添加10个TileOverlay，且提供的图层瓦片分辨率是256\*256。
 
@@ -36,19 +32,17 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. let params: mapCommon.TileOverlayParams = {
-2. // 设置地图瓦片图层的地址，必须是以http或者https开头的URL且包含占位符{x}、{y}和{z}
-3. tileUrl: "https://xxx/xxx?x={x}&y={y}&z={z}",
-4. transparency: 0,
-5. fadeIn: false
-6. };
-7. let tileOverlay: map.TileOverlay = this.mapController?.addTileOverlay(params);
+```typescript
+let params: mapCommon.TileOverlayParams = {
+  // 开发者的地图瓦片图层地址，必须使用以http或者https开头的URL地址，且需包含?x={x}&y={y}&z={z}格式的占位符
+  tileUrl: "https://xxx/xxx?x={x}&y={y}&z={z}",
+  transparency: 0,
+  fadeIn: false
+};
+let tileOverlay: map.TileOverlay = this.mapController?.addTileOverlay(params);
 ```
 
 ### clearTileCache
-
-PhonePC/2in1TabletWearable
 
 clearTileCache(): void
 
@@ -64,13 +58,11 @@ clearTileCache(): void
 
 **示例：**
 
-```
-1. tileOverlay.clearTileCache();
+```typescript
+tileOverlay.clearTileCache();
 ```
 
 ### setFadeIn
-
-PhonePC/2in1TabletWearable
 
 setFadeIn(fadeIn: boolean): void
 
@@ -92,13 +84,11 @@ setFadeIn(fadeIn: boolean): void
 
 **示例：**
 
-```
-1. tileOverlay.setFadeIn(false);
+```typescript
+tileOverlay.setFadeIn(false);
 ```
 
 ### setTransparency
-
-PhonePC/2in1TabletWearable
 
 setTransparency(transparency: number): void
 
@@ -120,13 +110,11 @@ setTransparency(transparency: number): void
 
 **示例：**
 
-```
-1. tileOverlay.setTransparency(0.5);
+```typescript
+tileOverlay.setTransparency(0.5);
 ```
 
 ### getFadeIn
-
-PhonePC/2in1TabletWearable
 
 getFadeIn(): boolean
 
@@ -148,13 +136,11 @@ getFadeIn(): boolean
 
 **示例：**
 
-```
-1. let isFadeIn: boolean = tileOverlay.getFadeIn();
+```typescript
+let isFadeIn: boolean = tileOverlay.getFadeIn();
 ```
 
 ### getTransparency
-
-PhonePC/2in1TabletWearable
 
 getTransparency(): number
 
@@ -176,13 +162,11 @@ getTransparency(): number
 
 **示例：**
 
-```
-1. let transparency: number = tileOverlay.getTransparency();
+```typescript
+let transparency: number = tileOverlay.getTransparency();
 ```
 
 ### clearDiskCache
-
-PhonePC/2in1TabletWearable
 
 clearDiskCache(): Promise<void>
 
@@ -204,6 +188,6 @@ clearDiskCache(): Promise<void>
 
 **示例：**
 
-```
-1. tileOverlay.clearDiskCache();
+```typescript
+tileOverlay.clearDiskCache();
 ```

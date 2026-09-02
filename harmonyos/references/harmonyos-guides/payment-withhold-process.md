@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-withh
 title: 签约代扣场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 免密支付接入 > 签约代扣场景
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:32+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:6991eeff9c3ad2ad0142550dbd5726c0d78c1056319d7ffb794fc7db832ebf7f
+scraped_at: 2026-09-02T14:59:59+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:884f815cfd551c226efb84ce4b955932fe761cb097a4c9e8d299dad9b9a76b2c
 ---
 
 ## 场景介绍
@@ -18,13 +18,13 @@ content_hash: sha256:6991eeff9c3ad2ad0142550dbd5726c0d78c1056319d7ffb794fc7db832
 
 华为支付签约页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/q87LFkYhRHqCDY3aK5x9Iw/zh-cn_image_0000002589245397.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/lLzg_zxLQgeDOHB21GI8sw/zh-cn_image_0000002736434263.png)
 
 ## 业务流程
 
 开发者通过接入Payment Kit 签约代扣能力，在获取用户签约授权的前提下，可以向用户的华为支付账户发起支付扣款，无需用户输入支付密码就可以优先使用签约的支付方式完成扣款。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/NHeApujvSzOEm2bvn6HB6A/zh-cn_image_0000002558765590.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/bUqP3jYRQ7aBM3PDbUdPfg/zh-cn_image_0000002706835112.png)
 
 1. 商户客户端请求商户服务端创建签约订单。
 2. 商户服务端按照商户模型调用Payment Kit服务端[直连商户预签约](../harmonyos-references/payment-withhold-presign.md)或[服务商预签约](../harmonyos-references/payment-partner-withhold-presign.md)接口。
@@ -63,110 +63,110 @@ content_hash: sha256:6991eeff9c3ad2ad0142550dbd5726c0d78c1056319d7ffb794fc7db832
 
    以下为开放API接口请求及[contractStr](../harmonyos-references/payment-model.md#contractstr)构建[示例代码](https://gitcode.com/HarmonyOS_Samples/paymentkit-sample-code-serverdemo-java)片段：
 
-   ```
-   1. import com.huawei.petalpay.paymentservice.apiservice.client.model.BaseGwRspWithSign;
-   2. import com.huawei.petalpay.paymentservice.apiservice.client.model.PreSignRequestV2;
-   3. import com.huawei.petalpay.paymentservice.apiservice.client.model.PreSignResponse;
-   4. import com.huawei.petalpay.paymentservice.core.client.DefaultPetalPayClient;
-   5. import com.huawei.petalpay.paymentservice.core.client.PetalPayClient;
-   6. import com.huawei.petalpay.paymentservice.example.common.CommonResponse;
-   7. import com.huawei.petalpay.paymentservice.example.common.MercConfigUtil;
+   ```java
+   import com.huawei.petalpay.paymentservice.apiservice.client.model.BaseGwRspWithSign;
+   import com.huawei.petalpay.paymentservice.apiservice.client.model.PreSignRequestV2;
+   import com.huawei.petalpay.paymentservice.apiservice.client.model.PreSignResponse;
+   import com.huawei.petalpay.paymentservice.core.client.DefaultPetalPayClient;
+   import com.huawei.petalpay.paymentservice.core.client.PetalPayClient;
+   import com.huawei.petalpay.paymentservice.example.common.CommonResponse;
+   import com.huawei.petalpay.paymentservice.example.common.MercConfigUtil;
 
-   9. public class MercApiController {
-   10. private static PetalPayClient payClient = new DefaultPetalPayClient(MercConfigUtil.getMercConfig());
-   11. /**
-   12. * 预签约接口调用
-   13. */
-   14. public CommonResponse contractPreSignAppV2() {
-   15. // 组装对象
-   16. PreSignRequestV2 preSignReq = getPreSignRequestV2();
-   17. PreSignResponse response = null;
-   18. try {
-   19. response = payClient.execute("POST", "/api/v2/contract/presign/app", PreSignResponse.class, preSignReq);
-   20. } catch (Exception e) {
-   21. // todo 异常处理
-   22. log.error("request error ", e);
-   23. return CommonResponse.buildErrorRsp(e.getMessage());
-   24. }
-   25. if (!validResponse(response)) {
-   26. // todo 异常处理
-   27. log.error("response is invalid ", response);
-   28. return CommonResponse.buildFailRsp(response);
-   29. }
-   30. return CommonResponse.buildSuccessRsp(payClient.buildContractStr(response.getPreSignNo()));
-   31. }
-   32. public static boolean validResponse(BaseGwRspWithSign rsp) {
-   33. return rsp != null && "000000".equals(rsp.getResultCode());
-   34. }
-   35. /**
-   36. * 预签约接口请求参数组装，商户请根据业务自行实现
-   37. */
-   38. private PreSignRequestV2 getPreSignRequestV2() {
-   39. return PreSignRequestV2.builder().appId(MercConfigUtil.APP_ID) // appId，需要配置为与商户绑定的正确的appId
-   40. .mercContractCode("pay-example-" + System.currentTimeMillis()) // 签约协议号，每次请求都要变，请将pay-example-修改为商户自己的订单前缀
-   41. .mercNo(MercConfigUtil.MERC_NO) // 商户号
-   42. .planId("100") // 协议模板ID，该模板ID是商户在向华为支付提交代扣权限申请时由华为支付生成。请填写正确的协议模板ID。
-   43. .callbackUrl("https://www.xxxxxx.com/hw/sign/callback") // 回调通知地址，通知URL必须为直接可访问的URL，要求为https地址。最大长度为512。请替换为格式正确的结果通知回调地址。
-   44. .build();
-   45. }
-   46. }
+   public class MercApiController {
+       private static PetalPayClient payClient = new DefaultPetalPayClient(MercConfigUtil.getMercConfig());
+       /**
+        * 预签约接口调用
+        */
+       public CommonResponse contractPreSignAppV2() {
+           // 组装对象
+           PreSignRequestV2 preSignReq = getPreSignRequestV2();
+           PreSignResponse response = null;
+           try {
+               response = payClient.execute("POST", "/api/v2/contract/presign/app", PreSignResponse.class, preSignReq);
+           } catch (Exception e) {
+               // 异常处理
+               log.error("request error ", e);
+               return CommonResponse.buildErrorRsp(e.getMessage());
+           }
+           if (!validResponse(response)) {
+               // 异常处理
+               log.error("response is invalid ", response);
+               return CommonResponse.buildFailRsp(response);
+           }
+           return CommonResponse.buildSuccessRsp(payClient.buildContractStr(response.getPreSignNo()));
+       }
+       public static boolean validResponse(BaseGwRspWithSign rsp) {
+           return rsp != null && "000000".equals(rsp.getResultCode());
+       }
+       /**
+        * 预签约接口请求参数组装，商户请根据业务自行实现
+        */
+       private PreSignRequestV2 getPreSignRequestV2() {
+           return PreSignRequestV2.builder().appId(MercConfigUtil.APP_ID) // appId，需要配置为与商户绑定的正确的appId
+               .mercContractCode("pay-example-" + System.currentTimeMillis()) // 签约协议号，每次请求都要变，请将pay-example-修改为商户自己的订单前缀
+               .mercNo(MercConfigUtil.MERC_NO) // 商户号
+               .planId("100") // 协议模板ID，该模板ID是商户在向华为支付提交代扣权限申请时由华为支付生成。请填写正确的协议模板ID。
+               .callbackUrl("https://www.xxxxxx.com/hw/sign/callback") // 回调通知地址，通知URL必须为直接可访问的URL，要求为https地址。最大长度为512。请替换为格式正确的结果通知回调地址。
+               .build();
+       }
+   }
    ```
 
 ### 拉起华为支付签约收银台（端侧开发）
 
 商户客户端使用[contractStr](../harmonyos-references/payment-model.md#contractstr)作为参数调用[requestContract](../harmonyos-references/payment-paymentservice.md#requestcontract)接口拉起Payment Kit签约收银台。
 
-当接口通过.then()方法返回时，则表示当前订单支付成功，通过.catch()方法返回表示订单支付失败。当此次请求有异常时，可通过**error.code**获取错误码，错误码相关信息请参见[错误码](../harmonyos-references/payment-error-code.md)。示例代码如下：
+当接口通过.then()方法返回时，则表示当前订单支付成功，通过.catch()方法返回表示订单支付失败。当此次请求有异常时，可通过**error.code**获取错误码，错误码相关信息请参见[错误码](../harmonyos-references/errorcode-payment.md)。示例代码如下：
 
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { paymentService } from '@kit.PaymentKit';
+import { common } from '@kit.AbilityKit';
+
+@Entry
+@Component
+struct Index {
+  context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  requestContractPromise() {
+    // 请使用开发者真实的入参信息（contractStr）
+    const contractStr = '{"appId":"***","preSignNo":"***"}';
+    paymentService.requestContract(this.context, contractStr)
+      .then(() => {
+        // 签约成功
+        console.info('succeeded in signing');
+      })
+      .catch((error: BusinessError) => {
+        // 签约失败
+        console.error(`failed to sign, error.code: ${error.code}, error.message: ${error.message}`);
+      });
+  }
+
+  build() {
+    Column() {
+      Button('requestContractPromise')
+        .type(ButtonType.Capsule)
+        .width('50%')
+        .margin(20)
+        .onClick(() => {
+          this.requestContractPromise();
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { paymentService } from '@kit.PaymentKit';
-3. import { common } from '@kit.AbilityKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-9. requestContractPromise() {
-10. // use your own contractStr
-11. const contractStr = '{"appId":"***","preSignNo":"***"}';
-12. paymentService.requestContract(this.context, contractStr)
-13. .then(() => {
-14. // succeeded in signing
-15. console.info('succeeded in signing');
-16. })
-17. .catch((error: BusinessError) => {
-18. // failed to sign
-19. console.error(`failed to sign, error.code: ${error.code}, error.message: ${error.message}`);
-20. });
-21. }
+**说明** 
 
-23. build() {
-24. Column() {
-25. Button('requestContractPromise')
-26. .type(ButtonType.Capsule)
-27. .width('50%')
-28. .margin(20)
-29. .onClick(() => {
-30. this.requestContractPromise();
-31. })
-32. }
-33. .width('100%')
-34. .height('100%')
-35. }
-36. }
-```
-
-说明
-
-* 如果用户没有提前登录，系统会自动拉起华为账号登录页面让用户登录。
+* 如果用户未提前登录，系统会自动拉起华为账号登录页面让用户登录。若用户取消登录或登录失败，则签约流程将中断。
 * 签约成功，不建议以客户端返回作为用户的签约结果，需以服务器接收到的结果通知或者查询API返回为准。
 
 ### 签约结果回调通知（服务器开发）
 
 支付成功后华为支付服务器会调用开发者提供的回调接口，将签约信息返回给开发者服务器，回调详细信息按商户模式请参见[签约结果回调通知](../harmonyos-references/payment-withhold-sign-notify.md)。
 
-说明
+**说明** 
 
 回调接口是开发者调用预签约时的入参字段callbackUrl或签约模板配置的回调地址。
 

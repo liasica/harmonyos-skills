@@ -1,34 +1,37 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-api-extendservice
-title: extendService (华为账号增强服务)
-breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > ArkTS API > extendService (华为账号增强服务)
+title: "@hms.core.account.extendService (华为账号增强服务)"
+breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > ArkTS API > @hms.core.account.extendService (华为账号增强服务)
 category: harmonyos-references
-scraped_at: 2026-04-29T14:06:44+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:a6cfd87a5ea6fb19b9bd105c20889c67a52304123239c06125a515d24d5eb260
+scraped_at: 2026-09-02T15:02:49+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ca047d3b96c94e46f9c56b6cf9cdf879dd6eb343f04b61a0ef3d36878df3931c
 ---
 
-本模块提供Account Kit的增强能力，包括身份验证、跳转账号中心等功能。
+## 模块概述
+
+@hms.core.account.extendService模块提供华为账号增强能力，在基础的登录、授权功能之上，为应用提供更丰富的账号管理与安全校验能力。包含两大核心功能：身份验证、打开账号中心。
+
+* 身份验证：拉起身份验证页面，对当前系统登录的华为账号用户的身份进行校验，以保护用户的个人信息和隐私安全。
+* 打开账号中心：直接拉起华为账号中心页面，供用户查看并管理当前登录的华为账号信息。
+
+开发者可通过@hms.core.account.extendService模块提供的方法[verifyAccount](account-api-extendservice.md#verifyaccount-1)、[startAccountCenter](account-api-extendservice.md#startaccountcenter-1)实现上述能力。
 
 **起始版本：** 4.0.0(10)
 
-说明
+**说明** 
 
 该服务目前仅对系统应用开放。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { extendService } from '@kit.AccountKit';
+```typescript
+import { extendService } from '@kit.AccountKit';
 ```
 
 ## IdType
 
-PhonePC/2in1TabletTVWearable
-
-该枚举为ID类型枚举对象。
+华为账号身份标识类型枚举。当前支持设置：IdType.UNION\_ID或IdType.OPEN\_ID。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -46,9 +49,7 @@ PhonePC/2in1TabletTVWearable
 
 ## RiskLevel
 
-PhonePC/2in1TabletTVWearable
-
-该枚举为风险值枚举对象。
+风险等级枚举。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -60,14 +61,12 @@ PhonePC/2in1TabletTVWearable
 
 | **名称** | **值** | **说明** |
 | --- | --- | --- |
-| LOW | 1 | 低风险 |
-| HIGH | 2 | 高风险 |
+| LOW | 1 | 低风险。 |
+| HIGH | 2 | 高风险。 |
 
 ## VerifyRequest
 
-PhonePC/2in1TabletTVWearable
-
-该类为身份验证请求对象。
+身份验证请求。[verifyAccount](account-api-extendservice.md#verifyaccount-1)方法入参，接口需包含用户的基础身份标识，与系统华为账号用户进行身份比对。开发者可通过设置身份验证的场景值、风险等级等属性，控制身份验证的次数和方式，华为账号服务会根据这些属性拉起对应的身份验证页面。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -79,33 +78,31 @@ PhonePC/2in1TabletTVWearable
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| idType | [IdType](account-api-extendservice.md#idtype) | 否 | 否 | 属性idValue的ID类型。 |
-| idValue | string | 否 | 否 | 用户获取的UnionID、OpenID值，传递的类型通过idType属性定义。长度限制1-256。  UnionID、OpenID值可以通过使用[LoginWithHuaweiIDResponse](account-api-authentication.md#loginwithhuaweiidresponse)、[AuthorizationWithHuaweiIDResponse](account-api-authentication.md#authorizationwithhuaweiidresponse)、[LoginPanel](account-api-loginpanel.md#loginpanel)或[LoginWithHuaweiIDButton](account-api-huawei-id-button.md#loginwithhuaweiidbutton)接口获取，具体方法参考其示例代码。 |
+| idType | [IdType](account-api-extendservice.md#idtype) | 否 | 否 | 华为账号身份标识类型。当前非系统应用仅支持设置：IdType.UNION\_ID或IdType.OPEN\_ID。 |
+| idValue | string | 否 | 否 | 华为账号身份标识UnionID/OpenID值。身份标识类型通过idType属性定义。长度限制1-256。  UnionID、OpenID值可以通过[华为账号登录](account-api-authentication.md#登录华为账号)、[获取华为账号用户信息](account-api-authentication.md#获取华为账号用户信息)、[华为账号Panel登录组件](account-api-loginpanel.md#loginpanel)或[华为账号Button登录组件](account-api-huawei-id-button.md#loginwithhuaweiidbutton)获取。 |
 | sceneId | string | 否 | 否 | 身份验证的场景值，该值与riskLevel属性一起代表了应用在华为账号服务器上的一组配置，包括验证次数、首次验证方式、二次验证方式等。长度限制1-10。 |
 | riskLevel | [RiskLevel](account-api-extendservice.md#risklevel) | 否 | 否 | 风险等级，该值与sceneId一起代表了应用在华为账号服务器上的一组配置，一般风险等级高的场景，需要进行二次验证。 |
-| nonce | string | 否 | 否 | 请求体中的nonce参数，长度限制1-64。该参数会包含在返回的verifyToken中，通过校验一致性，可用于防止重放攻击。  推荐开发者用随机数并做一致性校验。建议生成方式：[util.generateRandomUUID()](js-apis-util.md#utilgeneraterandomuuid9)。 |
+| nonce | string | 否 | 否 | 请求体中的nonce属性，长度限制1-64。该属性会包含在返回的verifyToken中，通过校验一致性，可用于防止重放攻击。  推荐开发者用随机数并做一致性校验。建议生成方式：[util.generateRandomUUID()](js-apis-util.md#utilgeneraterandomuuid9)。 |
 
 **示例：**
 
-```
-1. import { extendService } from '@kit.AccountKit';
-2. import { util } from '@kit.ArkTS';
+```typescript
+import { extendService } from '@kit.AccountKit';
+import { util } from '@kit.ArkTS';
 
-4. // 创建请求参数
-5. const request: extendService.VerifyRequest = {
-6. idType: extendService.IdType.UNION_ID,
-7. idValue: '<可通过华为账号登录接口获取>', // 该值可以通过华为账号登录接口获取
-8. sceneId: '<触发身份认证的场景ID>', // 触发身份验证的场景ID
-9. riskLevel: extendService.RiskLevel.LOW,
-10. nonce: util.generateRandomUUID() // 建议使用generateRandomUUID生成nonce
-11. };
+// 创建请求参数
+const request: extendService.VerifyRequest = {
+  idType: extendService.IdType.UNION_ID,
+  idValue: '<可通过华为账号登录接口获取>', // 该值可以通过华为账号登录接口获取
+  sceneId: '<触发身份认证的场景ID>', // 触发身份验证的场景ID
+  riskLevel: extendService.RiskLevel.LOW,
+  nonce: util.generateRandomUUID() // 建议使用generateRandomUUID生成nonce
+};
 ```
 
 ## VerifyResult
 
-PhonePC/2in1TabletTVWearable
-
-该类为身份验证请求结果对象。
+身份验证请求响应。[verifyAccount](account-api-extendservice.md#verifyaccount-1)方法返回值，当用户验证身份成功时返回。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -121,49 +118,47 @@ PhonePC/2in1TabletTVWearable
 
 **示例：**
 
-```
-1. import { extendService } from '@kit.AccountKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { util } from '@kit.ArkTS';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { extendService } from '@kit.AccountKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { util } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. // 创建请求参数
-7. const request: extendService.VerifyRequest = {
-8. idType: extendService.IdType.UNION_ID,
-9. idValue: '<可通过华为账号登录接口获取>', // 该值可以通过华为账号登录或授权接口获取
-10. sceneId: '<触发身份认证的场景ID>', // 触发身份验证的场景ID
-11. riskLevel: extendService.RiskLevel.LOW,
-12. nonce: util.generateRandomUUID() // 建议使用generateRandomUUID生成nonce
-13. };
+// 创建请求参数
+const request: extendService.VerifyRequest = {
+  idType: extendService.IdType.UNION_ID,
+  idValue: '<可通过华为账号登录接口获取>', // 该值可以通过华为账号登录或授权接口获取
+  sceneId: '<触发身份认证的场景ID>', // 触发身份验证的场景ID
+  riskLevel: extendService.RiskLevel.LOW,
+  nonce: util.generateRandomUUID() // 建议使用generateRandomUUID生成nonce
+};
 
-15. // 执行身份验证请求，并处理结果
-16. try {
-17. // 此示例为代码片段，实际需在自定义组件实例中使用，并传入有效的Context上下文对象
-18. extendService.verifyAccount(this.getUIContext().getHostContext(), request, (error: BusinessError, data) => {
-19. if (error) {
-20. dealAllError(error);
-21. return;
-22. }
-23. const verifyResult = data as extendService.VerifyResult;
-24. hilog.info(0x0000, 'testTag', 'Succeeded in verifying.');
-25. const verifyToken = verifyResult.verifyToken;
-26. // 开发者处理verifyToken
-27. });
-28. } catch (error) {
-29. dealAllError(error);
-30. }
+// 执行身份验证请求，并处理结果
+try {
+  // 此示例为代码片段，实际需在自定义组件实例中使用，并传入有效的Context上下文对象
+  extendService.verifyAccount(this.getUIContext().getHostContext(), request, (error: BusinessError, data) => {
+    if (error) {
+      dealAllError(error);
+      return;
+    }
+    const verifyResult = data as extendService.VerifyResult;
+    hilog.info(0x0000, 'testTag', 'Succeeded in verifying.');
+    const verifyToken = verifyResult.verifyToken;
+    // 开发者处理verifyToken
+  });
+} catch (error) {
+  dealAllError(error);
+}
 
-32. // 错误处理
-33. function dealAllError(error: BusinessError): void {
-34. hilog.error(0x0000, 'testTag', `Failed to verify. Code: ${error.code}, message: ${error.message}`);
-35. }
+// 错误处理
+function dealAllError(error: BusinessError): void {
+  hilog.error(0x0000, 'testTag', `Failed to verify. Code: ${error.code}, message: ${error.message}`);
+}
 ```
 
 ## ExtendErrorCode
 
-PhonePC/2in1TabletTVWearable
-
-该枚举定义了Account Kit扩展模块错误码。
+华为账号增强服务接口错误码枚举。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -174,22 +169,20 @@ PhonePC/2in1TabletTVWearable
 | **名称** | **值** | **说明** |
 | --- | --- | --- |
 | INVALID\_PARAMETER | [401](errorcode-universal.md#section401-参数检查失败) | 参数检查失败。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
-| NETWORK\_ERROR | [1001600001](account-api-error-code.md#section1001600001-网络不可用) | 网络不可用。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
-| ACCOUNT\_NOT\_LOGGED\_IN | [1001600002](account-api-error-code.md#section1001600002-账号未登录) | 用户未登录华为账号。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
-| PACKAGE\_FINGERPRINT\_CHECK\_ERROR | [1001600003](account-api-error-code.md#section1001600003-应用指纹证书校验失败) | 应用指纹证书校验失败。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
-| PERMISSION\_CHECK\_ERROR | [1001600004](account-api-error-code.md#section1001600004-应用未申请对应permissions权限) | 应用未申请对应permissions权限。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
-| USER\_CANCELED | [1001600005](account-api-error-code.md#section1001600005-用户取消当前操作) | 用户取消当前操作。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
-| VERIFICATION\_FACTOR\_UNAVAILABLE | [1001600006](account-api-error-code.md#section1001600006-当前设备不支持此验证要素) | 当前设备不支持此验证要素。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
-| INTERNAL\_ERROR | [1001600007](account-api-error-code.md#section1001600007-内部错误) | 内部错误。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
-| DEVICE\_NOT\_SUPPORTED | [1001600011](account-api-error-code.md#section1001600011-该设备不支持此api) | 该设备不支持此API。  **起始版本**：6.1.0(23)  **元服务API：** 从版本6.1.0(23)开始，该接口支持在元服务中使用。 |
+| NETWORK\_ERROR | [1001600001](errorcode-account-kit.md#section1001600001-网络不可用) | 网络不可用。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| ACCOUNT\_NOT\_LOGGED\_IN | [1001600002](errorcode-account-kit.md#section1001600002-账号未登录) | 用户未登录华为账号。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| PACKAGE\_FINGERPRINT\_CHECK\_ERROR | [1001600003](errorcode-account-kit.md#section1001600003-应用指纹证书校验失败) | 应用指纹证书校验失败。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| PERMISSION\_CHECK\_ERROR | [1001600004](errorcode-account-kit.md#section1001600004-应用未申请对应permissions权限) | 应用未申请对应permissions权限。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| USER\_CANCELED | [1001600005](errorcode-account-kit.md#section1001600005-用户取消当前操作) | 用户取消当前操作。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| VERIFICATION\_FACTOR\_UNAVAILABLE | [1001600006](errorcode-account-kit.md#section1001600006-当前设备不支持此验证要素) | 当前设备不支持此验证要素。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| INTERNAL\_ERROR | [1001600007](errorcode-account-kit.md#section1001600007-内部错误) | 内部错误。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| DEVICE\_NOT\_SUPPORTED | [1001600011](errorcode-account-kit.md#section1001600011-该设备不支持此api) | 该设备不支持此API。  **起始版本：** 6.1.0(23)  **元服务API：** 从版本6.1.0(23)开始，该接口支持在元服务中使用。 |
 
 ## verifyAccount
 
-PhonePC/2in1TabletTVWearable
-
 verifyAccount(context: common.Context, request: VerifyRequest, callback: AsyncCallback<VerifyResult>): void
 
-执行Account Kit身份验证请求，使用Callback异步回调。
+身份验证方法，使用Callback异步回调返回验证成功凭证。调用该方法会拉起身份验证页面，需要用户进行密码、短信等方式验证身份。身份页面可长时间停留，当用户验证成功后，会返回验证凭证给应用，其他场景如用户点击关闭则会抛出错误码。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -209,66 +202,64 @@ verifyAccount(context: common.Context, request: VerifyRequest, callback: AsyncCa
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS错误码](account-api-error-code.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-account-kit.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | [401](errorcode-universal.md#section401-参数检查失败) | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| [1001600001](account-api-error-code.md#section1001600001-网络不可用) | The network is unavailable. |
-| [1001600002](account-api-error-code.md#section1001600002-账号未登录) | The user has not logged in with HUAWEI ID. |
-| [1001600003](account-api-error-code.md#section1001600003-应用指纹证书校验失败) | Failed to check the fingerprint of the application bundle. |
-| [1001600004](account-api-error-code.md#section1001600004-应用未申请对应permissions权限) | The application does not have the required permissions. |
-| [1001600005](account-api-error-code.md#section1001600005-用户取消当前操作) | The user canceled the current operation. |
-| [1001600006](account-api-error-code.md#section1001600006-当前设备不支持此验证要素) | The requested verification factors are unavailable on the device. |
-| [1001600007](account-api-error-code.md#section1001600007-内部错误) | Internal error. |
+| [1001600001](errorcode-account-kit.md#section1001600001-网络不可用) | The network is unavailable. |
+| [1001600002](errorcode-account-kit.md#section1001600002-账号未登录) | The user has not logged in with HUAWEI ID. |
+| [1001600003](errorcode-account-kit.md#section1001600003-应用指纹证书校验失败) | Failed to check the fingerprint of the application bundle. |
+| [1001600004](errorcode-account-kit.md#section1001600004-应用未申请对应permissions权限) | The application does not have the required permissions. |
+| [1001600005](errorcode-account-kit.md#section1001600005-用户取消当前操作) | The user canceled the current operation. |
+| [1001600006](errorcode-account-kit.md#section1001600006-当前设备不支持此验证要素) | The requested verification factors are unavailable on the device. |
+| [1001600007](errorcode-account-kit.md#section1001600007-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { extendService } from '@kit.AccountKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { util } from '@kit.ArkTS';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { extendService } from '@kit.AccountKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { util } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. // 创建请求参数
-7. const request: extendService.VerifyRequest = {
-8. idType: extendService.IdType.UNION_ID,
-9. idValue: '<可通过华为账号登录接口获取>', // 该值可以通过华为账号登录接口获取
-10. sceneId: '<触发身份认证的场景ID>', // 触发身份验证的场景ID，通过配置申请获取
-11. riskLevel: extendService.RiskLevel.LOW,
-12. nonce: util.generateRandomUUID() // 建议使用generateRandomUUID生成nonce
-13. };
+// 创建请求参数
+const request: extendService.VerifyRequest = {
+  idType: extendService.IdType.UNION_ID,
+  idValue: '<可通过华为账号登录接口获取>', // 该值可以通过华为账号登录接口获取
+  sceneId: '<触发身份认证的场景ID>', // 触发身份验证的场景ID，通过配置申请获取
+  riskLevel: extendService.RiskLevel.LOW,
+  nonce: util.generateRandomUUID() // 建议使用generateRandomUUID生成nonce
+};
 
-15. // 执行身份验证请求，并处理结果
-16. try {
-17. // 此示例为代码片段，实际需在自定义组件实例中使用，并传入有效的Context上下文对象
-18. extendService.verifyAccount(this.getUIContext().getHostContext(), request, (error, data) => {
-19. if (error) {
-20. dealAllError(error);
-21. return;
-22. }
-23. const verifyResult = data as extendService.VerifyResult;
-24. hilog.info(0x0000, 'testTag', 'Succeeded in verifying.');
-25. const verifyToken = verifyResult.verifyToken;
-26. // 开发者处理verifyToken
-27. });
-28. } catch (error) {
-29. dealAllError(error);
-30. }
+// 执行身份验证请求，并处理结果
+try {
+  // 此示例为代码片段，实际需在自定义组件实例中使用，并传入有效的Context上下文对象
+  extendService.verifyAccount(this.getUIContext().getHostContext(), request, (error, data) => {
+    if (error) {
+      dealAllError(error);
+      return;
+    }
+    const verifyResult = data as extendService.VerifyResult;
+    hilog.info(0x0000, 'testTag', 'Succeeded in verifying.');
+    const verifyToken = verifyResult.verifyToken;
+    // 开发者处理verifyToken
+  });
+} catch (error) {
+  dealAllError(error);
+}
 
-32. // 错误处理
-33. function dealAllError(error: BusinessError): void {
-34. hilog.error(0x0000, 'testTag', `Failed to verify. Code: ${error.code}, message: ${error.message}`);
-35. }
+// 错误处理
+function dealAllError(error: BusinessError): void {
+  hilog.error(0x0000, 'testTag', `Failed to verify. Code: ${error.code}, message: ${error.message}`);
+}
 ```
 
 ## verifyAccount
 
-PhonePC/2in1TabletTVWearable
-
 verifyAccount(context: common.Context, request: VerifyRequest): Promise<VerifyResult>
 
-执行Account Kit身份验证请求，使用Promise异步回调。
+身份验证方法，使用Promise异步回调返回验证成功凭证。调用该方法会拉起身份验证页面，需要用户进行密码、短信等方式验证身份。身份页面可长时间停留，当用户验证成功后，会返回验证凭证给应用，其他场景如用户点击关闭则会抛出错误码。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -293,60 +284,58 @@ verifyAccount(context: common.Context, request: VerifyRequest): Promise<VerifyRe
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS错误码](account-api-error-code.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-account-kit.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | [401](errorcode-universal.md#section401-参数检查失败) | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| [1001600001](account-api-error-code.md#section1001600001-网络不可用) | The network is unavailable. |
-| [1001600002](account-api-error-code.md#section1001600002-账号未登录) | The user has not logged in with HUAWEI ID. |
-| [1001600003](account-api-error-code.md#section1001600003-应用指纹证书校验失败) | Failed to check the fingerprint of the application bundle. |
-| [1001600004](account-api-error-code.md#section1001600004-应用未申请对应permissions权限) | The application does not have the required permissions. |
-| [1001600005](account-api-error-code.md#section1001600005-用户取消当前操作) | The user canceled the current operation. |
-| [1001600006](account-api-error-code.md#section1001600006-当前设备不支持此验证要素) | The requested verification factors are unavailable on the device. |
-| [1001600007](account-api-error-code.md#section1001600007-内部错误) | Internal error. |
+| [1001600001](errorcode-account-kit.md#section1001600001-网络不可用) | The network is unavailable. |
+| [1001600002](errorcode-account-kit.md#section1001600002-账号未登录) | The user has not logged in with HUAWEI ID. |
+| [1001600003](errorcode-account-kit.md#section1001600003-应用指纹证书校验失败) | Failed to check the fingerprint of the application bundle. |
+| [1001600004](errorcode-account-kit.md#section1001600004-应用未申请对应permissions权限) | The application does not have the required permissions. |
+| [1001600005](errorcode-account-kit.md#section1001600005-用户取消当前操作) | The user canceled the current operation. |
+| [1001600006](errorcode-account-kit.md#section1001600006-当前设备不支持此验证要素) | The requested verification factors are unavailable on the device. |
+| [1001600007](errorcode-account-kit.md#section1001600007-内部错误) | Internal error. |
 
 **示例：**
 
-```
-1. import { extendService } from '@kit.AccountKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { util } from '@kit.ArkTS';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { extendService } from '@kit.AccountKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { util } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. // 创建请求参数
-7. const request: extendService.VerifyRequest = {
-8. idType: extendService.IdType.UNION_ID,
-9. idValue: '<可通过华为账号登录接口获取>', // 该值可以通过华为账号登录接口获取
-10. sceneId: '<触发身份认证的场景ID>', // 触发身份验证的场景ID，通过配置申请获取
-11. riskLevel: extendService.RiskLevel.LOW,
-12. nonce: util.generateRandomUUID() // 建议使用generateRandomUUID生成nonce
-13. };
+// 创建请求参数
+const request: extendService.VerifyRequest = {
+  idType: extendService.IdType.UNION_ID,
+  idValue: '<可通过华为账号登录接口获取>', // 该值可以通过华为账号登录接口获取
+  sceneId: '<触发身份认证的场景ID>', // 触发身份验证的场景ID，通过配置申请获取
+  riskLevel: extendService.RiskLevel.LOW,
+  nonce: util.generateRandomUUID() // 建议使用generateRandomUUID生成nonce
+};
 
-15. // 此示例为代码片段，实际需在自定义组件实例中使用，并传入有效的Context上下文对象
-16. // 执行身份验证请求，并处理结果
-17. extendService.verifyAccount(this.getUIContext().getHostContext(), request).then(data => {
-18. const verifyResult = data as extendService.VerifyResult;
-19. hilog.info(0x0000, 'testTag', 'Succeeded in verifying.');
-20. const verifyToken = verifyResult.verifyToken;
-21. // 开发者处理verifyToken
-22. }).catch((error: BusinessError) => {
-23. dealAllError(error);
-24. });
+// 此示例为代码片段，实际需在自定义组件实例中使用，并传入有效的Context上下文对象
+// 执行身份验证请求，并处理结果
+extendService.verifyAccount(this.getUIContext().getHostContext(), request).then(data => {
+  const verifyResult = data as extendService.VerifyResult;
+  hilog.info(0x0000, 'testTag', 'Succeeded in verifying.');
+  const verifyToken = verifyResult.verifyToken;
+  // 开发者处理verifyToken
+}).catch((error: BusinessError) => {
+  dealAllError(error);
+});
 
-26. // 错误处理
-27. function dealAllError(error: BusinessError): void {
-28. hilog.error(0x0000, 'testTag', `Failed to verify. Code: ${error.code}, message: ${error.message}`);
-29. }
+// 错误处理
+function dealAllError(error: BusinessError): void {
+  hilog.error(0x0000, 'testTag', `Failed to verify. Code: ${error.code}, message: ${error.message}`);
+}
 ```
 
 ## startAccountCenter
 
-PhonePC/2in1TabletTVWearable
-
 startAccountCenter(context: common.Context, callback: AsyncCallback<void>): void
 
-当开发者需要实现查看当前登录的华为账号的基本信息时，执行打开账号中心请求，会拉起账号中心页面，使用Callback异步回调。
+打开华为账号中心方法，使用Callback异步回调。开发者可调用该方法拉起账号中心页面，供用户查看并管理头像、昵称、手机号等个人信息。账号中心页面会长时间停留，当用户关闭该页面后，会触发Callback回调函数。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -365,52 +354,50 @@ startAccountCenter(context: common.Context, callback: AsyncCallback<void>): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS错误码](account-api-error-code.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-account-kit.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| [401](errorcode-universal.md#section401-参数检查失败) | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| [1001600001](account-api-error-code.md#section1001600001-网络不可用) | The network is unavailable. |
-| [1001600002](account-api-error-code.md#section1001600002-账号未登录) | The user has not logged in with HUAWEI ID. |
-| [1001600003](account-api-error-code.md#section1001600003-应用指纹证书校验失败) | Failed to check the fingerprint of the application bundle. |
-| [1001600004](account-api-error-code.md#section1001600004-应用未申请对应permissions权限) | The application does not have the required permissions. |
-| [1001600007](account-api-error-code.md#section1001600007-内部错误) | Internal error. |
-| [1001600011](account-api-error-code.md#section1001600011-该设备不支持此api) | This device does not support this API. |
+| [401](errorcode-universal.md#section401-参数检查失败) | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.  适用版本：4.1.0(11)+ |
+| [1001600001](errorcode-account-kit.md#section1001600001-网络不可用) | The network is unavailable.  适用版本：4.1.0(11)+ |
+| [1001600002](errorcode-account-kit.md#section1001600002-账号未登录) | The user has not logged in with HUAWEI ID. |
+| [1001600003](errorcode-account-kit.md#section1001600003-应用指纹证书校验失败) | Failed to check the fingerprint of the application bundle. |
+| [1001600004](errorcode-account-kit.md#section1001600004-应用未申请对应permissions权限) | The application does not have the required permissions. |
+| [1001600007](errorcode-account-kit.md#section1001600007-内部错误) | Internal error. |
+| [1001600011](errorcode-account-kit.md#section1001600011-该设备不支持此api) | This device does not support this API.  适用版本：6.1.0(23)+ |
 
 **示例：**
 
-```
-1. import { extendService } from '@kit.AccountKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { extendService } from '@kit.AccountKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. // 执行打开账号中心请求，并处理结果
-6. try {
-7. // 此示例为代码片段，实际需在自定义组件实例中使用，并传入有效的Context上下文对象
-8. extendService.startAccountCenter(this.getUIContext().getHostContext(), (error: BusinessError) => {
-9. if (error) {
-10. dealAllError(error);
-11. return;
-12. }
-13. hilog.info(0x0000, 'testTag', 'Succeeded in starting account center');
-14. });
-15. } catch (error) {
-16. dealAllError(error);
-17. }
+// 执行打开账号中心请求，并处理结果
+try {
+  // 此示例为代码片段，实际需在自定义组件实例中使用，并传入有效的Context上下文对象
+  extendService.startAccountCenter(this.getUIContext().getHostContext(), (error: BusinessError) => {
+    if (error) {
+      dealAllError(error);
+      return;
+    }
+    hilog.info(0x0000, 'testTag', 'Succeeded in starting account center');
+  });
+} catch (error) {
+  dealAllError(error);
+}
 
-19. // 错误处理
-20. function dealAllError(error: BusinessError): void {
-21. hilog.error(0x0000, 'testTag', `Failed to startAccountCenter. Code: ${error.code}, message: ${error.message}`);
-22. }
+// 错误处理
+function dealAllError(error: BusinessError): void {
+  hilog.error(0x0000, 'testTag', `Failed to startAccountCenter. Code: ${error.code}, message: ${error.message}`);
+}
 ```
 
 ## startAccountCenter
 
-PhonePC/2in1TabletTVWearable
-
 startAccountCenter(context: common.Context): Promise<void>
 
-当开发者需要实现查看当前登录的华为账号的基本信息时，执行打开账号中心请求，会拉起账号中心页面，使用Promise异步回调。
+打开华为账号中心方法，使用Promise异步回调。开发者可调用该方法拉起账号中心页面，供用户查看并管理头像、昵称、手机号等个人信息。账号中心页面会长时间停留，当用户关闭该页面后，会返回无结果的Promise对象。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -434,35 +421,35 @@ startAccountCenter(context: common.Context): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS错误码](account-api-error-code.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-account-kit.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| [401](errorcode-universal.md#section401-参数检查失败) | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| [1001600001](account-api-error-code.md#section1001600001-网络不可用) | The network is unavailable. |
-| [1001600002](account-api-error-code.md#section1001600002-账号未登录) | The user has not logged in with HUAWEI ID. |
-| [1001600003](account-api-error-code.md#section1001600003-应用指纹证书校验失败) | Failed to check the fingerprint of the application bundle. |
-| [1001600004](account-api-error-code.md#section1001600004-应用未申请对应permissions权限) | The application does not have the required permissions. |
-| [1001600007](account-api-error-code.md#section1001600007-内部错误) | Internal error. |
-| [1001600011](account-api-error-code.md#section1001600011-该设备不支持此api) | This device does not support this API. |
+| [401](errorcode-universal.md#section401-参数检查失败) | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.  适用版本：4.1.0(11)+ |
+| [1001600001](errorcode-account-kit.md#section1001600001-网络不可用) | The network is unavailable.  适用版本：4.1.0(11)+ |
+| [1001600002](errorcode-account-kit.md#section1001600002-账号未登录) | The user has not logged in with HUAWEI ID. |
+| [1001600003](errorcode-account-kit.md#section1001600003-应用指纹证书校验失败) | Failed to check the fingerprint of the application bundle. |
+| [1001600004](errorcode-account-kit.md#section1001600004-应用未申请对应permissions权限) | The application does not have the required permissions. |
+| [1001600007](errorcode-account-kit.md#section1001600007-内部错误) | Internal error. |
+| [1001600011](errorcode-account-kit.md#section1001600011-该设备不支持此api) | This device does not support this API.  适用版本：6.1.0(23)+ |
 
 **示例：**
 
-```
-1. import { extendService } from '@kit.AccountKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { extendService } from '@kit.AccountKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. // 此示例为代码片段，实际需在自定义组件实例中使用，并传入有效的Context上下文对象
-6. // 执行打开账号中心请求，并处理结果
-7. extendService.startAccountCenter(this.getUIContext().getHostContext()).then(() => {
-8. hilog.info(0x0000, 'testTag', 'Succeeded in starting account center');
-9. }).catch((error: BusinessError<Object>) => {
-10. dealAllError(error);
-11. });
+// 此示例为代码片段，实际需在自定义组件实例中使用，并传入有效的Context上下文对象
+// 执行打开账号中心请求，并处理结果
+extendService.startAccountCenter(this.getUIContext().getHostContext()).then(() => {
+  hilog.info(0x0000, 'testTag', 'Succeeded in starting account center');
+}).catch((error: BusinessError<Object>) => {
+  dealAllError(error);
+});
 
-13. // 错误处理
-14. function dealAllError(error: BusinessError<Object>): void {
-15. hilog.error(0x0000, 'testTag', `Failed to startAccountCenter. Code: ${error.code}, message: ${error.message}`);
-16. }
+// 错误处理
+function dealAllError(error: BusinessError<Object>): void {
+  hilog.error(0x0000, 'testTag', `Failed to startAccountCenter. Code: ${error.code}, message: ${error.message}`);
+}
 ```

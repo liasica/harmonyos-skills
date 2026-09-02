@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: 关闭会话（C++）
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 使用HTTP协议进行网络通信 > 发起HTTP请求，获取响应 > 关闭会话（C++）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:05+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:312bf9e4983251d900817052562b1b891ae1817add890232be9654edc6c027e4
+scraped_at: 2026-09-02T14:50:06+08:00
+doc_updated_at: 2026-08-07
+content_hash: sha256:455eaa272e18b7040222155de25002ed88d0c1d79efff0dc6c0da6a617814f2b
 ---
 
 当一个远场通信请求完成，即数据已经成功发送并收到确认，或者在某些情况下，由于超时或其他错误原因，通信尝试失败，此时应立即调用相应的“关闭会话”或“释放资源”方法。这一操作的主要目的是：
@@ -33,51 +33,38 @@ content_hash: sha256:312bf9e4983251d900817052562b1b891ae1817add890232be9654edc6c
 
 1. CPP侧导入模块。
 
-   ```
-   1. #include "RemoteCommunicationKit/rcp.h"
-   2. #include <stdio.h>
-   3. #include <unistd.h>
+   ```cpp
+   #include "RemoteCommunicationKit/rcp.h"
+   #include <cstdlib>
+   #include <cstring>
+   #include <cstdio>
+   #include <thread>
    ```
 2. CMakeLists.txt中添加以下lib。（具体请见[C API开发准备](remote-communication-preparations.md#c-api开发准备)）。
 
+   ```cpp
+   librcp_c.so
    ```
-   1. librcp_c.so
-   ```
-3. 创建会话，会话发起请求后关闭会话。“http://www.example.com”请根据实际情况替换为想要请求的URL地址。等待响应返回后，销毁request并关闭session。
+3. 创建会话，会话发起请求后关闭会话。“https://www.example.com”请根据实际情况替换为想要请求的URL地址。等待响应返回后，销毁request并关闭session。
 
    ```
-   1. void ResponseCallback(void *usrCtx, Rcp_Response *response, uint32_t errCode) {
-   2. (void *)usrCtx;
-   3. if (response != NULL) {
-   4. printf("Response status: %d\n", response->statusCode);
-   5. } else {
-   6. printf("Fetch failed: errCode: %u\n", errCode);
-   7. }
-   8. if (response != NULL) {
-   9. response->destroyResponse(response);
-   10. }
-   11. }
-
-   13. int main() {
-   14. const char *kHttpServerAddress = "http://www.example.com";
-   15. Rcp_Request *request = HMS_Rcp_CreateRequest(kHttpServerAddress);
-   16. request->method = RCP_METHOD_GET;
-   17. uint32_t errCode = 0;
-   18. // 创建session
-   19. Rcp_Session *session = HMS_Rcp_CreateSession(NULL, &errCode);
-   20. // 配置请求回调
-   21. Rcp_ResponseCallbackObject responseCallback = {ResponseCallback, NULL};
-   22. // 发起fetch请求
-   23. errCode = HMS_Rcp_Fetch(session, request, &responseCallback);
-   24. // 等待fetch结果，仅是等待异步调用完成，开发者可根据自己实际场景处理回调。
-   25. usleep(1000 * 1000 * 3);
-   26. printf("Fetch completed, errCode: %u\n", errCode);
-   27. // 在退出前取消可能还在执行的requests
-   28. errCode = HMS_Rcp_CancelSession(session);
-   29. // 关闭session
-   30. errCode = HMS_Rcp_CloseSession(&session);
-   31. // 清理request
-   32. HMS_Rcp_DestroyRequest(request);
-   33. return 0;
-   34. }
+   const char *kHttpServerAddress = "http://www.example.com";
+   Rcp_Request *request = HMS_Rcp_CreateRequest(kHttpServerAddress);
+   request->method = RCP_METHOD_GET;
+   uint32_t errCode = 0;
+   // 创建session
+   Rcp_Session *session = HMS_Rcp_CreateSession(NULL, &errCode);
+   // 配置请求回调
+   Rcp_ResponseCallbackObject responseCallback = {ResponseCallback, NULL};
+   // 发起fetch请求
+   errCode = HMS_Rcp_Fetch(session, request, &responseCallback);
+   // 在退出前取消可能还在执行的requests
+   errCode = HMS_Rcp_CancelSession(session);
+   // 关闭session
+   errCode = HMS_Rcp_CloseSession(&session);
+   napi_value value = nullptr;
+   napi_create_int32(env, errCode, &value);
+   napi_resolve_deferred(env, ctx->deferred, value);
+   // 清理request
+   HMS_Rcp_DestroyRequest(request);
    ```

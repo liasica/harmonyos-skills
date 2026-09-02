@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.effectKit (图像效果)"
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.effectKit (图像效果)
 category: harmonyos-references
-scraped_at: 2026-04-29T14:05:12+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e918dc5161455df175c6b16f7b2ca1424820a9bc60f701669579da1e5a646c69
+scraped_at: 2026-09-02T15:02:40+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:50ea15efeba73d250a154c81055ff2b3bb552ce5ab6234eb0daf24ff22d7e912
 ---
 
 图像效果模块提供了处理图像的基础能力，包括亮度调节、模糊化、灰度调节和智能取色等。effectKit用于离线处理图像（如pixelmap、png、jpeg）以获得视觉效果，而uiEffect则实时接入渲染服务，针对屏幕帧缓存进行处理以获得动态视觉效果。
@@ -16,21 +16,17 @@ content_hash: sha256:e918dc5161455df175c6b16f7b2ca1424820a9bc60f701669579da1e5a6
 * [Color](js-apis-effectkit.md#color)：颜色类，用于保存取色的结果。
 * [ColorPicker](js-apis-effectkit.md#colorpicker)：智能取色器。
 
-说明
+**说明** 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { effectKit } from "@kit.ArkGraphics2D";
+```ts
+import { effectKit } from "@kit.ArkGraphics2D";
 ```
 
 ## effectKit.createEffect
-
-PhonePC/2in1TabletTVWearable
 
 createEffect(source: image.PixelMap): Filter
 
@@ -56,27 +52,25 @@ createEffect(source: image.PixelMap): Filter
 
 **示例：**
 
-```
-1. import { image } from "@kit.ImageKit";
-2. import { effectKit } from "@kit.ArkGraphics2D";
+```ts
+import { image } from "@kit.ImageKit";
+import { effectKit } from "@kit.ArkGraphics2D";
 
-4. const color = new ArrayBuffer(96);
-5. let opts : image.InitializationOptions = {
-6. editable: true,
-7. pixelFormat: 3,
-8. size: {
-9. height: 4,
-10. width: 6
-11. }
-12. }
-13. image.createPixelMap(color, opts).then((pixelMap) => {
-14. let headFilter = effectKit.createEffect(pixelMap);
-15. })
+const color = new ArrayBuffer(96);
+let opts : image.InitializationOptions = {
+  editable: true,
+  pixelFormat: 3,
+  size: {
+    height: 4,
+    width: 6
+  }
+}
+image.createPixelMap(color, opts).then((pixelMap) => {
+  let headFilter = effectKit.createEffect(pixelMap);
+})
 ```
 
 ## effectKit.createColorPicker
-
-PhonePC/2in1TabletTVWearable
 
 createColorPicker(source: image.PixelMap): Promise<ColorPicker>
 
@@ -110,33 +104,31 @@ createColorPicker(source: image.PixelMap): Promise<ColorPicker>
 
 **示例：**
 
-```
-1. import { image } from "@kit.ImageKit";
-2. import { effectKit } from "@kit.ArkGraphics2D";
-3. import { BusinessError } from "@kit.BasicServicesKit";
+```ts
+import { image } from "@kit.ImageKit";
+import { effectKit } from "@kit.ArkGraphics2D";
+import { BusinessError } from "@kit.BasicServicesKit";
 
-5. const color = new ArrayBuffer(96);
-6. let opts : image.InitializationOptions = {
-7. editable: true,
-8. pixelFormat: 3,
-9. size: {
-10. height: 4,
-11. width: 6
-12. }
-13. }
+const color = new ArrayBuffer(96);
+let opts : image.InitializationOptions = {
+  editable: true,
+  pixelFormat: 3,
+  size: {
+    height: 4,
+    width: 6
+  }
+}
 
-15. image.createPixelMap(color, opts).then((pixelMap) => {
-16. effectKit.createColorPicker(pixelMap).then(colorPicker => {
-17. console.info("Succeeded in creating colorPicker.");
-18. }).catch((err : BusinessError) => {
-19. console.error(`Failed to create colorPicker. Code: ${err.code}, message: ${err.message}`);
-20. })
-21. })
+image.createPixelMap(color, opts).then((pixelMap) => {
+  effectKit.createColorPicker(pixelMap).then(colorPicker => {
+    console.info("Succeeded in creating colorPicker.");
+  }).catch((err : BusinessError) => {
+    console.error(`Failed to create colorPicker. Code: ${err.code}, message: ${err.message}`);
+  })
+})
 ```
 
 ## effectKit.createColorPicker10+
-
-PhonePC/2in1TabletTVWearable
 
 createColorPicker(source: image.PixelMap, region: Array<number>): Promise<ColorPicker>
 
@@ -171,33 +163,31 @@ createColorPicker(source: image.PixelMap, region: Array<number>): Promise<ColorP
 
 **示例：**
 
-```
-1. import { image } from "@kit.ImageKit";
-2. import { effectKit } from "@kit.ArkGraphics2D";
-3. import { BusinessError } from "@kit.BasicServicesKit";
+```ts
+import { image } from "@kit.ImageKit";
+import { effectKit } from "@kit.ArkGraphics2D";
+import { BusinessError } from "@kit.BasicServicesKit";
 
-5. const color = new ArrayBuffer(96);
-6. let opts : image.InitializationOptions = {
-7. editable: true,
-8. pixelFormat: 3,
-9. size: {
-10. height: 4,
-11. width: 6
-12. }
-13. }
+const color = new ArrayBuffer(96);
+let opts : image.InitializationOptions = {
+  editable: true,
+  pixelFormat: 3,
+  size: {
+    height: 4,
+    width: 6
+  }
+}
 
-15. image.createPixelMap(color, opts).then((pixelMap) => {
-16. effectKit.createColorPicker(pixelMap, [0, 0, 1, 1]).then(colorPicker => {
-17. console.info("Succeeded in creating colorPicker.");
-18. }).catch((err : BusinessError) => {
-19. console.error(`Failed to create colorPicker. Code: ${err.code}, message: ${err.message}`);
-20. })
-21. })
+image.createPixelMap(color, opts).then((pixelMap) => {
+  effectKit.createColorPicker(pixelMap, [0, 0, 1, 1]).then(colorPicker => {
+    console.info("Succeeded in creating colorPicker.");
+  }).catch((err : BusinessError) => {
+    console.error(`Failed to create colorPicker. Code: ${err.code}, message: ${err.message}`);
+  })
+})
 ```
 
 ## effectKit.createColorPicker
-
-PhonePC/2in1TabletTVWearable
 
 createColorPicker(source: image.PixelMap, callback: AsyncCallback<ColorPicker>): void
 
@@ -226,33 +216,31 @@ createColorPicker(source: image.PixelMap, callback: AsyncCallback<ColorPicker>):
 
 **示例：**
 
-```
-1. import { image } from "@kit.ImageKit";
-2. import { effectKit } from "@kit.ArkGraphics2D";
+```ts
+import { image } from "@kit.ImageKit";
+import { effectKit } from "@kit.ArkGraphics2D";
 
-4. const color = new ArrayBuffer(96);
-5. let opts : image.InitializationOptions = {
-6. editable: true,
-7. pixelFormat: 3,
-8. size: {
-9. height: 4,
-10. width: 6
-11. }
-12. }
-13. image.createPixelMap(color, opts).then((pixelMap) => {
-14. effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
-15. if (error) {
-16. console.error('Failed to create color picker.');
-17. } else {
-18. console.info('Succeeded in creating color picker.');
-19. }
-20. })
-21. })
+const color = new ArrayBuffer(96);
+let opts : image.InitializationOptions = {
+  editable: true,
+  pixelFormat: 3,
+  size: {
+    height: 4,
+    width: 6
+  }
+}
+image.createPixelMap(color, opts).then((pixelMap) => {
+  effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
+    if (error) {
+      console.error('Failed to create color picker.');
+    } else {
+      console.info('Succeeded in creating color picker.');
+    }
+  })
+})
 ```
 
 ## effectKit.createColorPicker10+
-
-PhonePC/2in1TabletTVWearable
 
 createColorPicker(source: image.PixelMap, region:Array<number>, callback: AsyncCallback<ColorPicker>): void
 
@@ -282,33 +270,31 @@ createColorPicker(source: image.PixelMap, region:Array<number>, callback: AsyncC
 
 **示例：**
 
-```
-1. import { image } from "@kit.ImageKit";
-2. import { effectKit } from "@kit.ArkGraphics2D";
+```ts
+import { image } from "@kit.ImageKit";
+import { effectKit } from "@kit.ArkGraphics2D";
 
-4. const color = new ArrayBuffer(96);
-5. let opts : image.InitializationOptions = {
-6. editable: true,
-7. pixelFormat: 3,
-8. size: {
-9. height: 4,
-10. width: 6
-11. }
-12. }
-13. image.createPixelMap(color, opts).then((pixelMap) => {
-14. effectKit.createColorPicker(pixelMap, [0, 0, 1, 1], (error, colorPicker) => {
-15. if (error) {
-16. console.error('Failed to create color picker.');
-17. } else {
-18. console.info('Succeeded in creating color picker.');
-19. }
-20. })
-21. })
+const color = new ArrayBuffer(96);
+let opts : image.InitializationOptions = {
+  editable: true,
+  pixelFormat: 3,
+  size: {
+    height: 4,
+    width: 6
+  }
+}
+image.createPixelMap(color, opts).then((pixelMap) => {
+  effectKit.createColorPicker(pixelMap, [0, 0, 1, 1], (error, colorPicker) => {
+    if (error) {
+      console.error('Failed to create color picker.');
+    } else {
+      console.info('Succeeded in creating color picker.');
+    }
+  })
+})
 ```
 
 ## Color
-
-PhonePC/2in1TabletTVWearable
 
 颜色类，用于保存取色的结果。
 
@@ -327,8 +313,6 @@ PhonePC/2in1TabletTVWearable
 
 ## TileMode14+
 
-PhonePC/2in1TabletTVWearable
-
 着色器效果平铺模式的枚举。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
@@ -342,13 +326,9 @@ PhonePC/2in1TabletTVWearable
 
 ## ColorPicker
 
-PhonePC/2in1TabletTVWearable
-
 取色类，用于从一张图像数据中获取它的主要颜色。在调用ColorPicker的方法前，需要先通过[createColorPicker](js-apis-effectkit.md#effectkitcreatecolorpicker)创建一个ColorPicker实例。
 
 ### getMainColor
-
-PhonePC/2in1TabletTVWearable
 
 getMainColor(): Promise<Color>
 
@@ -368,39 +348,37 @@ getMainColor(): Promise<Color>
 
 **示例：**
 
-```
-1. import { image } from "@kit.ImageKit";
-2. import { effectKit } from "@kit.ArkGraphics2D";
+```ts
+import { image } from "@kit.ImageKit";
+import { effectKit } from "@kit.ArkGraphics2D";
 
-4. const color = new ArrayBuffer(96);
-5. let opts: image.InitializationOptions = {
-6. editable: true,
-7. pixelFormat: 3,
-8. size: {
-9. height: 4,
-10. width: 6
-11. }
-12. }
-13. image.createPixelMap(color, opts).then((pixelMap) => {
-14. effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
-15. if (error) {
-16. console.error('Failed to create color picker.');
-17. } else {
-18. console.info('Succeeded in creating color picker.');
-19. colorPicker.getMainColor().then(color => {
-20. console.info('Succeeded in getting main color.');
-21. console.info(`color[ARGB]=${color.alpha},${color.red},${color.green},${color.blue}`);
-22. })
-23. }
-24. })
-25. })
+const color = new ArrayBuffer(96);
+let opts: image.InitializationOptions = {
+  editable: true,
+  pixelFormat: 3,
+  size: {
+    height: 4,
+    width: 6
+  }
+}
+image.createPixelMap(color, opts).then((pixelMap) => {
+  effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
+    if (error) {
+      console.error('Failed to create color picker.');
+     } else {
+       console.info('Succeeded in creating color picker.');
+       colorPicker.getMainColor().then(color => {
+        console.info('Succeeded in getting main color.');
+         console.info(`color[ARGB]=${color.alpha},${color.red},${color.green},${color.blue}`);
+      })
+    }
+  })
+})
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/7hkP5rhvRpOPW0DN65dxDQ/zh-cn_image_0000002589247191.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/XAy15BwAQJ68mcLdfSgzdg/zh-cn_image_0000002706837060.png)
 
 ### getMainColorSync
-
-PhonePC/2in1TabletTVWearable
 
 getMainColorSync(): Color
 
@@ -420,37 +398,35 @@ getMainColorSync(): Color
 
 **示例：**
 
-```
-1. import { image } from "@kit.ImageKit";
-2. import { effectKit } from "@kit.ArkGraphics2D";
+```ts
+import { image } from "@kit.ImageKit";
+import { effectKit } from "@kit.ArkGraphics2D";
 
-4. const color = new ArrayBuffer(96);
-5. let opts : image.InitializationOptions = {
-6. editable: true,
-7. pixelFormat: 3,
-8. size: {
-9. height: 4,
-10. width: 6
-11. }
-12. }
-13. image.createPixelMap(color, opts).then((pixelMap) => {
-14. effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
-15. if (error) {
-16. console.error('Failed to create color picker.');
-17. } else {
-18. console.info('Succeeded in creating color picker.');
-19. let color = colorPicker.getMainColorSync();
-20. console.info('get main color =' + color);
-21. }
-22. })
-23. })
+const color = new ArrayBuffer(96);
+let opts : image.InitializationOptions = {
+  editable: true,
+  pixelFormat: 3,
+  size: {
+    height: 4,
+    width: 6
+  }
+}
+image.createPixelMap(color, opts).then((pixelMap) => {
+  effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
+    if (error) {
+      console.error('Failed to create color picker.');
+    } else {
+      console.info('Succeeded in creating color picker.');
+      let color = colorPicker.getMainColorSync();
+      console.info('get main color =' + color);
+    }
+  })
+})
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/_0Bz4hU7RruB6TrELN-Rgg/zh-cn_image_0000002589247191.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/CPUN1KhZS1am50t3o2ZftA/zh-cn_image_0000002706837060.png)
 
 ### getLargestProportionColor10+
-
-PhonePC/2in1TabletTVWearable
 
 getLargestProportionColor(): Color
 
@@ -470,37 +446,35 @@ getLargestProportionColor(): Color
 
 **示例：**
 
-```
-1. import { image } from "@kit.ImageKit";
-2. import { effectKit } from "@kit.ArkGraphics2D";
+```ts
+import { image } from "@kit.ImageKit";
+import { effectKit } from "@kit.ArkGraphics2D";
 
-4. const color = new ArrayBuffer(96);
-5. let opts : image.InitializationOptions = {
-6. editable: true,
-7. pixelFormat: 3,
-8. size: {
-9. height: 4,
-10. width: 6
-11. }
-12. }
-13. image.createPixelMap(color, opts).then((pixelMap) => {
-14. effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
-15. if (error) {
-16. console.error('Failed to create color picker.');
-17. } else {
-18. console.info('Succeeded in creating color picker.');
-19. let color = colorPicker.getLargestProportionColor();
-20. console.info('get largest proportion color =' + color);
-21. }
-22. })
-23. })
+const color = new ArrayBuffer(96);
+let opts : image.InitializationOptions = {
+  editable: true,
+  pixelFormat: 3,
+  size: {
+    height: 4,
+    width: 6
+  }
+}
+image.createPixelMap(color, opts).then((pixelMap) => {
+  effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
+    if (error) {
+      console.error('Failed to create color picker.');
+    } else {
+      console.info('Succeeded in creating color picker.');
+      let color = colorPicker.getLargestProportionColor();
+      console.info('get largest proportion color =' + color);
+    }
+  })
+})
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/uT1CRQYkRfqxmQdI7qJ62w/zh-cn_image_0000002558767384.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/DmPeS9FOTcuuQssymAv0NA/zh-cn_image_0000002736316167.png)
 
 ### getTopProportionColors12+
-
-PhonePC/2in1TabletTVWearable
 
 getTopProportionColors(colorCount: number): Array<Color | null>
 
@@ -526,41 +500,39 @@ getTopProportionColors(colorCount: number): Array<Color | null>
 
 **示例：**
 
-```
-1. import { image } from "@kit.ImageKit";
-2. import { effectKit } from "@kit.ArkGraphics2D";
+```js
+import { image } from "@kit.ImageKit";
+import { effectKit } from "@kit.ArkGraphics2D";
 
-4. const color = new ArrayBuffer(96);
-5. let opts : image.InitializationOptions = {
-6. editable: true,
-7. pixelFormat: 3,
-8. size: {
-9. height: 4,
-10. width: 6
-11. }
-12. }
-13. image.createPixelMap(color, opts).then((pixelMap) => {
-14. effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
-15. if (error) {
-16. console.error('Failed to create color picker.');
-17. } else {
-18. console.info('Succeeded in creating color picker.');
-19. let colors = colorPicker.getTopProportionColors(2);
-20. for(let index = 0; index < colors.length; index++) {
-21. if (colors[index]) {
-22. console.info('get top proportion colors: index ' + index + ', color ' + colors[index]);
-23. }
-24. }
-25. }
-26. })
-27. })
+const color = new ArrayBuffer(96);
+let opts : image.InitializationOptions = {
+  editable: true,
+  pixelFormat: 3,
+  size: {
+    height: 4,
+    width: 6
+  }
+}
+image.createPixelMap(color, opts).then((pixelMap) => {
+  effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
+    if (error) {
+      console.error('Failed to create color picker.');
+    } else {
+      console.info('Succeeded in creating color picker.');
+      let colors = colorPicker.getTopProportionColors(2);
+      for(let index = 0; index < colors.length; index++) {
+        if (colors[index]) {
+          console.info('get top proportion colors: index ' + index + ', color ' + colors[index]);
+        }
+      }
+    }
+  })
+})
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/Hy0TLKbZTuO0bJyEz-EtYQ/zh-cn_image_0000002558607726.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/8ZdGExYjTVq82Vm2PL-ssw/zh-cn_image_0000002706677124.png)
 
 ### getHighestSaturationColor10+
-
-PhonePC/2in1TabletTVWearable
 
 getHighestSaturationColor(): Color
 
@@ -580,37 +552,35 @@ getHighestSaturationColor(): Color
 
 **示例：**
 
-```
-1. import { image } from "@kit.ImageKit";
-2. import { effectKit } from "@kit.ArkGraphics2D";
+```ts
+import { image } from "@kit.ImageKit";
+import { effectKit } from "@kit.ArkGraphics2D";
 
-4. const color = new ArrayBuffer(96);
-5. let opts: image.InitializationOptions = {
-6. editable: true,
-7. pixelFormat: 3,
-8. size: {
-9. height: 4,
-10. width: 6
-11. }
-12. }
-13. image.createPixelMap(color, opts).then((pixelMap) => {
-14. effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
-15. if (error) {
-16. console.error('Failed to create color picker.');
-17. } else {
-18. console.info('Succeeded in creating color picker.');
-19. let color = colorPicker.getHighestSaturationColor();
-20. console.info('get highest saturation color =' + color);
-21. }
-22. })
-23. })
+const color = new ArrayBuffer(96);
+let opts: image.InitializationOptions = {
+  editable: true,
+  pixelFormat: 3,
+  size: {
+    height: 4,
+    width: 6
+  }
+}
+image.createPixelMap(color, opts).then((pixelMap) => {
+  effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
+    if (error) {
+      console.error('Failed to create color picker.');
+    } else {
+      console.info('Succeeded in creating color picker.');
+      let color = colorPicker.getHighestSaturationColor();
+      console.info('get highest saturation color =' + color);
+    }
+  })
+})
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/7pCPNP_VTq6j4P38x-rV-A/zh-cn_image_0000002589327253.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/fSfX-F2nRHKQ1hetfRso3A/zh-cn_image_0000002736436213.png)
 
 ### getAverageColor10+
-
-PhonePC/2in1TabletTVWearable
 
 getAverageColor(): Color
 
@@ -630,37 +600,35 @@ getAverageColor(): Color
 
 **示例：**
 
-```
-1. import { image } from "@kit.ImageKit";
-2. import { effectKit } from "@kit.ArkGraphics2D";
+```ts
+import { image } from "@kit.ImageKit";
+import { effectKit } from "@kit.ArkGraphics2D";
 
-4. const color = new ArrayBuffer(96);
-5. let opts: image.InitializationOptions = {
-6. editable: true,
-7. pixelFormat: 3,
-8. size: {
-9. height: 4,
-10. width: 6
-11. }
-12. }
-13. image.createPixelMap(color, opts).then((pixelMap) => {
-14. effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
-15. if (error) {
-16. console.error('Failed to create color picker.');
-17. } else {
-18. console.info('Succeeded in creating color picker.');
-19. let color = colorPicker.getAverageColor();
-20. console.info('get average color =' + color);
-21. }
-22. })
-23. })
+const color = new ArrayBuffer(96);
+let opts: image.InitializationOptions = {
+  editable: true,
+  pixelFormat: 3,
+  size: {
+    height: 4,
+    width: 6
+  }
+}
+image.createPixelMap(color, opts).then((pixelMap) => {
+  effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
+    if (error) {
+      console.error('Failed to create color picker.');
+    } else {
+      console.info('Succeeded in creating color picker.');
+      let color = colorPicker.getAverageColor();
+      console.info('get average color =' + color);
+    }
+  })
+})
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/1zDx6E_1QbWjE5i5DWAhqw/zh-cn_image_0000002589247193.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/PRgCI3SeT6SKb6qZ9rrQpA/zh-cn_image_0000002706837062.png)
 
 ### isBlackOrWhiteOrGrayColor10+
-
-PhonePC/2in1TabletTVWearable
 
 isBlackOrWhiteOrGrayColor(color: number): boolean
 
@@ -686,47 +654,43 @@ isBlackOrWhiteOrGrayColor(color: number): boolean
 
 **示例：**
 
-```
-1. import { image } from "@kit.ImageKit";
-2. import { effectKit } from "@kit.ArkGraphics2D";
+```ts
+import { image } from "@kit.ImageKit";
+import { effectKit } from "@kit.ArkGraphics2D";
 
-4. const color = new ArrayBuffer(96);
-5. let opts: image.InitializationOptions = {
-6. editable: true,
-7. pixelFormat: 3,
-8. size: {
-9. height: 4,
-10. width: 6
-11. }
-12. }
-13. image.createPixelMap(color, opts).then((pixelMap) => {
-14. effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
-15. if (error) {
-16. console.error('Failed to create color picker.');
-17. } else {
-18. console.info('Succeeded in creating color picker.');
-19. let bJudge = colorPicker.isBlackOrWhiteOrGrayColor(0xFFFFFFFF);
-20. console.info('is black or white or gray color[bool](white) =' + bJudge);
-21. }
-22. })
-23. })
+const color = new ArrayBuffer(96);
+let opts: image.InitializationOptions = {
+  editable: true,
+  pixelFormat: 3,
+  size: {
+    height: 4,
+    width: 6
+  }
+}
+image.createPixelMap(color, opts).then((pixelMap) => {
+  effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
+    if (error) {
+      console.error('Failed to create color picker.');
+    } else {
+      console.info('Succeeded in creating color picker.');
+      let bJudge = colorPicker.isBlackOrWhiteOrGrayColor(0xFFFFFFFF);
+      console.info('is black or white or gray color[bool](white) =' + bJudge);
+    }
+  })
+})
 ```
 
 ## Filter
-
-PhonePC/2in1TabletTVWearable
 
 图像效果类，用于将指定的效果添加到输入图像中。在调用Filter的方法前，需要先通过[createEffect](js-apis-effectkit.md#effectkitcreateeffect)创建一个Filter实例。
 
 ### blur
 
-PhonePC/2in1TabletTVWearable
-
 blur(radius: number): Filter
 
 将模糊效果添加到效果链表中，返回链表的头节点。
 
-说明
+**说明** 
 
 该接口为静态模糊接口，为静态图像提供模糊化效果，如果要对组件进行实时渲染的模糊，可以使用[动态模糊](../harmonyos-guides/arkts-blur-effect.md)。
 
@@ -740,7 +704,7 @@ blur(radius: number): Filter
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| radius | number | 是 | 模糊半径，单位是像素。模糊效果与所设置的值成正比，值越大效果越明显。 |
+| radius | number | 是 | 模糊半径，单位为px。模糊效果与所设置的值成正比，值越大效果越明显。 |
 
 **返回值：**
 
@@ -750,78 +714,76 @@ blur(radius: number): Filter
 
 **示例：**
 
+```ts
+import { image } from '@kit.ImageKit';
+import { effectKit } from '@kit.ArkGraphics2D';
+import { common } from '@kit.AbilityKit';
+// 传入读取的图片数据
+function ImageBlur(Image: ArrayBuffer): Promise<image.PixelMap> {
+  return new Promise(async (resolve, reject) => {
+    let imageSource = image.createImageSource(Image);
+    await imageSource.createPixelMap().then(async (pixelMap: image.PixelMap) => {
+      let radius = 5;
+      let headFilter = effectKit.createEffect(pixelMap);
+      if (headFilter != null) {
+        // 对图片添加效果标识
+        headFilter.blur(radius);
+      }
+      // 按照添加的效果标识对图片进行处理并且返回处理好的图片数据
+      headFilter.getEffectPixelMap().then(imageData => {
+        resolve(imageData);
+      })
+    })
+  })
+}
+
+@Entry
+@Component
+struct Index {
+  @State imagePixelMap: image.PixelMap | null = null;
+  private imageBuffer: ArrayBuffer | undefined = undefined;
+  // 读取rawfile文件夹下的图片文件，也可根据需求更换读取方式，保证最终得到的是ArrayBuffer格式的图片数据即可
+  async getFileBuffer(): Promise<ArrayBuffer | undefined> {
+    try{
+      const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+      const fileData: Uint8Array = await context.resourceManager.getRawFileContent('image.png');
+      const buffer: ArrayBuffer = fileData.buffer.slice(0);
+      return buffer;
+    }catch (err){
+      return undefined
+    }
+  }
+
+  async aboutToAppear(): Promise<void>{
+    this.imageBuffer = await this.getFileBuffer();
+    if(this.imageBuffer == undefined){
+      return;
+    }
+    // 图片处理为异步操作，可以依据是否需要拿到处理好的图片数据再进行下一步逻辑，按需添加await进行同步
+    this.imagePixelMap = await ImageBlur(this.imageBuffer);
+  }
+
+  build() {
+    Column() {
+      Image(this.imagePixelMap)
+        .width(304)
+        .height(305)
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
-1. import { image } from '@kit.ImageKit';
-2. import { effectKit } from '@kit.ArkGraphics2D';
-3. import { common } from '@kit.AbilityKit';
-4. // 传入读取的图片数据
-5. function ImageBlur(Image: ArrayBuffer): Promise<image.PixelMap> {
-6. return new Promise(async (resolve, reject) => {
-7. let imageSource = image.createImageSource(Image);
-8. await imageSource.createPixelMap().then(async (pixelMap: image.PixelMap) => {
-9. let radius = 5;
-10. let headFilter = effectKit.createEffect(pixelMap);
-11. if (headFilter != null) {
-12. // 对图片添加效果标识
-13. headFilter.blur(radius);
-14. }
-15. // 按照添加的效果标识对图片进行处理并且返回处理好的图片数据
-16. headFilter.getEffectPixelMap().then(imageData => {
-17. resolve(imageData);
-18. })
-19. })
-20. })
-21. }
 
-23. @Entry
-24. @Component
-25. struct Index {
-26. @State imagePixelMap: image.PixelMap | null = null;
-27. private imageBuffer: ArrayBuffer | undefined = undefined;
-28. // 读取rawfile文件夹下的图片文件，也可根据需求更换读取方式，保证最终得到的是ArrayBuffer格式的图片数据即可
-29. async getFileBuffer(): Promise<ArrayBuffer | undefined> {
-30. try{
-31. const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-32. const fileData: Uint8Array = await context.resourceManager.getRawFileContent('image.png');
-33. const buffer: ArrayBuffer = fileData.buffer.slice(0);
-34. return buffer;
-35. }catch (err){
-36. return undefined
-37. }
-38. }
-
-40. async aboutToAppear(): Promise<void>{
-41. this.imageBuffer = await this.getFileBuffer();
-42. if(this.imageBuffer == undefined){
-43. return;
-44. }
-45. // 图片处理为异步操作，可以依据是否需要拿到处理好的图片数据再进行下一步逻辑，按需添加await进行同步
-46. this.imagePixelMap = await ImageBlur(this.imageBuffer);
-47. }
-
-49. build() {
-50. Column() {
-51. Image(this.imagePixelMap)
-52. .width(304)
-53. .height(305)
-54. }
-55. .height('100%')
-56. .width('100%')
-57. }
-58. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/pK2UZLpbTzK3_sotK5JZLA/zh-cn_image_0000002558767386.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/3XUlMcMXQZaayZ3CB9pEQg/zh-cn_image_0000002736316169.png)
 
 ### blur14+
-
-PhonePC/2in1TabletTVWearable
 
 blur(radius: number, tileMode: TileMode): Filter
 
 将模糊效果添加到效果链表中，返回链表的头节点。
 
-说明
+**说明** 
 
 该接口为静态模糊接口，为静态图像提供模糊化效果，如果要对组件进行实时渲染的模糊，可以使用[动态模糊](../harmonyos-guides/arkts-blur-effect.md)。
 
@@ -831,7 +793,7 @@ blur(radius: number, tileMode: TileMode): Filter
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| radius | number | 是 | 模糊半径，单位是像素。模糊效果与所设置的值成正比，值越大效果越明显。 |
+| radius | number | 是 | 模糊半径，单位为px。模糊效果与所设置的值成正比，值越大效果越明显。 |
 | tileMode | [TileMode](js-apis-effectkit.md#tilemode14) | 是 | 着色器效果平铺模式。影响图像边缘的模糊效果。目前仅支持CPU渲染，所以目前着色器平铺模式仅支持DECAL。 |
 
 **返回值：**
@@ -842,72 +804,70 @@ blur(radius: number, tileMode: TileMode): Filter
 
 **示例：**
 
+```ts
+import { image } from '@kit.ImageKit';
+import { effectKit } from '@kit.ArkGraphics2D';
+import { common } from '@kit.AbilityKit';
+// 传入读取的图片数据
+function ImageBlur(Image: ArrayBuffer): Promise<image.PixelMap> {
+  return new Promise(async (resolve, reject) => {
+    let imageSource = image.createImageSource(Image);
+    await imageSource.createPixelMap().then(async (pixelMap: image.PixelMap) => {
+      let radius = 30;
+      let headFilter = effectKit.createEffect(pixelMap);
+      if (headFilter != null) {
+        // 对图片添加效果标识
+        headFilter.blur(radius, effectKit.TileMode.DECAL);
+      }
+      // 按照添加的效果标识对图片进行处理并且返回处理好的图片数据
+      headFilter.getEffectPixelMap().then(imageData => {
+        resolve(imageData);
+      })
+    })
+  })
+}
+
+@Entry
+@Component
+struct Index {
+  @State imagePixelMap: image.PixelMap | null = null;
+  private imageBuffer: ArrayBuffer | undefined = undefined;
+  // 读取rawfile文件夹下的图片文件，也可根据需求更换读取方式，保证最终得到的是ArrayBuffer格式的图片数据即可
+  async getFileBuffer(): Promise<ArrayBuffer | undefined> {
+    try{
+      const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+      const fileData: Uint8Array = await context.resourceManager.getRawFileContent('image.png');
+      const buffer: ArrayBuffer = fileData.buffer.slice(0);
+      return buffer;
+    }catch (err){
+      return undefined
+    }
+  }
+
+  async aboutToAppear(): Promise<void>{
+    this.imageBuffer = await this.getFileBuffer();
+    if(this.imageBuffer == undefined){
+      return;
+    }
+    // 图片处理为异步操作，可以依据是否需要拿到处理好的图片数据再进行下一步逻辑，按需添加await进行同步
+    this.imagePixelMap = await ImageBlur(this.imageBuffer);
+  }
+
+  build() {
+    Column() {
+      Image(this.imagePixelMap)
+        .width(304)
+        .height(305)
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
-1. import { image } from '@kit.ImageKit';
-2. import { effectKit } from '@kit.ArkGraphics2D';
-3. import { common } from '@kit.AbilityKit';
-4. // 传入读取的图片数据
-5. function ImageBlur(Image: ArrayBuffer): Promise<image.PixelMap> {
-6. return new Promise(async (resolve, reject) => {
-7. let imageSource = image.createImageSource(Image);
-8. await imageSource.createPixelMap().then(async (pixelMap: image.PixelMap) => {
-9. let radius = 30;
-10. let headFilter = effectKit.createEffect(pixelMap);
-11. if (headFilter != null) {
-12. // 对图片添加效果标识
-13. headFilter.blur(radius, effectKit.TileMode.DECAL);
-14. }
-15. // 按照添加的效果标识对图片进行处理并且返回处理好的图片数据
-16. headFilter.getEffectPixelMap().then(imageData => {
-17. resolve(imageData);
-18. })
-19. })
-20. })
-21. }
 
-23. @Entry
-24. @Component
-25. struct Index {
-26. @State imagePixelMap: image.PixelMap | null = null;
-27. private imageBuffer: ArrayBuffer | undefined = undefined;
-28. // 读取rawfile文件夹下的图片文件，也可根据需求更换读取方式，保证最终得到的是ArrayBuffer格式的图片数据即可
-29. async getFileBuffer(): Promise<ArrayBuffer | undefined> {
-30. try{
-31. const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-32. const fileData: Uint8Array = await context.resourceManager.getRawFileContent('image.png');
-33. const buffer: ArrayBuffer = fileData.buffer.slice(0);
-34. return buffer;
-35. }catch (err){
-36. return undefined
-37. }
-38. }
-
-40. async aboutToAppear(): Promise<void>{
-41. this.imageBuffer = await this.getFileBuffer();
-42. if(this.imageBuffer == undefined){
-43. return;
-44. }
-45. // 图片处理为异步操作，可以依据是否需要拿到处理好的图片数据再进行下一步逻辑，按需添加await进行同步
-46. this.imagePixelMap = await ImageBlur(this.imageBuffer);
-47. }
-
-49. build() {
-50. Column() {
-51. Image(this.imagePixelMap)
-52. .width(304)
-53. .height(305)
-54. }
-55. .height('100%')
-56. .width('100%')
-57. }
-58. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/Fzg2iLW3SZewD5cgES7YxA/zh-cn_image_0000002558607728.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/fKxjlASlSQCAa8DP8P15dw/zh-cn_image_0000002706677126.png)
 
 ### invert12+
-
-PhonePC/2in1TabletTVWearable
 
 invert(): Filter
 
@@ -923,71 +883,69 @@ invert(): Filter
 
 **示例：**
 
+```ts
+import { image } from '@kit.ImageKit';
+import { effectKit } from '@kit.ArkGraphics2D';
+import { common } from '@kit.AbilityKit';
+// 传入读取的图片数据
+function ImageInvert(Image: ArrayBuffer): Promise<image.PixelMap> {
+  return new Promise(async (resolve, reject) => {
+    let imageSource = image.createImageSource(Image);
+    await imageSource.createPixelMap().then(async (pixelMap: image.PixelMap) => {
+      let headFilter = effectKit.createEffect(pixelMap);
+      if (headFilter != null) {
+        // 对图片添加效果标识
+        headFilter.invert();
+      }
+      // 按照添加的效果标识对图片进行处理并且返回处理好的图片数据
+      headFilter.getEffectPixelMap().then(imageData => {
+        resolve(imageData);
+      })
+    })
+  })
+}
+
+@Entry
+@Component
+struct Index {
+  @State imagePixelMap: image.PixelMap | null = null;
+  private imageBuffer: ArrayBuffer | undefined = undefined;
+  // 读取rawfile文件夹下的图片文件，也可根据需求更换读取方式，保证最终得到的是ArrayBuffer格式的图片数据即可
+  async getFileBuffer(): Promise<ArrayBuffer | undefined> {
+    try{
+      const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+      const fileData: Uint8Array = await context.resourceManager.getRawFileContent('image.png');
+      const buffer: ArrayBuffer = fileData.buffer.slice(0);
+      return buffer;
+    }catch (err){
+      return undefined
+    }
+  }
+
+  async aboutToAppear(): Promise<void>{
+    this.imageBuffer = await this.getFileBuffer();
+    if(this.imageBuffer == undefined){
+      return;
+    }
+    // 图片处理为异步操作，可以依据是否需要拿到处理好的图片数据再进行下一步逻辑，按需添加await进行同步
+    this.imagePixelMap = await ImageInvert(this.imageBuffer);
+  }
+
+  build() {
+    Column() {
+      Image(this.imagePixelMap)
+        .width(304)
+        .height(305)
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
-1. import { image } from '@kit.ImageKit';
-2. import { effectKit } from '@kit.ArkGraphics2D';
-3. import { common } from '@kit.AbilityKit';
-4. // 传入读取的图片数据
-5. function ImageInvert(Image: ArrayBuffer): Promise<image.PixelMap> {
-6. return new Promise(async (resolve, reject) => {
-7. let imageSource = image.createImageSource(Image);
-8. await imageSource.createPixelMap().then(async (pixelMap: image.PixelMap) => {
-9. let headFilter = effectKit.createEffect(pixelMap);
-10. if (headFilter != null) {
-11. // 对图片添加效果标识
-12. headFilter.invert();
-13. }
-14. // 按照添加的效果标识对图片进行处理并且返回处理好的图片数据
-15. headFilter.getEffectPixelMap().then(imageData => {
-16. resolve(imageData);
-17. })
-18. })
-19. })
-20. }
 
-22. @Entry
-23. @Component
-24. struct Index {
-25. @State imagePixelMap: image.PixelMap | null = null;
-26. private imageBuffer: ArrayBuffer | undefined = undefined;
-27. // 读取rawfile文件夹下的图片文件，也可根据需求更换读取方式，保证最终得到的是ArrayBuffer格式的图片数据即可
-28. async getFileBuffer(): Promise<ArrayBuffer | undefined> {
-29. try{
-30. const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-31. const fileData: Uint8Array = await context.resourceManager.getRawFileContent('image.png');
-32. const buffer: ArrayBuffer = fileData.buffer.slice(0);
-33. return buffer;
-34. }catch (err){
-35. return undefined
-36. }
-37. }
-
-39. async aboutToAppear(): Promise<void>{
-40. this.imageBuffer = await this.getFileBuffer();
-41. if(this.imageBuffer == undefined){
-42. return;
-43. }
-44. // 图片处理为异步操作，可以依据是否需要拿到处理好的图片数据再进行下一步逻辑，按需添加await进行同步
-45. this.imagePixelMap = await ImageInvert(this.imageBuffer);
-46. }
-
-48. build() {
-49. Column() {
-50. Image(this.imagePixelMap)
-51. .width(304)
-52. .height(305)
-53. }
-54. .height('100%')
-55. .width('100%')
-56. }
-57. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/4cY1La_eQaS_91qHjasp_w/zh-cn_image_0000002589327255.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/Baj6tEoXTQyy9cse55O8rw/zh-cn_image_0000002736436215.png)
 
 ### setColorMatrix12+
-
-PhonePC/2in1TabletTVWearable
 
 setColorMatrix(colorMatrix: Array<number>): Filter
 
@@ -1017,77 +975,75 @@ setColorMatrix(colorMatrix: Array<number>): Filter
 
 **示例：**
 
+```ts
+import { image } from '@kit.ImageKit';
+import { effectKit } from '@kit.ArkGraphics2D';
+import { common } from '@kit.AbilityKit';
+// 传入读取的图片数据
+function ImageColorFilter(Image: ArrayBuffer): Promise<image.PixelMap> {
+  return new Promise(async (resolve, reject) => {
+    let imageSource = image.createImageSource(Image);
+    await imageSource.createPixelMap().then(async (pixelMap: image.PixelMap) => {
+      let colorMatrix:Array<number> = [
+      0.2126,0.7152,0.0722,0,0,
+      0.2126,0.7152,0.0722,0,0,
+      0.2126,0.7152,0.0722,0,0,
+      0,0,0,1,0
+      ];
+      let headFilter = effectKit.createEffect(pixelMap);
+      if (headFilter != null) {
+        // 对图片添加效果标识
+        headFilter.setColorMatrix(colorMatrix);
+      }
+      // 按照添加的效果标识对图片进行处理并且返回处理好的图片数据
+      headFilter.getEffectPixelMap().then(imageData => {
+        resolve(imageData);
+      })
+    })
+  })
+}
+
+@Entry
+@Component
+struct Index {
+  @State imagePixelMap: image.PixelMap | null = null;
+  private imageBuffer: ArrayBuffer | undefined = undefined;
+  // 读取rawfile文件夹下的图片文件，也可根据需求更换读取方式，保证最终得到的是ArrayBuffer格式的图片数据即可
+  async getFileBuffer(): Promise<ArrayBuffer | undefined> {
+    try{
+      const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+      const fileData: Uint8Array = await context.resourceManager.getRawFileContent('image.png');
+      const buffer: ArrayBuffer = fileData.buffer.slice(0);
+      return buffer;
+    }catch (err){
+      return undefined
+    }
+  }
+
+  async aboutToAppear(): Promise<void>{
+    this.imageBuffer = await this.getFileBuffer();
+    if(this.imageBuffer == undefined){
+      return;
+    }
+    // 图片处理为异步操作，可以依据是否需要拿到处理好的图片数据再进行下一步逻辑，按需添加await进行同步
+    this.imagePixelMap = await ImageColorFilter(this.imageBuffer);
+  }
+
+  build() {
+    Column() {
+      Image(this.imagePixelMap)
+        .width(304)
+        .height(305)
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
-1. import { image } from '@kit.ImageKit';
-2. import { effectKit } from '@kit.ArkGraphics2D';
-3. import { common } from '@kit.AbilityKit';
-4. // 传入读取的图片数据
-5. function ImageColorFilter(Image: ArrayBuffer): Promise<image.PixelMap> {
-6. return new Promise(async (resolve, reject) => {
-7. let imageSource = image.createImageSource(Image);
-8. await imageSource.createPixelMap().then(async (pixelMap: image.PixelMap) => {
-9. let colorMatrix:Array<number> = [
-10. 0.2126,0.7152,0.0722,0,0,
-11. 0.2126,0.7152,0.0722,0,0,
-12. 0.2126,0.7152,0.0722,0,0,
-13. 0,0,0,1,0
-14. ];
-15. let headFilter = effectKit.createEffect(pixelMap);
-16. if (headFilter != null) {
-17. // 对图片添加效果标识
-18. headFilter.setColorMatrix(colorMatrix);
-19. }
-20. // 按照添加的效果标识对图片进行处理并且返回处理好的图片数据
-21. headFilter.getEffectPixelMap().then(imageData => {
-22. resolve(imageData);
-23. })
-24. })
-25. })
-26. }
 
-28. @Entry
-29. @Component
-30. struct Index {
-31. @State imagePixelMap: image.PixelMap | null = null;
-32. private imageBuffer: ArrayBuffer | undefined = undefined;
-33. // 读取rawfile文件夹下的图片文件，也可根据需求更换读取方式，保证最终得到的是ArrayBuffer格式的图片数据即可
-34. async getFileBuffer(): Promise<ArrayBuffer | undefined> {
-35. try{
-36. const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-37. const fileData: Uint8Array = await context.resourceManager.getRawFileContent('image.png');
-38. const buffer: ArrayBuffer = fileData.buffer.slice(0);
-39. return buffer;
-40. }catch (err){
-41. return undefined
-42. }
-43. }
-
-45. async aboutToAppear(): Promise<void>{
-46. this.imageBuffer = await this.getFileBuffer();
-47. if(this.imageBuffer == undefined){
-48. return;
-49. }
-50. // 图片处理为异步操作，可以依据是否需要拿到处理好的图片数据再进行下一步逻辑，按需添加await进行同步
-51. this.imagePixelMap = await ImageColorFilter(this.imageBuffer);
-52. }
-
-54. build() {
-55. Column() {
-56. Image(this.imagePixelMap)
-57. .width(304)
-58. .height(305)
-59. }
-60. .height('100%')
-61. .width('100%')
-62. }
-63. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/OkphEdboTzqmgl9BJaPfGQ/zh-cn_image_0000002589247195.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/Mc6QICLaRIGUrQ_Ad-mQlg/zh-cn_image_0000002706837064.png)
 
 ### brightness
-
-PhonePC/2in1TabletTVWearable
 
 brightness(bright: number): Filter
 
@@ -1113,72 +1069,70 @@ brightness(bright: number): Filter
 
 **示例：**
 
+```ts
+import { image } from '@kit.ImageKit';
+import { effectKit } from '@kit.ArkGraphics2D';
+import { common } from '@kit.AbilityKit';
+// 传入读取的图片数据
+function ImageBrightness(Image: ArrayBuffer): Promise<image.PixelMap> {
+  return new Promise(async (resolve, reject) => {
+    let imageSource = image.createImageSource(Image);
+    await imageSource.createPixelMap().then(async (pixelMap: image.PixelMap) => {
+      let bright = 0.5;
+      let headFilter = effectKit.createEffect(pixelMap);
+      if (headFilter != null) {
+        // 对图片添加效果标识
+        headFilter.brightness(bright);
+      }
+      // 按照添加的效果标识对图片进行处理并且返回处理好的图片数据
+      headFilter.getEffectPixelMap().then(imageData => {
+        resolve(imageData);
+      })
+    })
+  })
+}
+
+@Entry
+@Component
+struct Index {
+  @State imagePixelMap: image.PixelMap | null = null;
+  private imageBuffer: ArrayBuffer | undefined = undefined;
+  // 读取rawfile文件夹下的图片文件，也可根据需求更换读取方式，保证最终得到的是ArrayBuffer格式的图片数据即可
+  async getFileBuffer(): Promise<ArrayBuffer | undefined> {
+    try{
+      const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+      const fileData: Uint8Array = await context.resourceManager.getRawFileContent('image.png');
+      const buffer: ArrayBuffer = fileData.buffer.slice(0);
+      return buffer;
+    }catch (err){
+      return undefined
+    }
+  }
+
+  async aboutToAppear(): Promise<void>{
+    this.imageBuffer = await this.getFileBuffer();
+    if(this.imageBuffer == undefined){
+      return;
+    }
+    // 图片处理为异步操作，可以依据是否需要拿到处理好的图片数据再进行下一步逻辑，按需添加await进行同步
+    this.imagePixelMap = await ImageBrightness(this.imageBuffer);
+  }
+
+  build() {
+    Column() {
+      Image(this.imagePixelMap)
+        .width(304)
+        .height(305)
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
-1. import { image } from '@kit.ImageKit';
-2. import { effectKit } from '@kit.ArkGraphics2D';
-3. import { common } from '@kit.AbilityKit';
-4. // 传入读取的图片数据
-5. function ImageBrightness(Image: ArrayBuffer): Promise<image.PixelMap> {
-6. return new Promise(async (resolve, reject) => {
-7. let imageSource = image.createImageSource(Image);
-8. await imageSource.createPixelMap().then(async (pixelMap: image.PixelMap) => {
-9. let bright = 0.5;
-10. let headFilter = effectKit.createEffect(pixelMap);
-11. if (headFilter != null) {
-12. // 对图片添加效果标识
-13. headFilter.brightness(bright);
-14. }
-15. // 按照添加的效果标识对图片进行处理并且返回处理好的图片数据
-16. headFilter.getEffectPixelMap().then(imageData => {
-17. resolve(imageData);
-18. })
-19. })
-20. })
-21. }
 
-23. @Entry
-24. @Component
-25. struct Index {
-26. @State imagePixelMap: image.PixelMap | null = null;
-27. private imageBuffer: ArrayBuffer | undefined = undefined;
-28. // 读取rawfile文件夹下的图片文件，也可根据需求更换读取方式，保证最终得到的是ArrayBuffer格式的图片数据即可
-29. async getFileBuffer(): Promise<ArrayBuffer | undefined> {
-30. try{
-31. const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-32. const fileData: Uint8Array = await context.resourceManager.getRawFileContent('image.png');
-33. const buffer: ArrayBuffer = fileData.buffer.slice(0);
-34. return buffer;
-35. }catch (err){
-36. return undefined
-37. }
-38. }
-
-40. async aboutToAppear(): Promise<void>{
-41. this.imageBuffer = await this.getFileBuffer();
-42. if(this.imageBuffer == undefined){
-43. return;
-44. }
-45. // 图片处理为异步操作，可以依据是否需要拿到处理好的图片数据再进行下一步逻辑，按需添加await进行同步
-46. this.imagePixelMap = await ImageBrightness(this.imageBuffer);
-47. }
-
-49. build() {
-50. Column() {
-51. Image(this.imagePixelMap)
-52. .width(304)
-53. .height(305)
-54. }
-55. .height('100%')
-56. .width('100%')
-57. }
-58. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/tcuZwSAeRbO0KZx7xMRQ8Q/zh-cn_image_0000002558767388.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/2b_85-SESgmIFBQot97CbA/zh-cn_image_0000002736316171.png)
 
 ### grayscale
-
-PhonePC/2in1TabletTVWearable
 
 grayscale(): Filter
 
@@ -1198,71 +1152,69 @@ grayscale(): Filter
 
 **示例：**
 
+```ts
+import { image } from '@kit.ImageKit';
+import { effectKit } from '@kit.ArkGraphics2D';
+import { common } from '@kit.AbilityKit';
+// 传入读取的图片数据
+function ImageGrayscale(Image: ArrayBuffer): Promise<image.PixelMap> {
+  return new Promise(async (resolve, reject) => {
+    let imageSource = image.createImageSource(Image);
+    await imageSource.createPixelMap().then(async (pixelMap: image.PixelMap) => {
+      let headFilter = effectKit.createEffect(pixelMap);
+      if (headFilter != null) {
+        // 对图片添加效果标识
+        headFilter.grayscale();
+      }
+      // 按照添加的效果标识对图片进行处理并且返回处理好的图片数据
+      headFilter.getEffectPixelMap().then(imageData => {
+        resolve(imageData);
+      })
+    })
+  })
+}
+
+@Entry
+@Component
+struct Index {
+  @State imagePixelMap: image.PixelMap | null = null;
+  private imageBuffer: ArrayBuffer | undefined = undefined;
+  // 读取rawfile文件夹下的图片文件，也可根据需求更换读取方式，保证最终得到的是ArrayBuffer格式的图片数据即可
+  async getFileBuffer(): Promise<ArrayBuffer | undefined> {
+    try{
+      const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+      const fileData: Uint8Array = await context.resourceManager.getRawFileContent('image.png');
+      const buffer: ArrayBuffer = fileData.buffer.slice(0);
+      return buffer;
+    }catch (err){
+      return undefined
+    }
+  }
+
+  async aboutToAppear(): Promise<void>{
+    this.imageBuffer = await this.getFileBuffer();
+    if(this.imageBuffer == undefined){
+      return;
+    }
+    // 图片处理为异步操作，可以依据是否需要拿到处理好的图片数据再进行下一步逻辑，按需添加await进行同步
+    this.imagePixelMap = await ImageGrayscale(this.imageBuffer);
+  }
+
+  build() {
+    Column() {
+      Image(this.imagePixelMap)
+        .width(304)
+        .height(305)
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
-1. import { image } from '@kit.ImageKit';
-2. import { effectKit } from '@kit.ArkGraphics2D';
-3. import { common } from '@kit.AbilityKit';
-4. // 传入读取的图片数据
-5. function ImageGrayscale(Image: ArrayBuffer): Promise<image.PixelMap> {
-6. return new Promise(async (resolve, reject) => {
-7. let imageSource = image.createImageSource(Image);
-8. await imageSource.createPixelMap().then(async (pixelMap: image.PixelMap) => {
-9. let headFilter = effectKit.createEffect(pixelMap);
-10. if (headFilter != null) {
-11. // 对图片添加效果标识
-12. headFilter.grayscale();
-13. }
-14. // 按照添加的效果标识对图片进行处理并且返回处理好的图片数据
-15. headFilter.getEffectPixelMap().then(imageData => {
-16. resolve(imageData);
-17. })
-18. })
-19. })
-20. }
 
-22. @Entry
-23. @Component
-24. struct Index {
-25. @State imagePixelMap: image.PixelMap | null = null;
-26. private imageBuffer: ArrayBuffer | undefined = undefined;
-27. // 读取rawfile文件夹下的图片文件，也可根据需求更换读取方式，保证最终得到的是ArrayBuffer格式的图片数据即可
-28. async getFileBuffer(): Promise<ArrayBuffer | undefined> {
-29. try{
-30. const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-31. const fileData: Uint8Array = await context.resourceManager.getRawFileContent('image.png');
-32. const buffer: ArrayBuffer = fileData.buffer.slice(0);
-33. return buffer;
-34. }catch (err){
-35. return undefined
-36. }
-37. }
-
-39. async aboutToAppear(): Promise<void>{
-40. this.imageBuffer = await this.getFileBuffer();
-41. if(this.imageBuffer == undefined){
-42. return;
-43. }
-44. // 图片处理为异步操作，可以依据是否需要拿到处理好的图片数据再进行下一步逻辑，按需添加await进行同步
-45. this.imagePixelMap = await ImageGrayscale(this.imageBuffer);
-46. }
-
-48. build() {
-49. Column() {
-50. Image(this.imagePixelMap)
-51. .width(304)
-52. .height(305)
-53. }
-54. .height('100%')
-55. .width('100%')
-56. }
-57. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/lroSuVefQCyTrZt3tdaV_A/zh-cn_image_0000002558607730.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/q_xiQIL9Tgm2G9sY3P9J5A/zh-cn_image_0000002706677128.png)
 
 ### getEffectPixelMap11+
-
-PhonePC/2in1TabletTVWearable
 
 getEffectPixelMap(): Promise<image.PixelMap>
 
@@ -1282,29 +1234,27 @@ getEffectPixelMap(): Promise<image.PixelMap>
 
 **示例：**
 
-```
-1. import { image } from "@kit.ImageKit";
-2. import { effectKit } from "@kit.ArkGraphics2D";
+```ts
+import { image } from "@kit.ImageKit";
+import { effectKit } from "@kit.ArkGraphics2D";
 
-4. const color = new ArrayBuffer(96);
-5. let opts : image.InitializationOptions = {
-6. editable: true,
-7. pixelFormat: 3,
-8. size: {
-9. height: 4,
-10. width: 6
-11. }
-12. };
-13. image.createPixelMap(color, opts).then((pixelMap) => {
-14. effectKit.createEffect(pixelMap).grayscale().getEffectPixelMap().then(data => {
-15. console.info('getPixelBytesNumber = ', data.getPixelBytesNumber());
-16. })
-17. })
+const color = new ArrayBuffer(96);
+let opts : image.InitializationOptions = {
+  editable: true,
+  pixelFormat: 3,
+  size: {
+    height: 4,
+    width: 6
+  }
+};
+image.createPixelMap(color, opts).then((pixelMap) => {
+  effectKit.createEffect(pixelMap).grayscale().getEffectPixelMap().then(data => {
+    console.info('getPixelBytesNumber = ', data.getPixelBytesNumber());
+  })
+})
 ```
 
 ### getEffectPixelMap20+
-
-PhonePC/2in1TabletTVWearable
 
 getEffectPixelMap(useCpuRender : boolean): Promise<image.PixelMap>
 
@@ -1330,35 +1280,33 @@ getEffectPixelMap(useCpuRender : boolean): Promise<image.PixelMap>
 
 **示例：**
 
-```
-1. import { image } from "@kit.ImageKit";
-2. import { effectKit } from "@kit.ArkGraphics2D";
+```ts
+import { image } from "@kit.ImageKit";
+import { effectKit } from "@kit.ArkGraphics2D";
 
-4. const color = new ArrayBuffer(96);
-5. let opts : image.InitializationOptions = {
-6. editable: true,
-7. pixelFormat: 3,
-8. size: {
-9. height: 4,
-10. width: 6
-11. }
-12. };
-13. image.createPixelMap(color, opts).then((pixelMap) => {
-14. effectKit.createEffect(pixelMap).grayscale().getEffectPixelMap(false).then(data => {
-15. console.info('getPixelBytesNumber = ', data.getPixelBytesNumber());
-16. })
-17. })
+const color = new ArrayBuffer(96);
+let opts : image.InitializationOptions = {
+  editable: true,
+  pixelFormat: 3,
+  size: {
+    height: 4,
+    width: 6
+  }
+};
+image.createPixelMap(color, opts).then((pixelMap) => {
+  effectKit.createEffect(pixelMap).grayscale().getEffectPixelMap(false).then(data => {
+    console.info('getPixelBytesNumber = ', data.getPixelBytesNumber());
+  })
+})
 ```
 
 ### getPixelMap(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getPixelMap(): image.PixelMap
 
 获取已添加链表效果的源图像的image.PixelMap。
 
-说明
+**说明** 
 
 从API version 9开始支持，从API version 11开始废弃，建议使用[getEffectPixelMap](js-apis-effectkit.md#geteffectpixelmap11)替代。
 
@@ -1372,21 +1320,21 @@ getPixelMap(): image.PixelMap
 
 **示例：**
 
-```
-1. import { image } from "@kit.ImageKit";
-2. import { effectKit } from "@kit.ArkGraphics2D";
+```ts
+import { image } from "@kit.ImageKit";
+import { effectKit } from "@kit.ArkGraphics2D";
 
-4. const color = new ArrayBuffer(96);
-5. let opts : image.InitializationOptions = {
-6. editable: true,
-7. pixelFormat: 3,
-8. size: {
-9. height: 4,
-10. width: 6
-11. }
-12. };
-13. image.createPixelMap(color, opts).then((pixelMap) => {
-14. let pixel = effectKit.createEffect(pixelMap).grayscale().getPixelMap();
-15. console.info('getPixelBytesNumber = ', pixel.getPixelBytesNumber());
-16. })
+const color = new ArrayBuffer(96);
+let opts : image.InitializationOptions = {
+  editable: true,
+  pixelFormat: 3,
+  size: {
+    height: 4,
+    width: 6
+  }
+};
+image.createPixelMap(color, opts).then((pixelMap) => {
+  let pixel = effectKit.createEffect(pixelMap).grayscale().getPixelMap();
+  console.info('getPixelBytesNumber = ', pixel.getPixelBytesNumber());
+})
 ```

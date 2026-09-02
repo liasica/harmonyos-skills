@@ -3,26 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: DrawingRenderingContext
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > DrawingRenderingContext
 category: harmonyos-references
-scraped_at: 2026-04-29T13:52:35+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:5caa86c07ad511f1167c5aed0efc5452860be6a7a64e8af2f6ece0b2134eda1f
+scraped_at: 2026-09-02T15:01:05+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7a072386d0487b8f68943ffa035dd19f1dc023da539f7595b5538b0fb4861318
 ---
 
-DrawingRenderingContext对象与Canvas组件绑定后，可在Canvas组件上进行绘制，绘制对象可以是形状、文本、图片等。
+DrawingRenderingContext对象与Canvas组件绑定后，可在Canvas组件上进行绘制，绘制对象可以是形状、文本、图片等。绑定方式：通过Canvas组件构造函数传入DrawingRenderingContext对象建立绑定关系。绘制流程：通过canvas属性获取DrawingCanvas对象，调用drawing模块接口执行绘制操作，最后调用invalidate()方法触发重新渲染。适用于需要高性能图形绘制、自定义图表、图像编辑等场景，相比CanvasRenderingContext2D提供了更灵活的绘制接口。
 
-说明
+**说明** 
 
-从API version 12开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## constructor
 
-PhonePC/2in1TabletTVWearable
-
 constructor(unit?: LengthMetricsUnit)
 
-构造使用drawing接口进行绘制的Canvas画布对象，支持配置DrawingRenderingContext对象的单位模式。
+构造使用drawing接口进行绘制的Canvas画布对象，支持配置DrawingRenderingContext对象的单位模式。构造成功后，可通过DrawingRenderingContext对象的canvas属性获取画布对象进行绘制操作。
 
-**卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -30,17 +30,17 @@ constructor(unit?: LengthMetricsUnit)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| unit | [LengthMetricsUnit](js-apis-arkui-graphics.md#lengthmetricsunit12) | 否 | 用来配置DrawingRenderingContext对象的单位模式，配置后无法更改，配置方法同[CanvasRenderingContext2D](ts-canvasrenderingcontext2d.md)。  异常值undefined、NaN和Infinity按默认值处理。  默认值：DEFAULT |
+| unit | [LengthMetricsUnit](js-apis-arkui-graphics.md#lengthmetricsunit12) | 否 | 用来配置DrawingRenderingContext对象的单位模式，配置后无法更改，配置方法同[CanvasRenderingContext2D](ts-canvasrenderingcontext2d.md)。  可选值：DEFAULT（默认vp单位）、PX（px像素单位）。  异常值undefined、NaN和Infinity按默认值处理。  默认值：DEFAULT |
 
 ## size
 
-PhonePC/2in1TabletTVWearable
-
 get size(): Size
 
-获取DrawingRenderingContext的大小。
+获取DrawingRenderingContext的大小。需要在Canvas组件上绑定DrawingRenderingContext对象后使用。返回的Size对象包含画布的宽度和高度信息，可用于计算绘制区域或调整绘制参数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -52,13 +52,13 @@ get size(): Size
 
 ## canvas
 
-PhonePC/2in1TabletTVWearable
-
 get canvas(): DrawingCanvas
 
-获取绘制内容的画布对象。
+获取绘制内容的画布对象。需要在Canvas组件上绑定DrawingRenderingContext对象后使用。获取到的Canvas对象可用于绑定Brush、Pen等绘图工具，进行形状、文本、图片等绘制操作。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -66,152 +66,153 @@ get canvas(): DrawingCanvas
 
 | 类型 | 说明 |
 | --- | --- |
-| [DrawingCanvas](ts-drawingrenderingcontext.md#drawingcanvas12对象说明) | 绘制内容的画布对象。 |
+| [DrawingCanvas](ts-drawingrenderingcontext.md#drawingcanvas对象说明) | 绘制内容的画布对象。 |
 
 ## invalidate
 
-PhonePC/2in1TabletTVWearable
-
 invalidate(): void
 
-使组件无效，触发组件的重新渲染。
+标记组件状态已变更，触发组件的重新渲染。需在Canvas组件绑定DrawingRenderingContext对象后，完成drawing绘制操作时调用，以将绘制内容渲染到屏幕上显示。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-## DrawingCanvas12+对象说明
+## DrawingCanvas对象说明
 
-PhonePC/2in1TabletTVWearable
-
-type DrawingCanvas = Canvas
+type DrawingCanvas = import('../api/@ohos.graphics.drawing').default.Canvas
 
 可用于向DrawingRenderingContext上绘制内容的画布对象。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 类型 | 说明 |
 | --- | --- |
-| [Canvas](arkts-apis-graphics-drawing-canvas.md) | 返回一个Canvas对象。 |
+| import('../api/@ohos.graphics.drawing').default.[Canvas](arkts-apis-graphics-drawing-canvas.md) | 返回一个Canvas对象，可用于在DrawingRenderingContext绑定的Canvas组件上绘制形状、文本、图片等内容。 |
 
 ## Size
-
-PhonePC/2in1TabletTVWearable
 
 DrawingRenderingContext的尺寸信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| width | number | 否 | 否 | 获取DrawingRenderingContext的宽度，其值为关联的Canvas组件的宽度。  支持单位：vp、px。  默认单位为vp。 |
-| height | number | 否 | 否 | 获取DrawingRenderingContext的高度，其值为关联的Canvas组件的高度。  支持单位：vp、px。  默认单位为vp。 |
+| width | number | 否 | 否 | 获取DrawingRenderingContext的宽度，其值为关联的Canvas组件的宽度。单位由constructor的unit参数配置决定，支持单位：vp、px。默认单位为vp。 |
+| height | number | 否 | 否 | 获取DrawingRenderingContext的高度，其值为关联的Canvas组件的高度。单位由constructor的unit参数配置决定，支持单位：vp、px。默认单位为vp。 |
 
 ## 示例
-
-PhonePC/2in1TabletTVWearable
 
 ### 示例1（绘制图形）
 
 该示例实现了如何使用DrawingRenderingContext中的方法绘制图形。
 
-```
-1. import { common2D, drawing } from '@kit.ArkGraphics2D';
+```ts
+import { common2D, drawing } from '@kit.ArkGraphics2D';
 
-3. // xxx.ets
-4. @Entry
-5. @Component
-6. struct CanvasExample {
-7. private context: DrawingRenderingContext = new DrawingRenderingContext();
+// xxx.ets
+@Entry
+@Component
+struct CanvasExample {
+  private context: DrawingRenderingContext = new DrawingRenderingContext();
 
-9. build() {
-10. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-11. Canvas(this.context)
-12. .width('100%')
-13. .height('50%')
-14. .backgroundColor('#D5D5D5')
-15. .onReady(() => {
-16. let brush = new drawing.Brush();
-17. // 使用RGBA(39, 135, 217, 255)填充圆心为(200, 200)，半径为100的圆
-18. brush.setColor({
-19. alpha: 255,
-20. red: 39,
-21. green: 135,
-22. blue: 217
-23. });
-24. this.context.canvas.attachBrush(brush);
-25. this.context.canvas.drawCircle(200, 200, 100);
-26. this.context.canvas.detachBrush();
-27. this.context.invalidate();
-28. })
-29. Button("Clear")
-30. .width('120')
-31. .height('50')
-32. .onClick(() => {
-33. let color: common2D.Color = {
-34. alpha: 0,
-35. red: 0,
-36. green: 0,
-37. blue: 0
-38. };
-39. // 使用RGBA(0, 0, 0, 0)填充画布
-40. this.context.canvas.clear(color);
-41. this.context.invalidate();
-42. })
-43. }
-44. .width('100%')
-45. .height('100%')
-46. }
-47. }
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Canvas(this.context)
+        .width('100%')
+        .height('50%')
+        .backgroundColor('#D5D5D5')
+        .onReady(() => {
+          let brush = new drawing.Brush();
+          // 使用RGBA(39, 135, 217, 255)填充圆心为(200, 200)，半径为100的圆
+          brush.setColor({
+            alpha: 255,
+            red: 39,
+            green: 135,
+            blue: 217
+          });
+          this.context.canvas.attachBrush(brush);
+          this.context.canvas.drawCircle(200, 200, 100);
+          this.context.canvas.detachBrush();
+          this.context.invalidate();
+        })
+      Button("Clear")
+        .width('120')
+        .height('50')
+        .onClick(() => {
+          let color: common2D.Color = {
+            alpha: 0,
+            red: 0,
+            green: 0,
+            blue: 0
+          };
+          // 使用RGBA(0, 0, 0, 0)清空画布
+          this.context.canvas.clear(color);
+          this.context.invalidate();
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 图1 绘制圆心为(200, 200)，半径为100的圆，填充色为RGBA(39, 135, 217, 255)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/mSqwP2ChQBCBsSjGzwKuGg/zh-cn_image_0000002589246301.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/GphE7Q4vRZizuYMeIJedDA/zh-cn_image_0000002706836116.png)
 
 图2 点击Clear按钮清空画布
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/bJZT-CB6THKaVKQkQud7GA/zh-cn_image_0000002558766494.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/KQPPSGsCQkOtv1eEYAWtcQ/zh-cn_image_0000002736315221.png)
 
 ### 示例2（绘制文本）
 
 该示例实现了通过[makeFromRawFile](arkts-apis-graphics-drawing-typeface.md#makefromrawfile18)（从API version 18开始）加载自定义字体。并使用[drawTextBlob](arkts-apis-graphics-drawing-canvas.md#drawtextblob)绘制文本，drawing接口绘制自定义文字时，不需要调用this.uiContext.getFont().[registerFont](arkts-apis-uicontext-font.md#registerfont)或者fontCollection.[loadFontSync](js-apis-graphics-text.md#loadfontsync)提前注册字体，而是通过drawing.Typeface.[makeFromRawFile](arkts-apis-graphics-drawing-typeface.md#makefromrawfile18)（从API version 18开始）传入rawfile目录下的自定义字体文件。
 
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
+
+// xxx.ets
+@Entry
+@Component
+struct CanvasExample {
+  private context: DrawingRenderingContext = new DrawingRenderingContext();
+
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Canvas(this.context)
+        .width('100%')
+        .height('50%')
+        .backgroundColor('#D5D5D5')
+        .onReady(() => {
+          // 创建字体对象并设置字体大小为50
+          let font = new drawing.Font();
+          font.setSize(50);
+          // 加载rawfile目录下的自定义字体文件HarmonyOS_Sans_Bold.ttf
+          const myTypeFace = drawing.Typeface.makeFromRawFile($rawfile('HarmonyOS_Sans_Bold.ttf'));
+          font.setTypeface(myTypeFace);
+          // 创建文本Blob对象，参数依次为：文本内容、字体对象、文本编码格式
+          const textBlob =
+            drawing.TextBlob.makeFromString("Hello World", font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
+          // 在坐标(60, 100)处绘制文本Blob
+          this.context.canvas.drawTextBlob(textBlob, 60, 100);
+          this.context.invalidate();
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
-1. import { drawing } from '@kit.ArkGraphics2D';
 
-3. // xxx.ets
-4. @Entry
-5. @Component
-6. struct CanvasExample {
-7. private context: DrawingRenderingContext = new DrawingRenderingContext();
-
-9. build() {
-10. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-11. Canvas(this.context)
-12. .width('100%')
-13. .height('50%')
-14. .backgroundColor('#D5D5D5')
-15. .onReady(() => {
-16. let font = new drawing.Font();
-17. font.setSize(50);
-18. // 加载rawfile目录下的自定义字体文件HarmonyOS_Sans_Bold.ttf
-19. const myTypeFace = drawing.Typeface.makeFromRawFile($rawfile('HarmonyOS_Sans_Bold.ttf'));
-20. font.setTypeface(myTypeFace);
-21. const textBlob =
-22. drawing.TextBlob.makeFromString("Hello World", font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
-23. this.context.canvas.drawTextBlob(textBlob, 60, 100);
-24. this.context.invalidate();
-25. })
-26. }
-27. .width('100%')
-28. .height('100%')
-29. }
-30. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/zMX_2pnoSUavxLHg1MmJiA/zh-cn_image_0000002558606834.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/X5qRwAc7TlinrvIF-UL9Jw/zh-cn_image_0000002706676178.png)

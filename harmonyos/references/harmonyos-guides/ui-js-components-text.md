@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: text开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > text开发指导
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:47+08:00
-doc_updated_at: 2026-04-13
-content_hash: sha256:ad46c9dd5375c1cdbbab21bdc4f73e9512314c249f25eb669018f00660635872
+scraped_at: 2026-09-02T14:59:21+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:b8a376816d72ae310930628ec43612048e842155d939270dc2e26ea8c97ff342
 ---
 
 text是文本组件，用于呈现一段文本信息。具体用法请参考[text](../harmonyos-references/js-components-basic-text.md)的API文档。
@@ -14,146 +14,146 @@ text是文本组件，用于呈现一段文本信息。具体用法请参考[tex
 
 在pages/index目录下的hml文件中创建一个text组件。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container" style="text-align: center;justify-content: center; align-items: center;">
-3. <text>Hello World</text>
-4. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width: 100%;
-4. height: 100%;
-5. flex-direction: column;
-6. align-items: center;
-7. justify-content: center;
-8. background-color: #F1F3F5;
-9. }
+```html
+<!-- xxx.hml -->
+<div class="container" style="text-align: center;justify-content: center; align-items: center;">
+  <text>Hello World</text>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/zbIQnrKaQmOqUt3eO4JQnA/zh-cn_image_0000002589324457.png)
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #F1F3F5;
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/eRzEiB1MRWKLnSYPN-PruQ/zh-cn_image_0000002736313035.png)
 
 ## 设置text组件样式和属性
 
 * 添加文本样式
 
-  设置color、font-size、allow-scale、word-spacing、text-align属性分别为文本添加颜色、大小、缩放、文本之间的间距和文本在水平方向的对齐方式。
+  设置color、font-size、allow-scale、word-spacing、text-align属性分别为文本添加颜色、大小、是否允许缩放、文本之间的间距和文本在水平方向的对齐方式。
 
-  ```
-  1. <!-- xxx.hml -->
-  2. <div class="container" style="background-color:#F1F3F5;flex-direction: column;justify-content: center; align-items: center;">
-  3. <text style="color: blueviolet; font-size: 40px; allow-scale:true">
-  4. This is a passage
-  5. </text>
-  6. <text style="color: blueviolet; font-size: 40px; margin-top: 20px; allow-scale:true;word-spacing: 20px;text-align: center">
-  7. This is a passage
-  8. </text>
-  9. </div>
-  ```
-
-  ```
-  1. /* xxx.css */
-  2. .container {
-  3. display: flex;
-  4. width: 100%;
-  5. height: 100%;
-  6. flex-direction: column;
-  7. align-items: center;
-  8. justify-content: center;
-  9. background-color: #F1F3F5;
-  10. }
+  ```html
+  <!-- xxx.hml -->
+  <div class="container" style="background-color:#F1F3F5;flex-direction: column;justify-content: center; align-items: center;">   
+    <text style="color: blueviolet; font-size: 40px; allow-scale:true"> 
+      This is a passage
+    </text>
+    <text style="color: blueviolet; font-size: 40px; margin-top: 20px; allow-scale:true;word-spacing: 20px;text-align: center">
+      This is a passage
+    </text>
+  </div>
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/pN3U4MRxRAeMvPVFNzM_RQ/zh-cn_image_0000002589244397.png)
+  ```css
+  /* xxx.css */
+  .container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F1F3F5;
+  }
+  ```
+
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/-T3jTbtkTwK6MBATgk6z7w/zh-cn_image_0000002706673994.png)
 * 添加划线
 
-  设置text-decoration和text-decoration-color属性为文本添加划线和划线颜色，text-decoration枚举值请参考 text自有样式。
+  设置text-decoration和text-decoration-color属性为文本添加划线和划线颜色，text-decoration枚举值请参考text自有样式。
 
-  ```
-  1. <!-- xxx.hml -->
-  2. <div class="container" style="background-color:#F1F3F5;">
-  3. <text style="text-decoration:underline">
-  4. This is a passage
-  5. </text>
-  6. <text style="text-decoration:line-through;text-decoration-color: red">
-  7. This is a passage
-  8. </text>
-  9. </div>
-  ```
-
-  ```
-  1. /* xxx.css */
-  2. .container {
-  3. width: 100%;
-  4. height: 100%;
-  5. flex-direction: column;
-  6. align-items: center;
-  7. justify-content: center;
-  8. }
-  9. text{
-  10. font-size: 50px;
-  11. }
+  ```html
+  <!-- xxx.hml -->
+  <div class="container" style="background-color:#F1F3F5;">
+    <text style="text-decoration:underline">
+      This is a passage
+    </text>
+    <text style="text-decoration:line-through;text-decoration-color: red">
+      This is a passage
+     </text>
+  </div>
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/N8wrox4KQjGC78IMGBBwZg/zh-cn_image_0000002558764590.png)
+  ```css
+  /* xxx.css */
+  .container {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  text{
+    font-size: 50px;
+  }
+  ```
+
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/xdqQ4nJpTF6tR7SDi18_Dw/zh-cn_image_0000002736433085.png)
 * 隐藏文本内容
 
   当文本内容过多而显示不全时，添加text-overflow属性将隐藏内容以省略号的形式展现。
 
-  ```
-  1. <!-- xxx.hml -->
-  2. <div class="container">
-  3. <text class="text">
-  4. This is a passage
-  5. </text>
-  6. </div>
-  ```
-
-  ```
-  1. /* xxx.css */
-  2. .container {
-  3. width: 100%;
-  4. height: 100%;
-  5. flex-direction: column;
-  6. align-items: center;
-  7. background-color: #F1F3F5;
-  8. justify-content: center;
-  9. }
-  10. .text{
-  11. width: 200px;
-  12. max-lines: 1;
-  13. text-overflow:ellipsis;
-  14. }
+  ```html
+  <!-- xxx.hml -->
+  <div class="container">
+    <text class="text">
+      This is a passage
+    </text>
+  </div>
   ```
 
-  说明
+  ```css
+  /* xxx.css */
+  .container {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F1F3F5;
+    justify-content: center;
+  }
+  .text{
+    width: 200px;
+    max-lines: 1;
+    text-overflow:ellipsis;
+  }
+  ```
+
+  **说明** 
 
   + text-overflow样式需配合max-lines样式使用，在设置了最大行数的情况下才会生效。
   + max-lines属性设置文本最多可以展示的行数。
 
-  ​ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/Rzf81ZIAQB2T94epZj5QZQ/zh-cn_image_0000002558604934.png)
+  ​ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/DshsbP8NSIWRi_OtkasADA/zh-cn_image_0000002706833930.png)
 * text组件支持[span](../harmonyos-references/js-components-basic-span.md)子组件
 
-  ```
-  1. <!-- xxx.hml -->
-  2. <div class="container" style="justify-content: center; align-items: center;flex-direction: column;background-color: #F1F3F5;  width: 100%;height: 100%;">
-  3. <text style="font-size: 45px;">
-  4. This is a passage
-  5. </text>
-  6. <text style="font-size: 45px;">
-  7. <span style="color: aqua;">This </span><span style="color: #F1F3F5;">      1
-  8. </span>
-  9. <span style="color: blue;"> is a </span>    <span style="color: #F1F3F5;">      1    </span>
-  10. <span style="color: red;">  passage </span>
-  11. </text>
-  12. </div>
+  ```html
+  <!-- xxx.hml -->
+  <div class="container" style="justify-content: center; align-items: center;flex-direction: column;background-color: #F1F3F5;  width: 100%;height: 100%;">
+    <text style="font-size: 45px;">
+      This is a passage
+    </text>
+    <text style="font-size: 45px;">
+      <span style="color: aqua;">This </span><span style="color: #F1F3F5;">      1
+      </span>   
+      <span style="color: blue;"> is a </span>    <span style="color: #F1F3F5;">      1    </span>    
+      <span style="color: red;">  passage </span>
+    </text>
+  </div>
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/D9zdnR6kRZ2J_iCqMwcV7g/zh-cn_image_0000002589324459.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/zxx792U6RB6krwyAOeAtXw/zh-cn_image_0000002736313037.png)
 
-  说明
+  **说明** 
 
   + 当使用span子组件组成文本段落时，如果span属性样式异常（例如：font-weight设置为1000），将导致文本段落显示异常。
   + 在使用span子组件时，注意text组件内不能存在文本内容，如果在text组件同时包含文本内容和span子组件，则仅会显示子组件span中的内容。
@@ -162,55 +162,55 @@ text是文本组件，用于呈现一段文本信息。具体用法请参考[tex
 
 text组件通过数据绑定展示文本内容，span组件通过设置show属性来实现文本内容的隐藏和显示。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <div style="align-items: center;justify-content: center;">
-4. <text class="title">
-5. {{ content }}
-6. </text>
-7. <switch checked="true" onchange="test"></switch>
-8. </div>
-9. <text class="span-container" style="color: #ff00ff;">
-10. <span show="{{isShow}}">  {{ content  }}  </span>
-11. <span style="color: white;">
-12. 1
-13. </span>
-14. <span style="color: #f76160">Hide clip </span>
-15. </text>
-16. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width: 100%;
-4. height: 100%;
-5. align-items: center;
-6. flex-direction: column;
-7. justify-content: center;
-8. background-color: #F1F3F5;
-9. }
-10. .title {
-11. font-size: 26px;
-12. text-align:center;
-13. width: 200px;
-14. height: 200px;
-15. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <div style="align-items: center;justify-content: center;">
+    <text class="title">
+      {{ content }}
+    </text>
+    <switch checked="true" onchange="test"></switch>
+  </div>
+  <text class="span-container" style="color: #ff00ff;">
+    <span show="{{isShow}}">  {{ content  }}  </span>
+    <span style="color: white;">
+        1
+    </span>
+    <span style="color: #f76160">Hide clip </span>
+  </text>
+</div>
 ```
 
-```
-1. // xxx.js
-2. export default {
-3. data: {
-4. isShow:true,
-5. content: 'Hello World'
-6. },
-7. onInit(){    },
-8. test(e) {
-9. this.isShow = e.checked
-10. }
-11. }
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #F1F3F5;
+}
+.title {
+  font-size: 26px;
+  text-align:center;
+  width: 200px;
+  height: 200px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/smg7mui8Qkiv0RqjfYL9Lg/zh-cn_image_0000002589244399.gif)
+```js
+// xxx.js
+export default {
+  data: {
+    isShow:true,
+    content: 'Hello World'
+  },
+  onInit(){    },
+  test(e) {
+    this.isShow = e.checked
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/MaNc1Td7QzmHOJ5cW-SeNg/zh-cn_image_0000002706673996.gif)

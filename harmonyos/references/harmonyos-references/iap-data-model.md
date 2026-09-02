@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-data-
 title: 数据类型说明
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > ArkTS API > 数据类型说明
 category: harmonyos-references
-scraped_at: 2026-04-29T14:07:37+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:6b22dbe93858671a3962389d4a2c95372cd25ce444e61d12f62850e2d324a208
+scraped_at: 2026-09-02T14:53:20+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:a3712b206529c6a88837e492558baad0c946530bf12bb226cd43a842cc2ed310
 ---
 
 ## InAppPurchaseData
@@ -14,10 +14,10 @@ content_hash: sha256:6b22dbe93858671a3962389d4a2c95372cd25ce444e61d12f62850e2d32
 
 | 名称 | 是否必选 | 类型 | 说明 |
 | --- | --- | --- | --- |
-| applicationId | 是 | number | 应用ID。 |
-| applicationIdString | 是 | string | 字符串应用ID。 |
-| autoRenewing | 是 | boolean | 消耗型商品或者非消耗型商品：固定为false。 |
-| orderId | 是 | string | 订单ID，唯一标识一笔需要收费的收据，由IAP服务器在创建订单以及自动续期订阅商品续费时生成。  每一笔新的收据都会使用不同的orderId。 |
+| applicationId | 是 | number | 应用ID。最小长度为1，最大长度为64。 |
+| applicationIdString | 是 | string | 字符串应用ID。最小长度为1，最大长度为64。 |
+| autoRenewing | 是 | boolean | 是否自动续订。  - true:表示自动续订。  - false:表示非自动续订。 |
+| orderId | 是 | string | 订单ID，唯一标识一笔需要收费的订单，由IAP服务器在创建订单以及自动续期订阅商品续费时生成。  每一笔新的订单都会使用不同的orderId。 |
 | kind | 是 | number | 商品类别，取值包括：  0：消耗型商品  1：非消耗型商品 |
 | packageName | 否 | string | 应用安装包名。 |
 | productId | 是 | string | 商品ID。  **说明：** 为避免资金损失，开发者在对支付结果验签成功后，必须对其进行校验。 |
@@ -25,7 +25,7 @@ content_hash: sha256:6b22dbe93858671a3962389d4a2c95372cd25ce444e61d12f62850e2d32
 | purchaseTime | 否 | number | 商品购买时间，UTC时间戳，以ms为单位。  如果没有完成购买，则没有值。 |
 | purchaseTimeMillis | 否 | number | 历史接口兼容用，同purchaseTime，新接入无需关注本字段。 |
 | purchaseState | 是 | number | 订单交易状态。  -1：初始化  0：已购买  1：已取消  2：已退款  3：待处理 |
-| developerPayload | 否 | string | 商户侧保留信息，由应用在调用支付接口时传入。 |
+| developerPayload | 否 | string | 商户侧保留信息，由开发者在调用[支付接口](iap-iap.md#iapcreatepurchase)时传入。 |
 | developerChallenge | 否 | string | 应用发起消耗请求时自定义的挑战字，可唯一标识此次消耗请求。 |
 | consumptionState | 否 | number | 消耗状态，取值包括：  0：未消耗  1：已消耗 |
 | confirmed | 否 | number | 确认状态，取值包括：  0：未确认  1：已确认  没有值表示不需要确认  **说明：** 该字段当前仅做兼容用，开发者无需关注。 |
@@ -75,7 +75,7 @@ payType取值说明。
 | needFinish | 否 | boolean | 是否需要确认发货，完成购买。具体取值如下：  - true：必须确认发货，完成购买  - false：可选确认发货，完成购买 |
 | price | 是 | number | 价格，单位：分。价格受如下因素影响：  - 开发者在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中配置的商品价格  - 使用优惠后的价格，优惠类型包含[推介促销](../harmonyos-guides/iap-subscription-functions.md#提供优惠)、[优惠促销](../harmonyos-guides/iap-subscription-functions.md#提供优惠)、[挽留促销](../harmonyos-guides/iap-subscription-functions.md#提供优惠)  - 批量购买商品的总价格 |
 | currency | 是 | string | 币种，请参见[ISO 4217](https://www.iso.org/iso-4217-currency-codes.html)标准。例如CNY、USD、MYR。 |
-| developerPayload | 否 | string | 商户侧保留信息，由开发者在调用支付接口时传入。 |
+| developerPayload | 否 | string | 商户侧保留信息，由开发者在调用[支付接口](iap-iap.md#iapcreatepurchase)时传入。 |
 | purchaseOrderRevocationReasonCode | 否 | string | 购买订单撤销原因。  0：其他  1：用户遇到问题退款 |
 | revocationTime | 否 | number | 购买订单撤销时间，UTC时间戳，以ms为单位。 |
 | offerTypeCode | 否 | string | 优惠类型。  1：推介促销  2：优惠促销  4：挽留促销 |

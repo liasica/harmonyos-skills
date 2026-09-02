@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-agre
 title: 密钥协商介绍及算法规格
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥使用 > 密钥协商 > 密钥协商介绍及算法规格
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:19+08:00
+scraped_at: 2026-09-02T14:59:32+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:19b9bc70a0bf6958038fdcf927438738c5400ae39253b11ddfc83e388b3b2f3b
+content_hash: sha256:abf31c169f189809a1735c20755f4a7922305bb69e8d1a285f2dffaaab3bcb24
 ---
 
 为了避免恶意第三方获取到保密信息，密钥本身是不可以直接在设备间传输的。一般情况下，会采取密钥协商的方式，安全地在双方（或多方）间共享密钥。密钥协商只会传输密钥的公钥部分，私钥仍存留在设备内，以保护数据的安全性和机密性。
 
 两台设备间进行密钥协商，双方各准备一个非对称密钥，并互换非对称密钥的公钥，以对端公钥与己端私钥协商出一个密钥，该密钥在两台设备相同。
 
-说明
+**说明** 
 
 * 轻量级智能穿戴不支持密钥协商功能。
 * 使用现有密钥别名作为协商结果密钥别名会把现有密钥覆盖。

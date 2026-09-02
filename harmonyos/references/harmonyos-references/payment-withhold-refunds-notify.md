@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-w
 title: 退款结果回调通知
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 直连商户 > 签约代扣 > 退款结果回调通知
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:53+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b9e5277fcaafd26787157bceb52a5c824a7a40f93fdb598d6aa2e3ed9607dc52
+scraped_at: 2026-09-02T15:03:03+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:025e876f2ceff72ad0a7551646b76723b15a311698fe48450c40b92631bbb31c
 ---
 
 ## 功能介绍
 
 用户退款完成后，华为支付服务器调用此接口向开发者的服务器发送退款关键事件通知。
 
-说明
+**说明** 
 
 1. 为保证回调请求的可靠性，系统具备重试机制，可能会出现重发的通知。
 2. 为保证信息合法性，开发者需要对返回的支付信息进行[SM2验签](payment-rest-overview.md#验签规则)，验签注意事项：
@@ -29,7 +29,7 @@ content_hash: sha256:b9e5277fcaafd26787157bceb52a5c824a7a40f93fdb598d6aa2e3ed960
 ## 接口原型
 
 * **承载协议：** HTTPS POST
-* **接口方向：** 开发者服务器 -> 华为支付服务器
+* **接口方向：** 华为支付服务器 -> 开发者服务器
 * **接口URL：** URL由开发者在请求申请退款接口时传递的callbackUrl参数决定
 * **数据格式：**
 
@@ -62,27 +62,27 @@ content_hash: sha256:b9e5277fcaafd26787157bceb52a5c824a7a40f93fdb598d6aa2e3ed960
 
 ## 请求示例
 
-```
-1. POST /hw/pay/callback HTTP/1.1
-2. Content-Type: application/json;charset=UTF-8
-3. {
-4. "callbackId": "124070308575300049145189***",
-5. "callbackTime": "2023-03-29 09:52:37",
-6. "currency": "CNY",
-7. "dataType": "plain",
-8. "finishTime": "2023-02-23T10:05:17.000+0800",
-9. "mercNo": "10132120***",
-10. "mercRefundNo": "czl00120240705***",
-11. "payerRefundAmount": 100,
-12. "payload": "example-payload",
-13. "promotionRefundAmount": 10,
-14. "refundAmount": 100,
-15. "refundOrderStatus": "REFUND_SUCCESS",
-16. "sign": "MEYCIQD8RlHJ9tGmc2*******************GYpU7nDIJCYHcZpBY1ffr21wgjQ2l",
-17. "signType": "SM2",
-18. "certNo": "120291744647139***",
-19. "sysRefundNo": "1230223100511858780002***"
-20. }
+```json
+POST /hw/pay/callback HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+{
+  "callbackId": "124070308575300049145189***",
+  "callbackTime": "2023-03-29 09:52:37",
+  "currency": "CNY",
+  "dataType": "plain",
+  "finishTime": "2023-02-23T10:05:17.000+0800",
+  "mercNo": "10132120***",
+  "mercRefundNo": "czl00120240705***",
+  "payerRefundAmount": 100,
+  "payload": "example-payload",
+  "promotionRefundAmount": 10,
+  "refundAmount": 100,
+  "refundOrderStatus": "REFUND_SUCCESS",
+  "sign": "MEYCIQD8RlHJ9tGmc2*******************GYpU7nDIJCYHcZpBY1ffr21wgjQ2l",
+  "signType": "SM2",
+  "certNo": "120291744647139***",
+  "sysRefundNo": "1230223100511858780002***"
+}
 ```
 
 ## 响应参数
@@ -102,11 +102,11 @@ content_hash: sha256:b9e5277fcaafd26787157bceb52a5c824a7a40f93fdb598d6aa2e3ed960
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json; charset=UTF-8
-3. {
-4. "resultCode": "000000",
-5. "resultDesc": "Success."
-6. }
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+{
+  "resultCode": "000000",
+  "resultDesc": "Success."
+}
 ```

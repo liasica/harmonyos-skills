@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: drawing_mask_filter.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > drawing_mask_filter.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:55+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:2add4d60e46456dab50c24b3a5f04d637237e5426b91821fc1ce7479f4e29b8a
+scraped_at: 2026-09-02T15:02:43+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:3ac15aee43e3e3451f266da42dc0019f095dd361ed565f83258fbd0e095e1d02
 ---
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
+声明与绘图模块中的蒙版滤波器对象相关的函数。
 
-声明与绘图模块中的对象相关的函数。
+本模块为单线程模型策略，需要调用方自行管理线程安全和上下文状态的切换。
 
 **引用文件：** <native\_drawing/drawing\_mask\_filter.h>
 
@@ -26,11 +26,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,23 +34,17 @@ PhonePC/2in1TabletTVWearable
 
 ### 函数
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 描述 |
 | --- | --- |
 | [OH\_Drawing\_MaskFilter\* OH\_Drawing\_MaskFilterCreateBlur(OH\_Drawing\_BlurType blurType, float sigma, bool respectCTM)](capi-drawing-mask-filter-h.md#oh_drawing_maskfiltercreateblur) | 创建具有模糊效果的蒙版滤波器。 |
-| [void OH\_Drawing\_MaskFilterDestroy(OH\_Drawing\_MaskFilter\* maskFilter)](capi-drawing-mask-filter-h.md#oh_drawing_maskfilterdestroy) | 销毁蒙版滤波器对象，并收回该对象占用的内存。 |
+| [void OH\_Drawing\_MaskFilterDestroy(OH\_Drawing\_MaskFilter\* maskFilter)](capi-drawing-mask-filter-h.md#oh_drawing_maskfilterdestroy) | 销毁蒙版滤波器对象，并回收该对象占用的内存。 |
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Drawing\_BlurType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_Drawing_BlurType
+```c
+enum OH_Drawing_BlurType
 ```
 
 **描述**
@@ -72,14 +62,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Drawing\_MaskFilterCreateBlur()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_MaskFilter* OH_Drawing_MaskFilterCreateBlur(OH_Drawing_BlurType blurType, float sigma, bool respectCTM)
+```c
+OH_Drawing_MaskFilter* OH_Drawing_MaskFilterCreateBlur(OH_Drawing_BlurType blurType, float sigma, bool respectCTM)
 ```
 
 **描述**
@@ -106,15 +92,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_MaskFilterDestroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Drawing_MaskFilterDestroy(OH_Drawing_MaskFilter* maskFilter)
+```c
+void OH_Drawing_MaskFilterDestroy(OH_Drawing_MaskFilter* maskFilter)
 ```
 
 **描述**
 
-销毁蒙版滤波器对象，并收回该对象占用的内存。
+销毁蒙版滤波器对象，并回收该对象占用的内存。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
 

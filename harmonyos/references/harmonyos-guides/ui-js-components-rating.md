@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: rating开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > rating开发指导
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:49+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:0ed04a8d3787a80d7e098c6ec4e35cdf5221a6a888cbd914435a4465faac4e4b
+scraped_at: 2026-09-02T14:59:21+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:2f4a3918e46a97e812842e1bd85ce7568d10a3c05eec894b34298e8010dd1712
 ---
 
 rating是评分组件，用于展示用户对某项内容的评价等级。具体用法请参考[rating](../harmonyos-references/js-components-basic-rating.md)。
@@ -14,106 +14,106 @@ rating是评分组件，用于展示用户对某项内容的评价等级。具�
 
 在pages/index目录下的hml文件中创建一个rating组件。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <rating></rating>
-4. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width: 100%;
-4. height: 100%;
-5. display: flex;
-6. justify-content: center;
-7. align-items: center;
-8. background-color: #F1F3F5;
-9. }
-10. .rating {
-11. width: 80%;
-12. height: 150px;
-13. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <rating></rating>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/hLrpznGPRjiBSQrjT60DgA/zh-cn_image_0000002589324471.gif)
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F1F3F5;
+}
+.rating {
+  width: 80%;
+  height: 150px;
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/Bc3LA9svSu2fLTMzOETpkw/zh-cn_image_0000002706833942.gif)
 
 ## 设置评分星级
 
 rating组件通过设置numstars和rating属性设置评分条的星级总数和当前评星数。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <rating numstars="6" rating="5">
-4. </rating>
-5. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width: 100%;
-4. height: 100%;
-5. display: flex;
-6. justify-content: center;
-7. align-items: center;
-8. background-color: #F1F3F5;
-9. }
-10. .rating {
-11. width: 80%;
-12. height: 150px;
-13. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <rating numstars="6" rating="5">
+  </rating>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/0dwQY4P_TqK2xAigjM0P8A/zh-cn_image_0000002589244411.gif)
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F1F3F5;
+}
+.rating {
+  width: 80%;
+  height: 150px;
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/eTwp32qyS8WfrscZw5zFHA/zh-cn_image_0000002736313051.gif)
 
 ## 设置评分样式
 
 rating组件通过star-background、star-foreground和star-secondary属性设置单个星级未选择、选中和选中的次级背景图片。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <div style="width: 500px;height: 500px;align-items: center;justify-content: center;flex-direction: column;">
-4. <rating numstars="5" rating="1" class="myrating" style="width: {{ratewidth}}; height:{{rateheight}};
-5. star-background: {{backstar}}; star-secondary: {{secstar}};star-foreground: {{forestar}};rtl-flip: true;">
-6. </rating>
-7. </div>
-8. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width: 100%;
-4. height: 100%;
-5. flex-direction: column;
-6. align-items: center;
-7. justify-content: center;
-8. background-color: #F1F3F5;
-9. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <div style="width: 500px;height: 500px;align-items: center;justify-content: center;flex-direction: column;">
+    <rating numstars="5" rating="1" class="myrating" style="width: {{ratewidth}}; height:{{rateheight}};
+    star-background: {{backstar}}; star-secondary: {{secstar}};star-foreground: {{forestar}};rtl-flip: true;">
+    </rating>
+  </div>
+</div>
 ```
 
-```
-1. // index.js
-2. export default {
-3. data: {
-4. backstar: 'common/love.png',
-5. secstar: 'common/love.png',
-6. forestar: 'common/love1.png',
-7. ratewidth: '400px',
-8. rateheight: '150px'
-9. },
-10. onInit(){
-11. }
-12. }
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #F1F3F5;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/ENX23Dy5TtmX7E7ahnmXrQ/zh-cn_image_0000002558764604.gif)
+```js
+// index.js
+export default {
+  data: {
+    backstar: 'common/love.png',
+    secstar: 'common/love.png',
+    forestar: 'common/love1.png',
+    ratewidth: '400px',
+    rateheight: '150px'
+  },
+  onInit(){
+  }
+}
+```
 
-说明
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/Tcaji6w7QTabqR2PTqdRZA/zh-cn_image_0000002706674008.gif)
+
+**说明** 
 
 * star-background、star-secondary、star-foreground属性的星级图源必须全部设置，否则默认的星级颜色为灰色，提示图源设置错误。
 * star-background、star-secondary、star-foreground属性只支持本地路径图片，图片格式为png和jpg。
@@ -122,128 +122,123 @@ rating组件通过star-background、star-foreground和star-secondary属性设置
 
 向rating组件添加change事件，打印当前评分。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <rating numstars="5" rating="0" onchange="showrating"></rating>
-4. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width: 100%;
-4. height: 100%;
-5. display: flex;
-6. justify-content: center;
-7. align-items: center;
-8. background-color: #F1F3F5;
-9. }
-10. .rating {
-11. width: 80%;
-12. height: 150px;
-13. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <rating numstars="5" rating="0" onchange="showrating"></rating>
+</div>
 ```
 
-```
-1. // xxx.js
-2. import promptAction from '@ohos.promptAction';
-3. export default {
-4. showrating(e) {
-5. promptAction.showToast({
-6. message: '当前评分' + e.rating
-7. })
-8. }
-9. }
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F1F3F5;
+}
+.rating {
+  width: 80%;
+  height: 150px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/O9M5XjikTQq0cfW42FO38A/zh-cn_image_0000002558604948.gif)
+```js
+// xxx.js
+export default {
+  showrating(e) {
+    this.getUIContext().getPromptAction().showToast({
+      message: '当前评分' + e.rating
+    })
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/CbHjClakTresccj6B9NP2A/zh-cn_image_0000002736433099.gif)
 
 ## 场景示例
 
 开发者可以通过改变开关状态切换星级背景图，通过改变滑动条的值调整星级总数。
 
-```
-1. <!-- xxx.hml -->
-2. <div style="width: 100%;height:100%;flex-direction: column;align-items: center;background-color: #F1F3F5;">
-3. <div style="width: 500px;height: 500px;align-items: center;justify-content: center;flex-direction: column;">
-4. <rating numstars="{{stars}}" rating="{{rate}}" stepsize="{{step}}" onchange="showrating" class="myrating"
-5. style="width: {{ratewidth}};height:{{rateheight}};star-background: {{backstar}};star-secondary: {{secstar}};
-6. star-foreground: {{forestar}};rtl-flip: true;"></rating>
-7. </div>
-8. <div style="flex-direction: column;width: 80%;align-items: center;">
-9. <div style="width: 100%;height: 100px;align-items: center;justify-content: space-around;">
-10. <text>替换自定义图片</text>
-11. <switch checked="false" showtext="true" onchange="setstar"></switch>
-12. </div>
-13. <div style="width: 100%;height:120px;margin-top: 50px;margin-bottom: 50px;flex-direction: column;align-items: center;
-14. justify-content: space-around;">
-15. <text>numstars   {{stars}}</text>
-16. <slider id="sli1" min="0" max="10" value="5" step="1" onchange="setnumstars"></slider>
-17. </div>
-18. <div style="width: 100%;height:120px;flex-direction: column;align-items: center;justify-content: space-around;">
-19. <text>rating   {{rate}}</text>
-20. <slider id="sli2" min="0" max="10" value="{{rate}}" step="0.5" onchange="setrating"></slider>
-21. </div>
-22. </div>
-23. </div>
-```
-
-```
-1. /* xxx.css */
-2. .myrating:active {
-3. width: 500px;
-4. height: 100px;
-5. }
-6. .switch{
-7. font-size: 40px;
-8. }
+```html
+<!-- xxx.hml -->
+<div style="width: 100%;height:100%;flex-direction: column;align-items: center;background-color: #F1F3F5;">
+    <div style="width: 500px;height: 500px;align-items: center;justify-content: center;flex-direction: column;">
+        <rating numstars="{{stars}}" rating="{{rate}}" stepsize="{{step}}" onchange="showrating" class="myrating"
+                style="width: {{ratewidth}};height:{{rateheight}};star-background: {{backstar}};star-secondary: {{secstar}};
+                        star-foreground: {{forestar}};rtl-flip: true;"></rating>
+    </div>
+    <div style="flex-direction: column;width: 80%;align-items: center;">
+        <div style="width: 100%;height: 100px;align-items: center;justify-content: space-around;">
+            <text>替换自定义图片</text>
+            <switch checked="false" showtext="true" onchange="setstar"></switch>
+        </div>
+        <div style="width: 100%;height:120px;margin-top: 50px;margin-bottom: 50px;flex-direction: column;align-items: center;
+                justify-content: space-around;">
+            <text>numstars   {{stars}}</text>
+            <slider id="sli1" min="0" max="10" value="5" step="1" onchange="setnumstars"></slider>
+        </div>
+        <div style="width: 100%;height:120px;flex-direction: column;align-items: center;justify-content: space-around;">
+            <text>rating   {{rate}}</text>
+            <slider id="sli2" min="0" max="10" value="{{rate}}" step="0.5" onchange="setrating"></slider>
+        </div>
+    </div>
+</div>
 ```
 
-```
-1. // xxx.js
-2. import promptAction from '@ohos.promptAction';
-3. export default {
-4. data: {
-5. backstar: '',
-6. secstar: '',
-7. forestar: '',
-8. stars: 5,
-9. ratewidth: '300px',
-10. rateheight: '60px',
-11. step: 0.5,
-12. rate: 0
-13. },
-14. onInit(){
-15. },
-16. setstar(e) {
-17. if (e.checked == true) {
-18. this.backstar = '/common/love.png'
-19. this.secstar = 'common/love.png'
-20. this.forestar = 'common/love1.png'
-21. } else {
-22. this.backstar = ''
-23. this.secstar = ''
-24. this.forestar = ''
-25. }
-26. },
-27. setnumstars(e) {
-28. this.stars = e.progress
-29. this.ratewidth = 60 * parseInt(this.stars) + 'px'
-30. },
-31. setstep(e) {
-32. this.step = e.progress
-33. },
-34. setrating(e){
-35. this.rate = e.progress
-36. },
-37. showrating(e) {
-38. this.rate = e.rating
-39. promptAction.showToast({
-40. message: '当前评分' + e.rating
-41. })
-42. }
-43. }
+```css
+/* xxx.css */
+.myrating:active {
+    width: 500px;
+    height: 100px;
+}
+.switch{
+    font-size: 40px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/WVUF97DlRVeMWsPt1vwJnw/zh-cn_image_0000002589324473.gif)
+```js
+// xxx.js
+export default {
+    data: {
+        backstar: '',
+        secstar: '',
+        forestar: '',
+        stars: 5,
+        ratewidth: '300px',
+        rateheight: '60px',
+        step: 0.5,
+        rate: 0
+    },
+    onInit(){
+    },
+    setstar(e) {
+        if (e.checked == true) {
+            this.backstar = 'common/love.png'
+            this.secstar = 'common/love.png'
+            this.forestar = 'common/love1.png'
+        } else {
+            this.backstar = ''
+            this.secstar = ''
+            this.forestar = ''
+        }
+    },
+    setnumstars(e) {
+        this.stars = e.progress
+        this.ratewidth = 60 * parseInt(this.stars) + 'px'
+    },
+    setrating(e){
+        this.rate = e.progress
+    },
+    showrating(e) {
+        this.rate = e.rating
+        this.getUIContext().getPromptAction().showToast({
+            message: '当前评分' + e.rating
+        })
+    }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/RFIz08TCQ4eF25RnfyrWtQ/zh-cn_image_0000002706833944.gif)

@@ -3,42 +3,46 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.file.environment (目录环境能力)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > @ohos.file.environment (目录环境能力)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3c4704e14cf5eb7a6a5f676c7a8c34e2432213b968e9b050e240c75befe74cac
+scraped_at: 2026-09-02T15:01:31+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:fa3c54137348df5385bdab8bc21958131bb3a85130f26ac38cbac168eeff05e9
 ---
 
-该模块提供环境目录能力，获取内存存储根目录、公共文件根目录的ArkTS接口。
+该模块提供用户环境目录能力，用于获取用户的下载目录、桌面目录、文档目录的沙箱路径。上述三个方法分别适用于获取不同类型用户目录的场景，开发者可根据需要选择对应的目录类型。
 
-说明
+**说明** 
 
 本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PC/2in1
-
-```
-1. import { Environment } from '@kit.CoreFileKit';
+```ts
+import { Environment } from '@kit.CoreFileKit';
 ```
 
 ## Environment.getUserDownloadDir
 
-PC/2in1
-
 getUserDownloadDir(): string
 
-获取当前用户预授权下载目录的沙箱路径。
+获取当前用户的下载目录的沙箱路径。
+
+**需要权限**：
+
+* API版本12+：NA
+* API版本11：ohos.permission.READ\_WRITE\_DOWNLOAD\_DIRECTORY
 
 **系统能力**：SystemCapability.FileManagement.File.Environment.FolderObtain
 
-**设备行为差异**：该接口在2in1中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异**：
+
+* 在API版本26.0.0及之后：该接口在PC/2in1和Tablet中可正常调用，在其他设备类型中返回801错误码。
+* 在API版本26.0.0之前：该接口在PC/2in1可正常调用，在其他设备类型中返回801错误码。
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| string | 返回当前用户预授权下载目录的沙箱路径。 |
+| string | 返回当前用户的下载目录的沙箱路径。 |
 
 **错误码：**
 
@@ -46,40 +50,48 @@ getUserDownloadDir(): string
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 201 | Permission verification failed, usually the result returned by VerifyAccessToken.  适用版本：11+ |
 | 801 | Capability not supported. |
 | 13900042 | Unknown error. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. function getUserDownloadDirExample() {
-3. try {
-4. let path = Environment.getUserDownloadDir();
-5. console.info(`Succeeded in getUserDownloadDir, path is ${path}`);
-6. } catch (err) {
-7. console.error(`Failed to getUserDownloadDir. Code: ${err.code}, message: ${err.message}`);
-8. }
-9. }
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function getUserDownloadDirExample() {
+  try {
+    let path = Environment.getUserDownloadDir();
+    console.info(`Succeeded in getUserDownloadDir, path is ${path}`);
+  } catch (err) {
+    console.error(`Failed to getUserDownloadDir. Code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ## Environment.getUserDesktopDir
 
-PC/2in1
-
 getUserDesktopDir(): string
 
-获取当前用户预授权桌面目录的沙箱路径。
+获取当前用户的桌面目录的沙箱路径。
+
+**需要权限**：
+
+* API版本12+：NA
+* API版本11：ohos.permission.READ\_WRITE\_DESKTOP\_DIRECTORY
 
 **系统能力**：SystemCapability.FileManagement.File.Environment.FolderObtain
 
-**设备行为差异**：该接口在2in1中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异**：
+
+* 在API版本26.0.0及之后：该接口在PC/2in1和Tablet中可正常调用，在其他设备类型中返回801错误码。
+* 在API版本26.0.0之前：该接口在PC/2in1可正常调用，在其他设备类型中返回801错误码。
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| string | 返回当前用户预授权桌面目录的沙箱路径。 |
+| string | 返回当前用户的桌面目录的沙箱路径。 |
 
 **错误码：**
 
@@ -87,40 +99,48 @@ getUserDesktopDir(): string
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 201 | Permission verification failed, usually the result returned by VerifyAccessToken.  适用版本：11+ |
 | 801 | Capability not supported. |
 | 13900042 | Unknown error. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. function getUserDesktopDirExample() {
-3. try {
-4. let path = Environment.getUserDesktopDir();
-5. console.info(`Succeeded in getUserDesktopDir, path is ${path}`);
-6. } catch (err) {
-7. console.error(`Failed to getUserDesktopDir. Code: ${err.code}, message: ${err.message}`);
-8. }
-9. }
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function getUserDesktopDirExample() {
+  try {
+    let path = Environment.getUserDesktopDir();
+    console.info(`Succeeded in getUserDesktopDir, path is ${path}`);
+  } catch (err) {
+    console.error(`Failed to getUserDesktopDir. Code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ## Environment.getUserDocumentDir
 
-PC/2in1
-
 getUserDocumentDir(): string
 
-获取当前用户预授权文档目录的沙箱路径。
+获取当前用户的文档目录的沙箱路径。
+
+**需要权限**：
+
+* API版本12+：NA
+* API版本11：ohos.permission.READ\_WRITE\_DOCUMENTS\_DIRECTORY
 
 **系统能力**：SystemCapability.FileManagement.File.Environment.FolderObtain
 
-**设备行为差异**：该接口在2in1中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异**：
+
+* 在API版本26.0.0及之后：该接口在PC/2in1和Tablet中可正常调用，在其他设备类型中返回801错误码。
+* 在API版本26.0.0之前：该接口在PC/2in1可正常调用，在其他设备类型中返回801错误码。
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| string | 返回当前用户预授权文档目录的沙箱路径。 |
+| string | 返回当前用户的文档目录的沙箱路径。 |
 
 **错误码：**
 
@@ -128,19 +148,21 @@ getUserDocumentDir(): string
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 201 | Permission verification failed, usually the result returned by VerifyAccessToken.  适用版本：11+ |
 | 801 | Capability not supported. |
 | 13900042 | Unknown error. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. function getUserDocumentDirExample() {
-3. try {
-4. let path = Environment.getUserDocumentDir();
-5. console.info(`Succeeded in getUserDocumentDir, path is ${path}`);
-6. } catch (err) {
-7. console.error(`Failed to getUserDocumentDir. Code: ${err.code}, message: ${err.message}`);
-8. }
-9. }
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function getUserDocumentDirExample() {
+  try {
+    let path = Environment.getUserDocumentDir();
+    console.info(`Succeeded in getUserDocumentDir, path is ${path}`);
+  } catch (err) {
+    console.error(`Failed to getUserDocumentDir. Code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```

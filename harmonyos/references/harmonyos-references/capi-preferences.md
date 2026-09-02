@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-pref
 title: Preferences
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 模块 > Preferences
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:25+08:00
-doc_updated_at: 2026-03-27
-content_hash: sha256:f0b1c666616a0f7d642b6e12df71dc1cc204cf30743001c75a37b6faa4c38a3e
+scraped_at: 2026-09-02T14:51:10+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e81c021964bc2aa4e5b1a93037c13000eb84a41a34644ffc795c5e741c16bed1
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 首选项模块（Preferences）提供Key-Value键值型数据（后续简称KV数据）的处理接口，实现对轻量级KV数据的查询、修改和持久化功能。
 
@@ -19,8 +17,6 @@ PhonePC/2in1TabletTVWearable
 **起始版本：** 13
 
 ## 文件汇总
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

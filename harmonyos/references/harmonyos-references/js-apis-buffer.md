@@ -3,32 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.buffer (Buffer)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.buffer (Buffer)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:00+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:85217975d0c6dec551eb224a359a95f09153663e759ed62e71193b768517d8fb
+scraped_at: 2026-09-02T15:00:46+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7e7d21394c4ec91e04ec51e9e9e38f5475d538c2667af7ef781329ad746e4488
 ---
 
-Buffer对象用于表示固定长度的字节序列，是专门存放二进制数据的缓存区。
+Buffer对象用于表示固定长度的字节序列，是专门存放二进制数据的缓冲区。
 
-**推荐使用场景：** 适用于处理大量二进制数据，如图片处理和文件接收上传等。
+**推荐使用场景：** 适用于处理大量二进制数据，如图片处理、文件接收上传、网络通信数据传输、二进制协议解析和编解码转换等。
 
-说明
+**说明** 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 ```
 
 ## BufferEncoding
 
-PhonePC/2in1TabletTVWearable
-
-type BufferEncoding = 'ascii' | 'utf8' | 'utf-8' | 'utf16le' | 'ucs2' | 'ucs-2' | 'base64' | 'base64url' | 'latin1' | 'binary' | 'hex'
+type BufferEncoding = | 'ascii' | 'utf8' | 'utf-8' | 'utf16le' | 'ucs2' | 'ucs-2' | 'base64' | 'base64url' | 'latin1' | 'binary' | 'hex'
 
 表示支持的编码格式类型。
 
@@ -52,11 +48,9 @@ type BufferEncoding = 'ascii' | 'utf8' | 'utf-8' | 'utf16le' | 'ucs2' | 'ucs-2' 
 
 ## buffer.alloc
 
-PhonePC/2in1TabletTVWearable
-
 alloc(size: number, fill?: string | Buffer | number, encoding?: BufferEncoding): Buffer
 
-创建指定字节长度的Buffer对象并初始化。
+创建指定字节长度的Buffer对象，并使用指定值进行初始化填充（默认填充0）。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -66,9 +60,9 @@ alloc(size: number, fill?: string | Buffer | number, encoding?: BufferEncoding):
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| size | number | 是 | 指定的Buffer对象长度，单位：字节。 |
-| fill | string | [Buffer](js-apis-buffer.md#buffer) | number | 否 | 填充至新缓存区的值，默认值：0。 |
-| encoding | [BufferEncoding](js-apis-buffer.md#bufferencoding) | 否 | 编码格式（当fill为string时，才有意义）。默认值：'utf8'。 |
+| size | number | 是 | 指定的Buffer对象长度，单位：字节。取值为正整数，最大值为2^32-1，即4294967295。 |
+| fill | string | [Buffer](js-apis-buffer.md#buffer) | number | 否 | 填充至新缓冲区的值，默认值：0。 |
+| encoding | [BufferEncoding](js-apis-buffer.md#bufferencoding) | 否 | 编码格式（当fill参数为string时，才有意义）。默认值：'utf8'。 |
 
 **返回值：**
 
@@ -76,36 +70,26 @@ alloc(size: number, fill?: string | Buffer | number, encoding?: BufferEncoding):
 | --- | --- |
 | [Buffer](js-apis-buffer.md#buffer) | 返回一个Buffer对象。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-
 **示例：**
 
-```
-1. import { buffer, JSON } from '@kit.ArkTS';
+```ts
+import { buffer, JSON } from '@kit.ArkTS';
 
-3. let buf1 = buffer.alloc(5);
-4. console.info(JSON.stringify(buf1)); // {"type":"Buffer","data":[0,0,0,0,0]}
+let buf1 = buffer.alloc(5);
+console.info(JSON.stringify(buf1)); // {"type":"Buffer","data":[0,0,0,0,0]}
 
-6. let buf2 = buffer.alloc(5, 'a');
-7. console.info(JSON.stringify(buf2)); // {"type":"Buffer","data":[97,97,97,97,97]}
+let buf2 = buffer.alloc(5, 'a');
+console.info(JSON.stringify(buf2)); // {"type":"Buffer","data":[97,97,97,97,97]}
 
-9. let buf3 = buffer.alloc(11, 'aGVsbG8gd29ybGQ=', 'base64');
-10. console.info(JSON.stringify(buf3)); // {"type":"Buffer","data":[104,101,108,108,111,32,119,111,114,108,100]}
+let buf3 = buffer.alloc(11, 'aGVsbG8gd29ybGQ=', 'base64');
+console.info(JSON.stringify(buf3)); // {"type":"Buffer","data":[104,101,108,108,111,32,119,111,114,108,100]}
 ```
 
 ## buffer.allocUninitializedFromPool
 
-PhonePC/2in1TabletTVWearable
-
 allocUninitializedFromPool(size: number): Buffer
 
-创建指定大小未初始化的Buffer对象。内存从缓冲池分配。
+创建指定大小未初始化的Buffer对象。内存从缓冲池分配，缓冲池为预分配的内存区域，适用于创建较小Buffer时减少频繁内存分配的开销，提升性能。对于需要独立内存的场景，建议使用[allocUninitialized](js-apis-buffer.md#bufferallocuninitialized)。
 
 创建的Buffer内容未知，需要使用[fill](js-apis-buffer.md#fill)函数来初始化Buffer对象。
 
@@ -125,31 +109,21 @@ allocUninitializedFromPool(size: number): Buffer
 | --- | --- |
 | [Buffer](js-apis-buffer.md#buffer) | 未初始化的Buffer实例。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-
 **示例：**
 
-```
-1. import { buffer, JSON } from '@kit.ArkTS';
+```ts
+import { buffer, JSON } from '@kit.ArkTS';
 
-3. let buf = buffer.allocUninitializedFromPool(10);
-4. buf.fill(0);
-5. console.info(JSON.stringify(buf)); // {"type":"Buffer","data":[0,0,0,0,0,0,0,0,0,0]}
+let buf = buffer.allocUninitializedFromPool(10);
+buf.fill(0);
+console.info(JSON.stringify(buf)); // {"type":"Buffer","data":[0,0,0,0,0,0,0,0,0,0]}
 ```
 
 ## buffer.allocUninitialized
 
-PhonePC/2in1TabletTVWearable
-
 allocUninitialized(size: number): Buffer
 
-创建指定大小未初始化的Buffer对象。内存不从缓冲池分配。
+创建指定大小未初始化的Buffer对象。内存不从缓冲池分配，适用于需要创建较大Buffer或希望精确控制内存分配的场景，如一次性分配较大内存区域（避免缓冲池可能导致的内存碎片累积和缓存性能损耗）。
 
 创建的Buffer的内容未知，需要使用[fill](js-apis-buffer.md#fill)函数来初始化Buffer对象。
 
@@ -169,31 +143,21 @@ allocUninitialized(size: number): Buffer
 | --- | --- |
 | [Buffer](js-apis-buffer.md#buffer) | 未初始化的Buffer实例。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-
 **示例：**
 
-```
-1. import { buffer, JSON } from '@kit.ArkTS';
+```ts
+import { buffer, JSON } from '@kit.ArkTS';
 
-3. let buf = buffer.allocUninitialized(10);
-4. buf.fill(0);
-5. console.info(JSON.stringify(buf)); // {"type":"Buffer","data":[0,0,0,0,0,0,0,0,0,0]}
+let buf = buffer.allocUninitialized(10);
+buf.fill(0);
+console.info(JSON.stringify(buf)); // {"type":"Buffer","data":[0,0,0,0,0,0,0,0,0,0]}
 ```
 
 ## buffer.byteLength
 
-PhonePC/2in1TabletTVWearable
-
 byteLength(string: string | Buffer | TypedArray | DataView | ArrayBuffer | SharedArrayBuffer, encoding?: BufferEncoding): number
 
-根据不同的编码格式，返回指定字符串的字节数。
+根据不同的编码格式，返回指定数据的字节数。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -203,8 +167,8 @@ byteLength(string: string | Buffer | TypedArray | DataView | ArrayBuffer | Share
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| string | string | [Buffer](js-apis-buffer.md#buffer) | TypedArray | DataView | ArrayBuffer | SharedArrayBuffer | 是 | 指定字符串。 |
-| encoding | [BufferEncoding](js-apis-buffer.md#bufferencoding) | 否 | 编码格式。默认值：'utf8'。 |
+| string | string | [Buffer](js-apis-buffer.md#buffer) | TypedArray | DataView | ArrayBuffer | SharedArrayBuffer | 是 | 要计算字节长度的字符串或其他数据对象。 |
+| encoding | [BufferEncoding](js-apis-buffer.md#bufferencoding) | 否 | 编码格式（string参数为string类型时才有意义）。默认值：'utf8'。 |
 
 **返回值：**
 
@@ -212,31 +176,21 @@ byteLength(string: string | Buffer | TypedArray | DataView | ArrayBuffer | Share
 | --- | --- |
 | number | 返回指定字符串的字节数。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let str = '\u00bd + \u00bc = \u00be';
-4. console.info(`${str}: ${str.length} characters, ${buffer.byteLength(str, 'utf-8')} bytes`);
-5. // 输出结果：½ + ¼ = ¾: 9 characters, 12 bytes
+let str = '\u00bd + \u00bc = \u00be';
+console.info(`${str}: ${str.length} characters, ${buffer.byteLength(str, 'utf-8')} bytes`);
+// 输出结果：½ + ¼ = ¾: 9 characters, 12 bytes
 ```
 
 ## buffer.compare
 
-PhonePC/2in1TabletTVWearable
-
 compare(buf1: Buffer | Uint8Array, buf2: Buffer | Uint8Array): -1 | 0 | 1
 
-返回两个Buffer对象的比较结果，通常用于对Buffer对象数组进行排序。
+返回两个Buffer或Uint8Array对象的比较结果，通常用于对Buffer或Uint8Array对象数组进行排序。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -246,8 +200,8 @@ compare(buf1: Buffer | Uint8Array, buf2: Buffer | Uint8Array): -1 | 0 | 1
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| buf1 | [Buffer](js-apis-buffer.md#buffer) | Uint8Array | 是 | 待比较数组。 |
-| buf2 | [Buffer](js-apis-buffer.md#buffer) | Uint8Array | 是 | 待比较数组。 |
+| buf1 | [Buffer](js-apis-buffer.md#buffer) | Uint8Array | 是 | 待比较的第一个Buffer或Uint8Array实例。 |
+| buf2 | [Buffer](js-apis-buffer.md#buffer) | Uint8Array | 是 | 待比较的第二个Buffer或Uint8Array实例。 |
 
 **返回值：**
 
@@ -255,45 +209,35 @@ compare(buf1: Buffer | Uint8Array, buf2: Buffer | Uint8Array): -1 | 0 | 1
 | --- | --- |
 | -1 | 0 | 1 | 如果buf1与buf2相同，则返回0。  如果排序时buf1位于buf2之后，则返回1。  如果排序时buf1位于buf2之前，则返回-1。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf1 = buffer.from('1234');
-4. let buf2 = buffer.from('0123');
-5. let res = buffer.compare(buf1, buf2);
+let buf1 = buffer.from('1234');
+let buf2 = buffer.from('0123');
+let res = buffer.compare(buf1, buf2);
 
-7. console.info(Number(res).toString());
-8. // 输出结果：1
+console.info(Number(res).toString());
+// 输出结果：1
 ```
 
 ## buffer.concat
 
-PhonePC/2in1TabletTVWearable
-
 concat(list: Buffer[] | Uint8Array[], totalLength?: number): Buffer
 
-将数组中的内容复制指定字节长度到新的Buffer对象中并返回。
-
-**系统能力：** SystemCapability.Utils.Lang
+将数组中的内容复制（默认复制全部内容，或复制指定字节长度）到新的Buffer对象中并返回。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| list | [Buffer](js-apis-buffer.md#buffer)[] | Uint8Array[] | 是 | 实例数组。 |
-| totalLength | number | 否 | 需要复制的总字节长度，默认值为0。 |
+| list | [Buffer](js-apis-buffer.md#buffer)[] | Uint8Array[] | 是 | Buffer或Uint8Array实例数组，用于拼接合并创建新的Buffer对象。 |
+| totalLength | number | 否 | 需要复制的总字节长度，默认值：0。 |
 
 **返回值：**
 
@@ -303,42 +247,39 @@ concat(list: Buffer[] | Uint8Array[], totalLength?: number): Buffer
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 10200001 | The value of "length" is out of range. It must be >= 0 and <= uint32 max. Received value is: [length] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf1 = buffer.from("1234");
-4. let buf2 = buffer.from("abcd");
-5. let buf = buffer.concat([buf1, buf2]);
-6. console.info(buf.toString('hex'));
-7. // 输出结果：3132333461626364
+let buf1 = buffer.from("1234");
+let buf2 = buffer.from("abcd");
+let buf = buffer.concat([buf1, buf2]);
+console.info(buf.toString('hex'));
+// 输出结果：3132333461626364
 ```
 
 ## buffer.from
 
-PhonePC/2in1TabletTVWearable
-
 from(array: number[]): Buffer
 
-根据指定数组创建新的Buffer对象。
-
-**系统能力：** SystemCapability.Utils.Lang
+根据指定数组创建新的Buffer对象，数组中的每个元素作为对应位置的字节存储。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| array | number[] | 是 | 指定数组。 |
+| array | number[] | 是 | 由0~255范围内的整数组成的数组，用于根据数组内容创建新的Buffer对象。 |
 
 **返回值：**
 
@@ -346,31 +287,21 @@ from(array: number[]): Buffer
 | --- | --- |
 | [Buffer](js-apis-buffer.md#buffer) | 新的Buffer对象。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from([0x62, 0x75, 0x66, 0x66, 0x65, 0x72]);
-4. console.info(buf.toString('hex'));
-5. // 输出结果：627566666572
+let buf = buffer.from([0x62, 0x75, 0x66, 0x66, 0x65, 0x72]);
+console.info(buf.toString('hex'));
+// 输出结果：627566666572
 ```
 
 ## buffer.from
 
-PhonePC/2in1TabletTVWearable
-
 from(arrayBuffer: ArrayBuffer | SharedArrayBuffer, byteOffset?: number, length?: number): Buffer
 
-创建与arrayBuffer共享内存的指定长度的Buffer对象。
+创建与arrayBuffer共享内存的指定长度的Buffer对象。共享内存意味着Buffer与arrayBuffer引用同一块内存区域，对Buffer数据的修改将同步反映到arrayBuffer中，反之亦然（注意：此方式避免内存拷贝，提升性能，但需注意内存释放时机）。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -380,8 +311,8 @@ from(arrayBuffer: ArrayBuffer | SharedArrayBuffer, byteOffset?: number, length?:
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| arrayBuffer | ArrayBuffer | SharedArrayBuffer | 是 | 实例对象。 |
-| byteOffset | number | 否 | 字节偏移量，默认值：0。 |
+| arrayBuffer | ArrayBuffer | SharedArrayBuffer | 是 | 用于创建Buffer的ArrayBuffer或SharedArrayBuffer对象。 |
+| byteOffset | number | 否 | 字节偏移量。指定从arrayBuffer起始位置偏移的字节数，创建的Buffer从该偏移位置开始。默认值：0。 |
 | length | number | 否 | 字节长度， 默认值:（arrayBuffer.byteLength - byteOffset）。在传入null时字节长度为0。 |
 
 **返回值：**
@@ -392,32 +323,29 @@ from(arrayBuffer: ArrayBuffer | SharedArrayBuffer, byteOffset?: number, length?:
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200001 | The value of "[byteOffset/length]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [byteOffset/length] |
 
 **示例：**
 
-```
-1. import { buffer, JSON } from '@kit.ArkTS';
+```ts
+import { buffer, JSON } from '@kit.ArkTS';
 
-3. let ab = new ArrayBuffer(10);
-4. let buf = buffer.from(ab, 0, 2);
-5. console.info(JSON.stringify(buf)); // {"type":"Buffer","data":[0,0]}
+let ab = new ArrayBuffer(10);
+let buf = buffer.from(ab, 0, 2);
+console.info(JSON.stringify(buf)); // {"type":"Buffer","data":[0,0]}
 ```
 
 ## buffer.from
-
-PhonePC/2in1TabletTVWearable
 
 from(buffer: Buffer | Uint8Array): Buffer
 
 当入参为Buffer对象时，创建新的Buffer对象并复制入参Buffer对象的数据，然后返回新对象。
 
-当入参为Uint8Array对象时，基于Uint8Array对象的内存创建新的Buffer对象并返回，保持数据的内存关联。
+基于Uint8Array对象的内存创建新的Buffer对象并返回，新Buffer与原Uint8Array共享同一底层ArrayBuffer内存区域。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -427,7 +355,7 @@ from(buffer: Buffer | Uint8Array): Buffer
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| buffer | [Buffer](js-apis-buffer.md#buffer) | Uint8Array | 是 | 对象数据。 |
+| buffer | [Buffer](js-apis-buffer.md#buffer) | Uint8Array | 是 | 用于创建新Buffer的Buffer或Uint8Array对象。 |
 
 **返回值：**
 
@@ -435,38 +363,28 @@ from(buffer: Buffer | Uint8Array): Buffer
 | --- | --- |
 | [Buffer](js-apis-buffer.md#buffer) | 新的Buffer对象。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. // 以Buffer对象类型进行创建新的Buffer对象
-4. let buf1 = buffer.from('buffer');
-5. let buf2 = buffer.from(buf1);
+// 以Buffer对象类型进行创建新的Buffer对象
+let buf1 = buffer.from('buffer');
+let buf2 = buffer.from(buf1);
 
-7. // 以Uint8Array对象类型进行创建Buffer对象，保持对象间内存共享
-8. let uint8Array = new Uint8Array(10);
-9. let buf3 = buffer.from(uint8Array);
-10. buf3.fill(1);
-11. console.info("uint8Array:", uint8Array);
-12. // 输出结果：1,1,1,1,1,1,1,1,1,1
+// 以Uint8Array对象类型进行创建Buffer对象，保持对象间内存共享
+let uint8Array = new Uint8Array(10);
+let buf3 = buffer.from(uint8Array);
+buf3.fill(1);
+console.info("uint8Array:", uint8Array);
+// 输出结果：1,1,1,1,1,1,1,1,1,1
 ```
 
 ## buffer.from
 
-PhonePC/2in1TabletTVWearable
-
 from(object: Object, offsetOrEncoding: number | string, length: number): Buffer
 
-根据指定的object类型数据，创建新的Buffer对象。
+根据指定的object类型数据，创建新的Buffer对象。当object的valueOf()返回ArrayBuffer时，按字节偏移量和长度创建Buffer；其他类型则根据编码格式将对象值转换为Buffer。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -476,8 +394,8 @@ from(object: Object, offsetOrEncoding: number | string, length: number): Buffer
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| object | Object | 是 | 支持Symbol.toPrimitive或valueOf()的对象。 |
-| offsetOrEncoding | number | string | 是 | 字节偏移量或编码格式。 |
+| object | Object | 是 | 支持Symbol.toPrimitive或valueOf()的对象，valueOf()或Symbol.toPrimitive的返回值支持string和ArrayBuffer等类型。 |
+| offsetOrEncoding | number | string | 是 | 字节偏移量或编码格式。当object的valueOf()返回值为ArrayBuffer时，作为字节偏移量；其他情况下作为编码格式。 |
 | length | number | 是 | 字节长度（此入参仅在object的valueOf()返回值为ArrayBuffer时生效，取值范围：0 <= length <= ArrayBuffer.byteLength，超出范围时报错: 10200001）。其他情况下可填任意number类型值，该参数不会对结果产生影响。 |
 
 **返回值：**
@@ -486,30 +404,20 @@ from(object: Object, offsetOrEncoding: number | string, length: number): Buffer
 | --- | --- |
 | [Buffer](js-apis-buffer.md#buffer) | 返回新的Buffer对象。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. import { buffer, JSON } from '@kit.ArkTS';
+```ts
+import { buffer, JSON } from '@kit.ArkTS';
 
-3. let buf = buffer.from(new String('this is a test'), 'utf8', 14);
-4. console.info(JSON.stringify(buf)); // {"type":"Buffer","data":[116,104,105,115,32,105,115,32,97,32,116,101,115,116]}
+let buf = buffer.from(new String('this is a test'), 'utf8', 14);
+console.info(JSON.stringify(buf)); // {"type":"Buffer","data":[116,104,105,115,32,105,115,32,97,32,116,101,115,116]}
 ```
 
 ## buffer.from
 
-PhonePC/2in1TabletTVWearable
-
 from(string: String, encoding?: BufferEncoding): Buffer
 
-根据指定编码格式的字符串，创建新的Buffer对象。
+根据指定编码格式的字符串，创建新的Buffer对象，字符串按编码格式转换为字节序列存入Buffer。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -519,7 +427,7 @@ from(string: String, encoding?: BufferEncoding): Buffer
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| string | String | 是 | 字符串。 |
+| string | String | 是 | 要编码创建Buffer对象的字符串内容。 |
 | encoding | [BufferEncoding](js-apis-buffer.md#bufferencoding) | 否 | 编码格式。默认值：'utf8'。 |
 
 **返回值：**
@@ -528,31 +436,21 @@ from(string: String, encoding?: BufferEncoding): Buffer
 | --- | --- |
 | [Buffer](js-apis-buffer.md#buffer) | 返回新的Buffer对象。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf1 = buffer.from('this is a test');
-4. let buf2 = buffer.from('7468697320697320612074c3a97374', 'hex');
+let buf1 = buffer.from('this is a test');
+let buf2 = buffer.from('7468697320697320612074c3a97374', 'hex');
 
-6. console.info(buf1.toString());
-7. // 输出结果：this is a test
-8. console.info(buf2.toString());
-9. // 输出结果：this is a tést
+console.info(buf1.toString());
+// 输出结果：this is a test
+console.info(buf2.toString());
+// 输出结果：this is a tést
 ```
 
 ## buffer.isBuffer
-
-PhonePC/2in1TabletTVWearable
 
 isBuffer(obj: Object): boolean
 
@@ -566,7 +464,7 @@ isBuffer(obj: Object): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| obj | Object | 是 | 判断对象。 |
+| obj | Object | 是 | 要判断是否为Buffer的对象。 |
 
 **返回值：**
 
@@ -576,29 +474,27 @@ isBuffer(obj: Object): boolean
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let result = buffer.isBuffer(buffer.alloc(10)); // 10: buffer size
-4. console.info("result = " + result);
-5. // 输出结果：result = true
-6. let result1 = buffer.isBuffer(buffer.from('foo'));
-7. console.info("result1 = " + result1);
-8. // 输出结果：result1 = true
-9. let result2 = buffer.isBuffer('a string');
-10. console.info("result2 = " + result2);
-11. // 输出结果：result2 = false
-12. let result3 = buffer.isBuffer([]);
-13. console.info("result3 = " + result3);
-14. // 输出结果：result3 = false
-15. let result4 = buffer.isBuffer(new Uint8Array(1024));
-16. console.info("result4 = " + result4);
-17. // 输出结果：result4 = false
+let result = buffer.isBuffer(buffer.alloc(10)); // 10: buffer size
+console.info("result = " + result);
+// 输出结果：result = true
+let result1 = buffer.isBuffer(buffer.from('foo'));
+console.info("result1 = " + result1);
+// 输出结果：result1 = true
+let result2 = buffer.isBuffer('a string');
+console.info("result2 = " + result2);
+// 输出结果：result2 = false
+let result3 = buffer.isBuffer([]);
+console.info("result3 = " + result3);
+// 输出结果：result3 = false
+let result4 = buffer.isBuffer(new Uint8Array(1024));
+console.info("result4 = " + result4);
+// 输出结果：result4 = false
 ```
 
 ## buffer.isEncoding
-
-PhonePC/2in1TabletTVWearable
 
 isEncoding(encoding: string): boolean
 
@@ -612,7 +508,7 @@ isEncoding(encoding: string): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| encoding | string | 是 | 编码格式。 |
+| encoding | string | 是 | 编码格式，支持的格式范围为[BufferEncoding](js-apis-buffer.md#bufferencoding)。 |
 
 **返回值：**
 
@@ -622,36 +518,34 @@ isEncoding(encoding: string): boolean
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. console.info(buffer.isEncoding('utf-8').toString());
-4. // 输出结果：true
-5. console.info(buffer.isEncoding('hex').toString());
-6. // 输出结果：true
-7. console.info(buffer.isEncoding('utf/8').toString());
-8. // 输出结果：false
-9. console.info(buffer.isEncoding('').toString());
-10. // 输出结果：false
+console.info(buffer.isEncoding('utf-8').toString());
+// 输出结果：true
+console.info(buffer.isEncoding('hex').toString());
+// 输出结果：true
+console.info(buffer.isEncoding('utf/8').toString());
+// 输出结果：false
+console.info(buffer.isEncoding('').toString());
+// 输出结果：false
 ```
 
 ## buffer.transcode
 
-PhonePC/2in1TabletTVWearable
-
 transcode(source: Buffer | Uint8Array, fromEnc: string, toEnc: string): Buffer
 
-将Buffer或Uint8Array对象从一种字符编码重新编码为另一种。
-
-**系统能力：** SystemCapability.Utils.Lang
+将Buffer或Uint8Array对象从一种字符编码重新编码为另一种。适用于需要在不同编码格式之间转换已有Buffer数据的场景。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| source | [Buffer](js-apis-buffer.md#buffer) | Uint8Array | 是 | 实例对象。 |
+| source | [Buffer](js-apis-buffer.md#buffer) | Uint8Array | 是 | 待转码的Buffer或Uint8Array实例，提供需要重新编码的源数据。 |
 | fromEnc | string | 是 | 当前编码。 支持的格式范围为[BufferEncoding](js-apis-buffer.md#bufferencoding)。 |
 | toEnc | string | 是 | 目标编码。 支持的格式范围为[BufferEncoding](js-apis-buffer.md#bufferencoding)。 |
 
@@ -661,35 +555,23 @@ transcode(source: Buffer | Uint8Array, fromEnc: string, toEnc: string): Buffer
 | --- | --- |
 | [Buffer](js-apis-buffer.md#buffer) | 将当前编码转换成目标编码，并返回一个新的Buffer对象。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let newBuf = buffer.transcode(buffer.from('€'), 'utf-8', 'ascii');
-4. console.info("newBuf = " + newBuf.toString('ascii'));
-5. // 输出结果：newBuf = ,
+let newBuf = buffer.transcode(buffer.from('€'), 'utf-8', 'ascii');
+console.info("newBuf = " + newBuf.toString('ascii'));
+// 输出结果：newBuf = ,
 ```
 
 ## Buffer
 
-PhonePC/2in1TabletTVWearable
-
 ### 属性
 
-PhonePC/2in1TabletTVWearable
+**元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
-
-**元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -707,29 +589,27 @@ PhonePC/2in1TabletTVWearable
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from("12345678");
-4. console.info(JSON.stringify(buf.length));
-5. // 输出结果：8
-6. let arrayBuffer = buf.buffer;
-7. console.info(JSON.stringify(new Uint8Array(arrayBuffer)));
-8. // 输出结果：{"0":49,"1":50,"2":51,"3":52,"4":53,"5":54,"6":55,"7":56}
-9. console.info(JSON.stringify(buf.byteOffset));
-10. // 输出结果：0
-11. let buf1 = buffer.from("abcd");
-12. console.info(JSON.stringify(buf1.byteOffset));
-13. // 输出结果：8
+let buf = buffer.from("12345678");
+console.info(JSON.stringify(buf.length));
+// 输出结果：8
+let arrayBuffer = buf.buffer;
+console.info(JSON.stringify(new Uint8Array(arrayBuffer)));
+// 输出结果：{"0":49,"1":50,"2":51,"3":52,"4":53,"5":54,"6":55,"7":56}
+console.info(JSON.stringify(buf.byteOffset));
+// 输出结果：0
+let buf1 = buffer.from("abcd");
+console.info(JSON.stringify(buf1.byteOffset));
+// 输出结果：8
 ```
 
 ### compare
 
-PhonePC/2in1TabletTVWearable
-
 compare(target: Buffer | Uint8Array, targetStart?: number, targetEnd?: number, sourceStart?: number, sourceEnd?: number): -1 | 0 | 1
 
-比较当前Buffer对象与目标Buffer对象，并返回Buffer在排序中的结果。
+比较当前Buffer对象与目标Buffer或Uint8Array对象，并返回在排序中的结果。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -740,7 +620,7 @@ compare(target: Buffer | Uint8Array, targetStart?: number, targetEnd?: number, s
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | target | [Buffer](js-apis-buffer.md#buffer) | Uint8Array | 是 | 要比较的实例对象。 |
-| targetStart | number | 否 | target实例中开始的偏移量。默认值：0。 |
+| targetStart | number | 否 | target实例中开始的偏移量。取值范围：>= 0且<= target的字节长度。默认值：0。 |
 | targetEnd | number | 否 | target实例中结束的偏移量（不包含结束位置）。默认值：目标对象的字节长度。 |
 | sourceStart | number | 否 | this实例中开始的偏移量。默认值：0。 |
 | sourceEnd | number | 否 | this实例中结束的偏移量（不包含结束位置）。默认值：当前对象的字节长度。 |
@@ -753,32 +633,29 @@ compare(target: Buffer | Uint8Array, targetStart?: number, targetEnd?: number, s
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200001 | The value of "[targetStart/targetEnd/sourceStart/sourceEnd]" is out of range. It must be >= 0 and <= [right range]. Received value is: [targetStart/targetEnd/sourceStart/sourceEnd] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf1 = buffer.from([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-4. let buf2 = buffer.from([5, 6, 7, 8, 9, 1, 2, 3, 4]);
+let buf1 = buffer.from([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+let buf2 = buffer.from([5, 6, 7, 8, 9, 1, 2, 3, 4]);
 
-6. console.info(buf1.compare(buf2, 5, 9, 0, 4).toString());
-7. // 输出结果：0
-8. console.info(buf1.compare(buf2, 0, 6, 4).toString());
-9. // 输出结果：-1
-10. console.info(buf1.compare(buf2, 5, 6, 5).toString());
-11. // 输出结果：1
+console.info(buf1.compare(buf2, 5, 9, 0, 4).toString());
+// 输出结果：0
+console.info(buf1.compare(buf2, 0, 6, 4).toString());
+// 输出结果：-1
+console.info(buf1.compare(buf2, 5, 6, 5).toString());
+// 输出结果：1
 ```
 
 ### copy
-
-PhonePC/2in1TabletTVWearable
 
 copy(target: Buffer| Uint8Array, targetStart?: number, sourceStart?: number, sourceEnd?: number): number
 
@@ -793,7 +670,7 @@ copy(target: Buffer| Uint8Array, targetStart?: number, sourceStart?: number, sou
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | target | [Buffer](js-apis-buffer.md#buffer) | Uint8Array | 是 | 要复制到的Buffer或Uint8Array实例。 |
-| targetStart | number | 否 | target实例中开始写入的偏移量。默认值：0。 |
+| targetStart | number | 否 | target实例中开始写入的偏移量。取值范围：>= 0且<= target的字节长度。默认值：0。 |
 | sourceStart | number | 否 | this实例中开始复制的偏移量。默认值: 0。 |
 | sourceEnd | number | 否 | this实例中结束复制的偏移量（不包含结束位置）。默认值：当前对象的字节长度。 |
 
@@ -805,37 +682,34 @@ copy(target: Buffer| Uint8Array, targetStart?: number, sourceStart?: number, sou
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200001 | The value of "[targetStart/sourceStart/sourceEnd]" is out of range. It must be >= 0. Received value is: [targetStart/sourceStart/sourceEnd] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf1 = buffer.allocUninitializedFromPool(26);
-4. let buf2 = buffer.allocUninitializedFromPool(26).fill('!');
+let buf1 = buffer.allocUninitializedFromPool(26);
+let buf2 = buffer.allocUninitializedFromPool(26).fill('!');
 
-6. for (let i = 0; i < 26; i++) {
-7. buf1.writeInt8(i + 97, i);
-8. }
+for (let i = 0; i < 26; i++) {
+  buf1.writeInt8(i + 97, i);
+}
 
-10. buf1.copy(buf2, 8, 16, 20);
-11. console.info(buf2.toString('ascii', 0, 25));
-12. // 输出结果：!!!!!!!!qrst!!!!!!!!!!!!!
+buf1.copy(buf2, 8, 16, 20);
+console.info(buf2.toString('ascii', 0, 25));
+// 输出结果：!!!!!!!!qrst!!!!!!!!!!!!!
 ```
 
 ### entries
 
-PhonePC/2in1TabletTVWearable
-
 entries(): IterableIterator<[number, number]>
 
-返回一个包含key和value的迭代器。
+返回一个包含字节索引（key）和字节值（value）的迭代器。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -849,29 +723,27 @@ entries(): IterableIterator<[number, number]>
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from('buffer');
-4. let pair = buf.entries();
-5. let next: IteratorResult<Object[]> = pair.next();
-6. while (!next.done) {
-7. console.info("buffer: " + next.value);
-8. /*
-9. 输出结果：buffer: 0,98
-10. buffer: 1,117
-11. buffer: 2,102
-12. buffer: 3,102
-13. buffer: 4,101
-14. buffer: 5,114
-15. */
-16. next = pair.next();
-17. }
+let buf = buffer.from('buffer');
+let pair = buf.entries();
+let next: IteratorResult<Object[]> = pair.next();
+while (!next.done) {
+  console.info("buffer: " + next.value);
+  /*
+  输出结果：buffer: 0,98
+           buffer: 1,117
+           buffer: 2,102
+           buffer: 3,102
+           buffer: 4,101
+           buffer: 5,114
+   */
+  next = pair.next();
+}
 ```
 
 ### equals
-
-PhonePC/2in1TabletTVWearable
 
 equals(otherBuffer: Uint8Array | Buffer): boolean
 
@@ -893,36 +765,26 @@ equals(otherBuffer: Uint8Array | Buffer): boolean
 | --- | --- |
 | boolean | 相等则返回true，否则返回false。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf1 = buffer.from('ABC');
-4. let buf2 = buffer.from('414243', 'hex');
-5. let buf3 = buffer.from('ABCD');
+let buf1 = buffer.from('ABC');
+let buf2 = buffer.from('414243', 'hex');
+let buf3 = buffer.from('ABCD');
 
-7. console.info(buf1.equals(buf2).toString());
-8. // 输出结果：true
-9. console.info(buf1.equals(buf3).toString());
-10. // 输出结果：false
+console.info(buf1.equals(buf2).toString());
+// 输出结果：true
+console.info(buf1.equals(buf3).toString());
+// 输出结果：false
 ```
 
 ### fill
 
-PhonePC/2in1TabletTVWearable
-
 fill(value: string | Buffer | Uint8Array | number, offset?: number, end?: number, encoding?: BufferEncoding): Buffer
 
-使用value填充当前对象指定位置的数据，默认为循环填充，并返回填充后的Buffer对象。
+使用value填充当前对象指定位置的数据，当value的长度小于需要填充的范围时会重复value进行填充，并返回填充后的Buffer对象。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -933,9 +795,9 @@ fill(value: string | Buffer | Uint8Array | number, offset?: number, end?: number
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | [Buffer](js-apis-buffer.md#buffer) | Uint8Array | number | 是 | 用于填充的值。 |
-| offset | number | 否 | 起始偏移量。默认值：0。 |
+| offset | number | 否 | 起始偏移量。取值范围：>= 0且<= Buffer.length。默认值：0。 |
 | end | number | 否 | 结束偏移量（不包含结束位置）。 默认值：当前对象的字节长度。 |
-| encoding | [BufferEncoding](js-apis-buffer.md#bufferencoding) | 否 | 字符编码格式（value为string才有意义）。默认值：'utf8'。 |
+| encoding | [BufferEncoding](js-apis-buffer.md#bufferencoding) | 否 | 字符编码格式（value参数为string才有意义）。默认值：'utf8'。 |
 
 **返回值：**
 
@@ -945,26 +807,23 @@ fill(value: string | Buffer | Uint8Array | number, offset?: number, end?: number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200001 | The value of "[offset/end]" is out of range. It must be >= 0 and <= [right range]. Received value is: [offset/end] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let b = buffer.allocUninitializedFromPool(50).fill('h');
-4. console.info(b.toString());
-5. // 输出结果：hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+let b = buffer.allocUninitializedFromPool(50).fill('h');
+console.info(b.toString());
+// 输出结果：hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
 ```
 
 ### includes
-
-PhonePC/2in1TabletTVWearable
 
 includes(value: string | number | Buffer | Uint8Array, byteOffset?: number, encoding?: BufferEncoding): boolean
 
@@ -980,7 +839,7 @@ includes(value: string | number | Buffer | Uint8Array, byteOffset?: number, enco
 | --- | --- | --- | --- |
 | value | string | number | [Buffer](js-apis-buffer.md#buffer) | Uint8Array | 是 | 要搜索的内容。 |
 | byteOffset | number | 否 | 字节偏移量。如果为负数，则从末尾开始计算偏移量。默认值：0。 |
-| encoding | [BufferEncoding](js-apis-buffer.md#bufferencoding) | 否 | 字符编码格式。默认值：'utf8'。 |
+| encoding | [BufferEncoding](js-apis-buffer.md#bufferencoding) | 否 | 字符编码格式（value参数为string时才有意义）。默认值：'utf8'。 |
 
 **返回值：**
 
@@ -988,29 +847,19 @@ includes(value: string | number | Buffer | Uint8Array, byteOffset?: number, enco
 | --- | --- |
 | boolean | 存在为true，否则为false。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from('this is a buffer');
-4. console.info(buf.includes('this').toString());
-5. // 输出结果：true
-6. console.info(buf.includes('be').toString());
-7. // 输出结果：false
+let buf = buffer.from('this is a buffer');
+console.info(buf.includes('this').toString());
+// 输出结果：true
+console.info(buf.includes('be').toString());
+// 输出结果：false
 ```
 
 ### indexOf
-
-PhonePC/2in1TabletTVWearable
 
 indexOf(value: string | number | Buffer | Uint8Array, byteOffset?: number, encoding?: BufferEncoding): number
 
@@ -1026,7 +875,7 @@ indexOf(value: string | number | Buffer | Uint8Array, byteOffset?: number, encod
 | --- | --- | --- | --- |
 | value | string | number | [Buffer](js-apis-buffer.md#buffer) | Uint8Array | 是 | 要查找的内容。 |
 | byteOffset | number | 否 | 字节偏移量。如果为负数，则从末尾开始计算偏移量。默认值：0。 |
-| encoding | [BufferEncoding](js-apis-buffer.md#bufferencoding) | 否 | 字符编码格式。默认值：'utf8'。 |
+| encoding | [BufferEncoding](js-apis-buffer.md#bufferencoding) | 否 | 字符编码格式（value参数为string时才有意义）。默认值：'utf8'。 |
 
 **返回值：**
 
@@ -1034,29 +883,19 @@ indexOf(value: string | number | Buffer | Uint8Array, byteOffset?: number, encod
 | --- | --- |
 | number | 第一次出现位置。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from('this is a buffer');
-4. console.info(buf.indexOf('this').toString());
-5. // 输出结果：0
-6. console.info(buf.indexOf('is').toString());
-7. // 输出结果：2
+let buf = buffer.from('this is a buffer');
+console.info(buf.indexOf('this').toString());
+// 输出结果：0
+console.info(buf.indexOf('is').toString());
+// 输出结果：2
 ```
 
 ### keys
-
-PhonePC/2in1TabletTVWearable
 
 keys(): IterableIterator<number>
 
@@ -1074,27 +913,25 @@ keys(): IterableIterator<number>
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from('buffer');
-4. let keys = buf.keys();
-5. for (const key of keys) {
-6. console.info(key.toString());
-7. }
-8. /*
-9. 输出结果：0
-10. 1
-11. 2
-12. 3
-13. 4
-14. 5
-15. */
+let buf = buffer.from('buffer');
+let keys = buf.keys();
+for (const key of keys) {
+  console.info(key.toString());
+}
+/*
+输出结果：0
+        1
+        2
+        3
+        4
+        5
+ */
 ```
 
 ### lastIndexOf
-
-PhonePC/2in1TabletTVWearable
 
 lastIndexOf(value: string | number | Buffer | Uint8Array, byteOffset?: number, encoding?: BufferEncoding): number
 
@@ -1110,7 +947,7 @@ lastIndexOf(value: string | number | Buffer | Uint8Array, byteOffset?: number, e
 | --- | --- | --- | --- |
 | value | string | number | [Buffer](js-apis-buffer.md#buffer) | Uint8Array | 是 | 要搜索的内容。 |
 | byteOffset | number | 否 | 字节偏移量。如果为负数，则从末尾开始计算偏移量。默认值：Buffer.length。 |
-| encoding | [BufferEncoding](js-apis-buffer.md#bufferencoding) | 否 | 字符编码格式。默认值：'utf8'。 |
+| encoding | [BufferEncoding](js-apis-buffer.md#bufferencoding) | 否 | 字符编码格式（value参数为string时才有意义）。默认值：'utf8'。 |
 
 **返回值：**
 
@@ -1118,29 +955,19 @@ lastIndexOf(value: string | number | Buffer | Uint8Array, byteOffset?: number, e
 | --- | --- |
 | number | 最后一次出现value值的索引。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from('this buffer is a buffer');
-4. console.info(buf.lastIndexOf('this').toString());
-5. // 输出结果：0
-6. console.info(buf.lastIndexOf('buffer').toString());
-7. // 输出结果：17
+let buf = buffer.from('this buffer is a buffer');
+console.info(buf.lastIndexOf('this').toString());
+// 输出结果：0
+console.info(buf.lastIndexOf('buffer').toString());
+// 输出结果：17
 ```
 
 ### readBigInt64BE
-
-PhonePC/2in1TabletTVWearable
 
 readBigInt64BE(offset?: number): bigint
 
@@ -1160,36 +987,33 @@ readBigInt64BE(offset?: number): bigint
 
 | 类型 | 说明 |
 | --- | --- |
-| bigint | 读取出的内容。 |
+| bigint | 读取的有符号大端序64位整数值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Incorrect parameter types. |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]. |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from([0x63, 0x64, 0x65, 0x66, 0x67, 0x68, 0x69, 0x70,
-4. 0x71, 0x72, 0x73, 0x74, 0x75, 0x76, 0x77, 0x78]);
-5. console.info(buf.readBigInt64BE(0).toString());
-6. // 输出结果：7161960797921896816
+let buf = buffer.from([0x63, 0x64, 0x65, 0x66, 0x67, 0x68, 0x69, 0x70,
+  0x71, 0x72, 0x73, 0x74, 0x75, 0x76, 0x77, 0x78]);
+console.info(buf.readBigInt64BE(0).toString());
+// 输出结果：7161960797921896816
 
-8. let buf1 = buffer.allocUninitializedFromPool(8);
-9. let result = buf1.writeBigInt64BE(BigInt(0x0102030405060708), 0);
-10. console.info("result = " + result);
-11. // 输出结果：result = 8
+let buf1 = buffer.allocUninitializedFromPool(8);
+let result = buf1.writeBigInt64BE(BigInt(0x0102030405060708), 0);
+console.info("result = " + result);
+// 输出结果：result = 8
 ```
 
 ### readBigInt64LE
-
-PhonePC/2in1TabletTVWearable
 
 readBigInt64LE(offset?: number): bigint
 
@@ -1203,42 +1027,39 @@ readBigInt64LE(offset?: number): bigint
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| offset | number | 否 | 偏移量。取值范围：0 <= offset <= Buffer.length - 8，默认值：0。 |
+| offset | number | 否 | 偏移量。默认值：0。取值范围：0 <= offset <= Buffer.length - 8。当Buffer长度小于8时无法使用此方法。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| bigint | 读取出的内容。 |
+| bigint | 从Buffer中读取的有符号小端序64位整数值，可用于高精度整数运算的二进制数据处理。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Incorrect parameter types. |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]. |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from([0x63, 0x64, 0x65, 0x66, 0x67, 0x68, 0x69, 0x70,
-4. 0x71, 0x72, 0x73, 0x74, 0x75, 0x76, 0x77, 0x78]);
-5. console.info(buf.readBigUInt64LE(0).toString());
-6. // 输出结果：8100120198111388771
+let buf = buffer.from([0x63, 0x64, 0x65, 0x66, 0x67, 0x68, 0x69, 0x70,
+  0x71, 0x72, 0x73, 0x74, 0x75, 0x76, 0x77, 0x78]);
+console.info(buf.readBigUInt64LE(0).toString());
+// 输出结果：8100120198111388771
 
-8. let buf1 = buffer.allocUninitializedFromPool(8);
-9. let result = buf1.writeBigUInt64BE(BigInt(0xdecafafecacefade), 0);
-10. console.info("result = " + result);
-11. // 输出结果：result = 8
+let buf1 = buffer.allocUninitializedFromPool(8);
+let result = buf1.writeBigUInt64BE(BigInt(0xdecafafecacefade), 0);
+console.info("result = " + result);
+// 输出结果：result = 8
 ```
 
 ### readBigUInt64BE
-
-PhonePC/2in1TabletTVWearable
 
 readBigUInt64BE(offset?: number): bigint
 
@@ -1258,35 +1079,32 @@ readBigUInt64BE(offset?: number): bigint
 
 | 类型 | 说明 |
 | --- | --- |
-| bigint | 读取出的内容。 |
+| bigint | 从Buffer中读取的无符号大端序64位整数值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Incorrect parameter types. |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]. |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from([0x63, 0x64, 0x65, 0x66, 0x67, 0x68, 0x69, 0x70,
-4. 0x71, 0x72, 0x73, 0x74, 0x75, 0x76, 0x77, 0x78]);
-5. console.info(buf.readBigUInt64BE(0).toString());
-6. // 输出结果：7161960797921896816
-7. let buf1 = buffer.allocUninitializedFromPool(8);
-8. let result = buf1.writeBigUInt64BE(BigInt(0xdecafafecacefade), 0);
-9. console.info("result = " + result);
-10. // 输出结果：result = 8
+let buf = buffer.from([0x63, 0x64, 0x65, 0x66, 0x67, 0x68, 0x69, 0x70,
+  0x71, 0x72, 0x73, 0x74, 0x75, 0x76, 0x77, 0x78]);
+console.info(buf.readBigUInt64BE(0).toString());
+// 输出结果：7161960797921896816
+let buf1 = buffer.allocUninitializedFromPool(8);
+let result = buf1.writeBigUInt64BE(BigInt(0xdecafafecacefade), 0);
+console.info("result = " + result);
+// 输出结果：result = 8
 ```
 
 ### readBigUInt64LE
-
-PhonePC/2in1TabletTVWearable
 
 readBigUInt64LE(offset?: number): bigint
 
@@ -1306,36 +1124,33 @@ readBigUInt64LE(offset?: number): bigint
 
 | 类型 | 说明 |
 | --- | --- |
-| bigint | 读取出的内容。 |
+| bigint | 从Buffer中读取的无符号小端序64位整数值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Incorrect parameter types. |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]. |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from([0x63, 0x64, 0x65, 0x66, 0x67, 0x68, 0x69, 0x70,
-4. 0x71, 0x72, 0x73, 0x74, 0x75, 0x76, 0x77, 0x78]);
-5. console.info(buf.readBigUInt64LE(0).toString());
-6. // 输出结果：8100120198111388771
+let buf = buffer.from([0x63, 0x64, 0x65, 0x66, 0x67, 0x68, 0x69, 0x70,
+  0x71, 0x72, 0x73, 0x74, 0x75, 0x76, 0x77, 0x78]);
+console.info(buf.readBigUInt64LE(0).toString());
+// 输出结果：8100120198111388771
 
-8. let buf1 = buffer.allocUninitializedFromPool(8);
-9. let result = buf1.writeBigUInt64BE(BigInt(0xdecafafecacefade), 0);
-10. console.info("result = " + result);
-11. // 输出结果：result = 8
+let buf1 = buffer.allocUninitializedFromPool(8);
+let result = buf1.writeBigUInt64BE(BigInt(0xdecafafecacefade), 0);
+console.info("result = " + result);
+// 输出结果：result = 8
 ```
 
 ### readDoubleBE
-
-PhonePC/2in1TabletTVWearable
 
 readDoubleBE(offset?: number): number
 
@@ -1359,30 +1174,27 @@ readDoubleBE(offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Incorrect parameter types. |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]. |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from([1, 2, 3, 4, 5, 6, 7, 8]);
-4. console.info(buf.readDoubleBE(0).toString());
-5. // 输出结果：8.20788039913184e-304
-6. let buf1 = buffer.allocUninitializedFromPool(8);
-7. let result = buf1.writeDoubleBE(123.456, 0);
-8. console.info("result = " + result);
-9. // 输出结果：result = 8
+let buf = buffer.from([1, 2, 3, 4, 5, 6, 7, 8]);
+console.info(buf.readDoubleBE(0).toString());
+// 输出结果：8.20788039913184e-304
+let buf1 = buffer.allocUninitializedFromPool(8);
+let result = buf1.writeDoubleBE(123.456, 0);
+console.info("result = " + result);
+// 输出结果：result = 8
 ```
 
 ### readDoubleLE
-
-PhonePC/2in1TabletTVWearable
 
 readDoubleLE(offset?: number): number
 
@@ -1406,30 +1218,27 @@ readDoubleLE(offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Incorrect parameter types. |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]. |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from([1, 2, 3, 4, 5, 6, 7, 8]);
-4. console.info(buf.readDoubleLE(0).toString());
-5. // 输出结果：5.447603722011605e-270
-6. let buf1 = buffer.allocUninitializedFromPool(8);
-7. let result = buf1.writeDoubleLE(123.456, 0);
-8. console.info("result = " + result);
-9. // 输出结果：result = 8
+let buf = buffer.from([1, 2, 3, 4, 5, 6, 7, 8]);
+console.info(buf.readDoubleLE(0).toString());
+// 输出结果：5.447603722011605e-270
+let buf1 = buffer.allocUninitializedFromPool(8);
+let result = buf1.writeDoubleLE(123.456, 0);
+console.info("result = " + result);
+// 输出结果：result = 8
 ```
 
 ### readFloatBE
-
-PhonePC/2in1TabletTVWearable
 
 readFloatBE(offset?: number): number
 
@@ -1453,30 +1262,27 @@ readFloatBE(offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Incorrect parameter types. |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]. |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from([1, 2, 3, 4, 5, 6, 7, 8]);
-4. console.info(buf.readFloatBE(0).toString());
-5. // 输出结果：2.387939260590663e-38
-6. let buf1 = buffer.allocUninitializedFromPool(4);
-7. let result = buf1.writeFloatBE(0xcabcbcbc, 0);
-8. console.info("result = " + result);
-9. // 输出结果：result = 4
+let buf = buffer.from([1, 2, 3, 4, 5, 6, 7, 8]);
+console.info(buf.readFloatBE(0).toString());
+// 输出结果：2.387939260590663e-38
+let buf1 = buffer.allocUninitializedFromPool(4);
+let result = buf1.writeFloatBE(0xcabcbcbc, 0);
+console.info("result = " + result);
+// 输出结果：result = 4
 ```
 
 ### readFloatLE
-
-PhonePC/2in1TabletTVWearable
 
 readFloatLE(offset?: number): number
 
@@ -1500,30 +1306,27 @@ readFloatLE(offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Incorrect parameter types. |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]. |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from([1, 2, 3, 4, 5, 6, 7, 8]);
-4. console.info(buf.readFloatLE(0).toString());
-5. // 输出结果：1.539989614439558e-36
-6. let buf1 = buffer.allocUninitializedFromPool(4);
-7. let result = buf1.writeFloatLE(0xcabcbcbc, 0);
-8. console.info("result = " + result);
-9. // 输出结果：result = 4
+let buf = buffer.from([1, 2, 3, 4, 5, 6, 7, 8]);
+console.info(buf.readFloatLE(0).toString());
+// 输出结果：1.539989614439558e-36
+let buf1 = buffer.allocUninitializedFromPool(4);
+let result = buf1.writeFloatLE(0xcabcbcbc, 0);
+console.info("result = " + result);
+// 输出结果：result = 4
 ```
 
 ### readInt8
-
-PhonePC/2in1TabletTVWearable
 
 readInt8(offset?: number): number
 
@@ -1547,32 +1350,29 @@ readInt8(offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Incorrect parameter types. |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 1. Received value is: [offset]. |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from([-1, 5]);
-4. console.info(buf.readInt8(0).toString());
-5. // 输出结果：0
-6. console.info(buf.readInt8(1).toString());
-7. // 输出结果：5
-8. let buf1 = buffer.allocUninitializedFromPool(2);
-9. let result = buf1.writeInt8(0x12);
-10. console.info("result = " + result);
-11. // 输出结果：result = 1
+let buf = buffer.from([-1, 5]);
+console.info(buf.readInt8(0).toString());
+// 输出结果：0
+console.info(buf.readInt8(1).toString());
+// 输出结果：5
+let buf1 = buffer.allocUninitializedFromPool(2);
+let result = buf1.writeInt8(0x12);
+console.info("result = " + result);
+// 输出结果：result = 1
 ```
 
 ### readInt16BE
-
-PhonePC/2in1TabletTVWearable
 
 readInt16BE(offset?: number): number
 
@@ -1596,30 +1396,27 @@ readInt16BE(offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Incorrect parameter types. |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 2. Received value is: [offset]. |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from([0, 5]);
-4. console.info(buf.readInt16BE(0).toString());
-5. // 输出结果：5
-6. let buf1 = buffer.alloc(2);
-7. let result = buf1.writeInt16BE(0x1234, 0);
-8. console.info("result = " + result);
-9. // 输出结果：result = 2
+let buf = buffer.from([0, 5]);
+console.info(buf.readInt16BE(0).toString());
+// 输出结果：5
+let buf1 = buffer.alloc(2);
+let result = buf1.writeInt16BE(0x1234, 0);
+console.info("result = " + result);
+// 输出结果：result = 2
 ```
 
 ### readInt16LE
-
-PhonePC/2in1TabletTVWearable
 
 readInt16LE(offset?: number): number
 
@@ -1643,30 +1440,27 @@ readInt16LE(offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Incorrect parameter types. |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 2. Received value is: [offset]. |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from([0, 5]);
-4. console.info(buf.readInt16LE(0).toString());
-5. // 输出结果：1280
-6. let buf1 = buffer.alloc(2);
-7. let result = buf1.writeInt16BE(0x1234, 0);
-8. console.info("result = " + result);
-9. // 输出结果：result = 2
+let buf = buffer.from([0, 5]);
+console.info(buf.readInt16LE(0).toString());
+// 输出结果：1280
+let buf1 = buffer.alloc(2);
+let result = buf1.writeInt16BE(0x1234, 0);
+console.info("result = " + result);
+// 输出结果：result = 2
 ```
 
 ### readInt32BE
-
-PhonePC/2in1TabletTVWearable
 
 readInt32BE(offset?: number): number
 
@@ -1690,30 +1484,27 @@ readInt32BE(offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Incorrect parameter types. |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]. |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from([0, 0, 0, 5]);
-4. console.info(buf.readInt32BE(0).toString());
-5. // 输出结果：5
-6. let buf1 = buffer.alloc(4);
-7. let result = buf1.writeInt32BE(0x12345678, 0);
-8. console.info("result = " + result);
-9. // 输出结果：result = 4
+let buf = buffer.from([0, 0, 0, 5]);
+console.info(buf.readInt32BE(0).toString());
+// 输出结果：5
+let buf1 = buffer.alloc(4);
+let result = buf1.writeInt32BE(0x12345678, 0);
+console.info("result = " + result);
+// 输出结果：result = 4
 ```
 
 ### readInt32LE
-
-PhonePC/2in1TabletTVWearable
 
 readInt32LE(offset?: number): number
 
@@ -1737,30 +1528,27 @@ readInt32LE(offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Incorrect parameter types. |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]. |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from([0, 0, 0, 5]);
-4. console.info(buf.readInt32LE(0).toString());
-5. // 输出结果：83886080
-6. let buf1 = buffer.alloc(4);
-7. let result = buf1.writeInt32BE(0x12345678, 0);
-8. console.info("result = " + result);
-9. // 输出结果：result = 4
+let buf = buffer.from([0, 0, 0, 5]);
+console.info(buf.readInt32LE(0).toString());
+// 输出结果：83886080
+let buf1 = buffer.alloc(4);
+let result = buf1.writeInt32BE(0x12345678, 0);
+console.info("result = " + result);
+// 输出结果：result = 4
 ```
 
 ### readIntBE
-
-PhonePC/2in1TabletTVWearable
 
 readIntBE(offset: number, byteLength: number): number
 
@@ -1774,7 +1562,7 @@ readIntBE(offset: number, byteLength: number): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| offset | number | 是 | 偏移量。取值范围：0 <= offset <= Buffer.length - byteLength，默认值：0。 |
+| offset | number | 是 | 偏移量。取值范围：0 <= offset <= Buffer.length - byteLength。 |
 | byteLength | number | 是 | 读取的字节数。取值范围：1 <= byteLength <= 6。 |
 
 **返回值：**
@@ -1785,31 +1573,28 @@ readIntBE(offset: number, byteLength: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from("ab");
-4. let num = buf.readIntBE(0, 1);
-5. console.info(num.toString());
-6. // 输出结果：97
-7. let buf1 = buffer.allocUninitializedFromPool(6);
-8. let result = buf1.writeIntBE(0x123456789011, 0, 6);
-9. console.info("result = " + result);
-10. // 输出结果：result = 6
+let buf = buffer.from("ab");
+let num = buf.readIntBE(0, 1);
+console.info(num.toString());
+// 输出结果：97
+let buf1 = buffer.allocUninitializedFromPool(6);
+let result = buf1.writeIntBE(0x123456789011, 0, 6);
+console.info("result = " + result);
+// 输出结果：result = 6
 ```
 
 ### readIntLE
-
-PhonePC/2in1TabletTVWearable
 
 readIntLE(offset: number, byteLength: number): number
 
@@ -1834,34 +1619,31 @@ readIntLE(offset: number, byteLength: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from([0x12, 0x34, 0x56, 0x78, 0x90, 0xab]);
-4. console.info(buf.readIntLE(0, 6).toString(16));
-5. // 输出结果：-546f87a9cbee
-6. let buf1 = buffer.allocUninitializedFromPool(6);
-7. let result = buf1.writeIntLE(0x123456789011, 0, 6);
-8. console.info("result = " + result);
-9. // 输出结果：result = 6
+let buf = buffer.from([0x12, 0x34, 0x56, 0x78, 0x90, 0xab]);
+console.info(buf.readIntLE(0, 6).toString(16));
+// 输出结果：-546f87a9cbee
+let buf1 = buffer.allocUninitializedFromPool(6);
+let result = buf1.writeIntLE(0x123456789011, 0, 6);
+console.info("result = " + result);
+// 输出结果：result = 6
 ```
 
 ### readUInt8
 
-PhonePC/2in1TabletTVWearable
-
 readUInt8(offset?: number): number
 
-从offset处读取8位无符号整型数。
+从指定的offset处读取8位无符号整型数。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -1881,40 +1663,37 @@ readUInt8(offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 1. Received value is: [offset]. |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from([1, -2]);
-4. console.info(buf.readUInt8(0).toString());
-5. // 输出结果：1
-6. console.info(buf.readUInt8(1).toString());
-7. // 输出结果：0
-8. let buf1 = buffer.allocUninitializedFromPool(4);
-9. let result = buf1.writeUInt8(0x42);
-10. console.info("result = " + result);
-11. // 输出结果：result = 1
+let buf = buffer.from([1, -2]);
+console.info(buf.readUInt8(0).toString());
+// 输出结果：1
+console.info(buf.readUInt8(1).toString());
+// 输出结果：0
+let buf1 = buffer.allocUninitializedFromPool(4);
+let result = buf1.writeUInt8(0x42);
+console.info("result = " + result);
+// 输出结果：result = 1
 ```
 
 ### readUInt16BE
-
-PhonePC/2in1TabletTVWearable
 
 readUInt16BE(offset?: number): number
 
 从指定的offset处读取无符号的大端序16位整数。
 
-**系统能力：** SystemCapability.Utils.Lang
-
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
 
@@ -1930,36 +1709,33 @@ readUInt16BE(offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 2. Received value is: [offset]. |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from([0x12, 0x34, 0x56]);
-4. console.info(buf.readUInt16BE(0).toString(16));
-5. // 输出结果：1234
-6. console.info(buf.readUInt16BE(1).toString(16));
-7. // 输出结果：3456
-8. let buf1 = buffer.allocUninitializedFromPool(4);
-9. let result = buf1.writeUInt16BE(0x1234, 0);
-10. console.info("result = " + result);
-11. // 输出结果：result = 2
+let buf = buffer.from([0x12, 0x34, 0x56]);
+console.info(buf.readUInt16BE(0).toString(16));
+// 输出结果：1234
+console.info(buf.readUInt16BE(1).toString(16));
+// 输出结果：3456
+let buf1 = buffer.allocUninitializedFromPool(4);
+let result = buf1.writeUInt16BE(0x1234, 0);
+console.info("result = " + result);
+// 输出结果：result = 2
 ```
 
 ### readUInt16LE
 
-PhonePC/2in1TabletTVWearable
-
 readUInt16LE(offset?: number): number
 
-从指定的offset处的buf读取无符号的小端序16位整数。
+从指定的offset处读取无符号的小端序16位整数。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -1979,32 +1755,29 @@ readUInt16LE(offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 2. Received value is: [offset]. |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from([0x12, 0x34, 0x56]);
-4. console.info(buf.readUInt16LE(0).toString(16));
-5. // 输出结果：3412
-6. console.info(buf.readUInt16LE(1).toString(16));
-7. // 输出结果：5634
-8. let buf1 = buffer.allocUninitializedFromPool(4);
-9. let result = buf1.writeUInt16LE(0x1234, 0);
-10. console.info("result = " + result);
-11. // 输出结果：result = 2
+let buf = buffer.from([0x12, 0x34, 0x56]);
+console.info(buf.readUInt16LE(0).toString(16));
+// 输出结果：3412
+console.info(buf.readUInt16LE(1).toString(16));
+// 输出结果：5634
+let buf1 = buffer.allocUninitializedFromPool(4);
+let result = buf1.writeUInt16LE(0x1234, 0);
+console.info("result = " + result);
+// 输出结果：result = 2
 ```
 
 ### readUInt32BE
-
-PhonePC/2in1TabletTVWearable
 
 readUInt32BE(offset?: number): number
 
@@ -2028,38 +1801,35 @@ readUInt32BE(offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]. |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from([0x12, 0x34, 0x56, 0x78]);
-4. console.info(buf.readUInt32BE(0).toString(16));
-5. // 输出结果：12345678
-6. let buf1 = buffer.allocUninitializedFromPool(4);
-7. let result = buf1.writeUInt32BE(0x12345678, 0);
-8. console.info("result = " + result);
-9. // 输出结果：result = 4
+let buf = buffer.from([0x12, 0x34, 0x56, 0x78]);
+console.info(buf.readUInt32BE(0).toString(16));
+// 输出结果：12345678
+let buf1 = buffer.allocUninitializedFromPool(4);
+let result = buf1.writeUInt32BE(0x12345678, 0);
+console.info("result = " + result);
+// 输出结果：result = 4
 ```
 
 ### readUInt32LE
-
-PhonePC/2in1TabletTVWearable
 
 readUInt32LE(offset?: number): number
 
 从指定的offset处的buf读取无符号的小端序32位整数。
 
-**系统能力：** SystemCapability.Utils.Lang
-
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
 
@@ -2075,30 +1845,27 @@ readUInt32LE(offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]. |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from([0x12, 0x34, 0x56, 0x78]);
-4. console.info(buf.readUInt32LE(0).toString(16));
-5. // 输出结果：78563412
-6. let buf1 = buffer.allocUninitializedFromPool(4);
-7. let result = buf1.writeUInt32LE(0x12345678, 0);
-8. console.info("result = " + result);
-9. // 输出结果：result = 4
+let buf = buffer.from([0x12, 0x34, 0x56, 0x78]);
+console.info(buf.readUInt32LE(0).toString(16));
+// 输出结果：78563412
+let buf1 = buffer.allocUninitializedFromPool(4);
+let result = buf1.writeUInt32LE(0x12345678, 0);
+console.info("result = " + result);
+// 输出结果：result = 4
 ```
 
 ### readUIntBE
-
-PhonePC/2in1TabletTVWearable
 
 readUIntBE(offset: number, byteLength: number): number
 
@@ -2113,7 +1880,7 @@ readUIntBE(offset: number, byteLength: number): number
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 是 | 偏移量。取值范围：0 <= offset <= Buffer.length - byteLength，默认值：0。 |
-| byteLength | number | 是 | 要读取的字节数。读取的字节数。取值范围：1 <= byteLength <= 6。 |
+| byteLength | number | 是 | 要读取的字节数。取值范围：1 <= byteLength <= 6。 |
 
 **返回值：**
 
@@ -2123,30 +1890,27 @@ readUIntBE(offset: number, byteLength: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from([0x12, 0x34, 0x56, 0x78, 0x90, 0xab]);
-4. console.info(buf.readUIntBE(0, 6).toString(16));
-5. // 输出结果：1234567890ab
-6. let buf1 = buffer.allocUninitializedFromPool(4);
-7. let result = buf1.writeUIntBE(0x13141516, 0, 4);
-8. console.info("result = " + result);
-9. // 输出结果：result = 4
+let buf = buffer.from([0x12, 0x34, 0x56, 0x78, 0x90, 0xab]);
+console.info(buf.readUIntBE(0, 6).toString(16));
+// 输出结果：1234567890ab
+let buf1 = buffer.allocUninitializedFromPool(4);
+let result = buf1.writeUIntBE(0x13141516, 0, 4);
+console.info("result = " + result);
+// 输出结果：result = 4
 ```
 
 ### readUIntLE
-
-PhonePC/2in1TabletTVWearable
 
 readUIntLE(offset: number, byteLength: number): number
 
@@ -2171,38 +1935,35 @@ readUIntLE(offset: number, byteLength: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.from([0x12, 0x34, 0x56, 0x78, 0x90, 0xab]);
-4. console.info(buf.readUIntLE(0, 6).toString(16));
-5. // 输出结果：ab9078563412
-6. let buf1 = buffer.allocUninitializedFromPool(4);
-7. let result = buf1.writeUIntLE(0x13141516, 0, 4);
-8. console.info("result = " + result);
-9. // 输出结果：result = 4
+let buf = buffer.from([0x12, 0x34, 0x56, 0x78, 0x90, 0xab]);
+console.info(buf.readUIntLE(0, 6).toString(16));
+// 输出结果：ab9078563412
+let buf1 = buffer.allocUninitializedFromPool(4);
+let result = buf1.writeUIntLE(0x13141516, 0, 4);
+console.info("result = " + result);
+// 输出结果：result = 4
 ```
 
 ### subarray
 
-PhonePC/2in1TabletTVWearable
-
 subarray(start?: number, end?: number): Buffer
 
-截取当前对象指定位置的数据并返回。
-
-**系统能力：** SystemCapability.Utils.Lang
+截取当前对象指定位置的数据并返回。返回的Buffer与原Buffer共享同一块内存区域，修改任一对象的数据会同步影响另一对象。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
 
@@ -2219,26 +1980,24 @@ subarray(start?: number, end?: number): Buffer
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf1 = buffer.allocUninitializedFromPool(26);
+let buf1 = buffer.allocUninitializedFromPool(26);
 
-5. for (let i = 0; i < 26; i++) {
-6. buf1.writeInt8(i + 97, i);
-7. }
-8. const buf2 = buf1.subarray(0, 3);
-9. console.info(buf2.toString('ascii', 0, buf2.length));
-10. // 输出结果: abc
+for (let i = 0; i < 26; i++) {
+  buf1.writeInt8(i + 97, i);
+}
+const buf2 = buf1.subarray(0, 3);
+console.info(buf2.toString('ascii', 0, buf2.length));
+// 输出结果: abc
 ```
 
 ### swap16
 
-PhonePC/2in1TabletTVWearable
-
 swap16(): Buffer
 
-将当前对象转换为无符号的16位整数数组，并交换字节顺序。
+将当前对象转换为无符号的16位整数数组，并交换字节顺序。适用于需要在大端序和小端序之间转换16位数据的场景。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -2260,24 +2019,22 @@ swap16(): Buffer
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf1 = buffer.from([0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8]);
-4. console.info(buf1.toString('hex'));
-5. // 输出结果：0102030405060708
-6. buf1.swap16();
-7. console.info(buf1.toString('hex'));
-8. // 输出结果：0201040306050807
+let buf1 = buffer.from([0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8]);
+console.info(buf1.toString('hex'));
+// 输出结果：0102030405060708
+buf1.swap16();
+console.info(buf1.toString('hex'));
+// 输出结果：0201040306050807
 ```
 
 ### swap32
 
-PhonePC/2in1TabletTVWearable
-
 swap32(): Buffer
 
-将当前对象转换为无符号的32位整数数组，并交换字节顺序。
+将当前对象转换为无符号的32位整数数组，并交换字节顺序。适用于需要在大端序和小端序之间转换32位数据的场景。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -2299,24 +2056,22 @@ swap32(): Buffer
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf1 = buffer.from([0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8]);
-4. console.info(buf1.toString('hex'));
-5. // 输出结果：0102030405060708
-6. buf1.swap32();
-7. console.info(buf1.toString('hex'));
-8. // 输出结果：0403020108070605
+let buf1 = buffer.from([0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8]);
+console.info(buf1.toString('hex'));
+// 输出结果：0102030405060708
+buf1.swap32();
+console.info(buf1.toString('hex'));
+// 输出结果：0403020108070605
 ```
 
 ### swap64
 
-PhonePC/2in1TabletTVWearable
-
 swap64(): Buffer
 
-将当前对象转换为无符号的64位整数数组，并交换字节顺序。
+将当前对象转换为无符号的64位整数数组，并交换字节顺序。适用于需要在大端序和小端序之间转换64位数据的场景。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -2338,24 +2093,22 @@ swap64(): Buffer
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf1 = buffer.from([0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8]);
-4. console.info(buf1.toString('hex'));
-5. // 输出结果：0102030405060708
-6. buf1.swap64();
-7. console.info(buf1.toString('hex'));
-8. // 输出结果：0807060504030201
+let buf1 = buffer.from([0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8]);
+console.info(buf1.toString('hex'));
+// 输出结果：0102030405060708
+buf1.swap64();
+console.info(buf1.toString('hex'));
+// 输出结果：0807060504030201
 ```
 
 ### toJSON
 
-PhonePC/2in1TabletTVWearable
-
 toJSON(): Object
 
-将Buffer转为JSON并返回。
+将Buffer转为JSON对象并返回，该对象包含type属性（值为'Buffer'）和data属性（值为按字节顺序排列的数组）。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -2369,18 +2122,16 @@ toJSON(): Object
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf1 = buffer.from([0x1, 0x2, 0x3, 0x4, 0x5]);
-4. let obj = buf1.toJSON();
-5. console.info(JSON.stringify(obj));
-6. // 输出结果: {"type":"Buffer","data":[1,2,3,4,5]}
+let buf1 = buffer.from([0x1, 0x2, 0x3, 0x4, 0x5]);
+let obj = buf1.toJSON();
+console.info(JSON.stringify(obj));
+// 输出结果: {"type":"Buffer","data":[1,2,3,4,5]}
 ```
 
 ### toString
-
-PhonePC/2in1TabletTVWearable
 
 toString(encoding?: string, start?: number, end?: number): string
 
@@ -2394,8 +2145,8 @@ toString(encoding?: string, start?: number, end?: number): string
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| encoding | string | 否 | 字符编码格式。默认值：'utf8'。 |
-| start | number | 否 | 开始位置。默认值：0。 |
+| encoding | string | 否 | 字符编码格式，支持的格式范围为[BufferEncoding](js-apis-buffer.md#bufferencoding)。默认值：'utf8'。 |
+| start | number | 否 | 开始位置，单位：字节。默认值：0。 |
 | end | number | 否 | 结束位置。默认值：Buffer.length。 |
 
 **返回值：**
@@ -2404,30 +2155,20 @@ toString(encoding?: string, start?: number, end?: number): string
 | --- | --- |
 | string | 字符串。当start >= Buffer.length或start > end时返回空字符串。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf1 = buffer.allocUninitializedFromPool(26);
-4. for (let i = 0; i < 26; i++) {
-5. buf1.writeInt8(i + 97, i);
-6. }
-7. console.info(buf1.toString('utf-8'));
-8. // 输出结果: abcdefghijklmnopqrstuvwxyz
+let buf1 = buffer.allocUninitializedFromPool(26);
+for (let i = 0; i < 26; i++) {
+  buf1.writeInt8(i + 97, i);
+}
+console.info(buf1.toString('utf-8'));
+// 输出结果: abcdefghijklmnopqrstuvwxyz
 ```
 
 ### values
-
-PhonePC/2in1TabletTVWearable
 
 values(): IterableIterator<number>
 
@@ -2441,33 +2182,31 @@ values(): IterableIterator<number>
 
 | 类型 | 说明 |
 | --- | --- |
-| IterableIterator<number> | 迭代器。 |
+| IterableIterator<number> | 返回包含Buffer中每个字节值的迭代器。 |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf1 = buffer.from('buffer');
-4. let pair = buf1.values();
-5. let next:IteratorResult<number> = pair.next();
-6. while (!next.done) {
-7. console.info(next.value.toString());
-8. /*
-9. 输出结果：98
-10. 117
-11. 102
-12. 102
-13. 101
-14. 114
-15. */
-16. next = pair.next();
-17. }
+let buf1 = buffer.from('buffer');
+let pair = buf1.values();
+let next:IteratorResult<number> = pair.next();
+while (!next.done) {
+  console.info(next.value.toString());
+  /*
+  输出结果：98
+           117
+           102
+           102
+           101
+           114
+   */
+  next = pair.next();
+}
 ```
 
 ### write
-
-PhonePC/2in1TabletTVWearable
 
 write(str: string, offset?: number, length?: number, encoding?: string): number
 
@@ -2482,9 +2221,9 @@ write(str: string, offset?: number, length?: number, encoding?: string): number
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | str | string | 是 | 要写入Buffer的字符串。 |
-| offset | number | 否 | 偏移量。默认值：0。 |
+| offset | number | 否 | 偏移量。取值范围：>= 0且<= Buffer.length。默认值：0。 |
 | length | number | 否 | 最大字节长度。默认值：(Buffer.length - offset)。 |
-| encoding | string | 否 | 字符编码。默认值：'utf8'。 |
+| encoding | string | 否 | 字符编码，支持的格式范围为[BufferEncoding](js-apis-buffer.md#bufferencoding)。默认值：'utf8'。 |
 
 **返回值：**
 
@@ -2494,32 +2233,29 @@ write(str: string, offset?: number, length?: number, encoding?: string): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200001 | The value of "[offset/length]" is out of range. It must be >= 0 and <= buf.length. Received value is: [offset/length]. |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.alloc(256);
-4. let len = buf.write('\u00bd + \u00bc = \u00be', 0);
-5. console.info(`${len} bytes: ${buf.toString('utf-8', 0, len)}`);
-6. // 输出结果: 12 bytes: ½ + ¼ = ¾
+let buf = buffer.alloc(256);
+let len = buf.write('\u00bd + \u00bc = \u00be', 0);
+console.info(`${len} bytes: ${buf.toString('utf-8', 0, len)}`);
+// 输出结果: 12 bytes: ½ + ¼ = ¾
 
-8. let buffer1 = buffer.alloc(10);
-9. let length = buffer1.write('abcd', 8);
-10. console.info("length = " + length);
-11. // 输出结果：length = 2
+let buffer1 = buffer.alloc(10);
+let length = buffer1.write('abcd', 8);
+console.info("length = " + length);
+// 输出结果：length = 2
 ```
 
 ### writeBigInt64BE
-
-PhonePC/2in1TabletTVWearable
 
 writeBigInt64BE(value: bigint, offset?: number): number
 
@@ -2544,27 +2280,24 @@ writeBigInt64BE(value: bigint, offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.allocUninitializedFromPool(8);
-4. let result = buf.writeBigInt64BE(BigInt(0x0102030405060708), 0);
-5. console.info("result = " + result);
-6. // 输出结果：result = 8
+let buf = buffer.allocUninitializedFromPool(8);
+let result = buf.writeBigInt64BE(BigInt(0x0102030405060708), 0);
+console.info("result = " + result);
+// 输出结果：result = 8
 ```
 
 ### writeBigInt64LE
-
-PhonePC/2in1TabletTVWearable
 
 writeBigInt64LE(value: bigint, offset?: number): number
 
@@ -2589,27 +2322,24 @@ writeBigInt64LE(value: bigint, offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.allocUninitializedFromPool(8);
-4. let result = buf.writeBigInt64LE(BigInt(0x0102030405060708), 0);
-5. console.info("result = " + result);
-6. // 输出结果：result = 8
+let buf = buffer.allocUninitializedFromPool(8);
+let result = buf.writeBigInt64LE(BigInt(0x0102030405060708), 0);
+console.info("result = " + result);
+// 输出结果：result = 8
 ```
 
 ### writeBigUInt64BE
-
-PhonePC/2in1TabletTVWearable
 
 writeBigUInt64BE(value: bigint, offset?: number): number
 
@@ -2634,27 +2364,24 @@ writeBigUInt64BE(value: bigint, offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.allocUninitializedFromPool(8);
-4. let result = buf.writeBigUInt64BE(BigInt(0xdecafafecacefade), 0);
-5. console.info("result = " + result);
-6. // 输出结果：result = 8
+let buf = buffer.allocUninitializedFromPool(8);
+let result = buf.writeBigUInt64BE(BigInt(0xdecafafecacefade), 0);
+console.info("result = " + result);
+// 输出结果：result = 8
 ```
 
 ### writeBigUInt64LE
-
-PhonePC/2in1TabletTVWearable
 
 writeBigUInt64LE(value: bigint, offset?: number): number
 
@@ -2679,27 +2406,24 @@ writeBigUInt64LE(value: bigint, offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.allocUninitializedFromPool(8);
-4. let result = buf.writeBigUInt64LE(BigInt(0xdecafafecacefade), 0);
-5. console.info("result = " + result);
-6. // 输出结果：result = 8
+let buf = buffer.allocUninitializedFromPool(8);
+let result = buf.writeBigUInt64LE(BigInt(0xdecafafecacefade), 0);
+console.info("result = " + result);
+// 输出结果：result = 8
 ```
 
 ### writeDoubleBE
-
-PhonePC/2in1TabletTVWearable
 
 writeDoubleBE(value: number, offset?: number): number
 
@@ -2724,27 +2448,24 @@ writeDoubleBE(value: number, offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.allocUninitializedFromPool(8);
-4. let result = buf.writeDoubleBE(123.456, 0);
-5. console.info("result = " + result);
-6. // 输出结果：result = 8
+let buf = buffer.allocUninitializedFromPool(8);
+let result = buf.writeDoubleBE(123.456, 0);
+console.info("result = " + result);
+// 输出结果：result = 8
 ```
 
 ### writeDoubleLE
-
-PhonePC/2in1TabletTVWearable
 
 writeDoubleLE(value: number, offset?: number): number
 
@@ -2769,27 +2490,24 @@ writeDoubleLE(value: number, offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.allocUninitializedFromPool(8);
-4. let result = buf.writeDoubleLE(123.456, 0);
-5. console.info("result = " + result);
-6. // 输出结果：result = 8
+let buf = buffer.allocUninitializedFromPool(8);
+let result = buf.writeDoubleLE(123.456, 0);
+console.info("result = " + result);
+// 输出结果：result = 8
 ```
 
 ### writeFloatBE
-
-PhonePC/2in1TabletTVWearable
 
 writeFloatBE(value: number, offset?: number): number
 
@@ -2814,27 +2532,24 @@ writeFloatBE(value: number, offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.allocUninitializedFromPool(8);
-4. let result = buf.writeFloatBE(0xcafebabe, 0);
-5. console.info("result = " + result);
-6. // 输出结果：result = 4
+let buf = buffer.allocUninitializedFromPool(8);
+let result = buf.writeFloatBE(0xcafebabe, 0);
+console.info("result = " + result);
+// 输出结果：result = 4
 ```
 
 ### writeFloatLE
-
-PhonePC/2in1TabletTVWearable
 
 writeFloatLE(value: number, offset?: number): number
 
@@ -2859,27 +2574,24 @@ writeFloatLE(value: number, offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.allocUninitializedFromPool(8);
-4. let result = buf.writeFloatLE(0xcafebabe, 0);
-5. console.info("result = " + result);
-6. // 输出结果：result = 4
+let buf = buffer.allocUninitializedFromPool(8);
+let result = buf.writeFloatLE(0xcafebabe, 0);
+console.info("result = " + result);
+// 输出结果：result = 4
 ```
 
 ### writeInt8
-
-PhonePC/2in1TabletTVWearable
 
 writeInt8(value: number, offset?: number): number
 
@@ -2893,7 +2605,7 @@ writeInt8(value: number, offset?: number): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | 是 | 写入Buffer的数据。 |
+| value | number | 是 | 写入Buffer的数据。取值范围：-128 <= value <= 127（8位有符号整数）。 |
 | offset | number | 否 | 偏移量。默认值：0。取值范围：0 <= offset <= Buffer.length - 1。 |
 
 **返回值：**
@@ -2904,30 +2616,27 @@ writeInt8(value: number, offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.allocUninitializedFromPool(2);
-4. let result = buf.writeInt8(2, 0);
-5. console.info("result = " + result);
-6. // 输出结果：result = 1
-7. let result1 = buf.writeInt8(-2, 1);
-8. console.info("result1 = " + result1);
-9. // 输出结果：result1 = 2
+let buf = buffer.allocUninitializedFromPool(2);
+let result = buf.writeInt8(2, 0);
+console.info("result = " + result);
+// 输出结果：result = 1
+let result1 = buf.writeInt8(-2, 1);
+console.info("result1 = " + result1);
+// 输出结果：result1 = 2
 ```
 
 ### writeInt16BE
-
-PhonePC/2in1TabletTVWearable
 
 writeInt16BE(value: number, offset?: number): number
 
@@ -2952,27 +2661,24 @@ writeInt16BE(value: number, offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.allocUninitializedFromPool(2);
-4. let result = buf.writeInt16BE(0x0102, 0);
-5. console.info("result = " + result);
-6. // 输出结果：result = 2
+let buf = buffer.allocUninitializedFromPool(2);
+let result = buf.writeInt16BE(0x0102, 0);
+console.info("result = " + result);
+// 输出结果：result = 2
 ```
 
 ### writeInt16LE
-
-PhonePC/2in1TabletTVWearable
 
 writeInt16LE(value: number, offset?: number): number
 
@@ -2997,27 +2703,24 @@ writeInt16LE(value: number, offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.allocUninitializedFromPool(2);
-4. let result = buf.writeInt16LE(0x0304, 0);
-5. console.info("result = " + result);
-6. // 输出结果：result = 2
+let buf = buffer.allocUninitializedFromPool(2);
+let result = buf.writeInt16LE(0x0304, 0);
+console.info("result = " + result);
+// 输出结果：result = 2
 ```
 
 ### writeInt32BE
-
-PhonePC/2in1TabletTVWearable
 
 writeInt32BE(value: number, offset?: number): number
 
@@ -3042,27 +2745,24 @@ writeInt32BE(value: number, offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.allocUninitializedFromPool(4);
-4. let result = buf.writeInt32BE(0x01020304, 0);
-5. console.info("result = " + result);
-6. // 输出结果：result = 4
+let buf = buffer.allocUninitializedFromPool(4);
+let result = buf.writeInt32BE(0x01020304, 0);
+console.info("result = " + result);
+// 输出结果：result = 4
 ```
 
 ### writeInt32LE
-
-PhonePC/2in1TabletTVWearable
 
 writeInt32LE(value: number, offset?: number): number
 
@@ -3087,27 +2787,24 @@ writeInt32LE(value: number, offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.allocUninitializedFromPool(4);
-4. let result = buf.writeInt32LE(0x05060708, 0);
-5. console.info("result = " + result);
-6. // 输出结果：result = 4
+let buf = buffer.allocUninitializedFromPool(4);
+let result = buf.writeInt32LE(0x05060708, 0);
+console.info("result = " + result);
+// 输出结果：result = 4
 ```
 
 ### writeIntBE
-
-PhonePC/2in1TabletTVWearable
 
 writeIntBE(value: number, offset: number, byteLength: number): number
 
@@ -3122,8 +2819,8 @@ writeIntBE(value: number, offset: number, byteLength: number): number
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入Buffer的数据。 |
-| offset | number | 是 | 偏移量。默认值：0。取值范围：0 <= offset <= Buffer.length - byteLength。 |
-| byteLength | number | 是 | 要写入的字节数。 |
+| offset | number | 是 | 偏移量。取值范围：0 <= offset <= Buffer.length - byteLength。 |
+| byteLength | number | 是 | 要写入的字节数。取值范围：1 <= byteLength <= 6。 |
 
 **返回值：**
 
@@ -3133,27 +2830,24 @@ writeIntBE(value: number, offset: number, byteLength: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.allocUninitializedFromPool(6);
-4. let result = buf.writeIntBE(0x1234567890ab, 0, 6);
-5. console.info("result = " + result);
-6. // 输出结果：result = 6
+let buf = buffer.allocUninitializedFromPool(6);
+let result = buf.writeIntBE(0x1234567890ab, 0, 6);
+console.info("result = " + result);
+// 输出结果：result = 6
 ```
 
 ### writeIntLE
-
-PhonePC/2in1TabletTVWearable
 
 writeIntLE(value: number, offset: number, byteLength: number): number
 
@@ -3179,27 +2873,24 @@ writeIntLE(value: number, offset: number, byteLength: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.allocUninitializedFromPool(6);
-4. let result = buf.writeIntLE(0x1234567890ab, 0, 6);
-5. console.info("result = " + result);
-6. // 输出结果：result = 6
+let buf = buffer.allocUninitializedFromPool(6);
+let result = buf.writeIntLE(0x1234567890ab, 0, 6);
+console.info("result = " + result);
+// 输出结果：result = 6
 ```
 
 ### writeUInt8
-
-PhonePC/2in1TabletTVWearable
 
 writeUInt8(value: number, offset?: number): number
 
@@ -3213,7 +2904,7 @@ writeUInt8(value: number, offset?: number): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | 是 | 写入Buffer的数据。 |
+| value | number | 是 | 写入Buffer的数据。取值范围：0 <= value <= 255（8位无符号整数）。 |
 | offset | number | 否 | 偏移量。默认值：0。取值范围：0 <= offset <= Buffer.length - 1。 |
 
 **返回值：**
@@ -3224,36 +2915,33 @@ writeUInt8(value: number, offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.allocUninitializedFromPool(4);
-4. let result = buf.writeUInt8(0x3, 0);
-5. console.info("result = " + result);
-6. // 输出结果：result = 1
-7. let result1 = buf.writeUInt8(0x4, 1);
-8. console.info("result1 = " + result1);
-9. // 输出结果：result1 = 2
-10. let result2 = buf.writeUInt8(0x23, 2);
-11. console.info("result2 = " + result2);
-12. // 输出结果：result2 = 3
-13. let result3 = buf.writeUInt8(0x42, 3);
-14. console.info("result3 = " + result3);
-15. // 输出结果：result3 = 4
+let buf = buffer.allocUninitializedFromPool(4);
+let result = buf.writeUInt8(0x3, 0);
+console.info("result = " + result);
+// 输出结果：result = 1
+let result1 = buf.writeUInt8(0x4, 1);
+console.info("result1 = " + result1);
+// 输出结果：result1 = 2
+let result2 = buf.writeUInt8(0x23, 2);
+console.info("result2 = " + result2);
+// 输出结果：result2 = 3
+let result3 = buf.writeUInt8(0x42, 3);
+console.info("result3 = " + result3);
+// 输出结果：result3 = 4
 ```
 
 ### writeUInt16BE
-
-PhonePC/2in1TabletTVWearable
 
 writeUInt16BE(value: number, offset?: number): number
 
@@ -3278,30 +2966,27 @@ writeUInt16BE(value: number, offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.allocUninitializedFromPool(4);
-4. let result = buf.writeUInt16BE(0xdead, 0);
-5. console.info("result = " + result);
-6. // 输出结果：result = 2
-7. let result1 = buf.writeUInt16BE(0xbeef, 2);
-8. console.info("result1 = " + result1);
-9. // 输出结果：result1 = 4
+let buf = buffer.allocUninitializedFromPool(4);
+let result = buf.writeUInt16BE(0xdead, 0);
+console.info("result = " + result);
+// 输出结果：result = 2
+let result1 = buf.writeUInt16BE(0xbeef, 2);
+console.info("result1 = " + result1);
+// 输出结果：result1 = 4
 ```
 
 ### writeUInt16LE
-
-PhonePC/2in1TabletTVWearable
 
 writeUInt16LE(value: number, offset?: number): number
 
@@ -3326,30 +3011,27 @@ writeUInt16LE(value: number, offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.allocUninitializedFromPool(4);
-4. let result = buf.writeUInt16LE(0xdead, 0);
-5. console.info("result = " + result);
-6. // 输出结果：result = 2
-7. let result1 = buf.writeUInt16LE(0xbeef, 2);
-8. console.info("result1 = " + result1);
-9. // 输出结果：result1 = 4
+let buf = buffer.allocUninitializedFromPool(4);
+let result = buf.writeUInt16LE(0xdead, 0);
+console.info("result = " + result);
+// 输出结果：result = 2
+let result1 = buf.writeUInt16LE(0xbeef, 2);
+console.info("result1 = " + result1);
+// 输出结果：result1 = 4
 ```
 
 ### writeUInt32BE
-
-PhonePC/2in1TabletTVWearable
 
 writeUInt32BE(value: number, offset?: number): number
 
@@ -3374,27 +3056,24 @@ writeUInt32BE(value: number, offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.allocUninitializedFromPool(4);
-4. let result = buf.writeUInt32BE(0xfeedface, 0);
-5. console.info("result = " + result);
-6. // 输出结果：result = 4
+let buf = buffer.allocUninitializedFromPool(4);
+let result = buf.writeUInt32BE(0xfeedface, 0);
+console.info("result = " + result);
+// 输出结果：result = 4
 ```
 
 ### writeUInt32LE
-
-PhonePC/2in1TabletTVWearable
 
 writeUInt32LE(value: number, offset?: number): number
 
@@ -3419,27 +3098,24 @@ writeUInt32LE(value: number, offset?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.allocUninitializedFromPool(4);
-4. let result = buf.writeUInt32LE(0xfeedface, 0);
-5. console.info("result = " + result);
-6. // 输出结果：result = 4
+let buf = buffer.allocUninitializedFromPool(4);
+let result = buf.writeUInt32LE(0xfeedface, 0);
+console.info("result = " + result);
+// 输出结果：result = 4
 ```
 
 ### writeUIntBE
-
-PhonePC/2in1TabletTVWearable
 
 writeUIntBE(value: number, offset: number, byteLength: number): number
 
@@ -3465,27 +3141,24 @@ writeUIntBE(value: number, offset: number, byteLength: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.allocUninitializedFromPool(6);
-4. let result = buf.writeUIntBE(0x1234567890ab, 0, 6);
-5. console.info("result = " + result);
-6. // 输出结果：result = 6
+let buf = buffer.allocUninitializedFromPool(6);
+let result = buf.writeUIntBE(0x1234567890ab, 0, 6);
+console.info("result = " + result);
+// 输出结果：result = 6
 ```
 
 ### writeUIntLE
-
-PhonePC/2in1TabletTVWearable
 
 writeUIntLE(value: number, offset: number, byteLength: number): number
 
@@ -3511,31 +3184,28 @@ writeUIntLE(value: number, offset: number, byteLength: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let buf = buffer.allocUninitializedFromPool(6);
-4. let result = buf.writeUIntLE(0x1234567890ab, 0, 6);
-5. console.info("result = " + result);
-6. // 输出结果：result = 6
+let buf = buffer.allocUninitializedFromPool(6);
+let result = buf.writeUIntLE(0x1234567890ab, 0, 6);
+console.info("result = " + result);
+// 输出结果：result = 6
 ```
 
 ## Blob
 
-PhonePC/2in1TabletTVWearable
+Blob（Binary Large Object，二进制大对象）用于表示不可变的原始数据类文件对象，适合处理大量二进制数据的封装与操作。
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -3548,11 +3218,9 @@ PhonePC/2in1TabletTVWearable
 
 ### constructor
 
-PhonePC/2in1TabletTVWearable
-
 constructor(sources: string[] | ArrayBuffer[] | TypedArray[] | DataView[] | Blob[] , options?: Object)
 
-Blob的构造函数。
+根据传入的数据源和可选配置项创建Blob对象，Blob实例将包含数据源中的内容。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -3562,35 +3230,25 @@ Blob的构造函数。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| sources | string[] | ArrayBuffer[] | TypedArray[] | DataView[] | Blob[] | 是 | Blob实例的数据源。 |
+| sources | string[] | ArrayBuffer[] | TypedArray[] | DataView[] | [Blob](js-apis-buffer.md#blob)[] | 是 | Blob实例的数据源。 |
 | options | Object | 否 | options:  - endings：含义为结束符'\n'的字符串如何被输出，为'transparent'或'native'。native代表行结束符会跟随系统。'transparent'代表会保持Blob中保存的结束符不变。此参数非必填，默认值为'transparent'。  - type：Blob内容类型。其目的是让类型传达数据的MIME媒体类型，但是不执行类型格式的验证。此参数非必填，默认参数为''。 |
-
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let blob: buffer.Blob  = new buffer.Blob(['a', 'b', 'c']);
+let blob: buffer.Blob  = new buffer.Blob(['a', 'b', 'c']);
 
-5. class option {
-6. endings: string = "";
-7. type: string = "";
-8. }
-9. let o1: option = {endings:'native', type: 'MIME'}
-10. let blob1: buffer.Blob = new buffer.Blob(['a', 'b', 'c'], o1);
+class option {
+  endings: string = "";
+  type: string = "";
+}
+let o1: option = {endings:'native', type: 'MIME'}
+let blob1: buffer.Blob = new buffer.Blob(['a', 'b', 'c'], o1);
 ```
 
 ### arrayBuffer
-
-PhonePC/2in1TabletTVWearable
 
 arrayBuffer(): Promise<ArrayBuffer>
 
@@ -3604,25 +3262,23 @@ arrayBuffer(): Promise<ArrayBuffer>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<ArrayBuffer> | Promise对象，返回包含Blob数据的ArrayBuffer。 |
+| Promise<ArrayBuffer> | Promise对象，resolve返回包含Blob数据的ArrayBuffer，reject返回错误信息。 |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let blob: buffer.Blob = new buffer.Blob(['a', 'b', 'c']);
-4. let pro = blob.arrayBuffer();
-5. pro.then((val: ArrayBuffer) => {
-6. let uint8Array: Uint8Array = new Uint8Array(val);
-7. console.info(uint8Array.toString());
-8. // 输出结果：97,98,99
-9. });
+let blob: buffer.Blob = new buffer.Blob(['a', 'b', 'c']);
+let pro = blob.arrayBuffer();
+pro.then((val: ArrayBuffer) => {
+  let uint8Array: Uint8Array = new Uint8Array(val);
+  console.info(uint8Array.toString());
+  // 输出结果：97,98,99
+});
 ```
 
 ### slice
-
-PhonePC/2in1TabletTVWearable
 
 slice(start?: number, end?: number, type?: string): Blob
 
@@ -3648,18 +3304,16 @@ slice(start?: number, end?: number, type?: string): Blob
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let blob: buffer.Blob = new buffer.Blob(['a', 'b', 'c']);
-4. let blob2 = blob.slice(0, 2);
-5. let blob3 = blob.slice(0, 2, "MIME");
-6. console.info("type:", blob3.type); // type: MIME
+let blob: buffer.Blob = new buffer.Blob(['a', 'b', 'c']);
+let blob2 = blob.slice(0, 2);
+let blob3 = blob.slice(0, 2, "MIME");
+console.info("type:", blob3.type); // type: MIME
 ```
 
 ### text
-
-PhonePC/2in1TabletTVWearable
 
 text(): Promise<string>
 
@@ -3673,17 +3327,17 @@ text(): Promise<string>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<string> | Promise对象，返回以utf8解码后的字符串。 |
+| Promise<string> | Promise对象，resolve返回以utf8解码后的字符串，reject返回错误信息。 |
 
 **示例：**
 
-```
-1. import { buffer } from '@kit.ArkTS';
+```ts
+import { buffer } from '@kit.ArkTS';
 
-3. let blob: buffer.Blob = new buffer.Blob(['a', 'b', 'c']);
-4. let pro = blob.text();
-5. pro.then((val: string) => {
-6. console.info(val);
-7. // 输出结果：abc
-8. });
+let blob: buffer.Blob = new buffer.Blob(['a', 'b', 'c']);
+let pro = blob.text();
+pro.then((val: string) => {
+  console.info(val);
+  // 输出结果：abc
+});
 ```

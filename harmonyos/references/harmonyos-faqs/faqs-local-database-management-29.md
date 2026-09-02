@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 非UI页面使用用户首选项时context如何获取
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 非UI页面使用用户首选项时context如何获取
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:17+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:51+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:1bccbf2a0326c2b0afcad34325d5c3ca89c91841564943846319b1564b6aefeb
 ---
 

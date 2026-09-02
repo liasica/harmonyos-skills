@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/opengtx__
 title: opengtx_base.h
 breadcrumb: API参考 > 图形 > Graphics Accelerate Kit（图形加速服务） > C API > 头文件和结构体 > 头文件 > opengtx_base.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7a2bbad992af060d633e84868a5ffabb57756119b01608a24ebdec17b1583ede
+scraped_at: 2026-09-02T15:02:47+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:be0fb31222b22b0599afc7434261596480be55bc4c18de65427ce7a8b0174c5e
 ---
 
 ## 概述
-
-PhoneTabletTV
 
 声明不区分OpenGL ES和Vulkan图形API平台的OpenGTX接口。
 
@@ -26,11 +24,7 @@ PhoneTabletTV
 
 ## 汇总
 
-PhoneTabletTV
-
 ### 结构体
-
-PhoneTabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -43,8 +37,6 @@ PhoneTabletTV
 | struct [OpenGTX\_NetworkLatency](_open_g_t_x___network_latency.md) | 此结构体描述当前设备网络延迟信息，游戏应用获取到网络延迟后传递此参数。该参数通常用于针对性优化网络延迟。 |
 
 ### 类型定义
-
-PhoneTabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -67,8 +59,6 @@ PhoneTabletTV
 
 ### 枚举
 
-PhoneTabletTV
-
 | 名称 | 描述 |
 | --- | --- |
 | [OpenGTX\_ErrorCode](_graphics_accelerate.md#opengtx_errorcode-1) {  OPENGTX\_SUCCESS = 0,  OPENGTX\_INVALID\_PARAMETER = 401,  OPENGTX\_CONTEXT\_NOT\_CONFIG = 1009502001,  OPENGTX\_CONTEXT\_NOT\_ACTIVE = 1009502002  } | 此枚举描述OpenGTX接口调用错误码。 |
@@ -80,8 +70,6 @@ PhoneTabletTV
 | [OpenGTX\_TempLevel](_graphics_accelerate.md#opengtx_templevel-1) {  TEMP\_LEVEL1 = 1,  TEMP\_LEVEL2 = 2,  TEMP\_LEVEL3 = 3,  TEMP\_LEVEL4 = 4,  TEMP\_LEVEL5 = 5,  TEMP\_LEVEL6 = 6  } | 此枚举描述设备的温度级别。 |
 
 ### 函数
-
-PhoneTabletTV
 
 | 名称 | 描述 |
 | --- | --- |

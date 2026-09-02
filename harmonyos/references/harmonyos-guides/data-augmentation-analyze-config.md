@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-augmenta
 title: 配置分析过程模板
 breadcrumb: 指南 > 应用框架 > Data Augmentation Kit（数据增强服务） > RAG > RAG配置 > 配置分析过程模板
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:22+08:00
+scraped_at: 2026-09-02T14:49:56+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2a34ceb4856220cb149d721f7969e0a2ad778cb1b0c2e438fe72ee4f59fc13bf
+content_hash: sha256:eee56618fb6734d3c54a766b5fa67ea335720944a615c3e02e6f89ceca58aced
 ---
 
 ## 功能介绍
@@ -41,15 +41,15 @@ content_hash: sha256:2a34ceb4856220cb149d721f7969e0a2ad778cb1b0c2e438fe72ee4f59f
 
 分析过程模板文件thought\_template.json默认如下，实际文件内容请根据业务需要进行配置。
 
-```
-1. {
-2. "thoughtStart": "开始分析用户的问题，原始问题是: \n{text}\n\n\n解析用户需求流程包括：对问题进行改写分析、提取问题中的关键信息、寻找知识库中的关联信息、总结相关内容生成答复。\n",
-3. "thoughtStartCoreference": "\n开始对用户的问题进行改写分析...\n",
-4. "thoughtFinishCoreference": "\n问题改写结果为: \n{text}\n",
-5. "thoughtStartExtraction": "\n\n接下来对用户问题中的关键信息进行提取和分析...",
-6. "thoughtFinishExtraction": "\n用户问题中的关键信息提取结果如下: \n{text}\n信息提取完成...\n",
-7. "thoughtStartRetrieval": "\n现在根据提取到的信息对知识库进行检索......",
-8. "thoughtFinishRetrieval": "\n\n相关内容检索完成，",
-9. "thoughtFinish": "为你总结并生成回复中"
-10. }
+```typescript
+{
+    "thoughtStart": "开始分析用户的问题，原始问题是: \n{text}\n\n\n解析用户需求流程包括：对问题进行改写分析、提取问题中的关键信息、寻找知识库中的关联信息、总结相关内容生成答复。\n",
+    "thoughtStartCoreference": "\n开始对用户的问题进行改写分析...\n",
+    "thoughtFinishCoreference": "\n问题改写结果为: \n{text}\n",
+    "thoughtStartExtraction": "\n\n接下来对用户问题中的关键信息进行提取和分析...",
+    "thoughtFinishExtraction": "\n用户问题中的关键信息提取结果如下: \n{text}\n信息提取完成...\n",
+    "thoughtStartRetrieval": "\n现在根据提取到的信息对知识库进行检索......",
+    "thoughtFinishRetrieval": "\n\n相关内容检索完成，",
+    "thoughtFinish": "为你总结并生成回复中"
+}
 ```

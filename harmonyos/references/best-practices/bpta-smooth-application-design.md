@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-smooth-app
 title: 性能体验设计
 breadcrumb: 最佳实践 > 性能 > 性能体验设计
 category: best-practices
-scraped_at: 2026-04-29T14:13:19+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:0560bdfc11ea63b1f0f4924f87f0b82e89e8104a8a76fd750214011e53cb75f4
+scraped_at: 2026-09-02T15:03:21+08:00
+doc_updated_at: 2026-07-14
+content_hash: sha256:d04e769a2fb7b4af6a9b5c5188169658896257f0ddce39cb14c0748ef7db4971
 ---
 
 ## 概述
@@ -31,7 +31,7 @@ content_hash: sha256:0560bdfc11ea63b1f0f4924f87f0b82e89e8104a8a76fd750214011e53c
 通过这些设计流程，不仅能提高用户满意度和忠诚度，还能降低应用风险，提升用户好感，增强市场竞争力。接下来，将首先介绍用户感知的整体指标和测评方法，然后分别阐述交互流畅体验和视觉流畅体验的设计原则及评价指标。
 
 **图1** 感知流畅性示意图   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/k6s_mlvcRjWDpMo7YHTSxg/zh-cn_image_0000002194011640.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/M2BtjQ83QJOgqnzsfYpMEQ/zh-cn_image_0000002194011640.png "点击放大")
 
 ## 用户体验设计
 
@@ -55,7 +55,7 @@ content_hash: sha256:0560bdfc11ea63b1f0f4924f87f0b82e89e8104a8a76fd750214011e53c
 | 第三方应用页面切换完成时延 |
 | 应用内点击操作完成时延 | t完成时延≤900ms |
 
-说明
+**说明** 
 
 表格中名词解释：
 
@@ -75,7 +75,7 @@ content_hash: sha256:0560bdfc11ea63b1f0f4924f87f0b82e89e8104a8a76fd750214011e53c
 | 控件出现完成时延 | 首次启动 | 输入法键盘弹出 |
 | 控件响应完成时延 | 首次启动 | 设置打开蓝牙 |
 
-说明
+**说明** 
 
 表格名词解释：
 
@@ -84,7 +84,7 @@ content_hash: sha256:0560bdfc11ea63b1f0f4924f87f0b82e89e8104a8a76fd750214011e53c
 根据完成时延进行评测并优化，优化前后对比图如下所示。
 
 **图2** 应用启动优化前后对比图   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/NocN-g1RSoyw40N8mgMRBQ/zh-cn_image_0000002193852052.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/WevKjOEgS46n9-k0oDa9MQ/zh-cn_image_0000002193852052.gif "点击放大")
 
 ## 交互流畅体验设计
 
@@ -147,7 +147,7 @@ content_hash: sha256:0560bdfc11ea63b1f0f4924f87f0b82e89e8104a8a76fd750214011e53c
 视觉体验设计是指在产品设计过程中，重点关注用户在视觉上的感知和体验，以实现美观、舒适、流畅的设计目标。具体步骤包括整体风格设计、色彩搭配和排版布局。动效设计是保证应用流畅性的关键步骤，通过精心设计的动效，用户可以更直观地理解界面变化和交互操作，从而提升对产品的满意度和使用体验。确保视觉体验流畅性的步骤如下：
 
 1. 根据设计原则设计动效：设计动效时，参考用户体验和交互设计原则，确定动效的类型、时长、速度和效果。考虑用户心理认知和习惯，确保动效引导用户完成操作，提升操作效率和愉悦感。
-2. 根据动效选择实现方式：在确定了动效的设计原则后，需要根据具体的技术和平台选择合适的实现方式。选择合适的实现方式需要考虑到动效的复杂度、性能要求、跨平台兼容性等。具体可以参考最佳实践[《动画使用指导》](bpta-fair-use-animation.md)与[《页面间转场》](bpta-page-transition.md)。
+2. 根据动效选择实现方式：在确定了动效的设计原则后，需要根据具体的技术和平台选择合适的实现方式。选择合适的实现方式需要考虑到动效的复杂度、性能要求、跨平台兼容性等。具体可以参考最佳实践[《动画使用指导》](bpta-fair-use-animation.md)和[《页面转场动画 (不推荐)》](../harmonyos-guides/arkts-page-transition-animation.md)。
 3. 根据评测指标评估动效流畅性：设计实现后，进行动效流畅性评估，指标包括加载时延、最大连续丢帧数等。评估可以发现解决性能问题，确保用户获得流畅交互体验。
 4. 根据评测结果迭代优化：开发者可以根据评测出来的结果，对应用进行迭代优化，满足用户的需求并提供更好的体验。具体关于丢帧的优化，具体可以参考最佳实践[《长列表加载丢帧优化》](bpta-best-practices-long-list.md)。
 
@@ -207,7 +207,7 @@ content_hash: sha256:0560bdfc11ea63b1f0f4924f87f0b82e89e8104a8a76fd750214011e53c
 根据最大连续丢帧数的评测指标进行优化，优化前后对比图如下所示。
 
 **图3** 最大连续丢帧数优化前后对比图   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/ZEYX3JyDQnGhvcLb5_2lKg/zh-cn_image_0000002194011636.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/8dmsveWaQkOarCYKqPSNsg/zh-cn_image_0000002194011636.gif "点击放大")
 
 ## 总结
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: 如何使用Zip模块解压项目目录rawfile中的文件至应用的沙箱目录中
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 如何使用Zip模块解压项目目录rawfile中的文件至应用的沙箱目录中
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:21+08:00
-doc_updated_at: 2026-04-27
+scraped_at: 2026-09-02T15:21:51+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:baead158433eb8bb4d1aff8f90c157f6ad74b5ee3ba5cd2c617fa1b97a83e9ba
 ---
 

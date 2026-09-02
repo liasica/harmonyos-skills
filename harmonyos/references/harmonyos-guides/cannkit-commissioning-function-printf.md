@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-commi
 title: printf/PRINTF功能
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子调试调优 > 调测功能介绍 > 更多功能 > printf/PRINTF功能
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:31+08:00
+scraped_at: 2026-09-02T15:00:05+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:004c61467c2c5a543c496a97baf0dad24867a1518fd2a166201adf8682abf7d2
+content_hash: sha256:f455c0f46dad8207a2642e098e33dc2272d63d2eddaecc8565cbc4ccd5f4dccb
 ---
 
 ## 功能介绍
 
 使用工具进行算子调测时，支持printf/PRINTF功能，可以打印Scalar数据。
 
-说明
+**说明** 
 
 * CPU调测场景支持printf和PRINTF打印，其中printf采用C++自身打印功能，不受dump-mode参数控制。
 * simulator调测场景支持printf和PRINTF打印，受dump mode参数控制。
@@ -22,20 +22,20 @@ content_hash: sha256:004c61467c2c5a543c496a97baf0dad24867a1518fd2a166201adf8682a
 
 1. 在核函数代码中按需在目标位置加上printf或PRINTF语句，接口说明参见表1，以PRINTF打印为例：
 
-   ```
-   1. PRINTF("1 fmt string d %d\n", 6666);
-   2. PRINTF("1 fmt string lf %lf\n", float(61.556));
+   ```cpp
+   PRINTF("1 fmt string d %d\n", 6666);
+   PRINTF("1 fmt string lf %lf\n", float(61.556));
    ```
 2. simulator调测场景执行如下命令，使能Dump开关。
 
-   ```
-   1. ascendebug kernel --backend simulator --dump-mode normal ... {其他simulator调测参数}
+   ```shell
+   ascendebug kernel --backend simulator --dump-mode normal ... {其他simulator调测参数}
    ```
 
    --dump-mode取normal，开启通用打印Scalar模式，其他参数参考[NPU调测参数](cannkit-cli-parameters.md#npu调测参数)按需配置。
 3. 查看屏显打印结果，示例如下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/XBVZzxYVRjOb-UZlHMuA8Q/zh-cn_image_0000002552959250.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/KgXhDaCBTEODTRYZJK38OQ/zh-cn_image_0000002736434463.png)
 
 ## 接口说明
 
@@ -72,12 +72,12 @@ printf/PRINTF接口说明如下。
     - %p：输出指针地址。
 * **调用示例：**
 
-  ```
-  1. // 整型打印：
-  2. printf("fmt string %d", 0x123);
-  3. PRINTF("fmt string %d", 0x123);
-  4. // 指针打印：
-  5. int *a;
-  6. printf("TEST %p", a);
-  7. PRINTF("TEST %p", a);
+  ```cpp
+  // 整型打印：
+   printf("fmt string %d", 0x123);
+   PRINTF("fmt string %d", 0x123);
+   // 指针打印：
+   int *a;
+   printf("TEST %p", a);
+   PRINTF("TEST %p", a);
   ```

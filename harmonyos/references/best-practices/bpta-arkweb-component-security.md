@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-arkweb-com
 title: ArkWeb组件安全开发
 breadcrumb: 最佳实践 > 应用安全 > ArkWeb组件安全开发
 category: best-practices
-scraped_at: 2026-04-28T08:22:17+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:eae99e089a945fb3ec9a56f571a53fe34a3ccf245b33abd7c65ff5b41951b997
+scraped_at: 2026-09-02T15:03:21+08:00
+doc_updated_at: 2026-07-09
+content_hash: sha256:139f946cf92a342c841970c9da28521dbe1216c530e75287b09013b7d02fdba0
 ---
 
 ## 概述
@@ -40,56 +40,54 @@ content_hash: sha256:eae99e089a945fb3ec9a56f571a53fe34a3ccf245b33abd7c65ff5b4195
 
 **【正例】**
 
+```typescript
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  urlTrustList: string =
+    '{\'UrlPermissionList\':[{\'scheme\':\'https\', \'host\':\'trust.example.com\', \'port\':80, \'path\':\'test\'}]}'
+
+  build() {
+    Column() {
+      Button('Setting the trustList')
+        .onClick(() => {
+          try {
+            // Set up an allowlist to allow access only to trusted web pages.
+            this.controller.setUrlTrustList(this.urlTrustList);
+          } catch (error) {
+            hilog.error(0x0000, 'ArkWebSecurity',
+              `ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
+          }
+        })
+      Button('Access the trust web')
+        .onClick(() => {
+          try {
+            // Allowlist activated, access to trusted web pages is permitted.
+            this.controller.loadUrl('https://trust.example.com/test');
+          } catch (error) {
+            hilog.error(0x0000, 'ArkWebSecurity',
+              `ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
+          }
+        })
+      Button('Access the untrusted web')
+        .onClick(() => {
+          try {
+            // Allowlist activated, blocking access to untrusted web and displaying an alarm page.
+            this.controller.loadUrl('http://untrust.example.com/test');
+          } catch (error) {
+            hilog.error(0x0000, 'ArkWebSecurity',
+              `ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
+          }
+        })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-5. @Entry
-6. @Component
-7. struct WebComponent {
-8. controller: webview.WebviewController = new webview.WebviewController();
-9. urlTrustList: string =
-10. '{\'UrlPermissionList\':[{\'scheme\':\'https\', \'host\':\'trust.example.com\', \'port\':80, \'path\':\'test\'}]}'
-
-12. build() {
-13. Column() {
-14. Button('Setting the trustList')
-15. .onClick(() => {
-16. try {
-17. // Set up an allowlist to allow access only to trusted web pages.
-18. this.controller.setUrlTrustList(this.urlTrustList);
-19. } catch (error) {
-20. hilog.error(0x0000, 'ArkWebSecurity',
-21. `ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-22. }
-23. })
-24. Button('Access the trust web')
-25. .onClick(() => {
-26. try {
-27. // Allowlist activated, access to trusted web pages is permitted.
-28. this.controller.loadUrl('https://trust.example.com/test');
-29. } catch (error) {
-30. hilog.error(0x0000, 'ArkWebSecurity',
-31. `ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-32. }
-33. })
-34. Button('Access the untrusted web')
-35. .onClick(() => {
-36. try {
-37. // Allowlist activated, blocking access to untrusted web and displaying an alarm page.
-38. this.controller.loadUrl('http://untrust.example.com/test');
-39. } catch (error) {
-40. hilog.error(0x0000, 'ArkWebSecurity',
-41. `ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-42. }
-43. })
-44. }
-45. }
-46. }
-```
-
-[SetURLTrustList.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/ets/pages/SetURLTrustList.ets#L17-L62)
 
 ### 避免将不可信域名配置到允许加载白名单
 
@@ -103,38 +101,36 @@ content_hash: sha256:eae99e089a945fb3ec9a56f571a53fe34a3ccf245b33abd7c65ff5b4195
 
 **【反例】**
 
+```screen
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@Component
+struct WebComponent {
+  webviewController: webview.WebviewController = new webview.WebviewController();
+  urlTrustList: string = '{\'UrlPermissionList\':'
+    + '[{\'scheme\':\'https\', \'host\':\'cdnjs.cloudflare.com\'},' // Public CDN domains are untrusted.
+    + '{\'scheme\':\'https\', \'host\':\'cdn.ampproject.org\'}]}' // Public service domains are at risk of being abused.
+  urlStr: string = '' // Any URL to be loaded.
+
+  build() {
+    Column() {
+      Web({ src: this.urlStr, controller: this.webviewController })
+        .javaScriptAccess(true)
+        .onControllerAttached(() => {
+          try {
+            this.webviewController.setUrlTrustList(this.urlTrustList);
+          } catch (error) {
+            hilog.error(0x0000, 'ArkWebSecurity',
+              `ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
+          }
+        })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-5. @Entry
-6. @Component
-7. struct WebComponent {
-8. webviewController: webview.WebviewController = new webview.WebviewController();
-9. urlTrustList: string = '{\'UrlPermissionList\':'
-10. + '[{\'scheme\':\'https\', \'host\':\'cdnjs.cloudflare.com\'},' // Public CDN domains are untrusted.
-11. + '{\'scheme\':\'https\', \'host\':\'cdn.ampproject.org\'}]}' // Public service domains are at risk of being abused.
-12. urlStr: string = '' // Any URL to be loaded.
-
-14. build() {
-15. Column() {
-16. Web({ src: this.urlStr, controller: this.webviewController })
-17. .javaScriptAccess(true)
-18. .onControllerAttached(() => {
-19. try {
-20. this.webviewController.setUrlTrustList(this.urlTrustList);
-21. } catch (error) {
-22. hilog.error(0x0000, 'ArkWebSecurity',
-23. `ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-24. }
-25. })
-26. }
-27. }
-28. }
-```
-
-[SetURLTrustList.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/ets/pages/ErrorSamples/SetURLTrustList.ets#L17-L44)
 
 ### 加载外部来源的脚本或资源时，务必对不可信内容进行安全校验或过滤
 
@@ -150,80 +146,74 @@ content_hash: sha256:eae99e089a945fb3ec9a56f571a53fe34a3ccf245b33abd7c65ff5b4195
 
 **【反例】**
 
+```typescript
+Web({ src: $rawfile('index.html'), controller: this.controller })
+  .javaScriptAccess(true)
+  .onPageEnd(error => {
+    try {
+      let jsMethod: string = 'alert("xss")' // External controlled string
+      this.controller.runJavaScript(jsMethod)
+        .then((result) => {
+          hilog.info(0x0000, 'ArkWebSecurity', 'result: ' + result);
+        })
+        .catch((error: BusinessError) => {
+          hilog.error(0x0000, 'ArkWebSecurity', 'error: ' + error);
+        })
+      if (error) {
+        hilog.error(0x0000, 'ArkWebSecurity', 'url: ', error.url);
+      }
+    } catch (error) {
+      hilog.error(0x0000, 'ArkWebSecurity', `ErrorCode: ${error.code}, Message: ${error.message}`);
+    }
+  })
 ```
-1. Web({ src: $rawfile('index.html'), controller: this.controller })
-2. .javaScriptAccess(true)
-3. .onPageEnd(error => {
-4. try {
-5. let jsMethod: string = 'alert("xss")' // External controlled string
-6. this.controller.runJavaScript(jsMethod)
-7. .then((result) => {
-8. hilog.info(0x0000, 'ArkWebSecurity', 'result: ' + result);
-9. })
-10. .catch((error: BusinessError) => {
-11. hilog.error(0x0000, 'ArkWebSecurity', 'error: ' + error);
-12. })
-13. if (error) {
-14. hilog.error(0x0000, 'ArkWebSecurity', 'url: ', error.url);
-15. }
-16. } catch (error) {
-17. hilog.error(0x0000, 'ArkWebSecurity', `ErrorCode: ${error.code}, Message: ${error.message}`);
-18. }
-19. })
-```
-
-[LoadURL.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/ets/pages/ErrorSamples/LoadURL.ets#L29-L47)
 
 index.html内容如下：
 
 ```
-1. <html>
-2. <meta charset="UTF-8">
-3. <body>
-4. Hello world!
-5. </body>
-6. <script type="text/javascript">
-7. function test() {
-8. console.log('Ark WebComponent')
-9. return "This value is from index.html"
-10. }
-11. </script>
-12. </html>
+<html>
+<meta charset="UTF-8">
+<body>
+Hello world!
+</body>
+<script type="text/javascript">
+    function test() {
+        console.log('Ark WebComponent')
+        return "This value is from index.html"
+    }
+</script>
+</html>
 ```
-
-[index.html](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/resources/rawfile/index.html#L18-L29)
 
 **【正例】**
 
+```typescript
+Web({ src: $rawfile('index.html'), controller: this.controller })
+  .javaScriptAccess(true)
+  .onPageEnd(event => {
+    try {
+      let whiteMethods = ['test()']
+      let jsMethod: string = 'alert("xss")' // External controlled string
+      if (whiteMethods.indexOf(jsMethod) === -1) {
+        hilog.error(0x0000, 'ArkWebSecurity', 'input method not in whiteList')
+        return;
+      }
+      this.controller.runJavaScript(jsMethod)
+        .then((result) => {
+          hilog.info(0x0000, 'ArkWebSecurity', 'result: ' + result);
+        })
+        .catch((error: BusinessError) => {
+          hilog.error(0x0000, 'ArkWebSecurity', 'error: ' + error);
+        })
+      if (event) {
+        hilog.info(0x0000, 'ArkWebSecurity', 'url: ', event.url);
+      }
+    } catch (error) {
+      let e: BusinessError = error;
+      hilog.error(0x0000, 'ArkWebSecurity', `ErrorCode: ${e.code}, Message: ${e.message}`);
+    }
+  })
 ```
-1. Web({ src: $rawfile('index.html'), controller: this.controller })
-2. .javaScriptAccess(true)
-3. .onPageEnd(event => {
-4. try {
-5. let whiteMethods = ['test()']
-6. let jsMethod: string = 'alert("xss")' // External controlled string
-7. if (whiteMethods.indexOf(jsMethod) === -1) {
-8. hilog.error(0x0000, 'ArkWebSecurity', 'input method not in whiteList')
-9. return;
-10. }
-11. this.controller.runJavaScript(jsMethod)
-12. .then((result) => {
-13. hilog.info(0x0000, 'ArkWebSecurity', 'result: ' + result);
-14. })
-15. .catch((error: BusinessError) => {
-16. hilog.error(0x0000, 'ArkWebSecurity', 'error: ' + error);
-17. })
-18. if (event) {
-19. hilog.info(0x0000, 'ArkWebSecurity', 'url: ', event.url);
-20. }
-21. } catch (error) {
-22. let e: BusinessError = error;
-23. hilog.error(0x0000, 'ArkWebSecurity', `ErrorCode: ${e.code}, Message: ${e.message}`);
-24. }
-25. })
-```
-
-[LoadURL.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/ets/pages/LoadURL.ets#L29-L53)
 
 ### 若要在onInterceptRequest中加载本地文件，务必校验文件URL，以防止本地数据被窃取
 
@@ -237,74 +227,72 @@ index.html内容如下：
 
 **【正例】**
 
+```typescript
+import { webview } from '@kit.ArkWeb';
+import { fileIo } from '@kit.CoreFileKit';
+import { util } from '@kit.ArkTS';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  responseWeb: WebResourceResponse = new WebResourceResponse();
+  heads: Header[] = [];
+
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+      // Intercept URL resource access through onInterceptRequest and customize the response message.
+        .onInterceptRequest((event) => {
+          // The URL passed by event.request.getRequestUrl() should be restricted to a specific path,
+          // and the presence of '../' should be checked.
+          if (event.request.getRequestUrl().startsWith('file:///data/trusted_path') &&
+            event.request.getRequestUrl().includes('../') !== true) {
+            try {
+              let file =
+                fileIo.openSync(event.request.getRequestUrl(), fileIo.OpenMode.READ_ONLY | fileIo.OpenMode.CREATE);
+              let arrayBuffer: ArrayBuffer = new ArrayBuffer(6);
+              fileIo.readSync(file.fd, arrayBuffer, { offset: 0, length: arrayBuffer.byteLength });
+              fileIo.closeSync(file);
+              let decoder = util.TextDecoder.create('utf-8');
+              let stringData = decoder.decodeToString(new Uint8Array(arrayBuffer));
+              let head1: Header = {
+                headerKey: 'Connection',
+                headerValue: 'keep-alive'
+              }
+              let head2: Header = {
+                headerKey: 'Cache-Control',
+                headerValue: 'no-cache'
+              }
+              this.heads.push(head1);
+              this.heads.push(head2);
+
+              const promise: Promise<String> = new Promise((resolve: Function) => {
+                this.responseWeb.setResponseHeader(this.heads);
+                // After the file is read, it will be encapsulated and the response will be called back to the web page.
+                this.responseWeb.setResponseData(stringData);
+                this.responseWeb.setResponseEncoding('utf-8');
+                this.responseWeb.setResponseMimeType('text/html');
+                this.responseWeb.setResponseCode(200);
+                this.responseWeb.setReasonMessage('OK');
+                resolve('success');
+              })
+              promise.then(() => {
+                hilog.info(0x0000, 'ArkWebSecurity', 'prepare response ready');
+                this.responseWeb.setResponseIsReady(true);
+              })
+              this.responseWeb.setResponseIsReady(false);
+            } catch (error) {
+              hilog.error(0x0000, 'ArkWebSecurity', `ErrorCode: ${error.code}, Message: ${error.message}`);
+            }
+          }
+          return this.responseWeb;
+        })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-2. import { fileIo } from '@kit.CoreFileKit';
-3. import { util } from '@kit.ArkTS';
-4. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-6. @Entry
-7. @Component
-8. struct WebComponent {
-9. controller: webview.WebviewController = new webview.WebviewController();
-10. responseWeb: WebResourceResponse = new WebResourceResponse();
-11. heads: Header[] = [];
-
-13. build() {
-14. Column() {
-15. Web({ src: 'www.example.com', controller: this.controller })
-16. // Intercept URL resource access through onInterceptRequest and customize the response message.
-17. .onInterceptRequest((event) => {
-18. // The URL passed by event.request.getRequestUrl() should be restricted to a specific path,
-19. // and the presence of '../' should be checked.
-20. if (event.request.getRequestUrl().startsWith('file:///data/trusted_path') &&
-21. event.request.getRequestUrl().includes('../') !== true) {
-22. try {
-23. let file =
-24. fileIo.openSync(event.request.getRequestUrl(), fileIo.OpenMode.READ_ONLY | fileIo.OpenMode.CREATE);
-25. let arrayBuffer: ArrayBuffer = new ArrayBuffer(6);
-26. fileIo.readSync(file.fd, arrayBuffer, { offset: 0, length: arrayBuffer.byteLength });
-27. fileIo.closeSync(file);
-28. let decoder = util.TextDecoder.create('utf-8');
-29. let stringData = decoder.decodeToString(new Uint8Array(arrayBuffer));
-30. let head1: Header = {
-31. headerKey: 'Connection',
-32. headerValue: 'keep-alive'
-33. }
-34. let head2: Header = {
-35. headerKey: 'Cache-Control',
-36. headerValue: 'no-cache'
-37. }
-38. this.heads.push(head1);
-39. this.heads.push(head2);
-
-41. const promise: Promise<String> = new Promise((resolve: Function) => {
-42. this.responseWeb.setResponseHeader(this.heads);
-43. // After the file is read, it will be encapsulated and the response will be called back to the web page.
-44. this.responseWeb.setResponseData(stringData);
-45. this.responseWeb.setResponseEncoding('utf-8');
-46. this.responseWeb.setResponseMimeType('text/html');
-47. this.responseWeb.setResponseCode(200);
-48. this.responseWeb.setReasonMessage('OK');
-49. resolve('success');
-50. })
-51. promise.then(() => {
-52. hilog.info(0x0000, 'ArkWebSecurity', 'prepare response ready');
-53. this.responseWeb.setResponseIsReady(true);
-54. })
-55. this.responseWeb.setResponseIsReady(false);
-56. } catch (error) {
-57. hilog.error(0x0000, 'ArkWebSecurity', `ErrorCode: ${error.code}, Message: ${error.message}`);
-58. }
-59. }
-60. return this.responseWeb;
-61. })
-62. }
-63. }
-64. }
-```
-
-[OnInterceptRequest.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/ets/pages/OnInterceptRequest.ets#L17-L80)
 
 ### 避免在允许跨域访问的本地文件目录中包含敏感资源
 
@@ -330,21 +318,17 @@ ArkWeb默认不允许跨域访问本地文件资源，除非使用[setPathAllowi
 
 **【反例】**
 
+```typescript
+Web({ src: 'www.huawei.com', controller: this.controller })
+  .mixedMode(MixedMode.All)
 ```
-1. Web({ src: 'www.huawei.com', controller: this.controller })
-2. .mixedMode(MixedMode.All)
-```
-
-[MixedMode.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/ets/pages/ErrorSamples/MixedMode.ets#L26-L27)
 
 **【正例】**
 
+```typescript
+Web({ src: 'www.huawei.com', controller: this.controller })
+  .mixedMode(MixedMode.None)
 ```
-1. Web({ src: 'www.huawei.com', controller: this.controller })
-2. .mixedMode(MixedMode.None)
-```
-
-[MixedMode.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/ets/pages/MixedMode.ets#L26-L27)
 
 ### 避免在SSL校验出错时继续加载页面
 
@@ -360,75 +344,71 @@ ArkWeb默认不允许跨域访问本地文件资源，除非使用[setPathAllowi
 
 **【反例】**
 
+```typescript
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onSslErrorEvent((event: SslErrorEvent) => {
+          console.log('ssl check failed, error is: ' + event.error.toString());
+          event.handler.handleConfirm();
+        })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-
-3. @Entry
-4. @Component
-5. struct WebComponent {
-6. controller: webview.WebviewController = new webview.WebviewController();
-
-8. build() {
-9. Column() {
-10. Web({ src: 'www.example.com', controller: this.controller })
-11. .onSslErrorEvent((event: SslErrorEvent) => {
-12. console.log('ssl check failed, error is: ' + event.error.toString());
-13. event.handler.handleConfirm();
-14. })
-15. }
-16. }
-17. }
-```
-
-[OnSslErrorEventReceive.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/ets/pages/ErrorSamples/OnSslErrorEventReceive.ets#L17-L33)
 
 **【正例】**
 
+```typescript
+import { webview } from '@kit.ArkWeb';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onSslErrorEvent((event: SslErrorEvent) => {
+          hilog.info(0x0000, 'ArkWebSecurity', 'onSslErrorEvent url: ' + event.url);
+          hilog.info(0x0000, 'ArkWebSecurity', 'onSslErrorEvent error: ' + event.error);
+          hilog.info(0x0000, 'ArkWebSecurity', 'onSslErrorEvent originalUrl: ' + event.originalUrl);
+          hilog.info(0x0000, 'ArkWebSecurity', 'onSslErrorEvent referrer: ' + event.referrer);
+          hilog.info(0x0000, 'ArkWebSecurity', 'onSslErrorEvent isFatalError: ' + event.isFatalError);
+          hilog.info(0x0000, 'ArkWebSecurity', 'onSslErrorEvent isMainFrame: ' + event.isMainFrame);
+          this.getUIContext().showAlertDialog({
+            title: 'onSslErrorEvent',
+            message: 'text',
+            primaryButton: {
+              value: 'Confirm',
+              action: () => {
+                event.handler.handleConfirm();
+              }
+            },
+            secondaryButton: {
+              value: 'cancel',
+              action: () => {
+                event.handler.handleCancel();
+              }
+            },
+            cancel: () => {
+              event.handler.handleCancel();
+            }
+          })
+        })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .onSslErrorEvent((event: SslErrorEvent) => {
-13. hilog.info(0x0000, 'ArkWebSecurity', 'onSslErrorEvent url: ' + event.url);
-14. hilog.info(0x0000, 'ArkWebSecurity', 'onSslErrorEvent error: ' + event.error);
-15. hilog.info(0x0000, 'ArkWebSecurity', 'onSslErrorEvent originalUrl: ' + event.originalUrl);
-16. hilog.info(0x0000, 'ArkWebSecurity', 'onSslErrorEvent referrer: ' + event.referrer);
-17. hilog.info(0x0000, 'ArkWebSecurity', 'onSslErrorEvent isFatalError: ' + event.isFatalError);
-18. hilog.info(0x0000, 'ArkWebSecurity', 'onSslErrorEvent isMainFrame: ' + event.isMainFrame);
-19. this.getUIContext().showAlertDialog({
-20. title: 'onSslErrorEvent',
-21. message: 'text',
-22. primaryButton: {
-23. value: 'Confirm',
-24. action: () => {
-25. event.handler.handleConfirm();
-26. }
-27. },
-28. secondaryButton: {
-29. value: 'cancel',
-30. action: () => {
-31. event.handler.handleCancel();
-32. }
-33. },
-34. cancel: () => {
-35. event.handler.handleCancel();
-36. }
-37. })
-38. })
-39. }
-40. }
-41. }
-```
-
-[OnSslErrorEventReceive.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/ets/pages/OnSslErrorEventReceive.ets#L17-L57)
 
 ### 正式Release版本务必关闭ArkWeb的网页调试功能
 
@@ -442,15 +422,13 @@ ArkWeb默认不允许跨域访问本地文件资源，除非使用[setPathAllowi
 
 **【反例】**
 
+```typescript
+try {
+  webview.WebviewController.setWebDebuggingAccess(true);
+} catch (error) {
+  hilog.error(0x0000, 'ArkWebSecurity', `ErrorCode: ${error.code}`);
+}
 ```
-1. try {
-2. webview.WebviewController.setWebDebuggingAccess(true);
-3. } catch (error) {
-4. hilog.error(0x0000, 'ArkWebSecurity', `ErrorCode: ${error.code}`);
-5. }
-```
-
-[WebDebug.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/ets/pages/ErrorSamples/WebDebug.ets#L26-L30)
 
 ## 恰当的权限管控
 
@@ -462,7 +440,7 @@ ArkWeb默认不允许跨域访问本地文件资源，除非使用[setPathAllowi
 
 [JavaScriptProxy](../harmonyos-references/arkts-basic-components-web-i.md#javascriptproxy12)接口，尤其是访问敏感资源的接口，务必在调用前通过白名单来检查调用页面的合法性，以满足最小特权原则。建议开发者在注册JavaScriptProxy时，通过设置permission参数配置允许调用接口白名单。完成配置后，当Web侧调用该JavaScriptProxy接口时，ArkWeb会对调用页面的URL进行检查，仅符合白名单要求的URL的请求才会被允许，其余请求将被拦截。
 
-说明
+**说明** 
 
 避免利用[onPageBegin()](../harmonyos-references/arkts-basic-components-web-events.md#onpagebegin)等生命周期函数自行实现接口白名单校验，务必统一通过permission参数进行控制。
 
@@ -484,39 +462,37 @@ ArkWeb默认不允许跨域访问本地文件资源，除非使用[setPathAllowi
 
 **【反例】**
 
+```typescript
+import { webview } from '@kit.ArkWeb';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+class InsecureObj {
+  executeSQL(cmd: string) {
+    // Do something dangerous here
+    hilog.info(0x0000, 'ArkWebSecurity', 'Execute: ' + cmd);
+  }
+}
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  testObj = new InsecureObj();
+
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .javaScriptAccess(true)
+        .javaScriptProxy({
+          object: this.testObj,
+          name: 'objName',
+          methodList: ['executeSQL'],
+          controller: this.controller,
+        })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-4. class InsecureObj {
-5. executeSQL(cmd: string) {
-6. // Do something dangerous here
-7. hilog.info(0x0000, 'ArkWebSecurity', 'Execute: ' + cmd);
-8. }
-9. }
-
-11. @Entry
-12. @Component
-13. struct WebComponent {
-14. controller: webview.WebviewController = new webview.WebviewController();
-15. testObj = new InsecureObj();
-
-17. build() {
-18. Column() {
-19. Web({ src: 'www.example.com', controller: this.controller })
-20. .javaScriptAccess(true)
-21. .javaScriptProxy({
-22. object: this.testObj,
-23. name: 'objName',
-24. methodList: ['executeSQL'],
-25. controller: this.controller,
-26. })
-27. }
-28. }
-29. }
-```
-
-[JavaScriptProxy.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/ets/pages/ErrorSamples/JavaScriptProxy.ets#L17-L45)
 
 ### 避免在onOverrideUrlLoading中进行页面加载
 
@@ -530,35 +506,33 @@ ArkWeb默认不允许跨域访问本地文件资源，除非使用[setPathAllowi
 
 **【反例】**
 
+```typescript
+import { webview } from '@kit.ArkWeb';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+
+  build() {
+    Column() {
+      Web({ src: $rawfile('index.html'), controller: this.controller })
+        .onOverrideUrlLoading((webResourceRequest: WebResourceRequest) => {
+          if (webResourceRequest && webResourceRequest.getRequestUrl() === 'http://www.example.com') {
+            try {
+              this.controller.loadUrl('www.example.com');
+              return true;
+            } catch (error) {
+              hilog.error(0x0000, 'ArkWebSecurity', `ErrorCode: ${error.code}, Message: ${error.message}`);
+            }
+          }
+          return false;
+        })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-
-9. build() {
-10. Column() {
-11. Web({ src: $rawfile('index.html'), controller: this.controller })
-12. .onOverrideUrlLoading((webResourceRequest: WebResourceRequest) => {
-13. if (webResourceRequest && webResourceRequest.getRequestUrl() === 'http://www.example.com') {
-14. try {
-15. this.controller.loadUrl('www.example.com');
-16. return true;
-17. } catch (error) {
-18. hilog.error(0x0000, 'ArkWebSecurity', `ErrorCode: ${error.code}, Message: ${error.message}`);
-19. }
-20. }
-21. return false;
-22. })
-23. }
-24. }
-25. }
-```
-
-[OnOverrideUrlLoading.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/ets/pages/ErrorSamples/OnOverrideUrlLoading.ets#L17-L41)
 
 ### 避免使用getUrl/getOriginalUrl函数获取URL进行调用白名单校验
 
@@ -574,31 +548,27 @@ ArkWeb默认不允许跨域访问本地文件资源，除非使用[setPathAllowi
 
 **【反例】**
 
+```typescript
+let url: string = this.controller.getUrl();
+if (url === 'https://www.huawei.com') {
+  hilog.info(0x0000, 'ArkWebSecurity', 'Pass the check');
+  // do some native invoke
+} else {
+  hilog.error(0x0000, 'ArkWebSecurity', 'Not allowed to execute: ' + cmd);
+}
 ```
-1. let url: string = this.controller.getUrl();
-2. if (url === 'https://www.huawei.com') {
-3. hilog.info(0x0000, 'ArkWebSecurity', 'Pass the check');
-4. // do some native invoke
-5. } else {
-6. hilog.error(0x0000, 'ArkWebSecurity', 'Not allowed to execute: ' + cmd);
-7. }
-```
-
-[GetURL.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/ets/pages/ErrorSamples/GetURL.ets#L29-L35)
 
 **【正例】**
 
+```typescript
+let url: string = this.controller.getLastJavascriptProxyCallingFrameUrl();
+if (url === 'https://www.huawei.com') {
+  hilog.info(0x0000, 'ArkWebSecurity', 'Pass the check');
+  // do some native invoke
+} else {
+  hilog.error(0x0000, 'ArkWebSecurity', 'Not allowed to execute: ' + cmd);
+}
 ```
-1. let url: string = this.controller.getLastJavascriptProxyCallingFrameUrl();
-2. if (url === 'https://www.huawei.com') {
-3. hilog.info(0x0000, 'ArkWebSecurity', 'Pass the check');
-4. // do some native invoke
-5. } else {
-6. hilog.error(0x0000, 'ArkWebSecurity', 'Not allowed to execute: ' + cmd);
-7. }
-```
-
-[GetURL.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/ets/pages/GetURL.ets#L29-L35)
 
 ### 避免在JavaScriptProxy中提供页面加载功能
 
@@ -612,48 +582,46 @@ ArkWeb默认不允许跨域访问本地文件资源，除非使用[setPathAllowi
 
 **【反例】**
 
+```typescript
+import { webview } from '@kit.ArkWeb';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+class TestObj {
+  controller: webview.WebviewController
+
+  constructor(webview_controller: webview.WebviewController) {
+    this.controller = webview_controller
+  }
+
+  goto(uri: string) {
+    try {
+      this.controller.loadUrl(uri);
+    } catch (error) {
+      hilog.error(0x0000, 'ArkWebSecurity', `ErrorCode: ${error.code}, Message: ${error.message}`);
+    }
+  }
+}
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  testObj = new TestObj(this.controller);
+
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .javaScriptAccess(true)
+        .javaScriptProxy({
+          object: this.testObj,
+          name: 'objName',
+          methodList: ['goto'],
+          controller: this.controller,
+        })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-4. class TestObj {
-5. controller: webview.WebviewController
-
-7. constructor(webview_controller: webview.WebviewController) {
-8. this.controller = webview_controller
-9. }
-
-11. goto(uri: string) {
-12. try {
-13. this.controller.loadUrl(uri);
-14. } catch (error) {
-15. hilog.error(0x0000, 'ArkWebSecurity', `ErrorCode: ${error.code}, Message: ${error.message}`);
-16. }
-17. }
-18. }
-
-20. @Entry
-21. @Component
-22. struct WebComponent {
-23. controller: webview.WebviewController = new webview.WebviewController();
-24. testObj = new TestObj(this.controller);
-
-26. build() {
-27. Column() {
-28. Web({ src: 'www.example.com', controller: this.controller })
-29. .javaScriptAccess(true)
-30. .javaScriptProxy({
-31. object: this.testObj,
-32. name: 'objName',
-33. methodList: ['goto'],
-34. controller: this.controller,
-35. })
-36. }
-37. }
-38. }
-```
-
-[Redirection.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/ets/pages/ErrorSamples/Redirection.ets#L17-L54)
 
 ### 避免在JavaScriptProxy中提供脚本执行功能
 
@@ -667,52 +635,50 @@ ArkWeb默认不允许跨域访问本地文件资源，除非使用[setPathAllowi
 
 **【反例】**
 
+```typescript
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+class TestObj {
+  controller: webview.WebviewController
+
+  constructor(webview_controller: webview.WebviewController) {
+    this.controller = webview_controller
+  }
+
+  eval(uri: string) {
+    this.controller.runJavaScript(uri, (error) => {
+      if (error) {
+        hilog.error(0x0000, 'ArkWebSecurity',
+          `run JavaScript error, ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+        return;
+      }
+    });
+    return 'AceString';
+  }
+}
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  testObj: TestObj = new TestObj(this.controller);
+
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .javaScriptAccess(true)
+        .javaScriptProxy({
+          object: this.testObj,
+          name: 'objName',
+          methodList: ['eval'],
+          controller: this.controller,
+        })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-5. class TestObj {
-6. controller: webview.WebviewController
-
-8. constructor(webview_controller: webview.WebviewController) {
-9. this.controller = webview_controller
-10. }
-
-12. eval(uri: string) {
-13. this.controller.runJavaScript(uri, (error) => {
-14. if (error) {
-15. hilog.error(0x0000, 'ArkWebSecurity',
-16. `run JavaScript error, ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-17. return;
-18. }
-19. });
-20. return 'AceString';
-21. }
-22. }
-
-24. @Entry
-25. @Component
-26. struct WebComponent {
-27. controller: webview.WebviewController = new webview.WebviewController();
-28. testObj: TestObj = new TestObj(this.controller);
-
-30. build() {
-31. Column() {
-32. Web({ src: 'www.example.com', controller: this.controller })
-33. .javaScriptAccess(true)
-34. .javaScriptProxy({
-35. object: this.testObj,
-36. name: 'objName',
-37. methodList: ['eval'],
-38. controller: this.controller,
-39. })
-40. }
-41. }
-42. }
-```
-
-[RunJavaScript.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/ets/pages/ErrorSamples/RunJavaScript.ets#L17-L59)
 
 ### 务必在onPermissionRequest函数中显式通知用户进行授权
 
@@ -726,140 +692,134 @@ Web页面能够通过getUserMedia()标准接口访问设备摄像头/麦克风�
 
 **【反例】**
 
+```typescript
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { abilityAccessCtrl, common } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+
+  aboutToAppear(): void {
+    let atManager = abilityAccessCtrl.createAtManager();
+    let context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    atManager.requestPermissionsFromUser(context, ['ohos.permission.CAMERA', 'ohos.permission.MICROPHONE'])
+      .then((data) => {
+        hilog.info(0x0000, 'ArkWebSecurity', 'data: ' + JSON.stringify(data));
+        hilog.info(0x0000, 'ArkWebSecurity', 'data permission: ' + data.permissions);
+        hilog.info(0x0000, 'ArkWebSecurity', 'data authResults: ' + data.authResults);
+      }).catch((error: BusinessError) => {
+      hilog.error(0x0000, 'ArkWebSecurity',
+        `Failed to request permissions from user. Code is ${error.code}, message is ${error.message}`);
+    })
+  }
+
+  build() {
+    Column() {
+      Web({ src: 'https://example.com/index.html', controller: this.controller })
+        .onPermissionRequest((event) => {
+          // Directly granting page permissions is a wrong approach.
+          event.request.grant(event.request.getAccessibleResource());
+        })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { abilityAccessCtrl, common } from '@kit.AbilityKit';
-4. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-6. @Entry
-7. @Component
-8. struct WebComponent {
-9. controller: webview.WebviewController = new webview.WebviewController();
-
-11. aboutToAppear(): void {
-12. let atManager = abilityAccessCtrl.createAtManager();
-13. let context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-14. atManager.requestPermissionsFromUser(context, ['ohos.permission.CAMERA', 'ohos.permission.MICROPHONE'])
-15. .then((data) => {
-16. hilog.info(0x0000, 'ArkWebSecurity', 'data: ' + JSON.stringify(data));
-17. hilog.info(0x0000, 'ArkWebSecurity', 'data permission: ' + data.permissions);
-18. hilog.info(0x0000, 'ArkWebSecurity', 'data authResults: ' + data.authResults);
-19. }).catch((error: BusinessError) => {
-20. hilog.error(0x0000, 'ArkWebSecurity',
-21. `Failed to request permissions from user. Code is ${error.code}, message is ${error.message}`);
-22. })
-23. }
-
-25. build() {
-26. Column() {
-27. Web({ src: 'https://example.com/index.html', controller: this.controller })
-28. .onPermissionRequest((event) => {
-29. // Directly granting page permissions is a wrong approach.
-30. event.request.grant(event.request.getAccessibleResource());
-31. })
-32. }
-33. }
-34. }
-```
-
-[PermissionRequest.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/ets/pages/ErrorSamples/PermissionRequest.ets#L17-L50)
 
 index.html内容如下：
 
 ```
-1. <html>
-2. <head>
-3. <meta charset="UTF-8">
-4. </head>
-5. <body>
-6. <video id="video" width="500px" height="500px" autoplay="autoplay"></video>
-7. <canvas id="canvas" width="500px" height="500px"></canvas>
-8. <br>
-9. <input type="button" title="HTML5 Camera" value="Open Camera" onclick="getMedia()">
-10. <script>
-11. function getMedia() {
-12. let constraints = {
-13. video: {width: 500, height: 500},
-14. audio: true
-15. };
-16. // Get video
-17. let video = document.getElementById("video");
-18. // Return Promise object
-19. let promise = navigator.mediaDevices.getUserMedia(constraints);
-20. // then() sync，invoke MediaStream as param
-21. promise.then(function (MediaStream) {
-22. video.srcObject = MediaStream;
-23. video.play();
-24. });
-25. }
-26. </script>
-27. </body>
-28. </html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<video id="video" width="500px" height="500px" autoplay="autoplay"></video>
+<canvas id="canvas" width="500px" height="500px"></canvas>
+<br>
+<input type="button" title="HTML5 Camera" value="Open Camera" onclick="getMedia()">
+<script>
+    function getMedia() {
+        let constraints = {
+            video: {width: 500, height: 500},
+            audio: true
+        };
+        // Get video
+        let video = document.getElementById("video");
+        // Return Promise object
+        let promise = navigator.mediaDevices.getUserMedia(constraints);
+        // then() sync，invoke MediaStream as param
+        promise.then(function (MediaStream) {
+            video.srcObject = MediaStream;
+            video.play();
+        });
+    }
+</script>
+</body>
+</html>
 ```
-
-[index.html](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/resources/rawfile/index.html#L33-L60)
 
 **【正例】**
 
+```typescript
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { abilityAccessCtrl, common } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+
+  aboutToAppear(): void {
+    let atManager = abilityAccessCtrl.createAtManager();
+    let context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    atManager.requestPermissionsFromUser(context, ['ohos.permission.CAMERA', 'ohos.permission.MICROPHONE'])
+      .then((data) => {
+        hilog.info(0x0000, 'ArkWebSecurity', 'data: ' + JSON.stringify(data));
+        hilog.info(0x0000, 'ArkWebSecurity', 'data permission: ' + data.permissions);
+        hilog.info(0x0000, 'ArkWebSecurity', 'data authResults: ' + data.authResults);
+      }).catch((error: BusinessError) => {
+        hilog.error(0x0000, 'ArkWebSecurity',
+        `Failed to request permissions from user. Code is ${error.code}, message is ${error.message}`);
+    })
+  }
+
+  build() {
+    Column() {
+      Web({ src: 'https://example.com/index.html', controller: this.controller })
+        .onPermissionRequest((event) => {
+          if (event) {
+            this.getUIContext().showAlertDialog({
+              title: 'title',
+              message: 'text',
+              primaryButton: {
+                value: 'deny',
+                action: () => {
+                  event.request.deny();
+                }
+              },
+              secondaryButton: {
+                value: 'onConfirm',
+                action: () => {
+                  // Explicit pop-ups that ask user for authorization, e.g., using AlertDialog, is the correct approach.
+                  event.request.grant(event.request.getAccessibleResource());
+                }
+              },
+              cancel: () => {
+                event.request.deny();
+              }
+            })
+          }
+        })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { abilityAccessCtrl, common } from '@kit.AbilityKit';
-4. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-6. @Entry
-7. @Component
-8. struct WebComponent {
-9. controller: webview.WebviewController = new webview.WebviewController();
-
-11. aboutToAppear(): void {
-12. let atManager = abilityAccessCtrl.createAtManager();
-13. let context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-14. atManager.requestPermissionsFromUser(context, ['ohos.permission.CAMERA', 'ohos.permission.MICROPHONE'])
-15. .then((data) => {
-16. hilog.info(0x0000, 'ArkWebSecurity', 'data: ' + JSON.stringify(data));
-17. hilog.info(0x0000, 'ArkWebSecurity', 'data permission: ' + data.permissions);
-18. hilog.info(0x0000, 'ArkWebSecurity', 'data authResults: ' + data.authResults);
-19. }).catch((error: BusinessError) => {
-20. hilog.error(0x0000, 'ArkWebSecurity',
-21. `Failed to request permissions from user. Code is ${error.code}, message is ${error.message}`);
-22. })
-23. }
-
-25. build() {
-26. Column() {
-27. Web({ src: 'https://example.com/index.html', controller: this.controller })
-28. .onPermissionRequest((event) => {
-29. if (event) {
-30. this.getUIContext().showAlertDialog({
-31. title: 'title',
-32. message: 'text',
-33. primaryButton: {
-34. value: 'deny',
-35. action: () => {
-36. event.request.deny();
-37. }
-38. },
-39. secondaryButton: {
-40. value: 'onConfirm',
-41. action: () => {
-42. // Explicit pop-ups that ask user for authorization, e.g., using AlertDialog, is the correct approach.
-43. event.request.grant(event.request.getAccessibleResource());
-44. }
-45. },
-46. cancel: () => {
-47. event.request.deny();
-48. }
-49. })
-50. }
-51. })
-52. }
-53. }
-54. }
-```
-
-[PermissionRequest.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/ets/pages/PermissionRequest.ets#L17-L70)
 
 ### 务必在onGeolocationShow函数中显式通知用户进行授权
 
@@ -873,65 +833,61 @@ index.html内容如下：
 
 **【反例】**
 
+```typescript
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+
+  build() {
+    Column() {
+      Web({ src: $rawfile('index.html'), controller: this.controller })
+        .geolocationAccess(true)
+        .onGeolocationShow((event) => {
+          event.geolocation.invoke(event.origin, true, true);
+        })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-
-3. @Entry
-4. @Component
-5. struct WebComponent {
-6. controller: webview.WebviewController = new webview.WebviewController();
-
-8. build() {
-9. Column() {
-10. Web({ src: $rawfile('index.html'), controller: this.controller })
-11. .geolocationAccess(true)
-12. .onGeolocationShow((event) => {
-13. event.geolocation.invoke(event.origin, true, true);
-14. })
-15. }
-16. }
-17. }
-```
-
-[GeolocationShow.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/ets/pages/ErrorSamples/GeolocationShow.ets#L17-L33)
 
 **【正例】**
 
+```typescript
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+
+  build() {
+    Column() {
+      Web({ src: $rawfile('index.html'), controller: this.controller })
+        .geolocationAccess(true)
+        .onGeolocationShow((event) => {
+          if (event) {
+            this.getUIContext().showAlertDialog({
+              title: 'title',
+              message: 'text',
+              confirm: {
+                value: 'onConfirm',
+                action: () => {
+                  event.geolocation.invoke(event.origin, true, true);
+                }
+              },
+              cancel: () => {
+                event.geolocation.invoke(event.origin, false, true);
+              }
+            })
+          }
+        })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-
-3. @Entry
-4. @Component
-5. struct WebComponent {
-6. controller: webview.WebviewController = new webview.WebviewController();
-
-8. build() {
-9. Column() {
-10. Web({ src: $rawfile('index.html'), controller: this.controller })
-11. .geolocationAccess(true)
-12. .onGeolocationShow((event) => {
-13. if (event) {
-14. this.getUIContext().showAlertDialog({
-15. title: 'title',
-16. message: 'text',
-17. confirm: {
-18. value: 'onConfirm',
-19. action: () => {
-20. event.geolocation.invoke(event.origin, true, true);
-21. }
-22. },
-23. cancel: () => {
-24. event.geolocation.invoke(event.origin, false, true);
-25. }
-26. })
-27. }
-28. })
-29. }
-30. }
-31. }
-```
-
-[GeolocationShow.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/ets/pages/GeolocationShow.ets#L17-L47)
 
 ### 避免未经检查拼接和执行Web侧传递的JavaScript内容
 
@@ -945,98 +901,92 @@ index.html内容如下：
 
 **【反例】**
 
+```typescript
+this.controller.runJavaScript(
+  // Trusting data_from_H5 passed through web pages will result in the execution of arbitrary JS code,
+  // e.g., enclose the alert and execute other JS code through data_from_H5.
+  'javascript:alert(' + this.dataFromH5 + ')',
+  (error, result) => {
+    if (error) {
+      hilog.error(0x0000, 'ArkWebSecurity',
+        `run JavaScript error, ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
+      return;
+    }
+    if (result) {
+      this.webResult = result;
+      hilog.info(0x0000, 'ArkWebSecurity', `The test() return value is: ${result}`);
+    }
+  });
 ```
-1. this.controller.runJavaScript(
-2. // Trusting data_from_H5 passed through web pages will result in the execution of arbitrary JS code,
-3. // e.g., enclose the alert and execute other JS code through data_from_H5.
-4. 'javascript:alert(' + this.dataFromH5 + ')',
-5. (error, result) => {
-6. if (error) {
-7. hilog.error(0x0000, 'ArkWebSecurity',
-8. `run JavaScript error, ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-9. return;
-10. }
-11. if (result) {
-12. this.webResult = result;
-13. hilog.info(0x0000, 'ArkWebSecurity', `The test() return value is: ${result}`);
-14. }
-15. });
-```
-
-[RunJavaScript2.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/ets/pages/ErrorSamples/RunJavaScript2.ets#L35-L49)
 
 **【正例】**
 
+```typescript
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  dataFromH5: string = '' // Messages passed from web pages
+  @State webResult: string = '';
+
+  build() {
+    Column() {
+      Text(this.webResult).fontSize(20)
+      Web({ src: $rawfile('index.html'), controller: this.controller })
+        .javaScriptAccess(true)
+        .onPageEnd(event => {
+          try {
+            // Use regular expressions to match all single and double quotes.
+            const regex = /['"\(\)]/g;
+            // Use the replace method to replace all matched characters with an empty string.
+            let sanitizedStr = this.dataFromH5.replace(regex, '');
+            this.controller.runJavaScript(
+              // Perform security filtering on the data_from_H5 passed through the web page before calling back.
+              'javascript:alert(' + sanitizedStr + ')',
+              (error, result) => {
+                if (error) {
+                  hilog.error(0x0000, 'ArkWebSecurity',
+                    `run JavaScript error, ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
+                  return;
+                }
+                if (result) {
+                  this.webResult = result;
+                  hilog.info(0x0000, 'ArkWebSecurity', `The test() return value is: ${result}`);
+                }
+              });
+            if (event) {
+              hilog.info(0x0000, 'ArkWebSecurity', 'url: ', event.url);
+            }
+          } catch (error) {
+            hilog.error(0x0000, 'ArkWebSecurity',
+              `ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
+          }
+        })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-5. @Entry
-6. @Component
-7. struct WebComponent {
-8. controller: webview.WebviewController = new webview.WebviewController();
-9. dataFromH5: string = '' // Messages passed from web pages
-10. @State webResult: string = '';
-
-12. build() {
-13. Column() {
-14. Text(this.webResult).fontSize(20)
-15. Web({ src: $rawfile('index.html'), controller: this.controller })
-16. .javaScriptAccess(true)
-17. .onPageEnd(event => {
-18. try {
-19. // Use regular expressions to match all single and double quotes.
-20. const regex = /['"\(\)]/g;
-21. // Use the replace method to replace all matched characters with an empty string.
-22. let sanitizedStr = this.dataFromH5.replace(regex, '');
-23. this.controller.runJavaScript(
-24. // Perform security filtering on the data_from_H5 passed through the web page before calling back.
-25. 'javascript:alert(' + sanitizedStr + ')',
-26. (error, result) => {
-27. if (error) {
-28. hilog.error(0x0000, 'ArkWebSecurity',
-29. `run JavaScript error, ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-30. return;
-31. }
-32. if (result) {
-33. this.webResult = result;
-34. hilog.info(0x0000, 'ArkWebSecurity', `The test() return value is: ${result}`);
-35. }
-36. });
-37. if (event) {
-38. hilog.info(0x0000, 'ArkWebSecurity', 'url: ', event.url);
-39. }
-40. } catch (error) {
-41. hilog.error(0x0000, 'ArkWebSecurity',
-42. `ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-43. }
-44. })
-45. }
-46. }
-47. }
-```
-
-[RunJavaScript2.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/ets/pages/RunJavaScript2.ets#L17-L63)
 
 index.html内容如下：
 
 ```
-1. <html>
-2. <meta charset="UTF-8">
-3. <body>
-4. Hello world!
-5. </body>
-6. <script type="text/javascript">
-7. function test() {
-8. console.log('Ark WebComponent')
-9. return "This value is from index.html"
-10. }
-11. </script>
-12. </html>
+<html>
+<meta charset="UTF-8">
+<body>
+Hello world!
+</body>
+<script type="text/javascript">
+    function test() {
+        console.log('Ark WebComponent')
+        return "This value is from index.html"
+    }
+</script>
+</html>
 ```
-
-[index.html](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/resources/rawfile/index.html#L18-L29)
 
 ## 确保敏感数据的传输安全
 
@@ -1056,80 +1006,76 @@ index.html内容如下：
 
 **【反例】**
 
+```screen
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  unknownUrl: string = ''; // unknownUrl from external source
+
+  build() {
+    Column() {
+      Button('configCookieSync')
+        .onClick(() => {
+          try {
+            // unknownUrl is not verified.
+            webview.WebCookieManager.configCookieSync(this.unknownUrl, 'a=b');
+          } catch (error) {
+            hilog.error(0x0000, 'ArkWebSecurity',
+              `ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
+          }
+        })
+      Web({ src: this.unknownUrl, controller: this.controller })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-5. @Entry
-6. @Component
-7. struct WebComponent {
-8. controller: webview.WebviewController = new webview.WebviewController();
-9. unknownUrl: string = ''; // unknownUrl from external source
-
-11. build() {
-12. Column() {
-13. Button('configCookieSync')
-14. .onClick(() => {
-15. try {
-16. // unknownUrl is not verified.
-17. webview.WebCookieManager.configCookieSync(this.unknownUrl, 'a=b');
-18. } catch (error) {
-19. hilog.error(0x0000, 'ArkWebSecurity',
-20. `ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-21. }
-22. })
-23. Web({ src: this.unknownUrl, controller: this.controller })
-24. }
-25. }
-26. }
-```
-
-[SetCookies.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/ets/pages/ErrorSamples/SetCookies.ets#L17-L42)
 
 **【正例】**
 
+```screen
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  unknownUrl: string = ''; // unknownUrl from external source
+  urlTrustList: string =
+    '{\'UrlPermissionList\':[{\'scheme\':\'http\', \'host\':\'trust.example.com\', \'port\':80, \'path\':\'test\'}]}'
+
+  build() {
+    Column() {
+      Button('configCookieSync')
+        .onClick(() => {
+          try {
+            // Set up an allowlist to allow access only to trusted web pages.
+            this.controller.setUrlTrustList(this.urlTrustList);
+          } catch (error) {
+            hilog.error(0x0000, 'ArkWebSecurity',
+              `ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
+          }
+          try {
+            // Perform another validity check on unknown_url to implement more granular control.
+            if (this.unknownUrl === 'https://www.example.com') {
+              webview.WebCookieManager.configCookieSync(this.unknownUrl, 'a=b');
+            }
+          } catch (error) {
+            hilog.error(0x0000, 'ArkWebSecurity',
+              `ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
+          }
+        })
+      Web({ src: this.unknownUrl, controller: this.controller })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-5. @Entry
-6. @Component
-7. struct WebComponent {
-8. controller: webview.WebviewController = new webview.WebviewController();
-9. unknownUrl: string = ''; // unknownUrl from external source
-10. urlTrustList: string =
-11. '{\'UrlPermissionList\':[{\'scheme\':\'http\', \'host\':\'trust.example.com\', \'port\':80, \'path\':\'test\'}]}'
-
-13. build() {
-14. Column() {
-15. Button('configCookieSync')
-16. .onClick(() => {
-17. try {
-18. // Set up an allowlist to allow access only to trusted web pages.
-19. this.controller.setUrlTrustList(this.urlTrustList);
-20. } catch (error) {
-21. hilog.error(0x0000, 'ArkWebSecurity',
-22. `ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-23. }
-24. try {
-25. // Perform another validity check on unknown_url to implement more granular control.
-26. if (this.unknownUrl === 'https://www.example.com') {
-27. webview.WebCookieManager.configCookieSync(this.unknownUrl, 'a=b');
-28. }
-29. } catch (error) {
-30. hilog.error(0x0000, 'ArkWebSecurity',
-31. `ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-32. }
-33. })
-34. Web({ src: this.unknownUrl, controller: this.controller })
-35. }
-36. }
-37. }
-```
-
-[SetCookies.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/ets/pages/SetCookies.ets#L17-L53)
 
 ### 避免将用户敏感信息直接拼接到URL中进行加载
 
@@ -1143,26 +1089,24 @@ index.html内容如下：
 
 **【反例】**
 
+```typescript
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct WebComponent {
+  @State message: string = 'Hello World';
+  webviewController: webview.WebviewController = new webview.WebviewController();
+  accessToken: string = 'xxxx'; // After the user completes the login operation, the token returned by the server.
+  untrustedURL: string = '' // Any URL to be loaded
+
+  build() {
+    Column() {
+      Web({ src: this.untrustedURL + '?token=' + this.accessToken, controller: this.webviewController })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-
-3. @Entry
-4. @Component
-5. struct WebComponent {
-6. @State message: string = 'Hello World';
-7. webviewController: webview.WebviewController = new webview.WebviewController();
-8. accessToken: string = 'xxxx'; // After the user completes the login operation, the token returned by the server.
-9. untrustedURL: string = '' // Any URL to be loaded
-
-11. build() {
-12. Column() {
-13. Web({ src: this.untrustedURL + '?token=' + this.accessToken, controller: this.webviewController })
-14. }
-15. }
-16. }
-```
-
-[LoadURLWithSensitiveData.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/ets/pages/ErrorSamples/LoadURLWithSensitiveData.ets#L17-L32)
 
 ### 应用通过postMessage接口向网页传送敏感数据时，务必指定接收该消息的URI
 
@@ -1176,19 +1120,15 @@ index.html内容如下：
 
 **【反例】**
 
+```typescript
+this.ports = this.controller.createWebMessagePorts();
+this.controller.postMessage('__init_port__', [this.ports[0]], '*');
+this.ports[1].postMessageEvent('Post message event to html');
 ```
-1. this.ports = this.controller.createWebMessagePorts();
-2. this.controller.postMessage('__init_port__', [this.ports[0]], '*');
-3. this.ports[1].postMessageEvent('Post message event to html');
-```
-
-[PostMessage.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/ets/pages/ErrorSamples/PostMessage.ets#L42-L44)
 
 **【正例】**
 
+```typescript
+this.ports = this.controller.createWebMessagePorts();
+this.controller.postMessage('__init_port__', [this.ports[0]], this.url_in_whitelist);
 ```
-1. this.ports = this.controller.createWebMessagePorts();
-2. this.controller.postMessage('__init_port__', [this.ports[0]], this.url_in_whitelist);
-```
-
-[PostMessage.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkWebSecurity/arkwebsecurity/src/main/ets/pages/PostMessage.ets#L42-L43)

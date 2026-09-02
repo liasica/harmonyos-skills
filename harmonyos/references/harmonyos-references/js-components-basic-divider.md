@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: divider
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > divider
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:23+08:00
-doc_updated_at: 2026-03-30
-content_hash: sha256:9478ba041ae4703c019d3eb90592abab4b8490c886cc16b6f79037ff60cd356b
+scraped_at: 2026-09-02T15:01:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e249a40acae9e450bfb766b72f52363cdeabc7dfeeafec4456972ec49ba911f7
 ---
 
-说明
+**说明** 
 
 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -16,19 +16,13 @@ content_hash: sha256:9478ba041ae4703c019d3eb90592abab4b8490c886cc16b6f79037ff60c
 
 ## 权限列表
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 不支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-components-common-attributes.md)外，还支持如下属性：
 
@@ -36,13 +30,11 @@ PhonePC/2in1TabletTVWearable
 | --- | --- | --- | --- | --- |
 | vertical | boolean | false | 否 | 使用水平分割线还是垂直分割线，默认使用水平分割线。 |
 
-说明
+**说明** 
 
 不支持focusable、disabled属性。
 
 ## 样式
-
-PhonePC/2in1TabletTVWearable
 
 仅支持如下样式：
 
@@ -62,52 +54,46 @@ PhonePC/2in1TabletTVWearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 不支持。
 
 ## 方法
-
-PhonePC/2in1TabletTVWearable
 
 不支持。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <div class="content">
-4. <divider class="divider" vertical="false"></divider>
-5. </div>
-6. </div>
+```html
+<!-- xxx.hml -->
+<div class="container">   
+  <div class="content">        
+    <divider class="divider" vertical="false"></divider>    
+  </div>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .container {
-3. margin: 20px;
-4. flex-direction:column;
-5. width:100%;
-6. height:100%;
-7. align-items:center;
-8. }
-9. .content{
-10. width:80%;
-11. height:40%;
-12. border:1px solid #000000;
-13. align-items: center;
-14. justify-content: center;
-15. flex-direction:column;
-16. }
-17. .divider {
-18. margin: 10px;
-19. color: #ff0000ff;
-20. stroke-width: 3px;
-21. line-cap: round;
-22. }
+```css
+/* xxx.css */
+.container {
+  margin: 20px;
+  flex-direction:column;
+  width:100%;
+  height:100%;
+  align-items:center;
+}
+.content{
+  width:80%;
+  height:40%;
+  border:1px solid #000000;
+  align-items: center;
+  justify-content: center;
+  flex-direction:column;
+}
+.divider {
+  margin: 10px;
+  color: #ff0000ff;
+  stroke-width: 3px;
+  line-cap: round;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/uuGctwE0S6W3y89lYprhSA/zh-cn_image_0000002589246523.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/SKhYdVkxQGa9pPCuMnUZyA/zh-cn_image_0000002706836380.jpg)

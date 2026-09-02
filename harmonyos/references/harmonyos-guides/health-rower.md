@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-rower
 title: 划船机
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 数据类型 > 锻炼记录数据 > 划船机
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:20+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:45e9b0df691ff9ad116f198387537d83f752b506ccd6f0d943faecade2821768
+scraped_at: 2026-09-02T14:59:56+08:00
+doc_updated_at: 2026-07-09
+content_hash: sha256:3c1c1ede85108be5831f94779ca1c1d5be4db8f08414b36448ed33a46260f4da
 ---
 
 ## 划船机
@@ -14,11 +14,11 @@ content_hash: sha256:45e9b0df691ff9ad116f198387537d83f752b506ccd6f0d943faecade28
 
 | **锻炼记录子类型常量** | **描述** | 数据来源 |
 | --- | --- | --- |
-| [exerciseSequenceHelper.rower.EXERCISE\_TYPE](../harmonyos-references/health-api-exercisedequencehelper.md#常量-20) | 划船机 | 划船机等专业设备 |
+| [exerciseSequenceHelper.rower.EXERCISE\_TYPE](../harmonyos-references/health-api-exercisesequencehelper.md#常量-20) | 划船机 | 划船机等专业设备 |
 
 ### 划船机关联的统计数据说明
 
-字段定义：[exerciseSequenceHelper.rower.SummaryFields](../harmonyos-references/health-api-exercisedequencehelper.md#summaryfields-19)
+字段定义：[exerciseSequenceHelper.rower.SummaryFields](../harmonyos-references/health-api-exercisesequencehelper.md#summaryfields-19)
 
 | **字段**列表 | 描述 | **类型** | 可选/必选 |
 | --- | --- | --- | --- |
@@ -33,7 +33,7 @@ content_hash: sha256:45e9b0df691ff9ad116f198387537d83f752b506ccd6f0d943faecade28
 
 ### 划船机关联的明细数据说明
 
-字段定义：[exerciseSequenceHelper.rower.DetailFields](../harmonyos-references/health-api-exercisedequencehelper.md#detailfields-19)
+字段定义：[exerciseSequenceHelper.rower.DetailFields](../harmonyos-references/health-api-exercisesequencehelper.md#detailfields-19)
 
 | **字段**列表 | 描述 | **类型** | 可选/必选 |
 | --- | --- | --- | --- |
@@ -49,11 +49,11 @@ content_hash: sha256:45e9b0df691ff9ad116f198387537d83f752b506ccd6f0d943faecade28
 
 | **锻炼记录子类型常量** | **描述** | 数据来源 |
 | --- | --- | --- |
-| [exerciseSequenceHelper.rowing.EXERCISE\_TYPE](../harmonyos-references/health-api-exercisedequencehelper.md#常量-21) | 赛艇 | 手环、手表 |
+| [exerciseSequenceHelper.rowing.EXERCISE\_TYPE](../harmonyos-references/health-api-exercisesequencehelper.md#常量-21) | 赛艇 | 手环、手表 |
 
 ### 赛艇关联的统计数据说明
 
-字段定义：[exerciseSequenceHelper.rowing.SummaryFields](../harmonyos-references/health-api-exercisedequencehelper.md#summaryfields-20)
+字段定义：[exerciseSequenceHelper.rowing.SummaryFields](../harmonyos-references/health-api-exercisesequencehelper.md#summaryfields-20)
 
 | **字段**列表 | 描述 | **类型** | 可选/必选 |
 | --- | --- | --- | --- |
@@ -65,7 +65,7 @@ content_hash: sha256:45e9b0df691ff9ad116f198387537d83f752b506ccd6f0d943faecade28
 
 ### 赛艇关联的明细数据说明
 
-字段定义：[exerciseSequenceHelper.rowing.DetailFields](../harmonyos-references/health-api-exercisedequencehelper.md#detailfields-20)
+字段定义：[exerciseSequenceHelper.rowing.DetailFields](../harmonyos-references/health-api-exercisesequencehelper.md#detailfields-20)
 
 | **字段**列表 | 描述 | **类型** | 可选/必选 |
 | --- | --- | --- | --- |

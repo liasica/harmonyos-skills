@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jsvm-optimiza
 title: JSVM通用调优实践
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API典型使用场景指导 > JSVM-API调优&高性能使用示例 > JSVM通用调优实践
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:27+08:00
+scraped_at: 2026-09-02T15:00:17+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:ab00b33dc61d9924aacab34a2e26b2511b0828979e5b711aa876f8c0ea3a8224
+content_hash: sha256:35d23ab31b663133ce9ade54c20fb3663b34f1d9c933440a1314bc1374bd9f32
 ---
 
 ## JSVM调用结构
@@ -32,19 +32,19 @@ content_hash: sha256:ab00b33dc61d9924aacab34a2e26b2511b0828979e5b711aa876f8c0ea3
 
 以下面的编译接口为例，其中eagerCompile这个参数的开关可以调控编译行为，通过在不同的启动场景打开这个选项可以实现优化效果。
 
-```
-1. /**
-2. * ...
-3. * @param eagerCompile: Whether to compile the script eagerly.
-4. * ...
-5. */
-6. JSVM_EXTERN JSVM_Status OH_JSVM_CompileScript(JSVM_Env env,
-7. JSVM_Value script,
-8. const uint8_t* cachedData,
-9. size_t cacheDataLength,
-10. bool eagerCompile, // 开启全量编译
-11. bool* cacheRejected,
-12. JSVM_Script* result);
+```cpp
+/**
+ * ...
+ * @param eagerCompile: Whether to compile the script eagerly.
+ * ...
+ */
+JSVM_EXTERN JSVM_Status OH_JSVM_CompileScript(JSVM_Env env,
+                                              JSVM_Value script,
+                                              const uint8_t* cachedData,
+                                              size_t cacheDataLength,
+                                              bool eagerCompile, // 开启全量编译
+                                              bool* cacheRejected,
+                                              JSVM_Script* result);
 ```
 
 同时，code cache的生成和使用也会对编译产生影响，这部分可以参考 [使用code cache加速编译](use-jsvm-about-code-cache.md)。
@@ -77,39 +77,39 @@ content_hash: sha256:ab00b33dc61d9924aacab34a2e26b2511b0828979e5b711aa876f8c0ea3
 
 * 将生成code cache必需的前置编译也放到新增的线程上，这样编译选项可以分开使用：生成code cache打开eager compile，冷启动运行则关闭，这样做的缺点是可能进一步提高运行时的峰值资源占用，优点是code cache生成和运行可以完全解耦，不再需要考虑生成code cache的时间点。该流程的伪代码如下所示
 
-```
-1. async_create_code_cache() {
-2. compile_with_eager_compile();
-3. create_code_cache();
-4. save_code_cache();
-5. }
+```cpp
+async_create_code_cache() {
+  compile_with_eager_compile();
+  create_code_cache();
+  save_code_cache();
+}
 
-9. if (has_code_cache) {
-10. evaluate_script_with_code_cache();
-11. } else {
-12. start_thread(async_create_code_cache());
-13. evaluate_script_without_code_cache();
-14. }
+if (has_code_cache) {
+  evaluate_script_with_code_cache();
+} else {
+  start_thread(async_create_code_cache());
+  evaluate_script_without_code_cache();
+}
 ```
 
 * 在启动过程中的所有路径运行完之后，再启动新线程生成code cache，这样不必使用eager compile也能获取足量的code cache，同时保证热启动性能不受影响，这样做的缺点是生成code cache的时间点受限，优点是峰值资源占用相对更少，且不必生成过量的code cache导致io变慢。这个流程可以用如下所示的伪代码来表示
 
-```
-1. async_create_code_cache() {
-2. compile_with_out_eager_compile();
-3. create_code_cache();
-4. save_code_cache();
-5. }
+```cpp
+async_create_code_cache() {
+  compile_with_out_eager_compile();
+  create_code_cache();
+  save_code_cache();
+}
 
-9. if (has_code_cache) {
-10. evaluate_script_with_code_cache();
-11. } else {
-12. evaluate_script_without_code_cache();
-13. }
+if (has_code_cache) {
+  evaluate_script_with_code_cache();
+} else {
+  evaluate_script_without_code_cache();
+}
 
-17. if (script_run_completed) {
-18. start_thread(async_create_code_cache());
-19. }
+if (script_run_completed) {
+  start_thread(async_create_code_cache());
+}
 ```
 
 ### 使用更高效的JSVM-API
@@ -126,24 +126,24 @@ content_hash: sha256:ab00b33dc61d9924aacab34a2e26b2511b0828979e5b711aa876f8c0ea3
 
 * 低效用例
 
-```
-1. bool Test::IsFunction(JSVM_Env env, JSVM_Value jsvmValue) const {
-2. // type judgment
-3. JSVM_ValueType valueType;
-4. OH_JSVM_TypeOf(*env, jsvmValue, &valueType);
-5. return valueType == JSVM_FUNCTION;
-6. }
+```cpp
+bool Test::IsFunction(JSVM_Env env, JSVM_Value jsvmValue) const {
+    // type judgment
+    JSVM_ValueType valueType;
+    OH_JSVM_TypeOf(*env, jsvmValue, &valueType);
+    return valueType == JSVM_FUNCTION;
+}
 ```
 
 * 高效用例
 
-```
-1. bool Test::IsFunction(JSVM_Env env, JSVM_Value jsvmValue) const {
-2. // type judgment
-3. bool result = false;
-4. OH_JSVM_IsFunction(*env, jsvmValue, &result); // 可直接判断是否为Function类型
-5. return result;
-6. }
+```cpp
+bool Test::IsFunction(JSVM_Env env, JSVM_Value jsvmValue) const {
+    // type judgment
+    bool result = false;
+    OH_JSVM_IsFunction(*env, jsvmValue, &result); // 可直接判断是否为Function类型
+    return result;
+}
 ```
 
 以某生态应用小程序场景为例，这个优化可以带来的性能收益端到端有150ms，总占比约5%。
@@ -160,35 +160,35 @@ content_hash: sha256:ab00b33dc61d9924aacab34a2e26b2511b0828979e5b711aa876f8c0ea3
 
 * 低效用例
 
-```
-1. // (1) open handle scope
-2. JSVM_HandleScope scope;
-3. OH_JSVM_OpenHandleScope(*env, &scope);
-4. // (2) get JSVM_Value
-5. JSVM_Value jsvmValue;
-6. OH_JSVM_GetNull(*env, &jsvmValue);
-7. // (3) create and store Reference for JSVM_Value
-8. JSVM_Value wrappingObject;
-9. OH_JSVM_CreateObject(*env, &wrappingObject);
-10. OH_JSVM_SetElement(*env, wrappingObject, 1, jsvmValue);
-11. OH_JSVM_CreateReference(*env, wrappingObject, 1, &result->p_member->jsvmRef);
-12. // (4) close handle scope
-13. OH_JSVM_CloseHandleScope(*env, scope);
+```cpp
+// (1) open handle scope
+JSVM_HandleScope scope;
+OH_JSVM_OpenHandleScope(*env, &scope);
+// (2) get JSVM_Value
+JSVM_Value jsvmValue;
+OH_JSVM_GetNull(*env, &jsvmValue);
+// (3) create and store Reference for JSVM_Value
+JSVM_Value wrappingObject;
+OH_JSVM_CreateObject(*env, &wrappingObject);
+OH_JSVM_SetElement(*env, wrappingObject, 1, jsvmValue);
+OH_JSVM_CreateReference(*env, wrappingObject, 1, &result->p_member->jsvmRef);
+// (4) close handle scope
+OH_JSVM_CloseHandleScope(*env, scope);
 ```
 
 * 高效用例
 
-```
-1. // (1) open handle scope
-2. JSVM_HandleScope scope;
-3. OH_JSVM_OpenHandleScope(*env, &scope);
-4. // (2) get JSVM_Value
-5. JSVM_Value jsvmValue;
-6. OH_JSVM_GetNull(*env, &jsvmValue);
-7. // (3) create and store Reference for JSVM_Value
-8. OH_JSVM_CreateReference(*env, jsvmValue, 1, &result->p_member->jsvmRef); // 可从任意对象类型直接创建Reference，代码更为简洁高效
-9. // (4) close handle scope
-10. OH_JSVM_CloseHandleScope(*env, scope);
+```cpp
+// (1) open handle scope
+JSVM_HandleScope scope;
+OH_JSVM_OpenHandleScope(*env, &scope);
+// (2) get JSVM_Value
+JSVM_Value jsvmValue;
+OH_JSVM_GetNull(*env, &jsvmValue);
+// (3) create and store Reference for JSVM_Value
+OH_JSVM_CreateReference(*env, jsvmValue, 1, &result->p_member->jsvmRef); // 可从任意对象类型直接创建Reference，代码更为简洁高效
+// (4) close handle scope
+OH_JSVM_CloseHandleScope(*env, scope);
 ```
 
 同样以某生态应用小程序场景为例，这个改动减少了大量冗余的接口调用，最终带来的端到端时间收益有100+ms，约3%。

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-project-ma
 title: DevEco Studio如何自动install依赖
 breadcrumb: FAQ > DevEco Studio > 工程管理 > DevEco Studio如何自动install依赖
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:57+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:13+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:7757c6f2830990d969338fffa225ea38bf8f17e04cc94dbcaf86132e35860821
 ---
 

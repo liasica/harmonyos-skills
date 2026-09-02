@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 用户状态感知错误码
 breadcrumb: API参考 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > 错误码 > 用户状态感知错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:56+08:00
+scraped_at: 2026-09-02T15:02:13+08:00
 doc_updated_at: 2026-04-03
-content_hash: sha256:b9802bd49bc2fa89ab674bb79e9aafd55ea871342359671f57189c5272118429
+content_hash: sha256:78d55072dc1b1409eb3bfa652fae5d9ef1819f03de6b8f288992898f62da1301
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码](errorcode-universal.md)说明文档。
 
 ## 33900001 服务异常
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -38,8 +36,6 @@ Service exception. Possible causes:
 2. 连续重试3次不可用则停止尝试，期间可优先尝试获取器件列表方式进一步获取设备可用性。
 
 ## 33900002 订阅失败
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -67,8 +63,6 @@ Subscription failed. Possible causes:
 2. 连续重试3次不可用则停止尝试。
 
 ## 33900003 取消订阅失败
-
-PhonePC/2in1Tablet
 
 **错误信息**
 

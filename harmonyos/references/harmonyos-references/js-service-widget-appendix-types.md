@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: 数据类型说明
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 数据类型说明
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:42+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:0749d43bf9a136d3c7439578b70cab3c0af571e5aee661003977f55ae8c7f891
+scraped_at: 2026-09-02T15:01:15+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4d1bd3a8dee92f57aa5272e08e7c3bad7994b5d3648ae0a4333a8ff6b491e33e
 ---
 
-说明
+**说明** 
 
 从API version 8 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 长度类型
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型定义 | 描述 |
 | --- | --- | --- |
@@ -22,8 +20,6 @@ PhonePC/2in1TabletTVWearable
 | percentage | string | 百分比尺寸单位，如“50%”。 |
 
 ## 颜色类型
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型定义 | 描述 |
 | --- | --- | --- |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-nav
 title: 图标类型设置
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 组件导航 > 图标类型设置
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:30:20+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:bbc86bc7d80ba7162f75eb7b740f3ad7683fcad8964f405dcedec941ee090200
+scraped_at: 2026-09-02T14:49:58+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:8af710a90574e92c9fdca26585f3c300815cf31332706dfd39aca644ae3afa5b
 ---
 
 ## 场景介绍
@@ -20,79 +20,79 @@ content_hash: sha256:bbc86bc7d80ba7162f75eb7b740f3ad7683fcad8964f405dcedec941ee0
 
 单字图标([TextStyleMode.SINGLE\_CHARACTER](../harmonyos-references/ui-design-hdsnavigation.md#textstylemode))：适用于需要节省空间的紧凑布局，常用于快速操作入口，建议仅在单个文字或字母的场景使用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/dAWdpWESRjaVIkWzOKiSqA/zh-cn_image_0000002589244641.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/GNKBeF82QDaGsrEIwE8zPQ/zh-cn_image_0000002736313339.jpg)
 
 ## 开发步骤
 
 1. 导入相关模块。
 
-   ```
-   1. // 从6.0.2(22)版本开始，无需手动导入HdsNavigationAttribute。具体请参考HdsNavigation的导入模块说明。
-   2. import { TextStyleMode, IconStyleMode, HdsNavigation, HdsNavigationAttribute, HdsNavigationTitleMode } from '@kit.UIDesignKit';
+   ```typescript
+   // 从6.0.2(22)版本开始，无需手动导入HdsNavigationAttribute。具体请参考HdsNavigation的导入模块说明。
+   import { TextStyleMode, IconStyleMode, HdsNavigation, HdsNavigationAttribute, HdsNavigationTitleMode } from '@kit.UIDesignKit';
    ```
 2. 创建一级导航组件，通过配置titleBar中的menu上的type属性，实现文字型图标以及图片型图标大小设置。
 
-   ```
-   1. @Entry
-   2. @Component
-   3. struct Index {
-   4. build() {
-   5. HdsNavigation() { // 创建HdsNavDestination组件
-   6. }
-   7. .titleBar({
-   8. content: {
-   9. title: { mainTitle: '标题' },
-   10. subIcon: {
-   11. content: {
-   12. // 设置用户头像
-   13. icon: $r('app.media.contacts'), // contacts为自定义资源，开发者需替换本地资源
-   14. type: IconStyleMode.LARGE,
-   15. label: 'subIcon', // 无障碍播报内容
-   16. isEnabled: true,
-   17. action: () => {
-   18. },
-   19. }
-   20. },
-   21. menu: {
-   22. // 设置HdsNavigation菜单内容
-   23. value: [{
-   24. content: {
-   25. // 设置第一个菜单项内容，设置为普通文本按钮
-   26. label: '文本',
-   27. type: TextStyleMode.NORMAL,
-   28. isEnabled: true,
-   29. componentId: 'menu_1',
-   30. action: () => {
-   31. },
-   32. }
-   33. }, {
-   34. content: {
-   35. // 设置第二个菜单项内容，设置为单字按钮
-   36. label: '单',
-   37. type: TextStyleMode.SINGLE_CHARACTER,
-   38. isEnabled: true,
-   39. componentId: 'menu_2',
-   40. action: () => {
-   41. },
-   42. }
-   43. }, {
-   44. content: {
-   45. // 设置第三个菜单项内容，设置为图标按钮
-   46. label: 'largeIcon',
-   47. icon: $r('sys.symbol.AI_search'),
-   48. type: IconStyleMode.NORMAL,
-   49. isEnabled: true,
-   50. componentId: 'menu_3',
-   51. action: () => {
-   52. },
-   53. }
-   54. }],
-   55. maxCount: 3 // 最大菜单显示个数配置
-   56. },
-   57. }
-   58. })
-   59. .titleMode(HdsNavigationTitleMode.MINI)
-   60. .hideBackButton(true)
-   61. }
-   62. }
+   ```typescript
+   @Entry
+   @Component
+   struct Index {
+     build() {
+       HdsNavigation() { // 创建HdsNavigation组件
+       }
+       .titleBar({
+         content: {
+           title: { mainTitle: '标题' },
+           subIcon: {
+             content: {
+               // 设置用户头像，图片型图标类型
+               icon: $r('app.media.contacts'), // contacts为自定义资源，开发者需替换本地资源
+               type: IconStyleMode.LARGE,
+               label: 'subIcon', // 无障碍播报内容
+               isEnabled: true,
+               action: () => {
+               }
+             }
+           },
+           menu: {
+             // 设置菜单内容
+             value: [{
+               content: {
+                 // 设置第一个菜单项内容，设置为普通文本按钮
+                 label: '文本',
+                 type: TextStyleMode.NORMAL,
+                 isEnabled: true,
+                 componentId: 'menu_1',
+                 action: () => {
+                 }
+               }
+             }, {
+               content: {
+                 // 设置第二个菜单项内容，设置为单字按钮
+                 label: '单',
+                 type: TextStyleMode.SINGLE_CHARACTER,
+                 isEnabled: true,
+                 componentId: 'menu_2',
+                 action: () => {
+                 }
+               }
+             }, {
+               content: {
+                 // 设置第三个菜单项内容，设置为通用图标按钮
+                 label: 'largeIcon',
+                 icon: $r('sys.symbol.AI_search'),
+                 type: IconStyleMode.NORMAL,
+                 isEnabled: true,
+                 componentId: 'menu_3',
+                 action: () => {
+                 }
+               }
+             }],
+             maxCount: 3 // 最大菜单显示个数配置
+           }
+         }
+       })
+       .titleMode(HdsNavigationTitleMode.MINI)
+       .hideBackButton(true)
+     }
+   }
    ```

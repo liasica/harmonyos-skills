@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: OH_Drawing_Image
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 结构体 > OH_Drawing_Image
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:31+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:179a1bfcccb75aa90e92875d97b8bfad043cd8acd0e1627acabdd22b8a94b956
+scraped_at: 2026-09-02T14:53:10+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:8291602947c9a7a454a2e799db6bcdadc927a167ec8b6ffd00e0e7f9665b3d7e
 ---
 
-```
-1. typedef struct OH_Drawing_Image OH_Drawing_Image
+```c
+typedef struct OH_Drawing_Image OH_Drawing_Image
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-定义一个用于描述绘制二维像素数组的图片。
+定义一个表示二维像素数组的图片，用于绘制操作。
 
 **起始版本：** 12
 

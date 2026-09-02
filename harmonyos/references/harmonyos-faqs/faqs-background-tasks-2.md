@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-background
 title: 应用在后台如何继续执行业务
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 后台任务开发（Background Tasks） > 应用在后台如何继续执行业务
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:54+08:00
-doc_updated_at: 2026-03-17
+scraped_at: 2026-09-02T15:21:18+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:cc0c3af5ab55811d850014d630b937ebff96b66ba7112c5a563e456198c0eba4
 ---
 

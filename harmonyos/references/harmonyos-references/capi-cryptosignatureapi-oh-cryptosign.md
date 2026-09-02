@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryp
 title: OH_CryptoSign
 breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > C API > 结构体 > OH_CryptoSign
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:04+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:8f3d09c0ecbdf18333a38ba2d0c0ffacd6304ca9127b9a6fec714c600952a79b
+scraped_at: 2026-09-02T14:52:08+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0b52589190315e0e3ff05a6c88507f70018c96803b70caab5fc89faea949b134
 ---
 
-```
-1. typedef struct OH_CryptoSign OH_CryptoSign
+```c
+typedef struct OH_CryptoSign OH_CryptoSign
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义签名结构体。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-send
 title: 发送星闪广播
 breadcrumb: 指南 > 系统 > 网络 > NearLink Kit（星闪服务） > 发送星闪广播
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:48+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f5e55064572c02462222aa30821d935df5a87e385d32a40cfd0aef786b631b71
+scraped_at: 2026-09-02T14:50:05+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:8a9d1e3c9f1b5be21c74625f0b67cdb3ce7501f9cf50783c1f19dbc70dd10fe3
 ---
 
 ## 场景介绍
@@ -16,105 +16,113 @@ content_hash: sha256:f5e55064572c02462222aa30821d935df5a87e385d32a40cfd0aef786b6
 
 | 接口名 | 描述 |
 | --- | --- |
-| [startAdvertising](../harmonyos-references/nearlink-advertising.md#startadvertising)(advertisingParams: AdvertisingParams): Promise<number> | 启动星闪广播。 |
-| [stopAdvertising](../harmonyos-references/nearlink-advertising.md#stopadvertising)(advertisingId: number): Promise<void> | 停止星闪广播。 |
-| [on](../harmonyos-references/nearlink-advertising.md#on-advertisingstatechange)(type: 'advertisingStateChange', callback: Callback<AdvertisingStateChangeInfo>): void | 订阅星闪广播状态变化事件。 |
-| [off](../harmonyos-references/nearlink-advertising.md#off-advertisingstatechange)(type: 'advertisingStateChange', callback?: Callback<AdvertisingStateChangeInfo>): void | 取消订阅星闪广播状态变化事件。 |
+| [startAdvertising](../harmonyos-references/nearlink-advertising.md#startadvertising)(advertisingParams: AdvertisingParams): Promise<number> | 启动星闪广播。使用Promise异步回调。 |
+| [stopAdvertising](../harmonyos-references/nearlink-advertising.md#stopadvertising)(advertisingId: number): Promise<void> | 停止星闪广播。使用Promise异步回调。 |
+| [on](../harmonyos-references/nearlink-advertising.md#on-advertisingstatechange)(type: 'advertisingStateChange', callback: Callback<AdvertisingStateChangeInfo>): void | 订阅星闪广播状态变化事件。使用callback异步回调。 |
+| [off](../harmonyos-references/nearlink-advertising.md#off-advertisingstatechange)(type: 'advertisingStateChange', callback?: Callback<AdvertisingStateChangeInfo>): void | 取消订阅星闪广播状态变化事件。使用callback异步回调。 |
 
 ## 开发步骤
 
 1. 导入相关模块。
 
-   ```
-   1. import { advertising } from '@kit.NearLinkKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { advertising } from '@kit.NearLinkKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 订阅星闪广播状态变化事件。
 
-   ```
-   1. let onReceiveEvent:(data: advertising.AdvertisingStateChangeInfo) => void = (data: advertising.AdvertisingStateChangeInfo) => {
-   2. console.info('advertisingId:'+ data.advertisingId);
-   3. console.info('advertisingState:'+ data.state);
-   4. }
-   5. try {
-   6. advertising.on('advertisingStateChange', onReceiveEvent);
-   7. } catch (err) {
-   8. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-   9. }
+   ```typescript
+   let onAdvertisingStateChangeCallback:(data: advertising.AdvertisingStateChangeInfo)
+     => void = (data: advertising.AdvertisingStateChangeInfo) => {
+     hilog.info(this.domainId, this.logTag, `advertisingId: ${data.advertisingId}`);
+     hilog.info(this.domainId, this.logTag, `advertisingState: ${data.state}`);
+     // ...
+   };
+   try {
+     advertising.on('advertisingStateChange', onAdvertisingStateChangeCallback);
+   } catch (err) {
+     hilog.error(this.domainId, this.logTag,
+       `errCode: ${(err as BusinessError).code}, errMessage: ${(err as BusinessError).message}`);
+   }
    ```
 3. 构造用户需要的广播参数及数据。
 
-   ```
-   1. let manufactureValueBuffer = new Uint8Array(4);
-   2. manufactureValueBuffer[0] = 1;
-   3. manufactureValueBuffer[1] = 2;
-   4. manufactureValueBuffer[2] = 3;
-   5. manufactureValueBuffer[3] = 4;
-   6. let serviceValueBuffer = new Uint8Array(4);
-   7. serviceValueBuffer[0] = 4;
-   8. serviceValueBuffer[1] = 6;
-   9. serviceValueBuffer[2] = 7;
-   10. serviceValueBuffer[3] = 8;
-   11. console.info('manufactureValueBuffer = '+ JSON.stringify(manufactureValueBuffer));
-   12. console.info('serviceValueBuffer = '+ JSON.stringify(serviceValueBuffer));
-   13. let setting: advertising.AdvertisingSettings = {
-   14. interval:5000,
-   15. power:advertising.TxPowerMode.ADV_TX_POWER_LOW
-   16. };
-   17. let manufactureDataUnit: advertising.ManufacturerData = {
-   18. manufacturerId:4567,
-   19. manufacturerData:manufactureValueBuffer.buffer
-   20. };
-   21. let serviceDataUnit: advertising.ServiceData = {
-   22. serviceUuid:"37bea880-fc70-11ea-b720-000000001234",
-   23. serviceData:serviceValueBuffer.buffer
-   24. };
-   25. let advData: advertising.AdvertisingData = {
-   26. serviceUuids:["37bea880-fc70-11ea-b720-000000001234"],
-   27. manufacturerData:[manufactureDataUnit],
-   28. serviceData:[serviceDataUnit]
-   29. };
-   30. let advertisingParams: advertising.AdvertisingParams = {
-   31. advertisingSettings: setting,
-   32. advertisingData: advData
-   33. };
+   ```typescript
+   let manufactureValueBuffer = new Uint8Array(4);
+   manufactureValueBuffer[0] = 1;
+   manufactureValueBuffer[1] = 2;
+   manufactureValueBuffer[2] = 3;
+   manufactureValueBuffer[3] = 4;
+   let serviceValueBuffer = new Uint8Array(4);
+   serviceValueBuffer[0] = 4;
+   serviceValueBuffer[1] = 6;
+   serviceValueBuffer[2] = 7;
+   serviceValueBuffer[3] = 8;
+   hilog.info(this.domainId, this.logTag, `manufactureValueBuffer = ${JSON.stringify(manufactureValueBuffer)}`);
+   hilog.info(this.domainId, this.logTag, `serviceValueBuffer = ${JSON.stringify(serviceValueBuffer)}`);
+   let setting: advertising.AdvertisingSettings = {
+     interval: 160,
+     power: advertising.TxPowerMode.ADV_TX_POWER_MEDIUM
+   };
+   let manufactureDataUnit: advertising.ManufacturerData = {
+     manufacturerId: 4567,
+     manufacturerData: manufactureValueBuffer.buffer
+   };
+   let serviceDataUnit: advertising.ServiceData = {
+     serviceUuid: 'FFFFFFFF-1234-5678-ABCD-000000001234',
+     serviceData: serviceValueBuffer.buffer
+   };
+   let advData: advertising.AdvertisingData = {
+     serviceUuids: ['FFFFFFFF-1234-5678-ABCD-000000001234'],
+     manufacturerData: [manufactureDataUnit],
+     serviceData: [serviceDataUnit],
+     includeDeviceName : true
+   };
+   let advertisingParams: advertising.AdvertisingParams = {
+     advertisingSettings: setting,
+     advertisingData: advData
+   };
    ```
 4. 开启星闪广播，返回advertisingId表示当前广播索引。
 
-   ```
-   1. let advId = -1;
-   2. try {
-   3. advertising.startAdvertising(advertisingParams).then((advertisingId:number) => {
-   4. advId = advertisingId;
-   5. console.info('advertising id:'+ JSON.stringify(advId));
-   6. }).catch ((err: BusinessError) => {
-   7. console.error('errCode: ' + err.code + ', errMessage: ' + err.message);
-   8. });
-   9. } catch (err) {
-   10. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-   11. }
+   ```typescript
+   let advId: number = -1;
+   try {
+     advertising.startAdvertising(advertisingParams).then((advertisingId:number) => {
+       advId = advertisingId;
+       hilog.info(this.domainId, this.logTag, `advertising id: ${JSON.stringify(advId)}`);
+     }).catch ((err: BusinessError) => {
+       hilog.error(this.domainId, this.logTag, `errCode: ${err.code}, errMessage: ${err.message}`);
+     });
+   } catch (err) {
+     hilog.error(this.domainId, this.logTag,
+       `errCode: ${(err as BusinessError).code}, errMessage: ${(err as BusinessError).message}`);
+   }
    ```
 5. 停止星闪广播，其中advId是步骤4开启广播后返回的advertisingId。
 
-   ```
-   1. try {
-   2. advertising.stopAdvertising(advId).then(() => {
-   3. console.info("stop advertising success");
-   4. }).catch ((err: BusinessError) => {
-   5. console.error('errCode: ' + err.code + ', errMessage: ' + err.message);
-   6. });
-   7. } catch (err) {
-   8. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-   9. }
+   ```typescript
+   try {
+     advertising.stopAdvertising(advId).then(() => {
+       hilog.info(this.domainId, this.logTag, `Stop advertising success`);
+     }).catch((err: BusinessError) => {
+       hilog.error(this.domainId, this.logTag, `errCode: ${err.code}, errMessage: ${err.message}`);
+     });
+   } catch (err) {
+     hilog.error(this.domainId, this.logTag,
+       `errCode: ${(err as BusinessError).code}, errMessage: ${(err as BusinessError).message}`);
+   }
    ```
 6. 取消订阅星闪广播状态变化事件。
 
-   ```
-   1. try {
-   2. advertising.off('advertisingStateChange', onReceiveEvent);
-   3. } catch (err) {
-   4. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-   5. }
+   ```typescript
+   try {
+     advertising.off('advertisingStateChange');
+   } catch (err) {
+     hilog.error(this.domainId, this.logTag,
+       `errCode: ${(err as BusinessError).code}, errMessage: ${(err as BusinessError).message}`);
+   }
    ```
 
 ## 示例代码

@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: OH_ImageReceiverOptions
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 结构体 > OH_ImageReceiverOptions
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:29+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:cc808222c617009dc05da2637e6f6217e49ce6fcdfa19a40138b80987ab19b48
+scraped_at: 2026-09-02T14:52:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3fda26d8ca93c442dd67f3ea0adda51fecf097f5d35d97db8f8938956cdbb509
 ---
 
-```
-1. typedef struct OH_ImageReceiverOptions OH_ImageReceiverOptions
+```c
+typedef struct OH_ImageReceiverOptions OH_ImageReceiverOptions
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 用于定义OH\_ImageReceiverOptions数据类型名称。
 

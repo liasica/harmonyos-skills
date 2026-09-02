@@ -3,53 +3,160 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@system.device (设备信息)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 已停止维护的接口 > @system.device (设备信息)
 category: harmonyos-references
-scraped_at: 2026-04-29T14:00:24+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:9274422a5fb1a0c173230a3386061eeb209f7fe6848b2a6f61113c9192794ef6
+scraped_at: 2026-09-02T15:02:04+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c08aeeef82750e189fb62f6ae3bbb2fceb29dfca2bd4b8428237d6bcff188356
 ---
 
-本模块提供当前设备的信息。
+本模块提供当前设备的信息，通过读取系统配置获取设备品牌、型号、生产商、屏幕参数等基础信息，供开发者进行设备适配和功能判断。
 
-说明
+**说明** 
 
 * 模块维护策略
 
   - 对于Lite Wearable设备类型，该模块长期维护，正常使用。
 
-  - 对于支持该模块的其他设备类型，该模块从API Version 6开始不再维护，推荐使用新接口[@ohos.deviceInfo](js-apis-device-info.md)进行设备信息查询。
+  - 对于支持该模块的其他设备类型，该模块从API version 6开始不再维护，推荐使用新接口[@ohos.deviceInfo](js-apis-device-info.md)（从API version 6开始支持）进行设备信息查询。
 * 本模块首批接口从API version 3开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-WearableLite Wearable
-
-```
-1. import device from '@system.device';
+```typescript
+import Device from '@system.device';
 ```
 
-## device.getInfo(deprecated)
+## Device
 
-WearableLite Wearable
+### Device.getInfo(deprecated)
 
 getInfo(options?: GetDeviceOptions): void
 
-获取当前设备的信息。
+获取当前设备的信息。该接口异步读取系统设备信息，通过回调函数返回设备品牌、型号、屏幕参数等数据。
 
-说明
+**说明** 
 
-在首页的onShow生命周期之前不建议调用device.getInfo接口。
+在首页的onShow生命周期之前不建议调用Device.getInfo接口。
 
 **系统能力：** SystemCapability.Startup.SystemInfo.Lite
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| void | 无返回值，设备信息通过回调函数返回。 |
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [GetDeviceOptions](js-apis-system-device.md#getdeviceoptionsdeprecated) | 否 | 定义设备信息获取的参数选项。 |
+| options | [GetDeviceOptions](js-apis-system-device.md#getdeviceoptionsdeprecated) | 否 | 定义设备信息获取的参数选项。省略时使用默认配置获取设备基本信息。 |
+
+**示例：**
+
+ArkTS（方舟编程语言）示例：
+
+```typescript
+interface DeviceData {
+  brand: string;
+}
+
+export default class Page {
+  getInfo() {
+    try {
+      Device.getInfo({
+        success: (data: DeviceData) => {
+          console.info(`Device information obtained successfully. Device brand: ${data.brand}`);
+        },
+        fail: (data: any, code: number) => {
+          console.error(`Failed to obtain device information. Code: ${code}, message: ${data}`);
+        },
+      });
+    } catch (error) {
+      console.error('Failed to call device information API:', error);
+    }
+  }
+}
+```
+
+JS示例：
+
+```xml
+<div class="container">
+    <text class="title">Device Information</text>
+    <input type="button" value="Get Device Brand" class="button" onclick="getDeviceInfo"></input>
+    <text class="info">{{brandInfo}}</text>
+</div>
+```
+
+```css
+/* xxx.css */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.title {
+    font-size: 40px;
+    text-align: center;
+    width: 100%;
+    height: 80px;
+    margin-bottom: 50px;
+}
+
+.button {
+    font-size: 30px;
+    text-align: center;
+    width: 240px;
+    height: 80px;
+    margin: 20px;
+}
+
+.info {
+    font-size: 28px;
+    text-align: center;
+    width: 100%;
+    height: 60px;
+    margin-top: 50px;
+    color: #007dff;
+}
+```
+
+```js
+// xxx.js
+import Device from '@system.device';
+
+export default {
+  data: {
+    brandInfo: 'Click the button to get device brand'
+  },
+  
+  getDeviceInfo() {
+    try {
+      Device.getInfo({
+        success: (data) => {
+          console.info(`Device information obtained successfully. Device brand: ${data.brand}`);
+          this.brandInfo = 'Device brand: ' + data.brand;
+        },
+        fail: (data, code) => {
+          console.error(`Failed to obtain device information. Code: ${code}, message: ${data}`);
+          this.brandInfo = 'Failed to obtain, error code: ' + code;
+        },
+      });
+    } catch (error) {
+      console.error('Failed to call device information API:', error);
+      this.brandInfo = 'Current device does not support this API';
+    }
+  }
+}
+```
 
 ## GetDeviceOptions(deprecated)
-
-WearableLite Wearable
 
 定义设备信息获取的参数选项。
 
@@ -57,13 +164,17 @@ WearableLite Wearable
 
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| success | (data: DeviceResponse) => void | 否 | 接口调用成功的回调函数。 data为成功返回的设备信息，具体参考[DeviceResponse](js-apis-system-device.md#deviceresponsedeprecated)。 |
-| fail | (data: any,code:number)=> void | 否 | 接口调用失败的回调函数。 code为失败返回的错误码。  code:200，表示返回结果中存在无法获得的信息。 |
-| complete | () => void | 否 | 接口调用结束的回调函数。 |
+| success | (data: [DeviceResponse](js-apis-system-device.md#deviceresponsedeprecated)) => void | 否 | 接口调用成功的回调函数，在接口调用成功时执行。data 为成功返回的设备信息。不传入时无法获取设备信息，建议设置此回调。 |
+| fail | (data: any, code: number) => void | 否 | 接口调用失败的回调函数，在接口调用失败时执行。data为失败时返回的错误信息对象或错误描述字符串，code为失败返回的错误码。  code:200，表示返回结果中存在无法获取的信息。建议设置此回调以处理错误情况。 |
+| complete | () => void | 否 | 接口调用结束的回调函数，在接口调用完成后（无论成功或失败）执行，适用于需执行清理或收尾工作的场景。不传入时不执行结束回调。 |
+
+**错误码**：
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 200 | 返回结果中存在无法获取的信息。可能原因包括：设备不支持部分信息字段、系统权限受限或设备配置缺失。解决措施：建议检查设备兼容性、确认应用权限配置，并设置此回调以处理错误情况。 |
 
 ## DeviceResponse(deprecated)
-
-WearableLite Wearable
 
 设备信息。
 
@@ -74,117 +185,14 @@ WearableLite Wearable
 | brand | string | 品牌。 |
 | manufacturer | string | 生产商。 |
 | model | string | 型号。 |
-| product | string | 代号。 |
+| product | string | 产品代号。 |
 | language4+ | string | 系统语言。 |
 | region4+ | string | 系统地区。 |
-| windowWidth | number | 可使用的窗口宽度，单位px。 |
-| windowHeight | number | 可使用的窗口高度，单位px。 |
-| screenDensity4+ | number | 屏幕密度，单位dpi。 |
+| windowWidth | number | 可使用的窗口宽度，单位px。不同设备的可使用窗口尺寸存在差异。 |
+| windowHeight | number | 可使用的窗口高度，单位px。不同设备的可使用窗口尺寸存在差异。 |
+| screenDensity4+ | number | 屏幕像素密度。表示屏幕每英寸的像素点数量，单位为dpi(dots per inch)。不同设备的屏幕像素密度存在差异。 |
 | screenShape4+ | string | 屏幕形状。可取值：  - rect：方形屏；  - circle：圆形屏。 |
 | apiVersion4+ | number | 系统API版本号。 |
-| deviceType4+ | string | 设备类型。 |
-
-**示例：**
-
-ArkTS示例：
-
-```
-1. export default class Page {
-2. getInfo() {
-3. interface DeviceData {
-4. brand: string;
-5. }
-
-7. try {
-8. device.getInfo({
-9. success: (data: DeviceData) => {
-10. console.info('Device information obtained successfully. Device brand:' + data.brand);
-11. },
-12. fail: (data: string, code: number) => {
-13. console.info('Failed to obtain device information. Error code:' + code + '; Error information: ' + data);
-14. },
-15. });
-16. } catch (error) {
-17. console.error('Device information API is not supported');
-18. }
-19. }
-20. }
-```
-
-JS示例：
-
-```
-1. <div class="container">
-2. <text class="title">Device Information</text>
-3. <input type="button" value="Get Device Brand" class="button" onclick="getDeviceInfo"></input>
-4. <text class="info">{{brandInfo}}</text>
-5. </div>
-```
-
-```
-1. /*xxx.css*/
-2. .container {
-3. display: flex;
-4. flex-direction: column;
-5. align-items: center;
-6. justify-content: center;
-7. left: 0px;
-8. top: 0px;
-9. width: 100%;
-10. height: 100%;
-11. }
-
-13. .title {
-14. font-size: 40px;
-15. text-align: center;
-16. width: 100%;
-17. height: 80px;
-18. margin-bottom: 50px;
-19. }
-
-21. .button {
-22. font-size: 30px;
-23. text-align: center;
-24. width: 240px;
-25. height: 80px;
-26. margin: 20px;
-27. }
-
-29. .info {
-30. font-size: 28px;
-31. text-align: center;
-32. width: 100%;
-33. height: 60px;
-34. margin-top: 50px;
-35. color: #007dff;
-36. }
-```
-
-```
-1. //xxx.js
-2. import device from '@system.device';
-
-4. export default {
-5. data: {
-6. brandInfo: 'Click the button to get device brand'
-7. },
-
-9. getDeviceInfo() {
-10. try {
-11. device.getInfo({
-12. success: (data) => {
-13. console.info('Device information obtained successfully. Device brand:' + data.brand);
-14. this.brandInfo = 'Device brand: ' + data.brand;
-15. },
-16. fail: (data, code) => {
-17. console.info('Failed to obtain device information. Error code:' + code + '; Error information: ' + data);
-18. this.brandInfo = 'Failed to obtain, error code: ' + code;
-19. },
-20. });
-21. } catch (error) {
-22. console.error('Device information API is not supported');
-23. this.brandInfo = 'Current device does not support this API';
-24. }
-25. }
-26. }
-```
+| deviceType4+ | string | 设备类型。常见取值：phone（手机）、tablet（平板）、tv（电视）、wearable（可穿戴设备）等。 |
+| sdkMinorApiVersion | number | 系统软件Minor API版本。从API 26.0.0 版本开始，系统API版本格式：apiVersion.sdkMinorApiVersion.sdkPatchApiVersion。该值获取失败时填充 -1，且不影响 getInfo 接口的整体返回状态。  **模型约束：** 此接口仅可在FA模型下使用。  **起始版本**：26.0.0  示例：0 |
+| sdkPatchApiVersion | number | 系统软件Patch API版本。从API 26.0.0 版本开始，系统API版本格式：apiVersion.sdkMinorApiVersion.sdkPatchApiVersion。该值获取失败时填充 -1，且不影响 getInfo 接口的整体返回状态。  **模型约束：** 此接口仅可在FA模型下使用。  **起始版本**：26.0.0  示例：0 |

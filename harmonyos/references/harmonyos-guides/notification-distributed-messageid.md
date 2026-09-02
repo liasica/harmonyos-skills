@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-
 title: 清除跨设备场景下的重复通知
 breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > 跨设备协同通知 > 清除跨设备场景下的重复通知
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:25+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b46d93ff18e80697476933d012d90f2f98288b00273d07a2f82f0a1439d227aa
+scraped_at: 2026-09-02T14:50:29+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e5cab21b8f64f1c7445f1c0eff66ffb5232153e5187c79f676565bca90ff379b
 ---
 
 从API version 20开始，为了避免不同渠道发布的通知重复打扰用户（例如，手机协同到当前设备的通知与Push推送服务发布的通知重复），可以使用通知去重功能，清除跨设备场景下的重复通知。
 
 ## 实现原理
 
-应用发送通知时携带唯一标识字段[appMessageId](../harmonyos-references/js-apis-inner-notification-notificationrequest.md#notificationrequest-1)，分布式通知接收到多渠道发布的通知后，会根据该字段进行判断，从而实现通知去重。
+应用发送通知时携带唯一标识字段[appMessageId](../harmonyos-references/js-apis-inner-notification-notificationrequest.md#notificationrequest-1)，[分布式通知](notification-glossary.md#distributed-notification分布式通知)接收到多渠道发布的通知后，会根据该字段进行判断，从而实现通知去重。
 
 设备只会展示第一条通知，后续收到的重复通知会被静默去重，不展示、不提醒。
 
 **图1** 全场景通知去重流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/Jp-jkvkqSMagiHYo165J5Q/zh-cn_image_0000002558605908.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/y5GqQYARS8WqjJhoYBaHAQ/zh-cn_image_0000002736314193.png)
 
 ## 约束条件
 
@@ -35,37 +35,33 @@ content_hash: sha256:b46d93ff18e80697476933d012d90f2f98288b00273d07a2f82f0a1439d
 
 1. 导入模块。
 
+   ```typescript
+   import { notificationManager } from '@kit.NotificationKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
-   1. import { notificationManager } from '@kit.NotificationKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
-   ```
-
-   [ClearDuplicateNotifications.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Notification-Kit/Notification/entry/src/main/ets/filemanager/ClearDuplicateNotifications.ets#L16-L19)
 2. 发布通知消息，通知消息中包含appMessageId字段。
 
+   ```typescript
+   // publish回调
+   let publishCallback = (err: BusinessError): void => {
+     if (err) {
+       console.error(`Failed to publish notification. Code is ${err.code}, message is ${err.message}`);
+     } else {
+       console.info(`Succeeded in publishing notification.`);
+     }
+   };
+   // 通知Request对象
+   let notificationRequest: notificationManager.NotificationRequest = {
+     id: 1,
+     content: {
+       notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
+       normal: {
+         title: 'test_title',
+         text: 'test_text',
+         additionalText: 'test_additionalText'
+       }
+     },
+     appMessageId: 'test_appMessageId_1'
+   };
+   notificationManager.publish(notificationRequest, publishCallback);
    ```
-   1. // publish回调
-   2. let publishCallback = (err: BusinessError): void => {
-   3. if (err) {
-   4. console.error(`Failed to publish notification. Code is ${err.code}, message is ${err.message}`);
-   5. } else {
-   6. console.info(`Succeeded in publishing notification.`);
-   7. }
-   8. };
-   9. // 通知Request对象
-   10. let notificationRequest: notificationManager.NotificationRequest = {
-   11. id: 1,
-   12. content: {
-   13. notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
-   14. normal: {
-   15. title: 'test_title',
-   16. text: 'test_text',
-   17. additionalText: 'test_additionalText'
-   18. }
-   19. },
-   20. appMessageId: 'test_appMessageId_1'
-   21. };
-   22. notificationManager.publish(notificationRequest, publishCallback);
-   ```
-
-   [ClearDuplicateNotifications.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Notification-Kit/Notification/entry/src/main/ets/filemanager/ClearDuplicateNotifications.ets#L30-L53)

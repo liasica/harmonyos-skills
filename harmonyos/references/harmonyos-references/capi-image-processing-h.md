@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: image_processing.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > image_processing.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:23+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:281f9bfce1cb94ad22267d8a6b7c217b7496942de946376748c068c10e9ad01c
+scraped_at: 2026-09-02T15:02:32+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5c43d79c24849e3e172acd54fc55f73779ae5951f1ccfe67df03ed0f00b69e12
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 声明图片处理函数。提供图片处理能力，包括色彩空间转换，元数据生成及图片缩放。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 函数
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -52,14 +46,10 @@ PhonePC/2in1TabletTV
 
 ## 函数说明
 
-PhonePC/2in1TabletTV
-
 ### OH\_ImageProcessing\_InitializeEnvironment()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageProcessing_ErrorCode OH_ImageProcessing_InitializeEnvironment(void)
+```c
+ImageProcessing_ErrorCode OH_ImageProcessing_InitializeEnvironment(void)
 ```
 
 **描述**
@@ -78,10 +68,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageProcessing\_DeinitializeEnvironment()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageProcessing_ErrorCode OH_ImageProcessing_DeinitializeEnvironment(void)
+```c
+ImageProcessing_ErrorCode OH_ImageProcessing_DeinitializeEnvironment(void)
 ```
 
 **描述**
@@ -100,10 +88,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageProcessing\_IsColorSpaceConversionSupported()
 
-PhonePC/2in1TabletTV
-
-```
-1. bool OH_ImageProcessing_IsColorSpaceConversionSupported(const ImageProcessing_ColorSpaceInfo* sourceImageInfo,const ImageProcessing_ColorSpaceInfo* destinationImageInfo)
+```c
+bool OH_ImageProcessing_IsColorSpaceConversionSupported(const ImageProcessing_ColorSpaceInfo* sourceImageInfo,const ImageProcessing_ColorSpaceInfo* destinationImageInfo)
 ```
 
 **描述**
@@ -116,8 +102,8 @@ PhonePC/2in1TabletTV
 
 | 参数项 | 描述 |
 | --- | --- |
-| const [ImageProcessing\_ColorSpaceInfo](api-imageprocessing-imageprocessing-colorspaceinfo.md)\* sourceImageInfo | 指向输入图片色彩空间信息的指针。 |
-| const [ImageProcessing\_ColorSpaceInfo](api-imageprocessing-imageprocessing-colorspaceinfo.md)\* destinationImageInfo | 指向输出图片色彩空间信息的指针， |
+| const [ImageProcessing\_ColorSpaceInfo](capi-imageprocessing-imageprocessing-colorspaceinfo.md)\* sourceImageInfo | 指向输入图片色彩空间信息的指针。 |
+| const [ImageProcessing\_ColorSpaceInfo](capi-imageprocessing-imageprocessing-colorspaceinfo.md)\* destinationImageInfo | 指向输出图片色彩空间信息的指针。 |
 
 **返回：**
 
@@ -127,10 +113,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageProcessing\_IsCompositionSupported()
 
-PhonePC/2in1TabletTV
-
-```
-1. bool OH_ImageProcessing_IsCompositionSupported(const ImageProcessing_ColorSpaceInfo* sourceImageInfo,const ImageProcessing_ColorSpaceInfo* sourceGainmapInfo,const ImageProcessing_ColorSpaceInfo* destinationImageInfo)
+```c
+bool OH_ImageProcessing_IsCompositionSupported(const ImageProcessing_ColorSpaceInfo* sourceImageInfo,const ImageProcessing_ColorSpaceInfo* sourceGainmapInfo,const ImageProcessing_ColorSpaceInfo* destinationImageInfo)
 ```
 
 **描述**
@@ -143,9 +127,9 @@ PhonePC/2in1TabletTV
 
 | 参数项 | 描述 |
 | --- | --- |
-| const [ImageProcessing\_ColorSpaceInfo](api-imageprocessing-imageprocessing-colorspaceinfo.md)\* sourceImageInfo | 指向输入图片色彩空间信息的指针。 |
-| const [ImageProcessing\_ColorSpaceInfo](api-imageprocessing-imageprocessing-colorspaceinfo.md)\* sourceGainmapInfo | 指向输入Gainmap色彩空间信息的指针。 |
-| const [ImageProcessing\_ColorSpaceInfo](api-imageprocessing-imageprocessing-colorspaceinfo.md)\* destinationImageInfo | 指向输出图片色彩空间信息的指针。 |
+| const [ImageProcessing\_ColorSpaceInfo](capi-imageprocessing-imageprocessing-colorspaceinfo.md)\* sourceImageInfo | 指向输入图片色彩空间信息的指针。 |
+| const [ImageProcessing\_ColorSpaceInfo](capi-imageprocessing-imageprocessing-colorspaceinfo.md)\* sourceGainmapInfo | 指向输入Gainmap色彩空间信息的指针。 |
+| const [ImageProcessing\_ColorSpaceInfo](capi-imageprocessing-imageprocessing-colorspaceinfo.md)\* destinationImageInfo | 指向输出图片色彩空间信息的指针。 |
 
 **返回：**
 
@@ -155,10 +139,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageProcessing\_IsDecompositionSupported()
 
-PhonePC/2in1TabletTV
-
-```
-1. bool OH_ImageProcessing_IsDecompositionSupported(const ImageProcessing_ColorSpaceInfo* sourceImageInfo,const ImageProcessing_ColorSpaceInfo* destinationImageInfo,const ImageProcessing_ColorSpaceInfo* destinationGainmapInfo)
+```c
+bool OH_ImageProcessing_IsDecompositionSupported(const ImageProcessing_ColorSpaceInfo* sourceImageInfo,const ImageProcessing_ColorSpaceInfo* destinationImageInfo,const ImageProcessing_ColorSpaceInfo* destinationGainmapInfo)
 ```
 
 **描述**
@@ -171,9 +153,9 @@ PhonePC/2in1TabletTV
 
 | 参数项 | 描述 |
 | --- | --- |
-| const [ImageProcessing\_ColorSpaceInfo](api-imageprocessing-imageprocessing-colorspaceinfo.md)\* sourceImageInfo | 指向输入图片色彩空间信息的指针。 |
-| const [ImageProcessing\_ColorSpaceInfo](api-imageprocessing-imageprocessing-colorspaceinfo.md)\* destinationImageInfo | 指向输出图片色彩空间信息的指针。 |
-| const [ImageProcessing\_ColorSpaceInfo](api-imageprocessing-imageprocessing-colorspaceinfo.md)\* destinationGainmapInfo | 指向输出Gainmap色彩空间信息的指针。 |
+| const [ImageProcessing\_ColorSpaceInfo](capi-imageprocessing-imageprocessing-colorspaceinfo.md)\* sourceImageInfo | 指向输入图片色彩空间信息的指针。 |
+| const [ImageProcessing\_ColorSpaceInfo](capi-imageprocessing-imageprocessing-colorspaceinfo.md)\* destinationImageInfo | 指向输出图片色彩空间信息的指针。 |
+| const [ImageProcessing\_ColorSpaceInfo](capi-imageprocessing-imageprocessing-colorspaceinfo.md)\* destinationGainmapInfo | 指向输出Gainmap色彩空间信息的指针。 |
 
 **返回：**
 
@@ -183,10 +165,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageProcessing\_IsMetadataGenerationSupported()
 
-PhonePC/2in1TabletTV
-
-```
-1. bool OH_ImageProcessing_IsMetadataGenerationSupported(const ImageProcessing_ColorSpaceInfo* sourceImageInfo)
+```c
+bool OH_ImageProcessing_IsMetadataGenerationSupported(const ImageProcessing_ColorSpaceInfo* sourceImageInfo)
 ```
 
 **描述**
@@ -199,7 +179,7 @@ PhonePC/2in1TabletTV
 
 | 参数项 | 描述 |
 | --- | --- |
-| const [ImageProcessing\_ColorSpaceInfo](api-imageprocessing-imageprocessing-colorspaceinfo.md)\* sourceImageInfo | 指向输入图片色彩空间信息的指针。 |
+| const [ImageProcessing\_ColorSpaceInfo](capi-imageprocessing-imageprocessing-colorspaceinfo.md)\* sourceImageInfo | 指向输入图片色彩空间信息的指针。 |
 
 **返回：**
 
@@ -209,10 +189,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageProcessing\_Create()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageProcessing_ErrorCode OH_ImageProcessing_Create(OH_ImageProcessing** imageProcessor, int32_t type)
+```c
+ImageProcessing_ErrorCode OH_ImageProcessing_Create(OH_ImageProcessing** imageProcessor, int32_t type)
 ```
 
 **描述**
@@ -236,10 +214,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageProcessing\_Destroy()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageProcessing_ErrorCode OH_ImageProcessing_Destroy(OH_ImageProcessing* imageProcessor)
+```c
+ImageProcessing_ErrorCode OH_ImageProcessing_Destroy(OH_ImageProcessing* imageProcessor)
 ```
 
 **描述**
@@ -262,10 +238,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageProcessing\_SetParameter()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageProcessing_ErrorCode OH_ImageProcessing_SetParameter(OH_ImageProcessing* imageProcessor,const OH_AVFormat* parameter)
+```c
+ImageProcessing_ErrorCode OH_ImageProcessing_SetParameter(OH_ImageProcessing* imageProcessor,const OH_AVFormat* parameter)
 ```
 
 **描述**
@@ -289,10 +263,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageProcessing\_GetParameter()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageProcessing_ErrorCode OH_ImageProcessing_GetParameter(OH_ImageProcessing* imageProcessor,OH_AVFormat* parameter)
+```c
+ImageProcessing_ErrorCode OH_ImageProcessing_GetParameter(OH_ImageProcessing* imageProcessor,OH_AVFormat* parameter)
 ```
 
 **描述**
@@ -316,10 +288,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageProcessing\_ConvertColorSpace()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageProcessing_ErrorCode OH_ImageProcessing_ConvertColorSpace(OH_ImageProcessing* imageProcessor,OH_PixelmapNative* sourceImage, OH_PixelmapNative* destinationImage)
+```c
+ImageProcessing_ErrorCode OH_ImageProcessing_ConvertColorSpace(OH_ImageProcessing* imageProcessor,OH_PixelmapNative* sourceImage, OH_PixelmapNative* destinationImage)
 ```
 
 **描述**
@@ -344,10 +314,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageProcessing\_Compose()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageProcessing_ErrorCode OH_ImageProcessing_Compose(OH_ImageProcessing* imageProcessor,OH_PixelmapNative* sourceImage, OH_PixelmapNative* sourceGainmap, OH_PixelmapNative* destinationImage)
+```c
+ImageProcessing_ErrorCode OH_ImageProcessing_Compose(OH_ImageProcessing* imageProcessor,OH_PixelmapNative* sourceImage, OH_PixelmapNative* sourceGainmap, OH_PixelmapNative* destinationImage)
 ```
 
 **描述**
@@ -373,10 +341,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageProcessing\_Decompose()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageProcessing_ErrorCode OH_ImageProcessing_Decompose(OH_ImageProcessing* imageProcessor,OH_PixelmapNative* sourceImage, OH_PixelmapNative* destinationImage, OH_PixelmapNative* destinationGainmap)
+```c
+ImageProcessing_ErrorCode OH_ImageProcessing_Decompose(OH_ImageProcessing* imageProcessor,OH_PixelmapNative* sourceImage, OH_PixelmapNative* destinationImage, OH_PixelmapNative* destinationGainmap)
 ```
 
 **描述**
@@ -402,10 +368,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageProcessing\_GenerateMetadata()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageProcessing_ErrorCode OH_ImageProcessing_GenerateMetadata(OH_ImageProcessing* imageProcessor,OH_PixelmapNative* sourceImage)
+```c
+ImageProcessing_ErrorCode OH_ImageProcessing_GenerateMetadata(OH_ImageProcessing* imageProcessor,OH_PixelmapNative* sourceImage)
 ```
 
 **描述**
@@ -429,10 +393,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_ImageProcessing\_EnhanceDetail()
 
-PhonePC/2in1TabletTV
-
-```
-1. ImageProcessing_ErrorCode OH_ImageProcessing_EnhanceDetail(OH_ImageProcessing* imageProcessor,OH_PixelmapNative* sourceImage, OH_PixelmapNative* destinationImage)
+```c
+ImageProcessing_ErrorCode OH_ImageProcessing_EnhanceDetail(OH_ImageProcessing* imageProcessor,OH_PixelmapNative* sourceImage, OH_PixelmapNative* destinationImage)
 ```
 
 **描述**

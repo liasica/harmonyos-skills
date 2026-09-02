@@ -3,12 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-permis
 title: 权限说明
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 数据类型 > 权限说明
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:15+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1dc6e5fd8b3d041dfdf21bbf756974790097cae7ee12b00b6d994764685534b6
+scraped_at: 2026-09-02T14:59:56+08:00
+doc_updated_at: 2026-07-09
+content_hash: sha256:964466f1834573a58936189eff6d8016e64316b6ebab85cead5b711b3fade2c0
 ---
 
-运动健康数据读写需要相应的权限，权限申请参考[申请运动健康服务](health-apply.md)，数据类型对应权限如下：
+运动健康数据读写以及运动联动接口调用需要相应的权限，权限申请参考[申请运动健康服务](health-apply.md)，数据类型对应权限如下：
+
+## Wearable
 
 | 数据类型 | Harmony SDK类型常量 | 读权限 | 写权限 |
 | --- | --- | --- | --- |
@@ -25,9 +27,17 @@ content_hash: sha256:1dc6e5fd8b3d041dfdf21bbf756974790097cae7ee12b00b6d994764685
 | 情绪 | [samplePointHelper.emotion.DATA\_TYPE](../harmonyos-references/health-api-samplepointhelper.md#常量-4) | 情绪数据（读） | 情绪数据（写） |
 | 心率变异性 | [samplePointHelper.heartRateVariability.DATA\_TYPE](../harmonyos-references/health-api-samplepointhelper.md#常量-6) | 心率数据（读） | 心率数据（写） |
 | 睡眠 | [healthSequenceHelper.sleepRecord.DATA\_TYPE](../harmonyos-references/health-api-healthsequencehelper.md#常量)  [healthSequenceHelper.sleepNapRecord.DATA\_TYPE](../harmonyos-references/health-api-healthsequencehelper.md#常量-1) | 睡眠数据（读） | 睡眠数据（写） |
-| 锻炼记录 | [exerciseSequenceHelper.DATA\_TYPE](../harmonyos-references/health-api-exercisedequencehelper.md#常量) | 锻炼记录概要（读）  锻炼记录详情数据（读）  锻炼记录位置详情数据（读） | 锻炼记录概要（写）  锻炼记录详情数据（写）  锻炼记录位置详情数据（写） |
+| 锻炼记录 | [exerciseSequenceHelper.DATA\_TYPE](../harmonyos-references/health-api-exercisesequencehelper.md#常量) | 锻炼记录概要（读）  锻炼记录详情数据（读）  锻炼记录位置详情数据（读） | 锻炼记录概要（写）  锻炼记录详情数据（写）  锻炼记录位置详情数据（写） |
 
-说明
+## Lite Wearable
+
+| 权限名称 | 权限对应字段和取值 | 说明 |
+| --- | --- | --- |
+| 运动联动 | scopes: ['https://www.huawei.com/healthkit/workout'] | 管理运动联动的开关，打开后可调用运动联动相关的开关。 |
+| 锻炼记录概要读权限 | readDataTypes: [healthStore.healthDataTypes.WORKOUT\_SUMMARY] | 开启后可读取锻炼数据。 |
+| 锻炼记录概要写权限 | writeDataTypes: [healthStore.healthDataTypes.WORKOUT\_SUMMARY] | 开启后可写入锻炼数据。 |
+
+**说明** 
 
 * 如需读/写锻炼记录，请申请锻炼记录概要的读/写权限。
 * 如需读/写锻炼记录且关联对应的详情数据，则需同时申请锻炼记录概要读/写权限、锻炼记录详情数据的读/写权限。

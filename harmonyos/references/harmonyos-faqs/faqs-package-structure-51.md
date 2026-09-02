@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 使用hdc命令安装release HAP包到设备时上报“INSTALL_FAILED_APP_SOURCE_NOT_TRUSTED”错误
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 使用hdc命令安装release HAP包到设备时上报“INSTALL_FAILED_APP_SOURCE_NOT_TRUSTED”错误
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:36+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:14+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:976e4b848e13892c254228db5244aa41d052356714353a58c9aee363232dbc12
 ---
 

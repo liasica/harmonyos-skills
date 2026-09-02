@@ -3,64 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 订阅通知类事件
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全审计 > 多客户端订阅场景 > 订阅通知类事件
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:31:38+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:58382fb82cd0ec94efcb7fd74f8685b71916b2e36e03d9cc07e8b22e858cbe2b
+scraped_at: 2026-09-02T14:59:30+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:ce76b951dd6fda00bebd595b628a8382e747840dc098ec7f6e1ead380c500819
 ---
 
 ## 场景介绍
 
-从6.0.0(20)开始，新增提供统一的安全审计数据多客户端订阅/取消订阅与添加/删除过滤条件接口，应用可以获取设备上的安全审计数据（如下表），并按需进行过滤，以支撑审计相关业务。
-
-| 审计事件ID | 说明 |
-| --- | --- |
-| 0x027000000 | 剪切板复制粘贴事件 |
-| 0x010000100 | 账号登录登出事件 |
-| 0x007000000 | 窗口截屏录屏投屏事件 |
-| 0x00F000000 | 移动存储插拔事件，如U盘、存储卡等具有存储功能的外设插拔事件 |
-| 0x02E000000 | 打印机事件 |
-| 0x01C000007 | 文件事件 |
-| 0x01C000008 | 进程创建退出事件 |
-| 0x01C000009 | 网络事件 |
-| 0x01C00000A | KIA文件拦截事件 |
-| 0x02D000000 | 相机事件 |
-| 0x010000000 | 应用事件 |
-| 0x011000000 | edm事件 |
-| 0x012003000 | 证书操作事件 |
-| 0x01C00000B | KIA文件新增事件 |
-| 0x01C00000C | KIA文件变种事件 |
-| 0x01C000012 | KIA文件读事件 |
-| 0x01C00000E | 网络流量事件 |
-| 0x01C00000F | 网络连接事件 |
-| 0x00B000000 | 应用权限变更事件 |
-| 0x003000001 | DNS审计事件 |
-| 0x01C001100 | 文件拦截事件 |
-| 0x018000100 | app安装拦截事件 |
-| 0x018000101 | app卸载拦截事件 |
-| 0x018000102 | app更新拦截事件 |
-| 0x018000103 | app恢复拦截事件 |
-| 0x018000104 | app启动拦截事件 |
-| 0x030000000 | USB访问拦截事件 |
-| 0x0F000001 | SMB(Samba)外发事件  **起始版本：** 6.1.0(23) |
-| 0x1C000014 | KIA文件秒开事件  **起始版本：** 6.1.0(23) |
-| 0x27000100 | HDC(HarmonyOS Device Connector)调测文件事件  **起始版本：** 6.1.0(23) |
-| 0x27000101 | HDC(HarmonyOS Device Connector)调测拦截事件  **起始版本：** 6.1.0(23) |
-| 0x2F000000 | 多用户空间数据互传事件  **起始版本：** 6.1.0(23) |
-| 0x2F000001 | 多用户空间互换审核策略事件  **起始版本：** 6.1.0(23) |
-| 0x30000100 | 串口访问审计事件  **起始版本：** 6.1.0(23) |
-| 0x03000002 | 网络拦截事件  **起始版本：** 6.1.0(23) |
-| 0x03000100 | WI-FI拦截事件  **起始版本：** 6.1.0(23) |
-| 0x2E000001 | 打印拦截事件  **起始版本：** 6.1.0(23) |
+从6.0.0(20)开始，新增提供统一的安全审计数据多客户端订阅/取消订阅与添加/删除过滤条件接口，应用可以获取设备上的安全审计数据（详见[API参考](../harmonyos-references/devicesecurity-securityaudit-api.md#notifyevent)），并按需进行过滤，以支撑审计相关业务。
 
 ## 约束与限制
 
-1. 当前能力仅支持2in1设备。
+1. 当前能力仅支持PC/2in1设备。
 2. 一个进程最大只允许创建2个客户端实例，当前设备最多只允许创建16个客户端实例。
 3. 一个客户端实例最大只允许设置256个Filter，每个Filter限制10条过滤value。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/VuD_dgTkRs6S_CzjY2SIDQ/zh-cn_image_0000002589244703.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/5kZt2P0_RPyHEqDiwxB3fw/zh-cn_image_0000002736433455.png)
 
 **流程说明：**
 
@@ -72,7 +32,7 @@ content_hash: sha256:58382fb82cd0ec94efcb7fd74f8685b71916b2e36e03d9cc07e8b22e858
 6. 当开发者应用不需要过滤/使用该审计数据时，开发者可以使用1中创建的实例解除过滤条件，取消对应的订阅事件。
 7. 当开发者应用不需要使用当前实例时，开发者可以删除实例。
 
-   说明
+   **说明** 
 
    支持先设置过滤条件再订阅事件。
 
@@ -93,98 +53,98 @@ content_hash: sha256:58382fb82cd0ec94efcb7fd74f8685b71916b2e36e03d9cc07e8b22e858
 
 ## 开发步骤
 
-说明
+**说明** 
 
 * 在开发准备过程中，需要申请权限：ohos.permission.QUERY\_AUDIT\_EVENT。
-* 只允许清单内的企业类应用申请该权限，申请方式请参考：[申请使用企业类应用可用权限](permissions-for-enterprise-apps.md)。
+* 只允许清单内的企业类应用申请该权限，申请方式请参考：[企业类应用可用权限](permissions-for-enterprise-apps.md)。
 
 1. 导入Device Security Kit模块及相关公共模块。
 
-   ```
-   1. import { securityAudit } from '@kit.DeviceSecurityKit';
-   2. import { BusinessError} from '@kit.BasicServicesKit';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { securityAudit } from '@kit.DeviceSecurityKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 创建审计通知类事件客户端实例。
 
-   ```
-   1. let client: securityAudit.Client | undefined = undefined;
-   2. const TAG = "SecurityAuditJsTest";
-   3. const callback = (event: securityAudit.AuditEvent) => {
-   4. hilog.info(0x0000, TAG, '%{public}s', 'Security_SecurityAudit_JsApi_Func eventId= ' + event.eventId);
-   5. hilog.info(0x0000, TAG, '%{public}s', 'Security_SecurityAudit_JsApi_Func version= ' + event.version);
-   6. hilog.info(0x0000, TAG, '%{public}s', 'Security_SecurityAudit_JsApi_Func content= ' + event.content);
-   7. hilog.info(0x0000, TAG, '%{public}s', 'Security_SecurityAudit_JsApi_Func timestamp= ' + event.timestamp);
-   8. hilog.info(0x0000, TAG, '%{public}s', 'Security_SecurityAudit_JsApi_Func userId= ' + event.userId);
-   9. hilog.info(0x0000, TAG, '%{public}s', 'Security_SecurityAudit_JsApi_Func deviceId= ' + event.deviceId);
-   10. };
-   11. try {
-   12. client = securityAudit.newClient(callback);
-   13. } catch (err) {
-   14. let e: BusinessError = err as BusinessError;
-   15. hilog.error(0x0000, TAG, 'newClient failed: %{public}d %{public}s', e.code, e.message);
-   16. }
+   ```typescript
+   let client: securityAudit.Client | undefined = undefined;
+   const TAG = 'SecurityAuditJsTest';
+   const callback = (event: securityAudit.AuditEvent): void => {
+     hilog.info(0x0000, TAG, '%{public}s', 'Security_SecurityAudit_JsApi_Func eventId= ' + event.eventId);
+     hilog.info(0x0000, TAG, '%{public}s', 'Security_SecurityAudit_JsApi_Func version= ' + event.version);
+     hilog.info(0x0000, TAG, '%{public}s', 'Security_SecurityAudit_JsApi_Func content= ' + event.content);
+     hilog.info(0x0000, TAG, '%{public}s', 'Security_SecurityAudit_JsApi_Func timestamp= ' + event.timestamp);
+     hilog.info(0x0000, TAG, '%{public}s', 'Security_SecurityAudit_JsApi_Func userId= ' + event.userId);
+     hilog.info(0x0000, TAG, '%{public}s', 'Security_SecurityAudit_JsApi_Func deviceId= ' + event.deviceId);
+   };
+   try {
+     client = securityAudit.newClient(callback);
+   } catch (err) {
+     let e: BusinessError = err as BusinessError;
+     hilog.error(0x0000, TAG, 'newClient failed: %{public}d %{public}s', e.code, e.message);
+   }
    ```
 3. 订阅审计通知类事件。
 
-   ```
-   1. try {
-   2. hilog.info(0x0000, TAG, 'subscribe begin.');
-   3. client?.subscribe([0x02D000000]);
-   4. hilog.info(0x0000, TAG, 'Succeeded in subscribe.');
-   5. } catch (err) {
-   6. let e: BusinessError = err as BusinessError;
-   7. hilog.error(0x0000, TAG, 'subscribe failed: %{public}d %{public}s', e.code, e.message);
-   8. }
+   ```typescript
+   try {
+     hilog.info(0x0000, TAG, 'subscribe begin.');
+     client?.subscribe([0x02D000000]);
+     hilog.info(0x0000, TAG, 'Succeeded in subscribe.');
+   } catch (err) {
+     let e: BusinessError = err as BusinessError;
+     hilog.error(0x0000, TAG, 'subscribe failed: %{public}d %{public}s', e.code, e.message);
+   }
    ```
 4. 设置审计通知类事件过滤条件。
 
-   ```
-   1. let filter : securityAudit.Filter = {
-   2. type: 0x00000200,
-   3. isInclude: true,
-   4. values : ["2"]
-   5. };
-   6. try {
-   7. hilog.info(0x0000, TAG, 'addFilter begin.');
-   8. client?.addFilter(0x02D000000, filter);
-   9. hilog.info(0x0000, TAG, 'Succeeded in addFilter.');
-   10. } catch (err) {
-   11. let e: BusinessError = err as BusinessError;
-   12. hilog.error(0x0000, TAG, 'addFilter failed: %{public}d %{public}s', e.code, e.message);
-   13. }
+   ```typescript
+   let filter : securityAudit.Filter = {
+     type: 0x00000200,
+     isInclude: true,
+     values : ['2']
+   };
+   try {
+     hilog.info(0x0000, TAG, 'addFilter begin.');
+     client?.addFilter(0x02D000000, filter);
+     hilog.info(0x0000, TAG, 'Succeeded in addFilter.');
+   } catch (err) {
+     let e: BusinessError = err as BusinessError;
+     hilog.error(0x0000, TAG, 'addFilter failed: %{public}d %{public}s', e.code, e.message);
+   }
    ```
 5. 解除审计通知类事件订阅。
 
-   ```
-   1. try {
-   2. hilog.info(0x0000, TAG, 'unsubscribe begin.');
-   3. client?.unsubscribe([0x2E000000]);
-   4. hilog.info(0x0000, TAG, 'Succeeded in unsubscribe.');
-   5. } catch (err) {
-   6. let e: BusinessError = err as BusinessError;
-   7. hilog.error(0x0000, TAG, 'unsubscribe failed: %{public}d %{public}s', e.code, e.message);
-   8. }
+   ```typescript
+   try {
+     hilog.info(0x0000, TAG, 'unsubscribe begin.');
+     client?.unsubscribe([0x02D000000]);
+     hilog.info(0x0000, TAG, 'Succeeded in unsubscribe.');
+   } catch (err) {
+     let e: BusinessError = err as BusinessError;
+     hilog.error(0x0000, TAG, 'unsubscribe failed: %{public}d %{public}s', e.code, e.message);
+   }
    ```
 6. 解除审计通知类事件过滤条件。
 
-   ```
-   1. try {
-   2. hilog.info(0x0000, TAG, 'removeFilter begin.');
-   3. client?.removeFilter(0x02D000000, filter);
-   4. hilog.info(0x0000, TAG, 'Succeeded in removeFilter.');
-   5. } catch (err) {
-   6. let e: BusinessError = err as BusinessError;
-   7. hilog.error(0x0000, TAG, 'removeFilter failed: %{public}d %{public}s', e.code, e.message);
-   8. }
+   ```typescript
+   try {
+     hilog.info(0x0000, TAG, 'removeFilter begin.');
+     client?.removeFilter(0x02D000000, filter);
+     hilog.info(0x0000, TAG, 'Succeeded in removeFilter.');
+   } catch (err) {
+     let e: BusinessError = err as BusinessError;
+     hilog.error(0x0000, TAG, 'removeFilter failed: %{public}d %{public}s', e.code, e.message);
+   }
    ```
 7. 删除审计通知类事件客户端实例。
 
-   ```
-   1. try {
-   2. securityAudit.deleteClient(client);
-   3. } catch (err) {
-   4. let e: BusinessError = err as BusinessError;
-   5. hilog.error(0x0000, TAG, 'deleteClient failed: %{public}d %{public}s', e.code, e.message);
-   6. }
+   ```typescript
+   try {
+     securityAudit.deleteClient(client);
+   } catch (err) {
+     let e: BusinessError = err as BusinessError;
+     hilog.error(0x0000, TAG, 'deleteClient failed: %{public}d %{public}s', e.code, e.message);
+   }
    ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-introduct
 title: Map Kit简介
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > Map Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e890018ba44bc75a436545c77bed7d47b9b6bfbe5275d2e3fb614eec22783b73
+scraped_at: 2026-09-02T14:59:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:db0981e40eb5a167704a675c31fd09a4e995d275310ec88a430a381c0299a3fa
 ---
 
 Map Kit（地图服务）为开发者提供强大而便捷的地图能力，助力全球开发者实现个性化显示地图、位置搜索和路径规划等功能，轻松完成地图构建工作。您可以轻松地在HarmonyOS应用/元服务中集成地图相关的功能，全方位提升用户体验。
@@ -38,7 +38,18 @@ Map Kit提供以下功能，满足绝大多数地图开发的需求：
 
 ### 支持的设备
 
-本kit仅适用于Phone、Tablet、PC/2in1和Wearable。
+| 能力 | 支持的设备 |
+| --- | --- |
+| [创建地图](map-presenting.md) | 支持Phone、Tablet、PC/2in1和Wearable。  **说明：**  [室内图](map-presenting.md#室内图)功能支持Phone、Tablet和PC/2in1。 |
+| [地图交互](map-controls-and-interaction.md) | 支持Phone、Tablet、PC/2in1和Wearable。 |
+| [在地图上绘制](map-marker.md) | 支持Phone、Tablet、PC/2in1和Wearable。  [矢量图层](map-mvt-overlay.md)功能支持Phone、Tablet和PC/2in1。  [流场图层](map-flow-field.md)功能支持Phone、Tablet和PC/2in1。 |
+| [位置搜索](map-site-search.md) | 支持Phone、Tablet、PC/2in1和Wearable。 |
+| [路径规划](map-navi-routes.md) | 支持Phone、Tablet、PC/2in1和Wearable。 |
+| [静态图](map-static-diagram.md) | 支持Phone、Tablet、PC/2in1和Wearable。 |
+| [地图Picker](map-location-details.md) | 支持Phone、Tablet和PC/2in1。 |
+| [通过地图应用实现导航等能力](map-petalmaps.md) | 支持Phone、Tablet和PC/2in1。  **说明：**  [打开地图应用的打车页面功能](map-petalmaps.md#打开地图应用打车页面)支持Phone和Tablet。 |
+| [离线地图](map-offlinemapdata.md) | 支持Phone、Tablet和PC/2in1。 |
+| [地图计算工具](map-convert-coordinate.md) | 支持Phone、Tablet、PC/2in1和Wearable。 |
 
 ### 示例代码
 
@@ -47,5 +58,5 @@ Map Kit（地图服务）示例代码，请参考[示例代码](https://gitcode.
 ## 模拟器支持情况
 
 * 通用差异：请参见“[模拟器与真机的差异](ide-emulator-specification.md#section1227613205203)”。
-* ARM模拟器：petalMaps命名空间下相关功能不支持，我的位置功能不支持。
-* x86模拟器：petalMaps命名空间下相关功能不支持，我的位置功能不支持，手表不支持。
+* 模拟器：我的位置功能不支持，通过地图应用实现导航等能力相关功能不支持，离线地图相关功能不支持。
+* Map Kit所有功能不支持在x86模拟器的Wearable设备上运行。

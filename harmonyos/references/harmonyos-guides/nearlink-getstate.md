@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-gets
 title: 查询星闪开关状态
 breadcrumb: 指南 > 系统 > 网络 > NearLink Kit（星闪服务） > 查询星闪开关状态
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:48+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b20b504880c34c794be3225b1de9d105b334a69af74572f8790795b88e03b175
+scraped_at: 2026-09-02T14:59:34+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:5e552e303798d2161bdf5da70eb7482104245a5855e86339dbb607434750468c
 ---
 
 ## 场景介绍
@@ -19,49 +19,57 @@ content_hash: sha256:b20b504880c34c794be3225b1de9d105b334a69af74572f8790795b88e0
 | 接口名 | 描述 |
 | --- | --- |
 | [getState](../harmonyos-references/nearlink-manager.md#getstate)(): NearlinkState | 主动查询星闪开关状态。 |
-| [on](../harmonyos-references/nearlink-manager.md#on-statechange)(type: 'stateChange', callback: Callback<NearlinkState>): void | 订阅星闪开关状态变化事件。 |
-| [off](../harmonyos-references/nearlink-manager.md#off-statechange)(type: 'stateChange', callback?: Callback<NearlinkState>): void | 取消订阅星闪开关状态变化事件。 |
+| [on](../harmonyos-references/nearlink-manager.md#on-statechange)(type: 'stateChange', callback: Callback<NearlinkState>): void | 订阅星闪开关状态变化事件。使用callback异步回调。 |
+| [off](../harmonyos-references/nearlink-manager.md#off-statechange)(type: 'stateChange', callback?: Callback<NearlinkState>): void | 取消订阅星闪开关状态变化事件。使用callback异步回调。 |
 
 ## 开发步骤
 
-说明
+**说明** 
 
 可以在设备“设置 > 多设备协同 > 星闪”（不同产品或系统版本可能为“设置 > 星闪和蓝牙 > 星闪”）路径下，打开或关闭星闪，触发开关状态的变化。
 
 1. 导入相关模块。
 
-   ```
-   1. import { manager } from '@kit.NearLinkKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { manager } from '@kit.NearLinkKit';
    ```
 2. 发起星闪状态查询。
 
-   ```
-   1. try {
-   2. let state : manager.NearlinkState = manager.getState();
-   3. console.info('state = '+ JSON.stringify(state));
-   4. } catch (err) {
-   5. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-   6. }
+   ```typescript
+   try {
+     let state: manager.NearlinkState = manager.getState();
+     hilog.info(this.domainId, this.logTag, `NearLink state: ${JSON.stringify(state)}`);
+     // ...
+   } catch (err) {
+     hilog.error(this.domainId, this.logTag,
+       `errCode: ${(err as BusinessError).code}, errMessage: ${(err as BusinessError).message}`);
+   }
    ```
 3. 或者通过注册的方式订阅星闪开关状态变化。
 
-   ```
-   1. let onReceiveEvent:(data: manager.NearlinkState) => void = (data: manager.NearlinkState) => {
-   2. console.info('nearlink state = '+ JSON.stringify(data));
-   3. }
-   4. try {
-   5. manager.on('stateChange', onReceiveEvent);
-   6. } catch (err) {
-   7. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-   8. }
+   ```typescript
+   let onReceiveEvent: (data: manager.NearlinkState) => void = (data: manager.NearlinkState) => {
+     hilog.info(this.domainId, this.logTag, `NearLink state changed: ${JSON.stringify(data)}`);
+     // ...
+   };
+   try {
+     manager.on('stateChange', onReceiveEvent);
+     hilog.info(this.domainId, this.logTag, `Subscribed to stateChange`);
+   } catch (err) {
+     hilog.error(this.domainId, this.logTag,
+       `errCode: ${(err as BusinessError).code}, errMessage: ${(err as BusinessError).message}`);
+   }
    ```
 4. 取消订阅星闪开关状态变化，其中onReceiveEvent是步骤3中定义的回调函数。
 
-   ```
-   1. try {
-   2. manager.off('stateChange', onReceiveEvent);
-   3. } catch (err) {
-   4. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-   5. }
+   ```typescript
+   try {
+     manager.off('stateChange');
+     hilog.info(this.domainId, this.logTag, `Unsubscribed from stateChange`);
+   } catch (err) {
+     hilog.error(this.domainId, this.logTag,
+       `errCode: ${(err as BusinessError).code}, errMessage: ${(err as BusinessError).message}`);
+   }
    ```

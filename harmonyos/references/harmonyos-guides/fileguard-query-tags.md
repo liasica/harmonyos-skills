@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fileguard-que
 title: 获取文件属性标签
 breadcrumb: 指南 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > 文件分级管控 > 获取文件属性标签
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:06+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:de8d4b4a449fb59b6068bebbe0e61a88375ce8975eaea2280ff8703b13eed0f4
+scraped_at: 2026-09-02T14:50:02+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:84680ab492d35085cde4d736706ef8756b56bb40450c8b6d1bd42d1fac88d105
 ---
 
 ## 场景介绍
@@ -25,37 +25,54 @@ Enterprise Data Guard Kit为应用提供获取文件属性标签的能力，Harm
 
 1. 导入模块。
 
+   ```typescript
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { fileGuard } from '@kit.EnterpriseDataGuardKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
-   1. import { fileGuard } from '@kit.EnterpriseDataGuardKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
-   ```
-2. 初始化[FileGuard](../harmonyos-references/dataguard-fileguard.md#fileguard)对象guard，调用接口queryFileTag，获取文件属性标签。
+2. 初始化[FileGuard](../harmonyos-references/dataguard-fileguard.md#fileguard)对象guard，调用接口[queryFileTag](../harmonyos-references/dataguard-fileguard.md#queryfiletag)，获取文件属性标签。
 
    * 通过回调函数方式，获取文件属性标签。
 
-     ```
-     1. function queryFileTagCallback() {
-     2. let guard: fileGuard.FileGuard = new fileGuard.FileGuard();
-     3. let path: string = '/data/service/el2/test/test.txt';
-     4. guard.queryFileTag(path, (err: BusinessError, data: fileGuard.FileTagInfo) => {
-     5. if (err) {
-     6. console.error(`Failed to query file tag. Code: ${err.code}, message: ${err.message}.`);
-     7. return;
-     8. }
-     9. console.info(`Succeeded in querying file tag.`);
-     10. });
-     11. }
+     ```typescript
+     const TAG: string = 'FileGuard_FileTag';
+     const DOMAIN: number = 0x0000;
+
+     // ...
+     /**
+      * 获取文件属性标签。使用callback异步回调。
+      */
+     function queryFileTagCallback() {
+       let guard: fileGuard.FileGuard = new fileGuard.FileGuard();
+       let path: string = '/data/service/el2/test/test1.txt';
+       guard.queryFileTag(path, (err: BusinessError, data: fileGuard.FileTagInfo) => {
+         if (err) {
+           hilog.error(DOMAIN, TAG, `Failed to query file tag. Code: ${err.code}, message: ${err.message}.`);
+           return;
+         }
+         hilog.info(DOMAIN, TAG,
+           `Succeeded in querying file tag. securityLevel: ${data.securityLevel}, tag: ${data.tag}.`);
+       });
+     }
      ```
    * 通过Promise方式，获取文件属性标签。
 
-     ```
-     1. function queryFileTagPromise() {
-     2. let guard: fileGuard.FileGuard = new fileGuard.FileGuard();
-     3. let path: string = '/data/service/el2/test/test.txt';
-     4. guard.queryFileTag(path).then((data: fileGuard.FileTagInfo) => {
-     5. console.info(`Succeeded in querying file tag.`);
-     6. }).catch((err: BusinessError) => {
-     7. console.error(`Failed to query file tag. Code: ${err.code}, message: ${err.message}.`);
-     8. });
-     9. }
+     ```typescript
+     const TAG: string = 'FileGuard_FileTag';
+     const DOMAIN: number = 0x0000;
+
+     // ...
+     /**
+      * 获取文件属性标签。使用Promise异步回调。
+      */
+     function queryFileTagPromise() {
+       let guard: fileGuard.FileGuard = new fileGuard.FileGuard();
+       let path: string = '/data/service/el2/test/test2.txt';
+       guard.queryFileTag(path).then((data: fileGuard.FileTagInfo) => {
+         hilog.info(DOMAIN, TAG,
+           `Succeeded in querying file tag. securityLevel: ${data.securityLevel}, tag: ${data.tag}.`);
+       }).catch((err: BusinessError) => {
+         hilog.error(DOMAIN, TAG, `Failed to query file tag. Code: ${err.code}, message: ${err.message}.`);
+       });
+     }
      ```

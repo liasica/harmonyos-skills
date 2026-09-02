@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-codelinte
 title: 正确性规则@correctness
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 正确性规则@correctness
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:32+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a68f01d58dc658a4c3bc977a74e3cad8af6d90f7ebed053801a45fca68daf818
+scraped_at: 2026-09-02T14:50:53+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:1b9d9ddc7ca008bd1e64cf20a7e88fa9ec5a1609cf4d99d3b12f26efc82dc458
 ---
 
 * **[@correctness/avsession-buttons-check](ide-avsession-buttons-check.md)**
@@ -20,3 +20,7 @@ content_hash: sha256:a68f01d58dc658a4c3bc977a74e3cad8af6d90f7ebed053801a45fca68d
 * **[@correctness/redundant-dependency-check](ide-redundant-dependency-check.md)**
 * **[@correctness/v1-nested-object-property-change-format-check](ide-v1-nested-object-property-change-format-check.md)**
 * **[@correctness/v1-state-object-member-used-in-function-parameter-check](ide-v1-state-object-member-used-in-fun-parameter.md)**
+* **[@correctness/accessibility-label-check](ide-accessibility-label-check.md)**
+* **[@correctness/accessibility-focus-redundancy-check](ide-accessibility-focus-redundancy-check.md)**
+* **[@correctness/accessibility-type-redundancy-check](ide-accessibility-type-redundancy-check.md)**
+* **[@correctness/accessibility-status-missing-check](ide-accessibility-status-missing-check.md)**

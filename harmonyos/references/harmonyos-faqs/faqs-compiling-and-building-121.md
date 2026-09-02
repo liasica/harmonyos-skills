@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-and-building-121
-title: 用户目录下没有.npmrc文件
-breadcrumb: FAQ > DevEco Studio > 编译构建 > 用户目录下没有.npmrc文件
+title: 用户目录下没有npmrc文件
+breadcrumb: FAQ > DevEco Studio > 编译构建 > 用户目录下没有npmrc文件
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:33+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:c199cbc41af00e8b648419836d44b8ceef6d78d1b588b89d15aeaeaec7acce75
+scraped_at: 2026-09-02T14:54:54+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:5df9882c66182f42c3646e6bb0d6462df3a308b891fdb1c3941e92cd7be1940f
 ---
 
 **问题现象**
@@ -20,7 +20,7 @@ content_hash: sha256:c199cbc41af00e8b648419836d44b8ceef6d78d1b588b89d15aeaeaec7a
 
 在用户目录下创建.npmrc文件，配置以下信息：
 
-```
-1. registry=https://repo.huaweicloud.com/repository/npm/
-2. @ohos:registry=https://repo.harmonyos.com/npm/
+```powershell
+registry=https://repo.huaweicloud.com/repository/npm/
+@ohos:registry=https://repo.harmonyos.com/npm/
 ```

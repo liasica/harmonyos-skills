@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: 废弃的Interface (AudioPlayer, deprecated)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > 废弃的Interface (AudioPlayer, deprecated)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:46+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7e2a3aa6dc5af835d241805ae470ec2c7cb9fd7e3dbe831bdd304e2c75235f2b
+scraped_at: 2026-09-02T15:02:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6072eee6410de6cee53612828e1887834816dda0d3c9b19358cc8883daef3b3f
 ---
 
-说明
+**说明** 
 
 从API version 6开始支持，从API version 9开始废弃，建议使用[AVPlayer](arkts-apis-media-avplayer.md)替代。
 
@@ -16,21 +16,17 @@ content_hash: sha256:7e2a3aa6dc5af835d241805ae470ec2c7cb9fd7e3dbe831bdd304e2c752
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { media } from '@kit.MediaKit';
+```ts
+import { media } from '@kit.MediaKit';
 ```
 
 ## 属性(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.Multimedia.Media.AudioPlayer
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| src | string | 否 | 否 | 音频媒体URI，支持当前主流的音频格式(m4a、aac、mp3、ogg、wav、amr)。  **支持路径示例**：  1. fd类型播放：fd://xx    2. http网络播放: http://xx  3. https网络播放: https://xx  4. hls网络播放路径：http://xx或者https://xx  **需要权限：** ohos.permission.READ\_MEDIA 或 ohos.permission.INTERNET。 |
+| src | string | 否 | 否 | 音频媒体URI，支持当前主流的音频格式(m4a、aac、mp3、ogg、wav、amr)。  **支持路径示例**：  1. fd类型播放：fd://xx    2. http网络播放：http://xx  3. https网络播放：https://xx  4. hls网络播放路径：http://xx或者https://xx  **需要权限：** ohos.permission.READ\_MEDIA 或 ohos.permission.INTERNET。 |
 | fdSrc9+ | [AVFileDescriptor](arkts-apis-media-i.md#avfiledescriptor9) | 否 | 否 | 音频媒体文件描述，使用场景：应用中的音频资源被连续存储在同一个文件中。  **使用示例**：  假设一个连续存储的音乐文件:  音乐1(地址偏移:0，字节长度:100)  音乐2(地址偏移:101，字节长度:50)  音乐3(地址偏移:151，字节长度:150)  1. 播放音乐1：AVFileDescriptor { fd = 资源句柄; offset = 0; length = 100; }  2. 播放音乐2：AVFileDescriptor { fd = 资源句柄; offset = 101; length = 50; }  3. 播放音乐3：AVFileDescriptor { fd = 资源句柄; offset = 151; length = 150; }  假设是一个独立的音乐文件: 请使用src=fd://xx |
 | loop | boolean | 否 | 否 | 音频循环播放属性，设置为'true'表示循环播放。 |
 | audioInterruptMode9+ | [audio.InterruptMode](arkts-apis-audio-e.md#interruptmode9) | 否 | 是 | 音频焦点模型。 |
@@ -40,13 +36,11 @@ PhonePC/2in1TabletTVWearable
 
 ## play(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 play(): void
 
 开始播放音频资源，需在'dataLoad'事件成功触发后，才能调用。
 
-说明
+**说明** 
 
 从API version 6开始支持，从API version 9开始废弃，建议使用[AVPlayer.play](arkts-apis-media-avplayer.md#play9)替代。
 
@@ -54,22 +48,20 @@ play(): void
 
 **示例：**
 
-```
-1. audioPlayer.on('play', () => {    // 设置'play'事件回调。
-2. console.info('audio play called');
-3. });
-4. audioPlayer.play();
+```ts
+audioPlayer.on('play', () => {    // 设置'play'事件回调。
+  console.info('audio play called');
+});
+audioPlayer.play();
 ```
 
 ## pause(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 pause(): void
 
 暂停播放音频资源。
 
-说明
+**说明** 
 
 从API version 6开始支持，从API version 9开始废弃，建议使用[AVPlayer.pause](arkts-apis-media-avplayer.md#pause9)替代。
 
@@ -77,22 +69,20 @@ pause(): void
 
 **示例：**
 
-```
-1. audioPlayer.on('pause', () => {    // 设置'pause'事件回调。
-2. console.info('audio pause called');
-3. });
-4. audioPlayer.pause();
+```ts
+audioPlayer.on('pause', () => {    // 设置'pause'事件回调。
+  console.info('audio pause called');
+});
+audioPlayer.pause();
 ```
 
 ## stop(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 stop(): void
 
 停止播放音频资源。
 
-说明
+**说明** 
 
 从API version 6开始支持，从API version 9开始废弃，建议使用[AVPlayer.stop](arkts-apis-media-avplayer.md#stop9)替代。
 
@@ -100,22 +90,20 @@ stop(): void
 
 **示例：**
 
-```
-1. audioPlayer.on('stop', () => {    // 设置'stop'事件回调。
-2. console.info('audio stop called');
-3. });
-4. audioPlayer.stop();
+```ts
+audioPlayer.on('stop', () => {    // 设置'stop'事件回调。
+  console.info('audio stop called');
+});
+audioPlayer.stop();
 ```
 
 ## reset(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 reset(): void
 
 重置播放音频资源。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[AVPlayer.reset](arkts-apis-media-avplayer.md#reset9)替代。
 
@@ -123,22 +111,20 @@ reset(): void
 
 **示例：**
 
-```
-1. audioPlayer.on('reset', () => {    // 设置'reset'事件回调。
-2. console.info('audio reset called');
-3. });
-4. audioPlayer.reset();
+```ts
+audioPlayer.on('reset', () => {    // 设置'reset'事件回调。
+  console.info('audio reset called');
+});
+audioPlayer.reset();
 ```
 
 ## seek(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 seek(timeMs: number): void
 
 跳转到指定播放位置。
 
-说明
+**说明** 
 
 从API version 6开始支持，从API version 9开始废弃，建议使用[AVPlayer.seek](arkts-apis-media-avplayer.md#seek9)替代。
 
@@ -152,26 +138,24 @@ seek(timeMs: number): void
 
 **示例：**
 
-```
-1. audioPlayer.on('timeUpdate', (seekDoneTime: number) => {    // 设置'timeUpdate'事件回调。
-2. if (seekDoneTime == null) {
-3. console.error('Failed to seek');
-4. return;
-5. }
-6. console.info('Succeeded in seek. seekDoneTime: ' + seekDoneTime);
-7. });
-8. audioPlayer.seek(30000);    // seek到30000ms的位置。
+```ts
+audioPlayer.on('timeUpdate', (seekDoneTime: number) => {    // 设置'timeUpdate'事件回调。
+  if (seekDoneTime == null) {
+    console.error('Failed to seek');
+    return;
+  }
+  console.info('Succeeded in seek. seekDoneTime: ' + seekDoneTime);
+});
+audioPlayer.seek(30000);    // seek到30000ms的位置。
 ```
 
 ## setVolume(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 setVolume(vol: number): void
 
 设置音量。
 
-说明
+**说明** 
 
 从API version 6开始支持，从API version 9开始废弃，建议使用[AVPlayer.setVolume](arkts-apis-media-avplayer.md#setvolume9)替代。
 
@@ -185,22 +169,20 @@ setVolume(vol: number): void
 
 **示例：**
 
-```
-1. audioPlayer.on('volumeChange', () => {    // 设置'volumeChange'事件回调。
-2. console.info('audio volumeChange called');
-3. });
-4. audioPlayer.setVolume(1);    // 设置音量到100%。
+```ts
+audioPlayer.on('volumeChange', () => {    // 设置'volumeChange'事件回调。
+  console.info('audio volumeChange called');
+});
+audioPlayer.setVolume(1);    // 设置音量到100%。
 ```
 
 ## release(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 release(): void
 
 释放音频资源。
 
-说明
+**说明** 
 
 从API version 6开始支持，从API version 9开始废弃，建议使用[AVPlayer.release](arkts-apis-media-avplayer.md#release9)替代。
 
@@ -208,20 +190,18 @@ release(): void
 
 **示例：**
 
-```
-1. audioPlayer.release();
-2. audioPlayer = undefined;
+```ts
+audioPlayer.release();
+audioPlayer = undefined;
 ```
 
 ## getTrackDescription(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getTrackDescription(callback: AsyncCallback<Array<MediaDescription>>): void
 
 获取音频轨道信息。需在'dataLoad'事件成功触发后，才能调用。通过回调函数获取返回值。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.getTrackDescription](arkts-apis-media-avplayer.md#gettrackdescription9)替代。
 
@@ -235,27 +215,25 @@ getTrackDescription(callback: AsyncCallback<Array<MediaDescription>>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioPlayer.getTrackDescription((error: BusinessError, arrList: Array<media.MediaDescription>) => {
-4. if (arrList != null) {
-5. console.info('Succeeded in getting TrackDescription');
-6. } else {
-7. console.error(`Failed to get TrackDescription, error:${error}`);
-8. }
-9. });
+audioPlayer.getTrackDescription((error: BusinessError, arrList: Array<media.MediaDescription>) => {
+  if (arrList != null) {
+    console.info('Succeeded in getting TrackDescription');
+  } else {
+    console.error(`Failed to get TrackDescription, error:${error}`);
+  }
+});
 ```
 
 ## getTrackDescription(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getTrackDescription(): Promise<Array<MediaDescription>>
 
 获取音频轨道信息。需在'dataLoad'事件成功触发后，才能调用。通过Promise获取返回值。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.getTrackDescription](arkts-apis-media-avplayer.md#gettrackdescription9-1)替代。
 
@@ -269,25 +247,23 @@ getTrackDescription(): Promise<Array<MediaDescription>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioPlayer.getTrackDescription().then((arrList: Array<media.MediaDescription>) => {
-4. console.info('Succeeded in getting TrackDescription');
-5. }).catch((error: BusinessError) => {
-6. console.error(`Failed to get TrackDescription, error:${error}`);
-7. });
+audioPlayer.getTrackDescription().then((arrList: Array<media.MediaDescription>) => {
+  console.info('Succeeded in getting TrackDescription');
+}).catch((error: BusinessError) => {
+  console.error(`Failed to get TrackDescription, error:${error}`);
+});
 ```
 
 ## on('bufferingUpdate')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'bufferingUpdate', callback: (infoType: BufferingInfoType, value: number) => void): void
 
 开始订阅音频缓存更新事件。仅网络播放支持该订阅事件。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[AVPlayer.on('bufferingUpdate')](arkts-apis-media-avplayer.md#onbufferingupdate9)替代。
 
@@ -302,22 +278,20 @@ on(type: 'bufferingUpdate', callback: (infoType: BufferingInfoType, value: numbe
 
 **示例：**
 
-```
-1. audioPlayer.on('bufferingUpdate', (infoType: media.BufferingInfoType, value: number) => {
-2. console.info('audio bufferingInfo type: ' + infoType);
-3. console.info('audio bufferingInfo value: ' + value);
-4. });
+```ts
+audioPlayer.on('bufferingUpdate', (infoType: media.BufferingInfoType, value: number) => {
+  console.info('audio bufferingInfo type: ' + infoType);
+  console.info('audio bufferingInfo value: ' + value);
+});
 ```
 
 ## on('play' | 'pause' | 'stop' | 'reset' | 'dataLoad' | 'finish' | 'volumeChange')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'play' | 'pause' | 'stop' | 'reset' | 'dataLoad' | 'finish' | 'volumeChange', callback: () => void): void
 
 开始订阅音频播放事件。
 
-说明
+**说明** 
 
 从API version 6开始支持，从API version 9开始废弃，建议使用[AVPlayer.on('stateChange')](arkts-apis-media-avplayer.md#onstatechange9)替代。
 
@@ -332,72 +306,70 @@ on(type: 'play' | 'pause' | 'stop' | 'reset' | 'dataLoad' | 'finish' | 'volumeCh
 
 **示例：**
 
-```
-1. import { fileIo } from '@kit.CoreFileKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { fileIo } from '@kit.CoreFileKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let audioPlayer: media.AudioPlayer = media.createAudioPlayer();  // 创建一个音频播放实例。
-5. audioPlayer.on('dataLoad', () => {            // 设置'dataLoad'事件回调，src属性设置成功后，触发此回调。
-6. console.info('audio set source called');
-7. audioPlayer.play();                       // 开始播放，并触发'play'事件回调。
-8. });
-9. audioPlayer.on('play', () => {                // 设置'play'事件回调。
-10. console.info('audio play called');
-11. audioPlayer.seek(30000);                  // 调用seek方法，并触发'timeUpdate'事件回调。
-12. });
-13. audioPlayer.on('pause', () => {               // 设置'pause'事件回调。
-14. console.info('audio pause called');
-15. audioPlayer.stop();                       // 停止播放，并触发'stop'事件回调。
-16. });
-17. audioPlayer.on('reset', () => {               // 设置'reset'事件回调。
-18. console.info('audio reset called');
-19. audioPlayer.release();                    // 释放播放实例资源。
-20. audioPlayer = undefined;
-21. });
-22. audioPlayer.on('timeUpdate', (seekDoneTime: number) => {  // 设置'timeUpdate'事件回调。
-23. if (seekDoneTime == null) {
-24. console.error('Failed to seek');
-25. return;
-26. }
-27. console.info('Succeeded in seek, and seek time is ' + seekDoneTime);
-28. audioPlayer.setVolume(0.5);                // 设置音量为50%，并触发'volumeChange'事件回调。
-29. });
-30. audioPlayer.on('volumeChange', () => {         // 设置'volumeChange'事件回调。
-31. console.info('audio volumeChange called');
-32. audioPlayer.pause();                       // 暂停播放，并触发'pause'事件回调。
-33. });
-34. audioPlayer.on('finish', () => {               // 设置'finish'事件回调。
-35. console.info('audio play finish');
-36. audioPlayer.stop();                        // 停止播放，并触发'stop'事件回调。
-37. });
-38. audioPlayer.on('error', (error: BusinessError) => {  // 设置'error'事件回调。
-39. console.error(`audio error called, error: ${error}`);
-40. });
+let audioPlayer: media.AudioPlayer = media.createAudioPlayer();  // 创建一个音频播放实例。
+audioPlayer.on('dataLoad', () => {            // 设置'dataLoad'事件回调，src属性设置成功后，触发此回调。
+  console.info('audio set source called');
+  audioPlayer.play();                       // 开始播放，并触发'play'事件回调。
+});
+audioPlayer.on('play', () => {                // 设置'play'事件回调。
+  console.info('audio play called');
+  audioPlayer.seek(30000);                  // 调用seek方法，并触发'timeUpdate'事件回调。
+});
+audioPlayer.on('pause', () => {               // 设置'pause'事件回调。
+  console.info('audio pause called');
+  audioPlayer.stop();                       // 停止播放，并触发'stop'事件回调。
+});
+audioPlayer.on('reset', () => {               // 设置'reset'事件回调。
+  console.info('audio reset called');
+  audioPlayer.release();                    // 释放播放实例资源。
+  audioPlayer = undefined;
+});
+audioPlayer.on('timeUpdate', (seekDoneTime: number) => {  // 设置'timeUpdate'事件回调。
+  if (seekDoneTime == null) {
+    console.error('Failed to seek');
+    return;
+  }
+  console.info('Succeeded in seek, and seek time is ' + seekDoneTime);
+  audioPlayer.setVolume(0.5);                // 设置音量为50%，并触发'volumeChange'事件回调。
+});
+audioPlayer.on('volumeChange', () => {         // 设置'volumeChange'事件回调。
+  console.info('audio volumeChange called');
+  audioPlayer.pause();                       // 暂停播放，并触发'pause'事件回调。
+});
+audioPlayer.on('finish', () => {               // 设置'finish'事件回调。
+  console.info('audio play finish');
+  audioPlayer.stop();                        // 停止播放，并触发'stop'事件回调。
+});
+audioPlayer.on('error', (error: BusinessError) => {  // 设置'error'事件回调。
+  console.error(`audio error called, error: ${error}`);
+});
 
-42. // 用户选择音频设置fd(本地播放)。
-43. let fdPath = 'fd://';
-44. // path路径的码流可通过"hdc file send D:\xxx\01.mp3 /data/accounts/account_0/appdata" 命令，将其推送到设备上。
-45. let path = '/data/accounts/account_0/appdata/ohos.xxx.xxx.xxx/01.mp3';
-46. fileIo.open(path).then((file) => {
-47. fdPath = fdPath + '' + file.fd;
-48. console.info('Succeeded in opening fd, fd is' + fdPath);
-49. audioPlayer.src = fdPath;  // 设置src属性，并触发'dataLoad'事件回调。
-50. }, (err: BusinessError) => {
-51. console.error('Failed to open fd, err is' + err);
-52. }).catch((err: BusinessError) => {
-53. console.error('Failed to open fd, err is' + err);
-54. });
+// 用户选择音频设置fd(本地播放)。
+let fdPath = 'fd://';
+// path路径的码流可通过"hdc file send D:\xxx\01.mp3 /data/accounts/account_0/appdata" 命令，将其推送到设备上。
+let path = '/data/accounts/account_0/appdata/ohos.xxx.xxx.xxx/01.mp3';
+fileIo.open(path).then((file) => {
+  fdPath = fdPath + '' + file.fd;
+  console.info('Succeeded in opening fd, fd is' + fdPath);
+  audioPlayer.src = fdPath;  // 设置src属性，并触发'dataLoad'事件回调。
+}, (err: BusinessError) => {
+  console.error('Failed to open fd, err is' + err);
+}).catch((err: BusinessError) => {
+  console.error('Failed to open fd, err is' + err);
+});
 ```
 
 ## on('timeUpdate')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'timeUpdate', callback: Callback<number>): void
 
 开始订阅音频播放时间更新事件。处于播放状态时，每隔1s上报一次该事件。
 
-说明
+**说明** 
 
 从API version 6开始支持，从API version 9开始废弃，建议使用[AVPlayer.on('timeUpdate')](arkts-apis-media-avplayer.md#ontimeupdate9)替代。
 
@@ -412,26 +384,24 @@ on(type: 'timeUpdate', callback: Callback<number>): void
 
 **示例：**
 
-```
-1. audioPlayer.on('timeUpdate', (newTime: number) => {    // 设置'timeUpdate'事件回调。
-2. if (newTime == null) {
-3. console.error('Failed to do timeUpdate');
-4. return;
-5. }
-6. console.info('Succeeded in doing timeUpdate. seekDoneTime: ' + newTime);
-7. });
-8. audioPlayer.play();    // 开始播放后，自动触发时间戳更新事件。
+```ts
+audioPlayer.on('timeUpdate', (newTime: number) => {    // 设置'timeUpdate'事件回调。
+  if (newTime == null) {
+    console.error('Failed to do timeUpdate');
+    return;
+  }
+  console.info('Succeeded in doing timeUpdate. seekDoneTime: ' + newTime);
+});
+audioPlayer.play();    // 开始播放后，自动触发时间戳更新事件。
 ```
 
 ## on('audioInterrupt')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'audioInterrupt', callback: (info: audio.InterruptEvent) => void): void
 
 监听音频焦点变化事件，参考[audio.InterruptEvent](arkts-apis-audio-i.md#interruptevent9)。
 
-说明
+**说明** 
 
 从API version 9开始支持，从API version 9开始废弃，建议使用[AVPlayer.on('audioInterrupt')](arkts-apis-media-avplayer.md#onaudiointerrupt9)替代。
 
@@ -446,23 +416,21 @@ on(type: 'audioInterrupt', callback: (info: audio.InterruptEvent) => void): void
 
 **示例：**
 
-```
-1. import { audio } from '@kit.AudioKit';
+```ts
+import { audio } from '@kit.AudioKit';
 
-3. audioPlayer.on('audioInterrupt', (info: audio.InterruptEvent) => {
-4. console.info('audioInterrupt called,and InterruptEvent info is:' + info);
-5. });
+audioPlayer.on('audioInterrupt', (info: audio.InterruptEvent) => {
+  console.info('audioInterrupt called,and InterruptEvent info is:' + info);
+});
 ```
 
 ## on('error')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'error', callback: ErrorCallback): void
 
 开始订阅音频播放错误事件，当上报error错误事件后，用户需处理error事件，退出播放操作。
 
-说明
+**说明** 
 
 从API version 6开始支持，从API version 9开始废弃，建议使用[AVPlayer.on('error')](arkts-apis-media-avplayer.md#onerror9)替代。
 
@@ -477,11 +445,11 @@ on(type: 'error', callback: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioPlayer.on('error', (error: BusinessError) => {  // 设置'error'事件回调。
-4. console.error(`audio error called, error: ${error}`);
-5. });
-6. audioPlayer.setVolume(3);  // 设置volume为无效值，触发'error'事件。
+audioPlayer.on('error', (error: BusinessError) => {  // 设置'error'事件回调。
+  console.error(`audio error called, error: ${error}`);
+});
+audioPlayer.setVolume(3);  // 设置volume为无效值，触发'error'事件。
 ```

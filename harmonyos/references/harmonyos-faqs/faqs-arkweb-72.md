@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-72
 title: Web组件是否支持通过URL Scheme协议跳转其它App
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web组件是否支持通过URL Scheme协议跳转其它App
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:45+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:53+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:4bb64010d032c4d0b3a80c241ff4ecbabfd7a31afee7f289d4fa76507538a6c1
 ---
 

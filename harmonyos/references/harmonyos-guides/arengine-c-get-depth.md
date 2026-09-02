@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-c-ge
 title: 获取深度图（C/C++）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 深度估计 > 获取深度图（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:55+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:0000265258c95f293ec531b9cc6c4993abf46eff591a362af962063e18d0ef0d
+scraped_at: 2026-09-02T14:59:48+08:00
+doc_updated_at: 2026-08-14
+content_hash: sha256:36249ee29dcfa8b7c50d029f297c3cc4f1c96bf099ca9d4f91901527162e0c83
 ---
 
 本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/harmonyos_samples/arengine_-sample-code_-clientdemo_cpp)。
 
 ## 约束与限制
 
-获取深度估计信息能力支持部分Phone、部分Tablet设备。请参考[硬件要求](arengine-preparations.md#硬件要求)判断设备是否支持运动跟踪及平面识别特性（[ARENGINE\_FEATURE\_TYPE\_DEPTH](../harmonyos-references/arengine-capi-arengine.md#arengine_featuretype)）。
+从5.0.5(17)开始，获取深度估计信息能力支持部分Phone、部分Tablet设备。请参考[硬件要求](arengine-preparations.md#硬件要求)判断设备是否支持深度估计特性（[ARENGINE\_FEATURE\_TYPE\_DEPTH](../harmonyos-references/arengine-capi-arengine.md#arengine_featuretype)）。
 
 ## 接口说明
 
@@ -35,11 +35,8 @@ content_hash: sha256:0000265258c95f293ec531b9cc6c4993abf46eff591a362af962063e18d
 | [HMS\_AREngine\_ARConfig\_SetDepthMode](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arconfig_setdepthmode) | 设置深度模式。 |
 | [HMS\_AREngine\_ARFrame\_AcquireDepthImage16Bits](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arframe_acquiredepthimage16bits) | 获取当前帧的深度图像。 |
 | [HMS\_AREngine\_ARFrame\_AcquireDepthConfidenceImage](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arframe_acquiredepthconfidenceimage) | 获取当前帧的深度图像对应的置信度信息。 |
-| [HMS\_AREngine\_ARImage\_GetNativeBuffer](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arimage_getnativebuffer) | 获取当前帧图像对象的NativeBuffer数据。 |
 
 ## 开发步骤
-
-开发者可参考管理AR会话章节的[引入AR Engine](arengine-c-arsession.md#引入ar-engine)。
 
 ### 声明Native接口
 
@@ -49,140 +46,140 @@ content_hash: sha256:0000265258c95f293ec531b9cc6c4993abf46eff591a362af962063e18d
 
 首先创建一个UI界面ARDepth.ets，用于选择是否开启深度图渲染模式。
 
-```
-1. // 此代码可参考示例代码：ARSample/entry/src/main/ets/pages/ARDepth.ets。
-2. @Builder
-3. export function ARDepthBuilder() {
-4. ARDepth();
-5. }
+```typescript
+@Builder
+export function ARDepthBuilder() {
+  ARDepth();
+}
 
-7. @Component
-8. struct ARDepth {
-9. pageInfo: NavPathStack = new NavPathStack();
+@Component
+struct ARDepth {
+  pageInfos: NavPathStack = new NavPathStack();
 
-11. build(): void {
-12. NavDestination() {
-13. Column() {
-14. Button('关闭深度图渲染模式', { type: ButtonType.Normal, stateEffect: true })
-15. .borderRadius(8)
-16. .width('50%')
-17. .height('5%')
-18. .onClick(() => {
-19. this.pageInfo.pushPathByName('ARDepthRender', 0); // 0表示关闭渲染
-20. })
+  build(): void {
+    NavDestination() {
+      Column() {
+        Button($r('app.string.close_depth_render'), { type: ButtonType.Normal, stateEffect: true })
+          .borderRadius(8)
+          .width('50%')
+          .height('5%')
+          .onClick(() => {
+            this.pageInfos.pushPathByName('ARDepthRender', 0);
+          })
 
-22. Button('开启深度图渲染模式', { type: ButtonType.Normal, stateEffect: true })
-23. .borderRadius(8)
-24. .width('50%')
-25. .height('5%')
-26. .onClick(() => {
-27. this.pageInfo.pushPathByName('ARDepthRender', 1); // 1表示打开渲染
-28. })
-29. }
-30. .justifyContent(FlexAlign.SpaceEvenly)
-31. .width('100%')
-32. .height('100%')
-33. }
-34. .onReady((context: NavDestinationContext) => {
-35. this.pageInfo = context.pathStack;
-36. })
-37. .hideTitleBar(true)
-38. .hideBackButton(true)
-39. .hideToolBar(true)
-40. }
-41. }
+        Button($r('app.string.open_depth_render'), { type: ButtonType.Normal, stateEffect: true })
+          .borderRadius(8)
+          .width('50%')
+          .height('5%')
+          .onClick(() => {
+            this.pageInfos.pushPathByName('ARDepthRender', 1);
+          })
+      }
+      .justifyContent(FlexAlign.SpaceEvenly)
+      .width('100%')
+      .height('100%')
+    }
+    .onReady((context: NavDestinationContext) => {
+      this.pageInfos = context.pathStack;
+    })
+    .hideTitleBar(true)
+    .hideBackButton(true)
+    .hideToolBar(true)
+  }
+}
 ```
 
 最后创建一个ARDepthRender.ets，使用[XComponent](../harmonyos-references/ts-basic-components-xcomponent.md)组件用于加载相机预览画面，并定时触发每一帧绘制。
 
-```
-1. // 此代码可参考示例代码：ARSample/entry/src/main/ets/pages/ARDepthRender.ets。
-2. import { deviceInfo } from '@kit.BasicServicesKit';
-3. import { resourceManager } from '@kit.LocalizationKit';
-4. import arEngineDemo from 'libentry.so';
+```typescript
+import { display } from '@kit.ArkUI';
+import { systemDateTime } from '@kit.BasicServicesKit';
+import { resourceManager } from '@kit.LocalizationKit';
+import arEngineDemo from 'libentry.so';
+import { logger } from '../utils/Logger';
 
-6. @Builder
-7. export function ARDepthRenderBuilder() {
-8. ARDepthRender();
-9. }
+@Builder
+export function ARDepthRenderBuilder() {
+  ARDepthRender();
+}
 
-11. @Component
-12. struct ARDepthRender {
-13. pageInfo: NavPathStack = new NavPathStack();
-14. private interval: number = -1;
-15. private isUpdate: boolean = true;
-16. private params: number = 0;
-17. private xComponentId = 'ARDepth';
-18. @State context: Context = this.getUIContext().getHostContext() as Context;
-19. private resMgr: resourceManager.ResourceManager = this.context.resourceManager;
-20. @State distance: string = '';
-21. @State rotation: number = deviceInfo.deviceType === 'tablet' ? 3 : 0;
+@Component
+struct ARDepthRender {
+  pageInfos: NavPathStack = new NavPathStack();
+  @State context: Context = this.getUIContext().getHostContext() as Context;
+  @State distance: string = '';
+  @State rotation: number = 0;
+  private interval: number = -1;
+  private isUpdate: boolean = true;
+  private params: number = 0;
+  private xComponentId: string = 'ARDepth';
+  private idStr: string = systemDateTime.getTime(false).toString() + this.xComponentId;
+  private resMgr: resourceManager.ResourceManager = this.context.resourceManager;
+  // ...
+  build(): void {
+    NavDestination() {
+      RelativeContainer() {
+        XComponent({ id: this.idStr, type: XComponentType.SURFACE, libraryname: 'entry' })
+          .width('100%')
+          .height('100%')
+          .alignRules({
+            center: { anchor: '__container__', align: VerticalAlign.Center },
+            middle: { anchor: '__container__', align: HorizontalAlign.Center }
+          })
+          .onLoad(() => {
+            this.interval = setInterval(() => {
+              if (this.isUpdate) {
+                // 调用Native API更新方法，使AR Engine更新每一帧的计算结果。
+                arEngineDemo.update(this.idStr);
+                this.distance = arEngineDemo.getDistance(this.idStr);
+              }
+            }, 33) // 将帧率设置为30fps（每33毫秒刷新一次帧）。
+          })
+          .onDestroy(() => {
+            clearInterval(this.interval);
+          })
 
-23. build(): void {
-24. NavDestination() {
-25. RelativeContainer() {
-26. XComponent({ id: this.xComponentId, type: XComponentType.SURFACE, libraryname: 'entry' })
-27. .width('100%')
-28. .height('100%')
-29. .alignRules({
-30. center: { anchor: '__container__', align: VerticalAlign.Center },
-31. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-32. })
-33. .onLoad(() => {
-34. this.interval = setInterval(() => {
-35. if (this.isUpdate) {
-36. // 每一帧通过调用AR Engine的Native API update来更新计算结果
-37. arEngineDemo.update(this.xComponentId);
-38. this.distance = arEngineDemo.getDistance(this.xComponentId);
-39. }
-40. }, 33) // 将帧速率设置为30fps（每33ms刷新一次帧）
-41. })
-42. .onDestroy(() => {
-43. clearInterval(this.interval);
-44. })
-
-46. Text(this.distance)
-47. .fontColor(Color.Yellow)
-48. .fontSize(24)
-49. .textShadow({
-50. radius: 10,
-51. color: Color.Black,
-52. offsetX: 0,
-53. offsetY: 0
-54. })
-55. .textAlign(TextAlign.Center)
-56. .alignRules({
-57. bottom: { anchor: '__container__', align: VerticalAlign.Bottom },
-58. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-59. })
-60. }
-61. }
-62. .onAppear(() => {
-63. arEngineDemo.init(this.resMgr);
-64. let config: Int32Array = new Int32Array([0, this.params, 1, this.rotation]);
-65. arEngineDemo.start(this.xComponentId, config);
-66. })
-67. .onWillDisappear(() => {
-68. arEngineDemo.stop(this.xComponentId);
-69. })
-70. .onShown(() => {
-71. this.isUpdate = true;
-72. arEngineDemo.show(this.xComponentId);
-73. })
-74. .onHidden(() => {
-75. this.isUpdate = false;
-76. arEngineDemo.hide(this.xComponentId);
-77. })
-78. .onReady((context: NavDestinationContext) => {
-79. this.pageInfo = context.pathStack;
-80. this.params = context.pathInfo.param as number;
-81. })
-82. .hideTitleBar(true)
-83. .hideBackButton(true)
-84. .hideToolBar(true)
-85. }
-
-87. }
+        Text(this.distance)
+          .fontColor(Color.Yellow)
+          .fontSize(24)
+          .textShadow({
+            radius: 10,
+            color: Color.Black,
+            offsetX: 0,
+            offsetY: 0
+          })
+          .textAlign(TextAlign.Center)
+          .alignRules({
+            bottom: { anchor: '__container__', align: VerticalAlign.Bottom },
+            middle: { anchor: '__container__', align: HorizontalAlign.Center }
+          })
+      }
+    }
+    .onAppear(() => {
+      arEngineDemo.init(this.resMgr);
+      let config: Int32Array = new Int32Array([0, this.params, 1, this.rotation]);
+      arEngineDemo.start(this.idStr, config);
+    })
+    .onWillDisappear(() => {
+      arEngineDemo.stop(this.idStr);
+    })
+    .onShown(() => {
+      this.isUpdate = true;
+      arEngineDemo.show(this.idStr);
+    })
+    .onHidden(() => {
+      this.isUpdate = false;
+      arEngineDemo.hide(this.idStr);
+    })
+    .onReady((context: NavDestinationContext) => {
+      this.pageInfos = context.pathStack;
+      this.params = context.pathInfo.param as number;
+    })
+    .hideTitleBar(true)
+    .hideBackButton(true)
+    .hideToolBar(true)
+  }
+}
 ```
 
 配置路由进行页面间跳转，页面路由配置详细可查看[组件导航(Navigation) (推荐)](arkts-navigation-navigation.md)。
@@ -196,16 +193,14 @@ content_hash: sha256:0000265258c95f293ec531b9cc6c4993abf46eff591a362af962063e18d
 创建AR会话并配置为开启深度模式。
 
 ```
-1. AREngine_ARSession *arSession = nullptr;
-2. // 创建AR会话。
-3. HMS_AREngine_ARSession_Create(nullptr, nullptr, &arSession);
-4. AREngine_ARConfig *arConfig = nullptr;
-5. // 创建AR会话配置器。
-6. HMS_AREngine_ARConfig_Create(arSession, &arConfig);
-7. // 设置深度模式为开启状态。
-8. HMS_AREngine_ARConfig_SetDepthMode(arSession, arConfig, ARENGINE_DEPTH_MODE_AUTOMATIC);
-9. // 配置器设置给AR会话。
-10. HMS_AREngine_ARSession_Configure(arSession, arConfig);
+// 创建一个AREngine_ARSession会话。
+CHECK(HMS_AREngine_ARSession_Create(nullptr, nullptr, &mArSession));
+// 配置AREngine_ARSession。
+AREngine_ARConfig *arConfig = nullptr;
+CHECK(HMS_AREngine_ARConfig_Create(mArSession, &arConfig));
+// ...
+CHECK(HMS_AREngine_ARConfig_SetDepthMode(mArSession, arConfig, ARENGINE_DEPTH_MODE_AUTOMATIC));
+CHECK(HMS_AREngine_ARSession_Configure(mArSession, arConfig));
 ```
 
 ### 获取当前环境中的深度图
@@ -213,15 +208,8 @@ content_hash: sha256:0000265258c95f293ec531b9cc6c4993abf46eff591a362af962063e18d
 调用[HMS\_AREngine\_ARFrame\_AcquireDepthImage16Bits](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arframe_acquiredepthimage16bits)函数，获取当前环境中的深度信息，并将结果存放在depthImage中。
 
 ```
-1. AREngine_ARFrame *arFrame = nullptr;
-2. // 创建AR单帧对象
-3. HMS_AREngine_ARFrame_Create(arSession, &arFrame);
-4. AREngine_ARImage *depthImage = nullptr;
-5. // 获取深度图
-6. HMS_AREngine_ARFrame_AcquireDepthImage16Bits(arSession, arFrame, &depthImage);
-7. // 获取深度图的nativeBuffer
-8. OH_NativeBuffer* depthBuffer;
-9. HMS_AREngine_ARImage_GetNativeBuffer(arSession, depthImage, &depthBuffer);
+AREngine_ARImage *depthImage = nullptr;
+auto ret = HMS_AREngine_ARFrame_AcquireDepthImage16Bits(arSession, arFrame, &depthImage);
 ```
 
 ### 获取当前深度图对应的深度置信度图
@@ -229,15 +217,8 @@ content_hash: sha256:0000265258c95f293ec531b9cc6c4993abf46eff591a362af962063e18d
 调用[HMS\_AREngine\_ARFrame\_AcquireDepthConfidenceImage](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arframe_acquiredepthconfidenceimage)函数，获取当前深度图对应的置信度图。
 
 ```
-1. AREngine_ARFrame *arFrame = nullptr;
-2. // 创建AR单帧对象
-3. HMS_AREngine_ARFrame_Create(arSession, &arFrame);
-4. AREngine_ARImage *depthConfidenceImage = nullptr;
-5. // 获取深度置信度图
-6. HMS_AREngine_ARFrame_AcquireDepthConfidenceImage(arSession, arFrame, &depthConfidenceImage);
-7. // 获取深度置信图的nativeBuffer
-8. OH_NativeBuffer* depthConfidenceBuffer;
-9. HMS_AREngine_ARImage_GetNativeBuffer(arSession, depthConfidenceImage, &depthConfidenceBuffer);
+AREngine_ARImage *depthConfidenceImage = nullptr;
+auto ret = HMS_AREngine_ARFrame_AcquireDepthConfidenceImage(arSession, arFrame, &depthConfidenceImage);
 ```
 
 ### 获取深度图和深度置信度图中的值
@@ -245,24 +226,21 @@ content_hash: sha256:0000265258c95f293ec531b9cc6c4993abf46eff591a362af962063e18d
 深度图和深度置信度图包装为[AREngine\_ARImage](../harmonyos-references/arengine-capi-arengine.md#arengine_arimage)对象，可以通过此对象获取对应的深度图和深度置信度图。
 
 ```
-1. AREngine_ARImageFormat format;
-2. // 获取当前帧图像的数据格式
-3. HMS_AREngine_ARImage_GetFormat(arSession, depthImage, &format);
-4. int32_t depthWidth;
-5. // 获取深度图的宽度
-6. HMS_AREngine_ARImage_GetWidth(arSession, depthImage, &depthWidth);
-7. int32_t depthHeight;
-8. // 获取深度图的高度
-9. HMS_AREngine_ARImage_GetHeight(arSession, depthImage, &depthHeight);
-10. uint8_t *depthData = nullptr;
-11. int32_t depthLength = 0;
-12. // 获取深度图的数据
-13. HMS_AREngine_ARImage_GetPlaneData(arSession, depthImage, 0, (const uint8_t **)&depthData, &depthLength);
+AREngine_ARImageFormat format;
+CHECK(HMS_AREngine_ARImage_GetFormat(arSession, depthConfidenceImage, &format));
+int32_t depthWidth;
+CHECK(HMS_AREngine_ARImage_GetWidth(arSession, depthConfidenceImage, &depthWidth));
+ int32_t depthHeight;
+CHECK(HMS_AREngine_ARImage_GetHeight(arSession, depthConfidenceImage, &depthHeight));
+uint8_t *depthConfidenceData = nullptr;
+int32_t depthConfidenceLength = 0;
+CHECK(HMS_AREngine_ARImage_GetPlaneData(
+    arSession, depthConfidenceImage, 0,
+    reinterpret_cast<const uint8_t **>(static_cast<void *>(&depthConfidenceData)), &depthConfidenceLength));
 ```
 
 ### 使用完毕后，销毁深度图和深度置信度图
 
-```
-1. HMS_AREngine_ARImage_Release(depthImage);
-2. HMS_AREngine_ARImage_Release(depthConfidenceImage);
+```cpp
+HMS_AREngine_ARImage_Release(depthConfidenceImage);
 ```

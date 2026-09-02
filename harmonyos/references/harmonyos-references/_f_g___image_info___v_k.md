@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_g___im
 title: FG_ImageInfo_VK
 breadcrumb: API参考 > 图形 > Graphics Accelerate Kit（图形加速服务） > C API > 头文件和结构体 > 结构体 > FG_ImageInfo_VK
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:46+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b303357184412cd67d18766fdd3af51649d849e5f519036017d86b4304382f78
+scraped_at: 2026-09-02T15:02:48+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6928a978165c4e725844fb243b489ae097e287b9060b80c4a92daf02a745c95f
 ---
 
 ## 概述
-
-PhoneTabletTV
 
 此结构体描述超帧输入输出图像信息。
 
@@ -22,11 +20,7 @@ PhoneTabletTV
 
 ## 汇总
 
-PhoneTabletTV
-
 ### 成员变量
-
-PhoneTabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -36,14 +30,10 @@ PhoneTabletTV
 
 ## 结构体成员变量说明
 
-PhoneTabletTV
-
 ### finalSync
 
-PhoneTabletTV
-
-```
-1. FG_ImageSync_VK FG_ImageInfo_VK::finalSync
+```c
+FG_ImageSync_VK FG_ImageInfo_VK::finalSync
 ```
 
 **描述**
@@ -52,10 +42,8 @@ PhoneTabletTV
 
 ### image
 
-PhoneTabletTV
-
-```
-1. FG_Image_VK* FG_ImageInfo_VK::image
+```c
+FG_Image_VK* FG_ImageInfo_VK::image
 ```
 
 **描述**
@@ -64,10 +52,8 @@ PhoneTabletTV
 
 ### initialSync
 
-PhoneTabletTV
-
-```
-1. FG_ImageSync_VK FG_ImageInfo_VK::initialSync
+```c
+FG_ImageSync_VK FG_ImageInfo_VK::initialSync
 ```
 
 **描述**

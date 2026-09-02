@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/telephony-cal
 title: 拨打电话
 breadcrumb: 指南 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > 拨打电话
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:13+08:00
+scraped_at: 2026-09-02T14:59:35+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:118ee4296673b26275c5ef502d54d2eb73664b8d2552929c7441f8e52f229bd6
+content_hash: sha256:194efc1b5c41358a6e9d4827508bf84a7fb8fd95a59c4c7932ffc68405a3f040
 ---
 
 ## 场景介绍
@@ -34,7 +34,7 @@ content_hash: sha256:118ee4296673b26275c5ef502d54d2eb73664b8d2552929c7441f8e52f2
 
 ## 接口说明
 
-说明
+**说明** 
 
 为了保证应用的运行效率，大部分API调用都是异步的，对于异步调用的API均提供了callback和Promise两种方式，以下示例均采用callback函数，更多方式可以查阅[API参考](../harmonyos-references/js-apis-call.md)。
 
@@ -58,32 +58,32 @@ observer模块为开发者提供订阅和取消订阅通话业务状态的功能
 3. 调用makeCall接口，跳转到拨号界面并显示待拨号的号码。
 4. （可选）订阅通话业务状态变化。
 
-   ```
-   1. // import需要的模块
-   2. import { call, observer } from '@kit.TelephonyKit';
-   3. import { BusinessError } from '@kit.BasicServicesKit';
+   ```ts
+    // import需要的模块
+    import { call, observer } from '@kit.TelephonyKit';
+    import { BusinessError } from '@kit.BasicServicesKit';
 
-   5. // 调用查询能力接口
-   6. let isSupport = call.hasVoiceCapability();
-   7. if (isSupport) {
-   8. // 如果设备支持呼叫能力，则继续跳转到拨号界面，并显示拨号的号码
-   9. // 从API15开始支持tel格式电话号码，如："tel:13xxxx"
-   10. call.makeCall("13xxxx", (err: BusinessError) => {
-   11. if (!err) {
-   12. console.info("make call success.");
-   13. } else {
-   14. console.error("make call fail, err is:" + JSON.stringify(err));
-   15. }
-   16. });
-   17. // 订阅通话业务状态变化（可选）
-   18. class SlotId {slotId: number = 0}
-   19. class CallStateCallback {
-   20. state: call.CallState = call.CallState.CALL_STATE_UNKNOWN;
-   21. number: string = "";
-   22. }
-   23. let slotId: SlotId = {slotId: 0}
-   24. observer.on("callStateChange", slotId, (data: CallStateCallback) => {
-   25. console.info("call state change, data is:" + JSON.stringify(data));
-   26. });
-   27. }
+    // 调用查询能力接口
+    let isSupport = call.hasVoiceCapability();
+    if (isSupport) {
+        // 如果设备支持呼叫能力，则继续跳转到拨号界面，并显示拨号的号码
+        // 从API15开始支持tel格式电话号码，如："tel:13xxxx"
+        call.makeCall("13xxxx", (err: BusinessError) => {
+            if (!err) {
+                console.info("make call success.");
+            } else {
+                console.error("make call fail, err is:" + JSON.stringify(err));
+            }
+        });
+        // 订阅通话业务状态变化（可选）
+        class SlotId {slotId: number = 0}
+        class CallStateCallback {
+            state: call.CallState = call.CallState.CALL_STATE_UNKNOWN;
+            number: string = "";
+        }
+        let slotId: SlotId = {slotId: 0}
+        observer.on("callStateChange", slotId, (data: CallStateCallback) => {
+            console.info("call state change, data is:" + JSON.stringify(data));
+        });
+    }
    ```

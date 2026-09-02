@@ -3,28 +3,34 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-web-
 title: 个人中心主页
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 页面功能介绍 > 个人中心主页
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:44:44+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:e6caa753d4f4b32304cad603cb0d92ca6f688635ba74e51be8e54dfcb1403b66
+scraped_at: 2026-09-02T15:00:18+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:76e1135ce337c6c4e2dbb4333b0eb2398a238c72926390ac6e35c8dc3c00a05b
 ---
 
-个人中心主页是ohpm-repo私仓的核心管理页面，整个系统在此进行集中管理和操作，页面效果如下图所示：
+个人中心主页是ohpm-repo私仓的核心管理页面，整个系统在此进行集中管理和操作，页面效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/6bYD8a0cQd2viTStzXowYw/zh-cn_image_0000002530751308.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/d8InJ50iT7GkL68FX2RihA/zh-cn_image_0000002731541465.png "点击放大")
 
-* 区域1：个人信息区域，显示登录用户的信息。其中有复制发布码和修改密码两个功能。
-  + 复制发布码：点击后可将用户的发布码publish\_id复制到剪贴板中。使用ohpm命令行工具发布包时，如果采用证书认证方式，必须配置发布码，其详细发布流程见：[使用命令行工具发布](ide-ohpm-repo-quickstart.md#zh-cn_topic_0000001792256157_使用命令行工具发布)。
-  + 修改密码：点击后可以修改用户的密码。
+**区域1**：个人信息区域，显示登录用户的信息。其中有编辑、复制发布码和修改密码三个功能。
 
-  注意
+* 编辑：ohpm-repo从6.0.1版本开始，支持编辑个人的邮箱和手机号。
+* 复制发布码：点击后可将用户的发布码publish\_id复制到剪贴板中。使用ohpm命令行工具发布包时，如果采用证书认证方式，必须配置发布码，其详细发布流程见：[使用命令行工具发布](ide-ohpm-repo-quickstart.md#zh-cn_topic_0000001792256157_使用命令行工具发布)。
+* 修改密码：点击后可以修改用户的密码。
 
-  为保障账户安全，请勿使用简单或重复密码，并定期更换密码。
-* 区域2：后台管理区域，显示区域4的相应菜单的操作面板。
-* 区域3：登录注册区域，用户登录后将鼠标放在此区域的用户名位置会弹出功能菜单，选择退出登录即可更换账户重新登录，其他功能同区域4。
-* 区域4：功能菜单区域，展示个人中心的用户管理、仓库管理、包权限管理、认证管理、组织管理，操作日志和系统设置七大功能，点击相应功能后会在区域2显示该功能的具体操作面板。管理员拥有全部菜单权限，普通用户只拥有认证管理、包权限管理、组织管理权限。
-  + 管理员菜单：
+**注意** 
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/aXtRhwGtTaCBwVZC5ShBng/zh-cn_image_0000002561751251.png "点击放大")
-  + 普通用户菜单：
+为保障账户安全，请勿使用简单或重复密码，并定期更换密码。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/6A7w1XbGSQuqkQDn22C1cA/zh-cn_image_0000002561831229.png "点击放大")
+**区域2**：后台管理区域，显示区域4的相应菜单的操作面板。
+
+**区域3**：登录注册区域，用户登录后将鼠标放在此区域的用户名位置会弹出功能菜单，选择退出登录即可更换账户重新登录，其他功能与区域4相同。
+
+**区域4**：功能菜单区域，展示个人中心的用户管理、仓库管理、包权限管理、认证管理、组织管理，操作日志和系统设置七大功能，点击相应功能后会在区域2显示该功能的具体操作面板。管理员拥有全部菜单权限，普通用户拥有认证管理、包权限管理、组织管理权限。
+
+* 管理员菜单：
+
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/6iWiLnzFTkK-C6M-8z1MfQ/zh-cn_image_0000002731541459.png "点击放大")
+* 普通用户菜单：
+
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/sqnlgnbKRn-4Hel3NUcRRw/zh-cn_image_0000002731381497.png "点击放大")

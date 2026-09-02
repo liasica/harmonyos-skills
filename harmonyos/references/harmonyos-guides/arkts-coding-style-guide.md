@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-coding-
 title: ArkTS编程规范
 breadcrumb: 指南 > 基础入门 > 学习ArkTS语言 > ArkTS编程规范
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:36+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:af1b2281e5b8b38eb984bfcb8549b6eacdfc9a102d5c7016a4aef3e7415db133
+scraped_at: 2026-09-02T14:59:08+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:21bc6f35e6d7d397f7a1e93623ad71e6348ee30775a3a09202204b16854a4ef5
 ---
 
 ## 目标和适用范围
@@ -71,36 +71,36 @@ ArkTS在保持TypeScript基本语法风格的基础上，进一步强化静态�
 
 **【正例】**
 
-```
-1. // 类名
-2. class User {
-3. username: string
+```typescript
+// 类名
+class User {
+  username: string
 
-5. constructor(username: string) {
-6. this.username = username;
-7. }
+  constructor(username: string) {
+    this.username = username;
+  }
 
-9. sayHi() {
-10. console.info('hi' + this.username);
-11. }
-12. }
+  sayHi() {
+    console.info('hi' + this.username);
+  }
+}
 
-14. // 枚举名
-15. enum UserType {
-16. TEACHER = 0,
-17. STUDENT = 1
-18. };
+// 枚举名
+enum UserType {
+  TEACHER = 0,
+  STUDENT = 1
+};
 
-20. // 命名空间
-21. namespace Base64Utils {
-22. export function encrypt() {
-23. // todo encrypt
-24. }
+// 命名空间
+namespace Base64Utils {
+  export function encrypt() {
+    // todo encrypt
+  }
 
-26. export function decrypt() {
-27. // todo decrypt
-28. }
-29. };
+  export function decrypt() {
+    // todo decrypt
+  }
+};
 ```
 
 ### 变量名、方法名、参数名采用lowerCamelCase风格
@@ -122,20 +122,20 @@ ArkTS在保持TypeScript基本语法风格的基础上，进一步强化静态�
 
 **【正例】**
 
-```
-1. let msg = 'Hello world';
+```typescript
+let msg = 'Hello world';
 
-3. function sendMsg(msg: string) {
-4. // todo send message
-5. // ...
-6. }
+function sendMsg(msg: string) {
+  // todo send message
+  // ...
+}
 
-8. let userName = 'Zhangsan';
+let userName = 'Zhangsan';
 
-10. function findUser(userName: string) {
-11. // todo find user by user name
-12. // ...
-13. }
+function findUser(userName: string) {
+  // todo find user by user name
+  // ...
+}
 ```
 
 ### 常量名、枚举值名采用全部大写，单词间使用下划线隔开
@@ -144,17 +144,17 @@ ArkTS在保持TypeScript基本语法风格的基础上，进一步强化静态�
 
 **【描述】**
 
-常量命名，应该由全大写单词与下划线组成，单词间用下划线分割。常量命名要尽量表达完整的语义。
+常量命名，应该由全大写单词与下划线组成，单词间用下划线分隔。常量命名要尽量表达完整的语义。
 
 **【正例】**
 
-```
-1. enum UserType1 {
-2. TEACHER = 0,
-3. STUDENT = 1
-4. };
+```typescript
+const MAX_USER_SIZE = 10000;
 
-6. const MAX_USER_SIZE = 10000;
+enum UserType1 {
+  TEACHER = 0,
+  STUDENT = 1
+};
 ```
 
 ### 避免使用否定的布尔变量名，布尔型的局部变量或方法需加上表达是非意义的前缀
@@ -167,22 +167,22 @@ ArkTS在保持TypeScript基本语法风格的基础上，进一步强化静态�
 
 **【反例】**
 
-```
-1. let isNoError = true;
-2. let isNotFound = false;
+```typescript
+let isNoError = true;
+let isNotFound = false;
 
-4. function empty() {}
-5. function next() {}
+function empty() {}
+function next() {}
 ```
 
 **【正例】**
 
-```
-1. let isError = false;
-2. let isFound = true;
+```typescript
+let isError = false;
+let isFound = true;
 
-4. function isEmpty() {}
-5. function hasNext() {}
+function isEmpty() {}
+function hasNext() {}
 ```
 
 ## 格式
@@ -201,41 +201,41 @@ ArkTS在保持TypeScript基本语法风格的基础上，进一步强化静态�
 
 **【正例】**
 
-```
-1. class DataSource {
-2. id: number = 0
-3. title: string = ''
-4. content: string = ''
-5. }
+```typescript
+class DataSource {
+  id: number = 0
+  title: string = ''
+  content: string = ''
+}
 
-7. const dataSource: DataSource[] = [
-8. {
-9. id: 1,
-10. title: 'Title 1',
-11. content: 'Content 1'
-12. },
-13. {
-14. id: 2,
-15. title: 'Title 2',
-16. content: 'Content 2'
-17. }
+const dataSource: DataSource[] = [
+  {
+    id: 1,
+    title: 'Title 1',
+    content: 'Content 1'
+  },
+  {
+    id: 2,
+    title: 'Title 2',
+    content: 'Content 2'
+  }
 
-19. ];
+];
 
-21. function test(dataSource: DataSource[]) {
-22. if (!dataSource.length) {
-23. return;
-24. }
+function test(dataSource: DataSource[]) {
+  if (!dataSource.length) {
+    return;
+  }
 
-26. for (let data of dataSource) {
-27. if (!data || !data.id || !data.title || !data.content) {
-28. continue;
-29. }
-30. // some code
-31. }
+  for (let data of dataSource) {
+    if (!data || !data.id || !data.title || !data.content) {
+      continue;
+    }
+    // some code
+  }
 
-33. // some code
-34. }
+  // some code
+}
 ```
 
 ### 行宽不超过120个字符
@@ -262,24 +262,24 @@ ArkTS在保持TypeScript基本语法风格的基础上，进一步强化静态�
 
 **【反例】**
 
-```
-1. let condition = true;
-2. if (condition)
-3. console.info('success');
-4. for (let idx = 0; idx < 5; ++idx)
-5. console.info('', idx);
+```typescript
+let condition = true;
+if (condition)
+  console.info('success');
+for (let idx = 0; idx < 5; ++idx)
+  console.info('', idx);
 ```
 
 **【正例】**
 
-```
-1. let condition = true;
-2. if (condition) {
-3. console.info('success');
-4. }
-5. for (let idx = 0; idx < 5; ++idx) {
-6. console.info('', idx);
-7. }
+```typescript
+let condition = true;
+if (condition) {
+  console.info('success');
+}
+for (let idx = 0; idx < 5; ++idx) {
+  console.info('', idx);
+}
 ```
 
 ### switch语句的case和default需缩进一层
@@ -292,19 +292,19 @@ switch的case和default要缩进一层（2个空格）。开关标签之后换�
 
 **【正例】**
 
-```
-1. switch (condition) {
-2. case 0: {
-3. doSomething();
-4. break;
-5. }
-6. case 1: {
-7. doOtherthing();
-8. break;
-9. }
-10. default:
-11. break;
-12. }
+```typescript
+switch (condition) {
+  case 0: {
+    doSomething();
+    break;
+  }
+  case 1: {
+    doOtherthing();
+    break;
+  }
+  default:
+    break;
+}
 ```
 
 ### 表达式换行需保持一致性，运算符放行末
@@ -319,12 +319,12 @@ switch的case和default要缩进一层（2个空格）。开关标签之后换�
 
 **【正例】**
 
-```
-1. // 假设条件语句超出行宽
-2. if (userCount > MAX_USER_COUNT ||
-3. userCount < MIN_USER_COUNT) {
-4. doSomething();
-5. }
+```typescript
+// 假设条件语句超出行宽
+if (userCount > MAX_USER_COUNT ||
+  userCount < MIN_USER_COUNT) {
+  doSomething();
+}
 ```
 
 ### 多个变量定义和赋值语句不允许写在一行
@@ -339,19 +339,19 @@ switch的case和default要缩进一层（2个空格）。开关标签之后换�
 
 **【反例】**
 
-```
-1. let maxCount = 10, isCompleted = false;
-2. let pointX, pointY;
-3. pointX = 10; pointY = 0;
+```typescript
+let maxCount = 10, isCompleted = false;
+let pointX, pointY;
+pointX = 10; pointY = 0;
 ```
 
 **【正例】**
 
-```
-1. let maxCount = 10;
-2. let isCompleted = false;
-3. let pointX = 0;
-4. let pointY = 0;
+```typescript
+let maxCount = 10;
+let isCompleted = false;
+let pointX = 0;
+let pointY = 0;
 ```
 
 ### 空格应该突出关键字和重要信息，避免不必要的空格
@@ -366,87 +366,80 @@ switch的case和default要缩进一层（2个空格）。开关标签之后换�
 2. 在函数定义和调用时，函数名称与参数列表的左括号(之间不加空格。
 3. 关键字else或catch与其之前的大括号}之间加空格。
 4. 任何打开大括号({)之前加空格，有两个例外：
-
-a) 在作为函数的第一个参数或数组中的第一个元素时，对象之前不用加空格，例如：foo({ name: 'abc' })。
-
-b) 在模板中，不用加空格，例如：abc${name}。
-
+   * 在作为函数的第一个参数或数组中的第一个元素时，对象之前不用加空格，例如：foo({ name: 'abc' })。
+   * 在模板中，不用加空格，例如：abc${name}。
 5. 二元操作符(+ - \* = < > <= >= === !== && ||)前后加空格；三元操作符(? :)符号两侧均加空格。
-
 6. 数组初始化中的逗号和函数中多个参数之间的逗号后加空格。
-
 7. 在逗号(,)或分号(;)之前不加空格。
-
 8. 数组的中括号([])内侧不要加空格。
-
 9. 不要出现多个连续空格。在某行中，多个空格若不是用来作缩进的，通常是个错误。
 
 **【反例】**
 
-```
-1. // if 和左括号 ( 之间没有加空格
-2. if(isJedi) {
-3. fight();
-4. }
-5. // ...
-6. // 函数名fight和左括号 ( 之间加了空格
-7. function fightBad (): void {
-8. console.info('Swooosh!');
-9. }
+```typescript
+  // if 和左括号 ( 之间没有加空格
+  if(isJedi) {
+    fight();
+  }
+  // ...
+// 函数名fight和左括号 ( 之间加了空格
+function fightBad (): void {
+  console.info('Swooosh!');
+}
 ```
 
 **【正例】**
 
-```
-1. // if 和左括号之间加一个空格
-2. if (isJedi) {
-3. fight();
-4. }
-5. // ...
-6. // 函数名fight和左括号 ( 之间不加空格
-7. function fight(): void {
-8. console.info('Swooosh!');
-9. }
+```typescript
+  // if 和左括号之间加一个空格
+  if (isJedi) {
+    fight();
+  }
+  // ...
+// 函数名fight和左括号 ( 之间不加空格
+function fight(): void {
+  console.info('Swooosh!');
+}
 ```
 
 **【反例】**
 
-```
-1. if (flag) {
-2. // ...
-3. }else { // else 与其前面的大括号 } 之间没有加空格
-4. // ...
-5. }
-```
-
-**【正例】**
-
-```
-1. if (flag) {
-2. // ...
-3. } else { // else 与其前面的大括号 } 之间增加空格
-4. // ...
-5. }
+```typescript
+if (flag) {
+  // ...
+}else { // else 与其前面的大括号 } 之间没有加空格
+  // ...
+}
 ```
 
 **【正例】**
 
-```
-1. function foo() { // 函数声明时，左大括号 { 之前加个空格
-2. // ...
-3. }
-4. // ...
-5. bar('attr', { // 左大括号前加个空格
-6. age: '1 year',
-7. sbreed: 'Bernese Mountain Dog',
-8. });
+```typescript
+if (flag) {
+  // ...
+} else { // else 与其前面的大括号 } 之间增加空格
+  // ...
+}
 ```
 
 **【正例】**
 
+```typescript
+function foo() { // 函数声明时，左大括号 { 之前加个空格
+  // ...
+}
+
+bar('attr', { // 左大括号前加个空格
+  age: '1 year',
+  sbreed: 'Bernese Mountain Dog',
+});
 ```
-1. const arr = [1, 2, 3]; // 数组初始化中的逗号后面加个空格，逗号前面不加空格
-2. myFunc(bar1, foo1, baz); // 函数的多个参数之间的逗号后加个空格，逗号前面不加空格
+
+**【正例】**
+
+```typescript
+const arr = [1, 2, 3]; // 数组初始化中的逗号后面加个空格，逗号前面不加空格
+myFunc(bar1, foo1, baz); // 函数的多个参数之间的逗号后加个空格，逗号前面不加空格
 ```
 
 ### 建议字符串使用单引号
@@ -459,16 +452,16 @@ b) 在模板中，不用加空格，例如：abc${name}。
 
 **【反例】**
 
-```
-1. let message1 = 'world';
-2. console.info(message1);
+```typescript
+let message1 = "world";
+console.info(message1);
 ```
 
 **【正例】**
 
-```
-1. let message2 = 'world';
-2. console.info(message2);
+```typescript
+let message2 = 'world';
+console.info(message2);
 ```
 
 ### 对象字面量属性超过4个，需要都换行
@@ -481,40 +474,40 @@ b) 在模板中，不用加空格，例如：abc${name}。
 
 **【反例】**
 
-```
-1. interface I {
-2. name: string
-3. age: number
-4. value: number
-5. sum: number
-6. foo: boolean
-7. bar: boolean
-8. }
+```typescript
+interface I {
+  name: string
+  age: number
+  value: number
+  sum: number
+  foo: boolean
+  bar: boolean
+}
 
-10. let obj1: I = { name: 'tom', age: 16, value: 1, sum: 2, foo: true, bar: false }
+let obj1: I = { name: 'tom', age: 16, value: 1, sum: 2, foo: true, bar: false }
 ```
 
 **【正例】**
 
-```
-1. interface I {
-2. name: string
-3. age: number
-4. value: number
-5. sum: number
-6. foo: boolean
-7. bar: boolean
-8. }
+```typescript
+interface I {
+  name: string
+  age: number
+  value: number
+  sum: number
+  foo: boolean
+  bar: boolean
+}
 
-10. // ...
-11. let obj2: I = {
-12. name: 'tom',
-13. age: 16,
-14. value: 1,
-15. sum: 2,
-16. foo: true,
-17. bar: false
-18. }
+// ...
+let obj2: I = {
+  name: 'tom',
+  age: 16,
+  value: 1,
+  sum: 2,
+  foo: true,
+  bar: false
+}
 ```
 
 ### 把else/catch放在if/try代码块关闭括号的同一行
@@ -527,46 +520,46 @@ b) 在模板中，不用加空格，例如：abc${name}。
 
 **【反例】**
 
-```
-1. if (isOk) {
-2. doThing1();
-3. doThing2();
-4. }
-5. else {
-6. doThing3();
-7. }
+```typescript
+if (isOk) {
+  doThing1();
+  doThing2();
+}
+else {
+  doThing3();
+}
 ```
 
 **【正例】**
 
-```
-1. if (isOk) {
-2. doThing1();
-3. doThing2();
-4. } else {
-5. doThing3();
-6. }
+```typescript
+if (isOk) {
+  doThing1();
+  doThing2();
+} else {
+  doThing3();
+}
 ```
 
 **【反例】**
 
-```
-1. try {
-2. doSomething();
-3. }
-4. catch (err) {
-5. // 处理错误。
-6. }
+```typescript
+try {
+  doSomething();
+}
+catch (err) {
+  // 处理错误
+}
 ```
 
 **【正例】**
 
-```
-1. try {
-2. doSomething();
-3. } catch (err) {
-4. // 处理错误。
-5. }
+```typescript
+try {
+  doSomething();
+} catch (err) {
+  // 处理错误
+}
 ```
 
 ### 大括号{和语句在同一行
@@ -579,19 +572,19 @@ b) 在模板中，不用加空格，例如：abc${name}。
 
 **【反例】**
 
-```
-1. function foo1()
-2. {
-3. // ...
-4. }
+```typescript
+function foo1()
+{
+  // ...
+}
 ```
 
 **【正例】**
 
-```
-1. function foo2() {
-2. // ...
-3. }
+```typescript
+function foo2() {
+  // ...
+}
 ```
 
 ## 编程实践
@@ -606,26 +599,26 @@ ArkTS提供了private, protected和public可访问修饰符。默认情况下，
 
 **【反例】**
 
-```
-1. class C1 {
-2. count: number = 0
+```typescript
+class C1 {
+  count: number = 0
 
-4. getCount(): number {
-5. return this.count
-6. }
-7. }
+  getCount(): number {
+    return this.count
+  }
+}
 ```
 
 **【正例】**
 
-```
-1. class C2 {
-2. private count: number = 0
+```typescript
+class C2 {
+  private count: number = 0
 
-4. public getCount(): number {
-5. return this.count
-6. }
-7. }
+  public getCount(): number {
+    return this.count
+  }
+}
 ```
 
 ### 不建议省略浮点数小数点前后的0
@@ -638,18 +631,18 @@ ArkTS中，浮点值包含一个小数点，不要求小数点之前或之后必
 
 **【反例】**
 
-```
-1. const num1 = .5;
-2. const num2 = 2.;
-3. const num3 = -.7;
+```typescript
+const num1 = .5;
+const num2 = 2.;
+const num3 = -.7;
 ```
 
 **【正例】**
 
-```
-1. const num4 = 0.5;
-2. const num5 = 2.0;
-3. const num6 = -0.7;
+```typescript
+const num4 = 0.5;
+const num5 = 2.0;
+const num6 = -0.7;
 ```
 
 ### 判断变量是否为Number.NaN时必须使用Number.isNaN()方法
@@ -666,26 +659,26 @@ ArkTS中，浮点值包含一个小数点，不要求小数点之前或之后必
 
 **【反例】**
 
-```
-1. if (foo == Number.NaN) {
-2. // ...
-3. }
+```typescript
+if (foo == Number.NaN) {
+  // ...
+}
 
-5. if (foo != Number.NaN) {
-6. // ...
-7. }
+if (foo != Number.NaN) {
+  // ...
+}
 ```
 
 **【正例】**
 
-```
-1. if (Number.isNaN(foo)) {
-2. // ...
-3. }
+```typescript
+if (Number.isNaN(foo)) {
+  // ...
+}
 
-5. if (!Number.isNaN(foo)) {
-6. // ...
-7. }
+if (!Number.isNaN(foo)) {
+  // ...
+}
 ```
 
 ### 数组遍历优先使用Array对象方法
@@ -698,22 +691,22 @@ ArkTS中，浮点值包含一个小数点，不要求小数点之前或之后必
 
 **【反例】**
 
-```
-1. const numbers = [1, 2, 3, 4, 5];
-2. // 依赖已有数组来创建新的数组时，通过for遍历，生成一个新数组
-3. const increasedByOne1: number[] = [];
-4. for (let i = 0; i < numbers.length; i++) {
-5. increasedByOne1.push(numbers[i] + 1);
-6. }
+```typescript
+const numbers = [1, 2, 3, 4, 5];
+// 依赖已有数组来创建新的数组时，通过for遍历，生成一个新数组
+const increasedByOne1: number[] = [];
+for (let i = 0; i < numbers.length; i++) {
+  increasedByOne1.push(numbers[i] + 1);
+}
 ```
 
 **【正例】**
 
-```
-1. const numbers = [1, 2, 3, 4, 5];
-2. // ...
-3. // better: 使用map方法是更好的方式
-4. const increasedByOne2: number[] = numbers.map(num => num + 1);
+```typescript
+const numbers = [1, 2, 3, 4, 5];
+// ...
+// better: 使用map方法是更好的方式
+const increasedByOne2: number[] = numbers.map(num => num + 1);
 ```
 
 ### 不要在控制性条件表达式中执行赋值操作
@@ -728,20 +721,20 @@ ArkTS中，浮点值包含一个小数点，不要求小数点之前或之后必
 
 **【反例】**
 
-```
-1. // 在控制性判断中赋值不易理解
-2. if (isFoo = false) {
-3. // ...
-4. }
+```typescript
+// 在控制性判断中赋值不易理解
+if (isFoo = false) {
+  // ...
+}
 ```
 
 **【正例】**
 
-```
-1. const isFoo = false; // 在上面赋值，if条件判断中直接使用
-2. if (isFoo) {
-3. // ...
-4. }
+```typescript
+const isFoo = false; // 在上面赋值，if条件判断中直接使用
+if (isFoo) {
+  // ...
+}
 ```
 
 ### 在finally代码块中，不要使用return、break、continue或抛出异常，避免finally块非正常结束
@@ -754,34 +747,34 @@ ArkTS中，浮点值包含一个小数点，不要求小数点之前或之后必
 
 **【反例】**
 
-```
-1. function foo4() {
-2. try {
-3. // ...
-4. return 1;
-5. } catch (err) {
-6. // ...
-7. return 2;
-8. } finally {
-9. return 3;
-10. }
-11. }
+```typescript
+function foo4() {
+  try {
+    // ...
+    return 1;
+  } catch (err) {
+    // ...
+    return 2;
+  } finally {
+    return 3;
+  }
+}
 ```
 
 **【正例】**
 
-```
-1. function foo5() {
-2. try {
-3. // ...
-4. return 1;
-5. } catch (err) {
-6. // ...
-7. return 2;
-8. } finally {
-9. console.info('XXX!');
-10. }
-11. }
+```typescript
+function foo5() {
+  try {
+    // ...
+    return 1;
+  } catch (err) {
+    // ...
+    return 2;
+  } finally {
+    console.info('XXX!');
+  }
+}
 ```
 
 ### 避免使用ESObject
@@ -794,44 +787,45 @@ ESObject主要用于ArkTS和TS/JS的跨语言调用场景中的类型标注。�
 
 **【反例】**
 
-```
-1. // lib.ets
-2. export interface I {
-3. sum: number
-4. }
+```typescript
+// lib.ets
+export interface I {
+  sum: number
+}
 
-6. export function getObject1(value: number): I {
-7. let obj: I = { sum: value };
-8. return obj
-9. }
+export function getObject1(value: number): I {
+  let obj: I = { sum: value };
+  return obj
+}
 ```
 
-```
-1. import { getObject1 } from './lib'
-2. // ...
-3. let obj1: I = getObject1(123);
+```typescript
+// Index.ets
+import { getObject1 } from './lib';
+// ...
+let obj1: ESObject = getObject1(123);
 ```
 
 **【正例】**
 
-```
-1. // lib.ets
-2. export interface I {
-3. sum: number
-4. }
+```typescript
+// lib.ets
+export interface I {
+  sum: number
+}
 
-6. // ...
-7. export function getObject2(value: number): I {
-8. let obj: I = { sum: value };
-9. return obj
-10. }
+// ...
+export function getObject2(value: number): I {
+  let obj: I = { sum: value };
+  return obj
+}
 ```
 
-```
-1. // Index.ets
-2. import { getObject2, I } from './lib';
-3. // ...
-4. let obj2: I = getObject2(123);
+```typescript
+// Index.ets
+import { getObject2, I } from './lib';
+// ...
+let obj2: I = getObject2(123);
 ```
 
 ### 使用T[]表示数组类型
@@ -844,15 +838,15 @@ ArkTS提供了两种数组类型的表示方式：T[]和Array<T>。建议所有�
 
 **【反例】**
 
-```
-1. let x: Array<number> = [1, 2, 3];
-2. let y: Array<string> = ['a', 'b', 'c'];
+```typescript
+let x: Array<number> = [1, 2, 3];
+let y: Array<string> = ['a', 'b', 'c'];
 ```
 
 **【正例】**
 
-```
-1. // 统一使用T[]语法
-2. let x: number[] = [1, 2, 3];
-3. let y: string[] = ['a', 'b', 'c'];
+```typescript
+// 统一使用T[]语法
+let x: number[] = [1, 2, 3];
+let y: string[] = ['a', 'b', 'c'];
 ```

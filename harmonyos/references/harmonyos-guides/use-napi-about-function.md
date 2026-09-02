@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API接口进行函数创建和调用
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口进行函数创建和调用
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:04+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c3c1d3068baf089e90dff6ff304d5f11fe6ed940417fe85006e5f1b336bf72c6
+scraped_at: 2026-09-02T14:50:46+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0443531a4f77a74089d456deae0254a39e49a0881e720ea10fbcf3aee322af20
 ---
 
 ## 简介
@@ -35,171 +35,177 @@ Node-API接口开发流程参考[使用Node-API实现跨语言交互开发流程
 cpp部分代码
 
 ```
-1. #include "napi/native_api.h"
+#include "napi/native_api.h"
 
-3. // napi_get_cb_info
-4. // 获取ArkTS侧入参的参数信息
-5. static napi_value GetCbArgs(napi_env env, napi_callback_info info)
-6. {
-7. size_t argc = 1;
-8. napi_value args[1] = {nullptr};
-9. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-10. return args[0];
-11. }
+// napi_get_cb_info
+// 获取ArkTS侧入参的参数信息
+static napi_value GetCbArgs(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    return args[0];
+}
 
-13. // 获取ArkTS侧入参的参数个数
-14. static napi_value GetCbArgQuantity(napi_env env, napi_callback_info info)
-15. {
-16. size_t argc = 0;
-17. napi_value result = nullptr;
-18. napi_get_cb_info(env, info, &argc, nullptr, nullptr, nullptr);
-19. napi_create_int32(env, argc, &result);
-20. return result;
-21. }
+// 获取ArkTS侧入参的参数个数
+static napi_value GetCbArgQuantity(napi_env env, napi_callback_info info)
+{
+    size_t argc = 0;
+    napi_value result = nullptr;
+    napi_get_cb_info(env, info, &argc, nullptr, nullptr, nullptr);
+    napi_create_int32(env, argc, &result);
+    return result;
+}
 
-23. // 获取ArkTS侧this参数
-24. static napi_value GetCbContext(napi_env env, napi_callback_info info)
-25. {
-26. napi_value thisArg = nullptr;
-27. napi_get_cb_info(env, info, nullptr, nullptr, &thisArg, nullptr);
-28. return thisArg;
-29. }
+// 获取ArkTS侧this参数
+static napi_value GetCbContext(napi_env env, napi_callback_info info)
+{
+    napi_value thisArg = nullptr;
+    napi_get_cb_info(env, info, nullptr, nullptr, &thisArg, nullptr);
+    return thisArg;
+}
 ```
 
 接口声明
 
-```
-1. export const getCbArgs: <T>(arg: T) => T; // napi_get_cb_info
+```typescript
+export const getCbArgs: <T>(arg: T) => T; // napi_get_cb_info
 
-3. // getCbArgQuantity的入参由用户自定义，在此用例中，我们用两个入参，一个是string，一个是number
-4. export const getCbArgQuantity: (str: string, num: number) => number;
+// getCbArgQuantity的入参由用户自定义，在此用例中，我们用两个入参，一个是string，一个是number
+export const getCbArgQuantity: (str: string, num: number) => number;
 
-6. export const getCbContext: () => Object;
+export const getCbContext: () => Object;
 ```
 
 ArkTS 侧示例代码
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import testNapi from 'libentry.so';
+
+function summation(arr: Array<number>) {
+  let sum: number = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum;
+}
+
+const str = 'message';
+const arr = [0, 1, 2, 3, 4, 5];
+const num = 526;
+
+class Student {
+  name: string;
+  age: number;
+  score: number;
+
+  constructor(name: string, age: number, score: number) {
+    this.name = name;
+    this.age = age;
+    this.score = score;
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import testNapi from 'libentry.so';
 
-4. function summation(arr: Array<number>) {
-5. let sum: number = 0;
-6. for (let i = 0; i < arr.length; i++) {
-7. sum += arr[i];
-8. }
-9. return sum;
-10. }
-
-12. const str = 'message';
-13. const arr = [0, 1, 2, 3, 4, 5];
-14. const num = 526;
-
-16. class Student {
-17. name: string;
-18. age: number;
-19. score: number;
-
-21. constructor(name: string, age: number, score: number) {
-22. this.name = name;
-23. this.age = age;
-24. this.score = score;
-25. }
-26. }
-
-28. // ...
-29. // napi_get_cb_info
-30. let student = new Student('Alice', 18, 100);
-31. // 获取参数
-32. hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_cb_info get string arg:%{public}s',
-33. testNapi.getCbArgs(str));
-34. hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_cb_info get array arg:%{public}s ',
-35. testNapi.getCbArgs(arr).toString());
-36. hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_cb_info get num arg:%{public}d ',
-37. testNapi.getCbArgs(num));
-38. hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_cb_info get undefined arg:%{public}s ',
-39. testNapi.getCbArgs(undefined));
-40. hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_cb_info get object arg:%{public}s ',
-41. JSON.stringify(testNapi.getCbArgs(student)));
-42. hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_cb_info get function arg:%{public}d ',
-43. testNapi.getCbArgs(summation(arr)));
-44. // 获取参数个数
-45. hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_cb_info get arg quantity:%{public}d ',
-46. testNapi.getCbArgQuantity(str, num));
-47. // 获取上下文
-48. hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_cb_info get thisArg:%{public}s ',
-49. testNapi.getCbContext().toString());
+```typescript
+// napi_get_cb_info
+let student = new Student('Alice', 18, 100);
+// 获取参数
+hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_cb_info get string arg:%{public}s',
+  testNapi.getCbArgs(str));
+hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_cb_info get array arg:%{public}s ',
+  testNapi.getCbArgs(arr).toString());
+hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_cb_info get num arg:%{public}d ',
+  testNapi.getCbArgs(num));
+hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_cb_info get undefined arg:%{public}s ',
+  testNapi.getCbArgs(undefined));
+hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_cb_info get object arg:%{public}s ',
+  JSON.stringify(testNapi.getCbArgs(student)));
+hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_cb_info get function arg:%{public}d ',
+  testNapi.getCbArgs(summation(arr)));
+// 获取参数个数
+hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_cb_info get arg quantity:%{public}d ',
+  testNapi.getCbArgQuantity(str, num));
+// 获取上下文
+hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_cb_info get thisArg:%{public}s ',
+  testNapi.getCbContext().toString());
 ```
 
 ## napi\_call\_function
 
 在C/C++侧对ArkTS函数进行调用。
 
-注意事项：napi\_call\_function传入的argv的长度必须大于等于argc声明的数量，并且每个元素都应初始化为nullptr。
+注意事项：napi\_call\_function传入的argv长度需不少于argc；argc为0时可传nullptr，否则argv元素应为有效的napi\_value。
 
 cpp部分代码
 
 ```
-1. // napi_call_function
-2. static napi_value CallFunction(napi_env env, napi_callback_info info)
-3. {
-4. size_t argc = 1;
-5. napi_value argv[1] = {nullptr};
-6. // 获取ArkTS侧入参
-7. napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
-8. // 获取全局对象，这里用global是因为napi_call_function的第二个参数是JS函数的this入参。
-9. napi_value global = nullptr;
-10. napi_get_global(env, &global);
-11. // 调用ArkTS方法
-12. napi_value result = nullptr;
-13. // 调用napi_call_function时传入的argv的长度必须大于等于argc声明的数量，且被初始化成nullptr
-14. napi_call_function(env, global, argv[0], argc, argv, &result);
-15. return result;
-16. }
+// napi_call_function
+constexpr int ARG_NUM = 10;
+static napi_value CallFunction(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value argv[1] = {nullptr};
+    // 获取ArkTS侧入参
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+    // 获取全局对象，这里用global是因为napi_call_function的第二个参数是JS函数的this入参。
+    napi_value global = nullptr;
+    napi_get_global(env, &global);
+    // 创建数字入参
+    napi_value args[1] = {nullptr};
+    napi_create_int32(env, ARG_NUM, &args[0]);
+    // 调用ArkTS方法
+    napi_value result = nullptr;
+    // 调用napi_call_function时传入的argv的长度必须大于等于argc声明的数量
+    napi_call_function(env, global, argv[0], 1, args, &result);
+    return result;
+}
 
-18. static napi_value ObjCallFunction(napi_env env, napi_callback_info info)
-19. {
-20. // 获取ArkTS侧传递的两个参数
-21. size_t argc = 2;
-22. napi_value argv[2] = {nullptr};
-23. // 获取ArkTS侧入参
-24. napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
-25. // 调用ArkTS方法
-26. napi_value result = nullptr;
-27. // 调用napi_call_function时传入的argv的长度必须大于等于argc声明的数量，且被初始化成nullptr
-28. napi_call_function(env, argv[0], argv[1], argc, argv, &result);
-29. return result;
-30. }
+static napi_value ObjCallFunction(napi_env env, napi_callback_info info)
+{
+    // 获取ArkTS侧传递的两个参数
+    size_t argc = 2;
+    napi_value argv[2] = {nullptr};
+    // 获取ArkTS侧入参
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+    // 调用ArkTS方法
+    napi_value result = nullptr;
+    // age方法无入参，napi_call_function的argc传0、argv传nullptr
+    napi_call_function(env, argv[0], argv[1], 0, nullptr, &result);
+    return result;
+}
 ```
 
 接口声明
 
-```
-1. export const callFunction: (func: Function) => number; // napi_call_function
+```typescript
+export const callFunction: (func: Function) => number; // napi_call_function
 
-3. export const objCallFunction: (obj: Object, func: Function) => number;
+export const objCallFunction: (obj: Object, func: Function) => number;
 ```
 
 ArkTS 侧示例代码
 
+```typescript
+function returnNumber(num: number) {
+  return num;
+}
+
+class Person {
+  age(): number {
+    return 11;
+  }
+}
 ```
-1. function returnNumber() {
-2. return 10;
-3. }
 
-5. class Person {
-6. age(): number {
-7. return 11;
-8. }
-9. }
-
-11. // ...
-12. // napi_call_function
-13. const person = new Person();
-14. hilog.info(0x0000, 'testTag', 'Test Node-API call_function:%{public}d',
-15. testNapi.callFunction(returnNumber));
-16. hilog.info(0x0000, 'testTag', 'Test Node-API call_function:%{public}d',
-17. testNapi.objCallFunction(person, person.age));
+```typescript
+// napi_call_function
+const person = new Person();
+hilog.info(0x0000, 'testTag', 'Test Node-API call_function:%{public}d',
+  testNapi.callFunction(returnNumber));
+hilog.info(0x0000, 'testTag', 'Test Node-API call_function:%{public}d',
+  testNapi.objCallFunction(person, person.age));
 ```
 
 ## napi\_create\_function
@@ -209,42 +215,54 @@ ArkTS 侧示例代码
 cpp部分代码
 
 ```
-1. // napi_create_function
-2. static napi_value CalculateArea(napi_env env, napi_callback_info info)
-3. {
-4. // 获取ArkTS侧传递的两个参数
-5. size_t argc = 2;
-6. napi_value args[2] = {nullptr};
-7. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-8. double width = 0;
-9. napi_get_value_double(env, args[0], &width);
-10. double height = 0;
-11. napi_get_value_double(env, args[1], &height);
-12. napi_value area = nullptr;
-13. napi_create_double(env, width * height, &area);
-14. return area;
-15. }
+// napi_create_function
+static napi_value CalculateArea(napi_env env, napi_callback_info info)
+{
+    // 获取ArkTS侧传递的两个参数
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    double width = 0;
+    napi_get_value_double(env, args[0], &width);
+    double height = 0;
+    napi_get_value_double(env, args[1], &height);
+    napi_value area = nullptr;
+    napi_create_double(env, width * height, &area);
+    return area;
+}
+
+EXTERN_C_START
+static napi_value Init(napi_env env, napi_value exports)
+{
+    // ...
+    napi_value fn = nullptr;
+    napi_create_function(env, nullptr, 0, CalculateArea, nullptr, &fn);
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    napi_set_named_property(env, exports, "calculateArea", fn);
+    return exports;
+}
+EXTERN_C_END
 ```
 
 接口声明
 
-```
-1. export const calculateArea: (width: number, height: number) => number; // napi_create_function
+```typescript
+export const calculateArea: (width: number, height: number) => number; // napi_create_function
 ```
 
 ArkTS 侧示例代码
 
-```
-1. // napi_create_function
-2. hilog.info(0x0000, 'testTag', 'Test Node-API create_function:%{public}d ',
-3. testNapi.calculateArea(1.2, 4));
+```typescript
+// napi_create_function
+hilog.info(0x0000, 'testTag', 'Test Node-API create_function:%{public}d ',
+  testNapi.calculateArea(1.2, 4));
 ```
 
 以上代码如果要在native cpp中打印日志，需在CMakeLists.txt文件中添加以下配置信息（并添加头文件：#include "hilog/log.h"）：
 
-```
-1. // CMakeLists.txt
-2. add_definitions( "-DLOG_DOMAIN=0xd0d0" )
-3. add_definitions( "-DLOG_TAG=\"testTag\"" )
-4. target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
+```text
+// CMakeLists.txt
+add_definitions( "-DLOG_DOMAIN=0xd0d0" )
+add_definitions( "-DLOG_TAG=\"testTag\"" )
+target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
 ```

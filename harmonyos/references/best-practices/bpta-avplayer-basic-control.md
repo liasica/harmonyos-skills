@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-avplayer-b
 title: 基于AVPlayer基础播控实践
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 基于AVPlayer播放视频系列开发实践 > 基于AVPlayer基础播控实践
 category: best-practices
-scraped_at: 2026-04-29T14:11:16+08:00
+scraped_at: 2026-09-02T15:03:17+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:9e96f7af3b36f0c128e9a5fdc8af848962adcc034a0083b71c18f930b7c433e1
+content_hash: sha256:1d93edabbe4f633868842f587868e611188dbc32fa94b284d6769ac3aa003e1e
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:9e96f7af3b36f0c128e9a5fdc8af848962adcc034a0083b71c18f930b7c
 
 本文指导开发者基于HarmonyOS提供的媒体和ArkUI等能力，实现视频播放、暂停、跳转播放、静音播放、循环播放、窗口缩放模式设置、倍速设置、音量设置等基本开发场景，可以为视频播放应用提供灵活的交互体验和良好的观看效果。
 
-说明
+**说明** 
 
 在阅读本文之前，建议开发者先熟悉视频播放器[《使用AVPlayer播放视频(ArkTS)》](../harmonyos-guides/video-playback.md)。
 
@@ -61,7 +61,7 @@ content_hash: sha256:9e96f7af3b36f0c128e9a5fdc8af848962adcc034a0083b71c18f930b7c
 
 进度条是视频应用的一个基础能力，可以通过点击或拖动进度条精准跳转到指定时间进行播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/POkJC9zsTBCX_sot1QJFnw/zh-cn_image_0000002453067562.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/JH0A7qApQ7Kbxil-zTQmjw/zh-cn_image_0000002453067562.gif "点击放大")
 
 ### 实现原理
 
@@ -71,37 +71,35 @@ content_hash: sha256:9e96f7af3b36f0c128e9a5fdc8af848962adcc034a0083b71c18f930b7c
 
 采用[Slider组件](../harmonyos-references/ts-basic-components-slider.md)实现进度条功能，根据Slider组件属性设置进度条样式，并在其onChange()事件中触发视频播放器AVPlayer的[seek()方法](../harmonyos-references/arkts-apis-media-avplayer.md#seek9)跳转到指定播放位置，实现视频进度的控制。
 
+```typescript
+/**
+ * Progress slider
+ */
+Slider({
+  value: this.currentTime,
+  min: 0,
+  max: this.durationTime,
+  style: SliderStyle.OutSet
+})
+  .id('Slider')
+  .blockColor(Color.White)
+  .trackColor(Color.Gray)
+  .selectedColor($r('app.color.slider_selected'))
+  .showTips(false)
+  .onChange((value: number, mode: SliderChangeMode) => {
+    if (mode === SliderChangeMode.Begin) {
+      this.isSwiping = true;
+      this.avPlayerController.videoPause();
+    }
+    this.avPlayerController.videoSeek(value);
+    this.currentTime = value;
+    if (mode === SliderChangeMode.End) {
+      this.isSwiping = false;
+      this.flag = true;
+      this.avPlayerController.videoPlay();
+    }
+  })
 ```
-1. /**
-2. * Progress slider
-3. */
-4. Slider({
-5. value: this.currentTime,
-6. min: 0,
-7. max: this.durationTime,
-8. style: SliderStyle.OutSet
-9. })
-10. .id('Slider')
-11. .blockColor(Color.White)
-12. .trackColor(Color.Gray)
-13. .selectedColor($r('app.color.slider_selected'))
-14. .showTips(false)
-15. .onChange((value: number, mode: SliderChangeMode) => {
-16. if (mode === SliderChangeMode.Begin) {
-17. this.isSwiping = true;
-18. this.avPlayerController.videoPause();
-19. }
-20. this.avPlayerController.videoSeek(value);
-21. this.currentTime = value;
-22. if (mode === SliderChangeMode.End) {
-23. this.isSwiping = false;
-24. this.flag = true;
-25. this.avPlayerController.videoPlay();
-26. }
-27. })
-```
-
-[VideoOperate.ets](https://gitcode.com/HarmonyOS_Samples/avplayer-basic-control/blob/master/entry/src/main/ets/views/VideoOperate.ets#L106-L132)
 
 ## 静音播放
 
@@ -109,7 +107,7 @@ content_hash: sha256:9e96f7af3b36f0c128e9a5fdc8af848962adcc034a0083b71c18f930b7c
 
 通过界面按钮快捷切换视频播放静音状态，实现一键开启或关闭静音，提升媒体播放的交互便捷性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/mQBYdXjwSMu-E83xNPo34g/zh-cn_image_0000002486107325.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/t9exOPhvQiGlt0p8pj7dxw/zh-cn_image_0000002486107325.gif "点击放大")
 
 ### 实现原理
 
@@ -119,51 +117,47 @@ content_hash: sha256:9e96f7af3b36f0c128e9a5fdc8af848962adcc034a0083b71c18f930b7c
 
 1. 在底部操作栏添加[Button组件](../harmonyos-references/ts-basic-components-button.md)，按钮显示为icon图标；根据Button组件属性设置按钮样式，并在其onClick()事件中触发视频管理接口AvPlayerController.ets文件中封装的videoMuted()方法。
 
+   ```typescript
+   /**
+    * Video Muted Button
+    */
+   Button() {
+     Image(this.isMuted ? $r('app.media.ic_video_speaker_slash') : $r('app.media.ic_video_speaker'))
+       .width($r('app.float.size_30'))
+       .height($r('app.float.size_30'))
+   }
+   .type(ButtonType.Normal)
+   .width($r('app.float.size_30'))
+   .height($r('app.float.size_30'))
+   .borderRadius($r('app.float.size_20'))
+   .backgroundColor('rgba(0, 0, 0, 0)')
+   .margin({ left: $r('app.float.size_5') })
+   .fontColor(Color.White)
+   .onClick(() => {
+     this.isMuted = !this.isMuted;
+     this.avPlayerController.videoMuted(this.isMuted)
+   })
    ```
-   1. /**
-   2. * Video Muted Button
-   3. */
-   4. Button() {
-   5. Image(this.isMuted ? $r('app.media.ic_video_speaker_slash') : $r('app.media.ic_video_speaker'))
-   6. .width($r('app.float.size_30'))
-   7. .height($r('app.float.size_30'))
-   8. }
-   9. .type(ButtonType.Normal)
-   10. .width($r('app.float.size_30'))
-   11. .height($r('app.float.size_30'))
-   12. .borderRadius($r('app.float.size_20'))
-   13. .backgroundColor('rgba(0, 0, 0, 0)')
-   14. .margin({ left: $r('app.float.size_5') })
-   15. .fontColor(Color.White)
-   16. .onClick(() => {
-   17. this.isMuted = !this.isMuted;
-   18. this.avPlayerController.videoMuted(this.isMuted)
-   19. })
-   ```
-
-   [VideoOperate.ets](https://gitcode.com/HarmonyOS_Samples/avplayer-basic-control/blob/master/entry/src/main/ets/views/VideoOperate.ets#L162-L181)
 2. videoMuted()方法中调用了视频播放器AVPlayer的[setMediaMuted()方法](../harmonyos-references/arkts-apis-media-avplayer.md#setmediamuted12)，实现控制视频静音状态，其中第一个参数[mediaType](../harmonyos-references/arkts-apis-media-e.md#mediatype8)选择媒体类型为MEDIA\_TYPE\_AUD表示音频，第二个参数是静音开关。
 
+   ```typescript
+   /**
+    * Video muted
+    * @param isMuted
+    * @returns
+    */
+   async videoMuted(isMuted: boolean): Promise<void> {
+     if (this.avPlayer) {
+       try {
+         this.isMuted = isMuted;
+         await this.avPlayer!.setMediaMuted(media.MediaType.MEDIA_TYPE_AUD, isMuted)
+       } catch (err) {
+         hilog.error(CommonConstants.LOG_DOMAIN, TAG,
+           `videoMuted failed, code is ${err.code}, message is ${err.message}`);
+       }
+     }
+   }
    ```
-   1. /**
-   2. * Video muted
-   3. * @param isMuted
-   4. * @returns
-   5. */
-   6. async videoMuted(isMuted: boolean): Promise<void> {
-   7. if (this.avPlayer) {
-   8. try {
-   9. this.isMuted = isMuted;
-   10. await this.avPlayer!.setMediaMuted(media.MediaType.MEDIA_TYPE_AUD, isMuted)
-   11. } catch (err) {
-   12. hilog.error(CommonConstants.LOG_DOMAIN, TAG,
-   13. `videoMuted failed, code is ${err.code}, message is ${err.message}`);
-   14. }
-   15. }
-   16. }
-   ```
-
-   [AvPlayerController.ets](https://gitcode.com/HarmonyOS_Samples/avplayer-basic-control/blob/master/entry/src/main/ets/controller/AvPlayerController.ets#L321-L337)
 
 ## 循环播放
 
@@ -175,25 +169,23 @@ content_hash: sha256:9e96f7af3b36f0c128e9a5fdc8af848962adcc034a0083b71c18f930b7c
 
 在视频prepared状态下，设置视频播放器AVPlayer的[loop属性](../harmonyos-references/arkts-apis-media-avplayer.md#属性)值为true，实现视频循环播放。
 
+```typescript
+// Callback function for state machine changes
+this.avPlayer.on('stateChange', async (state) => {
+  if (!this.avPlayer) {
+    return;
+  }
+  switch (state) {
+    // ...
+    case 'prepared': // This state machine is reported after the prepare interface is successfully invoked.
+      this.isReady = true;
+      this.avPlayer.loop = true
+      // ...
+      break;
+    // ...
+  }
+});
 ```
-1. // Callback function for state machine changes
-2. this.avPlayer.on('stateChange', async (state) => {
-3. if (!this.avPlayer) {
-4. return;
-5. }
-6. switch (state) {
-7. // ...
-8. case 'prepared': // This state machine is reported after the prepare interface is successfully invoked.
-9. this.isReady = true;
-10. this.avPlayer.loop = true
-11. // ...
-12. break;
-13. // ...
-14. }
-15. });
-```
-
-[AvPlayerController.ets](https://gitcode.com/HarmonyOS_Samples/avplayer-basic-control/blob/master/entry/src/main/ets/controller/AvPlayerController.ets#L168-L253)
 
 ## 窗口缩放模式设置
 
@@ -204,16 +196,16 @@ content_hash: sha256:9e96f7af3b36f0c128e9a5fdc8af848962adcc034a0083b71c18f930b7c
 点击按钮即可弹出设置弹窗，可选择"拉伸至与窗口等大"模式，视频拉伸至与窗口等大，适合需要充分利用显示区域且对比例变化不敏感的场景；选择"缩放至最短边填满窗口"模式，视频将保持原始宽高比并以最短边为基准进行缩放，适合需要保持画面比例不变的场景。
 
 **图1** 拉伸至与窗口等大模式  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/iNIVJ5-xSOO78f6YyHVDTg/zh-cn_image_0000002452907970.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/dtIwL4zoSpqkktULuQohxA/zh-cn_image_0000002452907970.gif "点击放大")
 
 **图2** 缩放至最短边填满窗口  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/lk5eqzsITgCaCyjuh8E5HA/zh-cn_image_0000002485947349.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/eCYffYqfRDqcU_yeU6FLUA/zh-cn_image_0000002485947349.gif "点击放大")
 
 ### 实现原理
 
 通过设置视频播放器AVPlayer的[videoScaleType](../harmonyos-references/arkts-apis-media-e.md#videoscaletype9)属性值，实现窗口缩放模式的切换。由于VIDEO\_SCALE\_TYPE\_SCALED\_ASPECT（缩放至长边填满窗口）属性值从APIversion20开始才支持在元服务中使用，因此在这之前的版本中可根据屏幕大小为视频设置固定宽高来实现。
 
-说明
+**说明** 
 
 在未设置视频固定宽高的情况下，即未设置XComponent的height和width为固定值时，设置AVPlayer的videoScaleType属性值才能生效。
 
@@ -221,74 +213,70 @@ content_hash: sha256:9e96f7af3b36f0c128e9a5fdc8af848962adcc034a0083b71c18f930b7c
 
 1. 可选择拉伸至与窗口等大/缩放至最短边填满窗口模式，选择后调用封装的videoScaleFit()/videoScaleFitCrop()方法。
 
+   ```typescript
+   List() {
+     ForEach(this.scaleList, (item: Resource, index) => {
+       ListItem() {
+         Column() {
+           Row() {
+             Text(item)
+             // ...
+             Blank()
+             Image(this.windowScaleSelect === index ? $r('app.media.ic_radio_selected') :
+               $r('app.media.ic_radio'))
+             // ...
+           }
+           // ...
+         }
+         .width('90%')
+       }
+       .width('100%')
+       .height($r('app.float.size_48'))
+       .onClick(() => {
+         this.windowScaleSelect = index;
+         switch (this.windowScaleSelect) {
+           case ZERO:
+             this.avPlayerController.videoScaleFit();
+             break;
+           case ONE:
+             this.avPlayerController.videoScaleFitCrop();
+             break;
+           default:
+             break;
+         }
+         this.controller.close();
+       })
+     })
+   }
    ```
-   1. List() {
-   2. ForEach(this.scaleList, (item: Resource, index) => {
-   3. ListItem() {
-   4. Column() {
-   5. Row() {
-   6. Text(item)
-   7. // ...
-   8. Blank()
-   9. Image(this.windowScaleSelect === index ? $r('app.media.ic_radio_selected') :
-   10. $r('app.media.ic_radio'))
-   11. // ...
-   12. }
-   13. // ...
-   14. }
-   15. .width('90%')
-   16. }
-   17. .width('100%')
-   18. .height($r('app.float.size_48'))
-   19. .onClick(() => {
-   20. this.windowScaleSelect = index;
-   21. switch (this.windowScaleSelect) {
-   22. case ZERO:
-   23. this.avPlayerController.videoScaleFit();
-   24. break;
-   25. case ONE:
-   26. this.avPlayerController.videoScaleFitCrop();
-   27. break;
-   28. default:
-   29. break;
-   30. }
-   31. this.controller.close();
-   32. })
-   33. })
-   34. }
-   ```
-
-   [ScaleDialog.ets](https://gitcode.com/HarmonyOS_Samples/avplayer-basic-control/blob/master/entry/src/main/ets/views/ScaleDialog.ets#L48-L101)
 2. videoScaleFit()/videoScaleFitCrop()方法内设置视频播放器AVPlayer的[videoScaleType](../harmonyos-references/arkts-apis-media-e.md#videoscaletype9)属性值。VIDEO\_SCALE\_TYPE\_FIT表示拉伸至与窗口等大；VIDEO\_SCALE\_TYPE\_FIT\_CROP表示缩放至最短边填满窗口。
 
-   ```
-   1. /**
-   2. * Set window scale mode
-   3. */
-   4. videoScaleFit(): void {
-   5. if (this.avPlayer) {
-   6. try {
-   7. this.avPlayer.videoScaleType = media.VideoScaleType.VIDEO_SCALE_TYPE_FIT
-   8. } catch (err) {
-   9. hilog.error(CommonConstants.LOG_DOMAIN, TAG,
-   10. `videoScaleType_0 failed, code is ${err.code}, message is ${err.message}`);
-   11. }
-   12. }
-   13. }
+   ```typescript
+   /**
+    * Set window scale mode
+    */
+   videoScaleFit(): void {
+     if (this.avPlayer) {
+       try {
+         this.avPlayer.videoScaleType = media.VideoScaleType.VIDEO_SCALE_TYPE_FIT
+       } catch (err) {
+         hilog.error(CommonConstants.LOG_DOMAIN, TAG,
+           `videoScaleType_0 failed, code is ${err.code}, message is ${err.message}`);
+       }
+     }
+   }
 
-   15. videoScaleFitCrop(): void {
-   16. if (this.avPlayer) {
-   17. try {
-   18. this.avPlayer.videoScaleType = media.VideoScaleType.VIDEO_SCALE_TYPE_FIT_CROP
-   19. } catch (err) {
-   20. hilog.error(CommonConstants.LOG_DOMAIN, TAG,
-   21. `videoScaleType_1 failed, code is ${err.code}, message is ${err.message}`);
-   22. }
-   23. }
-   24. }
+   videoScaleFitCrop(): void {
+     if (this.avPlayer) {
+       try {
+         this.avPlayer.videoScaleType = media.VideoScaleType.VIDEO_SCALE_TYPE_FIT_CROP
+       } catch (err) {
+         hilog.error(CommonConstants.LOG_DOMAIN, TAG,
+           `videoScaleType_1 failed, code is ${err.code}, message is ${err.message}`);
+       }
+     }
+   }
    ```
-
-   [AvPlayerController.ets](https://gitcode.com/HarmonyOS_Samples/avplayer-basic-control/blob/master/entry/src/main/ets/controller/AvPlayerController.ets#L400-L424)
 
 ## 点击按钮选择倍速
 
@@ -296,7 +284,7 @@ content_hash: sha256:9e96f7af3b36f0c128e9a5fdc8af848962adcc034a0083b71c18f930b7c
 
 通过点击按钮选择预设倍速实现倍速设置，为用户提供灵活的视频播放速率控制。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/GgmIbrGfRqKKnI61F_U-uQ/zh-cn_image_0000002453067566.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/4Msn-ZN4QkedK7rRmWdcpw/zh-cn_image_0000002453067566.gif "点击放大")
 
 ### 实现原理
 
@@ -306,65 +294,61 @@ content_hash: sha256:9e96f7af3b36f0c128e9a5fdc8af848962adcc034a0083b71c18f930b7c
 
 1. 可选择1.0X、1.25X、1.75X、2.0X，选择后调用对应的设置倍速方法。
 
+   ```typescript
+     ForEach(this.speedList, (item: Resource, index) => {
+       ListItem() {
+         Column() {
+           Row() {
+             Text(item)
+             // ...
+             Blank()
+             Image(this.speedSelect === index ? $r('app.media.ic_radio_selected') :
+             $r('app.media.ic_radio'))
+             // ...
+           }
+           // ...
+         }
+         .width('90%')
+       }
+       .width('100%')
+       .height($r('app.float.size_48'))
+       .onClick(() => {
+         this.speedSelect = index;
+         switch (this.speedSelect) {
+           case ZERO:
+             this.avPlayerController.videoSpeed(media.PlaybackSpeed.SPEED_FORWARD_1_00_X);
+             break;
+           case ONE:
+             this.avPlayerController.videoSpeed(media.PlaybackSpeed.SPEED_FORWARD_1_25_X);
+             break;
+           case TWO:
+             this.avPlayerController.videoSpeed(media.PlaybackSpeed.SPEED_FORWARD_1_75_X);
+             break;
+           case THREE:
+             this.avPlayerController.videoSpeed(media.PlaybackSpeed.SPEED_FORWARD_2_00_X);
+             break;
+           default:
+             break;
+         }
+         this.controller.close();
+       })
+     }, (item: Resource, index) => index + '_' + JSON.stringify(item))
+   }
    ```
-   1. ForEach(this.speedList, (item: Resource, index) => {
-   2. ListItem() {
-   3. Column() {
-   4. Row() {
-   5. Text(item)
-   6. // ...
-   7. Blank()
-   8. Image(this.speedSelect === index ? $r('app.media.ic_radio_selected') :
-   9. $r('app.media.ic_radio'))
-   10. // ...
-   11. }
-   12. // ...
-   13. }
-   14. .width('90%')
-   15. }
-   16. .width('100%')
-   17. .height($r('app.float.size_48'))
-   18. .onClick(() => {
-   19. this.speedSelect = index;
-   20. switch (this.speedSelect) {
-   21. case ZERO:
-   22. this.avPlayerController.videoSpeed(media.PlaybackSpeed.SPEED_FORWARD_1_00_X);
-   23. break;
-   24. case ONE:
-   25. this.avPlayerController.videoSpeed(media.PlaybackSpeed.SPEED_FORWARD_1_25_X);
-   26. break;
-   27. case TWO:
-   28. this.avPlayerController.videoSpeed(media.PlaybackSpeed.SPEED_FORWARD_1_75_X);
-   29. break;
-   30. case THREE:
-   31. this.avPlayerController.videoSpeed(media.PlaybackSpeed.SPEED_FORWARD_2_00_X);
-   32. break;
-   33. default:
-   34. break;
-   35. }
-   36. this.controller.close();
-   37. })
-   38. }, (item: Resource, index) => index + '_' + JSON.stringify(item))
-   39. }
-   ```
-
-   [SpeedDialog.ets](https://gitcode.com/HarmonyOS_Samples/avplayer-basic-control/blob/master/entry/src/main/ets/views/SpeedDialog.ets#L55-L113)
 2. 设置倍速方法内调用视频播放器AVPlayer的[setSpeed()方法](../harmonyos-references/arkts-apis-media-avplayer.md#setspeed9)实现设置倍速。
 
+   ```typescript
+   videoSpeed(speed: number): void {
+     if (this.avPlayer) {
+       try {
+         this.avPlayer.setSpeed(speed);
+       } catch (err) {
+         hilog.error(CommonConstants.LOG_DOMAIN, TAG,
+           `videoSpeed failed, code is ${err.code}, message is ${err.message}`);
+       }
+     }
+   }
    ```
-   1. videoSpeed(speed: number): void {
-   2. if (this.avPlayer) {
-   3. try {
-   4. this.avPlayer.setSpeed(speed);
-   5. } catch (err) {
-   6. hilog.error(CommonConstants.LOG_DOMAIN, TAG,
-   7. `videoSpeed failed, code is ${err.code}, message is ${err.message}`);
-   8. }
-   9. }
-   10. }
-   ```
-
-   [AvPlayerController.ets](https://gitcode.com/HarmonyOS_Samples/avplayer-basic-control/blob/master/entry/src/main/ets/controller/AvPlayerController.ets#L341-L351)
 
 ## 长按手势调节倍速
 
@@ -380,37 +364,33 @@ content_hash: sha256:9e96f7af3b36f0c128e9a5fdc8af848962adcc034a0083b71c18f930b7c
 
 1. 为元素绑定[长按手势LongPressGesture](../harmonyos-references/ts-basic-gestures-longpressgesture.md)事件，并调用封装的videoSpeed()方法，长按手势开始时传递参数为media.PlaybackSpeed.SPEED\_FORWARD\_2\_00\_X，设置播放速度为2倍速；长按手势结束时传递参数为media.PlaybackSpeed.SPEED\_FORWARD\_1\_00\_X，恢复播放速度为1倍速。
 
+   ```typescript
+   .gesture(
+     LongPressGesture({ repeat: true })
+       .onAction(() => {
+         this.speedSelect = CASE_THREE
+         this.avPlayerController.videoSpeed(media.PlaybackSpeed.SPEED_FORWARD_2_00_X);
+       })
+       .onActionEnd(() => {
+         this.speedSelect = CASE_ZERO
+         this.avPlayerController.videoSpeed(media.PlaybackSpeed.SPEED_FORWARD_1_00_X);
+       })
+   )
    ```
-   1. .gesture(
-   2. LongPressGesture({ repeat: true })
-   3. .onAction(() => {
-   4. this.speedSelect = CASE_THREE
-   5. this.avPlayerController.videoSpeed(media.PlaybackSpeed.SPEED_FORWARD_2_00_X);
-   6. })
-   7. .onActionEnd(() => {
-   8. this.speedSelect = CASE_ZERO
-   9. this.avPlayerController.videoSpeed(media.PlaybackSpeed.SPEED_FORWARD_1_00_X);
-   10. })
-   11. )
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/avplayer-basic-control/blob/master/entry/src/main/ets/pages/Index.ets#L331-L341)
 2. 设置倍速方法内调用视频播放器AVPlayer的[setSpeed()方法](../harmonyos-references/arkts-apis-media-avplayer.md#setspeed9)实现设置倍速。
 
+   ```typescript
+   videoSpeed(speed: number): void {
+     if (this.avPlayer) {
+       try {
+         this.avPlayer.setSpeed(speed);
+       } catch (err) {
+         hilog.error(CommonConstants.LOG_DOMAIN, TAG,
+           `videoSpeed failed, code is ${err.code}, message is ${err.message}`);
+       }
+     }
+   }
    ```
-   1. videoSpeed(speed: number): void {
-   2. if (this.avPlayer) {
-   3. try {
-   4. this.avPlayer.setSpeed(speed);
-   5. } catch (err) {
-   6. hilog.error(CommonConstants.LOG_DOMAIN, TAG,
-   7. `videoSpeed failed, code is ${err.code}, message is ${err.message}`);
-   8. }
-   9. }
-   10. }
-   ```
-
-   [AvPlayerController.ets](https://gitcode.com/HarmonyOS_Samples/avplayer-basic-control/blob/master/entry/src/main/ets/controller/AvPlayerController.ets#L341-L351)
 
 ## 音量设置
 
@@ -418,7 +398,7 @@ content_hash: sha256:9e96f7af3b36f0c128e9a5fdc8af848962adcc034a0083b71c18f930b7c
 
 滑动调节音量是一项非常实用的功能，它允许用户在不离开视频播放界面的情况下快速调整音量，以获得更好的观看体验。该功能位于窗口左侧，通过上下滑动手势即可调整音量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/IEhwWyAbTUCLY039HXbdpQ/zh-cn_image_0000002486107329.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/YAuR2VFASzenWe294COL1g/zh-cn_image_0000002486107329.gif "点击放大")
 
 ### 实现原理
 
@@ -428,55 +408,51 @@ content_hash: sha256:9e96f7af3b36f0c128e9a5fdc8af848962adcc034a0083b71c18f930b7c
 
 1. 添加[AVVolumePanel组件](../harmonyos-references/ohos-multimedia-avvolumepanel.md)显示系统音量面板。
 
+   ```typescript
+   import { AVVolumePanel } from '@kit.AudioKit';
+
+   @Component
+   export struct SetVolume {
+     @Prop volume: number = 5
+     @Prop volumeVisible: boolean = false
+
+     build() {
+       Column() {
+         AVVolumePanel({
+           volumeLevel: this.volume,
+           volumeParameter: {
+             position: {
+               x: 50,
+               y: 1000
+             }
+           }
+         })
+           .width(10)
+       }
+       .visibility(this.volumeVisible ? Visibility.Visible : Visibility.Hidden)
+       .height('50%')
+     }
+   }
    ```
-   1. import { AVVolumePanel } from '@kit.AudioKit';
-
-   3. @Component
-   4. export struct SetVolume {
-   5. @Prop volume: number = 5
-   6. @Prop volumeVisible: boolean = false
-
-   8. build() {
-   9. Column() {
-   10. AVVolumePanel({
-   11. volumeLevel: this.volume,
-   12. volumeParameter: {
-   13. position: {
-   14. x: 50,
-   15. y: 1000
-   16. }
-   17. }
-   18. })
-   19. .width(10)
-   20. }
-   21. .visibility(this.volumeVisible ? Visibility.Visible : Visibility.Hidden)
-   22. .height('50%')
-   23. }
-   24. }
-   ```
-
-   [SetVolume.ets](https://gitcode.com/HarmonyOS_Samples/avplayer-basic-control/blob/master/entry/src/main/ets/views/SetVolume.ets#L17-L40)
 2. 为元素绑定[PanGesture](../harmonyos-references/ts-basic-gestures-pangesture.md)滑动手势事件，并根据手势滑动距离计算音量值volume。
 
+   ```typescript
+   .gesture(
+     PanGesture({ direction: PanDirection.Vertical })
+       .onActionStart(() => {
+       })
+       .onActionUpdate((event: GestureEvent) => {
+         this.volumeVisible = true;
+         let curVolume = this.volume - this.getUIContext().vp2px(event.offsetY) / this.windowHeight;
+         curVolume = curVolume >= 15.0 ? 15.0 : curVolume;
+         curVolume = curVolume <= 0.0 ? 0.0 : curVolume;
+         this.volume = curVolume;
+       })
+       .onActionEnd(() => {
+         this.setVolumeTimer();
+       })
+   )
    ```
-   1. .gesture(
-   2. PanGesture({ direction: PanDirection.Vertical })
-   3. .onActionStart(() => {
-   4. })
-   5. .onActionUpdate((event: GestureEvent) => {
-   6. this.volumeVisible = true;
-   7. let curVolume = this.volume - this.getUIContext().vp2px(event.offsetY) / this.windowHeight;
-   8. curVolume = curVolume >= 15.0 ? 15.0 : curVolume;
-   9. curVolume = curVolume <= 0.0 ? 0.0 : curVolume;
-   10. this.volume = curVolume;
-   11. })
-   12. .onActionEnd(() => {
-   13. this.setVolumeTimer();
-   14. })
-   15. )
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/avplayer-basic-control/blob/master/entry/src/main/ets/pages/Index.ets#L251-L265)
 
 ## 字幕挂载与切换
 
@@ -484,7 +460,7 @@ content_hash: sha256:9e96f7af3b36f0c128e9a5fdc8af848962adcc034a0083b71c18f930b7c
 
 在视频播放前，用户可设置外挂字幕文件，字幕将精准同步显示于视频画面下方，并可以通过按钮切换字幕语言，提升观看体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/jQ1PoR6NRvaI7kqxoLcTcA/zh-cn_image_0000002452907974.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/pjwOs-xeTbSA7Ilkhcu_8Q/zh-cn_image_0000002452907974.gif "点击放大")
 
 ### 实现原理
 
@@ -496,69 +472,61 @@ content_hash: sha256:9e96f7af3b36f0c128e9a5fdc8af848962adcc034a0083b71c18f930b7c
 
 1. 使用AVPlayer实例的[addSubtitleFromFd()](../harmonyos-references/arkts-apis-media-avplayer.md#addsubtitlefromfd12)方法为视频添加外挂字幕资源。
 
+   ```typescript
+   if (this.curSource.caption) {
+     let fileDescriptorSub = await this.context.resourceManager.getRawFd(this.curSource.caption);
+     this.avPlayer.addSubtitleFromFd(fileDescriptorSub.fd, fileDescriptorSub.offset, fileDescriptorSub.length)
+       .catch((err: BusinessError) => {
+         hilog.error(CommonConstants.LOG_DOMAIN, TAG,
+           `addSubtitleFromFd failed, code is ${err.code}, message is ${err.message}`);
+       });
+   }
    ```
-   1. if (this.curSource.caption) {
-   2. let fileDescriptorSub = await this.context.resourceManager.getRawFd(this.curSource.caption);
-   3. this.avPlayer.addSubtitleFromFd(fileDescriptorSub.fd, fileDescriptorSub.offset, fileDescriptorSub.length)
-   4. .catch((err: BusinessError) => {
-   5. hilog.error(CommonConstants.LOG_DOMAIN, TAG,
-   6. `addSubtitleFromFd failed, code is ${err.code}, message is ${err.message}`);
-   7. });
-   8. }
-   ```
-
-   [AvPlayerController.ets](https://gitcode.com/HarmonyOS_Samples/avplayer-basic-control/blob/master/entry/src/main/ets/controller/AvPlayerController.ets#L109-L116)
 2. 通过AVPlayer的[on('subtitleUpdate')](../harmonyos-references/arkts-apis-media-avplayer.md#onsubtitleupdate12)方法订阅获取外挂字幕事件，当有外挂字幕时，会通过订阅的回调方法通知用户。用户只能订阅一个外挂字幕事件的回调方法，若用户重复订阅，则以最后一次订阅的回调接口为准。回调中可以获取字幕文本、当前时间等信息，从而可以通过状态变量刷新Text组件显示的内容。
 
+   ```typescript
+   this.avPlayer.on('subtitleUpdate', (info: media.SubtitleInfo) => {
+     if (info) {
+       let text = (!info.text) ? '' : info.text;
+       this.currentCaption = text; //update current caption content
+     } else {
+       this.currentCaption = '';
+       hilog.error(CommonConstants.LOG_DOMAIN, TAG, 'subtitleUpdate info is null');
+     }
+   });
    ```
-   1. this.avPlayer.on('subtitleUpdate', (info: media.SubtitleInfo) => {
-   2. if (info) {
-   3. let text = (!info.text) ? '' : info.text;
-   4. this.currentCaption = text; //update current caption content
-   5. } else {
-   6. this.currentCaption = '';
-   7. hilog.error(CommonConstants.LOG_DOMAIN, TAG, 'subtitleUpdate info is null');
-   8. }
-   9. });
-   ```
-
-   [AvPlayerController.ets](https://gitcode.com/HarmonyOS_Samples/avplayer-basic-control/blob/master/entry/src/main/ets/controller/AvPlayerController.ets#L430-L438)
 3. 使用状态变量刷新[Text组件](../harmonyos-references/ts-basic-components-text.md)的内容，并通过修改Text属性调整字幕字体格式。
 
+   ```typescript
+   Stack({ alignContent: Alignment.Center }) {
+     Text(this.avPlayerController.currentCaption)
+       .fontColor(Color.White)
+       .fontSize($r('app.float.size_20'))
+       .fontFamily('Sans')
+   }
+   .width('100%')
+   .position({ x: $r('app.float.size_zero'), y: $r('app.float.size_216') })
+   .zIndex(1)
    ```
-   1. Stack({ alignContent: Alignment.Center }) {
-   2. Text(this.avPlayerController.currentCaption)
-   3. .fontColor(Color.White)
-   4. .fontSize($r('app.float.size_20'))
-   5. .fontFamily('Sans')
-   6. }
-   7. .width('100%')
-   8. .position({ x: $r('app.float.size_zero'), y: $r('app.float.size_216') })
-   9. .zIndex(1)
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/avplayer-basic-control/blob/master/entry/src/main/ets/pages/Index.ets#L236-L245)
 4. 根据所选语言切换对应字幕资源，并调用AVPlayer的[reset()方法](../harmonyos-references/arkts-apis-media-avplayer.md#reset9-1)重置播放器并重新初始化。
 
+   ```screen
+   async languageChange(languageSelect: number = 0): Promise<void> {
+     if (this.avPlayer) {
+       try {
+         if (this.curSource && this.curSource.caption) {
+           this.curSource.caption = languageSelect === 0 ? 'captions.srt' : 'en_captions.srt'
+           this.curSource.seekTime = this.avPlayer.currentTime;
+           await this.avPlayer.reset();
+           this.initAVPlayer(this.curSource, this.surfaceID, this.avPlayer);
+         }
+       } catch (err) {
+         hilog.error(CommonConstants.LOG_DOMAIN, TAG,
+           `languageChange failed, code is ${err.code}, message is ${err.message}`);
+       }
+     }
+   }
    ```
-   1. async languageChange(languageSelect: number = 0): Promise<void> {
-   2. if (this.avPlayer) {
-   3. try {
-   4. if (this.curSource && this.curSource.caption) {
-   5. this.curSource.caption = languageSelect === 0 ? 'captions.srt' : 'en_captions.srt'
-   6. this.curSource.seekTime = this.avPlayer.currentTime;
-   7. await this.avPlayer.reset();
-   8. this.initAVPlayer(this.curSource, this.surfaceID, this.avPlayer);
-   9. }
-   10. } catch (err) {
-   11. hilog.error(CommonConstants.LOG_DOMAIN, TAG,
-   12. `languageChange failed, code is ${err.code}, message is ${err.message}`);
-   13. }
-   14. }
-   15. }
-   ```
-
-   [AvPlayerController.ets](https://gitcode.com/HarmonyOS_Samples/avplayer-basic-control/blob/master/entry/src/main/ets/controller/AvPlayerController.ets#L448-L463)
 
 ## 示例代码
 

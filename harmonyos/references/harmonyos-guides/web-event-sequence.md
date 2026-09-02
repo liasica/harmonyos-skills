@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-event-seq
 title: Web组件的生命周期
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > Web组件的生命周期
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:14+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:041071846dceeac97c5a9781bc4db18b3269cbce2b71990d0d3b790c84bd234a
+scraped_at: 2026-09-02T14:49:55+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:8491bcf7d6a7e334a2bc701b8b8ae74558c2e87a9bfc14c215675f71ce99ccc8
 ---
 
 ## 概述
@@ -22,7 +22,7 @@ Web页面保活可以参考[使用离线Web组件](web-offline-mode.md)。
 
 **图1** Web组件网页正常加载过程中的回调事件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/nF2wrMCTS4ucpz6bwby4Ww/zh-cn_image_0000002589244505.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/-pU4lu9JSlusv3STk13RuQ/zh-cn_image_0000002736433203.png)
 
 ## Web组件网页正常加载过程所涉及的状态说明
 
@@ -42,124 +42,124 @@ Web页面保活可以参考[使用离线Web组件](web-offline-mode.md)。
 * [onDisAppear](../harmonyos-references/ts-universal-events-show-hide.md#ondisappear)事件：组件卸载消失时触发此回调。该事件在组件卸载时触发。
 * 应用侧代码。
 
-  ```
-  1. // xxx.ets
-  2. import { webview } from '@kit.ArkWeb';
-  3. import { BusinessError } from '@kit.BasicServicesKit';
+  ```ts
+  // xxx.ets
+  import { webview } from '@kit.ArkWeb';
+  import { BusinessError } from '@kit.BasicServicesKit';
 
-  5. @Entry
-  6. @Component
-  7. struct WebComponent {
-  8. controller: webview.WebviewController = new webview.WebviewController();
-  9. responseWeb: WebResourceResponse = new WebResourceResponse();
-  10. heads: Header[] = new Array();
-  11. @State webData: string = "<!DOCTYPE html>\n" +
-  12. "<html>\n" +
-  13. "<head>\n" +
-  14. "<title>intercept test</title>\n" +
-  15. "</head>\n" +
-  16. "<body>\n" +
-  17. "<h1>intercept test</h1>\n" +
-  18. "</body>\n" +
-  19. "</html>";
+  @Entry
+  @Component
+  struct WebComponent {
+    controller: webview.WebviewController = new webview.WebviewController();
+    responseWeb: WebResourceResponse = new WebResourceResponse();
+    heads: Header[] = new Array();
+    @State webData: string = "<!DOCTYPE html>\n" +
+      "<html>\n" +
+      "<head>\n" +
+      "<title>intercept test</title>\n" +
+      "</head>\n" +
+      "<body>\n" +
+      "<h1>intercept test</h1>\n" +
+      "</body>\n" +
+      "</html>";
 
-  21. aboutToAppear(): void {
-  22. try {
-  23. webview.WebviewController.setWebDebuggingAccess(true);
-  24. } catch (error) {
-  25. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-  26. }
-  27. }
+    aboutToAppear(): void {
+      try {
+        webview.WebviewController.setWebDebuggingAccess(true);
+      } catch (error) {
+        console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+      }
+    }
 
-  29. build() {
-  30. Column() {
-  31. Web({ src: 'www.example.com', controller: this.controller })
-  32. .onControllerAttached(() => {
-  33. // 推荐在此loadUrl、设置自定义用户代理、注入JS对象等
-  34. console.info('onControllerAttached execute')
-  35. })
-  36. .onLoadIntercept((event) => {
-  37. if (event) {
-  38. console.info('onLoadIntercept url:' + event.data.getRequestUrl())
-  39. console.info('url:' + event.data.getRequestUrl())
-  40. console.info('isMainFrame:' + event.data.isMainFrame())
-  41. console.info('isRedirect:' + event.data.isRedirect())
-  42. console.info('isRequestGesture:' + event.data.isRequestGesture())
-  43. }
-  44. // 返回true表示阻止此次加载，否则允许此次加载
-  45. return false;
-  46. })
-  47. .onOverrideUrlLoading((webResourceRequest: WebResourceRequest) => {
-  48. if (webResourceRequest && webResourceRequest.getRequestUrl() == "about:blank") {
-  49. return true;
-  50. }
-  51. return false;
-  52. })
-  53. .onInterceptRequest((event) => {
-  54. if (event) {
-  55. console.info('url:' + event.request.getRequestUrl());
-  56. }
-  57. let head1: Header = {
-  58. headerKey: "Connection",
-  59. headerValue: "keep-alive"
-  60. }
-  61. let head2: Header = {
-  62. headerKey: "Cache-Control",
-  63. headerValue: "no-cache"
-  64. }
-  65. // 将新元素追加到数组的末尾，并返回数组的新长度。
-  66. let length = this.heads.push(head1);
-  67. length = this.heads.push(head2);
-  68. console.info('The response header result length is :' + length);
-  69. this.responseWeb.setResponseHeader(this.heads);
-  70. this.responseWeb.setResponseData(this.webData);
-  71. this.responseWeb.setResponseEncoding('utf-8');
-  72. this.responseWeb.setResponseMimeType('text/html');
-  73. this.responseWeb.setResponseCode(200);
-  74. this.responseWeb.setReasonMessage('OK');
-  75. // 返回响应数据则按照响应数据加载，无响应数据则返回null表示按照原来的方式加载
-  76. return this.responseWeb;
-  77. })
-  78. .onPageBegin((event) => {
-  79. if (event) {
-  80. console.info('onPageBegin url:' + event.url);
-  81. }
-  82. })
-  83. .onFirstContentfulPaint(event => {
-  84. if (event) {
-  85. console.info("onFirstContentfulPaint:" + "[navigationStartTick]:" +
-  86. event.navigationStartTick + ", [firstContentfulPaintMs]:" +
-  87. event.firstContentfulPaintMs);
-  88. }
-  89. })
-  90. .onProgressChange((event) => {
-  91. if (event) {
-  92. console.info('newProgress:' + event.newProgress);
-  93. }
-  94. })
-  95. .onPageEnd((event) => {
-  96. // 推荐在此事件中执行JavaScript脚本
-  97. if (event) {
-  98. console.info('onPageEnd url:' + event.url);
-  99. }
-  100. })
-  101. .onPageVisible((event) => {
-  102. console.info('onPageVisible url:' + event.url);
-  103. })
-  104. .onRenderExited((event) => {
-  105. if (event) {
-  106. console.info('onRenderExited reason:' + event.renderExitReason);
-  107. }
-  108. })
-  109. .onDisAppear(() => {
-  110. this.getUIContext().getPromptAction().showToast({
-  111. message: 'The web is hidden',
-  112. duration: 2000
-  113. })
-  114. })
-  115. }
-  116. }
-  117. }
+    build() {
+      Column() {
+        Web({ src: 'www.example.com', controller: this.controller })
+          .onControllerAttached(() => {
+            // 推荐在此loadUrl、设置自定义用户代理、注入JS对象等
+            console.info('onControllerAttached execute')
+          })
+          .onLoadIntercept((event) => {
+            if (event) {
+              console.info('onLoadIntercept url:' + event.data.getRequestUrl())
+              console.info('url:' + event.data.getRequestUrl())
+              console.info('isMainFrame:' + event.data.isMainFrame())
+              console.info('isRedirect:' + event.data.isRedirect())
+              console.info('isRequestGesture:' + event.data.isRequestGesture())
+            }
+            // 返回true表示阻止此次加载，否则允许此次加载
+            return false;
+          })
+          .onOverrideUrlLoading((webResourceRequest: WebResourceRequest) => {
+            if (webResourceRequest && webResourceRequest.getRequestUrl() == "about:blank") {
+              return true;
+            }
+            return false;
+          })
+          .onInterceptRequest((event) => {
+            if (event) {
+              console.info('url:' + event.request.getRequestUrl());
+            }
+            let head1: Header = {
+              headerKey: "Connection",
+              headerValue: "keep-alive"
+            }
+            let head2: Header = {
+              headerKey: "Cache-Control",
+              headerValue: "no-cache"
+            }
+            // 将新元素追加到数组的末尾，并返回数组的新长度。
+            let length = this.heads.push(head1);
+            length = this.heads.push(head2);
+            console.info('The response header result length is :' + length);
+            this.responseWeb.setResponseHeader(this.heads);
+            this.responseWeb.setResponseData(this.webData);
+            this.responseWeb.setResponseEncoding('utf-8');
+            this.responseWeb.setResponseMimeType('text/html');
+            this.responseWeb.setResponseCode(200);
+            this.responseWeb.setReasonMessage('OK');
+            // 返回响应数据则按照响应数据加载，无响应数据则返回null表示按照原来的方式加载
+            return this.responseWeb;
+          })
+          .onPageBegin((event) => {
+            if (event) {
+              console.info('onPageBegin url:' + event.url);
+            }
+          })
+          .onFirstContentfulPaint(event => {
+            if (event) {
+              console.info("onFirstContentfulPaint:" + "[navigationStartTick]:" +
+              event.navigationStartTick + ", [firstContentfulPaintMs]:" +
+              event.firstContentfulPaintMs);
+            }
+          })
+          .onProgressChange((event) => {
+            if (event) {
+              console.info('newProgress:' + event.newProgress);
+            }
+          })
+          .onPageEnd((event) => {
+            // 推荐在此事件中执行JavaScript脚本
+            if (event) {
+              console.info('onPageEnd url:' + event.url);
+            }
+          })
+          .onPageVisible((event) => {
+            console.info('onPageVisible url:' + event.url);
+          })
+          .onRenderExited((event) => {
+            if (event) {
+              console.info('onRenderExited reason:' + event.renderExitReason);
+            }
+          })
+          .onDisAppear(() => {
+            this.getUIContext().getPromptAction().showToast({
+              message: 'The web is hidden',
+              duration: 2000
+            })
+          })
+      }
+    }
+  }
   ```
 
 ## Web组件网页加载的性能指标
@@ -178,65 +178,65 @@ ArkWeb（方舟Web）是一个Web组件平台，旨在为应用程序提供展�
 
 **开发实践案例**
 
-```
-1. import { webview } from '@kit.ArkWeb';
+```ts
+import { webview } from '@kit.ArkWeb';
 
-3. @Entry
-4. @Component
-5. struct WebComponent {
-6. needReloadWhenVisible: boolean = false;  // Web组件不可见时render退出后阻止重新加载页面，在可见时重新加载页面。
-7. webIsVisible: boolean = false;            // 判断Web组件是否可见。
+@Entry
+@Component
+struct WebComponent {
+  needReloadWhenVisible: boolean = false;  // Web组件不可见时render退出后阻止重新加载页面，在可见时重新加载页面。
+  webIsVisible: boolean = false;            // 判断Web组件是否可见。
 
-9. // 此处是将子进程异常崩溃和其它异常原因做了区分，应用开发者可根据实际业务特点，细化对应异常的处理策略。
-10. renderReloadMaxForCrashed: number = 5;    // 设置因为异常崩溃后重新加载的最大重试次数，应用可根据业务特点，自行设置试错上限。
-11. renderReloadCountForCrashed: number = 0;  // 异常崩溃后重新加载的次数。
-12. renderReloadMaxForOthers: number = 10;    // 设置因为其它异常原因退出的最大重试次数，应用可根据业务特点，自行设置试错上限。
-13. renderReloadCountForOthers: number = 0;   // 其它异常原因退出后重新加载的次数。
+  // 此处是将子进程异常崩溃和其它异常原因做了区分，应用开发者可根据实际业务特点，细化对应异常的处理策略。
+  renderReloadMaxForCrashed: number = 5;    // 设置因为异常崩溃后重新加载的最大重试次数，应用可根据业务特点，自行设置试错上限。
+  renderReloadCountForCrashed: number = 0;  // 异常崩溃后重新加载的次数。
+  renderReloadMaxForOthers: number = 10;    // 设置因为其它异常原因退出的最大重试次数，应用可根据业务特点，自行设置试错上限。
+  renderReloadCountForOthers: number = 0;   // 其它异常原因退出后重新加载的次数。
 
-15. // 创建Web组件。
-16. controller: webview.WebviewController = new webview.WebviewController();
+  // 创建Web组件。
+  controller: webview.WebviewController = new webview.WebviewController();
 
-18. // 指定加载的页面。
-19. url: string = "www.example.com";
-20. build() {
-21. Column() {
-22. Web({ src: this.url, controller: this.controller })
-23. .onVisibleAreaChange([0, 1.0], (isVisible) => {
-24. this.webIsVisible = isVisible;
-25. if (isVisible && this.needReloadWhenVisible) { // Web组件可见时重新加载页面。
-26. this.needReloadWhenVisible = false;
-27. this.controller.loadUrl(this.url);
-28. }
-29. })
-30. // 应用监听渲染子进程异常退出回调，并进行异常处理。
-31. .onRenderExited((event) => {
-32. if (!event) {
-33. return;
-34. }
-35. if (event.renderExitReason == RenderExitReason.ProcessCrashed) {
-36. if (this.renderReloadCountForCrashed >= this.renderReloadMaxForCrashed) {
-37. // 设置重试次数上限保护，避免必现问题导致页面被循环加载。
-38. return;
-39. }
-40. console.info('renderReloadCountForCrashed: ' + this.renderReloadCountForCrashed);
-41. this.renderReloadCountForCrashed++;
-42. } else {
-43. if (this.renderReloadCountForOthers >= this.renderReloadMaxForOthers) {
-44. // 设置重试次数上限保护, 避免必现问题导致页面被循环加载。
-45. return;
-46. }
-47. console.info('renderReloadCountForOthers: ' + this.renderReloadCountForOthers);
-48. this.renderReloadCountForOthers++;
-49. }
-50. if (this.webIsVisible) {
-51. // Web组件可见则立即重新加载。
-52. this.controller.loadUrl(this.url);
-53. return;
-54. }
-55. // Web组件不可见时不立即重新加载。
-56. this.needReloadWhenVisible = true;
-57. })
-58. }
-59. }
-60. }
+  // 指定加载的页面。
+  url: string = "www.example.com";
+  build() {
+    Column() {
+      Web({ src: this.url, controller: this.controller })
+        .onVisibleAreaChange([0, 1.0], (isVisible) => {
+          this.webIsVisible = isVisible;
+          if (isVisible && this.needReloadWhenVisible) { // Web组件可见时重新加载页面。
+            this.needReloadWhenVisible = false;
+            this.controller.loadUrl(this.url);
+          }
+        })
+        // 应用监听渲染子进程异常退出回调，并进行异常处理。
+        .onRenderExited((event) => {
+          if (!event) {
+            return;
+          }
+          if (event.renderExitReason == RenderExitReason.ProcessCrashed) {
+            if (this.renderReloadCountForCrashed >= this.renderReloadMaxForCrashed) {
+              // 设置重试次数上限保护，避免必现问题导致页面被循环加载。
+              return;
+            }
+            console.info('renderReloadCountForCrashed: ' + this.renderReloadCountForCrashed);
+            this.renderReloadCountForCrashed++;
+          } else {
+            if (this.renderReloadCountForOthers >= this.renderReloadMaxForOthers) {
+              // 设置重试次数上限保护, 避免必现问题导致页面被循环加载。
+              return;
+            }
+            console.info('renderReloadCountForOthers: ' + this.renderReloadCountForOthers);
+            this.renderReloadCountForOthers++;
+          }
+          if (this.webIsVisible) {
+            // Web组件可见则立即重新加载。
+            this.controller.loadUrl(this.url);
+            return;
+          }
+          // Web组件不可见时不立即重新加载。
+          this.needReloadWhenVisible = true;
+        })
+    }
+  }
+}
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-setin
 title: SetInferShape
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > Host API > 原型注册与管理 > OpDef > SetInferShape
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:34+08:00
+scraped_at: 2026-09-02T14:50:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:90c1b1afb7f7995177955baa81669ce57e0c6eacc606501faa8a6467bc82dada
+content_hash: sha256:351285de3f80ede7716e43b4a75c92c968a461e09ef0489e7342d9847c372cac
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:90c1b1afb7f7995177955baa81669ce57e0c6eacc606501faa8a6467bc8
 
 ## 函数原型
 
-```
-1. OpDef &SetInferShape(gert::OpImplRegisterV2::InferShapeKernelFunc func);
+```cpp
+OpDef &SetInferShape(gert::OpImplRegisterV2::InferShapeKernelFunc func);
 ```
 
 ## 参数说明

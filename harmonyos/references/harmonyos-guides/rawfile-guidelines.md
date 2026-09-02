@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/rawfile-guide
 title: Rawfile开发指导
 breadcrumb: 指南 > NDK开发 > 代码开发 > 资源管理 > Rawfile开发指导
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:44:27+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3f6d1ce921760969b982a2886f3e00f15755f785cc0e3887b7b663adf2f3c10b
+scraped_at: 2026-09-02T14:50:47+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e7f541a65c038c21a505a881c3391379b8679bce0ff4c710cd29c352ad3132dc
 ---
 
 ## 场景介绍
@@ -39,7 +39,7 @@ content_hash: sha256:3f6d1ce921760969b982a2886f3e00f15755f785cc0e3887b7b663adf2f
 
 **1. 创建工程**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/USu4RvLmSiWxZrp-ecUmwA/zh-cn_image_0000002558606232.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/L9ho11y1S-ifPkEA3onwuw/zh-cn_image_0000002706675532.png)
 
 **2. 添加依赖**
 
@@ -48,322 +48,304 @@ content_hash: sha256:3f6d1ce921760969b982a2886f3e00f15755f785cc0e3887b7b663adf2f
 1. 打开src/main/cpp/CMakeLists.txt，在target\_link\_libraries依赖中添加rawfile依赖librawfile.z.so以及日志依赖libhilog\_ndk.z.so。
 
    ```
-   1. target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so librawfile.z.so)
+   target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so librawfile.z.so)
    ```
 2. 打开src/main/cpp/types/libentry/index.d.ts文件，在此文件中声明ArkTS侧接口getFileList、getRawFileContent、getRawFileDescriptor、isRawDir。
 
+   ```typescript
+   import { resourceManager } from '@kit.LocalizationKit';
+   export const getFileList: (resMgr: resourceManager.ResourceManager, path: string) => Array<String>;
+   export const getRawFileContent: (resMgr: resourceManager.ResourceManager, path: string) => Uint8Array;
+   export const getRawFileDescriptor: (resMgr: resourceManager.ResourceManager, path: string) => resourceManager.RawFileDescriptor;
+   export const isRawDir: (resMgr: resourceManager.ResourceManager, path: string) => boolean;
    ```
-   1. import { resourceManager } from '@kit.LocalizationKit';
-   2. export const getFileList: (resMgr: resourceManager.ResourceManager, path: string) => Array<String>;
-   3. export const getRawFileContent: (resMgr: resourceManager.ResourceManager, path: string) => Uint8Array;
-   4. export const getRawFileDescriptor: (resMgr: resourceManager.ResourceManager, path: string) => resourceManager.RawFileDescriptor;
-   5. export const isRawDir: (resMgr: resourceManager.ResourceManager, path: string) => boolean;
-   ```
-
-   [Index.d.ts](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ResourceManagement/RawFile/entry/src/main/cpp/types/libentry/Index.d.ts#L16-L22)
 
 **3. 修改源文件**
 
 1. 打开src/main/cpp/hello.cpp文件，在Init方法中添加ArkTS接口与C++接口的映射。ArkTS侧接口getFileList、getRawFileContent、getRawFileDescriptor、isRawDir，映射C++接口分别为GetFileList、GetRawFileContent、GetRawFileDescriptor、IsRawDir。
 
    ```
-   1. EXTERN_C_START
-   2. static napi_value Init(napi_env env, napi_value exports)
-   3. {
-   4. napi_property_descriptor desc[] = {
-   5. { "getFileList", nullptr, GetFileList, nullptr, nullptr, nullptr, napi_default, nullptr },
-   6. { "getRawFileContent", nullptr, GetRawFileContent, nullptr, nullptr, nullptr, napi_default, nullptr },
-   7. { "getRawFileDescriptor", nullptr, GetRawFileDescriptor, nullptr, nullptr, nullptr, napi_default, nullptr },
-   8. { "isRawDir", nullptr, IsRawDir, nullptr, nullptr, nullptr, napi_default, nullptr }
-   9. };
+   EXTERN_C_START
+   static napi_value Init(napi_env env, napi_value exports)
+   {
+       napi_property_descriptor desc[] = {
+           { "getFileList", nullptr, GetFileList, nullptr, nullptr, nullptr, napi_default, nullptr },
+           { "getRawFileContent", nullptr, GetRawFileContent, nullptr, nullptr, nullptr, napi_default, nullptr },
+           { "getRawFileDescriptor", nullptr, GetRawFileDescriptor, nullptr, nullptr, nullptr, napi_default, nullptr },
+           { "isRawDir", nullptr, IsRawDir, nullptr, nullptr, nullptr, napi_default, nullptr }
+       };
 
-   11. napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
-   12. return exports;
-   13. }
-   14. EXTERN_C_END
+       napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+       return exports;
+   }
+   EXTERN_C_END
    ```
-
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ResourceManagement/RawFile/entry/src/main/cpp/hello.cpp#L255-L270)
 2. 在src/main/cpp/目录下创建hello.h文件，在hello.h文件中增加对应的四个方法，如下所示：
 
+   ```c
+   #ifndef RAWFILE_HELLO_H
+   #define RAWFILE_HELLO_H
+
+   #include <js_native_api.h>
+   #include <js_native_api_types.h>
+   #include <string>
+   #include <vector>
+   #include <cstdlib>
+   #include "napi/native_api.h"
+
+   napi_value GetFileList(napi_env env, napi_callback_info info);
+   napi_value GetRawFileContent(napi_env env, napi_callback_info info);
+   napi_value GetRawFileDescriptor(napi_env env, napi_callback_info info);
+   napi_value IsRawDir(napi_env env, napi_callback_info info);
+
+   #endif // RAWFILE_HELLO_H
    ```
-   1. #ifndef RAWFILE_HELLO_H
-   2. #define RAWFILE_HELLO_H
-
-   4. #include <js_native_api.h>
-   5. #include <js_native_api_types.h>
-   6. #include <string>
-   7. #include <vector>
-   8. #include <cstdlib>
-   9. #include "napi/native_api.h"
-
-   11. napi_value GetFileList(napi_env env, napi_callback_info info);
-   12. napi_value GetRawFileContent(napi_env env, napi_callback_info info);
-   13. napi_value GetRawFileDescriptor(napi_env env, napi_callback_info info);
-   14. napi_value IsRawDir(napi_env env, napi_callback_info info);
-
-   16. #endif // RAWFILE_HELLO_H
-   ```
-
-   [hello.h](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ResourceManagement/RawFile/entry/src/main/cpp/hello.h#L16-L33)
 3. 在hello.cpp文件中实现上述四个方法。通过env和info获取Js的资源管理对象，并转换为Native的资源管理对象，即可调用Native资源管理对象的接口，示例代码如下：
 
    导入头文件
 
    ```
-   1. #include "hello.h"
-   2. #include "rawfile/raw_file_manager.h"
-   3. #include "rawfile/raw_file.h"
-   4. #include "rawfile/raw_dir.h"
-   5. #include "hilog/log.h"
+   #include "hello.h"
+   #include "rawfile/raw_file_manager.h"
+   #include "rawfile/raw_file.h"
+   #include "rawfile/raw_dir.h"
+   #include "hilog/log.h"
    ```
-
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ResourceManagement/RawFile/entry/src/main/cpp/hello.cpp#L16-L22)
 
    声明hilog日志打印的DOMAIN和TAG常量
 
    ```
-   1. const int GLOBAL_RESMGR = 0xFF00;
-   2. const char *TAG = "[Sample_rawfile]";
+   const int GLOBAL_RESMGR = 0xFF00;
+   const char *TAG = "[Sample_rawfile]";
    ```
-
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ResourceManagement/RawFile/entry/src/main/cpp/hello.cpp#L24-L27)
 
    示例：
 
    ```
-   1. // 示例一：获取rawfile文件列表 GetFileList
-   2. napi_value GetFileList(napi_env env, napi_callback_info info)
-   3. {
-   4. OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_RESMGR, TAG, "NDKTest GetFileList Begin");
-   5. size_t argc = 2;
-   6. napi_value argv[2] = { nullptr };
-   7. // 获取参数信息
-   8. napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+   // 示例一：获取rawfile文件列表 GetFileList
+   napi_value GetFileList(napi_env env, napi_callback_info info)
+   {
+       OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_RESMGR, TAG, "NDKTest GetFileList Begin");
+       size_t argc = 2;
+       napi_value argv[2] = { nullptr };
+       // 获取参数信息
+       napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
 
-   10. // argv[0]即为函数第一个参数Js资源对象，OH_ResourceManager_InitNativeResourceManager转为Native对象
-   11. NativeResourceManager *mNativeResMgr = OH_ResourceManager_InitNativeResourceManager(env, argv[0]);
+       // argv[0]即为函数第一个参数Js资源对象，OH_ResourceManager_InitNativeResourceManager转为Native对象
+       NativeResourceManager *mNativeResMgr = OH_ResourceManager_InitNativeResourceManager(env, argv[0]);
 
-   13. // 获取函数argv[1]，此为rawfile相对路径
-   14. size_t strSize;
-   15. char strBuf[256];
-   16. napi_get_value_string_utf8(env, argv[1], strBuf, sizeof(strBuf), &strSize);
-   17. std::string dirName(strBuf, strSize);
+       // 获取函数argv[1]，此为rawfile相对路径
+       size_t strSize;
+       char strBuf[256];
+       napi_get_value_string_utf8(env, argv[1], strBuf, sizeof(strBuf), &strSize);
+       std::string dirName(strBuf, strSize);
 
-   19. // 获取对应的rawDir指针对象
-   20. RawDir* rawDir = OH_ResourceManager_OpenRawDir(mNativeResMgr, dirName.c_str());
+       // 获取对应的rawDir指针对象
+       RawDir* rawDir = OH_ResourceManager_OpenRawDir(mNativeResMgr, dirName.c_str());
 
-   22. // 获取rawDir下文件及文件夹数量
-   23. int count = OH_ResourceManager_GetRawFileCount(rawDir);
+       // 获取rawDir下文件及文件夹数量
+       int count = OH_ResourceManager_GetRawFileCount(rawDir);
 
-   25. // 遍历获取文件名称，并保存
-   26. std::vector<std::string> tempArray;
-   27. for (int i = 0; i < count; i++) {
-   28. std::string filename = OH_ResourceManager_GetRawFileName(rawDir, i);
-   29. tempArray.emplace_back(filename);
-   30. }
+       // 遍历获取文件名称，并保存
+       std::vector<std::string> tempArray;
+       for (int i = 0; i < count; i++) {
+           std::string filename = OH_ResourceManager_GetRawFileName(rawDir, i);
+           tempArray.emplace_back(filename);
+       }
 
-   32. // 转为js数组
-   33. napi_value fileList;
-   34. napi_create_array(env, &fileList);
-   35. for (size_t i = 0; i < tempArray.size(); i++) {
-   36. napi_value jsString;
-   37. napi_create_string_utf8(env, tempArray[i].c_str(), NAPI_AUTO_LENGTH, &jsString);
-   38. napi_set_element(env, fileList, i, jsString);
-   39. }
+       // 转为js数组
+       napi_value fileList;
+       napi_create_array(env, &fileList);
+       for (size_t i = 0; i < tempArray.size(); i++) {
+           napi_value jsString;
+           napi_create_string_utf8(env, tempArray[i].c_str(), NAPI_AUTO_LENGTH, &jsString);
+           napi_set_element(env, fileList, i, jsString);
+       }
 
-   41. // 关闭打开的指针对象
-   42. OH_ResourceManager_CloseRawDir(rawDir);
-   43. OH_ResourceManager_ReleaseNativeResourceManager(mNativeResMgr);
-   44. return fileList;
-   45. }
+       // 关闭打开的指针对象
+       OH_ResourceManager_CloseRawDir(rawDir);
+       OH_ResourceManager_ReleaseNativeResourceManager(mNativeResMgr);
+       return fileList;
+   }
    ```
 
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ResourceManagement/RawFile/entry/src/main/cpp/hello.cpp#L29-L75)
-
    ```
-   1. // 示例二：获取rawfile文件内容 GetRawFileContent
-   2. napi_value CreateJsArrayValue(napi_env env, std::unique_ptr<uint8_t[]> &data, long length)
-   3. {
-   4. // 创建js外部ArrayBuffer
-   5. napi_value buffer;
-   6. napi_status status = napi_create_external_arraybuffer(env, data.get(), length,
-   7. [](napi_env env, void *data, void *hint) {
-   8. delete[] static_cast<char*>(data);
-   9. }, nullptr, &buffer);
-   10. // 检测ArrayBuffer是否创建成功
-   11. if (status != napi_ok) {
-   12. OH_LOG_Print(LOG_APP, LOG_ERROR, GLOBAL_RESMGR, TAG, "Failed to create external array buffer");
-   13. return nullptr;
-   14. }
-   15. // 创建js TypedArray  将ArrayBuffer绑定到TypedArray
-   16. napi_value result = nullptr;
-   17. status = napi_create_typedarray(env, napi_uint8_array, length, buffer, 0, &result);
-   18. if (status != napi_ok) {
-   19. OH_LOG_Print(LOG_APP, LOG_ERROR, GLOBAL_RESMGR, TAG, "Failed to create media typed array");
-   20. return nullptr;
-   21. }
-   22. data.release();
-   23. return result;
-   24. }
+   // 示例二：获取rawfile文件内容 GetRawFileContent
+   napi_value CreateJsArrayValue(napi_env env, std::unique_ptr<uint8_t[]> &data, long length)
+   {
+       // 创建js外部ArrayBuffer
+       napi_value buffer;
+       napi_status status = napi_create_external_arraybuffer(env, data.get(), length,
+           [](napi_env env, void *data, void *hint) {
+               delete[] static_cast<char*>(data);
+           }, nullptr, &buffer);
+       // 检测ArrayBuffer是否创建成功
+       if (status != napi_ok) {
+           OH_LOG_Print(LOG_APP, LOG_ERROR, GLOBAL_RESMGR, TAG, "Failed to create external array buffer");
+           return nullptr;
+       }
+       // 创建js TypedArray  将ArrayBuffer绑定到TypedArray
+       napi_value result = nullptr;
+       status = napi_create_typedarray(env, napi_uint8_array, length, buffer, 0, &result);
+       if (status != napi_ok) {
+           OH_LOG_Print(LOG_APP, LOG_ERROR, GLOBAL_RESMGR, TAG, "Failed to create media typed array");
+           return nullptr;
+       }
+       data.release();
+       return result;
+   }
 
-   26. napi_value GetRawFileContent(napi_env env, napi_callback_info info)
-   27. {
-   28. OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_RESMGR, TAG, "GetFileContent Begin");
-   29. size_t argc = 2;
-   30. napi_value argv[2] = { nullptr };
-   31. // 获取参数信息
-   32. napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+   napi_value GetRawFileContent(napi_env env, napi_callback_info info)
+   {
+       OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_RESMGR, TAG, "GetFileContent Begin");
+       size_t argc = 2;
+       napi_value argv[2] = { nullptr };
+       // 获取参数信息
+       napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
 
-   34. // argv[0]即为函数第一个参数Js资源对象，OH_ResourceManager_InitNativeResourceManager转为Native对象
-   35. NativeResourceManager *mNativeResMgr = OH_ResourceManager_InitNativeResourceManager(env, argv[0]);
-   36. size_t strSize;
-   37. char strBuf[256];
-   38. napi_get_value_string_utf8(env, argv[1], strBuf, sizeof(strBuf), &strSize);
-   39. std::string filename(strBuf, strSize);
+       // argv[0]即为函数第一个参数Js资源对象，OH_ResourceManager_InitNativeResourceManager转为Native对象
+       NativeResourceManager *mNativeResMgr = OH_ResourceManager_InitNativeResourceManager(env, argv[0]);
+       size_t strSize;
+       char strBuf[256];
+       napi_get_value_string_utf8(env, argv[1], strBuf, sizeof(strBuf), &strSize);
+       std::string filename(strBuf, strSize);
 
-   41. // 获取rawfile指针对象
-   42. RawFile *rawFile = OH_ResourceManager_OpenRawFile(mNativeResMgr, filename.c_str());
-   43. if (rawFile != nullptr) {
-   44. OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_RESMGR, TAG, "OH_ResourceManager_OpenRawFile success");
-   45. }
-   46. // 获取rawfile大小并申请内存
-   47. long len = OH_ResourceManager_GetRawFileSize(rawFile);
-   48. std::unique_ptr<uint8_t[]> data = std::make_unique<uint8_t[]>(len);
+       // 获取rawfile指针对象
+       RawFile *rawFile = OH_ResourceManager_OpenRawFile(mNativeResMgr, filename.c_str());
+       if (rawFile != nullptr) {
+           OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_RESMGR, TAG, "OH_ResourceManager_OpenRawFile success");
+       }
+       // 获取rawfile大小并申请内存
+       long len = OH_ResourceManager_GetRawFileSize(rawFile);
+       std::unique_ptr<uint8_t[]> data = std::make_unique<uint8_t[]>(len);
 
-   50. // 一次性读取rawfile全部内容
-   51. int res = OH_ResourceManager_ReadRawFile(rawFile, data.get(), len);
+       // 一次性读取rawfile全部内容
+       int res = OH_ResourceManager_ReadRawFile(rawFile, data.get(), len);
 
-   53. // 关闭打开的指针对象
-   54. OH_ResourceManager_CloseRawFile(rawFile);
-   55. OH_ResourceManager_ReleaseNativeResourceManager(mNativeResMgr);
-   56. // 转为js对象
-   57. return CreateJsArrayValue(env, data, len);
-   58. }
+       // 关闭打开的指针对象
+       OH_ResourceManager_CloseRawFile(rawFile);
+       OH_ResourceManager_ReleaseNativeResourceManager(mNativeResMgr);
+       // 转为js对象
+       return CreateJsArrayValue(env, data, len);
+   }
    ```
 
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ResourceManagement/RawFile/entry/src/main/cpp/hello.cpp#L77-L136)
-
    ```
-   1. // 示例三：获取rawfile文件描述符 GetRawFileDescriptor
-   2. // 定义一个函数，将RawFileDescriptor转为js对象
-   3. napi_value createJsFileDescriptor(napi_env env, RawFileDescriptor& descriptor)
-   4. {
-   5. // 创建js对象
-   6. napi_value result;
-   7. napi_status status = napi_create_object(env, &result);
-   8. if (status != napi_ok) {
-   9. return result;
-   10. }
+   // 示例三：获取rawfile文件描述符 GetRawFileDescriptor
+   // 定义一个函数，将RawFileDescriptor转为js对象
+   napi_value createJsFileDescriptor(napi_env env, RawFileDescriptor& descriptor)
+   {
+       // 创建js对象
+       napi_value result;
+       napi_status status = napi_create_object(env, &result);
+       if (status != napi_ok) {
+           return result;
+       }
 
-   12. // 将文件描述符fd存入到result对象中
-   13. napi_value fd;
-   14. status = napi_create_int32(env, descriptor.fd, &fd);
-   15. if (status != napi_ok) {
-   16. return result;
-   17. }
-   18. status = napi_set_named_property(env, result, "fd", fd);
-   19. if (status != napi_ok) {
-   20. return result;
-   21. }
+       // 将文件描述符fd存入到result对象中
+       napi_value fd;
+       status = napi_create_int32(env, descriptor.fd, &fd);
+       if (status != napi_ok) {
+           return result;
+       }
+       status = napi_set_named_property(env, result, "fd", fd);
+       if (status != napi_ok) {
+           return result;
+       }
 
-   23. // 将文件偏移量offset存入到result对象中
-   24. napi_value offset;
-   25. status = napi_create_int64(env, descriptor.start, &offset);
-   26. if (status != napi_ok) {
-   27. return result;
-   28. }
-   29. status = napi_set_named_property(env, result, "offset", offset);
-   30. if (status != napi_ok) {
-   31. return result;
-   32. }
+       // 将文件偏移量offset存入到result对象中
+       napi_value offset;
+       status = napi_create_int64(env, descriptor.start, &offset);
+       if (status != napi_ok) {
+           return result;
+       }
+       status = napi_set_named_property(env, result, "offset", offset);
+       if (status != napi_ok) {
+           return result;
+       }
 
-   34. // 将文件长度length存入到result对象中
-   35. napi_value length;
-   36. status = napi_create_int64(env, descriptor.length, &length);
-   37. if (status != napi_ok) {
-   38. return result;
-   39. }
-   40. status = napi_set_named_property(env, result, "length", length);
-   41. if (status != napi_ok) {
-   42. return result;
-   43. }
-   44. return result;
-   45. }
+       // 将文件长度length存入到result对象中
+       napi_value length;
+       status = napi_create_int64(env, descriptor.length, &length);
+       if (status != napi_ok) {
+           return result;
+       }
+       status = napi_set_named_property(env, result, "length", length);
+       if (status != napi_ok) {
+           return result;
+       }
+       return result;
+   }
 
-   47. napi_value GetRawFileDescriptor(napi_env env, napi_callback_info info)
-   48. {
-   49. OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_RESMGR, TAG, "NDKTest GetRawFileDescriptor Begin");
-   50. size_t argc = 2;
-   51. napi_value argv[2] = { nullptr };
-   52. // 获取参数信息
-   53. napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+   napi_value GetRawFileDescriptor(napi_env env, napi_callback_info info)
+   {
+       OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_RESMGR, TAG, "NDKTest GetRawFileDescriptor Begin");
+       size_t argc = 2;
+       napi_value argv[2] = { nullptr };
+       // 获取参数信息
+       napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
 
-   55. // argv[0]即为函数第一个参数Js资源对象，OH_ResourceManager_InitNativeResourceManager转为Native对象
-   56. NativeResourceManager *mNativeResMgr = OH_ResourceManager_InitNativeResourceManager(env, argv[0]);
-   57. size_t strSize;
-   58. char strBuf[256];
-   59. napi_get_value_string_utf8(env, argv[1], strBuf, sizeof(strBuf), &strSize);
-   60. std::string filename(strBuf, strSize);
-   61. // 获取rawfile指针对象
-   62. RawFile *rawFile = OH_ResourceManager_OpenRawFile(mNativeResMgr, filename.c_str());
-   63. if (rawFile != nullptr) {
-   64. OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_RESMGR, TAG, "OH_ResourceManager_OpenRawFile success");
-   65. }
-   66. // 获取rawfile的描述符RawFileDescriptor {fd, offset, length}
-   67. RawFileDescriptor descriptor;
-   68. OH_ResourceManager_GetRawFileDescriptor(rawFile, descriptor);
-   69. // 关闭打开的指针对象
-   70. OH_ResourceManager_CloseRawFile(rawFile);
-   71. OH_ResourceManager_ReleaseNativeResourceManager(mNativeResMgr);
-   72. // 转为js对象
-   73. return createJsFileDescriptor(env, descriptor);
-   74. }
+       // argv[0]即为函数第一个参数Js资源对象，OH_ResourceManager_InitNativeResourceManager转为Native对象
+       NativeResourceManager *mNativeResMgr = OH_ResourceManager_InitNativeResourceManager(env, argv[0]);
+       size_t strSize;
+       char strBuf[256];
+       napi_get_value_string_utf8(env, argv[1], strBuf, sizeof(strBuf), &strSize);
+       std::string filename(strBuf, strSize);
+       // 获取rawfile指针对象
+       RawFile *rawFile = OH_ResourceManager_OpenRawFile(mNativeResMgr, filename.c_str());
+       if (rawFile != nullptr) {
+           OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_RESMGR, TAG, "OH_ResourceManager_OpenRawFile success");
+       }
+       // 获取rawfile的描述符RawFileDescriptor {fd, offset, length}
+       RawFileDescriptor descriptor;
+       OH_ResourceManager_GetRawFileDescriptor(rawFile, descriptor);
+       // 关闭打开的指针对象
+       OH_ResourceManager_CloseRawFile(rawFile);
+       OH_ResourceManager_ReleaseNativeResourceManager(mNativeResMgr);
+       // 转为js对象
+       return createJsFileDescriptor(env, descriptor);
+   }
    ```
 
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ResourceManagement/RawFile/entry/src/main/cpp/hello.cpp#L138-L213)
-
    ```
-   1. // 示例四：判断路径是否是rawfile下的目录 IsRawDir
-   2. napi_value CreateJsBool(napi_env env, bool &bValue)
-   3. {
-   4. napi_value jsValue = nullptr;
-   5. if (napi_get_boolean(env, bValue, &jsValue) != napi_ok) {
-   6. return nullptr;
-   7. }
-   8. return jsValue;
-   9. }
+   // 示例四：判断路径是否是rawfile下的目录 IsRawDir
+   napi_value CreateJsBool(napi_env env, bool &bValue)
+   {
+       napi_value jsValue = nullptr;
+       if (napi_get_boolean(env, bValue, &jsValue) != napi_ok) {
+           return nullptr;
+       }
+       return jsValue;
+   }
 
-   11. napi_value IsRawDir(napi_env env, napi_callback_info info)
-   12. {
-   13. OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_RESMGR, TAG, "NDKTest IsRawDir Begin");
-   14. size_t argc = 2;
-   15. napi_value argv[2] = { nullptr };
-   16. // 获取参数信息
-   17. napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+   napi_value IsRawDir(napi_env env, napi_callback_info info)
+   {
+       OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_RESMGR, TAG, "NDKTest IsRawDir Begin");
+       size_t argc = 2;
+       napi_value argv[2] = { nullptr };
+       // 获取参数信息
+       napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
 
-   19. // argv[0]即为函数第一个参数Js资源对象，OH_ResourceManager_InitNativeResourceManager转为Native对象
-   20. NativeResourceManager *mNativeResMgr = OH_ResourceManager_InitNativeResourceManager(env, argv[0]);
+       // argv[0]即为函数第一个参数Js资源对象，OH_ResourceManager_InitNativeResourceManager转为Native对象
+       NativeResourceManager *mNativeResMgr = OH_ResourceManager_InitNativeResourceManager(env, argv[0]);
 
-   22. napi_valuetype fileNameType;
-   23. napi_typeof(env, argv[1], &fileNameType);
-   24. if (fileNameType == napi_undefined || fileNameType == napi_null) {
-   25. OH_LOG_Print(LOG_APP, LOG_ERROR, GLOBAL_RESMGR, TAG, "NDKTest file name is null");
-   26. bool temp = false;
-   27. return CreateJsBool(env, temp);
-   28. }
-   29. size_t strSize;
-   30. char strBuf[256];
-   31. napi_get_value_string_utf8(env, argv[1], strBuf, sizeof(strBuf), &strSize);
-   32. std::string filename(strBuf, strSize);
-   33. // 判断是否是rawfile下的目录
-   34. bool result = OH_ResourceManager_IsRawDir(mNativeResMgr, filename.c_str());
-   35. OH_ResourceManager_ReleaseNativeResourceManager(mNativeResMgr);
-   36. return CreateJsBool(env, result);
-   37. }
+       napi_valuetype fileNameType;
+       napi_typeof(env, argv[1], &fileNameType);
+       if (fileNameType == napi_undefined || fileNameType == napi_null) {
+           OH_LOG_Print(LOG_APP, LOG_ERROR, GLOBAL_RESMGR, TAG, "NDKTest file name is null");
+           bool temp = false;
+           return CreateJsBool(env, temp);
+       }
+       size_t strSize;
+       char strBuf[256];
+       napi_get_value_string_utf8(env, argv[1], strBuf, sizeof(strBuf), &strSize);
+       std::string filename(strBuf, strSize);
+       // 判断是否是rawfile下的目录
+       bool result = OH_ResourceManager_IsRawDir(mNativeResMgr, filename.c_str());
+       OH_ResourceManager_ReleaseNativeResourceManager(mNativeResMgr);
+       return CreateJsBool(env, result);
+   }
    ```
-
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ResourceManagement/RawFile/entry/src/main/cpp/hello.cpp#L215-L253)
 
 **4. ArkTS侧调用**
 
@@ -379,69 +361,67 @@ content_hash: sha256:3f6d1ce921760969b982a2886f3e00f15755f785cc0e3887b7b663adf2f
 
    获取本应用包资源resourceManager对象的示例如下：
 
+   ```typescript
+   import { util } from '@kit.ArkTS';
+   import { resourceManager } from '@kit.LocalizationKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import testNapi from 'libentry.so'; // 导入so
+
+   const DOMAIN = 0x0000;
+   const TAG = '[Sample_rawfile]';
+
+   @Entry
+   @Component
+   struct Index {
+     @State message: string = 'Hello World';
+     private resMgr = this.getUIContext().getHostContext()?.resourceManager; // 获取本应用包的资源对象
+     @State rawfileListMsg: string = 'FileList = ';
+     @State retMsg: string = 'isRawDir = ';
+     @State rawfileContentMsg: string = 'RawFileContent = ';
+     @State rawfileDescriptorMsg: string = 'RawFileDescriptor.length = ';
+
+     build() {
+       Row() {
+         Column() {
+           Text(this.message)
+             .id('hello_world')
+             .fontSize(30)
+             .fontWeight(FontWeight.Bold)
+             .onClick(async () => {
+               // 传入资源管理对象，以及访问的rawfile文件夹名称
+               let rawFileList: Array<String> = testNapi.getFileList(this.resMgr, '');
+               this.rawfileListMsg = 'FileList = ' + rawFileList;
+               hilog.info(DOMAIN, TAG, this.rawfileListMsg);
+
+               // 'sub_rawfile'仅作示例，请替换为实际使用的资源
+               let ret: boolean = testNapi.isRawDir(this.resMgr, 'sub_rawfile');
+               this.retMsg = 'isRawDir = ' + ret;
+               hilog.info(DOMAIN, TAG, this.retMsg);
+
+               // 传入资源管理对象，以及访问的rawfile文件夹名称
+               // 'rawfile1.txt'仅作示例，请替换为实际使用的资源
+               let rawfileArray: Uint8Array = testNapi.getRawFileContent(this.resMgr, 'rawfile1.txt');
+               // 将Uint8Array转为字符串
+               let textDecoder: util.TextDecoder = new util.TextDecoder();
+               let rawfileContent: string = textDecoder.decodeToString(rawfileArray);
+               this.rawfileContentMsg = 'RawFileContent = ' + rawfileContent;
+               hilog.info(DOMAIN, TAG, this.rawfileContentMsg);
+
+               // 传入资源管理对象，以及访问的rawfile文件名称
+               // 'rawfile1.txt'仅作示例，请替换为实际使用的资源
+               let rawfileDescriptor: resourceManager.RawFileDescriptor =
+                 testNapi.getRawFileDescriptor(this.resMgr, 'rawfile1.txt');
+               this.rawfileDescriptorMsg = 'RawFileDescriptor.length = ' + rawfileDescriptor.length;
+               hilog.info(DOMAIN, TAG, this.rawfileDescriptorMsg);
+             })
+           Text(this.rawfileListMsg).id('get_file_list').fontSize(30);
+           Text(this.retMsg).id('is_raw_dir').fontSize(30);
+           Text(this.rawfileContentMsg).id('get_raw_file_content').fontSize(30);
+           Text(this.rawfileDescriptorMsg).id('get_raw_file_descriptor').fontSize(30);
+         }
+         .width('100%')
+       }
+       .height('100%')
+     }
+   }
    ```
-   1. import { util } from '@kit.ArkTS';
-   2. import { resourceManager } from '@kit.LocalizationKit';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
-   4. import testNapi from 'libentry.so'; // 导入so
-
-   6. const DOMAIN = 0x0000;
-   7. const TAG = '[Sample_rawfile]';
-
-   9. @Entry
-   10. @Component
-   11. struct Index {
-   12. @State message: string = 'Hello World';
-   13. private resMgr = this.getUIContext().getHostContext()?.resourceManager; // 获取本应用包的资源对象
-   14. @State rawfileListMsg: string = 'FileList = ';
-   15. @State retMsg: string = 'isRawDir = ';
-   16. @State rawfileContentMsg: string = 'RawFileContent = ';
-   17. @State rawfileDescriptorMsg: string = 'RawFileDescriptor.length = ';
-
-   19. build() {
-   20. Row() {
-   21. Column() {
-   22. Text(this.message)
-   23. .id('hello_world')
-   24. .fontSize(30)
-   25. .fontWeight(FontWeight.Bold)
-   26. .onClick(async () => {
-   27. // 传入资源管理对象，以及访问的rawfile文件夹名称
-   28. let rawFileList: Array<String> = testNapi.getFileList(this.resMgr, '');
-   29. this.rawfileListMsg = 'FileList = ' + rawFileList;
-   30. hilog.info(DOMAIN, TAG, this.rawfileListMsg);
-
-   32. // 'sub_rawfile'仅作示例，请替换为实际使用的资源
-   33. let ret: boolean = testNapi.isRawDir(this.resMgr, 'sub_rawfile');
-   34. this.retMsg = 'isRawDir = ' + ret;
-   35. hilog.info(DOMAIN, TAG, this.retMsg);
-
-   37. // 传入资源管理对象，以及访问的rawfile文件夹名称
-   38. // 'rawfile1.txt'仅作示例，请替换为实际使用的资源
-   39. let rawfileArray: Uint8Array = testNapi.getRawFileContent(this.resMgr, 'rawfile1.txt');
-   40. // 将Uint8Array转为字符串
-   41. let textDecoder: util.TextDecoder = new util.TextDecoder();
-   42. let rawfileContent: string = textDecoder.decodeToString(rawfileArray);
-   43. this.rawfileContentMsg = 'RawFileContent = ' + rawfileContent;
-   44. hilog.info(DOMAIN, TAG, this.rawfileContentMsg);
-
-   46. // 传入资源管理对象，以及访问的rawfile文件名称
-   47. // 'rawfile1.txt'仅作示例，请替换为实际使用的资源
-   48. let rawfileDescriptor: resourceManager.RawFileDescriptor =
-   49. testNapi.getRawFileDescriptor(this.resMgr, 'rawfile1.txt');
-   50. this.rawfileDescriptorMsg = 'RawFileDescriptor.length = ' + rawfileDescriptor.length;
-   51. hilog.info(DOMAIN, TAG, this.rawfileDescriptorMsg);
-   52. })
-   53. Text(this.rawfileListMsg).id('get_file_list').fontSize(30);
-   54. Text(this.retMsg).id('is_raw_dir').fontSize(30);
-   55. Text(this.rawfileContentMsg).id('get_raw_file_content').fontSize(30);
-   56. Text(this.rawfileDescriptorMsg).id('get_raw_file_descriptor').fontSize(30);
-   57. }
-   58. .width('100%')
-   59. }
-   60. .height('100%')
-   61. }
-   62. }
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ResourceManagement/RawFile/entry/src/main/ets/pages/Index.ets#L15-L79)

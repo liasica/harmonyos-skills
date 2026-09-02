@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-95
 title: 如何将Web组件加载的HTML页面转化并保存为PDF文件
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 如何将Web组件加载的HTML页面转化并保存为PDF文件
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:51+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:54+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:bdfd6aa2fb6189c081427696ded6777471917389583b2445996f9cac14ef49fe
 ---
 

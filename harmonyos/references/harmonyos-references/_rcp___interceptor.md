@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___in
 title: Rcp_Interceptor
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > C API > 结构体 > Rcp_Interceptor
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:04+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:14443e52813f06e0873ccf562ef1ae6102eecf7593da6ee2521d2705cde56967
+scraped_at: 2026-09-02T15:01:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:fec1c0098e967bbc8bf79399ac9d5c3876829e561fb2bd90624911625412beb1
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 异步拦截器。
 
@@ -22,11 +20,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -34,14 +28,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTVWearable
-
 ### intercept
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. uint32_t(* Rcp_Interceptor::intercept) (Rcp_Request *request, const Rcp_RequestHandler *next, const Rcp_ResponseCallbackObject *responseCallback)
+```cpp
+uint32_t(* Rcp_Interceptor::intercept) (Rcp_Request *request, const Rcp_RequestHandler *next, const Rcp_ResponseCallbackObject *responseCallback)
 ```
 
 **描述**

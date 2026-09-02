@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdslistitem
-title: HdsListItem
-breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsListItem
+title: HdsListItem (列表项)
+breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsListItem (列表项)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:57:14+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:bf5f648741d4913f620603813a554c08b6cae0c4621c502d65cc24ea1e2ef8ef
+scraped_at: 2026-09-02T15:01:39+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:bf7a5e5779025979e5e60081eaf42925ec3fe202cba5b295b5fd34ad23165adc
 ---
 
 该组件可设置ListItem的横滑动效，可以承载HdsListItemCard组件。
@@ -14,19 +14,25 @@ content_hash: sha256:bf5f648741d4913f620603813a554c08b6cae0c4621c502d65cc24ea1e2
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { HdsListItem } from '@kit.UIDesignKit';
+```typescript
+import { HdsListItem } from '@kit.UIDesignKit';
 ```
 
-## 接口
+## 子组件
 
-PhonePC/2in1TabletTV
+无
 
-HdsListItem({customItemBuilder?: CustomBuilder, hdsListItemCard?: HdsListItemCardOptions, swipeActionOptions?: HdsSwipeActionOptions | SwipeActionOptions, listItemModifier?: ListItemModifier, menuStyle?: MenuStyle, menuBuilder?: CustomBuilder, isSelected?: boolean})
+## 属性
 
-提供了一个列表组件。
+不支持[通用属性](ts-component-general-attributes.md)。
+
+## 事件
+
+不支持[通用事件](ts-component-general-events.md)。
+
+## HdsListItem
+
+HdsListItem({customItemBuilder?: CustomBuilder, hdsListItemCard?: HdsListItemCardOptions, swipeActionOptions?: HdsSwipeActionOptions | SwipeActionOptions, listItemModifier?: ListItemModifier, menuStyle?: MenuStyle, menuBuilder?: CustomBuilder, isSelected?: boolean, listItemStateStyles?: HdsListItemStateStylesOptions})
 
 **装饰器类型：** @Component
 
@@ -34,11 +40,11 @@ HdsListItem({customItemBuilder?: CustomBuilder, hdsListItemCard?: HdsListItemCar
 
 **系统能力：** SystemCapability.UIDesign.HDSPattern.Standard
 
-**设备行为异常：** 该接口在TV中与ux规范不一致（获焦态和悬停态组件未放大，获焦态背板颜色未变化，Button内部的text默认颜色等），在其他设备类型中可正常使用。
+**设备行为差异：** 该接口在TV中与UX规范不一致（获焦态和悬停态组件未放大，获焦态背板颜色未变化，Button内部的text默认颜色等），在其他设备类型中可正常使用。
 
 **起始版本：** 6.0.0(20)
 
-| 参数名 | 类型 | 必填 | 装饰器类型 | 说明 |
+| 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | customItemBuilder | [CustomBuilder](ts-types.md#custombuilder8) | 否 | @BuilderParam | 自定义列表卡片项内容。 |
 | hdsListItemCard | [HdsListItemCardOptions](ui-design-hdslistitemcard.md#hdslistitemcardoptions) | 否 | - | 列表卡片项内容。 |
@@ -47,16 +53,15 @@ HdsListItem({customItemBuilder?: CustomBuilder, hdsListItemCard?: HdsListItemCar
 | menuStyle | [MenuStyle](ui-design-hdslistitem.md#menustyle) | 否 | @Prop | ListItem预览菜单样式。  **起始版本：** 6.1.0(23) |
 | menuBuilder | [CustomBuilder](ts-types.md#custombuilder8) | 否 | @BuilderParam | 自定义弹出菜单内容。  **起始版本：** 6.1.0(23) |
 | isSelected | boolean | 否 | @Prop | ListItem是否被选中。  true：被选中。  false：未选中。  默认值：false。  **起始版本：** 6.1.0(23) |
+| listItemStateStyles | [HdsListItemStateStylesOptions](ui-design-hdslistitem.md#hdslistitemstatestylesoptions) | 否 | @Prop | ListItem多态样式。  **起始版本：** 26.0.0 |
 
-说明
+**说明** 
 
 1. 该接口中customItemBuilder优先级高于hdsListItemCard。当同时设置customItemBuilder和hdsListItemCard时，customItemBuilder生效。
 2. 当设置了menuBuilder时，menuStyle生效。
 3. 当在listItemModifier中设置了selectable为false时，不要配置isSelected为true。
 
 ## HdsSwipeActionOptions
-
-PhonePC/2in1TabletTV
 
 设置横滑按钮的样式。
 
@@ -70,13 +75,11 @@ PhonePC/2in1TabletTV
 | --- | --- | --- | --- | --- |
 | icons | Array<[SwipeIconConfigurations](ui-design-hdslistitem.md#swipeiconconfigurations)> | 否 | 是 | 配置除删除按钮之外其他三个按钮样式。 |
 | deleteIconOptions | [DeleteIconOptions](ui-design-hdslistitem.md#deleteiconoptions) | 否 | 是 | 配置删除按钮样式。 |
-| fullDeleteOptions | [FullDeleteOptions](ui-design-hdslistitem.md#fulldeleteoptions) | 否 | 是 | 配置滑动距离超过划出组件大小后的行为。 |
+| fullDeleteOptions | [FullDeleteOptions](ui-design-hdslistitem.md#fulldeleteoptions) | 否 | 是 | 配置划动距离超过划出组件大小后的行为。 |
 | deleteTriggerType | [SwipeDeleteTriggerType](ui-design-hdslistitem.md#swipedeletetriggertype) | 否 | 是 | 配置横滑删除的触发类型。  默认值：SwipeDeleteTriggerType.NORMAL\_TRIGGER。  **起始版本：** 6.1.0(23) |
 | onStateChange | [OnStateChangeCallback](ui-design-hdslistitem.md#onstatechangecallback) | 否 | 是 | 列表滑出状态变化回调。  **起始版本：** 6.1.0(23) |
 
 ## IconOptions
-
-PhonePC/2in1TabletTV
 
 设置图标的可用性和无障碍等属性。
 
@@ -96,8 +99,6 @@ PhonePC/2in1TabletTV
 
 ## SwipeIconConfigurations
 
-PhonePC/2in1TabletTV
-
 设置除删除图标外的横滑图标样式和功能。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -115,8 +116,6 @@ PhonePC/2in1TabletTV
 
 ## DeleteIconOptions
 
-PhonePC/2in1TabletTV
-
 设置删除图标属性。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -130,11 +129,9 @@ PhonePC/2in1TabletTV
 | backgroundColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 删除按钮图标背景色。 |
 | iconColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 删除按钮图标颜色。 |
 | iconOptions | [IconOptions](ui-design-hdslistitem.md#iconoptions) | 否 | 是 | 删除按钮图标的能力选项。 |
-| onAction | [SwipeActionCallback](ui-design-hdslistitem.md#swipeactioncallback) | 否 | 是 | 点击回调。 |
+| onAction | [SwipeActionCallback](ui-design-hdslistitem.md#swipeactioncallback) | 否 | 是 | 删除图标点击回调。 |
 
 ## FullDeleteOptions
-
-PhonePC/2in1TabletTV
 
 设置整个列表项的横滑删除属性。
 
@@ -152,9 +149,22 @@ PhonePC/2in1TabletTV
 | onFullDeleteAction | [SwipeActionCallback](ui-design-hdslistitem.md#swipeactioncallback) | 否 | 是 | 列表项删除的回调。 |
 | enableVibration | boolean | 否 | 是 | 横滑删除整个列表项时，是否启用振动。  - true：启用振动。  - false：不启用振动。  默认值：true。  **起始版本：** 6.1.0(23) |
 
-## SwipeIconType
+## HdsListItemStateStylesOptions
 
-PhonePC/2in1TabletTV
+设置ListItem的多态样式。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.UIDesign.HDSPattern.Standard
+
+**起始版本：** 26.0.0
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| selectedBackgroundColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 选中态背景颜色。  默认值：Color.Transparent。 |
+| normalBackgroundColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 正常态背景颜色。  默认值：Color.Transparent。 |
+
+## SwipeIconType
 
 type SwipeIconType = SymbolGlyphModifier | ImageOptions
 
@@ -171,11 +181,9 @@ type SwipeIconType = SymbolGlyphModifier | ImageOptions
 | 类型 | 说明 |
 | --- | --- |
 | [SymbolGlyphModifier](ts-universal-attributes-attribute-modifier.md#自定义modifier) | symbol资源类型。 |
-| [ImageOptions](ui-design-hdslistitemcard.md#accessibilitygroupoptions) | image资源类型。 |
+| [ImageOptions](ui-design-hdslistitemcard.md#imageoptions) | image资源类型。 |
 
 ## MenuStyle
-
-PhonePC/2in1TabletTV
 
 设置列表项的预览菜单样式。
 
@@ -192,8 +200,6 @@ PhonePC/2in1TabletTV
 
 ## SwipeActionCallback
 
-PhonePC/2in1TabletTV
-
 type SwipeActionCallback = () => void
 
 列表滑动事件触发的回调函数。
@@ -205,8 +211,6 @@ type SwipeActionCallback = () => void
 **起始版本：** 6.0.0(20)
 
 ## OnStateChangeCallback
-
-PhonePC/2in1TabletTV
 
 type OnStateChangeCallback = (state: SwipeActionState) => void
 
@@ -226,8 +230,6 @@ type OnStateChangeCallback = (state: SwipeActionState) => void
 
 ## SwipeDeleteTriggerType
 
-PhonePC/2in1TabletTV
-
 列表横滑删除触发类型枚举。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -239,171 +241,172 @@ PhonePC/2in1TabletTV
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NORMAL\_TRIGGER | 0 | 列表横滑删除触发类型：正常触发。  正常触发长横滑删除。  触发阈值：图标宽度+50%剩余list宽度。 |
-| EASY\_TRIGGER | 1 | 列表横滑删除触发类型：容易触发。  触发删除需要的滑动距离更短，更容易触发长横滑删除。  触发阈值：90%图标宽度+30%剩余list宽度。 |
+| EASY\_TRIGGER | 1 | 列表横滑删除触发类型：容易触发。  触发删除需要的划动距离更短，更容易触发长横滑删除。  触发阈值：90%图标宽度+30%剩余list宽度。 |
 | NO\_TRIGGER | 2 | 列表横滑删除触发类型：无法触发。  不响应长横滑删除。 |
 
 ## 示例
 
-PhonePC/2in1TabletTV
-
 设置一个带横滑效果的列表：
 
+```typescript
+import { SymbolGlyphModifier, TextModifier } from '@kit.ArkUI';
+import { HdsListItem } from '@kit.UIDesignKit';
+
+@Entry
+@Component
+struct HdsListItemExample {
+  @State dataSource: LazyDataSource<Item> = new LazyDataSource();
+  @State dataArr: Array<Item> = [];
+  @State EndOffset: number = 0;
+  private scroller: Scroller = new Scroller();
+
+  build() {
+    Column() {
+      List({ space: 10, scroller: this.scroller }) {
+        LazyForEach(this.dataSource, (item: Item) => {
+          HdsListItem({
+            hdsListItemCard: {
+              textItem: {
+                primaryText: {
+                  text: 'Primary Text',
+                  modifier: new TextModifier().fontColor(Color.Orange).fontSize(16)
+                }
+              }
+            },
+            // 横滑会有吸附效果
+            swipeActionOptions: {
+              icons: [
+                {
+                  icon: new SymbolGlyphModifier($r('sys.symbol.share')).fontColor([Color.Red]).fontSize(16),
+                  backgroundColor: Color.Green,
+                  onAction: () => {
+                    console.info('点击share按钮');
+                  }
+                },
+                {
+                  icon: new SymbolGlyphModifier($r('sys.symbol.plus_square_on_square')),
+                  backgroundColor: Color.Orange,
+                  onAction: () => {
+                    console.info('点击copy按钮');
+                  },
+                },
+                {
+                  icon: new SymbolGlyphModifier($r('sys.symbol.plus_square_dashed_on_square'))
+                    .symbolEffect(new BounceSymbolEffect(), true),
+                  onAction: () => {
+                    console.info('点击paste按钮');
+                  }
+                }
+              ],
+              deleteIconOptions: {
+                backgroundColor: Color.Red, // 修改背景色
+                iconColor: Color.Gray, // 修改垃圾桶的颜色
+                onAction: () => {
+                  console.info('点击删除按钮');
+                } // 点击回调
+              },
+              fullDeleteOptions: {
+                isFullDelete: true, // 划动距离超过划出组件大小后自动触发删除，默认是false
+                onFullDeleteAction: () => {
+                  console.info('触发自动删除');
+                  this.getUIContext()?.animateTo({
+                    duration: 350,
+                  }, () => {
+                    this.dataSource.deleteItem(item);
+                  });
+                } // 触发删除时的回调
+              }
+            }
+          })
+        }, (item: Item) => item.data)
+      }
+      .scrollBar(BarState.Off)
+      .onDidScroll((scrollOffset: number) => {
+        this.EndOffset = scrollOffset
+      })
+      .margin(10)
+      .width('100%')
+      .height('100%')
+    }
+    .backgroundColor('#0D182431')
+    .width('100%')
+    .height('100%')
+  }
+
+  aboutToAppear() {
+    for (let i = 0; i < 2; i++) {
+      this.dataSource.pushItem(new Item(i + ''));
+      this.dataArr.push(new Item(i + ''));
+    }
+  }
+}
+
+class Item {
+  constructor(data: string) {
+    this.data = data;
+  }
+
+  public data: string = '';
+}
+
+export class LazyDataSource<T> implements IDataSource {
+  private elements: T[];
+  private listeners: Set<DataChangeListener>;
+
+  constructor(elements: T[] = []) {
+    this.elements = elements;
+    this.listeners = new Set();
+  }
+
+  public totalCount(): number {
+    return this.elements.length;
+  }
+
+  public getData(index: number): T {
+    return this.elements[index];
+  }
+
+  public indexOf(item: T): number {
+    return this.elements.indexOf(item);
+  }
+
+  public pinItem(item: T, index: number): void {
+    this.elements.splice(index, 1);
+    this.elements.unshift(item);
+    this.listeners.forEach(listener => listener.onDataReloaded());
+  }
+
+  public pushItem(item: T) {
+    this.elements.push(item);
+    this.listeners.forEach(listener => listener.onDataAdd(this.elements.length - 1));
+  }
+
+  public deleteItem(item: T): void {
+    const index = this.elements.indexOf(item);
+    if (index < 0) {
+      return;
+    }
+    this.elements.splice(index, 1);
+    this.listeners.forEach(listener => listener.onDataDelete(index));
+  }
+
+  public deleteItemByIndex(index: number): void {
+    this.elements.splice(index, 1);
+    this.listeners.forEach(listener => listener.onDataDelete(index));
+  }
+
+  public registerDataChangeListener(listener: DataChangeListener): void {
+    this.listeners.add(listener);
+  }
+
+  public unregisterDataChangeListener(listener: DataChangeListener): void {
+    this.listeners.delete(listener);
+  }
+}
 ```
-1. import { promptAction, SymbolGlyphModifier, TextModifier } from '@kit.ArkUI';
-2. import { HdsListItem } from '@kit.UIDesignKit';
 
-4. @Entry
-5. @Component
-6. struct HdsListItemExample {
-7. @State dataSource: LazyDataSource<Item> = new LazyDataSource();
-8. @State dataArr: Array<Item> = [];
-9. @State EndOffset: number = 0;
-10. private scroller: Scroller = new Scroller();
+## 效果展示
 
-12. build() {
-13. Column() {
-14. List({ space: 10, scroller: this.scroller }) {
-15. LazyForEach(this.dataSource, (item: Item) => {
-16. HdsListItem({
-17. hdsListItemCard: {
-18. textItem: {
-19. primaryText: {
-20. text: 'Primary Text',
-21. modifier: new TextModifier().fontColor(Color.Orange).fontSize(16),
-22. }
-23. }
-24. },
-25. swipeActionOptions: {
-26. icons: [
-27. {
-28. icon: new SymbolGlyphModifier($r('sys.symbol.share')).fontColor([Color.Red]).fontSize(16),
-29. backgroundColor: Color.Green,
-30. onAction: () => {
-31. promptAction.openToast({ message: '点击share按钮', duration: 100 });
-32. },
-33. },
-34. {
-35. icon: new SymbolGlyphModifier($r('sys.symbol.plus_square_on_square')),
-36. backgroundColor: Color.Orange,
-37. onAction: () => {
-38. promptAction.openToast({ message: '点击copy按钮', duration: 100 });
-39. },
-40. },
-41. {
-42. icon: new SymbolGlyphModifier($r('sys.symbol.plus_square_dashed_on_square'))
-43. .symbolEffect(new BounceSymbolEffect(), true),
-44. onAction: () => {
-45. promptAction.openToast({ message: '点击paste按钮', duration: 100 });
-46. },
-47. },
-48. ],
-49. deleteIconOptions: {
-50. backgroundColor: Color.Red, //  ---修改背景色
-51. iconColor: Color.Gray, //  ---- 修改垃圾桶的颜色
-52. onAction: () => {
-53. promptAction.openToast({ message: '点击删除按钮', duration: 100 });
-54. }, //   --点击回调
-55. },
-56. fullDeleteOptions: {
-57. isFullDelete: true, // --- 划动距离超过划出组件大小后自动触发删除，默认是false
-58. onFullDeleteAction: () => {
-59. promptAction.openToast({ message: '触发自动删除', duration: 100 });
-60. this.getUIContext()?.animateTo({
-61. duration: 350,
-62. }, () => {
-63. this.dataSource.deleteItem(item)
-64. });
-65. }, //   -- 触发删除时的回调
-66. },
-67. }
-68. })
-69. }, (item: Item) => item.data)
-70. }
-71. .scrollBar(BarState.Off)
-72. .onDidScroll((scrollOffset: number) => {
-73. this.EndOffset = scrollOffset
-74. })
-75. .margin(10)
-76. .width('100%')
-77. .height('100%')
-78. }
-79. .backgroundColor('#0D182431')
-80. .width('100%')
-81. .height('100%')
-82. }
+执行上述示例中的代码效果如下：
 
-84. aboutToAppear() {
-85. for (let i = 0; i < 2; i++) {
-86. this.dataSource.pushItem(new Item(i + ''));
-87. this.dataArr.push(new Item(i + ''));
-88. }
-89. }
-90. }
-
-92. class Item {
-93. constructor(data: string) {
-94. this.data = data;
-95. }
-
-97. public data: string = '';
-98. }
-
-100. export class LazyDataSource<T> implements IDataSource {
-101. private elements: T[];
-102. private listeners: Set<DataChangeListener>;
-
-104. constructor(elements: T[] = []) {
-105. this.elements = elements;
-106. this.listeners = new Set();
-107. }
-
-109. public totalCount(): number {
-110. return this.elements.length;
-111. }
-
-113. public getData(index: number): T {
-114. return this.elements[index];
-115. }
-
-117. public indexOf(item: T): number {
-118. return this.elements.indexOf(item);
-119. }
-
-121. public pinItem(item: T, index: number): void {
-122. this.elements.splice(index, 1);
-123. this.elements.unshift(item);
-124. this.listeners.forEach(listener => listener.onDataReloaded());
-125. }
-
-127. public pushItem(item: T) {
-128. this.elements.push(item);
-129. this.listeners.forEach(listener => listener.onDataAdd(this.elements.length - 1));
-130. }
-
-132. public deleteItem(item: T): void {
-133. const index = this.elements.indexOf(item);
-134. if (index < 0) {
-135. return;
-136. }
-137. this.elements.splice(index, 1);
-138. this.listeners.forEach(listener => listener.onDataDelete(index));
-139. }
-
-141. public deleteItemByIndex(index: number): void {
-142. this.elements.splice(index, 1);
-143. this.listeners.forEach(listener => listener.onDataDelete(index));
-144. }
-
-146. public registerDataChangeListener(listener: DataChangeListener): void {
-147. this.listeners.add(listener);
-148. }
-
-150. public unregisterDataChangeListener(listener: DataChangeListener): void {
-151. this.listeners.delete(listener);
-152. }
-153. }
-```
-
-效果图：
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/6Mqkv-YWQveQPezyTAITsg/zh-cn_image_0000002589326925.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/FPRHLQyCQ3GO3bUe2931vg/zh-cn_image_0000002736315831.gif)

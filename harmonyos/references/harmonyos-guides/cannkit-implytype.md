@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-imply
 title: ImplyType
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OpRegistrationData > ImplyType
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:42:20+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4e274b34e7d82efb763ccb32724d2eb0359eb9b241fffd4ee3796be61db6cb4d
+content_hash: sha256:b93acff8881cd6b59bb16acf4dfa21a864800093f27eb99ab46ecb595d21188d
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:4e274b34e7d82efb763ccb32724d2eb0359eb9b241fffd4ee3796be61db
 
 ## 函数原型
 
-```
-1. OpRegistrationData &ImplyType(const domi::ImplyType &imply_type)
+```cpp
+OpRegistrationData &ImplyType(const domi::ImplyType &imply_type)
 ```
 
 ## 参数说明

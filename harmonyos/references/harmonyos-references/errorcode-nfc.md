@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: NFC错误码
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 错误码 > NFC错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:07+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:2236b4a439eae143ba4b5145680485c11266f8d2262473e7dbe6ded971047c2b
+scraped_at: 2026-09-02T15:01:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6544da88dba6054fdace6d1189034280cc8462b6669a7e935d93b87ff86b2758
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 3100101 开关NFC异常
-
-PhonePC/2in1TabletWearable
 
 **错误信息**
 
@@ -28,14 +26,13 @@ NFC服务内部执行NFC打开或关闭异常。
 
 1. 和NFC服务建立通信异常。
 2. NFC芯片通信异常。
+3. 企业设备管理策略禁止操作NFC开关。
 
 **处理步骤**
 
 重新执行打开或关闭NFC或重启设备尝试。
 
 ## 3100201 NFC服务读写Tag错误
-
-PhoneWearable
 
 **错误信息**
 
@@ -63,8 +60,6 @@ NFC服务执行Tag业务逻辑遇到错误。
 
 ## 3100202 应用状态错误
 
-PhoneWearable
-
 **错误信息**
 
 The element state is invalid.
@@ -82,8 +77,6 @@ The element state is invalid.
 只允许进入应用前台的页面调用该接口。
 
 ## 3100203 接口调用顺序错误
-
-PhoneWearable
 
 **错误信息**
 
@@ -103,8 +96,6 @@ The off() API can be called only when the on() has been called.
 
 ## 3100204 NFC芯片I/O异常
 
-PhoneWearable
-
 **错误信息**
 
 The tag I/O operation failed.
@@ -121,27 +112,7 @@ NFC Tag不支持所执行的读写操作。
 
 应用程序根据业务场景进行异常处理或提示。
 
-## 3100205 NFC标签状态异常
-
-**错误信息**
-
-The tag leaves the field.
-
-**错误描述**
-
-NFC标签已经离场。
-
-**可能原因**
-
-NFC标签已离开nfc设备感应范围。
-
-**处理步骤**
-
-重新将标签靠近nfc读卡设备。
-
 ## 3100301 NFC卡模拟状态异常
-
-PhoneWearableLite Wearable
 
 **错误信息**
 
@@ -162,8 +133,6 @@ NFC服务执行卡模拟业务逻辑遇到错误。
 2. 提示关开NFC，重新初始化硬件。
 
 ## 3200101 有源NFC标签状态异常
-
-PC/2in1
 
 **错误信息**
 

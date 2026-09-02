@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: Macbook(ARM芯片)HDC无法连接设备
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > Macbook(ARM芯片)HDC无法连接设备
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:25+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:13+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:b0692d70ed972faae6ea85460c36c4a2bdf873d11eeef7b5c1f21d961d204dc1
 ---
 

@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-503
 title: 新增和增强特性
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.3(15) > OS平台能力 > 新增和增强特性
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.3(15) > OS平台能力 > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-04-29T13:23:19+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:80f3787d4bce13a8ed0fb186a7a344022f756bbd3708e3d7dc623339f91c24c1
+scraped_at: 2026-09-02T14:49:23+08:00
+doc_updated_at: 2026-08-04
+content_hash: sha256:6e1f3bb63a3534cbe97a2fbc25c7c75dd534398668804e5576e0f997ecf986ce
 ---
 
 ## Ability Kit
@@ -58,7 +58,7 @@ NativeBuffer支持的格式新增BLOB格式（NATIVEBUFFER\_PIXEL\_FMT\_BLOB）�
 * Tabs组件和Swiper组件新增支持设置鼠标滚轮翻页模式。（[API参考-Tabs组件](../harmonyos-references/ts-container-tabs.md#pageflipmode15)、[API参考-Swiper组件](../harmonyos-references/ts-container-swiper.md#pageflipmode15)）
 * NavDestination新增支持事件返回时的回调，用于在事件返回时传参。（[API参考](../harmonyos-references/ts-basic-components-navdestination.md#onresult15)）
 * TextPicker组件新增支持配置各个选择项文本样式。（[API参考](../harmonyos-references/ts-basic-components-textpicker.md#disabletextstyleanimation15)）
-* Progress组件新增C API，支持线性进度条样式的设置。（[API参考](../harmonyos-references/capi-native-type-h.md#oh_arkui_progresslinearstyleoption_create)）
+* Progress组件新增C API，支持线性进度条样式的设置。（[API参考](../harmonyos-references/capi-progress-h.md#oh_arkui_progresslinearstyleoption_create)）
 * 屏幕属性模块折叠屏状态枚举新增多个针对折轴二的状态定义。（[API参考](../harmonyos-references/js-apis-display.md#foldstatus10)）
 * C API的Node属性样式新增背景模糊效果属性NODE\_BACKDROP\_BLUR。（[API参考](../harmonyos-references/capi-native-node-h.md#arkui_nodeattributetype)）
 * FrameNode新增支持跨语言能力。（[API参考](../harmonyos-references/js-apis-arkui-framenode.md#setcrosslanguageoptions15)）
@@ -68,7 +68,7 @@ NativeBuffer支持的格式新增BLOB格式（NATIVEBUFFER\_PIXEL\_FMT\_BLOB）�
 * 三类弹窗组件新增支持设置弹窗显示层级及相关的属性和效果（levelMode、levelUniqueId、immersiveMode）。（[API参考-列表选择弹窗](../harmonyos-references/ts-methods-action-sheet.md#actionsheetoptions对象说明)、[API参考-警告弹窗](../harmonyos-references/ts-methods-alert-dialog-box.md#alertdialogparam对象说明)、[API参考-自定义弹窗](../harmonyos-references/ts-methods-custom-dialog-box.md#customdialogcontrolleroptions对象说明)）
 * bindSheet新增支持圆角（radius）属性，用于设置半模态页面圆角半径；新增支持非手势切换挡位（detentSelection）属性。（[API参考](../harmonyos-references/ts-universal-attributes-sheet-transition.md#sheetoptions)）
 * 新增导航点组件，提供圆点导航点以及数字导航点两种导航点样式。（[API参考](../harmonyos-references/ts-swiper-components-indicator.md)）
-* Swiper和Tabs组件新增支持带动画跳转的模式。（[API参考-Swiper组件C API](../harmonyos-references/capi-native-type-h.md#arkui_swiperanimationmode)、[API参考-Swiper组件ArkTS API](../harmonyos-references/ts-container-swiper.md#swiperanimationmode15枚举说明)、[API参考-Tabs组件ArkTS API](../harmonyos-references/ts-container-tabs.md#animationmode12枚举说明)）
+* Swiper和Tabs组件新增支持带动画跳转的模式。（[API参考-Swiper组件C API](../harmonyos-references/capi-swiper-h.md#arkui_swiperanimationmode)、[API参考-Swiper组件ArkTS API](../harmonyos-references/ts-container-swiper.md#swiperanimationmode15枚举说明)、[API参考-Tabs组件ArkTS API](../harmonyos-references/ts-container-tabs.md#animationmode12枚举说明)）
 * Swiper组件新增支持滑动行为拦截事件，可判断是否允许滑动行为。其中，C API通过属性控制，属性名NODE\_SWIPER\_EVENT\_ON\_CONTENT\_WILL\_SCROLL。（[API参考-C API](../harmonyos-references/capi-native-node-h.md#arkui_nodeeventtype)、[API参考-ArkTS API](../harmonyos-references/ts-container-swiper.md#oncontentwillscroll15)）
 * 三方平台接入ArkUI无障碍框架新增支持查找上一个或下一个焦点（ARKUI\_ACCESSIBILITY\_NATIVE\_ACTION\_TYPE\_NEXT\_HTML\_ITEM、ARKUI\_ACCESSIBILITY\_NATIVE\_ACTION\_TYPE\_PREVIOUS\_HTML\_ITEM）。（[API参考](../harmonyos-references/capi-native-interface-accessibility-h.md#arkui_accessibility_actiontype)）
 * 三方平台接入ArkUI无障碍框架新增支持多实例场景。（[API参考](../harmonyos-references/capi-native-interface-accessibility-h.md#oh_arkui_accessibilityproviderregistercallback)）
@@ -256,7 +256,7 @@ NativeBuffer支持的格式新增BLOB格式（NATIVEBUFFER\_PIXEL\_FMT\_BLOB）�
 
 ## Speech Kit
 
-TextReader新增支持注销拉到播放列表底端且带用户自定义参数的回调函数。（[API参考](../harmonyos-references/speech-textreader-api.md#offtype-requestmore-1)）
+TextReader新增支持注销拉到播放列表底端且带用户自定义参数的回调函数。（[API参考](../harmonyos-references/speech-textreader-api.md#offrequestmore-1)）
 
 ## Live View Kit
 

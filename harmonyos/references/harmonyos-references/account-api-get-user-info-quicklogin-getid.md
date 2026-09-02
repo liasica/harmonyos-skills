@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 一键登录获取华为账号绑定号码和UnionID/OpenID（不推荐）
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 附录 > 一键登录获取华为账号绑定号码和UnionID/OpenID（不推荐）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:16+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:948b1753b40690dc56a3ab46161f85693f0d05d7d2dc8f6cce70bf3305e920dd
+scraped_at: 2026-09-02T15:02:50+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3ee31037d2850414933b93f28a6b9f6eb4cbea9370d2055b61eceadf89fd7a14
 ---
 
-注意
+**注意** 
 
 为了更安全的网络访问，请务必使用TLS1.2协议及规定内的加密套件。若使用协议是TLS1.0、TLS1.1或规定外的加密套件，可能无法正常访问华为账号服务。
 
 关于TLS1.2协议及规定内加密套件的信息，可以点击这里进行详细了解：[TLS协议及加密套件](account-api-common.md#tls协议及加密套件)。
 
-说明
+**说明** 
 
 为优化开发者体验，Account Kit推荐使用[一键登录获取华为账号绑定号码和UnionID/OpenID](account-api-get-user-info-quicklogin-by-code.md)新接口进行应用服务端开发，可以减少[获取用户级凭证](account-api-obtain-user-token.md)接口调用，接入更简单，整体时延更低。
 
@@ -32,7 +32,7 @@ content_hash: sha256:948b1753b40690dc56a3ab46161f85693f0d05d7d2dc8f6cce70bf3305e
 * 华为账号一键登录服务仅对中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）用户提供；且应用服务端获取华为账号绑定号码时，该服务器必须部署在中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。
 * 应用使用华为账号一键登录功能之前，需要完成quickLoginMobilePhone（华为账号一键登录）的scope权限申请，详见[开发前提](../harmonyos-guides/account-phone-unionid-login.md#开发前提)。
 
-说明
+**说明** 
 
 应用未申请quickLoginMobilePhone（华为账号一键登录）的scope权限，或获取Authorization Code时不携带quickLoginMobilePhone（华为账号一键登录）scope，调用成功后响应中将不包含华为账号绑定号码。
 
@@ -65,12 +65,12 @@ content_hash: sha256:948b1753b40690dc56a3ab46161f85693f0d05d7d2dc8f6cce70bf3305e
 
 请通过POST方式调用，示例如下：
 
-```
-1. POST /rest.php?nsp_svc=GOpen.User.getInfo HTTP/1.1
-2. Host: account.cloud.huawei.com
-3. Content-Type: application/x-www-form-urlencoded
+```http
+POST /rest.php?nsp_svc=GOpen.User.getInfo HTTP/1.1
+Host: account.cloud.huawei.com
+Content-Type: application/x-www-form-urlencoded
 
-5. access_token=<Access Token>
+access_token=<Access Token>
 ```
 
 ## 响应参数
@@ -89,18 +89,18 @@ content_hash: sha256:948b1753b40690dc56a3ab46161f85693f0d05d7d2dc8f6cce70bf3305e
 | --- | --- | --- | --- |
 | openID | 是 | String | 用户OpenID。具体格式要求请参考[OpenID和UnionID的格式说明](../harmonyos-guides/account-faq-9.md)。 |
 | unionID | 是 | String | 用户UnionID。具体格式要求请参考[OpenID和UnionID的格式说明](../harmonyos-guides/account-faq-9.md)。 |
-| loginMobileNumber | 否 | String | 华为账号绑定号码，使用该手机号完成一键登录的功能，详见[华为账号一键登录（获取手机号和UnionID/OpenID）](../harmonyos-guides/account-phone-unionid-login.md)。  以下场景loginMobileNumber不返回:  - 用户未绑定手机号  - 应用未申请quickLoginMobilePhone的scope权限  - 获取Authorization Code时不携带quickLoginMobilePhone scope  - 应用服务器部署在中国境外、香港特别行政区、澳门特别行政区或中国台湾 |
+| loginMobileNumber | 否 | String | 华为账号绑定号码，使用该手机号完成一键登录的功能，详见[华为账号一键登录（获取手机号和UnionID/OpenID）](../harmonyos-guides/account-phone-unionid-login.md)。  以下场景loginMobileNumber不返回：  - 用户未绑定手机号  - 应用未申请quickLoginMobilePhone的scope权限  - 获取Authorization Code时不携带quickLoginMobilePhone scope  - 应用服务器部署在中国境外、香港特别行政区、澳门特别行政区或中国台湾 |
 | loginMobileValid | 否 | int | 通过一键登录功能获取的华为账号绑定号码的实时有效性。  当不返回 loginMobileNumber时，也不进行返回。  若发起一键登录时[LoginPanelParams](account-api-component-manager.md#loginpanelparams)的verifyPhoneNumber参数值传递为true，表示华为代为验证手机号有效性，开发者无需关注此返回值；  若verifyPhoneNumber参数值传递为false, 需要根据返回的状态值进行处理。  0：在过去90天内，无法证明当前手机号码可以触达用户， 需要进行验证  1：在过去90天内，当前手机号码被证明可以触达用户，可以直接使用 |
 | purePhoneNumber | 否 | String | 不带国家码的手机号，此处为loginMobileNumber去除国际冠码与国际电话区号的形式。  当不返回 loginMobileNumber时，也不进行返回。 |
 | phoneCountryCode | 否 | String | purePhoneNumber的国际冠码(00)+国际电话区号。  当不返回 loginMobileNumber时，也不进行返回。 |
-| warning | 否 | String | 应用服务器部署在中国境外、香港特别行政区、澳门特别行政区或中国台湾时, 不返回华为账号绑定的手机号码，而返回此字段进行提示说明。 |
+| warning | 否 | String | 应用服务器部署在中国境外、香港特别行政区、澳门特别行政区或中国台湾时， 不返回华为账号绑定的手机号码，而返回此字段进行提示说明。 |
 
-说明
+**说明** 
 
 如字段无特殊说明，华为账号服务器返回的手机号码格式如下：
 
-* 当账号注册地为中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）且绑定手机号为中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）手机号码时，省略国际冠码与国际电话区号，直接返回手机号码，如: 11136000008。
-* 其它情况则遵循格式：国际冠码(统一使用00) + 国际电话区号 + 手机号码，如：0085261234567 (香港特别行政区)、 0079871234560 (俄罗斯)。
+* 当账号注册地为中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）且绑定手机号为中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）手机号码时，省略国际冠码与国际电话区号，直接返回手机号码，如： 111\*\*\*\*0008。
+* 其它情况则遵循格式：国际冠码(统一使用00) + 国际电话区号 + 手机号码，如：0085261\*\*\*\*67 (香港特别行政区)、 00798\*\*\*\*4560 (俄罗斯)。
 
 调用失败时，响应消息返回如下：
 
@@ -113,97 +113,97 @@ content_hash: sha256:948b1753b40690dc56a3ab46161f85693f0d05d7d2dc8f6cce70bf3305e
 
 ### 请求成功时
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json;charset=utf-8
+```json5
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
 
-4. {
-5. "openID": "MDFAMTAxMDA1MTg1QGFlMzM0OWIyOGY0*****MDRiaNTI5ODAxYTA3MDh*****A4ZTZmNTA2ZTE4ZT*****lmNGVmN2E1ZjY1OTg4NWRiaN2QxMzQy*****TU0YWQ3",
-6. "unionID": "MDF9pBd6xxxxA8iaG4ZNPTw*****3fyXzG9WgUcmY8XibBvQ",
-7. // 华为账号绑定号码，使用该手机号完成一键登录的功能(返回数据实际为明文)
-8. "loginMobileNumber": "191******08",
-9. // 通过一键登录功能获取的华为账号绑定号码的实时有效性, 0表示需要进一步验证有效性， 1表示可以直接使用
-10. "loginMobileValid": 1,
-11. // 不带国际冠码与国际电话区号的手机号码(返回数据实际为明文)
-12. "purePhoneNumber": "191******08",
-13. "phoneCountryCode": "0086"
-14. }
+{
+    "openID": "MDFAMTAxMDA1MTg1QGFlMzM0OWIyOGY0*****MDRiaNTI5ODAxYTA3MDh*****A4ZTZmNTA2ZTE4ZT*****lmNGVmN2E1ZjY1OTg4NWRiaN2QxMzQy*****TU0YWQ3",
+    "unionID": "MDF9pBd6xxxxA8iaG4ZNPTw*****3fyXzG9WgUcmY8XibBvQ",
+    // 华为账号绑定号码，使用该手机号完成一键登录的功能（返回数据实际为明文）
+    "loginMobileNumber": "191******08",
+    // 通过一键登录功能获取的华为账号绑定号码的实时有效性，0表示需要进一步验证有效性，1表示可以直接使用
+    "loginMobileValid": 1,
+    // 不带国际冠码与国际电话区号的手机号码（返回数据实际为明文）
+    "purePhoneNumber": "191******08",
+    "phoneCountryCode": "0086"
+}
 ```
 
 ### 请求失败时
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json;charset=utf-8
-3. NSP_STATUS: 6
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+NSP_STATUS: 6
 
-5. {
-6. "error": "session timeout"
-7. }
+{
+    "error": "session timeout"
+}
 ```
 
 ### 从中国境外、香港特别行政区、澳门特别行政区或中国台湾服务器请求时
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json;charset=utf-8
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
 
-4. {
-5. "openID": "MDFAMTAxMDA1MTg1QGFlMzM0OWIyOGY0*****MDRiaNTI5ODAxYTA3MDh*****A4ZTZmNTA2ZTE4ZT*****lmNGVmN2E1ZjY1OTg4NWRiaN2QxMzQy*****TU0YWQ3",
-6. "warning": "xxx site doesn't support quick login, see the guide for details"
-7. }
+{
+    "openID": "MDFAMTAxMDA1MTg1QGFlMzM0OWIyOGY0*****MDRiaNTI5ODAxYTA3MDh*****A4ZTZmNTA2ZTE4ZT*****lmNGVmN2E1ZjY1OTg4NWRiaN2QxMzQy*****TU0YWQ3",
+    "warning": "xxx site doesn't support quick login, see the guide for details"
+}
 ```
 
 ## 示例代码
 
 Java示例代码如下，运行前需要进行[示例代码环境配置](account-api-common.md#示例代码环境配置)（请将此示例代码与工具类CallUtils放于同一路径下，如不在同一路径，请手动添加import）
 
-```
-1. import com.alibaba.fastjson2.JSONObject;
-2. import org.apache.http.NameValuePair;
-3. import org.apache.http.client.entity.UrlEncodedFormEntity;
-4. import org.apache.http.client.methods.HttpPost;
-5. import org.apache.http.message.BasicNameValuePair;
-6. import java.io.IOException;
-7. import java.util.ArrayList;
-8. import java.util.List;
+```java
+import com.alibaba.fastjson2.JSONObject;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.message.BasicNameValuePair;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-10. /**
-11. * 一键登录获取华为账号绑定号码和UnionID/OpenID
-12. */
-13. public class GetMobileByQuickLoginDemo {
-14. public static void main(String[] args) throws IOException {
-15. // 一键登录获取华为账号绑定号码和UnionID/OpenID的接口URL
-16. String url = "https://account.cloud.huawei.com/rest.php?nsp_svc=GOpen.User.getInfo";
-17. // 替换为实际获取到的用户级凭证Access Token
-18. String accessToken = "<Access Token>";
-19. JSONObject result = getQuickLoginMobile(url, accessToken);
-20. // 解析获取openID
-21. String openID = result.getString("openID");
-22. // 解析获取unionID
-23. String unionID = result.getString("unionID");
-24. // 解析获取loginMobileNumber
-25. String loginMobileNumber = result.getString("loginMobileNumber");
-26. // 解析获取loginMobileValid
-27. Integer loginMobileValid = result.getInteger("loginMobileValid");
-28. // 解析获取purePhoneNumber
-29. String purePhoneNumber = result.getString("purePhoneNumber");
-30. // 解析获取phoneCountryCode
-31. String phoneCountryCode = result.getString("phoneCountryCode");
-32. // 解析获取warning
-33. String warning = result.getString("warning");
-34. }
+/**
+ * 一键登录获取华为账号绑定号码和UnionID/OpenID
+ */
+public class GetMobileByQuickLoginDemo {
+    public static void main(String[] args) throws IOException {
+        // 一键登录获取华为账号绑定号码和UnionID/OpenID的接口URL
+        String url = "https://account.cloud.huawei.com/rest.php?nsp_svc=GOpen.User.getInfo";
+        // 替换为实际获取到的用户级凭证Access Token
+        String accessToken = "<Access Token>";
+        JSONObject result = getQuickLoginMobile(url, accessToken);
+        // 解析获取openID
+        String openID = result.getString("openID");
+        // 解析获取unionID
+        String unionID = result.getString("unionID");
+        // 解析获取loginMobileNumber
+        String loginMobileNumber = result.getString("loginMobileNumber");
+        // 解析获取loginMobileValid
+        Integer loginMobileValid = result.getInteger("loginMobileValid");
+        // 解析获取purePhoneNumber
+        String purePhoneNumber = result.getString("purePhoneNumber");
+        // 解析获取phoneCountryCode
+        String phoneCountryCode = result.getString("phoneCountryCode");
+        // 解析获取warning
+        String warning = result.getString("warning");
+    }
 
-36. private static JSONObject getQuickLoginMobile(String url, String accessToken) throws IOException {
-37. HttpPost httpPost = new HttpPost(url);
-38. List<NameValuePair> request = new ArrayList<>();
-39. request.add(new BasicNameValuePair("access_token", accessToken));
-40. httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded");
-41. httpPost.setEntity(new UrlEncodedFormEntity(request));
-42. // 如需要自定义异常处理请使用api CallUtils#remoteCall(HttpUriRequest, BiFunction<CloseableHttpResponse,String,E>)
-43. return CallUtils.toJsonObject(CallUtils.remoteCall(httpPost));
-44. }
-45. }
+    private static JSONObject getQuickLoginMobile(String url, String accessToken) throws IOException {
+        HttpPost httpPost = new HttpPost(url);
+        List<NameValuePair> request = new ArrayList<>();
+        request.add(new BasicNameValuePair("access_token", accessToken));
+        httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded");
+        httpPost.setEntity(new UrlEncodedFormEntity(request));
+        // 如需要自定义异常处理请使用api CallUtils#remoteCall(HttpUriRequest, BiFunction<CloseableHttpResponse,String,E>)
+        return CallUtils.toJsonObject(CallUtils.remoteCall(httpPost));
+    }
+}
 ```
 
 ## 错误码
@@ -220,7 +220,7 @@ Java示例代码如下，运行前需要进行[示例代码环境配置](account
 | 504 | 请求连接超时，常见于网络状况不稳定。 | 建议稍后重试，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 590 | 服务内部错误。 | 请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 
-说明
+**说明** 
 
 Response Header中的NSP\_STATUS字段，在处理成功时不会返回。
 

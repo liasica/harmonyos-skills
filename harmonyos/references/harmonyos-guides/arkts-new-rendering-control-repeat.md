@@ -3,15 +3,15 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-ren
 title: Repeat：可复用的循环渲染
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式渲染控制 > Repeat：可复用的循环渲染
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:35+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:636f3ceb2cd7082293d44da2785b867eb2287dd19e865734a0192a8a545f49d5
+scraped_at: 2026-09-02T14:59:16+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c8bc1639e6f71f2cc0f27fac3b2e7f600aec2be1d0a482c9b2dc59694090791a
 ---
 
-说明
+**说明** 
 
 * Repeat从API version 12开始支持。
-* 本文档仅为开发指南。组件接口规范见[Repeat API参数说明](../harmonyos-references/ts-rendering-control-repeat.md)。
+* 本文档仅为开发指南。组件接口规范见[Repeat](../harmonyos-references/ts-rendering-control-repeat.md) API参数说明。
 * 由于不同设备屏幕宽高不同，本指南内的示例的实际效果和截图有偏差。
 
 ## 概述
@@ -22,7 +22,7 @@ Repeat根据容器组件的**显示区域和预加载区域**加载子组件。�
 
 本文档依次介绍了Repeat的[基础特性](arkts-new-rendering-control-repeat.md#基础特性)、[高级特性](arkts-new-rendering-control-repeat.md#高级特性)、[常见使用场景](arkts-new-rendering-control-repeat.md#常见使用场景)和[常见问题](arkts-new-rendering-control-repeat.md#常见问题)，开发者可以按需阅读。在[子组件生成规则](arkts-new-rendering-control-repeat.md#子组件生成规则)小节中，给出了简单的示例，可以帮助开发者快速上手Repeat的使用。
 
-说明
+**说明** 
 
 Repeat与[LazyForEach](arkts-rendering-control-lazyforeach.md)组件的区别：
 
@@ -36,14 +36,13 @@ Repeat与[LazyForEach](arkts-rendering-control-lazyforeach.md)组件的区别：
 
 * Repeat必须在滚动类容器组件内使用，仅有[List](../harmonyos-references/ts-container-list.md)、[ListItemGroup](../harmonyos-references/ts-container-listitemgroup.md)、[Grid](../harmonyos-references/ts-container-grid.md)、[Swiper](../harmonyos-references/ts-container-swiper.md)以及[WaterFlow](../harmonyos-references/ts-container-waterflow.md)组件支持Repeat懒加载场景。
 
-  循环渲染只允许创建一个子组件，子组件应当是允许包含在容器组件中的子组件。例如：Repeat与[List](../harmonyos-references/ts-container-list.md)组件配合使用时，子组件必须为[ListItem](../harmonyos-references/ts-container-listitem.md)组件。
+  循环渲染只允许创建一个子组件，子组件应当是允许包含在容器组件中的子组件。例如：Repeat与[List](../harmonyos-references/ts-container-list.md)组件配合使用时，子组件需要为[ListItem](../harmonyos-references/ts-container-listitem.md)组件或者[ListItemGroup](../harmonyos-references/ts-container-listitemgroup.md)组件。
 * Repeat[懒加载模式](arkts-new-rendering-control-repeat.md#懒加载能力说明)不支持与[状态管理（V1）](arkts-state-management-overview.md#状态管理v1)配合使用，否则会导致渲染异常。
-* Repeat当前不支持动画效果。
 * 滚动容器组件内只能包含一个Repeat。以List为例，不建议同时包含ListItem、ForEach、LazyForEach，不建议同时包含多个Repeat。
 * 当Repeat与自定义组件或[@Builder](arkts-builder.md)函数混用时，必须将RepeatItem类型整体进行传参，组件才能监听到数据变化。详见[与@Builder混用时状态变量未刷新](arkts-new-rendering-control-repeat.md#与builder混用时状态变量未刷新)。
 * Repeat子组件复用时不会触发[aboutToRecycle](../harmonyos-references/ts-custom-component-lifecycle.md#abouttorecycle10)、[aboutToReuse](../harmonyos-references/ts-custom-component-lifecycle.md#abouttoreuse10)生命周期。
 
-说明
+**说明** 
 
 Repeat功能依赖数组属性的动态修改。如果数组对象被密封（sealed）或冻结（frozen），将导致Repeat部分功能失效，因为密封操作会禁止对象扩展属性并锁定现有属性的配置。
 
@@ -63,50 +62,48 @@ Repeat通过[.each()](../harmonyos-references/ts-rendering-control-repeat.md#eac
 
 .each()适用于只需要循环渲染一种子组件的场景。下列示例代码使用Repeat组件进行简单的循环渲染。
 
+```typescript
+// 在List容器组件中使用Repeat
+@Entry
+@ComponentV2
+  // 推荐使用V2装饰器
+struct RepeatExample {
+  @Local dataArr: Array<string> = []; // 数据源
+
+  aboutToAppear(): void {
+    for (let i = 0; i < 50; i++) {
+      this.dataArr.push(`data_${i}`); // 为数组添加一些数据
+    }
+  }
+
+  build() {
+    Column() {
+      List() {
+        Repeat<string>(this.dataArr)
+          .each((ri: RepeatItem<string>) => {
+            ListItem() {
+              Text('each_' + ri.item).fontSize(30)
+            }
+          })
+          .virtualScroll({ totalCount: this.dataArr.length }) // 打开懒加载，totalCount为期望加载的数据长度
+      }
+      .cachedCount(2) // 容器组件的预加载区域大小
+      .height('70%')
+      .border({ width: 1 }) // 边框
+    }
+  }
+}
 ```
-1. // 在List容器组件中使用Repeat
-2. @Entry
-3. @ComponentV2
-4. // 推荐使用V2装饰器
-5. struct RepeatExample {
-6. @Local dataArr: Array<string> = []; // 数据源
-
-8. aboutToAppear(): void {
-9. for (let i = 0; i < 50; i++) {
-10. this.dataArr.push(`data_${i}`); // 为数组添加一些数据
-11. }
-12. }
-
-14. build() {
-15. Column() {
-16. List() {
-17. Repeat<string>(this.dataArr)
-18. .each((ri: RepeatItem<string>) => {
-19. ListItem() {
-20. Text('each_' + ri.item).fontSize(30)
-21. }
-22. })
-23. .virtualScroll({ totalCount: this.dataArr.length }) // 打开懒加载，totalCount为期望加载的数据长度
-24. }
-25. .cachedCount(2) // 容器组件的预加载区域大小
-26. .height('70%')
-27. .border({ width: 1 }) // 边框
-28. }
-29. }
-30. }
-```
-
-[RepeatExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingRepeat/RepeatExample.ets#L16-L46)
 
 运行后界面如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/cAEhpUqJRKCn0ZOpYo5eGQ/zh-cn_image_0000002558764154.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/pf8byGuJR1eAt-uNctwYCA/zh-cn_image_0000002736312463.png)
 
 **多种类型子组件**
 
 Repeat提供渲染模板（template）能力，可以在同一个数据源中渲染多种子组件。每个数据项会根据[.templateId()](../harmonyos-references/ts-rendering-control-repeat.md#templateid)得到template type，从而渲染type对应的.template()中的子组件。
 
-说明
+**说明** 
 
 * .template()需要在[懒加载模式](arkts-new-rendering-control-repeat.md#懒加载能力说明)下使用。
 * .each()等价于template type为空字符串的.template()。
@@ -116,57 +113,55 @@ Repeat提供渲染模板（template）能力，可以在同一个数据源中渲
 
 下列示例代码中使用Repeat组件进行循环渲染，并使用了多个渲染模板。
 
+```typescript
+// 在List容器组件中使用Repeat
+@Entry
+@ComponentV2 // 推荐使用V2装饰器
+struct RepeatExampleWithTemplates {
+  @Local dataArr: Array<string> = []; // 数据源
+
+  aboutToAppear(): void {
+    for (let i = 0; i < 50; i++) {
+      this.dataArr.push(`data_${i}`); // 为数组添加一些数据
+    }
+  }
+
+  build() {
+    Column() {
+      List() {
+        Repeat<string>(this.dataArr)
+          .each((ri: RepeatItem<string>) => { // 默认渲染模板
+            ListItem() {
+              Text('each_' + ri.item).fontSize(30).fontColor('rgb(161,10,33)') // 文本颜色为红色
+            }
+          })
+          .key((item: string, index: number): string => JSON.stringify(item)) // 键值生成函数
+          .virtualScroll({ totalCount: this.dataArr.length }) // 打开懒加载，totalCount为期望加载的数据长度
+          .templateId((item: string, index: number): string => { // 根据返回值寻找对应的模板子组件进行渲染
+            return index <= 4 ? 'A' : (index <= 10 ? 'B' : ''); // 前5个节点模板为A，接下来的6个为B，其余为默认模板
+          })
+          .template('A', (ri: RepeatItem<string>) => { // 'A'模板
+            ListItem() {
+              Text('A_' + ri.item).fontSize(30).fontColor('rgb(23,169,141)') // 文本颜色为绿色
+            }
+          }, { cachedCount: 3 }) // 'A'模板的缓存列表容量为3
+          .template('B', (ri: RepeatItem<string>) => { // 'B'模板
+            ListItem() {
+              Text('B_' + ri.item).fontSize(30).fontColor('rgb(39,135,217)') // 文本颜色为蓝色
+            }
+          }, { cachedCount: 4 }) // 'B'模板的缓存列表容量为4
+      }
+      .cachedCount(2) // 容器组件的预加载区域大小
+      .height('70%')
+      .border({ width: 1 }) // 边框
+    }
+  }
+}
 ```
-1. // 在List容器组件中使用Repeat
-2. @Entry
-3. @ComponentV2 // 推荐使用V2装饰器
-4. struct RepeatExampleWithTemplates {
-5. @Local dataArr: Array<string> = []; // 数据源
-
-7. aboutToAppear(): void {
-8. for (let i = 0; i < 50; i++) {
-9. this.dataArr.push(`data_${i}`); // 为数组添加一些数据
-10. }
-11. }
-
-13. build() {
-14. Column() {
-15. List() {
-16. Repeat<string>(this.dataArr)
-17. .each((ri: RepeatItem<string>) => { // 默认渲染模板
-18. ListItem() {
-19. Text('each_' + ri.item).fontSize(30).fontColor('rgb(161,10,33)') // 文本颜色为红色
-20. }
-21. })
-22. .key((item: string, index: number): string => JSON.stringify(item)) // 键值生成函数
-23. .virtualScroll({ totalCount: this.dataArr.length }) // 打开懒加载，totalCount为期望加载的数据长度
-24. .templateId((item: string, index: number): string => { // 根据返回值寻找对应的模板子组件进行渲染
-25. return index <= 4 ? 'A' : (index <= 10 ? 'B' : ''); // 前5个节点模板为A，接下来的5个为B，其余为默认模板
-26. })
-27. .template('A', (ri: RepeatItem<string>) => { // 'A'模板
-28. ListItem() {
-29. Text('A_' + ri.item).fontSize(30).fontColor('rgb(23,169,141)') // 文本颜色为绿色
-30. }
-31. }, { cachedCount: 3 }) // 'A'模板的缓存列表容量为3
-32. .template('B', (ri: RepeatItem<string>) => { // 'B'模板
-33. ListItem() {
-34. Text('B_' + ri.item).fontSize(30).fontColor('rgb(39,135,217)') // 文本颜色为蓝色
-35. }
-36. }, { cachedCount: 4 }) // 'B'模板的缓存列表容量为4
-37. }
-38. .cachedCount(2) // 容器组件的预加载区域大小
-39. .height('70%')
-40. .border({ width: 1 }) // 边框
-41. }
-42. }
-43. }
-```
-
-[RepeatExample2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingRepeat/RepeatExample2.ets#L16-L60)
 
 运行后界面如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/1unsaUvIQCCjpyS8rt8F7g/zh-cn_image_0000002558604498.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/0RftZprOQBWkaXCOlGHq6w/zh-cn_image_0000002706673418.png)
 
 ### 键值生成规则
 
@@ -174,7 +169,7 @@ Repeat的[.key()](../harmonyos-references/ts-rendering-control-repeat.md#key)属
 
 当.key()缺省时，Repeat会生成新的随机键值。当发现有重复key时，Repeat会在已有键值的基础上递归生成新的键值，直到没有重复键值。
 
-说明
+**说明** 
 
 * 键值（key）与索引（index）的区别：键值是数据项的唯一标识符，Repeat根据键值是否发生变化判断数据项是否更新；索引只标识数据项在数组中的位置。
 * 在[懒加载模式](arkts-new-rendering-control-repeat.md#懒加载能力说明)下，Repeat也会通过状态管理机制监听数据本身的变化，从而实现高效的更新。
@@ -188,43 +183,43 @@ Repeat的[.key()](../harmonyos-references/ts-rendering-control-repeat.md#key)属
 
 键值生成示例：
 
-```
-1. @ObservedV2
-2. class ExampleData {
-3. @Trace str: string;
-4. num: number;
+```typescript
+@ObservedV2
+class ExampleData {
+  @Trace public str: string;
+  public num: number;
 
-6. constructor(s: string, n: number) {
-7. this.str = s;
-8. this.num = n;
-9. }
-10. }
+  constructor(s: string, n: number) {
+    this.str = s;
+    this.num = n;
+  }
+}
 
-12. @Entry
-13. @ComponentV2
-14. struct Index {
-15. @Local exampleList: Array<ExampleData> = [];
+@Entry
+@ComponentV2
+struct RepeatKeyGeneration {
+  @Local exampleList: Array<ExampleData> = [];
 
-17. aboutToAppear(): void {
-18. for (let i = 0; i < 20; i++) {
-19. this.exampleList.push(new ExampleData(`data${i}`, i));
-20. }
-21. }
+  aboutToAppear(): void {
+    for (let i = 0; i < 20; i++) {
+      this.exampleList.push(new ExampleData(`data${i}`, i));
+    }
+  }
 
-23. build() {
-24. Column() {
-25. List({ space: 10 }) {
-26. Repeat(this.exampleList)
-27. .each((obj: RepeatItem<ExampleData>) => {
-28. ListItem() {
-29. Text(obj.item.str).fontSize(50)
-30. }
-31. })
-32. .key(item => item.str) // UI显示刷新与属性str相关，建议在键值生成函数中设置其为返回值，此处键值生成与index无关
-33. }
-34. }
-35. }
-36. }
+  build() {
+    Column() {
+      List({ space: 10 }) {
+        Repeat(this.exampleList)
+          .each((obj: RepeatItem<ExampleData>) => {
+            ListItem() {
+              Text(obj.item.str).fontSize(50)
+            }
+          })
+          .key(item => item.str) // UI显示刷新与属性str相关，建议在键值生成函数中设置其为返回值，此处键值生成与index无关
+      }
+    }
+  }
+}
 ```
 
 在上述示例代码中，使用.key()定义键值生成函数，各子组件的键值为item元素的str属性值。
@@ -237,9 +232,9 @@ Repeat加载子节点具有懒加载和全量加载两种模式。开发者可�
 
 使用Repeat的.virtualScroll()属性，即可使能懒加载能力。在懒加载模式下，Repeat根据当前的容器组件显示区域和预加载区域范围，按需加载子组件。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/F0xTYe8aTDe69XG_6SHBNA/zh-cn_image_0000002589324023.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/y1MTC7kPROy-_lb1tRAg0A/zh-cn_image_0000002736432509.png)
 
-说明
+**说明** 
 
 * 懒加载模式需要和滚动容器组件[List](../harmonyos-references/ts-container-list.md)、[ListItemGroup](../harmonyos-references/ts-container-listitemgroup.md)、[Grid](../harmonyos-references/ts-container-grid.md)、[Swiper](../harmonyos-references/ts-container-swiper.md)或[WaterFlow](../harmonyos-references/ts-container-waterflow.md)配合使用。
 * 懒加载模式需要和[状态管理（V2）](arkts-state-management-overview.md#状态管理v2)配合使用。
@@ -249,7 +244,7 @@ Repeat加载子节点具有懒加载和全量加载两种模式。开发者可�
 
 当关闭Repeat的.virtualScroll()属性时（即省略该属性），Repeat在初始化页面时加载列表中的所有子组件，适合**短数据列表/组件全部加载**的场景。对于**长数据列表（数据长度大于30）**，如果关闭懒加载，Repeat会一次性加载全量子组件，此操作耗时长，不建议使用。
 
-说明
+**说明** 
 
 * 渲染模板特性（template）不可用。
 * 不受滚动容器组件的限制，可以在任意场景使用。
@@ -264,7 +259,9 @@ Repeat组件默认开启节点复用功能。从API version 18开始，在懒加
 
 从API version 18开始，Repeat支持懒加载模式下[缓存池自定义组件冻结](arkts-custom-components-freezev2.md#repeat)。
 
-说明
+从API version 18开始，Repeat允许在[.each()](../harmonyos-references/ts-rendering-control-repeat.md#each)中使用[@ReusableV2](arkts-new-reusablev2.md)装饰的自定义组件。Repeat自身的复用能力优先于@ReusableV2的复用能力。在懒加载模式下，正常滑动场景、更新场景不会触发@ReusableV2的回收和复用，若开发者希望使用@ReusableV2的复用能力，建议关闭Repeat自身的复用能力。在全量加载模式下，删除、创建子组件会触发@ReusableV2的回收和复用。使用示例可参考[在Repeat组件中使用](arkts-new-reusablev2.md#在repeat组件中使用)@ReusableV2。
+
+**说明** 
 
 Repeat子组件的节点操作分为四种：节点创建、节点更新、节点复用、节点销毁。其中，节点更新和节点复用的区别为：
 
@@ -285,7 +282,7 @@ Repeat节点复用时，不会触发子组件的[aboutToRecycle](../harmonyos-re
 
    首次渲染时列表的节点状态如下图所示（template type在图中简写为ttype）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/VbtRdtjYQ16tNbsI3bVFWQ/zh-cn_image_0000002589243963.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/ImTzsDViTBWk6ZVOT3eazw/zh-cn_image_0000002706833356.png)
 2. 滑动场景。
 
    将列表向下滑动一个节点的距离，Repeat会复用缓存池中的节点。
@@ -296,7 +293,7 @@ Repeat节点复用时，不会触发子组件的[aboutToRecycle](../harmonyos-re
 
    3）其余节点仍在容器显示区域和预加载区域范围，均只更新索引index。如果对应template type的缓存池已满，Repeat会在UI主线程空闲时销毁掉多余的节点。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/JQC1oAqOQbarD2czMJ6ZIw/zh-cn_image_0000002558764156.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/FQHa7S-EQLiT7wt1gEXWsw/zh-cn_image_0000002736312465.png)
 3. 数据更新场景。
 
    在上一小节的基础上做如下的数组更新操作，删除index=4的节点，修改节点数据07为new。
@@ -307,7 +304,7 @@ Repeat节点复用时，不会触发子组件的[aboutToRecycle](../harmonyos-re
 
    3）对于节点数据从07变为new的情况，页面监听到数据源变化将会触发重新渲染。Repeat数据更新触发重新渲染的逻辑是比较当前索引处节点数据item是否变化，以此判断是否进行UI刷新，仅改变键值不改变item的情况不会触发刷新。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/ViUkMSzhRAGf9CGmunOLeA/zh-cn_image_0000002558604500.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/oOSnUV7fT2KmQq-ivFBIeQ/zh-cn_image_0000002706673420.png)
 
 **全量加载模式下的节点更新/复用**
 
@@ -323,15 +320,15 @@ Repeat节点复用时，不会触发子组件的[aboutToRecycle](../harmonyos-re
 
 最后，如果新数组键值遍历结束后，deletedKeys非空，则销毁集合中的键值所对应的节点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/r385_h0ETVenqErhj-FcWw/zh-cn_image_0000002589324025.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/7Jt_FOApR6u38HnJ023jZw/zh-cn_image_0000002736432511.png)
 
 以下图中的数组变化为例，图中的item\_X表示数据项的键值key。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/OOwpX_V6SZGDH1u1fLgYpA/zh-cn_image_0000002589243965.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/t4yliMaWQ5Wg11sVHarjHw/zh-cn_image_0000002706833358.png)
 
 根据上述判断逻辑：item\_0没有变化，item\_1和item\_2只更新了索引，item\_n1和item\_n2分别由item\_4和item\_3进行节点更新获得，item\_n3为新创建的节点。
 
-说明
+**说明** 
 
 Repeat全量加载模式与[ForEach](arkts-rendering-control-foreach.md)组件的区别：
 
@@ -342,52 +339,50 @@ Repeat全量加载模式与[ForEach](arkts-rendering-control-foreach.md)组件�
 
 以下示例演示了全量加载模式下的节点更新。
 
+```typescript
+@Entry
+@ComponentV2
+struct NodeUpdateMechanism {
+  @Local simpleList: Array<string> = ['one', 'two', 'three'];
+
+  build() {
+    Row() {
+      Column() {
+        Text('Click to change the value of the third array item')
+          .fontSize(24)
+          .fontColor(Color.Red)
+          .onClick(() => {
+            this.simpleList[2] = 'new three';
+          })
+
+        Repeat<string>(this.simpleList)
+          .each((obj: RepeatItem<string>)=>{
+            ChildItem({ item: obj.item })
+              .margin({top: 20})
+          })
+          .key((item: string) => item)
+      }
+      .justifyContent(FlexAlign.Center)
+      .width('100%')
+      .height('100%')
+    }
+    .height('100%')
+    .backgroundColor(0xF1F3F5)
+  }
+}
+
+@ComponentV2
+struct ChildItem {
+  @Param @Require item: string;
+
+  build() {
+    Text(this.item)
+      .fontSize(30)
+  }
+}
 ```
-1. @Entry
-2. @ComponentV2
-3. struct NodeUpdateMechanism {
-4. @Local simpleList: Array<string> = ['one', 'two', 'three'];
 
-6. build() {
-7. Row() {
-8. Column() {
-9. Text('Click to change the value of the third array item')
-10. .fontSize(24)
-11. .fontColor(Color.Red)
-12. .onClick(() => {
-13. this.simpleList[2] = 'new three';
-14. })
-
-16. Repeat<string>(this.simpleList)
-17. .each((obj: RepeatItem<string>)=>{
-18. ChildItem({ item: obj.item })
-19. .margin({top: 20})
-20. })
-21. .key((item: string) => item)
-22. }
-23. .justifyContent(FlexAlign.Center)
-24. .width('100%')
-25. .height('100%')
-26. }
-27. .height('100%')
-28. .backgroundColor(0xF1F3F5)
-29. }
-30. }
-
-32. @ComponentV2
-33. struct ChildItem {
-34. @Param @Require item: string;
-
-36. build() {
-37. Text(this.item)
-38. .fontSize(30)
-39. }
-40. }
-```
-
-[NodeUpdateMechanism.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingRepeat/NodeUpdateMechanism.ets#L16-L57)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/oFPWW_4DR3i1pzAdS4K4vQ/zh-cn_image_0000002558604480.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/4FKcm5uoTIC0KJAmFiYXmQ/zh-cn_image_0000002706673400.gif)
 
 点击红色字体，第三个数据项发生变化（直接使用旧的组件节点，仅刷新数据）。
 
@@ -395,7 +390,7 @@ Repeat全量加载模式与[ForEach](arkts-rendering-control-foreach.md)组件�
 
 查看节点是否为复用可以使用[DevEco Testing](deveco-testing.md)工具进行查看，进入DevEco Testing工具后，选择实用工具，界面如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/IoBvJQkqQ3m-Bh3aazaLRA/zh-cn_image_0000002558764158.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/0QV30QWRRc2q-_EfvtkbMw/zh-cn_image_0000002736312467.png)
 
 在实用工具中选择UIViewer，该工具可以获取设备快照、控件树信息及控件节点属性，在右侧的控件树中选择Repeat子节点，右下方的节点属性会显示节点ID等信息，可以通过节点ID是否相同，判断组件复用或者新建的情况。
 
@@ -413,172 +408,166 @@ Repeat全量加载模式与[ForEach](arkts-rendering-control-foreach.md)组件�
 
 数据源总长度较长，在首次渲染、滑动屏幕、跳转显示区域时，动态加载对应区域内的数据。
 
+```typescript
+@Entry
+@ComponentV2
+struct RepeatLazyLoadingLongData {
+  // 假设数据源总长度较长，为1000。初始数组未提供数据。
+  @Local arr: Array<string> = [];
+  scroller: Scroller = new Scroller();
+
+  build() {
+    Column({ space: 5 }) {
+      // 初始显示位置为index = 100，数据可通过懒加载自动获取。
+      List({ scroller: this.scroller, space: 5, initialIndex: 100 }) {
+        Repeat(this.arr)
+          .virtualScroll({
+            // 期望的数据源总长度为1000。
+            onTotalCount: () => {
+              return 1000;
+            },
+            // 实现数据懒加载。
+            onLazyLoading: (index: number) => {
+              this.arr[index] = index.toString();
+            }
+          })
+          .each((obj: RepeatItem<string>) => {
+            ListItem() {
+              Row({ space: 5 }) {
+                Text(`${obj.index}: Item_${obj.item}`)
+              }
+            }
+            .height(50)
+          })
+      }
+      .height('80%')
+      .border({ width: 1 })
+
+      // 显示位置跳转至index = 500，数据可通过懒加载自动获取。
+      Button('ScrollToIndex 500')
+        .onClick(() => {
+          this.scroller.scrollToIndex(500);
+        })
+    }
+  }
+}
 ```
-1. @Entry
-2. @ComponentV2
-3. struct RepeatLazyLoadingLongData {
-4. // 假设数据源总长度较长，为1000。初始数组未提供数据。
-5. @Local arr: Array<string> = [];
-6. scroller: Scroller = new Scroller();
-
-8. build() {
-9. Column({ space: 5 }) {
-10. // 初始显示位置为index = 100，数据可通过懒加载自动获取。
-11. List({ scroller: this.scroller, space: 5, initialIndex: 100 }) {
-12. Repeat(this.arr)
-13. .virtualScroll({
-14. // 期望的数据源总长度为1000。
-15. onTotalCount: () => {
-16. return 1000;
-17. },
-18. // 实现数据懒加载。
-19. onLazyLoading: (index: number) => {
-20. this.arr[index] = index.toString();
-21. }
-22. })
-23. .each((obj: RepeatItem<string>) => {
-24. ListItem() {
-25. Row({ space: 5 }) {
-26. Text(`${obj.index}: Item_${obj.item}`)
-27. }
-28. }
-29. .height(50)
-30. })
-31. }
-32. .height('80%')
-33. .border({ width: 1 })
-
-35. // 显示位置跳转至index = 500，数据可通过懒加载自动获取。
-36. Button('ScrollToIndex 500')
-37. .onClick(() => {
-38. this.scroller.scrollToIndex(500);
-39. })
-40. }
-41. }
-42. }
-```
-
-[RepeatLazyLoading1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingRepeat/RepeatLazyLoading1.ets#L16-L51)
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/_ppO5i0ASqO28bBZnHe-6g/zh-cn_image_0000002558604502.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/N4xRZ123TIennN25fm3IMw/zh-cn_image_0000002706673422.gif)
 
 **示例2**
 
 数据加载耗时长，在onLazyLoading方法中，首先为数据项创建占位符，再通过异步任务加载数据。
 
-```
-1. @Entry
-2. @ComponentV2
-3. struct RepeatLazyLoadingSync {
-4. @Local arr: Array<string> = [];
+```typescript
+@Entry
+@ComponentV2
+struct RepeatLazyLoadingSync {
+  @Local arr: Array<string> = [];
 
-6. build() {
-7. Column({ space: 5 }) {
-8. List({ space: 5 }) {
-9. Repeat(this.arr)
-10. .virtualScroll({
-11. onTotalCount: () => {
-12. return 100;
-13. },
-14. // 实现数据懒加载。
-15. onLazyLoading: (index: number) => {
-16. // 创建占位符。
-17. this.arr[index] = '';
-18. // 模拟高耗时加载过程，通过异步任务加载数据。
-19. setTimeout(() => {
-20. this.arr[index] = index.toString();
-21. }, 1000);
-22. }
-23. })
-24. .each((obj: RepeatItem<string>) => {
-25. ListItem() {
-26. Row({ space: 5 }) {
-27. Text(`${obj.index}: Item_${obj.item}`)
-28. }
-29. }
-30. .height(50)
-31. })
-32. }
-33. .height('100%')
-34. .border({ width: 1 })
-35. }
-36. }
-37. }
+  build() {
+    Column({ space: 5 }) {
+      List({ space: 5 }) {
+        Repeat(this.arr)
+          .virtualScroll({
+            onTotalCount: () => {
+              return 100;
+            },
+            // 实现数据懒加载。
+            onLazyLoading: (index: number) => {
+              // 创建占位符。
+              this.arr[index] = '';
+              // 模拟高耗时加载过程，通过异步任务加载数据。
+              setTimeout(() => {
+                this.arr[index] = index.toString();
+              }, 1000);
+            }
+          })
+          .each((obj: RepeatItem<string>) => {
+            ListItem() {
+              Row({ space: 5 }) {
+                Text(`${obj.index}: Item_${obj.item}`)
+              }
+            }
+            .height(50)
+          })
+      }
+      .height('100%')
+      .border({ width: 1 })
+    }
+  }
+}
 ```
-
-[RepeatLazyLoading2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingRepeat/RepeatLazyLoading2.ets#L16-L49)
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/LdteCv7nRlyLqoHNblraHQ/zh-cn_image_0000002589324027.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/sIEaYiH3RcyKXrPa7K6W3g/zh-cn_image_0000002736432513.gif)
 
 **示例3**
 
 使用数据懒加载，并配合设置onTotalCount: () => { return this.arr.length + 1; }，可实现数据无限懒加载。
 
-说明
+**说明** 
 
 * 此场景下，开发者需要提供首屏显示所需的初始数据，并建议设置父容器组件[cachedCount](../harmonyos-references/ts-container-list.md#cachedcount) > 0，否则将会导致渲染异常。
 * 若与[Swiper-Loop](../harmonyos-references/ts-container-swiper.md#loop)模式同时使用，停留在index = 0处时，将导致onLazyLoading方法被持续触发，建议避免与Swiper-Loop模式同时使用。
 * 开发者需要关注内存消耗情况，避免因数据持续加载而导致内存过量消耗。
 
+```typescript
+@Entry
+@ComponentV2
+struct RepeatLazyLoadingInfinite {
+  @Local arr: Array<string> = [];
+
+  // 提供首屏显示所需的初始数据。
+  aboutToAppear(): void {
+    for (let i = 0; i < 15; i++) {
+      this.arr.push(i.toString());
+    }
+  }
+
+  build() {
+    Column({ space: 5 }) {
+      List({ space: 5 }) {
+        Repeat(this.arr)
+          .virtualScroll({
+            // 数据无限懒加载。
+            onTotalCount: () => {
+              return this.arr.length + 1;
+            },
+            onLazyLoading: (index: number) => {
+              this.arr[index] = index.toString();
+            }
+          })
+          .each((obj: RepeatItem<string>) => {
+            ListItem() {
+              Row({ space: 5 }) {
+                Text(`${obj.index}: Item_${obj.item}`)
+              }
+            }
+            .height(50)
+          })
+      }
+      .height('100%')
+      .border({ width: 1 })
+      // 建议设置cachedCount > 0。
+      .cachedCount(1)
+    }
+  }
+}
 ```
-1. @Entry
-2. @ComponentV2
-3. struct RepeatLazyLoadingInfinite {
-4. @Local arr: Array<string> = [];
-
-6. // 提供首屏显示所需的初始数据。
-7. aboutToAppear(): void {
-8. for (let i = 0; i < 15; i++) {
-9. this.arr.push(i.toString());
-10. }
-11. }
-
-13. build() {
-14. Column({ space: 5 }) {
-15. List({ space: 5 }) {
-16. Repeat(this.arr)
-17. .virtualScroll({
-18. // 数据无限懒加载。
-19. onTotalCount: () => {
-20. return this.arr.length + 1;
-21. },
-22. onLazyLoading: (index: number) => {
-23. this.arr[index] = index.toString();
-24. }
-25. })
-26. .each((obj: RepeatItem<string>) => {
-27. ListItem() {
-28. Row({ space: 5 }) {
-29. Text(`${obj.index}: Item_${obj.item}`)
-30. }
-31. }
-32. .height(50)
-33. })
-34. }
-35. .height('100%')
-36. .border({ width: 1 })
-37. // 建议设置cachedCount > 0。
-38. .cachedCount(1)
-39. }
-40. }
-41. }
-```
-
-[RepeatLazyLoading3.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingRepeat/RepeatLazyLoading3.ets#L16-L52)
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/jBfY6kXCR7S_svySsDyIHA/zh-cn_image_0000002589243967.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/_h62uhvsQIKp8Q-izyPwhQ/zh-cn_image_0000002706833360.gif)
 
 ### 拖拽排序
 
 当Repeat在[List](../harmonyos-references/ts-container-list.md)组件下使用，并且设置了[onMove](../harmonyos-references/ts-universal-attributes-drag-sorting.md#onmove)事件，Repeat每次迭代都生成一个[ListItem](../harmonyos-references/ts-container-listitem.md)时，可以使能拖拽排序。Repeat拖拽排序特性从API version 19开始支持。
 
-说明
+**说明** 
 
 * 拖拽排序离手后，如果数据位置发生变化，则会触发onMove事件，上报数据移动原始索引号和目标索引号。
 
@@ -587,56 +576,54 @@ Repeat全量加载模式与[ForEach](arkts-rendering-control-foreach.md)组件�
 
 示例代码：
 
+```typescript
+@Entry
+@ComponentV2
+struct RepeatVirtualScrollOnMove {
+  @Local simpleList: Array<string> = [];
+
+  aboutToAppear(): void {
+    for (let i = 0; i < 100; i++) {
+      this.simpleList.push(`${i}`);
+    }
+  }
+
+  build() {
+    Column() {
+      List() {
+        Repeat<string>(this.simpleList)
+        // 通过设置onMove，使能拖拽排序。
+          .onMove((from: number, to: number) => {
+            let temp = this.simpleList.splice(from, 1);
+            this.simpleList.splice(to, 0, temp[0]);
+          })
+          .each((obj: RepeatItem<string>) => {
+            ListItem() {
+              Text(obj.item)
+                .fontSize(16)
+                .textAlign(TextAlign.Center)
+                .size({ height: 100, width: '100%' })
+            }.margin(10)
+            .borderRadius(10)
+            .backgroundColor('#FFFFFFFF')
+          })
+          .key((item: string, index: number) => {
+            return item;
+          })
+          .virtualScroll({ totalCount: this.simpleList.length })
+      }
+      .border({ width: 1 })
+      .backgroundColor('#FFDCDCDC')
+      .width('100%')
+      .height('100%')
+    }
+  }
+}
 ```
-1. @Entry
-2. @ComponentV2
-3. struct RepeatVirtualScrollOnMove {
-4. @Local simpleList: Array<string> = [];
-
-6. aboutToAppear(): void {
-7. for (let i = 0; i < 100; i++) {
-8. this.simpleList.push(`${i}`);
-9. }
-10. }
-
-12. build() {
-13. Column() {
-14. List() {
-15. Repeat<string>(this.simpleList)
-16. // 通过设置onMove，使能拖拽排序。
-17. .onMove((from: number, to: number) => {
-18. let temp = this.simpleList.splice(from, 1);
-19. this.simpleList.splice(to, 0, temp[0]);
-20. })
-21. .each((obj: RepeatItem<string>) => {
-22. ListItem() {
-23. Text(obj.item)
-24. .fontSize(16)
-25. .textAlign(TextAlign.Center)
-26. .size({ height: 100, width: '100%' })
-27. }.margin(10)
-28. .borderRadius(10)
-29. .backgroundColor('#FFFFFFFF')
-30. })
-31. .key((item: string, index: number) => {
-32. return item;
-33. })
-34. .virtualScroll({ totalCount: this.simpleList.length })
-35. }
-36. .border({ width: 1 })
-37. .backgroundColor('#FFDCDCDC')
-38. .width('100%')
-39. .height('100%')
-40. }
-41. }
-42. }
-```
-
-[RepeatVirtualScrollOnMove.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingRepeat/RepeatVirtualScrollOnMove.ets#L16-L59)
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/zMvBYSHtQxSy0AwSnCktfQ/zh-cn_image_0000002558764160.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/62F1xvhfRgODsvJ-qJ90XQ/zh-cn_image_0000002736312469.gif)
 
 ### 数据前插保持
 
@@ -646,71 +633,176 @@ Repeat全量加载模式与[ForEach](arkts-rendering-control-foreach.md)组件�
 
 **示例代码**
 
+```typescript
+@Entry
+@ComponentV2
+struct PreInsertDemo {
+  @Local simpleList: Array<string> = [];
+  private cnt: number = 1;
+
+  aboutToAppear(): void {
+    for (let i = 0; i < 30; i++) {
+      this.simpleList.push(`Hello ${this.cnt++}`);
+    }
+  }
+
+  build() {
+    Column() {
+      Row() {
+        Button(`insert #5`)
+          .onClick(() => {
+            this.simpleList.splice(5, 0, `Hello ${this.cnt++}`);
+          })
+        Button(`delete #0`)
+          .onClick(() => {
+            this.simpleList.splice(0, 1);
+          })
+      }
+
+      List({ initialIndex: 5 }) {
+        Repeat<string>(this.simpleList)
+          .each((obj: RepeatItem<string>) => {
+            ListItem() {
+              Row() {
+                Text(`index: ${obj.index}  `)
+                  .fontSize(16)
+                  .fontColor('#70707070')
+                  .textAlign(TextAlign.End)
+                  .size({ height: 100, width: '40%' })
+                Text(`item: ${obj.item}`)
+                  .fontSize(16)
+                  .textAlign(TextAlign.Start)
+                  .size({ height: 100, width: '60%' })
+              }
+            }.margin(10)
+            .borderRadius(10)
+            .backgroundColor('#FFFFFFFF')
+          })
+          .key((item: string, index: number) => item)
+          .virtualScroll({ totalCount: this.simpleList.length })
+      }
+      .maintainVisibleContentPosition(true) // 启用前插保持
+      .border({ width: 1 })
+      .backgroundColor('#FFDCDCDC')
+      .width('100%')
+      .height('100%')
+    }
+  }
+}
 ```
-1. @Entry
-2. @ComponentV2
-3. struct PreInsertDemo {
-4. @Local simpleList: Array<string> = [];
-5. private cnt: number = 1;
-
-7. aboutToAppear(): void {
-8. for (let i = 0; i < 30; i++) {
-9. this.simpleList.push(`Hello ${this.cnt++}`);
-10. }
-11. }
-
-13. build() {
-14. Column() {
-15. Row() {
-16. Button(`insert #5`)
-17. .onClick(() => {
-18. this.simpleList.splice(5, 0, `Hello ${this.cnt++}`);
-19. })
-20. Button(`delete #0`)
-21. .onClick(() => {
-22. this.simpleList.splice(0, 1);
-23. })
-24. }
-
-26. List({ initialIndex: 5 }) {
-27. Repeat<string>(this.simpleList)
-28. .each((obj: RepeatItem<string>) => {
-29. ListItem() {
-30. Row() {
-31. Text(`index: ${obj.index}  `)
-32. .fontSize(16)
-33. .fontColor('#70707070')
-34. .textAlign(TextAlign.End)
-35. .size({ height: 100, width: '40%' })
-36. Text(`item: ${obj.item}`)
-37. .fontSize(16)
-38. .textAlign(TextAlign.Start)
-39. .size({ height: 100, width: '60%' })
-40. }
-41. }.margin(10)
-42. .borderRadius(10)
-43. .backgroundColor('#FFFFFFFF')
-44. })
-45. .key((item: string, index: number) => item)
-46. .virtualScroll({ totalCount: this.simpleList.length })
-47. }
-48. .maintainVisibleContentPosition(true) // 启用前插保持
-49. .border({ width: 1 })
-50. .backgroundColor('#FFDCDCDC')
-51. .width('100%')
-52. .height('100%')
-53. }
-54. }
-55. }
-```
-
-[PreInsert.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingRepeat/PreInsert.ets#L16-L72)
 
 示例中，通过点击按钮在显示区域上方插入或删除数据时，显示区域的节点仅index发生改变，对应数据项不变。
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/a66dm5NfQBqSDICeNLCnmQ/zh-cn_image_0000002558604504.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/Z-icSCDSRAmrKt9zRYkWFQ/zh-cn_image_0000002706673424.gif)
+
+### animateTo动效
+
+从API version 24开始，当父容器组件为[List](../harmonyos-references/ts-container-list.md)时，Repeat支持通过[animateTo](../harmonyos-references/arkts-apis-uicontext-uicontext.md#animateto)接口为其显示区域内的子组件设置过渡动画效果。
+
+Repeat子组件过渡动画的判定规则如下：
+
+1. 子组件从外部进入显示区域和预加载区域时，将被判定为插入组件。
+2. 子组件从内部离开显示区域和预加载区域时，将被判定为删除组件（仅懒加载模式）。
+3. 子组件更新时，若键值发生变化，将被判定为删除旧组件，插入新组件。
+4. 删除子组件，并在过渡动画结束前重新插入该组件，将被判定为插入新组件，原过渡动画不受影响。
+5. 过渡动画中的子组件，滑出显示区域和预加载区域时，动画将直接结束（仅懒加载模式）。
+
+**说明** 
+
+* 仅支持与List配合使用，与其他容器组件配合使用时的动画效果为未定义行为。
+* 仅支持显示区域内子组件的动画效果，显示区域外子组件的动画效果为未定义行为。
+* 过渡动画具体设置方式和动画效果请参考[animateTo](../harmonyos-references/arkts-apis-uicontext-uicontext.md#animateto)接口。
+
+**示例代码**
+
+```typescript
+@Entry
+@ComponentV2
+struct RepeatAnimationDemo {
+  @Local dataArray: ItemInfo[] = [];
+  private count: number = 0;
+
+  aboutToAppear(): void {
+    for (let i = 0; i < 5; i++) {
+      this.dataArray.push(new ItemInfo(`Item ${i}`, `#FFFFFF`));
+    }
+  }
+
+  build() {
+    Column({ space: 5 }) {
+      Row({ space: 5 }) {
+        Button('Add')
+          .onClick(() => {
+            // 为插入子组件设置动画
+            this.getUIContext()?.animateTo({ duration: 1000 }, () => {
+              this.dataArray.splice(0, 0, new ItemInfo(`New item ${this.count++}`, `#FFFFFF`))
+            })
+          })
+        Button('Delete')
+          .onClick(() => {
+            // 为删除子组件设置动画
+            this.getUIContext()?.animateTo({ duration: 1000 }, () => {
+              this.dataArray.splice(0, 1)
+            })
+          })
+        Button('Exchange')
+          .onClick(() => {
+            // 为交换子组件设置动画
+            this.getUIContext()?.animateTo({ duration: 1000 }, () => {
+              let temp = this.dataArray[1];
+              this.dataArray[1] = this.dataArray[0]
+              this.dataArray[0] = temp;
+            })
+          })
+        Button('Update')
+          .onClick(() => {
+            // 为更新子组件设置动画
+            this.getUIContext()?.animateTo({ duration: 1000 }, () => {
+              this.dataArray[0].info = 'Item updated';
+              this.dataArray[0].color = '#86C5E3';
+            })
+          })
+      }
+      List({ space: 5 }) {
+        Repeat(this.dataArray)
+          .each((repeatItem) => {
+            ListItem() {
+              Text(repeatItem.item.info)
+            }
+            .backgroundColor(repeatItem.item.color)
+            .width(150)
+            .height(50)
+            .border({ width: 1 })
+            // 设置子组件插入和删除时的过渡效果
+            .transition(TransitionEffect.translate({ x: 300 }))
+          })
+          .key((item: ItemInfo, index: number) => item.key)
+          .virtualScroll()
+      }
+      .alignListItem(ListItemAlign.Center)
+    }
+    .width('100%')
+  }
+}
+
+@ObservedV2
+class ItemInfo {
+  @Trace public info: string;
+  @Trace public color: string;
+  public key: string;
+  constructor(info: string, color: string) {
+    this.info = info;
+    this.color = color;
+    this.key = info;
+  }
+}
+```
+
+运行效果：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/j_VlnkIvQrK4RAcgIgZy0Q/zh-cn_image_0000002736432515.gif)
 
 ## 常见使用场景
 
@@ -718,219 +810,219 @@ Repeat全量加载模式与[ForEach](arkts-rendering-control-foreach.md)组件�
 
 下面的代码示例展示了Repeat修改数组的常见操作，包括**插入数据、修改数据、删除数据、交换数据**。点击下拉框选择索引index值，点击相应的按钮即可操作数据项，依次点击两个不同的数据项可以进行交换。
 
+```typescript
+@ObservedV2
+class Repeat006Clazz {
+  @Trace public message: string = '';
+
+  constructor(message: string) {
+    this.message = message;
+  }
+}
+
+@Entry
+@ComponentV2
+struct RepeatVirtualScroll {
+  @Local simpleList: Array<Repeat006Clazz> = [];
+  private exchange: number[] = [];
+  private counter: number = 0;
+  @Local selectOptions: SelectOption[] = [];
+  @Local selectIdx: number = 0;
+
+  @Monitor('simpleList')
+  reloadSelectOptions(): void {
+    this.selectOptions = [];
+    for (let i = 0; i < this.simpleList.length; ++i) {
+      this.selectOptions.push({ value: i.toString() });
+    }
+    if (this.selectIdx >= this.simpleList.length) {
+      this.selectIdx = this.simpleList.length - 1;
+    }
+  }
+
+  aboutToAppear(): void {
+    for (let i = 0; i < 100; i++) {
+      this.simpleList.push(new Repeat006Clazz(`item_${i}`));
+    }
+    this.reloadSelectOptions();
+  }
+
+  handleExchange(idx: number): void { // 点击交换子组件
+    this.exchange.push(idx);
+    if (this.exchange.length === 2) {
+      let _a = this.exchange[0];
+      let _b = this.exchange[1];
+      let temp: Repeat006Clazz = this.simpleList[_a];
+      this.simpleList[_a] = this.simpleList[_b];
+      this.simpleList[_b] = temp;
+      this.exchange = [];
+    }
+  }
+
+  build() {
+    Column({ space: 10 }) {
+      Text('virtualScroll each()&template() 2t')
+        .fontSize(15)
+        .fontColor(Color.Gray)
+      Text('Select an index and press the button to update data.')
+        .fontSize(15)
+        .fontColor(Color.Gray)
+
+      Select(this.selectOptions)
+        .selected(this.selectIdx)
+        .value(this.selectIdx.toString())
+        .key('selectIdx')
+        .onSelect((index: number) => {
+          this.selectIdx = index;
+        })
+      Row({ space: 5 }) {
+        Button('Add No.' + this.selectIdx)
+          .onClick(() => {
+            this.simpleList.splice(this.selectIdx, 0, new Repeat006Clazz(`${this.counter++}_add_item`));
+            this.reloadSelectOptions();
+          })
+        Button('Modify No.' + this.selectIdx)
+          .onClick(() => {
+            this.simpleList.splice(this.selectIdx, 1, new Repeat006Clazz(`${this.counter++}_modify_item`));
+          })
+        Button('Del No.' + this.selectIdx)
+          .onClick(() => {
+            this.simpleList.splice(this.selectIdx, 1);
+            this.reloadSelectOptions();
+          })
+      }
+      Button('Update array length to 5')
+        .onClick(() => {
+          this.simpleList = this.simpleList.slice(0, 5);
+          this.reloadSelectOptions();
+        })
+
+      Text('Click on two items to exchange')
+        .fontSize(15)
+        .fontColor(Color.Gray)
+
+      List({ space: 10 }) {
+        Repeat<Repeat006Clazz>(this.simpleList)
+          .each((obj: RepeatItem<Repeat006Clazz>) => {
+            ListItem() {
+              Text(`[each] index${obj.index}: ${obj.item.message}`)
+                .fontSize(25)
+                .onClick(() => {
+                  this.handleExchange(obj.index);
+                })
+            }
+          })
+          .key((item: Repeat006Clazz, index: number) => {
+            return item.message;
+          })
+          .virtualScroll({ totalCount: this.simpleList.length })
+          .templateId((item: Repeat006Clazz, index: number) => {
+            return (index % 2 === 0) ? 'even' : 'odd';
+          })
+          .template('odd', (ri) => {
+            ListItem() {
+              Text(`[odd] index${ri.index}: ${ri.item.message}`)
+                .fontSize(25)
+                .fontColor(Color.Blue)
+                .onClick(() => {
+                  this.handleExchange(ri.index);
+                })
+            }
+          }, { cachedCount: 3 })
+          .template('even', (ri) => {
+            ListItem() {
+              Text(`[even] index${ri.index}: ${ri.item.message}`)
+                .fontSize(25)
+                .fontColor(Color.Green)
+                .onClick(() => {
+                  this.handleExchange(ri.index);
+                })
+            }
+          }, { cachedCount: 1 })
+      }
+      .cachedCount(2)
+      .border({ width: 1 })
+      .width('95%')
+      .height('40%')
+    }
+    .justifyContent(FlexAlign.Center)
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
-1. @ObservedV2
-2. class Repeat006Clazz {
-3. @Trace public message: string = '';
 
-5. constructor(message: string) {
-6. this.message = message;
-7. }
-8. }
+该示例代码展示了100项自定义类Repeat006Clazz的message字符串属性，[List](../harmonyos-references/ts-container-list.md)组件的[cachedCount](../harmonyos-references/ts-container-list.md#cachedcount)属性设为2，模板'odd'和'even'的空闲节点缓存池大小分别设为3和1。运行后界面如下图所示：
 
-10. @Entry
-11. @ComponentV2
-12. struct RepeatVirtualScroll {
-13. @Local simpleList: Array<Repeat006Clazz> = [];
-14. private exchange: number[] = [];
-15. private counter: number = 0;
-16. @Local selectOptions: SelectOption[] = [];
-17. @Local selectIdx: number = 0;
-
-19. @Monitor('simpleList')
-20. reloadSelectOptions(): void {
-21. this.selectOptions = [];
-22. for (let i = 0; i < this.simpleList.length; ++i) {
-23. this.selectOptions.push({ value: i.toString() });
-24. }
-25. if (this.selectIdx >= this.simpleList.length) {
-26. this.selectIdx = this.simpleList.length - 1;
-27. }
-28. }
-
-30. aboutToAppear(): void {
-31. for (let i = 0; i < 100; i++) {
-32. this.simpleList.push(new Repeat006Clazz(`item_${i}`));
-33. }
-34. this.reloadSelectOptions();
-35. }
-
-37. handleExchange(idx: number): void { // 点击交换子组件
-38. this.exchange.push(idx);
-39. if (this.exchange.length === 2) {
-40. let _a = this.exchange[0];
-41. let _b = this.exchange[1];
-42. let temp: Repeat006Clazz = this.simpleList[_a];
-43. this.simpleList[_a] = this.simpleList[_b];
-44. this.simpleList[_b] = temp;
-45. this.exchange = [];
-46. }
-47. }
-
-49. build() {
-50. Column({ space: 10 }) {
-51. Text('virtualScroll each()&template() 2t')
-52. .fontSize(15)
-53. .fontColor(Color.Gray)
-54. Text('Select an index and press the button to update data.')
-55. .fontSize(15)
-56. .fontColor(Color.Gray)
-
-58. Select(this.selectOptions)
-59. .selected(this.selectIdx)
-60. .value(this.selectIdx.toString())
-61. .key('selectIdx')
-62. .onSelect((index: number) => {
-63. this.selectIdx = index;
-64. })
-65. Row({ space: 5 }) {
-66. Button('Add No.' + this.selectIdx)
-67. .onClick(() => {
-68. this.simpleList.splice(this.selectIdx, 0, new Repeat006Clazz(`${this.counter++}_add_item`));
-69. this.reloadSelectOptions();
-70. })
-71. Button('Modify No.' + this.selectIdx)
-72. .onClick(() => {
-73. this.simpleList.splice(this.selectIdx, 1, new Repeat006Clazz(`${this.counter++}_modify_item`));
-74. })
-75. Button('Del No.' + this.selectIdx)
-76. .onClick(() => {
-77. this.simpleList.splice(this.selectIdx, 1);
-78. this.reloadSelectOptions();
-79. })
-80. }
-81. Button('Update array length to 5')
-82. .onClick(() => {
-83. this.simpleList = this.simpleList.slice(0, 5);
-84. this.reloadSelectOptions();
-85. })
-
-87. Text('Click on two items to exchange')
-88. .fontSize(15)
-89. .fontColor(Color.Gray)
-
-91. List({ space: 10 }) {
-92. Repeat<Repeat006Clazz>(this.simpleList)
-93. .each((obj: RepeatItem<Repeat006Clazz>) => {
-94. ListItem() {
-95. Text(`[each] index${obj.index}: ${obj.item.message}`)
-96. .fontSize(25)
-97. .onClick(() => {
-98. this.handleExchange(obj.index);
-99. })
-100. }
-101. })
-102. .key((item: Repeat006Clazz, index: number) => {
-103. return item.message;
-104. })
-105. .virtualScroll({ totalCount: this.simpleList.length })
-106. .templateId((item: Repeat006Clazz, index: number) => {
-107. return (index % 2 === 0) ? 'odd' : 'even';
-108. })
-109. .template('odd', (ri) => {
-110. Text(`[odd] index${ri.index}: ${ri.item.message}`)
-111. .fontSize(25)
-112. .fontColor(Color.Blue)
-113. .onClick(() => {
-114. this.handleExchange(ri.index);
-115. })
-116. }, { cachedCount: 3 })
-117. .template('even', (ri) => {
-118. Text(`[even] index${ri.index}: ${ri.item.message}`)
-119. .fontSize(25)
-120. .fontColor(Color.Green)
-121. .onClick(() => {
-122. this.handleExchange(ri.index);
-123. })
-124. }, { cachedCount: 1 })
-125. }
-126. .cachedCount(2)
-127. .border({ width: 1 })
-128. .width('95%')
-129. .height('40%')
-130. }
-131. .justifyContent(FlexAlign.Center)
-132. .width('100%')
-133. .height('100%')
-134. }
-135. }
-```
-
-[RepeatVirtualScroll2T.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingRepeat/RepeatVirtualScroll2T.ets#L16-L152)
-
-该示例代码展示了100项自定义类RepeatClazz的message字符串属性，[List](../harmonyos-references/ts-container-list.md)组件的[cachedCount](../harmonyos-references/ts-container-list.md#cachedcount)属性设为2，模板'odd'和'even'的空闲节点缓存池大小分别设为3和1。运行后界面如下图所示：
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/HWKNCZ_KR-O280wvZCHMnw/zh-cn_image_0000002589324029.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/o65EP5X9REetrD49s42kEg/zh-cn_image_0000002706833362.gif)
 
 ### Repeat嵌套
 
 Repeat支持嵌套使用，示例代码如下：
 
+```typescript
+// Repeat嵌套
+@Entry
+@ComponentV2
+struct NestedRepeat {
+  @Local outerList: string[] = [];
+  @Local innerList: number[] = [];
+
+  aboutToAppear(): void {
+    for (let i = 0; i < 20; i++) {
+      this.outerList.push(i.toString());
+      this.innerList.push(i);
+    }
+  }
+
+  build() {
+    Column({ space: 20 }) {
+      Text('Nested Repeat with virtualScroll')
+        .fontSize(15)
+        .fontColor(Color.Gray)
+      List() {
+        Repeat<string>(this.outerList)
+          .each((obj) => {
+            ListItem() {
+              Column() {
+                Text('outerList item: ' + obj.item)
+                  .fontSize(30)
+                List() {
+                  Repeat<number>(this.innerList)
+                    .each((subObj) => {
+                      ListItem() {
+                        Text('innerList item: ' + subObj.item)
+                          .fontSize(20)
+                      }
+                    })
+                    .key((item) => 'innerList_' + item)
+                    .virtualScroll()
+                }
+                .width('80%')
+                .border({ width: 1 })
+                .backgroundColor(Color.Orange)
+              }
+              .height('30%')
+              .backgroundColor(Color.Pink)
+            }
+            .border({ width: 1 })
+          })
+          .key((item) => 'outerList_' + item)
+          .virtualScroll()
+      }
+      .width('80%')
+      .border({ width: 1 })
+    }
+    .justifyContent(FlexAlign.Center)
+    .width('90%')
+    .height('80%')
+  }
+}
 ```
-1. // Repeat嵌套
-2. @Entry
-3. @ComponentV2
-4. struct NestedRepeat {
-5. @Local outerList: string[] = [];
-6. @Local innerList: number[] = [];
-
-8. aboutToAppear(): void {
-9. for (let i = 0; i < 20; i++) {
-10. this.outerList.push(i.toString());
-11. this.innerList.push(i);
-12. }
-13. }
-
-15. build() {
-16. Column({ space: 20 }) {
-17. Text('Nested Repeat with virtualScroll')
-18. .fontSize(15)
-19. .fontColor(Color.Gray)
-20. List() {
-21. Repeat<string>(this.outerList)
-22. .each((obj) => {
-23. ListItem() {
-24. Column() {
-25. Text('outerList item: ' + obj.item)
-26. .fontSize(30)
-27. List() {
-28. Repeat<number>(this.innerList)
-29. .each((subObj) => {
-30. ListItem() {
-31. Text('innerList item: ' + subObj.item)
-32. .fontSize(20)
-33. }
-34. })
-35. .key((item) => 'innerList_' + item)
-36. .virtualScroll()
-37. }
-38. .width('80%')
-39. .border({ width: 1 })
-40. .backgroundColor(Color.Orange)
-41. }
-42. .height('30%')
-43. .backgroundColor(Color.Pink)
-44. }
-45. .border({ width: 1 })
-46. })
-47. .key((item) => 'outerList_' + item)
-48. .virtualScroll()
-49. }
-50. .width('80%')
-51. .border({ width: 1 })
-52. }
-53. .justifyContent(FlexAlign.Center)
-54. .width('90%')
-55. .height('80%')
-56. }
-57. }
-```
-
-[NestedRepeat.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingRepeat/NestedRepeat.ets#L16-L74)
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/GbxI7F_NQWeLkQDocFHyLA/zh-cn_image_0000002589243969.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/Wi2C8pOiSZKlWER04TYLsQ/zh-cn_image_0000002736312471.png)
 
 ### 父容器组件应用场景
 
@@ -940,319 +1032,313 @@ Repeat支持嵌套使用，示例代码如下：
 
 在[List](../harmonyos-references/ts-container-list.md)容器组件中使用Repeat，示例代码如下：
 
+```typescript
+class DemoListItemInfo {
+  public name: string;
+  public icon: Resource;
+
+  constructor(name: string, icon: Resource) {
+    this.name = name;
+    this.icon = icon;
+  }
+}
+
+@Entry
+@ComponentV2
+struct DemoList {
+  @Local videoList: Array<DemoListItemInfo> = [];
+
+  aboutToAppear(): void {
+    for (let i = 0; i < 10; i++) {
+      // 此处app.media.listItem0、app.media.listItem1、app.media.listItem2仅作示例，请开发者自行替换
+      this.videoList.push(new DemoListItemInfo('Video' + i,
+        i % 3 == 0 ? $r('app.media.listItem0') :
+          i % 3 == 1 ? $r('app.media.listItem1') : $r('app.media.listItem2')));
+    }
+  }
+
+  @Builder
+  itemEnd(index: number) {
+    Button('Delete')
+      .backgroundColor(Color.Red)
+      .onClick(() => {
+        this.videoList.splice(index, 1);
+      })
+  }
+
+  build() {
+    Column({ space: 10 }) {
+      Text('List Contains the Repeat Component')
+        .fontSize(15)
+        .fontColor(Color.Gray)
+
+      List({ space: 5 }) {
+        Repeat<DemoListItemInfo>(this.videoList)
+          .each((obj: RepeatItem<DemoListItemInfo>) => {
+            ListItem() {
+              Column() {
+                Image(obj.item.icon)
+                  .width('80%')
+                  .margin(10)
+                Text(obj.item.name)
+                  .fontSize(20)
+              }
+            }
+            .swipeAction({
+              end: {
+                builder: () => {
+                  this.itemEnd(obj.index);
+                }
+              }
+            })
+            .onAppear(() => {
+            })
+          })
+          .key((item: DemoListItemInfo) => item.name)
+          .virtualScroll()
+      }
+      .cachedCount(2)
+      .height('90%')
+      .border({ width: 1 })
+      .listDirection(Axis.Vertical)
+      .alignListItem(ListItemAlign.Center)
+      .divider({
+        strokeWidth: 1,
+        startMargin: 60,
+        endMargin: 60,
+        color: '#ffe9f0f0'
+      })
+
+      Row({ space: 10 }) {
+        Button('Delete No.1')
+          .onClick(() => {
+            this.videoList.splice(0, 1);
+          })
+        Button('Delete No.5')
+          .onClick(() => {
+            this.videoList.splice(4, 1);
+          })
+      }
+    }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
-1. class DemoListItemInfo {
-2. public name: string;
-3. public icon: Resource;
-
-5. constructor(name: string, icon: Resource) {
-6. this.name = name;
-7. this.icon = icon;
-8. }
-9. }
-
-11. @Entry
-12. @ComponentV2
-13. struct DemoList {
-14. @Local videoList: Array<DemoListItemInfo> = [];
-
-16. aboutToAppear(): void {
-17. for (let i = 0; i < 10; i++) {
-18. // 此处app.media.listItem0、app.media.listItem1、app.media.listItem2仅作示例，请开发者自行替换
-19. this.videoList.push(new DemoListItemInfo('Video' + i,
-20. i % 3 == 0 ? $r('app.media.listItem0') :
-21. i % 3 == 1 ? $r('app.media.listItem1') : $r('app.media.listItem2')));
-22. }
-23. }
-
-25. @Builder
-26. itemEnd(index: number) {
-27. Button('Delete')
-28. .backgroundColor(Color.Red)
-29. .onClick(() => {
-30. this.videoList.splice(index, 1);
-31. })
-32. }
-
-34. build() {
-35. Column({ space: 10 }) {
-36. Text('List Contains the Repeat Component')
-37. .fontSize(15)
-38. .fontColor(Color.Gray)
-
-40. List({ space: 5 }) {
-41. Repeat<DemoListItemInfo>(this.videoList)
-42. .each((obj: RepeatItem<DemoListItemInfo>) => {
-43. ListItem() {
-44. Column() {
-45. Image(obj.item.icon)
-46. .width('80%')
-47. .margin(10)
-48. Text(obj.item.name)
-49. .fontSize(20)
-50. }
-51. }
-52. .swipeAction({
-53. end: {
-54. builder: () => {
-55. this.itemEnd(obj.index);
-56. }
-57. }
-58. })
-59. .onAppear(() => {
-60. })
-61. })
-62. .key((item: DemoListItemInfo) => item.name)
-63. .virtualScroll()
-64. }
-65. .cachedCount(2)
-66. .height('90%')
-67. .border({ width: 1 })
-68. .listDirection(Axis.Vertical)
-69. .alignListItem(ListItemAlign.Center)
-70. .divider({
-71. strokeWidth: 1,
-72. startMargin: 60,
-73. endMargin: 60,
-74. color: '#ffe9f0f0'
-75. })
-
-77. Row({ space: 10 }) {
-78. Button('Delete No.1')
-79. .onClick(() => {
-80. this.videoList.splice(0, 1);
-81. })
-82. Button('Delete No.5')
-83. .onClick(() => {
-84. this.videoList.splice(4, 1);
-85. })
-86. }
-87. }
-88. .width('100%')
-89. .height('100%')
-90. .justifyContent(FlexAlign.Center)
-91. }
-92. }
-```
-
-[DemoList.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingRepeat/DemoList.ets#L16-L109)
 
 右滑并点击按钮，或点击底部按钮，可删除视频卡片：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/QeXwU6B2Su6pcFmfzfM5Cg/zh-cn_image_0000002558764162.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/Ajay3CvES0Wq_qKURyI7SQ/zh-cn_image_0000002706673426.gif)
 
 **与Grid组合使用**
 
 在[Grid](../harmonyos-references/ts-container-grid.md)容器组件中使用Repeat，示例如下：
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+const TAG = '[Sample_RenderingControl]';
+const DOMAIN = 0xF811;
+
+class DemoGridItemInfo {
+  public name: string;
+  public icon: Resource;
+
+  constructor(name: string, icon: Resource) {
+    this.name = name;
+    this.icon = icon;
+  }
+}
+
+@Entry
+@ComponentV2
+struct DemoGrid {
+  @Local itemList: Array<DemoGridItemInfo> = [];
+  @Local isRefreshing: boolean = false;
+  private layoutOptions: GridLayoutOptions = {
+    regularSize: [1, 1],
+    irregularIndexes: [10]
+  };
+  private gridScroller: Scroller = new Scroller();
+  private num: number = 0;
+
+  aboutToAppear(): void {
+    for (let i = 0; i < 10; i++) {
+      // 此处app.media.gridItem0、app.media.gridItem1、app.media.gridItem2仅作示例，请开发者自行替换
+      this.itemList.push(new DemoGridItemInfo('Video' + i,
+        i % 3 == 0 ? $r('app.media.gridItem0') :
+          i % 3 == 1 ? $r('app.media.gridItem1') : $r('app.media.gridItem2')));
+    }
+  }
+
+  build() {
+    Column({ space: 10 }) {
+      Text('Grid Contains the Repeat Component')
+        .fontSize(15)
+        .fontColor(Color.Gray)
+
+      Refresh({ refreshing: $$this.isRefreshing }) {
+        Grid(this.gridScroller, this.layoutOptions) {
+          Repeat<DemoGridItemInfo>(this.itemList)
+            .each((obj: RepeatItem<DemoGridItemInfo>) => {
+              if (obj.index === 10 ) {
+                GridItem() {
+                  Text('Last viewed here. Touch to refresh.')
+                    .fontSize(20)
+                }
+                .height(30)
+                .border({ width: 1 })
+                .onClick(() => {
+                  this.gridScroller.scrollToIndex(0);
+                  this.isRefreshing = true;
+                })
+                .onAppear(() => {
+                  hilog.info(DOMAIN, TAG, 'AceTag', obj.item.name);
+                })
+              } else {
+                GridItem() {
+                  Column() {
+                    Image(obj.item.icon)
+                      .width('100%')
+                      .height(80)
+                      .objectFit(ImageFit.Cover)
+                      .borderRadius({ topLeft: 16, topRight: 16 })
+                    Text(obj.item.name)
+                      .fontSize(15)
+                      .height(20)
+                  }
+                }
+                .height(100)
+                .borderRadius(16)
+                .backgroundColor(Color.White)
+                .onAppear(() => {
+                  hilog.info(DOMAIN, TAG, 'AceTag', obj.item.name);
+                })
+              }
+            })
+            .key((item: DemoGridItemInfo) => item.name)
+            .virtualScroll()
+        }
+        .columnsTemplate('repeat(auto-fit, 150)')
+        .cachedCount(4)
+        .rowsGap(15)
+        .columnsGap(10)
+        .height('100%')
+        .padding(10)
+        .backgroundColor('#F1F3F5')
+      }
+      .onRefreshing(() => {
+        setTimeout(() => {
+          this.itemList.splice(10, 1);
+          this.itemList.unshift(new DemoGridItemInfo('refresh', $r('app.media.gridItem0'))); // 此处app.media.gridItem0仅作示例，请开发者自行替换
+          for (let i = 0; i < 10; i++) {
+            // 此处app.media.gridItem0、app.media.gridItem1、app.media.gridItem2仅作示例，请开发者自行替换
+            this.itemList.unshift(new DemoGridItemInfo('New video' + this.num,
+              i % 3 == 0 ? $r('app.media.gridItem0') :
+                i % 3 == 1 ? $r('app.media.gridItem1') : $r('app.media.gridItem2')));
+            this.num++;
+          }
+          this.isRefreshing = false;
+        }, 1000);
+      })
+      .refreshOffset(64)
+      .pullToRefresh(true)
+      .width('100%')
+      .height('85%')
+
+      Button('Refresh')
+        .onClick(() => {
+          this.gridScroller.scrollToIndex(0);
+          this.isRefreshing = true;
+        })
+    }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. const TAG = '[Sample_RenderingControl]';
-3. const DOMAIN = 0xF811;
-
-5. class DemoGridItemInfo {
-6. public name: string;
-7. public icon: Resource;
-
-9. constructor(name: string, icon: Resource) {
-10. this.name = name;
-11. this.icon = icon;
-12. }
-13. }
-
-15. @Entry
-16. @ComponentV2
-17. struct DemoGrid {
-18. @Local itemList: Array<DemoGridItemInfo> = [];
-19. @Local isRefreshing: boolean = false;
-20. private layoutOptions: GridLayoutOptions = {
-21. regularSize: [1, 1],
-22. irregularIndexes: [10]
-23. };
-24. private gridScroller: Scroller = new Scroller();
-25. private num: number = 0;
-
-27. aboutToAppear(): void {
-28. for (let i = 0; i < 10; i++) {
-29. // 此处app.media.gridItem0、app.media.gridItem1、app.media.gridItem2仅作示例，请开发者自行替换
-30. this.itemList.push(new DemoGridItemInfo('Video' + i,
-31. i % 3 == 0 ? $r('app.media.gridItem0') :
-32. i % 3 == 1 ? $r('app.media.gridItem1') : $r('app.media.gridItem2')));
-33. }
-34. }
-
-36. build() {
-37. Column({ space: 10 }) {
-38. Text('Grid Contains the Repeat Component')
-39. .fontSize(15)
-40. .fontColor(Color.Gray)
-
-42. Refresh({ refreshing: $$this.isRefreshing }) {
-43. Grid(this.gridScroller, this.layoutOptions) {
-44. Repeat<DemoGridItemInfo>(this.itemList)
-45. .each((obj: RepeatItem<DemoGridItemInfo>) => {
-46. if (obj.index === 10 ) {
-47. GridItem() {
-48. Text('Last viewed here. Touch to refresh.')
-49. .fontSize(20)
-50. }
-51. .height(30)
-52. .border({ width: 1 })
-53. .onClick(() => {
-54. this.gridScroller.scrollToIndex(0);
-55. this.isRefreshing = true;
-56. })
-57. .onAppear(() => {
-58. hilog.info(DOMAIN, TAG, 'AceTag', obj.item.name);
-59. })
-60. } else {
-61. GridItem() {
-62. Column() {
-63. Image(obj.item.icon)
-64. .width('100%')
-65. .height(80)
-66. .objectFit(ImageFit.Cover)
-67. .borderRadius({ topLeft: 16, topRight: 16 })
-68. Text(obj.item.name)
-69. .fontSize(15)
-70. .height(20)
-71. }
-72. }
-73. .height(100)
-74. .borderRadius(16)
-75. .backgroundColor(Color.White)
-76. .onAppear(() => {
-77. hilog.info(DOMAIN, TAG, 'AceTag', obj.item.name);
-78. })
-79. }
-80. })
-81. .key((item: DemoGridItemInfo) => item.name)
-82. .virtualScroll()
-83. }
-84. .columnsTemplate('repeat(auto-fit, 150)')
-85. .cachedCount(4)
-86. .rowsGap(15)
-87. .columnsGap(10)
-88. .height('100%')
-89. .padding(10)
-90. .backgroundColor('#F1F3F5')
-91. }
-92. .onRefreshing(() => {
-93. setTimeout(() => {
-94. this.itemList.splice(10, 1);
-95. this.itemList.unshift(new DemoGridItemInfo('refresh', $r('app.media.gridItem0'))); // 此处app.media.gridItem0仅作示例，请开发者自行替换
-96. for (let i = 0; i < 10; i++) {
-97. // 此处app.media.gridItem0、app.media.gridItem1、app.media.gridItem2仅作示例，请开发者自行替换
-98. this.itemList.unshift(new DemoGridItemInfo('New video' + this.num,
-99. i % 3 == 0 ? $r('app.media.gridItem0') :
-100. i % 3 == 1 ? $r('app.media.gridItem1') : $r('app.media.gridItem2')));
-101. this.num++;
-102. }
-103. this.isRefreshing = false;
-104. }, 1000);
-105. })
-106. .refreshOffset(64)
-107. .pullToRefresh(true)
-108. .width('100%')
-109. .height('85%')
-
-111. Button('Refresh')
-112. .onClick(() => {
-113. this.gridScroller.scrollToIndex(0);
-114. this.isRefreshing = true;
-115. })
-116. }
-117. .width('100%')
-118. .height('100%')
-119. .justifyContent(FlexAlign.Center)
-120. }
-121. }
-```
-
-[DemoGrid.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingRepeat/DemoGrid.ets#L16-L138)
 
 下拉屏幕，或点击刷新按钮，或点击“先前浏览至此，点击刷新”，可加载新的视频内容：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/Zp-Qw8IpQX68hRkR7A9vQQ/zh-cn_image_0000002558604506.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/MLOTEnwUQzayqTedHHwXxw/zh-cn_image_0000002736432517.gif)
 
 **与Swiper组合使用**
 
 在[Swiper](../harmonyos-references/ts-container-swiper.md)容器组件中使用Repeat，示例如下：
 
+```typescript
+const remotePictures: string[] = [
+  'common/image/image1.png', // 请填写具体的图片地址
+  'common/image/image2.png',
+  'common/image/image3.png',
+];
+
+@ObservedV2
+class DemoSwiperItemInfo {
+  public id: string;
+  @Trace public url: string = 'default';
+
+  constructor(id: string) {
+    this.id = id;
+  }
+}
+
+@Entry
+@ComponentV2
+struct DemoSwiper {
+  @Local pics: Array<DemoSwiperItemInfo> = [];
+
+  aboutToAppear(): void {
+    for (let i = 0; i < 3; i++) {
+      this.pics.push(new DemoSwiperItemInfo('pic' + i));
+    }
+    setTimeout(() => {
+      this.pics[0].url = remotePictures[0];
+    }, 1000);
+  }
+
+  build() {
+    Column() {
+      Text('Swiper Contains the Repeat Component')
+        .fontSize(15)
+        .fontColor(Color.Gray)
+
+      Stack() {
+        Text('Loading...')
+          .fontSize(15)
+          .fontColor(Color.Gray)
+        Swiper() {
+          Repeat(this.pics)
+            .each((obj: RepeatItem<DemoSwiperItemInfo>) => {
+              Image(obj.item.url)
+                .onAppear(() => {
+                })
+            })
+            .key((item: DemoSwiperItemInfo) => item.id)
+            .virtualScroll()
+        }
+        .cachedCount(9)
+        .height('50%')
+        .loop(false)
+        .indicator(true)
+        .onChange((index) => {
+          setTimeout(() => {
+            this.pics[index].url = remotePictures[index];
+          }, 1000);
+        })
+      }
+      .width('100%')
+      .height('100%')
+      .backgroundColor(Color.Black)
+    }
+  }
+}
 ```
-1. const remotePictures: string[] = [
-2. 'common/image/image1.png', // 请填写具体的图片地址
-3. 'common/image/image2.png',
-4. 'common/image/image3.png',
-5. ];
-
-7. @ObservedV2
-8. class DemoSwiperItemInfo {
-9. public id: string;
-10. @Trace public url: string = 'default';
-
-12. constructor(id: string) {
-13. this.id = id;
-14. }
-15. }
-
-17. @Entry
-18. @ComponentV2
-19. struct DemoSwiper {
-20. @Local pics: Array<DemoSwiperItemInfo> = [];
-
-22. aboutToAppear(): void {
-23. for (let i = 0; i < 3; i++) {
-24. this.pics.push(new DemoSwiperItemInfo('pic' + i));
-25. }
-26. setTimeout(() => {
-27. this.pics[0].url = remotePictures[0];
-28. }, 1000);
-29. }
-
-31. build() {
-32. Column() {
-33. Text('Swiper Contains the Repeat Component')
-34. .fontSize(15)
-35. .fontColor(Color.Gray)
-
-37. Stack() {
-38. Text('Loading...')
-39. .fontSize(15)
-40. .fontColor(Color.Gray)
-41. Swiper() {
-42. Repeat(this.pics)
-43. .each((obj: RepeatItem<DemoSwiperItemInfo>) => {
-44. Image(obj.item.url)
-45. .onAppear(() => {
-46. })
-47. })
-48. .key((item: DemoSwiperItemInfo) => item.id)
-49. .virtualScroll()
-50. }
-51. .cachedCount(9)
-52. .height('50%')
-53. .loop(false)
-54. .indicator(true)
-55. .onChange((index) => {
-56. setTimeout(() => {
-57. this.pics[index].url = remotePictures[index];
-58. }, 1000);
-59. })
-60. }
-61. .width('100%')
-62. .height('100%')
-63. .backgroundColor(Color.Black)
-64. }
-65. }
-66. }
-```
-
-[DemoSwiper.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingRepeat/DemoSwiper.ets#L16-L83)
 
 定时1秒后加载图片，模拟网络延迟：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/3p6c1J12SXqu9wJTjeRjow/zh-cn_image_0000002589324031.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/WjkWxVsRQ5K7rZcUv1X3LQ/zh-cn_image_0000002706833364.gif)
 
 ## 常见问题
 
@@ -1262,68 +1348,66 @@ Repeat支持嵌套使用，示例代码如下：
 
 在List组件中声明Repeat组件，实现key值生成逻辑和each逻辑（如下示例代码），点击按钮“insert”，在屏幕显示的第一个元素前面插入一个元素，列表显示区域数据向下滚动。
 
+```typescript
+// 定义一个类，标记为可观察的
+// 类中自定义一个数组，标记为可追踪的
+@ObservedV2
+class ArrayHolder {
+  @Trace public arr: Array<number> = [];
+
+  // constructor，用于初始化数组个数
+  constructor(count: number) {
+    for (let i = 0; i < count; i++) {
+      this.arr.push(i);
+    }
+  }
+}
+
+@Entry
+@ComponentV2
+struct RepeatTemplateSingle {
+  @Local arrayHolder: ArrayHolder = new ArrayHolder(100);
+  @Local totalCount: number = this.arrayHolder.arr.length;
+  scroller: Scroller = new Scroller();
+
+  build() {
+    Column({ space: 5 }) {
+      List({ space: 20, initialIndex: 19, scroller: this.scroller }) {
+        Repeat(this.arrayHolder.arr)
+          .virtualScroll({ totalCount: this.totalCount })
+          .templateId((item, index) => {
+            return 'number';
+          })
+          .template('number', (r) => {
+            ListItem() {
+              Text(r.index! + ':' + r.item + 'Reuse');
+            }
+          })
+          .each((r) => {
+            ListItem() {
+              Text(r.index! + ':' + r.item + 'eachMessage');
+            }
+          })
+      }
+      .height('30%')
+
+      Button(`insert totalCount ${this.totalCount}`)
+        .height(60)
+        .onClick(() => {
+          // 插入元素，元素位置为屏幕显示的前一个元素
+          this.arrayHolder.arr.splice(18, 0, this.totalCount);
+          this.totalCount = this.arrayHolder.arr.length;
+        })
+    }
+    .width('100%')
+    .margin({ top: 5 })
+  }
+}
 ```
-1. // 定义一个类，标记为可观察的
-2. // 类中自定义一个数组，标记为可追踪的
-3. @ObservedV2
-4. class ArrayHolder {
-5. @Trace public arr: Array<number> = [];
-
-7. // constructor，用于初始化数组个数
-8. constructor(count: number) {
-9. for (let i = 0; i < count; i++) {
-10. this.arr.push(i);
-11. }
-12. }
-13. }
-
-15. @Entry
-16. @ComponentV2
-17. struct RepeatTemplateSingle {
-18. @Local arrayHolder: ArrayHolder = new ArrayHolder(100);
-19. @Local totalCount: number = this.arrayHolder.arr.length;
-20. scroller: Scroller = new Scroller();
-
-22. build() {
-23. Column({ space: 5 }) {
-24. List({ space: 20, initialIndex: 19, scroller: this.scroller }) {
-25. Repeat(this.arrayHolder.arr)
-26. .virtualScroll({ totalCount: this.totalCount })
-27. .templateId((item, index) => {
-28. return 'number';
-29. })
-30. .template('number', (r) => {
-31. ListItem() {
-32. Text(r.index! + ':' + r.item + 'Reuse');
-33. }
-34. })
-35. .each((r) => {
-36. ListItem() {
-37. Text(r.index! + ':' + r.item + 'eachMessage');
-38. }
-39. })
-40. }
-41. .height('30%')
-
-43. Button(`insert totalCount ${this.totalCount}`)
-44. .height(60)
-45. .onClick(() => {
-46. // 插入元素，元素位置为屏幕显示的前一个元素
-47. this.arrayHolder.arr.splice(18, 0, this.totalCount);
-48. this.totalCount = this.arrayHolder.arr.length;
-49. })
-50. }
-51. .width('100%')
-52. .margin({ top: 5 })
-53. }
-54. }
-```
-
-[RepeatTemplateSingle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingRepeat/RepeatTemplateSingle.ets#L16-L71)
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/WAz67yhYR9-uqK_gK_vrig/zh-cn_image_0000002589243971.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/0ejUX1EUQhuEpzMBGncwGw/zh-cn_image_0000002736312473.gif)
 
 以下为修正后的示例：
 
@@ -1331,81 +1415,79 @@ Repeat支持嵌套使用，示例代码如下：
 
 示例代码仅对增加数据的情况进行展示。
 
-说明
+**说明** 
 
 Repeat从API version 20开始支持[数据前插保持](arkts-new-rendering-control-repeat.md#数据前插保持)，该功能特性可通过简单配置List组件的属性实现相同的效果。
 
+```typescript
+// 定义一个类，标记为可观察的
+// 类中自定义一个数组，标记为可追踪的
+@ObservedV2
+class ArrayHolderLocal {
+  @Trace public arr: Array<number> = [];
+
+  // constructor，用于初始化数组个数
+  constructor(count: number) {
+    for (let i = 0; i < count; i++) {
+      this.arr.push(i);
+    }
+  }
+}
+@Entry
+@ComponentV2
+struct RepeatSingle {
+  @Local arrayHolder: ArrayHolderLocal = new ArrayHolderLocal(100);
+  @Local totalCount: number = this.arrayHolder.arr.length;
+  scroller: Scroller = new Scroller();
+
+  private start: number = 1;
+  private end: number = 1;
+
+  build() {
+    Column({ space: 5 }) {
+      List({ space: 20, initialIndex: 19, scroller: this.scroller }) {
+        Repeat(this.arrayHolder.arr)
+          .virtualScroll({ totalCount: this.totalCount })
+          .templateId((item, index) => {
+            return 'number';
+          })
+          .template('number', (r) => {
+            ListItem() {
+              Text(r.index! + ':' + r.item + 'Reuse')
+            }
+          })
+          .each((r) => {
+            ListItem() {
+              Text(r.index! + ':' + r.item + 'eachMessage')
+            }
+          })
+      }
+      .onScrollIndex((start, end) => {
+        this.start = start;
+        this.end = end;
+      })
+      .height('30%')
+
+      Button(`insert totalCount ${this.totalCount}`)
+        .height(60)
+        .onClick(() => {
+          // 插入元素，元素位置为屏幕显示的前一个元素
+          this.arrayHolder.arr.splice(18, 0, this.totalCount);
+          let rect = this.scroller.getItemRect(this.start); // 获取子组件的大小位置
+          this.scroller.scrollToIndex(this.start + 1); // 滑动到指定index
+          this.scroller.scrollBy(0, -rect.y); // 滑动指定距离
+          this.totalCount = this.arrayHolder.arr.length;
+        })
+    }
+    .width('100%')
+    .margin({ top: 5 })
+  }
+}
 ```
-1. // 定义一个类，标记为可观察的
-2. // 类中自定义一个数组，标记为可追踪的
-3. @ObservedV2
-4. class ArrayHolderLocal {
-5. @Trace public arr: Array<number> = [];
-
-7. // constructor，用于初始化数组个数
-8. constructor(count: number) {
-9. for (let i = 0; i < count; i++) {
-10. this.arr.push(i);
-11. }
-12. }
-13. }
-14. @Entry
-15. @ComponentV2
-16. struct RepeatSingle {
-17. @Local arrayHolder: ArrayHolderLocal = new ArrayHolderLocal(100);
-18. @Local totalCount: number = this.arrayHolder.arr.length;
-19. scroller: Scroller = new Scroller();
-
-21. private start: number = 1;
-22. private end: number = 1;
-
-24. build() {
-25. Column({ space: 5 }) {
-26. List({ space: 20, initialIndex: 19, scroller: this.scroller }) {
-27. Repeat(this.arrayHolder.arr)
-28. .virtualScroll({ totalCount: this.totalCount })
-29. .templateId((item, index) => {
-30. return 'number';
-31. })
-32. .template('number', (r) => {
-33. ListItem() {
-34. Text(r.index! + ':' + r.item + 'Reuse')
-35. }
-36. })
-37. .each((r) => {
-38. ListItem() {
-39. Text(r.index! + ':' + r.item + 'eachMessage')
-40. }
-41. })
-42. }
-43. .onScrollIndex((start, end) => {
-44. this.start = start;
-45. this.end = end;
-46. })
-47. .height('30%')
-
-49. Button(`insert totalCount ${this.totalCount}`)
-50. .height(60)
-51. .onClick(() => {
-52. // 插入元素，元素位置为屏幕显示的前一个元素
-53. this.arrayHolder.arr.splice(18, 0, this.totalCount);
-54. let rect = this.scroller.getItemRect(this.start); // 获取子组件的大小位置
-55. this.scroller.scrollToIndex(this.start + 1); // 滑动到指定index
-56. this.scroller.scrollBy(0, -rect.y); // 滑动指定距离
-57. this.totalCount = this.arrayHolder.arr.length;
-58. })
-59. }
-60. .width('100%')
-61. .margin({ top: 5 })
-62. }
-63. }
-```
-
-[RepeatTemplateSingle1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingRepeat/RepeatTemplateSingle1.ets#L16-L80)
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/SngR5W1RQF2420lCCy3M0A/zh-cn_image_0000002558764164.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/gn8A1HLmRL2PtF3IlmRDTA/zh-cn_image_0000002706673428.gif)
 
 ### totalCount值大于数据源长度
 
@@ -1415,170 +1497,171 @@ totalCount > array.length时，在父组件容器滚动过程中，应用需要�
 
 上述规范可以通过实现父组件[List](../harmonyos-references/ts-container-list.md)/[Grid](../harmonyos-references/ts-container-grid.md)的[onScrollIndex](../harmonyos-references/ts-container-list.md#onscrollindex)属性的回调函数完成。示例代码如下：
 
-说明
+**说明** 
 
 Repeat从API version 19开始支持[数据精准懒加载](arkts-new-rendering-control-repeat.md#数据精准懒加载)，该功能特性可通过配置onLazyLoading回调函数动态加载对应区域内的数据。
 
+```typescript
+@ObservedV2
+class VehicleData {
+  @Trace public name: string;
+  @Trace public price: number;
+
+  constructor(name: string, price: number) {
+    this.name = name;
+    this.price = price;
+  }
+}
+
+@ObservedV2
+class VehicleDB {
+  public vehicleItems: VehicleData[] = [];
+
+  constructor() {
+    // 数组初始化大小 20
+    for (let i = 1; i <= 20; i++) {
+      this.vehicleItems.push(new VehicleData(`Vehicle${i}`, i));
+    }
+  }
+}
+
+@Entry
+@ComponentV2
+struct EntryCompSucc {
+  @Local vehicleItems: VehicleData[] = new VehicleDB().vehicleItems;
+  @Local listChildrenSize: ChildrenMainSize = new ChildrenMainSize(60);
+  @Local totalCount: number = this.vehicleItems.length;
+  scroller: Scroller = new Scroller();
+
+  build() {
+    Column({ space: 3 }) {
+      List({ scroller: this.scroller }) {
+        Repeat(this.vehicleItems)
+          .virtualScroll({ totalCount: 50 }) // 数组预期长度 50
+          .templateId(() => 'default')
+          .template('default', (ri) => {
+            ListItem() {
+              Column() {
+                Text(`${ri.item.name} + ${ri.index}`)
+                  .width('90%')
+                  .height(this.listChildrenSize.childDefaultSize)
+                  .backgroundColor(0xFFA07A)
+                  .textAlign(TextAlign.Center)
+                  .fontSize(20)
+                  .fontWeight(FontWeight.Bold)
+              }
+            }.border({ width: 1 })
+          }, { cachedCount: 5 })
+          .each((ri) => {
+            ListItem() {
+              Text('Wrong: ' + `${ri.item.name} + ${ri.index}`)
+                .width('90%')
+                .height(this.listChildrenSize.childDefaultSize)
+                .backgroundColor(0xFFA07A)
+                .textAlign(TextAlign.Center)
+                .fontSize(20)
+                .fontWeight(FontWeight.Bold)
+            }.border({ width: 1 })
+          })
+          .key((item, index) => `${index}:${item}`)
+      }
+      .height('50%')
+      .margin({ top: 20 })
+      .childrenMainSize(this.listChildrenSize)
+      .alignListItem(ListItemAlign.Center)
+      .onScrollIndex((start, end) => {
+        // 数据懒加载
+        if (this.vehicleItems.length < 50) {
+          for (let i = 0; i < 10; i++) {
+            if (this.vehicleItems.length < 50) {
+              this.vehicleItems.push(new VehicleData('Vehicle_loaded', i));
+            }
+          }
+        }
+      })
+    }
+  }
+}
 ```
-1. @ObservedV2
-2. class VehicleData {
-3. @Trace public name: string;
-4. @Trace public price: number;
-
-6. constructor(name: string, price: number) {
-7. this.name = name;
-8. this.price = price;
-9. }
-10. }
-
-12. @ObservedV2
-13. class VehicleDB {
-14. public vehicleItems: VehicleData[] = [];
-
-16. constructor() {
-17. // 数组初始化大小 20
-18. for (let i = 1; i <= 20; i++) {
-19. this.vehicleItems.push(new VehicleData(`Vehicle${i}`, i));
-20. }
-21. }
-22. }
-
-24. @Entry
-25. @ComponentV2
-26. struct EntryCompSucc {
-27. @Local vehicleItems: VehicleData[] = new VehicleDB().vehicleItems;
-28. @Local listChildrenSize: ChildrenMainSize = new ChildrenMainSize(60);
-29. @Local totalCount: number = this.vehicleItems.length;
-30. scroller: Scroller = new Scroller();
-
-32. build() {
-33. Column({ space: 3 }) {
-34. List({ scroller: this.scroller }) {
-35. Repeat(this.vehicleItems)
-36. .virtualScroll({ totalCount: 50 }) // 数组预期长度 50
-37. .templateId(() => 'default')
-38. .template('default', (ri) => {
-39. ListItem() {
-40. Column() {
-41. Text(`${ri.item.name} + ${ri.index}`)
-42. .width('90%')
-43. .height(this.listChildrenSize.childDefaultSize)
-44. .backgroundColor(0xFFA07A)
-45. .textAlign(TextAlign.Center)
-46. .fontSize(20)
-47. .fontWeight(FontWeight.Bold)
-48. }
-49. }.border({ width: 1 })
-50. }, { cachedCount: 5 })
-51. .each((ri) => {
-52. ListItem() {
-53. Text('Wrong: ' + `${ri.item.name} + ${ri.index}`)
-54. .width('90%')
-55. .height(this.listChildrenSize.childDefaultSize)
-56. .backgroundColor(0xFFA07A)
-57. .textAlign(TextAlign.Center)
-58. .fontSize(20)
-59. .fontWeight(FontWeight.Bold)
-60. }.border({ width: 1 })
-61. })
-62. .key((item, index) => `${index}:${item}`)
-63. }
-64. .height('50%')
-65. .margin({ top: 20 })
-66. .childrenMainSize(this.listChildrenSize)
-67. .alignListItem(ListItemAlign.Center)
-68. .onScrollIndex((start, end) => {
-69. // 数据懒加载
-70. if (this.vehicleItems.length < 50) {
-71. for (let i = 0; i < 10; i++) {
-72. if (this.vehicleItems.length < 50) {
-73. this.vehicleItems.push(new VehicleData('Vehicle_loaded', i));
-74. }
-75. }
-76. }
-77. })
-78. }
-79. }
-80. }
-```
-
-[EntryCompSucc.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingRepeat/EntryCompSucc.ets#L16-L97)
 
 示例代码运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/mZnV7b-oT2CwSf_ebm8u1w/zh-cn_image_0000002558604508.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/e2kP_s1JR-eVyzsBRLBpkg/zh-cn_image_0000002736432519.gif)
 
 ### 与@Builder混用时状态变量未刷新
 
-当Repeat与[@Builder](arkts-builder.md)混用时，如果只传递RepeatItem.item或RepeatItem.index，参数值的改变不会引起@Builder函数内的UI刷新。推荐使用[按引用传递](arkts-builder.md#按引用传递参数)，即将RepeatItem类型整体进行传参，组件才能监听到数据变化。除此之外，从API version 20开始，开发者可以通过使用[UIUtils.makeBinding()](../harmonyos-references/js-apis-statemanagement.md#makebinding20)函数、[Binding类](../harmonyos-references/js-apis-statemanagement.md#bindingt20)和[MutableBinding类](../harmonyos-references/js-apis-statemanagement.md#mutablebindingt20)实现@Builder函数中状态变量的刷新。
+当Repeat与[@Builder](arkts-builder.md)混用时，如果只传递RepeatItem.item或RepeatItem.index，参数值的改变不会引起@Builder函数内的UI刷新。推荐使用[按引用传递](arkts-builder.md#按引用传递参数)，即将RepeatItem类型整体进行传参，组件才能监听到数据变化。除此之外，从API version 20开始，开发者可以通过使用[UIUtils.makeBinding()](../harmonyos-references/js-apis-statemanagement.md#makebinding20)函数、[Binding](../harmonyos-references/js-apis-statemanagement.md#bindingt20)类和[MutableBinding](../harmonyos-references/js-apis-statemanagement.md#mutablebindingt20)类实现@Builder函数中状态变量的刷新。
 
 示例代码如下：
 
-```
-1. import { UIUtils, Binding } from '@kit.ArkUI';
+```typescript
+import { UIUtils, Binding } from '@kit.ArkUI';
 
-3. @Entry
-4. @ComponentV2
-5. struct RepeatBuilderPage {
-6. @Local simpleList: Array<number> = [];
+@Entry
+@ComponentV2
+struct RepeatBuilderPage {
+  @Local simpleList: Array<number> = [];
 
-8. aboutToAppear(): void {
-9. for (let i = 0; i < 100; i++) {
-10. this.simpleList.push(i);
-11. }
-12. }
+  aboutToAppear(): void {
+    for (let i = 0; i < 100; i++) {
+      this.simpleList.push(i);
+    }
+  }
 
-14. @Builder
-15. buildItem1(bindingData: Binding<number>) { // 使用Binding类/MutableBinding类接收传参，通过value属性访问值。
-16. Text('[Binding] item: ' + bindingData.value)
-17. .fontSize(20)
-18. }
+  @Builder
+  buildItem1(bindingData: Binding<number>) { // 使用Binding类/MutableBinding类接收传参，通过value属性访问值。
+    Text('[Binding] item: ' + bindingData.value)
+      .fontSize(20)
+  }
 
-20. @Builder
-21. buildItem2(ri: RepeatItem<number>) {
-22. Text('[RepeatItem] item: ' + ri.item)
-23. .fontSize(20)
-24. }
+  @Builder
+  buildItem2(ri: RepeatItem<number>) {
+    Text('[RepeatItem] item: ' + ri.item)
+      .fontSize(20)
+  }
 
-26. @Builder
-27. buildItem3(data: number) {
-28. Text('[number] item: ' + data)
-29. .fontSize(20).fontColor(Color.Red)
-30. }
+  @Builder
+  buildItem3(data: number) {
+    Text('[number] item: ' + data)
+      .fontSize(20).fontColor(Color.Red)
+  }
 
-32. build() {
-33. Column({ space: 10 }) {
-34. List({ space: 20 }) {
-35. Repeat<number>(this.simpleList)
-36. .each((ri) => {
-37. ListItem() {
-38. Column({ space: 2 }) {
-39. this.buildItem1(UIUtils.makeBinding<number>(() => ri.item)) // 使用UIUtils.makeBinding()函数实现@Builder函数中状态变量的刷新。
-40. this.buildItem2(ri) // 按引用传递，状态变量的改变会引起@Builder函数内的UI刷新。
-41. this.buildItem3(ri.item) // 反例。按值传递，状态变量的改变不会引起@Builder函数内的UI刷新。
-42. }
-43. }.border({ width: 1 })
-44. }).virtualScroll()
-45. }
-46. .cachedCount(1)
-47. .border({ width: 1 })
-48. .width('70%')
-49. .height('60%')
-50. .alignListItem(ListItemAlign.Center)
+  build() {
+    Column({ space: 10 }) {
+      List({ space: 20 }) {
+        Repeat<number>(this.simpleList)
+          .each((ri) => {
+            ListItem() {
+              Column({ space: 2 }) {
+                // 使用UIUtils.makeBinding()函数实现@Builder函数中状态变量的刷新。
+                this.buildItem1(UIUtils.makeBinding<number>(() => ri.item))
+                // 按引用传递，状态变量的改变会引起@Builder函数内的UI刷新。
+                this.buildItem2(ri)
+                // 反例。按值传递，状态变量的改变不会引起@Builder函数内的UI刷新。
+                this.buildItem3(ri.item)
+              }
+            }.border({ width: 1 })
+          }).virtualScroll()
+      }
+      .cachedCount(1)
+      .border({ width: 1 })
+      .width('70%')
+      .height('60%')
+      .alignListItem(ListItemAlign.Center)
 
-52. Button('click to change data.').onClick(() => {
-53. this.simpleList[0] = 10000; // 修改第一项数据为10000。
-54. })
-55. }
-56. .width('100%').height('100%')
-57. .justifyContent(FlexAlign.Center)
-58. }
-59. }
+      Button('click to change data.').onClick(() => {
+        this.simpleList[0] = 10000; // 修改第一项数据为10000。
+      })
+    }
+    .width('100%').height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
 
 @Builder传参方式依次为makeBinding()、地址传递和值传递，界面展示如下图，进入页面后点击按钮改变数据。在@Builder构造函数中使用值传递传参不会引起函数内的UI刷新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/NBIlbHTaRiiznh7Tv47gHg/zh-cn_image_0000002589324033.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/uqDd9a_tSJGtUfavnLjBBw/zh-cn_image_0000002706833366.png)
 
 ### expandSafeArea属性失效
 

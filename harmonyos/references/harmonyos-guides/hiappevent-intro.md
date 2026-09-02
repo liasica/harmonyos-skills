@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-in
 title: HiAppEvent介绍
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > HiAppEvent介绍
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:33:57+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3d14d5369a54122b67dd85cb5aa1f0bcc962bb15e39d64d2168796d8e834d5f4
+scraped_at: 2026-09-02T14:59:39+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:982cc33a0f59163d11c3d38523560db0ea7d03a916e999e5b95ce9f4da8a2f4d
 ---
 
 ## 简介
@@ -36,7 +36,7 @@ HiAppEvent是系统为应用开发者提供的事件订阅和事件打点机制�
 
 应用调用HiAppEvent的addWatcher接口订阅系统事件并创建共享目录。当应用进程发生故障时，DFX系统捕获相关信息，生成事件和日志，并写入到共享目录。HiAppEvent监听到事件后，将事件回调给应用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/K4RqRo0LRmq943oVvUsTuA/zh-cn_image_0000002589324867.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/FkRuZr7WRWicBm7U-f7-ZQ/zh-cn_image_0000002736313547.png)
 
 ### 应用事件订阅机制
 
@@ -44,9 +44,9 @@ HiAppEvent是系统为应用开发者提供的事件订阅和事件打点机制�
 
 HiAppEvent通过事件领域和事件名称关联应用事件，并通过addWatcher接口设置的回调方式将事件回调给应用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/GgSAEH4ISUaAH0zHsKLmSw/zh-cn_image_0000002589244803.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/yBnOwA7VSDC_GwNGnk4jfQ/zh-cn_image_0000002706674504.png)
 
-说明
+**说明** 
 
 若应用已订阅到相关事件，但在触发回调前应用退出，则未回调的事件会在应用下次启动调用addWatcher后进行回调。例如订阅崩溃事件场景，在应用崩溃退出后，下次启动调用addWatcher后执行事件回调。
 
@@ -54,12 +54,13 @@ HiAppEvent通过事件领域和事件名称关联应用事件，并通过addWatc
 
 * 订阅接口addWatcher是同步接口，涉及IO操作。对于性能有要求的模块，建议将接口的调用放到非主线程。
 * 订阅接口addWatcher传入的名称name是唯一的，相同的name，后一次调用会覆盖前一次的订阅。
-* 目前鸿蒙应用有普通应用、[应用分身](app-clone.md)、元服务、[输入法应用](inputmethod-application-guide.md)等多种类型，不同类型应用上，系统事件的订阅规格不同。从API version 22开始，HiAppEvent系统事件订阅能力支持输入法应用。具体规格可参见如下表格：
+* 目前应用有普通应用、[应用分身](app-clone.md)、元服务、[输入法应用](inputmethod-application-guide.md)等多种类型，不同类型应用上，系统事件的订阅规格不同。从API version 22开始，HiAppEvent系统事件订阅能力支持输入法应用。具体规格可参见如下表格：
 
 | 系统事件名称 | 是否支持应用分身订阅 | 是否支持元服务订阅 | 是否支持输入法应用订阅 |
 | --- | --- | --- | --- |
 | 崩溃事件 | 支持 | 支持 | 支持 |
 | 应用冻屏事件 | 支持 | 支持 | 支持 |
+| 应用冻屏告警事件 | 支持 | 支持 | 支持 |
 | 资源泄漏事件 | 支持 | 支持 | 支持 |
 | 地址越界事件 | 支持 | 不支持 | 支持 |
 | 主线程超时事件 | 支持 | 支持 | 支持 |
@@ -71,3 +72,14 @@ HiAppEvent通过事件领域和事件名称关联应用事件，并通过addWatc
 | 24h功耗器件分解统计事件 | 不支持 | 不支持 | 支持 |
 | 音频卡顿事件 | 不支持 | 不支持 | 不支持 |
 | ArkWeb抛滑丢帧事件 | 支持 | 支持 | 支持 |
+
+## 系统事件故障日志目录规格
+
+HiAppEvent支持订阅系统事件，部分事件信息中存在external\_log、page\_switch\_log字段包含有日志路径信息。当前故障日志所在目录规格如下，需注意目录规格可能会随版本演进更新。
+
+| 故障日志文件目录 | 目录包含内容 | 目录空间上限 |
+| --- | --- | --- |
+| /data/storage/el2/log/hiappevent | 崩溃事件日志、应用冻屏日志、地址越界事件日志、任务执行超时事件日志、CPU高负载事件日志。 | 默认5MB。  **说明**：启用minidump时，上限调整至35MB；关闭minidump时，上限恢复至5MB。 |
+| /data/storage/el2/log/watchdog | 主线程超时事件日志、滑动丢帧事件日志。 | 10MB |
+| /data/storage/el2/log/resourcelimit | 资源泄漏事件日志。 | 2048MB |
+| /data/storage/el2/log/page\_switch | 页面切换日志。 | 18320KB。页面切换日志达到上限后由系统自动老化。 |

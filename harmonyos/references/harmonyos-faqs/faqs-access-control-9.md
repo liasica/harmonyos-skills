@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-access-con
 title: 系统安全能力哪些是天然具备的，哪些需要开发者适配
 breadcrumb: FAQ > 系统开发 > 安全 > 程序访问控制 > 系统安全能力哪些是天然具备的，哪些需要开发者适配
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:54+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:55+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:4268dc873318fb2c9efbd432d21c87efc62c073e3b178d5923f620a6cb86769a
 ---
 

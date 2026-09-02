@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-recommende
 title: 设备标识使用推荐
 breadcrumb: 最佳实践 > 应用安全 > 设备标识使用推荐
 category: best-practices
-scraped_at: 2026-04-28T08:22:17+08:00
-doc_updated_at: 2026-03-12
+scraped_at: 2026-09-02T15:03:20+08:00
+doc_updated_at: 2026-07-09
 content_hash: sha256:8e7dfff7210d2cf41def5afd5bd16d29433c24955c05073aa09078b3f5d1b4f5
 ---
 

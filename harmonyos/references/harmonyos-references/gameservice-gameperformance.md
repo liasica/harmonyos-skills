@@ -1,29 +1,30 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservice-gameperformance
-title: gamePerformance (游戏场景感知)
+title: gamePerformance（游戏场景感知）
+breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > ArkTS API > gamePerformance（游戏场景感知）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:43+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:68d81106109c90a78d6fdbd0ca60b0235006cb16c8d21115c0c29af5dbe8e2f7
+scraped_at: 2026-09-02T15:02:54+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9449e22c392b04a7638cdfbcc28b79cdc7b560c4699fd60aa9c682bd193debf0
 ---
 
 本模块提供接入Game Service Kit的游戏场景感知能力。
+
+**模型约束：** 本模块接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { gamePerformance } from '@kit.GameServiceKit';
+```typescript
+import { gamePerformance } from '@kit.GameServiceKit';
 ```
 
 ## DeviceInfo
 
-PhonePC/2in1Tablet
-
 设备信息类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GamePerformance
 
@@ -31,15 +32,15 @@ PhonePC/2in1Tablet
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| tempLevel | number | 否 | 否 | 温控档位，档位越高表示温度越高。不同档位及其建议如下：  1：无需处理。  2：建议降低无感知业务规格，例如后台更新降速或延迟运行。  3：建议暂停无感知业务，降低游戏非核心业务的规格，例如前台更新降速。  4：建议减少游戏特效，降低分辨率，画质。  5：建议降低全场景规格，进一步降低分辨率、画质等。  6：建议游戏降至最低规格。 |
+| tempLevel | number | 否 | 否 | 温控档位。不同档位及其建议如下：  1：无需处理。  2：建议降低无感知业务规格，例如后台更新降速或延迟运行。  3：建议暂停无感知业务，降低游戏非核心业务的规格，例如前台更新降速。  4：建议减少游戏特效，降低分辨率，画质。  5：建议降低全场景规格，进一步降低分辨率、画质等。  6：建议游戏降至最低规格。 |
 | gpuInfo | [GpuInfo](gameservice-gameperformance.md#gpuinfo) | 否 | 是 | GPU性能信息。 |
 | thermalInfo | [ThermalInfo](gameservice-gameperformance.md#thermalinfo) | 否 | 是 | 温度变化趋势数据。  **起始版本：** 5.0.1(13)。 |
 
 ## GpuInfo
 
-PhonePC/2in1Tablet
-
 GPU性能信息类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GamePerformance
 
@@ -56,9 +57,9 @@ GPU性能信息类。
 
 ## ThermalInfo
 
-PhonePC/2in1Tablet
-
 温度变化趋势数据类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GamePerformance
 
@@ -71,9 +72,9 @@ PhonePC/2in1Tablet
 
 ## BaseGameInfo
 
-PhonePC/2in1Tablet
-
 游戏基本信息类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GamePerformance
 
@@ -86,9 +87,9 @@ PhonePC/2in1Tablet
 
 ## GamePackageInfo
 
-PhonePC/2in1Tablet
-
 游戏包信息类，继承[BaseGameInfo](gameservice-gameperformance.md#basegameinfo)。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GamePerformance
 
@@ -96,7 +97,7 @@ PhonePC/2in1Tablet
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| bundleName | string | 否 | 否 | 游戏包名。字符长度范围：[1, 128]。 |
+| bundleName | string | 否 | 否 | 游戏包名。最大长度为128且不能为空。 |
 | appVersion | string | 否 | 否 | 游戏版本号。字符长度范围：[1, 64]。 |
 | engineType | number | 否 | 是 | 游戏引擎类型。  1：UNITY  2：UNREAL4  3：MESSIAH  4：COCOS  200：OTHERS |
 | engineVersion | string | 否 | 是 | 游戏引擎版本号。字符长度范围：[0, 64]。 |
@@ -105,9 +106,9 @@ PhonePC/2in1Tablet
 
 ## GameConfigInfo
 
-PhonePC/2in1Tablet
-
 游戏配置信息类，继承[BaseGameInfo](gameservice-gameperformance.md#basegameinfo)。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GamePerformance
 
@@ -117,8 +118,8 @@ PhonePC/2in1Tablet
 | --- | --- | --- | --- | --- |
 | maxPictureQualityLevel | number | 否 | 否 | 支持的画质最高等级。  1：流畅  2：均衡  3：高清  4：HDR高清  5：超高清 |
 | currentPictureQualityLevel | number | 否 | 否 | 画质的当前等级。  1：流畅  2：均衡  3：高清  4：HDR高清  5：超高清 |
-| maxFrameRate | number | 否 | 否 | 支持的最高帧率。 |
-| currentFrameRate | number | 否 | 否 | 当前设置的帧率。取值范围为[1, 144]。 |
+| maxFrameRate | number | 否 | 否 | 支持的最高帧率，单位：fps。 |
+| currentFrameRate | number | 否 | 否 | 当前设置的帧率，单位：fps。取值范围为[1, 144]。 |
 | maxResolution | string | 否 | 否 | 支持的最高分辨率。格式AxB（如1260x1980），字符长度范围：[1, 32]。 |
 | currentResolution | string | 否 | 否 | 当前设置的分辨率。格式AxB（如1260x1980），字符长度范围：[1, 32]。 |
 | antiAliasing | boolean | 否 | 否 | 是否开启抗锯齿。  - true：开启  - false：不开启  默认为false。 |
@@ -129,9 +130,9 @@ PhonePC/2in1Tablet
 
 ## GameSceneInfo
 
-PhonePC/2in1Tablet
-
 游戏场景信息类，继承[BaseGameInfo](gameservice-gameperformance.md#basegameinfo)。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GamePerformance
 
@@ -149,9 +150,9 @@ PhonePC/2in1Tablet
 | recommendedCpuLevel | number | 否 | 是 | 游戏推荐的该场景下的CPU等级。  1：Low（低）  2：Middle（中）  3：High（高） |
 | recommendedGpuLevel | number | 否 | 是 | 游戏推荐的该场景下的GPU等级。  1：Low（低）  2：Middle（中）  3：High（高） |
 | recommendedDdrLevel | number | 否 | 是 | 游戏推荐的该场景下的DDR等级。  1：Low（低）  2：Middle（中）  3：High（高） |
-| recommendedFps | number | 否 | 是 | 游戏推荐的该场景下的目标帧率。 |
-| maxFps | number | 否 | 是 | 该场景的最大帧率。 |
-| currentFps | number | 否 | 是 | 该场景的当前帧率。 |
+| recommendedFps | number | 否 | 是 | 游戏推荐的该场景下的目标帧率，单位：fps。 |
+| maxFps | number | 否 | 是 | 该场景的最大帧率，单位：fps。 |
+| currentFps | number | 否 | 是 | 该场景的当前帧率，单位：fps。 |
 | keyThread | string | 否 | 是 | 该场景下的关键线程。  - render：渲染线程  - logic：逻辑线程  - net：网络线程  按照 render|xxx|logic|xxx 格式传入。字符长度范围：[0, 32]。 |
 | drawCallCount | number | 否 | 是 | 该场景下每帧的平均Drawcall数。 |
 | vertexCount | number | 否 | 是 | 该场景下每帧的平均模型顶点数。 |
@@ -164,9 +165,9 @@ PhonePC/2in1Tablet
 
 ## GameNetInfo
 
-PhonePC/2in1Tablet
-
 游戏网络信息类，继承[BaseGameInfo](gameservice-gameperformance.md#basegameinfo)。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GamePerformance
 
@@ -179,15 +180,15 @@ PhonePC/2in1Tablet
 
 ## GamePlayerInfo
 
-PhonePC/2in1Tablet
-
 游戏玩家信息类，继承[BaseGameInfo](gameservice-gameperformance.md#basegameinfo)。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GamePerformance
 
 **起始版本：** 5.0.0(12)
 
-注意
+**注意** 
 
 gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 
@@ -199,9 +200,9 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 
 ## DeviceInfoParameter
 
-PhonePC/2in1Tablet
-
 设备状态信息参数类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GamePerformance
 
@@ -214,9 +215,9 @@ PhonePC/2in1Tablet
 
 ## DeviceInfoType
 
-PhonePC/2in1Tablet
-
 设备状态信息类型枚举对象。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GamePerformance
 
@@ -229,9 +230,9 @@ PhonePC/2in1Tablet
 
 ## DeviceInfoParameterKey
 
-PhonePC/2in1Tablet
-
 设备状态信息参数键值枚举对象。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GamePerformance
 
@@ -239,13 +240,13 @@ PhonePC/2in1Tablet
 
 | **名称** | **值** | **说明** |
 | --- | --- | --- |
-| THERMAL\_TEMP\_LEVEL | tempLevel | 温控档位。 |
+| THERMAL\_TEMP\_LEVEL | 'tempLevel' | 温控档位。 |
 
 ## GameCustomTag
 
-PhonePC/2in1Tablet
-
 游戏自定义数据的标签枚举对象。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GamePerformance
 
@@ -257,15 +258,15 @@ PhonePC/2in1Tablet
 
 ## GamePerformanceErrorCode
 
-PhonePC/2in1Tablet
-
 Game Service Kit错误码类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GamePerformance
 
 **起始版本：** 5.0.0(12)
 
-错误码的详细介绍请参见[ArkTS API错误码](gameservice-error-code.md)。
+错误码的详细介绍请参见[ArkTS API错误码](errorcode-gameservice.md)。
 
 | **名称** | 值 | **说明** |
 | --- | --- | --- |
@@ -275,11 +276,11 @@ Game Service Kit错误码类。
 
 ## gamePerformance.init
 
-PhonePC/2in1Tablet
-
 init(gamePackageInfo: GamePackageInfo): Promise<void>
 
 游戏启动时，需要对游戏场景感知模块进行初始化。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GamePerformance
 
@@ -299,7 +300,7 @@ init(gamePackageInfo: GamePackageInfo): Promise<void>
 
 **错误码：**
 
-错误码的详细介绍请参见[ArkTS API错误码](gameservice-error-code.md)和[通用错误码](errorcode-universal.md)。
+错误码的详细介绍请参见[ArkTS API错误码](errorcode-gameservice.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -308,35 +309,35 @@ init(gamePackageInfo: GamePackageInfo): Promise<void>
 
 **示例**：
 
-```
-1. import { gamePerformance } from '@kit.GameServiceKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { gamePerformance } from '@kit.GameServiceKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let gamePackageInfo: gamePerformance.GamePackageInfo = {
-6. messageType: 0,
-7. bundleName: "com.example.demo", // 仅示例，请替换为实际的游戏包名
-8. appVersion: "1.0"
-9. }
-10. try {
-11. gamePerformance.init(gamePackageInfo).then(() => {
-12. // 初始化成功
-13. hilog.info(0x0001, 'demo', `Succeeded in initializing.`);
-14. })
-15. } catch (error) {
-16. // 初始化失败
-17. let err = error as BusinessError;
-18. hilog.error(0x0001, 'demo', `Failed to initialize. Code: ${err.code}, message: ${err.message}`);
-19. }
+let gamePackageInfo: gamePerformance.GamePackageInfo = {
+  messageType: 0,
+  bundleName: 'com.example.demo', // 请替换为实际的游戏包名
+  appVersion: '1.0'
+};
+try {
+  gamePerformance.init(gamePackageInfo).then(() => {
+    // 初始化成功
+    hilog.info(0x0001, 'demo', `Succeeded in initializing.`);
+  });
+} catch (error) {
+  // 初始化失败
+  let err = error as BusinessError;
+  hilog.error(0x0001, 'demo', `Failed to initialize. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## gamePerformance.updateGameInfo
 
-PhonePC/2in1Tablet
-
 updateGameInfo<T extends BaseGameInfo>(gameInfo: T): Promise<void>
 
 更新游戏信息。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GamePerformance
 
@@ -346,7 +347,7 @@ updateGameInfo<T extends BaseGameInfo>(gameInfo: T): Promise<void>
 
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
-| gameInfo | [BaseGameInfo](gameservice-gameperformance.md#basegameinfo) | 是 | 游戏基本信息。 |
+| gameInfo | T | 是 | 游戏基本信息，T为继承自[BaseGameInfo](gameservice-gameperformance.md#basegameinfo)的组件属性类型。 |
 
 **返回值**：
 
@@ -356,7 +357,7 @@ updateGameInfo<T extends BaseGameInfo>(gameInfo: T): Promise<void>
 
 **错误码**：
 
-错误码的详细介绍请参见[ArkTS API错误码](gameservice-error-code.md)和[通用错误码](errorcode-universal.md)。
+错误码的详细介绍请参见[ArkTS API错误码](errorcode-gameservice.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -365,40 +366,40 @@ updateGameInfo<T extends BaseGameInfo>(gameInfo: T): Promise<void>
 
 **示例**：
 
-```
-1. // 以更新游戏场景信息为例
-2. import { gamePerformance } from '@kit.GameServiceKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+// 以更新游戏场景信息为例
+import { gamePerformance } from '@kit.GameServiceKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. let gameSceneInfo: gamePerformance.GameSceneInfo = {
-7. messageType: 2,
-8. sceneID: 7,
-9. importanceLevel: 4
-10. }
-11. try {
-12. gamePerformance.updateGameInfo(gameSceneInfo).then(() => {
-13. // 更新游戏场景信息成功
-14. hilog.info(0x0001, 'demo', `Succeeded in updating.`);
-15. });
-16. } catch (error) {
-17. // 更新游戏场景信息失败
-18. let err = error as BusinessError;
-19. hilog.error(0x0001, 'demo', `Failed to update. Code: ${err.code}, message: ${err.message}`);
-20. }
+let gameSceneInfo: gamePerformance.GameSceneInfo = {
+  messageType: 2,
+  sceneID: 7,
+  importanceLevel: 4
+};
+try {
+  gamePerformance.updateGameInfo(gameSceneInfo).then(() => {
+    // 更新游戏场景信息成功
+    hilog.info(0x0001, 'demo', `Succeeded in updating.`);
+  });
+} catch (error) {
+  // 更新游戏场景信息失败
+  let err = error as BusinessError;
+  hilog.error(0x0001, 'demo', `Failed to update. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## gamePerformance.on('deviceStateChanged')
 
-PhonePC/2in1Tablet
-
 on(type: 'deviceStateChanged', callback: Callback<DeviceInfo>): void
 
-订阅设备状态变化。使用callback回调。
+订阅设备状态变化。使用callback异步回调。
 
-说明
+**说明** 
 
 Mali系列GPU不支持采集GPU性能信息，无法获取设备GPU性能信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GamePerformance
 
@@ -421,37 +422,37 @@ Mali系列GPU不支持采集GPU性能信息，无法获取设备GPU性能信息�
 
 **示例**：
 
-```
-1. import { gamePerformance } from '@kit.GameServiceKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { gamePerformance } from '@kit.GameServiceKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. function onDeviceStateChange(data:gamePerformance.DeviceInfo) {
-6. // 设备信息详情
-7. hilog.info(0x0001, 'demo', `device state changed. tempLevel is ${data.tempLevel}`);
-8. }
+function onDeviceStateChange(data:gamePerformance.DeviceInfo) {
+  // 设备信息详情
+  hilog.info(0x0001, 'demo', `device state changed. tempLevel is ${data.tempLevel}`);
+}
 
-10. // 订阅deviceStateChanged事件
-11. try {
-12. gamePerformance.on('deviceStateChanged', onDeviceStateChange);
-13. } catch (error) {
-14. // 订阅失败
-15. let err = error as BusinessError;
-16. hilog.error(0x0001, 'demo', `Failed to subscribe. Code: ${err.code}, message: ${err.message}`);
-17. }
+// 订阅deviceStateChanged事件
+try {
+  gamePerformance.on('deviceStateChanged', onDeviceStateChange);
+} catch (error) {
+  // 订阅失败
+  let err = error as BusinessError;
+  hilog.error(0x0001, 'demo', `Failed to subscribe. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## gamePerformance.on('deviceStateChanged')
 
-PhonePC/2in1Tablet
-
 on(type: 'deviceStateChanged', callback: Callback<DeviceInfo>, scope: Array<DeviceInfoType>): void
 
-按需订阅设备状态变化。使用callback回调。
+按需订阅设备状态变化。使用callback异步回调。
 
-说明
+**说明** 
 
 Mali系列GPU不支持采集GPU性能信息，无法获取设备GPU性能信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GamePerformance
 
@@ -467,7 +468,7 @@ Mali系列GPU不支持采集GPU性能信息，无法获取设备GPU性能信息�
 
 **错误码**：
 
-错误码的详细介绍请参见[ArkTS API错误码](gameservice-error-code.md)和[通用错误码](errorcode-universal.md)。
+错误码的详细介绍请参见[ArkTS API错误码](errorcode-gameservice.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -476,34 +477,34 @@ Mali系列GPU不支持采集GPU性能信息，无法获取设备GPU性能信息�
 
 **示例**：
 
-```
-1. import { gamePerformance } from '@kit.GameServiceKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { gamePerformance } from '@kit.GameServiceKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. function onDeviceStateChange(data:gamePerformance.DeviceInfo) {
-6. // 设备信息详情
-7. hilog.info(0x0001, 'demo', `device state changed. tempLevel is ${data.tempLevel}`);
-8. }
+function onDeviceStateChange(data:gamePerformance.DeviceInfo) {
+  // 设备信息详情
+  hilog.info(0x0001, 'demo', `device state changed. tempLevel is ${data.tempLevel}`);
+}
 
-10. // 订阅deviceStateChanged事件
-11. try {
-12. let types:Array<gamePerformance.DeviceInfoType> = [gamePerformance.DeviceInfoType.GPU];
-13. gamePerformance.on('deviceStateChanged', onDeviceStateChange,types);
-14. } catch (error) {
-15. // 订阅失败
-16. let err = error as BusinessError;
-17. hilog.error(0x0001, 'demo', `Failed to subscribe. Code: ${err.code}, message: ${err.message}`);
-18. }
+// 订阅deviceStateChanged事件
+try {
+  let types:Array<gamePerformance.DeviceInfoType> = [gamePerformance.DeviceInfoType.GPU];
+  gamePerformance.on('deviceStateChanged', onDeviceStateChange, types);
+} catch (error) {
+  // 订阅失败
+  let err = error as BusinessError;
+  hilog.error(0x0001, 'demo', `Failed to subscribe. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## gamePerformance.off('deviceStateChanged')
 
-PhonePC/2in1Tablet
-
 off(type: 'deviceStateChanged', callback?: Callback<DeviceInfo>): void
 
-取消订阅设备状态变化。使用callback回调。
+取消订阅设备状态变化。使用callback异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GamePerformance
 
@@ -526,46 +527,46 @@ off(type: 'deviceStateChanged', callback?: Callback<DeviceInfo>): void
 
 **示例**：
 
-```
-1. import { gamePerformance } from '@kit.GameServiceKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { gamePerformance } from '@kit.GameServiceKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. function onDeviceStateChange(data:gamePerformance.DeviceInfo) {
-6. // 设备信息详情
-7. hilog.info(0x0001, 'demo', `device state changed. tempLevel is ${data.tempLevel}`);
-8. }
+function onDeviceStateChange(data:gamePerformance.DeviceInfo) {
+  // 设备信息详情
+  hilog.info(0x0001, 'demo', `device state changed. tempLevel is ${data.tempLevel}`);
+}
 
-10. // 取消订阅deviceStateChanged事件
-11. try {
-12. gamePerformance.off('deviceStateChanged', onDeviceStateChange);
-13. } catch (error) {
-14. // 取消订阅失败
-15. let err = error as BusinessError;
-16. hilog.error(0x0001, 'demo', `Failed to unsubscribe. Code: ${err.code}, message: ${err.message}`);
-17. }
+// 取消订阅deviceStateChanged事件
+try {
+  gamePerformance.off('deviceStateChanged', onDeviceStateChange);
+} catch (error) {
+  // 取消订阅失败
+  let err = error as BusinessError;
+  hilog.error(0x0001, 'demo', `Failed to unsubscribe. Code: ${err.code}, message: ${err.message}`);
+}
 
-19. // 取消deviceStateChanged事件的全部订阅
-20. try {
-21. gamePerformance.off("deviceStateChanged");
-22. } catch (error) {
-23. // 取消订阅失败
-24. let err = error as BusinessError;
-25. hilog.error(0x0001, 'demo', `Failed to unsubscribe. Code: ${err.code}, message: ${err.message}`);
-26. }
+// 取消deviceStateChanged事件的全部订阅
+try {
+  gamePerformance.off('deviceStateChanged');
+} catch (error) {
+  // 取消订阅失败
+  let err = error as BusinessError;
+  hilog.error(0x0001, 'demo', `Failed to unsubscribe. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## gamePerformance.getDeviceInfoByScope
-
-PhonePC/2in1Tablet
 
 getDeviceInfoByScope(scope: Array<DeviceInfoParameter>): Promise<DeviceInfo>
 
 查询设备状态信息。使用Promise异步回调。
 
-说明
+**说明** 
 
 Mali系列GPU不支持采集GPU性能信息，无法获取设备GPU性能信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GamePerformance
 
@@ -585,7 +586,7 @@ Mali系列GPU不支持采集GPU性能信息，无法获取设备GPU性能信息�
 
 **错误码**：
 
-错误码的详细介绍请参见[ArkTS API错误码](gameservice-error-code.md)和[通用错误码](errorcode-universal.md)。
+错误码的详细介绍请参见[ArkTS API错误码](errorcode-gameservice.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -594,37 +595,37 @@ Mali系列GPU不支持采集GPU性能信息，无法获取设备GPU性能信息�
 
 **示例**：
 
-```
-1. import { gamePerformance } from '@kit.GameServiceKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { gamePerformance } from '@kit.GameServiceKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. // 查询设备状态
-6. try {
-7. let gpuParam: gamePerformance.DeviceInfoParameter = {
-8. deviceInfoType: gamePerformance.DeviceInfoType.GPU
-9. }
-10. let thermalParam: gamePerformance.DeviceInfoParameter = {
-11. deviceInfoType: gamePerformance.DeviceInfoType.THERMAL
-12. }
-13. let gameInfos: Array<gamePerformance.DeviceInfoParameter> = [gpuParam, thermalParam];
-14. gamePerformance.getDeviceInfoByScope(gameInfos).then((deviceInfo:gamePerformance.DeviceInfo) => {
-15. hilog.info(0x0001, 'demo', `Succeeded in querying device info. tempLevel is ${deviceInfo.tempLevel}`);
-16. });
-17. } catch (error) {
-18. // 查询失败
-19. let err = error as BusinessError;
-20. hilog.error(0x0001, 'demo', `Failed to query. Code: ${err.code}, message: ${err.message}`);
-21. }
+// 查询设备状态
+try {
+  let gpuParam: gamePerformance.DeviceInfoParameter = {
+    deviceInfoType: gamePerformance.DeviceInfoType.GPU
+  };
+  let thermalParam: gamePerformance.DeviceInfoParameter = {
+    deviceInfoType: gamePerformance.DeviceInfoType.THERMAL
+  };
+  let gameInfos: Array<gamePerformance.DeviceInfoParameter> = [gpuParam, thermalParam];
+  gamePerformance.getDeviceInfoByScope(gameInfos).then((deviceInfo:gamePerformance.DeviceInfo) => {
+    hilog.info(0x0001, 'demo', `Succeeded in querying device info. tempLevel is ${deviceInfo.tempLevel}`);
+  });
+} catch (error) {
+  // 查询失败
+  let err = error as BusinessError;
+  hilog.error(0x0001, 'demo', `Failed to query. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## gamePerformance.addGameCustomData
 
-PhonePC/2in1Tablet
-
 addGameCustomData(data: Record<string, string>, tag: GameCustomTag): void
 
 上报带标签的游戏自定义数据。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.GameService.GamePerformance
 
@@ -639,7 +640,7 @@ addGameCustomData(data: Record<string, string>, tag: GameCustomTag): void
 
 **错误码**：
 
-错误码的详细介绍请参见[ArkTS API错误码](gameservice-error-code.md)和[通用错误码](errorcode-universal.md)。
+错误码的详细介绍请参见[ArkTS API错误码](errorcode-gameservice.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -648,18 +649,18 @@ addGameCustomData(data: Record<string, string>, tag: GameCustomTag): void
 
 **示例**：
 
-```
-1. import { gamePerformance } from '@kit.GameServiceKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { gamePerformance } from '@kit.GameServiceKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. // 上报带崩溃标签的游戏自定义数据
-6. try {
-7. let data:Record<string, string> = {'custom':'gaming'};
-8. gamePerformance.addGameCustomData(data, gamePerformance.GameCustomTag.CRASH);
-9. } catch (error) {
-10. // 上报自定义数据失败
-11. let err = error as BusinessError;
-12. hilog.error(0x0001, 'demo', `Failed to add custom data. Code: ${err.code}, message: ${err.message}`);
-13. }
+// 上报带崩溃标签的游戏自定义数据
+try {
+  let data:Record<string, string> = {'custom':'gaming'};
+  gamePerformance.addGameCustomData(data, gamePerformance.GameCustomTag.CRASH);
+} catch (error) {
+  // 上报自定义数据失败
+  let err = error as BusinessError;
+  hilog.error(0x0001, 'demo', `Failed to add custom data. Code: ${err.code}, message: ${err.message}`);
+}
 ```

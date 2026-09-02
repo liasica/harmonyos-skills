@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: image_processing_types.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > image_processing_types.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:23+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1bcf319ed25a819ffc45702319cce13d852bc5ba664a49075a1c5d8f89694efd
+scraped_at: 2026-09-02T15:02:31+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1a3bea2e01f9008e7df088fb9842263df3fe5dd068f95cac56c9c200618fd2b4
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 图片处理的类型定义。
 
@@ -26,22 +24,16 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 结构体
-
-PhonePC/2in1TabletTV
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| [ImageProcessing\_ColorSpaceInfo](api-imageprocessing-imageprocessing-colorspaceinfo.md) | ImageProcessing\_ColorSpaceInfo | 色彩空间信息，用于色彩空间转换能力查询。 |
+| [ImageProcessing\_ColorSpaceInfo](capi-imageprocessing-imageprocessing-colorspaceinfo.md) | ImageProcessing\_ColorSpaceInfo | 色彩空间信息，用于色彩空间转换能力查询。 |
 | [OH\_ImageProcessing](capi-imageprocessing-oh-imageprocessing.md) | OH\_ImageProcessing | 提供OH\_ImageProcessing结构体声明。  定义了OH\_ImageProcessing的空指针并调用[OH\_ImageProcessing\_Create](capi-image-processing-h.md#oh_imageprocessing_create)来创建图片处理实例。在创建实例之前，指针应为空。用户可以为不同的处理类型创建多个图片实例。 |
 | [OH\_PixelmapNative](capi-image-nativemodule-oh-pixelmapnative.md) | OH\_PixelmapNative | 提供OH\_PixelmapNative结构体声明。 |
 | [OH\_AVFormat](capi-core-oh-avformat.md) | OH\_AVFormat | 提供OH\_AVFormat结构体声明。 |
 
 ### 枚举
-
-PhonePC/2in1TabletTV
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -49,8 +41,6 @@ PhonePC/2in1TabletTV
 | [ImageProcessing\_ErrorCode](capi-image-processing-types-h.md#imageprocessing_errorcode) | ImageProcessing\_ErrorCode | 图片处理接口错误码说明。 |
 
 ### 变量
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -63,14 +53,10 @@ PhonePC/2in1TabletTV
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTV
-
 ### ImageDetailEnhancer\_QualityLevel
 
-PhonePC/2in1TabletTV
-
-```
-1. enum ImageDetailEnhancer_QualityLevel
+```c
+enum ImageDetailEnhancer_QualityLevel
 ```
 
 **描述**
@@ -94,10 +80,8 @@ PhonePC/2in1TabletTV
 
 ### ImageProcessing\_ErrorCode
 
-PhonePC/2in1TabletTV
-
-```
-1. enum ImageProcessing_ErrorCode
+```c
+enum ImageProcessing_ErrorCode
 ```
 
 **描述**

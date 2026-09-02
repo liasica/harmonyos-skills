@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/usbserial-com
 title: USB串口通信管理
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB串口通信服务 > USB串口通信管理
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:20+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8752cf3a16a16313e7f78a14e0436ae4deb5f6dc963d1da4a60c789287a4ed1d
+scraped_at: 2026-09-02T14:59:36+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d903906274f52bd2b5ed4e37aecbef617f97e31a29d21653a80682952fb8480c
 ---
 
 ## 简介
@@ -36,147 +36,133 @@ USB串口通信服务中通过Host设备的USB接口连接串口设备的串口�
 
 开发者可以通过上述接口读取和写入数据：
 
-说明
+**说明** 
 
 以下示例代码只是串口数据传输的必要流程，需要放入具体的方法中执行。
 
 1. 导入模块。
 
+   ```typescript
+   // 导入serialManager模块
+   import { serialManager } from '@kit.BasicServicesKit';
+   import { BusinessError } from '@kit.BasicServicesKit'
+   import { buffer } from '@kit.ArkTS';
+   import { JSON } from '@kit.ArkTS';
    ```
-   1. // 导入usbManager模块
-   2. import { serialManager } from '@kit.BasicServicesKit';
-   3. import { BusinessError } from '@kit.BasicServicesKit'
-   4. import { buffer } from '@kit.ArkTS';
-   5. import { JSON } from '@kit.ArkTS';
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/USB/USBManagerSerialSample/entry/src/main/ets/pages/Index.ets#L16-L23)
 2. 获取设备列表。
 
+   ```typescript
+   // 获取连接主设备的USB设备列表
+   let portList: serialManager.SerialPort[] = serialManager.getPortList();
+   console.info(`usbSerial portList: ${portList}`);
+   this.logInfo_ += '\n[INFO] usbSerial portList: ' + JSON.stringify(portList);
+   if (portList === undefined || portList.length === 0) {
+     console.error('usbSerial portList is empty');
+     this.logInfo_ += '\n[ERROR] usbSerial portList is empty';
+     return;
+   }
+   this.portList_ = portList;
    ```
-   1. // 获取连接主设备的USB设备列表
-   2. let portList: serialManager.SerialPort[] = serialManager.getPortList();
-   3. console.info(`usbSerial portList: ${portList}`);
-   4. this.logInfo_ += '\n[INFO] usbSerial portList: ' + JSON.stringify(portList);
-   5. if (portList === undefined || portList.length === 0) {
-   6. console.error('usbSerial portList is empty');
-   7. this.logInfo_ += '\n[ERROR] usbSerial portList is empty';
-   8. return;
-   9. }
-   10. this.portList_ = portList;
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/USB/USBManagerSerialSample/entry/src/main/ets/pages/Index.ets#L32-L43)
 3. 获取设备操作权限。
 
+   ```typescript
+   if (this.portList_ === undefined || this.portList_.length === 0) {
+     console.error('usbSerial portList is empty');
+     this.logInfo_ += '\n[ERROR] usbSerial portList is empty';
+     return;
+   }
+   let portList: serialManager.SerialPort[] = this.portList_;
+   let portId: number = portList[0].portId;
+   if (!serialManager.hasSerialRight(portId)) {
+     serialManager.requestSerialRight(portId).then((result: boolean) => {
+       console.info('serial device request right result: ' + result);
+       this.logInfo_ += '\n[INFO] serial device request right result: ' + JSON.stringify(result);
+     }).catch((error: BusinessError) => {
+       console.error(`usb device request right failed : ${error}`);
+       this.logInfo_ += '\n[ERROR] usb device request right failed: ' + JSON.stringify(error);
+     });
+   } else {
+     console.info('serial device already request right');
+     this.logInfo_ += '\n[INFO] serial device already request right';
+   }
+   this.portId_ = portId;
    ```
-   1. if (this.portList_ === undefined || this.portList_.length === 0) {
-   2. console.error('usbSerial portList is empty');
-   3. this.logInfo_ += '\n[ERROR] usbSerial portList is empty';
-   4. return;
-   5. }
-   6. let portList: serialManager.SerialPort[] = this.portList_;
-   7. let portId: number = portList[0].portId;
-   8. if (!serialManager.hasSerialRight(portId)) {
-   9. serialManager.requestSerialRight(portId).then((result: boolean) => {
-   10. console.info('serial device request right result: ' + result);
-   11. this.logInfo_ += '\n[INFO] serial device request right result: ' + JSON.stringify(result);
-   12. }).catch((error: BusinessError) => {
-   13. console.error(`usb device request right failed : ${error}`);
-   14. this.logInfo_ += '\n[ERROR] usb device request right failed: ' + JSON.stringify(error);
-   15. });
-   16. } else {
-   17. console.info('serial device already request right');
-   18. this.logInfo_ += '\n[INFO] serial device already request right';
-   19. }
-   20. this.portId_ = portId;
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/USB/USBManagerSerialSample/entry/src/main/ets/pages/Index.ets#L47-L70)
 4. 根据串口打开设备。
 
+   ```typescript
+   let portId: number = this.portId_;
+   try {
+     serialManager.open(portId)
+     console.info(`open usbSerial success, portId: ${portId}`);
+     this.logInfo_ += '\n[INFO] open usbSerial success, portId: ' + JSON.stringify(portId);
+   } catch (error) {
+     console.error(`open usbSerial error： ${error}`);
+     this.logInfo_ += '\n[ERROR] open usbSerial error: ' + JSON.stringify(error);
+   }
    ```
-   1. let portId: number = this.portId_;
-   2. try {
-   3. serialManager.open(portId)
-   4. console.info(`open usbSerial success, portId: ${portId}`);
-   5. this.logInfo_ += '\n[INFO] open usbSerial success, portId: ' + JSON.stringify(portId);
-   6. } catch (error) {
-   7. console.error(`open usbSerial error： ${error}`);
-   8. this.logInfo_ += '\n[ERROR] open usbSerial error: ' + JSON.stringify(error);
-   9. }
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/USB/USBManagerSerialSample/entry/src/main/ets/pages/Index.ets#L74-L84)
 5. 通过串口读取数据。
 
-   ```
-   1. let portId: number = this.portId_;
-   2. // 异步读取
-   3. let readBuffer: Uint8Array = new Uint8Array(64);
-   4. serialManager.read(portId, readBuffer, 2000).then((size: number) => {
-   5. console.info(`readAsync usbSerial success, readAsyncBuffer: ${readBuffer}`);
-   6. this.logInfo_ += '\n[INFO] readAsync usbSerial success, readAsyncBuffer: ' + JSON.stringify(readBuffer);
-   7. }).catch((error: Error) => {
-   8. console.error(`readAsync usbSerial error: ${error}`);
-   9. this.logInfo_ += '\n[ERROR] readAsync usbSerial error: ' + JSON.stringify(error);
-   10. })
+   ```typescript
+   let portId: number = this.portId_;
+   // 异步读取
+   let readBuffer: Uint8Array = new Uint8Array(64);
+   serialManager.read(portId, readBuffer, 2000).then((size: number) => {
+     console.info(`readAsync usbSerial success, readAsyncBuffer: ${readBuffer}`);
+     this.logInfo_ += '\n[INFO] readAsync usbSerial success, readAsyncBuffer: ' + JSON.stringify(readBuffer);
+   }).catch((error: Error) => {
+     console.error(`readAsync usbSerial error: ${error}`);
+     this.logInfo_ += '\n[ERROR] readAsync usbSerial error: ' + JSON.stringify(error);
+   })
 
-   12. // 同步读取
-   13. let readSyncBuffer: Uint8Array = new Uint8Array(64);
-   14. try {
-   15. serialManager.readSync(portId, readSyncBuffer, 2000);
-   16. console.info(`readSync usbSerial success, readSyncBuffer: ${readSyncBuffer}`);
-   17. this.logInfo_ += '\n[INFO] readSync usbSerial success, readSyncBuffer: ' + JSON.stringify(readSyncBuffer);
-   18. } catch (error) {
-   19. console.error(`readSync usbSerial error: ${error}`);
-   20. this.logInfo_ += '\n[ERROR] readSync usbSerial error: ' + JSON.stringify(error);
-   21. }
+   // 同步读取
+   let readSyncBuffer: Uint8Array = new Uint8Array(64);
+   try {
+     serialManager.readSync(portId, readSyncBuffer, 2000);
+     console.info(`readSync usbSerial success, readSyncBuffer: ${readSyncBuffer}`);
+     this.logInfo_ += '\n[INFO] readSync usbSerial success, readSyncBuffer: ' + JSON.stringify(readSyncBuffer);
+   } catch (error) {
+     console.error(`readSync usbSerial error: ${error}`);
+     this.logInfo_ += '\n[ERROR] readSync usbSerial error: ' + JSON.stringify(error);
+   }
    ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/USB/USBManagerSerialSample/entry/src/main/ets/pages/Index.ets#L88-L110)
 6. 通过串口写入数据。
 
-   ```
-   1. let portId: number = this.portId_;
-   2. // 异步写入
-   3. let writeBuffer: Uint8Array = new Uint8Array(buffer.from('Hello World', 'utf-8').buffer)
-   4. serialManager.write(portId, writeBuffer, 2000).then((size: number) => {
-   5. console.info(`writeAsync usbSerial success, writeAsyncBuffer: ${writeBuffer}`);
-   6. this.logInfo_ += '\n[INFO] writeAsync usbSerial success, writeAsyncBuffer: ' + JSON.stringify(writeBuffer);
-   7. }).catch((error: Error) => {
-   8. console.error(`writeAsync usbSerial error: ${error}`);
-   9. this.logInfo_ += '\n[ERROR] writeAsync usbSerial error: ' + JSON.stringify(error);
-   10. })
+   ```typescript
+   let portId: number = this.portId_;
+   // 异步写入
+   let writeBuffer: Uint8Array = new Uint8Array(buffer.from('Hello World', 'utf-8').buffer)
+   serialManager.write(portId, writeBuffer, 2000).then((size: number) => {
+     console.info(`writeAsync usbSerial success, writeAsyncBuffer: ${writeBuffer}`);
+     this.logInfo_ += '\n[INFO] writeAsync usbSerial success, writeAsyncBuffer: ' + JSON.stringify(writeBuffer);
+   }).catch((error: Error) => {
+     console.error(`writeAsync usbSerial error: ${error}`);
+     this.logInfo_ += '\n[ERROR] writeAsync usbSerial error: ' + JSON.stringify(error);
+   })
 
-   12. // 同步写入
-   13. let writeSyncBuffer: Uint8Array = new Uint8Array(buffer.from('Hello World', 'utf-8').buffer)
-   14. try {
-   15. serialManager.writeSync(portId, writeSyncBuffer, 2000);
-   16. console.info(`writeSync usbSerial success, writeSyncBuffer: ${writeSyncBuffer}`);
-   17. this.logInfo_ += '\n[INFO] writeSync usbSerial success, writeSyncBuffer: ' + JSON.stringify(writeSyncBuffer);
-   18. } catch (error) {
-   19. console.error(`writeSync usbSerial error: ${error}`);
-   20. this.logInfo_ += '\n[ERROR] writeSync usbSerial error: ' + JSON.stringify(error);
-   21. }
+   // 同步写入
+   let writeSyncBuffer: Uint8Array = new Uint8Array(buffer.from('Hello World', 'utf-8').buffer)
+   try {
+     serialManager.writeSync(portId, writeSyncBuffer, 2000);
+     console.info(`writeSync usbSerial success, writeSyncBuffer: ${writeSyncBuffer}`);
+     this.logInfo_ += '\n[INFO] writeSync usbSerial success, writeSyncBuffer: ' + JSON.stringify(writeSyncBuffer);
+   } catch (error) {
+     console.error(`writeSync usbSerial error: ${error}`);
+     this.logInfo_ += '\n[ERROR] writeSync usbSerial error: ' + JSON.stringify(error);
+   }
    ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/USB/USBManagerSerialSample/entry/src/main/ets/pages/Index.ets#L114-L136)
 7. 关闭串口设备。
 
+   ```typescript
+   let portId: number = this.portId_;
+   try {
+     serialManager.close(portId);
+     console.info(`close usbSerial success, portId: ${portId}`);
+     this.logInfo_ += '\n[INFO] close usbSerial success, portId: ' + JSON.stringify(portId);
+   } catch (error) {
+     console.error(`close usbSerial error: ${error}`);
+     this.logInfo_ += '\n[ERROR] close usbSerial error: ' + JSON.stringify(error);
+   }
    ```
-   1. let portId: number = this.portId_;
-   2. try {
-   3. serialManager.close(portId);
-   4. console.info(`close usbSerial success, portId: ${portId}`);
-   5. this.logInfo_ += '\n[INFO] close usbSerial success, portId: ' + JSON.stringify(portId);
-   6. } catch (error) {
-   7. console.error(`close usbSerial error: ${error}`);
-   8. this.logInfo_ += '\n[ERROR] close usbSerial error: ' + JSON.stringify(error);
-   9. }
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/USB/USBManagerSerialSample/entry/src/main/ets/pages/Index.ets#L181-L191)
 
 ### 调测验证
 

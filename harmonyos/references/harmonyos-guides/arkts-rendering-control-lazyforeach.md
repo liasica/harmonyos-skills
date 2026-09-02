@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-renderi
 title: LazyForEach：数据懒加载
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式渲染控制 > LazyForEach：数据懒加载
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:34+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:3064bb18bf4772f6647baa34abfa484d8c1e025f3587976e7642be176ffe781d
+scraped_at: 2026-09-02T14:59:16+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5d3c7aa8e6acf2ff3109b64112afe684f78ba81f38fe8bab4c94c553fd52f86e
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:3064bb18bf4772f6647baa34abfa484d8c1e025f3587976e7642be176ff
 
 本文档对应的API接口说明参见[LazyForEach API参数说明](../harmonyos-references/ts-rendering-control-lazyforeach.md)。
 
-说明
+**说明** 
 
 在大量子组件的场景下，LazyForEach与缓存列表项、动态预加载、组件复用等方法配合使用，可以进一步提升滑动帧率并降低应用内存占用。最佳实践请参考[长列表加载丢帧优化](../best-practices/bpta-best-practices-long-list.md)。
 
@@ -72,60 +72,58 @@ LazyForEach提供了参数keyGenerator，开发者可以使用该函数生成自
 
 BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型数组的BasicDataSource代码](arkts-rendering-control-lazyforeach.md#string类型数组的basicdatasource代码)。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+// BasicDataSource代码见文档末尾BasicDataSource示例代码: String类型数组的BasicDataSource代码。
+import { BasicDataSource } from './BasicDataSource';
+const TAG = '[Sample_RenderingControl]';
+const DOMAIN = 0xF811;
+
+class InitialDataSource extends BasicDataSource {
+  private dataArray: string[] = [];
+
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
+
+  public getData(index: number): string {
+    return this.dataArray[index];
+  }
+
+  public pushData(data: string): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
+}
+
+@Entry
+@Component
+struct InitialRendering {
+  private data: InitialDataSource = new InitialDataSource();
+
+  aboutToAppear() {
+    for (let i = 0; i <= 20; i++) {
+      this.data.pushData(`Hello ${i}`);
+    }
+  }
+
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (item: string) => {
+        ListItem() {
+          Row() {
+            Text(item).fontSize(50)
+              .onAppear(() => {
+                hilog.info(DOMAIN, TAG, `appear: ${item}`);
+              })
+          }.margin({ left: 10, right: 10 })
+        }
+      }, (item: string) => item)
+    }
+    .cachedCount(5)
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. // BasicDataSource代码见文档末尾BasicDataSource示例代码: String类型数组的BasicDataSource代码。
-3. import { BasicDataSource } from './BasicDataSource';
-4. const TAG = '[Sample_RenderingControl]';
-5. const DOMAIN = 0xF811;
-
-7. class InitialDataSource extends BasicDataSource {
-8. private dataArray: string[] = [];
-
-10. public totalCount(): number {
-11. return this.dataArray.length;
-12. }
-
-14. public getData(index: number): string {
-15. return this.dataArray[index];
-16. }
-
-18. public pushData(data: string): void {
-19. this.dataArray.push(data);
-20. this.notifyDataAdd(this.dataArray.length - 1);
-21. }
-22. }
-
-24. @Entry
-25. @Component
-26. struct InitialRendering {
-27. private data: InitialDataSource = new InitialDataSource();
-
-29. aboutToAppear() {
-30. for (let i = 0; i <= 20; i++) {
-31. this.data.pushData(`Hello ${i}`);
-32. }
-33. }
-
-35. build() {
-36. List({ space: 3 }) {
-37. LazyForEach(this.data, (item: string) => {
-38. ListItem() {
-39. Row() {
-40. Text(item).fontSize(50)
-41. .onAppear(() => {
-42. hilog.info(DOMAIN, TAG, `appear: ${item}`);
-43. })
-44. }.margin({ left: 10, right: 10 })
-45. }
-46. }, (item: string) => item)
-47. }
-48. .cachedCount(5)
-49. }
-50. }
-```
-
-[InitialRendering.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingLazyForeach/InitialRendering.ets#L16-L67)
 
 在上述代码中，keyGenerator函数的返回值是item。LazyForEach循环渲染时，为数据源数组项依次生成键值Hello 0、Hello 1 ... Hello 20，并创建对应的ListItem子组件渲染到界面上。
 
@@ -133,7 +131,7 @@ BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型�
 
 **LazyForEach正常首次渲染**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/jXutxDTdTLWE6sntsqtEXg/zh-cn_image_0000002589324011.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/HZHPWQOGR2qWzLiglAEYxA/zh-cn_image_0000002736432497.gif)
 
 **错误案例：键值相同导致渲染异常**
 
@@ -141,83 +139,81 @@ BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型�
 
 BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型数组的BasicDataSource代码](arkts-rendering-control-lazyforeach.md#string类型数组的basicdatasource代码)。
 
-```
-1. // BasicDataSource代码见文档末尾BasicDataSource示例代码: string类型数组的BasicDataSource代码。
-2. import { BasicDataSource } from './BasicDataSource';
+```ts
+// BasicDataSource代码见文档末尾BasicDataSource示例代码: string类型数组的BasicDataSource代码。
+import { BasicDataSource } from './BasicDataSource';
 
-4. class MyDataSource extends BasicDataSource {
-5. private dataArray: string[] = [];
+class MyDataSource extends BasicDataSource {
+  private dataArray: string[] = [];
 
-7. public totalCount(): number {
-8. return this.dataArray.length;
-9. }
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
 
-11. public getData(index: number): string {
-12. return this.dataArray[index];
-13. }
+  public getData(index: number): string {
+    return this.dataArray[index];
+  }
 
-15. public pushData(data: string): void {
-16. this.dataArray.push(data);
-17. this.notifyDataAdd(this.dataArray.length - 1);
-18. }
-19. }
+  public pushData(data: string): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
+}
 
-21. @Entry
-22. @Component
-23. struct MyComponent {
-24. private data: MyDataSource = new MyDataSource();
+@Entry
+@Component
+struct MyComponent {
+  private data: MyDataSource = new MyDataSource();
 
-26. aboutToAppear() {
-27. for (let i = 0; i <= 20; i++) {
-28. this.data.pushData(`Hello ${i}`);
-29. }
-30. }
+  aboutToAppear() {
+    for (let i = 0; i <= 20; i++) {
+      this.data.pushData(`Hello ${i}`);
+    }
+  }
 
-32. build() {
-33. List({ space: 3 }) {
-34. LazyForEach(this.data, (item: string) => {
-35. ListItem() {
-36. Row() {
-37. Text(item).fontSize(50)
-38. .onAppear(() => {
-39. console.info(`appear: ${item}`);
-40. })
-41. }.margin({ left: 10, right: 10 })
-42. }
-43. }, (item: string) => `same key`) // 自定义键值生成函数，返回相同键值
-44. }.cachedCount(5)
-45. }
-46. }
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (item: string) => {
+        ListItem() {
+          Row() {
+            Text(item).fontSize(50)
+              .onAppear(() => {
+                console.info(`appear: ${item}`);
+              })
+          }.margin({ left: 10, right: 10 })
+        }
+      }, (item: string) => `same key`) // 自定义键值生成函数，返回相同键值
+    }.cachedCount(5)
+  }
+}
 ```
 
 运行效果如下图所示。
 
 **LazyForEach存在相同键值**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/rZsF0WDSQfq-P1EIAY59zQ/zh-cn_image_0000002589243951.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/HNaxo6SiQJKWgy6x0SVfnA/zh-cn_image_0000002706833344.gif)
 
 修改上述示例中LazyForEach的键值生成函数，使每个数据项生成唯一的键值，保证渲染效果符合预期。
 
+```typescript
+LazyForEach(this.data, (item: string) => {
+  ListItem() {
+    Row() {
+      Text(item).fontSize(50)
+        .onAppear(() => {
+          hilog.info(DOMAIN, TAG, `appear: ${item}`);
+        })
+    }.margin({ left: 10, right: 10 })
+  }
+}, (item: string, index: number) => `${item}-${index}`) // 自定义键值生成函数，返回唯一键值
 ```
-1. LazyForEach(this.data, (item: string) => {
-2. ListItem() {
-3. Row() {
-4. Text(item).fontSize(50)
-5. .onAppear(() => {
-6. hilog.info(DOMAIN, TAG, `appear: ${item}`);
-7. })
-8. }.margin({ left: 10, right: 10 })
-9. }
-10. }, (item: string, index: number) => `${item}-${index}`) // 自定义键值生成函数，返回唯一键值
-```
-
-[InitialRendering2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingLazyForeach/InitialRendering2.ets#L53-L64)
 
 修改后运行效果如下图所示。
 
 **LazyForEach生成唯一键值**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/AlOcCK0hSSuZfDubZJYNiA/zh-cn_image_0000002558764144.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/uJcW3bmyQ-u9bXnsnvjIwA/zh-cn_image_0000002736312453.gif)
 
 ### 数据更新
 
@@ -227,62 +223,60 @@ BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型�
 
 BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型数组的BasicDataSource代码](arkts-rendering-control-lazyforeach.md#string类型数组的basicdatasource代码)。
 
+```typescript
+// BasicDataSource代码见文档末尾BasicDataSource示例代码: String类型数组的BasicDataSource代码。
+import { BasicDataSource } from './BasicDataSource';
+
+class MyDataSource extends BasicDataSource {
+  private dataArray: string[] = [];
+
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
+
+  public getData(index: number): string {
+    return this.dataArray[index];
+  }
+
+  public pushData(data: string): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
+}
+
+@Entry
+@Component
+struct AddingData {
+  private data: MyDataSource = new MyDataSource();
+
+  aboutToAppear() {
+    for (let i = 0; i <= 20; i++) {
+      this.data.pushData(`Hello ${i}`);
+    }
+  }
+
+  build() {
+    Scroll(){
+      List({ space: 3 }) {
+        LazyForEach(this.data, (item: string) => {
+          ListItem() {
+            Row() {
+              Text(item).fontSize(50)
+                .onAppear(() => {
+                })
+            }.margin({ left: 10, right: 10 })
+          }
+          .onClick(() => {
+            // 点击追加子组件
+            this.data.pushData(`Hello ${this.data.totalCount()}`);
+          })
+        }, (item: string) => item)
+      }
+      .cachedCount(5)
+    }
+  }
+}
 ```
-1. // BasicDataSource代码见文档末尾BasicDataSource示例代码: String类型数组的BasicDataSource代码。
-2. import { BasicDataSource } from './BasicDataSource';
-
-4. class MyDataSource extends BasicDataSource {
-5. private dataArray: string[] = [];
-
-7. public totalCount(): number {
-8. return this.dataArray.length;
-9. }
-
-11. public getData(index: number): string {
-12. return this.dataArray[index];
-13. }
-
-15. public pushData(data: string): void {
-16. this.dataArray.push(data);
-17. this.notifyDataAdd(this.dataArray.length - 1);
-18. }
-19. }
-
-21. @Entry
-22. @Component
-23. struct AddingData {
-24. private data: MyDataSource = new MyDataSource();
-
-26. aboutToAppear() {
-27. for (let i = 0; i <= 20; i++) {
-28. this.data.pushData(`Hello ${i}`);
-29. }
-30. }
-
-32. build() {
-33. Scroll(){
-34. List({ space: 3 }) {
-35. LazyForEach(this.data, (item: string) => {
-36. ListItem() {
-37. Row() {
-38. Text(item).fontSize(50)
-39. .onAppear(() => {
-40. })
-41. }.margin({ left: 10, right: 10 })
-42. }
-43. .onClick(() => {
-44. // 点击追加子组件
-45. this.data.pushData(`Hello ${this.data.totalCount()}`);
-46. })
-47. }, (item: string) => item)
-48. }
-49. .cachedCount(5)
-50. }
-51. }
-52. }
-```
-
-[AddingData.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingLazyForeach/AddingData.ets#L17-L70)
 
 点击LazyForEach的子组件时，首先调用数据源data的pushData方法。此方法会在数据源末尾添加数据，并调用notifyDataAdd方法。notifyDataAdd方法内部会调用listener.onDataAdd方法，通知LazyForEach有数据添加。LazyForEach接收到通知后，在该索引处新建子组件。
 
@@ -290,78 +284,76 @@ BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型�
 
 **LazyForEach添加数据**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/cc-yOZOdR8uFjIwhe9QRvw/zh-cn_image_0000002558604488.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/gSGMs6LVTKuOfzt8LjDJWA/zh-cn_image_0000002706673408.gif)
 
 **删除数据**
 
 BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型数组的BasicDataSource代码](arkts-rendering-control-lazyforeach.md#string类型数组的basicdatasource代码)。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+// BasicDataSource代码见文档末尾BasicDataSource示例代码: String类型数组的BasicDataSource代码。
+import { BasicDataSource } from './BasicDataSource';
+const TAG = '[Sample_RenderingControl]';
+const DOMAIN = 0xF811;
+
+class DataDeletionSource extends BasicDataSource {
+  private dataArray: string[] = [];
+
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
+
+  public getData(index: number): string {
+    return this.dataArray[index];
+  }
+
+  public getAllData(): string[] {
+    return this.dataArray;
+  }
+
+  public pushData(data: string): void {
+    this.dataArray.push(data);
+  }
+
+  public deleteData(index: number): void {
+    this.dataArray.splice(index, 1);
+    this.notifyDataDelete(index);
+  }
+}
+
+@Entry
+@Component
+struct DataDeletion {
+  private data: DataDeletionSource = new DataDeletionSource();
+
+  aboutToAppear() {
+    for (let i = 0; i <= 20; i++) {
+      this.data.pushData(`Hello ${i}`);
+    }
+  }
+
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (item: string, index: number) => {
+        ListItem() {
+          Row() {
+            Text(item).fontSize(50)
+              .onAppear(() => {
+                hilog.info(DOMAIN, TAG, `appear: ${item}`);
+              })
+          }.margin({ left: 10, right: 10 })
+        }
+        .onClick(() => {
+          // 点击删除子组件
+          this.data.deleteData(this.data.getAllData().indexOf(item));
+        })
+      }, (item: string) => item)
+    }
+    .cachedCount(5)
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. // BasicDataSource代码见文档末尾BasicDataSource示例代码: String类型数组的BasicDataSource代码。
-3. import { BasicDataSource } from './BasicDataSource';
-4. const TAG = '[Sample_RenderingControl]';
-5. const DOMAIN = 0xF811;
-
-7. class DataDeletionSource extends BasicDataSource {
-8. private dataArray: string[] = [];
-
-10. public totalCount(): number {
-11. return this.dataArray.length;
-12. }
-
-14. public getData(index: number): string {
-15. return this.dataArray[index];
-16. }
-
-18. public getAllData(): string[] {
-19. return this.dataArray;
-20. }
-
-22. public pushData(data: string): void {
-23. this.dataArray.push(data);
-24. }
-
-26. public deleteData(index: number): void {
-27. this.dataArray.splice(index, 1);
-28. this.notifyDataDelete(index);
-29. }
-30. }
-
-32. @Entry
-33. @Component
-34. struct DataDeletion {
-35. private data: DataDeletionSource = new DataDeletionSource();
-
-37. aboutToAppear() {
-38. for (let i = 0; i <= 20; i++) {
-39. this.data.pushData(`Hello ${i}`);
-40. }
-41. }
-
-43. build() {
-44. List({ space: 3 }) {
-45. LazyForEach(this.data, (item: string, index: number) => {
-46. ListItem() {
-47. Row() {
-48. Text(item).fontSize(50)
-49. .onAppear(() => {
-50. hilog.info(DOMAIN, TAG, `appear: ${item}`);
-51. })
-52. }.margin({ left: 10, right: 10 })
-53. }
-54. .onClick(() => {
-55. // 点击删除子组件
-56. this.data.deleteData(this.data.getAllData().indexOf(item));
-57. })
-58. }, (item: string) => item)
-59. }
-60. .cachedCount(5)
-61. }
-62. }
-```
-
-[DataDeletion.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingLazyForeach/DataDeletion.ets#L16-L79)
 
 点击LazyForEach的子组件时，调用数据源data的deleteData方法。此方法删除数据源中对应索引的数据，并调用notifyDataDelete方法。notifyDataDelete方法内调用listener.onDataDelete方法，通知 LazyForEach删除该索引处的子组件。
 
@@ -369,85 +361,83 @@ BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型�
 
 **LazyForEach删除数据**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/LitzQ-zgQrmFwK6ymLSYww/zh-cn_image_0000002589324013.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/ILvkv4K7Q_y4EVOOkais6Q/zh-cn_image_0000002736432499.gif)
 
 **交换数据**
 
 BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型数组的BasicDataSource代码](arkts-rendering-control-lazyforeach.md#string类型数组的basicdatasource代码)。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+// BasicDataSource代码见文档末尾BasicDataSource示例代码: String类型数组的BasicDataSource代码。
+import { BasicDataSource } from './BasicDataSource';
+const TAG = '[Sample_RenderingControl]';
+const DOMAIN = 0xF811;
+
+class SwappingDataSource extends BasicDataSource {
+  private dataArray: string[] = [];
+
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
+
+  public getData(index: number): string {
+    return this.dataArray[index];
+  }
+
+  public getAllData(): string[] {
+    return this.dataArray;
+  }
+
+  public pushData(data: string): void {
+    this.dataArray.push(data);
+  }
+
+  public moveData(from: number, to: number): void {
+    let temp: string = this.dataArray[from];
+    this.dataArray[from] = this.dataArray[to];
+    this.dataArray[to] = temp;
+    this.notifyDataMove(from, to);
+  }
+}
+
+@Entry
+@Component
+struct SwappingData {
+  private moved: number[] = [];
+  private data: SwappingDataSource = new SwappingDataSource();
+
+  aboutToAppear() {
+    for (let i = 0; i <= 20; i++) {
+      this.data.pushData(`Hello ${i}`);
+    }
+  }
+
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (item: string, index: number) => {
+        ListItem() {
+          Row() {
+            Text(item).fontSize(50)
+              .onAppear(() => {
+                hilog.info(DOMAIN, TAG, `appear: ${item}`);
+              })
+          }.margin({ left: 10, right: 10 })
+        }
+        .onClick(() => {
+          this.moved.push(this.data.getAllData().indexOf(item));
+          if (this.moved.length === 2) {
+            // 点击交换子组件
+            this.data.moveData(this.moved[0], this.moved[1]);
+            this.moved = [];
+          }
+        })
+      }, (item: string) => item)
+    }
+    .cachedCount(5)
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. // BasicDataSource代码见文档末尾BasicDataSource示例代码: String类型数组的BasicDataSource代码。
-3. import { BasicDataSource } from './BasicDataSource';
-4. const TAG = '[Sample_RenderingControl]';
-5. const DOMAIN = 0xF811;
-
-7. class SwappingDataSource extends BasicDataSource {
-8. private dataArray: string[] = [];
-
-10. public totalCount(): number {
-11. return this.dataArray.length;
-12. }
-
-14. public getData(index: number): string {
-15. return this.dataArray[index];
-16. }
-
-18. public getAllData(): string[] {
-19. return this.dataArray;
-20. }
-
-22. public pushData(data: string): void {
-23. this.dataArray.push(data);
-24. }
-
-26. public moveData(from: number, to: number): void {
-27. let temp: string = this.dataArray[from];
-28. this.dataArray[from] = this.dataArray[to];
-29. this.dataArray[to] = temp;
-30. this.notifyDataMove(from, to);
-31. }
-32. }
-
-34. @Entry
-35. @Component
-36. struct SwappingData {
-37. private moved: number[] = [];
-38. private data: SwappingDataSource = new SwappingDataSource();
-
-40. aboutToAppear() {
-41. for (let i = 0; i <= 20; i++) {
-42. this.data.pushData(`Hello ${i}`);
-43. }
-44. }
-
-46. build() {
-47. List({ space: 3 }) {
-48. LazyForEach(this.data, (item: string, index: number) => {
-49. ListItem() {
-50. Row() {
-51. Text(item).fontSize(50)
-52. .onAppear(() => {
-53. hilog.info(DOMAIN, TAG, `appear: ${item}`);
-54. })
-55. }.margin({ left: 10, right: 10 })
-56. }
-57. .onClick(() => {
-58. this.moved.push(this.data.getAllData().indexOf(item));
-59. if (this.moved.length === 2) {
-60. // 点击交换子组件
-61. this.data.moveData(this.moved[0], this.moved[1]);
-62. this.moved = [];
-63. }
-64. })
-65. }, (item: string) => item)
-66. }
-67. .cachedCount(5)
-68. }
-69. }
-```
-
-[SwappingData.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingLazyForeach/SwappingData.ets#L16-L86)
 
 首次点击LazyForEach的子组件时，将要移动的数据索引存储在moved成员变量中。再次点击LazyForEach的另一个子组件时，将首次点击的子组件移到此处。调用数据源data的moveData方法，该方法将数据源中的数据移动到预期位置，并调用notifyDataMove方法。notifyDataMove方法会调用listener.onDataMove方法，通知LazyForEach在该处有数据需要移动。LazyForEach将from和to索引处的子组件进行位置调换。
 
@@ -455,73 +445,71 @@ BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型�
 
 **LazyForEach交换数据**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/JXINDT8xRtGi3G7QF1lpyA/zh-cn_image_0000002589243953.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/M8kxqClTSqC7pDEVHSP-XQ/zh-cn_image_0000002706833346.gif)
 
 **改变单个数据**
 
 BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型数组的BasicDataSource代码](arkts-rendering-control-lazyforeach.md#string类型数组的basicdatasource代码)。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+// BasicDataSource代码见文档末尾BasicDataSource示例代码: String类型数组的BasicDataSource代码。
+import { BasicDataSource } from './BasicDataSource';
+const TAG = '[Sample_RenderingControl]';
+const DOMAIN = 0xF811;
+
+class ModifyingDataSource extends BasicDataSource {
+  private dataArray: string[] = [];
+
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
+
+  public getData(index: number): string {
+    return this.dataArray[index];
+  }
+
+  public pushData(data: string): void {
+    this.dataArray.push(data);
+  }
+
+  public changeData(index: number, data: string): void {
+    this.dataArray.splice(index, 1, data);
+    this.notifyDataChange(index);
+  }
+}
+
+@Entry
+@Component
+struct ModifyingIndividualDataItems {
+  private data: ModifyingDataSource = new ModifyingDataSource();
+
+  aboutToAppear() {
+    for (let i = 0; i <= 20; i++) {
+      this.data.pushData(`Hello ${i}`);
+    }
+  }
+
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (item: string, index: number) => {
+        ListItem() {
+          Row() {
+            Text(item).fontSize(50)
+              .onAppear(() => {
+                hilog.info(DOMAIN, TAG, `appear: ${item}`);
+              })
+          }.margin({ left: 10, right: 10 })
+        }
+        .onClick(() => {
+          this.data.changeData(index, item + '00');
+        })
+      }, (item: string) => item)
+    }
+    .cachedCount(5)
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. // BasicDataSource代码见文档末尾BasicDataSource示例代码: String类型数组的BasicDataSource代码。
-3. import { BasicDataSource } from './BasicDataSource';
-4. const TAG = '[Sample_RenderingControl]';
-5. const DOMAIN = 0xF811;
-
-7. class ModifyingDataSource extends BasicDataSource {
-8. private dataArray: string[] = [];
-
-10. public totalCount(): number {
-11. return this.dataArray.length;
-12. }
-
-14. public getData(index: number): string {
-15. return this.dataArray[index];
-16. }
-
-18. public pushData(data: string): void {
-19. this.dataArray.push(data);
-20. }
-
-22. public changeData(index: number, data: string): void {
-23. this.dataArray.splice(index, 1, data);
-24. this.notifyDataChange(index);
-25. }
-26. }
-
-28. @Entry
-29. @Component
-30. struct ModifyingIndividualDataItems {
-31. private data: ModifyingDataSource = new ModifyingDataSource();
-
-33. aboutToAppear() {
-34. for (let i = 0; i <= 20; i++) {
-35. this.data.pushData(`Hello ${i}`);
-36. }
-37. }
-
-39. build() {
-40. List({ space: 3 }) {
-41. LazyForEach(this.data, (item: string, index: number) => {
-42. ListItem() {
-43. Row() {
-44. Text(item).fontSize(50)
-45. .onAppear(() => {
-46. hilog.info(DOMAIN, TAG, `appear: ${item}`);
-47. })
-48. }.margin({ left: 10, right: 10 })
-49. }
-50. .onClick(() => {
-51. this.data.changeData(index, item + '00');
-52. })
-53. }, (item: string) => item)
-54. }
-55. .cachedCount(5)
-56. }
-57. }
-```
-
-[ModifyingIndividualDataItems.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingLazyForeach/ModifyingIndividualDataItems.ets#L16-L74)
 
 点击LazyForEach的子组件时，首先改变当前数据，然后调用数据源data的changeData方法。changeData 方法会调用notifyDataChange方法，该方法又会调用listener.onDataChange方法，通知LazyForEach组件数据发生变化。LazyForEach会在对应索引处重建子组件。
 
@@ -529,79 +517,77 @@ BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型�
 
 **LazyForEach改变单个数据**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/gu1WvTmGQyC3FlgfNGZwTg/zh-cn_image_0000002558764146.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/KSQWfkihTF2wGl5tCg5SAw/zh-cn_image_0000002736312455.gif)
 
 **改变多个数据**
 
 BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型数组的BasicDataSource代码](arkts-rendering-control-lazyforeach.md#string类型数组的basicdatasource代码)。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+// BasicDataSource代码见文档末尾BasicDataSource示例代码: String类型数组的BasicDataSource代码。
+import { BasicDataSource } from './BasicDataSource';
+const TAG = '[Sample_RenderingControl]';
+const DOMAIN = 0xF811;
+
+class ModifyingMultiSourceEleven extends BasicDataSource {
+  private dataArray: string[] = [];
+
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
+
+  public getData(index: number): string {
+    return this.dataArray[index];
+  }
+
+  public pushData(data: string): void {
+    this.dataArray.push(data);
+  }
+
+  public reloadData(): void {
+    this.notifyDataReload();
+  }
+
+  public modifyAllData(): void {
+    this.dataArray = this.dataArray.map((item: string) => {
+      return item + '0';
+    });
+  }
+}
+
+@Entry
+@Component
+struct ModifyingMultipleDataItems {
+  private data: ModifyingMultiSourceEleven = new ModifyingMultiSourceEleven();
+
+  aboutToAppear() {
+    for (let i = 0; i <= 20; i++) {
+      this.data.pushData(`Hello ${i}`);
+    }
+  }
+
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (item: string, index: number) => {
+        ListItem() {
+          Row() {
+            Text(item).fontSize(50)
+              .onAppear(() => {
+                hilog.info(DOMAIN, TAG, `appear: ${item}`);
+              })
+          }.margin({ left: 10, right: 10 })
+        }
+        .onClick(() => {
+          this.data.modifyAllData();
+          this.data.reloadData();
+        })
+      }, (item: string) => item)
+    }
+    .cachedCount(5)
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. // BasicDataSource代码见文档末尾BasicDataSource示例代码: String类型数组的BasicDataSource代码。
-3. import { BasicDataSource } from './BasicDataSource';
-4. const TAG = '[Sample_RenderingControl]';
-5. const DOMAIN = 0xF811;
-
-7. class ModifyingMultiSourceEleven extends BasicDataSource {
-8. private dataArray: string[] = [];
-
-10. public totalCount(): number {
-11. return this.dataArray.length;
-12. }
-
-14. public getData(index: number): string {
-15. return this.dataArray[index];
-16. }
-
-18. public pushData(data: string): void {
-19. this.dataArray.push(data);
-20. }
-
-22. public reloadData(): void {
-23. this.notifyDataReload();
-24. }
-
-26. public modifyAllData(): void {
-27. this.dataArray = this.dataArray.map((item: string) => {
-28. return item + '0';
-29. });
-30. }
-31. }
-
-33. @Entry
-34. @Component
-35. struct ModifyingMultipleDataItems {
-36. private data: ModifyingMultiSourceEleven = new ModifyingMultiSourceEleven();
-
-38. aboutToAppear() {
-39. for (let i = 0; i <= 20; i++) {
-40. this.data.pushData(`Hello ${i}`);
-41. }
-42. }
-
-44. build() {
-45. List({ space: 3 }) {
-46. LazyForEach(this.data, (item: string, index: number) => {
-47. ListItem() {
-48. Row() {
-49. Text(item).fontSize(50)
-50. .onAppear(() => {
-51. hilog.info(DOMAIN, TAG, `appear: ${item}`);
-52. })
-53. }.margin({ left: 10, right: 10 })
-54. }
-55. .onClick(() => {
-56. this.data.modifyAllData();
-57. this.data.reloadData();
-58. })
-59. }, (item: string) => item)
-60. }
-61. .cachedCount(5)
-62. }
-63. }
-```
-
-[ModifyingMultipleDataItems.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingLazyForeach/ModifyingMultipleDataItems.ets#L16-L80)
 
 点击LazyForEach的子组件时，首先调用data的modifyAllData方法修改数据源中的所有数据，然后调用数据源的reloadData方法。该方法内会调用notifyDataReload方法，notifyDataReload方法内会调用listener.onDataReloaded方法，通知LazyForEach重建所有子节点。LazyForEach会将原数据项和新数据项进行键值比对，若键值相同则使用缓存，若键值不同则重新构建。
 
@@ -609,191 +595,187 @@ BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型�
 
 **LazyForEach改变多个数据**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/rsnyUvF5QUGEHwRBzlNuIg/zh-cn_image_0000002558604490.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/QfvtP24KSLiJLl5DAId5oA/zh-cn_image_0000002706673410.gif)
 
 **精准批量修改数据**
 
 BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型数组的BasicDataSource代码](arkts-rendering-control-lazyforeach.md#string类型数组的basicdatasource代码)。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+// BasicDataSource代码见文档末尾BasicDataSource示例代码: String类型数组的BasicDataSource代码。
+import { BasicDataSource } from './BasicDataSource';
+const TAG = '[Sample_RenderingControl]';
+const DOMAIN = 0xF811;
+
+class PreciseModifyingDataSource extends BasicDataSource {
+  private dataArray: string[] = [];
+
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
+
+  public getData(index: number): string {
+    return this.dataArray[index];
+  }
+
+  public operateData(): void {
+    this.dataArray.splice(4, 0, this.dataArray[1]);
+    this.dataArray.splice(1, 1);
+    let temp = this.dataArray[4];
+    this.dataArray[4] = this.dataArray[6];
+    this.dataArray[6] = temp;
+    this.dataArray.splice(8, 0, 'Hello 1', 'Hello 2');
+    this.dataArray.splice(12, 2);
+    this.notifyDatasetChange([
+      { type: DataOperationType.MOVE, index: { from: 1, to: 3 } },
+      { type: DataOperationType.EXCHANGE, index: { start: 4, end: 6 } },
+      { type: DataOperationType.ADD, index: 8, count: 2 },
+      { type: DataOperationType.DELETE, index: 10, count: 2 }]);
+  }
+
+  public init(): void {
+    this.dataArray.splice(0, 0, 'Hello a', 'Hello b', 'Hello c', 'Hello d', 'Hello e', 'Hello f', 'Hello g', 'Hello h',
+      'Hello i', 'Hello j', 'Hello k', 'Hello l', 'Hello m', 'Hello n', 'Hello o', 'Hello p', 'Hello q', 'Hello r');
+  }
+}
+
+@Entry
+@Component
+struct PreciselyModifyingData {
+  private data: PreciseModifyingDataSource = new PreciseModifyingDataSource();
+
+  aboutToAppear() {
+    this.data.init();
+  }
+
+  build() {
+    Column() {
+      Text('change data')
+        .fontSize(10)
+        .backgroundColor(Color.Blue)
+        .fontColor(Color.White)
+        .borderRadius(50)
+        .padding(5)
+        .onClick(() => {
+          this.data.operateData();
+        })
+      List({ space: 3 }) {
+        LazyForEach(this.data, (item: string, index: number) => {
+          ListItem() {
+            Row() {
+              Text(item).fontSize(35)
+                .onAppear(() => {
+                  hilog.info(DOMAIN, TAG, `appear: ${item}`);
+                })
+            }.margin({ left: 10, right: 10 })
+          }
+
+        }, (item: string) => item + new Date().getTime())
+      }
+      .cachedCount(5)
+    }
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. // BasicDataSource代码见文档末尾BasicDataSource示例代码: String类型数组的BasicDataSource代码。
-3. import { BasicDataSource } from './BasicDataSource';
-4. const TAG = '[Sample_RenderingControl]';
-5. const DOMAIN = 0xF811;
-
-7. class PreciseModifyingDataSource extends BasicDataSource {
-8. private dataArray: string[] = [];
-
-10. public totalCount(): number {
-11. return this.dataArray.length;
-12. }
-
-14. public getData(index: number): string {
-15. return this.dataArray[index];
-16. }
-
-18. public operateData(): void {
-19. this.dataArray.splice(4, 0, this.dataArray[1]);
-20. this.dataArray.splice(1, 1);
-21. let temp = this.dataArray[4];
-22. this.dataArray[4] = this.dataArray[6];
-23. this.dataArray[6] = temp;
-24. this.dataArray.splice(8, 0, 'Hello 1', 'Hello 2');
-25. this.dataArray.splice(12, 2);
-26. this.notifyDatasetChange([
-27. { type: DataOperationType.MOVE, index: { from: 1, to: 3 } },
-28. { type: DataOperationType.EXCHANGE, index: { start: 4, end: 6 } },
-29. { type: DataOperationType.ADD, index: 8, count: 2 },
-30. { type: DataOperationType.DELETE, index: 10, count: 2 }]);
-31. }
-
-33. public init(): void {
-34. this.dataArray.splice(0, 0, 'Hello a', 'Hello b', 'Hello c', 'Hello d', 'Hello e', 'Hello f', 'Hello g', 'Hello h',
-35. 'Hello i', 'Hello j', 'Hello k', 'Hello l', 'Hello m', 'Hello n', 'Hello o', 'Hello p', 'Hello q', 'Hello r');
-36. }
-37. }
-
-39. @Entry
-40. @Component
-41. struct PreciselyModifyingData {
-42. private data: PreciseModifyingDataSource = new PreciseModifyingDataSource();
-
-44. aboutToAppear() {
-45. this.data.init();
-46. }
-
-48. build() {
-49. Column() {
-50. Text('change data')
-51. .fontSize(10)
-52. .backgroundColor(Color.Blue)
-53. .fontColor(Color.White)
-54. .borderRadius(50)
-55. .padding(5)
-56. .onClick(() => {
-57. this.data.operateData();
-58. })
-59. List({ space: 3 }) {
-60. LazyForEach(this.data, (item: string, index: number) => {
-61. ListItem() {
-62. Row() {
-63. Text(item).fontSize(35)
-64. .onAppear(() => {
-65. hilog.info(DOMAIN, TAG, `appear: ${item}`);
-66. })
-67. }.margin({ left: 10, right: 10 })
-68. }
-
-70. }, (item: string) => item + new Date().getTime())
-71. }
-72. .cachedCount(5)
-73. }
-74. }
-75. }
-```
-
-[PreciselyModifyingData.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingLazyForeach/PreciselyModifyingData.ets#L16-L92)
 
 onDatasetChange接口允许开发者一次性通知LazyForEach进行数据添加、删除、移动和交换等操作。在上述例子中，点击“change data”文本后，第二项数据被移动到第四项位置，第五项与第七项数据交换位置，并且从第九项开始添加了数据"Hello 1"和"Hello 2"，同时从第十一项开始删除了两项数据。
 
 **LazyForEach改变多个数据**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/GazpbhUHSLWId8tme06qkg/zh-cn_image_0000002589324015.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/JzTN0LxIR42Fc2FwH78oVw/zh-cn_image_0000002736432501.gif)
 
 第二个例子，直接给数组赋值，不涉及 splice 操作。operations直接从比较原数组和新数组得到。
 
 BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型数组的BasicDataSource代码](arkts-rendering-control-lazyforeach.md#string类型数组的basicdatasource代码)。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+// BasicDataSource代码见文档末尾BasicDataSource示例代码: String类型数组的BasicDataSource代码。
+import { BasicDataSource } from './BasicDataSource';
+const TAG = '[Sample_RenderingControl]';
+const DOMAIN = 0xF811;
+
+class PreciselyModifyingSource extends BasicDataSource {
+  private dataArray: string[] = [];
+
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
+
+  public getData(index: number): string {
+    return this.dataArray[index];
+  }
+
+  public operateData(): void {
+    this.dataArray =
+      ['Hello x', 'Hello 1', 'Hello 2', 'Hello b', 'Hello c', 'Hello e', 'Hello d', 'Hello f', 'Hello g', 'Hello h'];
+    this.notifyDatasetChange([
+      { type: DataOperationType.CHANGE, index: 0 },
+      { type: DataOperationType.ADD, index: 1, count: 2 },
+      { type: DataOperationType.EXCHANGE, index: { start: 3, end: 4 } },
+    ]);
+  }
+
+  public init(): void {
+    this.dataArray = ['Hello a', 'Hello b', 'Hello c', 'Hello d', 'Hello e', 'Hello f', 'Hello g', 'Hello h'];
+  }
+}
+
+@Entry
+@Component
+struct PreciselyModifyingDataTwo {
+  private data: PreciselyModifyingSource = new PreciselyModifyingSource();
+
+  aboutToAppear() {
+    this.data.init();
+  }
+
+  build() {
+    Column() {
+      Text('Multi-Data Change')
+        .fontSize(10)
+        .backgroundColor(Color.Blue)
+        .fontColor(Color.White)
+        .borderRadius(50)
+        .padding(5)
+        .onClick(() => {
+          this.data.operateData();
+        })
+      List({ space: 3 }) {
+        LazyForEach(this.data, (item: string, index: number) => {
+          ListItem() {
+            Row() {
+              Text(item).fontSize(35)
+                .onAppear(() => {
+                  hilog.info(DOMAIN, TAG, `appear: ${item}`);
+                })
+            }.margin({ left: 10, right: 10 })
+          }
+        }, (item: string) => item + new Date().getTime())
+      }
+      .cachedCount(5)
+    }
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. // BasicDataSource代码见文档末尾BasicDataSource示例代码: String类型数组的BasicDataSource代码。
-3. import { BasicDataSource } from './BasicDataSource';
-4. const TAG = '[Sample_RenderingControl]';
-5. const DOMAIN = 0xF811;
-
-7. class PreciselyModifyingSource extends BasicDataSource {
-8. private dataArray: string[] = [];
-
-10. public totalCount(): number {
-11. return this.dataArray.length;
-12. }
-
-14. public getData(index: number): string {
-15. return this.dataArray[index];
-16. }
-
-18. public operateData(): void {
-19. this.dataArray =
-20. ['Hello x', 'Hello 1', 'Hello 2', 'Hello b', 'Hello c', 'Hello e', 'Hello d', 'Hello f', 'Hello g', 'Hello h'];
-21. this.notifyDatasetChange([
-22. { type: DataOperationType.CHANGE, index: 0 },
-23. { type: DataOperationType.ADD, index: 1, count: 2 },
-24. { type: DataOperationType.EXCHANGE, index: { start: 3, end: 4 } },
-25. ]);
-26. }
-
-28. public init(): void {
-29. this.dataArray = ['Hello a', 'Hello b', 'Hello c', 'Hello d', 'Hello e', 'Hello f', 'Hello g', 'Hello h'];
-30. }
-31. }
-
-33. @Entry
-34. @Component
-35. struct PreciselyModifyingDataTwo {
-36. private data: PreciselyModifyingSource = new PreciselyModifyingSource();
-
-38. aboutToAppear() {
-39. this.data.init();
-40. }
-
-42. build() {
-43. Column() {
-44. Text('Multi-Data Change')
-45. .fontSize(10)
-46. .backgroundColor(Color.Blue)
-47. .fontColor(Color.White)
-48. .borderRadius(50)
-49. .padding(5)
-50. .onClick(() => {
-51. this.data.operateData();
-52. })
-53. List({ space: 3 }) {
-54. LazyForEach(this.data, (item: string, index: number) => {
-55. ListItem() {
-56. Row() {
-57. Text(item).fontSize(35)
-58. .onAppear(() => {
-59. hilog.info(DOMAIN, TAG, `appear: ${item}`);
-60. })
-61. }.margin({ left: 10, right: 10 })
-62. }
-63. }, (item: string) => item + new Date().getTime())
-64. }
-65. .cachedCount(5)
-66. }
-67. }
-68. }
-```
-
-[PreciselyModifyingData2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingLazyForeach/PreciselyModifyingData2.ets#L16-L85)
 
 **LazyForEach改变多个数据**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/7mEr2KsES_iaoo0GkimIpA/zh-cn_image_0000002589243955.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/-9kOf-srSoWuwBDjcLS4Gw/zh-cn_image_0000002706833348.gif)
 
 使用该接口时请注意以下事项。
 
 1. 不要将onDatasetChange与其他操作数据的接口混用。
-2. 传入onDatasetChange的operations中，每一项operation的index均从修改前的原数组中查找。因此，operations中的index不总是与Datasource中的index一一对应，并且不能为负数。
+2. 传入onDatasetChange的operations中，每一项operation的index均从修改前的原数组中查找。因此，operations中的index不总是与DataSource中的index一一对应，并且不能为负数。
 
    第一个例子清楚地显示了这一点:
 
-   ```
-   1. // 修改之前的数组
-   2. ['Hello a','Hello b','Hello c','Hello d','Hello e','Hello f','Hello g','Hello h','Hello i','Hello j','Hello k','Hello l','Hello m','Hello n','Hello o','Hello p','Hello q','Hello r']
-   3. // 修改之后的数组
-   4. ['Hello a','Hello c','Hello d','Hello b','Hello g','Hello f','Hello e','Hello h','Hello 1','Hello 2','Hello i','Hello j','Hello m','Hello n','Hello o','Hello p','Hello q','Hello r']
+   ```ts
+   // 修改之前的数组
+   ['Hello a','Hello b','Hello c','Hello d','Hello e','Hello f','Hello g','Hello h','Hello i','Hello j','Hello k','Hello l','Hello m','Hello n','Hello o','Hello p','Hello q','Hello r']
+   // 修改之后的数组
+   ['Hello a','Hello c','Hello d','Hello b','Hello g','Hello f','Hello e','Hello h','Hello 1','Hello 2','Hello i','Hello j','Hello m','Hello n','Hello o','Hello p','Hello q','Hello r']
    ```
 
    "Hello b" 从第2项变成第4项，因此第一个 operation 为 { type: DataOperationType.MOVE, index: { from: 1, to: 3 } }。
@@ -804,7 +786,7 @@ BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型�
 
    "Hello k","Hello l" 被删除了，而 "Hello k" 在原数组中的 index=10，因此第四个 operation 为 { type: DataOperationType.DELETE, index: 10, count: 2 }。
 3. 在同一个onDatasetChange批量处理数据时，如果多个DataOperation操作同一个index，只有第一个DataOperation生效。
-4. 部分操作由开发者传入键值，LazyForEach不再重复调用keygenerator获取键值，开发者需保证传入键值的正确性。
+4. 部分操作由开发者传入键值，LazyForEach不再重复调用keyGenerator获取键值，开发者需保证传入键值的正确性。
 5. 若操作集合中包含RELOAD操作，则其他操作均不生效。
 
 ## 高级特性
@@ -815,83 +797,81 @@ BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型�
 
 GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: [泛型数组的BasicDataSource代码](arkts-rendering-control-lazyforeach.md#泛型数组的basicdatasource代码)。
 
+```typescript
+// GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: 泛型数组的BasicDataSource代码。
+import { GenericBasicDataSource } from './GenericBasicDataSource';
+
+class MySubDataSource extends GenericBasicDataSource<StringData> {
+  private dataArray: StringData[] = [];
+
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
+
+  public getData(index: number): StringData {
+    return this.dataArray[index];
+  }
+
+  public pushData(data: StringData): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
+}
+
+@Observed
+class StringData {
+  public message: string;
+
+  constructor(message: string) {
+    this.message = message;
+  }
+}
+
+@Entry
+@Component
+struct ChangingDataSubproperties {
+  private data: MySubDataSource = new MySubDataSource();
+
+  aboutToAppear() {
+    for (let i = 0; i <= 20; i++) {
+      this.data.pushData(new StringData(`Hello ${i}`));
+    }
+  }
+
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (item: StringData, index: number) => {
+        ListItem() {
+          ChangingDataSubpropertiesChildComponent({ data: item })
+        }
+        .onClick(() => {
+          item.message += '0';
+        })
+      }, (item: StringData, index: number) => index.toString())
+    }
+    .cachedCount(5)
+  }
+}
+
+@Component
+struct ChangingDataSubpropertiesChildComponent {
+  @ObjectLink data: StringData;
+
+  build() {
+    Row() {
+      Text(this.data.message).fontSize(50)
+        .onAppear(() => {
+        })
+    }.margin({ left: 10, right: 10 })
+  }
+}
 ```
-1. // GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: 泛型数组的BasicDataSource代码。
-2. import { GenericBasicDataSource } from './GenericBasicDataSource';
-
-4. class MySubDataSource extends GenericBasicDataSource<StringData> {
-5. private dataArray: StringData[] = [];
-
-7. public totalCount(): number {
-8. return this.dataArray.length;
-9. }
-
-11. public getData(index: number): StringData {
-12. return this.dataArray[index];
-13. }
-
-15. public pushData(data: StringData): void {
-16. this.dataArray.push(data);
-17. this.notifyDataAdd(this.dataArray.length - 1);
-18. }
-19. }
-
-21. @Observed
-22. class StringData {
-23. public message: string;
-
-25. constructor(message: string) {
-26. this.message = message;
-27. }
-28. }
-
-30. @Entry
-31. @Component
-32. struct ChangingDataSubproperties {
-33. private data: MySubDataSource = new MySubDataSource();
-
-35. aboutToAppear() {
-36. for (let i = 0; i <= 20; i++) {
-37. this.data.pushData(new StringData(`Hello ${i}`));
-38. }
-39. }
-
-41. build() {
-42. List({ space: 3 }) {
-43. LazyForEach(this.data, (item: StringData, index: number) => {
-44. ListItem() {
-45. ChangingDataSubpropertiesChildComponent({ data: item })
-46. }
-47. .onClick(() => {
-48. item.message += '0';
-49. })
-50. }, (item: StringData, index: number) => index.toString())
-51. }
-52. .cachedCount(5)
-53. }
-54. }
-
-56. @Component
-57. struct ChangingDataSubpropertiesChildComponent {
-58. @ObjectLink data: StringData;
-
-60. build() {
-61. Row() {
-62. Text(this.data.message).fontSize(50)
-63. .onAppear(() => {
-64. })
-65. }.margin({ left: 10, right: 10 })
-66. }
-67. }
-```
-
-[ChangingDataSubproperties.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingLazyForeach/ChangingDataSubproperties.ets#L16-L84)
 
 点击LazyForEach子组件改变item.message时，重渲染依赖ChangingDataSubpropertiesChildComponent的@ObjectLink成员变量对子属性的监听。框架仅刷新Text(this.data.message)，不会重建整个ListItem子组件。
 
 **LazyForEach改变数据子属性**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/Sqyj7gYVSdKyqTrMJd9Lrw/zh-cn_image_0000002558764148.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/pCuw4Y_2Q6eS_LP2qzrbWA/zh-cn_image_0000002736312457.gif)
 
 ### 使用状态管理V2修改数据子属性
 
@@ -901,88 +881,86 @@ GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: [泛型�
 
 GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: [泛型数组的BasicDataSource代码](arkts-rendering-control-lazyforeach.md#泛型数组的basicdatasource代码)。
 
+```typescript
+// GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: 泛型数组的BasicDataSource代码。
+import { GenericBasicDataSource } from './GenericBasicDataSource';
+
+class PropertiesDataSource extends GenericBasicDataSource<ClassPropertiesStringData> {
+  private dataArray: ClassPropertiesStringData[] = [];
+
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
+
+  public getData(index: number): ClassPropertiesStringData {
+    return this.dataArray[index];
+  }
+
+  public pushData(data: ClassPropertiesStringData): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
+}
+
+class ClassPropertiesStringData {
+  public firstLayer: FirstLayer;
+
+  constructor(firstLayer: FirstLayer) {
+    this.firstLayer = firstLayer;
+  }
+}
+
+class FirstLayer {
+  public secondLayer: SecondLayer;
+
+  constructor(secondLayer: SecondLayer) {
+    this.secondLayer = secondLayer;
+  }
+}
+
+class SecondLayer {
+  public thirdLayer: ThirdLayer;
+
+  constructor(thirdLayer: ThirdLayer) {
+    this.thirdLayer = thirdLayer;
+  }
+}
+
+@ObservedV2
+class ThirdLayer {
+  @Trace public fourthLayer: string;
+
+  constructor(fourthLayer: string) {
+    this.fourthLayer = fourthLayer;
+  }
+}
+
+@Entry
+@ComponentV2
+struct ObservingNestedClassProperties {
+  private data: PropertiesDataSource = new PropertiesDataSource();
+
+  aboutToAppear() {
+    for (let i = 0; i <= 20; i++) {
+      this.data.pushData(new ClassPropertiesStringData(new FirstLayer(new SecondLayer(new ThirdLayer(`Hello ${i}`)))));
+    }
+  }
+
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (item: ClassPropertiesStringData, index: number) => {
+        ListItem() {
+          Text(item.firstLayer.secondLayer.thirdLayer.fourthLayer).fontSize(50)
+            .onClick(() => {
+              item.firstLayer.secondLayer.thirdLayer.fourthLayer += '!';
+            })
+        }
+      }, (item: ClassPropertiesStringData, index: number) => index.toString())
+    }
+    .cachedCount(5)
+  }
+}
 ```
-1. // GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: 泛型数组的BasicDataSource代码。
-2. import { GenericBasicDataSource } from './GenericBasicDataSource';
-
-4. class PropertiesDataSource extends GenericBasicDataSource<ClassPropertiesStringData> {
-5. private dataArray: ClassPropertiesStringData[] = [];
-
-7. public totalCount(): number {
-8. return this.dataArray.length;
-9. }
-
-11. public getData(index: number): ClassPropertiesStringData {
-12. return this.dataArray[index];
-13. }
-
-15. public pushData(data: ClassPropertiesStringData): void {
-16. this.dataArray.push(data);
-17. this.notifyDataAdd(this.dataArray.length - 1);
-18. }
-19. }
-
-21. class ClassPropertiesStringData {
-22. public firstLayer: FirstLayer;
-
-24. constructor(firstLayer: FirstLayer) {
-25. this.firstLayer = firstLayer;
-26. }
-27. }
-
-29. class FirstLayer {
-30. public secondLayer: SecondLayer;
-
-32. constructor(secondLayer: SecondLayer) {
-33. this.secondLayer = secondLayer;
-34. }
-35. }
-
-37. class SecondLayer {
-38. public thirdLayer: ThirdLayer;
-
-40. constructor(thirdLayer: ThirdLayer) {
-41. this.thirdLayer = thirdLayer;
-42. }
-43. }
-
-45. @ObservedV2
-46. class ThirdLayer {
-47. @Trace public fourthLayer: string;
-
-49. constructor(fourthLayer: string) {
-50. this.fourthLayer = fourthLayer;
-51. }
-52. }
-
-54. @Entry
-55. @ComponentV2
-56. struct ObservingNestedClassProperties {
-57. private data: PropertiesDataSource = new PropertiesDataSource();
-
-59. aboutToAppear() {
-60. for (let i = 0; i <= 20; i++) {
-61. this.data.pushData(new ClassPropertiesStringData(new FirstLayer(new SecondLayer(new ThirdLayer(`Hello ${i}`)))));
-62. }
-63. }
-
-65. build() {
-66. List({ space: 3 }) {
-67. LazyForEach(this.data, (item: ClassPropertiesStringData, index: number) => {
-68. ListItem() {
-69. Text(item.firstLayer.secondLayer.thirdLayer.fourthLayer).fontSize(50)
-70. .onClick(() => {
-71. item.firstLayer.secondLayer.thirdLayer.fourthLayer += '!';
-72. })
-73. }
-74. }, (item: ClassPropertiesStringData, index: number) => index.toString())
-75. }
-76. .cachedCount(5)
-77. }
-78. }
-```
-
-[ObservingNestedClassProperties.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingLazyForeach/ObservingNestedClassProperties.ets#L16-L95)
 
 @ObservedV2与@Trace用于装饰类以及类中的属性，配合使用能深度观测被装饰的类和属性。示例中，展示了深度嵌套类结构下，通过@ObservedV2和@Trace实现对多层嵌套属性变化的观测和子组件刷新。当点击子组件Text修改被@Trace修饰的嵌套类最内层的类成员属性时，仅重新渲染依赖了该属性的组件。
 
@@ -990,83 +968,81 @@ GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: [泛型�
 
 GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: [泛型数组的BasicDataSource代码](arkts-rendering-control-lazyforeach.md#泛型数组的basicdatasource代码)。
 
+```typescript
+// GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: 泛型数组的BasicDataSource代码。
+import { GenericBasicDataSource } from './GenericBasicDataSource';
+
+class MyStateDataSource extends GenericBasicDataSource<StateStringData> {
+  private dataArray: StateStringData[] = [];
+
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
+
+  public getData(index: number): StateStringData {
+    return this.dataArray[index];
+  }
+
+  public pushData(data: StateStringData): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
+}
+
+@ObservedV2
+class StateStringData {
+  @Trace public message: string;
+
+  constructor(message: string) {
+    this.message = message;
+  }
+}
+
+@Entry
+@ComponentV2
+struct ObservingComponentInternalState {
+  data: MyStateDataSource = new MyStateDataSource();
+
+  aboutToAppear() {
+    for (let i = 0; i <= 20; i++) {
+      this.data.pushData(new StateStringData(`Hello ${i}`));
+    }
+  }
+
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (item: StateStringData, index: number) => {
+        ListItem() {
+          Row() {
+            Text(item.message).fontSize(50)
+              .onClick(() => {
+                // 修改@ObservedV2装饰类中@Trace装饰的变量，触发刷新此处Text组件
+                item.message += '!';
+              })
+            ObservingComponentChildComponent()
+          }
+        }
+      }, (item: StateStringData, index: number) => index.toString())
+    }
+    .cachedCount(5)
+  }
+}
+
+@ComponentV2
+struct ObservingComponentChildComponent {
+  @Local message: string = '?';
+
+  build() {
+    Row() {
+      Text(this.message).fontSize(50)
+        .onClick(() => {
+          // 修改@Local装饰的变量，触发刷新此处Text组件
+          this.message += '?';
+        })
+    }
+  }
+}
 ```
-1. // GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: 泛型数组的BasicDataSource代码。
-2. import { GenericBasicDataSource } from './GenericBasicDataSource';
-
-4. class MyStateDataSource extends GenericBasicDataSource<StateStringData> {
-5. private dataArray: StateStringData[] = [];
-
-7. public totalCount(): number {
-8. return this.dataArray.length;
-9. }
-
-11. public getData(index: number): StateStringData {
-12. return this.dataArray[index];
-13. }
-
-15. public pushData(data: StateStringData): void {
-16. this.dataArray.push(data);
-17. this.notifyDataAdd(this.dataArray.length - 1);
-18. }
-19. }
-
-21. @ObservedV2
-22. class StateStringData {
-23. @Trace public message: string;
-
-25. constructor(message: string) {
-26. this.message = message;
-27. }
-28. }
-
-30. @Entry
-31. @ComponentV2
-32. struct ObservingComponentInternalState {
-33. data: MyStateDataSource = new MyStateDataSource();
-
-35. aboutToAppear() {
-36. for (let i = 0; i <= 20; i++) {
-37. this.data.pushData(new StateStringData(`Hello ${i}`));
-38. }
-39. }
-
-41. build() {
-42. List({ space: 3 }) {
-43. LazyForEach(this.data, (item: StateStringData, index: number) => {
-44. ListItem() {
-45. Row() {
-46. Text(item.message).fontSize(50)
-47. .onClick(() => {
-48. // 修改@ObservedV2装饰类中@Trace装饰的变量，触发刷新此处Text组件
-49. item.message += '!';
-50. })
-51. ObservingComponentChildComponent()
-52. }
-53. }
-54. }, (item: StateStringData, index: number) => index.toString())
-55. }
-56. .cachedCount(5)
-57. }
-58. }
-
-60. @ComponentV2
-61. struct ObservingComponentChildComponent {
-62. @Local message: string = '?';
-
-64. build() {
-65. Row() {
-66. Text(this.message).fontSize(50)
-67. .onClick(() => {
-68. // 修改@Local装饰的变量，触发刷新此处Text组件
-69. this.message += '?';
-70. })
-71. }
-72. }
-73. }
-```
-
-[ObservingComponentInternalState.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingLazyForeach/ObservingComponentInternalState.ets#L16-L90)
 
 @Local使得自定义组件内被修饰的变量具有观测其变化的能力，该变量必须在组件内部进行初始化。示例中，点击Text组件修改item.message触发变量更新并刷新使用该变量的组件，ObservingComponentChildComponent中@Local装饰的变量message变化时也能刷新子组件。
 
@@ -1074,75 +1050,73 @@ GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: [泛型�
 
 GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: [泛型数组的BasicDataSource代码](arkts-rendering-control-lazyforeach.md#泛型数组的basicdatasource代码)。
 
+```typescript
+// GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: 泛型数组的BasicDataSource代码。
+import { GenericBasicDataSource } from './GenericBasicDataSource';
+
+class MyInputDataSource extends GenericBasicDataSource<InputStringData> {
+  private dataArray: InputStringData[] = [];
+
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
+
+  public getData(index: number): InputStringData {
+    return this.dataArray[index];
+  }
+
+  public pushData(data: InputStringData): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
+}
+
+@ObservedV2
+class InputStringData {
+  @Trace public message: string;
+
+  constructor(message: string) {
+    this.message = message;
+  }
+}
+
+@Entry
+@ComponentV2
+struct ReceivingExternalInput {
+  data: MyInputDataSource = new MyInputDataSource();
+
+  aboutToAppear() {
+    for (let i = 0; i <= 20; i++) {
+      this.data.pushData(new InputStringData(`Hello ${i}`));
+    }
+  }
+
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (item: InputStringData, index: number) => {
+        ListItem() {
+          ReceivingExternalInputChildComponent({ data: item.message })
+            .onClick(() => {
+              item.message += '!';
+            })
+        }
+      }, (item: InputStringData, index: number) => index.toString())
+    }
+    .cachedCount(5)
+  }
+}
+
+@ComponentV2
+struct ReceivingExternalInputChildComponent {
+  @Param @Require data: string = '';
+
+  build() {
+    Row() {
+      Text(this.data).fontSize(50)
+    }
+  }
+}
 ```
-1. // GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: 泛型数组的BasicDataSource代码。
-2. import { GenericBasicDataSource } from './GenericBasicDataSource';
-
-4. class MyInputDataSource extends GenericBasicDataSource<InputStringData> {
-5. private dataArray: InputStringData[] = [];
-
-7. public totalCount(): number {
-8. return this.dataArray.length;
-9. }
-
-11. public getData(index: number): InputStringData {
-12. return this.dataArray[index];
-13. }
-
-15. public pushData(data: InputStringData): void {
-16. this.dataArray.push(data);
-17. this.notifyDataAdd(this.dataArray.length - 1);
-18. }
-19. }
-
-21. @ObservedV2
-22. class InputStringData {
-23. @Trace public message: string;
-
-25. constructor(message: string) {
-26. this.message = message;
-27. }
-28. }
-
-30. @Entry
-31. @ComponentV2
-32. struct ReceivingExternalInput {
-33. data: MyInputDataSource = new MyInputDataSource();
-
-35. aboutToAppear() {
-36. for (let i = 0; i <= 20; i++) {
-37. this.data.pushData(new InputStringData(`Hello ${i}`));
-38. }
-39. }
-
-41. build() {
-42. List({ space: 3 }) {
-43. LazyForEach(this.data, (item: InputStringData, index: number) => {
-44. ListItem() {
-45. ReceivingExternalInputChildComponent({ data: item.message })
-46. .onClick(() => {
-47. item.message += '!';
-48. })
-49. }
-50. }, (item: InputStringData, index: number) => index.toString())
-51. }
-52. .cachedCount(5)
-53. }
-54. }
-
-56. @ComponentV2
-57. struct ReceivingExternalInputChildComponent {
-58. @Param @Require data: string = '';
-
-60. build() {
-61. Row() {
-62. Text(this.data).fontSize(50)
-63. }
-64. }
-65. }
-```
-
-[ReceivingExternalInput.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingLazyForeach/ReceivingExternalInput.ets#L16-L82)
 
 使用@Param装饰器，子组件可以接受外部输入参数，实现父子组件间的数据同步。在ReceivingExternalInput中创建子组件时，传递item.message，并用@Param修饰的变量data与其关联。点击ListItem中的组件修改item.message，数据变化会从父组件传递到子组件，触发子组件刷新。
 
@@ -1152,73 +1126,71 @@ GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: [泛型�
 
 BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型数组的BasicDataSource代码](arkts-rendering-control-lazyforeach.md#string类型数组的basicdatasource代码)。
 
+```typescript
+// BasicDataSource代码见文档末尾BasicDataSource示例代码: String类型数组的BasicDataSource代码。
+import { BasicDataSource } from './BasicDataSource';
+
+class DragAndDropDataSource extends BasicDataSource {
+  private dataArray: string[] = [];
+
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
+
+  public getData(index: number): string {
+    return this.dataArray[index];
+  }
+
+  public moveDataWithoutNotify(from: number, to: number): void {
+    let tmp = this.dataArray.splice(from, 1);
+    this.dataArray.splice(to, 0, tmp[0]);
+  }
+
+  public pushData(data: string): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
+}
+
+@Entry
+@Component
+struct DragandDropSorting {
+  private data: DragAndDropDataSource = new DragAndDropDataSource();
+
+  aboutToAppear(): void {
+    for (let i = 0; i < 100; i++) {
+      this.data.pushData(i.toString());
+    }
+  }
+
+  build() {
+    Row() {
+      List() {
+        LazyForEach(this.data, (item: string) => {
+          ListItem() {
+            Text(item.toString())
+              .fontSize(16)
+              .textAlign(TextAlign.Center)
+              .size({ height: 100, width: '100%' })
+          }.margin(10)
+          .borderRadius(10)
+          .backgroundColor('#FFFFFFFF')
+        }, (item: string) => item)
+          .onMove((from: number, to: number) => {
+            this.data.moveDataWithoutNotify(from, to);
+          })
+      }
+      .width('100%')
+      .height('100%')
+      .backgroundColor('#FFDCDCDC')
+    }
+  }
+}
 ```
-1. // BasicDataSource代码见文档末尾BasicDataSource示例代码: String类型数组的BasicDataSource代码。
-2. import { BasicDataSource } from './BasicDataSource';
-
-4. class DragAndDropDataSource extends BasicDataSource {
-5. private dataArray: string[] = [];
-
-7. public totalCount(): number {
-8. return this.dataArray.length;
-9. }
-
-11. public getData(index: number): string {
-12. return this.dataArray[index];
-13. }
-
-15. public moveDataWithoutNotify(from: number, to: number): void {
-16. let tmp = this.dataArray.splice(from, 1);
-17. this.dataArray.splice(to, 0, tmp[0]);
-18. }
-
-20. public pushData(data: string): void {
-21. this.dataArray.push(data);
-22. this.notifyDataAdd(this.dataArray.length - 1);
-23. }
-24. }
-
-26. @Entry
-27. @Component
-28. struct DragandDropSorting {
-29. private data: DragAndDropDataSource = new DragAndDropDataSource();
-
-31. aboutToAppear(): void {
-32. for (let i = 0; i < 100; i++) {
-33. this.data.pushData(i.toString());
-34. }
-35. }
-
-37. build() {
-38. Row() {
-39. List() {
-40. LazyForEach(this.data, (item: string) => {
-41. ListItem() {
-42. Text(item.toString())
-43. .fontSize(16)
-44. .textAlign(TextAlign.Center)
-45. .size({ height: 100, width: '100%' })
-46. }.margin(10)
-47. .borderRadius(10)
-48. .backgroundColor('#FFFFFFFF')
-49. }, (item: string) => item)
-50. .onMove((from: number, to: number) => {
-51. this.data.moveDataWithoutNotify(from, to);
-52. })
-53. }
-54. .width('100%')
-55. .height('100%')
-56. .backgroundColor('#FFDCDCDC')
-57. }
-58. }
-59. }
-```
-
-[DragandDropSorting.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingLazyForeach/DragandDropSorting.ets#L16-L76)
 
 **LazyForEach拖拽排序效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/ltEz4OInSACIy55Mmmh8aQ/zh-cn_image_0000002558604492.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/h1FiduJpS--b1p9BBFrv8A/zh-cn_image_0000002706673412.gif)
 
 ## 常见问题
 
@@ -1226,67 +1198,67 @@ BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型�
 
 BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型数组的BasicDataSource代码](arkts-rendering-control-lazyforeach.md#string类型数组的basicdatasource代码)。
 
-```
-1. // BasicDataSource代码见文档末尾BasicDataSource示例代码: string类型数组的BasicDataSource代码。
-2. import { BasicDataSource } from './BasicDataSource';
+```ts
+// BasicDataSource代码见文档末尾BasicDataSource示例代码: string类型数组的BasicDataSource代码。
+import { BasicDataSource } from './BasicDataSource';
 
-4. class MyDataSource extends BasicDataSource {
-5. private dataArray: string[] = [];
+class MyDataSource extends BasicDataSource {
+  private dataArray: string[] = [];
 
-7. public totalCount(): number {
-8. return this.dataArray.length;
-9. }
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
 
-11. public getData(index: number): string {
-12. return this.dataArray[index];
-13. }
+  public getData(index: number): string {
+    return this.dataArray[index];
+  }
 
-15. public pushData(data: string): void {
-16. this.dataArray.push(data);
-17. this.notifyDataAdd(this.dataArray.length - 1);
-18. }
+  public pushData(data: string): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
 
-20. public deleteData(index: number): void {
-21. this.dataArray.splice(index, 1);
-22. this.notifyDataDelete(index);
-23. }
-24. }
+  public deleteData(index: number): void {
+    this.dataArray.splice(index, 1);
+    this.notifyDataDelete(index);
+  }
+}
 
-26. @Entry
-27. @Component
-28. struct MyComponent {
-29. private data: MyDataSource = new MyDataSource();
+@Entry
+@Component
+struct MyComponent {
+  private data: MyDataSource = new MyDataSource();
 
-31. aboutToAppear() {
-32. for (let i = 0; i <= 20; i++) {
-33. this.data.pushData(`Hello ${i}`);
-34. }
-35. }
+  aboutToAppear() {
+    for (let i = 0; i <= 20; i++) {
+      this.data.pushData(`Hello ${i}`);
+    }
+  }
 
-37. build() {
-38. List({ space: 3 }) {
-39. LazyForEach(this.data, (item: string, index: number) => {
-40. ListItem() {
-41. Row() {
-42. Text(item).fontSize(50)
-43. .onAppear(() => {
-44. console.info(`appear: ${item}`);
-45. })
-46. }.margin({ left: 10, right: 10 })
-47. }
-48. .onClick(() => {
-49. // 点击删除子组件
-50. this.data.deleteData(index);
-51. })
-52. }, (item: string) => item)
-53. }.cachedCount(5)
-54. }
-55. }
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (item: string, index: number) => {
+        ListItem() {
+          Row() {
+            Text(item).fontSize(50)
+              .onAppear(() => {
+                console.info(`appear: ${item}`);
+              })
+          }.margin({ left: 10, right: 10 })
+        }
+        .onClick(() => {
+          // 点击删除子组件
+          this.data.deleteData(index);
+        })
+      }, (item: string) => item)
+    }.cachedCount(5)
+  }
+}
 ```
 
 **LazyForEach删除数据非预期**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/iMtGnhs6TMSJK42kX2gs6w/zh-cn_image_0000002589324017.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/6RQDBlv0RbybALVwVyxuew/zh-cn_image_0000002736432503.gif)
 
 多次点击子组件时，发现删除的不一定是点击的那个子组件。原因在于删除某个子组件后，该子组件之后的数据项的index应减1，但实际后续数据项对应的子组件仍使用最初分配的index，itemGenerator中的index未更新，导致删除结果与预期不符。
 
@@ -1294,161 +1266,159 @@ BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型�
 
 BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型数组的BasicDataSource代码](arkts-rendering-control-lazyforeach.md#string类型数组的basicdatasource代码)。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+// BasicDataSource代码见文档末尾BasicDataSource示例代码: String类型数组的BasicDataSource代码。
+import { BasicDataSource } from './BasicDataSource';
+const TAG = '[Sample_RenderingControl]';
+const DOMAIN = 0xF811;
+
+class UnexpectedDataSource extends BasicDataSource {
+  private dataArray: string[] = [];
+
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
+
+  public getData(index: number): string {
+    return this.dataArray[index];
+  }
+
+  public pushData(data: string): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
+
+  public deleteData(index: number): void {
+    this.dataArray.splice(index, 1);
+    this.notifyDataDelete(index);
+  }
+
+  public reloadData(): void {
+    this.notifyDataReload();
+  }
+}
+
+@Entry
+@Component
+struct UnexpectedRenderingResults {
+  private data: UnexpectedDataSource = new UnexpectedDataSource();
+
+  aboutToAppear() {
+    for (let i = 0; i <= 20; i++) {
+      this.data.pushData(`Hello ${i}`);
+    }
+  }
+
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (item: string, index: number) => {
+        ListItem() {
+          Row() {
+            Text(item).fontSize(50)
+              .onAppear(() => {
+                hilog.info(DOMAIN, TAG, `appear: ${item}`);
+              })
+          }.margin({ left: 10, right: 10 })
+        }
+        .onClick(() => {
+          // 点击删除子组件
+          this.data.deleteData(index);
+          // 重置所有子组件的index索引
+          this.data.reloadData();
+        })
+      }, (item: string, index: number) => item + index.toString())
+    }
+    .cachedCount(5)
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. // BasicDataSource代码见文档末尾BasicDataSource示例代码: String类型数组的BasicDataSource代码。
-3. import { BasicDataSource } from './BasicDataSource';
-4. const TAG = '[Sample_RenderingControl]';
-5. const DOMAIN = 0xF811;
-
-7. class UnexpectedDataSource extends BasicDataSource {
-8. private dataArray: string[] = [];
-
-10. public totalCount(): number {
-11. return this.dataArray.length;
-12. }
-
-14. public getData(index: number): string {
-15. return this.dataArray[index];
-16. }
-
-18. public pushData(data: string): void {
-19. this.dataArray.push(data);
-20. this.notifyDataAdd(this.dataArray.length - 1);
-21. }
-
-23. public deleteData(index: number): void {
-24. this.dataArray.splice(index, 1);
-25. this.notifyDataDelete(index);
-26. }
-
-28. public reloadData(): void {
-29. this.notifyDataReload();
-30. }
-31. }
-
-33. @Entry
-34. @Component
-35. struct UnexpectedRenderingResults {
-36. private data: UnexpectedDataSource = new UnexpectedDataSource();
-
-38. aboutToAppear() {
-39. for (let i = 0; i <= 20; i++) {
-40. this.data.pushData(`Hello ${i}`);
-41. }
-42. }
-
-44. build() {
-45. List({ space: 3 }) {
-46. LazyForEach(this.data, (item: string, index: number) => {
-47. ListItem() {
-48. Row() {
-49. Text(item).fontSize(50)
-50. .onAppear(() => {
-51. hilog.info(DOMAIN, TAG, `appear: ${item}`);
-52. })
-53. }.margin({ left: 10, right: 10 })
-54. }
-55. .onClick(() => {
-56. // 点击删除子组件
-57. this.data.deleteData(index);
-58. // 重置所有子组件的index索引
-59. this.data.reloadData();
-60. })
-61. }, (item: string, index: number) => item + index.toString())
-62. }
-63. .cachedCount(5)
-64. }
-65. }
-```
-
-[UnexpectedRenderingResults.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingLazyForeach/UnexpectedRenderingResults.ets#L16-L82)
 
 在删除一个数据项后调用reloadData方法，重建后面的数据项，以达到更新index索引的目的。要保证reloadData方法重建数据项，必须保证数据项能生成新的key。这里用了item + index.toString()保证被删除数据项后面的数据项都被重建。如果用item + Date.now().toString()替代，那么所有数据项都生成新的key，导致所有数据项都被重建。这种方法，效果是一样的，只是性能略差。
 
 **修复LazyForEach删除数据非预期**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/0Oq2lzldRm2yYOdohFjuYw/zh-cn_image_0000002589243957.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/e2F04Ia7QWCuVt6mbH7Guw/zh-cn_image_0000002706833350.gif)
 
 ### 重渲染时图片闪烁
 
 GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: [泛型数组的BasicDataSource代码](arkts-rendering-control-lazyforeach.md#泛型数组的basicdatasource代码)。
 
-```
-1. // GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: 泛型数组的BasicDataSource代码。
-2. import { GenericBasicDataSource } from './GenericBasicDataSource';
+```ts
+// GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: 泛型数组的BasicDataSource代码。
+import { GenericBasicDataSource } from './GenericBasicDataSource';
 
-4. class MyDataSource extends GenericBasicDataSource<StringData> {
-5. private dataArray: StringData[] = [];
+class MyDataSource extends GenericBasicDataSource<StringData> {
+  private dataArray: StringData[] = [];
 
-7. public totalCount(): number {
-8. return this.dataArray.length;
-9. }
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
 
-11. public getData(index: number): StringData {
-12. return this.dataArray[index];
-13. }
+  public getData(index: number): StringData {
+    return this.dataArray[index];
+  }
 
-15. public pushData(data: StringData): void {
-16. this.dataArray.push(data);
-17. this.notifyDataAdd(this.dataArray.length - 1);
-18. }
+  public pushData(data: StringData): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
 
-20. public reloadData(): void {
-21. this.notifyDataReload();
-22. }
-23. }
+  public reloadData(): void {
+    this.notifyDataReload();
+  }
+}
 
-25. class StringData {
-26. message: string;
-27. imgSrc: Resource;
+class StringData {
+  message: string;
+  imgSrc: Resource;
 
-29. constructor(message: string, imgSrc: Resource) {
-30. this.message = message;
-31. this.imgSrc = imgSrc;
-32. }
-33. }
+  constructor(message: string, imgSrc: Resource) {
+    this.message = message;
+    this.imgSrc = imgSrc;
+  }
+}
 
-35. @Entry
-36. @Component
-37. struct MyComponent {
-38. private moved: number[] = [];
-39. private data: MyDataSource = new MyDataSource();
+@Entry
+@Component
+struct MyComponent {
+  private moved: number[] = [];
+  private data: MyDataSource = new MyDataSource();
 
-41. aboutToAppear() {
-42. for (let i = 0; i <= 20; i++) {
-43. // 此处'app.media.img'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
-44. this.data.pushData(new StringData(`Hello ${i}`, $r('app.media.img')));
-45. }
-46. }
+  aboutToAppear() {
+    for (let i = 0; i <= 20; i++) {
+      // 此处'app.media.img'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
+      this.data.pushData(new StringData(`Hello ${i}`, $r('app.media.img')));
+    }
+  }
 
-48. build() {
-49. List({ space: 3 }) {
-50. LazyForEach(this.data, (item: StringData, index: number) => {
-51. ListItem() {
-52. Column() {
-53. Text(item.message).fontSize(50)
-54. .onAppear(() => {
-55. console.info(`appear: ${item.message}`);
-56. })
-57. Image(item.imgSrc)
-58. .width(500)
-59. .height(200)
-60. }.margin({ left: 10, right: 10 })
-61. }
-62. .onClick(() => {
-63. item.message += '00';
-64. this.data.reloadData();
-65. })
-66. }, (item: StringData, index: number) => item.message) // 修改message属性会导致键值变化
-67. }.cachedCount(5)
-68. }
-69. }
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (item: StringData, index: number) => {
+        ListItem() {
+          Column() {
+            Text(item.message).fontSize(50)
+              .onAppear(() => {
+                console.info(`appear: ${item.message}`);
+              })
+            Image(item.imgSrc)
+              .width(500)
+              .height(200)
+          }.margin({ left: 10, right: 10 })
+        }
+        .onClick(() => {
+          item.message += '00';
+          this.data.reloadData();
+        })
+      }, (item: StringData, index: number) => item.message) // 修改message属性会导致键值变化
+    }.cachedCount(5)
+  }
+}
 ```
 
 **LazyForEach仅改变文字但是图片闪烁问题**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/YpEk7gfNTbyLHKWFgGlJVA/zh-cn_image_0000002558764150.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/T7Zy4ploT5a65ALSaMo34g/zh-cn_image_0000002736312459.gif)
 
 单击ListItem子组件时，只改变了数据项的message属性，但因为键值发生变化，导致整个ListItem被重建。由于Image组件异步刷新，视觉上图片会闪烁。解决方法是保持键值不变，并使用@ObjectLink和@Observed单独刷新子组件Text。
 
@@ -1456,181 +1426,179 @@ GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: [泛型�
 
 GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: [泛型数组的BasicDataSource代码](arkts-rendering-control-lazyforeach.md#泛型数组的basicdatasource代码)。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+// GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: 泛型数组的BasicDataSource代码。
+import { GenericBasicDataSource } from './GenericBasicDataSource';
+const TAG = '[Sample_RenderingControl]';
+const DOMAIN = 0xF811;
+
+class FliceringDataSource extends GenericBasicDataSource<ImageFliceringStringData> {
+  private dataArray: ImageFliceringStringData[] = [];
+
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
+
+  public getData(index: number): ImageFliceringStringData {
+    return this.dataArray[index];
+  }
+
+  public pushData(data: ImageFliceringStringData): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
+}
+
+// @Observed类装饰器 和 @ObjectLink 用于在涉及嵌套对象或数组的场景中进行双向数据同步
+@Observed
+class ImageFliceringStringData {
+  public message: string;
+  public imgSrc: Resource;
+
+  constructor(message: string, imgSrc: Resource) {
+    this.message = message;
+    this.imgSrc = imgSrc;
+  }
+}
+
+@Entry
+@Component
+struct ImageFlickeringDuringRerenders {
+  private data: FliceringDataSource = new FliceringDataSource();
+
+  aboutToAppear() {
+    for (let i = 0; i <= 20; i++) {
+      // 此处'app.media.img'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
+      this.data.pushData(new ImageFliceringStringData(`Hello ${i}`, $r('app.media.img')));
+    }
+  }
+
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (item: ImageFliceringStringData, index: number) => {
+        ListItem() {
+          ImageFlickeringChildComponent({ data: item })
+        }
+        .onClick(() => {
+          item.message += '0';
+        })
+      }, (item: ImageFliceringStringData, index: number) => index.toString()) // 键值不受message属性影响
+    }
+    .cachedCount(5)
+  }
+}
+
+@Component
+struct ImageFlickeringChildComponent {
+  // 用状态变量来驱动UI刷新，而不是通过LazyForEach的api来驱动UI刷新
+  @ObjectLink data: ImageFliceringStringData;
+
+  build() {
+    Column() {
+      Text(this.data.message).fontSize(50)
+        .onAppear(() => {
+          hilog.info(DOMAIN, TAG, `appear: ${this.data.message}`);
+        })
+      Image(this.data.imgSrc)
+        .width(500)
+        .height(200)
+    }.margin({ left: 10, right: 10 })
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. // GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: 泛型数组的BasicDataSource代码。
-3. import { GenericBasicDataSource } from './GenericBasicDataSource';
-4. const TAG = '[Sample_RenderingControl]';
-5. const DOMAIN = 0xF811;
-
-7. class FliceringDataSource extends GenericBasicDataSource<ImageFliceringStringData> {
-8. private dataArray: ImageFliceringStringData[] = [];
-
-10. public totalCount(): number {
-11. return this.dataArray.length;
-12. }
-
-14. public getData(index: number): ImageFliceringStringData {
-15. return this.dataArray[index];
-16. }
-
-18. public pushData(data: ImageFliceringStringData): void {
-19. this.dataArray.push(data);
-20. this.notifyDataAdd(this.dataArray.length - 1);
-21. }
-22. }
-
-24. // @Observed类装饰器 和 @ObjectLink 用于在涉及嵌套对象或数组的场景中进行双向数据同步
-25. @Observed
-26. class ImageFliceringStringData {
-27. public message: string;
-28. public imgSrc: Resource;
-
-30. constructor(message: string, imgSrc: Resource) {
-31. this.message = message;
-32. this.imgSrc = imgSrc;
-33. }
-34. }
-
-36. @Entry
-37. @Component
-38. struct ImageFlickeringDuringRerenders {
-39. private data: FliceringDataSource = new FliceringDataSource();
-
-41. aboutToAppear() {
-42. for (let i = 0; i <= 20; i++) {
-43. // 此处'app.media.img'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
-44. this.data.pushData(new ImageFliceringStringData(`Hello ${i}`, $r('app.media.img')));
-45. }
-46. }
-
-48. build() {
-49. List({ space: 3 }) {
-50. LazyForEach(this.data, (item: ImageFliceringStringData, index: number) => {
-51. ListItem() {
-52. ImageFlickeringChildComponent({ data: item })
-53. }
-54. .onClick(() => {
-55. item.message += '0';
-56. })
-57. }, (item: ImageFliceringStringData, index: number) => index.toString()) // 键值不受message属性影响
-58. }
-59. .cachedCount(5)
-60. }
-61. }
-
-63. @Component
-64. struct ImageFlickeringChildComponent {
-65. // 用状态变量来驱动UI刷新，而不是通过Lazyforeach的api来驱动UI刷新
-66. @ObjectLink data: ImageFliceringStringData;
-
-68. build() {
-69. Column() {
-70. Text(this.data.message).fontSize(50)
-71. .onAppear(() => {
-72. hilog.info(DOMAIN, TAG, `appear: ${this.data.message}`);
-73. })
-74. Image(this.data.imgSrc)
-75. .width(500)
-76. .height(200)
-77. }.margin({ left: 10, right: 10 })
-78. }
-79. }
-```
-
-[ImageFlickeringDuringRerenders.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingLazyForeach/ImageFlickeringDuringRerenders.ets#L16-L96)
 
 **修复LazyForEach仅改变文字但是图片闪烁问题**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/u9Jxu9sdR8ytAuE6pL4vnA/zh-cn_image_0000002558604494.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/KMuFORHgTpW5UzeRw_iTkQ/zh-cn_image_0000002706673414.gif)
 
 ### @ObjectLink属性变化UI未更新
 
 GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: [泛型数组的BasicDataSource代码](arkts-rendering-control-lazyforeach.md#泛型数组的basicdatasource代码)。
 
-```
-1. // GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: 泛型数组的BasicDataSource代码。
-2. import { GenericBasicDataSource } from './GenericBasicDataSource';
+```ts
+// GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: 泛型数组的BasicDataSource代码。
+import { GenericBasicDataSource } from './GenericBasicDataSource';
 
-4. class MyDataSource extends GenericBasicDataSource<StringData> {
-5. private dataArray: StringData[] = [];
+class MyDataSource extends GenericBasicDataSource<StringData> {
+  private dataArray: StringData[] = [];
 
-7. public totalCount(): number {
-8. return this.dataArray.length;
-9. }
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
 
-11. public getData(index: number): StringData {
-12. return this.dataArray[index];
-13. }
+  public getData(index: number): StringData {
+    return this.dataArray[index];
+  }
 
-15. public pushData(data: StringData): void {
-16. this.dataArray.push(data);
-17. this.notifyDataAdd(this.dataArray.length - 1);
-18. }
-19. }
+  public pushData(data: StringData): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
+}
 
-21. @Observed
-22. class StringData {
-23. message: NestedString;
+@Observed
+class StringData {
+  message: NestedString;
 
-25. constructor(message: NestedString) {
-26. this.message = message;
-27. }
-28. }
+  constructor(message: NestedString) {
+    this.message = message;
+  }
+}
 
-30. @Observed
-31. class NestedString {
-32. message: string;
+@Observed
+class NestedString {
+  message: string;
 
-34. constructor(message: string) {
-35. this.message = message;
-36. }
-37. }
+  constructor(message: string) {
+    this.message = message;
+  }
+}
 
-39. @Entry
-40. @Component
-41. struct MyComponent {
-42. private moved: number[] = [];
-43. private data: MyDataSource = new MyDataSource();
+@Entry
+@Component
+struct MyComponent {
+  private moved: number[] = [];
+  private data: MyDataSource = new MyDataSource();
 
-45. aboutToAppear() {
-46. for (let i = 0; i <= 20; i++) {
-47. this.data.pushData(new StringData(new NestedString(`Hello ${i}`)));
-48. }
-49. }
+  aboutToAppear() {
+    for (let i = 0; i <= 20; i++) {
+      this.data.pushData(new StringData(new NestedString(`Hello ${i}`)));
+    }
+  }
 
-51. build() {
-52. List({ space: 3 }) {
-53. LazyForEach(this.data, (item: StringData, index: number) => {
-54. ListItem() {
-55. ChildComponent({ data: item })
-56. }
-57. .onClick(() => {
-58. item.message.message += '0';
-59. })
-60. }, (item: StringData, index: number) => item.message.message + index.toString())
-61. }.cachedCount(5)
-62. }
-63. }
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (item: StringData, index: number) => {
+        ListItem() {
+          ChildComponent({ data: item })
+        }
+        .onClick(() => {
+          item.message.message += '0';
+        })
+      }, (item: StringData, index: number) => item.message.message + index.toString())
+    }.cachedCount(5)
+  }
+}
 
-65. @Component
-66. struct ChildComponent {
-67. @ObjectLink data: StringData;
+@Component
+struct ChildComponent {
+  @ObjectLink data: StringData;
 
-69. build() {
-70. Row() {
-71. Text(this.data.message.message).fontSize(50)
-72. .onAppear(() => {
-73. console.info(`appear: ${this.data.message.message}`);
-74. })
-75. }.margin({ left: 10, right: 10 })
-76. }
-77. }
+  build() {
+    Row() {
+      Text(this.data.message.message).fontSize(50)
+        .onAppear(() => {
+          console.info(`appear: ${this.data.message.message}`);
+        })
+    }.margin({ left: 10, right: 10 })
+  }
+}
 ```
 
 **ObjectLink属性变化后UI未更新**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/l6si38ZXTYKUQ2AUBOkvwA/zh-cn_image_0000002589324019.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/2Ue5BATfSbuAjCj9dadeZA/zh-cn_image_0000002736432505.gif)
 
 @ObjectLink装饰的成员变量仅能监听到其子属性的变化，无法监听深层嵌套属性，因此，只能通过修改子属性来通知组件重新渲染。具体请查看[@ObjectLink装饰器与@Observed装饰器的详细使用方法和限制条件](arkts-observed-and-objectlink.md)。
 
@@ -1638,90 +1606,88 @@ GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: [泛型�
 
 GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: [泛型数组的BasicDataSource代码](arkts-rendering-control-lazyforeach.md#泛型数组的basicdatasource代码)。
 
+```typescript
+// GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: 泛型数组的BasicDataSource代码。
+import { GenericBasicDataSource } from './GenericBasicDataSource';
+
+class UINoteRenderingSource extends GenericBasicDataSource<UINoteRenderingStringData> {
+  private dataArray: UINoteRenderingStringData[] = [];
+
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
+
+  public getData(index: number): UINoteRenderingStringData {
+    return this.dataArray[index];
+  }
+
+  public pushData(data: UINoteRenderingStringData): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
+}
+
+@Observed
+class UINoteRenderingStringData {
+  public message: NestedString;
+
+  constructor(message: NestedString) {
+    this.message = message;
+  }
+}
+
+@Observed
+class NestedString {
+  public message: string;
+
+  constructor(message: string) {
+    this.message = message;
+  }
+}
+
+@Entry
+@Component
+struct UINotRerenderedWhenObjectLinkIsChanged {
+  private moved: number[] = [];
+  private data: UINoteRenderingSource = new UINoteRenderingSource();
+
+  aboutToAppear() {
+    for (let i = 0; i <= 20; i++) {
+      this.data.pushData(new UINoteRenderingStringData(new NestedString(`Hello ${i}`)));
+    }
+  }
+
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (item: UINoteRenderingStringData, index: number) => {
+        ListItem() {
+          UINotRerenderedChildComponent({ data: item })
+        }
+        .onClick(() => {
+          // @ObjectLink装饰的成员变量仅能监听到其子属性的变化，再深入嵌套的属性便无法观测到
+          item.message = new NestedString(item.message.message + '0');
+        })
+      }, (item: UINoteRenderingStringData, index: number) => item.message.message + index.toString())
+    }
+    .cachedCount(5)
+  }
+}
+
+@Component
+struct UINotRerenderedChildComponent {
+  @ObjectLink data: UINoteRenderingStringData;
+
+  build() {
+    Row() {
+      Text(this.data.message.message).fontSize(50)
+    }.margin({ left: 10, right: 10 })
+  }
+}
 ```
-1. // GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: 泛型数组的BasicDataSource代码。
-2. import { GenericBasicDataSource } from './GenericBasicDataSource';
-
-4. class UINoteRenderingSource extends GenericBasicDataSource<UINoteRenderingStringData> {
-5. private dataArray: UINoteRenderingStringData[] = [];
-
-7. public totalCount(): number {
-8. return this.dataArray.length;
-9. }
-
-11. public getData(index: number): UINoteRenderingStringData {
-12. return this.dataArray[index];
-13. }
-
-15. public pushData(data: UINoteRenderingStringData): void {
-16. this.dataArray.push(data);
-17. this.notifyDataAdd(this.dataArray.length - 1);
-18. }
-19. }
-
-21. @Observed
-22. class UINoteRenderingStringData {
-23. public message: NestedString;
-
-25. constructor(message: NestedString) {
-26. this.message = message;
-27. }
-28. }
-
-30. @Observed
-31. class NestedString {
-32. public message: string;
-
-34. constructor(message: string) {
-35. this.message = message;
-36. }
-37. }
-
-39. @Entry
-40. @Component
-41. struct UINotRerenderedWhenObjectLinkIsChanged {
-42. private moved: number[] = [];
-43. private data: UINoteRenderingSource = new UINoteRenderingSource();
-
-45. aboutToAppear() {
-46. for (let i = 0; i <= 20; i++) {
-47. this.data.pushData(new UINoteRenderingStringData(new NestedString(`Hello ${i}`)));
-48. }
-49. }
-
-51. build() {
-52. List({ space: 3 }) {
-53. LazyForEach(this.data, (item: UINoteRenderingStringData, index: number) => {
-54. ListItem() {
-55. UINotRerenderedChildComponent({ data: item })
-56. }
-57. .onClick(() => {
-58. // @ObjectLink装饰的成员变量仅能监听到其子属性的变化，再深入嵌套的属性便无法观测到
-59. item.message = new NestedString(item.message.message + '0');
-60. })
-61. }, (item: UINoteRenderingStringData, index: number) => item.message.message + index.toString())
-62. }
-63. .cachedCount(5)
-64. }
-65. }
-
-67. @Component
-68. struct UINotRerenderedChildComponent {
-69. @ObjectLink data: UINoteRenderingStringData;
-
-71. build() {
-72. Row() {
-73. Text(this.data.message.message).fontSize(50)
-74. }.margin({ left: 10, right: 10 })
-75. }
-76. }
-```
-
-[UINotRerenderedWhenObjectLinkIsChanged.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingLazyForeach/UINotRerenderedWhenObjectLinkIsChanged.ets#L16-L93)
 
 **修复ObjectLink属性变化后UI更新**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/uCjjyQh6QUqkrDq0SecAlA/zh-cn_image_0000002589243959.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/Rn2BFt4WQ3mv7N7l-682zg/zh-cn_image_0000002706833352.gif)
 
 ### 在List内使用屏幕闪烁
 
@@ -1729,159 +1695,157 @@ GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: [泛型�
 
 BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型数组的BasicDataSource代码](arkts-rendering-control-lazyforeach.md#string类型数组的basicdatasource代码)。
 
-```
-1. // BasicDataSource代码见文档末尾BasicDataSource示例代码: string类型数组的BasicDataSource代码。
-2. import { BasicDataSource } from './BasicDataSource';
+```ts
+// BasicDataSource代码见文档末尾BasicDataSource示例代码: string类型数组的BasicDataSource代码。
+import { BasicDataSource } from './BasicDataSource';
 
-4. class MyDataSource extends BasicDataSource {
-5. private dataArray: string[] = [];
+class MyDataSource extends BasicDataSource {
+  private dataArray: string[] = [];
 
-7. public totalCount(): number {
-8. return this.dataArray.length;
-9. }
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
 
-11. public getData(index: number): string {
-12. return this.dataArray[index];
-13. }
+  public getData(index: number): string {
+    return this.dataArray[index];
+  }
 
-15. public pushData(data: string): void {
-16. this.dataArray.push(data);
-17. this.notifyDataAdd(this.dataArray.length - 1);
-18. }
+  public pushData(data: string): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
 
-20. operateData(): void {
-21. const totalCount = this.dataArray.length;
-22. const batch = 5;
-23. for (let i = totalCount; i < totalCount + batch; i++) {
-24. this.dataArray.push(`Hello ${i}`);
-25. }
-26. this.notifyDataReload();
-27. }
-28. }
+  operateData(): void {
+    const totalCount = this.dataArray.length;
+    const batch = 5;
+    for (let i = totalCount; i < totalCount + batch; i++) {
+      this.dataArray.push(`Hello ${i}`);
+    }
+    this.notifyDataReload();
+  }
+}
 
-30. @Entry
-31. @Component
-32. struct MyComponent {
-33. private moved: number[] = [];
-34. private data: MyDataSource = new MyDataSource();
+@Entry
+@Component
+struct MyComponent {
+  private moved: number[] = [];
+  private data: MyDataSource = new MyDataSource();
 
-36. aboutToAppear() {
-37. for (let i = 0; i <= 10; i++) {
-38. this.data.pushData(`Hello ${i}`);
-39. }
-40. }
+  aboutToAppear() {
+    for (let i = 0; i <= 10; i++) {
+      this.data.pushData(`Hello ${i}`);
+    }
+  }
 
-42. build() {
-43. List({ space: 3 }) {
-44. LazyForEach(this.data, (item: string, index: number) => {
-45. ListItem() {
-46. Row() {
-47. Text(item)
-48. .width('100%')
-49. .height(80)
-50. .backgroundColor(Color.Gray)
-51. .onAppear(() => {
-52. console.info(`appear: ${item}`);
-53. })
-54. }.margin({ left: 10, right: 10 })
-55. }
-56. }, (item: string) => item)
-57. }.cachedCount(10)
-58. .onScrollIndex((start, end, center) => {
-59. if (end === this.data.totalCount() - 1) {
-60. console.info('scroll to end');
-61. this.data.operateData();
-62. }
-63. })
-64. }
-65. }
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (item: string, index: number) => {
+        ListItem() {
+          Row() {
+            Text(item)
+              .width('100%')
+              .height(80)
+              .backgroundColor(Color.Gray)
+              .onAppear(() => {
+                console.info(`appear: ${item}`);
+              })
+          }.margin({ left: 10, right: 10 })
+        }
+      }, (item: string) => item)
+    }.cachedCount(10)
+    .onScrollIndex((start, end, center) => {
+      if (end === this.data.totalCount() - 1) {
+        console.info('scroll to end');
+        this.data.operateData();
+      }
+    })
+  }
+}
 ```
 
 **当List下拉到底时，屏幕闪烁**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/TX7iln8rRTKzlIW1erqzzA/zh-cn_image_0000002558764152.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/6gExPbwLRNGZUKcki_bYkw/zh-cn_image_0000002736312461.gif)
 
 使用onDatasetChange代替onDataReloaded，不仅可以修复闪屏问题，还能提升加载性能。
 
 BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型数组的BasicDataSource代码](arkts-rendering-control-lazyforeach.md#string类型数组的basicdatasource代码)。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+// BasicDataSource代码见文档末尾BasicDataSource示例代码: String类型数组的BasicDataSource代码。
+import { BasicDataSource } from './BasicDataSource';
+const TAG = '[Sample_RenderingControl]';
+const DOMAIN = 0xF811;
+
+class ScreenFliceringDataSource extends BasicDataSource {
+  private dataArray: string[] = [];
+
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
+
+  public getData(index: number): string {
+    return this.dataArray[index];
+  }
+
+  public pushData(data: string): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
+
+  operateData(): void {
+    const totalCount = this.dataArray.length;
+    const batch = 5;
+    for (let i = totalCount; i < totalCount + batch; i++) {
+      this.dataArray.push(`Hello ${i}`);
+    }
+    // 替换 notifyDataReload
+    this.notifyDatasetChange([{ type: DataOperationType.ADD, index: totalCount, count: batch }]);
+  }
+}
+
+@Entry
+@Component
+struct ScreenFlickeringInList {
+  private moved: number[] = [];
+  private data: ScreenFliceringDataSource = new ScreenFliceringDataSource();
+
+  aboutToAppear() {
+    for (let i = 0; i <= 10; i++) {
+      this.data.pushData(`Hello ${i}`);
+    }
+  }
+
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (item: string, index: number) => {
+        ListItem() {
+          Row() {
+            Text(item)
+              .width('100%')
+              .height(80)
+              .backgroundColor(Color.Gray)
+              .onAppear(() => {
+                hilog.info(DOMAIN, TAG, `appear: ${item}`);
+              })
+          }.margin({ left: 10, right: 10 })
+        }
+      }, (item: string) => item)
+    }
+    .cachedCount(10)
+    .onScrollIndex((start, end, center) => {
+      if (end === this.data.totalCount() - 1) {
+        this.data.operateData();
+      }
+    })
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. // BasicDataSource代码见文档末尾BasicDataSource示例代码: String类型数组的BasicDataSource代码。
-3. import { BasicDataSource } from './BasicDataSource';
-4. const TAG = '[Sample_RenderingControl]';
-5. const DOMAIN = 0xF811;
-
-7. class ScreenFliceringDataSource extends BasicDataSource {
-8. private dataArray: string[] = [];
-
-10. public totalCount(): number {
-11. return this.dataArray.length;
-12. }
-
-14. public getData(index: number): string {
-15. return this.dataArray[index];
-16. }
-
-18. public pushData(data: string): void {
-19. this.dataArray.push(data);
-20. this.notifyDataAdd(this.dataArray.length - 1);
-21. }
-
-23. operateData(): void {
-24. const totalCount = this.dataArray.length;
-25. const batch = 5;
-26. for (let i = totalCount; i < totalCount + batch; i++) {
-27. this.dataArray.push(`Hello ${i}`);
-28. }
-29. // 替换 notifyDataReload
-30. this.notifyDatasetChange([{ type: DataOperationType.ADD, index: totalCount, count: batch }]);
-31. }
-32. }
-
-34. @Entry
-35. @Component
-36. struct ScreenFlickeringInList {
-37. private moved: number[] = [];
-38. private data: ScreenFliceringDataSource = new ScreenFliceringDataSource();
-
-40. aboutToAppear() {
-41. for (let i = 0; i <= 10; i++) {
-42. this.data.pushData(`Hello ${i}`);
-43. }
-44. }
-
-46. build() {
-47. List({ space: 3 }) {
-48. LazyForEach(this.data, (item: string, index: number) => {
-49. ListItem() {
-50. Row() {
-51. Text(item)
-52. .width('100%')
-53. .height(80)
-54. .backgroundColor(Color.Gray)
-55. .onAppear(() => {
-56. hilog.info(DOMAIN, TAG, `appear: ${item}`);
-57. })
-58. }.margin({ left: 10, right: 10 })
-59. }
-60. }, (item: string) => item)
-61. }
-62. .cachedCount(10)
-63. .onScrollIndex((start, end, center) => {
-64. if (end === this.data.totalCount() - 1) {
-65. this.data.operateData();
-66. }
-67. })
-68. }
-69. }
-```
-
-[ScreenFlickeringInList.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingLazyForeach/ScreenFlickeringInList.ets#L16-L86)
 
 **修复后，当List下拉到底时，屏幕不闪烁**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/xIgHseX5RUC1dqFvq7g5Vw/zh-cn_image_0000002558604496.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/FAQFP9u4RUWZnD-N1mfC-w/zh-cn_image_0000002706673416.gif)
 
 ### 组件复用渲染异常
 
@@ -1889,85 +1853,85 @@ BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型�
 
 GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: [泛型数组的BasicDataSource代码](arkts-rendering-control-lazyforeach.md#泛型数组的basicdatasource代码)。
 
-```
-1. // GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: 泛型数组的BasicDataSource代码。
-2. import { GenericBasicDataSource } from './GenericBasicDataSource';
+```ts
+// GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: 泛型数组的BasicDataSource代码。
+import { GenericBasicDataSource } from './GenericBasicDataSource';
 
-4. class MyDataSource extends GenericBasicDataSource<StringData> {
-5. private dataArray: StringData[] = [];
+class MyDataSource extends GenericBasicDataSource<StringData> {
+  private dataArray: StringData[] = [];
 
-7. public totalCount(): number {
-8. return this.dataArray.length;
-9. }
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
 
-11. public getData(index: number): StringData {
-12. return this.dataArray[index];
-13. }
+  public getData(index: number): StringData {
+    return this.dataArray[index];
+  }
 
-15. public pushData(data: StringData): void {
-16. this.dataArray.push(data);
-17. this.notifyDataAdd(this.dataArray.length - 1);
-18. }
-19. }
+  public pushData(data: StringData): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
+}
 
-22. class StringData {
-23. message: string;
+class StringData {
+  message: string;
 
-25. constructor(message: string) {
-26. this.message = message;
-27. }
-28. }
+  constructor(message: string) {
+    this.message = message;
+  }
+}
 
-30. @Entry
-31. @ComponentV2
-32. struct MyComponent {
-33. data: MyDataSource = new MyDataSource();
+@Entry
+@ComponentV2
+struct MyComponent {
+  data: MyDataSource = new MyDataSource();
 
-35. aboutToAppear() {
-36. for (let i = 0; i <= 30; i++) {
-37. this.data.pushData(new StringData(`Hello${i}`));
-38. }
-39. }
+  aboutToAppear() {
+    for (let i = 0; i <= 30; i++) {
+      this.data.pushData(new StringData(`Hello${i}`));
+    }
+  }
 
-41. build() {
-42. List({ space: 3 }) {
-43. LazyForEach(this.data, (item: StringData, index: number) => {
-44. ListItem() {
-45. ChildComponent({ data: item })
-46. .onAppear(() => {
-47. console.info(`onAppear: ${item.message}`);
-48. })
-49. }
-50. }, (item: StringData, index: number) => index.toString())
-51. }.cachedCount(5)
-52. }
-53. }
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (item: StringData, index: number) => {
+        ListItem() {
+          ChildComponent({ data: item })
+            .onAppear(() => {
+              console.info(`onAppear: ${item.message}`);
+            })
+        }
+      }, (item: StringData, index: number) => index.toString())
+    }.cachedCount(5)
+  }
+}
 
-55. @Reusable
-56. @Component
-57. struct ChildComponent {
-58. @State data: StringData = new StringData('');
+@Reusable
+@Component
+struct ChildComponent {
+  @State data: StringData = new StringData('');
 
-60. aboutToAppear(): void {
-61. console.info(`aboutToAppear: ${this.data.message}`);
-62. }
+  aboutToAppear(): void {
+    console.info(`aboutToAppear: ${this.data.message}`);
+  }
 
-64. aboutToRecycle(): void {
-65. console.info(`aboutToRecycle: ${this.data.message}`);
-66. }
+  aboutToRecycle(): void {
+    console.info(`aboutToRecycle: ${this.data.message}`);
+  }
 
-68. // 对复用的组件进行数据更新
-69. aboutToReuse(params: Record<string, ESObject>): void {
-70. this.data = params.data as StringData;
-71. console.info(`aboutToReuse: ${this.data.message}`);
-72. }
+  // 对复用的组件进行数据更新
+  aboutToReuse(params: Record<string, ESObject>): void {
+    this.data = params.data as StringData;
+    console.info(`aboutToReuse: ${this.data.message}`);
+  }
 
-74. build() {
-75. Row() {
-76. Text(this.data.message).fontSize(50)
-77. }
-78. }
-79. }
+  build() {
+    Row() {
+      Text(this.data.message).fontSize(50)
+    }
+  }
+}
 ```
 
 反例中，在@ComponentV2装饰的组件MyComponent中，LazyForEach列表使用了@Reusable装饰的组件ChildComponent，导致组件渲染失败。从日志中可以看到，组件触发了onAppear，但没有触发aboutToAppear。
@@ -1980,80 +1944,78 @@ GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: [泛型�
 
 BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型数组的BasicDataSource代码](arkts-rendering-control-lazyforeach.md#string类型数组的basicdatasource代码)。
 
-```
-1. // BasicDataSource代码见文档末尾BasicDataSource示例代码: string类型数组的BasicDataSource代码。
-2. import { BasicDataSource } from './BasicDataSource';
+```ts
+// BasicDataSource代码见文档末尾BasicDataSource示例代码: string类型数组的BasicDataSource代码。
+import { BasicDataSource } from './BasicDataSource';
 
-4. class MyDataSource extends BasicDataSource {
-5. private dataArray: string[] = [];
+class MyDataSource extends BasicDataSource {
+  private dataArray: string[] = [];
 
-7. public totalCount(): number {
-8. return this.dataArray.length;
-9. }
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
 
-11. public getData(index: number): string {
-12. return this.dataArray[index];
-13. }
+  public getData(index: number): string {
+    return this.dataArray[index];
+  }
 
-15. public pushData(data: string): void {
-16. this.dataArray.push(data);
-17. this.notifyDataAdd(this.dataArray.length - 1);
-18. }
+  public pushData(data: string): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
 
-20. public updateAllData(): void {
-21. this.dataArray = this.dataArray.map((item: string) => item + `!`);
-22. this.notifyDataReload();
-23. }
-24. }
+  public updateAllData(): void {
+    this.dataArray = this.dataArray.map((item: string) => item + `!`);
+    this.notifyDataReload();
+  }
+}
 
-26. @Entry
-27. @Component
-28. struct MyComponent {
-29. private data: MyDataSource = new MyDataSource();
+@Entry
+@Component
+struct MyComponent {
+  private data: MyDataSource = new MyDataSource();
 
-31. aboutToAppear() {
-32. for (let i = 0; i <= 20; i++) {
-33. this.data.pushData(`Hello ${i}`);
-34. }
-35. }
+  aboutToAppear() {
+    for (let i = 0; i <= 20; i++) {
+      this.data.pushData(`Hello ${i}`);
+    }
+  }
 
-37. build() {
-38. Column() {
-39. Button(`update all`)
-40. .onClick(() => {
-41. this.data.updateAllData();
-42. })
-43. List({ space: 3 }) {
-44. LazyForEach(this.data, (item: string) => {
-45. ListItem() {
-46. Text(item).fontSize(50)
-47. }
-48. })
-49. }.cachedCount(5)
-50. }
-51. }
-52. }
+  build() {
+    Column() {
+      Button(`update all`)
+        .onClick(() => {
+          this.data.updateAllData();
+        })
+      List({ space: 3 }) {
+        LazyForEach(this.data, (item: string) => {
+          ListItem() {
+            Text(item).fontSize(50)
+          }
+        })
+      }.cachedCount(5)
+    }
+  }
+}
 ```
 
 **点击按钮更新数据，组件不会刷新**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/Num8Ij5tR-qBnj_zQkCxDg/zh-cn_image_0000002589324021.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/V0e7Wn9jR_OudyBaq5HvcA/zh-cn_image_0000002736432507.gif)
 
 LazyForEach依赖生成的键值判断是否刷新子组件，如果更新的数据没有改变键值（如示例中开发者没有定义键值生成函数，此时键值仅与组件索引index有关，更新数据时键值不变），则LazyForEach不会刷新对应组件。
 
+```typescript
+LazyForEach(this.data, (item: string) => {
+  ListItem() {
+    Text(item).fontSize(50)
+  }
+}, (item: string) => item) // 定义键值生成函数
 ```
-1. LazyForEach(this.data, (item: string) => {
-2. ListItem() {
-3. Text(item).fontSize(50)
-4. }
-5. }, (item: string) => item) // 定义键值生成函数
-```
-
-[ComponentRerenderingFailure.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingLazyForeach/ComponentRerenderingFailure.ets#L58-L64)
 
 **定义键值生成函数后，点击按钮更新数据，组件刷新**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/0uR5XSBURG-DgbtNynHRiA/zh-cn_image_0000002589243961.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/A-PZyv7MQGCnIbwlBT1Rtg/zh-cn_image_0000002706833354.gif)
 
 ### 子组件尺寸缺失导致懒加载失效
 
@@ -2061,234 +2023,228 @@ LazyForEach依赖生成的键值判断是否刷新子组件，如果更新的数
 
 BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型数组的BasicDataSource代码](arkts-rendering-control-lazyforeach.md#string类型数组的basicdatasource代码)。
 
-```
-1. // BasicDataSource代码见文档末尾BasicDataSource示例代码: string类型数组的BasicDataSource代码。
-2. import { BasicDataSource } from './BasicDataSource';
+```ts
+// BasicDataSource代码见文档末尾BasicDataSource示例代码: string类型数组的BasicDataSource代码。
+import { BasicDataSource } from './BasicDataSource';
 
-4. class MyDataSource extends BasicDataSource {
-5. public dataArray: string[] = [];
+class MyDataSource extends BasicDataSource {
+  public dataArray: string[] = [];
 
-7. public totalCount(): number {
-8. return this.dataArray.length;
-9. }
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
 
-11. public getData(index: number): string {
-12. return this.dataArray[index];
-13. }
+  public getData(index: number): string {
+    return this.dataArray[index];
+  }
 
-15. public pushData(data: string): void {
-16. this.dataArray.push(data);
-17. this.notifyDataAdd(this.dataArray.length - 1);
-18. }
-19. }
+  public pushData(data: string): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
+}
 
-21. @Entry
-22. @Component
-23. struct MyComponent {
-24. private data: MyDataSource = new MyDataSource();
+@Entry
+@Component
+struct MyComponent {
+  private data: MyDataSource = new MyDataSource();
 
-26. aboutToAppear() {
-27. for (let i = 0; i <= 100; i++) {
-28. this.data.pushData(``);
-29. }
-30. }
+  aboutToAppear() {
+    for (let i = 0; i <= 100; i++) {
+      this.data.pushData(``);
+    }
+  }
 
-32. build() {
-33. List() {
-34. LazyForEach(this.data, (item: string, index: number) => {
-35. ChildComponent({ message: item, index: index })
-36. // 子组件未设置默认高度，首次渲染时所有数据项对应组件都被创建
-37. // .height(60)
-38. }, (item: string, index: number) => item + index)
-39. }
-40. .cachedCount(2)
-41. }
-42. }
+  build() {
+    List() {
+      LazyForEach(this.data, (item: string, index: number) => {
+        ChildComponent({ message: item, index: index })
+        // 子组件未设置默认高度，首次渲染时所有数据项对应组件都被创建
+        // .height(60)
+      }, (item: string, index: number) => item + index)
+    }
+    .cachedCount(2)
+  }
+}
 
-44. @Component
-45. struct ChildComponent {
-46. message: string = ``;
-47. index: number = -1;
+@Component
+struct ChildComponent {
+  message: string = ``;
+  index: number = -1;
 
-49. aboutToAppear(): void {
-50. console.info(`about to appear ${this.index}`);
-51. }
+  aboutToAppear(): void {
+    console.info(`about to appear ${this.index}`);
+  }
 
-53. build() {
-54. Text(this.message).fontSize(50)
-55. }
-56. }
+  build() {
+    Text(this.message).fontSize(50)
+  }
+}
 ```
 
 上述示例由于子组件ChildComponent的变量message初始值为空字符串，导致其内部的Text组件高度为 0，同时子组件未显式设置默认高度（如.height(60)），因此在首次渲染时所有子组件的高度均被计算为0。父组件List在基于高度计算可视范围时，判断所有子组件均位于可视区域内，导致懒加载机制失效，最终触发了全部数据项对应组件的创建（此示例无实际显示内容，可通过日志观察到所有about to appear打印）。
 
 为子组件设置默认高度，确保父组件能正确计算可视范围，从而恢复此场景下懒加载功能（此示例无实际显示内容，可通过日志观察到仅显示区域和预加载区域内的节点打印了about to appear日志）。
 
+```typescript
+LazyForEach(this.data, (item: string, index: number) => {
+  ChildComponent({ message: item, index: index })
+  // 设置子组件默认高度，首次渲染懒加载生效
+    .height(60)
+}, (item: string, index: number) => item + index)
 ```
-1. LazyForEach(this.data, (item: string, index: number) => {
-2. ChildComponent({ message: item, index: index })
-3. // 设置子组件默认高度，首次渲染懒加载生效
-4. .height(60)
-5. }, (item: string, index: number) => item + index)
-```
-
-[LazyLoadingFailure.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingLazyForeach/LazyLoadingFailure.ets#L48-L54)
 
 ## BasicDataSource示例代码
 
 ### string类型数组的BasicDataSource代码
 
+```typescript
+// BasicDataSource实现了IDataSource接口，用于管理listener监听，以及通知LazyForEach数据更新
+export class BasicDataSource implements IDataSource {
+  private listeners: DataChangeListener[] = [];
+  private originDataArray: string[] = [];
+
+  public totalCount(): number {
+    return this.originDataArray.length;
+  }
+
+  public getData(index: number): string {
+    return this.originDataArray[index];
+  }
+
+  // 该方法为框架侧调用，为LazyForEach组件向其数据源处添加listener监听
+  registerDataChangeListener(listener: DataChangeListener): void {
+    if (this.listeners.indexOf(listener) < 0) {
+      this.listeners.push(listener);
+    }
+  }
+
+  // 该方法为框架侧调用，为对应的LazyForEach组件在数据源处去除listener监听
+  unregisterDataChangeListener(listener: DataChangeListener): void {
+    const pos = this.listeners.indexOf(listener);
+    if (pos >= 0) {
+      this.listeners.splice(pos, 1);
+    }
+  }
+
+  // 通知LazyForEach组件需要重载所有子组件
+  notifyDataReload(): void {
+    this.listeners.forEach(listener => {
+      listener.onDataReloaded();
+    });
+  }
+
+  // 通知LazyForEach组件需要在index对应索引处添加子组件
+  notifyDataAdd(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataAdd(index);
+      // 写法2：listener.onDatasetChange([{type: DataOperationType.ADD, index: index}]);
+    });
+  }
+
+  // 通知LazyForEach组件在index对应索引处数据有变化，需要重建该子组件
+  notifyDataChange(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataChange(index);
+      // 写法2：listener.onDatasetChange([{type: DataOperationType.CHANGE, index: index}]);
+    });
+  }
+
+  // 通知LazyForEach组件需要在index对应索引处删除该子组件
+  notifyDataDelete(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataDelete(index);
+      // 写法2：listener.onDatasetChange([{type: DataOperationType.DELETE, index: index}]);
+    });
+  }
+
+  // 通知LazyForEach组件将from索引和to索引处的子组件进行交换
+  notifyDataMove(from: number, to: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataMove(from, to);
+      // 写法2：listener.onDatasetChange(
+      // [{type: DataOperationType.EXCHANGE, index: {start: from, end: to}}]);
+    });
+  }
+
+  notifyDatasetChange(operations: DataOperation[]): void {
+    this.listeners.forEach(listener => {
+      listener.onDatasetChange(operations);
+    });
+  }
+}
 ```
-1. // BasicDataSource实现了IDataSource接口，用于管理listener监听，以及通知LazyForEach数据更新
-2. export class BasicDataSource implements IDataSource {
-3. private listeners: DataChangeListener[] = [];
-4. private originDataArray: string[] = [];
-
-6. public totalCount(): number {
-7. return this.originDataArray.length;
-8. }
-
-10. public getData(index: number): string {
-11. return this.originDataArray[index];
-12. }
-
-14. // 该方法为框架侧调用，为LazyForEach组件向其数据源处添加listener监听
-15. registerDataChangeListener(listener: DataChangeListener): void {
-16. if (this.listeners.indexOf(listener) < 0) {
-17. this.listeners.push(listener);
-18. }
-19. }
-
-21. // 该方法为框架侧调用，为对应的LazyForEach组件在数据源处去除listener监听
-22. unregisterDataChangeListener(listener: DataChangeListener): void {
-23. const pos = this.listeners.indexOf(listener);
-24. if (pos >= 0) {
-25. this.listeners.splice(pos, 1);
-26. }
-27. }
-
-29. // 通知LazyForEach组件需要重载所有子组件
-30. notifyDataReload(): void {
-31. this.listeners.forEach(listener => {
-32. listener.onDataReloaded();
-33. });
-34. }
-
-36. // 通知LazyForEach组件需要在index对应索引处添加子组件
-37. notifyDataAdd(index: number): void {
-38. this.listeners.forEach(listener => {
-39. listener.onDataAdd(index);
-40. // 写法2：listener.onDatasetChange([{type: DataOperationType.ADD, index: index}]);
-41. });
-42. }
-
-44. // 通知LazyForEach组件在index对应索引处数据有变化，需要重建该子组件
-45. notifyDataChange(index: number): void {
-46. this.listeners.forEach(listener => {
-47. listener.onDataChange(index);
-48. // 写法2：listener.onDatasetChange([{type: DataOperationType.CHANGE, index: index}]);
-49. });
-50. }
-
-52. // 通知LazyForEach组件需要在index对应索引处删除该子组件
-53. notifyDataDelete(index: number): void {
-54. this.listeners.forEach(listener => {
-55. listener.onDataDelete(index);
-56. // 写法2：listener.onDatasetChange([{type: DataOperationType.DELETE, index: index}]);
-57. });
-58. }
-
-60. // 通知LazyForEach组件将from索引和to索引处的子组件进行交换
-61. notifyDataMove(from: number, to: number): void {
-62. this.listeners.forEach(listener => {
-63. listener.onDataMove(from, to);
-64. // 写法2：listener.onDatasetChange(
-65. // [{type: DataOperationType.EXCHANGE, index: {start: from, end: to}}]);
-66. });
-67. }
-
-69. notifyDatasetChange(operations: DataOperation[]): void {
-70. this.listeners.forEach(listener => {
-71. listener.onDatasetChange(operations);
-72. });
-73. }
-74. }
-```
-
-[BasicDataSource.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingLazyForeach/BasicDataSource.ets#L16-L91)
 
 ### 泛型数组的BasicDataSource代码
 
+```typescript
+// GenericBasicDataSource实现了IDataSource接口，用于管理listener监听，以及通知LazyForEach数据更新
+export class GenericBasicDataSource<T> implements IDataSource {
+  private listeners: DataChangeListener[] = [];
+  private originDataArray: T[] = [];
+
+  public totalCount(): number {
+    return this.originDataArray.length;
+  }
+
+  public getData(index: number): T {
+    return this.originDataArray[index];
+  }
+
+  // 该方法为框架侧调用，为LazyForEach组件向其数据源处添加listener监听
+  registerDataChangeListener(listener: DataChangeListener): void {
+    if (this.listeners.indexOf(listener) < 0) {
+      this.listeners.push(listener);
+    }
+  }
+
+  // 该方法为框架侧调用，为对应的LazyForEach组件在数据源处去除listener监听
+  unregisterDataChangeListener(listener: DataChangeListener): void {
+    const pos = this.listeners.indexOf(listener);
+    if (pos >= 0) {
+      this.listeners.splice(pos, 1);
+    }
+  }
+
+  // 通知LazyForEach组件需要重载所有子组件
+  notifyDataReload(): void {
+    this.listeners.forEach(listener => {
+      listener.onDataReloaded();
+    });
+  }
+
+  // 通知LazyForEach组件需要在index对应索引处添加子组件
+  notifyDataAdd(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataAdd(index);
+    });
+  }
+
+  // 通知LazyForEach组件在index对应索引处数据有变化，需要重建该子组件
+  notifyDataChange(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataChange(index);
+    });
+  }
+
+  // 通知LazyForEach组件需要在index对应索引处删除该子组件
+  notifyDataDelete(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataDelete(index);
+    });
+  }
+
+  // 通知LazyForEach组件将from索引和to索引处的子组件进行交换
+  notifyDataMove(from: number, to: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataMove(from, to);
+    });
+  }
+
+  notifyDatasetChange(operations: DataOperation[]): void {
+    this.listeners.forEach(listener => {
+      listener.onDatasetChange(operations);
+    });
+  }
+}
 ```
-1. // GenericBasicDataSource实现了IDataSource接口，用于管理listener监听，以及通知LazyForEach数据更新
-2. export class GenericBasicDataSource<T> implements IDataSource {
-3. private listeners: DataChangeListener[] = [];
-4. private originDataArray: T[] = [];
-
-6. public totalCount(): number {
-7. return this.originDataArray.length;
-8. }
-
-10. public getData(index: number): T {
-11. return this.originDataArray[index];
-12. }
-
-14. // 该方法为框架侧调用，为LazyForEach组件向其数据源处添加listener监听
-15. registerDataChangeListener(listener: DataChangeListener): void {
-16. if (this.listeners.indexOf(listener) < 0) {
-17. this.listeners.push(listener);
-18. }
-19. }
-
-21. // 该方法为框架侧调用，为对应的LazyForEach组件在数据源处去除listener监听
-22. unregisterDataChangeListener(listener: DataChangeListener): void {
-23. const pos = this.listeners.indexOf(listener);
-24. if (pos >= 0) {
-25. this.listeners.splice(pos, 1);
-26. }
-27. }
-
-29. // 通知LazyForEach组件需要重载所有子组件
-30. notifyDataReload(): void {
-31. this.listeners.forEach(listener => {
-32. listener.onDataReloaded();
-33. });
-34. }
-
-36. // 通知LazyForEach组件需要在index对应索引处添加子组件
-37. notifyDataAdd(index: number): void {
-38. this.listeners.forEach(listener => {
-39. listener.onDataAdd(index);
-40. });
-41. }
-
-43. // 通知LazyForEach组件在index对应索引处数据有变化，需要重建该子组件
-44. notifyDataChange(index: number): void {
-45. this.listeners.forEach(listener => {
-46. listener.onDataChange(index);
-47. });
-48. }
-
-50. // 通知LazyForEach组件需要在index对应索引处删除该子组件
-51. notifyDataDelete(index: number): void {
-52. this.listeners.forEach(listener => {
-53. listener.onDataDelete(index);
-54. });
-55. }
-
-57. // 通知LazyForEach组件将from索引和to索引处的子组件进行交换
-58. notifyDataMove(from: number, to: number): void {
-59. this.listeners.forEach(listener => {
-60. listener.onDataMove(from, to);
-61. });
-62. }
-
-64. notifyDatasetChange(operations: DataOperation[]): void {
-65. this.listeners.forEach(listener => {
-66. listener.onDatasetChange(operations);
-67. });
-68. }
-69. }
-```
-
-[GenericBasicDataSource.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/RenderingControl/entry/src/main/ets/pages/RenderingLazyForeach/GenericBasicDataSource.ets#L16-L86)

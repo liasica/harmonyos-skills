@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 24h功耗器件分解统计事件介绍
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 24h功耗器件分解统计事件 > 24h功耗器件分解统计事件介绍
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:13+08:00
+scraped_at: 2026-09-02T14:59:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b0a3216ef5c5efa0af07605d64c6ae37aa44d9a0da8c57695809e54e6b699e10
+content_hash: sha256:71c66f4c977265888314b508f78a00046607788dcdb819fd5298a07a2cf14044
 ---
 
 ## 简介
@@ -16,7 +16,7 @@ content_hash: sha256:b0a3216ef5c5efa0af07605d64c6ae37aa44d9a0da8c57695809e54e6b6
 
 * [订阅24h功耗器件分解统计事件（ArkTS）](hiappevent-watcher-battery-usage-arkts.md)
 
-说明
+**说明** 
 
 24h功耗器件分解统计事件不支持在[应用分身场景](app-clone.md)或[元服务场景](agc-harmonyos-create-faproject.md)使用HiAppEvent进行订阅，从API version 22开始支持在[输入法应用场景](inputmethod-application-guide.md)下使用HiAppEvent进行订阅。
 

@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/specified-type-app-redirection
 title: 拉起指定类型的应用
-breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > 应用间跳转 > 拉起指定类型的应用
+breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起指定类型的应用
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:50+08:00
+scraped_at: 2026-09-02T15:16:57+08:00
 doc_updated_at: 2026-03-09
 content_hash: sha256:73f4fee1341ca13178e29ca25a329d879409883b272abf62f9ed394bd283fcb0
 ---

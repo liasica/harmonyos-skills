@@ -3,32 +3,29 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Gauge
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > Gauge
 category: harmonyos-references
-scraped_at: 2026-04-29T13:52:20+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:bf17f3f0272c6339b116504c49fb4fb5ac118e6e5af221780b52d4fd69c6cf12
+scraped_at: 2026-09-02T15:01:04+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:2c22286f6ca6cbbdea56024a5f1780bd555d2875e696d76259279fecc9da5a28
 ---
 
-数据量规图表组件，用于将数据展示为环形图表。
+数据量规图表组件，用于将数据展示为环形图表。适用于展示任务完成进度、性能指标、数据占比等场景，支持自定义颜色、起止角度、指针样式、阴影效果等多种视觉配置，能够直观地呈现数据状态，提升用户对数据的理解和交互体验。
 
-说明
+**说明** 
 
-该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 该组件从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+* 该组件从API版本26.0.0开始支持[WithTheme](ts-container-with-theme.md)。
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 可以包含单个子组件。
 
-说明
+**说明** 
 
 * 支持的子组件类型：系统组件和自定义组件，支持条件渲染控制[if/else](../harmonyos-guides/arkts-rendering-control-ifelse.md)，不支持循环渲染控制[ForEach](../harmonyos-guides/arkts-rendering-control-foreach.md)和[LazyForEach](../harmonyos-guides/arkts-rendering-control-lazyforeach.md)。
 * 建议使用文本组件构建当前数值文本和辅助文本。
-* 若子组件宽高为百分比形式，则基准范围为以外圆环做为内切圆的矩形。
+* 若子组件宽高为百分比形式，则百分比基准为以外圆作为内切圆的矩形的宽和高。
 
 ## 接口
-
-PhonePC/2in1TabletTVWearable
 
 Gauge(options: GaugeOptions)
 
@@ -48,31 +45,27 @@ Gauge(options: GaugeOptions)
 
 ## GaugeOptions18+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 数据量规图表选项。
 
 **卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| value8+ | number | 否 | 否 | 量规图的当前数据值，即图中指针指向位置。用于组件创建时量规图初始值的预置。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。  **说明：**  value不在min和max范围内时使用min作为默认值。 |
-| min8+ | number | 否 | 是 | 当前数据段最小值。  默认值：0  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| max8+ | number | 否 | 是 | 当前数据段最大值。  默认值：100  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。  **说明：**  max小于min时使用默认值0和100。  max和min支持负数。 |
+| value8+ | number | 否 | 否 | 量规图的当前数据值，即图中指针指向位置。用于组件创建时量规图初始值的预置。  默认值：0  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。  **说明：**  value不在min和max范围内时，取min作为实际值。 |
+| min8+ | number | 否 | 是 | 当前数据段最小值。  默认值：0  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。  **说明：**  不传入时默认值为0。  min大于max时，min取0，max取100。  max和min支持负数。 |
+| max8+ | number | 否 | 是 | 当前数据段最大值。  默认值：100  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。  **说明：**  不传入时默认值为100。  min大于max时，min取0，max取100。  max和min支持负数。 |
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](ts-component-general-attributes.md)外，还支持以下属性：
 
 ### value
-
-PhonePC/2in1TabletTVWearable
 
 value(value: number)
 
@@ -88,15 +81,13 @@ value(value: number)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | 是 | 量规图的数据值，可用于动态修改量规图的数据值。  默认值：0 |
+| value | number | 是 | 量规图的数据值，可用于动态修改量规图的数据值。  **说明：**  value不在min和max范围内时，取min作为实际值。  默认值：0 |
 
 ### startAngle
 
-PhonePC/2in1TabletTVWearable
-
 startAngle(angle: number)
 
-设置起始角度位置。
+设置起始角度位置。起始角度和终止角度的差值过小时，会绘制出异常图像，请取合理的起始角度和终止角度。建议使用单色环改变Gauge的value参数实现数据值的调节，可通过定时器setTimeout进行数值的延迟加载。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -108,11 +99,9 @@ startAngle(angle: number)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| angle | number | 是 | 起始角度位置，时钟0点为0度，顺时针方向为正角度，逆时针方向为负角度，超过360度等价于对360度取余后的角度。  默认值：0  从起始位置到终止位置的绘制只有顺时针方向。 |
+| angle | number | 是 | 起始角度位置，时钟0点为0度，顺时针方向为正角度，逆时针方向为负角度，超过360度等价于对360度取余后的角度。  默认值：0  单位：deg（度）  从起始位置到终止位置的绘制只有顺时针方向。  起始角度和终止角度的差值过小时，会绘制出异常图像，请取合理的起始角度和终止角度。 |
 
 ### endAngle
-
-PhonePC/2in1TabletTVWearable
 
 endAngle(angle: number)
 
@@ -128,11 +117,9 @@ endAngle(angle: number)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| angle | number | 是 | 终止角度位置，时钟0点为0度，顺时针方向为正角度，逆时针方向为负角度，超过360度等价于对360度取余后的角度。  默认值：360  从起始位置到终止位置的绘制只有顺时针方向。 |
+| angle | number | 是 | 终止角度位置，时钟0点为0度，顺时针方向为正角度，逆时针方向为负角度，超过360度等价于对360度取余后的角度。  默认值：360  单位：deg（度）  从起始位置到终止位置的绘制只有顺时针方向。  起始角度和终止角度的差值过小时，会绘制出异常图像，请取合理的起始角度和终止角度。 |
 
 ### colors
-
-PhonePC/2in1TabletTVWearable
 
 colors(colors: ResourceColor | LinearGradient | Array<[ResourceColor | LinearGradient, number]>)
 
@@ -144,7 +131,7 @@ colors(colors: ResourceColor | LinearGradient | Array<[ResourceColor | LinearGra
 
 参数类型为[LinearGradient](ts-basic-components-datapanel.md#lineargradient10)，则圆环类型为渐变环。
 
-参数类型为数组，则圆环类型为分段渐变环，第一个参数为颜色值，若设置为非颜色类型，则置为"0xFFE84026"。第二个参数为颜色所占比重，若设置为负数或是非数值类型，则将比重置为0。
+参数类型为数组，则圆环类型为分段渐变环，第一个参数为颜色值或渐变对象（LinearGradient），若设置为非颜色类型，则该颜色值置为"0xFFE84026"。第二个参数为颜色所占比重，若设置为负数或是非数值类型，则将比重置为0。
 
 分段渐变环最大显示段数为9段，若多于9段，则多于部分不显示。
 
@@ -158,11 +145,9 @@ colors(colors: ResourceColor | LinearGradient | Array<[ResourceColor | LinearGra
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| colors | [ResourceColor11+](ts-types.md#resourcecolor) | [LinearGradient11+](ts-basic-components-datapanel.md#lineargradient10) | Array<[[ResourceColor10+](ts-types.md#resourcecolor) | [LinearGradient11+](ts-basic-components-datapanel.md#lineargradient10) , number]> | 是 | 量规图的颜色，支持分段颜色设置。  API version 9 默认值：Color.Black  API version 11默认值：  若不传颜色，或者数组为空，无法确定圆环类型及颜色，则圆环颜色为"0xFF64BB5C"、"0xFFF7CE00"、"0xFFE84026"的渐变环。  若传入颜色，但颜色值有误，则该颜色为"0xFFE84026"。  若对应颜色的比重为0，则该颜色在圆环中不显示。若所有颜色比重均为0，圆环不显示。 |
+| colors | [ResourceColor](ts-types.md#resourcecolor) | [LinearGradient](ts-basic-components-datapanel.md#lineargradient10) | Array<[[ResourceColor](ts-types.md#resourcecolor) | [LinearGradient](ts-basic-components-datapanel.md#lineargradient10) , number]> | 是 | 量规图的颜色，支持分段颜色设置。  API version 9 默认值：Color.Black  API version 11默认值：  若不传颜色，或者数组为空，无法确定圆环类型及颜色，则圆环颜色为"0xFF64BB5C"、"0xFFF7CE00"、"0xFFE84026"的渐变环。  若传入颜色，但颜色值有误，则该颜色为"0xFFE84026"。  若对应颜色的比重为0，则该颜色在圆环中不显示。若所有颜色比重均为0，圆环不显示。  从API version 10开始，支持Array<ResourceColor, number>类型。  从API version 11开始，新增支持LinearGradient和Array<LinearGradient, number>类型。 |
 
 ### strokeWidth
-
-PhonePC/2in1TabletTVWearable
 
 strokeWidth(length: Length)
 
@@ -182,8 +167,6 @@ strokeWidth(length: Length)
 
 ### description11+
 
-PhonePC/2in1TabletTVWearable
-
 description(value: CustomBuilder)
 
 设置说明内容。
@@ -191,6 +174,8 @@ description(value: CustomBuilder)
 **卡片能力：** 从API version 23开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -202,8 +187,6 @@ description(value: CustomBuilder)
 
 ### trackShadow11+
 
-PhonePC/2in1TabletTVWearable
-
 trackShadow(value: GaugeShadowOptions)
 
 设置阴影样式。
@@ -211,6 +194,8 @@ trackShadow(value: GaugeShadowOptions)
 **卡片能力：** 从API version 23开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -222,8 +207,6 @@ trackShadow(value: GaugeShadowOptions)
 
 ### indicator11+
 
-PhonePC/2in1TabletTVWearable
-
 indicator(value: GaugeIndicatorOptions)
 
 设置指针样式。
@@ -231,6 +214,8 @@ indicator(value: GaugeIndicatorOptions)
 **卡片能力：** 从API version 23开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -242,19 +227,19 @@ indicator(value: GaugeIndicatorOptions)
 
 ### privacySensitive12+
 
-PhonePC/2in1TabletTVWearable
-
 privacySensitive(isPrivacySensitiveMode: Optional<boolean>)
 
 设置隐私敏感。
 
-说明
+**说明** 
 
 从API version 20开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -266,13 +251,13 @@ privacySensitive(isPrivacySensitiveMode: Optional<boolean>)
 
 ### contentModifier12+
 
-PhonePC/2in1TabletTVWearable
-
 contentModifier(modifier: ContentModifier<GaugeConfiguration>)
 
 定制Gauge内容区的方法。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -280,11 +265,9 @@ contentModifier(modifier: ContentModifier<GaugeConfiguration>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| modifier | [ContentModifier<GaugeConfiguration>](ts-basic-components-gauge.md#gaugeconfiguration12对象说明) | 是 | 在Gauge组件上定制内容区的方法。  modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。 |
+| modifier | [ContentModifier](ts-universal-attributes-content-modifier.md#contentmodifiert)<[GaugeConfiguration](ts-basic-components-gauge.md#gaugeconfiguration12对象说明)> | 是 | 在Gauge组件上定制内容区的方法。  modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。 |
 
 ## GaugeShadowOptions11+对象说明
-
-PhonePC/2in1TabletTVWearable
 
 GaugeShadowOptions继承自[MultiShadowOptions](ts-information-display-common.md#multishadowoptions)，具有MultiShadowOptions的全部属性。
 
@@ -292,9 +275,11 @@ GaugeShadowOptions继承自[MultiShadowOptions](ts-information-display-common.md
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
-## GaugeIndicatorOptions11+对象说明
+**模型约束：** 此接口仅可在Stage模型下使用。
 
-PhonePC/2in1TabletTVWearable
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+## GaugeIndicatorOptions11+对象说明
 
 数据量规图表指针选项。
 
@@ -302,20 +287,22 @@ PhonePC/2in1TabletTVWearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | icon | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 图标资源路径。  **说明：**  不配置则使用系统默认样式，系统默认样式为三角形指针。  仅支持使用svg格式的图标，若使用其他格式，则使用默认的三角形样式指针。 |
-| space | [Dimension](ts-types.md#dimension10) | 否 | 是 | 指针距离圆环外边的间距。(不支持百分比)  默认值：8  单位：vp  **说明：**  对于默认的三角形样式指针，间距为黑色三角形到圆环外边的间距。  若设置值小于0，则使用默认值。  若设置值大于圆环半径，则使用默认值。 |
+| space | [Dimension](ts-types.md#dimension10) | 否 | 是 | 指针距离圆环外边的间距。  默认值：8  单位：vp  **说明：**  不支持百分比。  对于默认的三角形样式指针，为黑色三角形到圆环外边的间距。  若设置值小于0，则使用默认值。  若设置值大于圆环半径，则使用默认值。 |
 
 ## GaugeConfiguration12+对象说明
-
-PhonePC/2in1TabletTVWearable
 
 开发者需要自定义class实现ContentModifier接口。继承自[CommonConfiguration](ts-universal-attributes-content-modifier.md#commonconfigurationt)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -327,513 +314,511 @@ PhonePC/2in1TabletTVWearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 ### 示例1（设置多色量规图）
 
 该示例通过[colors](ts-basic-components-gauge.md#colors)接口，实现了多色量规图效果。
 
-```
-1. @Entry
-2. @Component
-3. struct Gauge1 {
-4. @Builder
-5. descriptionBuilder() {
-6. Text('说明文本')
-7. .maxFontSize('30sp')
-8. .minFontSize('10.0vp')
-9. .fontColor('#fffa2a2d')
-10. .fontWeight(FontWeight.Medium)
-11. .width('100%')
-12. .height('100%')
-13. .textAlign(TextAlign.Center)
-14. }
+```ts
+@Entry
+@Component
+struct Gauge1 {
+  @Builder
+  descriptionBuilder() {
+    Text('说明文本')
+      .maxFontSize('30sp')
+      .minFontSize('10.0vp')
+      .fontColor('#fffa2a2d')
+      .fontWeight(FontWeight.Medium)
+      .width('100%')
+      .height('100%')
+      .textAlign(TextAlign.Center)
+  }
 
-16. build() {
-17. Column() {
-18. Gauge({ value: 50, min: 1, max: 100 }) {
-19. Column() {
-20. Text('50')
-21. .fontWeight(FontWeight.Medium)
-22. .width('62%')
-23. .fontColor('#ff182431')
-24. .maxFontSize('60.0vp')
-25. .minFontSize('30.0vp')
-26. .textAlign(TextAlign.Center)
-27. .margin({ top: '35%' })
-28. .textOverflow({ overflow: TextOverflow.Ellipsis })
-29. .maxLines(1)
-30. Text('辅助文本')
-31. .maxFontSize('16.0fp')
-32. .minFontSize('10.0vp')
-33. .fontColor($r('sys.color.ohos_id_color_text_secondary'))
-34. .fontWeight(FontWeight.Regular)
-35. .width('67.4%')
-36. .height('9.5%')
-37. .textAlign(TextAlign.Center)
-38. }.width('100%').height('100%')
-39. }
-40. .value(50)
-41. .startAngle(210)
-42. .endAngle(150)
-43. .colors([[new LinearGradient([{ color: '#deb6fb', offset: 0 }, { color: '#ac49f5', offset: 1 }]), 9],
-44. [new LinearGradient([{ color: '#bbb7fc', offset: 0 }, { color: '#564af7', offset: 1 }]), 8],
-45. [new LinearGradient([{ color: '#f5b5c2', offset: 0 }, { color: '#e64566', offset: 1 }]), 7],
-46. [new LinearGradient([{ color: '#f8c5a6', offset: 0 }, { color: '#ed6f21', offset: 1 }]), 6],
-47. [new LinearGradient([{ color: '#fceb99', offset: 0 }, { color: '#f7ce00', offset: 1 }]), 5],
-48. [new LinearGradient([{ color: '#dbefa5', offset: 0 }, { color: '#a5d61d', offset: 1 }]), 4],
-49. [new LinearGradient([{ color: '#c1e4be', offset: 0 }, { color: '#64bb5c', offset: 1 }]), 3],
-50. [new LinearGradient([{ color: '#c0ece5', offset: 0 }, { color: '#61cfbe', offset: 1 }]), 2],
-51. [new LinearGradient([{ color: '#b5e0f4', offset: 0 }, { color: '#46b1e3', offset: 1 }]), 1]])
-52. .width('80%')
-53. .height('80%')
-54. .strokeWidth(18)
-55. .trackShadow({ radius: 7, offsetX: 7, offsetY: 7 })
-56. .description(this.descriptionBuilder)
-57. .padding(18)
-58. }.margin({ top: 40 }).width('100%').height('100%')
-59. }
-60. }
+  build() {
+    Column() {
+      Gauge({ value: 50, min: 1, max: 100 }) {
+        Column() {
+          Text('50')
+            .fontWeight(FontWeight.Medium)
+            .width('62%')
+            .fontColor('#ff182431')
+            .maxFontSize('60.0vp')
+            .minFontSize('30.0vp')
+            .textAlign(TextAlign.Center)
+            .margin({ top: '35%' })
+            .textOverflow({ overflow: TextOverflow.Ellipsis })
+            .maxLines(1)
+          Text('辅助文本')
+            .maxFontSize('16.0fp')
+            .minFontSize('10.0vp')
+            .fontColor($r('sys.color.ohos_id_color_text_secondary'))
+            .fontWeight(FontWeight.Regular)
+            .width('67.4%')
+            .height('9.5%')
+            .textAlign(TextAlign.Center)
+        }.width('100%').height('100%')
+      }
+      .value(50)
+      .startAngle(210)
+      .endAngle(150)
+      .colors([[new LinearGradient([{ color: '#deb6fb', offset: 0 }, { color: '#ac49f5', offset: 1 }]), 9],
+        [new LinearGradient([{ color: '#bbb7fc', offset: 0 }, { color: '#564af7', offset: 1 }]), 8],
+        [new LinearGradient([{ color: '#f5b5c2', offset: 0 }, { color: '#e64566', offset: 1 }]), 7],
+        [new LinearGradient([{ color: '#f8c5a6', offset: 0 }, { color: '#ed6f21', offset: 1 }]), 6],
+        [new LinearGradient([{ color: '#fceb99', offset: 0 }, { color: '#f7ce00', offset: 1 }]), 5],
+        [new LinearGradient([{ color: '#dbefa5', offset: 0 }, { color: '#a5d61d', offset: 1 }]), 4],
+        [new LinearGradient([{ color: '#c1e4be', offset: 0 }, { color: '#64bb5c', offset: 1 }]), 3],
+        [new LinearGradient([{ color: '#c0ece5', offset: 0 }, { color: '#61cfbe', offset: 1 }]), 2],
+        [new LinearGradient([{ color: '#b5e0f4', offset: 0 }, { color: '#46b1e3', offset: 1 }]), 1]])
+      .width('80%')
+      .height('80%')
+      .strokeWidth(18)
+      .trackShadow({ radius: 7, offsetX: 7, offsetY: 7 })
+      .description(this.descriptionBuilder)
+      .padding(18)
+    }.margin({ top: 40 }).width('100%').height('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/JpqyfJCmQjai3f2oUpQjTQ/zh-cn_image_0000002589326297.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/y8RJ39QrTAWtwpRM3MHufg/zh-cn_image_0000002736315191.png)
 
 ### 示例2（设置单色量规图）
 
 该示例通过[colors](ts-basic-components-gauge.md#colors)接口，实现了单色量规图效果。
 
-```
-1. @Entry
-2. @Component
-3. struct Gauge2 {
-4. @Builder
-5. descriptionBuilderImage() {
-6. Image($r('sys.media.ohos_ic_public_clock')).width(72).height(72)
-7. }
+```ts
+@Entry
+@Component
+struct Gauge2 {
+  @Builder
+  descriptionBuilderImage() {
+    Image($r('sys.media.ohos_ic_public_clock')).width(72).height(72)
+  }
 
-9. build() {
-10. Column() {
-11. Gauge({ value: 50, min: 1, max: 100 }) {
-12. Column() {
-13. Text('50')
-14. .fontWeight(FontWeight.Medium)
-15. .width('62%')
-16. .fontColor('#ff182431')
-17. .maxFontSize('60.0vp')
-18. .minFontSize('30.0vp')
-19. .textAlign(TextAlign.Center)
-20. .margin({ top: '35%' })
-21. .textOverflow({ overflow: TextOverflow.Ellipsis })
-22. .maxLines(1)
-23. }.width('100%').height('100%')
-24. }
-25. .startAngle(210)
-26. .endAngle(150)
-27. .colors('#cca5d61d')
-28. .width('80%')
-29. .height('80%')
-30. .strokeWidth(18)
-31. .description(this.descriptionBuilderImage)
-32. .padding(18)
-33. }.margin({ top: 40 }).width('100%').height('100%')
-34. }
-35. }
+  build() {
+    Column() {
+      Gauge({ value: 50, min: 1, max: 100 }) {
+        Column() {
+          Text('50')
+            .fontWeight(FontWeight.Medium)
+            .width('62%')
+            .fontColor('#ff182431')
+            .maxFontSize('60.0vp')
+            .minFontSize('30.0vp')
+            .textAlign(TextAlign.Center)
+            .margin({ top: '35%' })
+            .textOverflow({ overflow: TextOverflow.Ellipsis })
+            .maxLines(1)
+        }.width('100%').height('100%')
+      }
+      .startAngle(210)
+      .endAngle(150)
+      .colors('#cca5d61d')
+      .width('80%')
+      .height('80%')
+      .strokeWidth(18)
+      .description(this.descriptionBuilderImage)
+      .padding(18)
+    }.margin({ top: 40 }).width('100%').height('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/hZBQm44ERQOQW3JWohQJMQ/zh-cn_image_0000002589246239.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/EyhmDFOnRf6KK-I5poQKpg/zh-cn_image_0000002706676148.png)
 
 ### 示例3（设置定制说明区）
 
 该示例通过[description](ts-basic-components-gauge.md#description11)接口，实现了说明区的设置功能。
 
+```ts
+  @Entry
+  @Component
+  struct Gauge3 {
+    @Builder
+    descriptionBuilder() {
+      Text('说明文本')
+        .maxFontSize('30sp')
+        .minFontSize('10.0vp')
+        .fontColor('#fffa2a2d')
+        .fontWeight(FontWeight.Medium)
+        .width('100%')
+        .height('100%')
+        .textAlign(TextAlign.Center)
+    }
+  
+    build() {
+      Column() {
+        Column() {
+          Gauge({ value: 50, min: 1, max: 100 }) {
+            Column() {
+              Text('50')
+                .fontWeight(FontWeight.Medium)
+                .width('62%')
+                .fontColor('#ff182431')
+                .maxFontSize('60.0vp')
+                .minFontSize('30.0vp')
+                .textAlign(TextAlign.Center)
+                .margin({ top: '35%' })
+                .textOverflow({ overflow: TextOverflow.Ellipsis })
+                .maxLines(1)
+            }.width('100%').height('100%')
+          }
+          .startAngle(210)
+          .endAngle(150)
+          .colors([[new LinearGradient([{ color: '#deb6fb', offset: 0 }, { color: '#ac49f5', offset: 1 }]), 9],
+            [new LinearGradient([{ color: '#bbb7fc', offset: 0 }, { color: '#564af7', offset: 1 }]), 8],
+            [new LinearGradient([{ color: '#f5b5c2', offset: 0 }, { color: '#e64566', offset: 1 }]), 7],
+            [new LinearGradient([{ color: '#f8c5a6', offset: 0 }, { color: '#ed6f21', offset: 1 }]), 6],
+            [new LinearGradient([{ color: '#fceb99', offset: 0 }, { color: '#f7ce00', offset: 1 }]), 5],
+            [new LinearGradient([{ color: '#dbefa5', offset: 0 }, { color: '#a5d61d', offset: 1 }]), 4],
+            [new LinearGradient([{ color: '#c1e4be', offset: 0 }, { color: '#64bb5c', offset: 1 }]), 3],
+            [new LinearGradient([{ color: '#c0ece5', offset: 0 }, { color: '#61cfbe', offset: 1 }]), 2],
+            [new LinearGradient([{ color: '#b5e0f4', offset: 0 }, { color: '#46b1e3', offset: 1 }]), 1]])
+          .width('80%')
+          .height('80%')
+          .strokeWidth(18)
+          .description(this.descriptionBuilder)
+          .trackShadow({ radius: 7, offsetX: 7, offsetY: 7 })
+          .padding(18)
+        }.margin({ top: 40 }).width('100%').height('100%')
+      }
+    }
+  }
 ```
-1. @Entry
-2. @Component
-3. struct Gauge3 {
-4. @Builder
-5. descriptionBuilder() {
-6. Text('说明文本')
-7. .maxFontSize('30sp')
-8. .minFontSize('10.0vp')
-9. .fontColor('#fffa2a2d')
-10. .fontWeight(FontWeight.Medium)
-11. .width('100%')
-12. .height('100%')
-13. .textAlign(TextAlign.Center)
-14. }
 
-16. build() {
-17. Column() {
-18. Column() {
-19. Gauge({ value: 50, min: 1, max: 100 }) {
-20. Column() {
-21. Text('50')
-22. .fontWeight(FontWeight.Medium)
-23. .width('62%')
-24. .fontColor('#ff182431')
-25. .maxFontSize('60.0vp')
-26. .minFontSize('30.0vp')
-27. .textAlign(TextAlign.Center)
-28. .margin({ top: '35%' })
-29. .textOverflow({ overflow: TextOverflow.Ellipsis })
-30. .maxLines(1)
-31. }.width('100%').height('100%')
-32. }
-33. .startAngle(210)
-34. .endAngle(150)
-35. .colors([[new LinearGradient([{ color: '#deb6fb', offset: 0 }, { color: '#ac49f5', offset: 1 }]), 9],
-36. [new LinearGradient([{ color: '#bbb7fc', offset: 0 }, { color: '#564af7', offset: 1 }]), 8],
-37. [new LinearGradient([{ color: '#f5b5c2', offset: 0 }, { color: '#e64566', offset: 1 }]), 7],
-38. [new LinearGradient([{ color: '#f8c5a6', offset: 0 }, { color: '#ed6f21', offset: 1 }]), 6],
-39. [new LinearGradient([{ color: '#fceb99', offset: 0 }, { color: '#f7ce00', offset: 1 }]), 5],
-40. [new LinearGradient([{ color: '#dbefa5', offset: 0 }, { color: '#a5d61d', offset: 1 }]), 4],
-41. [new LinearGradient([{ color: '#c1e4be', offset: 0 }, { color: '#64bb5c', offset: 1 }]), 3],
-42. [new LinearGradient([{ color: '#c0ece5', offset: 0 }, { color: '#61cfbe', offset: 1 }]), 2],
-43. [new LinearGradient([{ color: '#b5e0f4', offset: 0 }, { color: '#46b1e3', offset: 1 }]), 1]])
-44. .width('80%')
-45. .height('80%')
-46. .strokeWidth(18)
-47. .description(this.descriptionBuilder)
-48. .trackShadow({ radius: 7, offsetX: 7, offsetY: 7 })
-49. .padding(18)
-50. }.margin({ top: 40 }).width('100%').height('100%')
-51. }
-52. }
-53. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/qEPQqrU8QoCbL0szO-QVbQ/zh-cn_image_0000002558766432.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/QG19eTIzQimADZAfnTjx5g/zh-cn_image_0000002736435235.png)
 
 ### 示例4（设置辅助区）
 
 该示例通过设置子组件，实现了辅助区的设置功能。
 
-```
-1. @Entry
-2. @Component
-3. struct Gauge4 {
-4. build() {
-5. Column() {
-6. Gauge({ value: 50, min: 1, max: 100 }) {
-7. Column() {
-8. Text('50')
-9. .maxFontSize('72.0vp')
-10. .minFontSize('10.0vp')
-11. .fontColor('#ff182431')
-12. .width('40%')
-13. .textAlign(TextAlign.Center)
-14. .margin({ top: '35%' })
-15. .textOverflow({ overflow: TextOverflow.Ellipsis })
-16. .maxLines(1)
-17. Text('辅助文本')
-18. .maxFontSize('30.0vp')
-19. .minFontSize('18.0vp')
-20. .fontWeight(FontWeight.Medium)
-21. .fontColor($r('sys.color.ohos_id_color_text_secondary'))
-22. .width('62%')
-23. .height('15.9%')
-24. .textAlign(TextAlign.Center)
-25. }.width('100%').height('100%')
-26. }
-27. .startAngle(210)
-28. .endAngle(150)
-29. .colors([[new LinearGradient([{ color: '#deb6fb', offset: 0 }, { color: '#ac49f5', offset: 1 }]), 9],
-30. [new LinearGradient([{ color: '#bbb7fc', offset: 0 }, { color: '#564af7', offset: 1 }]), 8],
-31. [new LinearGradient([{ color: '#f5b5c2', offset: 0 }, { color: '#e64566', offset: 1 }]), 7],
-32. [new LinearGradient([{ color: '#f8c5a6', offset: 0 }, { color: '#ed6f21', offset: 1 }]), 6],
-33. [new LinearGradient([{ color: '#fceb99', offset: 0 }, { color: '#f7ce00', offset: 1 }]), 5],
-34. [new LinearGradient([{ color: '#dbefa5', offset: 0 }, { color: '#a5d61d', offset: 1 }]), 4],
-35. [new LinearGradient([{ color: '#c1e4be', offset: 0 }, { color: '#64bb5c', offset: 1 }]), 3],
-36. [new LinearGradient([{ color: '#c0ece5', offset: 0 }, { color: '#61cfbe', offset: 1 }]), 2],
-37. [new LinearGradient([{ color: '#b5e0f4', offset: 0 }, { color: '#46b1e3', offset: 1 }]), 1]])
-38. .width('80%')
-39. .height('80%')
-40. .strokeWidth(18)
-41. .description(null)
-42. .trackShadow({ radius: 7, offsetX: 7, offsetY: 7 })
-43. .padding(18)
-44. }.margin({ top: 40 }).width('100%').height('100%')
-45. }
-46. }
+```ts
+@Entry
+@Component
+struct Gauge4 {
+  build() {
+    Column() {
+      Gauge({ value: 50, min: 1, max: 100 }) {
+        Column() {
+          Text('50')
+            .maxFontSize('72.0vp')
+            .minFontSize('10.0vp')
+            .fontColor('#ff182431')
+            .width('40%')
+            .textAlign(TextAlign.Center)
+            .margin({ top: '35%' })
+            .textOverflow({ overflow: TextOverflow.Ellipsis })
+            .maxLines(1)
+          Text('辅助文本')
+            .maxFontSize('30.0vp')
+            .minFontSize('18.0vp')
+            .fontWeight(FontWeight.Medium)
+            .fontColor($r('sys.color.ohos_id_color_text_secondary'))
+            .width('62%')
+            .height('15.9%')
+            .textAlign(TextAlign.Center)
+        }.width('100%').height('100%')
+      }
+      .startAngle(210)
+      .endAngle(150)
+      .colors([[new LinearGradient([{ color: '#deb6fb', offset: 0 }, { color: '#ac49f5', offset: 1 }]), 9],
+        [new LinearGradient([{ color: '#bbb7fc', offset: 0 }, { color: '#564af7', offset: 1 }]), 8],
+        [new LinearGradient([{ color: '#f5b5c2', offset: 0 }, { color: '#e64566', offset: 1 }]), 7],
+        [new LinearGradient([{ color: '#f8c5a6', offset: 0 }, { color: '#ed6f21', offset: 1 }]), 6],
+        [new LinearGradient([{ color: '#fceb99', offset: 0 }, { color: '#f7ce00', offset: 1 }]), 5],
+        [new LinearGradient([{ color: '#dbefa5', offset: 0 }, { color: '#a5d61d', offset: 1 }]), 4],
+        [new LinearGradient([{ color: '#c1e4be', offset: 0 }, { color: '#64bb5c', offset: 1 }]), 3],
+        [new LinearGradient([{ color: '#c0ece5', offset: 0 }, { color: '#61cfbe', offset: 1 }]), 2],
+        [new LinearGradient([{ color: '#b5e0f4', offset: 0 }, { color: '#46b1e3', offset: 1 }]), 1]])
+      .width('80%')
+      .height('80%')
+      .strokeWidth(18)
+      .description(null)
+      .trackShadow({ radius: 7, offsetX: 7, offsetY: 7 })
+      .padding(18)
+    }.margin({ top: 40 }).width('100%').height('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/AnlUh6wfSceVQURyzGYP7g/zh-cn_image_0000002558606772.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/9aqMZ-_9S0O9Kp20lXWzkQ/zh-cn_image_0000002706836088.png)
 
 ### 示例5（设置最大最小值）
 
 该示例通过设置[GaugeOptions](ts-basic-components-gauge.md#gaugeoptions18对象说明)的min、max属性，实现了量规图的最大最小值设置的功能。
 
-```
-1. @Entry
-2. @Component
-3. struct Gauge5 {
-4. build() {
-5. Column() {
-6. Gauge({ value: 50, min: 1, max: 100 }) {
-7. Column() {
-8. Text('50')
-9. .maxFontSize('80sp')
-10. .minFontSize('60.0vp')
-11. .fontWeight(FontWeight.Medium)
-12. .fontColor('#ff182431')
-13. .width('40%')
-14. .height('30%')
-15. .textAlign(TextAlign.Center)
-16. .margin({ top: '22.2%' })
-17. .textOverflow({ overflow: TextOverflow.Ellipsis })
-18. .maxLines(1)
-19. }.width('100%').height('100%')
-20. }
-21. .startAngle(225)
-22. .endAngle(135)
-23. .colors(new LinearGradient([{ color: '#e84026', offset: 0 },
-24. { color: '#f7ce00', offset: 0.6 },
-25. { color: '#64bb5c', offset: 1 }]))
-26. .width('80%')
-27. .height('80%')
-28. .strokeWidth(18)
-29. .trackShadow({ radius: 7, offsetX: 7, offsetY: 7 })
-30. .padding(18)
-31. }.margin({ top: 40 }).width('100%').height('100%')
-32. }
-33. }
+```ts
+@Entry
+@Component
+struct Gauge5 {
+  build() {
+    Column() {
+      Gauge({ value: 50, min: 1, max: 100 }) {
+        Column() {
+          Text('50')
+            .maxFontSize('80sp')
+            .minFontSize('60.0vp')
+            .fontWeight(FontWeight.Medium)
+            .fontColor('#ff182431')
+            .width('40%')
+            .height('30%')
+            .textAlign(TextAlign.Center)
+            .margin({ top: '22.2%' })
+            .textOverflow({ overflow: TextOverflow.Ellipsis })
+            .maxLines(1)
+        }.width('100%').height('100%')
+      }
+      .startAngle(225)
+      .endAngle(135)
+      .colors(new LinearGradient([{ color: '#e84026', offset: 0 },
+        { color: '#f7ce00', offset: 0.6 },
+        { color: '#64bb5c', offset: 1 }]))
+      .width('80%')
+      .height('80%')
+      .strokeWidth(18)
+      .trackShadow({ radius: 7, offsetX: 7, offsetY: 7 })
+      .padding(18)
+    }.margin({ top: 40 }).width('100%').height('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/kRYLdCY2TCii3U0D-QhWFA/zh-cn_image_0000002589326299.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/07KWVv2MQPuSuV0wG-52ng/zh-cn_image_0000002736315193.png)
 
 ### 示例6（设置指针）
 
 该示例通过[indicator](ts-basic-components-gauge.md#indicator11)接口，实现了设置量规图的指针的功能。
 
-```
-1. @Entry
-2. @Component
-3. struct Gauge6 {
-4. build() {
-5. Column() {
-6. Gauge({ value: 50, min: 1, max: 100 }) {
-7. Column() {
-8. Text('50')
-9. .maxFontSize('60sp')
-10. .minFontSize('30.0vp')
-11. .fontWeight(FontWeight.Medium)
-12. .fontColor('#ff182431')
-13. .width('62%')
-14. .textAlign(TextAlign.Center)
-15. .margin({ top: '35%' })
-16. .textOverflow({ overflow: TextOverflow.Ellipsis })
-17. .maxLines(1)
-18. Text('辅助文本')
-19. .maxFontSize('16sp')
-20. .minFontSize('10.0vp')
-21. .fontColor($r('sys.color.ohos_id_color_text_secondary'))
-22. .fontWeight(FontWeight.Regular)
-23. .width('67.4%')
-24. .height('9.5%')
-25. .textAlign(TextAlign.Center)
-26. }.width('100%').height('100%')
-27. }
-28. .startAngle(225)
-29. .endAngle(135)
-30. .colors(Color.Red)
-31. .width('80%')
-32. .height('80%')
-33. .indicator(null)
-34. .strokeWidth(18)
-35. .trackShadow({ radius: 7, offsetX: 7, offsetY: 7 })
-36. .padding(18)
-37. }.margin({ top: 40 }).width('100%').height('100%')
-38. }
-39. }
+```ts
+@Entry
+@Component
+struct Gauge6 {
+  build() {
+    Column() {
+      Gauge({ value: 50, min: 1, max: 100 }) {
+        Column() {
+          Text('50')
+            .maxFontSize('60sp')
+            .minFontSize('30.0vp')
+            .fontWeight(FontWeight.Medium)
+            .fontColor('#ff182431')
+            .width('62%')
+            .textAlign(TextAlign.Center)
+            .margin({ top: '35%' })
+            .textOverflow({ overflow: TextOverflow.Ellipsis })
+            .maxLines(1)
+          Text('辅助文本')
+            .maxFontSize('16sp')
+            .minFontSize('10.0vp')
+            .fontColor($r('sys.color.ohos_id_color_text_secondary'))
+            .fontWeight(FontWeight.Regular)
+            .width('67.4%')
+            .height('9.5%')
+            .textAlign(TextAlign.Center)
+        }.width('100%').height('100%')
+      }
+      .startAngle(225)
+      .endAngle(135)
+      .colors(Color.Red)
+      .width('80%')
+      .height('80%')
+      .indicator(null)
+      .strokeWidth(18)
+      .trackShadow({ radius: 7, offsetX: 7, offsetY: 7 })
+      .padding(18)
+    }.margin({ top: 40 }).width('100%').height('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/r52CpyRES92uZsavs42egg/zh-cn_image_0000002589246241.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/hkrkoNX4TX6zOEGI8vhpwA/zh-cn_image_0000002706676150.png)
 
 ### 示例7（设置起止角度）
 
 该示例通过[startAngle](ts-basic-components-gauge.md#startangle)和[endAngle](ts-basic-components-gauge.md#endangle)接口，实现了量规图起止角度设置的功能。
 
-```
-1. @Entry
-2. @Component
-3. struct Gauge7 {
-4. build() {
-5. Column() {
-6. Gauge({ value: 50, min: 1, max: 100 }) {
-7. Column() {
-8. Text('50')
-9. .maxFontSize('60sp')
-10. .minFontSize('30.0vp')
-11. .fontWeight(FontWeight.Medium)
-12. .fontColor('#ff182431')
-13. .width('62%')
-14. .textAlign(TextAlign.Center)
-15. .margin({ top: '35%' })
-16. .textOverflow({ overflow: TextOverflow.Ellipsis })
-17. .maxLines(1)
-18. }.width('100%').height('100%')
-19. }
-20. .startAngle(225)
-21. .endAngle(135)
-22. .colors(Color.Red)
-23. .width('80%')
-24. .height('80%')
-25. .indicator(null)
-26. .strokeWidth(18)
-27. .trackShadow({ radius: 7, offsetX: 7, offsetY: 7 })
-28. .padding(18)
-29. }.margin({ top: 40 }).width('100%').height('100%')
-30. }
-31. }
+```ts
+@Entry
+@Component
+struct Gauge7 {
+  build() {
+    Column() {
+      Gauge({ value: 50, min: 1, max: 100 }) {
+        Column() {
+          Text('50')
+            .maxFontSize('60sp')
+            .minFontSize('30.0vp')
+            .fontWeight(FontWeight.Medium)
+            .fontColor('#ff182431')
+            .width('62%')
+            .textAlign(TextAlign.Center)
+            .margin({ top: '35%' })
+            .textOverflow({ overflow: TextOverflow.Ellipsis })
+            .maxLines(1)
+        }.width('100%').height('100%')
+      }
+      .startAngle(225)
+      .endAngle(135)
+      .colors(Color.Red)
+      .width('80%')
+      .height('80%')
+      .indicator(null)
+      .strokeWidth(18)
+      .trackShadow({ radius: 7, offsetX: 7, offsetY: 7 })
+      .padding(18)
+    }.margin({ top: 40 }).width('100%').height('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/iygslJbDRtWECJduOGYoZQ/zh-cn_image_0000002558766434.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/wBsumWboQqWixiJ2HWxA1Q/zh-cn_image_0000002736435237.png)
 
 ### 示例8（设置定制内容区）
 
 该示例通过[contentModifier](ts-basic-components-gauge.md#contentmodifier12)接口，实现了定制量规图内容区的功能。
 
+```ts
+// xxx.ets
+// 该示例实现了Gauge组件使用Builder定制内容区，使用了环形图表组件，按钮和文本组件。点击增加按钮，环形图表指针位置会向右偏移，反之点减少按钮环形图表指针位置会向左偏移。
+@Builder
+function buildGauge(config: GaugeConfiguration) {
+  Column({ space: 30 }) {
+    Row() {
+      Text('【ContentModifier】 value：' + JSON.stringify((config.contentModifier as MyGaugeStyle).value) +
+        '  min：' + JSON.stringify((config.contentModifier as MyGaugeStyle).min) +
+        '  max：' + JSON.stringify((config.contentModifier as MyGaugeStyle).max))
+        .fontSize(12)
+    }
+
+    Text('【Config】value：' + config.value + '  min：' + config.min + '  max：' + config.max).fontSize(12)
+    Gauge({
+      value: config.value,
+      min: config.min,
+      max: config.max
+    }).width('50%')
+  }
+  .width('100%')
+  .padding(20)
+  .margin({ top: 5 })
+  .alignItems(HorizontalAlign.Center)
+}
+
+class MyGaugeStyle implements ContentModifier<GaugeConfiguration> {
+  value: number = 0
+  min: number = 0
+  max: number = 0
+
+  constructor(value: number, min: number, max: number) {
+    this.value = value;
+    this.min = min;
+    this.max = max;
+  }
+
+  applyContent(): WrappedBuilder<[GaugeConfiguration]> {
+    return wrapBuilder(buildGauge);
+  }
+}
+
+@Entry
+@Component
+struct RefreshExample {
+  @State gaugeValue: number = 20
+  @State gaugeMin: number = 0
+  @State gaugeMax: number = 100
+
+  build() {
+    Column({ space: 20 }) {
+      Gauge({
+        value: this.gaugeValue,
+        min: this.gaugeMin,
+        max: this.gaugeMax
+      })
+        .contentModifier(new MyGaugeStyle(30, 10, 100))
+
+      Column({ space: 20 }) {
+        Row({ space: 20 }) {
+          Button('增加').onClick(() => {
+            if (this.gaugeValue < this.gaugeMax) {
+              this.gaugeValue += 1;
+            }
+          })
+          Button('减少').onClick(() => {
+            if (this.gaugeValue > this.gaugeMin) {
+              this.gaugeValue -= 1;
+            }
+          })
+        }
+      }.width('100%')
+    }.width('100%').margin({ top: 5 })
+  }
+}
 ```
-1. // xxx.ets
-2. // 该示例实现了Gauge组件使用Builder定制内容区，使用了环形图表组件，按钮和文本框。点击增加按钮，环形图表指针位置会向右偏移，反之点减少按钮环形图表指针位置会向左偏移。
-3. @Builder
-4. function buildGauge(config: GaugeConfiguration) {
-5. Column({ space: 30 }) {
-6. Row() {
-7. Text('【ContentModifier】 value：' + JSON.stringify((config.contentModifier as MyGaugeStyle).value) +
-8. '  min：' + JSON.stringify((config.contentModifier as MyGaugeStyle).min) +
-9. '  max：' + JSON.stringify((config.contentModifier as MyGaugeStyle).max))
-10. .fontSize(12)
-11. }
 
-13. Text('【Config】value：' + config.value + '  min：' + config.min + '  max：' + config.max).fontSize(12)
-14. Gauge({
-15. value: config.value,
-16. min: config.min,
-17. max: config.max
-18. }).width('50%')
-19. }
-20. .width('100%')
-21. .padding(20)
-22. .margin({ top: 5 })
-23. .alignItems(HorizontalAlign.Center)
-24. }
-
-26. class MyGaugeStyle implements ContentModifier<GaugeConfiguration> {
-27. value: number = 0
-28. min: number = 0
-29. max: number = 0
-
-31. constructor(value: number, min: number, max: number) {
-32. this.value = value
-33. this.min = min
-34. this.max = max
-35. }
-
-37. applyContent(): WrappedBuilder<[GaugeConfiguration]> {
-38. return wrapBuilder(buildGauge)
-39. }
-40. }
-
-42. @Entry
-43. @Component
-44. struct refreshExample {
-45. @State gaugeValue: number = 20
-46. @State gaugeMin: number = 0
-47. @State gaugeMax: number = 100
-
-49. build() {
-50. Column({ space: 20 }) {
-51. Gauge({
-52. value: this.gaugeValue,
-53. min: this.gaugeMin,
-54. max: this.gaugeMax
-55. })
-56. .contentModifier(new MyGaugeStyle(30, 10, 100))
-
-58. Column({ space: 20 }) {
-59. Row({ space: 20 }) {
-60. Button('增加').onClick(() => {
-61. if (this.gaugeValue < this.gaugeMax) {
-62. this.gaugeValue += 1
-63. }
-64. })
-65. Button('减少').onClick(() => {
-66. if (this.gaugeValue > this.gaugeMin) {
-67. this.gaugeValue -= 1
-68. }
-69. })
-70. }
-71. }.width('100%')
-72. }.width('100%').margin({ top: 5 })
-73. }
-74. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/Rr10KU1aRXKOY3-H_qcl2w/zh-cn_image_0000002558606774.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/cCFwEWMUTjKyp8WkTJ6SGw/zh-cn_image_0000002706836090.gif)
 
 ### 示例9（设置隐私隐藏）
 
-该示例通过[privacySensitive](ts-basic-components-gauge.md#privacysensitive12)接口，实现了隐私隐藏效果，效果展示需要卡片框架支持
+该示例展示了[privacySensitive](ts-basic-components-gauge.md#privacysensitive12)接口的调用方式。实际隐私隐藏效果需要卡片框架支持。
 
-```
-1. @Entry
-2. @Component
-3. struct GaugeExample {
-4. build() {
-5. Scroll() {
-6. Column({ space: 15 }) {
-7. Row() {
-8. Gauge({ value: 60, min: 20, max: 100 })
-9. .startAngle(225)
-10. .endAngle(135)
-11. .colors(Color.Red)
-12. .width('80%')
-13. .height('80%')
-14. .strokeWidth(18)
-15. .trackShadow({ radius: 7, offsetX: 7, offsetY: 7 })
-16. .padding(18)
-17. .privacySensitive(true)
-18. }
-19. }
-20. }
-21. }
-22. }
+```ts
+@Entry
+@Component
+struct GaugeExample {
+  build() {
+    Scroll() {
+      Column({ space: 15 }) {
+        Row() {
+          Gauge({ value: 60, min: 20, max: 100 })
+            .startAngle(225)
+            .endAngle(135)
+            .colors(Color.Red)
+            .width('80%')
+            .height('80%')
+            .strokeWidth(18)
+            .trackShadow({ radius: 7, offsetX: 7, offsetY: 7 })
+            .padding(18)
+            .privacySensitive(true)
+        }
+      }
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/pRML3uXhQLumYys9DJtVZQ/zh-cn_image_0000002589326301.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/MeOsMoHNTsamWtHb-HnGLQ/zh-cn_image_0000002736315195.gif)
 
 ### 示例10（设置自定义指针）
 
 该示例通过[indicator](ts-basic-components-gauge.md#indicator11)接口，实现了自定义指针功能，开发者导入svg类型的图片以替换默认指针。
 
-```
-1. @Entry
-2. @Component
-3. struct Gauge2 {
-4. build() {
-5. Column() {
-6. Gauge({ value: 50, min: 1, max: 100 })
-7. // $r('app.media.indicator')需要替换为开发者所需的图像资源文件。
-8. .indicator({ space: 10, icon: $r('app.media.indicator') })
-9. .startAngle(210)
-10. .endAngle(150)
-11. .colors('#cca5d61d')
-12. .width('80%')
-13. .height('80%')
-14. .strokeWidth(18)
-15. .padding(18)
-16. }.margin({ top: 40 }).width('100%').height('100%')
-17. }
-18. }
-```
-
-```
-1. <svg width='200px' height='200px'>
-2. <path d='M 10,30 A 20,20 0,0,1 50,30 A 20,20 0,0,1 90,30 Q 90,60 50,90 Q 10,60 10,30 z'
-3. stroke='black' stroke-width='3' fill='white'>
-4. </path>
-5. </svg>
+```ts
+@Entry
+@Component
+struct Gauge2 {
+  build() {
+    Column() {
+      Gauge({ value: 50, min: 1, max: 100 })
+        // $r('app.media.indicator')需要替换为开发者所需的图像资源文件。
+        .indicator({ space: 10, icon: $r('app.media.indicator') })
+        .startAngle(210)
+        .endAngle(150)
+        .colors('#cca5d61d')
+        .width('80%')
+        .height('80%')
+        .strokeWidth(18)
+        .padding(18)
+    }.margin({ top: 40 }).width('100%').height('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/77iGdxzRTq6QuQLYLXrQQg/zh-cn_image_0000002589246243.png)
+```xml
+<svg width='200px' height='200px'>
+    <path d='M 10,30 A 20,20 0,0,1 50,30 A 20,20 0,0,1 90,30 Q 90,60 50,90 Q 10,60 10,30 z'
+          stroke='black' stroke-width='3' fill='white'>
+    </path>
+</svg>
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/m8XNwmjFTeKxy8tf7hSYFA/zh-cn_image_0000002706676152.png)

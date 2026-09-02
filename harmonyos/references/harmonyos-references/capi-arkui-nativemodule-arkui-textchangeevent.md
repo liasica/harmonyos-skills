@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_TextChangeEvent
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_TextChangeEvent
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:18+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:ace65d30fdc28b2ca5eed145aeaebf1f97115a922a2f2a016855c454d7ac700c
+scraped_at: 2026-09-02T15:01:23+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8daf1dfd5af4ae4c57fe4e3bc1916a61dfd05f63b0ac25ea029fadd43212c45a
 ---
 
-```
-1. typedef struct {...} ArkUI_TextChangeEvent
+```c
+typedef struct {...} ArkUI_TextChangeEvent
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-定义组件事件的混合类型数据。
+定义文本变化事件的数据结构，用于在文本输入场景中监听和处理文本变更事件。该结构体包含文本内容、扩展信息和数值参数，支持开发者实时获取文本变更数据，适用于输入框内容监听、实时搜索、字数统计等场景。
 
 **起始版本：** 15
 
@@ -26,14 +24,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
-| const char\* pStr | 字符串。 |
-| const char\* pExtendStr | 字符串。 |
-| int32\_t number | 数字。 |
+| const char\* pStr | 文本变更事件中的文本内容字符串。 |
+| const char\* pExtendStr | 文本变更事件中的扩展字符串，用于存储额外的文本信息。 |
+| int32\_t number | 事件的数字参数值，用于记录文本变更事件中的数值信息。取值范围[-2147483648, 2147483647]。 |

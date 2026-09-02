@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-k
 title: XEG_DDGIDescription
 breadcrumb: API参考 > 图形 > XEngine Kit（GPU加速引擎服务） > C API > 头文件和结构体 > 结构体 > XEG_DDGIDescription
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:00+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fe390eff7cf8ca7a80a01dcc344cd0b9763b3ed420f300b46b900bf3c348e52f
+scraped_at: 2026-09-02T15:02:49+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b2875f578e4f3e2e39d5fec5ea0b63e58abbe494c57452a53108c1a745103a99
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 此结构体描述更新DDGI探针辐照度及渲染输出GI图像所需的信息。
 
@@ -22,11 +20,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 成员变量
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -50,14 +44,10 @@ PhonePC/2in1TabletTV
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTV
-
 ### enableVolumeNumber
 
-PhonePC/2in1TabletTV
-
-```
-1. uint32_t XEG_DDGIDescription::enableVolumeNumber
+```cpp
+uint32_t XEG_DDGIDescription::enableVolumeNumber
 ```
 
 **描述**
@@ -66,10 +56,8 @@ PhonePC/2in1TabletTV
 
 ### inputBasecolorMetallicImage
 
-PhonePC/2in1TabletTV
-
-```
-1. VkImageView XEG_DDGIDescription::inputBasecolorMetallicImage
+```cpp
+VkImageView XEG_DDGIDescription::inputBasecolorMetallicImage
 ```
 
 **描述**
@@ -78,10 +66,8 @@ PhonePC/2in1TabletTV
 
 ### inputDepthImage
 
-PhonePC/2in1TabletTV
-
-```
-1. VkImageView XEG_DDGIDescription::inputDepthImage
+```cpp
+VkImageView XEG_DDGIDescription::inputDepthImage
 ```
 
 **描述**
@@ -90,10 +76,8 @@ PhonePC/2in1TabletTV
 
 ### inputDirectionImage
 
-PhonePC/2in1TabletTV
-
-```
-1. VkImageView XEG_DDGIDescription::inputDirectionImage
+```cpp
+VkImageView XEG_DDGIDescription::inputDirectionImage
 ```
 
 **描述**
@@ -102,10 +86,8 @@ PhonePC/2in1TabletTV
 
 ### inputNormalImage
 
-PhonePC/2in1TabletTV
-
-```
-1. VkImageView XEG_DDGIDescription::inputNormalImage
+```cpp
+VkImageView XEG_DDGIDescription::inputNormalImage
 ```
 
 **描述**
@@ -114,10 +96,8 @@ PhonePC/2in1TabletTV
 
 ### inputProbeCount
 
-PhonePC/2in1TabletTV
-
-```
-1. uint32_t XEG_DDGIDescription::inputProbeCount
+```cpp
+uint32_t XEG_DDGIDescription::inputProbeCount
 ```
 
 **描述**
@@ -126,10 +106,8 @@ PhonePC/2in1TabletTV
 
 ### inputRayHitNormalAndMetallicImage
 
-PhonePC/2in1TabletTV
-
-```
-1. VkImageView XEG_DDGIDescription::inputRayHitNormalAndMetallicImage
+```cpp
+VkImageView XEG_DDGIDescription::inputRayHitNormalAndMetallicImage
 ```
 
 **描述**
@@ -138,10 +116,8 @@ PhonePC/2in1TabletTV
 
 ### inputRayRadianceDistanceImage
 
-PhonePC/2in1TabletTV
-
-```
-1. VkImageView XEG_DDGIDescription::inputRayRadianceDistanceImage
+```cpp
+VkImageView XEG_DDGIDescription::inputRayRadianceDistanceImage
 ```
 
 **描述**
@@ -150,10 +126,8 @@ PhonePC/2in1TabletTV
 
 ### inputVolumeIndexAndProbeIndex
 
-PhonePC/2in1TabletTV
-
-```
-1. VkBuffer XEG_DDGIDescription::inputVolumeIndexAndProbeIndex
+```cpp
+VkBuffer XEG_DDGIDescription::inputVolumeIndexAndProbeIndex
 ```
 
 **描述**
@@ -162,10 +136,8 @@ PhonePC/2in1TabletTV
 
 ### outputGIImage
 
-PhonePC/2in1TabletTV
-
-```
-1. VkImageView XEG_DDGIDescription::outputGIImage
+```cpp
+VkImageView XEG_DDGIDescription::outputGIImage
 ```
 
 **描述**
@@ -174,10 +146,8 @@ PhonePC/2in1TabletTV
 
 ### outputProbeCount
 
-PhonePC/2in1TabletTV
-
-```
-1. VkBuffer XEG_DDGIDescription::outputProbeCount
+```cpp
+VkBuffer XEG_DDGIDescription::outputProbeCount
 ```
 
 **描述**
@@ -186,10 +156,8 @@ PhonePC/2in1TabletTV
 
 ### outputVolumeIndexAndProbeIndex
 
-PhonePC/2in1TabletTV
-
-```
-1. VkBuffer XEG_DDGIDescription::outputVolumeIndexAndProbeIndex
+```cpp
+VkBuffer XEG_DDGIDescription::outputVolumeIndexAndProbeIndex
 ```
 
 **描述**
@@ -198,10 +166,8 @@ PhonePC/2in1TabletTV
 
 ### pNext
 
-PhonePC/2in1TabletTV
-
-```
-1. const void* XEG_DDGIDescription::pNext
+```cpp
+const void* XEG_DDGIDescription::pNext
 ```
 
 **描述**
@@ -210,10 +176,8 @@ PhonePC/2in1TabletTV
 
 ### projectionMatrix
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_DDGIDescription::projectionMatrix[16]
+```cpp
+float XEG_DDGIDescription::projectionMatrix[16]
 ```
 
 **描述**
@@ -222,10 +186,8 @@ PhonePC/2in1TabletTV
 
 ### pVolumeEntryParameters
 
-PhonePC/2in1TabletTV
-
-```
-1. const struct XEG_DDGIVolumeEntryParameters* XEG_DDGIDescription::pVolumeEntryParameters
+```cpp
+const struct XEG_DDGIVolumeEntryParameters* XEG_DDGIDescription::pVolumeEntryParameters
 ```
 
 **描述**
@@ -234,10 +196,8 @@ PhonePC/2in1TabletTV
 
 ### sType
 
-PhonePC/2in1TabletTV
-
-```
-1. XEG_StructureType XEG_DDGIDescription::sType
+```cpp
+XEG_StructureType XEG_DDGIDescription::sType
 ```
 
 **描述**
@@ -246,10 +206,8 @@ PhonePC/2in1TabletTV
 
 ### viewMatrix
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_DDGIDescription::viewMatrix[16]
+```cpp
+float XEG_DDGIDescription::viewMatrix[16]
 ```
 
 **描述**

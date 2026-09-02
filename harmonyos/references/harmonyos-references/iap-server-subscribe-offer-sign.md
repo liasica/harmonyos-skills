@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-serve
 title: 生成优惠签名购买参数
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API > 生成优惠签名购买参数
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:59+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:599209c0d82ba330a028e6ec2d4c67a38db60e2148d8de99ec5c31e0214c138e
+scraped_at: 2026-09-02T15:02:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a665920fc378c0e1bdd6b95624cd898351d901021fb94f4e9f2dc2e38f271e1d
 ---
 
 开发者在促销优惠场景下需要传入JWT格式的jwsRepresentation参数，该参数包含购买订单涉及的优惠及商品信息。JSON Web Token（JWT）是一个开放标准（RFC 7519），定义了一种安全传输信息的方法，具体请参见[jwt.io](https://jwt.io/)。开发者可以使用从[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)下载的私钥签名生成JWT。密钥生成和下载请参见[配置密钥](../harmonyos-guides/iap-set-necessary-parameters.md#配置密钥)。创建JWT格式的签名购买参数需要以下几步：
@@ -43,32 +43,32 @@ JWT负载包含访问服务端API的一些关键信息，例如密钥颁发者ID
 
 ### 代码示例
 
-```
-1. import com.auth0.jwt.JWT;
-2. import com.auth0.jwt.algorithms.Algorithm;
+```javascript
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.algorithms.Algorithm;
 
-4. import java.security.KeyFactory;
-5. import java.security.NoSuchAlgorithmException;
-6. import java.security.interfaces.ECPrivateKey;
-7. import java.security.spec.InvalidKeySpecException;
-8. import java.security.spec.PKCS8EncodedKeySpec;
-9. import java.util.Base64;
-10. import java.util.Map;
+import java.security.KeyFactory;
+import java.security.NoSuchAlgorithmException;
+import java.security.interfaces.ECPrivateKey;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.PKCS8EncodedKeySpec;
+import java.util.Base64;
+import java.util.Map;
 
-12. public class JwsRepresentationGenerator {
-13. public static String createJwsRepresentation(String signingKey, Map<String, Object> jwtHeader,
-14. Map<String, Object> jwtPayload) {
-15. try {
-16. // Configure a key and download the private key file in AppGallery Connect.
-17. byte[] derEncodedSigningKey = Base64.getDecoder().decode(signingKey);
-18. KeyFactory keyFactory = KeyFactory.getInstance("EC");
-19. PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(derEncodedSigningKey);
-20. ECPrivateKey ecPrivateKey = (ECPrivateKey) keyFactory.generatePrivate(keySpec);
-21. return JWT.create().withHeader(jwtHeader).withPayload(jwtPayload).sign(Algorithm.ECDSA256(ecPrivateKey));
-22. } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
-23. // TODO: Need to replace it with the actual business logic.
-24. throw new RuntimeException(e);
-25. }
-26. }
-27. }
+public class JwsRepresentationGenerator {
+    public static String createJwsRepresentation(String signingKey, Map<String, Object> jwtHeader,
+        Map<String, Object> jwtPayload) {
+        try {
+            // Configure a key and download the private key file in AppGallery Connect.
+            byte[] derEncodedSigningKey = Base64.getDecoder().decode(signingKey);
+            KeyFactory keyFactory = KeyFactory.getInstance("EC");
+            PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(derEncodedSigningKey);
+            ECPrivateKey ecPrivateKey = (ECPrivateKey) keyFactory.generatePrivate(keySpec);
+            return JWT.create().withHeader(jwtHeader).withPayload(jwtPayload).sign(Algorithm.ECDSA256(ecPrivateKey));
+        } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
+            // TODO: Need to replace it with the actual business logic.
+            throw new RuntimeException(e);
+        }
+    }
+}
 ```

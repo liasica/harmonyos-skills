@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/store-pro
 title: productViewManager (应用市场推荐)
 breadcrumb: API参考 > 应用服务 > AppGallery Kit（应用市场服务） > ArkTS API > productViewManager (应用市场推荐)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1a4ba1f8225e219ad5fde6e9a36e1c186331f5e1fe5adc2bce0b5fa439da42f5
+scraped_at: 2026-09-02T15:02:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e4c1a772288a126002b9edb39fa5e5df55942c246bf339ab0870ca01c9fce121
 ---
 
-提供展示应用/元服务详情页、应用内快捷方式加桌的能力。
+提供展示应用详情页、添加元服务卡片至桌面，以及添加、查询和删除桌面快捷方式的能力。
 
-说明
+**说明** 
 
 调用接口需捕获异常。
 
@@ -18,15 +18,11 @@ content_hash: sha256:1a4ba1f8225e219ad5fde6e9a36e1c186331f5e1fe5adc2bce0b5fa439d
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { productViewManager } from '@kit.AppGalleryKit';
+```typescript
+import { productViewManager } from '@kit.AppGalleryKit';
 ```
 
 ## ProductViewCallback
-
-PhonePC/2in1TabletTV
 
 在加载应用详情页面时作为入参用于接收加载过程中的状态变化。
 
@@ -44,9 +40,7 @@ PhonePC/2in1TabletTV
 
 ## ServiceViewCallback
 
-PhonePC/2in1TabletTV
-
-在加载元服务卡片加桌页面时作为入参用于接收加载过程中的状态变化。
+在加载元服务卡片添加至桌面页时作为入参用于接收加载过程中的状态变化。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -56,16 +50,14 @@ PhonePC/2in1TabletTV
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| onReceive | Callback<[ServiceViewReceiveData](store-productviewmanager.md#serviceviewreceivedata)> | 否 | 是 | 当打开元服务卡片加桌页成功，点击加桌，收到加桌结果。 |
-| onError | [ErrorCallback](js-apis-base.md#errorcallback) | 否 | 是 | 回调函数，接收元服务卡片加桌页加载失败的错误码。  1011表示拉起/切前台失败。  1012表示切后台失败。  1013表示销毁失败。 |
-| onAppear | Callback<void> | 否 | 是 | 回调函数，当元服务卡片加桌页成功打开时回调该方法。  **起始版本：** 5.0.2(14) |
-| onDisappear | Callback<void> | 否 | 是 | 回调函数，当元服务卡片加桌页关闭时回调该方法。  **起始版本：** 5.0.2(14) |
+| onReceive | Callback<[ServiceViewReceiveData](store-productviewmanager.md#serviceviewreceivedata)> | 否 | 是 | 回调函数，当元服务卡片加载成功并添加至桌面时调用，获取元服务卡片加载成功并添加至桌面后的相关信息和结果。 |
+| onError | [ErrorCallback](js-apis-base.md#errorcallback) | 否 | 是 | 回调函数，接收元服务卡片添加至桌面页加载失败的错误码。  1011表示拉起/切前台失败。  1012表示切后台失败。  1013表示销毁失败。 |
+| onAppear | Callback<void> | 否 | 是 | 回调函数，当元服务卡片添加至桌面页成功打开时回调该方法。  **起始版本：** 5.0.2(14) |
+| onDisappear | Callback<void> | 否 | 是 | 回调函数，当元服务卡片添加至桌面页关闭时回调该方法。  **起始版本：** 5.0.2(14) |
 
 ## ServiceViewReceiveData
 
-PhonePC/2in1TabletTV
-
-元服务加桌回调数据。
+元服务卡片添加至桌面的回调数据。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -75,15 +67,13 @@ PhonePC/2in1TabletTV
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| result | [ReceiveDataResult](store-productviewmanager.md#receivedataresult) | 是 | 否 | 加桌结果。 |
-| msg | string | 是 | 否 | 加桌结果描述信息。 |
-| formInfo | {[key: string]: Object;} | 是 | 否 | 加桌卡片数据。有以下必填属性：  - bundleName表示元服务包名。  - name表示卡片名称。  - abilityName表示ability名称。  - moduleName表示元服务模块名。  - defaultDimension表示卡片尺寸。 |
+| result | [ReceiveDataResult](store-productviewmanager.md#receivedataresult) | 是 | 否 | 元服务卡片添加至桌面结果。 |
+| msg | string | 是 | 否 | 元服务卡片添加至桌面结果描述信息。 |
+| formInfo | {[key: string]: Object;} | 是 | 否 | 添加至桌面的元服务卡片数据。有以下必填属性：  - bundleName表示元服务包名。  - name表示卡片名称。  - abilityName表示ability名称。  - moduleName表示元服务模块名。  - defaultDimension表示卡片尺寸。 |
 
 ## ReceiveDataResult
 
-PhonePC/2in1TabletTV
-
-元服务加桌结果码类型的枚举。
+元服务卡片添加至桌面结果码类型的枚举。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -99,8 +89,6 @@ PhonePC/2in1TabletTV
 
 ## CheckShortcutResult
 
-PhonePC/2in1TabletTV
-
 快捷方式校验结果。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -113,12 +101,10 @@ PhonePC/2in1TabletTV
 | --- | --- | --- | --- | --- |
 | tid | string | 否 | 是 | 基于应用的快捷方式信息生成的Transaction ID。若快捷方式信息发生变化，则每次覆盖生成新的tid，否则返回历史tid以及剩余过期时间expired。 |
 | expired | number | 否 | 是 | Transaction ID的过期时间，单位是ms。 |
-| code | number | 否 | 否 | 校验的结果码，0表示校验成功，否则具体的失败原因，可以参考[ArkTS API错误码](store-error-code.md)。 |
+| code | number | 否 | 否 | 校验的结果码，0表示校验成功，否则具体的失败原因，可以参考[ArkTS API错误码](errorcode-appgallery.md)。 |
 | limit | number | 否 | 是 | 允许应用添加快捷方式的数量。 |
 
 ## SKExposure
-
-PhonePC/2in1TabletTV
 
 登记归因来源的广告曝光数据。
 
@@ -141,70 +127,87 @@ PhonePC/2in1TabletTV
 
 **示例：**
 
+```typescript
+import { common, Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { productViewManager } from '@kit.AppGalleryKit';
+
+const TAG: string = 'LoadProduct';
+
+@Entry
+@Component
+struct LoadProduct {
+  build() {
+    Column() {
+      Button("load_product")
+        .onClick(() => {
+          try {
+            // 登记归因来源的广告曝光数据
+            const exposureData: productViewManager.SKExposure = {
+              // 在应用归因云侧注册广告生态伙伴角色时，由应用归因服务分配
+              adTechId: '20****e8',
+              // 分发平台创建的营销任务id
+              campaignId: '123456',
+              // 开发者应用上架华为应用市场的appId，不带C
+              destinationId: '10******',
+              // 归因监测平台id
+              mmpIds: ['2f****5', '2f7***5'],
+              // 分发平台关注的业务信息
+              serviceTag: '123***2',
+              // 用于计算签名的随机数，不带'-'
+              nonce: '123***2',
+              // 时间戳
+              timestamp: 1705536488,
+              // 签名值
+              signature: 'MEQCIEQlmZ****zKBSE8QnhLTIHZZZ****ZpRqRxHss65Ko****JgJKjdrWdkL****juEx2RmFS7da****ZRVZ8RyMyUXg=='
+            };
+
+            const want: Want = {
+              parameters: {
+                bundleName: 'com.huawei.hmsapp.books',
+                skExposure: exposureData
+              }
+            };
+            // 展示应用详情页，下载安装目标应用
+            productViewManager.loadProduct(this.getUIContext().getHostContext() as common.UIAbilityContext, want, {
+              onError: (error: BusinessError) => {
+                hilog.error(0, TAG, `loadProduct onError.code is ${error.code}, message is ${error.message}`);
+              }
+            });
+          } catch (err) {
+            hilog.error(0, TAG, `loadProduct failed.code is ${err.code}, message is ${err.message}`);
+          }
+        })
+        .width('100%')
+    }
+    .margin(16)
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
-1. import { common, Want } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { productViewManager } from '@kit.AppGalleryKit';
 
-6. const TAG: string = 'LoadProduct';
+## PinShortcutInfo
 
-8. @Entry
-9. @Component
-10. struct LoadProduct {
-11. build() {
-12. Column() {
-13. Button("load_product")
-14. .onClick(() => {
-15. try {
-16. // 登记归因来源的广告曝光数据
-17. const exposureData: productViewManager.SKExposure = {
-18. // 在应用归因云侧注册广告生态伙伴角色时，由应用归因服务分配
-19. adTechId: '20****e8',
-20. // 分发平台创建的营销任务id
-21. campaignId: '123456',
-22. // 开发者应用上架华为应用市场的appId，不带C
-23. destinationId: '10******',
-24. // 归因监测平台id
-25. mmpIds: ['2f****5', '2f7***5'],
-26. // 分发平台关注的业务信息
-27. serviceTag: '123***2',
-28. // 用于计算签名的随机数，不带'-'
-29. nonce: '123***2',
-30. // 时间戳
-31. timestamp: 1705536488,
-32. // 签名值
-33. signature: 'MEQCIEQlmZ****zKBSE8QnhLTIHZZZ****ZpRqRxHss65Ko****JgJKjdrWdkL****juEx2RmFS7da****ZRVZ8RyMyUXg=='
-34. };
+桌面快捷方式信息列表。
 
-36. const request: Want = {
-37. parameters: {
-38. bundleName: 'com.huawei.hmsapp.books',
-39. skExposure: exposureData
-40. }
-41. };
-42. // 展示应用详情页，下载安装目标应用
-43. productViewManager.loadProduct(this.getUIContext().getHostContext() as common.UIAbilityContext, request, {
-44. onError: (error: BusinessError) => {
-45. hilog.error(0, TAG, `loadProduct onError.code is ${error.code}, message is ${error.message}`);
-46. }
-47. });
-48. } catch (err) {
-49. hilog.error(0, TAG, `loadProduct failed.code is ${err.code}, message is ${err.message}`);
-50. }
-51. })
-52. .width('100%')
-53. }
-54. .margin(16)
-55. .height('100%')
-56. .justifyContent(FlexAlign.Center)
-57. }
-58. }
-```
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.AppGalleryService.Distribution.Recommendations
+
+**起始版本：** 6.1.1(24)
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| shortcutId | string | 否 | 否 | 桌面快捷方式的ID。 |
+| icon | string | 否 | 是 | 桌面快捷方式的图标。 |
+| iconId | number | 否 | 是 | 桌面快捷方式图标的资源ID。 |
+| label | string | 否 | 是 | 桌面快捷方式的标签信息。 |
+| labelId | number | 否 | 是 | 桌面快捷方式标签信息为资源索引时的资源ID。 |
+| want | [Want](js-apis-app-ability-want.md) | 否 | 是 | 桌面快捷方式内定义的目标want信息。 |
 
 ## productViewManager.loadProduct
-
-PhonePC/2in1TabletTV
 
 loadProduct(context: common.UIAbilityContext, want: Want, callback?: ProductViewCallback): void
 
@@ -236,59 +239,57 @@ loadProduct(context: common.UIAbilityContext, want: Want, callback?: ProductView
 
 **示例：**
 
-```
-1. import { common, Want } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { productViewManager } from '@kit.AppGalleryKit';
+```typescript
+import { common, Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { productViewManager } from '@kit.AppGalleryKit';
 
-6. const TAG: string = 'LoadProduct';
+const TAG: string = 'LoadProduct';
 
-8. @Entry
-9. @Component
-10. struct LoadProduct {
-11. build() {
-12. Column() {
-13. Button("load_product")
-14. .onClick(() => {
-15. try {
-16. const request: Want = {
-17. parameters: {
-18. // 此处填入要加载的应用包名，例如： bundleName: "com.huawei.hmsapp.appgallery"
-19. bundleName: 'com.xxx'
-20. }
-21. };
-22. productViewManager.loadProduct(this.getUIContext().getHostContext() as common.UIAbilityContext, request, {
-23. onError: (error: BusinessError) => {
-24. hilog.error(0, TAG, `loadProduct onError.code is ${error.code}, message is ${error.message}`);
-25. },
-26. onAppear: () => {
-27. hilog.info(0, TAG, `loadProduct onAppear.`);
-28. },
-29. onDisappear: () => {
-30. hilog.info(0, TAG, `loadProduct onDisappear.`);
-31. }
-32. });
-33. } catch (err) {
-34. hilog.error(0, TAG, `loadProduct failed.code is ${err.code}, message is ${err.message}`);
-35. }
-36. })
-37. .width('100%')
-38. }
-39. .margin(16)
-40. .height('100%')
-41. .justifyContent(FlexAlign.Center)
-42. }
-43. }
+@Entry
+@Component
+struct LoadProduct {
+  build() {
+    Column() {
+      Button("load_product")
+        .onClick(() => {
+          try {
+            const want: Want = {
+              parameters: {
+                // 此处填入要加载的应用包名，例如： bundleName: "com.huawei.hmsapp.appgallery"
+                bundleName: 'com.xxx'
+              }
+            };
+            productViewManager.loadProduct(this.getUIContext().getHostContext() as common.UIAbilityContext, want, {
+              onError: (error: BusinessError) => {
+                hilog.error(0, TAG, `loadProduct onError.code is ${error.code}, message is ${error.message}`);
+              },
+              onAppear: () => {
+                hilog.info(0, TAG, `loadProduct onAppear.`);
+              },
+              onDisappear: () => {
+                hilog.info(0, TAG, `loadProduct onDisappear.`);
+              }
+            });
+          } catch (err) {
+            hilog.error(0, TAG, `loadProduct failed.code is ${err.code}, message is ${err.message}`);
+          }
+        })
+        .width('100%')
+    }
+    .margin(16)
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
 
 ## productViewManager.loadService
 
-PhonePC/2in1TabletTV
-
 loadService(context: common.UIAbilityContext, want: Want, callback?: ServiceViewCallback): void
 
-展示元服务详情页，添加至桌面。使用Callback回调。
+添加元服务卡片至桌面。使用Callback回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -303,8 +304,8 @@ loadService(context: common.UIAbilityContext, want: Want, callback?: ServiceView
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | [common.UIAbilityContext](js-apis-inner-application-uiabilitycontext.md) | 是 | 调用方应用的上下文。 |
-| want | [Want](js-apis-app-ability-want.md) | 是 | 加载元服务详情页面接口的请求参数。uri为必填参数，其值为元服务加桌链接。具体可参考下文中的示例代码。 |
-| callback | [ServiceViewCallback](store-productviewmanager.md#serviceviewcallback) | 否 | 在加载元服务详情页面时作为入参用于接收加载过程中的状态变化。若不填此参数，当加载元服务详情页失败时，无法返回失败的错误码；当加载元服务详情页成功时，点击加桌，无法获取加桌结果。 |
+| want | [Want](js-apis-app-ability-want.md) | 是 | 加载元服务卡片添加至桌面页面接口的请求参数。uri为必填参数，其值为元服务卡片添加至桌面页链接。具体可参考下文中的示例代码。 |
+| callback | [ServiceViewCallback](store-productviewmanager.md#serviceviewcallback) | 否 | 在加载元服务卡片添加至桌面页面时作为入参用于接收加载过程中的状态变化。若不填此参数，当加载元服务卡片添加至桌面页失败时，无法返回失败的错误码；当加载元服务卡片添加至桌面页成功时，点击添加至桌面，无法获取元服务卡片添加至桌面结果。 |
 
 **错误码：**
 
@@ -316,61 +317,59 @@ loadService(context: common.UIAbilityContext, want: Want, callback?: ServiceView
 
 **示例：**
 
-```
-1. import { common, Want } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { productViewManager } from '@kit.AppGalleryKit';
+```typescript
+import { common, Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { productViewManager } from '@kit.AppGalleryKit';
 
-6. const TAG: string = 'LoadService';
+const TAG: string = 'LoadService';
 
-8. @Entry
-9. @Component
-10. struct LoadService {
+@Entry
+@Component
+struct LoadService {
 
-12. build() {
-13. Column() {
-14. Button("load_service")
-15. .onClick(() => {
-16. try {
-17. const request: Want = {
-18. // 请输入元服务的加桌链接
-19. uri: 'store://appgallery.huawei.com/oper/addhome?referrer=xxxx&id=xxxx&installType=xxxx&s=xxxx'
-20. };
-21. productViewManager.loadService(this.getUIContext().getHostContext() as common.UIAbilityContext, request, {
-22. onReceive: (data: productViewManager.ServiceViewReceiveData) => {
-23. hilog.info(0, TAG, `Succeeded in loading Service onReceive.result is ${data.result}, msg is ${data.msg}`);
-24. },
-25. onError: (error: BusinessError) => {
-26. hilog.error(0, TAG, `loadService onError.code is ${error.code}, message is ${error.message}`)
-27. },
-28. onAppear: () => {
-29. hilog.info(0, TAG, `loadService onAppear.`);
-30. },
-31. onDisappear: () => {
-32. hilog.info(0, TAG, `loadService onDisappear.`);
-33. }
-34. });
-35. } catch (err) {
-36. hilog.error(0, TAG, `loadService failed.code is ${err.code}, message is ${err.message}`);
-37. }
-38. })
-39. .width('100%')
-40. }
-41. .margin(16)
-42. .height('100%')
-43. .justifyContent(FlexAlign.Center)
-44. }
-45. }
+  build() {
+    Column() {
+      Button("load_service")
+        .onClick(() => {
+          try {
+            const want: Want = {
+              // 请输入元服务卡片添加至桌面的链接
+              uri: 'store://appgallery.huawei.com/oper/addhome?referrer=xxxx&id=xxxx&installType=xxxx&s=xxxx'
+            };
+            productViewManager.loadService(this.getUIContext().getHostContext() as common.UIAbilityContext, want, {
+              onReceive: (data: productViewManager.ServiceViewReceiveData) => {
+                hilog.info(0, TAG, `Succeeded in loading Service onReceive.result is ${data.result}, msg is ${data.msg}`);
+              },
+              onError: (error: BusinessError) => {
+                hilog.error(0, TAG, `loadService onError.code is ${error.code}, message is ${error.message}`)
+              },
+              onAppear: () => {
+                hilog.info(0, TAG, `loadService onAppear.`);
+              },
+              onDisappear: () => {
+                hilog.info(0, TAG, `loadService onDisappear.`);
+              }
+            });
+          } catch (err) {
+            hilog.error(0, TAG, `loadService failed.code is ${err.code}, message is ${err.message}`);
+          }
+        })
+        .width('100%')
+    }
+    .margin(16)
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
 
 ## productViewManager.checkPinShortcutPermitted
 
-PhonePC/2in1TabletTV
-
 checkPinShortcutPermitted(context: common.UIAbilityContext, shortcutId: string, want: Want, labelResName: string, iconResName: string): Promise<CheckShortcutResult>
 
-以静态资源方式校验快捷方式是否允许加桌，使用Promise异步回调。
+校验是否允许以静态资源方式在桌面创建快捷方式。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -398,7 +397,7 @@ checkPinShortcutPermitted(context: common.UIAbilityContext, shortcutId: string, 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](store-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-appgallery.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -411,62 +410,60 @@ checkPinShortcutPermitted(context: common.UIAbilityContext, shortcutId: string, 
 
 **示例：**
 
-```
-1. import { common, Want } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { productViewManager } from '@kit.AppGalleryKit';
+```typescript
+import { common, Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { productViewManager } from '@kit.AppGalleryKit';
 
-6. const TAG: string = 'CheckPinShortcutPermitted';
+const TAG: string = 'CheckPinShortcutPermitted';
 
-8. @Entry
-9. @Component
-10. struct CheckPinShortcutPermitted {
+@Entry
+@Component
+struct CheckPinShortcutPermitted {
 
-12. build() {
-13. Column() {
-14. Button("checkPinShortcutPermitted")
-15. .onClick(() => {
-16. try {
-17. const uiContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-18. const shortcutId = "id_test1"; // 对应shortcuts标签中配置的shortcutId, 例如: "shortcutId": "id_test1"
-19. const labelResName = "shortcut"; // 对应shortcuts标签中配置的label资源索引名称, 例如: "label": "$string:shortcut"
-20. const iconResName = "aa_icon"; // 对应shortcuts标签中配置的icon资源索引名称, 例如: "icon": "$media:aa_icon"
-21. const want: Want = {
-22. bundleName: "com.example.appgallery.kit.demo",
-23. moduleName: "entry",
-24. abilityName: "EntryAbility",
-25. parameters: {
-26. testKey: "testValue"
-27. }
-28. };
-29. // 以静态资源方式校验快捷方式是否允许加桌,并返回快捷方式校验结果
-30. productViewManager.checkPinShortcutPermitted(uiContext, shortcutId, want, labelResName, iconResName)
-31. .then((result: productViewManager.CheckShortcutResult) => {
-32. hilog.info(0x0001, TAG, `checkPinShortcutPermitted success result is ${JSON.stringify(result)}`);
-33. }).catch((error: BusinessError) => {
-34. hilog.error(0x0001, TAG, `checkPinShortcutPermitted error. code is ${error.code}, message is ${error.message}`);
-35. })
-36. } catch (err) {
-37. hilog.error(0x0001, TAG, `checkPinShortcutPermitted failed, code is ${err.code}, message is ${err.message}`);
-38. }
-39. })
-40. .width('100%')
-41. }
-42. .margin(16)
-43. .height('100%')
-44. .justifyContent(FlexAlign.Center)
-45. }
-46. }
+  build() {
+    Column() {
+      Button("checkPinShortcutPermitted")
+        .onClick(() => {
+          try {
+            const uiContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+            const shortcutId = "id_test1"; // 对应shortcuts标签中配置的shortcutId, 例如: "shortcutId": "id_test1"
+            const labelResName = "shortcut"; // 对应shortcuts标签中配置的label资源索引名称, 例如: "label": "$string:shortcut"
+            const iconResName = "aa_icon"; // 对应shortcuts标签中配置的icon资源索引名称, 例如: "icon": "$media:aa_icon"
+            const want: Want = {
+              bundleName: "com.example.appgallery.kit.demo",
+              moduleName: "entry",
+              abilityName: "EntryAbility",
+              parameters: {
+                testKey: "testValue"
+              }
+            };
+            // 校验是否允许以静态资源方式在桌面创建快捷方式，并返回快捷方式校验结果
+            productViewManager.checkPinShortcutPermitted(uiContext, shortcutId, want, labelResName, iconResName)
+              .then((result: productViewManager.CheckShortcutResult) => {
+                hilog.info(0x0001, TAG, `checkPinShortcutPermitted success result is ${JSON.stringify(result)}`);
+              }).catch((error: BusinessError) => {
+              hilog.error(0x0001, TAG, `checkPinShortcutPermitted error. code is ${error.code}, message is ${error.message}`);
+            })
+          } catch (err) {
+            hilog.error(0x0001, TAG, `checkPinShortcutPermitted failed, code is ${err.code}, message is ${err.message}`);
+          }
+        })
+        .width('100%')
+    }
+    .margin(16)
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
 
 ## productViewManager.checkPinShortcutPermitted
 
-PhonePC/2in1TabletTV
-
 checkPinShortcutPermitted(context: common.UIAbilityContext, shortcutId: string, want: Want, label: string, foregroundIcon: string, backgroundIcon: string): Promise<CheckShortcutResult>
 
-以自定义资源方式校验快捷方式是否允许加桌，使用Promise异步回调。
+校验是否允许以自定义资源方式在桌面创建快捷方式。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -495,7 +492,7 @@ checkPinShortcutPermitted(context: common.UIAbilityContext, shortcutId: string, 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](store-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-appgallery.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -508,63 +505,61 @@ checkPinShortcutPermitted(context: common.UIAbilityContext, shortcutId: string, 
 
 **示例：**
 
-```
-1. import { common, Want } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { productViewManager } from '@kit.AppGalleryKit';
+```typescript
+import { common, Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { productViewManager } from '@kit.AppGalleryKit';
 
-6. const TAG: string = 'CheckPinShortcutPermitted';
+const TAG: string = 'CheckPinShortcutPermitted';
 
-8. @Entry
-9. @Component
-10. struct CheckPinShortcutPermitted {
+@Entry
+@Component
+struct CheckPinShortcutPermitted {
 
-12. build() {
-13. Column() {
-14. Button("checkPinShortcutPermitted")
-15. .onClick(() => {
-16. try {
-17. const uiContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-18. const shortcutId = `shortcutId_1`;
-19. const want: Want = {
-20. bundleName: "com.example.appgallery.kit.demo",
-21. moduleName: "entry",
-22. abilityName: "EntryAbility",
-23. parameters: {
-24. testKey: "testValue"
-25. }
-26. }
-27. const label = "shortcut";
-28. const foregroundIcon = uiContext.filesDir + "/icon.png";
-29. const backgroundIcon = "";
-30. // 以自定义资源方式校验快捷方式是否允许加桌,返回快捷方式校验结果
-31. productViewManager.checkPinShortcutPermitted(uiContext, shortcutId, want, label, foregroundIcon, backgroundIcon)
-32. .then((result: productViewManager.CheckShortcutResult) => {
-33. hilog.info(0x0001, TAG, `checkPinShortcutPermitted success result is ${JSON.stringify(result)}`);
-34. }).catch((error: BusinessError) => {
-35. hilog.error(0x0001, TAG, `checkPinShortcutPermitted error. code is ${error.code}, message is ${error.message}`);
-36. })
-37. } catch (err) {
-38. hilog.error(0x0001, TAG, `checkPinShortcutPermitted failed, code is ${err.code}, message is ${err.message}`);
-39. }
-40. })
-41. .width('100%')
-42. }
-43. .margin(16)
-44. .height('100%')
-45. .justifyContent(FlexAlign.Center)
-46. }
-47. }
+  build() {
+    Column() {
+      Button("checkPinShortcutPermitted")
+        .onClick(() => {
+          try {
+            const uiContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+            const shortcutId = `shortcutId_1`;
+            const want: Want = {
+              bundleName: "com.example.appgallery.kit.demo",
+              moduleName: "entry",
+              abilityName: "EntryAbility",
+              parameters: {
+                testKey: "testValue"
+              }
+            }
+            const label = "shortcut";
+            const foregroundIcon = uiContext.filesDir + "/icon.png";
+            const backgroundIcon = "";
+            // 校验是否允许以自定义资源方式在桌面创建快捷方式，返回快捷方式校验结果
+            productViewManager.checkPinShortcutPermitted(uiContext, shortcutId, want, label, foregroundIcon, backgroundIcon)
+              .then((result: productViewManager.CheckShortcutResult) => {
+                hilog.info(0x0001, TAG, `checkPinShortcutPermitted success result is ${JSON.stringify(result)}`);
+              }).catch((error: BusinessError) => {
+              hilog.error(0x0001, TAG, `checkPinShortcutPermitted error. code is ${error.code}, message is ${error.message}`);
+            })
+          } catch (err) {
+            hilog.error(0x0001, TAG, `checkPinShortcutPermitted failed, code is ${err.code}, message is ${err.message}`);
+          }
+        })
+        .width('100%')
+    }
+    .margin(16)
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
 
 ## productViewManager.requestNewPinShortcut
 
-PhonePC/2in1TabletTV
-
 requestNewPinShortcut(context: common.UIAbilityContext, tid: string): Promise<void>
 
-创建快捷方式加桌，使用Promise异步回调。
+请求在桌面创建快捷方式。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -589,7 +584,7 @@ requestNewPinShortcut(context: common.UIAbilityContext, tid: string): Promise<vo
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](store-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-appgallery.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -603,40 +598,185 @@ requestNewPinShortcut(context: common.UIAbilityContext, tid: string): Promise<vo
 
 **示例：**
 
+```typescript
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { productViewManager } from '@kit.AppGalleryKit';
+
+const TAG: string = 'RequestNewPinShortcut';
+
+@Entry
+@Component
+struct RequestNewPinShortcut {
+
+  build() {
+    Column() {
+      Button("RequestNewPinShortcut")
+        .onClick(() => {
+          try {
+            const uiContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+            const tid = 'xxx'; // 通过checkPinShortcutPermitted接口获取
+            productViewManager.requestNewPinShortcut(uiContext, tid)
+              .then(() => {
+                hilog.info(0x0001, TAG, `requestNewPinShortcut success.`);
+              }).catch((error: BusinessError) => {
+              hilog.error(0x0001, TAG, `requestNewPinShortcut error. code is ${error.code}, message is ${error.message}`);
+            })
+          } catch (err) {
+            hilog.error(0x0001, TAG, `requestNewPinShortcut failed, code is ${err.code}, message is ${err.message}`);
+          }
+        })
+        .width('100%')
+    }
+    .margin(16)
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
-1. import { common } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { productViewManager } from '@kit.AppGalleryKit';
 
-6. const TAG: string = 'RequestNewPinShortcut';
+## productViewManager.getPinShortcutInfos
 
-8. @Entry
-9. @Component
-10. struct RequestNewPinShortcut {
+getPinShortcutInfos(): Promise<PinShortcutInfo[]>
 
-12. build() {
-13. Column() {
-14. Button("RequestNewPinShortcut")
-15. .onClick(() => {
-16. try {
-17. const uiContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-18. const tid = 'xxx'; // 通过checkPinShortcutPermitted接口获取
-19. productViewManager.requestNewPinShortcut(uiContext, tid)
-20. .then(() => {
-21. hilog.info(0x0001, TAG, `requestNewPinShortcut success.`);
-22. }).catch((error: BusinessError) => {
-23. hilog.error(0x0001, TAG, `requestNewPinShortcut error. code is ${error.code}, message is ${error.message}`);
-24. })
-25. } catch (err) {
-26. hilog.error(0x0001, TAG, `requestNewPinShortcut failed, code is ${err.code}, message is ${err.message}`);
-27. }
-28. })
-29. .width('100%')
-30. }
-31. .margin(16)
-32. .height('100%')
-33. .justifyContent(FlexAlign.Center)
-34. }
-35. }
+查询桌面快捷方式信息。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.AppGalleryService.Distribution.Recommendations
+
+**起始版本：** 6.1.1(24)
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[PinShortcutInfo](store-productviewmanager.md#pinshortcutinfo)[]> | Promise对象。返回查询桌面快捷方式信息列表的结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-appgallery.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 1006620001 | System internal error. |
+| 1006620002 | Request to service error. |
+
+**示例：**
+
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { productViewManager } from '@kit.AppGalleryKit';
+
+const TAG: string = 'GetPinShortcutInfos';
+
+@Entry
+@Component
+struct GetPinShortcutInfos {
+
+  build() {
+    Column() {
+      Button("GetPinShortcutInfos")
+        .onClick(() => {
+          try {
+            // 通过getPinShortcutInfos接口获取桌面快捷方式列表信息
+            productViewManager.getPinShortcutInfos()
+              .then(() => {
+                hilog.info(0x0001, TAG, `getPinShortcutInfos success.`);
+              }).catch((error: BusinessError) => {
+              hilog.error(0x0001, TAG, `getPinShortcutInfos error. code is ${error.code}, message is ${error.message}`);
+            })
+          } catch (err) {
+            hilog.error(0x0001, TAG, `getPinShortcutInfos failed, code is ${err.code}, message is ${err.message}`);
+          }
+        })
+        .width('100%')
+    }
+    .margin(16)
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
+```
+
+## productViewManager.removePinShortcut
+
+removePinShortcut(context: common.UIAbilityContext, shortcutId: string): Promise<void>
+
+删除桌面快捷方式。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.AppGalleryService.Distribution.Recommendations
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | [common.UIAbilityContext](js-apis-inner-application-uiabilitycontext.md) | 是 | 上下文。 |
+| shortcutId | string | 是 | 快捷方式ID。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-appgallery.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 1006620001 | System internal error. |
+| 1006620010 | The shortcut ID does not exist. |
+| 1006620011 | Invalid context. |
+| 1006620012 | Invalid shortcutId. |
+| 1006620013 | The user refused to delete the shortcut. |
+| 1006620014 | Invalid number of parameters. |
+
+**示例：**
+
+```typescript
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { productViewManager } from '@kit.AppGalleryKit';
+
+const TAG: string = 'RemovePinShortcut';
+
+@Entry
+@Component
+struct RemovePinShortcut {
+
+  build() {
+    Column() {
+      Button("RemovePinShortcut")
+        .onClick(() => {
+          try {
+            const uiContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+            const shortcutId = 'xxx'; // 通过checkPinShortcutPermitted接口获取
+            productViewManager.removePinShortcut(uiContext, shortcutId)
+              .then(() => {
+                hilog.info(0x0001, TAG, `removePinShortcut success.`);
+              }).catch((error: BusinessError) => {
+              hilog.error(0x0001, TAG, `removePinShortcut error. code is ${error.code}, message is ${error.message}`);
+            })
+          } catch (err) {
+            hilog.error(0x0001, TAG, `removePinShortcut failed, code is ${err.code}, message is ${err.message}`);
+          }
+        })
+        .width('100%')
+    }
+    .margin(16)
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```

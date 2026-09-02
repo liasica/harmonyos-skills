@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphic-drawi
 title: 图形绘制与显示开发概述
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 图形绘制与显示开发概述
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:36:07+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:661c40ee928540703ffc1d091b14a07dfeb63a466cb5edd35a8dbdf77e17418f
+scraped_at: 2026-09-02T14:50:20+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:bc3bb805f3ad5fcb7352dcb2772df718a37e8dcdc47130c22501f31b1718c9ee
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:661c40ee928540703ffc1d091b14a07dfeb63a466cb5edd35a8dbdf77e1
 
 **图1** 图形绘制主要能力
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/UmoM0AYjSVa1xIcefxcvJQ/zh-cn_image_0000002558765132.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/CUpf8r5HSw6k6zAcg-Huew/zh-cn_image_0000002736433779.jpg)
 
 ArkGraphics 2D基于2D图像渲染引擎为开发者提供了一系列灵活多样的图形绘制接口。主要分为画布操作、绘制效果、图元绘制几方面，各部分支持能力关键列举如上图所示，后续可能支持更多相关能力，此处不再一一呈现，具体可关注对应API参考文档。
 
@@ -24,7 +24,7 @@ ArkGraphics 2D基于2D图像渲染引擎为开发者提供了一系列灵活多�
 
 **图2** 图形绘制的实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/R9EtpLZbQL-WmsvIvw2skw/zh-cn_image_0000002558605476.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Dly4KmGXQdipSGauOBYA1w/zh-cn_image_0000002706834628.jpg)
 
 2D图形绘制过程和实际作画的过程是相似的，上图即以绘制经过旋转的红色填充矩形为例，提供了图形绘制的流程。主要实现流程和步骤如下：
 
@@ -48,7 +48,7 @@ Drawing的显示方式主要包括以下两种：
 
 其中CanvasRenderingContext2D按照W3C标准封装了ArkGraphics 2D中Native Drawing的相关接口，可以方便快速复用Web应用的绘制逻辑，因此非常适用于Web应用和游戏、快速原型设计、数据可视化、在线绘图板、教学工具或创意应用等场景。
 
-[Canvas组件](../harmonyos-references/ts-components-canvas-canvas.md)的底层也使用了[Native Drawing](../harmonyos-references/capi-drawing.md)接口来实现绘制功能，在绘制能力上两者没有本质的区别。但因为多层封装的实现过程，使得Canvas组件在硬件接近性方面不如[Native Drawing Canvas](../harmonyos-references/capi-drawing-canvas-h.md)，因此对于性能要求比较高、绘制比较复杂、硬件依赖性比较强的场景，如专业图形处理软件、桌面或移动应用等，使用Canvas组件绘制可能会存在一定的卡顿、掉帧等性能问题，此时可以使用Native Drawing接口的自绘制能力，确保应用的绘制性能。
+[Canvas组件](../harmonyos-references/ts-components-canvas-canvas.md)的底层也使用了[Native Drawing](../harmonyos-references/capi-drawing.md)接口来实现绘制功能，在绘制能力上两者没有本质的区别。但因为多层封装的实现过程，使得Canvas组件在硬件接近性方面不如Native Drawing Canvas（[drawing\_canvas.h](../harmonyos-references/capi-drawing-canvas-h.md)），因此对于性能要求比较高、绘制比较复杂、硬件依赖性比较强的场景，如专业图形处理软件、桌面或移动应用等，使用Canvas组件绘制可能会存在一定的卡顿、掉帧等性能问题，此时可以使用Native Drawing接口的自绘制能力，确保应用的绘制性能。
 
 ## 约束限制
 

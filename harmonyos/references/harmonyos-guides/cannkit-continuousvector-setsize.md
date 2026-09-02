@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-conti
 title: SetSize
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > ContinuousVector > SetSize
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:53+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:aa57159152fc6abddab5922f257a864b8cd929133d673737afa4d082fea0af1b
+scraped_at: 2026-09-02T14:50:39+08:00
+doc_updated_at: 2026-08-07
+content_hash: sha256:6914c75346b22f1a74056a3890522d11e4d4d3b3bd8e95484135c8bd8b88c220
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:aa57159152fc6abddab5922f257a864b8cd929133d673737afa4d082fea
 
 ## 函数原型
 
-```
-1. ge::graphStatus SetSize(const size_t size)
+```cpp
+ge::graphStatus SetSize(const size_t size)
 ```
 
 ## 参数说明
@@ -36,10 +36,10 @@ content_hash: sha256:aa57159152fc6abddab5922f257a864b8cd929133d673737afa4d082fea
 
 ## 调用示例
 
-```
-1. size_t capacity = 100U;
-2. auto cv_holder = ContinuousVector::Create<int64_t>(capacity);
-3. auto cv = reinterpret_cast<ContinuousVector *>(cv_holder.get());
-4. auto ret = cv->SetSize(10U); // ge::GRAPH_SUCCESS
-5. ret = cv->GetSize(101U); // ge::GRAPH_FAILED
+```cpp
+size_t capacity = 100U;
+auto cv_holder = ContinuousVector::Create<int64_t>(capacity);
+auto cv = reinterpret_cast<ContinuousVector *>(cv_holder.get());
+auto ret = cv->SetSize(10U); // ge::GRAPH_SUCCESS
+ret = cv->SetSize(101U); // ge::GRAPH_FAILED
 ```

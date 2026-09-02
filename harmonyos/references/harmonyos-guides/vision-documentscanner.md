@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/vision-docume
 title: 文档扫描
 breadcrumb: 指南 > AI > Vision Kit（场景化视觉服务） > 文档扫描
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:43:50+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:acd96689e541e5c331f1031d2899854506762d0a692744596314e82e596ddad1
+scraped_at: 2026-09-02T15:00:15+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:81e307c6a2d77520c93472e0cf318ee3e326fc10daf01049c8b980f2ab97e690
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:acd96689e541e5c331f1031d2899854506762d0a692744596314e82e596
 
 **图1** 文档扫描示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/vpSzyJnZT4abPtRgtKVuIA/zh-cn_image_0000002558606198.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/5dsSTL6LStKB72EPdO6-og/zh-cn_image_0000002706835432.png)
 
 ## 约束与限制
 
@@ -37,163 +37,183 @@ content_hash: sha256:acd96689e541e5c331f1031d2899854506762d0a692744596314e82e596
 
 1. 将文档扫描控件相关的类添加至工程。
 
+   ```typescript
+   import { DocType, DocumentScanner, DocumentScannerConfig, SaveOption, FilterId, ShootingMode, DocumentScannerController } from '@kit.VisionKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
-   1. import { DocType, DocumentScanner, DocumentScannerConfig, SaveOption, FilterId, ShootingMode } from "@kit.VisionKit";
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
+2. 部分设备不支持文档扫描控件的表格提取功能。在使用该功能前，建议先调用isSheetDetectionSupported接口查询当前设备是否支持。
+
+   ```typescript
+   let documentScannerController: DocumentScannerController = new DocumentScannerController();
+   let isSheetSupported = documentScannerController.isSheetDetectionSupported();
+   hilog.info(0x0001, TAG, `isSheetSupported: ${isSheetSupported}`);
    ```
-2. 配置布局，根据业务场景配置文档扫描控件的相关属性，获取返回的文档图片uri列表。
+3. 配置布局，根据业务场景配置文档扫描控件的相关属性，获取返回的文档图片uri列表。
 
-   ```
-   1. const TAG = 'DocumentScanner'
+   ```typescript
+   const TAG = 'DocumentScanner';
 
-   3. @Entry
-   4. @Component
-   5. struct Index {
-   6. private docScanConfig = new DocumentScannerConfig()
+   @Entry
+   @Component
+   struct Index {
+     private docScanConfig = new DocumentScannerConfig();
 
-   8. aboutToAppear() {
-   9. this.docScanConfig.supportType = [DocType.DOC, DocType.SHEET]
-   10. this.docScanConfig.isGallerySupported = true
-   11. this.docScanConfig.editTabs = []
-   12. this.docScanConfig.maxShotCount = 3
-   13. this.docScanConfig.defaultFilterId = FilterId.ORIGINAL
-   14. this.docScanConfig.defaultShootingMode = ShootingMode.MANUAL
-   15. this.docScanConfig.isShareable = true
-   16. this.docScanConfig.originalUris = []
-   17. }
+     aboutToAppear() {
+       let documentScannerController: DocumentScannerController = new DocumentScannerController();
+       let isSheetSupported = documentScannerController.isSheetDetectionSupported();
+       if (isSheetSupported) {
+         this.docScanConfig.supportType = [DocType.DOC, DocType.SHEET];
+       } else {
+         this.docScanConfig.supportType = [DocType.DOC];
+       }
+       this.docScanConfig.isGallerySupported = true;
+       this.docScanConfig.editTabs = [];
+       this.docScanConfig.maxShotCount = 3;
+       this.docScanConfig.defaultFilterId = FilterId.ORIGINAL;
+       this.docScanConfig.defaultShootingMode = ShootingMode.MANUAL;
+       this.docScanConfig.isShareable = true;
+       this.docScanConfig.originalUris = [];
+     }
 
-   19. build() {
-   20. Column() {
-   21. DocumentScanner({
-   22. scannerConfig: this.docScanConfig,
-   23. onResult: (code: number, saveType: SaveOption, uris: string[]) => {
-   24. hilog.info(0x0001, TAG, `result code: ${code}, save: ${saveType}`)
-   25. uris.forEach(uriString => {
-   26. hilog.info(0x0001, TAG, `uri: ${uriString}`)
-   27. })
-   28. }
-   29. }).size({ width: '100%', height: '100%' })
-   30. }
-   31. .height('100%')
-   32. .width('100%')
-   33. }
-   34. }
+     build() {
+       Column() {
+         DocumentScanner({
+           scannerConfig: this.docScanConfig,
+           onResult: (code: number, saveType: SaveOption, uris: string[]) => {
+             hilog.info(0x0001, TAG, `result code: ${code}, save: ${saveType}`);
+             uris.forEach(uriString => {
+               hilog.info(0x0001, TAG, `uri: ${uriString}`);
+             })
+           }
+         }).size({ width: '100%', height: '100%' })
+       }
+       .height('100%')
+       .width('100%')
+     }
+   }
    ```
 
 ## 开发实例
 
 ### Index.ets
 
-```
-1. // 开发实例分两页实现，一页为文档扫描入口页，一页为文档扫描实现页
-2. // 文档扫描入口页，需引入文档扫描实现页，以下文实例为例，实现页文件名为DocDemoPage
-3. import { DocDemoPage } from './DocDemoPage'
+```typescript
+// 开发实例分两页实现，一页为文档扫描入口页，一页为文档扫描实现页
+// 文档扫描入口页，需引入文档扫描实现页，以下文实例为例，实现页文件名为DocDemoPage
+import { DocDemoPage } from './DocDemoPage';
 
-5. @Entry
-6. @Component
-7. struct MainPage {
-8. @Provide('pathStack') pathStack: NavPathStack = new NavPathStack()
+@Entry
+@Component
+struct MainPage {
+  @Provide('pathStack') pathStack: NavPathStack = new NavPathStack();
 
-10. @Builder
-11. PageMap(name: string) {
-12. if (name === 'documentScanner') {
-13. DocDemoPage()
-14. }
-15. }
+  @Builder
+  PageMap(name: string) {
+    if (name === 'documentScanner') {
+      DocDemoPage()
+    }
+  }
 
-17. // 文档扫描入口按钮，可替换为业务入口
-18. build() {
-19. Navigation(this.pathStack) {
-20. Button('DocumentScanner', { stateEffect: true, type: ButtonType.Capsule })
-21. .width('50%')
-22. .height(40)
-23. .onClick(() => {
-24. this.pathStack.pushPath({ name: 'documentScanner' })
-25. })
-26. }.title('文档扫描控件demo').navDestination(this.PageMap)
-27. .mode(NavigationMode.Stack)
-28. }
-29. }
+  // 文档扫描入口按钮，可替换为业务入口
+  build() {
+    Navigation(this.pathStack) {
+      Button('DocumentScanner', { stateEffect: true, type: ButtonType.Capsule })
+        .width('50%')
+        .height(40)
+        .onClick(() => {
+          this.pathStack.pushPath({ name: 'documentScanner' });
+        })
+    }.title('文档扫描控件demo').navDestination(this.PageMap)
+    .mode(NavigationMode.Stack)
+  }
+}
 ```
 
 ### DocDemoPage.ets
 
-```
-1. // 文档扫描实现页，文件名为DocDemoPage，需被引入至入口页
-2. import {
-3. DocType,
-4. DocumentScanner,
-5. DocumentScannerConfig,
-6. SaveOption,
-7. FilterId,
-8. ShootingMode
-9. } from "@kit.VisionKit"
-10. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+// 文档扫描实现页，文件名为DocDemoPage，需被引入至入口页
+import {
+  DocType,
+  DocumentScanner,
+  DocumentScannerConfig,
+  SaveOption,
+  FilterId,
+  ShootingMode,
+  DocumentScannerController
+} from '@kit.VisionKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-12. const TAG: string = 'DocDemoPage'
+const TAG: string = 'DocDemoPage';
 
-14. // 文档扫描页，用于加载UIExtensionAbility
-15. @Component
-16. export struct DocDemoPage {
-17. @State docImageUris: string[] = []
-18. @Consume('pathStack') pathStack: NavPathStack
-19. private docScanConfig = new DocumentScannerConfig()
+// 文档扫描页，用于加载UIExtensionAbility
+@Component
+export struct DocDemoPage {
+  @State docImageUris: string[] = [];
+  @Consume('pathStack') pathStack: NavPathStack;
+  private docScanConfig = new DocumentScannerConfig();
 
-21. aboutToAppear() {
-22. this.docScanConfig.supportType = [DocType.DOC, DocType.SHEET]
-23. this.docScanConfig.isGallerySupported = true
-24. this.docScanConfig.editTabs = []
-25. this.docScanConfig.maxShotCount = 3
-26. this.docScanConfig.defaultFilterId = FilterId.ORIGINAL
-27. this.docScanConfig.defaultShootingMode = ShootingMode.MANUAL
-28. this.docScanConfig.isShareable = true
-29. this.docScanConfig.originalUris = []
-30. }
+  aboutToAppear() {
+    let documentScannerController: DocumentScannerController = new DocumentScannerController();
+    let isSheetSupported = documentScannerController.isSheetDetectionSupported();
+    if (isSheetSupported) {
+      this.docScanConfig.supportType = [DocType.DOC, DocType.SHEET];
+    } else {
+      this.docScanConfig.supportType = [DocType.DOC];
+    }
+    this.docScanConfig.isGallerySupported = true;
+    this.docScanConfig.editTabs = [];
+    this.docScanConfig.maxShotCount = 3;
+    this.docScanConfig.defaultFilterId = FilterId.ORIGINAL;
+    this.docScanConfig.defaultShootingMode = ShootingMode.MANUAL;
+    this.docScanConfig.isShareable = true;
+    this.docScanConfig.originalUris = [];
+  }
 
-32. build() {
-33. NavDestination() {
-34. Stack({ alignContent: Alignment.Top }) {
-35. // 展示文档扫描结果
-36. List() {
-37. ForEach(this.docImageUris, (uri: string) => {
-38. ListItem() {
-39. Image(uri)
-40. .objectFit(ImageFit.Contain)
-41. .width(100)
-42. .height(100)
-43. }
-44. })
-45. }
-46. .listDirection(Axis.Vertical)
-47. .alignListItem(ListItemAlign.Center)
-48. .margin({
-49. top: 50
-50. })
-51. .width('80%')
-52. .height('80%')
-
-54. // 文档扫描
-55. DocumentScanner({
-56. scannerConfig: this.docScanConfig,
-57. onResult: (code: number, saveType: SaveOption, uris: string[]) => {
-58. hilog.info(0x0001, TAG, `result code: ${code}, save: ${saveType}`)
-59. if (code === -1) {
-60. this.pathStack.pop()
-61. }
-62. uris.forEach(uriString => {
-63. hilog.info(0x0001, TAG, `uri: ${uriString}`)
-64. })
-65. this.docImageUris = uris
-66. }
-67. })
-68. .size({ width: '100%', height: '100%' })
-69. }
-70. .width('100%')
-71. .height('100%')
-72. }
-73. .width('100%')
-74. .height('100%')
-75. .hideTitleBar(true)
-76. }
-77. }
+  build() {
+    NavDestination() {
+      Stack({ alignContent: Alignment.Top }) {
+      // 展示文档扫描结果
+        List() {
+          ForEach(this.docImageUris, (uri: string) => {
+            ListItem() {
+              Image(uri)
+                .objectFit(ImageFit.Contain)
+                .width(100)
+                .height(100)
+            }
+          })
+        }
+        .listDirection(Axis.Vertical)
+        .alignListItem(ListItemAlign.Center)
+        .margin({
+          top: 50
+        })
+        .width('80%')
+        .height('80%')
+        
+        // 文档扫描
+        DocumentScanner({
+          scannerConfig: this.docScanConfig,
+          onResult: (code: number, saveType: SaveOption, uris: string[]) => {
+            hilog.info(0x0001, TAG, `result code: ${code}, save: ${saveType}`);
+            if (code === -1) {
+              this.pathStack.pop();
+            }
+            uris.forEach(uriString => {
+              hilog.info(0x0001, TAG, `uri: ${uriString}`);
+            })
+            this.docImageUris = uris;
+          }
+        })
+          .size({ width: '100%', height: '100%' })
+      }
+      .width('100%')
+      .height('100%')
+    }
+    .width('100%')
+    .height('100%')
+    .hideTitleBar(true)
+  }
+}
 ```

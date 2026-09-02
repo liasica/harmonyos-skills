@@ -3,17 +3,17 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 单击快速验证手机号按钮，无法拉起页面
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > Scenario Fusion Kit常见问题 > 单击快速验证手机号按钮，无法拉起页面
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:49+08:00
+scraped_at: 2026-09-02T14:50:32+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c7565a276a5938d4c96fa0a4cbb9ab2608f6f9e9540478dfba21eb49ea50930b
+content_hash: sha256:76bf8fcd35976ae8465a12d9a138b17f793398e69159f1f8062c4c83881efc90
 ---
 
 **现象描述**
 
 日志报错示例：
 
-```
-1. login fail, error: {"code":1001502014,"message":"The app does not have the required scopes or permissions."}
+```typescript
+login fail, error: {"code":1001502014,"message":"The app does not have the required scopes or permissions."}
 ```
 
 **解决措施**

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-optim
 title: 异构
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部署 > 异构
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:40:59+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1773ff5ca8e03055d9b4a79cd44ff507ef7087600a612846b9618e598ee53769
+scraped_at: 2026-09-02T14:50:34+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:7236254d2d759e0d9568f3d0fdc88ae3530b62b4735dbcf037bfe580b42dd10d
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:1773ff5ca8e03055d9b4a79cd44ff507ef7087600a612846b9618e598ee
 
 异构的原理如下图所示，指定OP1、OP2、OP5~OPn在CPU上进行推理，OP3、OP4在NPU上进行推理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/OaHlUI2DQnGG72g-Xf8fmQ/zh-cn_image_0000002558765722.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/GhF32zr2QnOwtzM7yidtnQ/zh-cn_image_0000002706835286.png)
 
 实现异构可以通过在线调优方式，以下为在线调优参数设置接口，接口使用见[在线调优开发步骤](cannkit-optimization.md#在线调优开发步骤)。如要使用更丰富的设置和查询接口，请参见[API参考](../harmonyos-references/cannkit.md)。
 
@@ -41,27 +41,18 @@ content_hash: sha256:1773ff5ca8e03055d9b4a79cd44ff507ef7087600a612846b9618e598ee
 以下示例代码设置调优参数SetTuningMode及SetTuningCacheDir，实现在线调优。
 
 ```
-1. #include "neural_network_runtime/neural_network_core.h"
-2. #include "CANNKit/hiai_options.h"
-3. // 基于离线模型文件创建编译实例
-4. OH_NNCompilation* compilation = OH_NNCompilation_ConstructWithOfflineModelFile("test.om");
-5. if (compilation == nullptr) {
-6. return;
-7. }
-8. // 选择辅助调优模式
-9. OH_NN_ReturnCode ret = HMS_HiAIOptions_SetTuningMode(compilation, HIAI_TUNING_MODE_HETER);
-10. if (ret != OH_NN_SUCCESS ) {
-11. return;
-12. }
-13. // 设置辅助调优的缓存目录
-14. const char* cacheDir = "/data/local/tmp";
-15. ret = HMS_HiAIOptions_SetTuningCacheDir(compilation, cacheDir);
-16. if (ret != OH_NN_SUCCESS ) {
-17. return;
-18. }
-19. // 编译模型
-20. ret = OH_NNCompilation_Build(compilation);
-21. if (ret != OH_NN_SUCCESS ) {
-22. return;
-23. }
+// 选择辅助调优模式
+OH_NN_ReturnCode ret = HMS_HiAIOptions_SetTuningMode(compilation, HIAI_TUNING_MODE_HETER);
+if (ret != OH_NN_SUCCESS) {
+    OH_LOG_ERROR(LOG_APP, "HMS_HiAIOptions_SetTuningMode failed");
+    return ret;
+}
+// 设置辅助调优的缓存目录
+const char* cacheDir = "/data/storage/el2/base/files";
+ret = HMS_HiAIOptions_SetTuningCacheDir(compilation, cacheDir);
+if (ret != OH_NN_SUCCESS) {
+    OH_LOG_ERROR(LOG_APP, "HMS_HiAIOptions_SetTuningCacheDir failed");
+    return ret;
+}
+return OH_NN_SUCCESS;
 ```

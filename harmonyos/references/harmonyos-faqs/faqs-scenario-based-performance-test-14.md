@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-scenario-b
 title: 时延类指标出现负数是什么原因
 breadcrumb: FAQ > DevEco Testing > 专项测试 > 场景化性能测试 > 时延类指标出现负数是什么原因
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:32+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:7367b78f1b57aecaddd0d78146524eca481b1818b8a242af9383ecb312f47471
 ---
 

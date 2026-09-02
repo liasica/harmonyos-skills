@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getsu
 title: GetSubgraphNamesCount
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator > GetSubgraphNamesCount
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:44+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b6996a5573e59c4fbc79cc38726dbd36e42adb309e3ec17413f78a8d85722061
+content_hash: sha256:f76853d8b85c0931fda9f2cd5e295af58c27bffdef804ffc6f10e2d3cd527ee2
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:b6996a5573e59c4fbc79cc38726dbd36e42adb309e3ec17413f78a8d857
 
 ## 函数原型
 
-```
-1. size_t GetSubgraphNamesCount() const;
+```cpp
+size_t GetSubgraphNamesCount() const;
 ```
 
 ## 参数说明

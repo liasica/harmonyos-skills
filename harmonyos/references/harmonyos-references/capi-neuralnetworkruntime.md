@@ -3,22 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-neur
 title: NeuralNetworkRuntime
 breadcrumb: API参考 > AI > Neural Network Runtime Kit（Neural Network运行时服务） > C API > 模块 > NeuralNetworkRuntime
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:07+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:731d0dc3ae228d775160a6fb83cff5a967455142cf2125f8c87aa7a5d74d4496
+scraped_at: 2026-09-02T14:53:35+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d1ade9e151f6b2dbc0e9fed63148dfe89fb7bf1fd588146b43b1d14b02fadd25
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 提供Neural Network Runtime加速模型推理的相关接口。
 
 **起始版本：** 9
 
 ## 文件汇总
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |

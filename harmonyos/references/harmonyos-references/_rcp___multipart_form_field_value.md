@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___mu
 title: Rcp_MultipartFormFieldValue
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > C API > 结构体 > Rcp_MultipartFormFieldValue
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:05+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6749dd70e69c507fea4f17b0bddb6ac17e0ac08fa2b692d1345eab0fe103d332
+scraped_at: 2026-09-02T15:01:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8097151c4299e63b7336be14d460c010f953800840351cea5bade77713161414
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 多部分表单域值，在[Rcp\_MultipartForm](remote-communication-overview.md#rcp_multipartform)中使用。
 
@@ -22,28 +20,20 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
 | [Rcp\_MultipartValueType](remote-communication-overview.md#rcp_multipartvaluetype) [type](_rcp___multipart_form_field_value.md#type) | 表示union中使用的数据类型。 |
-| union {  [Rcp\_FormFieldValue](_rcp___form_field_value.md) [formValue](_rcp___multipart_form_field_value.md#formvalue)  [Rcp\_FormFieldFileValue](_rcp___form_field_file_value.md) [formFileValue](_rcp___multipart_form_field_value.md#formfilevalue)  } | formValue：简单表单数据字段值。  formFileValue：简单表单数据字段文件值。 |
+| union {  [Rcp\_FormFieldValue](_rcp___form_field_value.md) [formValue](_rcp___multipart_form_field_value.md#formvalue);  [Rcp\_FormFieldFileValue](_rcp___form_field_file_value.md) [formFileValue](_rcp___multipart_form_field_value.md#formfilevalue);  } data | formValue：简单表单数据字段值。  formFileValue：简单表单数据字段文件值。 |
 | struct [Rcp\_MultipartFormFieldValue](_rcp___multipart_form_field_value.md) \* [next](_rcp___multipart_form_field_value.md#next) | 指向下一个[Rcp\_MultipartFormFieldValue](_rcp___multipart_form_field_value.md)。链式存储。 |
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTVWearable
-
 ### formFileValue
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Rcp_FormFieldFileValue Rcp_MultipartFormFieldValue::formFileValue
+```cpp
+Rcp_FormFieldFileValue Rcp_MultipartFormFieldValue::formFileValue
 ```
 
 **描述**
@@ -52,10 +42,8 @@ PhonePC/2in1TabletTVWearable
 
 ### formValue
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Rcp_FormFieldValue Rcp_MultipartFormFieldValue::formValue
+```cpp
+Rcp_FormFieldValue Rcp_MultipartFormFieldValue::formValue
 ```
 
 **描述**
@@ -64,10 +52,8 @@ PhonePC/2in1TabletTVWearable
 
 ### next
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. struct Rcp_MultipartFormFieldValue* Rcp_MultipartFormFieldValue::next
+```cpp
+struct Rcp_MultipartFormFieldValue* Rcp_MultipartFormFieldValue::next
 ```
 
 **描述**
@@ -76,10 +62,8 @@ PhonePC/2in1TabletTVWearable
 
 ### type
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Rcp_MultipartValueType Rcp_MultipartFormFieldValue::type
+```cpp
+Rcp_MultipartValueType Rcp_MultipartFormFieldValue::type
 ```
 
 **描述**

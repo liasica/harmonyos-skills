@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-k
 title: XEG_HPSRadixSort
 breadcrumb: API参考 > 图形 > XEngine Kit（GPU加速引擎服务） > C API > 头文件和结构体 > 结构体 > XEG_HPSRadixSort
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:01+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c18a2bbd55150a7d1d12495dc86f56fb3ff17e3c1fe0bdfa015227490aaa0660
+scraped_at: 2026-09-02T15:02:49+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:bac24ec065847f72e3b532ac051cb1306ca3ce00e47ebdce538fac6a11cd1ab7
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 此结构体描述HPS基数排序扩展结构信息。
 
@@ -22,11 +20,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 成员变量
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -35,14 +29,10 @@ PhonePC/2in1TabletTV
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTV
-
 ### pNext
 
-PhonePC/2in1TabletTV
-
-```
-1. const void* XEG_HPSRadixSort::pNext
+```cpp
+const void* XEG_HPSRadixSort::pNext
 ```
 
 **描述**
@@ -51,10 +41,8 @@ PhonePC/2in1TabletTV
 
 ### sType
 
-PhonePC/2in1TabletTV
-
-```
-1. XEG_StructureType XEG_HPSRadixSort::sType
+```cpp
+XEG_StructureType XEG_HPSRadixSort::sType
 ```
 
 **描述**

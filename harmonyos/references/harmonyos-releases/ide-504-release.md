@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/ide-504-release
 title: 新增和增强特性
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.4(16) > DevEco Studio > 新增和增强特性
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.4(16) > DevEco Studio > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:28+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:36+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:49e58ce7c4fd8e1cd679935bbf7a686cba4609525f928f400ad716bf9b781240
 ---
 

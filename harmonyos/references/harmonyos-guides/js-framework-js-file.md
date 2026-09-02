@@ -3,26 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-framework-
 title: app.js
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 框架说明 > app.js
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:40+08:00
+scraped_at: 2026-09-02T14:49:53+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:f42fe860f484118593cc1bbcb36134abb04600234e983bbabd374480ae4bdb96
+content_hash: sha256:d57817df81d5671964c893d5ebeac25c02ad1495722058a01590303138f034a1
 ---
 
 ## 应用生命周期
 
 每个应用可以在app.js自定义应用级[生命周期](js-framework-lifecycle.md)的实现逻辑，以下示例仅在生命周期函数中打印对应日志：
 
-```
-1. // app.js
-2. export default {
-3. onCreate() {
-4. console.info('Application onCreate');
-5. },
+```js
+// app.js
+export default {
+    onCreate() {
+        console.info('Application onCreate');
+    },
 
-7. onDestroy() {
-8. console.info('Application onDestroy');
-9. },
-10. }
+    onDestroy() {
+        console.info('Application onDestroy');
+    },
+}
 ```
 
 ## 应用对象6+
@@ -33,22 +33,22 @@ content_hash: sha256:f42fe860f484118593cc1bbcb36134abb04600234e983bbabd374480ae4
 
 示例如下：
 
-```
-1. // app.js
-2. export default {
-3. data: {
-4. test: "by getApp"
-5. },
-6. onCreate() {
-7. console.info('AceApplication onCreate');
-8. },
-9. onDestroy() {
-10. console.info('AceApplication onDestroy');
-11. },
-12. }
+```js
+// app.js
+export default {
+    data: {
+        test: "by getApp"
+    },
+    onCreate() {
+        console.info('AceApplication onCreate');
+    },
+    onDestroy() {
+        console.info('AceApplication onDestroy');
+    },
+}
 ```
 
-```
-1. // test.js 自定义逻辑代码
-2. export var appData = getApp().data;
+```js
+// test.js 自定义逻辑代码
+export var appData = getApp().data;
 ```

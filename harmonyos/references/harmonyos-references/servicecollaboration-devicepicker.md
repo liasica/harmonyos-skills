@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/servicecollaboration-devicepicker
 title: devicePicker (设备选择控制器)
-breadcrumb: API参考 > 系统 > 网络 > Service Collaboration Kit（协同服务） > ArkTS 组件 > devicePicker (设备选择控制器)
+breadcrumb: API参考 > 系统 > 网络 > Service Collaboration Kit（协同服务） > ArkTS组件 > devicePicker (设备选择控制器)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:14+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d4cd01a21e9c12b78e33dbdbd75ad9bfb0792f9454c42dd98355bef0a359c686
+scraped_at: 2026-09-02T15:01:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d3e34aee18779faabf515521bf43fd604de624929ccfcb0a81ae66b4f550e8ed
 ---
 
 该模块提供设备选择控制器和设备选择面板的能力。设备选择面板没有对外提供直接显示的接口，需要结合[CollaborationDevicePicker (流转控件)](servicecollaboration-collaborationdevicepicker.md)组件一起使用，点击[CollaborationDevicePicker (流转控件)](servicecollaboration-collaborationdevicepicker.md)组件后该面板会自动显示。通过设备选择控制器可以和设备选择面板进行交互，设备选择面板中包括：应用的描述信息和发现的已组网设备列表（当前设备列表中只支持显示已组网的可信设备）。
@@ -16,19 +16,17 @@ content_hash: sha256:d4cd01a21e9c12b78e33dbdbd75ad9bfb0792f9454c42dd98355bef0a35
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { devicePicker } from '@kit.ServiceCollaborationKit'
+```typescript
+import { devicePicker } from '@kit.ServiceCollaborationKit';
 ```
 
 ## DeviceEvent
 
-PhonePC/2in1TabletTV
-
 type DeviceEvent = 'deviceSelected' | 'deviceUnselected' | 'selectedDeviceOffline'
 
 设备事件类型，支持设备选择事件、设备取消事件、已选择设备的下线事件。
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Collaboration.DevicePicker
 
@@ -42,11 +40,11 @@ type DeviceEvent = 'deviceSelected' | 'deviceUnselected' | 'selectedDeviceOfflin
 
 ## createDevicePickerController
 
-PhonePC/2in1TabletTV
-
 createDevicePickerController(): DevicePickerController
 
 创建设备选择控制器，通过该控制器提供的接口可以与设备选择面板进行交互。
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Collaboration.DevicePicker
 
@@ -60,35 +58,35 @@ createDevicePickerController(): DevicePickerController
 
 **示例：**
 
-```
-1. import { devicePicker, CollaborationDevicePicker } from '@kit.ServiceCollaborationKit'
+```typescript
+import { devicePicker, CollaborationDevicePicker } from '@kit.ServiceCollaborationKit';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. controller: devicePicker.DevicePickerController = devicePicker.createDevicePickerController()
+@Entry
+@Component
+struct Index {
+  controller: devicePicker.DevicePickerController = devicePicker.createDevicePickerController();
 
-8. build() {
-9. Column() {
-10. // 流转控件，应用流转的入口
-11. CollaborationDevicePicker({
-12. controller: this.controller, attribute: {
-13. abilityName: '流转测试',
-14. abilityDesc: '这是一个流转测试的控件',
-15. abilityIcon: $r('sys.media.ohos_app_icon'),
-16. businessDesc: '流转到'
-17. }
-18. })
-19. }.width('100%').alignItems(HorizontalAlign.Center)
-20. }
-21. }
+  build() {
+    Column() {
+      // 流转控件，应用流转的入口
+      CollaborationDevicePicker({
+        controller: this.controller, attribute: {
+          abilityName: '流转测试',
+          abilityDesc: '这是一个流转测试的控件',
+          abilityIcon: $r('sys.media.ohos_app_icon'),
+          businessDesc: '流转到'
+        }
+      })
+    }.width('100%').alignItems(HorizontalAlign.Center)
+  }
+}
 ```
 
 ## DevicePickerController
 
-PhonePC/2in1TabletTV
-
 DevicePickerController类提供了与设备选择面板交互的接口。
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Collaboration.DevicePicker
 
@@ -96,11 +94,11 @@ DevicePickerController类提供了与设备选择面板交互的接口。
 
 ### on('deviceSelected' | 'deviceUnselected' | 'selectedDeviceOffline')
 
-PhonePC/2in1TabletTV
-
 on(event: DeviceEvent, callback: Callback<distributedDeviceManager.DeviceBasicInfo>): void
 
 注册设备相关的事件回调，目前支持：设备选择、设备取消选择、已选择设备的下线事件。
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Collaboration.DevicePicker
 
@@ -115,62 +113,62 @@ on(event: DeviceEvent, callback: Callback<distributedDeviceManager.DeviceBasicIn
 
 **示例：**
 
-```
-1. import { common, Want } from '@kit.AbilityKit'
-2. import { CollaborationDevicePicker, devicePicker } from '@kit.ServiceCollaborationKit'
-3. import { distributedDeviceManager } from '@kit.DistributedServiceKit'
-4. import { hilog } from '@kit.PerformanceAnalysisKit'
+```typescript
+import { common, Want } from '@kit.AbilityKit';
+import { CollaborationDevicePicker, devicePicker } from '@kit.ServiceCollaborationKit';
+import { distributedDeviceManager } from '@kit.DistributedServiceKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-6. @Entry
-7. @Component
-8. struct CustomControls {
-9. // 创建设备选择控制器
-10. controller: devicePicker.DevicePickerController = devicePicker.createDevicePickerController()
-11. // 获取所属ability的context
-12. context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext
-13. abilityId: number = 0
+@Entry
+@Component
+struct CustomControls {
+  // 创建设备选择控制器
+  controller: devicePicker.DevicePickerController = devicePicker.createDevicePickerController();
+  // 获取所属ability的context
+  context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  abilityId: number = 0;
 
-15. aboutToAppear() {
-16. // 注册设备选择事件
-17. this.controller.on('deviceSelected', (device: distributedDeviceManager.DeviceBasicInfo) => {
-18. let want: Want = {
-19. // 通过device获取设备的id
-20. deviceId: device.networkId,
-21. // 此处bundleName和abilityName是示例，实际使用必须传递远端设备真实存在的bundleName和abilityName才能拉起指定服务
-22. bundleName: 'com.example.myapplication',
-23. abilityName: 'ExtensionAbility'
-24. }
-25. this.getUIContext().getPromptAction().showToast({ message: 'device selected' })
-26. this.context.startAbility(want).then(() => {
-27. hilog.info(0x0000, 'testTag', '%{public}s', 'Succeeded in starting Ability')
-28. // 更新设备状态
-29. this.controller.updateState(device.networkId, devicePicker.BusinessState.SUCCESSFUL)
-30. }).catch(() => {
-31. hilog.error(0x0000, 'testTag', '%{public}s', 'Failed to startAbility')
-32. // 更新设备状态，同时添加失败的原因，这个原因会展示在设备下方
-33. this.controller.updateState(device.networkId, devicePicker.BusinessState.FAILED, 'the remote device is busy')
-34. })
-35. })
+  aboutToAppear() {
+    // 注册设备选择事件
+    this.controller.on('deviceSelected', (device: distributedDeviceManager.DeviceBasicInfo) => {
+      let want: Want = {
+        // 通过device获取设备的id
+        deviceId: device.networkId,
+        // 此处bundleName和abilityName是示例，实际使用必须传递远端设备真实存在的bundleName和abilityName才能拉起指定服务
+        bundleName: 'com.example.myapplication',
+        abilityName: 'ExtensionAbility'
+      };
+      this.getUIContext().getPromptAction().showToast({ message: 'device selected' });
+      this.context.startAbility(want).then(() => {
+        hilog.info(0x0000, 'testTag', '%{public}s', 'Succeeded in starting Ability');
+        // 更新设备状态
+        this.controller.updateState(device.networkId, devicePicker.BusinessState.SUCCESSFUL);
+      }).catch(() => {
+        hilog.error(0x0000, 'testTag', '%{public}s', 'Failed to startAbility');
+        // 更新设备状态，同时添加失败的原因，这个原因会展示在设备下方
+        this.controller.updateState(device.networkId, devicePicker.BusinessState.FAILED, 'the remote device is busy');
+      });
+    });
 
-37. // 注册设备取消选择事件
-38. this.controller.on('deviceUnselected', (device: distributedDeviceManager.DeviceBasicInfo) => {
-39. this.getUIContext().getPromptAction().showToast({ message: 'device unselected' })
-40. })
-41. }
+    // 注册设备取消选择事件
+    this.controller.on('deviceUnselected', () => {
+      this.getUIContext().getPromptAction().showToast({ message: 'device unselected' });
+    });
+  }
 
-43. build() {
-44. Column() {
-45. CollaborationDevicePicker({
-46. controller: this.controller, attribute: {
-47. abilityName: '流转测试',
-48. abilityDesc: '这是一个流转测试的控件',
-49. abilityIcon: $r('sys.media.ohos_app_icon'),
-50. businessDesc: '流转到'
-51. }
-52. })
-53. }.width('100%').alignItems(HorizontalAlign.Center);
-54. }
-55. }
+  build() {
+    Column() {
+      CollaborationDevicePicker({
+        controller: this.controller, attribute: {
+          abilityName: '流转测试',
+          abilityDesc: '这是一个流转测试的控件',
+          abilityIcon: $r('sys.media.ohos_app_icon'),
+          businessDesc: '流转到'
+        }
+      });
+    }.width('100%').alignItems(HorizontalAlign.Center);
+  }
+}
 ```
 
 | **图1** 设备空闲状态效果图 | **图2** 设备成功状态效果图 |
@@ -179,11 +177,11 @@ on(event: DeviceEvent, callback: Callback<distributedDeviceManager.DeviceBasicIn
 
 ### off('deviceSelected' | 'deviceUnselected' | 'selectedDeviceOffline')
 
-PhonePC/2in1TabletTV
-
 off(event: DeviceEvent, callback?: Callback<distributedDeviceManager.DeviceBasicInfo>): void
 
 取消注册设备相关的事件回调，目前支持的事件：设备选择、设备取消选择、已选择设备的下线事件。
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Collaboration.DevicePicker
 
@@ -198,53 +196,52 @@ off(event: DeviceEvent, callback?: Callback<distributedDeviceManager.DeviceBasic
 
 **示例：**
 
-```
-1. import { common } from '@kit.AbilityKit'
-2. import { distributedDeviceManager } from '@kit.DistributedServiceKit'
-3. import { CollaborationDevicePicker, devicePicker } from '@kit.ServiceCollaborationKit'
+```typescript
+import { common } from '@kit.AbilityKit';
+import { CollaborationDevicePicker, devicePicker } from '@kit.ServiceCollaborationKit';
 
-5. @Entry
-6. @Component
-7. struct CustomControls {
-8. // 创建设备选择控制器
-9. controller: devicePicker.DevicePickerController = devicePicker.createDevicePickerController()
-10. // 获取所属ability的context
-11. context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext
+@Entry
+@Component
+struct CustomControls {
+  // 创建设备选择控制器
+  controller: devicePicker.DevicePickerController = devicePicker.createDevicePickerController();
+  // 获取所属ability的context
+  context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
 
-13. aboutToDisappear() {
-14. // 取消注册设备选择事件
-15. this.controller.off('deviceSelected', (device: distributedDeviceManager.DeviceBasicInfo) => {
-16. this.getUIContext().getPromptAction().showToast({ message: 'off device selected' })
-17. })
+  aboutToDisappear() {
+    // 取消注册设备选择事件
+    this.controller.off('deviceSelected', () => {
+      this.getUIContext().getPromptAction().showToast({ message: 'off device selected' });
+    });
 
-19. // 取消注册设备取消选择事件
-20. this.controller.off('deviceUnselected', (device: distributedDeviceManager.DeviceBasicInfo) => {
-21. this.getUIContext().getPromptAction().showToast({ message: 'device unselected' })
-22. })
-23. }
+    // 取消注册设备取消选择事件
+    this.controller.off('deviceUnselected', () => {
+      this.getUIContext().getPromptAction().showToast({ message: 'device unselected' });
+    });
+  }
 
-25. build() {
-26. Column() {
-27. CollaborationDevicePicker({
-28. controller: this.controller, attribute: {
-29. abilityName: '流转测试',
-30. abilityDesc: '这是一个流转测试的控件',
-31. abilityIcon: $r('sys.media.ohos_app_icon'),
-32. businessDesc: '流转到'
-33. }
-34. })
-35. }.width('100%').alignItems(HorizontalAlign.Center)
-36. }
-37. }
+  build() {
+    Column() {
+      CollaborationDevicePicker({
+        controller: this.controller, attribute: {
+          abilityName: '流转测试',
+          abilityDesc: '这是一个流转测试的控件',
+          abilityIcon: $r('sys.media.ohos_app_icon'),
+          businessDesc: '流转到'
+        }
+      });
+    }.width('100%').alignItems(HorizontalAlign.Center)
+  }
+}
 ```
 
 ### updateState
 
-PhonePC/2in1TabletTV
-
 updateState(networkId: string, state: BusinessState, desc?: ResourceStr): void
 
 更新设备的业务状态，在设备选择面板上会显示更新后的状态。业务失败情况下，可以传入失败的描述信息，会随着状态一起显示。
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Collaboration.DevicePicker
 
@@ -260,62 +257,62 @@ updateState(networkId: string, state: BusinessState, desc?: ResourceStr): void
 
 **示例：**
 
-```
-1. import { common, Want } from '@kit.AbilityKit'
-2. import { CollaborationDevicePicker, devicePicker } from '@kit.ServiceCollaborationKit'
-3. import { distributedDeviceManager } from '@kit.DistributedServiceKit'
-4. import { hilog } from '@kit.PerformanceAnalysisKit'
+```typescript
+import { common, Want } from '@kit.AbilityKit';
+import { CollaborationDevicePicker, devicePicker } from '@kit.ServiceCollaborationKit';
+import { distributedDeviceManager } from '@kit.DistributedServiceKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-6. @Entry
-7. @Component
-8. struct CustomControls {
-9. // 创建设备选择控制器
-10. controller: devicePicker.DevicePickerController = devicePicker.createDevicePickerController()
-11. // 获取所属ability的context
-12. context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext
-13. abilityId: number = 0
+@Entry
+@Component
+struct CustomControls {
+  // 创建设备选择控制器
+  controller: devicePicker.DevicePickerController = devicePicker.createDevicePickerController();
+  // 获取所属ability的context
+  context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  abilityId: number = 0;
 
-15. aboutToAppear() {
-16. // 注册设备选择事件
-17. this.controller.on('deviceSelected', (device: distributedDeviceManager.DeviceBasicInfo) => {
-18. let want: Want = {
-19. // 通过device获取设备的id
-20. deviceId: device.networkId,
-21. // 此处bundleName和abilityName是示例，实际使用必须传递远端设备真实存在的bundleName和abilityName才能拉起指定服务
-22. bundleName: 'com.example.myapplication',
-23. abilityName: 'ExtensionAbility'
-24. }
-25. this.getUIContext().getPromptAction().showToast({ message: 'device selected' })
-26. this.context.startAbility(want).then(() => {
-27. hilog.info(0x0000, 'testTag', '%{public}s', 'Succeeded in starting Ability')
-28. // 更新设备状态
-29. this.controller.updateState(device.networkId, devicePicker.BusinessState.SUCCESSFUL)
-30. }).catch(() => {
-31. hilog.error(0x0000, 'testTag', '%{public}s', 'Failed to startAbility')
-32. // 更新设备状态，同时添加失败的原因，这个原因会展示在设备下方
-33. this.controller.updateState(device.networkId, devicePicker.BusinessState.FAILED, 'the remote device is busy')
-34. })
-35. })
+  aboutToAppear() {
+    // 注册设备选择事件
+    this.controller.on('deviceSelected', (device: distributedDeviceManager.DeviceBasicInfo) => {
+      let want: Want = {
+        // 通过device获取设备的id
+        deviceId: device.networkId,
+        // 此处bundleName和abilityName是示例，实际使用必须传递远端设备真实存在的bundleName和abilityName才能拉起指定服务
+        bundleName: 'com.example.myapplication',
+        abilityName: 'ExtensionAbility'
+      };
+      this.getUIContext().getPromptAction().showToast({ message: 'device selected' });
+      this.context.startAbility(want).then(() => {
+        hilog.info(0x0000, 'testTag', '%{public}s', 'Succeeded in starting Ability');
+        // 更新设备状态
+        this.controller.updateState(device.networkId, devicePicker.BusinessState.SUCCESSFUL);
+      }).catch(() => {
+        hilog.error(0x0000, 'testTag', '%{public}s', 'Failed to startAbility');
+        // 更新设备状态，同时添加失败的原因，这个原因会展示在设备下方
+        this.controller.updateState(device.networkId, devicePicker.BusinessState.FAILED, 'the remote device is busy');
+      });
+    })
 
-37. // 注册设备取消选择事件
-38. this.controller.on('deviceUnselected', (device: distributedDeviceManager.DeviceBasicInfo) => {
-39. this.getUIContext().getPromptAction().showToast({ message: 'device unselected' })
-40. })
-41. }
+    // 注册设备取消选择事件
+    this.controller.on('deviceUnselected', () => {
+      this.getUIContext().getPromptAction().showToast({ message: 'device unselected' });
+    });
+  }
 
-43. build() {
-44. Column() {
-45. CollaborationDevicePicker({
-46. controller: this.controller, attribute: {
-47. abilityName: '流转测试',
-48. abilityDesc: '这是一个流转测试的控件',
-49. abilityIcon: $r('sys.media.ohos_app_icon'),
-50. businessDesc: '流转到'
-51. }
-52. })
-53. }.width('100%').alignItems(HorizontalAlign.Center);
-54. }
-55. }
+  build() {
+    Column() {
+      CollaborationDevicePicker({
+        controller: this.controller, attribute: {
+          abilityName: '流转测试',
+          abilityDesc: '这是一个流转测试的控件',
+          abilityIcon: $r('sys.media.ohos_app_icon'),
+          businessDesc: '流转到'
+        }
+      });
+    }.width('100%').alignItems(HorizontalAlign.Center);
+  }
+}
 ```
 
 | **图3** 设备流转过程效果图 | **图4** 设备流转成功效果图 | **图5** 设备流转失败效果图 | **图6** 应用描述信息效果图 |
@@ -324,13 +321,13 @@ updateState(networkId: string, state: BusinessState, desc?: ResourceStr): void
 
 ### release
 
-PhonePC/2in1TabletTV
-
 release(): void
 
 释放设备选择控制器，与[createDevicePickerController](servicecollaboration-devicepicker.md#createdevicepickercontroller)方法对应。
 
 在应用不需要设备选择控制器的时候需要调用release()接口进行释放，比如在应用onCreate()生命周期回调中通过[createDevicePickerController](servicecollaboration-devicepicker.md#createdevicepickercontroller)创建了设备选择控制器，可以在onDestroy()生命周期回调中通过release()进行释放。
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Collaboration.DevicePicker
 
@@ -338,32 +335,32 @@ release(): void
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit'
-2. import { UIAbility, AbilityConstant, Want } from '@kit.AbilityKit'
-3. import { devicePicker } from '@kit.ServiceCollaborationKit'
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { UIAbility } from '@kit.AbilityKit';
+import { devicePicker } from '@kit.ServiceCollaborationKit';
 
-5. export default class EntryAbility extends UIAbility {
-6. // 创建设备选择控制器
-7. controller: devicePicker.DevicePickerController = devicePicker.createDevicePickerController()
+export default class EntryAbility extends UIAbility {
+  // 创建设备选择控制器
+  controller: devicePicker.DevicePickerController = devicePicker.createDevicePickerController();
 
-9. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-10. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate')
-11. }
+  onCreate() {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+  }
 
-13. onDestroy() {
-14. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy')
-15. // 释放设备选择控制器
-16. this.controller.release()
-17. }
-18. }
+  onDestroy() {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
+    // 释放设备选择控制器
+    this.controller.release();
+  }
+}
 ```
 
 ## DevicePickerAttribute
 
-PhonePC/2in1TabletTV
-
 设备选择器属性类，在设备选择面板的应用描述部分会显示该属性配置的信息；如果未设置则使用调用者对应的ability配置文件中的标签信息。该属性与流转组件接口[CollaborationDevicePicker](servicecollaboration-collaborationdevicepicker.md)配合使用。
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Collaboration.DevicePicker
 
@@ -378,9 +375,9 @@ PhonePC/2in1TabletTV
 
 ## BusinessState
 
-PhonePC/2in1TabletTV
-
 业务状态枚举类。
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Collaboration.DevicePicker
 

@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: FormEditExtensionContext
 breadcrumb: API参考 > 应用框架 > Form Kit（卡片开发服务） > ArkTS API > application > FormEditExtensionContext
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:02+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:383ebe24ca525c3725c2b6311bb1ae42c6daf5bd97157914cf4c1187534bb036
+scraped_at: 2026-09-02T15:01:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8f28dc81481c570f2c6b7c8116c39149fe3ba94d42c11fc2de2bfd849e878992
 ---
 
-FormEditExtensionContext是[FormEditExtensionAbility](js-apis-app-form-formeditextensionability.md)的上下文，继承自[UIExtensionContext](js-apis-inner-application-uiextensioncontext.md)。
+FormEditExtensionContext是[FormEditExtensionAbility](js-apis-app-form-formeditextensionability.md)的上下文，继承自[UIExtensionContext](js-apis-inner-application-uiextensioncontext.md)。用于管理卡片编辑场景的上下文环境，支持拉起卡片提供方页面和所属应用UIAbility，适用于卡片编辑流程中需要与卡片提供方交互的场景。
 
-说明
+**说明** 
 
 本模块首批接口从API version 18开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -18,25 +18,24 @@ FormEditExtensionContext是[FormEditExtensionAbility](js-apis-app-form-formedite
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { FormEditExtensionAbility } from '@kit.FormKit';
+```ts
+import { FormEditExtensionAbility } from '@kit.FormKit';
 ```
 
 ## FormEditExtensionContext
 
-PhonePC/2in1TabletTVWearable
-
-FormEditExtensionContext提供允许访问特定于FormEditExtensionAbility资源的能力。
+FormEditExtensionContext提供访问特定于FormEditExtensionAbility资源的能力。
 
 ### startSecondPage
 
-PhonePC/2in1TabletTVWearable
-
-startSecondPage(want: Want): Promise<[AbilityResult](js-apis-inner-ability-abilityresult.md)>
+startSecondPage(want: Want): Promise<AbilityResult>
 
 拉起需要被编辑的卡片提供方页面。使用Promise异步回调。
+
+**使用场景：**
+
+* 用户在卡片编辑界面点击编辑按钮，需要打开卡片提供方的编辑页面。
+* 用户需要修改卡片配置或内容时，拉起卡片提供方应用进行编辑。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -46,13 +45,13 @@ startSecondPage(want: Want): Promise<[AbilityResult](js-apis-inner-ability-abili
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| want | [Want](js-apis-app-ability-want.md) | 是 | 第三方应用需要被桌面拉起的编辑页面信息。 |
+| want | [Want](js-apis-app-ability-want.md) | 是 | 需要拉起的编辑页面信息。必须包含bundleName字段，且parameters中需包含secPageAbilityName。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[AbilityResult](js-apis-inner-ability-abilityresult.md)> | Promise对象，返回AbilityResult。 |
+| Promise<[AbilityResult](js-apis-inner-ability-abilityresult.md)> | Promise对象，返回被启动方退出时的结果码和数据。 |
 
 **错误码：**
 
@@ -67,41 +66,39 @@ startSecondPage(want: Want): Promise<[AbilityResult](js-apis-inner-ability-abili
 
 **示例：**
 
-```
-1. import { FormEditExtensionAbility } from '@kit.FormKit';
-2. import { UIExtensionContentSession, Want } from '@kit.AbilityKit';
+```ts
+import { FormEditExtensionAbility } from '@kit.FormKit';
+import { UIExtensionContentSession, Want } from '@kit.AbilityKit';
 
-4. const TAG: string = '[testTag] ExampleFormEditExtensionAbility'
+const TAG: string = '[testTag] ExampleFormEditExtensionAbility'
 
-6. export default class ExampleFormEditAbility extends FormEditExtensionAbility {
-7. abilityName: string = 'FormEditSecPageAbility'
+export default class ExampleFormEditAbility extends FormEditExtensionAbility {
+  abilityName: string = 'FormEditSecPageAbility'
 
-9. onSessionCreate(want: Want, session: UIExtensionContentSession) {
-10. try {
-11. this.context.startSecondPage({
-12. bundleName: 'com.example.formEditDemo',
-13. parameters: {
-14. "secPageAbilityName": this.abilityName
-15. }
+  onSessionCreate(want: Want, session: UIExtensionContentSession) {
+    try {
+      this.context.startSecondPage({
+        bundleName: 'com.example.formEditDemo',
+        parameters: {
+          "secPageAbilityName": this.abilityName
+        }
 
-17. }).then(data => {
-18. console.info(TAG, `startSecondPage result want: ${data.resultCode}`)
-19. });
-20. } catch (e) {
-21. console.error(TAG, `startSecondPage failed, code: ${e.code}, message: ${e.message}`)
-22. return
-23. }
-24. }
-25. }
+      }).then(data => {
+        console.info(TAG, `startSecondPage result want: ${data.resultCode}`)
+      });
+    } catch (e) {
+      console.error(TAG, `startSecondPage failed, code: ${e.code}, message: ${e.message}`)
+      return
+    }
+  }
+}
 ```
 
 ### startUIAbility23+
 
-PhonePC/2in1TabletTVWearable
-
 startUIAbility(want: Want): Promise<void>
 
-拉起卡片所属应用的UIAbility。使用Promise异步回调。
+拉起卡片所属应用的UIAbility。使用Promise异步回调。说明：需在卡片编辑页面处于前台时调用，页面不在前台时调用将返回错误码16501014。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -111,17 +108,17 @@ startUIAbility(want: Want): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| want | [Want](js-apis-app-ability-want.md#want) | 是 | 应用自身UIAbility的ability信息。 |
+| want | [Want](js-apis-app-ability-want.md#want) | 是 | 用于指定要拉起的UIAbility的Want信息。必须包含abilityName字段。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象，返回void。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[卡片错误码](errorcode-form.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[卡片错误码](errorcode-form.md)和[元能力子系统错误码](errorcode-ability.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -133,26 +130,26 @@ startUIAbility(want: Want): Promise<void>
 
 **示例：**
 
-```
-1. import { FormEditExtensionAbility } from '@kit.FormKit'
-2. import { Want, UIExtensionContentSession } from '@kit.AbilityKit';
+```ts
+import { FormEditExtensionAbility } from '@kit.FormKit'
+import { Want, UIExtensionContentSession } from '@kit.AbilityKit';
 
-4. const TAG: string = '[testTag] ExampleFormEditExtensionAbility'
+const TAG: string = '[testTag] ExampleFormEditExtensionAbility'
 
-6. export default class ExampleFormEditAbility extends FormEditExtensionAbility {
-7. abilityName: string = 'FormEditSecPageAbility'
+export default class ExampleFormEditAbility extends FormEditExtensionAbility {
+  abilityName: string = 'FormEditSecPageAbility'
 
-9. onSessionCreate(want: Want, session: UIExtensionContentSession) {
-10. try {
-11. this.context.startUIAbility({
-12. abilityName: 'EntryAbility1',
-13. }).then(() => {
-14. console.info(TAG, `startUIAbility success`);
-15. });
-16. } catch (e) {
-17. console.error(TAG, `startUIAbility failed, code: ${e.code}, message: ${e.message}`);
-18. return
-19. }
-20. }
-21. }
+  onSessionCreate(want: Want, session: UIExtensionContentSession) {
+    try {
+      this.context.startUIAbility({
+        abilityName: 'EntryAbility1',
+      }).then(() => {
+        console.info(TAG, `startUIAbility success`);
+      });
+    } catch (e) {
+      console.error(TAG, `startUIAbility failed, code: ${e.code}, message: ${e.message}`);
+      return
+    }
+  }
+}
 ```

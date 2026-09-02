@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: NativePixelMap_
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 结构体 > NativePixelMap_
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:32+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:47a30103ae69c3f61730eec1f462e8aa1101a90ce5ebc82bae206f65602ba8a6
+scraped_at: 2026-09-02T14:52:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e51c074e6e4610717ea7b5ec34e2a8087e2f5299563110234513404e34bbfce3
 ---
 
-```
-1. typedef struct NativePixelMap_ NativePixelMap
+```c
+typedef struct NativePixelMap_ NativePixelMap
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-定义native层PixelMap数据类型名称。
+定义Native层PixelMap数据类型名称。作为Native层操作PixelMap的句柄类型，适用于在C/C++层对PixelMap进行像素读写、属性查询、图像变换等操作的场景。
 
 **起始版本：** 10
 

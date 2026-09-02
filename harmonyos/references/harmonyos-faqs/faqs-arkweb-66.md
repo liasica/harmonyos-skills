@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-66
 title: web拦截如何处理文件
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > web拦截如何处理文件
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:45+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:53+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:5162539263fc4923fdfe097762e68fce5e3bcf24dfe1605a1dab77be98463b34
 ---
 

@@ -3,48 +3,50 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sendable-cons
 title: Sendable使用规则与约束
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信对象 > Sendable对象 > Sendable使用规则与约束
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:33+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3bf02233a8ef4f05acd1f9bd672f5bb98e0c640e7c986c07bfcee7816d3b1065
+scraped_at: 2026-09-02T14:59:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5d71f0b620390baf894a4d234688fdb21c942844051c44f45c9098052c238ef6
 ---
 
 ## 继承规则
 
 ### Sendable类必须继承自Sendable类
 
-Sendable对象的布局和原型链不可变，而非Sendable对象可以通过特殊方式修改布局。因此，不允许互相继承。这里的类不包含变量，Sendable类不能继承自变量。
+Sendable对象的布局和原型链不可变，而非Sendable对象可以通过特殊方式修改布局。因此，不允许互相继承。此处的继承规则针对类定义本身，不涉及类的实例变量。Sendable类只能继承自Sendable类的定义。
 
 **正例：**
 
-```
-1. @Sendable
-2. class A {
-3. constructor() {
-4. }
-5. }
+```typescript
+// 正例：
+@Sendable
+class A {
+  constructor() {
+    console.info('hello world');
+  }
+}
 
-7. @Sendable
-8. class B extends A {
-9. constructor() {
-10. super()
-11. }
-12. }
+@Sendable
+class B extends A {
+  constructor() {
+    super()
+  }
+}
 ```
 
 **反例：**
 
-```
-1. class A {
-2. constructor() {
-3. }
-4. }
+```ts
+class A {
+  constructor() {
+  }
+}
 
-6. @Sendable
-7. class B extends A { // A不是sendable class，B不能继承它，编译报错
-8. constructor() {
-9. super()
-10. }
-11. }
+@Sendable
+class B extends A { // A不是sendable class，B不能继承它，编译报错
+  constructor() {
+    super()
+  }
+}
 ```
 
 ### 非Sendable类必须继承自非Sendable类
@@ -53,33 +55,36 @@ Sendable对象的布局和原型链不可变，而非Sendable对象可以通过�
 
 **正例：**
 
-```
-1. class A {
-2. constructor() {
-3. }
-4. }
+```typescript
+// 正例：
+class A {
+  constructor() {
+    console.info('hello world');
+  }
+}
 
-6. class B extends A {
-7. constructor() {
-8. super()
-9. }
-10. }
+class B extends A {
+  constructor() {
+    console.info('HELLO WORLD');
+    super()
+  }
+}
 ```
 
 **反例：**
 
-```
-1. @Sendable
-2. class A {
-3. constructor() {
-4. }
-5. }
+```ts
+@Sendable
+class A {
+  constructor() {
+  }
+}
 
-7. class B extends A { // A是sendable class，B不能继承它，编译报错
-8. constructor() {
-9. super()
-10. }
-11. }
+class B extends A { // A是sendable class，B不能继承它，编译报错
+  constructor() {
+    super()
+  }
+}
 ```
 
 ## 接口实现规则
@@ -90,22 +95,27 @@ Sendable对象的布局和原型链不可变，而非Sendable对象可以通过�
 
 **正例：**
 
-```
-1. interface I {};
+```typescript
+// 正例：
+interface I {
+  a: string;
+};
 
-3. class B implements I {};
+class B implements I {
+  a: string = 'hello world';
+};
 ```
 
 **反例：**
 
-```
-1. import { lang } from '@kit.ArkTS';
+```ts
+import { lang } from '@kit.ArkTS';
 
-3. type ISendable = lang.ISendable;
+type ISendable = lang.ISendable;
 
-5. interface I extends ISendable {};
+interface I extends ISendable {};
 
-7. class B implements I {};  // I是sendable interface，B不能实现，编译报错
+class B implements I {};  // I是sendable interface，B不能实现，编译报错
 ```
 
 ## Sendable类/接口成员变量规则
@@ -116,24 +126,25 @@ Sendable数据不得持有非Sendable数据，因此Sendable类或接口的成�
 
 **正例：**
 
-```
-1. @Sendable
-2. class A {
-3. constructor() {
-4. }
-5. a: number = 0;
-6. }
+```typescript
+// 正例：
+@Sendable
+class A {
+  constructor() {
+  }
+  a: number = 0;
+}
 ```
 
 **反例：**
 
-```
-1. @Sendable
-2. class A {
-3. constructor() {
-4. }
-5. b: Array<number> = [1, 2, 3] // 编译报错，需使用collections.Array
-6. }
+```ts
+@Sendable
+class A {
+  constructor() {
+  }
+  b: Array<number> = [1, 2, 3] // 编译报错，需使用collections.Array
+}
 ```
 
 ### 不支持使用!断言
@@ -142,24 +153,25 @@ Sendable对象的成员属性必须赋初值，而“!”修饰的变量可以�
 
 **正例：**
 
-```
-1. @Sendable
-2. class A {
-3. constructor() {
-4. }
-5. a: number = 0;
-6. }
+```typescript
+// 正例：
+@Sendable
+class A {
+  constructor() {
+  }
+  a: number = 0;
+}
 ```
 
 **反例：**
 
-```
-1. @Sendable
-2. class A {
-3. constructor() {
-4. }
-5. a!: number; // 编译报错，不支持使用“!”
-6. }
+```ts
+@Sendable
+class A {
+  constructor() {
+  }
+  a!: number; // 编译报错，不支持使用“!”
+}
 ```
 
 ### 不支持使用计算属性名
@@ -168,28 +180,30 @@ Sendable对象的布局不可更改，因为计算属性无法静态确定对象
 
 **正例：**
 
-```
-1. @Sendable
-2. class A {
-3. num1: number = 1;
-4. num2: number = 2;
-5. add(): number {
-6. return this.num1 + this.num2;
-7. }
-8. }
+```typescript
+// 正例：
+@Sendable
+class A {
+  num1: number = 1;
+  num2: number = 2;
+
+  add(): number {
+    return this.num1 + this.num2;
+  }
+}
 ```
 
 **反例：**
 
-```
-1. enum B {
-2. b1 = "bbb"
-3. }
-4. @Sendable
-5. class A {
-6. ["aaa"]: number = 1; // 编译报错，不支持["aaa"]
-7. [B.b1]: number = 2; // 编译报错，不支持[B.b1]
-8. }
+```ts
+enum B {
+    b1 = 'bbb'
+}
+@Sendable
+class A {
+    ['aaa']: number = 1; // 编译报错，不支持['aaa']
+    [B.b1]: number = 2; // 编译报错，不支持[B.b1]
+}
 ```
 
 ### 不支持使用类型别名
@@ -198,65 +212,65 @@ Sendable类的成员变量不能使用类型别名（即使用type关键字定�
 
 **正例：**
 
-```
-1. @Sendable
-2. class B {
-3. num1: number = 1;
-4. num2: number = 2;
-5. add(): number {
-6. return this.num1 + this.num2;
-7. }
-8. }
+```ts
+@Sendable
+class B {
+  num1: number = 1;
+  num2: number = 2;
+  add(): number {
+    return this.num1 + this.num2;
+  }
+}
 ```
 
 **反例：**
 
-```
-1. type A = number;
+```ts
+type A = number;
 
-3. @Sendable
-4. class B {
-5. num1: A = 1; // 运行报错，不支持使用类型别名
-6. num2: A = 2; // 运行报错，不支持使用类型别名
-7. add(): number {
-8. return this.num1 + this.num2;
-9. }
-10. }
+@Sendable
+class B {
+  num1: A = 1; // 运行报错，不支持使用类型别名
+  num2: A = 2; // 运行报错，不支持使用类型别名
+  add(): number {
+    return this.num1 + this.num2;
+  }
+}
 ```
 
 ## 泛型规则
 
-### 泛型类中的Sendable类、SendableLruCache、collections.Array、collections.Map和collections.Set的模板类型必须是Sendable类型
+### 泛型类中的Sendable类、SendableLruCache、collections.Array、collections.ConcatArray、collections.Map和collections.Set的模板类型必须是Sendable类型
 
-Sendable数据不能持有非Sendable数据，因此泛型类中的Sendable数据的模版类型必须是Sendable类型。
+Sendable数据不能持有非Sendable数据，因此泛型类中的Sendable数据的模板类型必须是Sendable类型。
 
 **正例：**
 
-```
-1. import { collections } from '@kit.ArkTS';
+```typescript
+import { collections } from '@kit.ArkTS';
 
-3. try {
-4. let arr1: collections.Array<number> = new collections.Array<number>();
-5. let num: number = 1;
-6. arr1.push(num);
-7. } catch (e) {
-8. console.error(`taskpool execute: Code: ${e.code}, message: ${e.message}`);
-9. }
+try {
+  let arr: collections.Array<number> = new collections.Array<number>();
+  let num: number = 1;
+  arr.push(num);
+} catch (e) {
+  console.error(`create collections error: Code: ${e.code}, message: ${e.message}`);
+}
 ```
 
 **反例：**
 
-```
-1. import { collections } from '@kit.ArkTS';
+```ts
+import { collections } from '@kit.ArkTS';
 
-3. try {
-4. let arr1: collections.Array<Array<number>> = new collections.Array<Array<number>>(); // 编译报错，模板类型必须是Sendable类型
-5. let arr2: Array<number> = new Array<number>();
-6. arr2.push(1);
-7. arr1.push(arr2);
-8. } catch (e) {
-9. console.error(`taskpool execute: Code: ${e.code}, message: ${e.message}`);
-10. }
+try {
+  let arr1: collections.Array<Array<number>> = new collections.Array<Array<number>>(); // 编译报错，模板类型必须是Sendable类型
+  let arr2: Array<number> = new Array<number>();
+  arr2.push(1);
+  arr1.push(arr2);
+} catch (e) {
+  console.error(`create collections error: Code: ${e.code}, message: ${e.message}`);
+}
 ```
 
 ## 上下文访问规则
@@ -265,70 +279,72 @@ Sendable数据不能持有非Sendable数据，因此泛型类中的Sendable数�
 
 由于Sendable对象在不同并发实例间的上下文环境不同，属于单个虚拟机实例，如果直接访问会有非预期行为。不支持Sendable对象使用当前模块内上下文环境中定义的变量，违反此规则会在编译阶段报错。
 
-说明
+**说明** 
 
 从API version 12开始，Sendable class的内部支持使用top level的Sendable class对象。
 
 **正例：**
 
-```
-1. import { lang } from '@kit.ArkTS';
+```typescript
+// 正例：
+import { lang } from '@kit.ArkTS';
 
-3. type ISendable = lang.ISendable;
+type ISendable = lang.ISendable;
 
-5. interface I extends ISendable {}
+interface I extends ISendable {}
 
-7. @Sendable
-8. class B implements I {
-9. static o: number = 1;
-10. static bar(): B {
-11. return new B();
-12. }
-13. }
+@Sendable
+class B implements I {
+  static o: number = 1;
 
-15. @Sendable
-16. class C {
-17. v: I = new B();
-18. u: number = B.o;
+  static bar(): B {
+    return new B();
+  }
+}
 
-20. foo() {
-21. return B.bar();
-22. }
-23. }
+@Sendable
+class C {
+  v: I = new B();
+  u: number = B.o;
+
+  foo() {
+    return B.bar();
+  }
+}
 ```
 
 **反例：**
 
-```
-1. import { lang } from '@kit.ArkTS';
+```ts
+import { lang } from '@kit.ArkTS';
 
-3. type ISendable = lang.ISendable;
+type ISendable = lang.ISendable;
 
-5. interface I extends ISendable {}
+interface I extends ISendable {}
 
-7. @Sendable
-8. class B implements I {}
+@Sendable
+class B implements I {}
 
-10. function bar(): B {
-11. return new B();
-12. }
+function bar(): B {
+  return new B();
+}
 
-14. let b = new B();
+let b = new B();
 
-16. {
-17. @Sendable
-18. class A implements I {}
+{
+  @Sendable
+  class A implements I {}
 
-20. @Sendable
-21. class C {
-22. u: I = bar(); // bar不是sendable class对象，编译报错
-23. v: I = new A(); // A不是定义在top level中，编译报错
+  @Sendable
+  class C {
+    u: I = bar(); // bar不是sendable function对象，编译报错
+    v: I = new A(); // A不是定义在top level中，编译报错
 
-25. foo() {
-26. return b; // b不是sendable class对象，而是sendable class的实例，编译报错
-27. }
-28. }
-29. }
+    foo() {
+      return b; // b不是sendable class对象，而是sendable class的实例，编译报错
+    }
+  }
+}
 ```
 
 ## @Sendable装饰器使用规则
@@ -339,27 +355,23 @@ Sendable数据不能持有非Sendable数据，因此泛型类中的Sendable数�
 
 **正例：**
 
-```
-1. @Sendable
-2. type SendableFuncType = () => void;
-
-4. @Sendable
-5. class C {}
-
-7. @Sendable
-8. function SendableFunc() {
-9. console.info("Sendable func");
-10. }
+```typescript
+// 正例：
+@Sendable
+type SendableFuncType = () => void;
 ```
 
 **反例：**
 
-```
-1. @Sendable
-2. type A = number; // 编译报错
+```ts
+@Sendable
+type A = number; // 编译报错
 
-4. @Sendable
-5. type D = C; // 编译报错
+@Sendable
+class C {}
+
+@Sendable
+type D = C; // 编译报错
 ```
 
 ### Sendable类和Sendable函数禁止使用除@Sendable外的装饰器
@@ -368,21 +380,22 @@ Sendable数据不能持有非Sendable数据，因此泛型类中的Sendable数�
 
 **正例：**
 
-```
-1. @Sendable
-2. class A {
-3. num: number = 1;
-4. }
+```typescript
+// 正例：
+@Sendable
+class A {
+  num: number = 1;
+}
 ```
 
 **反例：**
 
-```
-1. @Sendable
-2. @Observed // 编译报错
-3. class C {
-4. num: number = 1;
-5. }
+```ts
+@Sendable
+@Observed // 编译报错
+class C {
+  num: number = 1;
+}
 ```
 
 ### 支持在Sendable class上叠加自定义装饰器
@@ -393,17 +406,17 @@ Sendable数据不能持有非Sendable数据，因此泛型类中的Sendable数�
 
 "disableSendableCheckRules"字段及其具体取值示例如下：
 
-```
-1. "buildOption": {
-2. "strictMode": {
-3. "caseSensitiveCheck": true,
-4. "useNormalizedOHMUrl": true,
-5. "disableSendableCheckRules": ["arkts-sendable-class-decorator"]
-6. }
-7. }
+```json5
+"buildOption": {
+  "strictMode": {
+    "caseSensitiveCheck": true,
+    "useNormalizedOHMUrl": true,
+    "disableSendableCheckRules": ["arkts-sendable-class-decorator"]
+  }
+}
 ```
 
-说明
+**说明** 
 
 * "disableSendableCheckRules"字段值为包含Sendable规则的数组。
 
@@ -420,20 +433,21 @@ Sendable数据不能持有非Sendable数据，因此泛型类中的Sendable数�
 
 **正例：**
 
-```
-1. import { collections } from '@kit.ArkTS';
+```typescript
+// 正例：
+import { collections } from '@kit.ArkTS';
 
-3. let arr1: collections.Array<number> = new collections.Array<number>(1, 2, 3); // 是Sendable类型
+let arr1: collections.Array<number> = new collections.Array<number>(1, 2, 3); // 是Sendable类型
 ```
 
 **反例：**
 
-```
-1. import { collections } from '@kit.ArkTS';
+```ts
+import { collections } from '@kit.ArkTS';
 
-3. let arr2: collections.Array<number> = [1, 2, 3]; // 不是Sendable类型，编译报错
-4. let arr3: number[] = [1, 2, 3]; // 不是Sendable类型，正例，不报错
-5. let arr4: number[] = new collections.Array<number>(1, 2, 3); // 编译报错
+let arr2: collections.Array<number> = [1, 2, 3]; // 不是Sendable类型，编译报错
+let arr3: number[] = [1, 2, 3]; // 不是Sendable类型，正例，不报错
+let arr4: number[] = new collections.Array<number>(1, 2, 3); // 编译报错
 ```
 
 ## 类型转换规则
@@ -444,73 +458,50 @@ Sendable数据不能持有非Sendable数据，因此泛型类中的Sendable数�
 
 **正例：**
 
-```
-1. class A {
-2. state: number = 0;
-3. }
+```typescript
+// 正例：
+class A {
+  state: number = 0;
+}
 
-5. @Sendable
-6. class SendableA {
-7. state: number = 0;
-8. }
+@Sendable
+class SendableA {
+  state: number = 0;
+}
 
-10. let a1: A = new SendableA() as A;
+let a1: A = new SendableA() as A;
 ```
 
 **反例：**
 
-```
-1. class A {
-2. state: number = 0;
-3. }
+```ts
+class A {
+  state: number = 0;
+}
 
-5. @Sendable
-6. class SendableA {
-7. state: number = 0;
-8. }
+@Sendable
+class SendableA {
+  state: number = 0;
+}
 
-10. let a2: SendableA = new A() as SendableA; // 编译报错
+let a2: SendableA = new A() as SendableA; // 编译报错
 ```
 
 ## 函数规则
 
 ### 箭头函数不可标记为Sendable
 
-箭头函数不支持@Sendable装饰器，因此它是非Sendable函数，因此不支持共享。
-
-**正例：**
-
-```
-1. @Sendable
-2. type SendableFuncType = () => void;
-
-4. @Sendable
-5. function SendableFunc() {
-6. console.info("Sendable func");
-7. }
-
-9. @Sendable
-10. class SendableClass {
-11. constructor(f: SendableFuncType) {
-12. this.func = f;
-13. }
-14. func: SendableFuncType;
-15. }
-
-17. let sendableClass = new SendableClass(SendableFunc);
-```
-
 **反例：**
 
-```
-1. @Sendable
-2. type SendableFuncType = () => void;
-3. let func: SendableFuncType = () => {}; // 编译报错
+```ts
+@Sendable
+type SendableFuncType = () => void;
+let func: SendableFuncType = () => {}; // 编译报错
 
-5. @Sendable
-6. class SendableClass {
-7. func: SendableFuncType = () => {}; // 编译报错
-8. }
+@Sendable
+class SendableClass {
+  func: SendableFuncType = () => {}; // 编译报错
+}
 ```
 
 ## 与TS/JS交互的规则
@@ -523,7 +514,7 @@ Sendable数据不能持有非Sendable数据，因此泛型类中的Sendable数�
 | Sendable对象设置到TS/JS的对象上，TS中获取到Sendable对象后，禁止操作其对象布局（增、删属性，改变属性类型）。 |
 | Sendable对象放入TS/JS的容器中，TS中获取到Sendable对象后，禁止操作其对象布局（增、删属性，改变属性类型）。 |
 
-说明
+**说明** 
 
 改变属性类型不包括Sendable对象类型的改变，例如从Sendable class A变为Sendable class B。
 
@@ -546,23 +537,21 @@ Sendable数据需要与[makeObserved](arkts-new-makeobserved.md)配合使用，�
 
 Sendable可在[HAR](har-package.md)包中使用。当在字节码HAR中使用Sendable时，无需进行额外配置，可直接使用。当在TS HAR中使用Sendable时，需在HAR模块下的module.json5文件中将"metadata"字段下的"name"设置为“UseTsHar”，配置如下所示。
 
+```json5
+{
+  "module": {
+    "name": "library",
+    "type": "har",
+    "deviceTypes": [
+      "tablet",
+      "2in1"
+    ],
+    "metadata": [
+      {
+        "name": "UseTsHar",
+        "value": "true"
+      }
+    ]
+  }
+}
 ```
-1. {
-2. "module": {
-3. "name": "library",
-4. "type": "har",
-5. "deviceTypes": [
-6. "tablet",
-7. "2in1"
-8. ],
-9. "metadata": [
-10. {
-11. "name": "UseTsHar",
-12. "value": "true"
-13. }
-14. ]
-15. }
-16. }
-```
-
-[module.json5](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/bmsSample/HarPackage/library/src/main/module.json5#L15-L32)

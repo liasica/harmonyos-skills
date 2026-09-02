@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: DnsConfiguration：定制DNS
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 使用HTTP协议进行网络通信 > 实现HTTP请求定制 > Configuration：高效实现定制功能 > DnsConfiguration：定制DNS
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:05+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:62a7cbeb5b44ad5eb1c6b9a6337ab5cd7814a60536c7ddb1051671890879873e
+scraped_at: 2026-09-02T14:59:35+08:00
+doc_updated_at: 2026-08-07
+content_hash: sha256:0ca5e5cc55937af362658c35337f96df44fcbfb7c81448d81c1849514704470d
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:62a7cbeb5b44ad5eb1c6b9a6337ab5cd7814a60536c7ddb105167189087
 
   自定义动态DNS（[DynamicDnsRule](../harmonyos-references/remote-communication-rcp.md#dynamicdnsrule)）：除了添加静态DNS外，还可以添加动态DNS。动态DNS可看作一个可以根据hostname和port直接返回IP地址的函数，如果设置，则优先使用函数中返回的地址。
 
-  注意
+  **注意** 
 
   针对同一域名配置多个静态或者动态DNS规则后，Remote Communication Kit将按照配置的规则轮询服务器。
 * dnsOverHttps
@@ -39,87 +39,91 @@ content_hash: sha256:62a7cbeb5b44ad5eb1c6b9a6337ab5cd7814a60536c7ddb105167189087
 
 1. 导入需要的模块。
 
-   ```
-   1. import { rcp } from '@kit.RemoteCommunicationKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { rcp } from '@kit.RemoteCommunicationKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 创建一个新的会话对象和请求，会话用于管理后续的网络请求。同时需要定义一个具体的请求，请求中指定了需要请求的URL。
 
-   ```
-   1. const session = rcp.createSession();
-   2. // 其中的URL需要根据自身业务需要调整
-   3. const request = new rcp.Request('https://example.com');
+   ```typescript
+   const session = rcp.createSession();
+   // 其中的URL需要根据自身业务需要调整
+   const request = new rcp.Request('https://example.com');
    ```
 3. 设置请求的DNS规则，可根据自身业务的需要对DNS的ip和port进行设置。
 
-   ```
-   1. request.configuration = {
-   2. dns: {
-   3. dnsRules: [
-   4. {
-   5. ip: 'x.xxx.x.xx', // DNS服务器的IP地址
-   6. port: 53, // DNS服务器的端口号
-   7. },
-   8. ]
-   9. }
-   10. };
+   ```typescript
+   request.configuration = {
+     dns: {
+       dnsRules: [
+         {
+           ip: '192.168.1.1', // DNS服务器的IP地址
+           port: 53, // DNS服务器的端口号
+         },
+       ]
+     }
+   };
    ```
 4. 利用fetch发起网络请求并在成功或失败时进行响应的处理，此处只给出示例，对成功或失败的处理请根据实际业务来实现。
 
-   ```
-   1. session.fetch(request).then((response: rcp.Response) => {
-   2. console.info(`The response is ${JSON.stringify(response)}`); // 处理成功响应
-   3. // 关闭会话
-   4. session.close();
-   5. }).catch((err: BusinessError) => {
-   6. console.error(`The error code is ${err.code}, error data is ${err.data}`); // 处理错误
-   7. // 关闭会话
-   8. session.close();
-   9. })
+   ```typescript
+   session.fetch(request).then((response: rcp.Response) => {
+     console.info(`The response is ${JSON.stringify(response)}`); // 处理成功响应
+     // ...
+     // 关闭会话
+     session.close();
+   }).catch((err: BusinessError) => {
+     console.error(`The error code is ${err.code}, error data is ${err.data}`); // 处理错误
+     // ...
+     // 关闭会话
+     session.close();
+   })
    ```
 
 ### 定制DNS解析函数
 
 1. 导入需要的模块。
 
-   ```
-   1. import { rcp } from '@kit.RemoteCommunicationKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { rcp } from '@kit.RemoteCommunicationKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 创建一个新的会话对象和请求，会话用于管理后续的网络请求。同时需要定义一个具体的请求，请求中指定了需要请求的URL。
 
-   ```
-   1. const session = rcp.createSession();
-   2. // 定义请求的URL（请根据实际需求调整）
-   3. const requestURL = 'https://example.com';
-   4. const request = new rcp.Request(requestURL);
+   ```typescript
+   const session = rcp.createSession();
+   // 定义请求的URL（请根据实际需求调整）
+   const requestURL = 'https://example.com';
+   const request = new rcp.Request(requestURL);
    ```
 3. 设置DNS解析规则，此处请根据自身业务进行逻辑处理，本例只给出简单示例。
 
-   ```
-   1. request.configuration = {
-   2. dns: {
-   3. dnsRules: (host: string, port: number): rcp.IpAddress[] => {
-   4. if (host === 'example.com') {
-   5. return ['x.xxx.x.xx', 'x.xxx.x.xx']; // 此处请根据实际情况填写
-   6. }
-   7. return [];
-   8. }
-   9. }
-   10. };
+   ```typescript
+   request.configuration = {
+     dns: {
+       dnsRules: (host: string, port: number): rcp.IpAddress[] => {
+         if (host === 'example.com') {
+           return ['192.168.1.1', '192.168.1.2']; // 此处请根据实际情况填写
+         }
+         return [];
+       }
+     }
+   };
    ```
 4. 利用fetch发起网络请求并在成功或失败时进行响应的处理，此处只给出示例，对成功或失败的处理请根据实际业务来实现。
 
-   ```
-   1. session.fetch(request).then((response: rcp.Response) => {
-   2. // 处理成功响应
-   3. console.info(`The response is ${JSON.stringify(response)}`);
-   4. // 关闭会话
-   5. session.close();
-   6. }).catch((err: BusinessError) => {
-   7. // 处理错误
-   8. console.error(`The error code is ${err.code}, error data is ${err.data}`);
-   9. // 关闭会话
-   10. session.close();
-   11. })
+   ```typescript
+   session.fetch(request).then((response: rcp.Response) => {
+     // 处理成功响应
+     console.info(`The response is ${JSON.stringify(response)}`);
+     // ...
+     // 关闭会话
+     session.close();
+   }).catch((err: BusinessError) => {
+     // 处理错误
+     console.error(`The error code is ${err.code}, error data is ${err.data}`);
+     // ...
+     // 关闭会话
+     session.close();
+   })
    ```

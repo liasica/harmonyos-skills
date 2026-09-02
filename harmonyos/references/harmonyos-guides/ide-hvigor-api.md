@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-ap
 title: 基础构建能力
 breadcrumb: 指南 > 构建应用 > 扩展构建能力 > 扩展构建API > 基础构建能力
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:24+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e5516582fe7a4aab36e4ba3eaafcb216d9dc099417f7b663b6187d50189f5a96
+scraped_at: 2026-09-02T15:00:27+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3e42c33c6e244f52d622916b8c252d3bd34ce7847d7e692e3b914ad33be0f443
 ---
 
 ## Hvigor预置对象
@@ -14,8 +14,8 @@ content_hash: sha256:e5516582fe7a4aab36e4ba3eaafcb216d9dc099417f7b663b6187d50189
 
 ### 导入模块
 
-```
-1. import { hvigor } from '@ohos/hvigor';
+```ts
+import { hvigor } from '@ohos/hvigor';
 ```
 
 ### getRootNode
@@ -26,7 +26,7 @@ getRootNode(): HvigorNode
 
 **起始版本：**Hvigor 4.3.0
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -34,9 +34,9 @@ getRootNode(): HvigorNode
 
 **示例：**
 
-```
-1. import { hvigor } from '@ohos/hvigor';
-2. const rootNode = hvigor.getRootNode();
+```ts
+import { hvigor } from '@ohos/hvigor';
+const rootNode = hvigor.getRootNode();
 ```
 
 ### getAllNodes
@@ -47,7 +47,7 @@ getAllNodes(): HvigorNode[]
 
 **起始版本：**Hvigor 4.3.0
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -55,9 +55,9 @@ getAllNodes(): HvigorNode[]
 
 **示例：**
 
-```
-1. import { hvigor } from '@ohos/hvigor';
-2. const allNodes = hvigor.getAllNodes();
+```ts
+import { hvigor } from '@ohos/hvigor';
+const allNodes = hvigor.getAllNodes();
 ```
 
 ### getNodeByName
@@ -68,14 +68,14 @@ getNodeByName(nodeName: string, classKind?: string): HvigorNode | undefined
 
 **起始版本：**Hvigor 4.3.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | nodeName | string | 是 | 节点的名称，即工程名或模块名。 |
 | classKind | string | 否 | 节点的类型。  当工程名和模块名相同时，可通过此参数指定获取工程或模块的节点对象。支持以下三种取值：   * project：当工程名和模块名相同时，返回工程的节点对象。 * module：当工程名和模块名相同时，返回模块的节点对象。 * node（缺省值）：当工程名和模块名相同时，返回模块的节点对象。 |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -83,9 +83,9 @@ getNodeByName(nodeName: string, classKind?: string): HvigorNode | undefined
 
 **示例：**
 
-```
-1. import { hvigor } from '@ohos/hvigor';
-2. const entryNode = hvigor.getNodeByName('entry');
+```ts
+import { hvigor } from '@ohos/hvigor';
+const entryNode = hvigor.getNodeByName('entry');
 ```
 
 ### getHvigorConfig
@@ -96,7 +96,7 @@ getHvigorConfig(): HvigorConfig
 
 **起始版本：**Hvigor 4.3.0
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -104,9 +104,9 @@ getHvigorConfig(): HvigorConfig
 
 **示例：**
 
-```
-1. import { hvigor } from '@ohos/hvigor';
-2. const hvigorConfig = hvigor.getHvigorConfig();
+```ts
+import { hvigor } from '@ohos/hvigor';
+const hvigorConfig = hvigor.getHvigorConfig();
 ```
 
 ### getParameter
@@ -117,7 +117,7 @@ getParameter(): Parameter
 
 **起始版本：**Hvigor 4.3.0
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -125,9 +125,9 @@ getParameter(): Parameter
 
 **示例：**
 
-```
-1. import { hvigor } from '@ohos/hvigor';
-2. const parameter = hvigor.getParameter();
+```ts
+import { hvigor } from '@ohos/hvigor';
+const parameter = hvigor.getParameter();
 ```
 
 ### getHvigorVersion
@@ -138,7 +138,7 @@ getHvigorVersion(): string
 
 **起始版本：**Hvigor 6.22.3
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -146,9 +146,9 @@ getHvigorVersion(): string
 
 **示例：**
 
-```
-1. import { hvigor } from '@ohos/hvigor';
-2. const hvigorVersion = hvigor.getHvigorVersion();
+```ts
+import { hvigor } from '@ohos/hvigor';
+const hvigorVersion = hvigor.getHvigorVersion();
 ```
 
 ### configEvaluated
@@ -159,24 +159,24 @@ configEvaluated(fn: (HvigorConfig) => {}): void
 
 **起始版本：**Hvigor 4.3.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fn | ([HvigorConfig](ide-hvigor-api.md#section7253174081515)) => {} | 是 | 一个入参为空或者为hvigorConfig的方法 |
 
-说明
+**说明** 
 
 此API写在[hvigorconfig.ts文件](ide-hvigor-life-cycle.md#section810245135914)中才会生效，在构建生命周期的初始化阶段被执行。
 
 **示例：**注册configEvaluated hook。
 
-```
-1. // hvigorconfig.ts文件
-2. import { hvigor } from '@ohos/hvigor'
-3. hvigor.configEvaluated(hvigorConfig => {
-4. console.log('configEvaluated');
-5. })
+```ts
+// hvigorconfig.ts文件
+import { hvigor } from '@ohos/hvigor'
+hvigor.configEvaluated(hvigorConfig => {
+    console.log('configEvaluated');
+})
 ```
 
 ### beforeNodeEvaluate
@@ -187,24 +187,24 @@ beforeNodeEvaluate(fn: (HvigorNode) => {}): void
 
 **起始版本：**Hvigor 4.3.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fn | ([HvigorNode](ide-hvigor-api.md#section14832104719474)) => {} | 是 | 一个入参为空或者为HvigorNode的方法 |
 
-说明
+**说明** 
 
 此API写在[hvigorconfig.ts文件](ide-hvigor-life-cycle.md#section810245135914)中才会生效，在构建生命周期的初始化阶段被执行。
 
 **示例：**注册beforeNodeEvaluate hook。
 
-```
-1. // hvigorconfig.ts文件
-2. import { hvigor } from '@ohos/hvigor';
-3. hvigor.beforeNodeEvaluate(hvigorNode => {
-4. console.log('beforeNodeEvaluate');
-5. })
+```ts
+// hvigorconfig.ts文件
+import { hvigor } from '@ohos/hvigor';
+hvigor.beforeNodeEvaluate(hvigorNode => {
+  console.log('beforeNodeEvaluate');
+})
 ```
 
 ### afterNodeEvaluate
@@ -215,7 +215,7 @@ afterNodeEvaluate(fn: (HvigorNode) => {}): void
 
 **起始版本：**Hvigor 4.3.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -223,11 +223,11 @@ afterNodeEvaluate(fn: (HvigorNode) => {}): void
 
 **示例：**注册afterNodeEvaluate hook。
 
-```
-1. import { hvigor } from '@ohos/hvigor';
-2. hvigor.afterNodeEvaluate(hvigorNode => {
-3. console.log('afterNodeEvaluate');
-4. })
+```ts
+import { hvigor } from '@ohos/hvigor';
+hvigor.afterNodeEvaluate(hvigorNode => {
+  console.log('afterNodeEvaluate');
+})
 ```
 
 ### nodesInitialized
@@ -238,24 +238,24 @@ nodesInitialized(fn: (Hvigor) => {}): void
 
 **起始版本：**Hvigor 4.3.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fn | ([Hvigor](ide-hvigor-api.md#section64891890155)) => {} | 是 | 一个入参为空或者为Hvigor对象的方法 |
 
-说明
+**说明** 
 
 此API写在[hvigorconfig.ts文件](ide-hvigor-life-cycle.md#section810245135914)中才会生效，在构建生命周期的初始化阶段被执行。
 
 **示例：**注册nodesInitialized hook。
 
-```
-1. // hvigorconfig.ts文件
-2. import { hvigor } from '@ohos/hvigor';
-3. hvigor.nodesInitialized(() => {
-4. console.log('nodesInitialized');
-5. })
+```ts
+// hvigorconfig.ts文件
+import { hvigor } from '@ohos/hvigor';
+hvigor.nodesInitialized(() => {
+  console.log('nodesInitialized');
+})
 ```
 
 ### nodesEvaluated
@@ -266,7 +266,7 @@ nodesEvaluated(fn: (Hvigor) => {}): void
 
 **起始版本：**Hvigor 4.0.2
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -276,15 +276,15 @@ nodesEvaluated(fn: (Hvigor) => {}): void
 
 在Hvigor中，工程节点插件加载要优先于模块节点插件加载顺序，若想实现在工程节点查找子节点注册task的上下文信息，则需要使用此接口，等待全部节点加载完成之后去执行。
 
-```
-1. import { hvigor } from '@ohos/hvigor';
-2. import { OhosHapContext, OhosPluginId } from "@ohos/hvigor-ohos-plugin";
-3. hvigor.nodesEvaluated(() => {
-4. // 等待全部节点加载完成之后获取子节点信息
-5. hvigor.getRootNode().subNodes(subNode => {
-6. const hapContext = subNode.getContext(OhosPluginId.OHOS_HAP_PLUGIN) as OhosHapContext;
-7. });
-8. });
+```ts
+import { hvigor } from '@ohos/hvigor';
+import { OhosHapContext, OhosPluginId } from "@ohos/hvigor-ohos-plugin";
+hvigor.nodesEvaluated(() => {
+  // 等待全部节点加载完成之后获取子节点信息
+  hvigor.getRootNode().subNodes(subNode => {
+    const hapContext = subNode.getContext(OhosPluginId.OHOS_HAP_PLUGIN) as OhosHapContext;
+  });
+});
 ```
 
 ### taskGraphResolved
@@ -295,7 +295,7 @@ taskGraphResolved(fn: (Hvigor) => {}): void
 
 **起始版本：**Hvigor 4.3.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -303,11 +303,11 @@ taskGraphResolved(fn: (Hvigor) => {}): void
 
 **示例：**添加一个任务图解析完毕的回调函数。
 
-```
-1. import { hvigor } from '@ohos/hvigor';
-2. hvigor.taskGraphResolved(() => {
-3. console.log('taskGraphResolved');
-4. });
+```ts
+import { hvigor } from '@ohos/hvigor';
+hvigor.taskGraphResolved(() => {
+  console.log('taskGraphResolved');
+});
 ```
 
 ### buildFinished
@@ -318,7 +318,7 @@ buildFinished(fn: (BuildResult) => {}): void
 
 **起始版本：**Hvigor 4.3.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -326,13 +326,13 @@ buildFinished(fn: (BuildResult) => {}): void
 
 **示例：**获取构建结束的信息，如果是异常结束则打印出信息。
 
-```
-1. import { hvigor } from '@ohos/hvigor';
-2. hvigor.buildFinished(buildResult => {
-3. if (buildResult.getError()) {
-4. console.log(buildResult.getError().stack);
-5. }
-6. })
+```ts
+import { hvigor } from '@ohos/hvigor';
+hvigor.buildFinished(buildResult => {
+  if (buildResult.getError()) {
+    console.log(buildResult.getError().stack);
+  }
+})
 ```
 
 ### getCommandEntryTask
@@ -343,7 +343,7 @@ getCommandEntryTask(): string[] | undefined
 
 **起始版本：**Hvigor 4.3.0
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -351,9 +351,9 @@ getCommandEntryTask(): string[] | undefined
 
 **示例：**获取入口任务并打印出来。
 
-```
-1. import { hvigor } from '@ohos/hvigor';
-2. console.log(hvigor.getCommandEntryTask());
+```ts
+import { hvigor } from '@ohos/hvigor';
+console.log(hvigor.getCommandEntryTask());
 ```
 
 ### isCommandEntryTask
@@ -364,13 +364,13 @@ isCommandEntryTask(taskName: string): boolean
 
 **起始版本：**Hvigor 4.3.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | taskName | string | 是 | 任务名 |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -378,9 +378,9 @@ isCommandEntryTask(taskName: string): boolean
 
 **示例：**判断是否是assembleHap任务并打印出来。
 
-```
-1. import { hvigor } from '@ohos/hvigor';
-2. console.log(hvigor.isCommandEntryTask('assembleHap'));
+```ts
+import { hvigor } from '@ohos/hvigor';
+console.log(hvigor.isCommandEntryTask('assembleHap'));
 ```
 
 ## getNode
@@ -391,13 +391,13 @@ getNode(scriptPath: string): HvigorNode | undefined
 
 **起始版本：**Hvigor 4.0.2
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scriptPath | string | 是 | hvigorfile.ts脚本全路径 |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -405,9 +405,9 @@ getNode(scriptPath: string): HvigorNode | undefined
 
 **示例：**获取当前节点对象。
 
-```
-1. import { getNode } from "@ohos/hvigor";
-2. const node = getNode(__filename);
+```ts
+import { getNode } from "@ohos/hvigor";
+const node = getNode(__filename);
 ```
 
 ## BuildResult
@@ -422,7 +422,7 @@ getError(): Error | null
 
 **起始版本：**Hvigor 4.3.0
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -430,13 +430,13 @@ getError(): Error | null
 
 **示例：**获取构建结束的信息，如果是异常结束则打印出信息。
 
-```
-1. import { hvigor } from '@ohos/hvigor';
-2. hvigor.buildFinished(buildResult => {
-3. if (buildResult.getError()) {
-4. console.log(buildResult.getError().stack);
-5. }
-6. })
+```ts
+import { hvigor } from '@ohos/hvigor';
+hvigor.buildFinished(buildResult => {
+  if (buildResult.getError()) {
+    console.log(buildResult.getError().stack);
+  }
+})
 ```
 
 ### getReportJson
@@ -447,7 +447,7 @@ getReportJson(): any
 
 **起始版本：**Hvigor 5.0.10
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -455,55 +455,55 @@ getReportJson(): any
 
 不同类型的构建事件具有不同结构，以下为典型结构示例：
 
-```
-1. // report.json
-2. {
-3. "version": "2.0", // 固定字段
-4. "ppid": 524, // process.ppid
-5. "events": [ // 构建事件
-6. ...
-7. {
-8. "head": {
-9. "id": "61068546-11d9-49d0-baa7-733e167af7d6", // 事件id
-10. "name": "Finished :entry:default@PreBuild", // 事件name
-11. "description": "Pre-build in the stage model.",// 描述
-12. "type": "log" // 类型
-13. },
-14. "body": {
-15. "pid": 3960, // process.pid
-16. "tid": "Main Thread", // thread id
-17. "startTime": 1280741873226000, // 开始时间
-18. "endTime": 1280741896325200, // 结束时间
-19. "totalTime": 22868300 // 总计时间
-20. },
-21. "additional": {
-22. "logType": "info", // log类型
-23. "children": [], // 子事件id列表
-24. }
-25. }
-26. ],
-27. "workLog": []
-28. }
+```json5
+// report.json
+{
+  "version": "2.0", // 固定字段
+  "ppid": 524, // process.ppid
+  "events": [ // 构建事件
+    ...
+    {
+      "head": {
+        "id": "61068546-11d9-49d0-baa7-733e167af7d6", // 事件id
+        "name": "Finished :entry:default@PreBuild", // 事件name
+        "description": "Pre-build in the stage model.",// 描述
+        "type": "log" // 类型
+      },
+      "body": {
+        "pid": 3960, // process.pid
+        "tid": "Main Thread", // thread id
+        "startTime": 1280741873226000, // 开始时间
+        "endTime": 1280741896325200, // 结束时间
+        "totalTime": 22868300 // 总计时间
+      },
+      "additional": {
+        "logType": "info", // log类型
+        "children": [], // 子事件id列表
+      }
+    }
+  ],
+  "workLog": []
+}
 ```
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor, FileUtil } from '@ohos/hvigor';
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, FileUtil } from '@ohos/hvigor';
 
-5. hvigor.buildFinished(buildResult => {
-6. // 将数据写入指定path的文件中
-7. const json5FilePath = FileUtil.pathResolve('D:\\', 'testJson.json5');
-8. FileUtil.ensureFileSync(json5FilePath);
-9. FileUtil.writeFileSync(json5FilePath, JSON.stringify(buildResult.getReportJson(), null, 2));
-10. })
+hvigor.buildFinished(buildResult => {
+  // 将数据写入指定path的文件中
+  const json5FilePath = FileUtil.pathResolve('D:\\', 'testJson.json5');
+  FileUtil.ensureFileSync(json5FilePath);
+  FileUtil.writeFileSync(json5FilePath, JSON.stringify(buildResult.getReportJson(), null, 2));
+})
 
-12. export default {
-13. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-14. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-15. }
+export default {
+    system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+    plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ## HvigorConfig
@@ -518,7 +518,7 @@ getRootNodeDescriptor(): HvigorNodeDescriptor
 
 **起始版本：**Hvigor 4.3.0
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -526,9 +526,9 @@ getRootNodeDescriptor(): HvigorNodeDescriptor
 
 **示例：**获取构建的所有节点描述对象。
 
-```
-1. import { hvigor } from '@ohos/hvigor';
-2. const rootNodeDescriptor = hvigor.getHvigorConfig().getRootNodeDescriptor();
+```ts
+import { hvigor } from '@ohos/hvigor';
+const rootNodeDescriptor = hvigor.getHvigorConfig().getRootNodeDescriptor();
 ```
 
 ### getAllNodeDescriptor
@@ -539,7 +539,7 @@ getAllNodeDescriptor(): HvigorNodeDescriptor[]
 
 **起始版本：**Hvigor 4.3.0
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -547,9 +547,9 @@ getAllNodeDescriptor(): HvigorNodeDescriptor[]
 
 **示例：**
 
-```
-1. import { hvigor } from '@ohos/hvigor';
-2. const allNodeDescriptors = hvigor.getHvigorConfig().getAllNodeDescriptor();
+```ts
+import { hvigor } from '@ohos/hvigor';
+const allNodeDescriptors = hvigor.getHvigorConfig().getAllNodeDescriptor();
 ```
 
 ### getNodeDescriptorByName
@@ -560,13 +560,13 @@ getNodeDescriptorByName(name: string): HvigorNodeDescriptor
 
 **起始版本：**Hvigor 4.3.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 根据此name查找NodeDescriptor |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -574,9 +574,9 @@ getNodeDescriptorByName(name: string): HvigorNodeDescriptor
 
 **示例：**
 
-```
-1. import { hvigor } from '@ohos/hvigor';
-2. const entryNodeDescriptors = hvigor.getHvigorConfig().getNodeDescriptorByName('entry');
+```ts
+import { hvigor } from '@ohos/hvigor';
+const entryNodeDescriptors = hvigor.getHvigorConfig().getNodeDescriptorByName('entry');
 ```
 
 ### includeNode
@@ -587,7 +587,7 @@ includeNode(name: string, srcPath: string, extraOptions?: Record<string, any>): 
 
 **起始版本：**Hvigor 5.4.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -595,43 +595,43 @@ includeNode(name: string, srcPath: string, extraOptions?: Record<string, any>): 
 | srcPath | string | 是 | 要添加的node的srcPath |
 | extraOptions | Record<string, any> | 否 | 可以通过此参数传入额外的配置信息，会被解析成为此node的targets |
 
-说明
+**说明** 
 
 此API写在[hvigorconfig.ts文件](ide-hvigor-life-cycle.md#section810245135914)中才会生效，在构建生命周期的初始化阶段被执行。
 
 **示例1：**添加一个名为exampleNodeName且无额外信息的node。
 
-```
-1. // hvigorconfig.ts文件
-2. import { hvigor } from '@ohos/hvigor';
+```screen
+// hvigorconfig.ts文件
+import { hvigor } from '@ohos/hvigor';
 
-4. const hvigorConfig = hvigor.getHvigorConfig();
-5. hvigorConfig.includeNode('exampleNodeName', './exampleNodeName');
+const hvigorConfig = hvigor.getHvigorConfig();
+hvigorConfig.includeNode('exampleNodeName', './exampleNodeName');
 ```
 
 **示例2：**添加一个名为exampleNodeName且附带targets信息的node。
 
-```
-1. // hvigorconfig.ts文件
-2. import { hvigor } from '@ohos/hvigor';
+```screen
+// hvigorconfig.ts文件
+import { hvigor } from '@ohos/hvigor';
 
-4. const hvigorConfig = hvigor.getHvigorConfig();
-5. hvigorConfig.includeNode('exampleNodeName', './exampleNodeName', {
-6. "targets": [
-7. {
-8. "name": "default",
-9. "applyToProducts": [
-10. "default"
-11. ]
-12. },
-13. {
-14. "name": "targetTest1",
-15. "applyToProducts": [
-16. "default"
-17. ]
-18. }
-19. ]
-20. });
+const hvigorConfig = hvigor.getHvigorConfig();
+hvigorConfig.includeNode('exampleNodeName', './exampleNodeName', {
+  "targets": [
+    {
+      "name": "default",
+      "applyToProducts": [
+        "default"
+      ]
+    },
+    {
+      "name": "targetTest1",
+      "applyToProducts": [
+        "default"
+      ]
+    }
+  ]
+});
 ```
 
 ### excludeNodeByName
@@ -644,24 +644,24 @@ excludeNodeByName(name: string): void
 
 **起始版本：**Hvigor 5.4.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 要排除的node的name |
 
-说明
+**说明** 
 
 此API写在[hvigorconfig.ts文件](ide-hvigor-life-cycle.md#section810245135914)中才会生效，在构建生命周期的初始化阶段被执行。
 
 **示例：**排除名为exampleNodeName的Node。
 
-```
-1. // hvigorconfig.ts文件
-2. import { hvigor } from '@ohos/hvigor';
+```screen
+// hvigorconfig.ts文件
+import { hvigor } from '@ohos/hvigor';
 
-4. const hvigorConfig = hvigor.getHvigorConfig();
-5. hvigorConfig.excludeNodeByName('exampleNodeName');
+const hvigorConfig = hvigor.getHvigorConfig();
+hvigorConfig.excludeNodeByName('exampleNodeName');
 ```
 
 ## HvigorNodeDescriptor
@@ -692,13 +692,13 @@ getChildNode(): HvigorNodeDescriptor[] | undefined
 
 **示例：**
 
-```
-1. // hvigorconfig.ts
-2. import { hvigorConfig } from '@ohos/hvigor';
-3. const rootNodeDescriptors = hvigorConfig.getRootNodeDescriptor();
-4. rootNodeDescriptors.getChildNode()?.forEach(child => {
-5. console.log(`child: ${child.name}`);
-6. });
+```ts
+// hvigorconfig.ts
+import { hvigorConfig } from '@ohos/hvigor';
+const rootNodeDescriptors = hvigorConfig.getRootNodeDescriptor();
+rootNodeDescriptors.getChildNode()?.forEach(child => {
+  console.log(`child: ${child.name}`);
+});
 ```
 
 ### getRootNode
@@ -717,11 +717,11 @@ getRootNode(): HvigorNodeDescriptor
 
 **示例：**
 
-```
-1. // hvigorconfig.ts
-2. import { hvigorConfig } from '@ohos/hvigor';
-3. const entryNodeDescriptor = hvigorConfig.getNodeDescriptorByName('entry');
-4. console.log(`rootNode name: ${entryNodeDescriptor.getRootNode().name}`);
+```screen
+// hvigorconfig.ts
+import { hvigorConfig } from '@ohos/hvigor';
+const entryNodeDescriptor = hvigorConfig.getNodeDescriptorByName('entry');
+console.log(`rootNode name: ${entryNodeDescriptor.getRootNode().name}`);
 ```
 
 ## Product
@@ -730,8 +730,8 @@ HarmonyOS应用工程级配置中的Product信息接口。在调用Product的接
 
 ### 导入模块
 
-```
-1. import { Product } from '@ohos/hvigor-ohos-plugin';
+```ts
+import { Product } from '@ohos/hvigor-ohos-plugin';
 ```
 
 ### getProductName
@@ -740,35 +740,35 @@ getProductName: () => string
 
 获取product名称。
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
 | string | product名称 |
 
-在工程级hvigorfile.ts中编写示例代码：
+**示例：**
 
-```
-1. import { hvigor, HvigorNode, HvigorPlugin } from '@ohos/hvigor';
-2. import { appTasks, OhosAppContext, OhosPluginId, Product } from '@ohos/hvigor-ohos-plugin';
-
-4. // 实现自定义插件
-5. export function customPlugin(): HvigorPlugin {
-6. return {
-7. pluginId: 'customPlugin',
-8. async apply(currentNode: HvigorNode): Promise<void> {
-9. hvigor.nodesEvaluated(async () => {
-10. const context: OhosAppContext = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-11. const currentProduct: Product = context.getCurrentProduct();
-12. console.log(currentProduct.getProductName());
-13. });
-14. }
-15. };
-16. }
-17. export default {
-18. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-19. plugins:[customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
-20. }
+```ts
+// 工程级hvigorfile.ts文件
+import { hvigor, HvigorNode, HvigorPlugin } from '@ohos/hvigor';
+import { appTasks, OhosAppContext, OhosPluginId, Product } from '@ohos/hvigor-ohos-plugin';
+// 实现自定义插件
+export function customPlugin(): HvigorPlugin {
+  return {
+    pluginId: 'customPlugin',
+    async apply(currentNode: HvigorNode): Promise<void> {
+      hvigor.nodesEvaluated(async () => {
+        const context: OhosAppContext = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+        const currentProduct: Product = context.getCurrentProduct();
+        console.log(currentProduct.getProductName());
+      });
+    }
+  };
+}
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### getBundleType
@@ -777,35 +777,36 @@ getBundleType: () => string
 
 获取product使用的bundleType信息。
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
 | string | bundleType值 |
 
-在工程级hvigorfile.ts中编写示例代码：
+**示例：**
 
-```
-1. import { hvigor, HvigorNode, HvigorPlugin } from '@ohos/hvigor';
-2. import { appTasks, OhosAppContext, OhosPluginId, Product } from '@ohos/hvigor-ohos-plugin';
+```ts
+// 工程级hvigorfile.ts文件
+import { hvigor, HvigorNode, HvigorPlugin } from '@ohos/hvigor';
+import { appTasks, OhosAppContext, OhosPluginId, Product } from '@ohos/hvigor-ohos-plugin';
+// 实现自定义插件
+export function customPlugin(): HvigorPlugin {
+  return {
+    pluginId: 'customPlugin',
+    async apply(currentNode: HvigorNode): Promise<void> {
+      hvigor.nodesEvaluated(async () => {
+        const context: OhosAppContext = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+        const currentProduct: Product = context.getCurrentProduct();
+        console.log(currentProduct.getBundleType());
+      });
+    }
+  };
+}
 
-4. // 实现自定义插件
-5. export function customPlugin(): HvigorPlugin {
-6. return {
-7. pluginId: 'customPlugin',
-8. async apply(currentNode: HvigorNode): Promise<void> {
-9. hvigor.nodesEvaluated(async () => {
-10. const context: OhosAppContext = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-11. const currentProduct: Product = context.getCurrentProduct();
-12. console.log(currentProduct.getBundleType());
-13. });
-14. }
-15. };
-16. }
-17. export default {
-18. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-19. plugins:[customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
-20. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### getBundleName
@@ -814,35 +815,76 @@ getBundleName: () => string
 
 获取product使用的bundleName信息。
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
 | string | bundleName值 |
 
-在工程级hvigorfile.ts中编写示例代码：
+**示例：**
 
+```ts
+// 工程级hvigorfile.ts文件
+import { hvigor, HvigorNode, HvigorPlugin } from '@ohos/hvigor';
+import { appTasks, OhosAppContext, OhosPluginId, Product } from '@ohos/hvigor-ohos-plugin';
+// 实现自定义插件
+export function customPlugin(): HvigorPlugin {
+  return {
+    pluginId: 'customPlugin',
+    async apply(currentNode: HvigorNode): Promise<void> {
+      hvigor.nodesEvaluated(async () => {
+        const context: OhosAppContext = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+        const currentProduct: Product = context.getCurrentProduct();
+        console.log(currentProduct.getBundleName());
+      });
+    }
+  };
+}
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
-1. import { hvigor, HvigorNode, HvigorPlugin } from '@ohos/hvigor';
-2. import { appTasks, OhosAppContext, OhosPluginId, Product } from '@ohos/hvigor-ohos-plugin';
 
-4. // 实现自定义插件
-5. export function customPlugin(): HvigorPlugin {
-6. return {
-7. pluginId: 'customPlugin',
-8. async apply(currentNode: HvigorNode): Promise<void> {
-9. hvigor.nodesEvaluated(async () => {
-10. const context: OhosAppContext = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-11. const currentProduct: Product = context.getCurrentProduct();
-12. console.log(currentProduct.getBundleName());
-13. });
-14. }
-15. };
-16. }
-17. export default {
-18. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-19. plugins:[customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
-20. }
+### getOutputArtifactName
+
+getOutputArtifactName: () => string | undefined
+
+获取自定义的应用包名称，即工程级build-profile.json5中product下的artifactName值，如果未配置artifactName则返回undefined。
+
+**起始版本：**Hvigor 6.22.2
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| string | undefined | 自定义的应用包名称，不存在则返回undefined |
+
+**示例：**
+
+```ts
+// 工程级hvigorfile.ts文件
+import { hvigor, HvigorNode, HvigorPlugin } from '@ohos/hvigor';
+import { appTasks, OhosAppContext, OhosPluginId, Product } from '@ohos/hvigor-ohos-plugin';
+
+// 实现自定义插件
+export function customPlugin(): HvigorPlugin {
+  return {
+    pluginId: 'customPlugin',
+    async apply(currentNode: HvigorNode): Promise<void> {
+      hvigor.nodesEvaluated(async () => {
+        const context: OhosAppContext = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+        const currentProduct: Product = context.getCurrentProduct();
+        console.log(currentProduct.getOutputArtifactName());
+      });
+    }
+  };
+}
+
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ## Target
@@ -851,8 +893,8 @@ HarmonyOS应用模块级配置中的Target信息接口。
 
 ### 导入模块
 
-```
-1. import { Target } from '@ohos/hvigor-ohos-plugin';
+```ts
+import { Target } from '@ohos/hvigor-ohos-plugin';
 ```
 
 ### getCurrentProduct
@@ -861,7 +903,7 @@ getCurrentProduct: () => Product
 
 获取当前Target配置的Product。
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -869,29 +911,30 @@ getCurrentProduct: () => Product
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks, OhosHapContext, OhosPluginId, Target } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor, HvigorNode } from '@ohos/hvigor';
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosHapContext, OhosPluginId, Target } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, HvigorNode } from '@ohos/hvigor';
 
-5. hvigor.nodesEvaluated(() => {
-6. const rootNode = hvigor.getRootNode();
-7. rootNode.subNodes((node: HvigorNode) => {
-8. const hapContext = node.getContext(OhosPluginId.OHOS_HAP_PLUGIN) as OhosHapContext;
-9. if (!hapContext) {
-10. return
-11. }
-12. hapContext.targets((target: Target) => {
-13. // 这里可以写入对每个 target 的处理逻辑
-14. const currentProduct = target.getCurrentProduct();
-15. console.log(`Product Name: ${currentProduct.getProductName()}`);
-16. });
-17. });
-18. })
-19. export default {
-20. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-21. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-22. }
+hvigor.nodesEvaluated(() => {
+  const rootNode = hvigor.getRootNode();
+  rootNode.subNodes((node: HvigorNode) => {
+    const hapContext = node.getContext(OhosPluginId.OHOS_HAP_PLUGIN) as OhosHapContext;
+    if (!hapContext) {
+      return
+    }
+    hapContext.targets((target: Target) => {
+      // 这里可以写入对每个target的处理逻辑
+      const currentProduct = target.getCurrentProduct();
+      console.log(`Product Name: ${currentProduct.getProductName()}`);
+    });
+  });
+})
+
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### getBuildTargetOutputPath
@@ -900,7 +943,7 @@ getBuildTargetOutputPath: () => string
 
 获取当前target构建产物输出路径。
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -908,29 +951,30 @@ getBuildTargetOutputPath: () => string
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks, OhosHapContext, OhosPluginId, Target } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor, HvigorNode } from '@ohos/hvigor';
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosHapContext, OhosPluginId, Target } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, HvigorNode } from '@ohos/hvigor';
 
-5. hvigor.nodesEvaluated(() => {
-6. const rootNode = hvigor.getRootNode();
-7. rootNode.subNodes((node: HvigorNode) => {
-8. const hapContext = node.getContext(OhosPluginId.OHOS_HAP_PLUGIN) as OhosHapContext;
-9. if (!hapContext) {
-10. return
-11. }
-12. hapContext.targets((target: Target) => {
-13. // 这里可以写入对每个 target 的处理逻辑
-14. const buildTargetOutputPath = target.getBuildTargetOutputPath();
-15. console.log(`Build Target Output Path: ${buildTargetOutputPath}`);
-16. });
-17. });
-18. })
-19. export default {
-20. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-21. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-22. }
+hvigor.nodesEvaluated(() => {
+  const rootNode = hvigor.getRootNode();
+  rootNode.subNodes((node: HvigorNode) => {
+    const hapContext = node.getContext(OhosPluginId.OHOS_HAP_PLUGIN) as OhosHapContext;
+    if (!hapContext) {
+      return
+    }
+    hapContext.targets((target: Target) => {
+      // 这里可以写入对每个target的处理逻辑
+      const buildTargetOutputPath = target.getBuildTargetOutputPath();
+      console.log(`Build Target Output Path: ${buildTargetOutputPath}`);
+    });
+  });
+})
+
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### getTargetName
@@ -939,7 +983,7 @@ getTargetName: () => string
 
 获取target名称。
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -947,30 +991,238 @@ getTargetName: () => string
 
 **示例：**
 
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosHapContext, OhosPluginId, Target } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, HvigorNode } from '@ohos/hvigor';
+
+hvigor.nodesEvaluated(() => {
+  const rootNode = hvigor.getRootNode();
+  rootNode.subNodes((node: HvigorNode) => {
+    const hapContext = node.getContext(OhosPluginId.OHOS_HAP_PLUGIN) as OhosHapContext;
+    if (!hapContext) {
+      return
+    }
+    hapContext.targets((target: Target) => {
+      // 这里可以写入对每个target的处理逻辑
+      const targetName = target.getTargetName();
+      console.log(`Target Name: ${targetName}`);
+    });
+  });
+})
+
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks, OhosHapContext, OhosPluginId, Target } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor, HvigorNode } from '@ohos/hvigor';
 
-5. hvigor.nodesEvaluated(() => {
-6. const rootNode = hvigor.getRootNode();
-7. rootNode.subNodes((node: HvigorNode) => {
-8. const hapContext = node.getContext(OhosPluginId.OHOS_HAP_PLUGIN) as OhosHapContext;
-9. if (!hapContext) {
-10. return
-11. }
-12. hapContext.targets((target: Target) => {
-13. // 这里可以写入对每个 target 的处理逻辑
-14. const targetName = target.getTargetName();
-15. console.log(`Target Name: ${targetName}`);
-16. });
-17. });
-18. })
+### getBuildOption
 
-20. export default {
-21. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-22. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-23. }
+getBuildOption: () => BuildOption
+
+获取模块target在本次构建过程中使用的buildOption信息。
+
+**起始版本：**Hvigor 5.8.9
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [BuildOption](ide-hvigor-build-profile.md#section1010733210421) | 模块target在本次构建过程中使用的buildOption信息 |
+
+**示例：**
+
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosHapContext, OhosPluginId, Target } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, HvigorNode } from '@ohos/hvigor';
+
+hvigor.nodesEvaluated(() => {
+  const rootNode = hvigor.getRootNode();
+  rootNode.subNodes((node: HvigorNode) => {
+    const hapContext = node.getContext(OhosPluginId.OHOS_HAP_PLUGIN) as OhosHapContext;
+    if (!hapContext) {
+      return
+    }
+    hapContext.targets((target: Target) => {
+      // 这里可以写入对每个target的处理逻辑
+      const buildOption = target.getBuildOption();
+      console.log(`Build Option: ${JSON.stringify(buildOption, null, 2)}`);
+    });
+  });
+})
+
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
+```
+
+### getModulePathDetails
+
+getModulePathDetails: () => PathDetails
+
+获取模块级路径信息。
+
+**起始版本：**Hvigor 6.0.4
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [PathDetails](ide-hvigor-api.md#section1182334313507) | 模块级路径信息 |
+
+**示例：**
+
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosHapContext, OhosPluginId, Target } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, HvigorNode } from '@ohos/hvigor';
+
+hvigor.nodesEvaluated(() => {
+  const rootNode = hvigor.getRootNode();
+  rootNode.subNodes((node: HvigorNode) => {
+    const hapContext = node.getContext(OhosPluginId.OHOS_HAP_PLUGIN) as OhosHapContext;
+    if (!hapContext) {
+      return
+    }
+    hapContext.targets((target: Target) => {
+      // 这里可以写入对每个target的处理逻辑
+      const modulePathDetails = target.getModulePathDetails();
+      console.log(`Module Build Path: ${modulePathDetails.getModuleBuildPath()}`);
+    });
+  });
+})
+
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
+```
+
+## PathDetails
+
+模块级路径信息。在调用PathDetails的接口前，可以先通过[getModulePathDetails](ide-hvigor-api.md#section5902751035)方法来获取本对象。
+
+### getModuleBuildPath(): string
+
+获取模块构建产物build根目录。
+
+**起始版本：**Hvigor 6.0.4
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| string | 模块构建产物build根目录，如"D:\MyApplication\entry\build"。 |
+
+**示例：**
+
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosHapContext, OhosPluginId, Target } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, HvigorNode } from '@ohos/hvigor';
+
+hvigor.nodesEvaluated(() => {
+  const rootNode = hvigor.getRootNode();
+  rootNode.subNodes((node: HvigorNode) => {
+    const hapContext = node.getContext(OhosPluginId.OHOS_HAP_PLUGIN) as OhosHapContext;
+    if (!hapContext) {
+      return
+    }
+    hapContext.targets((target: Target) => {
+      // 这里可以写入对每个target的处理逻辑
+      const modulePathDetails = target.getModulePathDetails();
+      console.log(`Module Build Path: ${modulePathDetails.getModuleBuildPath()}`);
+    });
+  });
+})
+
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
+```
+
+### getModuleBuildCachePath(): string
+
+获取模块构建中间产物缓存目录。
+
+**起始版本：**Hvigor 6.0.4
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| string | 模块构建中间产物缓存目录，如"D:\MyApplication\entry\build\default\cache\default"。 |
+
+**示例：**
+
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosHapContext, OhosPluginId, Target } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, HvigorNode } from '@ohos/hvigor';
+
+hvigor.nodesEvaluated(() => {
+  const rootNode = hvigor.getRootNode();
+  rootNode.subNodes((node: HvigorNode) => {
+    const hapContext = node.getContext(OhosPluginId.OHOS_HAP_PLUGIN) as OhosHapContext;
+    if (!hapContext) {
+      return
+    }
+    hapContext.targets((target: Target) => {
+      // 这里可以写入对每个target的处理逻辑
+      const modulePathDetails = target.getModulePathDetails();
+      console.log(`Module Build Cache Path: ${modulePathDetails.getModuleBuildCachePath()}`);
+    });
+  });
+})
+
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
+```
+
+### getIntermediatesRes(): string
+
+获取模块构建后生成的资源缓存目录。
+
+**起始版本：**Hvigor 6.0.4
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| string | 模块构建后生成的资源缓存目录，如"D:\MyApplication\entry\build\default\intermediates\res\default"。 |
+
+**示例：**
+
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosHapContext, OhosPluginId, Target } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, HvigorNode } from '@ohos/hvigor';
+
+hvigor.nodesEvaluated(() => {
+  const rootNode = hvigor.getRootNode();
+  rootNode.subNodes((node: HvigorNode) => {
+    const hapContext = node.getContext(OhosPluginId.OHOS_HAP_PLUGIN) as OhosHapContext;
+    if (!hapContext) {
+      return
+    }
+    hapContext.targets((target: Target) => {
+      // 这里可以写入对每个target的处理逻辑
+      const modulePathDetails = target.getModulePathDetails();
+      console.log(`Intermediates Res Path: ${modulePathDetails.getIntermediatesRes()}`);
+    });
+  });
+})
+
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ## Parameter
@@ -990,19 +1242,19 @@ getProperty(key: string): any | undefined
 * 命令行参数：--config properties.{key}={value}， 缩写-c properties.{key}={value}（相同key值时，命令行参数对应的value值优先）。
 * hvigor-config.json5配置文件：在"properties"属性中定义的配置项。
 
-  ```
-  1. "properties": {
-  2. "key": "value"
-  3. }
+  ```json5
+  "properties": {
+    "key": "value"
+  }
   ```
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | properties配置中的key |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1012,16 +1264,16 @@ getProperty(key: string): any | undefined
 
 在hvigorfile.ts中添加代码。
 
-```
-1. import { hvigor } from '@ohos/hvigor';
-2. const key = hvigor.getParameter().getProperty('key');
-3. console.log(key);
+```ts
+import { hvigor } from '@ohos/hvigor';
+const key = hvigor.getParameter().getProperty('key');
+console.log(key);
 ```
 
 执行命令hvigorw --sync -c properties.key=hello，控制台打印：
 
-```
-1. hello
+```txt
+hello
 ```
 
 ### getProperties
@@ -1032,7 +1284,7 @@ getProperties(): Properties
 
 **起始版本：**Hvigor 4.1.2
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1042,16 +1294,16 @@ getProperties(): Properties
 
 在hvigorfile.ts中添加代码。
 
-```
-1. import { hvigor } from '@ohos/hvigor';
-2. const properties = hvigor.getParameter().getProperties();
-3. console.log(properties['key']);
+```ts
+import { hvigor } from '@ohos/hvigor';
+const properties = hvigor.getParameter().getProperties();
+console.log(properties['key']);
 ```
 
 执行命令hvigorw --sync -c properties.key=hello，控制台打印：
 
-```
-1. hello
+```txt
+hello
 ```
 
 ### setProperty
@@ -1062,38 +1314,39 @@ setProperty(key: string, value: any): void
 
 **起始版本：**Hvigor 5.10.3
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | hvigor-config.json5配置文件中properties字段的key值 |
 | value | any | 是 | hvigor-config.json5配置文件中properties字段的key值对应的value值 |
 
-说明
+**说明** 
 
 在模块级hvigorfile.ts中调用该API不生效，请在工程级hvigorfile.ts中调用。
 
 **示例：**
 
-在工程级hvigorfile.ts中添加代码。
+```ts
+// 工程级hvigorfile.ts文件
+import {hvigor, HvigorPlugin} from '@ohos/hvigor';
+import {appTasks} from '@ohos/hvigor-ohos-plugin';
 
-```
-1. import {hvigor, HvigorPlugin} from '@ohos/hvigor';
-2. import {appTasks} from '@ohos/hvigor-ohos-plugin';
-3. export function plugin(): HvigorPlugin{
-4. console.log('before: ', hvigor.getParameter().getProperty('hvigor.analyzeHtml')); // undefined
-5. hvigor.getParameter().setProperty('hvigor.analyzeHtml', true);
-6. return {
-7. pluginId:'example',
-8. apply: (node) => {
-9. console.log('after: ', hvigor.getParameter().getProperty('hvigor.analyzeHtml')); // true
-10. }
-11. };
-12. }
-13. export default {
-14. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-15. plugins: [plugin()]         /* Custom plugin to extend the functionality of Hvigor. */
-16. };
+export function plugin(): HvigorPlugin{
+  console.log('before: ', hvigor.getParameter().getProperty('hvigor.analyzeHtml')); // undefined
+  hvigor.getParameter().setProperty('hvigor.analyzeHtml', true);
+  return {
+    pluginId:'example',
+    apply: (node) => {
+      console.log('after: ', hvigor.getParameter().getProperty('hvigor.analyzeHtml')); // true
+    }
+  };
+}
+
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins: [plugin()]         /* Custom plugin to extend the functionality of Hvigor. */
+};
 ```
 
 ### getExtParam
@@ -1104,13 +1357,13 @@ getExtParam(key: string): string | undefined
 
 **起始版本：**Hvigor 4.1.2
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 命令行参数-p配置中的key |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1118,16 +1371,16 @@ getExtParam(key: string): string | undefined
 
 **示例：**
 
-```
-1. import { hvigor } from '@ohos/hvigor';
-2. const extParam = hvigor.getParameter().getExtParam('key');
-3. console.log(extParam);
+```ts
+import { hvigor } from '@ohos/hvigor';
+const extParam = hvigor.getParameter().getExtParam('key');
+console.log(extParam);
 ```
 
 执行命令hvigorw --sync -p key=hello，控制台打印：
 
-```
-1. hello
+```txt
+hello
 ```
 
 ### getExtParams
@@ -1138,7 +1391,7 @@ getExtParams(): Record<string, string>
 
 **起始版本：**Hvigor 4.1.2
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1146,16 +1399,16 @@ getExtParams(): Record<string, string>
 
 **示例：**
 
-```
-1. import { hvigor } from '@ohos/hvigor';
-2. const extParams = hvigor.getParameter().getExtParams();
-3. console.log(extParams['key']);
+```ts
+import { hvigor } from '@ohos/hvigor';
+const extParams = hvigor.getParameter().getExtParams();
+console.log(extParams['key']);
 ```
 
 执行命令hvigorw --sync -p key=hello，控制台打印：
 
-```
-1. hello
+```txt
+hello
 ```
 
 ### getStartParams
@@ -1166,7 +1419,7 @@ getStartParams(): StartParam
 
 **起始版本：**Hvigor 4.1.2
 
-**返回值:**
+**返回值：**
 
 | 类型 | 属性 | 说明 |
 | --- | --- | --- |
@@ -1178,11 +1431,11 @@ getStartParams(): StartParam
 
 **示例：**
 
-```
-1. import { hvigor } from '@ohos/hvigor';
-2. const startParams = hvigor.getParameter().getStartParams();
-3. console.log(startParams['daemon']);
-4. console.log(startParams['logLevel']);
+```ts
+import { hvigor } from '@ohos/hvigor';
+const startParams = hvigor.getParameter().getStartParams();
+console.log(startParams['daemon']);
+console.log(startParams['logLevel']);
 ```
 
 ### getWorkspaceDir
@@ -1201,10 +1454,10 @@ getWorkspaceDir(): string
 
 **示例：**
 
-```
-1. import { hvigor } from '@ohos/hvigor';
-2. const workspaceDir = hvigor.getParameter().getWorkspaceDir();
-3. console.log(workspaceDir);
+```ts
+import { hvigor } from '@ohos/hvigor';
+const workspaceDir = hvigor.getParameter().getWorkspaceDir();
+console.log(workspaceDir);
 ```
 
 ## HvigorNode
@@ -1213,8 +1466,8 @@ getWorkspaceDir(): string
 
 ### 导入模块
 
-```
-1. import { HvigorNode } from '@ohos/hvigor';
+```ts
+import { HvigorNode } from '@ohos/hvigor';
 ```
 
 ### 获取实例
@@ -1223,18 +1476,18 @@ getWorkspaceDir(): string
 
 以HvigorPlugin的apply方法为例，示例如下：
 
-```
-1. import { HvigorNode, HvigorPlugin } from '@ohos/hvigor';
+```ts
+import { HvigorNode, HvigorPlugin } from '@ohos/hvigor';
 
-3. // 实现自定义插件
-4. export function customPlugin(): HvigorPlugin {
-5. return {
-6. pluginId: 'customPlugin',
-7. async apply(currentNode: HvigorNode): Promise<void> {
-8. // 通过currentNode可以使用hvigorNode的方法
-9. }
-10. };
-11. }
+// 实现自定义插件
+export function customPlugin(): HvigorPlugin {
+  return {
+    pluginId: 'customPlugin',
+    async apply(currentNode: HvigorNode): Promise<void> {
+      // 通过currentNode可以使用hvigorNode的方法
+    }
+  };
+}
 ```
 
 ### registerTask
@@ -1245,22 +1498,22 @@ registerTask: (task: HvigorTask) => void
 
 **起始版本：**Hvigor 4.0.2
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | task | [HvigorTask](ide-hvigor-api.md#section2386634104512) | 是 | HvigorTask的实现 |
 
-**示例：**自定义任务注册。
+**示例：**
 
-```
-1. // node的获取方式请参考获取实例
-2. node.registerTask({
-3. name: 'customTask',
-4. run() {
-5. console.log('this is Task');
-6. }
-7. });
+```ts
+// node的获取方式请参考获取实例
+node.registerTask({
+  name: 'customTask',
+  run() {
+    console.log('this is Task');
+  }
+});
 ```
 
 ### getTaskByName
@@ -1271,13 +1524,13 @@ getTaskByName: (taskName: string) => Task | undefined
 
 **起始版本：**Hvigor 4.0.2
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | taskName | string | 是 | 任务名称 |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1285,9 +1538,9 @@ getTaskByName: (taskName: string) => Task | undefined
 
 **示例：**
 
-```
-1. // node的获取方式请参考获取实例
-2. node.getTaskByName('assembleApp')
+```screen
+// node的获取方式请参考获取实例
+node.getTaskByName('assembleApp')
 ```
 
 ### getNodeName
@@ -1298,7 +1551,7 @@ getNodeName: () => string
 
 **起始版本：**Hvigor 4.0.2
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1306,9 +1559,9 @@ getNodeName: () => string
 
 **示例：**
 
-```
-1. // node的获取方式请参考获取实例
-2. const nodeName = node.getNodeName();
+```ts
+// node的获取方式请参考获取实例
+const nodeName = node.getNodeName();
 ```
 
 ### getNodePath
@@ -1319,7 +1572,7 @@ getNodePath: () => string
 
 **起始版本：**Hvigor 4.0.2
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1327,9 +1580,9 @@ getNodePath: () => string
 
 **示例：**
 
-```
-1. // node的获取方式请参考获取实例
-2. const nodePath = node.getNodePath();
+```ts
+// node的获取方式请参考获取实例
+const nodePath = node.getNodePath();
 ```
 
 ### getParentNode
@@ -1340,7 +1593,7 @@ getParentNode: () => HvigorNode | undefined
 
 **起始版本：**Hvigor 4.0.2
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1348,9 +1601,9 @@ getParentNode: () => HvigorNode | undefined
 
 **示例：**
 
-```
-1. // node的获取方式请参考获取实例
-2. const parentNode = node.getParentNode();
+```ts
+// node的获取方式请参考获取实例
+const parentNode = node.getParentNode();
 ```
 
 ### subNodes
@@ -1363,7 +1616,7 @@ subNodes: (callbackfn: (node: HvigorNode) => void) => void
 
 **起始版本：**Hvigor 4.0.2
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1371,28 +1624,28 @@ subNodes: (callbackfn: (node: HvigorNode) => void) => void
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts
-2. import { HvigorNode, HvigorPlugin } from '@ohos/hvigor'
-3. import { appTasks } from '@ohos/hvigor-ohos-plugin';
+```ts
+// 工程级hvigorfile.ts
+import { HvigorNode, HvigorPlugin } from '@ohos/hvigor'
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
 
-5. export function customPlugin(): HvigorPlugin {
-6. return {
-7. pluginId: 'customPlugin',
-8. async apply(currentNode: HvigorNode): Promise<void> {
-9. currentNode.subNodes((node: HvigorNode) => {
-10. // 这里进行子节点相关处理
-11. // 比如获取子节点的名字
-12. const subNodeName = node.getNodeName();
-13. })
-14. }
-15. };
-16. }
+export function customPlugin(): HvigorPlugin {
+  return {
+    pluginId: 'customPlugin',
+    async apply(currentNode: HvigorNode): Promise<void> {
+      currentNode.subNodes((node: HvigorNode) => {
+        // 这里进行子节点相关处理
+        // 比如获取子节点的名字
+        const subNodeName = node.getNodeName();
+      })
+    }
+  };
+}
 
-18. export default {
-19. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-20. plugins:[customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
-21. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### getSubNodeByName
@@ -1403,13 +1656,13 @@ getSubNodeByName: (nodeName: string) => HvigorNode | undefined
 
 **起始版本：**Hvigor 4.0.2
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | nodeName | string | 是 | 节点名称 |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1417,24 +1670,26 @@ getSubNodeByName: (nodeName: string) => HvigorNode | undefined
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts
-2. import { appTasks } from '@ohos/hvigor-ohos-plugin';
-3. import { HvigorNode, HvigorPlugin } from '@ohos/hvigor';
-4. // 在项目根目录下的hvigorfile.ts中，currentNode是指app，子节点中包含entry
-5. // 通过getSubNodeByName可以获取entry的对象
-6. export function customPlugin(): HvigorPlugin {
-7. return {
-8. pluginId: 'customPlugin',
-9. async apply(currentNode: HvigorNode): Promise<void> {
-10. const subNode = currentNode.getSubNodeByName('entry');
-11. }
-12. };
-13. }
-14. export default {
-15. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-16. plugins: [customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
-17. }
+```ts
+// 工程级hvigorfile.ts
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
+import { HvigorNode, HvigorPlugin } from '@ohos/hvigor';
+
+// 在项目根目录下的hvigorfile.ts中，currentNode是指app，子节点中包含entry
+// 通过getSubNodeByName可以获取entry的对象
+export function customPlugin(): HvigorPlugin {
+  return {
+    pluginId: 'customPlugin',
+    async apply(currentNode: HvigorNode): Promise<void> {
+      const subNode = currentNode.getSubNodeByName('entry');
+    }
+  };
+}
+
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins: [customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### getContext
@@ -1445,13 +1700,13 @@ getContext: (pluginId: string) => any
 
 **起始版本：**Hvigor 4.0.2
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pluginId | string | 是 | 插件ID |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1459,32 +1714,34 @@ getContext: (pluginId: string) => any
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts
-2. import { appTasks, OhosAppContext, OhosPluginId } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor, getNode, HvigorNode, HvigorPlugin } from '@ohos/hvigor';
-4. // 需要导入OhosPluginId，OhosAppContext来获得上下文信息
-5. // 在生命周期hook中获取
-6. hvigor.nodesEvaluated(() => {
-7. const node: HvigorNode = getNode(__filename);
-8. const appContext = node.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-9. // 这里就可以使用appContext获取以下上下文信息比如项目名
-10. console.log('projectName:', appContext.getProjectName());
-11. });
-12. // 或者在apply中直接获取
-13. export function customPlugin(): HvigorPlugin {
-14. return {
-15. pluginId: 'customPlugin',
-16. async apply(currentNode: HvigorNode): Promise<void> {
-17. const appContext = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-18. console.log('projectName:', appContext.getProjectName());
-19. }
-20. };
-21. }
-22. export default {
-23. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-24. plugins: [customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
-25. }
+```ts
+// 工程级hvigorfile.ts
+import { appTasks, OhosAppContext, OhosPluginId } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, getNode, HvigorNode, HvigorPlugin } from '@ohos/hvigor';
+
+// 需要导入OhosPluginId，OhosAppContext来获得上下文信息
+// 在生命周期hook中获取
+hvigor.nodesEvaluated(() => {
+  const node: HvigorNode = getNode(__filename);
+  const appContext = node.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+  // 这里就可以使用appContext获取以下上下文信息比如项目名
+  console.log('projectName:', appContext.getProjectName());
+});
+// 或者在apply中直接获取
+export function customPlugin(): HvigorPlugin {
+  return {
+    pluginId: 'customPlugin',
+    async apply(currentNode: HvigorNode): Promise<void> {
+      const appContext = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+      console.log('projectName:', appContext.getProjectName());
+    }
+  };
+}
+
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins: [customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### getAllPluginIds
@@ -1495,7 +1752,7 @@ getAllPluginIds: () => string[]
 
 **起始版本：**Hvigor 4.0.2
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1503,25 +1760,27 @@ getAllPluginIds: () => string[]
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts
-2. import { HvigorNode, HvigorPlugin } from '@ohos/hvigor'
-3. import { appTasks } from '@ohos/hvigor-ohos-plugin';
-4. export function customPlugin(): HvigorPlugin {
-5. return {
-6. pluginId: 'customPlugin',
-7. async apply(currentNode: HvigorNode): Promise<void> {
-8. const allPluginIds = currentNode.getAllPluginIds();
-9. allPluginIds.forEach((id) => {
-10. console.log(id);
-11. })
-12. }
-13. };
-14. }
-15. export default {
-16. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-17. plugins: [customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
-18. }
+```ts
+// 工程级hvigorfile.ts
+import { HvigorNode, HvigorPlugin } from '@ohos/hvigor'
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
+
+export function customPlugin(): HvigorPlugin {
+  return {
+    pluginId: 'customPlugin',
+    async apply(currentNode: HvigorNode): Promise<void> {
+      const allPluginIds = currentNode.getAllPluginIds();
+      allPluginIds.forEach((id) => {
+        console.log(id);
+      })
+    }
+  };
+}
+
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins: [customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### nodeDir
@@ -1540,7 +1799,7 @@ getNodeDir: () => NormalizedFile
 
 **起始版本：**Hvigor 4.3.0
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1548,22 +1807,24 @@ getNodeDir: () => NormalizedFile
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts
-2. import { HvigorNode, HvigorPlugin } from '@ohos/hvigor';
-3. import { appTasks } from '@ohos/hvigor-ohos-plugin'
-4. export function customPlugin(): HvigorPlugin {
-5. return {
-6. pluginId: 'customPlugin',
-7. async apply(currentNode: HvigorNode): Promise<void> {
-8. const dir = currentNode.getNodeDir();
-9. }
-10. };
-11. }
-12. export default {
-13. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-14. plugins: [customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
-15. }
+```ts
+// 工程级hvigorfile.ts
+import { HvigorNode, HvigorPlugin } from '@ohos/hvigor';
+import { appTasks } from '@ohos/hvigor-ohos-plugin'
+
+export function customPlugin(): HvigorPlugin {
+  return {
+    pluginId: 'customPlugin',
+    async apply(currentNode: HvigorNode): Promise<void> {
+      const dir = currentNode.getNodeDir();
+    }
+  };
+}
+
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins: [customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### addExtraOption
@@ -1574,7 +1835,7 @@ addExtraOption: (key: string, value: any) => void
 
 **起始版本：**Hvigor 4.3.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1583,22 +1844,24 @@ addExtraOption: (key: string, value: any) => void
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts
-2. import { HvigorNode, HvigorPlugin } from '@ohos/hvigor';
-3. import { appTasks } from '@ohos/hvigor-ohos-plugin'
-4. export function customPlugin(): HvigorPlugin {
-5. return {
-6. pluginId: 'customPlugin',
-7. async apply(currentNode: HvigorNode): Promise<void> {
-8. currentNode.addExtraOption('key', 'value');
-9. }
-10. };
-11. }
-12. export default {
-13. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-14. plugins: [customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
-15. }
+```ts
+// 工程级hvigorfile.ts
+import { HvigorNode, HvigorPlugin } from '@ohos/hvigor';
+import { appTasks } from '@ohos/hvigor-ohos-plugin'
+
+export function customPlugin(): HvigorPlugin {
+  return {
+    pluginId: 'customPlugin',
+    async apply(currentNode: HvigorNode): Promise<void> {
+      currentNode.addExtraOption('key', 'value');
+    }
+  };
+}
+
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins: [customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### getExtraOption
@@ -1609,13 +1872,13 @@ getExtraOption: (key: string) => any
 
 **起始版本：**Hvigor 4.3.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 自定义属性的key |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1623,23 +1886,25 @@ getExtraOption: (key: string) => any
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts
-2. import { HvigorNode, HvigorPlugin } from '@ohos/hvigor';
-3. import { appTasks } from '@ohos/hvigor-ohos-plugin'
-4. export function customPlugin(): HvigorPlugin {
-5. return {
-6. pluginId: 'customPlugin',
-7. async apply(currentNode: HvigorNode): Promise<void> {
-8. currentNode.addExtraOption('key', 'value');
-9. currentNode.getExtraOption('key');
-10. }
-11. };
-12. }
-13. export default {
-14. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-15. plugins: [customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
-16. }
+```ts
+// 工程级hvigorfile.ts
+import { HvigorNode, HvigorPlugin } from '@ohos/hvigor';
+import { appTasks } from '@ohos/hvigor-ohos-plugin'
+
+export function customPlugin(): HvigorPlugin {
+  return {
+    pluginId: 'customPlugin',
+    async apply(currentNode: HvigorNode): Promise<void> {
+      currentNode.addExtraOption('key', 'value');
+      currentNode.getExtraOption('key');
+    }
+  };
+}
+
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins: [customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### beforeNodeEvaluate
@@ -1650,7 +1915,7 @@ beforeNodeEvaluate(fn: (HvigorNode) => {}): void
 
 **起始版本：**Hvigor 4.3.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1658,17 +1923,17 @@ beforeNodeEvaluate(fn: (HvigorNode) => {}): void
 
 **示例：**为名称为entry的node注册一个beforeNodeEvaluate hook并打印出node的信息。
 
-```
-1. import { hvigor } from '@ohos/hvigor';
-2. hvigor.nodesInitialized(() => {
-3. hvigor.getRootNode().subNodes(node => {
-4. if (node.getNodeName() === 'entry') {
-5. node.beforeNodeEvaluate(hvigorNode => {
-6. console.log(hvigorNode.getNodeName());
-7. })
-8. }
-9. })
-10. });
+```ts
+import { hvigor } from '@ohos/hvigor';
+hvigor.nodesInitialized(() => {
+  hvigor.getRootNode().subNodes(node => {
+    if (node.getNodeName() === 'entry') {
+      node.beforeNodeEvaluate(hvigorNode => {
+        console.log(hvigorNode.getNodeName());
+      })
+    }
+  })
+});
 ```
 
 ### afterNodeEvaluate
@@ -1679,7 +1944,7 @@ afterNodeEvaluate(fn: (HvigorNode) => {}): void
 
 **起始版本：**Hvigor 4.3.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1687,17 +1952,17 @@ afterNodeEvaluate(fn: (HvigorNode) => {}): void
 
 **示例：**为名称为entry的node注册一个afterNodeEvaluate hook并打印出node的信息。
 
-```
-1. import { hvigor } from '@ohos/hvigor';
-2. hvigor.nodesInitialized(() => {
-3. hvigor.getRootNode().subNodes(node => {
-4. if (node.getNodeName() === 'entry') {
-5. node.afterNodeEvaluate(hvigorNode => {
-6. console.log(hvigorNode.getNodeName());
-7. })
-8. }
-9. })
-10. });
+```ts
+import { hvigor } from '@ohos/hvigor';
+hvigor.nodesInitialized(() => {
+  hvigor.getRootNode().subNodes(node => {
+    if (node.getNodeName() === 'entry') {
+      node.afterNodeEvaluate(hvigorNode => {
+        console.log(hvigorNode.getNodeName());
+      })
+    }
+  })
+});
 ```
 
 ## HvigorPlugin
@@ -1706,8 +1971,8 @@ afterNodeEvaluate(fn: (HvigorNode) => {}): void
 
 ### 导入模块
 
-```
-1. import { HvigorPlugin } from '@ohos/hvigor';
+```ts
+import { HvigorPlugin } from '@ohos/hvigor';
 ```
 
 ### pluginId
@@ -1718,29 +1983,29 @@ pluginId: string
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { HvigorNode, HvigorPlugin } from '@ohos/hvigor';
-3. import { appTasks } from '@ohos/hvigor-ohos-plugin';
+```ts
+// 工程级hvigorfile.ts文件
+import { HvigorNode, HvigorPlugin } from '@ohos/hvigor';
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
 
-5. // 实现自定义插件
-6. export function customPlugin(): HvigorPlugin {
-7. return {
-8. pluginId: 'customPlugin',
-9. context() {
-10. return {
-11. data: 'customPlugin xxx'
-12. };
-13. },
-14. async apply(currentNode: HvigorNode): Promise<void> {
-15. }
-16. };
-17. }
+// 实现自定义插件
+export function customPlugin(): HvigorPlugin {
+  return {
+    pluginId: 'customPlugin',
+    context() {
+      return {
+        data: 'customPlugin xxx'
+      };
+    },
+    async apply(currentNode: HvigorNode): Promise<void> {
+    }
+  };
+}
 
-19. export default {
-20. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-21. plugins: [customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
-22. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins: [customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### context
@@ -1749,7 +2014,7 @@ context?: (() => any) | any
 
 插件上下文实现接口，可选实现；实现此函数后，其他插件可通过node.getContext('插件ID'）获取插件中定义的上下文接口。
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1757,29 +2022,29 @@ context?: (() => any) | any
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { HvigorNode, HvigorPlugin } from '@ohos/hvigor';
-3. import { appTasks } from '@ohos/hvigor-ohos-plugin';
+```ts
+// 工程级hvigorfile.ts文件
+import { HvigorNode, HvigorPlugin } from '@ohos/hvigor';
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
 
-5. // 实现自定义插件
-6. export function customPlugin(): HvigorPlugin {
-7. return {
-8. pluginId: 'customPlugin',
-9. context() {
-10. return {
-11. data: 'customPlugin xxx'
-12. };
-13. },
-14. async apply(currentNode: HvigorNode): Promise<void> {
-15. }
-16. };
-17. }
+// 实现自定义插件
+export function customPlugin(): HvigorPlugin {
+  return {
+    pluginId: 'customPlugin',
+    context() {
+      return {
+        data: 'customPlugin xxx'
+      };
+    },
+    async apply(currentNode: HvigorNode): Promise<void> {
+    }
+  };
+}
 
-19. export default {
-20. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-21. plugins:[customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
-22. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### apply
@@ -1788,13 +2053,13 @@ apply: (node: HvigorNode) => void | Promise<void>
 
 插件主体函数，用于定义插件实现逻辑（例如任务注册等）; 在Hvigor的生命周期配置阶段调用。
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | [HvigorNode](ide-hvigor-api.md#section14832104719474) | 是 | hvigor节点对象 |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1802,32 +2067,32 @@ apply: (node: HvigorNode) => void | Promise<void>
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { hvigor, HvigorNode, HvigorPlugin } from '@ohos/hvigor';
-3. import { appTasks } from '@ohos/hvigor-ohos-plugin';
+```ts
+// 工程级hvigorfile.ts文件
+import { hvigor, HvigorNode, HvigorPlugin } from '@ohos/hvigor';
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
 
-5. // 实现自定义插件
-6. export function customPlugin(): HvigorPlugin {
-7. return {
-8. pluginId: 'customPlugin',
-9. context() {
-10. return {
-11. data: 'customPlugin xxx'
-12. };
-13. },
-14. async apply(currentNode: HvigorNode): Promise<void> {
-15. hvigor.nodesEvaluated(async () => {
-16. // 注册模块级任务
-17. });
-18. }
-19. };
-20. }
+// 实现自定义插件
+export function customPlugin(): HvigorPlugin {
+  return {
+    pluginId: 'customPlugin',
+    context() {
+      return {
+        data: 'customPlugin xxx'
+      };
+    },
+    async apply(currentNode: HvigorNode): Promise<void> {
+      hvigor.nodesEvaluated(async () => {
+        // 注册模块级任务
+      });
+    }
+  };
+}
 
-22. export default {
-23. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-24. plugins:[customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
-25. };
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
+};
 ```
 
 ## HvigorTask
@@ -1836,8 +2101,8 @@ Hvigor任务实现的接口类型，定义了任务的实现范式，在创建�
 
 ### 导入模块
 
-```
-1. import { HvigorTask } from '@ohos/hvigor';
+```ts
+import { HvigorTask } from '@ohos/hvigor';
 ```
 
 ### name
@@ -1848,26 +2113,25 @@ name: string
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks } from '@ohos/hvigor-ohos-plugin';
-3. import { getNode, HvigorNode, HvigorTask } from '@ohos/hvigor';
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
+import { getNode, HvigorNode, HvigorTask } from '@ohos/hvigor';
 
-5. // 获取当前hvigorNode节点对象
-6. const node: HvigorNode = getNode(__filename);
+// 获取当前hvigorNode节点对象
+const node: HvigorNode = getNode(__filename);
+// 注册Task
+node.registerTask({
+  name: 'customTask',
+  run() {
+    console.log('this is Task');
+  }
+});
 
-8. // 注册Task
-9. node.registerTask({
-10. name: 'customTask',
-11. run() {
-12. console.log('this is Task');
-13. }
-14. });
-
-16. export default {
-17. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-18. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-19. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### context
@@ -1876,7 +2140,7 @@ context?: (() => any) | any
 
 任务中的局部内数据共享的对象定义。实现此函数中定义的对象将在任务注册时被注入到this.context属性上，在input、output、run函数中可使用直接this.context调用context函数中定义的对象和属性。
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1884,31 +2148,30 @@ context?: (() => any) | any
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks } from '@ohos/hvigor-ohos-plugin';
-3. import { getNode, HvigorNode, HvigorTask } from '@ohos/hvigor';
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
+import { getNode, HvigorNode, HvigorTask } from '@ohos/hvigor';
 
-5. // 获取当前hvigorNode节点对象
-6. const node: HvigorNode = getNode(__filename);
+// 获取当前hvigorNode节点对象
+const node: HvigorNode = getNode(__filename);
+// 注册Task
+node.registerTask({
+  name: 'customTask',
+  context() {
+    return {
+      data: 'customRegisterTask xxx'
+    };
+  },
+  run() {
+    console.log(this.context);
+  }
+});
 
-8. // 注册Task
-9. node.registerTask({
-10. name: 'customTask',
-11. context() {
-12. return {
-13. data: 'customRegisterTask xxx'
-14. };
-15. },
-16. run() {
-17. console.log(this.context);
-18. }
-19. });
-
-21. export default {
-22. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-23. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-24. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### input
@@ -1917,7 +2180,7 @@ input?: (input: TaskInput) => void
 
 实现任务增量输入条件定义。
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1925,57 +2188,57 @@ input?: (input: TaskInput) => void
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks, OhosAppContext, OhosPluginId } from '@ohos/hvigor-ohos-plugin';
-3. import { getNode, hvigor, HvigorTaskContext, TaskInput, TaskOutput } from "@ohos/hvigor";
-4. import fse from "fs-extra";
-5. import path from "path";
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosAppContext, OhosPluginId } from '@ohos/hvigor-ohos-plugin';
+import { getNode, hvigor, HvigorTaskContext, TaskInput, TaskOutput } from "@ohos/hvigor";
+import fse from "fs-extra";
+import path from "path";
 
-7. const currentNode = getNode(__filename);
+const currentNode = getNode(__filename);
 
-9. hvigor.nodesEvaluated(() => {
-10. const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-11. const outputFilePath = path.resolve(context.getBuildRootPath(), 'test.txt');
-12. // 注册一个生成文件的任务并为此任务设置增量
-13. currentNode.registerTask({
-14. name: "testTask",
-15. run(taskContext: HvigorTaskContext): void | Promise<void> {
-16. fse.writeFileSync(outputFilePath, context.getProjectName());
-17. return undefined;
-18. },
-19. input(input: TaskInput): void {
-20. input.property('projectName', context.getProjectName());
-21. },
-22. async output(output: TaskOutput): Promise<void> {
-23. try {
-24. const parentDir = path.dirname(outputFilePath);
-25. await fse.ensureDir(parentDir); // 确保父目录存在
-26. await fse.ensureFile(outputFilePath);
-27. output.file(outputFilePath);
-28. } catch (error) {
-29. console.error('File creation failed:', error);
-30. throw error;
-31. }
-32. },
-33. postDependencies: ['assembleApp']
-34. })
-35. })
+hvigor.nodesEvaluated(() => {
+  const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+  const outputFilePath = path.resolve(context.getBuildRootPath(), 'test.txt');
+  // 注册一个生成文件的任务并为此任务设置增量
+  currentNode.registerTask({
+    name: "testTask",
+    run(taskContext: HvigorTaskContext): void | Promise<void> {
+      fse.writeFileSync(outputFilePath, context.getProjectName());
+      return undefined;
+    },
+    input(input: TaskInput): void {
+      input.property('projectName', context.getProjectName());
+    },
+    async output(output: TaskOutput): Promise<void> {
+      try {
+        const parentDir = path.dirname(outputFilePath);
+        await fse.ensureDir(parentDir); // 确保父目录存在
+        await fse.ensureFile(outputFilePath);
+        output.file(outputFilePath);
+      } catch (error) {
+        console.error('File creation failed:', error);
+        throw error;
+      }
+    },
+    postDependencies: ['assembleApp']
+  })
+})
 
-37. export default {
-38. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-39. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-40. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 需要在hvigor-config.json5中添加dependencies：
 
-```
-1. // hvigor-config.json5
-2. "dependencies": {
-3. "fs-extra": "11.2.0",
-4. "@types/fs-extra": "9.0.13"
-5. },
+```json5
+// hvigor-config.json5
+"dependencies": {
+  "fs-extra": "11.2.0",
+  "@types/fs-extra": "9.0.13"
+},
 ```
 
 ### output
@@ -1984,7 +2247,7 @@ output?: (output: TaskOutput) => void
 
 实现任务增量输出条件定义。
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1992,57 +2255,57 @@ output?: (output: TaskOutput) => void
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks, OhosAppContext, OhosPluginId } from '@ohos/hvigor-ohos-plugin';
-3. import { getNode, hvigor, HvigorTaskContext, TaskInput, TaskOutput } from "@ohos/hvigor";
-4. import fse from "fs-extra";
-5. import path from "path";
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosAppContext, OhosPluginId } from '@ohos/hvigor-ohos-plugin';
+import { getNode, hvigor, HvigorTaskContext, TaskInput, TaskOutput } from "@ohos/hvigor";
+import fse from "fs-extra";
+import path from "path";
 
-7. const currentNode = getNode(__filename);
+const currentNode = getNode(__filename);
 
-9. hvigor.nodesEvaluated(() => {
-10. const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-11. const outputFilePath = path.resolve(context.getBuildRootPath(), 'test.txt');
-12. // 注册一个生成文件的任务并为此任务设置增量
-13. currentNode.registerTask({
-14. name: "testTask",
-15. run(taskContext: HvigorTaskContext): void | Promise<void> {
-16. fse.writeFileSync(outputFilePath, context.getProjectName());
-17. return undefined;
-18. },
-19. input(input: TaskInput): void {
-20. input.property('projectName', context.getProjectName());
-21. },
-22. async output(output: TaskOutput): Promise<void> {
-23. try {
-24. const parentDir = path.dirname(outputFilePath);
-25. await fse.ensureDir(parentDir); // 确保父目录存在
-26. await fse.ensureFile(outputFilePath);
-27. output.file(outputFilePath);
-28. } catch (error) {
-29. console.error('File creation failed:', error);
-30. throw error;
-31. }
-32. },
-33. postDependencies: ['assembleApp']
-34. })
-35. })
+hvigor.nodesEvaluated(() => {
+  const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+  const outputFilePath = path.resolve(context.getBuildRootPath(), 'test.txt');
+  // 注册一个生成文件的任务并为此任务设置增量
+  currentNode.registerTask({
+    name: "testTask",
+    run(taskContext: HvigorTaskContext): void | Promise<void> {
+      fse.writeFileSync(outputFilePath, context.getProjectName());
+      return undefined;
+    },
+    input(input: TaskInput): void {
+      input.property('projectName', context.getProjectName());
+    },
+    async output(output: TaskOutput): Promise<void> {
+      try {
+        const parentDir = path.dirname(outputFilePath);
+        await fse.ensureDir(parentDir); // 确保父目录存在
+        await fse.ensureFile(outputFilePath);
+        output.file(outputFilePath);
+      } catch (error) {
+        console.error('File creation failed:', error);
+        throw error;
+      }
+    },
+    postDependencies: ['assembleApp']
+  })
+})
 
-37. export default {
-38. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-39. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-40. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 需要在hvigor-config.json5里添加dependencies：
 
-```
-1. // hvigor-config.json5
-2. "dependencies": {
-3. "fs-extra": "11.2.0",
-4. "@types/fs-extra": "9.0.13"
-5. },
+```json5
+// hvigor-config.json5
+"dependencies": {
+  "fs-extra": "11.2.0",
+  "@types/fs-extra": "9.0.13"
+},
 ```
 
 ### run
@@ -2051,13 +2314,13 @@ run: (taskContext: HvigorTaskContext) => void | Promise<void>
 
 任务执行逻辑主体函数。您可以在此函数实现中定义您所需的任务处理逻辑。
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | taskContext | [HvigorTaskContext](ide-hvigor-api.md#section17880854104213) | 否 | 接口中默认注入的公共信息类型 |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2065,26 +2328,25 @@ run: (taskContext: HvigorTaskContext) => void | Promise<void>
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks } from '@ohos/hvigor-ohos-plugin';
-3. import { getNode, HvigorNode, HvigorTask } from '@ohos/hvigor';
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
+import { getNode, HvigorNode, HvigorTask } from '@ohos/hvigor';
 
-5. // 获取当前hvigorNode节点对象
-6. const node: HvigorNode = getNode(__filename);
+// 获取当前hvigorNode节点对象
+const node: HvigorNode = getNode(__filename);
+// 注册Task
+node.registerTask({
+  name: 'customTask',
+  run() {
+    console.log('this is Task');
+  }
+});
 
-8. // 注册Task
-9. node.registerTask({
-10. name: 'customTask',
-11. run() {
-12. console.log('this is Task');
-13. }
-14. });
-
-16. export default {
-17. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-18. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-19. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### beforeRun
@@ -2093,13 +2355,13 @@ beforeRun?: (taskContext: HvigorTaskContext) => void | Promise<void>
 
 run函数的前置处理函数。在任务执行阶段，任务中的run函数执行前此函数被调用执行。
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | taskContext | [HvigorTaskContext](ide-hvigor-api.md#section17880854104213) | 否 | 接口中默认注入的公共信息 |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2107,29 +2369,28 @@ run函数的前置处理函数。在任务执行阶段，任务中的run函数�
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks } from '@ohos/hvigor-ohos-plugin';
-3. import { getNode, HvigorNode, HvigorTask } from '@ohos/hvigor';
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
+import { getNode, HvigorNode, HvigorTask } from '@ohos/hvigor';
 
-5. // 获取当前hvigorNode节点对象
-6. const node: HvigorNode = getNode(__filename);
+// 获取当前hvigorNode节点对象
+const node: HvigorNode = getNode(__filename);
+// 注册Task
+node.registerTask({
+  name: 'customTask',
+  run() {
+    console.log('customTask');
+  },
+  beforeRun() {
+    console.log('beforeRun');
+  }
+});
 
-8. // 注册Task
-9. node.registerTask({
-10. name: 'customTask',
-11. run() {
-12. console.log('customTask');
-13. },
-14. beforeRun() {
-15. console.log('beforeRun');
-16. }
-17. });
-
-19. export default {
-20. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-21. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-22. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### afterRun
@@ -2138,13 +2399,13 @@ afterRun?: (taskContext: HvigorTaskContext) => void | Promise<void>
 
 run函数的后置处理函数。在任务执行阶段，任务中的run函数执行后此函数被调用执行。
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | taskContext | [HvigorTaskContext](ide-hvigor-api.md#section17880854104213) | 否 | 接口中默认注入的公共信息类型 |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2152,29 +2413,28 @@ run函数的后置处理函数。在任务执行阶段，任务中的run函数�
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks } from '@ohos/hvigor-ohos-plugin';
-3. import { getNode, HvigorNode, HvigorTask } from '@ohos/hvigor';
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
+import { getNode, HvigorNode, HvigorTask } from '@ohos/hvigor';
 
-5. // 获取当前hvigorNode节点对象
-6. const node: HvigorNode = getNode(__filename);
+// 获取当前hvigorNode节点对象
+const node: HvigorNode = getNode(__filename);
+// 注册Task
+node.registerTask({
+  name: 'customTask',
+  run() {
+    console.log('customTask');
+  },
+  afterRun() {
+    console.log('afterRun');
+  }
+});
 
-8. // 注册Task
-9. node.registerTask({
-10. name: 'customTask',
-11. run() {
-12. console.log('customTask');
-13. },
-14. afterRun() {
-15. console.log('afterRun');
-16. }
-17. });
-
-19. export default {
-20. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-21. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-22. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### dependencies
@@ -2185,79 +2445,77 @@ dependencies?: (() => string[]) | string[]
 
 从DevEco Studio 6.0.0 Beta2版本开始，支持依赖其他模块的任务，在任务前加上“模块名:”即可，例如har:assembleHar。
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
 | (() => string[]) | string[] | 返回类型为string[]的函数或string[]类型 |
 
-说明
+**说明** 
 
 依赖其他模块的任务时，建议将任务注册操作放在[hook-nodesEvaluated](ide-hvigor-life-cycle.md#section746253616316)中，否则注册时其他模块的任务可能还未被初始化，导致当前任务无法注册。
 
 **示例一：**依赖本模块的任务。
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks } from '@ohos/hvigor-ohos-plugin';
-3. import { getNode, HvigorNode, HvigorTask } from '@ohos/hvigor';
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
+import { getNode, HvigorNode, HvigorTask } from '@ohos/hvigor';
 
-5. // 获取当前hvigorNode节点对象
-6. const node: HvigorNode = getNode(__filename);
+// 获取当前hvigorNode节点对象
+const node: HvigorNode = getNode(__filename);
+// 注册Task
+node.registerTask({
+  name: 'customTask',
+  run() {
+    console.log('customTask');
+  },
+  dependencies: ['customTask1'],
+});
+// 注册Task
+node.registerTask({
+  name: 'customTask1',
+  run() {
+    console.log('customTask1');
+  },
+});
 
-8. // 注册Task
-9. node.registerTask({
-10. name: 'customTask',
-11. run() {
-12. console.log('customTask');
-13. },
-14. dependencies: ['customTask1'],
-15. });
-
-17. // 注册Task
-18. node.registerTask({
-19. name: 'customTask1',
-20. run() {
-21. console.log('customTask1');
-22. },
-23. });
-
-25. export default {
-26. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-27. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-28. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 **示例二：**依赖其他模块的任务。
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor, HvigorNode, HvigorPlugin } from '@ohos/hvigor';
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, HvigorNode, HvigorPlugin } from '@ohos/hvigor';
 
-5. // 获取当前entry节点对象
-6. const entryNode = hvigor.getNodeByName('entry');
+// 获取当前entry节点对象
+const entryNode = hvigor.getNodeByName('entry');
 
-8. // 逻辑放在hook-nodesEvaluated中
-9. hvigor.nodesEvaluated(async () => {
-10. // 注册任务
-11. entryNode.registerTask({
-12. // 任务名称
-13. name: `default@CustomTask`,
-14. run() {
-15. console.log('customTask1')
-16. },
-17. // 配置前置任务依赖
-18. dependencies: ['har:assembleHar'], // 跨模块依赖har的assembleHar任务，确保har模块存在
-19. // 配置任务的后置任务依赖
-20. postDependencies: ['entry:default@PreBuild']  // 支持两种写法 entry:default@PreBuild  default@PreBuild
-21. });
-22. });
+// 逻辑放在hook-nodesEvaluated中
+hvigor.nodesEvaluated(async () => {
+  // 注册任务
+  entryNode.registerTask({
+    // 任务名称
+    name: `default@CustomTask`,
+    run() {
+      console.log('customTask1')
+    },
+    // 配置前置任务依赖
+    dependencies: ['har:assembleHar'], // 跨模块依赖har的assembleHar任务，确保har模块存在
+    // 配置任务的后置任务依赖
+    postDependencies: ['entry:default@PreBuild']  // 支持两种写法 entry:default@PreBuild  default@PreBuild
+  });
+});
 
-24. export default {
-25. system: appTasks, /* Built-in plugin of Hvigor. It cannot be modified. */
-26. plugins: []       /* Custom plugin to extend the functionality of Hvigor. */
-27. }
+export default {
+  system: appTasks, /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins: []       /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### postDependencies
@@ -2268,79 +2526,77 @@ postDependencies?: (() => string[]) | string[]
 
 从DevEco Studio 6.0.0 Beta2版本开始，支持依赖其他模块的任务，在任务前加上“模块名:”即可，例如har:default@PreBuild。
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
 | (() => string[]) | string[] | 返回类型为string[]的函数或string[]类型 |
 
-说明
+**说明** 
 
 依赖其他模块的任务时，建议将任务注册操作放在[hook-nodesEvaluated](ide-hvigor-life-cycle.md#section746253616316)中，否则注册时其他模块的任务可能还未被初始化，导致当前任务无法注册。
 
 **示例一：**依赖本模块的任务。
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks } from '@ohos/hvigor-ohos-plugin';
-3. import { getNode, HvigorNode, HvigorTask } from '@ohos/hvigor';
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
+import { getNode, HvigorNode, HvigorTask } from '@ohos/hvigor';
 
-5. // 获取当前hvigorNode节点对象
-6. const node: HvigorNode = getNode(__filename);
+// 获取当前hvigorNode节点对象
+const node: HvigorNode = getNode(__filename);
+// 注册Task
+node.registerTask({
+  name: 'customTask1',
+  run() {
+    console.log('customTask1');
+  },
+});
+// 注册Task
+node.registerTask({
+  name: 'customTask',
+  run() {
+    console.log('customTask');
+  },
+  postDependencies: ['customTask1'],
+});
 
-8. // 注册Task
-9. node.registerTask({
-10. name: 'customTask1',
-11. run() {
-12. console.log('customTask1');
-13. },
-14. });
-
-16. // 注册Task
-17. node.registerTask({
-18. name: 'customTask',
-19. run() {
-20. console.log('customTask');
-21. },
-22. postDependencies: ['customTask1'],
-23. });
-
-26. export default {
-27. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-28. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-29. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 **示例二：**依赖其他模块的任务。
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor, HvigorNode, HvigorPlugin } from '@ohos/hvigor';
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, HvigorNode, HvigorPlugin } from '@ohos/hvigor';
 
-5. // 获取当前entry节点对象
-6. const entryNode = hvigor.getNodeByName('entry');
+// 获取当前entry节点对象
+const entryNode = hvigor.getNodeByName('entry');
 
-8. // 逻辑放在hook-nodesEvaluated中
-9. hvigor.nodesEvaluated(async () => {
-10. // 注册任务
-11. entryNode.registerTask({
-12. // 任务名称
-13. name: `default@CustomTask`,
-14. run() {
-15. console.log('customTask1')
-16. },
-17. // 配置前置任务依赖
-18. dependencies: ['entry:default@PreBuild'], // 支持两种写法 entry:default@PreBuild  default@PreBuild
-19. // 配置任务的后置任务依赖
-20. postDependencies: ['har:default@PreBuild']  // 跨模块依赖har的PreBuild任务，确保har模块存在
-21. });
-22. });
+// 逻辑放在hook-nodesEvaluated中
+hvigor.nodesEvaluated(async () => {
+  // 注册任务
+  entryNode.registerTask({
+    // 任务名称
+    name: `default@CustomTask`,
+    run() {
+      console.log('customTask1')
+    },
+    // 配置前置任务依赖
+    dependencies: ['entry:default@PreBuild'], // 支持两种写法 entry:default@PreBuild  default@PreBuild
+    // 配置任务的后置任务依赖
+    postDependencies: ['har:default@PreBuild']  // 跨模块依赖har的PreBuild任务，确保har模块存在
+  });
+});
 
-24. export default {
-25. system: appTasks, /* Built-in plugin of Hvigor. It cannot be modified. */
-26. plugins: []       /* Custom plugin to extend the functionality of Hvigor. */
-27. }
+export default {
+  system: appTasks, /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins: []       /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ## HvigorTaskContext
@@ -2360,8 +2616,8 @@ Hvigor任务上下文对象类型，该类型的对象默认注册了当前任�
 
 ### 导入模块
 
-```
-1. import { TaskInput } from '@ohos/hvigor';
+```ts
+import { TaskInput } from '@ohos/hvigor';
 ```
 
 ### property
@@ -2370,14 +2626,14 @@ property(key: string, value: TaskInputValue): TaskInput
 
 添加键值对作为Task增量输入条件。
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 条件名称 |
 | value | TaskInputValue | 是 | 支持基本数组类型number、string、boolean及对应的数组类型的参数 |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2385,57 +2641,56 @@ property(key: string, value: TaskInputValue): TaskInput
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks, OhosAppContext, OhosPluginId } from '@ohos/hvigor-ohos-plugin';
-3. import { getNode, hvigor, HvigorTask, HvigorTaskContext, TaskInput, TaskOutput } from "@ohos/hvigor";
-4. import fse from "fs-extra";
-5. import path from "path";
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosAppContext, OhosPluginId } from '@ohos/hvigor-ohos-plugin';
+import { getNode, hvigor, HvigorTask, HvigorTaskContext, TaskInput, TaskOutput } from "@ohos/hvigor";
+import fse from "fs-extra";
+import path from "path";
 
-7. const currentNode = getNode(__filename);
+const currentNode = getNode(__filename);
+hvigor.nodesEvaluated(() => {
+  const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+  const outputFilePath = path.resolve(context.getBuildRootPath(), 'test.txt');
+  // 注册一个生成文件的任务并为此任务设置增量
+  currentNode.registerTask({
+    name: "testTask",
+    run(taskContext: HvigorTaskContext): void | Promise<void> {
+      fse.writeFileSync(outputFilePath, context.getProjectName());
+      return undefined;
+    },
+    input(input: TaskInput): void {
+      input.property('projectName', context.getProjectName());
+    },
+    async output(output: TaskOutput): Promise<void> {
+      try {
+        const parentDir = path.dirname(outputFilePath);
+        await fse.ensureDir(parentDir); // 确保父目录存在
+        await fse.ensureFile(outputFilePath);
+        output.file(outputFilePath);
+      } catch (error) {
+        console.error('File creation failed:', error);
+        throw error;
+      }
+    },
+    postDependencies: ['assembleApp']
+  })
+})
 
-9. hvigor.nodesEvaluated(() => {
-10. const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-11. const outputFilePath = path.resolve(context.getBuildRootPath(), 'test.txt');
-12. // 注册一个生成文件的任务并为此任务设置增量
-13. currentNode.registerTask({
-14. name: "testTask",
-15. run(taskContext: HvigorTaskContext): void | Promise<void> {
-16. fse.writeFileSync(outputFilePath, context.getProjectName());
-17. return undefined;
-18. },
-19. input(input: TaskInput): void {
-20. input.property('projectName', context.getProjectName());
-21. },
-22. async output(output: TaskOutput): Promise<void> {
-23. try {
-24. const parentDir = path.dirname(outputFilePath);
-25. await fse.ensureDir(parentDir); // 确保父目录存在
-26. await fse.ensureFile(outputFilePath);
-27. output.file(outputFilePath);
-28. } catch (error) {
-29. console.error('File creation failed:', error);
-30. throw error;
-31. }
-32. },
-33. postDependencies: ['assembleApp']
-34. })
-35. })
-
-37. export default {
-38. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-39. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-40. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 需要在hvigor-config.json5中添加dependencies：
 
-```
-1. // hvigor-config.json5
-2. "dependencies": {
-3. "fs-extra": "11.2.0",
-4. "@types/fs-extra": "9.0.13"
-5. },
+```json5
+// hvigor-config.json5
+"dependencies": {
+  "fs-extra": "11.2.0",
+  "@types/fs-extra": "9.0.13"
+},
 ```
 
 ### file
@@ -2444,13 +2699,13 @@ file(path: string): TaskInput
 
 添加单个目录或文件路径作为任务增量输入条件。
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 目录或文件路径 |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2458,54 +2713,56 @@ file(path: string): TaskInput
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks, OhosAppContext, OhosPluginId } from '@ohos/hvigor-ohos-plugin';
-3. import { getNode, hvigor, HvigorTask, HvigorTaskContext, TaskInput, TaskOutput } from "@ohos/hvigor";
-4. import fse from "fs-extra";
-5. import path from "path";
-6. const currentNode = getNode(__filename);
-7. hvigor.nodesEvaluated(() => {
-8. const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-9. const outputFilePath = path.resolve(context.getBuildRootPath(), 'testOutput.txt');
-10. // 添加单个文件路径作为任务增量输入条件
-11. const inputFilePath = path.resolve(context.getProjectPath(), 'testInput.txt');
-12. // 注册一个生成文件的任务并为此任务设置增量
-13. currentNode.registerTask({
-14. name: "testTask",
-15. run(taskContext: HvigorTaskContext): void | Promise<void> {
-16. const parentDir = path.dirname(outputFilePath);
-17. fse.ensureDirSync(parentDir); // 确保父目录存在
-18. fse.ensureFileSync(outputFilePath);
-19. fse.writeFileSync(outputFilePath, context.getProjectName());
-20. return undefined;
-21. },
-22. input(input: TaskInput): void {
-23. input.property('projectName', context.getProjectName());
-24. if (fse.existsSync(inputFilePath)) {
-25. input.file(inputFilePath);
-26. }
-27. },
-28. async output(output: TaskOutput): Promise<void> {
-29. output.file(outputFilePath);
-30. },
-31. postDependencies: ['assembleApp']
-32. })
-33. })
-34. export default {
-35. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-36. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-37. }
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosAppContext, OhosPluginId } from '@ohos/hvigor-ohos-plugin';
+import { getNode, hvigor, HvigorTask, HvigorTaskContext, TaskInput, TaskOutput } from "@ohos/hvigor";
+import fse from "fs-extra";
+import path from "path";
+
+const currentNode = getNode(__filename);
+hvigor.nodesEvaluated(() => {
+  const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+  const outputFilePath = path.resolve(context.getBuildRootPath(), 'testOutput.txt');
+  // 添加单个文件路径作为任务增量输入条件
+  const inputFilePath = path.resolve(context.getProjectPath(), 'testInput.txt');
+  // 注册一个生成文件的任务并为此任务设置增量
+  currentNode.registerTask({
+    name: "testTask",
+    run(taskContext: HvigorTaskContext): void | Promise<void> {
+      const parentDir = path.dirname(outputFilePath);
+      fse.ensureDirSync(parentDir); // 确保父目录存在
+      fse.ensureFileSync(outputFilePath);
+      fse.writeFileSync(outputFilePath, context.getProjectName());
+      return undefined;
+    },
+    input(input: TaskInput): void {
+      input.property('projectName', context.getProjectName());
+      if (fse.existsSync(inputFilePath)) {
+        input.file(inputFilePath);
+      }
+    },
+    async output(output: TaskOutput): Promise<void> {
+      output.file(outputFilePath);
+    },
+    postDependencies: ['assembleApp']
+  })
+})
+
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 需要在hvigor-config.json5中添加dependencies：
 
-```
-1. // hvigor-config.json5
-2. "dependencies": {
-3. "fs-extra": "11.2.0",
-4. "@types/fs-extra": "9.0.13"
-5. },
+```json5
+// hvigor-config.json5
+"dependencies": {
+  "fs-extra": "11.2.0",
+  "@types/fs-extra": "9.0.13"
+},
 ```
 
 ### files
@@ -2514,13 +2771,13 @@ files(paths: string[]): TaskInput
 
 添加多个目录或文件路径作为任务增量输入条件。
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | paths | string | 是 | 目录或文件路径列表 |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2528,54 +2785,56 @@ files(paths: string[]): TaskInput
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks, OhosAppContext, OhosPluginId } from '@ohos/hvigor-ohos-plugin';
-3. import { getNode, hvigor, HvigorTask, HvigorTaskContext, TaskInput, TaskOutput } from "@ohos/hvigor";
-4. import fse from "fs-extra";
-5. import path from "path";
-6. const currentNode = getNode(__filename);
-7. hvigor.nodesEvaluated(() => {
-8. const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-9. const outputFilePath = path.resolve(context.getBuildRootPath(), 'test.txt');
-10. // 添加单个文件路径作为任务增量输入条件。
-11. const inputFilePath = path.resolve(context.getProjectPath(), 'test.txt');
-12. // 注册一个生成文件的任务并为此任务设置增量
-13. currentNode.registerTask({
-14. name: "testTask",
-15. run(taskContext: HvigorTaskContext): void | Promise<void> {
-16. const parentDir = path.dirname(outputFilePath);
-17. fse.ensureDirSync(parentDir); // 确保父目录存在
-18. fse.ensureFileSync(outputFilePath);
-19. fse.writeFileSync(outputFilePath, context.getProjectName());
-20. return undefined;
-21. },
-22. input(input: TaskInput): void {
-23. input.property('projectName', context.getProjectName());
-24. if (fse.existsSync(inputFilePath)) {
-25. input.files([inputFilePath, ]);
-26. }
-27. },
-28. async output(output: TaskOutput): Promise<void> {
-29. output.files([outputFilePath,]);
-30. },
-31. postDependencies: ['assembleApp']
-32. })
-33. })
-34. export default {
-35. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-36. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-37. }
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosAppContext, OhosPluginId } from '@ohos/hvigor-ohos-plugin';
+import { getNode, hvigor, HvigorTask, HvigorTaskContext, TaskInput, TaskOutput } from "@ohos/hvigor";
+import fse from "fs-extra";
+import path from "path";
+
+const currentNode = getNode(__filename);
+hvigor.nodesEvaluated(() => {
+  const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+  const outputFilePath = path.resolve(context.getBuildRootPath(), 'test.txt');
+  // 添加单个文件路径作为任务增量输入条件
+  const inputFilePath = path.resolve(context.getProjectPath(), 'test.txt');
+  // 注册一个生成文件的任务并为此任务设置增量
+  currentNode.registerTask({
+    name: "testTask",
+    run(taskContext: HvigorTaskContext): void | Promise<void> {
+      const parentDir = path.dirname(outputFilePath);
+      fse.ensureDirSync(parentDir); // 确保父目录存在
+      fse.ensureFileSync(outputFilePath);
+      fse.writeFileSync(outputFilePath, context.getProjectName());
+      return undefined;
+    },
+    input(input: TaskInput): void {
+      input.property('projectName', context.getProjectName());
+      if (fse.existsSync(inputFilePath)) {
+        input.files([inputFilePath, ]);
+      }
+    },
+    async output(output: TaskOutput): Promise<void> {
+      output.files([outputFilePath,]);
+    },
+    postDependencies: ['assembleApp']
+  })
+})
+
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 需要在hvigor-config.json5中添加dependencies：
 
-```
-1. // hvigor-config.json5
-2. "dependencies": {
-3. "fs-extra": "11.2.0",
-4. "@types/fs-extra": "9.0.13"
-5. },
+```screen
+// hvigor-config.json5
+"dependencies": {
+  "fs-extra": "11.2.0",
+  "@types/fs-extra": "9.0.13"
+},
 ```
 
 ## TaskOutput
@@ -2584,8 +2843,8 @@ files(paths: string[]): TaskInput
 
 ### 导入模块
 
-```
-1. import { TaskOutput } from '@ohos/hvigor';
+```ts
+import { TaskOutput } from '@ohos/hvigor';
 ```
 
 ### file
@@ -2594,13 +2853,13 @@ file(path: string): TaskOutput
 
 添加单个目录或文件路径作为任务的增量输出条件。
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 目录或文件路径 |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2608,54 +2867,56 @@ file(path: string): TaskOutput
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks, OhosAppContext, OhosPluginId } from '@ohos/hvigor-ohos-plugin';
-3. import { getNode, hvigor, HvigorTaskContext, TaskInput, TaskOutput } from "@ohos/hvigor";
-4. import fse from "fs-extra";
-5. import path from "path";
-6. const currentNode = getNode(__filename);
-7. hvigor.nodesEvaluated(() => {
-8. const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-9. const outputFilePath = path.resolve(context.getBuildRootPath(), 'testOutput.txt');
-10. // 添加单个文件路径作为任务增量输入条件
-11. const inputFilePath = path.resolve(context.getProjectPath(), 'testInput.txt');
-12. // 注册一个生成文件的任务并为此任务设置增量
-13. currentNode.registerTask({
-14. name: "testTask",
-15. run(taskContext: HvigorTaskContext): void | Promise<void> {
-16. const parentDir = path.dirname(outputFilePath);
-17. fse.ensureDirSync(parentDir); // 确保父目录存在
-18. fse.ensureFileSync(outputFilePath);
-19. fse.writeFileSync(outputFilePath, context.getProjectName());
-20. return undefined;
-21. },
-22. input(input: TaskInput): void {
-23. input.property('projectName', context.getProjectName());
-24. if (fse.existsSync(inputFilePath)) {
-25. input.file(inputFilePath);
-26. }
-27. },
-28. async output(output: TaskOutput): Promise<void> {
-29. output.file(outputFilePath);
-30. },
-31. postDependencies: ['assembleApp']
-32. })
-33. })
-34. export default {
-35. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-36. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-37. }
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosAppContext, OhosPluginId } from '@ohos/hvigor-ohos-plugin';
+import { getNode, hvigor, HvigorTaskContext, TaskInput, TaskOutput } from "@ohos/hvigor";
+import fse from "fs-extra";
+import path from "path";
+
+const currentNode = getNode(__filename);
+hvigor.nodesEvaluated(() => {
+  const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+  const outputFilePath = path.resolve(context.getBuildRootPath(), 'testOutput.txt');
+  // 添加单个文件路径作为任务增量输入条件
+  const inputFilePath = path.resolve(context.getProjectPath(), 'testInput.txt');
+  // 注册一个生成文件的任务并为此任务设置增量
+  currentNode.registerTask({
+    name: "testTask",
+    run(taskContext: HvigorTaskContext): void | Promise<void> {
+      const parentDir = path.dirname(outputFilePath);
+      fse.ensureDirSync(parentDir); // 确保父目录存在
+      fse.ensureFileSync(outputFilePath);
+      fse.writeFileSync(outputFilePath, context.getProjectName());
+      return undefined;
+    },
+    input(input: TaskInput): void {
+      input.property('projectName', context.getProjectName());
+      if (fse.existsSync(inputFilePath)) {
+        input.file(inputFilePath);
+      }
+    },
+    async output(output: TaskOutput): Promise<void> {
+      output.file(outputFilePath);
+    },
+    postDependencies: ['assembleApp']
+  })
+})
+
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 需要在hvigor-config.json5中添加dependencies：
 
-```
-1. // hvigor-config.json5
-2. "dependencies": {
-3. "fs-extra": "11.2.0",
-4. "@types/fs-extra": "9.0.13"
-5. },
+```screen
+// hvigor-config.json5
+"dependencies": {
+  "fs-extra": "11.2.0",
+  "@types/fs-extra": "9.0.13"
+},
 ```
 
 ### files
@@ -2664,13 +2925,13 @@ files(paths: string[]): TaskOutput
 
 添加多个目录或文件路径作为任务的增量输出条件。
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | paths | string[] | 是 | 目录或文件路径列表 |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2678,54 +2939,56 @@ files(paths: string[]): TaskOutput
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks, OhosAppContext, OhosPluginId } from '@ohos/hvigor-ohos-plugin';
-3. import { getNode, hvigor, HvigorTaskContext, TaskInput, TaskOutput } from "@ohos/hvigor";
-4. import fse from "fs-extra";
-5. import path from "path";
-6. const currentNode = getNode(__filename);
-7. hvigor.nodesEvaluated(() => {
-8. const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-9. const outputFilePath = path.resolve(context.getBuildRootPath(), 'testOutput.txt');
-10. // 添加单个文件路径作为任务增量输入条件。
-11. const inputFilePath = path.resolve(context.getProjectPath(), 'testInput.txt');
-12. // 注册一个生成文件的任务并为此任务设置增量
-13. currentNode.registerTask({
-14. name: "testTask",
-15. run(taskContext: HvigorTaskContext): void | Promise<void> {
-16. const parentDir = path.dirname(outputFilePath);
-17. fse.ensureDirSync(parentDir); // 确保父目录存在
-18. fse.ensureFileSync(outputFilePath);
-19. fse.writeFileSync(outputFilePath, context.getProjectName());
-20. return undefined;
-21. },
-22. input(input: TaskInput): void {
-23. input.property('projectName', context.getProjectName());
-24. if (fse.existsSync(inputFilePath)) {
-25. input.files([inputFilePath, ]);
-26. }
-27. },
-28. async output(output: TaskOutput): Promise<void> {
-29. output.files([outputFilePath,]);
-30. },
-31. postDependencies: ['assembleApp']
-32. })
-33. })
-34. export default {
-35. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-36. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-37. }
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosAppContext, OhosPluginId } from '@ohos/hvigor-ohos-plugin';
+import { getNode, hvigor, HvigorTaskContext, TaskInput, TaskOutput } from "@ohos/hvigor";
+import fse from "fs-extra";
+import path from "path";
+
+const currentNode = getNode(__filename);
+hvigor.nodesEvaluated(() => {
+  const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+  const outputFilePath = path.resolve(context.getBuildRootPath(), 'testOutput.txt');
+  // 添加单个文件路径作为任务增量输入条件
+  const inputFilePath = path.resolve(context.getProjectPath(), 'testInput.txt');
+  // 注册一个生成文件的任务并为此任务设置增量
+  currentNode.registerTask({
+    name: "testTask",
+    run(taskContext: HvigorTaskContext): void | Promise<void> {
+      const parentDir = path.dirname(outputFilePath);
+      fse.ensureDirSync(parentDir); // 确保父目录存在
+      fse.ensureFileSync(outputFilePath);
+      fse.writeFileSync(outputFilePath, context.getProjectName());
+      return undefined;
+    },
+    input(input: TaskInput): void {
+      input.property('projectName', context.getProjectName());
+      if (fse.existsSync(inputFilePath)) {
+        input.files([inputFilePath, ]);
+      }
+    },
+    async output(output: TaskOutput): Promise<void> {
+      output.files([outputFilePath,]);
+    },
+    postDependencies: ['assembleApp']
+  })
+})
+
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 需要在hvigor-config.json5中添加dependencies：
 
-```
-1. // hvigor-config.json5
-2. "dependencies": {
-3. "fs-extra": "11.2.0",
-4. "@types/fs-extra": "9.0.13"
-5. },
+```json5
+// hvigor-config.json5
+"dependencies": {
+  "fs-extra": "11.2.0",
+  "@types/fs-extra": "9.0.13"
+},
 ```
 
 ## Task
@@ -2734,8 +2997,8 @@ HvigorTask的外置对象。您可以使用此对象访问任务的属性、 操
 
 ### 导入模块
 
-```
-1. import { Task } from '@ohos/hvigor';
+```ts
+import { Task } from '@ohos/hvigor';
 ```
 
 ### getName
@@ -2744,7 +3007,7 @@ getName: () => string
 
 获取任务名称。
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2752,24 +3015,24 @@ getName: () => string
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor, Task } from '@ohos/hvigor';
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, Task } from '@ohos/hvigor';
 
-5. hvigor.nodesEvaluated(() => {
-6. const rootNode = hvigor.getRootNode();
-7. const assembleAppTask: Task | undefined = rootNode.getTaskByName('assembleApp');
-8. if (assembleAppTask) {
-9. const taskName = assembleAppTask.getName();
-10. console.log(`taskName: ${taskName}`);
-11. }
-12. });
+hvigor.nodesEvaluated(() => {
+  const rootNode = hvigor.getRootNode();
+  const assembleAppTask: Task | undefined = rootNode.getTaskByName('assembleApp');
+  if (assembleAppTask) {
+    const taskName = assembleAppTask.getName();
+    console.log(`taskName: ${taskName}`);
+  }
+});
 
-14. export default {
-15. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-16. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-17. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### getDependencies
@@ -2778,7 +3041,7 @@ getDependencies: () => string[]
 
 获取当前任务依赖的前置任务名称列表。
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2786,24 +3049,24 @@ getDependencies: () => string[]
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor, Task } from '@ohos/hvigor';
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, Task } from '@ohos/hvigor';
 
-5. hvigor.nodesEvaluated(() => {
-6. const rootNode = hvigor.getRootNode();
-7. const assembleAppTask: Task | undefined = rootNode.getTaskByName('assembleApp');
-8. if (assembleAppTask) {
-9. const taskDependencies = assembleAppTask.getDependencies();
-10. console.log(`Task Dependencies: ${taskDependencies}`);
-11. }
-12. });
+hvigor.nodesEvaluated(() => {
+  const rootNode = hvigor.getRootNode();
+  const assembleAppTask: Task | undefined = rootNode.getTaskByName('assembleApp');
+  if (assembleAppTask) {
+    const taskDependencies = assembleAppTask.getDependencies();
+    console.log(`Task Dependencies: ${taskDependencies}`);
+  }
+});
 
-14. export default {
-15. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-16. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-17. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### setEnable
@@ -2812,7 +3075,7 @@ setEnable: (enable: boolean) => void
 
 设置任务的启用状态，当任务被禁用时，任务仍然在任务依赖图中存在，仅跳过了任务的执行，不会破坏原来设定的任务依赖关系。任务被注册时任务状态默认是启用的。
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2820,28 +3083,26 @@ setEnable: (enable: boolean) => void
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks, OhosHapContext, OhosPluginId, Target } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor, HvigorNode } from '@ohos/hvigor';
-
-5. hvigor.nodesEvaluated(() => {
-6. const rootNode = hvigor.getRootNode();
-7. rootNode.subNodes((node: HvigorNode) => {
-8. // 获取hap模块上下文信息
-9. const hapContext = node.getContext(OhosPluginId.OHOS_HAP_PLUGIN) as OhosHapContext;
-10. const moduleName = hapContext?.getModuleName();
-11. hapContext?.targets((target: Target) => {
-12. // 禁用任务
-13. node.getTaskByName(`${target.getTargetName()}@SignHap`)?.setEnable(false);
-14. });
-15. });
-16. });
-
-18. export default {
-19. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-20. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-21. }
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosHapContext, OhosPluginId, Target } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, HvigorNode } from '@ohos/hvigor';
+hvigor.nodesEvaluated(() => {
+  const rootNode = hvigor.getRootNode();
+  rootNode.subNodes((node: HvigorNode) => {
+    // 获取hap模块上下文信息
+    const hapContext = node.getContext(OhosPluginId.OHOS_HAP_PLUGIN) as OhosHapContext;
+    const moduleName = hapContext?.getModuleName();
+    hapContext?.targets((target: Target) => {
+      // 禁用任务
+      node.getTaskByName(`${target.getTargetName()}@SignHap`)?.setEnable(false);
+    });
+  });
+});
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### beforeRun
@@ -2850,7 +3111,7 @@ beforeRun: (fn: Function) => void
 
 添加任务执行之前的钩子函数。钩子函数以栈结构存储，遵循先进后出原则，后添加的函数先被执行。
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2858,26 +3119,26 @@ beforeRun: (fn: Function) => void
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor, Task } from '@ohos/hvigor';
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, Task } from '@ohos/hvigor';
 
-5. hvigor.nodesEvaluated(() => {
-6. const rootNode = hvigor.getRootNode();
-7. const assembleAppTask: Task | undefined = rootNode.getTaskByName('assembleApp');
-8. if (assembleAppTask) {
-9. // 任务执行之前的钩子函数
-10. assembleAppTask.beforeRun(() => {
-11. console.log('Before Task: assembleApp');
-12. });
-13. }
-14. });
+hvigor.nodesEvaluated(() => {
+  const rootNode = hvigor.getRootNode();
+  const assembleAppTask: Task | undefined = rootNode.getTaskByName('assembleApp');
+  if (assembleAppTask) {
+    // 任务执行之前的钩子函数
+    assembleAppTask.beforeRun(() => {
+      console.log('Before Task: assembleApp');
+    });
+  }
+});
 
-16. export default {
-17. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-18. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-19. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### afterRun
@@ -2886,7 +3147,7 @@ afterRun: (fn: Function) => void
 
 添加任务执行完成之后的钩子函数。钩子函数以堆结构存储，遵循先进先出原则，先添加的函数先被执行。
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2894,26 +3155,26 @@ afterRun: (fn: Function) => void
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor, Task } from '@ohos/hvigor';
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, Task } from '@ohos/hvigor';
 
-5. hvigor.nodesEvaluated(() => {
-6. const rootNode = hvigor.getRootNode();
-7. const assembleAppTask: Task | undefined = rootNode.getTaskByName('assembleApp');
-8. if (assembleAppTask) {
-9. // 任务执行之后的钩子函数
-10. assembleAppTask.afterRun(() => {
-11. console.log('After Task: assembleApp');
-12. });
-13. }
-14. });
+hvigor.nodesEvaluated(() => {
+  const rootNode = hvigor.getRootNode();
+  const assembleAppTask: Task | undefined = rootNode.getTaskByName('assembleApp');
+  if (assembleAppTask) {
+    // 任务执行之后的钩子函数
+    assembleAppTask.afterRun(() => {
+      console.log('After Task: assembleApp');
+    });
+  }
+});
 
-16. export default {
-17. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-18. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-19. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ## SdkDetails
@@ -2922,8 +3183,8 @@ afterRun: (fn: Function) => void
 
 ### 导入模块
 
-```
-1. import { SdkDetails } from '@ohos/hvigor-ohos-plugin';
+```ts
+import { SdkDetails } from '@ohos/hvigor-ohos-plugin';
 ```
 
 ### getSdkDir
@@ -2942,35 +3203,35 @@ getSdkDir: () => string
 
 在工程级hvigorfile.ts中编写示例代码：
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks, OhosAppContext, OhosPluginId, SdkDetails } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor, HvigorNode, HvigorPlugin } from '@ohos/hvigor';
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosAppContext, OhosPluginId, SdkDetails } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, HvigorNode, HvigorPlugin } from '@ohos/hvigor';
 
-5. export function customPlugin(): HvigorPlugin {
-6. return {
-7. pluginId: 'customPlugin',
-8. context() {
-9. return {
-10. data: 'customPlugin xxx'
-11. };
-12. },
-13. async apply(currentNode: HvigorNode): Promise<void> {
-14. hvigor.afterNodeEvaluate(node => {
-15. const appContext = node.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-16. if (appContext) {
-17. let sdk:SdkDetails = appContext.getSdkDetails();
-18. console.log(sdk?.getSdkDir())
-19. }
-20. });
-21. }
-22. };
-23. }
+export function customPlugin(): HvigorPlugin {
+  return {
+    pluginId: 'customPlugin',
+    context() {
+      return {
+        data: 'customPlugin xxx'
+      };
+    },
+    async apply(currentNode: HvigorNode): Promise<void> {
+      hvigor.afterNodeEvaluate(node => {
+        const appContext = node.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+        if (appContext) {
+          let sdk:SdkDetails = appContext.getSdkDetails();
+          console.log(sdk?.getSdkDir())
+        }
+      });
+    }
+  };
+}
 
-25. export default {
-26. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-27. plugins:[customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
-28. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### isOhos
@@ -2989,36 +3250,36 @@ isOhos: () => boolean
 
 在工程级hvigorfile.ts中编写示例代码：
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks } from '@ohos/hvigor-ohos-plugin';
-3. import { OhosAppContext, OhosPluginId, SdkDetails } from '@ohos/hvigor-ohos-plugin';
-4. import { hvigor, HvigorNode, HvigorPlugin } from '@ohos/hvigor';
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
+import { OhosAppContext, OhosPluginId, SdkDetails } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, HvigorNode, HvigorPlugin } from '@ohos/hvigor';
 
-6. export function customPlugin(): HvigorPlugin {
-7. return {
-8. pluginId: 'customPlugin',
-9. context() {
-10. return {
-11. data: 'customPlugin xxx'
-12. };
-13. },
-14. async apply(currentNode: HvigorNode): Promise<void> {
-15. hvigor.afterNodeEvaluate(node => {
-16. const appContext = node.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-17. if (appContext) {
-18. let sdk:SdkDetails = appContext.getSdkDetails();
-19. console.log(sdk?.isOhos())
-20. }
-21. });
-22. }
-23. };
-24. }
+export function customPlugin(): HvigorPlugin {
+  return {
+    pluginId: 'customPlugin',
+    context() {
+      return {
+        data: 'customPlugin xxx'
+      };
+    },
+    async apply(currentNode: HvigorNode): Promise<void> {
+      hvigor.afterNodeEvaluate(node => {
+        const appContext = node.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+        if (appContext) {
+          let sdk:SdkDetails = appContext.getSdkDetails();
+          console.log(sdk?.isOhos())
+        }
+      });
+    }
+  };
+}
 
-26. export default {
-27. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-28. plugins:[customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
-29. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### getSdkVersion
@@ -3037,36 +3298,36 @@ getSdkVersion: () => number
 
 在工程级hvigorfile.ts中编写示例代码：
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks } from '@ohos/hvigor-ohos-plugin';
-3. import { OhosAppContext, OhosHapContext, OhosPluginId, SdkDetails } from '@ohos/hvigor-ohos-plugin';
-4. import { hvigor, HvigorNode, HvigorPlugin } from '@ohos/hvigor';
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
+import { OhosAppContext, OhosHapContext, OhosPluginId, SdkDetails } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, HvigorNode, HvigorPlugin } from '@ohos/hvigor';
 
-6. export function customPlugin(): HvigorPlugin {
-7. return {
-8. pluginId: 'customPlugin',
-9. context() {
-10. return {
-11. data: 'customPlugin xxx'
-12. };
-13. },
-14. async apply(currentNode: HvigorNode): Promise<void> {
-15. hvigor.afterNodeEvaluate(node => {
-16. const appContext = node.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-17. if (appContext) {
-18. let sdk:SdkDetails = appContext.getSdkDetails();
-19. console.log(sdk?.getSdkVersion())
-20. }
-21. });
-22. }
-23. };
-24. }
+export function customPlugin(): HvigorPlugin {
+  return {
+    pluginId: 'customPlugin',
+    context() {
+      return {
+        data: 'customPlugin xxx'
+      };
+    },
+    async apply(currentNode: HvigorNode): Promise<void> {
+      hvigor.afterNodeEvaluate(node => {
+        const appContext = node.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+        if (appContext) {
+          let sdk:SdkDetails = appContext.getSdkDetails();
+          console.log(sdk?.getSdkVersion())
+        }
+      });
+    }
+  };
+}
 
-26. export default {
-27. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-28. plugins:[customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
-29. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### getEtsComponentVersion
@@ -3085,36 +3346,36 @@ getEtsComponentVersion: () => string
 
 在工程级hvigorfile.ts中编写示例代码：
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks } from '@ohos/hvigor-ohos-plugin';
-3. import { OhosAppContext, OhosPluginId, SdkDetails } from '@ohos/hvigor-ohos-plugin';
-4. import { hvigor, HvigorNode, HvigorPlugin } from '@ohos/hvigor';
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
+import { OhosAppContext, OhosPluginId, SdkDetails } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, HvigorNode, HvigorPlugin } from '@ohos/hvigor';
 
-6. export function customPlugin(): HvigorPlugin {
-7. return {
-8. pluginId: 'customPlugin',
-9. context() {
-10. return {
-11. data: 'customPlugin xxx'
-12. };
-13. },
-14. async apply(currentNode: HvigorNode): Promise<void> {
-15. hvigor.afterNodeEvaluate(node => {
-16. const appContext = node.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-17. if (appContext) {
-18. let sdk:SdkDetails = appContext.getSdkDetails();
-19. console.log(sdk?.getEtsComponentVersion())
-20. }
-21. });
-22. }
-23. };
-24. }
+export function customPlugin(): HvigorPlugin {
+  return {
+    pluginId: 'customPlugin',
+    context() {
+      return {
+        data: 'customPlugin xxx'
+      };
+    },
+    async apply(currentNode: HvigorNode): Promise<void> {
+      hvigor.afterNodeEvaluate(node => {
+        const appContext = node.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+        if (appContext) {
+          let sdk:SdkDetails = appContext.getSdkDetails();
+          console.log(sdk?.getEtsComponentVersion())
+        }
+      });
+    }
+  };
+}
 
-26. export default {
-27. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-28. plugins:[customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
-29. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### getEtsComponentReleaseType
@@ -3133,36 +3394,36 @@ getEtsComponentReleaseType: () => string
 
 在工程级hvigorfile.ts中编写示例代码：
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks } from '@ohos/hvigor-ohos-plugin';
-3. import { OhosAppContext, OhosPluginId, SdkDetails } from '@ohos/hvigor-ohos-plugin';
-4. import { hvigor, HvigorNode, HvigorPlugin } from '@ohos/hvigor';
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
+import { OhosAppContext, OhosPluginId, SdkDetails } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, HvigorNode, HvigorPlugin } from '@ohos/hvigor';
 
-6. export function customPlugin(): HvigorPlugin {
-7. return {
-8. pluginId: 'customPlugin',
-9. context() {
-10. return {
-11. data: 'customPlugin xxx'
-12. };
-13. },
-14. async apply(currentNode: HvigorNode): Promise<void> {
-15. hvigor.afterNodeEvaluate(node => {
-16. const appContext = node.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-17. if (appContext) {
-18. let sdk:SdkDetails = appContext.getSdkDetails();
-19. console.log(sdk?.getEtsComponentReleaseType())
-20. }
-21. });
-22. }
-23. };
-24. }
+export function customPlugin(): HvigorPlugin {
+  return {
+    pluginId: 'customPlugin',
+    context() {
+      return {
+        data: 'customPlugin xxx'
+      };
+    },
+    async apply(currentNode: HvigorNode): Promise<void> {
+      hvigor.afterNodeEvaluate(node => {
+        const appContext = node.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+        if (appContext) {
+          let sdk:SdkDetails = appContext.getSdkDetails();
+          console.log(sdk?.getEtsComponentReleaseType())
+        }
+      });
+    }
+  };
+}
 
-26. export default {
-27. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-28. plugins:[customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
-29. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[customPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ## NormalizedFile
@@ -3179,22 +3440,21 @@ filePath: string
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor } from '@ohos/hvigor';
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
+import { hvigor } from '@ohos/hvigor';
 
-5. hvigor.nodesEvaluated(() => {
-6. const rootNode = hvigor.getRootNode();
-7. const moduleNormalizedFile = rootNode.nodeDir;
-8. console.log(`Module Normalized File Path: ${moduleNormalizedFile.filePath}`);
+hvigor.nodesEvaluated(() => {
+  const rootNode = hvigor.getRootNode();
+  const moduleNormalizedFile = rootNode.nodeDir;
+  console.log(`Module Normalized File Path: ${moduleNormalizedFile.filePath}`);
+})
 
-10. })
-
-12. export default {
-13. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-14. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-15. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### getPath
@@ -3205,7 +3465,7 @@ getPath: () => string
 
 **起始版本：**Hvigor 4.3.0
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3213,21 +3473,21 @@ getPath: () => string
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor } from '@ohos/hvigor';
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
+import { hvigor } from '@ohos/hvigor';
 
-5. hvigor.nodesEvaluated(() => {
-6. const rootNode = hvigor.getRootNode();
-7. const moduleNormalizedFile = rootNode.nodeDir;
-8. console.log(`Module Normalized File Path: ${moduleNormalizedFile.getPath()}`);
-9. })
+hvigor.nodesEvaluated(() => {
+  const rootNode = hvigor.getRootNode();
+  const moduleNormalizedFile = rootNode.nodeDir;
+  console.log(`Module Normalized File Path: ${moduleNormalizedFile.getPath()}`);
+})
 
-11. export default {
-12. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-13. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-14. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### file
@@ -3238,13 +3498,13 @@ file: (\_path: string) => NormalizedFile
 
 **起始版本：**Hvigor 4.3.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | \_path | string | 是 | 需要拼接路径字符串 |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3252,22 +3512,22 @@ file: (\_path: string) => NormalizedFile
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor } from '@ohos/hvigor';
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
+import { hvigor } from '@ohos/hvigor';
 
-5. hvigor.nodesEvaluated(() => {
-6. const rootNode = hvigor.getRootNode();
-7. const moduleNormalizedFile = rootNode.nodeDir;
-8. const buildProfileNormalizedFile = moduleNormalizedFile.file('build-profile.json5');
-9. console.log(`buildProfile File Path: ${buildProfileNormalizedFile.getPath()}`);
-10. })
+hvigor.nodesEvaluated(() => {
+  const rootNode = hvigor.getRootNode();
+  const moduleNormalizedFile = rootNode.nodeDir;
+  const buildProfileNormalizedFile = moduleNormalizedFile.file('build-profile.json5');
+  console.log(`buildProfile File Path: ${buildProfileNormalizedFile.getPath()}`);
+})
 
-12. export default {
-13. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-14. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-15. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### asFileList
@@ -3278,44 +3538,44 @@ asFileList: () => NormalizedFile[]
 
 **起始版本：**Hvigor 4.3.0
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
 | [NormalizedFile](ide-hvigor-api.md#section281448112713)[] | NormalizedFile对象下深层递归的目录与文件NormalizedFile[]，包含它本身 |
 
-当前只能通过node节点的 node.nodeDir 或者 node.node.getNodeDir() 获取该node节点的根路径的NormalizedFile对象，再通过NormalizedFile.file(\_path: string)方法拼接后续路径来获取到新的NormalizedFile对象，工程级hvigorfile.ts示例：
+当前只能通过node节点的node.nodeDir或者node.node.getNodeDir() 获取该node节点的根路径的NormalizedFile对象，再通过NormalizedFile.file(\_path: string)方法拼接后续路径来获取到新的NormalizedFile对象，工程级hvigorfile.ts示例：
 
-```
-1. import { appTasks } from '@ohos/hvigor-ohos-plugin';
-2. // 导入接口
-3. import { HvigorPlugin, HvigorNode} from '@ohos/hvigor';
-4. // 实现自定义插件
-5. function customPlugin(): HvigorPlugin {
-6. return {
-7. pluginId: 'customPlugin',
-8. apply(node: HvigorNode) {
-9. appTask(node);
-10. }
-11. }
-12. }
-13. function appTask(currentNode: HvigorNode) {
-14. // 工程级的node
-15. currentNode.subNodes((node: HvigorNode) => {
-16. // 模块级的node
-17. // 通过node.nodeDir 或者 node.node.getNodeDir() 获取该node节点的根路径的NormalizedFile文件
-18. const moduleNormalizedFile = node.nodeDir;
-19. // 通过NormalizedFile.file() 拼接后续路径，生成新的 NormalizedFile 对象
-20. // 生成模块下面 build-Profile.json5 的 NormalizedFile 对象
-21. const buildProfileNormalizedFile = moduleNormalizedFile.file('build-profile.json5');
-22. })
-23. }
-24. export default {
-25. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-26. plugins:[
-27. customPlugin()  // 应用自定义Plugin
-28. ]         /* Custom plugin to extend the functionality of Hvigor. */
-29. }
+```ts
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
+// 导入接口
+import { HvigorPlugin, HvigorNode} from '@ohos/hvigor';
+// 实现自定义插件
+function customPlugin(): HvigorPlugin {
+  return {
+    pluginId: 'customPlugin',
+    apply(node: HvigorNode) {
+      appTask(node);
+    }
+  }
+}
+function appTask(currentNode: HvigorNode) {
+  // 工程级的node
+  currentNode.subNodes((node: HvigorNode) => {
+    // 模块级的node 
+    // 通过node.nodeDir 或者 node.node.getNodeDir() 获取该node节点的根路径的NormalizedFile文件
+    const moduleNormalizedFile = node.nodeDir;
+    // 通过NormalizedFile.file() 拼接后续路径，生成新的NormalizedFile对象
+    // 生成模块下面build-Profile.json5的NormalizedFile对象
+    const buildProfileNormalizedFile = moduleNormalizedFile.file('build-profile.json5');
+  })
+}
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[
+    customPlugin()  // 应用自定义Plugin
+  ]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ## FileUtil
@@ -3324,8 +3584,8 @@ asFileList: () => NormalizedFile[]
 
 ### 导入模块
 
-```
-1. import { FileUtil } from '@ohos/hvigor';
+```ts
+import { FileUtil } from '@ohos/hvigor';
 ```
 
 ### exist
@@ -3336,13 +3596,13 @@ exist: (filePath: string) => boolean
 
 **起始版本：**Hvigor 4.3.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | filePath | string | 是 | 文件路径字符串 |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3350,25 +3610,27 @@ exist: (filePath: string) => boolean
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
-4. import path from "path";
-5. const currentNode = getNode(__filename);
-6. hvigor.nodesEvaluated(() => {
-7. const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-8. const testFilePath = path.resolve(context.getProjectPath(), 'test.txt');
-9. if (FileUtil.exist(testFilePath)) {
-10. console.log(`File exists: ${testFilePath}`);
-11. } else {
-12. console.log(`File doesn't exist: ${testFilePath}`);
-13. }
-14. })
-15. export default {
-16. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-17. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-18. }
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
+import path from "path";
+
+const currentNode = getNode(__filename);
+hvigor.nodesEvaluated(() => {
+  const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+  const testFilePath = path.resolve(context.getProjectPath(), 'test.txt');
+  if (FileUtil.exist(testFilePath)) {
+    console.log(`File exists: ${testFilePath}`);
+  } else {
+    console.log(`File doesn't exist: ${testFilePath}`);
+  }
+})
+
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### isDictionary
@@ -3379,13 +3641,13 @@ isDictionary: (file: string | NormalizedFile) => boolean
 
 **起始版本：**Hvigor 4.3.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | file | string | [NormalizedFile](ide-hvigor-api.md#section281448112713) | 是 | 文件路径字符串或者是NormalizedFile对象 |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3393,29 +3655,28 @@ isDictionary: (file: string | NormalizedFile) => boolean
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
-4. import path from "path";
+```screen
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
+import path from "path";
 
-6. const currentNode = getNode(__filename);
+const currentNode = getNode(__filename);
+hvigor.nodesEvaluated(() => {
+  const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+  const testFilePath = path.resolve(context.getProjectPath(), 'test.txt');
+  FileUtil.ensureFileSync(testFilePath);
+  if (FileUtil.isDictionary(testFilePath)) {
+    console.log(`It is a directory: ${testFilePath}`);
+  } else {
+    console.log(`It is not a directory: ${testFilePath}`);
+  }
+})
 
-8. hvigor.nodesEvaluated(() => {
-9. const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-10. const testFilePath = path.resolve(context.getProjectPath(), 'test.txt');
-11. FileUtil.ensureFileSync(testFilePath);
-12. if (FileUtil.isDictionary(testFilePath)) {
-13. console.log(`It is a directory: ${testFilePath}`);
-14. } else {
-15. console.log(`It is not a directory: ${testFilePath}`);
-16. }
-17. })
-
-19. export default {
-20. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-21. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-22. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### isFile
@@ -3426,13 +3687,13 @@ isFile: (file: string | NormalizedFile) => boolean
 
 **起始版本：**Hvigor 4.3.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | file | string | [NormalizedFile](ide-hvigor-api.md#section281448112713) | 是 | 文件路径字符串或者是NormalizedFile对象 |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3440,29 +3701,28 @@ isFile: (file: string | NormalizedFile) => boolean
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
-4. import path from "path";
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
+import path from "path";
 
-6. const currentNode = getNode(__filename);
+const currentNode = getNode(__filename);
+hvigor.nodesEvaluated(() => {
+  const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+  const testFilePath = path.resolve(context.getProjectPath(), 'test.txt');
+  FileUtil.ensureFileSync(testFilePath);
+  if (FileUtil.isFile(testFilePath)) {
+    console.log(`It is a file: ${testFilePath}`);
+  } else {
+    console.log(`It is not a file: ${testFilePath}`);
+  }
+})
 
-8. hvigor.nodesEvaluated(() => {
-9. const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-10. const testFilePath = path.resolve(context.getProjectPath(), 'test.txt');
-11. FileUtil.ensureFileSync(testFilePath);
-12. if (FileUtil.isFile(testFilePath)) {
-13. console.log(`It is a file: ${testFilePath}`);
-14. } else {
-15. console.log(`It is not a file: ${testFilePath}`);
-16. }
-17. })
-
-19. export default {
-20. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-21. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-22. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### ensureDirSync
@@ -3473,7 +3733,7 @@ ensureDirSync: (dirPath: string) => void
 
 **起始版本：**Hvigor 4.3.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3481,20 +3741,21 @@ ensureDirSync: (dirPath: string) => void
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
-4. import path from "path";
-5. const currentNode = getNode(__filename);
-6. hvigor.nodesEvaluated(() => {
-7. const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-8. FileUtil.ensureDirSync(path.dirname(context.getBuildRootPath()));
-9. })
-10. export default {
-11. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-12. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-13. }
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
+import path from "path";
+
+const currentNode = getNode(__filename);
+hvigor.nodesEvaluated(() => {
+  const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+  FileUtil.ensureDirSync(path.dirname(context.getBuildRootPath()));
+})
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### ensureFileSync
@@ -3505,7 +3766,7 @@ ensureFileSync: (filePath: string) => void
 
 **起始版本：**Hvigor 4.3.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3513,24 +3774,23 @@ ensureFileSync: (filePath: string) => void
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
-4. import path from "path";
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
+import path from "path";
 
-6. const currentNode = getNode(__filename);
+const currentNode = getNode(__filename);
+hvigor.nodesEvaluated(() => {
+  const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+  const testFilePath = path.resolve(context.getProjectPath(), 'test.txt');
+  FileUtil.ensureFileSync(testFilePath);
+})
 
-8. hvigor.nodesEvaluated(() => {
-9. const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-10. const testFilePath = path.resolve(context.getProjectPath(), 'test.txt');
-11. FileUtil.ensureFileSync(testFilePath);
-12. })
-
-14. export default {
-15. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-16. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-17. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### readJson5
@@ -3541,13 +3801,13 @@ readJson5: (file: string | NormalizedFile) => JSON
 
 **起始版本：**Hvigor 4.3.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | file | string | [NormalizedFile](ide-hvigor-api.md#section281448112713) | 是 | json5文件路径或者NormalizedFile对象 |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3555,27 +3815,26 @@ readJson5: (file: string | NormalizedFile) => JSON
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
-4. import path from "path";
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
+import path from "path";
 
-6. const currentNode = getNode(__filename);
+const currentNode = getNode(__filename);
+hvigor.nodesEvaluated(() => {
+  const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+  const json5FilePath = path.resolve(context.getProjectPath(), 'testJson.json5');
+  FileUtil.ensureFileSync(json5FilePath);
+  FileUtil.writeFileSync(json5FilePath, JSON.stringify(context.getAppJsonOpt()));
+  const jsonContent = FileUtil.readJson5(json5FilePath);
+  console.log(`Read JSON5 content: ${JSON.stringify(jsonContent, null, 2)}`);
+})
 
-8. hvigor.nodesEvaluated(() => {
-9. const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-10. const json5FilePath = path.resolve(context.getProjectPath(), 'testJson.json5');
-11. FileUtil.ensureFileSync(json5FilePath);
-12. FileUtil.writeFileSync(json5FilePath, JSON.stringify(context.getAppJsonOpt()));
-13. const jsonContent = FileUtil.readJson5(json5FilePath);
-14. console.log(`Read JSON5 content: ${JSON.stringify(jsonContent, null, 2)}`);
-15. })
-
-17. export default {
-18. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-19. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-20. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### readFileSync
@@ -3586,13 +3845,13 @@ readFileSync: (file: string | NormalizedFile) => Buffer
 
 **起始版本：**Hvigor 4.3.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | file | string | [NormalizedFile](ide-hvigor-api.md#section281448112713) | 是 | 文件路径字符串或者是NormalizedFile对象 |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3600,27 +3859,26 @@ readFileSync: (file: string | NormalizedFile) => Buffer
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
-4. import path from "path";
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
+import path from "path";
 
-6. const currentNode = getNode(__filename);
+const currentNode = getNode(__filename);
+hvigor.nodesEvaluated(() => {
+  const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+  const json5FilePath = path.resolve(context.getProjectPath(), 'testJson.json5');
+  FileUtil.ensureFileSync(json5FilePath);
+  FileUtil.writeFileSync(json5FilePath, JSON.stringify(context.getAppJsonOpt()));
+  const content = FileUtil.readFileSync(json5FilePath);
+  console.log(`Content of ${json5FilePath}: ${content}`);
+})
 
-8. hvigor.nodesEvaluated(() => {
-9. const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-10. const json5FilePath = path.resolve(context.getProjectPath(), 'testJson.json5');
-11. FileUtil.ensureFileSync(json5FilePath);
-12. FileUtil.writeFileSync(json5FilePath, JSON.stringify(context.getAppJsonOpt()));
-13. const content = FileUtil.readFileSync(json5FilePath);
-14. console.log(`Content of ${json5FilePath}: ${content}`);
-15. })
-
-18. export default {
-19. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-20. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-21. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### readFile
@@ -3631,13 +3889,13 @@ readFile: (file: string | NormalizedFile) => Promise<Buffer>
 
 **起始版本：**Hvigor 4.3.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | file | string | [NormalizedFile](ide-hvigor-api.md#section281448112713) | 是 | 文件路径字符串或者是NormalizedFile对象 |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3645,27 +3903,26 @@ readFile: (file: string | NormalizedFile) => Promise<Buffer>
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
-4. import path from "path";
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
+import path from "path";
 
-6. const currentNode = getNode(__filename);
+const currentNode = getNode(__filename);
+hvigor.nodesEvaluated(async () => {
+  const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+  const json5FilePath = path.resolve(context.getProjectPath(), 'testJson.json5');
+  FileUtil.ensureFileSync(json5FilePath);
+  FileUtil.writeFileSync(json5FilePath, JSON.stringify(context.getAppJsonOpt()));
+  const content = await FileUtil.readFile(json5FilePath);
+  console.log(content.toString());
+})
 
-8. hvigor.nodesEvaluated(async () => {
-9. const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-10. const json5FilePath = path.resolve(context.getProjectPath(), 'testJson.json5');
-11. FileUtil.ensureFileSync(json5FilePath);
-12. FileUtil.writeFileSync(json5FilePath, JSON.stringify(context.getAppJsonOpt()));
-13. const content = await FileUtil.readFile(json5FilePath);
-14. console.log(content.toString());
-15. })
-
-18. export default {
-19. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-20. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-21. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### writeFileSync
@@ -3676,7 +3933,7 @@ writeFileSync: (file: string | NormalizedFile, content: any) => void
 
 **起始版本：**Hvigor 4.3.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3685,27 +3942,26 @@ writeFileSync: (file: string | NormalizedFile, content: any) => void
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
-4. import path from "path";
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
+import path from "path";
 
-6. const currentNode = getNode(__filename);
+const currentNode = getNode(__filename);
+hvigor.nodesEvaluated(() => {
+  const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+  const json5FilePath = path.resolve(context.getProjectPath(), 'testJson.json5');
+  FileUtil.ensureFileSync(json5FilePath);
+  FileUtil.writeFileSync(json5FilePath, JSON.stringify(context.getAppJsonOpt()));
+  const jsonContent = FileUtil.readJson5(json5FilePath);
+  console.log(`Read JSON5 content: ${JSON.stringify(jsonContent, null, 2)}`);
+})
 
-8. hvigor.nodesEvaluated(() => {
-9. const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-10. const json5FilePath = path.resolve(context.getProjectPath(), 'testJson.json5');
-11. FileUtil.ensureFileSync(json5FilePath);
-12. FileUtil.writeFileSync(json5FilePath, JSON.stringify(context.getAppJsonOpt()));
-13. const jsonContent = FileUtil.readJson5(json5FilePath);
-14. console.log(`Read JSON5 content: ${JSON.stringify(jsonContent, null, 2)}`);
-15. })
-
-17. export default {
-18. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-19. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-20. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### writeFile
@@ -3716,14 +3972,14 @@ writeFile: (file: string | NormalizedFile, content: any) => Promise<void>
 
 **起始版本：**Hvigor 4.3.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | file | string | [NormalizedFile](ide-hvigor-api.md#section281448112713) | 是 | 文件路径字符串或者是NormalizedFile对象 |
 | content | any | 是 | 需要写入文件的内容 |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3731,25 +3987,24 @@ writeFile: (file: string | NormalizedFile, content: any) => Promise<void>
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
-4. import path from "path";
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
+import path from "path";
 
-6. const currentNode = getNode(__filename);
+const currentNode = getNode(__filename);
+hvigor.nodesEvaluated(() => {
+  const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+  const json5FilePath = path.resolve(context.getProjectPath(), 'testJson.json5');
+  FileUtil.ensureFileSync(json5FilePath);
+  FileUtil.writeFile(json5FilePath, JSON.stringify(context.getAppJsonOpt()));
+})
 
-8. hvigor.nodesEvaluated(() => {
-9. const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-10. const json5FilePath = path.resolve(context.getProjectPath(), 'testJson.json5');
-11. FileUtil.ensureFileSync(json5FilePath);
-12. FileUtil.writeFile(json5FilePath, JSON.stringify(context.getAppJsonOpt()));
-13. })
-
-15. export default {
-16. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-17. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-18. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### copyFileSync
@@ -3760,7 +4015,7 @@ copyFileSync: (file: string | NormalizedFile, dest: string) => void
 
 **起始版本：**Hvigor 4.3.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3769,26 +4024,25 @@ copyFileSync: (file: string | NormalizedFile, dest: string) => void
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
 
-5. const currentNode = getNode(__filename);
+const currentNode = getNode(__filename);
+hvigor.nodesEvaluated(() => {
+  const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+  const json5FilePath = FileUtil.pathResolve(context.getProjectPath(), 'testJson.json5');
+  FileUtil.ensureFileSync(json5FilePath);
+  FileUtil.writeFileSync(json5FilePath, JSON.stringify(context.getAppJsonOpt()));
+  const copyFilePath = FileUtil.pathResolve(context.getProjectPath(), 'testJson_copy.json5');
+  FileUtil.copyFileSync(json5FilePath, copyFilePath);
+})
 
-7. hvigor.nodesEvaluated(() => {
-8. const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-9. const json5FilePath = FileUtil.pathResolve(context.getProjectPath(), 'testJson.json5');
-10. FileUtil.ensureFileSync(json5FilePath);
-11. FileUtil.writeFileSync(json5FilePath, JSON.stringify(context.getAppJsonOpt()));
-12. const copyFilePath = FileUtil.pathResolve(context.getProjectPath(), 'testJson_copy.json5');
-13. FileUtil.copyFileSync(json5FilePath, copyFilePath);
-14. })
-
-16. export default {
-17. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-18. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-19. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### copyFile
@@ -3799,14 +4053,14 @@ copyFile: (file: string | NormalizedFile, dest: string) => Promise<void>
 
 **起始版本：**Hvigor 4.3.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | file | string | [NormalizedFile](ide-hvigor-api.md#section281448112713) | 是 | 文件路径字符串或者是NormalizedFile对象 |
 | dest | string | 是 | 目标文件路径 |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3814,26 +4068,25 @@ copyFile: (file: string | NormalizedFile, dest: string) => Promise<void>
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
 
-5. const currentNode = getNode(__filename);
+const currentNode = getNode(__filename);
+hvigor.nodesEvaluated(() => {
+  const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+  const json5FilePath = FileUtil.pathResolve(context.getProjectPath(), 'testJson.json5');
+  FileUtil.ensureFileSync(json5FilePath);
+  FileUtil.writeFileSync(json5FilePath, JSON.stringify(context.getAppJsonOpt()));
+  const copyFilePath = FileUtil.pathResolve(context.getProjectPath(), 'testJson_copy.json5');
+  FileUtil.copyFile(json5FilePath, copyFilePath);
+})
 
-7. hvigor.nodesEvaluated(() => {
-8. const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-9. const json5FilePath = FileUtil.pathResolve(context.getProjectPath(), 'testJson.json5');
-10. FileUtil.ensureFileSync(json5FilePath);
-11. FileUtil.writeFileSync(json5FilePath, JSON.stringify(context.getAppJsonOpt()));
-12. const copyFilePath = FileUtil.pathResolve(context.getProjectPath(), 'testJson_copy.json5');
-13. FileUtil.copyFile(json5FilePath, copyFilePath);
-14. })
-
-16. export default {
-17. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-18. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-19. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ### pathResolve
@@ -3844,13 +4097,13 @@ pathResolve: (...paths: string[]) => string
 
 **起始版本：**Hvigor 4.3.0
 
-**参数:**
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ...paths | string[] | 是 | 文件路径信息数组 |
 
-**返回值:**
+**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3858,24 +4111,23 @@ pathResolve: (...paths: string[]) => string
 
 **示例：**
 
-```
-1. // 工程级hvigorfile.ts文件
-2. import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin';
-3. import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
+```ts
+// 工程级hvigorfile.ts文件
+import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin';
+import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
 
-5. const currentNode = getNode(__filename);
+const currentNode = getNode(__filename);
+hvigor.nodesEvaluated(() => {
+  const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
+  const json5FilePath = FileUtil.pathResolve(context.getProjectPath(), 'testJson.json5');
+  FileUtil.ensureFileSync(json5FilePath);
+  FileUtil.writeFile(json5FilePath, JSON.stringify(context.getAppJsonOpt()));
+})
 
-7. hvigor.nodesEvaluated(() => {
-8. const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
-9. const json5FilePath = FileUtil.pathResolve(context.getProjectPath(), 'testJson.json5');
-10. FileUtil.ensureFileSync(json5FilePath);
-11. FileUtil.writeFile(json5FilePath, JSON.stringify(context.getAppJsonOpt()));
-12. })
-
-14. export default {
-15. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-16. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-17. }
+export default {
+  system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+  plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ## submitWorker
@@ -3903,51 +4155,51 @@ submitWorker(node: HvigorNode, taskName: string, workPath: string, workerOption:
 
 **示例：**在hap模块的自定义任务中，向线程池提交一个worker。
 
-```
-1. import { hapTasks } from '@ohos/hvigor-ohos-plugin';
-2. import { HvigorNode, HvigorPlugin, submitWorker } from "@ohos/hvigor";
-3. import path from "path";
+```ts
+import { hapTasks } from '@ohos/hvigor-ohos-plugin';
+import { HvigorNode, HvigorPlugin, submitWorker } from "@ohos/hvigor";
+import path from "path";
 
-5. // 实现自定义插件
-6. function customPlugin(): HvigorPlugin {
-7. return {
-8. pluginId: 'customPlugin',
-9. apply(node: HvigorNode) {
-10. // 插件主体
-11. node.registerTask({
-12. name: 'customTask',
-13. run() {
-14. submitWorker(node, this.name, path.join(__dirname, 'wait-job.js', 'wait'), {callback: () => {
-15. console.log('submit Worker callback');
-16. }});
-17. },
-18. dependencies: ['default@PreBuild'],
-19. postDependencies: ['assembleHap'],
-20. });
-21. }
-22. }
-23. }
+// 实现自定义插件
+function customPlugin(): HvigorPlugin {
+  return {
+    pluginId: 'customPlugin',
+    apply(node: HvigorNode) {
+      // 插件主体
+      node.registerTask({
+        name: 'customTask',
+        run() {
+          submitWorker(node, this.name, path.join(__dirname, 'wait-job.js', 'wait'), {callback: () => {
+            console.log('submit Worker callback');
+          }});
+        },
+        dependencies: ['default@PreBuild'],
+        postDependencies: ['assembleHap'],
+      });
+    }
+  }
+}
 
-25. export default {
-26. system: hapTasks /* Built-in plugin of Hvigor. It cannot be modified. */,
-27. plugins: [customPlugin()] /* Custom plugin to extend the functionality of Hvigor. */,
-28. };
+export default {
+  system: hapTasks /* Built-in plugin of Hvigor. It cannot be modified. */,
+  plugins: [customPlugin()] /* Custom plugin to extend the functionality of Hvigor. */,  
+};
 ```
 
 wait-job.js内容如下，和hvigorfile.ts在同一个目录下：
 
-```
-1. function sleep(ms) {
-2. return new Promise(resolve => setTimeout(resolve, ms));
-3. }
+```js
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-5. async function wait() {
-6. console.log('开始等待10秒...');
-7. await sleep(10000);
-8. console.log('结束，退出程序。');
-9. }
+async function wait() {
+    console.log('开始等待10秒...');
+    await sleep(10000);
+    console.log('结束，退出程序。');
+}
 
-11. exports.wait = wait;
+exports.wait = wait;
 ```
 
 ## WorkerOption

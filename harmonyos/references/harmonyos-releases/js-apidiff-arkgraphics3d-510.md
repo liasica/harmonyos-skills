@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-arkgraphics3d-510
 title: ArkGraphics 3D
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.1.0(18) > OS平台能力 > API变更清单 > ArkGraphics 3D
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.0(18) > OS平台能力 > API变更清单 > ArkGraphics 3D
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:02+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:33+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:363e4ee0850e04c9bec7be7828eb99976731938476c45816cd5a92ce8eb5264d
 ---
 

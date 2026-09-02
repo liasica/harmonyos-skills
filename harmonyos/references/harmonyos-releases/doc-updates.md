@@ -1,12 +1,114 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/doc-updates
 title: 文档变更说明
-breadcrumb: 版本说明 > 文档变更说明
+breadcrumb: 版本说明 > 文档变更与支持 > 文档变更说明
 category: harmonyos-releases
-scraped_at: 2026-04-29T13:25:23+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1948745eccb16a36837d1daed40ff4b5ed4674d2b5535ec535705de7c5e5ef95
+scraped_at: 2026-09-02T14:59:08+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a23f6a6e88137946164114a0408e902a507cf66dcd77723328267c873adc2188
 ---
+
+## 2026年8月28日
+
+### API参考的支持设备标记优化
+
+在API参考中完善设备类型支持标记。凡包含设备支持属性的类、方法、结构体等内容，均在下方标注各设备类型的起始支持版本，便于开发者快速掌握接口的设备支持情况。
+
+标记示意图如下：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/GEa1yRRsR4C1R68Bc3iqAg/zh-cn_image_0000002701820520.png "点击放大")
+
+### DevEco Studio新增文档
+
+新增编译构建性能和内存优化的实践指导，帮助开发者提升多目标编译、多HAP/HSP工程编译、自定义插件和任务等场景下的构建效率。具体请参考[实践说明](../harmonyos-guides/ide-build-optimize-practices.md)。
+
+### Ability Kit新增文档
+
+新增PC/2in1设备上的应用开发指导。
+
+* [应用程序包集成bin文件](../harmonyos-guides/hap-bin.md)：介绍HAP包集成并运行二进制bin文件的方法，实现外部脚本解析和第三方工具调用。
+* [开发与使用应用插件](../harmonyos-guides/plugin-package.md)：介绍HSP插件包在DevEco Studio中的工程配置、签名及编译打包方法，以及宿主应用对插件的安装、更新、卸载流程。
+* [应用退出](../harmonyos-guides/app-stop-for-2in1.md)：介绍应用退出场景，涵盖单主窗退出、应用进程退出及预关闭拦截机制。
+
+新增进程模型开发指导。
+
+* [进程模型概述](../harmonyos-guides/process-model-overview.md)**：**围绕“组件驱动的进程模型”理念，阐述进程类型定义、子进程创建方式以及独立进程配置方式。
+* [扩展进程开发指导](../harmonyos-guides/extended-process-development.md)：介绍通过ArkTS API和C API创建子进程的机制，允许应用创建独立运行的子进程，将耗时任务隔离执行，提升响应速度与稳定性。
+* [独立进程开发指导](../harmonyos-guides/isolation-process-development-guideline.md)：介绍静态指定进程、动态指定进程和模块独立进程三种进程隔离机制，提升应用的稳定性和安全性。
+
+新增[应用启动流程](../harmonyos-guides/application-startup-process.md)指导**：**说明应用启动依次经历进程启动、AbilityStage启动、UIAbility启动三阶段，并给出各阶段生命周期回调使用建议与启动入口说明。
+
+新增[使用ModularObjectDispatcher实现动态接口调用](../harmonyos-guides/modular-object-dispatcher-development.md)指导：介绍客户端如何在运行时查询服务端接口信息并按方法名发起跨进程调用，涵盖分发器创建、接口元数据查询、多种参数类型传递与资源释放规则。
+
+## 2026年7月28日
+
+### Spatial Recon Kit删除文档
+
+因空间照片功能的技术策略调整，该功能暂时下线。
+
+### Wallet Kit
+
+新增[园区卡](../harmonyos-guides/wallet-park-overview.md)、[会员卡](../harmonyos-guides/wallet-member-overview.md)、[酒店房卡](../harmonyos-guides/wallet-hotel-overview.md)、[出行凭证](../harmonyos-guides/wallet-travel-overview.md)、[活动/景点门票](../harmonyos-guides/wallet-ticket-overview.md)和[通用凭证](../harmonyos-guides/wallet-generalcard-overview.md)的场景化接入指南，便于开发者按需接入，为用户提供更丰富的数字凭证管理服务，增强用户粘性。
+
+## 2026年7月20日
+
+### DevEco Studio删除文档
+
+由于模拟器能力策略变更，不再支持远程控制功能，指南中删除了模拟器远程控制的内容。相关场景建议使用[DevEco CLI](../harmonyos-guides/ide-deveco-cli.md)操控模拟器。
+
+## 2026年6月25日
+
+### ArkUI新增文档
+
+* 新增[容器断点 (ContainerReader)](../harmonyos-guides/arkts-layout-development-container-reader.md)指南，允许开发者基于容器尺寸而非窗口尺寸实现自适应布局。与传统的窗口断点相比，容器断点提供了更细粒度的布局控制能力，使得组件能够在不同的容器尺寸下呈现不同的布局效果。
+* [UI开发 (基于NDK构建UI)](../harmonyos-guides/arkts-use-ndk.md)，补充完善5+开发场景，优化整体文档结构目录，包括[使用布局组件](../harmonyos-guides/ndk-layout-container.md)、[显示图片（Image）](../harmonyos-guides/ndk-image-component.md)等各个场景指导。
+
+## 2026年6月12日
+
+### Ability Kit新增文档
+
+新增应用生命周期章节。
+
+* [应用生命周期概述](../harmonyos-guides/application-lifecycle.md)：介绍用户在执行应用启动、应用前后台切换、应用退出等操作时，应用的完整生命周期状态变化及其监听方式，并说明应用生命周期与应用进程及应用组件（[UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md)、[ExtensionAbility](../harmonyos-references/js-apis-app-ability-extensionability.md)）之间的关系。
+* [应用启动设置](../harmonyos-guides/application-startup-options.md)：介绍应用在启动时可配置的各类启动选项，包括窗口模式、启动页面路径等参数的设置与具体使用方法。
+* [应用快启](../harmonyos-guides/hyperstartup-application.md)：介绍应用快启机制，阐述了其如何通过优化应用启动流程以提升应用的冷启动性能与响应速度。
+* [应用退出](../harmonyos-guides/app-stop.md)：介绍用户主动退出应用、应用自行退出以及系统强制终止应用的机制与实现方式。
+* [应用重启](../harmonyos-guides/app-restart.md)：介绍如何通过应用主动重启、元服务主动重启以及应用故障恢复被动重启三种方式，实现应用的重新初始化或恢复正常状态。
+
+新增方舟智能开发框架开发指导章节。
+
+* [方舟智能开发框架概述](../harmonyos-guides/arkaf-overview.md)：介绍方舟智能开发框架的整体架构、核心概念以及能力范围。通过该框架，开发者可将应用能力外化给系统智能体调用，实现应用与智能体的无缝协同。
+* [意图框架开发指导](../harmonyos-guides/insight-intent-overview.md)：介绍如何将应用的核心功能封装为意图，以便用户通过小艺语音助手等系统入口实现智能化、便捷的访问。
+* [基于ArkTS脚本的应用Skill开发指导](../harmonyos-guides/arkts-skill-development-guide.md)：介绍如何将应用内的业务能力以Skill形式开放给系统智能体调用，系统智能体无需理解各应用的内部实现，仅依赖统一的声明契约即可完成调度。
+* [端侧A2A框架开发指导](../harmonyos-guides/agent-overview.md)：介绍如何通过端侧A2A框架开发应用端侧智能体，实现与小艺等智能体进行交互会话。该框架采用客户端-服务端架构，通过能力注册和组件绑定建立通信通道。运行时支持双向数据通信、双向安全认证及交互UI渲染。任务完成后，系统可以断开连接以释放端侧资源。
+
+### 窗口管理新增文档
+
+[窗口管理](../harmonyos-guides/window-manager.md)补充完善20+开发场景，优化整体文档结构目录，包括窗口类型、窗口模式、窗口布局、窗口焦点等各个场景指导。
+
+新增[窗口开发常见日志问题与定位指导](../harmonyos-guides/window-log-faqs.md)，帮助开发者高效使用hidumper命令快速完成问题定位与解决。
+
+### ArkTS新增文档
+
+[Sendable对象改造实践](../harmonyos-guides/sendable-trans-guide.md)：提供Sendable改造实例，介绍使用TurboTransJSON工具在ArkTS中操作Sendable对象的典型用法。
+
+### FA模型开发指导迁移
+
+随着应用模型的演进发展，从API 7开始提供的FA模型已经不再主推，当前FA模型主要用于轻量级智能穿戴设备。其他设备推荐采用未来会长期演进的Stage模型。
+
+为了让开发者在使用应用模型文档时有更好的阅读体验，HarmonyOS指南中仅保留Stage模型相关文档（详见[应用模型](../harmonyos-guides/stage-model-development-overview.md)），FA模型相关文档已迁移至[轻量级智能穿戴-应用开发基础](../lite-wearable-guides/fa-model-development-overview.md)。
+
+## 2026年4月20日
+
+### ArkUI新增文档
+
+[使用网格](../harmonyos-guides/ndk-grid.md)：新增网格组件的NDK开发指南，包括创建网格组件、创建后如何设置子组件所占行列数、如何处理滚动事件。
+
+丰富[UI开发常见问题](../harmonyos-guides/ui-development-faq.md)：新增20+常见问题及对应的解决措施，帮助开发者快速完成问题定位与解决。例如：[FrameNode节点运行时出现jscrash](../harmonyos-guides/arkts-arkui-framenode-faq.md#framenode节点运行时出现jscrash)、[文本超长时如何展示](../harmonyos-guides/arkts-text-faq.md#文本超长时如何展示)等。
+
+### AVSession Kit新增桌面歌词接入指南
+
+[应用接入桌面歌词](../harmonyos-guides/avsession-desktop-lyrics.md)：支持音乐播放器或有歌词展示需求的音频类应用接入桌面歌词功能，可以实现将歌词以悬浮窗形式展示在系统桌面，让用户无需进入应用即可查看歌词。
 
 ## 2026年3月10日
 
@@ -23,6 +125,10 @@ content_hash: sha256:1948745eccb16a36837d1daed40ff4b5ed4674d2b5535ec535705de7c5e
 ### Image Kit增加位图操作
 
 [使用PixelMap完成位图操作](../harmonyos-guides/image-pixelmap-operation.md)文档中，增加将两张宽度相同的位图纵向拼接成一张长图的开发示例。
+
+### AVSession Kit提供音频模板功能
+
+[使用音频模板](../harmonyos-guides/using-avsession-avmusictemplate.md)：AVSession Kit支持媒体应用通过音频模板接入播控中心，实现音视频在播控中心进行统一的界面显示和播控管理。
 
 ## 2026年2月9日
 
@@ -42,7 +148,7 @@ content_hash: sha256:1948745eccb16a36837d1daed40ff4b5ed4674d2b5535ec535705de7c5e
 
 ## 2026年1月26日
 
-### 新增ArkUI状态管理文档
+### ArkUI新增状态管理文档
 
 [状态管理原理介绍](../harmonyos-guides/arkts-state-management-introduce.md)：新增状态管理基本原理介绍，帮助开发者更好地理解其工作流程。
 
@@ -139,12 +245,12 @@ content_hash: sha256:1948745eccb16a36837d1daed40ff4b5ed4674d2b5535ec535705de7c5e
 在文档中，选中“ExtensionAbility组件”，单击“AI提问”。
 
 **图1** AI提问   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/2n4URye8Rxi_KLHVgxicuw/zh-cn_image_0000002505654451.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/gLDvB-ZhSSuCV7YNhTRtRw/zh-cn_image_0000002505654451.png "点击放大")
 
 在“智能客服”窗口中，可看到相关内容的生成总结。
 
 **图2** 智能客服   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/mAxrI30HSOO5ibQJofYN2g/zh-cn_image_0000002473335124.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/yCtA6iKZS7KDJCSGTyvfRQ/zh-cn_image_0000002473335124.png)
 
 ## 2025年10月20日
 
@@ -170,8 +276,8 @@ content_hash: sha256:1948745eccb16a36837d1daed40ff4b5ed4674d2b5535ec535705de7c5e
 
 * [添加交互响应](../harmonyos-guides/arkts-interaction-development-guide-overview.md)：ArkUI框架提供了丰富的交互功能，支持直接处理基本输入事件，以及由这些事件驱动的手势系统，同时支持拖拽和焦点切换等复杂交互。
   + [交互基础机制说明](../harmonyos-guides/arkts-interaction-basic-principles.md)：介绍[触摸事件](../harmonyos-references/ts-universal-events-touch.md)、[鼠标事件](../harmonyos-references/ts-universal-mouse-key.md)、[轴事件](../harmonyos-references/ts-universal-events-axis.md)等指向性事件交互的基本概念和相关原理。
-  + [输入设备与事件](../harmonyos-guides/rkts-interaction-development-guide-raw-input-event.md)：介绍各类输入设备产生事件的适用场景和相关约束。
-  + [添加手势响应](../harmonyos-guides/rkts-interaction-development-guide-support-gesture.md)：介绍各类手势的触发方式和绑定方法，以及在手势冲突时的解决方法。
+  + [输入设备与事件](../harmonyos-guides/arkts-interaction-development-guide-raw-input-event.md)：介绍各类输入设备产生事件的适用场景和相关约束。
+  + [添加手势响应](../harmonyos-guides/arkts-interaction-development-guide-support-gesture.md)：介绍各类手势的触发方式和绑定方法，以及在手势冲突时的解决方法。
   + [支持统一拖拽](../harmonyos-guides/arkts-common-events-drag-event.md)：介绍拖拽相关的概念、拖拽方式和拖拽能力（通用拖拽、多选拖拽等）的使用方法。
   + [支持焦点处理](../harmonyos-guides/arkts-common-events-focus-event.md)：介绍焦点相关概念与规范，说明焦点处理过程中常用场景的适配方法。
 
@@ -180,7 +286,7 @@ content_hash: sha256:1948745eccb16a36837d1daed40ff4b5ed4674d2b5535ec535705de7c5e
 将[UI开发 (基于NDK构建UI）](../harmonyos-guides/arkts-use-ndk.md)调整至“开发”-“应用框架”-“ArkUI（方舟UI框架）”目录下，调整后的目录结构更符合基于NDK接口开发UI界面的学习历程。目录结构调整不影响原页面URL链接地址，原地址可正常访问。
 
 **图3** UI开发 (基于NDK构建UI）目录调整后结构   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/tZMhzHgSQSCPuGSOsjAo1g/zh-cn_image_0000002505033787.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Dl6VDg9rQDO56pAHb477XQ/zh-cn_image_0000002505033787.png)
 
 ### 自动化测试框架指南优化结构
 
@@ -221,7 +327,7 @@ content_hash: sha256:1948745eccb16a36837d1daed40ff4b5ed4674d2b5535ec535705de7c5e
 ### 窗口管理新增文档
 
 * 窗口管理新增[窗口开发术语](../harmonyos-guides/window-terminology.md)页面，帮助开发者更好理解窗口开发中的相关概念。
-* 窗口管理补充主窗口的生命周期内容，包括生命周期状态及变化监听等，具体可见[主窗口的生命周期](../harmonyos-guides/window-overview.md#主窗口的生命周期)。
+* 窗口管理补充主窗口的生命周期内容，包括生命周期状态及变化监听等，具体可见[管理应用主窗的生命周期](../harmonyos-guides/window-lifecycle.md#管理应用主窗的生命周期)。
 * 新增支持闪控球能力，提供[全局闪控球开发指导](../harmonyos-guides/floatingball-guide.md)，为应用提供临时的全局能力，完成跨应用交互。
 
 ### 文本开发新增场景指导
@@ -259,7 +365,7 @@ Longque JS Engine 提供了一批[Longque JS API指导指南](../harmonyos-guide
 * [变更前路径](../harmonyos-guides/multi-device-overview-path-change.md)：“指南”-“开发”-“一次开发，多端部署”
 * [变更后路径](../best-practices/bpta-multi-device-overview.md)：“最佳实践”-“多设备开发”-“一次开发，多端部署”
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/VKVYVvjxQreWt6TDH4WlUA/zh-cn_image_0000002327075390.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/CivV_pSyRd2jciToqwLTOA/zh-cn_image_0000002327075390.png "点击放大")
 
 ## 2025年6月20日
 
@@ -280,20 +386,18 @@ API参考文档架构试点优化的范围如下：
 * [@ohos.multimedia.media (媒体服务)](../harmonyos-references/js-apis-media.md)
 * [@arkts.utils (ArkTS工具库)](../harmonyos-references/js-apis-arkts-utils.md)
 
-### 新增HarmonyOS SDK API变更查询
-
-为便于快速获取API变更范围，官网文档新增[HarmonyOS SDK API变更查询](https://developer.huawei.com/consumer/cn/apichangelog/)能力：
+为便于快速获取API变更范围，官网文档新增HarmonyOS SDK API变更查询能力：
 
 * 支持基于应用框架、系统、媒体、图形、应用服务、AI六大领域及Kit能力维度，变更类型维度、版本路径等维度进行筛选，查询API变更。
 * 支持搜索接口名称，查询API变更。
 * 支持单击接口名称，一键跳转API参考文档详情。
 
-  说明
+  **说明** 
 
   HarmonyOS SDK API变更查询功能为Beta体验特性，不同版本路径的变更信息持续上线中。
 
   **图4** API变更查询   
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/Tefag89EQWqwZBJOvQI6eQ/zh-cn_image_0000002324639544.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/8ELZDBS1Rt2J1fDkkrQVDw/zh-cn_image_0000002324639544.png "点击放大")
 
 ### 新增文档代码解读功能
 
@@ -301,19 +405,19 @@ API参考文档架构试点优化的范围如下：
 
 使用HarmonyOS开发者官网账号登录网站，在示例代码区域单击“代码解读”即可召出。
 
-说明
+**说明** 
 
 “代码解读”功能为Beta体验特性。
 
 **图5** 代码解读   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/j_lf-YzWRCO8kaiDszP19w/zh-cn_image_0000002358677413.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/HEd2nZHuQze7b810D2UO9g/zh-cn_image_0000002358677413.png "点击放大")
 
 ### 新增示例代码自动换行功能
 
 官网上线文档示例代码“自动换行”功能，提升的示例代码阅读体验，避免由于示例代码或注释过长显示不全的问题。
 
 **图6** 示例代码自动换行   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/TvN1hCpkTFKZgkquFUptOQ/zh-cn_image_0000002324894130.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/LSKo28yTSvmIn6hoq00pDw/zh-cn_image_0000002324894130.png "点击放大")
 
 ## 2025年6月11日
 
@@ -321,11 +425,11 @@ API参考文档架构试点优化的范围如下：
 
 为便于快速查看不同设备品类适用的API范围，API参考新增支持按设备品类筛选能力：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/lU4uLa4LTpqPOwugxEzjlg/zh-cn_image_0000002316486920.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/oVXko9PpSMmpfIkoYfSR5g/zh-cn_image_0000002316486920.png)
 
 同时，每个接口下也会显示其支持的设备（默认开启，可一键隐藏）：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/FmSQnuRnQM6DMFJjIJbnDA/zh-cn_image_0000002350405365.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/1gOrlyuaQwOEGTHWtWLPUg/zh-cn_image_0000002350405365.png "点击放大")
 
 ### 版本说明新增信息
 
@@ -353,7 +457,7 @@ API参考文档架构试点优化的范围如下：
 
 **图7** 学习ArkTS语言章节目录结构变更对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/IgTCTCvbQiuiHk4Hpd_8Sg/zh-cn_image_0000002247957730.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/BF95uRlIRFGD4duB8WaCyQ/zh-cn_image_0000002247957730.png "点击放大")
 
 ## 2025年3月31日
 
@@ -376,7 +480,7 @@ API参考文档架构试点优化的范围如下：
 **变更前**：全站搜索提供多个版本搜索筛选项。
 
 **图8** 官网搜索版本筛选   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/3CoEfZN9S7yO-R2Kzw3PyQ/zh-cn_image_0000002251337993.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/BZQ22XASRseLL176124fgg/zh-cn_image_0000002251337993.png)
 
 **变更后：**
 
@@ -394,15 +498,15 @@ API参考文档架构试点优化的范围如下：
 1. 打开API参考文档，在左侧导航栏“高级筛选”下拉选项中设置“API version”版本号。
 
    **图9** “API version”筛选   
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/AbDdVZRoTli7mXIfcG7bRg/zh-cn_image_0000002238136637.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/t6uYiWdJQEKaaXs2uNZaPg/zh-cn_image_0000002238136637.png)
 2. 设置目标API version后，默认显示支持的API范围，不支持的接口在导航栏中置灰。
 
    **图10** 导航栏筛选后效果   
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/cmoKrpTKTkqzBKd1HPGtdw/zh-cn_image_0000002238138549.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/RkNpDp7BT5O4kDKrLXxJdA/zh-cn_image_0000002238138549.png "点击放大")
 3. 选择“只看筛选内容”，导航中不支持接口将被隐藏。
 
    **图11** 只看筛选内容效果   
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/VvKTAlv5QJypM6hRIDMVcw/zh-cn_image_0000002203059966.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/tMi8d3LcSdOgeERw3xKA5Q/zh-cn_image_0000002203059966.png)
 
 **官网文档默认版本变更****为“HarmonyOS 5.0.3(15)”**
 
@@ -413,11 +517,11 @@ API参考文档架构试点优化的范围如下：
 * 入口1：官网 ->开发->开发文档
 
   **图12** 开发文档入口   
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/BL656crURZG5ahbVam6ZKw/zh-cn_image_0000002238234973.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/KLOaRiIBT5CZh01PdMTHwQ/zh-cn_image_0000002238234973.png "点击放大")
 * 入口2：官网->文档->文档中心
 
   **图13** 文档中心入口   
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/I5ylKoAfQeyJYaBJvAHSrQ/zh-cn_image_0000002238159785.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/GK6vLwlZTGaAK4zzDVnArA/zh-cn_image_0000002238159785.png "点击放大")
 
 **变更后**：以上任意入口进入文档页面，默认打开“HarmonyOS 5.0.3(15)”版本配套文档
 
@@ -433,7 +537,7 @@ HarmonyOS文档针对不同API version(如API 12/API 13/API 14等)提供多个�
 
 自API 15版本起HarmonyOS开发者文档官网版本合一，参考业界仅提供一套文档同时配套不同API version。
 
-说明
+**说明** 
 
 通过API version筛选支持接口范围可便捷了解不同API version支持接口范围，请参考[获取体验增强](doc-updates.md#section1810915471038)。
 
@@ -485,7 +589,7 @@ HarmonyOS文档针对不同API version(如API 12/API 13/API 14等)提供多个�
 
 **Store Kit**
 
-[应用内快捷方式加桌](../harmonyos-guides/store-productview.md#应用内快捷方式加桌)：介绍了在应用市场推荐场景下，如何实现应用内快捷方式加桌。
+[应用内快捷方式加桌](../harmonyos-guides/appgallery-productview-addshortcut.md)：介绍了在应用市场推荐场景下，如何实现应用内快捷方式加桌。
 
 ## 2024年12月6日
 
@@ -548,7 +652,7 @@ HarmonyOS文档针对不同API version(如API 12/API 13/API 14等)提供多个�
 
 **Audio** **Kit**
 
-* [使用合适的音频流类型](../harmonyos-guides/using-right-streamusage-and-sourcetype.md)：介绍常用的音频流类型及其适用场景，说明不同流类型对音频业务的影响。同时，指导开发者在实际开发时应当如何设置音频流类型。
+* 使用合适的音频流类型：介绍常用的音频流类型及其适用场景，说明不同流类型对音频业务的影响。同时，指导开发者在实际开发时应当如何设置音频流类型。
 * [音频焦点和音频会话](../harmonyos-guides/audio-playback-concurrency.md)：介绍系统的音频焦点策略，以及应用如何申请、释放音频焦点，以及应对焦点变化的方法，帮助开发者妥善地管理音频焦点，提升用户的音频体验。
 
 ### 删除文档
@@ -750,7 +854,7 @@ HarmonyOS NEXT Release更名为HarmonyOS 5.0.0 Release。HarmonyOS 5.0.0 Release
 * 版本筛选入口优化，通过左侧版本筛选区域下拉方式进行版本切换。
 
   **图14** 文档中心版本筛选入口优化   
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/opOEsMpYRpOiai3MCV_y_A/zh-cn_image_0000002097856469.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/s69Y1YPkTKKlOURFRS1FrA/zh-cn_image_0000002097856469.png "点击放大")
 
 ## 2024年8月28日
 
@@ -766,7 +870,7 @@ API参考ArkUI组件目录结构优化，将分散的组件按照使用场景进
 
 **图15** ArkUI组件参考目录变更对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/JMSB2wplTIGNfbqlHgpRng/zh-cn_image_0000002070732800.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/yNv-wSnDSIOS3fi0BZyAhg/zh-cn_image_0000002070732800.png "点击放大")
 
 ## 2024年8月20日
 
@@ -786,12 +890,12 @@ API参考ArkUI组件目录结构优化，将分散的组件按照使用场景进
 
 **变更后：**文档包内搜索框位于导航栏上方。
 
-说明
+**说明** 
 
 文档包内搜索：支持在当前阅读的文档类型内全量搜索，如支持在版本说明书、指南、API参考等不同文档类型内全量搜索。
 
 **图16** 文档包内搜索框入口优化效果   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/CTVp3V1eQMSTSvU8h0-U-Q/zh-cn_image_0000002062016246.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/8LT7zkDRRhmKhqQy7J9Zpw/zh-cn_image_0000002062016246.png)
 
 ## 2024年8月8日
 
@@ -959,7 +1063,7 @@ API参考ArkUI组件目录结构优化，将分散的组件按照使用场景进
 
 **图17** FAQ目录结构变更
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/VzIp8EnrSeixPbMox_15rw/zh-cn_image_0000002062016250.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/rH5wlCUJS4WJJdsbg0XcFw/zh-cn_image_0000002062016250.png "点击放大")
 
 ## 2024年6月21日
 
@@ -1010,7 +1114,7 @@ ArkWeb开发指南目录结构优化。根据实际开发旅程，从管理网�
 
 **图18** ArkWeb开发指南目录变更对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/FgltDMmxSw-A2FVewko8JQ/zh-cn_image_0000002061857922.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/V1siX-axTIy9ginnF48kcw/zh-cn_image_0000002061857922.png "点击放大")
 
 ## 2024年6月16日
 
@@ -1033,7 +1137,7 @@ ArkWeb开发指南目录结构优化。根据实际开发旅程，从管理网�
 仅导航结构变更，页面URL地址无变化。
 
 **图19** 开发指南导航变更对比   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/ggAGNXdrQNS5GlKoe-Kysg/zh-cn_image_0000002061857918.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/cWB16v4QQXmqldrQ6opsjQ/zh-cn_image_0000002061857918.png "点击放大")
 
 ### 获取体验增强
 
@@ -1048,9 +1152,9 @@ ArkWeb开发指南目录结构优化。根据实际开发旅程，从管理网�
 本次优化仅涉及Section标题URL地址中携带以ZH-CN\_TOPIC\_XXX开头的文档页面。
 
 **图20** 页面内Section标题URL地址变更对比   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/3JD26vyHT7aFAbtUwzKe2A/zh-cn_image_0000002097974957.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/9heUwi1YTTy1jzmMt7IyoQ/zh-cn_image_0000002097974957.png "点击放大")
 
-说明
+**说明** 
 
 存在部分存量页面中链接出现：跳转到Section标题URL地址跳转不精准，重定向至页面链接的问题。
 
@@ -1266,9 +1370,9 @@ ArkWeb开发指南目录结构优化。根据实际开发旅程，从管理网�
 
 优化后：页面URL地址去掉随机数字，且支持优化前页面URL重定向至优化后页面URL地址。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/5-tunD2yS2WjdbjrcB7fkw/zh-cn_image_0000002097856473.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/yG2bTDADQ9ub3T6nuhT_4w/zh-cn_image_0000002097856473.png "点击放大")
 
-说明
+**说明** 
 
 为解决去掉随机数字过程中产生的页面URL地址重复问题，文档修改少量重名URL地址，如果您发现已收藏文档页面不可访问，请重新搜索并收藏新地址。
 

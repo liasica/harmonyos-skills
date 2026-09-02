@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: 如何将设备中的截屏图片导出到本地
 breadcrumb: FAQ > DevEco Studio > 应用调试 > 如何将设备中的截屏图片导出到本地
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:21:25+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:4bded211cf91ac05f77682d686fb5e3c015bfd7a39236322d5d33c3564f884a0
+scraped_at: 2026-09-02T14:54:56+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:ece5e85817398ae57c010cf409f65ff9cb53f0f055657a2c28c03e8654acf756
 ---
 
 使用DevEco Studio的截图功能。
@@ -13,4 +13,4 @@ content_hash: sha256:4bded211cf91ac05f77682d686fb5e3c015bfd7a39236322d5d33c3564f
 1. 连接设备到电脑。
 2. 在DevEco Studio底部工具栏的Log栏中，点击左侧相机图标可截图并保存到指定路径。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/qzo5JxkIT6K-D7zDPwBtWw/zh-cn_image_0000002215507896.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/2FNtN1koSfy1ckPO9UxnZQ/zh-cn_image_0000002624478798.png)

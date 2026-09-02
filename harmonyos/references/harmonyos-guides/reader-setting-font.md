@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-settin
 title: 自定义字体
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容排版 > 修改阅读设置 > 自定义字体
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:40:03+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4ee75949f12c757dee12b67f1c1a7aba1b691fd11c5b35bd25e7b96551fcbf06
+scraped_at: 2026-09-02T14:50:32+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:718f4f167557f8ca25b99263a65df32f49cc4bf9326d6840b4f65bf2f2c5a8e1
 ---
 
 当应用需要支持自定义字体时，开发者可通过[ReaderSetting](../harmonyos-references/reader-read-core.md#readersetting)的fontPath属性，实现对阅读内容字体的实时修改。
@@ -17,7 +17,7 @@ content_hash: sha256:4ee75949f12c757dee12b67f1c1a7aba1b691fd11c5b35bd25e7b96551f
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/9Q51HO2sSS-d7ZO9e-uSKw/zh-cn_image_0000002589325515.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/T0GaQ2nkSgmOm-XwBRd_Hw/zh-cn_image_0000002736434321.png)
 
 ## 接口说明
 
@@ -38,92 +38,95 @@ content_hash: sha256:4ee75949f12c757dee12b67f1c1a7aba1b691fd11c5b35bd25e7b96551f
 
 1. 导入相关模块。
 
-   ```
-   1. import { fileIo as fs } from '@kit.CoreFileKit';
-   2. import { common } from '@kit.AbilityKit';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { fileIo as fs } from '@kit.CoreFileKit';
+   import { common } from '@kit.AbilityKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 定义字体文件存放路径：
 
    * 若资源放在项目resources/rawfile/fonts文件夹下。
 
-     ```
-     1. let filePath: string = 'fonts/SourceHanSerifCN-VF.ttf';
+     ```typescript
+     let filePath: string = 'fonts/SourceHanSerifCN-VF.ttf';
      ```
    * 若资源放在[应用沙箱目录](app-sandbox-directory.md)下。
 
-     ```
-     1. let filePath: string = this.getUIContext().getHostContext()!.filesDir + '/fonts/SourceHanSerifCN-VF.ttf'
+     ```typescript
+     let filePath: string = this.getUIContext().getHostContext()!.filesDir + '/fonts/SourceHanSerifCN-VF.ttf'
      ```
 3. 通过ReaderSetting的fontName和fontPath属性设置自定义字体的名称及所在的路径，并调用ReaderComponentController组件控制器的setPageConfig接口，重新渲染界面。
 
-   ```
-   1. this.readerSetting.fontName = '思源宋体';
-   2. // 路径为上述两种之一
-   3. this.readerSetting.fontPath = filePath;
-   4. this.readerComponentController.setPageConfig(this.readerSetting);
+   ```typescript
+   this.readerSetting.fontName = '思源宋体';
+   // 路径为上述两种之一
+   this.readerSetting.fontPath = filePath;
+   this.readerComponentController.setPageConfig(this.readerSetting);
    ```
 4. 注册排版引擎资源请求接口，并返回相应资源。
 
    当排版引擎检测到是自定义字体场景时，会通过接口请求字体资源。开发者需要根据返回的文件路径，判断是否为请求字体资源。如果是，则根据字体资源所在的路径，返回对应的ArrayBuffer。
 
-   ```
-   1. aboutToAppear(): void {
-   2. // 注册资源请求回调
-   3. this.readerComponentController.on('resourceRequest', this.resourceRequest);
-   4. }
+   ```typescript
+   aboutToAppear(): void {
+     // 注册资源请求回调
+     this.readerComponentController.on('resourceRequest', this.resourceRequest);
+   }
 
-   6. aboutToDisappear(): void {
-   7. // 注销资源请求回调
-   8. this.readerComponentController.off('resourceRequest');
-   9. }
+   aboutToDisappear(): void {
+     // 注销资源请求回调
+     this.readerComponentController.off('resourceRequest');
+   }
 
-   11. private isFont(filePath: string): boolean {
-   12. let options = [".ttf", ".woff2", ".otf"];
-   13. let path = filePath.toLowerCase();
-   14. let result = path.indexOf(options[0]) != -1 || path.indexOf(options[1]) != -1 || path.indexOf(options[2]) != -1;
-   15. hilog.info(0x0000, 'testTag',  'isFont = ' + result);
-   16. return result;
-   17. }
+   private isFont(filePath: string): boolean {
+     let options = ['.ttf', '.woff2', '.otf'];
+     let path = filePath.toLowerCase();
+     let result = path.indexOf(options[0]) != -1 || path.indexOf(options[1]) != -1 || path.indexOf(options[2]) != -1;
+     hilog.info(0x0000, 'testTag',  'isFont = ' + result);
+     return result;
+   }
 
-   19. /**
-   20. * 资源请求回调
-   21. */
-   22. private resourceRequest: bookParser.CallbackRes<string, ArrayBuffer> = (filePath: string): ArrayBuffer => {
-   23. hilog.info(0x0000, 'testTag', 'resourceRequest : filePath = ' + filePath);
-   24. if (filePath.length === 0) {
-   25. return new ArrayBuffer(0);
-   26. }
-   27. if (!this.isFont(filePath)) {
-   28. return new ArrayBuffer(0);
-   29. }
-   30. try {
-   31. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-   32. // 获取资源路径resources/rawfile/fonts下的字体文件Uint8Array数据
-   33. let value: Uint8Array = context.resourceManager.getRawFileContentSync(this.readerSetting.fontPath);
-   34. hilog.info(0x0000, 'testTag', 'resourceRequest : get other resource succeeded ');
-   35. return value.buffer as ArrayBuffer;
-   36. } catch (error) {
-   37. let code = (error as BusinessError).code;
-   38. let message = (error as BusinessError).message;
-   39. hilog.error(0x0000, 'testTag',
-   40. `resourceRequest : get other resource failed, error code: ${code}, message: ${message}.`);
-   41. }
-   42. // 如果在资源路径resources/rawfile/fonts下获取字体文件数据失败，则去沙箱目录下获取字体文件数据
-   43. return this.loadFileFromPath(this.readerSetting.fontPath);
-   44. }
+   /**
+    * 资源请求回调
+    */
+   private resourceRequest: bookParser.CallbackRes<string, ArrayBuffer> = (filePath: string): ArrayBuffer => {
+     hilog.info(0x0000, 'testTag', 'resourceRequest : filePath = ' + filePath);
+     if (filePath.length === 0) {
+       return new ArrayBuffer(0);
+     }
+     if (!this.isFont(filePath)) {
+       return new ArrayBuffer(0);
+     }
+     try {
+       let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+       // 获取资源路径resources/rawfile/fonts下的字体文件Uint8Array数据
+       let value: Uint8Array = context.resourceManager.getRawFileContentSync(this.readerSetting.fontPath);
+       hilog.info(0x0000, 'testTag', 'resourceRequest : get other resource succeeded ');
+       return value.buffer as ArrayBuffer;
+     } catch (error) {
+       let code = (error as BusinessError).code;
+       let message = (error as BusinessError).message;
+       hilog.error(0x0000, 'testTag',
+         `resourceRequest : get other resource failed, error code: ${code}, message: ${message}.`);
+     }
+     // 如果在资源路径resources/rawfile/fonts下获取字体文件数据失败，则去沙箱目录下获取字体文件数据
+     return this.loadFileFromPath(this.readerSetting.fontPath);
+   }
 
-   46. private loadFileFromPath(filePath: string): ArrayBuffer {
-   47. try {
-   48. let stats = fs.statSync(filePath);
-   49. let file = fs.openSync(filePath, fs.OpenMode.READ_ONLY);
-   50. let buffer = new ArrayBuffer(stats.size);
-   51. fs.readSync(file.fd, buffer);
-   52. fs.closeSync(file);
-   53. return buffer;
-   54. } catch (err) {
-   55. hilog.error(0x0000, 'testTag', "mkdir failed with error message: ", err.message, ", error code: ", err.code);
-   56. return new ArrayBuffer(0);
-   57. }
-   58. }
+   private loadFileFromPath(filePath: string): ArrayBuffer {
+     try {
+       let stats = fs.statSync(filePath);
+       let file = fs.openSync(filePath, fs.OpenMode.READ_ONLY);
+       let buffer = new ArrayBuffer(stats.size);
+       fs.readSync(file.fd, buffer);
+       fs.closeSync(file);
+       return buffer;
+     } catch (err) {
+       let code = (error as BusinessError).code;
+       let message = (error as BusinessError).message;
+       hilog.error(0x0000, 'testTag',
+         `loadFileFromPath : get file failed, error code: ${code}, message: ${message}.`);
+       return new ArrayBuffer(0);
+     }
+   }
    ```

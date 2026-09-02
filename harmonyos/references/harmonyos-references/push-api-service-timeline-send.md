@@ -3,14 +3,10 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-api-
 title: 服务动态推送接口
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 服务动态 > 服务动态推送接口
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:34+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:30e653feaad31b1961addbbe6d25a9de7b224197b070f69efa7d4782b8a1cc70
+scraped_at: 2026-09-02T15:03:07+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f965abe6ba9872dc6d75b865ba66540d2a6b15a062614a7d5a0c872b08aefc11
 ---
-
-说明
-
-为了更安全的网络访问，华为服务动态仅支持TLS1.2及以上版本，应用使用TLS1.2以下协议或使用规定外的加密套件将无法正常发送消息。
 
 ## 功能介绍
 
@@ -30,7 +26,7 @@ content_hash: sha256:30e653feaad31b1961addbbe6d25a9de7b224197b070f69efa7d4782b8a
 * **接口URL：** https://push-api.cloud.huawei.com/v1/**[projectId]**/service\_timeline/send
 * **数据格式：** Content-Type: application/json
 
-说明
+**说明** 
 
 **[projectId]** ：项目ID，登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“开发与服务”，在项目列表中选择对应的项目，左侧导航栏选择“项目设置”，在该页面获取。
 
@@ -38,7 +34,7 @@ content_hash: sha256:30e653feaad31b1961addbbe6d25a9de7b224197b070f69efa7d4782b8a
 
 | 参数 | 取值描述 | 样例 |
 | --- | --- | --- |
-| Authorization | 鉴权方式：  **JWT方式**  详情参见[基于服务账号生成鉴权令牌](../harmonyos-guides/push-jwt-token.md)。  **说明：**  · 调用服务动态API接口必须使用**PS256**算法。  · 建议JWT令牌过期时间设置为3600秒，有效期内可以复用。  Bearer后面拼接空格，再拼接获取的鉴权信息。 | Bearer eyJr\*\*\*\*\*OiIx---\*\*\*\*.eyJh\*\*\*\*\*iJodHR--\*\*\*.QRod\*\*\*\*\*4Gp---\*\*\*\* |
+| Authorization | 鉴权方式：  **JWT方式**  详情参见[基于服务账号生成鉴权令牌](../harmonyos-guides/push-jwt-token.md)。  **说明：**  · 调用服务动态API接口必须使用**PS256**算法。  · 建议JWT令牌过期时间设置为3600秒，有效期内可以复用。  · Bearer后面拼接空格，再拼接获取的鉴权信息。 | Bearer eyJr\*\*\*\*\*OiIx---\*\*\*\*.eyJh\*\*\*\*\*iJodHR--\*\*\*.QRod\*\*\*\*\*4Gp---\*\*\*\* |
 
 ### Request Body
 
@@ -53,108 +49,109 @@ content_hash: sha256:30e653feaad31b1961addbbe6d25a9de7b224197b070f69efa7d4782b8a
 
 ## 请求示例
 
-说明
+**说明** 
 
 根据不同状态必传参数、选填参数发送请求。以外卖自取场景为例。
 
 **请求示例：制作中**
 
-```
-1. // Request URL
-2. POST "https://push-api.cloud.huawei.com/v1/[projectId]/service_timeline/send"
+```json5
+// Request URL
+POST "https://push-api.cloud.huawei.com/v1/[projectId]/service_timeline/send"
+ 
+// Request Header
+Content-Type: application/json
+Authorization: Bearer eyJr*****OiIx---****.eyJh*****iJodHR--***.QRod*****4Gp---****
 
-4. // Request Header
-5. Authorization: Bearer eyJr*****OiIx---****.eyJh*****iJodHR--***.QRod*****4Gp---****
-
-7. // Request Body
-8. {
-9. "appId": "5**********7",
-10. "toOpenId": "A**********O",
-11. "sceneId": "10001",
-12. "subSceneId": "100010001",
-13. "code": "3**********7",
-14. "content": {
-15. "status": 3,
-16. "orderTime": 1716191520,
-17. "amount": "¥ 18.00",
-18. "productCount": 1,
-19. "productName": "霸气芒果",
-20. "productImg": "image_test_1",
-21. "merchantName": "威**********店",
-22. "pickupNumber": "1668",
-23. "pickupTime": "16:08",
-24. "remainOrders": "5单/共5杯",
-25. "waitTime": "10-20分钟",
-26. "button": {
-27. "type": 0,
-28. "text": "取餐码",
-29. "data": {
-30. "testKey": "testValue"
-31. }
-32. },
-33. "clickAction": {
-34. "type": 0,
-35. "data": {
-36. "testKey": "testValue"
-37. }
-
-39. },
-40. "appendButtons": [
-41. {
-42. "type": 0,
-43. "text": "取餐码",
-44. "data": {
-45. "testKey": "testValue"
-46. }
-47. }
-48. ]
-49. }
-50. }
+// Request Body
+{
+    "appId": "5**********7",
+    "toOpenId": "A**********O",
+    "sceneId": "10001",
+    "subSceneId": "100010001",
+    "code": "3**********7",
+    "content": {
+        "status": 3,
+        "orderTime": 1716191520,
+        "amount": "¥ 18.00",
+        "productCount": 1,
+        "productName": "霸气芒果",
+        "productImg": "image_test_1",
+        "merchantName": "威**********店",
+        "pickupNumber": "1668",
+        "pickupTime": "16:08",
+        "remainOrders": "5单/共5杯",
+        "waitTime": "10-20分钟",
+        "button": {
+            "type": 0,
+            "text": "取餐码",
+            "data": {
+                "testKey": "testValue"
+            }
+        },
+        "clickAction": {
+            "type": 0,
+            "data": {
+                "testKey": "testValue"
+            }
+            
+        },
+        "appendButtons": [
+            {
+                "type": 0,
+                "text": "取餐码",
+                "data": {
+                    "testKey": "testValue"
+                }
+            }
+        ]
+    }
+}
 ```
 
 **请求示例：待支付**
 
-```
-1. // Request URL
-2. POST "https://push-api.cloud.huawei.com/v1/[projectId]/service_timeline/send"
+```json5
+// Request URL
+POST "https://push-api.cloud.huawei.com/v1/[projectId]/service_timeline/send"
+ 
+// Request Header
+Authorization: Bearer eyJr*****OiIx---****.eyJh*****iJodHR--***.QRod*****4Gp---****
 
-4. // Request Header
-5. Authorization: Bearer eyJr*****OiIx---****.eyJh*****iJodHR--***.QRod*****4Gp---****
-
-7. // Request Body
-8. {
-9. "appId": "6**********3",
-10. "toOpenId": "A**********F",
-11. "sceneId": "10001",
-12. "subSceneId": "100010001",
-13. "code": "1**********6",
-14. "content": {
-15. "status": 1,
-16. "orderTime": 1715236319,
-17. "amount": "¥ 5.00",
-18. "productCount": 1,
-19. "productName": "霸气芒果",
-20. "productImg": "image_test_1",
-21. "paymentEndTime": "5分钟内支付",
-22. "merchantName": "**********园店",
-23. "button": {
-24. "type": 0,
-25. "text": "立即支付",
-26. "action": "https://***"
-27. },
-28. "clickAction": {
-29. "type": 0,
-30. "action": "https://***"
-31. },
-32. "appendButtons": [
-33. {
-34. "type": 0,
-35. "text": "立即支付",
-36. "action": "https://***"
-37. }
-38. ]
-39. }
-40. }
+// Request Body
+{
+    "appId": "6**********3",
+    "toOpenId": "A**********F",
+    "sceneId": "10001",
+    "subSceneId": "100010001",
+    "code": "1**********6",
+    "content": {
+        "status": 1,
+        "orderTime": 1715236319,
+        "amount": "¥ 5.00",
+        "productCount": 1,
+        "productName": "霸气芒果",
+        "productImg": "image_test_1",
+        "paymentEndTime": "5分钟内支付",
+        "merchantName": "**********园店",
+        "button": {
+            "type": 0,
+            "text": "立即支付",
+            "action": "https://***"
+        },
+        "clickAction": {
+            "type": 0,
+            "action": "https://***"
+        },
+        "appendButtons": [
+            {
+                "type": 0,
+                "text": "立即支付",
+                "action": "https://***"
+            }
+        ]
+    }
+}
 ```
 
 ## 响应参数
@@ -171,22 +168,22 @@ content_hash: sha256:30e653feaad31b1961addbbe6d25a9de7b224197b070f69efa7d4782b8a
 
 **响应成功示例：**
 
-```
-1. {
-2. "code": "80000000",
-3. "msg": "Success",
-4. "requestId": "157*******006"
-5. }
+```json
+{
+  "code": "80000000",
+  "msg": "Success",
+  "requestId": "157*******006"
+}
 ```
 
 **响应失败示例：**
 
-```
-1. {
-2. "code": "82600010",
-3. "msg": "status content missing required field",
-4. "requestId": "157*******006"
-5. }
+```json
+{
+  "code": "82600010",
+  "msg": "status content missing required field",
+  "requestId": "157*******006"
+}
 ```
 
 ## HTTP响应码
@@ -196,7 +193,7 @@ content_hash: sha256:30e653feaad31b1961addbbe6d25a9de7b224197b070f69efa7d4782b8a
 | 200 | 成功。 | - |
 | 400 | 参数错误。 | 请检查业务响应码并根据业务响应码进一步排查问题。 |
 | 401 | 鉴权失败。 | 请检查HTTP头中Authorization参数。 |
-| 404 | 找不到服务。 | 请检查请求URI是否正确。 |
+| 404 | 找不到服务。 | 请检查请求URL是否正确。 |
 | 500 | 服务内部错误。 | 请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 502 | 请求连接异常，常见于网络状况不稳定。 | 建议稍后重试，或通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 503 | 流量控制。 | · 平均分配发送速度。  · 平均分布推送时间段，不要集中发送。 |
@@ -483,7 +480,7 @@ invalid image id.
 
 **处理步骤**
 
-请检查资源ID对应的图片资源是否存在，不存在则需要通过[申请图片资源托管](../atomic-guides/push-as-timeline.md#section19921168203013)提供图片重新获取资源ID。
+请检查资源ID对应的图片资源是否存在，不存在则需要通过[申请图片资源托管](../atomic-guides/push-as-timeline.md#section592010820304)提供图片重新获取资源ID。
 
 ### 82600015 状态刷新次数超过限制
 

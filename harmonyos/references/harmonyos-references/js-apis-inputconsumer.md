@@ -3,29 +3,25 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.multimodalInput.inputConsumer (全局快捷键)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.inputConsumer (全局快捷键)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:15+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f42503a3de9ea4fa291140cb4a5f5ab4a02b466312e67b34fcd6af309aa60f38
+scraped_at: 2026-09-02T15:02:08+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:83d7545170fee6c451fee4bee3145c3191aec11aaf3755ea1a3f229092c968b7
 ---
 
 全局快捷键订阅模块，用于处理组合按键的订阅，本模块也支持音量键拦截监听能力。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 14开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 全局快捷键指由系统或应用定义的组合按键，系统快捷键指由系统定义的全局快捷键，应用快捷键指由应用定义的全局快捷键。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { inputConsumer, KeyEvent } from '@kit.InputKit';
+```js
+import { inputConsumer, KeyEvent } from '@kit.InputKit';
 ```
 
 ## HotkeyOptions
-
-PhonePC/2in1TabletTVWearable
 
 快捷键选项。
 
@@ -33,29 +29,25 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| preKeys | Array<number> | 否 | 否 | 修饰键（包括 Ctrl、Shift 和 Alt）集合，数量范围[1, 2]，无顺序要求。  例如，Ctrl+Shift+Esc中，Ctrl+Shift称为修饰键。 |
-| finalKey | number | 否 | 否 | 被修饰键，除修饰键和Meta键以外的按键，详细按键介绍请参见[键值](js-apis-keycode.md)。  例如，Ctrl+Shift+Esc中，Esc称为被修饰键。 |
+| preKeys | Array<number> | 否 | 否 | 修饰键（包括 Ctrl、Shift 和 Alt）集合，数量范围[1, 4]，无顺序要求。  例如，Ctrl+Shift+Esc中，Ctrl+Shift称为修饰键。 |
+| finalKey | number | 否 | 否 | 被修饰键，除修饰键和Meta键以外的按键，详细按键介绍请参见[@ohos.multimodalInput.keyCode (键值)](js-apis-keycode.md)。  例如，Ctrl+Shift+Esc中，Esc称为被修饰键。 |
 | isRepeat | boolean | 否 | 是 | 是否上报重复的按键事件。true表示上报，false表示不上报，默认值为true。 |
 
 ## KeyPressedConfig16+
-
-PhonePC/2in1TabletTVWearable
 
 按键事件消费设置。
 
 **系统能力：** SystemCapability.MultimodalInput.Input.InputConsumer
 
-**设备行为差异**：API version 23之前，该接口在Phone和Tablet设备中可正常调用，在其他设备上返回801错误码。从API version 23开始，该接口在Phone、Tablet、PC/2in1、TV和Car设备中可正常调用，在其他设备上返回801错误码。
+**设备行为差异**：API version 19之前，该接口在Phone、Tablet和PC/2in1设备中可正常调用，在其他设备上返回801错误码。从API version 19开始，该接口在Phone、Tablet、PC/2in1和TV设备中可正常调用，在其他设备上返回801错误码。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| key | number | 否 | 否 | 按键键值。  **说明：** 从API version 21开始，支持[KEYCODE\_VOLUME\_UP](js-apis-keycode.md#keycode)键、[KEYCODE\_VOLUME\_DOWN](js-apis-keycode.md#keycode)键、[KEYCODE\_MEDIA\_PLAY\_PAUSE](js-apis-keycode.md#keycode)键、[KEYCODE\_MEDIA\_NEXT](js-apis-keycode.md#keycode)键和[KEYCODE\_MEDIA\_PREVIOUS](js-apis-keycode.md#keycode)键。  对于API version 20及之前的版本，仅支持[KEYCODE\_VOLUME\_UP](js-apis-keycode.md#keycode)键和[KEYCODE\_VOLUME\_DOWN](js-apis-keycode.md#keycode)键。 |
+| key | number | 否 | 否 | 按键键值。  **说明：** 从API版本26.0.0开始，新增支持[KEYCODE\_FINGERPRINT\_SLIDE\_UP](js-apis-keycode.md#keycode)键和[KEYCODE\_FINGERPRINT\_SLIDE\_DOWN](js-apis-keycode.md#keycode)键，非设备通用键值，使用前请判断当前设备是否支持相关按键事件上报，请参考[优先响应系统功能键开发指导](../harmonyos-guides/keypressed-guidelines.md)。  从API version 21开始，新增支持[KEYCODE\_MEDIA\_PLAY\_PAUSE](js-apis-keycode.md#keycode)键、[KEYCODE\_MEDIA\_NEXT](js-apis-keycode.md#keycode)键和[KEYCODE\_MEDIA\_PREVIOUS](js-apis-keycode.md#keycode)键。  对于API version 20及之前的版本，仅支持[KEYCODE\_VOLUME\_UP](js-apis-keycode.md#keycode)键和[KEYCODE\_VOLUME\_DOWN](js-apis-keycode.md#keycode)键。 |
 | action | number | 否 | 否 | 订阅指定的按键事件。  **说明：** 从API version 21开始，支持取值为1和2，取值为1表示订阅按键按下事件，取值为2表示同时订阅按键按下事件和按键抬起事件。  对于API version 20及之前的版本，仅支持取值为1，表示订阅按键按下事件。 |
 | isRepeat | boolean | 否 | 否 | 是否上报重复的按键事件。true表示上报，false表示不上报，默认值为true。 |
 
 ## inputConsumer.getAllSystemHotkeys
-
-PhonePC/2in1TabletTVWearable
 
 getAllSystemHotkeys(): Promise<Array<HotkeyOptions>>
 
@@ -69,7 +61,7 @@ getAllSystemHotkeys(): Promise<Array<HotkeyOptions>>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<Array<HotkeyOptions>> | Promise对象，返回所有系统快捷键的列表。 |
+| Promise<Array<[HotkeyOptions](js-apis-inputconsumer.md#hotkeyoptions)>> | Promise对象，返回所有系统快捷键的列表。 |
 
 **错误码**：
 
@@ -81,31 +73,30 @@ getAllSystemHotkeys(): Promise<Array<HotkeyOptions>>
 
 **示例：**
 
-```
-1. import { inputConsumer } from '@kit.InputKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { inputConsumer } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. RelativeContainer() {
-9. Text()
-10. .onClick(() => {
-11. inputConsumer.getAllSystemHotkeys().then((data: Array<inputConsumer.HotkeyOptions>) => {
-12. console.info(`List of system hotkeys : ${JSON.stringify(data)}`);
-13. }).catch((error: BusinessError) => {
-14. console.error(`Get all system hotkeys failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-15. })
-16. })
-17. }
-18. }
-19. }
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Text()
+        .onClick(() => {
+          // 获取所有系统热键
+          inputConsumer.getAllSystemHotkeys().then((data: Array<inputConsumer.HotkeyOptions>) => {
+            console.info(`Succeeded in getting list of system hotkeys: ${JSON.stringify(data)}.`);
+          }).catch((error: BusinessError) => {
+            console.error(`Failed to get all system hotkeys, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+          })
+        })
+    }
+  }
+}
 ```
 
 ## inputConsumer.on('hotkeyChange')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'hotkeyChange', hotkeyOptions: HotkeyOptions, callback: Callback<HotkeyOptions>): void
 
@@ -121,7 +112,7 @@ on(type: 'hotkeyChange', hotkeyOptions: HotkeyOptions, callback: Callback<Hotkey
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定取值为'hotkeyChange'。 |
 | hotkeyOptions | [HotkeyOptions](js-apis-inputconsumer.md#hotkeyoptions) | 是 | 快捷键选项。 |
-| callback | Callback<HotkeyOptions> | 是 | 回调函数，获取满足条件的组合按键输入事件。 |
+| callback | Callback<[HotkeyOptions](js-apis-inputconsumer.md#hotkeyoptions)> | 是 | 回调函数，返回满足条件的组合按键输入事件。 |
 
 **错误码**：
 
@@ -129,47 +120,47 @@ on(type: 'hotkeyChange', hotkeyOptions: HotkeyOptions, callback: Callback<Hotkey
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 801 | Capability not supported. |
 | 4200002 | The hotkey has been used by the system. |
 | 4200003 | The hotkey has been subscribed to by another. |
 
 **示例：**
 
-```
-1. import { inputConsumer } from '@kit.InputKit';
+```js
+import { inputConsumer } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. build() {
-7. RelativeContainer() {
-8. Text()
-9. .onClick(() => {
-10. let leftCtrlKey = 2072;
-11. let zKey = 2042;
-12. let hotkeyOptions: inputConsumer.HotkeyOptions = {
-13. preKeys: [leftCtrlKey],
-14. finalKey: zKey,
-15. isRepeat: true
-16. };
-17. let hotkeyCallback = (hotkeyOptions: inputConsumer.HotkeyOptions) => {
-18. console.info(`hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
-19. }
-20. try {
-21. inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
-22. } catch (error) {
-23. console.error(`Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-24. }
-25. })
-26. }
-27. }
-28. }
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Text()
+        .onClick(() => {
+          let leftCtrlKey = 2072;
+          let zKey = 2042;
+          let hotkeyOptions: inputConsumer.HotkeyOptions = {
+            preKeys: [leftCtrlKey],
+            finalKey: zKey,
+            isRepeat: true
+          };
+          let hotkeyCallback = (hotkeyOptions: inputConsumer.HotkeyOptions) => {
+            console.info(`Succeeded in consuming hotkey, hotkeyOptions: ${JSON.stringify(hotkeyOptions)}.`);
+          };
+          try {
+            // 订阅热键变更事件
+            inputConsumer.on('hotkeyChange', hotkeyOptions, hotkeyCallback);
+          } catch (error) {
+            console.error(`Failed to Subscribe hot key, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+          }
+        })
+    }
+  }
+}
 ```
 
 ## inputConsumer.off('hotkeyChange')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'hotkeyChange', hotkeyOptions: HotkeyOptions, callback?: Callback<HotkeyOptions>): void
 
@@ -177,15 +168,13 @@ off(type: 'hotkeyChange', hotkeyOptions: HotkeyOptions, callback?: Callback<Hotk
 
 **系统能力：** SystemCapability.MultimodalInput.Input.InputConsumer
 
-**设备行为差异**：该接口在Wearable设备上返回801错误码，在其他设备上可正常调用。
-
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定取值为'hotkeyChange'。 |
 | hotkeyOptions | [HotkeyOptions](js-apis-inputconsumer.md#hotkeyoptions) | 是 | 快捷键选项。 |
-| callback | Callback<HotkeyOptions> | 否 | 需要取消订阅的回调函数。若缺省，则取消当前应用快捷键选项已订阅的所有回调函数。 |
+| callback | Callback<[HotkeyOptions](js-apis-inputconsumer.md#hotkeyoptions)> | 否 | 需要取消订阅的回调函数。若缺省，则取消当前应用快捷键选项已订阅的所有回调函数。 |
 
 **错误码**：
 
@@ -193,84 +182,88 @@ off(type: 'hotkeyChange', hotkeyOptions: HotkeyOptions, callback?: Callback<Hotk
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 801 | Capability not supported. |
 
 **示例：**
 
-```
-1. import { inputConsumer } from '@kit.InputKit';
+```js
+import { inputConsumer } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. build() {
-7. RelativeContainer() {
-8. Text()
-9. .onClick(() => {
-10. let leftCtrlKey = 2072;
-11. let zKey = 2042;
-12. // 取消订阅单个应用快捷键回调函数
-13. let hotkeyCallback = (hotkeyOptions: inputConsumer.HotkeyOptions) => {
-14. console.info(`hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
-15. }
-16. let hotkeyOption: inputConsumer.HotkeyOptions = { preKeys: [leftCtrlKey], finalKey: zKey, isRepeat: true };
-17. try {
-18. inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-19. inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
-20. console.info(`Unsubscribe success`);
-21. } catch (error) {
-22. console.error(`Execute failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-23. }
-24. })
-25. }
-26. }
-27. }
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Text()
+        .onClick(() => {
+          let leftCtrlKey = 2072;
+          let zKey = 2042;
+          // 取消订阅单个应用快捷键回调函数
+          let hotkeyCallback = (hotkeyOptions: inputConsumer.HotkeyOptions) => {
+            console.info(`Succeeded in consuming hotkey, hotkeyOptions: ${JSON.stringify(hotkeyOptions)}.`);
+          };
+          let hotkeyOption: inputConsumer.HotkeyOptions = { preKeys: [leftCtrlKey], finalKey: zKey, isRepeat: true };
+          try {
+            // 订阅热键变更事件
+            inputConsumer.on('hotkeyChange', hotkeyOption, hotkeyCallback);
+            // 取消订阅热键变更事件
+            inputConsumer.off('hotkeyChange', hotkeyOption, hotkeyCallback);
+            console.info(`Succeeded in unsubscribing.`);
+          } catch (error) {
+            console.error(`Failed to unsubscribe, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+          }
+        })
+    }
+  }
+}
 ```
 
-```
-1. import { inputConsumer } from '@kit.InputKit';
+```js
+import { inputConsumer } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. build() {
-7. RelativeContainer() {
-8. Text()
-9. .onClick(() => {
-10. let leftCtrlKey = 2072;
-11. let zKey = 2042;
-12. // 取消订阅所有应用快捷键回调函数
-13. let hotkeyCallback = (hotkeyOptions: inputConsumer.HotkeyOptions) => {
-14. console.info(`hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
-15. }
-16. let hotkeyOption: inputConsumer.HotkeyOptions = { preKeys: [leftCtrlKey], finalKey: zKey, isRepeat: true };
-17. try {
-18. inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-19. inputConsumer.off("hotkeyChange", hotkeyOption);
-20. console.info(`Unsubscribe success`);
-21. } catch (error) {
-22. console.error(`Execute failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-23. }
-24. })
-25. }
-26. }
-27. }
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Text()
+        .onClick(() => {
+          let leftCtrlKey = 2072;
+          let zKey = 2042;
+          // 取消订阅所有应用快捷键回调函数
+          let hotkeyCallback = (hotkeyOptions: inputConsumer.HotkeyOptions) => {
+            console.info(`Succeeded in consuming hotkey, hotkeyOptions: ${JSON.stringify(hotkeyOptions)}.`);
+          };
+          let hotkeyOption: inputConsumer.HotkeyOptions = { preKeys: [leftCtrlKey], finalKey: zKey, isRepeat: true };
+          try {
+            // 订阅热键变更事件
+            inputConsumer.on('hotkeyChange', hotkeyOption, hotkeyCallback);
+            // 取消订阅热键变更事件
+            inputConsumer.off('hotkeyChange', hotkeyOption);
+            console.info(`Succeeded in unsubscribing.`);
+          } catch (error) {
+            console.error(`Failed to unsubscribe, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+          }
+        })
+    }
+  }
+}
 ```
 
 ## inputConsumer.on('keyPressed')16+
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'keyPressed', options: KeyPressedConfig, callback: Callback<KeyEvent>): void
 
-订阅按键按下事件，使用callback异步回调。若当前应用窗口为前台焦点窗口，用户按下指定按键，会触发回调。
+订阅按键按下事件。若当前应用窗口为前台焦点窗口，用户按下指定按键，会触发回调。使用callback异步回调。
 
 订阅成功后，该按键事件的系统默认行为将被屏蔽，即不会再触发系统级的响应，如音量调节。要恢复系统响应，请使用[off](js-apis-inputconsumer.md#inputconsumeroffkeypressed16)方法取消订阅。
 
 **系统能力：** SystemCapability.MultimodalInput.Input.InputConsumer
 
-**设备行为差异**：API version 23之前，该接口在Phone和Tablet设备中可正常调用，在其他设备上返回801错误码。从API version 23开始，该接口在Phone、Tablet、PC/2in1、TV和Car设备中可正常调用，在其他设备上返回801错误码。
+**设备行为差异**：API version 19之前，该接口在Phone、Tablet和PC/2in1设备中可正常调用，在其他设备上返回801错误码。从API version 19开始，该接口在Phone、Tablet、PC/2in1和TV设备中可正常调用，在其他设备上返回801错误码。
 
 **参数：**
 
@@ -278,7 +271,7 @@ on(type: 'keyPressed', options: KeyPressedConfig, callback: Callback<KeyEvent>):
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定取值为'keyPressed'。 |
 | options | [KeyPressedConfig](js-apis-inputconsumer.md#keypressedconfig16) | 是 | 按键事件消费设置。 |
-| callback | Callback<[KeyEvent](js-apis-keyevent.md#keyevent)> | 是 | 回调函数，用于返回按键事件。订阅不同的按键事件需要使用不同的callback，否则订阅不生效。 |
+| callback | Callback<[KeyEvent](js-apis-keyevent.md#keyevent)> | 是 | 回调函数，返回按键事件。订阅不同的按键事件需要使用不同的callback，否则订阅不生效。 |
 
 **错误码**：
 
@@ -286,42 +279,42 @@ on(type: 'keyPressed', options: KeyPressedConfig, callback: Callback<KeyEvent>):
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 801 | Capability not supported. |
 
 **示例：**
 
-```
-1. import { inputConsumer, KeyEvent } from '@kit.InputKit';
+```js
+import { inputConsumer, KeyEvent } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. build() {
-7. RelativeContainer() {
-8. Text()
-9. .onClick(() => {
-10. try {
-11. let options: inputConsumer.KeyPressedConfig = {
-12. key: 16,
-13. action: 1,
-14. isRepeat: false,
-15. }
-16. inputConsumer.on('keyPressed', options, (event: KeyEvent) => {
-17. console.info(`Subscribe success ${JSON.stringify(event)}`);
-18. });
-19. } catch (error) {
-20. console.error(`Subscribe execute failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-21. }
-22. })
-23. }
-24. }
-25. }
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Text()
+        .onClick(() => {
+          try {
+            let options: inputConsumer.KeyPressedConfig = {
+              key: 16,
+              action: 1,
+              isRepeat: false,
+            }
+            // 订阅按键按下事件
+            inputConsumer.on('keyPressed', options, (event: KeyEvent) => {
+              console.info(`Succeeded in subscribing ${JSON.stringify(event)}.`);
+            });
+          } catch (error) {
+            console.error(`Failed to subscribe , Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+          }
+        })
+    }
+  }
+}
 ```
 
 ## inputConsumer.off('keyPressed')16+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'keyPressed', callback?: Callback<KeyEvent>): void
 
@@ -329,7 +322,7 @@ off(type: 'keyPressed', callback?: Callback<KeyEvent>): void
 
 **系统能力：** SystemCapability.MultimodalInput.Input.InputConsumer
 
-**设备行为差异**：API version 23之前，该接口在Phone和Tablet设备中可正常调用，在其他设备上返回801错误码。从API version 23开始，该接口在Phone、Tablet、PC/2in1、TV和Car设备中可正常调用，在其他设备上返回801错误码。
+**设备行为差异**：API version 19之前，该接口在Phone、Tablet和PC/2in1设备中可正常调用，在其他设备上返回801错误码。从API version 19开始，该接口在Phone、Tablet、PC/2in1和TV设备中可正常调用，在其他设备上返回801错误码。
 
 **参数：**
 
@@ -344,40 +337,43 @@ off(type: 'keyPressed', callback?: Callback<KeyEvent>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 801 | Capability not supported. |
 
 **示例：**
 
-```
-1. import { inputConsumer, KeyEvent } from '@kit.InputKit';
+```js
+import { inputConsumer, KeyEvent } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. build() {
-7. RelativeContainer() {
-8. Text()
-9. .onClick(() => {
-10. try {
-11. // 取消指定回调函数
-12. let options: inputConsumer.KeyPressedConfig = {
-13. key: 16,
-14. action: 1,
-15. isRepeat: false,
-16. }
-17. let callback = (event: KeyEvent) => {
-18. console.info(`Unsubscribe success ${JSON.stringify(event)}`);
-19. }
-20. inputConsumer.on('keyPressed', options, callback);
-21. inputConsumer.off('keyPressed', callback);
-22. // 取消当前已订阅的所有回调函数
-23. inputConsumer.off("keyPressed");
-24. } catch (error) {
-25. console.error(`Unsubscribe execute failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-26. }
-27. })
-28. }
-29. }
-30. }
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Text()
+        .onClick(() => {
+          try {
+            // 取消指定回调函数
+            let options: inputConsumer.KeyPressedConfig = {
+              key: 16,
+              action: 1,
+              isRepeat: false,
+            }
+            let callback = (event: KeyEvent) => {
+              console.info(`Succeeded in unsubscribing ${JSON.stringify(event)}.`);
+            };
+            // 订阅按键按下事件
+            inputConsumer.on('keyPressed', options, callback);
+            // 取消订阅按键按下事件
+            inputConsumer.off('keyPressed', callback);
+            // 取消当前已订阅的所有回调函数
+            inputConsumer.off('keyPressed');
+          } catch (error) {
+            console.error(`Failed to unsubscribe, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+          }
+        })
+    }
+  }
+}
 ```

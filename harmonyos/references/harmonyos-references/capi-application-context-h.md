@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-appl
 title: application_context.h
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > C API > 头文件 > application_context.h
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4f2fd471ec6b810d73ce8d49b77ad381e8f3872a96a4d0c8d04af7c2a3746a8c
+scraped_at: 2026-09-02T15:00:36+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e6078d30126117efa17de84b0263afeed0bf9d98556de4f89e562e3347a022cd
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供应用级别上下文相关的接口。
 
@@ -26,43 +24,36 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
 | [AbilityRuntime\_ErrorCode OH\_AbilityRuntime\_ApplicationContextGetCacheDir(char\* buffer, int32\_t bufferSize, int32\_t\* writeLength)](capi-application-context-h.md#oh_abilityruntime_applicationcontextgetcachedir) | 获取本应用的应用级的缓存目录。 |
 | [AbilityRuntime\_ErrorCode OH\_AbilityRuntime\_ApplicationContextGetAreaMode(AbilityRuntime\_AreaMode\* areaMode)](capi-application-context-h.md#oh_abilityruntime_applicationcontextgetareamode) | 获取本应用的应用级的文件数据加密等级。 |
 | [AbilityRuntime\_ErrorCode OH\_AbilityRuntime\_ApplicationContextGetBundleName(char\* buffer, int32\_t bufferSize, int32\_t\* writeLength)](capi-application-context-h.md#oh_abilityruntime_applicationcontextgetbundlename) | 获取应用包名。 |
-| [AbilityRuntime\_ErrorCode OH\_AbilityRuntime\_ApplicationContextGetTempDir(char\* buffer, const int32\_t bufferSize, int32\_t\* writeLength)](capi-application-context-h.md#oh_abilityruntime_applicationcontextgettempdir) | 获取本应用的应用级的临时文件目录。 |
-| [AbilityRuntime\_ErrorCode OH\_AbilityRuntime\_ApplicationContextGetFilesDir(char\* buffer, const int32\_t bufferSize, int32\_t\* writeLength)](capi-application-context-h.md#oh_abilityruntime_applicationcontextgetfilesdir) | 获取本应用的应用级的通用文件目录。 |
+| [AbilityRuntime\_ErrorCode OH\_AbilityRuntime\_ApplicationContextGetTempDir(char\* buffer, const int32\_t bufferSize, int32\_t\* writeLength)](capi-application-context-h.md#oh_abilityruntime_applicationcontextgettempdir) | 获取本应用的应用级的临时文件目录。该目录用于存储应用运行期间的临时文件，这些文件在应用退出或系统清理时可能被删除。 |
+| [AbilityRuntime\_ErrorCode OH\_AbilityRuntime\_ApplicationContextGetFilesDir(char\* buffer, const int32\_t bufferSize, int32\_t\* writeLength)](capi-application-context-h.md#oh_abilityruntime_applicationcontextgetfilesdir) | 获取本应用的应用级的通用文件目录。该目录用于存储应用需要持久化的文件，如用户生成的文档、下载的文件、应用数据等。 |
 | [AbilityRuntime\_ErrorCode OH\_AbilityRuntime\_ApplicationContextGetDatabaseDir(char\* buffer, const int32\_t bufferSize, int32\_t\* writeLength)](capi-application-context-h.md#oh_abilityruntime_applicationcontextgetdatabasedir) | 获取本应用的应用级的数据库文件目录。 |
 | [AbilityRuntime\_ErrorCode OH\_AbilityRuntime\_ApplicationContextGetPreferencesDir(char\* buffer, const int32\_t bufferSize, int32\_t\* writeLength)](capi-application-context-h.md#oh_abilityruntime_applicationcontextgetpreferencesdir) | 获取本应用的应用级的首选项文件目录。 |
 | [AbilityRuntime\_ErrorCode OH\_AbilityRuntime\_ApplicationContextGetBundleCodeDir(char\* buffer, const int32\_t bufferSize, int32\_t\* writeLength)](capi-application-context-h.md#oh_abilityruntime_applicationcontextgetbundlecodedir) | 获取本应用的应用级的安装文件目录。 |
 | [AbilityRuntime\_ErrorCode OH\_AbilityRuntime\_ApplicationContextGetDistributedFilesDir(char\* buffer, const int32\_t bufferSize, int32\_t\* writeLength)](capi-application-context-h.md#oh_abilityruntime_applicationcontextgetdistributedfilesdir) | 获取本应用的应用级的分布式文件目录。 |
 | [AbilityRuntime\_ErrorCode OH\_AbilityRuntime\_ApplicationContextGetCloudFileDir(char\* buffer, const int32\_t bufferSize, int32\_t\* writeLength)](capi-application-context-h.md#oh_abilityruntime_applicationcontextgetcloudfiledir) | 获取本应用的应用级的云文件目录。 |
 | [AbilityRuntime\_ErrorCode OH\_AbilityRuntime\_ApplicationContextGetLogFileDir(char\* buffer, const int32\_t bufferSize, int32\_t\* writeLength)](capi-application-context-h.md#oh_abilityruntime_applicationcontextgetlogfiledir) | 获取本应用的应用级的日志文件目录。 |
-| [AbilityRuntime\_ErrorCode OH\_AbilityRuntime\_ApplicationContextGetResourceDir(const char\* moduleName, char\* buffer, const int32\_t bufferSize, int32\_t\* writeLength)](capi-application-context-h.md#oh_abilityruntime_applicationcontextgetresourcedir) | 获取应用级别的资源目录。 |
+| [AbilityRuntime\_ErrorCode OH\_AbilityRuntime\_ApplicationContextGetResourceDir(const char\* moduleName, char\* buffer, const int32\_t bufferSize, int32\_t\* writeLength)](capi-application-context-h.md#oh_abilityruntime_applicationcontextgetresourcedir) | 获取本应用的应用级的资源目录。 |
 | [AbilityRuntime\_ErrorCode OH\_AbilityRuntime\_StartSelfUIAbility(AbilityBase\_Want \*want)](capi-application-context-h.md#oh_abilityruntime_startselfuiability) | 启动当前应用的UIAbility。 |
-| [AbilityRuntime\_ErrorCode OH\_AbilityRuntime\_StartSelfUIAbilityWithStartOptions(AbilityBase\_Want \*want,AbilityRuntime\_StartOptions \*options)](capi-application-context-h.md#oh_abilityruntime_startselfuiabilitywithstartoptions) | 通过StartOptions启动当前应用的UIAbility。 |
+| [AbilityRuntime\_ErrorCode OH\_AbilityRuntime\_StartSelfUIAbilityWithStartOptions(AbilityBase\_Want \*want, AbilityRuntime\_StartOptions \*options)](capi-application-context-h.md#oh_abilityruntime_startselfuiabilitywithstartoptions) | 通过StartOptions启动当前应用的UIAbility。 |
 | [AbilityRuntime\_ErrorCode OH\_AbilityRuntime\_ApplicationContextGetVersionCode(int64\_t\* versionCode)](capi-application-context-h.md#oh_abilityruntime_applicationcontextgetversioncode) | 获取应用版本号。 |
 | [AbilityRuntime\_ErrorCode OH\_AbilityRuntime\_StartSelfUIAbilityWithPidResult(AbilityBase\_Want \*want, AbilityRuntime\_StartOptions \*options, int32\_t \*targetPid)](capi-application-context-h.md#oh_abilityruntime_startselfuiabilitywithpidresult) | 通过StartOptions启动当前应用的UIAbility，并获取目标UIAbility的进程号。 |
 | [AbilityRuntime\_ErrorCode OH\_AbilityRuntime\_ApplicationContextGetLaunchParameter(char\* buffer, const int32\_t bufferSize, int32\_t\* writeLength)](capi-application-context-h.md#oh_abilityruntime_applicationcontextgetlaunchparameter) | 获取本应用首次启动UIAbility的WantParams参数。 |
 | [AbilityRuntime\_ErrorCode OH\_AbilityRuntime\_ApplicationContextGetLatestParameter(char\* buffer, const int32\_t bufferSize, int32\_t\* writeLength)](capi-application-context-h.md#oh_abilityruntime_applicationcontextgetlatestparameter) | 获取本应用最近一次启动UIAbility的WantParams参数。 |
+| [AbilityRuntime\_ErrorCode OH\_AbilityRuntime\_ApplicationContextNotifyPageChanged(const char\* targetPageName, int32\_t targetPageNameLength, int32\_t windowId)](capi-application-context-h.md#oh_abilityruntime_applicationcontextnotifypagechanged) | 该接口仅支持三方框架调用。三方框架每次切换页面时，将目标页面信息（包含目标页面路径、目标页面路径长度、目标页面对应的窗口ID）通知给系统。使系统能够感知到当前应用窗口处于哪个页面，从而进行页面管理。 |
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AbilityRuntime\_ApplicationContextGetCacheDir()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetCacheDir(char* buffer, int32_t bufferSize, int32_t* writeLength)
+```c
+AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetCacheDir(char* buffer, int32_t bufferSize, int32_t* writeLength)
 ```
 
 **描述**
@@ -83,14 +74,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[子进程](capi-childprocess.md)中应用级别上下文不存在。 |
+| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[ChildProcess](capi-childprocess.md)中应用级别上下文不存在。 |
 
 ### OH\_AbilityRuntime\_ApplicationContextGetAreaMode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetAreaMode(AbilityRuntime_AreaMode* areaMode)
+```c
+AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetAreaMode(AbilityRuntime_AreaMode* areaMode)
 ```
 
 **描述**
@@ -109,14 +98,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - areaMode为null。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[子进程](capi-childprocess.md)中应用级别上下文不存在。 |
+| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - areaMode为null。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[ChildProcess](capi-childprocess.md)中应用级别上下文不存在。 |
 
 ### OH\_AbilityRuntime\_ApplicationContextGetBundleName()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetBundleName(char* buffer, int32_t bufferSize, int32_t* writeLength)
+```c
+AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetBundleName(char* buffer, int32_t bufferSize, int32_t* writeLength)
 ```
 
 **描述**
@@ -137,19 +124,17 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[子进程](capi-childprocess.md)中应用级别上下文不存在。 |
+| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[ChildProcess](capi-childprocess.md)中应用级别上下文不存在。 |
 
 ### OH\_AbilityRuntime\_ApplicationContextGetTempDir()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetTempDir(char* buffer, const int32_t bufferSize, int32_t* writeLength)
+```c
+AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetTempDir(char* buffer, const int32_t bufferSize, int32_t* writeLength)
 ```
 
 **描述**
 
-获取本应用的应用级的临时文件目录。
+获取本应用的应用级的临时文件目录。该目录用于存储应用运行期间的临时文件，这些文件在应用退出或系统清理时可能被删除。
 
 **起始版本：** 16
 
@@ -165,19 +150,17 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[子进程](capi-childprocess.md)中应用级别上下文不存在。 |
+| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[ChildProcess](capi-childprocess.md)中应用级别上下文不存在。 |
 
 ### OH\_AbilityRuntime\_ApplicationContextGetFilesDir()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetFilesDir(char* buffer, const int32_t bufferSize, int32_t* writeLength)
+```c
+AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetFilesDir(char* buffer, const int32_t bufferSize, int32_t* writeLength)
 ```
 
 **描述**
 
-获取本应用的应用级的通用文件目录。
+获取本应用的应用级的通用文件目录。该目录用于存储应用需要持久化的文件，如用户生成的文档、下载的文件、应用数据等。
 
 **起始版本：** 16
 
@@ -193,14 +176,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[子进程](capi-childprocess.md)中应用级别上下文不存在。 |
+| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[ChildProcess](capi-childprocess.md)中应用级别上下文不存在。 |
 
 ### OH\_AbilityRuntime\_ApplicationContextGetDatabaseDir()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetDatabaseDir(char* buffer, const int32_t bufferSize, int32_t* writeLength)
+```c
+AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetDatabaseDir(char* buffer, const int32_t bufferSize, int32_t* writeLength)
 ```
 
 **描述**
@@ -221,14 +202,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[子进程](capi-childprocess.md)中应用级别上下文不存在。 |
+| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[ChildProcess](capi-childprocess.md)中应用级别上下文不存在。 |
 
 ### OH\_AbilityRuntime\_ApplicationContextGetPreferencesDir()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetPreferencesDir(char* buffer, const int32_t bufferSize, int32_t* writeLength)
+```c
+AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetPreferencesDir(char* buffer, const int32_t bufferSize, int32_t* writeLength)
 ```
 
 **描述**
@@ -249,14 +228,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[子进程](capi-childprocess.md)中应用级别上下文不存在。 |
+| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[ChildProcess](capi-childprocess.md)中应用级别上下文不存在。 |
 
 ### OH\_AbilityRuntime\_ApplicationContextGetBundleCodeDir()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetBundleCodeDir(char* buffer, const int32_t bufferSize, int32_t* writeLength)
+```c
+AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetBundleCodeDir(char* buffer, const int32_t bufferSize, int32_t* writeLength)
 ```
 
 **描述**
@@ -277,14 +254,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[子进程](capi-childprocess.md)中应用级别上下文不存在。 |
+| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[ChildProcess](capi-childprocess.md)中应用级别上下文不存在。 |
 
 ### OH\_AbilityRuntime\_ApplicationContextGetDistributedFilesDir()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetDistributedFilesDir(char* buffer, const int32_t bufferSize, int32_t* writeLength)
+```c
+AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetDistributedFilesDir(char* buffer, const int32_t bufferSize, int32_t* writeLength)
 ```
 
 **描述**
@@ -305,14 +280,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[子进程](capi-childprocess.md)中应用级别上下文不存在。 |
+| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[ChildProcess](capi-childprocess.md)中应用级别上下文不存在。 |
 
 ### OH\_AbilityRuntime\_ApplicationContextGetCloudFileDir()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetCloudFileDir(char* buffer, const int32_t bufferSize, int32_t* writeLength)
+```c
+AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetCloudFileDir(char* buffer, const int32_t bufferSize, int32_t* writeLength)
 ```
 
 **描述**
@@ -333,14 +306,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[子进程](capi-childprocess.md)中应用级别上下文不存在。 |
+| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[ChildProcess](capi-childprocess.md)中应用级别上下文不存在。 |
 
 ### OH\_AbilityRuntime\_ApplicationContextGetLogFileDir()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetLogFileDir(char* buffer, const int32_t bufferSize, int32_t* writeLength)
+```c
+AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetLogFileDir(char* buffer, const int32_t bufferSize, int32_t* writeLength)
 ```
 
 **描述**
@@ -361,14 +332,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[子进程](capi-childprocess.md)中应用级别上下文不存在。 |
+| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[ChildProcess](capi-childprocess.md)中应用级别上下文不存在。 |
 
 ### OH\_AbilityRuntime\_ApplicationContextGetResourceDir()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetResourceDir(const char* moduleName, char* buffer, const int32_t bufferSize, int32_t* writeLength)
+```c
+AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetResourceDir(const char* moduleName, char* buffer, const int32_t bufferSize, int32_t* writeLength)
 ```
 
 **描述**
@@ -381,23 +350,21 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| char\* moduleName | 模块名。 |
+| const char\* moduleName | 模块名，用于指定要获取资源目录的目标模块。开发者可通过bundleManager模块的接口获取应用包含的模块名列表，不同模块名对应不同的资源目录路径。 |
 | char\* buffer | 指向缓冲区的指针，用于接收资源目录。 |
-| int32\_t bufferSize | 缓冲区大小，单位为字节。 |
+| const int32\_t bufferSize | 缓冲区大小，单位为字节。 |
 | int32\_t\* writeLength | 在返回[ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR](capi-ability-runtime-common-h.md#abilityruntime_errorcode)时，表示实际写入到缓冲区的字符串长度，单位为字节。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[子进程](capi-childprocess.md)中应用级别上下文不存在。 |
+| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[ChildProcess](capi-childprocess.md)中应用级别上下文不存在。 |
 
 ### OH\_AbilityRuntime\_StartSelfUIAbility()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityRuntime_ErrorCode OH_AbilityRuntime_StartSelfUIAbility(AbilityBase_Want *want)
+```c
+AbilityRuntime_ErrorCode OH_AbilityRuntime_StartSelfUIAbility(AbilityBase_Want *want)
 ```
 
 **描述**
@@ -408,7 +375,7 @@ PhonePC/2in1TabletTVWearable
 
 **起始版本：** 15
 
-**设备行为差异**：该接口仅在2in1和Tablet设备中可正常调用，在其他设备中返回ABILITY\_RUNTIME\_ERROR\_CODE\_NOT\_SUPPORTED错误码。
+**设备行为差异**：该接口仅在PC/2in1和Tablet设备中可正常调用，在其他设备中返回ABILITY\_RUNTIME\_ERROR\_CODE\_NOT\_SUPPORTED错误码。
 
 **参数：**
 
@@ -424,34 +391,32 @@ PhonePC/2in1TabletTVWearable
 
 **示例代码：**
 
-```
-1. #include <AbilityKit/ability_base/want.h>
-2. #include <AbilityKit/ability_runtime/application_context.h>
+```cpp
+#include <AbilityKit/ability_base/want.h>
+#include <AbilityKit/ability_runtime/application_context.h>
 
-4. void startSelfUIAbilityTest()
-5. {
-6. AbilityBase_Element element;
-7. element.abilityName = const_cast<char*>("EntryAbility");
-8. element.bundleName = const_cast<char*>("com.example.myapplication");
-9. element.moduleName = const_cast<char*>("entry");
-10. AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+void startSelfUIAbilityTest()
+{
+    AbilityBase_Element element;
+    element.abilityName = const_cast<char*>("EntryAbility");
+    element.bundleName = const_cast<char*>("com.example.myapplication");
+    element.moduleName = const_cast<char*>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
 
-12. AbilityRuntime_ErrorCode err = OH_AbilityRuntime_StartSelfUIAbility(want);
-13. if (err != ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
-14. // 记录错误日志以及其他业务处理
-15. return;
-16. }
-17. // 销毁want，防止内存泄漏
-18. OH_AbilityBase_DestroyWant(want);
-19. }
+    AbilityRuntime_ErrorCode err = OH_AbilityRuntime_StartSelfUIAbility(want);
+    if (err != ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+        // 记录错误日志以及其他业务处理
+        return;
+    }
+    // 销毁want，防止内存泄漏
+    OH_AbilityBase_DestroyWant(want);
+}
 ```
 
 ### OH\_AbilityRuntime\_StartSelfUIAbilityWithStartOptions()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityRuntime_ErrorCode OH_AbilityRuntime_StartSelfUIAbilityWithStartOptions(AbilityBase_Want *want,AbilityRuntime_StartOptions *options)
+```c
+AbilityRuntime_ErrorCode OH_AbilityRuntime_StartSelfUIAbilityWithStartOptions(AbilityBase_Want *want,AbilityRuntime_StartOptions *options)
 ```
 
 **描述**
@@ -462,7 +427,7 @@ PhonePC/2in1TabletTVWearable
 
 **起始版本：** 17
 
-**设备行为差异**：该接口仅在2in1和Tablet设备中可正常调用，在其他设备中返回ABILITY\_RUNTIME\_ERROR\_CODE\_NOT\_SUPPORTED错误码。
+**设备行为差异**：该接口仅在PC/2in1和Tablet设备中可正常调用，在其他设备中返回ABILITY\_RUNTIME\_ERROR\_CODE\_NOT\_SUPPORTED错误码。
 
 **参数：**
 
@@ -479,48 +444,46 @@ PhonePC/2in1TabletTVWearable
 
 **示例代码：**
 
-```
-1. #include <AbilityKit/ability_base/want.h>
-2. #include <AbilityKit/ability_runtime/application_context.h>
+```cpp
+#include <AbilityKit/ability_base/want.h>
+#include <AbilityKit/ability_runtime/application_context.h>
 
-4. void demo()
-5. {
-6. AbilityBase_Element element;
-7. element.abilityName = const_cast<char*>("EntryAbility");
-8. element.bundleName = const_cast<char*>("com.example.myapplication");
-9. element.moduleName = const_cast<char*>("entry");
-10. AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
-11. if (want == nullptr) {
-12. // 记录错误日志以及其他业务处理
-13. return;
-14. }
+void demo()
+{
+    AbilityBase_Element element;
+    element.abilityName = const_cast<char*>("EntryAbility");
+    element.bundleName = const_cast<char*>("com.example.myapplication");
+    element.moduleName = const_cast<char*>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    if (want == nullptr) {
+        // 记录错误日志以及其他业务处理
+        return;
+    }
 
-16. AbilityRuntime_StartOptions* options = OH_AbilityRuntime_CreateStartOptions();
-17. if (options == nullptr) {
-18. // 记录错误日志以及其他业务处理
+    AbilityRuntime_StartOptions* options = OH_AbilityRuntime_CreateStartOptions();
+    if (options == nullptr) {
+        // 记录错误日志以及其他业务处理
 
-20. // 销毁want，防止内存泄漏
-21. OH_AbilityBase_DestroyWant(want);
-22. return;
-23. }
-24. AbilityRuntime_ErrorCode err = OH_AbilityRuntime_StartSelfUIAbilityWithStartOptions(want, options);
-25. if (err != ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
-26. // 记录错误日志以及其他业务处理
-27. }
-28. // 销毁want，防止内存泄漏
-29. OH_AbilityBase_DestroyWant(want);
+        // 销毁want，防止内存泄漏
+        OH_AbilityBase_DestroyWant(want);
+        return;
+    }
+    AbilityRuntime_ErrorCode err = OH_AbilityRuntime_StartSelfUIAbilityWithStartOptions(want, options);
+    if (err != ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+        // 记录错误日志以及其他业务处理
+    }
+    // 销毁want，防止内存泄漏
+    OH_AbilityBase_DestroyWant(want);
 
-31. // 销毁options，防止内存泄漏
-32. OH_AbilityRuntime_DestroyStartOptions(&options);
-33. }
+    // 销毁options，防止内存泄漏
+    OH_AbilityRuntime_DestroyStartOptions(&options);
+}
 ```
 
 ### OH\_AbilityRuntime\_ApplicationContextGetVersionCode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetVersionCode(int64_t* versionCode)
+```c
+AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetVersionCode(int64_t* versionCode)
 ```
 
 **描述**
@@ -539,21 +502,19 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参versionCode为空。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[子进程](capi-childprocess.md)中应用级别上下文不存在。  ABILITY\_RUNTIME\_ERROR\_CODE\_GET\_APPLICATION\_INFO\_FAILED - 获取应用信息失败。 |
+| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参versionCode为空。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[ChildProcess](capi-childprocess.md)中应用级别上下文不存在。  ABILITY\_RUNTIME\_ERROR\_CODE\_GET\_APPLICATION\_INFO\_FAILED - 获取应用信息失败，如应用未安装或应用信息损坏。 |
 
 ### OH\_AbilityRuntime\_StartSelfUIAbilityWithPidResult()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityRuntime_ErrorCode OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(AbilityBase_Want *want, AbilityRuntime_StartOptions *options, int32_t *targetPid)
+```c
+AbilityRuntime_ErrorCode OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(AbilityBase_Want *want, AbilityRuntime_StartOptions *options, int32_t *targetPid)
 ```
 
 **描述**
 
 通过StartOptions启动当前应用的UIAbility，并获取目标UIAbility的进程号。
 
-接口不能在应用主线程调用，但可以在应用创建的[子进程](capi-childprocess.md)的主线程中调用。
+接口不能在应用主线程调用，但可以在应用创建的[ChildProcess](capi-childprocess.md)的主线程中调用。
 
 如果在应用的主线程中调用，会返回ABILITY\_RUNTIME\_ERROR\_CODE\_MAIN\_THREAD\_NOT\_SUPPORTED错误码。
 
@@ -561,7 +522,7 @@ PhonePC/2in1TabletTVWearable
 
 **起始版本：** 21
 
-**设备行为差异**：该接口仅在2in1和Tablet设备中可正常调用，在其他设备中返回ABILITY\_RUNTIME\_ERROR\_CODE\_NOT\_SUPPORTED错误码。
+**设备行为差异**：该接口仅在PC/2in1和Tablet设备中可正常调用，在其他设备中返回ABILITY\_RUNTIME\_ERROR\_CODE\_NOT\_SUPPORTED错误码。
 
 **参数：**
 
@@ -579,50 +540,48 @@ PhonePC/2in1TabletTVWearable
 
 **示例代码：**
 
+```cpp
+#include <AbilityKit/ability_base/want.h>
+#include <AbilityKit/ability_runtime/application_context.h>
+
+void demo()
+{
+    AbilityBase_Element element;
+    element.abilityName = const_cast<char*>("EntryAbility");
+    element.bundleName = const_cast<char*>("com.example.myapplication");
+    element.moduleName = const_cast<char*>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    if (want == nullptr) {
+        // 记录错误日志以及其他业务处理
+        return;
+    }
+
+    AbilityRuntime_StartOptions* options = OH_AbilityRuntime_CreateStartOptions();
+    if (options == nullptr) {
+        // 记录错误日志以及其他业务处理
+
+        // 销毁want，防止内存泄漏
+        OH_AbilityBase_DestroyWant(want);
+        return;
+    }
+    int32_t pid = -1;
+    AbilityRuntime_ErrorCode err = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
+    if (err != ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+        // 记录错误日志以及其他业务处理
+    }
+    // 销毁want，防止内存泄漏
+    OH_AbilityBase_DestroyWant(want);
+
+    // 销毁options，防止内存泄漏
+    OH_AbilityRuntime_DestroyStartOptions(&options);
+}
 ```
-1. #include <AbilityKit/ability_base/want.h>
-2. #include <AbilityKit/ability_runtime/application_context.h>
 
-4. void demo()
-5. {
-6. AbilityBase_Element element;
-7. element.abilityName = const_cast<char*>("EntryAbility");
-8. element.bundleName = const_cast<char*>("com.example.myapplication");
-9. element.moduleName = const_cast<char*>("entry");
-10. AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
-11. if (want == nullptr) {
-12. // 记录错误日志以及其他业务处理
-13. return;
-14. }
+### OH\_AbilityRuntime\_ApplicationContextGetLaunchParameter()
 
-16. AbilityRuntime_StartOptions* options = OH_AbilityRuntime_CreateStartOptions();
-17. if (options == nullptr) {
-18. // 记录错误日志以及其他业务处理
-
-20. // 销毁want，防止内存泄漏
-21. OH_AbilityBase_DestroyWant(want);
-22. return;
-23. }
-24. int32_t pid = -1;
-25. AbilityRuntime_ErrorCode err = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
-26. if (err != ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
-27. // 记录错误日志以及其他业务处理
-28. }
-29. // 销毁want，防止内存泄漏
-30. OH_AbilityBase_DestroyWant(want);
-
-32. // 销毁options，防止内存泄漏
-33. OH_AbilityRuntime_DestroyStartOptions(&options);
-34. }
-```
-
-### OH\_AbilityRuntime\_ApplicationContextGetLaunchParameter
-
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetLaunchParameter(
-2. char* buffer, const int32_t bufferSize, int32_t* writeLength)
+```c
+AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetLaunchParameter(
+    char* buffer, const int32_t bufferSize, int32_t* writeLength)
 ```
 
 **描述**
@@ -643,43 +602,41 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[子进程](capi-childprocess.md)中应用级别上下文不存在。 |
+| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[ChildProcess](capi-childprocess.md)中应用级别上下文不存在。 |
 
 **示例：**
 
+```cpp
+#include "napi/native_api.h"
+#include "AbilityKit/ability_runtime/application_context.h"
+
+static napi_value GetLaunchParameter(napi_env env, napi_callback_info info)
+{
+    const int32_t bufferSize = 2048; // 根据实际需要调整缓冲区大小
+    char buffer[bufferSize] = {0};
+    int32_t writeLength = 0;
+    int32_t ret = OH_AbilityRuntime_ApplicationContextGetLaunchParameter(buffer, bufferSize, &writeLength);
+
+    if (ret != ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+        // 失败处理
+    }
+    // 创建 JS 字符串返回WantParams
+    napi_value result;
+    napi_create_string_utf8(env, buffer, writeLength, &result);
+    return result;
+}
 ```
-1. #include "napi/native_api.h"
-2. #include "AbilityKit/ability_runtime/application_context.h"
 
-4. static napi_value GetLaunchParameter(napi_env env, napi_callback_info info)
-5. {
-6. const int32_t bufferSize = 2048; // 根据实际需要调整缓冲区大小
-7. char buffer[bufferSize] = {0};
-8. int32_t writeLength = 0;
-9. int32_t ret = OH_AbilityRuntime_ApplicationContextGetLaunchParameter(buffer, bufferSize, &writeLength);
+### OH\_AbilityRuntime\_ApplicationContextGetLatestParameter()
 
-11. if (ret != ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
-12. // 失败处理
-13. }
-14. // 创建 JS 字符串返回WantParams
-15. napi_value result;
-16. napi_create_string_utf8(env, buffer, writeLength, &result);
-17. return result;
-18. }
-```
-
-### OH\_AbilityRuntime\_ApplicationContextGetLatestParameter
-
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetLatestParameter(
-2. char* buffer, const int32_t bufferSize, int32_t* writeLength)
+```c
+AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetLatestParameter(
+    char* buffer, const int32_t bufferSize, int32_t* writeLength)
 ```
 
 **描述**
 
-获取本应用最近一次启动UIAbility时的WantParams参数，WantParams可参考[Want中的parameters参数](js-apis-inner-ability-want.md)。
+获取本应用最近一次启动UIAbility时的WantParams参数，WantParams可参考[Want中的parameters参数](js-apis-inner-ability-want.md)。适用于需要获取最近一次启动时传递的参数，用于处理最新的启动请求、页面跳转参数解析等场景。
 
 **起始版本：** 21
 
@@ -695,43 +652,41 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[子进程](capi-childprocess.md)中应用级别上下文不存在。 |
+| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 查询成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。  ABILITY\_RUNTIME\_ERROR\_CODE\_CONTEXT\_NOT\_EXIST - 应用上下文不存在，如在应用创建的[ChildProcess](capi-childprocess.md)中应用级别上下文不存在。 |
 
 **示例：**
 
+```cpp
+#include "napi/native_api.h"
+#include "AbilityKit/ability_runtime/application_context.h"
+
+static napi_value GetLatestParameter(napi_env env, napi_callback_info info)
+{
+    const int32_t bufferSize = 2048; // 根据实际需要调整缓冲区大小
+    char buffer[bufferSize] = {0};
+    int32_t writeLength = 0;
+    int32_t ret = OH_AbilityRuntime_ApplicationContextGetLatestParameter(buffer, bufferSize, &writeLength);
+
+    if (ret != ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+        // 失败处理
+    }
+    // 创建 JS 字符串返回WantParams
+    napi_value result;
+    napi_create_string_utf8(env, buffer, writeLength, &result);
+    return result;
+}
 ```
-1. #include "napi/native_api.h"
-2. #include "AbilityKit/ability_runtime/application_context.h"
 
-4. static napi_value GetLatestParameter(napi_env env, napi_callback_info info)
-5. {
-6. const int32_t bufferSize = 2048; // 根据实际需要调整缓冲区大小
-7. char buffer[bufferSize] = {0};
-8. int32_t writeLength = 0;
-9. int32_t ret = OH_AbilityRuntime_ApplicationContextGetLatestParameter(buffer, bufferSize, &writeLength);
+### OH\_AbilityRuntime\_ApplicationContextNotifyPageChanged()
 
-11. if (ret != ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
-12. // 失败处理
-13. }
-14. // 创建 JS 字符串返回WantParams
-15. napi_value result;
-16. napi_create_string_utf8(env, buffer, writeLength, &result);
-17. return result;
-18. }
-```
-
-### OH\_AbilityRuntime\_ApplicationContextNotifyPageChanged
-
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextNotifyPageChanged(
-2. const char* targetPageName, int32_t targetPageNameLength, int32_t windowId)
+```cpp
+AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextNotifyPageChanged(
+    const char* targetPageName, int32_t targetPageNameLength, int32_t windowId)
 ```
 
 **描述**
 
-该接口仅支持三方框架调用。三方框架每次切换页面时，将目标页面信息（包含目标页面路径、目标页面路径长度、目标页面对应的窗口ID）通知给系统。系统可按产品策略调整/恢复页面。
+该接口仅支持三方框架调用。三方框架每次切换页面时，将目标页面信息（包含目标页面路径、目标页面路径长度、目标页面对应的窗口ID）通知给系统。系统可按产品策略调整/恢复页面。适用于三方框架页面导航追踪、页面状态同步、系统级页面优化等场景。
 
 **起始版本：** 23
 
@@ -741,7 +696,7 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | const char\* targetPageName | 目标页面路径。 |
 | int32\_t targetPageNameLength | 目标页面路径长度。 |
-| int32\_t windowId | 目标页面对应的[窗口ID](arkts-apis-window-i.md#windowinfo18)。 |
+| int32\_t windowId | 目标页面对应的[WindowInfo](arkts-apis-window-i.md#windowinfo18)中的窗口ID。 |
 
 **返回：**
 
@@ -751,21 +706,21 @@ PhonePC/2in1TabletTVWearable
 
 **示例：**
 
-```
-1. #include "napi/native_api.h"
-2. #include "AbilityKit/ability_runtime/application_context.h"
+```cpp
+#include "napi/native_api.h"
+#include "AbilityKit/ability_runtime/application_context.h"
 
-4. static bool NotifyPageChanged(napi_env env, napi_callback_info info)
-5. {
-6. const char* testPageName = "https://home.taobao.com/homepage";
-7. int32_t testPageNameLen = 32;
-8. int32_t testWindowId = 12; // 示例数值仅供参考，实际开发需使用有效的窗口ID。
-9. int32_t ret = OH_AbilityRuntime_ApplicationContextNotifyPageChanged(testPageName, testPageNameLen, testWindowId);
+static bool NotifyPageChanged(napi_env env, napi_callback_info info)
+{
+    const char* testPageName = "https://home.taobao.com/homepage";
+    int32_t testPageNameLen = 32;
+    int32_t testWindowId = 12; // 示例数值仅供参考，实际开发需使用有效的窗口ID。
+    int32_t ret = OH_AbilityRuntime_ApplicationContextNotifyPageChanged(testPageName, testPageNameLen, testWindowId);
 
-11. if (ret != ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
-12. // 失败处理
-13. return false;
-14. }
-15. return true;
-16. }
+    if (ret != ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+        // 失败处理
+        return false;
+    }
+    return true;
+}
 ```

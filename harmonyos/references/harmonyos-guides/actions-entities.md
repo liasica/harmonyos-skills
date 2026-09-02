@@ -1,14 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/actions-entities
 title: 常见action与entities（不推荐使用）
-breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > Stage模型应用组件 > 信息传递载体Want > 常见action与entities（不推荐使用）
+breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > 信息传递载体Want > 常见action与entities（不推荐使用）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:45+08:00
+scraped_at: 2026-09-02T14:59:09+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:b3b6940e603c5d98c5a84f876c34e040ce5df3b693d6612506898fcf28fcbddf
+content_hash: sha256:b6852d926b3aed867b1e34008b23d9fda78c7a6d11959e32555e08d648415c71
 ---
 
-说明
+**说明** 
 
 由于action/entity被泛化使用，系统对应用声明action/entity的行为缺少管控，恶意应用虚假声明，抢占流量，导致跳转后功能不可用。后续系统会逐步废弃非必要action/entity，建议通过[指定类型的方式拉起应用](start-intent-panel.md)。
 

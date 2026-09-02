@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-pdfview-p
 title: 设置PDF文档预览效果
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > PdfView预览组件 > 设置PDF文档预览效果
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:47+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:2eb1489603749ef6e6d9dd53b714931c71831aa021114f540f24e9cd283afee2
+scraped_at: 2026-09-02T14:50:30+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:2b5220c0c3243bfaa0d62f54938499edd82bbc9d75c9f493d36ae62eb76e26b4
 ---
 
 pdfViewManager为PDF文档提供了丰富的预览特性。
@@ -16,13 +16,13 @@ pdfViewManager为PDF文档提供了丰富的预览特性。
 
 **图1**：提供了双页预览布局，页面宽度适配和连续滚动的预览方式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/2eVTW2OZSpW6NmXldhsMag/zh-cn_image_0000002589245413.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/hmscP9F9RTm3prlJtXWmLg/zh-cn_image_0000002736434279.png)
 
 ## 接口说明
 
 | 接口名 | 描述 |
 | --- | --- |
-| [setPageLayout](../harmonyos-references/pdf-arkts-pdfviewmanage.md#setpagelayout)(columnCount: pdfService.PageLayout): void | 设置页面布局模式。其中“columnCount”取值如下：  - 1：单页面  - 2：双页面 |
+| [setPageLayout](../harmonyos-references/pdf-arkts-pdfviewmanage.md#setpagelayout)(columnCount: pdfService.PageLayout): void | 设置页面布局模式。其中“columnCount”取值如下：  1：单页面。  2：双页面。 |
 | [setPageContinuous](../harmonyos-references/pdf-arkts-pdfviewmanage.md#setpagecontinuous)(isContinuous: boolean): void | 设置页面滚动是否连续排列。 |
 | [setPageFit](../harmonyos-references/pdf-arkts-pdfviewmanage.md#setpagefit)(pageFit: pdfService.PageFit): void | 设置页面的适配模式。 |
 | [goToPage](../harmonyos-references/pdf-arkts-pdfviewmanage.md#gotopage)(pageIndex: number): void | 跳转到指定页。 |
@@ -36,61 +36,75 @@ pdfViewManager为PDF文档提供了丰富的预览特性。
 4. 在按钮【goTopage】里，调用goToPage方法，设置页面跳转。
 5. 在按钮【zoomPage2】里，调用setPageZoom方法，将页面放大2倍。
 
-```
-1. import { pdfService, PdfView, pdfViewManager } from '@kit.PDFKit';
+```typescript
+import { pdfService, PdfView, pdfViewManager } from '@kit.PDFKit';
+// ...
 
-3. @Entry
-4. @Component
-5. struct PdfPage {
-6. private controller: pdfViewManager.PdfController = new pdfViewManager.PdfController();
-7. private context = this.getUIContext().getHostContext() as Context;
-8. private loadResult: pdfService.ParseResult = pdfService.ParseResult.PARSE_ERROR_FORMAT;
+@Entry
+@Component
+struct PdfViewPreviewMethod {
+  private controller: pdfViewManager.PdfController = new pdfViewManager.PdfController();
+  private context = this.getUIContext().getHostContext() as Context;
+  private loadResult: pdfService.ParseResult = pdfService.ParseResult.PARSE_ERROR_FORMAT;
 
-10. aboutToAppear(): void {
-11. // 确保在工程目录src/main/resources/resfile里存在input.pdf文档
-12. let filePath = this.context.resourceDir + '/input.pdf';
-13. (async () => {
-14. this.loadResult = await this.controller.loadDocument(filePath);
-15. // 注意：这里刚加载文档，请不要在这里立即设置PDF文档的预览方法。
-16. })()
-17. }
+  aboutToAppear(): void {
+    // 确保在工程目录src/main/resources/resfile里存在input.pdf文档
+    let filePath = this.context.resourceDir + '/input.pdf';
+    (async () => {
+      this.loadResult = await this.controller.loadDocument(filePath);
+      // 注意：这里刚加载文档，请不要在这里立即设置PDF文档的预览方法。
+    })()
+  }
 
-19. build() {
-20. Column() {
-21. Row() {
-22. // 设置预览方式
-23. Button('setPreviewMode').onClick(() => {
-24. if (this.loadResult === pdfService.ParseResult.PARSE_SUCCESS) {
-25. // 单页布局
-26. this.controller.setPageLayout(pdfService.PageLayout.LAYOUT_SINGLE);
-27. // 是否连续滚动预览
-28. this.controller.setPageContinuous(true);
-29. // 适配页的预览方式
-30. this.controller.setPageFit(pdfService.PageFit.FIT_PAGE);
-31. }
-32. })
-33. // 跳转到第11页
-34. Button('goTopage').onClick(() => {
-35. if (this.loadResult === pdfService.ParseResult.PARSE_SUCCESS) {
-36. this.controller.goToPage(10);
-37. }
-38. })
-39. // 页面放大2倍
-40. Button('zoomPage2').onClick(() => {
-41. if (this.loadResult === pdfService.ParseResult.PARSE_SUCCESS) {
-42. this.controller.setPageZoom(2);
-43. }
-44. })
-45. }
+  build() {
+    Stack({ alignContent: Alignment.TopStart }) {
+      PdfView({
+        controller: this.controller,
+        pageFit: pdfService.PageFit.FIT_WIDTH,
+        showScroll: true
+      })
+        .id('pdfview_app_view')
+        .width('100%')
+        .height('100%')
+        .margin({ top: 150 })
 
-47. PdfView({
-48. controller: this.controller,
-49. pageFit: pdfService.PageFit.FIT_WIDTH,
-50. showScroll: true
-51. })
-52. .id('pdfview_app_view')
-53. .layoutWeight(1);
-54. }
-55. }
-56. }
+      Column({ space: 10 }) {
+        // ...
+        Row({ space: 10 }) {
+          // 设置预览方式
+          Button('setPreviewMode')
+            .onClick(() => {
+              if (this.loadResult === pdfService.ParseResult.PARSE_SUCCESS) {
+                // 单页布局
+                this.controller.setPageLayout(pdfService.PageLayout.LAYOUT_SINGLE);
+                // 是否连续滚动预览
+                this.controller.setPageContinuous(true);
+                // 适配页的预览方式
+                this.controller.setPageFit(pdfService.PageFit.FIT_PAGE);
+              }
+            })
+          // 跳转到第11页
+          Button('goTopage')
+            .onClick(() => {
+              if (this.loadResult === pdfService.ParseResult.PARSE_SUCCESS) {
+                this.controller.goToPage(10);
+              }
+            })
+        }
+        Row({ space: 10 }) {
+          // 页面放大2倍
+          Button('zoomPage2')
+            .onClick(() => {
+              if (this.loadResult === pdfService.ParseResult.PARSE_SUCCESS) {
+                this.controller.setPageZoom(2);
+              }
+            })
+        }
+      }
+      .alignItems(HorizontalAlign.Start)
+      .padding(10)
+    }
+    .width('100%').height('100%')
+  }
+}
 ```

@@ -1,8 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-skill-all-rec-access-introduction
 title: 概述
+breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 技能调用方案 > 接入方案 > 概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:36+08:00
+scraped_at: 2026-09-02T15:18:00+08:00
 doc_updated_at: 2026-04-20
 content_hash: sha256:c0ffe5d28b31f93b419b635d979c89abada203bb20411d63a3a453e56b32e861
 ---

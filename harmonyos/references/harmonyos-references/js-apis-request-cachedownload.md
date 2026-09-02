@@ -3,32 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-r
 title: "@ohos.request.cacheDownload (缓存下载)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 数据文件处理 > @ohos.request.cacheDownload (缓存下载)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:33+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:99fc879ec692bfef97790575dd6c5acbbbf2e8107f0c5bd82b756b55cd0783e8
+scraped_at: 2026-09-02T15:02:02+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e71dfa704b8795cfd32f295a0d711a5cc55f03e68c41c34c2474a3a885778aa3
 ---
 
 request部件主要给应用提供上传下载文件、后台传输代理的基础能力。
 
 * request的cacheDownload子组件主要给应用提供应用资源提前缓存的基础能力。
-* cacheDownload组件使用HTTP协议进行数据下载，并将数据资源缓存至应用内存或应用沙箱目录的指定文件中。
+* cacheDownload组件使用HTTP和HTTPS协议进行数据下载，并将数据资源缓存至应用内存或应用沙箱目录的指定文件中。
 * 这些缓存数据可以被特定的ArkUI组件（例如：Image组件）使用，从而提升资源加载效率。请查看ArkUI组件文档确定组件是否支持该功能。
 
-说明
+**说明** 
 
 本模块首批接口从API version 18开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { cacheDownload } from '@kit.BasicServicesKit';
+```js
+import { cacheDownload } from '@kit.BasicServicesKit';
 ```
 
 ## SslType21+
-
-PhonePC/2in1TabletTVWearable
 
 表示安全通信协议的枚举。
 
@@ -40,8 +36,6 @@ PhonePC/2in1TabletTVWearable
 | TLCP | 'TLCP' | 使用TLCP安全通信协议。 |
 
 ## ErrorCode23+
-
-PhonePC/2in1TabletTVWearable
 
 表示错误返回信息的特定类型枚举。
 
@@ -57,8 +51,6 @@ PhonePC/2in1TabletTVWearable
 
 ## CacheStrategy23+
 
-PhonePC/2in1TabletTVWearable
-
 表示缓存刷新策略的枚举。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
@@ -68,9 +60,36 @@ PhonePC/2in1TabletTVWearable
 | FORCE | 0 | 强制更新缓存，无论缓存是否已经存在。 |
 | LAZY | 1 | 延迟更新缓存，只有当缓存不存在时才会更新。 |
 
-## CacheDownloadOptions
+## TimeoutOptions
 
-PhonePC/2in1TabletTVWearable
+任务超时配置选项。包括检查网络可用的超时时间和完成HTTP请求的超时时间。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Request.FileTransferAgent
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| networkCheckTimeout | number | 否 | 是 | 检查网络可用的超时时间，单位为秒。默认值为20，最小值为0（取值为0时表示不进行网络可用检查），最大值为20，超出取值范围时抛出异常。  检查网络需要权限：**ohos.permission.GET\_NETWORK\_INFO**，无权限时网络检查失败直到超时。 |
+| httpTotalTimeout | number | 否 | 是 | 完成HTTP请求的超时时间，单位为秒。默认值为60，最小值为1，最大值为4294967 |
+
+## RetryOptions
+
+任务重试配置选项。设置任务的最大重试次数。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Request.FileTransferAgent
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| maxRetryCount | number | 否 | 是 | 任务失败时的最大重试次数。默认值为1，最小值为0，最大值为10，超出取值范围时抛出异常。 |
+
+## CacheDownloadOptions
 
 缓存下载的配置选项。包括HTTP选项、传输选项和任务选项。
 
@@ -82,10 +101,10 @@ PhonePC/2in1TabletTVWearable
 | sslType21+ | [SslType](js-apis-request-cachedownload.md#ssltype21) | 否 | 是 | 使用安全通信协议TLS或TLCP，默认使用TLS。当前TLS和TLCP均不支持双向认证。 |
 | caPath21+ | string | 否 | 是 | CA证书路径。目前仅支持.pem格式证书，默认使用系统预设的CA证书。 |
 | cacheStrategy23+ | [CacheStrategy](js-apis-request-cachedownload.md#cachestrategy23) | 否 | 是 | 使用缓存刷新策略FORCE或LAZY，默认使用FORCE。 |
+| retry | [RetryOptions](js-apis-request-cachedownload.md#retryoptions) | 否 | 是 | 任务的重试配置，用于为单个任务自定义重试行为。当需要为该任务单独指定重试次数时设置；不设置时回退到全局重试配置（setGlobalRetryOptions），再回退到默认值（maxRetryCount默认为1）。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用 |
+| timeout | [TimeoutOptions](js-apis-request-cachedownload.md#timeoutoptions) | 否 | 是 | 任务的超时配置，用于为单个任务自定义超时行为。当需要为该任务单独指定网络检查超时或HTTP请求超时时设置；不设置时回退到全局超时配置（setGlobalTimeoutOptions），再回退到默认值（networkCheckTimeout默认为20、httpTotalTimeout默认为60）。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用 |
 
 ## ResourceInfo20+
-
-PhonePC/2in1TabletTVWearable
 
 预下载的资源信息。
 
@@ -97,20 +116,16 @@ PhonePC/2in1TabletTVWearable
 
 ## NetworkInfo20+
 
-PhonePC/2in1TabletTVWearable
-
 预下载的网络信息。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| dnsServers | string[] | 是 | 否 | 下载资源时使用的dns服务器列表。 |
-| ip23+ | string | 是 | 是 | 下载资源时url的ip地址。当dns解析失败时，ip为undefined。 |
+| dnsServers | string[] | 是 | 否 | 下载资源时使用的DNS服务器列表。 |
+| ip23+ | string | 是 | 是 | 下载资源时url的IP地址。当DNS解析失败时，IP为undefined。 |
 
 ## PerformanceInfo20+
-
-PhonePC/2in1TabletTVWearable
 
 预下载的性能信息。
 
@@ -118,17 +133,15 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| dnsTime | number | 是 | 否 | 从启动到dns解析完成所需的时间，单位：毫秒（ms）。 |
-| connectTime | number | 是 | 否 | 从启动到tcp连接完成所需的时间，单位：毫秒（ms）。 |
-| tlsTime | number | 是 | 否 | 从启动到tls连接完成所需的时间，单位：毫秒（ms）。 |
+| dnsTime | number | 是 | 否 | 从启动到DNS解析完成所需的时间，单位：毫秒（ms）。 |
+| connectTime | number | 是 | 否 | 从启动到TCP连接完成所需的时间，单位：毫秒（ms）。 |
+| tlsTime | number | 是 | 否 | 从启动到TLS连接完成所需的时间，单位：毫秒（ms）。 |
 | firstSendTime | number | 是 | 否 | 从启动到开始发送第一个字节所需的时间，单位：毫秒（ms）。 |
 | firstReceiveTime | number | 是 | 否 | 从启动到接收第一个字节所需的时间，单位：毫秒（ms）。 |
 | totalTime | number | 是 | 否 | 从启动到完成请求所需的时间，单位：毫秒（ms）。 |
 | redirectTime | number | 是 | 否 | 从启动到完成所有重定向步骤所需的时间，单位：毫秒（ms）。 |
 
 ## DownloadInfo20+
-
-PhonePC/2in1TabletTVWearable
 
 预下载的下载信息。
 
@@ -142,8 +155,6 @@ PhonePC/2in1TabletTVWearable
 
 ## DownloadError23+
 
-PhonePC/2in1TabletTVWearable
-
 预下载错误回调的返回信息。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
@@ -155,14 +166,12 @@ PhonePC/2in1TabletTVWearable
 
 ## cacheDownload.download
 
-PhonePC/2in1TabletTVWearable
-
 download(url: string, options: CacheDownloadOptions): void
 
 启动一个缓存下载任务，若传输成功，则将数据下载到内存缓存和文件缓存中。
 
 * 目标资源经过HTTP传输自动解压后的大小不能超过20971520B（即20MB），否则不会保存到内存缓存或文件缓存中。
-* 在缓存下载数据时，如果在该url下已存在缓存内容，新的缓存内容会覆盖旧缓存内容。
+* 在缓存下载数据时，缓存刷新行为由cacheStrategy决定：使用FORCE（默认）策略时，如果在该url下已存在缓存内容，新的缓存内容会覆盖旧缓存内容；使用LAZY策略时，仅当缓存不存在时才会更新缓存。
 * 目标资源在存储到内存缓存或文件缓存中时，依照缓存下载组件的各类型缓存大小上限决定文件是否存储到指定位置，并默认使用“LRU”（最近最少使用）方式替换已有缓存内容。
 * 该方法为同步方法，不阻塞调用线程。
 
@@ -188,28 +197,32 @@ download(url: string, options: CacheDownloadOptions): void
 
 **示例：**
 
-```
-1. import { cacheDownload, BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { cacheDownload, BusinessError } from '@kit.BasicServicesKit';
 
-3. // 提供缓存下载任务的配置选项。
-4. let options: cacheDownload.CacheDownloadOptions = {
-5. headers: { 'Accept': 'application/json' },
-6. sslType: cacheDownload.SslType.TLS,
-7. caPath: '/path/to/ca.pem',
-8. cacheStrategy: cacheDownload.CacheStrategy.FORCE,
-9. };
+// 提供缓存下载任务的配置选项。
+let options: cacheDownload.CacheDownloadOptions = {
+  headers: { 'Accept': 'application/json' },
+  sslType: cacheDownload.SslType.TLS,
+  caPath: '/path/to/ca.pem',
+  cacheStrategy: cacheDownload.CacheStrategy.FORCE,
+  retry: { maxRetryCount: 1 },
+  timeout: {
+    networkCheckTimeout: 20,
+    httpTotalTimeout: 60,
+  }
+};
 
-11. try {
-12. // 进行缓存下载，资源若下载成功会被缓存到应用内存或应用沙箱目录的特定文件中。
-13. cacheDownload.download("https://www.example.com", options);
-14. } catch (err) {
-15. console.error(`Failed to download the resource. err code: ${err.code}, err message: ${err.message}`);
-16. }
+try {
+  // 进行缓存下载，资源若下载成功会被缓存到应用内存或应用沙箱目录的特定文件中。
+  cacheDownload.download("https://www.example.com", options);
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`Failed to download the resource. err code: ${err.code}, err message: ${err.message}`);
+}
 ```
 
 ## cacheDownload.cancel
-
-PhonePC/2in1TabletTVWearable
 
 cancel(url: string): void
 
@@ -236,38 +249,38 @@ cancel(url: string): void
 
 **示例：**
 
-```
-1. import { cacheDownload, BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { cacheDownload, BusinessError } from '@kit.BasicServicesKit';
 
-3. // 提供缓存下载任务的配置选项。
-4. let options: cacheDownload.CacheDownloadOptions = {};
+// 提供缓存下载任务的配置选项。
+let options: cacheDownload.CacheDownloadOptions = {};
 
-6. try {
-7. // 进行缓存下载，资源若下载成功会被缓存到应用内存或应用沙箱目录的特定文件中。
-8. cacheDownload.download("https://www.example.com", options);
-9. } catch (err) {
-10. console.error(`Failed to download the resource. err code: ${err.code}, err message: ${err.message}`);
-11. }
+try {
+  // 进行缓存下载，资源若下载成功会被缓存到应用内存或应用沙箱目录的特定文件中。
+  cacheDownload.download("https://www.example.com", options);
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`Failed to download the resource. err code: ${err.code}, err message: ${err.message}`);
+}
 
-13. // 处理其他业务逻辑。
+// 处理其他业务逻辑。
 
-15. try {
-16. // 在不需要特定任务缓存时，移除缓存下载任务，已缓存的内容不受影响。
-17. cacheDownload.cancel("https://www.example.com");
-18. } catch (err) {
-19. console.error(`Failed to cancel the task. err code: ${err.code}, err message: ${err.message}`);
-20. }
+try {
+  // 在不需要特定任务缓存时，移除缓存下载任务，已缓存的内容不受影响。
+  cacheDownload.cancel("https://www.example.com");
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`Failed to cancel the task. err code: ${err.code}, err message: ${err.message}`);
+}
 ```
 
 ## cacheDownload.setMemoryCacheSize
-
-PhonePC/2in1TabletTVWearable
 
 setMemoryCacheSize(bytes: number): void
 
 设置缓存下载组件能够保存的内存缓存上限。
 
-* 使用该接口调整缓存大小时，默认使用“LRU”（最近最少使用）方式清除多余的已缓存的内存缓存内容。
+* 使用该接口调整缓存大小时，默认使用"LRU"（最近最少使用）方式清除多余的已缓存的内存缓存内容。使用该接口时，若bytes设置为0，将清除所有已缓存的内存缓存内容。
 * 该方法为同步方法，不阻塞调用线程。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
@@ -276,7 +289,7 @@ setMemoryCacheSize(bytes: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| bytes | number | 是 | 设置的缓存上限。默认值为0B，最大值不超过1073741824B（即1GB）。 |
+| bytes | number | 是 | 设置的缓存上限。默认值为0B，最小值为0，最大值不超过1073741824B（即1GB）。若bytes设置为0，将清除所有已缓存的内存缓存内容。 |
 
 **错误码：**
 
@@ -288,20 +301,19 @@ setMemoryCacheSize(bytes: number): void
 
 **示例：**
 
-```
-1. import { cacheDownload, BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { cacheDownload, BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. // 设置内存缓存大小上限。
-5. cacheDownload.setMemoryCacheSize(10 * 1024 * 1024);
-6. } catch (err) {
-7. console.error(`Failed to set memory cache size. err code: ${err.code}, err message: ${err.message}`);
-8. }
+try {
+  // 设置内存缓存大小上限。
+  cacheDownload.setMemoryCacheSize(10 * 1024 * 1024);
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`Failed to set memory cache size. err code: ${err.code}, err message: ${err.message}`);
+}
 ```
 
 ## cacheDownload.setFileCacheSize
-
-PhonePC/2in1TabletTVWearable
 
 setFileCacheSize(bytes: number): void
 
@@ -317,7 +329,7 @@ setFileCacheSize(bytes: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| bytes | number | 是 | 设置的缓存上限。默认值为104857600B（即100MB），最大值不超过4294967296B（即4GB）。 |
+| bytes | number | 是 | 设置的缓存上限。默认值为104857600B（即100MB），最小值为0，最大值不超过4294967296B（即4GB）。 |
 
 **错误码：**
 
@@ -329,18 +341,19 @@ setFileCacheSize(bytes: number): void
 
 **示例：**
 
-```
-1. import { cacheDownload, BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { cacheDownload, BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. // 设置文件缓存大小上限。
-5. cacheDownload.setFileCacheSize(100 * 1024 * 1024);
-6. } catch (err) {
-7. console.error(`Failed to set file cache size. err code: ${err.code}, err message: ${err.message}`);
-8. }
+try {
+  // 设置文件缓存大小上限。
+  cacheDownload.setFileCacheSize(100 * 1024 * 1024);
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`Failed to set file cache size. err code: ${err.code}, err message: ${err.message}`);
+}
 ```
 
-说明
+**说明** 
 
 ​>
 
@@ -350,15 +363,13 @@ setFileCacheSize(bytes: number): void
 
 ## cacheDownload.setDownloadInfoListSize20+
 
-PhonePC/2in1TabletTVWearable
-
 setDownloadInfoListSize(size: number): void
 
 设置下载信息列表的大小。
 
 * 下载信息列表用于存储预下载信息。
 * 下载信息和url一一对应，每次预下载都会生成一个下载信息，相同url下只会保存最新的下载信息。
-* 使用该接口调整列表大小时，size更新增大，列表中原有的信息不变，更新减小，默认使用“LRU”（最近最少使用）方式清除多余的已缓存信息。
+* 使用该接口调整列表大小时，若size增大，列表中原有的信息不变；若size减小，默认使用"LRU"（最近最少使用）方式清除多余的已缓存信息。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
@@ -366,28 +377,27 @@ setDownloadInfoListSize(size: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| size | number | 是 | 设置的下载信息列表大小。取值范围：[0, 8192]，默认为0，表示不会存储任何下载信息。 |
+| size | number | 是 | 设置的下载信息列表大小。取值范围：[0, 8192]，默认为0，表示不会存储任何下载信息。超出取值范围时抛出异常。 |
 
 **示例：**
 
-```
-1. import { cacheDownload, BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { cacheDownload, BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. // 设置下载信息列表大小。
-5. cacheDownload.setDownloadInfoListSize(2048);
-6. } catch (err) {
-7. console.error(`Failed to set download information list size. err code: ${err.code}, err message: ${err.message}`);
-8. }
+try {
+  // 设置下载信息列表大小。
+  cacheDownload.setDownloadInfoListSize(2048);
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`Failed to set download information list size. err code: ${err.code}, err message: ${err.message}`);
+}
 ```
 
 ## cacheDownload.getDownloadInfo20+
 
-PhonePC/2in1TabletTVWearable
-
 getDownloadInfo(url: string): DownloadInfo | undefined
 
-基于url获取预下载的下载信息。信息存储在内存中的下载信息列表，当应用程序退出时清除。
+基于url获取预下载的下载信息。信息存储在内存中的下载信息列表，当应用程序退出时清除。需先调用[setDownloadInfoListSize](js-apis-request-cachedownload.md#cachedownloadsetdownloadinfolistsize20)设置列表大小（大于0）后，预下载信息才会被存储到列表中，否则列表默认大小为0，不存储任何下载信息，getDownloadInfo将返回undefined。
 
 * 如果下载信息列表中能够找到指定url，返回该url对应的最新[DownloadInfo](js-apis-request-cachedownload.md#downloadinfo20)。
 * 如果下载信息列表中找不到指定url，返回undefined。
@@ -402,7 +412,7 @@ getDownloadInfo(url: string): DownloadInfo | undefined
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| url | string | 是 | 待查询的url，最大长度为8192字节。 |
+| url | string | 是 | 待查询的url，支持HTTP和HTTPS协议，最大长度为8192字节，超出长度限制时抛出异常。 |
 
 **返回值：**
 
@@ -418,44 +428,45 @@ getDownloadInfo(url: string): DownloadInfo | undefined
 | --- | --- |
 | 201 | permission denied. |
 
-```
-1. import { cacheDownload, BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { cacheDownload, BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. // 设置下载信息列表大小。
-5. cacheDownload.setDownloadInfoListSize(2048);
-6. } catch (err) {
-7. console.error(`Failed to set download information list size. err code: ${err.code}, err message: ${err.message}`);
-8. }
+try {
+  // 设置下载信息列表大小。
+  cacheDownload.setDownloadInfoListSize(2048);
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`Failed to set download information list size. err code: ${err.code}, err message: ${err.message}`);
+}
 
-10. // 提供缓存下载任务的配置选项。
-11. let options: cacheDownload.CacheDownloadOptions = {};
+// 提供缓存下载任务的配置选项。
+let options: cacheDownload.CacheDownloadOptions = {};
 
-13. try {
-14. // 进行缓存下载，资源若下载成功会被缓存到应用内存或应用沙箱目录的特定文件中。
-15. cacheDownload.download("https://www.example.com", options);
-16. } catch (err) {
-17. console.error(`Failed to download the resource. err code: ${err.code}, err message: ${err.message}`);
-18. }
+try {
+  // 进行缓存下载，资源若下载成功会被缓存到应用内存或应用沙箱目录的特定文件中。
+  cacheDownload.download("https://www.example.com", options);
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`Failed to download the resource. err code: ${err.code}, err message: ${err.message}`);
+}
 
-20. // 处理其他业务逻辑。
+// 处理其他业务逻辑。
 
-22. try {
-23. // 在缓存下载完成后，获取缓存下载的信息。
-24. let downloadInfo = cacheDownload.getDownloadInfo("https://www.example.com");
-25. if (downloadInfo == undefined) {
-26. console.error(`CacheDownload get download info undefined.`);
-27. } else {
-28. console.info(`CacheDownload get download info : ${JSON.stringify(downloadInfo)}`);
-29. }
-30. } catch (err) {
-31. console.error(`Failed to get download info. err code: ${err.code}, err message: ${err.message}`);
-32. }
+try {
+  // 在缓存下载完成后，获取缓存下载的信息。
+  let downloadInfo = cacheDownload.getDownloadInfo("https://www.example.com");
+  if (downloadInfo == undefined) {
+    console.error(`CacheDownload get download info undefined.`);
+  } else {
+    console.info(`CacheDownload get download info : ${JSON.stringify(downloadInfo)}`);
+  }
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`Failed to get download info. err code: ${err.code}, err message: ${err.message}`);
+}
 ```
 
 ## cacheDownload.clearMemoryCache23+
-
-PhonePC/2in1TabletTVWearable
 
 clearMemoryCache(): void
 
@@ -465,15 +476,13 @@ clearMemoryCache(): void
 
 **示例：**
 
-```
-1. import { cacheDownload } from '@kit.BasicServicesKit';
-
-3. cacheDownload.clearMemoryCache();
+```ts
+import { cacheDownload } from '@kit.BasicServicesKit';
+  
+cacheDownload.clearMemoryCache();
 ```
 
 ## cacheDownload.clearFileCache23+
-
-PhonePC/2in1TabletTVWearable
 
 clearFileCache(): void
 
@@ -483,19 +492,17 @@ clearFileCache(): void
 
 **示例：**
 
-```
-1. import { cacheDownload } from '@kit.BasicServicesKit';
-
-3. cacheDownload.clearFileCache();
+```ts
+import { cacheDownload } from '@kit.BasicServicesKit';
+  
+cacheDownload.clearFileCache();
 ```
 
 ## cacheDownload.onDownloadSuccess23+
 
-PhonePC/2in1TabletTVWearable
-
 onDownloadSuccess(url: string, callback: Callback<void>): void
 
-订阅预下载的完成事件。使用callback异步回调。
+订阅预下载的完成事件。使用callback异步回调。与offDownloadSuccess()方法配合使用，在不再需要接收完成事件时应调用offDownloadSuccess()取消订阅，以避免不必要的回调开销。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
@@ -503,34 +510,33 @@ onDownloadSuccess(url: string, callback: Callback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| url | string | 是 | 待注册回调的url，url字符串的最大长度为8192字节。 |
-| callback | Callback<void> | 是 | 回调函数。 |
+| url | string | 是 | 待注册回调的url，支持HTTP和HTTPS协议，url字符串的最大长度为8192字节，超出长度限制时抛出异常。 |
+| callback | Callback<void> | 是 | 下载成功时触发的回调函数，无回调参数。 |
 
 **示例：**
 
-```
-1. import { cacheDownload } from '@kit.BasicServicesKit';
+```ts
+import { cacheDownload, BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. const successCallback = () => {
-5. console.info("Succeeded in getting callback from cacheDownload");
-6. };
-7. // 订阅预下载的完成事件，当下载完成时执行回调
-8. cacheDownload.onDownloadSuccess("https://www.example.com", successCallback)
-9. // 进行缓存下载，资源若下载成功会被缓存到应用内存或应用沙箱目录的特定文件中。
-10. cacheDownload.download("https://www.example.com", {});
-11. } catch (err) {
-12. console.error(`Failed to download the resource. err code: ${err.code}, err message: ${err.message}`);
-13. }
+try {
+  const successCallback = () => {
+    console.info("Succeeded in getting callback from cacheDownload");
+  };
+  // 订阅预下载的完成事件，当下载完成时执行回调
+  cacheDownload.onDownloadSuccess("https://www.example.com", successCallback);
+  // 进行缓存下载，资源若下载成功会被缓存到应用内存或应用沙箱目录的特定文件中。
+  cacheDownload.download("https://www.example.com", {});
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`Failed to download the resource. err code: ${err.code}, err message: ${err.message}`);
+}
 ```
 
 ## cacheDownload.onDownloadError23+
 
-PhonePC/2in1TabletTVWearable
-
 onDownloadError(url: string, callback: Callback<DownloadError>): void
 
-订阅预下载的错误事件。使用callback异步回调。
+订阅预下载的错误事件。使用callback异步回调。与offDownloadError()方法配合使用，在不再需要接收错误事件时应调用offDownloadError()取消订阅，以避免不必要的回调开销。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
@@ -538,34 +544,33 @@ onDownloadError(url: string, callback: Callback<DownloadError>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| url | string | 是 | 待注册回调的url，URL字符串的最大长度为8192字节。 |
+| url | string | 是 | 待注册回调的url，支持HTTP和HTTPS协议，url字符串的最大长度为8192字节，超出长度限制时抛出异常。 |
 | callback | Callback<[DownloadError](js-apis-request-cachedownload.md#downloaderror23)> | 是 | 回调函数，返回预下载的错误信息。 |
 
 **示例：**
 
-```
-1. import { cacheDownload } from '@kit.BasicServicesKit';
+```ts
+import { cacheDownload, BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. const errorCallback = (error: cacheDownload.DownloadError) => {
-5. console.info(`Error callback from cacheDownload.error code: ${error.errorCode}, error message: ${error.message}`);
-6. };
-7. // 订阅预下载的错误事件，当下载错误时执行回调，返回错误信息
-8. cacheDownload.onDownloadError("https://www.example.com", errorCallback)
-9. // 进行缓存下载，资源若下载成功会被缓存到应用内存或应用沙箱目录的特定文件中。
-10. cacheDownload.download("https://www.example.com", {});
-11. } catch (err) {
-12. console.error(`Failed to download the resource. err code: ${err.code}, err message: ${err.message}`);
-13. }
+try {
+  const errorCallback = (error: cacheDownload.DownloadError) => {
+    console.error(`Error callback from cacheDownload. error code: ${error.errorCode}, error message: ${error.message}`);
+  };
+  // 订阅预下载的错误事件，当下载错误时执行回调，返回错误信息
+  cacheDownload.onDownloadError("https://www.example.com", errorCallback);
+  // 进行缓存下载，资源若下载成功会被缓存到应用内存或应用沙箱目录的特定文件中。
+  cacheDownload.download("https://www.example.com", {});
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`Failed to download the resource. err code: ${err.code}, err message: ${err.message}`);
+}
 ```
 
 ## cacheDownload.offDownloadSuccess23+
 
-PhonePC/2in1TabletTVWearable
-
 offDownloadSuccess(url: string, callback?: Callback<void>): void
 
-取消订阅预下载的完成事件。使用callback异步回调。
+取消订阅预下载的完成事件。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
@@ -573,36 +578,35 @@ offDownloadSuccess(url: string, callback?: Callback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| url | string | 是 | 待注册回调的url，url字符串的最大长度为8192字节。 |
-| callback | Callback<void> | 否 | 回调函数。若不填该参数，表示url下的所有完成回调函数。 |
+| url | string | 是 | 待注册回调的url，支持HTTP和HTTPS协议，url字符串的最大长度为8192字节，超出长度限制时抛出异常。 |
+| callback | Callback<void> | 否 | 需要取消订阅的回调函数。若不填该参数，表示取消该url下的所有完成回调函数。 |
 
 **示例：**
 
-```
-1. import { cacheDownload } from '@kit.BasicServicesKit';
+```ts
+import { cacheDownload, BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. const successCallback = () => {
-5. console.info("Succeeded in getting callback from cacheDownload");
-6. };
-7. // 订阅预下载的完成事件，当下载完成时执行回调
-8. cacheDownload.onDownloadSuccess("https://www.example.com", successCallback);
-9. // 取消订阅预下载的完成事件
-10. cacheDownload.offDownloadSuccess("https://www.example.com", successCallback);
-11. // 进行缓存下载，资源若下载成功会被缓存到应用内存或应用沙箱目录的特定文件中。
-12. cacheDownload.download("https://www.example.com", {});
-13. } catch (err) {
-14. console.error(`Failed to download the resource. err code: ${err.code}, err message: ${err.message}`);
-15. }
+try {
+  const successCallback = () => {
+    console.info("Succeeded in getting callback from cacheDownload");
+  };
+  // 订阅预下载的完成事件，当下载完成时执行回调
+  cacheDownload.onDownloadSuccess("https://www.example.com", successCallback);
+  // 取消订阅预下载的完成事件
+  cacheDownload.offDownloadSuccess("https://www.example.com", successCallback);
+  // 进行缓存下载，资源若下载成功会被缓存到应用内存或应用沙箱目录的特定文件中。
+  cacheDownload.download("https://www.example.com", {});
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`Failed to download the resource. err code: ${err.code}, err message: ${err.message}`);
+}
 ```
 
 ## cacheDownload.offDownloadError23+
 
-PhonePC/2in1TabletTVWearable
-
 offDownloadError(url: string, callback?: Callback<DownloadError>): void
 
-取消订阅预下载的错误事件。使用callback异步回调。
+取消订阅预下载的错误事件。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
@@ -610,25 +614,97 @@ offDownloadError(url: string, callback?: Callback<DownloadError>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| url | string | 是 | 待注册回调的url，url字符串最大长度为8192字节。 |
-| callback | Callback<[DownloadError](js-apis-request-cachedownload.md#downloaderror23)> | 否 | 回调函数，返回预下载的错误信息。若不填该参数，表示url下的所有错误回调函数。 |
+| url | string | 是 | 待注册回调的url，支持HTTP和HTTPS协议，url字符串的最大长度为8192字节，超出长度限制时抛出异常。 |
+| callback | Callback<[DownloadError](js-apis-request-cachedownload.md#downloaderror23)> | 否 | 需要取消订阅的回调函数。若不填该参数，表示取消该url下的所有错误回调函数。 |
 
 **示例：**
 
-```
-1. import { cacheDownload } from '@kit.BasicServicesKit';
+```ts
+import { cacheDownload, BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. const errorCallback = (error: cacheDownload.DownloadError) => {
-5. console.info(`Error callback from cacheDownload.error code: ${error.errorCode}, error message: ${error.message}`);
-6. };
-7. // 订阅预下载的错误事件，当下载错误时执行回调，返回错误信息
-8. cacheDownload.onDownloadError("https://www.example.com", errorCallback);
-9. // 取消订阅预下载的错误事件
-10. cacheDownload.offDownloadError("https://www.example.com", errorCallback);
-11. // 进行缓存下载，资源若下载成功会被缓存到应用内存或应用沙箱目录的特定文件中。
-12. cacheDownload.download("https://www.example.com", {});
-13. } catch (err) {
-14. console.error(`Failed to download the resource. err code: ${err.code}, err message: ${err.message}`);
-15. }
+try {
+  const errorCallback = (error: cacheDownload.DownloadError) => {
+    console.error(`Error callback from cacheDownload. error code: ${error.errorCode}, error message: ${error.message}`);
+  };
+  // 订阅预下载的错误事件，当下载错误时执行回调，返回错误信息
+  cacheDownload.onDownloadError("https://www.example.com", errorCallback);
+  // 取消订阅预下载的错误事件
+  cacheDownload.offDownloadError("https://www.example.com", errorCallback);
+  // 进行缓存下载，资源若下载成功会被缓存到应用内存或应用沙箱目录的特定文件中。
+  cacheDownload.download("https://www.example.com", {});
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`Failed to download the resource. err code: ${err.code}, err message: ${err.message}`);
+}
+```
+
+## cacheDownload.setGlobalRetryOptions
+
+setGlobalRetryOptions(options?: RetryOptions): void
+
+设置全局的任务重试配置。当任务未设置特定的重试配置时此配置生效。重试配置优先级：任务设置 > 全局设置 > 默认设置。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Request.FileTransferAgent
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | [RetryOptions](js-apis-request-cachedownload.md#retryoptions) | 否 | 任务重试配置，用于自定义全局任务的重试行为。当需要调整全局重试次数等策略时传入此参数；不传入时保持当前全局重试配置不变。 |
+
+**示例：**
+
+```ts
+import { cacheDownload, BusinessError } from '@kit.BasicServicesKit';
+
+try {
+  // 设置全局的任务最大重试次数
+  cacheDownload.setGlobalRetryOptions({
+    maxRetryCount: 1
+  });
+  cacheDownload.download("https://www.example.com", {});
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`Failed to download the resource. err code: ${err.code}, err message: ${err.message}`);
+}
+```
+
+## cacheDownload.setGlobalTimeoutOptions
+
+setGlobalTimeoutOptions(options?: TimeoutOptions): void
+
+设置全局的任务超时配置。当任务未设置特定的超时配置时此配置生效。超时配置优先级：任务设置 > 全局设置 > 默认设置。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Request.FileTransferAgent
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | [TimeoutOptions](js-apis-request-cachedownload.md#timeoutoptions) | 否 | 任务超时配置，用于自定义全局任务的超时行为。当需要调整全局网络检查超时或HTTP请求超时时传入此参数；不传入时保持当前全局超时配置不变。 |
+
+**示例：**
+
+```ts
+import { cacheDownload, BusinessError } from '@kit.BasicServicesKit';
+
+try {
+  // 设置全局任务超时配置
+  cacheDownload.setGlobalTimeoutOptions({
+    networkCheckTimeout: 20,
+    httpTotalTimeout: 60,
+  });
+  cacheDownload.download("https://www.example.com", {});
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`Failed to download the resource. err code: ${err.code}, err message: ${err.message}`);
+}
 ```

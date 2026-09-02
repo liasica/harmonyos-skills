@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/environmental
 title: 环境准备
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > 环境准备
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:33:31+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:749f1fbb59e48ffe03a57554a44e283239d406cb5e45a95d940c723d8955be1e
+scraped_at: 2026-09-02T14:59:37+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:69f4f3cd75801f5acc889a6e4dbe54e9e12c9441f644a2de82e0459c1b1b869f
 ---
 
 ## 开发工具及配置
 
-DevEco Studio作为驱动开发工具，是进行驱动开发的必备条件之一，我们可以使用该工具进行开发、调试、打包等操作。请下载安装该工具，并参考工具概述中的创建一个新的工程进行基本的操作验证，保证DevEco Studio可正常运行。
+DevEco Studio作为驱动开发工具，是进行驱动开发的必备条件之一，开发者可以使用该工具进行开发、调试、打包等操作。请下载安装该工具，并参考工具概述中的创建一个新的工程进行基本的操作验证，保证DevEco Studio可正常运行。
 
 请使用[华为账号-登录](https://developer.huawei.com/consumer/cn/download/)下载安装该工具，并参考[工具概述](ide-tools-overview.md)中的[创建一个新的工程](ide-create-new-project.md)进行基本的操作验证，保证DevEco Studio可正常运行。
 
@@ -31,13 +31,13 @@ DevEco Studio作为驱动开发工具，是进行驱动开发的必备条件之�
 
 检查DevEco Studio是否已连接上HarmonyOS设备。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/cCe7-CQyQ8iY7QhBvKqu-g/zh-cn_image_0000002589324841.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/QTQe1Z0CSrmEA37i7SemyQ/zh-cn_image_0000002736313513.png)
 
 ## HDC配置
 
 HDC（HarmonyOS Device Connector）是为开发人员提供的用于调试的命令行工具，通过该工具可以在Windows/Linux/Mac系统上与真实设备或者模拟器进行交互，详细参考[hdc](hdc.md)配置。
 
-注意
+**注意** 
 
 “配置环境变量hdc\_server\_port”和“全局环境变量”为必须操作。
 

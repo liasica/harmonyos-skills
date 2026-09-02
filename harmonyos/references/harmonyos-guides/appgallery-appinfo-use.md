@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-ap
 title: 实现应用图标动态切换
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 图标管理服务 > 实现应用图标动态切换
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:37:15+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1d68833b38254748d272fc243672fb2a253284d55b6a61c766097722f2c1cc83
+scraped_at: 2026-09-02T14:59:53+08:00
+doc_updated_at: 2026-08-03
+content_hash: sha256:45d6f2b973c537a29f151f50967a0d4a68c6ea55ef2a6d8530547ae4213fe8a4
 ---
 
 AppGallery Kit为使用动态图标的应用客户端提供查询动态图标信息、切换动态图标、恢复默认图标功能。
 
-说明
+**说明** 
 
 从版本5.0.3(15)开始，支持实现应用图标动态切换。
 
@@ -28,7 +28,7 @@ AppGallery Kit为使用动态图标的应用客户端提供查询动态图标信
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/y0u3lsmmQPiZDA8NyijKNw/zh-cn_image_0000002589245099.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/YHlnSqVSSkGF0Y0KUP2OWQ/zh-cn_image_0000002736433959.png)
 
 ### 查询动态图标信息
 
@@ -54,7 +54,7 @@ AppGallery Kit为使用动态图标的应用客户端提供查询动态图标信
 ## 约束与限制
 
 * 图标管理服务不支持模拟器，请使用真机调试。
-* 图标管理服务支持Phone、Tablet、PC/2in1设备。并且从5.1.1(18)版本开始，新增支持Wearable设备，从5.1.1(19)版本开始，新增支持TV设备。
+* 图标管理服务支持Phone、Tablet、PC/2in1设备。并且从5.1.1(18)版本开始，新增支持Wearable设备；从5.1.1(19)版本开始，新增支持TV设备。
 
 ## 接口说明
 
@@ -66,7 +66,7 @@ AppGallery Kit为使用动态图标的应用客户端提供查询动态图标信
 | [selectDynamicIcon](../harmonyos-references/appgallery-appinfomanager.md#appinfomanagerselectdynamicicon)(iconId: string): Promise<void> | 切换动态图标接口，用于切换动态图标。 |
 | [disableDynamicIcon](../harmonyos-references/appgallery-appinfomanager.md#appinfomanagerdisabledynamicicon)(): Promise<void> | 禁用动态图标接口，用于停止动态图标，恢复默认图标。 |
 
-说明
+**说明** 
 
 从版本6.0.0(20)开始，切换动态图标接口支持返回1006800013错误码。
 
@@ -76,72 +76,84 @@ AppGallery Kit为使用动态图标的应用客户端提供查询动态图标信
 
 1. 导入appInfoManager模块及相关公共模块。
 
-   ```
-   1. import { appInfoManager } from '@kit.AppGalleryKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
-   3. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { appInfoManager } from '@kit.AppGalleryKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 调用[queryDynamicIcons](../harmonyos-references/appgallery-appinfomanager.md#appinfomanagerquerydynamicicons)方法查询动态图标信息。
 
-   ```
-   1. try {
-   2. appInfoManager.queryDynamicIcons()
-   3. .then((queryResult: appInfoManager.DynamicIconInfo[]) => {
-   4. hilog.info(0, 'TAG', "Succeeded in getting DynamicIconInfo size = " + queryResult.length);
-   5. for (let i = 0; i < queryResult.length; i++) {
-   6. hilog.info(0, 'TAG', "Succeeded in getting DynamicIconInfo iconUrl = " + queryResult[i]["iconUrl"] + ", iconId = " + queryResult[i]["iconId"] + ", enabled = "+queryResult[i]["enabled"]);
-   7. }
-   8. }).catch((error: BusinessError) => {
-   9. hilog.error(0, 'TAG', "queryDynamicIcons failed, code: " + error.code + ", exception message: " + error.message);
-   10. });
-   11. } catch (error) {
-   12. hilog.error(0, 'TAG', "queryDynamicIcons exception code: " + error.code + ", exception message: " + error.message);
-   13. }
+   ```typescript
+   try {
+       appInfoManager.queryDynamicIcons().then((iconInfos: appInfoManager.DynamicIconInfo[]) => {
+           hilog.info(0, TAG, `queryDynamicIcons success. iconInfos: ${JSON.stringify(iconInfos)}`);
+           // ...
+       }).catch((error: BusinessError) => {
+           hilog.error(0, TAG,
+               `queryDynamicIcons failed, code: ${error.code}, exception message: ${error.message}`);
+           // ...
+       })
+   } catch (error) {
+       hilog.error(0, TAG,
+           `queryDynamicIcons exception, code: ${error.code}, exception message: ${error.message}`);
+       // ...
+   }
    ```
 
 ### 切换动态图标
 
 1. 导入appInfoManager模块及相关公共模块。
 
-   ```
-   1. import { appInfoManager } from '@kit.AppGalleryKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
-   3. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { appInfoManager } from '@kit.AppGalleryKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 调用[selectDynamicIcon](../harmonyos-references/appgallery-appinfomanager.md#appinfomanagerselectdynamicicon)方法切换动态图标。
 
-   ```
-   1. try {
-   2. let iconId: string = 'iconId';
-   3. appInfoManager.selectDynamicIcon(iconId).then(() => {
-   4. hilog.info(0, 'TAG', "Succeeded in selecting dynamic icon");
-   5. }).catch((error: BusinessError) => {
-   6. hilog.error(0, 'TAG', "selectDynamicIcon failed, code: " + error.code + ", exception message: " + error.message);
-   7. });
-   8. } catch (error) {
-   9. hilog.error(0, 'TAG', "selectDynamicIcon exception code: " + error.code + ", exception message: " + error.message);
-   10. }
+   ```typescript
+   public selectDynamicIcon(iconId: string) {
+       try {
+           appInfoManager.selectDynamicIcon(iconId).then(() => {
+               hilog.info(0, TAG, `selectDynamicIcon success. iconId: ${iconId}`);
+               // ...
+           }).catch((error: BusinessError) => {
+               hilog.error(0, TAG,
+                   `selectDynamicIcon failed, code: ${error.code}, exception message: ${error.message}`);
+               // ...
+           });
+       } catch (error) {
+           hilog.error(0, TAG,
+               `selectDynamicIcon exception, code: ${error.code}, exception message: ${error.message}`);
+           // ...
+       }
+   }
    ```
 
 ### 恢复默认图标
 
 1. 导入appInfoManager模块及相关公共模块。
 
-   ```
-   1. import { appInfoManager } from '@kit.AppGalleryKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
-   3. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { appInfoManager } from '@kit.AppGalleryKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 调用[disableDynamicIcon](../harmonyos-references/appgallery-appinfomanager.md#appinfomanagerdisabledynamicicon)方法恢复默认图标。
 
-   ```
-   1. try {
-   2. appInfoManager.disableDynamicIcon().then(() => {
-   3. hilog.info(0, 'TAG', "Succeeded in disabling dynamic icon");
-   4. }).catch((error: BusinessError) => {
-   5. hilog.error(0, 'TAG', "disableDynamicIcon failed, code: " + error.code + ", exception message: " + error.message);
-   6. });
-   7. } catch (error) {
-   8. hilog.error(0, 'TAG', "disableDynamicIcon exception code: " + error.code + ", exception message: " + error.message);
-   9. }
+   ```typescript
+   try {
+       appInfoManager.disableDynamicIcon().then(() => {
+           hilog.info(0, TAG, `disableDynamicIcon success.`);
+           // ...
+       }).catch((error: BusinessError) => {
+           hilog.error(0, TAG,
+               `disableDynamicIcon failed, code: ${error.code}, exception message: ${error.message}`);
+           // ...
+       });
+   } catch (error) {
+       hilog.error(0, TAG,
+           `disableDynamicIcon exception, code: ${error.code}, exception message: ${error.message}`);
+       // ...
+   }
    ```

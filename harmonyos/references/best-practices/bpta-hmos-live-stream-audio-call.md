@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-hmos-live-
 title: 基于媒体能力实现直播连麦功能
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 基于媒体能力实现直播连麦功能
 category: best-practices
-scraped_at: 2026-04-29T14:13:12+08:00
+scraped_at: 2026-09-02T15:03:20+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:e8707535a5c6799564ecb810a6a7045050bcd113cf7cde9663442c076a38a41c
+content_hash: sha256:7dfeb094855c48cc7d25b9a1bf9ec99e008eaadf3eb5b798a1ea7e623ca9f2f7
 ---
 
 ## 概述
@@ -16,13 +16,13 @@ content_hash: sha256:e8707535a5c6799564ecb810a6a7045050bcd113cf7cde9663442c076a3
 
 因此，本文将聚焦于客户端开播侧的音视频流解码播放，详细介绍对应的技术实现方案。关于直播推拉流协议、云上服务器转码与分发等内容，本文暂不涉及。直播连麦系统的处理链路可参考下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/up2RTbn4RSiLc1hlDAe8KQ/zh-cn_image_0000002549729061.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/yJyqBCTzTse6T6mAHxwNhg/zh-cn_image_0000002549729061.png "点击放大")
 
 ## 直播连麦架构
 
 以两路主播连麦场景为例，云端、应用客户端及系统的分层技术架构图如下图所示。实际直播场景支持多路连麦，每一路客户端的技术方案和基本原理均相似。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/2igkUFh-ToO8jmDhytL0TA/zh-cn_image_0000002518209536.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/VKhogyjsTYyhfcrVfmt4AA/zh-cn_image_0000002518209536.png "点击放大")
 
 由上图可见，直播连麦的整个流程可以分为**“发起连麦”**、**“连麦建立”** 和 **“观众观看”**三个主要阶段。
 
@@ -42,7 +42,7 @@ content_hash: sha256:e8707535a5c6799564ecb810a6a7045050bcd113cf7cde9663442c076a3
 
 主播1客户端从云端拉取主播2的视频码流（通常为H.264或H.265格式）并解码，与连麦UI布局XComponent创建的Surface ID关联后，即可直接渲染上屏显示。其原理示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/wy6ezV2UTeKQSprVE0TSrg/zh-cn_image_0000002518369668.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/tvZttW8hR86vter41KYKxg/zh-cn_image_0000002518369668.png "点击放大")
 
 ### 开发步骤
 
@@ -54,92 +54,82 @@ content_hash: sha256:e8707535a5c6799564ecb810a6a7045050bcd113cf7cde9663442c076a3
 
 1. 创建视频解码器实例。
 
+```screen
+int32_t VideoDecoder::Create(const std::string &videoCodecMime) {
+    // Create a video decoder instance
+    decoder = OH_VideoDecoder_CreateByMime(videoCodecMime.c_str());
+    CHECK_AND_RETURN_RET_LOG(decoder != nullptr, AVCODEC_SAMPLE_ERR_ERROR, "Create failed");
+    return AVCODEC_SAMPLE_ERR_OK;
+}
 ```
-1. int32_t VideoDecoder::Create(const std::string &videoCodecMime) {
-2. // Create a video decoder instance
-3. decoder = OH_VideoDecoder_CreateByMime(videoCodecMime.c_str());
-4. CHECK_AND_RETURN_RET_LOG(decoder != nullptr, AVCODEC_SAMPLE_ERR_ERROR, "Create failed");
-5. return AVCODEC_SAMPLE_ERR_OK;
-6. }
-```
-
-[VideoDecoder.cpp](https://gitcode.com/HarmonyOS_Samples/HMOS_LiveAudioCall/blob/master/entry/src/main/cpp/capbilities/codec/VideoDecoder.cpp#L29-L34)
 
 2. 配置视频解码器。
 
+```screen
+int32_t VideoDecoder::Configure(const SampleInfo &sampleInfo) {
+    // Configure the video decoder
+    OH_AVFormat *format = OH_AVFormat_Create();
+    CHECK_AND_RETURN_RET_LOG(format != nullptr, AVCODEC_SAMPLE_ERR_ERROR, "AVFormat create failed");
+
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_ROTATION, sampleInfo.videoInfo.videoRotation);
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, sampleInfo.videoInfo.videoHeight);
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, sampleInfo.videoInfo.videoWidth);
+    OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, sampleInfo.videoInfo.frameRate);
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, sampleInfo.videoInfo.pixelFormat);
+
+    int ret = OH_VideoDecoder_Configure(decoder, format);
+    CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, AVCODEC_SAMPLE_ERR_ERROR, "Config failed, ret: %{public}d", ret);
+    OH_AVFormat_Destroy(format);
+    format = nullptr;
+
+    return AVCODEC_SAMPLE_ERR_OK;
+}
 ```
-1. int32_t VideoDecoder::Configure(const SampleInfo &sampleInfo) {
-2. // Configure the video decoder
-3. OH_AVFormat *format = OH_AVFormat_Create();
-4. CHECK_AND_RETURN_RET_LOG(format != nullptr, AVCODEC_SAMPLE_ERR_ERROR, "AVFormat create failed");
-
-6. OH_AVFormat_SetIntValue(format, OH_MD_KEY_ROTATION, sampleInfo.videoInfo.videoRotation);
-7. OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, sampleInfo.videoInfo.videoHeight);
-8. OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, sampleInfo.videoInfo.videoWidth);
-9. OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, sampleInfo.videoInfo.frameRate);
-10. OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, sampleInfo.videoInfo.pixelFormat);
-
-12. int ret = OH_VideoDecoder_Configure(decoder, format);
-13. CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, AVCODEC_SAMPLE_ERR_ERROR, "Config failed, ret: %{public}d", ret);
-14. OH_AVFormat_Destroy(format);
-15. format = nullptr;
-
-17. return AVCODEC_SAMPLE_ERR_OK;
-18. }
-```
-
-[VideoDecoder.cpp](https://gitcode.com/HarmonyOS_Samples/HMOS_LiveAudioCall/blob/master/entry/src/main/cpp/capbilities/codec/VideoDecoder.cpp#L52-L69)
 
 3. 注册解码回调函数。
 
-```
-1. int32_t VideoDecoder::SetCallback(CodecUserData *codecUserData) {
-2. int32_t ret = AV_ERR_OK;
-3. // Register the decoding callback function
-4. ret = OH_VideoDecoder_RegisterCallback(decoder,
-5. {SampleCallback::OnCodecError, SampleCallback::OnCodecFormatChange,
-6. SampleCallback::OnNeedInputBuffer, SampleCallback::OnNewOutputBuffer},
-7. codecUserData);
-8. CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, AVCODEC_SAMPLE_ERR_ERROR, "Set callback failed, ret: %{public}d", ret);
+```screen
+int32_t VideoDecoder::SetCallback(CodecUserData *codecUserData) {
+    int32_t ret = AV_ERR_OK;
+    // Register the decoding callback function
+    ret = OH_VideoDecoder_RegisterCallback(decoder,
+                                           {SampleCallback::OnCodecError, SampleCallback::OnCodecFormatChange,
+                                            SampleCallback::OnNeedInputBuffer, SampleCallback::OnNewOutputBuffer},
+                                           codecUserData);
+    CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, AVCODEC_SAMPLE_ERR_ERROR, "Set callback failed, ret: %{public}d", ret);
 
-10. return AVCODEC_SAMPLE_ERR_OK;
-11. }
+    return AVCODEC_SAMPLE_ERR_OK;
+}
 ```
-
-[VideoDecoder.cpp](https://gitcode.com/HarmonyOS_Samples/HMOS_LiveAudioCall/blob/master/entry/src/main/cpp/capbilities/codec/VideoDecoder.cpp#L38-L48)
 
 4. 绑定解码器SurfaceID。
 
-```
-1. int32_t VideoDecoder::Config(const SampleInfo &sampleInfo, CodecUserData *codecUserData) {
-2. // ...
-3. // SetSurface from video decoder
-4. if (sampleInfo.videoInfo.window != nullptr) {
-5. int ret = OH_VideoDecoder_SetSurface(decoder, sampleInfo.videoInfo.window);
-6. CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK && sampleInfo.videoInfo.window, AVCODEC_SAMPLE_ERR_ERROR,
-7. "Set surface failed, ret: %{public}d", ret);
-8. }
-9. // ...
+```screen
+int32_t VideoDecoder::Config(const SampleInfo &sampleInfo, CodecUserData *codecUserData) {
+    // ...
+    // SetSurface from video decoder
+    if (sampleInfo.videoInfo.window != nullptr) {
+        int ret = OH_VideoDecoder_SetSurface(decoder, sampleInfo.videoInfo.window);
+        CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK && sampleInfo.videoInfo.window, AVCODEC_SAMPLE_ERR_ERROR,
+                                 "Set surface failed, ret: %{public}d", ret);
+    }
+    // ...
 
-11. return AVCODEC_SAMPLE_ERR_OK;
-12. }
+    return AVCODEC_SAMPLE_ERR_OK;
+}
 ```
-
-[VideoDecoder.cpp](https://gitcode.com/HarmonyOS_Samples/HMOS_LiveAudioCall/blob/master/entry/src/main/cpp/capbilities/codec/VideoDecoder.cpp#L74-L103)
 
 5. 启动解码器后，上屏显示。
 
+```screen
+int32_t VideoDecoder::Start() {
+    CHECK_AND_RETURN_RET_LOG(decoder != nullptr, AVCODEC_SAMPLE_ERR_ERROR, "Decoder is null");
+    // Start the decoder
+    int ret = OH_VideoDecoder_Start(decoder);
+    CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, AVCODEC_SAMPLE_ERR_ERROR, "Start failed, ret: %{public}d", ret);
+    return AVCODEC_SAMPLE_ERR_OK;
+}
 ```
-1. int32_t VideoDecoder::Start() {
-2. CHECK_AND_RETURN_RET_LOG(decoder != nullptr, AVCODEC_SAMPLE_ERR_ERROR, "Decoder is null");
-3. // Start the decoder
-4. int ret = OH_VideoDecoder_Start(decoder);
-5. CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, AVCODEC_SAMPLE_ERR_ERROR, "Start failed, ret: %{public}d", ret);
-6. return AVCODEC_SAMPLE_ERR_OK;
-7. }
-```
-
-[VideoDecoder.cpp](https://gitcode.com/HarmonyOS_Samples/HMOS_LiveAudioCall/blob/master/entry/src/main/cpp/capbilities/codec/VideoDecoder.cpp#L107-L113)
 
 ## 看播端解决方案
 

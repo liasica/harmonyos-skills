@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-w
 title: 签约结果回调通知
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 直连商户 > 签约代扣 > 签约结果回调通知
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1b9c56bc37db1b044b39d72ded8dd01a0b3cf0f0f8b62e74eaaa701f0ee8917d
+scraped_at: 2026-09-02T15:03:03+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1e615ed7a2044444fade2afe574827ca9e7430342890b23b972f1d518fcb6e88
 ---
 
 ## 功能介绍
 
 用户签约完成后，华为支付服务器调用此接口向开发者的服务器发送签约关键事件通知。
 
-说明
+**说明** 
 
 为保证回调请求的可靠性，系统具备重试机制，所以可能出现重发的通知。
 
@@ -23,7 +23,7 @@ content_hash: sha256:1b9c56bc37db1b044b39d72ded8dd01a0b3cf0f0f8b62e74eaaa701f0ee
 ## 接口原型
 
 * **承载协议：** HTTPS POST
-* **接口方向：** 开发者服务器 -> 华为支付服务器
+* **接口方向：** 华为支付服务器 -> 开发者服务器
 * **接口URL：** URL由开发者在请求预签约接口时传入的callbackUrl
 * **数据格式：**
 
@@ -44,7 +44,7 @@ content_hash: sha256:1b9c56bc37db1b044b39d72ded8dd01a0b3cf0f0f8b62e74eaaa701f0ee
 | signType | 是 | String | 签名类型。华为支付生成签名字符串使用的算法，当前为SM2算法。 |
 | certNo | 否 | String | 签名所使用的证书编号。 |
 | planId | 否 | String | 协议模板ID。该模板ID是商户在向华为支付[提交代扣权限申请](../harmonyos-guides/payment-password-free-pay-overview.md)时由华为支付生成。 |
-| mercContractCode | 否 | String | 商户签约协议号。商户侧自己生成。 |
+| mercContractCode | 否 | String | 商户签约协议号。开发者请求签约时传入的签约协议号，由商户生成，商户需保证字段唯一性。最大长度64。 |
 | contractId | 是 | String | 委托代扣协议ID。 |
 | mercNo | 否 | String | 商户号。 |
 | appId | 否 | String | 应用ID。获取方式请参见[AppID管理及关联](../pay-docs/hwzf-appidguanli-0000001757041165.md)。 |
@@ -55,22 +55,22 @@ content_hash: sha256:1b9c56bc37db1b044b39d72ded8dd01a0b3cf0f0f8b62e74eaaa701f0ee
 
 ## 请求示例
 
-```
-1. POST /hw/pay/callback HTTP/1.1
-2. Content-Type: application/json;charset=UTF-8
-3. {
-4. "callbackId": "124070308575300049145189***",
-5. "callbackTime": "2023-08-29 09:29:14",
-6. "dataType": "plain",
-7. "mercContractCode": "2024020316555432***",
-8. "mercNo": "10132120***",
-9. "operateTime": "2023-09-01 09:01:25",
-10. "sign": "MEYCIQDXutp78nEN8***********vIIVlWyjA6p210xOqI2InX9w2SIYRx",
-11. "signType": "SM2",
-12. "certNo": "120291744647139***",
-13. "contractId":"2024070914615843071097***",
-14. "appId": 5765880207853***
-15. }
+```json
+POST /hw/pay/callback HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+{
+  "callbackId": "124070308575300049145189***",
+  "callbackTime": "2023-08-29 09:29:14",
+  "dataType": "plain",
+  "mercContractCode": "2024020316555432***",
+  "mercNo": "10132120***",
+  "operateTime": "2023-09-01 09:01:25",
+  "sign": "MEYCIQDXutp78nEN8***********vIIVlWyjA6p210xOqI2InX9w2SIYRx",
+  "signType": "SM2",
+  "certNo": "120291744647139***",
+  "contractId":"2024070914615843071097***",
+  "appId": 5765880207853***
+}
 ```
 
 ## 响应参数
@@ -90,11 +90,11 @@ content_hash: sha256:1b9c56bc37db1b044b39d72ded8dd01a0b3cf0f0f8b62e74eaaa701f0ee
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json; charset=UTF-8
-3. {
-4. "resultCode": "000000",
-5. "resultDesc": "Success."
-6. }
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+{
+  "resultCode": "000000",
+  "resultDesc": "Success."
+}
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ffrt-concurre
 title: Function Flow Runtime串行队列(C++)
 breadcrumb: 指南 > 系统 > 基础功能 > Function Flow Runtime Kit（任务并发调度服务） > Function Flow Runtime开发样例(C++) > Function Flow Runtime串行队列(C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:29+08:00
-doc_updated_at: 2026-04-08
-content_hash: sha256:f9ce04b3adad521bc8140f7dbacf488824f7b110022a7518d9330753457bcca9
+scraped_at: 2026-09-02T14:59:36+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3fe11b44575c56ea243d44051afe6cd6d049c70cde141171e8b2632b791d5b8d
 ---
 
 ## 概述
@@ -27,62 +27,62 @@ FFRT串行队列基于协程调度模型实现，提供高效的消息队列功�
 
 用例简化了异常处理和线程安全相关的一些逻辑，实现代码如下所示：
 
+```c
+#include <chrono>
+#include <thread>
+#include "hilog/log.h"
+#include "ffrt/ffrt.h" // 来自 OpenHarmony 第三方库 "@ppd/ffrt"
 ```
-1. #include <chrono>
-2. #include <thread>
-3. #include "hilog/log.h"
-4. #include "ffrt/ffrt.h" // 来自 OpenHarmony 第三方库 "@ppd/ffrt"
-```
 
 ```
-1. #undef LOG_TAG
-2. #define LOG_TAG "SerialCppTag"
+#undef LOG_TAG
+#define LOG_TAG "SerialCppTag"
 
-4. class Logger {
-5. public:
-6. Logger()
-7. {
-8. // 创建队列
-9. queue_ = std::make_unique<ffrt::queue>("loggerQueue");
+class Logger {
+public:
+    Logger()
+    {
+        // 创建队列
+        queue_ = std::make_unique<ffrt::queue>("loggerQueue");
+        
+        logFile_ = stdout;
+        OH_LOG_INFO(LOG_APP, "Log file opened");
+    }
 
-11. logFile_ = stdout;
-12. OH_LOG_INFO(LOG_APP, "Log file opened");
-13. }
+    ~Logger()
+    {
+        // 销毁队列
+        queue_ = nullptr;
+        OH_LOG_INFO(LOG_APP, "Log file closed");
+    }
 
-15. ~Logger()
-16. {
-17. // 销毁队列
-18. queue_ = nullptr;
-19. OH_LOG_INFO(LOG_APP, "Log file closed");
-20. }
+    // 添加日志任务
+    void Log(const std::string& message)
+    {
+        queue_->submit([this, message] {
+            OH_LOG_INFO(LOG_APP, "Writing message %{public}s", message.c_str());
+        });
+    }
 
-22. // 添加日志任务
-23. void Log(const std::string& message)
-24. {
-25. queue_->submit([this, message] {
-26. OH_LOG_INFO(LOG_APP, "Writing message %{public}s", message.c_str());
-27. });
-28. }
+private:
+    FILE *logFile_;
+    std::unique_ptr<ffrt::queue> queue_;
+};
 
-30. private:
-31. FILE *logFile_;
-32. std::unique_ptr<ffrt::queue> queue_;
-33. };
+int SerialQueueCppExec()
+{
+    Logger logger;
 
-35. int SerialQueueCppExec()
-36. {
-37. Logger logger;
+    // 主线程添加日志任务
+    logger.Log("Log message 1");
+    logger.Log("Log message 2");
+    logger.Log("Log message 3");
 
-39. // 主线程添加日志任务
-40. logger.Log("Log message 1");
-41. logger.Log("Log message 2");
-42. logger.Log("Log message 3");
+    // 模拟主线程继续执行其他任务
+    std::this_thread::sleep_for(std::chrono::seconds(1));
 
-44. // 模拟主线程继续执行其他任务
-45. std::this_thread::sleep_for(std::chrono::seconds(1));
-
-47. return 0;
-48. }
+    return 0;
+}
 ```
 
 ## 接口说明
@@ -94,9 +94,9 @@ FFRT串行队列基于协程调度模型实现，提供高效的消息队列功�
 | class [queue](https://gitcode.com/openharmony/resourceschedule_ffrt/blob/master/docs/ffrt-api-guideline-cpp.md#queue) | 队列类。 |
 | [sleep\_for](https://gitcode.com/openharmony/resourceschedule_ffrt/blob/master/docs/ffrt-api-guideline-cpp.md#sleep_for) | 延迟一定时间。 |
 
-说明
+**说明** 
 
-* 如何使用FFRT C++ API详见：[FFRT C++接口三方库使用指导](ffrt-development-guideline.md#using-ffrt-c-api-1)。
+* 如何使用FFRT C++ API详见：[FFRT C++接口三方库使用指导](ffrt-development-guideline.md#使用ffrt-c-api-1)。
 * 使用FFRT C接口或C++接口时，都可以通过FFRT C++接口三方库简化头文件包含，即使用#include "ffrt/ffrt.h"头文件包含语句。
 
 ## 约束限制

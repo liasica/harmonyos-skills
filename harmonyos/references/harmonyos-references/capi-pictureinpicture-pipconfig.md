@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-pict
 title: PictureInPicture_PipConfig
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > PictureInPicture_PipConfig
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:38+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:ec9a35c2ed4590a36e6bfa0fd5da8d05d26502d7d5a79988cc87cbb723d85a88
+scraped_at: 2026-09-02T14:51:52+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4518168d2436157abcce08d46d5208ad1628e3da0d6c4e4697ee507fa3f84d87
 ---
 
-```
-1. typedef void* PictureInPicture_PipConfig
+```c
+typedef void* PictureInPicture_PipConfig
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 画中画参数配置器。
 

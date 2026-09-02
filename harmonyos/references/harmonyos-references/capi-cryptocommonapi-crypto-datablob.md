@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryp
 title: Crypto_DataBlob
 breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > C API > 结构体 > Crypto_DataBlob
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:00+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:e1e22782cc1d7c3e7aa8832294c7df6a21b506bf00caccc04fb78efd9c7780ee
+scraped_at: 2026-09-02T15:01:42+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b008f0ca057d4d3d59d5d0807f18abd5c150626cc37a45a00c06d7bad9684b6f
 ---
 
-```
-1. typedef struct Crypto_DataBlob {...} Crypto_DataBlob
+```c
+typedef struct Crypto_DataBlob {...} Crypto_DataBlob
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 加解密数据结构体。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

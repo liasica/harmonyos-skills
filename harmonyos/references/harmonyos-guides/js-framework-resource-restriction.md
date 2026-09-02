@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-framework-
 title: 资源限定与访问
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 框架说明 > 资源限定与访问
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:41+08:00
+scraped_at: 2026-09-02T14:59:20+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:61d220cac2260bc5b3df4f5de30d173fb437955eb4524b362aa392b26309d638
+content_hash: sha256:6cab881790a7f78c4f915237d6e86d8746f2d3c88cd544357b3c6d490fc6cfa8
 ---
 
 ## 资源限定词
@@ -42,49 +42,49 @@ content_hash: sha256:61d220cac2260bc5b3df4f5de30d173fb437955eb4524b362aa392b2630
 
 **res-defaults.json示例：**
 
-```
-1. {
-2. "strings": {
-3. "hello": "hello world"
-4. }
-5. }
+```json
+{
+    "strings": {
+        "hello": "hello world"
+    }
+}
 ```
 
 ## 示例
 
 resources/res-dark.json:
 
-```
-1. {
-2. "image": {
-3. "clockFace": "common/dark_face.png"
-4. },
-5. "colors": {
-6. "background": "#000000"
-7. }
-8. }
+```json
+{
+    "image": {
+        "clockFace": "common/dark_face.png"
+    },
+    "colors": {
+    "background": "#000000"
+    }
+}
 ```
 
 resources/res-defaults.json:
 
-```
-1. {
-2. "image": {
-3. "clockFace": "common/face.png"
-4. },
-5. "colors": {
-6. "background": "#ffffff"
-7. }
-8. }
-```
-
-```
-1. <!-- xxx.hml -->
-2. <div style="background-color: {{ $r('colors.background') }}">
-3. <image src="{{ $r('image.clockFace') }}"></image>
-4. </div>
+```json
+{
+    "image": {
+        "clockFace": "common/face.png"
+    },
+    "colors": {
+    "background": "#ffffff"
+    }
+}
 ```
 
-说明
+```html
+<!-- xxx.hml -->
+<div style="background-color: {{ $r('colors.background') }}">
+    <image src="{{ $r('image.clockFace') }}"></image>
+</div>
+```
+
+**说明** 
 
 资源限定文件中不支持颜色枚举格式。

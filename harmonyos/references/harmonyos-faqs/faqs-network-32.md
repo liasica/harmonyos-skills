@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-32
 title: 应用能否指定使用某一网络来发请求
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > 应用能否指定使用某一网络来发请求
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:08+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:57+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:610e9a4313e8a3fc06b1bf13a440c6b5479b2684ae1b96f16cee6490d689bd11
 ---
 

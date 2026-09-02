@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/location-guid
 title: 获取设备的位置信息开发指导(ArkTS)
 breadcrumb: 指南 > 应用服务 > Location Kit（位置服务） > 获取设备的位置信息开发指导 > 获取设备的位置信息开发指导(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:40+08:00
+scraped_at: 2026-09-02T14:50:28+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d60a54286744818467874ef52e3976f00a6e75de4d9a321494065ddb87446c5f
+content_hash: sha256:48f1405b93f268f28aba4f53579cae119987d64dbe595495a907cad40b8e9b0f
 ---
 
 ## 场景概述
@@ -34,20 +34,20 @@ content_hash: sha256:d60a54286744818467874ef52e3976f00a6e75de4d9a321494065ddb874
 1. 获取设备的位置信息，需要有位置权限，位置权限申请的方法和步骤见[申请位置权限开发指导](location-permission-guidelines.md)。
 2. 导入geoLocationManager模块，所有与基础定位能力相关的功能API，都是通过该模块提供的。
 
-   ```
-   1. import { geoLocationManager } from '@kit.LocationKit';
+   ```ts
+   import { geoLocationManager } from '@kit.LocationKit';
    ```
 3. 调用获取位置接口之前需要先判断位置开关是否打开。
 
    查询当前位置开关状态，返回结果为布尔值，true代表位置开关开启，false代表位置开关关闭，示例代码如下：
 
-   ```
-   1. import { geoLocationManager } from '@kit.LocationKit';
-   2. try {
-   3. let locationEnabled = geoLocationManager.isLocationEnabled();
-   4. } catch (err) {
-   5. console.error("errCode:" + err.code + ", message:"  + err.message);
-   6. }
+   ```ts
+   import { geoLocationManager } from '@kit.LocationKit';
+   try {
+       let locationEnabled = geoLocationManager.isLocationEnabled();
+   } catch (err) {
+       console.error("errCode:" + err.code + ", message:"  + err.message);
+   }
    ```
 
    如果位置开关未开启，可以拉起全局开关设置弹框，引导用户打开位置开关，具体可参考[requestGlobalSwitch](../harmonyos-references/js-apis-abilityaccessctrl.md#requestglobalswitch12)。
@@ -61,14 +61,14 @@ content_hash: sha256:d60a54286744818467874ef52e3976f00a6e75de4d9a321494065ddb874
 
      如果对位置的新鲜度比较敏感，可以先获取缓存位置，将位置中的时间戳与当前时间对比，若新鲜度不满足预期可以使用方式二获取位置。
 
-     ```
-     1. import { geoLocationManager } from '@kit.LocationKit';
-     2. import { BusinessError } from '@kit.BasicServicesKit';
-     3. try {
-     4. let location = geoLocationManager.getLastLocation();
-     5. } catch (err) {
-     6. console.error("errCode:" + JSON.stringify(err));
-     7. }
+     ```ts
+     import { geoLocationManager } from '@kit.LocationKit';
+     import { BusinessError } from '@kit.BasicServicesKit';
+     try {
+         let location = geoLocationManager.getLastLocation();
+     } catch (err) {
+         console.error("errCode:" + JSON.stringify(err));
+     }
      ```
    * 方式二：获取当前位置。
 
@@ -87,23 +87,23 @@ content_hash: sha256:d60a54286744818467874ef52e3976f00a6e75de4d9a321494065ddb874
 
      以快速定位策略(PRIORITY\_LOCATING\_SPEED)为例，调用方式如下：
 
-     ```
-     1. import { geoLocationManager } from '@kit.LocationKit';
-     2. import { BusinessError } from '@kit.BasicServicesKit';
-     3. let request: geoLocationManager.SingleLocationRequest = {
-     4. 'locatingPriority': geoLocationManager.LocatingPriority.PRIORITY_LOCATING_SPEED,
-     5. 'locatingTimeoutMs': 10000
-     6. }
-     7. try {
-     8. geoLocationManager.getCurrentLocation(request).then((result) => { // 调用getCurrentLocation获取当前设备位置，通过promise接收上报的位置
-     9. console.info('current location: ' + JSON.stringify(result));
-     10. })
-     11. .catch((error:BusinessError) => { // 接收上报的错误码
-     12. console.error('promise, getCurrentLocation: error=' + JSON.stringify(error));
-     13. });
-     14. } catch (err) {
-     15. console.error("errCode:" + JSON.stringify(err));
-     16. }
+     ```ts
+     import { geoLocationManager } from '@kit.LocationKit';
+     import { BusinessError } from '@kit.BasicServicesKit';
+     let request: geoLocationManager.SingleLocationRequest = {
+        'locatingPriority': geoLocationManager.LocatingPriority.PRIORITY_LOCATING_SPEED,
+        'locatingTimeoutMs': 10000
+     }
+     try {
+        geoLocationManager.getCurrentLocation(request).then((result) => { // 调用getCurrentLocation获取当前设备位置，通过promise接收上报的位置
+           console.info('current location: ' + JSON.stringify(result));
+        })
+        .catch((error:BusinessError) => { // 接收上报的错误码
+           console.error('promise, getCurrentLocation: error=' + JSON.stringify(error));
+        });
+      } catch (err) {
+        console.error("errCode:" + JSON.stringify(err));
+      }
      ```
 
    通过本模块获取到的坐标均为WGS-84坐标系坐标点，如需使用其它坐标系类型的坐标点，请进行坐标系转换后再使用。
@@ -122,25 +122,25 @@ content_hash: sha256:d60a54286744818467874ef52e3976f00a6e75de4d9a321494065ddb874
 
    以地图导航场景为例，调用方式如下：
 
-   ```
-   1. import { geoLocationManager } from '@kit.LocationKit';
-   2. let request: geoLocationManager.ContinuousLocationRequest= {
-   3. 'interval': 1,
-   4. 'locationScenario': geoLocationManager.UserActivityScenario.NAVIGATION
-   5. }
-   6. let locationCallback = (location:geoLocationManager.Location):void => {
-   7. console.info('locationCallback: data: ' + JSON.stringify(location));
-   8. };
-   9. try {
-   10. geoLocationManager.on('locationChange', request, locationCallback);
-   11. } catch (err) {
-   12. console.error("errCode:" + JSON.stringify(err));
-   13. }
+   ```ts
+   import { geoLocationManager } from '@kit.LocationKit';
+   let request: geoLocationManager.ContinuousLocationRequest= {
+      'interval': 1,
+      'locationScenario': geoLocationManager.UserActivityScenario.NAVIGATION
+   }
+   let locationCallback = (location:geoLocationManager.Location):void => {
+      console.info('locationCallback: data: ' + JSON.stringify(location));
+   };
+   try {
+      geoLocationManager.on('locationChange', request, locationCallback);
+   } catch (err) {
+      console.error("errCode:" + JSON.stringify(err));
+   }
    ```
 
    如果不主动结束定位可能导致设备功耗高，耗电快；建议在不需要获取定位信息时及时结束定位。
 
-   ```
-   1. // 该回调函数需要与on接口传入的回调函数保持一致。
-   2. geoLocationManager.off('locationChange', locationCallback);
+   ```ts
+   // 该回调函数需要与on接口传入的回调函数保持一致。
+   geoLocationManager.off('locationChange', locationCallback);
    ```

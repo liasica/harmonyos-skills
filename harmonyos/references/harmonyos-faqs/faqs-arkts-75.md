@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-75
 title: 如何解析JSON字符串为实例对象
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 如何解析JSON字符串为实例对象
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:05+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:da543dee45b190c228ba5ad87706a20010c190c41dd76ad3074cfbc90f8b1404
+scraped_at: 2026-09-02T14:53:53+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:227e7d6ada0b2c0c86ae0e82d26e4aeb36455b8fb004aec620b72a5e1cbb67de
 ---
 
 **问题背景**：
@@ -16,70 +16,68 @@ content_hash: sha256:da543dee45b190c228ba5ad87706a20010c190c41dd76ad3074cfbc90f8
 
 **完整示例如下：**
 
+```ts
+import { Type, plainToClass } from 'class-transformer'
+import "reflect-metadata"
+
+// Assuming accepted JSON data
+let testJSON: Record<string, ESObject> = {
+  'id': 1,
+  'firstName': "Johny",
+  'lastName': "Cage",
+  'age': 27,
+  'arr': [
+    {
+      'name': 'john'
+    },
+    {
+      'name': 'tom'
+    }
+  ],
+  'instanceA': {
+    'name': 'john'
+  },
+}
+
+// If there is a corresponding nested structure, the corresponding type needs to be specified
+class A {
+  name: string = 'john';
+
+  getName(): string {
+    return this.name
+  }
+}
+
+// When attempting to convert an object with nested objects, it is necessary to know the object type to be converted and use the @ Type decorator to implicitly specify the object type contained in each attribute
+class User {
+  id: number = 0;
+  firstName: string = '';
+  lastName: string = '';
+  age: number = 0;
+  @Type(() => A)
+  arr: A[] = [new A()]
+  @Type(() => A)
+  instanceA: A = new A();
+
+  getName() {
+    return this.firstName + " " + this.lastName;
+  }
+
+  isAdult() {
+    return this.age > 36 && this.age < 60;
+  }
+}
+
+@Entry
+@Component
+struct parsingJSONStringsIntoInstanceObjects {
+  aboutToAppear(): void {
+    const instance = plainToClass(User, testJSON);
+    console.info('instance:' + JSON.stringify(instance))
+  }
+
+  build() {
+
+  }
+}
 ```
-1. import { Type, plainToClass } from 'class-transformer'
-2. import "reflect-metadata"
-
-4. // Assuming accepted JSON data
-5. let testJSON: Record<string, ESObject> = {
-6. 'id': 1,
-7. 'firstName': "Johny",
-8. 'lastName': "Cage",
-9. 'age': 27,
-10. 'arr': [
-11. {
-12. 'name': 'john'
-13. },
-14. {
-15. 'name': 'tom'
-16. }
-17. ],
-18. 'instanceA': {
-19. 'name': 'john'
-20. },
-21. }
-
-23. // If there is a corresponding nested structure, the corresponding type needs to be specified
-24. class A {
-25. name: string = 'john';
-
-27. getName(): string {
-28. return this.name
-29. }
-30. }
-
-32. // When attempting to convert an object with nested objects, it is necessary to know the object type to be converted and use the @ Type decorator to implicitly specify the object type contained in each attribute
-33. class User {
-34. id: number = 0;
-35. firstName: string = '';
-36. lastName: string = '';
-37. age: number = 0;
-38. @Type(() => A)
-39. arr: A[] = [new A()]
-40. @Type(() => A)
-41. instanceA: A = new A();
-
-43. getName() {
-44. return this.firstName + " " + this.lastName;
-45. }
-
-47. isAdult() {
-48. return this.age > 36 && this.age < 60;
-49. }
-50. }
-
-52. @Entry
-53. @Component
-54. struct parsingJSONStringsIntoInstanceObjects {
-55. aboutToAppear(): void {
-56. const instance = plainToClass(User, testJSON);
-57. console.info('instance:' + JSON.stringify(instance))
-58. }
-
-60. build() {
-
-62. }
-63. }
-```
-
-[TestJSON.ets](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/ArkTS/entry/src/main/ets/pages/TestJSON.ets#L21-L83)

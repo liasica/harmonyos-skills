@@ -3,56 +3,41 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/device-certif
 title: Device Certificate Kit简介
 breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > Device Certificate Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:31:20+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:875b9177510d869a32f313dbe23a80edc47440ab5ab7a752e673b6851354fbf5
+scraped_at: 2026-09-02T14:59:29+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:42f88e393ffac4f803bea8e76513e9d65669ba318950451f5f542e5cc03010fd
 ---
 
-Device Certificate Kit（设备证书服务）面向应用开发者，提供了[证书算法库](device-certificate-kit-intro.md#证书算法库)和[证书管理](device-certificate-kit-intro.md#证书管理)的能力。
+使用Device Certificate Kit（设备证书服务）来对应用的数字证书进行管理和校验。总体而言，Device Certificate Kit支持如下两个特性：
 
-## 证书算法库
+1. [证书算法库](certificate-framework-overview.md)：数字证书文件的解析和属性读取，证书链的合法性校验。
+2. [证书管理服务](certmanager-overview.md)：数字证书与私钥的存储和管理，包括导入、导出、查询、签名等。
 
-证书算法库提供接口用于解析和验证数字证书。
+数字证书的主要作用及目标场景：
 
-证书算法库向应用提供证书、证书扩展域段、证书吊销列表的解析及校验能力，以及证书链的校验能力。
+1. 身份可信认证：证明实体身份真实性（个人、设备、服务器、机构），防止冒充、中间人攻击。
+2. 数据传输加密：基于证书和非对称密钥体系，协商会话密钥，实现通信链路端到端加密（如HTTPS）。
+3. 数据完整性校验：通过数字证书的私钥对数据进行签名，保证数据传输/存储中不被篡改。
+4. 权限与访问控制：用数字证书做身份准入，替代账号密码，实现细粒度权限管控。
 
-通过调用证书算法库框架接口，开发者可以忽略底层不同三方算法库的差异，实现快速开发。
+在应用开发中，使用Device Certificate Kit对数字证书进行处理的典型场景：
 
-**常见使用场景**
+1. HTTPS网络连接：对HTTPS服务器的证书链进行校验，尤其是应用自定义证书链的校验处理。
+2. 双向HTTPS认证：HTTPS服务器基于证书对请求连接的客户端进行身份认证。
 
-应用对接收的服务端证书或用户输入的证书进行解析，获取证书基本字段或扩展字段用于显示或校验，并使用CA证书链和CRL校验证书的合法性。
+## 整体架构
 
-### 框架原理
+[ArkWeb](web-component-overview.md)和[Network Kit](net-mgmt-overview.md)等网络通信相关的服务基于Device Certificate Kit提供证书链校验、双向HTTPS认证等功能。
 
-系统提供证书算法库框架，开发者只需要调用API接口层即可实现证书的操作，证书算法库框架能够屏蔽不同三方算法库的差异。
+证书管理服务在对数字证书凭据的安装和使用时，依赖[Universal Keystore Kit](huks-overview.md)的密钥存储和管理能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/ch-qKnLXRh6kWcPKHQj_vA/zh-cn_image_0000002589244681.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/C-38DkTuRn2R0t-bB_I7dA/zh-cn_image_0000002736433427.png)
 
-### 与相关Kit的关系
+**说明** 
 
-证书算法库的功能使用时，涉及公钥的生成和获取，这部分依赖[Crypto Architecture Kit](crypto-architecture-kit-intro.md)加解密算法框架服务的能力。
+建议优先使用高级别的API对证书进行处理，例如进行HTTPS网络通信时对服务器的证书链进行合法性校验，优先使用Network Kit的证书链校验和SSL Pinning能力。
 
-## 证书管理
-
-证书管理主要提供系统级的证书管理能力，通过证书管理模块可以确保证书在传输和存储过程中的安全性，防止未经授权的访问和使用。
-
-当前提供的能力包括：
-
-1. 应用证书凭据的安装、获取、使用及删除的能力。
-2. 用户CA证书的安装、获取及删除的能力。
-3. 应用可以调用证书管理提供的接口拉起证书管理应用界面对CA证书、凭据进行管理。
-
-通过证书管理能力，可以实现证书全生命周期（安装、存储、使用和销毁）的管理和安全使用。
-
-**常见使用场景**
-
-1. 应用证书凭据的使用场景包括：业务安装应用证书凭据，在网络链接双向认证的场景下，使用应用证书凭据对业务数据进行签名，并获取应用证书凭据，将签名结果和应用证书凭据发送对端，最后删除应用证书凭据。
-2. 用户CA证书的使用场景包括：业务安装用户CA证书，在网络链接过程中获取用户CA证书以校验对端身份，在证书过期或被吊销的情况下可以删除用户CA证书。
-3. 证书管理对话框使用场景：业务调用证书管理提供的对话框接口，直接拉起证书管理应用界面，可以实现证书的查看、安装、删除以及凭据的安装、查看、删除操作。
-
-### 与相关Kit的关系
-
-证书管理的功能使用时，涉及凭据的安装和使用，这部分依赖[Universal Keystore Kit](huks-overview.md)密钥管理服务的能力。
+只有当您的应用需要自定义证书链校验逻辑（如校验证书主题、证书扩展字段等）或访问更底层的安全协议功能时，才应直接使用Device Certificate Kit。
 
 ## 约束与限制
 

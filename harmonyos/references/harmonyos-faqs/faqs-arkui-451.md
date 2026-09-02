@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-451
 title: Tabs组件，自定义tabBar切换动画有延迟，Tabs页面切换完才触发tabBar切换，如何修改
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > Tabs组件，自定义tabBar切换动画有延迟，Tabs页面切换完才触发tabBar切换，如何修改
+breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Tabs组件，自定义tabBar切换动画有延迟，Tabs页面切换完才触发tabBar切换，如何修改
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:59+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:ee68ecb46b327e3da73f5e96d77d3f5409c7ab1d8eea6ee9c419db6b340c1508
+scraped_at: 2026-09-02T14:54:28+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:af2c4b417c5ab5543ee9b0b34e704404cbe0ec0a96077c3fbe63c4f1594f38af
 ---
 
 新增一个selectedIndex的索引用于标识被选择的tabBar，原来的currentIndex仍然用于TabContent页签显示的控制。然后selectedIndex在onAnimationStart事件中进行切换，就可以实现页签内容切换动画发生时，tabBar也同步切换。
@@ -14,60 +14,58 @@ content_hash: sha256:ee68ecb46b327e3da73f5e96d77d3f5409c7ab1d8eea6ee9c419db6b340
 
 可参考如下示例：
 
+```ts
+@Component
+struct TabsDemo {
+  @State tabArray: Array<number> = [0, 1, 2, 3];
+  @State selectedIndex: number = 0;
+  @State currentIndex: number = 0;
+  @State selectedFontColor: Color = Color.Blue;
+  @State fontColor: Color = Color.Black;
+  private controller: TabsController = new TabsController();
+
+  @Builder
+  tabBuilder(index: number, name: string) {
+    Column() {
+      Text(name)
+        .fontSize(16)
+        .lineHeight(22)
+        .fontWeight(this.selectedIndex === index ? 500 : 400)
+        .fontColor(this.selectedIndex === index ? this.selectedFontColor : this.fontColor)
+
+      Divider()
+        .strokeWidth(2)
+        .color('#007DEF')
+        .opacity(this.selectedIndex === index ? 1 : 0)
+    }
+    .width('100%')
+  }
+
+  build() {
+    Column() {
+      Tabs({ barPosition: BarPosition.Start, index: this.currentIndex, controller: this.controller }) {
+        ForEach(this.tabArray,(item: number, index:number) => {
+          // The system has its own tab.
+          TabContent() {
+            Text('我的内容' + item)
+              .fontSize(30)
+          }
+          .tabBar(this.tabBuilder(item, 'bar' + item))
+        })
+      }
+      .onChange((index: number) => {
+        // CurrentIndex Control TabContent Display Tab.
+        this.currentIndex = index;
+      })
+      .onAnimationStart((index: number, targetIndex: number, event: TabsAnimationEvent) => {
+        if(index === targetIndex) {
+          return;
+        }
+        // SelectedIndex controls the color switching between Image and Text in the custom TabBar.
+        this.selectedIndex = targetIndex;
+      })
+    }
+    .width('100%')
+  }
+}
 ```
-1. @Component
-2. struct TabsDemo {
-3. @State tabArray: Array<number> = [0, 1, 2, 3];
-4. @State selectedIndex: number = 0;
-5. @State currentIndex: number = 0;
-6. @State selectedFontColor: Color = Color.Blue;
-7. @State fontColor: Color = Color.Black;
-8. private controller: TabsController = new TabsController();
-
-10. @Builder
-11. tabBuilder(index: number, name: string) {
-12. Column() {
-13. Text(name)
-14. .fontSize(16)
-15. .lineHeight(22)
-16. .fontWeight(this.selectedIndex === index ? 500 : 400)
-17. .fontColor(this.selectedIndex === index ? this.selectedFontColor : this.fontColor)
-
-19. Divider()
-20. .strokeWidth(2)
-21. .color('#007DEF')
-22. .opacity(this.selectedIndex === index ? 1 : 0)
-23. }
-24. .width('100%')
-25. }
-
-27. build() {
-28. Column() {
-29. Tabs({ barPosition: BarPosition.Start, index: this.currentIndex, controller: this.controller }) {
-30. ForEach(this.tabArray,(item: number, index:number) => {
-31. // The system has its own tab.
-32. TabContent() {
-33. Text('我的内容' + item)
-34. .fontSize(30)
-35. }
-36. .tabBar(this.tabBuilder(item, 'bar' + item))
-37. })
-38. }
-39. .onChange((index: number) => {
-40. // CurrentIndex Control TabContent Display Tab.
-41. this.currentIndex = index;
-42. })
-43. .onAnimationStart((index: number, targetIndex: number, event: TabsAnimationEvent) => {
-44. if(index === targetIndex) {
-45. return;
-46. }
-47. // SelectedIndex controls the color switching between Image and Text in the custom TabBar.
-48. this.selectedIndex = targetIndex;
-49. })
-50. }
-51. .width('100%')
-52. }
-53. }
-```
-
-[TabsDemo.ets](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/b9d6551b75b078dfbf00850327a0896f97877d23/ArkUI/entry/src/main/ets/pages/TabsDemo.ets#L21-L73)

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___re
 title: Rcp_ResponseCookies
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > C API > 结构体 > Rcp_ResponseCookies
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:07+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:62c049fbb47c90a9a71c5b4bde3c391ffc1e8370b0d1011bd3aed485d3676597
+scraped_at: 2026-09-02T15:01:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:156459804f6fafa185f011b11763160db90d470bd9657c47c1232c1577095692
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 响应Cookie。
 
@@ -22,11 +20,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -36,8 +30,8 @@ PhonePC/2in1TabletTVWearable
 | char \* [path](_rcp___response_cookies.md#path) | 响应Cookie路径属性。 |
 | char \* [expires](_rcp___response_cookies.md#expires) | 响应Cookie过期属性。 |
 | uint64\_t [maxAge](_rcp___response_cookies.md#maxage) | 响应Cookie maxAge属性。 |
-| bool [secure](_rcp___response_cookies.md#secure) | 响应Cookie安全属性。 |
-| bool [httpOnly](_rcp___response_cookies.md#httponly) | 响应Cookie httpOnly属性。 |
+| bool [secure](_rcp___response_cookies.md#secure) | 响应Cookie安全属性。true表示此cookie是通过安全连接返回的，false表示此cookie不是通过安全连接返回的。 |
+| bool [httpOnly](_rcp___response_cookies.md#httponly) | 响应Cookie httpOnly属性。true表示不可通过页面脚本等活动内容访问cookie，false表示表示可以通过页面脚本等活动内容访问cookie。 |
 | char \* [sameSite](_rcp___response_cookies.md#samesite) | 响应Cookie sameSite属性。 |
 | uint64\_t [rawSize](_rcp___response_cookies.md#rawsize) | 此响应Cookie的原始大小。 |
 | char \* [originString](_rcp___response_cookies.md#originstring) | 原始字符串。 |
@@ -46,14 +40,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTVWearable
-
 ### cookieAttributes
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Rcp_CookieAttributes* Rcp_ResponseCookies::cookieAttributes
+```cpp
+Rcp_CookieAttributes* Rcp_ResponseCookies::cookieAttributes
 ```
 
 **描述**
@@ -62,10 +52,8 @@ PhonePC/2in1TabletTVWearable
 
 ### domain
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. char* Rcp_ResponseCookies::domain
+```cpp
+char* Rcp_ResponseCookies::domain
 ```
 
 **描述**
@@ -74,10 +62,8 @@ PhonePC/2in1TabletTVWearable
 
 ### expires
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. char* Rcp_ResponseCookies::expires
+```cpp
+char* Rcp_ResponseCookies::expires
 ```
 
 **描述**
@@ -86,22 +72,18 @@ PhonePC/2in1TabletTVWearable
 
 ### httpOnly
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. bool Rcp_ResponseCookies::httpOnly
+```cpp
+bool Rcp_ResponseCookies::httpOnly
 ```
 
 **描述**
 
-响应Cookie httpOnly属性。
+响应Cookie httpOnly属性。true表示不可通过页面脚本等活动内容访问cookie，false表示表示可以通过页面脚本等活动内容访问cookie。
 
 ### maxAge
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. uint64_t Rcp_ResponseCookies::maxAge
+```cpp
+uint64_t Rcp_ResponseCookies::maxAge
 ```
 
 **描述**
@@ -110,10 +92,8 @@ PhonePC/2in1TabletTVWearable
 
 ### name
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. char* Rcp_ResponseCookies::name
+```cpp
+char* Rcp_ResponseCookies::name
 ```
 
 **描述**
@@ -122,10 +102,8 @@ PhonePC/2in1TabletTVWearable
 
 ### next
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. struct Rcp_ResponseCookies* Rcp_ResponseCookies::next
+```cpp
+struct Rcp_ResponseCookies* Rcp_ResponseCookies::next
 ```
 
 **描述**
@@ -134,10 +112,8 @@ PhonePC/2in1TabletTVWearable
 
 ### originString
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. char* Rcp_ResponseCookies::originString
+```cpp
+char* Rcp_ResponseCookies::originString
 ```
 
 **描述**
@@ -146,10 +122,8 @@ PhonePC/2in1TabletTVWearable
 
 ### path
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. char* Rcp_ResponseCookies::path
+```cpp
+char* Rcp_ResponseCookies::path
 ```
 
 **描述**
@@ -158,10 +132,8 @@ PhonePC/2in1TabletTVWearable
 
 ### rawSize
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. uint64_t Rcp_ResponseCookies::rawSize
+```cpp
+uint64_t Rcp_ResponseCookies::rawSize
 ```
 
 **描述**
@@ -170,10 +142,8 @@ PhonePC/2in1TabletTVWearable
 
 ### sameSite
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. char* Rcp_ResponseCookies::sameSite
+```cpp
+char* Rcp_ResponseCookies::sameSite
 ```
 
 **描述**
@@ -182,22 +152,18 @@ PhonePC/2in1TabletTVWearable
 
 ### secure
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. bool Rcp_ResponseCookies::secure
+```cpp
+bool Rcp_ResponseCookies::secure
 ```
 
 **描述**
 
-响应Cookie安全属性。
+响应Cookie安全属性。true表示此cookie是通过安全连接返回的，false表示此cookie不是通过安全连接返回的。
 
 ### value
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. char* Rcp_ResponseCookies::value
+```cpp
+char* Rcp_ResponseCookies::value
 ```
 
 **描述**

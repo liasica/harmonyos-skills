@@ -3,205 +3,202 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-wrap-key
 title: 加密导出导入密钥(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 其他操作 > 加密导出导入密钥 > 加密导出导入密钥(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:30+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7c147bf752684b9f55b7e68937ced9cefdbf9441d88c6000070918736bc82193
+scraped_at: 2026-09-02T14:59:32+08:00
+doc_updated_at: 2026-04-29
+content_hash: sha256:c5e416ea0232c67267bcd6a40345279a22bb94b4e869f902624da833c703fa3d
 ---
 
 从API 20开始，支持加密导出导入密钥。
 
 当前指导提供以下加密导出导入密钥示例：
 
-* [加密导出导入密钥(ArkTS)](huks-wrap-key-arkts.md#加密导出导入密钥arkts)
-  + [开发步骤](huks-wrap-key-arkts.md#开发步骤)
-  + [开发案例](huks-wrap-key-arkts.md#开发案例)
-    - [加密导出导入普通密钥](huks-wrap-key-arkts.md#加密导出导入普通密钥)
-    - [普通密钥导入为群组密钥](huks-wrap-key-arkts.md#普通密钥导入为群组密钥)
+* [加密导出导入普通密钥](huks-wrap-key-arkts.md#加密导出导入普通密钥)
+* [普通密钥导入为群组密钥](huks-wrap-key-arkts.md#普通密钥导入为群组密钥)
 
 ## 开发步骤
 
 1. 初始化生成密钥属性集，需要设置[HUKS\_TAG\_IS\_ALLOWED\_WRAP](../harmonyos-references/js-apis-huks.md#hukstag)，指定密钥允许导出。
 2. 调用[generateKeyItem](../harmonyos-references/js-apis-huks.md#huksgeneratekeyitem9)生成密钥，具体请参考[密钥生成](huks-key-generation-overview.md)。
 3. 调用[wrapKeyItem](../harmonyos-references/js-apis-huks.md#hukswrapkeyitem20)加密导出密钥。
-4. 调用[unwrapKeyItem](../harmonyos-references/js-apis-huks.md#huksunwrapkeyitem20)加密导入密钥。如果是从普通密钥导入为群组密钥，需要传入TUI PIN类型的AuthToken，认证TUI PIN并获取AuthToken请参考[数字盾服务](../harmonyos-references/devicesecurity-trusted-auth-api.md#section6763105845111)
+4. 调用[unwrapKeyItem](../harmonyos-references/js-apis-huks.md#huksunwrapkeyitem20)加密导入密钥。如果是从普通密钥导入为群组密钥，需要传入TUI PIN类型的AuthToken，认证TUI PIN并获取AuthToken请参考[数字盾服务](devicesecurity-trustedauth-verifybypwd.md#开发步骤)。
 
 ## 开发案例
 
 ### 加密导出导入普通密钥
 
-```
-1. import { huks } from '@kit.UniversalKeystoreKit';
+```ts
+import { huks } from '@kit.UniversalKeystoreKit';
 
-3. let keyAlias = "testWrapKey";
-4. let properties: Array<huks.HuksParam> = [
-5. {
-6. tag: huks.HuksTag.HUKS_TAG_ALGORITHM,
-7. value: huks.HuksKeyAlg.HUKS_ALG_AES
-8. },
-9. {
-10. tag: huks.HuksTag.HUKS_TAG_KEY_SIZE,
-11. value: huks.HuksKeySize.HUKS_AES_KEY_SIZE_256
-12. },
-13. {
-14. tag: huks.HuksTag.HUKS_TAG_PURPOSE,
-15. value: huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT
-16. },
-17. {
-18. tag: huks.HuksTag.HUKS_TAG_PADDING,
-19. value: huks.HuksKeyPadding.HUKS_PADDING_NONE
-20. },
-21. {
-22. tag: huks.HuksTag.HUKS_TAG_BLOCK_MODE,
-23. value: huks.HuksCipherMode.HUKS_MODE_GCM
-24. },
-25. /* 生成密钥时指定允许加密导出 */
-26. {
-27. tag: huks.HuksTag.HUKS_TAG_IS_ALLOWED_WRAP,
-28. value: true
-29. }
-30. ];
+let keyAlias = "testWrapKey";
+let properties: Array<huks.HuksParam> = [
+  {
+    tag: huks.HuksTag.HUKS_TAG_ALGORITHM,
+    value: huks.HuksKeyAlg.HUKS_ALG_AES
+  },
+  {
+    tag: huks.HuksTag.HUKS_TAG_KEY_SIZE,
+    value: huks.HuksKeySize.HUKS_AES_KEY_SIZE_256
+  },
+  {
+    tag: huks.HuksTag.HUKS_TAG_PURPOSE,
+    value: huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT
+  },
+  {
+    tag: huks.HuksTag.HUKS_TAG_PADDING,
+    value: huks.HuksKeyPadding.HUKS_PADDING_NONE
+  },
+  {
+    tag: huks.HuksTag.HUKS_TAG_BLOCK_MODE,
+    value: huks.HuksCipherMode.HUKS_MODE_GCM
+  },
+  /* 生成密钥时指定允许加密导出 */
+  {
+    tag: huks.HuksTag.HUKS_TAG_IS_ALLOWED_WRAP,
+    value: true
+  }
+];
 
-32. let options: huks.HuksOptions = {
-33. properties: properties,
-34. };
+let options: huks.HuksOptions = {
+  properties: properties,
+};
 
-36. let wrapKeyProperties: Array<huks.HuksParam> = [
-37. {
-38. tag: huks.HuksTag.HUKS_TAG_KEY_WRAP_TYPE,
-39. value: huks.HuksKeyWrapType.HUKS_KEY_WRAP_TYPE_HUK_BASED
-40. }
-41. ];
+let wrapKeyProperties: Array<huks.HuksParam> = [
+  {
+    tag: huks.HuksTag.HUKS_TAG_KEY_WRAP_TYPE,
+    value: huks.HuksKeyWrapType.HUKS_KEY_WRAP_TYPE_HUK_BASED
+  }
+];
 
-43. let wrapKeyOptions: huks.HuksOptions = {
-44. properties: wrapKeyProperties,
-45. };
+let wrapKeyOptions: huks.HuksOptions = {
+  properties: wrapKeyProperties,
+};
 
-47. let wrappedKey: Uint8Array;
+let wrappedKey: Uint8Array;
 
-49. async function testGenerateKey() {
-50. await huks.generateKeyItem(keyAlias, options)
-51. .then((data) => {
-52. console.info(`promise: generateKeyItem success`);
-53. })
-54. .catch((error: Error) => {
-55. console.error(`promise: generateKeyItem failed`);
-56. });
-57. }
+async function testGenerateKey() {
+  await huks.generateKeyItem(keyAlias, options)
+    .then((data) => {
+      console.info(`promise: generateKeyItem success`);
+    })
+    .catch((error: Error) => {
+      console.error(`promise: generateKeyItem failed`);
+    });
+}
 
-59. async function testWrapKey(){
-60. await testGenerateKey();
+async function testWrapKey(){
+  await testGenerateKey();
 
-62. await huks.wrapKeyItem(keyAlias, wrapKeyOptions)
-63. .then((data) => {
-64. wrappedKey = data.outData as Uint8Array;
-65. console.info(`promise: wrapKeyItem success, data = ${JSON.stringify(data)}`);
-66. })
-67. .catch((error: Error) => {
-68. console.error(`promise: wrapKeyItem failed`);
-69. });
+  await huks.wrapKeyItem(keyAlias, wrapKeyOptions)
+    .then((data) => {
+      wrappedKey = data.outData as Uint8Array;
+      console.info(`promise: wrapKeyItem success, data = ${JSON.stringify(data)}`);
+    })
+    .catch((error: Error) => {
+      console.error(`promise: wrapKeyItem failed`);
+    });
 
-71. await huks.unwrapKeyItem(keyAlias, wrapKeyOptions, wrappedKey)
-72. .then((data) => {
-73. console.info(`promise: unwrapKeyItem success`);
-74. })
-75. .catch((error: Error) => {
-76. console.error(`promise: unwrapKeyItem failed`);
-77. });
-78. }
+  await huks.unwrapKeyItem(keyAlias, wrapKeyOptions, wrappedKey)
+    .then((data) => {
+      console.info(`promise: unwrapKeyItem success`);
+    })
+    .catch((error: Error) => {
+      console.error(`promise: unwrapKeyItem failed`);
+    });
+}
 ```
 
 ### 普通密钥导入为群组密钥
 
 从API 23开始，支持从普通密钥导入为群组密钥。
 
-```
-1. import { huks } from '@kit.UniversalKeystoreKit';
-2. import { trustedAuthentication } from '@kit.DeviceSecurityKit';
+```ts
+import { huks } from '@kit.UniversalKeystoreKit';
+import { trustedAuthentication } from '@kit.DeviceSecurityKit';
 
-4. let keyAlias = "testWrapKey";
-5. let properties: Array<huks.HuksParam> = [
-6. {
-7. tag: huks.HuksTag.HUKS_TAG_ALGORITHM,
-8. value: huks.HuksKeyAlg.HUKS_ALG_AES
-9. },
-10. {
-11. tag: huks.HuksTag.HUKS_TAG_KEY_SIZE,
-12. value: huks.HuksKeySize.HUKS_AES_KEY_SIZE_256
-13. },
-14. {
-15. tag: huks.HuksTag.HUKS_TAG_PURPOSE,
-16. value: huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT
-17. },
-18. {
-19. tag: huks.HuksTag.HUKS_TAG_PADDING,
-20. value: huks.HuksKeyPadding.HUKS_PADDING_NONE
-21. },
-22. {
-23. tag: huks.HuksTag.HUKS_TAG_BLOCK_MODE,
-24. value: huks.HuksCipherMode.HUKS_MODE_GCM
-25. },
-26. /* 生成密钥时指定允许加密导出 */
-27. {
-28. tag: huks.HuksTag.HUKS_TAG_IS_ALLOWED_WRAP,
-29. value: true
-30. }
-31. ];
+let keyAlias = "testWrapKey";
+let properties: Array<huks.HuksParam> = [
+  {
+    tag: huks.HuksTag.HUKS_TAG_ALGORITHM,
+    value: huks.HuksKeyAlg.HUKS_ALG_AES
+  },
+  {
+    tag: huks.HuksTag.HUKS_TAG_KEY_SIZE,
+    value: huks.HuksKeySize.HUKS_AES_KEY_SIZE_256
+  },
+  {
+    tag: huks.HuksTag.HUKS_TAG_PURPOSE,
+    value: huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT
+  },
+  {
+    tag: huks.HuksTag.HUKS_TAG_PADDING,
+    value: huks.HuksKeyPadding.HUKS_PADDING_NONE
+  },
+  {
+    tag: huks.HuksTag.HUKS_TAG_BLOCK_MODE,
+    value: huks.HuksCipherMode.HUKS_MODE_GCM
+  },
+  /* 生成密钥时指定允许加密导出 */
+  {
+    tag: huks.HuksTag.HUKS_TAG_IS_ALLOWED_WRAP,
+    value: true
+  }
+];
 
-33. let options: huks.HuksOptions = {
-34. properties: properties,
-35. };
+let options: huks.HuksOptions = {
+  properties: properties,
+};
 
-37. let wrapKeyProperties: Array<huks.HuksParam> = [
-38. {
-39. tag: huks.HuksTag.HUKS_TAG_KEY_WRAP_TYPE,
-40. value: huks.HuksKeyWrapType.HUKS_KEY_WRAP_TYPE_HUK_BASED
-41. }
-42. ];
+let wrapKeyProperties: Array<huks.HuksParam> = [
+  {
+    tag: huks.HuksTag.HUKS_TAG_KEY_WRAP_TYPE,
+    value: huks.HuksKeyWrapType.HUKS_KEY_WRAP_TYPE_HUK_BASED
+  }
+];
 
-44. let wrapKeyOptions: huks.HuksOptions = {
-45. properties: wrapKeyProperties,
-46. };
+let wrapKeyOptions: huks.HuksOptions = {
+  properties: wrapKeyProperties,
+};
 
-48. let wrappedKey: Uint8Array;
+let wrappedKey: Uint8Array;
 
-50. async function testGenerateKey() {
-51. await huks.generateKeyItem(keyAlias, options)
-52. .then((data) => {
-53. console.info(`promise: generateKeyItem success`);
-54. })
-55. .catch((error: Error) => {
-56. console.error(`promise: generateKeyItem failed`);
-57. });
-58. }
+async function testGenerateKey() {
+  await huks.generateKeyItem(keyAlias, options)
+    .then((data) => {
+      console.info(`promise: generateKeyItem success`);
+    })
+    .catch((error: Error) => {
+      console.error(`promise: generateKeyItem failed`);
+    });
+}
 
-60. async function testWrapKey(){
-61. await testGenerateKey();
+async function testWrapKey(){
+  await testGenerateKey();
 
-63. await huks.wrapKeyItem(keyAlias, wrapKeyOptions)
-64. .then((data) => {
-65. wrappedKey = data.outData as Uint8Array;
-66. console.info(`promise: wrapKeyItem success, data = ${JSON.stringify(data)}`);
-67. })
-68. .catch((error: Error) => {
-69. console.error(`promise: wrapKeyItem failed`);
-70. });
+  await huks.wrapKeyItem(keyAlias, wrapKeyOptions)
+    .then((data) => {
+      wrappedKey = data.outData as Uint8Array;
+      console.info(`promise: wrapKeyItem success, data = ${JSON.stringify(data)}`);
+    })
+    .catch((error: Error) => {
+      console.error(`promise: wrapKeyItem failed`);
+    });
 
-72. challenge = new Uint8Array(32);
-73. let label: trustedAuthentication.TUILable;
-74. let authID: bigint;
-75. /* 认证TUI PIN之前需要先创建数字盾，请参考数字盾服务，authID和label仅做示例 */
-76. let authToken = await trustedAuthentication.trustedAuthentication(challenge, authID, label);
-77. wrapKeyOptions.wrapKeyProperties.push({
-78. tag: huks.HuksTag.HUKS_TAG_AUTH_TOKEN,
-79. value: authToken.authToken
-80. })
+  challenge = new Uint8Array(32);
+  let label: trustedAuthentication.TUILable;
+  let authID: bigint;
+  /* 认证TUI PIN之前需要先创建数字盾，请参考数字盾服务，authID和label仅做示例 */
+  let authToken = await trustedAuthentication.trustedAuthentication(challenge, authID, label);
+  wrapKeyOptions.wrapKeyProperties.push({
+    tag: huks.HuksTag.HUKS_TAG_AUTH_TOKEN,
+    value: authToken.authToken
+  })
 
-82. await huks.unwrapKeyItem(keyAlias, wrapKeyOptions, wrappedKey)
-83. .then((data) => {
-84. console.info(`promise: unwrapKeyItem success`);
-85. })
-86. .catch((error: Error) => {
-87. console.error(`promise: unwrapKeyItem failed`);
-88. });
-89. }
+  await huks.unwrapKeyItem(keyAlias, wrapKeyOptions, wrappedKey)
+    .then((data) => {
+      console.info(`promise: unwrapKeyItem success`);
+    })
+    .catch((error: Error) => {
+      console.error(`promise: unwrapKeyItem failed`);
+    });
+}
 ```

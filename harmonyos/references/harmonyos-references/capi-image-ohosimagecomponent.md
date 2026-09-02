@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: OhosImageComponent
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 结构体 > OhosImageComponent
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:31+08:00
-doc_updated_at: 2026-03-19
-content_hash: sha256:4a01594e3b77a9d0b8526d824ba8704d497362842e287d99d76b9058a3036a58
+scraped_at: 2026-09-02T15:02:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:38c6038aae37da77ed01fce23d0bfb5c941d226650f7b86a1de43926a9449dcd
 ---
 
-```
-1. struct OhosImageComponent {...}
+```c
+struct OhosImageComponent {...}
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义图像组成信息。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

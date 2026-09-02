@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permi
 title: 申请受限权限
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 申请应用权限 > 申请受限权限
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:30:36+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:9075c7ed77b92bc001f78a5de2220a9c2e97ea141d7963c57d06078a02f2769e
+scraped_at: 2026-09-02T14:59:27+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:543eb3ef45891f281189771d026d2a6dcc27fd080bfb8060d268bfa38eb34c19
 ---
 
-受限开放的权限通常是不允许三方应用申请的。如果有特殊场景需要使用，请提供相关申请材料到AppGallery Connect（简称为AGC）申请相应权限证书。
+受限开放的权限通常是不允许三方应用申请的。如果有特殊场景需要使用，请提供相关申请材料到[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)（简称为AGC）申请相应权限证书。
 
 在申请前，请审视是否符合受限权限的使用场景。为避免应用的上架申请被驳回，开发者应优先使用Picker/控件等替代方案，仅少量符合特殊场景的应用被允许申请受限权限。
 
-注意
+**注意** 
 
 在应用上架时，AGC将根据应用的使用场景审核是否可以使用对应的受限权限。如检测到应用软件包涉及获取受限权限，应用开发者需为每个受限权限项填写相应的权限说明，并上传视频说明使用场景，详情请见[发布HarmonyOS应用](../app/agc-help-release-app-guide-0000002287176372.md)。
 
@@ -20,7 +20,7 @@ content_hash: sha256:9075c7ed77b92bc001f78a5de2220a9c2e97ea141d7963c57d06078a02f
 
 ## 申请步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/cRYj0xM4Rjeqo-WoPKv2vg/zh-cn_image_0000002589324725.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/zBKCKmUTSAOhvMmKQQx_8A/zh-cn_image_0000002706834252.png)
 
 针对上图中的数字标注，补充说明如下：
 
@@ -31,7 +31,7 @@ content_hash: sha256:9075c7ed77b92bc001f78a5de2220a9c2e97ea141d7963c57d06078a02f
    审核结果将通过互动中心消息和邮件发送给您，请耐心等待。
 2. 每个受限开放权限的介绍、可用场景及其建议方案均可参考[受限开放权限列表](restricted-permissions.md)。
 
-   说明
+   **说明** 
 
    开发者**必须查询[受限开放权限列表](restricted-permissions.md)确认开发的应用是否符合使用场景，如果不符合要求，应用的上架申请将被驳回**。
 3. 在[AGC](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)侧申请Profile文件并同步申请使用相应受限权限。
@@ -40,14 +40,14 @@ content_hash: sha256:9075c7ed77b92bc001f78a5de2220a9c2e97ea141d7963c57d06078a02f
 
    应用因特殊场景要求使用受限开放权限，请务必在申请发布Profile“添加Profile页面”时，申请使用相应权限，否则应用将在审核时被驳回。
 
-   注意
+   **注意** 
 
    * 请确保应用申请受限开放权限时提供的场景和功能信息准确。
    * 如果应用内使用的受限开放权限超出您申请的范围，或申请权限后使用的功能和场景超出可使用的范围，将影响您的应用上架。
 
-   说明
+   **说明** 
 
-   * 在调试阶段，除下述方式外，还可以通过DevEco Studio自动签名完成申请。在自动签名的过程中，将由DevEco Studio完成向AGC申请受限权限的步骤，开发者可直接使用，具体请参考[自动签名-操作步骤](ide-signing.md#section151231211105010)。
+   * 在调试阶段，除下述方式外，还可以通过DevEco Studio自动签名完成申请。在自动签名的过程中，将由DevEco Studio完成向AGC申请受限权限的步骤，开发者可直接使用，具体请参考[自动签名-操作步骤](ide-signing-auto.md#section1172562862811)。
    * 在发布阶段，必须根据[申请发布Profile](../app/agc-help-release-profile-0000002248341090.md)完成受限权限的手动申请。
 4. 在配置文件中[声明权限](declare-permissions.md)。
 5. 通过[权限列表](restricted-permissions.md)中的“**授权方式**”字段，判断是否需要用户授权。

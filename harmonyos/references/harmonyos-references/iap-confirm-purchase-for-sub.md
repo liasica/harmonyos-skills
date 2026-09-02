@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-confi
 title: 订阅确认发货
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API > 订阅确认发货
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:57+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e2197c8621fb591eebe535c699c5021fb4a330ad5db4f32d1eff5a8adf4fc4c6
+scraped_at: 2026-09-02T15:02:56+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:c4e9d18906c784481c09be34944d2b876b8b275e5be920509f8355ebf8a07c15
 ---
 
 ## 功能介绍
 
-此接口用于确认购买的自动续期订阅商品已经发放权益。
+此接口用于通知IAP服务器，开发者服务器已经向用户发放权益。
 
 ## 场景描述
 
 开发者服务器收到IAP服务器关键事件通知后，调用订阅状态查询接口获取订阅的最新状态，再根据订阅状态发放权益，具体请参见[确保权益发放](../harmonyos-guides/iap-delivering-subscriptions.md#确保权益发放)。
 
-说明
+**说明** 
 
 一个购买订单号ID（purchaseOrderId）只可以发货一次，请勿重复发货。
 
@@ -53,15 +53,15 @@ content_hash: sha256:e2197c8621fb591eebe535c699c5021fb4a330ad5db4f32d1eff5a8adf4
 
 更多语言及详细的代码示例，请参考[IAP Kit-Sample-ServerDemo](https://gitcode.com/HarmonyOS_Samples/iapkit-sample-serverdemo)。
 
-```
-1. POST /subscription/harmony/v1/application/purchase/shipped/confirm
-2. Content-Type: application/json;charset=UTF-8
-3. Authorization: Bearer ***.***.***
-4. Accept: application/json
-5. {
-6. "purchaseToken": "***.*.***",
-7. "purchaseOrderId": "***.***"
-8. }
+```javascript
+POST /subscription/harmony/v1/application/purchase/shipped/confirm
+Content-Type: application/json;charset=UTF-8
+Authorization: Bearer ***.***.***
+Accept: application/json
+{
+  "purchaseToken": "***.*.***",
+  "purchaseOrderId": "****.*.***"
+}
 ```
 
 ## 响应参数
@@ -81,10 +81,10 @@ content_hash: sha256:e2197c8621fb591eebe535c699c5021fb4a330ad5db4f32d1eff5a8adf4
 
 ## 响应示例
 
-```
-1. HTTP/1.2 200 OK
-2. Content-Type: application/json;charset=UTF-8
-3. {
-4. "responseCode": "0"
-5. }
+```javascript
+HTTP/1.2 200 OK
+Content-Type: application/json;charset=UTF-8
+{
+  "responseCode": "0"
+}
 ```

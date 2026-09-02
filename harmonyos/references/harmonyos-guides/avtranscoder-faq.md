@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avtranscoder-
 title: 转码常见问题
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 视频转码 > 转码常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:29+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-02T15:17:33+08:00
+doc_updated_at: 2026-08-29
 content_hash: sha256:96bab0ae96ce22bc624e40565be6fbf55f8290de2595ecd00e454d9c9f80debc
 ---
 

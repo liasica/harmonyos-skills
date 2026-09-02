@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-g
 title: XEngine Kit（GPU加速引擎服务）
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f4a3a2f5618925d8683470e24da09ea0084551eac14140552449a9e04b0379a3
+scraped_at: 2026-09-02T14:50:22+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5d37fb96c9f9a23ba1226c09f716c271a79fc5d2d0a271bd42549347f6d54721
 ---
 
 * **[XEngine Kit简介](xengine-kit-introduction.md)**
@@ -18,5 +18,7 @@ content_hash: sha256:f4a3a2f5618925d8683470e24da09ea0084551eac14140552449a9e04b0
 * **[光线追踪反射](xengine-kit-rt-reflection.md)**
 * **[光线追踪阴影和环境光遮蔽](xengine-kit-rt-shadow-and-ao.md)**
 * **[光线追踪全局光照](xengine-kit-rt-global-illumination.md)**
+* **[控显分离](xengine-kit-control-display-separation.md)**
 * **[Maleoon API](xengine-kit-maleoon-api.md)**
 * **[XEngine Kit常见问题](xengine-kit-faq.md)**
+* **[XEngine Kit术语](xengine-kit-glossary.md)**

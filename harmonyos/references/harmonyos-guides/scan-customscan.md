@@ -3,16 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-customsc
 title: 自定义界面扫码
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 自定义界面扫码
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:35:41+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:ab2ccf0b8173a6c6da5d6ae10a7cbda4e5f33b629df16d6e6dedc91e55924a25
+scraped_at: 2026-09-02T14:59:48+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:f9da2550efbf0253381e880ae885830c63f5c980f52f81fc805f0a355b4ecc51
 ---
-
-## 基本概念
 
 自定义界面扫码能力提供了相机流控制接口，可根据自身需求自定义扫码界面，适用于对扫码界面有定制化需求的应用开发。
 
-说明
+**说明** 
 
 通过自定义界面扫码可以实现应用内的扫码功能，为了获得更好的应用体验，推荐同时[接入“扫码直达”服务](scan-directservice.md)，应用可以同时支持系统扫码入口（控制中心扫一扫）和应用内扫码两种方式跳转到指定服务页面。
 
@@ -20,25 +18,26 @@ content_hash: sha256:ab2ccf0b8173a6c6da5d6ae10a7cbda4e5f33b629df16d6e6dedc91e559
 
 自定义界面扫码能力提供扫码相机流控制接口，支持相机流的初始化、开启、暂停、释放、重新扫码功能；支持闪光灯的状态获取、开启、关闭；支持变焦比的获取和设置；支持设置相机焦点和连续自动对焦；支持对条形码、二维码、MULTIFUNCTIONAL CODE进行扫码识别（具体类型参见[ScanType](../harmonyos-references/scan-scancore.md#scantype)），并获得码类型、码值、码位置、相机预览流（YUV）等信息。该能力可用于单码和多码的扫描识别。
 
-开发者集成自定义界面扫码能力可以自行定义扫码的界面样式，请按照业务流程完成扫码接口调用实现实时扫码功能。建议开发者基于[Sample Code](https://gitcode.com/HarmonyOS_Samples/scankit-samplecode-clientdemo-arkts)做个性化修改。
+开发者集成自定义界面扫码能力可以自行定义扫码的界面样式，请按照业务流程完成扫码接口调用实现实时扫码功能。建议开发者基于[示例工程](https://gitcode.com/HarmonyOS_Samples/scankit-samplecode-clientdemo-arkts)做个性化修改。
 
 扫码页面UX设计规范：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/M5XxZIO-Q0iM5PjbpqF2tw/zh-cn_image_0000002558605456.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/3oeUVcP9RKa0IjbLJn7ynw/zh-cn_image_0000002736433759.png)
 
-说明
+**说明** 
 
 YUV（相机预览流图像数据）适合于扫码和识物的综合识别场景，开发者需要自己控制相机流，普通扫码场景无需关注。
 
 ## 约束与限制
 
-* 从6.1.0(23)版本开始，自定义界面扫码能力支持带后置相机的Wearable，可以通过[cameraManager.getSupportedCameras](../harmonyos-references/arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
+* 从API版本26.0.0开始，支持使用[isCustomScanSupported](../harmonyos-references/scan-scancore.md#iscustomscansupported)接口查询当前设备是否支持自定义界面扫码。
+* 从API版本6.1.0(23)开始，自定义界面扫码能力支持带后置相机的Wearable，可以通过[getSupportedCameras](../harmonyos-references/arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
 * 需要请求相机的使用权限。
 * 需要开发者自行实现扫码的人机交互界面。例如：多码场景需要暂停相机流由用户选择一个码图进行识别。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/Sz9twQHCTWKFxTkfOglzBg/zh-cn_image_0000002589324983.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/zMsmg6YoRTCaMciYjRJiSg/zh-cn_image_0000002706834608.png)
 
 1. **发起请求：** 用户向开发者的应用发起扫码请求，应用拉起已定义好的扫码界面。
 2. **申请授权：** 应用需要向用户申请相机权限授权。若未同意授权，则无法使用此功能。
@@ -58,23 +57,23 @@ YUV（相机预览流图像数据）适合于扫码和识物的综合识别场�
 
 | 接口名 | 描述 |
 | --- | --- |
-| [init](../harmonyos-references/scan-customscan-api.md#customscaninit)(options?: scanBarcode.[ScanOptions](../harmonyos-references/scan-scanbarcode-api.md#scanoptions)): void | 初始化自定义界面扫码，加载资源。无返回结果。 |
-| [start](../harmonyos-references/scan-customscan-api.md#customscanstart)(viewControl: [ViewControl](../harmonyos-references/scan-customscan-api.md#viewcontrol)): Promise<Array<scanBarcode.[ScanResult](../harmonyos-references/scan-scanbarcode-api.md#scanresult)>> | 启动扫码相机流获取扫码结果。使用Promise异步回调。 |
-| [stop](../harmonyos-references/scan-customscan-api.md#customscanstop)(): Promise<void> | 暂停扫码相机流。使用Promise异步回调。 |
-| [release](../harmonyos-references/scan-customscan-api.md#customscanrelease)(): Promise<void> | 释放扫码相机流。使用Promise异步回调。 |
-| [start](../harmonyos-references/scan-customscan-api.md#customscanstart-1)(viewControl: ViewControl, callback: AsyncCallback<Array<scanBarcode.ScanResult>>, frameCallback?: AsyncCallback<[ScanFrame](../harmonyos-references/scan-customscan-api.md#scanframe)>): void | 启动扫码相机流获取扫码结果以及YUV图像数据。使用callback异步回调。 |
-| [getFlashLightStatus](../harmonyos-references/scan-customscan-api.md#customscangetflashlightstatus)(): boolean | 获取闪光灯状态。返回结果为布尔值，true为打开状态，false为关闭状态。 |
-| [openFlashLight](../harmonyos-references/scan-customscan-api.md#customscanopenflashlight)(): void | 开启闪光灯。无返回结果。 |
-| [closeFlashLight](../harmonyos-references/scan-customscan-api.md#customscancloseflashlight)(): void | 关闭闪光灯。无返回结果。 |
-| [setZoom](../harmonyos-references/scan-customscan-api.md#customscansetzoom)(zoomValue : number): void | 设置变焦比。无返回结果。 |
-| [getZoom](../harmonyos-references/scan-customscan-api.md#customscangetzoom)(): number | 获取当前的变焦比。 |
-| [setFocusPoint](../harmonyos-references/scan-customscan-api.md#customscansetfocuspoint)(point: scanBarcode.[Point](../harmonyos-references/scan-scanbarcode-api.md#point)): void | 设置相机焦点。 |
-| [resetFocus](../harmonyos-references/scan-customscan-api.md#customscanresetfocus)(): void | 设置连续自动对焦模式。 |
-| [rescan](../harmonyos-references/scan-customscan-api.md#customscanrescan)(): void | 触发一次重新扫码。仅对start接口callback异步回调有效，Promise异步回调无效。 |
-| [stop](../harmonyos-references/scan-customscan-api.md#customscanstop-1)(callback: AsyncCallback<void>): void | 暂停扫码相机流。使用callback异步回调。 |
-| [release](../harmonyos-references/scan-customscan-api.md#customscanrelease-1)(callback: AsyncCallback<void>): void | 释放扫码相机流。使用callback异步回调。 |
-| [on](../harmonyos-references/scan-customscan-api.md#customscanonlightingflash)(type: 'lightingFlash', callback: AsyncCallback<boolean>): void | 订阅闪光灯状态监听事件，当环境暗、亮状态变化时返回闪光灯开启或关闭时机。使用callback异步回调。 |
-| [off](../harmonyos-references/scan-customscan-api.md#customscanofflightingflash)(type: 'lightingFlash', callback?: AsyncCallback<boolean>): void | 注销闪光灯状态监听事件。使用callback异步回调。 |
+| [init](../harmonyos-references/scan-customscan-api.md#init)(options?: scanBarcode.[ScanOptions](../harmonyos-references/scan-scanbarcode-api.md#scanoptions)): void | 初始化自定义界面扫码，加载资源。无返回结果。 |
+| [start](../harmonyos-references/scan-customscan-api.md#start)(viewControl: [ViewControl](../harmonyos-references/scan-customscan-api.md#viewcontrol)): Promise<Array<scanBarcode.[ScanResult](../harmonyos-references/scan-scanbarcode-api.md#scanresult)>> | 启动扫码相机流获取扫码结果。使用Promise异步回调。 |
+| [stop](../harmonyos-references/scan-customscan-api.md#stop)(): Promise<void> | 暂停扫码相机流。使用Promise异步回调。 |
+| [release](../harmonyos-references/scan-customscan-api.md#release)(): Promise<void> | 释放扫码相机流。使用Promise异步回调。 |
+| [start](../harmonyos-references/scan-customscan-api.md#start-1)(viewControl: ViewControl, callback: AsyncCallback<Array<scanBarcode.ScanResult>>, frameCallback?: AsyncCallback<[ScanFrame](../harmonyos-references/scan-customscan-api.md#scanframe)>): void | 启动扫码相机流获取扫码结果、相机预览流（YUV-图像格式NV21基于4:2:0采样）。使用callback异步回调。 |
+| [getFlashLightStatus](../harmonyos-references/scan-customscan-api.md#getflashlightstatus)(): boolean | 获取当前相机闪光灯状态。返回结果为布尔值，true为打开状态，false为关闭状态。 |
+| [openFlashLight](../harmonyos-references/scan-customscan-api.md#openflashlight)(): void | 开启相机闪光灯。无返回结果。 |
+| [closeFlashLight](../harmonyos-references/scan-customscan-api.md#closeflashlight)(): void | 关闭相机闪光灯。无返回结果。 |
+| [setZoom](../harmonyos-references/scan-customscan-api.md#setzoom)(zoomValue : number): void | 设置变焦比。变焦精度最高为小数点后两位，如果设置超过支持的精度范围，则只保留精度范围内数值。无返回结果。 |
+| [getZoom](../harmonyos-references/scan-customscan-api.md#getzoom)(): number | 获取当前的变焦比。 |
+| [setFocusPoint](../harmonyos-references/scan-customscan-api.md#setfocuspoint)(point: scanBarcode.[Point](../harmonyos-references/scan-scanbarcode-api.md#point)): void | 设置相机焦点。 |
+| [resetFocus](../harmonyos-references/scan-customscan-api.md#resetfocus)(): void | 设置连续自动对焦模式。 |
+| [rescan](../harmonyos-references/scan-customscan-api.md#rescan)(): void | 触发一次重新扫码。仅对start接口callback异步回调有效，Promise异步回调无效。 |
+| [stop](../harmonyos-references/scan-customscan-api.md#stop-1)(callback: AsyncCallback<void>): void | 暂停扫码相机流。使用callback异步回调。 |
+| [release](../harmonyos-references/scan-customscan-api.md#release-1)(callback: AsyncCallback<void>): void | 释放扫码相机流。使用callback异步回调。 |
+| [on](../harmonyos-references/scan-customscan-api.md#onlightingflash)(type: 'lightingFlash', callback: AsyncCallback<boolean>): void | 订阅环境亮度变化事件，当环境暗、亮状态变化时返回闪光灯开启或关闭提示。使用callback异步回调。 |
+| [off](../harmonyos-references/scan-customscan-api.md#offlightingflash)(type: 'lightingFlash', callback?: AsyncCallback<boolean>): void | 注销环境亮度变化事件。使用callback异步回调。 |
 
 ## 开发步骤
 
@@ -92,860 +91,850 @@ YUV（相机预览流图像数据）适合于扫码和识物的综合识别场�
 2. 使用接口[requestPermissionsFromUser](../harmonyos-references/js-apis-abilityaccessctrl.md#requestpermissionsfromuser9-1)请求用户授权。具体申请方式及校验方式，请参见[向用户申请授权](request-user-authorization.md)。
 3. 导入自定义界面扫码接口以及相关接口模块，导入方法如下。
 
-   ```
-   1. import { scanCore, scanBarcode, customScan } from '@kit.ScanKit';
-   2. // 导入功能涉及的权限申请、回调接口
-   3. import { display } from '@kit.ArkUI';
-   4. import { AsyncCallback, BusinessError } from '@kit.BasicServicesKit';
-   5. import { hilog } from '@kit.PerformanceAnalysisKit';
-   6. import { common, abilityAccessCtrl, PermissionRequestResult } from '@kit.AbilityKit';
+   ```typescript
+   import { scanCore, scanBarcode, customScan } from '@kit.ScanKit';
+   // 导入功能涉及的权限申请、回调接口
+   import { display } from '@kit.ArkUI';
+   import { AsyncCallback, BusinessError } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { common, abilityAccessCtrl, PermissionRequestResult } from '@kit.AbilityKit';
    ```
 4. 遵循[业务流程](scan-customscan.md#业务流程)完成自定义界面扫码功能。
 
-   说明
+   **说明** 
 
    1. 在设置start接口的viewControl参数时，width和height与[XComponent](../harmonyos-references/ts-basic-components-xcomponent.md)的宽高值相同，start接口会根据XComponent的宽高比例从相机的分辨率选择最优分辨率，如果比例与相机的分辨率比例相差过大会影响预览流体验。
 
       当前支持的分辨率比例为16:9、4:3、1:1。竖屏场景下，XComponent的高度需要大于宽度，且高宽比在支持的分辨率比例中。横屏场景下，XComponent的宽度需要大于高度，且宽高比在支持的分辨率比例中。
-   2. XComponent的宽高需根据使用场景计算适配。例如：在开发设备为折叠屏时，需按照折叠屏的展开态和折叠态分别计算XComponent的宽高，start接口会根据XComponent的宽高适配对应的相机分辨率。设备屏幕宽高可通过[display.getDefaultDisplaySync](../harmonyos-references/js-apis-display.md#displaygetdefaultdisplaysync9)方法获取（获取的为px单位，需要通过[px2vp](../harmonyos-references/arkts-apis-uicontext-uicontext.md#px2vp12)方法转为vp）。
+   2. XComponent的宽高需根据使用场景计算适配。例如：在开发设备为折叠屏时，需按照折叠屏的展开态和折叠态分别计算XComponent的宽高，start接口会根据XComponent的宽高适配对应的相机分辨率。设备屏幕宽高可通过[display.getDefaultDisplaySync](../harmonyos-references/js-apis-display.md#displaygetdefaultdisplaysync9)方法获取（所获取宽高值的单位为px，需要通过[px2vp](../harmonyos-references/arkts-apis-uicontext-uicontext.md#px2vp12)方法转为vp）。
 
    * 通过Promise方式回调，调用自定义界面扫码接口拉起相机流并返回扫码结果。
 
-     ```
-     1. const TAG: string = '[customScanPage]';
+     ```typescript
+     const TAG: string = '[customScanPage]';
 
-     3. @Entry
-     4. @Component
-     5. struct CustomScanPage {
-     6. @State userGrant: boolean = false; // 是否已申请相机权限
-     7. @State surfaceId: string = ''; // XComponent组件生成id
-     8. @State isShowBack: boolean = false; // 是否已经返回扫码结果
-     9. @State isFlashLightEnable: boolean = false; // 是否开启了闪光灯
-     10. @State isSensorLight: boolean = false; // 记录当前环境亮暗状态
-     11. @State cameraHeight: number = 640; // 设置预览流高度，默认单位：vp
-     12. @State cameraWidth: number = 360; // 设置预览流宽度，默认单位：vp
-     13. @State offsetX: number = 0; // 设置预览流x轴方向偏移量，默认单位：vp
-     14. @State offsetY: number = 0; // 设置预览流y轴方向偏移量，默认单位：vp
-     15. @State zoomValue: number = 1; // 预览流缩放比例
-     16. @State setZoomValue: number = 1; // 已设置的预览流缩放比例
-     17. @State scaleValue: number = 1; // 屏幕缩放比
-     18. @State pinchValue: number = 1; // 双指缩放比例
-     19. @State displayHeight: number = 0; // 屏幕高度，单位vp
-     20. @State displayWidth: number = 0; // 屏幕宽度，单位vp
-     21. @State scanResult: Array<scanBarcode.ScanResult> = []; // 扫码结果
-     22. private mXComponentController: XComponentController = new XComponentController();
+     @Entry
+     @Component
+     struct CustomScanPage {
+       @State userGrant: boolean = false; // 是否已申请相机权限
+       @State surfaceId: string = ''; // XComponent组件生成id
+       @State isShowBack: boolean = false; // 是否已经返回扫码结果
+       @State isFlashLightEnable: boolean = false; // 是否开启了闪光灯
+       @State isSensorLight: boolean = false; // 记录当前环境亮暗状态
+       @State cameraHeight: number = 640; // 设置预览流高度，默认单位：vp
+       @State cameraWidth: number = 360; // 设置预览流宽度，默认单位：vp
+       @State offsetX: number = 0; // 设置预览流x轴方向偏移量，默认单位：vp
+       @State offsetY: number = 0; // 设置预览流y轴方向偏移量，默认单位：vp
+       @State zoomValue: number = 1; // 预览流缩放比例
+       @State setZoomValue: number = 1; // 已设置的预览流缩放比例
+       @State scaleValue: number = 1; // 屏幕缩放比
+       @State pinchValue: number = 1; // 双指缩放比例
+       @State displayHeight: number = 0; // 屏幕高度，单位vp
+       @State displayWidth: number = 0; // 屏幕宽度，单位vp
+       @State scanResult: Array<scanBarcode.ScanResult> = []; // 扫码结果
+       private mXComponentController: XComponentController = new XComponentController();
 
-     24. async onPageShow() {
-     25. // 自定义启动第一步，用户申请权限
-     26. await this.requestCameraPermission();
-     27. // 多码扫码识别，enableMultiMode: true 单码扫码识别enableMultiMode: false
-     28. let options: scanBarcode.ScanOptions = {
-     29. scanTypes: [scanCore.ScanType.ALL],
-     30. enableMultiMode: true,
-     31. enableAlbum: true
-     32. };
-     33. // 自定义启动第二步：设置预览流布局尺寸
-     34. this.setDisplay();
-     35. try {
-     36. // 自定义启动第三步，初始化接口
-     37. customScan.init(options);
-     38. } catch (err) {
-     39. hilog.error(0x0001, TAG, `Failed to init customScan. Code: ${err.code}, message: ${err.message}`);
-     40. }
-     41. }
+       async onPageShow() {
+         // 自定义启动第一步，用户申请权限
+         await this.requestCameraPermission();
+         // 多码扫码识别，enableMultiMode: true 单码扫码识别enableMultiMode: false
+         const options: scanBarcode.ScanOptions = {
+           scanTypes: [scanCore.ScanType.ALL],
+           enableMultiMode: true,
+           enableAlbum: true
+         };
+         // 自定义启动第二步：设置预览流布局尺寸
+         this.setDisplay();
+         try {
+           // 自定义启动第三步，初始化接口
+           customScan.init(options);
+         } catch (err) {
+           hilog.error(0x0001, TAG, `Failed to init customScan. Code: ${err.code}, message: ${err.message}`);
+         }
+       }
 
-     43. onPageHide() {
-     44. // 页面消失或隐藏时，停止并释放相机流
-     45. this.userGrant = false;
-     46. this.isFlashLightEnable = false;
-     47. this.isSensorLight = false;
-     48. try {
-     49. customScan.off('lightingFlash');
-     50. } catch (err) {
-     51. hilog.error(0x0001, TAG, `Failed to off lightingFlash. Code: ${err.code}, message: ${err.message}`);
-     52. }
-     53. this.customScanStop();
-     54. try {
-     55. // 自定义相机流释放接口
-     56. customScan.release().catch((err: BusinessError) => {
-     57. hilog.error(0x0001, TAG,
-     58. `Failed to release customScan by promise. Code: ${err.code}, message: ${err.message}`);
-     59. });
-     60. } catch (err) {
-     61. hilog.error(0x0001, TAG, `Failed to release customScan. Code: ${err.code}, message: ${err.message}`);
-     62. }
-     63. }
+       onPageHide() {
+         // 页面消失或隐藏时，停止并释放相机流
+         this.userGrant = false;
+         this.isFlashLightEnable = false;
+         this.isSensorLight = false;
+         try {
+           customScan.off('lightingFlash');
+         } catch (err) {
+           hilog.error(0x0001, TAG, `Failed to off lightingFlash. Code: ${err.code}, message: ${err.message}`);
+         }
+         this.customScanStop();
+         try {
+           // 自定义相机流释放接口
+           customScan.release().catch((err: BusinessError) => {
+             hilog.error(0x0001, TAG,
+               `Failed to release customScan by promise. Code: ${err.code}, message: ${err.message}`);
+           });
+         } catch (err) {
+           hilog.error(0x0001, TAG, `Failed to release customScan. Code: ${err.code}, message: ${err.message}`);
+         }
+       }
 
-     65. // 用户申请权限
-     66. async reqPermissionsFromUser(): Promise<number[]> {
-     67. hilog.info(0x0001, TAG, 'reqPermissionsFromUser start');
-     68. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-     69. let atManager = abilityAccessCtrl.createAtManager();
-     70. try {
-     71. const grantStatus: PermissionRequestResult =
-     72. await atManager.requestPermissionsFromUser(context, ['ohos.permission.CAMERA']);
-     73. return grantStatus.authResults;
-     74. } catch (err) {
-     75. hilog.error(0x0001, TAG, `Failed to requestPermissionsFromUser. Code: ${err.code}, message: ${err.message}`);
-     76. return [];
-     77. }
-     78. }
+       // 用户申请权限
+       async reqPermissionsFromUser(): Promise<number[]> {
+         hilog.info(0x0001, TAG, 'reqPermissionsFromUser start');
+         const context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+         const atManager = abilityAccessCtrl.createAtManager();
+         try {
+           const grantStatus: PermissionRequestResult =
+             await atManager.requestPermissionsFromUser(context, ['ohos.permission.CAMERA']);
+           return grantStatus.authResults;
+         } catch (err) {
+           hilog.error(0x0001, TAG, `Failed to requestPermissionsFromUser. Code: ${err.code}, message: ${err.message}`);
+           return [];
+         }
+       }
 
-     80. // 用户申请相机权限
-     81. async requestCameraPermission() {
-     82. let grantStatus = await this.reqPermissionsFromUser();
-     83. for (let i = 0; i < grantStatus.length; i++) {
-     84. if (grantStatus[i] === 0) {
-     85. // 用户授权，可以继续访问目标操作
-     86. hilog.info(0x0001, TAG, 'Succeeded in getting permissions.');
-     87. this.userGrant = true;
-     88. break;
-     89. }
-     90. }
-     91. }
+       // 用户申请相机权限
+       async requestCameraPermission() {
+         const grantStatus = await this.reqPermissionsFromUser();
+         for (let i = 0; i < grantStatus.length; i++) {
+           if (grantStatus[i] === 0) {
+             // 用户授权，可以继续访问目标操作
+             hilog.info(0x0001, TAG, 'Succeeded in getting permissions.');
+             this.userGrant = true;
+             break;
+           }
+         }
+       }
 
-     93. // 竖屏时获取屏幕尺寸，设置预览流全屏示例
-     94. setDisplay() {
-     95. try {
-     96. // 默认竖屏
-     97. let displayClass = display.getDefaultDisplaySync();
-     98. this.displayHeight = this.getUIContext().px2vp(displayClass.height);
-     99. this.displayWidth = this.getUIContext().px2vp(displayClass.width);
-     100. let maxLen: number = Math.max(this.displayWidth, this.displayHeight);
-     101. let minLen: number = Math.min(this.displayWidth, this.displayHeight);
-     102. const RATIO: number = 16 / 9;
-     103. this.cameraHeight = maxLen;
-     104. this.cameraWidth = maxLen / RATIO;
-     105. this.offsetX = (minLen - this.cameraWidth) / 2;
-     106. } catch (err) {
-     107. hilog.error(0x0001, TAG, `Failed to getDefaultDisplaySync. Code: ${err.code}, message: ${err.message}`);
-     108. }
-     109. }
+       // 竖屏时获取屏幕尺寸，设置预览流全屏示例
+       setDisplay() {
+         try {
+           // 默认竖屏
+           const displayClass: display.Display = display.getDefaultDisplaySync();
+           this.displayHeight = this.getUIContext().px2vp(displayClass.height);
+           this.displayWidth = this.getUIContext().px2vp(displayClass.width);
+           const maxLen: number = Math.max(this.displayWidth, this.displayHeight);
+           const minLen: number = Math.min(this.displayWidth, this.displayHeight);
+           const RATIO: number = 16 / 9;
+           this.cameraHeight = maxLen;
+           this.cameraWidth = maxLen / RATIO;
+           this.offsetX = (minLen - this.cameraWidth) / 2;
+         } catch (err) {
+           hilog.error(0x0001, TAG, `Failed to getDefaultDisplaySync. Code: ${err.code}, message: ${err.message}`);
+         }
+       }
 
-     111. // toast显示扫码结果
-     112. showScanResult(data: scanBarcode.ScanResult) {
-     113. try {
-     114. // 使用toast显示出扫码结果
-     115. this.getUIContext().getPromptAction().showToast({
-     116. message: JSON.stringify(data),
-     117. duration: 5000
-     118. });
-     119. } catch (err) {
-     120. hilog.error(0x0001, TAG, `Failed to showToast. Code: ${err.code}, message: ${err.message}`);
-     121. }
-     122. }
+       // toast显示扫码结果
+       showScanResult(data: scanBarcode.ScanResult) {
+         try {
+           // 使用toast显示出扫码结果
+           this.getUIContext().getPromptAction().showToast({
+             message: `originalValue: ${data.originalValue}`,
+             duration: 5000
+           });
+         } catch (err) {
+           hilog.error(0x0001, TAG, `Failed to showToast. Code: ${err.code}, message: ${err.message}`);
+         }
+       }
 
-     124. initCamera() {
-     125. this.isShowBack = false;
-     126. this.scanResult = [];
-     127. let viewControl: customScan.ViewControl = {
-     128. width: this.cameraWidth,
-     129. height: this.cameraHeight,
-     130. surfaceId: this.surfaceId
-     131. };
-     132. try {
-     133. // 自定义启动第四步，请求扫码接口，通过Promise方式回调
-     134. customScan.start(viewControl)
-     135. .then((data: Array<scanBarcode.ScanResult>) => {
-     136. hilog.info(0x0001, TAG, `result: ${JSON.stringify(data)}`);
-     137. if (data.length) {
-     138. // 解析码值结果跳转应用服务页
-     139. this.scanResult = data;
-     140. this.isShowBack = true;
-     141. // 获取到扫描结果后暂停相机流
-     142. this.customScanStop();
-     143. }
-     144. }).catch((err: BusinessError) => {
-     145. hilog.error(0x0001, TAG, `Failed to start customScan. Code: ${err.code}, message: ${err.message}`);
-     146. });
-     147. } catch (err) {
-     148. hilog.error(0x0001, TAG, `Failed to start customScan. Code: ${err.code}, message: ${err.message}`);
-     149. }
-     150. }
+       initCamera() {
+         this.isShowBack = false;
+         this.scanResult = [];
+         const viewControl: customScan.ViewControl = {
+           width: this.cameraWidth,
+           height: this.cameraHeight,
+           surfaceId: this.surfaceId
+         };
+         try {
+           // 自定义启动第四步，请求扫码接口，通过Promise方式回调
+           customScan.start(viewControl)
+             .then((data: Array<scanBarcode.ScanResult>) => {
+               hilog.info(0x0001, TAG, 'Succeeded in getting ScanResult by promise.');
+               if (data.length) {
+                 // 解析码值结果跳转应用服务页
+                 this.scanResult = data;
+                 this.isShowBack = true;
+                 // 获取到扫描结果后暂停相机流
+                 this.customScanStop();
+               }
+             }).catch((err: BusinessError) => {
+             hilog.error(0x0001, TAG, `Failed to start customScan. Code: ${err.code}, message: ${err.message}`);
+           });
+         } catch (err) {
+           hilog.error(0x0001, TAG, `Failed to start customScan. Code: ${err.code}, message: ${err.message}`);
+         }
+       }
 
-     152. customScanStop() {
-     153. try {
-     154. customScan.stop().catch((err: BusinessError) => {
-     155. hilog.error(0x0001, TAG, `Failed to stop customScan. Code: ${err.code}, message: ${err.message}`);
-     156. });
-     157. } catch (err) {
-     158. hilog.error(0x0001, TAG, `Failed to stop customScan. Code: ${err.code}, message: ${err.message}`);
-     159. }
-     160. }
+       customScanStop() {
+         try {
+           customScan.stop().catch((err: BusinessError) => {
+             hilog.error(0x0001, TAG, `Failed to stop customScan. Code: ${err.code}, message: ${err.message}`);
+           });
+         } catch (err) {
+           hilog.error(0x0001, TAG, `Failed to stop customScan. Code: ${err.code}, message: ${err.message}`);
+         }
+       }
 
-     162. // 自定义扫码界面的顶部返回按钮和扫码提示
-     163. @Builder
-     164. topTool() {
-     165. Column() {
-     166. Flex({ direction: FlexDirection.Row, justifyContent: FlexAlign.SpaceBetween, alignItems: ItemAlign.Center }) {
-     167. Text('返回')
-     168. .onClick(() => {
-     169. this.getUIContext().getRouter().back();
-     170. })
-     171. }.padding({ left: 24, right: 24, top: 40 })
+       // 自定义界面扫码的顶部返回按钮和扫码提示
+       @Builder
+       topTool() {
+         Column() {
+           Flex({ direction: FlexDirection.Row, justifyContent: FlexAlign.SpaceBetween, alignItems: ItemAlign.Center }) {
+             Text('返回')
+               .onClick(() => {
+                 this.getUIContext().getRouter().back();
+               })
+           }.padding({ left: 24, right: 24, top: 40 })
 
-     174. Column() {
-     175. Text('扫描二维码/条形码')
-     176. Text('对准二维码/条形码，即可自动扫描')
-     177. }.margin({ left: 24, right: 24, top: 24 })
-     178. }
-     179. .height(146)
-     180. .width('100%')
-     181. }
+           Column() {
+             Text('扫描二维码/条形码')
+             Text('对准二维码/条形码，即可自动扫描')
+           }.margin({ left: 24, right: 24, top: 24 })
+         }
+         .height(146)
+         .width('100%')
+       }
 
-     183. build() {
-     184. Stack() {
-     185. if (this.userGrant) {
-     186. Column() {
-     187. XComponent({
-     188. id: 'componentId',
-     189. type: XComponentType.SURFACE,
-     190. controller: this.mXComponentController
-     191. })
-     192. .onLoad(() => {
-     193. hilog.info(0x0001, TAG, 'Succeeded in loading, onLoad is called.');
-     194. // 获取XComponent组件的surfaceId
-     195. this.surfaceId = this.mXComponentController.getXComponentSurfaceId();
-     196. hilog.info(0x0001, TAG, `Succeeded in getting surfaceId: ${this.surfaceId}`);
-     197. this.initCamera();
-     198. // 闪光灯监听接口
-     199. customScan.on('lightingFlash', (err, isLightingFlash) => {
-     200. if (err) {
-     201. hilog.error(0x0001, TAG,
-     202. `Failed to on lightingFlash. Code: ${err.code}, message: ${err.message}`);
-     203. return;
-     204. }
-     205. if (isLightingFlash) {
-     206. this.isFlashLightEnable = true;
-     207. } else {
-     208. try {
-     209. if (!customScan.getFlashLightStatus()) {
-     210. this.isFlashLightEnable = false;
-     211. }
-     212. } catch (err) {
-     213. hilog.error(0x0001, TAG,
-     214. `Failed to get flashLightStatus. Code: ${err.code}, message: ${err.message}`);
-     215. }
-     216. }
-     217. this.isSensorLight = isLightingFlash;
-     218. });
-     219. })
-     220. .width(this.cameraWidth)
-     221. .height(this.cameraHeight)
-     222. .position({ x: this.offsetX, y: this.offsetY })
-     223. }
-     224. .height('100%')
-     225. .width('100%')
-     226. }
+       build() {
+         Stack() {
+           if (this.userGrant) {
+             Column() {
+               XComponent({
+                 id: 'componentId',
+                 type: XComponentType.SURFACE,
+                 controller: this.mXComponentController
+               })
+                 .onLoad(() => {
+                   hilog.info(0x0001, TAG, 'Succeeded in loading, onLoad is called.');
+                   // 获取XComponent组件的surfaceId
+                   this.surfaceId = this.mXComponentController.getXComponentSurfaceId();
+                   hilog.info(0x0001, TAG, `Succeeded in getting surfaceId: ${this.surfaceId}`);
+                   this.initCamera();
+                   // 闪光灯监听接口
+                   customScan.on('lightingFlash', (err, isLightingFlash) => {
+                     if (err) {
+                       hilog.error(0x0001, TAG,
+                         `Failed to on lightingFlash. Code: ${err.code}, message: ${err.message}`);
+                       return;
+                     }
+                     if (isLightingFlash) {
+                       this.isFlashLightEnable = true;
+                     } else {
+                       try {
+                         if (!customScan.getFlashLightStatus()) {
+                           this.isFlashLightEnable = false;
+                         }
+                       } catch (err) {
+                         hilog.error(0x0001, TAG,
+                           `Failed to get flashLightStatus. Code: ${err.code}, message: ${err.message}`);
+                       }
+                     }
+                     this.isSensorLight = isLightingFlash;
+                   });
+                 })
+                 .width(this.cameraWidth)
+                 .height(this.cameraHeight)
+                 .position({ x: this.offsetX, y: this.offsetY })
+             }
+             .height('100%')
+             .width('100%')
+           }
 
-     229. Column() {
-     230. this.topTool();
-     231. Column() {
-     232. }
-     233. .layoutWeight(1)
-     234. .width('100%')
+           Column() {
+             this.topTool();
+             Column() {
+             }
+             .layoutWeight(1)
+             .width('100%')
 
-     237. Column() {
-     238. Row() {
-     239. // 闪光灯按钮，启动相机流后才能使用
-     240. Button('FlashLight')
-     241. .onClick(() => {
-     242. let lightStatus: boolean = false;
-     243. try {
-     244. lightStatus = customScan.getFlashLightStatus();
-     245. } catch (err) {
-     246. hilog.error(0x0001, TAG,
-     247. `Failed to get flashLightStatus. Code: ${err.code}, message: ${err.message}`);
-     248. }
+             Column() {
+               Row() {
+                 // 闪光灯按钮，启动相机流后才能使用
+                 Button('FlashLight')
+                   .onClick(() => {
+                     let lightStatus: boolean = false;
+                     try {
+                       lightStatus = customScan.getFlashLightStatus();
+                     } catch (err) {
+                       hilog.error(0x0001, TAG,
+                         `Failed to get flashLightStatus. Code: ${err.code}, message: ${err.message}`);
+                     }
 
-     251. // 根据当前闪光灯状态，选择打开或关闭闪光灯
-     252. if (lightStatus) {
-     253. try {
-     254. customScan.closeFlashLight();
-     255. setTimeout(() => {
-     256. this.isFlashLightEnable = this.isSensorLight;
-     257. }, 200);
-     258. } catch (err) {
-     259. hilog.error(0x0001, TAG,
-     260. `Failed to close flashLight. Code: ${err.code}, message: ${err.message}`);
-     261. }
-     262. } else {
-     263. try {
-     264. customScan.openFlashLight();
-     265. } catch (err) {
-     266. hilog.error(0x0001, TAG,
-     267. `Failed to open flashLight. Code: ${err.code}, message: ${err.message}`);
-     268. }
-     269. }
-     270. })
-     271. .visibility((this.userGrant && this.isFlashLightEnable) ? Visibility.Visible : Visibility.None)
+                     // 根据当前闪光灯状态，选择打开或关闭闪光灯
+                     if (lightStatus) {
+                       try {
+                         customScan.closeFlashLight();
+                         setTimeout(() => {
+                           this.isFlashLightEnable = this.isSensorLight;
+                         }, 200);
+                       } catch (err) {
+                         hilog.error(0x0001, TAG,
+                           `Failed to close flashLight. Code: ${err.code}, message: ${err.message}`);
+                       }
+                     } else {
+                       try {
+                         customScan.openFlashLight();
+                       } catch (err) {
+                         hilog.error(0x0001, TAG,
+                           `Failed to open flashLight. Code: ${err.code}, message: ${err.message}`);
+                       }
+                     }
+                   })
+                   .visibility((this.userGrant && this.isFlashLightEnable) ? Visibility.Visible : Visibility.None)
 
-     274. // 扫码成功后，点击按钮后重新扫码
-     275. Button('Scan')
-     276. .onClick(() => {
-     277. // 点击按钮重启相机流，重新扫码
-     278. this.initCamera();
-     279. })
-     280. .visibility(this.isShowBack ? Visibility.Visible : Visibility.None)
-     281. }
+                 // 扫码成功后，点击按钮后重新扫码
+                 Button('Scan')
+                   .onClick(() => {
+                     // 点击按钮重启相机流，重新扫码
+                     this.initCamera();
+                   })
+                   .visibility(this.isShowBack ? Visibility.Visible : Visibility.None)
+               }
 
-     284. Row() {
-     285. // 预览流设置缩放比例
-     286. Button('缩放比例,当前比例:' + this.setZoomValue)
-     287. .onClick(() => {
-     288. // 设置相机缩放比例
-     289. if (!this.isShowBack) {
-     290. if (!this.zoomValue || this.zoomValue === this.setZoomValue) {
-     291. this.setZoomValue = this.customGetZoom();
-     292. } else {
-     293. this.zoomValue = this.zoomValue;
-     294. this.customSetZoom(this.zoomValue);
-     295. setTimeout(() => {
-     296. if (!this.isShowBack) {
-     297. this.setZoomValue = this.customGetZoom();
-     298. }
-     299. }, 1000);
-     300. }
-     301. }
-     302. })
-     303. }
-     304. .margin({ top: 10, bottom: 10 })
+               Row() {
+                 // 预览流设置缩放比例
+                 Button('缩放比例，当前比例：' + this.setZoomValue)
+                   .onClick(() => {
+                     if (!this.isShowBack) {
+                       if (!this.zoomValue || this.zoomValue === this.setZoomValue) {
+                         this.setZoomValue = this.customGetZoom();
+                       } else {
+                         this.customSetZoom(this.zoomValue);
+                         setTimeout(() => {
+                           if (!this.isShowBack) {
+                             this.setZoomValue = this.customGetZoom();
+                           }
+                         }, 1000);
+                       }
+                     }
+                   })
+               }
+               .margin({ top: 10, bottom: 10 })
 
-     307. Row() {
-     308. // 输入要设置的预览流缩放比例
-     309. TextInput({ placeholder: '输入缩放倍数' })
-     310. .type(InputType.Number)
-     311. .borderWidth(1)
-     312. .backgroundColor(Color.White)
-     313. .onChange(value => {
-     314. this.zoomValue = Number(value);
-     315. })
-     316. }
-     317. }
-     318. .width('50%')
-     319. .height(180)
-     320. }
+               Row() {
+                 // 输入要设置的预览流缩放比例
+                 TextInput({ placeholder: '输入缩放倍数' })
+                   .type(InputType.Number)
+                   .borderWidth(1)
+                   .backgroundColor(Color.White)
+                   .onChange(value => {
+                     this.zoomValue = Number(value);
+                   })
+               }
+             }
+             .width('50%')
+             .height(180)
+           }
 
-     323. // 单码、多码扫描后，显示码图蓝点位置。点击toast码图信息
-     324. ForEach(this.scanResult, (item: scanBarcode.ScanResult) => {
-     325. if (item.scanCodeRect) {
-     326. // 此处为示例资源，开发者可使用应用图标进行替换，以保证正常编译运行
-     327. Image($rawfile('scan_selected2.svg'))
-     328. .width(40)
-     329. .height(40)
-     330. .markAnchor({ x: 20, y: 20 })
-     331. .position({
-     332. x: (item.scanCodeRect.left + item?.scanCodeRect?.right) / 2 + this.offsetX,
-     333. y: (item.scanCodeRect.top + item?.scanCodeRect?.bottom) / 2 + this.offsetY
-     334. })
-     335. .onClick(() => {
-     336. this.showScanResult(item);
-     337. })
-     338. }
-     339. }, (item: scanBarcode.ScanResult) => '' + item?.scanCodeRect?.left + item?.scanCodeRect?.right + 'px');
-     340. }
-     341. // 建议相机流设置为全屏
-     342. .width('100%')
-     343. .height('100%')
-     344. .onClick((event: ClickEvent) => {
-     345. // 是否已扫描到结果
-     346. if (this.isShowBack) {
-     347. return;
-     348. }
-     349. // 点击屏幕位置，获取点击位置(x,y)，设置相机焦点
-     350. let x1 = event.displayY / (this.displayHeight + 0.0);
-     351. let y1 = 1.0 - event.displayX / (this.displayWidth + 0.0);
-     352. try {
-     353. customScan.setFocusPoint({ x: x1, y: y1 });
-     354. hilog.info(0x0001, TAG, `Succeeded in setting focusPoint x1: ${x1}, y1: ${y1}`);
-     355. } catch (err) {
-     356. hilog.error(0x0001, TAG, `Failed to set focusPoint. Code: ${err.code}, message: ${err.message}`);
-     357. }
-     358. hilog.info(0x0001, TAG, `Succeeded in setting focusPoint x1: ${x1}, y1: ${y1}`);
-     359. // 设置连续自动对焦模式
-     360. setTimeout(() => {
-     361. try {
-     362. customScan.resetFocus();
-     363. } catch (err) {
-     364. hilog.error(0x0001, TAG, `Failed to reset focus. Code: ${err.code}, message: ${err.message}`);
-     365. }
-     366. }, 200);
-     367. }).gesture(PinchGesture({ fingers: 2 })
-     368. .onActionStart(() => {
-     369. hilog.info(0x0001, TAG, 'Pinch start');
-     370. })
-     371. .onActionUpdate((event: GestureEvent) => {
-     372. if (event) {
-     373. this.scaleValue = event.scale;
-     374. }
-     375. })
-     376. .onActionEnd(() => {
-     377. // 是否已扫描到结果
-     378. if (this.isShowBack) {
-     379. return;
-     380. }
-     381. // 获取双指缩放比例，设置变焦比
-     382. try {
-     383. let zoom = this.customGetZoom();
-     384. this.pinchValue = this.scaleValue * zoom;
-     385. this.customSetZoom(this.pinchValue);
-     386. hilog.info(0x0001, TAG, 'Pinch end');
-     387. } catch (err) {
-     388. hilog.error(0x0001, TAG, `Failed to set zoom. Code: ${err.code}, message: ${err.message}`);
-     389. }
-     390. }))
-     391. }
+           // 单码、多码扫描后，显示码图蓝点位置。点击toast码图信息
+           ForEach(this.scanResult, (item: scanBarcode.ScanResult) => {
+             if (item.scanCodeRect) {
+               // scan_selected2.svg为示例资源，可放置于工程路径src/main/resources/rawfile/，开发者可自行替换，以保证正常编译运行
+               Image($rawfile('scan_selected2.svg'))
+                 .width(40)
+                 .height(40)
+                 .markAnchor({ x: 20, y: 20 })
+                 .position({
+                   x: (item.scanCodeRect.left + item?.scanCodeRect?.right) / 2 + this.offsetX,
+                   y: (item.scanCodeRect.top + item?.scanCodeRect?.bottom) / 2 + this.offsetY
+                 })
+                 .onClick(() => {
+                   this.showScanResult(item);
+                 })
+             }
+           }, (item: scanBarcode.ScanResult) => '' + item?.scanCodeRect?.left + item?.scanCodeRect?.right + 'px');
+         }
+         // 建议相机流设置为全屏
+         .width('100%')
+         .height('100%')
+         .onClick((event: ClickEvent) => {
+           // 是否已扫描到结果
+           if (this.isShowBack) {
+             return;
+           }
+           // 点击屏幕位置，获取点击位置(x,y)，设置相机焦点
+           const x1: number = event.displayY / (this.displayHeight + 0.0);
+           const y1: number = 1.0 - event.displayX / (this.displayWidth + 0.0);
+           try {
+             customScan.setFocusPoint({ x: x1, y: y1 });
+             hilog.info(0x0001, TAG, `Succeeded in setting focusPoint x1: ${x1}, y1: ${y1}`);
+           } catch (err) {
+             hilog.error(0x0001, TAG, `Failed to set focusPoint. Code: ${err.code}, message: ${err.message}`);
+           }
+           // 设置连续自动对焦模式
+           setTimeout(() => {
+             try {
+               customScan.resetFocus();
+             } catch (err) {
+               hilog.error(0x0001, TAG, `Failed to reset focus. Code: ${err.code}, message: ${err.message}`);
+             }
+           }, 200);
+         }).gesture(PinchGesture({ fingers: 2 })
+           .onActionStart(() => {
+             hilog.info(0x0001, TAG, 'Pinch start');
+           })
+           .onActionUpdate((event: GestureEvent) => {
+             if (event) {
+               this.scaleValue = event.scale;
+             }
+           })
+           .onActionEnd(() => {
+             // 是否已扫描到结果
+             if (this.isShowBack) {
+               return;
+             }
+             // 获取双指缩放比例，设置变焦比
+             try {
+               const zoom: number = this.customGetZoom();
+               this.pinchValue = this.scaleValue * zoom;
+               this.customSetZoom(this.pinchValue);
+               hilog.info(0x0001, TAG, 'Pinch end');
+             } catch (err) {
+               hilog.error(0x0001, TAG, `Failed to set zoom. Code: ${err.code}, message: ${err.message}`);
+             }
+           }))
+       }
 
-     393. public customGetZoom(): number {
-     394. let zoom = 1;
-     395. try {
-     396. zoom = customScan.getZoom();
-     397. hilog.info(0x0001, TAG, `Succeeded in getting zoom, zoom: ${zoom}`);
-     398. } catch (err) {
-     399. hilog.error(0x0001, TAG, `Failed to get zoom. Code: ${err.code}, message: ${err?.message}`);
-     400. }
-     401. return zoom;
-     402. }
+       public customGetZoom(): number {
+         let zoom: number = 1;
+         try {
+           zoom = customScan.getZoom();
+           hilog.info(0x0001, TAG, `Succeeded in getting zoom, zoom: ${zoom}`);
+         } catch (err) {
+           hilog.error(0x0001, TAG, `Failed to get zoom. Code: ${err.code}, message: ${err.message}`);
+         }
+         return zoom;
+       }
 
-     404. public customSetZoom(pinchValue: number): void {
-     405. try {
-     406. customScan.setZoom(pinchValue);
-     407. hilog.info(0x0001, TAG, `Succeeded in setting zoom.`);
-     408. } catch (err) {
-     409. hilog.error(0x0001, TAG, `Failed to set zoom. Code: ${err.code}, message: ${err?.message}`);
-     410. }
-     411. }
-     412. }
+       public customSetZoom(pinchValue: number): void {
+         try {
+           customScan.setZoom(pinchValue);
+           hilog.info(0x0001, TAG, `Succeeded in setting zoom.`);
+         } catch (err) {
+           hilog.error(0x0001, TAG, `Failed to set zoom. Code: ${err.code}, message: ${err.message}`);
+         }
+       }
+     }
      ```
    * 通过Callback方式回调，调用自定义界面扫码接口拉起相机流并返回扫码结果和相机预览流（YUV）。
 
-     ```
-     1. const TAG: string = '[customScanPage]';
+     ```typescript
+     const TAG: string = '[customScanPage]';
 
-     3. @Entry
-     4. @Component
-     5. struct CustomScanPage {
-     6. @State userGrant: boolean = false; // 是否已申请相机权限
-     7. @State surfaceId: string = ''; // XComponent组件生成id
-     8. @State isShowBack: boolean = false; // 是否已经返回扫码结果
-     9. @State isFlashLightEnable: boolean = false; // 是否开启了闪光灯
-     10. @State isSensorLight: boolean = false; // 记录当前环境亮暗状态
-     11. @State cameraHeight: number = 640; // 设置预览流高度，默认单位：vp
-     12. @State cameraWidth: number = 360; // 设置预览流宽度，默认单位：vp
-     13. @State offsetX: number = 0; // 设置预览流x轴方向偏移量，默认单位：vp
-     14. @State offsetY: number = 0; // 设置预览流y轴方向偏移量，默认单位：vp
-     15. @State zoomValue: number = 1; // 预览流缩放比例
-     16. @State setZoomValue: number = 1; // 已设置的预览流缩放比例
-     17. @State scaleValue: number = 1; // 屏幕缩放比
-     18. @State pinchValue: number = 1; // 双指缩放比例
-     19. @State displayHeight: number = 0; // 屏幕高度，单位vp
-     20. @State displayWidth: number = 0; // 屏幕宽度，单位vp
-     21. @State scanResult: Array<scanBarcode.ScanResult> = []; // 扫码结果
-     22. private mXComponentController: XComponentController = new XComponentController();
-     23. // 返回自定义扫描结果的回调
-     24. private callback: AsyncCallback<scanBarcode.ScanResult[]> =
-     25. (err: BusinessError, data: scanBarcode.ScanResult[]) => {
-     26. if (err && err.code) {
-     27. hilog.error(0x0001, TAG,
-     28. `Failed to get ScanResult by callback. Code: ${err.code}, message: ${err.message}`);
-     29. return;
-     30. }
-     31. // 解析码值结果跳转应用服务页
-     32. hilog.info(0x0001, TAG, `Succeeded in getting ScanResult by callback, result: ${JSON.stringify(data)}`);
-     33. if (data.length) {
-     34. // 解析码值结果跳转应用服务页
-     35. this.scanResult = data;
-     36. this.isShowBack = true;
-     37. // 获取到扫描结果后暂停相机流
-     38. this.customScanStop();
-     39. }
-     40. };
-     41. // 返回相机帧的回调
-     42. private frameCallback: AsyncCallback<customScan.ScanFrame> =
-     43. (err: BusinessError, frameResult: customScan.ScanFrame) => {
-     44. if (err) {
-     45. hilog.error(0x0001, TAG, `Failed to get ScanFrame by callback. Code: ${err.code}, message: ${err.message}`);
-     46. return;
-     47. }
-     48. // byteBuffer相机YUV图像数组
-     49. hilog.info(0x0001, TAG,
-     50. `Succeeded in getting ScanFrame.byteBuffer.byteLength: ${frameResult.byteBuffer.byteLength}`);
-     51. hilog.info(0x0001, TAG, `Succeeded in getting ScanFrame.width: ${frameResult.width}`);
-     52. hilog.info(0x0001, TAG, `Succeeded in getting ScanFrame.height: ${frameResult.height}`);
-     53. };
+     @Entry
+     @Component
+     struct CustomScanPage {
+       @State userGrant: boolean = false; // 是否已申请相机权限
+       @State surfaceId: string = ''; // XComponent组件生成id
+       @State isShowBack: boolean = false; // 是否已经返回扫码结果
+       @State isFlashLightEnable: boolean = false; // 是否开启了闪光灯
+       @State isSensorLight: boolean = false; // 记录当前环境亮暗状态
+       @State cameraHeight: number = 640; // 设置预览流高度，默认单位：vp
+       @State cameraWidth: number = 360; // 设置预览流宽度，默认单位：vp
+       @State offsetX: number = 0; // 设置预览流x轴方向偏移量，默认单位：vp
+       @State offsetY: number = 0; // 设置预览流y轴方向偏移量，默认单位：vp
+       @State zoomValue: number = 1; // 预览流缩放比例
+       @State setZoomValue: number = 1; // 已设置的预览流缩放比例
+       @State scaleValue: number = 1; // 屏幕缩放比
+       @State pinchValue: number = 1; // 双指缩放比例
+       @State displayHeight: number = 0; // 屏幕高度，单位vp
+       @State displayWidth: number = 0; // 屏幕宽度，单位vp
+       @State scanResult: Array<scanBarcode.ScanResult> = []; // 扫码结果
+       private mXComponentController: XComponentController = new XComponentController();
+       // 返回自定义扫描结果的回调
+       private callback: AsyncCallback<scanBarcode.ScanResult[]> =
+         (err: BusinessError, data: scanBarcode.ScanResult[]) => {
+           if (err && err.code) {
+             hilog.error(0x0001, TAG,
+               `Failed to get ScanResult by callback. Code: ${err.code}, message: ${err.message}`);
+             return;
+           }
+           // 解析码值结果跳转应用服务页
+           hilog.info(0x0001, TAG, 'Succeeded in getting ScanResult by callback.');
+           if (data.length) {
+             // 解析码值结果跳转应用服务页
+             this.scanResult = data;
+             this.isShowBack = true;
+             // 获取到扫描结果后暂停相机流
+             this.customScanStop();
+           }
+         };
+       // 返回相机帧的回调
+       private frameCallback: AsyncCallback<customScan.ScanFrame> =
+         (err: BusinessError, frameResult: customScan.ScanFrame) => {
+           if (err) {
+             hilog.error(0x0001, TAG, `Failed to get ScanFrame by callback. Code: ${err.code}, message: ${err.message}`);
+             return;
+           }
+           hilog.info(0x0001, TAG,
+             `Succeeded in getting ScanFrame. byteLength: ${frameResult.byteBuffer.byteLength}, width: ${frameResult.width}, height: ${frameResult.height}`);
+         };
 
-     55. async onPageShow() {
-     56. // 自定义启动第一步，用户申请权限
-     57. await this.requestCameraPermission();
-     58. // 多码扫码识别，enableMultiMode: true 单码扫码识别enableMultiMode: false
-     59. let options: scanBarcode.ScanOptions = {
-     60. scanTypes: [scanCore.ScanType.ALL],
-     61. enableMultiMode: true,
-     62. enableAlbum: true
-     63. };
-     64. // 自定义启动第二步：设置预览流布局尺寸
-     65. this.setDisplay();
-     66. try {
-     67. // 自定义启动第三步，初始化接口
-     68. customScan.init(options);
-     69. } catch (err) {
-     70. hilog.error(0x0001, TAG, `Failed to init customScan. Code: ${err.code}, message: ${err.message}`);
-     71. }
-     72. }
+       async onPageShow() {
+         // 自定义启动第一步，用户申请权限
+         await this.requestCameraPermission();
+         // 多码扫码识别，enableMultiMode: true 单码扫码识别enableMultiMode: false
+         let options: scanBarcode.ScanOptions = {
+           scanTypes: [scanCore.ScanType.ALL],
+           enableMultiMode: true,
+           enableAlbum: true
+         };
+         // 自定义启动第二步：设置预览流布局尺寸
+         this.setDisplay();
+         try {
+           // 自定义启动第三步，初始化接口
+           customScan.init(options);
+         } catch (err) {
+           hilog.error(0x0001, TAG, `Failed to init customScan. Code: ${err.code}, message: ${err.message}`);
+         }
+       }
 
-     74. onPageHide() {
-     75. // 页面消失或隐藏时，停止并释放相机流
-     76. this.userGrant = false;
-     77. this.isFlashLightEnable = false;
-     78. this.isSensorLight = false;
-     79. try {
-     80. customScan.off('lightingFlash');
-     81. } catch (err) {
-     82. hilog.error(0x0001, TAG, `Failed to off lightingFlash. Code: ${err.code}, message: ${err.message}`);
-     83. }
-     84. this.customScanStop();
-     85. try {
-     86. // 自定义相机流释放接口
-     87. customScan.release().catch((err: BusinessError) => {
-     88. hilog.error(0x0001, TAG,
-     89. `Failed to release customScan by promise. Code: ${err.code}, message: ${err.message}`);
-     90. });
-     91. } catch (err) {
-     92. hilog.error(0x0001, TAG, `Failed to release customScan. Code: ${err.code}, message: ${err.message}`);
-     93. }
-     94. }
+       onPageHide() {
+         // 页面消失或隐藏时，停止并释放相机流
+         this.userGrant = false;
+         this.isFlashLightEnable = false;
+         this.isSensorLight = false;
+         try {
+           customScan.off('lightingFlash');
+         } catch (err) {
+           hilog.error(0x0001, TAG, `Failed to off lightingFlash. Code: ${err.code}, message: ${err.message}`);
+         }
+         this.customScanStop();
+         try {
+           // 自定义相机流释放接口
+           customScan.release().catch((err: BusinessError) => {
+             hilog.error(0x0001, TAG,
+               `Failed to release customScan by promise. Code: ${err.code}, message: ${err.message}`);
+           });
+         } catch (err) {
+           hilog.error(0x0001, TAG, `Failed to release customScan. Code: ${err.code}, message: ${err.message}`);
+         }
+       }
 
-     96. // 用户申请权限
-     97. async reqPermissionsFromUser(): Promise<number[]> {
-     98. hilog.info(0x0001, TAG, 'reqPermissionsFromUser start');
-     99. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-     100. let atManager = abilityAccessCtrl.createAtManager();
-     101. try {
-     102. const grantStatus: PermissionRequestResult =
-     103. await atManager.requestPermissionsFromUser(context, ['ohos.permission.CAMERA']);
-     104. return grantStatus.authResults;
-     105. } catch (err) {
-     106. hilog.error(0x0001, TAG, `Failed to requestPermissionsFromUser. Code: ${err.code}, message: ${err.message}`);
-     107. return [];
-     108. }
-     109. }
+       // 用户申请权限
+       async reqPermissionsFromUser(): Promise<number[]> {
+         hilog.info(0x0001, TAG, 'reqPermissionsFromUser start');
+         let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+         let atManager = abilityAccessCtrl.createAtManager();
+         try {
+           const grantStatus: PermissionRequestResult =
+             await atManager.requestPermissionsFromUser(context, ['ohos.permission.CAMERA']);
+           return grantStatus.authResults;
+         } catch (err) {
+           hilog.error(0x0001, TAG, `Failed to requestPermissionsFromUser. Code: ${err.code}, message: ${err.message}`);
+           return [];
+         }
+       }
 
-     111. // 用户申请相机权限
-     112. async requestCameraPermission() {
-     113. let grantStatus = await this.reqPermissionsFromUser();
-     114. for (let i = 0; i < grantStatus.length; i++) {
-     115. if (grantStatus[i] === 0) {
-     116. // 用户授权，可以继续访问目标操作
-     117. hilog.info(0x0001, TAG, 'Succeeded in getting permissions.');
-     118. this.userGrant = true;
-     119. break;
-     120. }
-     121. }
-     122. }
+       // 用户申请相机权限
+       async requestCameraPermission() {
+         let grantStatus = await this.reqPermissionsFromUser();
+         for (let i = 0; i < grantStatus.length; i++) {
+           if (grantStatus[i] === 0) {
+             // 用户授权，可以继续访问目标操作
+             hilog.info(0x0001, TAG, 'Succeeded in getting permissions.');
+             this.userGrant = true;
+             break;
+           }
+         }
+       }
 
-     124. // 竖屏时获取屏幕尺寸，设置预览流全屏示例
-     125. setDisplay() {
-     126. try {
-     127. // 默认竖屏
-     128. let displayClass = display.getDefaultDisplaySync();
-     129. this.displayHeight = this.getUIContext().px2vp(displayClass.height);
-     130. this.displayWidth = this.getUIContext().px2vp(displayClass.width);
-     131. let maxLen: number = Math.max(this.displayWidth, this.displayHeight);
-     132. let minLen: number = Math.min(this.displayWidth, this.displayHeight);
-     133. const RATIO: number = 16 / 9;
-     134. this.cameraHeight = maxLen;
-     135. this.cameraWidth = maxLen / RATIO;
-     136. this.offsetX = (minLen - this.cameraWidth) / 2;
-     137. } catch (err) {
-     138. hilog.error(0x0001, TAG, `Failed to getDefaultDisplaySync. Code: ${err.code}, message: ${err.message}`);
-     139. }
-     140. }
+       // 竖屏时获取屏幕尺寸，设置预览流全屏示例
+       setDisplay() {
+         try {
+           // 默认竖屏
+           let displayClass = display.getDefaultDisplaySync();
+           this.displayHeight = this.getUIContext().px2vp(displayClass.height);
+           this.displayWidth = this.getUIContext().px2vp(displayClass.width);
+           let maxLen: number = Math.max(this.displayWidth, this.displayHeight);
+           let minLen: number = Math.min(this.displayWidth, this.displayHeight);
+           const RATIO: number = 16 / 9;
+           this.cameraHeight = maxLen;
+           this.cameraWidth = maxLen / RATIO;
+           this.offsetX = (minLen - this.cameraWidth) / 2;
+         } catch (err) {
+           hilog.error(0x0001, TAG, `Failed to getDefaultDisplaySync. Code: ${err.code}, message: ${err.message}`);
+         }
+       }
 
-     142. // toast显示扫码结果
-     143. showScanResult(data: scanBarcode.ScanResult) {
-     144. try {
-     145. // 使用toast显示出扫码结果
-     146. this.getUIContext().getPromptAction().showToast({
-     147. message: JSON.stringify(data),
-     148. duration: 5000
-     149. });
-     150. } catch (err) {
-     151. hilog.error(0x0001, TAG, `Failed to showToast. Code: ${err.code}, message: ${err.message}`);
-     152. }
-     153. }
+       // toast显示扫码结果
+       showScanResult(data: scanBarcode.ScanResult) {
+         try {
+           // 使用toast显示出扫码结果
+           this.getUIContext().getPromptAction().showToast({
+             message: `originalValue: ${data.originalValue}`,
+             duration: 5000
+           });
+         } catch (err) {
+           hilog.error(0x0001, TAG, `Failed to showToast. Code: ${err.code}, message: ${err.message}`);
+         }
+       }
 
-     155. // 初始化相机流
-     156. initCamera() {
-     157. this.isShowBack = false;
-     158. this.scanResult = [];
-     159. let viewControl: customScan.ViewControl = {
-     160. width: this.cameraWidth,
-     161. height: this.cameraHeight,
-     162. surfaceId: this.surfaceId
-     163. };
-     164. try {
-     165. // 自定义启动第四步，请求扫码接口，通过callback方式回调
-     166. customScan.start(viewControl, this.callback, this.frameCallback);
-     167. } catch (err) {
-     168. hilog.error(0x0001, TAG, `Failed to start customScan. Code: ${err.code}, message: ${err.message}`);
-     169. }
+       // 初始化相机流
+       initCamera() {
+         this.isShowBack = false;
+         this.scanResult = [];
+         let viewControl: customScan.ViewControl = {
+           width: this.cameraWidth,
+           height: this.cameraHeight,
+           surfaceId: this.surfaceId
+         };
+         try {
+           // 自定义启动第四步，请求扫码接口，通过callback方式回调
+           customScan.start(viewControl, this.callback, this.frameCallback);
+         } catch (err) {
+           hilog.error(0x0001, TAG, `Failed to start customScan. Code: ${err.code}, message: ${err.message}`);
+         }
+       }
 
-     171. }
+       // 暂停相机流
+       customScanStop() {
+         try {
+           customScan.stop().catch((err: BusinessError) => {
+             hilog.error(0x0001, TAG, `Failed to stop customScan. Code: ${err.code}, message: ${err.message}`);
+           });
+         } catch (err) {
+           hilog.error(0x0001, TAG, `Failed to stop customScan. Code: ${err.code}, message: ${err.message}`);
+         }
+       }
 
-     173. // 暂停相机流
-     174. customScanStop() {
-     175. try {
-     176. customScan.stop().catch((err: BusinessError) => {
-     177. hilog.error(0x0001, TAG, `Failed to stop customScan. Code: ${err.code}, message: ${err.message}`);
-     178. });
-     179. } catch (err) {
-     180. hilog.error(0x0001, TAG, `Failed to stop customScan. Code: ${err.code}, message: ${err.message}`);
-     181. }
-     182. }
+       // 自定义界面扫码的顶部返回按钮和扫码提示
+       @Builder
+       topTool() {
+         Column() {
+           Flex({ direction: FlexDirection.Row, justifyContent: FlexAlign.SpaceBetween, alignItems: ItemAlign.Center }) {
+             Text('返回')
+               .onClick(() => {
+                 this.getUIContext().getRouter().back();
+               })
+           }.padding({ left: 24, right: 24, top: 40 })
 
-     184. // 自定义扫码界面的顶部返回按钮和扫码提示
-     185. @Builder
-     186. topTool() {
-     187. Column() {
-     188. Flex({ direction: FlexDirection.Row, justifyContent: FlexAlign.SpaceBetween, alignItems: ItemAlign.Center }) {
-     189. Text('返回')
-     190. .onClick(() => {
-     191. this.getUIContext().getRouter().back();
-     192. })
-     193. }.padding({ left: 24, right: 24, top: 40 })
+           Column() {
+             Text('扫描二维码/条形码')
+             Text('对准二维码/条形码，即可自动扫描')
+           }.margin({ left: 24, right: 24, top: 24 })
+         }
+         .height(146)
+         .width('100%')
+       }
 
-     196. Column() {
-     197. Text('扫描二维码/条形码')
-     198. Text('对准二维码/条形码，即可自动扫描')
-     199. }.margin({ left: 24, right: 24, top: 24 })
-     200. }
-     201. .height(146)
-     202. .width('100%')
-     203. }
+       build() {
+         Stack() {
+           if (this.userGrant) {
+             Column() {
+               XComponent({
+                 id: 'componentId',
+                 type: XComponentType.SURFACE,
+                 controller: this.mXComponentController
+               })
+                 .onLoad(() => {
+                   hilog.info(0x0001, TAG, 'Succeeded in loading, onLoad is called.');
+                   // 获取XComponent组件的surfaceId
+                   this.surfaceId = this.mXComponentController.getXComponentSurfaceId();
+                   hilog.info(0x0001, TAG, `Succeeded in getting surfaceId: ${this.surfaceId}`);
+                   this.initCamera();
+                   // 闪光灯监听接口
+                   customScan.on('lightingFlash', (err, isLightingFlash) => {
+                     if (err) {
+                       hilog.error(0x0001, TAG,
+                         `Failed to on lightingFlash. Code: ${err.code}, message: ${err.message}`);
+                       return;
+                     }
+                     if (isLightingFlash) {
+                       this.isFlashLightEnable = true;
+                     } else {
+                       try {
+                         if (!customScan.getFlashLightStatus()) {
+                           this.isFlashLightEnable = false;
+                         }
+                       } catch (err) {
+                         hilog.error(0x0001, TAG,
+                           `Failed to get flashLightStatus. Code: ${err.code}, message: ${err.message}`);
+                       }
+                     }
+                     this.isSensorLight = isLightingFlash;
+                   });
+                 })
+                 .width(this.cameraWidth)
+                 .height(this.cameraHeight)
+                 .position({ x: this.offsetX, y: this.offsetY })
+             }
+             .height('100%')
+             .width('100%')
+           }
 
-     205. build() {
-     206. Stack() {
-     207. if (this.userGrant) {
-     208. Column() {
-     209. XComponent({
-     210. id: 'componentId',
-     211. type: XComponentType.SURFACE,
-     212. controller: this.mXComponentController
-     213. })
-     214. .onLoad(() => {
-     215. hilog.info(0x0001, TAG, 'Succeeded in loading, onLoad is called.');
-     216. // 获取XComponent组件的surfaceId
-     217. this.surfaceId = this.mXComponentController.getXComponentSurfaceId();
-     218. hilog.info(0x0001, TAG, `Succeeded in getting surfaceId: ${this.surfaceId}`);
-     219. this.initCamera();
-     220. // 闪光灯监听接口
-     221. customScan.on('lightingFlash', (err, isLightingFlash) => {
-     222. if (err) {
-     223. hilog.error(0x0001, TAG,
-     224. `Failed to on lightingFlash. Code: ${err.code}, message: ${err.message}`);
-     225. return;
-     226. }
-     227. if (isLightingFlash) {
-     228. this.isFlashLightEnable = true;
-     229. } else {
-     230. try {
-     231. if (!customScan.getFlashLightStatus()) {
-     232. this.isFlashLightEnable = false;
-     233. }
-     234. } catch (err) {
-     235. hilog.error(0x0001, TAG,
-     236. `Failed to get flashLightStatus. Code: ${err.code}, message: ${err.message}`);
-     237. }
-     238. }
-     239. this.isSensorLight = isLightingFlash;
-     240. });
-     241. })
-     242. .width(this.cameraWidth)
-     243. .height(this.cameraHeight)
-     244. .position({ x: this.offsetX, y: this.offsetY })
-     245. }
-     246. .height('100%')
-     247. .width('100%')
-     248. }
+           Column() {
+             this.topTool();
+             Column() {
+             }
+             .layoutWeight(1)
+             .width('100%')
 
-     251. Column() {
-     252. this.topTool();
-     253. Column() {
-     254. }
-     255. .layoutWeight(1)
-     256. .width('100%')
+             Column() {
+               Row() {
+                 // 闪光灯按钮，启动相机流后才能使用
+                 Button('FlashLight')
+                   .onClick(() => {
+                     let lightStatus: boolean = false;
+                     try {
+                       lightStatus = customScan.getFlashLightStatus();
+                     } catch (err) {
+                       hilog.error(0x0001, TAG,
+                         `Failed to get flashLightStatus. Code: ${err.code}, message: ${err.message}`);
+                     }
 
-     259. Column() {
-     260. Row() {
-     261. // 闪光灯按钮，启动相机流后才能使用
-     262. Button('FlashLight')
-     263. .onClick(() => {
-     264. let lightStatus: boolean = false;
-     265. try {
-     266. lightStatus = customScan.getFlashLightStatus();
-     267. } catch (err) {
-     268. hilog.error(0x0001, TAG,
-     269. `Failed to get flashLightStatus. Code: ${err.code}, message: ${err.message}`);
-     270. }
+                     // 根据当前闪光灯状态，选择打开或关闭闪光灯
+                     if (lightStatus) {
+                       try {
+                         customScan.closeFlashLight();
+                         setTimeout(() => {
+                           this.isFlashLightEnable = this.isSensorLight;
+                         }, 200);
+                       } catch (err) {
+                         hilog.error(0x0001, TAG,
+                           `Failed to close flashLight. Code: ${err.code}, message: ${err.message}`);
+                       }
+                     } else {
+                       try {
+                         customScan.openFlashLight();
+                       } catch (err) {
+                         hilog.error(0x0001, TAG,
+                           `Failed to open flashLight. Code: ${err.code}, message: ${err.message}`);
+                       }
+                     }
+                   })
+                   .visibility((this.userGrant && this.isFlashLightEnable) ? Visibility.Visible : Visibility.None)
 
-     273. // 根据当前闪光灯状态，选择打开或关闭闪光灯
-     274. if (lightStatus) {
-     275. try {
-     276. customScan.closeFlashLight();
-     277. setTimeout(() => {
-     278. this.isFlashLightEnable = this.isSensorLight;
-     279. }, 200);
-     280. } catch (err) {
-     281. hilog.error(0x0001, TAG,
-     282. `Failed to close flashLight. Code: ${err.code}, message: ${err.message}`);
-     283. }
-     284. } else {
-     285. try {
-     286. customScan.openFlashLight();
-     287. } catch (err) {
-     288. hilog.error(0x0001, TAG,
-     289. `Failed to open flashLight. Code: ${err.code}, message: ${err.message}`);
-     290. }
-     291. }
-     292. })
-     293. .visibility((this.userGrant && this.isFlashLightEnable) ? Visibility.Visible : Visibility.None)
+                 // 扫码成功后，点击按钮后重新扫码
+                 Button('Scan')
+                   .onClick(() => {
+                     // 点击按钮重启相机流，重新扫码
+                     this.initCamera();
+                   })
+                   .visibility(this.isShowBack ? Visibility.Visible : Visibility.None)
+               }
 
-     296. // 扫码成功后，点击按钮后重新扫码
-     297. Button('Scan')
-     298. .onClick(() => {
-     299. // 点击按钮重启相机流，重新扫码
-     300. this.initCamera();
-     301. })
-     302. .visibility(this.isShowBack ? Visibility.Visible : Visibility.None)
-     303. }
+               Row() {
+                 // 预览流设置缩放比例
+                 Button('缩放比例，当前比例：' + this.setZoomValue)
+                   .onClick(() => {
+                     if (!this.isShowBack) {
+                       if (!this.zoomValue || this.zoomValue === this.setZoomValue) {
+                         this.setZoomValue = this.customGetZoom();
+                       } else {
+                         this.customSetZoom(this.zoomValue);
+                         setTimeout(() => {
+                           if (!this.isShowBack) {
+                             this.setZoomValue = this.customGetZoom();
+                           }
+                         }, 1000);
+                       }
+                     }
+                   })
+               }
+               .margin({ top: 10, bottom: 10 })
 
-     306. Row() {
-     307. // 预览流设置缩放比例
-     308. Button('缩放比例,当前比例:' + this.setZoomValue)
-     309. .onClick(() => {
-     310. // 设置相机缩放比例
-     311. if (!this.isShowBack) {
-     312. if (!this.zoomValue || this.zoomValue === this.setZoomValue) {
-     313. this.setZoomValue = this.customGetZoom();
-     314. } else {
-     315. this.zoomValue = this.zoomValue;
-     316. this.customSetZoom(this.zoomValue);
-     317. setTimeout(() => {
-     318. if (!this.isShowBack) {
-     319. this.setZoomValue = this.customGetZoom();
-     320. }
-     321. }, 1000);
-     322. }
-     323. }
-     324. })
-     325. }
-     326. .margin({ top: 10, bottom: 10 })
+               Row() {
+                 // 输入要设置的预览流缩放比例
+                 TextInput({ placeholder: '输入缩放倍数' })
+                   .type(InputType.Number)
+                   .borderWidth(1)
+                   .backgroundColor(Color.White)
+                   .onChange(value => {
+                     this.zoomValue = Number(value);
+                   })
+               }
+             }
+             .width('50%')
+             .height(180)
+           }
 
-     329. Row() {
-     330. // 输入要设置的预览流缩放比例
-     331. TextInput({ placeholder: '输入缩放倍数' })
-     332. .type(InputType.Number)
-     333. .borderWidth(1)
-     334. .backgroundColor(Color.White)
-     335. .onChange(value => {
-     336. this.zoomValue = Number(value);
-     337. })
-     338. }
-     339. }
-     340. .width('50%')
-     341. .height(180)
-     342. }
+           // 单码、多码扫描后，显示码图蓝点位置。点击toast码图信息
+           ForEach(this.scanResult, (item: scanBarcode.ScanResult) => {
+             if (item.scanCodeRect) {
+               // scan_selected2.svg为示例资源，可放置于工程路径src/main/resources/rawfile/，开发者可自行替换，以保证正常编译运行
+               Image($rawfile('scan_selected2.svg'))
+                 .width(40)
+                 .height(40)
+                 .markAnchor({ x: 20, y: 20 })
+                 .position({
+                   x: (item.scanCodeRect.left + item?.scanCodeRect?.right) / 2 + this.offsetX,
+                   y: (item.scanCodeRect.top + item?.scanCodeRect?.bottom) / 2 + this.offsetY
+                 })
+                 .onClick(() => {
+                   this.showScanResult(item);
+                 })
+             }
+           }, (item: scanBarcode.ScanResult) => '' + item?.scanCodeRect?.left + item?.scanCodeRect?.right + 'px');
+         }
+         // 建议相机流设置为全屏
+         .width('100%')
+         .height('100%')
+         .onClick((event: ClickEvent) => {
+           // 是否已扫描到结果
+           if (this.isShowBack) {
+             return;
+           }
+           // 点击屏幕位置，获取点击位置(x,y)，设置相机焦点
+           let x1 = event.displayY / (this.displayHeight + 0.0);
+           let y1 = 1.0 - event.displayX / (this.displayWidth + 0.0);
+           try {
+             customScan.setFocusPoint({ x: x1, y: y1 });
+             hilog.info(0x0001, TAG, `Succeeded in setting focusPoint x1: ${x1}, y1: ${y1}`);
+           } catch (err) {
+             hilog.error(0x0001, TAG, `Failed to set focusPoint. Code: ${err.code}, message: ${err.message}`);
+           }
+           // 设置连续自动对焦模式
+           setTimeout(() => {
+             try {
+               customScan.resetFocus();
+             } catch (err) {
+               hilog.error(0x0001, TAG, `Failed to reset focus. Code: ${err.code}, message: ${err.message}`);
+             }
+           }, 200);
+         }).gesture(PinchGesture({ fingers: 2 })
+           .onActionStart(() => {
+             hilog.info(0x0001, TAG, 'Pinch start');
+           })
+           .onActionUpdate((event: GestureEvent) => {
+             if (event) {
+               this.scaleValue = event.scale;
+             }
+           })
+           .onActionEnd(() => {
+             // 是否已扫描到结果
+             if (this.isShowBack) {
+               return;
+             }
+             // 获取双指缩放比例，设置变焦比
+             try {
+               let zoom = this.customGetZoom();
+               this.pinchValue = this.scaleValue * zoom;
+               this.customSetZoom(this.pinchValue);
+               hilog.info(0x0001, TAG, 'Pinch end');
+             } catch (err) {
+               hilog.error(0x0001, TAG, `Failed to set zoom. Code: ${err.code}, message: ${err.message}`);
+             }
+           }))
+       }
 
-     345. // 单码、多码扫描后，显示码图蓝点位置。点击toast码图信息
-     346. ForEach(this.scanResult, (item: scanBarcode.ScanResult) => {
-     347. if (item.scanCodeRect) {
-     348. // 此处为示例资源，开发者可使用应用图标进行替换，以保证正常编译运行
-     349. Image($rawfile('scan_selected2.svg'))
-     350. .width(40)
-     351. .height(40)
-     352. .markAnchor({ x: 20, y: 20 })
-     353. .position({
-     354. x: (item.scanCodeRect.left + item?.scanCodeRect?.right) / 2 + this.offsetX,
-     355. y: (item.scanCodeRect.top + item?.scanCodeRect?.bottom) / 2 + this.offsetY
-     356. })
-     357. .onClick(() => {
-     358. this.showScanResult(item);
-     359. })
-     360. }
-     361. }, (item: scanBarcode.ScanResult) => '' + item?.scanCodeRect?.left + item?.scanCodeRect?.right + 'px');
-     362. }
-     363. // 建议相机流设置为全屏
-     364. .width('100%')
-     365. .height('100%')
-     366. .onClick((event: ClickEvent) => {
-     367. // 是否已扫描到结果
-     368. if (this.isShowBack) {
-     369. return;
-     370. }
-     371. // 点击屏幕位置，获取点击位置(x,y)，设置相机焦点
-     372. let x1 = event.displayY / (this.displayHeight + 0.0);
-     373. let y1 = 1.0 - event.displayX / (this.displayWidth + 0.0);
-     374. try {
-     375. customScan.setFocusPoint({ x: x1, y: y1 });
-     376. hilog.info(0x0001, TAG, `Succeeded in setting focusPoint x1: ${x1}, y1: ${y1}`);
-     377. } catch (err) {
-     378. hilog.error(0x0001, TAG, `Failed to set focusPoint. Code: ${err.code}, message: ${err.message}`);
-     379. }
-     380. hilog.info(0x0001, TAG, `Succeeded in setting focusPoint x1: ${x1}, y1: ${y1}`);
-     381. // 设置连续自动对焦模式
-     382. setTimeout(() => {
-     383. try {
-     384. customScan.resetFocus();
-     385. } catch (err) {
-     386. hilog.error(0x0001, TAG, `Failed to reset focus. Code: ${err.code}, message: ${err.message}`);
-     387. }
-     388. }, 200);
-     389. }).gesture(PinchGesture({ fingers: 2 })
-     390. .onActionStart(() => {
-     391. hilog.info(0x0001, TAG, 'Pinch start');
-     392. })
-     393. .onActionUpdate((event: GestureEvent) => {
-     394. if (event) {
-     395. this.scaleValue = event.scale;
-     396. }
-     397. })
-     398. .onActionEnd(() => {
-     399. // 是否已扫描到结果
-     400. if (this.isShowBack) {
-     401. return;
-     402. }
-     403. // 获取双指缩放比例，设置变焦比
-     404. try {
-     405. let zoom = this.customGetZoom();
-     406. this.pinchValue = this.scaleValue * zoom;
-     407. this.customSetZoom(this.pinchValue);
-     408. hilog.info(0x0001, TAG, 'Pinch end');
-     409. } catch (err) {
-     410. hilog.error(0x0001, TAG, `Failed to set zoom. Code: ${err.code}, message: ${err.message}`);
-     411. }
-     412. }))
-     413. }
+       public customGetZoom(): number {
+         let zoom = 1;
+         try {
+           zoom = customScan.getZoom();
+           hilog.info(0x0001, TAG, `Succeeded in getting zoom, zoom: ${zoom}`);
+         } catch (err) {
+           hilog.error(0x0001, TAG, `Failed to get zoom. Code: ${err.code}, message: ${err.message}`);
+         }
+         return zoom;
+       }
 
-     415. public customGetZoom(): number {
-     416. let zoom = 1;
-     417. try {
-     418. zoom = customScan.getZoom();
-     419. hilog.info(0x0001, TAG, `Succeeded in getting zoom, zoom: ${zoom}`);
-     420. } catch (err) {
-     421. hilog.error(0x0001, TAG, `Failed to get zoom. Code: ${err.code}, message: ${err?.message}`);
-     422. }
-     423. return zoom;
-     424. }
-
-     426. public customSetZoom(pinchValue: number): void {
-     427. try {
-     428. customScan.setZoom(pinchValue);
-     429. hilog.info(0x0001, TAG, `Succeeded in setting zoom.`);
-     430. } catch (err) {
-     431. hilog.error(0x0001, TAG, `Failed to set zoom. Code: ${err.code}, message: ${err?.message}`);
-     432. }
-     433. }
-     434. }
+       public customSetZoom(pinchValue: number): void {
+         try {
+           customScan.setZoom(pinchValue);
+           hilog.info(0x0001, TAG, `Succeeded in setting zoom.`);
+         } catch (err) {
+           hilog.error(0x0001, TAG, `Failed to set zoom. Code: ${err.code}, message: ${err.message}`);
+         }
+       }
+     }
      ```
 5. 通过scanCodeRect数据可确定码图中心点的位置。
 
@@ -959,7 +948,7 @@ YUV（相机预览流图像数据）适合于扫码和识物的综合识别场�
      + 由于码图中心点坐标需和XComponent的坐标保持一致，如果XComponent的x轴和y轴存在偏移，则码图位置需做相应的偏移。例如：x轴偏移量为：offsetX；y轴偏移量为：offsetY，中心点坐标最终转换为：
        - x = (left + right) / 2 + offsetX
        - y = (top + bottom) / 2 + offsetY
-   * 如果设备涉及旋转，码图中心点位置需要根据屏幕旋转角度([Display.rotation](../harmonyos-references/js-apis-display.md#属性))进行变换，以保证在各旋转角度下码图中心位置正确。推荐参考[示例工程](https://gitcode.com/HarmonyOS_Samples/scankit-samplecode-clientdemo-arkts)。
+   * 如果设备涉及旋转，码图中心点位置需要根据屏幕旋转角度（[Display.rotation](../harmonyos-references/js-apis-display.md#属性)）进行变换，以保证在各旋转角度下码图中心位置正确。推荐参考[示例工程](https://gitcode.com/HarmonyOS_Samples/scankit-samplecode-clientdemo-arkts)。
 
      例如：XComponent宽度为width，高度为height，x轴偏移量为offsetX，y轴偏移量为offsetY：
 
@@ -976,16 +965,16 @@ YUV（相机预览流图像数据）适合于扫码和识物的综合识别场�
        - x = (top + bottom) / 2 + offsetX
        - y = height - (left + right) / 2+ offsetY
 
-   说明
+   **说明** 
 
-   从5.0.2(14)开始，由于屏幕Display对象rotation和orientation属性变更，设备旋转不同角度后码图的位置需要重新适配。
+   从API版本5.0.2(14)开始，由于屏幕Display对象rotation和orientation属性变更，设备旋转不同角度后码图的位置需要重新适配。
 
-   * 对于5.0.2(14)之前版本，可以使用Display对象中的rotation或者orientation属性处理设备旋转不同角度后的码图位置，且需要针对设备类型做特殊适配。
-   * 对于5.0.2(14)及之后版本，需要统一使用Display对象的rotation属性处理设备旋转不同角度后的码图位置，无需针对设备类型做特殊适配。
+   * 在API版本5.0.2(14)之前，可以使用Display对象中的rotation或者orientation属性处理设备旋转不同角度后的码图位置，且需要针对设备类型做特殊适配。
+   * 在API版本5.0.2(14)及之后，需要统一使用Display对象的rotation属性处理设备旋转不同角度后的码图位置，无需针对设备类型做特殊适配。
 
 ## 模拟器开发
 
 部分接口支持模拟器开发，模拟器使用指导请参见[使用模拟器运行应用](ide-run-emulator.md)。
 
-* 从6.0.0(20)版本开始，模拟器支持部分自定义界面扫码接口开发（支持的接口包括[init](../harmonyos-references/scan-customscan-api.md#customscaninit)、[start](../harmonyos-references/scan-customscan-api.md#customscanstart)、[stop](../harmonyos-references/scan-customscan-api.md#customscanstop)、[release](../harmonyos-references/scan-customscan-api.md#customscanrelease)、[rescan](../harmonyos-references/scan-customscan-api.md#customscanrescan)），可实现自定义界面扫码能力的基本功能验证。
+* 从API版本6.0.0(20)开始，模拟器支持部分自定义界面扫码接口开发（支持的接口包括[init](../harmonyos-references/scan-customscan-api.md#init)、[start](../harmonyos-references/scan-customscan-api.md#start)、[stop](../harmonyos-references/scan-customscan-api.md#stop)、[release](../harmonyos-references/scan-customscan-api.md#release)、[rescan](../harmonyos-references/scan-customscan-api.md#rescan)），可实现自定义界面扫码能力的基本功能验证。
 * 模拟器自定义界面扫码能力仅支持1280\*720分辨率，开发者传入其他分辨率会统一转换成1280\*720。

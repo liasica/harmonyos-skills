@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-access-con
 title: 是否支持动态授权
 breadcrumb: FAQ > 系统开发 > 安全 > 程序访问控制 > 是否支持动态授权
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:55+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:55+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:bd20dd923d1f2fec8a2f0e4540b8b15b2dbcc04929489fff2dccdd2ade144777
 ---
 

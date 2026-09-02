@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/both-mode
 title: 通用能力的接口(推荐)
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:29+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:8e113aa337c9b9b4d54e804b99020e82b31d3aadd93a8a2be3f6004e66ff5b7c
+scraped_at: 2026-09-02T14:51:03+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:4136f05ccf29cc820921446d36ea34039b0fd3ddc6a492d33d43d5a3ae96234c
 ---
 
 * **[@ohos.abilityAccessCtrl (程序访问控制管理)](js-apis-abilityaccessctrl.md)**
@@ -19,6 +19,7 @@ content_hash: sha256:8e113aa337c9b9b4d54e804b99020e82b31d3aadd93a8a2be3f6004e66f
 * **[@ohos.app.ability.dataUriUtils (DataUriUtils模块)](js-apis-app-ability-datauriutils.md)**
 * **[@ohos.app.ability.dialogRequest (dialogRequest模块)](js-apis-app-ability-dialogrequest.md)**
 * **[@ohos.app.ability.errorManager (错误管理模块)](js-apis-app-ability-errormanager.md)**
+* **[@ohos.app.ability.hyperSnapManager (应用快启管理)](js-apis-app-ability-hypersnapmanager.md)**
 * **[@ohos.app.ability.kioskManager (Kiosk模式管理)](js-apis-app-ability-kioskmanager.md)**
 * **[@ohos.app.ability.Want (Want)](js-apis-app-ability-want.md)**
 * **[@ohos.app.ability.wantAgent (WantAgent模块)](js-apis-app-ability-wantagent.md)**
@@ -26,5 +27,7 @@ content_hash: sha256:8e113aa337c9b9b4d54e804b99020e82b31d3aadd93a8a2be3f6004e66f
 * **[@ohos.bundle.bundleManager (应用程序包管理模块)](js-apis-bundlemanager.md)**
 * **[@ohos.bundle.defaultAppManager (默认应用管理)](js-apis-defaultappmanager.md)**
 * **[@ohos.bundle.launcherBundleManager (launcherBundleManager模块)](js-apis-launcherbundlemanager.md)**
-* **[@ohos.bundle.overlay (overlay模块)](js-apis-overlay.md)**
+* **[@ohos.bundle.overlay (overlay特征模块)](js-apis-overlay.md)**
+* **[@ohos.bundle.pluginBundleManager (pluginBundleManager模块)](js-apis-pluginbundlemanager.md)**
 * **[@ohos.bundle.shortcutManager (shortcutManager模块)](js-apis-shortcutmanager.md)**
+* **[@ohos.bundle.skillManager (skillManager模块)](js-apis-skillmanager.md)**

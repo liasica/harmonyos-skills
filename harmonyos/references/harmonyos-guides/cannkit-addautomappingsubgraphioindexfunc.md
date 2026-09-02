@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-addau
 title: AddAutoMappingSubgraphIOIndexFunc
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > FrameworkRegistry > AddAutoMappingSubgraphIOIndexFunc
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:54+08:00
+scraped_at: 2026-09-02T14:50:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ceb65f61db8965b2e168b380c80b69f4341bfd389cf6bd96d11eb324848ac781
+content_hash: sha256:6c619af719e57a0ba6bd4e31f060f7d9399ebd4129f731efea16eec70775a93a
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:ceb65f61db8965b2e168b380c80b69f4341bfd389cf6bd96d11eb324848
 
 ## 函数原型
 
-```
-1. void AddAutoMappingSubgraphIOIndexFunc(domi::FrameworkType framework, AutoMappingSubgraphIOIndexFunc fun);
+```cpp
+void AddAutoMappingSubgraphIOIndexFunc(domi::FrameworkType framework, AutoMappingSubgraphIOIndexFunc fun);
 ```
 
 ## 参数说明

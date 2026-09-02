@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-notificati
 title: 系统弹框和应用消息推送的区别是什么
 breadcrumb: FAQ > 应用服务开发 > 用户通知服务（Notification Kit） > 系统弹框和应用消息推送的区别是什么
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:50+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:12+08:00
+doc_updated_at: 2026-07-30
 content_hash: sha256:342db721bbde20aac4c0a3190ad5f20942574e26f95191172317c887b9a2d797
 ---
 

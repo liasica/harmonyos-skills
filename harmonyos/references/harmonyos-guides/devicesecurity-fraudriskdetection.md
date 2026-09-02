@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 涉诈剧本检测
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 业务风险检测 > 涉诈剧本检测
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:31:41+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:26f3433afc747b86e88cd8c8a5ff933cc94d8e0f8443dbf15a7074580211b5c4
+scraped_at: 2026-09-02T14:59:30+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:f1707537f776993ba59a8ef6e6686222b410a1cec72f910460d11ced7d2dc0c2
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:26f3433afc747b86e88cd8c8a5ff933cc94d8e0f8443dbf15a707458021
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/w2010-wrRkWhoYXgC7VUzw/zh-cn_image_0000002589244705.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/f3wjbB6MQPOJsBSAdASg5Q/zh-cn_image_0000002736313411.png)
 
 **流程说明：**
 
@@ -28,7 +28,7 @@ content_hash: sha256:26f3433afc747b86e88cd8c8a5ff933cc94d8e0f8443dbf15a707458021
 
    在调用detectFraudRisk接口时，开发者必须传入一个随机生成的nonce值。在检测结果中会包含这个nonce值，您可以通过校验这个nonce值来确定返回结果能够对应您的请求，并且没有被重放攻击。
 
-   说明
+   **说明** 
 
    * nonce值必须为24至80字节之间。
    * 建议每次请求都从服务器随机生成新的nonce值。
@@ -47,42 +47,49 @@ content_hash: sha256:26f3433afc747b86e88cd8c8a5ff933cc94d8e0f8443dbf15a707458021
 
 ## 开发步骤
 
-说明
+**说明** 
 
 请确保已打开“[涉诈剧本检测](devicesecurity-deviceverify-activateservice.md)”开关并[申请Profile](../app/agc-help-debug-profile-0000002248181278.md)。
 
 1. 导入Device Security Kit模块及相关公共模块。
 
-   ```
-   1. import { hilog } from '@kit.PerformanceAnalysisKit';
-   2. import { cryptoFramework } from '@kit.CryptoArchitectureKit';
-   3. import { businessRiskIntelligentDetection } from '@kit.DeviceSecurityKit';
-   4. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+   import { businessRiskIntelligentDetection } from '@kit.DeviceSecurityKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 调用detectFraudRisk接口获取涉诈剧本检测结果。
 
-   ```
-   1. const TAG = "BusinessRiskIntelligentDetectionJsTest";
+   ```typescript
+   const TAG: string = '[FraudRiskDetectModel]';
 
-   3. let rand = cryptoFramework.createRandom();
-   4. let len = 48;
-   5. let randData = rand.generateRandomSync(len);
-   6. let params = {
-   7. nonce: randData.data,
-   8. algorithm: businessRiskIntelligentDetection.SigningAlgorithm.ES256
-   9. } as businessRiskIntelligentDetection.FraudDetectionRequest;
-   10. try {
-   11. hilog.info(0x0000, TAG, 'Detect fraud risk begin.');
-   12. businessRiskIntelligentDetection.detectFraudRisk(params).then((result: string) => {
-   13. hilog.info(0x0000, TAG, 'Detect fraud risk success: %{public}s', result);
-   14. }).catch((error: Error) => {
-   15. let e: BusinessError = error as BusinessError;
-   16. hilog.error(0x0000, TAG, 'Detect fraud risk failed: %{public}d %{public}s', e.code, e.message);
-   17. });
-   18. } catch (error) {
-   19. let e: BusinessError = error as BusinessError;
-   20. hilog.error(0x0000, TAG, 'Detect fraud risk failed: %{public}d %{public}s', e.code, e.message);
-   21. }
+   function fraudRiskDetectPromise(): Promise<String> {
+     let rand = cryptoFramework.createRandom();
+     let len = 48;
+     let randData = rand.generateRandomSync(len);
+     return new Promise(async (resolve: Function, reject: Function) => {
+       let params = {
+         nonce: randData.data,
+         algorithm: businessRiskIntelligentDetection.SigningAlgorithm.ES256
+       } as businessRiskIntelligentDetection.FraudDetectionRequest;
+       try {
+         hilog.info(0x0000, TAG, 'Detect fraud risk begin.');
+         businessRiskIntelligentDetection.detectFraudRisk(params).then((result: string) => {
+           hilog.info(0x0000, TAG, 'Detect fraud risk success: %{public}s', result);
+           resolve(result);
+         }).catch((error: Error) => {
+           let e: BusinessError = error as BusinessError;
+           hilog.error(0x0000, TAG, 'Detect fraud risk failed: %{public}d %{public}s', e.code, e.message);
+           reject(error);
+         });
+       } catch (error) {
+         let e: BusinessError = error as BusinessError;
+         hilog.error(0x0000, TAG, 'Detect fraud risk failed: %{public}d %{public}s', e.code, e.message);
+         reject(error);
+       }
+     });
+   }
    ```
 3. 在开发者应用服务器中验证检测结果。
 
@@ -96,14 +103,14 @@ content_hash: sha256:26f3433afc747b86e88cd8c8a5ff933cc94d8e0f8443dbf15a707458021
 
       **Header字段如下：**
 
-      ```
-      1. {
-      2. "alg": "ES256",
-      3. "x5c": ["",""]
-      4. }
+      ```json
+      {
+        "alg": "ES256",
+        "x5c": ["",""]
+      }
       ```
 
-      说明
+      **说明** 
 
       * "alg"：数字签名算法，ES256表示为SHA256withECDSA。
       * "x5c"：华为签名服务器对JWS签名的证书链，x5c[0]为给JWS签名的证书，x5c[1]为华为设备CA。
@@ -112,40 +119,59 @@ content_hash: sha256:26f3433afc747b86e88cd8c8a5ff933cc94d8e0f8443dbf15a707458021
 
       * 当请求参数FraudDetectionRequest中的version为1，Payload样例：
 
-        ```
-        1. {
-        2. "timestampMs": 9xxxxxxxxx,
-        3. "nonce": "Rxxxxxxxxx",
-        4. "appId": "xxxxxxxxx",
-        5. "version": 1,
-        6. "riskScore": 90,
-        7. "tags": [
-        8. "phishing",
-        9. "malware",
-        10. "interdiction",
-        11. "control"
-        12. ]
-        13. }
+        ```json
+        {
+          "timestampMs": 9xxxxxxxxx,
+          "nonce": "Rxxxxxxxxx",
+          "appId": "xxxxxxxxx",
+          "version": 1,
+          "riskScore": 90,
+          "tags": [
+            "phishing",
+            "malware",
+            "interdiction",
+            "control"
+          ]
+        }
         ```
       * 当请求参数FraudDetectionRequest中的version为2，Payload样例：
 
+        ```json
+        {
+          "timestampMs": 9xxxxxxxxx,
+          "nonce": "Rxxxxxxxxx",
+          "appId": "xxxxxxxxx",
+          "version": 2,
+          "riskScore": 90,
+          "tags": [
+            {"tag": "phishing", "level": "high", "lastTime": 9876543216548},
+            {"tag": "malware", "level": "low", "lastTime": 965432198756},
+            {"tag": "interdiction", "level": "medium", "lastTime": 965432198756},
+            {"tag": "control", "level": "medium", "lastTime": 965432198123}
+          ]
+        }
         ```
-        1. {
-        2. "timestampMs": 9xxxxxxxxx,
-        3. "nonce": "Rxxxxxxxxx",
-        4. "appId": "xxxxxxxxx",
-        5. "version": 2,
-        6. "riskScore": 90,
-        7. "tags": [
-        8. {"tag": "phishing", "level": "high", "lastTime": 9876543216548},
-        9. {"tag": "malware", "level": "low", "lastTime": 965432198756},
-        10. {"tag": "interdiction", "level": "medium", "lastTime": 965432198756},
-        11. {"tag": "control", "level": "medium", "lastTime": 965432198123}
-        12. ]
-        13. }
+      * 从26.0.0版本开始，增加version为3的取值。
+
+        当请求参数FraudDetectionRequest中的version为3，Payload样例：
+
+        ```json
+        {
+          "timestampMs": 9xxxxxxxxx,
+          "nonce": "Rxxxxxxxxx",
+          "appId": "xxxxxxxxx",
+          "version": 3,
+          "riskScore": 90,
+          "tags": [
+            {"tag": "phishing", "level": "high", "lastTime": 9876543216548, "riskFactors": ["answerSuspectedFraudCall", "clickSuspectedFraudMessage", "visitSuspectedFraudURL"]},
+            {"tag": "malware", "level": "low", "lastTime": 965432198756, "riskFactors": ["installUnknownApp", "executedUnknownApp", "runCommonMeetingApp"]},
+            {"tag": "interdiction", "level": "medium", "lastTime": 965432198756, "riskFactors": ["inFlightMode", "callForward", "videoCalling"]},
+            {"tag": "control", "level": "medium", "lastTime": 965432198123, "riskFactors": ["screenSharing"]}
+          ]
+        }
         ```
 
-      说明
+      **说明** 
 
       * nonce：调用detectFraudRisk接口时传入的nonce值Base64编码。
       * timestampMs：华为签名服务器生成的时间戳。
@@ -166,3 +192,16 @@ content_hash: sha256:26f3433afc747b86e88cd8c8a5ff933cc94d8e0f8443dbf15a707458021
       | low | 当前风险标签对应的风险等级为低 |
       | medium | 当前风险标签对应的风险等级为中 |
       | high | 当前风险标签对应的风险等级为高 |
+
+      | riskFactors值 | 含义 |
+      | --- | --- |
+      | answerSuspectedFraudCall | 近期接听过疑似诈骗电话 |
+      | clickSuspectedFraudMessage | 近期点击过疑似涉诈短信 |
+      | visitSuspectedFraudURL | 近期访问过疑似诈骗网址 |
+      | installUnknownApp | 近期安装过未知应用 |
+      | executedUnknownApp | 近期运行过未知应用 |
+      | runCommonMeetingApp | 正在运行主流会议类APP |
+      | inFlightMode | 近期开启过飞行模式 |
+      | callForward | 近期开启过呼叫转移 |
+      | videoCalling | 当前处于在电话语音中 |
+      | screenSharing | 当前启用了共享屏幕 |

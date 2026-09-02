@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multimedia-de
 title: 媒体开发概览
 breadcrumb: 指南 > 媒体 > 媒体开发概览
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:34:26+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:89da66f469e56027574ee577372c720ba19474cf2b50c15c9f8cb9eb17f0701c
+scraped_at: 2026-09-02T14:59:42+08:00
+doc_updated_at: 2026-08-03
+content_hash: sha256:e28ea44b5fd2d5ede10852538bd8e7da7bb7ee1f5048c590667263ea26729827
 ---
 
 HarmonyOS提供丰富的一站式媒体业务开放能力，开发者能够在系统上快速开发主流的媒体业务，满足常规高频使用场景，并提供优秀的性能表现。
 
 ## 媒体系统架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/jSmrHSAQSp6sBS8Ab3xQWA/zh-cn_image_0000002558765026.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/Uud5XuYlT5mwemT7hU1GXQ/zh-cn_image_0000002706834470.png)
 
 媒体系统架构提供用户视觉、听觉信息的处理能力，例如音视频信息的采集、编码存储、解码播放等。操作系统实现中，根据不同的媒体信息处理内容，将媒体划分为不同的模块，包括音频、视频、图片等。
 
@@ -45,15 +45,12 @@ HarmonyOS提供丰富的一站式媒体业务开放能力，开发者能够在�
 * [预览流二次处理(C/C++)](native-camera-preview-imagereceiver.md)
 * [动态调整预览帧率(C/C++)](camera-setframerate-native.md)
 * [适配相机旋转角度(C/C++)](camera-rotation-angle-adaptation-native.md)
+* [相机预览花屏解决方案](camera-preview-glitch-solution.md)
 
 **API参考**
 
 * ArkTS API：[camera](../harmonyos-references/js-apis-camera.md)
 * C API：[OH\_Camera](../harmonyos-references/capi-oh-camera.md)
-
-**最佳实践**
-
-* [相机预览花屏解决方案](../best-practices/bpta-deal-stride-solution.md)
 
 ### 相机拍照
 
@@ -116,8 +113,8 @@ AVPlayer提供功能齐全的一体化播放能力，支持多种音视频格式
 
 **最佳实践**
 
-* [在线视频播放卡顿优化实践](../best-practices/bpta-online-video-playback-lags-practice.md)
-* [音画同步最佳实践](../best-practices/bpta-audio-video-synchronization.md)
+* [在线视频播放卡顿优化实践](online-video-playback-lags-optimize.md)
+* [音画同步最佳实践](audio-video-synchronization.md)
 * [基于系统能力获取视频缩略图](../best-practices/bpta-video-thumbnail.md)
 
 **示例代码**
@@ -215,7 +212,7 @@ AVRecorder提供音视频录制的能力，AVScreenCapture提供屏幕录制的�
 * [接入Background Tasks Kit长时任务实现后台播放](continuous-task.md)
 * [应用接入AVSession](avsession-access-scene.md)
 * [应用接入播控自检](playback-control-access-selfcheck.md)
-* [使用合适的音频流类型](using-right-streamusage-and-sourcetype.md)
+* [使用合适的播放流类型](using-right-streamusage-for-playback.md)
 * [音频焦点和音频会话介绍](audio-playback-concurrency.md)
 * [使用AudioSession管理应用音频焦点(ArkTS)](audio-session-management.md)
 * [使用AudioSession管理应用音频焦点(C/C++)](using-ohaudio-for-session.md)
@@ -229,7 +226,6 @@ AVRecorder提供音视频录制的能力，AVScreenCapture提供屏幕录制的�
 
 * [实现音频应用作为媒体会话提供方接入媒体会话](https://gitcode.com/HarmonyOS_Samples/media-provider)
 * [实现音频低时延录制与播放](https://gitcode.com/HarmonyOS_Samples/audio-native)
-* [基于AudioRenderer的音频播控和多场景交互](https://gitcode.com/HarmonyOS_Samples/audio-interaction)
 
 **设计体验**
 
@@ -252,7 +248,6 @@ AudioCapture提供了音频采集能力，为开发者提供PCM原始数据。
 **示例代码**
 
 * [实现音频低时延录制与播放](https://gitcode.com/HarmonyOS_Samples/audio-native)
-* [基于AudioRenderer的音频播控和多场景交互](https://gitcode.com/HarmonyOS_Samples/audio-interaction)
 
 ### 音频录制
 
@@ -274,6 +269,7 @@ AVRecorder提供音频录制的能力，帮助开发者录制纯音频文件。
 * [使用Picker选择媒体库资源](photoaccesshelper-photoviewpicker.md)
 * [使用PhotoPicker组件访问图片/视频](component-guidelines-photoviewpicker.md)
 * [保存媒体库资源](photoaccesshelper-savebutton.md)
+* [图片获取与保存实践](images-get-preservation-practice.md)
 
 **API参考**
 
@@ -281,10 +277,6 @@ AVRecorder提供音频录制的能力，帮助开发者录制纯音频文件。
 * ArkTS组件：[AlbumPickerComponent](../harmonyos-references/ohos-file-albumpickercomponent.md)
 * ArkTS组件：[PhotoPickerComponent](../harmonyos-references/ohos-file-photopickercomponent.md)
 * ArkTS组件：[RecentPhotoComponent](../harmonyos-references/ohos-file-recentphotocomponent.md)
-
-**最佳实践**
-
-* [图片获取与保存实践](../best-practices/bpta-image_get_and_save.md)
 
 **示例代码**
 
@@ -314,7 +306,7 @@ AVRecorder提供音频录制的能力，帮助开发者录制纯音频文件。
 
 | 分类 | 资源链接 |
 | --- | --- |
-| 音频焦点 | - 开发指南：[使用合适的音频流类型](using-right-streamusage-and-sourcetype.md)  - 开发指南：[音频焦点和音频会话](audio-playback-concurrency.md)  - ArkTS API参考：[AudioSession](../harmonyos-references/arkts-apis-audio-audiosessionmanager.md)  - ArkTS API参考：[StreamUsage](../harmonyos-references/arkts-apis-audio-e.md#streamusage) |
+| 音频焦点 | - 开发指南：[使用合适的播放流类型](using-right-streamusage-for-playback.md)、[使用合适的录制流类型](using-right-sourcetype-for-recording.md)  - 开发指南：[音频焦点和音频会话](audio-playback-concurrency.md)  - ArkTS API参考：[AudioSession](../harmonyos-references/arkts-apis-audio-audiosessionmanager.md)  - ArkTS API参考：[StreamUsage](../harmonyos-references/arkts-apis-audio-e.md#streamusage) |
 | 音频通话 | - 开发指南：[使用AudioRenderer播放对端的通话声音](audio-call-development.md#使用audiorenderer播放对端的通话声音)  - 开发指南：[使用AudioCapturer录制本端的通话声音](audio-call-development.md#使用audiocapturer录制本端的通话声音) |
 | 更多 | [Audio Kit开发指南](audio-kit.md)  [Audio Kit API参考](../harmonyos-references/audio-api.md) |
 
@@ -330,7 +322,7 @@ AVRecorder提供音频录制的能力，帮助开发者录制纯音频文件。
 
 | 分类 | 资源链接 |
 | --- | --- |
-| 本地媒体会话 | - ArkTS API参考：[媒体会话管理](../harmonyos-references/js-apis-avsession.md)  - 开发指南：[应用接入AVSession场景介绍](avsession-access-scene.md)  - 示例代码：[基于AVPlayer实现播放接入](https://gitcode.com/HarmonyOS_Samples/media-provider)  - 示例代码：[基于AudioRenderer实现播放接入](https://gitcode.com/HarmonyOS_Samples/audio-interaction) |
+| 本地媒体会话 | - ArkTS API参考：[媒体会话管理](../harmonyos-references/js-apis-avsession.md)  - 开发指南：[应用接入AVSession场景介绍](avsession-access-scene.md)  - 示例代码：[基于AVPlayer实现播放接入](https://gitcode.com/HarmonyOS_Samples/media-provider) |
 | 更多 | [AVSession Kit开发指南](avsession-kit.md)  [AVSession Kit API参考](../harmonyos-references/avsession-api.md) |
 
 **Camera Kit**

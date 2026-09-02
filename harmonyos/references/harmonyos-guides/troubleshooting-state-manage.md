@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/troubleshooti
 title: 状态变量改变不触发组件刷新问题常用定位方法
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理常见问题 > 状态变量改变不触发组件刷新问题常用定位方法
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:33+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:c23d69db99d3163cc1d62e7b448589dba468ad0c1150003180777d7175abff62
+scraped_at: 2026-09-02T14:59:16+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1760018d710d663a6b4aa1fce46e8e358f6b4d5e71c5a9c08d5205059b760f15
 ---
 
 在声明式UI编程框架中，状态管理的主要职责是：当状态变量改变时，触发其关联组件的刷新。所以在使用状态变量的过程中，最常见的问题就是组件不刷新。本文主要针对开发者在使用状态变量时遇到的不刷新问题，阐述以下两个方面。
@@ -35,31 +35,36 @@ content_hash: sha256:c23d69db99d3163cc1d62e7b448589dba468ad0c1150003180777d7175a
 
 在给状态变量赋值时，状态管理框架会检查当前被赋值的状态变量的值是否有变化，如果没有变化，则会直接返回，不做任何操作。最简单的排查手段是分别打印修改状态变量前后的值，检查是否有变化。如以下示例。
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. @State message: string = 'Hello World';
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-6. build() {
-7. Column() {
-8. Text(this.message)
-9. .onClick(() => {
-10. // 日志打印：输出赋值前后this.message
-11. console.info(`message set before ${this.message}`);
-12. this.message = 'Welcome';
-13. console.info(`message set after ${this.message}`);
-14. })
-15. }
-16. }
-17. }
+const DOMAIN: number = 0x0000;
+const TAG: string = '[Sample_TroubleshootingStateManage]';
+
+@Entry
+@Component
+struct StateValueChangePage {
+  @State message: string = 'Hello World';
+
+  build() {
+    Column() {
+      Text(this.message)
+        .onClick(() => {
+          // 日志打印：输出赋值前后this.message
+          hilog.info(DOMAIN, TAG, '%{public}s', `message set before ${this.message}`);
+          this.message = 'Welcome';
+          hilog.info(DOMAIN, TAG, '%{public}s', `message set after ${this.message}`);
+        })
+    }
+  }
+}
 ```
 
 观察日志输出this.message前后发生改变，日志输出如下：
 
-```
-1. message set before Hello World
-2. message set after Welcome
+```text
+message set before Hello World
+message set after Welcome
 ```
 
 ### 第三步：状态变量的赋值是否可被观察
@@ -74,60 +79,60 @@ content_hash: sha256:c23d69db99d3163cc1d62e7b448589dba468ad0c1150003180777d7175a
 * 如果状态变量为复杂类型且需要观察其属性的赋值变化，开发者还可以通过[getTarget](arkts-new-gettarget.md)来判断当前变量是否可观察。
 * 使用DevEco Studio的Profiler工具观察此次赋值是否有状态变量变化的上报，具体使用方法见[状态管理profiler调优能力](ui-inspector-profiler.md#状态管理profiler调优能力)。
 
-```
-1. import { UIUtils } from '@kit.ArkUI';
+```typescript
+import { UIUtils } from '@kit.ArkUI';
 
-3. class Outer {
-4. value: string = 'outer';
-5. inner: Inner = new Inner();
-6. }
+class Outer {
+  public value: string = 'outer';
+  public inner: Inner = new Inner();
+}
 
-8. class Inner {
-9. value: string = 'inner';
-10. }
+class Inner {
+  public value: string = 'inner';
+}
 
-12. @Entry
-13. @Component
-14. struct Index {
-15. @State outer: Outer = new Outer();
+@Entry
+@Component
+struct Index {
+  @State outer: Outer = new Outer();
 
-17. build() {
-18. Column() {
-19. Text(`Index: outer value: ${this.outer.value}`)
-20. Child({ inner: this.outer.inner })
-21. }
-22. }
-23. }
+  build() {
+    Column() {
+      Text(`Index: outer value: ${this.outer.value}`)
+      Child({ inner: this.outer.inner })
+    }
+  }
+}
 
-25. @Component
-26. struct Child {
-27. // 写法错误：@ObjectLink初始化的变量不是@Observed装饰的类的实例
-28. // 状态管理会打印error日志提醒开发者：
-29. // FIX THIS APPLICATION ERROR: @ObjectLink inner owned by @Component Child set/init (method setValueInternal): assigned value is not be decorated by @Observed. Value changes will not be observed and UI will not update.
-30. @ObjectLink @Watch('onChange') inner: Inner;
+@Component
+struct Child {
+  // 写法错误：@ObjectLink初始化的变量不是@Observed装饰的类的实例
+  // 状态管理会打印error日志提醒开发者：
+  // FIX THIS APPLICATION ERROR: @ObjectLink inner owned by @Component Child set/init (method setValueInternal): assigned value is not be decorated by @Observed. Value changes will not be observed and UI will not update.
+  @ObjectLink @Watch('onChange') inner: Inner;
 
-32. aboutToAppear(): void {
-33. // 通过getTarget获取状态变量的原始对象，如果两者相等，即原始对象和该对象是同一个对象，则其不是一个可观察的数据
-34. // 如果两者不相等，则其为可观察的对象
-35. // 因为Inner缺少@Observed装饰器装饰，所以下面日志输出为：
-36. // inner is not observed object
-37. console.info(`inner is ${UIUtils.getTarget(this.inner) === this.inner ? 'not observed object' :
-38. 'observed object'}`);
-39. }
+  aboutToAppear(): void {
+    // 通过getTarget获取状态变量的原始对象，如果两者相等，即原始对象和该对象是同一个对象，则其不是一个可观察的数据
+    // 如果两者不相等，则其为可观察的对象
+    // 因为Inner缺少@Observed装饰器装饰，所以下面日志输出为：
+    // inner is not observed object
+    console.info(`inner is ${UIUtils.getTarget(this.inner) === this.inner ? 'not observed object' :
+      'observed object'}`);
+  }
 
-41. onChange() {
-42. console.info(`inner property has been changed ${this.inner.value}`);
-43. }
+  onChange() {
+    console.info(`inner property has been changed ${this.inner.value}`);
+  }
 
-45. build() {
-46. Column() {
-47. Text(`Child: inner value: ${this.inner.value}`)
-48. .onClick(() => {
-49. this.inner.value += '!';
-50. })
-51. }
-52. }
-53. }
+  build() {
+    Column() {
+      Text(`Child: inner value: ${this.inner.value}`)
+        .onClick(() => {
+          this.inner.value += '!';
+        })
+    }
+  }
+}
 ```
 
 在上面的示例中，Inner没有被[@Observed](arkts-observed-and-objectlink.md)装饰，所以其属性value的赋值无法被观察：
@@ -136,61 +141,65 @@ content_hash: sha256:c23d69db99d3163cc1d62e7b448589dba468ad0c1150003180777d7175a
 * 日志提示inner is not observed object。
 * ArkUI State泳道没有状态变量变化的上报信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/WJ5WLERtQpCyVSEq-0RbBw/zh-cn_image_0000002589323999.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/g4sCd0G7QK2pNcJkT8suXQ/zh-cn_image_0000002736432485.png)
 
 需要注意，并非所有的类对象都需要被@Observed装饰。[@State](arkts-state.md)装饰器会默认对复杂对象包装第一层代理，而对嵌套对象，则需要在内层对象的类声明上增加@Observed装饰。
 
 正确示例：
 
-```
-1. import { UIUtils } from '@kit.ArkUI';
+```typescript
+import { UIUtils } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. class Outer {
-4. value: string = 'outer';
-5. inner: Inner = new Inner();
-6. }
+const DOMAIN: number = 0x0000;
+const TAG: string = '[Sample_TroubleshootingStateManage]';
 
-8. @Observed
-9. class Inner {
-10. value: string = 'inner';
-11. }
+class Outer {
+  public value: string = 'outer';
+  public inner: Inner = new Inner();
+}
 
-13. @Entry
-14. @Component
-15. struct Index {
-16. @State outer: Outer = new Outer();
+@Observed
+class Inner {
+  public value: string = 'inner';
+}
 
-18. build() {
-19. Column() {
-20. Text(`Index: outer value: ${this.outer.value}`)
-21. Child({ inner: this.outer.inner })
-22. }
-23. }
-24. }
+@Entry
+@Component
+struct ObservabilityPage {
+  @State outer: Outer = new Outer();
 
-26. @Component
-27. struct Child {
-28. @ObjectLink @Watch('onChange') inner: Inner;
+  build() {
+    Column() {
+      Text(`Index: outer value: ${this.outer.value}`)
+      InnerDisplay({ inner: this.outer.inner })
+    }
+  }
+}
 
-30. aboutToAppear(): void {
-31. // 日志输出：inner is observed object
-32. console.info(`inner is ${UIUtils.getTarget(this.inner) === this.inner ? 'not observed object' :
-33. 'observed object'}`);
-34. }
+@Component
+struct InnerDisplay {
+  @ObjectLink @Watch('onChange') inner: Inner;
 
-36. onChange() {
-37. console.info(`inner property has been changed ${this.inner.value}`)
-38. }
+  aboutToAppear(): void {
+    // 日志输出：inner is observed object
+    hilog.info(DOMAIN, TAG, '%{public}s', `inner is ${UIUtils.getTarget(this.inner) === this.inner ? 'not observed object' :
+      'observed object'}`);
+  }
 
-40. build() {
-41. Column() {
-42. Text(`Child: inner value: ${this.inner.value}`)
-43. .onClick(() => {
-44. this.inner.value += '!';
-45. })
-46. }
-47. }
-48. }
+  onChange() {
+    hilog.info(DOMAIN, TAG, '%{public}s', `inner property has been changed ${this.inner.value}`)
+  }
+
+  build() {
+    Column() {
+      Text(`Child: inner value: ${this.inner.value}`)
+        .onClick(() => {
+          this.inner.value += '!';
+        })
+    }
+  }
+}
 ```
 
 在正确的示例中：
@@ -199,7 +208,7 @@ content_hash: sha256:c23d69db99d3163cc1d62e7b448589dba468ad0c1150003180777d7175a
 * 日志提示inner is observed object。
 * ArkUI State泳道有状态变量变化的上报信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/vtpIZDc9RvGQpc8A-Y0q_g/zh-cn_image_0000002589243939.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/wo9tDWp-Qpujwfg8L8LQBw/zh-cn_image_0000002706833332.png)
 
 **状态管理V2**
 
@@ -217,52 +226,57 @@ content_hash: sha256:c23d69db99d3163cc1d62e7b448589dba468ad0c1150003180777d7175a
 
 具体示例如下：
 
-```
-1. import { UIUtils } from '@kit.ArkUI';
+```typescript
+import { UIUtils } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. @ObservedV2
-4. class Info {
-5. @Trace value: string = 'info';
-6. @Trace numberArr: number[] = [];
-7. count: number = 0;
+const DOMAIN: number = 0x0000;
+const TAG: string = '[Sample_TroubleshootingStateManage]';
 
-9. constructor(val: string) {
-10. this.value = val;
-11. this.numberArr = [0, 1, 2];
-12. }
-13. }
+@ObservedV2
+class Info {
+  @Trace public value: string = 'info';
+  @Trace public numberArr: number[] = [];
+  public count: number = 0;
 
-15. @Entry
-16. @ComponentV2
-17. struct Index {
-18. info: Info = new Info('info');
+  constructor(val: string) {
+    this.value = val;
+    this.numberArr = [0, 1, 2];
+  }
+}
 
-20. aboutToAppear(): void {
-21. // 日志输出：this.info.numberArr is observed array
-22. console.info(`this.info.numberArr is ${UIUtils.getTarget(this.info.numberArr) === this.info.numberArr ?
-23. 'not observed array' :
-24. 'observed array'}`);
-25. }
+@Entry
+@ComponentV2
+struct ObservabilityV2Page {
+  info: Info = new Info('info');
 
-27. build() {
-28. Column() {
-29. Text(`Index: info value: ${this.info.value}`)
-30. Text(`Index: info numberArr length: ${this.info.numberArr.length}`)
-31. Text(`Index: info count: ${this.info.count}`)
+  aboutToAppear(): void {
+    // 日志输出：this.info.numberArr is observed array
+    hilog.info(DOMAIN, TAG, '%{public}s', `this.info.numberArr is ${UIUtils.getTarget(this.info.numberArr) === this.info.numberArr ?
+      'not observed array' :
+      'observed array'}`);
+  }
 
-33. Button('change info property').onClick(() => {
-34. this.info.value = 'new info';
-35. this.info.numberArr.push(3);
-36. this.info.count++;
-37. })
-38. }
-39. }
-40. }
+  build() {
+    Column() {
+      Text(`Index: info value: ${this.info.value}`)
+      Text(`Index: info numberArr length: ${this.info.numberArr.length}`)
+      Text(`Index: info count: ${this.info.count}`)
+
+      Button('change info property')
+        .onClick(() => {
+        this.info.value = 'new info';
+        this.info.numberArr.push(3);
+        this.info.count++;
+      })
+    }
+  }
+}
 ```
 
 基于上面的示例，观察ArkUI State泳道，有两次状态变量的变化上报，即this.info.value和this.info.numberArr。count不是@Trace装饰的，所以不会被观察到变化，也不会在Profiler上报状态变量的变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/jHBHxfj5Rt6h4792tp7CgA/zh-cn_image_0000002558764132.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/eLHKQXD5QDqhfkA3YqlyPw/zh-cn_image_0000002736312441.png)
 
 ### 第四步：数据源和被同步的对象是否有关联关系
 
@@ -273,7 +287,7 @@ content_hash: sha256:c23d69db99d3163cc1d62e7b448589dba468ad0c1150003180777d7175a
 状态管理V1存在下面两类同步方式：
 
 * 同步对象(sync peer)：如@State和[@Link](arkts-link.md)、[@Provide](arkts-provide-and-consume.md)和[@Consume](arkts-provide-and-consume.md)。开发者可以通过DevEco Studio的ArkUI Inspector来查看数据源和同步对象之间是否存在同步关系，具体见[状态管理Inspector调试能力](ui-inspector-profiler.md#状态管理inspector调试能力)。
-* 依赖其所属组件的更新函数：如@State通知@Prop变化、@State通知@ObjectLink变化。开发者可以使用断点调试工具，或者[getHash接口](../harmonyos-references/js-apis-util.md#utilgethash12)来判断数据源和同步对象是否为同一个对象的引用(hashcode并不固定，以开发者自己打印的为准)。
+* 依赖其所属组件的更新函数：如@State通知@Prop变化、@State通知@ObjectLink变化。开发者可以使用断点调试工具，或者[getHash](../harmonyos-references/js-apis-util.md#utilgethash12)来判断数据源和同步对象是否为同一个对象的引用(hashcode并不固定，以开发者自己打印的为准)。
 
 **状态管理V2**
 
@@ -281,136 +295,142 @@ content_hash: sha256:c23d69db99d3163cc1d62e7b448589dba468ad0c1150003180777d7175a
 
 这类问题中，常见的场景是和[ForEach](arkts-rendering-control-foreach.md)和[LazyForEach](arkts-rendering-control-lazyforeach.md)联用导致数据源和其同步对象断链。如以下示例。
 
-```
-1. import { UIUtils } from '@kit.ArkUI';
-2. import { util } from '@kit.ArkTS';
+```typescript
+import { UIUtils } from '@kit.ArkUI';
+import { util } from '@kit.ArkTS';
 
-4. @Observed
-5. class Info {
-6. value: string = 'info';
-7. }
+@Observed
+class Info {
+  public value: string = 'info';
+}
 
-9. @Entry
-10. @Component
-11. struct Index {
-12. @State infos: Info[] = [new Info()];
+@Entry
+@Component
+struct Index {
+  @State infos: Info[] = [new Info()];
 
-14. build() {
-15. Column() {
-16. // 第一步：点击该Button
-17. // 触发ForEach的刷新，ForEach对比前后key值没有改变，没有触发Child的更新，所以@ObjectLink info还是指向之前的Info的实例
-18. // 出现@State infos和@ObjectLink info断链
-19. Button('change first item value').onClick(() => {
-20. this.infos[0] = new Info();
-21. })
+  build() {
+    Column() {
+      // 第一步：点击该Button
+      // 触发ForEach的刷新，ForEach对比前后key值没有改变，没有触发Child的更新，所以@ObjectLink info还是指向之前的Info的实例
+      // 出现@State infos和@ObjectLink info断链
+      Button('change first item value').onClick(() => {
+        this.infos[0] = new Info();
+      })
 
-23. // 第二步：点击该Button，@ObjectLink info的@Watch的函数没有被触发
-24. // 日志打印：this.infos[0] hashcode: 993656661
-25. // this.infos[0]和@ObjectLink info不是同一个对象的引用，@State无法通知@ObjectLink刷新
-26. Button('change first item value').onClick(() => {
-27. this.infos[0].value += '1';
-28. console.info(`this.infos[0] hashcode: ${util.getHash(this.infos[0])}`);
-29. })
-30. ForEach(this.infos, (item: Info) => {
-31. Child({ info: item })
-32. })
-33. }
-34. }
-35. }
+      // 第二步：点击该Button，@ObjectLink info的@Watch的函数没有被触发
+      // 日志打印：this.infos[0] hashcode: 993656661
+      // this.infos[0]和@ObjectLink info不是同一个对象的引用，@State无法通知@ObjectLink刷新
+      Button('change first item value').onClick(() => {
+        this.infos[0].value += '1';
+        console.info(`this.infos[0] hashcode: ${util.getHash(this.infos[0])}`);
+      })
+      ForEach(this.infos, (item: Info) => {
+        Child({ info: item })
+      })
+    }
+  }
+}
 
-37. @Component
-38. struct Child {
-39. @ObjectLink @Watch('onChange') info: Info;
+@Component
+struct Child {
+  @ObjectLink @Watch('onChange') info: Info;
 
-41. aboutToAppear(): void {
-42. // 日志输出:
-43. // info is observed object, hashcode: 1806047025
-44. // hashcode并不固定，根据开发者自己打印的为准
-45. console.info(`info is ${UIUtils.getTarget(this.info) === this.info ? 'not observed object' :
-46. 'observed object'}, hashcode: ${util.getHash(this.info)}`);
-47. }
+  aboutToAppear(): void {
+    // 日志输出:
+    // info is observed object, hashcode: 1806047025
+    // hashcode并不固定，根据开发者自己打印的为准
+    console.info(`info is ${UIUtils.getTarget(this.info) === this.info ? 'not observed object' :
+      'observed object'}, hashcode: ${util.getHash(this.info)}`);
+  }
 
-49. onChange() {
-50. console.info(`info property has been changed ${this.info.value}`);
-51. }
+  onChange() {
+    console.info(`info property has been changed ${this.info.value}`);
+  }
 
-53. build() {
-54. Column() {
-55. Text(`Child: info value: ${this.info.value}`)
-56. .onClick(() => {
-57. this.info.value += '2';
-58. })
-59. }
-60. }
-61. }
+  build() {
+    Column() {
+      Text(`Child: info value: ${this.info.value}`)
+        .onClick(() => {
+          this.info.value += '2';
+        })
+    }
+  }
+}
 ```
 
 正确示例：
 
-```
-1. import { UIUtils } from '@kit.ArkUI';
-2. import { util } from '@kit.ArkTS';
+```typescript
+import { UIUtils } from '@kit.ArkUI';
+import { util } from '@kit.ArkTS';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. @Observed
-5. class Info {
-6. value: string = 'info';
-7. }
+const DOMAIN: number = 0x0000;
+const TAG: string = '[Sample_TroubleshootingStateManage]';
 
-9. @Entry
-10. @Component
-11. struct Index {
-12. @State infos: Info[] = [new Info()];
+@Observed
+class Info {
+  public value: string = 'info';
+}
 
-14. build() {
-15. Column() {
-16. // 第一步：点击该Button
-17. // 触发ForEach的刷新，ForEach对比前后key值改变，触发Child的重建，@ObjectLink info指向新的Info的实例
-18. Button('change first item value').onClick(() => {
-19. this.infos[0] = new Info();
-20. })
+@Entry
+@Component
+struct ForEachSyncPage {
+  @State infos: Info[] = [new Info()];
 
-22. // 第二步：点击该Button，@ObjectLink info的@Watch的函数被触发
-23. // 日志打印：this.infos[0] hashcode: 358024053
-24. Button('change first item value').onClick(() => {
-25. this.infos[0].value += '1';
-26. console.info(`this.infos[0] hashcode: ${util.getHash(this.infos[0])}`);
-27. })
+  build() {
+    Column() {
+      // 第一步：点击该Button
+      // 触发ForEach的刷新，ForEach对比前后key值改变，触发Child的重建，@ObjectLink info指向新的Info的实例
+      Button('change first item value')
+        .onClick(() => {
+        this.infos[0] = new Info();
+      })
 
-29. ForEach(this.infos, (item: Info) => {
-30. Child({ info: item })
-31. }, (item: Info) => {
-32. // 随机数key值
-33. return item.value + Math.random().toString();
-34. })
-35. }
-36. }
-37. }
+      // 第二步：点击该Button，@ObjectLink info的@Watch的函数被触发
+      // 日志打印：this.infos[0] hashcode: 358024053
+      Button('change first item value')
+        .onClick(() => {
+        this.infos[0].value += '1';
+        hilog.info(DOMAIN, TAG, '%{public}s', `this.infos[0] hashcode: ${util.getHash(this.infos[0])}`);
+      })
 
-39. @Component
-40. struct Child {
-41. @ObjectLink @Watch('onChange') info: Info;
+      ForEach(this.infos, (item: Info) => {
+        InfoItemDisplay({ info: item })
+      }, (item: Info) => {
+        // 随机数key值
+        return item.value + Math.random().toString();
+      })
+    }
+  }
+}
 
-43. aboutToAppear(): void {
-44. // 日志输出:
-45. // 首次创建： info is observed object, hashcode: 2026693567
-46. // 点击Button('change first item value')，触发Child重建：info is observed object, hashcode: 358024053
-47. console.info(`info is ${UIUtils.getTarget(this.info) === this.info ? 'not observed object' :
-48. 'observed object'}, hashcode: ${util.getHash(this.info)}`);
-49. }
+@Component
+struct InfoItemDisplay {
+  @ObjectLink @Watch('onChange') info: Info;
 
-51. onChange() {
-52. console.info(`info property has been changed ${this.info.value}`);
-53. }
+  aboutToAppear(): void {
+    // 日志输出:
+    // 首次创建： info is observed object, hashcode: 2026693567
+    // 点击Button('change first item value')，触发Child重建：info is observed object, hashcode: 358024053
+    hilog.info(DOMAIN, TAG, '%{public}s', `info is ${UIUtils.getTarget(this.info) === this.info ? 'not observed object' :
+      'observed object'}, hashcode: ${util.getHash(this.info)}`);
+  }
 
-55. build() {
-56. Column() {
-57. Text(`Child: info value: ${this.info.value}`)
-58. .onClick(() => {
-59. this.info.value += '2';
-60. })
-61. }
-62. }
-63. }
+  onChange() {
+    hilog.info(DOMAIN, TAG, '%{public}s', `info property has been changed ${this.info.value}`);
+  }
+
+  build() {
+    Column() {
+      Text(`Child: info value: ${this.info.value}`)
+        .onClick(() => {
+          this.info.value += '2';
+        })
+    }
+  }
+}
 ```
 
 ### 第五步：是否执行组件的更新函数
@@ -421,57 +441,57 @@ content_hash: sha256:c23d69db99d3163cc1d62e7b448589dba468ad0c1150003180777d7175a
 
 开发者可以通过封装获取组件属性方法来观察当前组件是否发生重新渲染。如下面示例：
 
-```
-1. @Entry
-2. @Component
-3. struct Page {
-4. @State widthValue: number = 100;
-5. @State flag: boolean = true;
+```typescript
+@Entry
+@Component
+struct Page {
+  @State widthValue: number = 100;
+  @State flag: boolean = true;
 
-7. // 封装getHeightValue方法观察Image是否发生重新渲染
-8. getHeightValue(): number {
-9. console.info('Image render');
-10. return 500;
-11. }
+  // 封装getHeightValue方法观察Image是否发生重新渲染
+  getHeightValue(): number {
+    console.info('Image render');
+    return 500;
+  }
 
-13. build() {
-14. Column() {
-15. Image(this.flag ? $r('app.media.startIcon') : $r('app.media.background'))
-16. .width(this.widthValue)
-17. .height(this.getHeightValue())
-18. .backgroundColor(Color.Pink)
-19. .onComplete((event) => {
-20. this.widthValue = 200;
-21. console.info(`Image onComplete ${this.widthValue} load status: ${event?.loadingStatus}`);
-22. })
+  build() {
+    Column() {
+      Image(this.flag ? $r('app.media.startIcon') : $r('app.media.background'))
+        .width(this.widthValue)
+        .height(this.getHeightValue())
+        .backgroundColor(Color.Pink)
+        .onComplete((event) => {
+          this.widthValue = 200;
+          console.info(`Image onComplete ${this.widthValue} load status: ${event?.loadingStatus}`);
+        })
 
-24. Button('change resource').onClick(() => {
-25. // 第一步：改变flag，使得两个Resource变量都进入Image组件的缓存
-26. // 第三步：再次改变Image的Resource，此时onComplete为同步回调
-27. // onComplete的回调中同步修改widthValue为200
-28. // 打印状态管理的错误日志：FIX THIS APPLICATION ERROR: @Component 'Page: State variable 'widthValue' has changed during render! It's illegal to change @Component state while build (initial render or re-render) is on-going. Application error!
-29. // 没有打印Image render日志，Image宽度没有发生改变
-30. this.flag = !this.flag;
-31. })
+      Button('change resource').onClick(() => {
+        // 第一步：改变flag，使得两个Resource变量都进入Image组件的缓存
+        // 第三步：再次改变Image的Resource，此时onComplete为同步回调
+        // onComplete的回调中同步修改widthValue为200
+        // 打印状态管理的错误日志：FIX THIS APPLICATION ERROR: @Component 'Page: State variable 'widthValue' has changed during render! It's illegal to change @Component state while build (initial render or re-render) is on-going. Application error!
+        // 没有打印Image render日志，Image宽度没有发生改变
+        this.flag = !this.flag;
+      })
 
-33. Button('change widthValue').onClick(() => {
-34. // 第二步：改变image宽度为100
-35. this.widthValue = 100;
-36. })
-37. }
-38. .height('100%')
-39. .width('100%')
-40. }
-41. }
+      Button('change widthValue').onClick(() => {
+        // 第二步：改变image宽度为100
+        this.widthValue = 100;
+      })
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 第三步点击Button('change resource')后，输出日志如下：
 
-```
-1. Image render
-2. FIX THIS APPLICATION ERROR: @Component 'Page: State variable 'widthValue' has changed during render! It's illegal to change @Component state while build (initial render or re-render) is on-going. Application error!
-3. Image onComplete 200 load status: 0
-4. Image onComplete 200 load status: 1
+```text
+Image render
+FIX THIS APPLICATION ERROR: @Component 'Page: State variable 'widthValue' has changed during render! It's illegal to change @Component state while build (initial render or re-render) is on-going. Application error!
+Image onComplete 200 load status: 0
+Image onComplete 200 load status: 1
 ```
 
 可以看到在onComplete改变状态变量widthValue后，没有触发Image render日志，这次状态变量的改变没有触发Image组件的刷新。
@@ -480,57 +500,67 @@ content_hash: sha256:c23d69db99d3163cc1d62e7b448589dba468ad0c1150003180777d7175a
 
 可以将组件的同步回调中对状态变量的赋值通过setTimeout转换为异步执行，示例如下。
 
-```
-1. @Entry
-2. @Component
-3. struct Page {
-4. @State widthValue: number = 100;
-5. @State flag: boolean = true;
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-7. getHeightValue(): number {
-8. console.info('Image render');
-9. return 500;
-10. }
+const DOMAIN: number = 0x0000;
+const TAG: string = '[Sample_TroubleshootingStateManage]';
+const INIT_WIDTH: number = 100; // Image initial width value
+const CHANGED_WIDTH: number = 200; // Image width value after change
+const IMAGE_HEIGHT: number = 500; // Image fixed height value
 
-12. build() {
-13. Column() {
-14. Image(this.flag ? $r('app.media.startIcon') : $r('app.media.background'))
-15. .width(this.widthValue)
-16. .height(this.getHeightValue())
-17. .backgroundColor(Color.Pink)
-18. .onComplete((event) => {
-19. setTimeout(() =>{
-20. this.widthValue = 200;
-21. console.info(`Image onComplete ${this.widthValue} load status: ${event?.loadingStatus}`);
-22. });
-23. })
+@Entry
+@Component
+struct RenderUpdatePage {
+  @State widthValue: number = INIT_WIDTH;
+  @State resourceFlag: boolean = true;
 
-25. Button('change resource').onClick(() => {
-26. // 第一步：改变flag，使得两个Resource变量都进入Image组件的缓存
-27. // 第三步：再次改变Image的Resource，此时onComplete为同步回调
-28. // onComplete的回调中异步修改widthValue为200
-29. // Image宽度刷新为200
-30. this.flag = !this.flag;
-31. })
+  getHeightValue(): number {
+    hilog.info(DOMAIN, TAG, '%{public}s', 'Image render');
+    return IMAGE_HEIGHT;
+  }
 
-33. Button('change widthValue').onClick(() => {
-34. // 第二步：改变image宽度为100
-35. this.widthValue = 100;
-36. })
-37. }
-38. .height('100%')
-39. .width('100%')
-40. }
-41. }
+  build() {
+    Column() {
+      Image(this.resourceFlag ? $r('app.media.startIcon') : $r('app.media.background'))
+        .width(this.widthValue)
+        .height(this.getHeightValue())
+        .backgroundColor(Color.Pink)
+        .onComplete((event) => {
+          setTimeout(() =>{
+            this.widthValue = CHANGED_WIDTH;
+            hilog.info(DOMAIN, TAG, '%{public}s', `Image onComplete ${this.widthValue} load status: ${event?.loadingStatus}`);
+          });
+        })
+
+      Button('change resource')
+        .onClick(() => {
+        // 第一步：改变resourceFlag，使得两个Resource变量都进入Image组件的缓存
+        // 第三步：再次改变Image的Resource，此时onComplete为同步回调
+        // onComplete的回调中异步修改widthValue为200
+        // Image宽度刷新为200
+        this.resourceFlag = !this.resourceFlag;
+      })
+
+      Button('change widthValue')
+        .onClick(() => {
+        // 第二步：改变image宽度为100
+        this.widthValue = INIT_WIDTH;
+      })
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 第三步点击Button('change resource')后，输出日志如下：
 
-```
-1. Image render
-2. Image onComplete 200 load status: 0
-3. Image onComplete 200 load status: 1
-4. Image render
+```text
+Image render
+Image onComplete 200 load status: 0
+Image onComplete 200 load status: 1
+Image render
 ```
 
 可以看到在onComplete内的setTimeout改变状态变量widthValue后，触发Image render日志，Image宽度刷新为200。

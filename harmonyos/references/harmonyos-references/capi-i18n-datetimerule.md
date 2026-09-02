@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-i18n
 title: DateTimeRule
 breadcrumb: API参考 > 应用框架 > Localization Kit（本地化开发服务） > C API > 结构体 > DateTimeRule
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:35+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:cd9160db18381180f6e774b5b88f0ce5a02aa64213bb8ec029e112c060ad801b
+scraped_at: 2026-09-02T15:01:38+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4ce34822a511db0a6aeb00c94e7c930e807beb6034f683b672e682a28e9feab5
 ---
 
-```
-1. typedef struct DateTimeRule {...} DateTimeRule
+```c
+typedef struct DateTimeRule {...} DateTimeRule
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 时间日期规则。
 
@@ -26,15 +24,11 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
-| int32\_t month | 月份。 |
+| int32\_t month | 月份。月份从0开始计数，0表示一月。 |
 | int32\_t dayOfMonth | 当月的第几天。 |
 | int32\_t dayOfWeek | 当周的第几天。 |
 | int32\_t weekInMonth | 当月的第几周。 |

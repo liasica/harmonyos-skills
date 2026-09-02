@@ -3,35 +3,38 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@system.file (文件存储)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > 已停止维护的接口 > @system.file (文件存储)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:47+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e66fb703f288012eb66a679f20b6eaf657c3a91519b5b1b7068491aefd975ac1
+scraped_at: 2026-09-02T15:01:31+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:20d97815da98470dcde65c23dc6ff521ca95334dc114dbbf0ead54497786e475
 ---
 
-说明
+**说明** 
 
 * 模块维护策略：
   + 对于Lite Wearable设备类型，该模块长期维护，正常使用。
   + 对于支持该模块的其他设备类型，该模块从API Version 10开始不再维护，推荐使用新接口[@ohos.file.fs](js-apis-file-fs.md)。
 * 本模块首批接口从API version 3开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
+以下ArkTS示例URI说明：
+
+1. URI只能是internal://app/xxx格式。
+2. internal://app/为固定前缀，表示应用根目录，xxx为开发者自行创建的目录或文件名。
+
 ## 导入模块
 
-WearableLite Wearable
-
-```
-1. import file from '@system.file';
+```ts
+import file from '@system.file';
 ```
 
-## file.move
+## File
 
-WearableLite Wearable
+### move
 
-move(Object): void
+static move(options: FileMoveOption): void
 
 将指定文件移动到其他指定位置。
 
-说明
+**说明** 
 
 除Lite Wearable外，从API version 10开始废弃，请使用[fileIo.moveFile](js-apis-file-fs.md#fileiomovefile)替代。
 
@@ -41,48 +44,98 @@ move(Object): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| srcUri | string | 是 | 要移动的文件的uri。字符串最大长度为128，且不能包含“"\*+,:;<=>?[]|\x7F”等特殊符号。 |
-| dstUri | string | 是 | 文件要移动到的位置的uri。字符串最大长度为128，且不能包含“"\*+,:;<=>?[]|\x7F”等特殊符号。 |
-| success | Function | 否 | 接口调用成功的回调函数，返回文件要移动到的位置的uri。 |
-| fail | Function | 否 | 接口调用失败的回调函数。 |
-| complete | Function | 否 | 接口调用结束的回调函数。 |
-
-fail返回错误代码：
-
-| 错误码 | 说明 |
-| --- | --- |
-| 202 | 出现参数错误。 |
-| 300 | 出现I/O错误。 |
-| 301 | 文件或目录不存在。 |
+| options | [FileMoveOption](js-apis-system-file.md#filemoveoption) | 是 | 文件移动选项。 |
 
 **示例：**
 
+ArkTS示例：
+
+```ts
+import file from '@system.file';
+
+export default {
+  move() {
+    file.move({
+      srcUri: 'internal://app/myfiles1',
+      dstUri: 'internal://app/myfiles2',
+      success: function(uri) {
+        console.info('call success callback success');
+      },
+      fail: function(data, code) {
+        console.error('call fail callback fail, code: ' + code + ', data: ' + data);
+      },
+    });
+  }
+}
 ```
-1. export default {
-2. move() {
-3. file.move({
-4. srcUri: 'internal://app/myfiles1',
-5. dstUri: 'internal://app/myfiles2',
-6. success: function(uri) {
-7. console.info('call success callback success');
-8. },
-9. fail: function(data, code) {
-10. console.error('call fail callback fail, code: ' + code + ', data: ' + data);
-11. },
-12. });
-13. }
-14. }
+
+JS示例：
+
+```xml
+<!-- xxx.hml -->
+<div class="container">
+  <text class="title" style="font-size: 30px;">test</text>
+  <input type="button" value="move" class="button" onclick="move"></input>
+</div>
 ```
 
-## file.copy
+```css
+/* xxx.css */
+.container {
+  display: flex;
+  justify-content: column;
+  align-items: center;
+  left: 0px;
+  top: 0px;
+  width: 454px;
+  height: 454px;
+}
 
-WearableLite Wearable
+.title {
+  font-size: 100px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
 
-copy(Object): void
+.button {
+  font-size: 30px;
+  text-align: center;
+  width: 250px;
+  height: 60px;
+  background-color: #0078D7;
+  color: white;
+  border-radius: 5px;
+}
+```
+
+```js
+// xxx.js
+import file from '@system.file';
+
+export default {
+  move() {
+    file.move({
+      srcUri: 'internal://app/myfiles1',
+      dstUri: 'internal://app/myfiles2',
+      success: function(uri) {
+        console.info('call success callback success');
+      },
+      fail: function(data, code) {
+        console.error('call fail callback fail, code: ' + code + ', data: ' + data);
+      },
+    });
+  }
+}
+```
+
+### copy
+
+static copy(options: FileCopyOption): void
 
 将指定文件拷贝并存储到指定位置。
 
-说明
+**说明** 
 
 除Lite Wearable外，从API version 10开始废弃，请使用[fileIo.copyFile](js-apis-file-fs.md#fileiocopyfile)替代。
 
@@ -92,48 +145,98 @@ copy(Object): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| srcUri | string | 是 | 要拷贝的文件的uri。 |
-| dstUri | string | 是 | 文件要拷贝到的位置的uri。  不支持用应用资源路径或tmp类型的uri。 |
-| success | Function | 否 | 接口调用成功的回调函数，返回文件要拷贝到的位置的uri。 |
-| fail | Function | 否 | 接口调用失败的回调函数。 |
-| complete | Function | 否 | 接口调用结束的回调函数。 |
-
-fail返回错误代码：
-
-| 错误码 | 说明 |
-| --- | --- |
-| 202 | 出现参数错误。 |
-| 300 | 出现I/O错误。 |
-| 301 | 文件或目录不存在。 |
+| options | [FileCopyOption](js-apis-system-file.md#filecopyoption) | 是 | 文件拷贝选项。 |
 
 **示例：**
 
+ArkTS示例：
+
+```ts
+import file from '@system.file';
+
+export default {
+  copy() {
+    file.copy({
+      srcUri: 'internal://app/file.txt',
+      dstUri: 'internal://app/file_copy.txt',
+      success: function(uri) {
+        console.info('call success callback success');
+      },
+      fail: function(data, code) {
+        console.error('call fail callback fail, code: ' + code + ', data: ' + data);
+      },
+    });
+  }
+}
 ```
-1. export default {
-2. copy() {
-3. file.copy({
-4. srcUri: 'internal://app/file.txt',
-5. dstUri: 'internal://app/file_copy.txt',
-6. success: function(uri) {
-7. console.info('call success callback success');
-8. },
-9. fail: function(data, code) {
-10. console.error('call fail callback fail, code: ' + code + ', data: ' + data);
-11. },
-12. });
-13. }
-14. }
+
+JS示例：
+
+```xml
+<!-- xxx.hml -->
+<div class="container">
+  <text class="title" style="font-size: 30px;">test</text>
+  <input type="button" value="copy" class="button" onclick="copy"></input>
+</div>
 ```
 
-## file.list
+```css
+/* xxx.css */
+.container {
+  display: flex;
+  justify-content: column;
+  align-items: center;
+  left: 0px;
+  top: 0px;
+  width: 454px;
+  height: 454px;
+}
 
-WearableLite Wearable
+.title {
+  font-size: 100px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
 
-list(Object): void
+.button {
+  font-size: 30px;
+  text-align: center;
+  width: 250px;
+  height: 60px;
+  background-color: #0078D7;
+  color: white;
+  border-radius: 5px;
+}
+```
+
+```js
+// xxx.js
+import file from '@system.file';
+
+export default {
+  copy() {
+    file.copy({
+      srcUri: 'internal://app/file.txt',
+      dstUri: 'internal://app/file_copy.txt',
+      success: function(uri) {
+        console.info('call success callback success');
+      },
+      fail: function(data, code) {
+        console.error('call fail callback fail, code: ' + code + ', data: ' + data);
+      },
+    });
+  }
+}
+```
+
+### list
+
+static list(options: FileListOption): void
 
 获取指定路径下全部文件的列表。
 
-说明
+**说明** 
 
 除Lite Wearable外，从API version 10开始废弃，请使用[fileIo.listFile](js-apis-file-fs.md#fileiolistfile)替代。
 
@@ -143,61 +246,96 @@ list(Object): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| uri | string | 是 | 目录uri。字符串最大长度为128，且不能包含“"\*+,:;<=>?[]|\x7F”等特殊符号。 |
-| success | Function | 否 | 接口调用成功的回调函数。 |
-| fail | Function | 否 | 接口调用失败的回调函数。 |
-| complete | Function | 否 | 接口调用结束的回调函数。 |
-
-success返回值：
-
-| 参数名 | 类型 | 说明 |
-| --- | --- | --- |
-| fileList | Array<FileInfo> | 获取的文件列表，其中每个文件的信息的格式为：  {  uri:'file1',  lastModifiedTime:1589965924479,  length:10240,  type: 'file'  } |
-
-**表1** FileInfo
-
-| 参数名 | 类型 | 说明 |
-| --- | --- | --- |
-| uri | string | 文件的 uri。 |
-| lastModifiedTime | number | 文件上一次保存时的时间戳，显示从1970/01/01 00:00:00 GMT到当前时间的毫秒数。 |
-| length | number | 文件的大小，单位为Byte。 |
-| type | string | 文件的类型，可选值为：  - dir：目录；  - file：文件。 |
-
-fail返回错误代码：
-
-| 错误码 | 说明 |
-| --- | --- |
-| 202 | 出现参数错误。 |
-| 300 | 出现I/O错误。 |
-| 301 | 文件或目录不存在。 |
+| options | [FileListOption](js-apis-system-file.md#filelistoption) | 是 | 获取指定路径下全部文件的列表选项。 |
 
 **示例：**
 
+ArkTS示例：
+
+```ts
+import file from '@system.file';
+
+export default {
+  list() {
+    file.list({
+      uri: 'internal://app/pic',
+      success: function(data) {
+        console.info(JSON.stringify(data.fileList));
+      },
+      fail: function(data, code) {
+        console.error('call fail callback fail, code: ' + code + ', data: ' + data);
+      },
+    });
+  }
+}
 ```
-1. export default {
-2. list() {
-3. file.list({
-4. uri: 'internal://app/pic',
-5. success: function(data) {
-6. console.info(JSON.stringify(data.fileList));
-7. },
-8. fail: function(data, code) {
-9. console.error('call fail callback fail, code: ' + code + ', data: ' + data);
-10. },
-11. });
-12. }
-13. }
+
+JS示例：
+
+```xml
+<!-- xxx.hml -->
+<div class="container">
+  <text class="title" style="font-size: 30px;">test</text>
+  <input type="button" value="list" class="button" onclick="list"></input>
+</div>
 ```
 
-## file.get
+```css
+/* xxx.css */
+.container {
+  display: flex;
+  justify-content: column;
+  align-items: center;
+  left: 0px;
+  top: 0px;
+  width: 454px;
+  height: 454px;
+}
 
-WearableLite Wearable
+.title {
+  font-size: 100px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
 
-get(Object): void
+.button {
+  font-size: 30px;
+  text-align: center;
+  width: 250px;
+  height: 60px;
+  background-color: #0078D7;
+  color: white;
+  border-radius: 5px;
+}
+```
+
+```js
+// xxx.js
+import file from '@system.file';
+
+export default {
+  list() {
+    file.list({
+      uri: 'internal://app/pic',
+      success: function(data) {
+        console.info(JSON.stringify(data.fileList));
+      },
+      fail: function(data, code) {
+        console.error('call fail callback fail, code: ' + code + ', data: ' + data);
+      },
+    });
+  }
+}
+```
+
+### get
+
+static get(options: FileGetOption): void
 
 获取指定本地文件的信息。
 
-说明
+**说明** 
 
 除Lite Wearable外，从API version 10开始废弃，请使用[fileIo.stat](js-apis-file-fs.md#fileiostat)替代。
 
@@ -207,57 +345,96 @@ get(Object): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| uri | string | 是 | 文件的uri。 |
-| recursive | boolean | 否 | 是否进行递归获取子目录文件列表，true为进行该操作，缺省为false。 |
-| success | Function | 否 | 接口调用成功的回调函数。 |
-| fail | Function | 否 | 接口调用失败的回调函数。 |
-| complete | Function | 否 | 接口调用结束的回调函数。 |
-
-success返回值：
-
-| 参数名 | 类型 | 说明 |
-| --- | --- | --- |
-| uri | string | 文件的uri。 |
-| length | number | 文件长度，单位为Byte。 |
-| lastModifiedTime | number | 文件保存时的时间戳，从1970/01/01 00:00:00到当前时间的毫秒数。 |
-| type | string | 文件类型，可选值为：  - dir：目录；  - file：文件。 |
-| subFiles | Array | 文件列表。 |
-
-fail返回错误代码：
-
-| 错误码 | 说明 |
-| --- | --- |
-| 202 | 出现参数错误。 |
-| 300 | 出现I/O错误。 |
-| 301 | 文件或目录不存在。 |
+| options | [FileGetOption](js-apis-system-file.md#filegetoption) | 是 | 获取指定本地文件的信息选项。 |
 
 **示例：**
 
+ArkTS示例：
+
+```ts
+import file from '@system.file';
+
+export default {
+  get() {
+    file.get({
+      uri: 'internal://app/file',
+      success: function(data) {
+        console.info(data.uri);
+      },
+      fail: function(data, code) {
+        console.error('call fail callback fail, code: ' + code + ', data: ' + data);
+      },
+    });
+  }
+}
 ```
-1. export default {
-2. get() {
-3. file.get({
-4. uri: 'internal://app/file',
-5. success: function(data) {
-6. console.info(data.uri);
-7. },
-8. fail: function(data, code) {
-9. console.error('call fail callback fail, code: ' + code + ', data: ' + data);
-10. },
-11. });
-12. }
-13. }
+
+JS示例：
+
+```xml
+<!-- xxx.hml -->
+<div class="container">
+  <text class="title" style="font-size: 30px;">test</text>
+  <input type="button" value="get" class="button" onclick="get"></input>
+</div>
 ```
 
-## file.delete
+```css
+/* xxx.css */
+.container {
+  display: flex;
+  justify-content: column;
+  align-items: center;
+  left: 0px;
+  top: 0px;
+  width: 454px;
+  height: 454px;
+}
 
-WearableLite Wearable
+.title {
+  font-size: 100px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
 
-delete(Object): void
+.button {
+  font-size: 30px;
+  text-align: center;
+  width: 250px;
+  height: 60px;
+  background-color: #0078D7;
+  color: white;
+  border-radius: 5px;
+}
+```
+
+```js
+// xxx.js
+import file from '@system.file';
+
+export default {
+  get() {
+    file.get({
+      uri: 'internal://app/file',
+      success: function(data) {
+        console.info(data.uri);
+      },
+      fail: function(data, code) {
+        console.error('call fail callback fail, code: ' + code + ', data: ' + data);
+      },
+    });
+  }
+}
+```
+
+### delete
+
+static delete(options: FileDeleteOption): void
 
 删除本地文件。
 
-说明
+**说明** 
 
 除Lite Wearable外，从API version 10开始废弃，请使用[fileIo.unlink](js-apis-file-fs.md#fileiounlink)替代。
 
@@ -267,46 +444,96 @@ delete(Object): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| uri | string | 是 | 删除文件的uri，不能是应用资源路径。 |
-| success | Function | 否 | 接口调用成功的回调函数。 |
-| fail | Function | 否 | 接口调用失败的回调函数。 |
-| complete | Function | 否 | 接口调用结束的回调函数。 |
-
-fail返回错误代码：
-
-| 错误码 | 说明 |
-| --- | --- |
-| 202 | 参数错误。 |
-| 300 | I/O错误。 |
-| 301 | 文件或目录不存在。 |
+| options | [FileDeleteOption](js-apis-system-file.md#filedeleteoption) | 是 | 删除本地文件选项。 |
 
 **示例：**
 
+ArkTS示例：
+
+```ts
+import file from '@system.file';
+
+export default {
+  delete() {
+    file.delete({
+      uri: 'internal://app/my_file',
+      success: function() {
+        console.info('call delete success.');
+      },
+      fail: function(data, code) {
+        console.error('call fail callback fail, code: ' + code + ', data: ' + data);
+      },
+    });
+  }
+}
 ```
-1. export default {
-2. delete() {
-3. file.delete({
-4. uri: 'internal://app/my_file',
-5. success: function() {
-6. console.info('call delete success.');
-7. },
-8. fail: function(data, code) {
-9. console.error('call fail callback fail, code: ' + code + ', data: ' + data);
-10. },
-11. });
-12. }
-13. }
+
+JS示例：
+
+```xml
+<!-- xxx.hml -->
+<div class="container">
+  <text class="title" style="font-size: 30px;">test</text>
+  <input type="button" value="delete" class="button" onclick="delete"></input>
+</div>
 ```
 
-## file.writeText
+```css
+/* xxx.css */
+.container {
+  display: flex;
+  justify-content: column;
+  align-items: center;
+  left: 0px;
+  top: 0px;
+  width: 454px;
+  height: 454px;
+}
 
-WearableLite Wearable
+.title {
+  font-size: 100px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
 
-writeText(Object): void
+.button {
+  font-size: 30px;
+  text-align: center;
+  width: 250px;
+  height: 60px;
+  background-color: #0078D7;
+  color: white;
+  border-radius: 5px;
+}
+```
+
+```js
+// xxx.js
+import file from '@system.file';
+
+export default {
+  delete() {
+    file.delete({
+      uri: 'internal://app/my_file',
+      success: function() {
+        console.info('call delete success.');
+      },
+      fail: function(data, code) {
+        console.error('call fail callback fail, code: ' + code + ', data: ' + data);
+      },
+    });
+  }
+}
+```
+
+### writeText
+
+static writeText(options: FileWriteTextOption): void
 
 写文本内容到指定文件。仅支持文本文档读写。
 
-说明
+**说明** 
 
 除Lite Wearable外，从API version 10开始废弃，请使用[fileIo.write](js-apis-file-fs.md#fileiowrite)替代。
 
@@ -316,49 +543,98 @@ writeText(Object): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| uri | string | 是 | 本地文件uri，如果文件不存在会创建文件。 |
-| text | string | 是 | 写入的字符串。 |
-| encoding | string | 否 | 编码格式，默认为UTF-8。 |
-| append | boolean | 否 | 是否追加模式，默认为false。true为追加，false为不追加。 |
-| success | Function | 否 | 接口调用成功的回调函数。 |
-| fail | Function | 否 | 接口调用失败的回调函数。 |
-| complete | Function | 否 | 接口调用结束的回调函数。 |
-
-fail返回错误代码：
-
-| 错误码 | 说明 |
-| --- | --- |
-| 202 | 参数错误。 |
-| 300 | I/O错误。 |
+| options | [FileWriteTextOption](js-apis-system-file.md#filewritetextoption) | 是 | 写文本内容到指定文件选项。 |
 
 **示例：**
 
+ArkTS示例：
+
+```ts
+import file from '@system.file';
+
+export default {
+  writeText() {
+    file.writeText({
+      uri: 'internal://app/test.txt',
+      text: 'Text that just for test.',
+      success: function() {
+        console.info('call writeText success.');
+      },
+      fail: function(data, code) {
+        console.error('call fail callback fail, code: ' + code + ', data: ' + data);
+      },
+    });
+  }
+}
 ```
-1. export default {
-2. writeText() {
-3. file.writeText({
-4. uri: 'internal://app/test.txt',
-5. text: 'Text that just for test.',
-6. success: function() {
-7. console.info('call writeText success.');
-8. },
-9. fail: function(data, code) {
-10. console.error('call fail callback fail, code: ' + code + ', data: ' + data);
-11. },
-12. });
-13. }
-14. }
+
+JS示例：
+
+```xml
+<!-- xxx.hml -->
+<div class="container">
+  <text class="title" style="font-size: 30px;">test</text>
+  <input type="button" value="writeText" class="button" onclick="writeText"></input>
+</div>
 ```
 
-## file.writeArrayBuffer
+```css
+/* xxx.css */
+.container {
+  display: flex;
+  justify-content: column;
+  align-items: center;
+  left: 0px;
+  top: 0px;
+  width: 454px;
+  height: 454px;
+}
 
-WearableLite Wearable
+.title {
+  font-size: 100px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
 
-writeArrayBuffer(Object): void
+.button {
+  font-size: 30px;
+  text-align: center;
+  width: 250px;
+  height: 60px;
+  background-color: #0078D7;
+  color: white;
+  border-radius: 5px;
+}
+```
+
+```js
+// xxx.js
+import file from '@system.file';
+
+export default {
+  writeText() {
+    file.writeText({
+      uri: 'internal://app/test.txt',
+      text: 'Text that just for test.',
+      success: function() {
+        console.info('call writeText success.');
+      },
+      fail: function(data, code) {
+        console.error('call fail callback fail, code: ' + code + ', data: ' + data);
+      },
+    });
+  }
+}
+```
+
+### writeArrayBuffer
+
+static writeArrayBuffer(options: FileWriteArrayBufferOption): void
 
 写Buffer内容到指定文件。仅支持文本文档读写。
 
-说明
+**说明** 
 
 除Lite Wearable外，从API version 10开始废弃，请使用[fileIo.write](js-apis-file-fs.md#fileiowrite)替代。
 
@@ -368,49 +644,98 @@ writeArrayBuffer(Object): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| uri | string | 是 | 本地文件uri，如果文件不存在会创建文件。 |
-| buffer | Uint8Array | 是 | 写入的Buffer。 |
-| position | number | 否 | 文件开始写入数据的位置的偏移量，单位为Byte，默认为0。 |
-| append | boolean | 否 | 是否追加模式，默认为false。当设置为true时，position参数无效。true为追加，false为不追加。 |
-| success | Function | 否 | 接口调用成功的回调函数。 |
-| fail | Function | 否 | 接口调用失败的回调函数。 |
-| complete | Function | 否 | 接口调用结束的回调函数。 |
-
-fail返回错误代码：
-
-| 错误码 | 说明 |
-| --- | --- |
-| 202 | 出现参数错误。 |
-| 300 | 出现I/O错误。 |
+| options | [FileWriteArrayBufferOption](js-apis-system-file.md#filewritearraybufferoption) | 是 | 写Buffer内容到指定文件选项。 |
 
 **示例：**
 
+ArkTS示例：
+
+```ts
+import file from '@system.file';
+
+export default {
+  writeArrayBuffer() {
+    file.writeArrayBuffer({
+      uri: 'internal://app/test',
+      buffer: new Uint8Array(8),// buffer为Uint8Array类型
+      success: function() {
+        console.info('call writeArrayBuffer success.');
+      },
+      fail: function(data, code) {
+        console.error('call fail callback fail, code: ' + code + ', data: ' + data);
+      },
+    });
+  }
+}
 ```
-1. export default {
-2. writeArrayBuffer() {
-3. file.writeArrayBuffer({
-4. uri: 'internal://app/test',
-5. buffer: new Uint8Array(8),// buffer为Uint8Array类型
-6. success: function() {
-7. console.info('call writeArrayBuffer success.');
-8. },
-9. fail: function(data, code) {
-10. console.error('call fail callback fail, code: ' + code + ', data: ' + data);
-11. },
-12. });
-13. }
-14. }
+
+JS示例：
+
+```xml
+<!-- xxx.hml -->
+<div class="container">
+  <text class="title" style="font-size: 30px;">test</text>
+  <input type="button" value="writeArrayBuffer" class="button" onclick="writeArrayBuffer"></input>
+</div>
 ```
 
-## file.readText
+```css
+/* xxx.css */
+.container {
+  display: flex;
+  justify-content: column;
+  align-items: center;
+  left: 0px;
+  top: 0px;
+  width: 454px;
+  height: 454px;
+}
 
-WearableLite Wearable
+.title {
+  font-size: 100px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
 
-readText(Object): void
+.button {
+  font-size: 30px;
+  text-align: center;
+  width: 250px;
+  height: 60px;
+  background-color: #0078D7;
+  color: white;
+  border-radius: 5px;
+}
+```
+
+```js
+// xxx.js
+import file from '@system.file';
+
+export default {
+  writeArrayBuffer() {
+    file.writeArrayBuffer({
+      uri: 'internal://app/test',
+      buffer: new Uint8Array(8),// buffer为Uint8Array类型
+      success: function() {
+        console.info('call writeArrayBuffer success.');
+      },
+      fail: function(data, code) {
+        console.error('call fail callback fail, code: ' + code + ', data: ' + data);
+      },
+    });
+  }
+}
+```
+
+### readText
+
+static readText(options: FileReadTextOption): void
 
 从指定文件中读取文本内容。仅支持文本文档读写。
 
-说明
+**说明** 
 
 除Lite Wearable外，从API version 10开始废弃，请使用[fileIo.readText](js-apis-file-fs.md#fileioreadtext)替代。
 
@@ -420,56 +745,96 @@ readText(Object): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| uri | string | 是 | 本地文件uri。 |
-| encoding | string | 否 | 编码格式，缺省为UTF-8。 |
-| position | number | 否 | 读取的起始位置，单位为Byte，默认值为文件的起始位置。 |
-| length | number | 否 | 读取的长度，单位为Byte，默认值为4096。 |
-| success | Function | 否 | 接口调用成功的回调函数。 |
-| fail | Function | 否 | 接口调用失败的回调函数。 |
-| complete | Function | 否 | 接口调用结束的回调函数。 |
-
-success返回值：
-
-| 参数名 | 类型 | 说明 |
-| --- | --- | --- |
-| text | string | 读取到的文本内容。 |
-
-fail返回错误代码：
-
-| 错误码 | 说明 |
-| --- | --- |
-| 202 | 出现参数错误。 |
-| 300 | 出现I/O错误。 |
-| 301 | 文件或目录不存在。 |
-| 302 | 要读取的文件内容超过4KB。 |
+| options | [FileReadTextOption](js-apis-system-file.md#filereadtextoption) | 是 | 从指定文件中读取文本内容选项。 |
 
 **示例：**
 
+ArkTS示例：
+
+```ts
+import file from '@system.file';
+
+export default {
+  readText() {
+    file.readText({
+      uri: 'internal://app/text.txt',
+      success: function(data) {
+        console.info('call readText success: ' + data.text);
+      },
+      fail: function(data, code) {
+        console.error('call fail callback fail, code: ' + code + ', data: ' + data);
+      },
+    });
+  }
+}
 ```
-1. export default {
-2. readText() {
-3. file.readText({
-4. uri: 'internal://app/text.txt',
-5. success: function(data) {
-6. console.info('call readText success: ' + data.text);
-7. },
-8. fail: function(data, code) {
-9. console.error('call fail callback fail, code: ' + code + ', data: ' + data);
-10. },
-11. });
-12. }
-13. }
+
+JS示例：
+
+```xml
+<!-- xxx.hml -->
+<div class="container">
+  <text class="title" style="font-size: 30px;">test</text>
+  <input type="button" value="readText" class="button" onclick="readText"></input>
+</div>
 ```
 
-## file.readArrayBuffer
+```css
+/* xxx.css */
+.container {
+  display: flex;
+  justify-content: column;
+  align-items: center;
+  left: 0px;
+  top: 0px;
+  width: 454px;
+  height: 454px;
+}
 
-WearableLite Wearable
+.title {
+  font-size: 100px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
 
-readArrayBuffer(Object): void
+.button {
+  font-size: 30px;
+  text-align: center;
+  width: 250px;
+  height: 60px;
+  background-color: #0078D7;
+  color: white;
+  border-radius: 5px;
+}
+```
+
+```js
+// xxx.js
+import file from '@system.file';
+
+export default {
+  readText() {
+    file.readText({
+      uri: 'internal://app/text.txt',
+      success: function(data) {
+        console.info('call readText success: ' + data.text);
+      },
+      fail: function(data, code) {
+        console.error('call fail callback fail, code: ' + code + ', data: ' + data);
+      },
+    });
+  }
+}
+```
+
+### readArrayBuffer
+
+static readArrayBuffer(options: FileReadArrayBufferOption): void
 
 从指定文件中读取Buffer内容。仅支持文本文档读写。
 
-说明
+**说明** 
 
 除Lite Wearable外，从API version 10开始废弃，请使用[fileIo.read](js-apis-file-fs.md#fileioread)替代。
 
@@ -479,56 +844,100 @@ readArrayBuffer(Object): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| uri | string | 是 | 本地文件uri。 |
-| position | number | 否 | 读取的起始位置，单位为Byte，缺省为文件的起始位置。 |
-| length | number | 否 | 需要读取的长度，单位为Byte，缺省则读取到文件结尾。 |
-| success | Function | 否 | 接口调用成功的回调函数。 |
-| fail | Function | 否 | 接口调用失败的回调函数。 |
-| complete | Function | 否 | 接口调用结束的回调函数。 |
-
-success返回值：
-
-| 参数名 | 类型 | 说明 |
-| --- | --- | --- |
-| buffer | Uint8Array | 读取到的文件内容。 |
-
-fail返回错误代码：
-
-| 错误码 | 说明 |
-| --- | --- |
-| 202 | 出现参数错误。 |
-| 300 | 出现I/O错误。 |
-| 301 | 文件或目录不存在。 |
+| options | [FileReadArrayBufferOption](js-apis-system-file.md#filereadarraybufferoption) | 是 | 从指定文件中读取Buffer内容选项。 |
 
 **示例：**
 
+ArkTS示例：
+
+```ts
+import file from '@system.file';
+
+export default {
+  readArrayBuffer() {
+    file.readArrayBuffer({
+      uri: 'internal://app/test',
+      position: 10,
+      length: 200,
+      success: function(data) {
+        console.info('call readArrayBuffer success: ' + data.buffer);
+      },
+      fail: function(data, code) {
+        console.error('call fail callback fail, code: ' + code + ', data: ' + data);
+      },
+    });
+  }
+}
 ```
-1. export default {
-2. readArrayBuffer() {
-3. file.readArrayBuffer({
-4. uri: 'internal://app/test',
-5. position: 10,
-6. length: 200,
-7. success: function(data) {
-8. console.info('call readArrayBuffer success: ' + data.buffer);
-9. },
-10. fail: function(data, code) {
-11. console.error('call fail callback fail, code: ' + code + ', data: ' + data);
-12. },
-13. });
-14. }
-15. }
+
+JS示例：
+
+```xml
+<!-- xxx.hml -->
+<div class="container">
+  <text class="title" style="font-size: 30px;">test</text>
+  <input type="button" value="readArrayBuffer" class="button" onclick="readArrayBuffer"></input>
+</div>
 ```
 
-## file.access
+```css
+/* xxx.css */
+.container {
+  display: flex;
+  justify-content: column;
+  align-items: center;
+  left: 0px;
+  top: 0px;
+  width: 454px;
+  height: 454px;
+}
 
-WearableLite Wearable
+.title {
+  font-size: 100px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
 
-access(Object): void
+.button {
+  font-size: 30px;
+  text-align: center;
+  width: 250px;
+  height: 60px;
+  background-color: #0078D7;
+  color: white;
+  border-radius: 5px;
+}
+```
+
+```js
+// xxx.js
+import file from '@system.file';
+
+export default {
+  readArrayBuffer() {
+    file.readArrayBuffer({
+      uri: 'internal://app/test',
+      position: 10,
+      length: 200,
+      success: function(data) {
+        console.info('call readArrayBuffer success: ' + data.buffer);
+      },
+      fail: function(data, code) {
+        console.error('call fail callback fail, code: ' + code + ', data: ' + data);
+      },
+    });
+  }
+}
+```
+
+### access
+
+static access(options: FileAccessOption): void
 
 判断指定文件或目录是否存在。
 
-说明
+**说明** 
 
 除Lite Wearable外，从API version 10开始废弃，请使用[fileIo.access](js-apis-file-fs.md#fileioaccess)替代。
 
@@ -538,46 +947,96 @@ access(Object): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| uri | string | 是 | 目录或文件uri。 |
-| success | Function | 否 | 接口调用成功的回调函数。 |
-| fail | Function | 否 | 接口调用失败的回调函数。 |
-| complete | Function | 否 | 接口调用结束的回调函数。 |
-
-fail返回错误代码：
-
-| 错误码 | 说明 |
-| --- | --- |
-| 202 | 出现参数错误。 |
-| 300 | 出现I/O 错误。 |
-| 301 | 文件或目录不存在。 |
+| options | [FileAccessOption](js-apis-system-file.md#fileaccessoption) | 是 | 判断指定文件或目录是否存在选项。 |
 
 **示例：**
 
+ArkTS示例：
+
+```ts
+import file from '@system.file';
+
+export default {
+  access() {
+    file.access({
+      uri: 'internal://app/test',
+      success: function() {
+        console.info('call access success.');
+      },
+      fail: function(data, code) {
+        console.error('call fail callback fail, code: ' + code + ', data: ' + data);
+      },
+    });
+  }
+}
 ```
-1. export default {
-2. access() {
-3. file.access({
-4. uri: 'internal://app/test',
-5. success: function() {
-6. console.info('call access success.');
-7. },
-8. fail: function(data, code) {
-9. console.error('call fail callback fail, code: ' + code + ', data: ' + data);
-10. },
-11. });
-12. }
-13. }
+
+JS示例：
+
+```xml
+<!-- xxx.hml -->
+<div class="container">
+  <text class="title" style="font-size: 30px;">test</text>
+  <input type="button" value="access" class="button" onclick="access"></input>
+</div>
 ```
 
-## file.mkdir
+```css
+/* xxx.css */
+.container {
+  display: flex;
+  justify-content: column;
+  align-items: center;
+  left: 0px;
+  top: 0px;
+  width: 454px;
+  height: 454px;
+}
 
-WearableLite Wearable
+.title {
+  font-size: 100px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
 
-mkdir(Object): void
+.button {
+  font-size: 30px;
+  text-align: center;
+  width: 250px;
+  height: 60px;
+  background-color: #0078D7;
+  color: white;
+  border-radius: 5px;
+}
+```
+
+```js
+// xxx.js
+import file from '@system.file';
+
+export default {
+  access() {
+    file.access({
+      uri: 'internal://app/test',
+      success: function() {
+        console.info('call access success.');
+      },
+      fail: function(data, code) {
+        console.error('call fail callback fail, code: ' + code + ', data: ' + data);
+      },
+    });
+  }
+}
+```
+
+### mkdir
+
+static mkdir(options: FileMkdirOption): void
 
 创建指定目录。
 
-说明
+**说明** 
 
 除Lite Wearable外，从API version 10开始废弃，请使用[fileIo.mkdir](js-apis-file-fs.md#fileiomkdir)替代。
 
@@ -587,46 +1046,96 @@ mkdir(Object): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| uri | string | 是 | 目录的uri路径。 |
-| recursive | boolean | 否 | 是否递归创建该目录的上级目录，缺省为false。true为递归创建，false是不递归创建。 |
-| success | Function | 否 | 接口调用成功的回调函数。 |
-| fail | Function | 否 | 接口调用失败的回调函数。 |
-| complete | Function | 否 | 接口调用结束的回调函数。 |
-
-fail返回错误代码：
-
-| 错误码 | 说明 |
-| --- | --- |
-| 202 | 出现参数错误。 |
-| 300 | 出现I/O 错误。 |
+| options | [FileMkdirOption](js-apis-system-file.md#filemkdiroption) | 是 | 创建指定目录选项。 |
 
 **示例：**
 
+ArkTS示例：
+
+```ts
+import file from '@system.file';
+
+export default {
+  mkdir() {
+    file.mkdir({
+      uri: 'internal://app/test_directory',
+      success: function() {
+        console.info('call mkdir success.');
+      },
+      fail: function(data, code) {
+        console.error('call fail callback fail, code: ' + code + ', data: ' + data);
+      },
+    });
+  }
+}
 ```
-1. export default {
-2. mkdir() {
-3. file.mkdir({
-4. uri: 'internal://app/test_directory',
-5. success: function() {
-6. console.info('call mkdir success.');
-7. },
-8. fail: function(data, code) {
-9. console.error('call fail callback fail, code: ' + code + ', data: ' + data);
-10. },
-11. });
-12. }
-13. }
+
+JS示例：
+
+```xml
+<!-- xxx.hml -->
+<div class="container">
+  <text class="title" style="font-size: 30px;">test</text>
+  <input type="button" value="mkdir" class="button" onclick="mkdir"></input>
+</div>
 ```
 
-## file.rmdir
+```css
+/* xxx.css */
+.container {
+  display: flex;
+  justify-content: column;
+  align-items: center;
+  left: 0px;
+  top: 0px;
+  width: 454px;
+  height: 454px;
+}
 
-WearableLite Wearable
+.title {
+  font-size: 100px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
 
-rmdir(Object): void
+.button {
+  font-size: 30px;
+  text-align: center;
+  width: 250px;
+  height: 60px;
+  background-color: #0078D7;
+  color: white;
+  border-radius: 5px;
+}
+```
+
+```js
+// xxx.js
+import file from '@system.file';
+
+export default {
+  mkdir() {
+    file.mkdir({
+      uri: 'internal://app/test_directory',
+      success: function() {
+        console.info('call mkdir success.');
+      },
+      fail: function(data, code) {
+        console.error('call fail callback fail, code: ' + code + ', data: ' + data);
+      },
+    });
+  }
+}
+```
+
+### rmdir
+
+static rmdir(options: FileRmdirOption): void
 
 删除指定目录。
 
-说明
+**说明** 
 
 除Lite Wearable外，从API version 10开始废弃，请使用[fileIo.rmdir](js-apis-file-fs.md#fileiormdir)替代。
 
@@ -636,34 +1145,301 @@ rmdir(Object): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| uri | string | 是 | 目录的uri路径。 |
-| recursive | boolean | 否 | 是否递归删除子文件和子目录，缺省为false。true为递归删除，false为不递归删除。 |
-| success | Function | 否 | 接口调用成功的回调函数。 |
-| fail | Function | 否 | 接口调用失败的回调函数。 |
-| complete | Function | 否 | 接口调用结束的回调函数。 |
-
-fail返回错误代码：
-
-| 错误码 | 说明 |
-| --- | --- |
-| 202 | 出现参数错误。 |
-| 300 | 出现I/O 错误。 |
-| 301 | 文件或目录不存在。 |
+| options | [FileRmdirOption](js-apis-system-file.md#filermdiroption) | 是 | 删除指定目录选项。 |
 
 **示例：**
 
+ArkTS示例：
+
+```ts
+import file from '@system.file';
+
+export default {
+  rmdir() {
+    file.rmdir({
+      uri: 'internal://app/test_directory',
+      success: function() {
+        console.info('call rmdir success.');
+      },
+      fail: function(data, code) {
+        console.error('call fail callback fail, code: ' + code + ', data: ' + data);
+      },
+    });
+  }
+}
 ```
-1. export default {
-2. rmdir() {
-3. file.rmdir({
-4. uri: 'internal://app/test_directory',
-5. success: function() {
-6. console.info('call rmdir success.');
-7. },
-8. fail: function(data, code) {
-9. console.error('call fail callback fail, code: ' + code + ', data: ' + data);
-10. },
-11. });
-12. }
-13. }
+
+JS示例：
+
+```xml
+<!-- xxx.hml -->
+<div class="container">
+  <text class="title" style="font-size: 30px;">test</text>
+  <input type="button" value="rmdir" class="button" onclick="rmdir"></input>
+</div>
 ```
+
+```css
+/* xxx.css */
+.container {
+  display: flex;
+  justify-content: column;
+  align-items: center;
+  left: 0px;
+  top: 0px;
+  width: 454px;
+  height: 454px;
+}
+
+.title {
+  font-size: 100px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
+
+.button {
+  font-size: 30px;
+  text-align: center;
+  width: 250px;
+  height: 60px;
+  background-color: #0078D7;
+  color: white;
+  border-radius: 5px;
+}
+```
+
+```js
+// xxx.js
+import file from '@system.file';
+
+export default {
+  rmdir() {
+    file.rmdir({
+      uri: 'internal://app/test_directory',
+      success: function() {
+        console.info('call rmdir success.');
+      },
+      fail: function(data, code) {
+        console.error('call fail callback fail, code: ' + code + ', data: ' + data);
+      },
+    });
+  }
+}
+```
+
+## FileResponse
+
+文件返回。包含文件的信息。
+
+**系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| uri | string | 否 | 否 | 文件的URI。 |
+| length | number | 否 | 否 | 文件长度，单位为Byte。 |
+| lastModifiedTime | number | 否 | 否 | 文件保存时的时间戳，从1970/01/01 00:00:00到当前时间的毫秒数。 |
+| type | 'dir' | 'file' | 否 | 否 | 文件类型，可选值为：  -dir：目录；  -file：文件。 |
+| subFiles | Array<[FileResponse](js-apis-system-file.md#fileresponse)> | 否 | 是 | 文件列表。 |
+
+## FileListResponse
+
+文件列表返回，包含文件列表信息。
+
+**系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| fileList | Array<[FileResponse](js-apis-system-file.md#fileresponse)> | 否 | 否 | 获取的文件列表，其中每个文件的信息的格式为：  {  uri:'file1',  lastModifiedTime:1589965924479,  length:10240,  type: 'file'  } |
+
+## FileReadTextResponse
+
+文本读取返回，包含读取到的文本内容。
+
+**系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| text | string | 否 | 否 | 读取到的文本内容。 |
+
+## FileReadArrayBufferResponse
+
+文件读取返回，包含读取到的文件内容。
+
+**系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| buffer | Uint8Array | 否 | 否 | 读取到的文件内容。 |
+
+## FileMoveOption
+
+可选项类型，支持move接口使用。
+
+**系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| srcUri | string | 否 | 否 | 要移动的文件的URI。由于轻量级穿戴设备底层文件系统的限制，该值必须满足以下要求：  1. URI 中不得包含以下特殊字符：\"\*+,:;<=>?[]\ |
+| dstUri | string | 否 | 否 | 文件要移动到的位置的URI。由于轻量级穿戴设备底层文件系统的限制，该值必须满足以下要求：  1. URI 中不得包含以下特殊字符：\"\*+,:;<=>?[]\ |
+| success | (uri: string) => void | 否 | 是 | 接口调用成功的回调函数，uri为文件要移动到的位置的URI。 |
+| fail | (data: string, code: number) => void | 否 | 是 | 接口调用失败的回调函数。  data为错误信息。  code为可能返回的错误码：  202：出现参数错误。  300：出现I/O错误。  301：文件或目录不存在。 |
+| complete | () => void | 否 | 是 | 接口调用结束的回调函数。 |
+
+## FileCopyOption
+
+可选项类型，支持copy接口使用。
+
+**系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| srcUri | string | 否 | 否 | 要拷贝的文件的URI。由于轻量级穿戴设备底层文件系统的限制，该值必须满足以下要求：  1. URI 中不得包含以下特殊字符：\"\*+,:;<=>?[]\ |
+| dstUri | string | 否 | 否 | 文件要拷贝到的位置的URI。  不支持用应用资源路径或tmp类型的URI。由于轻量级穿戴设备底层文件系统的限制，该值必须满足以下要求：  1. URI 中不得包含以下特殊字符：\"\*+,:;<=>?[]\ |
+| success | (uri: string) => void | 否 | 是 | 接口调用成功的回调函数，uri为文件要拷贝到的位置的URI。 |
+| fail | (data: string, code: number) => void | 否 | 是 | 接口调用失败的回调函数。  data为错误信息。  code为可能返回的错误码：  202：出现参数错误。  300：出现I/O错误。  301：文件或目录不存在。 |
+| complete | () => void | 否 | 是 | 接口调用结束的回调函数。 |
+
+## FileListOption
+
+可选项类型，支持list接口使用。
+
+**系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| uri | string | 否 | 否 | 目录URI。由于轻量级穿戴设备底层文件系统的限制，该值必须满足以下要求：  1. URI 中不得包含以下特殊字符：\"\*+,:;<=>?[]\ |
+| success | (data: FileListResponse) => void | 否 | 是 | 接口调用成功的回调函数。data为[FileListResponse](js-apis-system-file.md#filelistresponse)。 |
+| fail | (data: string, code: number) => void | 否 | 是 | 接口调用失败的回调函数。  data为错误信息。  code为可能返回的错误码：  202：出现参数错误。  300：出现I/O错误。  301：文件或目录不存在。 |
+| complete | () => void | 否 | 是 | 接口调用结束的回调函数。 |
+
+## FileGetOption
+
+可选项类型，支持get接口使用。
+
+**系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| uri | string | 否 | 否 | 文件的URI。由于轻量级穿戴设备底层文件系统的限制，该值必须满足以下要求：  1. URI 中不得包含以下特殊字符：\"\*+,:;<=>?[]\ |
+| recursive | boolean | 否 | 是 | 是否进行递归获取子目录文件列表。true表示进行递归操作，false表示不递归。参数缺省时，默认为false。 |
+| success | (file: FileResponse) => void | 否 | 是 | 接口调用成功的回调函数。 file为[FileResponse](js-apis-system-file.md#fileresponse)。 |
+| fail | (data: string, code: number) => void | 否 | 是 | 接口调用失败的回调函数。  data为错误信息。  code为可能返回的错误码：  202：出现参数错误。  300：出现I/O错误。  301：文件或目录不存在。 |
+| complete | () => void | 否 | 是 | 接口调用结束的回调函数。 |
+
+## FileDeleteOption
+
+可选项类型，支持delete接口使用。
+
+**系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| uri | string | 否 | 否 | 删除文件的URI，不能是应用资源路径。由于轻量级穿戴设备底层文件系统的限制，该值必须满足以下要求：  1. URI 中不得包含以下特殊字符：\"\*+,:;<=>?[]\ |
+| success | () => void | 否 | 是 | 接口调用成功的回调函数。 |
+| fail | (data: string, code: number) => void | 否 | 是 | 接口调用失败的回调函数。  data为错误信息。  code为可能返回的错误码：  202：出现参数错误。  300：出现I/O错误。  301：文件或目录不存在。 |
+| complete | () => void | 否 | 是 | 接口调用结束的回调函数。 |
+
+## FileWriteTextOption
+
+可选项类型，支持writeText接口使用。
+
+**系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| uri | string | 否 | 否 | 本地文件URI，如果文件不存在会创建文件。由于轻量级穿戴设备底层文件系统的限制，该值必须满足以下要求：  1. URI 中不得包含以下特殊字符：\"\*+,:;<=>?[]\ |
+| text | string | 否 | 否 | 写入的字符串。 |
+| encoding | string | 否 | 是 | 编码格式，默认为UTF-8。 |
+| append | boolean | 否 | 是 | 是否追加模式，默认为false。true为追加，false为不追加。 |
+| success | () => void | 否 | 是 | 接口调用成功的回调函数。 |
+| fail | (data: string, code: number) => void | 否 | 是 | 接口调用失败的回调函数。  data为错误信息。  code为可能返回的错误码：  202：出现参数错误。  300：出现I/O错误。 |
+| complete | () => void | 否 | 是 | 接口调用结束的回调函数。 |
+
+## FileWriteArrayBufferOption
+
+可选项类型，支持writeArrayBuffer接口使用。
+
+**系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| uri | string | 否 | 否 | 本地文件URI，如果文件不存在会创建文件。由于轻量级穿戴设备底层文件系统的限制，该值必须满足以下要求：  1. URI 中不得包含以下特殊字符：\"\*+,:;<=>?[]\ |
+| buffer | Uint8Array | 否 | 否 | 写入的Buffer。 |
+| position | number | 否 | 是 | 文件写入的起始偏移位置，单位为Byte，默认为0。 |
+| append | boolean | 否 | 是 | 是否追加模式，默认为false。当设置为true时，position参数无效。true为追加，false为不追加。 |
+| success | () => void | 否 | 是 | 接口调用成功的回调函数。 |
+| fail | (data: string, code: number) => void | 否 | 是 | 接口调用失败的回调函数。  data为错误信息。  code为可能返回的错误码：  202：出现参数错误。  300：出现I/O错误。 |
+| complete | () => void | 否 | 是 | 接口调用结束的回调函数。 |
+
+## FileReadTextOption
+
+可选项类型，支持readText接口使用。
+
+**系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| uri | string | 否 | 否 | 本地文件URI。由于轻量级穿戴设备底层文件系统的限制，该值必须满足以下要求：  1. URI 中不得包含以下特殊字符：\"\*+,:;<=>?[]\ |
+| encoding | string | 否 | 是 | 编码格式，缺省为UTF-8。 |
+| position | number | 否 | 是 | 读取的起始位置，单位为Byte，默认为文件的起始位置。 |
+| length | number | 否 | 是 | 读取的长度，取值范围为[1, 4096]，单位为Byte。参数为空时，默认值为4096。 |
+| success | (data: FileReadTextResponse) => void | 否 | 是 | 接口调用成功的回调函数。data为[FileReadTextResponse](js-apis-system-file.md#filereadtextresponse)。 |
+| fail | (data: string, code: number) => void | 否 | 是 | 接口调用失败的回调函数。  data为错误信息。  code为可能返回的错误码：  202：出现参数错误。  300：出现I/O错误。  301：文件或目录不存在。  302：要读取的文件内容超过4KB。 |
+| complete | () => void | 否 | 是 | 接口调用结束的回调函数。 |
+
+## FileReadArrayBufferOption
+
+可选项类型，支持readArrayBuffer接口使用。
+
+**系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| uri | string | 否 | 否 | 本地文件URI。由于轻量级穿戴设备底层文件系统的限制，该值必须满足以下要求：  1. URI 中不得包含以下特殊字符：\"\*+,:;<=>?[]\ |
+| position | number | 否 | 是 | 读取的起始位置，单位为Byte，缺省为文件的起始位置。 |
+| length | number | 否 | 是 | 需要读取的长度，单位为Byte，缺省则读取到文件结尾。 |
+| success | (data: FileReadArrayBufferResponse) => void | 否 | 是 | 接口调用成功的回调函数。data为[FileReadArrayBufferResponse](js-apis-system-file.md#filereadarraybufferresponse)。 |
+| fail | (data: string, code: number) => void | 否 | 是 | 接口调用失败的回调函数。  data为错误信息。  code为可能返回的错误码：  202：出现参数错误。  300：出现I/O错误。  301：文件或目录不存在。 |
+| complete | () => void | 否 | 是 | 接口调用结束的回调函数。 |
+
+## FileAccessOption
+
+可选项类型，支持access接口使用。
+
+**系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| uri | string | 否 | 否 | 目录或文件URI。由于轻量级穿戴设备底层文件系统的限制，该值必须满足以下要求：  1. URI 中不得包含以下特殊字符：\"\*+,:;<=>?[]\ |
+| success | () => void | 否 | 是 | 接口调用成功的回调函数。 |
+| fail | (data: string, code: number) => void | 否 | 是 | 接口调用失败的回调函数。  data为错误信息。  code为可能返回的错误码：  202：出现参数错误。  300：出现I/O错误。  301：文件或目录不存在。 |
+| complete | () => void | 否 | 是 | 接口调用结束的回调函数。 |
+
+## FileMkdirOption
+
+可选项类型，支持mkdir接口使用。
+
+**系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| uri | string | 否 | 否 | 目录URI。由于轻量级穿戴设备底层文件系统的限制，该值必须满足以下要求：  1. URI 中不得包含以下特殊字符：\"\*+,:;<=>?[]\ |
+| recursive | boolean | 否 | 是 | 是否递归创建该目录的上级目录，缺省为false。true为递归创建，false是不递归创建。 |
+| success | () => void | 否 | 是 | 接口调用成功的回调函数。 |
+| fail | (data: string, code: number) => void | 否 | 是 | 接口调用失败的回调函数。  data为错误信息。  code为可能返回的错误码：  202：出现参数错误。  300：出现I/O错误。 |
+| complete | () => void | 否 | 是 | 接口调用结束的回调函数。 |
+
+## FileRmdirOption
+
+可选项类型，支持rmdir接口使用。
+
+**系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| uri | string | 否 | 否 | 目录URI。由于轻量级穿戴设备底层文件系统的限制，该值必须满足以下要求：  1. URI 中不得包含以下特殊字符：\"\*+,:;<=>?[]\ |
+| recursive | boolean | 否 | 是 | 是否递归删除子文件和子目录，缺省为false。true为递归删除，false为不递归删除。 |
+| success | () => void | 否 | 是 | 接口调用成功的回调函数。 |
+| fail | (data: string, code: number) => void | 否 | 是 | 接口调用失败的回调函数。  data为错误信息。  code为可能返回的错误码：  202：出现参数错误。  300：出现I/O错误。  301：文件或目录不存在。 |
+| complete | () => void | 否 | 是 | 接口调用结束的回调函数。 |

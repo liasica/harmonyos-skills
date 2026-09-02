@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-lockscreen-form-development
-title: 锁屏卡片开发指导
-breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS锁屏卡片 > 锁屏卡片开发指导
+title: ArkTS锁屏卡片
+breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS锁屏卡片
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:59+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:f39f8ec7a21f03fd5c0b9cca47f8989c468b85bfc97d6781c43247bb65f7b7a9
+scraped_at: 2026-09-02T14:59:25+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:adb526795407df1c030fc3807e4e05292ddfc2df5596a11d8dc2f5deed6474e0
 ---
 
 从API version 18开始，Form Kit提供在设备锁屏界面上显示卡片的能力，用以展示重要信息或快捷操作，旨在让用户无需解锁即可获取关键资讯或执行常用功能。锁屏卡片常用于展示天气、时钟等内容，并支持用户个性化定制。
@@ -26,7 +26,7 @@ content_hash: sha256:f39f8ec7a21f03fd5c0b9cca47f8989c468b85bfc97d6781c43247bb65f
 3. 添加卡片：在锁屏卡片管理页面选择任一卡片，例如运动健康和时钟，卡片就会添加到锁屏上。
 4. 删除卡片：在锁屏编辑态，点击卡片右上角的减号即可删除卡片。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/O077ZpcwRkKbp8s6g5Ktxw/zh-cn_image_0000002589244605.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/-OJ6wBxPREq0ufXm_40hMg/zh-cn_image_0000002736313267.png)
 
 ## 约束和限制
 
@@ -44,83 +44,83 @@ content_hash: sha256:f39f8ec7a21f03fd5c0b9cca47f8989c468b85bfc97d6781c43247bb65f
 
 在form\_config.json配置文件中，锁屏卡片必须配置renderingMode和supportDimensions字段。其中renderingMode字段仅支持配置为“singleColor”或者“autoColor”，supportDimensions字段取值中必须包含"1\*1"或"1\*2"，具体参考[配置文件字段说明](arkts-ui-widget-configuration.md#配置文件字段说明)。renderingMode字段在API version 18版本后，配置方法有变动。
 
-```
-1. // 在API version 18及以上的版本，renderingMode的配置方法如下
-2. // entry/src/main/resources/base/profile/form_config.json
-3. {
-4. "forms": [
-5. {
-6. "name": "widget",
-7. "displayName": "$string:widget_display_name",
-8. "description": "$string:widget_desc",
-9. "src": "./ets/widget/pages/WidgetCard.ets",
-10. "uiSyntax": "arkts",
-11. "isDynamic": true,
-12. "isDefault": true,
-13. "updateEnabled": false,
-14. "scheduledUpdateTime": "10:30",
-15. "renderingMode": "autoColor",
-16. "updateDuration": 1,
-17. "defaultDimension": "1*2",
-18. "supportDimensions": [
-19. "1*2",
-20. "2*2"
-21. ]
-22. }
-23. ]
-24. }
+```ts
+// 在API version 18及以上的版本，renderingMode的配置方法如下
+// entry/src/main/resources/base/profile/form_config.json
+{
+  "forms": [
+    {
+      "name": "widget",
+      "displayName": "$string:widget_display_name",
+      "description": "$string:widget_desc",
+      "src": "./ets/widget/pages/WidgetCard.ets",
+      "uiSyntax": "arkts",
+      "isDynamic": true,
+      "isDefault": true,
+      "updateEnabled": false,
+      "scheduledUpdateTime": "10:30",
+      "renderingMode": "autoColor",
+      "updateDuration": 1,
+      "defaultDimension": "1*2",
+      "supportDimensions": [
+        "1*2",
+        "2*2"
+      ]
+    }
+  ]
+}
 ```
 
-```
-1. // 在API version 18之前的版本，renderingMode的配置方法如下。value值“0”表示“autoColor”，value值“1”代表“fullColor”，value值“2”代表“singleColor”
-2. // entry/src/main/resources/base/profile/form_config.json
-3. {
-4. "forms": [
-5. {
-6. "name": "widget",
-7. "displayName": "$string:widget_display_name",
-8. "description": "$string:widget_desc",
-9. "src": "./ets/widget/pages/WidgetCard.ets",
-10. "uiSyntax": "arkts",
-11. "isDynamic": true,
-12. "isDefault": true,
-13. "updateEnabled": false,
-14. "scheduledUpdateTime": "10:30",
-15. "updateDuration": 1,
-16. "defaultDimension": "1*2",
-17. "supportDimensions": [
-18. "1*2",
-19. "2*2"
-20. ],
-21. "metadata": [
-22. {
-23. "name": "renderingMode",
-24. "value": "2"
-25. }
-26. ]
-27. }
-28. ]
-29. }
+```ts
+// 在API version 18之前的版本，renderingMode的配置方法如下。value值“0”表示“autoColor”，value值“1”代表“fullColor”，value值“2”代表“singleColor”
+// entry/src/main/resources/base/profile/form_config.json
+{
+  "forms": [
+    {
+      "name": "widget",
+      "displayName": "$string:widget_display_name",
+      "description": "$string:widget_desc",
+      "src": "./ets/widget/pages/WidgetCard.ets",
+      "uiSyntax": "arkts",
+      "isDynamic": true,
+      "isDefault": true,
+      "updateEnabled": false,
+      "scheduledUpdateTime": "10:30",
+      "updateDuration": 1,
+      "defaultDimension": "1*2",
+      "supportDimensions": [
+        "1*2",
+        "2*2"
+      ],
+      "metadata": [
+        {
+          "name": "renderingMode",
+          "value": "2"
+        }
+      ]
+    }
+  ]
+}
 ```
 
 ### 锁屏卡片开放能力申请
 
 因为锁屏卡片会展示在设备的锁屏界面，出于数据隐私安全考虑，需要开发者申请上架开放能力。
 
-因此在应用调试或发布时，必须使用[手动签名](ide-signing.md#section297715173233)，并在手动签名[申请Profile](../app/agc-help-debug-profile-0000002248181278.md)过程中[创建HarmonyOS应用](../app/agc-help-create-app-0000002247955506.md)，创建应用时参考如下指导为应用接入开放能力。
+因此在应用调试或发布时，必须使用[手动签名](ide-signing-manual.md)，并在手动签名[申请Profile](../app/agc-help-debug-profile-0000002248181278.md)过程中[创建HarmonyOS应用](../app/agc-help-create-app-0000002247955506.md)，创建应用时参考如下指导为应用接入开放能力。
 
 1. 在“开放能力接入”页面，点击锁屏卡片对应的申请按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/9RlFOXEvSNSw5_H_sJZ5mw/zh-cn_image_0000002558764800.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/_66uZf4NQ9K7RS0v5QQquw/zh-cn_image_0000002706674224.png)
 2. 在“新建业务申请”窗口填写申请信息，然后点击“提交”。申请原因：必填，不超过256个字符。上传附件：选填，仅可上传1个附件，大小不超过500MB。支持文本、表格、图片、视频、压缩包格式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/yDFq8WxCRQqccQyQQHv7fQ/zh-cn_image_0000002558605144.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/dfpEXas3QQqIijJAoY3xTA/zh-cn_image_0000002736433315.png)
 3. 返回“开放能力接入”页面，原“申请”按钮变为“申请中”，1-3个工作日反馈申请结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/yb7moFF6QtCHmoojDu-oXQ/zh-cn_image_0000002589324669.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/FcqraYojRwC4IOS51oLQZA/zh-cn_image_0000002706834160.png)
 4. 申请审批通过后，互动中心会发送通知给您，同时“申请中”按钮会变为置灰显示的“申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/xHMHPBhdSuCeLZBQD-rQ6g/zh-cn_image_0000002589244607.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/JB4p43EjTGyViAbF9ma5tA/zh-cn_image_0000002736313269.png)
 5. 能力申请通过后，勾选锁屏卡片的能力开关，点击右上角“保存”。至此，您的应用已成功接入开放能力。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/h_fTlSHMSBiESr9fQXBMOA/zh-cn_image_0000002558764802.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/w2D1MDy6SiO-_talcpiy3w/zh-cn_image_0000002706674226.png)

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-42
-title: 如果在ArkTS中大部分后台任务（计算、埋点、数据存储）都使用异步并发的方式，是否会使主线程响应变慢，引起卡顿掉帧问题
-breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > ArkTS线程模型和并发 > 如果在ArkTS中大部分后台任务（计算、埋点、数据存储）都使用异步并发的方式，是否会使主线程响应变慢，引起卡顿掉帧问题
+title: 如果在ArkTS中大部分后台任务（计算、埋点、入库）都使用异步并发的方式，是否会使主线程越来越慢，引起卡顿丢帧问题
+breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > ArkTS线程模型和并发 > 如果在ArkTS中大部分后台任务（计算、埋点、入库）都使用异步并发的方式，是否会使主线程越来越慢，引起卡顿丢帧问题
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:24+08:00
-doc_updated_at: 2026-03-17
+scraped_at: 2026-09-02T15:21:16+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:38125866cd1b97156c92b091fdec1ccdcecf3c294db5e972ac110bf978a0d9fb
 ---
 

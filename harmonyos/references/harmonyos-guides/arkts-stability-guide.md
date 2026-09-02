@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-stabili
 title: UI稳定性故障分析概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI稳定性故障调试 > UI稳定性故障分析概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:38+08:00
+scraped_at: 2026-09-02T14:59:21+08:00
 doc_updated_at: 2026-03-09
 content_hash: sha256:caac7daa26ecb8e8db9f0dfe4535b12d3d807f7de5f7ddf05df67fa38879aea0
 ---

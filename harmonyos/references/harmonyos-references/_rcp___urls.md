@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___ur
 title: Rcp_Urls
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > C API > 结构体 > Rcp_Urls
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:11+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f1c8e10dfd08243d35189ae47ea95d0dd4ff7bb43c73ee4ee0b2fc7e6945de4f
+scraped_at: 2026-09-02T15:01:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:cb85562ff89e87667e13cba7e5552eb60d51b0550c0aca1eb8e66648eacd487f
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 URLs，用于确定主机是否正在使用代理。
 
@@ -22,11 +20,7 @@ URLs，用于确定主机是否正在使用代理。
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -35,14 +29,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTVWearable
-
 ### next
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. struct Rcp_Urls* Rcp_Urls::next
+```cpp
+struct Rcp_Urls* Rcp_Urls::next
 ```
 
 **描述**
@@ -51,10 +41,8 @@ PhonePC/2in1TabletTVWearable
 
 ### url
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char* Rcp_Urls::url
+```cpp
+const char* Rcp_Urls::url
 ```
 
 **描述**

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-filesh
 title: 授权持久化(C/C++)
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 用户文件 > 选择与保存用户文件 > 授权持久化(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d024547026121248e20a19c809215eba8ae7ce68dee789dea2ea629d6bea713b
+scraped_at: 2026-09-02T14:49:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d90498731afa03e347a8e4fe3ff38ab2bacb4e962a0f1558fdf12574ee8232d7
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:d024547026121248e20a19c809215eba8ae7ce68dee789dea2ea629d6be
 | --- | --- |
 | OH\_FileShare\_PersistPermission(const FileShare\_PolicyInfo \*policies, unsigned int policyNum, FileShare\_PolicyErrorResult \*\*result, unsigned int \*resultNum) | 对所选择的多个文件或目录uri持久化授权。 |
 | OH\_FileShare\_RevokePermission(const FileShare\_PolicyInfo \*policies, unsigned int policyNum, FileShare\_PolicyErrorResult \*\*result, unsigned int \*resultNum) | 对所选择的多个文件或目录uri取消持久化授权。 |
-| OH\_FileShare\_ActivatePermission(const FileShare\_PolicyInfo \*policies, unsigned int policyNum, FileShare\_PolicyErrorResult \*\*result, unsigned int \*resultNum) | 使能多个已经持久化授权过的文件或目录uri。 |
+| OH\_FileShare\_ActivatePermission(const FileShare\_PolicyInfo \*policies, unsigned int policyNum, FileShare\_PolicyErrorResult \*\*result, unsigned int \*resultNum) | 使能多个已经持久化授权的文件或目录uri。 |
 | OH\_FileShare\_DeactivatePermission(const FileShare\_PolicyInfo \*policies, unsigned int policyNum, FileShare\_PolicyErrorResult \*\*result, unsigned int \*resultNum) | 取消使能授权过的多个文件或目录uri。 |
 | OH\_FileShare\_CheckPersistentPermission(const FileShare\_PolicyInfo \*policies, unsigned int policyNum, bool \*\*result, unsigned int \*resultNum) | 校验所选择的多个文件或目录uri的持久化权限结果。 |
 | OH\_FileShare\_ReleasePolicyErrorResult(FileShare\_PolicyErrorResult \*errorResult, unsigned int resultNum) | 释放FileShare\_PolicyErrorResult内存。 |
@@ -38,115 +38,105 @@ content_hash: sha256:d024547026121248e20a19c809215eba8ae7ce68dee789dea2ea629d6be
 
 CMakeLists.txt中添加以下lib。
 
-```
-1. target_link_libraries(sample PUBLIC libohfileshare.so)
+```txt
+target_link_libraries(sample PUBLIC libohfileshare.so)
 ```
 
 **头文件**
 
 ```
-1. #include <filemanagement/fileshare/oh_file_share.h>
-2. #include <iostream>
+#include <filemanagement/fileshare/oh_file_share.h>
+#include <iostream>
 ```
 
-1. 创建FileShare\_PolicyInfo实例,调用OH\_FileShare\_PersistPermission接口，设置uri的持久化授权，接口入参policyNum最大上限为500。
+1. 创建FileShare\_PolicyInfo实例，调用OH\_FileShare\_PersistPermission接口，设置uri的持久化授权，接口入参policyNum最大上限为500。
 
    ```
-   1. static const uint32_t policyNum = 2;
-   2. char strTestPath1[] = "file://com.example.fileshare/data/storage/el2/base/files/test1.txt";
-   3. char strTestPath2[] = "file://com.example.fileshare/data/storage/el2/base/files/test2.txt";
-   4. FileShare_PolicyInfo policy[policyNum] = {
-   5. {strTestPath1, static_cast<unsigned int>(strlen(strTestPath1)), FileShare_OperationMode::READ_MODE},
-   6. {strTestPath2, static_cast<unsigned int>(strlen(strTestPath2)), FileShare_OperationMode::WRITE_MODE}};
-   7. FileShare_PolicyErrorResult* result = nullptr;
-   8. uint32_t resultNum = 0;
-   9. napi_value napiResult;
-   10. std::string resultStr;
-   11. auto ret = OH_FileShare_PersistPermission(policy, policyNum, &result, &resultNum);
-   12. if (ret != ERR_OK) {
-   13. if (ret == ERR_EPERM && result != nullptr) {
-   14. for (uint32_t i = 0; i < resultNum; i++) {
-   15. std::cout << "error uri: " <<  result[i].uri << std::endl;
-   16. std::cout << "error code: " <<  result[i].code << std::endl;
-   17. std::cout << "error message: " << result[i].message << std::endl;
-   18. // ...
-   19. }
-   20. }
-   21. }
-   22. OH_FileShare_ReleasePolicyErrorResult(result, resultNum);
+   static const uint32_t policyNum = 2;
+   char strTestPath1[] = "file://com.example.fileshare/data/storage/el2/base/files/test1.txt";
+   char strTestPath2[] = "file://com.example.fileshare/data/storage/el2/base/files/test2.txt";
+   FileShare_PolicyInfo policy[policyNum] = {
+       {strTestPath1, static_cast<unsigned int>(strlen(strTestPath1)), FileShare_OperationMode::READ_MODE},
+       {strTestPath2, static_cast<unsigned int>(strlen(strTestPath2)), FileShare_OperationMode::WRITE_MODE}};
+   FileShare_PolicyErrorResult* result = nullptr;
+   uint32_t resultNum = 0;
+   napi_value napiResult;
+   std::string resultStr;
+   auto ret = OH_FileShare_PersistPermission(policy, policyNum, &result, &resultNum);
+   if (ret != ERR_OK) {
+       if (ret == ERR_EPERM && result != nullptr) {
+           for (uint32_t i = 0; i < resultNum; i++) {
+               std::cout << "error uri: " <<  result[i].uri << std::endl;
+               std::cout << "error code: " <<  result[i].code << std::endl;
+               std::cout << "error message: " << result[i].message << std::endl;
+               // ...
+           }
+       }
+   }
+   OH_FileShare_ReleasePolicyErrorResult(result, resultNum);
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/CoreFile/UserFile/FileShareDevelopment_C/entry/src/main/cpp/napi_init.cpp#L23-L56)
 2. 调用OH\_FileShare\_ActivatePermission接口，激活已授权过的uri，接口入参policyNum最大上限为500。
 
    ```
-   1. auto ret = OH_FileShare_ActivatePermission(policy, policyNum, &result, &resultNum);
-   2. if (ret != ERR_OK) {
-   3. if (ret == ERR_EPERM && result != nullptr) {
-   4. for (uint32_t i = 0; i < resultNum; i++) {
-   5. std::cout << "error uri: " <<  result[i].uri << std::endl;
-   6. std::cout << "error code: " <<  result[i].code << std::endl;
-   7. std::cout << "error message: " << result[i].message << std::endl;
-   8. // ...
-   9. }
-   10. }
-   11. }
-   12. OH_FileShare_ReleasePolicyErrorResult(result, resultNum);
+   auto ret = OH_FileShare_ActivatePermission(policy, policyNum, &result, &resultNum);
+   if (ret != ERR_OK) {
+       if (ret == ERR_EPERM && result != nullptr) {
+           for (uint32_t i = 0; i < resultNum; i++) {
+               std::cout << "error uri: " <<  result[i].uri << std::endl;
+               std::cout << "error code: " <<  result[i].code << std::endl;
+               std::cout << "error message: " << result[i].message << std::endl;
+               // ...
+           }
+       }
+   }
+   OH_FileShare_ReleasePolicyErrorResult(result, resultNum);
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/CoreFile/UserFile/FileShareDevelopment_C/entry/src/main/cpp/napi_init.cpp#L76-L99)
 3. 调用OH\_FileShare\_DeactivatePermission接口，停止已启用授权过uri的访问权限，接口入参policyNum最大上限为500。
 
    ```
-   1. auto ret = OH_FileShare_DeactivatePermission(policy, policyNum, &result, &resultNum);
-   2. if (ret != ERR_OK) {
-   3. if (ret == ERR_EPERM && result != nullptr) {
-   4. for (uint32_t i = 0; i < resultNum; i++) {
-   5. std::cout << "error uri: " <<  result[i].uri << std::endl;
-   6. std::cout << "error code: " <<  result[i].code << std::endl;
-   7. std::cout << "error message: " << result[i].message << std::endl;
-   8. // ...
-   9. }
-   10. }
-   11. }
-   12. OH_FileShare_ReleasePolicyErrorResult(result, resultNum);
+   auto ret = OH_FileShare_DeactivatePermission(policy, policyNum, &result, &resultNum);
+   if (ret != ERR_OK) {
+       if (ret == ERR_EPERM && result != nullptr) {
+           for (uint32_t i = 0; i < resultNum; i++) {
+               std::cout << "error uri: " <<  result[i].uri << std::endl;
+               std::cout << "error code: " <<  result[i].code << std::endl;
+               std::cout << "error message: " << result[i].message << std::endl;
+               // ...
+           }
+       }
+   }
+   OH_FileShare_ReleasePolicyErrorResult(result, resultNum);
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/CoreFile/UserFile/FileShareDevelopment_C/entry/src/main/cpp/napi_init.cpp#L119-L142)
 4. 调用OH\_FileShare\_RevokePermission接口，撤销已经授权的uri持久化权限，接口入参policyNum最大上限为500。
 
    ```
-   1. auto ret = OH_FileShare_RevokePermission(policy, policyNum, &result, &resultNum);
-   2. if (ret != ERR_OK) {
-   3. if (ret == ERR_EPERM && result != nullptr) {
-   4. for (uint32_t i = 0; i < resultNum; i++) {
-   5. std::cout << "error uri: " <<  result[i].uri << std::endl;
-   6. std::cout << "error code: " <<  result[i].code << std::endl;
-   7. std::cout << "error message: " << result[i].message << std::endl;
-   8. // ...
-   9. }
-   10. }
-   11. }
-   12. OH_FileShare_ReleasePolicyErrorResult(result, resultNum);
+   auto ret = OH_FileShare_RevokePermission(policy, policyNum, &result, &resultNum);
+   if (ret != ERR_OK) {
+       if (ret == ERR_EPERM && result != nullptr) {
+           for (uint32_t i = 0; i < resultNum; i++) {
+               std::cout << "error uri: " <<  result[i].uri << std::endl;
+               std::cout << "error code: " <<  result[i].code << std::endl;
+               std::cout << "error message: " << result[i].message << std::endl;
+               // ...
+           }
+       }
+   }
+   OH_FileShare_ReleasePolicyErrorResult(result, resultNum);
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/CoreFile/UserFile/FileShareDevelopment_C/entry/src/main/cpp/napi_init.cpp#L162-L185)
 5. 调用OH\_FileShare\_CheckPersistentPermission接口，检查uri持久化权限，接口入参policyNum最大上限为500。
 
    ```
-   1. bool *result = nullptr;
-   2. auto ret = OH_FileShare_CheckPersistentPermission(policy, policyNum, &result, &resultNum);
-   3. if (ret != ERR_OK) {
-   4. if (ret == ERR_EPERM && result != nullptr) {
-   5. for (uint32_t i = 0; i < resultNum && resultNum <= policyNum; i++) {
-   6. std::cout << "uri: " <<  policy[i].uri << std::endl;
-   7. std::cout << "result: " <<  result[i] << std::endl;
-   8. // ...
-   9. }
-   10. }
-   11. }
-   12. std::cout << "retCode: " <<  ret << std::endl;
-   13. free(result);
+   bool *result = nullptr;
+   auto ret = OH_FileShare_CheckPersistentPermission(policy, policyNum, &result, &resultNum);
+   if (ret != ERR_OK) {
+       if (ret == ERR_EPERM && result != nullptr) {
+           for (uint32_t i = 0; i < resultNum && resultNum <= policyNum; i++) {
+               std::cout << "uri: " <<  policy[i].uri << std::endl;
+               std::cout << "result: " <<  result[i] << std::endl;
+               // ...
+           }
+       }
+   }
+   std::cout << "retCode: " <<  ret << std::endl;
+   free(result);
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/CoreFile/UserFile/FileShareDevelopment_C/entry/src/main/cpp/napi_init.cpp#L204-L225)

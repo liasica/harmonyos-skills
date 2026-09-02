@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: CaptureSession_Callbacks
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 结构体 > CaptureSession_Callbacks
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:54+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e951e906b60ca169781f2dee46ddb062074ec82f4e1963b422bef039b8d9eb04
+scraped_at: 2026-09-02T15:02:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a7bf0730be90180c8d4cdeaf810ccec57b8f2cce7888dcc8429fd025785a0434
 ---
 
-```
-1. typedef struct CaptureSession_Callbacks {...} CaptureSession_Callbacks
+```c
+typedef struct CaptureSession_Callbacks {...} CaptureSession_Callbacks
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 捕获会话的回调。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

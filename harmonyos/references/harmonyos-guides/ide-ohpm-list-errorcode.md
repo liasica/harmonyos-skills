@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-list
 title: ohpm list错误码
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm list错误码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:46+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:71ea734b57027373397110454a6959cb0f17354cdb853cb46e28ac0abe4e8f30
+scraped_at: 2026-09-02T14:50:59+08:00
+doc_updated_at: 2026-06-24
+content_hash: sha256:e8a205fb19adf019905b89e56d0d99ec81541631b4b18a42f3dafa75883a9d43
 ---
 
 ## 00622014 parameterFile配置问题
@@ -24,7 +24,7 @@ parameterFile配置问题。
 
 **处理步骤**
 
-检查和确保parameterFile配置正确，具体修改可参考[parameterFile](ide-oh-package-json5.md#section122411462820)。
+确保parameterFile配置正确，具体修改可参考[parameterFile](ide-oh-package-json5.md#section122411462820)。
 
 ## 00608001 包未找到
 

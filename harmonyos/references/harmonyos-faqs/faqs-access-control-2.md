@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-access-con
 title: 用户更新app后是否还会弹出权限申请弹窗
 breadcrumb: FAQ > 系统开发 > 安全 > 程序访问控制 > 用户更新app后是否还会弹出权限申请弹窗
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:53+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:55+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:26646579fda4fbd7bef303745417c894d1dd9978acdaeb6ad9b2b3dc8bd7749c
 ---
 

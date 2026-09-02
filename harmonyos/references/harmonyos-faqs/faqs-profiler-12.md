@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-profiler-1
 title: DevEco Studio AppAnalyzer反复提示未配置python环境，无法进入卡片页
 breadcrumb: FAQ > DevEco Studio > 性能分析 > DevEco Studio AppAnalyzer反复提示未配置python环境，无法进入卡片页
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:21:33+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:914222ecba3b2f9633e807bfcd201de0276a8311486711f3d648d1b71a237567
+scraped_at: 2026-09-02T14:54:57+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:028c27b2a11fc5fb1885056538752aaf46c65ffb17be098bbcd432998df7b9fd
 ---
 
 **问题现象**
@@ -15,7 +15,7 @@ content_hash: sha256:914222ecba3b2f9633e807bfcd201de0276a8311486711f3d648d1b71a2
 1. 反复提示配置python环境，无法进入卡片页（6.0）。
 2. 场景化自动无法遍历（5.1）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/qj9evKSpTlOWkNDW6HJDqw/zh-cn_image_0000002516304447.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/Aow7feJjTeOIX7aIYZ1k1g/zh-cn_image_0000002654838131.png)
 
 **可能原因**
 
@@ -27,40 +27,40 @@ content_hash: sha256:914222ecba3b2f9633e807bfcd201de0276a8311486711f3d648d1b71a2
 
 MAC：
 
-```
-1. # 6.0 版本
-2. cat ~/Library/Application\ Support/Huawei/DevEcoStudio6.0/options/other.xml  | grep -i "location.python.path"
-3. # 5.1 版本
-4. cat ~/Library/Application\ Support/Huawei/DevEcoStudio5.1/options/other.xml  | grep -i "location.python.path"
+```powershell
+# 6.0 版本
+cat ~/Library/Application\ Support/Huawei/DevEcoStudio6.0/options/other.xml  | grep -i "location.python.path" 
+# 5.1 版本
+cat ~/Library/Application\ Support/Huawei/DevEcoStudio5.1/options/other.xml  | grep -i "location.python.path"
 ```
 
 WIN：
 
 打开other.xml搜索location.python.path。
 
-```
-1. # 6.0 版本
-2. C:\Users\<username>\AppData\Roaming\Huawei\DevEcoStudio6.0\options\other.xml
-3. # 5.1 版本
-4. C:\Users\<username>\AppData\Roaming\Huawei\DevEcoStudio5.1\options\other.xml
+```xml
+# 6.0 版本
+C:\Users\<username>\AppData\Roaming\Huawei\DevEcoStudio6.0\options\other.xml
+# 5.1 版本
+C:\Users\<username>\AppData\Roaming\Huawei\DevEcoStudio5.1\options\other.xml
 ```
 
 2.卸载pynacl 、cffi。
 
 切换到python的安装目录，注意请使用当前目录中的python，执行依赖卸载命令，请参考：
 
-```
-1. ./python -m pip uninstall pynacl -y
-2. ./python -m pip uninstall cffi -y
+```powershell
+./python -m pip uninstall pynacl -y
+./python -m pip uninstall cffi -y
 ```
 
 3.安装pynacl 、cffi。
 
 切换到python的安装目录，注意请使用当前目录中的python，执行依赖安装命令，请参考：
 
-```
-1. ./python -m pip install cffi==1.17.1
-2. ./python -m pip install pynacl==1.5.0
+```powershell
+./python -m pip install cffi==1.17.1
+./python -m pip install pynacl==1.5.0
 ```
 
 4.重新打开AppAnalyzer。

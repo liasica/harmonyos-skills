@@ -1,0 +1,874 @@
+---
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-nearlink-remote-device
+title: "@ohos.nearlink.remoteDevice (星闪远端设备连接能力)"
+breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.nearlink.remoteDevice (星闪远端设备连接能力)
+category: harmonyos-references
+scraped_at: 2026-09-02T15:01:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:94bb510108f7e5e3740d7b045495e1d235dd29bad1917c98b48f4c0f30d6e9a9
+---
+
+本模块提供了星闪远端设备的管理能力，包括创建远端设备实例、发起配对、查询远端设备信息、订阅设备状态变化事件等。
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+**起始版本：** 26.0.0
+
+## 导入模块
+
+```typescript
+import { remoteDevice } from '@kit.ConnectivityKit';
+```
+
+## PairingState
+
+type PairingState = nearlinkConstant.PairingState
+
+表示和远端设备的配对状态，为枚举值。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+| 类型 | 说明 |
+| --- | --- |
+| [nearlinkConstant.PairingState](js-apis-nearlink-constant.md#pairingstate) | 和远端设备的配对状态。 |
+
+## ConnectionState
+
+type ConnectionState = nearlinkConstant.ConnectionState
+
+表示和远端设备的连接状态，为枚举值。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+| 类型 | 说明 |
+| --- | --- |
+| [nearlinkConstant.ConnectionState](js-apis-nearlink-constant.md#connectionstate) | 和远端设备的连接状态。 |
+
+## DeviceClass
+
+type DeviceClass = nearlinkConstant.DeviceClass
+
+表示设备类型，为枚举值。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+| 类型 | 说明 |
+| --- | --- |
+| [nearlinkConstant.DeviceClass](js-apis-nearlink-constant.md#deviceclass) | 设备类型。 |
+
+## AcbState
+
+type AcbState = nearlinkConstant.AcbState
+
+表示和远端设备的逻辑链路连接状态，为枚举值。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+| 类型 | 说明 |
+| --- | --- |
+| [nearlinkConstant.AcbState](js-apis-nearlink-constant.md#acbstate) | 和远端设备的逻辑链路连接状态。 |
+
+## remoteDevice.createRemoteDevice
+
+createRemoteDevice(address: string): RemoteDevice
+
+创建远端设备实例。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| address | string | 是 | 远端设备地址。地址格式参考：11:22:33:AA:BB:FF。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [RemoteDevice](js-apis-nearlink-remote-device.md#remotedevice) | 远端设备实例。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[星闪错误码](errorcode-nearlink-service.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported because the chip does not support it. |
+| 36100041 | Invalid address. |
+
+**示例：**
+
+```typescript
+import { remoteDevice } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let addr: string = '00:11:22:33:AA:FF'; // 扫描获取到的远端设备地址
+let device: remoteDevice.RemoteDevice;
+try {
+  device = remoteDevice.createRemoteDevice(addr);
+  console.info('device: ' + JSON.stringify(device));
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
+```
+
+## remoteDevice.onPairingStateChange
+
+onPairingStateChange(callback: Callback<PairingStateParam>): void
+
+订阅配对状态变化事件。使用callback异步回调。
+
+应用需具备ohos.permission.ACCESS\_NEARLINK权限，方可接收此事件上报。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<[PairingStateParam](js-apis-nearlink-remote-device.md#pairingstateparam)> | 是 | 回调函数，返回订阅的配对状态变化结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[星闪错误码](errorcode-nearlink-service.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported because the chip does not support it. |
+| 36100099 | Operation failed. |
+
+**示例：**
+
+```typescript
+import { remoteDevice } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let onPairingStateEvent:(data: remoteDevice.PairingStateParam) => void = (data: remoteDevice.PairingStateParam) => {
+  console.info('onPairingStateChange addr: ' + data.address + 'state:' + data.state);
+};
+try {
+  remoteDevice.onPairingStateChange(onPairingStateEvent);
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
+```
+
+## remoteDevice.offPairingStateChange
+
+offPairingStateChange(callback?: Callback<PairingStateParam>): void
+
+取消订阅配对状态变化事件。使用callback异步回调。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<[PairingStateParam](js-apis-nearlink-remote-device.md#pairingstateparam)> | 否 | 回调函数，返回订阅的配对状态变化结果。  填写该参数则取消当前callback订阅。不填写该参数则取消该事件对应的所有回调。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[星闪错误码](errorcode-nearlink-service.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported because the chip does not support it. |
+| 36100099 | Operation failed. |
+
+**示例：**
+
+```typescript
+import { remoteDevice } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+try {
+  remoteDevice.offPairingStateChange();
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
+```
+
+## remoteDevice.onConnectionStateChange
+
+onConnectionStateChange(callback: Callback<ConnectionStateParam>): void
+
+订阅连接状态变化事件。使用callback异步回调。与[remoteDevice.onAcbStateChange](js-apis-nearlink-remote-device.md#remotedeviceonacbstatechange)监听逻辑链路层级连接状态不同，本接口监听设备层级的连接状态变化。
+
+应用需具备ohos.permission.ACCESS\_NEARLINK权限，方可接收此事件上报。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<[ConnectionStateParam](js-apis-nearlink-remote-device.md#connectionstateparam)> | 是 | 回调函数，返回订阅的连接状态变化事件上报结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[星闪错误码](errorcode-nearlink-service.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported because the chip does not support it. |
+| 36100099 | Operation failed. |
+
+**示例：**
+
+```typescript
+import { remoteDevice } from '@kit.ConnectivityKit';
+import { BusinessError, Callback } from '@kit.BasicServicesKit';
+
+let callback: Callback<remoteDevice.ConnectionStateParam> = (data: remoteDevice.ConnectionStateParam) => {
+  console.info('data:' + JSON.stringify(data));
+};
+try {
+  remoteDevice.onConnectionStateChange(callback);
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
+```
+
+## remoteDevice.offConnectionStateChange
+
+offConnectionStateChange(callback?: Callback<ConnectionStateParam>): void
+
+取消订阅连接状态变化事件。使用callback异步回调。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<[ConnectionStateParam](js-apis-nearlink-remote-device.md#connectionstateparam)> | 否 | 回调函数，返回订阅的连接状态变化事件上报结果。  填写该参数则取消当前callback订阅。不填写该参数则取消该事件对应的所有回调。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[星闪错误码](errorcode-nearlink-service.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported because the chip does not support it. |
+| 36100099 | Operation failed. |
+
+**示例：**
+
+```typescript
+import { remoteDevice } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+try {
+  remoteDevice.offConnectionStateChange();
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
+```
+
+## remoteDevice.onAcbStateChange
+
+onAcbStateChange(callback: Callback<AcbStateParam>): void
+
+订阅逻辑链路连接状态变化事件。使用callback异步回调。适用于需要在逻辑链路建立或断开时触发相应处理的场景，如数据传输前的链路就绪检查或断连后的资源清理。与[remoteDevice.onConnectionStateChange](js-apis-nearlink-remote-device.md#remotedeviceonconnectionstatechange)监听设备层级连接状态不同，本接口监听逻辑链路层级的连接状态。
+
+应用需具备ohos.permission.ACCESS\_NEARLINK权限，方可接收此事件上报。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<[AcbStateParam](js-apis-nearlink-remote-device.md#acbstateparam)> | 是 | 回调函数，返回订阅的逻辑链路连接状态变化事件上报结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[星闪错误码](errorcode-nearlink-service.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported because the chip does not support it. |
+| 36100099 | Operation failed. |
+
+**示例：**
+
+```typescript
+import { remoteDevice } from '@kit.ConnectivityKit';
+import { BusinessError, Callback } from '@kit.BasicServicesKit';
+
+let callback: Callback<remoteDevice.AcbStateParam> = (data: remoteDevice.AcbStateParam) => {
+  console.info('data:' + JSON.stringify(data));
+};
+try {
+  remoteDevice.onAcbStateChange(callback);
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
+```
+
+## remoteDevice.offAcbStateChange
+
+offAcbStateChange(callback?: Callback<AcbStateParam>): void
+
+取消订阅逻辑链路连接状态变化事件。使用callback异步回调。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<[AcbStateParam](js-apis-nearlink-remote-device.md#acbstateparam)> | 否 | 回调函数，返回订阅的逻辑链路连接状态变化事件上报结果。  填写该参数则取消当前callback订阅。不填写该参数则取消该事件对应的所有回调。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[星闪错误码](errorcode-nearlink-service.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported because the chip does not support it. |
+| 36100099 | Operation failed. |
+
+**示例：**
+
+```typescript
+import { remoteDevice } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+try {
+  remoteDevice.offAcbStateChange();
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
+```
+
+## RemoteDevice
+
+提供远端设备的操作方法，使用前需要使用[remoteDevice.createRemoteDevice](js-apis-nearlink-remote-device.md#remotedevicecreateremotedevice)方法创建一个远端设备[RemoteDevice](js-apis-nearlink-remote-device.md#remotedevice)实例。
+
+一个设备只需要创建一次，无需多次创建。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+### startPairing
+
+startPairing(): Promise<void>
+
+发起与远端设备的配对。使用Promise异步回调。发起配对后，将依据本端与远端设备的输入输出能力标识（即设备是否具备显示、键盘输入等能力）弹出不同类型的弹窗，需使用者进一步确认。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**需要权限：** ohos.permission.ACCESS\_NEARLINK
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[星闪错误码](errorcode-nearlink-service.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 36100003 | NearLink disabled. |
+| 36100099 | Operation failed. |
+
+**示例：**
+
+```typescript
+import { remoteDevice } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let addr: string = '00:11:22:33:AA:FF'; // 扫描获取到的远端设备地址
+let device: remoteDevice.RemoteDevice;
+try {
+  device = remoteDevice.createRemoteDevice(addr);
+  device.startPairing().then(() => {
+    console.info('start pairing success');
+  }).catch((err: BusinessError) => {
+    console.error('errCode: ' + err.code + ', errMessage: ' + err.message);
+  });
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
+```
+
+### getPairingState
+
+getPairingState(): PairingState
+
+获取和远端设备的配对状态。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**需要权限：** ohos.permission.ACCESS\_NEARLINK
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [PairingState](js-apis-nearlink-constant.md#pairingstate) | 和远端设备的配对状态。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[星闪错误码](errorcode-nearlink-service.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 36100003 | NearLink disabled. |
+| 36100099 | Operation failed. |
+
+**示例：**
+
+```typescript
+import { remoteDevice } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let addr: string = '00:11:22:33:AA:FF'; // 扫描获取到的远端设备地址
+let device: remoteDevice.RemoteDevice;
+try {
+  device = remoteDevice.createRemoteDevice(addr);
+  let state: remoteDevice.PairingState = device.getPairingState();
+  console.info('state:' + JSON.stringify(state));
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
+```
+
+### getDeviceName
+
+getDeviceName(): string
+
+获取远端设备名称。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**需要权限：** ohos.permission.ACCESS\_NEARLINK
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| string | 远端设备名称。最大长度为30个字符。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[星闪错误码](errorcode-nearlink-service.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 36100003 | NearLink disabled. |
+| 36100099 | Operation failed. |
+
+**示例：**
+
+```typescript
+import { remoteDevice } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let addr: string = '00:11:22:33:AA:FF'; // 扫描获取到的远端设备地址
+let device: remoteDevice.RemoteDevice;
+try {
+  device = remoteDevice.createRemoteDevice(addr);
+  let name: string = device.getDeviceName();
+  console.info('name:' + JSON.stringify(name));
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
+```
+
+### getDeviceClass
+
+getDeviceClass(): DeviceClass
+
+获取远端设备类型。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**需要权限：** ohos.permission.ACCESS\_NEARLINK
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [DeviceClass](js-apis-nearlink-constant.md#deviceclass) | 远端设备类型。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[星闪错误码](errorcode-nearlink-service.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 36100003 | NearLink disabled. |
+| 36100099 | Operation failed. |
+
+**示例：**
+
+```typescript
+import { remoteDevice } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let addr: string = '00:11:22:33:AA:FF'; // 扫描获取到的远端设备地址
+let device: remoteDevice.RemoteDevice;
+try {
+  device = remoteDevice.createRemoteDevice(addr);
+  let type: remoteDevice.DeviceClass = device.getDeviceClass();
+  console.info('type:' + JSON.stringify(type));
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
+```
+
+### getConnectionState
+
+getConnectionState(): ConnectionState
+
+获取本端设备和远端设备的连接状态。与[getAcbState](js-apis-nearlink-remote-device.md#getacbstate)获取逻辑链路（ACB）层级连接状态不同，本接口获取设备层级的连接状态。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**需要权限：** ohos.permission.ACCESS\_NEARLINK
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [ConnectionState](js-apis-nearlink-constant.md#connectionstate) | 本端设备和远端设备的连接状态。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[星闪错误码](errorcode-nearlink-service.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 36100003 | NearLink disabled. |
+| 36100099 | Operation failed. |
+
+**示例：**
+
+```typescript
+import { remoteDevice } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let addr: string = '00:11:22:33:AA:FF'; // 扫描获取到的远端设备地址
+let device: remoteDevice.RemoteDevice;
+try {
+  device = remoteDevice.createRemoteDevice(addr);
+  let state: remoteDevice.ConnectionState = device.getConnectionState();
+  console.info('state:' + JSON.stringify(state));
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
+```
+
+### getAcbState
+
+getAcbState(): AcbState
+
+获取和远端设备的逻辑链路连接状态。适用于需要确认逻辑链路是否就绪的场景，如在进行数据传输或消息通信前检查逻辑链路状态。与[getConnectionState](js-apis-nearlink-remote-device.md#getconnectionstate)获取设备层级连接状态不同，本接口获取逻辑链路（ACB）层级的连接状态。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**需要权限：** ohos.permission.ACCESS\_NEARLINK
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [AcbState](js-apis-nearlink-constant.md#acbstate) | 和远端设备的逻辑链路连接状态。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[星闪错误码](errorcode-nearlink-service.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 36100003 | NearLink disabled. |
+| 36100099 | Operation failed. |
+
+**示例：**
+
+```typescript
+import { remoteDevice } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let addr: string = '00:11:22:33:AA:FF'; // 扫描获取到的远端设备地址
+let device: remoteDevice.RemoteDevice;
+try {
+  device = remoteDevice.createRemoteDevice(addr);
+  let state: remoteDevice.AcbState = device.getAcbState();
+  console.info('state:' + JSON.stringify(state));
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
+```
+
+### getDeviceInformation
+
+getDeviceInformation(): DeviceInformation
+
+获取远端设备的设备信息。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**需要权限：** ohos.permission.ACCESS\_NEARLINK
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [DeviceInformation](js-apis-nearlink-remote-device.md#deviceinformation) | 远端设备的设备信息。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[星闪错误码](errorcode-nearlink-service.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 36100003 | NearLink disabled. |
+| 36100099 | Operation failed. |
+
+**示例：**
+
+```typescript
+import { remoteDevice } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { buffer } from '@kit.ArkTS';
+
+let addr: string = '00:11:22:33:AA:FF'; // 扫描获取到的远端设备地址
+let device: remoteDevice.RemoteDevice;
+try {
+  device = remoteDevice.createRemoteDevice(addr);
+  let deviceInfo: remoteDevice.DeviceInformation = device.getDeviceInformation();
+  console.info('deviceInfo.manufacturerData:' + buffer.from(deviceInfo.manufacturerData, 'binary').toString('hex'));
+  console.info('deviceInfo.modelData:' + buffer.from(deviceInfo.modelData, 'binary').toString('hex'));
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
+```
+
+### DeviceInformation
+
+表示远端设备信息。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| manufacturerData | string | 否 | 否 | 厂商信息。数据为二进制编码格式，可通过buffer.from(manufacturerData, 'binary')等方式解析。 |
+| modelData | string | 否 | 否 | 设备型号信息。数据为二进制编码格式，可通过buffer.from(modelData, 'binary')等方式解析。 |
+
+### ConnectionStateParam
+
+订阅的连接状态变化事件上报结果。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| address | string | 否 | 否 | 设备地址，表示和该设备的连接状态发生变化。地址格式参考：11:22:33:AA:BB:FF。 |
+| preState | [ConnectionState](js-apis-nearlink-constant.md#connectionstate) | 否 | 否 | 本次上报之前的连接状态。 |
+| state | [ConnectionState](js-apis-nearlink-constant.md#connectionstate) | 否 | 否 | 当前连接状态。 |
+| connectionReason | [ConnectionReason](js-apis-nearlink-remote-device.md#connectionreason) | 否 | 否 | 原因值。 |
+| reasonMsg | string | 否 | 是 | 原因详情。该字段仅用于日志信息，不应用于逻辑处理。无原因详情时，该字段默认为空字符串。 |
+
+### ConnectionReason
+
+星闪连接状态变化结果的原因值。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| CONNECTION\_SUCCESS | 0 | 表示连接成功。 |
+| CONNECTION\_FAILURE | 1 | 表示连接失败。 |
+| CONNECTION\_LOCAL\_DISCONNECT | 2 | 表示本端设备主动断连。 |
+| CONNECTION\_REMOTE\_DISCONNECT | 3 | 表示远端设备主动断连。 |
+| CONNECTION\_FAIL\_ACB\_CONNECTION | 4 | 表示ACB连接失败（可能因为远端设备关闭、设备距离过远）。 |
+| CONNECTION\_FAIL\_SERVICE\_DISCOVERY | 5 | 表示服务发现失败（可能服务发现超时）。 |
+| CONNECTION\_FAIL\_NO\_AVAILABLE\_SERVICE | 6 | 表示没有可连接/可用的profile。 |
+| CONNECTION\_FAIL\_CONNECTION\_NUM\_LIMITED | 7 | 表示连接数超出限制。 |
+
+### PairingStateParam
+
+订阅的配对状态变化结果。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| address | string | 否 | 否 | 设备地址，表示和该设备的配对状态发生变化。地址格式参考：11:22:33:AA:BB:FF。 |
+| preState | [PairingState](js-apis-nearlink-constant.md#pairingstate) | 否 | 否 | 本次上报之前的配对状态。 |
+| state | [PairingState](js-apis-nearlink-constant.md#pairingstate) | 否 | 否 | 当前配对状态。 |
+| reason | [PairingReason](js-apis-nearlink-remote-device.md#pairingreason) | 否 | 否 | 原因值。 |
+| reasonMsg | string | 否 | 是 | 原因详情。该字段仅用于日志信息，不应用于逻辑处理。无原因详情时，该字段默认为空字符串。 |
+
+### PairingRequestParam
+
+表示订阅的配对请求事件上报结果。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| address | string | 否 | 否 | 设备地址，表示收到该设备的配对请求上报。地址格式参考：11:22:33:AA:BB:FF。 |
+| passkey | string | 否 | 否 | 表示配对交互的配对码，显示给用户确认。长度固定为6，字符串内容为数字。仅在pairingType为PAIRING\_TYPE\_PASSCODE或PAIRING\_TYPE\_NUMBER\_COMPARE时该字段生效。 |
+| pairingType | [PairingType](js-apis-nearlink-remote-device.md#pairingtype) | 否 | 否 | 表示配对类型。 |
+
+### PairingReason
+
+表示星闪配对状态变化结果的原因值，为枚举值。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| PAIRING\_REASON\_SUCCESS | 0 | 表示配对成功。 |
+| PAIRING\_REASON\_FAILURE | 1 | 表示配对失败。 |
+| PAIRING\_REASON\_ACB\_CONNECTION\_FAIL | 2 | 表示ACB连接失败，可能远端设备已断电或超出范围。 |
+| PAIRING\_REASON\_EXCEED\_ACB\_MAX | 3 | 表示连接设备数已达上限导致配对失败。 |
+| PAIRING\_REASON\_REMOTE\_CANCELED | 4 | 表示远端设备取消配对导致配对失败。 |
+| PAIRING\_REASON\_LOCAL\_CANCELED | 5 | 表示本端设备取消配对导致配对失败。 |
+| PAIRING\_REASON\_AUTH\_FAIL | 6 | 表示身份验证失败。 |
+
+## PairingType
+
+星闪配对类型，为枚举值。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NO\_PASSKEY\_CONFIRMATION | 0 | 表示不需要passkey的配对方式，用户无需检查配对码。 |
+| PAIRING\_TYPE\_PASSCODE | 1 | 表示通行码鉴权方式，用户需在一端设备输入另一端设备显示的配对码。 |
+| PAIRING\_TYPE\_NUMBER\_COMPARE | 2 | 表示数字比较鉴权方式，用户需在两端设备确认配对码一致。 |
+
+## AcbStateParam
+
+订阅的逻辑链路连接状态变化事件上报结果。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Communication.NearLink.Base
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| address | string | 否 | 否 | 设备地址，表示和该设备的逻辑链路连接状态发生变化。地址格式参考：11:22:33:AA:BB:FF。 |
+| state | [AcbState](js-apis-nearlink-constant.md#acbstate) | 否 | 否 | 当前逻辑链路连接状态。 |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-f
 title: 开放权限（系统授权）
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 应用权限列表 > 开放权限（系统授权）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:02+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:067f82936b3610c29cc4e721cf5d50bd6d4d5a5224a98dbd50d535c169afc2e9
+scraped_at: 2026-09-02T14:49:58+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:05dc07e2af11f6324983f6ae324797b256091dd0566de60477ed147a85ba9d15
 ---
 
 此列表内所有权限均为系统授权（system\_grant）的开放权限，面向所有应用开放。
@@ -42,7 +42,7 @@ content_hash: sha256:067f82936b3610c29cc4e721cf5d50bd6d4d5a5224a98dbd50d535c169a
 
 允许应用关闭前执行自定义的预关闭动作。
 
-例如，当应用被关闭时，应用可向用户通过弹窗等方式向用户确认是否执行关闭。
+例如，当应用被关闭时，应用可通过弹窗等方式向用户确认是否执行关闭。
 
 **权限级别**：normal
 
@@ -57,6 +57,8 @@ content_hash: sha256:067f82936b3610c29cc4e721cf5d50bd6d4d5a5224a98dbd50d535c169a
 **权限级别**：normal
 
 **授权方式**：系统授权（system\_grant）
+
+**支持设备**：Phone | PC/2in1 | Tablet | TV
 
 **起始版本**：10
 
@@ -76,11 +78,13 @@ content_hash: sha256:067f82936b3610c29cc4e721cf5d50bd6d4d5a5224a98dbd50d535c169a
 
 允许应用读取加速度传感器的数据。
 
-包括：加速度计传感器、未校准加速度计传感器、线性加速器传感器。
+包括：加速度计传感器、未校准加速度计传感器、线性加速度计传感器。
 
 **权限级别**：normal
 
 **授权方式**：系统授权（system\_grant）
+
+**支持设备**：Phone | PC/2in1 | Tablet | TV | Wearable
 
 **起始版本**：7
 
@@ -140,7 +144,11 @@ content_hash: sha256:067f82936b3610c29cc4e721cf5d50bd6d4d5a5224a98dbd50d535c169a
 
 **授权方式**：系统授权（system\_grant）
 
+**支持设备**：Phone | PC/2in1 | Tablet | TV | Wearable | Car
+
 **起始版本**：8
+
+**变更信息**：从API 22开始，获取该权限后，增加支持P2P能力的使用。
 
 ## ohos.permission.GYROSCOPE
 
@@ -152,11 +160,15 @@ content_hash: sha256:067f82936b3610c29cc4e721cf5d50bd6d4d5a5224a98dbd50d535c169a
 
 **授权方式**：系统授权（system\_grant）
 
+**支持设备**：Phone | PC/2in1 | Tablet | TV | Wearable
+
 **起始版本**：7
 
 ## ohos.permission.INTERNET
 
 允许使用Internet网络。
+
+获取该权限后，应用可以获取IP地址、进行DNS解析或自定义DNS规则等。
 
 **权限级别**：normal
 
@@ -230,6 +242,8 @@ content_hash: sha256:067f82936b3610c29cc4e721cf5d50bd6d4d5a5224a98dbd50d535c169a
 
 **授权方式**：系统授权（system\_grant）
 
+**支持设备**：Phone | PC/2in1 | Tablet | TV | Wearable | Car
+
 **起始版本**：8
 
 ## ohos.permission.VIBRATE
@@ -241,6 +255,8 @@ content_hash: sha256:067f82936b3610c29cc4e721cf5d50bd6d4d5a5224a98dbd50d535c169a
 **权限级别**：normal
 
 **授权方式**：系统授权（system\_grant）
+
+**支持设备**：Phone | PC/2in1 | Tablet | TV | Wearable
 
 **起始版本**：7
 
@@ -265,6 +281,18 @@ content_hash: sha256:067f82936b3610c29cc4e721cf5d50bd6d4d5a5224a98dbd50d535c169a
 **权限级别**：normal
 
 **授权方式**：系统授权（system\_grant）
+
+**起始版本**：7
+
+## ohos.permission.RUNNING\_LOCK
+
+允许应用获取运行锁，保证应用在后台的持续运行。
+
+**权限级别**：normal
+
+**授权方式**：系统授权（system\_grant）
+
+**支持设备**：PC/2in1 | Tablet | Car | Phone | TV | Wearable
 
 **起始版本**：7
 
@@ -297,6 +325,8 @@ content_hash: sha256:067f82936b3610c29cc4e721cf5d50bd6d4d5a5224a98dbd50d535c169a
 **权限级别**：normal
 
 **授权方式**：系统授权（system\_grant）
+
+**支持设备**：Phone | TV | Wearable | PC/2in1 | Tablet | Car | LiteWearable | SmartLock
 
 **起始版本**：11
 
@@ -334,9 +364,13 @@ content_hash: sha256:067f82936b3610c29cc4e721cf5d50bd6d4d5a5224a98dbd50d535c169a
 
 允许应用访问导航信息服务。
 
+获取该权限后，应用可设置导航信息、处理其他应用发送的导航指令等。
+
 **权限级别**：normal
 
 **授权方式**：系统授权（system\_grant）
+
+**支持设备**：Phone | Tablet | Car
 
 **起始版本**：12
 
@@ -361,6 +395,8 @@ content_hash: sha256:067f82936b3610c29cc4e721cf5d50bd6d4d5a5224a98dbd50d535c169a
 **权限级别**：normal
 
 **授权方式**：系统授权（system\_grant）
+
+**支持设备**：Phone | Tablet | Car
 
 **起始版本**：12
 
@@ -418,11 +454,13 @@ content_hash: sha256:067f82936b3610c29cc4e721cf5d50bd6d4d5a5224a98dbd50d535c169a
 
 允许应用通过C API启动同应用的UIAbility。
 
-当前仅2in1设备应用可申请此权限。
+仅用于在Native层启动同应用内的UIAbility，适用于C/C++调用接口拉起UIAbility的场景。
 
 **权限级别**：normal
 
 **授权方式**：系统授权（system\_grant）
+
+**支持设备**：PC/2in1 | Tablet | Phone
 
 **起始版本**：15
 
@@ -653,3 +691,101 @@ content_hash: sha256:067f82936b3610c29cc4e721cf5d50bd6d4d5a5224a98dbd50d535c169a
 **支持设备**：2in1
 
 **起始版本**：23
+
+## ohos.permission.HDR\_BRIGHTNESS
+
+允许应用使用HDR提亮能力。
+
+获取该权限后，应用可为组件内容添加HDR提亮效果。
+
+**权限级别**：normal
+
+**授权方式**：系统授权（system\_grant）
+
+**支持设备**：General
+
+**起始版本**：24
+
+## ohos.permission.CONNECT\_OBJECTEDITOR\_EXTENSION
+
+允许应用查询ObjectEditorExtensionAbility信息和拉起ObjectEditorExtensionAbility组件。
+
+获取该权限后，应用可以查询当前可插入的嵌入内容类型，并编辑该类型的内容。
+
+**权限级别**：normal
+
+**授权方式**：系统授权（system\_grant）
+
+**支持设备**：PC/2in1 | Phone | Tablet
+
+**起始版本**：24
+
+## ohos.permission.QUERY\_VOLUME\_ENCRYPTION\_STATUS
+
+允许应用查询卷加解密状态。
+
+获取该权限后，应用可获取卷加解密状态、订阅卷加解密状态变化的系统公共事件等。
+
+**权限级别**：normal
+
+**授权方式**：系统授权（system\_grant）
+
+**支持设备**：PC/2in1
+
+**起始版本**：26.0.0
+
+## ohos.permission.STYLUS\_FRAME\_BOOST
+
+允许应用使用手写笔跟手性的增强接口。
+
+获取该权限后，应用可以优化手写效果跟手性，提升应用中使用手写笔书写场景的跟手性体验。
+
+**权限级别**：normal
+
+**授权方式**：系统授权（system\_grant）
+
+**支持设备**：Phone | PC/2in1 | Tablet
+
+**起始版本**：26.0.0
+
+## ohos.permission.GET\_ENTERPRISE\_CONFIG
+
+允许应用获取行业定制配置文件。
+
+行业定制配置文件中，包括用户壁纸、浏览器策略等配置文件。
+
+**权限级别**：normal
+
+**授权方式**：系统授权（system\_grant）
+
+**支持设备**：Phone | PC/2in1 | Tablet
+
+**起始版本**：20
+
+## ohos.permission.ACCESS\_CAR\_AUDIO
+
+允许应用访问和管理车载音频。
+
+获取该权限后，应用可以设置音频音效、管理音区等。
+
+**权限级别**：normal
+
+**授权方式**：系统授权（system\_grant）
+
+**支持设备**：Car
+
+**起始版本**：26.0.0
+
+## ohos.permission.DCAS\_RUN\_MODEL
+
+允许应用和服务接入端侧模型运行态管理。
+
+获取该权限后，应用可接入端侧模型运行态管理能力，完成模型的加载和推理。
+
+**权限级别**：normal
+
+**授权方式**：系统授权（system\_grant）
+
+**支持设备**：Phone | PC/2in1 | Tablet
+
+**起始版本**：26.0.0

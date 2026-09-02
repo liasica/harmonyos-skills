@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-98
 title: 开发非UI功能，使用ts开发而非ets开发对应用有哪些影响（内存、CPU、hap大小等方面）
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 开发非UI功能，使用ts开发而非ets开发对应用有哪些影响（内存、CPU、hap大小等方面）
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:50+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:16+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:3e00dcbb59f607f4facf4a4351a5b541f05766c058ead467fac00e456d0e9369
 ---
 

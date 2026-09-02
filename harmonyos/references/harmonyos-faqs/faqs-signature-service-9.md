@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-signature-
 title: 签名后生成的material目录是干什么用的
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 签名后生成的material目录是干什么用的
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:53+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:16+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:19b1d916edb1517d62d16eb8e5077e680b455fc85e47b2d6a1368bc9d904d7f4
 ---
 

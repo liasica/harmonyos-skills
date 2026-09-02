@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AuxiliaryPicture)
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.image (图片处理) > Interface (AuxiliaryPicture)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:08+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:9b861c9fe643241bf9ecd7afda4bc98a01b6ada05a4d08aec71297f3125bea1b
+scraped_at: 2026-09-02T15:02:29+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8d5b06205baa47ddce1af2f10e23585b937b0215d40db577188415cc7fb7d019
 ---
 
 AuxiliaryPicture类，用于读取或写入图像的辅助图数据以及获取图像的辅助图信息。目前支持的辅助图类型可参考[AuxiliaryPictureType](arkts-apis-image-e.md#auxiliarypicturetype13)。
@@ -14,22 +14,18 @@ AuxiliaryPicture类，用于读取或写入图像的辅助图数据以及获取�
 
 由于图片占用内存较大，所以当AuxiliaryPicture对象使用完成后，应主动调用[release](arkts-apis-image-auxiliarypicture.md#release13)方法及时释放对象。释放时应确保该实例的所有异步方法均执行完成，且后续不再使用该对象。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Interface首批接口从API version 13开始支持。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { image } from '@kit.ImageKit';
+```ts
+import { image } from '@kit.ImageKit';
 ```
 
 ## writePixelsFromBuffer13+
-
-PhonePC/2in1TabletTVWearable
 
 writePixelsFromBuffer(data: ArrayBuffer): Promise<void>
 
@@ -47,7 +43,7 @@ writePixelsFromBuffer(data: ArrayBuffer): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象。无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -57,32 +53,30 @@ writePixelsFromBuffer(data: ArrayBuffer): Promise<void>
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
 
-**示例:**
+**示例：**
 
-```
-1. async function WritePixelsFromBuffer(context: Context) {
-2. const resourceMgr = context.resourceManager;
-3. const rawFile = await resourceMgr.getRawFileContent("hdr.jpg"); // 需要支持hdr的图片。
-4. let ops: image.SourceOptions = {
-5. sourceDensity: 98,
-6. }
-7. let imageSource: image.ImageSource = image.createImageSource(rawFile.buffer as ArrayBuffer, ops);
-8. let commodityPixelMap: image.PixelMap = await imageSource.createPixelMap();
-9. let pictureObj: image.Picture = image.createPicture(commodityPixelMap);
-10. let auxPictureObj: image.AuxiliaryPicture | null = pictureObj.getAuxiliaryPicture(image.AuxiliaryPictureType.GAINMAP);
-11. if(auxPictureObj != null) {
-12. let auxBuffer: ArrayBuffer = await auxPictureObj.readPixelsToBuffer();
-13. await auxPictureObj.writePixelsFromBuffer(auxBuffer);
-14. console.info('Write pixels from buffer success.');
-15. } else {
-16. console.error('AuxPictureObj is null.');
-17. }
-18. }
+```ts
+async function WritePixelsFromBuffer(context: Context) {
+  const resourceMgr = context.resourceManager;
+  const rawFile = await resourceMgr.getRawFileContent("hdr.jpg"); // 需要支持hdr的图片。
+  let ops: image.SourceOptions = {
+    sourceDensity: 98,
+  }
+  let imageSource: image.ImageSource = image.createImageSource(rawFile.buffer as ArrayBuffer, ops);
+  let commodityPixelMap: image.PixelMap = await imageSource.createPixelMap();
+  let pictureObj: image.Picture = image.createPicture(commodityPixelMap);
+  let auxPictureObj: image.AuxiliaryPicture | null = pictureObj.getAuxiliaryPicture(image.AuxiliaryPictureType.GAINMAP);
+  if(auxPictureObj != null) {
+    let auxBuffer: ArrayBuffer = await auxPictureObj.readPixelsToBuffer();
+    await auxPictureObj.writePixelsFromBuffer(auxBuffer);
+    console.info('Succeeded in writing pixels from buffer.');
+  } else {
+    console.error('AuxPictureObj is null.');
+  }
+}
 ```
 
 ## readPixelsToBuffer13+
-
-PhonePC/2in1TabletTVWearable
 
 readPixelsToBuffer(): Promise<ArrayBuffer>
 
@@ -98,34 +92,32 @@ readPixelsToBuffer(): Promise<ArrayBuffer>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function ReadPixelsToBuffer(context: Context) {
-4. const resourceMgr = context.resourceManager;
-5. const rawFile = await resourceMgr.getRawFileContent("hdr.jpg"); // 需要支持hdr的图片。
-6. let ops: image.SourceOptions = {
-7. sourceDensity: 98,
-8. }
-9. let imageSource: image.ImageSource = image.createImageSource(rawFile.buffer as ArrayBuffer, ops);
-10. let commodityPixelMap: image.PixelMap = await imageSource.createPixelMap();
-11. let pictureObj: image.Picture = image.createPicture(commodityPixelMap);
-12. let auxPictureObj: image.AuxiliaryPicture | null = pictureObj.getAuxiliaryPicture(image.AuxiliaryPictureType.GAINMAP);
-13. if(auxPictureObj != null) {
-14. await auxPictureObj.readPixelsToBuffer().then((pixelsBuffer: ArrayBuffer) => {
-15. console.info('Read pixels to buffer success.' );
-16. }).catch((error: BusinessError) => {
-17. console.error(`Read pixels to buffer failed error.code: ${error.code}, error.message: ${error.message}`);
-18. });
-19. } else {
-20. console.error('AuxPictureObj is null.');
-21. }
-22. }
+async function ReadPixelsToBuffer(context: Context) {
+  const resourceMgr = context.resourceManager;
+  const rawFile = await resourceMgr.getRawFileContent("hdr.jpg"); // 需要支持hdr的图片。
+  let ops: image.SourceOptions = {
+    sourceDensity: 98,
+  }
+  let imageSource: image.ImageSource = image.createImageSource(rawFile.buffer as ArrayBuffer, ops);
+  let commodityPixelMap: image.PixelMap = await imageSource.createPixelMap();
+  let pictureObj: image.Picture = image.createPicture(commodityPixelMap);
+  let auxPictureObj: image.AuxiliaryPicture | null = pictureObj.getAuxiliaryPicture(image.AuxiliaryPictureType.GAINMAP);
+  if(auxPictureObj != null) {
+    await auxPictureObj.readPixelsToBuffer().then((pixelsBuffer: ArrayBuffer) => {
+      console.info('Succeeded in reading pixels to buffer success.' );
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to read pixels to buffer. error.code: ${error.code}, error.message: ${error.message}`);
+    });
+  } else {
+    console.error('AuxPictureObj is null.');
+  }
+}
 ```
 
 ## getType13+
-
-PhonePC/2in1TabletTVWearable
 
 getType(): AuxiliaryPictureType
 
@@ -141,20 +133,18 @@ getType(): AuxiliaryPictureType
 
 **示例：**
 
-```
-1. async function GetAuxiliaryPictureType(auxPictureObj : image.AuxiliaryPicture) {
-2. if (auxPictureObj != null) {
-3. let type: image.AuxiliaryPictureType = auxPictureObj.getType();
-4. console.info('Success get auxiliary picture type ' +  JSON.stringify(type));
-5. } else {
-6. console.error('Failed get auxiliary picture type ');
-7. }
-8. }
+```ts
+async function GetAuxiliaryPictureType(auxPictureObj : image.AuxiliaryPicture) {
+  if (auxPictureObj != null) {
+    let type: image.AuxiliaryPictureType = auxPictureObj.getType();
+    console.info('Succeeded in getting auxiliary picture type ' +  JSON.stringify(type));
+  } else {
+    console.error('Failed to get auxiliary picture type.');
+  }
+}
 ```
 
 ## setMetadata13+
-
-PhonePC/2in1TabletTVWearable
 
 setMetadata(metadataType: MetadataType, metadata: Metadata): Promise<void>
 
@@ -173,7 +163,7 @@ setMetadata(metadataType: MetadataType, metadata: Metadata): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象，无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -186,41 +176,39 @@ setMetadata(metadataType: MetadataType, metadata: Metadata): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. async function SetAuxPictureObjMetadata(exifContext: Context, auxPictureObj: image.AuxiliaryPicture) {
-4. const exifResourceMgr = exifContext.resourceManager;
-5. const exifRawFile = await exifResourceMgr.getRawFileContent("exif.jpg");// 图片包含exif metadata。
-6. let exifOps: image.SourceOptions = {
-7. sourceDensity: 98,
-8. }
-9. let exifImageSource: image.ImageSource = image.createImageSource(exifRawFile.buffer as ArrayBuffer, exifOps);
-10. let exifCommodityPixelMap: image.PixelMap = await exifImageSource.createPixelMap();
-11. let exifPictureObj: image.Picture = image.createPicture(exifCommodityPixelMap);
-12. if (exifPictureObj != null) {
-13. console.info('Create picture succeeded');
-14. } else {
-15. console.error('Create picture failed');
-16. }
+async function SetAuxPictureObjMetadata(exifContext: Context, auxPictureObj: image.AuxiliaryPicture) {
+  const exifResourceMgr = exifContext.resourceManager;
+  const exifRawFile = await exifResourceMgr.getRawFileContent("exif.jpg");// 图片包含exif metadata。
+  let exifOps: image.SourceOptions = {
+    sourceDensity: 98,
+  }
+  let exifImageSource: image.ImageSource = image.createImageSource(exifRawFile.buffer as ArrayBuffer, exifOps);
+  let exifCommodityPixelMap: image.PixelMap = await exifImageSource.createPixelMap();
+  let exifPictureObj: image.Picture = image.createPicture(exifCommodityPixelMap);
+  if (exifPictureObj != null) {
+    console.info('Succeeded in creating picture.');
+  } else {
+    console.error('Failed to create picture.');
+  }
 
-18. if (auxPictureObj != null) {
-19. let metadataType: image.MetadataType = image.MetadataType.EXIF_METADATA;
-20. let exifMetaData: image.Metadata = await exifPictureObj.getMetadata(metadataType);
-21. auxPictureObj.setMetadata(metadataType, exifMetaData).then(() => {
-22. console.info('Set metadata success');
-23. }).catch((error: BusinessError) => {
-24. console.error(`Set metadata failed.error.code: ${error.code}, error.message: ${error.message}`);
-25. });
-26. } else {
-27. console.error('AuxPictureObjMetaData is null');
-28. }
-29. }
+  if (auxPictureObj != null) {
+    let metadataType: image.MetadataType = image.MetadataType.EXIF_METADATA;
+    let exifMetaData: image.Metadata = await exifPictureObj.getMetadata(metadataType);
+    auxPictureObj.setMetadata(metadataType, exifMetaData).then(() => {
+      console.info('Succeeded in setting metadata.');
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to set metadata. error.code: ${error.code}, error.message: ${error.message}`);
+    });
+  } else {
+    console.error('AuxPictureObjMetaData is null');
+  }
+}
 ```
 
 ## getMetadata13+
-
-PhonePC/2in1TabletTVWearable
 
 getMetadata(metadataType: MetadataType): Promise<Metadata>
 
@@ -251,25 +239,23 @@ getMetadata(metadataType: MetadataType): Promise<Metadata>
 
 **示例：**
 
-```
-1. async function GetAuxPictureObjMetadata(auxPictureObj: image.AuxiliaryPicture) {
-2. if (auxPictureObj != null) {
-3. let metadataType: image.MetadataType = image.MetadataType.EXIF_METADATA;
-4. let auxPictureObjMetaData: image.Metadata | null = await auxPictureObj.getMetadata(metadataType);
-5. if (auxPictureObjMetaData != null) {
-6. console.info('Get AuxPictureObj Metadata success' );
-7. } else {
-8. console.error('Get AuxPictureObj Metadata failed');
-9. }
-10. } else {
-11. console.error('Get AuxPictureObj is null.');
-12. }
-13. }
+```ts
+async function GetAuxPictureObjMetadata(auxPictureObj: image.AuxiliaryPicture) {
+  if (auxPictureObj != null) {
+    let metadataType: image.MetadataType = image.MetadataType.EXIF_METADATA;
+    let auxPictureObjMetaData: image.Metadata | null = await auxPictureObj.getMetadata(metadataType);
+    if (auxPictureObjMetaData != null) {
+      console.info('Succeeded in getting AuxPictureObj Metadata.' );
+    } else {
+      console.error('Failed to get AuxPictureObj Metadata.');
+    }
+  } else {
+    console.error('Get AuxPictureObj is null.');
+  }
+}
 ```
 
 ## getAuxiliaryPictureInfo13+
-
-PhonePC/2in1TabletTVWearable
 
 getAuxiliaryPictureInfo(): AuxiliaryPictureInfo
 
@@ -285,23 +271,21 @@ getAuxiliaryPictureInfo(): AuxiliaryPictureInfo
 
 **示例：**
 
-```
-1. async function GetAuxiliaryPictureInfo(auxPictureObj: image.AuxiliaryPicture) {
-2. if(auxPictureObj != null) {
-3. let auxinfo: image.AuxiliaryPictureInfo = auxPictureObj.getAuxiliaryPictureInfo();
-4. console.info('GetAuxiliaryPictureInfo Type: ' + auxinfo.auxiliaryPictureType +
-5. ' height: ' + auxinfo.size.height + ' width: ' + auxinfo.size.width +
-6. ' rowStride: ' +  auxinfo.rowStride +  ' pixelFormat: ' + auxinfo.pixelFormat +
-7. ' colorSpace: ' +  auxinfo.colorSpace);
-8. } else {
-9. console.error('Get auxiliary picture information failed');
-10. }
-11. }
+```ts
+async function GetAuxiliaryPictureInfo(auxPictureObj: image.AuxiliaryPicture) {
+  if(auxPictureObj != null) {
+    let auxinfo: image.AuxiliaryPictureInfo = auxPictureObj.getAuxiliaryPictureInfo();
+    console.info('GetAuxiliaryPictureInfo Type: ' + auxinfo.auxiliaryPictureType +
+      ' height: ' + auxinfo.size.height + ' width: ' + auxinfo.size.width +
+      ' rowStride: ' +  auxinfo.rowStride +  ' pixelFormat: ' + auxinfo.pixelFormat +
+      ' colorSpace: ' +  auxinfo.colorSpace);
+  } else {
+    console.error('Failed to get auxiliary picture information.');
+  }
+}
 ```
 
 ## setAuxiliaryPictureInfo13+
-
-PhonePC/2in1TabletTVWearable
 
 setAuxiliaryPictureInfo(info: AuxiliaryPictureInfo): void
 
@@ -325,27 +309,25 @@ setAuxiliaryPictureInfo(info: AuxiliaryPictureInfo): void
 
 **示例：**
 
-```
-1. import { colorSpaceManager } from '@kit.ArkGraphics2D';
+```ts
+import { colorSpaceManager } from '@kit.ArkGraphics2D';
 
-3. async function SetAuxiliaryPictureInfo(auxPictureObj: image.AuxiliaryPicture) {
-4. if(auxPictureObj != null) {
-5. let colorSpaceName = colorSpaceManager.ColorSpace.SRGB;
-6. let info: image.AuxiliaryPictureInfo = {
-7. auxiliaryPictureType: image.AuxiliaryPictureType.GAINMAP,
-8. size: {height: 100, width: 200},
-9. pixelFormat: image.PixelMapFormat.RGBA_8888,
-10. rowStride: 0,
-11. colorSpace: colorSpaceManager.create(colorSpaceName),
-12. };
-13. auxPictureObj.setAuxiliaryPictureInfo(info);
-14. }
-15. }
+async function SetAuxiliaryPictureInfo(auxPictureObj: image.AuxiliaryPicture) {
+  if(auxPictureObj != null) {
+    let colorSpaceName = colorSpaceManager.ColorSpace.SRGB;
+    let info: image.AuxiliaryPictureInfo = {
+      auxiliaryPictureType: image.AuxiliaryPictureType.GAINMAP,
+      size: {height: 100, width: 200},
+      pixelFormat: image.PixelMapFormat.RGBA_8888,
+      rowStride: 0,
+      colorSpace: colorSpaceManager.create(colorSpaceName),
+    };
+    auxPictureObj.setAuxiliaryPictureInfo(info);
+  }
+}
 ```
 
 ## release13+
-
-PhonePC/2in1TabletTVWearable
 
 release():void
 
@@ -359,18 +341,18 @@ release():void
 
 **示例：**
 
-```
-1. async function Release(auxPictureObj: image.AuxiliaryPicture) {
-2. let funcName = "Release";
-3. if (auxPictureObj != null) {
-4. auxPictureObj.release();
-5. if (auxPictureObj.getType() == null) {
-6. console.info(funcName, 'Success !');
-7. } else {
-8. console.error(funcName, 'Failed !');
-9. }
-10. } else {
-11. console.error('PictureObj is null');
-12. }
-13. }
+```ts
+async function Release(auxPictureObj: image.AuxiliaryPicture) {
+  let funcName = "Release";
+  if (auxPictureObj != null) {
+    auxPictureObj.release();
+    if (auxPictureObj.getType() == null) {
+      console.info(funcName, 'Success !');
+    } else {
+      console.error(funcName, 'Failed !');
+    }
+  } else {
+    console.error('PictureObj is null');
+  }
+}
 ```

@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-animati
 title: 动画概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 动画概述
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:08+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:9a9d1df490954f0d468d45cf14534cbf77c2e05f18777ef4d134d4d2ff978e7f
+scraped_at: 2026-09-02T14:49:51+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:596c6c24ee4f7a9dec277058e34262e59e19f4d8a64bd17d684e62dbf9c80833
 ---
 
 UI（用户界面）是用户与设备进行交互的界面，包含各种可视化组件（如按钮、列表等）。属性作为接口，用于控制组件的行为，属性值的变化会引起UI的变化。动画可在UI发生改变时，添加流畅的过渡效果，使属性值从起始状态逐渐变化到终点状态，避免因瞬间变化造成的突兀感，保持用户的视觉焦点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/uNsRpYuaSSWtpjiM4Norjw/zh-cn_image_0000002558604814.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/q5PtBSfaTNyBZvaR0g1fcw/zh-cn_image_0000002706833772.gif)
 
 动画的目的包括：
 
@@ -34,5 +34,5 @@ ArkUI中提供多种动画接口（[属性动画](arkts-attribute-animation-over
 * [组件动画](arkts-component-animation.md)：组件提供默认动效（如[List](../harmonyos-references/ts-container-list.md)的滑动动效）便于开发者使用，同时部分组件还支持定制化动效。
 * [动画曲线](arkts-traditional-curve.md)：介绍传统曲线和弹簧曲线的特点和使用方式。动画曲线影响属性值的运动规律，进而决定界面的动画效果。
 * [动画衔接](arkts-animation-smoothing.md)：介绍如何实现动画与动画之间、手势与动画之间的自然过渡。
-* [动画效果](arkts-blur-effect.md)：介绍模糊、大阴影和颜色渐变等高阶效果接口的使用方法。
+* [动态模糊](arkts-blur-effect.md)：介绍模糊、大阴影和颜色渐变等高阶效果接口的使用方法。
 * [帧动画](arkts-animator.md)：系统侧提供在动画过程中的插值结果，由开发者每帧修改属性值产生动画，相比于属性动画，有可实现暂停的优点，但性能不如属性动画。

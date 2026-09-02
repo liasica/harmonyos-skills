@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fileguard-kia
 title: 设置KIA文件列表
 breadcrumb: 指南 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > 文件分级管控 > 设置KIA文件列表
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:07+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fb0c34265ab8b0e3d96a2d6d1ace9e7687d846ac99678f9a7eb672fa0d0a495a
+scraped_at: 2026-09-02T14:50:02+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:0d09770aaae6a07815682237262dfebcc7a672391fc05fd3b4a798f9ab990a10
 ---
 
 ## 场景介绍
@@ -20,54 +20,96 @@ Enterprise Data Guard Kit为应用提供设置KIA文件列表的能力，Harmony
 | --- | --- |
 | [setKiaFilelist](../harmonyos-references/dataguard-fileguard.md#setkiafilelist)(filelist: string, callback: AsyncCallback<void>): void | 使用Callback方式设置KIA文件列表。 |
 | [setKiaFilelist](../harmonyos-references/dataguard-fileguard.md#setkiafilelist-1)(filelist: string): Promise<void> | 使用Promise方式设置KIA文件列表。 |
+| [isKia](../harmonyos-references/dataguard-fileguard.md#iskia)(path: string): boolean | 检查文件或文件夹是否是KIA。 |
 
 ## 开发步骤
 
 1. 导入模块。
 
+   ```typescript
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { fileGuard } from '@kit.EnterpriseDataGuardKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
-   1. import { fileGuard } from '@kit.EnterpriseDataGuardKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
-   ```
-2. 初始化[FileGuard](../harmonyos-references/dataguard-fileguard.md#fileguard)对象guard，将KIA文件列表对象转为字符串，调用接口setKiaFilelist，设置KIA文件列表。
+2. 初始化[FileGuard](../harmonyos-references/dataguard-fileguard.md#fileguard)对象guard，将KIA文件列表对象转为字符串，调用接口[setKiaFilelist](../harmonyos-references/dataguard-fileguard.md#setkiafilelist)，设置KIA文件列表。
 
    * 通过回调函数方式，设置KIA文件列表。
 
-     ```
-     1. function setKiaFilelistCallback() {
-     2. let guard: fileGuard.FileGuard = new fileGuard.FileGuard();
-     3. let fileListStr: string =
-     4. '{"kia_filelist":["/data/service/el2/{account_id}/hmdfs/account/files/Docs/Documents/1.txt",' +
-     5. '"/data/service/el2/{account_id}/hmdfs/account/files/Docs/Documents/2.txt"],' +
-     6. '"kia_keyword":["key1","key2","key3"],' +
-     7. '"kia_suffix":[".java", ".html", ".cpp", ".docx"],' +
-     8. '"compress_suffix":[".rar", ".zip"],' +
-     9. '"kia_update_type":0}';
-     10. guard.setKiaFilelist(fileListStr, (err: BusinessError) => {
-     11. if (err) {
-     12. console.error(`Failed to set the list of KIA file. Code: ${err.code}, message: ${err.message}.`);
-     13. } else {
-     14. console.info(`Succeeded in setting the list of KIA file.`);
-     15. }
-     16. });
-     17. }
+     ```typescript
+     const TAG: string = 'FileGuard_KIAFileList';
+     const DOMAIN: number = 0x0000;
+
+     /**
+      * 设置KIA文件列表。使用callback异步回调。
+      * @param accountId: 用户ID
+      */
+     function setKiaFilelistCallback(accountId: number) {
+       let guard: fileGuard.FileGuard = new fileGuard.FileGuard();
+       let fileListStr: string =
+         `{"kia_filelist":["/data/service/el2/${accountId}/hmdfs/account/files/Docs/Documents/3.txt",` +
+           `"/data/service/el2/${accountId}/hmdfs/account/files/Docs/Documents/4.txt"],` +
+           `"kia_keyword":["key1","key2","key3"],` +
+           `"kia_suffix":[".java", ".html", ".cpp", ".docx"],` +
+           `"compress_suffix":[".rar", ".zip"],` +
+           `"user_id":${accountId},` +
+           `"kia_update_type":1}`;
+       guard.setKiaFilelist(fileListStr, (err: BusinessError) => {
+         if (err) {
+           hilog.error(DOMAIN, TAG, `Failed to set the list of KIA file. Code: ${err.code}, message: ${err.message}.`);
+         } else {
+           hilog.info(DOMAIN, TAG, `Succeeded in setting the list of KIA file.`);
+         }
+       });
+     }
      ```
    * 通过Promise方式，设置KIA文件列表。
 
+     ```typescript
+     const TAG: string = 'FileGuard_KIAFileList';
+     const DOMAIN: number = 0x0000;
+
+     // ...
+     /**
+      * 设置KIA文件列表。使用Promise异步回调。
+      * @param accountId: 用户ID
+      */
+     function setKiaFilelistPromise(accountId: number) {
+       let guard: fileGuard.FileGuard = new fileGuard.FileGuard();
+       let fileListStr: string =
+         `{"kia_filelist":["/data/service/el2/${accountId}/hmdfs/account/files/Docs/Documents/1.txt",` +
+           `"/data/service/el2/${accountId}/hmdfs/account/files/Docs/Documents/2.txt"],` +
+           `"kia_keyword":["key1","key2","key3"],` +
+           `"kia_suffix":[".java", ".html"],` +
+           `"compress_suffix":[".rar"],` +
+           `"user_id":${accountId},` +
+           `"kia_update_type":0}`;
+       guard.setKiaFilelist(fileListStr).then(() => {
+         hilog.info(DOMAIN, TAG, `Succeeded in setting the list of KIA file.`);
+       }).catch((err: BusinessError) => {
+         hilog.error(DOMAIN, TAG, `Failed to set the list of KIA file. Code: ${err.code}, message: ${err.message}.`);
+       });
+     }
      ```
-     1. function setKiaFilelistPromise() {
-     2. let guard: fileGuard.FileGuard = new fileGuard.FileGuard();
-     3. let fileListStr: string =
-     4. '{"kia_filelist":["/data/service/el2/{account_id}/hmdfs/account/files/Docs/Documents/1.txt",' +
-     5. '"/data/service/el2/{account_id}/hmdfs/account/files/Docs/Documents/2.txt"],' +
-     6. '"kia_keyword":["key1","key2","key3"],' +
-     7. '"kia_suffix":[".java", ".html", ".cpp", ".docx"],' +
-     8. '"compress_suffix":[".rar", ".zip"],' +
-     9. '"kia_update_type":0}';
-     10. guard.setKiaFilelist(fileListStr).then(() => {
-     11. console.info(`Succeeded in setting the list of KIA file.`);
-     12. }).catch((err: BusinessError) => {
-     13. console.error(`Failed to set the list of KIA file. Code: ${err.code}, message: ${err.message}.`);
-     14. });
-     15. }
-     ```
+3. 初始化[FileGuard](../harmonyos-references/dataguard-fileguard.md#fileguard)对象guard，调用接口[isKia](../harmonyos-references/dataguard-fileguard.md#iskia)，检查该文件或文件夹是否是KIA。
+
+   ```typescript
+   const TAG: string = 'FileGuard_KIAFileList';
+   const DOMAIN: number = 0x0000;
+
+   // ...
+   /**
+    * 是否KIA文件
+    * @param accountId: 用户ID
+    */
+   function isKia(accountId: number) {
+     try {
+       let guard: fileGuard.FileGuard = new fileGuard.FileGuard();
+       let path: string = `/data/service/el2/${accountId}/hmdfs/account/files/Docs/Documents/1.txt`;
+       let isKiaResult: boolean = guard.isKia(path);
+       hilog.info(DOMAIN, TAG, `Succeeded in determining whether the file is a KIA file. isKia: ${isKiaResult}`);
+     } catch (e) {
+       hilog.error(DOMAIN, TAG,
+         `Failed to determine whether the file is a KIA file. Code: ${e.code}, message: ${e.message}.`);
+     }
+   }
+   ```

@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (VideoOutput)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (VideoOutput)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:40+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c9e1859c0ea2d8611cd9d3e8c78c22d2eae433446b5555d87b4b103c85738689
+scraped_at: 2026-09-02T15:02:27+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:52937ffc065db31cb26769d65caaf1cf578a09094e4c24090623f3b7b58e1808
 ---
 
 录像会话中使用的输出信息，继承[CameraOutput](arkts-apis-camera-cameraoutput.md)。
 
-说明
+**说明** 
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { camera } from '@kit.CameraKit';
+```ts
+import { camera } from '@kit.CameraKit';
 ```
 
 ## start
-
-PhonePC/2in1TabletTVWearable
 
 start(callback: AsyncCallback<void>): void
 
@@ -51,23 +47,21 @@ start(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function startVideoOutput(videoOutput: camera.VideoOutput): void {
-4. videoOutput.start((err: BusinessError) => {
-5. if (err.code) {
-6. console.error(`Failed to start the video output, error code: ${err.code}.`);
-7. return;
-8. }
-9. console.info('Callback invoked to indicate the video output start success.');
-10. });
-11. }
+function startVideoOutput(videoOutput: camera.VideoOutput): void {
+  videoOutput.start((err: BusinessError) => {
+    if (err.code) {
+      console.error(`Failed to start the video output, error code: ${err.code}.`);
+      return;
+    }
+    console.info('Callback invoked to indicate the video output start success.');
+  });
+}
 ```
 
 ## start
-
-PhonePC/2in1TabletTVWearable
 
 start(): Promise<void>
 
@@ -94,21 +88,19 @@ start(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function startVideoOutput(videoOutput: camera.VideoOutput): void {
-4. videoOutput.start().then(() => {
-5. console.info('Promise returned to indicate that start method execution success.');
-6. }).catch((error: BusinessError) => {
-7. console.error(`Failed to video output start, error code: ${error.code}.`);
-8. });
-9. }
+function startVideoOutput(videoOutput: camera.VideoOutput): void {
+  videoOutput.start().then(() => {
+    console.info('Promise returned to indicate that start method execution success.');
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to video output start, error code: ${error.code}.`);
+  });
+}
 ```
 
 ## stop
-
-PhonePC/2in1TabletTVWearable
 
 stop(callback: AsyncCallback<void>): void
 
@@ -126,17 +118,15 @@ stop(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. function stopVideoOutput(videoOutput: camera.VideoOutput): void {
-2. videoOutput.stop(() => {
-3. console.info('Callback invoked to indicate the video output stop success.');
-4. });
-5. }
+```ts
+function stopVideoOutput(videoOutput: camera.VideoOutput): void {
+  videoOutput.stop(() => {
+    console.info('Callback invoked to indicate the video output stop success.');
+  });
+}
 ```
 
 ## stop
-
-PhonePC/2in1TabletTVWearable
 
 stop(): Promise<void>
 
@@ -154,27 +144,25 @@ stop(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function stopVideoOutput(videoOutput: camera.VideoOutput): void {
-4. videoOutput.stop().then(() => {
-5. console.info('Promise returned to indicate that stop method execution success.');
-6. }).catch((error: BusinessError) => {
-7. console.error(`Failed to video output stop, error code: ${error.code}.`);
-8. });
-9. }
+function stopVideoOutput(videoOutput: camera.VideoOutput): void {
+  videoOutput.stop().then(() => {
+    console.info('Promise returned to indicate that stop method execution success.');
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to video output stop, error code: ${error.code}.`);
+  });
+}
 ```
 
 ## on('frameStart')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'frameStart', callback: AsyncCallback<void>): void
 
 监听录像开始，通过注册回调函数获取结果。使用callback异步回调。
 
-说明
+**说明** 
 
 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
@@ -191,31 +179,29 @@ on(type: 'frameStart', callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function callback(err: BusinessError): void {
-4. if (err.code) {
-5. console.error(`Callback Error, errorCode: ${err.code}`);
-6. return;
-7. }
-8. console.info('Video frame started');
-9. }
+function callback(err: BusinessError): void {
+  if (err.code) {
+    console.error(`Callback Error, errorCode: ${err.code}`);
+    return;
+  }
+  console.info('Video frame started');
+}
 
-11. function registerVideoOutputFrameStart(videoOutput: camera.VideoOutput): void {
-12. videoOutput.on('frameStart', callback);
-13. }
+function registerVideoOutputFrameStart(videoOutput: camera.VideoOutput): void {
+  videoOutput.on('frameStart', callback);
+}
 ```
 
 ## off('frameStart')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'frameStart', callback?: AsyncCallback<void>): void
 
 注销监听录像开始。
 
-说明
+**说明** 
 
 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
@@ -232,15 +218,13 @@ off(type: 'frameStart', callback?: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. function unregisterVideoOutputFrameStart(videoOutput: camera.VideoOutput): void {
-2. videoOutput.off('frameStart');
-3. }
+```ts
+function unregisterVideoOutputFrameStart(videoOutput: camera.VideoOutput): void {
+  videoOutput.off('frameStart');
+}
 ```
 
 ## on('frameEnd')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'frameEnd', callback: AsyncCallback<void>): void
 
@@ -259,25 +243,23 @@ on(type: 'frameEnd', callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function callback(err: BusinessError): void {
-4. if (err.code) {
-5. console.error(`Callback Error, errorCode: ${err.code}`);
-6. return;
-7. }
-8. console.info('Video frame ended');
-9. }
+function callback(err: BusinessError): void {
+  if (err.code) {
+    console.error(`Callback Error, errorCode: ${err.code}`);
+    return;
+  }
+  console.info('Video frame ended');
+}
 
-11. function registerVideoOutputFrameEnd(videoOutput: camera.VideoOutput): void {
-12. videoOutput.on('frameEnd', callback);
-13. }
+function registerVideoOutputFrameEnd(videoOutput: camera.VideoOutput): void {
+  videoOutput.on('frameEnd', callback);
+}
 ```
 
 ## off('frameEnd')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'frameEnd', callback?: AsyncCallback<void>): void
 
@@ -296,21 +278,19 @@ off(type: 'frameEnd', callback?: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. function unregisterVideoOutputFrameEnd(videoOutput: camera.VideoOutput): void {
-2. videoOutput.off('frameEnd');
-3. }
+```ts
+function unregisterVideoOutputFrameEnd(videoOutput: camera.VideoOutput): void {
+  videoOutput.off('frameEnd');
+}
 ```
 
 ## on('error')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'error', callback: ErrorCallback): void
 
 监听录像输出发生错误，通过注册回调函数获取结果。使用callback异步回调。
 
-说明
+**说明** 
 
 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
@@ -327,21 +307,19 @@ on(type: 'error', callback: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function callback(err: BusinessError): void {
-4. console.error(`Video output error code: ${err.code}`);
-5. }
+function callback(err: BusinessError): void {
+  console.error(`Video output error code: ${err.code}`);
+}
 
-7. function registerVideoOutputError(videoOutput: camera.VideoOutput): void {
-8. videoOutput.on('error', callback);
-9. }
+function registerVideoOutputError(videoOutput: camera.VideoOutput): void {
+  videoOutput.on('error', callback);
+}
 ```
 
 ## off('error')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -360,15 +338,13 @@ off(type: 'error', callback?: ErrorCallback): void
 
 **示例：**
 
-```
-1. function unregisterVideoOutputError(videoOutput: camera.VideoOutput): void {
-2. videoOutput.off('error');
-3. }
+```ts
+function unregisterVideoOutputError(videoOutput: camera.VideoOutput): void {
+  videoOutput.off('error');
+}
 ```
 
 ## getSupportedFrameRates12+
-
-PhonePC/2in1TabletTVWearable
 
 getSupportedFrameRates(): Array<FrameRateRange>
 
@@ -386,16 +362,14 @@ getSupportedFrameRates(): Array<FrameRateRange>
 
 **示例：**
 
-```
-1. function getSupportedFrameRates(videoOutput: camera.VideoOutput): Array<camera.FrameRateRange> {
-2. let supportedFrameRatesArray: Array<camera.FrameRateRange> = videoOutput.getSupportedFrameRates();
-3. return supportedFrameRatesArray;
-4. }
+```ts
+function getSupportedFrameRates(videoOutput: camera.VideoOutput): Array<camera.FrameRateRange> {
+  let supportedFrameRatesArray: Array<camera.FrameRateRange> = videoOutput.getSupportedFrameRates();
+  return supportedFrameRatesArray;
+}
 ```
 
 ## setFrameRate12+
-
-PhonePC/2in1TabletTVWearable
 
 setFrameRate(minFps: number, maxFps: number): void
 
@@ -403,7 +377,7 @@ setFrameRate(minFps: number, maxFps: number): void
 
 进行设置前，可通过[getSupportedFrameRates](arkts-apis-camera-videooutput.md#getsupportedframerates12)查询支持的帧率范围。
 
-说明
+**说明** 
 
 仅在[PhotoSession](arkts-apis-camera-photosession.md)或[VideoSession](arkts-apis-camera-videosession.md)模式下支持。
 
@@ -431,15 +405,13 @@ setFrameRate(minFps: number, maxFps: number): void
 
 **示例：**
 
-```
-1. function setFrameRateRange(videoOutput: camera.VideoOutput, frameRateRange: Array<number>): void {
-2. videoOutput.setFrameRate(frameRateRange[0], frameRateRange[1]);
-3. }
+```ts
+function setFrameRateRange(videoOutput: camera.VideoOutput, frameRateRange: Array<number>): void {
+  videoOutput.setFrameRate(frameRateRange[0], frameRateRange[1]);
+}
 ```
 
 ## getActiveFrameRate12+
-
-PhonePC/2in1TabletTVWearable
 
 getActiveFrameRate(): FrameRateRange
 
@@ -459,16 +431,14 @@ getActiveFrameRate(): FrameRateRange
 
 **示例：**
 
-```
-1. function getActiveFrameRate(videoOutput: camera.VideoOutput): camera.FrameRateRange {
-2. let activeFrameRate: camera.FrameRateRange = videoOutput.getActiveFrameRate();
-3. return activeFrameRate;
-4. }
+```ts
+function getActiveFrameRate(videoOutput: camera.VideoOutput): camera.FrameRateRange {
+  let activeFrameRate: camera.FrameRateRange = videoOutput.getActiveFrameRate();
+  return activeFrameRate;
+}
 ```
 
 ## getActiveProfile12+
-
-PhonePC/2in1TabletTVWearable
 
 getActiveProfile(): VideoProfile
 
@@ -494,25 +464,23 @@ getActiveProfile(): VideoProfile
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function testGetActiveProfile(videoOutput: camera.VideoOutput): camera.Profile | undefined {
-4. let activeProfile: camera.VideoProfile | undefined = undefined;
-5. try {
-6. activeProfile = videoOutput.getActiveProfile();
-7. } catch (error) {
-8. // 失败返回错误码error.code并处理。
-9. let err = error as BusinessError;
-10. console.error(`The videoOutput.getActiveProfile call failed. error code: ${err.code}`);
-11. }
-12. return activeProfile;
-13. }
+function testGetActiveProfile(videoOutput: camera.VideoOutput): camera.Profile | undefined {
+  let activeProfile: camera.VideoProfile | undefined = undefined;
+  try {
+    activeProfile = videoOutput.getActiveProfile();
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The videoOutput.getActiveProfile call failed. error code: ${err.code}`);
+  }
+  return activeProfile;
+}
 ```
 
 ## isMirrorSupported15+
-
-PhonePC/2in1TabletTVWearable
 
 isMirrorSupported(): boolean
 
@@ -530,22 +498,20 @@ isMirrorSupported(): boolean
 
 **示例：**
 
-```
-1. function testIsMirrorSupported(videoOutput: camera.VideoOutput): boolean {
-2. let isSupported: boolean = videoOutput.isMirrorSupported();
-3. return isSupported;
-4. }
+```ts
+function testIsMirrorSupported(videoOutput: camera.VideoOutput): boolean {
+  let isSupported: boolean = videoOutput.isMirrorSupported();
+  return isSupported;
+}
 ```
 
 ## enableMirror15+
-
-PhonePC/2in1TabletTVWearable
 
 enableMirror(enabled: boolean): void
 
 启用/关闭镜像录像。
 
-* 调用该接口前，需要通过[isMirrorSupported](arkts-apis-camera-videooutput.md#ismirrorsupported15)查询是否支录像镜像功能。
+* 调用该接口前，需要通过[isMirrorSupported](arkts-apis-camera-videooutput.md#ismirrorsupported15)查询是否支持录像镜像功能。
 * 启用/关闭录像镜像后，需要通过[getVideoRotation](arkts-apis-camera-videooutput.md#getvideorotation12)获取录像旋转角度以及[updateRotation](arkts-apis-media-avrecorder.md#updaterotation12)更新旋转角度。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
@@ -569,24 +535,22 @@ enableMirror(enabled: boolean): void
 
 **示例：**
 
-```
-1. import { camera } from '@kit.CameraKit';
-2. import { media } from '@kit.MediaKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { camera } from '@kit.CameraKit';
+import { media } from '@kit.MediaKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. function enableMirror(videoOutput: camera.VideoOutput, mirrorMode: boolean, aVRecorder: media.AVRecorder, deviceDegree : number): void {
-6. try {
-7. videoOutput.enableMirror(mirrorMode);
-8. aVRecorder.updateRotation(videoOutput.getVideoRotation(deviceDegree));
-9. } catch (error) {
-10. let err = error as BusinessError;
-11. }
-12. }
+function enableMirror(videoOutput: camera.VideoOutput, mirrorMode: boolean, aVRecorder: media.AVRecorder, deviceDegree : number): void {
+    try {
+        videoOutput.enableMirror(mirrorMode);
+        aVRecorder.updateRotation(videoOutput.getVideoRotation(deviceDegree));
+    } catch (error) {
+        let err = error as BusinessError;
+    }
+}
 ```
 
 ## getVideoRotation12+
-
-PhonePC/2in1TabletTVWearable
 
 getVideoRotation(deviceDegree?: number): ImageRotation
 
@@ -619,68 +583,69 @@ getVideoRotation(deviceDegree?: number): ImageRotation
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 7400101 | Parameter missing or parameter type incorrect.  适用版本：12-22 |
 | 7400201 | Camera service fatal error. |
 
 **示例：**
 
-```
-1. import { camera } from '@kit.CameraKit';
-2. import { Decimal } from '@kit.ArkTS';
-3. import { sensor } from '@kit.SensorServiceKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { camera } from '@kit.CameraKit';
+import { Decimal } from '@kit.ArkTS';
+import { sensor } from '@kit.SensorServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. async function getVideoRotation(videoOutput: camera.VideoOutput): Promise<camera.ImageRotation> {
-7. let deviceDegree = await getDeviceDegree();
-8. let videoRotation: camera.ImageRotation = camera.ImageRotation.ROTATION_0;
-9. try {
-10. videoRotation = videoOutput.getVideoRotation(deviceDegree);
-11. } catch (error) {
-12. let err = error as BusinessError;
-13. console.error('Failed to get video rotation: ' + JSON.stringify(err));
-14. }
-15. return videoRotation;
-16. }
+async function getVideoRotation(videoOutput: camera.VideoOutput): Promise<camera.ImageRotation> {
+  let deviceDegree = await getDeviceDegree();
+  let videoRotation: camera.ImageRotation = camera.ImageRotation.ROTATION_0;
+  try {
+    videoRotation = videoOutput.getVideoRotation(deviceDegree);
+  } catch (error) {
+    let err = error as BusinessError;
+    console.error('Failed to get video rotation: ' + JSON.stringify(err));
+  }
+  return videoRotation;
+}
 
-18. function testGetVideoRotationWithOutParam(videoOutput: camera.VideoOutput): camera.ImageRotation {
-19. let videoRotation: camera.ImageRotation = camera.ImageRotation.ROTATION_0;
-20. try {
-21. videoRotation = videoOutput.getVideoRotation();
-22. console.info(`Video rotation is: ${videoRotation}`);
-23. } catch (error) {
-24. // 失败返回错误码error.code并处理。
-25. let err = error as BusinessError;
-26. console.error(`The videoOutput.testGetVideoRotationWithOutParam call failed. error code: ${err.code}`);
-27. }
-28. return videoRotation;
-29. }
+function testGetVideoRotationWithOutParam(videoOutput: camera.VideoOutput): camera.ImageRotation {
+  let videoRotation: camera.ImageRotation = camera.ImageRotation.ROTATION_0;
+  try {
+    videoRotation = videoOutput.getVideoRotation();
+    console.info(`Video rotation is: ${videoRotation}`);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The videoOutput.testGetVideoRotationWithOutParam call failed. error code: ${err.code}`);
+  }
+  return videoRotation;
+}
 
-31. // 获取设备旋转角度
-32. function getDeviceDegree(): Promise<number> {
-33. return new Promise<number>((resolve) => {
-34. try {
-35. sensor.once(sensor.SensorId.GRAVITY, (data: sensor.GravityResponse) => {
-36. console.info('Succeeded in invoking once. X-coordinate component: ' + data.x);
-37. console.info('Succeeded in invoking once. Y-coordinate component: ' + data.y);
-38. console.info('Succeeded in invoking once. Z-coordinate component: ' + data.z);
-39. let x = data.x;
-40. let y = data.y;
-41. let z = data.z;
-42. let deviceDegree: number;
-43. if ((x * x + y * y) * 3 < z * z) {
-44. deviceDegree = -1;
-45. } else {
-46. let sd: Decimal = Decimal.atan2(y, -x);
-47. let sc: Decimal = Decimal.round(Number(sd) / 3.141592653589 * 180)
-48. deviceDegree = 90 - Number(sc);
-49. deviceDegree = deviceDegree >= 0 ? deviceDegree% 360 : deviceDegree% 360 + 360;
-50. }
-51. resolve(deviceDegree);
-52. });
-53. } catch (error) {
-54. let err = error as BusinessError;
-55. console.error('Failed to register gravity sensor: ' + JSON.stringify(err));
-56. resolve(-1); // 异常时返回默认值
-57. }
-58. });
-59. }
+// 获取设备旋转角度
+function getDeviceDegree(): Promise<number> {
+  return new Promise<number>((resolve) => {
+    try {
+      sensor.once(sensor.SensorId.GRAVITY, (data: sensor.GravityResponse) => {
+        console.info('Succeeded in invoking once. X-coordinate component: ' + data.x);
+        console.info('Succeeded in invoking once. Y-coordinate component: ' + data.y);
+        console.info('Succeeded in invoking once. Z-coordinate component: ' + data.z);
+        let x = data.x;
+        let y = data.y;
+        let z = data.z;
+        let deviceDegree: number;
+        if ((x * x + y * y) * 3 < z * z) {
+          deviceDegree = -1;
+        } else {
+          let sd: Decimal = Decimal.atan2(y, -x);
+          let sc: Decimal = Decimal.round(Number(sd) / 3.141592653589 * 180)
+          deviceDegree = 90 - Number(sc);
+          deviceDegree = deviceDegree >= 0 ? deviceDegree% 360 : deviceDegree% 360 + 360;
+        }
+        resolve(deviceDegree);
+      });
+    } catch (error) {
+      let err = error as BusinessError;
+      console.error('Failed to register gravity sensor: ' + JSON.stringify(err));
+      resolve(-1); // 异常时返回默认值
+    }
+  });
+}
 ```

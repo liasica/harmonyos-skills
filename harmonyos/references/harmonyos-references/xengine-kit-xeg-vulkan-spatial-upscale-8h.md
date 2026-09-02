@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-k
 title: xeg_vulkan_spatial_upscale.h
 breadcrumb: API参考 > 图形 > XEngine Kit（GPU加速引擎服务） > C API > 头文件和结构体 > 头文件 > xeg_vulkan_spatial_upscale.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f0bd7dc49fbc002871501b0cc04d2b1decf3ee987da336a99fd0e60ad08484a6
+scraped_at: 2026-09-02T15:02:49+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:67497e4d5da3bb97e8f00c3943a5c190fcb8a4362034d02633fdd9b3a9ae1235
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 XEngine空域GPU超分特性Vulkan接口。使用此头文件的接口前需要通过[HMS\_XEG\_EnumerateDeviceExtensionProperties](xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询[XEG\_SPATIAL\_UPSCALE\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_spatial_upscale_extension_name)扩展可用。
 
@@ -26,11 +24,7 @@ XEngine空域GPU超分特性Vulkan接口。使用此头文件的接口前需要�
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 结构体
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -38,8 +32,6 @@ PhonePC/2in1TabletTV
 | struct [XEG\_SpatialUpscaleDescription](xengine-kit-xeg-spatialupscaledescription.md) | 此结构体描述下发空域GPU超分渲染命令时需要的图像信息。 |
 
 ### 类型定义
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -51,8 +43,6 @@ PhonePC/2in1TabletTV
 | typedef void(VKAPI\_PTR \* [PFN\_HMS\_XEG\_DestroySpatialUpscale](xengine-kit-xengine.md#pfn_hms_xeg_destroyspatialupscale)) ([XEG\_SpatialUpscale](xengine-kit-xengine.md#xeg_spatialupscale) xegSpatialUpscale) | 销毁[XEG\_SpatialUpscale](xengine-kit-xengine.md#xeg_spatialupscale)对象的函数指针定义。 |
 
 ### 函数
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |

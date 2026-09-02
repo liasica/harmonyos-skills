@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-app-crash-cpp-way
 title: CppCrash类问题分析方法
-breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 应用异常退出类问题分析方法 > CppCrash类问题分析方法
+breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 开发态稳定性分析 > 应用崩溃类问题分析 > CppCrash类问题分析方法
 category: best-practices
-scraped_at: 2026-04-29T14:14:10+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:64296d4dbfc9be01035d770dfb327c6541876a5f4cdee7fd7bd31151bf0f4946
+scraped_at: 2026-09-02T15:03:23+08:00
+doc_updated_at: 2026-07-22
+content_hash: sha256:7ec48d804e2883986051924edb477ae588a4a330e75e2a0754a11789713ec480
 ---
 
 本文分为[获取日志](bpta-stability-app-crash-cpp-way.md#section7724104184817)、[分析步骤](bpta-stability-app-crash-cpp-way.md#section33392833014)、[CppCrash常见问题分类与原因](bpta-stability-app-crash-cpp-way.md#section253684811495)三个小节，重点介绍如何获取CppCrash日志、如何查看日志以及如何分析问题。开发者可阅读[应用崩溃类问题检测方法](bpta-stability-runtime-crash-detection.md)了解系统检测CppCrash问题的原理和机制。开发者还可以参考[CppCrash类问题案例](bpta-scenario-stability-cppcrash.md)，结合实际案例分析CppCrash类问题。
@@ -32,10 +32,10 @@ content_hash: sha256:64296d4dbfc9be01035d770dfb327c6541876a5f4cdee7fd7bd31151bf0
 
 本节只介绍常见信号值对应的崩溃类型，其他信号请参见[系统处理的崩溃信号](../harmonyos-guides/cppcrash-guidelines.md#系统处理的崩溃信号)。
 
-```
-1. Reason:Signal:SIGSEGV(SI_TKILL)@0x000027e0 from:10208:0
-2. 字段解释如下：
-3. Reason:Signal:信号值(tkill()函数信号)@崩溃地址 from:发送信号的Pid:发送信号的Uid
+```text
+Reason:Signal:SIGSEGV(SI_TKILL)@0x000027e0 from:10208:0
+字段解释如下：
+Reason:Signal:信号值(tkill()函数信号)@崩溃地址 from:发送信号的Pid:发送信号的Uid
 ```
 
 常见的崩溃：
@@ -49,17 +49,17 @@ CppCrash日志中Signal会携带崩溃时访问的地址，如非法访问地址
 
 ### 步骤三：查看寄存器和栈地址范围
 
-```
-1. Registers:  <- 故障现场寄存器
-2. r0:00000000 r1:ffc09854 r2:00000000 r3:00000008
-3. r4:00000000 r5:fffff000 r6:0000000a r7:000000af
-4. r8:ffc09919 r9:ffc09930 r10:00000000
-5. fp:ffc098e8 ip:005b76e4 sp:ffbe8daa lr:005ade99 pc:f7bb0400
-6. cpsr:20870010  <- 状态寄存器（arm32架构为cpsr，aarch64架构为pstate和esr）
-7. ...
-8. Maps:
-9. ...
-10. ffbe9000-ffc0a000 rw-p 00000000 [stack] <- 栈地址范围，sp小于栈的低地址ffbe9000
+```text
+Registers:  <- 故障现场寄存器
+r0:00000000 r1:ffc09854 r2:00000000 r3:00000008
+r4:00000000 r5:fffff000 r6:0000000a r7:000000af
+r8:ffc09919 r9:ffc09930 r10:00000000
+fp:ffc098e8 ip:005b76e4 sp:ffbe8daa lr:005ade99 pc:f7bb0400
+cpsr:20870010  <- 状态寄存器（arm32架构为cpsr，aarch64架构为pstate和esr）
+...
+Maps:
+...
+ffbe9000-ffc0a000 rw-p 00000000 [stack] <- 栈地址范围，sp小于栈的低地址ffbe9000
 ```
 
 检查堆栈指针寄存器（sp）保存的地址，如果超出栈地址范围或接近栈的低地址，考虑可能发生了栈溢出。目前对于大多数栈溢出问题，CppCrash日志里也会给出提示，开发者也可将此作为参考，详见[栈溢出故障场景日志规格](../harmonyos-guides/cppcrash-guidelines.md#栈溢出故障场景日志规格)。
@@ -70,7 +70,7 @@ CppCrash日志中Signal会携带崩溃时访问的地址，如非法访问地址
 
    在应用开发场景，对于应用自身的动态库，生成的cppcrash调用栈可直接跳转到代码行处，支持Native栈帧和JS栈帧，无需开发者自行进行解行号操作。对于部分未能解析跳转到对应行号的栈帧，可参考方式二解析。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/RP7Auw-xTZ6Cw-Ejez8p9w/zh-cn_image_0000002404125229.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/Mn-S4sxKTNuDr_7I_f6WCg/zh-cn_image_0000002404125229.png)
 2. 通过SDK llvm-addr2line 工具定位行号。
    1. 获取符号表。
 
@@ -78,16 +78,16 @@ CppCrash日志中Signal会携带崩溃时访问的地址，如非法访问地址
 
       对于应用自身的动态库，经DevEco编译构建，生成在工程的/build/default/intermediates/libs目录下，默认是带符号的版本。可通过Linux file命令查询二进制文件的BuildID以核对是否匹配。其中，BuildID是用于标识二进制文件的唯一标识符，通常由编译器在编译时生成，not stripped表示该动态库是包含符号表的。
 
-      ```
-      1. $ file libbabel.so
-      2. libbabel.so: ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, BuildID[sha1]=fdb1b5432b9ea4e2a3d29780c3abf30e2a22da9d, with debug_info, not stripped
+      ```text
+      $ file libbabel.so
+      libbabel.so: ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, BuildID[sha1]=fdb1b5432b9ea4e2a3d29780c3abf30e2a22da9d, with debug_info, not stripped
       ```
 
       上述fdb1b5432b9ea4e2a3d29780c3abf30e2a22da9d即为libbabel.so的BuildID，对比cppcrash日志中打印的二进制BuildID是否相同。
 
-      ```
-      1. #00     pc 000072e6       /system/lib/libbabel.so(xxxxxxx(void*)+30)(fdb1b5432b9ea4e2a3d29780c3abf30e2a22da9d)
-      2. #序号   pc pc在段内的偏移   pc属于的段名称(函数名+函数内偏移的字节数)(BuildID)
+      ```text
+      #00     pc 000072e6       /system/lib/libbabel.so(xxxxxxx(void*)+30)(fdb1b5432b9ea4e2a3d29780c3abf30e2a22da9d)
+      #序号   pc pc在段内的偏移   pc属于的段名称(函数名+函数内偏移的字节数)(BuildID)
       ```
 
       **pc（Program Counter）**：程序计数器表示程序执行指令的地址。
@@ -99,23 +99,23 @@ CppCrash日志中Signal会携带崩溃时访问的地址，如非法访问地址
 
       例如有核心调用栈如下：
 
-      ```
-      1. # 00 pc 00003510 /data/storage/el1/bundle/libs/arm/libentry.so(TriggerCrash(napi_env__*, napi_callback_info__*)+24)(446ff75d3f6a518172cc52e8f8055650b02b0e54)
-      2. # 01 pc 0002b0c5 /system/lib/platformsdk/libace_napi.z.so(panda::JSValueRef ArkNativeFunctionCallBack<true>(panda::JsiRuntimeCallInfo*)+448)(a84fbb767fd826946623779c608395bf)
-      3. # 02 pc 001e7597 /system/lib/platformsdk/libark_jsruntime.so(panda::ecmascript::EcmaInterpreter::RunInternal(panda::ecmascript::JSThread*, unsigned char const*, unsigned long long*)+14710)(106c552f6ce4420b9feac95e8b21b792)
-      4. # 03 pc 001e0439 /system/lib/platformsdk/libark_jsruntime.so(panda::ecmascript::EcmaInterpreter::Execute(panda::ecmascript::EcmaRuntimeCallInfo*)+984)(106c552f6ce4420b9feac95e8b21b792)
-      5. ...
-      6. # 39 pc 00072998 /system/lib/ld-musl-arm.so.1(libc_start_main_stage2+56)(5b1e036c4f1369ecfdbb7a96aec31155)
-      7. # 40 pc 00005b48 /system/bin/appspawn(_start_c+84)(cb0631260fa74df0bc9b0323e30ca03d)
-      8. # 41 pc 00005aec /system/bin/appspawn(cb0631260fa74df0bc9b0323e30ca03d)
+      ```text
+      # 00 pc 00003510 /data/storage/el1/bundle/libs/arm/libentry.so(TriggerCrash(napi_env__*, napi_callback_info__*)+24)(446ff75d3f6a518172cc52e8f8055650b02b0e54)
+      # 01 pc 0002b0c5 /system/lib/platformsdk/libace_napi.z.so(panda::JSValueRef ArkNativeFunctionCallBack<true>(panda::JsiRuntimeCallInfo*)+448)(a84fbb767fd826946623779c608395bf)
+      # 02 pc 001e7597 /system/lib/platformsdk/libark_jsruntime.so(panda::ecmascript::EcmaInterpreter::RunInternal(panda::ecmascript::JSThread*, unsigned char const*, unsigned long long*)+14710)(106c552f6ce4420b9feac95e8b21b792)
+      # 03 pc 001e0439 /system/lib/platformsdk/libark_jsruntime.so(panda::ecmascript::EcmaInterpreter::Execute(panda::ecmascript::EcmaRuntimeCallInfo*)+984)(106c552f6ce4420b9feac95e8b21b792)
+      ...
+      # 39 pc 00072998 /system/lib/ld-musl-arm.so.1(libc_start_main_stage2+56)(5b1e036c4f1369ecfdbb7a96aec31155)
+      # 40 pc 00005b48 /system/bin/appspawn(_start_c+84)(cb0631260fa74df0bc9b0323e30ca03d)
+      # 41 pc 00005aec /system/bin/appspawn(cb0631260fa74df0bc9b0323e30ca03d)
       ```
 
       基于SDK llvm-addr2line解析行号如下所示：
 
-      ```
-      1. [DevEco Studio安装目录]\DevEco Studio\sdk\default\openharmony\native\llvm\bin> .\llvm-addr2line.exe -Cfie libentry.so 3150
-      2. TriggerCrash(napi_env__*, napi_callback_info__*)
-      3. D:/code/apprecovery-demo/entry/src/main/cpp/hello.cpp:48
+      ```text
+      [DevEco Studio安装目录]\DevEco Studio\sdk\default\openharmony\native\llvm\bin> .\llvm-addr2line.exe -Cfie libentry.so 3510
+      TriggerCrash(napi_env__*, napi_callback_info__*)
+      D:/code/apprecovery-demo/entry/src/main/cpp/hello.cpp:48
       ```
 
       llvm-addr2line 逐行解析的命令为：llvm-addr2line.exe -fCpie libutils.z.so pc在段内的偏移，可以多个偏移一起解析：llvm-addr2line.exe -fCpie libxxx.so 0x1bc868 0x1be28c。使用llvm-addr2line后，如果得出的行号结合源码分析不正确，可以考虑对地址进行微调（如减1），或者考虑关闭一些编译优化。
@@ -127,7 +127,7 @@ CppCrash日志中Signal会携带崩溃时访问的地址，如非法访问地址
 
 在分析CppCrash日志内容和定位行号后，回到代码中检视上下文，分析具体是什么业务逻辑导致崩溃。借助hilog提供的崩溃现场日志分析业务场景，找出代码中的可疑点。如下图所示，hello.cpp中的48行是一个空指针解引用的代码问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/EfhzK6CPQFaLa9MlRNnwIg/zh-cn_image_0000002370405684.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/v3uYNVUyRJeAja-cha45aQ/zh-cn_image_0000002370405684.png)
 
 本场景是一个故障构造的应用，实际场景需要结合具体业务进行分析。
 
@@ -154,49 +154,45 @@ CppCrash日志中Signal会携带崩溃时访问的地址，如非法访问地址
   + 不匹配的对象生命周期，比如使用裸指针（不含有封装、自动内存管理等特性的指针）保存sptr类型以及shared\_ptr类型，会导致内存泄漏和悬空指针问题。它只是一个指向内存地址的简单指针，没有对指针指向的内存进行保护或管理。裸指针可以直接访问指向的内存，但也容易出现内存泄漏、空指针引用等问题。因此，在使用裸指针时需要特别小心，避免出现潜在的安全问题；推荐使用智能指针来管理内存。
 * use after free：指使用已经被释放的内存，比如函数返回局部变量的引用、指针释放后未置空并继续使用等。
 
+  ```cpp
+  #include <iostream>
+
+  int &getStackReference() {
+      int x = 5;
+      return x; // Return the reference of x
+  }
+
+  int Run1() {
+      int &ref = getStackReference(); // Obtain the reference of x
+      // x is released after the getStackReference function returns
+      // ref is now a dangling reference. Continuing to access it will result in undefined behavior
+      std::cout << ref << std::endl; // Attempting to output the value of x is an undefined behavior
+      return 0;
+  }
   ```
-  1. #include <iostream>
-
-  3. int &getStackReference() {
-  4. int x = 5;
-  5. return x; // Return the reference of x
-  6. }
-
-  9. int Run1() {
-  10. int &ref = getStackReference(); // Obtain the reference of x
-  11. // x is released after the getStackReference function returns
-  12. // ref is now a dangling reference. Continuing to access it will result in undefined behavior
-  13. std::cout << ref << std::endl; // Attempting to output the value of x is an undefined behavior
-  14. return 0;
-  15. }
-  ```
-
-  [CppCrashQuestionCheck1.cpp](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/CppCrash/entry/src/main/cpp/CppCrashQuestionCheck1.cpp#L26-L40)
 * 栈溢出：如递归调用，析构函数相互调用，特殊的栈（信号栈）中使用大块栈内存。
 
+  ```screen
+  #include <iostream>
+
+  class RecursiveClass {
+  public:
+      RecursiveClass() {
+          std::cout << "Constructing RecursiveClass" << std::endl;
+      }
+
+      ~RecursiveClass() {
+          std::cout << "Destructing RecursiveClass" << std::endl;
+          // Make recursive calls in the destructor
+          RecursiveClass obj;
+      }
+  };
+
+  int Run2() {
+      RecursiveClass obj;
+      return 0;
+  }
   ```
-  1. #include <iostream>
-
-  3. class RecursiveClass {
-  4. public:
-  5. RecursiveClass() {
-  6. std::cout << "Constructing RecursiveClass" << std::endl;
-  7. }
-
-  10. ~RecursiveClass() {
-  11. std::cout << "Destructing RecursiveClass" << std::endl;
-  12. // Make recursive calls in the destructor
-  13. RecursiveClass obj;
-  14. }
-  15. };
-
-  18. int Run2() {
-  19. RecursiveClass obj;
-  20. return 0;
-  21. }
-  ```
-
-  [CppCrashQuestionCheck2.cpp](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/CppCrash/entry/src/main/cpp/CppCrashQuestionCheck2.cpp#L26-L46)
 
   创建一个RecursiveClass对象时，它的构造函数被调用。销毁这个对象时，它的析构函数被调用。在析构函数中，创建了一个新的RecursiveClass对象，这会导致递归调用，直到栈溢出。递归调用导致了无限的函数调用，最终导致栈空间耗尽，程序崩溃。
 * 二进制不匹配：通常由ABI（应用程序二进制接口）不匹配引起，如编译的二进制与实际运行的二进制接口存在差异，数据结构定义存在差异，这种一般会产生随机的崩溃栈。

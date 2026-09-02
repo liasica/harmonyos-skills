@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/abr__base
 title: abr_base.h
 breadcrumb: API参考 > 图形 > Graphics Accelerate Kit（图形加速服务） > C API > 头文件和结构体 > 头文件 > abr_base.h
 category: harmonyos-references
-scraped_at: 2026-04-29T14:06:18+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:3c838cad2b45d3eaf57e6fdf12a80a5b9678c31fd5c13b8633b95fbc49d7de5d
+scraped_at: 2026-09-02T15:02:47+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:cdab5b35f63508b48afbb96ba8a02b53568217d5b971b1aa27d15881080871d4
 ---
 
 ## 概述
-
-PhoneTabletTV
 
 声明不区分图形API平台的ABR（自适应稳态渲染）接口。
 
@@ -26,11 +24,7 @@ PhoneTabletTV
 
 ## 汇总
 
-PhoneTabletTV
-
 ### 结构体
-
-PhoneTabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -38,8 +32,6 @@ PhoneTabletTV
 | struct [ABR\_CameraData](_a_b_r___camera_data.md) | 此结构体描述游戏应用每帧的相机运动数据，ABR会结合相机运动数据自适应调整FrameBuffer（帧缓冲，下文简称Buffer）分辨率因子。 |
 
 ### 类型定义
-
-PhoneTabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -51,16 +43,12 @@ PhoneTabletTV
 
 ### 枚举
 
-PhoneTabletTV
-
 | 名称 | 描述 |
 | --- | --- |
 | [ABR\_RenderAPI\_Type](_graphics_accelerate.md#abr_renderapi_type-1) {  RENDER\_API\_GLES = 0  } | 此枚举描述ABR支持的图形API类型。RENDER\_API\_GLES表示OpenGL ES API。 |
 | [ABR\_ErrorCode](_graphics_accelerate.md#abr_errorcode-1) {  ABR\_SUCCESS = 0,  ABR\_INVALID\_PARAMETER = 401,  ABR\_CONTEXT\_CONFIG\_AFTER\_ACTIVE = 1009501001,  ABR\_CONTEXT\_NOT\_CONFIG = 1009501002,  ABR\_CONTEXT\_NOT\_ACTIVE = 1009501003,  ABR\_METADATA\_INVALID = 1009501004,  ABR\_FRAMEBUFFER\_INVALID = 1009501005  } | 此枚举描述ABR接口调用错误码。 |
 
 ### 函数
-
-PhoneTabletTV
 
 | 名称 | 描述 |
 | --- | --- |

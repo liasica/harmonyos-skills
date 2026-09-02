@@ -3,36 +3,32 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.kioskManager (Kiosk模式管理)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.app.ability.kioskManager (Kiosk模式管理)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:33+08:00
-doc_updated_at: 2026-04-13
-content_hash: sha256:cedb88707a0e8b5a4b28875dd74abaa798a3c1d9a9a199bb11b1bdd877d2eb22
+scraped_at: 2026-09-02T15:00:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:644452675caf1d25bb7b9cd1b1132128c351a70fc927a512235155640aa074c7
 ---
 
 KioskManager模块提供Kiosk模式管理能力，包括系统进入/退出Kiosk模式操作。
 
 Kiosk模式是一种特殊的设备锁定模式，可以确保设备界面只服务于特定的交互场景。在这种模式下，用户只能使用特定的应用。例如，在银行ATM机上，用户只能通过ATM软件进行操作，而不能退出该软件或切换到其他应用。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 20开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本模块接口仅可在Stage模型下使用。
-* 本模块接口仅适用于通过[setAllowedKioskApps接口](js-apis-enterprise-applicationmanager.md#applicationmanagersetallowedkioskapps20)配置的支持Kiosk模式的应用。
+* 本模块接口仅适用于通过[applicationManager.setAllowedKioskApps](js-apis-enterprise-applicationmanager.md#applicationmanagersetallowedkioskapps20)配置的支持Kiosk模式的应用。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { kioskManager } from '@kit.AbilityKit';
+```ts
+import { kioskManager } from '@kit.AbilityKit';
 ```
 
 ## kioskManager.enterKioskMode
 
-PhonePC/2in1TabletTVWearable
-
 enterKioskMode(context: UIAbilityContext): Promise<void>
 
-进入Kiosk模式。使用Promise异步回调。
+调用此接口进入Kiosk模式，采用Promise异步回调方式。若触发进入Kiosk模式的应用进程被终止，系统将自动退出该模式。
 
 **系统能力**： SystemCapability.Ability.AbilityRuntime.Core
 
@@ -42,7 +38,7 @@ enterKioskMode(context: UIAbilityContext): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| context | [UIAbilityContext](js-apis-inner-application-uiabilitycontext.md) | 是 | 需要进入kiosk模式的UIAbility的上下文。 |
+| context | [UIAbilityContext](js-apis-inner-application-uiabilitycontext.md) | 是 | 需要进入Kiosk模式的UIAbility的上下文。 |
 
 **返回值：**
 
@@ -64,39 +60,37 @@ enterKioskMode(context: UIAbilityContext): Promise<void>
 
 **示例**：
 
-```
-1. import { common, kioskManager } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { common, kioskManager } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. private uiAbilityContext: common.UIAbilityContext | undefined =
-9. this.getUIContext().getHostContext() as common.UIAbilityContext;
+@Entry
+@Component
+struct Index {
+  private uiAbilityContext: common.UIAbilityContext | undefined =
+    this.getUIContext().getHostContext() as common.UIAbilityContext;
 
-11. build() {
-12. Column() {
-13. Button('enterKioskMode').margin({ top: 30 })
-14. .onClick(() => {
-15. kioskManager.enterKioskMode(this.uiAbilityContext)
-16. .then(() => {
-17. hilog.info(0x0000, 'testTag', '%{public}s', 'enterKioskMode success');
-18. })
-19. .catch((error: BusinessError) => {
-20. hilog.error(0x0000, 'testTag', '%{public}s', `enterKioskMode failed:${JSON.stringify(error)}`);
-21. });
-22. })
-23. }
-24. .height('100%')
-25. .width('100%')
-26. }
-27. }
+  build() {
+    Column() {
+      Button('enterKioskMode').margin({ top: 30 })
+        .onClick(() => {
+          kioskManager.enterKioskMode(this.uiAbilityContext)
+            .then(() => {
+              hilog.info(0x0000, 'testTag', '%{public}s', 'enterKioskMode success');
+            })
+            .catch((error: BusinessError) => {
+              hilog.error(0x0000, 'testTag', '%{public}s', `enterKioskMode failed:${JSON.stringify(error)}`);
+            });
+        })
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 ## kioskManager.exitKioskMode
-
-PhonePC/2in1TabletTVWearable
 
 exitKioskMode(context: UIAbilityContext): Promise<void>
 
@@ -112,7 +106,7 @@ exitKioskMode(context: UIAbilityContext): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| context | [UIAbilityContext](js-apis-inner-application-uiabilitycontext.md) | 是 | 需要退出kiosk模式的UIAbility的上下文。 |
+| context | [UIAbilityContext](js-apis-inner-application-uiabilitycontext.md) | 是 | 需要退出Kiosk模式的UIAbility的上下文。 |
 
 **返回值：**
 
@@ -133,39 +127,37 @@ exitKioskMode(context: UIAbilityContext): Promise<void>
 
 **示例**：
 
-```
-1. import { common, kioskManager } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { common, kioskManager } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. private uiAbilityContext: common.UIAbilityContext | undefined =
-9. this.getUIContext().getHostContext() as common.UIAbilityContext;
+@Entry
+@Component
+struct Index {
+  private uiAbilityContext: common.UIAbilityContext | undefined =
+    this.getUIContext().getHostContext() as common.UIAbilityContext;
 
-11. build() {
-12. Column() {
-13. Button('exitKioskMode').margin({ top: 10 })
-14. .onClick(() => {
-15. kioskManager.exitKioskMode(this.uiAbilityContext)
-16. .then(() => {
-17. hilog.info(0x0000, 'testTag', '%{public}s', 'exitKioskMode success');
-18. })
-19. .catch((error: BusinessError) => {
-20. hilog.error(0x0000, 'testTag', '%{public}s', `exitKioskMode failed:${JSON.stringify(error)}`);
-21. });
-22. })
-23. }
-24. .height('100%')
-25. .width('100%')
-26. }
-27. }
+  build() {
+    Column() {
+      Button('exitKioskMode').margin({ top: 10 })
+        .onClick(() => {
+          kioskManager.exitKioskMode(this.uiAbilityContext)
+            .then(() => {
+              hilog.info(0x0000, 'testTag', '%{public}s', 'exitKioskMode success');
+            })
+            .catch((error: BusinessError) => {
+              hilog.error(0x0000, 'testTag', '%{public}s', `exitKioskMode failed:${JSON.stringify(error)}`);
+            });
+        })
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 ## KioskStatus
-
-PhonePC/2in1TabletTVWearable
 
 type KioskStatus = \_KioskStatus
 

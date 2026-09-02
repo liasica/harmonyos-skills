@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-package-structure-stage
-title: Stage模型应用程序包结构
-breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用程序包基础知识 > 应用程序包结构 > Stage模型应用程序包结构
+title: 应用程序包结构
+breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用程序包基础知识 > 应用程序包结构
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:25:27+08:00
-doc_updated_at: 2026-04-10
-content_hash: sha256:9e8cce99e21c776bcd1a93d0918c296b48935c3811e4347f4260b7a0eecad9db
+scraped_at: 2026-09-02T14:59:08+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:787e9c0db045db78942767f8d44985893d21c1e79f969bc8f658de4bc7a6c762
 ---
 
 为了让开发者能对应用程序包在不同阶段的形态有更加清晰的认知，分别对开发态、编译态、发布态的应用程序结构展开介绍。
@@ -16,9 +16,9 @@ content_hash: sha256:9e8cce99e21c776bcd1a93d0918c296b48935c3811e4347f4260b7a0eec
 
 **图1** 项目工程结构示意图（以实际为准）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/KJyPM8VwQb6ZRxUuzrA_pg/zh-cn_image_0000002589243771.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/sI0tM_TgTGihbtFXuzXJPw/zh-cn_image_0000002736432145.png)
 
-说明
+**说明** 
 
 * AppScope目录由DevEco Studio自动生成，该目录名称更改会导致当前目录下配置文件和资源加载失败，导致编译报错问题，因此该目录名称请勿修改。
 * Module目录名称可以由DevEco Studio自动生成（比如entry、library等），也可以自定义。为了便于说明，下表中统一采用ModuleName表示。
@@ -38,7 +38,7 @@ content_hash: sha256:9e8cce99e21c776bcd1a93d0918c296b48935c3811e4347f4260b7a0eec
 
 **图2** 开发态与编译态的工程结构视图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/BEN3ueKhSz6o_XjphWVdig/zh-cn_image_0000002558763966.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/aAkLlnVDQs6BsXQajr2pRw/zh-cn_image_0000002706832990.png)
 
 从开发态到编译态，Module文件变更如下：
 
@@ -52,11 +52,11 @@ content_hash: sha256:9e8cce99e21c776bcd1a93d0918c296b48935c3811e4347f4260b7a0eec
 
 当应用发布上架到应用市场时，需要将Bundle打包为一个.app后缀的文件用于上架，这个.app文件称为**App Pack**（Application Package），与此同时，DevEco Studio工具会自动生成一个**pack.info**文件。**pack.info**文件描述了App Pack中每个HAP和HSP的属性，包含APP中的bundleName和versionCode信息、以及Module中的name、type和abilities等信息。
 
-说明
+**说明** 
 
 * App Pack是发布上架到应用市场的基本单元。
 * 在[应用签名](ide-signing.md)时，是以HAP/HSP/APP为单位进行签名的；在云端分发、端侧安装时，是以HAP/HSP为单位进行分发和安装的。
 
 **图3** 编译发布与上架部署流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/x9SDuWinTQC3bbPR8s--ig/zh-cn_image_0000002558604310.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/KgWPr0qsSpyakesYAokEfA/zh-cn_image_0000002736312099.png)

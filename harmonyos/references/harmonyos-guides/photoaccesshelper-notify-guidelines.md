@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshe
 title: 媒体资源变更通知相关指导
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 受限开放能力 > 媒体资源变更通知相关指导
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:40+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:011ea0fb062d96b1af3ec96f8c755ab8cb3a3d70f3f8fcd1549b1386d7580325
+scraped_at: 2026-09-02T14:59:47+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:28959b719914edd0f66d9042a641b3520166d6772692c649d176fd28e7d97bcb
 ---
 
 photoAccessHelper提供监听指定媒体资源变更的接口。
 
-说明
+**说明** 
 
 在进行功能开发前，请查阅[开发准备](photoaccesshelper-preparation.md)，了解如何获取相册管理模块实例和如何申请相册管理模块功能开发相关权限。
 
@@ -41,39 +41,40 @@ photoAccessHelper提供监听指定媒体资源变更的接口。
 2. 对指定PhotoAsset注册监听。
 3. 将指定媒体资源删除。
 
+```typescript
+import { dataSharePredicates } from '@kit.ArkData';
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
+
+// ...
+
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test.jpg');
+  let fetchOptions: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | null = null;
+  try {
+    fetchResult = await phAccessHelper.getAssets(fetchOptions);
+    let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+    console.info('getAssets photoAsset.uri : ' + photoAsset.uri);
+    let onCallback = (changeData: photoAccessHelper.ChangeData) => {
+      console.info('onCallback successfully, changeData: ' + JSON.stringify(changeData));
+    }
+    phAccessHelper.registerChange(photoAsset.uri, false, onCallback);
+    await photoAccessHelper.MediaAssetChangeRequest.deleteAssets(context, [photoAsset]);
+    // ...
+  } catch (err) {
+    console.error('onCallback failed with err: ' + err);
+    // ...
+  } finally {
+    if (fetchResult !== null) {
+      fetchResult.close();
+    }
+  }
+}
 ```
-1. import { dataSharePredicates } from '@kit.ArkData';
-2. import { photoAccessHelper } from '@kit.MediaLibraryKit';
-
-4. // ...
-
-6. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
-7. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-8. predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test.jpg');
-9. let fetchOptions: photoAccessHelper.FetchOptions = {
-10. fetchColumns: [],
-11. predicates: predicates
-12. };
-13. try {
-14. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-15. await phAccessHelper.getAssets(fetchOptions);
-16. let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-17. console.info('getAssets photoAsset.uri : ' + photoAsset.uri);
-18. let onCallback = (changeData: photoAccessHelper.ChangeData) => {
-19. console.info('onCallback successfully, changeData: ' + JSON.stringify(changeData));
-20. }
-21. phAccessHelper.registerChange(photoAsset.uri, false, onCallback);
-22. await photoAccessHelper.MediaAssetChangeRequest.deleteAssets(context, [photoAsset]);
-23. fetchResult.close();
-24. // ...
-25. } catch (err) {
-26. console.error('onCallback failed with err: ' + err);
-27. // ...
-28. }
-29. }
-```
-
-[RegisterListenerToPhotoAssetAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/MediaLibraryKit/MediaResourceChangeNotificationsSample/entry/src/main/ets/registerlistenertophotoassetability/RegisterListenerToPhotoAssetAbility.ets#L21-L57)
 
 ### 对指定Album注册监听
 
@@ -92,47 +93,48 @@ photoAccessHelper提供监听指定媒体资源变更的接口。
 2. 对指定Album注册监听。
 3. 将指定用户相册重命名。
 
+```typescript
+import { dataSharePredicates } from '@kit.ArkData';
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
+
+// ...
+
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let albumName: photoAccessHelper.AlbumKeys = photoAccessHelper.AlbumKeys.ALBUM_NAME;
+  predicates.equalTo(albumName, 'test');
+  let fetchOptions: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+
+  let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | null = null;
+  try {
+    fetchResult = await phAccessHelper.getAlbums(
+      photoAccessHelper.AlbumType.USER,
+      photoAccessHelper.AlbumSubtype.USER_GENERIC,
+      fetchOptions);
+        
+    let album: photoAccessHelper.Album = await fetchResult.getFirstObject();
+    console.info('getAlbums successfully, albumUri: ' + album.albumUri);
+
+    let onCallback = (changeData: photoAccessHelper.ChangeData) => {
+      console.info('onCallback successfully, changeData: ' + JSON.stringify(changeData));
+    }
+    phAccessHelper.registerChange(album.albumUri, false, onCallback);
+    album.albumName = 'newAlbumName' + Date.now();
+    await album.commitModify();
+    // ...
+  } catch (err) {
+    console.error('onCallback failed with err: ' + err);
+    // ...
+  } finally {
+    if (fetchResult !== null) {
+      fetchResult.close();
+    }
+  }
+}
 ```
-1. import { dataSharePredicates } from '@kit.ArkData';
-2. import { photoAccessHelper } from '@kit.MediaLibraryKit';
-
-4. // ...
-
-6. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-7. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-8. let albumName: photoAccessHelper.AlbumKeys = photoAccessHelper.AlbumKeys.ALBUM_NAME;
-9. predicates.equalTo(albumName, 'test');
-10. let fetchOptions: photoAccessHelper.FetchOptions = {
-11. fetchColumns: [],
-12. predicates: predicates
-13. };
-
-15. try {
-16. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-17. await phAccessHelper.getAlbums(
-18. photoAccessHelper.AlbumType.USER,
-19. photoAccessHelper.AlbumSubtype.USER_GENERIC,
-20. fetchOptions);
-
-22. let album: photoAccessHelper.Album = await fetchResult.getFirstObject();
-23. console.info('getAlbums successfully, albumUri: ' + album.albumUri);
-
-25. let onCallback = (changeData: photoAccessHelper.ChangeData) => {
-26. console.info('onCallback successfully, changeData: ' + JSON.stringify(changeData));
-27. }
-28. phAccessHelper.registerChange(album.albumUri, false, onCallback);
-29. album.albumName = 'newAlbumName' + Date.now();
-30. await album.commitModify();
-31. fetchResult.close();
-32. // ...
-33. } catch (err) {
-34. console.error('onCallback failed with err: ' + err);
-35. // ...
-36. }
-37. }
-```
-
-[RegisterListenerToAlbumAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/MediaLibraryKit/MediaResourceChangeNotificationsSample/entry/src/main/ets/registerlistenertoalbumability/RegisterListenerToAlbumAbility.ets#L24-L68)
 
 ## 模糊监听
 
@@ -157,38 +159,39 @@ photoAccessHelper提供监听指定媒体资源变更的接口。
 2. [获取指定媒体资源](photoaccesshelper-resource-guidelines.md#获取指定媒体资源)。
 3. 将指定媒体资源删除。
 
+```typescript
+import { dataSharePredicates } from '@kit.ArkData';
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
+
+// ...
+
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
+  let onCallback = (changeData: photoAccessHelper.ChangeData) => {
+    console.info('onCallback successfully, changeData: ' + JSON.stringify(changeData));
+  }
+  phAccessHelper.registerChange(photoAccessHelper.DefaultChangeUri.DEFAULT_PHOTO_URI, true, onCallback);
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOptions: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | null = null;
+  try {
+    fetchResult = await phAccessHelper.getAssets(fetchOptions);
+    let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+    console.info('getAssets photoAsset.uri : ' + photoAsset.uri);
+    await photoAccessHelper.MediaAssetChangeRequest.deleteAssets(context, [photoAsset]);
+    // ...
+  } catch (err) {
+    console.error('onCallback failed with err: ' + err);
+    // ...
+  } finally {
+    if (fetchResult !== null) {
+      fetchResult.close();
+    }
+  }
+}
 ```
-1. import { dataSharePredicates } from '@kit.ArkData';
-2. import { photoAccessHelper } from '@kit.MediaLibraryKit';
-
-4. // ...
-
-6. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
-7. let onCallback = (changeData: photoAccessHelper.ChangeData) => {
-8. console.info('onCallback successfully, changeData: ' + JSON.stringify(changeData));
-9. }
-10. phAccessHelper.registerChange(photoAccessHelper.DefaultChangeUri.DEFAULT_PHOTO_URI, true, onCallback);
-11. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-12. let fetchOptions: photoAccessHelper.FetchOptions = {
-13. fetchColumns: [],
-14. predicates: predicates
-15. };
-16. try {
-17. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-18. await phAccessHelper.getAssets(fetchOptions);
-19. let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-20. console.info('getAssets photoAsset.uri : ' + photoAsset.uri);
-21. await photoAccessHelper.MediaAssetChangeRequest.deleteAssets(context, [photoAsset]);
-22. fetchResult.close();
-23. // ...
-24. } catch (err) {
-25. console.error('onCallback failed with err: ' + err);
-26. // ...
-27. }
-28. }
-```
-
-[RegisterForMonitoringAllAssetsAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/MediaLibraryKit/MediaResourceChangeNotificationsSample/entry/src/main/ets/registerformonitoringallassetsability/RegisterForMonitoringAllAssetsAbility.ets#L21-L56)
 
 ## 取消对指定URI的监听
 
@@ -207,41 +210,42 @@ photoAccessHelper提供监听指定媒体资源变更的接口。
 2. 取消对指定媒体资源uri的监听。
 3. 将指定媒体资源删除。
 
+```typescript
+import { dataSharePredicates } from '@kit.ArkData';
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
+
+// ...
+
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test.jpg');
+  let fetchOptions: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | null = null;
+  try {
+    fetchResult = await phAccessHelper.getAssets(fetchOptions);
+    let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+    console.info('getAssets photoAsset.uri : ' + photoAsset.uri);
+    let onCallback1 = (changeData: photoAccessHelper.ChangeData) => {
+      console.info('onCallback1, changeData: ' + JSON.stringify(changeData));
+    }
+    let onCallback2 = (changeData: photoAccessHelper.ChangeData) => {
+      console.info('onCallback2, changeData: ' + JSON.stringify(changeData));
+    }
+    phAccessHelper.registerChange(photoAsset.uri, false, onCallback1);
+    phAccessHelper.registerChange(photoAsset.uri, false, onCallback2);
+    phAccessHelper.unRegisterChange(photoAsset.uri, onCallback1);
+    await photoAccessHelper.MediaAssetChangeRequest.deleteAssets(context, [photoAsset]);
+    // ...
+  } catch (err) {
+    console.error('onCallback failed with err: ' + err);
+    // ...
+  } finally {
+    if (fetchResult !== null) {
+      fetchResult.close();
+    }
+  }
+}
 ```
-1. import { dataSharePredicates } from '@kit.ArkData';
-2. import { photoAccessHelper } from '@kit.MediaLibraryKit';
-
-4. // ...
-
-6. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
-7. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-8. predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test.jpg');
-9. let fetchOptions: photoAccessHelper.FetchOptions = {
-10. fetchColumns: [],
-11. predicates: predicates
-12. };
-13. try {
-14. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-15. await phAccessHelper.getAssets(fetchOptions);
-16. let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-17. console.info('getAssets photoAsset.uri : ' + photoAsset.uri);
-18. let onCallback1 = (changeData: photoAccessHelper.ChangeData) => {
-19. console.info('onCallback1, changeData: ' + JSON.stringify(changeData));
-20. }
-21. let onCallback2 = (changeData: photoAccessHelper.ChangeData) => {
-22. console.info('onCallback2, changeData: ' + JSON.stringify(changeData));
-23. }
-24. phAccessHelper.registerChange(photoAsset.uri, false, onCallback1);
-25. phAccessHelper.registerChange(photoAsset.uri, false, onCallback2);
-26. phAccessHelper.unRegisterChange(photoAsset.uri, onCallback1);
-27. await photoAccessHelper.MediaAssetChangeRequest.deleteAssets(context, [photoAsset]);
-28. fetchResult.close();
-29. // ...
-30. } catch (err) {
-31. console.error('onCallback failed with err: ' + err);
-32. // ...
-33. }
-34. }
-```
-
-[CancelListeningURIAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/MediaLibraryKit/MediaResourceChangeNotificationsSample/entry/src/main/ets/cancellisteninguriability/CancelListeningURIAbility.ets#L21-L62)

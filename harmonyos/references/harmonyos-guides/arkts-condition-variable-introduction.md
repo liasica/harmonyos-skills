@@ -3,89 +3,89 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-conditi
 title: 异步等待
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信对象 > Sendable对象 > 异步等待
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:33+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e0edea3140ac7f6c05f12c5c47f3e6cebca3f7593241d420a8be317589fbf17d
+scraped_at: 2026-09-02T14:59:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7cfc5cc43e9c05a2b1eb7faa9fbc178690bc8a96f977e553ce0ad2668c0b8d9b
 ---
 
 ArkTS引入了异步任务的等待和唤醒能力，以解决多线程任务时序控制问题。异步任务通过[ConditionVariable](../harmonyos-references/arkts-apis-arkts-utils-locks.md#conditionvariable18)对象实现等待和唤醒机制，该对象支持跨线程引用传递。
 
-ArkTS语言支持异步操作，现已增加异步任务的等待和唤醒功能。当异步任务收到唤醒通知或等待超时后，将继续执行。
+ArkTS语言支持异步操作，从API version 18开始支持异步任务的等待和唤醒功能。当异步任务收到唤醒通知或等待超时后，将继续执行。
 
-说明
+**说明** 
 
-使用异步方法需标记为async，调用时需用await修饰，确保时序正确。
+使用异步方法需标记为async，调用时可用await修饰，确保时序正确。
 
 ## 使用示例
 
 [Sendable](arkts-sendable.md)共享对象在不同线程控制异步任务等待和唤醒的示例如下：
 
-```
-1. import { ArkTSUtils, taskpool } from '@kit.ArkTS';
+```typescript
+import { ArkTSUtils, taskpool } from '@kit.ArkTS';
 
-3. @Concurrent
-4. function notifyAll(conditionVariable: ArkTSUtils.locks.ConditionVariable) {
-5. console.info(`TaskPool Thread notifyAll`);
-6. conditionVariable.notifyAll();
-7. }
+@Concurrent
+function notifyAll(conditionVariable: ArkTSUtils.locks.ConditionVariable) {
+  console.info(`TaskPool Thread notifyAll`);
+  conditionVariable.notifyAll();
+}
 
-9. @Concurrent
-10. function notifyOne(conditionVariable: ArkTSUtils.locks.ConditionVariable) {
-11. console.info(`TaskPool Thread notifyOne`);
-12. conditionVariable.notifyOne();
-13. }
+@Concurrent
+function notifyOne(conditionVariable: ArkTSUtils.locks.ConditionVariable) {
+  console.info(`TaskPool Thread notifyOne`);
+  conditionVariable.notifyOne();
+}
 
-15. @Concurrent
-16. async function wait(conditionVariable: ArkTSUtils.locks.ConditionVariable) {
-17. await conditionVariable.wait();
-18. console.info(`TaskPool Thread Wait: success`);
-19. }
+@Concurrent
+async function wait(conditionVariable: ArkTSUtils.locks.ConditionVariable) {
+  await conditionVariable.wait();
+  console.info(`TaskPool Thread Wait: success`);
+}
 
-21. @Concurrent
-22. async function waitFor(conditionVariable: ArkTSUtils.locks.ConditionVariable) {
-23. await conditionVariable.waitFor(3000);
-24. console.info(`TaskPool Thread WaitFor: success`);
-25. }
+@Concurrent
+async function waitFor(conditionVariable: ArkTSUtils.locks.ConditionVariable) {
+  await conditionVariable.waitFor(3000);
+  console.info(`TaskPool Thread WaitFor: success`);
+}
 
-27. @Entry
-28. @Component
-29. struct Index {
-30. @State message: string | ResourceStr = $r('app.string.AsyncButton');
+@Entry
+@Component
+struct Index {
+  @State message: string | ResourceStr = $r('app.string.AsyncButton'); // 加载资源，可根据项目实际资源自定义
 
-32. build() {
-33. Row() {
-34. Column() {
-35. Button(this.message)
-36. .fontSize(25)
-37. .fontWeight(FontWeight.Bold)
-38. .onClick(async () => {
-39. // 创建conditionVariable对象。
-40. const conditionVariable: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable();
-41. // 将实例conditionVariable传递给wait线程。
-42. await taskpool.execute(wait, conditionVariable);
-43. // 将实例conditionVariable传递给notifyAll线程，唤醒wait线程，日志输出"TaskPool Thread Wait: success"。
-44. await taskpool.execute(notifyAll, conditionVariable);
-45. // 将实例conditionVariable传递给waitFor线程。
-46. await taskpool.execute(waitFor, conditionVariable);
-47. // 将实例conditionVariable传递给notifyOne线程，唤醒waitFor线程，日志输出"TaskPool Thread WaitFor: success"。
-48. await taskpool.execute(notifyOne, conditionVariable);
+  build() {
+    Row() {
+      Column() {
+        Button(this.message)
+          .fontSize(25)
+          .fontWeight(FontWeight.Bold)
+          .onClick(async () => {
+            // 创建conditionVariable对象。
+            const conditionVariable: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable();
+            // 将实例conditionVariable传递给wait线程。
+            taskpool.execute(wait, conditionVariable);
+            // 将实例conditionVariable传递给notifyAll线程，唤醒wait线程，日志输出"TaskPool Thread Wait: success"。
+            await taskpool.execute(notifyAll, conditionVariable);
+            // 将实例conditionVariable传递给waitFor线程。
+            taskpool.execute(waitFor, conditionVariable);
+            // 将实例conditionVariable传递给notifyOne线程，唤醒waitFor线程，日志输出"TaskPool Thread WaitFor: success"。
+            await taskpool.execute(notifyOne, conditionVariable);
 
-50. // 创建有name的conditionVariable对象。
-51. const conditionVariableRequest: ArkTSUtils.locks.ConditionVariable =
-52. ArkTSUtils.locks.ConditionVariable.request('Request1');
-53. // 将实例conditionVariableRequest传递给wait线程。
-54. await taskpool.execute(wait, conditionVariableRequest);
-55. // 将实例conditionVariableRequest传递给notifyAll线程，唤醒wait线程，日志输出"TaskPool Thread Wait: success"。
-56. await taskpool.execute(notifyAll, conditionVariableRequest);
-57. // 将实例conditionVariableRequest传递给waitFor线程。
-58. await taskpool.execute(waitFor, conditionVariableRequest);
-59. // 将实例conditionVariableRequest传递给notifyOne线程，唤醒waitFor线程，日志输出"TaskPool Thread WaitFor: success"。
-60. await taskpool.execute(notifyOne, conditionVariableRequest);
-61. })
-62. }
-63. .width('100%')
-64. }
-65. .height('100%')
-66. }
-67. }
+            // 创建有name的conditionVariable对象。
+            const conditionVariableRequest: ArkTSUtils.locks.ConditionVariable =
+              ArkTSUtils.locks.ConditionVariable.request('Request1');
+            // 将实例conditionVariableRequest传递给wait线程。
+            taskpool.execute(wait, conditionVariableRequest);
+            // 将实例conditionVariableRequest传递给notifyAll线程，唤醒wait线程，日志输出"TaskPool Thread Wait: success"。
+            await taskpool.execute(notifyAll, conditionVariableRequest);
+            // 将实例conditionVariableRequest传递给waitFor线程。
+            taskpool.execute(waitFor, conditionVariableRequest);
+            // 将实例conditionVariableRequest传递给notifyOne线程，唤醒waitFor线程，日志输出"TaskPool Thread WaitFor: success"。
+            await taskpool.execute(notifyOne, conditionVariableRequest);
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```

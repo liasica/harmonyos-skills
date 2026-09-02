@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-43
 title: 能否通过httpResponse的result拿到一个加密内容的数据
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > 能否通过httpResponse的result拿到一个加密内容的数据
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:10+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:57+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:23f8355edf6d4d5c29e7c9f49fbaa5938c7aace0ac2c64537fd51a3f0aa2b363
 ---
 

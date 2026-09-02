@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-setin
 title: SetInput
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator > SetInput
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:46+08:00
+scraped_at: 2026-09-02T15:00:12+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:029e42e7f46b031e742bc2ae4604d8f5509517b9bb234b6f00636971045614cd
+content_hash: sha256:e27f57d12fe01ebddbb6314dbb33db65586733e793274745368d774172861118
 ---
 
 ## 函数功能
@@ -20,20 +20,20 @@ content_hash: sha256:029e42e7f46b031e742bc2ae4604d8f5509517b9bb234b6f00636971045
 
 ## 函数原型
 
-说明
+**说明** 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 
-```
-1. Operator &SetInput(const std::string &dst_name, const Operator &src_oprt);
-2. Operator &SetInput(const char_t *dst_name, const Operator &src_oprt);
-3. Operator &SetInput(const std::string &dst_name, const Operator &src_oprt, const std::string &name);
-4. Operator &SetInput(const char_t *dst_name, const Operator &src_oprt, const char_t *name);
-5. Operator &SetInput(const std::string &dst_name, const Operator &src_oprt, uint32_t index);
-6. Operator &SetInput(const char_t *dst_name, const Operator &src_oprt, uint32_t index);
-7. Operator &SetInput(uint32_t dst_index, const Operator &src_oprt, uint32_t src_index);
-8. Operator &SetInput(const char_t *dst_name, uint32_t dst_index, const Operator &src_oprt, const char_t *name);
-9. Operator &SetInput(const char_t *dst_name, uint32_t dst_index, const Operator &src_oprt);
+```cpp
+Operator &SetInput(const std::string &dst_name, const Operator &src_oprt);
+Operator &SetInput(const char_t *dst_name, const Operator &src_oprt);
+Operator &SetInput(const std::string &dst_name, const Operator &src_oprt, const std::string &name);
+Operator &SetInput(const char_t *dst_name, const Operator &src_oprt, const char_t *name);
+Operator &SetInput(const std::string &dst_name, const Operator &src_oprt, uint32_t index);
+Operator &SetInput(const char_t *dst_name, const Operator &src_oprt, uint32_t index);
+Operator &SetInput(uint32_t dst_index, const Operator &src_oprt, uint32_t src_index);
+Operator &SetInput(const char_t *dst_name, uint32_t dst_index, const Operator &src_oprt, const char_t *name);
+Operator &SetInput(const char_t *dst_name, uint32_t dst_index, const Operator &src_oprt);
 ```
 
 ## 参数说明

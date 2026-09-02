@@ -3,32 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: ToolBarItem
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 导航与切换 > ToolBarItem
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:41+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:eb1e80912f8d2209df276aa9495a1fa0e01017079b73d0d01ffe19dac92626f3
+scraped_at: 2026-09-02T15:01:00+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6c0ecd5095b7559f25d33c3c5d5149e796b6117391aad58cdfb993bc17903722
 ---
 
 通过[toolbar](ts-universal-attributes-toolbar.md#toolbar)通用属性为窗口标题栏添加工具栏项。
 
-说明
+**说明** 
 
-该组件从API version 20开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-
-该组件一般配合[toolbar](ts-universal-attributes-toolbar.md#toolbar)通用属性进行使用。
+* 该组件从API version 20开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 本模块接口仅可在Stage模型下使用。
+* 该组件一般配合[toolbar](ts-universal-attributes-toolbar.md#toolbar)通用属性进行使用。
 
 ## 子组件
-
-PhonePC/2in1TabletTVWearable
 
 仅可包含单个子组件。
 
 ## 接口
 
-PhonePC/2in1TabletTVWearable
-
 ### ToolBarItem
-
-PhonePC/2in1TabletTVWearable
 
 ToolBarItem(options?: ToolBarItemOptions)
 
@@ -44,13 +38,9 @@ ToolBarItem(options?: ToolBarItemOptions)
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
 不支持[通用属性](ts-component-general-attributes.md)。
 
 ## ToolBarItemOptions对象说明
-
-PhonePC/2in1TabletTVWearable
 
 用于配置ToolBarItem的可选参数，主要通过placement设置工具栏项在标题栏的放置位置。
 
@@ -62,8 +52,6 @@ PhonePC/2in1TabletTVWearable
 
 ## ToolBarItemPlacement枚举说明
 
-PhonePC/2in1TabletTVWearable
-
 定义工具栏项在标题栏对应分栏的放置位置选项。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
@@ -74,7 +62,5 @@ PhonePC/2in1TabletTVWearable
 | TOP\_BAR\_TRAILING | 1 | 表示将工具栏项放置在对应顶部栏的末尾位置。 |
 
 ## 示例
-
-PhonePC/2in1TabletTVWearable
 
 示例代码参考[toolbar](ts-universal-attributes-toolbar.md#示例)。

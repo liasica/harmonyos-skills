@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-telephonykit-6101
 title: Telephony Kit
-breadcrumb: 版本说明 > HarmonyOS 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta1引入的变更 > Telephony Kit
+breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta1引入的变更 > Telephony Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:36+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:16:23+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:adb1cb2392d785eed99ea1fe499f035d964265174d8a1368c64184ac4fc56431
 ---
 

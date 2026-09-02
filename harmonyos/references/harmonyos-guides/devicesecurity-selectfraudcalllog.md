@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 获取诈骗通话记录
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 反诈选择器 > 获取诈骗通话记录
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:31:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:38d9cbdd44d5ed4226517b9b07adce85fa213aa341f916b565148c6f05eec714
+scraped_at: 2026-09-02T14:59:30+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:09448242817677410da502d6f1e9d5e57ed284021700d74fb0a7be2bff698eb5
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:38d9cbdd44d5ed4226517b9b07adce85fa213aa341f916b565148c6f05e
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/HBE4CMJ8RdKhE5hBHYnAQg/zh-cn_image_0000002589244707.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/4khSA6bARP2mO_C4hdYIQQ/zh-cn_image_0000002706674372.png)
 
 **流程说明：**
 
@@ -37,7 +37,7 @@ content_hash: sha256:38d9cbdd44d5ed4226517b9b07adce85fa213aa341f916b565148c6f05e
 
 ## 开发步骤
 
-说明
+**说明** 
 
 * 在开发准备过程中，需要申请权限：ohos.permission.USE\_FRAUD\_CALL\_LOG\_PICKER。
 * 只允许清单内的应用申请该权限，申请方式请参考：[申请使用受限权限](declare-permissions-in-acl.md)
@@ -45,27 +45,27 @@ content_hash: sha256:38d9cbdd44d5ed4226517b9b07adce85fa213aa341f916b565148c6f05e
 
 1. 导入Device Security Kit模块及相关公共模块。
 
-   ```
-   1. import { securityAudit } from '@kit.DeviceSecurityKit';
-   2. import { BusinessError} from '@kit.BasicServicesKit';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
-   4. import { common} from '@kit.AbilityKit';
+   ```typescript
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import antifraudPicker from '@hms.security.antifraudPicker';
+   import hilog from '@ohos.hilog';
+   import { common } from '@kit.AbilityKit';
    ```
 2. 调用selectFraudCallLog接口获取诈骗通话记录信息。
 
-   ```
-   1. const TAG = "AntifraudPickerJsTest";
+   ```typescript
+   const TAG = "AntifraudPickerJsTest";
 
-   3. // 请求获取诈骗通话记录信息，并进行业务处理
-   4. let options: antifraudPicker.AntifraudCallLogOptions = {
-   5. maxSelectNumber: 5
-   6. };
-   7. try {
-   8. hilog.info(0x0000, TAG, 'SelectFraudCallLog begin.');
-   9. let context = this.getUIContext().getHostContext();
-   10. const result: antifraudPicker.AntifraudCallLogResult = await antifraudPicker.selectFraudCallLog(context, options);
-   11. } catch (err) {
-   12. let e: BusinessError = err as BusinessError;
-   13. hilog.error(0x0000, TAG, 'SelectFraudCallLog failed: %{public}d %{public}s', e.code, e.message);
-   14. }
+   // 请求获取诈骗通话记录信息，并进行业务处理
+   let options: antifraudPicker.AntifraudCallLogOptions = {
+     maxSelectNumber: 5
+   };
+   try {
+     hilog.info(0x0000, TAG, 'SelectFraudCallLog begin.');
+     let context = this.getUIContext().getHostContext();
+     const result: antifraudPicker.AntifraudCallLogResult = await antifraudPicker.selectFraudCallLog(context, options);
+   } catch (err) {
+     let e: BusinessError = err as BusinessError;
+     hilog.error(0x0000, TAG, 'SelectFraudCallLog failed: %{public}d %{public}s', e.code, e.message);
+   }
    ```

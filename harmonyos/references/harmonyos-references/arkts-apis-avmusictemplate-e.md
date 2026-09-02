@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Enums
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > ArkTS API > @ohos.multimedia.avMusicTemplate (音频模板) > Enums
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:21+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5b659be8b5bb09ea9380ea1169b74901a17098261e8a14cb9bd8782730693f42
+scraped_at: 2026-09-02T15:02:24+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:13f0d6ce83ab1c148d80a2b615d18a613b5fac03bf7a0e2ad7ca1503b5e70e49
 ---
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 23开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本模块仅适用于API version 23及以上版本的Car设备。
@@ -23,7 +23,7 @@ content_hash: sha256:5b659be8b5bb09ea9380ea1169b74901a17098261e8a14cb9bd87827306
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| DEFAULT | 'smartCar' | 音频模板类型的默认值。  用于标识当前音频模板应用的业务类型，用户创建模板时可根据自身业务修改此值。 |
+| DEFAULT | 'smartCar' | 音频模板类型的默认值。  用于标识当前音频模板应用的业务类型。 |
 
 ## EntityType
 
@@ -53,7 +53,7 @@ content_hash: sha256:5b659be8b5bb09ea9380ea1169b74901a17098261e8a14cb9bd87827306
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| PLAYBACK\_STATE\_PREPARE | 0 | 准备状态。  表示媒体文件尚未准备好播放，媒体正在加载或缓冲中。 |
+| PLAYBACK\_STATE\_PREPARE | 0 | 准备中状态。  表示媒体文件尚未准备好播放，媒体正在加载或缓冲中。 |
 | PLAYBACK\_STATE\_PLAY | 1 | 正在播放状态。 |
 | PLAYBACK\_STATE\_PAUSE | 2 | 暂停状态。 |
 | PLAYBACK\_STATE\_STOP | 3 | 停止状态。 |
@@ -71,7 +71,7 @@ content_hash: sha256:5b659be8b5bb09ea9380ea1169b74901a17098261e8a14cb9bd87827306
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| NONE | 0 | 默认值，默认正序。 |
+| NONE | 0 | 不指定排序方式，使用默认正序。 |
 | ORDER | 1 | 正序。 |
 | REVERSE\_ORDER | 2 | 倒序。 |
 
@@ -85,7 +85,7 @@ content_hash: sha256:5b659be8b5bb09ea9380ea1169b74901a17098261e8a14cb9bd87827306
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| SWITCH | 0 | 开关设置，用于控制功能的开启或关闭状态。 |
+| SWITCH | 0 | 开关设置，用于控制功能的开启或关闭。 |
 | LIST | 1 | 列表设置，用于从多个选项中选择一个选项。 |
 | JUMP | 2 | 跳转设置，用于跳转到另一个界面。 |
 
@@ -132,7 +132,7 @@ content_hash: sha256:5b659be8b5bb09ea9380ea1169b74901a17098261e8a14cb9bd87827306
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NORMAL | 'normal' | 常规购买。 |
-| BANNER | 'banner' | 会员推广海报。 |
+| BANNER | 'banner' | 会员推广海报购买。 |
 
 ## SearchPlayInfoType
 

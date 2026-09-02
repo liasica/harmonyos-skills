@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-co
 title: 结构体
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4e76eb703e9a3f5e17908748a3ed46c1b3d0ef9f10eb0e8fdb472e8bcab4f923
+scraped_at: 2026-09-02T14:52:23+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:0b1ddfe36709bbbea217337f8145caf57d392bf29f3f8ea504b1463d43fd483e
 ---
 
 * **[Rcp\_Buffer](_rcp___buffer.md)**
@@ -25,6 +25,7 @@ content_hash: sha256:4e76eb703e9a3f5e17908748a3ed46c1b3d0ef9f10eb0e8fdb472e8bcab
 * **[Rcp\_Exclusions](_rcp___exclusions.md)**
 * **[Rcp\_FormFieldFileValue](_rcp___form_field_file_value.md)**
 * **[Rcp\_FormFieldValue](_rcp___form_field_value.md)**
+* **[Rcp\_FormOrder](_rcp___form_order.md)**
 * **[Rcp\_HeaderEntry](_rcp___header_entry.md)**
 * **[Rcp\_HeaderValue](_rcp___header_value.md)**
 * **[Rcp\_InfoToCollect](_rcp___info_to_collect.md)**
@@ -61,3 +62,8 @@ content_hash: sha256:4e76eb703e9a3f5e17908748a3ed46c1b3d0ef9f10eb0e8fdb472e8bcab
 * **[Rcp\_WebProxy](_rcp___web_proxy.md)**
 * **[Rcp\_OnBinaryReceiveCallback](_rcp___on_binary_receive_callback.md)**
 * **[Rcp\_OnStatusCodeReceiveCallback](_rcp___on_status_code_callback.md)**
+* **[Rcp\_OnGetDataCallback](_rcp___on_get_data_callback.md)**
+* **[Rcp\_QuicSlist](_rcp___quic_slist.md)**
+* **[Rcp\_QuicIpAddress](_rcp___quic_ipaddress.md)**
+* **[Rcp\_QuicIoVec](_rcp___quic_io_vec.md)**
+* **[Rcp\_QuicStreamData](_rcp___quic_stream_data.md)**

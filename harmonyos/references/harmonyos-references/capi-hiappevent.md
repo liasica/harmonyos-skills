@@ -3,22 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hiap
 title: HiAppEvent
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > C API > 模块 > HiAppEvent
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:19+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:d4485893f64631a724b558ad7086a744fe1e6a2b2eab1076235b3aebd7dc65a1
+scraped_at: 2026-09-02T14:52:40+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9e7dbe17037033469ceb206dca90709b2a857afbc889c1e4324b3154dc5fe291
 ---
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
 HiAppEvent模块提供应用事件打点功能。记录应用运行过程中上报的故障事件、统计事件、安全事件和用户行为事件。基于事件信息，开发者可以分析应用的运行状态。
+
+**系统能力：** SystemCapability.HiviewDFX.HiAppEvent
 
 **起始版本：** 8
 
 ## 文件汇总
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

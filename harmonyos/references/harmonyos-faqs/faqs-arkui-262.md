@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-262
 title: 如何使用Navigation的navPathStack参数
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 如何使用Navigation的navPathStack参数
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何使用Navigation的navPathStack参数
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:09+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:21+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:b53c9ebb05676614326183043ded31b231f2f2a21a9f23a49f650d96a7514401
 ---
 

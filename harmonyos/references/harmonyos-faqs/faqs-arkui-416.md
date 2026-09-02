@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-416
 title: Watch开发，ArcSwiper实现右滑退出
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > Watch开发，ArcSwiper实现右滑退出
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Watch开发，ArcSwiper实现右滑退出
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:50+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:22+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:4c86ea2135bcdd185dd6b8e739e3d8f7e35cd7ee6d4e1ce0e959748169054013
 ---
 

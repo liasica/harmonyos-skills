@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cannkit-h
 title: hiai_tensor.h
 breadcrumb: API参考 > AI > CANN Kit（CANN异构计算框架服务） > C API > 头文件和结构体 > 头文件 > hiai_tensor.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:50+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:436f4c94693b36acaf9df6999188964110f13407a32ae6235f54e100442c7cc1
+scraped_at: 2026-09-02T15:03:10+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:99ae7788bd9268de17a21c566b56f1a02cf00688a3f764dc647129f00179bfc9
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 模型推理时使用的输入输出内存相关的辅助接口。
 
@@ -28,11 +26,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 函数
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |

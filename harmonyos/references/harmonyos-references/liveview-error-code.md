@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/liveview-
 title: ArkTS API错误码
 breadcrumb: API参考 > 应用服务 > Live View Kit（实况窗服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:03+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8f8e65febcc6add48ef9d1156091c6cf160993e22ec9b76723a8a81424dacdaa
+scraped_at: 2026-09-02T15:02:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5a8be660ba12add8fb120c5cd4bebe5a63dc2722595d35b51e7d27a0776bb8c8
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 1003500001 系统错误
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -34,8 +32,6 @@ Internal error.
 
 ## 1003500002 序列化或反序列化失败
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
 Marshalling or unmarshalling error.
@@ -53,8 +49,6 @@ Marshalling or unmarshalling error.
 进行重试操作或通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
 
 ## 1003500003 连接服务失败
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -74,8 +68,6 @@ Failed to connect service.
 
 ## 1003500004 实况窗开关关闭
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
 LiveView is not enabled.
@@ -94,8 +86,6 @@ LiveView is not enabled.
 
 ## 1003500005 实况窗权益未申请
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
 The right of liveView is not enabled.
@@ -110,11 +100,9 @@ The right of liveView is not enabled.
 
 **处理步骤**
 
-若已申请实况窗权益，请确认event字段与开通权益的场景匹配；若未申请实况窗权益，请到AGC平台开通实况窗权益。
+若已申请实况窗权益，请确认event字段与开通权益的场景匹配；若未申请实况窗权益，请参考[开发准备](../harmonyos-guides/liveview-preparations.md)，完成实况窗权益申请。
 
 ## 1003500006 实况窗已存在
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -134,8 +122,6 @@ The liveView already exists.
 
 ## 1003500007 无法连接服务器
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
 Couldn't connect to server.
@@ -154,8 +140,6 @@ Couldn't connect to server.
 
 ## 1003500008 实况窗频度超过限制
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
 Over max number liveViews per second.
@@ -173,8 +157,6 @@ Over max number liveViews per second.
 请降低实况窗调用频率。
 
 ## 1003500009 实况窗id不存在
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -195,8 +177,6 @@ The liveView does not exist.
 
 ## 1003500010 实况窗已结束
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
 The liveView has ended.
@@ -215,8 +195,6 @@ The liveView has ended.
 
 ## 1003500011 实况窗顺序不正确
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
 The liveView sequence is incorrect.
@@ -233,99 +211,7 @@ The liveView sequence is incorrect.
 
 请修改序列号[sequence](liveview-liveviewmanager.md#liveview)后重新更新或结束实况窗。
 
-## 1003500012 订阅次数超出限制
-
-**错误信息**
-
-The number of subscription times exceeds the upper limit of 2000.
-
-**错误描述**
-
-订阅次数超出限制。
-
-**可能原因**
-
-单个用户每个应用最多有2000个订阅关系。
-
-**处理步骤**
-
-请调整订阅次数。
-
-## 1003500013 无效的实况窗订阅场景
-
-**错误信息**
-
-Invalid event type.
-
-**错误描述**
-
-无效的实况窗订阅场景。
-
-**可能原因**
-
-event传值不正确。
-
-**处理步骤**
-
-请检查event参数。
-
-## 1003500014 实况窗提醒时间距当前时间过长
-
-**错误信息**
-
-Time exceeds valid period.
-
-**错误描述**
-
-实况窗提醒时间距当前时间过长。
-
-**可能原因**
-
-当前时间距离alertTime超过30天。
-
-**处理步骤**
-
-请检查alertTime、startTime参数。
-
-## 1003500015 实况窗订阅失败
-
-**错误信息**
-
-Subscribe failed.
-
-**错误描述**
-
-实况窗订阅失败。
-
-**可能原因**
-
-云侧内部异常。
-
-**处理步骤**
-
-进行重试操作或通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
-
-## 1003500016 请求频次超限
-
-**错误信息**
-
-Request subscribe liveView exceed.
-
-**错误描述**
-
-请求频次超限。
-
-**可能原因**
-
-短时间内订阅次数过多。
-
-**处理步骤**
-
-请调整订阅频次。
-
 ## 1003500017 超过条件实况窗次数限制
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -345,8 +231,6 @@ Over max number liveViews by trigger.
 
 ## 1003500018 基于地理位置的实况窗提醒开关关闭
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
 Geofencing-based liveView is not enabled.
@@ -365,8 +249,6 @@ Geofencing-based liveView is not enabled.
 
 ## 1003500019 位置功能的开关关闭
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
 The location switch is off.
@@ -381,11 +263,9 @@ The location switch is off.
 
 **处理步骤**
 
-请提示用户开启位置功能的开关。
+需要用户选择设置->隐私和安全->位置，打开“访问我的位置”开关。
 
 ## 1003500020 感知与提醒的开关关闭
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -401,4 +281,23 @@ The "Awareness & suggestions" switch of the location-based service is turned off
 
 **处理步骤**
 
-需要用户按如下位置打开开关，设置->隐私和安全->位置->最底部"系统服务"->感知与提醒。
+需要用户选择设置->隐私和安全->位置->最底部"系统服务"，打开访问“感知与提醒”开关。
+
+## 1003500021 系统无法找到实况窗卡片自定义扩展区的ExtensionAbility
+
+**错误信息**
+
+The system failed to find the ExtensionAbility instance for the custom Live View widget template.
+
+**错误描述**
+
+找不到实况窗卡片自定义扩展区的[LiveViewCardExtensionAbility](liveview-card-ability.md)，导致实况窗创建失败。
+
+**可能原因**
+
+开发者在创建实况窗卡片自定义扩展区时，传入的[CustomLayout.abilityName](liveview-liveviewmanager.md#customlayout)不存在。
+
+**处理步骤**
+
+1. 需要开发者在工程内创建一个ExtensionAbility类型的组件并且继承[LiveViewCardExtensionAbility](liveview-card-ability.md)。
+2. 开发者在创建实况窗卡片自定义扩展区时，传入的[CustomLayout.abilityName](liveview-liveviewmanager.md#customlayout)为开发者创建的该ExtensionAbility类型的组件的名称。

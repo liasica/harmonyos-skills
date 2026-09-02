@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-102
 title: 如何实现Sendable类型和JSON数据的转换
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 如何实现Sendable类型和JSON数据的转换
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:10+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:14+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:7674f274b4e9cfee8b3e37f971e47787164a9c00a81e7a8d3c9d23275e41c337
 ---
 

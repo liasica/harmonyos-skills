@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-screensho
 title: 地图截图
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图交互 > 地图截图
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:07+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ccd7f20a08a78b65f7946b2894e784134d2056c9e53cbfb8aced3306580f15d9
+scraped_at: 2026-09-02T14:50:28+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:4d79b66d9aff46d662bb9d41507598d7061a708f63c4c37514f0f829feceb946
 ---
 
 本章节将向您介绍如何实现地图截图功能。
 
-地图截图指对当前屏幕显示区域进行截屏，支持对地图、覆盖物、Logo进行屏幕截图。
+地图截图指对当前屏幕显示区域进行截屏，支持对地图、覆盖物、Logo进行屏幕截图。地图截图功能适用于需要将当前地图状态保存为图片的场景，如分享当前位置、生成导航路线图、记录特定视角的地图内容等。该功能可以帮助开发者快速实现地图内容的可视化输出，提升用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/v_GgJ7P5QYqyOSNoiXVI7A/zh-cn_image_0000002558605872.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/0CNZyjGHStaaznncjtHnkA/zh-cn_image_0000002706675108.jpg "点击放大")
 
 ## 接口说明
 
@@ -26,70 +26,75 @@ content_hash: sha256:ccd7f20a08a78b65f7946b2894e784134d2056c9e53cbfb8aced3306580
 
 1. 导入相关模块。
 
-   ```
-   1. import { MapComponent, mapCommon, map } from '@kit.MapKit';
-   2. import { AsyncCallback } from '@kit.BasicServicesKit';
-   3. import { image } from '@kit.ImageKit';
+   ```typescript
+   import { MapComponent, mapCommon, map } from '@kit.MapKit';
+   import { AsyncCallback } from '@kit.BasicServicesKit';
+   import { image } from '@kit.ImageKit';
    ```
 2. 调用[snapshot](../harmonyos-references/map-map-mapcomponentcontroller.md#snapshot)方法对当前屏幕进行截图。
 
-   ```
-   1. @Entry
-   2. @Component
-   3. struct HuaweiMapDemo {
-   4. private mapOptions?: mapCommon.MapOptions;
-   5. private callback?: AsyncCallback<map.MapComponentController>;
-   6. private mapController?: map.MapComponentController;
-   7. @State image?: image.PixelMap = undefined;
+   ```typescript
+   @Entry
+   @Component
+   struct MapScreenshotsDemo {
+     // ...
+     private mapOptions?: mapCommon.MapOptions;
+     private mapController?: map.MapComponentController;
+     private callback?: AsyncCallback<map.MapComponentController>;
+     @State image?: image.PixelMap = undefined;
 
-   9. aboutToAppear(): void {
-   10. // 地图初始化参数，设置地图中心点坐标及层级
-   11. this.mapOptions = {
-   12. position: {
-   13. target: {
-   14. latitude: 39.9,
-   15. longitude: 116.4
-   16. },
-   17. zoom: 10
-   18. }
-   19. };
+     aboutToAppear(): void {
+       // 地图初始化参数，设置地图中心点坐标及层级
+       this.mapOptions = {
+         position: {
+           target: {
+             latitude: 39.9,
+             longitude: 116.4
+           },
+           zoom: 10
+         }
+       };
 
-   21. // 地图初始化的回调
-   22. this.callback = async (err, mapController) => {
-   23. if (!err) {
-   24. // 获取地图的控制器类，用来操作地图
-   25. this.mapController = mapController;
-   26. } else {
-   27. console.error(`Failed to initialize the map, code is：${err.code}, message is ${err.message}`);
-   28. }
-   29. };
-   30. }
+       // 地图初始化的回调
+       this.callback = async (err, mapController) => {
+         if (!err) {
+           // 获取地图的控制器类，用来操作地图
+           this.mapController = mapController;
+         } else {
+           console.error(`Failed to initialize the map, code is：${err.code}, message is ${err.message}`);
+         }
+       };
+     }
 
-   32. build() {
-   33. Stack() {
-   34. Column() {
-   35. MapComponent({ mapOptions: this.mapOptions, mapCallback: this.callback })
-   36. .width('100%')
-   37. .height('50%');
+     build() {
+       // ...
+         Stack() {
+           Column() {
+             MapComponent({ mapOptions: this.mapOptions, mapCallback: this.callback })
+               .width('100%')
+               .height('50%');
 
-   39. Scroll(new Scroller()) {
-   40. Column() {
-   41. Image(this.image)
-   42. .objectFit(ImageFit.Auto)
-   43. .border({ width: 1, color: Color.Red }).width("100%")
-   44. Button("获取截图")
-   45. .margin({ left: 10 })
-   46. .fontSize(12)
-   47. .onClick(async () => {
-   48. if (this.mapController) {
-   49. let pixelMap = await this.mapController.snapshot();
-   50. this.image = pixelMap;
-   51. }
-   52. });
-   53. }
-   54. }.width('70%').height("50%")
-   55. }.width('100%')
-   56. }.height('100%')
-   57. }
-   58. }
+             Scroll(new Scroller()) {
+               Column() {
+                 Image(this.image)
+                   .objectFit(ImageFit.Auto)
+                   .border({ width: 1, color: Color.Red }).width('100%')
+                 Button('获取截图')
+                   .margin({ left: 10 })
+                   .fontSize(12)
+                   .onClick(async () => {
+                     if (this.mapController) {
+                       // 获取截图
+                       let pixelMap = await this.mapController.snapshot();
+                       this.image = pixelMap;
+                     }
+                   });
+               }
+             }.width('70%').height('50%')
+           }.width('100%')
+         }.height('100%')
+
+         // ...
+     }
+   }
    ```

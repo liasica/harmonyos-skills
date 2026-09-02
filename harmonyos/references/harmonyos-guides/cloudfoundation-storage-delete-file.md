@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 删除云侧文件
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 云存储 > 删除云侧文件
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:44+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f65bc9323a16cfa518b317ed41ed3109f45d39aaef429ac7118c7ecd0d4a3ff8
+scraped_at: 2026-09-02T14:59:54+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:27361a218002d646c8c76c8d6c295752b0d9a90a64c34ea1021dafc65a6889c7
 ---
 
 当云侧文件不需要时，开发者可以在应用客户端删除云侧的文件。
@@ -21,38 +21,29 @@ content_hash: sha256:f65bc9323a16cfa518b317ed41ed3109f45d39aaef429ac7118c7ecd0d4
 
 ## 操作步骤
 
-调用[StorageBucket.deleteFile](../harmonyos-references/cloudfoundation-cloudstorage.md#deletefile)删除云侧的文件。
+1. 导入相关模块。
 
-注意
+   ```typescript
+   import { cloudStorage } from '@kit.CloudFoundationKit';
+   // ...
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```
+2. 调用[StorageBucket.deleteFile](../harmonyos-references/cloudfoundation-cloudstorage.md#deletefile)删除云侧的文件。
 
-删除操作不可逆，一旦执行，文件会被物理删除，不可找回。
+   **注意** 
 
-完整示例代码如下：
+   删除操作不可逆，一旦执行，文件会被物理删除，不可找回。
 
-```
-1. import { cloudStorage } from '@kit.CloudFoundationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   let bucket: cloudStorage.StorageBucket = cloudStorage.bucket();
+   bucket.deleteFile(UI.uploadFileName).then(() => {
+     hilog.info(0x0000, 'Storage', `Succeeded in deleting File`);
+   }).catch((err: BusinessError) => {
+     hilog.error(0x0000, 'Storage', `Failed to delete file  code: ${err.code}, message: ${err.message}`);
+   });
+   ```
 
-5. let storageBucket: cloudStorage.StorageBucket = cloudStorage.bucket();
+   **说明** 
 
-7. @Component
-8. export struct testPage {
-9. build() {
-10. }
-
-12. // 删除云侧文件
-13. deleteFile() {
-14. // 删除云存储默认实例中screenshot/screenshot_20250115_155321.jpg文件
-15. storageBucket.deleteFile('screenshot/screenshot_20250115_155321.jpg').then(() => {
-16. hilog.info(0x0000, 'testTag', `Succeeded in deleting file.`);
-17. }).catch((err: BusinessError) => {
-18. hilog.error(0x0000, 'testTag', `Failed to delete file, code: ${err.code}, message: ${err.message}`);
-19. })
-20. }
-21. }
-```
-
-说明
-
-删除文件后，可以登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，选择项目，进入“云存储”界面查看文件列表。
+   删除文件后，可以登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，选择项目，进入“云存储”界面查看文件列表。

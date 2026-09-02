@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-introdu
 title: AppGallery Kit简介
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > AppGallery Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8ce7ad9f11f70d371cffa7a3c099651c1e60c5977c8e34fa4abe8e62616d852f
+scraped_at: 2026-09-02T14:59:52+08:00
+doc_updated_at: 2026-08-03
+content_hash: sha256:d2a2af3376c9538dd748e8667cda48e648d047606795aeef77d6ab4ed7e6682a
 ---
 
 AppGallery Kit（应用市场服务）提供应用市场业务的对外开放能力，可以更好地支持应用的下载、推荐和分发等场景以提高在应用市场上的曝光度，以及为开发者提供便捷高效的数字商品服务的接入流程和交互体验，助力开发者商业变现。
@@ -14,7 +14,7 @@ AppGallery Kit（应用市场服务）提供应用市场业务的对外开放能
 
 **[数字商品服务](store-iap-introduction.md)**：指华为为开发者的数字商品的管理、交易、售后提供的平台能力和服务，助力您实现数字商品交易和结算。
 
-**[应用市场推荐](store-productview.md)**：用户可直达您的应用市场详情页或卡片加桌页面，有效提高您的应用曝光率。
+**[应用市场推荐](appgallery-productview-loadservice.md)**：用户可直达应用市场详情页或卡片加桌页面，有效提高应用曝光率。同时提供应用内快捷方式，为用户快速访问应用功能与内容提供便捷途径。
 
 **[产品特性按需分发](store-moduleinstall_arkts.md)**：实现应用多子业务独立演进，能够提供动态分发和资源拆分，帮助提高分发效率。
 
@@ -65,7 +65,7 @@ AppGallery Kit（应用市场服务）提供应用市场业务的对外开放能
 本Kit支持模拟器，但与真机存在部分能力差异，具体差异如下：
 
 * 通用差异：请参见“[模拟器与真机的差异](ide-emulator-specification.md#section1227613205203)”。
-* 不支持数字商品服务、应用市场推荐、生态查询服务、应用市场更新功能、应用评论服务、图标管理服务，不支持端云交互。
+* 模拟器不支持数字商品服务、应用市场推荐、生态查询服务、应用市场更新功能、应用评论服务、图标管理服务，不支持端云交互。
 
 ## 示例代码
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-setad
 title: SetAddr
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > TensorData > SetAddr
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:14+08:00
+scraped_at: 2026-09-02T14:50:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:089740312dd4dca3f0b8cfbb8304a5373606dea290c2306b26746e7a5329ce7d
+content_hash: sha256:e86df5e5083d6bd9091c9588f153b815f55df4be6d13edee7c0dde153ea87eed
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:089740312dd4dca3f0b8cfbb8304a5373606dea290c2306b26746e7a532
 
 ## 函数原型
 
-```
-1. ge::graphStatus SetAddr(const ConstTensorAddressPtr addr, TensorAddrManager manager)
+```cpp
+ge::graphStatus SetAddr(const ConstTensorAddressPtr addr, TensorAddrManager manager)
 ```
 
 ## 参数说明
@@ -35,8 +35,8 @@ content_hash: sha256:089740312dd4dca3f0b8cfbb8304a5373606dea290c2306b26746e7a532
 
 ## 调用示例
 
-```
-1. auto addr = reinterpret_cast<void *>(0x10);
-2. TensorData td(addr, nullptr);
-3. td.SetAddr(addr, HostAddrManager);
+```cpp
+auto addr = reinterpret_cast<void *>(0x10);
+TensorData td(addr, nullptr);
+td.SetAddr(addr, HostAddrManager);
 ```

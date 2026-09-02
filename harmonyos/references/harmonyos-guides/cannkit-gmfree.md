@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-gmfre
 title: GmFree
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 算子调测API > GmFree
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:41+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ced4175972e604ac75291be0891c3a7ae0e05d1dec694ce582a3f516be0bf934
+scraped_at: 2026-09-02T14:50:38+08:00
+doc_updated_at: 2026-08-18
+content_hash: sha256:6d976eff80a3237720752c5bad8d00e59e9064781b67e5c8033d065e9d839084
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:ced4175972e604ac75291be0891c3a7ae0e05d1dec694ce582a3f516be0
 
 ## 函数原型
 
-```
-1. void GmFree(void *ptr)
+```cpp
+void GmFree(void *ptr)
 ```
 
 ## 参数说明
@@ -32,6 +32,8 @@ content_hash: sha256:ced4175972e604ac75291be0891c3a7ae0e05d1dec694ce582a3f516be0
 
 Kirin9020系列处理器
 
+Kirin9030系列处理器
+
 KirinX90系列处理器
 
 ## 约束说明
@@ -40,6 +42,6 @@ KirinX90系列处理器
 
 ## 调用示例
 
-```
-1. AscendC::GmFree((void*)x);
+```cpp
+AscendC::GmFree((void*)x);
 ```

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-lowp
 title: lowpower_audio_sink_base.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > lowpower_audio_sink_base.h
 category: harmonyos-references
-scraped_at: 2026-04-29T14:04:33+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:1bab30e19c5169a96e97d3fed7a80825b85e94503ad5c2472c4e06088ddd0790
+scraped_at: 2026-09-02T15:02:35+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:dd259d171c6b4226e5b779b5ad7254596f0aa18221294b34284c2ebb3ec9e507
 ---
 
 ## 概述
-
-PhonePC/2in1Tablet
 
 定义LowPowerAudioSink的结构体和枚举。
 
@@ -26,20 +24,14 @@ PhonePC/2in1Tablet
 
 ## 汇总
 
-PhonePC/2in1Tablet
-
 ### 结构体
-
-PhonePC/2in1Tablet
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [OH\_LowPowerAudioSink](capi-lowpoweraudiosink-oh-lowpoweraudiosink.md) | OH\_LowPowerAudioSink | LowPowerAudioSink的声明。 |
-| [OH\_LowPowerAudioSinkCallback](api-lowpoweraudiosink-oh-lowpoweraudiosinkcallback.md) | OH\_LowPowerAudioSinkCallback | 包含了LowPowerAudioSink回调函数指针的集合。  应用需注册此实例结构体到[OH\_LowPowerAudioSink](capi-lowpoweraudiosink-oh-lowpoweraudiosink.md)实例中，并对回调上报的信息进行处理，保证LowPowerAudioSink的正常运行。 |
+| [OH\_LowPowerAudioSinkCallback](capi-lowpoweraudiosink-oh-lowpoweraudiosinkcallback.md) | OH\_LowPowerAudioSinkCallback | 包含了LowPowerAudioSink回调函数指针的集合。  应用需注册此实例结构体到[OH\_LowPowerAudioSink](capi-lowpoweraudiosink-oh-lowpoweraudiosink.md)实例中，并对回调上报的信息进行处理，保证LowPowerAudioSink的正常运行。 |
 
 ### 函数
-
-PhonePC/2in1Tablet
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -48,18 +40,14 @@ PhonePC/2in1Tablet
 | [typedef void (\*OH\_LowPowerAudioSink\_OnDataNeeded)(OH\_LowPowerAudioSink\* sink, OH\_AVSamplesBuffer\* samples, void\* userData)](capi-lowpower-audio-sink-base-h.md#oh_lowpoweraudiosink_ondataneeded) | OH\_LowPowerAudioSink\_OnDataNeeded | LowPowerAudioSink需要数据时调用该方法。 |
 | [typedef void (\*OH\_LowPowerAudioSink\_OnInterrupted)(OH\_LowPowerAudioSink\* sink, OH\_AudioInterrupt\_ForceType type, OH\_AudioInterrupt\_Hint hint, void\* userData)](capi-lowpower-audio-sink-base-h.md#oh_lowpoweraudiosink_oninterrupted) | OH\_LowPowerAudioSink\_OnInterrupted | LowPowerAudioSink焦点打断时调用该方法。 |
 | [typedef void (\*OH\_LowPowerAudioSink\_OnDeviceChanged)(OH\_LowPowerAudioSink\* sink, OH\_AudioStream\_DeviceChangeReason reason, void\* userData)](capi-lowpower-audio-sink-base-h.md#oh_lowpoweraudiosink_ondevicechanged) | OH\_LowPowerAudioSink\_OnDeviceChanged | LowPowerAudioSink设备切换时调用该方法。 |
-| [typedef void (\*OH\_LowPowerAudioSink\_OnEos)(OH\_LowPowerAudioSink\* sink, void\* userData)](capi-lowpower-audio-sink-base-h.md#oh_lowpoweraudiosink_oneos) | OH\_LowPowerAudioSink\_OnEos | LowPowerAudioSink播放完成时调用该方法，包含在[OH\_LowPowerAudioSinkCallback](api-lowpoweraudiosink-oh-lowpoweraudiosinkcallback.md)中。 |
+| [typedef void (\*OH\_LowPowerAudioSink\_OnEos)(OH\_LowPowerAudioSink\* sink, void\* userData)](capi-lowpower-audio-sink-base-h.md#oh_lowpoweraudiosink_oneos) | OH\_LowPowerAudioSink\_OnEos | LowPowerAudioSink播放完成时调用该方法。 |
 
 ## 函数说明
 
-PhonePC/2in1Tablet
-
 ### OH\_LowPowerAudioSink\_OnError()
 
-PhonePC/2in1Tablet
-
-```
-1. typedef void (*OH_LowPowerAudioSink_OnError)(OH_LowPowerAudioSink* sink,OH_AVErrCode errCode,const char* errorMsg,void* userData)
+```c
+typedef void (*OH_LowPowerAudioSink_OnError)(OH_LowPowerAudioSink* sink, OH_AVErrCode errCode, const char* errorMsg, void* userData)
 ```
 
 **描述**
@@ -79,10 +67,8 @@ LowPowerAudioSink发生错误时调用该方法。
 
 ### OH\_LowPowerAudioSink\_OnPositionUpdated()
 
-PhonePC/2in1Tablet
-
-```
-1. typedef void (*OH_LowPowerAudioSink_OnPositionUpdated)(OH_LowPowerAudioSink* sink,int64_t currentPosition,void* userData)
+```c
+typedef void (*OH_LowPowerAudioSink_OnPositionUpdated)(OH_LowPowerAudioSink* sink, int64_t currentPosition, void* userData)
 ```
 
 **描述**
@@ -101,10 +87,8 @@ LowPowerAudioSink进度更新时调用该方法。
 
 ### OH\_LowPowerAudioSink\_OnDataNeeded()
 
-PhonePC/2in1Tablet
-
-```
-1. typedef void (*OH_LowPowerAudioSink_OnDataNeeded)(OH_LowPowerAudioSink* sink,OH_AVSamplesBuffer* samples,void* userData)
+```c
+typedef void (*OH_LowPowerAudioSink_OnDataNeeded)(OH_LowPowerAudioSink* sink, OH_AVSamplesBuffer* samples, void* userData)
 ```
 
 **描述**
@@ -123,10 +107,8 @@ LowPowerAudioSink需要数据时调用该方法。
 
 ### OH\_LowPowerAudioSink\_OnInterrupted()
 
-PhonePC/2in1Tablet
-
-```
-1. typedef void (*OH_LowPowerAudioSink_OnInterrupted)(OH_LowPowerAudioSink* sink,OH_AudioInterrupt_ForceType type,OH_AudioInterrupt_Hint hint,void* userData)
+```c
+typedef void (*OH_LowPowerAudioSink_OnInterrupted)(OH_LowPowerAudioSink* sink, OH_AudioInterrupt_ForceType type, OH_AudioInterrupt_Hint hint, void* userData)
 ```
 
 **描述**
@@ -146,10 +128,8 @@ LowPowerAudioSink焦点打断时调用该方法。
 
 ### OH\_LowPowerAudioSink\_OnDeviceChanged()
 
-PhonePC/2in1Tablet
-
-```
-1. typedef void (*OH_LowPowerAudioSink_OnDeviceChanged)(OH_LowPowerAudioSink* sink,OH_AudioStream_DeviceChangeReason reason,void* userData)
+```c
+typedef void (*OH_LowPowerAudioSink_OnDeviceChanged)(OH_LowPowerAudioSink* sink, OH_AudioStream_DeviceChangeReason reason, void* userData)
 ```
 
 **描述**
@@ -168,15 +148,13 @@ LowPowerAudioSink设备切换时调用该方法。
 
 ### OH\_LowPowerAudioSink\_OnEos()
 
-PhonePC/2in1Tablet
-
-```
-1. typedef void (*OH_LowPowerAudioSink_OnEos)(OH_LowPowerAudioSink* sink, void* userData)
+```c
+typedef void (*OH_LowPowerAudioSink_OnEos)(OH_LowPowerAudioSink* sink, void* userData)
 ```
 
 **描述**
 
-LowPowerAudioSink播放完成时调用该方法，包含在[OH\_LowPowerAudioSinkCallback](api-lowpoweraudiosink-oh-lowpoweraudiosinkcallback.md)中。
+LowPowerAudioSink播放完成时调用该方法。
 
 **起始版本：** 20
 

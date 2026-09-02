@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: 自动签名时提示“The signature does not take effect or has expired. It may be the current system time is inaccurate, please calibrate the system time and sign again”错误
 breadcrumb: FAQ > DevEco Studio > 环境准备 > 自动签名时提示“The signature does not take effect or has expired. It may be the current system time is inaccurate, please calibrate the system time and sign again”错误
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:20:08+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:b01b47f85b63224ca61df610ee485664831c1e0357449dd5186bb29bbe46b699
+scraped_at: 2026-09-02T14:54:52+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:9260e4377fcd13952610f8c4895ba66df37e6a482395c0a289b1f816e509334b
 ---
 
 **问题描述**
 
 自动生成签名失败。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/6A1mcvQvSxeBXszE8cAVRw/zh-cn_image_0000002229604309.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/O4TpOcr7QuqYg-p2_rCKww/zh-cn_image_0000002654797777.png)
 
 **解决方案**
 

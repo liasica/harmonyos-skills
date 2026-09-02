@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-conti
 title: MutableData
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > ContinuousVector > MutableData
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:55+08:00
+scraped_at: 2026-09-02T14:50:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9b85165df25da59dfddffd4bbdd9944c2736d1736067fe3acb72047e7697536f
+content_hash: sha256:aef8f0f82ec81fc505ccbbd4f67fe12f0a96e5ee191dff811ccd1388dab31e89
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:9b85165df25da59dfddffd4bbdd9944c2736d1736067fe3acb72047e769
 
 ## 函数原型
 
-```
-1. void *MutableData()
+```cpp
+void *MutableData()
 ```
 
 ## 参数说明
@@ -32,9 +32,9 @@ content_hash: sha256:9b85165df25da59dfddffd4bbdd9944c2736d1736067fe3acb72047e769
 
 ## 调用示例
 
-```
-1. size_t capacity = 100U;
-2. auto cv_holder = ContinuousVector::Create<int64_t>(capacity);
-3. auto cv = reinterpret_cast<ContinuousVector *>(cv_holder.get());
-4. auto cap = cv->MutableData();
+```cpp
+size_t capacity = 100U;
+auto cv_holder = ContinuousVector::Create<int64_t>(capacity);
+auto cv = reinterpret_cast<ContinuousVector *>(cv_holder.get());
+auto cap = cv->MutableData();
 ```

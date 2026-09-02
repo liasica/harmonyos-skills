@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-faq-8
 title: 自定义界面扫码预览画面出现拉伸
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > Scan Kit常见问题 > 自定义界面扫码预览画面出现拉伸
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:35:45+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:b9c79f6bcfce5c076faa829385cd59ab9e15924df45f5d7aea44a1a41304a6c4
+scraped_at: 2026-09-02T14:50:19+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6b5b0136490ceb11eeb90afe59aa954fb5d55d912d1c5de9cc595322534a78d2
 ---
 
 **问题现象**
@@ -18,59 +18,59 @@ ViewControl的宽高比需要与XComponent的宽高比保持一致，会消除�
 
 例如：XComponent中width为1080(px)，height为1920(px)，则ViewControl宽度设置为1080，高度设置为1920。
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { scanBarcode, customScan } from '@kit.ScanKit';
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { scanBarcode, customScan } from '@kit.ScanKit';
 
-5. @Entry
-6. @Component
-7. struct CustomScanPage {
-8. // 设置预览流高度，默认单位：px
-9. @State cameraHeight: number = 1920;
-10. // 设置预览流宽度，默认单位：px
-11. @State cameraWidth: number = 1080;
-12. private mXComponentController: XComponentController = new XComponentController();
+@Entry
+@Component
+struct CustomScanPage {
+  // 设置预览流高度，默认单位：px
+  @State cameraHeight: number = 1920;
+  // 设置预览流宽度，默认单位：px
+  @State cameraWidth: number = 1080;
+  private mXComponentController: XComponentController = new XComponentController();
 
-14. build() {
-15. Stack() {
-16. XComponent({
-17. id: 'componentId',
-18. type: XComponentType.SURFACE,
-19. controller: this.mXComponentController
-20. })
-21. .onLoad(() => {
-22. hilog.info(0x0001, '[Scan Sample]', 'onLoad is called');
-23. // 获取XComponent的surfaceId
-24. let surfaceId: string = this.mXComponentController.getXComponentSurfaceId();
-25. hilog.info(0x0001, 'viewControl', `onLoad surfaceId: ${surfaceId}`);
-26. // 设置viewControl相应字段
-27. let viewControl: customScan.ViewControl = {
-28. width: this.cameraWidth,
-29. height: this.cameraHeight,
-30. surfaceId: surfaceId
-31. };
-32. try {
-33. customScan.start(viewControl).then((scanResult: Array<scanBarcode.ScanResult>) => {
-34. hilog.info(0x0001, '[Scan Sample]',
-35. `Succeeded in getting ScanResult by promise, scanResult is ${JSON.stringify(scanResult)}`);
-36. }).catch((err: BusinessError) => {
-37. hilog.error(0x0001, '[Scan Sample]',
-38. `Failed to get ScanResult by promise. Code: ${err.code}, message: ${err.message}`);
-39. });
-40. } catch (err) {
-41. hilog.error(0x0001, '[Scan Sample]',
-42. `Failed to start customScan. Code: ${err.code}, message: ${err.message}`);
-43. }
-44. })
-45. .height(this.cameraHeight + 'px')
-46. .width(this.cameraWidth + 'px')
-47. .position({ x: 0, y: 0 })
-48. }
-49. .alignContent(Alignment.Bottom)
-50. .height('100%')
-51. .width('100%')
-52. .position({ x: 0, y: 0 })
-53. }
-54. }
+  build() {
+    Stack() {
+      XComponent({
+        id: 'componentId',
+        type: XComponentType.SURFACE,
+        controller: this.mXComponentController
+      })
+        .onLoad(() => {
+          hilog.info(0x0001, '[Scan Sample]', 'onLoad is called');
+          // 获取XComponent的surfaceId
+          let surfaceId: string = this.mXComponentController.getXComponentSurfaceId();
+          hilog.info(0x0001, 'viewControl', `onLoad surfaceId: ${surfaceId}`);
+          // 设置viewControl相应字段
+          let viewControl: customScan.ViewControl = {
+            width: this.cameraWidth,
+            height: this.cameraHeight,
+            surfaceId: surfaceId
+          };
+          try {
+            customScan.start(viewControl).then((scanResult: Array<scanBarcode.ScanResult>) => {
+              hilog.info(0x0001, '[Scan Sample]',
+                `Succeeded in getting ScanResult by promise, result length: ${scanResult.length}`);
+            }).catch((err: BusinessError) => {
+              hilog.error(0x0001, '[Scan Sample]',
+                `Failed to get ScanResult by promise. Code: ${err.code}, message: ${err.message}`);
+            });
+          } catch (err) {
+            hilog.error(0x0001, '[Scan Sample]',
+              `Failed to start customScan. Code: ${err.code}, message: ${err.message}`);
+          }
+        })
+        .height(`${this.cameraHeight}px`)
+        .width(`${this.cameraWidth}px`)
+        .position({ x: 0, y: 0 })
+    }
+    .alignContent(Alignment.Bottom)
+    .height('100%')
+    .width('100%')
+    .position({ x: 0, y: 0 })
+  }
+}
 ```

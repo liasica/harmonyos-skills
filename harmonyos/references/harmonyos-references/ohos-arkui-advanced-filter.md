@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: Filter
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > Filter
 category: harmonyos-references
-scraped_at: 2026-04-29T13:52:59+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:100f76c2a15ec86c2c479a5bab133ec79db1d6a1bd4af533c4e7e682c2a0a573
+scraped_at: 2026-09-02T15:01:08+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c8c77c73766880a34a4ee37b35b8894b44d5b39d27da264a17ee6157c5c571ae
 ---
 
 多条件筛选，帮助用户在大量信息中找到所需内容，应结合具体场景选择合适筛选方式。多条件筛选控件由筛选器与悬浮条构成，悬浮条可下拉展示悬浮筛选器。筛选器样式可分为多行可折叠类型与多行列表类型，并可以在筛选器最后一行附加快捷筛选器。
 
-说明
+**说明** 
 
 * 该组件从API version 10开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 该组件仅可在Stage模型下使用。
@@ -18,21 +18,15 @@ content_hash: sha256:100f76c2a15ec86c2c479a5bab133ec79db1d6a1bd4af533c4e7e682c2a
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { Filter } from '@kit.ArkUI';
+```ts
+import { Filter } from '@kit.ArkUI';
 ```
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## Filter
-
-PhonePC/2in1TabletTVWearable
 
 Filter({ multiFilters: Array<FilterParams>, additionFilters?: FilterParams, filterType?: FilterType, onFilterChanged: (filterResults: Array<FilterResult>) => void, container: ()=> void })
 
@@ -56,8 +50,6 @@ Filter({ multiFilters: Array<FilterParams>, additionFilters?: FilterParams, filt
 
 ## FilterParams
 
-PhonePC/2in1TabletTVWearable
-
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
@@ -71,8 +63,6 @@ PhonePC/2in1TabletTVWearable
 
 ## FilterType
 
-PhonePC/2in1TabletTVWearable
-
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
@@ -85,8 +75,6 @@ PhonePC/2in1TabletTVWearable
 | LIST\_FILTER | 1 | 多行列表类型筛选器。 |
 
 ## FilterResult
-
-PhonePC/2in1TabletTVWearable
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -102,75 +90,71 @@ PhonePC/2in1TabletTVWearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 不支持[通用事件](ts-component-general-events.md)。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 该示例设置FilterType属性为MULTI\_LINE\_FILTER，实现多行可折叠类型筛选器。
 
+```ts
+import { Filter, FilterParams, FilterResult, FilterType } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct Index {
+  private filterParam: Array<FilterParams> = [{
+    name: '月份',
+    options: ['全部', '1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+  },
+    {
+      name: '年份',
+      options: ['全部', '2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012',
+        '2011', '2010', '2009', '2008'],
+    },
+    {
+      name: '节气',
+      options: ['全部', '立春', '雨水', '惊蛰', '春分', '清明', '谷雨', '立夏', '小满', '芒种', '夏至', '小暑', '大暑',
+        '立秋', '处暑', '白露', '秋分', '寒露', '霜降', '立冬', '小雪', '大雪', '冬至', '小寒', '大寒'],
+    }];
+  // additionFilters筛选行name必传，不可为空，否则整行不显示
+  private additionParam: FilterParams =
+    { name: '您还可以搜', options: ['运营栏目1', '运营栏目2', '运营栏目3', '运营栏目4', '运营栏目5', '运营栏目6'] };
+  private arr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+  build() {
+    Column() {
+      Filter({
+        multiFilters: this.filterParam,
+        additionFilters: this.additionParam,
+        filterType: FilterType.MULTI_LINE_FILTER,
+        onFilterChanged: (select: Array<FilterResult>) => {
+          console.info('rec filter change');
+          for (let filter of select) {
+            console.info('name:' + filter.name + ',index:' + filter.index + ',value:' + filter.value);
+          }
+        }
+      }) {
+        List({ initialIndex: 0 }) {
+          ForEach(this.arr, (item: number, index: number) => {
+            ListItem() {
+              Text(item.toString())
+                .width('100%')
+                .height(100)
+                .fontSize(16)
+                .textAlign(TextAlign.Center)
+                .borderRadius(10)
+                .backgroundColor(Color.White)
+                .margin({ top: 10, bottom: 10 })
+            }
+          })
+        }.backgroundColor(Color.Gray)
+        .padding({ left: 20, right: 20 })
+      }
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
-1. import { Filter, FilterParams, FilterResult, FilterType } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. private filterParam: Array<FilterParams> = [{
-7. name: '月份',
-8. options: ['全部', '1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
-9. },
-10. {
-11. name: '年份',
-12. options: ['全部', '2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012',
-13. '2011', '2010', '2009', '2008'],
-14. },
-15. {
-16. name: '节气',
-17. options: ['全部', '立春', '雨水', '惊蛰', '春分', '清明', '谷雨', '立夏', '小满', '芒种', '夏至', '小暑', '大暑',
-18. '立秋', '处暑', '白露', '秋分', '寒露', '霜降', '立冬', '小雪', '大雪', '冬至', '小寒', '大寒'],
-19. }];
-20. // additionFilters筛选行name必传，不可为空，否则整行不显示
-21. private additionParam: FilterParams =
-22. { name: '您还可以搜', options: ['运营栏目1', '运营栏目2', '运营栏目3', '运营栏目4', '运营栏目5', '运营栏目6'] };
-23. private arr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-25. build() {
-26. Column() {
-27. Filter({
-28. multiFilters: this.filterParam,
-29. additionFilters: this.additionParam,
-30. filterType: FilterType.MULTI_LINE_FILTER,
-31. onFilterChanged: (select: Array<FilterResult>) => {
-32. console.info('rec filter change');
-33. for (let filter of select) {
-34. console.info('name:' + filter.name + ',index:' + filter.index + ',value:' + filter.value);
-35. }
-36. }
-37. }) {
-38. List({ initialIndex: 0 }) {
-39. ForEach(this.arr, (item: string, index: number) => {
-40. ListItem() {
-41. Text(item.toString())
-42. .width('100%')
-43. .height(100)
-44. .fontSize(16)
-45. .textAlign(TextAlign.Center)
-46. .borderRadius(10)
-47. .backgroundColor(Color.White)
-48. .margin({ top: 10, bottom: 10 })
-49. }
-50. })
-51. }.backgroundColor(Color.Gray)
-52. .padding({ left: 20, right: 20 })
-53. }
-54. }
-55. .height('100%')
-56. .width('100%')
-57. }
-58. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/PFuxQD8TTLGJRloX7NwvSA/zh-cn_image_0000002558606974.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/l26nXJRKSRqidtFwExnwCw/zh-cn_image_0000002706836290.png)

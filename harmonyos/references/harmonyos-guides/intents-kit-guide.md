@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-kit-g
 title: Intents Kit（意图框架服务）
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:30+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3374ec31bf1f538986eef2cd083a57219894bc7031a262d19658225ad8767ba0
+scraped_at: 2026-09-02T14:50:44+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8eb807cf6f2fd6462a188b03c9bf831f3916142f8d6389e71f6452990abc4a84
 ---
 
 * **[Intents Kit简介](intents-introduction.md)**
@@ -17,4 +17,5 @@ content_hash: sha256:3374ec31bf1f538986eef2cd083a57219894bc7031a262d19658225ad87
 * **[本地搜索方案](intents-search-rec.md)**
 * **[意图框架上架配置指导](intents-kit-listing-configuration.md)**
 * **[常见问题](intents-frequently-asked-questions.md)**
+* **[Intents Kit术语](intents-glossary.md)**
 * **[附录A：获取华为账号对应UID的方式](intents-appendix-a-get-uid.md)**

@@ -3,22 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-wearab
 title: 实时三环数据
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > Wearable应用开发 > 管理运动健康数据 > 实时三环数据
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:14+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:14415f69353abacf5f37814091e02ff006ed7e0328d925ce21b3cb579f6b88c4
+scraped_at: 2026-09-02T14:59:56+08:00
+doc_updated_at: 2026-08-03
+content_hash: sha256:2c1cb916755741868d7fe08384e2a5bf5f8bcfa43e36092657801e5d2ea24691
 ---
 
 ## 场景介绍
 
-实时三环数据，包括实时步数，活动热量，锻炼时长，活动小时数以及目标类数据。
+从5.1.1(19) Release版本开始，支持实时三环数据，包括实时步数，活动热量，锻炼时长，活动小时数以及目标类数据。
 
-说明
+**说明** 
 
 此接口使用日常活动数据类型读权限，参考[权限说明](health-permission-description.md)。
-
-## 约束与限制
-
-从5.1.1(19) Release版本开始支持。
 
 ## OAuth权限
 
@@ -41,21 +37,21 @@ content_hash: sha256:14415f69353abacf5f37814091e02ff006ed7e0328d925ce21b3cb579f6
 
 1. 导入运动健康服务功能模块及相关公共模块。
 
-   ```
-   1. import { healthService } from '@kit.HealthServiceKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { healthService } from '@kit.HealthServiceKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 调用[readActivityReport](../harmonyos-references/health-api-healthservice.md#workoutreadactivityreport)方法读取实时三环数据，并处理返回结果。
 
-   ```
-   1. try {
-   2. const result: healthService.workout.ActivityReport = await healthService.workout.readActivityReport();
-
-   4. hilog.info(0x0000, 'testTag', 'Succeeded in reading ActivityReport');
-   5. Object.keys(result).forEach(key => {
-   6. hilog.info(0x0000, 'testTag', `the ${key} is ${result[key]}`);
-   7. });
-   8. } catch(err) {
-   9. hilog.error(0x0000, 'testTag', `Failed to read ActivityReport. Code: ${err.code}, message: ${err.message}`);
-   10. }
+   ```typescript
+   try {
+     const result: healthService.workout.ActivityReport = await healthService.workout.readActivityReport();
+     
+     hilog.info(0x0000, 'testTag', 'Succeeded in reading ActivityReport');
+     Object.keys(result).forEach(key => {
+       hilog.info(0x0000, 'testTag', `the ${key} is ${result[key]}`);
+     });
+   } catch (err) {
+     hilog.error(0x0000, 'testTag', `Failed to read ActivityReport. Code: ${err.code}, message: ${err.message}`);
+   }
    ```

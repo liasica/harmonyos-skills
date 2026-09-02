@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-infer
 title: InferValueRangeFuncRegister
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > InferValueRangeFuncRegister
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:34+08:00
+scraped_at: 2026-09-02T14:50:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:34f30cb699e96723e598580ef539be4a8ec2353bd48440dc6d4ad58fb6405f48
+content_hash: sha256:f8eee3488f0d0aa421f9ed645e74f52097f0af0fdf4f99f85d0bbea9e07a1c80
 ---
 
 ## 函数功能
@@ -14,11 +14,11 @@ InferValueRangeFuncRegister构造函数和析构函数。
 
 ## 函数原型
 
-```
-1. InferValueRangeFuncRegister(const char_t *const operator_type, const WHEN_CALL when_call,
-2. const InferValueRangeFunc &infer_value_range_func);
-3. InferValueRangeFuncRegister(const char_t *const operator_type);
-4. ~InferValueRangeFuncRegister() = default;
+```cpp
+InferValueRangeFuncRegister(const char_t *const operator_type, const WHEN_CALL when_call,
+const InferValueRangeFunc &infer_value_range_func);
+InferValueRangeFuncRegister(const char_t *const operator_type);
+~InferValueRangeFuncRegister() = default;
 ```
 
 ## 参数说明

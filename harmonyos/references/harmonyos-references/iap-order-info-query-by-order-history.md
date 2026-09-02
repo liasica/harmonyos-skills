@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-order
 title: 查询用户的历史购买记录
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API > 查询用户的历史购买记录
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:59+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ca3590c931ee9e726c49198f23ada85c303504d340ac55ccead798a988921f2a
+scraped_at: 2026-09-02T15:02:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e25aa01e06009042b55a2861011563fdb9dc64201b9db191785f89db7d1de601
 ---
 
 ## 功能介绍
@@ -16,7 +16,7 @@ content_hash: sha256:ca3590c931ee9e726c49198f23ada85c303504d340ac55ccead798a9889
 
 开发者可以通过此接口查询用户的历史购买记录，来判断是否给用户展示促销价格、是否已完成权益发放等场景。
 
-说明
+**说明** 
 
 1. 支持查询七年内的历史购买记录。
 2. 不支持查询沙盒历史购买记录。
@@ -59,14 +59,14 @@ content_hash: sha256:ca3590c931ee9e726c49198f23ada85c303504d340ac55ccead798a9889
 
 ## 请求示例
 
-```
-1. POST /harmony/v1/application/user/orders/query
-2. Content-Type: application/json;charset=UTF-8
-3. Authorization: Bearer ***.***.***
-4. Accept: application/json
-5. {
-6. "purchaseOrderId": "******"
-7. }
+```javascript
+POST /harmony/v1/application/user/orders/query
+Content-Type: application/json;charset=UTF-8
+Authorization: Bearer ***.***.***
+Accept: application/json
+{
+  "purchaseOrderId": "******"
+}
 ```
 
 ## 响应参数
@@ -88,12 +88,12 @@ content_hash: sha256:ca3590c931ee9e726c49198f23ada85c303504d340ac55ccead798a9889
 
 ## 响应示例
 
-```
-1. HTTP/1.2 200 OK
-2. Content-Type: application/json;charset=UTF-8
-3. {
-4. "responseCode": "0",
-5. "jwsPurchaseOrderList": ["****","****","****","****"],
-6. "continuationToken": "***"
-7. }
+```javascript
+HTTP/1.2 200 OK
+Content-Type: application/json;charset=UTF-8
+{
+  "responseCode": "0",
+  "jwsPurchaseOrderList": ["****","****","****","****"],
+  "continuationToken": "***"
+}
 ```

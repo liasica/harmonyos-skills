@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 屏幕类型布局场景
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 界面布局响应式变化 > 屏幕类型布局场景
 category: best-practices
-scraped_at: 2026-04-29T14:12:07+08:00
-doc_updated_at: 2026-04-08
-content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30cef82a
+scraped_at: 2026-09-02T15:03:18+08:00
+doc_updated_at: 2026-06-02
+content_hash: sha256:ac8a74b16505314d4fbf7852c87bf8396695b34b7810cbae541ab1a0bb4a9029
 ---
 
 ## 概述
@@ -32,20 +32,20 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 * [小方形屏](bpta-multi-device-screen-layout.md#section1395830175918)
 * [圆形屏](bpta-multi-device-screen-layout.md#section1298815351411)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/Mupf4F6RSW-pezIiJXG7YA/zh-cn_image_0000002355146801.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/4FDX4vU3StGGTxYCU85yyA/zh-cn_image_0000002552781908.png "点击放大")
 
 上图清晰地展示了各个设备在不同屏幕形态下的断点，这为本文后续的深入探讨提供了坚实的基础。通过此图，可以直观看到超大屏横屏、大屏横屏、大屏竖屏、大方形屏、直板机竖屏、直板机横屏、小方形屏、圆形屏等多种屏幕形态下的设备断点。
 
-说明
+**说明** 
 
 * 根据屏幕形态区分不同场景下的布局，均基于断点结合响应式布局与自适应布局实现，详情可参考[断点](bpta-multi-device-responsive-layout.md#section1532120147301)。
 * 同一设备由于横竖屏旋转的场景，会产生横向和纵向两种屏幕形态，旋转适配案例可参考[窗口方向](bpta-multi-device-window-direction.md)。
 
 ## 超大屏横屏
 
-超大屏横屏设备横向分辨率通常超过1440vp，具备更强的多任务处理能力，可同时展示多个应用或复杂布局，提升工作效率。典型设备有[PC/2in1](bpta-pc-guide.md)设备等。适用于文档处理、数据分析、编程开发、内容创作等生产力场景。
+超大屏横屏设备横向分辨率通常超过1440vp，具备更强的多任务处理能力，可同时展示多个应用或复杂布局，提升工作效率。典型设备应用开发参考[电脑应用开发](bpta-pc-guide.md)等。适用于文档处理、数据分析、编程开发、内容创作等生产力场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/7-eQg_GdSgWfhCqjqehkSw/zh-cn_image_0000002321148150.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/07iKLFWYScqKt9xsddU0cg/zh-cn_image_0000002321148150.png "点击放大")
 
 ### 断点判断
 
@@ -67,7 +67,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/z_1rqn80TRu6DEcZ8_f5MQ/zh-cn_image_0000002355266657.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/HOzGesVYRlOOkRks6OubLw/zh-cn_image_0000002355266657.png "点击放大")
 * 网格
 
   布局建议：当页面中需要展示较多元素内容时，建议采用重复布局，结合网格实现结构化与多样化的排布方式。
@@ -76,7 +76,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/5OnIpR-xTzq2i4cylxQTpQ/zh-cn_image_0000002321307946.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/XK8QSGpvRNSk0-vdoek4uA/zh-cn_image_0000002321307946.png "点击放大")
 * 列表
 
   布局建议：为了提高屏幕利用率，在大屏上展示更多的内容信息，可以根据断点展示更多列数实现重复布局。
@@ -85,7 +85,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/VjqF00F1R6mbpihOdQMfzA/zh-cn_image_0000002355146809.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/pvHDpVzlT6OPO0VR7JfPVA/zh-cn_image_0000002355146809.png "点击放大")
 * 三分栏
 
   布局建议：在超大屏横屏设备上，面对具有多级属性的内容，建议采用分栏布局，以清晰展现层级结构，同时提升信息展示密度和用户操作效率。
@@ -94,7 +94,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/lpfbZUfGTAWkHK-nB21tAQ/zh-cn_image_0000002321148158.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/DBt8pFdBRKqyvBYV_dXqvw/zh-cn_image_0000002321148158.png "点击放大")
 
 ## 大屏横屏
 
@@ -102,7 +102,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
 这类屏幕拥有高分辨率，还具备出色的显示细腻度和广阔的可视区域，适合展示更加丰富和多层次的内容。在学习、娱乐或办公等多种应用场景中，这些屏幕能为用户提供更清晰的文字、更完整的界面布局以及更流畅的视觉体验，从而有效提升信息获取效率和使用舒适度，增强工作与学习的专注力及完成效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/ZuQAEsNAQXO-QDaE9XsUHA/zh-cn_image_0000002355266669.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/eUKQvlk4QTaMV4ytjMiz7w/zh-cn_image_0000002577262247.png "点击放大")
 
 ### 断点判断
 
@@ -111,6 +111,9 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 | 横向断点lg，纵向断点sm | Pad（横向） |
 | 三折叠三屏态（横向） |
 | 折叠PC（半折叠态） |
+| Pura 70 Ultra/Pro 系列、Pocket 2手机（横向） |
+| 智慧屏（横向） |
+| Pura X Max（展开态横向） |
 
 ### 布局设计与实现
 
@@ -128,7 +131,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/oeOIw0x1SeGFmyCa4JAgBg/zh-cn_image_0000002321307954.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/nCepJP0TQSSBcR9o_vFkBw/zh-cn_image_0000002321307954.png "点击放大")
 
 * 瀑布流
 
@@ -138,7 +141,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/3gAmzSaPSDKiqSGZVHDY3w/zh-cn_image_0000002355146833.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/r9osSByeST664GR6OKZNhg/zh-cn_image_0000002355146833.png "点击放大")
 * 轮播图
 
   布局建议：多张图片展示的场景下，建议使用轮播图展示图片，采用重复布局的方式，展示重复的元素。
@@ -147,7 +150,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/ooZsix07QXK3DeQU1pdu0A/zh-cn_image_0000002321148166.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/82BAElcvS8Sn8E49S8FtAg/zh-cn_image_0000002321148166.png "点击放大")
 * 网格
 
   布局建议：页面中重复内容（如卡片、商品项、文章列表等）的展示方式应根据可用空间进行动态调整。建议采用重复布局，根据不同设备的显示特性自动调整列数、间距与排列方向。
@@ -156,7 +159,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/P9x-8qQHQNOKoTTQ5lF_mA/zh-cn_image_0000002355266677.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/jf0yMGveQ7uXbRjLtdT9Vg/zh-cn_image_0000002355266677.png "点击放大")
 * 列表
 
   布局建议：当面临大量重复内容（如商品列表、文章卡片、用户评论等）需要有序展示时，建议采用重复布局，通过统一的样式模板对内容进行结构化排列。
@@ -165,7 +168,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/cA9ISuVfR3iXLQx9xdTKNQ/zh-cn_image_0000002321307966.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/gbvDqrRYRfSvwa2H_X4s7Q/zh-cn_image_0000002321307966.png "点击放大")
 * 侧边栏
 
   布局建议：为充分发挥大屏设备在空间展示上的优势，提升信息密度与用户操作效率，建议采用分栏布局，合理划分主内容区与侧边栏区域。
@@ -174,7 +177,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/lJd41jYZQPaonpXKMYQAwQ/zh-cn_image_0000002355146849.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/LOlDxvVHR7qF3VslZXFFWQ/zh-cn_image_0000002355146849.png "点击放大")
 
 * 三分栏
 
@@ -184,7 +187,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/WvJLIvuORIe0FXFF-O8Ndg/zh-cn_image_0000002321148182.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/qecxC0L_SESPU6PZOxq0tg/zh-cn_image_0000002321148182.png "点击放大")
 * 插图和文字组合布局
 
   布局建议：在需要图文并茂展示的场景下，推荐采用挪移布局，将图片与文字设置为左右分布的形式，使信息传递更加高效直观。
@@ -193,7 +196,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/lGYOXzc_QYOrcE8iz45Maw/zh-cn_image_0000002355266693.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/b-VL2XK2TlO3IyLMlZHbjA/zh-cn_image_0000002355266693.png "点击放大")
 
 ## 大屏竖屏
 
@@ -201,7 +204,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
 竖屏模式便于用户聚焦内容流并进行滚动、点击等基础操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/4EuA5NPyToqtBDULoyWfOw/zh-cn_image_0000002321307978.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/39adqqZNR-yvsFk3uidFAg/zh-cn_image_0000002546822098.png "点击放大")
 
 ### 断点判断
 
@@ -209,6 +212,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 | --- | --- |
 | 横向断点md，纵向断点lg | Pad（竖屏） |
 | 三折叠三屏态（竖屏） |
+| Pura X Max（展开态竖向） |
 
 ### 布局设计与实现
 
@@ -222,7 +226,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/1Tlc2ahqTkWDBbXUZSCcCQ/zh-cn_image_0000002355146861.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/MhVHe4mwTx6psXPhBDY2Cg/zh-cn_image_0000002355146861.png "点击放大")
 * 轮播图
 
   布局建议：在大屏竖屏场景下，由于屏幕宽度较大，推荐采用重复布局，多张图片轮播，提升内容密度与用户的浏览效率。
@@ -231,7 +235,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/NicY2MS5RKCyDkxVUqy4wQ/zh-cn_image_0000002321148194.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/6lhMeJmfQ3u-YXCZrDJhfg/zh-cn_image_0000002321148194.png "点击放大")
 * 列表
 
   布局建议：大屏竖屏相较于直板机竖屏具有更大的展示内容区，建议采用重复布局，设置为一行多列或一列多行展示。
@@ -240,7 +244,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/eEIUCJ33RdKCetm2SCV1Cg/zh-cn_image_0000002355266713.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/_COtpRYJTQ-9RZLr3gyM0Q/zh-cn_image_0000002355266713.png "点击放大")
 * 网格
 
   布局建议：大屏竖屏相较于直板机竖屏具有更大的展示内容区，支持设置布局为多行多列展示。
@@ -249,7 +253,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/kYSIVqdZRkeQVhc5inh5-w/zh-cn_image_0000002321307994.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/8nQKO_ZcRlKqxZQji6dlng/zh-cn_image_0000002321307994.png "点击放大")
 
 ## 大方形屏
 
@@ -257,7 +261,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
 此类屏幕非常适合多任务处理、内容分屏展示以及创作类应用，能够显著提升用户的操作效率与交互体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/e--gm5npTXK3CAv30KnrWw/zh-cn_image_0000002355146881.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/Py1VSNS0SQaYsMvqJdpxrg/zh-cn_image_0000002355146881.png "点击放大")
 
 ### 断点判断
 
@@ -278,7 +282,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/uW4CY9nISPi82qd5p3jQEw/zh-cn_image_0000002321148206.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/nYMbJXtbRli35bOnsLEdKA/zh-cn_image_0000002321148206.png "点击放大")
 * 瀑布流
 
   布局建议：小尺寸屏幕上的单列瀑布流，在大方形屏上采用重复布局，变为多列瀑布流布局，可以提升宽屏设备上的阅读体验。
@@ -287,7 +291,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/3mbP9GezTTyszctPSiB1Lg/zh-cn_image_0000002355266729.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/gfcO4prlQqinHWw1ok7iaw/zh-cn_image_0000002355266729.png "点击放大")
 * 网格
 
   布局建议：大方形屏推荐使用重复布局，以多行多列的形式展示重复性信息元素，充分发挥大屏空间优势，提升信息密度与展示效率。
@@ -296,7 +300,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/1t7YOfSJS5qM0qFlH6WboQ/zh-cn_image_0000002321308006.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/arFszcfJRAWP80C1CcFNCg/zh-cn_image_0000002321308006.png "点击放大")
 * 列表
 
   布局建议：在大方形屏上，建议使用重复布局，通过“一行多列”或“一列多行”的排布方式展示更多内容，提升信息密度和界面利用率。
@@ -305,7 +309,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/yDdolepaR66GH7VIaPwPcQ/zh-cn_image_0000002355146889.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/6iXDyiLJQye4qjqlcKcB4w/zh-cn_image_0000002355146889.png "点击放大")
 * 双栏
 
   布局建议：大方形屏建议采用分栏布局，利用横向空间优势，清晰展示具有层级关系的内容，提升界面组织性和用户操作效率。
@@ -314,7 +318,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/ZExu_zVrSiuqQL4hrIr5Kg/zh-cn_image_0000002321148226.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/Ry2JRSokTnq6hsoDdj_Osg/zh-cn_image_0000002321148226.png "点击放大")
 * 侧边栏
 
   布局建议：由于大方形屏横向空间充裕，在需要展示更多信息时，建议采用分栏布局，添加侧边栏，以提升界面组织性与信息展示效率。
@@ -323,7 +327,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/O6MVpHV5T2WkiiVqkpnW4g/zh-cn_image_0000002355266749.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/mdtCZcBZR3y4a6VAW6g6GQ/zh-cn_image_0000002355266749.png "点击放大")
 * 插图和文字组合布局
 
   布局建议：在部分小屏上下显示的场景，大方形屏时推荐采用挪移布局，左右分布。
@@ -332,15 +336,15 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/Ia2i0jj_T3G3-ZXWxc1cyQ/zh-cn_image_0000002321308038.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/aY8OYrV-TyGoNLfhSWtSQA/zh-cn_image_0000002321308038.png "点击放大")
 
 ## 直板机竖屏
 
-直板机竖屏是手机的主流屏幕类型，展示区域适中，适合单手操作和日常信息浏览。典型设备有华为全系列的直板机（如Mate 60）、小折叠（展开态）、阔折叠Pura X（展开态）、双折叠（折叠态）。
+直板机竖屏是手机的主流屏幕类型，展示区域适中，适合单手操作和日常信息浏览。典型设备有华为全系列的直板机（如Mate 60）、小折叠（展开态）、阔折叠（如Pura X系列展开态和Pura X Max系列折叠态）、双折叠（折叠态）。
 
 这种屏幕形态特别适合社交应用、新闻阅读、即时通讯、短视频播放等高频交互场景。由于高度适应移动设备的使用习惯，开发者在设计界面时能够更容易地实现内容的垂直排列和层次展示。此外，直板机竖屏在响应式布局中表现出良好的兼容性，能够灵活适应不同分辨率和设备尺寸，在多设备协同开发中发挥着承上启下的重要作用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/-efgAfCkR9uTV9-yhw---Q/zh-cn_image_0000002355146905.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/3TtnDlouQjqtQLuoDOtwHA/zh-cn_image_0000002552782174.png)
 
 ### 断点判断
 
@@ -348,9 +352,10 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 | --- | --- |
 | 横向断点sm，纵向断点lg | 直板机 |
 | 小折叠（展开态） |
-| 阔折叠（展开态） |
+| Pura X（展开态） |
 | 双折叠（折叠态） |
 | 三折叠（折叠态） |
+| Pura X Max（折叠态） |
 
 ### 布局设计与实现
 
@@ -364,7 +369,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/RMsYxGVnTHWn0TSirohckQ/zh-cn_image_0000002321148234.jpg "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/sSRpGfauRuyiYtqbBEISPA/zh-cn_image_0000002321148234.jpg "点击放大")
 * 瀑布流
 
   布局建议：直板机竖屏设备推荐使用重复布局，提升内容展示密度与滚动浏览体验，适用于图集、商品列表、动态卡片等内容密集型场景。
@@ -373,7 +378,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/-A00WM-wSPm7E_pKmPrB5A/zh-cn_image_0000002355266757.jpg "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/8e5tipjASiuil_aagz_uBw/zh-cn_image_0000002355266757.jpg "点击放大")
 * 插图和文字组合布局
 
   布局建议：插图和文字组合场景在直板机竖屏设备上推荐使用上下布局，按内容优先级从上至下排列，适配小屏显示需求，提升可读性与操作便利性。
@@ -382,7 +387,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/oGmeqibJTI2HPXt-UJx-Rw/zh-cn_image_0000002321308050.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/LyzAATZGQxuYkefCejrxtw/zh-cn_image_0000002321308050.png "点击放大")
 * 单栏
 
   布局建议：直板机竖屏设备推荐使用单栏布局，按内容顺序垂直排列，提升界面简洁性与用户操作效率。
@@ -391,15 +396,15 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/u2naJZEVQ1mUxe6f6_fQug/zh-cn_image_0000002355146929.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/GgphU5FNQcaKti6rYtuL0w/zh-cn_image_0000002355146929.png "点击放大")
 
 ## 直板机横屏
 
-直板机横屏的主要使用场景通常是竖屏设备旋转至横屏后的情况。当需要更宽广的横向显示区域来增强视觉体验或提升特定任务的操作效率时，这种屏幕展示方式特别适合观看视频、浏览网页、编辑文档及游戏等需要较大横向空间的应用。典型设备有华为全系列的直板机（如Mate 60）、小折叠（展开态）、阔折叠Pura X（展开态）、双折叠（折叠态）。
+直板机横屏的主要使用场景通常是竖屏设备旋转至横屏后的情况。当需要更宽广的横向显示区域来增强视觉体验或提升特定任务的操作效率时，这种屏幕展示方式特别适合观看视频、浏览网页、编辑文档及游戏等需要较大横向空间的应用。典型设备有华为全系列的直板机（如Mate 60）、小折叠（展开态）、阔折叠（如Pura X系列展开态和Pura X Max系列折叠态）、双折叠（折叠态）。
 
 在这些设备上，当用户从竖屏切换到横屏模式时，界面布局会自动调整以适应新的屏幕方向，提供更加沉浸的观看体验或更适合阅读和编辑的工作环境。例如，观看电影或电视剧时，横屏模式可以最大化屏幕宽度的使用，减少黑边，增加画面比例；而在编辑文档或电子表格时，横向布局允许同时查看更多的列数据或文本内容，从而提高工作效率。通过这种方式，直板机横屏不仅增加了设备的实用性，也为用户提供了更加灵活多样的使用体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/zwHl1JsKRBGLoL1uZ7a7fA/zh-cn_image_0000002321148250.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/y-TGCRb8RcaN_X5xoDdWFA/zh-cn_image_0000002583421893.png)
 
 ### 断点判断
 
@@ -407,9 +412,10 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 | --- | --- |
 | 横向断点md，纵向断点sm | 直板机（横屏） |
 | 小折叠（展开态横屏） |
-| 阔折叠（展开态横屏） |
+| Pura X（展开态横屏） |
 | 双折叠（折叠态横屏） |
 | 三折叠（折叠态横屏） |
+| Pura X Max（折叠态横屏） |
 
 ### 布局设计与实现
 
@@ -423,7 +429,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/mUxdWsOTTyibi-55qT2y0g/zh-cn_image_0000002355266777.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/ZPkUhljFRROic6_bNwvryg/zh-cn_image_0000002355266777.png "点击放大")
 * 插图与文字组合布局
 
   布局建议：直板机横屏推荐采用挪移布局，将图片与文字左右排列，合理利用横向空间，提升信息展示效率与界面美观性。
@@ -432,7 +438,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/vQIyZFWmR2e_IxyPHEdYVg/zh-cn_image_0000002321308074.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/XshXCvI9Sr20mQuxiVCTBA/zh-cn_image_0000002321308074.png "点击放大")
 * 双栏
 
   布局建议：直板机横屏设备推荐使用分栏布局，将界面划分为左右两部分，充分利用横向空间展示更多信息，提升用户操作效率。
@@ -441,31 +447,31 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   参考设计图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/RCFglqlrRvW-UhNOha9aLw/zh-cn_image_0000002355146953.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/-P2ZIYCuSSGPjrL2iOnvkg/zh-cn_image_0000002355146953.png "点击放大")
 
-说明
+**说明** 
 
 直板机横屏的页面设计实现可参考[多设备长视频界面](multi-video-app.md)。
 
 ## 小方形屏
 
-小方形屏的特点包括：屏幕比例为1:1，横向分辨率低于600vp，典型设备如华为推出的[Pura X](bpta-purax-guide.md)的外屏。
+小方形屏的特点包括：屏幕比例为1:1，横向分辨率低于600vp，典型设备如华为推出的Pura X系列产品的外屏。
 
 此类屏幕主要应用于即时信息处理、便捷出行导航、快速移动支付、沉浸影音播放、轻量游戏畅玩等场景，能够充分发挥小方屏高效便捷的优势，无需使用内屏操作。
 
 由于1:1的屏幕比例和小尺寸屏幕，带来了一定的基础功能适配工作。在实际适配时，主要考虑如何充分利用屏幕空间，提供最佳的用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/qmdeLmbYSRy7ZG3D1ze7Kg/zh-cn_image_0000002321148258.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/khEhmqP3SH2_9yNADyrW5w/zh-cn_image_0000002552883100.png "点击放大")
 
 ### 断点判断
 
 | 横纵断点 | 设备 |
 | --- | --- |
-| 横向断点sm，纵向断点md | 阔折叠（折叠态） |
+| 横向断点sm，纵向断点md | Pura X（折叠态） |
 
 ### 布局设计与实现
 
-本章节以Pura X外屏为例，提供小方形屏上的设计方案，确保布局完整显示，避免内容截断、挤压或堆叠，充分利用屏幕空间，以提供最佳用户体验。
+本章节以Pura X系列产品外屏为例，提供小方形屏上的设计方案，确保布局完整显示，避免内容截断、挤压或堆叠，充分利用屏幕空间，以提供最佳用户体验。
 
 * 页面支持滑动、完整显示
 
@@ -473,290 +479,276 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/o_JEbziCQfSGGm1S3U7LEQ/zh-cn_image_0000002355266801.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/Xfj8Sb_NTy6kvNY9b7Ysew/zh-cn_image_0000002355266801.gif "点击放大")
 * **短视频播放页面完整显示，侧边控件支持滑动显示，侧边控件支持滑动**
 
   布局建议：小方形屏展示短视频播放页面，背景图片（视频）需等比例缩放并上下沉浸，上方沉浸至顶部标题栏，下方沉浸至底部页签栏。侧边控件支持滑动，确保页面内容完整显示。
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/zrY7tChCSZu6QUgNq2gT9A/zh-cn_image_0000002445121925.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/bygyWq1cQUuhEfMHZVQcuA/zh-cn_image_0000002445121925.gif "点击放大")
 
   实现原理：使用Stack组件控制页面内容显示层级，背景图片上下沉浸，且互相不影响交互事件。[Z序控制](../harmonyos-guides/arkts-layout-development-stack-layout.md#z序控制)从下到上分别是背景图片（视频）区、底部页签区、短视频描述区、侧边控件区、顶部页签区。顶部和底部页签设置内边距padding为topAvoidHeight或bottomAvoidHeight，避让系统规避区。侧边控件区使用Scroll组件自动控制滑动，使用[Blank组件](../harmonyos-references/ts-basic-components-blank.md)和[displayPriority属性](../harmonyos-references/ts-universal-attributes-layout-constraints.md#displaypriority)控制侧边控件区上下两侧的留白，容器高度足够时上下留白，容器高度不足时自动隐藏。
 
+  ```typescript
+  Stack({ alignContent: Alignment.BottomEnd }) {
+    // Background image.
+    Row() {
+      Image($r('app.media.background_image'))
+        .height('100%')
+        .objectFit(ImageFit.Cover)
+        .aspectRatio(0.6)
+    }
+    .height('100%')
+    .width('100%')
+    .justifyContent(FlexAlign.Center)
+
+    // Bottom tabs.
+    List() {
+      // ...
+    }
+    .backgroundColor($r('sys.color.mask_secondary'))
+    .listDirection(Axis.Horizontal)
+    .height(this.bottomBarHeight)
+    .padding({ bottom: this.bottomAvoidHeight })
+    // ...
+
+    // Video description.
+    Column() {
+      // ...
+    }
+    .alignItems(HorizontalAlign.Start)
+    .padding({
+      left: $r('app.float.margin_md'),
+      right: $r('app.float.margin_md')
+    })
+    // ...
+
+    // Sidebar buttons.
+    Scroll() {
+      Column() {
+        Blank()
+          .layoutWeight(3)
+          .displayPriority(1)
+        // ...
+        Blank()
+          .layoutWeight(1)
+          .displayPriority(1)
+      }
+      // ...
+    }
+    .scrollBar(BarState.Off)
+    .layoutWeight(1)
+    .width('56vp')
+    .edgeEffect(EdgeEffect.None)
+    .align(Alignment.Bottom)
+    .margin({
+      top: this.topAvoidHeight + 24,
+      bottom: this.bottomBarHeight,
+      right: '8vp'
+    })
+
+    // Top tabs.
+    Row() {
+      // ...
+  }
+  .height('100%')
+  .width('100%')
+  .backgroundColor(Color.Black)
   ```
-  1. Stack({ alignContent: Alignment.BottomEnd }) {
-  2. // Background image.
-  3. Row() {
-  4. Image($r('app.media.background_image'))
-  5. .height('100%')
-  6. .objectFit(ImageFit.Cover)
-  7. .aspectRatio(0.6)
-  8. }
-  9. .height('100%')
-  10. .width('100%')
-  11. .justifyContent(FlexAlign.Center)
-
-  13. // Bottom tabs.
-  14. List() {
-  15. // ...
-  16. }
-  17. .backgroundColor($r('sys.color.mask_secondary'))
-  18. .listDirection(Axis.Horizontal)
-  19. .height(this.bottomBarHeight)
-  20. .padding({ bottom: this.bottomAvoidHeight })
-  21. // ...
-
-  23. // Video description.
-  24. Column() {
-  25. // ...
-  26. }
-  27. .alignItems(HorizontalAlign.Start)
-  28. .padding({
-  29. left: $r('app.float.margin_md'),
-  30. right: $r('app.float.margin_md')
-  31. })
-  32. // ...
-
-  34. // Sidebar buttons.
-  35. Scroll() {
-  36. Column() {
-  37. Blank()
-  38. .layoutWeight(3)
-  39. .displayPriority(1)
-  40. // ...
-  41. Blank()
-  42. .layoutWeight(1)
-  43. .displayPriority(1)
-  44. }
-  45. // ...
-  46. }
-  47. .scrollBar(BarState.Off)
-  48. .layoutWeight(1)
-  49. .width('56vp')
-  50. .edgeEffect(EdgeEffect.None)
-  51. .align(Alignment.Bottom)
-  52. .margin({
-  53. top: this.topAvoidHeight + 24,
-  54. bottom: this.bottomBarHeight,
-  55. right: '8vp'
-  56. })
-
-  58. // Top tabs.
-  59. Row() {
-  60. // ...
-  61. }
-  62. .height('100%')
-  63. .width('100%')
-  64. .backgroundColor(Color.Black)
-  ```
-
-  [ShortVideoView.ets](https://gitcode.com/HarmonyOS_Samples/SmallWindowScene/blob/master/entry/src/main/ets/views/ShortVideoView.ets#L41-L239)
 * **自定义弹窗适配小方形屏**
 
   布局建议：在小方形屏上，当窗口高度无法完整显示自定义弹窗时，可能出现弹窗内容截断，需要进行自定义弹窗适配小方形屏。
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/WZq1W8IRRRulLPdXEFZyoA/zh-cn_image_0000002321308094.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/rwHR8RgYSgO686AMQbTT9w/zh-cn_image_0000002321308094.gif "点击放大")
 
   实现原理：弹框内容区使用scroll组件包裹，且使用[constraintSize](../harmonyos-references/ts-universal-attributes-size.md#constraintsize)约束其高度最大不超过父组件的90%，避免弹框内容截断。
 
+  ```typescript
+  Scroll() {
+    Column() {
+      // ...
+    }
+  }
+  .scrollBar(BarState.Off)
+  .constraintSize({
+    minHeight: 0,
+    maxHeight: '90%'
+  })
   ```
-  1. Scroll() {
-  2. Column() {
-  3. // ...
-  4. }
-  5. }
-  6. .scrollBar(BarState.Off)
-  7. .constraintSize({
-  8. minHeight: 0,
-  9. maxHeight: '90%'
-  10. })
-  ```
-
-  [ShareDialog.ets](https://gitcode.com/harmonyos_samples/SmallWindowScene/blob/master/entry/src/main/ets/views/ShareDialog.ets#L24-L43)
 * 沉浸式浏览
 
   布局建议：在小方形屏通用场景中，考虑到屏幕空间有限，为了提供更佳的内容体验，建议使用上滑隐藏、下滑恢复显示的功能。上滑可以临时隐藏标题栏、页签栏等界面元素，实现全屏内容浏览。下滑时，标题栏和页签栏将通过动画逐渐恢复显示。
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/nEizYYfeQRWPhHxGTOZGUg/zh-cn_image_0000002445161793.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/qjRsQPX2SLyqMyfpJxCPXQ/zh-cn_image_0000002445161793.gif "点击放大")
 
   实现原理：监听滚动行为，滚动时动态调整页面组件的高度和透明度，达到视觉上逐渐显示和隐藏的效果。具体为以下步骤：
 
   1. 使用状态变量控制顶部标题栏和底部页签栏的高度及透明度。标题栏高度为topBarHeight，页签栏高度为bottomBarHeight，标题栏和页签栏的透明度为barOpacity。
 
+     ```typescript
+     @StorageLink('topBarHeight') topBarHeight: number = CommonConstants.UTIL_HEIGHTS[1] + this.topAvoidHeight;
+     @State bottomBarHeight: number = CommonConstants.UTIL_HEIGHTS[0] + this.bottomAvoidHeight;
+     @State barOpacity: number = 1;
      ```
-     1. @StorageLink('topBarHeight') topBarHeight: number = CommonConstants.UTIL_HEIGHTS[1] + this.topAvoidHeight;
-     2. @State bottomBarHeight: number = CommonConstants.UTIL_HEIGHTS[0] + this.bottomAvoidHeight;
-     3. @State barOpacity: number = 1;
-     ```
-
-     [Index.ets](https://gitcode.com/HarmonyOS_Samples/SmallWindowScene/blob/master/entry/src/main/ets/pages/Index.ets#L36-L38)
   2. 在沉浸式布局下，标题栏高度为78vp加顶部系统规避区高度topAvoidHeight；页签栏高度为56vp加底部系统规避区高度bottomAvoidHeight，页签栏底部内边距为bottomAvoidHeight，以避让底部系统导航条。
 
-     ```
-     1. @StorageLink('topAvoidHeight') @Watch('topBarHeightChange') topAvoidHeight: number = 0;
-     2. @StorageLink('bottomAvoidHeight') @Watch('bottomBarHeightChange') bottomAvoidHeight: number = 0;
-     3. // ...
-     4. topBarHeightChange(): void {
-     5. if (this.currentWidthBreakpoint === WidthBreakpoint.WIDTH_SM &&
-     6. (this.currentHeightBreakpoint === HeightBreakpoint.HEIGHT_MD ||
-     7. this.currentHeightBreakpoint === HeightBreakpoint.HEIGHT_SM)) {
-     8. this.topBarHeight = 78 + this.topAvoidHeight;
-     9. }
-     10. // ...
-     11. };
+     ```typescript
+     @StorageLink('topAvoidHeight') @Watch('topBarHeightChange') topAvoidHeight: number = 0;
+     @StorageLink('bottomAvoidHeight') @Watch('bottomBarHeightChange') bottomAvoidHeight: number = 0;
+     // ...
+     topBarHeightChange(): void {
+       if (this.currentWidthBreakpoint === WidthBreakpoint.WIDTH_SM &&
+         (this.currentHeightBreakpoint === HeightBreakpoint.HEIGHT_MD ||
+           this.currentHeightBreakpoint === HeightBreakpoint.HEIGHT_SM)) {
+         this.topBarHeight = 78 + this.topAvoidHeight;
+       }
+       // ...
+     };
 
-     13. bottomBarHeightChange(): void {
-     14. this.bottomBarHeight = 56 + this.bottomAvoidHeight;
-     15. };
+     bottomBarHeightChange(): void {
+       this.bottomBarHeight = 56 + this.bottomAvoidHeight;
+     };
      ```
-
-     [Index.ets](https://gitcode.com/HarmonyOS_Samples/SmallWindowScene/blob/master/entry/src/main/ets/pages/Index.ets#L30-L89)
   3. 顶部和底部系统避让区高度会随应用窗口变化而变化。窗口生命周期创建时，调用[window.getWindowAvoidArea](../harmonyos-references/arkts-apis-window-window.md#getwindowavoidarea9)()获取初始的系统避让区高度，并使用window.on('avoidAreaChange')监听系统避让区的变化。常见触发系统避让区回调的场景可参考[on('avoidAreaChange')](../harmonyos-references/arkts-apis-window-window.md#onavoidareachange9)。
 
-     ```
-     1. export default class EntryAbility extends UIAbility {
-     2. private uiContext ?: UIContext;
-     3. private windowUtil?: WindowUtil = WindowUtil.getInstance();
-     4. private windowObj?: window.Window;
-     5. private onAvoidAreaChange: (avoidArea: window.AvoidAreaOptions) => void = (avoidArea: window.AvoidAreaOptions) => {
-     6. if (avoidArea.type === window.AvoidAreaType.TYPE_SYSTEM) {
-     7. AppStorage.setOrCreate('topAvoidHeight', this.windowObj!.getUIContext().px2vp(avoidArea.area.topRect.height));
-     8. } else if (avoidArea.type === window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR) {
-     9. AppStorage.setOrCreate('bottomAvoidHeight', this.windowObj!.getUIContext().px2vp(avoidArea.area.bottomRect.height));
-     10. }
-     11. };
-     12. // ...
-     13. onWindowStageCreate(windowStage: window.WindowStage): void {
-     14. // Main window is created, set main page for this ability
-     15. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
-     16. this.windowUtil?.setWindowStage(windowStage);
+     ```typescript
+     export default class EntryAbility extends UIAbility {
+       private uiContext ?: UIContext;
+       private windowUtil?: WindowUtil = WindowUtil.getInstance();
+       private windowObj?: window.Window;
+       private onAvoidAreaChange: (avoidArea: window.AvoidAreaOptions) => void = (avoidArea: window.AvoidAreaOptions) => {
+         if (avoidArea.type === window.AvoidAreaType.TYPE_SYSTEM) {
+           AppStorage.setOrCreate('topAvoidHeight', this.windowObj!.getUIContext().px2vp(avoidArea.area.topRect.height));
+         } else if (avoidArea.type === window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR) {
+           AppStorage.setOrCreate('bottomAvoidHeight', this.windowObj!.getUIContext().px2vp(avoidArea.area.bottomRect.height));
+         }
+       };
+       // ...
+       onWindowStageCreate(windowStage: window.WindowStage): void {
+         // Main window is created, set main page for this ability
+         hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+         this.windowUtil?.setWindowStage(windowStage);
 
-     18. windowStage.loadContent('pages/Index', (err) => {
-     19. if (err.code) {
-     20. hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
-     21. return;
-     22. }
-     23. windowStage.getMainWindow((err: BusinessError, data: window.Window) => {
-     24. if (err.code) {
-     25. hilog.error(0x0000, 'testTag', 'Failed to get the main window. Cause: %{public}s', JSON.stringify(err) ?? '');
-     26. return;
-     27. }
-     28. this.windowObj = data;
-     29. this.uiContext = data.getUIContext();
-     30. this.windowUtil!.setFullScreen();
-     31. // ...
-     32. let topAvoidHeight: window.AvoidArea = data.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);
-     33. AppStorage.setOrCreate('topAvoidHeight', this.uiContext.px2vp(topAvoidHeight.topRect.height));
-     34. let bottomAvoidHeight: window.AvoidArea =
-     35. data.getWindowAvoidArea(window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR);
-     36. AppStorage.setOrCreate('bottomAvoidHeight', this.uiContext.px2vp(bottomAvoidHeight.bottomRect.height));
-     37. data.on('avoidAreaChange', this.onAvoidAreaChange);
-     38. if (AppStorage.get('currentWidthBreakpoint') === WidthBreakpoint.WIDTH_SM &&
-     39. (AppStorage.get('currentHeightBreakpoint') === HeightBreakpoint.HEIGHT_MD ||
-     40. AppStorage.get('currentHeightBreakpoint') === HeightBreakpoint.HEIGHT_SM)) {
-     41. // Set top bar height when the application is in small screen.
-     42. AppStorage.setOrCreate('topBarHeight',
-     43. CommonConstants.UTIL_HEIGHTS[1] + this.uiContext!.px2vp(topAvoidHeight.topRect.height));
-     44. } else {
-     45. // Set top bar height when the application is in full screen.
-     46. AppStorage.setOrCreate('topBarHeight',
-     47. CommonConstants.UTIL_HEIGHTS[2] + this.uiContext!.px2vp(topAvoidHeight.topRect.height));
-     48. }
-     49. })
-     50. // ...
-     51. }
-     52. // ...
-     53. }
+         windowStage.loadContent('pages/Index', (err) => {
+           if (err.code) {
+             hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
+             return;
+           }
+           windowStage.getMainWindow((err: BusinessError, data: window.Window) => {
+             if (err.code) {
+               hilog.error(0x0000, 'testTag', 'Failed to get the main window. Cause: %{public}s', JSON.stringify(err) ?? '');
+               return;
+             }
+             this.windowObj = data;
+             this.uiContext = data.getUIContext();
+             this.windowUtil!.setFullScreen();
+             // ...
+             let topAvoidHeight: window.AvoidArea = data.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);
+             AppStorage.setOrCreate('topAvoidHeight', this.uiContext.px2vp(topAvoidHeight.topRect.height));
+             let bottomAvoidHeight: window.AvoidArea =
+               data.getWindowAvoidArea(window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR);
+             AppStorage.setOrCreate('bottomAvoidHeight', this.uiContext.px2vp(bottomAvoidHeight.bottomRect.height));
+             data.on('avoidAreaChange', this.onAvoidAreaChange);
+             if (AppStorage.get('currentWidthBreakpoint') === WidthBreakpoint.WIDTH_SM &&
+               (AppStorage.get('currentHeightBreakpoint') === HeightBreakpoint.HEIGHT_MD ||
+                 AppStorage.get('currentHeightBreakpoint') === HeightBreakpoint.HEIGHT_SM)) {
+               // Set top bar height when the application is in small screen.
+               AppStorage.setOrCreate('topBarHeight',
+                 CommonConstants.UTIL_HEIGHTS[1] + this.uiContext!.px2vp(topAvoidHeight.topRect.height));
+             } else {
+               // Set top bar height when the application is in full screen.
+               AppStorage.setOrCreate('topBarHeight',
+                 CommonConstants.UTIL_HEIGHTS[2] + this.uiContext!.px2vp(topAvoidHeight.topRect.height));
+             }
+           })
+           // ...
+       }
+       // ...
+     }
      ```
-
-     [EntryAbility.ets](https://gitcode.com/HarmonyOS_Samples/SmallWindowScene/blob/master/entry/src/main/ets/entryability/EntryAbility.ets#L24-L123)
   4. 设置顶部标题栏的高度为topBarHeight，透明度为barOpacity；底部页签栏的高度为bottomBarHeight，透明度为barOpacity，确保滑动时标题栏和页签栏能够逐渐显隐。在Stack组件内，将列表内容的顶部外边距设置为topBarHeight，确保滑动时列表占满剩余高度。
 
-     ```
-     1. Tabs() {
-     2. TabContent() {
-     3. Stack({ alignContent: Alignment.Top }) {
-     4. Row() {
-     5. Text($r('app.string.app_title'))
-     6. .fontSize($r('app.float.font_size_xl'))
-     7. .fontWeight(CommonConstants.FONT_WEIGHTS[1])
-     8. .height(this.topBarHeight)
-     9. .align(Alignment.Bottom)
-     10. .padding({ bottom: 12 })
-     11. }
-     12. .height(this.topBarHeight)
-     13. .opacity(this.barOpacity)
-     14. // ...
-     15. List({
-     16. space: CommonConstants.LIST_SPACE[0],
-     17. scroller: this.listScroller,
-     18. }) {
-     19. // ...
-     20. }
-     21. .onScrollIndex((start: number) => {
-     22. this.currentIndex = start;
-     23. })
-     24. .margin({ top: this.topBarHeight })
-     25. // ...
-     26. }
-     27. .height('100%')
-     28. .width('100%')
-     29. }
-     30. .tabBar(this.bottomTabBuilder(0))
+     ```typescript
+     Tabs() {
+       TabContent() {
+         Stack({ alignContent: Alignment.Top }) {
+           Row() {
+             Text($r('app.string.app_title'))
+               .fontSize($r('app.float.font_size_xl'))
+               .fontWeight(CommonConstants.FONT_WEIGHTS[1])
+               .height(this.topBarHeight)
+               .align(Alignment.Bottom)
+               .padding({ bottom: 12 })
+           }
+           .height(this.topBarHeight)
+           .opacity(this.barOpacity)
+           // ...
+           List({
+             space: CommonConstants.LIST_SPACE[0],
+             scroller: this.listScroller,
+           }) {
+             // ...
+           }
+           .onScrollIndex((start: number) => {
+             this.currentIndex = start;
+           })
+           .margin({ top: this.topBarHeight })
+           // ...
+         }
+         .height('100%')
+         .width('100%')
+       }
+       .tabBar(this.bottomTabBuilder(0))
 
-     32. // ...
-     33. }
-     34. // ...
-     35. .barHeight(this.bottomBarHeight)
-     36. // ...
+       // ...
+     }
+     // ...
+     .barHeight(this.bottomBarHeight)
+     // ...
      ```
+  5. 当横向断点为sm，纵向断点为sm或md，应用窗口属于小方形屏（例如Pura X外屏和手机上下分屏）时，在滑动过程中，如果当前Y轴滑动的偏移量>0（上滑时）且固定区（顶部标题栏和底部页签栏）未完全隐藏，逐渐减少固定区的高度和透明度，实现滑动过程隐藏的效果；当 Y 轴滑动偏移量＜ 0（下滑时），且未处于恢复动画状态、固定区域已隐藏的情况下，通过动画逐步恢复固定区域的高度与透明度。
 
-     [Index.ets](https://gitcode.com/HarmonyOS_Samples/SmallWindowScene/blob/master/entry/src/main/ets/pages/Index.ets#L129-L275)
-  5. 当横向断点为sm，纵向断点为sm或md，应用窗口属于阔折叠外屏或手机上下分屏等小方形屏时，在滑动过程中，如果当前Y轴滑动的偏移量>0（上滑时）且固定区（顶部标题栏和底部页签栏）未完全隐藏，逐渐减少固定区的高度和透明度，实现滑动过程隐藏的效果；当 Y 轴滑动偏移量＜ 0（下滑时），且未处于恢复动画状态、固定区域已隐藏的情况下，通过动画逐步恢复固定区域的高度与透明度。
-
+     ```typescript
+     .onScrollFrameBegin((offset: number) => {
+       if (this.currentWidthBreakpoint !== WidthBreakpoint.WIDTH_SM ||
+         (this.currentHeightBreakpoint !== HeightBreakpoint.HEIGHT_MD &&
+           this.currentHeightBreakpoint !== HeightBreakpoint.HEIGHT_SM)) {
+         return { offsetRemain: offset };
+       }
+       if (offset > 0) {
+         this.currentYOffset += offset;
+       }
+       if (offset < 0) {
+         this.currentYOffset -= offset;
+       }
+       this.getUIContext().animateTo({
+         duration: 300
+       }, () => {
+         this.topBarHeight = 0;
+         this.bottomBarHeight = 0;
+         this.barOpacity = 0;
+       });
+       return { offsetRemain: offset };
+     })
+     .onScrollStop(() => {
+       setTimeout(() => {
+         this.getUIContext().animateTo({
+           duration: 300
+         }, () => {
+           this.bottomBarHeight = 56 + this.bottomAvoidHeight;
+           this.topBarHeight = 78 + this.topAvoidHeight;
+           this.barOpacity = 1;
+           this.currentYOffset = 0;
+           this.isHiding = false;
+         });
+       }, 500);
+     });
      ```
-     1. .onScrollFrameBegin((offset: number) => {
-     2. if (this.currentWidthBreakpoint !== WidthBreakpoint.WIDTH_SM ||
-     3. (this.currentHeightBreakpoint !== HeightBreakpoint.HEIGHT_MD &&
-     4. this.currentHeightBreakpoint !== HeightBreakpoint.HEIGHT_SM)) {
-     5. return { offsetRemain: offset };
-     6. }
-     7. if (offset > 0) {
-     8. this.currentYOffset += offset;
-     9. }
-     10. if (offset < 0) {
-     11. this.currentYOffset -= offset;
-     12. }
-     13. this.getUIContext().animateTo({
-     14. duration: 300
-     15. }, () => {
-     16. this.topBarHeight = 0;
-     17. this.bottomBarHeight = 0;
-     18. this.barOpacity = 0;
-     19. });
-     20. return { offsetRemain: offset };
-     21. })
-     22. .onScrollStop(() => {
-     23. setTimeout(() => {
-     24. this.getUIContext().animateTo({
-     25. duration: 300
-     26. }, () => {
-     27. this.bottomBarHeight = 56 + this.bottomAvoidHeight;
-     28. this.topBarHeight = 78 + this.topAvoidHeight;
-     29. this.barOpacity = 1;
-     30. this.currentYOffset = 0;
-     31. this.isHiding = false;
-     32. });
-     33. }, 500);
-     34. });
-     ```
-
-     [Index.ets](https://gitcode.com/HarmonyOS_Samples/SmallWindowScene/blob/master/entry/src/main/ets/pages/Index.ets#L207-L240)
 
 ## 圆形屏
 
@@ -766,7 +758,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
 轻量级交互：在同一应用程序中，智能穿戴设备应利用其便携性，作为大型屏幕设备的补充和扩展，而不是替代。具体设计时，应考虑智能手表的屏幕尺寸和使用环境，进行简洁界面的定制，确保使用过程顺畅和操作便捷。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/BrS35DuTQCiBoCralvuvSA/zh-cn_image_0000002321148278.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/a1VNS7U4TLOv6KMyVzgExQ/zh-cn_image_0000002321148278.png "点击放大")
 
 ### 断点判断
 
@@ -774,7 +766,7 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 | --- | --- |
 | 横向断点xs，纵向断点sm | 智能手表（圆形屏） |
 
-说明
+**说明** 
 
 由于手表等圆形屏幕设备在屏幕形态和使用场景上的独特性，其交互方式和界面设计与普通设备有显著区别。为了确保用户体验的连贯性和功能的全面适配，建议在开发过程中专门为圆形屏幕设备进行界面和逻辑设计，并独立创建一个 HAP（HarmonyOS Ability Package）包进行发布和安装。
 
@@ -786,15 +778,15 @@ content_hash: sha256:716c701f045fba689227cd4d79d3229d72aec20dc30e07704fbcec6f30c
 
 当显示的内容量超过单屏范围时，为确保用户能够方便、完整地查看所有信息，建议采用横向切屏和垂直切屏的布局策略。通过横向切屏，内容可沿水平方向分布，用户可通过左右滑动浏览额外信息，特别适用于内容宽度较大的情况。此外，垂直切屏允许信息在垂直方向扩展，用户可通过上下滚动访问更多信息，非常适合展示长列表或详细说明。综合应用这两种切屏方法，不仅可有效避免因内容拥挤而引起的视觉混乱，还可提升界面的美观度和用户交互体验，确保每部分内容都能清晰、有序地展示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/Lsh3k23iRvy5AHQxnpXbwg/zh-cn_image_0000002355266833.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/1BzpXum3RjyR6l1vpjaObg/zh-cn_image_0000002355266833.png "点击放大")
 
 横向切屏，把更多内容切换至下一屏进行独立布置，以防止内容平铺导致的圆形屏幕边缘的信息丢失。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/Onx_jGKsTKmAsyFzuf7H3g/zh-cn_image_0000002321308130.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/hch8kGSYRo2z8frmpDuZDQ/zh-cn_image_0000002321308130.png "点击放大")
 
 垂直切屏，拓展了手表上下信息承载的空间，增强了信息展示的连贯性。
 
-ArkUI为圆形屏幕提供了部分弧形组件，建议开发者优先使用这些适配组件进行智能手表界面的开发。关于智能手表设备的开发指南，可以参考[智能穿戴](bpta-smartwatch.md)。
+ArkUI为圆形屏幕提供了部分弧形组件，建议开发者优先使用这些适配组件进行智能手表界面的开发。关于智能手表设备的开发指南，可以参考[智能穿戴应用开发](bpta-smartwatch.md)。
 
 | 组件名 | 备注 |
 | --- | --- |
@@ -806,41 +798,37 @@ ArkUI为圆形屏幕提供了部分弧形组件，建议开发者优先使用这
 | [ArcSwiper](../harmonyos-references/ts-container-arcswiper.md) | 弧形滑块视图容器，提供子组件滑动轮播显示的能力。 |
 | [ArcListItem](../harmonyos-references/ts-container-arclistitem.md) | 用来展示列表具体子组件，必须配合[ArcList](../harmonyos-references/ts-container-arclist.md)来使用。 |
 
-说明
+**说明** 
 
 弧形组件从API version 18开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 智能手表特殊的圆形表盘，需要在设计手表页面时进行考虑。圆形表盘的设计决定了需要给表页面最外层容器添加borderRadius属性，并为其设置一个50%大小的圆角。
 
+```typescript
+build() {
+  Navigation(this.pathStack) {
+    // ...
+  }
+  .backgroundColor(Color.Black)
+  .hideTitleBar(true)
+  .hideToolBar(true)
+  .height('100%')
+  .width('100%')
+  .borderRadius('50%')
+}
 ```
-1. build() {
-2. Navigation(this.pathStack) {
-3. // ...
-4. }
-5. .backgroundColor(Color.Black)
-6. .hideTitleBar(true)
-7. .hideToolBar(true)
-8. .height('100%')
-9. .width('100%')
-10. .borderRadius('50%')
-11. }
-```
-
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/SmartWatchCarControl/blob/master/entry/src/main/ets/pages/Index.ets#L25-L42)
 
 内容通常需要居中，保证在圆表屏幕下能够正常显示，示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/buTQJyLMTHagDNer8-0LeA/zh-cn_image_0000002494502253.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/eq1JzjTiQMOVW1yStRXhKQ/zh-cn_image_0000002494502253.png "点击放大")
 
 智能手表页面设计通常包含上下滑动或左右滑动实现页面切换的场景，建议使用手表特有组件ArcSwiper组件，实现手表上页面滑动切换的效果，效果示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/XT5KOo2DSayTpxaPgSTmLQ/zh-cn_image_0000002461462726.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/6aS6o8VkRymfXk2yN3cveQ/zh-cn_image_0000002461462726.gif "点击放大")
 
+```screen
+ArcSwiper() {
+  CarInformationView()
+  CarControlView({ pathStack: this.pathStack })
+}
 ```
-1. ArcSwiper() {
-2. CarInformationView()
-3. CarControlView({ pathStack: this.pathStack })
-4. }
-```
-
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/SmartWatchCarControl/blob/master/entry/src/main/ets/pages/Index.ets#L29-L32)

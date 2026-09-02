@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/complex-drawi
 title: 复杂绘制效果（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 绘制效果 > 复杂绘制效果（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:36:09+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:64835f6821ccc778bde57eac9ec27e0aa5a3654f9f813dc483f33cb5b66323c4
+scraped_at: 2026-09-02T14:59:49+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:98963c4e8f2cd6be8b87410bea12995e1d81dc47f89ed4593d98cd3ce08288df
 ---
 
 除了基础填充颜色、描边颜色和一些样式设置的绘制效果外，还支持通过画刷和画笔实现更多复杂的绘制效果。比如：
@@ -23,41 +23,37 @@ content_hash: sha256:64835f6821ccc778bde57eac9ec27e0aa5a3654f9f813dc483f33cb5b66
 
 关键示例和效果示意图如下所示：
 
-```
-1. import { DrawContext, FrameNode, NodeController, RenderNode, UIContext } from '@kit.ArkUI';
-2. import { common2D, drawing } from '@kit.ArkGraphics2D';
-```
-
-[ComplexEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/ComplexEffect.ets#L16-L19)
-
-```
-1. function drawRenderNode(canvas: drawing.Canvas) {
-2. canvas.saveLayer(null, null);
-3. const brushCircle = new drawing.Brush();
-4. const colorCircle: common2D.Color = {alpha: 255, red: 0, green: 0, blue: 255};
-5. brushCircle.setColor(colorCircle);
-6. canvas.attachBrush(brushCircle);
-7. canvas.drawCircle(500, 500, 200);
-8. const brush = new drawing.Brush();
-9. //  设置混合模式
-10. brush.setBlendMode(drawing.BlendMode.SRC_IN);
-11. canvas.saveLayer(null, brush);
-
-13. const brushRect = new drawing.Brush();
-14. const colorRect: common2D.Color = {alpha: 255, red: 255, green: 255, blue: 0};
-15. brushRect.setColor(colorRect);
-16. canvas.attachBrush(brushRect);
-17. const rect: common2D.Rect = {left:100, top:100, right:500, bottom:500};
-18. canvas.drawRect(rect);
-19. canvas.restore();
-20. canvas.restore();
-21. canvas.detachBrush();
-22. }
+```typescript
+import { DrawContext, FrameNode, NodeController, RenderNode, UIContext } from '@kit.ArkUI';
+import { common2D, drawing } from '@kit.ArkGraphics2D';
 ```
 
-[ComplexEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/ComplexEffect.ets#L61-L84)
+```typescript
+function drawRenderNode(canvas: drawing.Canvas) {
+  canvas.saveLayer(null, null);
+  const brushCircle = new drawing.Brush();
+  const colorCircle: common2D.Color = {alpha: 255, red: 0, green: 0, blue: 255};
+  brushCircle.setColor(colorCircle);
+  canvas.attachBrush(brushCircle);
+  canvas.drawCircle(500, 500, 200);
+  const brush = new drawing.Brush();
+  // 设置混合模式
+  brush.setBlendMode(drawing.BlendMode.SRC_IN);
+  canvas.saveLayer(null, brush);
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/xYq8bU4SQieOibQUaAEGYA/zh-cn_image_0000002589325013.png)
+  const brushRect = new drawing.Brush();
+  const colorRect: common2D.Color = {alpha: 255, red: 255, green: 255, blue: 0};
+  brushRect.setColor(colorRect);
+  canvas.attachBrush(brushRect);
+  const rect: common2D.Rect = {left:100, top:100, right:500, bottom:500};
+  canvas.drawRect(rect);
+  canvas.restore();
+  canvas.restore();
+  canvas.detachBrush();
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/7Cz1V8-0RD2EWYz4k0ZAWw/zh-cn_image_0000002736313745.png)
 
 ## 路径效果
 
@@ -70,34 +66,32 @@ content_hash: sha256:64835f6821ccc778bde57eac9ec27e0aa5a3654f9f813dc483f33cb5b66
 
 此处以绘制矩形虚线路径效果为例，关键示例和效果示意图如下所示：
 
+```typescript
+// 创建画笔
+let pen = new drawing.Pen();
+// 设置线宽
+pen.setStrokeWidth(10.0);
+// 设置颜色
+pen.setColor(0xFF, 0xFF, 0x00, 0x00);
+// 表示10px的实线，5px的间隔，2px的实线，5px的间隔，以此循环
+let intervals = [10, 5, 2, 5];
+// 设置虚线路径效果
+let effect = drawing.PathEffect.createDashPathEffect(intervals, 0);
+pen.setPathEffect(effect);
+// 设置画笔描边效果
+canvas.attachPen(pen);
+// 创建矩形
+let rect: common2D.Rect = {
+  left: VALUE_200,
+  top: VALUE_200,
+  right: VALUE_1000,
+  bottom: VALUE_700
+};
+// 绘制矩形
+canvas.drawRect(rect);
+// 去除描边效果
+canvas.detachPen();
 ```
-1. // 创建画笔
-2. let pen = new drawing.Pen();
-3. // 设置线宽
-4. pen.setStrokeWidth(10.0);
-5. // 设置颜色
-6. pen.setColor(0xFF, 0xFF, 0x00, 0x00);
-7. // 表示10px的实线，5px的间隔，2px的实线，5px的间隔，以此循环
-8. let intervals = [10, 5, 2, 5];
-9. // 设置虚线路径效果
-10. let effect = drawing.PathEffect.createDashPathEffect(intervals, 0);
-11. pen.setPathEffect(effect);
-12. // 设置画笔描边效果
-13. canvas.attachPen(pen);
-14. // 创建矩形
-15. let rect: common2D.Rect = {
-16. left: VALUE_200,
-17. top: VALUE_200,
-18. right: VALUE_1000,
-19. bottom: VALUE_700
-20. };
-21. // 绘制矩形
-22. canvas.drawRect(rect);
-23. // 去除描边效果
-24. canvas.detachPen();
-```
-
-[ComplexEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/ComplexEffect.ets#L87-L112)
 
 | 原始图 | 设置虚线效果后的效果图 |
 | --- | --- |
@@ -126,33 +120,31 @@ content_hash: sha256:64835f6821ccc778bde57eac9ec27e0aa5a3654f9f813dc483f33cb5b66
 
 此处以绘制矩形并使用画刷设置线性渐变着色器效果为例，关键示例和效果示意图如下所示：
 
-```
-1. let startPt: common2D.Point = { x: VALUE_100, y: VALUE_100 };
-2. let endPt: common2D.Point = { x: VALUE_900, y: VALUE_900 };
-3. let colors = [0xFFFFFF00, 0xFFFF0000, 0xFF0000FF];
-4. // 创建线性渐变着色器
-5. let shaderEffect = drawing.ShaderEffect.createLinearGradient(startPt, endPt, colors, drawing.TileMode.CLAMP);
-6. // 创建画刷
-7. let brush = new drawing.Brush();
-8. // 设置线性着色器
-9. brush.setShaderEffect(shaderEffect);
-10. // 设置画刷填充效果
-11. canvas.attachBrush(brush);
-12. let rect: common2D.Rect = {
-13. left: VALUE_100,
-14. top: VALUE_100,
-15. right: VALUE_900,
-16. bottom: VALUE_900
-17. };
-18. // 绘制矩形
-19. canvas.drawRect(rect);
-20. // 去除填充效果
-21. canvas.detachBrush();
+```typescript
+let startPt: common2D.Point = { x: VALUE_100, y: VALUE_100 };
+let endPt: common2D.Point = { x: VALUE_900, y: VALUE_900 };
+let colors = [0xFFFFFF00, 0xFFFF0000, 0xFF0000FF];
+// 创建线性渐变着色器
+let shaderEffect = drawing.ShaderEffect.createLinearGradient(startPt, endPt, colors, drawing.TileMode.CLAMP);
+// 创建画刷
+let brush = new drawing.Brush();
+// 设置线性着色器
+brush.setShaderEffect(shaderEffect);
+// 设置画刷填充效果
+canvas.attachBrush(brush);
+let rect: common2D.Rect = {
+  left: VALUE_100,
+  top: VALUE_100,
+  right: VALUE_900,
+  bottom: VALUE_900
+};
+// 绘制矩形
+canvas.drawRect(rect);
+// 去除填充效果
+canvas.detachBrush();
 ```
 
-[ComplexEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/ComplexEffect.ets#L116-L138)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/4IfPWPG1T0uA30CBlitkfg/zh-cn_image_0000002558605488.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/n1rcSQ8gQaCjFPXxxX7gCA/zh-cn_image_0000002706834640.png)
 
 ### 径向渐变着色器效果
 
@@ -162,32 +154,30 @@ content_hash: sha256:64835f6821ccc778bde57eac9ec27e0aa5a3654f9f813dc483f33cb5b66
 
 此处以绘制矩形并使用画刷设置径向渐变着色器效果为例，关键示例和效果示意图如下所示：
 
-```
-1. let centerPt: common2D.Point = { x: VALUE_500, y: VALUE_500 };
-2. let colors = [0xFFFF0000, 0xFF00FF00, 0xFF0000FF];
-3. // 创建径向渐变着色器
-4. let shaderEffect = drawing.ShaderEffect.createRadialGradient(centerPt, VALUE_600, colors, drawing.TileMode.CLAMP);
-5. // 创建画刷
-6. let brush = new drawing.Brush();
-7. // 设置径向渐变着色器
-8. brush.setShaderEffect(shaderEffect);
-9. // 设置画刷填充效果
-10. canvas.attachBrush(brush);
-11. let rect: common2D.Rect = {
-12. left: VALUE_100,
-13. top: VALUE_100,
-14. right: VALUE_900,
-15. bottom: VALUE_900
-16. };
-17. // 绘制矩形
-18. canvas.drawRect(rect);
-19. // 去除填充效果
-20. canvas.detachBrush();
+```typescript
+let centerPt: common2D.Point = { x: VALUE_500, y: VALUE_500 };
+let colors = [0xFFFF0000, 0xFF00FF00, 0xFF0000FF];
+// 创建径向渐变着色器
+let shaderEffect = drawing.ShaderEffect.createRadialGradient(centerPt, VALUE_600, colors, drawing.TileMode.CLAMP);
+// 创建画刷
+let brush = new drawing.Brush();
+// 设置径向渐变着色器
+brush.setShaderEffect(shaderEffect);
+// 设置画刷填充效果
+canvas.attachBrush(brush);
+let rect: common2D.Rect = {
+  left: VALUE_100,
+  top: VALUE_100,
+  right: VALUE_900,
+  bottom: VALUE_900
+};
+// 绘制矩形
+canvas.drawRect(rect);
+// 去除填充效果
+canvas.detachBrush();
 ```
 
-[ComplexEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/ComplexEffect.ets#L142-L163)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/eyGIkkO6Qwiz5hT0Bc58uQ/zh-cn_image_0000002589325015.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/c_xbJi2iTLG36LUV02cg9w/zh-cn_image_0000002736313747.jpg)
 
 ### 扇形渐变着色器效果
 
@@ -197,32 +187,30 @@ content_hash: sha256:64835f6821ccc778bde57eac9ec27e0aa5a3654f9f813dc483f33cb5b66
 
 此处以绘制矩形并使用画刷设置扇形渐变着色器效果为例，关键示例和效果示意图如下所示：
 
-```
-1. let centerPt: common2D.Point = { x: VALUE_500, y: VALUE_500 };
-2. let colors = [0xFF00FFFF, 0xFFFF00FF, 0xFFFFFF00];
-3. // 创建扇形渐变着色器
-4. let shaderEffect = drawing.ShaderEffect.createSweepGradient(centerPt, colors, drawing.TileMode.CLAMP, 0, 360);
-5. // 创建画刷
-6. let brush = new drawing.Brush();
-7. // 设置扇形渐变着色器
-8. brush.setShaderEffect(shaderEffect);
-9. // 设置画刷填充效果
-10. canvas.attachBrush(brush);
-11. let rect: common2D.Rect = {
-12. left: VALUE_100,
-13. top: VALUE_100,
-14. right: VALUE_900,
-15. bottom: VALUE_900
-16. };
-17. // 绘制矩形
-18. canvas.drawRect(rect);
-19. // 去除填充效果
-20. canvas.detachBrush();
+```typescript
+let centerPt: common2D.Point = { x: VALUE_500, y: VALUE_500 };
+let colors = [0xFF00FFFF, 0xFFFF00FF, 0xFFFFFF00];
+// 创建扇形渐变着色器
+let shaderEffect = drawing.ShaderEffect.createSweepGradient(centerPt, colors, drawing.TileMode.CLAMP, 0, 360);
+// 创建画刷
+let brush = new drawing.Brush();
+// 设置扇形渐变着色器
+brush.setShaderEffect(shaderEffect);
+// 设置画刷填充效果
+canvas.attachBrush(brush);
+let rect: common2D.Rect = {
+  left: VALUE_100,
+  top: VALUE_100,
+  right: VALUE_900,
+  bottom: VALUE_900
+};
+// 绘制矩形
+canvas.drawRect(rect);
+// 去除填充效果
+canvas.detachBrush();
 ```
 
-[ComplexEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/ComplexEffect.ets#L167-L188)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/rXglfkq2SNannyjRxNSzJQ/zh-cn_image_0000002589244951.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/9LCmMfiZSrCtOwk4n6znVg/zh-cn_image_0000002706674704.jpg)
 
 ## 滤波器效果
 
@@ -267,37 +255,35 @@ A' = d0\*R + d1\*G + d2\*B + d3\*A + d4
 
 此处以绘制矩形并使用画刷设置具有5x4颜色矩阵的颜色滤波器效果为例，关键示例和效果示意图如下所示：
 
+```typescript
+// 创建画刷
+let brush = new drawing.Brush();
+// 设置颜色
+brush.setColor(0xFF, 0xFF, 0x00, 0x00);
+// 设置颜色矩阵
+let matrix: number[] = [
+  1, 0, 0, 0, 0,
+  0, 1, 0, 0, 0,
+  0, 0, 0.5, 0.5, 0,
+  0, 0, 0.5, 0.5, 0
+];
+// 创建5x4颜色矩阵的颜色滤波器
+let filter = drawing.ColorFilter.createMatrixColorFilter(matrix);
+// 设置颜色滤波器
+brush.setColorFilter(filter);
+// 设置画刷填充效果
+canvas.attachBrush(brush);
+let rect: common2D.Rect = {
+  left: VALUE_300,
+  top: VALUE_300,
+  right: VALUE_900,
+  bottom: VALUE_900
+};
+// 绘制矩形
+canvas.drawRect(rect);
+// 去除填充效果
+canvas.detachBrush();
 ```
-1. // 创建画刷
-2. let brush = new drawing.Brush();
-3. // 设置颜色
-4. brush.setColor(0xFF, 0xFF, 0x00, 0x00);
-5. // 设置颜色矩阵
-6. let matrix: number[] = [
-7. 1, 0, 0, 0, 0,
-8. 0, 1, 0, 0, 0,
-9. 0, 0, 0.5, 0.5, 0,
-10. 0, 0, 0.5, 0.5, 0
-11. ];
-12. // 创建5x4颜色矩阵的颜色滤波器
-13. let filter = drawing.ColorFilter.createMatrixColorFilter(matrix);
-14. // 设置颜色滤波器
-15. brush.setColorFilter(filter);
-16. // 设置画刷填充效果
-17. canvas.attachBrush(brush);
-18. let rect: common2D.Rect = {
-19. left: VALUE_300,
-20. top: VALUE_300,
-21. right: VALUE_900,
-22. bottom: VALUE_900
-23. };
-24. // 绘制矩形
-25. canvas.drawRect(rect);
-26. // 去除填充效果
-27. canvas.detachBrush();
-```
-
-[ComplexEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/ComplexEffect.ets#L192-L220)
 
 | 原始图 | 设置5x4颜色矩阵的颜色滤波器后的效果图 |
 | --- | --- |
@@ -320,32 +306,30 @@ A' = d0\*R + d1\*G + d2\*B + d3\*A + d4
 
 此处以绘制矩形并使用画笔添加模糊效果的图像滤波器效果为例，关键示例和效果示意图如下所示：
 
+```typescript
+// 设置画笔
+let pen = new drawing.Pen();
+// 设置线宽
+pen.setStrokeWidth(10.0);
+// 设置颜色
+pen.setColor(0xFF, 0xFF, 0x00, 0x00);
+// 创建模糊效果图像滤波器
+let filter = drawing.ImageFilter.createBlurImageFilter(20, 20, drawing.TileMode.CLAMP);
+// 设置图像滤波器
+pen.setImageFilter(filter);
+// 设置画笔描边效果
+canvas.attachPen(pen);
+let rect: common2D.Rect = {
+  left: VALUE_300,
+  top: VALUE_300,
+  right: VALUE_900,
+  bottom: VALUE_900
+};
+// 绘制矩形
+canvas.drawRect(rect);
+// 去除描边效果
+canvas.detachPen();
 ```
-1. // 设置画笔
-2. let pen = new drawing.Pen();
-3. // 设置线宽
-4. pen.setStrokeWidth(10.0);
-5. // 设置颜色
-6. pen.setColor(0xFF, 0xFF, 0x00, 0x00);
-7. // 创建模糊效果图像滤波器
-8. let filter = drawing.ImageFilter.createBlurImageFilter(20, 20, drawing.TileMode.CLAMP);
-9. // 设置图像滤波器
-10. pen.setImageFilter(filter);
-11. // 设置画笔描边效果
-12. canvas.attachPen(pen);
-13. let rect: common2D.Rect = {
-14. left: VALUE_300,
-15. top: VALUE_300,
-16. right: VALUE_900,
-17. bottom: VALUE_900
-18. };
-19. // 绘制矩形
-20. canvas.drawRect(rect);
-21. // 去除描边效果
-22. canvas.detachPen();
-```
-
-[ComplexEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/ComplexEffect.ets#L224-L247)
 
 | 原始图 | 设置模糊效果后的效果图 |
 | --- | --- |
@@ -364,32 +348,30 @@ A' = d0\*R + d1\*G + d2\*B + d3\*A + d4
 
 此处以绘制矩形并使用画笔设置蒙版滤波器效果为例，关键示例和效果示意图如下所示：
 
+```typescript
+// 创建画笔
+let pen = new drawing.Pen();
+// 设置线宽
+pen.setStrokeWidth(10.0);
+// 设置颜色
+pen.setColor(0xFF, 0xFF, 0x00, 0x00);
+// 创建模糊效果的蒙版滤波器
+let filter = drawing.MaskFilter.createBlurMaskFilter(drawing.BlurType.NORMAL, 20);
+// 设置模糊效果
+pen.setMaskFilter(filter);
+// 设置画笔描边效果
+canvas.attachPen(pen);
+let rect: common2D.Rect = {
+  left: VALUE_300,
+  top: VALUE_300,
+  right: VALUE_900,
+  bottom: VALUE_900
+};
+// 绘制矩形
+canvas.drawRect(rect);
+// 去除描边效果
+canvas.detachPen();
 ```
-1. // 创建画笔
-2. let pen = new drawing.Pen();
-3. // 设置线宽
-4. pen.setStrokeWidth(10.0);
-5. // 设置颜色
-6. pen.setColor(0xFF, 0xFF, 0x00, 0x00);
-7. // 创建模糊效果的蒙版滤波器
-8. let filter = drawing.MaskFilter.createBlurMaskFilter(drawing.BlurType.NORMAL, 20);
-9. // 设置模糊效果
-10. pen.setMaskFilter(filter);
-11. // 设置画笔描边效果
-12. canvas.attachPen(pen);
-13. let rect: common2D.Rect = {
-14. left: VALUE_300,
-15. top: VALUE_300,
-16. right: VALUE_900,
-17. bottom: VALUE_900
-18. };
-19. // 绘制矩形
-20. canvas.drawRect(rect);
-21. // 去除描边效果
-22. canvas.detachPen();
-```
-
-[ComplexEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/ComplexEffect.ets#L251-L274)
 
 | 原始图 | 设置模糊效果后的效果图 |
 | --- | --- |

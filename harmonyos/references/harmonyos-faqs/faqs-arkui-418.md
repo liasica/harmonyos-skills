@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-418
 title: 使用Navigation，页面从A->B->C->D，D直接调用popToName到A，不会触发B、C的onPop是什么原因
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 使用Navigation，页面从A->B->C->D，D直接调用popToName到A，不会触发B、C的onPop是什么原因
+breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 使用Navigation，页面从A->B->C->D，D直接调用popToName到A，不会触发B、C的onPop是什么原因
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:50+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:50+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:f1f46123e10bddbf813f495935e4b7163b770213447e00fc922d6d97ec6341ab
 ---
 

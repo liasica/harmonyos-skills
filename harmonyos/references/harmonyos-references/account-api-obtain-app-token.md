@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 获取应用级凭证
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 开放接口调用凭证 > 获取应用级凭证
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:11+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1789de1337353bec2c1c36661095cc4e328609dd1ce22f8420090df8cbccecff
+scraped_at: 2026-09-02T15:02:50+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:61a9daffa7aa0716afbe09702f4df02d8d4e97b86633fe95d8ebdadab81b89f6
 ---
 
-注意
+**注意** 
 
 为了更安全的网络访问，请务必使用TLS1.2协议及规定内的加密套件。若使用协议是TLS1.0、TLS1.1或规定外的加密套件，可能无法正常访问华为账号服务。
 
@@ -50,18 +50,18 @@ content_hash: sha256:1789de1337353bec2c1c36661095cc4e328609dd1ce22f8420090df8cbc
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
-| grant\_type | 是 | String | 授权模式，固定传值“client\_credentials”。 |
+| grant\_type | 是 | String | 授权模式，本场景固定传值“client\_credentials”。 |
 | client\_id | 是 | String | 在创建应用后，由AppGallery Connect（简称AGC）为应用分配的唯一标识。参数取值详见[查看应用基本信息](../app/agc-help-appinfo-0000001100014694.md)中的**OAuth 2.0客户端ID（凭据）-Client ID**参数。 |
 | client\_secret | 是 | String | 在创建应用后，由AppGallery Connect（简称AGC）为应用分配的密钥（Client Secret）。参数取值详见[查看应用基本信息](../app/agc-help-appinfo-0000001100014694.md)中的**OAuth 2.0客户端ID（凭据）-Client Secret**参数。 |
 
 ## 请求示例
 
-```
-1. POST /oauth2/v3/token HTTP/1.1
-2. Host: oauth-login.cloud.huawei.com
-3. Content-Type: application/x-www-form-urlencoded
+```http
+POST /oauth2/v3/token HTTP/1.1
+Host: oauth-login.cloud.huawei.com
+Content-Type: application/x-www-form-urlencoded
 
-5. grant_type=client_credentials&client_id=<client_id>&client_secret=<client_secret>
+grant_type=client_credentials&client_id=<client_id>&client_secret=<client_secret>
 ```
 
 ## 响应参数
@@ -80,7 +80,7 @@ content_hash: sha256:1789de1337353bec2c1c36661095cc4e328609dd1ce22f8420090df8cbc
 | --- | --- | --- | --- |
 | token\_type | 是 | String | 固定字符串“Bearer”。 |
 | access\_token | 是 | String | Access Token，访问被权限管控资源的凭证。Access Token长度详见[Access Token和Refresh Token长度限制要求](../harmonyos-guides/account-faq-11.md)。 |
-| expires\_in | 是 | Integer | Access Token的过期时间，以秒为单位。有效期为3600秒。 |
+| expires\_in | 是 | Integer | Access Token的过期时间，单位：s。默认有效期为3600s。 |
 
 调用失败时，响应消息体返回如下：
 
@@ -94,79 +94,79 @@ content_hash: sha256:1789de1337353bec2c1c36661095cc4e328609dd1ce22f8420090df8cbc
 
 ### 请求成功时
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json;charset=utf-8
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
 
-4. {
-5. "access_token": "DgEAAN7qd*****U0TvQ/eXpE4x+gvhoYh5/UuzL",
-6. "expires_in": 3600,
-7. "token_type": "Bearer"
-8. }
+{
+    "access_token": "DgEAAN7qd*****U0TvQ/eXpE4x+gvhoYh5/UuzL",
+    "expires_in": 3600,
+    "token_type": "Bearer"
+}
 ```
 
 ### 请求失败时
 
-```
-1. HTTP/1.1 400 Bad Request
-2. Content-Type: application/json
+```json
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
 
-4. {
-5. "sub_error": 12304,
-6. "error_description": "invalid client_secret",
-7. "error": 1101
-8. }
+{
+    "sub_error": 12304,
+    "error_description": "invalid client_secret",
+    "error": 1101
+}
 ```
 
 ## 示例代码
 
 Java示例代码如下，运行前需要进行[示例代码环境配置](account-api-common.md#示例代码环境配置)（请将此示例代码与工具类CallUtils放于同一路径下，如不在同一路径，请手动添加import）
 
-```
-1. import com.alibaba.fastjson2.JSONObject;
-2. import org.apache.http.NameValuePair;
-3. import org.apache.http.client.entity.UrlEncodedFormEntity;
-4. import org.apache.http.client.methods.HttpPost;
-5. import org.apache.http.message.BasicNameValuePair;
-6. import java.io.IOException;
-7. import java.util.ArrayList;
-8. import java.util.List;
+```java
+import com.alibaba.fastjson2.JSONObject;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.message.BasicNameValuePair;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-10. /**
-11. * 获取应用级凭证
-12. */
-13. public class AppTokenAPIDemo {
-14. public static void main(String[] args) throws IOException {
-15. // 获取应用级凭证的接口URL
-16. String url = "https://oauth-login.cloud.huawei.com/oauth2/v3/token";
-17. // 授权模式，固定传"client_credentials"
-18. String grantType = "client_credentials";
-19. // 替换为实际的Client ID
-20. String clientId = "<Client ID>";
-21. // 替换为Client ID对应的Client Secret
-22. String clientSecret = "<Client Secret>";
-23. JSONObject result = getAppToken(url, clientSecret, clientId, grantType);
-24. // 解析获取access_token
-25. String accessToken = result.getString("access_token");
-26. // 解析获取token_type
-27. String tokenType = result.getString("token_type");
-28. // 解析获取expires_in
-29. Integer expiresIn = result.getInteger("expires_in");
-30. }
+/**
+ * 获取应用级凭证
+ */
+public class AppTokenAPIDemo {
+    public static void main(String[] args) throws IOException {
+        // 获取应用级凭证的接口URL
+        String url = "https://oauth-login.cloud.huawei.com/oauth2/v3/token";
+        // 授权模式，固定传"client_credentials"
+        String grantType = "client_credentials";
+        // 替换为实际的Client ID
+        String clientId = "<Client ID>";
+        // 替换为Client ID对应的Client Secret
+        String clientSecret = "<Client Secret>";
+        JSONObject result = getAppToken(url, clientSecret, clientId, grantType);
+        // 解析获取access_token
+        String accessToken = result.getString("access_token");
+        // 解析获取token_type
+        String tokenType = result.getString("token_type");
+        // 解析获取expires_in
+        Integer expiresIn = result.getInteger("expires_in");
+    }
 
-32. private static JSONObject getAppToken(String url, String clientSecret,
-33. String clientId, String grantType) throws IOException {
-34. HttpPost httpPost = new HttpPost(url);
-35. List<NameValuePair> request = new ArrayList<>();
-36. request.add(new BasicNameValuePair("client_secret", clientSecret));
-37. request.add(new BasicNameValuePair("client_id", clientId));
-38. request.add(new BasicNameValuePair("grant_type", grantType));
-39. httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded");
-40. httpPost.setEntity(new UrlEncodedFormEntity(request));
-41. // 如需要自定义异常处理请使用api CallUtils#remoteCall(HttpUriRequest, BiFunction<CloseableHttpResponse,String,E>)
-42. return CallUtils.toJsonObject(CallUtils.remoteCallOAuth(httpPost));
-43. }
-44. }
+    private static JSONObject getAppToken(String url, String clientSecret,
+                                          String clientId, String grantType) throws IOException {
+        HttpPost httpPost = new HttpPost(url);
+        List<NameValuePair> request = new ArrayList<>();
+        request.add(new BasicNameValuePair("client_secret", clientSecret));
+        request.add(new BasicNameValuePair("client_id", clientId));
+        request.add(new BasicNameValuePair("grant_type", grantType));
+        httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded");
+        httpPost.setEntity(new UrlEncodedFormEntity(request));
+        // 如需要自定义异常处理请使用api CallUtils#remoteCall(HttpUriRequest, BiFunction<CloseableHttpResponse,String,E>)
+        return CallUtils.toJsonObject(CallUtils.remoteCallOAuth(httpPost));
+    }
+}
 ```
 
 ## 错误码
@@ -188,11 +188,11 @@ Java示例代码如下，运行前需要进行[示例代码环境配置](account
 | --- | --- | --- | --- |
 | 1101 | 12304 | client\_secret不正确。 | 请前往AppGallery Connect（简称AGC）确认client\_secret是否正确。 |
 | 1101 | 20002 | client\_id格式不正确。 | 检查client\_id是否满足正则：^[0-9]{1,64}$。 |
-| 1101 | 20003 | client\_id格式不正确或系统不存在。 | - 检查client\_id是否满足正则：^[0-9]{1,64}$。  - 请前往AppGallery Connect（简称AGC）确认client\_id是否存在。 |
+| 1101 | 20003 | client\_id在系统不存在。 | 请前往AppGallery Connect（简称AGC）确认client\_id是否存在。 |
 | 1101 | 20171 | client\_secret为空。 | 请按照接口参数的要求，传入正确的client\_secret参数。 |
 | 1101 | 20172 | client\_secret格式不正确。 | 检查client\_secret格式是否满足正则：^[0-9a-zA-Z=/\\+]+$。 |
-| 1101 | 20182 | grant\_type值不正确。 | grant\_type可选值如下：  - “authorization\_code”：该场景用于[获取用户级凭证](account-api-obtain-user-token.md)。  - “refresh\_token”： 该场景用于[刷新用户级凭证](account-api-obtain-refresh-token.md)。  - “client\_credentials”：该场景用于[获取应用级凭证](account-api-obtain-app-token.md)。 |
+| 1101 | 20182 | grant\_type值不正确。 | grant\_type可选值如下：  - “authorization\_code”：该场景用于[获取用户级凭证](account-api-obtain-user-token.md)。  - “device\_code”：该场景用于[扫码授权登录-获取用户级凭证](account-api-obtain-user-token-for-qrcode.md)。  - “refresh\_token”： 该场景用于[刷新用户级凭证](account-api-obtain-refresh-token.md)。  - “client\_credentials”：该场景用于[获取应用级凭证](account-api-obtain-app-token.md)。  当前场景请固定传”client\_credentials“。 |
 | 1102 | 20001 | client\_id为空。 | 请按照接口参数的要求，传入正确的client\_id参数。 |
-| 1102 | 20181 | grant\_type为空。 | grant\_type可选值如下：  - “authorization\_code”：该场景用于[获取用户级凭证](account-api-obtain-user-token.md)。  - “refresh\_token”： 该场景用于[刷新用户级凭证](account-api-obtain-refresh-token.md)。  - “client\_credentials”：该场景用于[获取应用级凭证](account-api-obtain-app-token.md)。 |
-| 1203 | 12303 | client\_id在系统不存在。 | 请前往AppGallery Connect（简称AGC）确认client\_id是否存在。 |
-| 1203 | 500 | 系统内部错误。 | 系统内部处理错误，建议业务打印错误码信息，并请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
+| 1102 | 20181 | grant\_type为空。 | grant\_type可选值如下：  - “authorization\_code”：该场景用于[获取用户级凭证](account-api-obtain-user-token.md)。  - “device\_code”：该场景用于[扫码授权登录-获取用户级凭证](account-api-obtain-user-token-for-qrcode.md)。  - “refresh\_token”： 该场景用于[刷新用户级凭证](account-api-obtain-refresh-token.md)。  - “client\_credentials”：该场景用于[获取应用级凭证](account-api-obtain-app-token.md)。  当前场景请固定传”client\_credentials“。 |
+| 1203 | 500 | 系统内部错误。 | 系统内部处理错误，建议打印错误码信息，并请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
+| 1203 | 1203 | 系统未知异常。 | 系统未知异常，建议打印错误码信息，并请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-skill-int
 title: 接入Skill（可选）
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 接入Skill（可选）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:23+08:00
-doc_updated_at: 2026-04-21
-content_hash: sha256:3b4b63a72e069afcdaf43aad981261066021884e76aace6347abe488cb9d04c5
+scraped_at: 2026-09-02T14:59:56+08:00
+doc_updated_at: 2026-05-12
+content_hash: sha256:0db7d287d6a8aa17beab8be3f406e5467b91eacea32b387c9c02622426ec5eda
 ---
 
 应用内支付服务接入Skill是基于IAP Kit文档沉淀标准流程与关键校验点，将“文档阅读”转化为“任务清单执行”，帮助开发者更快完成接入应用内支付服务的能力。
@@ -34,13 +34,13 @@ content_hash: sha256:3b4b63a72e069afcdaf43aad981261066021884e76aace6347abe488cb9
 
 在对话中出现这些关键词时会更容易触发：
 
-```
-1. HarmonyOS IAP / 应用内支付 / 应用内购买 / IAP Kit接入
+```http
+HarmonyOS IAP / 应用内支付 / 应用内购买 / IAP Kit接入
 ```
 
 也可以直接按如下内容提问以“强制触发”：
 
-“使用 `harmonyos-iap-integration` Skill，帮接入应用内支付服务。”
+使用“harmonyos-iap-integration”Skill，帮接入应用内支付服务。
 
 ## 注意事项
 

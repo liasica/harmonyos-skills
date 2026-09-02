@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi_status_i
 title: Node-API接口返回状态码介绍
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API接口返回状态码介绍
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:59+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:00d06b9aa0544e3a3c4729b89e55e3b33412bd5b0c903652f0538205f17d25b9
+scraped_at: 2026-09-02T14:50:46+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:47dc81e9af13638219e4aba398f5d38628d19f07535a160b081d360f860c3e8e
 ---
 
 ## 概述
@@ -148,7 +148,7 @@ content_hash: sha256:00d06b9aa0544e3a3c4729b89e55e3b33412bd5b0c903652f0538205f17
 | napi\_get\_prototype | 获取给定ArkTS Object的prototype。 | napi\_pending\_exception | 调用该接口前或调用过程中出现未捕获的ArkTS异常 | 根据异常信息（hilog/crash栈）处理异常 |
 | napi\_get\_typedarray\_info | 获取给定TypedArray的各种属性。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
 | napi\_get\_typedarray\_info | 获取给定TypedArray的各种属性。 | napi\_invalid\_arg | 入参typedarray为nullptr | 确保入参正确 |
-| napi\_get\_typedarray\_info | 获取给定TypedArray的各种属性。 | napi\_invalid\_arg | 入参typedarray既不是ArkTS TypedArray类型，也不是ShareTypedArray类型 | 确保入参正确 |
+| napi\_get\_typedarray\_info | 获取给定TypedArray的各种属性。 | napi\_invalid\_arg | 入参typedarray既不是ArkTS TypedArray类型，也不是SharedTypedArray类型 | 确保入参正确 |
 | napi\_get\_dataview\_info | 获取给定DataView的各种属性。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
 | napi\_get\_dataview\_info | 获取给定DataView的各种属性。 | napi\_invalid\_arg | 入参dataview为nullptr | 确保入参正确 |
 | napi\_get\_dataview\_info | 获取给定DataView的各种属性。 | napi\_invalid\_arg | 入参dataview不为ArkTS DataView类型 | 确保入参正确 |
@@ -530,9 +530,9 @@ content_hash: sha256:00d06b9aa0544e3a3c4729b89e55e3b33412bd5b0c903652f0538205f17
 | napi\_is\_detached\_arraybuffer | 判断给定的ArrayBuffer是否已被分离过。 | napi\_invalid\_arg | 入参arraybuffer为nullptr | 确保入参正确 |
 | napi\_is\_detached\_arraybuffer | 判断给定的ArrayBuffer是否已被分离过。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |
 | napi\_is\_detached\_arraybuffer | 判断给定的ArrayBuffer是否已被分离过。 | napi\_invalid\_arg | 入参arraybuffer不为ArkTS ArrayBuffer类型 | 确保入参正确 |
-| napi\_run\_script | 将给定对象作为ArkTS代码运行。当前接口实际为空实现，可使用系统拓展接口napi\_run\_script\_path接口，提升安全性。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
-| napi\_run\_script | 将给定对象作为ArkTS代码运行。当前接口实际为空实现，可使用系统拓展接口napi\_run\_script\_path接口，提升安全性。 | napi\_invalid\_arg | 入参script为nullptr | 确保入参正确 |
-| napi\_run\_script | 将给定对象作为ArkTS代码运行。当前接口实际为空实现，可使用系统拓展接口napi\_run\_script\_path接口，提升安全性。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |
+| napi\_run\_script | 将给定对象作为ArkTS代码运行。当前接口实际为空实现，可使用系统扩展接口napi\_run\_script\_path接口，提升安全性。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
+| napi\_run\_script | 将给定对象作为ArkTS代码运行。当前接口实际为空实现，可使用系统扩展接口napi\_run\_script\_path接口，提升安全性。 | napi\_invalid\_arg | 入参script为nullptr | 确保入参正确 |
+| napi\_run\_script | 将给定对象作为ArkTS代码运行。当前接口实际为空实现，可使用系统扩展接口napi\_run\_script\_path接口，提升安全性。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |
 | napi\_set\_instance\_data | 绑定与当前运行的环境相关联的数据项。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
 | napi\_get\_instance\_data | 检索与当前运行的环境相关联的数据项。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
 | napi\_get\_instance\_data | 检索与当前运行的环境相关联的数据项。 | napi\_invalid\_arg | 入参data为nullptr | 确保入参正确 |
@@ -684,11 +684,11 @@ content_hash: sha256:00d06b9aa0544e3a3c4729b89e55e3b33412bd5b0c903652f0538205f17
 | napi\_create\_external\_string\_utf16 | 需要通过外部UTF-16编码的字符串缓冲区创建ArkTS字符串值且避免内存拷贝时使用此函数。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
 | napi\_create\_external\_string\_utf16 | 需要通过外部UTF-16编码的字符串缓冲区创建ArkTS字符串值且避免内存拷贝时使用此函数。 | napi\_invalid\_arg | 入参str为nullptr | 确保入参正确 |
 | napi\_create\_external\_string\_utf16 | 需要通过外部UTF-16编码的字符串缓冲区创建ArkTS字符串值且避免内存拷贝时使用此函数。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |
-| napi\_create\_external\_string\_utf16 | 需要通过外部UTF-16编码的字符串缓冲区创建ArkTS字符串值且避免内存拷贝时使用此函数。 | napi\_invalid\_arg | 入参length不等于NAPI\_AUTO\_LENGTH或length大于INT\_MAX | 确保入参length等于NAPI\_AUTO\_LENGTH且length不大于INT\_MAX |
+| napi\_create\_external\_string\_utf16 | 需要通过外部UTF-16编码的字符串缓冲区创建ArkTS字符串值且避免内存拷贝时使用此函数。 | napi\_invalid\_arg | 入参length不等于NAPI\_AUTO\_LENGTH或length大于INT\_MAX | 确保入参length等于NAPI\_AUTO\_LENGTH或length不大于INT\_MAX |
 | napi\_create\_external\_string\_ascii | 需要通过外部ASCII编码的字符串缓冲区创建ArkTS字符串值且避免内存拷贝时使用此函数。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
 | napi\_create\_external\_string\_ascii | 需要通过外部ASCII编码的字符串缓冲区创建ArkTS字符串值且避免内存拷贝时使用此函数。 | napi\_invalid\_arg | 入参str为nullptr | 确保入参正确 |
 | napi\_create\_external\_string\_ascii | 需要通过外部ASCII编码的字符串缓冲区创建ArkTS字符串值且避免内存拷贝时使用此函数。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |
-| napi\_create\_external\_string\_ascii | 需要通过外部ASCII编码的字符串缓冲区创建ArkTS字符串值且避免内存拷贝时使用此函数。 | napi\_invalid\_arg | 入参length不等于NAPI\_AUTO\_LENGTH或length大于INT\_MAX | 确保入参length等于NAPI\_AUTO\_LENGTH且length不大于INT\_MAX |
+| napi\_create\_external\_string\_ascii | 需要通过外部ASCII编码的字符串缓冲区创建ArkTS字符串值且避免内存拷贝时使用此函数。 | napi\_invalid\_arg | 入参length不等于NAPI\_AUTO\_LENGTH或length大于INT\_MAX | 确保入参length等于NAPI\_AUTO\_LENGTH或length不大于INT\_MAX |
 | napi\_create\_strong\_sendable\_reference | 创建指向Sendable ArkTS对象的Sendable强引用。 | napi\_invalid\_arg | 入参env为nullptr | 确保入参正确 |
 | napi\_create\_strong\_sendable\_reference | 创建指向Sendable ArkTS对象的Sendable强引用。 | napi\_invalid\_arg | 入参value为nullptr | 确保入参正确 |
 | napi\_create\_strong\_sendable\_reference | 创建指向Sendable ArkTS对象的Sendable强引用。 | napi\_invalid\_arg | 入参result为nullptr | 确保入参正确 |

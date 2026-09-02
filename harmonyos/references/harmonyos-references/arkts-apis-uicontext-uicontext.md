@@ -3,16 +3,17 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (UIContext)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (UIContext)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:50:39+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:256341da2d82e8123863412b9764aa76ac4e1d9f468d0575ca07e4ebdb49b9e9
+scraped_at: 2026-09-02T15:00:50+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2b4b5b10705f793b0b3187cdf60ddfc2835b0386e6a58e13358f503f7e3a5709
 ---
 
-UIContext实例对象。
+UIContext实例对象，用于提供与当前UI实例关联的上下文能力，支持获取UI相关控制器、管理弹窗与动画、查询节点和窗口信息、进行像素单位转换等，适用于在指定UI实例中管理页面、组件和交互行为的场景。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+* 本模块接口仅可在Stage模型下使用。
 * 示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
 * 以下API需要通过对应的UIContext实例调用。获取UIContext分为三种方式，第一种是使用ohos.window中的[getUIContext()](arkts-apis-window-window.md#getuicontext10)方法获取UIContext实例，第二种是通过自定义组件内置方法[getUIContext()](ts-custom-component-api.md#getuicontext)获取UIContext实例，第三种是通过UIContext类的静态方法如[getCallingScopeUIContext](arkts-apis-uicontext-uicontext.md#getcallingscopeuicontext22)获取UIContext实例。本文中UIContext对象以uiContext表示。
 
@@ -20,53 +21,48 @@ UIContext实例对象。
 
 以下示例展示了三种获取UIContext实例的方法。
 
-```
-1. // 三种方法获取到的UIContext没有差异
-2. // index.ets
-3. import { UIContext } from '@kit.ArkUI';
+```ts
+// 三种方法获取到的UIContext没有差异
+// index.ets
+import { UIContext } from '@kit.ArkUI';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. build() {
-9. Column() {
-10. Button("Button")
-11. .onClick(()=>{
-12. // 通过自定义组件内置方法获取
-13. this.getUIContext()
-14. // 通过UIContext类的静态方法获取
-15. let uiContext = UIContext.getCallingScopeUIContext();
-16. // 其他运行逻辑
-17. })
-18. }
-19. }
-20. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Button('Button')
+          .onClick(() => {
+            // 通过自定义组件内置方法获取
+            this.getUIContext();
+            // 通过UIContext类的静态方法获取
+            let uiContext = UIContext.getCallingScopeUIContext();
+            // 其他运行逻辑
+          })
+    }
+  }
+}
 
-22. // EntryAbility.ets
-23. import { AbilityConstant, ConfigurationConstant, UIAbility, Want } from '@kit.AbilityKit';
-24. import { hilog } from '@kit.PerformanceAnalysisKit';
-25. import { window } from '@kit.ArkUI';
+// EntryAbility.ets
+import { UIAbility } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
 
-27. const DOMAIN = 0x0000;
-
-29. export default class EntryAbility extends UIAbility {
-30. onWindowStageCreate(windowStage: window.WindowStage): void {
-31. // 通过ohos.window获取
-32. windowStage.getMainWindowSync().getUIContext()
-33. // 其他运行逻辑
-34. }
-35. }
+export default class EntryAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage): void {
+    // 通过ohos.window获取
+    windowStage.getMainWindowSync().getUIContext();
+    // 其他运行逻辑
+  }
+}
 ```
 
 ## constructor22+
-
-PhonePC/2in1TabletTVWearable
 
 constructor()
 
 构造UIContext对象。
 
-说明
+**说明** 
 
 通过构造函数创建的UIContext对象指向不明确的UI上下文，即不指向任何UI实例。该UIContext对应实例的唯一标识ID为-1。
 
@@ -76,83 +72,81 @@ constructor()
 
 **示例：**
 
-```
-1. import { UIContext } from '@kit.ArkUI';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { UIContext } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. function GetUIContextByAtomicInterface(): UIContext {
-5. let callingScopeUIContext = UIContext.getCallingScopeUIContext();
-6. if (callingScopeUIContext) {
-7. hilog.info(0x00, 'testTag', `Get UIContext of calling scope.`)
-8. return callingScopeUIContext;
-9. }
-10. let allContexts = UIContext.getAllUIContexts();
-11. let length = allContexts.length;
-12. if (length === 1) {
-13. hilog.info(0x00, 'testTag', `Get UIContext of unique UI instance.`)
-14. return allContexts[0];
-15. }
-16. let lastFocusedUIContext = UIContext.getLastFocusedUIContext();
-17. if (lastFocusedUIContext) {
-18. hilog.info(0x00, 'testTag', `Get UIContext of last focused instance.`)
-19. return lastFocusedUIContext;
-20. }
-21. let lastForegroundUIContext = UIContext.getLastForegroundUIContext();
-22. if (lastForegroundUIContext) {
-23. hilog.info(0x00, 'testTag', `Get UIContext of last foregrounded instance.`)
-24. return lastForegroundUIContext;
-25. }
-26. if (length !== 0) {
-27. hilog.info(0x00, 'testTag', `Get UIContext with maximum instanceId.`)
-28. return allContexts[length - 1];
-29. }
-30. hilog.info(0x00, 'testTag', `Get UIContext of undefined calling scope.`)
-31. return new UIContext();
-32. }
+function getUIContextByAtomicInterface(): UIContext {
+  let callingScopeUIContext = UIContext.getCallingScopeUIContext();
+  if (callingScopeUIContext) {
+    hilog.info(0x00, 'testTag', `Get UIContext of calling scope.`)
+    return callingScopeUIContext;
+  }
+  let allContexts = UIContext.getAllUIContexts();
+  let length = allContexts.length;
+  if (length === 1) {
+    hilog.info(0x00, 'testTag', `Get UIContext of unique UI instance.`)
+    return allContexts[0];
+  }
+  let lastFocusedUIContext = UIContext.getLastFocusedUIContext();
+  if (lastFocusedUIContext) {
+    hilog.info(0x00, 'testTag', `Get UIContext of last focused instance.`)
+    return lastFocusedUIContext;
+  }
+  let lastForegroundUIContext = UIContext.getLastForegroundUIContext();
+  if (lastForegroundUIContext) {
+    hilog.info(0x00, 'testTag', `Get UIContext of last foregrounded instance.`)
+    return lastForegroundUIContext;
+  }
+  if (length !== 0) {
+    hilog.info(0x00, 'testTag', `Get UIContext with maximum instanceId.`)
+    return allContexts[length - 1];
+  }
+  hilog.info(0x00, 'testTag', `Get UIContext of undefined calling scope.`)
+  return new UIContext();
+}
 
-34. @Entry
-35. @Component
-36. struct Index {
-37. @State message: string = 'Hello World';
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
 
-39. aboutToAppear() {
-40. let uiContext = this.getUIContext();
-41. hilog.info(0x00, 'testTag', `aboutToAppear UIContext: ${uiContext.getId()}`)
-42. }
+  aboutToAppear() {
+    let uiContext = this.getUIContext();
+    hilog.info(0x00, 'testTag', `aboutToAppear UIContext: ${uiContext.getId()}`)
+  }
 
-44. build() {
-45. RelativeContainer() {
-46. Text(this.message)
-47. .id('HelloWorld')
-48. .fontSize($r('app.float.page_text_font_size'))
-49. .fontWeight(FontWeight.Bold)
-50. .alignRules({
-51. center: { anchor: '__container__', align: VerticalAlign.Center },
-52. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-53. })
-54. .onClick(() => {
-55. let resolvedUIContext = UIContext.resolveUIContext();
-56. let contextByAtomicInterface = GetUIContextByAtomicInterface();
-57. hilog.info(0x00, 'testTag',
-58. `UIContext id: ${resolvedUIContext.getId()}, strategy: ${resolvedUIContext.strategy}, contextByAtomicInterface: ${contextByAtomicInterface.getId()}`);
-59. this.message = 'Welcome';
-60. })
-61. }
-62. .height('100%')
-63. .width('100%')
-64. }
-65. }
+  build() {
+    RelativeContainer() {
+      Text(this.message)
+        .id('HelloWorld')
+        .fontSize($r('app.float.page_text_font_size'))
+        .fontWeight(FontWeight.Bold)
+        .alignRules({
+          center: { anchor: '__container__', align: VerticalAlign.Center },
+          middle: { anchor: '__container__', align: HorizontalAlign.Center }
+        })
+        .onClick(() => {
+          let resolvedUIContext = UIContext.resolveUIContext();
+          let contextByAtomicInterface = getUIContextByAtomicInterface();
+          hilog.info(0x00, 'testTag',
+            `UIContext id: ${resolvedUIContext.getId()}, strategy: ${resolvedUIContext.strategy}, contextByAtomicInterface: ${contextByAtomicInterface.getId()}`);
+          this.message = 'Welcome';
+        })
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 ## getCallingScopeUIContext22+
-
-PhonePC/2in1TabletTVWearable
 
 static getCallingScopeUIContext(): UIContext | undefined
 
 获取当前[调用作用域](../harmonyos-guides/arkts-global-interface.md#基本概念)的UIContext，调用作用域不明确时返回undefined。
 
-说明
+**说明** 
 
 返回的UIContext对象可能指向一个已销毁的UI实例，通常在由已销毁的实例抛出异步任务时出现。建议通过[isAvailable](arkts-apis-uicontext-uicontext.md#isavailable20)接口判断其有效性。
 
@@ -168,38 +162,36 @@ static getCallingScopeUIContext(): UIContext | undefined
 
 **示例：**
 
-```
-1. import { UIContext } from '@kit.ArkUI';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { UIContext } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. @State message: string = 'Hello World';
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
 
-9. build() {
-10. RelativeContainer() {
-11. Text(this.message)
-12. .fontWeight(FontWeight.Bold)
-13. .alignRules({
-14. center: { anchor: '__container__', align: VerticalAlign.Center },
-15. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-16. })
-17. .onClick(() => {
-18. this.message = 'Welcome';
-19. let uiContext = UIContext.getCallingScopeUIContext();
-20. hilog.info(0x00, 'testTag', 'Current calling UIContext is : ' + uiContext?.isAvailable());
-21. })
-22. }
-23. .height('100%')
-24. .width('100%')
-25. }
-26. }
+  build() {
+    RelativeContainer() {
+      Text(this.message)
+        .fontWeight(FontWeight.Bold)
+        .alignRules({
+          center: { anchor: '__container__', align: VerticalAlign.Center },
+          middle: { anchor: '__container__', align: HorizontalAlign.Center }
+        })
+        .onClick(() => {
+          this.message = 'Welcome';
+          let uiContext = UIContext.getCallingScopeUIContext();
+          hilog.info(0x00, 'testTag', 'Current calling UIContext is : ' + uiContext?.isAvailable());
+        })
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 ## getLastFocusedUIContext22+
-
-PhonePC/2in1TabletTVWearable
 
 static getLastFocusedUIContext(): UIContext | undefined
 
@@ -217,38 +209,36 @@ static getLastFocusedUIContext(): UIContext | undefined
 
 **示例：**
 
-```
-1. import { UIContext } from '@kit.ArkUI';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { UIContext } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. @State message: string = 'Hello World';
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
 
-9. build() {
-10. RelativeContainer() {
-11. Text(this.message)
-12. .fontWeight(FontWeight.Bold)
-13. .alignRules({
-14. center: { anchor: '__container__', align: VerticalAlign.Center },
-15. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-16. })
-17. .onClick(() => {
-18. this.message = 'Welcome';
-19. let uiContext = UIContext.getLastFocusedUIContext();
-20. hilog.info(0x00, 'testTag', 'Current calling UIContext is : ' + uiContext?.isAvailable());
-21. })
-22. }
-23. .height('100%')
-24. .width('100%')
-25. }
-26. }
+  build() {
+    RelativeContainer() {
+      Text(this.message)
+        .fontWeight(FontWeight.Bold)
+        .alignRules({
+          center: { anchor: '__container__', align: VerticalAlign.Center },
+          middle: { anchor: '__container__', align: HorizontalAlign.Center }
+        })
+        .onClick(() => {
+          this.message = 'Welcome';
+          let uiContext = UIContext.getLastFocusedUIContext();
+          hilog.info(0x00, 'testTag', 'Current calling UIContext is : ' + uiContext?.isAvailable());
+        })
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 ## getLastForegroundUIContext22+
-
-PhonePC/2in1TabletTVWearable
 
 static getLastForegroundUIContext(): UIContext | undefined
 
@@ -266,38 +256,36 @@ static getLastForegroundUIContext(): UIContext | undefined
 
 **示例：**
 
-```
-1. import { UIContext } from '@kit.ArkUI';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { UIContext } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. @State message: string = 'Hello World';
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
 
-9. build() {
-10. RelativeContainer() {
-11. Text(this.message)
-12. .fontWeight(FontWeight.Bold)
-13. .alignRules({
-14. center: { anchor: '__container__', align: VerticalAlign.Center },
-15. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-16. })
-17. .onClick(() => {
-18. this.message = 'Welcome';
-19. let uiContext = UIContext.getLastForegroundUIContext();
-20. hilog.info(0x00, 'testTag', 'Current calling UIContext is : ' + uiContext?.isAvailable());
-21. })
-22. }
-23. .height('100%')
-24. .width('100%')
-25. }
-26. }
+  build() {
+    RelativeContainer() {
+      Text(this.message)
+        .fontWeight(FontWeight.Bold)
+        .alignRules({
+          center: { anchor: '__container__', align: VerticalAlign.Center },
+          middle: { anchor: '__container__', align: HorizontalAlign.Center }
+        })
+        .onClick(() => {
+          this.message = 'Welcome';
+          let uiContext = UIContext.getLastForegroundUIContext();
+          hilog.info(0x00, 'testTag', 'Current calling UIContext is : ' + uiContext?.isAvailable());
+        })
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 ## getAllUIContexts22+
-
-PhonePC/2in1TabletTVWearable
 
 static getAllUIContexts(): UIContext[]
 
@@ -315,44 +303,42 @@ static getAllUIContexts(): UIContext[]
 
 **示例：**
 
-```
-1. import { UIContext } from '@kit.ArkUI';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { UIContext } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. @State message: string = 'Hello World';
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
 
-9. build() {
-10. RelativeContainer() {
-11. Text(this.message)
-12. .fontWeight(FontWeight.Bold)
-13. .alignRules({
-14. center: { anchor: '__container__', align: VerticalAlign.Center },
-15. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-16. })
-17. .onClick(() => {
-18. this.message = 'Welcome';
-19. let uiContexts = UIContext.getAllUIContexts();
-20. hilog.info(0x00, 'testTag', `There are ${uiContexts.length} UIContext(s)`);
-21. })
-22. }
-23. .height('100%')
-24. .width('100%')
-25. }
-26. }
+  build() {
+    RelativeContainer() {
+      Text(this.message)
+        .fontWeight(FontWeight.Bold)
+        .alignRules({
+          center: { anchor: '__container__', align: VerticalAlign.Center },
+          middle: { anchor: '__container__', align: HorizontalAlign.Center }
+        })
+        .onClick(() => {
+          this.message = 'Welcome';
+          let uiContexts = UIContext.getAllUIContexts();
+          hilog.info(0x00, 'testTag', `There are ${uiContexts.length} UIContext(s)`);
+        })
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 ## resolveUIContext22+
-
-PhonePC/2in1TabletTVWearable
 
 static resolveUIContext(): ResolvedUIContext
 
 使用优先级策略获取带有解析策略的UIContext实例对象。
 
-说明
+**说明** 
 
 按照预定义的优先级顺序解析并返回UIContext实例和UIContext的解析策略。
 
@@ -377,29 +363,27 @@ static resolveUIContext(): ResolvedUIContext
 
 **示例：**
 
-```
-1. import { UIContext } from '@kit.ArkUI';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { UIContext } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. Column() {
-9. Button('click').onClick(() => {
-10. let resolvedUIContext = UIContext.resolveUIContext();
-11. hilog.info(0x00, 'testTag', `UIContext id: ${resolvedUIContext.getId()}, strategy: ${resolvedUIContext.strategy}}`);
-12. })
-13. }
-14. .width(UIContext.resolveUIContext().px2vp(100))
-15. .height('100%')
-16. }
-17. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Button('click').onClick(() => {
+        let resolvedUIContext = UIContext.resolveUIContext();
+        hilog.info(0x00, 'testTag', `UIContext id: ${resolvedUIContext.getId()}, strategy: ${resolvedUIContext.strategy}`);
+      })
+    }
+    .width(UIContext.resolveUIContext().px2vp(100))
+    .height('100%')
+  }
+}
 ```
 
 ## isAvailable20+
-
-PhonePC/2in1TabletTVWearable
 
 isAvailable(): boolean
 
@@ -417,69 +401,67 @@ isAvailable(): boolean
 
 **示例：**
 
+```ts
+import { UIContext } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct UIContextCompare {
+  @State result1: string = '';
+  @State result2: string = '';
+
+  build() {
+    Column() {
+      Text('getUIContext() 结果: ' + this.result1)
+        .fontSize(20)
+        .margin(10)
+
+      Text('new UIContext() 结果: ' + this.result2)
+        .fontSize(20)
+        .margin(10)
+
+      Divider().margin(20)
+
+      Button('getUIContext()')
+        .width('70%')
+        .height(50)
+        .margin(10)
+        .onClick(() => {
+          try {
+            const ctx: UIContext = this.getUIContext();
+            const available: boolean = ctx.isAvailable();
+            this.result1 = `可用状态: ${available} UI实例有效 `;
+            console.info('getUIContext测试:', available);
+          } catch (error) {
+            this.result1 = '错误: ' + (error instanceof Error ? error.message : String(error));
+          }
+        })
+
+      Button('new UIContext()')
+        .width('70%')
+        .height(50)
+        .margin(10)
+        .onClick(() => {
+          try {
+            const ctx: UIContext = new UIContext();
+            const available: boolean = ctx.isAvailable();
+            this.result2 = `可用状态: ${available} UI实例无效`;
+            console.info('new UIContext测试:', available);
+          } catch (error) {
+            this.result2 = '错误: ' + (error instanceof Error ? error.message : String(error));
+          }
+        })
+    }
+    .width('100%')
+    .height('100%')
+    .padding(20)
+  }
+}
 ```
-1. import { UIContext } from '@kit.ArkUI'
 
-3. @Entry
-4. @Component
-5. struct UIContextCompare {
-6. @State result1: string = ""
-7. @State result2: string = ""
-
-9. build() {
-10. Column() {
-11. Text("getUIContext() 结果: " + this.result1)
-12. .fontSize(20)
-13. .margin(10)
-
-15. Text("new UIContext() 结果: " + this.result2)
-16. .fontSize(20)
-17. .margin(10)
-
-19. Divider().margin(20)
-
-21. Button("getUIContext()")
-22. .width("70%")
-23. .height(50)
-24. .margin(10)
-25. .onClick(() => {
-26. try {
-27. const ctx: UIContext = this.getUIContext();
-28. const available: boolean = ctx.isAvailable();
-29. this.result1 = `可用状态: ${available} UI实例有效 `;
-30. console.info("getUIContext测试:", available);
-31. } catch (e) {
-32. this.result1 = "错误: " + (e instanceof Error ? e.message : String(e));
-33. }
-34. })
-
-36. Button("new UIContext()")
-37. .width("70%")
-38. .height(50)
-39. .margin(10)
-40. .onClick(() => {
-41. try {
-42. const ctx: UIContext = new UIContext();
-43. const available: boolean = ctx.isAvailable();
-44. this.result2 = `可用状态: ${available} UI实例无效`;
-45. console.info("new UIContext测试:", available);
-46. } catch (e) {
-47. this.result2 = "错误: " + (e instanceof Error ? e.message : String(e));
-48. }
-49. })
-50. }
-51. .width("100%")
-52. .height("100%")
-53. .padding(20)
-54. }
-55. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/_H4oOVMQTZG8fj6FcYSUFg/zh-cn_image_0000002558606276.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/qZdFMWxcS66sbfRLlflOVg/zh-cn_image_0000002706675594.gif)
 
 ## getFont
-
-PhonePC/2in1TabletTVWearable
 
 getFont(): Font
 
@@ -501,8 +483,6 @@ getFont(): Font
 
 ## getComponentUtils
 
-PhonePC/2in1TabletTVWearable
-
 getComponentUtils(): ComponentUtils
 
 获取ComponentUtils对象。
@@ -522,8 +502,6 @@ getComponentUtils(): ComponentUtils
 完整示例请参考[示例1（获取ComponentUtils对象）](js-apis-arkui-componentutils.md#示例1获取componentutils对象)。
 
 ## getUIInspector
-
-PhonePC/2in1TabletTVWearable
 
 getUIInspector(): UIInspector
 
@@ -545,8 +523,6 @@ getUIInspector(): UIInspector
 
 ## getUIObserver11+
 
-PhonePC/2in1TabletTVWearable
-
 getUIObserver(): UIObserver
 
 获取UIObserver对象。
@@ -559,63 +535,61 @@ getUIObserver(): UIObserver
 
 | 类型 | 说明 |
 | --- | --- |
-| [UIObserver](arkts-apis-uicontext-uiobserver.md) | 返回UIObserver实例对象。 |
+| [UIObserver](arkts-apis-uicontext-uiobserver.md) | 返回UIObserver实例对象，用于监听UI相关状态变化。 |
 
 **示例：**
 
-```
-1. @Component
-2. struct PageOne {
-3. build() {
-4. NavDestination() {
-5. Text("pageOne")
-6. }.title("pageOne")
-7. }
-8. }
+```ts
+@Component
+struct PageOne {
+  build() {
+    NavDestination() {
+      Text("pageOne")
+    }.title("pageOne")
+  }
+}
 
-10. @Entry
-11. @Component
-12. struct Index {
-13. private stack: NavPathStack = new NavPathStack();
+@Entry
+@Component
+struct Index {
+  private stack: NavPathStack = new NavPathStack();
 
-15. @Builder
-16. PageBuilder(name: string) {
-17. PageOne()
-18. }
+  @Builder
+  PageBuilder(name: string) {
+    PageOne()
+  }
 
-20. aboutToAppear() {
-21. this.getUIContext().getUIObserver().on('navDestinationUpdate', (info) => {
-22. console.info('NavDestination state update', JSON.stringify(info));
-23. });
-24. }
+  aboutToAppear() {
+    this.getUIContext().getUIObserver().on('navDestinationUpdate', (info) => {
+      console.info('NavDestination state update', JSON.stringify(info));
+    });
+  }
 
-26. aboutToDisappear() {
-27. this.getUIContext().getUIObserver().off('navDestinationUpdate');
-28. }
+  aboutToDisappear() {
+    this.getUIContext().getUIObserver().off('navDestinationUpdate');
+  }
 
-30. build() {
-31. Column() {
-32. Navigation(this.stack) {
-33. Button("push").onClick(() => {
-34. this.stack.pushPath({ name: "pageOne" });
-35. })
-36. }
-37. .title("Navigation")
-38. .navDestination(this.PageBuilder)
-39. }
-40. .width('100%')
-41. .height('100%')
-42. }
-43. }
+  build() {
+    Column() {
+      Navigation(this.stack) {
+        Button("push").onClick(() => {
+          this.stack.pushPath({ name: "pageOne" });
+        })
+      }
+      .title("Navigation")
+      .navDestination(this.PageBuilder)
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## getId22+
 
-PhonePC/2in1TabletTVWearable
-
 getId(): number
 
-获取UI实例对象唯一标识，多实例场景下，开发者可使用此唯一标识区分多个UI实例对象，便于管理。
+获取UI实例对象唯一标识，多实例场景下，开发者可使用此唯一标识区分多个UI实例对象，便于管理。UI实例无效或实例ID不存在时，返回-1。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -629,24 +603,22 @@ getId(): number
 
 **示例：**
 
-```
-1. @Entry
-2. @Component
-3. struct Index{
-4. build(){
-5. Column()
-6. .width("100%")
-7. .height("100%")
-8. .onClick(()=>{
-9. console.info(`id:${this.getUIContext()?.getId()}`);
-10. })
-11. }
-12. }
+```ts
+@Entry
+@Component
+struct Index{
+  build(){
+    Column()
+      .width("100%")
+      .height("100%")
+      .onClick(()=>{
+      console.info(`id:${this.getUIContext()?.getId()}`);
+    })
+  }
+}
 ```
 
 ## getMediaQuery
-
-PhonePC/2in1TabletTVWearable
 
 getMediaQuery(): MediaQuery
 
@@ -668,8 +640,6 @@ getMediaQuery(): MediaQuery
 
 ## getRouter
 
-PhonePC/2in1TabletTVWearable
-
 getRouter(): Router
 
 获取Router对象。
@@ -689,8 +659,6 @@ getRouter(): Router
 完整示例请参考[pushUrl](arkts-apis-uicontext-router.md#pushurl)。
 
 ## getPromptAction
-
-PhonePC/2in1TabletTVWearable
 
 getPromptAction(): PromptAction
 
@@ -712,15 +680,13 @@ getPromptAction(): PromptAction
 
 ## getOverlayManager12+
 
-PhonePC/2in1TabletTVWearable
-
 getOverlayManager(): OverlayManager
 
 获取OverlayManager对象。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
-**系统能力：**: SystemCapability.ArkUI.ArkUI.Full
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
 
@@ -734,15 +700,13 @@ getOverlayManager(): OverlayManager
 
 ## setOverlayManagerOptions15+
 
-PhonePC/2in1TabletTVWearable
-
 setOverlayManagerOptions(options: OverlayManagerOptions): boolean
 
 设置[OverlayManager](arkts-apis-uicontext-overlaymanager.md)参数。用于在使用OverlayManager能力之前先初始化overlayManager的参数，包括是否需要渲染overlay根节点等属性。该方法需要在执行getOverlayManager方法之前执行生效，且该方法只生效一次。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
-**系统能力：**: SystemCapability.ArkUI.ArkUI.Full
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
@@ -762,15 +726,13 @@ setOverlayManagerOptions(options: OverlayManagerOptions): boolean
 
 ## getOverlayManagerOptions15+
 
-PhonePC/2in1TabletTVWearable
-
 getOverlayManagerOptions(): OverlayManagerOptions
 
 用于获取当前[OverlayManagerOptions](arkts-apis-uicontext-i.md#overlaymanageroptions15)参数。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
-**系统能力：**: SystemCapability.ArkUI.ArkUI.Full
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
 
@@ -783,8 +745,6 @@ getOverlayManagerOptions(): OverlayManagerOptions
 完整示例请参考[OverlayManager](arkts-apis-uicontext-overlaymanager.md)中的示例。
 
 ## animateToImmediately23+
-
-PhonePC/2in1TabletTVWearable
 
 animateToImmediately(param: AnimateParam, processor: Callback<void>): void
 
@@ -805,68 +765,66 @@ animateToImmediately(param: AnimateParam, processor: Callback<void>): void
 
 该示例通过UIContext对象获取显式立即动画，并调用animateToImmediately接口实现参数定义的动画效果。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct AnimateToImmediatelyExample {
-5. @State widthSize: number = 250
-6. @State heightSize: number = 100
-7. @State opacitySize: number = 0
-8. private flag: boolean = true
-9. uiContext: UIContext | null | undefined = this.getUIContext();
+```ts
+// xxx.ets
+@Entry
+@Component
+struct AnimateToImmediatelyExample {
+  @State widthSize: number = 250
+  @State heightSize: number = 100
+  @State opacitySize: number = 0
+  private flag: boolean = true
+  uiContext: UIContext | null | undefined = this.getUIContext();
 
-11. build() {
-12. Column() {
-13. Column()
-14. .width(this.widthSize)
-15. .height(this.heightSize)
-16. .backgroundColor(Color.Green)
-17. .opacity(this.opacitySize)
-18. Button('change size')
-19. .margin(30)
-20. .onClick(() => {
-21. if (this.flag) {
-22. this.uiContext?.animateToImmediately({
-23. delay: 0,
-24. duration: 1000
-25. }, () => {
-26. this.opacitySize = 1
-27. })
-28. this.uiContext?.animateTo({
-29. delay: 1000,
-30. duration: 1000
-31. }, () => {
-32. this.widthSize = 150
-33. this.heightSize = 60
-34. })
-35. } else {
-36. this.uiContext?.animateToImmediately({
-37. delay: 0,
-38. duration: 1000
-39. }, () => {
-40. this.widthSize = 250
-41. this.heightSize = 100
-42. })
-43. this.uiContext?.animateTo({
-44. delay: 1000,
-45. duration: 1000
-46. }, () => {
-47. this.opacitySize = 0
-48. })
-49. }
-50. this.flag = !this.flag
-51. })
-52. }.width('100%').margin({ top: 5 })
-53. }
-54. }
+  build() {
+    Column() {
+      Column()
+        .width(this.widthSize)
+        .height(this.heightSize)
+        .backgroundColor(Color.Green)
+        .opacity(this.opacitySize)
+      Button('change size')
+        .margin(30)
+        .onClick(() => {
+          if (this.flag) {
+            this.uiContext?.animateToImmediately({
+              delay: 0,
+              duration: 1000
+            }, () => {
+              this.opacitySize = 1
+            })
+            this.uiContext?.animateTo({
+              delay: 1000,
+              duration: 1000
+            }, () => {
+              this.widthSize = 150
+              this.heightSize = 60
+            })
+          } else {
+            this.uiContext?.animateToImmediately({
+              delay: 0,
+              duration: 1000
+            }, () => {
+              this.widthSize = 250
+              this.heightSize = 100
+            })
+            this.uiContext?.animateTo({
+              delay: 1000,
+              duration: 1000
+            }, () => {
+              this.opacitySize = 0
+            })
+          }
+          this.flag = !this.flag
+        })
+    }.width('100%').margin({ top: 5 })
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/lJsYtKSxRZmcHm_syURlqg/zh-cn_image_0000002589325803.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/bA0kRJ4mRS6PaSiEAVph3w/zh-cn_image_0000002736434681.gif)
 
 ## animateTo
-
-PhonePC/2in1TabletTVWearable
 
 animateTo(value: AnimateParam, event: () => void): void
 
@@ -876,7 +834,7 @@ animateTo(value: AnimateParam, event: () => void): void
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-说明
+**说明** 
 
 * 不推荐在aboutToAppear、aboutToDisappear中调用动画。
 * 如果在[aboutToAppear](ts-custom-component-lifecycle.md#abouttoappear)中调用动画，自定义组件内的build还未执行，内部组件还未创建，动画时机过早，动画属性没有初值无法对组件产生动画。
@@ -884,7 +842,7 @@ animateTo(value: AnimateParam, event: () => void): void
 * 在组件出现和消失时，可以通过[组件内转场](ts-transition-animation-component.md)添加动画效果。
 * 组件内转场不支持的属性，可以参考[显式动画](ts-explicit-animation.md)中的[示例2](ts-explicit-animation.md#示例2动画执行结束后组件消失)，使用animateTo实现动画执行结束后组件消失的效果。
 * 某些场景下，在[状态管理V2](../harmonyos-guides/arkts-state-management-overview.md#状态管理v2)中使用animateTo动画，会产生异常效果，具体可参考：[在状态管理V2中使用animateTo动画效果异常](../harmonyos-guides/arkts-new-local.md#在状态管理v2中使用animateto动画效果异常)。
-* UIAbility从前台切换至后台时会立即结束仍在步进中的有限循环动画，从而触发[onFinish动画播放完成回调](ts-explicit-animation.md#animateparam对象说明)。
+* UIAbility从前台切换至后台时会立即结束仍在步进中的有限循环动画，从而触发动画播放完成回调[onFinish](ts-explicit-animation.md#animateparam对象说明)。
 * 在设置的开发者选项中关闭过渡动画，动画会当帧结束，onFinish动画播放完成回调会立即执行，请避免在回调中加入时序相关的功能逻辑。
 
 **参数：**
@@ -896,87 +854,85 @@ animateTo(value: AnimateParam, event: () => void): void
 
 **示例：**
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct AnimateToExample {
-5. @State widthSize: number = 250;
-6. @State heightSize: number = 100;
-7. @State rotateAngle: number = 0;
-8. private flag: boolean = true;
-9. uiContext: UIContext | undefined = undefined;
+```ts
+// xxx.ets
+@Entry
+@Component
+struct AnimateToExample {
+  @State widthSize: number = 250;
+  @State heightSize: number = 100;
+  @State rotateAngle: number = 0;
+  private flag: boolean = true;
+  uiContext: UIContext | undefined = undefined;
 
-11. aboutToAppear() {
-12. this.uiContext = this.getUIContext();
-13. if (!this.uiContext) {
-14. console.warn("no uiContext");
-15. return;
-16. }
-17. }
+  aboutToAppear() {
+    this.uiContext = this.getUIContext();
+    if (!this.uiContext) {
+      console.warn("no uiContext");
+      return;
+    }
+  }
 
-19. build() {
-20. Column() {
-21. Button('change size')
-22. .width(this.widthSize)
-23. .height(this.heightSize)
-24. .margin(30)
-25. .onClick(() => {
-26. if (this.flag) {
-27. this.uiContext?.animateTo({
-28. duration: 2000,
-29. curve: Curve.EaseOut,
-30. iterations: 3,
-31. playMode: PlayMode.Normal,
-32. onFinish: () => {
-33. console.info('play end');
-34. }
-35. }, () => {
-36. this.widthSize = 150;
-37. this.heightSize = 60;
-38. });
-39. } else {
-40. this.uiContext?.animateTo({}, () => {
-41. this.widthSize = 250;
-42. this.heightSize = 100;
-43. });
-44. }
-45. this.flag = !this.flag;
-46. })
-47. Button('stop rotating')
-48. .margin(50)
-49. .rotate({ x: 0, y: 0, z: 1, angle: this.rotateAngle })
-50. .onAppear(() => {
-51. // 组件出现时开始做动画
-52. this.uiContext?.animateTo({
-53. duration: 1200,
-54. curve: Curve.Friction,
-55. delay: 500,
-56. iterations: -1, // 设置-1表示动画无限循环
-57. playMode: PlayMode.Alternate,
-58. expectedFrameRateRange: {
-59. min: 10,
-60. max: 120,
-61. expected: 60,
-62. }
-63. }, () => {
-64. this.rotateAngle = 90
-65. });
-66. })
-67. .onClick(() => {
-68. this.uiContext?.animateTo({ duration: 0 }, () => {
-69. // this.rotateAngle之前为90，在duration为0的动画中修改属性，可以停止该属性之前的动画，按新设置的属性显示
-70. this.rotateAngle = 0;
-71. });
-72. })
-73. }.width('100%').margin({ top: 5 })
-74. }
-75. }
+  build() {
+    Column() {
+      Button('change size')
+        .width(this.widthSize)
+        .height(this.heightSize)
+        .margin(30)
+        .onClick(() => {
+          if (this.flag) {
+            this.uiContext?.animateTo({
+              duration: 2000,
+              curve: Curve.EaseOut,
+              iterations: 3,
+              playMode: PlayMode.Normal,
+              onFinish: () => {
+                console.info('play end');
+              }
+            }, () => {
+              this.widthSize = 150;
+              this.heightSize = 60;
+            });
+          } else {
+            this.uiContext?.animateTo({}, () => {
+              this.widthSize = 250;
+              this.heightSize = 100;
+            });
+          }
+          this.flag = !this.flag;
+        })
+      Button('stop rotating')
+        .margin(50)
+        .rotate({ x: 0, y: 0, z: 1, angle: this.rotateAngle })
+        .onAppear(() => {
+          // 组件出现时开始做动画
+          this.uiContext?.animateTo({
+            duration: 1200,
+            curve: Curve.Friction,
+            delay: 500,
+            iterations: -1, // 设置-1表示动画无限循环
+            playMode: PlayMode.Alternate,
+            expectedFrameRateRange: {
+              min: 10,
+              max: 120,
+              expected: 60,
+            }
+          }, () => {
+            this.rotateAngle = 90
+          });
+        })
+        .onClick(() => {
+          this.uiContext?.animateTo({ duration: 0 }, () => {
+            // this.rotateAngle之前为90，在duration为0的动画中修改属性，可以停止该属性之前的动画，按新设置的属性显示
+            this.rotateAngle = 0;
+          });
+        })
+    }.width('100%').margin({ top: 5 })
+  }
+}
 ```
 
 ## getSharedLocalStorage12+
-
-PhonePC/2in1TabletTVWearable
 
 getSharedLocalStorage(): LocalStorage | undefined
 
@@ -996,54 +952,52 @@ getSharedLocalStorage(): LocalStorage | undefined
 
 **示例：**
 
+```ts
+// EntryAbility.ets
+import { UIAbility } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
+
+export default class EntryAbility extends UIAbility {
+  storage: LocalStorage = new LocalStorage();
+
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    windowStage.loadContent('pages/Index', this.storage);
+  }
+}
 ```
-1. // EntryAbility.ets
-2. import { UIAbility } from '@kit.AbilityKit';
-3. import { window } from '@kit.ArkUI';
 
-5. export default class EntryAbility extends UIAbility {
-6. storage: LocalStorage = new LocalStorage();
+```ts
+// Index.ets
 
-8. onWindowStageCreate(windowStage: window.WindowStage) {
-9. windowStage.loadContent('pages/Index', this.storage);
-10. }
-11. }
-```
+@Entry
+@Component
+struct SharedLocalStorage {
+  localStorage = this.getUIContext().getSharedLocalStorage();
 
-```
-1. // Index.ets
-
-3. @Entry
-4. @Component
-5. struct SharedLocalStorage {
-6. localStorage = this.getUIContext().getSharedLocalStorage();
-
-8. build() {
-9. Row() {
-10. Column() {
-11. Button("Change Local Storage to 47")
-12. .onClick(() => {
-13. this.localStorage?.setOrCreate("propA", 47);
-14. })
-15. Button("Get Local Storage")
-16. .onClick(() => {
-17. console.info(`localStorage: ${this.localStorage?.get("propA")}`);
-18. })
-19. }
-20. .width('100%')
-21. }
-22. .height('100%')
-23. }
-24. }
+  build() {
+    Row() {
+      Column() {
+        Button("Change Local Storage to 47")
+          .onClick(() => {
+            this.localStorage?.setOrCreate("propA", 47);
+          })
+        Button("Get Local Storage")
+          .onClick(() => {
+            console.info(`localStorage: ${this.localStorage?.get("propA")}`);
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 ## getHostContext12+
 
-PhonePC/2in1TabletTVWearable
-
 getHostContext(): Context | undefined
 
-获得当前元能力的Context。
+获得当前组件所在Ability的Context。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1055,38 +1009,36 @@ getHostContext(): Context | undefined
 
 | 类型 | 说明 |
 | --- | --- |
-| [Context](arkts-apis-uicontext-t.md#context12) | undefined | 返回当前组件所在Ability的Context，Context的具体类型为当前Ability关联的Context对象。例如：在UIAbility窗口中的页面调用该接口，返回类型为[UIAbilityContext](js-apis-inner-application-uiabilitycontext.md#uiabilitycontext-1)。在ExtensionAbility窗口中的页面调用该接口，返回类型为[ExtensionContext](js-apis-inner-application-extensioncontext.md)。ability上下文不存在时返回undefined。 |
+| [Context](arkts-apis-uicontext-t.md#context) | undefined | 返回当前组件所在Ability的Context，Context的具体类型为当前Ability关联的Context对象。例如：在UIAbility窗口中的页面调用该接口，返回类型为[UIAbilityContext](js-apis-inner-application-uiabilitycontext.md#uiabilitycontext-1)。在ExtensionAbility窗口中的页面调用该接口，返回类型为[ExtensionContext](js-apis-inner-application-extensioncontext.md)。ability上下文不存在时返回undefined。 |
 
 **示例：**
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. uiContext = this.getUIContext();
+```ts
+@Entry
+@Component
+struct Index {
+  uiContext = this.getUIContext();
 
-6. build() {
-7. Row() {
-8. Column() {
-9. Text("cacheDir='" + this.uiContext?.getHostContext()?.cacheDir + "'")
-10. .fontSize(25)
-11. .border({ color: Color.Red, width: 2 })
-12. .padding(50)
-13. Text("bundleCodeDir='" + this.uiContext?.getHostContext()?.bundleCodeDir + "'")
-14. .fontSize(25)
-15. .border({ color: Color.Red, width: 2 })
-16. .padding(50)
-17. }
-18. .width('100%')
-19. }
-20. .height('100%')
-21. }
-22. }
+  build() {
+    Row() {
+      Column() {
+        Text("cacheDir='" + this.uiContext?.getHostContext()?.cacheDir + "'")
+          .fontSize(25)
+          .border({ color: Color.Red, width: 2 })
+          .padding(50)
+        Text("bundleCodeDir='" + this.uiContext?.getHostContext()?.bundleCodeDir + "'")
+          .fontSize(25)
+          .border({ color: Color.Red, width: 2 })
+          .padding(50)
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 ## getFrameNodeById12+
-
-PhonePC/2in1TabletTVWearable
 
 getFrameNodeById(id: string): FrameNode | null
 
@@ -1108,7 +1060,7 @@ getFrameNodeById(id: string): FrameNode | null
 | --- | --- |
 | [FrameNode](js-apis-arkui-framenode.md) | null | 返回的组件树的实体节点或者空节点。 |
 
-说明
+**说明** 
 
 getFrameNodeById通过遍历查询对应id的节点，性能较差。推荐使用[getAttachedFrameNodeById](arkts-apis-uicontext-uicontext.md#getattachedframenodebyid12)。
 
@@ -1117,8 +1069,6 @@ getFrameNodeById通过遍历查询对应id的节点，性能较差。推荐使�
 完整示例请参考[获取根节点示例](js-apis-arkui-framenode.md#获取根节点示例)。
 
 ## getAttachedFrameNodeById12+
-
-PhonePC/2in1TabletTVWearable
 
 getAttachedFrameNodeById(id: string): FrameNode | null
 
@@ -1140,49 +1090,49 @@ getAttachedFrameNodeById(id: string): FrameNode | null
 | --- | --- |
 | [FrameNode](js-apis-arkui-framenode.md) | null | 返回的组件树的实体节点或者空节点。 |
 
-说明
+**说明** 
 
 getAttachedFrameNodeById仅能查询上屏节点。
 
 **示例：**
 
-```
-1. @Entry
-2. @Component
-3. struct MyComponent {
-4. @State message: string = 'Hello World';
+```ts
+@Entry
+@Component
+struct MyComponent {
+  @State message: string = 'Hello World';
 
-6. build() {
-7. RelativeContainer() {
-8. Text(this.message)
-9. .id('HelloWorld')
-10. .fontSize($r('app.float.page_text_font_size'))
-11. .fontWeight(FontWeight.Bold)
-12. .alignRules({
-13. center: { anchor: '__container__', align: VerticalAlign.Center },
-14. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-15. })
-16. .onClick(() => {
-17. let node = this.getUIContext().getAttachedFrameNodeById("HelloWorld");
-18. console.info(`Find HelloWorld Tag:${node!.getNodeType()} id:${node!.getUniqueId()}`);
-19. })
-20. }
-21. .height('100%')
-22. .width('100%')
-23. }
-24. }
+  build() {
+    RelativeContainer() {
+      Text(this.message)
+        .id('HelloWorld')
+        .fontSize($r('app.float.page_text_font_size'))
+        .fontWeight(FontWeight.Bold)
+        .alignRules({
+          center: { anchor: '__container__', align: VerticalAlign.Center },
+          middle: { anchor: '__container__', align: HorizontalAlign.Center }
+        })
+        .onClick(() => {
+          let node = this.getUIContext().getAttachedFrameNodeById("HelloWorld");
+          console.info(`Find HelloWorld Tag:${node!.getNodeType()} id:${node!.getUniqueId()}`);
+        })
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 ## getFrameNodeByUniqueId12+
 
-PhonePC/2in1TabletTVWearable
-
 getFrameNodeByUniqueId(id: number): FrameNode | null
 
-提供getFrameNodeByUniqueId接口通过组件的uniqueId获取组件树的实体节点。
+通过组件的uniqueId获取组件树的实体节点。
 
 1. 当uniqueId对应的是系统组件时，返回组件所对应的FrameNode；
-2. 当uniqueId对应的是自定义组件时，若其有渲染内容，则返回该自定义组件的根节点，类型为\_\_Common\_\_；若其无渲染内容，则返回其第一个子组件的FrameNode。
+2. 当uniqueId对应的是自定义组件时：
+   * 若其有渲染内容，且没有被[@Reusable装饰器](../harmonyos-guides/arkts-reusable.md)修饰时，返回该自定义组件的根节点，类型为\_\_Common\_\_。
+   * 若其无渲染内容，或者被[@Reusable装饰器](../harmonyos-guides/arkts-reusable.md)修饰时，在该自定义组件的子组件创建完成前调用此接口，将返回null；在该自定义组件的子组件创建完成后调用，返回其第一个子组件的FrameNode。
 3. 当uniqueId无对应的组件时，返回null。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -1203,33 +1153,31 @@ getFrameNodeByUniqueId(id: number): FrameNode | null
 
 **示例：**
 
-```
-1. import { UIContext, FrameNode } from '@kit.ArkUI';
+```ts
+import { UIContext, FrameNode } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct MyComponent {
-6. aboutToAppear() {
-7. let uniqueId: number = this.getUniqueId();
-8. let uiContext: UIContext = this.getUIContext();
-9. if (uiContext) {
-10. let node: FrameNode | null = uiContext.getFrameNodeByUniqueId(uniqueId);
-11. }
-12. }
+@Entry
+@Component
+struct MyComponent {
+  aboutToAppear() {
+    let uniqueId: number = this.getUniqueId();
+    let uiContext: UIContext = this.getUIContext();
+    if (uiContext) {
+      let node: FrameNode | null = uiContext.getFrameNodeByUniqueId(uniqueId);
+    }
+  }
 
-14. build() {
-15. // ...
-16. }
-17. }
+  build() {
+    // ...
+  }
+}
 ```
 
 ## getPageInfoByUniqueId12+
 
-PhonePC/2in1TabletTVWearable
-
 getPageInfoByUniqueId(id: number): PageInfo
 
-提供getPageInfoByUniqueId接口通过组件的uniqueId获取该节点对应的Router和NavDestination页面信息。
+通过组件的uniqueId获取该节点对应的Router和NavDestination页面信息。
 
 1. 当uniqueId对应的节点在Page节点中，routerPageInfo属性为其对应的Router信息；
 2. 当uniqueId对应的节点在NavDestination节点中，navDestinationInfo属性为其对应的NavDestination信息；
@@ -1254,54 +1202,52 @@ getPageInfoByUniqueId(id: number): PageInfo
 
 **示例：**
 
-```
-1. import { UIContext, PageInfo } from '@kit.ArkUI';
+```ts
+import { UIContext, PageInfo } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct PageInfoExample {
-6. @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack();
+@Entry
+@Component
+struct PageInfoExample {
+  @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack();
 
-8. build() {
-9. Column() {
-10. Navigation(this.pageInfos) {
-11. NavDestination() {
-12. MyComponent()
-13. }
-14. }.id('navigation')
-15. }
-16. }
-17. }
+  build() {
+    Column() {
+      Navigation(this.pageInfos) {
+        NavDestination() {
+          MyComponent()
+        }
+      }.id('navigation')
+    }
+  }
+}
 
-19. @Component
-20. struct MyComponent {
-21. @State content: string = '';
+@Component
+struct MyComponent {
+  @State content: string = '';
 
-23. build() {
-24. Column() {
-25. Text('PageInfoExample')
-26. Button('click').onClick(() => {
-27. const uiContext: UIContext = this.getUIContext();
-28. const uniqueId: number = this.getUniqueId();
-29. const pageInfo: PageInfo = uiContext.getPageInfoByUniqueId(uniqueId);
-30. console.info('pageInfo: ' + JSON.stringify(pageInfo));
-31. console.info('navigationInfo: ' + JSON.stringify(uiContext.getNavigationInfoByUniqueId(uniqueId)));
-32. })
-33. TextArea({
-34. text: this.content
-35. })
-36. .width('100%')
-37. .height(100)
-38. }
-39. .width('100%')
-40. .alignItems(HorizontalAlign.Center)
-41. }
-42. }
+  build() {
+    Column() {
+      Text('PageInfoExample')
+      Button('click').onClick(() => {
+        const uiContext: UIContext = this.getUIContext();
+        const uniqueId: number = this.getUniqueId();
+        const pageInfo: PageInfo = uiContext.getPageInfoByUniqueId(uniqueId);
+        console.info('pageInfo: ' + JSON.stringify(pageInfo));
+        console.info('navigationInfo: ' + JSON.stringify(uiContext.getNavigationInfoByUniqueId(uniqueId)));
+      })
+      TextArea({
+        text: this.content
+      })
+      .width('100%')
+      .height(100)
+    }
+    .width('100%')
+    .alignItems(HorizontalAlign.Center)
+  }
+}
 ```
 
 ## getNavigationInfoByUniqueId12+
-
-PhonePC/2in1TabletTVWearable
 
 getNavigationInfoByUniqueId(id: number): observer.NavigationInfo | undefined
 
@@ -1332,13 +1278,11 @@ getNavigationInfoByUniqueId(id: number): observer.NavigationInfo | undefined
 
 ## showAlertDialog
 
-PhonePC/2in1TabletTVWearable
-
 showAlertDialog(options: AlertDialogParamWithConfirm | AlertDialogParamWithButtons | AlertDialogParamWithOptions): void
 
 显示警告弹窗组件，可设置文本内容与响应回调。
 
-说明
+**说明** 
 
 不支持在输入法类型窗口中使用子窗（[showInSubWindow](ts-methods-alert-dialog-box.md#alertdialogparam对象说明) 为true）的showAlertDialog，详情见输入法框架的约束与限制说明[createPanel](js-apis-inputmethodengine.md#createpanel10-1)。
 
@@ -1354,46 +1298,44 @@ showAlertDialog(options: AlertDialogParamWithConfirm | AlertDialogParamWithButto
 
 **示例：**
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. uiContext: UIContext = this.getUIContext()
+```ts
+@Entry
+@Component
+struct Index {
+  uiContext: UIContext = this.getUIContext()
 
-6. build() {
-7. Column() {
-8. Button('showAlertDialog')
-9. .onClick(() => {
-10. this.uiContext.showAlertDialog(
-11. {
-12. title: 'title',
-13. message: 'text',
-14. autoCancel: true,
-15. alignment: DialogAlignment.Bottom,
-16. offset: { dx: 0, dy: -20 },
-17. gridCount: 3,
-18. confirm: {
-19. value: 'button',
-20. action: () => {
-21. console.info('Button-clicking callback');
-22. }
-23. },
-24. cancel: () => {
-25. console.info('Closed callbacks');
-26. }
-27. }
-28. );
-29. })
-30. }.height('100%').width('100%').justifyContent(FlexAlign.Center)
-31. }
-32. }
+  build() {
+    Column() {
+      Button('showAlertDialog')
+        .onClick(() => {
+          this.uiContext.showAlertDialog(
+            {
+              title: 'title',
+              message: 'text',
+              autoCancel: true,
+              alignment: DialogAlignment.Bottom,
+              offset: { dx: 0, dy: -20 },
+              gridCount: 3,
+              confirm: {
+                value: 'button',
+                action: () => {
+                  console.info('Button-clicking callback');
+                }
+              },
+              cancel: () => {
+                console.info('Closed callbacks');
+              }
+            }
+          );
+        })
+    }.height('100%').width('100%').justifyContent(FlexAlign.Center)
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/UvdqEenuTf6rN_AF0NOpoA/zh-cn_image_0000002589245745.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/MALzCO4USkGW1qJh_7zuFA/zh-cn_image_0000002706835534.gif)
 
 ## showActionSheet
-
-PhonePC/2in1TabletTVWearable
 
 showActionSheet(value: ActionSheetOptions): void
 
@@ -1411,69 +1353,67 @@ showActionSheet(value: ActionSheetOptions): void
 
 **示例：**
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. uiContext: UIContext = this.getUIContext()
+```ts
+@Entry
+@Component
+struct Index {
+  uiContext: UIContext = this.getUIContext()
 
-6. build() {
-7. Column() {
-8. Button('showActionSheet')
-9. .onClick(() => {
-10. this.uiContext.showActionSheet({
-11. title: 'ActionSheet title',
-12. message: 'message',
-13. autoCancel: true,
-14. confirm: {
-15. value: 'Confirm button',
-16. action: () => {
-17. console.info('Get ActionSheet handled');
-18. }
-19. },
-20. cancel: () => {
-21. console.info('ActionSheet canceled');
-22. },
-23. alignment: DialogAlignment.Bottom,
-24. offset: { dx: 0, dy: -10 },
-25. sheets: [
-26. {
-27. title: 'apples',
-28. action: () => {
-29. console.info('apples');
-30. }
-31. },
-32. {
-33. title: 'bananas',
-34. action: () => {
-35. console.info('bananas');
-36. }
-37. },
-38. {
-39. title: 'pears',
-40. action: () => {
-41. console.info('pears');
-42. }
-43. }
-44. ]
-45. });
-46. })
-47. }.height('100%').width('100%').justifyContent(FlexAlign.Center)
-48. }
-49. }
+  build() {
+    Column() {
+      Button('showActionSheet')
+        .onClick(() => {
+          this.uiContext.showActionSheet({
+            title: 'ActionSheet title',
+            message: 'message',
+            autoCancel: true,
+            confirm: {
+              value: 'Confirm button',
+              action: () => {
+                console.info('Get ActionSheet handled');
+              }
+            },
+            cancel: () => {
+              console.info('ActionSheet canceled');
+            },
+            alignment: DialogAlignment.Bottom,
+            offset: { dx: 0, dy: -10 },
+            sheets: [
+              {
+                title: 'apples',
+                action: () => {
+                  console.info('apples');
+                }
+              },
+              {
+                title: 'bananas',
+                action: () => {
+                  console.info('bananas');
+                }
+              },
+              {
+                title: 'pears',
+                action: () => {
+                  console.info('pears');
+                }
+              }
+            ]
+          });
+        })
+    }.height('100%').width('100%').justifyContent(FlexAlign.Center)
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/VIRy23gkTpudvykCXrVmyQ/zh-cn_image_0000002558765934.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/-tnTQv_9Q6y_3y_Mb9w-hg/zh-cn_image_0000002736314639.gif)
 
 ## showDatePickerDialog
-
-PhonePC/2in1TabletTVWearable
 
 showDatePickerDialog(options: DatePickerDialogOptions): void
 
 定义日期滑动选择器弹窗并弹出。
 
-说明
+**说明** 
 
 不支持在输入法类型窗口中使用子窗（showInSubwindow为true）的showDatePickerDialog，详情见输入法框架的约束与限制说明[createPanel](js-apis-inputmethodengine.md#createpanel10-1)。
 
@@ -1491,68 +1431,66 @@ showDatePickerDialog(options: DatePickerDialogOptions): void
 
 **示例：**
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct DatePickerDialogExample {
-5. selectedDate: Date = new Date("2010-1-1");
+```ts
+// xxx.ets
+@Entry
+@Component
+struct DatePickerDialogExample {
+  selectedDate: Date = new Date("2010-1-1");
 
-7. build() {
-8. Row(){
-9. Column() {
-10. Button("DatePickerDialog")
-11. .margin(20)
-12. .onClick(() => {
-13. this.getUIContext().showDatePickerDialog({
-14. start: new Date("2000-1-1"),
-15. end: new Date("2100-12-31"),
-16. selected: this.selectedDate,
-17. showTime: true,
-18. useMilitaryTime: false,
-19. dateTimeOptions: { hour: "numeric", minute: "2-digit" },
-20. onDateAccept: (value: Date) => {
-21. // 通过Date的setFullYear方法设置按下确定按钮时的日期，这样当弹窗再次弹出时显示选中的是上一次确定的日期
-22. this.selectedDate = value;
-23. console.info("DatePickerDialog:onDateAccept()" + value.toString());
-24. },
-25. onCancel: () => {
-26. console.info("DatePickerDialog:onCancel()");
-27. },
-28. onDateChange: (value: Date) => {
-29. console.info("DatePickerDialog:onDateChange()" + value.toString());
-30. },
-31. onDidAppear: () => {
-32. console.info("DatePickerDialog:onDidAppear()");
-33. },
-34. onDidDisappear: () => {
-35. console.info("DatePickerDialog:onDidDisappear()");
-36. },
-37. onWillAppear: () => {
-38. console.info("DatePickerDialog:onWillAppear()");
-39. },
-40. onWillDisappear: () => {
-41. console.info("DatePickerDialog:onWillDisappear()");
-42. }
-43. })
-44. })
-45. }.width('100%')
-46. }.height('100%')
-47. }
-48. }
+  build() {
+    Row(){
+      Column() {
+        Button("DatePickerDialog")
+          .margin(20)
+          .onClick(() => {
+            this.getUIContext().showDatePickerDialog({
+              start: new Date("2000-1-1"),
+              end: new Date("2100-12-31"),
+              selected: this.selectedDate,
+              showTime: true,
+              useMilitaryTime: false,
+              dateTimeOptions: { hour: "numeric", minute: "2-digit" },
+              onDateAccept: (value: Date) => {
+                // 通过Date的setFullYear方法设置按下确定按钮时的日期，这样当弹窗再次弹出时显示选中的是上一次确定的日期
+                this.selectedDate = value;
+                console.info("DatePickerDialog:onDateAccept()" + value.toString());
+              },
+              onCancel: () => {
+                console.info("DatePickerDialog:onCancel()");
+              },
+              onDateChange: (value: Date) => {
+                console.info("DatePickerDialog:onDateChange()" + value.toString());
+              },
+              onDidAppear: () => {
+                console.info("DatePickerDialog:onDidAppear()");
+              },
+              onDidDisappear: () => {
+                console.info("DatePickerDialog:onDidDisappear()");
+              },
+              onWillAppear: () => {
+                console.info("DatePickerDialog:onWillAppear()");
+              },
+              onWillDisappear: () => {
+                console.info("DatePickerDialog:onWillDisappear()");
+              }
+            })
+          })
+      }.width('100%')
+    }.height('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/L-llKv4DT4iNDdmd0iPFow/zh-cn_image_0000002558606278.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/VvGe_hxrTa64lAxW0HiREA/zh-cn_image_0000002706675596.gif)
 
 ## showTimePickerDialog
-
-PhonePC/2in1TabletTVWearable
 
 showTimePickerDialog(options: TimePickerDialogOptions): void
 
 定义时间滑动选择器弹窗并弹出。
 
-说明
+**说明** 
 
 不支持在输入法类型窗口中使用子窗（showInSubwindow为true）的showTimePickerDialog，详情见输入法框架的约束与限制说明[createPanel](js-apis-inputmethodengine.md#createpanel10-1)。
 
@@ -1570,58 +1508,56 @@ showTimePickerDialog(options: TimePickerDialogOptions): void
 
 **示例：**
 
-```
-1. // xxx.ets
+```ts
+// xxx.ets
 
-3. class SelectTime{
-4. selectTime: Date = new Date('2020-12-25T08:30:00');
-5. hours(h:number,m:number){
-6. this.selectTime.setHours(h, m);
-7. }
-8. }
+class SelectTime{
+  selectTime: Date = new Date('2020-12-25T08:30:00');
+  hours(h:number,m:number){
+    this.selectTime.setHours(h, m);
+  }
+}
 
-10. @Entry
-11. @Component
-12. struct TimePickerDialogExample {
-13. @State selectTime: Date = new Date('2023-12-25T08:30:00');
+@Entry
+@Component
+struct TimePickerDialogExample {
+  @State selectTime: Date = new Date('2023-12-25T08:30:00');
 
-15. build() {
-16. Column() {
-17. Button('showTimePickerDialog')
-18. .margin(30)
-19. .onClick(() => {
-20. this.getUIContext().showTimePickerDialog({
-21. selected: this.selectTime,
-22. onAccept: (value: TimePickerResult) => {
-23. // 设置selectTime为按下确定按钮时的时间，这样当弹窗再次弹出时显示选中的为上一次确定的时间
-24. let time = new SelectTime();
-25. if(value.hour && value.minute){
-26. time.hours(value.hour, value.minute);
-27. }
-28. console.info("TimePickerDialog:onAccept()" + JSON.stringify(value));
-29. },
-30. onCancel: () => {
-31. console.info("TimePickerDialog:onCancel()");
-32. },
-33. onChange: (value: TimePickerResult) => {
-34. console.info("TimePickerDialog:onChange()" + JSON.stringify(value));
-35. }
-36. });
-37. })
-38. }.width('100%').margin({ top: 5 })
-39. }
-40. }
+  build() {
+    Column() {
+      Button('showTimePickerDialog')
+        .margin(30)
+        .onClick(() => {
+          this.getUIContext().showTimePickerDialog({
+            selected: this.selectTime,
+            onAccept: (value: TimePickerResult) => {
+              // 设置selectTime为按下确定按钮时的时间，这样当弹窗再次弹出时显示选中的为上一次确定的时间
+              let time = new SelectTime();
+              if(value.hour && value.minute){
+                time.hours(value.hour, value.minute);
+              }
+              console.info("TimePickerDialog:onAccept()" + JSON.stringify(value));
+            },
+            onCancel: () => {
+              console.info("TimePickerDialog:onCancel()");
+            },
+            onChange: (value: TimePickerResult) => {
+              console.info("TimePickerDialog:onChange()" + JSON.stringify(value));
+            }
+          });
+        })
+    }.width('100%').margin({ top: 5 })
+  }
+}
 ```
 
 ## showTextPickerDialog
-
-PhonePC/2in1TabletTVWearable
 
 showTextPickerDialog(options: TextPickerDialogOptions): void
 
 定义文本滑动选择器弹窗并弹出。
 
-说明
+**说明** 
 
 不支持在输入法类型窗口中使用子窗（showInSubwindow为true）的showTextPickerDialog，详情见输入法框架的约束与限制说明[createPanel](js-apis-inputmethodengine.md#createpanel10-1)。
 
@@ -1639,70 +1575,68 @@ showTextPickerDialog(options: TextPickerDialogOptions): void
 
 **示例：**
 
-```
-1. // xxx.ets
+```ts
+// xxx.ets
 
-3. class SelectedValue{
-4. select: number = 2;
-5. set(val: number){
-6. this.select = val;
-7. }
-8. }
-9. class SelectedArray{
-10. select: number[] = [];
-11. set(val: number[]){
-12. this.select = val;
-13. }
-14. }
-15. @Entry
-16. @Component
-17. struct TextPickerDialogExample {
-18. @State selectTime: Date = new Date('2023-12-25T08:30:00');
-19. private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'];
-20. private select: number  = 0;
-21. build() {
-22. Row(){
-23. Column() {
-24. Button('showTextPickerDialog')
-25. .margin(30)
-26. .onClick(() => {
-27. this.getUIContext().showTextPickerDialog({
-28. range: this.fruits,
-29. selected: this.select,
-30. onAccept: (value: TextPickerResult) => {
-31. // 设置select为按下确定按钮时候的选中项index，这样当弹窗再次弹出时显示选中的是上一次确定的选项
-32. let selectedVal = new SelectedValue();
-33. let selectedArr = new SelectedArray();
-34. if (value.index){
-35. value.index instanceof Array?selectedArr.set(value.index) : selectedVal.set(value.index);
-36. }
-37. console.info("TextPickerDialog:onAccept()" + JSON.stringify(value));
-38. },
-39. onCancel: () => {
-40. console.info("TextPickerDialog:onCancel()");
-41. },
-42. onChange: (value: TextPickerResult) => {
-43. console.info("TextPickerDialog:onChange()" + JSON.stringify(value));
-44. }
-45. });
-46. })
-47. }.width('100%').margin({ top: 5 })
-48. }.height('100%')
-49. }
-50. }
+class SelectedValue{
+  select: number = 2;
+  set(val: number){
+    this.select = val;
+  }
+}
+class SelectedArray{
+  select: number[] = [];
+  set(val: number[]){
+    this.select = val;
+  }
+}
+@Entry
+@Component
+struct TextPickerDialogExample {
+  @State selectTime: Date = new Date('2023-12-25T08:30:00');
+  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'];
+  private select: number  = 0;
+  build() {
+    Row(){
+      Column() {
+        Button('showTextPickerDialog')
+          .margin(30)
+          .onClick(() => {
+            this.getUIContext().showTextPickerDialog({
+              range: this.fruits,
+              selected: this.select,
+              onAccept: (value: TextPickerResult) => {
+                // 设置select为按下确定按钮时候的选中项index，这样当弹窗再次弹出时显示选中的是上一次确定的选项
+                let selectedVal = new SelectedValue();
+                let selectedArr = new SelectedArray();
+                if (value.index){
+                  value.index instanceof Array?selectedArr.set(value.index) : selectedVal.set(value.index);
+                }
+                console.info("TextPickerDialog:onAccept()" + JSON.stringify(value));
+              },
+              onCancel: () => {
+                console.info("TextPickerDialog:onCancel()");
+              },
+              onChange: (value: TextPickerResult) => {
+                console.info("TextPickerDialog:onChange()" + JSON.stringify(value));
+              }
+            });
+          })
+      }.width('100%').margin({ top: 5 })
+    }.height('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/fcC2SKztTLCjAdZBJ_xNuA/zh-cn_image_0000002589325805.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/E7oEt9CDQUKSz_0lPSWbCQ/zh-cn_image_0000002736434683.gif)
 
 ## showTextPickerDialog20+
-
-PhonePC/2in1TabletTVWearable
 
 showTextPickerDialog(style: TextPickerDialogOptions|TextPickerDialogOptionsExt): void
 
 定义文本滑动选择器弹窗并弹出，相比API version 11，新增了TextPickerDialogOptionsExt参数支持。
 
-说明
+**说明** 
 
 不支持在输入法类型窗口中使用子窗（showInSubwindow为true）的showTextPickerDialog，详情见输入法框架的约束与限制说明[createPanel](js-apis-inputmethodengine.md#createpanel10-1)。
 
@@ -1720,11 +1654,9 @@ showTextPickerDialog(style: TextPickerDialogOptions|TextPickerDialogOptionsExt):
 
 ## createAnimator
 
-PhonePC/2in1TabletTVWearable
-
 createAnimator(options: AnimatorOptions): AnimatorResult
 
-定义Animator类。
+创建Animator动画结果对象。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1752,42 +1684,40 @@ createAnimator(options: AnimatorOptions): AnimatorResult
 
 **示例：**
 
-```
-1. // EntryAbility.ets
-2. import { UIAbility } from '@kit.AbilityKit';
-3. import { AnimatorOptions, window } from '@kit.ArkUI';
-4. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+// EntryAbility.ets
+import { UIAbility } from '@kit.AbilityKit';
+import { AnimatorOptions, window } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-6. export default class EntryAbility extends UIAbility {
-7. onWindowStageCreate(windowStage: window.WindowStage) {
-8. // 创建主窗口，设置此功能的主页
-9. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
-10. windowStage.loadContent('pages/Index', (err, data) => {
-11. if (err.code) {
-12. hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', err.message);
-13. return;
-14. }
-15. hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
-16. let uiContext = windowStage.getMainWindowSync().getUIContext();
-17. let options:AnimatorOptions = {
-18. duration: 1500,
-19. easing: "friction",
-20. delay: 0,
-21. fill: "forwards",
-22. direction: "normal",
-23. iterations: 3,
-24. begin: 200.0,
-25. end: 400.0
-26. };
-27. uiContext.createAnimator(options);
-28. });
-29. }
-30. }
+export default class EntryAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    // 创建主窗口，设置此功能的主页
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+    windowStage.loadContent('pages/Index', (err, data) => {
+      if (err.code) {
+        hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', err.message);
+        return;
+      }
+      hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
+      let uiContext = windowStage.getMainWindowSync().getUIContext();
+      let options:AnimatorOptions = {
+        duration: 1500,
+        easing: "friction",
+        delay: 0,
+        fill: "forwards",
+        direction: "normal",
+        iterations: 3,
+        begin: 200.0,
+        end: 400.0
+      };
+      uiContext.createAnimator(options);
+    });
+  }
+}
 ```
 
 ## createAnimator18+
-
-PhonePC/2in1TabletTVWearable
 
 createAnimator(options: AnimatorOptions | SimpleAnimatorOptions): AnimatorResult
 
@@ -1819,37 +1749,35 @@ createAnimator(options: AnimatorOptions | SimpleAnimatorOptions): AnimatorResult
 
 **示例：**
 
-```
-1. // EntryAbility.ets
-2. import { UIAbility } from '@kit.AbilityKit';
-3. import { SimpleAnimatorOptions, window } from '@kit.ArkUI';
-4. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+// EntryAbility.ets
+import { UIAbility } from '@kit.AbilityKit';
+import { SimpleAnimatorOptions, window } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-6. export default class EntryAbility extends UIAbility {
-7. onWindowStageCreate(windowStage: window.WindowStage) {
-8. // 创建主窗口，设置此功能的主页
-9. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
-10. windowStage.loadContent('pages/Index', (err, data) => {
-11. if (err.code) {
-12. hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', err.message);
-13. return;
-14. }
-15. hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
-16. let uiContext = windowStage.getMainWindowSync().getUIContext();
-17. let options: SimpleAnimatorOptions = new SimpleAnimatorOptions(100, 200).duration(2000);
-18. uiContext.createAnimator(options);
-19. });
-20. }
-21. }
+export default class EntryAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    // 创建主窗口，设置此功能的主页
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+    windowStage.loadContent('pages/Index', (err, data) => {
+      if (err.code) {
+        hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', err.message);
+        return;
+      }
+      hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
+      let uiContext = windowStage.getMainWindowSync().getUIContext();
+      let options: SimpleAnimatorOptions = new SimpleAnimatorOptions(100, 200).duration(2000);
+      uiContext.createAnimator(options);
+    });
+  }
+}
 ```
 
 ## runScopedTask
 
-PhonePC/2in1TabletTVWearable
-
 runScopedTask(callback: () => void): void
 
-在当前UI上下文执行传入的回调函数。
+在当前UIContext对应的UI实例作用域内执行传入的回调函数，适用于[UI上下文不明确](../harmonyos-guides/arkts-global-interface.md#ui上下文不明确)但需要将业务行为绑定到指定UI实例的场景。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1859,35 +1787,31 @@ runScopedTask(callback: () => void): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | () => void | 是 | 回调函数 |
+| callback | () => void | 是 | 需要在当前UIContext对应的UI实例作用域内执行的回调函数。 |
 
 **示例：**
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. uiContext = this.getUIContext();
+```ts
+@Entry
+@Component
+struct Index {
+  private selectedDate: Date = new Date('2025-10-01');
 
-6. build() {
-7. Row() {
-8. Column() {
-9. Button("run task").onClick(() => {
-10. this.uiContext.runScopedTask(() => {
-11. // do something
-12. })
-13. })
-14. }
-15. .width('100%')
-16. }
-17. .height('100%')
-18. }
-19. }
+  build() {
+    Button('Show CalendarPicker Dialog')
+      .onClick(() => {
+        const uiContext = this.getUIContext();
+        uiContext.runScopedTask(() => {
+          CalendarPickerDialog.show({
+            selected: this.selectedDate
+          });
+        });
+      });
+  }
+}
 ```
 
 ## setKeyboardAvoidMode11+
-
-PhonePC/2in1TabletTVWearable
 
 setKeyboardAvoidMode(value: KeyboardAvoidMode): void
 
@@ -1903,7 +1827,7 @@ setKeyboardAvoidMode(value: KeyboardAvoidMode): void
 | --- | --- | --- | --- |
 | value | [KeyboardAvoidMode](arkts-apis-uicontext-e.md#keyboardavoidmode11) | 是 | 键盘弹出时的页面避让模式。  默认值：KeyboardAvoidMode.OFFSET |
 
-说明
+**说明** 
 
 KeyboardAvoidMode.RESIZE模式会压缩页面大小，页面中设置百分比宽高的组件会跟随页面压缩，而直接设置宽高的组件会按设置的固定大小布局。设置KeyboardAvoidMode的RESIZE模式时，expandSafeArea([SafeAreaType.KEYBOARD],[SafeAreaEdge.BOTTOM])不生效。
 
@@ -1915,28 +1839,30 @@ setKeyboardAvoidMode针对页面生效，对于弹窗类组件不生效，比如
 
 完整示例请参考[示例4（设置键盘避让模式为压缩）](ts-universal-attributes-expand-safe-area.md#示例4设置键盘避让模式为压缩)、[示例5（设置键盘避让模式为上抬）](ts-universal-attributes-expand-safe-area.md#示例5设置键盘避让模式为上抬)以及[示例6（切换避让模式）](ts-universal-attributes-expand-safe-area.md#示例6切换避让模式)。
 
-```
-1. // EntryAbility.ets
-2. import { KeyboardAvoidMode, UIContext } from '@kit.ArkUI';
+```ts
+// EntryAbility.ets
+import { KeyboardAvoidMode, UIContext } from '@kit.ArkUI';
 
-4. export default class EntryAbility extends UIAbility{
-5. onWindowStageCreate(windowStage: window.WindowStage) {
+export default class EntryAbility extends UIAbility{
+  onWindowStageCreate(windowStage: window.WindowStage) {
 
-7. windowStage.loadContent('pages/Index', (err, data) => {
-8. let uiContext: UIContext = windowStage.getMainWindowSync().getUIContext();
-9. uiContext.setKeyboardAvoidMode(KeyboardAvoidMode.RESIZE);
-10. });
-11. }
-12. }
+      windowStage.loadContent('pages/Index', (err, data) => {
+        let uiContext: UIContext = windowStage.getMainWindowSync().getUIContext();
+        uiContext.setKeyboardAvoidMode(KeyboardAvoidMode.RESIZE);
+      });
+    }
+}
 ```
 
 ## getKeyboardAvoidMode11+
 
-PhonePC/2in1TabletTVWearable
-
 getKeyboardAvoidMode(): KeyboardAvoidMode
 
 获取虚拟键盘弹出时，页面的避让模式。
+
+**说明** 
+
+从API version 18开始，getKeyboardAvoidMode接口返回KeyboardAvoidMode枚举值，为整数类型。API version 18之前版本，getKeyboardAvoidMode接口返回字符串类型。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1952,25 +1878,23 @@ getKeyboardAvoidMode(): KeyboardAvoidMode
 
 完整示例请参考[示例4（设置键盘避让模式为压缩）](ts-universal-attributes-expand-safe-area.md#示例4设置键盘避让模式为压缩)、[示例5（设置键盘避让模式为上抬）](ts-universal-attributes-expand-safe-area.md#示例5设置键盘避让模式为上抬)以及[示例6（切换避让模式）](ts-universal-attributes-expand-safe-area.md#示例6切换避让模式)。
 
-```
-1. // EntryAbility.ets
-2. import { KeyboardAvoidMode, UIContext } from '@kit.ArkUI';
+```ts
+// EntryAbility.ets
+import { KeyboardAvoidMode, UIContext } from '@kit.ArkUI';
 
-4. export default class EntryAbility extends UIAbility{
-5. onWindowStageCreate(windowStage: window.WindowStage) {
+export default class EntryAbility extends UIAbility{
+  onWindowStageCreate(windowStage: window.WindowStage) {
 
-7. windowStage.loadContent('pages/Index', (err, data) => {
-8. let uiContext: UIContext = windowStage.getMainWindowSync().getUIContext();
-9. let KeyboardAvoidMode = uiContext.getKeyboardAvoidMode();
-10. console.info("KeyboardAvoidMode:", JSON.stringify(KeyboardAvoidMode));
-11. });
-12. }
-13. }
+      windowStage.loadContent('pages/Index', (err, data) => {
+        let uiContext: UIContext = windowStage.getMainWindowSync().getUIContext();
+        let currentKeyboardAvoidMode = uiContext.getKeyboardAvoidMode();
+        console.info("KeyboardAvoidMode:", JSON.stringify(currentKeyboardAvoidMode));
+      });
+    }
+}
 ```
 
 ## getAtomicServiceBar11+
-
-PhonePC/2in1TabletTVWearable
 
 getAtomicServiceBar(): Nullable<AtomicServiceBar>
 
@@ -1984,35 +1908,33 @@ getAtomicServiceBar(): Nullable<AtomicServiceBar>
 
 | 类型 | 说明 |
 | --- | --- |
-| Nullable<[AtomicServiceBar](arkts-apis-uicontext-atomicservicebar.md)> | 如果是元服务则返回AtomicServerBar类型，否则返回undefined。 |
+| Nullable<[AtomicServiceBar](arkts-apis-uicontext-atomicservicebar.md)> | 如果是元服务则返回AtomicServiceBar类型，否则返回undefined。 |
 
 **示例：**
 
-```
-1. // EntryAbility.ets
-2. import { UIAbility } from '@kit.AbilityKit';
-3. import { UIContext, AtomicServiceBar, window } from '@kit.ArkUI';
+```ts
+// EntryAbility.ets
+import { UIAbility } from '@kit.AbilityKit';
+import { UIContext, AtomicServiceBar, window } from '@kit.ArkUI';
 
-5. export default class EntryAbility extends UIAbility {
-6. onWindowStageCreate(windowStage: window.WindowStage) {
-7. // Main window is created, set main page for this ability
-8. console.info('Ability onWindowStageCreate');
-9. windowStage.loadContent('pages/Index', (err, data) => {
-10. let uiContext: UIContext = windowStage.getMainWindowSync().getUIContext();
-11. let atomicServiceBar: Nullable<AtomicServiceBar> = uiContext.getAtomicServiceBar();
-12. if (atomicServiceBar != undefined) {
-13. console.info('Get AtomServiceBar Successfully.');
-14. } else {
-15. console.error('Get AtomicServiceBar failed.');
-16. }
-17. });
-18. }
-19. }
+export default class EntryAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    // Main window is created, set main page for this ability
+    console.info('Ability onWindowStageCreate');
+    windowStage.loadContent('pages/Index', (err, data) => {
+      let uiContext: UIContext = windowStage.getMainWindowSync().getUIContext();
+      let atomicServiceBar: Nullable<AtomicServiceBar> = uiContext.getAtomicServiceBar();
+      if (atomicServiceBar != undefined) {
+        console.info('Get AtomServiceBar Successfully.');
+      } else {
+        console.error('Get AtomicServiceBar failed.');
+      }
+    });
+  }
+}
 ```
 
 ## getDragController11+
-
-PhonePC/2in1TabletTVWearable
 
 getDragController(): DragController
 
@@ -2034,8 +1956,6 @@ getDragController(): DragController
 
 ## keyframeAnimateTo11+
 
-PhonePC/2in1TabletTVWearable
-
 keyframeAnimateTo(param: KeyframeAnimateParam, keyframes: Array<KeyframeState>): void
 
 产生关键帧动画。该接口的使用说明请参考[keyframeAnimateTo](ts-keyframeanimateto.md)。
@@ -2053,67 +1973,65 @@ keyframeAnimateTo(param: KeyframeAnimateParam, keyframes: Array<KeyframeState>):
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { UIContext } from '@kit.ArkUI';
+```ts
+// xxx.ets
+import { UIContext } from '@kit.ArkUI';
 
-4. @Entry
-5. @Component
-6. struct KeyframeDemo {
-7. @State myScale: number = 1.0;
-8. uiContext: UIContext | undefined = undefined;
+@Entry
+@Component
+struct KeyframeDemo {
+  @State myScale: number = 1.0;
+  uiContext: UIContext | undefined = undefined;
 
-10. aboutToAppear() {
-11. this.uiContext = this.getUIContext();
-12. }
+  aboutToAppear() {
+    this.uiContext = this.getUIContext();
+  }
 
-14. build() {
-15. Column() {
-16. Circle()
-17. .width(100)
-18. .height(100)
-19. .fill("#46B1E3")
-20. .margin(100)
-21. .scale({ x: this.myScale, y: this.myScale })
-22. .onClick(() => {
-23. if (!this.uiContext) {
-24. console.error("no uiContext, keyframe failed");
-25. return;
-26. }
-27. this.myScale = 1;
-28. // 设置关键帧动画整体播放3次
-29. this.uiContext.keyframeAnimateTo({
-30. iterations: 3,
-31. expectedFrameRateRange: {
-32. min: 10,
-33. max: 120,
-34. expected: 60,
-35. }
-36. }, [
-37. {
-38. // 第一段关键帧动画时长为800ms，scale属性做从1到1.5的动画
-39. duration: 800,
-40. event: () => {
-41. this.myScale = 1.5;
-42. }
-43. },
-44. {
-45. // 第二段关键帧动画时长为500ms，scale属性做从1.5到1的动画
-46. duration: 500,
-47. event: () => {
-48. this.myScale = 1;
-49. }
-50. }
-51. ]);
-52. })
-53. }.width('100%').margin({ top: 5 })
-54. }
-55. }
+  build() {
+    Column() {
+      Circle()
+        .width(100)
+        .height(100)
+        .fill("#46B1E3")
+        .margin(100)
+        .scale({ x: this.myScale, y: this.myScale })
+        .onClick(() => {
+          if (!this.uiContext) {
+            console.error("no uiContext, keyframe failed");
+            return;
+          }
+          this.myScale = 1;
+          // 设置关键帧动画整体播放3次
+          this.uiContext.keyframeAnimateTo({
+              iterations: 3,
+              expectedFrameRateRange: {
+                min: 10,
+                max: 120,
+                expected: 60,
+              }
+            }, [
+            {
+              // 第一段关键帧动画时长为800ms，scale属性做从1到1.5的动画
+              duration: 800,
+              event: () => {
+                this.myScale = 1.5;
+              }
+            },
+            {
+              // 第二段关键帧动画时长为500ms，scale属性做从1.5到1的动画
+              duration: 500,
+              event: () => {
+                this.myScale = 1;
+              }
+            }
+          ]);
+        })
+    }.width('100%').margin({ top: 5 })
+  }
+}
 ```
 
 ## getFocusController12+
-
-PhonePC/2in1TabletTVWearable
 
 getFocusController(): FocusController
 
@@ -2134,8 +2052,6 @@ getFocusController(): FocusController
 完整示例请参考[FocusController](arkts-apis-uicontext-focuscontroller.md)中的示例。
 
 ## getFilteredInspectorTree12+
-
-PhonePC/2in1TabletTVWearable
 
 getFilteredInspectorTree(filters?: Array<string>): string
 
@@ -2167,73 +2083,71 @@ getFilteredInspectorTree(filters?: Array<string>): string
 
 **示例：**
 
-```
-1. uiContext.getFilteredInspectorTree(['id', 'src', 'content']);
+```ts
+uiContext.getFilteredInspectorTree(['id', 'src', 'content']);
 ```
 
-```
-1. // xxx.ets
-2. import { UIContext } from '@kit.ArkUI';
-3. @Entry
-4. @Component
-5. struct ComponentPage {
-6. loopConsole(inspectorStr: string, i: string) {
-7. console.info(`InsTree ${i}| type: ${JSON.parse(inspectorStr).$type}, ID: ${JSON.parse(inspectorStr).$ID}`);
-8. if (JSON.parse(inspectorStr).$children) {
-9. i += '-';
-10. for (let index = 0; index < JSON.parse(inspectorStr).$children.length; index++) {
-11. this.loopConsole(JSON.stringify(JSON.parse(inspectorStr).$children[index]), i);
-12. }
-13. }
-14. }
+```ts
+// xxx.ets
+import { UIContext } from '@kit.ArkUI';
+@Entry
+@Component
+struct ComponentPage {
+  loopConsole(inspectorStr: string, i: string) {
+    console.info(`InsTree ${i}| type: ${JSON.parse(inspectorStr).$type}, ID: ${JSON.parse(inspectorStr).$ID}`);
+    if (JSON.parse(inspectorStr).$children) {
+      i += '-';
+      for (let index = 0; index < JSON.parse(inspectorStr).$children.length; index++) {
+        this.loopConsole(JSON.stringify(JSON.parse(inspectorStr).$children[index]), i);
+      }
+    }
+  }
 
-16. build() {
-17. Column() {
-18. Button('content').onClick(() => {
-19. const uiContext: UIContext = this.getUIContext();
-20. let inspectorStr = uiContext.getFilteredInspectorTree(['content']);
-21. console.info(`InsTree : ${inspectorStr}`);
-22. inspectorStr = JSON.stringify(JSON.parse(inspectorStr));
-23. this.loopConsole(inspectorStr, '-');
-24. })
-25. Button('isLayoutInspector').onClick(() => {
-26. const uiContext: UIContext = this.getUIContext();
-27. let inspectorStr = uiContext.getFilteredInspectorTree(['isLayoutInspector']);
-28. console.info(`InsTree : ${inspectorStr}`);
-29. inspectorStr = JSON.stringify(JSON.parse(inspectorStr).content);
-30. this.loopConsole(inspectorStr, '-');
-31. })
-32. }
-33. .width('100%')
-34. .height('100%')
-35. }
-36. }
+  build() {
+    Column() {
+      Button('content').onClick(() => {
+        const uiContext: UIContext = this.getUIContext();
+        let inspectorStr = uiContext.getFilteredInspectorTree(['content']);
+        console.info(`InsTree : ${inspectorStr}`);
+        inspectorStr = JSON.stringify(JSON.parse(inspectorStr));
+        this.loopConsole(inspectorStr, '-');
+      })
+      Button('isLayoutInspector').onClick(() => {
+        const uiContext: UIContext = this.getUIContext();
+        let inspectorStr = uiContext.getFilteredInspectorTree(['isLayoutInspector']);
+        console.info(`InsTree : ${inspectorStr}`);
+        inspectorStr = JSON.stringify(JSON.parse(inspectorStr).content);
+        this.loopConsole(inspectorStr, '-');
+      })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 当传入"content"过滤字段时，返回的JSON字符串结构如下：
 
-```
-1. InsTree : {"$type":"root","width":"720.000000","height":"1280.000000","$resolution":"1.500000","$children":[{"$type":"Column","$ID":15,"type":"build-in","$rect":"[0.00, 72.00],[720.00,1208.00]","$debugLine":"","$attrs":{},"$children":[{"$type":"Button","$ID":16,"type":"build-in","$rect":"[293.00, 72.00],[427.00,132.00]","$debugLine":"","$attrs":{}},{"$type":"Button","$ID":18,"type":"build-in","$rect":"[237.00, 132.00],[484.00,192.00]","$debugLine":"","$attrs":{}}]}]}\
-2. InsTree -| type: root, ID: undefined
-3. InsTree --| type: Column, ID: 15
-4. InsTree ---| type: Button, ID: 16
-5. InsTree ---| type: Button, ID: 18
+```ts
+InsTree : {"$type":"root","width":"720.000000","height":"1280.000000","$resolution":"1.500000","$children":[{"$type":"Column","$ID":15,"type":"build-in","$rect":"[0.00, 72.00],[720.00,1208.00]","$debugLine":"","$attrs":{},"$children":[{"$type":"Button","$ID":16,"type":"build-in","$rect":"[293.00, 72.00],[427.00,132.00]","$debugLine":"","$attrs":{}},{"$type":"Button","$ID":18,"type":"build-in","$rect":"[237.00, 132.00],[484.00,192.00]","$debugLine":"","$attrs":{}}]}]}\
+InsTree -| type: root, ID: undefined
+InsTree --| type: Column, ID: 15
+InsTree ---| type: Button, ID: 16
+InsTree ---| type: Button, ID: 18
 ```
 
 从API version 20开始，当传入"isLayoutInspector"过滤字段时，返回的JSON字符串结构新增外层结构"type"与"content"，其中"content"包含未增加该字段时的原有JSON字符串结构；同时，返回值结构中增添自定义组件。返回的JSON字符串结构如下：
 
-```
-1. InsTree : {"type":"root","content":{"$type":"root","width":"720.000000","height":"1280.000000","$resolution":"1.500000","$children":[{"$type":"JsView","$ID":13,"type":"custom","state":{"observedPropertiesInfo":[],"viewInfo":{"componentName":"ComponentPage","id":14,"isV2":false,"isViewActive_":true}},"$rect":"[0.00, 72.00],[720.00,1208.00]","$debugLine":"{\"$line\":\"(0:0)\"}","viewTag":"ComponentPage","$attrs":{"viewKey":"13"},"$children":[{"$type":"Column","$ID":15, "type":"build-in","$rect":"[0.00, 72.00],[720.00,1208.00]","$debugLine":"","$attrs":{ ...
-2. InsTree -| type: root, ID: undefined
-3. InsTree --| type: JsView, ID: 13
-4. InsTree ---| type: Column, ID: 15
-5. InsTree ----| type: Button, ID: 16
-6. InsTree ----| type: Button, ID: 18
+```ts
+InsTree : {"type":"root","content":{"$type":"root","width":"720.000000","height":"1280.000000","$resolution":"1.500000","$children":[{"$type":"JsView","$ID":13,"type":"custom","state":{"observedPropertiesInfo":[],"viewInfo":{"componentName":"ComponentPage","id":14,"isV2":false,"isViewActive_":true}},"$rect":"[0.00, 72.00],[720.00,1208.00]","$debugLine":"{\"$line\":\"(0:0)\"}","viewTag":"ComponentPage","$attrs":{"viewKey":"13"},"$children":[{"$type":"Column","$ID":15, "type":"build-in","$rect":"[0.00, 72.00],[720.00,1208.00]","$debugLine":"","$attrs":{ ...
+InsTree -| type: root, ID: undefined
+InsTree --| type: JsView, ID: 13
+InsTree ---| type: Column, ID: 15
+InsTree ----| type: Button, ID: 16
+InsTree ----| type: Button, ID: 18
 ```
 
 ## getFilteredInspectorTreeById12+
-
-PhonePC/2in1TabletTVWearable
 
 getFilteredInspectorTreeById(id: string, depth: number, filters?: Array<string>): string
 
@@ -2267,54 +2181,52 @@ getFilteredInspectorTreeById(id: string, depth: number, filters?: Array<string>)
 
 **示例：**
 
-```
-1. uiContext.getFilteredInspectorTreeById('testId', 0, ['id', 'src', 'content']);
+```ts
+uiContext.getFilteredInspectorTreeById('testId', 0, ['id', 'src', 'content']);
 ```
 
-```
-1. import { UIContext } from '@kit.ArkUI';
-2. @Entry
-3. @Component
-4. struct ComponentPage {
-5. build() {
-6. Column() {
-7. Text("Hello World")
-8. .fontSize(20)
-9. .id("TEXT")
-10. Button('getFilteredInspectorTreeById').onClick(() => {
-11. const uiContext: UIContext = this.getUIContext();
-12. try {
-13. let inspectorStr = uiContext.getFilteredInspectorTreeById('TEXT', 1, ["id", "src"]);
-14. console.info(`result1: ${inspectorStr}`);
-15. inspectorStr = JSON.stringify(JSON.parse(inspectorStr)['$children'][0]);
-16. console.info(`result2: ${inspectorStr}`);
-17. inspectorStr = uiContext.getFilteredInspectorTreeById('TEXT', 1, ["src"]);
-18. inspectorStr = JSON.stringify(JSON.parse(inspectorStr)['$children'][0]);
-19. console.info(`result3: ${inspectorStr}`);
-20. } catch(e) {
-21. console.error(`getFilteredInspectorTreeById error: ${e}`);
-22. }
-23. })
-24. }
-25. .width('100%')
-26. .height('100%')
-27. }
-28. }
+```ts
+import { UIContext } from '@kit.ArkUI';
+@Entry
+@Component
+struct ComponentPage {
+  build() {
+    Column() {
+      Text("Hello World")
+        .fontSize(20)
+        .id("TEXT")
+      Button('getFilteredInspectorTreeById').onClick(() => {
+        const uiContext: UIContext = this.getUIContext();
+        try {
+          let inspectorStr = uiContext.getFilteredInspectorTreeById('TEXT', 1, ["id", "src"]);
+          console.info(`result1: ${inspectorStr}`);
+          inspectorStr = JSON.stringify(JSON.parse(inspectorStr)['$children'][0]);
+          console.info(`result2: ${inspectorStr}`);
+          inspectorStr = uiContext.getFilteredInspectorTreeById('TEXT', 1, ["src"]);
+          inspectorStr = JSON.stringify(JSON.parse(inspectorStr)['$children'][0]);
+          console.info(`result3: ${inspectorStr}`);
+        } catch(e) {
+          console.error(`getFilteredInspectorTreeById error: ${e}`);
+        }
+      })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 返回的JSON字符串结构如下：
 
-```
-1. result1: {"$type":"root","width":"1260.000000","height":"2720.000000","$resolution":"3.250000","$children":[{"$type":"Text","$ID":6,"type":"build-in","$rect":"[457.00, 123.00],[804.00,199.00]","$debugLine":"","$attrs":{"id":"TEXT","isLayoutDirtyMarked":false,"isRenderDirtyMarked":false,"isMeasureBoundary":false,"hasPendingRequest":false,"isFirstBuilding":false}}]}
-2. result2: {"$type":"Text","$ID":6,"type":"build-in","$rect":"[457.00, 123.00],[804.00,199.00]","$debugLine":"","$attrs":{"id":"TEXT","isLayoutDirtyMarked":false,"isRenderDirtyMarked":false,"isMeasureBoundary":false,"hasPendingRequest":false,"isFirstBuilding":false}}
-3. result3: {"$type":"Text","$ID":6,"type":"build-in","$rect":"[457.00, 123.00],[804.00,199.00]","$debugLine":"","$attrs":{"isLayoutDirtyMarked":false,"isRenderDirtyMarked":false,"isMeasureBoundary":false,"hasPendingRequest":false,"isFirstBuilding":false}}
+```ts
+result1: {"$type":"root","width":"1260.000000","height":"2720.000000","$resolution":"3.250000","$children":[{"$type":"Text","$ID":6,"type":"build-in","$rect":"[457.00, 123.00],[804.00,199.00]","$debugLine":"","$attrs":{"id":"TEXT","isLayoutDirtyMarked":false,"isRenderDirtyMarked":false,"isMeasureBoundary":false,"hasPendingRequest":false,"isFirstBuilding":false}}]}
+result2: {"$type":"Text","$ID":6,"type":"build-in","$rect":"[457.00, 123.00],[804.00,199.00]","$debugLine":"","$attrs":{"id":"TEXT","isLayoutDirtyMarked":false,"isRenderDirtyMarked":false,"isMeasureBoundary":false,"hasPendingRequest":false,"isFirstBuilding":false}}
+result3: {"$type":"Text","$ID":6,"type":"build-in","$rect":"[457.00, 123.00],[804.00,199.00]","$debugLine":"","$attrs":{"isLayoutDirtyMarked":false,"isRenderDirtyMarked":false,"isMeasureBoundary":false,"hasPendingRequest":false,"isFirstBuilding":false}}
 ```
 
 若需获取getFilteredInspectorTreeById方法中首个参数id指定的组件，须参照示例代码将getFilteredInspectorTreeById方法结果先转换为json对象，随后提取$children数组的首项。通过result2和result3的结果对比可知，如果filters参数由["id", "src"]改为["src"]，获取到的$attrs属性将缺少"id"这一key。
 
 ## getCursorController12+
-
-PhonePC/2in1TabletTVWearable
 
 getCursorController(): CursorController
 
@@ -2336,8 +2248,6 @@ getCursorController(): CursorController
 
 ## getContextMenuController12+
 
-PhonePC/2in1TabletTVWearable
-
 getContextMenuController(): ContextMenuController
 
 获取[ContextMenuController](arkts-apis-uicontext-contextmenucontroller.md)对象，可通过该对象控制菜单。
@@ -2352,9 +2262,31 @@ getContextMenuController(): ContextMenuController
 | --- | --- |
 | [ContextMenuController](arkts-apis-uicontext-contextmenucontroller.md) | 获取ContextMenuController对象。 |
 
-## getMeasureUtils12+
+## getSmartGestureController
 
-PhonePC/2in1TabletTVWearable
+getSmartGestureController(): SmartGestureController
+
+获取[SmartGestureController](arkts-apis-uicontext-smartgesturecontroller.md)对象，可通过该对象控制智慧手势处理流程。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [SmartGestureController](arkts-apis-uicontext-smartgesturecontroller.md) | SmartGestureController对象。 |
+
+**示例：**
+
+参考智慧手势控制器[示例1（启用智慧手势并自定义动作处理）](arkts-apis-uicontext-smartgesturecontroller.md#示例1启用智慧手势并自定义动作处理)。
+
+## getMeasureUtils12+
 
 getMeasureUtils(): MeasureUtils
 
@@ -2375,8 +2307,6 @@ getMeasureUtils(): MeasureUtils
 完整示例请参考[MeasureUtils](arkts-apis-uicontext-measureutils.md)中的示例。
 
 ## getComponentSnapshot12+
-
-PhonePC/2in1TabletTVWearable
 
 getComponentSnapshot(): ComponentSnapshot
 
@@ -2400,8 +2330,6 @@ getComponentSnapshot(): ComponentSnapshot
 
 ## vp2px12+
 
-PhonePC/2in1TabletTVWearable
-
 vp2px(value : number) : number
 
 将vp单位的数值转换为以px为单位的数值。
@@ -2410,9 +2338,9 @@ vp2px(value : number) : number
 
 像素密度：当前窗口生效的像素密度值，即虚拟屏幕的密度[VirtualScreenConfig](js-apis-display.md#virtualscreenconfig16).density。
 
-说明
+**说明** 
 
-1. getUIContext需在windowStage.[loadContent](arkts-apis-window-windowstage.md#loadcontent9)之后调用，确保UIContext初始化完成后调用此接口，否则无法返回准确结果。
+1. 应在windowStage.[loadContent](arkts-apis-window-windowstage.md#loadcontent9)完成后调用getUIContext，确保UIContext已初始化；否则本接口无法返回准确结果。
 2. UI实例未创建时，[像素单位](ts-pixel-units.md)中的vp2px接口使用默认屏幕的虚拟像素比进行转换。在该场景下，开发者使用UIContext接口替换时，可参考[像素单位转换接口替换为UIContext接口](../harmonyos-guides/arkts-global-interface.md#像素单位转换接口替换为uicontext接口)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -2433,33 +2361,31 @@ vp2px(value : number) : number
 
 **示例：**
 
-```
-1. @Entry
-2. @Component
-3. struct MatrixExample {
-4. build() {
-5. Column({ space: 100 }) {
-6. Text('Hello1')
-7. .textAlign(TextAlign.Center)
-8. .width(100)
-9. .height(60)
-10. .backgroundColor(0xAFEEEE)
-11. .borderWidth(1)
-12. .rotate({
-13. z: 1,
-14. angle: 90,
-15. centerX: this.getUIContext().vp2px(50),
-16. centerY: this.getUIContext().vp2px(30)
-17. })
-18. }.width('100%')
-19. .height('100%')
-20. }
-21. }
+```ts
+@Entry
+@Component
+struct MatrixExample {
+  build() {
+    Column({ space: 100 }) {
+      Text('Hello1')
+        .textAlign(TextAlign.Center)
+        .width(100)
+        .height(60)
+        .backgroundColor(0xAFEEEE)
+        .borderWidth(1)
+        .rotate({
+          z: 1,
+          angle: 90,
+          centerX: this.getUIContext().vp2px(50),
+          centerY: this.getUIContext().vp2px(30)
+        })
+    }.width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## px2vp12+
-
-PhonePC/2in1TabletTVWearable
 
 px2vp(value : number) : number
 
@@ -2469,9 +2395,9 @@ px2vp(value : number) : number
 
 像素密度：当前窗口生效的像素密度值，即虚拟屏幕的密度[VirtualScreenConfig](js-apis-display.md#virtualscreenconfig16).density。
 
-说明
+**说明** 
 
-1. getUIContext需在windowStage.[loadContent](arkts-apis-window-windowstage.md#loadcontent9)之后调用，确保UIContext初始化完成后调用此接口，否则无法返回准确结果。
+1. 应在windowStage.[loadContent](arkts-apis-window-windowstage.md#loadcontent9)完成后调用getUIContext，确保UIContext已初始化；否则本接口无法返回准确结果。
 2. UI实例未创建时，[像素单位](ts-pixel-units.md)中的px2vp接口使用默认屏幕的虚拟像素比进行转换。在该场景下，开发者使用UIContext接口替换时，可参考[像素单位转换接口替换为UIContext接口](../harmonyos-guides/arkts-global-interface.md#像素单位转换接口替换为uicontext接口)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -2492,33 +2418,31 @@ px2vp(value : number) : number
 
 **示例：**
 
-```
-1. @Entry
-2. @Component
-3. struct MatrixExample {
-4. build() {
-5. Column({ space: 100 }) {
-6. Text('Hello1')
-7. .textAlign(TextAlign.Center)
-8. .width(100)
-9. .height(60)
-10. .backgroundColor(0xAFEEEE)
-11. .borderWidth(1)
-12. .rotate({
-13. z: 1,
-14. angle: 90,
-15. centerX: this.getUIContext().px2vp(50),
-16. centerY: this.getUIContext().px2vp(30)
-17. })
-18. }.width('100%')
-19. .height('100%')
-20. }
-21. }
+```ts
+@Entry
+@Component
+struct MatrixExample {
+  build() {
+    Column({ space: 100 }) {
+      Text('Hello1')
+        .textAlign(TextAlign.Center)
+        .width(100)
+        .height(60)
+        .backgroundColor(0xAFEEEE)
+        .borderWidth(1)
+        .rotate({
+          z: 1,
+          angle: 90,
+          centerX: this.getUIContext().px2vp(50),
+          centerY: this.getUIContext().px2vp(30)
+        })
+    }.width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## fp2px12+
-
-PhonePC/2in1TabletTVWearable
 
 fp2px(value : number) : number
 
@@ -2530,9 +2454,9 @@ fp2px(value : number) : number
 
 字体缩放比例：系统设置的字体缩放系数，对应 [Configuration.fontScale](ts-types.md#configuration)。
 
-说明
+**说明** 
 
-getUIContext需在windowStage.[loadContent](arkts-apis-window-windowstage.md#loadcontent9)之后调用，确保UIContext初始化完成后调用此接口，否则无法返回准确结果。
+应在windowStage.[loadContent](arkts-apis-window-windowstage.md#loadcontent9)完成后调用getUIContext，确保UIContext已初始化；否则本接口无法返回准确结果。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2552,33 +2476,31 @@ getUIContext需在windowStage.[loadContent](arkts-apis-window-windowstage.md#loa
 
 **示例：**
 
-```
-1. @Entry
-2. @Component
-3. struct MatrixExample {
-4. build() {
-5. Column({ space: 100 }) {
-6. Text('Hello1')
-7. .textAlign(TextAlign.Center)
-8. .width(100)
-9. .height(60)
-10. .backgroundColor(0xAFEEEE)
-11. .borderWidth(1)
-12. .rotate({
-13. z: 1,
-14. angle: 90,
-15. centerX: this.getUIContext().fp2px(50),
-16. centerY: this.getUIContext().fp2px(30)
-17. })
-18. }.width('100%')
-19. .height('100%')
-20. }
-21. }
+```ts
+@Entry
+@Component
+struct MatrixExample {
+  build() {
+    Column({ space: 100 }) {
+      Text('Hello1')
+        .textAlign(TextAlign.Center)
+        .width(100)
+        .height(60)
+        .backgroundColor(0xAFEEEE)
+        .borderWidth(1)
+        .rotate({
+          z: 1,
+          angle: 90,
+          centerX: this.getUIContext().fp2px(50),
+          centerY: this.getUIContext().fp2px(30)
+        })
+    }.width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## px2fp12+
-
-PhonePC/2in1TabletTVWearable
 
 px2fp(value : number) : number
 
@@ -2590,9 +2512,9 @@ px2fp(value : number) : number
 
 字体缩放比例：系统设置的字体缩放系数，对应 [Configuration.fontScale](ts-types.md#configuration)。
 
-说明
+**说明** 
 
-getUIContext需在windowStage.[loadContent](arkts-apis-window-windowstage.md#loadcontent9)之后调用，确保UIContext初始化完成后调用此接口，否则无法返回准确结果。
+应在windowStage.[loadContent](arkts-apis-window-windowstage.md#loadcontent9)完成后调用getUIContext，确保UIContext已初始化；否则本接口无法返回准确结果。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2612,33 +2534,31 @@ getUIContext需在windowStage.[loadContent](arkts-apis-window-windowstage.md#loa
 
 **示例：**
 
-```
-1. @Entry
-2. @Component
-3. struct MatrixExample {
-4. build() {
-5. Column({ space: 100 }) {
-6. Text('Hello1')
-7. .textAlign(TextAlign.Center)
-8. .width(100)
-9. .height(60)
-10. .backgroundColor(0xAFEEEE)
-11. .borderWidth(1)
-12. .rotate({
-13. z: 1,
-14. angle: 90,
-15. centerX: this.getUIContext().px2fp(50),
-16. centerY: this.getUIContext().px2fp(30)
-17. })
-18. }.width('100%')
-19. .height('100%')
-20. }
-21. }
+```ts
+@Entry
+@Component
+struct MatrixExample {
+  build() {
+    Column({ space: 100 }) {
+      Text('Hello1')
+        .textAlign(TextAlign.Center)
+        .width(100)
+        .height(60)
+        .backgroundColor(0xAFEEEE)
+        .borderWidth(1)
+        .rotate({
+          z: 1,
+          angle: 90,
+          centerX: this.getUIContext().px2fp(50),
+          centerY: this.getUIContext().px2fp(30)
+        })
+    }.width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## lpx2px12+
-
-PhonePC/2in1TabletTVWearable
 
 lpx2px(value : number) : number
 
@@ -2646,9 +2566,9 @@ lpx2px(value : number) : number
 
 转换公式为：px值 = lpx值 × 实际屏幕宽度与逻辑宽度（通过[designWidth](../harmonyos-guides/module-configuration-file.md#pages标签)配置）的比值。
 
-说明
+**说明** 
 
-getUIContext需在windowStage.[loadContent](arkts-apis-window-windowstage.md#loadcontent9)之后调用，确保UIContext初始化完成后调用此接口，否则无法返回准确结果。
+应在windowStage.[loadContent](arkts-apis-window-windowstage.md#loadcontent9)完成后调用getUIContext，确保UIContext已初始化；否则本接口无法返回准确结果。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2668,33 +2588,31 @@ getUIContext需在windowStage.[loadContent](arkts-apis-window-windowstage.md#loa
 
 **示例：**
 
-```
-1. @Entry
-2. @Component
-3. struct MatrixExample {
-4. build() {
-5. Column({ space: 100 }) {
-6. Text('Hello1')
-7. .textAlign(TextAlign.Center)
-8. .width(100)
-9. .height(60)
-10. .backgroundColor(0xAFEEEE)
-11. .borderWidth(1)
-12. .rotate({
-13. z: 1,
-14. angle: 90,
-15. centerX: this.getUIContext().lpx2px(50),
-16. centerY: this.getUIContext().lpx2px(30)
-17. })
-18. }.width('100%')
-19. .height('100%')
-20. }
-21. }
+```ts
+@Entry
+@Component
+struct MatrixExample {
+  build() {
+    Column({ space: 100 }) {
+      Text('Hello1')
+        .textAlign(TextAlign.Center)
+        .width(100)
+        .height(60)
+        .backgroundColor(0xAFEEEE)
+        .borderWidth(1)
+        .rotate({
+          z: 1,
+          angle: 90,
+          centerX: this.getUIContext().lpx2px(50),
+          centerY: this.getUIContext().lpx2px(30)
+        })
+    }.width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## px2lpx12+
-
-PhonePC/2in1TabletTVWearable
 
 px2lpx(value : number) : number
 
@@ -2702,9 +2620,9 @@ px2lpx(value : number) : number
 
 转换公式为：lpx值 = px值 ÷ 实际屏幕宽度与逻辑宽度（通过[designWidth](../harmonyos-guides/module-configuration-file.md#pages标签)配置）的比值。
 
-说明
+**说明** 
 
-getUIContext需在windowStage.[loadContent](arkts-apis-window-windowstage.md#loadcontent9)之后调用，确保UIContext初始化完成后调用此接口，否则无法返回准确结果。
+应在windowStage.[loadContent](arkts-apis-window-windowstage.md#loadcontent9)完成后调用getUIContext，确保UIContext已初始化；否则本接口无法返回准确结果。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2724,33 +2642,31 @@ getUIContext需在windowStage.[loadContent](arkts-apis-window-windowstage.md#loa
 
 **示例：**
 
-```
-1. @Entry
-2. @Component
-3. struct MatrixExample {
-4. build() {
-5. Column({ space: 100 }) {
-6. Text('Hello1')
-7. .textAlign(TextAlign.Center)
-8. .width(100)
-9. .height(60)
-10. .backgroundColor(0xAFEEEE)
-11. .borderWidth(1)
-12. .rotate({
-13. z: 1,
-14. angle: 90,
-15. centerX: this.getUIContext().px2lpx(50),
-16. centerY: this.getUIContext().px2lpx(30)
-17. })
-18. }.width('100%')
-19. .height('100%')
-20. }
-21. }
+```ts
+@Entry
+@Component
+struct MatrixExample {
+  build() {
+    Column({ space: 100 }) {
+      Text('Hello1')
+        .textAlign(TextAlign.Center)
+        .width(100)
+        .height(60)
+        .backgroundColor(0xAFEEEE)
+        .borderWidth(1)
+        .rotate({
+          z: 1,
+          angle: 90,
+          centerX: this.getUIContext().px2lpx(50),
+          centerY: this.getUIContext().px2lpx(30)
+        })
+    }.width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## getWindowName12+
-
-PhonePC/2in1TabletTVWearable
 
 getWindowName(): string | undefined
 
@@ -2768,45 +2684,45 @@ getWindowName(): string | undefined
 
 **示例：**
 
-```
-1. import { window } from '@kit.ArkUI';
+```ts
+import { window } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. @State message: string = 'Hello World';
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
 
-8. aboutToAppear() {
-9. const windowName = this.getUIContext().getWindowName();
-10. console.info('WindowName ' + windowName);
-11. const currWindow = window.findWindow(windowName);
-12. const windowProperties = currWindow.getWindowProperties();
-13. console.info(`Window width ${windowProperties.windowRect.width}, height ${windowProperties.windowRect.height}`);
-14. }
+  aboutToAppear() {
+    const windowName = this.getUIContext().getWindowName();
+    console.info('WindowName ' + windowName);
+    if (windowName) {
+      const currWindow = window.findWindow(windowName);
+      const windowProperties = currWindow.getWindowProperties();
+      console.info(`Window width ${windowProperties.windowRect.width}, height ${windowProperties.windowRect.height}`);
+    }
+  }
 
-16. build() {
-17. Row() {
-18. Column() {
-19. Text(this.message)
-20. .fontSize(50)
-21. .fontWeight(FontWeight.Bold)
-22. }
-23. .width('100%')
-24. }
-25. .height('100%')
-26. }
-27. }
+  build() {
+    Row() {
+      Column() {
+        Text(this.message)
+          .fontSize(50)
+          .fontWeight(FontWeight.Bold)
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 ## getWindowId23+
-
-PhonePC/2in1TabletTVWearable
 
 getWindowId(): number | undefined
 
 获取当前应用实例所属的窗口ID。
 
-说明
+**说明** 
 
 若UIContext位于主应用程序进程中的[UIExtensionAbility](js-apis-app-ability-uiextensionability.md)内，则返回主应用程序的顶层窗口ID。
 
@@ -2822,36 +2738,34 @@ getWindowId(): number | undefined
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. @State message: string = 'Hello World';
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
 
-8. aboutToAppear() {
-9. const windowId = this.getUIContext().getWindowId();
-10. hilog.info(0x0000, 'testTag', 'current window id: %{public}d', windowId);
-11. }
+  aboutToAppear() {
+    const windowId = this.getUIContext().getWindowId();
+    hilog.info(0x0000, 'testTag', 'current window id: %{public}d', windowId ?? -1);
+  }
 
-13. build() {
-14. Row() {
-15. Column() {
-16. Text(this.message)
-17. .fontSize(50)
-18. .fontWeight(FontWeight.Bold)
-19. }
-20. .width('100%')
-21. }
-22. .height('100%')
-23. }
-24. }
+  build() {
+    Row() {
+      Column() {
+        Text(this.message)
+          .fontSize(50)
+          .fontWeight(FontWeight.Bold)
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 ## getWindowWidthBreakpoint13+
-
-PhonePC/2in1TabletTVWearable
 
 getWindowWidthBreakpoint(): WidthBreakpoint
 
@@ -2869,40 +2783,38 @@ getWindowWidthBreakpoint(): WidthBreakpoint
 
 **示例：**
 
-```
-1. import { UIContext } from '@kit.ArkUI';
+```ts
+import { UIContext } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. @State message: string = 'Hello World';
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
 
-8. build() {
-9. Row() {
-10. Column() {
-11. Text(this.message)
-12. .fontSize(30)
-13. .fontWeight(FontWeight.Bold)
-14. Button() {
-15. Text('test')
-16. .fontSize(30)
-17. }
-18. .onClick(() => {
-19. let uiContext: UIContext = this.getUIContext();
-20. let widthBp: WidthBreakpoint = uiContext.getWindowWidthBreakpoint();
-21. console.info(`Window widthBp: ${widthBp}`);
-22. })
-23. }
-24. .width('100%')
-25. }
-26. .height('100%')
-27. }
-28. }
+  build() {
+    Row() {
+      Column() {
+        Text(this.message)
+          .fontSize(30)
+          .fontWeight(FontWeight.Bold)
+        Button() {
+          Text('test')
+            .fontSize(30)
+        }
+        .onClick(() => {
+          let uiContext: UIContext = this.getUIContext();
+          let widthBp: WidthBreakpoint = uiContext.getWindowWidthBreakpoint();
+          console.info(`Window widthBp: ${widthBp}`);
+        })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 ## getWindowHeightBreakpoint13+
-
-PhonePC/2in1TabletTVWearable
 
 getWindowHeightBreakpoint(): HeightBreakpoint
 
@@ -2916,45 +2828,43 @@ getWindowHeightBreakpoint(): HeightBreakpoint
 
 | 类型 | 说明 |
 | --- | --- |
-| [HeightBreakpoint](ts-appendix-enums.md#heightbreakpoint13) | 当前实例所在窗口的宽高比对应的高度断点枚举值。若窗口高宽比为0，则返回HEIGHT\_SM。 |
+| [HeightBreakpoint](ts-appendix-enums.md#heightbreakpoint13) | 当前实例所在窗口的高宽比对应的高度断点枚举值。若窗口高宽比为0，则返回HEIGHT\_SM。 |
 
 **示例：**
 
-```
-1. import { UIContext } from '@kit.ArkUI';
+```ts
+import { UIContext } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. @State message: string = 'Hello World';
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
 
-8. build() {
-9. Row() {
-10. Column() {
-11. Text(this.message)
-12. .fontSize(30)
-13. .fontWeight(FontWeight.Bold)
-14. Button() {
-15. Text('test')
-16. .fontSize(30)
-17. }
-18. .onClick(() => {
-19. let uiContext: UIContext = this.getUIContext();
-20. let heightBp: HeightBreakpoint = uiContext.getWindowHeightBreakpoint();
-21. let widthBp: WidthBreakpoint = uiContext.getWindowWidthBreakpoint();
-22. console.info(`Window heightBP: ${heightBp}, widthBp: ${widthBp}`);
-23. })
-24. }
-25. .width('100%')
-26. }
-27. .height('100%')
-28. }
-29. }
+  build() {
+    Row() {
+      Column() {
+        Text(this.message)
+          .fontSize(30)
+          .fontWeight(FontWeight.Bold)
+        Button() {
+          Text('test')
+            .fontSize(30)
+        }
+        .onClick(() => {
+          let uiContext: UIContext = this.getUIContext();
+          let heightBp: HeightBreakpoint = uiContext.getWindowHeightBreakpoint();
+          let widthBp: WidthBreakpoint = uiContext.getWindowWidthBreakpoint();
+          console.info(`Window heightBP: ${heightBp}, widthBp: ${widthBp}`);
+        })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 ## postFrameCallback12+
-
-PhonePC/2in1TabletTVWearable
 
 postFrameCallback(frameCallback: FrameCallback): void
 
@@ -2972,39 +2882,37 @@ postFrameCallback(frameCallback: FrameCallback): void
 
 **示例：**
 
-```
-1. import { FrameCallback } from '@kit.ArkUI';
+```ts
+import { FrameCallback } from '@kit.ArkUI';
 
-3. class MyFrameCallback extends FrameCallback {
-4. private tag: string;
+class MyFrameCallback extends FrameCallback {
+  private tag: string;
 
-6. constructor(tag: string) {
-7. super();
-8. this.tag = tag;
-9. }
+  constructor(tag: string) {
+    super();
+    this.tag = tag;
+  }
 
-11. onFrame(frameTimeNanos: number) {
-12. console.info('MyFrameCallback ' + this.tag + ' ' + frameTimeNanos.toString());
-13. }
-14. }
+  onFrame(frameTimeNanos: number) {
+    console.info('MyFrameCallback ' + this.tag + ' ' + frameTimeNanos.toString());
+  }
+}
 
-16. @Entry
-17. @Component
-18. struct Index {
-19. build() {
-20. Row() {
-21. Button('点击触发postFrameCallback')
-22. .onClick(() => {
-23. this.getUIContext().postFrameCallback(new MyFrameCallback("normTask"));
-24. })
-25. }
-26. }
-27. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Button('点击触发postFrameCallback')
+        .onClick(() => {
+          this.getUIContext().postFrameCallback(new MyFrameCallback('normTask'));
+        })
+    }
+  }
+}
 ```
 
 ## postDelayedFrameCallback12+
-
-PhonePC/2in1TabletTVWearable
 
 postDelayedFrameCallback(frameCallback: FrameCallback, delayTime: number): void
 
@@ -3023,39 +2931,37 @@ postDelayedFrameCallback(frameCallback: FrameCallback, delayTime: number): void
 
 **示例：**
 
-```
-1. import { FrameCallback } from '@kit.ArkUI';
+```ts
+import { FrameCallback } from '@kit.ArkUI';
 
-3. class MyFrameCallback extends FrameCallback {
-4. private tag: string;
+class MyFrameCallback extends FrameCallback {
+  private tag: string;
 
-6. constructor(tag: string) {
-7. super();
-8. this.tag = tag;
-9. }
+  constructor(tag: string) {
+    super();
+    this.tag = tag;
+  }
 
-11. onFrame(frameTimeNanos: number) {
-12. console.info('MyFrameCallback ' + this.tag + ' ' + frameTimeNanos.toString());
-13. }
-14. }
+  onFrame(frameTimeNanos: number) {
+    console.info('MyFrameCallback ' + this.tag + ' ' + frameTimeNanos.toString());
+  }
+}
 
-16. @Entry
-17. @Component
-18. struct Index {
-19. build() {
-20. Row() {
-21. Button('点击触发postDelayedFrameCallback')
-22. .onClick(() => {
-23. this.getUIContext().postDelayedFrameCallback(new MyFrameCallback("delayTask"), 5);
-24. })
-25. }
-26. }
-27. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Button('点击触发postDelayedFrameCallback')
+        .onClick(() => {
+          this.getUIContext().postDelayedFrameCallback(new MyFrameCallback('delayTask'), 5);
+        })
+    }
+  }
+}
 ```
 
 ## requireDynamicSyncScene12+
-
-PhonePC/2in1TabletTVWearable
 
 requireDynamicSyncScene(id: string): Array<DynamicSyncScene>
 
@@ -3075,67 +2981,65 @@ requireDynamicSyncScene(id: string): Array<DynamicSyncScene>
 
 | 类型 | 说明 |
 | --- | --- |
-| Array<DynamicSyncScene> | 获取DynamicSyncScene对象数组。 |
+| Array<DynamicSyncScene> | 获取DynamicSyncScene对象数组，用于自定义场景相关帧率配置。 |
 
 **示例：**
 
-```
-1. import { SwiperDynamicSyncSceneType, SwiperDynamicSyncScene } from '@kit.ArkUI';
+```ts
+import { SwiperDynamicSyncSceneType, SwiperDynamicSyncScene } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Frame {
-6. @State ANIMATION: ExpectedFrameRateRange = { min: 0, max: 120, expected: 90 };
-7. @State GESTURE: ExpectedFrameRateRange = { min: 0, max: 120, expected: 30 };
-8. private scenes: SwiperDynamicSyncScene[] = [];
+@Entry
+@Component
+struct Frame {
+  @State animationFrameRateRange: ExpectedFrameRateRange = { min: 0, max: 120, expected: 90 };
+  @State gestureFrameRateRange: ExpectedFrameRateRange = { min: 0, max: 120, expected: 30 };
+  private scenes: SwiperDynamicSyncScene[] = [];
 
-10. build() {
-11. Column() {
-12. Text("动画" + JSON.stringify(this.ANIMATION))
-13. Text("跟手" + JSON.stringify(this.GESTURE))
-14. Row() {
-15. Swiper() {
-16. Text("one")
-17. Text("two")
-18. Text("three")
-19. }
-20. .width('100%')
-21. .height('300vp')
-22. .id("dynamicSwiper")
-23. .backgroundColor(Color.Blue)
-24. .autoPlay(true)
-25. .onAppear(() => {
-26. this.scenes = this.getUIContext().requireDynamicSyncScene("dynamicSwiper") as SwiperDynamicSyncScene[];
-27. })
-28. }
+  build() {
+    Column() {
+      Text("动画" + JSON.stringify(this.animationFrameRateRange))
+      Text("跟手" + JSON.stringify(this.gestureFrameRateRange))
+      Row() {
+        Swiper() {
+          Text("one")
+          Text("two")
+          Text("three")
+        }
+        .width('100%')
+        .height('300vp')
+        .id("dynamicSwiper")
+        .backgroundColor(Color.Blue)
+        .autoPlay(true)
+        .onAppear(() => {
+          this.scenes = this.getUIContext().requireDynamicSyncScene("dynamicSwiper") as SwiperDynamicSyncScene[];
+        })
+      }
 
-30. Button("set frame")
-31. .onClick(() => {
-32. this.scenes.forEach((scenes: SwiperDynamicSyncScene) => {
+      Button("set frame")
+        .onClick(() => {
+          this.scenes.forEach((scenes: SwiperDynamicSyncScene) => {
 
-34. if (scenes.type == SwiperDynamicSyncSceneType.ANIMATION) {
-35. scenes.setFrameRateRange(this.ANIMATION);
-36. }
+            if (scenes.type == SwiperDynamicSyncSceneType.ANIMATION) {
+              scenes.setFrameRateRange(this.animationFrameRateRange);
+            }
 
-38. if (scenes.type == SwiperDynamicSyncSceneType.GESTURE) {
-39. scenes.setFrameRateRange(this.GESTURE);
-40. }
-41. });
-42. })
-43. }
-44. }
-45. }
+            if (scenes.type == SwiperDynamicSyncSceneType.GESTURE) {
+              scenes.setFrameRateRange(this.gestureFrameRateRange);
+            }
+          });
+        })
+    }
+  }
+}
 ```
 
 ## openBindSheet12+
-
-PhonePC/2in1TabletTVWearable
 
 openBindSheet<T extends Object>(bindSheetContent: ComponentContent<T>, sheetOptions?: SheetOptions, targetId?: number): Promise<void>
 
 创建并弹出以bindSheetContent作为内容的半模态页面，使用Promise异步回调。通过该接口弹出的半模态页面样式完全按照bindSheetContent中设置的样式显示。
 
-说明
+**说明** 
 
 1. 使用该接口时，若未传入有效的targetId，则不支持设置SheetOptions.preferType为POPUP模式、不支持设置SheetOptions.mode为EMBEDDED模式。
 2. 由于[updateBindSheet](arkts-apis-uicontext-uicontext.md#updatebindsheet12)和[closeBindSheet](arkts-apis-uicontext-uicontext.md#closebindsheet12)依赖bindSheetContent去更新或者关闭指定的半模态页面，开发者需自行维护传入的bindSheetContent。
@@ -3174,102 +3078,100 @@ openBindSheet<T extends Object>(bindSheetContent: ComponentContent<T>, sheetOpti
 
 **示例：**
 
-```
-1. import { FrameNode, ComponentContent } from "@kit.ArkUI";
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { FrameNode, ComponentContent } from "@kit.ArkUI";
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. class Params {
-5. text: string = "";
+class Params {
+  text: string = "";
 
-7. constructor(text: string) {
-8. this.text = text;
-9. }
-10. }
+  constructor(text: string) {
+    this.text = text;
+  }
+}
 
-12. let contentNode: ComponentContent<Params>;
-13. let gUIContext: UIContext;
+let contentNode: ComponentContent<Params>;
+let gUIContext: UIContext;
 
-15. @Builder
-16. function buildText(params: Params) {
-17. Column() {
-18. Text(params.text)
-19. Button('Update BindSheet')
-20. .fontSize(20)
-21. .onClick(() => {
-22. gUIContext.updateBindSheet(contentNode, {
-23. backgroundColor: Color.Pink,
-24. }, true)
-25. .then(() => {
-26. console.info('updateBindSheet success');
-27. })
-28. .catch((err: BusinessError) => {
-29. console.error('updateBindSheet error: ' + err.code + ' ' + err.message);
-30. })
-31. })
+@Builder
+function buildText(params: Params) {
+  Column() {
+    Text(params.text)
+    Button('Update BindSheet')
+      .fontSize(20)
+      .onClick(() => {
+        gUIContext.updateBindSheet(contentNode, {
+          backgroundColor: Color.Pink,
+        }, true)
+          .then(() => {
+            console.info('updateBindSheet success');
+          })
+          .catch((err: BusinessError) => {
+            console.error('updateBindSheet error: ' + err.code + ' ' + err.message);
+          })
+      })
 
-33. Button('Close BindSheet')
-34. .fontSize(20)
-35. .onClick(() => {
-36. gUIContext.closeBindSheet(contentNode)
-37. .then(() => {
-38. console.info('closeBindSheet success');
-39. })
-40. .catch((err: BusinessError) => {
-41. console.error('closeBindSheet error: ' + err.code + ' ' + err.message);
-42. })
-43. })
-44. }
-45. }
+    Button('Close BindSheet')
+      .fontSize(20)
+      .onClick(() => {
+        gUIContext.closeBindSheet(contentNode)
+          .then(() => {
+            console.info('closeBindSheet success');
+          })
+          .catch((err: BusinessError) => {
+            console.error('closeBindSheet error: ' + err.code + ' ' + err.message);
+          })
+      })
+  }
+}
 
-47. @Entry
-48. @Component
-49. struct UIContextBindSheet {
-50. @State message: string = 'BindSheet';
+@Entry
+@Component
+struct UIContextBindSheet {
+  @State message: string = 'BindSheet';
 
-52. aboutToAppear() {
-53. gUIContext = this.getUIContext();
-54. contentNode = new ComponentContent(this.getUIContext(), wrapBuilder(buildText), new Params(this.message));
-55. }
+  aboutToAppear() {
+    gUIContext = this.getUIContext();
+    contentNode = new ComponentContent(this.getUIContext(), wrapBuilder(buildText), new Params(this.message));
+  }
 
-57. build() {
-58. RelativeContainer() {
-59. Column() {
-60. Button('Open BindSheet')
-61. .fontSize(20)
-62. .onClick(() => {
-63. let uiContext = this.getUIContext();
-64. let uniqueId = this.getUniqueId();
-65. let frameNode: FrameNode | null = uiContext.getFrameNodeByUniqueId(uniqueId);
-66. let targetId = frameNode?.getFirstChild()?.getUniqueId();
-67. uiContext.openBindSheet(contentNode, {
-68. height: SheetSize.MEDIUM,
-69. backgroundColor: Color.Green,
-70. title: { title: "Title", subtitle: "subtitle" }
-71. }, targetId)
-72. .then(() => {
-73. console.info('openBindSheet success');
-74. })
-75. .catch((err: BusinessError) => {
-76. console.error('openBindSheet error: ' + err.code + ' ' + err.message);
-77. })
-78. })
-79. }
-80. }
-81. .height('100%')
-82. .width('100%')
-83. }
-84. }
+  build() {
+    RelativeContainer() {
+      Column() {
+        Button('Open BindSheet')
+          .fontSize(20)
+          .onClick(() => {
+            let uiContext = this.getUIContext();
+            let uniqueId = this.getUniqueId();
+            let frameNode: FrameNode | null = uiContext.getFrameNodeByUniqueId(uniqueId);
+            let targetId = frameNode?.getFirstChild()?.getUniqueId();
+            uiContext.openBindSheet(contentNode, {
+              height: SheetSize.MEDIUM,
+              backgroundColor: Color.Green,
+              title: { title: "Title", subtitle: "subtitle" }
+            }, targetId)
+              .then(() => {
+                console.info('openBindSheet success');
+              })
+              .catch((err: BusinessError) => {
+                console.error('openBindSheet error: ' + err.code + ' ' + err.message);
+              })
+          })
+      }
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 ## updateBindSheet12+
-
-PhonePC/2in1TabletTVWearable
 
 updateBindSheet<T extends Object>(bindSheetContent: ComponentContent<T>, sheetOptions: SheetOptions, partialUpdate?: boolean ): Promise<void>
 
 更新bindSheetContent对应的半模态页面的样式，使用Promise异步回调。
 
-说明
+**说明** 
 
 不支持更新SheetOptions.UIContext、SheetOptions.mode、回调函数。
 
@@ -3303,102 +3205,100 @@ updateBindSheet<T extends Object>(bindSheetContent: ComponentContent<T>, sheetOp
 
 **示例：**
 
-```
-1. import { FrameNode, ComponentContent } from "@kit.ArkUI";
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { FrameNode, ComponentContent } from "@kit.ArkUI";
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. class Params {
-5. text: string = "";
+class Params {
+  text: string = "";
 
-7. constructor(text: string) {
-8. this.text = text;
-9. }
-10. }
+  constructor(text: string) {
+    this.text = text;
+  }
+}
 
-12. let contentNode: ComponentContent<Params>;
-13. let gUIContext: UIContext;
+let contentNode: ComponentContent<Params>;
+let gUIContext: UIContext;
 
-15. @Builder
-16. function buildText(params: Params) {
-17. Column() {
-18. Text(params.text)
-19. Button('Update BindSheet')
-20. .fontSize(20)
-21. .onClick(() => {
-22. gUIContext.updateBindSheet(contentNode, {
-23. backgroundColor: Color.Pink,
-24. }, true)
-25. .then(() => {
-26. console.info('updateBindSheet success');
-27. })
-28. .catch((err: BusinessError) => {
-29. console.error('updateBindSheet error: ' + err.code + ' ' + err.message);
-30. })
-31. })
+@Builder
+function buildText(params: Params) {
+  Column() {
+    Text(params.text)
+    Button('Update BindSheet')
+      .fontSize(20)
+      .onClick(() => {
+        gUIContext.updateBindSheet(contentNode, {
+          backgroundColor: Color.Pink,
+        }, true)
+          .then(() => {
+            console.info('updateBindSheet success');
+          })
+          .catch((err: BusinessError) => {
+            console.error('updateBindSheet error: ' + err.code + ' ' + err.message);
+          })
+      })
 
-33. Button('Close BindSheet')
-34. .fontSize(20)
-35. .onClick(() => {
-36. gUIContext.closeBindSheet(contentNode)
-37. .then(() => {
-38. console.info('closeBindSheet success');
-39. })
-40. .catch((err: BusinessError) => {
-41. console.error('closeBindSheet error: ' + err.code + ' ' + err.message);
-42. })
-43. })
-44. }
-45. }
+    Button('Close BindSheet')
+      .fontSize(20)
+      .onClick(() => {
+        gUIContext.closeBindSheet(contentNode)
+          .then(() => {
+            console.info('closeBindSheet success');
+          })
+          .catch((err: BusinessError) => {
+            console.error('closeBindSheet error: ' + err.code + ' ' + err.message);
+          })
+      })
+  }
+}
 
-47. @Entry
-48. @Component
-49. struct UIContextBindSheet {
-50. @State message: string = 'BindSheet';
+@Entry
+@Component
+struct UIContextBindSheet {
+  @State message: string = 'BindSheet';
 
-52. aboutToAppear() {
-53. gUIContext = this.getUIContext();
-54. contentNode = new ComponentContent(this.getUIContext(), wrapBuilder(buildText), new Params(this.message));
-55. }
+  aboutToAppear() {
+    gUIContext = this.getUIContext();
+    contentNode = new ComponentContent(this.getUIContext(), wrapBuilder(buildText), new Params(this.message));
+  }
 
-57. build() {
-58. RelativeContainer() {
-59. Column() {
-60. Button('Open BindSheet')
-61. .fontSize(20)
-62. .onClick(() => {
-63. let uiContext = this.getUIContext();
-64. let uniqueId = this.getUniqueId();
-65. let frameNode: FrameNode | null = uiContext.getFrameNodeByUniqueId(uniqueId);
-66. let targetId = frameNode?.getFirstChild()?.getUniqueId();
-67. uiContext.openBindSheet(contentNode, {
-68. height: SheetSize.MEDIUM,
-69. backgroundColor: Color.Green,
-70. title: { title: "Title", subtitle: "subtitle" }
-71. }, targetId)
-72. .then(() => {
-73. console.info('openBindSheet success');
-74. })
-75. .catch((err: BusinessError) => {
-76. console.error('openBindSheet error: ' + err.code + ' ' + err.message);
-77. })
-78. })
-79. }
-80. }
-81. .height('100%')
-82. .width('100%')
-83. }
-84. }
+  build() {
+    RelativeContainer() {
+      Column() {
+        Button('Open BindSheet')
+          .fontSize(20)
+          .onClick(() => {
+            let uiContext = this.getUIContext();
+            let uniqueId = this.getUniqueId();
+            let frameNode: FrameNode | null = uiContext.getFrameNodeByUniqueId(uniqueId);
+            let targetId = frameNode?.getFirstChild()?.getUniqueId();
+            uiContext.openBindSheet(contentNode, {
+              height: SheetSize.MEDIUM,
+              backgroundColor: Color.Green,
+              title: { title: "Title", subtitle: "subtitle" }
+            }, targetId)
+              .then(() => {
+                console.info('openBindSheet success');
+              })
+              .catch((err: BusinessError) => {
+                console.error('openBindSheet error: ' + err.code + ' ' + err.message);
+              })
+          })
+      }
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 ## closeBindSheet12+
-
-PhonePC/2in1TabletTVWearable
 
 closeBindSheet<T extends Object>(bindSheetContent: ComponentContent<T>): Promise<void>
 
 关闭bindSheetContent对应的半模态页面，使用Promise异步回调。
 
-说明
+**说明** 
 
 使用此接口关闭半模态页面时，不会触发shouldDismiss回调。
 
@@ -3430,96 +3330,94 @@ closeBindSheet<T extends Object>(bindSheetContent: ComponentContent<T>): Promise
 
 **示例：**
 
-```
-1. import { FrameNode, ComponentContent } from "@kit.ArkUI";
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { FrameNode, ComponentContent } from "@kit.ArkUI";
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. class Params {
-5. text: string = "";
+class Params {
+  text: string = "";
 
-7. constructor(text: string) {
-8. this.text = text;
-9. }
-10. }
+  constructor(text: string) {
+    this.text = text;
+  }
+}
 
-12. let contentNode: ComponentContent<Params>;
-13. let gUIContext: UIContext;
+let contentNode: ComponentContent<Params>;
+let gUIContext: UIContext;
 
-15. @Builder
-16. function buildText(params: Params) {
-17. Column() {
-18. Text(params.text)
-19. Button('Update BindSheet')
-20. .fontSize(20)
-21. .onClick(() => {
-22. gUIContext.updateBindSheet(contentNode, {
-23. backgroundColor: Color.Pink,
-24. }, true)
-25. .then(() => {
-26. console.info('updateBindSheet success');
-27. })
-28. .catch((err: BusinessError) => {
-29. console.error('updateBindSheet error: ' + err.code + ' ' + err.message);
-30. })
-31. })
+@Builder
+function buildText(params: Params) {
+  Column() {
+    Text(params.text)
+    Button('Update BindSheet')
+      .fontSize(20)
+      .onClick(() => {
+        gUIContext.updateBindSheet(contentNode, {
+          backgroundColor: Color.Pink,
+        }, true)
+          .then(() => {
+            console.info('updateBindSheet success');
+          })
+          .catch((err: BusinessError) => {
+            console.error('updateBindSheet error: ' + err.code + ' ' + err.message);
+          })
+      })
 
-33. Button('Close BindSheet')
-34. .fontSize(20)
-35. .onClick(() => {
-36. gUIContext.closeBindSheet(contentNode)
-37. .then(() => {
-38. console.info('closeBindSheet success');
-39. })
-40. .catch((err: BusinessError) => {
-41. console.error('closeBindSheet error: ' + err.code + ' ' + err.message);
-42. })
-43. })
-44. }
-45. }
+    Button('Close BindSheet')
+      .fontSize(20)
+      .onClick(() => {
+        gUIContext.closeBindSheet(contentNode)
+          .then(() => {
+            console.info('closeBindSheet success');
+          })
+          .catch((err: BusinessError) => {
+            console.error('closeBindSheet error: ' + err.code + ' ' + err.message);
+          })
+      })
+  }
+}
 
-47. @Entry
-48. @Component
-49. struct UIContextBindSheet {
-50. @State message: string = 'BindSheet';
+@Entry
+@Component
+struct UIContextBindSheet {
+  @State message: string = 'BindSheet';
 
-52. aboutToAppear() {
-53. gUIContext = this.getUIContext();
-54. contentNode = new ComponentContent(this.getUIContext(), wrapBuilder(buildText), new Params(this.message));
-55. }
+  aboutToAppear() {
+    gUIContext = this.getUIContext();
+    contentNode = new ComponentContent(this.getUIContext(), wrapBuilder(buildText), new Params(this.message));
+  }
 
-57. build() {
-58. RelativeContainer() {
-59. Column() {
-60. Button('Open BindSheet')
-61. .fontSize(20)
-62. .onClick(() => {
-63. let uiContext = this.getUIContext();
-64. let uniqueId = this.getUniqueId();
-65. let frameNode: FrameNode | null = uiContext.getFrameNodeByUniqueId(uniqueId);
-66. let targetId = frameNode?.getFirstChild()?.getUniqueId();
-67. uiContext.openBindSheet(contentNode, {
-68. height: SheetSize.MEDIUM,
-69. backgroundColor: Color.Green,
-70. title: { title: "Title", subtitle: "subtitle" }
-71. }, targetId)
-72. .then(() => {
-73. console.info('openBindSheet success');
-74. })
-75. .catch((err: BusinessError) => {
-76. console.error('openBindSheet error: ' + err.code + ' ' + err.message);
-77. })
-78. })
-79. }
-80. }
-81. .height('100%')
-82. .width('100%')
-83. }
-84. }
+  build() {
+    RelativeContainer() {
+      Column() {
+        Button('Open BindSheet')
+          .fontSize(20)
+          .onClick(() => {
+            let uiContext = this.getUIContext();
+            let uniqueId = this.getUniqueId();
+            let frameNode: FrameNode | null = uiContext.getFrameNodeByUniqueId(uniqueId);
+            let targetId = frameNode?.getFirstChild()?.getUniqueId();
+            uiContext.openBindSheet(contentNode, {
+              height: SheetSize.MEDIUM,
+              backgroundColor: Color.Green,
+              title: { title: "Title", subtitle: "subtitle" }
+            }, targetId)
+              .then(() => {
+                console.info('openBindSheet success');
+              })
+              .catch((err: BusinessError) => {
+                console.error('openBindSheet error: ' + err.code + ' ' + err.message);
+              })
+          })
+      }
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 ## isFollowingSystemFontScale13+
-
-PhonePC/2in1TabletTVWearable
 
 isFollowingSystemFontScale(): boolean
 
@@ -3539,23 +3437,21 @@ isFollowingSystemFontScale(): boolean
 
 参考[configuration标签](../harmonyos-guides/app-configuration-file.md#configuration标签)，配置fontSizeScale的值为“followSystem”。
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. build() {
-5. Column() {
-6. Button('isFollowingSystemFontScale').onClick(() => {
-7. console.info('isFollowingSystemFontScale', this.getUIContext().isFollowingSystemFontScale());
-8. });
-9. }
-10. }
-11. }
+```ts
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Button('isFollowingSystemFontScale').onClick(() => {
+        console.info('isFollowingSystemFontScale', this.getUIContext().isFollowingSystemFontScale());
+      });
+    }
+  }
+}
 ```
 
 ## getMaxFontScale13+
-
-PhonePC/2in1TabletTVWearable
 
 getMaxFontScale(): number
 
@@ -3575,29 +3471,27 @@ getMaxFontScale(): number
 
 参考[configuration标签](../harmonyos-guides/app-configuration-file.md#configuration标签)，配置fontSizeMaxScale的值为“1.75”。
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. build() {
-5. Column() {
-6. Button('getMaxFontScale').onClick(() => {
-7. console.info('getMaxFontScale', this.getUIContext().getMaxFontScale().toFixed(2));
-8. });
-9. }
-10. }
-11. }
+```ts
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Button('getMaxFontScale').onClick(() => {
+        console.info('getMaxFontScale', this.getUIContext().getMaxFontScale().toFixed(2));
+      });
+    }
+  }
+}
 ```
 
 ## bindTabsToScrollable13+
-
-PhonePC/2in1TabletTVWearable
 
 bindTabsToScrollable(tabsController: TabsController, scroller: Scroller): void
 
 绑定Tabs组件和可滚动容器组件（支持[List](ts-container-list.md)、[Scroll](ts-container-scroll.md)、[Grid](ts-container-grid.md)、[WaterFlow](ts-container-waterflow.md)），当滑动可滚动容器组件时，会触发所有与其绑定的Tabs组件的TabBar的显示和隐藏动效，上滑隐藏，下滑显示。一个TabsController可与多个Scroller绑定，一个Scroller也可与多个TabsController绑定。
 
-说明
+**说明** 
 
 当多个可滚动容器组件绑定了同一个Tabs组件时，只要滑动任意一个可滚动容器组件，就会触发TabBar的显示或隐藏。且当任意一个可滚动容器组件滑动到底部时，会立即触发TabBar的显示动效。因此不建议同时触发多个可滚动容器组件的滑动。
 
@@ -3614,106 +3508,104 @@ bindTabsToScrollable(tabsController: TabsController, scroller: Scroller): void
 
 **示例：**
 
+```ts
+@Entry
+@Component
+struct TabsExample {
+  private arr: string[] = [];
+  private parentTabsController: TabsController = new TabsController();
+  private childTabsController: TabsController = new TabsController();
+  private listScroller: Scroller = new Scroller();
+  private parentScroller: Scroller = new Scroller();
+  private childScroller: Scroller = new Scroller();
+
+  aboutToAppear(): void {
+    for (let i = 0; i < 20; i++) {
+      this.arr.push(i.toString());
+    }
+    let context = this.getUIContext();
+    context.bindTabsToScrollable(this.parentTabsController, this.listScroller);
+    context.bindTabsToScrollable(this.childTabsController, this.listScroller);
+    context.bindTabsToNestedScrollable(this.parentTabsController, this.parentScroller, this.childScroller);
+  }
+
+  aboutToDisappear(): void {
+    let context = this.getUIContext();
+    context.unbindTabsFromScrollable(this.parentTabsController, this.listScroller);
+    context.unbindTabsFromScrollable(this.childTabsController, this.listScroller);
+    context.unbindTabsFromNestedScrollable(this.parentTabsController, this.parentScroller, this.childScroller);
+  }
+
+  build() {
+    Tabs({ barPosition: BarPosition.End, controller: this.parentTabsController }) {
+      TabContent() {
+        Tabs({ controller: this.childTabsController }) {
+          TabContent() {
+            List({ space: 20, initialIndex: 0, scroller: this.listScroller }) {
+              ForEach(this.arr, (item: string) => {
+                ListItem() {
+                  Text(item)
+                    .width('100%')
+                    .height(100)
+                    .fontSize(16)
+                    .textAlign(TextAlign.Center)
+                    .borderRadius(10)
+                    .backgroundColor(Color.Gray)
+                }
+              }, (item: string) => item)
+            }
+            .scrollBar(BarState.Off)
+            .width('90%')
+            .height('100%')
+            .contentStartOffset(56)
+            .contentEndOffset(52)
+          }.tabBar(SubTabBarStyle.of('顶部页签'))
+        }
+        .width('100%')
+        .height('100%')
+        .barOverlap(true) // 使TabBar叠加在TabContent上，当TabBar向上或向下隐藏后，原位置处不为空白
+        .clip(true) // 对超出Tabs组件范围的子组件进行裁剪，防止TabBar向上或向下隐藏后误触TabBar
+      }.tabBar(BottomTabBarStyle.of($r('app.media.startIcon'), 'scroller联动多个TabsController'))
+
+      TabContent() {
+        Scroll(this.parentScroller) {
+            List({ space: 20, initialIndex: 0, scroller: this.childScroller }) {
+              ForEach(this.arr, (item: string) => {
+                ListItem() {
+                  Text(item)
+                    .width('100%')
+                    .height(100)
+                    .fontSize(16)
+                    .textAlign(TextAlign.Center)
+                    .borderRadius(10)
+                    .backgroundColor(Color.Gray)
+                }
+              }, (item: string) => item)
+            }
+            .scrollBar(BarState.Off)
+            .width('90%')
+            .height('100%')
+            .contentEndOffset(52)
+            .nestedScroll({ scrollForward: NestedScrollMode.SELF_FIRST, scrollBackward: NestedScrollMode.SELF_FIRST })
+        }
+        .width('100%')
+        .height('100%')
+        .scrollBar(BarState.Off)
+        .scrollable(ScrollDirection.Vertical)
+        .edgeEffect(EdgeEffect.Spring)
+      }.tabBar(BottomTabBarStyle.of($r('app.media.startIcon'), '嵌套的scroller联动TabsController'))
+    }
+    .width('100%')
+    .height('100%')
+    .barOverlap(true) // 使TabBar叠加在TabContent上，当TabBar向上或向下隐藏后，原位置处不为空白
+    .clip(true) // 对超出Tabs组件范围的子组件进行裁剪，防止TabBar向上或向下隐藏后误触TabBar
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct TabsExample {
-4. private arr: string[] = [];
-5. private parentTabsController: TabsController = new TabsController();
-6. private childTabsController: TabsController = new TabsController();
-7. private listScroller: Scroller = new Scroller();
-8. private parentScroller: Scroller = new Scroller();
-9. private childScroller: Scroller = new Scroller();
 
-11. aboutToAppear(): void {
-12. for (let i = 0; i < 20; i++) {
-13. this.arr.push(i.toString());
-14. }
-15. let context = this.getUIContext();
-16. context.bindTabsToScrollable(this.parentTabsController, this.listScroller);
-17. context.bindTabsToScrollable(this.childTabsController, this.listScroller);
-18. context.bindTabsToNestedScrollable(this.parentTabsController, this.parentScroller, this.childScroller);
-19. }
-
-21. aboutToDisappear(): void {
-22. let context = this.getUIContext();
-23. context.unbindTabsFromScrollable(this.parentTabsController, this.listScroller);
-24. context.unbindTabsFromScrollable(this.childTabsController, this.listScroller);
-25. context.unbindTabsFromNestedScrollable(this.parentTabsController, this.parentScroller, this.childScroller);
-26. }
-
-28. build() {
-29. Tabs({ barPosition: BarPosition.End, controller: this.parentTabsController }) {
-30. TabContent() {
-31. Tabs({ controller: this.childTabsController }) {
-32. TabContent() {
-33. List({ space: 20, initialIndex: 0, scroller: this.listScroller }) {
-34. ForEach(this.arr, (item: string) => {
-35. ListItem() {
-36. Text(item)
-37. .width('100%')
-38. .height(100)
-39. .fontSize(16)
-40. .textAlign(TextAlign.Center)
-41. .borderRadius(10)
-42. .backgroundColor(Color.Gray)
-43. }
-44. }, (item: string) => item)
-45. }
-46. .scrollBar(BarState.Off)
-47. .width('90%')
-48. .height('100%')
-49. .contentStartOffset(56)
-50. .contentEndOffset(52)
-51. }.tabBar(SubTabBarStyle.of('顶部页签'))
-52. }
-53. .width('100%')
-54. .height('100%')
-55. .barOverlap(true) // 使TabBar叠加在TabContent上，当TabBar向上或向下隐藏后，原位置处不为空白
-56. .clip(true) // 对超出Tabs组件范围的子组件进行裁剪，防止TabBar向上或向下隐藏后误触TabBar
-57. }.tabBar(BottomTabBarStyle.of($r('app.media.startIcon'), 'scroller联动多个TabsController'))
-
-59. TabContent() {
-60. Scroll(this.parentScroller) {
-61. List({ space: 20, initialIndex: 0, scroller: this.childScroller }) {
-62. ForEach(this.arr, (item: string) => {
-63. ListItem() {
-64. Text(item)
-65. .width('100%')
-66. .height(100)
-67. .fontSize(16)
-68. .textAlign(TextAlign.Center)
-69. .borderRadius(10)
-70. .backgroundColor(Color.Gray)
-71. }
-72. }, (item: string) => item)
-73. }
-74. .scrollBar(BarState.Off)
-75. .width('90%')
-76. .height('100%')
-77. .contentEndOffset(52)
-78. .nestedScroll({ scrollForward: NestedScrollMode.SELF_FIRST, scrollBackward: NestedScrollMode.SELF_FIRST })
-79. }
-80. .width('100%')
-81. .height('100%')
-82. .scrollBar(BarState.Off)
-83. .scrollable(ScrollDirection.Vertical)
-84. .edgeEffect(EdgeEffect.Spring)
-85. }.tabBar(BottomTabBarStyle.of($r('app.media.startIcon'), '嵌套的scroller联动TabsController'))
-86. }
-87. .width('100%')
-88. .height('100%')
-89. .barOverlap(true) // 使TabBar叠加在TabContent上，当TabBar向上或向下隐藏后，原位置处不为空白
-90. .clip(true) // 对超出Tabs组件范围的子组件进行裁剪，防止TabBar向上或向下隐藏后误触TabBar
-91. }
-92. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/z4ZvqMBUTM6DPsKDTKxsCQ/zh-cn_image_0000002589245747.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/3_CgEIZ_Ss-GcODs1JES_g/zh-cn_image_0000002706835536.gif)
 
 ## unbindTabsFromScrollable13+
-
-PhonePC/2in1TabletTVWearable
 
 unbindTabsFromScrollable(tabsController: TabsController, scroller: Scroller): void
 
@@ -3735,8 +3627,6 @@ unbindTabsFromScrollable(tabsController: TabsController, scroller: Scroller): vo
 参考[bindTabsToScrollable](arkts-apis-uicontext-uicontext.md#bindtabstoscrollable13)接口示例。
 
 ## bindTabsToNestedScrollable13+
-
-PhonePC/2in1TabletTVWearable
 
 bindTabsToNestedScrollable(tabsController: TabsController, parentScroller: Scroller, childScroller: Scroller): void
 
@@ -3760,8 +3650,6 @@ bindTabsToNestedScrollable(tabsController: TabsController, parentScroller: Scrol
 
 ## unbindTabsFromNestedScrollable13+
 
-PhonePC/2in1TabletTVWearable
-
 unbindTabsFromNestedScrollable(tabsController: TabsController, parentScroller: Scroller, childScroller: Scroller): void
 
 解除Tabs组件和嵌套的可滚动容器组件的绑定。
@@ -3784,8 +3672,6 @@ unbindTabsFromNestedScrollable(tabsController: TabsController, parentScroller: S
 
 ## enableSwipeBack18+
 
-PhonePC/2in1TabletTVWearable
-
 enableSwipeBack(enabled: Optional<boolean>): void
 
 设置是否支持应用内横向滑动返回上一级。
@@ -3802,28 +3688,26 @@ enableSwipeBack(enabled: Optional<boolean>): void
 
 **示例：**
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. @State isEnable: boolean = true;
+```js
+@Entry
+@Component
+struct Index {
+  @State isEnable: boolean = true;
 
-6. build() {
-7. RelativeContainer() {
-8. Button(`enable swipe back: ${this.isEnable}`).onClick(() => {
-9. this.isEnable = !this.isEnable;
-10. this.getUIContext().enableSwipeBack(this.isEnable);
-11. })
-12. }
-13. .height('100%')
-14. .width('100%')
-15. }
-16. }
+  build() {
+    RelativeContainer() {
+      Button(`enable swipe back: ${this.isEnable}`).onClick(() => {
+        this.isEnable = !this.isEnable;
+        this.getUIContext().enableSwipeBack(this.isEnable);
+      })
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 ## getTextMenuController16+
-
-PhonePC/2in1TabletTVWearable
 
 getTextMenuController(): TextMenuController
 
@@ -3845,13 +3729,11 @@ getTextMenuController(): TextMenuController
 
 ## createUIContextWithoutWindow17+
 
-PhonePC/2in1TabletTVWearable
-
 static createUIContextWithoutWindow(context: common.UIAbilityContext | common.ExtensionContext): UIContext | undefined
 
 创建一个不依赖窗口的UI实例，并返回其UI上下文。该接口所创建的UI实例是单例。
 
-说明
+**说明** 
 
 返回的UI上下文只可用于创建[自定义节点](../harmonyos-guides/arkts-user-defined-node.md)，不能执行其他UI操作。
 
@@ -3882,25 +3764,23 @@ static createUIContextWithoutWindow(context: common.UIAbilityContext | common.Ex
 
 **示例：**
 
-```
-1. // EntryAbility.ets
-2. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { UIContext } from '@kit.ArkUI';
+```ts
+// EntryAbility.ets
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { UIContext } from '@kit.ArkUI';
 
-6. export default class EntryAbility extends UIAbility {
-7. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-8. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-9. let uiContext: UIContext | undefined = UIContext.createUIContextWithoutWindow(this.context);
-10. }
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+    let uiContext: UIContext | undefined = UIContext.createUIContextWithoutWindow(this.context);
+  }
 
-12. // ......
-13. }
+  // ......
+}
 ```
 
 ## destroyUIContextWithoutWindow17+
-
-PhonePC/2in1TabletTVWearable
 
 static destroyUIContextWithoutWindow(): void
 
@@ -3912,26 +3792,24 @@ static destroyUIContextWithoutWindow(): void
 
 **示例：**
 
-```
-1. // EntryAbility.ets
-2. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { UIContext } from '@kit.ArkUI';
+```ts
+// EntryAbility.ets
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { UIContext } from '@kit.ArkUI';
 
-6. export default class EntryAbility extends UIAbility {
-7. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-8. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-9. let uiContext: UIContext | undefined = UIContext.createUIContextWithoutWindow(this.context);
-10. UIContext.destroyUIContextWithoutWindow();
-11. }
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+    let uiContext: UIContext | undefined = UIContext.createUIContextWithoutWindow(this.context);
+    UIContext.destroyUIContextWithoutWindow();
+  }
 
-13. // ......
-14. }
+  // ......
+}
 ```
 
 ## dispatchKeyEvent15+
-
-PhonePC/2in1TabletTVWearable
 
 dispatchKeyEvent(node: number | string, event: KeyEvent): boolean
 
@@ -3956,49 +3834,47 @@ dispatchKeyEvent(node: number | string, event: KeyEvent): boolean
 
 **示例：**
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. build() {
-5. Row() {
-6. Row() {
-7. Button('Button1').id('Button1').onKeyEvent((event) => {
-8. console.info("Button1");
-9. return true;
-10. })
-11. Button('Button2').id('Button2').onKeyEvent((event) => {
-12. console.info("Button2");
-13. return true;
-14. })
-15. }
-16. .width('100%')
-17. .height('100%')
-18. .id('Row1')
-19. .onKeyEventDispatch((event) => {
-20. let context = this.getUIContext();
-21. context.getFocusController().requestFocus('Button1');
-22. return context.dispatchKeyEvent('Button1', event);
-23. })
+```ts
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Row() {
+        Button('Button1').id('Button1').onKeyEvent((event) => {
+          console.info("Button1");
+          return true;
+        })
+        Button('Button2').id('Button2').onKeyEvent((event) => {
+          console.info("Button2");
+          return true;
+        })
+      }
+      .width('100%')
+      .height('100%')
+      .id('Row1')
+      .onKeyEventDispatch((event) => {
+        let context = this.getUIContext();
+        context.getFocusController().requestFocus('Button1');
+        return context.dispatchKeyEvent('Button1', event);
+      })
 
-25. }
-26. .height('100%')
-27. .width('100%')
-28. .onKeyEventDispatch((event) => {
-29. if (event.type == KeyType.Down) {
-30. let context = this.getUIContext();
-31. context.getFocusController().requestFocus('Row1');
-32. return context.dispatchKeyEvent('Row1', event);
-33. }
-34. return true;
-35. })
-36. }
-37. }
+    }
+    .height('100%')
+    .width('100%')
+    .onKeyEventDispatch((event) => {
+      if (event.type == KeyType.Down) {
+        let context = this.getUIContext();
+        context.getFocusController().requestFocus('Row1');
+        return context.dispatchKeyEvent('Row1', event);
+      }
+      return true;
+    })
+  }
+}
 ```
 
 ## setPixelRoundMode18+
-
-PhonePC/2in1TabletTVWearable
 
 setPixelRoundMode(mode: PixelRoundMode): void
 
@@ -4016,24 +3892,22 @@ setPixelRoundMode(mode: PixelRoundMode): void
 
 **示例：**
 
-```
-1. // EntryAbility.ets
-2. import { UIContext } from '@kit.ArkUI';
+```ts
+// EntryAbility.ets
+import { UIContext } from '@kit.ArkUI';
 
-4. export default class EntryAbility extends UIAbility {
-5. onWindowStageCreate(windowStage: window.WindowStage) {
+export default class EntryAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage) {
 
-7. windowStage.loadContent('pages/Index', (err, data) => {
-8. let uiContext: UIContext = windowStage.getMainWindowSync().getUIContext();
-9. uiContext.setPixelRoundMode(PixelRoundMode.PIXEL_ROUND_ON_LAYOUT_FINISH);
-10. });
-11. }
-12. }
+    windowStage.loadContent('pages/Index', (err, data) => {
+      let uiContext: UIContext = windowStage.getMainWindowSync().getUIContext();
+      uiContext.setPixelRoundMode(PixelRoundMode.PIXEL_ROUND_ON_LAYOUT_FINISH);
+    });
+  }
+}
 ```
 
 ## getPixelRoundMode18+
-
-PhonePC/2in1TabletTVWearable
 
 getPixelRoundMode(): PixelRoundMode
 
@@ -4051,32 +3925,30 @@ getPixelRoundMode(): PixelRoundMode
 
 **示例：**
 
-```
-1. // EntryAbility.ets
-2. import { UIContext } from '@kit.ArkUI';
+```ts
+// EntryAbility.ets
+import { UIContext } from '@kit.ArkUI';
 
-4. export default class EntryAbility extends UIAbility{
-5. onWindowStageCreate(windowStage: window.WindowStage) {
+export default class EntryAbility extends UIAbility{
+  onWindowStageCreate(windowStage: window.WindowStage) {
 
-7. windowStage.loadContent('pages/Index', (err, data) => {
-8. let uiContext: UIContext = windowStage.getMainWindowSync().getUIContext();
-9. console.info("pixelRoundMode : " + uiContext.getPixelRoundMode().valueOf());
-10. });
-11. }
-12. }
+      windowStage.loadContent('pages/Index', (err, data) => {
+        let uiContext: UIContext = windowStage.getMainWindowSync().getUIContext();
+        console.info("pixelRoundMode : " + uiContext.getPixelRoundMode().valueOf());
+      });
+    }
+}
 ```
 
 ## setResourceManagerCacheMaxCountForHSP21+
-
-PhonePC/2in1TabletTVWearable
 
 static setResourceManagerCacheMaxCountForHSP(count: number): void
 
 设置HSP资源管理对象缓存个数上限。
 
-说明
+**说明** 
 
-如果缓存上限设置的太大，有内存开销过大的风险，建议合理配置。
+如果缓存上限设置得太大，有内存开销过大的风险，建议合理配置。
 
 **元服务API：** 从API version 21开始，该接口支持在元服务中使用。
 
@@ -4100,32 +3972,30 @@ static setResourceManagerCacheMaxCountForHSP(count: number): void
 
 **示例：**
 
-```
-1. // EntryAbility.ets
-2. import { UIAbility } from '@kit.AbilityKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { UIContext, window } from '@kit.ArkUI';
+```ts
+// EntryAbility.ets
+import { UIAbility } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { UIContext, window } from '@kit.ArkUI';
 
-6. export default class EntryAbility extends UIAbility {
-7. onWindowStageCreate(windowStage: window.WindowStage): void {
-8. // Main window is created, set main page for this ability
-9. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+export default class EntryAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage): void {
+    // Main window is created, set main page for this ability
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-11. windowStage.loadContent('pages/Index', (err, data) => {
-12. if (err.code) {
-13. hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', err.message);
-14. return;
-15. }
-16. UIContext.setResourceManagerCacheMaxCountForHSP(5);
-17. hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
-18. });
-19. }
-20. }
+    windowStage.loadContent('pages/Index', (err, data) => {
+      if (err.code) {
+        hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', err.message);
+        return;
+      }
+      UIContext.setResourceManagerCacheMaxCountForHSP(5);
+      hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
+    });
+  }
+}
 ```
 
 ## setImageCacheCount23+
-
-PhonePC/2in1TabletTVWearable
 
 setImageCacheCount(value: number): void
 
@@ -4133,7 +4003,7 @@ setImageCacheCount(value: number): void
 
 setImageCacheCount方法需要在@Entry标记的页面，[onPageShow](ts-custom-component-lifecycle.md#onpageshow)或[aboutToAppear](ts-custom-component-lifecycle.md#abouttoappear)里面设置才生效。
 
-setImageCacheCount、setImageRawDataCacheSize和setImageFileCacheSize并不灵活，后续不继续演进。对于复杂情况，更推荐使用[ImageKnife](https://gitcode.com/openharmony-tpc/ImageKnife)。
+setImageCacheCount、setImageRawDataCacheSize和setImageFileCacheSize并不灵活，后续不继续演进。对于复杂情况，更推荐使用[ImageKnife](https://gitcode.com/CPF-ApplicationTPC/ImageKnife)。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
 
@@ -4147,33 +4017,31 @@ setImageCacheCount、setImageRawDataCacheSize和setImageFileCacheSize并不灵�
 
 **示例：**
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct Index {
-5. onPageShow() {
-6. // 设置解码后图片内存缓存上限为100张
-7. this.getUIContext().setImageCacheCount(100);
-8. console.info('Application onPageShow');
-9. }
-10. onDestroy() {
-11. console.info('Application onDestroy');
-12. }
+```ts
+// xxx.ets
+@Entry
+@Component
+struct Index {
+  onPageShow() {
+    // 设置解码后图片内存缓存上限为100张
+    this.getUIContext().setImageCacheCount(100);
+    console.info('Application onPageShow');
+  }
+  onDestroy() {
+    console.info('Application onDestroy');
+  }
 
-14. build() {
-15. Row(){
-16. Image('https://www.example.com/xxx.png') // 请填写一个具体的网络图片地址
-17. .width(200)
-18. .height(50)
-19. }.width('100%')
-20. }
-21. }
+  build() {
+    Row(){
+      Image('https://www.example.com/xxx.png') // 请填写一个具体的网络图片地址
+        .width(200)
+        .height(50)
+    }.width('100%')
+  }
+}
 ```
 
 ## setImageRawDataCacheSize23+
-
-PhonePC/2in1TabletTVWearable
 
 setImageRawDataCacheSize(value: number): void
 
@@ -4193,33 +4061,31 @@ setImageRawDataCacheSize方法需要在@Entry标记的页面，[onPageShow](ts-c
 
 **示例：**
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct Index {
-5. onPageShow() {
-6. // 设置解码前图片数据内存缓存上限为100MB (100MB=100*1024*1024B=104857600B)
-7. this.getUIContext().setImageRawDataCacheSize(104857600);
-8. console.info('Application onPageShow');
-9. }
-10. onDestroy() {
-11. console.info('Application onDestroy');
-12. }
+```ts
+// xxx.ets
+@Entry
+@Component
+struct Index {
+  onPageShow() {
+    // 设置解码前图片数据内存缓存上限为100MB (100MB=100*1024*1024B=104857600B)
+    this.getUIContext().setImageRawDataCacheSize(104857600);
+    console.info('Application onPageShow');
+  }
+  onDestroy() {
+    console.info('Application onDestroy');
+  }
 
-14. build() {
-15. Row(){
-16. Image('https://www.example.com/xxx.png') // 请填写一个具体的网络图片地址
-17. .width(200)
-18. .height(50)
-19. }.width('100%')
-20. }
-21. }
+  build() {
+    Row(){
+      Image('https://www.example.com/xxx.png') // 请填写一个具体的网络图片地址
+        .width(200)
+        .height(50)
+    }.width('100%')
+  }
+}
 ```
 
 ## getMagnifier22+
-
-PhonePC/2in1TabletTVWearable
 
 getMagnifier(): Magnifier
 
@@ -4240,8 +4106,6 @@ getMagnifier(): Magnifier
 参考[Magnifier](arkts-apis-uicontext-magnifier.md)的[bind](arkts-apis-uicontext-magnifier.md#bind)接口示例。
 
 ## setCustomKeyboardContinueFeature23+
-
-PhonePC/2in1TabletTVWearable
 
 setCustomKeyboardContinueFeature(feature: CustomKeyboardContinueFeature): void
 
@@ -4265,109 +4129,530 @@ setCustomKeyboardContinueFeature(feature: CustomKeyboardContinueFeature): void
 
 **示例：**
 
+```ts
+// xxx.ets
+import { CustomKeyboardContinueFeature } from '@ohos.arkui.UIContext';
+
+@Entry
+@Component
+struct Index {
+  controller: TextInputController = new TextInputController();
+  controller2: TextInputController = new TextInputController();
+  @State inputValue: string = '';
+  @State inputValue2: string = '';
+  @State supportAvoidance: boolean = true;
+  @State isValue: CustomKeyboardContinueFeature = CustomKeyboardContinueFeature.DISABLED;
+  @State str: string = '否';
+
+  // 自定义键盘组件
+  @Builder
+  CustomKeyboardBuilder() {
+    Column() {
+      Row() {
+        Button('x').onClick(() => {
+          // 关闭自定义键盘
+          this.controller.stopEditing();
+        }).margin(10)
+        Button('delete').onClick(() => {
+          this.inputValue = this.inputValue.slice(0, -1);
+        }).margin(10)
+      }
+
+      Grid() {
+        ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#'], (item: number | string) => {
+          GridItem() {
+            Button(item + '')
+              .width(110).onClick(() => {
+              this.inputValue += item;
+            })
+          }
+        })
+      }.maxCount(3).columnsGap(10).rowsGap(10).padding(5)
+    }.backgroundColor('rgb(213, 213, 213)').height(300)
+  }
+
+  // 自定义键盘组件
+  @Builder
+  CustomKeyboardBuilder2() {
+    Column() {
+      Row() {
+        Button('x').onClick(() => {
+          // 关闭自定义键盘
+          this.controller2.stopEditing();
+        }).margin(10)
+        Button('delete').onClick(() => {
+          this.inputValue2 = this.inputValue2.slice(0, -1);
+        }).margin(10)
+      }
+
+      Grid() {
+        ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#'], (item: number | string) => {
+          GridItem() {
+            Button(item + '')
+              .width(110).onClick(() => {
+              this.inputValue2 += item;
+            })
+          }
+        })
+      }.maxCount(3).columnsGap(10).rowsGap(10).padding(5)
+    }.backgroundColor('rgb(227, 248, 249)').height(150)
+  }
+
+  build() {
+    Scroll() {
+      Column() {
+        Button('是否接续：' + this.str).onClick(() => {
+          if (this.isValue == CustomKeyboardContinueFeature.ENABLED) {
+            this.isValue = CustomKeyboardContinueFeature.DISABLED
+            this.str = '否'
+          } else {
+            this.isValue = CustomKeyboardContinueFeature.ENABLED
+            this.str = '是'
+          }
+          this.getUIContext().setCustomKeyboardContinueFeature(this.isValue);
+        }).fontSize(20).width('80%').key('button')
+
+        TextInput({
+          placeholder: 'TextInput1 bind CustomKeyboardBuilder',
+          controller: this.controller,
+          text: this.inputValue
+        })// 绑定自定义键盘
+          .customKeyboard(this.CustomKeyboardBuilder(), { supportAvoidance: this.supportAvoidance })
+          .margin(10)
+          .border({ width: 1 })
+        TextInput({
+          placeholder: 'TextInput2 bind CustomKeyboardBuilder2',
+          controller: this.controller2,
+          text: this.inputValue2
+        })// 绑定自定义键盘
+          .customKeyboard(this.CustomKeyboardBuilder2(), { supportAvoidance: this.supportAvoidance })
+          .margin(10)
+          .border({ width: 1 })
+      }
+    }
+  }
+}
 ```
-1. // xxx.ets
-2. import { CustomKeyboardContinueFeature } from '@ohos.arkui.UIContext';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. controller: TextInputController = new TextInputController();
-8. controller2: TextInputController = new TextInputController();
-9. @State inputValue: string = '';
-10. @State inputValue2: string = '';
-11. @State supportAvoidance: boolean = true;
-12. @State isValue: CustomKeyboardContinueFeature = CustomKeyboardContinueFeature.DISABLED;
-13. @State str: string = '否';
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/Z4HZI3QJSTCPaBnjgIwycg/zh-cn_image_0000002736314641.gif)
 
-15. // 自定义键盘组件
-16. @Builder
-17. CustomKeyboardBuilder() {
-18. Column() {
-19. Row() {
-20. Button('x').onClick(() => {
-21. // 关闭自定义键盘
-22. this.controller.stopEditing();
-23. }).margin(10)
-24. Button('delete').onClick(() => {
-25. this.inputValue = this.inputValue.slice(0, -1);
-26. }).margin(10)
-27. }
+## getPageRootNode24+
 
-29. Grid() {
-30. ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#'], (item: number | string) => {
-31. GridItem() {
-32. Button(item + '')
-33. .width(110).onClick(() => {
-34. this.inputValue += item;
-35. })
-36. }
-37. })
-38. }.maxCount(3).columnsGap(10).rowsGap(10).padding(5)
-39. }.backgroundColor('rgb(213, 213, 213)').height(300)
-40. }
+getPageRootNode(): FrameNode | null
 
-42. // 自定义键盘组件
-43. @Builder
-44. CustomKeyboardBuilder2() {
-45. Column() {
-46. Row() {
-47. Button('x').onClick(() => {
-48. // 关闭自定义键盘
-49. this.controller2.stopEditing();
-50. }).margin(10)
-51. Button('delete').onClick(() => {
-52. this.inputValue2 = this.inputValue2.slice(0, -1);
-53. }).margin(10)
-54. }
+获取UIContext对应页面的根节点。
 
-56. Grid() {
-57. ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#'], (item: number | string) => {
-58. GridItem() {
-59. Button(item + '')
-60. .width(110).onClick(() => {
-61. this.inputValue2 += item;
-62. })
-63. }
-64. })
-65. }.maxCount(3).columnsGap(10).rowsGap(10).padding(5)
-66. }.backgroundColor('rgb(227, 248, 249)').height(150)
-67. }
+**元服务API：** 从API version 24开始，该接口支持在元服务中使用。
 
-69. build() {
-70. Scroll() {
-71. Column() {
-72. Button('是否接续：' + this.str).onClick(() => {
-73. if (this.isValue == CustomKeyboardContinueFeature.ENABLED) {
-74. this.isValue = CustomKeyboardContinueFeature.DISABLED
-75. this.str = '否'
-76. } else {
-77. this.isValue = CustomKeyboardContinueFeature.ENABLED
-78. this.str = '是'
-79. }
-80. this.getUIContext().setCustomKeyboardContinueFeature(this.isValue);
-81. }).fontSize(20).width('80%').key('button')
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-83. TextInput({
-84. placeholder: 'TextInput1 bind CustomKeyboardBuilder',
-85. controller: this.controller,
-86. text: this.inputValue
-87. })// 绑定自定义键盘
-88. .customKeyboard(this.CustomKeyboardBuilder(), { supportAvoidance: this.supportAvoidance })
-89. .margin(10)
-90. .border({ width: 1 })
-91. TextInput({
-92. placeholder: 'TextInput2 bind CustomKeyboardBuilder2',
-93. controller: this.controller2,
-94. text: this.inputValue2
-95. })// 绑定自定义键盘
-96. .customKeyboard(this.CustomKeyboardBuilder2(), { supportAvoidance: this.supportAvoidance })
-97. .margin(10)
-98. .border({ width: 1 })
-99. }
-100. }
-101. }
-102. }
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [FrameNode](js-apis-arkui-framenode.md#framenode-1) | null | 返回页面的根节点的实体节点或者空节点。  若无有效的FrameNode则返回null。  若窗口内无加载完成的页面则返回null。 |
+
+**错误码：**
+
+以下错误码详细介绍请参考[UI上下文错误码](errorcode-uicontext.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 120007 | The UIContext is not available. |
+
+**示例：**
+
+```ts
+@Entry
+@Component
+struct NavigationExample {
+  @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack();
+  private arr: number[] = [1, 2, 3];
+  @State pageRootNode: FrameNode | null = null;
+
+  @Builder
+  pageMap(name: string) {
+    if (name === 'NavDestinationTitle1') {
+      PageOne();
+    } else if (name === 'NavDestinationTitle2') {
+      PageTwo();
+    } else if (name === 'NavDestinationTitle3') {
+      PageThree();
+    }
+  }
+
+  onPageShow(): void {
+    setTimeout(() => {
+      this.pageRootNode = this.getUIContext()?.getPageRootNode();
+      console.info('NavigationExample' + JSON.stringify(this.getUIContext().getPageRootNode()));
+    });
+  }
+
+  build() {
+    Column() {
+      Navigation(this.pageInfos) {
+        Text(`CurrentPageRootNode info: Tag ${this.pageRootNode?.getNodeType()}, NodeId： ${this.pageRootNode?.getUniqueId()}`)
+          .width('90%')
+          .height(40)
+          .backgroundColor('#FFFFFF')
+        List({ space: 12 }) {
+          ForEach(this.arr, (item: number) => {
+            ListItem() {
+              Text('Page' + item)
+                .width('100%')
+                .height(72)
+                .backgroundColor('#FFFFFF')
+                .borderRadius(24)
+                .fontSize(16)
+                .fontWeight(500)
+                .textAlign(TextAlign.Center)
+                .onClick(() => {
+                  this.pageInfos.pushPath({ name: 'NavDestinationTitle' + item });
+                })
+            }
+          }, (item: number) => item.toString())
+        }
+        .width('100%')
+        .margin({ top: 12 })
+      }
+      .title('主标题')
+      .mode(NavigationMode.Stack)
+      .navDestination(this.pageMap)
+    }
+    .height('100%')
+    .width('100%')
+    .backgroundColor('#F1F3F5')
+  }
+}
+
+@Component
+export struct PageOne {
+  @Consume('pageInfos') pageInfos: NavPathStack;
+
+  aboutToDisappear(): void {
+    console.info('PageOne', 'aboutToDisappear');
+  }
+
+  build() {
+    NavDestination() {
+      Column() {
+        Text('PageOne')
+        Text(`CurrentPageRootNode info: Tag ${this.getUIContext()?.getPageRootNode()?.getNodeType()}, NodeId： ${this.getUIContext()?.getPageRootNode()?.getUniqueId()}`)
+      }.width('100%').height('100%')
+    }.title('NavDestinationTitle1')
+    .onBackPressed(() => {
+      const popDestinationInfo = this.pageInfos.pop(); // 弹出路由栈栈顶元素。
+      console.info('pop' + '返回值' + JSON.stringify(popDestinationInfo));
+      return true;
+    })
+  }
+}
+
+@Component
+export struct PageTwo {
+  @Consume('pageInfos') pageInfos: NavPathStack;
+
+  build() {
+    NavDestination() {
+      Column() {
+        Text('PageTwo')
+        Text(`CurrentPageRootNode info: Tag ${this.getUIContext()?.getPageRootNode()?.getNodeType()}, NodeId： ${this.getUIContext()?.getPageRootNode()?.getUniqueId()}`)
+      }.width('100%').height('100%')
+    }.title('NavDestinationTitle2')
+    .onBackPressed(() => {
+      const popDestinationInfo = this.pageInfos.pop(); // 弹出路由栈栈顶元素。
+      console.info('pop' + '返回值' + JSON.stringify(popDestinationInfo));
+      return true;
+    })
+  }
+}
+
+@Component
+export struct PageThree {
+  @Consume('pageInfos') pageInfos: NavPathStack;
+
+  build() {
+    NavDestination() {
+      Column() {
+        Text('PageThree')
+        Text(`CurrentPageRootNode info: Tag ${this.getUIContext()?.getPageRootNode()?.getNodeType()}, NodeId： ${this.getUIContext()?.getPageRootNode()?.getUniqueId()}`)
+      }.width('100%').height('100%')
+    }.title('NavDestinationTitle3')
+    .onBackPressed(() => {
+      const popDestinationInfo = this.pageInfos.pop(); // 弹出路由栈栈顶元素。
+      console.info('pop' + '返回值' + JSON.stringify(popDestinationInfo));
+      return true;
+    })
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/Lg0IIVZ_Rm-WkIWH92xUlQ/zh-cn_image_0000002558765936.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/57TiJ7bHSEO-6jF37zZ5gA/zh-cn_image_0000002706675598.jpg)
+
+## isEasySplit24+
+
+isEasySplit(): boolean
+
+获取当前UI实例的平行视界分栏状态。
+
+**元服务API：** 从API version 24开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回当前UI实例的平行视界分栏状态。true表示处于分栏模式，false表示未处于分栏模式。 |
+
+**示例：**
+
+```ts
+@Entry
+@Component
+struct Index {
+  @State isEasySplit: boolean = false;
+
+  build() {
+    Column() {
+      Text(`${this.isEasySplit ? 'current is easy split mode' : 'current is not easy split mode'}`)
+        .fontSize(20)
+        .margin(10)
+      Button('Check EasySplit')
+        .onClick(() => {
+          this.isEasySplit = this.getUIContext()?.isEasySplit();
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
+```
+
+## enableEventPassthrough
+
+enableEventPassthrough(enabled: boolean, eventType: RawInputEventType): void
+
+启用或禁用事件直通。事件直通表示在事件分发过程中，不经过[重采样](../harmonyos-guides/arkts-interaction-development-guide-touch-screen.md#重采样与历史点)直接下发给组件。未通过该接口设置时，默认禁用事件直通。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enabled | boolean | 是 | 启用或禁用事件直通。true表示启用事件直通，false表示禁用事件直通。 |
+| eventType | [RawInputEventType](ts-appendix-enums.md#rawinputeventtype) | 是 | 指定启用或禁用事件直通的原始输入事件类型。 |
+
+**示例：**
+
+```ts
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Button('Enable Event Passthrough')
+        .onClick(() => {
+          this.getUIContext()?.enableEventPassthrough(true, RawInputEventType.TOUCH);
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
+```
+
+## addLocalInputEventMonitor
+
+addLocalInputEventMonitor(eventMask: number, listener: InputEventListener): InputEventMonitor
+
+注册本地输入事件监听器。
+
+**说明** 
+
+* 请勿在回调中执行耗时操作（如复杂计算或网络请求），否则可能导致应用卡顿。
+* 该监听器仅在当前UIContext（即当前窗口）内有效，不会响应其他UIContext实例。
+* 返回值InputEventMonitor对象是系统创建的唯一标识，开发者无法主动构造或伪造此对象，必须保留其引用以用于后续取消注册。
+* 如果传入无效参数，则返回undefined，表示注册监听器失败。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| eventMask | number | 是 | 事件类型掩码，通过位运算指定要监听的事件类型。取值及对应含义请参考[InputEventSubTypeMask](ts-appendix-enums.md#inputeventsubtypemask)。 |
+| listener | [InputEventListener](ts-inputeventmonitor.md#inputeventlistener) | 是 | 事件监听器回调函数。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [InputEventMonitor](ts-inputeventmonitor.md#inputeventmonitor) | 监听器唯一标识对象，用于后续取消注册。 |
+
+**示例：**
+
+```ts
+@Entry
+@Component
+struct InputEventMonitorSample {
+  private uiContext: UIContext | undefined = undefined;
+  private monitor: InputEventMonitor | null = null;
+  aboutToAppear() {
+    this.uiContext = this.getUIContext();
+    // 监听鼠标左键按下事件
+    this.monitor = this.uiContext.addLocalInputEventMonitor(
+      InputEventSubTypeMask.LEFT_MOUSE_DOWN,
+      (wrapper: RawInputEventWrapper) => {
+        if (wrapper.isMouseEvent()) {
+          const event = wrapper.asMouseEvent()!;
+          console.info(`Mouse down at (${event.windowX}, ${event.windowY})`);
+          return { action: InputEventInterceptAction.CONTINUE };  // 允许事件继续传递
+        }
+        return { action: InputEventInterceptAction.BLOCK };  // 阻止事件传递
+      }
+    );
+  }
+  aboutToDisappear() {
+    if (this.monitor && this.uiContext) {
+      this.uiContext.removeLocalInputEventMonitor(this.monitor);
+    }
+  }
+  build() {
+    Column() {
+      Text('Input Event Monitor Sample')
+        .fontSize(20)
+        .margin(20)
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
+```
+
+## removeLocalInputEventMonitor
+
+removeLocalInputEventMonitor(monitor: InputEventMonitor): void
+
+移除本地输入事件监听器。
+
+**说明** 
+
+* 只能移除通过[addLocalInputEventMonitor](arkts-apis-uicontext-uicontext.md#addlocalinputeventmonitor)返回的InputEventMonitor对象。
+* 无法通过手动构造对象来注销监听器。
+* 如果传入无效对象，系统会静默忽略。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| monitor | [InputEventMonitor](ts-inputeventmonitor.md#inputeventmonitor) | 是 | 监听器标识对象，通过[addLocalInputEventMonitor](arkts-apis-uicontext-uicontext.md#addlocalinputeventmonitor)返回。 |
+
+**示例：**
+
+```ts
+@Entry
+@Component
+struct RemoveMonitorSample {
+  private uiContext: UIContext | undefined = undefined;
+  private monitor: InputEventMonitor | null = null;
+  aboutToAppear() {
+    this.uiContext = this.getUIContext();
+    this.monitor = this.uiContext.addLocalInputEventMonitor(
+      InputEventSubTypeMask.LEFT_MOUSE_DOWN,
+      (wrapper: RawInputEventWrapper) => {
+        return { action: InputEventInterceptAction.CONTINUE };
+      }
+    );
+  }
+  aboutToDisappear() {
+    // 组件销毁时移除监听器
+    if (this.monitor && this.uiContext) {
+      this.uiContext.removeLocalInputEventMonitor(this.monitor);
+    }
+  }
+  build() {
+    Column() {
+      Button('Remove Monitor')
+        .onClick(() => {
+          if (this.monitor && this.uiContext) {
+            this.uiContext.removeLocalInputEventMonitor(this.monitor);
+            this.monitor = null;
+          }
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
+```
+
+## setTextSelectionClearPolicy
+
+setTextSelectionClearPolicy(policy: TextSelectionClearPolicy): void
+
+设置文本组件的文本选择清除策略。未通过该接口设置时，默认策略为TextSelectionClearPolicy.KEEP\_SELECTED\_TEXT\_ON\_EXTERNAL\_TOUCH。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| policy | [TextSelectionClearPolicy](arkts-apis-uicontext-e.md#textselectionclearpolicy) | 是 | 文本选择清除策略。 |
+
+**示例：**
+
+```ts
+import { TextSelectionClearPolicy } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
+
+  build() {
+    Column() {
+      Text(this.message)
+        .fontSize(20)
+        .margin(10)
+        .copyOption(CopyOptions.LocalDevice)
+      Button('Set Clear Policy')
+        .onClick(() => {
+          this.getUIContext()?.setTextSelectionClearPolicy(TextSelectionClearPolicy.CLEAR_SELECTED_TEXT_ON_EXTERNAL_TOUCH);
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
+```

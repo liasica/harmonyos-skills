@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-371
 title: 如何理解AspectRatio对布局的影响
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 如何理解AspectRatio对布局的影响
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何理解AspectRatio对布局的影响
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:35+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:d92dbff52613bf622d0785919798df37c7f6a51b73817568d925497d60819b4a
+scraped_at: 2026-09-02T14:53:59+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:3c5a49f5d0eeebb767286afdb2820c0d6c768ae74426f93516f3c16b4c760850
 ---
 
 aspectRatio在布局中发挥两个主要作用：
@@ -17,33 +17,31 @@ aspectRatio在布局中发挥两个主要作用：
 
 **示例代码**
 
+```ts
+@Entry
+@Component
+struct VideoAdaptPage {
+  build() {
+    Column() {
+      Column() {
+        Video({})
+          .layoutWeight(1)
+          .borderRadius(12)
+          .clip(true)
+          .aspectRatio(1)
+          .loop(true)
+          .autoPlay(true)
+          .muted(true)
+          .margin({
+            left: 20,
+            top: 20,
+            right: 20,
+          })
+      }
+    }.height(2000)
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct VideoAdaptPage {
-4. build() {
-5. Column() {
-6. Column() {
-7. Video({})
-8. .layoutWeight(1)
-9. .borderRadius(12)
-10. .clip(true)
-11. .aspectRatio(1)
-12. .loop(true)
-13. .autoPlay(true)
-14. .muted(true)
-15. .margin({
-16. left: 20,
-17. top: 20,
-18. right: 20,
-19. })
-20. }
-21. }.height(2000)
-22. }
-23. }
-```
-
-[UnderstandTheAspectRatioLayout.ets](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkUI/entry/src/main/ets/pages/UnderstandTheAspectRatioLayout.ets#L21-L43)
 
 上述代码中，Column子元素在垂直方向上排列，具有高度约束但无宽度约束。示例代码中，为了便于数值计算，外层Column的高度被固定为2000。以下示例中的Column均为嵌套在顶层Column内部的子组件。
 

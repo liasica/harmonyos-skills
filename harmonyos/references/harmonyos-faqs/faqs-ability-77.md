@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-77
 title: 应用、元服务和卡片是什么关系
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 应用、元服务和卡片是什么关系
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:49+08:00
-doc_updated_at: 2026-03-20
+scraped_at: 2026-09-02T15:21:16+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:bc46d2f5d303181dcf6cc0177fe887f99b685230a23ee08583c08247c6d5824b
 ---
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 系统后台切应用前台接续下载资源包
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏资源加速服务 > 资源包后台下载 > 系统后台切应用前台接续下载资源包
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:36:31+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3eae88b2f8b2378528758896dfb84646adc1156c428ee8f3d15fcd00244d947c
+scraped_at: 2026-09-02T14:59:50+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0d79e8962e8314893353dc81193f7c6eead76f56516419cde3d575dedfa6761b
 ---
 
 系统后台静默下载过程中启动游戏，应用前台将接管系统后台下载任务，资源包下载任务将在应用前台接续执行。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/jDfeeMkZQNOkrVY1-ybZiw/zh-cn_image_0000002558605562.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/Ej7vw-FQT5Kn2p1NyiNAWg/zh-cn_image_0000002706674788.png)
 
 1. 用户在应用市场安装游戏后、用户在应用市场更新游戏后、系统检测到用户设备符合闲时条件时，游戏资源加速服务开启资源包后台下载。
 2. 游戏资源加速服务携带manifestUrl资源清单，向资源加速ExtensionAbility获取资源包下载任务列表。
@@ -27,116 +27,146 @@ content_hash: sha256:3eae88b2f8b2378528758896dfb84646adc1156c428ee8f3d15fcd00244
 11. 游戏向资源加速服务订阅资源包下载进度/状态事件。游戏调用[on('progress')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageronprogress)方法，监听资源包下载进度。游戏调用[on('pause')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageronpause)方法，监听下载任务是否暂停。游戏调用[on('complete')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageroncomplete)方法，监听资源是否成功下载。游戏调用[on('fail')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageronfail)方法，监听下载任务是否失败。
 12. 游戏资源加速服务继续下载资源包。
 13. 游戏资源加速服务每完成一个下载任务，还会向游戏通知当前任务的下载进度和下载状态。
-14. 若游戏接收到[on('progress')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageronprogress)方法返回的[DownloadCompletedInfo](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#downloadcompletedinfo)，表示资源包下载成功，游戏可前往下载路径操作（例如转移、解压）资源文件。若游戏接收到[on('fail')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageronfail)方法返回的[DownloadFailedInfo](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#downloadfailedinfo)，表示下载任务失败，游戏可以根据[DownloadFault](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#downloadfault)自行实现处理逻辑。若游戏接收到[on('pause')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageronpause)方法返回的[AssetDownloadTask](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadtask)，表示下载任务已暂停，游戏可以携带taskId，调用[resumeAssetDownloadTask](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanagerresumeassetdownloadtask)方法，恢复暂停中的下载任务。
+14. 若游戏接收到[on('complete')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageroncomplete)方法返回的[DownloadCompletedInfo](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#downloadcompletedinfo)，表示资源包下载成功，游戏可前往下载路径操作（例如转移、解压）资源文件。若游戏接收到[on('fail')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageronfail)方法返回的[DownloadFailedInfo](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#downloadfailedinfo)，表示下载任务失败，游戏可以根据[DownloadFault](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#downloadfault)自行实现处理逻辑。若游戏接收到[on('pause')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageronpause)方法返回的[AssetDownloadTask](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadtask)，表示下载任务已暂停，游戏可以携带taskId，调用[resumeAssetDownloadTask](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanagerresumeassetdownloadtask)方法，恢复暂停中的下载任务。
 15. 游戏向资源加速服务取消订阅资源包下载进度/状态事件。游戏调用[off('progress')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageroffprogress)方法，取消监听资源包下载进度。游戏调用[off('pause')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageroffpause)方法，取消监听下载任务暂停事件。游戏调用[off('complete')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageroffcomplete)方法，取消监听资源包下载成功事件。游戏调用[off('fail')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanagerofffail)方法，取消监听资源包下载失败事件。
 
 ## 开发步骤
 
-1. 在“src/main/module.json5”的extensionAbilities层级中添加资源加速ExtensionAbility信息。
+1. 新增配置信息。
 
-   ```
-   1. "extensionAbilities": [
-   2. {
-   3. "name": "AssetAccelExtAbility", // 游戏资源加速ExtensionAbility组件的名称。
-   4. "srcEntry": "./ets/extensionability/AssetAccelExtAbility.ets", // 游戏资源加速ExtensionAbility组件所对应的代码路径。
-   5. "type": "assetAcceleration"
-   6. }
-   7. ]
-   ```
-2. 新建extensionability文件夹及AssetAccelExtAbility.ets文件，导入assetDownloadManager模块、AssetAccelerationExtensionAbility模块及相关模块，同时新增AssetAccelExtAbility类继承AssetAccelerationExtensionAbility。
+   在“src/main/module.json5”的extensionAbilities层级中添加资源加速ExtensionAbility信息。
 
+   ```json5
+   "extensionAbilities": [
+     {
+       "name": "AssetAccelExtAbility", // 游戏资源加速ExtensionAbility组件的名称。
+       "srcEntry": "./ets/extensionability/AssetAccelExtAbility.ets", // 游戏资源加速ExtensionAbility组件所对应的代码路径。
+       "type": "assetAcceleration"
+     }
+   ],
    ```
-   1. import { BusinessError } from '@kit.BasicServicesKit';
-   2. import { assetDownloadManager, AssetAccelerationExtensionAbility, AssetAccelerationExtensionInfo, ContentRequestType } from '@kit.GraphicsAccelerateKit';
+2. 导入模块信息。
 
-   4. export default class AssetAccelExtAbility extends AssetAccelerationExtensionAbility {
-   5. };
-   ```
-3. 游戏实现[onDownloadContentRequest](../harmonyos-references/graphics-accelerate-extensionability.md#ondownloadcontentrequest)方法，收集资源包下载任务列表。
+   新建extensionability文件夹及AssetAccelExtAbility.ets文件，导入assetDownloadManager模块、AssetAccelerationExtensionAbility模块及相关模块，同时新增AssetAccelExtAbility类继承AssetAccelerationExtensionAbility。
 
-   ```
-   1. async onDownloadContentRequest(requestType: ContentRequestType, manifestUrl: string,
-   2. assetAccelerationExtensionInfo: AssetAccelerationExtensionInfo): Promise<assetDownloadManager.AssetDownloadConfig[]> {
-   3. console.info('AssetAccelDemo', `onDownloadContentRequest enter, requestType: ${requestType}, manifestUrl: ${manifestUrl}.`);
-   4. // 1.根据manifestUrl获取下载资源包。2.manifestUrl不为空，获取华为CDN侧资源，为空则获取三方CDN侧资源。3.返回资源包下载任务列表。
-   5. let downloadConfigArr: Array<assetDownloadManager.AssetDownloadConfig> = [];
-   6. return downloadConfigArr;
-   7. }
-   ```
-4. 游戏实现[onBackgroundDownloadSucceeded](../harmonyos-references/graphics-accelerate-extensionability.md#onbackgrounddownloadsucceeded)方法，接收“成功”状态的下载任务，并前往下载路径操作（例如转移、解压）资源文件。
+   **说明** 
 
-   ```
-   1. async onBackgroundDownloadSucceeded(downloadTask: assetDownloadManager.AssetDownloadTask,
-   2. filePath: string): Promise<void> {
-   3. console.info('AssetAccelDemo', `onBackgroundDownloadSucceeded enter, taskId is ${downloadTask.taskId}, filePath = ${filePath}`);
-   4. // 添加已下载资源包转移等处理逻辑。
-   5. }
-   ```
-5. 游戏实现[onBackgroundDownloadFailed](../harmonyos-references/graphics-accelerate-extensionability.md#onbackgrounddownloadfailed)方法，接收“失败”状态的下载任务，并根据失败原因[DownloadFault](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#downloadfault)自行实现处理逻辑。
+   针对AssetAccelerationExtensionAbility接口调用限制，详细请参考API中的[约束限制](../harmonyos-references/graphics-accelerate-extensionability.md#约束限制)。
 
+   ```typescript
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { common } from '@kit.AbilityKit';
+   import {
+     assetDownloadManager,
+     AssetAccelerationExtensionAbility,
+     AssetAccelerationExtensionInfo,
+     ContentRequestType
+   } from '@kit.GraphicsAccelerateKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
-   1. async onBackgroundDownloadFailed(downloadTask: assetDownloadManager.AssetDownloadTask,
-   2. fault: assetDownloadManager.DownloadFault): Promise<void> {
-   3. console.info('AssetAccelDemo', `onBackgroundDownloadFailed enter, download url: ${downloadTask.config.url}, err: ${fault}`);
-   4. // 添加资源包下载失败处理逻辑。
-   5. }
-   ```
-6. 游戏实现[onExtensionWillTerminate](../harmonyos-references/graphics-accelerate-extensionability.md#onextensionwillterminate)方法，接收游戏资源加速服务关闭资源包后台下载功能的通知。
+3. 实现系统后台切应用前台接续下载资源包功能。
 
-   ```
-   1. async onExtensionWillTerminate(error?: BusinessError): Promise<void> {
-   2. // 避免进行耗时处理。
-   3. if (error) {
-   4. console.error('AssetAccelDemo', `onExtensionWillTerminate enter, TerminateReason：${error?.code}, msg: ${error?.message}.`);
-   5. // 添加异常终止处理逻辑。
-   6. return;
-   7. }
-   8. // 添加资源清理等处理逻辑。
-   9. }
-   ```
-7. 游戏调用[on('progress')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageronprogress)方法，监听资源包下载进度。游戏调用[on('pause')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageronpause)方法，监听下载任务是否暂停。游戏调用[on('complete')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageroncomplete)方法，监听资源是否成功下载。游戏调用[on('fail')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageronfail)方法，监听下载任务是否失败。
+   1. 游戏实现[onDownloadContentRequest](../harmonyos-references/graphics-accelerate-extensionability.md#ondownloadcontentrequest)方法，收集资源包下载任务列表。
 
-   ```
-   1. onProgressCallback: (progressArray: assetDownloadManager.DownloadProgressInfo[]) => void = (progressArray) => {
-   2. console.info('AssetAccelDemo', `onProgressCallback progressArray length: ${progressArray.length}`);
-   3. // 添加资源包下载进度处理逻辑。
-   4. }
+      ```typescript
+      async onDownloadContentRequest(requestType: ContentRequestType, manifestURL: string,
+        assetAccelerationExtensionInfo: AssetAccelerationExtensionInfo):
+        Promise<assetDownloadManager.AssetDownloadConfig[]> {
+        hilog.info(DOMAINID,
+          TAG, `onDownloadContentRequest enter, requestType: ${requestType}, manifestURL: ${manifestURL}.`);
+        // 1.根据manifestUrl获取下载资源包。2.manifestUrl不为空，获取华为CDN侧资源，为空则获取三方CDN侧资源。3.返回资源包下载任务列表。
+        // ...
+        let downloadConfigArr: Array<assetDownloadManager.AssetDownloadConfig> = [];
+        return downloadConfigArr;
+      }
+      ```
+   2. 游戏实现[onBackgroundDownloadSucceeded](../harmonyos-references/graphics-accelerate-extensionability.md#onbackgrounddownloadsucceeded)方法，接收“成功”状态的下载任务，并前往下载路径操作（例如转移、解压）资源文件。
 
-   6. onPauseCallback: (downloadTaskInfo: assetDownloadManager.AssetDownloadTask) => void = (downloadTaskInfo) => {
-   7. console.info('AssetAccelDemo', `task identifier = ${downloadTaskInfo.config.identifier} has paused.`);
-   8. // 添加资源包下载暂停处理逻辑。
-   9. }
+      ```typescript
+      async onBackgroundDownloadSucceeded(downloadTask: assetDownloadManager.AssetDownloadTask,
+        filePath: string): Promise<void> {
+        hilog.info(DOMAINID,
+          TAG, `onBackgroundDownloadSucceeded enter, taskId is ${downloadTask.taskId}, filePath = ${filePath}`);
+        // 添加已下载资源包转移等处理逻辑。
+        // ...
+      }
+      ```
+   3. 游戏实现[onBackgroundDownloadFailed](../harmonyos-references/graphics-accelerate-extensionability.md#onbackgrounddownloadfailed)方法，接收“失败”状态的下载任务，并根据失败原因[DownloadFault](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#downloadfault)自行实现处理逻辑。
 
-   11. onCompleteCallback: (completeInfo: assetDownloadManager.DownloadCompletedInfo) => void = async (completeInfo) => {
-   12. console.info('AssetAccelDemo', `task identifier = ${completeInfo.downloadTask.config.identifier} has completed.`);
-   13. // 添加资源包下载完成处理逻辑。
-   14. }
+      ```typescript
+      async onBackgroundDownloadFailed(downloadTask: assetDownloadManager.AssetDownloadTask,
+        fault: assetDownloadManager.DownloadFault): Promise<void> {
+        hilog.info(DOMAINID,
+          TAG, `onBackgroundDownloadFailed enter, download url: ${downloadTask.config.url}, err: ${fault}`);
+        // 添加资源包下载失败处理逻辑。
+        // ...
+      }
+      ```
+   4. 游戏实现[onExtensionWillTerminate](../harmonyos-references/graphics-accelerate-extensionability.md#onextensionwillterminate)方法，接收游戏资源加速服务关闭资源包后台下载功能的通知。
 
-   16. onFailedCallback: (failedInfo: assetDownloadManager.DownloadFailedInfo) => void = async (failedInfo) => {
-   17. console.info('AssetAccelDemo', `task identifier = ${failedInfo.downloadTask.config.identifier} has failed.`);
-   18. // 添加资源包下载失败处理逻辑。
-   19. }
+      ```typescript
+      async onExtensionWillTerminate(error?: BusinessError): Promise<void> {
+        // 避免进行耗时处理。
+        if (!error) {
+          hilog.info(DOMAINID, TAG, `onExtensionWillTerminate enter, BusinessError is null`);
+          // 添加资源清理等处理逻辑。
+          return;
+        }
+        hilog.error(DOMAINID, TAG, `onExtensionWillTerminate enter, BusinessError：${error?.code}, msg: ${error?.message}`);
+        // 添加异常终止处理逻辑。
+      }
+      ```
+   5. 游戏调用[on('progress')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageronprogress)方法，监听资源包下载进度。游戏调用[on('pause')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageronpause)方法，监听下载任务是否暂停。游戏调用[on('complete')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageroncomplete)方法，监听资源是否成功下载。游戏调用[on('fail')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageronfail)方法，监听下载任务是否失败。
 
-   21. // 订阅下载状态和下载进度事件。
-   22. try {
-   23. assetDownloadManager.on("progress", this.onProgressCallback);
-   24. assetDownloadManager.on("pause", this.onPauseCallback);
-   25. assetDownloadManager.on("complete", this.onCompleteCallback);
-   26. assetDownloadManager.on("fail", this.onFailedCallback);
-   27. } catch (error) {
-   28. console.error('AssetAccelDemo', `Failed to do assetDownloadManager.on, errCode: ${error.code}, errMessage: ${error.message}`);
-   29. }
-   ```
-8. 游戏调用[off('progress')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageroffprogress)方法，取消监听资源包下载进度。游戏调用[off('pause')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageroffpause)方法，取消监听下载任务暂停事件。游戏调用[off('complete')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageroffcomplete)方法，取消监听资源包下载成功事件。游戏调用[off('fail')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanagerofffail)方法，取消监听资源包下载失败事件。
+      ```typescript
+      onProgressCallback: (progressArray: assetDownloadManager.DownloadProgressInfo[]) => void = (progressArray) => {
+        hilog.info(DOMAINID, TAG, `onProgressCallback progressArray length: ${progressArray.length}`);
+        // 添加资源包下载进度处理逻辑。
+        // ...
+      }
 
-   ```
-   1. // 取消订阅下载状态和下载进度事件。
-   2. try {
-   3. assetDownloadManager.off("progress", this.onProgressCallback);
-   4. assetDownloadManager.off("pause", this.onPauseCallback);
-   5. assetDownloadManager.off("complete", this.onCompleteCallback);
-   6. assetDownloadManager.off("fail", this.onFailedCallback);
-   7. } catch (error) {
-   8. console.error('AssetAccelDemo', `Failed to do assetDownloadManager.off, errCode: ${error.code}, errMessage: ${error.message}`);
-   9. }
-   ```
+      onPauseCallback: (downloadTaskInfo: assetDownloadManager.AssetDownloadTask) => void = (downloadTaskInfo) => {
+        hilog.info(DOMAINID, TAG, `task identifier = ${downloadTaskInfo.config.identifier} has paused.`);
+        // 添加资源包下载暂停处理逻辑。
+        // ...
+      }
+
+      onCompleteCallback: (completeInfo: assetDownloadManager.DownloadCompletedInfo) => void = async (completeInfo) => {
+        hilog.info(DOMAINID, TAG, `task identifier = ${completeInfo.downloadTask.config.identifier} has completed.`);
+        // 添加资源包下载完成处理逻辑。
+        // ...
+      }
+
+      onFailedCallback: (failedInfo: assetDownloadManager.DownloadFailedInfo) => void = async (failedInfo) => {
+        hilog.info(DOMAINID, TAG, `task identifier = ${failedInfo.downloadTask.config.identifier} has failed.`);
+        // 添加资源包下载失败处理逻辑。
+        // ...
+      }
+      // ...
+        // 订阅下载状态和下载进度事件。
+        try {
+          assetDownloadManager.on('progress', this.onProgressCallback);
+          assetDownloadManager.on('pause', this.onPauseCallback);
+          assetDownloadManager.on('complete', this.onCompleteCallback);
+          assetDownloadManager.on('fail', this.onFailedCallback);
+        } catch (error) {
+          hilog.error(DOMAINID,
+            TAG, `assetDownloadManager.on failed, errCode: ${error.code}, errMessage: ${error.message}`);
+          return;
+        }
+        // ...
+      ```
+   6. 游戏调用[off('progress')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageroffprogress)方法，取消监听资源包下载进度。游戏调用[off('pause')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageroffpause)方法，取消监听下载任务暂停事件。游戏调用[off('complete')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageroffcomplete)方法，取消监听资源包下载成功事件。游戏调用[off('fail')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanagerofffail)方法，取消监听资源包下载失败事件。
+
+      ```typescript
+      // 取消订阅下载状态和下载进度事件。
+      try {
+        assetDownloadManager.off('progress', this.onProgressCallback);
+        assetDownloadManager.off('pause', this.onPauseCallback);
+        assetDownloadManager.off('complete', this.onCompleteCallback);
+        assetDownloadManager.off('fail', this.onFailedCallback);
+      } catch (error) {
+        hilog.error(DOMAINID,
+          TAG, `assetDownloadManager.off failed, errCode: ${error.code}, errMessage: ${error.message}`);
+      }
+      ```

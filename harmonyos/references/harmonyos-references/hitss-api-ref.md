@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/hitss-api
 title: HiTSS
 breadcrumb: API参考 > 标准库 > HiTSS
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:39+08:00
+scraped_at: 2026-09-02T15:03:15+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8c6b9bf33fabf12d0ef16c564441ea6180f51dc76c56ee7fc911a9447a7092ec
+content_hash: sha256:ab678f41abbdcadcc3d555281ce3c3b76532f90dbb4765d2bc42de3f7f607d25
 ---
 
 ## 简介
@@ -32,143 +32,143 @@ HiTSS是基于TPM（Trusted Platform Module）2.0规范开发的组件，它提�
 1. 开发应用时，在访问命令传输接口或系统级接口前，需要申请权限：ohos.permission.CALL\_TPM\_CMD，申请方式请参考：[申请使用受限权限](../harmonyos-guides/declare-permissions-in-acl.md)。
 2. 如果开发者需要使用HiTSS相关能力，首先请添加头文件。
 
-   ```
-   1. #include <tss2/tss2_common.h>
-   2. #include <tss2/tss2_tpm2_types.h>
-   3. #include <tss2/tss2_mu.h>
-   4. #include <tss2/tss2_sys.h>
-   5. #include <tss2/tss2_tcti.h>
-   6. #include <tss2/tss2_tctildr.h>
+   ```c
+   #include <tss2/tss2_common.h>
+   #include <tss2/tss2_tpm2_types.h>
+   #include <tss2/tss2_mu.h>
+   #include <tss2/tss2_sys.h>
+   #include <tss2/tss2_tcti.h>
+   #include <tss2/tss2_tctildr.h>
    ```
 3. 其次在CMakeLists.txt中添加以下动态链接库。
 
-   ```
-   1. libtss2-mu.so
-   2. libtss2-sys.so
-   3. libtss2-tctildr.so
+   ```c
+   libtss2-mu.so
+   libtss2-sys.so
+   libtss2-tctildr.so
    ```
 
 ## 使用示例
 
-```
-1. #include <stdio.h>
-2. #include <tss2/tss2_tctildr.h>
-3. #include <tss2/tss2_sys.h>
-4. #include <tss2/tss2_mu.h>
+```c
+#include <stdio.h>
+#include <tss2/tss2_tctildr.h>
+#include <tss2/tss2_sys.h>
+#include <tss2/tss2_mu.h>
 
-6. #define SAFE_FREE(p) do { \
-7. if ((p) != NULL) { \
-8. free(p); \
-9. (p) = NULL; \
-10. } \
-11. } while (false)
+#define SAFE_FREE(p) do { \
+    if ((p) != NULL) { \
+        free(p); \
+        (p) = NULL; \
+    } \
+} while (false)
 
-13. // 初始化上下文
-14. TSS2_SYS_CONTEXT* InitSysCtx()
-15. {
-16. TSS2_TCTI_CONTEXT *tctiCtx = NULL;
-17. const char *nameConf = "hmsa";
-18. // nameConf参数字符串中不支持设定conf，conf必须为空
-19. // 正确用法
-20. // Tss2_TctiLdr_Initialize("hmsa", &tctiCtx);
-21. // Tss2_TctiLdr_Initialize("hmsa:", &tctiCtx);
-22. // 错误用法
-23. // Tss2_TctiLdr_Initialize("hmsa:/dev/tpm0", &tctiCtx);
-24. TSS2_RC rc = Tss2_TctiLdr_Initialize(nameConf, &tctiCtx);
-25. if (rc != TSS2_RC_SUCCESS) {
-26. return NULL;
-27. }
-28. size_t size = Tss2_Sys_GetContextSize(0);
-29. TSS2_SYS_CONTEXT *sysCtx = (TSS2_SYS_CONTEXT *)calloc(1, size);
-30. if (sysCtx == nullptr) {
-31. return NULL;
-32. }
-33. TSS2_ABI_VERSION ver = TSS2_ABI_VERSION_CURRENT;
-34. rc = Tss2_Sys_Initialize(sysCtx, size, tctiCtx, &ver);
-35. if (rc != TSS2_RC_SUCCESS) {
-36. Tss2_TctiLdr_Finalize(&tctiCtx);
-37. SAFE_FREE(sysCtx);
-38. return NULL;
-39. }
-40. return sysCtx;
-41. }
+// 初始化上下文
+TSS2_SYS_CONTEXT* InitSysCtx()
+{
+    TSS2_TCTI_CONTEXT *tctiCtx = NULL;
+    const char *nameConf = "hmsa";
+    // nameConf参数字符串中不支持设定conf，conf必须为空
+    // 正确用法
+    // Tss2_TctiLdr_Initialize("hmsa", &tctiCtx);
+    // Tss2_TctiLdr_Initialize("hmsa:", &tctiCtx);
+    // 错误用法
+    // Tss2_TctiLdr_Initialize("hmsa:/dev/tpm0", &tctiCtx);
+    TSS2_RC rc = Tss2_TctiLdr_Initialize(nameConf, &tctiCtx);
+    if (rc != TSS2_RC_SUCCESS) {
+        return NULL;
+    }
+    size_t size = Tss2_Sys_GetContextSize(0);
+    TSS2_SYS_CONTEXT *sysCtx = (TSS2_SYS_CONTEXT *)calloc(1, size);
+    if (sysCtx == nullptr) {
+        return NULL;
+    }
+    TSS2_ABI_VERSION ver = TSS2_ABI_VERSION_CURRENT;
+    rc = Tss2_Sys_Initialize(sysCtx, size, tctiCtx, &ver);
+    if (rc != TSS2_RC_SUCCESS) {
+        Tss2_TctiLdr_Finalize(&tctiCtx);
+        SAFE_FREE(sysCtx);
+        return NULL;
+    }
+    return sysCtx;
+}
 
-43. // 释放上下文
-44. void ReleaseSysCtx(TSS2_SYS_CONTEXT **sysCtx)
-45. {
-46. TSS2_TCTI_CONTEXT *tctiCtx = NULL;
-47. TSS2_RC rc = Tss2_Sys_GetTctiContext(*sysCtx, &tctiCtx);
-48. if (rc != TSS2_RC_SUCCESS) {
-49. return;
-50. }
-51. if (tctiCtx != NULL) {
-52. Tss2_TctiLdr_Finalize(&tctiCtx);
-53. }
-54. Tss2_Sys_Finalize(*sysCtx);
-55. SAFE_FREE(*sysCtx);
-56. }
+// 释放上下文
+void ReleaseSysCtx(TSS2_SYS_CONTEXT **sysCtx)
+{
+    TSS2_TCTI_CONTEXT *tctiCtx = NULL;
+    TSS2_RC rc = Tss2_Sys_GetTctiContext(*sysCtx, &tctiCtx);
+    if (rc != TSS2_RC_SUCCESS) {
+        return;
+    }
+    if (tctiCtx != NULL) {
+        Tss2_TctiLdr_Finalize(&tctiCtx);
+    }
+    Tss2_Sys_Finalize(*sysCtx);
+    SAFE_FREE(*sysCtx);
+}
 
-58. // 通过Sys API获取随机数示例
-59. void GetRandomExample()
-60. {
-61. TSS2_SYS_CONTEXT *sysCtx = InitSysCtx();
-62. if (sysCtx == NULL) {
-63. return;
-64. }
-65. TPM2B_DIGEST random = {};
-66. TSS2_RC rc = Tss2_Sys_GetRandom(sysCtx, NULL, 32, &random, NULL); // 32: 随机数长度
-67. if (rc != TSS2_RC_SUCCESS) {
-68. printf("Failed to get random, error:%d.\n", rc);
-69. }
-70. ReleaseSysCtx(&sysCtx);
-71. }
+// 通过Sys API获取随机数示例
+void GetRandomExample()
+{
+    TSS2_SYS_CONTEXT *sysCtx = InitSysCtx();
+    if (sysCtx == NULL) {
+        return;
+    }
+    TPM2B_DIGEST random = {};
+    TSS2_RC rc = Tss2_Sys_GetRandom(sysCtx, NULL, 32, &random, NULL); // 32: 随机数长度
+    if (rc != TSS2_RC_SUCCESS) {
+        printf("Failed to get random, error:%d.\n", rc);
+    }
+    ReleaseSysCtx(&sysCtx);
+}
 
-73. // 通过Sys API获取随机数示例
-74. void GetRandomExample2()
-75. {
-76. TSS2_SYS_CONTEXT *sysCtx = InitSysCtx();
-77. if (sysCtx == NULL) {
-78. return;
-79. }
-80. TPM2B_DIGEST random = {};
-81. do {
-82. if (Tss2_Sys_GetRandom_Prepare(sysCtx, 32) != TSS2_RC_SUCCESS) { // 32: 随机数长度
-83. break;
-84. }
-85. if (Tss2_Sys_Execute(sysCtx) != TSS2_RC_SUCCESS) {
-86. break;
-87. }
-88. if (Tss2_Sys_GetRandom_Complete(sysCtx, &random) != TSS2_RC_SUCCESS) {
-89. break;
-90. }
-91. } while(false);
-92. ReleaseSysCtx(&sysCtx);
-93. }
+// 通过Sys API获取随机数示例
+void GetRandomExample2()
+{
+    TSS2_SYS_CONTEXT *sysCtx = InitSysCtx();
+    if (sysCtx == NULL) {
+        return;
+    }
+    TPM2B_DIGEST random = {};
+    do {
+        if (Tss2_Sys_GetRandom_Prepare(sysCtx, 32) != TSS2_RC_SUCCESS) { // 32: 随机数长度
+            break;
+        }
+        if (Tss2_Sys_Execute(sysCtx) != TSS2_RC_SUCCESS) {
+            break;
+        }
+        if (Tss2_Sys_GetRandom_Complete(sysCtx, &random) != TSS2_RC_SUCCESS) {
+            break;
+        }
+    } while(false);
+    ReleaseSysCtx(&sysCtx);
+}
 
-95. // MU API使用示例
-96. void Int32MarshalUnmarshalExample()
-97. {
-98. INT32 data = 20;
-99. uint8_t buffer[sizeof(data)] = { 0 };
-100. size_t bufferSize = sizeof(data);
-101. // 序列化data
-102. TSS2_RC rc = Tss2_MU_INT32_Marshal(data, buffer, bufferSize, NULL);
-103. if (rc != TSS2_RC_SUCCESS) {
-104. printf("Failed to marshal data, error:%d.\n", rc);
-105. }
-106. INT32 dest = 0;
-107. // 反序列化data，然后打印
-108. rc = Tss2_MU_INT32_Unmarshal(buffer, bufferSize, NULL, &dest);
-109. if (rc != TSS2_RC_SUCCESS) {
-110. printf("Failed to unmarshal data, error:%d.\n", rc);
-111. }
-112. printf("The unmarshal result is %d.\n", dest);
-113. }
+// MU API使用示例
+void Int32MarshalUnmarshalExample()
+{
+    INT32 data = 20;
+    uint8_t buffer[sizeof(data)] = { 0 };
+    size_t bufferSize = sizeof(data);
+    // 序列化data
+    TSS2_RC rc = Tss2_MU_INT32_Marshal(data, buffer, bufferSize, NULL);
+    if (rc != TSS2_RC_SUCCESS) {
+        printf("Failed to marshal data, error:%d.\n", rc);
+    }
+    INT32 dest = 0;
+    // 反序列化data，然后打印
+    rc = Tss2_MU_INT32_Unmarshal(buffer, bufferSize, NULL, &dest);
+    if (rc != TSS2_RC_SUCCESS) {
+        printf("Failed to unmarshal data, error:%d.\n", rc);
+    }
+    printf("The unmarshal result is %d.\n", dest);
+}
 ```
 
 ## 错误码
 
-说明
+**说明** 
 
 以下仅介绍HiTSS特有错误码，通用错误码请参考[TCG TSS 2.0 Overview and Common Structures Specification](https://trustedcomputinggroup.org/wp-content/uploads/TSS_Overview_Common_v1_r10_pub09232021.pdf)。
 
@@ -232,71 +232,71 @@ TCTI接口内存错误。
 
 以下类型和结构体与TCG TSS标准规范存在差异，HiTSS在标准规范基础上进行了能力扩充和错误修复。
 
-```
-1. // HiTSS新增宏定义
-2. #define TPM2_ST_ATTEST_NV_DIGEST ((TPM2_ST) 0x801C)
+```c
+// HiTSS新增宏定义
+#define TPM2_ST_ATTEST_NV_DIGEST ((TPM2_ST) 0x801C)
 
-4. // HiTSS新增nvDigest字段
-5. typedef union TPMU_ATTEST TPMU_ATTEST;
-6. union TPMU_ATTEST {
-7. TPMS_CERTIFY_INFO certify; /* TPM2_ST_ATTEST_CERTIFY */
-8. TPMS_CREATION_INFO creation; /* TPM2_ST_ATTEST_CREATION */
-9. TPMS_QUOTE_INFO quote; /* TPM2_ST_ATTEST_QUOTE */
-10. TPMS_COMMAND_AUDIT_INFO commandAudit; /* TPM2_ST_ATTEST_COMMAND_AUDIT */
-11. TPMS_SESSION_AUDIT_INFO sessionAudit; /* TPM2_ST_ATTEST_SESSION_AUDIT */
-12. TPMS_TIME_ATTEST_INFO time; /* TPM2_ST_ATTEST_TIME */
-13. TPMS_NV_CERTIFY_INFO nv; /* TPM2_ST_ATTEST_NV */
-14. TPMS_NV_DIGEST_CERTIFY_INFO nvDigest; /* TPM2_ST_ATTEST_NV_DIGEST */
-15. };
+// HiTSS新增nvDigest字段
+typedef union TPMU_ATTEST TPMU_ATTEST;
+union TPMU_ATTEST {
+    TPMS_CERTIFY_INFO certify; /* TPM2_ST_ATTEST_CERTIFY */
+    TPMS_CREATION_INFO creation; /* TPM2_ST_ATTEST_CREATION */
+    TPMS_QUOTE_INFO quote; /* TPM2_ST_ATTEST_QUOTE */
+    TPMS_COMMAND_AUDIT_INFO commandAudit; /* TPM2_ST_ATTEST_COMMAND_AUDIT */
+    TPMS_SESSION_AUDIT_INFO sessionAudit; /* TPM2_ST_ATTEST_SESSION_AUDIT */
+    TPMS_TIME_ATTEST_INFO time; /* TPM2_ST_ATTEST_TIME */
+    TPMS_NV_CERTIFY_INFO nv; /* TPM2_ST_ATTEST_NV */
+    TPMS_NV_DIGEST_CERTIFY_INFO nvDigest; /* TPM2_ST_ATTEST_NV_DIGEST */
+};
 
-17. // HiTSS新增类型
-18. typedef TPM2_KEY_BITS TPMI_TDES_KEY_BITS;
+// HiTSS新增类型
+typedef TPM2_KEY_BITS TPMI_TDES_KEY_BITS;
 
-20. // HiTSS新增tdes字段
-21. typedef union TPMU_SYM_KEY_BITS TPMU_SYM_KEY_BITS;
-22. union TPMU_SYM_KEY_BITS {
-23. TPMI_TDES_KEY_BITS tdes; /* TPM2_ALG_TDES */
-24. TPMI_AES_KEY_BITS aes; /* TPM2_ALG_AES */
-25. TPMI_SM4_KEY_BITS sm4; /* TPM2_ALG_SM4 */
-26. TPMI_CAMELLIA_KEY_BITS camellia; /* TPM2_ALG_CAMELLIA */
-27. TPM2_KEY_BITS sym;
-28. TPMI_ALG_HASH exclusiveOr; /* TPM2_ALG_XOR */
-29. TPMS_EMPTY null; /* TPM2_ALG_NULL */
-30. };
+// HiTSS新增tdes字段
+typedef union TPMU_SYM_KEY_BITS TPMU_SYM_KEY_BITS;
+union TPMU_SYM_KEY_BITS {
+    TPMI_TDES_KEY_BITS tdes; /* TPM2_ALG_TDES */
+    TPMI_AES_KEY_BITS aes; /* TPM2_ALG_AES */
+    TPMI_SM4_KEY_BITS sm4; /* TPM2_ALG_SM4 */
+    TPMI_CAMELLIA_KEY_BITS camellia; /* TPM2_ALG_CAMELLIA */
+    TPM2_KEY_BITS sym;
+    TPMI_ALG_HASH exclusiveOr; /* TPM2_ALG_XOR */
+    TPMS_EMPTY null; /* TPM2_ALG_NULL */
+};
 
-32. // HiTSS新增tdes字段
-33. typedef union TPMU_SYM_MODE TPMU_SYM_MODE;
-34. union TPMU_SYM_MODE {
-35. TPMI_ALG_SYM_MODE tdes; /* TPM2_ALG_TDES */
-36. TPMI_ALG_SYM_MODE aes; /* TPM2_ALG_AES */
-37. TPMI_ALG_SYM_MODE sm4; /* TPM2_ALG_SM4 */
-38. TPMI_ALG_SYM_MODE camellia; /* TPM2_ALG_CAMELLIA */
-39. TPMI_ALG_SYM_MODE sym;
-40. TPMS_EMPTY exclusiveOr; /* TPM2_ALG_XOR */
-41. TPMS_EMPTY null; /* TPM2_ALG_NULL */
-42. };
+// HiTSS新增tdes字段
+typedef union TPMU_SYM_MODE TPMU_SYM_MODE;
+union TPMU_SYM_MODE {
+    TPMI_ALG_SYM_MODE tdes; /* TPM2_ALG_TDES */
+    TPMI_ALG_SYM_MODE aes; /* TPM2_ALG_AES */
+    TPMI_ALG_SYM_MODE sm4; /* TPM2_ALG_SM4 */
+    TPMI_ALG_SYM_MODE camellia; /* TPM2_ALG_CAMELLIA */
+    TPMI_ALG_SYM_MODE sym;
+    TPMS_EMPTY exclusiveOr; /* TPM2_ALG_XOR */
+    TPMS_EMPTY null; /* TPM2_ALG_NULL */
+};
 
-44. // TCG规范中缺失的定义
-45. typedef UINT32 TPM2_AT;
+// TCG规范中缺失的定义
+typedef UINT32 TPM2_AT;
 
-47. // TCG规范中缺失的定义
-48. #define TPM2_MAX_AC_CAPABILITIES (TPM2_MAX_CAP_BUFFER / sizeof(TPMS_AC_OUTPUT))
+// TCG规范中缺失的定义
+#define TPM2_MAX_AC_CAPABILITIES (TPM2_MAX_CAP_BUFFER / sizeof(TPMS_AC_OUTPUT))
 
-50. // 为方便用户使用，HiTSS新增TPM2B结构体
-51. typedef struct {
-52. UINT16 size;
-53. BYTE buffer[];
-54. } TPM2B;
+// 为方便用户使用，HiTSS新增TPM2B结构体
+typedef struct {
+    UINT16 size;
+    BYTE buffer[];
+} TPM2B;
 
-56. // TCG规范中缺失的定义
-57. typedef TPM2_HANDLE TPMI_RH_HIERARCHY_POLICY;
+// TCG规范中缺失的定义
+typedef TPM2_HANDLE TPMI_RH_HIERARCHY_POLICY;
 
-59. // TCG规范中错误定义了tag字段的类型，HiTSS进行了修正
-60. typedef struct TPMS_AC_OUTPUT TPMS_AC_OUTPUT;
-61. struct TPMS_AC_OUTPUT {
-62. TPM2_AT tag;
-63. UINT32 data;
-64. };
+// TCG规范中错误定义了tag字段的类型，HiTSS进行了修正
+typedef struct TPMS_AC_OUTPUT TPMS_AC_OUTPUT;
+struct TPMS_AC_OUTPUT {
+    TPM2_AT tag;
+    UINT32 data;
+};
 ```
 
 ## 相关参考

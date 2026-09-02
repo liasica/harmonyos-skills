@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-a
 title: 实名信息预验证
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 通用接口 > 实名信息验证与授权 > 实名信息预验证
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:14+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e29acce86e17aa8c12629529e611396f3f8f372831e1dcdf78150090f97c98e2
+scraped_at: 2026-09-02T14:53:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e2a35ea4a69b2c7214f2fbcf917afc0fde5ed87fb8f9c851905b0d48ecd0aa18
 ---
 
 ## 功能介绍
@@ -41,23 +41,23 @@ content_hash: sha256:e29acce86e17aa8c12629529e611396f3f8f372831e1dcdf78150090f97
 | 参数 | 是否必选 | 类型 | 说明 |
 | --- | --- | --- | --- |
 | credentialType | 是 | String | 证件类型。  01：身份证 |
-| credentialIdNo | 是 | String | 经过sha256做哈希处理后的证件编号。最大长度为128。 |
-| realName | 是 | String | 经过sha256做哈希处理后的用户姓名。最大长度为128。 |
+| credentialIdNo | 是 | String | 经过sha512做哈希处理后的证件编号。最大长度为128。 |
+| realName | 是 | String | 经过sha512做哈希处理后的用户姓名。最大长度为128。 |
 | openId | 是 | String | 用户对外展示的ID（获取方式请参见[获取用户信息](account-api-get-user-info-overview.md)）。长度范围为1-512。  **说明：** 入参中的实名信息，必须和 openId用户下的实名信息保持一致。 |
 
 ## 请求示例
 
-```
-1. POST /api/v1/realname/verification/preverify HTTP/1.1
-2. Content-Type: application/json;charset=UTF-8
-3. PayDevAuth: {"clientId":"10132120***","accessToken":"DQEBALZh0tlSKKiNDJ9lYYg0Du0EB3E6PvcGlFsyB*******************XR+k2EX8ry1IGdDUZG1PjfcWQ94xnK7w3ag==","traceId":"202305151026422776499","time":1684117602555, "developerSignKeyId":"76e5ee072756417a829201fa********************f9a292d23ca949202c3dac548120", "petalpaySignKeyId":"DEVELOPER_SIGN_EB48251AC36***", "headerSign":"u+H3F14Oe3fS34d32S9mGCES89XA7tSjp8+********************lOGS7eADFfw2E45WJu52vY5Ku4KGcSCnSeE6DiKs=", "bodySign":"y3DFDtDLXDBqDoItDgHmFJ343H57LKH6U5G7F/*******************asPj10iDUIFeHaszDFHpiHRT23LGHaxvHJKta6J5UxIUmApL+wGdV/juGEvQ="}
-4. Accept: application/json
-5. {
-6. "credentialType": "01",
-7. "credentialIdNo": "a27aad63294be3fbb164e3d3d4634956cc6dc7427860*******************87798851b9fcd0f828ba78cfd99bf3d64bfa83815659e989f50d537",
-8. "realName": "a24374f8658456db7a20cb73001f28f886c31232097bda8*******************ecbb12eb7db7edb57c507ebefdea4ab66f8f2f6acc835355fbef7299c5c48806a",
-9. "openId": "88e9eae22447d7a138357cbf0af2d9a3a84819ec18419631c*******************2b9cc4e33ad29e2048318b47ec98be41cecdd4e153e6216a6bd60851"
-10. }
+```json
+POST /api/v1/realname/verification/preverify HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+PayDevAuth: {"clientId":"10132120***","accessToken":"DQEBALZh0tlSKKiNDJ9lYYg0Du0EB3E6PvcGlFsyB*******************XR+k2EX8ry1IGdDUZG1PjfcWQ94xnK7w3ag==","traceId":"202305151026422776499","time":1684117602555, "developerSignKeyId":"76e5ee072756417a829201fa********************f9a292d23ca949202c3dac548120", "petalpaySignKeyId":"DEVELOPER_SIGN_EB48251AC36***", "headerSign":"u+H3F14Oe3fS34d32S9mGCES89XA7tSjp8+********************lOGS7eADFfw2E45WJu52vY5Ku4KGcSCnSeE6DiKs=", "bodySign":"y3DFDtDLXDBqDoItDgHmFJ343H57LKH6U5G7F/*******************asPj10iDUIFeHaszDFHpiHRT23LGHaxvHJKta6J5UxIUmApL+wGdV/juGEvQ="}
+Accept: application/json
+{
+  "credentialType": "01",
+  "credentialIdNo": "a27aad63294be3fbb164e3d3d4634956cc6dc7427860*******************87798851b9fcd0f828ba78cfd99bf3d64bfa83815659e989f50d537",
+  "realName": "a24374f8658456db7a20cb73001f28f886c31232097bda8*******************ecbb12eb7db7edb57c507ebefdea4ab66f8f2f6acc835355fbef7299c5c48806a",
+  "openId": "88e9eae22447d7a138357cbf0af2d9a3a84819ec18419631c*******************2b9cc4e33ad29e2048318b47ec98be41cecdd4e153e6216a6bd60851"
+}
 ```
 
 ## 响应参数
@@ -81,15 +81,15 @@ content_hash: sha256:e29acce86e17aa8c12629529e611396f3f8f372831e1dcdf78150090f97
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json; charset=UTF-8
-3. {
-4. "resultCode": "000000",
-5. "resultDesc": "Success.",
-6. "sign": "MEQCIEIWzdpziRyTi8vhwWHFu********************0YAMabeCgTDG77e+2XJItvq/ZkIcCN5/B20pQ==",
-7. "preVerifyId": "12407091401520894056950***"
-8. }
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+{
+  "resultCode": "000000",
+  "resultDesc": "Success.",
+  "sign": "MEQCIEIWzdpziRyTi8vhwWHFu********************0YAMabeCgTDG77e+2XJItvq/ZkIcCN5/B20pQ==",
+  "preVerifyId": "12407091401520894056950***"
+}
 ```
 
 ## 错误码

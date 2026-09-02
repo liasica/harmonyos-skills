@@ -3,24 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: Camera_Rect
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 结构体 > Camera_Rect
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:49+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:9c42bda3b61d1dfb420ffd61202510ef4edaa85fe6f75e2512490cc49eb4bb59
+scraped_at: 2026-09-02T15:02:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d02a0ccb304760e9babf2bf2eb1344625cd4083b5729f6dd2e9e140159627e6f
 ---
 
-```
-1. typedef struct Camera_Rect {...} Camera_Rect
+```c
+typedef struct Camera_Rect {...} Camera_Rect
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
+相机矩形。用于各类检测对象的矩形框绘制。
 
-矩形定义，返回的检测点坐标系以设备充电口在右侧时的横向设备方向为基准。该坐标系左上角为（0，0），右下角为（1，1），其中（topLeftX，topLeftY）表示矩形区域的左上角坐标，width和height分别表示矩形区域的宽和高。因此在实际使用中根据业务诉求需要裁剪或者选择人脸区域时，必须将矩形区域的x坐标和y坐标分别乘以实际相机预览输出流的宽和高，即可得到裁剪后的人脸矩形区域。
+检测点坐标系以设备横向位置（充电口朝右）为基准。
 
-实际预览流的宽高指的是相机输出流的分辨率，请参考[profile](arkts-apis-camera-i.md#profile)中的size。
+坐标系原点位于左上角 (0, 0)，右下角对应相机预览流的像素分辨率。
 
-预览流的数据获取请参考[预览流二次处理(C/C++)](../harmonyos-guides/native-camera-preview-imagereceiver.md)。
+所有参数均为整型像素值，其中topLeftX与topLeftY表示矩形左上角坐标，width与height分别表示矩形的宽高。
 
 **起始版本：** 11
 
@@ -30,15 +30,11 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
-| int32\_t topLeftX | 左上角的X坐标，范围[0, 1]。 |
-| int32\_t topLeftY | 左上角的Y坐标，范围[0, 1]。 |
-| int32\_t width | 矩形宽度，范围[0, 1]。 |
-| int32\_t height | 矩形高度，范围[0, 1]。 |
+| int32\_t topLeftX | 矩形左上角的X坐标。  取值范围：[0, 预览流宽度]，例如对于1920\*1440的预览流，取值范围为[0,1920]。 |
+| int32\_t topLeftY | 矩形左上角的Y坐标。  取值范围：[0, 预览流高度]，例如对于 1920\*1440 的预览流，取值范围为[0,1440]。 |
+| int32\_t width | 矩形宽度。  该值不超过坐标系X轴的上限，即topLeftX的最大值。 |
+| int32\_t height | 矩形高度。  该值不超过坐标系Y轴的上限，即topLeftY的最大值。 |

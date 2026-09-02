@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/launch-page-r
 title: 启动页资源分类配置
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 应用启动页的配置与使用 > 启动页资源分类配置
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:46+08:00
+scraped_at: 2026-09-02T14:49:54+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:c4e05b0907e158a7f5ef97c21684b4cccdf19fdc9de5ba8bbcd4edecc0e9fb27
+content_hash: sha256:b0778c1078dd13f4ca6a700101b558a03833d8ea0bed615ad97898f5cd1f4ccd
 ---
 
 启动页资源配置与其他资源配置相同，支持资源分类配置，可针对不同的场景配置不同资源，常用于在深色模式或不同设备类型上配置不同的启动页内容。
@@ -19,27 +19,27 @@ content_hash: sha256:c4e05b0907e158a7f5ef97c21684b4cccdf19fdc9de5ba8bbcd4edecc0e
 
 1. 修改resources/base/element/color.json中，对应配置项start\_window\_background的颜色值，对应一般情况下的默认启动页背景色，示例如下：
 
-   ```
-   1. {
-   2. "color": [
-   3. {
-   4. "name": "start_window_background",
-   5. "value": "#FFFFFFFF"
-   6. }
-   7. ]
-   8. }
+   ```json
+   {
+     "color": [
+       {
+         "name": "start_window_background",
+         "value": "#FFFFFFFF"
+       }
+     ]
+   }
    ```
 2. 修改resources/dark/element/color.json中，对应配置项start\_window\_background的颜色值，对应深色模式下的默认启动页背景色，示例如下：
 
-   ```
-   1. {
-   2. "color": [
-   3. {
-   4. "name": "start_window_background",
-   5. "value": "#FF000000"
-   6. }
-   7. ]
-   8. }
+   ```json
+   {
+     "color": [
+       {
+         "name": "start_window_background",
+         "value": "#FF000000"
+       }
+     ]
+   }
    ```
 
 ## 配置不同设备启动页

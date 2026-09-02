@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-wearab
 title: 管理用户授权
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > Wearable应用开发 > 管理用户授权
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:12+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5b39c928c7c76bf1ad894803e4e2f428959666143b1fb419c9f45114afb489b3
+scraped_at: 2026-09-02T14:59:56+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:694a7f9e26ee396395248b5568fdcb28182e323c6b560c65679e835e982451cd
 ---
 
 ## 场景介绍
 
+从5.1.1(19) Release版本开始，支持管理用户授权。
+
 应用拉起华为账号同步和授权界面，由用户授权相应的数据访问权限。用户可以自主选择授权的数据类型，可以只授权部分数据权限。
 
 应用所能操作的用户数据，是用户授权和运动健康服务审批通过的数据权限的交集。
-
-## 约束与限制
-
-从5.1.1(19) Release版本开始支持。
 
 ## 接口说明
 
@@ -36,91 +34,87 @@ content_hash: sha256:5b39c928c7c76bf1ad894803e4e2f428959666143b1fb419c9f45114afb
 
 ### 用户授权
 
-1.导入运动健康功能模块及相关公共模块。
+1. 导入运动健康功能模块及相关公共模块。
 
-```
-1. import { healthStore } from '@kit.HealthServiceKit';
-2. import { common } from '@kit.AbilityKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-```
+   ```typescript
+   import { healthStore } from '@kit.HealthServiceKit';
+   import { common } from '@kit.AbilityKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```
+2. 创建授权请求，确保授权参数中的权限已在申请运动健康服务时勾选，权限说明请参考[权限说明](health-permission-description.md)。
 
-2.创建授权请求，确保授权参数中的权限已在申请运动健康服务时勾选，权限说明请参考[权限说明](health-permission-description.md)。
+   ```typescript
+   let authorizationParameter: healthStore.AuthorizationRequest = {
+     readDataTypes: [healthStore.exerciseSequenceHelper.DATA_TYPE, healthStore.samplePointHelper.heartRate.DATA_TYPE],
+     writeDataTypes: [healthStore.exerciseSequenceHelper.DATA_TYPE, healthStore.samplePointHelper.heartRate.DATA_TYPE]
+   }
+   ```
+3. 调用[requestAuthorizations](../harmonyos-references/health-api-healthstore.md#healthstorerequestauthorizations)方法执行登录授权请求，并处理返回结果。
 
-```
-1. let authorizationParameter: healthStore.AuthorizationRequest = {
-2. readDataTypes: [healthStore.exerciseSequenceHelper.DATA_TYPE, healthStore.samplePointHelper.heartRate.DATA_TYPE],
-3. writeDataTypes: [healthStore.exerciseSequenceHelper.DATA_TYPE, healthStore.samplePointHelper.heartRate.DATA_TYPE]
-4. }
-```
-
-3.调用[requestAuthorizations](../harmonyos-references/health-api-healthstore.md#healthstorerequestauthorizations)方法执行登录授权请求，并处理返回结果。
-
-```
-1. try {
-2. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-3. let authorizationResponse = await healthStore.requestAuthorizations(this.getUIContext().getHostContext() as common.UIAbilityContext, authorizationParameter);
-4. hilog.info(0x0000, 'testTag', 'Succeeded in requesting authorization.');
-5. authorizationResponse.writeDataTypes.forEach(dataType => {
-6. hilog.info(0x0000, 'testTag', `grantedWriteDataType is : ${dataType.name}`);
-7. });
-8. authorizationResponse.readDataTypes.forEach(dataType => {
-9. hilog.info(0x0000, 'testTag', `grantedReadDataTypes is : ${dataType.name}`);
-10. });
-11. } catch (err) {
-12. hilog.error(0x0000, 'testTag', `Failed to request authorization. Code: ${err.code}, message: ${err.message}`);
-13. }
-```
+   ```typescript
+   try {
+     // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+     let authorizationResponse = await healthStore.requestAuthorizations(this.getUIContext().getHostContext() as common.UIAbilityContext, authorizationParameter);
+     hilog.info(0x0000, 'testTag', 'Succeeded in requesting authorization.');
+     authorizationResponse.writeDataTypes.forEach(dataType => {
+       hilog.info(0x0000, 'testTag', `grantedWriteDataType is : ${dataType.name}`);
+     });
+     authorizationResponse.readDataTypes.forEach(dataType => {
+       hilog.info(0x0000, 'testTag', `grantedReadDataTypes is : ${dataType.name}`);
+     });
+   } catch (err) {
+     hilog.error(0x0000, 'testTag', `Failed to request authorization. Code: ${err.code}, message: ${err.message}`);
+   }
+   ```
 
 ### 查询权限
 
-1.导入运动健康服务功能模块及相关公共模块。
+1. 导入运动健康服务功能模块及相关公共模块。
 
-```
-1. import { healthStore } from '@kit.HealthServiceKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-```
+   ```typescript
+   import { healthStore } from '@kit.HealthServiceKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```
+2. 创建查询权限请求。
 
-2.创建查询权限请求。
+   ```typescript
+   let queryAuthorizationRequest: healthStore.AuthorizationRequest = {
+     readDataTypes: [healthStore.exerciseSequenceHelper.DATA_TYPE, healthStore.samplePointHelper.heartRate.DATA_TYPE],
+     writeDataTypes: [healthStore.exerciseSequenceHelper.DATA_TYPE, healthStore.samplePointHelper.heartRate.DATA_TYPE]
+   }
+   ```
+3. 调用[getAuthorizations](../harmonyos-references/health-api-healthstore.md#healthstoregetauthorizations)方法执行查询权限请求，并处理返回结果。
 
-```
-1. let queryAuthorizationRequest: healthStore.AuthorizationRequest = {
-2. readDataTypes: [healthStore.exerciseSequenceHelper.DATA_TYPE, healthStore.samplePointHelper.heartRate.DATA_TYPE],
-3. writeDataTypes: [healthStore.exerciseSequenceHelper.DATA_TYPE, healthStore.samplePointHelper.heartRate.DATA_TYPE]
-4. }
-```
-
-3.调用[getAuthorizations](../harmonyos-references/health-api-healthstore.md#healthstoregetauthorizations)方法执行查询权限请求，并处理返回结果。
-
-```
-1. try {
-2. let queryAuthorizationResponse = await healthStore.getAuthorizations(queryAuthorizationRequest);
-3. hilog.info(0x0000, 'testTag', 'Succeeded in getting authorization.');
-4. queryAuthorizationResponse.writeDataTypes.forEach(dataType => {
-5. hilog.info(0x0000, 'testTag', `grantedWriteDataType is : ${dataType.name}`);
-6. });
-7. queryAuthorizationResponse.readDataTypes.forEach(dataType => {
-8. hilog.info(0x0000, 'testTag', `grantedReadDataTypes is : ${dataType.name}`);
-9. });
-10. } catch (err) {
-11. hilog.error(0x0000, 'testTag', `Failed to get authorization. Code: ${err.code}, message: ${err.message}`);
-12. }
-```
+   ```typescript
+   try {
+     let queryAuthorizationResponse = await healthStore.getAuthorizations(queryAuthorizationRequest);
+     hilog.info(0x0000, 'testTag', 'Succeeded in getting authorization.');
+     queryAuthorizationResponse.writeDataTypes.forEach(dataType => {
+       hilog.info(0x0000, 'testTag', `grantedWriteDataType is : ${dataType.name}`);
+     });
+     queryAuthorizationResponse.readDataTypes.forEach(dataType => {
+       hilog.info(0x0000, 'testTag', `grantedReadDataTypes is : ${dataType.name}`);
+     });
+   } catch (err) {
+     hilog.error(0x0000, 'testTag', `Failed to get authorization. Code: ${err.code}, message: ${err.message}`);
+   }
+   ```
 
 ### 取消授权
 
 1. 导入运动健康服务功能模块及相关公共模块。
 
-   ```
-   1. import { healthStore } from '@kit.HealthServiceKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { healthStore } from '@kit.HealthServiceKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 调用[cancelAuthorizations](../harmonyos-references/health-api-healthstore.md#healthstorecancelauthorizations)方法执行取消授权，并处理返回结果。
 
-   ```
-   1. try {
-   2. await healthStore.cancelAuthorizations();
-   3. hilog.info(0x0000, 'testTag', 'Succeeded in canceling authorization.');
-   4. } catch (err) {
-   5. hilog.error(0x0000, 'testTag', `Failed to cancel authorization. Code: ${err.code}, message: ${err.message}`);
-   6. }
+   ```typescript
+   try {
+     await healthStore.cancelAuthorizations();
+     hilog.info(0x0000, 'testTag', 'Succeeded in canceling authorization.');
+   } catch (err) {
+     hilog.error(0x0000, 'testTag', `Failed to cancel authorization. Code: ${err.code}, message: ${err.message}`);
+   }
    ```

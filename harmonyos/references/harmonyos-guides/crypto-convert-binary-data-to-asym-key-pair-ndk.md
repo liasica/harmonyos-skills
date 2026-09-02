@@ -1,16 +1,16 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-convert-binary-data-to-asym-key-pair-ndk
 title: 指定二进制数据转换非对称密钥对(C/C++)
-breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥生成和转换 > 密钥生成和转换开发指导 > 指定二进制数据转换非对称密钥对(C/C++)
+breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥生成与转换 > 指定二进制数据转换非对称密钥对(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:18+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6852769bf2fa7dfcb1c98edb8f7e63f078da1aa9ee5f7677589576d9c2e7839a
+scraped_at: 2026-09-02T14:59:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a3c7d812af044011714fa82c9476ae1cf20ca6e5fa87f9f825155e9bc842aff0
 ---
 
 以RSA、ECC、SM2为例，根据指定的非对称密钥二进制数据，生成非对称密钥对（OH\_CryptoKeyPair），即将外部或存储的二进制数据转换为算法库的密钥对象，该对象可用于后续的加解密等操作。
 
-说明
+**说明** 
 
 针对非对称密钥的convertKey操作：
 
@@ -19,13 +19,13 @@ content_hash: sha256:6852769bf2fa7dfcb1c98edb8f7e63f078da1aa9ee5f7677589576d9c2e
 
 ## 在CMake脚本中链接相关动态库
 
-```
-1. target_link_libraries(entry PUBLIC libohcrypto.so)
+```txt
+target_link_libraries(entry PUBLIC libohcrypto.so)
 ```
 
 ## 指定二进制数据转换RSA密钥对
 
-对应的算法规格请查看[非对称密钥生成和转换规格：RSA](crypto-asym-key-generation-conversion-spec.md#rsa)。
+对应的算法规格请查看[非对称密钥生成和转换规格：RSA](crypto-key-generation-conversion.md#rsa)。
 
 1. 获取RSA公钥或私钥二进制数据，封装成[Crypto\_DataBlob](../harmonyos-references/capi-cryptocommonapi-crypto-datablob.md)。
 
@@ -38,49 +38,47 @@ content_hash: sha256:6852769bf2fa7dfcb1c98edb8f7e63f078da1aa9ee5f7677589576d9c2e
 * 以下以生成RSA密钥对为例：
 
   ```
-  1. #include "CryptoArchitectureKit/crypto_common.h"
-  2. #include "CryptoArchitectureKit/crypto_asym_key.h"
-  3. #include "file.h"
+  #include "CryptoArchitectureKit/crypto_common.h"
+  #include "CryptoArchitectureKit/crypto_asym_key.h"
+  #include "file.h"
 
-  5. OH_Crypto_ErrCode doTestDataCovertAsymKey()
-  6. {
-  7. OH_CryptoAsymKeyGenerator *ctx = nullptr;
-  8. OH_Crypto_ErrCode ret;
+  OH_Crypto_ErrCode doTestDataConvertAsymKey()
+  {
+      OH_CryptoAsymKeyGenerator *ctx = nullptr;
+      OH_Crypto_ErrCode ret;
 
-  10. ret = OH_CryptoAsymKeyGenerator_Create("RSA1024|PRIMES_2", &ctx);
-  11. if (ret != CRYPTO_SUCCESS) {
-  12. return ret;
-  13. }
+      ret = OH_CryptoAsymKeyGenerator_Create("RSA1024|PRIMES_2", &ctx);
+      if (ret != CRYPTO_SUCCESS) {
+          return ret;
+      }
 
-  15. uint8_t rsaDatablob[] = {48,  129, 159, 48,  13,  6,   9,   42,  134, 72,  134, 247, 13,  1,   1,   1,   5,   0,
-  16. 3,   129, 141, 0,   48,  129, 137, 2,   129, 129, 0,   235, 184, 151, 247, 130, 216, 140,
-  17. 187, 64,  124, 219, 137, 140, 184, 53,  137, 216, 105, 156, 141, 137, 165, 30,  80,  232,
-  18. 55,  96,  46,  23,  237, 197, 123, 121, 27,  240, 190, 14,  111, 237, 172, 67,  42,  47,
-  19. 164, 226, 248, 211, 157, 213, 194, 131, 109, 181, 41,  173, 217, 127, 252, 121, 126, 26,
-  20. 130, 55,  4,   134, 104, 73,  5,   132, 91,  214, 146, 232, 64,  99,  87,  33,  222, 155,
-  21. 159, 9,   59,  212, 144, 46,  183, 83,  89,  220, 189, 148, 13,  176, 5,   139, 156, 230,
-  22. 143, 16,  152, 79,  36,  8,   112, 40,  174, 35,  83,  82,  57,  137, 87,  123, 215, 99,
-  23. 199, 66,  131, 150, 31,  143, 56,  252, 2,   73,  41,  70,  159, 2,   3,   1,   0,   1};
-  24. Crypto_DataBlob retBlob = {.data = rsaDatablob, .len = sizeof(rsaDatablob)};
+      uint8_t rsaDatablob[] = {48,  129, 159, 48,  13,  6,   9,   42,  134, 72,  134, 247, 13,  1,   1,   1,   5,   0,
+                               3,   129, 141, 0,   48,  129, 137, 2,   129, 129, 0,   235, 184, 151, 247, 130, 216, 140,
+                               187, 64,  124, 219, 137, 140, 184, 53,  137, 216, 105, 156, 141, 137, 165, 30,  80,  232,
+                               55,  96,  46,  23,  237, 197, 123, 121, 27,  240, 190, 14,  111, 237, 172, 67,  42,  47,
+                               164, 226, 248, 211, 157, 213, 194, 131, 109, 181, 41,  173, 217, 127, 252, 121, 126, 26,
+                               130, 55,  4,   134, 104, 73,  5,   132, 91,  214, 146, 232, 64,  99,  87,  33,  222, 155,
+                               159, 9,   59,  212, 144, 46,  183, 83,  89,  220, 189, 148, 13,  176, 5,   139, 156, 230,
+                               143, 16,  152, 79,  36,  8,   112, 40,  174, 35,  83,  82,  57,  137, 87,  123, 215, 99,
+                               199, 66,  131, 150, 31,  143, 56,  252, 2,   73,  41,  70,  159, 2,   3,   1,   0,   1};
+      Crypto_DataBlob retBlob = {.data = rsaDatablob, .len = sizeof(rsaDatablob)};
 
-  26. OH_CryptoKeyPair *dupKeyPair = nullptr;
-  27. ret = OH_CryptoAsymKeyGenerator_Convert(ctx, CRYPTO_DER, &retBlob, nullptr, &dupKeyPair);
-  28. if (ret != CRYPTO_SUCCESS) {
-  29. OH_CryptoAsymKeyGenerator_Destroy(ctx);
-  30. return ret;
-  31. }
-
-  33. OH_CryptoAsymKeyGenerator_Destroy(ctx);
-  34. OH_CryptoKeyPair_Destroy(dupKeyPair);
-  35. return ret;
-  36. }
+      OH_CryptoKeyPair *dupKeyPair = nullptr;
+      ret = OH_CryptoAsymKeyGenerator_Convert(ctx, CRYPTO_DER, &retBlob, nullptr, &dupKeyPair);
+      if (ret != CRYPTO_SUCCESS) {
+          OH_CryptoAsymKeyGenerator_Destroy(ctx);
+          return ret;
+      }
+      
+      OH_CryptoAsymKeyGenerator_Destroy(ctx);
+      OH_CryptoKeyPair_Destroy(dupKeyPair);
+      return ret;
+  }
   ```
-
-  [rsa.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Security/CryptoArchitectureKit/KeyGenerationConversion/BinaryDataConvertAsymmetricKeyPair/entry/src/main/cpp/types/project/rsa.cpp#L16-L53)
 
 ## 指定二进制数据转换ECC密钥对
 
-对应的算法规格请查看[非对称密钥生成和转换规格：ECC](crypto-asym-key-generation-conversion-spec.md#ecc)。
+对应的算法规格请查看[非对称密钥生成和转换规格：ECC](crypto-key-generation-conversion.md#ecc)。
 
 1. 获取ECC公钥或私钥二进制数据，封装成[Crypto\_DataBlob](../harmonyos-references/capi-cryptocommonapi-crypto-datablob.md)。
 
@@ -91,50 +89,48 @@ content_hash: sha256:6852769bf2fa7dfcb1c98edb8f7e63f078da1aa9ee5f7677589576d9c2e
 * 以下以生成ECC密钥对为例：
 
   ```
-  1. #include "CryptoArchitectureKit/crypto_common.h"
-  2. #include "CryptoArchitectureKit/crypto_asym_key.h"
-  3. #include "file.h"
+  #include "CryptoArchitectureKit/crypto_common.h"
+  #include "CryptoArchitectureKit/crypto_asym_key.h"
+  #include "file.h"
 
-  5. OH_Crypto_ErrCode doAsymEccCovert()
-  6. {
-  7. OH_CryptoAsymKeyGenerator *ctx = nullptr;
-  8. OH_Crypto_ErrCode ret;
+  OH_Crypto_ErrCode doAsymEccConvert()
+  {
+      OH_CryptoAsymKeyGenerator *ctx = nullptr;
+      OH_Crypto_ErrCode ret;
 
-  10. ret = OH_CryptoAsymKeyGenerator_Create("ECC256", &ctx);
-  11. if (ret != CRYPTO_SUCCESS) {
-  12. return ret;
-  13. }
+      ret = OH_CryptoAsymKeyGenerator_Create("ECC256", &ctx);
+      if (ret != CRYPTO_SUCCESS) {
+          return ret;
+      }
 
-  15. uint8_t ecc224PubKeyBlobData[] = {48, 89, 48, 19, 6, 7, 42, 134, 72, 206, 61, 2, 1, 6, 8, 42, 134, 72, 206,
-  16. 61, 3, 1, 7, 3, 66, 0, 4, 157, 58, 248, 205, 95, 171, 229, 33, 116, 44, 192, 12, 115, 119, 84, 156,
-  17. 128, 56, 180, 246, 84, 43, 33, 244, 224, 221, 181, 154, 155, 222, 157, 124, 131, 217, 214, 134, 199,
-  18. 155, 61, 196, 203, 107, 13, 227, 121, 57, 199, 109, 220, 103, 55, 78, 148, 185, 226, 212, 162, 31,
-  19. 66, 201, 50, 129, 1, 156};
+      uint8_t ecc256PubKeyBlobData[] = {48, 89, 48, 19, 6, 7, 42, 134, 72, 206, 61, 2, 1, 6, 8, 42, 134, 72, 206,
+          61, 3, 1, 7, 3, 66, 0, 4, 157, 58, 248, 205, 95, 171, 229, 33, 116, 44, 192, 12, 115, 119, 84, 156,
+          128, 56, 180, 246, 84, 43, 33, 244, 224, 221, 181, 154, 155, 222, 157, 124, 131, 217, 214, 134, 199,
+          155, 61, 196, 203, 107, 13, 227, 121, 57, 199, 109, 220, 103, 55, 78, 148, 185, 226, 212, 162, 31,
+          66, 201, 50, 129, 1, 156};
 
-  21. uint8_t ecc224PriKeyBlobData[] = {48, 49, 2, 1, 1, 4, 32, 255, 121, 33, 196, 188, 159, 112, 149, 146, 107,
-  22. 243, 78, 152, 214, 12, 119, 87, 199, 207, 57, 116, 64, 150, 240, 121, 22, 88, 138, 196, 71, 70, 222,
-  23. 160, 10, 6, 8, 42, 134, 72, 206, 61, 3, 1, 7};
-  24. Crypto_DataBlob pubBlob = {.data = ecc224PubKeyBlobData, .len = sizeof(ecc224PubKeyBlobData)};
-  25. Crypto_DataBlob priBlob = {.data = ecc224PriKeyBlobData, .len = sizeof(ecc224PriKeyBlobData)};
+      uint8_t ecc256PriKeyBlobData[] = {48, 49, 2, 1, 1, 4, 32, 255, 121, 33, 196, 188, 159, 112, 149, 146, 107,
+          243, 78, 152, 214, 12, 119, 87, 199, 207, 57, 116, 64, 150, 240, 121, 22, 88, 138, 196, 71, 70, 222,
+          160, 10, 6, 8, 42, 134, 72, 206, 61, 3, 1, 7};
+      Crypto_DataBlob pubBlob = {.data = ecc256PubKeyBlobData, .len = sizeof(ecc256PubKeyBlobData)};
+      Crypto_DataBlob priBlob = {.data = ecc256PriKeyBlobData, .len = sizeof(ecc256PriKeyBlobData)};
 
-  27. OH_CryptoKeyPair *dupKeyPair = nullptr;
-  28. ret = OH_CryptoAsymKeyGenerator_Convert(ctx, CRYPTO_DER, &pubBlob, &priBlob, &dupKeyPair);
-  29. if (ret != CRYPTO_SUCCESS) {
-  30. OH_CryptoAsymKeyGenerator_Destroy(ctx);
-  31. return ret;
-  32. }
+      OH_CryptoKeyPair *dupKeyPair = nullptr;
+      ret = OH_CryptoAsymKeyGenerator_Convert(ctx, CRYPTO_DER, &pubBlob, &priBlob, &dupKeyPair);
+      if (ret != CRYPTO_SUCCESS) {
+          OH_CryptoAsymKeyGenerator_Destroy(ctx);
+          return ret;
+      }
 
-  34. OH_CryptoAsymKeyGenerator_Destroy(ctx);
-  35. OH_CryptoKeyPair_Destroy(dupKeyPair);
-  36. return ret;
-  37. }
+      OH_CryptoAsymKeyGenerator_Destroy(ctx);
+      OH_CryptoKeyPair_Destroy(dupKeyPair);
+      return ret;
+  }
   ```
-
-  [ecc.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Security/CryptoArchitectureKit/KeyGenerationConversion/BinaryDataConvertAsymmetricKeyPair/entry/src/main/cpp/types/project/ecc.cpp#L16-L54)
 
 ## 指定二进制数据转换SM2密钥对
 
-对应的算法规格请查看[非对称密钥生成和转换规格：SM2](crypto-asym-key-generation-conversion-spec.md#sm2)。
+对应的算法规格请查看[非对称密钥生成和转换规格：SM2](crypto-key-generation-conversion.md#sm2)。
 
 1. 获取SM2公钥或私钥二进制数据，封装成[Crypto\_DataBlob](../harmonyos-references/capi-cryptocommonapi-crypto-datablob.md)。
 
@@ -145,43 +141,41 @@ content_hash: sha256:6852769bf2fa7dfcb1c98edb8f7e63f078da1aa9ee5f7677589576d9c2e
 * 以生成SM2密钥对为例：
 
   ```
-  1. #include "CryptoArchitectureKit/crypto_common.h"
-  2. #include "CryptoArchitectureKit/crypto_asym_key.h"
-  3. #include "file.h"
+  #include "CryptoArchitectureKit/crypto_common.h"
+  #include "CryptoArchitectureKit/crypto_asym_key.h"
+  #include "file.h"
 
-  5. OH_Crypto_ErrCode doAsymSm2Covert()
-  6. {
-  7. OH_CryptoAsymKeyGenerator *ctx = nullptr;
-  8. OH_CryptoKeyPair *dupKeyPair = nullptr;
-  9. OH_Crypto_ErrCode ret;
+  OH_Crypto_ErrCode doAsymSm2Convert()
+  {
+      OH_CryptoAsymKeyGenerator *ctx = nullptr;
+      OH_CryptoKeyPair *dupKeyPair = nullptr;
+      OH_Crypto_ErrCode ret;
 
-  11. ret = OH_CryptoAsymKeyGenerator_Create("SM2_256", &ctx);
-  12. if (ret != CRYPTO_SUCCESS) {
-  13. return ret;
-  14. }
+      ret = OH_CryptoAsymKeyGenerator_Create("SM2_256", &ctx);
+      if (ret != CRYPTO_SUCCESS) {
+          return ret;
+      }
 
-  16. uint8_t sm2PubKeyBlobData[] = {48,  89,  48,  19,  6,   7,   42,  134, 72,  206, 61,  2,   1,   6,   8,   42,
-  17. 134, 72,  206, 61,  3,   1,   7,   3,   66,  0,   4,   157, 58,  248, 205, 95,
-  18. 171, 229, 33,  116, 44,  192, 12,  115, 119, 84,  156, 128, 56,  180, 246, 84,
-  19. 43,  33,  244, 224, 221, 181, 154, 155, 222, 157, 124, 131, 217, 214, 134, 199,
-  20. 155, 61,  196, 203, 107, 13,  227, 121, 57,  199, 109, 220, 103, 55,  78,  148,
-  21. 185, 226, 212, 162, 31,  66,  201, 50,  129, 1,   156};
+      uint8_t sm2PubKeyBlobData[] = {48,  89,  48,  19,  6,   7,   42,  134, 72,  206, 61,  2,   1,   6,   8,   42,
+                                     134, 72,  206, 61,  3,   1,   7,   3,   66,  0,   4,   157, 58,  248, 205, 95,
+                                     171, 229, 33,  116, 44,  192, 12,  115, 119, 84,  156, 128, 56,  180, 246, 84,
+                                     43,  33,  244, 224, 221, 181, 154, 155, 222, 157, 124, 131, 217, 214, 134, 199,
+                                     155, 61,  196, 203, 107, 13,  227, 121, 57,  199, 109, 220, 103, 55,  78,  148,
+                                     185, 226, 212, 162, 31,  66,  201, 50,  129, 1,   156};
 
-  23. uint8_t sm2PriKeyBlobData[] = {48,  49,  2,   1,   1,   4,   32, 255, 121, 33, 196, 188, 159, 112, 149, 146, 107,
-  24. 243, 78,  152, 214, 12,  119, 87, 199, 207, 57, 116, 64,  150, 240, 121, 22,  88,
-  25. 138, 196, 71,  70,  222, 160, 10, 6,   8,   42, 134, 72,  206, 61,  3,   1,   7};
-  26. Crypto_DataBlob pubBlob = {.data = sm2PubKeyBlobData, .len = sizeof(sm2PubKeyBlobData)};
-  27. Crypto_DataBlob priBlob = {.data = sm2PriKeyBlobData, .len = sizeof(sm2PriKeyBlobData)};
-  28. ret = OH_CryptoAsymKeyGenerator_Convert(ctx, CRYPTO_DER, &pubBlob, &priBlob, &dupKeyPair);
-  29. if (ret != CRYPTO_SUCCESS) {
-  30. OH_CryptoAsymKeyGenerator_Destroy(ctx);
-  31. return ret;
-  32. }
+      uint8_t sm2PriKeyBlobData[] = {48,  49,  2,   1,   1,   4,   32, 255, 121, 33, 196, 188, 159, 112, 149, 146, 107,
+                                     243, 78,  152, 214, 12,  119, 87, 199, 207, 57, 116, 64,  150, 240, 121, 22,  88,
+                                     138, 196, 71,  70,  222, 160, 10, 6,   8,   42, 134, 72,  206, 61,  3,   1,   7};
+      Crypto_DataBlob pubBlob = {.data = sm2PubKeyBlobData, .len = sizeof(sm2PubKeyBlobData)};
+      Crypto_DataBlob priBlob = {.data = sm2PriKeyBlobData, .len = sizeof(sm2PriKeyBlobData)};
+      ret = OH_CryptoAsymKeyGenerator_Convert(ctx, CRYPTO_DER, &pubBlob, &priBlob, &dupKeyPair);
+      if (ret != CRYPTO_SUCCESS) {
+          OH_CryptoAsymKeyGenerator_Destroy(ctx);
+          return ret;
+      }
 
-  34. OH_CryptoAsymKeyGenerator_Destroy(ctx);
-  35. OH_CryptoKeyPair_Destroy(dupKeyPair);
-  36. return ret;
-  37. }
+      OH_CryptoAsymKeyGenerator_Destroy(ctx);
+      OH_CryptoKeyPair_Destroy(dupKeyPair);
+      return ret;
+  }
   ```
-
-  [sm2.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Security/CryptoArchitectureKit/KeyGenerationConversion/BinaryDataConvertAsymmetricKeyPair/entry/src/main/cpp/types/project/sm2.cpp#L16-L54)

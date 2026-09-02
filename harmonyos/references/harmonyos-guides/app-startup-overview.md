@@ -1,16 +1,16 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-startup-overview
 title: 拉起指定应用概述
-breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > 应用间跳转 > 拉起指定应用 > 拉起指定应用概述
+breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起指定应用 > 拉起指定应用概述
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:25:49+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:b282366e7b34ab943dcde0483d9fde547fe2411e5471259d767ee09da6b4a521
+scraped_at: 2026-09-02T14:59:10+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ad426a4f16628bbfce645911066a176100cc82f10b23aa83423e866b0681f9cf
 ---
 
 本章节主要介绍如何通过应用链接跳转的方式拉起指定应用。
 
-说明
+**说明** 
 
 从API 12开始，已不再推荐三方应用使用指定Ability方式（即显式Want）拉起其他应用。关于如何从指定Ability方式切换到指定[应用链接](app-startup-overview.md#应用链接)方式，详见[显式Want跳转切换应用链接跳转适配指导](uiability-startup-adjust.md)。
 
@@ -18,8 +18,8 @@ content_hash: sha256:b282366e7b34ab943dcde0483d9fde547fe2411e5471259d767ee09da6b
 
 应用链接是指可以将用户引导至应用内特定位置或相关网页的URL，常见的格式如下。更多关于应用链接格式与字段含义的说明，详见[应用链接说明](app-uri-config.md)。
 
-```
-1. scheme://host[:port]/path
+```txt
+scheme://host[:port]/path
 ```
 
 ## 运作机制
@@ -44,9 +44,9 @@ content_hash: sha256:b282366e7b34ab943dcde0483d9fde547fe2411e5471259d767ee09da6b
 | 是否可用于分享或直接在网页中访问 | 可以 | 不可以，需在代码中调用。 |
 | 是否可以直接拉起目标应用 | 可以 | 可以，但不推荐使用，存在被仿冒风险。 |
 
-Deep Linking与App Linking均可以使用[openLink](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#openlink12)接口实现，不同条件下的跳转效果如下。
+Deep Linking与App Linking均可以使用[openLink()](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#openlink12)接口实现，不同条件下的跳转效果如下。
 
-说明
+**说明** 
 
 该接口中的appLinkingOnly字段表示是否必须以App Linking的方式启动UIAbility，默认为false。appLinkingOnly为true一般只用于浏览器等应用。
 
@@ -59,23 +59,23 @@ Deep Linking与App Linking均可以使用[openLink](../harmonyos-references/js-a
 
 通过App Linking方式拉起指定应用的示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/-4e3beLGTBi1APsAZ4NrcQ/zh-cn_image_0000002589323861.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/hAR_Rcu1RvCL1I3xve9dJw/zh-cn_image_0000002736432185.png)
 
 通过Deep Linking方式拉起应用时，如果存在多个符合条件的应用，需要用户选择后方可跳转到指定应用。示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/v9waFtHNSTuwKQKwSCS8Tw/zh-cn_image_0000002589243799.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/5lXxE2kdR6yRdK2RCgr-Wg/zh-cn_image_0000002706833030.png)
 
-## FAQ
+## 常见问题
 
 ### 跨应用拉起UIAbility时，如何感知跳转弹框的用户选择结果
 
-通过startAbility方式或Deep Linking方式拉起其他应用的UIAbility时，系统会弹出“是否允许跳转”的确认弹框，由用户进行选择。当前暂不支持获取用户操作结果，当用户取消跳转时，应用也无法感知。相关能力已纳入版本需求规划，请持续关注。
+通过startAbility方式或Deep Linking方式拉起其他应用的UIAbility时，系统会弹出“是否允许跳转”的确认弹框，由用户进行选择。可通过[CompletionHandler](../harmonyos-references/js-apis-app-ability-completionhandler.md)感知用户的选择结果。
 
 ### 应用间跳转时如何取消“是否允许跳转”的确认弹框
 
 通过[openLink](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#openlink12)或[startAbility](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#startability)拉起其他应用时，为了防止应用的恶意跳转，系统会弹出“是否允许跳转”的确认弹框，由用户进行确认。不支持开发者取消该弹框。
 
-说明
+**说明** 
 
 “是否允许跳转”的确认弹框实际显示的提示语由系统定义，比如“xx想要拉起xx”，此处仅为举例。
 
@@ -87,125 +87,125 @@ Deep Linking与App Linking均可以使用[openLink](../harmonyos-references/js-a
 
   示例如下：
 
-  ```
-  1. import { common, OpenLinkOptions, wantConstant, CompletionHandler, bundleManager } from '@kit.AbilityKit';
-  2. import { hilog } from '@kit.PerformanceAnalysisKit';
-  3. import { BusinessError } from '@kit.BasicServicesKit';
+  ```ts
+  import { common, OpenLinkOptions, wantConstant, CompletionHandler, bundleManager } from '@kit.AbilityKit';
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
 
-  5. const DOMAIN = 0xeeee;
-  6. const TAG: string = '[openLinkDemo]';
+  const DOMAIN = 0xeeee;
+  const TAG: string = '[openLinkDemo]';
 
-  8. @Entry
-  9. @Component
-  10. struct Index {
-  11. @State message: string = 'I am caller';
+  @Entry
+  @Component
+  struct Index {
+    @State message: string = 'I am caller';
 
-  13. build() {
-  14. Row() {
-  15. Column() {
-  16. Text(this.message)
-  17. .fontSize(50)
-  18. .fontWeight(FontWeight.Bold)
-  19. Button('start browser', { type: ButtonType.Capsule, stateEffect: true })
-  20. .width('87%')
-  21. .height('5%')
-  22. .margin({ bottom: '12vp' })
-  23. .onClick(() => {
-  24. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-  25. let link: string = 'https://www.example.com';
-  26. let completionHandler: CompletionHandler = {
-  27. onRequestSuccess: (elementName: bundleManager.ElementName, message: string): void => {
-  28. console.info(`${elementName.bundleName}-${elementName.moduleName}-${elementName.abilityName} start succeeded: ${message}`);
-  29. },
-  30. onRequestFailure: (elementName: bundleManager.ElementName, message: string): void => {
-  31. console.error(`${elementName.bundleName}-${elementName.moduleName}-${elementName.abilityName} start failed: ${message}`);
-  32. }
-  33. };
-  34. let openLinkOptions: OpenLinkOptions = {
-  35. appLinkingOnly: false,
-  36. // hideFailureTipDialog字段需要在appLinkingOnly字段是false时才生效
-  37. hideFailureTipDialog: true,
-  38. parameters: {
-  39. [wantConstant.Params.CONTENT_TITLE_KEY]: 'contentTitle',
-  40. keyString: 'str',
-  41. keyNumber: 200,
-  42. keyBool: false,
-  43. keyObj: {
-  44. keyObjKey: 'objValue',
-  45. }
-  46. },
-  47. completionHandler: completionHandler
-  48. };
-  49. try {
-  50. context.openLink(
-  51. link,
-  52. openLinkOptions,
-  53. (err, result) => {
-  54. hilog.error(DOMAIN, TAG, `openLink callback error.code: ${JSON.stringify(err)}`);
-  55. hilog.info(DOMAIN, TAG, `openLink callback result: ${JSON.stringify(result.resultCode)}`);
-  56. hilog.info(DOMAIN, TAG, `openLink callback result data: ${JSON.stringify(result.want)}`);
-  57. }
-  58. ).then(() => {
-  59. hilog.info(DOMAIN, TAG, `open link success.`);
-  60. }).catch((err: BusinessError) => {
-  61. hilog.error(DOMAIN, TAG, `open link failed, errCode: ${JSON.stringify(err.code)}`);
-  62. });
-  63. } catch (e) {
-  64. hilog.error(DOMAIN, TAG, `open link failed, errCode: ${JSON.stringify(e.code)}`);
-  65. }
-  66. })
-  67. }
-  68. .width('100%')
-  69. }
-  70. .height('100%')
-  71. }
-  72. }
+    build() {
+      Row() {
+        Column() {
+          Text(this.message)
+            .fontSize(50)
+            .fontWeight(FontWeight.Bold)
+          Button('start browser', { type: ButtonType.Capsule, stateEffect: true })
+            .width('87%')
+            .height('5%')
+            .margin({ bottom: '12vp' })
+            .onClick(() => {
+              let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+              let link: string = 'https://www.example.com';
+              let completionHandler: CompletionHandler = {
+                onRequestSuccess: (elementName: bundleManager.ElementName, message: string): void => {
+                  console.info(`${elementName.bundleName}-${elementName.moduleName}-${elementName.abilityName} start succeeded: ${message}`);
+                },
+                onRequestFailure: (elementName: bundleManager.ElementName, message: string): void => {
+                  console.error(`${elementName.bundleName}-${elementName.moduleName}-${elementName.abilityName} start failed: ${message}`);
+                }
+              };
+              let openLinkOptions: OpenLinkOptions = {
+                appLinkingOnly: false,
+                // hideFailureTipDialog字段需要在appLinkingOnly字段是false时才生效
+                hideFailureTipDialog: true,
+                parameters: {
+                  [wantConstant.Params.CONTENT_TITLE_KEY]: 'contentTitle',
+                  keyString: 'str',
+                  keyNumber: 200,
+                  keyBool: false,
+                  keyObj: {
+                    keyObjKey: 'objValue',
+                  }
+                },
+                completionHandler: completionHandler
+              };
+              try {
+                context.openLink(
+                  link,
+                  openLinkOptions,
+                  (err, result) => {
+                    hilog.error(DOMAIN, TAG, `openLink callback error.code: ${JSON.stringify(err)}`);
+                    hilog.info(DOMAIN, TAG, `openLink callback result: ${JSON.stringify(result.resultCode)}`);
+                    hilog.info(DOMAIN, TAG, `openLink callback result data: ${JSON.stringify(result.want)}`);
+                  }
+                ).then(() => {
+                  hilog.info(DOMAIN, TAG, `open link success.`);
+                }).catch((err: BusinessError) => {
+                  hilog.error(DOMAIN, TAG, `open link failed, errCode: ${JSON.stringify(err.code)}`);
+                });
+              } catch (e) {
+                hilog.error(DOMAIN, TAG, `open link failed, errCode: ${JSON.stringify(e.code)}`);
+              }
+            })
+        }
+        .width('100%')
+      }
+      .height('100%')
+    }
+  }
   ```
 * startAbility隐式启动其他应用：可以通过将Want中的[flags字段](../harmonyos-references/js-apis-app-ability-wantconstant.md#flags)设置为FLAG\_START\_WITHOUT\_TIPS，取消弹框提示。
 
   示例如下：
 
-  ```
-  1. import { common, Want, wantConstant } from '@kit.AbilityKit';
-  2. import { hilog } from '@kit.PerformanceAnalysisKit';
-  3. import { BusinessError } from '@kit.BasicServicesKit';
+  ```ts
+  import { common, Want, wantConstant } from '@kit.AbilityKit';
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
 
-  5. const TAG: string = '[Page_UIAbilityComponentsInteractive]';
-  6. const DOMAIN_NUMBER: number = 0xFF00;
+  const TAG: string = '[Page_UIAbilityComponentsInteractive]';
+  const DOMAIN_NUMBER: number = 0xFF00;
 
-  8. @Entry
-  9. @Component
-  10. struct Page_UIAbilityComponentsInteractive {
-  11. private context = this.getUIContext().getHostContext() as common.   UIAbilityContext;
+  @Entry
+  @Component
+  struct Page_UIAbilityComponentsInteractive {
+    private context = this.getUIContext().getHostContext() as common.   UIAbilityContext;
 
-  13. build() {
-  14. Column() {
-  15. // ...
-  16. List({ initialIndex: 0 }) {
-  17. ListItem() {
-  18. Row() {
-  19. // ...
-  20. }
-  21. .onClick(() => {
-  22. // context为UIAbility对象的成员
-  23. let wantInfo: Want = {
-  24. deviceId: '', // deviceId为空表示本设备
-  25. action: 'xxxx', // 隐式启动
-  26. flags: wantConstant.Flags.FLAG_START_WITHOUT_TIPS,
-  27. };
-  28. // context为调用方UIAbility的UIAbilityContext
-  29. this.context.startAbility(wantInfo).then(() => {
-  30. hilog.info(DOMAIN_NUMBER, TAG, 'startAbility success.');
-  31. }).catch((error: BusinessError) => {
-  32. hilog.error(DOMAIN_NUMBER, TAG, 'startAbility failed.');
-  33. });
-  34. })
-  35. }
-  36. // ...
-  37. }
-  38. // ...
-  39. }
-  40. // ...
-  41. }
-  42. }
+    build() {
+      Column() {
+        // ...
+        List({ initialIndex: 0 }) {
+          ListItem() {
+            Row() {
+              // ...
+            }
+            .onClick(() => {
+              // context为UIAbility对象的成员
+              let wantInfo: Want = {
+                deviceId: '', // deviceId为空表示本设备
+                action: 'xxxx', // 隐式启动
+                flags: wantConstant.Flags.FLAG_START_WITHOUT_TIPS,
+              };
+              // context为调用方UIAbility的UIAbilityContext
+              this.context.startAbility(wantInfo).then(() => {
+                hilog.info(DOMAIN_NUMBER, TAG, 'startAbility success.');
+              }).catch((error: BusinessError) => {
+                hilog.error(DOMAIN_NUMBER, TAG, 'startAbility failed.');
+              });
+            })
+          }
+          // ...
+        }
+        // ...
+      }
+      // ...
+    }
+  }
   ```

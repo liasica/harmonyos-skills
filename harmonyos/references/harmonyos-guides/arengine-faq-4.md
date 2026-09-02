@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-faq-
 title: 某些特殊场景下（如附近存在磁场干扰、手机发烫或扫描到重复纹理等），出现平面漂移或者位姿数据跳变现象
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > AR Engine常见问题 > 某些特殊场景下（如附近存在磁场干扰、手机发烫或扫描到重复纹理等），出现平面漂移或者位姿数据跳变现象
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:36:03+08:00
+scraped_at: 2026-09-02T14:59:49+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:7f47847b5f3f16574c395dc8e0e6dca099671e277592ef983e114e5084be0169
+content_hash: sha256:93530901320e193a476295793dc0f3db7d45bb73b6467beeea784ac1b1aa504f
 ---
 
 ## 现象描述
@@ -14,7 +14,7 @@ content_hash: sha256:7f47847b5f3f16574c395dc8e0e6dca099671e277592ef983e114e5084b
 
 **图1** 重复纹理的地板
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/6-DBUP2lTi2f1WvVOpIuww/zh-cn_image_0000002558605472.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/AF7WssWtS92TT5nKL6B9iQ/zh-cn_image_0000002706834624.jpg)
 
 ## 可能原因
 
@@ -24,8 +24,8 @@ AR Engine通过获取到的加速度计传感器和磁力计传感器的信息�
 
 建议应用对通过[HMS\_AREngine\_ARCamera\_GetPose](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arcamera_getpose)接口获取到的位姿数据，按照实际应用使用场景进行滤波，如步行导航场景，应用可以缓存多帧数据，通过多帧数据可以计算得到运动速度，如果检测到此速度明显高于步行速度，证明此时AR数据已经不可信，可以丢弃此数据或者重启AR算法。
 
-说明
+**说明** 
 
 **计算运动速度**：x,y,z为在t时刻的位姿数据的位移量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/D9TAwtY-Rym7JQ_zhOhFGQ/zh-cn_image_0000002589324999.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/MZeNByVLRkCcl55dXtybig/zh-cn_image_0000002736313731.png)

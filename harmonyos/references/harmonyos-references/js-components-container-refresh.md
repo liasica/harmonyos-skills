@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: refresh
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 容器组件 > refresh
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:20+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:40d839ae84b2f4fed2f48b8f4bd9a4eede87b9b25cd55ced9746d0115b2e4b41
+scraped_at: 2026-09-02T15:01:11+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:29f5dcb944656ff293c41dfcc5ce862d7e7871a68038d9c5c774401f8df69dff
 ---
 
-说明
+**说明** 
 
 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -16,19 +16,13 @@ content_hash: sha256:40d839ae84b2f4fed2f48b8f4bd9a4eede87b9b25cd55ced9746d0115b2
 
 ## 权限列表
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-components-common-attributes.md)外，还支持如下属性：
 
@@ -43,18 +37,14 @@ PhonePC/2in1TabletTVWearable
 
 ## 样式
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用样式](js-components-common-styles.md)外，还支持如下样式：
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | background-color | <color> | white | 否 | 设置刷新组件的背景颜色。 |
-| progress-color | <color> | black | 否 | 设置刷新组件的loading图标颜色。 |
+| progress-color | <color> | black | 否 | 设置刷新组件的进度图标颜色。 |
 
 ## 事件
-
-PhonePC/2in1TabletTVWearable
 
 仅支持如下事件：
 
@@ -65,93 +55,89 @@ PhonePC/2in1TabletTVWearable
 
 ## 方法
 
-PhonePC/2in1TabletTVWearable
-
 不支持[通用方法](js-components-common-methods.md)。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <refresh refreshing="{{fresh}}" onrefresh="refresh">
-4. <list class="list" scrolleffect="no">
-5. <list-item class="listitem" for="list">
-6. <div class="content">
-7. <text class="text">{{$item}}</text>
-8. </div>
-9. </list-item>
-10. </list>
-11. </refresh>
-12. </div>
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <refresh refreshing="{{fresh}}" onrefresh="refresh">
+    <list class="list" scrolleffect="no">
+      <list-item class="listitem" for="list">
+        <div class="content">
+          <text class="text">{{$item}}</text>
+        </div>
+      </list-item>
+    </list>
+  </refresh>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .container {
-3. flex-direction: column;
-4. align-items: center;
-5. width: 100%;
-6. height: 100%;
-7. }
+```css
+/* xxx.css */
+.container {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
 
-9. .list {
-10. width: 100%;
-11. height: 100%;
-12. }
+.list {
+  width: 100%;
+  height: 100%;
+}
 
-14. .listitem {
-15. width: 100%;
-16. height: 150px;
-17. }
+.listitem {
+  width: 100%;
+  height: 150px;
+}
 
-19. .content {
-20. width: 100%;
-21. height: 100%;
-22. flex-direction: column;
-23. align-items: center;
-24. justify-content: center;
-25. }
+.content {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-27. .text {
-28. font-size: 35px;
-29. font-weight: bold;
-30. }
-```
-
-```
-1. // xxx.js
-2. import promptAction from '@ohos.promptAction';
-3. export default {
-4. data: {
-5. list:[],
-6. fresh:false
-7. },
-8. onInit() {
-9. this.list = [];
-10. for (var i = 0; i <= 3; i++) {
-11. var item = '列表元素' + i;
-12. this.list.push(item);
-13. }
-14. },
-15. refresh: function (e) {
-16. promptAction.showToast({
-17. message: '刷新中...'
-18. })
-19. var that = this;
-20. that.fresh = e.refreshing;
-21. setTimeout(function () {
-22. that.fresh = false;
-23. var addItem = '更新元素';
-24. that.list.unshift(addItem);
-25. promptAction.showToast({
-26. message: '刷新完成!'
-27. })
-28. }, 2000)
-29. }
-30. }
+.text {
+  font-size: 35px;
+  font-weight: bold;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/DFb1F3zNSZCQGcTmLugJrg/zh-cn_image_0000002558607050.gif)
+```js
+// xxx.js
+import promptAction from '@ohos.promptAction';
+export default {
+  data: {
+    list:[],
+    fresh:false
+  },
+  onInit() {
+    this.list = [];
+    for (var i = 0; i <= 3; i++) {
+      var item = '列表元素' + i;
+      this.list.push(item);
+    }
+  },
+  refresh: function (e) {
+    promptAction.showToast({
+      message: '刷新中...'
+    })
+    var that = this;
+    that.fresh = e.refreshing;
+    setTimeout(function () {
+      that.fresh = false;
+      var addItem = '更新元素';
+      that.list.unshift(addItem);
+      promptAction.showToast({
+        message: '刷新完成!'
+      })
+    }, 2000)
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/av9CbQxySUa-ksKgkTOv-w/zh-cn_image_0000002706676440.gif)

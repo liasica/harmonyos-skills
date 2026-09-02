@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/unified-data-
 title: 通过标准化数据通路实现数据共享 (C/C++)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 跨应用数据共享 > 多对多跨应用数据共享 > 通过标准化数据通路实现数据共享 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:26:24+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:1d741d2a817edc2a4d3f9a641bb33c408412829cdd590a4dc444319d100577ec
+scraped_at: 2026-09-02T14:59:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5e5fa35621bc606f10a01323e299e0e115dba6d55ba06d8c870b077a3c4965c5
 ---
 
 ## 场景介绍
@@ -35,7 +35,7 @@ UDMF针对多对多跨应用数据共享的不同业务场景，提供了标准�
 
 ## 接口说明
 
-详细的接口说明请参考[UDMF接口文档](../harmonyos-references/capi-udmf-h.md)。
+详细的接口说明请参考UDMF接口文档[udmf.h](../harmonyos-references/capi-udmf-h.md)。
 
 | 接口名称 | 描述 |
 | --- | --- |
@@ -45,7 +45,7 @@ UDMF针对多对多跨应用数据共享的不同业务场景，提供了标准�
 | int OH\_UdmfRecord\_AddHyperlink(OH\_UdmfRecord\* pThis, OH\_UdsHyperlink\* hyperlink) | 向OH\_UdmfRecord添加超链接类型数据。 |
 | OH\_UdmfData\* OH\_UdmfData\_Create() | 创建一个指向统一数据对象OH\_UdmfData的指针。 |
 | int OH\_UdmfData\_AddRecord(OH\_UdmfData\* pThis, OH\_UdmfRecord\* record) | 向OH\_UdmfData中增加一条OH\_UdmfRecord数据记录。 |
-| int OH\_Udmf\_SetUnifiedDataByOptions(OH\_UdmfOptions\* options, OH\_UdmfData \*unifiedData, char \*key, unsigned int keyLen) | 从统一数据管理框架数据库中写入统一数据对象OH\_UdmfData数据。 |
+| int OH\_Udmf\_SetUnifiedDataByOptions(OH\_UdmfOptions\* options, OH\_UdmfData\* unifiedData, char\* key, unsigned int keyLen) | 向统一数据管理框架数据库中写入统一数据对象OH\_UdmfData数据。 |
 | void OH\_UdsHyperlink\_Destroy(OH\_UdsHyperlink\* pThis) | 销毁超链接类型指针指向的实例对象。 |
 | void OH\_UdmfRecord\_Destroy(OH\_UdmfRecord\* pThis) | 销毁指向统一数据记录OH\_UdmfRecord的指针。 |
 | void OH\_UdmfData\_Destroy(OH\_UdmfData\* pThis) | 销毁指向统一数据对象OH\_UdmfData的指针。 |
@@ -66,27 +66,25 @@ UDMF针对多对多跨应用数据共享的不同业务场景，提供了标准�
 
 CMakeLists.txt中添加以下库。
 
-```
-1. libudmf.so, libhilog_ndk.z.so
+```txt
+libudmf.so, libhilog_ndk.z.so
 ```
 
 ## 引用头文件
 
 ```
-1. #include <cstdio>
-2. #include <cstring>
-3. #include <database/udmf/utd.h>
-4. #include <database/udmf/uds.h>
-5. #include <database/udmf/udmf.h>
-6. #include <database/udmf/udmf_meta.h>
-7. #include <database/udmf/udmf_err_code.h>
-8. #include <hilog/log.h>
+#include <cstdio>
+#include <cstring>
+#include <database/udmf/utd.h>
+#include <database/udmf/uds.h>
+#include <database/udmf/udmf.h>
+#include <database/udmf/udmf_meta.h>
+#include <database/udmf/udmf_err_code.h>
+#include <hilog/log.h>
 
-10. #undef LOG_TAG
-11. #define LOG_TAG "MY_LOG"
+#undef LOG_TAG
+#define LOG_TAG "MY_LOG"
 ```
-
-[napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/Udmf/UnifiedDataChannels_C/entry/src/main/cpp/napi_init.cpp#L16-L28)
 
 ## 使用UDMF写入UDS数据
 
@@ -101,81 +99,79 @@ CMakeLists.txt中添加以下库。
 7. 使用完成后销毁指针。
 
 ```
-1. int32_t SetHyperlinkData(OH_UdsHyperlink* hyperlink, OH_UdmfRecord* record, OH_UdmfData* data)
-2. {
-3. // 2.设置hyperlink中的URL和描述信息。
-4. int ret = OH_UdsHyperlink_SetUrl(hyperlink, "www.demo.com");
-5. if (ret != Udmf_ErrCode::UDMF_E_OK) {
-6. OH_LOG_ERROR(LOG_APP, "Hyperlink set url error!");
-7. return ret;
-8. }
-9. ret = OH_UdsHyperlink_SetDescription(hyperlink, "This is the description.");
-10. if (ret != Udmf_ErrCode::UDMF_E_OK) {
-11. OH_LOG_ERROR(LOG_APP, "Hyperlink set description error!");
-12. return ret;
-13. }
-14. // 3. 向OH_UdmfRecord中添加超链接类型数据。
-15. ret = OH_UdmfRecord_AddHyperlink(record, hyperlink);
-16. if (ret != Udmf_ErrCode::UDMF_E_OK) {
-17. OH_LOG_ERROR(LOG_APP, "Add hyperlink to record error!");
-18. return ret;
-19. }
-20. // 4. 并向OH_UdmfData中添加OH_UdmfRecord。
-21. ret = OH_UdmfData_AddRecord(data, record);
-22. if (ret != Udmf_ErrCode::UDMF_E_OK) {
-23. OH_LOG_ERROR(LOG_APP, "Add record to data error!");
-24. return ret;
-25. }
-26. return UDMF_E_OK;
-27. }
+int32_t SetHyperlinkData(OH_UdsHyperlink* hyperlink, OH_UdmfRecord* record, OH_UdmfData* data)
+{
+    // 2. 设置hyperlink中的URL和描述信息。
+    int ret = OH_UdsHyperlink_SetUrl(hyperlink, "www.demo.com");
+    if (ret != Udmf_ErrCode::UDMF_E_OK) {
+        OH_LOG_ERROR(LOG_APP, "Hyperlink set url error!");
+        return ret;
+    }
+    ret = OH_UdsHyperlink_SetDescription(hyperlink, "This is the description.");
+    if (ret != Udmf_ErrCode::UDMF_E_OK) {
+        OH_LOG_ERROR(LOG_APP, "Hyperlink set description error!");
+        return ret;
+    }
+    // 3. 向OH_UdmfRecord中添加超链接类型数据。
+    ret = OH_UdmfRecord_AddHyperlink(record, hyperlink);
+    if (ret != Udmf_ErrCode::UDMF_E_OK) {
+        OH_LOG_ERROR(LOG_APP, "Add hyperlink to record error!");
+        return ret;
+    }
+    // 4. 并向OH_UdmfData中添加OH_UdmfRecord。
+    ret = OH_UdmfData_AddRecord(data, record);
+    if (ret != Udmf_ErrCode::UDMF_E_OK) {
+        OH_LOG_ERROR(LOG_APP, "Add record to data error!");
+        return ret;
+    }
+    return UDMF_E_OK;
+}
 
-29. int32_t CreateDataTest()
-30. {
-31. // 1.创建hyperlink的UDS数据结构、OH_UdmfRecord对象及OH_UdmfData对象。
-32. OH_UdsHyperlink* hyperlink = OH_UdsHyperlink_Create();
-33. OH_UdmfRecord* record = OH_UdmfRecord_Create();
-34. OH_UdmfData* data = OH_UdmfData_Create();
-35. int32_t ret = SetHyperlinkData(hyperlink, record, data);
-36. if (ret != UDMF_E_OK) {
-37. OH_LOG_ERROR(LOG_APP, "Create data error!");
-38. OH_UdsHyperlink_Destroy(hyperlink);
-39. OH_UdmfRecord_Destroy(record);
-40. OH_UdmfData_Destroy(data);
-41. return ret;
-42. }
-43. // 构建数据操作选项。
-44. OH_UdmfOptions* options = OH_UdmfOptions_Create();
-45. ret = OH_UdmfOptions_SetIntention(options, Udmf_Intention::UDMF_INTENTION_DATA_HUB);
-46. if (ret != Udmf_ErrCode::UDMF_E_OK) {
-47. OH_LOG_ERROR(LOG_APP, "Set option error!");
-48. OH_UdsHyperlink_Destroy(hyperlink);
-49. OH_UdmfRecord_Destroy(record);
-50. OH_UdmfData_Destroy(data);
-51. OH_UdmfOptions_Destroy(options);
-52. return ret;
-53. }
-54. // 6. 构建数据，将数据写入数据库中，得到返回的key值。
-55. char key[UDMF_KEY_BUFFER_LEN] = {0};
-56. ret = OH_Udmf_SetUnifiedDataByOptions(options, data, key, sizeof(key));
-57. if (ret != Udmf_ErrCode::UDMF_E_OK) {
-58. OH_LOG_ERROR(LOG_APP, "Set data error!");
-59. OH_UdsHyperlink_Destroy(hyperlink);
-60. OH_UdmfRecord_Destroy(record);
-61. OH_UdmfData_Destroy(data);
-62. OH_UdmfOptions_Destroy(options);
-63. return ret;
-64. }
-65. OH_LOG_INFO(LOG_APP, "key = %{public}s", key);
-66. // 7. 使用完成后销毁指针。
-67. OH_UdsHyperlink_Destroy(hyperlink);
-68. OH_UdmfRecord_Destroy(record);
-69. OH_UdmfData_Destroy(data);
-70. OH_UdmfOptions_Destroy(options);
-71. return UDMF_E_OK;
-72. }
+int32_t CreateDataTest()
+{
+    // 1. 创建hyperlink的UDS数据结构、OH_UdmfRecord对象及OH_UdmfData对象。
+    OH_UdsHyperlink* hyperlink = OH_UdsHyperlink_Create();
+    OH_UdmfRecord* record = OH_UdmfRecord_Create();
+    OH_UdmfData* data = OH_UdmfData_Create();
+    int32_t ret = SetHyperlinkData(hyperlink, record, data);
+    if (ret != UDMF_E_OK) {
+        OH_LOG_ERROR(LOG_APP, "Create data error!");
+        OH_UdsHyperlink_Destroy(hyperlink);
+        OH_UdmfRecord_Destroy(record);
+        OH_UdmfData_Destroy(data);
+        return ret;
+    }
+    // 5. 构建数据操作选项。
+    OH_UdmfOptions* options = OH_UdmfOptions_Create();
+    ret = OH_UdmfOptions_SetIntention(options, Udmf_Intention::UDMF_INTENTION_DATA_HUB);
+    if (ret != Udmf_ErrCode::UDMF_E_OK) {
+        OH_LOG_ERROR(LOG_APP, "Set option error!");
+        OH_UdsHyperlink_Destroy(hyperlink);
+        OH_UdmfRecord_Destroy(record);
+        OH_UdmfData_Destroy(data);
+        OH_UdmfOptions_Destroy(options);
+        return ret;
+    }
+    // 6. 构建数据，将数据写入数据库中，得到返回的key值。
+    char key[UDMF_KEY_BUFFER_LEN] = {0};
+    ret = OH_Udmf_SetUnifiedDataByOptions(options, data, key, sizeof(key));
+    if (ret != Udmf_ErrCode::UDMF_E_OK) {
+        OH_LOG_ERROR(LOG_APP, "Set data error!");
+        OH_UdsHyperlink_Destroy(hyperlink);
+        OH_UdmfRecord_Destroy(record);
+        OH_UdmfData_Destroy(data);
+        OH_UdmfOptions_Destroy(options);
+        return ret;
+    }
+    OH_LOG_INFO(LOG_APP, "key = %{public}s", key);
+    // 7. 使用完成后销毁指针。
+    OH_UdsHyperlink_Destroy(hyperlink);
+    OH_UdmfRecord_Destroy(record);
+    OH_UdmfData_Destroy(data);
+    OH_UdmfOptions_Destroy(options);
+    return UDMF_E_OK;
+}
 ```
-
-[napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/Udmf/UnifiedDataChannels_C/entry/src/main/cpp/napi_init.cpp#L30-L103)
 
 ## 使用UDMF获取UDS数据
 
@@ -188,100 +184,100 @@ CMakeLists.txt中添加以下库。
 5. 销毁指针。
 
 ```
-1. int32_t ProcessHyperlinks(OH_UdmfRecord* record, unsigned int recordTypeIdCount, char** typeIdsFromRecord)
-2. {
-3. for (unsigned int k = 0; k < recordTypeIdCount; k++) {
-4. // 从OH_UdmfRecord中获取超链接类型数据。
-5. if (strcmp(typeIdsFromRecord[k], UDMF_META_HYPERLINK) == 0) {
-6. // 创建hyperlink的UDS，用来承载record中读取出来的hyperlink数据。
-7. OH_UdsHyperlink* hyperlink = OH_UdsHyperlink_Create();
-8. int32_t ret = OH_UdmfRecord_GetHyperlink(record, hyperlink);
-9. if (ret != Udmf_ErrCode::UDMF_E_OK) {
-10. OH_LOG_ERROR(LOG_APP, "Fail get hyperlink from record!");
-11. return ret;
-12. }
-13. // 读取OH_UdsHyperlink中的各项信息。
-14. OH_LOG_INFO(LOG_APP, "The hyperlink type id is : %{public}s", OH_UdsHyperlink_GetType(hyperlink));
-15. OH_LOG_INFO(LOG_APP, "The hyperlink url is : %{public}s", OH_UdsHyperlink_GetUrl(hyperlink));
-16. OH_LOG_INFO(LOG_APP, "The hyperlink description is : %{public}s",
-17. OH_UdsHyperlink_GetDescription(hyperlink));
-18. OH_UdsHyperlink_Destroy(hyperlink);
-19. }
-20. }
-21. return UDMF_E_OK;
-22. }
+int32_t ProcessHyperlinks(OH_UdmfRecord* record, unsigned int recordTypeIdCount, char** typeIdsFromRecord)
+{
+    for (unsigned int k = 0; k < recordTypeIdCount; k++) {
+         // 从OH_UdmfRecord中获取超链接类型数据。
+        if (strcmp(typeIdsFromRecord[k], UDMF_META_HYPERLINK) == 0) {
+             // 创建hyperlink的UDS，用来承载record中读取出来的hyperlink数据。
+            OH_UdsHyperlink* hyperlink = OH_UdsHyperlink_Create();
+            int32_t ret = OH_UdmfRecord_GetHyperlink(record, hyperlink);
+            if (ret != Udmf_ErrCode::UDMF_E_OK) {
+                OH_LOG_ERROR(LOG_APP, "Fail get hyperlink from record!");
+                OH_UdsHyperlink_Destroy(hyperlink);
+                return ret;
+            }
+            // 读取OH_UdsHyperlink中的各项信息。
+            OH_LOG_INFO(LOG_APP, "The hyperlink type id is : %{public}s", OH_UdsHyperlink_GetType(hyperlink));
+            OH_LOG_INFO(LOG_APP, "The hyperlink url is : %{public}s", OH_UdsHyperlink_GetUrl(hyperlink));
+            OH_LOG_INFO(LOG_APP, "The hyperlink description is : %{public}s",
+                OH_UdsHyperlink_GetDescription(hyperlink));
+            OH_UdsHyperlink_Destroy(hyperlink);
+        }
+    }
+    return UDMF_E_OK;
+}
 
-24. int32_t ProcessData(OH_UdmfData* data)
-25. {
-26. unsigned int recordsCount = 0;
-27. OH_UdmfRecord** records = OH_UdmfData_GetRecords(data, &recordsCount);
-28. OH_LOG_INFO(LOG_APP, "the count of records count is %{public}u", recordsCount);
-29. for (unsigned int j = 0; j < recordsCount; j++) {
-30. // 获取OH_UdmfRecord类型列表。
-31. unsigned int recordTypeIdCount = 0;
-32. char** typeIdsFromRecord = OH_UdmfRecord_GetTypes(records[j], &recordTypeIdCount);
-33. int32_t ret = ProcessHyperlinks(records[j], recordTypeIdCount, typeIdsFromRecord);
-34. if (ret != Udmf_ErrCode::UDMF_E_OK) {
-35. OH_LOG_ERROR(LOG_APP, "ProcessRecordHyperlinks error!");
-36. return ret;
-37. }
-38. }
-39. return UDMF_E_OK;
-40. }
+int32_t ProcessData(OH_UdmfData* data)
+{
+    unsigned int recordsCount = 0;
+    OH_UdmfRecord** records = OH_UdmfData_GetRecords(data, &recordsCount);
+    OH_LOG_INFO(LOG_APP, "the count of records count is %{public}u", recordsCount);
+    for (unsigned int j = 0; j < recordsCount; j++) {
+        // 获取OH_UdmfRecord类型列表。
+        unsigned int recordTypeIdCount = 0;
+        char** typeIdsFromRecord = OH_UdmfRecord_GetTypes(records[j], &recordTypeIdCount);
+        int32_t ret = ProcessHyperlinks(records[j], recordTypeIdCount, typeIdsFromRecord);
+        if (ret != Udmf_ErrCode::UDMF_E_OK) {
+            OH_LOG_ERROR(LOG_APP, "ProcessRecordHyperlinks error!");
+            return ret;
+        }
+    }
+    return UDMF_E_OK;
+}
 
-42. int32_t HandleUdmfHyperlinkData(OH_UdmfData* readData, unsigned int dataSize, OH_UdmfData** dataArray)
-43. {
-44. for (unsigned int i = 0; i < dataSize; i++) {
-45. OH_UdmfData* data = OH_UDMF_GetDataElementAt(dataArray, i);
-46. // 3. 判断OH_UdmfData是否有对应的类型。
-47. if (!OH_UdmfData_HasType(data, UDMF_META_HYPERLINK)) {
-48. OH_LOG_INFO(LOG_APP, "There is no hyperlink type in data[%{public}u].", i);
-49. continue;
-50. }
-51. // 4. 获取数据记录和hyperlink数据。
-52. int32_t ret = ProcessData(data);
-53. if (ret != Udmf_ErrCode::UDMF_E_OK) {
-54. OH_LOG_ERROR(LOG_APP, "Process data error!");
-55. return ret;
-56. }
-57. }
-58. return UDMF_E_OK;
-59. }
+int32_t HandleUdmfHyperlinkData(OH_UdmfData* readData, unsigned int dataSize, OH_UdmfData** dataArray)
+{
+    for (unsigned int i = 0; i < dataSize; i++) {
+        OH_UdmfData* data = OH_UDMF_GetDataElementAt(dataArray, i);
+         // 3. 判断OH_UdmfData是否有对应的类型。
+        if (!OH_UdmfData_HasType(data, UDMF_META_HYPERLINK)) {
+            OH_LOG_INFO(LOG_APP, "There is no hyperlink type in data[%{public}u].", i);
+            continue;
+        }
+        // 4. 获取数据记录和hyperlink数据。
+        int32_t ret = ProcessData(data);
+        if (ret != Udmf_ErrCode::UDMF_E_OK) {
+            OH_LOG_ERROR(LOG_APP, "Process data error!");
+            return ret;
+        }
+    }
+    return UDMF_E_OK;
+}
 
-61. int32_t GetDataTest()
-62. {
-63. // 1. 构建数据操作选项。
-64. OH_UdmfOptions* options = OH_UdmfOptions_Create();
-65. int32_t ret = OH_UdmfOptions_SetIntention(options, Udmf_Intention::UDMF_INTENTION_DATA_HUB);
-66. if (ret != Udmf_ErrCode::UDMF_E_OK) {
-67. OH_LOG_ERROR(LOG_APP, "Set option error!");
-68. OH_UdmfOptions_Destroy(options);
-69. return ret;
-70. }
-71. // 2. 通过数据操作选项获取数据。
-72. unsigned int dataSize = 0;
-73. OH_UdmfData* readData = nullptr;
-74. ret = OH_Udmf_GetUnifiedDataByOptions(options, &readData, &dataSize);
-75. if (ret != Udmf_ErrCode::UDMF_E_OK) {
-76. OH_LOG_ERROR(LOG_APP, "Get Data error!");
-77. OH_UdmfOptions_Destroy(options);
-78. return ret;
-79. }
-80. OH_UdmfOptions_Destroy(options);
-81. OH_LOG_INFO(LOG_APP, "the size of data is %{public}u", dataSize);
-82. OH_UdmfData** dataArray = &readData;
-83. ret = HandleUdmfHyperlinkData(readData, dataSize, dataArray);
-84. if (ret != Udmf_ErrCode::UDMF_E_OK) {
-85. OH_LOG_ERROR(LOG_APP, "Get Data error!");
-86. return ret;
-87. }
-88. // 5.销毁指针。
-89. OH_Udmf_DestroyDataArray(dataArray, dataSize);
-90. return UDMF_E_OK;
-91. }
+int32_t GetDataTest()
+{
+    // 1. 构建数据操作选项。
+    OH_UdmfOptions* options = OH_UdmfOptions_Create();
+    int32_t ret = OH_UdmfOptions_SetIntention(options, Udmf_Intention::UDMF_INTENTION_DATA_HUB);
+    if (ret != Udmf_ErrCode::UDMF_E_OK) {
+        OH_LOG_ERROR(LOG_APP, "Set option error!");
+        OH_UdmfOptions_Destroy(options);
+        return ret;
+    }
+    // 2. 通过数据操作选项获取数据。
+    unsigned int dataSize = 0;
+    OH_UdmfData* readData = nullptr;
+    ret = OH_Udmf_GetUnifiedDataByOptions(options, &readData, &dataSize);
+    if (ret != Udmf_ErrCode::UDMF_E_OK) {
+        OH_LOG_ERROR(LOG_APP, "Get Data error!");
+        OH_UdmfOptions_Destroy(options);
+        return ret;
+    }
+    OH_UdmfOptions_Destroy(options);
+    OH_LOG_INFO(LOG_APP, "the size of data is %{public}u", dataSize);
+    OH_UdmfData** dataArray = &readData;
+    ret = HandleUdmfHyperlinkData(readData, dataSize, dataArray);
+    if (ret != Udmf_ErrCode::UDMF_E_OK) {
+        OH_LOG_ERROR(LOG_APP, "Get Data error!");
+        OH_Udmf_DestroyDataArray(dataArray, dataSize);
+        return ret;
+    }
+    // 5.销毁指针。
+    OH_Udmf_DestroyDataArray(dataArray, dataSize);
+    return UDMF_E_OK;
+}
 ```
-
-[napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/Udmf/UnifiedDataChannels_C/entry/src/main/cpp/napi_init.cpp#L105-L197)
 
 ## 使用UDMF更新UDS数据
 
@@ -296,87 +292,85 @@ CMakeLists.txt中添加以下库。
 7. 使用完成后销毁指针。
 
 ```
-1. int32_t AddHyperlinkToUdmfRecord(OH_UdsHyperlink* hyperlink, OH_UdmfRecord* record, OH_UdmfData* data)
-2. {
-3. // 2. 设置hyperlink中的URL和描述信息。
-4. int32_t ret = OH_UdsHyperlink_SetUrl(hyperlink, "www.demo2.com");
-5. if (ret != Udmf_ErrCode::UDMF_E_OK) {
-6. OH_LOG_ERROR(LOG_APP, "Hyperlink set url error!");
-7. return ret;
-8. }
-9. ret = OH_UdsHyperlink_SetDescription(hyperlink, "This is the new description.");
-10. if (ret != Udmf_ErrCode::UDMF_E_OK) {
-11. OH_LOG_ERROR(LOG_APP, "Hyperlink set description error!");
-12. return ret;
-13. }
-14. // 3. 向OH_UdmfRecord中添加超链接类型数据。
-15. ret = OH_UdmfRecord_AddHyperlink(record, hyperlink);
-16. if (ret != Udmf_ErrCode::UDMF_E_OK) {
-17. OH_LOG_ERROR(LOG_APP, "Add hyperlink to record error!");
-18. return ret;
-19. }
-20. // 4. 向OH_UdmfData中添加OH_UdmfRecord。
-21. ret = OH_UdmfData_AddRecord(data, record);
-22. if (ret != Udmf_ErrCode::UDMF_E_OK) {
-23. OH_LOG_ERROR(LOG_APP, "Add record to data error!");
-24. return ret;
-25. }
-26. return UDMF_E_OK;
-27. }
+int32_t AddHyperlinkToUdmfRecord(OH_UdsHyperlink* hyperlink, OH_UdmfRecord* record, OH_UdmfData* data)
+{
+    // 2. 设置hyperlink中的URL和描述信息。
+    int32_t ret = OH_UdsHyperlink_SetUrl(hyperlink, "www.demo2.com");
+    if (ret != Udmf_ErrCode::UDMF_E_OK) {
+        OH_LOG_ERROR(LOG_APP, "Hyperlink set url error!");
+        return ret;
+    }
+    ret = OH_UdsHyperlink_SetDescription(hyperlink, "This is the new description.");
+    if (ret != Udmf_ErrCode::UDMF_E_OK) {
+        OH_LOG_ERROR(LOG_APP, "Hyperlink set description error!");
+        return ret;
+    }
+    // 3. 向OH_UdmfRecord中添加超链接类型数据。
+    ret = OH_UdmfRecord_AddHyperlink(record, hyperlink);
+    if (ret != Udmf_ErrCode::UDMF_E_OK) {
+        OH_LOG_ERROR(LOG_APP, "Add hyperlink to record error!");
+        return ret;
+    }
+    // 4. 向OH_UdmfData中添加OH_UdmfRecord。
+    ret = OH_UdmfData_AddRecord(data, record);
+    if (ret != Udmf_ErrCode::UDMF_E_OK) {
+        OH_LOG_ERROR(LOG_APP, "Add record to data error!");
+        return ret;
+    }
+    return UDMF_E_OK;
+}
 
-29. int32_t UpdateDataTest()
-30. {
-31. // 1.创建hyperlink的UDS数据结构、OH_UdmfRecord对象及OH_UdmfData对象。
-32. OH_UdsHyperlink* hyperlink = OH_UdsHyperlink_Create();
-33. OH_UdmfRecord* record = OH_UdmfRecord_Create();
-34. OH_UdmfData* data = OH_UdmfData_Create();
-35. int32_t ret = AddHyperlinkToUdmfRecord(hyperlink, record, data);
-36. if (ret != UDMF_E_OK) {
-37. OH_LOG_ERROR(LOG_APP, "Fail to create hyperlink!");
-38. OH_UdsHyperlink_Destroy(hyperlink);
-39. OH_UdmfRecord_Destroy(record);
-40. OH_UdmfData_Destroy(data);
-41. return ret;
-42. }
-43. // 5. 构建数据操作选项。
-44. OH_UdmfOptions* options = OH_UdmfOptions_Create();
-45. // 此处key为示例，不可直接使用，其值应与OH_Udmf_SetUnifiedDataByOptions接口中获取到的key值保持一致。
-46. char key[] = "udmf://DataHub/com.ohos.test/0123456789";
-47. ret = OH_UdmfOptions_SetIntention(options, Udmf_Intention::UDMF_INTENTION_DATA_HUB);
-48. if (ret != Udmf_ErrCode::UDMF_E_OK
-49. || OH_UdmfOptions_SetKey(options, key) != Udmf_ErrCode::UDMF_E_OK) {
-50. OH_LOG_ERROR(LOG_APP, "Set option error!");
-51. OH_UdsHyperlink_Destroy(hyperlink);
-52. OH_UdmfRecord_Destroy(record);
-53. OH_UdmfData_Destroy(data);
-54. OH_UdmfOptions_Destroy(options);
-55. return ret;
-56. }
-57. // 6. 更新数据，将数据写入数据库中。
-58. ret = OH_Udmf_UpdateUnifiedData(options, data);
-59. if (ret != Udmf_ErrCode::UDMF_E_OK) {
-60. OH_LOG_ERROR(LOG_APP, "Update data error!");
-61. OH_UdsHyperlink_Destroy(hyperlink);
-62. OH_UdmfRecord_Destroy(record);
-63. OH_UdmfData_Destroy(data);
-64. OH_UdmfOptions_Destroy(options);
-65. return ret;
-66. }
-67. OH_LOG_INFO(LOG_APP, "update data success");
-68. // 7. 使用完成后销毁指针。
-69. OH_UdsHyperlink_Destroy(hyperlink);
-70. OH_UdmfRecord_Destroy(record);
-71. OH_UdmfData_Destroy(data);
-72. OH_UdmfOptions_Destroy(options);
-73. return UDMF_E_OK;
-74. }
+int32_t UpdateDataTest()
+{
+    // 1.创建hyperlink的UDS数据结构、OH_UdmfRecord对象及OH_UdmfData对象。
+    OH_UdsHyperlink* hyperlink = OH_UdsHyperlink_Create();
+    OH_UdmfRecord* record = OH_UdmfRecord_Create();
+    OH_UdmfData* data = OH_UdmfData_Create();
+    int32_t ret = AddHyperlinkToUdmfRecord(hyperlink, record, data);
+    if (ret != UDMF_E_OK) {
+        OH_LOG_ERROR(LOG_APP, "Fail to create hyperlink!");
+        OH_UdsHyperlink_Destroy(hyperlink);
+        OH_UdmfRecord_Destroy(record);
+        OH_UdmfData_Destroy(data);
+        return ret;
+    }
+    // 5. 构建数据操作选项。
+    OH_UdmfOptions* options = OH_UdmfOptions_Create();
+    // 此处key为示例，不可直接使用，其值应与OH_Udmf_SetUnifiedDataByOptions接口中获取到的key值保持一致。
+    char key[] = "udmf://DataHub/com.ohos.test/0123456789";
+    ret = OH_UdmfOptions_SetIntention(options, Udmf_Intention::UDMF_INTENTION_DATA_HUB);
+    if (ret != Udmf_ErrCode::UDMF_E_OK
+        || OH_UdmfOptions_SetKey(options, key) != Udmf_ErrCode::UDMF_E_OK) {
+        OH_LOG_ERROR(LOG_APP, "Set option error!");
+        OH_UdsHyperlink_Destroy(hyperlink);
+        OH_UdmfRecord_Destroy(record);
+        OH_UdmfData_Destroy(data);
+        OH_UdmfOptions_Destroy(options);
+        return ret;
+    }
+    // 6. 更新数据，将数据写入数据库中。
+    ret = OH_Udmf_UpdateUnifiedData(options, data);
+    if (ret != Udmf_ErrCode::UDMF_E_OK) {
+        OH_LOG_ERROR(LOG_APP, "Update data error!");
+        OH_UdsHyperlink_Destroy(hyperlink);
+        OH_UdmfRecord_Destroy(record);
+        OH_UdmfData_Destroy(data);
+        OH_UdmfOptions_Destroy(options);
+        return ret;
+    }
+    OH_LOG_INFO(LOG_APP, "update data success");
+    // 7. 使用完成后销毁指针。
+    OH_UdsHyperlink_Destroy(hyperlink);
+    OH_UdmfRecord_Destroy(record);
+    OH_UdmfData_Destroy(data);
+    OH_UdmfOptions_Destroy(options);
+    return UDMF_E_OK;
+}
 ```
-
-[napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/Udmf/UnifiedDataChannels_C/entry/src/main/cpp/napi_init.cpp#L199-L274)
 
 ## 使用UDMF删除UDS数据
 
-下面继续以获取超链接OH\_UdsHyperlink类型数据场景为例，说明如何使用UDS与UDMF。
+下面继续以删除超链接OH\_UdsHyperlink类型数据场景为例，说明如何使用UDS与UDMF。
 
 1. 构建数据操作选项。
 2. 通过数据操作选项删除数据。
@@ -386,106 +380,105 @@ CMakeLists.txt中添加以下库。
 6. 销毁指针。
 
 ```
-1. int32_t ProcessRecordHyperlinks(OH_UdmfRecord* record, unsigned int recordTypeIdCount, char** typeIdsFromRecord)
-2. {
-3. for (unsigned int k = 0; k < recordTypeIdCount; k++) {
-4. // 从OH_UdmfRecord中获取超链接类型数据。
-5. if (strcmp(typeIdsFromRecord[k], UDMF_META_HYPERLINK) == 0) {
-6. // 创建hyperlink的UDS，用来承载record中读取出来的hyperlink数据。
-7. OH_UdsHyperlink* hyperlink = OH_UdsHyperlink_Create();
-8. int32_t ret = OH_UdmfRecord_GetHyperlink(record, hyperlink);
-9. if (ret != Udmf_ErrCode::UDMF_E_OK) {
-10. OH_LOG_ERROR(LOG_APP, "Fail get hyperlink from record!");
-11. OH_UdsHyperlink_Destroy(hyperlink);
-12. return ret;
-13. }
-14. // 读取OH_UdsHyperlink中的各项信息。
-15. OH_LOG_INFO(LOG_APP, "The hyperlink type id is : %{public}s", OH_UdsHyperlink_GetType(hyperlink));
-16. OH_LOG_INFO(LOG_APP, "The hyperlink url is : %{public}s", OH_UdsHyperlink_GetUrl(hyperlink));
-17. OH_LOG_INFO(LOG_APP, "The hyperlink description is : %{public}s",
-18. OH_UdsHyperlink_GetDescription(hyperlink));
-19. OH_UdsHyperlink_Destroy(hyperlink);
-20. }
-21. }
-22. return UDMF_E_OK;
-23. }
+int32_t ProcessRecordHyperlinks(OH_UdmfRecord* record, unsigned int recordTypeIdCount, char** typeIdsFromRecord)
+{
+    for (unsigned int k = 0; k < recordTypeIdCount; k++) {
+        // 从OH_UdmfRecord中获取超链接类型数据。
+        if (strcmp(typeIdsFromRecord[k], UDMF_META_HYPERLINK) == 0) {
+            // 创建hyperlink的UDS，用来承载record中读取出来的hyperlink数据。
+            OH_UdsHyperlink* hyperlink = OH_UdsHyperlink_Create();
+            int32_t ret = OH_UdmfRecord_GetHyperlink(record, hyperlink);
+            if (ret != Udmf_ErrCode::UDMF_E_OK) {
+                OH_LOG_ERROR(LOG_APP, "Fail get hyperlink from record!");
+                OH_UdsHyperlink_Destroy(hyperlink);
+                return ret;
+            }
+            // 读取OH_UdsHyperlink中的各项信息。
+            OH_LOG_INFO(LOG_APP, "The hyperlink type id is : %{public}s", OH_UdsHyperlink_GetType(hyperlink));
+            OH_LOG_INFO(LOG_APP, "The hyperlink url is : %{public}s", OH_UdsHyperlink_GetUrl(hyperlink));
+            OH_LOG_INFO(LOG_APP, "The hyperlink description is : %{public}s",
+                OH_UdsHyperlink_GetDescription(hyperlink));
+            OH_UdsHyperlink_Destroy(hyperlink);
+        }
+    }
+    return UDMF_E_OK;
+}
 
-25. int32_t ProcessDataElement(OH_UdmfData* data)
-26. {
-27. unsigned int recordsCount = 0;
-28. OH_UdmfRecord** records = OH_UdmfData_GetRecords(data, &recordsCount);
-29. OH_LOG_INFO(LOG_APP, "the count of records count is %{public}u", recordsCount);
-30. // 5. 获取数据记录中的元素。
-31. for (unsigned int j = 0; j < recordsCount; j++) {
-32. // 获取OH_UdmfRecord类型列表。
-33. unsigned int recordTypeIdCount = 0;
-34. char** typeIdsFromRecord = OH_UdmfRecord_GetTypes(records[j], &recordTypeIdCount);
-35. int32_t ret = ProcessRecordHyperlinks(records[j], recordTypeIdCount, typeIdsFromRecord);
-36. if (ret != Udmf_ErrCode::UDMF_E_OK) {
-37. OH_LOG_ERROR(LOG_APP, "ProcessRecordHyperlinks error!");
-38. return ret;
-39. }
-40. }
-41. return UDMF_E_OK;
-42. }
+int32_t ProcessDataElement(OH_UdmfData* data)
+{
+    unsigned int recordsCount = 0;
+    OH_UdmfRecord** records = OH_UdmfData_GetRecords(data, &recordsCount);
+    OH_LOG_INFO(LOG_APP, "the count of records count is %{public}u", recordsCount);
+    // 5. 获取数据记录中的元素。
+    for (unsigned int j = 0; j < recordsCount; j++) {
+        // 获取OH_UdmfRecord类型列表。
+        unsigned int recordTypeIdCount = 0;
+        char** typeIdsFromRecord = OH_UdmfRecord_GetTypes(records[j], &recordTypeIdCount);
+        int32_t ret = ProcessRecordHyperlinks(records[j], recordTypeIdCount, typeIdsFromRecord);
+        if (ret != Udmf_ErrCode::UDMF_E_OK) {
+            OH_LOG_ERROR(LOG_APP, "ProcessRecordHyperlinks error!");
+            return ret;
+        }
+    }
+    return UDMF_E_OK;
+}
 
-44. int32_t ProcessHyperlinkDataFromArray(OH_UdmfData* readData, unsigned int dataSize, OH_UdmfData** dataArray)
-45. {
-46. for (unsigned int i = 0; i < dataSize - 1; i++) {
-47. OH_UdmfData* data = OH_UDMF_GetDataElementAt(dataArray, i);
-48. // 3. 判断OH_UdmfData是否有对应的类型。
-49. if (!OH_UdmfData_HasType(data, UDMF_META_HYPERLINK)) {
-50. OH_LOG_INFO(LOG_APP, "There is no hyperlink type in data[%{public}u].", i);
-51. continue;
-52. }
-53. // 4. 获取数据记录和hyperlink数据。
-54. int32_t ret = ProcessDataElement(data);
-55. if (ret != UDMF_E_OK) {
-56. OH_LOG_ERROR(LOG_APP, "processDataElement data error!");
-57. return ret;
-58. }
-59. }
-60. return UDMF_E_OK;
-61. }
+int32_t ProcessHyperlinkDataFromArray(OH_UdmfData* readData, unsigned int dataSize, OH_UdmfData** dataArray)
+{
+    for (unsigned int i = 0; i < dataSize; i++) {
+        OH_UdmfData* data = OH_UDMF_GetDataElementAt(dataArray, i);
+        // 3. 判断OH_UdmfData是否有对应的类型。
+        if (!OH_UdmfData_HasType(data, UDMF_META_HYPERLINK)) {
+            OH_LOG_INFO(LOG_APP, "There is no hyperlink type in data[%{public}u].", i);
+            continue;
+        }
+        // 4. 获取数据记录和hyperlink数据。
+        int32_t ret = ProcessDataElement(data);
+        if (ret != UDMF_E_OK) {
+            OH_LOG_ERROR(LOG_APP, "processDataElement data error!");
+            return ret;
+        }
+    }
+    return UDMF_E_OK;
+}
 
-63. int32_t DeleteDataTest()
-64. {
-65. // 1. 构建数据操作选项。
-66. OH_UdmfOptions* options = OH_UdmfOptions_Create();
-67. int32_t ret = OH_UdmfOptions_SetIntention(options, Udmf_Intention::UDMF_INTENTION_DATA_HUB);
-68. if (ret != Udmf_ErrCode::UDMF_E_OK) {
-69. OH_LOG_ERROR(LOG_APP, "Set option error!");
-70. OH_UdmfOptions_Destroy(options);
-71. return ret;
-72. }
-73. // 2. 通过数据操作选项删除数据。
-74. unsigned int dataSize = 0;
-75. OH_UdmfData* readData = nullptr;
-76. ret = OH_Udmf_DeleteUnifiedData(options, &readData, &dataSize);
-77. if (ret != Udmf_ErrCode::UDMF_E_OK) {
-78. OH_LOG_ERROR(LOG_APP, "Delete Data error!");
-79. OH_UdmfOptions_Destroy(options);
-80. return ret;
-81. }
-82. OH_UdmfOptions_Destroy(options);
-83. if (dataSize == 0) {
-84. OH_LOG_INFO(LOG_APP, "the size of data is %{public}u", dataSize);
-85. return UDMF_E_OK;
-86. }
-87. OH_LOG_INFO(LOG_APP, "the size of data is %{public}u", dataSize);
-88. OH_UdmfData** dataArray = &readData;
-89. ret = ProcessHyperlinkDataFromArray(readData, dataSize, dataArray);
-90. if (ret != UDMF_E_OK) {
-91. OH_LOG_ERROR(LOG_APP, "Process hyperlink data error!");
-92. return ret;
-93. }
-94. // 6. 销毁指针。
-95. OH_Udmf_DestroyDataArray(dataArray, dataSize);
-96. return UDMF_E_OK;
-97. }
+int32_t DeleteDataTest()
+{
+    // 1. 构建数据操作选项。
+    OH_UdmfOptions* options = OH_UdmfOptions_Create();
+    int32_t ret = OH_UdmfOptions_SetIntention(options, Udmf_Intention::UDMF_INTENTION_DATA_HUB);
+    if (ret != Udmf_ErrCode::UDMF_E_OK) {
+        OH_LOG_ERROR(LOG_APP, "Set option error!");
+        OH_UdmfOptions_Destroy(options);
+        return ret;
+    }
+    // 2. 通过数据操作选项删除数据。
+    unsigned int dataSize = 0;
+    OH_UdmfData* readData = nullptr;
+    ret = OH_Udmf_DeleteUnifiedData(options, &readData, &dataSize);
+    if (ret != Udmf_ErrCode::UDMF_E_OK) {
+        OH_LOG_ERROR(LOG_APP, "Delete Data error!");
+        OH_UdmfOptions_Destroy(options);
+        return ret;
+    }
+    OH_UdmfOptions_Destroy(options);
+    if (dataSize == 0) {
+        OH_LOG_INFO(LOG_APP, "the size of data is %{public}u", dataSize);
+        return UDMF_E_OK;
+    }
+    OH_LOG_INFO(LOG_APP, "the size of data is %{public}u", dataSize);
+    OH_UdmfData** dataArray = &readData;
+    ret = ProcessHyperlinkDataFromArray(readData, dataSize, dataArray);
+    if (ret != UDMF_E_OK) {
+        OH_Udmf_DestroyDataArray(dataArray, dataSize);
+        OH_LOG_ERROR(LOG_APP, "Process hyperlink data error!");
+        return ret;
+    }
+    // 6. 销毁指针。
+    OH_Udmf_DestroyDataArray(dataArray, dataSize);
+    return UDMF_E_OK;
+}
 ```
-
-[napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/Udmf/UnifiedDataChannels_C/entry/src/main/cpp/napi_init.cpp#L276-L374)
 
 ## 使用UDMF延迟写入UDS数据
 
@@ -499,25 +492,23 @@ CMakeLists.txt中添加以下库。
 4. 定义OH\_UdmfRecordProvider销毁时触发的回调函数。
 
 ```
-1. // 为了代码可读性，代码中省略了各个步骤操作结果的校验，实际开发中需要确认每次调用的成功。
-2. // 1. 获取数据时触发的提供UDS数据的回调函数。
-3. static void* GetDataCallback(void* context, const char* type)
-4. {
-5. if (strcmp(type, UDMF_META_HYPERLINK) == 0) {
-6. // 2. 创建超链接hyperlink数据的UDS数据结构。
-7. OH_UdsHyperlink* hyperlink = OH_UdsHyperlink_Create();
-8. // 3. 设置hyperlink中的URL和描述信息。
-9. OH_UdsHyperlink_SetUrl(hyperlink, "www.demo.com");
-10. OH_UdsHyperlink_SetDescription(hyperlink, "This is the description.");
-11. return hyperlink;
-12. }
-13. return nullptr;
-14. }
-15. // 4. OH_UdmfRecordProvider销毁时触发的回调函数。
-16. static void ProviderFinalizeCallback(void* context) { OH_LOG_INFO(LOG_APP, "OH_UdmfRecordProvider finalize."); }
+// 为了代码可读性，代码中省略了各个步骤操作结果的校验，实际开发中需要确认每次调用的成功。
+// 1. 获取数据时触发的提供UDS数据的回调函数。
+static void* GetDataCallback(void* context, const char* type)
+{
+    if (strcmp(type, UDMF_META_HYPERLINK) == 0) {
+        // 2. 创建超链接hyperlink数据的UDS数据结构。
+        OH_UdsHyperlink* hyperlink = OH_UdsHyperlink_Create();
+        // 3. 设置hyperlink中的URL和描述信息。
+        OH_UdsHyperlink_SetUrl(hyperlink, "www.demo.com");
+        OH_UdsHyperlink_SetDescription(hyperlink, "This is the description.");
+        return hyperlink;
+    }
+    return nullptr;
+}
+// 4. OH_UdmfRecordProvider销毁时触发的回调函数。
+static void ProviderFinalizeCallback(void* context) { OH_LOG_INFO(LOG_APP, "OH_UdmfRecordProvider finalize."); }
 ```
-
-[napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/Udmf/UnifiedDataChannels_C/entry/src/main/cpp/napi_init.cpp#L376-L393)
 
 ### 延迟写入UDS数据
 
@@ -530,41 +521,40 @@ CMakeLists.txt中添加以下库。
 5. 使用完成后销毁指针。
 
 ```
-1. int32_t ProviderSetDataTest()
-2. {
-3. // 为了代码可读性，代码中省略了各个步骤操作结果的校验，实际开发中需要确认每次调用的成功。
-4. // 1. 创建一个OH_UdmfRecordProvider，设置它的数据提供函数和销毁回调函数。
-5. OH_UdmfRecordProvider* provider = OH_UdmfRecordProvider_Create();
-6. OH_UdmfRecordProvider_SetData(provider, (void*)provider, GetDataCallback, ProviderFinalizeCallback);
+int32_t ProviderSetDataTest()
+{
+    // 为了代码可读性，代码中省略了各个步骤操作结果的校验，实际开发中需要确认每次调用的成功。
+    // 1. 创建一个OH_UdmfRecordProvider，设置它的数据提供函数和销毁回调函数。
+    OH_UdmfRecordProvider* provider = OH_UdmfRecordProvider_Create();
+    OH_UdmfRecordProvider_SetData(provider, (void*)provider, GetDataCallback, ProviderFinalizeCallback);
 
-8. // 2. 创建OH_UdmfRecord对象，并配置OH_UdmfRecordProvider。
-9. OH_UdmfRecord* record = OH_UdmfRecord_Create();
-10. const char* types[1] = {UDMF_META_HYPERLINK};
-11. OH_UdmfRecord_SetProvider(record, types, 1, provider);
+    // 2. 创建OH_UdmfRecord对象，并配置OH_UdmfRecordProvider。
+    OH_UdmfRecord* record = OH_UdmfRecord_Create();
+    const char* types[1] = {UDMF_META_HYPERLINK};
+    OH_UdmfRecord_SetProvider(record, types, 1, provider);
 
-13. // 3. 创建OH_UdmfData对象，并向OH_UdmfData中添加OH_UdmfRecord。
-14. OH_UdmfData* data = OH_UdmfData_Create();
-15. OH_UdmfData_AddRecord(data, record);
+    // 3. 创建OH_UdmfData对象，并向OH_UdmfData中添加OH_UdmfRecord。
+    OH_UdmfData* data = OH_UdmfData_Create();
+    OH_UdmfData_AddRecord(data, record);
 
-17. // 4. 构建数据并写入数据库中，获取返回的Key值。
-18. OH_UdmfOptions* options = OH_UdmfOptions_Create();
-19. if (OH_UdmfOptions_SetIntention(options, Udmf_Intention::UDMF_INTENTION_DATA_HUB) != Udmf_ErrCode::UDMF_E_OK) {
-20. OH_LOG_ERROR(LOG_APP, "Set option error!");
-21. OH_UdmfOptions_Destroy(options);
-22. return UDMF_ERR;
-23. }
-24. char key[UDMF_KEY_BUFFER_LEN] = {0};
-25. if (OH_Udmf_SetUnifiedDataByOptions(options, data, key, sizeof(key)) != Udmf_ErrCode::UDMF_E_OK) {
-26. OH_LOG_ERROR(LOG_APP, "Set data error!");
-27. }
-28. OH_LOG_INFO(LOG_APP, "key = %{public}s", key);
+    // 4. 构建数据并写入数据库中，获取返回的Key值。
+    OH_UdmfOptions* options = OH_UdmfOptions_Create();
+    if (OH_UdmfOptions_SetIntention(options, Udmf_Intention::UDMF_INTENTION_DATA_HUB) != Udmf_ErrCode::UDMF_E_OK) {
+        OH_LOG_ERROR(LOG_APP, "Set option error!");
+        OH_UdmfOptions_Destroy(options);
+        return UDMF_ERR;
+    }
+    char key[UDMF_KEY_BUFFER_LEN] = {0};
+    if (OH_Udmf_SetUnifiedDataByOptions(options, data, key, sizeof(key)) != Udmf_ErrCode::UDMF_E_OK) {
+        OH_LOG_ERROR(LOG_APP, "Set data error!");
+    }
+    OH_LOG_INFO(LOG_APP, "key = %{public}s", key);
 
-30. // 5. 使用完成后销毁指针。
-31. OH_UdmfRecord_Destroy(record);
-32. OH_UdmfData_Destroy(data);
-33. OH_UdmfOptions_Destroy(options);
-34. return UDMF_E_OK;
-35. }
+    // 5. 使用完成后销毁指针。
+    OH_UdmfRecord_Destroy(record);
+    OH_UdmfData_Destroy(data);
+    OH_UdmfOptions_Destroy(options);
+    OH_UdmfRecordProvider_Destroy(provider);
+    return UDMF_E_OK;
+}
 ```
-
-[napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/Udmf/UnifiedDataChannels_C/entry/src/main/cpp/napi_init.cpp#L395-L431)

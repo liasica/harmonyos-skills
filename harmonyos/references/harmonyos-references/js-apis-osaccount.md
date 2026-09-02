@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-o
 title: "@ohos.account.osAccount (系统账号管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 账号管理 > @ohos.account.osAccount (系统账号管理)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:27+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:7970e2ac2a9af1f02a1865eea414dd262a98f5412944d60142764bc92f1a99ad
+scraped_at: 2026-09-02T15:02:01+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:49a0c4cc9004a349bd9ba2c6eee6718de5ec100cf2c5fceb142a1fa0ecf02d97
 ---
 
 本模块提供管理系统账号的基础能力，包括系统账号的添加、删除、查询、设置、订阅、启动等功能。
 
-说明
+**说明** 
 
 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { osAccount } from '@kit.BasicServicesKit';
+```ts
+import { osAccount } from '@kit.BasicServicesKit';
 ```
 
 ## osAccount.getAccountManager
-
-PhonePC/2in1TabletTVWearable
 
 getAccountManager(): AccountManager
 
@@ -40,13 +36,54 @@ getAccountManager(): AccountManager
 
 **示例：**
 
+```ts
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
 ```
-1. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+
+## osAccount.isDomainAccountSupported
+
+isDomainAccountSupported(): Promise<boolean>
+
+检查是否支持域账号。使用Promise异步回调。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.Account.OsAccount
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示支持域账号；返回false表示不支持。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[账号管理错误码](errorcode-account.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 12300001 | The system service works abnormally. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+try {
+  osAccount.isDomainAccountSupported().then((isSupported: boolean) => {
+    console.info('isDomainAccountSupported successfully, isSupported: ' + isSupported);
+  }).catch((err: BusinessError) => {
+    console.error(`isDomainAccountSupported failed, code is ${err.code}, message is: ${err.message}`);
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`isDomainAccountSupported exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ## OsAccountType
-
-PhonePC/2in1TabletTVWearable
 
 表示系统账号类型的枚举。
 
@@ -60,13 +97,9 @@ PhonePC/2in1TabletTVWearable
 
 ## AccountManager
 
-PhonePC/2in1TabletTVWearable
-
 系统账号管理类。
 
 ### checkMultiOsAccountEnabled9+
-
-PhonePC/2in1TabletTVWearable
 
 checkMultiOsAccountEnabled(callback: AsyncCallback<boolean>): void
 
@@ -91,27 +124,25 @@ checkMultiOsAccountEnabled(callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. try {
-5. accountManager.checkMultiOsAccountEnabled((err: BusinessError, isEnabled: boolean) => {
-6. if (err) {
-7. console.error(`checkMultiOsAccountEnabled failed, code is ${err.code}, message is ${err.message}`);
-8. } else {
-9. console.info('checkMultiOsAccountEnabled successfully, isEnabled: ' + isEnabled);
-10. }
-11. });
-12. } catch (e) {
-13. const err = e as BusinessError;
-14. console.error(`checkMultiOsAccountEnabled failed, code is ${err.code}, message is ${err.message}`);
-15. }
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+try {
+  accountManager.checkMultiOsAccountEnabled((err: BusinessError, isEnabled: boolean) => {
+    if (err) {
+      console.error(`checkMultiOsAccountEnabled failed, code is ${err.code}, message is ${err.message}`);
+    } else {
+      console.info('checkMultiOsAccountEnabled successfully, isEnabled: ' + isEnabled);
+    }
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`checkMultiOsAccountEnabled failed, code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### checkMultiOsAccountEnabled9+
-
-PhonePC/2in1TabletTVWearable
 
 checkMultiOsAccountEnabled(): Promise<boolean>
 
@@ -135,33 +166,31 @@ checkMultiOsAccountEnabled(): Promise<boolean>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-5. accountManager.checkMultiOsAccountEnabled().then((isEnabled: boolean) => {
-6. console.info('checkMultiOsAccountEnabled successfully, isEnabled: ' + isEnabled);
-7. }).catch((err: BusinessError) => {
-8. console.error(`checkMultiOsAccountEnabled failed, code is ${err.code}, message is ${err.message}`);
-9. });
-10. } catch (e) {
-11. const err = e as BusinessError;
-12. console.error(`checkMultiOsAccountEnabled failed, code is ${err.code}, message is ${err.message}`);
-13. }
+try {
+  let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+  accountManager.checkMultiOsAccountEnabled().then((isEnabled: boolean) => {
+    console.info('checkMultiOsAccountEnabled successfully, isEnabled: ' + isEnabled);
+  }).catch((err: BusinessError) => {
+    console.error(`checkMultiOsAccountEnabled failed, code is ${err.code}, message is ${err.message}`);
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`checkMultiOsAccountEnabled failed, code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### checkOsAccountActivated(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 checkOsAccountActivated(localId: number, callback: AsyncCallback<boolean>): void
 
 判断指定系统账号是否处于激活状态。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 9开始支持，从API version 11开始废弃。替代方法仅向系统应用开放。
+从API version 9开始支持，从API version 11开始废弃，替代方法仅向系统应用开放。
 
 **需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS或ohos.permission.INTERACT\_ACROSS\_LOCAL\_ACCOUNTS，以上权限仅系统应用可申请。
 
@@ -186,38 +215,39 @@ checkOsAccountActivated(localId: number, callback: AsyncCallback<boolean>): void
 | 12300002 | Invalid localId. |
 | 12300003 | Account not found. |
 
-**示例：** 判断ID为100的系统账号是否处于激活状态
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+判断ID为100的系统账号是否处于激活状态。
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let localId: number = 100;
-5. try {
-6. accountManager.checkOsAccountActivated(localId, (err: BusinessError, isActivated: boolean) => {
-7. if (err) {
-8. console.error(`checkOsAccountActivated failed, code is ${err.code}, message is ${err.message}`);
-9. } else {
-10. console.info('checkOsAccountActivated successfully, isActivated:' + isActivated);
-11. }
-12. });
-13. } catch (e) {
-14. const err = e as BusinessError;
-15. console.error(`checkOsAccountActivated exception: code is ${err.code}, message is ${err.message}`);
-16. }
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+// localId为系统账号ID，请通过getOsAccountLocalId接口获取
+let localId: number = 100;
+try {
+  accountManager.checkOsAccountActivated(localId, (err: BusinessError, isActivated: boolean) => {
+    if (err) {
+      console.error(`checkOsAccountActivated failed, code is ${err.code}, message is ${err.message}`);
+    } else {
+      console.info('checkOsAccountActivated successfully, isActivated:' + isActivated);
+    }
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`checkOsAccountActivated exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### checkOsAccountActivated(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 checkOsAccountActivated(localId: number): Promise<boolean>
 
 判断指定系统账号是否处于激活状态。使用Promise异步回调。
 
-说明
+**说明** 
 
-从API version 9开始支持，从API version 11开始废弃。替代方法仅向系统应用开放。
+从API version 9开始支持，从API version 11开始废弃，替代方法仅向系统应用开放。
 
 **需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS或ohos.permission.INTERACT\_ACROSS\_LOCAL\_ACCOUNTS，以上权限仅系统应用可申请。
 
@@ -247,28 +277,29 @@ checkOsAccountActivated(localId: number): Promise<boolean>
 | 12300002 | Invalid localId. |
 | 12300003 | Account not found. |
 
-**示例：** 判断ID为100的系统账号是否处于激活状态
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+判断ID为100的系统账号是否处于激活状态。
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let localId: number = 100;
-5. try {
-6. accountManager.checkOsAccountActivated(localId).then((isActivated: boolean) => {
-7. console.info('checkOsAccountActivated successfully, isActivated: ' + isActivated);
-8. }).catch((err: BusinessError) => {
-9. console.error(`checkOsAccountActivated failed, code is ${err.code}, message is ${err.message}`);
-10. });
-11. } catch (e) {
-12. const err = e as BusinessError;
-13. console.error(`checkOsAccountActivated exception: code is ${err.code}, message is ${err.message}`);
-14. }
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+// localId为系统账号ID，请通过getOsAccountLocalId接口获取
+let localId: number = 100;
+try {
+  accountManager.checkOsAccountActivated(localId).then((isActivated: boolean) => {
+    console.info('checkOsAccountActivated successfully, isActivated: ' + isActivated);
+  }).catch((err: BusinessError) => {
+    console.error(`checkOsAccountActivated failed, code is ${err.code}, message is ${err.message}`);
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`checkOsAccountActivated exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### isOsAccountConstraintEnabled11+
-
-PhonePC/2in1TabletTVWearable
 
 isOsAccountConstraintEnabled(constraint: string): Promise<boolean>
 
@@ -297,36 +328,36 @@ isOsAccountConstraintEnabled(constraint: string): Promise<boolean>
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 | 12300001 | The system service works abnormally. |
 
-**示例：** 判断ID为100的系统账号是否有禁止使用Wi-Fi的约束
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+判断当前系统账号是否有禁止使用Wi-Fi的约束。
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let constraint: string = 'constraint.wifi';
-5. try {
-6. accountManager.isOsAccountConstraintEnabled(constraint).then((isEnabled: boolean) => {
-7. console.info('isOsAccountConstraintEnabled successfully, isEnabled: ' + isEnabled);
-8. }).catch((err: BusinessError) => {
-9. console.error(`isOsAccountConstraintEnabled failed, code is ${err.code}, message is ${err.message}`);
-10. });
-11. } catch (e) {
-12. const err = e as BusinessError;
-13. console.error(`isOsAccountConstraintEnabled exception: code is ${err.code}, message is ${err.message}`);
-14. }
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+let constraint: string = 'constraint.wifi';
+try {
+  accountManager.isOsAccountConstraintEnabled(constraint).then((isEnabled: boolean) => {
+    console.info('isOsAccountConstraintEnabled successfully, isEnabled: ' + isEnabled);
+  }).catch((err: BusinessError) => {
+    console.error(`isOsAccountConstraintEnabled failed, code is ${err.code}, message is ${err.message}`);
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`isOsAccountConstraintEnabled exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### checkOsAccountConstraintEnabled(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 checkOsAccountConstraintEnabled(localId: number, constraint: string, callback: AsyncCallback<boolean>): void
 
 判断指定系统账号是否具有指定约束。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 9开始支持，从API version 11开始废弃。替代方法仅向系统应用开放。
+从API version 9开始支持，从API version 11开始废弃，替代方法仅向系统应用开放。
 
 **需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS或ohos.permission.INTERACT\_ACROSS\_LOCAL\_ACCOUNTS，以上权限仅系统应用可申请。
 
@@ -352,39 +383,40 @@ checkOsAccountConstraintEnabled(localId: number, constraint: string, callback: A
 | 12300002 | Invalid localId or constraint. |
 | 12300003 | Account not found. |
 
-**示例：** 判断ID为100的系统账号是否有禁止使用Wi-Fi的约束
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+判断ID为100的系统账号是否有禁止使用Wi-Fi的约束。
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let localId: number = 100;
-5. let constraint: string = 'constraint.wifi';
-6. try {
-7. accountManager.checkOsAccountConstraintEnabled(localId, constraint, (err: BusinessError, isEnabled: boolean)=>{
-8. if (err) {
-9. console.error(`checkOsAccountConstraintEnabled failed, code is ${err.code}, message is ${err.message}`);
-10. } else {
-11. console.info('checkOsAccountConstraintEnabled successfully, isEnabled: ' + isEnabled);
-12. }
-13. });
-14. } catch (e) {
-15. const err = e as BusinessError;
-16. console.error(`checkOsAccountConstraintEnabled exception: code is ${err.code}, message is ${err.message}`);
-17. }
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+// localId为系统账号ID，请通过getOsAccountLocalId接口获取
+let localId: number = 100;
+let constraint: string = 'constraint.wifi';
+try {
+  accountManager.checkOsAccountConstraintEnabled(localId, constraint, (err: BusinessError, isEnabled: boolean)=>{
+    if (err) {
+      console.error(`checkOsAccountConstraintEnabled failed, code is ${err.code}, message is ${err.message}`);
+    } else {
+      console.info('checkOsAccountConstraintEnabled successfully, isEnabled: ' + isEnabled);
+    }
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`checkOsAccountConstraintEnabled exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### checkOsAccountConstraintEnabled(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 checkOsAccountConstraintEnabled(localId: number, constraint: string): Promise<boolean>
 
 判断指定系统账号是否具有指定约束。使用Promise异步回调。
 
-说明
+**说明** 
 
-从API version 9开始支持，从API version 11开始废弃。替代方法仅向系统应用开放。
+从API version 9开始支持，从API version 11开始废弃，替代方法仅向系统应用开放。
 
 **需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS或ohos.permission.INTERACT\_ACROSS\_LOCAL\_ACCOUNTS，以上权限仅系统应用可申请。
 
@@ -415,29 +447,30 @@ checkOsAccountConstraintEnabled(localId: number, constraint: string): Promise<bo
 | 12300002 | Invalid localId or constraint. |
 | 12300003 | Account not found. |
 
-**示例：** 判断ID为100的系统账号是否有禁止使用Wi-Fi的约束
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+判断ID为100的系统账号是否有禁止使用Wi-Fi的约束。
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let localId: number = 100;
-5. let constraint: string = 'constraint.wifi';
-6. try {
-7. accountManager.checkOsAccountConstraintEnabled(localId, constraint).then((isEnabled: boolean) => {
-8. console.info('checkOsAccountConstraintEnabled successfully, isEnabled: ' + isEnabled);
-9. }).catch((err: BusinessError) => {
-10. console.error(`checkOsAccountConstraintEnabled failed, code is ${err.code}, message is ${err.message}`);
-11. });
-12. } catch (e) {
-13. const err = e as BusinessError;
-14. console.error(`checkOsAccountConstraintEnabled exception: code is ${err.code}, message is ${err.message}`);
-15. }
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+// localId为系统账号ID，请通过getOsAccountLocalId接口获取
+let localId: number = 100;
+let constraint: string = 'constraint.wifi';
+try {
+  accountManager.checkOsAccountConstraintEnabled(localId, constraint).then((isEnabled: boolean) => {
+    console.info('checkOsAccountConstraintEnabled successfully, isEnabled: ' + isEnabled);
+  }).catch((err: BusinessError) => {
+    console.error(`checkOsAccountConstraintEnabled failed, code is ${err.code}, message is ${err.message}`);
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`checkOsAccountConstraintEnabled exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### checkOsAccountTestable9+
-
-PhonePC/2in1TabletTVWearable
 
 checkOsAccountTestable(callback: AsyncCallback<boolean>): void
 
@@ -462,27 +495,25 @@ checkOsAccountTestable(callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. try {
-5. accountManager.checkOsAccountTestable((err: BusinessError, isTestable: boolean) => {
-6. if (err) {
-7. console.error(`checkOsAccountTestable failed, code is ${err.code}, message is ${err.message}`);
-8. } else {
-9. console.info('checkOsAccountTestable successfully, isTestable: ' + isTestable);
-10. }
-11. });
-12. } catch (e) {
-13. const err = e as BusinessError;
-14. console.error(`checkOsAccountTestable code is ${err.code}, message is ${err.message}`);
-15. }
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+try {
+  accountManager.checkOsAccountTestable((err: BusinessError, isTestable: boolean) => {
+    if (err) {
+      console.error(`checkOsAccountTestable failed, code is ${err.code}, message is ${err.message}`);
+    } else {
+      console.info('checkOsAccountTestable successfully, isTestable: ' + isTestable);
+    }
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`checkOsAccountTestable code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### checkOsAccountTestable9+
-
-PhonePC/2in1TabletTVWearable
 
 checkOsAccountTestable(): Promise<boolean>
 
@@ -506,29 +537,27 @@ checkOsAccountTestable(): Promise<boolean>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. try {
-5. accountManager.checkOsAccountTestable().then((isTestable: boolean) => {
-6. console.info('checkOsAccountTestable successfully, isTestable: ' + isTestable);
-7. }).catch((err: BusinessError) => {
-8. console.error(`checkOsAccountTestable failed, code is ${err.code}, message is ${err.message}`);
-9. });
-10. } catch (e) {
-11. const err = e as BusinessError;
-12. console.error(`checkOsAccountTestable exception: code is ${err.code}, message is ${err.message}`);
-13. }
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+try {
+  accountManager.checkOsAccountTestable().then((isTestable: boolean) => {
+    console.info('checkOsAccountTestable successfully, isTestable: ' + isTestable);
+  }).catch((err: BusinessError) => {
+    console.error(`checkOsAccountTestable failed, code is ${err.code}, message is ${err.message}`);
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`checkOsAccountTestable exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### isOsAccountUnlocked11+
 
-PhonePC/2in1TabletTVWearable
-
 isOsAccountUnlocked(): Promise<boolean>
 
-检查当前系统账号是否已认证解锁。使用Promise异步回调。
+检查当前系统账号是否已解锁。使用Promise异步回调。
 
 **系统能力：** SystemCapability.Account.OsAccount
 
@@ -536,7 +565,7 @@ isOsAccountUnlocked(): Promise<boolean>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<boolean> | Promise对象。返回true表示当前账号已认证解锁；返回false表示当前账号未认证解锁。 |
+| Promise<boolean> | Promise对象。返回true表示当前账号已解锁；返回false表示当前账号未解锁。 |
 
 **错误码：**
 
@@ -548,33 +577,31 @@ isOsAccountUnlocked(): Promise<boolean>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. try {
-5. accountManager.isOsAccountUnlocked().then((isVerified: boolean) => {
-6. console.info('isOsAccountUnlocked successfully, isVerified: ' + isVerified);
-7. }).catch((err: BusinessError) => {
-8. console.error(`isOsAccountUnlocked failed, code is ${err.code}, message is ${err.message}`);
-9. });
-10. } catch (e) {
-11. const err = e as BusinessError;
-12. console.error(`isOsAccountUnlocked exception: code is ${err.code}, message is ${err.message}`);
-13. }
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+try {
+  accountManager.isOsAccountUnlocked().then((isVerified: boolean) => {
+    console.info('isOsAccountUnlocked successfully, isVerified: ' + isVerified);
+  }).catch((err: BusinessError) => {
+    console.error(`isOsAccountUnlocked failed, code is ${err.code}, message is ${err.message}`);
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`isOsAccountUnlocked exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### checkOsAccountVerified(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 checkOsAccountVerified(callback: AsyncCallback<boolean>): void
 
 检查当前系统账号是否已认证解锁。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 9开始支持，从API version 11开始废弃。建议使用[isOsAccountUnlocked](js-apis-osaccount.md#isosaccountunlocked11)替代。
+从API version 9开始支持，从API version 11开始废弃，建议使用[isOsAccountUnlocked](js-apis-osaccount.md#isosaccountunlocked11)替代。
 
 **系统能力：** SystemCapability.Account.OsAccount
 
@@ -594,35 +621,33 @@ checkOsAccountVerified(callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. try {
-5. accountManager.checkOsAccountVerified((err: BusinessError, isVerified: boolean) => {
-6. if (err) {
-7. console.error(`checkOsAccountVerified failed, code is ${err.code}, message is ${err.message}`);
-8. } else {
-9. console.info('checkOsAccountVerified successfully, isVerified: ' + isVerified);
-10. }
-11. });
-12. } catch (e) {
-13. const err = e as BusinessError;
-14. console.error(`checkOsAccountVerified exception: code is ${err.code}, message is ${err.message}`);
-15. }
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+try {
+  accountManager.checkOsAccountVerified((err: BusinessError, isVerified: boolean) => {
+    if (err) {
+      console.error(`checkOsAccountVerified failed, code is ${err.code}, message is ${err.message}`);
+    } else {
+      console.info('checkOsAccountVerified successfully, isVerified: ' + isVerified);
+    }
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`checkOsAccountVerified exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### checkOsAccountVerified(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 checkOsAccountVerified(): Promise<boolean>
 
 检查当前系统账号是否已认证解锁。使用Promise异步回调。
 
-说明
+**说明** 
 
-从API version 9开始支持，从API version 11开始废弃。建议使用[isOsAccountUnlocked](js-apis-osaccount.md#isosaccountunlocked11)替代。
+从API version 9开始支持，从API version 11开始废弃，建议使用[isOsAccountUnlocked](js-apis-osaccount.md#isosaccountunlocked11)替代。
 
 **系统能力：** SystemCapability.Account.OsAccount
 
@@ -642,33 +667,31 @@ checkOsAccountVerified(): Promise<boolean>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. try {
-5. accountManager.checkOsAccountVerified().then((isVerified: boolean) => {
-6. console.info('checkOsAccountVerified successfully, isVerified: ' + isVerified);
-7. }).catch((err: BusinessError) => {
-8. console.error(`checkOsAccountVerified failed, code is ${err.code}, message is ${err.message}`);
-9. });
-10. } catch (e) {
-11. const err = e as BusinessError;
-12. console.error(`checkOsAccountVerified exception: code is ${err.code}, message is ${err.message}`);
-13. }
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+try {
+  accountManager.checkOsAccountVerified().then((isVerified: boolean) => {
+    console.info('checkOsAccountVerified successfully, isVerified: ' + isVerified);
+  }).catch((err: BusinessError) => {
+    console.error(`checkOsAccountVerified failed, code is ${err.code}, message is ${err.message}`);
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`checkOsAccountVerified exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### checkOsAccountVerified(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 checkOsAccountVerified(localId: number, callback: AsyncCallback<boolean>): void
 
 检查指定系统账号是否已验证。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 9开始支持，从API version 11开始废弃。替代方法仅向系统应用开放。
+从API version 9开始支持，从API version 11开始废弃，替代方法仅向系统应用开放。
 
 **需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS或ohos.permission.INTERACT\_ACROSS\_LOCAL\_ACCOUNTS，以上权限仅系统应用可申请。
 
@@ -679,7 +702,7 @@ checkOsAccountVerified(localId: number, callback: AsyncCallback<boolean>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | localId | number | 是 | 系统账号ID。 |
-| callback | AsyncCallback<boolean> | 是 | 回调函数。返回true表示当前账号已认证解锁；返回false表示当前账号未认证解锁。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。返回true表示指定账号已认证解锁；返回false表示指定账号未认证解锁。 |
 
 **错误码：**
 
@@ -695,36 +718,35 @@ checkOsAccountVerified(localId: number, callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let localId: number = 100;
-5. try {
-6. accountManager.checkOsAccountVerified(localId, (err: BusinessError, isVerified: boolean) => {
-7. if (err) {
-8. console.error(`checkOsAccountVerified failed, code is ${err.code}, message is ${err.message}`);
-9. } else {
-10. console.info('checkOsAccountVerified successfully, isVerified: ' + isVerified);
-11. }
-12. });
-13. } catch (e) {
-14. const err = e as BusinessError;
-15. console.error(`checkOsAccountVerified exception: code is ${err.code}, message is ${err.message}`);
-16. }
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+// localId为系统账号ID，请通过getOsAccountLocalId接口获取
+let localId: number = 100;
+try {
+  accountManager.checkOsAccountVerified(localId, (err: BusinessError, isVerified: boolean) => {
+    if (err) {
+      console.error(`checkOsAccountVerified failed, code is ${err.code}, message is ${err.message}`);
+    } else {
+      console.info('checkOsAccountVerified successfully, isVerified: ' + isVerified);
+    }
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`checkOsAccountVerified exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### checkOsAccountVerified(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 checkOsAccountVerified(localId: number): Promise<boolean>
 
 检查指定系统账号是否已验证。使用Promise异步回调。
 
-说明
+**说明** 
 
-从API version 9开始支持，从API version 11开始废弃。替代方法仅向系统应用开放。
+从API version 9开始支持，从API version 11开始废弃，替代方法仅向系统应用开放。
 
 **需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS或ohos.permission.INTERACT\_ACROSS\_LOCAL\_ACCOUNTS，以上权限仅系统应用可申请。
 
@@ -756,26 +778,25 @@ checkOsAccountVerified(localId: number): Promise<boolean>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let localId: number = 100;
-5. try {
-6. accountManager.checkOsAccountVerified(localId).then((isVerified: boolean) => {
-7. console.info('checkOsAccountVerified successfully, isVerified: ' + isVerified);
-8. }).catch((err: BusinessError) => {
-9. console.error(`checkOsAccountVerified failed, code is ${err.code}, message is ${err.message}`);
-10. });
-11. } catch (e) {
-12. const err = e as BusinessError;
-13. console.error(`checkOsAccountVerified exception: code is ${err.code}, message is ${err.message}`);
-14. }
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+// localId为系统账号ID，请通过getOsAccountLocalId接口获取
+let localId: number = 100;
+try {
+  accountManager.checkOsAccountVerified(localId).then((isVerified: boolean) => {
+    console.info('checkOsAccountVerified successfully, isVerified: ' + isVerified);
+  }).catch((err: BusinessError) => {
+    console.error(`checkOsAccountVerified failed, code is ${err.code}, message is ${err.message}`);
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`checkOsAccountVerified exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### getOsAccountCount9+
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountCount(callback: AsyncCallback<number>): void
 
@@ -803,27 +824,25 @@ getOsAccountCount(callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. try {
-5. accountManager.getOsAccountCount((err: BusinessError, count: number) => {
-6. if (err) {
-7. console.error(`getOsAccountCount failed, code is ${err.code}, message is ${err.message}`);
-8. } else {
-9. console.info('getOsAccountCount successfully, count: ' + count);
-10. }
-11. });
-12. } catch (e) {
-13. const err = e as BusinessError;
-14. console.error(`getOsAccountCount exception: code is ${err.code}, message is ${err.message}`);
-15. }
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+try {
+  accountManager.getOsAccountCount((err: BusinessError, count: number) => {
+    if (err) {
+      console.error(`getOsAccountCount failed, code is ${err.code}, message is ${err.message}`);
+    } else {
+      console.info('getOsAccountCount successfully, count: ' + count);
+    }
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`getOsAccountCount exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### getOsAccountCount9+
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountCount(): Promise<number>
 
@@ -850,25 +869,23 @@ getOsAccountCount(): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. try {
-5. accountManager.getOsAccountCount().then((count: number) => {
-6. console.info('getOsAccountCount successfully, count: ' + count);
-7. }).catch((err: BusinessError) => {
-8. console.error(`getOsAccountCount failed, code is ${err.code}, message is ${err.message}`);
-9. });
-10. } catch (e) {
-11. const err = e as BusinessError;
-12. console.error(`getOsAccountCount exception: code is ${err.code}, message is ${err.message}`);
-13. }
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+try {
+  accountManager.getOsAccountCount().then((count: number) => {
+    console.info('getOsAccountCount successfully, count: ' + count);
+  }).catch((err: BusinessError) => {
+    console.error(`getOsAccountCount failed, code is ${err.code}, message is ${err.message}`);
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`getOsAccountCount exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### getOsAccountLocalId9+
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountLocalId(callback: AsyncCallback<number>): void
 
@@ -893,27 +910,25 @@ getOsAccountLocalId(callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. try {
-5. accountManager.getOsAccountLocalId((err: BusinessError, localId: number) => {
-6. if (err) {
-7. console.error(`getOsAccountLocalId failed, code is ${err.code}, message is ${err.message}`);
-8. } else {
-9. console.info('getOsAccountLocalId successfully, localId: ' + localId);
-10. }
-11. });
-12. } catch (e) {
-13. const err = e as BusinessError;
-14. console.error(`getOsAccountLocalId exception: code is ${err.code}, message is ${err.message}`);
-15. }
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+try {
+  accountManager.getOsAccountLocalId((err: BusinessError, localId: number) => {
+    if (err) {
+      console.error(`getOsAccountLocalId failed, code is ${err.code}, message is ${err.message}`);
+    } else {
+      console.info('getOsAccountLocalId successfully, localId: ' + localId);
+    }
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`getOsAccountLocalId exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### getOsAccountLocalId9+
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountLocalId(): Promise<number>
 
@@ -937,25 +952,23 @@ getOsAccountLocalId(): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. try {
-5. accountManager.getOsAccountLocalId().then((localId: number) => {
-6. console.info('getOsAccountLocalId successfully, localId: ' + localId);
-7. }).catch((err: BusinessError) => {
-8. console.error(`getOsAccountLocalId failed, code is ${err.code}, message is ${err.message}`);
-9. });
-10. } catch (e) {
-11. const err = e as BusinessError;
-12. console.error(`getOsAccountLocalId exception: code is ${err.code}, message is ${err.message}`);
-13. }
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+try {
+  accountManager.getOsAccountLocalId().then((localId: number) => {
+    console.info('getOsAccountLocalId successfully, localId: ' + localId);
+  }).catch((err: BusinessError) => {
+    console.error(`getOsAccountLocalId failed, code is ${err.code}, message is ${err.message}`);
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`getOsAccountLocalId exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### getOsAccountLocalIdForUid9+
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountLocalIdForUid(uid: number, callback: AsyncCallback<number>): void
 
@@ -980,29 +993,31 @@ getOsAccountLocalIdForUid(uid: number, callback: AsyncCallback<number>): void
 | 12300001 | The system service works abnormally. |
 | 12300002 | Invalid uid. |
 
-**示例：** 查询值为12345678的uid所属的系统账号的账号ID
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+查询值为12345678的uid所属的系统账号的账号ID。
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let uid: number = 12345678;
-5. try {
-6. accountManager.getOsAccountLocalIdForUid(uid, (err: BusinessError, localId: number) => {
-7. if (err) {
-8. console.error(`getOsAccountLocalIdForUid failed, code is ${err.code}, message is ${err.message}`);
-9. }
-10. console.info('getOsAccountLocalIdForUid successfully, localId: ' + localId);
-11. });
-12. } catch (e) {
-13. const err = e as BusinessError;
-14. console.error(`getOsAccountLocalIdForUid exception: code is ${err.code}, message is ${err.message}`);
-15. }
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+// uid为进程uid，请通过应用信息获取
+let uid: number = 12345678;
+try {
+  accountManager.getOsAccountLocalIdForUid(uid, (err: BusinessError, localId: number) => {
+    if (err) {
+      console.error(`getOsAccountLocalIdForUid failed, code is ${err.code}, message is ${err.message}`);
+    } else {
+      console.info('getOsAccountLocalIdForUid successfully, localId: ' + localId);
+    }
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`getOsAccountLocalIdForUid exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### getOsAccountLocalIdForUid9+
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountLocalIdForUid(uid: number): Promise<number>
 
@@ -1032,28 +1047,29 @@ getOsAccountLocalIdForUid(uid: number): Promise<number>
 | 12300001 | The system service works abnormally. |
 | 12300002 | Invalid uid. |
 
-**示例：** 查询值为12345678的uid所属的系统账号ID
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+查询值为12345678的uid所属的系统账号ID。
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let uid: number = 12345678;
-5. try {
-6. accountManager.getOsAccountLocalIdForUid(uid).then((localId: number) => {
-7. console.info('getOsAccountLocalIdForUid successfully, localId: ' + localId);
-8. }).catch((err: BusinessError) => {
-9. console.error(`getOsAccountLocalIdForUid failed, code is ${err.code}, message is ${err.message}`);
-10. });
-11. } catch (e) {
-12. const err = e as BusinessError;
-13. console.error(`getOsAccountLocalIdForUid exception: code is ${err.code}, message is ${err.message}`);
-14. }
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+// uid为进程uid，请通过应用信息获取
+let uid: number = 12345678;
+try {
+  accountManager.getOsAccountLocalIdForUid(uid).then((localId: number) => {
+    console.info('getOsAccountLocalIdForUid successfully, localId: ' + localId);
+  }).catch((err: BusinessError) => {
+    console.error(`getOsAccountLocalIdForUid failed, code is ${err.code}, message is ${err.message}`);
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`getOsAccountLocalIdForUid exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### getOsAccountLocalIdForUidSync10+
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountLocalIdForUidSync(uid: number): number
 
@@ -1082,25 +1098,73 @@ getOsAccountLocalIdForUidSync(uid: number): number
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 | 12300002 | Invalid uid. |
 
-**示例：** 查询值为12345678的uid所属的系统账号ID
+**示例：**
 
+查询值为12345678的uid所属的系统账号ID。
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+// uid为进程uid，请通过应用信息获取
+let uid: number = 12345678;
+try {
+  let localId : number = accountManager.getOsAccountLocalIdForUidSync(uid);
+  console.info('getOsAccountLocalIdForUidSync successfully, localId: ' + localId);
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`getOsAccountLocalIdForUidSync exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
-1. import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let uid: number = 12345678;
-5. try {
-6. let localId : number = accountManager.getOsAccountLocalIdForUidSync(uid);
-7. console.info('getOsAccountLocalIdForUidSync successfully, localId: ' + localId);
-8. } catch (e) {
-9. const err = e as BusinessError;
-10. console.error(`getOsAccountLocalIdForUidSync exception: code is ${err.code}, message is ${err.message}`);
-11. }
+### getOsAccountLocalIds
+
+getOsAccountLocalIds(): Promise<number[]>
+
+获取所有非系统级的操作系统账号的本地ID。非系统级的操作系统账号对用户可见，通常用于登录等操作。使用Promise异步回调。
+
+**起始版本：** 26.0.0
+
+**需要权限：** ohos.permission.GET\_LOCAL\_ACCOUNT\_IDENTIFIERS
+
+**系统能力：** SystemCapability.Account.OsAccount
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number[]> | Promise对象，返回所有非系统级的操作系统账号的本地ID。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[账号管理错误码](errorcode-account.md)和[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 12300001 | The system service works abnormally. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+try {
+  accountManager.getOsAccountLocalIds().then((localIds: number[]) => {
+    console.info('getOsAccountLocalIds localIds: ' + localIds);
+  }).catch((err: BusinessError) => {
+    console.error(`getOsAccountLocalIds failed, code is ${err.code}, message is ${err.message}`);
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`getOsAccountLocalIds exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### getOsAccountLocalIdForDomain9+
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountLocalIdForDomain(domainInfo: DomainAccountInfo, callback: AsyncCallback<number>): void
 
@@ -1127,31 +1191,30 @@ getOsAccountLocalIdForDomain(domainInfo: DomainAccountInfo, callback: AsyncCallb
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 | 12300001 | The system service works abnormally. |
 | 12300002 | Invalid domainInfo. |
+| 12300003 | Domain account not found. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let domainInfo: osAccount.DomainAccountInfo = {domain: 'testDomain', accountName: 'testAccountName'};
-4. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-5. try {
-6. accountManager.getOsAccountLocalIdForDomain(domainInfo, (err: BusinessError, localId: number) => {
-7. if (err) {
-8. console.error(`getOsAccountLocalIdForDomain failed, code is ${err.code}, message is ${err.message}`);
-9. } else {
-10. console.info('getOsAccountLocalIdForDomain successfully, localId: ' + localId);
-11. }
-12. });
-13. } catch (e) {
-14. const err = e as BusinessError;
-15. console.error(`getOsAccountLocalIdForDomain exception: code is ${err.code}, message is ${err.message}`);
-16. }
+let domainInfo: osAccount.DomainAccountInfo = {domain: 'testDomain', accountName: 'testAccountName'};
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+try {
+  accountManager.getOsAccountLocalIdForDomain(domainInfo, (err: BusinessError, localId: number) => {
+    if (err) {
+      console.error(`getOsAccountLocalIdForDomain failed, code is ${err.code}, message is ${err.message}`);
+    } else {
+      console.info('getOsAccountLocalIdForDomain successfully, localId: ' + localId);
+    }
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`getOsAccountLocalIdForDomain exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### getOsAccountLocalIdForDomain9+
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountLocalIdForDomain(domainInfo: DomainAccountInfo): Promise<number>
 
@@ -1183,37 +1246,36 @@ getOsAccountLocalIdForDomain(domainInfo: DomainAccountInfo): Promise<number>
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 | 12300001 | The system service works abnormally. |
 | 12300002 | Invalid domainInfo. |
+| 12300003 | Domain account not found. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let domainInfo: osAccount.DomainAccountInfo = {domain: 'testDomain', accountName: 'testAccountName'};
-5. try {
-6. accountManager.getOsAccountLocalIdForDomain(domainInfo).then((localId: number) => {
-7. console.info('getOsAccountLocalIdForDomain successfully, localId: ' + localId);
-8. }).catch((err: BusinessError) => {
-9. console.error(`getOsAccountLocalIdForDomain failed, code is ${err.code}, message is ${err.message}`);
-10. });
-11. } catch (e) {
-12. const err = e as BusinessError;
-13. console.error(`getOsAccountLocalIdForDomain exception: code is ${err.code}, message is ${err.message}`);
-14. }
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+let domainInfo: osAccount.DomainAccountInfo = {domain: 'testDomain', accountName: 'testAccountName'};
+try {
+  accountManager.getOsAccountLocalIdForDomain(domainInfo).then((localId: number) => {
+    console.info('getOsAccountLocalIdForDomain successfully, localId: ' + localId);
+  }).catch((err: BusinessError) => {
+    console.error(`getOsAccountLocalIdForDomain failed, code is ${err.code}, message is ${err.message}`);
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`getOsAccountLocalIdForDomain exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### getOsAccountConstraints(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountConstraints(localId: number, callback: AsyncCallback<Array<string>>): void
 
 获取指定系统账号的全部约束。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 9开始支持，从API version 11开始废弃。替代方法仅向系统应用开放。
+从API version 9开始支持，从API version 11开始废弃，替代方法仅向系统应用开放。
 
 **需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS，以上权限仅系统应用可申请。
 
@@ -1238,38 +1300,39 @@ getOsAccountConstraints(localId: number, callback: AsyncCallback<Array<string>>)
 | 12300002 | Invalid localId. |
 | 12300003 | Account not found. |
 
-**示例：** 获取ID为100的系统账号的全部约束
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+获取ID为100的系统账号的全部约束。
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let localId: number = 100;
-5. try {
-6. accountManager.getOsAccountConstraints(localId, (err: BusinessError, constraints: string[]) => {
-7. if (err) {
-8. console.error(`getOsAccountConstraints failed, err: code is ${err.code}, message is ${err.message}`);
-9. } else {
-10. console.info('getOsAccountConstraints successfully, constraints: ' + JSON.stringify(constraints));
-11. }
-12. });
-13. } catch (e) {
-14. const err = e as BusinessError;
-15. console.error(`getOsAccountConstraints exception: code is ${err.code}, message is ${err.message}`);
-16. }
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+// localId为系统账号ID，请通过getOsAccountLocalId接口获取
+let localId: number = 100;
+try {
+  accountManager.getOsAccountConstraints(localId, (err: BusinessError, constraints: string[]) => {
+    if (err) {
+      console.error(`getOsAccountConstraints failed, err: code is ${err.code}, message is ${err.message}`);
+    } else {
+      console.info('getOsAccountConstraints successfully, constraints: ' + JSON.stringify(constraints));
+    }
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`getOsAccountConstraints exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### getOsAccountConstraints(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountConstraints(localId: number): Promise<Array<string>>
 
 获取指定系统账号的全部约束。使用Promise异步回调。
 
-说明
+**说明** 
 
-从API version 9开始支持，从API version 11开始废弃。替代方法仅向系统应用开放。
+从API version 9开始支持，从API version 11开始废弃，替代方法仅向系统应用开放。
 
 **需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS，以上权限仅系统应用可申请。
 
@@ -1299,28 +1362,29 @@ getOsAccountConstraints(localId: number): Promise<Array<string>>
 | 12300002 | Invalid localId. |
 | 12300003 | Account not found. |
 
-**示例：** 获取ID为100的系统账号的全部约束
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+获取ID为100的系统账号的全部约束。
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let localId: number = 100;
-5. try {
-6. accountManager.getOsAccountConstraints(localId).then((constraints: string[]) => {
-7. console.info('getOsAccountConstraints, constraints: ' + constraints);
-8. }).catch((err: BusinessError) => {
-9. console.error(`getOsAccountConstraints err: code is ${err.code}, message is ${err.message}`);
-10. });
-11. } catch (e) {
-12. const err = e as BusinessError;
-13. console.error(`getOsAccountConstraints exception: code is ${err.code}, message is ${err.message}`);
-14. }
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+// localId为系统账号ID，请通过getOsAccountLocalId接口获取
+let localId: number = 100;
+try {
+  accountManager.getOsAccountConstraints(localId).then((constraints: string[]) => {
+    console.info('getOsAccountConstraints, constraints: ' + constraints);
+  }).catch((err: BusinessError) => {
+    console.error(`getOsAccountConstraints err: code is ${err.code}, message is ${err.message}`);
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`getOsAccountConstraints exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### getActivatedOsAccountLocalIds9+
-
-PhonePC/2in1TabletTVWearable
 
 getActivatedOsAccountLocalIds(callback: AsyncCallback<Array<number>>): void
 
@@ -1345,30 +1409,28 @@ getActivatedOsAccountLocalIds(callback: AsyncCallback<Array<number>>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. try {
-5. accountManager.getActivatedOsAccountLocalIds((err: BusinessError, idArray: number[])=>{
-6. if (err) {
-7. console.error(`getActivatedOsAccountLocalIds code is ${err.code}, message is ${err.message}`);
-8. } else {
-9. console.info('getActivatedOsAccountLocalIds idArray length:' + idArray.length);
-10. for(let i=0;i<idArray.length;i++) {
-11. console.info('activated os account id: ' + idArray[i]);
-12. }
-13. }
-14. });
-15. } catch (e) {
-16. const err = e as BusinessError;
-17. console.error(`getActivatedOsAccountLocalIds exception: code is ${err.code}, message is ${err.message}`);
-18. }
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+try {
+  accountManager.getActivatedOsAccountLocalIds((err: BusinessError, idArray: number[])=>{
+    if (err) {
+      console.error(`getActivatedOsAccountLocalIds code is ${err.code}, message is ${err.message}`);
+    } else {
+      console.info('getActivatedOsAccountLocalIds idArray length:' + idArray.length);
+      for(let i=0;i<idArray.length;i++) {
+        console.info('activated os account id: ' + idArray[i]);
+      }
+    }
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`getActivatedOsAccountLocalIds exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### getActivatedOsAccountLocalIds9+
-
-PhonePC/2in1TabletTVWearable
 
 getActivatedOsAccountLocalIds(): Promise<Array<number>>
 
@@ -1392,33 +1454,31 @@ getActivatedOsAccountLocalIds(): Promise<Array<number>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. try {
-5. accountManager.getActivatedOsAccountLocalIds().then((idArray: number[]) => {
-6. console.info('getActivatedOsAccountLocalIds, idArray: ' + idArray);
-7. }).catch((err: BusinessError) => {
-8. console.error(`getActivatedOsAccountLocalIds err: code is ${err.code}, message is ${err.message}`);
-9. });
-10. } catch (e) {
-11. const err = e as BusinessError;
-12. console.error(`getActivatedOsAccountLocalIds exception: code is ${err.code}, message is ${err.message}`);
-13. }
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+try {
+  accountManager.getActivatedOsAccountLocalIds().then((idArray: number[]) => {
+    console.info('getActivatedOsAccountLocalIds, idArray: ' + idArray);
+  }).catch((err: BusinessError) => {
+    console.error(`getActivatedOsAccountLocalIds err: code is ${err.code}, message is ${err.message}`);
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`getActivatedOsAccountLocalIds exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### getCurrentOsAccount(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getCurrentOsAccount(callback: AsyncCallback<OsAccountInfo>): void
 
 查询当前进程所属的系统账号的信息。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 9开始支持，从API version 11开始废弃。替代方法仅向系统应用开放。
+从API version 9开始支持，从API version 11开始废弃，替代方法仅向系统应用开放。
 
 **需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS或ohos.permission.GET\_LOCAL\_ACCOUNTS10+，以上权限仅系统应用可申请。
 
@@ -1442,35 +1502,33 @@ getCurrentOsAccount(callback: AsyncCallback<OsAccountInfo>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. try {
-5. accountManager.getCurrentOsAccount((err: BusinessError, curAccountInfo: osAccount.OsAccountInfo)=>{
-6. if (err) {
-7. console.error(`getCurrentOsAccount code is ${err.code}, message is ${err.message}`);
-8. } else {
-9. console.info('getCurrentOsAccount curAccountInfo:' + JSON.stringify(curAccountInfo));
-10. }
-11. });
-12. } catch (e) {
-13. const err = e as BusinessError;
-14. console.error(`getCurrentOsAccount exception: code is ${err.code}, message is ${err.message}`);
-15. }
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+try {
+  accountManager.getCurrentOsAccount((err: BusinessError, curAccountInfo: osAccount.OsAccountInfo)=>{
+    if (err) {
+      console.error(`getCurrentOsAccount code is ${err.code}, message is ${err.message}`);
+    } else {
+      console.info('getCurrentOsAccount curAccountInfo:' + JSON.stringify(curAccountInfo));
+    }
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`getCurrentOsAccount exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### getCurrentOsAccount(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getCurrentOsAccount(): Promise<OsAccountInfo>
 
 查询当前进程所属的系统账号的信息。使用Promise异步回调。
 
-说明
+**说明** 
 
-从API version 9开始支持，从API version 11开始废弃。替代方法仅向系统应用开放。
+从API version 9开始支持，从API version 11开始废弃，替代方法仅向系统应用开放。
 
 **需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS或ohos.permission.GET\_LOCAL\_ACCOUNTS10+，以上权限仅系统应用可申请。
 
@@ -1493,25 +1551,23 @@ getCurrentOsAccount(): Promise<OsAccountInfo>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. try {
-5. accountManager.getCurrentOsAccount().then((accountInfo: osAccount.OsAccountInfo) => {
-6. console.info('getCurrentOsAccount, accountInfo: ' + JSON.stringify(accountInfo));
-7. }).catch((err: BusinessError) => {
-8. console.error(`getCurrentOsAccount err: code is ${err.code}, message is ${err.message}`);
-9. });
-10. } catch (e) {
-11. const err = e as BusinessError;
-12. console.error(`getCurrentOsAccount exception: code is ${err.code}, message is ${err.message}`);
-13. }
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+try {
+  accountManager.getCurrentOsAccount().then((accountInfo: osAccount.OsAccountInfo) => {
+    console.info('getCurrentOsAccount, accountInfo: ' + JSON.stringify(accountInfo));
+  }).catch((err: BusinessError) => {
+    console.error(`getCurrentOsAccount err: code is ${err.code}, message is ${err.message}`);
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`getCurrentOsAccount exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### getOsAccountType9+
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountType(callback: AsyncCallback<OsAccountType>): void
 
@@ -1536,27 +1592,25 @@ getOsAccountType(callback: AsyncCallback<OsAccountType>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. try {
-5. accountManager.getOsAccountType((err: BusinessError, accountType: osAccount.OsAccountType) => {
-6. if (err) {
-7. console.error(`getOsAccountType err: code is ${err.code}, message is ${err.message}`);
-8. } else {
-9. console.info('getOsAccountType accountType: ' + accountType);
-10. }
-11. });
-12. } catch (e) {
-13. const err = e as BusinessError;
-14. console.error(`getOsAccountType exception: code is ${err.code}, message is ${err.message}`);
-15. }
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+try {
+  accountManager.getOsAccountType((err: BusinessError, accountType: osAccount.OsAccountType) => {
+    if (err) {
+      console.error(`getOsAccountType err: code is ${err.code}, message is ${err.message}`);
+    } else {
+      console.info('getOsAccountType accountType: ' + accountType);
+    }
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`getOsAccountType exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### getOsAccountType9+
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountType(): Promise<OsAccountType>
 
@@ -1580,25 +1634,23 @@ getOsAccountType(): Promise<OsAccountType>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. try {
-5. accountManager.getOsAccountType().then((accountType: osAccount.OsAccountType) => {
-6. console.info('getOsAccountType, accountType: ' + accountType);
-7. }).catch((err: BusinessError) => {
-8. console.error(`getOsAccountType err: code is ${err.code}, message is ${err.message}`);
-9. });
-10. } catch (e) {
-11. const err = e as BusinessError;
-12. console.error(`getOsAccountType exception: code is ${err.code}, message is ${err.message}`);
-13. }
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+try {
+  accountManager.getOsAccountType().then((accountType: osAccount.OsAccountType) => {
+    console.info('getOsAccountType, accountType: ' + accountType);
+  }).catch((err: BusinessError) => {
+    console.error(`getOsAccountType err: code is ${err.code}, message is ${err.message}`);
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`getOsAccountType exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### queryDistributedVirtualDeviceId9+
-
-PhonePC/2in1TabletTVWearable
 
 queryDistributedVirtualDeviceId(callback: AsyncCallback<string>): void
 
@@ -1626,27 +1678,25 @@ queryDistributedVirtualDeviceId(callback: AsyncCallback<string>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. try {
-5. accountManager.queryDistributedVirtualDeviceId((err: BusinessError, virtualID: string) => {
-6. if (err) {
-7. console.error(`queryDistributedVirtualDeviceId err: code is ${err.code}, message is ${err.message}`);
-8. } else {
-9. console.info('queryDistributedVirtualDeviceId virtualID: ' + virtualID);
-10. }
-11. });
-12. } catch (e) {
-13. const err = e as BusinessError;
-14. console.error(`queryDistributedVirtualDeviceId exception: code is ${err.code}, message is ${err.message}`);
-15. }
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+try {
+  accountManager.queryDistributedVirtualDeviceId((err: BusinessError, virtualID: string) => {
+    if (err) {
+      console.error(`queryDistributedVirtualDeviceId err: code is ${err.code}, message is ${err.message}`);
+    } else {
+      console.info('queryDistributedVirtualDeviceId virtualID: ' + virtualID);
+    }
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`queryDistributedVirtualDeviceId exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### queryDistributedVirtualDeviceId9+
-
-PhonePC/2in1TabletTVWearable
 
 queryDistributedVirtualDeviceId(): Promise<string>
 
@@ -1673,25 +1723,23 @@ queryDistributedVirtualDeviceId(): Promise<string>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. try {
-5. accountManager.queryDistributedVirtualDeviceId().then((virtualID: string) => {
-6. console.info('queryDistributedVirtualDeviceId, virtualID: ' + virtualID);
-7. }).catch((err: BusinessError) => {
-8. console.error(`queryDistributedVirtualDeviceId err: code is ${err.code}, message is ${err.message}`);
-9. });
-10. } catch (e) {
-11. const err = e as BusinessError;
-12. console.error(`queryDistributedVirtualDeviceId exception: code is ${err.code}, message is ${err.message}`);
-13. }
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+try {
+  accountManager.queryDistributedVirtualDeviceId().then((virtualID: string) => {
+    console.info('queryDistributedVirtualDeviceId, virtualID: ' + virtualID);
+  }).catch((err: BusinessError) => {
+    console.error(`queryDistributedVirtualDeviceId err: code is ${err.code}, message is ${err.message}`);
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`queryDistributedVirtualDeviceId exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### getOsAccountLocalIdForSerialNumber9+
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountLocalIdForSerialNumber(serialNumber: number, callback: AsyncCallback<number>): void
 
@@ -1717,30 +1765,31 @@ getOsAccountLocalIdForSerialNumber(serialNumber: number, callback: AsyncCallback
 | 12300002 | Invalid serialNumber. |
 | 12300003 | The account indicated by serialNumber does not exist. |
 
-**示例：** 查询与SN码12345关联的系统账号的ID
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+查询与SN码12345关联的系统账号的ID。
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let serialNumber: number = 12345;
-5. try {
-6. accountManager.getOsAccountLocalIdForSerialNumber(serialNumber, (err: BusinessError, localId: number)=>{
-7. if (err) {
-8. console.error(`get localId code is ${err.code}, message is ${err.message}`);
-9. } else {
-10. console.info('get localId:' + localId + ' by serialNumber: ' + serialNumber);
-11. }
-12. });
-13. } catch (e) {
-14. const err = e as BusinessError;
-15. console.error(`get localId exception: code is ${err.code}, message is ${err.message}`);
-16. }
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+// serialNumber为账号SN码，可通过getSerialNumberForOsAccountLocalId接口获取
+let serialNumber: number = 12345;
+try {
+  accountManager.getOsAccountLocalIdForSerialNumber(serialNumber, (err: BusinessError, localId: number)=>{
+    if (err) {
+      console.error(`get localId code is ${err.code}, message is ${err.message}`);
+    } else {
+      console.info('get localId:' + localId + ' by serialNumber: ' + serialNumber);
+    }
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`get localId exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### getOsAccountLocalIdForSerialNumber9+
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountLocalIdForSerialNumber(serialNumber: number): Promise<number>
 
@@ -1771,28 +1820,29 @@ getOsAccountLocalIdForSerialNumber(serialNumber: number): Promise<number>
 | 12300002 | Invalid serialNumber. |
 | 12300003 | The account indicated by serialNumber does not exist. |
 
-**示例：** 查询与SN码12345关联的系统账号的ID
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+查询与SN码12345关联的系统账号的ID。
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let serialNumber: number = 12345;
-5. try {
-6. accountManager.getOsAccountLocalIdForSerialNumber(serialNumber).then((localId: number) => {
-7. console.info('getOsAccountLocalIdForSerialNumber localId: ' + localId);
-8. }).catch((err: BusinessError) => {
-9. console.error(`getOsAccountLocalIdForSerialNumber err: code is ${err.code}, message is ${err.message}`);
-10. });
-11. } catch (e) {
-12. const err = e as BusinessError;
-13. console.error(`getOsAccountLocalIdForSerialNumber exception: code is ${err.code}, message is ${err.message}`);
-14. }
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+// serialNumber为账号SN码，可通过getSerialNumberForOsAccountLocalId接口获取
+let serialNumber: number = 12345;
+try {
+  accountManager.getOsAccountLocalIdForSerialNumber(serialNumber).then((localId: number) => {
+    console.info('getOsAccountLocalIdForSerialNumber localId: ' + localId);
+  }).catch((err: BusinessError) => {
+    console.error(`getOsAccountLocalIdForSerialNumber err: code is ${err.code}, message is ${err.message}`);
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`getOsAccountLocalIdForSerialNumber exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### getSerialNumberForOsAccountLocalId9+
-
-PhonePC/2in1TabletTVWearable
 
 getSerialNumberForOsAccountLocalId(localId: number, callback: AsyncCallback<number>): void
 
@@ -1818,30 +1868,31 @@ getSerialNumberForOsAccountLocalId(localId: number, callback: AsyncCallback<numb
 | 12300002 | Invalid localId. |
 | 12300003 | Account not found. |
 
-**示例：** 获取ID为100的系统账号关联的SN码
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+获取ID为100的系统账号关联的SN码。
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let localId: number = 100;
-5. try {
-6. accountManager.getSerialNumberForOsAccountLocalId(localId, (err: BusinessError, serialNumber: number)=>{
-7. if (err) {
-8. console.error(`get serialNumber code is ${err.code}, message is ${err.message}`);
-9. } else {
-10. console.info('get serialNumber:' + serialNumber + ' by localId: ' + localId);
-11. }
-12. });
-13. } catch (e) {
-14. const err = e as BusinessError;
-15. console.error(`get serialNumber exception: code is ${err.code}, message is ${err.message}`);
-16. }
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+// localId为系统账号ID，请通过getOsAccountLocalId接口获取
+let localId: number = 100;
+try {
+  accountManager.getSerialNumberForOsAccountLocalId(localId, (err: BusinessError, serialNumber: number)=>{
+    if (err) {
+      console.error(`get serialNumber code is ${err.code}, message is ${err.message}`);
+    } else {
+      console.info('get serialNumber:' + serialNumber + ' by localId: ' + localId);
+    }
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`get serialNumber exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### getSerialNumberForOsAccountLocalId9+
-
-PhonePC/2in1TabletTVWearable
 
 getSerialNumberForOsAccountLocalId(localId: number): Promise<number>
 
@@ -1872,36 +1923,37 @@ getSerialNumberForOsAccountLocalId(localId: number): Promise<number>
 | 12300002 | Invalid localId. |
 | 12300003 | Account not found. |
 
-**示例：** 获取ID为100的系统账号关联的SN码
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+获取ID为100的系统账号关联的SN码。
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let localId: number = 100;
-5. try {
-6. accountManager.getSerialNumberForOsAccountLocalId(localId).then((serialNumber: number) => {
-7. console.info('getSerialNumberForOsAccountLocalId serialNumber: ' + serialNumber);
-8. }).catch((err: BusinessError) => {
-9. console.error(`getSerialNumberForOsAccountLocalId err: code is ${err.code}, message is ${err.message}`);
-10. });
-11. } catch (e) {
-12. const err = e as BusinessError;
-13. console.error(`getSerialNumberForOsAccountLocalId exception: code is ${err.code}, message is ${err.message}`);
-14. }
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+// localId为系统账号ID，请通过getOsAccountLocalId接口获取
+let localId: number = 100;
+try {
+  accountManager.getSerialNumberForOsAccountLocalId(localId).then((serialNumber: number) => {
+    console.info('getSerialNumberForOsAccountLocalId serialNumber: ' + serialNumber);
+  }).catch((err: BusinessError) => {
+    console.error(`getSerialNumberForOsAccountLocalId err: code is ${err.code}, message is ${err.message}`);
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`getSerialNumberForOsAccountLocalId exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### isMultiOsAccountEnable(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isMultiOsAccountEnable(callback: AsyncCallback<boolean>): void
 
 判断是否支持多系统账号。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[checkMultiOsAccountEnabled](js-apis-osaccount.md#checkmultiosaccountenabled9)替代。
+从API version 7开始支持，从API version 9开始废弃，建议使用[checkMultiOsAccountEnabled](js-apis-osaccount.md#checkmultiosaccountenabled9)替代。
 
 **系统能力：** SystemCapability.Account.OsAccount
 
@@ -1913,30 +1965,28 @@ isMultiOsAccountEnable(callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. accountManager.isMultiOsAccountEnable((err: BusinessError, isEnabled: boolean) => {
-5. if (err) {
-6. console.error(`isMultiOsAccountEnable failed, code is ${err.code}, message is ${err.message}`);
-7. } else {
-8. console.info('isMultiOsAccountEnable successfully, isEnabled: ' + isEnabled);
-9. }
-10. });
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+accountManager.isMultiOsAccountEnable((err: BusinessError, isEnabled: boolean) => {
+  if (err) {
+    console.error(`isMultiOsAccountEnable failed, code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info('isMultiOsAccountEnable successfully, isEnabled: ' + isEnabled);
+  }
+});
 ```
 
 ### isMultiOsAccountEnable(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isMultiOsAccountEnable(): Promise<boolean>
 
 判断是否支持多系统账号。使用Promise异步回调。
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[checkMultiOsAccountEnabled](js-apis-osaccount.md#checkmultiosaccountenabled9-1)替代。
+从API version 7开始支持，从API version 9开始废弃，建议使用[checkMultiOsAccountEnabled](js-apis-osaccount.md#checkmultiosaccountenabled9-1)替代。
 
 **系统能力：** SystemCapability.Account.OsAccount
 
@@ -1948,28 +1998,26 @@ isMultiOsAccountEnable(): Promise<boolean>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. accountManager.isMultiOsAccountEnable().then((isEnabled: boolean) => {
-5. console.info('isMultiOsAccountEnable successfully, isEnabled: ' + isEnabled);
-6. }).catch((err: BusinessError) => {
-7. console.error(`isMultiOsAccountEnable failed, code is ${err.code}, message is ${err.message}`);
-8. });
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+accountManager.isMultiOsAccountEnable().then((isEnabled: boolean) => {
+  console.info('isMultiOsAccountEnable successfully, isEnabled: ' + isEnabled);
+}).catch((err: BusinessError) => {
+  console.error(`isMultiOsAccountEnable failed, code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### isOsAccountActived(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isOsAccountActived(localId: number, callback: AsyncCallback<boolean>): void
 
 判断指定系统账号是否处于激活状态。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃。替代方法仅向系统应用开放。
+从API version 7开始支持，从API version 9开始废弃，替代方法仅向系统应用开放。
 
 **需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS或ohos.permission.INTERACT\_ACROSS\_LOCAL\_ACCOUNTS，以上权限仅系统应用可申请。
 
@@ -1982,33 +2030,34 @@ isOsAccountActived(localId: number, callback: AsyncCallback<boolean>): void
 | localId | number | 是 | 系统账号ID。 |
 | callback | AsyncCallback<boolean> | 是 | 回调函数。返回true表示账号已激活；返回false表示账号未激活。 |
 
-**示例：** 判断ID为100的系统账号是否处于激活状态
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+判断ID为100的系统账号是否处于激活状态。
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let localId: number = 100;
-5. accountManager.isOsAccountActived(localId, (err: BusinessError, isActived: boolean) => {
-6. if (err) {
-7. console.error(`isOsAccountActived failed, code is ${err.code}, message is ${err.message}`);
-8. } else {
-9. console.info('isOsAccountActived successfully, isActived:' + isActived);
-10. }
-11. });
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+// localId为系统账号ID，请通过getOsAccountLocalId接口获取
+let localId: number = 100;
+accountManager.isOsAccountActived(localId, (err: BusinessError, isActived: boolean) => {
+  if (err) {
+    console.error(`isOsAccountActived failed, code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info('isOsAccountActived successfully, isActived:' + isActived);
+  }
+});
 ```
 
 ### isOsAccountActived(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isOsAccountActived(localId: number): Promise<boolean>
 
 判断指定系统账号是否处于激活状态。使用Promise异步回调。
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃。替代方法仅向系统应用开放。
+从API version 7开始支持，从API version 9开始废弃，替代方法仅向系统应用开放。
 
 **需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS或ohos.permission.INTERACT\_ACROSS\_LOCAL\_ACCOUNTS，以上权限仅系统应用可申请。
 
@@ -2026,31 +2075,32 @@ isOsAccountActived(localId: number): Promise<boolean>
 | --- | --- |
 | Promise<boolean> | Promise对象。返回true表示账号已激活；返回false表示账号未激活。 |
 
-**示例：** 判断ID为100的系统账号是否处于激活状态
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+判断ID为100的系统账号是否处于激活状态。
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let localId: number = 100;
-5. accountManager.isOsAccountActived(localId).then((isActived: boolean) => {
-6. console.info('isOsAccountActived successfully, isActived: ' + isActived);
-7. }).catch((err: BusinessError) => {
-8. console.error(`isOsAccountActived failed, code is ${err.code}, message is ${err.message}`);
-9. });
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+// localId为系统账号ID，请通过getOsAccountLocalId接口获取
+let localId: number = 100;
+accountManager.isOsAccountActived(localId).then((isActived: boolean) => {
+  console.info('isOsAccountActived successfully, isActived: ' + isActived);
+}).catch((err: BusinessError) => {
+  console.error(`isOsAccountActived failed, code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### isOsAccountConstraintEnable(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isOsAccountConstraintEnable(localId: number, constraint: string, callback: AsyncCallback<boolean>): void
 
 判断指定系统账号是否具有指定约束。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃。替代方法仅向系统应用开放。
+从API version 7开始支持，从API version 9开始废弃，替代方法仅向系统应用开放。
 
 **需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS，该权限仅系统应用可申请。
 
@@ -2064,34 +2114,35 @@ isOsAccountConstraintEnable(localId: number, constraint: string, callback: Async
 | constraint | string | 是 | 指定的[约束](js-apis-osaccount.md#系统账号约束列表)名称。 |
 | callback | AsyncCallback<boolean> | 是 | 回调函数。返回true表示已使能指定的约束；返回false表示未使能指定的约束。 |
 
-**示例：** 判断ID为100的系统账号是否有禁止使用Wi-Fi的约束
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+判断ID为100的系统账号是否有禁止使用Wi-Fi的约束。
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let localId: number = 100;
-5. let constraint: string = 'constraint.wifi';
-6. accountManager.isOsAccountConstraintEnable(localId, constraint, (err: BusinessError, isEnabled: boolean) => {
-7. if (err) {
-8. console.error(`isOsAccountConstraintEnable failed, code is ${err.code}, message is ${err.message}`);
-9. } else {
-10. console.info('isOsAccountConstraintEnable successfully, isEnabled: ' + isEnabled);
-11. }
-12. });
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+// localId为系统账号ID，请通过getOsAccountLocalId接口获取
+let localId: number = 100;
+let constraint: string = 'constraint.wifi';
+accountManager.isOsAccountConstraintEnable(localId, constraint, (err: BusinessError, isEnabled: boolean) => {
+  if (err) {
+    console.error(`isOsAccountConstraintEnable failed, code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info('isOsAccountConstraintEnable successfully, isEnabled: ' + isEnabled);
+  }
+});
 ```
 
 ### isOsAccountConstraintEnable(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isOsAccountConstraintEnable(localId: number, constraint: string): Promise<boolean>
 
 判断指定系统账号是否具有指定约束。使用Promise异步回调。
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃。替代方法仅向系统应用开放。
+从API version 7开始支持，从API version 9开始废弃，替代方法仅向系统应用开放。
 
 **需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS，该权限仅系统应用可申请。
 
@@ -2110,32 +2161,33 @@ isOsAccountConstraintEnable(localId: number, constraint: string): Promise<boolea
 | --- | --- |
 | Promise<boolean> | Promise对象。返回true表示已使能指定的约束；返回false表示未使能指定的约束。 |
 
-**示例：** 判断ID为100的系统账号是否有禁止使用Wi-Fi的约束
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+判断ID为100的系统账号是否有禁止使用Wi-Fi的约束。
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let localId: number = 100;
-5. let constraint: string = 'constraint.wifi';
-6. accountManager.isOsAccountConstraintEnable(localId, constraint).then((isEnabled: boolean) => {
-7. console.info('isOsAccountConstraintEnable successfully, isEnabled: ' + isEnabled);
-8. }).catch((err: BusinessError) => {
-9. console.error(`isOsAccountConstraintEnable err: code is ${err.code}, message is ${err.message}`);
-10. });
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+// localId为系统账号ID，请通过getOsAccountLocalId接口获取
+let localId: number = 100;
+let constraint: string = 'constraint.wifi';
+accountManager.isOsAccountConstraintEnable(localId, constraint).then((isEnabled: boolean) => {
+  console.info('isOsAccountConstraintEnable successfully, isEnabled: ' + isEnabled);
+}).catch((err: BusinessError) => {
+  console.error(`isOsAccountConstraintEnable err: code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### isTestOsAccount(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isTestOsAccount(callback: AsyncCallback<boolean>): void
 
 检查当前系统账号是否为测试账号。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[checkOsAccountTestable](js-apis-osaccount.md#checkosaccounttestable9)替代。
+从API version 7开始支持，从API version 9开始废弃，建议使用[checkOsAccountTestable](js-apis-osaccount.md#checkosaccounttestable9)替代。
 
 **系统能力：** SystemCapability.Account.OsAccount
 
@@ -2147,30 +2199,28 @@ isTestOsAccount(callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. accountManager.isTestOsAccount((err: BusinessError, isTestable: boolean) => {
-5. if (err) {
-6. console.error(`isTestOsAccount failed, code is ${err.code}, message is ${err.message}`);
-7. } else {
-8. console.info('isTestOsAccount successfully, isTestable: ' + isTestable);
-9. }
-10. });
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+accountManager.isTestOsAccount((err: BusinessError, isTestable: boolean) => {
+  if (err) {
+    console.error(`isTestOsAccount failed, code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info('isTestOsAccount successfully, isTestable: ' + isTestable);
+  }
+});
 ```
 
 ### isTestOsAccount(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isTestOsAccount(): Promise<boolean>
 
 检查当前系统账号是否为测试账号。使用Promise异步回调。
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[checkOsAccountTestable](js-apis-osaccount.md#checkosaccounttestable9-1)替代。
+从API version 7开始支持，从API version 9开始废弃，建议使用[checkOsAccountTestable](js-apis-osaccount.md#checkosaccounttestable9-1)替代。
 
 **系统能力：** SystemCapability.Account.OsAccount
 
@@ -2182,28 +2232,26 @@ isTestOsAccount(): Promise<boolean>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. accountManager.isTestOsAccount().then((isTestable: boolean) => {
-5. console.info('isTestOsAccount successfully, isTestable: ' + isTestable);
-6. }).catch((err: BusinessError) => {
-7. console.error(`isTestOsAccount failed, code is ${err.code}, message is ${err.message}`);
-8. });
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+  accountManager.isTestOsAccount().then((isTestable: boolean) => {
+    console.info('isTestOsAccount successfully, isTestable: ' + isTestable);
+  }).catch((err: BusinessError) => {
+    console.error(`isTestOsAccount failed, code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### isOsAccountVerified(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isOsAccountVerified(callback: AsyncCallback<boolean>): void
 
 检查当前系统账号是否已验证。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[checkOsAccountVerified](js-apis-osaccount.md#checkosaccountverifieddeprecated)替代。
+从API version 7开始支持，从API version 9开始废弃，建议使用[checkOsAccountVerified](js-apis-osaccount.md#checkosaccountverifieddeprecated)替代。
 
 **需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS或ohos.permission.INTERACT\_ACROSS\_LOCAL\_ACCOUNTS，以上权限仅系统应用可申请。
 
@@ -2213,34 +2261,32 @@ isOsAccountVerified(callback: AsyncCallback<boolean>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<boolean> | 是 | 回调函数。返回true表示指定账号已验证；返回false表示指定账号未验证。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。返回true表示当前账号已验证；返回false表示当前账号未验证。 |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. accountManager.isOsAccountVerified((err: BusinessError, isVerified: boolean) => {
-5. if (err) {
-6. console.error(`isOsAccountVerified failed, code is ${err.code}, message is ${err.message}`);
-7. } else {
-8. console.info('isOsAccountVerified successfully, isVerified: ' + isVerified);
-9. }
-10. });
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+accountManager.isOsAccountVerified((err: BusinessError, isVerified: boolean) => {
+  if (err) {
+    console.error(`isOsAccountVerified failed, code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info('isOsAccountVerified successfully, isVerified: ' + isVerified);
+  }
+});
 ```
 
 ### isOsAccountVerified(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isOsAccountVerified(localId: number, callback: AsyncCallback<boolean>): void
 
 检查指定系统账号是否已验证。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃。替代方法仅向系统应用开放。
+从API version 7开始支持，从API version 9开始废弃，替代方法仅向系统应用开放。
 
 **需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS或ohos.permission.INTERACT\_ACROSS\_LOCAL\_ACCOUNTS，以上权限仅系统应用可申请。
 
@@ -2255,31 +2301,30 @@ isOsAccountVerified(localId: number, callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let localId: number = 100;
-5. accountManager.isOsAccountVerified(localId, (err: BusinessError, isVerified: boolean) => {
-6. if (err) {
-7. console.error(`isOsAccountVerified failed, code is ${err.code}, message is ${err.message}`);
-8. } else {
-9. console.info('isOsAccountVerified successfully, isVerified: ' + isVerified);
-10. }
-11. });
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+// localId为系统账号ID，请通过getOsAccountLocalId接口获取
+let localId: number = 100;
+accountManager.isOsAccountVerified(localId, (err: BusinessError, isVerified: boolean) => {
+  if (err) {
+    console.error(`isOsAccountVerified failed, code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info('isOsAccountVerified successfully, isVerified: ' + isVerified);
+  }
+});
 ```
 
 ### isOsAccountVerified(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isOsAccountVerified(localId?: number): Promise<boolean>
 
 检查指定系统账号是否已验证。使用Promise异步回调。
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃。替代方法仅向系统应用开放。
+从API version 7开始支持，从API version 9开始废弃，替代方法仅向系统应用开放。
 
 **需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS或ohos.permission.INTERACT\_ACROSS\_LOCAL\_ACCOUNTS，以上权限仅系统应用可申请。
 
@@ -2299,28 +2344,26 @@ isOsAccountVerified(localId?: number): Promise<boolean>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. accountManager.isOsAccountVerified().then((isVerified: boolean) => {
-5. console.info('isOsAccountVerified successfully, isVerified: ' + isVerified);
-6. }).catch((err: BusinessError) => {
-7. console.error(`isOsAccountVerified failed, code is ${err.code}, message is ${err.message}`);
-8. });
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+accountManager.isOsAccountVerified().then((isVerified: boolean) => {
+  console.info('isOsAccountVerified successfully, isVerified: ' + isVerified);
+}).catch((err: BusinessError) => {
+  console.error(`isOsAccountVerified failed, code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### getCreatedOsAccountsCount(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getCreatedOsAccountsCount(callback: AsyncCallback<number>): void
 
 获取已创建的系统账号数量。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[getOsAccountCount](js-apis-osaccount.md#getosaccountcount9)替代。
+从API version 7开始支持，从API version 9开始废弃，建议使用[getOsAccountCount](js-apis-osaccount.md#getosaccountcount9)替代。
 
 **需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS，该权限仅系统应用可申请。
 
@@ -2334,30 +2377,28 @@ getCreatedOsAccountsCount(callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. accountManager.getCreatedOsAccountsCount((err: BusinessError, count: number)=>{
-5. if (err) {
-6. console.error(`getCreatedOsAccountsCount failed, code is ${err.code}, message is ${err.message}`);
-7. } else {
-8. console.info('getCreatedOsAccountsCount successfully, count: ' + count);
-9. }
-10. });
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+accountManager.getCreatedOsAccountsCount((err: BusinessError, count: number)=>{
+  if (err) {
+    console.error(`getCreatedOsAccountsCount failed, code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info('getCreatedOsAccountsCount successfully, count: ' + count);
+  }
+});
 ```
 
 ### getCreatedOsAccountsCount(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getCreatedOsAccountsCount(): Promise<number>
 
 获取已创建的系统账号数量。使用Promise异步回调。
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[getOsAccountCount](js-apis-osaccount.md#getosaccountcount9-1)替代。
+从API version 7开始支持，从API version 9开始废弃，建议使用[getOsAccountCount](js-apis-osaccount.md#getosaccountcount9-1)替代。
 
 **需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS，该权限仅系统应用可申请。
 
@@ -2371,28 +2412,26 @@ getCreatedOsAccountsCount(): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. accountManager.getCreatedOsAccountsCount().then((count: number) => {
-5. console.info('getCreatedOsAccountsCount successfully, count: ' + count);
-6. }).catch((err: BusinessError) => {
-7. console.error(`getCreatedOsAccountsCount failed, code is ${err.code}, message is ${err.message}`);
-8. });
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+accountManager.getCreatedOsAccountsCount().then((count: number) => {
+  console.info('getCreatedOsAccountsCount successfully, count: ' + count);
+}).catch((err: BusinessError) => {
+  console.error(`getCreatedOsAccountsCount failed, code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### getOsAccountLocalIdFromProcess(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountLocalIdFromProcess(callback: AsyncCallback<number>): void
 
 获取当前进程所属的系统账号ID。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[getOsAccountLocalId](js-apis-osaccount.md#getosaccountlocalid9)替代。
+从API version 7开始支持，从API version 9开始废弃，建议使用[getOsAccountLocalId](js-apis-osaccount.md#getosaccountlocalid9)替代。
 
 **系统能力：** SystemCapability.Account.OsAccount
 
@@ -2404,30 +2443,28 @@ getOsAccountLocalIdFromProcess(callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. accountManager.getOsAccountLocalIdFromProcess((err: BusinessError, localId: number) => {
-5. if (err) {
-6. console.error(`getOsAccountLocalIdFromProcess failed, code is ${err.code}, message is ${err.message}`);
-7. } else {
-8. console.info('getOsAccountLocalIdFromProcess id:: ' + localId);
-9. }
-10. });
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+accountManager.getOsAccountLocalIdFromProcess((err: BusinessError, localId: number) => {
+  if (err) {
+    console.error(`getOsAccountLocalIdFromProcess failed, code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info('getOsAccountLocalIdFromProcess id:: ' + localId);
+  }
+});
 ```
 
 ### getOsAccountLocalIdFromProcess(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountLocalIdFromProcess(): Promise<number>
 
 获取当前进程所属的系统账号ID。使用Promise异步回调。
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[getOsAccountLocalId](js-apis-osaccount.md#getosaccountlocalid9-1)替代。
+从API version 7开始支持，从API version 9开始废弃，建议使用[getOsAccountLocalId](js-apis-osaccount.md#getosaccountlocalid9-1)替代。
 
 **系统能力：** SystemCapability.Account.OsAccount
 
@@ -2439,28 +2476,26 @@ getOsAccountLocalIdFromProcess(): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. accountManager.getOsAccountLocalIdFromProcess().then((localId: number) => {
-5. console.info('getOsAccountLocalIdFromProcess successfully, localId: ' + localId);
-6. }).catch((err: BusinessError) => {
-7. console.error(`getOsAccountLocalIdFromProcess failed, code is ${err.code}, message is ${err.message}`);
-8. });
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+accountManager.getOsAccountLocalIdFromProcess().then((localId: number) => {
+  console.info('getOsAccountLocalIdFromProcess successfully, localId: ' + localId);
+}).catch((err: BusinessError) => {
+  console.error(`getOsAccountLocalIdFromProcess failed, code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### getOsAccountLocalIdFromUid(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountLocalIdFromUid(uid: number, callback: AsyncCallback<number>): void
 
 根据uid查询对应的系统账号ID。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[getOsAccountLocalIdForUid](js-apis-osaccount.md#getosaccountlocalidforuid9)替代。
+从API version 7开始支持，从API version 9开始废弃，建议使用[getOsAccountLocalIdForUid](js-apis-osaccount.md#getosaccountlocalidforuid9)替代。
 
 **系统能力：** SystemCapability.Account.OsAccount
 
@@ -2471,33 +2506,33 @@ getOsAccountLocalIdFromUid(uid: number, callback: AsyncCallback<number>): void
 | uid | number | 是 | 进程uid。 |
 | callback | AsyncCallback<number> | 是 | 回调函数。如果查询成功，err为null，data为对应的系统账号ID；否则为错误对象。 |
 
-**示例：** 查询值为12345678的uid所属的系统账号ID
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+查询值为12345678的uid所属的系统账号ID。
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let uid: number = 12345678;
-5. accountManager.getOsAccountLocalIdFromUid(uid, (err: BusinessError, localId: number) => {
-6. if (err) {
-7. console.error(`getOsAccountLocalIdFromUid failed, code is ${err.code}, message is ${err.message}`);
-8. } else {
-9. console.info('getOsAccountLocalIdFromUid successfully, localId: ' + localId);
-10. }
-11. });
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+let uid: number = 12345678;
+accountManager.getOsAccountLocalIdFromUid(uid, (err: BusinessError, localId: number) => {
+  if (err) {
+    console.error(`getOsAccountLocalIdFromUid failed, code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info('getOsAccountLocalIdFromUid successfully, localId: ' + localId);
+  }
+});
 ```
 
 ### getOsAccountLocalIdFromUid(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountLocalIdFromUid(uid: number): Promise<number>
 
 根据uid查询对应的系统账号ID。使用Promise异步回调。
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[getOsAccountLocalIdForUid](js-apis-osaccount.md#getosaccountlocalidforuid9-1)替代。
+从API version 7开始支持，从API version 9开始废弃，建议使用[getOsAccountLocalIdForUid](js-apis-osaccount.md#getosaccountlocalidforuid9-1)替代。
 
 **系统能力：** SystemCapability.Account.OsAccount
 
@@ -2513,31 +2548,31 @@ getOsAccountLocalIdFromUid(uid: number): Promise<number>
 | --- | --- |
 | Promise<number> | Promise对象，返回uid对应的系统账号ID。 |
 
-**示例：** 查询值为12345678的uid所属的系统账号ID
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+查询值为12345678的uid所属的系统账号ID。
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let uid: number = 12345678;
-5. accountManager.getOsAccountLocalIdFromUid(uid).then((localId: number) => {
-6. console.info('getOsAccountLocalIdFromUid successfully, localId: ' + localId);
-7. }).catch((err: BusinessError) => {
-8. console.error(`getOsAccountLocalIdFromUid failed, code is ${err.code}, message is ${err.message}`);
-9. });
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+let uid: number = 12345678;
+accountManager.getOsAccountLocalIdFromUid(uid).then((localId: number) => {
+  console.info('getOsAccountLocalIdFromUid successfully, localId: ' + localId);
+}).catch((err: BusinessError) => {
+  console.error(`getOsAccountLocalIdFromUid failed, code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### getOsAccountLocalIdFromDomain(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountLocalIdFromDomain(domainInfo: DomainAccountInfo, callback: AsyncCallback<number>): void
 
 根据域账号信息，获取与其关联的系统账号的账号ID。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[getOsAccountLocalIdForDomain](js-apis-osaccount.md#getosaccountlocalidfordomain9)替代。
+从API version 8开始支持，从API version 9开始废弃，建议使用[getOsAccountLocalIdForDomain](js-apis-osaccount.md#getosaccountlocalidfordomain9)替代。
 
 **需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS，该权限仅系统应用可申请。
 
@@ -2552,31 +2587,29 @@ getOsAccountLocalIdFromDomain(domainInfo: DomainAccountInfo, callback: AsyncCall
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let domainInfo: osAccount.DomainAccountInfo = {domain: 'testDomain', accountName: 'testAccountName'};
-4. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-5. accountManager.getOsAccountLocalIdFromDomain(domainInfo, (err: BusinessError, localId: number) => {
-6. if (err) {
-7. console.error(`getOsAccountLocalIdFromDomain failed, code is ${err.code}, message is ${err.message}`);
-8. } else {
-9. console.info('getOsAccountLocalIdFromDomain successfully, localId: ' + localId);
-10. }
-11. });
+let domainInfo: osAccount.DomainAccountInfo = {domain: 'testDomain', accountName: 'testAccountName'};
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+accountManager.getOsAccountLocalIdFromDomain(domainInfo, (err: BusinessError, localId: number) => {
+  if (err) {
+    console.error(`getOsAccountLocalIdFromDomain failed, code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info('getOsAccountLocalIdFromDomain successfully, localId: ' + localId);
+  }
+});
 ```
 
 ### getOsAccountLocalIdFromDomain(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountLocalIdFromDomain(domainInfo: DomainAccountInfo): Promise<number>
 
 根据域账号信息，获取与其关联的系统账号的账号ID。使用Promise异步回调。
 
-说明
+**说明** 
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[getOsAccountLocalIdForDomain](js-apis-osaccount.md#getosaccountlocalidfordomain9-1)替代。
+从API version 8开始支持，从API version 9开始废弃，建议使用[getOsAccountLocalIdForDomain](js-apis-osaccount.md#getosaccountlocalidfordomain9-1)替代。
 
 **需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS，该权限仅系统应用可申请。
 
@@ -2596,29 +2629,27 @@ getOsAccountLocalIdFromDomain(domainInfo: DomainAccountInfo): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let domainInfo: osAccount.DomainAccountInfo = {domain: 'testDomain', accountName: 'testAccountName'};
-5. accountManager.getOsAccountLocalIdFromDomain(domainInfo).then((localId: number) => {
-6. console.info('getOsAccountLocalIdFromDomain successfully, localId: ' + localId);
-7. }).catch((err: BusinessError) => {
-8. console.error(`getOsAccountLocalIdFromDomain failed, code is ${err.code}, message is ${err.message}`);
-9. });
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+let domainInfo: osAccount.DomainAccountInfo = {domain: 'testDomain', accountName: 'testAccountName'};
+accountManager.getOsAccountLocalIdFromDomain(domainInfo).then((localId: number) => {
+  console.info('getOsAccountLocalIdFromDomain successfully, localId: ' + localId);
+}).catch((err: BusinessError) => {
+  console.error(`getOsAccountLocalIdFromDomain failed, code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### getOsAccountAllConstraints(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountAllConstraints(localId: number, callback: AsyncCallback<Array<string>>): void
 
 获取指定系统账号的全部约束。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃。替代方法仅向系统应用开放。
+从API version 7开始支持，从API version 9开始废弃，替代方法仅向系统应用开放。
 
 **需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS，该权限仅系统应用可申请。
 
@@ -2631,33 +2662,34 @@ getOsAccountAllConstraints(localId: number, callback: AsyncCallback<Array<string
 | localId | number | 是 | 系统账号ID。 |
 | callback | AsyncCallback<Array<string>> | 是 | 回调函数。如果获取成功，err为null，data为指定系统账号的全部[约束](js-apis-osaccount.md#系统账号约束列表)；否则为错误对象。 |
 
-**示例：** 获取ID为100的系统账号的全部约束
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+获取ID为100的系统账号的全部约束。
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let localId: number = 100;
-5. accountManager.getOsAccountAllConstraints(localId, (err: BusinessError, constraints: string[])=>{
-6. if (err) {
-7. console.error(`getOsAccountAllConstraints code is ${err.code}, message is ${err.message}`);
-8. } else {
-9. console.info('getOsAccountAllConstraints:' + JSON.stringify(constraints));
-10. }
-11. });
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+// localId为系统账号ID，请通过getOsAccountLocalId接口获取
+let localId: number = 100;
+accountManager.getOsAccountAllConstraints(localId, (err: BusinessError, constraints: string[])=>{
+  if (err) {
+    console.error(`getOsAccountAllConstraints code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info('getOsAccountAllConstraints:' + JSON.stringify(constraints));
+  }
+});
 ```
 
 ### getOsAccountAllConstraints(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountAllConstraints(localId: number): Promise<Array<string>>
 
 获取指定系统账号的全部约束。使用Promise异步回调。
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃。替代方法仅向系统应用开放。
+从API version 7开始支持，从API version 9开始废弃，替代方法仅向系统应用开放。
 
 **需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS，该权限仅系统应用可申请。
 
@@ -2675,31 +2707,32 @@ getOsAccountAllConstraints(localId: number): Promise<Array<string>>
 | --- | --- |
 | Promise<Array<string>> | Promise对象，返回指定系统账号的全部[约束](js-apis-osaccount.md#系统账号约束列表)。 |
 
-**示例：** 获取ID为100的系统账号的全部约束
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+获取ID为100的系统账号的全部约束。
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let localId: number = 100;
-5. accountManager.getOsAccountAllConstraints(localId).then((constraints: string[]) => {
-6. console.info('getOsAccountAllConstraints, constraints: ' + constraints);
-7. }).catch((err: BusinessError) => {
-8. console.error(`getOsAccountAllConstraints err: code is ${err.code}, message is ${err.message}`);
-9. });
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+// localId为系统账号ID，请通过getOsAccountLocalId接口获取
+let localId: number = 100;
+accountManager.getOsAccountAllConstraints(localId).then((constraints: string[]) => {
+  console.info('getOsAccountAllConstraints, constraints: ' + constraints);
+}).catch((err: BusinessError) => {
+  console.error(`getOsAccountAllConstraints err: code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### queryActivatedOsAccountIds(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 queryActivatedOsAccountIds(callback: AsyncCallback<Array<number>>): void
 
 查询当前处于激活状态的系统账号的ID列表。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[getActivatedOsAccountLocalIds](js-apis-osaccount.md#getactivatedosaccountlocalids9)替代。
+从API version 8开始支持，从API version 9开始废弃，建议使用[getActivatedOsAccountLocalIds](js-apis-osaccount.md#getactivatedosaccountlocalids9)替代。
 
 **系统能力：** SystemCapability.Account.OsAccount
 
@@ -2711,31 +2744,29 @@ queryActivatedOsAccountIds(callback: AsyncCallback<Array<number>>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. accountManager.queryActivatedOsAccountIds((err: BusinessError, idArray: number[]) => {
-5. if (err) {
-6. console.error(`queryActivatedOsAccountIds code is ${err.code}, message is ${err.message}`);
-7. } else {
-8. console.info('queryActivatedOsAccountIds idArray length:' + idArray.length);
-9. for (let i = 0; i < idArray.length; i++) {
-10. console.info('activated os account id: ' + idArray[i]);
-11. }
-12. }
-13. });
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+accountManager.queryActivatedOsAccountIds((err: BusinessError, idArray: number[]) => {
+  if (err) {
+    console.error(`queryActivatedOsAccountIds code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info('queryActivatedOsAccountIds idArray length:' + idArray.length);
+    for (let i = 0; i < idArray.length; i++) {
+      console.info('activated os account id: ' + idArray[i]);
+    }
+  }
+});
 ```
 
 ### queryActivatedOsAccountIds(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 queryActivatedOsAccountIds(): Promise<Array<number>>
 
-说明
+**说明** 
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[getActivatedOsAccountLocalIds](js-apis-osaccount.md#getactivatedosaccountlocalids9-1)替代。
+从API version 8开始支持，从API version 9开始废弃，建议使用[getActivatedOsAccountLocalIds](js-apis-osaccount.md#getactivatedosaccountlocalids9-1)替代。
 
 查询当前处于激活状态的系统账号的ID列表。使用Promise异步回调。
 
@@ -2749,28 +2780,26 @@ queryActivatedOsAccountIds(): Promise<Array<number>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. accountManager.queryActivatedOsAccountIds().then((idArray: number[]) => {
-5. console.info('queryActivatedOsAccountIds, idArray: ' + idArray);
-6. }).catch((err: BusinessError) => {
-7. console.error(`queryActivatedOsAccountIds err: code is ${err.code}, message is ${err.message}`);
-8. });
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+accountManager.queryActivatedOsAccountIds().then((idArray: number[]) => {
+  console.info('queryActivatedOsAccountIds, idArray: ' + idArray);
+}).catch((err: BusinessError) => {
+  console.error(`queryActivatedOsAccountIds err: code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### queryCurrentOsAccount(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 queryCurrentOsAccount(callback: AsyncCallback<OsAccountInfo>): void
 
 查询当前进程所属的系统账号的信息。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃。替代方法仅向系统应用开放。
+从API version 7开始支持，从API version 9开始废弃，替代方法仅向系统应用开放。
 
 **需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS，该权限仅系统应用可申请。
 
@@ -2784,30 +2813,28 @@ queryCurrentOsAccount(callback: AsyncCallback<OsAccountInfo>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. accountManager.queryCurrentOsAccount((err: BusinessError, curAccountInfo: osAccount.OsAccountInfo)=>{
-5. if (err) {
-6. console.error(`queryCurrentOsAccount code is ${err.code}, message is ${err.message}`);
-7. } else {
-8. console.info('queryCurrentOsAccount curAccountInfo:' + JSON.stringify(curAccountInfo));
-9. }
-10. });
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+accountManager.queryCurrentOsAccount((err: BusinessError, curAccountInfo: osAccount.OsAccountInfo)=>{
+  if (err) {
+    console.error(`queryCurrentOsAccount code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info('queryCurrentOsAccount curAccountInfo:' + JSON.stringify(curAccountInfo));
+  }
+});
 ```
 
 ### queryCurrentOsAccount(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 queryCurrentOsAccount(): Promise<OsAccountInfo>
 
 查询当前进程所属的系统账号的信息。使用Promise异步回调。
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃。替代方法仅向系统应用开放。
+从API version 7开始支持，从API version 9开始废弃，替代方法仅向系统应用开放。
 
 **需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS，该权限仅系统应用可申请。
 
@@ -2821,28 +2848,26 @@ queryCurrentOsAccount(): Promise<OsAccountInfo>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. accountManager.queryCurrentOsAccount().then((accountInfo: osAccount.OsAccountInfo) => {
-5. console.info('queryCurrentOsAccount, accountInfo: ' + JSON.stringify(accountInfo));
-6. }).catch((err: BusinessError) => {
-7. console.error(`queryCurrentOsAccount err: code is ${err.code}, message is ${err.message}`);
-8. });
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+accountManager.queryCurrentOsAccount().then((accountInfo: osAccount.OsAccountInfo) => {
+  console.info('queryCurrentOsAccount, accountInfo: ' + JSON.stringify(accountInfo));
+}).catch((err: BusinessError) => {
+  console.error(`queryCurrentOsAccount err: code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### getOsAccountTypeFromProcess(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountTypeFromProcess(callback: AsyncCallback<OsAccountType>): void
 
 查询当前进程所属的系统账号的账号类型。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[getOsAccountType](js-apis-osaccount.md#getosaccounttype9)替代。
+从API version 7开始支持，从API version 9开始废弃，建议使用[getOsAccountType](js-apis-osaccount.md#getosaccounttype9)替代。
 
 **系统能力：** SystemCapability.Account.OsAccount
 
@@ -2854,30 +2879,28 @@ getOsAccountTypeFromProcess(callback: AsyncCallback<OsAccountType>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. accountManager.getOsAccountTypeFromProcess((err: BusinessError, accountType: osAccount.OsAccountType) => {
-5. if (err) {
-6. console.error(`getOsAccountTypeFromProcess err: code is ${err.code}, message is ${err.message}`);
-7. } else {
-8. console.info('getOsAccountTypeFromProcess accountType: ' + accountType);
-9. }
-10. });
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+accountManager.getOsAccountTypeFromProcess((err: BusinessError, accountType: osAccount.OsAccountType) => {
+  if (err) {
+    console.error(`getOsAccountTypeFromProcess err: code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info('getOsAccountTypeFromProcess accountType: ' + accountType);
+  }
+});
 ```
 
 ### getOsAccountTypeFromProcess(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountTypeFromProcess(): Promise<OsAccountType>
 
 查询当前进程所属的系统账号的账号类型。使用Promise异步回调。
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[getOsAccountType](js-apis-osaccount.md#getosaccounttype9-1)替代。
+从API version 7开始支持，从API version 9开始废弃，建议使用[getOsAccountType](js-apis-osaccount.md#getosaccounttype9-1)替代。
 
 **系统能力：** SystemCapability.Account.OsAccount
 
@@ -2889,28 +2912,26 @@ getOsAccountTypeFromProcess(): Promise<OsAccountType>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. accountManager.getOsAccountTypeFromProcess().then((accountType: osAccount.OsAccountType) => {
-5. console.info('getOsAccountTypeFromProcess, accountType: ' + accountType);
-6. }).catch((err: BusinessError) => {
-7. console.error(`getOsAccountTypeFromProcess err: code is ${err.code}, message is ${err.message}`);
-8. });
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+accountManager.getOsAccountTypeFromProcess().then((accountType: osAccount.OsAccountType) => {
+  console.info('getOsAccountTypeFromProcess, accountType: ' + accountType);
+}).catch((err: BusinessError) => {
+  console.error(`getOsAccountTypeFromProcess err: code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### getDistributedVirtualDeviceId(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getDistributedVirtualDeviceId(callback: AsyncCallback<string>): void
 
 获取分布式虚拟设备ID。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[queryDistributedVirtualDeviceId](js-apis-osaccount.md#querydistributedvirtualdeviceid9)替代。
+从API version 7开始支持，从API version 9开始废弃，建议使用[queryDistributedVirtualDeviceId](js-apis-osaccount.md#querydistributedvirtualdeviceid9)替代。
 
 **需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS（仅系统应用可申请）或 ohos.permission.DISTRIBUTED\_DATASYNC
 
@@ -2924,30 +2945,28 @@ getDistributedVirtualDeviceId(callback: AsyncCallback<string>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. accountManager.getDistributedVirtualDeviceId((err: BusinessError, virtualID: string) => {
-5. if (err) {
-6. console.error(`getDistributedVirtualDeviceId err: code is ${err.code}, message is ${err.message}`);
-7. } else {
-8. console.info('getDistributedVirtualDeviceId virtualID: ' + virtualID);
-9. }
-10. });
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+accountManager.getDistributedVirtualDeviceId((err: BusinessError, virtualID: string) => {
+  if (err) {
+    console.error(`getDistributedVirtualDeviceId err: code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info('getDistributedVirtualDeviceId virtualID: ' + virtualID);
+  }
+});
 ```
 
 ### getDistributedVirtualDeviceId(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getDistributedVirtualDeviceId(): Promise<string>
 
 获取分布式虚拟设备ID。使用Promise异步回调。
 
-说明
+**说明** 
 
-从API version 7开始支持，从API version 9开始废弃。建议使用[queryDistributedVirtualDeviceId](js-apis-osaccount.md#querydistributedvirtualdeviceid9-1)替代。
+从API version 7开始支持，从API version 9开始废弃，建议使用[queryDistributedVirtualDeviceId](js-apis-osaccount.md#querydistributedvirtualdeviceid9-1)替代。
 
 **需要权限：** ohos.permission.MANAGE\_LOCAL\_ACCOUNTS（仅系统应用可申请）或ohos.permission.DISTRIBUTED\_DATASYNC
 
@@ -2961,28 +2980,26 @@ getDistributedVirtualDeviceId(): Promise<string>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. accountManager.getDistributedVirtualDeviceId().then((virtualID: string) => {
-5. console.info('getDistributedVirtualDeviceId, virtualID: ' + virtualID);
-6. }).catch((err: BusinessError) => {
-7. console.error(`getDistributedVirtualDeviceId err: code is ${err.code}, message is ${err.message}`);
-8. });
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+accountManager.getDistributedVirtualDeviceId().then((virtualID: string) => {
+  console.info('getDistributedVirtualDeviceId, virtualID: ' + virtualID);
+}).catch((err: BusinessError) => {
+  console.error(`getDistributedVirtualDeviceId err: code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### getOsAccountLocalIdBySerialNumber(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountLocalIdBySerialNumber(serialNumber: number, callback: AsyncCallback<number>): void
 
 通过SN码查询与其关联的系统账号的账号ID。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[getOsAccountLocalIdForSerialNumber](js-apis-osaccount.md#getosaccountlocalidforserialnumber9)替代。
+从API version 8开始支持，从API version 9开始废弃，建议使用[getOsAccountLocalIdForSerialNumber](js-apis-osaccount.md#getosaccountlocalidforserialnumber9)替代。
 
 **系统能力：** SystemCapability.Account.OsAccount
 
@@ -2993,33 +3010,33 @@ getOsAccountLocalIdBySerialNumber(serialNumber: number, callback: AsyncCallback<
 | serialNumber | number | 是 | 账号SN码。 |
 | callback | AsyncCallback<number> | 是 | 回调函数。如果查询成功，err为null，data为与SN码关联的系统账号的账号ID；否则为错误对象。 |
 
-**示例：** 查询与SN码12345关联的系统账号的ID
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+查询与SN码12345关联的系统账号的ID。
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let serialNumber: number = 12345;
-5. accountManager.getOsAccountLocalIdBySerialNumber(serialNumber, (err: BusinessError, localId: number)=>{
-6. if (err) {
-7. console.error(`get localId code is ${err.code}, message is ${err.message}`);
-8. } else {
-9. console.info('get localId:' + localId + ' by serialNumber: ' + serialNumber);
-10. }
-11. });
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+let serialNumber: number = 12345;
+accountManager.getOsAccountLocalIdBySerialNumber(serialNumber, (err: BusinessError, localId: number)=>{
+  if (err) {
+    console.error(`get localId code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info('get localId:' + localId + ' by serialNumber: ' + serialNumber);
+  }
+});
 ```
 
 ### getOsAccountLocalIdBySerialNumber(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountLocalIdBySerialNumber(serialNumber: number): Promise<number>
 
 通过SN码查询与其关联的系统账号的账号ID。使用Promise异步回调。
 
-说明
+**说明** 
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[getOsAccountLocalIdForSerialNumber](js-apis-osaccount.md#getosaccountlocalidforserialnumber9-1)替代。
+从API version 8开始支持，从API version 9开始废弃，建议使用[getOsAccountLocalIdForSerialNumber](js-apis-osaccount.md#getosaccountlocalidforserialnumber9-1)替代。
 
 **系统能力：** SystemCapability.Account.OsAccount
 
@@ -3035,31 +3052,31 @@ getOsAccountLocalIdBySerialNumber(serialNumber: number): Promise<number>
 | --- | --- |
 | Promise<number> | Promise对象，返回与SN码关联的系统账号的账号ID。 |
 
-**示例：** 查询与SN码12345关联的系统账号的ID
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+查询与SN码12345关联的系统账号的ID。
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let serialNumber: number = 12345;
-5. accountManager.getOsAccountLocalIdBySerialNumber(serialNumber).then((localId: number) => {
-6. console.info('getOsAccountLocalIdBySerialNumber localId: ' + localId);
-7. }).catch((err: BusinessError) => {
-8. console.error(`getOsAccountLocalIdBySerialNumber err: code is ${err.code}, message is ${err.message}`);
-9. });
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+let serialNumber: number = 12345;
+accountManager.getOsAccountLocalIdBySerialNumber(serialNumber).then((localId: number) => {
+  console.info('getOsAccountLocalIdBySerialNumber localId: ' + localId);
+}).catch((err: BusinessError) => {
+  console.error(`getOsAccountLocalIdBySerialNumber err: code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### getSerialNumberByOsAccountLocalId(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getSerialNumberByOsAccountLocalId(localId: number, callback: AsyncCallback<number>): void
 
 通过系统账号ID获取与该系统账号关联的SN码。使用callback异步回调。
 
-说明
+**说明** 
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[getSerialNumberForOsAccountLocalId](js-apis-osaccount.md#getserialnumberforosaccountlocalid9)替代。
+从API version 8开始支持，从API version 9开始废弃，建议使用[getSerialNumberForOsAccountLocalId](js-apis-osaccount.md#getserialnumberforosaccountlocalid9)替代。
 
 **系统能力：** SystemCapability.Account.OsAccount
 
@@ -3070,33 +3087,34 @@ getSerialNumberByOsAccountLocalId(localId: number, callback: AsyncCallback<numbe
 | localId | number | 是 | 系统账号ID。 |
 | callback | AsyncCallback<number> | 是 | 回调函数。如果获取成功，err为null，data为与该系统账号关联的SN码；否则为错误对象。 |
 
-**示例：** 获取ID为100的系统账号关联的SN码
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+获取ID为100的系统账号关联的SN码。
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let localId: number = 100;
-5. accountManager.getSerialNumberByOsAccountLocalId(localId, (err: BusinessError, serialNumber: number)=>{
-6. if (err) {
-7. console.error(`get serialNumber code is ${err.code}, message is ${err.message}`);
-8. } else {
-9. console.info('get serialNumber:' + serialNumber + ' by localId: ' + localId);
-10. }
-11. });
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+// localId为系统账号ID，请通过getOsAccountLocalId接口获取
+let localId: number = 100;
+accountManager.getSerialNumberByOsAccountLocalId(localId, (err: BusinessError, serialNumber: number)=>{
+  if (err) {
+    console.error(`get serialNumber code is ${err.code}, message is ${err.message}`);
+  } else {
+    console.info('get serialNumber:' + serialNumber + ' by localId: ' + localId);
+  }
+});
 ```
 
 ### getSerialNumberByOsAccountLocalId(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getSerialNumberByOsAccountLocalId(localId: number): Promise<number>
 
 通过系统账号ID获取与该系统账号关联的SN码。使用Promise异步回调。
 
-说明
+**说明** 
 
-从API version 8开始支持，从API version 9开始废弃。建议使用[getSerialNumberForOsAccountLocalId](js-apis-osaccount.md#getserialnumberforosaccountlocalid9-1)替代。
+从API version 8开始支持，从API version 9开始废弃，建议使用[getSerialNumberForOsAccountLocalId](js-apis-osaccount.md#getserialnumberforosaccountlocalid9-1)替代。
 
 **系统能力：** SystemCapability.Account.OsAccount
 
@@ -3112,23 +3130,24 @@ getSerialNumberByOsAccountLocalId(localId: number): Promise<number>
 | --- | --- |
 | Promise<number> | Promise对象，返回与该系统账号关联的SN码。 |
 
-**示例：** 获取ID为100的系统账号关联的SN码
+**示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+获取ID为100的系统账号关联的SN码。
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let localId: number = 100;
-5. accountManager.getSerialNumberByOsAccountLocalId(localId).then((serialNumber: number) => {
-6. console.info('getSerialNumberByOsAccountLocalId serialNumber: ' + serialNumber);
-7. }).catch((err: BusinessError) => {
-8. console.error(`getSerialNumberByOsAccountLocalId err: code is ${err.code}, message is ${err.message}`);
-9. });
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+// localId为系统账号ID，请通过getOsAccountLocalId接口获取
+let localId: number = 100;
+accountManager.getSerialNumberByOsAccountLocalId(localId).then((serialNumber: number) => {
+  console.info('getSerialNumberByOsAccountLocalId serialNumber: ' + serialNumber);
+}).catch((err: BusinessError) => {
+  console.error(`getSerialNumberByOsAccountLocalId err: code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### getOsAccountName12+
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountName(): Promise<string>
 
@@ -3152,25 +3171,78 @@ getOsAccountName(): Promise<string>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. try {
-5. accountManager.getOsAccountName().then((name: string) => {
-6. console.info('getOsAccountName, name: ' + name);
-7. }).catch((err: BusinessError) => {
-8. console.error('getOsAccountName err: ' + err);
-9. });
-10. } catch (e) {
-11. const err = e as BusinessError;
-12. console.error(`getOsAccountName exception: code is ${err.code}, message is ${err.message}`);
-13. }
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+try {
+  accountManager.getOsAccountName().then((name: string) => {
+    console.info('getOsAccountName, name: ' + name);
+  }).catch((err: BusinessError) => {
+    console.error('getOsAccountName err: ' + err);
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`getOsAccountName exception: code is ${err.code}, message is ${err.message}`);
+}
+```
+
+### getOsAccountNameByLocalId
+
+getOsAccountNameByLocalId(localId: number): Promise<string>
+
+根据系统账号的本地ID获取系统账号的名称。使用Promise异步回调。
+
+**起始版本**：26.0.0
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**需要权限：** ohos.permission.GET\_LOCAL\_ACCOUNT\_IDENTIFIERS
+
+**系统能力：** SystemCapability.Account.OsAccount
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| localId | number | 是 | 目标系统账号的本地ID。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象，返回目标系统账号的名称。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[账号管理错误码](errorcode-account.md)和[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 12300001 | The system service works abnormally. |
+| 12300003 | Account not found. |
+| 12300008 | Restricted Account. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+try {
+  accountManager.getOsAccountNameByLocalId(100).then((name: string) => {
+    console.info('getOsAccountNameByLocalId, name: ' + name);
+  }).catch((err: BusinessError) => {
+    console.error('getOsAccountNameByLocalId err: ' + err);
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`getOsAccountNameByLocalId exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### getForegroundOsAccountLocalId15+
-
-PhonePC/2in1TabletTVWearable
 
 getForegroundOsAccountLocalId(): Promise<number>
 
@@ -3182,7 +3254,7 @@ getForegroundOsAccountLocalId(): Promise<number>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<number> | Promise对象。返回前台系统账号的ID。 |
+| Promise<number> | Promise对象，返回前台系统账号的ID。 |
 
 **错误码：**
 
@@ -3194,25 +3266,23 @@ getForegroundOsAccountLocalId(): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. try {
-5. accountManager.getForegroundOsAccountLocalId().then((localId: number) => {
-6. console.info('getForegroundOsAccountLocalId, localId: ' + localId);
-7. }).catch((err: BusinessError) => {
-8. console.error(`getForegroundOsAccountLocalId err: code is ${err.code}, message is ${err.message}`);
-9. });
-10. } catch (e) {
-11. const err = e as BusinessError;
-12. console.error(`getForegroundOsAccountLocalId exception: code is ${err.code}, message is ${err.message}`);
-13. }
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+try {
+  accountManager.getForegroundOsAccountLocalId().then((localId: number) => {
+    console.info('getForegroundOsAccountLocalId, localId: ' + localId);
+  }).catch((err: BusinessError) => {
+    console.error(`getForegroundOsAccountLocalId err: code is ${err.code}, message is ${err.message}`);
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`getForegroundOsAccountLocalId exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ### getOsAccountDomainInfo15+
-
-PhonePC/2in1TabletTVWearable
 
 getOsAccountDomainInfo(localId: number): Promise<DomainAccountInfo>
 
@@ -3232,7 +3302,7 @@ getOsAccountDomainInfo(localId: number): Promise<DomainAccountInfo>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[DomainAccountInfo](js-apis-osaccount.md#domainaccountinfo8)> | Promise对象。返回与指定系统账号关联的域账号信息。 |
+| Promise<[DomainAccountInfo](js-apis-osaccount.md#domainaccountinfo8)> | Promise对象，返回与指定系统账号关联的域账号信息。 |
 
 **错误码：**
 
@@ -3247,34 +3317,31 @@ getOsAccountDomainInfo(localId: number): Promise<DomainAccountInfo>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
-4. let localId: number = 100;
-5. accountManager.getOsAccountDomainInfo(localId).then((domainAccountInfo: osAccount.DomainAccountInfo) => {
-6. if (domainAccountInfo === null) {
-7. console.info('The target OS account is not a domain account.')
-8. } else {
-9. console.info('getOsAccountDomainInfo domain: ' + domainAccountInfo.domain);
-10. console.info('getOsAccountDomainInfo accountName: ' + domainAccountInfo.accountName);
-11. }
-12. }).catch((err: BusinessError) => {
-13. console.error(`getOsAccountDomainInfo err: code is ${err.code}, message is ${err.message}`);
-14. })
+let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+// localId为系统账号ID，请通过getOsAccountLocalId接口获取
+let localId: number = 100;
+accountManager.getOsAccountDomainInfo(localId).then((domainAccountInfo: osAccount.DomainAccountInfo) => {
+  if (domainAccountInfo === null) {
+    console.info('The target OS account is not a domain account.')
+  } else {
+    console.info('getOsAccountDomainInfo domain: ' + domainAccountInfo.domain);
+    console.info('getOsAccountDomainInfo accountName: ' + domainAccountInfo.accountName);
+  }
+}).catch((err: BusinessError) => {
+  console.error(`getOsAccountDomainInfo err: code is ${err.code}, message is ${err.message}`);
+})
 ```
 
 ## DomainAccountManager18+
-
-PhonePC/2in1TabletTVWearable
 
 域账号管理类。
 
 ### updateAccountInfo18+
 
-PhonePC/2in1TabletTVWearable
-
-updateAccountInfo(oldAccountInfo: DomainAccountInfo, newAccountInfo: DomainAccountInfo): Promise<void>
+static updateAccountInfo(oldAccountInfo: DomainAccountInfo, newAccountInfo: DomainAccountInfo): Promise<void>
 
 修改指定域账号信息。使用Promise异步回调。
 
@@ -3293,7 +3360,7 @@ updateAccountInfo(oldAccountInfo: DomainAccountInfo, newAccountInfo: DomainAccou
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象，无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -3310,28 +3377,26 @@ updateAccountInfo(oldAccountInfo: DomainAccountInfo, newAccountInfo: DomainAccou
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let oldDomainInfo: osAccount.DomainAccountInfo =
-4. {domain: 'testDomain', accountName: 'oldtestAccountName'};
-5. let newDomainInfo: osAccount.DomainAccountInfo =
-6. {domain: 'testDomain', accountName: 'newtestAccountName'};
-7. try {
-8. osAccount.DomainAccountManager.updateAccountInfo(oldDomainInfo, newDomainInfo).then(() => {
-9. console.info('updateAccountInfo, success');
-10. }).catch((err: BusinessError) => {
-11. console.error('updateAccountInfo err: ' + err);
-12. });
-13. } catch (e) {
-14. const err = e as BusinessError;
-15. console.error(`updateAccountInfo exception: code is ${err.code}, message is ${err.message}`);
-16. }
+let oldDomainInfo: osAccount.DomainAccountInfo =
+  {domain: 'testDomain', accountName: 'oldtestAccountName'};
+let newDomainInfo: osAccount.DomainAccountInfo =
+  {domain: 'testDomain', accountName: 'newtestAccountName'};
+try {
+  osAccount.DomainAccountManager.updateAccountInfo(oldDomainInfo, newDomainInfo).then(() => {
+    console.info('updateAccountInfo, success');
+  }).catch((err: BusinessError) => {
+    console.error('updateAccountInfo err: ' + err);
+  });
+} catch (e) {
+  const err = e as BusinessError;
+  console.error(`updateAccountInfo exception: code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ## OsAccountInfo
-
-PhonePC/2in1TabletTVWearable
 
 表示系统账号信息。
 
@@ -3346,8 +3411,8 @@ PhonePC/2in1TabletTVWearable
 | isVerified(deprecated) | boolean | 否 | 否 | 账号是否验证。true表示指定账号已验证；false表示指定账号未验证。  \*\*说明：\*\*从API version 7开始支持，从API version 11开始废弃，建议使用isUnlocked。 |
 | isUnlocked11+ | boolean | 否 | 否 | 账号是否已解锁（EL2级别目录是否解密）。true表示指定账号已解锁；false表示指定账号未解锁。 |
 | photo8+ | string | 否 | 否 | 系统账号头像，默认为空。 |
-| createTime8+ | number | 否 | 否 | 系统账号创建时间。 |
-| lastLoginTime8+ | number | 否 | 否 | 系统账号最后一次登录时间，默认为空。 |
+| createTime8+ | number | 否 | 否 | 系统账号创建时间，以Unix时间戳格式表示，单位为s。 |
+| lastLoginTime8+ | number | 否 | 否 | 系统账号最后一次登录时间，以Unix时间戳格式表示，单位为s。 |
 | serialNumber8+ | number | 否 | 否 | 系统账号SN码。 |
 | isActived(deprecated) | boolean | 否 | 否 | 系统账号激活状态。true表示指定账号处于激活状态；false表示指定账号处于未激活状态。  \*\*说明：\*\*从API version 7开始支持，从API version 11开始废弃，建议使用isActivated。 |
 | isActivated11+ | boolean | 否 | 否 | 系统账号是否激活。true表示指定账号已激活；false表示指定账号未激活。 |
@@ -3357,21 +3422,18 @@ PhonePC/2in1TabletTVWearable
 
 ## DomainAccountInfo8+
 
-PhonePC/2in1TabletTVWearable
-
 表示域账号信息。
 
 **系统能力：** SystemCapability.Account.OsAccount
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| domain | string | 否 | 否 | 域名。 |
-| accountName | string | 否 | 否 | 域账号名。 |
+| domain | string | 否 | 否 | 域名。最大长度为128个字节。 |
+| accountName | string | 否 | 否 | 域账号名。最大长度为256个字节。 |
 | serverConfigId18+ | string | 否 | 是 | 域账号配置ID，默认为空字符串。 |
+| additionalInfo | Record<string, Object> | 否 | 是 | 域账号附加信息，默认为空。  **起始版本**： 26.0.0  **模型约束**：此接口仅可在Stage模型下使用。 |
 
 ## DomainServerConfig18+
-
-PhonePC/2in1TabletTVWearable
 
 域服务器配置。
 
@@ -3385,13 +3447,9 @@ PhonePC/2in1TabletTVWearable
 
 ## DomainServerConfigManager18+
 
-PhonePC/2in1TabletTVWearable
-
 域服务器配置管理类。
 
 ### addServerConfig18+
-
-PhonePC/2in1TabletTVWearable
 
 static addServerConfig(parameters: Record<string, Object>): Promise<DomainServerConfig>
 
@@ -3405,7 +3463,7 @@ static addServerConfig(parameters: Record<string, Object>): Promise<DomainServer
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| parameters | Record<string, Object> | 是 | 表示域服务器配置参数。 |
+| parameters | Record<string, Object> | 是 | 表示域服务器配置参数，用于配置域服务器的连接信息。参数对象包含服务器地址、端口等配置项。 |
 
 **返回值：**
 
@@ -3429,24 +3487,22 @@ static addServerConfig(parameters: Record<string, Object>): Promise<DomainServer
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let configParams: Record<string, Object> = {
-4. 'uri': 'test.example.com',
-5. 'port': 100
-6. };
-7. osAccount.DomainServerConfigManager.addServerConfig(configParams).then((
-8. serverConfig: osAccount.DomainServerConfig) => {
-9. console.info('add server configuration successfully, the return config: ' + JSON.stringify(serverConfig));
-10. }).catch((err: BusinessError) => {
-11. console.error(`add server configuration failed, code is ${err.code}, message is ${err.message}`);
-12. });
+let configParams: Record<string, Object> = {
+  'uri': 'test.example.com',
+  'port': 100
+};
+osAccount.DomainServerConfigManager.addServerConfig(configParams).then((
+  serverConfig: osAccount.DomainServerConfig) => {
+  console.info('add server configuration successfully, the return config: ' + JSON.stringify(serverConfig));
+}).catch((err: BusinessError) => {
+  console.error(`add server configuration failed, code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### removeServerConfig18+
-
-PhonePC/2in1TabletTVWearable
 
 static removeServerConfig(configId: string): Promise<void>
 
@@ -3466,7 +3522,7 @@ static removeServerConfig(configId: string): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象，无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
@@ -3482,26 +3538,24 @@ static removeServerConfig(configId: string): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let configParams: Record<string, Object> = {
-4. 'uri': 'test.example.com',
-5. 'port': 100
-6. };
-7. osAccount.DomainServerConfigManager.addServerConfig(configParams).then((
-8. serverConfig: osAccount.DomainServerConfig) => {
-9. console.info('add domain server configuration successfully, the added config: ' + JSON.stringify(serverConfig));
-10. osAccount.DomainServerConfigManager.removeServerConfig(serverConfig.id);
-11. console.info('remove domain server configuration successfully');
-12. }).catch((err: BusinessError) => {
-13. console.error(`add server configuration failed, code is ${err.code}, message is ${err.message}`);
-14. });
+let configParams: Record<string, Object> = {
+  'uri': 'test.example.com',
+  'port': 100
+};
+osAccount.DomainServerConfigManager.addServerConfig(configParams).then((
+  serverConfig: osAccount.DomainServerConfig) => {
+  console.info('add domain server configuration successfully, the added config: ' + JSON.stringify(serverConfig));
+  osAccount.DomainServerConfigManager.removeServerConfig(serverConfig.id);
+  console.info('remove domain server configuration successfully');
+}).catch((err: BusinessError) => {
+  console.error(`add server configuration failed, code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### updateServerConfig18+
-
-PhonePC/2in1TabletTVWearable
 
 static updateServerConfig(configId: string, parameters: Record<string, Object>): Promise<DomainServerConfig>
 
@@ -3516,7 +3570,7 @@ static updateServerConfig(configId: string, parameters: Record<string, Object>):
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | configId | string | 是 | 表示服务器配置标识。 |
-| parameters | Record<string, Object> | 是 | 表示域服务器配置参数。 |
+| parameters | Record<string, Object> | 是 | 表示域服务器配置参数，用于配置域服务器的连接信息。参数对象包含服务器地址、端口等配置项。 |
 
 **返回值：**
 
@@ -3541,29 +3595,27 @@ static updateServerConfig(configId: string, parameters: Record<string, Object>):
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let configParams: Record<string, Object> = {
-4. 'uri': 'test.example.com',
-5. 'port': 100
-6. };
-7. osAccount.DomainServerConfigManager.addServerConfig(configParams).then((
-8. serverConfig: osAccount.DomainServerConfig) => {
-9. console.info('add domain server configuration successfully, the added config: ' + JSON.stringify(serverConfig));
-10. osAccount.DomainServerConfigManager.updateServerConfig(serverConfig.id, configParams).then((data) => {
-11. console.info('update domain server configuration successfully, return config: ' + JSON.stringify(data));
-12. }).catch((err: BusinessError) => {
-13. console.error(`update domain server configuration failed, code is ${err.code}, message is ${err.message}`);
-14. });
-15. }).catch((err: BusinessError) => {
-16. console.error(`add server configuration failed, code is ${err.code}, message is ${err.message}`);
-17. });
+let configParams: Record<string, Object> = {
+  'uri': 'test.example.com',
+  'port': 100
+};
+osAccount.DomainServerConfigManager.addServerConfig(configParams).then((
+  serverConfig: osAccount.DomainServerConfig) => {
+  console.info('add domain server configuration successfully, the added config: ' + JSON.stringify(serverConfig));
+  osAccount.DomainServerConfigManager.updateServerConfig(serverConfig.id, configParams).then((data) => {
+    console.info('update domain server configuration successfully, return config: ' + JSON.stringify(data));
+  }).catch((err: BusinessError) => {
+    console.error(`update domain server configuration failed, code is ${err.code}, message is ${err.message}`);
+  });
+}).catch((err: BusinessError) => {
+  console.error(`add server configuration failed, code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### getServerConfig18+
-
-PhonePC/2in1TabletTVWearable
 
 static getServerConfig(configId: string): Promise<DomainServerConfig>
 
@@ -3598,29 +3650,27 @@ static getServerConfig(configId: string): Promise<DomainServerConfig>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let configParams: Record<string, Object> = {
-4. 'uri': 'test.example.com',
-5. 'port': 100
-6. };
-7. osAccount.DomainServerConfigManager.addServerConfig(configParams).then((
-8. serverConfig: osAccount.DomainServerConfig) => {
-9. console.info('add domain server configuration successfully, the added config: ' + JSON.stringify(serverConfig));
-10. osAccount.DomainServerConfigManager.getServerConfig(serverConfig.id).then((data: osAccount.DomainServerConfig) => {
-11. console.info('get domain server configuration successfully, return config: ' + JSON.stringify(data));
-12. }).catch((err: BusinessError) => {
-13. console.error(`get domain server configuration failed, code is ${err.code}, message is ${err.message}`);
-14. });
-15. }).catch((err: BusinessError) => {
-16. console.error(`add server configuration failed, code is ${err.code}, message is ${err.message}`);
-17. });
+let configParams: Record<string, Object> = {
+  'uri': 'test.example.com',
+  'port': 100
+};
+osAccount.DomainServerConfigManager.addServerConfig(configParams).then((
+  serverConfig: osAccount.DomainServerConfig) => {
+  console.info('add domain server configuration successfully, the added config: ' + JSON.stringify(serverConfig));
+  osAccount.DomainServerConfigManager.getServerConfig(serverConfig.id).then((data: osAccount.DomainServerConfig) => {
+    console.info('get domain server configuration successfully, return config: ' + JSON.stringify(data));
+  }).catch((err: BusinessError) => {
+    console.error(`get domain server configuration failed, code is ${err.code}, message is ${err.message}`);
+  });
+}).catch((err: BusinessError) => {
+  console.error(`add server configuration failed, code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### getAllServerConfigs18+
-
-PhonePC/2in1TabletTVWearable
 
 static getAllServerConfigs(): Promise<Array<DomainServerConfig>>
 
@@ -3648,29 +3698,27 @@ static getAllServerConfigs(): Promise<Array<DomainServerConfig>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let configParams: Record<string, Object> = {
-4. 'uri': 'test.example.com',
-5. 'port': 100
-6. };
-7. osAccount.DomainServerConfigManager.addServerConfig(configParams).then((
-8. serverConfig: osAccount.DomainServerConfig) => {
-9. console.info('add domain server configuration successfully, the added config: ' + JSON.stringify(serverConfig));
-10. osAccount.DomainServerConfigManager.getAllServerConfigs().then((data: Array<osAccount.DomainServerConfig>) => {
-11. console.info('get all domain server configuration successfully, return config: ' + JSON.stringify(data));
-12. }).catch((err: BusinessError) => {
-13. console.error(`get all domain server configuration failed, code is ${err.code}, message is ${err.message}`);
-14. });
-15. }).catch((err: BusinessError) => {
-16. console.error(`add server configuration failed, code is ${err.code}, message is ${err.message}`);
-17. });
+let configParams: Record<string, Object> = {
+  'uri': 'test.example.com',
+  'port': 100
+};
+osAccount.DomainServerConfigManager.addServerConfig(configParams).then((
+  serverConfig: osAccount.DomainServerConfig) => {
+  console.info('add domain server configuration successfully, the added config: ' + JSON.stringify(serverConfig));
+  osAccount.DomainServerConfigManager.getAllServerConfigs().then((data: Array<osAccount.DomainServerConfig>) => {
+    console.info('get all domain server configuration successfully, return config: ' + JSON.stringify(data));
+  }).catch((err: BusinessError) => {
+    console.error(`get all domain server configuration failed, code is ${err.code}, message is ${err.message}`);
+  });
+}).catch((err: BusinessError) => {
+  console.error(`add server configuration failed, code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ### getAccountServerConfig18+
-
-PhonePC/2in1TabletTVWearable
 
 static getAccountServerConfig(domainAccountInfo: DomainAccountInfo): Promise<DomainServerConfig>
 
@@ -3705,24 +3753,22 @@ static getAccountServerConfig(domainAccountInfo: DomainAccountInfo): Promise<Dom
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let accountInfo: osAccount.DomainAccountInfo = {
-4. 'accountName': 'demoName',
-5. 'domain': 'demoDomain'
-6. };
-7. osAccount.DomainServerConfigManager.getAccountServerConfig(accountInfo).then((
-8. serverConfig: osAccount.DomainServerConfig) => {
-9. console.info('get account server configuration successfully, the return config: ' + JSON.stringify(serverConfig));
-10. }).catch((err: BusinessError) => {
-11. console.error(`add server configuration failed, code is ${err.code}, message is ${err.message}`);
-12. });
+let accountInfo: osAccount.DomainAccountInfo = {
+  'accountName': 'demoName',
+  'domain': 'demoDomain'
+};
+osAccount.DomainServerConfigManager.getAccountServerConfig(accountInfo).then((
+  serverConfig: osAccount.DomainServerConfig) => {
+  console.info('get account server configuration successfully, the return config: ' + JSON.stringify(serverConfig));
+}).catch((err: BusinessError) => {
+  console.error(`add server configuration failed, code is ${err.code}, message is ${err.message}`);
+});
 ```
 
 ## 系统账号约束列表
-
-PhonePC/2in1TabletTVWearable
 
 | 约束 | 说明 |
 | --- | --- |

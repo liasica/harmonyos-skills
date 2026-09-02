@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-extend
 title: "@Extend装饰器：定义扩展组件样式"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @Extend装饰器：定义扩展组件样式
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:07+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f6a1f904428deeee51f185e9a02a61e761a4160620130b66d0ee28f5477aa3f7
+scraped_at: 2026-09-02T14:59:15+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:014eb3e0f65fbef4cc355da66cafc9e1ea1c0ecd76ca25b8dfa474b7025e4412
 ---
 
-在前文的示例中，可以使用[@Styles](arkts-style.md)用于样式的重用，在@Styles的基础上，我们提供了@Extend，用于扩展组件样式。
+在前文的示例中，可以使用[@Styles](arkts-style.md)复用样式，在@Styles的基础上，我们提供了[@Extend](../harmonyos-references/ts-custom-component-decorator-extend.md#extend)，用于扩展组件样式。
 
-说明
+**说明** 
 
 从API version 9开始支持。
 
@@ -22,249 +22,323 @@ content_hash: sha256:f6a1f904428deeee51f185e9a02a61e761a4160620130b66d0ee28f5477
 
 ### 语法
 
-```
-1. @Extend(UIComponentName) function functionName { ... }
+```ts
+@Extend(UIComponentName) function functionName() { ... }
 ```
 
 ### 使用规则
 
 * 和@Styles不同，@Extend支持封装指定组件的私有属性、私有事件和自身定义的全局方法。
 
-  ```
-  1. // @Extend(Text)可以支持Text的私有属性fontColor
-  2. @Extend(Text)
-  3. function fancy() {
-  4. .fontColor(Color.Red)
-  5. }
+  ```typescript
+  // @Extend(Text)可以支持Text的私有属性fontColor
+  @Extend(Text)
+  function fancy() {
+    .fontColor(Color.Red)
+  }
 
-  7. // superFancyText可以调用预定义的fancy
-  8. @Extend(Text)
-  9. function superFancyText(size: number) {
-  10. .fontSize(size)
-  11. .fancy()
-  12. }
+  // superFancyText可以调用预定义的fancy
+  @Extend(Text)
+  function superFancyText(size: number) {
+    .fontSize(size)
+    .fancy()
+  }
   ```
-
-  [GlobalFunctionExtension.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/extend/GlobalFunctionExtension.ets#L29-L42)
 * 使用@Extend封装指定组件的私有属性、私有事件和自身定义的全局方法时，不支持和@Styles混用。
 
-  ```
-  1. @Styles
-  2. function fancy() {
-  3. .backgroundColor(Color.Red)
-  4. }
+  ```typescript
+  @Styles
+  function fancy() {
+    .backgroundColor(Color.Red)
+  }
 
-  6. // superFancyText不可以调用预定义的fancy
-  7. @Extend(Text)
-  8. function superFancyText(size: number) {
-  9. .fontSize(size)
-  10. .fancy()
-  11. }
+  // superFancyText不可以调用预定义的fancy
+  @Extend(Text)
+  function superFancyText(size: number) {
+    .fontSize(size)
+    .fancy()
+  }
   ```
 * 和@Styles不同，@Extend装饰的方法支持传入参数，调用遵循TS方法传值调用。
 
-  ```
-  1. // xxx.ets
-  2. @Extend(Text)
-  3. function fancy(fontSize: number) {
-  4. .fontColor(Color.Red)
-  5. .fontSize(fontSize)
-  6. }
+  ```typescript
+  // xxx.ets
+  @Extend(Text)
+  function fancy(fontSize: number) {
+    .fontColor(Color.Red)
+    .fontSize(fontSize)
+  }
 
-  8. @Entry
-  9. @Component
-  10. struct FancyUse {
-  11. build() {
-  12. Row({ space: 10 }) {
-  13. Text('Fancy')
-  14. .fancy(16)
-  15. Text('Fancy')
-  16. .fancy(24)
-  17. }
-  18. }
-  19. }
+  @Entry
+  @Component
+  struct FancyUse {
+    build() {
+      Row({ space: 10 }) {
+        Text('Fancy')
+          .fancy(16)
+        Text('Fancy')
+          .fancy(24)
+      }
+    }
+  }
   ```
-
-  [ExtendParameterUsage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/extend/ExtendParameterUsage.ets#L28-L48)
 * @Extend装饰的方法的参数可以为function，作为Event事件的句柄。
 
+  ```typescript
+  // @Extend装饰的方法支持function参数
+  @Extend(Text)
+  function makeMeClick(onClick: () => void) {
+    .backgroundColor(Color.Blue)
+    .onClick(onClick)
+  }
+
+  @Entry
+  @Component
+  struct FancyUse {
+    @State label: string = 'Hello World';
+
+    onClickHandler() {
+      this.label = 'Hello ArkUI';
+    }
+
+    build() {
+      Row({ space: 10 }) {
+        Text(`${this.label}`)
+          .makeMeClick(() => {
+            this.onClickHandler();
+          })
+      }
+    }
+  }
   ```
-  1. @Extend(Text)
-  2. function makeMeClick(onClick: () => void) {
-  3. .backgroundColor(Color.Blue)
-  4. .onClick(onClick)
-  5. }
+* @Extend的参数可以为[状态变量](arkts-state-management-overview.md)，当状态变量改变时，UI可以正常地被刷新渲染。
 
-  7. @Entry
-  8. @Component
-  9. struct FancyUse {
-  10. @State label: string = 'Hello World';
+  ```typescript
+  // 将状态变量作为@Extend参数，状态变化驱动Text样式刷新
+  @Extend(Text)
+  function fancy(fontSize: number) {
+    .fontColor(Color.Blue)
+    .fontSize(fontSize)
+  }
 
-  12. onClickHandler() {
-  13. this.label = 'Hello ArkUI';
-  14. }
+  @Entry
+  @Component
+  struct FancyUse {
+    @State fontSizeValue: number = 20;
 
-  16. build() {
-  17. Row({ space: 10 }) {
-  18. Text(`${this.label}`)
-  19. .makeMeClick(() => {
-  20. this.onClickHandler();
-  21. })
-  22. }
-  23. }
-  24. }
+    build() {
+      Column({ space: 10 }) {
+        Text('Fancy')
+          .fancy(this.fontSizeValue)
+          .onClick(() => {
+            this.fontSizeValue = 30;
+          })
+      }
+      .width('100%')
+    }
+  }
   ```
 
-  [ExtendFunctionHandle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/extend/ExtendFunctionHandle.ets#L29-L54)
-* @Extend的参数可以为[状态变量](arkts-state-management-overview.md)，当状态变量改变时，UI可以正常的被刷新渲染。
-
-  ```
-  1. @Extend(Text)
-  2. function fancy(fontSize: number) {
-  3. .fontColor(Color.Blue)
-  4. .fontSize(fontSize)
-  5. }
-
-  7. @Entry
-  8. @Component
-  9. struct FancyUse {
-  10. @State fontSizeValue: number = 20;
-
-  12. build() {
-  13. Column({ space: 10 }) {
-  14. Text('Fancy')
-  15. .fancy(this.fontSizeValue)
-  16. .onClick(() => {
-  17. this.fontSizeValue = 30;
-  18. })
-  19. }
-  20. .width('100%')
-  21. }
-  22. }
-  ```
-
-  [ExtendUIStateVariable.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/extend/ExtendUIStateVariable.ets#L29-L51)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/ljCFbqSJSB-iiaMDDWKteg/zh-cn_image_0000002558604418.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/h1dr9HuxQZajrsWHtF1-Ow/zh-cn_image_0000002736312281.gif)
 
 ## 限制条件
 
 * 和@Styles不同，@Extend仅支持在全局定义，不支持在组件内部定义。
 
-说明
+  **说明** 
 
-仅限在当前文件内使用，不支持导出。
+  仅限在当前文件内使用，不支持导出。
 
-如果要实现export功能，推荐使用[AttributeModifier](arkts-user-defined-extension-attributemodifier.md)。
+  如果要实现export功能，推荐使用[AttributeModifier](arkts-user-defined-extension-attributemodifier.md)。
 
-【反例】
+  【反例】
 
-```
-1. @Entry
-2. @Component
-3. struct FancyUse {
-4. // 错误写法，@Extend仅支持在全局定义，不支持在组件内部定义
-5. @Extend(Text) function fancy (fontSize: number) {
-6. .fontSize(fontSize)
-7. }
+  ```ts
+  @Entry
+  @Component
+  struct FancyUse {
+    // 错误写法，@Extend仅支持在全局定义，不支持在组件内部定义。
+    @Extend(Text) function fancy (fontSize: number) {
+      .fontSize(fontSize)
+    }
 
-9. build() {
-10. Row({ space: 10 }) {
-11. Text('Fancy')
-12. .fancy(16)
-13. }
-14. }
-15. }
-```
+    build() {
+      Row({ space: 10 }) {
+        Text('Fancy')
+          .fancy(16)
+      }
+    }
+  }
+  ```
 
-【正例】
+  【正例】
 
-```
-1. // 正确写法
-2. @Extend(Text)
-3. function fancy(fontSize: number) {
-4. .fontSize(fontSize)
-5. }
+  ```typescript
+  // 正确写法
+  @Extend(Text)
+  function fancy(fontSize: number) {
+    .fontSize(fontSize)
+  }
 
-7. @Entry
-8. @Component
-9. struct FancyUse {
-10. build() {
-11. Row({ space: 10 }) {
-12. Text('Fancy')
-13. .fancy(16)
-14. }
-15. }
-16. }
-```
+  @Entry
+  @Component
+  struct FancyUse {
+    build() {
+      Row({ space: 10 }) {
+        Text('Fancy')
+          .fancy(16)
+      }
+    }
+  }
+  ```
+* @Extend装饰的函数仅限当前文件使用，不支持导出，不支持在其他文件调用。
 
-[ExtendPositiveExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/extend/ExtendPositiveExample.ets#L29-L46)
+  【反例】
+
+  ```typescript
+    // 错误写法 不要在pageTwo当中使用在其他文件比如pageOne中定义的@Extend函数。
+    // pageOne.ets
+    @Extend(Button)
+    function ButtonUse() {
+      .width(100)
+      .buttonStyle(ButtonStyleMode.NORMAL)
+    }
+
+    @Entry
+    @Component
+    struct extendUseOne {
+      build() {
+        Row() {
+          Button()
+            .ButtonUse()
+            .height(200)
+        }
+      }
+    }
+
+    // pageTwo.ets
+    @Entry
+    @Component
+    struct TextUse {
+      build() {
+        Row() {
+          Text('this is TextUse')
+
+          Button()
+            .ButtonUse()  // 会有编译告警提示: Property 'ButtonUse' does not exist  on type 'ButtonAttribute'.
+            .height(50)
+        }
+      }
+    }
+  ```
+
+  【正例】
+
+  ```typescript
+    // 正确写法 在pageTwo文件当中可以定义与pageOne文件中的@Extend函数不重名的@Extend函数。
+    // pageOne.ets
+    @Extend(Button)
+    function ButtonUse() {
+      .width(100)
+      .buttonStyle(ButtonStyleMode.NORMAL)
+    }
+
+    @Entry
+    @Component
+    struct extendUseOne {
+      build() {
+        Row() {
+          Button()
+            .ButtonUse()
+            .height(200)
+        }
+      }
+    }
+
+    // pageTwo.ets
+    @Extend(Button)
+    function ButtonUse2() {
+      .width(200)
+      .buttonStyle(ButtonStyleMode.EMPHASIZED)
+    }
+
+    @Entry
+    @Component
+    struct TextUse {
+      build() {
+        Row() {
+          Text('this is TextUse')
+
+          Button()
+            .ButtonUse2()
+            .height(50)
+        }
+      }
+    }
+  ```
 
 ## 使用场景
 
-以下示例声明了3个Text组件，每个Text组件均设置了[fontStyle](../harmonyos-references/ts-appendix-enums.md#fontstyle)、[fontWeight](../harmonyos-references/ts-appendix-enums.md#fontweight) 和[backgroundColor](../harmonyos-references/ts-universal-attributes-background.md#backgroundcolor)样式。
+以下示例声明了3个Text组件，每个Text组件均设置了[fontStyle](../harmonyos-references/ts-basic-components-text.md#fontstyle)、[fontWeight](../harmonyos-references/ts-basic-components-text.md#fontweight) 和[backgroundColor](../harmonyos-references/ts-universal-attributes-background.md#backgroundcolor)样式。
 
+```typescript
+@Entry
+@Component
+struct FancyUse {
+  @State label: string = 'Hello World';
+
+  build() {
+    Row({ space: 10 }) {
+      // Text组件重复设置样式
+      Text(`${this.label}`)
+        .fontStyle(FontStyle.Italic)
+        .fontWeight(500)
+        .backgroundColor(Color.Yellow)
+      Text(`${this.label}`)
+        .fontStyle(FontStyle.Italic)
+        .fontWeight(600)
+        .backgroundColor(Color.Pink)
+      Text(`${this.label}`)
+        .fontStyle(FontStyle.Italic)
+        .fontWeight(700)
+        .backgroundColor(Color.Orange)
+    }.margin('20%')
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct FancyUse {
-4. @State label: string = 'Hello World';
 
-6. build() {
-7. Row({ space: 10 }) {
-8. Text(`${this.label}`)
-9. .fontStyle(FontStyle.Italic)
-10. .fontWeight(500)
-11. .backgroundColor(Color.Yellow)
-12. Text(`${this.label}`)
-13. .fontStyle(FontStyle.Italic)
-14. .fontWeight(600)
-15. .backgroundColor(Color.Pink)
-16. Text(`${this.label}`)
-17. .fontStyle(FontStyle.Italic)
-18. .fontWeight(700)
-19. .backgroundColor(Color.Orange)
-20. }.margin('20%')
-21. }
-22. }
-```
-
-[ExtendUsageScenario.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/extend/ExtendUsageScenario.ets#L29-L52)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/CZitWo0lQiqgAvmxJYezeg/zh-cn_image_0000002589323943.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/CPx3DCZ_Tg6wdZxNGCslBg/zh-cn_image_0000002706673238.png)
 
 使用@Extend将样式组合复用，示例如下。
 
+```typescript
+// 使用@Extend封装Text样式组合，便于复用
+@Extend(Text)
+function fancyText(weightValue: number, color: Color) {
+  .fontStyle(FontStyle.Italic)
+  .fontWeight(weightValue)
+  .backgroundColor(color)
+}
 ```
-1. @Extend(Text)
-2. function fancyText(weightValue: number, color: Color) {
-3. .fontStyle(FontStyle.Italic)
-4. .fontWeight(weightValue)
-5. .backgroundColor(color)
-6. }
-```
-
-[ExtendUsageScenariotwo.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/extend/ExtendUsageScenariotwo.ets#L29-L36)
 
 通过@Extend组合样式后，使得代码更加简洁，增强可读性。
 
-```
-1. @Entry
-2. @Component
-3. struct FancyUse {
-4. @State label: string = 'Hello World';
+```typescript
+@Entry
+@Component
+struct FancyUse {
+  @State label: string = 'Hello World';
 
-6. build() {
-7. Row({ space: 10 }) {
-8. Text(`${this.label}`)
-9. .fancyText(100, Color.Blue)
-10. Text(`${this.label}`)
-11. .fancyText(200, Color.Pink)
-12. Text(`${this.label}`)
-13. .fancyText(300, Color.Orange)
-14. }.margin('20%')
-15. }
-16. }
+  build() {
+    Row({ space: 10 }) {
+      // 调用@Extend封装的fancyText复用样式
+      Text(`${this.label}`)
+        .fancyText(100, Color.Blue)
+      Text(`${this.label}`)
+        .fancyText(200, Color.Pink)
+      Text(`${this.label}`)
+        .fancyText(300, Color.Orange)
+    }.margin('20%')
+  }
+}
 ```
-
-[ExtendUsageScenariotwo.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/extend/ExtendUsageScenariotwo.ets#L37-L54)

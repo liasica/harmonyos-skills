@@ -3,32 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-u
 title: "@ohos.util (util工具函数)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.util (util工具函数)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:05+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:851d58a7fbed9ed531f3a676b15a309e2d4e2e33a1a4a5a0d4f87690a8f80a80
+scraped_at: 2026-09-02T15:00:48+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:cfc3ad6253c43f26aa4d5e9466869c8126a624eb2a71e59cc0bb5e8f37ff0644
 ---
 
-该模块主要提供常用的工具函数，实现字符串编解码（[TextEncoder](js-apis-util.md#textencoder)，[TextDecoder](js-apis-util.md#textdecoder)）、有理数运算（[RationalNumber8+](js-apis-util.md#rationalnumber8)）、缓冲区管理（[LRUCache9+](js-apis-util.md#lrucache9)）、范围判断（[ScopeHelper9+](js-apis-util.md#scopehelper9)）、Base64编解码（[Base64Helper9+](js-apis-util.md#base64helper9)）、内置对象类型检查（[types8+](js-apis-util.md#types8)）、对方法进行插桩和替换（[Aspect11+](js-apis-util.md#aspect11)）等功能。
+该模块主要提供常用的工具函数，实现字符串编解码（[TextEncoder](js-apis-util.md#textencoder)，[TextDecoder](js-apis-util.md#textdecoder)）、有理数运算（[RationalNumber8+](js-apis-util.md#rationalnumber8)）、缓冲区管理（[LRUCache9+](js-apis-util.md#lrucache9)）、范围判断（[ScopeHelper9+](js-apis-util.md#scopehelper9)）、Base64编解码（[Base64Helper9+](js-apis-util.md#base64helper9)）、内置对象类型检查（[types8+](js-apis-util.md#types8)）、对方法进行插桩和替换（[Aspect11+](js-apis-util.md#aspect11)）、虚拟机维测能力（[ArkTSVM23+](js-apis-util.md#arktsvm23)）、二进制流解码（[StringDecoder12+](js-apis-util.md#stringdecoder12)）、堆内存阈值配置（[HeapMemoryThreshold24+](js-apis-util.md#heapmemorythreshold24)）等功能。此外还提供获取对象Hash值（[util.getHash12+](js-apis-util.md#utilgethash12)）、获取主线程栈追踪信息（[util.getMainThreadStackTrace20+](js-apis-util.md#utilgetmainthreadstacktrace20)）等工具函数。
 
-说明
+**说明** 
 
 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { util } from '@kit.ArkTS';
+```ts
+import { util } from '@kit.ArkTS';
 ```
 
 ## util.format9+
 
-PhonePC/2in1TabletTVWearable
-
 format(format: string, ...args: Object[]): string
 
-使用样式化字符串将输入内容按特定格式输出。
+使用样式化字符串将输入内容按特定格式输出，适用于日志输出、用户界面文本格式化等场景。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -39,21 +35,13 @@ format(format: string, ...args: Object[]): string
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | format | string | 是 | 格式化字符串，可以包含零个或多个占位符，用于指定要插入的参数的位置和格式。 |
-| ...args | Object[] | 否 | 替换format参数中占位符的数据，此参数缺失时，默认返回第一个参数。 |
+| ...args | Object[] | 否 | 替换format参数中占位符的数据，此参数缺失时，直接返回格式化字符串本身。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
 | string | 格式化后的字符串。 |
-
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **格式说明符：**
 
@@ -63,85 +51,83 @@ format(format: string, ...args: Object[]): string
 | %d | 将参数作为十进制整数进行格式化输出，用于除Symbol和BigInt之外的所有值。 |
 | %i | 将字符串转换为十进制整数，用于除BigInt和Symbol之外的所有值。 |
 | %f | 将字符串转换为浮点数，用于除BigInt和Symbol之外的所有值。 |
-| %j | 将JavaScript对象转换为JSON字符串进行格式化输出。 |
+| %j | 将JavaScript对象序列化为JSON字符串进行格式化输出。 |
 | %o | 用于将JavaScript对象进行格式化输出，将对象转换为字符串表示，但不包含对象的原型链信息。 |
 | %O | 用于将JavaScript对象进行格式化输出，将对象转换为字符串表示。 |
-| %c | 只在浏览器环境中有效。其余环境不会产生样式效果。 |
+| %c | CSS样式占位符，仅在浏览器环境中有效，用于指定格式化输出的样式；其余环境会忽略该占位符。 |
 | %% | 转义百分号的特殊格式化占位符。 |
 
 **示例：**
 
-```
-1. import { util } from '@kit.ArkTS';
+```ts
+import { util } from '@kit.ArkTS';
 
-3. interface utilAddressType {
-4. city: string;
-5. country: string;
-6. }
-7. interface utilPersonType {
-8. name: string;
-9. age: number;
-10. address: utilAddressType;
-11. }
+interface utilAddressType {
+  city: string;
+  country: string;
+}
+interface utilPersonType {
+  name: string;
+  age: number;
+  address: utilAddressType;
+}
 
-13. let name = 'John';
-14. let age = 20;
-15. let formattedString = util.format('My name is %s and I am %s years old', name, age);
-16. console.info(formattedString);
-17. // 输出结果：My name is John and I am 20 years old
-18. let num = 10.5;
-19. formattedString = util.format('The number is %d', num);
-20. console.info(formattedString);
-21. // 输出结果：The number is 10.5
-22. num = 100.5;
-23. formattedString = util.format('The number is %i', num);
-24. console.info(formattedString);
-25. // 输出结果：The number is 100
-26. const pi = 3.141592653;
-27. formattedString = util.format('The value of pi is %f', pi);
-28. console.info(formattedString);
-29. // 输出结果：The value of pi is 3.141592653
-30. const obj: Record<string,number | string> = { "name": 'John', "age": 20 };
-31. formattedString = util.format('The object is %j', obj);
-32. console.info(formattedString);
-33. // 输出结果：The object is {"name":"John","age":20}
-34. const person: utilPersonType = {
-35. name: 'John',
-36. age: 20,
-37. address: {
-38. city: 'New York',
-39. country: 'USA'
-40. }
-41. };
-42. console.info(util.format('Formatted object using %%O: %O', person));
-43. console.info(util.format('Formatted object using %%o: %o', person));
-44. /*
-45. 输出结果：
-46. Formatted object using %O: { name: 'John',
-47. age: 20,
-48. address:
-49. { city: 'New York',
-50. country: 'USA' } }
-51. Formatted object using %o: { name: 'John',
-52. age: 20,
-53. address:
-54. { city: 'New York',
-55. country: 'USA' } }
-56. */
-57. const percentage = 80;
-58. let arg = 'homework';
-59. formattedString = util.format('John finished %d%% of the %s', percentage, arg);
-60. console.info(formattedString);
-61. // 输出结果：John finished 80% of the homework
+let name = 'John';
+let age = 20;
+let formattedString = util.format('My name is %s and I am %s years old', name, age);
+console.info(formattedString);
+// 输出结果：My name is John and I am 20 years old
+let num = 10.5;
+formattedString = util.format('The number is %d', num);
+console.info(formattedString);
+// 输出结果：The number is 10.5
+num = 100.5;
+formattedString = util.format('The number is %i', num);
+console.info(formattedString);
+// 输出结果：The number is 100
+const pi = 3.141592653;
+formattedString = util.format('The value of pi is %f', pi);
+console.info(formattedString);
+// 输出结果：The value of pi is 3.141592653
+const obj: Record<string,number | string> = { "name": 'John', "age": 20 };
+formattedString = util.format('The object is %j', obj);
+console.info(formattedString);
+// 输出结果：The object is {"name":"John","age":20}
+const person: utilPersonType = {
+  name: 'John',
+  age: 20,
+  address: {
+    city: 'New York',
+    country: 'USA'
+  }
+};
+console.info(util.format('Formatted object using %%O: %O', person));
+console.info(util.format('Formatted object using %%o: %o', person));
+/*
+输出结果：
+Formatted object using %O: { name: 'John',
+  age: 20,
+  address:
+  { city: 'New York',
+    country: 'USA' } }
+Formatted object using %o: { name: 'John',
+  age: 20,
+  address:
+  { city: 'New York',
+    country: 'USA' } }
+ */
+const percentage = 80;
+let arg = 'homework';
+formattedString = util.format('John finished %d%% of the %s', percentage, arg);
+console.info(formattedString);
+// 输出结果：John finished 80% of the homework
 ```
 
 ## util.errnoToString9+
 
-PhonePC/2in1TabletTVWearable
-
 errnoToString(errno: number): string
 
-获取系统错误码对应的详细信息。
+获取系统错误码对应的详细信息。适用于系统调用出错时将数字错误码转换为可读的描述信息，便于开发者快速定位和排查系统级错误，常用于错误日志记录和错误提示显示。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -157,23 +143,15 @@ errnoToString(errno: number): string
 
 | 类型 | 说明 |
 | --- | --- |
-| string | 错误码对应的详细信息。 |
-
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| string | 错误码对应的详细信息，包含可读的错误描述文本，便于开发者定位问题。 |
 
 **示例：**
 
-```
-1. let errnum = -1; // -1 : a system error number
-2. let result = util.errnoToString(errnum);
-3. console.info("result = " + result);
-4. // 输出结果：result = operation not permitted
+```ts
+let errnum = -1; // -1 : a system error number
+let result = util.errnoToString(errnum);
+console.info("result = " + result);
+// 输出结果：result = operation not permitted
 ```
 
 **部分错误码及信息示例：**
@@ -192,17 +170,17 @@ errnoToString(errno: number): string
 
 ## util.callbackWrapper
 
-PhonePC/2in1TabletTVWearable
-
 callbackWrapper(original: Function): (err: Object, value: Object)=>void
 
 对异步函数进行回调化处理，回调中第一个参数是拒绝原因（如果Promise已解决，则为null），第二个参数是已解决的值。
 
-说明
+**说明** 
 
 该接口要求参数original必须是异步函数类型。如果传入的参数不是异步函数，不会进行拦截，但是会输出错误信息："callbackWrapper: The type of Parameter must be AsyncFunction"。
 
-该接口用于将返回Promise的async函数转换为错误优先回调风格的函数，调用此接口返回的函数接收一个回调函数作为第二个入参，调用此方法时会先执行original函数。当original的Promise返回resolve时，入参的回调函数的第一个参数为null，第二个参数为resolve的值。当original的Promise返回reject时，入参的回调函数的第一个参数为错误对象，第二个参数为null。当original为无入参的函数时，此接口返回的函数第一个入参需传入一个无效的占位参数。
+该接口用于将返回Promise的async函数转换为错误优先回调风格的函数，调用此接口返回的函数接收一个回调函数作为第二个入参，调用此方法时会先执行original函数。当original的Promise返回resolve时，入参的回调函数的第一个参数为null，第二个参数为resolve的值。当original的Promise返回reject时，入参的回调函数的第一个参数为错误对象，第二个参数为null。
+
+由于此方法返回类型的声明为(err: Object, value: Object) => void，TypeScript编译器会按照该声明进行参数数量校验，因此当original为无入参的函数时，此接口返回的函数第一个入参需传入一个无效的占位参数。当original为多个入参的函数时，此接口返回的函数当前仅支持传入一个参数，可使用array等容器进行多个入参的传入调用（参照下方示例代码）。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -212,7 +190,7 @@ callbackWrapper(original: Function): (err: Object, value: Object)=>void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| original | Function | 是 | 异步函数。 |
+| original | Function | 是 | 异步函数，要求函数返回Promise对象。该异步函数的resolve值会作为回调的第二个参数传入，reject原因会作为回调的第一个参数传入。 |
 
 **返回值：**
 
@@ -220,35 +198,41 @@ callbackWrapper(original: Function): (err: Object, value: Object)=>void
 | --- | --- |
 | (err: Object, value: Object)=>void | 返回一个回调函数，该函数第一个参数err是拒绝原因（如果 Promise 已解决，则为 null），第二个参数value是已解决的值。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
+```ts
+// original为一个入参示例
+async function fn(input: string) {
+  return input;
+}
+let cb = util.callbackWrapper(fn);
+cb('hello world', (err : Object, ret : string) => {
+  if (err) throw new Error();
+  console.info(ret);
+});
+// 输出结果：hello world
 ```
-1. async function fn(input: string) {
-2. return input;
-3. }
-4. let cb = util.callbackWrapper(fn);
-5. cb('hello world', (err : Object, ret : string) => {
-6. if (err) throw new Error;
-7. console.info(ret);
-8. });
-9. // 输出结果：hello world
+
+```ts
+// original需要传入多个入参场景示例
+async function fn(args: Array<string | number | Function>) {
+  console.info('args[0]: ' + args[0]); // args[0]: hello world
+  console.info('args[1]: ' + args[1]); // args[1]: 8
+  return args[0];
+}
+let cb = util.callbackWrapper(fn);
+let args: Array<string | number | Function> = ['hello world', 8]
+cb(args, (err : Object, ret : string) => {
+  if (err) throw new Error;
+  console.info(ret); // 输出结果：hello world
+});
 ```
 
 ## util.promisify9+
 
-PhonePC/2in1TabletTVWearable
-
 promisify(original: (err: Object, value: Object) => void): Function
 
-接收一个采用“错误优先”回调模式的函数，即以(err, value) => callback作为最后一个参数，并返回其Promise函数。
+接收一个采用"错误优先"回调模式的函数，即以(err, value) => callback作为最后一个参数，并返回其Promise函数。适用于将旧版回调式异步API转换为Promise风格，以便使用async/await语法进行调用，从而简化异步代码编写。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -264,37 +248,27 @@ promisify(original: (err: Object, value: Object) => void): Function
 
 | 类型 | 说明 |
 | --- | --- |
-| Function | 返回一个 Promise 的函数。 |
-
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| Function | 返回一个Promise函数，该Promise在原始回调函数成功执行时resolve为回调的value值，在原始回调函数执行出错时reject为错误对象。 |
 
 **示例：**
 
-```
-1. async function fn() {
-2. return 'hello world';
-3. }
-4. const addCall = util.promisify(util.callbackWrapper(fn));
-5. (async () => {
-6. try {
-7. let res: string = await addCall();
-8. console.info(res);
-9. // 输出结果：hello world
-10. } catch (err) {
-11. console.info(err);
-12. }
-13. })();
+```ts
+async function fn() {
+  return 'hello world';
+}
+const addCall = util.promisify(util.callbackWrapper(fn));
+(async () => {
+  try {
+    let res: string = await addCall();
+    console.info(res);
+    // 输出结果：hello world
+  } catch (err) {
+    console.info(err);
+  }
+})();
 ```
 
 ## util.generateRandomUUID9+
-
-PhonePC/2in1TabletTVWearable
 
 generateRandomUUID(entropyCache?: boolean): string
 
@@ -308,7 +282,7 @@ generateRandomUUID(entropyCache?: boolean): string
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| entropyCache | boolean | 否 | 是否使用已缓存的UUID，true表示使用缓存的UUID，false表示不使用缓存的UUID，默认true。 |
+| entropyCache | boolean | 否 | 是否使用已缓存的UUID，true表示使用缓存的UUID以提升性能（最多缓存128个UUID，缓存用尽后会重新生成以保证随机性），false表示不使用缓存的UUID，默认true。 |
 
 **返回值：**
 
@@ -316,29 +290,19 @@ generateRandomUUID(entropyCache?: boolean): string
 | --- | --- |
 | string | 表示此UUID的字符串。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. let uuid = util.generateRandomUUID(true);
-2. console.info("RFC 4122 Version 4 UUID:" + uuid);
-3. // 输出随机生成的UUID
+```ts
+let uuid = util.generateRandomUUID(true);
+console.info("RFC 4122 Version 4 UUID:" + uuid);
+// 输出随机生成的UUID
 ```
 
 ## util.generateRandomBinaryUUID9+
 
-PhonePC/2in1TabletTVWearable
-
 generateRandomBinaryUUID(entropyCache?: boolean): Uint8Array
 
-使用加密安全随机数生成器生成随机的RFC 4122版本4的UUID。
+使用加密安全随机数生成器生成随机的RFC 4122版本4的Uint8Array类型UUID。为了提升性能，此接口会默认使用缓存，即入参为true，最多可缓存128个随机的UUID。当缓存中128个UUID用尽后，会重新生成，以保证UUID的随机性。如需禁用缓存，请将入参设置为false。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -356,25 +320,15 @@ generateRandomBinaryUUID(entropyCache?: boolean): Uint8Array
 | --- | --- |
 | Uint8Array | 表示此UUID的Uint8Array值。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. let uuid = util.generateRandomBinaryUUID(true);
-2. console.info(JSON.stringify(uuid));
-3. // 输出随机生成的UUID
+```ts
+let uuid = util.generateRandomBinaryUUID(true);
+console.info(JSON.stringify(uuid));
+// 输出随机生成的UUID
 ```
 
 ## util.parseUUID9+
-
-PhonePC/2in1TabletTVWearable
 
 parseUUID(uuid: string): Uint8Array
 
@@ -388,40 +342,37 @@ parseUUID(uuid: string): Uint8Array
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| uuid | string | 是 | UUID字符串。 |
+| uuid | string | 是 | UUID字符串，必须符合RFC 4122版本规范。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Uint8Array | 返回表示此UUID的Uint8Array，如果解析失败，则抛出SyntaxError。 |
+| Uint8Array | 返回表示此UUID的Uint8Array，如果解析失败，则抛出异常，错误码为10200002。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. |
 | 10200002 | Invalid uuid string. |
 
 **示例：**
 
-```
-1. let uuid = util.parseUUID("84bdf796-66cc-4655-9b89-d6218d100f9c");
-2. console.info("uuid = " + uuid);
-3. // 输出结果：uuid = 132,189,247,150,102,204,70,85,155,137,214,33,141,16,15,156
+```ts
+let uuid = util.parseUUID("84bdf796-66cc-4655-9b89-d6218d100f9c");
+console.info("uuid = " + uuid);
+// 输出结果：uuid = 132,189,247,150,102,204,70,85,155,137,214,33,141,16,15,156
 ```
 
 ## util.printf(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 printf(format: string, ...args: Object[]): string
 
 通过式样化字符串对输入的内容按特定格式输出。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[util.format9+](js-apis-util.md#utilformat9)替代。
 
@@ -438,25 +389,23 @@ printf(format: string, ...args: Object[]): string
 
 | 类型 | 说明 |
 | --- | --- |
-| string | 按特定格式式样化后的字符串。 |
+| string | 按特定格式式样化后的字符串，包含根据格式说明符处理后的参数值。 |
 
 **示例：**
 
-```
-1. let res = util.printf("%s", "hello world!");
-2. console.info(res);
-3. // 输出结果：hello world!
+```ts
+let res = util.printf("%s", "hello world!");
+console.info(res);
+// 输出结果：hello world!
 ```
 
 ## util.getErrorString(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getErrorString(errno: number): string
 
 获取系统错误码对应的详细信息。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[util.errnoToString9+](js-apis-util.md#utilerrnotostring9)替代。
 
@@ -476,22 +425,20 @@ getErrorString(errno: number): string
 
 **示例：**
 
-```
-1. let errnum = -1; // -1 : a system error number
-2. let result = util.getErrorString(errnum);
-3. console.info("result = " + result);
-4. // 输出结果：result = operation not permitted
+```ts
+let errnum = -1; // -1 : a system error number
+let result = util.getErrorString(errnum);
+console.info("result = " + result);
+// 输出结果：result = operation not permitted
 ```
 
 ## util.promiseWrapper(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 promiseWrapper(original: (err: Object, value: Object) => void): Object
 
 接收一个采用“错误优先”回调模式的函数，即以(err, value) => callback作为最后一个参数，并返回其Promise函数。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，此接口不可用，建议使用[util.promisify9+](js-apis-util.md#utilpromisify9)替代。
 
@@ -501,7 +448,7 @@ promiseWrapper(original: (err: Object, value: Object) => void): Object
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| original | (err: Object, value: Object) => void | 是 | 异步函数。 |
+| original | (err: Object, value: Object) => void | 是 | 采用错误优先回调模式的函数，第一个参数err是拒绝原因，第二个参数value是已解决的值。 |
 
 **返回值：**
 
@@ -511,15 +458,13 @@ promiseWrapper(original: (err: Object, value: Object) => void): Object
 
 ## util.getHash12+
 
-PhonePC/2in1TabletTVWearable
-
 getHash(object: object): number
 
 获取对象的Hash值。
 
 首次获取时，则计算Hash值并保存到对象的Hash域（返回随机的Hash值）；后续获取时，直接从Hash域中返回Hash值（同一对象多次返回值保持不变）。
 
-**元服务API**：从API version 12开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -527,40 +472,30 @@ getHash(object: object): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| object | object | 是 | 需要获取Hash值的对象。 |
+| object | object | 是 | 需要获取Hash值的非原始类型对象。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| number | Hash值。 |
-
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| number | 对象的Hash值，首次获取时返回随机值，同一对象多次获取返回值保持不变。 |
 
 **示例：**
 
-```
-1. interface Person {
-2. name: string,
-3. age: number
-4. }
-5. let obj: Person = { name: 'Jack', age: 20 };
-6. let result1 = util.getHash(obj);
-7. console.info('result1 is ' + result1);
-8. let result2 = util.getHash(obj);
-9. console.info('result2 is ' + result2);
-10. // 输出结果：result1 与 result2 的值相等，且为随机的Hash值。
+```ts
+interface Person {
+  name: string,
+  age: number
+}
+let obj: Person = { name: 'Jack', age: 20 };
+let result1 = util.getHash(obj);
+console.info('result1 is ' + result1);
+let result2 = util.getHash(obj);
+console.info('result2 is ' + result2);
+// 输出结果：result1 与 result2 的值相等，且为随机的Hash值。
 ```
 
 ## util.getMainThreadStackTrace20+
-
-PhonePC/2in1TabletTVWearable
 
 getMainThreadStackTrace(): string
 
@@ -568,7 +503,7 @@ getMainThreadStackTrace(): string
 
 该接口可能对主线程性能产生影响，建议仅在必要时使用，如日志记录、错误分析或调试场景。
 
-**元服务API**：从API version 20开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -580,25 +515,41 @@ getMainThreadStackTrace(): string
 
 **示例：**
 
+```ts
+let stack = util.getMainThreadStackTrace();
+console.info(stack);
+// 输出当前主线程的栈追踪信息。
 ```
-1. let stack = util.getMainThreadStackTrace();
-2. console.info(stack);
-3. // 输出当前主线程的栈追踪信息。
-```
+
+## MultithreadingDetectionOptions
+
+MultithreadingDetectionOptions是一个接口类，用于配置[ArkTSVM.setMultithreadingDetectionEnabled](js-apis-util.md#setmultithreadingdetectionenabled23)函数的行为参数。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Utils.Lang
+
+**属性：**
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| abort | boolean | 否 | 是 | 控制检测到多线程问题时是否崩溃。传入true表示检测到多线程问题时立即崩溃，适用于开发调试阶段需要快速暴露多线程问题的场景；传入false表示不崩溃仅上报故障信息，适用于生产环境需要保持服务可用性的场景。默认true。 |
+| frequency | number | 否 | 是 | 多线程安全检测的粒度，表示每发生多少次函数调用进行一次多线程安全检测，该值越大采样频率越低，对应用性能影响越小，但可能漏检部分多线程安全使用问题场景，范围为[100, 2147483647]，默认100。 |
+| interval | number | 否 | 是 | 多线程安全检测的上报故障时间间隔，仅不崩溃时生效，范围为[0,1440]，单位为分钟，默认5分钟。（不建议设为5分钟以下，有严重的性能影响。） |
 
 ## ArkTSVM23+
 
-PhonePC/2in1TabletTVWearable
-
-ArkTSVM是一个类，用于给开发者提供虚拟机的维测能力。
+ArkTSVM是一个类，用于给开发者提供虚拟机的诊断与维护能力，包括多线程安全检测、堆内存信息获取、内存泄漏防护、全局引用追踪和堆内存预警等功能。
 
 ### setMultithreadingDetectionEnabled23+
 
-PhonePC/2in1TabletTVWearable
+static setMultithreadingDetectionEnabled(enabled: boolean, options?: MultithreadingDetectionOptions): void
 
-static setMultithreadingDetectionEnabled(enabled: boolean): void
+若enabled为true则开启，为false则关闭。开启多线程安全检测，多线程问题的C/C++崩溃转储文件（cppcrash文件）里会包含多线程信息（如线程ID、锁状态等）。关闭多线程安全检测，则C/C++崩溃转储文件（cppcrash文件）里不会包含多线程信息。
 
-若enabled为true则开启，为false则关闭。开启多线程检测，多线程问题的cppcrash文件里会包含多线程信息。关闭多线程检测，则多线程问题的cppcrash文件里不会包含多线程信息。
+options是用于配置多线程安全检测的行为参数。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -608,26 +559,317 @@ static setMultithreadingDetectionEnabled(enabled: boolean): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| enabled | boolean | 是 | 控制多线程检测开关的开启或关闭 。true表示开启，false表示关闭。 |
+| enabled | boolean | 是 | 控制多线程安全检测开关的开启或关闭。true表示开启，false表示关闭。 |
+| options | [MultithreadingDetectionOptions](js-apis-util.md#multithreadingdetectionoptions) | 否 | 多线程安全检测的参数配置，此参数不填时，对应各属性取[MultithreadingDetectionOptions](js-apis-util.md#multithreadingdetectionoptions)的默认值。**起始版本：** 26.0.0 |
+
+**示例：**
+
+```ts
+import { util } from '@kit.ArkTS';
+
+// 打开多线程安全检测开关
+util.ArkTSVM.setMultithreadingDetectionEnabled(true);
+// 关闭多线程安全检测开关
+util.ArkTSVM.setMultithreadingDetectionEnabled(false);
+// 设置崩溃行为
+util.ArkTSVM.setMultithreadingDetectionEnabled(true, { abort: false });
+// 调整检测粒度
+util.ArkTSVM.setMultithreadingDetectionEnabled(true, { frequency: 200 });
+// 调整上报间隔
+util.ArkTSVM.setMultithreadingDetectionEnabled(true, { interval: 10 });
+// 同时设置三个参数
+util.ArkTSVM.setMultithreadingDetectionEnabled(true, {
+  abort: false,
+  frequency: 500,
+  interval: 60
+});
+```
+
+### getAllVMHeapMemoryInfo24+
+
+static getAllVMHeapMemoryInfo(): Promise<HeapMemoryInfo[]>
+
+获取所有VM线程的堆内存信息，包括线程ID、线程名称、堆类型和堆对象大小，适用于内存泄漏排查、内存使用分析等场景。使用Promise异步回调。
+
+接口获取到的堆包含两种类型：local堆，即应用进程中每个ArkTS线程独有的虚拟机堆；shared堆，即应用进程中所有ArkTS线程共享的虚拟机堆。
+
+**说明** 
+
+此接口在执行时会暂停所有VM线程运行以获取内存信息。由于需要等待所有VM线程暂停，高负载场景下调用此接口的耗时可能较高。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Utils.Lang
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[HeapMemoryInfo](js-apis-util.md#heapmemoryinfo24)[]> | Promise对象，解析为HeapMemoryInfo对象数组，每个对象包含线程ID、线程名称、堆类型和堆对象大小。此方法可以获取local堆和shared堆的内存信息。 |
+
+**示例：**
+
+```ts
+import { util } from '@kit.ArkTS';
+
+util.ArkTSVM.getAllVMHeapMemoryInfo().then(
+  result => {
+    result.forEach(info => {
+      console.info(info.threadId?.toString());
+      console.info(info.threadName);
+      console.info(info.heapType);
+      console.info(info.heapObjectSize.toString());
+    })
+  }
+);
+```
+
+### enableLocalHandleDetection24+
+
+static enableLocalHandleDetection(): void
+
+EventHandler和libuv的异步事件循环机制在执行异步任务时，任务将不在当前handle scope的管理范围内执行，创建的napi\_value不会被自动回收。若开发者在任务回调中未添加scope，将导致内存泄漏。调用该接口后，可确保这两个机制的任务在scope范围内执行，从而避免内存泄漏。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Utils.Lang
 
 **示例：**
 
 ```
-1. import { util } from '@kit.ArkTS';
+// napi_init.cpp C++侧示例代码
+#include "napi/native_api.h"
+#include "uv.h"
 
-3. // 打开多线程检测开关
-4. util.ArkTSVM.setMultithreadingDetectionEnabled(true);
-5. // 关闭多线程检测开关
-6. util.ArkTSVM.setMultithreadingDetectionEnabled(false);
+static napi_value CreateObject(napi_env env, napi_callback_info info)
+{
+    uv_loop_s* loop = nullptr;
+    napi_status status = napi_get_uv_event_loop(env, &loop);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "napi_get_uv_event_loop fail");
+        return nullptr;
+    }
+    uv_work_t* work = new uv_work_t;
+    work->data = env;
+    int ret = uv_queue_work(loop, work,
+        [](uv_work_t* work){},
+        [](uv_work_t* work, int status){
+            napi_env env = static_cast<napi_env>(work->data);
+            for (int i = 0; i < 1000; i++) {
+                napi_value obj = nullptr;
+                // 在libuv提供的异步机制中没有加scope会导致内存泄漏
+                napi_create_object(env, &obj);
+            }
+            delete work;
+        }
+    );
+    if (ret != 0) {
+        delete work;
+    }
+    return nullptr;
+}
 ```
+
+在CMakeLists.txt中添加以下动态链接库：
+
+```txt
+libuv.so
+```
+
+```typescript
+// index.d.ts 接口声明
+export const createObject: () => void;
+```
+
+```typescript
+// Index.ets ArkTS侧示例代码
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import testNapi from 'libentry.so';
+import { util } from '@kit.ArkTS';
+
+try {
+  // 若不开启LocalHandle内存泄漏兜底机制，可能导致内存溢出。启用该机制后，系统将自动回收EventHandler和libuv异步任务中创建的napi_value
+  util.ArkTSVM.enableLocalHandleDetection();
+  testNapi.createObject();
+  hilog.info(0x0000, 'testTag', 'Test Node-API createObject success');
+} catch (error) {
+  hilog.error(0x0000, 'testTag', 'Test Node-API createObject failed error: %{public}s', error.message);
+}
+```
+
+**可能出现的问题：**
+
+如果之前内存泄漏的对象被继续使用，使用enableLocalHandleDetection接口后，系统会回收内存泄漏对象。继续使用该对象会导致内存泄漏问题转变为稳定性问题。
+
+```
+napi_value global_js_object;
+napi_value dangerous_function(napi_env env, napi_callback_info info) {
+    napi_value js_obj;
+    napi_create_object(env, &js_obj);
+    global_js_object = js_obj; // 直接存储到全局变量，开启LocalHandle内存泄漏兜底机制后被释放
+    return nullptr;
+}
+```
+
+### setTrackGlobalRef
+
+static setTrackGlobalRef(enable: boolean): void
+
+开启或关闭napi\_ref与全局对象之间的关联追踪。开启后，堆快照中全局对象节点将包含napi\_ref的地址信息；关闭后（enable为false），将停止追踪，堆快照中不再显示napi\_ref与全局对象之间的关联关系。
+
+开启追踪后，虚拟机会额外记录napi\_ref与全局对象的关联关系，可能带来一定的内存和性能开销。在不需要调试时，建议调用util.ArkTSVM.setTrackGlobalRef(false)关闭追踪。
+
+该接口的开关为进程级别，进程内的所有线程共享同一开关状态。在任意线程调用本接口设置开关后，将对该进程内所有线程生效。
+
+关于napi\_ref的详细说明，请参考[napi\_ref](../harmonyos-guides/use-napi-life-cycle.md#napi_ref)使用指导。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Utils.Lang
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enable | boolean | 是 | 是否开启追踪。true表示开启追踪（可能带来一定的内存和性能开销），false表示关闭追踪。建议在不需要调试时设置为false以避免性能开销。 |
+
+**示例：**
+
+```
+// napi_init.cpp C++侧示例代码
+#include "napi/native_api.h"
+
+static napi_value CreateGlobalRef(napi_env env, napi_callback_info info)
+{
+    napi_value js_obj = nullptr;
+    napi_create_object(env, &js_obj);
+    // 创建napi_ref，与全局handle建立关联
+    napi_ref ref = nullptr;
+    napi_create_reference(env, js_obj, 1, &ref);
+    // 开启setTrackGlobalRef后，堆快照中将包含该ref对应的native引用地址信息
+    return nullptr;
+}
+```
+
+```typescript
+// Index.d.ts 接口声明
+export const createGlobalRef: () => void;
+```
+
+```typescript
+// Index.ets ArkTS侧示例代码
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import testNapi from 'libentry.so';
+import { util } from '@kit.ArkTS';
+
+try {
+  // 开启napi_ref与全局handle的关联追踪，开启后堆快照中将包含native引用地址信息
+  util.ArkTSVM.setTrackGlobalRef(true);
+  testNapi.createGlobalRef();
+  hilog.info(0x0000, 'testTag', 'Test Node-API createGlobalRef success');
+} catch (error) {
+  hilog.error(0x0000, 'testTag', 'Test Node-API createGlobalRef failed error: %{public}s', error.message);
+}
+```
+
+### onVMHeapMemoryPressure24+
+
+static onVMHeapMemoryPressure(callback: Callback<string>, heapMemoryThreshold: HeapMemoryThreshold): boolean
+
+注册一个回调函数，在虚拟机主线程完成垃圾回收后，如果堆内存超过预警阈值则触发回调执行，适用于主动内存管理（在内存压力较大时触发资源清理）、OOM预防等场景。
+
+虚拟机是通过统计存活对象大小来判断是否达到内存预警阈值，由于虚拟机堆存在一定内存碎片以及浮动垃圾，无法保证在OOM前肯定会触发到回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Utils.Lang
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<string> | 是 | 垃圾回收后内存达到预警阈值时触发的回调函数，字符串参数表示内存压力事件的类型。目前事件的类型有三种取值，"LocalHeapMemPressure"，"SharedHeapMemPressure"，"ProcessHeapMemPressure"。 |
+| heapMemoryThreshold | [HeapMemoryThreshold](js-apis-util.md#heapmemorythreshold24) | 是 | 堆内存预警阈值配置，以百分比设置，取值范围为[70, 95]。超出范围时自动限制到有效区间。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 注册成功返回true，当不在主线程调用或回调已注册时返回false。 |
+
+**示例：**
+
+```ts
+import { util } from '@kit.ArkTS';
+
+let callback = (event: string) => {
+  console.info('Memory pressure event: ' + event);
+};
+
+let threshold: util.HeapMemoryThreshold = {
+  localHeapThreshold: 75,
+  sharedHeapThreshold: 80,
+  processHeapThreshold: 85
+};
+
+let result : boolean = util.ArkTSVM.onVMHeapMemoryPressure(callback, threshold);
+console.info('Registration result: ' + result);
+```
+
+### offVMHeapMemoryPressure24+
+
+static offVMHeapMemoryPressure(): void
+
+取消已注册的内存预警回调函数。此接口需要在主线程调用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Utils.Lang
+
+**示例：**
+
+```ts
+import { util } from '@kit.ArkTS';
+
+util.ArkTSVM.offVMHeapMemoryPressure();
+```
+
+## HeapMemoryThreshold24+
+
+堆内存预警阈值配置，用于指定触发回调的堆内存预警阈值。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Utils.Lang
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| localHeapThreshold | number | 否 | 是 | local堆内存预警阈值配置，以百分比设置，取值范围为[70, 95]。超出范围时自动限制到有效区间。若未设置，则不监听local堆。 |
+| sharedHeapThreshold | number | 否 | 是 | shared堆内存预警阈值配置，以百分比设置，取值范围为[70, 95]。超出范围时自动限制到有效区间。若未设置，则不监听shared堆。 |
+| processHeapThreshold | number | 否 | 是 | 进程总虚拟机堆内存预警阈值配置，以百分比设置，取值范围为[70, 95]。超出范围时自动限制到有效区间。若未设置，则不监听进程总虚拟机堆大小。 |
+
+## HeapMemoryInfo24+
+
+描述local堆或shared堆的内存信息，包含线程标识和堆内存大小等详细数据。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Utils.Lang
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| threadId | number | 否 | 是 | 线程ID。如果此内存信息描述的是local堆，该值为表示运行线程ID的整数；如果此内存信息描述的是shared堆，该值为**undefined**。 |
+| threadName | string | 否 | 是 | 线程名称。如果此内存信息描述的是local堆，该值为表示运行线程名称的字符串；如果此内存信息描述的是shared堆，该值为**undefined**。 |
+| heapType | string | 否 | 否 | 堆类型。目前有两种取值，"local"表示堆类型为local堆，"shared"表示堆类型为shared堆。 |
+| heapObjectSize | number | 否 | 否 | 堆对象大小，单位为KB（向上取整的整数）。 |
 
 ## TextDecoderOptions11+
 
-PhonePC/2in1TabletTVWearable
-
 解码相关选项参数，包含两个属性fatal和ignoreBOM。
 
-**元服务API**：从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -638,11 +880,9 @@ PhonePC/2in1TabletTVWearable
 
 ## DecodeToStringOptions12+
 
-PhonePC/2in1TabletTVWearable
-
 用于配置decodeToString方法在解码字节流时的行为参数。
 
-**元服务API**：从API version 12开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -652,11 +892,9 @@ PhonePC/2in1TabletTVWearable
 
 ## DecodeWithStreamOptions11+
 
-PhonePC/2in1TabletTVWearable
-
 解码是否跟随附加数据块相关选项参数。
 
-**元服务API**：从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -666,17 +904,13 @@ PhonePC/2in1TabletTVWearable
 
 ## Aspect11+
 
-PhonePC/2in1TabletTVWearable
-
 Aspect类用于封装提供切面能力（Aspect Oriented Programming，简写AOP）的接口，这些接口可用于对类方法进行前后插桩或替换实现。
 
 ### addBefore11+
 
-PhonePC/2in1TabletTVWearable
-
 static addBefore(targetClass: Object, methodName: string, isStatic: boolean, before: Function): void
 
-在指定的类对象的原方法执行前插入一个函数。执行addBefore接口后，先运行插入的函数逻辑，再执行指定类对象的原方法。
+在指定的类对象的原方法执行前插入一个函数，适用于日志记录、性能监控、权限校验等需要在方法执行前进行拦截处理的场景。执行addBefore接口后，先运行插入的函数逻辑，再执行指定类对象的原方法。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -691,81 +925,71 @@ static addBefore(targetClass: Object, methodName: string, isStatic: boolean, bef
 | isStatic | boolean | 是 | 指定的原方法是否为静态方法。true表示静态方法，false表示实例方法。 |
 | before | Function | 是 | 要插入的函数对象。函数有参数，则第一个参数是this对象（若isStatic为true，则为类对象即targetClass；若isStatic为false，则为调用方法的实例对象），其余参数是原方法的参数。函数也可以无参数，无参时不做处理。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. class MyClass {
-2. msg: string = 'msg000';
-3. foo(arg: string): string {
-4. console.info('foo arg is ' + arg);
-5. return this.msg;
-6. }
+```ts
+class MyClass {
+  msg: string = 'msg000';
+  foo(arg: string): string {
+    console.info('foo arg is ' + arg);
+    return this.msg;
+  }
 
-8. static data: string = 'data000';
-9. static bar(arg: string): string {
-10. console.info('bar arg is ' + arg);
-11. return MyClass.data;
-12. }
-13. }
+  static data: string = 'data000';
+  static bar(arg: string): string {
+    console.info('bar arg is ' + arg);
+    return MyClass.data;
+  }
+}
 
-15. let asp = new MyClass();
-16. let result = asp.foo('123');
-17. // 输出结果：foo arg is 123
-18. console.info('result is ' + result);
-19. // 输出结果：result is msg000
-20. console.info('asp.msg is ' + asp.msg);
-21. // 输出结果：asp.msg is msg000
+let asp = new MyClass();
+let result = asp.foo('123');
+// 输出结果：foo arg is 123
+console.info('result is ' + result);
+// 输出结果：result is msg000
+console.info('asp.msg is ' + asp.msg);
+// 输出结果：asp.msg is msg000
 
-23. util.Aspect.addBefore(MyClass, 'foo', false, (instance: MyClass, arg: string) => {
-24. console.info('arg is ' + arg);
-25. instance.msg = 'msg111';
-26. console.info('msg is changed to ' + instance.msg);
-27. });
+util.Aspect.addBefore(MyClass, 'foo', false, (instance: MyClass, arg: string) => {
+  console.info('arg is ' + arg);
+  instance.msg = 'msg111';
+  console.info('msg is changed to ' + instance.msg);
+});
 
-29. result = asp.foo('123');
-30. // 输出结果：arg is 123
-31. // 输出结果：msg is changed to msg111
-32. // 输出结果：foo arg is 123
-33. console.info('result is ' + result);
-34. // 输出结果：result is msg111
-35. console.info('asp.msg is ' + asp.msg);
-36. // 输出结果：asp.msg is msg111
+result = asp.foo('123');
+// 输出结果：arg is 123
+// 输出结果：msg is changed to msg111
+// 输出结果：foo arg is 123
+console.info('result is ' + result);
+// 输出结果：result is msg111
+console.info('asp.msg is ' + asp.msg);
+// 输出结果：asp.msg is msg111
 
-39. let res = MyClass.bar('456');
-40. // 输出结果：bar arg is 456
-41. console.info('res is ' + res);
-42. // 输出结果：res is data000
-43. console.info('MyClass.data is ' + MyClass.data);
-44. // 输出结果：MyClass.data is data000
+let res = MyClass.bar('456');
+// 输出结果：bar arg is 456
+console.info('res is ' + res);
+// 输出结果：res is data000
+console.info('MyClass.data is ' + MyClass.data);
+// 输出结果：MyClass.data is data000
 
-46. util.Aspect.addBefore(MyClass, 'bar', true, (target: Object, arg: string) => {
-47. console.info('arg is ' + arg);
-48. let newVal = 'data111';
-49. Reflect.set(target, 'data', newVal);
-50. console.info('data is changed to ' + newVal);
-51. });
+util.Aspect.addBefore(MyClass, 'bar', true, (target: Object, arg: string) => {
+  console.info('arg is ' + arg);
+  let newVal = 'data111';
+  Reflect.set(target, 'data', newVal);
+  console.info('data is changed to ' + newVal);
+});
 
-53. res = MyClass.bar('456');
-54. // 输出结果：arg is 456
-55. // 输出结果：data is changed to data111
-56. // 输出结果：bar arg is 456
-57. console.info('res is ' + res);
-58. // 输出结果：res is data111
-59. console.info('MyClass.data is ' + MyClass.data);
-60. // 输出结果：MyClass.data is data111
+res = MyClass.bar('456');
+// 输出结果：arg is 456
+// 输出结果：data is changed to data111
+// 输出结果：bar arg is 456
+console.info('res is ' + res);
+// 输出结果：res is data111
+console.info('MyClass.data is ' + MyClass.data);
+// 输出结果：MyClass.data is data111
 ```
 
 ### addAfter11+
-
-PhonePC/2in1TabletTVWearable
 
 static addAfter(targetClass: Object, methodName: string, isStatic: boolean, after: Function): void
 
@@ -784,77 +1008,67 @@ static addAfter(targetClass: Object, methodName: string, isStatic: boolean, afte
 | isStatic | boolean | 是 | 指定的原方法是否为静态方法。true表示静态方法，false表示实例方法。 |
 | after | Function | 是 | 要插入的函数。函数有参数时，则第一个参数是this对象（若isStatic为true，则为类对象即targetClass；若isStatic为false，则为调用方法的实例对象），第二个参数是原方法的返回值（如果原方法没有返回值，则为undefined），其余参数是原方法的参数。函数也可以无参，无参时不做处理。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. class MyClass {
-2. msg: string = 'msg000';
-3. foo(arg: string): string {
-4. console.info('foo arg is ' + arg);
-5. return this.msg;
-6. }
-7. }
+```ts
+class MyClass {
+  msg: string = 'msg000';
+  foo(arg: string): string {
+    console.info('foo arg is ' + arg);
+    return this.msg;
+  }
+}
 
-9. let asp = new MyClass();
-10. let result = asp.foo('123');
-11. // 输出结果：foo arg is 123
-12. console.info('result is ' + result);
-13. // 输出结果：result is msg000
-14. console.info('asp.msg is ' + asp.msg);
-15. // 输出结果：asp.msg is msg000
+let asp = new MyClass();
+let result = asp.foo('123');
+// 输出结果：foo arg is 123
+console.info('result is ' + result);
+// 输出结果：result is msg000
+console.info('asp.msg is ' + asp.msg);
+// 输出结果：asp.msg is msg000
 
-17. util.Aspect.addAfter(MyClass, 'foo', false, (instance: MyClass, ret: string, arg: string): string => {
-18. console.info('arg is ' + arg);
-19. console.info('ret is ' + ret);
-20. instance.msg = 'msg111';
-21. console.info('msg is changed to ' + instance.msg);
-22. return 'msg222';
-23. });
+util.Aspect.addAfter(MyClass, 'foo', false, (instance: MyClass, ret: string, arg: string): string => {
+  console.info('arg is ' + arg);
+  console.info('ret is ' + ret);
+  instance.msg = 'msg111';
+  console.info('msg is changed to ' + instance.msg);
+  return 'msg222';
+});
 
-25. result = asp.foo('123');
-26. // 输出结果：foo arg is 123
-27. // 输出结果：arg is 123
-28. // 输出结果：ret is msg000
-29. // 输出结果：msg is changed to msg111
-30. console.info('result is ' + result);
-31. // 输出结果：result is msg222
-32. console.info('asp.msg is ' + asp.msg);
-33. // 输出结果：asp.msg is msg111
+result = asp.foo('123');
+// 输出结果：foo arg is 123
+// 输出结果：arg is 123
+// 输出结果：ret is msg000
+// 输出结果：msg is changed to msg111
+console.info('result is ' + result);
+// 输出结果：result is msg222
+console.info('asp.msg is ' + asp.msg);
+// 输出结果：asp.msg is msg111
 
-35. // 前后插桩的例子
-36. class AroundTest {
-37. foo(arg: string) {
-38. console.info('execute foo with arg ' + arg);
-39. }
-40. }
-41. util.Aspect.addBefore(AroundTest, 'foo', false, () => {
-42. console.info('execute before');
-43. });
-44. util.Aspect.addAfter(AroundTest, 'foo', false, () => {
-45. console.info('execute after');
-46. });
+// 分别添加前置和后置插桩的例子
+class AroundTest {
+  foo(arg: string) {
+    console.info('execute foo with arg ' + arg);
+  }
+}
+util.Aspect.addBefore(AroundTest, 'foo', false, () => {
+  console.info('execute before');
+});
+util.Aspect.addAfter(AroundTest, 'foo', false, () => {
+  console.info('execute after');
+});
 
-48. (new AroundTest()).foo('hello');
-49. // 输出结果：execute before
-50. // 输出结果：execute foo with arg hello
-51. // 输出结果：execute after
+(new AroundTest()).foo('hello');
+// 输出结果：execute before
+// 输出结果：execute foo with arg hello
+// 输出结果：execute after
 ```
 
 ### replace11+
 
-PhonePC/2in1TabletTVWearable
-
 static replace(targetClass: Object, methodName: string, isStatic: boolean, instead: Function) : void
 
-将指定类的原方法替换为另一个函数。replace接口执行完成后，调用指定的类方法时，仅执行替换后的逻辑。最终返回替换函数执行完毕的返回值。
+将指定类的原方法替换为另一个函数，适用于行为替换、兼容性适配、条件执行等需要完全改变方法实现逻辑的场景。replace接口执行完成后，调用指定的类方法时，仅执行替换后的逻辑。最终返回替换函数执行完毕的返回值。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -869,60 +1083,48 @@ static replace(targetClass: Object, methodName: string, isStatic: boolean, inste
 | isStatic | boolean | 是 | 指定的原方法是否为静态方法。true表示静态方法，false表示实例方法。 |
 | instead | Function | 是 | 要用来替换原方法的函数。函数有参数时，则第一个参数是this对象（若isStatic为true，则为类对象即targetClass；若isStatic为false，则为调用方法的实例对象），其余参数是原方法的参数。函数也可以无参，无参时不做处理。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. class MyClass {
-2. msg: string = 'msg000';
-3. foo(arg: string): string {
-4. console.info('foo arg is ' + arg);
-5. return this.msg;
-6. }
-7. }
+```ts
+class MyClass {
+  msg: string = 'msg000';
+  foo(arg: string): string {
+    console.info('foo arg is ' + arg);
+    return this.msg;
+  }
+}
 
-9. let asp = new MyClass();
-10. let result = asp.foo('123');
-11. // 输出结果：foo arg is 123
-12. console.info('result is ' + result);
-13. // 输出结果：result is msg000
-14. console.info('asp.msg is ' + asp.msg);
-15. // 输出结果：asp.msg is msg000
+let asp = new MyClass();
+let result = asp.foo('123');
+// 输出结果：foo arg is 123
+console.info('result is ' + result);
+// 输出结果：result is msg000
+console.info('asp.msg is ' + asp.msg);
+// 输出结果：asp.msg is msg000
 
-17. util.Aspect.replace(MyClass, 'foo', false, (instance: MyClass, arg: string): string => {
-18. console.info('execute instead');
-19. console.info('arg is ' + arg);
-20. instance.msg = 'msg111';
-21. console.info('msg is changed to ' + instance.msg);
-22. return 'msg222';
-23. });
+util.Aspect.replace(MyClass, 'foo', false, (instance: MyClass, arg: string): string => {
+  console.info('execute instead');
+  console.info('arg is ' + arg);
+  instance.msg = 'msg111';
+  console.info('msg is changed to ' + instance.msg);
+  return 'msg222';
+});
 
-25. result = asp.foo('123');
-26. // 输出结果：execute instead
-27. // 输出结果：arg is 123
-28. // 输出结果：msg is changed to msg111
-29. console.info('result is ' + result);
-30. // 输出结果：result is msg222
-31. console.info('asp.msg is ' + asp.msg);
-32. // 输出结果：asp.msg is msg111
+result = asp.foo('123');
+// 输出结果：execute instead
+// 输出结果：arg is 123
+// 输出结果：msg is changed to msg111
+console.info('result is ' + result);
+// 输出结果：result is msg222
+console.info('asp.msg is ' + asp.msg);
+// 输出结果：asp.msg is msg111
 ```
 
 ## TextDecoder
 
-PhonePC/2in1TabletTVWearable
-
 TextDecoder用于将字节数组解码为字符串，支持utf-8、utf-16le/be、iso-8859和windows-1251等不同的编码格式。
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -932,15 +1134,13 @@ PhonePC/2in1TabletTVWearable
 | --- | --- | --- | --- | --- |
 | encoding | string | 是 | 否 | 编码格式。  - 支持格式：utf-8、ibm866、iso-8859-2、iso-8859-3、iso-8859-4、iso-8859-5、iso-8859-6、iso-8859-7、iso-8859-8、iso-8859-8-i、iso-8859-10、iso-8859-13、iso-8859-14、iso-8859-15、koi8-r、koi8-u、macintosh、windows-874、windows-1250、windows-1251、windows-1252、windows-1253、windows-1254、windows-1255、windows-1256、windows-1257、windows-1258、x-mac-cyrillic、gbk、gb18030、big5、euc-jp、iso-2022-jp、shift\_jis、euc-kr、utf-16be、utf-16le、gb2312、iso-8859-1。 |
 | fatal | boolean | 是 | 否 | 是否显示致命错误，true表示显示，false表示不显示。 |
-| ignoreBOM | boolean | 是 | 否 | 是否忽略BOM（byte order marker）标记，默认值为false，表示解码结果包含BOM标记。 |
+| ignoreBOM | boolean | 是 | 否 | 是否忽略BOM（byte order marker）标记，true表示忽略BOM标记，false表示解码结果包含BOM标记，默认值为false。 |
 
 ### constructor9+
 
-PhonePC/2in1TabletTVWearable
-
 constructor()
 
-TextDecoder的构造函数。
+TextDecoder的构造函数，创建一个默认编码格式为'utf-8'的TextDecoder实例，fatal默认为false，ignoreBOM默认为false。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -948,22 +1148,20 @@ TextDecoder的构造函数。
 
 **示例：**
 
-```
-1. let textDecoder = new util.TextDecoder();
-2. let retStr = textDecoder.encoding;
-3. console.info('retStr = ' + retStr);
-4. // 输出结果：retStr = utf-8
+```ts
+let textDecoder = new util.TextDecoder();
+let retStr = textDecoder.encoding;
+console.info('retStr = ' + retStr);
+// 输出结果：retStr = utf-8
 ```
 
 ### create9+
-
-PhonePC/2in1TabletTVWearable
 
 static create(encoding?: string, options?: TextDecoderOptions): TextDecoder
 
 替代有参构造函数的功能。
 
-**元服务API**：从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -971,49 +1169,39 @@ static create(encoding?: string, options?: TextDecoderOptions): TextDecoder
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| encoding | string | 否 | 编码格式，默认值是'utf-8'。 |
+| encoding | string | 否 | 编码格式，支持格式参见[encoding属性](js-apis-util.md#属性)，默认值是'utf-8'。 |
 | options | [TextDecoderOptions](js-apis-util.md#textdecoderoptions11) | 否 | 解码相关选项参数，存在两个属性fatal和ignoreBOM。此参数不填时，对应各属性取其默认值。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [TextDecoder](js-apis-util.md#textdecoder) | 返回一个TextDecoder对象。 |
-
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. |
+| [TextDecoder](js-apis-util.md#textdecoder) | 返回一个用于将字节数组按指定编码格式解码为字符串的TextDecoder对象。 |
 
 **示例：**
 
-```
-1. let textDecoderOptions: util.TextDecoderOptions = {
-2. fatal: false,
-3. ignoreBOM : true
-4. }
-5. let textDecoder = util.TextDecoder.create('utf-8', textDecoderOptions);
-6. let retStr = textDecoder.encoding;
-7. console.info('retStr = ' + retStr);
-8. // 输出结果：retStr = utf-8
+```ts
+let textDecoderOptions: util.TextDecoderOptions = {
+  fatal: false,
+  ignoreBOM : true
+}
+let textDecoder = util.TextDecoder.create('utf-8', textDecoderOptions);
+let retStr = textDecoder.encoding;
+console.info('retStr = ' + retStr);
+// 输出结果：retStr = utf-8
 ```
 
 ### decodeToString12+
-
-PhonePC/2in1TabletTVWearable
 
 decodeToString(input: Uint8Array, options?: DecodeToStringOptions): string
 
 将输入参数解码后输出对应文本。
 
-说明
+**说明** 
 
 该接口会正常解析值为\0的字节，将其转换为Unicode字符\u0000（空字符），不会导致解码中断或错误。
 
-**元服务API**：从API version 12开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -1022,7 +1210,7 @@ decodeToString(input: Uint8Array, options?: DecodeToStringOptions): string
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | input | Uint8Array | 是 | 需要解码的数组。 |
-| options | [DecodeToStringOptions](js-apis-util.md#decodetostringoptions12) | 否 | 解码相关选项参数。默认undefined。 |
+| options | [DecodeToStringOptions](js-apis-util.md#decodetostringoptions12) | 否 | 解码相关选项参数，用于控制解码行为。当需要以流式方式分块处理数据且保留不完整字节序列时传入此参数并设置stream为true；不传入时默认为undefined，即不保留不完整字节序列，直接在当前调用中解码。 |
 
 **返回值：**
 
@@ -1030,64 +1218,54 @@ decodeToString(input: Uint8Array, options?: DecodeToStringOptions): string
 | --- | --- |
 | string | 解码后的数据。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. // 当解析不含有\0的字节的示例代码
-2. let textDecoderOptions: util.TextDecoderOptions = {
-3. fatal: false,
-4. ignoreBOM : true
-5. }
-6. let decodeToStringOptions: util.DecodeToStringOptions = {
-7. stream: false
-8. }
-9. let textDecoder = util.TextDecoder.create('utf-8', textDecoderOptions);
-10. let uint8 = new Uint8Array([0xEF, 0xBB, 0xBF, 0x61, 0x62, 0x63]);
-11. let retStr = textDecoder.decodeToString(uint8, decodeToStringOptions);
-12. console.info("retStr = " + retStr);
-13. // 输出结果：retStr = abc
+```ts
+// 当解析不含有\0的字节的示例代码
+let textDecoderOptions: util.TextDecoderOptions = {
+  fatal: false,
+  ignoreBOM : true
+}
+let decodeToStringOptions: util.DecodeToStringOptions = {
+  stream: false
+}
+let textDecoder = util.TextDecoder.create('utf-8', textDecoderOptions);
+let uint8 = new Uint8Array([0xEF, 0xBB, 0xBF, 0x61, 0x62, 0x63]);
+let retStr = textDecoder.decodeToString(uint8, decodeToStringOptions);
+console.info("retStr = " + retStr);
+// 输出结果：retStr = abc
 ```
 
-```
-1. // 当解析含有\0的字节的示例代码
-2. let textDecoderOptions: util.TextDecoderOptions = {
-3. fatal: false,
-4. ignoreBOM : true
-5. }
-6. let decodeToStringOptions: util.DecodeToStringOptions = {
-7. stream: false
-8. }
-9. let textDecoder = util.TextDecoder.create('utf-8', textDecoderOptions);
-10. let uint8 = new Uint8Array([97, 98, 0, 99]);
-11. let retStr = textDecoder.decodeToString(uint8, decodeToStringOptions);
-12. console.info("retStr = " + retStr);
-13. // 输出结果：retStr = abc
-14. let retJson = JSON.stringify(retStr)
-15. console.info("retJson = " + retJson);
-16. // 输出结果：retJson = ab/u0000c
+```ts
+// 当解析含有\0的字节的示例代码
+let textDecoderOptions: util.TextDecoderOptions = {
+  fatal: false,
+  ignoreBOM : true
+}
+let decodeToStringOptions: util.DecodeToStringOptions = {
+  stream: false
+}
+let textDecoder = util.TextDecoder.create('utf-8', textDecoderOptions);
+let uint8 = new Uint8Array([97, 98, 0, 99]);
+let retStr = textDecoder.decodeToString(uint8, decodeToStringOptions);
+console.info("retStr = " + retStr);
+// 输出结果：retStr = abc
+let retJson = JSON.stringify(retStr)
+console.info("retJson = " + retJson);
+// 输出结果：retJson = ab/u0000c
 ```
 
 ### decodeWithStream(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 decodeWithStream(input: Uint8Array, options?: DecodeWithStreamOptions): string
 
 将输入参数解码后输出对应文本。当input是一个空数组时，返回undefined。
 
-说明
+**说明** 
 
 从API version 9开始支持，从API version 12开始废弃，建议使用[decodeToString12+](js-apis-util.md#decodetostring12)替代。
 
-**元服务API**：从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -1096,7 +1274,7 @@ decodeWithStream(input: Uint8Array, options?: DecodeWithStreamOptions): string
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | input | Uint8Array | 是 | 符合格式需要解码的数组。 |
-| options | [DecodeWithStreamOptions](js-apis-util.md#decodewithstreamoptions11) | 否 | 解码相关选项参数。 |
+| options | [DecodeWithStreamOptions](js-apis-util.md#decodewithstreamoptions11) | 否 | 解码相关选项参数。此参数不填时，对应各属性取其默认值。 |
 
 **返回值：**
 
@@ -1104,47 +1282,37 @@ decodeWithStream(input: Uint8Array, options?: DecodeWithStreamOptions): string
 | --- | --- |
 | string | 解码后的数据。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. let textDecoderOptions: util.TextDecoderOptions = {
-2. fatal: false,
-3. ignoreBOM : true
-4. }
-5. let decodeWithStreamOptions: util.DecodeWithStreamOptions = {
-6. stream: false
-7. }
-8. let textDecoder = util.TextDecoder.create('utf-8', textDecoderOptions);
-9. let uint8 = new Uint8Array(6);
-10. uint8[0] = 0xEF;
-11. uint8[1] = 0xBB;
-12. uint8[2] = 0xBF;
-13. uint8[3] = 0x61;
-14. uint8[4] = 0x62;
-15. uint8[5] = 0x63;
-16. console.info("input num:");
-17. let retStr = textDecoder.decodeWithStream(uint8, decodeWithStreamOptions);
-18. console.info("retStr = " + retStr);
-19. // 输出结果：retStr = abc
+```ts
+let textDecoderOptions: util.TextDecoderOptions = {
+  fatal: false,
+  ignoreBOM : true
+}
+let decodeWithStreamOptions: util.DecodeWithStreamOptions = {
+  stream: false
+}
+let textDecoder = util.TextDecoder.create('utf-8', textDecoderOptions);
+let uint8 = new Uint8Array(6);
+uint8[0] = 0xEF;
+uint8[1] = 0xBB;
+uint8[2] = 0xBF;
+uint8[3] = 0x61;
+uint8[4] = 0x62;
+uint8[5] = 0x63;
+console.info("input num:");
+let retStr = textDecoder.decodeWithStream(uint8, decodeWithStreamOptions);
+console.info("retStr = " + retStr);
+// 输出结果：retStr = abc
 ```
 
 ### constructor(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 constructor(encoding?: string, options?: { fatal?: boolean; ignoreBOM?: boolean })
 
 TextDecoder的构造函数。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[create9+](js-apis-util.md#create9)替代。
 
@@ -1155,7 +1323,7 @@ TextDecoder的构造函数。
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | encoding | string | 否 | 编码格式，默认值是'utf-8'。 |
-| options | { fatal?: boolean; ignoreBOM?: boolean } | 否 | 解码相关选项参数，存在两个属性fatal和ignoreBOM。 |
+| options | { fatal?: boolean; ignoreBOM?: boolean } | 否 | 解码相关选项参数，存在两个属性fatal和ignoreBOM。此参数不填时，对应各属性取其默认值false。 |
 
 **表1** options
 
@@ -1166,19 +1334,17 @@ TextDecoder的构造函数。
 
 **示例：**
 
-```
-1. let textDecoder = new util.TextDecoder("utf-8",{ignoreBOM: true});
+```ts
+let textDecoder = new util.TextDecoder("utf-8",{ignoreBOM: true});
 ```
 
 ### decode(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 decode(input: Uint8Array, options?: { stream?: false }): string
 
 通过输入参数解码后输出对应文本。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[decodeToString12+](js-apis-util.md#decodetostring12)替代。
 
@@ -1189,7 +1355,7 @@ decode(input: Uint8Array, options?: { stream?: false }): string
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | input | Uint8Array | 是 | 符合格式需要解码的数组。 |
-| options | { stream?: false } | 否 | 解码相关选项参数。 |
+| options | { stream?: false } | 否 | 解码相关选项参数。不传此参数时，stream默认为false，即不跟随附加数据块。 |
 
 **表2** options
 
@@ -1205,32 +1371,28 @@ decode(input: Uint8Array, options?: { stream?: false }): string
 
 **示例：**
 
-```
-1. let textDecoder = new util.TextDecoder("utf-8",{ignoreBOM: true});
-2. let uint8 = new Uint8Array(6);
-3. uint8[0] = 0xEF;
-4. uint8[1] = 0xBB;
-5. uint8[2] = 0xBF;
-6. uint8[3] = 0x61;
-7. uint8[4] = 0x62;
-8. uint8[5] = 0x63;
-9. console.info("input num:");
-10. let retStr = textDecoder.decode(uint8, {stream: false});
-11. console.info("retStr = " + retStr);
-12. // 输出结果：retStr = abc
+```ts
+let textDecoder = new util.TextDecoder("utf-8",{ignoreBOM: true});
+let uint8 = new Uint8Array(6);
+uint8[0] = 0xEF;
+uint8[1] = 0xBB;
+uint8[2] = 0xBF;
+uint8[3] = 0x61;
+uint8[4] = 0x62;
+uint8[5] = 0x63;
+console.info("input num:");
+let retStr = textDecoder.decode(uint8, {stream: false});
+console.info("retStr = " + retStr);
+// 输出结果：retStr = abc
 ```
 
 ## EncodeIntoUint8ArrayInfo11+
-
-PhonePC/2in1TabletTVWearable
 
 编码后的信息，包含读取的字符数和写入的字节数。
 
 ### 属性
 
-PhonePC/2in1TabletTVWearable
-
-**元服务API**：从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -1241,15 +1403,11 @@ PhonePC/2in1TabletTVWearable
 
 ## TextEncoder
 
-PhonePC/2in1TabletTVWearable
-
 TextEncoder将字符串编码为字节数组，支持多种编码格式。
 
 在使用TextEncoder进行编码时，需要注意不同编码格式下字符所占的字节数不同。务必明确指定编码格式，以确保编码结果正确。
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1261,31 +1419,27 @@ PhonePC/2in1TabletTVWearable
 
 ### constructor
 
-PhonePC/2in1TabletTVWearable
-
 constructor()
 
-TextEncoder的构造函数。
+TextEncoder的构造函数，创建一个默认编码格式为'utf-8'的TextEncoder实例。
 
-**元服务API**：从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
 **示例：**
 
-```
-1. let textEncoder = new util.TextEncoder();
+```ts
+let textEncoder = new util.TextEncoder();
 ```
 
 ### constructor9+
-
-PhonePC/2in1TabletTVWearable
 
 constructor(encoding?: string)
 
 TextEncoder的构造函数。
 
-**元服务API**：从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -1293,31 +1447,21 @@ TextEncoder的构造函数。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| encoding | string | 否 | 编码格式，默认值为'utf-8'。 |
-
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. |
+| encoding | string | 否 | 编码格式，支持格式参见[encoding属性](js-apis-util.md#属性-2)，默认值为'utf-8'。 |
 
 **示例：**
 
-```
-1. let textEncoder = new util.TextEncoder("utf-8");
+```ts
+let textEncoder = new util.TextEncoder("utf-8");
 ```
 
 ### create12+
-
-PhonePC/2in1TabletTVWearable
 
 static create(encoding?: string): TextEncoder
 
 创建TextEncoder对象的方法。
 
-**元服务API**：从API version 12开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -1331,31 +1475,21 @@ static create(encoding?: string): TextEncoder
 
 | 类型 | 说明 |
 | --- | --- |
-| [TextEncoder](js-apis-util.md#textencoder) | 返回一个TextEncoder对象。 |
-
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. |
+| [TextEncoder](js-apis-util.md#textencoder) | 返回一个用于将字符串按指定编码格式编码为字节数组的TextEncoder对象。 |
 
 **示例：**
 
-```
-1. let textEncoder = util.TextEncoder.create("utf-8");
+```ts
+let textEncoder = util.TextEncoder.create("utf-8");
 ```
 
 ### encodeInto9+
-
-PhonePC/2in1TabletTVWearable
 
 encodeInto(input?: string): Uint8Array
 
 将输入参数编码后输出Uint8Array对象。
 
-**元服务API**：从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -1369,34 +1503,24 @@ encodeInto(input?: string): Uint8Array
 
 | 类型 | 说明 |
 | --- | --- |
-| Uint8Array | 返回编码后的Uint8Array对象。 |
-
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Incorrect parameter types. |
+| Uint8Array | 返回编码后的Uint8Array对象。当入参为空字符串时，返回undefined。 |
 
 **示例：**
 
-```
-1. let textEncoder = new util.TextEncoder();
-2. let result = textEncoder.encodeInto("\uD800¥¥");
-3. console.info("result = " + result);
-4. // 输出结果: result = 237,160,128,194,165,194,165
+```ts
+let textEncoder = new util.TextEncoder();
+let result = textEncoder.encodeInto("\uD800¥¥");
+console.info("result = " + result);
+// 输出结果: result = 237,160,128,194,165,194,165
 ```
 
 ### encodeIntoUint8Array9+
-
-PhonePC/2in1TabletTVWearable
 
 encodeIntoUint8Array(input: string, dest: Uint8Array): EncodeIntoUint8ArrayInfo
 
 对字符串进行编码，将结果存储到dest数组。
 
-**元服务API**：从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -1413,38 +1537,28 @@ encodeIntoUint8Array(input: string, dest: Uint8Array): EncodeIntoUint8ArrayInfo
 | --- | --- |
 | [EncodeIntoUint8ArrayInfo](js-apis-util.md#encodeintouint8arrayinfo11) | 返回一个对象，read表示已编码的字符数，written表示编码字符所占用的字节数。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. let textEncoder = new util.TextEncoder();
-2. let buffer = new ArrayBuffer(4);
-3. let uint8 = new Uint8Array(buffer);
-4. let result = textEncoder.encodeIntoUint8Array('abcd', uint8);
-5. console.info("uint8 = " + uint8);
-6. // 输出结果: uint8 = 97,98,99,100
-7. console.info("result.read = " + result.read);
-8. // 输出结果: result.read = 4
-9. console.info("result.written = " + result.written);
-10. // 输出结果: result.written = 4
+```ts
+let textEncoder = new util.TextEncoder();
+let buffer = new ArrayBuffer(4);
+let uint8 = new Uint8Array(buffer);
+let result = textEncoder.encodeIntoUint8Array('abcd', uint8);
+console.info("uint8 = " + uint8);
+// 输出结果: uint8 = 97,98,99,100
+console.info("result.read = " + result.read);
+// 输出结果: result.read = 4
+console.info("result.written = " + result.written);
+// 输出结果: result.written = 4
 ```
 
 ### encodeInto(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 encodeInto(input: string, dest: Uint8Array): { read: number; written: number }
 
 将生成的utf-8编码文本写入dest数组。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[encodeIntoUint8Array9+](js-apis-util.md#encodeintouint8array9)替代。
 
@@ -1465,24 +1579,22 @@ encodeInto(input: string, dest: Uint8Array): { read: number; written: number }
 
 **示例：**
 
-```
-1. let textEncoder = new util.TextEncoder();
-2. let buffer = new ArrayBuffer(4);
-3. let uint8 = new Uint8Array(buffer);
-4. let result = textEncoder.encodeInto('abcd', uint8);
-5. console.info("uint8 = " + uint8);
-6. // 输出结果: uint8 = 97,98,99,100
+```ts
+let textEncoder = new util.TextEncoder();
+let buffer = new ArrayBuffer(4);
+let uint8 = new Uint8Array(buffer);
+let result = textEncoder.encodeInto('abcd', uint8);
+console.info("uint8 = " + uint8);
+// 输出结果: uint8 = 97,98,99,100
 ```
 
 ### encode(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 encode(input?: string): Uint8Array
 
-将输入参数编码后输出对应文本。
+将输入字符串编码后输出对应的Uint8Array字节数组。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[encodeInto9+](js-apis-util.md#encodeinto9)替代。
 
@@ -1502,26 +1614,22 @@ encode(input?: string): Uint8Array
 
 **示例：**
 
-```
-1. let textEncoder = new util.TextEncoder();
-2. let result = textEncoder.encode("\uD800¥¥");
-3. console.info("result = " + result);
-4. // 输出结果: result = 237,160,128,194,165,194,165
+```ts
+let textEncoder = new util.TextEncoder();
+let result = textEncoder.encode("\uD800¥¥");
+console.info("result = " + result);
+// 输出结果: result = 237,160,128,194,165,194,165
 ```
 
 ## RationalNumber8+
 
-PhonePC/2in1TabletTVWearable
-
-RationalNumber主要用于有理数的比较，并提供获取分子和分母的方法。使用toString()方法可以将有理数转换为字符串形式，使用该类可以方便地进行有理数的各种操作。
+RationalNumber主要用于有理数的比较，并提供获取分子和分母的方法。RationalNumber内部以分子和分母存储有理数，创建时会自动对分数进行简化。需要注意的是：当分母为0时，有理数表示为Infinity；当分子和分母均为0时，有理数表示为NaN（非数字）。使用[toString()](js-apis-util.md#tostring8)方法可以将有理数转换为字符串形式，使用该类可以方便地进行有理数的各种操作。
 
 ### constructor9+
 
-PhonePC/2in1TabletTVWearable
-
 constructor()
 
-RationalNumber的构造函数。
+RationalNumber的构造函数，创建一个默认分子为0、分母为1的RationalNumber实例。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1529,19 +1637,17 @@ RationalNumber的构造函数。
 
 **示例：**
 
-```
-1. let rationalNumber = new util.RationalNumber();
+```ts
+let rationalNumber = new util.RationalNumber();
 ```
 
 ### parseRationalNumber9+
-
-PhonePC/2in1TabletTVWearable
 
 static parseRationalNumber(numerator: number,denominator: number): RationalNumber
 
 创建具有给定分子和分母的RationalNumber实例。
 
-说明
+**说明** 
 
 该接口要求参数numerator和denominator必须是整数类型。如果传入的参数是小数类型，不会进行拦截，但是会输出错误信息："parseRationalNumber: The type of Parameter must be integer"。
 
@@ -1560,31 +1666,21 @@ static parseRationalNumber(numerator: number,denominator: number): RationalNumbe
 
 | 类型 | 说明 |
 | --- | --- |
-| [RationalNumber](js-apis-util.md#rationalnumber8) | RationalNumber对象。 |
-
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| [RationalNumber](js-apis-util.md#rationalnumber8) | 具有给定分子和分母的RationalNumber有理数对象。 |
 
 **示例：**
 
-```
-1. let rationalNumber = util.RationalNumber.parseRationalNumber(1,2);
+```ts
+let rationalNumber = util.RationalNumber.parseRationalNumber(1,2);
 ```
 
 ### createRationalFromString8+
-
-PhonePC/2in1TabletTVWearable
 
 static createRationalFromString(rationalString: string): RationalNumber
 
 使用给定的字符串创建RationalNumber对象。
 
-说明
+**说明** 
 
 该接口要求参数rationalString是字符串格式。如果传入的参数是小数类型字符串格式，不会进行拦截，但是会输出错误信息："createRationalFromString: The type of Parameter must be integer string"。
 
@@ -1596,31 +1692,21 @@ static createRationalFromString(rationalString: string): RationalNumber
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| rationalString | string | 是 | 字符串格式。 |
+| rationalString | string | 是 | 有理数字符串格式，如"3/4"。若传入小数类型字符串格式，不会拦截但会输出错误信息。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [RationalNumber](js-apis-util.md#rationalnumber8)​ | RationalNumber对象。 |
-
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | The type of rationalString must be string. |
+| [RationalNumber](js-apis-util.md#rationalnumber8)​ | 由给定字符串创建的RationalNumber有理数对象。 |
 
 **示例：**
 
-```
-1. let rational = util.RationalNumber.createRationalFromString("3/4");
+```ts
+let rational = util.RationalNumber.createRationalFromString("3/4");
 ```
 
 ### compare9+
-
-PhonePC/2in1TabletTVWearable
 
 compare(another: RationalNumber): number​
 
@@ -1642,27 +1728,17 @@ compare(another: RationalNumber): number​
 | --- | --- |
 | number | 两个对象相等时返回0；给定对象小于当前对象时返回1；给定对象大于当前对象时返回-1。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. let rationalNumber = util.RationalNumber.parseRationalNumber(1,2);
-2. let rational = util.RationalNumber.createRationalFromString("3/4");
-3. let result = rationalNumber.compare(rational);
-4. console.info("result = " + result);
-5. // 输出结果：result = -1
+```ts
+let rationalNumber = util.RationalNumber.parseRationalNumber(1,2);
+let rational = util.RationalNumber.createRationalFromString("3/4");
+let result = rationalNumber.compare(rational);
+console.info("result = " + result);
+// 输出结果：result = -1
 ```
 
 ### valueOf8+
-
-PhonePC/2in1TabletTVWearable
 
 valueOf(): number
 
@@ -1680,25 +1756,23 @@ valueOf(): number
 
 **示例：**
 
-```
-1. let rationalNumber = new util.RationalNumber(1,2);
-2. let result = rationalNumber.valueOf();
-3. console.info("result = " + result);
-4. // 输出结果：result = 0.5
+```ts
+let rationalNumber = new util.RationalNumber(1,2);
+let result = rationalNumber.valueOf();
+console.info("result = " + result);
+// 输出结果：result = 0.5
 ```
 
 API 9及以上建议使用以下写法：
 
-```
-1. let rationalNumber = util.RationalNumber.parseRationalNumber(1,2);
-2. let result = rationalNumber.valueOf();
-3. console.info("result = " + result);
-4. // 输出结果：result = 0.5
+```ts
+let rationalNumber = util.RationalNumber.parseRationalNumber(1,2);
+let result = rationalNumber.valueOf();
+console.info("result = " + result);
+// 输出结果：result = 0.5
 ```
 
 ### equals8+
-
-PhonePC/2in1TabletTVWearable
 
 equals(obj: Object): boolean
 
@@ -1712,7 +1786,7 @@ equals(obj: Object): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| obj | Object | 是 | 其他类型对象。 |
+| obj | Object | 是 | 用于与当前RationalNumber对象比较的对象，传入非RationalNumber类型时返回false。 |
 
 **返回值：**
 
@@ -1722,33 +1796,31 @@ equals(obj: Object): boolean
 
 **示例：**
 
-```
-1. let rationalNumber = new util.RationalNumber(1,2);
-2. let rational = util.RationalNumber.createRationalFromString("3/4");
-3. let result = rationalNumber.equals(rational);
-4. console.info("result = " + result);
-5. // 输出结果：result = false
+```ts
+let rationalNumber = new util.RationalNumber(1,2);
+let rational = util.RationalNumber.createRationalFromString("3/4");
+let result = rationalNumber.equals(rational);
+console.info("result = " + result);
+// 输出结果：result = false
 ```
 
 API 9及以上建议使用以下写法：
 
-```
-1. let rationalNumber = util.RationalNumber.parseRationalNumber(1,2);
-2. let rational = util.RationalNumber.createRationalFromString("3/4");
-3. let result = rationalNumber.equals(rational);
-4. console.info("result = " + result);
-5. // 输出结果：result = false
+```ts
+let rationalNumber = util.RationalNumber.parseRationalNumber(1,2);
+let rational = util.RationalNumber.createRationalFromString("3/4");
+let result = rationalNumber.equals(rational);
+console.info("result = " + result);
+// 输出结果：result = false
 ```
 
 ### getCommonFactor9+
-
-PhonePC/2in1TabletTVWearable
 
 static getCommonFactor(number1: number, number2: number): number
 
 获取两个整数的最大公约数。
 
-说明
+**说明** 
 
 该接口要求参数number1和number2必须是整数类型。如果传入的参数是小数类型，不会进行拦截，但是会输出错误信息："getCommonFactor: The type of Parameter must be integer"。
 
@@ -1769,25 +1841,15 @@ static getCommonFactor(number1: number, number2: number): number
 | --- | --- |
 | number | 返回两个给定数字的最大公约数。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. let result = util.RationalNumber.getCommonFactor(4,6);
-2. console.info("result = " + result);
-3. // 输出结果：result = 2
+```ts
+let result = util.RationalNumber.getCommonFactor(4,6);
+console.info("result = " + result);
+// 输出结果：result = 2
 ```
 
 ### getNumerator8+
-
-PhonePC/2in1TabletTVWearable
 
 getNumerator(): number
 
@@ -1805,25 +1867,23 @@ getNumerator(): number
 
 **示例：**
 
-```
-1. let rationalNumber = new util.RationalNumber(1,2);
-2. let result = rationalNumber.getNumerator();
-3. console.info("result = " + result);
-4. // 输出结果：result = 1
+```ts
+let rationalNumber = new util.RationalNumber(1,2);
+let result = rationalNumber.getNumerator();
+console.info("result = " + result);
+// 输出结果：result = 1
 ```
 
 API 9及以上建议使用以下写法：
 
-```
-1. let rationalNumber = util.RationalNumber.parseRationalNumber(1,2);
-2. let result = rationalNumber.getNumerator();
-3. console.info("result = " + result);
-4. // 输出结果：result = 1
+```ts
+let rationalNumber = util.RationalNumber.parseRationalNumber(1,2);
+let result = rationalNumber.getNumerator();
+console.info("result = " + result);
+// 输出结果：result = 1
 ```
 
 ### getDenominator8+
-
-PhonePC/2in1TabletTVWearable
 
 getDenominator(): number
 
@@ -1841,27 +1901,25 @@ getDenominator(): number
 
 **示例：**
 
-```
-1. let rationalNumber = new util.RationalNumber(1,2);
-2. let result = rationalNumber.getDenominator();
-3. console.info("result = " + result);
-4. // 输出结果：result = 2
+```ts
+let rationalNumber = new util.RationalNumber(1,2);
+let result = rationalNumber.getDenominator();
+console.info("result = " + result);
+// 输出结果：result = 2
 ```
 
 API 9及以上建议使用以下写法：
 
-```
-1. let rationalNumber = util.RationalNumber.parseRationalNumber(1,2)
-2. let result = rationalNumber.getDenominator();
-3. console.info("result = " + result);
-4. // 输出结果：result = 2
+```ts
+let rationalNumber = util.RationalNumber.parseRationalNumber(1,2)
+let result = rationalNumber.getDenominator();
+console.info("result = " + result);
+// 输出结果：result = 2
 ```
 
 ### isZero8+
 
-PhonePC/2in1TabletTVWearable
-
-isZero():boolean
+isZero(): boolean
 
 检查当前RationalNumber对象是否为0。
 
@@ -1877,25 +1935,23 @@ isZero():boolean
 
 **示例：**
 
-```
-1. let rationalNumber = new util.RationalNumber(1,2);
-2. let result = rationalNumber.isZero();
-3. console.info("result = " + result);
-4. // 输出结果：result = false
+```ts
+let rationalNumber = new util.RationalNumber(1,2);
+let result = rationalNumber.isZero();
+console.info("result = " + result);
+// 输出结果：result = false
 ```
 
 API 9及以上建议使用以下写法：
 
-```
-1. let rationalNumber = util.RationalNumber.parseRationalNumber(1,2);
-2. let result = rationalNumber.isZero();
-3. console.info("result = " + result);
-4. // 输出结果：result = false
+```ts
+let rationalNumber = util.RationalNumber.parseRationalNumber(1,2);
+let result = rationalNumber.isZero();
+console.info("result = " + result);
+// 输出结果：result = false
 ```
 
 ### isNaN8+
-
-PhonePC/2in1TabletTVWearable
 
 isNaN(): boolean
 
@@ -1913,27 +1969,25 @@ isNaN(): boolean
 
 **示例：**
 
-```
-1. let rationalNumber = new util.RationalNumber(1,2);
-2. let result = rationalNumber.isNaN();
-3. console.info("result = " + result);
-4. // 输出结果：result = false
+```ts
+let rationalNumber = new util.RationalNumber(1,2);
+let result = rationalNumber.isNaN();
+console.info("result = " + result);
+// 输出结果：result = false
 ```
 
 API 9及以上建议使用以下写法：
 
-```
-1. let rationalNumber = util.RationalNumber.parseRationalNumber(1,2);
-2. let result = rationalNumber.isNaN();
-3. console.info("result = " + result);
-4. // 输出结果：result = false
+```ts
+let rationalNumber = util.RationalNumber.parseRationalNumber(1,2);
+let result = rationalNumber.isNaN();
+console.info("result = " + result);
+// 输出结果：result = false
 ```
 
 ### isFinite8+
 
-PhonePC/2in1TabletTVWearable
-
-isFinite():boolean
+isFinite(): boolean
 
 检查RationalNumber对象是否表示一个有限值。
 
@@ -1949,25 +2003,23 @@ isFinite():boolean
 
 **示例：**
 
-```
-1. let rationalNumber = new util.RationalNumber(1,2);
-2. let result = rationalNumber.isFinite();
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let rationalNumber = new util.RationalNumber(1,2);
+let result = rationalNumber.isFinite();
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 API 9及以上建议使用以下写法：
 
-```
-1. let rationalNumber = util.RationalNumber.parseRationalNumber(1,2);
-2. let result = rationalNumber.isFinite();
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let rationalNumber = util.RationalNumber.parseRationalNumber(1,2);
+let result = rationalNumber.isFinite();
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### toString8+
-
-PhonePC/2in1TabletTVWearable
 
 toString(): string
 
@@ -1985,31 +2037,29 @@ toString(): string
 
 **示例：**
 
-```
-1. let rationalNumber = new util.RationalNumber(1,2);
-2. let result = rationalNumber.toString();
-3. console.info("result = " + result);
-4. // 输出结果：result = 1/2
+```ts
+let rationalNumber = new util.RationalNumber(1,2);
+let result = rationalNumber.toString();
+console.info("result = " + result);
+// 输出结果：result = 1/2
 ```
 
 API 9及以上建议使用以下写法：
 
-```
-1. let rationalNumber = util.RationalNumber.parseRationalNumber(1,2);
-2. let result = rationalNumber.toString();
-3. console.info("result = " + result);
-4. // 输出结果：result = 1/2
+```ts
+let rationalNumber = util.RationalNumber.parseRationalNumber(1,2);
+let result = rationalNumber.toString();
+console.info("result = " + result);
+// 输出结果：result = 1/2
 ```
 
 ### constructor(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 constructor(numerator: number,denominator: number)
 
 RationalNumber的构造函数。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[parseRationalNumber9+](js-apis-util.md#parserationalnumber9)替代。
 
@@ -2019,24 +2069,22 @@ RationalNumber的构造函数。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| numerator | number | 是 | 分子，整数类型。 |
-| denominator | number | 是 | 分母，整数类型。 |
+| numerator | number | 是 | 分子，整数类型。取值范围：-Number.MAX\_VALUE <= numerator <= Number.MAX\_VALUE。 |
+| denominator | number | 是 | 分母，整数类型。取值范围：-Number.MAX\_VALUE <= denominator <= Number.MAX\_VALUE。 |
 
 **示例：**
 
-```
-1. let rationalNumber = new util.RationalNumber(1,2);
+```ts
+let rationalNumber = new util.RationalNumber(1,2);
 ```
 
 ### compareTo(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 compareTo(another: RationalNumber): number​
 
 比较当前的RationalNumber对象与给定的对象。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[compare9+](js-apis-util.md#compare9)替代。
 
@@ -2056,23 +2104,21 @@ compareTo(another: RationalNumber): number​
 
 **示例：**
 
-```
-1. let rationalNumber = new util.RationalNumber(1,2);
-2. let rational = util.RationalNumber.createRationalFromString("3/4");
-3. let result = rationalNumber.compareTo(rational);
-4. console.info("result = " + result);
-5. // 输出结果：result = -1
+```ts
+let rationalNumber = new util.RationalNumber(1,2);
+let rational = util.RationalNumber.createRationalFromString("3/4");
+let result = rationalNumber.compareTo(rational);
+console.info("result = " + result);
+// 输出结果：result = -1
 ```
 
 ### getCommonDivisor(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 static getCommonDivisor(number1: number,number2: number): number
 
 获取两个指定整数的最大公约数。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[getCommonFactor9+](js-apis-util.md#getcommonfactor9)替代。
 
@@ -2082,8 +2128,8 @@ static getCommonDivisor(number1: number,number2: number): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| number1 | number | 是 | 整数类型。 |
-| number2 | number | 是 | 整数类型。 |
+| number1 | number | 是 | 整数类型。-Number.MAX\_VALUE <= number1 <= Number.MAX\_VALUE。 |
+| number2 | number | 是 | 整数类型。-Number.MAX\_VALUE <= number2 <= Number.MAX\_VALUE。 |
 
 **返回值：**
 
@@ -2093,13 +2139,9 @@ static getCommonDivisor(number1: number,number2: number): number
 
 ## LRUCache9+
 
-PhonePC/2in1TabletTVWearable
-
 LRUCache用于在缓存空间不足时，将近期最少使用的数据替换为新数据。此设计基于资源访问的考虑：近期访问的数据，可能在不久的将来会再次访问。因此最少访问的数据被认为价值最低，应当优先从缓存中移除。
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2107,22 +2149,20 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| length | number | 是 | 否 | 当前缓冲区中值的总数。 |
+| length | number | 是 | 否 | 当前缓存中值的总数。 |
 
 **示例：**
 
-```
-1. let pro = new util.LRUCache<number, number>();
-2. pro.put(2, 10);
-3. pro.put(1, 8);
-4. let result = pro.length;
-5. console.info('result = ' + result);
-6. // 输出结果：result = 2
+```ts
+let pro = new util.LRUCache<number, number>();
+pro.put(2, 10);
+pro.put(1, 8);
+let result = pro.length;
+console.info('result = ' + result);
+// 输出结果：result = 2
 ```
 
 ### constructor9+
-
-PhonePC/2in1TabletTVWearable
 
 constructor(capacity?: number)
 
@@ -2136,29 +2176,19 @@ constructor(capacity?: number)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| capacity | number | 否 | 指示要为缓冲区自定义的容量，不传默认值为64，最大值不能超过2147483647。 |
-
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1.Incorrect parameter types. |
+| capacity | number | 否 | 指示要为缓冲区自定义的容量，取值范围为[0, 2147483647]，默认值为64。 |
 
 **示例：**
 
-```
-1. let pro = new util.LRUCache<number, number>();
+```ts
+let lruCache = new util.LRUCache<number, number>();
 ```
 
 ### updateCapacity9+
 
-PhonePC/2in1TabletTVWearable
-
 updateCapacity(newCapacity: number): void
 
-更新缓冲区容量为指定值，如果newCapacity小于或等于0，则抛出异常。当缓冲区中值的总数大于指定容量时，会执行删除操作。
+更新缓存容量为指定值，如果newCapacity小于或等于0，则抛出异常。当缓存中值的总数大于指定容量时，会执行删除操作。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2168,30 +2198,20 @@ updateCapacity(newCapacity: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| newCapacity | number | 是 | 指示要为缓冲区自定义的容量，最大值不能超过2147483647。 |
-
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. |
+| newCapacity | number | 是 | 指示要为缓冲区自定义的容量，取值范围为[0, 2147483647]。 |
 
 **示例：**
 
-```
-1. let pro = new util.LRUCache<number, number>();
-2. pro.updateCapacity(100);
+```ts
+let pro = new util.LRUCache<number, number>();
+pro.updateCapacity(100);
 ```
 
 ### toString9+
 
-PhonePC/2in1TabletTVWearable
-
 toString(): string
 
-返回对象的字符串表示。
+返回对象的字符串表示，格式为LRUCache[ maxSize = 缓存区最大值, hits = 查询匹配成功次数, misses = 查询匹配失败次数, hitRate = 查询匹配率 ]。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2205,23 +2225,21 @@ toString(): string
 
 **示例：**
 
-```
-1. let pro = new util.LRUCache<number, number>();
-2. pro.put(2, 10);
-3. pro.get(2);
-4. pro.get(3);
-5. console.info(pro.toString());
-6. // 输出结果：LRUCache[ maxSize = 64, hits = 1, misses = 1, hitRate = 50% ]
-7. // maxSize: 缓存区最大值 hits: 查询值匹配成功的次数 misses: 查询值匹配失败的次数 hitRate: 查询值匹配率
+```ts
+let pro = new util.LRUCache<number, number>();
+pro.put(2, 10);
+pro.get(2);
+pro.get(3);
+console.info(pro.toString());
+// 输出结果：LRUCache[ maxSize = 64, hits = 1, misses = 1, hitRate = 50% ]
+// maxSize: 缓存区最大值 hits: 查询值匹配成功的次数 misses: 查询值匹配失败的次数 hitRate: 查询值匹配率
 ```
 
 ### getCapacity9+
 
-PhonePC/2in1TabletTVWearable
-
 getCapacity(): number
 
-获取当前缓冲区的容量。
+获取当前缓存的容量。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2235,20 +2253,18 @@ getCapacity(): number
 
 **示例：**
 
-```
-1. let pro = new util.LRUCache<number, number>();
-2. let result = pro.getCapacity();
-3. console.info('result = ' + result);
-4. // 输出结果：result = 64
+```ts
+let pro = new util.LRUCache<number, number>();
+let result = pro.getCapacity();
+console.info('result = ' + result);
+// 输出结果：result = 64
 ```
 
 ### clear9+
 
-PhonePC/2in1TabletTVWearable
-
 clear(): void
 
-清除当前缓冲区中的键值对。
+清除当前缓冲区中的键值对，并触发afterRemoval回调方法执行后续操作。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2256,21 +2272,19 @@ clear(): void
 
 **示例：**
 
-```
-1. let pro = new util.LRUCache<number, number>();
-2. pro.put(2, 10);
-3. let result = pro.length;
-4. pro.clear();
-5. let res = pro.length;
-6. console.info('result = ' + result);
-7. console.info('res = ' + res);
-8. // 输出结果：result = 1
-9. // 输出结果：res = 0
+```ts
+let pro = new util.LRUCache<number, number>();
+pro.put(2, 10);
+let result = pro.length;
+pro.clear();
+let res = pro.length;
+console.info('result = ' + result);
+console.info('res = ' + res);
+// 输出结果：result = 1
+// 输出结果：res = 0
 ```
 
 ### getCreateCount9+
-
-PhonePC/2in1TabletTVWearable
 
 getCreateCount(): number
 
@@ -2288,29 +2302,27 @@ getCreateCount(): number
 
 **示例：**
 
-```
-1. // 创建新类ChildLRUCache继承LRUCache，重写createDefault方法，返回一个非undefined的值。
-2. class ChildLRUCache extends util.LRUCache<number, number> {
-3. constructor() {
-4. super();
-5. }
+```ts
+// 创建新类ChildLRUCache继承LRUCache，重写createDefault方法，返回一个非undefined的值。
+class ChildLRUCache extends util.LRUCache<number, number> {
+  constructor() {
+    super();
+  }
 
-7. createDefault(key: number): number {
-8. return key;
-9. }
-10. }
-11. let lru = new ChildLRUCache();
-12. lru.put(2, 10);
-13. lru.get(3);
-14. lru.get(5);
-15. let res = lru.getCreateCount();
-16. console.info('res = ' + res);
-17. // 输出结果：res = 2
+  createDefault(key: number): number {
+    return key;
+  }
+}
+let lru = new ChildLRUCache();
+lru.put(2, 10);
+lru.get(3);
+lru.get(5);
+let res = lru.getCreateCount();
+console.info('res = ' + res);
+// 输出结果：res = 2
 ```
 
 ### getMissCount9+
-
-PhonePC/2in1TabletTVWearable
 
 getMissCount(): number
 
@@ -2328,22 +2340,20 @@ getMissCount(): number
 
 **示例：**
 
-```
-1. let pro = new util.LRUCache<number, number>();
-2. pro.put(2, 10);
-3. pro.get(2);
-4. let result = pro.getMissCount();
-5. console.info('result = ' + result);
-6. // 输出结果：result = 0
+```ts
+let pro = new util.LRUCache<number, number>();
+pro.put(2, 10);
+pro.get(2);
+let result = pro.getMissCount();
+console.info('result = ' + result);
+// 输出结果：result = 0
 ```
 
 ### getRemovalCount9+
 
-PhonePC/2in1TabletTVWearable
-
 getRemovalCount(): number
 
-获取缓冲区键值对的回收次数。
+获取缓存键值对的回收次数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2357,19 +2367,17 @@ getRemovalCount(): number
 
 **示例：**
 
-```
-1. let pro = new util.LRUCache<number, number>();
-2. pro.put(2, 10);
-3. pro.updateCapacity(2);
-4. pro.put(50, 22);
-5. let result = pro.getRemovalCount();
-6. console.info('result = ' + result);
-7. // 输出结果：result = 0
+```ts
+let pro = new util.LRUCache<number, number>();
+pro.put(2, 10);
+pro.updateCapacity(2);
+pro.put(50, 22);
+let result = pro.getRemovalCount();
+console.info('result = ' + result);
+// 输出结果：result = 0
 ```
 
 ### getMatchCount9+
-
-PhonePC/2in1TabletTVWearable
 
 getMatchCount(): number
 
@@ -2387,22 +2395,20 @@ getMatchCount(): number
 
 **示例：**
 
-```
-1. let pro = new util.LRUCache<number, number>();
-2. pro.put(2, 10);
-3. pro.get(2);
-4. let result = pro.getMatchCount();
-5. console.info('result = ' + result);
-6. // 输出结果：result = 1
+```ts
+let pro = new util.LRUCache<number, number>();
+pro.put(2, 10);
+pro.get(2);
+let result = pro.getMatchCount();
+console.info('result = ' + result);
+// 输出结果：result = 1
 ```
 
 ### getPutCount9+
 
-PhonePC/2in1TabletTVWearable
-
 getPutCount(): number
 
-获取将值添加到缓冲区的次数。
+获取将值添加到缓存的次数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2416,21 +2422,19 @@ getPutCount(): number
 
 **示例：**
 
-```
-1. let pro = new util.LRUCache<number, number>();
-2. pro.put(2, 10);
-3. let result = pro.getPutCount();
-4. console.info('result = ' + result);
-5. // 输出结果：result = 1
+```ts
+let pro = new util.LRUCache<number, number>();
+pro.put(2, 10);
+let result = pro.getPutCount();
+console.info('result = ' + result);
+// 输出结果：result = 1
 ```
 
 ### isEmpty9+
 
-PhonePC/2in1TabletTVWearable
-
 isEmpty(): boolean
 
-检查缓冲区是否为空。
+检查缓存是否为空。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2440,25 +2444,23 @@ isEmpty(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 如果缓冲区不包含任何值，则返回true。 |
+| boolean | 如果缓存不包含任何值，则返回true；否则返回false。 |
 
 **示例：**
 
-```
-1. let pro = new util.LRUCache<number, number>();
-2. pro.put(2, 10);
-3. let result = pro.isEmpty();
-4. console.info('result = ' + result);
-5. // 输出结果：result = false
+```ts
+let pro = new util.LRUCache<number, number>();
+pro.put(2, 10);
+let result = pro.isEmpty();
+console.info('result = ' + result);
+// 输出结果：result = false
 ```
 
 ### get9+
 
-PhonePC/2in1TabletTVWearable
-
 get(key: K): V | undefined
 
-返回键对应的值。当键不在缓冲区中时，通过[createDefault9+](js-apis-util.md#createdefault9)接口创建，若createDefault创建的值不为undefined时，此时会调用[afterRemoval9+](js-apis-util.md#afterremoval9)接口，返回createDefault创建的值。
+返回键对应的值。当键不在缓存中时，通过[createDefault](js-apis-util.md#createdefault9)接口创建，若createDefault创建的值不为undefined时，此时会调用[afterRemoval](js-apis-util.md#afterremoval9)接口，返回createDefault创建的值。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2476,31 +2478,21 @@ get(key: K): V | undefined
 | --- | --- |
 | V | undefined | 如果指定的键存在于缓冲区中，则返回与键关联的值；否则返回createDefault创建的值。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. let pro = new util.LRUCache<number, number>();
-2. pro.put(2, 10);
-3. let result  = pro.get(2);
-4. console.info('result = ' + result);
-5. // 输出结果：result = 10
+```ts
+let pro = new util.LRUCache<number, number>();
+pro.put(2, 10);
+let result  = pro.get(2);
+console.info('result = ' + result);
+// 输出结果：result = 10
 ```
 
 ### put9+
 
-PhonePC/2in1TabletTVWearable
-
 put(key: K,value: V): V
 
-将键值对添加到缓冲区，返回与添加的键关联的值。当缓冲区中值的总数超过容量时，执行删除操作。
+将键值对添加到缓存，返回与添加的键关联的值。当缓存中值的总数超过容量时，执行删除操作。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2519,30 +2511,20 @@ put(key: K,value: V): V
 | --- | --- |
 | V | 返回与添加的键关联的值。如果键或值为空，则抛出此异常。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. let pro = new util.LRUCache<number, number>();
-2. let result = pro.put(2, 10);
-3. console.info('result = ' + result);
-4. // 输出结果：result = 10
+```ts
+let pro = new util.LRUCache<number, number>();
+let result = pro.put(2, 10);
+console.info('result = ' + result);
+// 输出结果：result = 10
 ```
 
 ### values9+
 
-PhonePC/2in1TabletTVWearable
-
 values(): V[]
 
-获取当前缓冲区中所有值，从最近最少访问到最近访问的顺序列表。
+获取当前缓存中所有值，从最近最少访问到最近访问的顺序列表。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2556,31 +2538,29 @@ values(): V[]
 
 **示例：**
 
-```
-1. let pro = new util.LRUCache<number, string>();
-2. pro.put(1, 'A');
-3. pro.put(2, "B");
-4. pro.put(3, 'C');
-5. pro.put(4, 'D')
-6. pro.put(5, 'E')
-7. pro.put(6, 'F')
-8. let result = pro.values();
-9. console.info('result = ' + result);
-10. // 输出结果：result = A,B,C,D,E,F
-11. pro.get(1);
-12. pro.get(2);
-13. result = pro.values();
-14. console.info('result = ' + result);
-15. // 输出结果：result = C,D,E,F,A,B
+```ts
+let pro = new util.LRUCache<number, string>();
+pro.put(1, 'A');
+pro.put(2, "B");
+pro.put(3, 'C');
+pro.put(4, 'D')
+pro.put(5, 'E')
+pro.put(6, 'F')
+let result = pro.values();
+console.info('result = ' + result);
+// 输出结果：result = A,B,C,D,E,F
+pro.get(1);
+pro.get(2);
+result = pro.values();
+console.info('result = ' + result);
+// 输出结果：result = C,D,E,F,A,B
 ```
 
 ### keys9+
 
-PhonePC/2in1TabletTVWearable
-
 keys(): K[]
 
-获取当前缓冲区中所有键，从最近最少访问到最近访问的顺序列表。
+获取当前缓存中所有键，从最近最少访问到最近访问的顺序列表。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2594,31 +2574,29 @@ keys(): K[]
 
 **示例：**
 
-```
-1. let pro = new util.LRUCache<number, string>();
-2. pro.put(1, 'A');
-3. pro.put(2, "B");
-4. pro.put(3, 'C');
-5. pro.put(4, 'D')
-6. pro.put(5, 'E')
-7. pro.put(6, 'F')
-8. let result = pro.keys();
-9. console.info('result = ' + result);
-10. // 输出结果：result = 1,2,3,4,5,6
-11. pro.get(5);
-12. pro.get(3);
-13. result = pro.keys();
-14. console.info('result = ' + result);
-15. // 输出结果：result = 1,2,4,6,5,3
+```ts
+let pro = new util.LRUCache<number, string>();
+pro.put(1, 'A');
+pro.put(2, "B");
+pro.put(3, 'C');
+pro.put(4, 'D')
+pro.put(5, 'E')
+pro.put(6, 'F')
+let result = pro.keys();
+console.info('result = ' + result);
+// 输出结果：result = 1,2,3,4,5,6
+pro.get(5);
+pro.get(3);
+result = pro.keys();
+console.info('result = ' + result);
+// 输出结果：result = 1,2,4,6,5,3
 ```
 
 ### remove9+
 
-PhonePC/2in1TabletTVWearable
-
 remove(key: K): V | undefined
 
-从当前缓冲区中删除指定的键及其关联的值，并返回键关联的值。如果指定的键不存在，则返回undefined。
+从当前缓存中删除指定的键及其关联的值，并返回键关联的值。如果指定的键不存在，则返回undefined。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2628,41 +2606,31 @@ remove(key: K): V | undefined
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| key | K | 是 | 要删除的键值。 |
+| key | K | 是 | 要删除的键。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| V | undefined | 返回一个包含已删除键值对的Optional对象；如果key不存在，则返回undefined，如果key为null，则抛出异常。 |
-
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| V | undefined | 返回与已删除键关联的值；如果key不存在，则返回undefined，如果key为null，则抛出异常。 |
 
 **示例：**
 
-```
-1. let pro = new util.LRUCache<number, number>();
-2. pro.put(2, 10);
-3. let result = pro.remove(20);
-4. console.info('result = ' + result);
-5. // 输出结果：result = undefined
+```ts
+let pro = new util.LRUCache<number, number>();
+pro.put(2, 10);
+let result = pro.remove(20);
+console.info('result = ' + result);
+// 输出结果：result = undefined
 ```
 
 ### afterRemoval9+
-
-PhonePC/2in1TabletTVWearable
 
 afterRemoval(isEvict: boolean, key: K, value: V, newValue: V): void
 
 删除值后执行后续操作，这些操作由开发者自行实现。本接口会在删除操作时被调用，如[get9+](js-apis-util.md#get9)、[put9+](js-apis-util.md#put9)、[remove9+](js-apis-util.md#remove9)、[clear9+](js-apis-util.md#clear9)、[updateCapacity9+](js-apis-util.md#updatecapacity9)接口。
 
-说明
+**说明** 
 
 若此回调方法在[clear9+](js-apis-util.md#clear9)、[updateCapacity9+](js-apis-util.md#updatecapacity9)接口调用之后触发执行，传入的key和value参数类型为MapIterator，可参照示例二进行后续操作。
 
@@ -2679,101 +2647,91 @@ afterRemoval(isEvict: boolean, key: K, value: V, newValue: V): void
 | value | V | 是 | 表示删除的值。 |
 | newValue | V | 是 | 如果已调用put方法并且要添加的键已经存在，则参数值是关联的新值。其他情况下参数值为空。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例一：**
 
-```
-1. class ChildLRUCache<K, V> extends util.LRUCache<K, V> {
-2. constructor(capacity?: number) {
-3. super(capacity);
-4. }
+```ts
+class ChildLRUCache<K, V> extends util.LRUCache<K, V> {
+  constructor(capacity?: number) {
+    super(capacity);
+  }
 
-6. afterRemoval(isEvict: boolean, key: K, value: V, newValue: V): void {
-7. if (isEvict === true) {
-8. console.info('key = ' + key);
-9. // 输出结果：key = 1
-10. console.info('value = ' + value);
-11. // 输出结果：value = 1
-12. console.info('newValue = ' + newValue);
-13. // 输出结果：newValue = null
-14. }
-15. }
-16. }
-17. let lru = new ChildLRUCache<number, number>(2);
-18. lru.put(1, 1);
-19. lru.put(2, 2);
-20. lru.put(3, 3);
+  afterRemoval(isEvict: boolean, key: K, value: V, newValue: V): void {
+    if (isEvict === true) {
+      console.info('key = ' + key);
+      // 输出结果：key = 1
+      console.info('value = ' + value);
+      // 输出结果：value = 1
+      console.info('newValue = ' + newValue);
+      // 输出结果：newValue = null
+    }
+  }
+}
+let lru = new ChildLRUCache<number, number>(2);
+lru.put(1, 1);
+lru.put(2, 2);
+lru.put(3, 3);
 ```
 
 **示例二：**
 
-```
-1. class TestClass {
-2. str:string = '';
-3. constructor(input: string) {
-4. this.str = input;
-5. }
-6. }
+```ts
+class TestClass {
+  str:string = '';
+  constructor(input: string) {
+    this.str = input;
+  }
+}
 
-8. class ChildLRUCache extends util.LRUCache<string, TestClass> {
-9. constructor(capacity?: number) {
-10. super(capacity);
-11. }
+class ChildLRUCache extends util.LRUCache<string, TestClass> {
+  constructor(capacity?: number) {
+    super(capacity);
+  }
 
-13. afterRemoval(isEvict: boolean, key: string, value: TestClass, newValue: TestClass): void {
-14. if(value.toString().indexOf('[object Map Iterator]') >= 0) {
-15. console.info('调用clear进入');
-16. console.info('isEvict = ' + isEvict);
-17. const keysIterator = (key as ESObject as IterableIterator<string>);
-18. const valuesIterator = (value as ESObject as IterableIterator<TestClass>);
+  afterRemoval(isEvict: boolean, key: string, value: TestClass, newValue: TestClass): void {
+    if(value.toString().indexOf('[object Map Iterator]') >= 0) {
+      console.info('调用clear进入');
+      console.info('isEvict = ' + isEvict);
+      const keysIterator = (key as ESObject as IterableIterator<string>);
+      const valuesIterator = (value as ESObject as IterableIterator<TestClass>);
 
-20. let keyEntry = keysIterator.next();
-21. let valueEntry = valuesIterator.next();
-22. while (!keyEntry.done && !valueEntry.done) {
-23. console.info(`key = ${keyEntry.value}, valueStr = ${valueEntry.value.str}`);
-24. keyEntry = keysIterator.next();
-25. valueEntry = valuesIterator.next();
-26. }
-27. } else {
-28. console.info('调用put进入');
-29. console.info('isEvict = ' + isEvict);
-30. console.info('key = ' + key + '  valueStr = ' + value.str);
-31. }
-32. }
-33. }
-34. let test1 = new TestClass('testA');
-35. let test2 = new TestClass('testB');
-36. let test3 = new TestClass('testC');
-37. let lru = new ChildLRUCache(2);
-38. lru.put('aa', test1);
-39. lru.put('bb', test2);
-40. lru.put('cc', test3);    // 删除'aa'键值对
-41. lru.clear();             // 清空整个缓冲区
-42. /*
-43. 输出结果：调用put进入
-44. isEvict = true
-45. key = aa  valueStr = testA
-46. 调用clear进入
-47. isEvict = false
-48. key = bb, valueStr = testB
-49. key = cc, valueStr = testC
-50. */
+      let keyEntry = keysIterator.next();
+      let valueEntry = valuesIterator.next();
+      while (!keyEntry.done && !valueEntry.done) {
+        console.info(`key = ${keyEntry.value}, valueStr = ${valueEntry.value.str}`);
+        keyEntry = keysIterator.next();
+        valueEntry = valuesIterator.next();
+      }
+    } else {
+      console.info('调用put进入');
+      console.info('isEvict = ' + isEvict);
+      console.info('key = ' + key + '  valueStr = ' + value.str);
+    }
+  }
+}
+let test1 = new TestClass('testA');
+let test2 = new TestClass('testB');
+let test3 = new TestClass('testC');
+let lru = new ChildLRUCache(2);
+lru.put('aa', test1);
+lru.put('bb', test2);
+lru.put('cc', test3);    // 删除'aa'键值对
+lru.clear();             // 清空整个缓冲区
+/*
+输出结果：调用put进入
+         isEvict = true
+         key = aa  valueStr = testA
+         调用clear进入
+         isEvict = false
+         key = bb, valueStr = testB
+         key = cc, valueStr = testC
+ */
 ```
 
 ### contains9+
 
-PhonePC/2in1TabletTVWearable
-
 contains(key: K): boolean
 
-检查当前缓冲区是否包含指定的键。
+检查当前缓存是否包含指定的键。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2789,33 +2747,23 @@ contains(key: K): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 如果缓冲区包含指定的键，则返回 true。 |
-
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| boolean | 如果缓存包含指定的键，则返回true；否则返回false。 |
 
 **示例：**
 
-```
-1. let pro = new util.LRUCache<number, number>();
-2. pro.put(2, 10);
-3. let result = pro.contains(2);
-4. console.info('result = ' + result);
-5. // 输出结果：result = true
+```ts
+let pro = new util.LRUCache<number, number>();
+pro.put(2, 10);
+let result = pro.contains(2);
+console.info('result = ' + result);
+// 输出结果：result = true
 ```
 
 ### createDefault9+
 
-PhonePC/2in1TabletTVWearable
-
 createDefault(key: K): V
 
-如果在缓冲区未匹配到键，则执行后续操作，参数表示未匹配的键，返回与键关联的值，默认返回undefined。
+如果在缓存中未匹配到键，则执行后续操作，参数表示未匹配的键，返回与键关联的值，默认返回undefined。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2833,26 +2781,16 @@ createDefault(key: K): V
 | --- | --- |
 | V | 返回与键关联的值。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. let pro = new util.LRUCache<number, number>();
-2. let result = pro.createDefault(50);
-3. console.info('result = ' + result);
-4. // 输出结果：result = undefined
+```ts
+let pro = new util.LRUCache<number, number>();
+let result = pro.createDefault(50);
+console.info('result = ' + result);
+// 输出结果：result = undefined
 ```
 
 ### entries9+
-
-PhonePC/2in1TabletTVWearable
 
 entries(): IterableIterator<[K, V]>
 
@@ -2866,26 +2804,24 @@ entries(): IterableIterator<[K, V]>
 
 | 类型 | 说明 |
 | --- | --- |
-| IterableIterator<[K, V]> | 返回一个可迭代数组。 |
+| IterableIterator<[K, V]> | 返回一个迭代器对象，用于按插入顺序遍历当前缓冲区中的所有键值对[key, value]。 |
 
 **示例：**
 
-```
-1. let pro = new util.LRUCache<number, number>();
-2. pro.put(2, 10);
-3. pro.put(3, 15);
-4. let pair = pro.entries();
-5. for (let value of pair) {
-6. console.info(value[0]+ ', '+ value[1]);
-7. }
-8. // 输出结果：
-9. // 2, 10
-10. // 3, 15
+```ts
+let pro = new util.LRUCache<number, number>();
+pro.put(2, 10);
+pro.put(3, 15);
+let pair = pro.entries();
+for (let value of pair) {
+  console.info(value[0]+ ', '+ value[1]);
+}
+// 输出结果：
+// 2, 10
+// 3, 15
 ```
 
 ### [Symbol.iterator]9+
-
-PhonePC/2in1TabletTVWearable
 
 [Symbol.iterator](): IterableIterator<[K, V]>
 
@@ -2903,30 +2839,26 @@ PhonePC/2in1TabletTVWearable
 
 **示例：**
 
-```
-1. let pro = new util.LRUCache<number, number>();
-2. pro.put(2, 10);
-3. pro.put(3, 15);
+```ts
+let pro = new util.LRUCache<number, number>();
+pro.put(2, 10);
+pro.put(3, 15);
 
-5. for (let value of pro) {
-6. console.info(value[0]+ ', '+ value[1]);
-7. }
-8. // 输出结果：
-9. // 2, 10
-10. // 3, 15
+for (let value of pro) {
+  console.info(value[0]+ ', '+ value[1]);
+}
+// 输出结果：
+// 2, 10
+// 3, 15
 ```
 
 ## ScopeComparable8+
-
-PhonePC/2in1TabletTVWearable
 
 ScopeComparable类型的值需要实现compareTo方法，确保传入的数据具有可比性。
 
 **系统能力：** SystemCapability.Utils.Lang
 
 ### compareTo8+
-
-PhonePC/2in1TabletTVWearable
 
 compareTo(other: ScopeComparable): boolean
 
@@ -2952,31 +2884,29 @@ compareTo(other: ScopeComparable): boolean
 
 构造新类，实现compareTo方法。后续示例代码中，均以此Temperature类为例。
 
-```
-1. class Temperature implements util.ScopeComparable {
-2. private readonly _temp: number;
+```ts
+class Temperature implements util.ScopeComparable {
+  private readonly _temp: number;
 
-4. constructor(value: number) {
-5. this._temp = value;
-6. }
+  constructor(value: number) {
+    this._temp = value;
+  }
 
-8. compareTo(value: Temperature) {
-9. return this._temp >= value.getTemp();
-10. }
+  compareTo(value: Temperature) {
+    return this._temp >= value.getTemp();
+  }
 
-12. getTemp() {
-13. return this._temp;
-14. }
+  getTemp() {
+    return this._temp;
+  }
 
-16. toString(): string {
-17. return this._temp.toString();
-18. }
-19. }
+  toString(): string {
+    return this._temp.toString();
+  }
+}
 ```
 
 ## ScopeType8+
-
-PhonePC/2in1TabletTVWearable
 
 type ScopeType = ScopeComparable | number
 
@@ -2993,13 +2923,9 @@ type ScopeType = ScopeComparable | number
 
 ## ScopeHelper9+
 
-PhonePC/2in1TabletTVWearable
-
-ScopeHelper接口用于描述一个字段的有效范围。构造函数用于创建具有指定下限和上限的对象，并要求这些对象必须具有可比性。
+ScopeHelper接口用于描述一个字段的有效范围，常用于输入值范围校验、配置参数区间判断等场景。构造函数用于创建具有指定下限和上限的对象，并要求这些对象必须具有可比性。通过ScopeHelper，开发者可以方便地进行范围交集、并集计算以及值是否在范围内的判断，避免无效数据进入业务逻辑。
 
 ### constructor9+
-
-PhonePC/2in1TabletTVWearable
 
 constructor(lowerObj: ScopeType, upperObj: ScopeType)
 
@@ -3013,49 +2939,39 @@ constructor(lowerObj: ScopeType, upperObj: ScopeType)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| lowerObj | [ScopeType](js-apis-util.md#scopetype8) | 是 | 指定作用域实例的下限。 |
-| upperObj | [ScopeType](js-apis-util.md#scopetype8) | 是 | 指定作用域实例的上限。 |
-
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| lowerObj | [ScopeType](js-apis-util.md#scopetype8) | 是 | 指定作用域实例的下限，需具有可比性。 |
+| upperObj | [ScopeType](js-apis-util.md#scopetype8) | 是 | 指定作用域实例的上限，需具有可比性。 |
 
 **示例：**
 
-```
-1. class Temperature implements util.ScopeComparable {
-2. private readonly _temp: number;
+```ts
+class Temperature implements util.ScopeComparable {
+  private readonly _temp: number;
 
-4. constructor(value: number) {
-5. this._temp = value;
-6. }
+  constructor(value: number) {
+    this._temp = value;
+  }
 
-8. compareTo(value: Temperature) {
-9. return this._temp >= value.getTemp();
-10. }
+  compareTo(value: Temperature) {
+    return this._temp >= value.getTemp();
+  }
 
-12. getTemp() {
-13. return this._temp;
-14. }
+  getTemp() {
+    return this._temp;
+  }
 
-16. toString(): string {
-17. return this._temp.toString();
-18. }
-19. }
-20. let tempLower = new Temperature(30);
-21. let tempUpper = new Temperature(40);
-22. let range = new util.ScopeHelper(tempLower, tempUpper);
-23. console.info("range = " + range);
-24. // 输出结果：range = [30, 40]
+  toString(): string {
+    return this._temp.toString();
+  }
+}
+let tempLower = new Temperature(30);
+let tempUpper = new Temperature(40);
+let range = new util.ScopeHelper(tempLower, tempUpper);
+console.info("range = " + range);
+// 输出结果：range = [30, 40]
 ```
 
 ### toString9+
-
-PhonePC/2in1TabletTVWearable
 
 toString(): string
 
@@ -3073,38 +2989,36 @@ toString(): string
 
 **示例：**
 
-```
-1. class Temperature implements util.ScopeComparable {
-2. private readonly _temp: number;
+```ts
+class Temperature implements util.ScopeComparable {
+  private readonly _temp: number;
 
-4. constructor(value: number) {
-5. this._temp = value;
-6. }
+  constructor(value: number) {
+    this._temp = value;
+  }
 
-8. compareTo(value: Temperature) {
-9. return this._temp >= value.getTemp();
-10. }
+  compareTo(value: Temperature) {
+    return this._temp >= value.getTemp();
+  }
 
-12. getTemp() {
-13. return this._temp;
-14. }
+  getTemp() {
+    return this._temp;
+  }
 
-16. toString(): string {
-17. return this._temp.toString();
-18. }
-19. }
+  toString(): string {
+    return this._temp.toString();
+  }
+}
 
-21. let tempLower = new Temperature(30);
-22. let tempUpper = new Temperature(40);
-23. let range = new util.ScopeHelper(tempLower, tempUpper);
-24. let result = range.toString();
-25. console.info("result = " + result);
-26. // 输出结果：result = [30, 40]
+let tempLower = new Temperature(30);
+let tempUpper = new Temperature(40);
+let range = new util.ScopeHelper(tempLower, tempUpper);
+let result = range.toString();
+console.info("result = " + result);
+// 输出结果：result = [30, 40]
 ```
 
 ### intersect9+
-
-PhonePC/2in1TabletTVWearable
 
 intersect(range: ScopeHelper): ScopeHelper
 
@@ -3126,51 +3040,41 @@ intersect(range: ScopeHelper): ScopeHelper
 | --- | --- |
 | [ScopeHelper](js-apis-util.md#scopehelper9) | 返回给定范围和当前范围的交集。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. class Temperature implements util.ScopeComparable {
-2. private readonly _temp: number;
+```ts
+class Temperature implements util.ScopeComparable {
+  private readonly _temp: number;
 
-4. constructor(value: number) {
-5. this._temp = value;
-6. }
+  constructor(value: number) {
+    this._temp = value;
+  }
 
-8. compareTo(value: Temperature) {
-9. return this._temp >= value.getTemp();
-10. }
+  compareTo(value: Temperature) {
+    return this._temp >= value.getTemp();
+  }
 
-12. getTemp() {
-13. return this._temp;
-14. }
+  getTemp() {
+    return this._temp;
+  }
 
-16. toString(): string {
-17. return this._temp.toString();
-18. }
-19. }
+  toString(): string {
+    return this._temp.toString();
+  }
+}
 
-21. let tempLower = new Temperature(30);
-22. let tempUpper = new Temperature(40);
-23. let range = new util.ScopeHelper(tempLower, tempUpper);
-24. let tempMiDF = new Temperature(35);
-25. let tempMidS = new Temperature(39);
-26. let rangeFir = new util.ScopeHelper(tempMiDF, tempMidS);
-27. let result = range.intersect(rangeFir);
-28. console.info("result = " + result);
-29. // 输出结果：result = [35, 39]
+let tempLower = new Temperature(30);
+let tempUpper = new Temperature(40);
+let range = new util.ScopeHelper(tempLower, tempUpper);
+let tempMiDF = new Temperature(35);
+let tempMidS = new Temperature(39);
+let rangeFir = new util.ScopeHelper(tempMiDF, tempMidS);
+let result = range.intersect(rangeFir);
+console.info("result = " + result);
+// 输出结果：result = [35, 39]
 ```
 
 ### intersect9+
-
-PhonePC/2in1TabletTVWearable
 
 intersect(lowerObj:ScopeType,upperObj:ScopeType):ScopeHelper
 
@@ -3193,50 +3097,40 @@ intersect(lowerObj:ScopeType,upperObj:ScopeType):ScopeHelper
 | --- | --- |
 | [ScopeHelper](js-apis-util.md#scopehelper9) | 返回当前范围与给定下限和上限范围的交集。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. class Temperature implements util.ScopeComparable {
-2. private readonly _temp: number;
+```ts
+class Temperature implements util.ScopeComparable {
+  private readonly _temp: number;
 
-4. constructor(value: number) {
-5. this._temp = value;
-6. }
+  constructor(value: number) {
+    this._temp = value;
+  }
 
-8. compareTo(value: Temperature) {
-9. return this._temp >= value.getTemp();
-10. }
+  compareTo(value: Temperature) {
+    return this._temp >= value.getTemp();
+  }
 
-12. getTemp() {
-13. return this._temp;
-14. }
+  getTemp() {
+    return this._temp;
+  }
 
-16. toString(): string {
-17. return this._temp.toString();
-18. }
-19. }
+  toString(): string {
+    return this._temp.toString();
+  }
+}
 
-21. let tempLower = new Temperature(30);
-22. let tempUpper = new Temperature(40);
-23. let tempMiDF = new Temperature(35);
-24. let tempMidS = new Temperature(39);
-25. let range = new util.ScopeHelper(tempLower, tempUpper);
-26. let result = range.intersect(tempMiDF, tempMidS);
-27. console.info("result = " + result);
-28. // 输出结果：result = [35, 39]
+let tempLower = new Temperature(30);
+let tempUpper = new Temperature(40);
+let tempMiDF = new Temperature(35);
+let tempMidS = new Temperature(39);
+let range = new util.ScopeHelper(tempLower, tempUpper);
+let result = range.intersect(tempMiDF, tempMidS);
+console.info("result = " + result);
+// 输出结果：result = [35, 39]
 ```
 
 ### getUpper9+
-
-PhonePC/2in1TabletTVWearable
 
 getUpper(): ScopeType
 
@@ -3254,38 +3148,36 @@ getUpper(): ScopeType
 
 **示例：**
 
-```
-1. class Temperature implements util.ScopeComparable {
-2. private readonly _temp: number;
+```ts
+class Temperature implements util.ScopeComparable {
+  private readonly _temp: number;
 
-4. constructor(value: number) {
-5. this._temp = value;
-6. }
+  constructor(value: number) {
+    this._temp = value;
+  }
 
-8. compareTo(value: Temperature) {
-9. return this._temp >= value.getTemp();
-10. }
+  compareTo(value: Temperature) {
+    return this._temp >= value.getTemp();
+  }
 
-12. getTemp() {
-13. return this._temp;
-14. }
+  getTemp() {
+    return this._temp;
+  }
 
-16. toString(): string {
-17. return this._temp.toString();
-18. }
-19. }
+  toString(): string {
+    return this._temp.toString();
+  }
+}
 
-21. let tempLower = new Temperature(30);
-22. let tempUpper = new Temperature(40);
-23. let range = new util.ScopeHelper(tempLower, tempUpper);
-24. let result = range.getUpper();
-25. console.info("result = " + result);
-26. // 输出结果：result = 40
+let tempLower = new Temperature(30);
+let tempUpper = new Temperature(40);
+let range = new util.ScopeHelper(tempLower, tempUpper);
+let result = range.getUpper();
+console.info("result = " + result);
+// 输出结果：result = 40
 ```
 
 ### getLower9+
-
-PhonePC/2in1TabletTVWearable
 
 getLower(): ScopeType
 
@@ -3303,38 +3195,36 @@ getLower(): ScopeType
 
 **示例：**
 
-```
-1. class Temperature implements util.ScopeComparable {
-2. private readonly _temp: number;
+```ts
+class Temperature implements util.ScopeComparable {
+  private readonly _temp: number;
 
-4. constructor(value: number) {
-5. this._temp = value;
-6. }
+  constructor(value: number) {
+    this._temp = value;
+  }
 
-8. compareTo(value: Temperature) {
-9. return this._temp >= value.getTemp();
-10. }
+  compareTo(value: Temperature) {
+    return this._temp >= value.getTemp();
+  }
 
-12. getTemp() {
-13. return this._temp;
-14. }
+  getTemp() {
+    return this._temp;
+  }
 
-16. toString(): string {
-17. return this._temp.toString();
-18. }
-19. }
+  toString(): string {
+    return this._temp.toString();
+  }
+}
 
-21. let tempLower = new Temperature(30);
-22. let tempUpper = new Temperature(40);
-23. let range = new util.ScopeHelper(tempLower, tempUpper);
-24. let result = range.getLower();
-25. console.info("result = " + result);
-26. // 输出结果：result = 30
+let tempLower = new Temperature(30);
+let tempUpper = new Temperature(40);
+let range = new util.ScopeHelper(tempLower, tempUpper);
+let result = range.getLower();
+console.info("result = " + result);
+// 输出结果：result = 30
 ```
 
 ### expand9+
-
-PhonePC/2in1TabletTVWearable
 
 expand(lowerObj: ScopeType,upperObj: ScopeType): ScopeHelper
 
@@ -3357,50 +3247,40 @@ expand(lowerObj: ScopeType,upperObj: ScopeType): ScopeHelper
 | --- | --- |
 | [ScopeHelper](js-apis-util.md#scopehelper9) | 返回当前范围和给定下限和上限的并集。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. class Temperature implements util.ScopeComparable {
-2. private readonly _temp: number;
+```ts
+class Temperature implements util.ScopeComparable {
+  private readonly _temp: number;
 
-4. constructor(value: number) {
-5. this._temp = value;
-6. }
+  constructor(value: number) {
+    this._temp = value;
+  }
 
-8. compareTo(value: Temperature) {
-9. return this._temp >= value.getTemp();
-10. }
+  compareTo(value: Temperature) {
+    return this._temp >= value.getTemp();
+  }
 
-12. getTemp() {
-13. return this._temp;
-14. }
+  getTemp() {
+    return this._temp;
+  }
 
-16. toString(): string {
-17. return this._temp.toString();
-18. }
-19. }
+  toString(): string {
+    return this._temp.toString();
+  }
+}
 
-21. let tempLower = new Temperature(30);
-22. let tempUpper = new Temperature(40);
-23. let tempMiDF = new Temperature(35);
-24. let tempMidS = new Temperature(39);
-25. let range = new util.ScopeHelper(tempLower, tempUpper);
-26. let result = range.expand(tempMiDF, tempMidS);
-27. console.info("result = " + result);
-28. // 输出结果：result = [30, 40]
+let tempLower = new Temperature(30);
+let tempUpper = new Temperature(40);
+let tempMiDF = new Temperature(35);
+let tempMidS = new Temperature(39);
+let range = new util.ScopeHelper(tempLower, tempUpper);
+let result = range.expand(tempMiDF, tempMidS);
+console.info("result = " + result);
+// 输出结果：result = [30, 40]
 ```
 
 ### expand9+
-
-PhonePC/2in1TabletTVWearable
 
 expand(range: ScopeHelper): ScopeHelper
 
@@ -3422,51 +3302,41 @@ expand(range: ScopeHelper): ScopeHelper
 | --- | --- |
 | [ScopeHelper](js-apis-util.md#scopehelper9) | 返回包括当前范围和给定范围的并集。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. class Temperature implements util.ScopeComparable {
-2. private readonly _temp: number;
+```ts
+class Temperature implements util.ScopeComparable {
+  private readonly _temp: number;
 
-4. constructor(value: number) {
-5. this._temp = value;
-6. }
+  constructor(value: number) {
+    this._temp = value;
+  }
 
-8. compareTo(value: Temperature) {
-9. return this._temp >= value.getTemp();
-10. }
+  compareTo(value: Temperature) {
+    return this._temp >= value.getTemp();
+  }
 
-12. getTemp() {
-13. return this._temp;
-14. }
+  getTemp() {
+    return this._temp;
+  }
 
-16. toString(): string {
-17. return this._temp.toString();
-18. }
-19. }
+  toString(): string {
+    return this._temp.toString();
+  }
+}
 
-21. let tempLower = new Temperature(30);
-22. let tempUpper = new Temperature(40);
-23. let tempMiDF = new Temperature(35);
-24. let tempMidS = new Temperature(39);
-25. let range = new util.ScopeHelper(tempLower, tempUpper);
-26. let rangeFir = new util.ScopeHelper(tempMiDF, tempMidS);
-27. let result = range.expand(rangeFir);
-28. console.info("result = " + result);
-29. // 输出结果：result = [30, 40]
+let tempLower = new Temperature(30);
+let tempUpper = new Temperature(40);
+let tempMiDF = new Temperature(35);
+let tempMidS = new Temperature(39);
+let range = new util.ScopeHelper(tempLower, tempUpper);
+let rangeFir = new util.ScopeHelper(tempMiDF, tempMidS);
+let result = range.expand(rangeFir);
+console.info("result = " + result);
+// 输出结果：result = [30, 40]
 ```
 
 ### expand9+
-
-PhonePC/2in1TabletTVWearable
 
 expand(value: ScopeType): ScopeHelper
 
@@ -3480,7 +3350,7 @@ expand(value: ScopeType): ScopeHelper
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [ScopeType](js-apis-util.md#scopetype8) | 是 | 传入一个给定值。 |
+| value | [ScopeType](js-apis-util.md#scopetype8) | 是 | 要检查是否在当前范围内的值。 |
 
 **返回值：**
 
@@ -3488,49 +3358,39 @@ expand(value: ScopeType): ScopeHelper
 | --- | --- |
 | [ScopeHelper](js-apis-util.md#scopehelper9) | 返回包括当前范围和给定值的并集。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. class Temperature implements util.ScopeComparable {
-2. private readonly _temp: number;
+```ts
+class Temperature implements util.ScopeComparable {
+  private readonly _temp: number;
 
-4. constructor(value: number) {
-5. this._temp = value;
-6. }
+  constructor(value: number) {
+    this._temp = value;
+  }
 
-8. compareTo(value: Temperature) {
-9. return this._temp >= value.getTemp();
-10. }
+  compareTo(value: Temperature) {
+    return this._temp >= value.getTemp();
+  }
 
-12. getTemp() {
-13. return this._temp;
-14. }
+  getTemp() {
+    return this._temp;
+  }
 
-16. toString(): string {
-17. return this._temp.toString();
-18. }
-19. }
+  toString(): string {
+    return this._temp.toString();
+  }
+}
 
-21. let tempLower = new Temperature(30);
-22. let tempUpper = new Temperature(40);
-23. let tempMiDF = new Temperature(35);
-24. let range = new util.ScopeHelper(tempLower, tempUpper);
-25. let result = range.expand(tempMiDF);
-26. console.info("result = " + result);
-27. // 输出结果：result = [30, 40]
+let tempLower = new Temperature(30);
+let tempUpper = new Temperature(40);
+let tempMiDF = new Temperature(35);
+let range = new util.ScopeHelper(tempLower, tempUpper);
+let result = range.expand(tempMiDF);
+console.info("result = " + result);
+// 输出结果：result = [30, 40]
 ```
 
 ### contains9+
-
-PhonePC/2in1TabletTVWearable
 
 contains(value: ScopeType): boolean
 
@@ -3552,49 +3412,39 @@ contains(value: ScopeType): boolean
 | --- | --- |
 | boolean | 如果给定值包含在当前范围内返回true，否则返回false。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. class Temperature implements util.ScopeComparable {
-2. private readonly _temp: number;
+```ts
+class Temperature implements util.ScopeComparable {
+  private readonly _temp: number;
 
-4. constructor(value: number) {
-5. this._temp = value;
-6. }
+  constructor(value: number) {
+    this._temp = value;
+  }
 
-8. compareTo(value: Temperature) {
-9. return this._temp >= value.getTemp();
-10. }
+  compareTo(value: Temperature) {
+    return this._temp >= value.getTemp();
+  }
 
-12. getTemp() {
-13. return this._temp;
-14. }
+  getTemp() {
+    return this._temp;
+  }
 
-16. toString(): string {
-17. return this._temp.toString();
-18. }
-19. }
+  toString(): string {
+    return this._temp.toString();
+  }
+}
 
-21. let tempLower = new Temperature(30);
-22. let tempUpper = new Temperature(40);
-23. let tempMiDF = new Temperature(35);
-24. let range = new util.ScopeHelper(tempLower, tempUpper);
-25. let result = range.contains(tempMiDF);
-26. console.info("result = " + result);
-27. // 输出结果：result = true
+let tempLower = new Temperature(30);
+let tempUpper = new Temperature(40);
+let tempMiDF = new Temperature(35);
+let range = new util.ScopeHelper(tempLower, tempUpper);
+let result = range.contains(tempMiDF);
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### contains9+
-
-PhonePC/2in1TabletTVWearable
 
 contains(range: ScopeHelper): boolean
 
@@ -3616,51 +3466,41 @@ contains(range: ScopeHelper): boolean
 | --- | --- |
 | boolean | 如果给定范围在当前范围内则返回true，否则返回false。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. class Temperature implements util.ScopeComparable {
-2. private readonly _temp: number;
+```ts
+class Temperature implements util.ScopeComparable {
+  private readonly _temp: number;
 
-4. constructor(value: number) {
-5. this._temp = value;
-6. }
+  constructor(value: number) {
+    this._temp = value;
+  }
 
-8. compareTo(value: Temperature) {
-9. return this._temp >= value.getTemp();
-10. }
+  compareTo(value: Temperature) {
+    return this._temp >= value.getTemp();
+  }
 
-12. getTemp() {
-13. return this._temp;
-14. }
+  getTemp() {
+    return this._temp;
+  }
 
-16. toString(): string {
-17. return this._temp.toString();
-18. }
-19. }
+  toString(): string {
+    return this._temp.toString();
+  }
+}
 
-21. let tempLower = new Temperature(30);
-22. let tempUpper = new Temperature(40);
-23. let range = new util.ScopeHelper(tempLower, tempUpper);
-24. let tempLess = new Temperature(20);
-25. let tempMore = new Temperature(45);
-26. let rangeSec = new util.ScopeHelper(tempLess, tempMore);
-27. let result = range.contains(rangeSec);
-28. console.info("result = " + result);
-29. // 输出结果：result = false
+let tempLower = new Temperature(30);
+let tempUpper = new Temperature(40);
+let range = new util.ScopeHelper(tempLower, tempUpper);
+let tempLess = new Temperature(20);
+let tempMore = new Temperature(45);
+let rangeSec = new util.ScopeHelper(tempLess, tempMore);
+let result = range.contains(rangeSec);
+console.info("result = " + result);
+// 输出结果：result = false
 ```
 
 ### clamp9+
-
-PhonePC/2in1TabletTVWearable
 
 clamp(value: ScopeType): ScopeType
 
@@ -3682,79 +3522,65 @@ clamp(value: ScopeType): ScopeType
 | --- | --- |
 | [ScopeType](js-apis-util.md#scopetype8) | 如果传入的value小于下限，返回lowerObj；如果大于上限值，返回upperObj；如果在当前范围内，返回value。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. class Temperature implements util.ScopeComparable {
-2. private readonly _temp: number;
+```ts
+class Temperature implements util.ScopeComparable {
+  private readonly _temp: number;
 
-4. constructor(value: number) {
-5. this._temp = value;
-6. }
+  constructor(value: number) {
+    this._temp = value;
+  }
 
-8. compareTo(value: Temperature) {
-9. return this._temp >= value.getTemp();
-10. }
+  compareTo(value: Temperature) {
+    return this._temp >= value.getTemp();
+  }
 
-12. getTemp() {
-13. return this._temp;
-14. }
+  getTemp() {
+    return this._temp;
+  }
 
-16. toString(): string {
-17. return this._temp.toString();
-18. }
-19. }
+  toString(): string {
+    return this._temp.toString();
+  }
+}
 
-21. let tempLower = new Temperature(30);
-22. let tempUpper = new Temperature(40);
-23. let tempMiDF = new Temperature(35);
-24. let range = new util.ScopeHelper(tempLower, tempUpper);
-25. let result = range.clamp(tempMiDF);
-26. console.info("result = " + result);
-27. // 输出结果：result = 35
+let tempLower = new Temperature(30);
+let tempUpper = new Temperature(40);
+let tempMiDF = new Temperature(35);
+let range = new util.ScopeHelper(tempLower, tempUpper);
+let result = range.clamp(tempMiDF);
+console.info("result = " + result);
+// 输出结果：result = 35
 ```
 
 ## Base64Helper9+
-
-PhonePC/2in1TabletTVWearable
 
 Base64Helper类提供Base64编解码和Base64URL编解码功能。Base64编码表包含A-Z、a-z、0-9这62个字符，以及"+"和"/"这两个特殊字符。在编码时，将原始数据按3个字节一组进行划分，得到若干个6位的数字，然后使用Base64编码表中对应的字符来表示这些数字。如果最后剩余1或2个字节，则需要使用"="字符进行补齐。Base64URL编码表包含A-Z、a-z、0-9以及"-"和"\_"64个字符，Base64URL编码结果不含"="。
 
 ### constructor9+
 
-PhonePC/2in1TabletTVWearable
-
 constructor()
 
-Base64Helper的构造函数。
+Base64Helper的构造函数，创建一个用于Base64编解码的Base64Helper实例。
 
 **系统能力：** SystemCapability.Utils.Lang
 
-**元服务API**：从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **示例：**
 
-```
-1. let base64 = new util.Base64Helper();
+```ts
+let base64 = new util.Base64Helper();
 ```
 
 ### encodeSync9+
-
-PhonePC/2in1TabletTVWearable
 
 encodeSync(src: Uint8Array, options?: Type): Uint8Array
 
 通过输入参数编码后输出Uint8Array对象。
 
-**元服务API**：从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -3771,33 +3597,23 @@ encodeSync(src: Uint8Array, options?: Type): Uint8Array
 | --- | --- |
 | Uint8Array | 返回编码后的Uint8Array对象。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. let base64Helper = new util.Base64Helper();
-2. let array = new Uint8Array([115,49,51]);
-3. let result = base64Helper.encodeSync(array);
-4. console.info("result = " + result);
-5. // 输出结果：result = 99,122,69,122
+```ts
+let base64Helper = new util.Base64Helper();
+let array = new Uint8Array([115,49,51]);
+let result = base64Helper.encodeSync(array);
+console.info("result = " + result);
+// 输出结果：result = 99,122,69,122
 ```
 
 ### encodeToStringSync9+
-
-PhonePC/2in1TabletTVWearable
 
 encodeToStringSync(src: Uint8Array, options?: Type): string
 
 将输入的Uint8Array字节数组进行Base64编码，返回一个字符串结果。该方法支持多种编码格式，包括标准Base64编码、MIME格式的Base64编码（带有换行符）、URL安全格式的Base64编码等。
 
-**元服务API**：从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -3814,94 +3630,84 @@ encodeToStringSync(src: Uint8Array, options?: Type): string
 | --- | --- |
 | string | 返回编码后的字符串。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. // MIME编码
-2. let base64Helper = new util.Base64Helper();
-3. let array =
-4. new Uint8Array([77, 97, 110, 105, 115, 100, 105, 115, 116, 105, 110, 103, 117, 105, 115, 104, 101, 100, 110, 111, 116,
-5. 111, 110, 108, 121, 98, 121, 104, 105, 115, 114, 101, 97, 115, 111, 110, 98, 117, 116, 98, 121, 116, 104, 105, 115,
-6. 115, 105, 110, 103, 117, 108, 97, 114, 112, 97, 115, 115, 105, 111, 110, 102, 114, 111, 109, 111, 116, 104, 101,
-7. 114, 97, 110, 105, 109, 97, 108, 115, 119, 104, 105, 99, 104, 105, 115, 97, 108, 117, 115, 116, 111, 102, 116, 104,
-8. 101, 109, 105, 110, 100, 101, 120, 99, 101, 101, 100, 115, 116, 104, 101, 115, 104, 111, 114, 116, 118, 101, 104,
-9. 101, 109, 101, 110, 99, 101, 111, 102, 97, 110, 121, 99, 97, 114, 110, 97, 108, 112, 108, 101, 97, 115, 117, 114,
-10. 101]);
-11. let result = base64Helper.encodeToStringSync(array, util.Type.MIME);
-12. console.info("result = " + result);
-13. /*
-14. 输出结果：result = TWFuaXNkaXN0aW5ndWlzaGVkbm90b25seWJ5aGlzcmVhc29uYnV0Ynl0aGlzc2luZ3VsYXJwYXNz
-15. aW9uZnJvbW90aGVyYW5pbWFsc3doaWNoaXNhbHVzdG9mdGhlbWluZGV4Y2VlZHN0aGVzaG9ydHZl
-16. aGVtZW5jZW9mYW55Y2FybmFscGxlYXN1cmU=
-17. */
+```ts
+// MIME编码
+let base64Helper = new util.Base64Helper();
+let array =
+  new Uint8Array([77, 97, 110, 105, 115, 100, 105, 115, 116, 105, 110, 103, 117, 105, 115, 104, 101, 100, 110, 111, 116,
+    111, 110, 108, 121, 98, 121, 104, 105, 115, 114, 101, 97, 115, 111, 110, 98, 117, 116, 98, 121, 116, 104, 105, 115,
+    115, 105, 110, 103, 117, 108, 97, 114, 112, 97, 115, 115, 105, 111, 110, 102, 114, 111, 109, 111, 116, 104, 101,
+    114, 97, 110, 105, 109, 97, 108, 115, 119, 104, 105, 99, 104, 105, 115, 97, 108, 117, 115, 116, 111, 102, 116, 104,
+    101, 109, 105, 110, 100, 101, 120, 99, 101, 101, 100, 115, 116, 104, 101, 115, 104, 111, 114, 116, 118, 101, 104,
+    101, 109, 101, 110, 99, 101, 111, 102, 97, 110, 121, 99, 97, 114, 110, 97, 108, 112, 108, 101, 97, 115, 117, 114,
+    101]);
+let result = base64Helper.encodeToStringSync(array, util.Type.MIME);
+console.info("result = " + result);
+/*
+输出结果：result = TWFuaXNkaXN0aW5ndWlzaGVkbm90b25seWJ5aGlzcmVhc29uYnV0Ynl0aGlzc2luZ3VsYXJwYXNz
+aW9uZnJvbW90aGVyYW5pbWFsc3doaWNoaXNhbHVzdG9mdGhlbWluZGV4Y2VlZHN0aGVzaG9ydHZl
+aGVtZW5jZW9mYW55Y2FybmFscGxlYXN1cmU=
+ */
 
-19. // BASIC编码
-20. let base64Helper = new util.Base64Helper();
-21. let array =
-22. new Uint8Array([77, 97, 110, 105, 115, 100, 105, 115, 116, 105, 110, 103, 117, 105, 115, 104, 101, 100, 110, 111, 116,
-23. 111, 110, 108, 121, 98, 121, 104, 105, 115, 114, 101, 97, 115, 111, 110, 98, 117, 116, 98, 121, 116, 104, 105, 115,
-24. 115, 105, 110, 103, 117, 108, 97, 114, 112, 97, 115, 115, 105, 111, 110, 102, 114, 111, 109, 111, 116, 104, 101,
-25. 114, 97, 110, 105, 109, 97, 108, 115, 119, 104, 105, 99, 104, 105, 115, 97, 108, 117, 115, 116, 111, 102, 116, 104,
-26. 101, 109, 105, 110, 100, 101, 120, 99, 101, 101, 100, 115, 116, 104, 101, 115, 104, 111, 114, 116, 118, 101, 104,
-27. 101, 109, 101, 110, 99, 101, 111, 102, 97, 110, 121, 99, 97, 114, 110, 97, 108, 112, 108, 101, 97, 115, 117, 114,
-28. 101]);
-29. let result = base64Helper.encodeToStringSync(array, util.Type.BASIC);
-30. console.info("result = " + result);
-31. /*
-32. 输出结果：result = TWFuaXNkaXN0aW5ndWlzaGVkbm90b25seWJ5aGlzcmVhc29uYnV0Ynl0aGlzc2luZ3VsYXJwYXNzaW9uZnJvbW90aGVyYW5pbWFsc3doaWNoaXNhbHVzdG9mdGhlbWluZGV4Y2VlZHN0aGVzaG9ydHZlaGVtZW5jZW9mYW55Y2FybmFscGxlYXN1cmU=
-33. */
+// BASIC编码
+let base64Helper = new util.Base64Helper();
+let array =
+  new Uint8Array([77, 97, 110, 105, 115, 100, 105, 115, 116, 105, 110, 103, 117, 105, 115, 104, 101, 100, 110, 111, 116,
+    111, 110, 108, 121, 98, 121, 104, 105, 115, 114, 101, 97, 115, 111, 110, 98, 117, 116, 98, 121, 116, 104, 105, 115,
+    115, 105, 110, 103, 117, 108, 97, 114, 112, 97, 115, 115, 105, 111, 110, 102, 114, 111, 109, 111, 116, 104, 101,
+    114, 97, 110, 105, 109, 97, 108, 115, 119, 104, 105, 99, 104, 105, 115, 97, 108, 117, 115, 116, 111, 102, 116, 104,
+    101, 109, 105, 110, 100, 101, 120, 99, 101, 101, 100, 115, 116, 104, 101, 115, 104, 111, 114, 116, 118, 101, 104,
+    101, 109, 101, 110, 99, 101, 111, 102, 97, 110, 121, 99, 97, 114, 110, 97, 108, 112, 108, 101, 97, 115, 117, 114,
+    101]);
+let result = base64Helper.encodeToStringSync(array, util.Type.BASIC);
+console.info("result = " + result);
+/*
+输出结果：result = TWFuaXNkaXN0aW5ndWlzaGVkbm90b25seWJ5aGlzcmVhc29uYnV0Ynl0aGlzc2luZ3VsYXJwYXNzaW9uZnJvbW90aGVyYW5pbWFsc3doaWNoaXNhbHVzdG9mdGhlbWluZGV4Y2VlZHN0aGVzaG9ydHZlaGVtZW5jZW9mYW55Y2FybmFscGxlYXN1cmU=
+ */
 
-35. // MIME_URL_SAFE编码
-36. let base64Helper = new util.Base64Helper();
-37. let array =
-38. new Uint8Array([77, 97, 110, 105, 115, 100, 105, 115, 116, 105, 110, 103, 117, 105, 115, 104, 101, 100, 110, 111, 116,
-39. 111, 110, 108, 121, 98, 121, 104, 105, 115, 114, 101, 97, 115, 111, 110, 98, 117, 116, 98, 121, 116, 104, 105, 115,
-40. 115, 105, 110, 103, 117, 108, 97, 114, 112, 97, 115, 115, 105, 111, 110, 102, 114, 111, 109, 111, 116, 104, 101,
-41. 114, 97, 110, 105, 109, 97, 108, 115, 119, 104, 105, 99, 104, 105, 115, 97, 108, 117, 115, 116, 111, 102, 116, 104,
-42. 101, 109, 105, 110, 100, 101, 120, 99, 101, 101, 100, 115, 116, 104, 101, 115, 104, 111, 114, 116, 118, 101, 104,
-43. 101, 109, 101, 110, 99, 101, 111, 102, 97, 110, 121, 99, 97, 114, 110, 97, 108, 112, 108, 101, 97, 115, 117, 114,
-44. 101]);
-45. let result = base64Helper.encodeToStringSync(array, util.Type.BASIC_URL_SAFE);
-46. console.info("result = " + result);
-47. /*
-48. 输出结果：result = TWFuaXNkaXN0aW5ndWlzaGVkbm90b25seWJ5aGlzcmVhc29uYnV0Ynl0aGlzc2luZ3VsYXJwYXNzaW9uZnJvbW90aGVyYW5pbWFsc3doaWNoaXNhbHVzdG9mdGhlbWluZGV4Y2VlZHN0aGVzaG9ydHZlaGVtZW5jZW9mYW55Y2FybmFscGxlYXN1cmU
-49. */
-50. // MIME_URL_SAFE编码
-51. let base64Helper = new util.Base64Helper();
-52. let array =
-53. new Uint8Array([77, 97, 110, 105, 115, 100, 105, 115, 116, 105, 110, 103, 117, 105, 115, 104, 101, 100, 110, 111, 116,
-54. 111, 110, 108, 121, 98, 121, 104, 105, 115, 114, 101, 97, 115, 111, 110, 98, 117, 116, 98, 121, 116, 104, 105, 115,
-55. 115, 105, 110, 103, 117, 108, 97, 114, 112, 97, 115, 115, 105, 111, 110, 102, 114, 111, 109, 111, 116, 104, 101,
-56. 114, 97, 110, 105, 109, 97, 108, 115, 119, 104, 105, 99, 104, 105, 115, 97, 108, 117, 115, 116, 111, 102, 116, 104,
-57. 101, 109, 105, 110, 100, 101, 120, 99, 101, 101, 100, 115, 116, 104, 101, 115, 104, 111, 114, 116, 118, 101, 104,
-58. 101, 109, 101, 110, 99, 101, 111, 102, 97, 110, 121, 99, 97, 114, 110, 97, 108, 112, 108, 101, 97, 115, 117, 114,
-59. 101]);
-60. let result = base64Helper.encodeToStringSync(array, util.Type.MIME_URL_SAFE);
-61. console.info("result = " + result);
-62. /*
-63. 输出结果：result = TWFuaXNkaXN0aW5ndWlzaGVkbm90b25seWJ5aGlzcmVhc29uYnV0Ynl0aGlzc2luZ3VsYXJwYXNz
-64. aW9uZnJvbW90aGVyYW5pbWFsc3doaWNoaXNhbHVzdG9mdGhlbWluZGV4Y2VlZHN0aGVzaG9ydHZl
-65. aGVtZW5jZW9mYW55Y2FybmFscGxlYXN1cmU
-66. */
+// MIME_URL_SAFE编码
+let base64Helper = new util.Base64Helper();
+let array =
+  new Uint8Array([77, 97, 110, 105, 115, 100, 105, 115, 116, 105, 110, 103, 117, 105, 115, 104, 101, 100, 110, 111, 116,
+    111, 110, 108, 121, 98, 121, 104, 105, 115, 114, 101, 97, 115, 111, 110, 98, 117, 116, 98, 121, 116, 104, 105, 115,
+    115, 105, 110, 103, 117, 108, 97, 114, 112, 97, 115, 115, 105, 111, 110, 102, 114, 111, 109, 111, 116, 104, 101,
+    114, 97, 110, 105, 109, 97, 108, 115, 119, 104, 105, 99, 104, 105, 115, 97, 108, 117, 115, 116, 111, 102, 116, 104,
+    101, 109, 105, 110, 100, 101, 120, 99, 101, 101, 100, 115, 116, 104, 101, 115, 104, 111, 114, 116, 118, 101, 104,
+    101, 109, 101, 110, 99, 101, 111, 102, 97, 110, 121, 99, 97, 114, 110, 97, 108, 112, 108, 101, 97, 115, 117, 114,
+    101]);
+let result = base64Helper.encodeToStringSync(array, util.Type.BASIC_URL_SAFE);
+console.info("result = " + result);
+/*
+输出结果：result = TWFuaXNkaXN0aW5ndWlzaGVkbm90b25seWJ5aGlzcmVhc29uYnV0Ynl0aGlzc2luZ3VsYXJwYXNzaW9uZnJvbW90aGVyYW5pbWFsc3doaWNoaXNhbHVzdG9mdGhlbWluZGV4Y2VlZHN0aGVzaG9ydHZlaGVtZW5jZW9mYW55Y2FybmFscGxlYXN1cmU
+ */
+// MIME_URL_SAFE编码
+let base64Helper = new util.Base64Helper();
+let array =
+  new Uint8Array([77, 97, 110, 105, 115, 100, 105, 115, 116, 105, 110, 103, 117, 105, 115, 104, 101, 100, 110, 111, 116,
+    111, 110, 108, 121, 98, 121, 104, 105, 115, 114, 101, 97, 115, 111, 110, 98, 117, 116, 98, 121, 116, 104, 105, 115,
+    115, 105, 110, 103, 117, 108, 97, 114, 112, 97, 115, 115, 105, 111, 110, 102, 114, 111, 109, 111, 116, 104, 101,
+    114, 97, 110, 105, 109, 97, 108, 115, 119, 104, 105, 99, 104, 105, 115, 97, 108, 117, 115, 116, 111, 102, 116, 104,
+    101, 109, 105, 110, 100, 101, 120, 99, 101, 101, 100, 115, 116, 104, 101, 115, 104, 111, 114, 116, 118, 101, 104,
+    101, 109, 101, 110, 99, 101, 111, 102, 97, 110, 121, 99, 97, 114, 110, 97, 108, 112, 108, 101, 97, 115, 117, 114,
+    101]);
+let result = base64Helper.encodeToStringSync(array, util.Type.MIME_URL_SAFE);
+console.info("result = " + result);
+/*
+输出结果：result = TWFuaXNkaXN0aW5ndWlzaGVkbm90b25seWJ5aGlzcmVhc29uYnV0Ynl0aGlzc2luZ3VsYXJwYXNz
+aW9uZnJvbW90aGVyYW5pbWFsc3doaWNoaXNhbHVzdG9mdGhlbWluZGV4Y2VlZHN0aGVzaG9ydHZl
+aGVtZW5jZW9mYW55Y2FybmFscGxlYXN1cmU
+ */
 ```
 
 ### decodeSync9+
-
-PhonePC/2in1TabletTVWearable
 
 decodeSync(src: Uint8Array | string, options?: Type): Uint8Array
 
 将输入参数解码后输出对应Uint8Array对象。
 
-**元服务API**：从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -3918,35 +3724,25 @@ decodeSync(src: Uint8Array | string, options?: Type): Uint8Array
 | --- | --- |
 | Uint8Array | 返回解码后新分配的Uint8Array对象。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. let base64Helper = new util.Base64Helper();
-2. let buff = 'TWFuaXNkaXN0aW5ndWlzaGVkbm90b25seWJ5aGlzcmVhc29uYnV0Ynl0aGlzc2luZ3VsYXJwYXNz\r\naW9uZnJvbW90aGVyYW5pbWFsc3doaWNoaXNhbHVzdG9mdGhlbWluZGV4Y2VlZHN0aGVzaG9ydHZl\r\naGVtZW5jZW9mYW55Y2FybmFscGxlYXN1cmU=\r\n';
-3. let result = base64Helper.decodeSync(buff, util.Type.MIME);
-4. console.info("result = " + result);
-5. /*
-6. 输出结果：result = 77,97,110,105,115,100,105,115,116,105,110,103,117,105,115,104,101,100,110,111,116,111,110,108,121,98,121,104,105,115,114,101,97,115,111,110,98,117,116,98,121,116,104,105,115,115,105,110,103,117,108,97,114,112,97,115,115,105,111,110,102,114,111,109,111,116,104,101,114,97,110,105,109,97,108,115,119,104,105,99,104,105,115,97,108,117,115,116,111,102,116,104,101,109,105,110,100,101,120,99,101,101,100,115,116,104,101,115,104,111,114,116,118,101,104,101,109,101,110,99,101,111,102,97,110,121,99,97,114,110,97,108,112,108,101,97,115,117,114,101
-7. */
+```ts
+let base64Helper = new util.Base64Helper();
+let buff = 'TWFuaXNkaXN0aW5ndWlzaGVkbm90b25seWJ5aGlzcmVhc29uYnV0Ynl0aGlzc2luZ3VsYXJwYXNz\r\naW9uZnJvbW90aGVyYW5pbWFsc3doaWNoaXNhbHVzdG9mdGhlbWluZGV4Y2VlZHN0aGVzaG9ydHZl\r\naGVtZW5jZW9mYW55Y2FybmFscGxlYXN1cmU=\r\n';
+let result = base64Helper.decodeSync(buff, util.Type.MIME);
+console.info("result = " + result);
+/*
+输出结果：result = 77,97,110,105,115,100,105,115,116,105,110,103,117,105,115,104,101,100,110,111,116,111,110,108,121,98,121,104,105,115,114,101,97,115,111,110,98,117,116,98,121,116,104,105,115,115,105,110,103,117,108,97,114,112,97,115,115,105,111,110,102,114,111,109,111,116,104,101,114,97,110,105,109,97,108,115,119,104,105,99,104,105,115,97,108,117,115,116,111,102,116,104,101,109,105,110,100,101,120,99,101,101,100,115,116,104,101,115,104,111,114,116,118,101,104,101,109,101,110,99,101,111,102,97,110,121,99,97,114,110,97,108,112,108,101,97,115,117,114,101
+ */
 ```
 
 ### encode9+
-
-PhonePC/2in1TabletTVWearable
 
 encode(src: Uint8Array, options?: Type): Promise<Uint8Array>
 
 将输入参数异步编码后输出对应Uint8Array对象。使用Promise异步回调。
 
-**元服务API**：从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -3961,34 +3757,24 @@ encode(src: Uint8Array, options?: Type): Promise<Uint8Array>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<Uint8Array> | Promise对象，返回异步编码后新分配的Uint8Array对象。 |
-
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| Promise<Uint8Array> | Promise对象。编码成功时resolve为新分配的Uint8Array对象，编码失败时reject为错误对象。 |
 
 **示例：**
 
-```
-1. let base64Helper = new util.Base64Helper();
-2. let array = new Uint8Array([115,49,51]);
-3. base64Helper.encode(array).then((val) => {
-4. console.info(val.toString());
-5. // 输出结果：99,122,69,122
-6. })
+```ts
+let base64Helper = new util.Base64Helper();
+let array = new Uint8Array([115,49,51]);
+base64Helper.encode(array).then((val) => {
+  console.info(val.toString());
+  // 输出结果：99,122,69,122
+})
 ```
 
 ### encodeToString9+
 
-PhonePC/2in1TabletTVWearable
-
 encodeToString(src: Uint8Array, options?: Type): Promise<string>
 
-将输入参数异步编码后输出对应文本。
+将输入参数异步编码后输出对应文本。使用Promise异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -4005,39 +3791,29 @@ encodeToString(src: Uint8Array, options?: Type): Promise<string>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<string> | 返回异步编码后的字符串。 |
-
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| Promise<string> | Promise对象。编码成功时resolve为Base64编码后的字符串，编码失败时reject为错误对象。 |
 
 **示例：**
 
-```
-1. let base64Helper = new util.Base64Helper();
-2. let array = new Uint8Array([77,97,110,105,115,100,105,115,116,105,110,103,117,105,115,104,101,100,110,111,116,111,110,108,121,98,121,104,105,115,114,101,97,115,111,110,98,117,116,98,121,116,104,105,115,115,105,110,103,117,108,97,114,112,97,115,115,105,111,110,102,114,111,109,111,116,104,101,114,97,110,105,109,97,108,115,119,104,105,99,104,105,115,97,108,117,115,116,111,102,116,104,101,109,105,110,100,101,120,99,101,101,100,115,116,104,101,115,104,111,114,116,118,101,104,101,109,101,110,99,101,111,102,97,110,121,99,97,114,110,97,108,112,108,101,97,115,117,114,101]);
-3. base64Helper.encodeToString(array, util.Type.MIME).then((val) => {
-4. console.info(val);
-5. /*
-6. 输出结果：TWFuaXNkaXN0aW5ndWlzaGVkbm90b25seWJ5aGlzcmVhc29uYnV0Ynl0aGlzc2luZ3VsYXJwYXNz
-7. aW9uZnJvbW90aGVyYW5pbWFsc3doaWNoaXNhbHVzdG9mdGhlbWluZGV4Y2VlZHN0aGVzaG9ydHZl
-8. aGVtZW5jZW9mYW55Y2FybmFscGxlYXN1cmU=
-9. */
+```ts
+let base64Helper = new util.Base64Helper();
+let array = new Uint8Array([77,97,110,105,115,100,105,115,116,105,110,103,117,105,115,104,101,100,110,111,116,111,110,108,121,98,121,104,105,115,114,101,97,115,111,110,98,117,116,98,121,116,104,105,115,115,105,110,103,117,108,97,114,112,97,115,115,105,111,110,102,114,111,109,111,116,104,101,114,97,110,105,109,97,108,115,119,104,105,99,104,105,115,97,108,117,115,116,111,102,116,104,101,109,105,110,100,101,120,99,101,101,100,115,116,104,101,115,104,111,114,116,118,101,104,101,109,101,110,99,101,111,102,97,110,121,99,97,114,110,97,108,112,108,101,97,115,117,114,101]);
+base64Helper.encodeToString(array, util.Type.MIME).then((val) => {
+  console.info(val);
+  /*
+  输出结果：TWFuaXNkaXN0aW5ndWlzaGVkbm90b25seWJ5aGlzcmVhc29uYnV0Ynl0aGlzc2luZ3VsYXJwYXNz
+  aW9uZnJvbW90aGVyYW5pbWFsc3doaWNoaXNhbHVzdG9mdGhlbWluZGV4Y2VlZHN0aGVzaG9ydHZl
+  aGVtZW5jZW9mYW55Y2FybmFscGxlYXN1cmU=
+   */
 
-11. })
+})
 ```
 
 ### decode9+
 
-PhonePC/2in1TabletTVWearable
-
 decode(src: Uint8Array | string, options?: Type): Promise<Uint8Array>
 
-将输入参数异步解码后输出对应Uint8Array对象。
+将输入参数异步解码后输出对应Uint8Array对象。使用Promise异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -4056,42 +3832,30 @@ decode(src: Uint8Array | string, options?: Type): Promise<Uint8Array>
 | --- | --- |
 | Promise<Uint8Array> | 返回异步解码后新分配的Uint8Array对象。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. let base64Helper = new util.Base64Helper();
-2. let array = 'TWFuaXNkaXN0aW5ndWlzaGVkbm90b25seWJ5aGlzcmVhc29uYnV0Ynl0aGlzc2luZ3VsYXJwYXNz\r\naW9uZnJvbW90aGVyYW5pbWFsc3doaWNoaXNhbHVzdG9mdGhlbWluZGV4Y2VlZHN0aGVzaG9ydHZl\r\naGVtZW5jZW9mYW55Y2FybmFscGxlYXN1cmU=\r\n';
-3. base64Helper.decode(array, util.Type.MIME).then((val) => {
-4. console.info(val.toString());
-5. /*
-6. 输出结果：77,97,110,105,115,100,105,115,116,105,110,103,117,105,115,104,101,100,110,111,116,111,110,108,121,98,121,104,105,115,114,101,97,115,111,110,98,117,116,98,121,116,104,105,115,115,105,110,103,117,108,97,114,112,97,115,115,105,111,110,102,114,111,109,111,116,104,101,114,97,110,105,109,97,108,115,119,104,105,99,104,105,115,97,108,117,115,116,111,102,116,104,101,109,105,110,100,101,120,99,101,101,100,115,116,104,101,115,104,111,114,116,118,101,104,101,109,101,110,99,101,111,102,97,110,121,99,97,114,110,97,108,112,108,101,97,115,117,114,101
-7. */
-8. })
+```ts
+let base64Helper = new util.Base64Helper();
+let array = 'TWFuaXNkaXN0aW5ndWlzaGVkbm90b25seWJ5aGlzcmVhc29uYnV0Ynl0aGlzc2luZ3VsYXJwYXNz\r\naW9uZnJvbW90aGVyYW5pbWFsc3doaWNoaXNhbHVzdG9mdGhlbWluZGV4Y2VlZHN0aGVzaG9ydHZl\r\naGVtZW5jZW9mYW55Y2FybmFscGxlYXN1cmU=\r\n';
+base64Helper.decode(array, util.Type.MIME).then((val) => {
+  console.info(val.toString());
+  /*
+  输出结果：77,97,110,105,115,100,105,115,116,105,110,103,117,105,115,104,101,100,110,111,116,111,110,108,121,98,121,104,105,115,114,101,97,115,111,110,98,117,116,98,121,116,104,105,115,115,105,110,103,117,108,97,114,112,97,115,115,105,111,110,102,114,111,109,111,116,104,101,114,97,110,105,109,97,108,115,119,104,105,99,104,105,115,97,108,117,115,116,111,102,116,104,101,109,105,110,100,101,120,99,101,101,100,115,116,104,101,115,104,111,114,116,118,101,104,101,109,101,110,99,101,111,102,97,110,121,99,97,114,110,97,108,112,108,101,97,115,117,114,101
+   */
+})
 ```
 
 ## StringDecoder12+
-
-PhonePC/2in1TabletTVWearable
 
 提供将二进制流解码为字符串的能力。支持的编码类型包括：utf-8、iso-8859-2、koi8-r、macintosh、windows-1250、windows-1251、gbk、gb18030、big5、utf-16be、utf-16le等。
 
 ### constructor12+
 
-PhonePC/2in1TabletTVWearable
-
 constructor(encoding?: string)
 
-StringDecoder的构造函数。
+StringDecoder的构造函数，创建一个默认编码为'utf-8'的StringDecoder实例。
 
-**元服务API**：从API version 12开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -4101,29 +3865,19 @@ StringDecoder的构造函数。
 | --- | --- | --- | --- |
 | encoding | string | 否 | 输入数据的编码类型。默认值：'utf-8'。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-
 **示例：**
 
-```
-1. let decoder = new util.StringDecoder();
+```ts
+let decoder = new util.StringDecoder();
 ```
 
 ### write12+
-
-PhonePC/2in1TabletTVWearable
 
 write(chunk: string | Uint8Array): string
 
 返回一个解码后的字符串，确保Uint8Array末尾的任何不完整的多字节字符从返回的字符串中被过滤，并保存在一个内部的buffer中用于下次调用。
 
-**元服务API**：从API version 12开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -4137,35 +3891,25 @@ write(chunk: string | Uint8Array): string
 
 | 类型 | 说明 |
 | --- | --- |
-| string | 返回解码后的字符串。 |
-
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| string | 返回解码后的字符串，不完整的多字节字符已从返回值中过滤，并保存在内部缓冲区中供下次调用处理。 |
 
 **示例：**
 
-```
-1. let decoder = new util.StringDecoder('utf-8');
-2. let input =  new Uint8Array([0xE4, 0xBD, 0xA0, 0xE5, 0xA5, 0xBD]);
-3. const decoded = decoder.write(input);
-4. console.info("decoded:", decoded);
-5. // 输出结果：decoded: 你好
+```ts
+let decoder = new util.StringDecoder('utf-8');
+let input =  new Uint8Array([0xE4, 0xBD, 0xA0, 0xE5, 0xA5, 0xBD]);
+const decoded = decoder.write(input);
+console.info("decoded:", decoded);
+// 输出结果：decoded: 你好
 ```
 
 ### end12+
-
-PhonePC/2in1TabletTVWearable
 
 end(chunk?: string | Uint8Array): string
 
 结束解码过程，以字符串形式返回存储在内部缓冲区中的所有剩余输入。
 
-**元服务API**：从API version 12开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -4173,38 +3917,28 @@ end(chunk?: string | Uint8Array): string
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| chunk | string | Uint8Array | 否 | 需要解码的字符串。默认为undefined。 |
+| chunk | string | Uint8Array | 否 | 需要解码的最后一部分数据。当还有剩余数据需要在结束解码时一并处理时传入此参数；不传入时默认为undefined，即仅返回内部缓冲区中存储的不完整字节序列的解码结果，不再处理新数据。要解码的字符串。默认为undefined。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| string | 返回解码后的字符串。 |
-
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| string | 返回存储在内部缓冲区中的所有剩余解码内容组成的字符串。 |
 
 **示例：**
 
-```
-1. let decoder = new util.StringDecoder('utf-8');
-2. let input = new Uint8Array([0xE4, 0xBD, 0xA0, 0xE5, 0xA5, 0xBD]);
-3. const writeString = decoder.write(input.slice(0, 5));
-4. const endString = decoder.end(input.slice(5));
-5. console.info("writeString:", writeString);
-6. // 输出结果：writeString: 你
-7. console.info("endString:", endString);
-8. // 输出结果：endString: 好
+```ts
+let decoder = new util.StringDecoder('utf-8');
+let input = new Uint8Array([0xE4, 0xBD, 0xA0, 0xE5, 0xA5, 0xBD]);
+const writeString = decoder.write(input.slice(0, 5));
+const endString = decoder.end(input.slice(5));
+console.info("writeString:", writeString);
+// 输出结果：writeString: 你
+console.info("endString:", endString);
+// 输出结果：endString: 好
 ```
 
 ## Type10+
-
-PhonePC/2in1TabletTVWearable
 
 Base64编码格式枚举。
 
@@ -4212,24 +3946,20 @@ Base64编码格式枚举。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| BASIC | 0 | 表示BASIC编码格式。**元服务API**：从API version 11开始，该接口支持在元服务中使用。 |
-| MIME | 1 | 表示MIME编码格式。**元服务API**：从API version 11开始，该接口支持在元服务中使用。 |
-| BASIC\_URL\_SAFE12+ | 2 | 表示BASIC\_URL\_SAFE编码格式。  从API version 12开始支持此枚举。**元服务API**：从API version 12开始，该接口支持在元服务中使用。 |
-| MIME\_URL\_SAFE12+ | 3 | 表示MIME\_URL\_SAFE编码格式。  从API version 12开始支持此枚举。**元服务API**：从API version 12开始，该接口支持在元服务中使用。 |
+| BASIC | 0 | 表示BASIC编码格式。**元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| MIME | 1 | 表示MIME编码格式。**元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| BASIC\_URL\_SAFE12+ | 2 | 表示BASIC\_URL\_SAFE编码格式。  从API version 12开始支持此枚举。**元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| MIME\_URL\_SAFE12+ | 3 | 表示MIME\_URL\_SAFE编码格式。  从API version 12开始支持此枚举。**元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 
 ## types8+
-
-PhonePC/2in1TabletTVWearable
 
 types为不同类型的内置对象提供类型检查，可以避免由于类型错误导致的异常。该模块包含了多个工具函数，用于判断JS对象是否属于各种类型，例如：ArrayBuffer、Map、Set等。
 
 ### constructor8+
 
-PhonePC/2in1TabletTVWearable
-
 constructor()
 
-Types的构造函数。
+Types的构造函数，创建一个用于内置对象类型检查的types实例。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -4237,13 +3967,11 @@ Types的构造函数。
 
 **示例：**
 
-```
-1. let type = new util.types();
+```ts
+let type = new util.types();
 ```
 
 ### isAnyArrayBuffer8+
-
-PhonePC/2in1TabletTVWearable
 
 isAnyArrayBuffer(value: Object): boolean
 
@@ -4267,16 +3995,14 @@ isAnyArrayBuffer(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let result = type.isAnyArrayBuffer(new ArrayBuffer(0));
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let type = new util.types();
+let result = type.isAnyArrayBuffer(new ArrayBuffer(0));
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isArrayBufferView8+
-
-PhonePC/2in1TabletTVWearable
 
 isArrayBufferView(value: Object): boolean
 
@@ -4302,16 +4028,14 @@ ArrayBufferView类型包括：Int8Array、Int16Array、Int32Array、Uint8Array�
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let result = type.isArrayBufferView(new Int8Array([]));
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let type = new util.types();
+let result = type.isArrayBufferView(new Int8Array([]));
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isArgumentsObject8+
-
-PhonePC/2in1TabletTVWearable
 
 isArgumentsObject(value: Object): boolean
 
@@ -4335,19 +4059,17 @@ isArgumentsObject(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. function foo() {
-3. let result = type.isArgumentsObject(arguments);
-4. console.info("result = " + result);
-5. }
-6. let f = foo();
-7. // 输出结果：result = true
+```ts
+let type = new util.types();
+function foo() {
+    let result = type.isArgumentsObject(arguments);
+    console.info("result = " + result);
+}
+let f = foo();
+// 输出结果：result = true
 ```
 
 ### isArrayBuffer8+
-
-PhonePC/2in1TabletTVWearable
 
 isArrayBuffer(value: Object): boolean
 
@@ -4371,16 +4093,14 @@ isArrayBuffer(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let result = type.isArrayBuffer(new ArrayBuffer(0));
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let type = new util.types();
+let result = type.isArrayBuffer(new ArrayBuffer(0));
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isAsyncFunction8+
-
-PhonePC/2in1TabletTVWearable
 
 isAsyncFunction(value: Object): boolean
 
@@ -4404,24 +4124,56 @@ isAsyncFunction(value: Object): boolean
 
 **示例：**
 
+```ts
+let type = new util.types();
+let result = type.isAsyncFunction(async () => {});
+console.info("result = " + result);
+// 输出结果：result = true
 ```
-1. let type = new util.types();
-2. let result = type.isAsyncFunction(async () => {});
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+
+**说明** 
+
+该接口无法对AsyncGenerator Function进行有效判断，建议通过获取函数的constructor.name属性与'AsyncGeneratorFunction'做判等的方式替代。
+
+该接口无法对Sendable class中的async成员函数进行有效判断，无替代方案。
+
+```ts
+// /entry/src/main/ets/pages/test.ts
+export async function* asyncGeneratorFunc() {}
+```
+
+```ts
+import { asyncGeneratorFunc } from './test'
+
+@Sendable
+class SendableClass {
+  async asyncFunction() {}
+}
+
+let type = new util.types();
+let result1 = type.isAsyncFunction(asyncGeneratorFunc);
+console.info("result = " + result1);
+// 输出结果：result = false
+
+console.info("asyncGeneratorFunc.constructor.name === AsyncGeneratorFunction : " +
+  (asyncGeneratorFunc.constructor.name === 'AsyncGeneratorFunction'));
+// 输出结果：asyncGeneratorFunc.constructor.name === AsyncGeneratorFunction : true
+
+const instance = new SendableClass();
+let result2 = type.isAsyncFunction(instance.asyncFunction);
+console.info("result = " + result2);
+// 输出结果：result = false
 ```
 
 ### isBooleanObject(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isBooleanObject(value: Object): boolean
 
 检查value是否为Boolean对象。
 
-说明
+**说明** 
 
-从API version 8开始支持，从API version 14开始废弃，没有替代接口。
+从 API version 8开始支持，从API version 14开始废弃。没有替代接口。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -4441,22 +4193,20 @@ isBooleanObject(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let result = type.isBooleanObject(new Boolean(true));
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let type = new util.types();
+let result = type.isBooleanObject(new Boolean(true));
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isBoxedPrimitive(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isBoxedPrimitive(value: Object): boolean
 
 检查value是否为Boolean、Number、String或Symbol对象类型。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 14开始废弃，没有替代接口。
 
@@ -4478,16 +4228,14 @@ isBoxedPrimitive(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let result = type.isBoxedPrimitive(new Boolean(false));
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let type = new util.types();
+let result = type.isBoxedPrimitive(new Boolean(false));
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isDataView8+
-
-PhonePC/2in1TabletTVWearable
 
 isDataView(value: Object): boolean
 
@@ -4511,17 +4259,15 @@ isDataView(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. const ab = new ArrayBuffer(20);
-3. let result = type.isDataView(new DataView(ab));
-4. console.info("result = " + result);
-5. // 输出结果：result = true
+```ts
+let type = new util.types();
+const ab = new ArrayBuffer(20);
+let result = type.isDataView(new DataView(ab));
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isDate8+
-
-PhonePC/2in1TabletTVWearable
 
 isDate(value: Object): boolean
 
@@ -4545,16 +4291,14 @@ isDate(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let result = type.isDate(new Date());
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let type = new util.types();
+let result = type.isDate(new Date());
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isExternal8+
-
-PhonePC/2in1TabletTVWearable
 
 isExternal(value: Object): boolean
 
@@ -4578,54 +4322,52 @@ isExternal(value: Object): boolean
 
 **示例：**
 
+```cpp
+// /entry/src/main/cpp/napi_init.cpp
+#include "napi/native_api.h"
+#include <js_native_api.h>
+#include <stdlib.h>
+
+napi_value result;
+static napi_value Testexternal(napi_env env, napi_callback_info info) {
+    int* raw = (int*) malloc(1024);
+    napi_status status = napi_create_external(env, (void*) raw, NULL, NULL, &result);
+    if (status != napi_ok) {
+        napi_throw_error(env, NULL, "create external failed");
+        return NULL;
+    }
+    return result;
+}
+
+EXTERN_C_START
+static napi_value Init(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {
+        {"testexternal", nullptr, Testexternal, nullptr, nullptr, nullptr, napi_default, nullptr},
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    return exports;
+}
+EXTERN_C_END
+// 此处已省略模块注册的代码, 你可能需要自行注册Testexternal方法
+// ...
 ```
-1. // /entry/src/main/cpp/napi_init.cpp
-2. #include "napi/native_api.h"
-3. #include <js_native_api.h>
-4. #include <stdlib.h>
 
-6. napi_value result;
-7. static napi_value Testexternal(napi_env env, napi_callback_info info) {
-8. int* raw = (int*) malloc(1024);
-9. napi_status status = napi_create_external(env, (void*) raw, NULL, NULL, &result);
-10. if (status != napi_ok) {
-11. napi_throw_error(env, NULL, "create external failed");
-12. return NULL;
-13. }
-14. return result;
-15. }
+```ts
+import testNapi from 'libentry.so';
 
-17. EXTERN_C_START
-18. static napi_value Init(napi_env env, napi_value exports)
-19. {
-20. napi_property_descriptor desc[] = {
-21. {"testexternal", nullptr, Testexternal, nullptr, nullptr, nullptr, napi_default, nullptr},
-22. };
-23. napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
-24. return exports;
-25. }
-26. EXTERN_C_END
-27. // 此处已省略模块注册的代码, 你可能需要自行注册Testexternal方法
-28. ...
-```
+let type = new util.types();
+const data = testNapi.testexternal();
+let result = type.isExternal(data);
 
-```
-1. import testNapi from 'libentry.so';
-
-3. let type = new util.types();
-4. const data = testNapi.testexternal();
-5. let result = type.isExternal(data);
-
-7. let result01 = type.isExternal(true);
-8. console.info("result = " + result);
-9. console.info("result01 = " + result01);
-10. // 输出结果：result = true
-11. // 输出结果：result01 = false
+let result01 = type.isExternal(true);
+console.info("result = " + result);
+console.info("result01 = " + result01);
+// 输出结果：result = true
+// 输出结果：result01 = false
 ```
 
 ### isFloat32Array8+
-
-PhonePC/2in1TabletTVWearable
 
 isFloat32Array(value: Object): boolean
 
@@ -4649,16 +4391,14 @@ isFloat32Array(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let result = type.isFloat32Array(new Float32Array());
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let type = new util.types();
+let result = type.isFloat32Array(new Float32Array());
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isFloat64Array8+
-
-PhonePC/2in1TabletTVWearable
 
 isFloat64Array(value: Object): boolean
 
@@ -4682,16 +4422,14 @@ isFloat64Array(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let result = type.isFloat64Array(new Float64Array());
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let type = new util.types();
+let result = type.isFloat64Array(new Float64Array());
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isGeneratorFunction8+
-
-PhonePC/2in1TabletTVWearable
 
 isGeneratorFunction(value: Object): boolean
 
@@ -4715,23 +4453,43 @@ isGeneratorFunction(value: Object): boolean
 
 **示例：**
 
-```
-1. // /entry/src/main/ets/pages/test.ts
-2. export function* foo() {}
+```ts
+// /entry/src/main/ets/pages/test.ts
+export function* foo() {}
 ```
 
-```
-1. import { foo } from './test'
+```ts
+import { foo } from './test'
 
-3. let type = new util.types();
-4. let result = type.isGeneratorFunction(foo);
-5. console.info("result = " + result);
-6. // 输出结果：result = true
+let type = new util.types();
+let result = type.isGeneratorFunction(foo);
+console.info("result = " + result);
+// 输出结果：result = true
+```
+
+**说明** 
+
+该接口无法对AsyncGenerator Function进行有效判断，建议通过获取函数的constructor.name属性与'AsyncGeneratorFunction'做判等的方式替代。
+
+```ts
+// /entry/src/main/ets/pages/test.ts
+export async function* asyncGeneratorFunc() {}
+```
+
+```ts
+import { asyncGeneratorFunc } from './test'
+
+let type = new util.types();
+let result = type.isGeneratorFunction(asyncGeneratorFunc);
+console.info("result = " + result);
+// 输出结果：result = false
+
+console.info("asyncGeneratorFunc.constructor.name === AsyncGeneratorFunction : " +
+  (asyncGeneratorFunc.constructor.name === 'AsyncGeneratorFunction'));
+// 输出结果：asyncGeneratorFunc.constructor.name === AsyncGeneratorFunction : true
 ```
 
 ### isGeneratorObject8+
-
-PhonePC/2in1TabletTVWearable
 
 isGeneratorObject(value: Object): boolean
 
@@ -4755,24 +4513,22 @@ isGeneratorObject(value: Object): boolean
 
 **示例：**
 
-```
-1. // /entry/src/main/ets/pages/test.ts
-2. function* foo() {}
-3. export const generator = foo();
+```ts
+// /entry/src/main/ets/pages/test.ts
+function* foo() {}
+export const generator = foo();
 ```
 
-```
-1. import { generator } from './test'
+```ts
+import { generator } from './test'
 
-3. let type = new util.types();
-4. let result = type.isGeneratorObject(generator);
-5. console.info("result = " + result);
-6. // 输出结果：result = true
+let type = new util.types();
+let result = type.isGeneratorObject(generator);
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isInt8Array8+
-
-PhonePC/2in1TabletTVWearable
 
 isInt8Array(value: Object): boolean
 
@@ -4796,16 +4552,14 @@ isInt8Array(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let result = type.isInt8Array(new Int8Array([]));
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let type = new util.types();
+let result = type.isInt8Array(new Int8Array([]));
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isInt16Array8+
-
-PhonePC/2in1TabletTVWearable
 
 isInt16Array(value: Object): boolean
 
@@ -4829,16 +4583,14 @@ isInt16Array(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let result = type.isInt16Array(new Int16Array([]));
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let type = new util.types();
+let result = type.isInt16Array(new Int16Array([]));
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isInt32Array8+
-
-PhonePC/2in1TabletTVWearable
 
 isInt32Array(value: Object): boolean
 
@@ -4862,16 +4614,14 @@ isInt32Array(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let result = type.isInt32Array(new Int32Array([]));
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let type = new util.types();
+let result = type.isInt32Array(new Int32Array([]));
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isMap8+
-
-PhonePC/2in1TabletTVWearable
 
 isMap(value: Object): boolean
 
@@ -4891,20 +4641,18 @@ isMap(value: Object): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 如果是Map类型返回则返回true，否则返回false。 |
+| boolean | 如果是Map类型则返回true，否则返回false。 |
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let result = type.isMap(new Map());
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let type = new util.types();
+let result = type.isMap(new Map());
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isMapIterator8+
-
-PhonePC/2in1TabletTVWearable
 
 isMapIterator(value: Object): boolean
 
@@ -4928,17 +4676,15 @@ isMapIterator(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. const map : Map<number,number> = new Map();
-3. let result = type.isMapIterator(map.keys());
-4. console.info("result = " + result);
-5. // 输出结果：result = true
+```ts
+let type = new util.types();
+const map : Map<number,number> = new Map();
+let result = type.isMapIterator(map.keys());
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isNativeError8+
-
-PhonePC/2in1TabletTVWearable
 
 isNativeError(value: Object): boolean
 
@@ -4962,22 +4708,20 @@ isNativeError(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let result = type.isNativeError(new TypeError());
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let type = new util.types();
+let result = type.isNativeError(new TypeError());
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isNumberObject(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isNumberObject(value: Object): boolean
 
 检查value是否为Number对象类型。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 14开始废弃，没有替代接口。
 
@@ -4999,16 +4743,14 @@ isNumberObject(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let result = type.isNumberObject(new Number(0));
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let type = new util.types();
+let result = type.isNumberObject(new Number(0));
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isPromise8+
-
-PhonePC/2in1TabletTVWearable
 
 isPromise(value: Object): boolean
 
@@ -5032,16 +4774,14 @@ isPromise(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let result = type.isPromise(Promise.resolve(1));
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let type = new util.types();
+let result = type.isPromise(Promise.resolve(1));
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isProxy8+
-
-PhonePC/2in1TabletTVWearable
 
 isProxy(value: Object): boolean
 
@@ -5065,20 +4805,18 @@ isProxy(value: Object): boolean
 
 **示例：**
 
-```
-1. class Target{
-2. }
-3. let type = new util.types();
-4. const target : Target = {};
-5. const proxy = new Proxy(target, target);
-6. let result = type.isProxy(proxy);
-7. console.info("result = " + result);
-8. // 输出结果：result = true
+```ts
+class Target{
+}
+let type = new util.types();
+const target : Target = {};
+const proxy = new Proxy(target, target);
+let result = type.isProxy(proxy);
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isRegExp8+
-
-PhonePC/2in1TabletTVWearable
 
 isRegExp(value: Object): boolean
 
@@ -5102,16 +4840,14 @@ isRegExp(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let result = type.isRegExp(new RegExp('abc'));
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let type = new util.types();
+let result = type.isRegExp(new RegExp('abc'));
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isSet8+
-
-PhonePC/2in1TabletTVWearable
 
 isSet(value: Object): boolean
 
@@ -5135,17 +4871,15 @@ isSet(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let set : Set<number> = new Set();
-3. let result = type.isSet(set);
-4. console.info("result = " + result);
-5. // 输出结果：result = true
+```ts
+let type = new util.types();
+let set : Set<number> = new Set();
+let result = type.isSet(set);
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isSetIterator8+
-
-PhonePC/2in1TabletTVWearable
 
 isSetIterator(value: Object): boolean
 
@@ -5169,23 +4903,21 @@ isSetIterator(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. const set : Set<number> = new Set();
-3. let result = type.isSetIterator(set.keys());
-4. console.info("result = " + result);
-5. // 输出结果：result = true
+```ts
+let type = new util.types();
+const set : Set<number> = new Set();
+let result = type.isSetIterator(set.keys());
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isStringObject(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isStringObject(value: Object): boolean
 
 检查value是否为String对象类型。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 14开始废弃，没有替代接口。
 
@@ -5207,22 +4939,20 @@ isStringObject(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let result = type.isStringObject(new String('foo'));
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let type = new util.types();
+let result = type.isStringObject(new String('foo'));
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isSymbolObject(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isSymbolObject(value: Object): boolean
 
 检查value是否为Symbol对象类型。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 14开始废弃，没有替代接口。
 
@@ -5240,27 +4970,25 @@ isSymbolObject(value: Object): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 如果是Symbol对象类型为则返回true，否则返回false。 |
+| boolean | 如果是Symbol对象类型则返回true，否则返回false。 |
 
 **示例：**
 
-```
-1. // /entry/src/main/ets/pages/test.ts
-2. export const symbols = Symbol('foo');
+```ts
+// /entry/src/main/ets/pages/test.ts
+export const symbols = Symbol('foo');
 ```
 
-```
-1. import { symbols } from './test'
+```ts
+import { symbols } from './test'
 
-3. let type = new util.types();
-4. let result = type.isSymbolObject(Object(symbols));
-5. console.info("result = " + result);
-6. // 输出结果：result = true
+let type = new util.types();
+let result = type.isSymbolObject(Object(symbols));
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isTypedArray8+
-
-PhonePC/2in1TabletTVWearable
 
 isTypedArray(value: Object): boolean
 
@@ -5286,16 +5014,14 @@ TypedArray类型，包括Int8Array、Int16Array、Int32Array、Uint8Array、Uint
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let result = type.isTypedArray(new Float64Array([]));
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let type = new util.types();
+let result = type.isTypedArray(new Float64Array([]));
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isUint8Array8+
-
-PhonePC/2in1TabletTVWearable
 
 isUint8Array(value: Object): boolean
 
@@ -5319,16 +5045,14 @@ isUint8Array(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let result = type.isUint8Array(new Uint8Array([]));
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let type = new util.types();
+let result = type.isUint8Array(new Uint8Array([]));
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isUint8ClampedArray8+
-
-PhonePC/2in1TabletTVWearable
 
 isUint8ClampedArray(value: Object): boolean
 
@@ -5352,16 +5076,14 @@ isUint8ClampedArray(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let result = type.isUint8ClampedArray(new Uint8ClampedArray([]));
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let type = new util.types();
+let result = type.isUint8ClampedArray(new Uint8ClampedArray([]));
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isUint16Array8+
-
-PhonePC/2in1TabletTVWearable
 
 isUint16Array(value: Object): boolean
 
@@ -5385,16 +5107,14 @@ isUint16Array(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let result = type.isUint16Array(new Uint16Array([]));
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let type = new util.types();
+let result = type.isUint16Array(new Uint16Array([]));
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isUint32Array8+
-
-PhonePC/2in1TabletTVWearable
 
 isUint32Array(value: Object): boolean
 
@@ -5418,16 +5138,14 @@ isUint32Array(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let result = type.isUint32Array(new Uint32Array([]));
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let type = new util.types();
+let result = type.isUint32Array(new Uint32Array([]));
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isWeakMap8+
-
-PhonePC/2in1TabletTVWearable
 
 isWeakMap(value: Object): boolean
 
@@ -5451,17 +5169,15 @@ isWeakMap(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let value : WeakMap<object, number> = new WeakMap();
-3. let result = type.isWeakMap(value);
-4. console.info("result = " + result);
-5. // 输出结果：result = true
+```ts
+let type = new util.types();
+let value : WeakMap<object, number> = new WeakMap();
+let result = type.isWeakMap(value);
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isWeakSet8+
-
-PhonePC/2in1TabletTVWearable
 
 isWeakSet(value: Object): boolean
 
@@ -5485,16 +5201,14 @@ isWeakSet(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let result = type.isWeakSet(new WeakSet());
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let type = new util.types();
+let result = type.isWeakSet(new WeakSet());
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isBigInt64Array8+
-
-PhonePC/2in1TabletTVWearable
 
 isBigInt64Array(value: Object): boolean
 
@@ -5518,16 +5232,14 @@ isBigInt64Array(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let result = type.isBigInt64Array(new BigInt64Array([]));
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let type = new util.types();
+let result = type.isBigInt64Array(new BigInt64Array([]));
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isBigUint64Array8+
-
-PhonePC/2in1TabletTVWearable
 
 isBigUint64Array(value: Object): boolean
 
@@ -5551,16 +5263,14 @@ isBigUint64Array(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let result = type.isBigUint64Array(new BigUint64Array([]));
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let type = new util.types();
+let result = type.isBigUint64Array(new BigUint64Array([]));
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isModuleNamespaceObject8+
-
-PhonePC/2in1TabletTVWearable
 
 isModuleNamespaceObject(value: Object): boolean
 
@@ -5584,25 +5294,23 @@ isModuleNamespaceObject(value: Object): boolean
 
 **示例：**
 
-```
-1. // /entry/src/main/ets/pages/test.ts
-2. export function func() {
-3. console.info("hello world");
-4. }
+```ts
+// /entry/src/main/ets/pages/test.ts
+export function func() {
+  console.info("hello world");
+}
 ```
 
-```
-1. import * as nameSpace from './test';
+```ts
+import * as nameSpace from './test';
 
-3. let type = new util.types();
-4. let result = type.isModuleNamespaceObject(nameSpace);
-5. console.info("result = " + result);
-6. // 输出结果：result = true
+let type = new util.types();
+let result = type.isModuleNamespaceObject(nameSpace);
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### isSharedArrayBuffer8+
-
-PhonePC/2in1TabletTVWearable
 
 isSharedArrayBuffer(value: Object): boolean
 
@@ -5626,26 +5334,22 @@ isSharedArrayBuffer(value: Object): boolean
 
 **示例：**
 
-```
-1. let type = new util.types();
-2. let result = type.isSharedArrayBuffer(new SharedArrayBuffer(0));
-3. console.info("result = " + result);
-4. // 输出结果：result = true
+```ts
+let type = new util.types();
+let result = type.isSharedArrayBuffer(new SharedArrayBuffer(0));
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ## AutoFinalizer<T>22+
 
-PhonePC/2in1TabletTVWearable
-
 AutoFinalizer是一个接口类，用于在ArkTS对象释放时提供回调。通过实现回调接口，开发者可自定义对象被回收时自动触发的资源清理逻辑。
 
-说明
+**说明** 
 
 AutoFinalizer<T>需要和AutoFinalizerCleaner<T>一起使用，只实现该接口类没有任何功能。
 
 ### onFinalization22+
-
-PhonePC/2in1TabletTVWearable
 
 onFinalization(heldValue: T): void
 
@@ -5663,13 +5367,9 @@ onFinalization(heldValue: T): void
 
 ## AutoFinalizerCleaner<T>22+
 
-PhonePC/2in1TabletTVWearable
-
-AutoFinalizerCleaner是用于关联对象生命周期与资源清理逻辑的工具类。主要的作用是将实现了AutoFinalizer<T>接口的对象与特定值绑定，当对象被回收时自动触发资源清理回调。
+AutoFinalizerCleaner是用于关联对象生命周期与资源清理逻辑的工具类，需要和AutoFinalizer<T>一起使用。主要的作用是将实现了AutoFinalizer<T>接口的对象与特定值绑定，当对象被回收时自动触发资源清理回调。只使用AutoFinalizerCleaner而不实现AutoFinalizer接口没有任何功能。
 
 ### register<T>22+
-
-PhonePC/2in1TabletTVWearable
 
 static register<T>(obj: AutoFinalizer<T>, heldValue: T): void
 
@@ -5688,32 +5388,28 @@ static register<T>(obj: AutoFinalizer<T>, heldValue: T): void
 
 **示例：**
 
-```
-1. class DeviceManageViewModel implements util.AutoFinalizer<string> {
-2. constructor(heldValue: string) {
-3. util.AutoFinalizerCleaner.register(this, heldValue);
-4. }
+```ts
+class DeviceManageViewModel implements util.AutoFinalizer<string> {
+  constructor(heldValue: string) {
+    util.AutoFinalizerCleaner.register(this, heldValue);
+  }
 
-6. onFinalization(heldValue: string) {
-7. console.info("onFinalization: ", heldValue);
-8. // 等待触发垃圾回收，触发后会输出结果：onFinalization: test
-9. }
-10. }
+  onFinalization(heldValue: string) {
+    console.info("onFinalization: ", heldValue);
+    // 等待触发垃圾回收，触发后会输出结果：onFinalization: test
+  }
+}
 
-12. const device = new DeviceManageViewModel("test");
+const device = new DeviceManageViewModel("test");
 ```
 
 ## LruBuffer(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[LRUCache9+](js-apis-util.md#lrucache9)替代。
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** 以下各项对应的系统能力均为SystemCapability.Utils.Lang。
 
@@ -5723,24 +5419,22 @@ PhonePC/2in1TabletTVWearable
 
 **示例：**
 
-```
-1. let pro : util.LruBuffer<number,number>= new util.LruBuffer();
-2. pro.put(2,10);
-3. pro.put(1,8);
-4. let result = pro.length;
-5. console.info("result = " + result);
-6. // 输出结果：result = 2
+```ts
+let pro : util.LruBuffer<number,number>= new util.LruBuffer();
+pro.put(2,10);
+pro.put(1,8);
+let result = pro.length;
+console.info("result = " + result);
+// 输出结果：result = 2
 ```
 
 ### constructor(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 constructor(capacity?: number)
 
 构造函数用于创建一个新的LruBuffer实例，默认容量为64。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[LRUCache.constructor9+](js-apis-util.md#constructor9-3)替代。
 
@@ -5750,23 +5444,21 @@ constructor(capacity?: number)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| capacity | number | 否 | 指示要为缓冲区自定义的容量，默认值为64。 |
+| capacity | number | 否 | 指示要为缓冲区自定义的容量，取值范围为[0, 2147483647]，默认值为64。 |
 
 **示例：**
 
-```
-1. let pro : util.LruBuffer<number,number> = new util.LruBuffer();
+```ts
+let pro : util.LruBuffer<number,number> = new util.LruBuffer();
 ```
 
 ### updateCapacity(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 updateCapacity(newCapacity: number): void
 
 将缓冲区容量更新为指定容量，如果newCapacity小于或等于0，则抛出异常。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[LRUCache.updateCapacity9+](js-apis-util.md#updatecapacity9)替代。
 
@@ -5776,24 +5468,22 @@ updateCapacity(newCapacity: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| newCapacity | number | 是 | 指示要为缓冲区自定义的容量。 |
+| newCapacity | number | 是 | 指示要为缓冲区自定义的容量，取值范围为[0, 2147483647]。 |
 
 **示例：**
 
-```
-1. let pro : util.LruBuffer<number,number> = new util.LruBuffer();
-2. pro.updateCapacity(100);
+```ts
+let pro : util.LruBuffer<number,number> = new util.LruBuffer();
+pro.updateCapacity(100);
 ```
 
 ### toString(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 toString(): string
 
 返回对象的字符串表示形式。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[LRUCache.toString9+](js-apis-util.md#tostring9)替代。
 
@@ -5807,25 +5497,23 @@ toString(): string
 
 **示例：**
 
-```
-1. let pro : util.LruBuffer<number,number> = new util.LruBuffer();
-2. pro.put(2,10);
-3. pro.get(2);
-4. pro.remove(20);
-5. let result = pro.toString();
-6. console.info("result = " + result);
-7. // 输出结果：result = Lrubuffer[ maxSize = 64, hits = 1, misses = 0, hitRate = 100% ]
+```ts
+let pro : util.LruBuffer<number,number> = new util.LruBuffer();
+pro.put(2,10);
+pro.get(2);
+pro.remove(20);
+let result = pro.toString();
+console.info("result = " + result);
+// 输出结果：result = Lrubuffer[ maxSize = 64, hits = 1, misses = 0, hitRate = 100% ]
 ```
 
 ### getCapacity(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getCapacity(): number
 
 获取当前缓冲区的容量。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[LRUCache.getCapacity9+](js-apis-util.md#getcapacity9)替代。
 
@@ -5839,22 +5527,20 @@ getCapacity(): number
 
 **示例：**
 
-```
-1. let pro : util.LruBuffer<number,number> = new util.LruBuffer();
-2. let result = pro.getCapacity();
-3. console.info("result = " + result);
-4. // 输出结果：result = 64
+```ts
+let pro : util.LruBuffer<number,number> = new util.LruBuffer();
+let result = pro.getCapacity();
+console.info("result = " + result);
+// 输出结果：result = 64
 ```
 
 ### clear(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 clear(): void
 
-清除当前缓冲区中的键值对，后续调用afterRemoval()方法执行操作。
+清除当前缓冲区中的键值对，后续调用[afterRemoval](js-apis-util.md#afterremoval9)方法执行操作。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[LRUCache.clear9+](js-apis-util.md#clear9)替代。
 
@@ -5862,22 +5548,20 @@ clear(): void
 
 **示例：**
 
-```
-1. let pro : util.LruBuffer<number,number> = new util.LruBuffer();
-2. pro.put(2,10);
-3. let result = pro.length;
-4. pro.clear();
+```ts
+let pro : util.LruBuffer<number,number> = new util.LruBuffer();
+pro.put(2,10);
+let result = pro.length;
+pro.clear();
 ```
 
 ### getCreateCount(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getCreateCount(): number
 
 获取createDefault()返回值的次数。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[LRUCache.getCreateCount9+](js-apis-util.md#getcreatecount9)替代。
 
@@ -5891,23 +5575,21 @@ getCreateCount(): number
 
 **示例：**
 
-```
-1. let pro : util.LruBuffer<number,number> = new util.LruBuffer();
-2. pro.put(1,8);
-3. let result = pro.getCreateCount();
-4. console.info("result = " + result);
-5. // 输出结果：result = 0
+```ts
+let pro : util.LruBuffer<number,number> = new util.LruBuffer();
+pro.put(1,8);
+let result = pro.getCreateCount();
+console.info("result = " + result);
+// 输出结果：result = 0
 ```
 
 ### getMissCount(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getMissCount(): number
 
 获取查询值不匹配的次数。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[LRUCache.getMissCount9+](js-apis-util.md#getmisscount9)替代。
 
@@ -5921,24 +5603,22 @@ getMissCount(): number
 
 **示例：**
 
-```
-1. let pro : util.LruBuffer<number,number> = new util.LruBuffer();
-2. pro.put(2,10);
-3. pro.get(2);
-4. let result = pro.getMissCount();
-5. console.info("result = " + result);
-6. // 输出结果：result = 0
+```ts
+let pro : util.LruBuffer<number,number> = new util.LruBuffer();
+pro.put(2,10);
+pro.get(2);
+let result = pro.getMissCount();
+console.info("result = " + result);
+// 输出结果：result = 0
 ```
 
 ### getRemovalCount(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getRemovalCount(): number
 
 获取从缓冲区中逐出值的次数。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[LRUCache.getRemovalCount9+](js-apis-util.md#getremovalcount9)替代。
 
@@ -5952,25 +5632,23 @@ getRemovalCount(): number
 
 **示例：**
 
-```
-1. let pro : util.LruBuffer<number,number> = new util.LruBuffer();
-2. pro.put(2,10);
-3. pro.updateCapacity(2);
-4. pro.put(50,22);
-5. let result = pro.getRemovalCount();
-6. console.info("result = " + result);
-7. // 输出结果：result = 0
+```ts
+let pro : util.LruBuffer<number,number> = new util.LruBuffer();
+pro.put(2,10);
+pro.updateCapacity(2);
+pro.put(50,22);
+let result = pro.getRemovalCount();
+console.info("result = " + result);
+// 输出结果：result = 0
 ```
 
 ### getMatchCount(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getMatchCount(): number
 
 获取查询值匹配成功的次数。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[LRUCache.getMatchCount9+](js-apis-util.md#getmatchcount9)替代。
 
@@ -5984,24 +5662,22 @@ getMatchCount(): number
 
 **示例：**
 
-```
-1. let pro : util.LruBuffer<number,number> = new util.LruBuffer();
-2. pro.put(2,10);
-3. pro.get(2);
-4. let result = pro.getMatchCount();
-5. console.info("result = " + result);
-6. // 输出结果：result = 1
+```ts
+let pro : util.LruBuffer<number,number> = new util.LruBuffer();
+pro.put(2,10);
+pro.get(2);
+let result = pro.getMatchCount();
+console.info("result = " + result);
+// 输出结果：result = 1
 ```
 
 ### getPutCount(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getPutCount(): number
 
 获取将值添加到缓冲区的次数。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[LRUCache.getPutCount9+](js-apis-util.md#getputcount9)替代。
 
@@ -6015,23 +5691,21 @@ getPutCount(): number
 
 **示例：**
 
-```
-1. let pro : util.LruBuffer<number,number> = new util.LruBuffer();
-2. pro.put(2,10);
-3. let result = pro.getPutCount();
-4. console.info("result = " + result);
-5. // 输出结果：result = 1
+```ts
+let pro : util.LruBuffer<number,number> = new util.LruBuffer();
+pro.put(2,10);
+let result = pro.getPutCount();
+console.info("result = " + result);
+// 输出结果：result = 1
 ```
 
 ### isEmpty(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isEmpty(): boolean
 
 检查当前缓冲区是否为空。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[LRUCache.isEmpty9+](js-apis-util.md#isempty9)替代。
 
@@ -6041,27 +5715,25 @@ isEmpty(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 如果当前缓冲区不包含任何值，则返回true。 |
+| boolean | 如果当前缓冲区不包含任何值，则返回true；否则返回false。 |
 
 **示例：**
 
-```
-1. let pro : util.LruBuffer<number,number> = new util.LruBuffer();
-2. pro.put(2,10);
-3. let result = pro.isEmpty();
-4. console.info("result = " + result);
-5. // 输出结果：result = false
+```ts
+let pro : util.LruBuffer<number,number> = new util.LruBuffer();
+pro.put(2,10);
+let result = pro.isEmpty();
+console.info("result = " + result);
+// 输出结果：result = false
 ```
 
 ### get(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 get(key: K): V | undefined
 
-表示要查询的键。
+返回键对应的值。当键不在缓冲区中时，返回undefined。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[LRUCache.get9+](js-apis-util.md#get9)替代。
 
@@ -6081,23 +5753,21 @@ get(key: K): V | undefined
 
 **示例：**
 
-```
-1. let pro : util.LruBuffer<number,number> = new util.LruBuffer();
-2. pro.put(2,10);
-3. let result  = pro.get(2);
-4. console.info("result = " + result);
-5. // 输出结果：result = 10
+```ts
+let pro : util.LruBuffer<number,number> = new util.LruBuffer();
+pro.put(2,10);
+let result  = pro.get(2);
+console.info("result = " + result);
+// 输出结果：result = 10
 ```
 
 ### put(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 put(key: K,value: V): V
 
 将键值对添加到缓冲区。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[LRUCache.put9+](js-apis-util.md#put9)替代。
 
@@ -6107,7 +5777,7 @@ put(key: K,value: V): V
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| key | K | 是 | 要添加的密钥。 |
+| key | K | 是 | 要添加的键。 |
 | value | V | 是 | 指示与要添加的键关联的值。 |
 
 **返回值：**
@@ -6118,22 +5788,20 @@ put(key: K,value: V): V
 
 **示例：**
 
-```
-1. let pro : util.LruBuffer<number,number> = new util.LruBuffer();
-2. let result = pro.put(2,10);
-3. console.info("result = " + result);
-4. // 输出结果：result = 10
+```ts
+let pro : util.LruBuffer<number,number> = new util.LruBuffer();
+let result = pro.put(2,10);
+console.info("result = " + result);
+// 输出结果：result = 10
 ```
 
 ### values(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 values(): V[]
 
 获取当前缓冲区中所有值从最近访问到最近最少访问的顺序列表。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[LRUCache.values9+](js-apis-util.md#values9)替代。
 
@@ -6147,25 +5815,23 @@ values(): V[]
 
 **示例：**
 
-```
-1. let pro : util.LruBuffer<number|string,number|string> = new util.LruBuffer();
-2. pro.put(2,10);
-3. pro.put(2,"anhu");
-4. pro.put("afaf","grfb");
-5. let result = pro.values();
-6. console.info("result = " + result);
-7. // 输出结果：result = anhu,grfb
+```ts
+let pro : util.LruBuffer<number|string,number|string> = new util.LruBuffer();
+pro.put(2,10);
+pro.put(2,"anhu");
+pro.put("afaf","grfb");
+let result = pro.values();
+console.info("result = " + result);
+// 输出结果：result = anhu,grfb
 ```
 
 ### keys(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 keys(): K[]
 
 获取当前缓冲区中所有键从最近访问到最近最少访问的升序列表。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[LRUCache.keys9+](js-apis-util.md#keys9)替代。
 
@@ -6179,23 +5845,21 @@ keys(): K[]
 
 **示例：**
 
-```
-1. let pro : util.LruBuffer<number,number> = new util.LruBuffer();
-2. pro.put(2,10);
-3. let result = pro.keys();
-4. console.info("result = " + result);
-5. // 输出结果：result = 2
+```ts
+let pro : util.LruBuffer<number,number> = new util.LruBuffer();
+pro.put(2,10);
+let result = pro.keys();
+console.info("result = " + result);
+// 输出结果：result = 2
 ```
 
 ### remove(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 remove(key: K): V | undefined
 
 删除当前缓冲区中指定的键及其关联的值。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[LRUCache.remove9+](js-apis-util.md#remove9)替代。
 
@@ -6205,7 +5869,7 @@ remove(key: K): V | undefined
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| key | K | 是 | 要删除的密钥。 |
+| key | K | 是 | 要删除的键。 |
 
 **返回值：**
 
@@ -6215,23 +5879,21 @@ remove(key: K): V | undefined
 
 **示例：**
 
-```
-1. let pro : util.LruBuffer<number,number> = new util.LruBuffer();
-2. pro.put(2,10);
-3. let result = pro.remove(20);
-4. console.info("result = " + result);
-5. // 输出结果：result = undefined
+```ts
+let pro : util.LruBuffer<number,number> = new util.LruBuffer();
+pro.put(2,10);
+let result = pro.remove(20);
+console.info("result = " + result);
+// 输出结果：result = undefined
 ```
 
 ### afterRemoval(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 afterRemoval(isEvict: boolean,key: K,value: V,newValue: V): void
 
 删除值后执行后续操作。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[LRUCache.afterRemoval9+](js-apis-util.md#afterremoval9)替代。
 
@@ -6248,38 +5910,36 @@ afterRemoval(isEvict: boolean,key: K,value: V,newValue: V): void
 
 **示例：**
 
-```
-1. class ChildLruBuffer<K, V> extends util.LruBuffer<K, V> {
-2. constructor(capacity?: number) {
-3. super(capacity);
-4. }
+```ts
+class ChildLruBuffer<K, V> extends util.LruBuffer<K, V> {
+  constructor(capacity?: number) {
+    super(capacity);
+  }
 
-6. afterRemoval(isEvict: boolean, key: K, value: V, newValue: V): void {
-7. if (isEvict === true) {
-8. console.info('key: ' + key);
-9. // 输出结果：key: 11
-10. console.info('value: ' + value);
-11. // 输出结果：value: 1
-12. console.info('newValue: ' + newValue);
-13. // 输出结果：newValue: null
-14. }
-15. }
-16. }
-17. let lru: ChildLruBuffer<number, number> = new ChildLruBuffer(2);
-18. lru.put(11, 1);
-19. lru.put(22, 2);
-20. lru.put(33, 3);
+  afterRemoval(isEvict: boolean, key: K, value: V, newValue: V): void {
+    if (isEvict === true) {
+      console.info('key: ' + key);
+      // 输出结果：key: 11
+      console.info('value: ' + value);
+      // 输出结果：value: 1
+      console.info('newValue: ' + newValue);
+      // 输出结果：newValue: null
+    }
+  }
+}
+let lru: ChildLruBuffer<number, number> = new ChildLruBuffer(2);
+lru.put(11, 1);
+lru.put(22, 2);
+lru.put(33, 3);
 ```
 
 ### contains(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 contains(key: K): boolean
 
 检查当前缓冲区是否包含指定的键。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[LRUCache.contains9+](js-apis-util.md#contains9)替代。
 
@@ -6295,27 +5955,25 @@ contains(key: K): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 如果缓冲区包含指定的键，则返回 true。 |
+| boolean | 如果缓冲区包含指定的键，则返回true；否则返回false。 |
 
 **示例：**
 
-```
-1. let pro : util.LruBuffer<number,number> = new util.LruBuffer();
-2. pro.put(2,10);
-3. let result = pro.contains(20);
-4. console.info('result = ' + result);
-5. // 输出结果：result = false
+```ts
+let pro : util.LruBuffer<number,number> = new util.LruBuffer();
+pro.put(2,10);
+let result = pro.contains(20);
+console.info('result = ' + result);
+// 输出结果：result = false
 ```
 
 ### createDefault(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 createDefault(key: K): V
 
-如果未计算特定键的值，则执行后续操作，参数表示丢失的键，返回与键关联的值。
+当缓冲区中未匹配到指定键时，执行后续处理逻辑，参数表示未匹配到的键，返回与该键关联的值，默认返回undefined。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[LRUCache.createDefault9+](js-apis-util.md#createdefault9)替代。
 
@@ -6335,20 +5993,18 @@ createDefault(key: K): V
 
 **示例：**
 
-```
-1. let pro : util.LruBuffer<number,number> = new util.LruBuffer();
-2. let result = pro.createDefault(50);
+```ts
+let pro : util.LruBuffer<number,number> = new util.LruBuffer();
+let result = pro.createDefault(50);
 ```
 
 ### entries(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 entries(): IterableIterator<[K, V]>
 
 允许迭代包含在这个对象中的所有键值对。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[LRUCache.entries9+](js-apis-util.md#entries9)替代。
 
@@ -6362,21 +6018,19 @@ entries(): IterableIterator<[K, V]>
 
 **示例：**
 
-```
-1. let pro : util.LruBuffer<number,number> = new util.LruBuffer();
-2. pro.put(2,10);
-3. let result = pro.entries();
+```ts
+let pro : util.LruBuffer<number,number> = new util.LruBuffer();
+pro.put(2,10);
+let result = pro.entries();
 ```
 
 ### [Symbol.iterator](deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 [Symbol.iterator](): IterableIterator<[K, V]>
 
 返回一个键值对形式的二维数组。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[LRUCache.[Symbol.iterator]9+](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-util#symboliterator9)替代。
 
@@ -6390,29 +6044,25 @@ PhonePC/2in1TabletTVWearable
 
 **示例：**
 
-```
-1. let pro : util.LruBuffer<number,number> = new util.LruBuffer();
-2. pro.put(2,10);
-3. let result = pro[Symbol.iterator]();
+```ts
+let pro : util.LruBuffer<number,number> = new util.LruBuffer();
+pro.put(2,10);
+let result = pro[Symbol.iterator]();
 ```
 
 ## Scope(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[ScopeHelper9+](js-apis-util.md#scopehelper9)替代。
 
 ### constructor(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 constructor(lowerObj: ScopeType, upperObj: ScopeType)
 
 创建指定下限和上限的作用域实例，并返回一个Scope对象。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[ScopeHelper.constructor9+](js-apis-util.md#constructor9-4)替代。
 
@@ -6427,43 +6077,41 @@ constructor(lowerObj: ScopeType, upperObj: ScopeType)
 
 **示例：**
 
-```
-1. class Temperature implements util.ScopeComparable {
-2. private readonly _temp: number;
+```ts
+class Temperature implements util.ScopeComparable {
+  private readonly _temp: number;
 
-4. constructor(value: number) {
-5. this._temp = value;
-6. }
+  constructor(value: number) {
+    this._temp = value;
+  }
 
-8. compareTo(value: Temperature) {
-9. return this._temp >= value.getTemp();
-10. }
+  compareTo(value: Temperature) {
+    return this._temp >= value.getTemp();
+  }
 
-12. getTemp() {
-13. return this._temp;
-14. }
+  getTemp() {
+    return this._temp;
+  }
 
-16. toString(): string {
-17. return this._temp.toString();
-18. }
-19. }
+  toString(): string {
+    return this._temp.toString();
+  }
+}
 
-21. let tempLower = new Temperature(30);
-22. let tempUpper = new Temperature(40);
-23. let range = new util.Scope(tempLower, tempUpper);
-24. console.info("range = " + range);
-25. // 输出结果：range = [30, 40]
+let tempLower = new Temperature(30);
+let tempUpper = new Temperature(40);
+let range = new util.Scope(tempLower, tempUpper);
+console.info("range = " + range);
+// 输出结果：range = [30, 40]
 ```
 
 ### toString(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 toString(): string
 
 该字符串化方法返回一个包含当前范围的字符串表示形式。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[ScopeHelper.toString9+](js-apis-util.md#tostring9-1)替代。
 
@@ -6477,44 +6125,42 @@ toString(): string
 
 **示例：**
 
-```
-1. class Temperature implements util.ScopeComparable {
-2. private readonly _temp: number;
+```ts
+class Temperature implements util.ScopeComparable {
+  private readonly _temp: number;
 
-4. constructor(value: number) {
-5. this._temp = value;
-6. }
+  constructor(value: number) {
+    this._temp = value;
+  }
 
-8. compareTo(value: Temperature) {
-9. return this._temp >= value.getTemp();
-10. }
+  compareTo(value: Temperature) {
+    return this._temp >= value.getTemp();
+  }
 
-12. getTemp() {
-13. return this._temp;
-14. }
+  getTemp() {
+    return this._temp;
+  }
 
-16. toString(): string {
-17. return this._temp.toString();
-18. }
-19. }
+  toString(): string {
+    return this._temp.toString();
+  }
+}
 
-21. let tempLower = new Temperature(30);
-22. let tempUpper = new Temperature(40);
-23. let range = new util.Scope(tempLower, tempUpper);
-24. let result = range.toString();
-25. console.info("result = " + result);
-26. // 输出结果：result = [30, 40]
+let tempLower = new Temperature(30);
+let tempUpper = new Temperature(40);
+let range = new util.Scope(tempLower, tempUpper);
+let result = range.toString();
+console.info("result = " + result);
+// 输出结果：result = [30, 40]
 ```
 
 ### intersect(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 intersect(range: Scope): Scope
 
 获取给定范围和当前范围的交集。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[ScopeHelper.intersect9+](js-apis-util.md#intersect9)替代。
 
@@ -6534,47 +6180,45 @@ intersect(range: Scope): Scope
 
 **示例：**
 
-```
-1. class Temperature implements util.ScopeComparable {
-2. private readonly _temp: number;
+```ts
+class Temperature implements util.ScopeComparable {
+  private readonly _temp: number;
 
-4. constructor(value: number) {
-5. this._temp = value;
-6. }
+  constructor(value: number) {
+    this._temp = value;
+  }
 
-8. compareTo(value: Temperature) {
-9. return this._temp >= value.getTemp();
-10. }
+  compareTo(value: Temperature) {
+    return this._temp >= value.getTemp();
+  }
 
-12. getTemp() {
-13. return this._temp;
-14. }
+  getTemp() {
+    return this._temp;
+  }
 
-16. toString(): string {
-17. return this._temp.toString();
-18. }
-19. }
+  toString(): string {
+    return this._temp.toString();
+  }
+}
 
-21. let tempLower = new Temperature(30);
-22. let tempUpper = new Temperature(40);
-23. let range = new util.Scope(tempLower, tempUpper);
-24. let tempMiDF = new Temperature(35);
-25. let tempMidS = new Temperature(39);
-26. let rangeFir = new util.Scope(tempMiDF, tempMidS);
-27. let result = range.intersect(rangeFir );
-28. console.info("result = " + result);
-29. // 输出结果：result = [35, 39]
+let tempLower = new Temperature(30);
+let tempUpper = new Temperature(40);
+let range = new util.Scope(tempLower, tempUpper);
+let tempMiDF = new Temperature(35);
+let tempMidS = new Temperature(39);
+let rangeFir = new util.Scope(tempMiDF, tempMidS);
+let result = range.intersect(rangeFir );
+console.info("result = " + result);
+  // 输出结果：result = [35, 39]
 ```
 
 ### intersect(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 intersect(lowerObj:ScopeType,upperObj:ScopeType):Scope
 
 获取当前范围与给定下限和上限范围的交集。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[ScopeHelper.intersect9+](js-apis-util.md#intersect9-1)替代。
 
@@ -6595,46 +6239,44 @@ intersect(lowerObj:ScopeType,upperObj:ScopeType):Scope
 
 **示例：**
 
-```
-1. class Temperature implements util.ScopeComparable {
-2. private readonly _temp: number;
+```ts
+class Temperature implements util.ScopeComparable {
+  private readonly _temp: number;
 
-4. constructor(value: number) {
-5. this._temp = value;
-6. }
+  constructor(value: number) {
+    this._temp = value;
+  }
 
-8. compareTo(value: Temperature) {
-9. return this._temp >= value.getTemp();
-10. }
+  compareTo(value: Temperature) {
+    return this._temp >= value.getTemp();
+  }
 
-12. getTemp() {
-13. return this._temp;
-14. }
+  getTemp() {
+    return this._temp;
+  }
 
-16. toString(): string {
-17. return this._temp.toString();
-18. }
-19. }
+  toString(): string {
+    return this._temp.toString();
+  }
+}
 
-21. let tempLower = new Temperature(30);
-22. let tempUpper = new Temperature(40);
-23. let tempMiDF = new Temperature(35);
-24. let tempMidS = new Temperature(39);
-25. let range = new util.Scope(tempLower, tempUpper);
-26. let result = range.intersect(tempMiDF, tempMidS);
-27. console.info("result = " + result);
-28. // 输出结果：result = [35, 39]
+let tempLower = new Temperature(30);
+let tempUpper = new Temperature(40);
+let tempMiDF = new Temperature(35);
+let tempMidS = new Temperature(39);
+let range = new util.Scope(tempLower, tempUpper);
+let result = range.intersect(tempMiDF, tempMidS);
+console.info("result = " + result);
+// 输出结果：result = [35, 39]
 ```
 
 ### getUpper(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getUpper(): ScopeType
 
 获取当前范围的上限。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[ScopeHelper.getUpper9+](js-apis-util.md#getupper9)替代。
 
@@ -6648,44 +6290,42 @@ getUpper(): ScopeType
 
 **示例：**
 
-```
-1. class Temperature implements util.ScopeComparable {
-2. private readonly _temp: number;
+```ts
+class Temperature implements util.ScopeComparable {
+  private readonly _temp: number;
 
-4. constructor(value: number) {
-5. this._temp = value;
-6. }
+  constructor(value: number) {
+    this._temp = value;
+  }
 
-8. compareTo(value: Temperature) {
-9. return this._temp >= value.getTemp();
-10. }
+  compareTo(value: Temperature) {
+    return this._temp >= value.getTemp();
+  }
 
-12. getTemp() {
-13. return this._temp;
-14. }
+  getTemp() {
+    return this._temp;
+  }
 
-16. toString(): string {
-17. return this._temp.toString();
-18. }
-19. }
+  toString(): string {
+    return this._temp.toString();
+  }
+}
 
-21. let tempLower = new Temperature(30);
-22. let tempUpper = new Temperature(40);
-23. let range = new util.Scope(tempLower, tempUpper);
-24. let result = range.getUpper();
-25. console.info("result = " + result);
-26. // 输出结果：result = 40
+let tempLower = new Temperature(30);
+let tempUpper = new Temperature(40);
+let range = new util.Scope(tempLower, tempUpper);
+let result = range.getUpper();
+console.info("result = " + result);
+// 输出结果：result = 40
 ```
 
 ### getLower(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getLower(): ScopeType
 
 获取当前范围的下限。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[ScopeHelper.getLower9+](js-apis-util.md#getlower9)替代。
 
@@ -6699,44 +6339,42 @@ getLower(): ScopeType
 
 **示例：**
 
-```
-1. class Temperature implements util.ScopeComparable {
-2. private readonly _temp: number;
+```ts
+class Temperature implements util.ScopeComparable {
+  private readonly _temp: number;
 
-4. constructor(value: number) {
-5. this._temp = value;
-6. }
+  constructor(value: number) {
+    this._temp = value;
+  }
 
-8. compareTo(value: Temperature) {
-9. return this._temp >= value.getTemp();
-10. }
+  compareTo(value: Temperature) {
+    return this._temp >= value.getTemp();
+  }
 
-12. getTemp() {
-13. return this._temp;
-14. }
+  getTemp() {
+    return this._temp;
+  }
 
-16. toString(): string {
-17. return this._temp.toString();
-18. }
-19. }
+  toString(): string {
+    return this._temp.toString();
+  }
+}
 
-21. let tempLower = new Temperature(30);
-22. let tempUpper = new Temperature(40);
-23. let range = new util.Scope(tempLower, tempUpper);
-24. let result = range.getLower();
-25. console.info("result = " + result);
-26. // 输出结果：result = 30
+let tempLower = new Temperature(30);
+let tempUpper = new Temperature(40);
+let range = new util.Scope(tempLower, tempUpper);
+let result = range.getLower();
+console.info("result = " + result);
+// 输出结果：result = 30
 ```
 
 ### expand(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 expand(lowerObj: ScopeType,upperObj: ScopeType): Scope
 
 创建并返回包括当前范围和给定下限和上限的并集。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[ScopeHelper.expand9+](js-apis-util.md#expand9)替代。
 
@@ -6757,46 +6395,44 @@ expand(lowerObj: ScopeType,upperObj: ScopeType): Scope
 
 **示例：**
 
-```
-1. class Temperature implements util.ScopeComparable {
-2. private readonly _temp: number;
+```ts
+class Temperature implements util.ScopeComparable {
+  private readonly _temp: number;
 
-4. constructor(value: number) {
-5. this._temp = value;
-6. }
+  constructor(value: number) {
+    this._temp = value;
+  }
 
-8. compareTo(value: Temperature) {
-9. return this._temp >= value.getTemp();
-10. }
+  compareTo(value: Temperature) {
+    return this._temp >= value.getTemp();
+  }
 
-12. getTemp() {
-13. return this._temp;
-14. }
+  getTemp() {
+    return this._temp;
+  }
 
-16. toString(): string {
-17. return this._temp.toString();
-18. }
-19. }
+  toString(): string {
+    return this._temp.toString();
+  }
+}
 
-21. let tempLower = new Temperature(30);
-22. let tempUpper = new Temperature(40);
-23. let tempMiDF = new Temperature(35);
-24. let tempMidS = new Temperature(39);
-25. let range = new util.Scope(tempLower, tempUpper);
-26. let result = range.expand(tempMiDF, tempMidS);
-27. console.info("result = " + result);
-28. // 输出结果：result = [30, 40]
+let tempLower = new Temperature(30);
+let tempUpper = new Temperature(40);
+let tempMiDF = new Temperature(35);
+let tempMidS = new Temperature(39);
+let range = new util.Scope(tempLower, tempUpper);
+let result = range.expand(tempMiDF, tempMidS);
+console.info("result = " + result);
+// 输出结果：result = [30, 40]
 ```
 
 ### expand(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 expand(range: Scope): Scope
 
 创建并返回包括当前范围和给定范围的并集。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[ScopeHelper.expand9+](js-apis-util.md#expand9-1)替代。
 
@@ -6816,47 +6452,45 @@ expand(range: Scope): Scope
 
 **示例：**
 
-```
-1. class Temperature implements util.ScopeComparable {
-2. private readonly _temp: number;
+```ts
+class Temperature implements util.ScopeComparable {
+  private readonly _temp: number;
 
-4. constructor(value: number) {
-5. this._temp = value;
-6. }
+  constructor(value: number) {
+    this._temp = value;
+  }
 
-8. compareTo(value: Temperature) {
-9. return this._temp >= value.getTemp();
-10. }
+  compareTo(value: Temperature) {
+    return this._temp >= value.getTemp();
+  }
 
-12. getTemp() {
-13. return this._temp;
-14. }
+  getTemp() {
+    return this._temp;
+  }
 
-16. toString(): string {
-17. return this._temp.toString();
-18. }
-19. }
+  toString(): string {
+    return this._temp.toString();
+  }
+}
 
-21. let tempLower = new Temperature(30);
-22. let tempUpper = new Temperature(40);
-23. let tempMiDF = new Temperature(35);
-24. let tempMidS = new Temperature(39);
-25. let range = new util.Scope(tempLower, tempUpper);
-26. let rangeFir = new util.Scope(tempMiDF, tempMidS);
-27. let result = range.expand(rangeFir);
-28. console.info("result = " + result);
-29. // 输出结果：result = [30, 40]
+let tempLower = new Temperature(30);
+let tempUpper = new Temperature(40);
+let tempMiDF = new Temperature(35);
+let tempMidS = new Temperature(39);
+let range = new util.Scope(tempLower, tempUpper);
+let rangeFir = new util.Scope(tempMiDF, tempMidS);
+let result = range.expand(rangeFir);
+console.info("result = " + result);
+// 输出结果：result = [30, 40]
 ```
 
 ### expand(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 expand(value: ScopeType): Scope
 
 创建并返回包括当前范围和给定值的并集。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[ScopeHelper.expand9+](js-apis-util.md#expand9-2)替代。
 
@@ -6876,45 +6510,43 @@ expand(value: ScopeType): Scope
 
 **示例：**
 
-```
-1. class Temperature implements util.ScopeComparable {
-2. private readonly _temp: number;
+```ts
+class Temperature implements util.ScopeComparable {
+  private readonly _temp: number;
 
-4. constructor(value: number) {
-5. this._temp = value;
-6. }
+  constructor(value: number) {
+    this._temp = value;
+  }
 
-8. compareTo(value: Temperature) {
-9. return this._temp >= value.getTemp();
-10. }
+  compareTo(value: Temperature) {
+    return this._temp >= value.getTemp();
+  }
 
-12. getTemp() {
-13. return this._temp;
-14. }
+  getTemp() {
+    return this._temp;
+  }
 
-16. toString(): string {
-17. return this._temp.toString();
-18. }
-19. }
+  toString(): string {
+    return this._temp.toString();
+  }
+}
 
-21. let tempLower = new Temperature(30);
-22. let tempUpper = new Temperature(40);
-23. let tempMiDF = new Temperature(35);
-24. let range = new util.Scope(tempLower, tempUpper);
-25. let result = range.expand(tempMiDF);
-26. console.info("result = " + result);
-27. // 输出结果：result = [30, 40]
+let tempLower = new Temperature(30);
+let tempUpper = new Temperature(40);
+let tempMiDF = new Temperature(35);
+let range = new util.Scope(tempLower, tempUpper);
+let result = range.expand(tempMiDF);
+console.info("result = " + result);
+// 输出结果：result = [30, 40]
 ```
 
 ### contains(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 contains(value: ScopeType): boolean
 
 检查给定value是否包含在当前范围内。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[ScopeHelper.contains9+](js-apis-util.md#contains9-1)替代。
 
@@ -6934,45 +6566,43 @@ contains(value: ScopeType): boolean
 
 **示例：**
 
-```
-1. class Temperature implements util.ScopeComparable {
-2. private readonly _temp: number;
+```ts
+class Temperature implements util.ScopeComparable {
+  private readonly _temp: number;
 
-4. constructor(value: number) {
-5. this._temp = value;
-6. }
+  constructor(value: number) {
+    this._temp = value;
+  }
 
-8. compareTo(value: Temperature) {
-9. return this._temp >= value.getTemp();
-10. }
+  compareTo(value: Temperature) {
+    return this._temp >= value.getTemp();
+  }
 
-12. getTemp() {
-13. return this._temp;
-14. }
+  getTemp() {
+    return this._temp;
+  }
 
-16. toString(): string {
-17. return this._temp.toString();
-18. }
-19. }
+  toString(): string {
+    return this._temp.toString();
+  }
+}
 
-21. let tempLower = new Temperature(30);
-22. let tempUpper = new Temperature(40);
-23. let tempMiDF = new Temperature(35);
-24. let range = new util.Scope(tempLower, tempUpper);
-25. let result = range.contains(tempMiDF);
-26. console.info("result = " + result);
-27. // 输出结果：result = true
+let tempLower = new Temperature(30);
+let tempUpper = new Temperature(40);
+let tempMiDF = new Temperature(35);
+let range = new util.Scope(tempLower, tempUpper);
+let result = range.contains(tempMiDF);
+console.info("result = " + result);
+// 输出结果：result = true
 ```
 
 ### contains(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 contains(range: Scope): boolean
 
 检查给定range是否在当前范围内。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[ScopeHelper.contains9+](js-apis-util.md#contains9-2)替代。
 
@@ -6992,47 +6622,45 @@ contains(range: Scope): boolean
 
 **示例：**
 
-```
-1. class Temperature implements util.ScopeComparable {
-2. private readonly _temp: number;
+```ts
+class Temperature implements util.ScopeComparable {
+  private readonly _temp: number;
 
-4. constructor(value: number) {
-5. this._temp = value;
-6. }
+  constructor(value: number) {
+    this._temp = value;
+  }
 
-8. compareTo(value: Temperature) {
-9. return this._temp >= value.getTemp();
-10. }
+  compareTo(value: Temperature) {
+    return this._temp >= value.getTemp();
+  }
 
-12. getTemp() {
-13. return this._temp;
-14. }
+  getTemp() {
+    return this._temp;
+  }
 
-16. toString(): string {
-17. return this._temp.toString();
-18. }
-19. }
+  toString(): string {
+    return this._temp.toString();
+  }
+}
 
-21. let tempLower = new Temperature(30);
-22. let tempUpper = new Temperature(40);
-23. let range = new util.Scope(tempLower, tempUpper);
-24. let tempLess = new Temperature(20);
-25. let tempMore = new Temperature(45);
-26. let rangeSec = new util.Scope(tempLess, tempMore);
-27. let result = range.contains(rangeSec);
-28. console.info("result = " + result);
-29. // 输出结果：result = false
+let tempLower = new Temperature(30);
+let tempUpper = new Temperature(40);
+let range = new util.Scope(tempLower, tempUpper);
+let tempLess = new Temperature(20);
+let tempMore = new Temperature(45);
+let rangeSec = new util.Scope(tempLess, tempMore);
+let result = range.contains(rangeSec);
+console.info("result = " + result);
+// 输出结果：result = false
 ```
 
 ### clamp(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 clamp(value: ScopeType): ScopeType
 
 将给定值限定到当前范围内。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[ScopeHelper.clamp9+](js-apis-util.md#clamp9)替代。
 
@@ -7052,53 +6680,49 @@ clamp(value: ScopeType): ScopeType
 
 **示例：**
 
-```
-1. class Temperature implements util.ScopeComparable {
-2. private readonly _temp: number;
+```ts
+class Temperature implements util.ScopeComparable {
+  private readonly _temp: number;
 
-4. constructor(value: number) {
-5. this._temp = value;
-6. }
+  constructor(value: number) {
+    this._temp = value;
+  }
 
-8. compareTo(value: Temperature) {
-9. return this._temp >= value.getTemp();
-10. }
+  compareTo(value: Temperature) {
+    return this._temp >= value.getTemp();
+  }
 
-12. getTemp() {
-13. return this._temp;
-14. }
+  getTemp() {
+    return this._temp;
+  }
 
-16. toString(): string {
-17. return this._temp.toString();
-18. }
-19. }
+  toString(): string {
+    return this._temp.toString();
+  }
+}
 
-21. let tempLower = new Temperature(30);
-22. let tempUpper = new Temperature(40);
-23. let tempMiDF = new Temperature(35);
-24. let range = new util.Scope(tempLower, tempUpper);
-25. let result = range.clamp(tempMiDF);
-26. console.info("result = " + result);
-27. // 输出结果：result = 35
+let tempLower = new Temperature(30);
+let tempUpper = new Temperature(40);
+let tempMiDF = new Temperature(35);
+let range = new util.Scope(tempLower, tempUpper);
+let result = range.clamp(tempMiDF);
+console.info("result = " + result);
+// 输出结果：result = 35
 ```
 
 ## Base64(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[Base64Helper9+](js-apis-util.md#base64helper9)替代。
 
 ### constructor(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 constructor()
 
 Base64的构造函数。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[Base64Helper.constructor9+](js-apis-util.md#constructor9-5)替代。
 
@@ -7106,19 +6730,17 @@ Base64的构造函数。
 
 **示例：**
 
-```
-1. let base64 = new  util.Base64();
+```ts
+let base64 = new  util.Base64();
 ```
 
 ### encodeSync(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 encodeSync(src: Uint8Array): Uint8Array
 
 将输入的Uint8Array字节数组进行Base64编码，返回编码后的Uint8Array数组。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[Base64Helper.encodeSync9+](js-apis-util.md#encodesync9)替代。
 
@@ -7138,23 +6760,21 @@ encodeSync(src: Uint8Array): Uint8Array
 
 **示例：**
 
-```
-1. let base64 = new util.Base64();
-2. let array = new Uint8Array([115,49,51]);
-3. let result = base64.encodeSync(array);
-4. console.info("result = " + result);
-5. // 输出结果：result = 99,122,69,122
+```ts
+let base64 = new util.Base64();
+let array = new Uint8Array([115,49,51]);
+let result = base64.encodeSync(array);
+console.info("result = " + result);
+// 输出结果：result = 99,122,69,122
 ```
 
 ### encodeToStringSync(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 encodeToStringSync(src: Uint8Array): string
 
 将输入的Uint8Array字节数组进行Base64编码，返回编码后的字符串结果。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[Base64Helper.encodeToStringSync9+](js-apis-util.md#encodetostringsync9)替代。
 
@@ -7174,23 +6794,21 @@ encodeToStringSync(src: Uint8Array): string
 
 **示例：**
 
-```
-1. let base64 = new util.Base64();
-2. let array = new Uint8Array([115,49,51]);
-3. let result = base64.encodeToStringSync(array);
-4. console.info("result = " + result);
-5. // 输出结果：result = czEz
+```ts
+let base64 = new util.Base64();
+let array = new Uint8Array([115,49,51]);
+let result = base64.encodeToStringSync(array);
+console.info("result = " + result);
+// 输出结果：result = czEz
 ```
 
 ### decodeSync(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 decodeSync(src: Uint8Array | string): Uint8Array
 
 通过输入参数解码后输出对应文本。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[Base64Helper.decodeSync9+](js-apis-util.md#decodesync9)替代。
 
@@ -7210,23 +6828,21 @@ decodeSync(src: Uint8Array | string): Uint8Array
 
 **示例：**
 
-```
-1. let base64 = new util.Base64();
-2. let buff = 'czEz';
-3. let result = base64.decodeSync(buff);
-4. console.info("result = " + result);
-5. // 输出结果：result = 115,49,51
+```ts
+let base64 = new util.Base64();
+let buff = 'czEz';
+let result = base64.decodeSync(buff);
+console.info("result = " + result);
+// 输出结果：result = 115,49,51
 ```
 
 ### encode(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 encode(src: Uint8Array): Promise<Uint8Array>
 
 通过输入参数异步编码后输出对应文本。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[Base64Helper.encode9+](js-apis-util.md#encode9)替代。
 
@@ -7246,24 +6862,22 @@ encode(src: Uint8Array): Promise<Uint8Array>
 
 **示例：**
 
-```
-1. let base64 = new util.Base64();
-2. let array = new Uint8Array([115,49,51]);
-3. base64.encode(array).then((val) => {
-4. console.info(val.toString());
-5. // 输出结果：99,122,69,122
-6. })
+```ts
+let base64 = new util.Base64();
+let array = new Uint8Array([115,49,51]);
+base64.encode(array).then((val) => {
+  console.info(val.toString());
+  // 输出结果：99,122,69,122
+})
 ```
 
 ### encodeToString(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 encodeToString(src: Uint8Array): Promise<string>
 
 通过输入参数异步编码后输出对应文本。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[Base64Helper.encodeToString9+](js-apis-util.md#encodetostring9)替代。
 
@@ -7283,24 +6897,22 @@ encodeToString(src: Uint8Array): Promise<string>
 
 **示例：**
 
-```
-1. let base64 = new util.Base64();
-2. let array = new Uint8Array([115,49,51]);
-3. base64.encodeToString(array).then((val) => {
-4. console.info(val);
-5. // 输出结果：czEz
-6. })
+```ts
+let base64 = new util.Base64();
+let array = new Uint8Array([115,49,51]);
+base64.encodeToString(array).then((val) => {
+    console.info(val);
+    // 输出结果：czEz
+})
 ```
 
 ### decode(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 decode(src: Uint8Array | string): Promise<Uint8Array>
 
 将输入参数异步解码后输出对应文本。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[Base64Helper.decode9+](js-apis-util.md#decode9)替代。
 
@@ -7320,11 +6932,11 @@ decode(src: Uint8Array | string): Promise<Uint8Array>
 
 **示例：**
 
-```
-1. let base64 = new util.Base64();
-2. let array = new Uint8Array([99,122,69,122]);
-3. base64.decode(array).then((val) => {
-4. console.info(val.toString());
-5. // 输出结果：115,49,51
-6. })
+```ts
+let base64 = new util.Base64();
+let array = new Uint8Array([99,122,69,122]);
+base64.decode(array).then((val) => {
+  console.info(val.toString());
+  // 输出结果：115,49,51
+})
 ```

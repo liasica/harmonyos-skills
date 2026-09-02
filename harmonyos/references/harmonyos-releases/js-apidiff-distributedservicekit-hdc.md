@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-distributedservicekit-hdc
 title: Distributed Service Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Developer Beta1引入的API > Distributed Service Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Developer Beta1引入的API > Distributed Service Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:37:03+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:52+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:3501e0524dfc6d77e2a486830071b1deb7812cb6df861a8ae4f537ace71c6643
 ---
 

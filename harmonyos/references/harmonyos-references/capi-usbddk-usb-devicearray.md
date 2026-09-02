@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-usbd
 title: Usb_DeviceArray
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 结构体 > Usb_DeviceArray
 category: harmonyos-references
-scraped_at: 2026-04-29T14:01:32+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:29de2aea97670b94980d867f818cdbb92fdc99e9d49b39b509c9c7b70defbdf2
+scraped_at: 2026-09-02T15:02:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a882e599f033764fd8279c636ab328c608f7fa25b94d4e3d4102fc7f86c55e0f
 ---
 
-```
-1. typedef struct Usb_DeviceArray {...} Usb_DeviceArray
+```c
+typedef struct Usb_DeviceArray {...} Usb_DeviceArray
 ```
 
 ## 概述
 
-PC/2in1
-
-设备ID清单，用于存放[OH\_Usb\_GetDevices](capi-usb-ddk-api-h.md#oh_usb_getdevices)接口获取到的设备ID列表和设备数量。
+设备ID数组，用于存放[OH\_Usb\_GetDevices](capi-usb-ddk-api-h.md#oh_usb_getdevices)接口获取到的设备ID列表和设备数量。开发者申请设备ID数组，使用完结构体后需释放申请的内存，否则会造成资源泄漏。
 
 **起始版本：** 18
 
@@ -26,13 +24,9 @@ PC/2in1
 
 ## 汇总
 
-PC/2in1
-
 ### 成员变量
-
-PC/2in1
 
 | 名称 | 描述 |
 | --- | --- |
-| uint64\_t\* deviceIds | 开发者申请好的设备ID数组首地址，申请的数组大小建议一般不超过128，以避免过度占用内存。 |
+| uint64\_t\* deviceIds | 开发者申请好的设备ID数组首地址，申请的数组大小建议不超过128，以避免过度占用内存。 |
 | uint32\_t num | 实际返回的设备数量，根据数量遍历deviceIds获得设备ID。当该值为0时，表示不存在USB设备。 |

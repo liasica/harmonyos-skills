@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-noti
 title: NOTIFICATION
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > C API > 模块 > NOTIFICATION
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:38+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:97f790d3bed95124817bb679c9c08e9e69c8018fdbb2fdb13504b093f9c11362
+scraped_at: 2026-09-02T14:53:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:be1d1e8f01520e28e7c498082bcdd29fc9d54e4e815fb6d6f8b39e87353b8f8f
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 Notification向应用提供通知服务的能力，包括查询当前应用通知的使能状态等。
 
@@ -19,8 +17,6 @@ Notification向应用提供通知服务的能力，包括查询当前应用通�
 **起始版本：** 13
 
 ## 文件汇总
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

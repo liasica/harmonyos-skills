@@ -1,16 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataaugmentation-aip-retrieval-condition-vector
 title: aip_retrieval_condition_vector.h
-breadcrumb: API参考 > 应用框架 > Data Augmentation Kit（数据增强服务） > C API > 头文件和结构体 > aip_retrieval_condition_vector.h
+breadcrumb: API参考 > 应用框架 > Data Augmentation Kit（数据增强服务） > C API > 头文件 > aip_retrieval_condition_vector.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:59+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:02342eac3cf212bb21a8082985e52ed771c1873751a920a8945558f5697bc675
+scraped_at: 2026-09-02T15:01:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:86e41f2e449b454e9a364d5d84e5480717e07c21a3bc88f4c3546d44fa1e27bc
 ---
 
 ## 概述
-
-PhonePC/2in1Tablet
 
 提供与向量条件相关的接口。
 
@@ -25,8 +23,6 @@ PhonePC/2in1Tablet
 **相关模块：** [Retrieval](dataaugmentation-capi-retrieval.md)
 
 ## 汇总
-
-PhonePC/2in1Tablet
 
 ### 类型定义
 

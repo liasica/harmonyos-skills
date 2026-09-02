@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-422
 title: Navigation如何在自定义组件之间传递NavPathStack实例
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > Navigation如何在自定义组件之间传递NavPathStack实例
+breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Navigation如何在自定义组件之间传递NavPathStack实例
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:51+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:50+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:b30e61fd24ca5b8628f7ac759f359e6b5ac21aedc2397c1a913993580dbb6796
 ---
 

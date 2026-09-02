@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fileguard-sta
 title: 启动文件扫描任务
 breadcrumb: 指南 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > 文件分级管控 > 启动文件扫描任务
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:06+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:9855f7afc64091b6c53c0ecb1d683a35458977a29b79fb620fa2d9fe8d256041
+scraped_at: 2026-09-02T14:50:02+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:be37a5b6b17b4ff6df82a628c9e3f100e384b64f85e20f01f9040edf3748618b
 ---
 
 ## 场景介绍
@@ -25,49 +25,63 @@ Enterprise Data Guard Kit为应用提供公共路径和指定目录的扫描能�
 
 1. 导入模块。
 
-   ```
-   1. import { fileGuard } from '@kit.EnterpriseDataGuardKit';
+   ```typescript
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { fileGuard } from '@kit.EnterpriseDataGuardKit';
    ```
 2. 初始化[FileGuard](../harmonyos-references/dataguard-fileguard.md#fileguard)对象guard，并且声明扫描结果回调函数。
 
    * 按照文件类型扫描公共空间文件，查看打印结果。
 
-     ```
-     1. function startFileScanTaskUnderCommonDir() {
-     2. let guard: fileGuard.FileGuard = new fileGuard.FileGuard();
-     3. let onReceiveFileList: (files: string[]) => void = (files: Array<string>) => {
-     4. files.forEach((value: string, index: number) => {
-     5. console.info(`Succeeded in getting file: ${value}.`);
-     6. })
-     7. };
-     8. let onCompleteScanTask: (count: number) => void = (count: number) => {
-     9. console.info(`Succeeded in getting count: ${count}.`);
-     10. };
-     11. let scanFileCallback: fileGuard.ScanFileCallback = {
-     12. onReceiveFileList: onReceiveFileList,
-     13. onTaskCompleted: onCompleteScanTask
-     14. };
-     15. guard.startFileScanTask(fileGuard.CommonDirScanType.MEDIA_ONLY, scanFileCallback);
-     16. }
+     ```typescript
+     const TAG: string = 'FileGuard_Scan';
+     const DOMAIN: number = 0x0000;
+
+     /**
+      * 启动公共目录文件扫描任务
+      */
+     function startFileScanTaskUnderCommonDir() {
+       let guard: fileGuard.FileGuard = new fileGuard.FileGuard();
+       let onReceiveFileList: (files: string[]) => void = (files: Array<string>) => {
+         files.forEach((value: string) => {
+           hilog.info(DOMAIN, TAG, `Succeeded in getting file: ${value}.`);
+         })
+       };
+       let onCompleteScanTask: (count: number) => void = (count: number) => {
+         hilog.info(DOMAIN, TAG, `Succeeded in getting count: ${count}.`);
+       };
+       let scanFileCallback: fileGuard.ScanFileCallback = {
+         onReceiveFileList: onReceiveFileList,
+         onTaskCompleted: onCompleteScanTask
+       };
+       guard.startFileScanTask(fileGuard.CommonDirScanType.MEDIA_ONLY, scanFileCallback);
+     }
      ```
    * 扫描公共空间指定路径下的文件，查看打印结果。
 
-     ```
-     1. function startFileScanTaskUnderSpecifiedDir() {
-     2. let guard: fileGuard.FileGuard = new fileGuard.FileGuard();
-     3. let path: string = '/data/service/el2/test';
-     4. let onReceiveFileList: (files: string[]) => void = (files: Array<string>) => {
-     5. files.forEach((value: string, index: number) => {
-     6. console.info(`Succeeded in getting file: ${value}.`);
-     7. })
-     8. };
-     9. let onCompleteScanTask: (count: number) => void = (count: number) => {
-     10. console.info(`Succeeded in getting count: ${count}.`);
-     11. };
-     12. let scanFileCallback: fileGuard.ScanFileCallback = {
-     13. onReceiveFileList: onReceiveFileList,
-     14. onTaskCompleted: onCompleteScanTask
-     15. };
-     16. guard.startFileScanTask(path, scanFileCallback);
-     17. }
+     ```typescript
+     const TAG: string = 'FileGuard_Scan';
+     const DOMAIN: number = 0x0000;
+
+     // ...
+     /**
+      * 启动指定目录文件扫描任务
+      */
+     function startFileScanTaskUnderSpecifiedDir() {
+       let guard: fileGuard.FileGuard = new fileGuard.FileGuard();
+       let path: string = '/data/service/el2/test';
+       let onReceiveFileList: (files: string[]) => void = (files: Array<string>) => {
+         files.forEach((value: string) => {
+           hilog.info(DOMAIN, TAG, `Succeeded in getting file: ${value}.`);
+         })
+       };
+       let onCompleteScanTask: (count: number) => void = (count: number) => {
+         hilog.info(DOMAIN, TAG, `Succeeded in getting count: ${count}.`);
+       };
+       let scanFileCallback: fileGuard.ScanFileCallback = {
+         onReceiveFileList: onReceiveFileList,
+         onTaskCompleted: onCompleteScanTask
+       };
+       guard.startFileScanTask(path, scanFileCallback);
+     }
      ```

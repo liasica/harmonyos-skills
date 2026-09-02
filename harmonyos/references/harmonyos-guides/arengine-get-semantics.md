@@ -3,14 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-get-
 title: 识别平面语义（ArkTS）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 平面语义 > 识别平面语义（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:35:53+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:89ab2958808a73fedc019c18652d3e835eaa03e504b58eb7906d3c0f7aa34ac9
+scraped_at: 2026-09-02T14:59:48+08:00
+doc_updated_at: 2026-08-14
+content_hash: sha256:2a8a95d8578cf7327b903b403d351717eafe94cf8b8241252612856cb391b33e
 ---
+
+本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/HarmonyOS_Samples/arengine_samplecode_clientdemo_arkts)。
 
 ## 约束与限制
 
-识别平面语义能力支持部分Phone、部分Tablet设备。请参考[硬件要求](arengine-preparations.md#硬件要求)判断设备是否支持运动跟踪及平面识别特性（[ARENGINE\_FEATURE\_TYPE\_SEMANTIC](../harmonyos-references/arengine-api-arengine.md#arfeaturetype)）。
+从5.1.0(18)开始，识别平面语义能力支持部分Phone、部分Tablet设备。请参考[硬件要求](arengine-preparations.md#硬件要求)判断设备是否支持平面及物体语义特性（[ARENGINE\_FEATURE\_TYPE\_SEMANTIC](../harmonyos-references/arengine-api-arengine.md#arfeaturetype)）。
 
 ## 接口说明
 
@@ -38,18 +40,20 @@ AR Engine仅输出识别到的平面数据。为便于用户观察，可使用AG
 
 识别平面语义能力所需要导入的模块如下：
 
-```
-1. import { arEngine, ARView, arViewController } from '@kit.AREngine';
-2. import { Node, Scene } from '@kit.ArkGraphics3D';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { arEngine, ARView, arViewController } from '@kit.AREngine';
+import {Camera, CustomGeometry, Geometry, Image, Material, MaterialType, Node, PrimitiveTopology,
+  Scene, SceneResourceFactory, Shader, ShaderMaterial} from '@kit.ArkGraphics3D';
+import { BusinessError } from '@kit.BasicServicesKit';
 ```
 
 ### 定义变量
 
 定义变量planeLabel接收平面类型标签信息。
 
-```
-1. let planeLabel: arEngine.ARSemanticPlaneLabel;
+```typescript
+let arSession: arEngine.ARSession;
+let planeLabel: arEngine.ARSemanticPlaneLabel;
 ```
 
 ### 显示平面语义信息
@@ -60,118 +64,98 @@ AR Engine仅输出识别到的平面数据。为便于用户观察，可使用AG
 
 在设备界面上显示识别到平面的信息，使用重复调用函数方法在设备界面上实时更新识别到的平面语义信息。
 
-```
-1. @Builder
-2. export function ARTargetBuilder(): void {
-3. ARTarget();
-4. }
+```typescript
+@Builder
+export function ARTargetBuilder() {
+  ARTarget()
+}
+// ...
 
-6. @Component
-7. struct ARTarget {
-8. @State arContext?: arViewController.ARViewContext = undefined;
-9. // 平面类型
-10. @State targetPlaneLabel: arEngine.ARSemanticPlaneLabel = planeLabel;
-11. private intervalId: number = -1;
-12. // 重复调用函数时间间隔为33ms，即设定为30fps
-13. private delayInterval: number = 33;
+@Component
+struct ARTarget {
+  @State arContext?: arViewController.ARViewContext = undefined;
+  @State targetPlaneLabel: arEngine.ARSemanticPlaneLabel = planeLabel;
+  private intervalId: number = -1;
+  private delayInterval: number = 33;
+  private params: arEngine.ARConfig = { type: arEngine.ARType.WORLD };
+  // ...
 
-15. build(): void {
-16. NavDestination() {
-17. RelativeContainer() {
-18. if (this.arContext) {
-19. ARView({ context: this.arContext })
-20. .height('100%')
-21. .width('100%')
-22. .alignRules({
-23. center: { anchor: '__container__', align: VerticalAlign.Center },
-24. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-25. })
+  build() {
+    NavDestination() {
+      RelativeContainer() {
+        if (this.arContext) {
+          ARView({ context: this.arContext })
+            .height('100%')
+            .width('100%')
+            .alignRules({
+              center: { anchor: '__container__', align: VerticalAlign.Center },
+              middle: { anchor: '__container__', align: HorizontalAlign.Center }
+            })
 
-27. // 在屏幕底部显示识别的平面信息
-28. Column() {
-29. Text(`Label: ${convertSemanticLabel(this.targetPlaneLabel)}`)
-30. .infoStyles()
-31. }
-32. .alignItems(HorizontalAlign.Center)
-33. .margin({ bottom: 10 })
-34. .alignRules({
-35. bottom: { anchor: '__container__', align: VerticalAlign.Bottom },
-36. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-37. })
-38. }
-39. }
-40. }
-41. .onAppear(() => {
-42. this.initARView();
-43. // 设定在30fps下更新识别平面语义信息
-44. this.intervalId = setInterval(() => {
-45. this.targetPlaneLabel = planeLabel;
-46. }, this.delayInterval);
-47. })
-48. .onWillDisappear(() => {
-49. // 退出setInterval函数
-50. clearInterval(this.intervalId);
-51. this.stopARView();
-52. })
-53. .onShown(() => {
-54. this.resumeARView();
-55. })
-56. .onHidden(() => {
-57. this.pauseARView();
-58. })
-59. .hideTitleBar(true)
-60. .hideBackButton(true)
-61. .hideToolBar(true)
-62. }
+          Column() {
+            Text(`Label: ${convertSemanticLabel(this.targetPlaneLabel)}`)
+              .infoStyles()
+          }
+          .alignItems(HorizontalAlign.Center)
+          .alignRules({
+            bottom: { anchor: '__container__', align: VerticalAlign.Bottom },
+            middle: { anchor: '__container__', align: HorizontalAlign.Center }
+          })
+        }
+      }
+    }
+    .onAppear(() => {
+      this.initARView();
+      this.intervalId = setInterval(async () => {
+        this.targetPlaneLabel = planeLabel;
+        // ...
+      }, this.delayInterval);
+    })
+    .onWillDisappear(() => {
+      // ...
+    })
+    .onShown(() => {
+      this.resumeARView();
+    })
+    .onHidden(() => {
+      this.pauseARView();
+    })
+    // ...
+    .hideTitleBar(true)
+    .hideBackButton(true)
+    .hideToolBar(true)
+  }
 
-64. private initARView(): void {
-65. Scene.load().then((scene: Scene) => {
-66. let viewContext: arViewController.ARViewContext = new arViewController.ARViewContext();
-67. viewContext.scene = scene;
-68. viewContext.callback = new ARViewCallbackImpl();
-69. viewContext.config = {
-70. type: arEngine.ARType.WORLD,
-71. planeFindingMode: arEngine.ARPlaneFindingMode.HORIZONTAL_AND_VERTICAL,
-72. powerMode: arEngine.ARPowerMode.NORMAL,
-73. semanticMode: arEngine.ARSemanticMode.PLANE, // 识别平面语义
-74. poseMode: arEngine.ARPoseMode.GRAVITY,
-75. depthMode: arEngine.ARDepthMode.AUTOMATIC,
-76. meshMode: arEngine.ARMeshMode.DISABLED,
-77. focusMode: arEngine.ARFocusMode.AUTO
-78. };
-79. viewContext.init().then(() => {
-80. this.arContext = viewContext;
-81. console.info('Succeeded in initializing ARView.');
-82. }).catch((err: BusinessError) => {
-83. console.error(`Failed to init ARView. Code is ${err.code}, message is ${err.message}.`);
-84. });
-85. });
-86. }
+  private pauseARView(): void {
+    // ...
+  }
 
-88. private stopARView(): void {
-89. // ...
-90. }
-91. private resumeARView(): void {
-92. // ...
-93. }
-94. private pauseARView(): void {
-95. // ...
-96. }
-97. }
+  private resumeARView(): void {
+    // ...
+  }
 
-99. // 界面显示文本样式
-100. @Extend(Text)
-101. function infoStyles() {
-102. .fontColor(Color.Yellow)
-103. .fontSize(24)
-104. .textShadow({
-105. radius: 10,
-106. color: Color.Black,
-107. offsetX: 0,
-108. offsetY: 0
-109. })
-110. .textAlign(TextAlign.Start)
-111. }
+  private initARView(): void {
+    Scene.load().then(async (scene) => {
+      let context = new arViewController.ARViewContext();
+      context.scene = scene;
+      context.callback = new ARViewCallbackImpl();
+      context.config = {
+        type: arEngine.ARType.WORLD,
+        planeFindingMode: arEngine.ARPlaneFindingMode.HORIZONTAL_AND_VERTICAL,
+        powerMode: this.params?.powerMode,
+        semanticMode: 3,
+        poseMode: this.params?.poseMode,
+        depthMode: this.params?.depthMode,
+        meshMode: this.params?.meshMode,
+      };
+      context.init().then(() => {
+        this.arContext = context;
+        // ...
+      });
+      // ...
+    });
+  }
+}
 ```
 
 ### 获取语义信息
@@ -180,47 +164,39 @@ AR Engine仅输出识别到的平面数据。为便于用户观察，可使用AG
 
 增加获取语义信息的方法plane.label，获取每一帧识别到的平面语义信息。
 
-```
-1. class ARViewCallbackImpl extends arViewController.ARViewCallback {
-2. onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
-3. // ...
-4. }
+```typescript
+class ARViewCallbackImpl extends arViewController.ARViewCallback {
+  // ...
+  onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
+  }
 
-6. onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
-7. // ...
-8. }
+  onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
+  }
 
-10. onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): void {
-11. if (!ctx.session) {
-12. return;
-13. }
+  async onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): Promise<void> {
+    if (!ctx.session) {
+      // ...
+      return;
+    }
+    arSession = ctx.session;
 
-15. let arSession: arEngine.ARSession = ctx.session;
-
-17. try {
-18. let frame: arEngine.ARFrame = arSession.getFrame();
-19. let camera: arEngine.ARCamera = frame.getCamera();
-20. let trackable: arEngine.ARTrackable[] = [];
-
-22. if (camera.state === arEngine.ARTrackingState.TRACKING) {
-23. trackable = arSession.getAllTrackables(arEngine.ARTrackableType.PLANE);
-24. console.info(`Succeeded in getting tracking plane, length is: ${trackable.length}`);
-25. }
-
-27. for (let i = 0; i < trackable.length; ++i) {
-28. let plane: arEngine.ARPlane = trackable[i] as arEngine.ARPlane;
-
-30. // 更新识别的平面语义信息
-31. planeLabel = plane.label;
-32. console.info(`Succeeded in updating frame data for loop: ${plane.label}`);
-33. }
-
-35. } catch (error) {
-36. const err: BusinessError = error as BusinessError;
-37. console.error(`Failed to update data. Code is ${err.code}, message is ${err.message}.`);
-38. }
-39. }
-40. }
+    let frame = arSession.getFrame();
+    let camera = frame.getCamera();
+    if (!camera) {
+      // ...
+    } else {
+      // 更新帧数据。
+      let trackables: arEngine.ARTrackable[] = arSession.getAllTrackables(arEngine.ARTrackableType.PLANE);
+      for (let i = 0; i < trackables.length; ++i) {
+        let plane: arEngine.ARPlane = trackables[i] as arEngine.ARPlane;
+        // ...
+        planeLabel = plane.label;
+        // ...
+      }
+    }
+    // ...
+  }
+}
 ```
 
 ### 识别平面语义的自定义方法
@@ -231,34 +207,34 @@ arrayBufferFloat32ToNumber可以参考[数据类型转换说明](arengine-arrayb
 
 平面语义标签转换convertSemanticLabel可参考如下。
 
-```
-1. function convertSemanticLabel(obj: number): string {
-2. let res: string = '';
-3. if (obj === 0) {
-4. res = 'UNKNOWN';
-5. } else if (obj === 1) {
-6. res = 'WALL';
-7. } else if (obj === 2) {
-8. res = 'FLOOR';
-9. } else if (obj === 3) {
-10. res = 'SEAT';
-11. } else if (obj === 4) {
-12. res = 'TABLE';
-13. } else if (obj === 5) {
-14. res = 'CEILING';
-15. } else if (obj === 6) {
-16. res = 'DOOR';
-17. } else if (obj === 7) {
-18. res = 'WINDOW';
-19. } else if (obj === 8) {
-20. res = 'BED';
-21. } else if (obj === 9) {
-22. res = 'PLANE SPACE';
-23. } else if (obj === 10) {
-24. res = 'CUBE VOLUME';
-25. } else if (obj === 11) {
-26. res = 'CUBE SPACE';
-27. }
-28. return res;
-29. }
+```typescript
+export function convertSemanticLabel(obj: number): string {
+  let res: string = '';
+  if (obj === 0) {
+    res = 'UNKNOWN';
+  } else if (obj === 1) {
+    res = 'WALL';
+  } else if (obj === 2) {
+    res = 'FLOOR';
+  } else if (obj === 3) {
+    res = 'SEAT';
+  } else if (obj === 4) {
+    res = 'TABLE';
+  } else if (obj === 5) {
+    res = 'CEILING';
+  } else if (obj === 6) {
+    res = 'DOOR';
+  } else if (obj === 7) {
+    res = 'WINDOW';
+  } else if (obj === 8) {
+    res = 'BED';
+  } else if (obj === 9) {
+    res = 'PLANE SPACE';
+  } else if (obj === 10) {
+    res = 'CUBE VOLUME';
+  } else if (obj === 11) {
+    res = 'CUBE SPACE';
+  }
+  return res;
+}
 ```

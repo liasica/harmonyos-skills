@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-opera
 title: 构造函数和析构函数
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator > 构造函数和析构函数
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:38+08:00
+scraped_at: 2026-09-02T15:00:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a48ecae2e913233eef9c5482047bb6806f8370d40abe80938d2f987bc0959db9
+content_hash: sha256:3d06b59544a54ab7d10f31b6cdc1daa0bb53b12651936f8ec5462c0ef309c4af
 ---
 
 ## 函数功能
@@ -14,18 +14,18 @@ Operator构造函数和析构函数。
 
 ## 函数原型
 
-说明
+**说明** 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 
-```
-1. Operator()
-2. explicit Operator(const std::string &type);
-3. explicit Operator(const char_t *type);
-4. Operator(const std::string &name, const std::string &type);
-5. Operator(const AscendString &name, const AscendString &type);
-6. Operator(const char_t *name, const char_t *type);
-7. virtual ~Operator() = default;
+```cpp
+Operator()
+explicit Operator(const std::string &type);
+explicit Operator(const char_t *type);
+Operator(const std::string &name, const std::string &type);
+Operator(const AscendString &name, const AscendString &type);
+Operator(const char_t *name, const char_t *type);
+virtual ~Operator() = default;
 ```
 
 ## 参数说明

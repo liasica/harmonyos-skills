@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scsi-peripheral-ddk-guidelines
-title: 开发使用SCSI协议的设备驱动
-breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > 扩展外设专项驱动开发 > 开发使用SCSI协议的设备驱动
+title: 开发适用SCSI协议的设备驱动
+breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > 扩展外设专项驱动开发 > 开发适用SCSI协议的设备驱动
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:33:33+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5940da17588f79f2023f734f96f49872ec0f37d7e2bd89037317111893f9ec49
+scraped_at: 2026-09-02T14:59:37+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:917213f77038007c515861c439b0d0c88a3a8260a9d9b3cba0b765e1fafc8394
 ---
 
 ## 简介
@@ -49,7 +49,7 @@ ScsiPeripheralDDK支持SPC（SCSI Primary Commands）、SBC（SCSI Block Command
 
 **图1** ScsiPeripheralDDK调用原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/SkBFn98bROevndy_fbgWsA/zh-cn_image_0000002589244779.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/vKrWICc0To6_cyW85lbuFQ/zh-cn_image_0000002706674470.png)
 
 ### 约束与限制
 
@@ -93,15 +93,15 @@ ScsiPeripheralDDK支持SPC（SCSI Primary Commands）、SBC（SCSI Block Command
 
 CMakeLists.txt中添加以下lib。
 
-```
-1. libscsi.z.so
+```txt
+libscsi.z.so
 ```
 
 **头文件**
 
 ```
-1. #include <scsi_peripheral/scsi_peripheral_api.h>
-2. #include <scsi_peripheral/scsi_peripheral_types.h>
+#include <scsi_peripheral/scsi_peripheral_api.h>
+#include <scsi_peripheral/scsi_peripheral_types.h>
 ```
 
 1. 初始化DDK。
@@ -109,138 +109,108 @@ CMakeLists.txt中添加以下lib。
    使用 **scsi\_peripheral\_api.h** 的 **OH\_ScsiPeripheral\_Init** 初始化ScsiPeripheralDDK。
 
    ```
-   1. // 初始化SCSI Peripheral DDK
-   2. int32_t ret = OH_ScsiPeripheral_Init();
+   // 初始化SCSI Peripheral DDK
+   int32_t ret = OH_ScsiPeripheral_Init();
    ```
-
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/ScsiPeripheralDemo/entry/src/main/cpp/hello.cpp#L111-L114)
 2. 打开设备。
 
    初始化ScsiPeripheralDDK后，使用 **scsi\_peripheral\_api.h** 的 **OH\_ScsiPeripheral\_Open** 打开SCSI设备。
 
    ```
-   1. ret = OH_ScsiPeripheral_Open(g_devHandle, interfaceIndex, &g_scsiPeripheralDevice);
+   ret = OH_ScsiPeripheral_Open(g_devHandle, interfaceIndex, &g_scsiPeripheralDevice);
    ```
-
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/ScsiPeripheralDemo/entry/src/main/cpp/hello.cpp#L125-L127)
 3. 创建缓冲区（可选）。
 
    使用 **scsi\_peripheral\_api.h** 的 **OH\_ScsiPeripheral\_CreateDeviceMemMap** 创建内存缓冲区devMmap。
 
    ```
-   1. ret = OH_ScsiPeripheral_CreateDeviceMemMap(g_scsiPeripheralDevice, DEVICE_MEM_MAP_SIZE, &g_scsiDeviceMemMap);
+   ret = OH_ScsiPeripheral_CreateDeviceMemMap(g_scsiPeripheralDevice, DEVICE_MEM_MAP_SIZE, &g_scsiDeviceMemMap);
    ```
-
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/ScsiPeripheralDemo/entry/src/main/cpp/hello.cpp#L142-L144)
 4. 检查逻辑单元是否已经准备好（可选）。
 
    使用 **scsi\_peripheral\_api.h** 的 **OH\_ScsiPeripheral\_TestUnitReady** 检查逻辑单元是否已经准备好。
 
    ```
-   1. int32_t ret = OH_ScsiPeripheral_TestUnitReady(g_scsiPeripheralDevice, &request, &response);
+   int32_t ret = OH_ScsiPeripheral_TestUnitReady(g_scsiPeripheralDevice, &request, &response);
    ```
-
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/ScsiPeripheralDemo/entry/src/main/cpp/hello.cpp#L414-L416)
 5. 查询SCSI设备的基本信息（可选）。
 
    使用 **scsi\_peripheral\_api.h** 的 **OH\_ScsiPeripheral\_Inquiry** 获取SCSI设备的基本信息。
 
    ```
-   1. int32_t ret = OH_ScsiPeripheral_Inquiry(g_scsiPeripheralDevice, &inquiryRequest, &inquiryInfo, &response);
+   int32_t ret = OH_ScsiPeripheral_Inquiry(g_scsiPeripheralDevice, &inquiryRequest, &inquiryInfo, &response);
    ```
-
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/ScsiPeripheralDemo/entry/src/main/cpp/hello.cpp#L226-L228)
 6. 获取SCSI设备的容量信息（可选）。
 
    使用 **scsi\_peripheral\_api.h** 的 **OH\_ScsiPeripheral\_ReadCapacity10** 获取SCSI设备容量信息。
 
    ```
-   1. ret = OH_ScsiPeripheral_ReadCapacity10(g_scsiPeripheralDevice, &readCapacityRequest, &capacityInfo, &response);
+   ret = OH_ScsiPeripheral_ReadCapacity10(g_scsiPeripheralDevice, &readCapacityRequest, &capacityInfo, &response);
    ```
-
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/ScsiPeripheralDemo/entry/src/main/cpp/hello.cpp#L357-L359)
 7. 获取sense data（可选）。
 
    使用 **scsi\_peripheral\_api.h** 的 **OH\_ScsiPeripheral\_RequestSense** 获取sense data。
 
    ```
-   1. int32_t ret = OH_ScsiPeripheral_RequestSense(g_scsiPeripheralDevice, &senseRequest, &response);
+   int32_t ret = OH_ScsiPeripheral_RequestSense(g_scsiPeripheralDevice, &senseRequest, &response);
    ```
-
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/ScsiPeripheralDemo/entry/src/main/cpp/hello.cpp#L499-L501)
 8. 解析sense data（可选）。
 
    使用 **scsi\_peripheral\_api.h** 的 **OH\_ScsiPeripheral\_ParseBasicSenseInfo** 解析基本的sense data，包括Information、Command specific information、Sense key specific字段。
 
    ```
-   1. int32_t ret = OH_ScsiPeripheral_ParseBasicSenseInfo(response.senseData, SCSIPERIPHERAL_MAX_SENSE_DATA_LEN,
-   2. &senseInfo);
+   int32_t ret = OH_ScsiPeripheral_ParseBasicSenseInfo(response.senseData, SCSIPERIPHERAL_MAX_SENSE_DATA_LEN,
+       &senseInfo);
    ```
-
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/ScsiPeripheralDemo/entry/src/main/cpp/hello.cpp#L450-L453)
 9. 读取数据（可选）。
 
    使用 **scsi\_peripheral\_api.h** 的 **OH\_ScsiPeripheral\_Read10** 读取指定逻辑块的数据。
 
    ```
-   1. int32_t ret = OH_ScsiPeripheral_Read10(g_scsiPeripheralDevice, &request, &response);
+   int32_t ret = OH_ScsiPeripheral_Read10(g_scsiPeripheralDevice, &request, &response);
    ```
-
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/ScsiPeripheralDemo/entry/src/main/cpp/hello.cpp#L643-L645)
 10. 写入数据（可选）。
 
     使用 **scsi\_peripheral\_api.h** 的 **OH\_ScsiPeripheral\_Write10** 写数据到设备指定逻辑块。
 
     ```
-    1. int32_t ret = OH_ScsiPeripheral_Write10(g_scsiPeripheralDevice, &request, &response);
+    int32_t ret = OH_ScsiPeripheral_Write10(g_scsiPeripheralDevice, &request, &response);
     ```
-
-    [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/ScsiPeripheralDemo/entry/src/main/cpp/hello.cpp#L722-L724)
 11. 校验指定逻辑块（可选）。
 
     使用 **scsi\_peripheral\_api.h** 的 **OH\_ScsiPeripheral\_Verify10** 校验指定逻辑块。
 
     ```
-    1. int32_t ret = OH_ScsiPeripheral_Verify10(g_scsiPeripheralDevice, &request, &response);
+    int32_t ret = OH_ScsiPeripheral_Verify10(g_scsiPeripheralDevice, &request, &response);
     ```
-
-    [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/ScsiPeripheralDemo/entry/src/main/cpp/hello.cpp#L766-L768)
 12. 以CDB方式发送SCSI命令（可选）。
 
     使用 **scsi\_peripheral\_api.h** 的 **OH\_ScsiPeripheral\_SendRequestByCdb** 发送SCSI命令。
 
     ```
-    1. int32_t ret = OH_ScsiPeripheral_SendRequestByCdb(g_scsiPeripheralDevice, &request, &response);
+    int32_t ret = OH_ScsiPeripheral_SendRequestByCdb(g_scsiPeripheralDevice, &request, &response);
     ```
-
-    [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/ScsiPeripheralDemo/entry/src/main/cpp/hello.cpp#L900-L902)
 13. 销毁缓冲区（可选）。
 
     在所有请求处理完毕，程序退出前，使用 **scsi\_peripheral\_api.h** 的 **OH\_ScsiPeripheral\_DestroyDeviceMemMap** 销毁缓冲区。
 
     ```
-    1. ret = OH_ScsiPeripheral_DestroyDeviceMemMap(g_scsiDeviceMemMap);
+    ret = OH_ScsiPeripheral_DestroyDeviceMemMap(g_scsiDeviceMemMap);
     ```
-
-    [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/ScsiPeripheralDemo/entry/src/main/cpp/hello.cpp#L947-L949)
 14. 关闭设备。
 
     在销毁缓冲区后，使用 **scsi\_peripheral\_api.h** 的 **OH\_ScsiPeripheral\_Close** 关闭设备。
 
     ```
-    1. ret = OH_ScsiPeripheral_Close(&g_scsiPeripheralDevice);
+    ret = OH_ScsiPeripheral_Close(&g_scsiPeripheralDevice);
     ```
-
-    [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/ScsiPeripheralDemo/entry/src/main/cpp/hello.cpp#L958-L960)
 15. 释放DDK。
 
     在关闭SCSI设备后，使用 **scsi\_peripheral\_api.h** 的 **OH\_ScsiPeripheral\_Release** 释放ScsiPeripheralDDK。
 
     ```
-    1. ret = OH_ScsiPeripheral_Release();
+    ret = OH_ScsiPeripheral_Release();
     ```
-
-    [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/ScsiPeripheralDemo/entry/src/main/cpp/hello.cpp#L967-L969)
 
 ### 调测验证
 

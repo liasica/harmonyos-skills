@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/textblock-dra
 title: 字块绘制（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 图元绘制 > 字块绘制（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:36:11+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:68d16a461f8df54f7515567d8a9368f979d54c8544552af61ae917644eee480e
+scraped_at: 2026-09-02T14:59:49+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:74103ce2f6204df34a39f9ef09740f173e05a32560add793c2db08ce5507e1fe
 ---
 
 ## 场景介绍
@@ -37,20 +37,18 @@ Canvas通过drawTextBlob()来绘制字块。函数接受三个参数：TextBlob�
 
 基本效果的示例代码和效果图如下：
 
-```
-1. // 创建字型对象
-2. const font = new drawing.Font();
-3. // 设置字体大小
-4. font.setSize(100);
-5. // 创建字块对象
-6. const textBlob = drawing.TextBlob.makeFromString('Hello world', font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
-7. // 绘制字块
-8. canvas.drawTextBlob(textBlob, VALUE_200, VALUE_300);
+```typescript
+// 创建字型对象
+const font = new drawing.Font();
+// 设置字体大小
+font.setSize(100);
+// 创建字块对象
+const textBlob = drawing.TextBlob.makeFromString('Hello world', font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
+// 绘制字块
+canvas.drawTextBlob(textBlob, VALUE_200, VALUE_300);
 ```
 
-[TextBlockDrawing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/TextBlockDrawing.ets#L22-L31)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/x5dwOsL2RhyjEpSLPWgx1w/zh-cn_image_0000002589244965.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/7ZMGmbwfQv6Pm6O72MnrYQ/zh-cn_image_0000002706674718.jpg)
 
 ## 文字描边
 
@@ -62,32 +60,30 @@ Canvas通过drawTextBlob()来绘制字块。函数接受三个参数：TextBlob�
 
 英文文字描边的简要示例和示意图如下：
 
-```
-1. // 创建画笔
-2. let pen = new drawing.Pen();
-3. // 设置抗锯齿
-4. pen.setAntiAlias(true);
-5. // 设置描边线宽
-6. pen.setStrokeWidth(3.0);
-7. // 设置描边颜色
-8. pen.setColor(0xFF, 0xFF, 0x00, 0x00);
-9. // 创建字型对象
-10. const font = new drawing.Font();
-11. // 设置字体大小
-12. font.setSize(100);
-13. // 添加画笔描边效果
-14. canvas.attachPen(pen);
-15. // 创建字块对象
-16. const textBlob = drawing.TextBlob.makeFromString('Hello world', font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
-17. // 绘制字块
-18. canvas.drawTextBlob(textBlob, VALUE_200, VALUE_300);
-19. // 去除描边效果
-20. canvas.detachPen();
+```typescript
+// 创建画笔
+let pen = new drawing.Pen();
+// 设置抗锯齿
+pen.setAntiAlias(true);
+// 设置描边线宽
+pen.setStrokeWidth(3.0);
+// 设置描边颜色
+pen.setColor(0xFF, 0xFF, 0x00, 0x00);
+// 创建字型对象
+const font = new drawing.Font();
+// 设置字体大小
+font.setSize(100);
+// 添加画笔描边效果
+canvas.attachPen(pen);
+// 创建字块对象
+const textBlob = drawing.TextBlob.makeFromString('Hello world', font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
+// 绘制字块
+canvas.drawTextBlob(textBlob, VALUE_200, VALUE_300);
+// 去除描边效果
+canvas.detachPen();
 ```
 
-[TextBlockDrawing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/TextBlockDrawing.ets#L35-L56)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/VXh4IWKrQdO507CL6Ne5SQ/zh-cn_image_0000002558765160.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/-_DjKIXqQ0qYhE99iX7i1Q/zh-cn_image_0000002736433807.jpg)
 
 ### 中文文字描边
 
@@ -95,43 +91,41 @@ Canvas通过drawTextBlob()来绘制字块。函数接受三个参数：TextBlob�
 
 中文文字描边的简要示例和示意图如下：
 
+```typescript
+// 创建画刷
+let brush = new drawing.Brush();
+// 创建画笔
+let pen = new drawing.Pen();
+// 设置抗锯齿
+brush.setAntiAlias(true);
+// 设置填充颜色
+brush.setColor(0xFF, 0xFF, 0xFF, 0xFF);
+
+pen.setAntiAlias(true);
+// 设置描边线宽
+pen.setStrokeWidth(3.0);
+// 设置描边颜色
+pen.setColor(0xFF, 0xFF, 0x00, 0x00);
+
+// 创建字型对象
+const font = new drawing.Font();
+// 设置字体大小
+font.setSize(100);
+// 添加画笔描边效果
+canvas.attachPen(pen);
+// 创建字块对象
+const textBlob = drawing.TextBlob.makeFromString(STROKE_SAMPLE, font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
+// 绘制字块
+canvas.drawTextBlob(textBlob, VALUE_200,  VALUE_300);
+// 去除描边效果
+canvas.detachPen();
+
+canvas.attachBrush(brush);
+canvas.drawTextBlob(textBlob, VALUE_200, VALUE_300);
+canvas.detachBrush();
 ```
-1. // 创建画刷
-2. let brush = new drawing.Brush();
-3. // 创建画笔
-4. let pen = new drawing.Pen();
-5. // 设置抗锯齿
-6. brush.setAntiAlias(true);
-7. // 设置描边颜色
-8. brush.setColor(0xFF, 0xFF, 0xFF, 0xFF);
 
-10. pen.setAntiAlias(true);
-11. // 设置描边线宽
-12. pen.setStrokeWidth(3.0);
-13. // 设置描边颜色
-14. pen.setColor(0xFF, 0xFF, 0x00, 0x00);
-
-16. // 创建字型对象
-17. const font = new drawing.Font();
-18. // 设置字体大小
-19. font.setSize(100);
-20. // 添加画笔描边效果
-21. canvas.attachPen(pen);
-22. // 创建字块对象
-23. const textBlob = drawing.TextBlob.makeFromString(STROKE_SAMPLE, font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
-24. // 绘制字块
-25. canvas.drawTextBlob(textBlob, VALUE_200,  VALUE_300);
-26. // 去除描边效果
-27. canvas.detachPen();
-
-29. canvas.attachBrush(brush);
-30. canvas.drawTextBlob(textBlob, VALUE_200, VALUE_300);
-31. canvas.detachBrush();
-```
-
-[TextBlockDrawing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/TextBlockDrawing.ets#L60-L93)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/Mcbbs9rmT82XeuSfBs4_Ug/zh-cn_image_0000002558605504.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/ZT2cod3iTAu5JaXbuCasJg/zh-cn_image_0000002706834656.png)
 
 ## 文字渐变
 
@@ -139,33 +133,31 @@ Canvas通过drawTextBlob()来绘制字块。函数接受三个参数：TextBlob�
 
 以下为文字添加了线性渐变着色器效果的简要示例和示意图：
 
-```
-1. let startPt: common2D.Point = { x: VALUE_100, y: VALUE_100 };
-2. let endPt: common2D.Point = { x: VALUE_900, y: VALUE_900 };
-3. let colors = [0xFFFFFF00, 0xFFFF0000, 0xFF0000FF];
-4. // 创建线性渐变着色器
-5. let shaderEffect = drawing.ShaderEffect.createLinearGradient(startPt, endPt, colors, drawing.TileMode.CLAMP);
-6. // 创建画刷
-7. let brush = new drawing.Brush();
-8. // 设置着色器
-9. brush.setShaderEffect(shaderEffect);
-10. // 添加画刷填充效果
-11. canvas.attachBrush(brush);
-12. // 创建字型
-13. const font = new drawing.Font();
-14. // 设置字体大小
-15. font.setSize(VALUE_200);
-16. // 创建字块
-17. const textBlob = drawing.TextBlob.makeFromString('Hello world', font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
-18. // 绘制字块
-19. canvas.drawTextBlob(textBlob, VALUE_100, VALUE_300);
-20. // 去除填充效果
-21. canvas.detachBrush();
+```typescript
+let startPt: common2D.Point = { x: VALUE_100, y: VALUE_100 };
+let endPt: common2D.Point = { x: VALUE_900, y: VALUE_900 };
+let colors = [0xFFFFFF00, 0xFFFF0000, 0xFF0000FF];
+// 创建线性渐变着色器
+let shaderEffect = drawing.ShaderEffect.createLinearGradient(startPt, endPt, colors, drawing.TileMode.CLAMP);
+// 创建画刷
+let brush = new drawing.Brush();
+// 设置着色器
+brush.setShaderEffect(shaderEffect);
+// 添加画刷填充效果
+canvas.attachBrush(brush);
+// 创建字型
+const font = new drawing.Font();
+// 设置字体大小
+font.setSize(VALUE_200);
+// 创建字块
+const textBlob = drawing.TextBlob.makeFromString('Hello world', font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
+// 绘制字块
+canvas.drawTextBlob(textBlob, VALUE_100, VALUE_300);
+// 去除填充效果
+canvas.detachBrush();
 ```
 
-[TextBlockDrawing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/TextBlockDrawing.ets#L97-L119)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/u2VDrEG-QA6FQHrNpb1ILQ/zh-cn_image_0000002589325031.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/LW9NQnvtS1yF09rWrRFgcg/zh-cn_image_0000002736313763.jpg)
 
 ## 主题字体
 
@@ -173,86 +165,80 @@ Canvas通过drawTextBlob()来绘制字块。函数接受三个参数：TextBlob�
 
 设置跟随主题字体的示例代码和效果图如下：
 
+```typescript
+// 创建字型对象
+const font = new drawing.Font();
+// 设置文字大小
+font.setSize(100);
+// 设置跟随主题字体
+font.setThemeFontFollowed(true);
+// 创建字块对象
+const textBlob = drawing.TextBlob.makeFromString('Hello World', font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
+// 绘制字块
+canvas.drawTextBlob(textBlob, VALUE_200, VALUE_300);
 ```
-1. // 创建线性渐变着色器
-2. const font = new drawing.Font();
-3. // 设置文字大小
-4. font.setSize(100);
-5. // 设置跟随主题字体
-6. font.setThemeFontFollowed(true);
-7. // 创建字块对象
-8. const textBlob = drawing.TextBlob.makeFromString('Hello World', font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
-9. // 绘制字块
-10. canvas.drawTextBlob(textBlob, VALUE_200, VALUE_300);
-```
-
-[TextBlockDrawing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/TextBlockDrawing.ets#L123-L134)
 
 | 未跟随主题字体的效果图 | 跟随主题字体的效果图（不同主题字体显示效果不同，此处仅示意） |
 | --- | --- |
 |  |  |
 
-说明
+**说明** 
 
 需要在应用入口文件（默认工程中为EntryAbility.ets）中复写onConfigurationUpdate函数，以响应切换主题字体的操作，确保切换后页面能够及时刷新并生效。具体实现可参考[使用主题字体（ArkTS）](theme-font-arkts.md)。
 
 ## 单字绘制
 
-单字绘制是图形渲染中针对文本渲染的一种精细化控制技术。相比字块绘制，其核心优势在于能够利用字体退化机制，在当前字体无法显示某字符时，自动退化到使用系统字体绘制字符，提升对特殊字符的兼容性，避免字符缺失。同时，单字绘制支持逐字符配置字体特征（如连字、替代字形），满足复杂排版需求，增强用户体验。详细API说明请见[drawing.Canvas](../harmonyos-references/arkts-apis-graphics-drawing-canvas.md#drawsinglecharacter12)。
+单字绘制是图形渲染中针对文本渲染的一种精细化控制技术。相比字块绘制，其核心优势在于能够利用字体退化机制，在当前字体无法显示某字符时，自动退化到使用系统字体绘制字符，提升对特殊字符的兼容性，避免字符缺失。同时，单字绘制支持逐字符配置字体特征（如连字、替代字形），满足复杂排版需求，增强用户体验。详细API说明请见[drawSingleCharacter](../harmonyos-references/arkts-apis-graphics-drawing-canvas.md#drawsinglecharacter12)。
 
 基础场景：绘制无字体特征的字符。
 
 对于无需字体特征的常规文本渲染场景，可以使用drawSingleCharacter绘制单个字符，使用measureSingleCharacter测量单个字符的宽度，示例代码和效果图如下：
 
-```
-1. // 创建字型对象
-2. const font = new drawing.Font();
-3. // 设置文字大小
-4. font.setSize(100);
-5. let startX = 100;
-6. let startY = 100;
-7. let text = ['H', 'e', 'l', 'l', 'o'];
-8. for (let s of text) {
-9. // 单字绘制
-10. canvas.drawSingleCharacter(s, font, startX, startY);
-11. // 测量单个字符的宽度
-12. let textWidth = font.measureSingleCharacter(s);
-13. startX += textWidth;
-14. }
+```typescript
+// 创建字型对象
+const font = new drawing.Font();
+// 设置文字大小
+font.setSize(100);
+let startX = 100;
+let startY = 100;
+let text = ['H', 'e', 'l', 'l', 'o'];
+for (let s of text) {
+  // 单字绘制
+  canvas.drawSingleCharacter(s, font, startX, startY);
+  // 测量单个字符的宽度
+  let textWidth = font.measureSingleCharacter(s);
+  startX += textWidth;
+}
 ```
 
-[TextBlockDrawing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/TextBlockDrawing.ets#L138-L153)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/MoyWqACKQoeXUF1e_pVMkA/zh-cn_image_0000002558605506.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/H_nLqJNST_qfDGGpC-9SGQ/zh-cn_image_0000002706834658.jpg)
 
 进阶场景：绘制带字体特征的字符。
 
 对于需要字体特征的文本渲染场景，可以使用drawSingleCharacterWithFeatures绘制单个字符，使用measureSingleCharacterWithFeatures测量单个字符的宽度，示例代码和效果图如下：
 
+```typescript
+// 创建字型对象
+const font = new drawing.Font();
+// 设置文字大小
+font.setSize(100);
+let startX = 100;
+let startY = 100;
+let text = ['a', '2', '+', 'b', '2'];
+// 创建字体特征对象数组
+let fontFeatures: drawing.FontFeature[] = [{name: 'frac', value: 1}];
+for (let s of text) {
+  // 单字绘制
+  canvas.drawSingleCharacterWithFeatures(s, font, startX, startY, fontFeatures);
+  // 测量单个字符的宽度
+  let textWidth = font.measureSingleCharacterWithFeatures(s, fontFeatures);
+  startX += textWidth;
+}
 ```
-1. // 创建字型对象
-2. const font = new drawing.Font();
-3. // 设置文字大小
-4. font.setSize(100);
-5. let startX = 100;
-6. let startY = 100;
-7. let text = ['a', '2', '+', 'b', '2'];
-8. // 创建字体特征对象数组
-9. let fontFeatures: drawing.FontFeature[] = [{name: 'frac', value: 1}];
-10. for (let s of text) {
-11. // 单字绘制
-12. canvas.drawSingleCharacterWithFeatures(s, font, startX, startY, fontFeatures);
-13. // 测量单个字符的宽度
-14. let textWidth = font.measureSingleCharacterWithFeatures(s, fontFeatures);
-15. startX += textWidth;
-16. }
-```
 
-[TextBlockDrawing.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/TextBlockDrawing.ets#L157-L174)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/OiQAPf6NQaa6o0l6bVXxsg/zh-cn_image_0000002736313765.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/B50ZS7E-Qf-p68gIo1KkLw/zh-cn_image_0000002589325033.png)
-
-说明
+**说明** 
 
 如果 drawSingleCharacterWithFeatures 与 measureSingleCharacter 混合使用，或者 drawSingleCharacter 与 measureSingleCharacterWithFeatures 混合使用，字体绘制可能会重叠。
 

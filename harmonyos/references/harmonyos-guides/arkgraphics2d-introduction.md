@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics2d
 title: ArkGraphics 2D简介
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkGraphics 2D简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:07+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:ccdc04ffb5b07be4529228a74d058c0d269708e00a0542b0a70a4248a3dec039
+scraped_at: 2026-09-02T14:50:20+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:60db95d12af5cd929343898fadd15e731465cc6784e0e0d86b8d5905e08cdd44
 ---
 
 ArkGraphics 2D（方舟2D图形服务 ）主要提供图形绘制与显示相关的能力。开发者可以基于一套统一的图形接口进行应用开发，使应用开发更简单、高效。
@@ -21,7 +21,7 @@ ArkGraphics 2D（方舟2D图形服务 ）主要提供图形绘制与显示相关
 
 ## 使用场景
 
-* 图像效果处理：开发者可根据不同的UI效果需要，使用[effectKit模块](../harmonyos-references/js-apis-effectkit.md)实现图像的效果处理，以提升用户浏览体验。
+* 图像效果处理：开发者可根据不同的UI效果需要，使用[@ohos.effectKit (图像效果)](../harmonyos-references/js-apis-effectkit.md)实现图像的效果处理，以提升用户浏览体验。
 * 设置图像色域：开发者可根据设计需求使用图像文件并设置色域信息，实现图像广色域效果的绘制和显示。
 * 定制帧率场景：支持开发者根据不同内容和需要，定制帧率进行绘制。比如不同游戏场景和界面时，设置不同的帧率，以提升用户体验流畅性并达到平衡功耗的效果。
 * 自绘制场景：开发者可根据不同的UI效果和场景需要，使用Drawing等模块实现除ArkUI组件外的自定义组件或者自定义UI效果的绘制和显示。
@@ -32,3 +32,13 @@ ArkGraphics 2D（方舟2D图形服务 ）主要提供图形绘制与显示相关
 * 支持帧率动态配置，兼顾体验与功耗：支持三方框架根据UI场景，动态请求绘制帧率，比如游戏、视频等业务，兼顾流畅体验与功耗体验。
 * 支持录制回放机制，提升交互体验：支持录制命令的缓存，可对绘制指令进行回放，以提升UI绘制的跟手性。
 * 支持多种渲染后端：一次开发，支持多种渲染绘制后端，以降低多端适配成本，并满足应用的差异化需求。
+
+## 模拟器支持情况
+
+本Kit部分能力支持模拟器，且与真机存在能力差异，具体如下。
+
+* 模拟器上不支持广色域效果显示。
+* 模拟器上不支持HDR效果显示。
+* 模拟器上可变帧率的setExpectedFrameRateRange接口可能无法设置预期帧率。
+* 因模拟器与真机的绘制引擎不同，@ohos.graphics.drawing、NativeWindow、NativeBuffer、NativeImage、NativeVsync以及Drawing等模块的部分接口在模拟器与真机上会有显示效果差异。
+* 通用差异：请参见[模拟器与真机的差异](ide-emulator-specification.md#section1227613205203)。

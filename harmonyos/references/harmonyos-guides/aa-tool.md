@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/aa-tool
 title: aa工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > aa工具
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:34:17+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:1e9da665d9ce44c9c578bacca201c13abe09d8fffd33d6bad5a4d41bf18a6ae0
+scraped_at: 2026-09-02T14:59:40+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:02776202d341614b14a32e2580db3cc3297e5abb766d9d69950e575c2ae3b8b3
 ---
 
 Ability assistant（Ability助手，简称为aa），是用于启动应用和启动测试用例的工具，为开发者提供基本的应用调试和测试能力，例如启动应用组件、强制停止进程、打印应用组件相关信息等。
@@ -16,12 +16,12 @@ Ability assistant（Ability助手，简称为aa），是用于启动应用和启
 
 本文中命令介绍均基于交互式命令环境。如果直接执行hdc shell [aa命令]，则需要采用""来包裹aa命令，确保命令中的传参能被正确识别。示例如下：
 
-```
-1. # 启动命令
-2. hdc shell "aa start -A ohos.want.action.viewData -U 'https://www.example.com'"
+```bash
+# 启动命令
+hdc shell "aa start -A ohos.want.action.viewData -U 'https://www.example.com'"
 
-4. # 应用调试/调优命令
-5. hdc shell "aa process -b com.example.myapplication -a EntryAbility -p perf-cmd"
+# 应用调试/调优命令
+hdc shell "aa process -b com.example.myapplication -a EntryAbility -p perf-cmd"
 ```
 
 ## aa工具命令列表
@@ -39,25 +39,26 @@ Ability assistant（Ability助手，简称为aa），是用于启动应用和启
 | appdebug | 等待调试命令。用于设置、取消设置应用等待调试状态，以及获取处于等待调试状态的应用包名和持久化信息。等待调试状态只对debug类型应用生效。appdebug的设置命令只对单个应用生效，当重复设置时，应用包名与持久化状态会替换成最新设置内容。 |
 | process | 应用调试/调优命令。对应用进行调试或调优，IDE用该命令集成调试和调优工具。 |
 | send-memory-level | onMemoryLevel回调命令。指定进程的pid和内存使用级别来触发该进程的onMemoryLevel生命周期回调。 |
+| pre-start | 应用预启动命令。用于在后台预先启动应用到生命周期特定阶段，以提升用户点击应用的启动速度。 |
 
 ## 帮助命令（help）
 
-```
-1. # 显示帮助信息
-2. aa help
+```bash
+# 显示帮助信息
+aa help
 ```
 
 ## 启动命令（start）
 
 启动一个应用组件，目标组件可以是FA模型的PageAbility和ServiceAbility组件，也可以是Stage模型的UIAbility和ServiceExtensionAbility组件，且目标组件相应配置文件中的exported标签不能配置为false。
 
-```
-1. # 显示启动Ability。
-2. # 如果需要启动分身应用，可以使用[--pi ohos.extra.param.key.appCloneIndex <unsigned integer-value>]来指定分身应用的索引。
-3. aa start [-d <deviceId>] [-a <abilityName> -b <bundleName>] [-m <moduleName>] [-c] [-E] [-D] [-R] [-S] [-W] [--pi <key> <unsigned integer-value>] [--pb <key> <bool-value: true/false/t/f大小写不敏感] [--ps <key> <value>] [--psn <key>] [--wl <windowLeft>] [--wt <windowTop>] [--wh <windowHeight>] [--ww <windowWidth>] [-p <perf-cmd>]
+```bash
+# 显示启动Ability。
+# 如果需要启动分身应用，可以使用[--pi ohos.extra.param.key.appCloneIndex <unsigned integer-value>]来指定分身应用的索引。
+aa start [-d <deviceId>] [-a <abilityName> -b <bundleName>] [-m <moduleName>] [-u <userId>] [-c] [-E] [-D] [-R] [-S] [-W] [--pi <key> <unsigned integer-value>] [--pb <key> <bool-value: true/false/t/f大小写不敏感] [--ps <key> <value>] [--psn <key>] [--wl <windowLeft>] [--wt <windowTop>] [--wh <windowHeight>] [--ww <windowWidth>] [-p <perf-cmd>]
 
-5. # 隐式启动Ability。如果命令中的参数都不填，会导致启动失败。
-6. aa start [-d <deviceId>] [-U <URI>] [-t <type>] [-A <action>] [-e <entity>] [-c] [-D] [-E] [-R] [--pi <key> <unsigned integer-value>] [--pb <key> <bool-value: true/false/t/f大小写不敏感] [--ps <key> <value>] [--psn <key>] [--wl <windowLeft>] [--wt <windowTop>] [--wh <windowHeight>] [--ww <windowWidth>] [-p <perf-cmd>]
+# 隐式启动Ability。如果命令中的参数都不填，会导致启动失败。
+aa start [-d <deviceId>] [-U <URI>] [-t <type>] [-A <action>] [-e <entity>] [-u <userId>] [-c] [-D] [-E] [-R] [--pi <key> <unsigned integer-value>] [--pb <key> <bool-value: true/false/t/f大小写不敏感] [--ps <key> <value>] [--psn <key>] [--wl <windowLeft>] [--wt <windowTop>] [--wh <windowHeight>] [--ww <windowWidth>] [-p <perf-cmd>]
 ```
 
 **启动命令参数列表**
@@ -72,6 +73,7 @@ Ability assistant（Ability助手，简称为aa），是用于启动应用和启
 | -U | 可选参数，URI。  **说明：** 仅支持传递字符串。 |
 | -A | 可选参数，action。 |
 | -e | 可选参数，entity。 |
+| -u | 可选参数，userId，表示用户ID。在多用户场景下，用于区分同一设备上不同用户账号下的应用。  **说明：** 从API版本26.0.0开始，支持该参数。 |
 | -t | 可选参数，type。 |
 | --pi | 可选参数，整型类型键值对。  **说明：** 仅支持无符号整型值。 |
 | --pb | 可选参数，布尔类型键值对。 |
@@ -121,77 +123,77 @@ Ability assistant（Ability助手，简称为aa），是用于启动应用和启
 
 以隐式启动Ability为例。
 
-说明
+**说明** 
 
 本例中仅介绍了部分字段的使用。关于Ability匹配的详细规则参考[显式Want与隐式Want匹配规则](explicit-implicit-want-mappings.md)。
 
 * **目标应用**：修改module.json5配置，为目标Ability配置uris。
 
-  ```
-  1. {
-  2. "name": "TargetAbility",
-  3. // ......
-  4. "exported": true,
-  5. "skills": [
-  6. {
-  7. "actions":[
-  8. "ohos.want.action.viewData"
-  9. ],
-  10. "uris":[
-  11. {
-  12. "scheme": "myscheme",
-  13. "host": "www.test.com",
-  14. "port": "8080",
-  15. "path": "path"
-  16. }
-  17. ]
-  18. }
-  19. ]
-  20. }
+  ```json5
+  {
+    "name": "TargetAbility",
+    // ......
+    "exported": true,
+    "skills": [
+      {
+        "actions":[
+          "ohos.want.action.viewData"
+        ],
+        "uris":[
+          {
+            "scheme": "myscheme",
+            "host": "www.test.com",
+            "port": "8080",
+            "path": "path"
+          }
+        ]
+      }
+    ]
+  }
   ```
 * **拉起方应用**：隐式启动Ability。
 
   + 如果需要拉起应用的页面，可以使用-U命令，示例如下：
 
-    ```
-    1. aa start -U myscheme://www.test.com:8080/path
+    ```bash
+    aa start -U myscheme://www.test.com:8080/path
     ```
   + 在上述基础上，如果需要携带参数，可以使用如下命令：
 
-    ```
-    1. aa start -U myscheme://www.test.com:8080/path --pi paramNumber 1 --pb paramBoolean true --ps paramString teststring  --psn paramNullString
+    ```bash
+    aa start -U myscheme://www.test.com:8080/path --pi paramNumber 1 --pb paramBoolean true --ps paramString teststring  --psn paramNullString
     ```
 
     UIAbility获取传入参数示例如下：
 
-    ```
-    1. import { UIAbility, Want, AbilityConstant } from '@kit.AbilityKit';
-    2. import { hilog } from '@kit.PerformanceAnalysisKit';
+    ```ts
+    import { UIAbility, Want, AbilityConstant } from '@kit.AbilityKit';
+    import { hilog } from '@kit.PerformanceAnalysisKit';
 
-    4. export default class TargetAbility extends UIAbility {
-    5. onCreate(want:Want, launchParam: AbilityConstant.LaunchParam) {
-    6. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-    7. let paramNumber = want.parameters?.paramNumber;
-    8. let paramBoolean = want.parameters?.paramBoolean;
-    9. let paramString = want.parameters?.paramString;
-    10. let paramNullString = want.parameters?.paramNullString;
-    11. }
-    12. }
+    export default class TargetAbility extends UIAbility {
+      onCreate(want:Want, launchParam: AbilityConstant.LaunchParam) {
+        hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+        let paramNumber = want.parameters?.paramNumber;
+        let paramBoolean = want.parameters?.paramBoolean;
+        let paramString = want.parameters?.paramString;
+        let paramNullString = want.parameters?.paramNullString;
+      }
+    }
     ```
   + 如果需要拉起浏览器并跳转指定页面，可以使用-A -U命令，示例如下：
 
     本例中以https://www.example.com为例，请根据实际情况替换为真实的网址。
 
-    ```
-    1. aa start -A ohos.want.action.viewData -U https://www.example.com
+    ```bash
+    aa start -A ohos.want.action.viewData -U https://www.example.com
     ```
 
 ## 停止命令（stop-service）
 
 停止命令。用于停止一个应用组件，目标组件可以是FA模型的ServiceAbility组件，也可以是Stage模型的ExtensionAbility组件。
 
-```
-1. aa stop-service [-d <deviceId>] -a <abilityName> -b <bundleName> [-m <moduleName>]
+```bash
+aa stop-service [-d <deviceId>] -a <abilityName> -b <bundleName> [-m <moduleName>]
 ```
 
 **停止命令参数列表**
@@ -220,20 +222,20 @@ Ability assistant（Ability助手，简称为aa），是用于启动应用和启
 
 **示例**：
 
-```
-1. # 停止一个ServiceAbility
-2. aa stop-service -a EntryAbility -b com.example.myapplication -m entry
+```bash
+# 停止一个ServiceAbility
+aa stop-service -a EntryAbility -b com.example.myapplication -m entry
 ```
 
 ## 打印命令（dump(deprecated)）
 
 用于打印应用组件的相关信息。
 
-```
-1. aa dump -a
+```bash
+aa dump -a
 ```
 
-说明
+**说明** 
 
 aa dump命令从API version 7开始支持，从API version 9废弃，替换命令为[hidumper](hidumper.md) -s AbilityManagerService。
 
@@ -243,7 +245,7 @@ aa dump命令从API version 7开始支持，从API version 9废弃，替换命�
 | --- | --- | --- |
 | -h/--help | - | 帮助信息。 |
 | -a/--all | - | 打印所有mission内的应用组件信息。 |
-| -l/--mission-list | type（缺省打印全部） | 服务侧为了方便管理任务链，内部维护了4种类型的任务链。  可取值：  - NORMAL：正常启动的任务链(比如A拉起B拉起C, 则对应的任务链是A->B->C)  - DEFAULT\_STANDARD：已经被破坏的任务链中的任务, 启动模式为multiton的任务被放到该任务链中, 这里面的任务之间没有关联关系  - DEFAULT\_SINGLE：已经被破坏的任务链中的任务, 启动模式为singleton的任务被放到该任务链中, 这里面的任务之间没有关联关系  - LAUNCHER：launcher的任务链 |
+| -l/--mission-list | type（缺省打印全部） | 服务侧为了方便管理任务链，内部维护了4种类型的任务链。  可取值：  - NORMAL：正常启动的任务链（比如A拉起B拉起C, 则对应的任务链是A->B->C）  - DEFAULT\_STANDARD：已经被破坏的任务链中的任务，启动模式为multiton的任务被放到该任务链中，这里面的任务之间没有关联关系  - DEFAULT\_SINGLE：已经被破坏的任务链中的任务，启动模式为singleton的任务被放到该任务链中，这里面的任务之间没有关联关系  - LAUNCHER：launcher的任务链 |
 | -e/--extension | elementName | 打印扩展组件信息。 |
 | -u/--userId | UserId | 打印指定UserId的栈信息，需要和其他参数组合使用，例如aa dump -a -u 100、aa dump -d -u 100。 |
 | -d/--data | - | 打印DataAbility相关信息。 |
@@ -260,33 +262,33 @@ aa dump命令从API version 7开始支持，从API version 9废弃，替换命�
 
 **示例**：
 
-```
-1. # 打印所有mission内的应用组件信息
-2. aa dump -a
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/hNDVlDQqTmSzeff2_Go7YA/zh-cn_image_0000002558605356.png)
-
-```
-1. # 打印所有任务链
-2. aa dump -l
+```bash
+# 打印所有mission内的应用组件信息
+aa dump -a
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/Udc-vyBGShS75JKkCZ6q_g/zh-cn_image_0000002589324883.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/Tt8O5pehQDGlPu6sZdf7Pw/zh-cn_image_0000002706674510.png)
 
-```
-1. # 打印指定应用组件详细信息
-2. aa dump -i 105
+```bash
+# 打印所有任务链
+aa dump -l
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/Xzgm9zT-RjePBoyp36Fmag/zh-cn_image_0000002589244819.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/a2XxrVIsRZG_fVMyeFGFLQ/zh-cn_image_0000002736433599.png)
+
+```bash
+# 打印指定应用组件详细信息
+aa dump -i 105
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/ESyoBwNNQsaEAomW8vR4Yg/zh-cn_image_0000002706834448.png)
 
 ## 强制停止进程命令（force-stop）
 
 通过bundleName强制停止一个进程。
 
-```
-1. aa force-stop <bundle-name> [-p pid] [-r kill-reason]
+```bash
+aa force-stop <bundle-name> [-p pid] [-r kill-reason]
 ```
 
 **强制停止进程命令参数列表**
@@ -311,20 +313,20 @@ aa dump命令从API version 7开始支持，从API version 9废弃，替换命�
 
 **示例**：
 
-```
-1. # 通过bundleName强制停止一个进程
-2. aa force-stop com.example.myapplication
+```bash
+# 通过bundleName强制停止一个进程
+aa force-stop com.example.myapplication
 ```
 
 ## 启动测试框架命令（test）
 
 根据所携带的参数启动测试框架。
 
-```
-1. aa test -b <bundleName> [-m <module-name>] [-p <package-name>] [-s class <test-class>] [-s level <test-level>] [-s size <test-size>] [-s testType <test-testType>] [-s timeout <test-timeout>] [-s <any-key> <any-value>] [-w <wait-time>] -s unittest <testRunner>
+```bash
+aa test -b <bundleName> [-m <module-name>] [-p <package-name>] [-s class <test-class>] [-s level <test-level>] [-s size <test-size>] [-s testType <test-testType>] [-s timeout <test-timeout>] [-s <any-key> <any-value>] [-w <wait-time>] -s unittest <testRunner>
 ```
 
-说明
+**说明** 
 
 关于class、level、size、testType等参数的详细说明请参见[命令行执行测试脚本](unittest-guidelines.md#命令行执行测试脚本)。
 
@@ -361,21 +363,21 @@ aa dump命令从API version 7开始支持，从API version 9废弃，替换命�
 
 **示例**：
 
-```
-1. # 启动测试框架
-2. aa test -b com.example.myapplication -s unittest ActsAbilityTest
-3. # 启动测试框架并设置moduleName
-4. aa test -b com.example.myapplication -m entry_test -s unittest ActsAbilityTest
-5. # 启动测试框架并指定超时时间
-6. aa test -b com.example.myapplication -m entry_test -s timeout 10000 -s unittest ActsAbilityTest
+```bash
+# 启动测试框架
+aa test -b com.example.myapplication -s unittest ActsAbilityTest
+# 启动测试框架并设置moduleName
+aa test -b com.example.myapplication -m entry_test -s unittest ActsAbilityTest
+# 启动测试框架并指定超时时间
+aa test -b com.example.myapplication -m entry_test -s timeout 10000 -s unittest ActsAbilityTest
 ```
 
 ## 进入调试模式命令（attach）
 
 通过bundleName使指定应用进入调试模式。
 
-```
-1. aa attach -b <bundleName>
+```bash
+aa attach -b <bundleName>
 ```
 
 **进入调试模式命令参数列表**
@@ -401,17 +403,17 @@ aa dump命令从API version 7开始支持，从API version 9废弃，替换命�
 
 **示例**：
 
-```
-1. # 通过bundleName使指定应用进入调试模式
-2. aa attach -b com.example.myapplication
+```bash
+# 通过bundleName使指定应用进入调试模式
+aa attach -b com.example.myapplication
 ```
 
 ## 退出调试模式命令（detach）
 
 通过bundleName使指定应用退出调试模式。
 
-```
-1. aa detach -b <bundleName>
+```bash
+aa detach -b <bundleName>
 ```
 
 **退出调试模式命令参数列表**
@@ -437,17 +439,17 @@ aa dump命令从API version 7开始支持，从API version 9废弃，替换命�
 
 **示例**：
 
-```
-1. # 通过bundleName使指定应用退出调试模式
-2. aa detach -b com.example.myapplication
+```bash
+# 通过bundleName使指定应用退出调试模式
+aa detach -b com.example.myapplication
 ```
 
 ## 等待调试命令（appdebug）
 
 用于设置、取消设置应用等待调试状态，以及获取处于等待调试状态的应用包名和持久化信息。等待调试状态只对debug类型应用生效。appdebug的设置命令只对单个应用生效，当重复设置时，应用包名与持久化状态会替换成最新设置内容。
 
-```
-1. aa appdebug -b <bundleName> [-p]
+```bash
+aa appdebug -b <bundleName> [-p]
 ```
 
 **等待调试命令参数列表**
@@ -474,31 +476,31 @@ aa dump命令从API version 7开始支持，从API version 9废弃，替换命�
 
 **示例**：
 
-```
-1. # 显示帮助信息
-2. aa appdebug -h
+```bash
+# 显示帮助信息
+aa appdebug -h
 
-4. # 为指定应用设置等待调试状态
-5. aa appdebug -b com.example.myapplication [-p]
+# 为指定应用设置等待调试状态
+aa appdebug -b com.example.myapplication [-p]
 
-7. # 取消等待调试状态
-8. aa appdebug -c
+# 取消等待调试状态
+aa appdebug -c
 
-10. # 获取等待调试状态的应用包名和持久化信息
-11. # 获取信息例： bundle name : com.example.publishsystem, persist : false
-12. aa appdebug -g
+# 获取等待调试状态的应用包名和持久化信息
+# 获取信息例： bundle name : com.example.publishsystem, persist : false
+aa appdebug -g
 ```
 
 ## 应用调试/调优命令（process）
 
-对应用进行调试或调优，IDE用该命令集成调试和调优工具。
+对应用进行调试或调优，DevEco Studio用该命令集成调试和调优工具。
 
-```
-1. # 调试应用
-2. aa process -b <bundleName> -a <abilityName> [-m <moduleName>] [-D <debug-cmd>] [-S]
+```bash
+# 调试应用
+aa process -b <bundleName> -a <abilityName> [-m <moduleName>] [-D <debug-cmd>] [-S]
 
-4. # 调优应用
-5. aa process -b <bundleName> -a <abilityName> [-m <moduleName>] [-p <perf-cmd>] [-S]
+# 调优应用
+aa process -b <bundleName> -a <abilityName> [-m <moduleName>] [-p <perf-cmd>] [-S]
 ```
 
 **应用调试/调优命令参数列表**
@@ -525,21 +527,21 @@ aa dump命令从API version 7开始支持，从API version 9废弃，替换命�
 
 **示例**：
 
-```
-1. # 调试应用
-2. aa process -b com.example.myapplication -a EntryAbility -D debug_cmd [-S]
+```bash
+# 调试应用
+aa process -b com.example.myapplication -a EntryAbility -D debug_cmd [-S]
 
-4. # 调优应用
-5. aa process -b com.example.myapplication -a EntryAbility -p perf-cmd [-S]
+# 调优应用
+aa process -b com.example.myapplication -a EntryAbility -p perf-cmd [-S]
 ```
 
 ## onMemoryLevel回调命令（send-memory-level）
 
 从API version 13开始，开发者可以通过该命令来调试应用的[onMemoryLevel](../harmonyos-references/js-apis-app-ability-abilitystage.md#onmemorylevel)生命周期。通过在参数中指定进程的pid和内存使用级别来触发该进程的onMemoryLevel生命周期回调。该命令只提供基本的应用调试能力，不能完全模拟真实的内存加压测试场景。
 
-```
-1. # 触发onMemoryLevel回调
-2. aa send-memory-level -p <processId> -l <memoryLevel>
+```bash
+# 触发onMemoryLevel回调
+aa send-memory-level -p <processId> -l <memoryLevel>
 ```
 
 **参数列表**
@@ -561,9 +563,46 @@ aa dump命令从API version 7开始支持，从API version 9废弃，替换命�
 
 **示例**：
 
+```bash
+# 触发进程号为6066应用的onMemoryLevel回调，此时回调的level为0
+aa send-memory-level -p 6066 -l 0
 ```
-1. # 触发进程号为6066应用的onMemoryLevel回调，此时回调的level为0
-2. aa send-memory-level -p 6066 -l 0
+
+## 应用预启动命令（pre-start）
+
+从 API version 26.0.0 开始，开发者可以通过此命令在后台预先启动应用，以提升用户点击应用的启动速度。当前支持预启动应用到生命周期的特定阶段，即会先将应用预启动到[onDidForeground](../harmonyos-references/js-apis-app-ability-uiability.md#ondidforeground20)阶段（前台窗口会隐藏不显示），若默认30秒内用户未手动点击应用，系统会自动将应用预启动到[onDidBackground](../harmonyos-references/js-apis-app-ability-uiability.md#ondidbackground20)阶段。
+
+```bash
+aa pre-start -m <MODE> -b <BUNDLE-NAME> -u <USER-ID>
+```
+
+**参数列表**
+
+| 参数 | 参数说明 |
+| --- | --- |
+| -h/--help | 帮助信息。用于显示命令的帮助信息。 |
+| -m | 必选参数，预启动模式。当前仅支持模式 1，表示预启动应用到生命周期特定阶段，参数值需设为 1。 |
+| -b | 必选参数，bundleName。表示要预启动的应用包名。 |
+| -u | 必选参数，userId。表示用户ID，用于指定预启动应用的用户。 |
+
+**返回值**：
+
+当执行成功时，返回"prestart successfully."；当执行失败时，返回"error: failed to prestart."；当输入未知参数时返回"fail: unknown option."并打印帮助信息。
+
+**错误码**：
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10106003 | Currently, only mode 1 (Specific stage prelaunch) is supported. |
+
+**示例**：
+
+```bash
+# 预启动指定包名的应用
+aa pre-start -m 1 -b com.example.myapplication -u 100
+
+# 查看帮助信息
+aa pre-start -h
 ```
 
 ## aa工具错误码
@@ -605,13 +644,13 @@ The specified ability does not exist.
 1. 检查aa命令的-a的参数abilityName和-b的参数bundleName是否正确。
 2. 检查指定的bundleName对应的应用是否安装。可使用如下命令查询已安装的应用列表，若该bundleName不在查询结果中，说明应用未安装成功。
 
-   ```
-   1. hdc shell bm dump -a
+   ```bash
+   hdc shell bm dump -a
    ```
 3. 多HAP应用需确认Ability所属的HAP是否已被安装。可使用如下命令查询应用的包信息，若安装的应用中没有对应的HAP和Ability，说明Ability所属的HAP未被安装。
 
-   ```
-   1. hdc shell bm dump -n 包名
+   ```bash
+   hdc shell bm dump -n 包名
    ```
 
 ### 10104003 指定的pid不存在
@@ -686,8 +725,8 @@ Failed to obtain ability information.
 
 检查指定的bundleName对应的应用是否安装。可使用如下命令查询已安装的应用列表，若该bundleName不在查询结果中，说明应用未安装成功。
 
-```
-1. hdc shell bm dump -a
+```bash
+hdc shell bm dump -a
 ```
 
 ### 10105003 App服务连接失败
@@ -746,6 +785,24 @@ aa start命令的参数wl、wt、wh、ww或aa test命令不支持release签名�
 
 使用Debug签名证书重新签名，安装新签名出的HAP后，再尝试执行该命令。
 
+### 10106003 不支持的预启动模式
+
+**错误信息**
+
+Currently, only mode 1 (Specific stage prelaunch) is supported.
+
+**错误描述**
+
+使用 aa pre-start 命令时指定的预启动模式不受支持，系统将返回该错误码。
+
+**可能原因**
+
+aa pre-start 命令的 -m 参数指定的值不是 1。当前仅支持模式 1，即预启动应用到生命周期特定阶段。
+
+**处理步骤**
+
+检查-m参数的值，确保设置为1。
+
 ### 10100101 获取应用信息失败
 
 **错误信息**
@@ -765,13 +822,13 @@ Failed to obtain application information.
 1. 检查aa命令的-a的参数abilityName和-b的参数bundleName是否正确。
 2. 检查指定的bundleName对应的应用是否安装。可使用如下命令查询已安装的应用列表，若该bundleName不在查询结果中，说明应用未安装成功。
 
-   ```
-   1. hdc shell bm dump -a
+   ```bash
+   hdc shell bm dump -a
    ```
 3. 多HAP应用需确认Ability所属的HAP是否已被安装。可使用如下命令查询应用的包信息，若安装的应用中没有对应的HAP和Ability，说明Ability所属的HAP未被安装。
 
-   ```
-   1. hdc shell bm dump -n 包名
+   ```bash
+   hdc shell bm dump -n 包名
    ```
 
 ### 10100102 aa start命令无法拉起UIExtensionAbility
@@ -1019,8 +1076,8 @@ Failed to retrieve specified package information.
 1. 检查指定的包名是否正确。
 2. 检查指定的bundleName对应的应用是否安装。可使用如下命令查询已安装的应用列表，若该bundleName不在查询结果中，说明应用未安装成功。
 
-   ```
-   1. hdc shell bm dump -a
+   ```bash
+   hdc shell bm dump -a
    ```
 
 ### 10106401 杀死进程失败
@@ -1042,8 +1099,8 @@ Failed to terminate the process.
 
 1. 检查指定的bundleName对应的应用是否安装。可使用如下命令查询已安装的应用列表，若该bundleName不在查询结果中，说明应用未安装成功。
 
-   ```
-   1. hdc shell bm dump -a
+   ```bash
+   hdc shell bm dump -a
    ```
 2. 尝试重启设备。
 
@@ -1123,8 +1180,8 @@ aa attach/detach命令指定的包名不存在。
 
 检查指定的bundleName对应的应用是否安装。可使用如下命令查询已安装的应用列表，若该bundleName不在查询结果中，说明应用未安装成功。
 
-```
-1. hdc shell bm dump -a
+```bash
+hdc shell bm dump -a
 ```
 
 ### 10106701 目标应用不是Debug应用

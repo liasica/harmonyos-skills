@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: 模块描述
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.relationalStore (关系型数据库) > 模块描述
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:11+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:afb102a7135ef5f75f302c9332e4574f67103c8cd0a9d178f5251131c5ac5ed4
+scraped_at: 2026-09-02T15:00:39+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:572f21311762dfc08feceeeafa51902d0c52f264427ee6705538f8f22e2b40c3
 ---
 
 关系型数据库（Relational Database，RDB）是一种基于关系模型来管理数据的数据库。关系型数据库基于SQLite组件提供了一套完整的对本地数据库进行管理的机制，对外提供了一系列的增、删、改、查等接口，也可以直接运行用户输入的SQL语句来满足复杂的场景需要。支持通过[ResultSet.getSendableRow](arkts-apis-data-relationalstore-resultset.md#getsendablerow12)方法获取Sendable数据，进行跨线程传递。
@@ -27,12 +27,12 @@ content_hash: sha256:afb102a7135ef5f75f302c9332e4574f67103c8cd0a9d178f5251131c5a
 * [LiteResultSet](arkts-apis-data-relationalstore-literesultset.md)：提供用户调用关系型数据库[queryWithoutRowCount](arkts-apis-data-relationalstore-rdbstore.md#querywithoutrowcount23)、[querySqlWithoutRowCount](arkts-apis-data-relationalstore-rdbstore.md#querysqlwithoutrowcount23)等查询接口之后返回的结果集合。与[ResultSet](arkts-apis-data-relationalstore-resultset.md)相比，LiteResultSet不包含查询结果的总行数信息。
 * [Transaction](arkts-apis-data-relationalstore-transaction.md)：提供管理事务对象的接口。
 
-说明
+**说明** 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-```
-1. import { relationalStore } from '@kit.ArkData';
+```ts
+import { relationalStore } from '@kit.ArkData';
 ```

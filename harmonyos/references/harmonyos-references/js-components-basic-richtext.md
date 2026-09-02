@@ -1,13 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-richtext
 title: richtext
+breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > richtext
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:04+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:5a1035f5eca9bc493b9d03ad4217be8d8fba64a15ce71e800934f724ef2f3560
+scraped_at: 2026-09-02T15:01:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:308cc05d4514c248e959587ed8c51b3e1fc4caa4d90d5fbbeb9546e92e53c969
 ---
 
-说明
+**说明** 
 
 * 该组件从API version 6开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 富文本内容需要写在元素标签内。
@@ -16,25 +17,17 @@ content_hash: sha256:5a1035f5eca9bc493b9d03ad4217be8d8fba64a15ce71e800934f724ef2
 
 ## 权限列表
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 仅支持[通用属性](js-components-common-attributes.md)中的id、style和class属性。
 
 ## 样式
 
-PhonePC/2in1TabletTVWearable
-
 仅支持[通用样式](js-components-common-styles.md)中的display和visibility样式。
 
 ## 事件
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用事件](js-components-common-events.md)外，还支持如下事件：
 
@@ -43,7 +36,7 @@ PhonePC/2in1TabletTVWearable
 | start | - | 开始加载时触发。 |
 | complete | - | 加载完成时触发。 |
 
-说明
+**说明** 
 
 * 不支持focus、blur、key事件。
 * 不支持无障碍事件。
@@ -53,40 +46,36 @@ PhonePC/2in1TabletTVWearable
 
 ## 方法
 
-PhonePC/2in1TabletTVWearable
-
 不支持。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div style="flex-direction: column;width: 100%;">
-3. <richtext @start="onLoadStart" @complete="onLoadEnd">{{content}}</richtext>
-4. </div>
+```html
+<!-- xxx.hml -->
+<div style="flex-direction: column;width: 100%;">
+  <richtext @start="onLoadStart" @complete="onLoadEnd">{{content}}</richtext>
+</div>
 ```
 
-```
-1. // xxx.js
-2. export default {
-3. data: {
-4. content: `
-5. <div class="flex-direction: column; background-color: #ffffff; padding: 30px; margin-bottom: 30px;">
-6. <style>h1{color: yellow;}</style>
-7. <p class="item-title">h1</p>
-8. <h1>文本测试(h1测试)</h1>
-9. <p class="item-title">h2</p>
-10. <h2>文本测试(h2测试)</h2>
-11. </div>
-12. `,
-13. },
-14. onLoadStart() {
-15. console.error("start load rich text")
-16. },
-17. onLoadEnd() {
-18. console.error("end load rich text")
-19. }
-20. }
+```js
+// xxx.js
+export default {
+  data: {
+    content: `
+    <div class="flex-direction: column; background-color: #ffffff; padding: 30px; margin-bottom: 30px;">
+      <style>h1{color: yellow;}</style>
+      <p class="item-title">h1</p>
+      <h1>文本测试(h1测试)</h1>
+      <p class="item-title">h2</p>
+      <h2>文本测试(h2测试)</h2>
+    </div>
+    `,
+  },
+  onLoadStart() {
+    console.error("start load rich text")
+  },
+  onLoadEnd() {
+    console.error("end load rich text")
+  }
+}
 ```

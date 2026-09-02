@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_g___pe
 title: FG_PerFrameExtendedCameraInfo
 breadcrumb: API参考 > 图形 > Graphics Accelerate Kit（图形加速服务） > C API > 头文件和结构体 > 结构体 > FG_PerFrameExtendedCameraInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:47+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:2bcb607e11ac4cb1fe8c4d525276de2357f02cc97b418716544d3adb8681321f
+scraped_at: 2026-09-02T15:02:48+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:64a519150a6e6bacfcdc212d1a52d98faf460085095d6a32801aac7cd8633f93
 ---
 
 ## 概述
-
-PhoneTabletTV
 
 此结构体描述相机扩展信息。当视图投影矩阵的平移分量非常大时（超过十万），可以提供更加详细的相机信息以获得更加准确的超帧预测效果。
 
@@ -22,11 +20,7 @@ PhoneTabletTV
 
 ## 汇总
 
-PhoneTabletTV
-
 ### 成员变量
-
-PhoneTabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -38,14 +32,10 @@ PhoneTabletTV
 
 ## 结构体成员变量说明
 
-PhoneTabletTV
-
 ### proj
 
-PhoneTabletTV
-
-```
-1. FG_Mat4x4 FG_PerFrameExtendedCameraInfo::proj
+```c
+FG_Mat4x4 FG_PerFrameExtendedCameraInfo::proj
 ```
 
 **描述**
@@ -54,10 +44,8 @@ PhoneTabletTV
 
 ### translatedInvViewProj
 
-PhoneTabletTV
-
-```
-1. FG_Mat4x4 FG_PerFrameExtendedCameraInfo::translatedInvViewProj
+```c
+FG_Mat4x4 FG_PerFrameExtendedCameraInfo::translatedInvViewProj
 ```
 
 **描述**
@@ -66,10 +54,8 @@ PhoneTabletTV
 
 ### translatedView
 
-PhoneTabletTV
-
-```
-1. FG_Mat4x4 FG_PerFrameExtendedCameraInfo::translatedView
+```c
+FG_Mat4x4 FG_PerFrameExtendedCameraInfo::translatedView
 ```
 
 **描述**
@@ -78,10 +64,8 @@ PhoneTabletTV
 
 ### translatedViewProj
 
-PhoneTabletTV
-
-```
-1. FG_Mat4x4 FG_PerFrameExtendedCameraInfo::translatedViewProj
+```c
+FG_Mat4x4 FG_PerFrameExtendedCameraInfo::translatedViewProj
 ```
 
 **描述**
@@ -90,10 +74,8 @@ PhoneTabletTV
 
 ### worldPosition
 
-PhoneTabletTV
-
-```
-1. FG_Vec3D FG_PerFrameExtendedCameraInfo::worldPosition
+```c
+FG_Vec3D FG_PerFrameExtendedCameraInfo::worldPosition
 ```
 
 **描述**

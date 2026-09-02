@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-k
 title: XEG_DDGIVolumeEntryParameters
 breadcrumb: API参考 > 图形 > XEngine Kit（GPU加速引擎服务） > C API > 头文件和结构体 > 结构体 > XEG_DDGIVolumeEntryParameters
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:00+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1b87521a6bfbaeb89d656c12f456cad2508b8d5786509009ecb7afc023e8a3b7
+scraped_at: 2026-09-02T15:02:49+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:15a002c370ec166dee0b57ff1babef6c2f81457e21994566663a7adbaaf23135
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 此结构体描述每一个DDGI体积的必要参数。
 
@@ -22,11 +20,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 成员变量
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -38,7 +32,7 @@ PhonePC/2in1TabletTV
 | uint32\_t [volumeLightingChannelMask](xengine-kit-xeg-ddgivolumeentryparameters.md#volumelightingchannelmask) | 体积光照通道标记，建议值为0xFFFFFFFF。 |
 | uint32\_t [volumeProbeGridCounts](xengine-kit-xeg-ddgivolumeentryparameters.md#volumeprobegridcounts) [3] | 探针放置数量，必须大于0，范围为[1, 32]。 |
 | float [volumeProbeIrradianceEncodingGamma](xengine-kit-xeg-ddgivolumeentryparameters.md#volumeprobeirradianceencodinggamma) | 辐照度的伽马校正系数，建议值为5.0，必须不为0。 |
-| float [probeHysteresis](xengine-kit-xeg-ddgivolumeentryparameters.md#probehysteresis) | 探针辐照度历史权重，建议值为0.95，范围为[0, 1]。 |
+| float [probeHysteresis](xengine-kit-xeg-ddgivolumeentryparameters.md#probehysteresis) | 探针辐照度历史权重，建议值为0.95，范围为[0.0, 1.0]。 |
 | float [probeChangeThreshold](xengine-kit-xeg-ddgivolumeentryparameters.md#probechangethreshold) | 探针变化阈值，建议值为1.0。 |
 | float [probeBrightnessThreshold](xengine-kit-xeg-ddgivolumeentryparameters.md#probebrightnessthreshold) | 探针亮度阈值，建议值为1.0。 |
 | float [volumeNormalBias](xengine-kit-xeg-ddgivolumeentryparameters.md#volumenormalbias) | 探针法向偏移量，建议值为0.12。 |
@@ -55,14 +49,10 @@ PhonePC/2in1TabletTV
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTV
-
 ### bForceUpdate
 
-PhonePC/2in1TabletTV
-
-```
-1. bool XEG_DDGIVolumeEntryParameters::bForceUpdate
+```cpp
+bool XEG_DDGIVolumeEntryParameters::bForceUpdate
 ```
 
 **描述**
@@ -71,10 +61,8 @@ PhonePC/2in1TabletTV
 
 ### emissiveMultiplier
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_DDGIVolumeEntryParameters::emissiveMultiplier
+```cpp
+float XEG_DDGIVolumeEntryParameters::emissiveMultiplier
 ```
 
 **描述**
@@ -83,10 +71,8 @@ PhonePC/2in1TabletTV
 
 ### lightingMultiplier
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_DDGIVolumeEntryParameters::lightingMultiplier
+```cpp
+float XEG_DDGIVolumeEntryParameters::lightingMultiplier
 ```
 
 **描述**
@@ -95,10 +81,8 @@ PhonePC/2in1TabletTV
 
 ### probeBackfaceThreshold
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_DDGIVolumeEntryParameters::probeBackfaceThreshold
+```cpp
+float XEG_DDGIVolumeEntryParameters::probeBackfaceThreshold
 ```
 
 **描述**
@@ -107,10 +91,8 @@ PhonePC/2in1TabletTV
 
 ### probeBrightnessThreshold
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_DDGIVolumeEntryParameters::probeBrightnessThreshold
+```cpp
+float XEG_DDGIVolumeEntryParameters::probeBrightnessThreshold
 ```
 
 **描述**
@@ -119,10 +101,8 @@ PhonePC/2in1TabletTV
 
 ### probeChangeThreshold
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_DDGIVolumeEntryParameters::probeChangeThreshold
+```cpp
+float XEG_DDGIVolumeEntryParameters::probeChangeThreshold
 ```
 
 **描述**
@@ -131,22 +111,18 @@ PhonePC/2in1TabletTV
 
 ### probeHysteresis
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_DDGIVolumeEntryParameters::probeHysteresis
+```cpp
+float XEG_DDGIVolumeEntryParameters::probeHysteresis
 ```
 
 **描述**
 
-探针辐照度历史权重，建议值为0.95，范围为[0, 1]。
+探针辐照度历史权重，建议值为0.95，范围为[0.0, 1.0]。
 
 ### probeIrradianceSH
 
-PhonePC/2in1TabletTV
-
-```
-1. VkImageView XEG_DDGIVolumeEntryParameters::probeIrradianceSH
+```cpp
+VkImageView XEG_DDGIVolumeEntryParameters::probeIrradianceSH
 ```
 
 **描述**
@@ -155,10 +131,8 @@ PhonePC/2in1TabletTV
 
 ### probeMaxRayDistance
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_DDGIVolumeEntryParameters::probeMaxRayDistance
+```cpp
+float XEG_DDGIVolumeEntryParameters::probeMaxRayDistance
 ```
 
 **描述**
@@ -167,10 +141,8 @@ PhonePC/2in1TabletTV
 
 ### probeMinFrontfaceDistance
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_DDGIVolumeEntryParameters::probeMinFrontfaceDistance
+```cpp
+float XEG_DDGIVolumeEntryParameters::probeMinFrontfaceDistance
 ```
 
 **描述**
@@ -179,10 +151,8 @@ PhonePC/2in1TabletTV
 
 ### probeSpacing
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_DDGIVolumeEntryParameters::probeSpacing[3]
+```cpp
+float XEG_DDGIVolumeEntryParameters::probeSpacing[3]
 ```
 
 **描述**
@@ -191,10 +161,8 @@ PhonePC/2in1TabletTV
 
 ### raysPerProbe
 
-PhonePC/2in1TabletTV
-
-```
-1. uint32_t XEG_DDGIVolumeEntryParameters::raysPerProbe
+```cpp
+uint32_t XEG_DDGIVolumeEntryParameters::raysPerProbe
 ```
 
 **描述**
@@ -203,10 +171,8 @@ PhonePC/2in1TabletTV
 
 ### volumeBlendDistance
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_DDGIVolumeEntryParameters::volumeBlendDistance
+```cpp
+float XEG_DDGIVolumeEntryParameters::volumeBlendDistance
 ```
 
 **描述**
@@ -215,10 +181,8 @@ PhonePC/2in1TabletTV
 
 ### volumeBlendDistanceBlack
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_DDGIVolumeEntryParameters::volumeBlendDistanceBlack
+```cpp
+float XEG_DDGIVolumeEntryParameters::volumeBlendDistanceBlack
 ```
 
 **描述**
@@ -227,10 +191,8 @@ PhonePC/2in1TabletTV
 
 ### volumeIndex
 
-PhonePC/2in1TabletTV
-
-```
-1. uint32_t XEG_DDGIVolumeEntryParameters::volumeIndex
+```cpp
+uint32_t XEG_DDGIVolumeEntryParameters::volumeIndex
 ```
 
 **描述**
@@ -239,10 +201,8 @@ PhonePC/2in1TabletTV
 
 ### volumeIrradianceScalar
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_DDGIVolumeEntryParameters::volumeIrradianceScalar
+```cpp
+float XEG_DDGIVolumeEntryParameters::volumeIrradianceScalar
 ```
 
 **描述**
@@ -251,10 +211,8 @@ PhonePC/2in1TabletTV
 
 ### volumeLightingChannelMask
 
-PhonePC/2in1TabletTV
-
-```
-1. uint32_t XEG_DDGIVolumeEntryParameters::volumeLightingChannelMask
+```cpp
+uint32_t XEG_DDGIVolumeEntryParameters::volumeLightingChannelMask
 ```
 
 **描述**
@@ -263,10 +221,8 @@ PhonePC/2in1TabletTV
 
 ### volumeNormalBias
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_DDGIVolumeEntryParameters::volumeNormalBias
+```cpp
+float XEG_DDGIVolumeEntryParameters::volumeNormalBias
 ```
 
 **描述**
@@ -275,10 +231,8 @@ PhonePC/2in1TabletTV
 
 ### volumePosition
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_DDGIVolumeEntryParameters::volumePosition[3]
+```cpp
+float XEG_DDGIVolumeEntryParameters::volumePosition[3]
 ```
 
 **描述**
@@ -287,10 +241,8 @@ PhonePC/2in1TabletTV
 
 ### volumeProbeGridCounts
 
-PhonePC/2in1TabletTV
-
-```
-1. uint32_t XEG_DDGIVolumeEntryParameters::volumeProbeGridCounts[3]
+```cpp
+uint32_t XEG_DDGIVolumeEntryParameters::volumeProbeGridCounts[3]
 ```
 
 **描述**
@@ -299,10 +251,8 @@ PhonePC/2in1TabletTV
 
 ### volumeProbeIrradianceEncodingGamma
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_DDGIVolumeEntryParameters::volumeProbeIrradianceEncodingGamma
+```cpp
+float XEG_DDGIVolumeEntryParameters::volumeProbeIrradianceEncodingGamma
 ```
 
 **描述**
@@ -311,10 +261,8 @@ PhonePC/2in1TabletTV
 
 ### volumeViewBias
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_DDGIVolumeEntryParameters::volumeViewBias
+```cpp
+float XEG_DDGIVolumeEntryParameters::volumeViewBias
 ```
 
 **描述**

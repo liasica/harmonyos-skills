@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_avmemory.h
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 头文件 > native_avmemory.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:04+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:d29835c71d34f1f0e800237ed154b991a503cac85d602ad9668f220bda6628bb
+scraped_at: 2026-09-02T15:02:22+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:332625f59ea0a4e18c836fafb48756a1de369871adfb3d26c59f76bf699845d3
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明了媒体数据结构AVMemory的定义。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,25 +32,19 @@ PhonePC/2in1TabletTVWearable
 
 ### 函数
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 描述 |
 | --- | --- |
 | [OH\_AVMemory \*OH\_AVMemory\_Create(int32\_t size)](capi-native-avmemory-h.md#oh_avmemory_create) | 创建OH\_AVMemory实例的指针。 |
 | [uint8\_t \*OH\_AVMemory\_GetAddr(struct OH\_AVMemory \*mem)](capi-native-avmemory-h.md#oh_avmemory_getaddr) | 获取内存虚拟地址。 |
 | [int32\_t OH\_AVMemory\_GetSize(struct OH\_AVMemory \*mem)](capi-native-avmemory-h.md#oh_avmemory_getsize) | 获取内存长度。 |
-| [OH\_AVErrCode OH\_AVMemory\_Destroy(struct OH\_AVMemory \*mem)](capi-native-avmemory-h.md#oh_avmemory_destroy) | 释放OH\_AVMemory实例指针的资源。 |
+| [OH\_AVErrCode OH\_AVMemory\_Destroy(struct OH\_AVMemory \*mem)](capi-native-avmemory-h.md#oh_avmemory_destroy) | 释放OH\_AVMemory实例占用的资源。 |
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AVMemory\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVMemory *OH_AVMemory_Create(int32_t size)
+```c
+OH_AVMemory *OH_AVMemory_Create(int32_t size)
 ```
 
 **描述**
@@ -85,10 +73,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMemory\_GetAddr()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. uint8_t *OH_AVMemory_GetAddr(struct OH_AVMemory *mem)
+```c
+uint8_t *OH_AVMemory_GetAddr(struct OH_AVMemory *mem)
 ```
 
 **描述**
@@ -117,10 +103,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMemory\_GetSize()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_AVMemory_GetSize(struct OH_AVMemory *mem)
+```c
+int32_t OH_AVMemory_GetSize(struct OH_AVMemory *mem)
 ```
 
 **描述**
@@ -149,15 +133,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMemory\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVMemory_Destroy(struct OH_AVMemory *mem)
+```c
+OH_AVErrCode OH_AVMemory_Destroy(struct OH_AVMemory *mem)
 ```
 
 **描述**
 
-释放OH\_AVMemory实例指针的资源。
+释放OH\_AVMemory实例占用的资源。
 
 **系统能力：** SystemCapability.Multimedia.Media.Core
 

@@ -3,30 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scenario-
 title: functionalButtonComponentManager(场景化融合Button组件管理)
 breadcrumb: API参考 > 应用服务 > Scenario Fusion Kit（融合场景服务） > ArkTS组件 > functionalButtonComponentManager(场景化融合Button组件管理)
 category: harmonyos-references
-scraped_at: 2026-04-29T14:09:17+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c486e5330c8ab23bbde26edf8865dc3a39227dc12d4e7c7f3ddfb9cf24aa7911
+scraped_at: 2026-09-02T15:03:08+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5e9121096174e4a641fbc76bb1236fc66b2e0af3a934b889b433be20bdba26f1
 ---
 
 本模块提供Button组件的逻辑管理，辅助HarmonyOS应用和元服务通过Button组件完成相应功能。
-
-**模型约束：** 此接口仅可在Stage模型下使用。
-
-**系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
 **起始版本：** 4.1.0(11)
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
+```typescript
+import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 ```
 
 ## OpenType
-
-PhonePC/2in1TabletTV
 
 该枚举定义了FunctionalButton组件的功能类型，通过设置该参数来指定FunctionalButton的功能。
 
@@ -57,8 +49,6 @@ PhonePC/2in1TabletTV
 
 ## SizeType
 
-PhonePC/2in1TabletTV
-
 该枚举定义了FunctionalButton的尺寸类型。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -76,8 +66,6 @@ PhonePC/2in1TabletTV
 
 ## HoverClassType
 
-PhonePC/2in1TabletTV
-
 该枚举定义了FunctionalButton点击态的类型。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -94,8 +82,6 @@ PhonePC/2in1TabletTV
 | HOVER\_CLASS | 1 | 默认样式。 |
 
 ## ColorType
-
-PhonePC/2in1TabletTV
 
 该枚举定义了FunctionalButton的颜色类型。
 
@@ -115,13 +101,11 @@ PhonePC/2in1TabletTV
 
 ## CredentialType(deprecated)
 
-PhonePC/2in1TabletTV
-
-说明
-
-从5.0.0(12)开始支持，从6.0.2(22)开始废弃，无替代接口；6.0.2(23)版本前功能不可用，6.0.2(23)版本及以上正常使用。
-
 该枚举定义了FunctionalButton的认证类型。
+
+**说明** 
+
+从5.0.0(12)开始新增此接口，功能不可用，从6.0.2(22)开始废弃，无替代接口。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -137,13 +121,11 @@ PhonePC/2in1TabletTV
 
 ## RealNameAuthenticationInfo(deprecated)
 
-PhonePC/2in1TabletTV
+该接口定义了FunctionalButton组件的实名信息校验对象。
 
-说明
+**说明** 
 
 从5.0.0(12)开始支持，从6.0.2(22)开始废弃，无替代接口。
-
-该接口定义了FunctionalButton组件的实名信息校验对象（预留能力，暂未支持）。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -158,11 +140,9 @@ PhonePC/2in1TabletTV
 | openID | string | 否 | 否 | OpenID是华为账号用户在不同类型的产品的身份ID，同一个用户，不同应用，OpenID值不同。 |
 | realName | string | 否 | 否 | 证件姓名。 |
 | credentialID | Uint8Array | 否 | 否 | 证件号码。 |
-| credentialType | [CredentialType](scenario-fusion-functionalbuttoncomponentmanager.md#credentialtypedeprecated) | 否 | 是 | 证件类型。 |
+| credentialType(deprecated) | [CredentialType](scenario-fusion-functionalbuttoncomponentmanager.md#credentialtypedeprecated) | 否 | 是 | 证件类型。 |
 
 ## StyleOption
-
-PhonePC/2in1TabletTV
 
 该接口定义了FunctionalButton组件的样式信息。
 
@@ -178,17 +158,15 @@ PhonePC/2in1TabletTV
 | --- | --- | --- | --- | --- |
 | size | [SizeType](scenario-fusion-functionalbuttoncomponentmanager.md#sizetype) | 否 | 是 | 按钮尺寸类型。默认值：functionalButtonComponentManager.SizeType.DEFAULT，字体大小为：16fp。 |
 | bgColor | [ColorType](scenario-fusion-functionalbuttoncomponentmanager.md#colortype) | 否 | 是 | 按钮颜色类型。默认值：functionalButtonComponentManager.ColorType.DEFAULT，默认蓝底白字按钮样式。 |
-| plain | boolean | 否 | 是 | 按钮是否镂空。“true”表示镂空。默认值：false，不镂空。 |
-| disabled | boolean | 否 | 是 | 按钮是否禁用。“true”表示按钮禁用。默认值：false，不禁用Button。 |
-| loading | boolean | 否 | 是 | 名称前是否带loading图标。“true”表示名称前带loading图标。  默认值：false，关闭loading动画。 |
+| plain | boolean | 否 | 是 | 按钮是否镂空。true表示镂空，false表示不镂空，默认值：false。 |
+| disabled | boolean | 否 | 是 | 按钮是否禁用。true表示按钮禁用，false表示不禁用Button，默认值：false。 |
+| loading | boolean | 否 | 是 | 名称前是否带loading图标。true表示名称前带loading图标，false表示关闭loading动画，默认值：false。 |
 | hoverClass | [HoverClassType](scenario-fusion-functionalbuttoncomponentmanager.md#hoverclasstype) | 否 | 是 | 按钮按下去的样式。默认值：functionalButtonComponentManager.HoverClassType.HOVER\_CLASS，开启点击效果。 |
-| hoverStartTime | number | 否 | 是 | 按住后多久出现点击态，单位毫秒。  默认值：0  取值范围： [0, +∞)  **说明：**    设置为小于0的值时，按值为0处理。 |
-| hoverStayTime | number | 否 | 是 | 手指松开后点击态保留时间，单位毫秒。  默认值：0  取值范围： [0, +∞)  **说明：**    设置为小于0的值时，按值为0处理。 |
+| hoverStartTime | number | 否 | 是 | 按住后多久出现点击态，单位：ms。  默认值：0  取值范围： [0, +∞)  **说明：**    设置为小于0的值时，按值为0处理。 |
+| hoverStayTime | number | 否 | 是 | 手指松开后点击态保留时间，单位：ms。  默认值：0  取值范围： [0, +∞)  **说明：**    设置为小于0的值时，按值为0处理。 |
 | styleConfig | [ButtonConfig](scenario-fusion-functionalbuttoncomponentmanager.md#buttonconfig) | 否 | 是 | 按钮样式配置。  **说明：**    当styleConfig和[StyleOption](scenario-fusion-functionalbuttoncomponentmanager.md#styleoption)中定义的样式冲突时，最终以styleConfig的为准。 |
 
 ## FunctionalButtonParams
-
-PhonePC/2in1TabletTV
 
 该接口定义了FunctionalButton组件的参数，定义Button功能以及样式等。
 
@@ -215,8 +193,6 @@ PhonePC/2in1TabletTV
 
 ## GetPhoneNumberResult
 
-PhonePC/2in1TabletTV
-
 该接口定义了使用快速验证功能成功验证的响应。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -225,7 +201,7 @@ PhonePC/2in1TabletTV
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 对于5.1.0(18)之前的版本，该接口在Phone、Tablet、2in1中可正常调用，在其他设备类型中返回801错误码。对于5.1.0(18)及之后版本，该接口在Phone、Tablet、2in1、TV中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -235,8 +211,6 @@ PhonePC/2in1TabletTV
 
 ## GetRealtimePhoneNumberResult
 
-PhonePC/2in1TabletTV
-
 该接口定义了使用实时验证功能成功验证的响应。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -245,7 +219,7 @@ PhonePC/2in1TabletTV
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 对于5.1.0(18)之前的版本，该接口在Phone、Tablet、2in1中可正常调用，在其他设备类型中返回801错误码。对于5.1.0(18)及之后版本，该接口在Phone、Tablet、2in1、TV中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -255,8 +229,6 @@ PhonePC/2in1TabletTV
 
 ## OpenSettingResult
 
-PhonePC/2in1TabletTV
-
 该接口定义了使用打开授权设置页功能，成功跳转授权设置页后返回应用或结束设置应用，应用权限设置情况的响应。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -265,7 +237,7 @@ PhonePC/2in1TabletTV
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 对于5.1.0(18)之前的版本，该接口在Phone、Tablet、2in1中可正常调用，在其他设备类型中返回801错误码。对于5.1.0(18)及之后版本，该接口在Phone、Tablet、2in1、TV中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -275,8 +247,6 @@ PhonePC/2in1TabletTV
 
 ## ChooseAvatarResult
 
-PhonePC/2in1TabletTV
-
 该接口定义了使用选择头像功能成功选择的响应。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -285,7 +255,7 @@ PhonePC/2in1TabletTV
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 该接口在Phone、Tablet、2in1中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -295,8 +265,6 @@ PhonePC/2in1TabletTV
 
 ## AppParam
 
-PhonePC/2in1TabletTV
-
 该接口定义了FunctionalButton为打开APP功能时，通过该参数指定打开的应用对应的包名和Ability名称。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -305,7 +273,7 @@ PhonePC/2in1TabletTV
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 对于5.1.0(18)之前的版本，该接口在Phone、Tablet、2in1中可正常调用，在其他设备类型中返回801错误码。对于5.1.0(18)及之后版本，该接口在Phone、Tablet、2in1、TV中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -316,8 +284,6 @@ PhonePC/2in1TabletTV
 
 ## ChooseAddressResult
 
-PhonePC/2in1TabletTV
-
 该接口定义了FunctionalButton为选择收货地址功能时，通过该参数指定选择收货地址对应的返回体。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -326,7 +292,7 @@ PhonePC/2in1TabletTV
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 该接口在Phone、Tablet、2in1中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 5.0.0(12)
 
@@ -345,8 +311,6 @@ PhonePC/2in1TabletTV
 
 ## ChooseInvoiceTitleResult
 
-PhonePC/2in1TabletTV
-
 该接口定义了FunctionalButton为选择发票抬头功能时，通过该参数指定选择发票抬头对应的返回体。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -355,7 +319,7 @@ PhonePC/2in1TabletTV
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 该接口在Phone、Tablet、2in1中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 5.0.0(12)
 
@@ -371,8 +335,6 @@ PhonePC/2in1TabletTV
 
 ## RealNameAuthenticationResult
 
-PhonePC/2in1TabletTV
-
 该接口定义了FunctionalButton为实名信息校验功能时，通过该参数指定实名信息校验对应的返回体。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -381,7 +343,7 @@ PhonePC/2in1TabletTV
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在2in1中返回1001500003错误码，在TV中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在PC/2in1中返回1001500003错误码，在TV中返回801错误码。
 
 **起始版本：** 5.0.0(12)
 
@@ -392,8 +354,6 @@ PhonePC/2in1TabletTV
 
 ## FaceAuthenticationResult
 
-PhonePC/2in1TabletTV
-
 该接口定义了FunctionalButton为人脸核身功能时，通过该参数指定人脸认证对应的返回体。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -402,7 +362,7 @@ PhonePC/2in1TabletTV
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在2in1中返回1001500003错误码，在TV中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在PC/2in1中返回1001500003错误码，在TV中返回801错误码。
 
 **起始版本：** 5.0.0(12)
 
@@ -413,8 +373,6 @@ PhonePC/2in1TabletTV
 
 ## FaceVerificationResult
 
-PhonePC/2in1TabletTV
-
 该接口定义了FunctionalButton为人脸核身功能时，通过该参数指定人脸核身对应的返回体。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -423,7 +381,7 @@ PhonePC/2in1TabletTV
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在2in1中返回1001500003错误码，在TV中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在PC/2in1中返回1001500003错误码，在TV中返回801错误码。
 
 **起始版本：** 5.0.0(12)
 
@@ -434,8 +392,6 @@ PhonePC/2in1TabletTV
 
 ## ChooseLocationResult
 
-PhonePC/2in1TabletTV
-
 该接口定义了FunctionalButton为地图选点功能时，通过该参数指定地图选点对应的返回体。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -444,20 +400,18 @@ PhonePC/2in1TabletTV
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 对于5.0.1(13)之前的版本，该接口在Phone、Tablet中可正常调用，在其他设备类型中返回801错误码。对于5.0.1(13)及之后版本，该接口在Phone、Tablet、2in1中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 5.0.0(12)
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | string | 否 | 否 | 位置名称。 |
-| longitude | number | 否 | 否 | 经度。 |
-| latitude | number | 否 | 否 | 纬度。 |
+| longitude | number | 否 | 否 | 经度，取值范围：[-180, 180]。 |
+| latitude | number | 否 | 否 | 纬度，取值范围：[-90, 90]。 |
 | address | string | 否 | 否 | 地址。 |
 
 ## SubscribeLiveViewParam
-
-PhonePC/2in1TabletTV
 
 该接口定义了FunctionalButton组件为实况窗订阅功能时，通过该参数指定实况窗订阅对应的订阅事件和计时器。
 
@@ -477,8 +431,6 @@ PhonePC/2in1TabletTV
 
 ## SubscribeLiveViewResult
 
-PhonePC/2in1TabletTV
-
 该接口定义了FunctionalButton组件为实况窗订阅功能时，通过该参数指定实况窗订阅对应的返回体。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -495,13 +447,11 @@ PhonePC/2in1TabletTV
 
 ## PermissionSettingResult
 
-PhonePC/2in1TabletTV
-
-该接口定义了FunctionalButton组件为权限设置功能时，通过该参数指定权限设置的返回体，用于UIAbility/UIExtensionAbility二次拉起权限设置弹框。
+该接口定义了FunctionalButton组件为权限设置功能时，通过该参数指定权限设置的返回体，用于[UIAbility](js-apis-app-ability-uiability.md)/[UIExtensionAbility](js-apis-app-ability-uiextensionability.md)二次拉起权限设置弹框。
 
 在调用此接口前，应用需要先调用[requestPermissionsFromUser](js-apis-abilityaccessctrl.md#requestpermissionsfromuser9)，如果用户在首次弹窗授权时已授权，调用当前接口将无法拉起弹窗。
 
-说明
+**说明** 
 
 仅支持UIAbility/UIExtensionAbility。
 
@@ -511,7 +461,7 @@ PhonePC/2in1TabletTV
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 对于5.1.0(18)之前的版本，该接口在Phone、Tablet、2in1中可正常调用，在其他设备类型中返回801错误码。对于5.1.0(18)及之后版本，该接口在Phone、Tablet、2in1、TV中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 5.0.2(14)
 
@@ -521,13 +471,11 @@ PhonePC/2in1TabletTV
 
 ## RequestSubscribeMessageResult
 
-PhonePC/2in1TabletTV
-
 该接口定义请求订阅消息的返回体。
 
-说明
+**说明** 
 
-仅提供给元服务使用。
+仅提供给元服务使用，非元服务应用调用[onRequestSubscribeMessage](scenario-fusion-functionalbuttoncomponentmanager.md#onrequestsubscribemessage)接口返回[10008](errorcode-scenario-fusion.md#section10008-调用方非元服务)错误码。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -535,7 +483,7 @@ PhonePC/2in1TabletTV
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 6.0.0(20)
 
@@ -545,32 +493,29 @@ PhonePC/2in1TabletTV
 
 ## ShareParam
 
-PhonePC/2in1TabletTV
-
 该接口定义分享的参数。
 
-说明
+**说明** 
 
-仅提供给已发布的元服务使用。
+仅提供给元服务使用，非元服务应用调用[onShare](scenario-fusion-functionalbuttoncomponentmanager.md#onshare)接口返回[10008](errorcode-scenario-fusion.md#section10008-调用方非元服务)错误码。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-**元服务API：** 从版本6.0.0(20)开始，该接口支持在元服务中使用。
-
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 6.0.0(20)
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| description | string | 否 | 是 | 元服务描述，支持开发者传入，默认是元服务描述。 |
-| previewUri | string | 否 | 是 | 元服务预览图，由开发者传入图片，否则返回默认元服务icon图标；本地文件路径、代码包文件路径或者网络图片路径。 |
+| description | string | 否 | 是 | 元服务描述，支持开发者传入，默认是元服务描述。  **元服务API：** 从版本6.0.0(20)开始，该接口支持在元服务中使用。 |
+| previewUri | string | 否 | 是 | 元服务预览图，由开发者传入图片，如果传入值为空则返回默认元服务icon图标；支持传入本地文件路径和代码包文件路径的图片。  **元服务API：** 从版本6.0.0(20)开始，该接口支持在元服务中使用。 |
+| uniformDataType | uniformTypeDescriptor.[UniformDataType](js-apis-data-uniformtypedescriptor.md#uniformdatatype) | 否 | 是 | 元服务数据类型，取值范围：[HYPERLINK, IMAGE, VIDEO, TEXT, FILE]，默认值：HYPERLINK。  HYPERLINK：分享当前元服务。  IMAGE：图片分享。  VIDEO：视频分享。  TEXT：文本分享。  FILE：文件分享。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| content | string | 否 | 是 | 元服务分享内容，链接（包含元服务App Linking）、文本类型的内容通过该字段传递。  HYPERLINK：自定义参数json字符串作为content字段，长度限制1~1024。  IMAGE：图片uri作为content字段。  VIDEO：视频uri作为content字段。  TEXT：文本内容作为content字段。  FILE：文件uri作为content字段。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| title | string | 否 | 是 | 元服务分享的标题，如果是文本、链接等内容，建议填入title标识其标题。缺省时，若分享内容为文本类型，则文本内容作为title字段；若分享内容为文件类型，则文件名作为title字段。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
 
 ## GetPhoneNumberAndRiskLevelResult
-
-PhonePC/2in1TabletTV
 
 该接口定义获取手机号和风险等级的返回体。
 
@@ -590,13 +535,9 @@ PhonePC/2in1TabletTV
 
 ## 事件
 
-PhonePC/2in1TabletTV
-
 不支持通用事件，仅支持以下事件：
 
 ## FunctionalButtonController
-
-PhonePC/2in1TabletTV
 
 FunctionalButton组件控制器，用来回调组件内部的点击事件。
 
@@ -610,8 +551,6 @@ FunctionalButton组件控制器，用来回调组件内部的点击事件。
 
 ### onGetPhoneNumber
 
-PhonePC/2in1TabletTV
-
 onGetPhoneNumber(callback: AsyncCallback<GetPhoneNumberResult>): FunctionalButtonController
 
 注册FunctionalButton组件为快速验证手机号的点击事件，使用callback异步回调。
@@ -624,7 +563,7 @@ onGetPhoneNumber(callback: AsyncCallback<GetPhoneNumberResult>): FunctionalButto
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 对于5.1.0(18)之前的版本，该接口在Phone、Tablet、2in1中可正常调用，在其他设备类型中返回801错误码。对于5.1.0(18)及之后版本，该接口在Phone、Tablet、2in1、TV中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -642,51 +581,49 @@ onGetPhoneNumber(callback: AsyncCallback<GetPhoneNumberResult>): FunctionalButto
 
 **示例：**
 
-```
-1. import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. Row() {
-9. Column() {
-10. // 构建FunctionalButton组件实例。
-11. FunctionalButton({
-12. params: {
-13. // OpenType.GET_PHONE_NUMBER表示该按钮用于快速验证手机号码。
-14. openType: functionalButtonComponentManager.OpenType.GET_PHONE_NUMBER,
-15. label: '快速验证手机号',
-16. // 调整按钮样式。
-17. styleOption: {
-18. styleConfig: new functionalButtonComponentManager.ButtonConfig()
-19. .fontSize(20)
-20. },
-21. },
-22. // 当OpenType为GET_PHONE_NUMBER时，回调必须为onGetPhoneNumber。
-23. controller: new functionalButtonComponentManager.FunctionalButtonController()
-24. .onGetPhoneNumber((err, data) => {
-25. if (err) {
-26. // 错误日志处理。
-27. hilog.error(0x0000, "testTag", "error: %{public}d %{public}s", err.code, err.message);
-28. return;
-29. }
-30. // 成功日志处理。
-31. hilog.info(0x0000, "testTag", "succeeded in authenticating");
-32. // 获取授权码。
-33. let authorizationCode = data.code;
-34. })
-35. })
-36. }.width('100%')
-37. }.height('100%')
-38. }
-39. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column() {
+        // 构建FunctionalButton组件实例。
+        FunctionalButton({
+          params: {
+            // OpenType.GET_PHONE_NUMBER表示该按钮用于快速验证手机号码。
+            openType: functionalButtonComponentManager.OpenType.GET_PHONE_NUMBER,
+            label: '快速验证手机号',
+            // 调整按钮样式。
+            styleOption: {
+              styleConfig: new functionalButtonComponentManager.ButtonConfig()
+                .fontSize(20)
+            }
+          },
+          // 当OpenType为GET_PHONE_NUMBER时，回调必须为onGetPhoneNumber。
+          controller: new functionalButtonComponentManager.FunctionalButtonController()
+            .onGetPhoneNumber((err, data) => {
+              if (err) {
+                // 错误日志处理。
+                hilog.error(0x0000, 'testTag', 'Failed to authenticate, error: %{public}d %{public}s', err.code, err.message);
+                return;
+              }
+              // 成功日志处理。
+              hilog.info(0x0000, 'testTag', 'succeeded in authenticating');
+              // 获取授权码。
+              let authorizationCode = data.code;
+            })
+        })
+      }.width('100%')
+    }.height('100%')
+  }
+}
 ```
 
 ### onGetRealtimePhoneNumber
-
-PhonePC/2in1TabletTV
 
 onGetRealtimePhoneNumber(callback: AsyncCallback<GetRealtimePhoneNumberResult>): FunctionalButtonController
 
@@ -700,7 +637,7 @@ onGetRealtimePhoneNumber(callback: AsyncCallback<GetRealtimePhoneNumberResult>):
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 对于5.1.0(18)之前的版本，该接口在Phone、Tablet、2in1中可正常调用，在其他设备类型中返回801错误码。对于5.1.0(18)及之后版本，该接口在Phone、Tablet、2in1、TV中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -718,53 +655,51 @@ onGetRealtimePhoneNumber(callback: AsyncCallback<GetRealtimePhoneNumberResult>):
 
 **示例：**
 
-```
-1. import {FunctionalButton, functionalButtonComponentManager} from '@kit.ScenarioFusionKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import {FunctionalButton, functionalButtonComponentManager} from '@kit.ScenarioFusionKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. Row() {
-9. Column() {
-10. // 构建FunctionalButton组件实例。
-11. FunctionalButton({
-12. params: {
-13. // OpenType.GET_REALTIME_PHONENUMBER表示该按钮用于实时验证手机号码。
-14. openType: functionalButtonComponentManager.OpenType.GET_REALTIME_PHONENUMBER,
-15. label: '实时验证手机号',
-16. // 调整按钮样式。
-17. styleOption: {
-18. styleConfig: new functionalButtonComponentManager.ButtonConfig()
-19. .fontSize(20)
-20. },
-21. },
-22. // 当OpenType为GET_REALTIME_PHONENUMBER时，回调必须为onGetRealtimePhoneNumber。
-23. controller: new functionalButtonComponentManager.FunctionalButtonController()
-24. .onGetRealtimePhoneNumber((err, data) => {
-25. if (err) {
-26. // 错误日志处理。
-27. hilog.error(0x0000, "testTag", "error: %{public}d %{public}s", err.code, err.message);
-28. return;
-29. }
-30. // 成功日志处理。
-31. hilog.info(0x0000, "testTag", "succeeded in authenticating");
-32. // 获取授权码。
-33. let authorizationCode = data.code;
-34. })
-35. })
-36. }
-37. .width('100%')
-38. }
-39. .height('100%')
-40. }
-41. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column() {
+        // 构建FunctionalButton组件实例。
+        FunctionalButton({
+          params: {
+            // OpenType.GET_REALTIME_PHONENUMBER表示该按钮用于实时验证手机号码。
+            openType: functionalButtonComponentManager.OpenType.GET_REALTIME_PHONENUMBER,
+            label: '实时验证手机号',
+            // 调整按钮样式。
+            styleOption: {
+              styleConfig: new functionalButtonComponentManager.ButtonConfig()
+                .fontSize(20)
+            }
+          },
+          // 当OpenType为GET_REALTIME_PHONENUMBER时，回调必须为onGetRealtimePhoneNumber。
+          controller: new functionalButtonComponentManager.FunctionalButtonController()
+            .onGetRealtimePhoneNumber((err, data) => {
+              if (err) {
+                // 错误日志处理。
+                hilog.error(0x0000, 'testTag', 'Failed to authenticate, error: %{public}d %{public}s', err.code, err.message);
+                return;
+              }
+              // 成功日志处理。
+              hilog.info(0x0000, 'testTag', 'succeeded in authenticating');
+              // 获取授权码。
+              let authorizationCode = data.code;
+            })
+        })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 ### onLaunchApp
-
-PhonePC/2in1TabletTV
 
 onLaunchApp(callback: AsyncCallback<void>): FunctionalButtonController
 
@@ -778,7 +713,7 @@ onLaunchApp(callback: AsyncCallback<void>): FunctionalButtonController
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 对于5.1.0(18)之前的版本，该接口在Phone、Tablet、2in1中可正常调用，在其他设备类型中返回801错误码。对于5.1.0(18)及之后版本，该接口在Phone、Tablet、2in1、TV中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -796,57 +731,55 @@ onLaunchApp(callback: AsyncCallback<void>): FunctionalButtonController
 
 **示例：**
 
-```
-1. import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. Row() {
-9. Column() {
-10. // 构建FunctionalButton组件实例。
-11. FunctionalButton({
-12. params: {
-13. // OpenType.LAUNCH_APP表示该按钮用于启动应用。
-14. openType: functionalButtonComponentManager.OpenType.LAUNCH_APP,
-15. label: '打开APP',
-16. // 当OpenType为functionButtonComponentManager.OpenType.LAUNCH_APP时，appParam为必填项。
-17. appParam: {
-18. bundleName: "xxx",
-19. abilityName: "xxx"
-20. },
-21. // 调整按钮样式。
-22. styleOption: {
-23. styleConfig: new functionalButtonComponentManager.ButtonConfig()
-24. .fontSize(20)
-25. },
-26. },
-27. // 当OpenType设置为LAUNCH_APP时，回调函数必须是onLaunchApp。
-28. controller: new functionalButtonComponentManager.FunctionalButtonController().onLaunchApp((err) => {
-29. if (err) {
-30. // 错误日志处理。
-31. hilog.error(0x0000, "testTag", "error: %{public}d %{public}s", err.code, err.message);
-32. return;
-33. }
-34. // 处理成功。成功时不会返回任何值。
-35. hilog.info(0x0000, "testTag", "succeeded in launching app");
-36. })
-37. })
-38. }.width('100%')
-39. }.height('100%')
-40. }
-41. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column() {
+        // 构建FunctionalButton组件实例。
+        FunctionalButton({
+          params: {
+            // OpenType.LAUNCH_APP表示该按钮用于启动应用。
+            openType: functionalButtonComponentManager.OpenType.LAUNCH_APP,
+            label: '打开APP',
+            // 当OpenType为functionalButtonComponentManager.OpenType.LAUNCH_APP时，appParam为必填项。
+            appParam: {
+              bundleName: 'xxx',
+              abilityName: 'xxx'
+            },
+            // 调整按钮样式。
+            styleOption: {
+              styleConfig: new functionalButtonComponentManager.ButtonConfig()
+                .fontSize(20)
+            }
+          },
+          // 当OpenType设置为LAUNCH_APP时，回调函数必须是onLaunchApp。
+          controller: new functionalButtonComponentManager.FunctionalButtonController().onLaunchApp((err) => {
+            if (err) {
+              // 错误日志处理。
+              hilog.error(0x0000, 'testTag', 'Failed to launch app, error: %{public}d %{public}s', err.code, err.message);
+              return;
+            }
+            // 处理成功。成功时不会返回任何值。
+            hilog.info(0x0000, 'testTag', 'succeeded in launching app');
+          })
+        })
+      }.width('100%')
+    }.height('100%')
+  }
+}
 ```
 
-说明
+**说明** 
 
 “bundleName”为包名，“abilityName”为Ability名称。
 
 ### onOpenSetting
-
-PhonePC/2in1TabletTV
 
 onOpenSetting(callback: AsyncCallback<OpenSettingResult>): FunctionalButtonController
 
@@ -860,7 +793,7 @@ onOpenSetting(callback: AsyncCallback<OpenSettingResult>): FunctionalButtonContr
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 对于5.1.0(18)之前的版本，该接口在Phone、Tablet、2in1中可正常调用，在其他设备类型中返回801错误码。对于5.1.0(18)及之后版本，该接口在Phone、Tablet、2in1、TV中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -878,51 +811,49 @@ onOpenSetting(callback: AsyncCallback<OpenSettingResult>): FunctionalButtonContr
 
 **示例：**
 
-```
-1. import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. Row() {
-9. Column() {
-10. // 构建FunctionalButton组件实例。
-11. FunctionalButton({
-12. params: {
-13. // OpenType.OPEN_SETTING表示该按钮用于打开授权设置页面。
-14. openType: functionalButtonComponentManager.OpenType.OPEN_SETTING,
-15. label: '打开授权设置页',
-16. // 调整按钮样式。
-17. styleOption: {
-18. styleConfig: new functionalButtonComponentManager.ButtonConfig()
-19. .fontSize(20)
-20. },
-21. },
-22. // 当OpenType为OPEN_SETTING时，回调必须为onOpenSetting。
-23. controller: new functionalButtonComponentManager.FunctionalButtonController().onOpenSetting((err, data) => {
-24. if (err) {
-25. // 错误日志处理。
-26. hilog.error(0x0000, "testTag", "error: %{public}d %{public}s", err.code, err.message);
-27. return;
-28. }
-29. // 成功处理，当应用程序进程停止时触发。
-30. hilog.info(0x0000, "testTag", "succeeded in opening setting");
-31. data.permissions!.forEach((value, key) => {
-32. hilog.info(0x0000, "testTag", "key: %{public}s value: %{public}s", String(key), value);
-33. })
-34. })
-35. })
-36. }.width('100%')
-37. }.height('100%')
-38. }
-39. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column() {
+        // 构建FunctionalButton组件实例。
+        FunctionalButton({
+          params: {
+            // OpenType.OPEN_SETTING表示该按钮用于打开授权设置页面。
+            openType: functionalButtonComponentManager.OpenType.OPEN_SETTING,
+            label: '打开授权设置页',
+            // 调整按钮样式。
+            styleOption: {
+              styleConfig: new functionalButtonComponentManager.ButtonConfig()
+                .fontSize(20)
+            }
+          },
+          // 当OpenType为OPEN_SETTING时，回调必须为onOpenSetting。
+          controller: new functionalButtonComponentManager.FunctionalButtonController().onOpenSetting((err, data) => {
+            if (err) {
+              // 错误日志处理。
+              hilog.error(0x0000, 'testTag', 'Failed to open setting, error: %{public}d %{public}s', err.code, err.message);
+              return;
+            }
+            // 成功处理，当应用程序进程停止时触发。
+            hilog.info(0x0000, 'testTag', 'succeeded in opening setting');
+            data.permissions!.forEach((value, key) => {
+              hilog.info(0x0000, 'testTag', 'key: %{public}s value: %{public}s', String(key), value);
+            });
+          })
+        })
+      }.width('100%')
+    }.height('100%')
+  }
+}
 ```
 
 ### onChooseAvatar
-
-PhonePC/2in1TabletTV
 
 onChooseAvatar(callback: AsyncCallback<ChooseAvatarResult>): FunctionalButtonController
 
@@ -934,7 +865,7 @@ onChooseAvatar(callback: AsyncCallback<ChooseAvatarResult>): FunctionalButtonCon
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 该接口在Phone、Tablet、2in1中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -952,58 +883,56 @@ onChooseAvatar(callback: AsyncCallback<ChooseAvatarResult>): FunctionalButtonCon
 
 **示例：**
 
-```
-1. import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. // 将account.png文件添加到/resources/base/media/目录中。否则，将显示错误信息，提示找不到该文件。
-8. @State url: ResourceStr = $r('app.media.account');
+@Entry
+@Component
+struct Index {
+  // 将account.png文件添加到/resources/base/media/目录中。否则，将显示错误信息，提示找不到该文件。
+  @State url: ResourceStr = $r('app.media.account');
 
-10. build() {
-11. Column() {
-12. // 构建FunctionalButton组件实例。
-13. FunctionalButton({
-14. params: {
-15. // OpenType.CHOOSE_AVATAR表示该按钮用于选择头像。
-16. openType: functionalButtonComponentManager.OpenType.CHOOSE_AVATAR,
-17. label: '',
-18. // 调整按钮样式。
-19. styleOption: {
-20. styleConfig: new functionalButtonComponentManager.ButtonConfig()
-21. .type(ButtonType.Normal)
-22. .backgroundImage(this.url)
-23. .backgroundImageSize(ImageSize.Cover)
-24. .width(80)
-25. .height(80)
-26. .backgroundColor('#E5E5E5')
-27. },
-28. },
-29. // 当OpenType设置为CHOOSE_AVATAR时，回调函数必须是onChooseAvatar。
-30. controller: new functionalButtonComponentManager.FunctionalButtonController().onChooseAvatar((err, data) => {
-31. if (err) {
-32. // 错误日志处理。
-33. hilog.error(0x0000, "testTag", "error: %{public}d %{public}s", err.code, err.message);
-34. return;
-35. }
-36. // 成功日志处理。
-37. hilog.info(0x0000, "testTag", "succeeded in choosing avatar");
-38. this.url = data.avatarUri!;
-39. })
-40. })
-41. }
-42. .padding({ top: 200 })
-43. .height('100%')
-44. .width('100%')
-45. }
-46. }
+  build() {
+    Column() {
+      // 构建FunctionalButton组件实例。
+      FunctionalButton({
+        params: {
+          // OpenType.CHOOSE_AVATAR表示该按钮用于选择头像。
+          openType: functionalButtonComponentManager.OpenType.CHOOSE_AVATAR,
+          label: '',
+          // 调整按钮样式。
+          styleOption: {
+            styleConfig: new functionalButtonComponentManager.ButtonConfig()
+              .type(ButtonType.Normal)
+              .backgroundImage(this.url)
+              .backgroundImageSize(ImageSize.Cover)
+              .width(80)
+              .height(80)
+              .backgroundColor('#E5E5E5')
+          }
+        },
+        // 当OpenType设置为CHOOSE_AVATAR时，回调函数必须是onChooseAvatar。
+        controller: new functionalButtonComponentManager.FunctionalButtonController().onChooseAvatar((err, data) => {
+          if (err) {
+            // 错误日志处理。
+            hilog.error(0x0000, 'testTag', 'Failed to choose avatar, error: %{public}d %{public}s', err.code, err.message);
+            return;
+          }
+          // 成功日志处理。
+          hilog.info(0x0000, 'testTag', 'succeeded in choosing avatar');
+          this.url = data.avatarUri!;
+        })
+      })
+    }
+    .padding({ top: 200 })
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 ### onChooseAddress
-
-PhonePC/2in1TabletTV
 
 onChooseAddress(callback: AsyncCallback<ChooseAddressResult>): FunctionalButtonController
 
@@ -1017,7 +946,7 @@ onChooseAddress(callback: AsyncCallback<ChooseAddressResult>): FunctionalButtonC
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 该接口在Phone、Tablet、2in1中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 5.0.0(12)
 
@@ -1035,66 +964,64 @@ onChooseAddress(callback: AsyncCallback<ChooseAddressResult>): FunctionalButtonC
 
 **示例：**
 
-```
-1. import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. Row() {
-9. Column() {
-10. // 构建FunctionalButton组件实例。
-11. FunctionalButton({
-12. params: {
-13. // OpenType.CHOOSE_ADDRESS表示该按钮用于选择收货地址。
-14. openType: functionalButtonComponentManager.OpenType.CHOOSE_ADDRESS,
-15. label: '选择收货地址',
-16. // 调整按钮样式。
-17. styleOption: {
-18. bgColor:functionalButtonComponentManager.ColorType.DEFAULT,
-19. size: functionalButtonComponentManager.SizeType.DEFAULT,
-20. plain: false,
-21. disabled:false,
-22. loading: false,
-23. hoverClass: functionalButtonComponentManager.HoverClassType.HOVER_CLASS,
-24. hoverStartTime: 0,
-25. hoverStayTime: 0,
-26. styleConfig: new functionalButtonComponentManager.ButtonConfig()
-27. .fontSize(20)
-28. },
-29. },
-30. // 当OpenType设置为CHOOSE_ADDRESS时，回调必须为onChooseAddress。
-31. controller: new functionalButtonComponentManager.FunctionalButtonController()
-32. .onChooseAddress((err, data) => {
-33. if (err) {
-34. // 错误日志处理。
-35. hilog.error(0x0000, "testTag", "error: %{public}d %{public}s", err.code, err.message);
-36. return;
-37. }
-38. // 成功日志处理。
-39. hilog.info(0x0000, "testTag", "succeeded in choosing address");
-40. // 获取地址信息。
-41. let userName: string = data.userName;
-42. let mobileNumber: string = data.mobileNumber as string;
-43. let countryCode: string = data.countryCode as string;
-44. let provinceName: string = data.provinceName as string;
-45. let cityName: string = data.cityName as string;
-46. let districtName: string = data.districtName as string;
-47. let streetName: string = data.streetName as string;
-48. let detailedAddress: string = data.detailedAddress;
-49. })
-50. })
-51. }.width('100%')
-52. }.height('100%')
-53. }
-54. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column() {
+        // 构建FunctionalButton组件实例。
+        FunctionalButton({
+          params: {
+            // OpenType.CHOOSE_ADDRESS表示该按钮用于选择收货地址。
+            openType: functionalButtonComponentManager.OpenType.CHOOSE_ADDRESS,
+            label: '选择收货地址',
+            // 调整按钮样式。
+            styleOption: {
+              bgColor:functionalButtonComponentManager.ColorType.DEFAULT,
+              size: functionalButtonComponentManager.SizeType.DEFAULT,
+              plain: false,
+              disabled:false,
+              loading: false,
+              hoverClass: functionalButtonComponentManager.HoverClassType.HOVER_CLASS,
+              hoverStartTime: 0,
+              hoverStayTime: 0,
+              styleConfig: new functionalButtonComponentManager.ButtonConfig()
+                .fontSize(20)
+            }
+          },
+          // 当OpenType设置为CHOOSE_ADDRESS时，回调必须为onChooseAddress。
+          controller: new functionalButtonComponentManager.FunctionalButtonController()
+            .onChooseAddress((err, data) => {
+              if (err) {
+                // 错误日志处理。
+                hilog.error(0x0000, 'testTag', 'Failed to choose address, error: %{public}d %{public}s', err.code, err.message);
+                return;
+              }
+              // 成功日志处理。
+              hilog.info(0x0000, 'testTag', 'succeeded in choosing address');
+              // 获取地址信息。
+              let userName: string = data.userName;
+              let mobileNumber: string = data.mobileNumber as string;
+              let countryCode: string = data.countryCode as string;
+              let provinceName: string = data.provinceName as string;
+              let cityName: string = data.cityName as string;
+              let districtName: string = data.districtName as string;
+              let streetName: string = data.streetName as string;
+              let detailedAddress: string = data.detailedAddress;
+            })
+        })
+      }.width('100%')
+    }.height('100%')
+  }
+}
 ```
 
 ### onChooseInvoiceTitle
-
-PhonePC/2in1TabletTV
 
 onChooseInvoiceTitle(callback: AsyncCallback<ChooseInvoiceTitleResult>): FunctionalButtonController
 
@@ -1108,7 +1035,7 @@ onChooseInvoiceTitle(callback: AsyncCallback<ChooseInvoiceTitleResult>): Functio
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 该接口在Phone、Tablet、2in1中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 5.0.0(12)
 
@@ -1126,65 +1053,63 @@ onChooseInvoiceTitle(callback: AsyncCallback<ChooseInvoiceTitleResult>): Functio
 
 **示例：**
 
-```
-1. import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. Row() {
-9. Column() {
-10. // 构建FunctionalButton组件实例。
-11. FunctionalButton({
-12. params: {
-13. // OpenType.CHOOSE_INVOICE_TITLE表示该按钮用于选择发票标题。
-14. openType: functionalButtonComponentManager.OpenType.CHOOSE_INVOICE_TITLE,
-15. label: '选择发票抬头',
-16. // 调整按钮样式。
-17. styleOption: {
-18. bgColor:functionalButtonComponentManager.ColorType.DEFAULT,
-19. size: functionalButtonComponentManager.SizeType.DEFAULT,
-20. plain: false,
-21. disabled:false,
-22. loading: false,
-23. hoverClass: functionalButtonComponentManager.HoverClassType.HOVER_CLASS,
-24. hoverStartTime: 0,
-25. hoverStayTime: 0,
-26. styleConfig: new functionalButtonComponentManager.ButtonConfig()
-27. .fontSize(20)
-28. },
-29. },
-30. // 当OpenType为CHOOSE_INVOICE_TITLE时，回调必须为onChooseInvoiceTitle。
-31. controller: new functionalButtonComponentManager.FunctionalButtonController()
-32. .onChooseInvoiceTitle((err, data) => {
-33. if (err) {
-34. // 错误日志处理。
-35. hilog.error(0x0000, "testTag", "error: %{public}d %{public}s", err.code, err.message);
-36. return;
-37. }
-38. // 成功日志处理。
-39. hilog.info(0x0000, "testTag", "succeeded in obtaining invoice title");
-40. // 获取发票信息。
-41. let type: string = data.type;
-42. let title: string = data.title;
-43. let taxNumber: string = data.taxNumber;
-44. let companyAddress: string | undefined = data.companyAddress;
-45. let telephone: string | undefined = data.telephone;
-46. let bankName: string | undefined = data.bankName;
-47. let bankAccount: string | undefined = data.bankAccount;
-48. })
-49. })
-50. }.width('100%')
-51. }.height('100%')
-52. }
-53. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column() {
+        // 构建FunctionalButton组件实例。
+        FunctionalButton({
+          params: {
+            // OpenType.CHOOSE_INVOICE_TITLE表示该按钮用于选择发票抬头。
+            openType: functionalButtonComponentManager.OpenType.CHOOSE_INVOICE_TITLE,
+            label: '选择发票抬头',
+            // 调整按钮样式。
+            styleOption: {
+              bgColor:functionalButtonComponentManager.ColorType.DEFAULT,
+              size: functionalButtonComponentManager.SizeType.DEFAULT,
+              plain: false,
+              disabled:false,
+              loading: false,
+              hoverClass: functionalButtonComponentManager.HoverClassType.HOVER_CLASS,
+              hoverStartTime: 0,
+              hoverStayTime: 0,
+              styleConfig: new functionalButtonComponentManager.ButtonConfig()
+                .fontSize(20)
+            }
+          },
+          // 当OpenType为CHOOSE_INVOICE_TITLE时，回调必须为onChooseInvoiceTitle。
+          controller: new functionalButtonComponentManager.FunctionalButtonController()
+            .onChooseInvoiceTitle((err, data) => {
+              if (err) {
+                // 错误日志处理。
+                hilog.error(0x0000, 'testTag', 'Failed to obtain invoice title, error: %{public}d %{public}s', err.code, err.message);
+                return;
+              }
+              // 成功日志处理。
+              hilog.info(0x0000, 'testTag', 'succeeded in obtaining invoice title');
+              // 获取发票信息。
+              let type: string = data.type;
+              let title: string = data.title;
+              let taxNumber: string = data.taxNumber;
+              let companyAddress: string | undefined = data.companyAddress;
+              let telephone: string | undefined = data.telephone;
+              let bankName: string | undefined = data.bankName;
+              let bankAccount: string | undefined = data.bankAccount;
+            })
+        })
+      }.width('100%')
+    }.height('100%')
+  }
+}
 ```
 
 ### onRealNameAuthentication
-
-PhonePC/2in1TabletTV
 
 onRealNameAuthentication(callback: AsyncCallback<RealNameAuthenticationResult>): FunctionalButtonController
 
@@ -1198,7 +1123,7 @@ onRealNameAuthentication(callback: AsyncCallback<RealNameAuthenticationResult>):
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在2in1中返回1001500003错误码，在TV中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在PC/2in1中返回1001500003错误码，在TV中返回801错误码。
 
 **起始版本：** 5.0.0(12)
 
@@ -1216,121 +1141,119 @@ onRealNameAuthentication(callback: AsyncCallback<RealNameAuthenticationResult>):
 
 **示例：**
 
-```
-1. import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { http } from '@kit.NetworkKit';
-4. import { AsyncCallback, BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { http } from '@kit.NetworkKit';
+import { AsyncCallback, BusinessError } from '@kit.BasicServicesKit';
 
-6. interface Result {
-7. state?: number;
-8. realNameLevel?: number;
-9. verifyResult?: number;
-10. verifyToken?: string;
-11. }
+interface Result {
+  state?: number;
+  realNameLevel?: number;
+  verifyResult?: number;
+  verifyToken?: string;
+}
 
-13. @Entry
-14. @Component
-15. struct SecondPage {
+@Entry
+@Component
+struct SecondPage {
 
-17. obtainRealNameDataInfo(authCode: string, sceneID:number, openID: string, realName: string, idNo: string,
-18. callback: AsyncCallback<Result>) {
-19. // 每个httpRequest对应一个HTTP请求任务，且不可重复使用。
-20. let httpRequest = http.createHttp();
-21. // 监听HTTP响应头事件，该事件比HTTP请求的响应返回得更早。是否监听HTTP响应头事件由您决定。
-22. httpRequest.on('headersReceive', (header) => {
-23. hilog.info(0x0000, "testTag", "header: %{public}s", header as string);
-24. });
-25. httpRequest.request(
-26. // 请自行在extraData中自定义EXAMPLE_URL。是否向URL添加参数由您决定。
-27. "EXAMPLE_URL",
-28. {
-29. method: http.RequestMethod.POST,
-30. // 您可以根据服务需求添加头部字段。
-31. header: {
-32. 'Content-Type': 'application/json'
-33. },
-34. // 使用此字段在POST请求中传递信息。
-35. extraData: {
-36. "authCode": authCode,
-37. "sceneID": sceneID,
-38. "openID": openID,
-39. "realname": realName,
-40. "idNo": idNo,
-41. },
-42. expectDataType: http.HttpDataType.STRING,
-43. usingCache: true,
-44. priority: 1,
-45. connectTimeout: 60000,
-46. readTimeout: 60000,
-47. usingProtocol: http.HttpProtocol.HTTP1_1,
-48. }, (err, data) => {
-49. if (!err) {
-50. let res: Result = JSON.parse(data.result as string);
-51. callback(undefined, res);
-52. } else {
-53. let error: BusinessError = {code: err.code, message: err.message, name: ''};
-54. callback(error, undefined);
-55. // 取消订阅HTTP响应头事件。
-56. httpRequest.off('headersReceive');
-57. // 在httpRequest完成后调用destroy()方法以释放资源。
-58. httpRequest.destroy();
-59. }
-60. })
-61. }
+  obtainRealNameDataInfo(authCode: string, sceneID: number, openID: string, realName: string, idNo: string,
+    callback: AsyncCallback<Result>) {
+    // 每个httpRequest对应一个HTTP请求任务，且不可重复使用。
+    let httpRequest = http.createHttp();
+    // 监听HTTP响应头事件，该事件比HTTP请求的响应返回得更早。是否监听HTTP响应头事件由您决定。
+    httpRequest.on('headersReceive', (header) => {
+      hilog.info(0x0000, 'testTag', 'header: %{public}s', header as string);
+    });
+    httpRequest.request(
+      // 请自行在extraData中自定义EXAMPLE_URL。是否向URL添加参数由您决定。
+      'EXAMPLE_URL',
+      {
+        method: http.RequestMethod.POST,
+        // 您可以根据服务需求添加头部字段。
+        header: {
+          'Content-Type': 'application/json'
+        },
+        // 使用此字段在POST请求中传递信息。
+        extraData: {
+          'authCode': authCode,
+          'sceneID': sceneID,
+          'openID': openID,
+          'realname': realName,
+          'idNo': idNo
+        },
+        expectDataType: http.HttpDataType.STRING,
+        usingCache: true,
+        priority: 1,
+        connectTimeout: 60000,
+        readTimeout: 60000,
+        usingProtocol: http.HttpProtocol.HTTP1_1
+      }, (err, data) => {
+      if (!err) {
+        let res: Result = JSON.parse(data.result as string);
+        callback(undefined, res);
+      } else {
+        let error: BusinessError = {code: err.code, message: err.message, name: ''};
+        callback(error, undefined);
+        // 取消订阅HTTP响应头事件。
+        httpRequest.off('headersReceive');
+        // 在httpRequest完成后调用destroy()方法以释放资源。
+        httpRequest.destroy();
+      }
+    });
+  }
 
-63. build() {
-64. Row() {
-65. Column() {
-66. FunctionalButton({
-67. params: {
-68. // OpenType.REAL_NAME_AUTHENTICATION表示该按钮用于实名信息校验。
-69. openType: functionalButtonComponentManager.OpenType.REAL_NAME_AUTHENTICATION,
-70. label: '实名信息校验',
-71. // 调整按钮样式。
-72. styleOption: {
-73. styleConfig: new functionalButtonComponentManager.ButtonConfig()
-74. .fontSize(20)
-75. },
-76. },
-77. // 当OpenType设置为REAL_NAME_AUTHENTICATION时，回调必须为onRealNameAuthentication。
-78. controller: new functionalButtonComponentManager.FunctionalButtonController()
-79. .onRealNameAuthentication((err, data) => {
-80. if (err) {
-81. // 错误日志处理。
-82. hilog.error(0x0000, "testTag", "error: %{public}d %{public}s", err.code, err.message);
-83. return;
-84. }
-85. // 成功日志处理。
-86. hilog.info(0x0000, "testTag", "succeeded in authenticating");
-87. // 获取授权码。
-88. let authCode: string = data.authCode as string;
-89. let openID: string = data.openID as string;
-90. // sceneid 表示场景ID。选项包括：0（实名验证）、1（人脸验证，验证姓名、证件类型、证件号码和人脸）和2（人脸验证，仅验证人脸）。
-91. this.obtainRealNameDataInfo(authCode, 0, openID, 'name', 'idNo', (err, data) => {
-92. if (err) {
-93. hilog.error(0x0000, "testTag", "error: %{public}d %{public}s", err.code, err.message);
-94. return;
-95. }
-96. let state = data.state;
-97. let realNameLevel = data.realNameLevel;
-98. let verifyResult = data.verifyResult;
-99. let verifyToken = data.verifyToken;
-100. hilog.info(0x0000, "testTag", "succeeded in verifying");
-101. })
-102. })
-103. })
-104. }
-105. .width('100%')
-106. }
-107. .height('100%')
-108. }
-109. }
+  build() {
+    Row() {
+      Column() {
+        FunctionalButton({
+          params: {
+            // OpenType.REAL_NAME_AUTHENTICATION表示该按钮用于实名信息校验。
+            openType: functionalButtonComponentManager.OpenType.REAL_NAME_AUTHENTICATION,
+            label: '实名信息校验',
+            // 调整按钮样式。
+            styleOption: {
+              styleConfig: new functionalButtonComponentManager.ButtonConfig()
+                .fontSize(20)
+            }
+          },
+          // 当OpenType设置为REAL_NAME_AUTHENTICATION时，回调必须为onRealNameAuthentication。
+          controller: new functionalButtonComponentManager.FunctionalButtonController()
+            .onRealNameAuthentication((err, data) => {
+              if (err) {
+                // 错误日志处理。
+                hilog.error(0x0000, 'testTag', 'Failed to authenticate, error: %{public}d %{public}s', err.code, err.message);
+                return;
+              }
+              // 成功日志处理。
+              hilog.info(0x0000, 'testTag', 'succeeded in authenticating');
+              // 获取授权码。
+              let authCode: string = data.authCode as string;
+              let openID: string = data.openID as string;
+              // sceneid 表示场景ID。选项包括：0（实名验证）、1（人脸验证，验证姓名、证件类型、证件号码和人脸）和2（人脸验证，仅验证人脸）。
+              this.obtainRealNameDataInfo(authCode, 0, openID, 'name', 'idNo', (err, data) => {
+                if (err) {
+                  hilog.error(0x0000, 'testTag', 'Failed to verify, error: %{public}d %{public}s', err.code, err.message);
+                  return;
+                }
+                let state = data.state;
+                let realNameLevel = data.realNameLevel;
+                let verifyResult = data.verifyResult;
+                let verifyToken = data.verifyToken;
+                hilog.info(0x0000, 'testTag', 'succeeded in verifying');
+              });
+            })
+        })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 ### onFaceAuthentication
-
-PhonePC/2in1TabletTV
 
 onFaceAuthentication(callback: AsyncCallback<FaceAuthenticationResult>): FunctionalButtonController
 
@@ -1344,7 +1267,7 @@ onFaceAuthentication(callback: AsyncCallback<FaceAuthenticationResult>): Functio
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在2in1中返回1001500003错误码，在TV中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在PC/2in1中返回1001500003错误码，在TV中返回801错误码。
 
 **起始版本：** 5.0.0(12)
 
@@ -1362,128 +1285,126 @@ onFaceAuthentication(callback: AsyncCallback<FaceAuthenticationResult>): Functio
 
 **示例：**
 
-```
-1. import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { http } from '@kit.NetworkKit';
-4. import { AsyncCallback, BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { http } from '@kit.NetworkKit';
+import { AsyncCallback, BusinessError } from '@kit.BasicServicesKit';
 
-6. interface Result {
-7. state?: number;
-8. realNameLevel?: number;
-9. verifyResult?: number;
-10. verifyToken?: string;
-11. }
+interface Result {
+  state?: number;
+  realNameLevel?: number;
+  verifyResult?: number;
+  verifyToken?: string;
+}
 
-13. @Entry
-14. @Component
-15. struct SecondPage {
-16. obtainFaceVerifyDataInfo(authCode: string, sceneID: number, openID: string, realName: string, idNo: string,
-17. callback: AsyncCallback<Result>) {
-18. // 每个httpRequest对应一个HTTP请求任务，且不可重复使用。
-19. let httpRequest = http.createHttp();
-20. // 监听HTTP响应头事件，该事件比HTTP请求的响应返回得更早。是否监听HTTP响应头事件由您决定。
-21. httpRequest.on('headersReceive', (header) => {
-22. hilog.info(0x0000, "testTag", "header: %{public}s", header as string);
-23. });
-24. httpRequest.request(
-25. // 请自行在extraData中自定义EXAMPLE_URL。是否向URL添加参数由您决定。
-26. "EXAMPLE_URL",
-27. {
-28. method: http.RequestMethod.POST,
-29. // 您可以根据服务需求添加头部字段。
-30. header: {
-31. 'Content-Type': 'application/json'
-32. },
-33. // 使用此字段在POST请求中传递信息。
-34. extraData: {
-35. "authCode": authCode,
-36. "sceneID": sceneID,
-37. "openID": openID,
-38. "realname": realName,
-39. "idNo": idNo,
-40. },
-41. expectDataType: http.HttpDataType.STRING,
-42. usingCache: true,
-43. priority: 1,
-44. connectTimeout: 60000,
-45. readTimeout: 60000,
-46. usingProtocol: http.HttpProtocol.HTTP1_1,
-47. }, (err, data) => {
-48. if (!err) {
-49. let res: Result = JSON.parse(data.result as string);
-50. callback(undefined, res);
-51. } else {
-52. let error: BusinessError = { code: err.code, message: err.message, name: '' };
-53. callback(error, undefined);
-54. // 取消订阅HTTP响应头事件。
-55. httpRequest.off('headersReceive');
-56. // 在httpRequest完成后调用destroy()方法以释放资源。
-57. httpRequest.destroy();
-58. }
-59. })
-60. }
+@Entry
+@Component
+struct SecondPage {
+  obtainFaceVerifyDataInfo(authCode: string, sceneID: number, openID: string, realName: string, idNo: string,
+    callback: AsyncCallback<Result>) {
+    // 每个httpRequest对应一个HTTP请求任务，且不可重复使用。
+    let httpRequest = http.createHttp();
+    // 监听HTTP响应头事件，该事件比HTTP请求的响应返回得更早。是否监听HTTP响应头事件由您决定。
+    httpRequest.on('headersReceive', (header) => {
+      hilog.info(0x0000, 'testTag', 'header: %{public}s', header as string);
+    });
+    httpRequest.request(
+      // 请自行在extraData中自定义EXAMPLE_URL。是否向URL添加参数由您决定。
+      'EXAMPLE_URL',
+      {
+        method: http.RequestMethod.POST,
+        // 您可以根据服务需求添加头部字段。
+        header: {
+          'Content-Type': 'application/json'
+        },
+        // 使用此字段在POST请求中传递信息。
+        extraData: {
+          'authCode': authCode,
+          'sceneID': sceneID,
+          'openID': openID,
+          'realname': realName,
+          'idNo': idNo
+        },
+        expectDataType: http.HttpDataType.STRING,
+        usingCache: true,
+        priority: 1,
+        connectTimeout: 60000,
+        readTimeout: 60000,
+        usingProtocol: http.HttpProtocol.HTTP1_1
+      }, (err, data) => {
+      if (!err) {
+        let res: Result = JSON.parse(data.result as string);
+        callback(undefined, res);
+      } else {
+        let error: BusinessError = { code: err.code, message: err.message, name: '' };
+        callback(error, undefined);
+        // 取消订阅HTTP响应头事件。
+        httpRequest.off('headersReceive');
+        // 在httpRequest完成后调用destroy()方法以释放资源。
+        httpRequest.destroy();
+      }
+    });
+  }
 
-62. build() {
-63. Row() {
-64. Column() {
-65. FunctionalButton({
-66. params: {
-67. // OpenType.FACE_AUTHENTICATION表示该按钮用于人脸身份验证。
-68. openType: functionalButtonComponentManager.OpenType.FACE_AUTHENTICATION,
-69. label: '人脸核身',
-70. // 调整按钮样式。
-71. styleOption: {
-72. styleConfig: new functionalButtonComponentManager.ButtonConfig()
-73. .fontSize(20)
-74. },
-75. },
-76. // 当OpenType为FACE_AUTHENTICATION时，回调必须为onFaceAuthentication。
-77. controller: new functionalButtonComponentManager.FunctionalButtonController()
-78. .onFaceAuthentication((err, data) => {
-79. if (err) {
-80. // 错误日志处理。
-81. hilog.error(0x0000, "testTag", "error: %{public}d %{public}s", err.code, err.message);
-82. return;
-83. }
-84. // 成功日志处理。
-85. hilog.info(0x0000, "testTag", "succeeded in authenticating");
-86. // 获取授权码。
-87. let authCode: string = data.authCode as string;
-88. let openID: string = data.openID as string;
-89. hilog.info(0x0000, "testTag", "succeeded in authCode");
-90. // sceneid 表示场景ID。选项包括：0（实名验证）、1（人脸验证，验证姓名、证件类型、证件号码和人脸）和2（人脸验证，仅验证人脸）。
-91. this.obtainFaceVerifyDataInfo(authCode, 2, openID, "", "", (err, data) => {
-92. if (err) {
-93. hilog.error(0x0000, "testTag", "error: %{public}d %{public}s", err.code, err.message);
-94. return;
-95. }
-96. let verifyToken: string = data.verifyToken as string;
-97. new functionalButtonComponentManager.FunctionalButtonController().onFaceVerification(verifyToken,
-98. (error, data) => {
-99. if (error) {
-100. // 错误日志处理。
-101. hilog.error(0x0000, "testTag", "error: %{public}d %{public}s", error.code, error.message);
-102. return;
-103. }
-104. let facialRecognitionVerificationToken = data.facialRecognitionVerificationToken;
-105. let state = data.state;
-106. hilog.info(0x0000, 'testTag', 'auth result success');
-107. });
-108. })
-109. })
-110. })
-111. }
-112. .width('100%')
-113. }
-114. .height('100%')
-115. }
-116. }
+  build() {
+    Row() {
+      Column() {
+        FunctionalButton({
+          params: {
+            // OpenType.FACE_AUTHENTICATION表示该按钮用于人脸身份验证。
+            openType: functionalButtonComponentManager.OpenType.FACE_AUTHENTICATION,
+            label: '人脸核身',
+            // 调整按钮样式。
+            styleOption: {
+              styleConfig: new functionalButtonComponentManager.ButtonConfig()
+                .fontSize(20)
+            }
+          },
+          // 当OpenType为FACE_AUTHENTICATION时，回调必须为onFaceAuthentication。
+          controller: new functionalButtonComponentManager.FunctionalButtonController()
+            .onFaceAuthentication((err, data) => {
+              if (err) {
+                // 错误日志处理。
+                hilog.error(0x0000, 'testTag', 'Failed to authenticate, error: %{public}d %{public}s', err.code, err.message);
+                return;
+              }
+              // 成功日志处理。
+              hilog.info(0x0000, 'testTag', 'succeeded in authenticating');
+              // 获取授权码。
+              let authCode: string = data.authCode as string;
+              let openID: string = data.openID as string;
+              hilog.info(0x0000, 'testTag', 'succeeded in authCode');
+              // sceneid 表示场景ID。选项包括：0（实名验证）、1（人脸验证，验证姓名、证件类型、证件号码和人脸）和2（人脸验证，仅验证人脸）。
+              this.obtainFaceVerifyDataInfo(authCode, 2, openID, '', '', (err, data) => {
+                if (err) {
+                  hilog.error(0x0000, 'testTag', 'error: %{public}d %{public}s', err.code, err.message);
+                  return;
+                }
+                let verifyToken: string = data.verifyToken as string;
+                new functionalButtonComponentManager.FunctionalButtonController().onFaceVerification(verifyToken,
+                  (error, data) => {
+                    if (error) {
+                      // 错误日志处理。
+                      hilog.error(0x0000, 'testTag', 'Failed to authenticate, error: %{public}d %{public}s', error.code, error.message);
+                      return;
+                    }
+                    let facialRecognitionVerificationToken = data.facialRecognitionVerificationToken;
+                    let state = data.state;
+                    hilog.info(0x0000, 'testTag', 'auth result success');
+                  });
+              });
+            })
+        })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 ### onFaceVerification
-
-PhonePC/2in1TabletTV
 
 onFaceVerification(verifyToken: string, callback: AsyncCallback<FaceVerificationResult>): void
 
@@ -1497,7 +1418,7 @@ onFaceVerification(verifyToken: string, callback: AsyncCallback<FaceVerification
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在2in1中返回1001500003错误码，在TV中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在PC/2in1中返回1001500003错误码，在TV中返回801错误码。
 
 **起始版本：** 5.0.0(12)
 
@@ -1510,128 +1431,126 @@ onFaceVerification(verifyToken: string, callback: AsyncCallback<FaceVerification
 
 **示例：**
 
-```
-1. import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { http } from '@kit.NetworkKit';
-4. import { AsyncCallback, BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { http } from '@kit.NetworkKit';
+import { AsyncCallback, BusinessError } from '@kit.BasicServicesKit';
 
-6. interface Result {
-7. state?: number;
-8. realNameLevel?: number;
-9. verifyResult?: number;
-10. verifyToken?: string;
-11. }
+interface Result {
+  state?: number;
+  realNameLevel?: number;
+  verifyResult?: number;
+  verifyToken?: string;
+}
 
-13. @Entry
-14. @Component
-15. struct SecondPage {
-16. obtainFaceVerifyDataInfo(authCode: string, sceneID: number, openID: string, realName: string, idNo: string,
-17. callback: AsyncCallback<Result>) {
-18. // 每个httpRequest对应一个HTTP请求任务，且不可重复使用。
-19. let httpRequest = http.createHttp();
-20. // 监听HTTP响应头事件，该事件比HTTP请求的响应返回得更早。是否监听HTTP响应头事件由您决定。
-21. httpRequest.on('headersReceive', (header) => {
-22. hilog.info(0x0000, "testTag", "header: %{public}s", header as string);
-23. });
-24. httpRequest.request(
-25. // 请自行在extraData中自定义EXAMPLE_URL。是否向URL添加参数由您决定。
-26. "EXAMPLE_URL",
-27. {
-28. method: http.RequestMethod.POST,
-29. // 您可以根据服务需求添加头部字段。
-30. header: {
-31. 'Content-Type': 'application/json'
-32. },
-33. // 使用此字段在POST请求中传递信息。
-34. extraData: {
-35. "authCode": authCode,
-36. "sceneID": sceneID,
-37. "openID": openID,
-38. "realname": realName,
-39. "idNo": idNo,
-40. },
-41. expectDataType: http.HttpDataType.STRING,
-42. usingCache: true,
-43. priority: 1,
-44. connectTimeout: 60000,
-45. readTimeout: 60000,
-46. usingProtocol: http.HttpProtocol.HTTP1_1,
-47. }, (err, data) => {
-48. if (!err) {
-49. let res: Result = JSON.parse(data.result as string);
-50. callback(undefined, res);
-51. } else {
-52. let error: BusinessError = { code: err.code, message: err.message, name: '' };
-53. callback(error, undefined);
-54. // 取消订阅HTTP响应头事件。
-55. httpRequest.off('headersReceive');
-56. // 在httpRequest完成后调用destroy()方法以释放资源。
-57. httpRequest.destroy();
-58. }
-59. })
-60. }
+@Entry
+@Component
+struct SecondPage {
+  obtainFaceVerifyDataInfo(authCode: string, sceneID: number, openID: string, realName: string, idNo: string,
+    callback: AsyncCallback<Result>) {
+    // 每个httpRequest对应一个HTTP请求任务，且不可重复使用。
+    let httpRequest = http.createHttp();
+    // 监听HTTP响应头事件，该事件比HTTP请求的响应返回得更早。是否监听HTTP响应头事件由您决定。
+    httpRequest.on('headersReceive', (header) => {
+      hilog.info(0x0000, 'testTag', 'header: %{public}s', header as string);
+    });
+    httpRequest.request(
+      // 请自行在extraData中自定义EXAMPLE_URL。是否向URL添加参数由您决定。
+      'EXAMPLE_URL',
+      {
+        method: http.RequestMethod.POST,
+        // 您可以根据服务需求添加头部字段。
+        header: {
+          'Content-Type': 'application/json'
+        },
+        // 使用此字段在POST请求中传递信息。
+        extraData: {
+          'authCode': authCode,
+          'sceneID': sceneID,
+          'openID': openID,
+          'realname': realName,
+          'idNo': idNo
+        },
+        expectDataType: http.HttpDataType.STRING,
+        usingCache: true,
+        priority: 1,
+        connectTimeout: 60000,
+        readTimeout: 60000,
+        usingProtocol: http.HttpProtocol.HTTP1_1
+      }, (err, data) => {
+      if (!err) {
+        let res: Result = JSON.parse(data.result as string);
+        callback(undefined, res);
+      } else {
+        let error: BusinessError = { code: err.code, message: err.message, name: '' };
+        callback(error, undefined);
+        // 取消订阅HTTP响应头事件。
+        httpRequest.off('headersReceive');
+        // 在httpRequest完成后调用destroy()方法以释放资源。
+        httpRequest.destroy();
+      }
+    });
+  }
 
-62. build() {
-63. Row() {
-64. Column() {
-65. FunctionalButton({
-66. params: {
-67. // OpenType.FACE_AUTHENTICATION表示该按钮用于人脸身份验证。
-68. openType: functionalButtonComponentManager.OpenType.FACE_AUTHENTICATION,
-69. label: '人脸核身',
-70. // 调整按钮样式。
-71. styleOption: {
-72. styleConfig: new functionalButtonComponentManager.ButtonConfig()
-73. .fontSize(20)
-74. },
-75. },
-76. // 当OpenType为FACE_AUTHENTICATION时，回调必须为onFaceAuthentication。
-77. controller: new functionalButtonComponentManager.FunctionalButtonController()
-78. .onFaceAuthentication((err, data) => {
-79. if (err) {
-80. // 错误日志处理。
-81. hilog.error(0x0000, "testTag", "error: %{public}d %{public}s", err.code, err.message);
-82. return;
-83. }
-84. // 成功日志处理。
-85. hilog.info(0x0000, "testTag", "succeeded in authenticating");
-86. // 获取授权码。
-87. let authCode: string = data.authCode as string;
-88. let openID: string = data.openID as string;
-89. hilog.info(0x0000, "testTag", "succeeded in authCode");
-90. // sceneid 表示场景ID。选项包括：0（实名验证）、1（人脸验证，验证姓名、证件类型、证件号码和人脸）和2（人脸验证，仅验证人脸）。
-91. this.obtainFaceVerifyDataInfo(authCode, 2, openID, "", "", (err, data) => {
-92. if (err) {
-93. hilog.error(0x0000, "testTag", "error: %{public}d %{public}s", err.code, err.message);
-94. return;
-95. }
-96. let verifyToken: string = data.verifyToken as string;
-97. new functionalButtonComponentManager.FunctionalButtonController().onFaceVerification(verifyToken,
-98. (error, data) => {
-99. if (error) {
-100. // 错误日志处理。
-101. hilog.error(0x0000, "testTag", "error: %{public}d %{public}s", error.code, error.message);
-102. return;
-103. }
-104. let facialRecognitionVerificationToken = data.facialRecognitionVerificationToken;
-105. let state = data.state;
-106. hilog.info(0x0000, 'testTag', 'auth result success');
-107. });
-108. })
-109. })
-110. })
-111. }
-112. .width('100%')
-113. }
-114. .height('100%')
-115. }
-116. }
+  build() {
+    Row() {
+      Column() {
+        FunctionalButton({
+          params: {
+            // OpenType.FACE_AUTHENTICATION表示该按钮用于人脸身份验证。
+            openType: functionalButtonComponentManager.OpenType.FACE_AUTHENTICATION,
+            label: '人脸核身',
+            // 调整按钮样式。
+            styleOption: {
+              styleConfig: new functionalButtonComponentManager.ButtonConfig()
+                .fontSize(20)
+            }
+          },
+          // 当OpenType为FACE_AUTHENTICATION时，回调必须为onFaceAuthentication。
+          controller: new functionalButtonComponentManager.FunctionalButtonController()
+            .onFaceAuthentication((err, data) => {
+              if (err) {
+                // 错误日志处理。
+                hilog.error(0x0000, 'testTag', 'Failed to authenticate, error: %{public}d %{public}s', err.code, err.message);
+                return;
+              }
+              // 成功日志处理。
+              hilog.info(0x0000, 'testTag', 'succeeded in authenticating');
+              // 获取授权码。
+              let authCode: string = data.authCode as string;
+              let openID: string = data.openID as string;
+              hilog.info(0x0000, 'testTag', 'succeeded in authCode');
+              // sceneid 表示场景ID。选项包括：0（实名验证）、1（人脸验证，验证姓名、证件类型、证件号码和人脸）和2（人脸验证，仅验证人脸）。
+              this.obtainFaceVerifyDataInfo(authCode, 2, openID, '', '', (err, data) => {
+                if (err) {
+                  hilog.error(0x0000, 'testTag', 'error: %{public}d %{public}s', err.code, err.message);
+                  return;
+                }
+                let verifyToken: string = data.verifyToken as string;
+                new functionalButtonComponentManager.FunctionalButtonController().onFaceVerification(verifyToken,
+                  (error, data) => {
+                    if (error) {
+                      // 错误日志处理。
+                      hilog.error(0x0000, 'testTag', 'Failed to authenticate, error: %{public}d %{public}s', error.code, error.message);
+                      return;
+                    }
+                    let facialRecognitionVerificationToken = data.facialRecognitionVerificationToken;
+                    let state = data.state;
+                    hilog.info(0x0000, 'testTag', 'auth result success');
+                  });
+              });
+            })
+        })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 ### onChooseLocation
-
-PhonePC/2in1TabletTV
 
 onChooseLocation(callback: AsyncCallback<ChooseLocationResult>): FunctionalButtonController
 
@@ -1645,7 +1564,7 @@ onChooseLocation(callback: AsyncCallback<ChooseLocationResult>): FunctionalButto
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 对于5.0.1(13)之前的版本，该接口在Phone、Tablet中可正常调用，在其他设备类型中返回801错误码。对于5.0.1(13)及之后版本，该接口在Phone、Tablet、2in1中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 5.0.0(12)
 
@@ -1663,61 +1582,59 @@ onChooseLocation(callback: AsyncCallback<ChooseLocationResult>): FunctionalButto
 
 **示例：**
 
-```
-1. import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. Row() {
-9. Column() {
-10. // 构建FunctionalButton组件实例。
-11. FunctionalButton({
-12. params: {
-13. // OpenType.CHOOSE_LOCATION表示该按钮用于在地图上选择位置。
-14. openType: functionalButtonComponentManager.OpenType.CHOOSE_LOCATION,
-15. label: '地图选点',
-16. // 调整按钮样式。
-17. styleOption: {
-18. bgColor:functionalButtonComponentManager.ColorType.DEFAULT,
-19. size: functionalButtonComponentManager.SizeType.DEFAULT,
-20. plain: false,
-21. disabled:false,
-22. loading: false,
-23. hoverClass: functionalButtonComponentManager.HoverClassType.HOVER_CLASS,
-24. hoverStartTime: 0,
-25. hoverStayTime: 0,
-26. styleConfig: new functionalButtonComponentManager.ButtonConfig()
-27. .fontSize(20)
-28. },
-29. },
-30. // 当OpenType设置为CHOOSE_LOCATION时，回调必须为onChooseLocation。
-31. controller: new functionalButtonComponentManager.FunctionalButtonController()
-32. .onChooseLocation((err, data) => {
-33. if (err) {
-34. // 错误日志处理。
-35. hilog.error(0x0000, "testTag", "error: %{public}d %{public}s", err.code, err.message);
-36. return;
-37. }
-38. // 成功日志处理。
-39. hilog.info(0x0000, "testTag", "succeeded in choosing location");
-40. let name: string = data.name;
-41. let address: string = data.address;
-42. let longitude: number = data.longitude;
-43. let latitude: number = data.latitude;
-44. })
-45. })
-46. }.width('100%')
-47. }.height('100%')
-48. }
-49. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column() {
+        // 构建FunctionalButton组件实例。
+        FunctionalButton({
+          params: {
+            // OpenType.CHOOSE_LOCATION表示该按钮用于在地图上选择位置。
+            openType: functionalButtonComponentManager.OpenType.CHOOSE_LOCATION,
+            label: '地图选点',
+            // 调整按钮样式。
+            styleOption: {
+              bgColor:functionalButtonComponentManager.ColorType.DEFAULT,
+              size: functionalButtonComponentManager.SizeType.DEFAULT,
+              plain: false,
+              disabled:false,
+              loading: false,
+              hoverClass: functionalButtonComponentManager.HoverClassType.HOVER_CLASS,
+              hoverStartTime: 0,
+              hoverStayTime: 0,
+              styleConfig: new functionalButtonComponentManager.ButtonConfig()
+                .fontSize(20)
+            }
+          },
+          // 当OpenType设置为CHOOSE_LOCATION时，回调必须为onChooseLocation。
+          controller: new functionalButtonComponentManager.FunctionalButtonController()
+            .onChooseLocation((err, data) => {
+              if (err) {
+                // 错误日志处理。
+                hilog.error(0x0000, 'testTag', 'Failed to choose location, error: %{public}d %{public}s', err.code, err.message);
+                return;
+              }
+              // 成功日志处理。
+              hilog.info(0x0000, 'testTag', 'succeeded in choosing location');
+              let name: string = data.name;
+              let address: string = data.address;
+              let longitude: number = data.longitude;
+              let latitude: number = data.latitude;
+            })
+        })
+      }.width('100%')
+    }.height('100%')
+  }
+}
 ```
 
 ### onSubscribeLiveView
-
-PhonePC/2in1TabletTV
 
 onSubscribeLiveView(callback: AsyncCallback<SubscribeLiveViewResult>): FunctionalButtonController
 
@@ -1743,59 +1660,69 @@ onSubscribeLiveView(callback: AsyncCallback<SubscribeLiveViewResult>): Functiona
 | --- | --- |
 | [FunctionalButtonController](scenario-fusion-functionalbuttoncomponentmanager.md#functionalbuttoncontroller) | [FunctionalButton](scenario-fusion-functionalbutton.md#functionalbutton)组件控制器。 |
 
+**错误码：**
+
+以下错误码的详细介绍请参见[ArkTS组件错误码](errorcode-scenario-fusion.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| [1003500012](errorcode-scenario-fusion.md#section1003500012-实况窗订阅次数超出限制) | The number of subscription times exceeds the upper limit of 2000. |
+| [1003500013](errorcode-scenario-fusion.md#section1003500013-无效的实况窗订阅场景) | Invalid event type. |
+| [1003500014](errorcode-scenario-fusion.md#section1003500014-实况窗提醒时间距当前时间过长) | Time exceeds valid period. |
+| [1003500015](errorcode-scenario-fusion.md#section1003500015-实况窗订阅失败) | Subscribe failed. |
+| [1003500016](errorcode-scenario-fusion.md#section1003500016-实况窗订阅请求频次超限) | Request subscribe liveView exceed. |
+
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. Row() {
-9. Column() {
-10. // 构建FunctionalButton组件实例。
-11. FunctionalButton({
-12. params: {
-13. // OpenType.SUBSCRIBE_LIVE_VIEW表示该按钮用于实时视图订阅。
-14. openType: functionalButtonComponentManager.OpenType.SUBSCRIBE_LIVE_VIEW,
-15. label: '预约抢购',
-16. // 调整按钮样式。
-17. styleOption: {
-18. styleConfig: new functionalButtonComponentManager.ButtonConfig()
-19. .fontSize(20)
-20. },
-21. subscribeLiveViewParam: {
-22. event: "SUBSCRIBE_TIMER",
-23. alertTime: 172178838111,
-24. startTime: 172170198111
-25. },
-26. },
-27. // 当OpenType为SUBSCRIBE_LIVE_VIEW时，回调必须为onSubscribeLiveView。
-28. controller: new functionalButtonComponentManager.FunctionalButtonController().onSubscribeLiveView((err,
-29. data) => {
-30. if (err) {
-31. // 错误日志处理。
-32. hilog.error(0x0000, "testTag", `error code is: ${err?.code} message is ${err?.message}`);
-33. return;
-34. }
-35. let subscribeId = data.subscribeId;
-36. // 成功日志处理。
-37. hilog.info(0x0000, "testTag", "succeeded in subscribing LiveView");
-38. })
-39. })
-40. }
-41. .width('100%')
-42. }
-43. .height('100%')
-44. }
-45. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column() {
+        // 构建FunctionalButton组件实例。
+        FunctionalButton({
+          params: {
+            // OpenType.SUBSCRIBE_LIVE_VIEW表示该按钮用于实时视图订阅。
+            openType: functionalButtonComponentManager.OpenType.SUBSCRIBE_LIVE_VIEW,
+            label: '预约抢购',
+            // 调整按钮样式。
+            styleOption: {
+              styleConfig: new functionalButtonComponentManager.ButtonConfig()
+                .fontSize(20)
+            },
+            subscribeLiveViewParam: {
+              event: 'SUBSCRIBE_TIMER',
+              alertTime: 172178838111,
+              startTime: 172170198111
+            }
+          },
+          // 当OpenType为SUBSCRIBE_LIVE_VIEW时，回调必须为onSubscribeLiveView。
+          controller: new functionalButtonComponentManager.FunctionalButtonController().onSubscribeLiveView((err,
+            data) => {
+            if (err) {
+              // 错误日志处理。
+              hilog.error(0x0000, 'testTag', `Failed to subscribe LiveView, error code is: ${err?.code} message is ${err?.message}`);
+              return;
+            }
+            let subscribeId = data.subscribeId;
+            // 成功日志处理。
+            hilog.info(0x0000, 'testTag', 'succeeded in subscribing LiveView');
+          })
+        })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 ### onPermissionSetting
-
-PhonePC/2in1TabletTV
 
 onPermissionSetting(callback: AsyncCallback<PermissionSettingResult>): FunctionalButtonController
 
@@ -1809,7 +1736,7 @@ onPermissionSetting(callback: AsyncCallback<PermissionSettingResult>): Functiona
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 对于5.1.0(18)之前的版本，该接口在Phone、Tablet、2in1中可正常调用，在其他设备类型中返回801错误码。对于5.1.0(18)及之后版本，该接口在Phone、Tablet、2in1、TV中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 5.0.2(14)
 
@@ -1827,91 +1754,89 @@ onPermissionSetting(callback: AsyncCallback<PermissionSettingResult>): Functiona
 
 **示例：**
 
-```
-1. import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { abilityAccessCtrl, common, PermissionRequestResult } from '@kit.AbilityKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { abilityAccessCtrl, common, PermissionRequestResult } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. @Entry
-7. @Component
-8. struct Index {
-9. build() {
-10. Row() {
-11. Column({ space: 3 }) {
-12. // 调用requestPermissionsFromUser接口Button。
-13. Button('请求用户授权')
-14. .fontSize(20)
-15. .onClick(() => {
-16. let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
-17. let context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-18. try {
-19. // 在module.json5文件中添加ohos.permission.READ_CALENDAR、ohos.permission.WRITE_CALENDAR权限。
-20. atManager.requestPermissionsFromUser(context,
-21. ['ohos.permission.READ_CALENDAR', 'ohos.permission.WRITE_CALENDAR'],
-22. (err: BusinessError, data: PermissionRequestResult) => {
-23. if (err) {
-24. hilog.error(0x0000, "testTag", "failed in requesting Permissions from user : %{public}d %{public}s",
-25. err.code, err.message);
-26. } else {
-27. hilog.info(0x0000, "testTag", 'data permissions: %{public}s', data.permissions?.join(','));
-28. hilog.info(0x0000, "testTag", 'data authResults: %{public}s', data.authResults?.join(','));
-29. hilog.info(0x0000, "testTag", 'data dialogShownResults: %{public}s',data.dialogShownResults?.join(','));
-30. }
-31. })
-32. } catch (err) {
-33. hilog.error(0x0000, "testTag", "error: %{public}d %{public}s", err.code, err.message);
-34. }
-35. })
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column({ space: 3 }) {
+        // 调用requestPermissionsFromUser接口Button。
+        Button('请求用户授权')
+          .fontSize(20)
+          .onClick(() => {
+            let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+            let context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+            try {
+              // 在module.json5文件中添加ohos.permission.READ_CALENDAR、ohos.permission.WRITE_CALENDAR权限。
+              atManager.requestPermissionsFromUser(context,
+                ['ohos.permission.READ_CALENDAR', 'ohos.permission.WRITE_CALENDAR'],
+                (err: BusinessError, data: PermissionRequestResult) => {
+                  if (err) {
+                    hilog.error(0x0000, 'testTag', 'failed in requesting Permissions from user : %{public}d %{public}s',
+                      err.code, err.message);
+                  } else {
+                   hilog.info(0x0000, 'testTag', 'data permissions: %{public}s', data.permissions?.join(','));
+                   hilog.info(0x0000, 'testTag', 'data authResults: %{public}s', data.authResults?.join(','));
+                   hilog.info(0x0000, 'testTag', 'data dialogShownResults: %{public}s', data.dialogShownResults?.join(','));
+                  }
+                });
+            } catch (err) {
+              hilog.error(0x0000, 'testTag', 'error: %{public}d %{public}s', err.code, err.message);
+            }
+          })
 
-37. // 构建FunctionalButton组件实例。
-38. FunctionalButton({
-39. params: {
-40. // OpenType.PERMISSION_SETTING表示该按钮用于设置权限。
-41. openType: functionalButtonComponentManager.OpenType.PERMISSION_SETTING,
-42. label: '权限设置',
-43. permissionListParam: ['ohos.permission.READ_CALENDAR', 'ohos.permission.WRITE_CALENDAR'],
-44. // 调整按钮样式。
-45. styleOption: {
-46. styleConfig: new functionalButtonComponentManager.ButtonConfig()
-47. .fontSize(20)
-48. },
-49. },
-50. // 当OpenType设置为PERMISSION_SETTING时，回调必须为onPermissionSetting。
-51. controller: new functionalButtonComponentManager.FunctionalButtonController().onPermissionSetting((err,
-52. data) => {
-53. if (err) {
-54. // 错误日志处理。
-55. hilog.error(0x0000, "testTag", "error: %{public}d %{public}s", err.code, err.message);
-56. return;
-57. }
-58. // 成功日志处理。
-59. hilog.info(0x0000, "testTag", "succeeded in setting permission ");
-60. let result = data.permissionResult;
-61. result.forEach(res => {
-62. hilog.info(0x0000, "testTag", "data: %{public}s", String(res));
-63. })
-64. })
-65. })
-66. }
-67. .width('100%')
-68. }
-69. .height('100%')
-70. }
-71. }
+        // 构建FunctionalButton组件实例。
+        FunctionalButton({
+          params: {
+            // OpenType.PERMISSION_SETTING表示该按钮用于设置权限。
+            openType: functionalButtonComponentManager.OpenType.PERMISSION_SETTING,
+            label: '权限设置',
+            permissionListParam: ['ohos.permission.READ_CALENDAR', 'ohos.permission.WRITE_CALENDAR'],
+            // 调整按钮样式。
+            styleOption: {
+              styleConfig: new functionalButtonComponentManager.ButtonConfig()
+                .fontSize(20)
+            }
+          },
+          // 当OpenType设置为PERMISSION_SETTING时，回调必须为onPermissionSetting。
+          controller: new functionalButtonComponentManager.FunctionalButtonController().onPermissionSetting((err,
+            data) => {
+            if (err) {
+              // 错误日志处理。
+              hilog.error(0x0000, 'testTag', 'Failed to set permission, error: %{public}d %{public}s', err.code, err.message);
+              return;
+            }
+            // 成功日志处理。
+            hilog.info(0x0000, 'testTag', 'succeeded in setting permission ');
+            let result = data.permissionResult;
+            result.forEach(res => {
+              hilog.info(0x0000, 'testTag', 'data: %{public}s', String(res));
+            });
+          })
+        })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 ### onRequestSubscribeMessage
-
-PhonePC/2in1TabletTV
 
 onRequestSubscribeMessage(callback: AsyncCallback<RequestSubscribeMessageResult>): FunctionalButtonController
 
 注册FunctionalButton组件为服务动态授权码按钮的点击事件，使用callback异步回调。
 
-说明
+**说明** 
 
-该接口在元服务中可正常使用。
+该接口在元服务中可正常使用，非元服务应用调用此接口返回[10008](errorcode-scenario-fusion.md#section10008-调用方非元服务)错误码。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -1919,7 +1844,7 @@ onRequestSubscribeMessage(callback: AsyncCallback<RequestSubscribeMessageResult>
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 对于6.1.0(23)之前的版本，该接口在Phone、Tablet中可正常调用，在其他设备类型中返回801错误码。对于6.1.0(23)及之后版本，该接口在Phone、Tablet、2in1中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 6.0.0(20)
 
@@ -1937,67 +1862,67 @@ onRequestSubscribeMessage(callback: AsyncCallback<RequestSubscribeMessageResult>
 
 **错误码：**
 
+以下错误码的详细介绍请参见[ArkTS组件错误码](errorcode-scenario-fusion.md)。
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| [10004](scenario-fusion-error-code.md#section10004-系统内部异常) | Internal error. |
-| [10008](scenario-fusion-error-code.md#section10008-调用方非元服务) | Not atomic service. |
+| [10004](errorcode-scenario-fusion.md#section10004-系统内部异常) | Internal error. |
+| [10008](errorcode-scenario-fusion.md#section10008-调用方非元服务) | Not atomic service. |
 
 **示例：**
 
-```
-1. import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. @Entry
-4. @Component
-5. struct Index {
-6. build() {
-7. Row() {
-8. Column() {
-9. // 构建FunctionalButton组件实例。
-10. FunctionalButton({
-11. params: {
-12. // OpenType.REQUEST_SUBSCRIBE_MESSAGE表示该按钮用于获取服务动态授权码。
-13. openType: functionalButtonComponentManager.OpenType.REQUEST_SUBSCRIBE_MESSAGE,
-14. label: '服务动态授权码',
-15. // 在获取服务动态授权码时，名为subSceneId的参数是必填项。
-16. subSceneId: '',
-17. // 调整按钮样式。
-18. styleOption: {
-19. styleConfig: new functionalButtonComponentManager.ButtonConfig()
-20. .fontSize(20)
-21. },
-22. },
-23. // 当OpenType为REQUEST_SUBSCRIBE_MESSAGE时，回调必须为onRequestSubscribeMessage。
-24. controller: new functionalButtonComponentManager.FunctionalButtonController()
-25. .onRequestSubscribeMessage((err, data) => {
-26. if (err) {
-27. // 错误日志处理。
-28. hilog.error(0x0000, "testTag", "error: %{public}d %{public}s", err.code, err.message);
-29. return;
-30. }
-31. // 成功日志处理。
-32. hilog.info(0x0000, "testTag", "succeeded in requesting subscribe message");
-33. // 处理服务代码。
-34. let code = data.code;
-35. })
-36. })
-37. }.width('100%')
-38. }.height('100%')
-39. }
-40. }
+```typescript
+import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column() {
+        // 构建FunctionalButton组件实例。
+        FunctionalButton({
+          params: {
+            // OpenType.REQUEST_SUBSCRIBE_MESSAGE表示该按钮用于获取服务动态授权码。
+            openType: functionalButtonComponentManager.OpenType.REQUEST_SUBSCRIBE_MESSAGE,
+            label: '服务动态授权码',
+            // 在获取服务动态授权码时，名为subSceneId的参数是必填项。
+            subSceneId: '',
+            // 调整按钮样式。
+            styleOption: {
+              styleConfig: new functionalButtonComponentManager.ButtonConfig()
+                .fontSize(20)
+            }
+          },
+          // 当OpenType为REQUEST_SUBSCRIBE_MESSAGE时，回调必须为onRequestSubscribeMessage。
+          controller: new functionalButtonComponentManager.FunctionalButtonController()
+            .onRequestSubscribeMessage((err, data) => {
+              if (err) {
+                // 错误日志处理。
+                hilog.error(0x0000, 'testTag', 'Failed to request subscribe message, error: %{public}d %{public}s', err.code, err.message);
+                return;
+              }
+              // 成功日志处理。
+              hilog.info(0x0000, 'testTag', 'succeeded in requesting subscribe message');
+              // 处理服务代码。
+              let code = data.code;
+            })
+        })
+      }.width('100%')
+    }.height('100%')
+  }
+}
 ```
 
 ### onShare
-
-PhonePC/2in1TabletTV
 
 onShare(callback: AsyncCallback<void>): FunctionalButtonController
 
 注册FunctionalButton组件为分享按钮的点击事件，使用callback异步回调。
 
-说明
+**说明** 
 
-仅提供给已发布的元服务使用。
+该接口在元服务中可正常使用，非元服务应用调用此接口返回[10008](errorcode-scenario-fusion.md#section10008-调用方非元服务)错误码。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -2005,7 +1930,7 @@ onShare(callback: AsyncCallback<void>): FunctionalButtonController
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 对于6.1.0(23)之前的版本，该接口在Phone、Tablet中可正常调用，在其他设备类型中返回801错误码。对于6.1.0(23)及之后版本，该接口在Phone、Tablet、2in1中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 6.0.0(20)
 
@@ -2023,69 +1948,70 @@ onShare(callback: AsyncCallback<void>): FunctionalButtonController
 
 **错误码：**
 
+以下错误码的详细介绍请参见[ArkTS组件错误码](errorcode-scenario-fusion.md)。
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| [10004](scenario-fusion-error-code.md#section10004-系统内部异常) | Internal error. |
-| [10006](scenario-fusion-error-code.md#section10006-获取分享数据失败) | Failed to get data. |
-| [10008](scenario-fusion-error-code.md#section10008-调用方非元服务) | Not atomic service. |
+| [10004](errorcode-scenario-fusion.md#section10004-系统内部异常) | Internal error. |
+| [10006](errorcode-scenario-fusion.md#section10006-获取分享数据失败) | Failed to get data. |
+| [10008](errorcode-scenario-fusion.md#section10008-调用方非元服务) | Not atomic service. |
+| [1007601001](errorcode-scenario-fusion.md#section1007601001-无效的分享参数值) | Invalid share parameter value. Possible causes: 1. The uniformDataType parameter verification failed; 2. Invalid content parameter format.  适用版本： 26.0.0+ |
 
 **示例：**
 
-```
-1. import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. Row() {
-9. Column() {
-10. // 构建FunctionalButton组件实例。
-11. FunctionalButton({
-12. params: {
-13. // OpenType.SHARE 表示该按钮用于调出分享页面。
-14. openType: functionalButtonComponentManager.OpenType.SHARE,
-15. label: '元服务分享',
-16. shareParam: {
-17. previewUri: '',
-18. description: ''
-19. },
-20. // 调整按钮样式。
-21. styleOption: {
-22. styleConfig: new functionalButtonComponentManager.ButtonConfig()
-23. .fontSize(20)
-24. },
-25. },
-26. // 当OpenType设置为SHARE时，回调函数必须是onShare。
-27. controller: new functionalButtonComponentManager.FunctionalButtonController()
-28. .onShare((err) => {
-29. if (err) {
-30. // 错误日志处理。
-31. hilog.error(0x0000, "testTag", "error: %{public}d %{public}s", err.code, err.message);
-32. return;
-33. }
-34. // 成功日志处理。
-35. hilog.info(0x0000, "testTag", "succeeded in pulling up the sharing page");
-36. })
-37. })
-38. }.width('100%')
-39. }.height('100%')
-40. }
-41. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column() {
+        // 构建FunctionalButton组件实例。
+        FunctionalButton({
+          params: {
+            // OpenType.SHARE 表示该按钮用于调出分享页面。
+            openType: functionalButtonComponentManager.OpenType.SHARE,
+            label: '元服务分享',
+            shareParam: {
+              previewUri: '',
+              description: ''
+            },
+            // 调整按钮样式。
+            styleOption: {
+              styleConfig: new functionalButtonComponentManager.ButtonConfig()
+                .fontSize(20)
+            }
+          },
+          // 当OpenType设置为SHARE时，回调函数必须是onShare。
+          controller: new functionalButtonComponentManager.FunctionalButtonController()
+            .onShare((err) => {
+              if (err) {
+                // 错误日志处理。
+                hilog.error(0x0000, 'testTag', 'Failed to pull up the sharing page, error: %{public}d %{public}s', err.code, err.message);
+                return;
+              }
+              // 成功日志处理。
+              hilog.info(0x0000, 'testTag', 'succeeded in pulling up the sharing page');
+            })
+        })
+      }.width('100%')
+    }.height('100%')
+  }
+}
 ```
 
 ### onFeedback
-
-PhonePC/2in1TabletTV
 
 onFeedback(callback: AsyncCallback<void>): FunctionalButtonController
 
 注册FunctionalButton组件为反馈按钮的点击事件，使用callback异步回调。
 
-说明
+**说明** 
 
-仅提供给元服务使用。
+该接口在元服务中可正常使用，非元服务应用调用此接口返回[10008](errorcode-scenario-fusion.md#section10008-调用方非元服务)错误码。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -2093,7 +2019,7 @@ onFeedback(callback: AsyncCallback<void>): FunctionalButtonController
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 对于6.1.0(23)之前的版本，该接口在Phone、Tablet中可正常调用，在其他设备类型中返回801错误码。对于6.1.0(23)及之后版本，该接口在Phone、Tablet、2in1中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 6.0.0(20)
 
@@ -2111,55 +2037,55 @@ onFeedback(callback: AsyncCallback<void>): FunctionalButtonController
 
 **错误码：**
 
+以下错误码的详细介绍请参见[ArkTS组件错误码](errorcode-scenario-fusion.md)。
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| [10008](scenario-fusion-error-code.md#section10008-调用方非元服务) | Not atomic service. |
+| [10008](errorcode-scenario-fusion.md#section10008-调用方非元服务) | Not atomic service. |
 
 **示例：**
 
-```
-1. import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. Row() {
-9. Column() {
-10. // 构建FunctionalButton组件实例。
-11. FunctionalButton({
-12. params: {
-13. // OpenType.FEEDBACK表示该按钮用于拉起反馈页面。
-14. openType: functionalButtonComponentManager.OpenType.FEEDBACK,
-15. label: '反馈与投诉',
-16. // 调整按钮样式。
-17. styleOption: {
-18. styleConfig: new functionalButtonComponentManager.ButtonConfig()
-19. .fontSize(20)
-20. },
-21. },
-22. // 当OpenType设置为FEEDBACK时，回调函数必须是onFeedback。
-23. controller: new functionalButtonComponentManager.FunctionalButtonController()
-24. .onFeedback((err) => {
-25. if (err) {
-26. // 错误日志处理。
-27. hilog.error(0x0000, "testTag", "error: %{public}d %{public}s", err.code, err.message);
-28. return;
-29. }
-30. // 成功日志处理。
-31. hilog.info(0x0000, "testTag", "succeeded in pulling up the feedback page");
-32. })
-33. })
-34. }.width('100%')
-35. }.height('100%')
-36. }
-37. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column() {
+        // 构建FunctionalButton组件实例。
+        FunctionalButton({
+          params: {
+            // OpenType.FEEDBACK表示该按钮用于拉起反馈页面。
+            openType: functionalButtonComponentManager.OpenType.FEEDBACK,
+            label: '反馈与投诉',
+            // 调整按钮样式。
+            styleOption: {
+              styleConfig: new functionalButtonComponentManager.ButtonConfig()
+                .fontSize(20)
+            }
+          },
+          // 当OpenType设置为FEEDBACK时，回调函数必须是onFeedback。
+          controller: new functionalButtonComponentManager.FunctionalButtonController()
+            .onFeedback((err) => {
+              if (err) {
+                // 错误日志处理。
+                hilog.error(0x0000, 'testTag', 'Failed to pull up the feedback page, error: %{public}d %{public}s', err.code, err.message);
+                return;
+              }
+              // 成功日志处理。
+              hilog.info(0x0000, 'testTag', 'succeeded in pulling up the feedback page');
+            })
+        })
+      }.width('100%')
+    }.height('100%')
+  }
+}
 ```
 
 ### onGetPhoneNumberAndRiskLevel
-
-PhonePC/2in1TabletTV
 
 onGetPhoneNumberAndRiskLevel(callback: Callback<GetPhoneNumberAndRiskLevelResult>): FunctionalButtonController
 
@@ -2187,53 +2113,51 @@ onGetPhoneNumberAndRiskLevel(callback: Callback<GetPhoneNumberAndRiskLevelResult
 
 **示例：**
 
-```
-1. import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. Row() {
-9. Column() {
-10. // 构建FunctionalButton组件实例。
-11. FunctionalButton({
-12. params: {
-13. // OpenType.GET_PHONE_NUMBER_AND_RISK_LEVEL表示该按钮用于获取手机号和风险等级。
-14. openType: functionalButtonComponentManager.OpenType.GET_PHONE_NUMBER_AND_RISK_LEVEL,
-15. label: '获取手机号和风险等级',
-16. // 调整按钮样式。
-17. styleOption: {
-18. styleConfig: new functionalButtonComponentManager.ButtonConfig()
-19. .fontSize(20)
-20. },
-21. },
-22. // 当OpenType为GET_PHONE_NUMBER_AND_RISK_LEVEL时，回调必须为onGetPhoneNumberAndRiskLevel。
-23. controller: new functionalButtonComponentManager.FunctionalButtonController()
-24. .onGetPhoneNumberAndRiskLevel((data) => {
-25. if (data?.errCode) {
-26. // 错误日志处理。
-27. hilog.error(0x0000, "testTag", "error: %{public}d %{public}s", data?.errCode, data?.errMsg);
-28. return;
-29. }
-30. // 成功日志处理。
-31. hilog.info(0x0000, "testTag", "succeeded in authentication");
-32. // 授权码处理。
-33. let authorizationCode = data?.code;
-34. })
-35. })
-36. }
-37. .width('100%')
-38. }
-39. .height('100%')
-40. }
-41. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column() {
+        // 构建FunctionalButton组件实例。
+        FunctionalButton({
+          params: {
+            // OpenType.GET_PHONE_NUMBER_AND_RISK_LEVEL表示该按钮用于获取手机号和风险等级。
+            openType: functionalButtonComponentManager.OpenType.GET_PHONE_NUMBER_AND_RISK_LEVEL,
+            label: '获取手机号和风险等级',
+            // 调整按钮样式。
+            styleOption: {
+              styleConfig: new functionalButtonComponentManager.ButtonConfig()
+                .fontSize(20)
+            }
+          },
+          // 当OpenType为GET_PHONE_NUMBER_AND_RISK_LEVEL时，回调必须为onGetPhoneNumberAndRiskLevel。
+          controller: new functionalButtonComponentManager.FunctionalButtonController()
+            .onGetPhoneNumberAndRiskLevel((data) => {
+              if (data?.errCode) {
+                // 错误日志处理。
+                hilog.error(0x0000, 'testTag', 'Failed to authenticate, error: %{public}d %{public}s', data?.errCode, data?.errMsg);
+                return;
+              }
+              // 成功日志处理。
+              hilog.info(0x0000, 'testTag', 'succeeded in authentication');
+              // 授权码处理。
+              let authorizationCode = data?.code;
+            })
+        })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 ## ButtonConfig
-
-PhonePC/2in1TabletTV
 
 该类提供了实现FunctionalButton自定义属性的方法。
 
@@ -2246,8 +2170,6 @@ PhonePC/2in1TabletTV
 **起始版本：** 4.1.0(11)
 
 ### type
-
-PhonePC/2in1TabletTV
 
 type(value: ButtonType): ButtonConfig
 
@@ -2275,8 +2197,6 @@ type(value: ButtonType): ButtonConfig
 
 ### stateEffect
 
-PhonePC/2in1TabletTV
-
 stateEffect(value: boolean): ButtonConfig
 
 设置FunctionalButton是否开启按压态显示效果属性。
@@ -2302,8 +2222,6 @@ stateEffect(value: boolean): ButtonConfig
 | [ButtonConfig](scenario-fusion-functionalbuttoncomponentmanager.md#buttonconfig) | ButtonConfig对象。 |
 
 ### fontColor
-
-PhonePC/2in1TabletTV
 
 fontColor(value: ResourceColor): ButtonConfig
 
@@ -2331,8 +2249,6 @@ fontColor(value: ResourceColor): ButtonConfig
 
 ### fontSize
 
-PhonePC/2in1TabletTV
-
 fontSize(value: Length): ButtonConfig
 
 设置FunctionalButton的字体大小属性。
@@ -2358,8 +2274,6 @@ fontSize(value: Length): ButtonConfig
 | [ButtonConfig](scenario-fusion-functionalbuttoncomponentmanager.md#buttonconfig) | ButtonConfig对象。 |
 
 ### fontWeight
-
-PhonePC/2in1TabletTV
 
 fontWeight(value: string | number | FontWeight): ButtonConfig
 
@@ -2387,8 +2301,6 @@ fontWeight(value: string | number | FontWeight): ButtonConfig
 
 ### fontStyle
 
-PhonePC/2in1TabletTV
-
 fontStyle(value: FontStyle): ButtonConfig
 
 设置FunctionalButton的字体样式属性。
@@ -2415,8 +2327,6 @@ fontStyle(value: FontStyle): ButtonConfig
 
 ### fontFamily
 
-PhonePC/2in1TabletTV
-
 fontFamily(value: string | Resource): ButtonConfig
 
 设置FunctionalButton的字体属性。
@@ -2433,7 +2343,7 @@ fontFamily(value: string | Resource): ButtonConfig
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | string | [Resource](ts-types.md#resource) | 是 | 设置字体列表。默认字体'HarmonyOS Sans'，当前支持'[HarmonyOS Sans](../design-guides/font-0000001828772001.md#section51091561209)'字体和[注册自定义字体](js-apis-font.md)。 |
+| value | string | [Resource](ts-types.md#resource) | 是 | 设置字体列表。默认字体'HarmonyOS Sans'，当前支持'[HarmonyOS Sans](../design-guides/font-0000001828772001.md#section144417635412)'字体和[注册自定义字体](js-apis-font.md)。 |
 
 **返回值：**
 
@@ -2442,8 +2352,6 @@ fontFamily(value: string | Resource): ButtonConfig
 | [ButtonConfig](scenario-fusion-functionalbuttoncomponentmanager.md#buttonconfig) | ButtonConfig对象。 |
 
 ### width
-
-PhonePC/2in1TabletTV
 
 width(value: Length): ButtonConfig
 
@@ -2471,8 +2379,6 @@ width(value: Length): ButtonConfig
 
 ### height
 
-PhonePC/2in1TabletTV
-
 height(value: Length): ButtonConfig
 
 设置FunctionalButton的高度属性。
@@ -2498,8 +2404,6 @@ height(value: Length): ButtonConfig
 | [ButtonConfig](scenario-fusion-functionalbuttoncomponentmanager.md#buttonconfig) | ButtonConfig对象。 |
 
 ### size
-
-PhonePC/2in1TabletTV
 
 size(value: SizeOptions): ButtonConfig
 
@@ -2527,8 +2431,6 @@ size(value: SizeOptions): ButtonConfig
 
 ### constraintSize
 
-PhonePC/2in1TabletTV
-
 constraintSize(value: ConstraintSizeOptions): ButtonConfig
 
 设置FunctionalButton的约束尺寸属性。
@@ -2554,8 +2456,6 @@ constraintSize(value: ConstraintSizeOptions): ButtonConfig
 | [ButtonConfig](scenario-fusion-functionalbuttoncomponentmanager.md#buttonconfig) | ButtonConfig对象。 |
 
 ### padding
-
-PhonePC/2in1TabletTV
 
 padding(value: Length | Padding): ButtonConfig
 
@@ -2583,8 +2483,6 @@ padding(value: Length | Padding): ButtonConfig
 
 ### margin
 
-PhonePC/2in1TabletTV
-
 margin(value: Length | Padding): ButtonConfig
 
 设置FunctionalButton的外边距属性。
@@ -2611,8 +2509,6 @@ margin(value: Length | Padding): ButtonConfig
 
 ### backgroundColor
 
-PhonePC/2in1TabletTV
-
 backgroundColor(value: ResourceColor): ButtonConfig
 
 设置FunctionalButton的背景色属性。
@@ -2638,8 +2534,6 @@ backgroundColor(value: ResourceColor): ButtonConfig
 | [ButtonConfig](scenario-fusion-functionalbuttoncomponentmanager.md#buttonconfig) | ButtonConfig对象。 |
 
 ### backgroundImage
-
-PhonePC/2in1TabletTV
 
 backgroundImage(src: ResourceStr, repeat?: ImageRepeat): ButtonConfig
 
@@ -2668,8 +2562,6 @@ backgroundImage(src: ResourceStr, repeat?: ImageRepeat): ButtonConfig
 
 ### backgroundImageSize
 
-PhonePC/2in1TabletTV
-
 backgroundImageSize(value: SizeOptions | ImageSize): ButtonConfig
 
 设置FunctionalButton的背景图像的高度和宽度属性。
@@ -2696,8 +2588,6 @@ backgroundImageSize(value: SizeOptions | ImageSize): ButtonConfig
 
 ### backgroundImagePosition
 
-PhonePC/2in1TabletTV
-
 backgroundImagePosition(value: Position | Alignment): ButtonConfig
 
 设置FunctionalButton的背景图像的显示位置属性。
@@ -2714,7 +2604,7 @@ backgroundImagePosition(value: Position | Alignment): ButtonConfig
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Position](ts-types.md#position) | [Alignment](ts-appendix-enums.md#alignment) | 是 | 设置背景图像在组件中显示位置，即相对于组件左上角的坐标，单位vp。  默认值：  {  x: 0,  y: 0  }  x和y值设置百分比时，偏移量是相对组件自身宽高计算的。 |
+| value | [Position](ts-types.md#position) | [Alignment](ts-appendix-enums.md#alignment) | 是 | 设置背景图像在组件中显示位置，即相对于组件左上角的坐标，单位：vp。  默认值：  {  x: 0,  y: 0  }  x和y值设置百分比时，偏移量是相对组件自身宽高计算的。 |
 
 **返回值：**
 
@@ -2723,8 +2613,6 @@ backgroundImagePosition(value: Position | Alignment): ButtonConfig
 | [ButtonConfig](scenario-fusion-functionalbuttoncomponentmanager.md#buttonconfig) | ButtonConfig对象。 |
 
 ### opacity
-
-PhonePC/2in1TabletTV
 
 opacity(value: number | Resource): ButtonConfig
 
@@ -2752,8 +2640,6 @@ opacity(value: number | Resource): ButtonConfig
 
 ### border
 
-PhonePC/2in1TabletTV
-
 border(value: BorderOptions): ButtonConfig
 
 统一设置FunctionalButton的边框宽度、边框颜色、边框圆角半径、边框样式属性。
@@ -2779,8 +2665,6 @@ border(value: BorderOptions): ButtonConfig
 | [ButtonConfig](scenario-fusion-functionalbuttoncomponentmanager.md#buttonconfig) | ButtonConfig对象。 |
 
 ### borderStyle
-
-PhonePC/2in1TabletTV
 
 borderStyle(value: BorderStyle | EdgeStyles): ButtonConfig
 
@@ -2808,8 +2692,6 @@ borderStyle(value: BorderStyle | EdgeStyles): ButtonConfig
 
 ### borderWidth
 
-PhonePC/2in1TabletTV
-
 borderWidth(value: Length | EdgeWidths): ButtonConfig
 
 设置FunctionalButton的边框宽度属性。
@@ -2835,8 +2717,6 @@ borderWidth(value: Length | EdgeWidths): ButtonConfig
 | [ButtonConfig](scenario-fusion-functionalbuttoncomponentmanager.md#buttonconfig) | ButtonConfig对象。 |
 
 ### borderColor
-
-PhonePC/2in1TabletTV
 
 borderColor(value: ResourceColor | EdgeColors): ButtonConfig
 
@@ -2864,8 +2744,6 @@ borderColor(value: ResourceColor | EdgeColors): ButtonConfig
 
 ### borderRadius
 
-PhonePC/2in1TabletTV
-
 borderRadius(value: Length | BorderRadiuses): ButtonConfig
 
 设置FunctionalButton的边框圆角半径属性。
@@ -2891,8 +2769,6 @@ borderRadius(value: Length | BorderRadiuses): ButtonConfig
 | [ButtonConfig](scenario-fusion-functionalbuttoncomponentmanager.md#buttonconfig) | ButtonConfig对象。 |
 
 ### borderImage
-
-PhonePC/2in1TabletTV
 
 borderImage(value: BorderImageOption): ButtonConfig
 
@@ -2920,8 +2796,6 @@ borderImage(value: BorderImageOption): ButtonConfig
 
 ### scale
 
-PhonePC/2in1TabletTV
-
 scale(value: ScaleOptions): ButtonConfig
 
 设置FunctionalButton的缩放属性。
@@ -2947,8 +2821,6 @@ scale(value: ScaleOptions): ButtonConfig
 | [ButtonConfig](scenario-fusion-functionalbuttoncomponentmanager.md#buttonconfig) | ButtonConfig对象。 |
 
 ### align
-
-PhonePC/2in1TabletTV
 
 align(value: Alignment): ButtonConfig
 
@@ -2976,8 +2848,6 @@ align(value: Alignment): ButtonConfig
 
 ### markAnchor
 
-PhonePC/2in1TabletTV
-
 markAnchor(value: Position): ButtonConfig
 
 设置FunctionalButton在位置定位时的锚点。
@@ -2994,7 +2864,7 @@ markAnchor(value: Position): ButtonConfig
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Position](ts-types.md#position) | 是 | 设置元素在位置定位时的锚点，以元素顶部起点作为基准点进行偏移，单位vp。  默认值：  {  x: 0,  y: 1  } |
+| value | [Position](ts-types.md#position) | 是 | 设置元素在位置定位时的锚点，以元素顶部起点作为基准点进行偏移，单位：vp。  默认值：  {  x: 0,  y: 1  } |
 
 **返回值：**
 
@@ -3003,8 +2873,6 @@ markAnchor(value: Position): ButtonConfig
 | [ButtonConfig](scenario-fusion-functionalbuttoncomponentmanager.md#buttonconfig) | ButtonConfig对象。 |
 
 ### offset
-
-PhonePC/2in1TabletTV
 
 offset(value: Position): ButtonConfig
 
@@ -3022,7 +2890,7 @@ offset(value: Position): ButtonConfig
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Position](ts-types.md#position) | 是 | 设置元素在位置定位时的锚点，以元素顶部起点作为基准点进行偏移，单位vp。  默认值：  {  x: 0,  y: 1  } |
+| value | [Position](ts-types.md#position) | 是 | 设置元素在位置定位时的锚点，以元素顶部起点作为基准点进行偏移，单位：vp。  默认值：  {  x: 0,  y: 1  } |
 
 **返回值：**
 
@@ -3031,8 +2899,6 @@ offset(value: Position): ButtonConfig
 | [ButtonConfig](scenario-fusion-functionalbuttoncomponentmanager.md#buttonconfig) | ButtonConfig对象。 |
 
 ### enabled
-
-PhonePC/2in1TabletTV
 
 enabled(value: boolean): ButtonConfig
 
@@ -3060,11 +2926,9 @@ enabled(value: boolean): ButtonConfig
 
 ### loadingColor
 
-PhonePC/2in1TabletTV
-
 loadingColor(value: ResourceColor): ButtonConfig
 
-设置FunctionalButton中的LoadingProgress图标的颜色属性。
+设置FunctionalButton中的[LoadingProgress](ts-basic-components-loadingprogress.md)图标的颜色属性。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -3088,11 +2952,9 @@ loadingColor(value: ResourceColor): ButtonConfig
 
 ### loadingWidth
 
-PhonePC/2in1TabletTV
-
 loadingWidth(value: Length): ButtonConfig
 
-设置FunctionalButton中的LoadingProgress图标的宽度属性。
+设置FunctionalButton中的[LoadingProgress](ts-basic-components-loadingprogress.md)图标的宽度属性。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -3116,11 +2978,9 @@ loadingWidth(value: Length): ButtonConfig
 
 ### loadingHeight
 
-PhonePC/2in1TabletTV
-
 loadingHeight(value: Length): ButtonConfig
 
-设置FunctionalButton中的LoadingProgress图标的高度属性。
+设置FunctionalButton中的[LoadingProgress](ts-basic-components-loadingprogress.md)图标的高度属性。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -3144,11 +3004,9 @@ loadingHeight(value: Length): ButtonConfig
 
 ### loadingPadding
 
-PhonePC/2in1TabletTV
-
 loadingPadding(value: Length | Padding): ButtonConfig
 
-设置FunctionalButton中的LoadingProgress图标的内边距属性。
+设置FunctionalButton中的[LoadingProgress](ts-basic-components-loadingprogress.md)图标的内边距属性。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -3172,11 +3030,9 @@ loadingPadding(value: Length | Padding): ButtonConfig
 
 ### loadingMargin
 
-PhonePC/2in1TabletTV
-
 loadingMargin(value: Length | Padding): ButtonConfig
 
-设置FunctionalButton中的LoadingProgress图标的外边距属性。
+设置FunctionalButton中的[LoadingProgress](ts-basic-components-loadingprogress.md)图标的外边距属性。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -3200,55 +3056,53 @@ loadingMargin(value: Length | Padding): ButtonConfig
 
 ## 示例
 
-PhonePC/2in1TabletTV
-
 ### 示例一（场景化Button使用自定义Modifier设置按钮样式）
 
-```
-1. import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { ButtonModifier, LoadingProgressModifier, TextModifier } from '@kit.ArkUI';
+```typescript
+import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { ButtonModifier, LoadingProgressModifier, TextModifier } from '@kit.ArkUI';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. build() {
-9. Row() {
-10. Column() {
-11. // 构建FunctionalButton组件实例。
-12. FunctionalButton({
-13. params: {
-14. // OpenType.GET_PHONE_NUMBER表示该按钮用于快速验证手机号码。
-15. openType: functionalButtonComponentManager.OpenType.GET_PHONE_NUMBER,
-16. label: '快速验证手机号',
-17. // 调整按钮样式。
-18. styleOption: {
-19. loading: true,
-20. },
-21. textModifier: new TextModifier().fontColor(Color.Pink),
-22. buttonModifier: new ButtonModifier().backgroundColor(Color.Green),
-23. loadingProgressModifier: new LoadingProgressModifier().width(20).height(20),
-24. },
-25. // 当OpenType为GET_PHONE_NUMBER时，回调必须为onGetPhoneNumber。
-26. controller: new functionalButtonComponentManager.FunctionalButtonController()
-27. .onGetPhoneNumber((err, data) => {
-28. if (err) {
-29. // 错误日志处理。
-30. hilog.error(0x0000, "testTag", "error: %{public}d %{public}s", err.code, err.message);
-31. return;
-32. }
-33. // 成功日志处理。
-34. hilog.info(0x0000, "testTag", "succeeded in authenticating");
-35. // 处理授权码。
-36. let authorizationCode = data.code;
-37. })
-38. })
-39. }
-40. .width('100%')
-41. }
-42. .height('100%')
-43. }
-44. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column() {
+        // 构建FunctionalButton组件实例。
+        FunctionalButton({
+          params: {
+            // OpenType.GET_PHONE_NUMBER表示该按钮用于快速验证手机号码。
+            openType: functionalButtonComponentManager.OpenType.GET_PHONE_NUMBER,
+            label: '快速验证手机号',
+            // 调整按钮样式。
+            styleOption: {
+              loading: true
+            },
+            textModifier: new TextModifier().fontColor(Color.Pink),
+            buttonModifier: new ButtonModifier().backgroundColor(Color.Green),
+            loadingProgressModifier: new LoadingProgressModifier().width(20).height(20)
+          },
+          // 当OpenType为GET_PHONE_NUMBER时，回调必须为onGetPhoneNumber。
+          controller: new functionalButtonComponentManager.FunctionalButtonController()
+            .onGetPhoneNumber((err, data) => {
+              if (err) {
+                // 错误日志处理。
+                hilog.error(0x0000, 'testTag', 'Failed to authenticate, error: %{public}d %{public}s', err.code, err.message);
+                return;
+              }
+              // 成功日志处理。
+              hilog.info(0x0000, 'testTag', 'succeeded in authenticating');
+              // 处理授权码。
+              let authorizationCode = data.code;
+            })
+        })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/EX5-QstxQt2sjRivHn3hJw/zh-cn_image_0000002589327305.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/vjrR0W_NS7CzCR75HmK0jA/zh-cn_image_0000002706677188.png)

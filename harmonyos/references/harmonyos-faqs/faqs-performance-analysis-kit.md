@@ -1,14 +1,15 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performance-analysis-kit
 title: 运维
+breadcrumb: FAQ > 应用质量 > 技术质量 > 运维
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:13+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:5ad413d9d3a4ce1042c124b1eb0d1933874e25b168cfce14cf78c960362a89a3
+scraped_at: 2026-09-02T14:53:51+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:98300efa70e676b0de2dacc47cf59752fcb0884ec473a7c996e4ecbb54f28462
 ---
 
 * **[hilog日志如何落盘存储](faqs-performance-analysis-kit-1.md)**
-* **[hilog日志如何设置为只打印当前应用的日志](faqs-performance-analysis-kit-2.md)**
+* **[hilog日志如何设置为只打印当前应用的日](faqs-performance-analysis-kit-2.md)**
 * **[hilog日志出现乱码原因是什么，如何解决](faqs-performance-analysis-kit-3.md)**
 * **[如何解决hilog.debug日志无法打印](faqs-performance-analysis-kit-9.md)**
 * **[如何查询应用当前CPU占用](faqs-performance-analysis-kit-14.md)**
@@ -43,7 +44,7 @@ content_hash: sha256:5ad413d9d3a4ce1042c124b1eb0d1933874e25b168cfce14cf78c960362
 * **[如何使用ErrorManager捕获异常](faqs-performance-analysis-kit-60.md)**
 * **[DevEco Device File Browser无法查看系统媒体文件目录](faqs-performance-analysis-kit-61.md)**
 * **[Hilog模块提供的OH\_LOG\_SetCallback接口返回的日志与系统落盘的Hilog日志是否一致](faqs-performance-analysis-kit-62.md)**
-* **[hilog日志导致应用性能异常如何定位优化](faqs-performance-analysis-kit-63.md)**
+* **[hilog日志导致应用性能异常怎么定位优化](faqs-performance-analysis-kit-63.md)**
 * **[解决hdc执行返回command not found](faqs-performance-analysis-kit-64.md)**
 * **[如何获取hdc可执行二进制文件](faqs-performance-analysis-kit-65.md)**
 * **[在docker或者wsl系统中，无USB设备节点，hdc执行后无返回信息](faqs-performance-analysis-kit-66.md)**
@@ -57,3 +58,4 @@ content_hash: sha256:5ad413d9d3a4ce1042c124b1eb0d1933874e25b168cfce14cf78c960362
 * **[连接设备，hdc shell命令可以查看到设备连接状态，但是DevEco Studio连接显示会闪跳一下，显示无设备](faqs-performance-analysis-kit-74.md)**
 * **[hdc调试设备报错：hdc server port XXXX has been used，切换端口无效](faqs-performance-analysis-kit-75.md)**
 * **[hdc list targets回显慢](faqs-performance-analysis-kit-76.md)**
+* **[开启VPN后访问https资源报错，如何导出日志信息定界问题](faqs-performance-analysis-kit-77.md)**

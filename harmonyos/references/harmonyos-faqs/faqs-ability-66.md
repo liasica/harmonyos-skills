@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-66
 title: UIAbility/Page/Component之间的关系？如何搭配使用
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > UIAbility/Page/Component之间的关系？如何搭配使用
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:47+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:16+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:dfa6f5bb27e53c3dbc6017e031ed4edd9b727b84a52adac340ac04972ae09ed8
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_space-bef
 title: "@hw-stylistic/space-before-blocks"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > ArkTS代码风格规则@hw-stylistic > @hw-stylistic/space-before-blocks
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:31+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:983aa74e6388305dde1c47414827aba71324ed8785f13ade5004bca4d668ec3e
+scraped_at: 2026-09-02T14:50:53+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a5d689aef7906bbc52b9bddcee004db6d4d715f835f9114f8bd05ccdc371613a
 ---
 
 强制在“{”之前加空格。该规则仅检查.ets文件类型。
@@ -18,73 +18,73 @@ content_hash: sha256:983aa74e6388305dde1c47414827aba71324ed8785f13ade5004bca4d66
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@hw-stylistic/space-before-blocks": "error"
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@hw-stylistic/space-before-blocks": "error"
+  }
+}
 ```
 
 ## 选项
 
-该规则无需配置额外选项。
+该规则无需配置选项。
 
 ## 正例
 
-```
-1. export function a() {
-2. // doSomething
-3. }
+```screen
+export function a() {
+  // doSomething
+}
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. build() {
-9. Row() {
-10. Column() {
-11. Text('Hello World')
-12. }
-13. .width('100%')
-14. }
-15. .height('100%')
-16. }
-17. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column() {
+        Text('Hello World')
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 ## 反例
 
-```
-1. // Missing space before opening brace.
-2. export function a(){
-3. // doSomething
-4. }
+```screen
+// Missing space before opening brace.
+export function a(){
+  // doSomething
+}
 
-6. @Entry
-7. @Component
-8. // Missing space before opening brace.
-9. struct Index{
-10. // Missing space before opening brace.
-11. build(){
-12. // Missing space before opening brace.
-13. Row(){
-14. // Missing space before opening brace.
-15. Column(){
-16. Text('Hello World')
-17. }
-18. .width('100%')
-19. }
-20. .height('100%')
-21. }
-22. }
+@Entry
+@Component
+// Missing space before opening brace.
+struct Index{
+  // Missing space before opening brace.
+  build(){
+    // Missing space before opening brace.
+    Row(){
+      // Missing space before opening brace.
+      Column(){
+        Text('Hello World')
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 ## 规则集
 
-```
-1. "plugin:@hw-stylistic/recommended"
-2. "plugin:@hw-stylistic/all"
+```screen
+"plugin:@hw-stylistic/recommended"
+"plugin:@hw-stylistic/all"
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

@@ -3,35 +3,31 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Tabs
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 导航与切换 > Tabs
 category: harmonyos-references
-scraped_at: 2026-04-29T13:51:55+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b943e4dfd82530136fbc42633c8c17119b2eae8e69f430abfaa999045b49e918
+scraped_at: 2026-09-02T15:01:01+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:422d457ac24ce7e8f64501d7459c4fc9fc36439fcad580ccc340a3e57ecc24f1
 ---
 
 通过页签进行内容视图切换的容器组件，每个页签对应一个内容视图。
 
-说明
+**说明** 
 
 * 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 该组件从API version 11开始，支持安全区域避让特性，其[expandSafeArea](ts-universal-attributes-expand-safe-area.md#expandsafearea)属性的默认值为expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.BOTTOM])。开发者可通过重写该属性覆盖默认行为。对于API version 11之前的版本，则需配合expandSafeArea属性手动实现安全区域避让。
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 仅支持子组件[TabContent](ts-container-tabcontent.md)，以及渲染控制类型[if/else](../harmonyos-guides/arkts-rendering-control-ifelse.md)和[ForEach](../harmonyos-guides/arkts-rendering-control-foreach.md)，不建议自定义组件作为子组件。并且if/else和ForEach下也仅支持TabContent作为子组件，不建议自定义组件作为子组件。
 
-说明
+**说明** 
 
-Tabs子组件的visibility属性设置为None，或者visibility属性设置为Hidden时，对应子组件不显示，但依然会在视窗内占位。
+Tabs子组件设置了通用属性[visibility](ts-universal-attributes-visibility.md#visibility)的值为None，或者设置值为Hidden时，对应子组件不显示，但依然会在视窗内占位。
 
 已经显示的Tabs子组件TabContent后续隐藏时不会被销毁，若需要页面懒加载和释放，可以参考[示例13](ts-container-tabs.md#示例13页面懒加载和释放)。
 
 Tabs设置[height](ts-universal-attributes-size.md#height)为auto时，可根据子组件高度自适应高度大小。设置[width](ts-universal-attributes-size.md#width)为auto时，可根据子组件宽度自适应宽度大小。
 
 ## 接口
-
-PhonePC/2in1TabletTVWearable
 
 Tabs(options?: TabsOptions)
 
@@ -49,22 +45,20 @@ Tabs(options?: TabsOptions)
 
 ## TabsOptions15+
 
-PhonePC/2in1TabletTVWearable
-
 Tabs组件参数，设置Tabs的页签位置，当前显示页签的索引，Tabs控制器和TabBar的[通用属性](ts-component-general-attributes.md)。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | barPosition7+ | [BarPosition](ts-container-tabs.md#barposition枚举说明) | 否 | 是 | 设置Tabs的页签位置。  默认值：BarPosition.Start。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| index7+ | number | 否 | 是 | 设置当前显示页签的索引。  默认值：0  **说明：**  设置为小于0的值时按默认值显示。  可选值为[0, TabContent子节点数量-1]。  直接修改index跳页时，切换动效不生效。 使用TabController的changeIndex时，默认生效切换动效，可以设置animationDuration为0关闭动画。  从API version 10开始，该参数支持[$$](../harmonyos-guides/arkts-two-way-sync.md)双向绑定变量。  Tabs重建、系统资源切换（如系统字体切换、系统深浅色切换）或者组件属性变化时，会跳转到index对应的页面。若需要在上述情况下不跳转，建议使用双向绑定。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| index7+ | number | 否 | 是 | 设置当前显示页签的索引。  默认值：0  **说明：**  设置为小于0的值时按默认值显示。  可选值为[0, TabContent子节点数量-1]。  直接修改index跳页时，切换动效不生效。 使用TabsController的[changeIndex](ts-container-tabs.md#changeindex)时，默认生效切换动效，可以设置[animationDuration](ts-container-tabs.md#animationduration)为0关闭动画。  从API version 10开始，该参数支持[$$](../harmonyos-guides/arkts-two-way-sync.md)双向绑定变量。  Tabs重建、系统资源切换（如系统字体切换、系统深浅色切换）或者组件属性变化时，会跳转到index对应的页面。若需要在上述情况下不跳转，建议使用双向绑定。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | controller7+ | [TabsController](ts-container-tabs.md#tabscontroller) | 否 | 是 | 设置Tabs控制器。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| barModifier15+ | [CommonModifier](ts-container-tabs.md#commonmodifier15) | 否 | 是 | 设置TabBar的[通用属性](ts-component-general-attributes.md)。  **说明：**  动态置为undefined时会保持当前状态不变，不会重置各通用属性。  由一个CommonModifier切换为另一个CommonModifier时，重复属性会进行覆盖，非重复属性会同时生效，不会重置前一个CommonModifier的通用属性。  Tabs的[barWidth](ts-container-tabs.md#barwidth)、[barHeight](ts-container-tabs.md#barheight)、[barBackgroundColor](ts-container-tabs.md#barbackgroundcolor10)、[barBackgroundBlurStyle](ts-container-tabs.md#barbackgroundblurstyle18)、[barBackgroundEffect](ts-container-tabs.md#barbackgroundeffect18)属性会覆盖CommonModifier的[width](ts-universal-attributes-size.md#width)、[height](ts-universal-attributes-size.md#height)、[backgroundColor](ts-universal-attributes-background.md#backgroundcolor18)、[backgroundBlurStyle](ts-universal-attributes-background.md#backgroundblurstyle18)、[backgroundEffect](ts-universal-attributes-background.md#backgroundeffect18)属性。  [align](ts-universal-attributes-location.md#align)属性仅在[BarMode.Scrollable](ts-container-tabs.md#barmode10-1)模式下生效，且Tabs为横向时还需[nonScrollableLayoutStyle](ts-container-tabs.md#scrollablebarmodeoptions10对象说明)未设置或设置为异常值时才能生效。  [TabContent](ts-container-tabcontent.md)组件的[tabBar](ts-container-tabcontent.md#tabbar18)属性为底部页签样式时不支持拖拽功能。  **元服务API：** 从API version 15开始，该接口支持在元服务中使用。 |
+| barModifier | [CommonModifier](ts-container-tabs.md#commonmodifier15) | 否 | 是 | 设置TabBar的[通用属性](ts-component-general-attributes.md)。  **说明：**  动态置为undefined时会保持当前状态不变，不会重置各通用属性。  由一个CommonModifier切换为另一个CommonModifier时，重复属性会进行覆盖，非重复属性会同时生效，不会重置前一个CommonModifier的通用属性。  Tabs的[barWidth](ts-container-tabs.md#barwidth)、[barHeight](ts-container-tabs.md#barheight)、[barBackgroundColor](ts-container-tabs.md#barbackgroundcolor10)、[barBackgroundBlurStyle](ts-container-tabs.md#barbackgroundblurstyle18)、[barBackgroundEffect](ts-container-tabs.md#barbackgroundeffect18)属性会覆盖CommonModifier的[width](ts-universal-attributes-size.md#width)、[height](ts-universal-attributes-size.md#height)、[backgroundColor](ts-universal-attributes-background.md#backgroundcolor18)、[backgroundBlurStyle](ts-universal-attributes-background.md#backgroundblurstyle18)、[backgroundEffect](ts-universal-attributes-background.md#backgroundeffect18)属性。  [align](ts-universal-attributes-location.md#align)属性仅在[BarMode.Scrollable](ts-container-tabs.md#barmode10-1)模式下生效，且Tabs为横向时还需[nonScrollableLayoutStyle](ts-container-tabs.md#scrollablebarmodeoptions10对象说明)未设置或设置为异常值时才能生效。  [TabContent](ts-container-tabcontent.md)组件的[tabBar](ts-container-tabcontent.md#tabbar18)属性为底部页签样式时不支持拖拽功能。  **元服务API：** 从API version 15开始，该接口支持在元服务中使用。 |
 
 ## BarPosition枚举说明
-
-PhonePC/2in1TabletTVWearable
 
 Tabs页签位置枚举。
 
@@ -79,17 +73,13 @@ Tabs页签位置枚举。
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用属性](ts-component-general-attributes.md)外，还支持以下属性：
 
 ### vertical
 
-PhonePC/2in1TabletTVWearable
-
 vertical(value: boolean)
 
-设置是否为纵向Tab。
+设置是否为纵向Tabs。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -99,11 +89,9 @@ vertical(value: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | boolean | 是 | 是否为纵向Tab。  默认值：false，横向Tabs，为true时纵向Tabs。  当横向Tabs设置height为auto时，Tabs组件高度自适应子组件高度，即为tabBar高度+divider线宽+TabContent高度+上下padding值+上下border宽度。  当纵向Tabs设置width为auto时，Tabs组件宽度自适应子组件宽度，即为tabBar宽度+divider线宽+TabContent宽度+左右padding值+左右border宽度。  尽量保持每一个页面中的子组件尺寸大小一致，避免滑动页面时出现页面切换动画跳动现象。 |
+| value | boolean | 是 | 是否为纵向Tabs。  默认值：false，横向Tabs，为true时纵向Tabs。  当横向Tabs设置height为auto时，Tabs组件高度自适应子组件高度，即为[tabBar](ts-container-tabcontent.md#tabbar)高度+divider线宽+TabContent高度+上下padding值+上下border宽度。  当纵向Tabs设置width为auto时，Tabs组件宽度自适应子组件宽度，即为tabBar宽度+divider线宽+TabContent宽度+左右padding值+左右border宽度。  尽量保持每一个页面中的子组件尺寸大小一致，避免滑动页面时出现页面切换动画跳动现象。 |
 
 ### scrollable
-
-PhonePC/2in1TabletTVWearable
 
 scrollable(value: boolean)
 
@@ -121,8 +109,6 @@ scrollable(value: boolean)
 
 ### barMode
 
-PhonePC/2in1TabletTVWearable
-
 barMode(value: BarMode, options?: ScrollableBarModeOptions)
 
 设置TabBar布局模式。
@@ -136,17 +122,17 @@ barMode(value: BarMode, options?: ScrollableBarModeOptions)
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [BarMode](ts-container-tabs.md#barmode枚举说明) | 是 | 布局模式。  默认值：BarMode.Fixed |
-| options10+ | [ScrollableBarModeOptions](ts-container-tabs.md#scrollablebarmodeoptions10对象说明) | 否 | Scrollable模式下的TabBar的布局样式。  **说明：**  仅Scrollable且水平模式下有效。 |
+| options10+ | [ScrollableBarModeOptions](ts-container-tabs.md#scrollablebarmodeoptions10对象说明) | 否 | Scrollable模式下的TabBar的布局样式。  **说明：**  仅Scrollable且水平模式下有效。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ### barMode10+
-
-PhonePC/2in1TabletTVWearable
 
 barMode(value: BarMode.Fixed)
 
 设置TabBar布局模式为BarMode.Fixed。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -158,13 +144,13 @@ barMode(value: BarMode.Fixed)
 
 ### barMode10+
 
-PhonePC/2in1TabletTVWearable
-
 barMode(value: BarMode.Scrollable, options: ScrollableBarModeOptions)
 
 设置TabBar布局模式为BarMode.Scrollable。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -176,8 +162,6 @@ barMode(value: BarMode.Scrollable, options: ScrollableBarModeOptions)
 | options | [ScrollableBarModeOptions](ts-container-tabs.md#scrollablebarmodeoptions10对象说明) | 是 | Scrollable模式下的TabBar的布局样式。  **说明：**  仅水平模式下有效。 |
 
 ### barWidth
-
-PhonePC/2in1TabletTVWearable
 
 barWidth(value: Length)
 
@@ -194,8 +178,6 @@ barWidth(value: Length)
 | value | [Length](ts-types.md#length)8+ | 是 | TabBar的宽度值。  默认值：  未设置[SubTabBarStyle](ts-container-tabcontent.md#subtabbarstyle9)和[BottomTabBarStyle](ts-container-tabcontent.md#bottomtabbarstyle9)的TabBar且vertical属性为false时，默认值为Tabs的宽度。  未设置SubTabBarStyle和BottomTabBarStyle的TabBar且vertical属性为true时，默认值为56vp。  设置SubTabBarStyle样式且vertical属性为false时，默认值为Tabs的宽度。  设置SubTabBarStyle样式且vertical属性为true时，默认值为56vp。  设置BottomTabBarStyle样式且vertical属性为true时，默认值为96vp。  设置BottomTabBarStyle样式且vertical属性为false时，默认值为Tabs的宽度。 |
 
 ### barHeight
-
-PhonePC/2in1TabletTVWearable
 
 barHeight(value: Length)
 
@@ -215,13 +197,13 @@ API version 14之前的版本，若设置barHeight为固定值后，TabBar无法
 
 ### barHeight20+
 
-PhonePC/2in1TabletTVWearable
-
 barHeight(height: Length, noMinHeightLimit: boolean)
 
 设置TabBar的高度值。横向Tabs可以设置height为'auto'，让TabBar自适应子组件高度，并通过设置noMinHeightLimit为true让自适应高度可以小于TabBar默认高度。height设置为小于0或大于Tabs高度值时，按默认值显示。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -234,13 +216,13 @@ barHeight(height: Length, noMinHeightLimit: boolean)
 
 ### animationCurve20+
 
-PhonePC/2in1TabletTVWearable
-
 animationCurve(curve: Curve | ICurve)
 
 设置Tabs翻页动画曲线。常用曲线参考[Curve](ts-appendix-enums.md#curve)枚举说明，也可以通过[插值计算](js-apis-curve.md)模块提供的接口创建自定义的插值曲线对象。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -251,8 +233,6 @@ animationCurve(curve: Curve | ICurve)
 | curve | [Curve](ts-appendix-enums.md#curve) | [ICurve](js-apis-curve.md#icurve9) | 是 | Tabs翻页的动画曲线。  默认值：  滑动TabContent翻页时，默认值为interpolatingSpring(-1, 1, 228, 30)。  点击TabBar页签和调用TabsController的changeIndex接口翻页时，默认值为cubicBezierCurve(0.2, 0.0, 0.1, 1.0)。  设置自定义动画曲线时，滑动翻页和点击页签、调用changeIndex翻页都使用设置的动画曲线。 |
 
 ### animationDuration
-
-PhonePC/2in1TabletTVWearable
 
 animationDuration(value: number)
 
@@ -274,17 +254,17 @@ animationCurve不设置时，由于滑动TabContent翻页动画曲线interpolati
 
 ### animationMode12+
 
-PhonePC/2in1TabletTVWearable
-
 animationMode(mode: Optional<AnimationMode>)
 
 设置点击TabBar页签或调用TabsController的changeIndex接口时切换TabContent的动画形式。
 
-说明
+**说明** 
 
 此属性不支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -295,8 +275,6 @@ animationMode(mode: Optional<AnimationMode>)
 | mode | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[AnimationMode](ts-container-tabs.md#animationmode12枚举说明)> | 是 | 点击TabBar页签或调用TabsController的changeIndex接口时切换TabContent的动画形式。  默认值：AnimationMode.CONTENT\_FIRST，表示在点击TabBar页签或调用TabsController的changeIndex接口切换TabContent时，先加载目标页内容，再开始切换动画。 |
 
 ### barPosition9+
-
-PhonePC/2in1TabletTVWearable
 
 barPosition(value: BarPosition)
 
@@ -314,13 +292,13 @@ barPosition(value: BarPosition)
 
 ### divider10+
 
-PhonePC/2in1TabletTVWearable
-
 divider(value: DividerStyle | null)
 
 设置区分TabBar和TabContent的分割线样式。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -332,13 +310,13 @@ divider(value: DividerStyle | null)
 
 ### fadingEdge10+
 
-PhonePC/2in1TabletTVWearable
-
 fadingEdge(value: boolean)
 
-设置页签超过容器宽度时是否渐隐消失。建议配合barBackgroundColor属性一起使用，如果barBackgroundColor属性没有定义，会默认显示页签末端为白色的渐隐效果。
+设置页签超过容器宽度时是否渐隐消失。建议配合[barBackgroundColor](ts-container-tabs.md#barbackgroundcolor10)属性一起使用，如果barBackgroundColor属性没有定义，会默认显示页签末端为白色的渐隐效果。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -350,13 +328,13 @@ fadingEdge(value: boolean)
 
 ### barOverlap10+
 
-PhonePC/2in1TabletTVWearable
-
 barOverlap(value: boolean)
 
 设置TabBar是否背后变模糊并叠加在TabContent之上。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -364,17 +342,17 @@ barOverlap(value: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | boolean | 是 | TabBar是否背后变模糊并叠加在TabContent之上。当barOverlap设置为true时，TabBar背后变模糊并叠加在TabContent之上，并且TabBar默认模糊材质的BlurStyle值修改为'BlurStyle.COMPONENT\_THICK'。当barOverlap设置为false时，无模糊和叠加效果。  默认值：false |
+| value | boolean | 是 | TabBar是否背后变模糊并叠加在TabContent之上。当barOverlap设置为true时，TabBar背后变模糊并叠加在TabContent之上，并且TabBar默认模糊材质的[BlurStyle](ts-universal-attributes-background.md#blurstyle9)值修改为'BlurStyle.COMPONENT\_THICK'。当barOverlap设置为false时，无模糊和叠加效果。  默认值：false |
 
 ### barBackgroundColor10+
-
-PhonePC/2in1TabletTVWearable
 
 barBackgroundColor(value: ResourceColor)
 
 设置TabBar的背景颜色。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -386,17 +364,17 @@ barBackgroundColor(value: ResourceColor)
 
 ### barBackgroundBlurStyle11+
 
-PhonePC/2in1TabletTVWearable
-
 barBackgroundBlurStyle(value: BlurStyle)
 
 设置TabBar的背景模糊材质。
 
-说明
+**说明** 
 
 从API version 12开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -408,13 +386,13 @@ barBackgroundBlurStyle(value: BlurStyle)
 
 ### barBackgroundBlurStyle18+
 
-PhonePC/2in1TabletTVWearable
-
 barBackgroundBlurStyle(style: BlurStyle, options: BackgroundBlurStyleOptions)
 
 为TabBar提供一种在背景和内容之间的模糊能力，通过枚举值的方式封装了不同的模糊半径、蒙版颜色、蒙版透明度、饱和度、亮度。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -427,13 +405,13 @@ barBackgroundBlurStyle(style: BlurStyle, options: BackgroundBlurStyleOptions)
 
 ### barGridAlign10+
 
-PhonePC/2in1TabletTVWearable
-
 barGridAlign(value: BarGridColumnOptions)
 
 以栅格化方式设置TabBar的可见区域。具体参见BarGridColumnOptions对象。仅水平模式下有效，[不适用于XS、XL和XXL设备](../harmonyos-guides/arkts-layout-development-grid-layout.md#栅格容器断点)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -445,17 +423,17 @@ barGridAlign(value: BarGridColumnOptions)
 
 ### edgeEffect12+
 
-PhonePC/2in1TabletTVWearable
-
 edgeEffect(edgeEffect: Optional<EdgeEffect>)
 
-设置边缘回弹效果。
+设置边缘滑动效果。
 
-说明
+**说明** 
 
 从API version 17开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -467,13 +445,13 @@ edgeEffect(edgeEffect: Optional<EdgeEffect>)
 
 ### barBackgroundEffect18+
 
-PhonePC/2in1TabletTVWearable
-
 barBackgroundEffect(options: BackgroundEffectOptions)
 
 设置TabBar背景属性，包含背景模糊半径，亮度，饱和度，颜色等参数。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -485,13 +463,13 @@ barBackgroundEffect(options: BackgroundEffectOptions)
 
 ### pageFlipMode15+
 
-PhonePC/2in1TabletTVWearable
-
 pageFlipMode(mode: Optional<PageFlipMode>)
 
 设置鼠标滚轮翻页模式。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -503,13 +481,13 @@ pageFlipMode(mode: Optional<PageFlipMode>)
 
 ### cachedMaxCount19+
 
-PhonePC/2in1TabletTVWearable
-
 cachedMaxCount(count: number, mode: TabsCacheMode)
 
 设置子组件的最大缓存个数及缓存模式。未设置该属性时默认缓存所有子组件且缓存后不会释放。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -520,13 +498,55 @@ cachedMaxCount(count: number, mode: TabsCacheMode)
 | count | number | 是 | 子组件的最大缓存个数。超出范围时自动释放不再需要的子组件。  取值范围：[0, +∞)。 |
 | mode | [TabsCacheMode](ts-container-tabs.md#tabscachemode19枚举说明) | 是 | 子组件的缓存模式。  默认值：TabsCacheMode.CACHE\_BOTH\_SIDE |
 
-## DividerStyle10+对象说明
+### nestedScroll24+
 
-PhonePC/2in1TabletTVWearable
+nestedScroll(value: TabsNestedScrollMode | undefined)
+
+设置Tabs组件与其父组件的嵌套滚动模式。未通过该接口设置时，默认嵌套滚动模式为[SELF\_ONLY](ts-container-tabs.md#tabsnestedscrollmode24枚举说明)。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API version 24开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [TabsNestedScrollMode](ts-container-tabs.md#tabsnestedscrollmode24枚举说明) | undefined | 是 | Tabs组件和父组件的嵌套滚动模式。  设置undefined时，Tabs自身滚动，不与父组件联动。 |
+
+### barFloatingStyle
+
+barFloatingStyle(style: Optional<FloatingTabBarStyle>)
+
+设置TabBar悬浮样式。
+
+**说明** 
+
+悬浮样式可以让TabBar以悬浮的方式显示在Tabs的底部。仅当同时满足属性[barOverlap](ts-container-tabs.md#baroverlap10)为true，[vertical](ts-container-tabs.md#vertical)为false，[barPosition](ts-container-tabs.md#barposition9)为BarPosition.End时，该接口设置才有效。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| style | Optional<[FloatingTabBarStyle](ts-container-tabs.md#floatingtabbarstyle)> | 是 | TabBar的悬浮样式配置。  设置undefined时，取消悬浮样式，恢复默认样式。 |
+
+## DividerStyle10+对象说明
 
 分割线样式对象。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -539,11 +559,11 @@ PhonePC/2in1TabletTVWearable
 
 ## BarGridColumnOptions10+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 TabBar栅格化方式设置的对象，包括栅格模式下的column边距和间隔，以及小、中、大屏下，页签占用的columns数量。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -557,11 +577,11 @@ TabBar栅格化方式设置的对象，包括栅格模式下的column边距和�
 
 ## ScrollableBarModeOptions10+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 Scrollable模式下的TabBar的布局样式对象。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -570,9 +590,80 @@ Scrollable模式下的TabBar的布局样式对象。
 | margin | [Dimension](ts-types.md#dimension10) | 否 | 是 | Scrollable模式下的TabBar的左右边距（不支持百分比设置）。  默认值：0.0  单位：vp  取值范围：[0, +∞)。 |
 | nonScrollableLayoutStyle | [LayoutStyle](ts-container-tabs.md#layoutstyle10枚举说明) | 否 | 是 | Scrollable模式下不滚动时的页签排布方式。  默认值：LayoutStyle.ALWAYS\_CENTER |
 
-## BarMode枚举说明
+## FloatingTabBarWidth
 
-PhonePC/2in1TabletTVWearable
+不同Tabs宽度下TabBar的宽度。
+
+**说明** 
+
+* [barWidth](ts-container-tabs.md#barwidth)生效优先级高于该接口，barWidth和该接口都没有生效时，TabBar宽度使用默认计算规则。
+* TabBar宽度默认计算规则如下表。子节点数量等于4个时，TabBar最大宽度为328vp。子节点数量大于等于5个时，TabBar最大宽度为360vp。Tabs宽度大于等于1140vp时，TabBar的宽高会放大到1.15倍。
+
+| 子节点数量 | Tabs宽度 | 计算规则 |
+| --- | --- | --- |
+| 小于等于2个 | 小于600vp | 固定值168vp。 |
+| 小于等于2个 | 大于等于600vp | 固定值184vp。 |
+| 3个 | 小于600vp | 固定值248vp。 |
+| 3个 | 大于等于600vp | 固定值272vp。 |
+| 大于等于4个 | 小于600vp | Tabs宽度 - 2 \* [barSideMargin](ts-container-tabs.md#floatingtabbarstyle)。 |
+| 大于等于4个 | 大于等于600vp，小于840vp | Tabs宽度 - 2 \* (barSideMargin + 12vp + TabBar高度)。 |
+| 大于等于4个 | 大于840vp | (Tabs宽度 / 2 - 2 \* barSideMargin) \* 2。 |
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| smallBarWidth | [Length](ts-types.md#length) | 否 | 是 | Tabs宽度小于440vp时，TabBar的宽度。 |
+| mediumBarWidth | [Length](ts-types.md#length) | 否 | 是 | Tabs宽度处于440vp到600vp之间，或宽度在600-840vp之间且高宽比小于0.8时，TabBar的宽度。 |
+| largeBarWidth | [Length](ts-types.md#length) | 否 | 是 | Tabs宽度大于840vp，或宽度在600vp到840vp之间且高宽比大于0.8时，TabBar的宽度。 |
+
+## UIMaterial
+
+type UIMaterial = import('../api/@ohos.arkui.uiMaterial').uiMaterial
+
+系统材质模块。在设置tabBar悬浮样式系统材质属性时使用其中的ImmersiveMaterial类型。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+| 类型 | 说明 |
+| --- | --- |
+| import('../api/@ohos.arkui.uiMaterial').uiMaterial | 系统材质模块。 |
+
+## FloatingTabBarStyle
+
+TabBar悬浮样式。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| barWidth | [FloatingTabBarWidth](ts-container-tabs.md#floatingtabbarwidth) | 否 | 是 | 不同Tabs宽度下TabBar的宽度。宽度默认计算规则见[FloatingTabBarWidth](ts-container-tabs.md#floatingtabbarwidth)说明。 |
+| barSideMargin | [Length](ts-types.md#length) | 否 | 是 | TabBar宽度默认计算规则中的左右边距。  Tabs宽度小于600vp时，默认值为16vp。Tabs宽度处于600vp到840vp时，默认值为24vp。Tabs宽度大于840vp时，默认值为32vp。 |
+| barBottomMargin | [Length](ts-types.md#length) | 否 | 是 | TabBar距离Tabs底部的距离。默认值为28vp。 |
+| maskColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 蒙层的颜色。蒙层显示区域在纵向会基于蒙层的颜色进行透明度渐变显示，从下到上不透明度变小。浅色模式下默认值为#CCF1F3F5，显示为白色。深色模式下默认值为#99000000，显示为黑色。 |
+| maskHeight | [Length](ts-types.md#length) | 否 | 是 | 蒙层的高度。蒙层显示上边缘默认比TabBar上边缘高16vp。 |
+| adaptToHandedness | boolean | 否 | 是 | 是否跟随操作手左右布局显示。  true表示跟随操作手左右布局显示；false表示不跟随操作手左右布局显示。  默认值：false |
+| systemMaterial | [UIMaterial](ts-container-tabs.md#uimaterial).[ImmersiveMaterial](arkts-apis-uimaterial.md#immersivematerial) | 否 | 是 | TabBar的背板沉浸式材质样式。仅当Tabs为横向布局且barPosition为BarPosition.End时，底部TabBar的材质效果生效。 |
+
+## BarMode枚举说明
 
 TabBar布局模式枚举。
 
@@ -582,32 +673,32 @@ TabBar布局模式枚举。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| Scrollable | 0 | 每一个TabBar均使用实际布局宽度，超过总长度（横向Tabs的barWidth，纵向Tabs的barHeight）后可滑动。 |
+| Scrollable | 0 | 每一个TabBar均使用实际布局宽度，超过总长度（横向Tabs的[barWidth](ts-container-tabs.md#barwidth)，纵向Tabs的[barHeight](ts-container-tabs.md#barheight)）后可滑动。 |
 | Fixed | 1 | 所有TabBar平均分配barWidth宽度（纵向时平均分配barHeight高度）。 |
 
 ## AnimationMode12+枚举说明
 
-PhonePC/2in1TabletTVWearable
+点击[TabBar](ts-container-tabcontent.md#tabbar)页签时切换TabContent的动画形式枚举。
 
-点击TabBar页签时切换TabContent的动画形式枚举。
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CONTENT\_FIRST | 0 | 先加载目标页内容，再开始切换动画。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| ACTION\_FIRST | 1 | 先开始切换动画，再加载目标页内容；生效需要同时需要满足：Tabs的height、width没有设置成auto。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| NO\_ANIMATION | 2 | 关闭默认动画。调用TabsController的changeIndex接口切换TabContent时该枚举值不生效。  可以通过设置animationDuration为0实现调用TabsController的changeIndex接口时不带动画。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| ACTION\_FIRST | 1 | 先开始切换动画，再加载目标页内容；生效需要同时满足：Tabs的height、width没有设置成auto。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| NO\_ANIMATION | 2 | 关闭默认动画。调用TabsController的[changeIndex](ts-container-tabs.md#changeindex)接口切换TabContent时该枚举值不生效。  可以通过设置[animationDuration](ts-container-tabs.md#animationduration)为0实现调用TabsController的changeIndex接口时不带动画。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | CONTENT\_FIRST\_WITH\_JUMP15+ | 3 | 先加载目标页内容，再无动画跳转到目标页附近，最后有动画跳转到目标页。  **元服务API：** 从API version 15开始，该接口支持在元服务中使用。 |
-| ACTION\_FIRST\_WITH\_JUMP15+ | 4 | 先无动画跳转到目标页附近，再有动画跳转到目标页，最后加载目标页内容。此项生效需要同时需要满足：Tabs的height、width没有设置成auto。  **元服务API：** 从API version 15开始，该接口支持在元服务中使用。 |
+| ACTION\_FIRST\_WITH\_JUMP15+ | 4 | 先无动画跳转到目标页附近，再有动画跳转到目标页，最后加载目标页内容。此项生效需要同时满足：Tabs的height、width没有设置成auto。  **元服务API：** 从API version 15开始，该接口支持在元服务中使用。 |
 
 ## LayoutStyle10+枚举说明
 
-PhonePC/2in1TabletTVWearable
-
-Scrollable模式下不滚动时的页签排布方式枚举。
+[Scrollable](ts-container-tabs.md#barmode枚举说明)模式下不滚动时的页签排布方式枚举。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -619,27 +710,27 @@ Scrollable模式下不滚动时的页签排布方式枚举。
 
 ## CommonModifier15+
 
-PhonePC/2in1TabletTVWearable
-
-type CommonModifier = CommonModifier
+type CommonModifier = import('../api/arkui/CommonModifier').CommonModifier
 
 作为Tabs组件的参数对象。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 类型 | 说明 |
 | --- | --- |
-| [CommonModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier) | 设置TabBar的通用属性。 |
+| import('../api/arkui/CommonModifier').[CommonModifier](ts-universal-attributes-attribute-modifier.md#自定义modifier) | 设置TabBar的通用属性。 |
 
 ## TabsCacheMode19+枚举说明
-
-PhonePC/2in1TabletTVWearable
 
 子组件的缓存模式。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -648,15 +739,26 @@ PhonePC/2in1TabletTVWearable
 | CACHE\_BOTH\_SIDE | 0 | 缓存当前显示的子组件和其两侧的子组件。即当设置cachedMaxCount属性的count值为n时，最多缓存2n+1个子组件。 |
 | CACHE\_LATEST\_SWITCHED | 1 | 缓存当前显示的子组件和最近切换过的子组件。即当设置cachedMaxCount属性的count值为n时，最多缓存n+1个子组件。 |
 
-## 事件
+## TabsNestedScrollMode24+枚举说明
 
-PhonePC/2in1TabletTVWearable
+Tabs组件和父组件的嵌套滚动模式枚举。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API version 24开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SELF\_ONLY | 0 | Tabs自身滚动，不与父组件联动。 |
+| SELF\_FIRST | 1 | Tabs自身先滚动，自身滚动到边缘以后父组件滚动。父组件滚动到边缘以后，如果父组件有边缘效果，则父组件触发边缘效果，否则Tabs触发边缘效果。 |
+
+## 事件
 
 除支持[通用事件](ts-component-general-events.md)外，还支持以下事件：
 
 ### onChange
-
-PhonePC/2in1TabletTVWearable
 
 onChange(event: Callback<number>)
 
@@ -672,7 +774,7 @@ Tab页签切换后触发的事件。
 
 4、点击TabBar页签，Tab页签切换后触发。
 
-说明
+**说明** 
 
 使用自定义页签时，在onChange事件中联动可能会导致滑动页面切换后才执行页签联动，引起自定义页签切换效果延迟。建议在[onAnimationStart](ts-container-tabs.md#onanimationstart11)中监听并刷新当前索引，以确保动效能够及时触发。具体实现可参考[示例3](ts-container-tabs.md#示例3自定义页签切换联动)。
 
@@ -688,13 +790,13 @@ Tab页签切换后触发的事件。
 
 ### onTabBarClick10+
 
-PhonePC/2in1TabletTVWearable
-
 onTabBarClick(event: Callback<number>)
 
 Tab页签点击后触发的事件。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -706,13 +808,13 @@ Tab页签点击后触发的事件。
 
 ### onAnimationStart11+
 
-PhonePC/2in1TabletTVWearable
-
 onAnimationStart(handler: OnTabsAnimationStartCallback)
 
 切换动画开始时触发该回调。当[animationDuration](ts-container-tabs.md#animationduration)为0时动画关闭且[scrollable](ts-container-tabs.md#scrollable)为false时，不触发该回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -724,13 +826,13 @@ onAnimationStart(handler: OnTabsAnimationStartCallback)
 
 ### onAnimationEnd11+
 
-PhonePC/2in1TabletTVWearable
-
 onAnimationEnd(handler: OnTabsAnimationEndCallback)
 
 切换动画结束时触发该回调，包括动画过程中手势中断。当animationDuration为0时动画关闭，不触发该回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -742,13 +844,13 @@ onAnimationEnd(handler: OnTabsAnimationEndCallback)
 
 ### onGestureSwipe11+
 
-PhonePC/2in1TabletTVWearable
-
 onGestureSwipe(handler: OnTabsGestureSwipeCallback)
 
 在页面跟手滑动过程中，逐帧触发该回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -759,8 +861,6 @@ onGestureSwipe(handler: OnTabsGestureSwipeCallback)
 | handler | [OnTabsGestureSwipeCallback](ts-container-tabs.md#ontabsgestureswipecallback18) | 是 | 在页面跟手滑动过程中，逐帧触发的回调。 |
 
 ### customContentTransition11+
-
-PhonePC/2in1TabletTVWearable
 
 customContentTransition(delegate: TabsCustomContentTransitionCallback)
 
@@ -773,15 +873,17 @@ customContentTransition(delegate: TabsCustomContentTransitionCallback)
 3. 当前自定义切换动画不支持打断。
 4. 目前自定义切换动画只支持两种场景触发：点击页签和调用TabsController.changeIndex()接口。
 5. 当使用自定义切换动画时，Tabs组件支持的事件中，除了onGestureSwipe，其他事件均支持。
-6. onChange和onAnimationEnd事件的触发时机需要特殊说明：如果在第一次自定义动画执行过程中，触发了第二次自定义动画，那么在开始第二次自定义动画时，就会触发第一次自定义动画的onChange和onAnimationEnd事件。
-7. 当使用自定义动画时，参与动画的页面布局方式会改为Stack布局。如果开发者未主动设置相关页面的zIndex属性，那么所有页面的zIndex值是一样的，页面的渲染层级会按照在组件树上的顺序（即页面的index值顺序）确定。因此，开发者需要主动修改页面的zIndex属性，来控制页面的渲染层级。
+6. [onChange](ts-container-tabs.md#onchange)和[onAnimationEnd](ts-container-tabs.md#onanimationend11)事件的触发时机需要特殊说明：如果在第一次自定义动画执行过程中，触发了第二次自定义动画，那么在开始第二次自定义动画时，就会触发第一次自定义动画的onChange和onAnimationEnd事件。
+7. 当使用自定义动画时，参与动画的页面布局方式会改为[Stack](ts-container-stack.md)布局。如果开发者未主动设置相关页面的[zIndex](ts-universal-attributes-z-order.md#zindex)属性，那么所有页面的zIndex值是一样的，页面的渲染层级会按照在组件树上的顺序（即页面的index值顺序）确定。因此，开发者需要主动修改页面的zIndex属性，来控制页面的渲染层级。
 8. 此属性不支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
-说明
+**说明** 
 
 从API version 20开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -793,8 +895,6 @@ customContentTransition(delegate: TabsCustomContentTransitionCallback)
 
 ### onContentWillChange12+
 
-PhonePC/2in1TabletTVWearable
-
 onContentWillChange(handler: OnTabsContentWillChangeCallback)
 
 自定义Tabs页面切换拦截事件能力，新页面即将显示时触发该回调。
@@ -803,7 +903,7 @@ onContentWillChange(handler: OnTabsContentWillChangeCallback)
 
 1、滑动TabContent切换新页面时触发。
 
-2、通过TabsController.changeIndex接口切换新页面时触发。
+2、通过TabsController.[changeIndex](ts-container-tabs.md#changeindex)接口切换新页面时触发。
 
 3、通过动态修改index属性值切换新页面时触发。
 
@@ -811,11 +911,13 @@ onContentWillChange(handler: OnTabsContentWillChangeCallback)
 
 5、TabBar页签获焦后，通过键盘左右方向键等切换新页面时触发。
 
-说明
+**说明** 
 
 从API version 20开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -826,8 +928,6 @@ onContentWillChange(handler: OnTabsContentWillChangeCallback)
 | handler | [OnTabsContentWillChangeCallback](ts-container-tabs.md#ontabscontentwillchangecallback18) | 是 | 自定义Tabs页面切换拦截事件能力，新页面即将显示时触发的回调。 |
 
 ### onSelected18+
-
-PhonePC/2in1TabletTVWearable
 
 onSelected(event: Callback<number>)
 
@@ -840,11 +940,13 @@ onSelected(event: Callback<number>)
 3. 动态修改[状态变量](../harmonyos-guides/arkts-state.md)构造的index属性值后触发。
 4. 通过页签处点击触发。
 
-说明
+**说明** 
 
 onSelected回调中不可通过[TabsOptions](ts-container-tabs.md#tabsoptions15)的index设置当前显示页的索引，不可调用TabsController.changeIndex()方法。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -855,8 +957,6 @@ onSelected回调中不可通过[TabsOptions](ts-container-tabs.md#tabsoptions15)
 | event | [Callback](ts-types.md#callback12)<number> | 是 | 当前选中元素的索引。 |
 
 ### onUnselected18+
-
-PhonePC/2in1TabletTVWearable
 
 onUnselected(event: Callback<number>)
 
@@ -869,7 +969,13 @@ onUnselected(event: Callback<number>)
 3. 动态修改[状态变量](../harmonyos-guides/arkts-state.md)构造的index属性值后触发。
 4. 通过页签处点击触发。
 
+**说明** 
+
+onUnselected回调中不可通过TabsOptions的index设置当前显示页的索引，不可调用TabsController.changeIndex()方法。
+
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -879,13 +985,7 @@ onUnselected(event: Callback<number>)
 | --- | --- | --- | --- |
 | event | [Callback](ts-types.md#callback12)<number> | 是 | 将要隐藏元素的索引。 |
 
-说明
-
-onUnselected回调中不可通过TabsOptions的index设置当前显示页的索引，不可调用TabsController.changeIndex()方法。
-
 ### onContentDidScroll23+
-
-PhonePC/2in1TabletTVWearable
 
 onContentDidScroll(handler: OnTabsContentDidScrollCallback | undefined)
 
@@ -894,6 +994,8 @@ onContentDidScroll(handler: OnTabsContentDidScrollCallback | undefined)
 在页面滑动过程中，会对视窗内所有页面逐帧触发[OnTabsContentDidScrollCallback](ts-container-tabs.md#ontabscontentdidscrollcallback23)回调。例如，当视窗内有下标为0、1的两个页面时，会每帧触发两次index值分别为0和1的回调。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -905,13 +1007,13 @@ onContentDidScroll(handler: OnTabsContentDidScrollCallback | undefined)
 
 ## OnTabsAnimationStartCallback18+
 
-PhonePC/2in1TabletTVWearable
-
 type OnTabsAnimationStartCallback = (index: number, targetIndex: number, extraInfo: TabsAnimationEvent) => void
 
 切换动画开始时触发的回调。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -925,13 +1027,13 @@ type OnTabsAnimationStartCallback = (index: number, targetIndex: number, extraIn
 
 ## OnTabsAnimationEndCallback18+
 
-PhonePC/2in1TabletTVWearable
-
 type OnTabsAnimationEndCallback = (index: number, extraInfo: TabsAnimationEvent) => void
 
 切换动画结束时触发的回调。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -944,13 +1046,13 @@ type OnTabsAnimationEndCallback = (index: number, extraInfo: TabsAnimationEvent)
 
 ## OnTabsGestureSwipeCallback18+
 
-PhonePC/2in1TabletTVWearable
-
 type OnTabsGestureSwipeCallback = (index: number, extraInfo: TabsAnimationEvent) => void
 
 在页面跟手滑动过程中，逐帧触发的回调。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -963,13 +1065,13 @@ type OnTabsGestureSwipeCallback = (index: number, extraInfo: TabsAnimationEvent)
 
 ## TabsCustomContentTransitionCallback18+
 
-PhonePC/2in1TabletTVWearable
-
 type TabsCustomContentTransitionCallback = (from: number, to: number) => TabContentAnimatedTransition | undefined
 
 自定义Tabs页面切换动画开始时触发的回调。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -988,13 +1090,13 @@ type TabsCustomContentTransitionCallback = (from: number, to: number) => TabCont
 
 ## OnTabsContentWillChangeCallback18+
 
-PhonePC/2in1TabletTVWearable
-
 type OnTabsContentWillChangeCallback = (currentIndex: number, comingIndex: number) => boolean
 
 自定义Tabs页面切换拦截事件能力，新页面即将显示时触发的回调。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1013,11 +1115,11 @@ type OnTabsContentWillChangeCallback = (currentIndex: number, comingIndex: numbe
 
 ## TabsAnimationEvent11+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 Tabs组件动画相关信息集合。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1029,13 +1131,13 @@ Tabs组件动画相关信息集合。
 
 ## TabContentAnimatedTransition11+
 
-PhonePC/2in1TabletTVWearable
-
 Tabs自定义切换动画相关信息。
 
 **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1046,13 +1148,13 @@ Tabs自定义切换动画相关信息。
 
 ## TabContentTransitionProxy11+
 
-PhonePC/2in1TabletTVWearable
-
 Tabs自定义切换动画执行过程中，返回给开发者的proxy对象。开发者可通过该对象获取自定义动画的起始和目标页面信息，同时，也可以通过调用该对象的finishTransition接口通知Tabs组件自定义动画已结束。
 
 **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1063,9 +1165,7 @@ Tabs自定义切换动画执行过程中，返回给开发者的proxy对象。�
 | from | number | 否 | 否 | 自定义动画起始页面对应的index值，索引从0开始。 |
 | to | number | 否 | 否 | 自定义动画目标页面对应的index值，索引从0开始。 |
 
-### finishTransition
-
-PhonePC/2in1TabletTVWearable
+### finishTransition11+
 
 finishTransition(): void
 
@@ -1075,22 +1175,24 @@ finishTransition(): void
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ## OnTabsContentDidScrollCallback23+
-
-PhonePC/2in1TabletTVWearable
 
 type OnTabsContentDidScrollCallback = (selectedIndex: number, index: number, position: number, mainAxisLength: number) => void
 
 Tabs滑动时触发的回调。
 
-说明
+**说明** 
 
 * 例如，当前选中的页签索引为0，从第0页切换到第1页的动画过程中，每帧都会对视窗内所有页面触发回调，当视窗内有第0页和第1页两页时，每帧会触发两次回调。其中，第一次回调的selectedIndex为0、index为0、position为当前帧第0页相对于动画开始前第0页的移动比例，mainAxisLength为主轴方向上第0页的长度。第二次回调的selectedIndex仍为0、index为1、position为当前帧第1页相对于动画开始前第0页的移动比例，mainAxisLength为主轴方向上第1页的长度。
 * 若动画曲线为弹簧插值曲线，从第0页切换到第1页的动画过程中，可能会因为离手时的位置和速度，先过滑到第2页，再回弹到第1页，该过程中每帧会对视窗内第1页和第2页触发回调。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1105,8 +1207,6 @@ Tabs滑动时触发的回调。
 
 ## TabsController
 
-PhonePC/2in1TabletTVWearable
-
 Tabs组件的控制器，用于控制Tabs组件进行页签切换。不支持一个TabsController控制多个Tabs组件。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -1114,8 +1214,6 @@ Tabs组件的控制器，用于控制Tabs组件进行页签切换。不支持一
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor()
 
@@ -1126,8 +1224,6 @@ TabsController的构造函数。
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ### changeIndex
-
-PhonePC/2in1TabletTVWearable
 
 changeIndex(value: number): void
 
@@ -1145,19 +1241,19 @@ changeIndex(value: number): void
 
 ### preloadItems12+
 
-PhonePC/2in1TabletTVWearable
-
 preloadItems(indices: Optional<Array<number>>): Promise<void>
 
 控制Tabs预加载指定子节点。调用该接口后会一次性加载所有指定的子节点，因此为了性能考虑，建议分批加载子节点。
 
-说明
+**说明** 
 
 * Tabs的preloadItems需要在Tabs创建之后去调用，首次预加载推荐在Tabs的[onAppear](ts-universal-events-show-hide.md#onappear)生命周期中去控制。
 * 如果TabsController对象未绑定任何Tabs组件，直接调用该接口，会抛出JS异常。因此使用该接口时，建议通过try-catch捕获异常。
-* 使用preloadItems预加载标签页时，若需自定义TabBar上的显示内容，推荐使用ComponentContent实现，使用示例请参考[示例10](ts-container-tabcontent.md#示例10通过componentcontent设置tabbar)。
+* 使用preloadItems预加载标签页时，若需自定义TabBar上的显示内容，推荐使用ComponentContent实现，使用示例请参考[示例10](ts-container-tabcontent.md#示例10通过componentcontent预加载子节点)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1183,17 +1279,17 @@ preloadItems(indices: Optional<Array<number>>): Promise<void>
 
 ### setTabBarTranslate13+
 
-PhonePC/2in1TabletTVWearable
-
 setTabBarTranslate(translate: TranslateOptions): void
 
 设置TabBar的平移距离。
 
-说明
+**说明** 
 
 当使用[bindTabsToScrollable](arkts-apis-uicontext-uicontext.md#bindtabstoscrollable13)或[bindTabsToNestedScrollable](arkts-apis-uicontext-uicontext.md#bindtabstonestedscrollable13)等接口绑定了Tabs组件和可滚动容器组件后，在滑动可滚动容器组件时，会触发所有与其绑定的Tabs组件的TabBar的显示和隐藏动效，调用setTabBarTranslate接口设置的TabBar平移距离会失效。因此不建议同时使用bindTabsToScrollable、bindTabsToNestedScrollable和setTabBarTranslate接口。
 
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1205,17 +1301,17 @@ setTabBarTranslate(translate: TranslateOptions): void
 
 ### setTabBarOpacity13+
 
-PhonePC/2in1TabletTVWearable
-
 setTabBarOpacity(opacity: number): void
 
 设置TabBar的不透明度。
 
-说明
+**说明** 
 
 当使用[bindTabsToScrollable](arkts-apis-uicontext-uicontext.md#bindtabstoscrollable13)或[bindTabsToNestedScrollable](arkts-apis-uicontext-uicontext.md#bindtabstonestedscrollable13)等接口绑定了Tabs组件和可滚动容器组件后，在滑动可滚动容器组件时，会触发所有与其绑定的Tabs组件的TabBar的显示和隐藏动效，调用setTabBarOpacity接口设置的TabBar不透明度会失效。因此不建议同时使用bindTabsToScrollable、bindTabsToNestedScrollable和setTabBarOpacity接口。
 
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1227,1322 +1323,1319 @@ setTabBarOpacity(opacity: number): void
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 ### 示例1（设置TabBar的布局模式）
 
-本示例通过barMode分别实现了页签均分布局和以实际长度布局，且展示了当页签布局长度之和超过了TabBar总长度后可滑动的效果。
+本示例通过[barMode](ts-container-tabs.md#barmode)分别实现了页签均分布局和以实际长度布局，且展示了当页签布局长度之和超过了TabBar总长度后可滑动的效果。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TabsExample {
+  @State text: string = '文本';
+  @State barMode: BarMode = BarMode.Fixed;
+
+  build() {
+    Column() {
+      Row() {
+        Button('文本增加 ')
+          .width('47%')
+          .height(50)
+          .onClick((event?: ClickEvent) => {
+            this.text += '文本增加';
+          })
+          .margin({ right: '6%', bottom: '12vp' })
+
+        Button('文本重置')
+          .width('47%')
+          .height(50)
+          .onClick((event?: ClickEvent) => {
+            this.text = '文本';
+          })
+          .margin({ bottom: '12vp' })
+      }
+
+      Row() {
+        Button('BarMode.Fixed')
+          .width('47%')
+          .height(50)
+          .onClick((event?: ClickEvent) => {
+            this.barMode = BarMode.Fixed;
+          })
+          .margin({ right: '6%', bottom: '12vp' })
+
+        Button('BarMode.Scrollable')
+          .width('47%')
+          .height(50)
+          .onClick((event?: ClickEvent) => {
+            this.barMode = BarMode.Scrollable;
+          })
+          .margin({ bottom: '12vp' })
+      }
+
+      Tabs() {
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Pink)
+        }.tabBar(SubTabBarStyle.of(this.text))
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Green)
+        }.tabBar(SubTabBarStyle.of(this.text))
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Blue)
+        }.tabBar(SubTabBarStyle.of(this.text))
+      }
+      .height('60%')
+      .backgroundColor(0xf1f3f5)
+      .barMode(this.barMode)
+    }
+    .width('100%')
+    .height(500)
+    .padding('24vp')
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TabsExample {
-5. @State text: string = '文本';
-6. @State barMode: BarMode = BarMode.Fixed;
 
-8. build() {
-9. Column() {
-10. Row() {
-11. Button('文本增加 ')
-12. .width('47%')
-13. .height(50)
-14. .onClick((event?: ClickEvent) => {
-15. this.text += '文本增加';
-16. })
-17. .margin({ right: '6%', bottom: '12vp' })
-
-19. Button('文本重置')
-20. .width('47%')
-21. .height(50)
-22. .onClick((event?: ClickEvent) => {
-23. this.text = '文本';
-24. })
-25. .margin({ bottom: '12vp' })
-26. }
-
-28. Row() {
-29. Button('BarMode.Fixed')
-30. .width('47%')
-31. .height(50)
-32. .onClick((event?: ClickEvent) => {
-33. this.barMode = BarMode.Fixed;
-34. })
-35. .margin({ right: '6%', bottom: '12vp' })
-
-37. Button('BarMode.Scrollable')
-38. .width('47%')
-39. .height(50)
-40. .onClick((event?: ClickEvent) => {
-41. this.barMode = BarMode.Scrollable;
-42. })
-43. .margin({ bottom: '12vp' })
-44. }
-
-46. Tabs() {
-47. TabContent() {
-48. Column().width('100%').height('100%').backgroundColor(Color.Pink)
-49. }.tabBar(SubTabBarStyle.of(this.text))
-
-51. TabContent() {
-52. Column().width('100%').height('100%').backgroundColor(Color.Green)
-53. }.tabBar(SubTabBarStyle.of(this.text))
-
-55. TabContent() {
-56. Column().width('100%').height('100%').backgroundColor(Color.Blue)
-57. }.tabBar(SubTabBarStyle.of(this.text))
-58. }
-59. .height('60%')
-60. .backgroundColor(0xf1f3f5)
-61. .barMode(this.barMode)
-62. }
-63. .width('100%')
-64. .height(500)
-65. .padding('24vp')
-66. }
-67. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/RrRjutAQRpG9fp-s4E0TRA/zh-cn_image_0000002558766198.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/cRa6RYM1SEKEAjqedy_t-w/zh-cn_image_0000002706675894.gif)
 
 ### 示例2（设置Scrollable模式下的TabBar的布局样式）
 
-本示例实现了barMode的ScrollableBarModeOptions参数，该参数仅在Scrollable模式下有效。
+本示例实现了[barMode](ts-container-tabs.md#barmode10-1)的ScrollableBarModeOptions参数，该参数仅在Scrollable模式下有效。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TabsExample6 {
+  private controller: TabsController = new TabsController();
+  @State scrollMargin: number = 0;
+  @State layoutStyle: LayoutStyle = LayoutStyle.ALWAYS_CENTER;
+  @State text: string = '文本';
+
+  build() {
+    Column() {
+      Row() {
+        Button('scrollMargin+10 ' + this.scrollMargin)
+          .width('47%')
+          .height(50)
+          .margin({ top: 5 })
+          .onClick((event?: ClickEvent) => {
+            this.scrollMargin += 10;
+          })
+          .margin({ right: '6%', bottom: '12vp' })
+        Button('scrollMargin-10 ' + this.scrollMargin)
+          .width('47%')
+          .height(50)
+          .margin({ top: 5 })
+          .onClick((event?: ClickEvent) => {
+            this.scrollMargin -= 10;
+          })
+          .margin({ bottom: '12vp' })
+      }
+
+      Row() {
+        Button('文本增加 ')
+          .width('47%')
+          .height(50)
+          .margin({ top: 5 })
+          .onClick((event?: ClickEvent) => {
+            this.text += '文本增加';
+          })
+          .margin({ right: '6%', bottom: '12vp' })
+        Button('文本重置')
+          .width('47%')
+          .height(50)
+          .margin({ top: 5 })
+          .onClick((event?: ClickEvent) => {
+            this.text = '文本';
+          })
+          .margin({ bottom: '12vp' })
+      }
+
+      Row() {
+        Button('layoutStyle.ALWAYS_CENTER')
+          .width('100%')
+          .height(50)
+          .margin({ top: 5 })
+          .fontSize(15)
+          .onClick((event?: ClickEvent) => {
+            this.layoutStyle = LayoutStyle.ALWAYS_CENTER;
+          })
+          .margin({ bottom: '12vp' })
+      }
+
+      Row() {
+        Button('layoutStyle.ALWAYS_AVERAGE_SPLIT')
+          .width('100%')
+          .height(50)
+          .margin({ top: 5 })
+          .fontSize(15)
+          .onClick((event?: ClickEvent) => {
+            this.layoutStyle = LayoutStyle.ALWAYS_AVERAGE_SPLIT;
+          })
+          .margin({ bottom: '12vp' })
+      }
+
+      Row() {
+        Button('layoutStyle.SPACE_BETWEEN_OR_CENTER')
+          .width('100%')
+          .height(50)
+          .margin({ top: 5 })
+          .fontSize(15)
+          .onClick((event?: ClickEvent) => {
+            this.layoutStyle = LayoutStyle.SPACE_BETWEEN_OR_CENTER;
+          })
+          .margin({ bottom: '12vp' })
+      }
+
+      Tabs({ barPosition: BarPosition.End, controller: this.controller }) {
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Pink)
+        }.tabBar(SubTabBarStyle.of(this.text))
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Green)
+        }.tabBar(SubTabBarStyle.of(this.text))
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Blue)
+        }.tabBar(SubTabBarStyle.of(this.text))
+      }
+      .animationDuration(300)
+      .height('60%')
+      .backgroundColor(0xf1f3f5)
+      .barMode(BarMode.Scrollable, { margin: this.scrollMargin, nonScrollableLayoutStyle: this.layoutStyle })
+    }
+    .width('100%')
+    .height(500)
+    .margin({ top: 5 })
+    .padding('24vp')
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TabsExample6 {
-5. private controller: TabsController = new TabsController();
-6. @State scrollMargin: number = 0;
-7. @State layoutStyle: LayoutStyle = LayoutStyle.ALWAYS_CENTER;
-8. @State text: string = '文本';
 
-10. build() {
-11. Column() {
-12. Row() {
-13. Button('scrollMargin+10 ' + this.scrollMargin)
-14. .width('47%')
-15. .height(50)
-16. .margin({ top: 5 })
-17. .onClick((event?: ClickEvent) => {
-18. this.scrollMargin += 10;
-19. })
-20. .margin({ right: '6%', bottom: '12vp' })
-21. Button('scrollMargin-10 ' + this.scrollMargin)
-22. .width('47%')
-23. .height(50)
-24. .margin({ top: 5 })
-25. .onClick((event?: ClickEvent) => {
-26. this.scrollMargin -= 10;
-27. })
-28. .margin({ bottom: '12vp' })
-29. }
-
-31. Row() {
-32. Button('文本增加 ')
-33. .width('47%')
-34. .height(50)
-35. .margin({ top: 5 })
-36. .onClick((event?: ClickEvent) => {
-37. this.text += '文本增加';
-38. })
-39. .margin({ right: '6%', bottom: '12vp' })
-40. Button('文本重置')
-41. .width('47%')
-42. .height(50)
-43. .margin({ top: 5 })
-44. .onClick((event?: ClickEvent) => {
-45. this.text = '文本';
-46. })
-47. .margin({ bottom: '12vp' })
-48. }
-
-50. Row() {
-51. Button('layoutStyle.ALWAYS_CENTER')
-52. .width('100%')
-53. .height(50)
-54. .margin({ top: 5 })
-55. .fontSize(15)
-56. .onClick((event?: ClickEvent) => {
-57. this.layoutStyle = LayoutStyle.ALWAYS_CENTER;
-58. })
-59. .margin({ bottom: '12vp' })
-60. }
-
-62. Row() {
-63. Button('layoutStyle.ALWAYS_AVERAGE_SPLIT')
-64. .width('100%')
-65. .height(50)
-66. .margin({ top: 5 })
-67. .fontSize(15)
-68. .onClick((event?: ClickEvent) => {
-69. this.layoutStyle = LayoutStyle.ALWAYS_AVERAGE_SPLIT;
-70. })
-71. .margin({ bottom: '12vp' })
-72. }
-
-74. Row() {
-75. Button('layoutStyle.SPACE_BETWEEN_OR_CENTER')
-76. .width('100%')
-77. .height(50)
-78. .margin({ top: 5 })
-79. .fontSize(15)
-80. .onClick((event?: ClickEvent) => {
-81. this.layoutStyle = LayoutStyle.SPACE_BETWEEN_OR_CENTER;
-82. })
-83. .margin({ bottom: '12vp' })
-84. }
-
-86. Tabs({ barPosition: BarPosition.End, controller: this.controller }) {
-87. TabContent() {
-88. Column().width('100%').height('100%').backgroundColor(Color.Pink)
-89. }.tabBar(SubTabBarStyle.of(this.text))
-
-91. TabContent() {
-92. Column().width('100%').height('100%').backgroundColor(Color.Green)
-93. }.tabBar(SubTabBarStyle.of(this.text))
-
-95. TabContent() {
-96. Column().width('100%').height('100%').backgroundColor(Color.Blue)
-97. }.tabBar(SubTabBarStyle.of(this.text))
-98. }
-99. .animationDuration(300)
-100. .height('60%')
-101. .backgroundColor(0xf1f3f5)
-102. .barMode(BarMode.Scrollable, { margin: this.scrollMargin, nonScrollableLayoutStyle: this.layoutStyle })
-103. }
-104. .width('100%')
-105. .height(500)
-106. .margin({ top: 5 })
-107. .padding('24vp')
-108. }
-109. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/oaNcJ-dbRPmJt0R_4Z96ig/zh-cn_image_0000002558606540.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/zD41tmv0SEGBPMwVxdwJvg/zh-cn_image_0000002736434981.gif)
 
 ### 示例3（自定义页签切换联动）
 
-本示例通过onAnimationStart、onChange实现切换时自定义tabBar和TabContent的联动。
+本示例通过[onAnimationStart](ts-container-tabs.md#onanimationstart11)、[onChange](ts-container-tabs.md#onchange)实现切换时自定义tabBar和TabContent的联动。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TabsExample {
+  @State fontColor: string = '#182431';
+  @State selectedFontColor: string = '#007DFF';
+  @State currentIndex: number = 0;
+  @State selectedIndex: number = 0;
+  private controller: TabsController = new TabsController();
+
+  @Builder tabBuilder(index: number, name: string) {
+    Column() {
+      Text(name)
+        .fontColor(this.selectedIndex === index ? this.selectedFontColor : this.fontColor)
+        .fontSize(16)
+        .fontWeight(this.selectedIndex === index ? 500 : 400)
+        .lineHeight(22)
+        .margin({ top: 17, bottom: 7 })
+      Divider()
+        .strokeWidth(2)
+        .color('#007DFF')
+        .opacity(this.selectedIndex === index ? 1 : 0)
+    }.width('100%')
+  }
+
+  build() {
+    Column() {
+      Tabs({ barPosition: BarPosition.Start, index: this.currentIndex, controller: this.controller }) {
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#00CB87')
+        }.tabBar(this.tabBuilder(0, 'green'))
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#007DFF')
+        }.tabBar(this.tabBuilder(1, 'blue'))
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#FFBF00')
+        }.tabBar(this.tabBuilder(2, 'yellow'))
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#E67C92')
+        }.tabBar(this.tabBuilder(3, 'pink'))
+      }
+      .vertical(false)
+      .barMode(BarMode.Fixed)
+      .barWidth(360)
+      .barHeight(56)
+      .animationDuration(400)
+      .onChange((index: number) => {
+        // currentIndex控制TabContent显示页签
+        this.currentIndex = index;
+        this.selectedIndex = index;
+      })
+      .onAnimationStart((index: number, targetIndex: number, event: TabsAnimationEvent) => {
+        if (index === targetIndex) {
+          return;
+        }
+        // selectedIndex控制自定义TabBar内Text颜色切换
+        this.selectedIndex = targetIndex;
+      })
+      .width(360)
+      .height(296)
+      .margin({ top: 52 })
+      .backgroundColor('#F1F3F5')
+    }.width('100%')
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TabsExample {
-5. @State fontColor: string = '#182431';
-6. @State selectedFontColor: string = '#007DFF';
-7. @State currentIndex: number = 0;
-8. @State selectedIndex: number = 0;
-9. private controller: TabsController = new TabsController();
 
-11. @Builder tabBuilder(index: number, name: string) {
-12. Column() {
-13. Text(name)
-14. .fontColor(this.selectedIndex === index ? this.selectedFontColor : this.fontColor)
-15. .fontSize(16)
-16. .fontWeight(this.selectedIndex === index ? 500 : 400)
-17. .lineHeight(22)
-18. .margin({ top: 17, bottom: 7 })
-19. Divider()
-20. .strokeWidth(2)
-21. .color('#007DFF')
-22. .opacity(this.selectedIndex === index ? 1 : 0)
-23. }.width('100%')
-24. }
-
-26. build() {
-27. Column() {
-28. Tabs({ barPosition: BarPosition.Start, index: this.currentIndex, controller: this.controller }) {
-29. TabContent() {
-30. Column().width('100%').height('100%').backgroundColor('#00CB87')
-31. }.tabBar(this.tabBuilder(0, 'green'))
-
-33. TabContent() {
-34. Column().width('100%').height('100%').backgroundColor('#007DFF')
-35. }.tabBar(this.tabBuilder(1, 'blue'))
-
-37. TabContent() {
-38. Column().width('100%').height('100%').backgroundColor('#FFBF00')
-39. }.tabBar(this.tabBuilder(2, 'yellow'))
-
-41. TabContent() {
-42. Column().width('100%').height('100%').backgroundColor('#E67C92')
-43. }.tabBar(this.tabBuilder(3, 'pink'))
-44. }
-45. .vertical(false)
-46. .barMode(BarMode.Fixed)
-47. .barWidth(360)
-48. .barHeight(56)
-49. .animationDuration(400)
-50. .onChange((index: number) => {
-51. // currentIndex控制TabContent显示页签
-52. this.currentIndex = index;
-53. this.selectedIndex = index;
-54. })
-55. .onAnimationStart((index: number, targetIndex: number, event: TabsAnimationEvent) => {
-56. if (index === targetIndex) {
-57. return;
-58. }
-59. // selectedIndex控制自定义TabBar内Image和Text颜色切换
-60. this.selectedIndex = targetIndex;
-61. })
-62. .width(360)
-63. .height(296)
-64. .margin({ top: 52 })
-65. .backgroundColor('#F1F3F5')
-66. }.width('100%')
-67. }
-68. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/HcyNiS_-SC2jVQpfPEIqlQ/zh-cn_image_0000002589326067.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/YDOScdn6TKKr4-w8a3_y-A/zh-cn_image_0000002706835834.gif)
 
 ### 示例4（分割线基本属性）
 
-本示例通过divider实现了分割线各种属性的展示。
+本示例通过[divider](ts-container-tabs.md#divider10)实现了分割线各种属性的展示。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TabsDivider1 {
+  private controller1: TabsController = new TabsController();
+  @State dividerColor: string = 'red';
+  @State strokeWidth: number = 2;
+  @State startMargin: number = 0;
+  @State endMargin: number = 0;
+  @State nullFlag: boolean = false;
+
+  build() {
+    Column() {
+      Tabs({ controller: this.controller1 }) {
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Pink)
+        }.tabBar('pink')
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Yellow)
+        }.tabBar('yellow')
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Blue)
+        }.tabBar('blue')
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Green)
+        }.tabBar('green')
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Red)
+        }.tabBar('red')
+      }
+      .vertical(true)
+      .scrollable(true)
+      .barMode(BarMode.Fixed)
+      .barWidth(70)
+      .barHeight(200)
+      .animationDuration(400)
+      .onChange((index: number) => {
+        console.info(index.toString());
+      })
+      .height('200vp')
+      .margin({ bottom: '12vp' })
+      .divider(this.nullFlag ? null : {
+        strokeWidth: this.strokeWidth,
+        color: this.dividerColor,
+        startMargin: this.startMargin,
+        endMargin: this.endMargin
+      })
+
+      Button('常规Divider').width('100%').margin({ bottom: '12vp' })
+        .onClick(() => {
+          this.nullFlag = false;
+          this.strokeWidth = 2;
+          this.dividerColor = 'red';
+          this.startMargin = 0;
+          this.endMargin = 0;
+        })
+      Button('空Divider').width('100%').margin({ bottom: '12vp' })
+        .onClick(() => {
+          this.nullFlag = true;
+        })
+      Button('颜色变为蓝色').width('100%').margin({ bottom: '12vp' })
+        .onClick(() => {
+          this.dividerColor = 'blue';
+        })
+      Button('宽度增加').width('100%').margin({ bottom: '12vp' })
+        .onClick(() => {
+          this.strokeWidth += 2;
+        })
+      Button('宽度减小').width('100%').margin({ bottom: '12vp' })
+        .onClick(() => {
+          if (this.strokeWidth > 2) {
+            this.strokeWidth -= 2;
+          }
+        })
+      Button('上边距增加').width('100%').margin({ bottom: '12vp' })
+        .onClick(() => {
+          this.startMargin += 2;
+        })
+      Button('上边距减少').width('100%').margin({ bottom: '12vp' })
+        .onClick(() => {
+          if (this.startMargin > 2) {
+            this.startMargin -= 2;
+          }
+        })
+      Button('下边距增加').width('100%').margin({ bottom: '12vp' })
+        .onClick(() => {
+          this.endMargin += 2;
+        })
+      Button('下边距减少').width('100%').margin({ bottom: '12vp' })
+        .onClick(() => {
+          if (this.endMargin > 2) {
+            this.endMargin -= 2;
+          }
+        })
+    }.padding({ top: '24vp', left: '24vp', right: '24vp' })
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TabsDivider1 {
-5. private controller1: TabsController = new TabsController();
-6. @State dividerColor: string = 'red';
-7. @State strokeWidth: number = 2;
-8. @State startMargin: number = 0;
-9. @State endMargin: number = 0;
-10. @State nullFlag: boolean = false;
 
-12. build() {
-13. Column() {
-14. Tabs({ controller: this.controller1 }) {
-15. TabContent() {
-16. Column().width('100%').height('100%').backgroundColor(Color.Pink)
-17. }.tabBar('pink')
-
-19. TabContent() {
-20. Column().width('100%').height('100%').backgroundColor(Color.Yellow)
-21. }.tabBar('yellow')
-
-23. TabContent() {
-24. Column().width('100%').height('100%').backgroundColor(Color.Blue)
-25. }.tabBar('blue')
-
-27. TabContent() {
-28. Column().width('100%').height('100%').backgroundColor(Color.Green)
-29. }.tabBar('green')
-
-31. TabContent() {
-32. Column().width('100%').height('100%').backgroundColor(Color.Red)
-33. }.tabBar('red')
-34. }
-35. .vertical(true)
-36. .scrollable(true)
-37. .barMode(BarMode.Fixed)
-38. .barWidth(70)
-39. .barHeight(200)
-40. .animationDuration(400)
-41. .onChange((index: number) => {
-42. console.info(index.toString());
-43. })
-44. .height('200vp')
-45. .margin({ bottom: '12vp' })
-46. .divider(this.nullFlag ? null : {
-47. strokeWidth: this.strokeWidth,
-48. color: this.dividerColor,
-49. startMargin: this.startMargin,
-50. endMargin: this.endMargin
-51. })
-
-53. Button('常规Divider').width('100%').margin({ bottom: '12vp' })
-54. .onClick(() => {
-55. this.nullFlag = false;
-56. this.strokeWidth = 2;
-57. this.dividerColor = 'red';
-58. this.startMargin = 0;
-59. this.endMargin = 0;
-60. })
-61. Button('空Divider').width('100%').margin({ bottom: '12vp' })
-62. .onClick(() => {
-63. this.nullFlag = true;
-64. })
-65. Button('颜色变为蓝色').width('100%').margin({ bottom: '12vp' })
-66. .onClick(() => {
-67. this.dividerColor = 'blue';
-68. })
-69. Button('宽度增加').width('100%').margin({ bottom: '12vp' })
-70. .onClick(() => {
-71. this.strokeWidth += 2;
-72. })
-73. Button('宽度减小').width('100%').margin({ bottom: '12vp' })
-74. .onClick(() => {
-75. if (this.strokeWidth > 2) {
-76. this.strokeWidth -= 2;
-77. }
-78. })
-79. Button('上边距增加').width('100%').margin({ bottom: '12vp' })
-80. .onClick(() => {
-81. this.startMargin += 2;
-82. })
-83. Button('上边距减少').width('100%').margin({ bottom: '12vp' })
-84. .onClick(() => {
-85. if (this.startMargin > 2) {
-86. this.startMargin -= 2;
-87. }
-88. })
-89. Button('下边距增加').width('100%').margin({ bottom: '12vp' })
-90. .onClick(() => {
-91. this.endMargin += 2;
-92. })
-93. Button('下边距减少').width('100%').margin({ bottom: '12vp' })
-94. .onClick(() => {
-95. if (this.endMargin > 2) {
-96. this.endMargin -= 2;
-97. }
-98. })
-99. }.padding({ top: '24vp', left: '24vp', right: '24vp' })
-100. }
-101. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/lRntv676QHeHtP8jMyoGmw/zh-cn_image_0000002589246009.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/TziBcRCqT-adepTYH1soqg/zh-cn_image_0000002736314939.gif)
 
 ### 示例5（设置TabBar渐隐）
 
-本示例通过fadingEdge实现了切换子页签渐隐和不渐隐。
+本示例通过[fadingEdge](ts-container-tabs.md#fadingedge10)实现了切换子页签渐隐和不渐隐。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TabsOpaque {
+  private controller: TabsController = new TabsController();
+  private controller1: TabsController = new TabsController();
+  @State selfFadingFade: boolean = true;
+
+  build() {
+    Column() {
+      Button('子页签设置渐隐').width('100%').margin({ bottom: '12vp' })
+        .onClick((event?: ClickEvent) => {
+          this.selfFadingFade = true;
+        })
+      Button('子页签设置不渐隐').width('100%').margin({ bottom: '12vp' })
+        .onClick((event?: ClickEvent) => {
+          this.selfFadingFade = false;
+        })
+      Tabs({ barPosition: BarPosition.End, controller: this.controller }) {
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Pink)
+        }.tabBar('pink')
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Yellow)
+        }.tabBar('yellow')
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Blue)
+        }.tabBar('blue')
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Green)
+        }.tabBar('green')
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Green)
+        }.tabBar('green')
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Green)
+        }.tabBar('green')
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Green)
+        }.tabBar('green')
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Green)
+        }.tabBar('green')
+      }
+      .vertical(false)
+      .scrollable(true)
+      .barMode(BarMode.Scrollable)
+      .barHeight(80)
+      .animationDuration(400)
+      .onChange((index: number) => {
+        console.info(index.toString());
+      })
+      .fadingEdge(this.selfFadingFade)
+      .height('30%')
+      .width('100%')
+
+      Tabs({ barPosition: BarPosition.Start, controller: this.controller1 }) {
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Pink)
+        }.tabBar('pink')
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Yellow)
+        }.tabBar('yellow')
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Blue)
+        }.tabBar('blue')
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Green)
+        }.tabBar('green')
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Green)
+        }.tabBar('green')
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Green)
+        }.tabBar('green')
+      }
+      .vertical(true)
+      .scrollable(true)
+      .barMode(BarMode.Scrollable)
+      .barHeight(200)
+      .barWidth(80)
+      .animationDuration(400)
+      .onChange((index: number) => {
+        console.info(index.toString());
+      })
+      .fadingEdge(this.selfFadingFade)
+      .height('30%')
+      .width('100%')
+    }
+    .padding({ top: '24vp', left: '24vp', right: '24vp' })
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TabsOpaque {
-5. @State message: string = 'Hello World';
-6. private controller: TabsController = new TabsController();
-7. private controller1: TabsController = new TabsController();
-8. @State selfFadingFade: boolean = true;
 
-10. build() {
-11. Column() {
-12. Button('子页签设置渐隐').width('100%').margin({ bottom: '12vp' })
-13. .onClick((event?: ClickEvent) => {
-14. this.selfFadingFade = true;
-15. })
-16. Button('子页签设置不渐隐').width('100%').margin({ bottom: '12vp' })
-17. .onClick((event?: ClickEvent) => {
-18. this.selfFadingFade = false;
-19. })
-20. Tabs({ barPosition: BarPosition.End, controller: this.controller }) {
-21. TabContent() {
-22. Column().width('100%').height('100%').backgroundColor(Color.Pink)
-23. }.tabBar('pink')
-
-25. TabContent() {
-26. Column().width('100%').height('100%').backgroundColor(Color.Yellow)
-27. }.tabBar('yellow')
-
-29. TabContent() {
-30. Column().width('100%').height('100%').backgroundColor(Color.Blue)
-31. }.tabBar('blue')
-
-33. TabContent() {
-34. Column().width('100%').height('100%').backgroundColor(Color.Green)
-35. }.tabBar('green')
-
-37. TabContent() {
-38. Column().width('100%').height('100%').backgroundColor(Color.Green)
-39. }.tabBar('green')
-
-41. TabContent() {
-42. Column().width('100%').height('100%').backgroundColor(Color.Green)
-43. }.tabBar('green')
-
-45. TabContent() {
-46. Column().width('100%').height('100%').backgroundColor(Color.Green)
-47. }.tabBar('green')
-
-49. TabContent() {
-50. Column().width('100%').height('100%').backgroundColor(Color.Green)
-51. }.tabBar('green')
-52. }
-53. .vertical(false)
-54. .scrollable(true)
-55. .barMode(BarMode.Scrollable)
-56. .barHeight(80)
-57. .animationDuration(400)
-58. .onChange((index: number) => {
-59. console.info(index.toString());
-60. })
-61. .fadingEdge(this.selfFadingFade)
-62. .height('30%')
-63. .width('100%')
-
-65. Tabs({ barPosition: BarPosition.Start, controller: this.controller1 }) {
-66. TabContent() {
-67. Column().width('100%').height('100%').backgroundColor(Color.Pink)
-68. }.tabBar('pink')
-
-70. TabContent() {
-71. Column().width('100%').height('100%').backgroundColor(Color.Yellow)
-72. }.tabBar('yellow')
-
-74. TabContent() {
-75. Column().width('100%').height('100%').backgroundColor(Color.Blue)
-76. }.tabBar('blue')
-
-78. TabContent() {
-79. Column().width('100%').height('100%').backgroundColor(Color.Green)
-80. }.tabBar('green')
-
-82. TabContent() {
-83. Column().width('100%').height('100%').backgroundColor(Color.Green)
-84. }.tabBar('green')
-
-86. TabContent() {
-87. Column().width('100%').height('100%').backgroundColor(Color.Green)
-88. }.tabBar('green')
-89. }
-90. .vertical(true)
-91. .scrollable(true)
-92. .barMode(BarMode.Scrollable)
-93. .barHeight(200)
-94. .barWidth(80)
-95. .animationDuration(400)
-96. .onChange((index: number) => {
-97. console.info(index.toString());
-98. })
-99. .fadingEdge(this.selfFadingFade)
-100. .height('30%')
-101. .width('100%')
-102. }
-103. .padding({ top: '24vp', left: '24vp', right: '24vp' })
-104. }
-105. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/pENWmPmkSA2UD567yT7xMw/zh-cn_image_0000002558766200.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/OV0PttG5QHW8fn3Qrhydcg/zh-cn_image_0000002706675896.gif)
 
 ### 示例6（设置TabBar叠加在TabContent内容上）
 
-本示例通过barOverlap实现了TabBar是否背后变模糊并叠加在TabContent之上。
+本示例通过[barOverlap](ts-container-tabs.md#baroverlap10)实现了TabBar是否背后变模糊并叠加在TabContent之上。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct barHeightTest {
+  @State arr: number[] = [0, 1, 2, 3];
+  @State barOverlap: boolean = true;
+
+  build() {
+    Column() {
+      Text(`barOverlap ${this.barOverlap}`).fontSize(16)
+      Button('barOverlap变化').width('100%').margin({ bottom: '12vp' })
+        .onClick((event?: ClickEvent) => {
+          if (this.barOverlap) {
+            this.barOverlap = false;
+          } else {
+            this.barOverlap = true;
+          }
+        })
+
+      Tabs({ barPosition: BarPosition.End }) {
+        TabContent() {
+          Column() {
+            List({ space: 10 }) {
+              ForEach(this.arr, (item: number) => {
+                ListItem() {
+                  Text('item' + item).width('80%').height(200).fontSize(16).textAlign(TextAlign.Center).backgroundColor('#fff8b81e')
+                }
+              }, (item: string) => item)
+            }.width('100%').height('100%')
+            .lanes(2).alignListItem(ListItemAlign.Center)
+          }.width('100%').height('100%')
+          .backgroundColor(Color.Pink)
+        }
+        .tabBar(new BottomTabBarStyle($r('sys.media.ohos_icon_mask_svg'), '测试0'))
+      }
+      .scrollable(false)
+      .height('60%')
+      .barOverlap(this.barOverlap)
+    }
+    .height(500)
+    .padding({ top: '24vp', left: '24vp', right: '24vp' })
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct barHeightTest {
-5. @State arr: number[] = [0, 1, 2, 3];
-6. @State barOverlap: boolean = true;
 
-8. build() {
-9. Column() {
-10. Text(`barOverlap ${this.barOverlap}`).fontSize(16)
-11. Button('barOverlap变化').width('100%').margin({ bottom: '12vp' })
-12. .onClick((event?: ClickEvent) => {
-13. if (this.barOverlap) {
-14. this.barOverlap = false;
-15. } else {
-16. this.barOverlap = true;
-17. }
-18. })
-
-20. Tabs({ barPosition: BarPosition.End }) {
-21. TabContent() {
-22. Column() {
-23. List({ space: 10 }) {
-24. ForEach(this.arr, (item: number) => {
-25. ListItem() {
-26. Text('item' + item).width('80%').height(200).fontSize(16).textAlign(TextAlign.Center).backgroundColor('#fff8b81e')
-27. }
-28. }, (item: string) => item)
-29. }.width('100%').height('100%')
-30. .lanes(2).alignListItem(ListItemAlign.Center)
-31. }.width('100%').height('100%')
-32. .backgroundColor(Color.Pink)
-33. }
-34. .tabBar(new BottomTabBarStyle($r('sys.media.ohos_icon_mask_svg'), '测试0'))
-35. }
-36. .scrollable(false)
-37. .height('60%')
-38. .barOverlap(this.barOverlap)
-39. }
-40. .height(500)
-41. .padding({ top: '24vp', left: '24vp', right: '24vp' })
-42. }
-43. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/3WOF809dSg6Rgks0uO3oAA/zh-cn_image_0000002558606542.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/21KIBKc3RMuSIsS1QYFT2g/zh-cn_image_0000002736434983.gif)
 
 ### 示例7（设置TabBar栅格化可见区域）
 
-本示例通过barGridAlign实现了以栅格化方式设置TabBar的可见区域。
+本示例通过[barGridAlign](ts-container-tabs.md#bargridalign10)实现了以栅格化方式设置TabBar的可见区域。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TabsExample5 {
+  private controller: TabsController = new TabsController();
+  @State gridMargin: number = 10;
+  @State gridGutter: number = 10;
+  @State sm: number = -2;
+  @State clickedContent: string = '';
+
+  build() {
+    Column() {
+      Row() {
+        Button('gridMargin+10 ' + this.gridMargin)
+          .width('47%')
+          .height(50)
+          .margin({ top: 5 })
+          .onClick((event?: ClickEvent) => {
+            this.gridMargin += 10;
+          })
+          .margin({ right: '6%', bottom: '12vp' })
+        Button('gridMargin-10 ' + this.gridMargin)
+          .width('47%')
+          .height(50)
+          .margin({ top: 5 })
+          .onClick((event?: ClickEvent) => {
+            this.gridMargin -= 10;
+          })
+          .margin({ bottom: '12vp' })
+      }
+
+      Row() {
+        Button('gridGutter+10 ' + this.gridGutter)
+          .width('47%')
+          .height(50)
+          .margin({ top: 5 })
+          .onClick((event?: ClickEvent) => {
+            this.gridGutter += 10;
+          })
+          .margin({ right: '6%', bottom: '12vp' })
+        Button('gridGutter-10 ' + this.gridGutter)
+          .width('47%')
+          .height(50)
+          .margin({ top: 5 })
+          .onClick((event?: ClickEvent) => {
+            this.gridGutter -= 10;
+          })
+          .margin({ bottom: '12vp' })
+      }
+
+      Row() {
+        Button('sm+2 ' + this.sm)
+          .width('47%')
+          .height(50)
+          .margin({ top: 5 })
+          .onClick((event?: ClickEvent) => {
+            this.sm += 2;
+          })
+          .margin({ right: '6%' })
+        Button('sm-2 ' + this.sm).width('47%').height(50).margin({ top: 5 })
+          .onClick((event?: ClickEvent) => {
+            this.sm -= 2;
+          })
+      }
+
+      Text('点击内容:' + this.clickedContent).width('100%').height(200).margin({ top: 5 })
+
+      Tabs({ barPosition: BarPosition.End, controller: this.controller }) {
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Pink)
+        }.tabBar(BottomTabBarStyle.of($r('sys.media.ohos_app_icon'), '1'))
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Green)
+        }.tabBar(BottomTabBarStyle.of($r('sys.media.ohos_app_icon'), '2'))
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Blue)
+        }.tabBar(BottomTabBarStyle.of($r('sys.media.ohos_app_icon'), '3'))
+      }
+      .width('350vp')
+      .animationDuration(300)
+      .height('60%')
+      .barGridAlign({ sm: this.sm, margin: this.gridMargin, gutter: this.gridGutter })
+      .backgroundColor(0xf1f3f5)
+      .onTabBarClick((index: number) => {
+        this.clickedContent += 'now index ' + index + ' is clicked\n';
+      })
+    }
+    .width('100%')
+    .height(500)
+    .margin({ top: 5 })
+    .padding('10vp')
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TabsExample5 {
-5. private controller: TabsController = new TabsController();
-6. @State gridMargin: number = 10;
-7. @State gridGutter: number = 10;
-8. @State sm: number = -2;
-9. @State clickedContent: string = '';
 
-11. build() {
-12. Column() {
-13. Row() {
-14. Button('gridMargin+10 ' + this.gridMargin)
-15. .width('47%')
-16. .height(50)
-17. .margin({ top: 5 })
-18. .onClick((event?: ClickEvent) => {
-19. this.gridMargin += 10;
-20. })
-21. .margin({ right: '6%', bottom: '12vp' })
-22. Button('gridMargin-10 ' + this.gridMargin)
-23. .width('47%')
-24. .height(50)
-25. .margin({ top: 5 })
-26. .onClick((event?: ClickEvent) => {
-27. this.gridMargin -= 10;
-28. })
-29. .margin({ bottom: '12vp' })
-30. }
-
-32. Row() {
-33. Button('gridGutter+10 ' + this.gridGutter)
-34. .width('47%')
-35. .height(50)
-36. .margin({ top: 5 })
-37. .onClick((event?: ClickEvent) => {
-38. this.gridGutter += 10;
-39. })
-40. .margin({ right: '6%', bottom: '12vp' })
-41. Button('gridGutter-10 ' + this.gridGutter)
-42. .width('47%')
-43. .height(50)
-44. .margin({ top: 5 })
-45. .onClick((event?: ClickEvent) => {
-46. this.gridGutter -= 10;
-47. })
-48. .margin({ bottom: '12vp' })
-49. }
-
-51. Row() {
-52. Button('sm+2 ' + this.sm)
-53. .width('47%')
-54. .height(50)
-55. .margin({ top: 5 })
-56. .onClick((event?: ClickEvent) => {
-57. this.sm += 2;
-58. })
-59. .margin({ right: '6%' })
-60. Button('sm-2 ' + this.sm).width('47%').height(50).margin({ top: 5 })
-61. .onClick((event?: ClickEvent) => {
-62. this.sm -= 2;
-63. })
-64. }
-
-66. Text('点击内容:' + this.clickedContent).width('100%').height(200).margin({ top: 5 })
-
-69. Tabs({ barPosition: BarPosition.End, controller: this.controller }) {
-70. TabContent() {
-71. Column().width('100%').height('100%').backgroundColor(Color.Pink)
-72. }.tabBar(BottomTabBarStyle.of($r('sys.media.ohos_app_icon'), '1'))
-
-74. TabContent() {
-75. Column().width('100%').height('100%').backgroundColor(Color.Green)
-76. }.tabBar(BottomTabBarStyle.of($r('sys.media.ohos_app_icon'), '2'))
-
-78. TabContent() {
-79. Column().width('100%').height('100%').backgroundColor(Color.Blue)
-80. }.tabBar(BottomTabBarStyle.of($r('sys.media.ohos_app_icon'), '3'))
-81. }
-82. .width('350vp')
-83. .animationDuration(300)
-84. .height('60%')
-85. .barGridAlign({ sm: this.sm, margin: this.gridMargin, gutter: this.gridGutter })
-86. .backgroundColor(0xf1f3f5)
-87. .onTabBarClick((index: number) => {
-88. this.clickedContent += 'now index ' + index + ' is clicked\n';
-89. })
-90. }
-91. .width('100%')
-92. .height(500)
-93. .margin({ top: 5 })
-94. .padding('10vp')
-95. }
-96. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/Svf2GwDxTFKQJwdSvoTfzw/zh-cn_image_0000002589326069.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/KYfuOiYuTqGlHcXfEuqkPg/zh-cn_image_0000002706835836.gif)
 
 ### 示例8（自定义Tabs页面切换动画）
 
-本示例通过customContentTransition实现了自定义Tabs页面的切换动画。
+本示例通过[customContentTransition](ts-container-tabs.md#customcontenttransition11)实现了自定义Tabs页面的切换动画。
 
+```ts
+// xxx.ets
+interface itemType {
+  text: string,
+  backgroundColor: Color
+}
+
+@Entry
+@Component
+struct TabsCustomAnimationExample {
+  @State data: itemType[] = [
+    {
+      text: 'Red',
+      backgroundColor: Color.Red
+    },
+    {
+      text: 'Yellow',
+      backgroundColor: Color.Yellow
+    },
+    {
+      text: 'Blue',
+      backgroundColor: Color.Blue
+    }];
+  @State opacityList: number[] = [];
+  @State scaleList: number[] = [];
+
+  private durationList: number[] = [];
+  private timeoutList: number[] = [];
+  private customContentTransition: (from: number, to: number) => TabContentAnimatedTransition = (from: number, to: number) => {
+    let tabContentAnimatedTransition = {
+      timeout: this.timeoutList[from],
+      transition: (proxy: TabContentTransitionProxy) => {
+        this.scaleList[from] = 1.0;
+        this.scaleList[to] = 0.5;
+        this.opacityList[from] = 1.0;
+        this.opacityList[to] = 0.5;
+        this.getUIContext()?.animateTo({
+          duration: this.durationList[from],
+          onFinish: () => {
+            proxy.finishTransition();
+          }
+        }, () => {
+          this.scaleList[from] = 0.5;
+          this.scaleList[to] = 1.0;
+          this.opacityList[from] = 0.5;
+          this.opacityList[to] = 1.0;
+        });
+      }
+    } as TabContentAnimatedTransition;
+    return tabContentAnimatedTransition;
+  };
+
+  aboutToAppear(): void {
+    let duration = 1000;
+    let timeout = 1000;
+    for (let i = 1; i <= this.data.length; i++) {
+      this.opacityList.push(1.0);
+      this.scaleList.push(1.0);
+      this.durationList.push(duration * i);
+      this.timeoutList.push(timeout * i);
+    }
+  }
+
+  build() {
+    Column() {
+      Tabs() {
+        ForEach(this.data, (item: itemType, index: number) => {
+          TabContent() {}
+          .tabBar(item.text)
+          .backgroundColor(item.backgroundColor)
+          // 自定义动画变化透明度、缩放页面等
+          .opacity(this.opacityList[index])
+          .scale({ x: this.scaleList[index], y: this.scaleList[index] })
+        })
+      }
+      .backgroundColor(0xf1f3f5)
+      .width('100%')
+      .height(500)
+      .customContentTransition(this.customContentTransition)
+    }
+  }
+}
 ```
-1. // xxx.ets
-2. interface itemType {
-3. text: string,
-4. backgroundColor: Color
-5. }
 
-7. @Entry
-8. @Component
-9. struct TabsCustomAnimationExample {
-10. @State data: itemType[] = [
-11. {
-12. text: 'Red',
-13. backgroundColor: Color.Red
-14. },
-15. {
-16. text: 'Yellow',
-17. backgroundColor: Color.Yellow
-18. },
-19. {
-20. text: 'Blue',
-21. backgroundColor: Color.Blue
-22. }];
-23. @State opacityList: number[] = [];
-24. @State scaleList: number[] = [];
-
-26. private durationList: number[] = [];
-27. private timeoutList: number[] = [];
-28. private customContentTransition: (from: number, to: number) => TabContentAnimatedTransition = (from: number, to: number) => {
-29. let tabContentAnimatedTransition = {
-30. timeout: this.timeoutList[from],
-31. transition: (proxy: TabContentTransitionProxy) => {
-32. this.scaleList[from] = 1.0;
-33. this.scaleList[to] = 0.5;
-34. this.opacityList[from] = 1.0;
-35. this.opacityList[to] = 0.5;
-36. this.getUIContext()?.animateTo({
-37. duration: this.durationList[from],
-38. onFinish: () => {
-39. proxy.finishTransition();
-40. }
-41. }, () => {
-42. this.scaleList[from] = 0.5;
-43. this.scaleList[to] = 1.0;
-44. this.opacityList[from] = 0.5;
-45. this.opacityList[to] = 1.0;
-46. });
-47. }
-48. } as TabContentAnimatedTransition;
-49. return tabContentAnimatedTransition;
-50. };
-
-52. aboutToAppear(): void {
-53. let duration = 1000;
-54. let timeout = 1000;
-55. for (let i = 1; i <= this.data.length; i++) {
-56. this.opacityList.push(1.0);
-57. this.scaleList.push(1.0);
-58. this.durationList.push(duration * i);
-59. this.timeoutList.push(timeout * i);
-60. }
-61. }
-
-63. build() {
-64. Column() {
-65. Tabs() {
-66. ForEach(this.data, (item: itemType, index: number) => {
-67. TabContent() {}
-68. .tabBar(item.text)
-69. .backgroundColor(item.backgroundColor)
-70. // 自定义动画变化透明度、缩放页面等
-71. .opacity(this.opacityList[index])
-72. .scale({ x: this.scaleList[index], y: this.scaleList[index] })
-73. })
-74. }
-75. .backgroundColor(0xf1f3f5)
-76. .width('100%')
-77. .height(500)
-78. .customContentTransition(this.customContentTransition)
-79. }
-80. }
-81. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/Yc30jbKITAuhlGOYZwwO2A/zh-cn_image_0000002589246011.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/PYbWWgVjSN6j1twcbcnqIA/zh-cn_image_0000002736314941.gif)
 
 ### 示例9（页面切换拦截）
 
-本示例通过onContentWillChange实现了自定义页面手势滑动切换拦截。
+本示例通过[onContentWillChange](ts-container-tabs.md#oncontentwillchange12)实现了自定义页面手势滑动切换拦截。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TabsExample {
+  @State selectedIndex: number = 2;
+  @State currentIndex: number = 2;
+  private controller: TabsController = new TabsController();
+
+  @Builder tabBuilder(title: string,targetIndex: number) {
+    Column(){
+      // $r('app.media.star_fill')需要替换为开发者所需的图像资源文件
+      // $r('app.media.star')需要替换为开发者所需的图像资源文件
+      Image(this.selectedIndex === targetIndex ? $r('app.media.star_fill') : $r('app.media.star'))
+        .width(24)
+        .height(24)
+        .margin({ bottom: 4 })
+        .objectFit(ImageFit.Contain)
+      Text(title).fontColor(this.selectedIndex === targetIndex ? '#1698CE' : '#6B6B6B')
+    }.width('100%')
+    .height(50)
+    .justifyContent(FlexAlign.Center)
+  }
+  
+  build() {
+    Column() {
+      Tabs({ barPosition: BarPosition.End, index: this.currentIndex, controller: this.controller }) {
+        TabContent() {
+          Column(){
+            Text('首页的内容')
+          }.width('100%').height('100%').backgroundColor('#00CB87').justifyContent(FlexAlign.Center)
+        }.tabBar(this.tabBuilder('首页',0))
+
+        TabContent() {
+          Column(){
+            Text('发现的内容')
+          }.width('100%').height('100%').backgroundColor('#007DFF').justifyContent(FlexAlign.Center)
+        }.tabBar(this.tabBuilder('发现',1))
+
+        TabContent() {
+          Column(){
+            Text('推荐的内容')
+          }.width('100%').height('100%').backgroundColor('#FFBF00').justifyContent(FlexAlign.Center)
+        }.tabBar(this.tabBuilder('推荐',2))
+
+        TabContent() {
+          Column(){
+            Text('我的内容')
+          }.width('100%').height('100%').backgroundColor('#E67C92').justifyContent(FlexAlign.Center)
+        }.tabBar(this.tabBuilder('我的',3))
+      }
+      .vertical(false)
+      .barMode(BarMode.Fixed)
+      .barWidth(360)
+      .barHeight(60)
+      .animationDuration(0)
+      .onChange((index: number) => {
+        this.currentIndex = index;
+        this.selectedIndex = index;
+      })
+      .width(360)
+      .height(600)
+      .backgroundColor('#F1F3F5')
+      .scrollable(true)
+      .onContentWillChange((currentIndex, comingIndex) => {
+        if (comingIndex == 2) {
+          return false;
+        }
+        return true;
+      })
+
+      Button('动态修改index').width('50%').margin({ top: 20 })
+        .onClick(()=>{
+          this.currentIndex = (this.currentIndex + 1) % 4;
+        })
+
+      Button('changeIndex').width('50%').margin({ top: 20 })
+        .onClick(()=>{
+          this.currentIndex = (this.currentIndex + 1) % 4;
+          this.controller.changeIndex(this.currentIndex);
+        })
+    }.width('100%')
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TabsExample {
-5. @State selectedIndex: number = 2;
-6. @State currentIndex: number = 2;
-7. private controller: TabsController = new TabsController();
 
-9. @Builder tabBuilder(title: string,targetIndex: number) {
-10. Column(){
-11. // $r('app.media.star_fill')需要替换为开发者所需的图像资源文件
-12. // $r('app.media.star')需要替换为开发者所需的图像资源文件
-13. Image(this.selectedIndex === targetIndex ? $r('app.media.star_fill') : $r('app.media.star'))
-14. .width(24)
-15. .height(24)
-16. .margin({ bottom: 4 })
-17. .objectFit(ImageFit.Contain)
-18. Text(title).fontColor(this.selectedIndex === targetIndex ? '#1698CE' : '#6B6B6B')
-19. }.width('100%')
-20. .height(50)
-21. .justifyContent(FlexAlign.Center)
-22. }
-
-24. build() {
-25. Column() {
-26. Tabs({ barPosition: BarPosition.End, index: this.currentIndex, controller: this.controller }) {
-27. TabContent() {
-28. Column(){
-29. Text('首页的内容')
-30. }.width('100%').height('100%').backgroundColor('#00CB87').justifyContent(FlexAlign.Center)
-31. }.tabBar(this.tabBuilder('首页',0))
-
-33. TabContent() {
-34. Column(){
-35. Text('发现的内容')
-36. }.width('100%').height('100%').backgroundColor('#007DFF').justifyContent(FlexAlign.Center)
-37. }.tabBar(this.tabBuilder('发现',1))
-
-39. TabContent() {
-40. Column(){
-41. Text('推荐的内容')
-42. }.width('100%').height('100%').backgroundColor('#FFBF00').justifyContent(FlexAlign.Center)
-43. }.tabBar(this.tabBuilder('推荐',2))
-
-45. TabContent() {
-46. Column(){
-47. Text('我的内容')
-48. }.width('100%').height('100%').backgroundColor('#E67C92').justifyContent(FlexAlign.Center)
-49. }.tabBar(this.tabBuilder('我的',3))
-50. }
-51. .vertical(false)
-52. .barMode(BarMode.Fixed)
-53. .barWidth(360)
-54. .barHeight(60)
-55. .animationDuration(0)
-56. .onChange((index: number) => {
-57. this.currentIndex = index;
-58. this.selectedIndex = index;
-59. })
-60. .width(360)
-61. .height(600)
-62. .backgroundColor('#F1F3F5')
-63. .scrollable(true)
-64. .onContentWillChange((currentIndex, comingIndex) => {
-65. if (comingIndex == 2) {
-66. return false;
-67. }
-68. return true;
-69. })
-
-71. Button('动态修改index').width('50%').margin({ top: 20 })
-72. .onClick(()=>{
-73. this.currentIndex = (this.currentIndex + 1) % 4;
-74. })
-
-76. Button('changeIndex').width('50%').margin({ top: 20 })
-77. .onClick(()=>{
-78. this.currentIndex = (this.currentIndex + 1) % 4;
-79. this.controller.changeIndex(this.currentIndex);
-80. })
-81. }.width('100%')
-82. }
-83. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/JjwOzENwS2qKKJ7tq8cVVg/zh-cn_image_0000002558766202.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/oWYeQeTSR2i8R9nMRfqafg/zh-cn_image_0000002706675898.gif)
 
 ### 示例10（自定义TabBar切换动画）
 
-本示例通过onChange、onAnimationStart、onAnimationEnd、onGestureSwipe等接口实现了自定义TabBar的切换动画。
+本示例通过[onChange](ts-container-tabs.md#onchange)、[onAnimationStart](ts-container-tabs.md#onanimationstart11)、[onAnimationEnd](ts-container-tabs.md#onanimationend11)、[onGestureSwipe](ts-container-tabs.md#ongestureswipe11)等接口实现了自定义TabBar的切换动画。
 
-```
-1. // EntryAbility.ets
-2. import { Configuration, UIAbility } from '@kit.AbilityKit';
-3. import { i18n } from '@kit.LocalizationKit';
-4. import { CommonUtil } from '../common/CommonUtil';
+```ts
+// EntryAbility.ets
+import { Configuration, UIAbility } from '@kit.AbilityKit';
+import { i18n } from '@kit.LocalizationKit';
+import { CommonUtil } from '../common/CommonUtil';
 
-6. export default class EntryAbility extends UIAbility {
-7. onConfigurationUpdate(newConfig: Configuration): void {
-8. // 监听系统配置变化
-9. if (newConfig.language) {
-10. CommonUtil.setIsRTL(i18n.isRTL(newConfig.language));
-11. }
-12. }
-13. }
-```
-
-```
-1. // CommonUtil.ets
-2. export class CommonUtil {
-3. private static isRTL: boolean = false;
-
-5. public static setIsRTL(isRTL: boolean): void {
-6. CommonUtil.isRTL = isRTL;
-7. }
-
-9. public static getIsRTL(): boolean {
-10. return CommonUtil.isRTL;
-11. }
-12. }
+export default class EntryAbility extends UIAbility {
+  onConfigurationUpdate(newConfig: Configuration): void {
+    // 监听系统配置变化
+    if (newConfig.language) {
+      CommonUtil.setIsRTL(i18n.isRTL(newConfig.language));
+    }
+  }
+}
 ```
 
-```
-1. // xxx.ets
-2. import { LengthMetrics } from '@kit.ArkUI';
-3. import { CommonUtil } from '../common/CommonUtil';
+```ts
+// CommonUtil.ets
+export class CommonUtil {
+  private static isRTL: boolean = false;
 
-5. @Entry
-6. @Component
-7. struct TabsExample {
-8. @State colorArray: [string, string][] =
-9. [['green', '#00CB87'], ['blue', '#007DFF'], ['yellow', '#FFBF00'], ['pink', '#E67C92']];
-10. @State currentIndex: number = 0;
-11. @State animationDuration: number = 300;
-12. @State indicatorLeftMargin: number = 0;
-13. @State indicatorWidth: number = 0;
-14. private tabsWidth: number = 0;
-15. private textInfos: [number, number][] = [];
-16. private isStartAnimateTo: boolean = false;
+  public static setIsRTL(isRTL: boolean): void {
+    CommonUtil.isRTL = isRTL;
+  }
 
-18. aboutToAppear():void {
-19. for (let i = 0; i < this.colorArray.length; i++) {
-20. this.textInfos.push([0, 0]);
-21. }
-22. }
-
-24. @Builder
-25. tabBuilder(index: number, name: string) {
-26. Column() {
-27. Text(name)
-28. .fontSize(16)
-29. .fontColor(this.currentIndex === index ? '#007DFF' : '#182431')
-30. .fontWeight(this.currentIndex === index ? 500 : 400)
-31. .id(index.toString())
-32. .onAreaChange((oldValue: Area, newValue: Area) => {
-33. this.textInfos[index] = [newValue.globalPosition.x as number, newValue.width as number];
-34. if (!this.isStartAnimateTo && this.currentIndex === index && this.tabsWidth > 0) {
-35. this.setIndicatorAttr(this.textInfos[this.currentIndex][0], this.textInfos[this.currentIndex][1]);
-36. }
-37. })
-38. }.width('100%')
-39. }
-
-41. build() {
-42. Stack({ alignContent: Alignment.TopStart }) {
-43. Tabs({ barPosition: BarPosition.Start }) {
-44. ForEach(this.colorArray, (item: [string, string], index:number) => {
-45. TabContent() {
-46. Column().width('100%').height('100%').backgroundColor(item[1])
-47. }.tabBar(this.tabBuilder(index, item[0]))
-48. })
-49. }
-50. .onAreaChange((oldValue: Area, newValue: Area)=> {
-51. this.tabsWidth = newValue.width as number;
-52. if (!this.isStartAnimateTo) {
-53. this.setIndicatorAttr(this.textInfos[this.currentIndex][0], this.textInfos[this.currentIndex][1]);
-54. }
-55. })
-56. .barWidth('100%')
-57. .barHeight(56)
-58. .width('100%')
-59. .height(296)
-60. .backgroundColor('#F1F3F5')
-61. .animationDuration(this.animationDuration)
-62. .onChange((index: number) => {
-63. this.currentIndex = index; // 监听索引index的变化，实现页签内容的切换。
-64. })
-65. .onAnimationStart((index: number, targetIndex: number, event: TabsAnimationEvent) => {
-66. // 切换动画开始时触发该回调。下划线跟着页面一起滑动，同时宽度渐变。
-67. this.currentIndex = targetIndex;
-68. this.startAnimateTo(this.animationDuration, this.textInfos[targetIndex][0], this.textInfos[targetIndex][1]);
-69. })
-70. .onAnimationEnd((index: number, event: TabsAnimationEvent) => {
-71. // 切换动画结束时触发该回调。下划线动画停止。
-72. let currentIndicatorInfo = this.getCurrentIndicatorInfo(index, event);
-73. this.startAnimateTo(0, currentIndicatorInfo.left, currentIndicatorInfo.width);
-74. })
-75. .onGestureSwipe((index: number, event: TabsAnimationEvent) => {
-76. // 在页面跟手滑动过程中，逐帧触发该回调。
-77. let currentIndicatorInfo = this.getCurrentIndicatorInfo(index, event);
-78. this.currentIndex = currentIndicatorInfo.index;
-79. this.setIndicatorAttr(currentIndicatorInfo.left, currentIndicatorInfo.width);
-80. })
-
-82. Column()
-83. .height(2)
-84. .width(this.indicatorWidth)
-85. .margin({ start: LengthMetrics.vp(this.indicatorLeftMargin), top: LengthMetrics.vp(48) })
-86. .backgroundColor('#007DFF')
-87. }.width('100%')
-88. }
-
-90. private getCurrentIndicatorInfo(index: number, event: TabsAnimationEvent): Record<string, number> {
-91. let nextIndex = index;
-92. if (index > 0 && (CommonUtil.getIsRTL() ? event.currentOffset < 0 : event.currentOffset > 0)) {
-93. nextIndex--;
-94. } else if (index < this.textInfos.length - 1 &&
-95. (CommonUtil.getIsRTL() ? event.currentOffset > 0 : event.currentOffset < 0)) {
-96. nextIndex++;
-97. }
-98. let indexInfo = this.textInfos[index];
-99. let nextIndexInfo = this.textInfos[nextIndex];
-100. let swipeRatio = Math.abs(event.currentOffset / this.tabsWidth);
-101. let currentIndex = swipeRatio > 0.5 ? nextIndex : index; // 页面滑动超过一半，tabBar切换到下一页。
-102. let currentLeft = indexInfo[0] + (nextIndexInfo[0] - indexInfo[0]) * swipeRatio;
-103. let currentWidth = indexInfo[1] + (nextIndexInfo[1] - indexInfo[1]) * swipeRatio;
-104. return { 'index': currentIndex, 'left': currentLeft, 'width': currentWidth };
-105. }
-
-107. private startAnimateTo(duration: number, leftMargin: number, width: number) {
-108. this.isStartAnimateTo = true;
-109. this.getUIContext()?.animateTo({
-110. duration: duration, // 动画时长
-111. curve: Curve.Linear, // 动画曲线
-112. iterations: 1, // 播放次数
-113. playMode: PlayMode.Normal, // 动画模式
-114. onFinish: () => {
-115. this.isStartAnimateTo = false;
-116. console.info('play end');
-117. }
-118. }, () => {
-119. this.setIndicatorAttr(leftMargin, width);
-120. });
-121. }
-
-123. private setIndicatorAttr(leftMargin: number, width: number) {
-124. this.indicatorWidth = width;
-125. if (CommonUtil.getIsRTL()) {
-126. this.indicatorLeftMargin = this.tabsWidth - leftMargin - width;
-127. } else {
-128. this.indicatorLeftMargin = leftMargin;
-129. }
-130. }
-131. }
+  public static getIsRTL(): boolean {
+    return CommonUtil.isRTL;
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/QPuaW3yKSW-m7vdyDhIV-A/zh-cn_image_0000002558606544.gif)
+```ts
+// xxx.ets
+import { LengthMetrics } from '@kit.ArkUI';
+import { CommonUtil } from '../common/CommonUtil';
+
+@Entry
+@Component
+struct TabsExample {
+  @State colorArray: [string, string][] =
+    [['green', '#00CB87'], ['blue', '#007DFF'], ['yellow', '#FFBF00'], ['pink', '#E67C92']];
+  @State currentIndex: number = 0;
+  @State animationDuration: number = 300;
+  @State indicatorLeftMargin: number = 0;
+  @State indicatorWidth: number = 0;
+  private tabsWidth: number = 0;
+  private textInfos: [number, number][] = [];
+  private isStartAnimateTo: boolean = false;
+
+  aboutToAppear():void {
+    for (let i = 0; i < this.colorArray.length; i++) {
+      this.textInfos.push([0, 0]);
+    }
+  }
+
+  @Builder
+  tabBuilder(index: number, name: string) {
+    Column() {
+      Text(name)
+        .fontSize(16)
+        .fontColor(this.currentIndex === index ? '#007DFF' : '#182431')
+        .fontWeight(this.currentIndex === index ? 500 : 400)
+        .id(index.toString())
+        .onAreaChange((oldValue: Area, newValue: Area) => {
+          this.textInfos[index] = [newValue.globalPosition.x as number, newValue.width as number];
+          if (!this.isStartAnimateTo && this.currentIndex === index && this.tabsWidth > 0) {
+            this.setIndicatorAttr(this.textInfos[this.currentIndex][0], this.textInfos[this.currentIndex][1]);
+          }
+        })
+    }.width('100%')
+  }
+
+  build() {
+    Stack({ alignContent: Alignment.TopStart }) {
+      Tabs({ barPosition: BarPosition.Start }) {
+        ForEach(this.colorArray, (item: [string, string], index:number) => {
+          TabContent() {
+            Column().width('100%').height('100%').backgroundColor(item[1])
+          }.tabBar(this.tabBuilder(index, item[0]))
+        })
+      }
+      .onAreaChange((oldValue: Area, newValue: Area)=> {
+        this.tabsWidth = newValue.width as number;
+        if (!this.isStartAnimateTo) {
+          this.setIndicatorAttr(this.textInfos[this.currentIndex][0], this.textInfos[this.currentIndex][1]);
+        }
+      })
+      .barWidth('100%')
+      .barHeight(56)
+      .width('100%')
+      .height(296)
+      .backgroundColor('#F1F3F5')
+      .animationDuration(this.animationDuration)
+      .onChange((index: number) => {
+        this.currentIndex = index; // 监听索引index的变化，实现页签内容的切换。
+      })
+      .onAnimationStart((index: number, targetIndex: number, event: TabsAnimationEvent) => {
+        // 切换动画开始时触发该回调。下划线跟着页面一起滑动，同时宽度渐变。
+        this.currentIndex = targetIndex;
+        this.startAnimateTo(this.animationDuration, this.textInfos[targetIndex][0], this.textInfos[targetIndex][1]);
+      })
+      .onAnimationEnd((index: number, event: TabsAnimationEvent) => {
+        // 切换动画结束时触发该回调。下划线动画停止。
+        let currentIndicatorInfo = this.getCurrentIndicatorInfo(index, event);
+        this.startAnimateTo(0, currentIndicatorInfo.left, currentIndicatorInfo.width);
+      })
+      .onGestureSwipe((index: number, event: TabsAnimationEvent) => {
+        // 在页面跟手滑动过程中，逐帧触发该回调。
+        let currentIndicatorInfo = this.getCurrentIndicatorInfo(index, event);
+        this.currentIndex = currentIndicatorInfo.index;
+        this.setIndicatorAttr(currentIndicatorInfo.left, currentIndicatorInfo.width);
+      })
+
+      Column()
+        .height(2)
+        .width(this.indicatorWidth)
+        .margin({ start: LengthMetrics.vp(this.indicatorLeftMargin), top: LengthMetrics.vp(48) })
+        .backgroundColor('#007DFF')
+    }.width('100%')
+  }
+
+  private getCurrentIndicatorInfo(index: number, event: TabsAnimationEvent): Record<string, number> {
+    let nextIndex = index;
+    if (index > 0 && (CommonUtil.getIsRTL() ? event.currentOffset < 0 : event.currentOffset > 0)) {
+      nextIndex--;
+    } else if (index < this.textInfos.length - 1 &&
+        (CommonUtil.getIsRTL() ? event.currentOffset > 0 : event.currentOffset < 0)) {
+      nextIndex++;
+    }
+    let indexInfo = this.textInfos[index];
+    let nextIndexInfo = this.textInfos[nextIndex];
+    let swipeRatio = Math.abs(event.currentOffset / this.tabsWidth);
+    let currentIndex = swipeRatio > 0.5 ? nextIndex : index; // 页面滑动超过一半，tabBar切换到下一页。
+    let currentLeft = indexInfo[0] + (nextIndexInfo[0] - indexInfo[0]) * swipeRatio;
+    let currentWidth = indexInfo[1] + (nextIndexInfo[1] - indexInfo[1]) * swipeRatio;
+    return { 'index': currentIndex, 'left': currentLeft, 'width': currentWidth };
+  }
+
+  private startAnimateTo(duration: number, leftMargin: number, width: number) {
+    this.isStartAnimateTo = true;
+    this.getUIContext()?.animateTo({
+      duration: duration, // 动画时长
+      curve: Curve.Linear, // 动画曲线
+      iterations: 1, // 播放次数
+      playMode: PlayMode.Normal, // 动画模式
+      onFinish: () => {
+        this.isStartAnimateTo = false;
+        console.info('play end');
+      }
+    }, () => {
+      this.setIndicatorAttr(leftMargin, width);
+    });
+  }
+
+  private setIndicatorAttr(leftMargin: number, width: number) {
+    this.indicatorWidth = width;
+    if (CommonUtil.getIsRTL()) {
+      this.indicatorLeftMargin = this.tabsWidth - leftMargin - width;
+    } else {
+      this.indicatorLeftMargin = leftMargin;
+    }
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/-g2EutPPRJCeY1jMJCJzzw/zh-cn_image_0000002736434985.gif)
 
 ### 示例11（预加载子节点）
 
-本示例通过preloadItems接口实现了预加载指定子节点。
+本示例通过[preloadItems](ts-container-tabs.md#preloaditems12)接口实现了预加载指定子节点。
 
-```
-1. // xxx.ets
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// xxx.ets
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct TabsPreloadItems {
-7. @State currentIndex: number = 1;
-8. private tabsController: TabsController = new TabsController();
+@Entry
+@Component
+struct TabsPreloadItems {
+  @State currentIndex: number = 1;
+  private tabsController: TabsController = new TabsController();
 
-10. build() {
-11. Column() {
-12. Tabs({ index: this.currentIndex, controller: this.tabsController }) {
-13. TabContent() {
-14. MyComponent({ color: '#00CB87' })
-15. }.tabBar(SubTabBarStyle.of('green'))
+  build() {
+    Column() {
+      Tabs({ index: this.currentIndex, controller: this.tabsController }) {
+        TabContent() {
+          MyComponent({ color: '#00CB87' })
+        }.tabBar(SubTabBarStyle.of('green'))
 
-17. TabContent() {
-18. MyComponent({ color: '#007DFF' })
-19. }.tabBar(SubTabBarStyle.of('blue'))
+        TabContent() {
+          MyComponent({ color: '#007DFF' })
+        }.tabBar(SubTabBarStyle.of('blue'))
 
-21. TabContent() {
-22. MyComponent({ color: '#FFBF00' })
-23. }.tabBar(SubTabBarStyle.of('yellow'))
+        TabContent() {
+          MyComponent({ color: '#FFBF00' })
+        }.tabBar(SubTabBarStyle.of('yellow'))
 
-25. TabContent() {
-26. MyComponent({ color: '#E67C92' })
-27. }.tabBar(SubTabBarStyle.of('pink'))
-28. }
-29. .width(360)
-30. .height(296)
-31. .backgroundColor('#F1F3F5')
-32. .onChange((index: number) => {
-33. this.currentIndex = index;
-34. })
+        TabContent() {
+          MyComponent({ color: '#E67C92' })
+        }.tabBar(SubTabBarStyle.of('pink'))
+      }
+      .width(360)
+      .height(296)
+      .backgroundColor('#F1F3F5')
+      .onChange((index: number) => {
+        this.currentIndex = index;
+      })
 
-36. Button('preload items: [0, 2, 3]')
-37. .margin(5)
-38. .onClick(() => {
-39. // 预加载第0、2、3个子节点，提高滑动或点击切换至这些节点时的性能
-40. this.tabsController.preloadItems([0, 2, 3])
-41. .then(() => {
-42. console.info('preloadItems success.');
-43. })
-44. .catch((error: BusinessError) => {
-45. console.error('preloadItems failed, error code: ' + error.code + ', error message: ' + error.message);
-46. })
-47. })
-48. }
-49. }
-50. }
+      Button('preload items: [0, 2, 3]')
+        .margin(5)
+        .onClick(() => {
+          // 预加载第0、2、3个子节点，提高滑动或点击切换至这些节点时的性能
+          this.tabsController.preloadItems([0, 2, 3])
+            .then(() => {
+              console.info('preloadItems success.');
+            })
+            .catch((error: BusinessError) => {
+              console.error('preloadItems failed, error code: ' + error.code + ', error message: ' + error.message);
+            })
+        })
+    }
+  }
+}
 
-52. @Component
-53. struct MyComponent {
-54. private color: string = '';
+@Component
+struct MyComponent {
+  private color: string = '';
 
-56. aboutToAppear(): void {
-57. console.info('aboutToAppear backgroundColor:' + this.color);
-58. }
+  aboutToAppear(): void {
+    console.info('aboutToAppear backgroundColor:' + this.color);
+  }
 
-60. aboutToDisappear(): void {
-61. console.info('aboutToDisappear backgroundColor:' + this.color);
-62. }
+  aboutToDisappear(): void {
+    console.info('aboutToDisappear backgroundColor:' + this.color);
+  }
 
-64. build() {
-65. Column()
-66. .width('100%')
-67. .height('100%')
-68. .backgroundColor(this.color)
-69. }
-70. }
+  build() {
+    Column()
+      .width('100%')
+      .height('100%')
+      .backgroundColor(this.color)
+  }
+}
 ```
 
 ### 示例12（设置TabBar平移距离和不透明度）
 
-本示例通过setTabBarTranslate、setTabBarOpacity等接口设置了TabBar的平移距离和不透明度。
+本示例通过[setTabBarTranslate](ts-container-tabs.md#settabbartranslate13)、[setTabBarOpacity](ts-container-tabs.md#settabbaropacity13)等接口设置了TabBar的平移距离和不透明度。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TabsExample {
+  private controller: TabsController = new TabsController();
+
+  build() {
+    Column() {
+      Button('设置TabBar的平移距离').margin({ top: 20 })
+        .onClick(() => {
+          this.controller.setTabBarTranslate({ x: -20, y: -20 });
+        })
+
+      Button('设置TabBar的透明度').margin({ top: 20 })
+        .onClick(() => {
+          this.controller.setTabBarOpacity(0.5);
+        })
+
+      Tabs({ barPosition: BarPosition.End, controller: this.controller }) {
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#00CB87')
+        }.tabBar(BottomTabBarStyle.of($r('app.media.startIcon'), 'green'))
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#007DFF')
+        }.tabBar(BottomTabBarStyle.of($r('app.media.startIcon'), 'blue'))
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#FFBF00')
+        }.tabBar(BottomTabBarStyle.of($r('app.media.startIcon'), 'yellow'))
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#E67C92')
+        }.tabBar(BottomTabBarStyle.of($r('app.media.startIcon'), 'pink'))
+      }
+      .width(360)
+      .height(296)
+      .margin({ top: 20 })
+      .barBackgroundColor('#F1F3F5')
+    }
+    .width('100%')
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TabsExample {
-5. private controller: TabsController = new TabsController();
 
-7. build() {
-8. Column() {
-9. Button('设置TabBar的平移距离').margin({ top: 20 })
-10. .onClick(() => {
-11. this.controller.setTabBarTranslate({ x: -20, y: -20 });
-12. })
-
-14. Button('设置TabBar的透明度').margin({ top: 20 })
-15. .onClick(() => {
-16. this.controller.setTabBarOpacity(0.5);
-17. })
-
-19. Tabs({ barPosition: BarPosition.End, controller: this.controller }) {
-20. TabContent() {
-21. Column().width('100%').height('100%').backgroundColor('#00CB87')
-22. }.tabBar(BottomTabBarStyle.of($r('app.media.startIcon'), 'green'))
-
-24. TabContent() {
-25. Column().width('100%').height('100%').backgroundColor('#007DFF')
-26. }.tabBar(BottomTabBarStyle.of($r('app.media.startIcon'), 'blue'))
-
-28. TabContent() {
-29. Column().width('100%').height('100%').backgroundColor('#FFBF00')
-30. }.tabBar(BottomTabBarStyle.of($r('app.media.startIcon'), 'yellow'))
-
-32. TabContent() {
-33. Column().width('100%').height('100%').backgroundColor('#E67C92')
-34. }.tabBar(BottomTabBarStyle.of($r('app.media.startIcon'), 'pink'))
-35. }
-36. .width(360)
-37. .height(296)
-38. .margin({ top: 20 })
-39. .barBackgroundColor('#F1F3F5')
-40. }
-41. .width('100%')
-42. }
-43. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/-uHCv5MCQxSwlAXhK14N2w/zh-cn_image_0000002589326071.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/lE-9EVplRoO0M3jfiHwoVg/zh-cn_image_0000002706835838.gif)
 
 ### 示例13（页面懒加载和释放）
 
-本示例通过使用自定义TabBar与Swiper配合LazyForEach实现页面懒加载和释放。
+本示例通过使用自定义[TabBar](ts-container-tabcontent.md#tabbar)与[Swiper](ts-container-swiper.md)配合[LazyForEach](ts-rendering-control-lazyforeach.md)实现页面懒加载和释放。
 
+```ts
+// xxx.ets
+class MyDataSource implements IDataSource {
+  private list: number[] = [];
+
+  constructor(list: number[]) {
+    this.list = list;
+  }
+
+  totalCount(): number {
+    return this.list.length;
+  }
+
+  getData(index: number): number {
+    return this.list[index];
+  }
+
+  registerDataChangeListener(listener: DataChangeListener): void {
+  }
+
+  unregisterDataChangeListener() {
+  }
+}
+
+@Entry
+@Component
+struct TabsSwiperExample {
+  @State fontColor: string = '#182431';
+  @State selectedFontColor: string = '#007DFF';
+  @State currentIndex: number = 0;
+  private list: number[] = [];
+  private tabsController: TabsController = new TabsController();
+  private swiperController: SwiperController = new SwiperController();
+  private swiperData: MyDataSource = new MyDataSource([]);
+
+  aboutToAppear(): void {
+    for (let i = 0; i <= 9; i++) {
+      this.list.push(i);
+    }
+    this.swiperData = new MyDataSource(this.list);
+  }
+
+  @Builder tabBuilder(index: number, name: string) {
+    Column() {
+      Text(name)
+        .fontColor(this.currentIndex === index ? this.selectedFontColor : this.fontColor)
+        .fontSize(16)
+        .fontWeight(this.currentIndex === index ? 500 : 400)
+        .lineHeight(22)
+        .margin({ top: 17, bottom: 7 })
+      Divider()
+        .strokeWidth(2)
+        .color('#007DFF')
+        .opacity(this.currentIndex === index ? 1 : 0)
+    }.width('20%')
+  }
+
+  build() {
+    Column() {
+      Tabs({ barPosition: BarPosition.Start, controller: this.tabsController }) {
+        ForEach(this.list, (item: number) => {
+          TabContent().tabBar(this.tabBuilder(item, '页签 ' + this.list[item]))
+        })
+      }
+      .onTabBarClick((index: number) => {
+        this.currentIndex = index;
+        this.swiperController.changeIndex(index, true);
+      })
+      .barMode(BarMode.Scrollable)
+      .backgroundColor('#F1F3F5')
+      .height(56)
+      .width('100%')
+
+      Swiper(this.swiperController) {
+        LazyForEach(this.swiperData, (item: string) => {
+          Text(item.toString())
+            .onAppear(()=>{
+              console.info('onAppear ' + item.toString());
+            })
+            .onDisAppear(()=>{
+              console.info('onDisAppear ' + item.toString());
+            })
+            .width('100%')
+            .height('100%')
+            .backgroundColor(0xAFEEEE)
+            .textAlign(TextAlign.Center)
+            .fontSize(30)
+        }, (item: string) => item)
+      }
+      .loop(false)
+      .onChange((index: number) => {
+        this.currentIndex = index;
+      })
+      .onAnimationStart((index: number, targetIndex: number, extraInfo: SwiperAnimationEvent) => {
+        this.currentIndex = targetIndex;
+        this.tabsController.changeIndex(targetIndex);
+      })
+    }
+  }
+}
 ```
-1. // xxx.ets
-2. class MyDataSource implements IDataSource {
-3. private list: number[] = [];
 
-5. constructor(list: number[]) {
-6. this.list = list;
-7. }
-
-9. totalCount(): number {
-10. return this.list.length;
-11. }
-
-13. getData(index: number): number {
-14. return this.list[index];
-15. }
-
-17. registerDataChangeListener(listener: DataChangeListener): void {
-18. }
-
-20. unregisterDataChangeListener() {
-21. }
-22. }
-
-24. @Entry
-25. @Component
-26. struct TabsSwiperExample {
-27. @State fontColor: string = '#182431';
-28. @State selectedFontColor: string = '#007DFF';
-29. @State currentIndex: number = 0;
-30. private list: number[] = [];
-31. private tabsController: TabsController = new TabsController();
-32. private swiperController: SwiperController = new SwiperController();
-33. private swiperData: MyDataSource = new MyDataSource([]);
-
-35. aboutToAppear(): void {
-36. for (let i = 0; i <= 9; i++) {
-37. this.list.push(i);
-38. }
-39. this.swiperData = new MyDataSource(this.list);
-40. }
-
-42. @Builder tabBuilder(index: number, name: string) {
-43. Column() {
-44. Text(name)
-45. .fontColor(this.currentIndex === index ? this.selectedFontColor : this.fontColor)
-46. .fontSize(16)
-47. .fontWeight(this.currentIndex === index ? 500 : 400)
-48. .lineHeight(22)
-49. .margin({ top: 17, bottom: 7 })
-50. Divider()
-51. .strokeWidth(2)
-52. .color('#007DFF')
-53. .opacity(this.currentIndex === index ? 1 : 0)
-54. }.width('20%')
-55. }
-
-57. build() {
-58. Column() {
-59. Tabs({ barPosition: BarPosition.Start, controller: this.tabsController }) {
-60. ForEach(this.list, (item: number) => {
-61. TabContent().tabBar(this.tabBuilder(item, '页签 ' + this.list[item]))
-62. })
-63. }
-64. .onTabBarClick((index: number) => {
-65. this.currentIndex = index;
-66. this.swiperController.changeIndex(index, true);
-67. })
-68. .barMode(BarMode.Scrollable)
-69. .backgroundColor('#F1F3F5')
-70. .height(56)
-71. .width('100%')
-
-73. Swiper(this.swiperController) {
-74. LazyForEach(this.swiperData, (item: string) => {
-75. Text(item.toString())
-76. .onAppear(()=>{
-77. console.info('onAppear ' + item.toString());
-78. })
-79. .onDisAppear(()=>{
-80. console.info('onDisAppear ' + item.toString());
-81. })
-82. .width('100%')
-83. .height('100%')
-84. .backgroundColor(0xAFEEEE)
-85. .textAlign(TextAlign.Center)
-86. .fontSize(30)
-87. }, (item: string) => item)
-88. }
-89. .loop(false)
-90. .onChange((index: number) => {
-91. this.currentIndex = index;
-92. })
-93. .onAnimationStart((index: number, targetIndex: number, extraInfo: SwiperAnimationEvent) => {
-94. this.currentIndex = targetIndex;
-95. this.tabsController.changeIndex(targetIndex);
-96. })
-97. }
-98. }
-99. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/2i4VvEIkTuGUgV7RWLvdrw/zh-cn_image_0000002589246013.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/j5R0ZLWjQqi0iK7e05NZww/zh-cn_image_0000002736314943.gif)
 
 ### 示例14（设置翻页动效）
 
-本示例通过设置animationMode属性，实现了翻页的动效。
+本示例通过设置[animationMode](ts-container-tabs.md#animationmode12)属性，实现了翻页的动效。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TabsExample {
+  @State currentIndex: number = 0;
+  @State currentAnimationMode: AnimationMode = AnimationMode.CONTENT_FIRST;
+  private controller: TabsController = new TabsController();
+  private data: number[] = [];
+
+  aboutToAppear(): void {
+    for (let i = 0; i < 10; i++) {
+      this.data.push(i);
+    }
+  }
+
+  @Builder
+  tabBuilder(title: string, targetIndex: number) {
+    Column() {
+      Text(title).fontColor(this.currentIndex === targetIndex ? '#FF0000' : '#6B6B6B')
+    }.width('100%')
+    .height(50)
+    .justifyContent(FlexAlign.Center)
+  }
+
+  build() {
+    Column() {
+      Tabs({ barPosition: BarPosition.End, controller: this.controller, index: this.currentIndex }) {
+        ForEach(this.data, (item: number) => {
+          TabContent() {
+            Column() {
+              Text('' + item)
+            }.width('100%').height('100%').backgroundColor('#00CB87').justifyContent(FlexAlign.Center)
+          }.tabBar(this.tabBuilder('P' + item, item))
+        }, (item: number) => item.toString())
+      }
+      .barWidth(360)
+      .barHeight(60)
+      .animationMode(this.currentAnimationMode)
+      .animationDuration(4000)
+      .onChange((index: number) => {
+        this.currentIndex = index;
+      })
+      .width(360)
+      .height(120)
+      .backgroundColor('#F1F3F5')
+
+      Text('AnimationMode:' + AnimationMode[this.currentAnimationMode])
+
+      Button('AnimationMode').width('50%').margin({ top: 1 }).height(25)
+        .onClick(() => {
+          if (this.currentAnimationMode === AnimationMode.CONTENT_FIRST) {
+            this.currentAnimationMode = AnimationMode.ACTION_FIRST;
+          } else if (this.currentAnimationMode === AnimationMode.ACTION_FIRST) {
+            this.currentAnimationMode = AnimationMode.NO_ANIMATION;
+          } else if (this.currentAnimationMode === AnimationMode.NO_ANIMATION) {
+            this.currentAnimationMode = AnimationMode.CONTENT_FIRST_WITH_JUMP;
+          } else if (this.currentAnimationMode === AnimationMode.CONTENT_FIRST_WITH_JUMP) {
+            this.currentAnimationMode = AnimationMode.ACTION_FIRST_WITH_JUMP;
+          } else if (this.currentAnimationMode === AnimationMode.ACTION_FIRST_WITH_JUMP) {
+            this.currentAnimationMode = AnimationMode.CONTENT_FIRST;
+          }
+        })
+    }.width('100%')
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TabsExample {
-5. @State currentIndex: number = 0;
-6. @State currentAnimationMode: AnimationMode = AnimationMode.CONTENT_FIRST;
-7. private controller: TabsController = new TabsController();
-8. private data: number[] = [];
 
-10. aboutToAppear(): void {
-11. for (let i = 0; i < 10; i++) {
-12. this.data.push(i);
-13. }
-14. }
-
-16. @Builder
-17. tabBuilder(title: string,targetIndex: number) {
-18. Column(){
-19. Text(title).fontColor(this.currentIndex === targetIndex ? '#FF0000' : '#6B6B6B')
-20. }.width('100%')
-21. .height(50)
-22. .justifyContent(FlexAlign.Center)
-23. }
-
-25. build() {
-26. Column() {
-27. Tabs({ barPosition: BarPosition.End, controller: this.controller, index: this.currentIndex }) {
-28. ForEach(this.data, (item: string) => {
-29. TabContent() {
-30. Column(){
-31. Text('' + item)
-32. }.width('100%').height('100%').backgroundColor('#00CB87').justifyContent(FlexAlign.Center)
-33. }.tabBar(this.tabBuilder('P' + item, parseInt(item)))
-34. }, (item: string) => item)
-35. }
-36. .barWidth(360)
-37. .barHeight(60)
-38. .animationMode(this.currentAnimationMode)
-39. .animationDuration(4000)
-40. .onChange((index: number) => {
-41. this.currentIndex = index;
-42. })
-43. .width(360)
-44. .height(120)
-45. .backgroundColor('#F1F3F5')
-
-47. Text('AnimationMode:' + AnimationMode[this.currentAnimationMode])
-
-49. Button('AnimationMode').width('50%').margin({ top: 1 }).height(25)
-50. .onClick(()=>{
-51. if (this.currentAnimationMode === AnimationMode.CONTENT_FIRST) {
-52. this.currentAnimationMode = AnimationMode.ACTION_FIRST;
-53. } else if (this.currentAnimationMode === AnimationMode.ACTION_FIRST) {
-54. this.currentAnimationMode = AnimationMode.NO_ANIMATION;
-55. } else if (this.currentAnimationMode === AnimationMode.NO_ANIMATION) {
-56. this.currentAnimationMode = AnimationMode.CONTENT_FIRST_WITH_JUMP;
-57. } else if (this.currentAnimationMode === AnimationMode.CONTENT_FIRST_WITH_JUMP) {
-58. this.currentAnimationMode = AnimationMode.ACTION_FIRST_WITH_JUMP;
-59. } else if (this.currentAnimationMode === AnimationMode.ACTION_FIRST_WITH_JUMP) {
-60. this.currentAnimationMode = AnimationMode.CONTENT_FIRST;
-61. }
-62. })
-63. }.width('100%')
-64. }
-65. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/xehy5JVkTVOGmjx5QvggoQ/zh-cn_image_0000002558766204.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/wKwbsal0TfuqN9nVVTIdlw/zh-cn_image_0000002706675900.gif)
 
 ### 示例15（页签超出TabBar区域显示）
 
@@ -2550,91 +2643,91 @@ PhonePC/2in1TabletTVWearable
 
 从API version 15开始，在TabsOptions中新增了barModifier接口。
 
+```ts
+// xxx.ets
+import { CommonModifier } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct TabsBarModifierExample {
+  @State selectedIndex: number = 2;
+  @State currentIndex: number = 2;
+  @State isClip: boolean = false;
+  @State tabBarModifier: CommonModifier = new CommonModifier();
+  private controller: TabsController = new TabsController();
+
+  aboutToAppear(): void {
+    this.tabBarModifier.clip(this.isClip);
+  }
+
+  @Builder
+  tabBuilder(title: string, targetIndex: number) {
+    Column() {
+      Image($r('app.media.startIcon')).width(30).height(30)
+      Text(title).fontColor(this.selectedIndex === targetIndex ? '#1698CE' : '#6B6B6B')
+    }.width('100%')
+    .height(50)
+    .justifyContent(FlexAlign.Center)
+    .offset({ y: this.selectedIndex === targetIndex ? -15 : 0 })
+  }
+
+  build() {
+    Column() {
+      Tabs({
+        barPosition: BarPosition.End,
+        index: this.currentIndex,
+        controller: this.controller,
+        barModifier: this.tabBarModifier
+      }) {
+        TabContent() {
+          Column() {
+            Text('首页的内容')
+          }.width('100%').height('100%').backgroundColor('#00CB87').justifyContent(FlexAlign.Center)
+        }.tabBar(this.tabBuilder('首页', 0))
+
+        TabContent() {
+          Column() {
+            Text('发现的内容')
+          }.width('100%').height('100%').backgroundColor('#007DFF').justifyContent(FlexAlign.Center)
+        }.tabBar(this.tabBuilder('发现', 1))
+
+        TabContent() {
+          Column() {
+            Text('推荐的内容')
+          }.width('100%').height('100%').backgroundColor('#FFBF00').justifyContent(FlexAlign.Center)
+        }.tabBar(this.tabBuilder('推荐', 2))
+
+        TabContent() {
+          Column() {
+            Text('我的内容')
+          }.width('100%').height('100%').backgroundColor('#E67C92').justifyContent(FlexAlign.Center)
+        }.tabBar(this.tabBuilder('我的', 3))
+      }
+      .vertical(false)
+      .barMode(BarMode.Fixed)
+      .barWidth(340)
+      .barHeight(60)
+      .onChange((index: number) => {
+        this.currentIndex = index;
+        this.selectedIndex = index;
+      })
+      .width(340)
+      .height(400)
+      .backgroundColor('#F1F3F5')
+      .scrollable(true)
+
+      Button('isClip: ' + this.isClip)
+        .margin({ top: 30 })
+        .onClick(() => {
+          this.isClip = !this.isClip;
+          this.tabBarModifier.clip(this.isClip);
+        })
+    }.width('100%')
+  }
+}
 ```
-1. // xxx.ets
-2. import { CommonModifier } from '@kit.ArkUI';
 
-4. @Entry
-5. @Component
-6. struct TabsBarModifierExample {
-7. @State selectedIndex: number = 2;
-8. @State currentIndex: number = 2;
-9. @State isClip: boolean = false;
-10. @State tabBarModifier: CommonModifier = new CommonModifier();
-11. private controller: TabsController = new TabsController();
-
-13. aboutToAppear(): void {
-14. this.tabBarModifier.clip(this.isClip);
-15. }
-
-17. @Builder
-18. tabBuilder(title: string, targetIndex: number) {
-19. Column() {
-20. Image($r('app.media.startIcon')).width(30).height(30)
-21. Text(title).fontColor(this.selectedIndex === targetIndex ? '#1698CE' : '#6B6B6B')
-22. }.width('100%')
-23. .height(50)
-24. .justifyContent(FlexAlign.Center)
-25. .offset({ y: this.selectedIndex === targetIndex ? -15 : 0 })
-26. }
-
-28. build() {
-29. Column() {
-30. Tabs({
-31. barPosition: BarPosition.End,
-32. index: this.currentIndex,
-33. controller: this.controller,
-34. barModifier: this.tabBarModifier
-35. }) {
-36. TabContent() {
-37. Column() {
-38. Text('首页的内容')
-39. }.width('100%').height('100%').backgroundColor('#00CB87').justifyContent(FlexAlign.Center)
-40. }.tabBar(this.tabBuilder('首页', 0))
-
-42. TabContent() {
-43. Column() {
-44. Text('发现的内容')
-45. }.width('100%').height('100%').backgroundColor('#007DFF').justifyContent(FlexAlign.Center)
-46. }.tabBar(this.tabBuilder('发现', 1))
-
-48. TabContent() {
-49. Column() {
-50. Text('推荐的内容')
-51. }.width('100%').height('100%').backgroundColor('#FFBF00').justifyContent(FlexAlign.Center)
-52. }.tabBar(this.tabBuilder('推荐', 2))
-
-54. TabContent() {
-55. Column() {
-56. Text('我的内容')
-57. }.width('100%').height('100%').backgroundColor('#E67C92').justifyContent(FlexAlign.Center)
-58. }.tabBar(this.tabBuilder('我的', 3))
-59. }
-60. .vertical(false)
-61. .barMode(BarMode.Fixed)
-62. .barWidth(340)
-63. .barHeight(60)
-64. .onChange((index: number) => {
-65. this.currentIndex = index;
-66. this.selectedIndex = index;
-67. })
-68. .width(340)
-69. .height(400)
-70. .backgroundColor('#F1F3F5')
-71. .scrollable(true)
-
-73. Button('isClip: ' + this.isClip)
-74. .margin({ top: 30 })
-75. .onClick(() => {
-76. this.isClip = !this.isClip;
-77. this.tabBarModifier.clip(this.isClip);
-78. })
-79. }.width('100%')
-80. }
-81. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/kOtPEmL8Qx-T3jQAD7NBMQ/zh-cn_image_0000002558606546.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/kAgNj-zmQ46hNDwKENdg9Q/zh-cn_image_0000002736434987.gif)
 
 ### 示例16（页签对齐布局）
 
@@ -2642,104 +2735,104 @@ PhonePC/2in1TabletTVWearable
 
 从API version 15开始，在TabsOptions中新增了barModifier接口。
 
+```ts
+// xxx.ets
+import { CommonModifier } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct TabsBarModifierExample {
+  private controller: TabsController = new TabsController();
+  @State text: string = '文本';
+  @State isVertical: boolean = false;
+  @State tabBarModifier: CommonModifier = new CommonModifier();
+
+  build() {
+    Column() {
+      Row() {
+        Button('Alignment.Start ')
+          .width('47%')
+          .height(50)
+          .margin({ top: 5 })
+          .onClick((event?: ClickEvent) => {
+            this.tabBarModifier.align(Alignment.Start);
+          })
+          .margin({ right: '6%', bottom: '12vp' })
+        Button('Alignment.End')
+          .width('47%')
+          .height(50)
+          .margin({ top: 5 })
+          .onClick((event?: ClickEvent) => {
+            this.tabBarModifier.align(Alignment.End);
+          })
+          .margin({ bottom: '12vp' })
+      }
+
+      Row() {
+        Button('Alignment.Center')
+          .width('47%')
+          .height(50)
+          .margin({ top: 5 })
+          .onClick((event?: ClickEvent) => {
+            this.tabBarModifier.align(Alignment.Center);
+          })
+          .margin({ right: '6%', bottom: '12vp' })
+        Button('isVertical: ' + this.isVertical)
+          .width('47%')
+          .height(50)
+          .margin({ top: 5 })
+          .onClick((event?: ClickEvent) => {
+            this.isVertical = !this.isVertical;
+          })
+          .margin({ bottom: '12vp' })
+      }
+
+      Row() {
+        Button('Alignment.Top')
+          .width('47%')
+          .height(50)
+          .margin({ top: 5 })
+          .onClick((event?: ClickEvent) => {
+            this.tabBarModifier.align(Alignment.Top);
+          })
+          .margin({ right: '6%', bottom: '12vp' })
+        Button('Alignment.Bottom')
+          .width('47%')
+          .height(50)
+          .margin({ top: 5 })
+          .onClick((event?: ClickEvent) => {
+            this.tabBarModifier.align(Alignment.Bottom);
+          })
+          .margin({ bottom: '12vp' })
+      }
+
+      Tabs({ barPosition: BarPosition.End, controller: this.controller, barModifier: this.tabBarModifier }) {
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Pink)
+        }.tabBar(SubTabBarStyle.of(this.text))
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Green)
+        }.tabBar(SubTabBarStyle.of(this.text))
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Blue)
+        }.tabBar(SubTabBarStyle.of(this.text))
+      }
+      .vertical(this.isVertical)
+      .height('60%')
+      .backgroundColor(0xf1f3f5)
+      .barMode(BarMode.Scrollable)
+    }
+    .width('100%')
+    .height(500)
+    .margin({ top: 5 })
+    .padding('24vp')
+  }
+}
 ```
-1. // xxx.ets
-2. import { CommonModifier } from '@kit.ArkUI';
 
-4. @Entry
-5. @Component
-6. struct TabsBarModifierExample {
-7. private controller: TabsController = new TabsController();
-8. @State text: string = '文本';
-9. @State isVertical: boolean = false;
-10. @State tabBarModifier: CommonModifier = new CommonModifier();
-
-12. build() {
-13. Column() {
-14. Row() {
-15. Button('Alignment.Start ')
-16. .width('47%')
-17. .height(50)
-18. .margin({ top: 5 })
-19. .onClick((event?: ClickEvent) => {
-20. this.tabBarModifier.align(Alignment.Start);
-21. })
-22. .margin({ right: '6%', bottom: '12vp' })
-23. Button('Alignment.End')
-24. .width('47%')
-25. .height(50)
-26. .margin({ top: 5 })
-27. .onClick((event?: ClickEvent) => {
-28. this.tabBarModifier.align(Alignment.End);
-29. })
-30. .margin({ bottom: '12vp' })
-31. }
-
-33. Row() {
-34. Button('Alignment.Center')
-35. .width('47%')
-36. .height(50)
-37. .margin({ top: 5 })
-38. .onClick((event?: ClickEvent) => {
-39. this.tabBarModifier.align(Alignment.Center);
-40. })
-41. .margin({ right: '6%', bottom: '12vp' })
-42. Button('isVertical: ' + this.isVertical)
-43. .width('47%')
-44. .height(50)
-45. .margin({ top: 5 })
-46. .onClick((event?: ClickEvent) => {
-47. this.isVertical = !this.isVertical;
-48. })
-49. .margin({ bottom: '12vp' })
-50. }
-
-52. Row() {
-53. Button('Alignment.Top')
-54. .width('47%')
-55. .height(50)
-56. .margin({ top: 5 })
-57. .onClick((event?: ClickEvent) => {
-58. this.tabBarModifier.align(Alignment.Top);
-59. })
-60. .margin({ right: '6%', bottom: '12vp' })
-61. Button('Alignment.Bottom')
-62. .width('47%')
-63. .height(50)
-64. .margin({ top: 5 })
-65. .onClick((event?: ClickEvent) => {
-66. this.tabBarModifier.align(Alignment.Bottom);
-67. })
-68. .margin({ bottom: '12vp' })
-69. }
-
-71. Tabs({ barPosition: BarPosition.End, controller: this.controller, barModifier: this.tabBarModifier }) {
-72. TabContent() {
-73. Column().width('100%').height('100%').backgroundColor(Color.Pink)
-74. }.tabBar(SubTabBarStyle.of(this.text))
-
-76. TabContent() {
-77. Column().width('100%').height('100%').backgroundColor(Color.Green)
-78. }.tabBar(SubTabBarStyle.of(this.text))
-
-80. TabContent() {
-81. Column().width('100%').height('100%').backgroundColor(Color.Blue)
-82. }.tabBar(SubTabBarStyle.of(this.text))
-83. }
-84. .vertical(this.isVertical)
-85. .height('60%')
-86. .backgroundColor(0xf1f3f5)
-87. .barMode(BarMode.Scrollable)
-88. }
-89. .width('100%')
-90. .height(500)
-91. .margin({ top: 5 })
-92. .padding('24vp')
-93. }
-94. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/mYn9eSCHTEaTRzu1ggvQTQ/zh-cn_image_0000002589326073.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/mM0xEhC2QKOedifW2KegZA/zh-cn_image_0000002706835840.gif)
 
 ### 示例17（Tabs与TabBar同步切换）
 
@@ -2747,77 +2840,77 @@ PhonePC/2in1TabletTVWearable
 
 从API version 18开始，新增了onSelected接口。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TabsExample {
+  @State fontColor: string = '#182431';
+  @State selectedFontColor: string = '#007DFF';
+  @State currentIndex: number = 0;
+  @State selectedIndex: number = 0;
+  private controller: TabsController = new TabsController();
+
+  @Builder tabBuilder(index: number, name: string) {
+    Column() {
+      Text(name)
+        .fontColor(this.selectedIndex === index ? this.selectedFontColor : this.fontColor)
+        .fontSize(16)
+        .fontWeight(this.selectedIndex === index ? 500 : 400)
+        .lineHeight(22)
+        .margin({ top: 17, bottom: 7 })
+      Divider()
+        .strokeWidth(2)
+        .color('#007DFF')
+        .opacity(this.selectedIndex === index ? 1 : 0)
+    }.width('100%')
+  }
+
+  build() {
+    Column() {
+      Tabs({ barPosition: BarPosition.Start, index: this.currentIndex, controller: this.controller }) {
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#00CB87')
+        }.tabBar(this.tabBuilder(0, 'green'))
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#007DFF')
+        }.tabBar(this.tabBuilder(1, 'blue'))
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#FFBF00')
+        }.tabBar(this.tabBuilder(2, 'yellow'))
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#E67C92')
+        }.tabBar(this.tabBuilder(3, 'pink'))
+      }
+      .vertical(false)
+      .barMode(BarMode.Fixed)
+      .barWidth(360)
+      .barHeight(56)
+      .animationDuration(400)
+      .animationMode(AnimationMode.CONTENT_FIRST)
+      .onChange((index: number) => {
+        console.info('onChange index:' + index);
+        this.currentIndex = index;
+      })
+      .onSelected((index: number) => {
+        console.info('onSelected index:' + index);
+        this.selectedIndex = index;
+      })
+      .onUnselected((index: number) => {
+        console.info('onUnselected index:' + index);
+      })
+      .width('100%')
+      .height('100%')
+      .backgroundColor('#F1F3F5')
+    }.width('100%')
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TabsExample {
-5. @State fontColor: string = '#182431';
-6. @State selectedFontColor: string = '#007DFF';
-7. @State currentIndex: number = 0;
-8. @State selectedIndex: number = 0;
-9. private controller: TabsController = new TabsController();
 
-11. @Builder tabBuilder(index: number, name: string) {
-12. Column() {
-13. Text(name)
-14. .fontColor(this.selectedIndex === index ? this.selectedFontColor : this.fontColor)
-15. .fontSize(16)
-16. .fontWeight(this.selectedIndex === index ? 500 : 400)
-17. .lineHeight(22)
-18. .margin({ top: 17, bottom: 7 })
-19. Divider()
-20. .strokeWidth(2)
-21. .color('#007DFF')
-22. .opacity(this.selectedIndex === index ? 1 : 0)
-23. }.width('100%')
-24. }
-
-26. build() {
-27. Column() {
-28. Tabs({ barPosition: BarPosition.Start, index: this.currentIndex, controller: this.controller }) {
-29. TabContent() {
-30. Column().width('100%').height('100%').backgroundColor('#00CB87')
-31. }.tabBar(this.tabBuilder(0, 'green'))
-
-33. TabContent() {
-34. Column().width('100%').height('100%').backgroundColor('#007DFF')
-35. }.tabBar(this.tabBuilder(1, 'blue'))
-
-37. TabContent() {
-38. Column().width('100%').height('100%').backgroundColor('#FFBF00')
-39. }.tabBar(this.tabBuilder(2, 'yellow'))
-
-41. TabContent() {
-42. Column().width('100%').height('100%').backgroundColor('#E67C92')
-43. }.tabBar(this.tabBuilder(3, 'pink'))
-44. }
-45. .vertical(false)
-46. .barMode(BarMode.Fixed)
-47. .barWidth(360)
-48. .barHeight(56)
-49. .animationDuration(400)
-50. .animationMode(AnimationMode.CONTENT_FIRST)
-51. .onChange((index: number) => {
-52. console.info('onChange index:' + index);
-53. this.currentIndex = index;
-54. })
-55. .onSelected((index: number) => {
-56. console.info('onSelected index:' + index);
-57. this.selectedIndex = index;
-58. })
-59. .onUnselected((index: number) => {
-60. console.info('onUnselected index:' + index);
-61. })
-62. .width('100%')
-63. .height('100%')
-64. .backgroundColor('#F1F3F5')
-65. }.width('100%')
-66. }
-67. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/8R-FnXRaSSK6tMh4TlbAfw/zh-cn_image_0000002589246015.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/29CysppARbSDsHjK5tLVYQ/zh-cn_image_0000002736314945.gif)
 
 ### 示例18（释放Tabs子组件）
 
@@ -2825,184 +2918,184 @@ PhonePC/2in1TabletTVWearable
 
 从API version 19开始，新增了cachedMaxCount接口。
 
-```
-1. @Entry
-2. @Component
-3. struct TabsExample {
-4. build() {
-5. Tabs() {
-6. TabContent() {
-7. MyComponent({ color: '#00CB87' })
-8. }.tabBar(SubTabBarStyle.of('green'))
+```ts
+@Entry
+@Component
+struct TabsExample {
+  build() {
+    Tabs() {
+      TabContent() {
+        MyComponent({ color: '#00CB87' })
+      }.tabBar(SubTabBarStyle.of('green'))
 
-10. TabContent() {
-11. MyComponent({ color: '#007DFF' })
-12. }.tabBar(SubTabBarStyle.of('blue'))
+      TabContent() {
+        MyComponent({ color: '#007DFF' })
+      }.tabBar(SubTabBarStyle.of('blue'))
 
-14. TabContent() {
-15. MyComponent({ color: '#FFBF00' })
-16. }.tabBar(SubTabBarStyle.of('yellow'))
+      TabContent() {
+        MyComponent({ color: '#FFBF00' })
+      }.tabBar(SubTabBarStyle.of('yellow'))
 
-18. TabContent() {
-19. MyComponent({ color: '#E67C92' })
-20. }.tabBar(SubTabBarStyle.of('pink'))
-21. }
-22. .width(360)
-23. .height(296)
-24. .backgroundColor('#F1F3F5')
-25. .cachedMaxCount(1, TabsCacheMode.CACHE_BOTH_SIDE)
-26. }
-27. }
+      TabContent() {
+        MyComponent({ color: '#E67C92' })
+      }.tabBar(SubTabBarStyle.of('pink'))
+    }
+    .width(360)
+    .height(296)
+    .backgroundColor('#F1F3F5')
+    .cachedMaxCount(1, TabsCacheMode.CACHE_BOTH_SIDE)
+  }
+}
 
-29. @Component
-30. struct MyComponent {
-31. private color: string = '';
+@Component
+struct MyComponent {
+  private color: string = '';
 
-33. aboutToAppear(): void {
-34. console.info('aboutToAppear backgroundColor:' + this.color);
-35. }
+  aboutToAppear(): void {
+    console.info('aboutToAppear backgroundColor:' + this.color);
+  }
 
-37. aboutToDisappear(): void {
-38. console.info('aboutToDisappear backgroundColor:' + this.color);
-39. }
+  aboutToDisappear(): void {
+    console.info('aboutToDisappear backgroundColor:' + this.color);
+  }
 
-41. build() {
-42. Column()
-43. .width('100%')
-44. .height('100%')
-45. .backgroundColor(this.color)
-46. }
-47. }
+  build() {
+    Column()
+      .width('100%')
+      .height('100%')
+      .backgroundColor(this.color)
+  }
+}
 ```
 
 ### 示例19（设置TabBar背景模糊效果）
 
-该示例分别通过[barBackgroundBlurStyle](ts-container-tabs.md#barbackgroundblurstyle18)和[barBackgroundEffect](ts-container-tabs.md#barbackgroundeffect18)设置TabsBar页签栏的背景模糊样式和效果。
+该示例分别通过[barBackgroundBlurStyle](ts-container-tabs.md#barbackgroundblurstyle18)和[barBackgroundEffect](ts-container-tabs.md#barbackgroundeffect18)设置TabBar页签栏的背景模糊样式和效果。
 
 从API version 18开始，新增了barBackgroundBlurStyle和barBackgroundEffect接口。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TabsExample {
+  build() {
+    Column() {
+      // barBackgroundBlurStyle 可以通过枚举值的方式设置模糊参数
+      Stack() {
+        Image($r('app.media.startIcon'))
+        Tabs() {
+          TabContent() {
+            Column().width('100%').height('100%').backgroundColor('#00CB87')
+          }.tabBar('green')
+
+          TabContent() {
+            Column().width('100%').height('100%').backgroundColor('#007DFF')
+          }.tabBar('blue')
+
+          TabContent() {
+            Column().width('100%').height('100%').backgroundColor('#FFBF00')
+          }.tabBar('yellow')
+
+          TabContent() {
+            Column().width('100%').height('100%').backgroundColor('#E67C92')
+          }.tabBar('pink')
+        }
+        .barBackgroundBlurStyle(BlurStyle.COMPONENT_THICK,
+          { colorMode: ThemeColorMode.LIGHT, adaptiveColor: AdaptiveColor.DEFAULT, scale: 1.0 })
+      }
+      .width(300)
+      .height(300)
+      .margin(10)
+
+      // barBackgroundEffect 可以自定义设置tabBar页签栏的模糊半径、亮度、饱和度等参数
+      Stack() {
+        Image($r('app.media.startIcon'))
+        Tabs() {
+          TabContent() {
+            Column().width('100%').height('100%').backgroundColor('#00CB87')
+          }.tabBar('green')
+
+          TabContent() {
+            Column().width('100%').height('100%').backgroundColor('#007DFF')
+          }.tabBar('blue')
+
+          TabContent() {
+            Column().width('100%').height('100%').backgroundColor('#FFBF00')
+          }.tabBar('yellow')
+
+          TabContent() {
+            Column().width('100%').height('100%').backgroundColor('#E67C92')
+          }.tabBar('pink')
+        }
+        .barBackgroundEffect({ radius: 20, brightness: 0.6, saturation: 15 })
+      }
+      .width(300)
+      .height(300)
+      .margin(10)
+    }
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TabsExample {
-5. build() {
-6. Column() {
-7. // barBackgroundBlurStyle 可以通过枚举值的方式设置模糊参数
-8. Stack() {
-9. Image($r('app.media.startIcon'))
-10. Tabs() {
-11. TabContent() {
-12. Column().width('100%').height('100%').backgroundColor('#00CB87')
-13. }.tabBar('green')
 
-15. TabContent() {
-16. Column().width('100%').height('100%').backgroundColor('#007DFF')
-17. }.tabBar('blue')
-
-19. TabContent() {
-20. Column().width('100%').height('100%').backgroundColor('#FFBF00')
-21. }.tabBar('yellow')
-
-23. TabContent() {
-24. Column().width('100%').height('100%').backgroundColor('#E67C92')
-25. }.tabBar('pink')
-26. }
-27. .barBackgroundBlurStyle(BlurStyle.COMPONENT_THICK,
-28. { colorMode: ThemeColorMode.LIGHT, adaptiveColor: AdaptiveColor.DEFAULT, scale: 1.0 })
-29. }
-30. .width(300)
-31. .height(300)
-32. .margin(10)
-
-34. // barBackgroundEffect 可以自定义设置tabBar页签栏的模糊半径、亮度、饱和度等参数
-35. Stack() {
-36. Image($r('app.media.startIcon'))
-37. Tabs() {
-38. TabContent() {
-39. Column().width('100%').height('100%').backgroundColor('#00CB87')
-40. }.tabBar('green')
-
-42. TabContent() {
-43. Column().width('100%').height('100%').backgroundColor('#007DFF')
-44. }.tabBar('blue')
-
-46. TabContent() {
-47. Column().width('100%').height('100%').backgroundColor('#FFBF00')
-48. }.tabBar('yellow')
-
-50. TabContent() {
-51. Column().width('100%').height('100%').backgroundColor('#E67C92')
-52. }.tabBar('pink')
-53. }
-54. .barBackgroundEffect({ radius: 20, brightness: 0.6, saturation: 15 })
-55. }
-56. .width(300)
-57. .height(300)
-58. .margin(10)
-59. }
-60. }
-61. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/RXo9PudiSziyzlIv6m60iQ/zh-cn_image_0000002558766206.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/kKhjHCuYRXSK7piQxoQKaA/zh-cn_image_0000002706675902.png)
 
 ### 示例20（设置边缘滑动效果）
 
 该示例通过[edgeEffect](ts-container-tabs.md#edgeeffect12)实现了不同的边缘回弹效果。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TabsExample {
+  @State edgeEffect: EdgeEffect = EdgeEffect.Spring;
+
+  build() {
+    Column() {
+      Tabs() {
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#00CB87')
+        }.tabBar('green')
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#007DFF')
+        }.tabBar('blue')
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#FFBF00')
+        }.tabBar('yellow')
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#E67C92')
+        }.tabBar('pink')
+      }
+      .width(360)
+      .height(296)
+      .margin({ top: 52 })
+      .backgroundColor('#F1F3F5')
+      .edgeEffect(this.edgeEffect)
+
+      Button('EdgeEffect.Spring').width('50%').margin({ top: 20 })
+        .onClick(() => {
+          this.edgeEffect = EdgeEffect.Spring;
+        })
+
+      Button('EdgeEffect.Fade').width('50%').margin({ top: 20 })
+        .onClick(() => {
+          this.edgeEffect = EdgeEffect.Fade;
+        })
+
+      Button('EdgeEffect.None').width('50%').margin({ top: 20 })
+        .onClick(() => {
+          this.edgeEffect = EdgeEffect.None;
+        })
+    }.width('100%')
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TabsExample {
-5. @State edgeEffect: EdgeEffect = EdgeEffect.Spring;
 
-7. build() {
-8. Column() {
-9. Tabs() {
-10. TabContent() {
-11. Column().width('100%').height('100%').backgroundColor('#00CB87')
-12. }.tabBar('green')
-
-14. TabContent() {
-15. Column().width('100%').height('100%').backgroundColor('#007DFF')
-16. }.tabBar('blue')
-
-18. TabContent() {
-19. Column().width('100%').height('100%').backgroundColor('#FFBF00')
-20. }.tabBar('yellow')
-
-22. TabContent() {
-23. Column().width('100%').height('100%').backgroundColor('#E67C92')
-24. }.tabBar('pink')
-25. }
-26. .width(360)
-27. .height(296)
-28. .margin({ top: 52 })
-29. .backgroundColor('#F1F3F5')
-30. .edgeEffect(this.edgeEffect)
-
-32. Button('EdgeEffect.Spring').width('50%').margin({ top: 20 })
-33. .onClick(() => {
-34. this.edgeEffect = EdgeEffect.Spring;
-35. })
-
-37. Button('EdgeEffect.Fade').width('50%').margin({ top: 20 })
-38. .onClick(() => {
-39. this.edgeEffect = EdgeEffect.Fade;
-40. })
-
-42. Button('EdgeEffect.None').width('50%').margin({ top: 20 })
-43. .onClick(() => {
-44. this.edgeEffect = EdgeEffect.None;
-45. })
-46. }.width('100%')
-47. }
-48. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/fZdpy-mqQ9u9x6xYXcNvPg/zh-cn_image_0000002558606548.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/lNodONB3T_2ZMpb3USkDSA/zh-cn_image_0000002736434989.gif)
 
 ### 示例21（Tabs设置翻页动画曲线）
 
@@ -3010,91 +3103,91 @@ PhonePC/2in1TabletTVWearable
 
 从API version 20开始，新增了animationCurve接口。
 
+```ts
+import { curves } from '@kit.ArkUI';
+
+interface TabsItemType {
+  text: string,
+  backgroundColor: ResourceColor
+}
+
+@Entry
+@Component
+struct TabsExample {
+  private tabsController: TabsController = new TabsController();
+  private curves: (Curve | ICurve) [] = [
+    curves.interpolatingSpring(-1, 1, 328, 34),
+    curves.springCurve(10, 1, 228, 30),
+    curves.cubicBezierCurve(0.25, 0.1, 0.25, 1.0),
+  ];
+  private curveNames: string[] = [
+    'interpolatingSpring(-1, 1, 328, 34)',
+    'springCurve(10, 1, 228, 30)',
+    'cubicBezierCurve(0.25, 0.1, 0.25, 1.0)'
+  ];
+  @State curveIndex: number = 0;
+  private data: TabsItemType[] = [
+    { text: '1', backgroundColor: '#004AAF' },
+    { text: '2', backgroundColor: '#2787D9' },
+    { text: '3', backgroundColor: '#D5D5D5' },
+    { text: '4', backgroundColor: '#707070' },
+    { text: '5', backgroundColor: '#F7F7F7' },
+  ];
+  @State duration: number = 0;
+
+  build() {
+    Column({ space: 2 }) {
+      Tabs({ controller: this.tabsController }) {
+        ForEach(this.data, (item: TabsItemType, index: number) => {
+          TabContent() {
+          }
+          .tabBar(item.text)
+          .backgroundColor(item.backgroundColor)
+        })
+      }
+      .backgroundColor(0xf1f3f5)
+      .width('100%')
+      .height(500)
+      .animationCurve(this.curves[this.curveIndex])
+      .animationDuration(this.duration)
+
+      Column({ space: 2 }) {
+        Text('Curve:' + this.curveNames[this.curveIndex])
+        Row({ space: 2 }) {
+          // 切换动效曲线
+          Button('++').onClick(() => {
+            this.curveIndex = (this.curveIndex + 1) % this.curves.length;
+          })
+          Button('reset').onClick(() => {
+            this.curveIndex = 0;
+          })
+        }
+      }
+      .margin({ left: '10vp' })
+      .width('100%')
+
+      Row({ space: 2 }) {
+        Text('Duration:' + this.duration)
+        // 增加动效时长
+        Button('+100').onClick(() => {
+          this.duration = (this.duration + 100) % 10000;
+        })
+        Button('+1000').onClick(() => {
+          this.duration = (this.duration + 1000) % 10000;
+        })
+        Button('reset').onClick(() => {
+          this.duration = 0;
+        })
+      }
+      .margin({ left: '10vp' })
+      .width('100%')
+    }
+    .margin('10vp')
+  }
+}
 ```
-1. import { curves } from '@kit.ArkUI';
 
-3. interface TabsItemType {
-4. text: string,
-5. backgroundColor: ResourceColor
-6. }
-
-8. @Entry
-9. @Component
-10. struct TabsExample {
-11. private tabsController: TabsController = new TabsController();
-12. private curves: (Curve | ICurve) [] = [
-13. curves.interpolatingSpring(-1, 1, 328, 34),
-14. curves.springCurve(10, 1, 228, 30),
-15. curves.cubicBezierCurve(0.25, 0.1, 0.25, 1.0),
-16. ];
-17. private curveNames: string[] = [
-18. 'interpolatingSpring(-1, 1, 328, 34)',
-19. 'springCurve(10, 1, 228, 30)',
-20. 'cubicBezierCurve(0.25, 0.1, 0.25, 1.0)'
-21. ];
-22. @State curveIndex: number = 0;
-23. private data: TabsItemType[] = [
-24. { text: '1', backgroundColor: '#004AAF' },
-25. { text: '2', backgroundColor: '#2787D9' },
-26. { text: '3', backgroundColor: '#D5D5D5' },
-27. { text: '4', backgroundColor: '#707070' },
-28. { text: '5', backgroundColor: '#F7F7F7' },
-29. ];
-30. @State duration: number = 0;
-
-32. build() {
-33. Column({ space: 2 }) {
-34. Tabs({ controller: this.tabsController }) {
-35. ForEach(this.data, (item: TabsItemType, index: number) => {
-36. TabContent() {
-37. }
-38. .tabBar(item.text)
-39. .backgroundColor(item.backgroundColor)
-40. })
-41. }
-42. .backgroundColor(0xf1f3f5)
-43. .width('100%')
-44. .height(500)
-45. .animationCurve(this.curves[this.curveIndex])
-46. .animationDuration(this.duration)
-
-48. Column({ space: 2 }) {
-49. Text('Curve:' + this.curveNames[this.curveIndex])
-50. Row({ space: 2 }) {
-51. // 切换动效曲线
-52. Button('++').onClick(() => {
-53. this.curveIndex = (this.curveIndex + 1) % this.curves.length;
-54. })
-55. Button('reset').onClick(() => {
-56. this.curveIndex = 0;
-57. })
-58. }
-59. }
-60. .margin({ left: '10vp' })
-61. .width('100%')
-
-63. Row({ space: 2 }) {
-64. Text('Duration:' + this.duration)
-65. // 增加动效时长
-66. Button('+100').onClick(() => {
-67. this.duration = (this.duration + 100) % 10000;
-68. })
-69. Button('+1000').onClick(() => {
-70. this.duration = (this.duration + 1000) % 10000;
-71. })
-72. Button('reset').onClick(() => {
-73. this.duration = 0;
-74. })
-75. }
-76. .margin({ left: '10vp' })
-77. .width('100%')
-78. }
-79. .margin('10vp')
-80. }
-81. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/cZM_SkEmQ_KmPdNlzIbljA/zh-cn_image_0000002589326075.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/oUog0nBGT_q9w1rKGkUwWQ/zh-cn_image_0000002706835842.gif)
 
 ### 示例22（监听Tabs页面滑动事件）
 
@@ -3102,97 +3195,216 @@ PhonePC/2in1TabletTVWearable
 
 从API version 23开始，新增onContentDidScroll接口。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TabsDidScrollExample {
+  @State fontColor: string = '#182431';
+  @State selectedFontColor: string = '#007DFF';
+  @State currentIndex: number = 0;
+  @State selectedIndex: number = 0;
+  @State didScrollStr: string = '';
+  private controller: TabsController = new TabsController();
+
+  @Builder
+  tabBuilder(index: number, name: string) {
+    Column() {
+      Text(name)
+        .fontColor(this.selectedIndex === index ? this.selectedFontColor : this.fontColor)
+        .fontSize(16)
+        .fontWeight(this.selectedIndex === index ? 500 : 400)
+        .lineHeight(22)
+        .margin({ top: 17, bottom: 7 })
+      Divider()
+        .strokeWidth(2)
+        .color('#007DFF')
+        .opacity(this.selectedIndex === index ? 1 : 0)
+    }.width('100%')
+  }
+
+  build() {
+    Column() {
+      Text('滑动页面触发回调')
+        .width("80%")
+        .fontSize(20)
+        .margin(5)
+        .textAlign(TextAlign.Center)
+
+      Text(this.didScrollStr)
+        .width("80%")
+        .fontSize(20)
+        .margin(5)
+        .textAlign(TextAlign.Center)
+
+      Tabs({ barPosition: BarPosition.Start, index: this.currentIndex, controller: this.controller }) {
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#00CB87')
+        }.tabBar(this.tabBuilder(0, 'green'))
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#007DFF')
+        }.tabBar(this.tabBuilder(1, 'blue'))
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#FFBF00')
+        }.tabBar(this.tabBuilder(2, 'yellow'))
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#E67C92')
+        }.tabBar(this.tabBuilder(3, 'pink'))
+      }
+      .vertical(false)
+      .barMode(BarMode.Fixed)
+      .barWidth(360)
+      .barHeight(56)
+      .animationDuration(400)
+      .onChange((index: number) => {
+        // currentIndex控制TabContent显示页签
+        this.currentIndex = index;
+        this.selectedIndex = index;
+      })
+      .onAnimationStart((index: number, targetIndex: number, event: TabsAnimationEvent) => {
+        if (index === targetIndex) {
+          return;
+        }
+        // selectedIndex控制自定义TabBar内Text颜色切换
+        this.selectedIndex = targetIndex;
+      })
+      .width(360)
+      .height(296)
+      .margin({ top: 15 })
+      .backgroundColor('#F1F3F5')
+      .onContentDidScroll((selectedIndex: number, index: number, position: number, mainAxisLength: number) => {
+        // 监听Tabs页面滑动事件，在该回调中可以实现自定义导航点切换动画等
+        console.info("onContentDidScroll selectedIndex: " + selectedIndex + ", index: " + index + ", position: " +
+          position + ", mainAxisLength: " + mainAxisLength);
+        this.didScrollStr =
+          "onContentDidScroll selectedIndex: " + selectedIndex + ", index: " + index + ", position: " +
+            position + ", mainAxisLength: " + mainAxisLength
+      })
+    }.width('100%')
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TabsDidScrollExample {
-5. @State fontColor: string = '#182431';
-6. @State selectedFontColor: string = '#007DFF';
-7. @State currentIndex: number = 0;
-8. @State selectedIndex: number = 0;
-9. @State didScrollStr: string = '';
-10. private controller: TabsController = new TabsController();
 
-12. @Builder
-13. tabBuilder(index: number, name: string) {
-14. Column() {
-15. Text(name)
-16. .fontColor(this.selectedIndex === index ? this.selectedFontColor : this.fontColor)
-17. .fontSize(16)
-18. .fontWeight(this.selectedIndex === index ? 500 : 400)
-19. .lineHeight(22)
-20. .margin({ top: 17, bottom: 7 })
-21. Divider()
-22. .strokeWidth(2)
-23. .color('#007DFF')
-24. .opacity(this.selectedIndex === index ? 1 : 0)
-25. }.width('100%')
-26. }
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/XUl0o3rGQAuwHHkErbAb2A/zh-cn_image_0000002736314947.gif)
 
-28. build() {
-29. Column() {
-30. Text('滑动页面触发回调')
-31. .width("80%")
-32. .fontSize(20)
-33. .margin(5)
-34. .textAlign(TextAlign.Center)
+### 示例23（Tabs嵌套滚动）
 
-36. Text(this.didScrollStr)
-37. .width("80%")
-38. .fontSize(20)
-39. .margin(5)
-40. .textAlign(TextAlign.Center)
+该示例展示了如何通过[nestedScroll](ts-container-tabs.md#nestedscroll24)接口设置Tabs嵌套滚动效果。
 
-42. Tabs({ barPosition: BarPosition.Start, index: this.currentIndex, controller: this.controller }) {
-43. TabContent() {
-44. Column().width('100%').height('100%').backgroundColor('#00CB87')
-45. }.tabBar(this.tabBuilder(0, 'green'))
+从API version 24开始，新增nestedScroll接口。
 
-47. TabContent() {
-48. Column().width('100%').height('100%').backgroundColor('#007DFF')
-49. }.tabBar(this.tabBuilder(1, 'blue'))
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TabsExample {
+  @State text: string = '文本';
+  @State barMode: BarMode = BarMode.Fixed;
+  build() {
+    Column() {
+      Row() {
 
-51. TabContent() {
-52. Column().width('100%').height('100%').backgroundColor('#FFBF00')
-53. }.tabBar(this.tabBuilder(2, 'yellow'))
+        Tabs() {
+          TabContent() {
+            Tabs() {
+              TabContent() {
+                Column().width('100%').height('100%').backgroundColor(Color.Blue)
+              }.tabBar(SubTabBarStyle.of('子页a'))
 
-55. TabContent() {
-56. Column().width('100%').height('100%').backgroundColor('#E67C92')
-57. }.tabBar(this.tabBuilder(3, 'pink'))
-58. }
-59. .vertical(false)
-60. .barMode(BarMode.Fixed)
-61. .barWidth(360)
-62. .barHeight(56)
-63. .animationDuration(400)
-64. .onChange((index: number) => {
-65. // currentIndex控制TabContent显示页签
-66. this.currentIndex = index;
-67. this.selectedIndex = index;
-68. })
-69. .onAnimationStart((index: number, targetIndex: number, event: TabsAnimationEvent) => {
-70. if (index === targetIndex) {
-71. return;
-72. }
-73. // selectedIndex控制自定义TabBar内Image和Text颜色切换
-74. this.selectedIndex = targetIndex;
-75. })
-76. .width(360)
-77. .height(296)
-78. .margin({ top: 15 })
-79. .backgroundColor('#F1F3F5')
-80. .onContentDidScroll((selectedIndex: number, index: number, position: number, mainAxisLength: number) => {
-81. // 监听Tabs页面滑动事件，在该回调中可以实现自定义导航点切换动画等
-82. console.info("onContentDidScroll selectedIndex: " + selectedIndex + ", index: " + index + ", position: " +
-83. position + ", mainAxisLength: " + mainAxisLength);
-84. this.didScrollStr =
-85. "onContentDidScroll selectedIndex: " + selectedIndex + ", index: " + index + ", position: " +
-86. position + ", mainAxisLength: " + mainAxisLength
-87. })
-88. }.width('100%')
-89. }
-90. }
+              TabContent() {
+                Column().width('100%').height('100%').backgroundColor(Color.Green)
+              }.tabBar(SubTabBarStyle.of('子页b'))
+
+              TabContent() {
+                Column().width('100%').height('100%').backgroundColor(Color.Pink)
+              }.tabBar(SubTabBarStyle.of('子页c'))
+            }
+            .nestedScroll(TabsNestedScrollMode.SELF_FIRST)
+          }.tabBar(SubTabBarStyle.of("首页1"))
+
+          TabContent() {
+            Tabs() {
+              TabContent() {
+                Column().width('100%').height('100%').backgroundColor(Color.Blue)
+              }.tabBar(SubTabBarStyle.of('子页d'))
+
+              TabContent() {
+                Column().width('100%').height('100%').backgroundColor(Color.Green)
+              }.tabBar(SubTabBarStyle.of('子页e'))
+
+              TabContent() {
+                Column().width('100%').height('100%').backgroundColor(Color.Pink)
+              }.tabBar(SubTabBarStyle.of('子页f'))
+            }
+            .nestedScroll(TabsNestedScrollMode.SELF_FIRST)
+          }.tabBar(SubTabBarStyle.of('首页2'))
+
+        }
+        .height('100%')
+        .backgroundColor(0xf1f3f5)
+        .barMode(this.barMode)
+      }
+      .width('100%')
+      .height('100%')
+      .padding('24vp')
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/rLY_U2E5ReiiQ591gc_7Sg/zh-cn_image_0000002589246017.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/pyMNO61dRviHskFVFCZtaw/zh-cn_image_0000002706675904.gif)
+
+### 示例24（TabBar悬浮样式）
+
+本示例展示了如何通过[barFloatingStyle](ts-container-tabs.md#barfloatingstyle)接口设置TabBar的悬浮样式和背板沉浸式材质。
+
+从API版本26.0.0开始，新增barFloatingStyle接口。
+
+```ts
+// xxx.ets
+import { uiMaterial } from '@kit.ArkUI';
+@Entry
+@Component
+struct TabsFloatingStyleExample {
+  build() {
+    Column() {
+      Tabs({ barPosition: BarPosition.End }) {
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Blue)
+        }.tabBar('Blue')
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Green)
+        }.tabBar('Green')
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Orange)
+        }.tabBar('Orange')
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Pink)
+        }.tabBar('Pink')
+      }
+      .barFloatingStyle({
+        adaptToHandedness: true, systemMaterial: new uiMaterial.ImmersiveMaterial(
+          {
+            style: uiMaterial.ImmersiveStyle.ULTRA_THIN,
+            applyShadow: true,
+            interactive: true,
+            lightEffect: { color: Color.White }
+          }
+        )
+      })
+      .barOverlap(true)
+      .height('100%')
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/D1IJpcPKQmOSf5lmUjxWSQ/zh-cn_image_0000002736434991.gif)

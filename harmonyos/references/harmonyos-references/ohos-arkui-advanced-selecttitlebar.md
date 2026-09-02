@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SelectTitleBar
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SelectTitleBar
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:02+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:59b98718eb3b912f717f5795a38bae53810aafba082a6a41764712d0f425fb1d
+scraped_at: 2026-09-02T15:01:09+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f237260a8427e39448c24339c2ca72ad5d0064e3a9e5e2382bd0251f72c5cd97
 ---
 
 下拉菜单标题栏包含一个下拉菜单，可用于页面之间的切换；可用于一级页面、二级及其以上界面（配置返回键）。
 
-说明
+**说明** 
 
 * 该组件从API version 10开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 该组件仅可在Stage模型下使用。
@@ -18,21 +18,15 @@ content_hash: sha256:59b98718eb3b912f717f5795a38bae53810aafba082a6a41764712d0f42
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { SelectTitleBar } from '@kit.ArkUI';
+```ts
+import { SelectTitleBar } from '@kit.ArkUI';
 ```
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## SelectTitleBar
-
-PhonePC/2in1TabletTVWearable
 
 SelectTitleBar({selected: number, options: Array<SelectOption>, menuItems?: Array<SelectTitleBarMenuItem>, subtitle?: ResourceStr, badgeValue?: number, hidesBackButton?: boolean, onSelected?: ((index: number) => void)})
 
@@ -54,13 +48,11 @@ SelectTitleBar({selected: number, options: Array<SelectOption>, menuItems?: Arra
 | hidesBackButton | boolean | 否 | - | 是否隐藏左侧的返回箭头。  默认值：false。true：隐藏，false：显示。 |
 | onSelected | ((index: number) => void) | 否 | - | 下拉菜单项目选中触发的回调函数，传入选中项的索引。下拉菜单选中后需要处理特定业务逻辑时时传入此参数，无特定业务逻辑时可缺省此参数。 |
 
-说明
+**说明** 
 
 入参对象不可为undefined，即SelectTitleBar(undefined)。
 
 ## SelectTitleBarMenuItem
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -69,7 +61,7 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | value | [ResourceStr](ts-types.md#resourcestr) | 否 | 否 | 图标资源。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| symbolStyle18+ | [SymbolGlyphModifier](universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | 否 | 是 | Symbol图标资源，优先级大于value。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| symbolStyle18+ | [SymbolGlyphModifier](ts-universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | 否 | 是 | Symbol图标资源，优先级大于value。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | label13+ | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 图标标签描述。  **元服务API：** 从API version 13开始，该接口支持在元服务中使用。 |
 | isEnabled | boolean | 否 | 是 | 是否启用。  默认值：false。true：启用，false：禁用。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | action | () => void | 否 | 是 | 触发时的动作闭包。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
@@ -79,393 +71,389 @@ PhonePC/2in1TabletTVWearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 不支持[通用事件](ts-component-general-events.md)。
 
 ## 示例
-
-PhonePC/2in1TabletTVWearable
 
 ### 示例1（下拉菜单标题栏）
 
 该示例实现了简单的下拉菜单标题栏，带有返回箭头的下拉菜单标题栏和带有右侧菜单项目列表的下拉菜单标题栏。
 
+```ts
+import { SelectTitleBar, Prompt, SelectTitleBarMenuItem } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct Index {
+  // 定义右侧菜单项目列表
+  private menuItems: Array<SelectTitleBarMenuItem> =
+    [
+      {
+        // 菜单图片资源
+        value: $r('sys.media.ohos_save_button_filled'),
+        // 启用图片
+        isEnabled: true,
+        // 点击菜单时触发事件
+        action: () => Prompt.showToast({ message: 'show toast index 1' }),
+      },
+      {
+        value: $r('sys.media.ohos_ic_public_copy'),
+        isEnabled: true,
+        action: () => Prompt.showToast({ message: 'show toast index 2' }),
+      },
+      {
+        value: $r('sys.media.ohos_ic_public_edit'),
+        isEnabled: true,
+        action: () => Prompt.showToast({ message: 'show toast index 3' }),
+      },
+      {
+        value: $r('sys.media.ohos_ic_public_remove'),
+        isEnabled: true,
+        action: () => Prompt.showToast({ message: 'show toast index 4' }),
+      },
+    ]
+
+  build() {
+    Row() {
+      Column() {
+        Divider().height(2).color(0xCCCCCC)
+        SelectTitleBar({
+          // 定义下拉列表选项
+          options: [
+            { value: '所有照片' },
+            { value: '本地（设备）' },
+            { value: '本地本地本地本地本地（储存卡）' }
+          ],
+          // 初始选择第一个下拉选项
+          selected: 0,
+          // 选中时触发函数
+          onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
+          // 隐藏左侧返回箭头
+          hidesBackButton: true,
+        })
+        Divider().height(2).color(0xCCCCCC)
+        SelectTitleBar({
+          options: [
+            { value: '所有照片' },
+            { value: '本地（设备）' },
+            { value: '本地本地本地本地本地（储存卡）' },
+          ],
+          selected: 0,
+          onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
+          hidesBackButton: false,
+        })
+        Divider().height(2).color(0xCCCCCC)
+        SelectTitleBar({
+          options: [
+            { value: '所有照片' },
+            { value: '本地（设备）' },
+            { value: '本地本地本地本地本地（储存卡）' },
+          ],
+          selected: 1,
+          onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
+          subtitle: 'example@example.com',
+        })
+        Divider().height(2).color(0xCCCCCC)
+        SelectTitleBar({
+          options: [
+            { value: '所有照片' },
+            { value: '本地（设备）' },
+            { value: '本地本地本地本地本地（储存卡）' },
+          ],
+          selected: 1,
+          onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
+          subtitle: 'example@example.com',
+          menuItems: [{ isEnabled: true, value: $r('sys.media.ohos_save_button_filled'),
+            action: () => Prompt.showToast({ message: 'show toast index 1' }),
+          }],
+        })
+        Divider().height(2).color(0xCCCCCC)
+        SelectTitleBar({
+          options: [
+            { value: '所有照片' },
+            { value: '本地（设备）' },
+            { value: '本地本地本地本地本地（储存卡）' },
+          ],
+          selected: 0,
+          onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
+          subtitle: 'example@example.com',
+          menuItems: this.menuItems,
+          badgeValue: 99,
+          hidesBackButton: true,
+        })
+        Divider().height(2).color(0xCCCCCC)
+      }.width('100%')
+    }.height('100%')
+  }
+}
 ```
-1. import { SelectTitleBar, Prompt, SelectTitleBarMenuItem } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. // 定义右侧菜单项目列表
-7. private menuItems: Array<SelectTitleBarMenuItem> =
-8. [
-9. {
-10. // 菜单图片资源
-11. value: $r('sys.media.ohos_save_button_filled'),
-12. // 启用图片
-13. isEnabled: true,
-14. // 点击菜单时触发事件
-15. action: () => Prompt.showToast({ message: 'show toast index 1' }),
-16. },
-17. {
-18. value: $r('sys.media.ohos_ic_public_copy'),
-19. isEnabled: true,
-20. action: () => Prompt.showToast({ message: 'show toast index 2' }),
-21. },
-22. {
-23. value: $r('sys.media.ohos_ic_public_edit'),
-24. isEnabled: true,
-25. action: () => Prompt.showToast({ message: 'show toast index 3' }),
-26. },
-27. {
-28. value: $r('sys.media.ohos_ic_public_remove'),
-29. isEnabled: true,
-30. action: () => Prompt.showToast({ message: 'show toast index 4' }),
-31. },
-32. ]
-
-34. build() {
-35. Row() {
-36. Column() {
-37. Divider().height(2).color(0xCCCCCC)
-38. SelectTitleBar({
-39. // 定义下拉列表选项
-40. options: [
-41. { value: '所有照片' },
-42. { value: '本地（设备）' },
-43. { value: '本地本地本地本地本地（储存卡）' }
-44. ],
-45. // 初始选择第一个下拉选项
-46. selected: 0,
-47. // 选中时触发函数
-48. onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
-49. // 隐藏左侧返回箭头
-50. hidesBackButton: true,
-51. })
-52. Divider().height(2).color(0xCCCCCC)
-53. SelectTitleBar({
-54. options: [
-55. { value: '所有照片' },
-56. { value: '本地（设备）' },
-57. { value: '本地本地本地本地本地（储存卡）' },
-58. ],
-59. selected: 0,
-60. onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
-61. hidesBackButton: false,
-62. })
-63. Divider().height(2).color(0xCCCCCC)
-64. SelectTitleBar({
-65. options: [
-66. { value: '所有照片' },
-67. { value: '本地（设备）' },
-68. { value: '本地本地本地本地本地（储存卡）' },
-69. ],
-70. selected: 1,
-71. onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
-72. subtitle: 'example@example.com',
-73. })
-74. Divider().height(2).color(0xCCCCCC)
-75. SelectTitleBar({
-76. options: [
-77. { value: '所有照片' },
-78. { value: '本地（设备）' },
-79. { value: '本地本地本地本地本地（储存卡）' },
-80. ],
-81. selected: 1,
-82. onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
-83. subtitle: 'example@example.com',
-84. menuItems: [{ isEnabled: true, value: $r('sys.media.ohos_save_button_filled'),
-85. action: () => Prompt.showToast({ message: 'show toast index 1' }),
-86. }],
-87. })
-88. Divider().height(2).color(0xCCCCCC)
-89. SelectTitleBar({
-90. options: [
-91. { value: '所有照片' },
-92. { value: '本地（设备）' },
-93. { value: '本地本地本地本地本地（储存卡）' },
-94. ],
-95. selected: 0,
-96. onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
-97. subtitle: 'example@example.com',
-98. menuItems: this.menuItems,
-99. badgeValue: 99,
-100. hidesBackButton: true,
-101. })
-102. Divider().height(2).color(0xCCCCCC)
-103. }.width('100%')
-104. }.height('100%')
-105. }
-106. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/zJ1M2jXIQQOIVz4cCuV09A/zh-cn_image_0000002589326519.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/dxecdLgxQ_qXalXVOa649w/zh-cn_image_0000002736315417.png)
 
 ### 示例2（右侧自定义按钮播报）
 
 从API version 18开始，该示例通过设置标题栏右侧自定义按钮属性accessibilityText、accessibilityDescription、accessibilityLevel自定义屏幕朗读播报文本。
 
+```ts
+import { SelectTitleBar, Prompt, SelectTitleBarMenuItem } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct Index {
+  // 定义右侧菜单项目列表
+  private menuItems: Array<SelectTitleBarMenuItem> =
+    [
+      {
+        // 菜单图片资源
+        value: $r('sys.media.ohos_save_button_filled'),
+        // 启用图片
+        isEnabled: true,
+        // 点击菜单时触发事件
+        action: () => Prompt.showToast({ message: 'show toast index 1' }),
+        // 屏幕朗读播报文本，优先级比label高
+        accessibilityText: '保存',
+        // 屏幕朗读是否可以聚焦到
+        accessibilityLevel: 'yes',
+        // 屏幕朗读最后播报的描述文本
+        accessibilityDescription: '点击操作保存图标',
+      },
+      {
+        value: $r('sys.media.ohos_ic_public_copy'),
+        isEnabled: true,
+        action: () => Prompt.showToast({ message: 'show toast index 2' }),
+        accessibilityText: '复制',
+        // 此处为no，屏幕朗读不聚焦
+        accessibilityLevel: 'no',
+        accessibilityDescription: '点击操作复制图标',
+      },
+      {
+        value: $r('sys.media.ohos_ic_public_edit'),
+        isEnabled: true,
+        action: () => Prompt.showToast({ message: 'show toast index 3' }),
+        accessibilityText: '编辑',
+        accessibilityLevel: 'yes',
+        accessibilityDescription: '点击操作编辑图标',
+      },
+      {
+        value: $r('sys.media.ohos_ic_public_remove'),
+        isEnabled: true,
+        action: () => Prompt.showToast({ message: "show toast index 4" }),
+        accessibilityText: '移除',
+        accessibilityLevel: 'yes',
+        accessibilityDescription: '点击操作移除图标',
+      }
+    ]
+
+  build() {
+    Row() {
+      Column() {
+        Divider().height(2).color(0xCCCCCC)
+        SelectTitleBar({
+          // 定义下拉列表选项
+          options: [
+            { value: '所有照片' },
+            { value: '本地（设备）' },
+            { value: '本地本地本地本地本地（储存卡）' },
+          ],
+          // 初始选择第一个下拉选项
+          selected: 0,
+          // 选中时触发函数
+          onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
+          // 隐藏左侧返回箭头
+          hidesBackButton: true,
+        })
+        Divider().height(2).color(0xCCCCCC)
+        SelectTitleBar({
+          options: [
+            { value: '所有照片' },
+            { value: '本地（设备）' },
+            { value: '本地本地本地本地本地（储存卡）' },
+          ],
+          selected: 0,
+          onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
+          hidesBackButton: false,
+        })
+        Divider().height(2).color(0xCCCCCC)
+        SelectTitleBar({
+          options: [
+            { value: '所有照片' },
+            { value: '本地（设备）' },
+            { value: '本地本地本地本地本地（储存卡）' },
+          ],
+          selected: 1,
+          onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
+          subtitle: 'example@example.com',
+        })
+        Divider().height(2).color(0xCCCCCC)
+        SelectTitleBar({
+          options: [
+            { value: '所有照片' },
+            { value: '本地（设备）' },
+            { value: '本地本地本地本地本地（储存卡）' },
+          ],
+          selected: 1,
+          onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
+          subtitle: 'example@example.com',
+          menuItems: [{ isEnabled: true, value: $r('sys.media.ohos_save_button_filled'),
+            action: () => Prompt.showToast({ message: 'show toast index 1' }),
+          }],
+        })
+        Divider().height(2).color(0xCCCCCC)
+        SelectTitleBar({
+          options: [
+            { value: '所有照片' },
+            { value: '本地（设备）' },
+            { value: '本地本地本地本地本地（储存卡）' },
+          ],
+          selected: 0,
+          onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
+          subtitle: 'example@example.com',
+          menuItems: this.menuItems,
+          badgeValue: 99,
+          hidesBackButton: true,
+        })
+        Divider().height(2).color(0xCCCCCC)
+      }.width('100%')
+    }.height('100%')
+  }
+}
 ```
-1. import { SelectTitleBar, Prompt, SelectTitleBarMenuItem } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. // 定义右侧菜单项目列表
-7. private menuItems: Array<SelectTitleBarMenuItem> =
-8. [
-9. {
-10. // 菜单图片资源
-11. value: $r('sys.media.ohos_save_button_filled'),
-12. // 启用图片
-13. isEnabled: true,
-14. // 点击菜单时触发事件
-15. action: () => Prompt.showToast({ message: 'show toast index 1' }),
-16. // 屏幕朗读播报文本，优先级比label高
-17. accessibilityText: '保存',
-18. // 屏幕朗读是否可以聚焦到
-19. accessibilityLevel: 'yes',
-20. // 屏幕朗读最后播报的描述文本
-21. accessibilityDescription: '点击操作保存图标',
-22. },
-23. {
-24. value: $r('sys.media.ohos_ic_public_copy'),
-25. isEnabled: true,
-26. action: () => Prompt.showToast({ message: 'show toast index 2' }),
-27. accessibilityText: '复制',
-28. // 此处为no，屏幕朗读不聚焦
-29. accessibilityLevel: 'no',
-30. accessibilityDescription: '点击操作复制图标',
-31. },
-32. {
-33. value: $r('sys.media.ohos_ic_public_edit'),
-34. isEnabled: true,
-35. action: () => Prompt.showToast({ message: 'show toast index 3' }),
-36. accessibilityText: '编辑',
-37. accessibilityLevel: 'yes',
-38. accessibilityDescription: '点击操作编辑图标',
-39. },
-40. {
-41. value: $r('sys.media.ohos_ic_public_remove'),
-42. isEnabled: true,
-43. action: () => Prompt.showToast({ message: "show toast index 4" }),
-44. accessibilityText: '移除',
-45. accessibilityLevel: 'yes',
-46. accessibilityDescription: '点击操作移除图标',
-47. }
-48. ]
-
-50. build() {
-51. Row() {
-52. Column() {
-53. Divider().height(2).color(0xCCCCCC)
-54. SelectTitleBar({
-55. // 定义下拉列表选项
-56. options: [
-57. { value: '所有照片' },
-58. { value: '本地（设备）' },
-59. { value: '本地本地本地本地本地（储存卡）' },
-60. ],
-61. // 初始选择第一个下拉选项
-62. selected: 0,
-63. // 选中时触发函数
-64. onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
-65. // 隐藏左侧返回箭头
-66. hidesBackButton: true,
-67. })
-68. Divider().height(2).color(0xCCCCCC)
-69. SelectTitleBar({
-70. options: [
-71. { value: '所有照片' },
-72. { value: '本地（设备）' },
-73. { value: '本地本地本地本地本地（储存卡）' },
-74. ],
-75. selected: 0,
-76. onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
-77. hidesBackButton: false,
-78. })
-79. Divider().height(2).color(0xCCCCCC)
-80. SelectTitleBar({
-81. options: [
-82. { value: '所有照片' },
-83. { value: '本地（设备）' },
-84. { value: '本地本地本地本地本地（储存卡）' },
-85. ],
-86. selected: 1,
-87. onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
-88. subtitle: 'example@example.com',
-89. })
-90. Divider().height(2).color(0xCCCCCC)
-91. SelectTitleBar({
-92. options: [
-93. { value: '所有照片' },
-94. { value: '本地（设备）' },
-95. { value: '本地本地本地本地本地（储存卡）' },
-96. ],
-97. selected: 1,
-98. onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
-99. subtitle: 'example@example.com',
-100. menuItems: [{ isEnabled: true, value: $r('sys.media.ohos_save_button_filled'),
-101. action: () => Prompt.showToast({ message: 'show toast index 1' }),
-102. }],
-103. })
-104. Divider().height(2).color(0xCCCCCC)
-105. SelectTitleBar({
-106. options: [
-107. { value: '所有照片' },
-108. { value: '本地（设备）' },
-109. { value: '本地本地本地本地本地（储存卡）' },
-110. ],
-111. selected: 0,
-112. onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
-113. subtitle: 'example@example.com',
-114. menuItems: this.menuItems,
-115. badgeValue: 99,
-116. hidesBackButton: true,
-117. })
-118. Divider().height(2).color(0xCCCCCC)
-119. }.width('100%')
-120. }.height('100%')
-121. }
-122. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/ZGh1fP9OQ4urTuXFNFMfug/zh-cn_image_0000002589246461.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/QxmGXcShSnefBaWi5Zx7hg/zh-cn_image_0000002706676378.png)
 
 ### 示例3（设置Symbol类型图标）
 
 从API version 18开始，该示例通过设置SelectTitleBarMenuItem的属性symbolStyle，展示了自定义Symbol类型图标。
 
+```ts
+import { SelectTitleBar, Prompt, SelectTitleBarMenuItem, SymbolGlyphModifier } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct Index {
+  // 定义右侧菜单项目列表
+  private menuItems: Array<SelectTitleBarMenuItem> =
+    [
+      {
+        // 菜单图片资源
+        value: $r('sys.media.ohos_save_button_filled'),
+        // 菜单图片symbol资源
+        symbolStyle: new SymbolGlyphModifier($r('sys.symbol.save')),
+        // 启用图片
+        isEnabled: true,
+        // 点击菜单时触发事件
+        action: () => Prompt.showToast({ message: 'show toast index 1' }),
+        // 屏幕朗读播报文本，优先级比label高
+        accessibilityText: '保存',
+        // 屏幕朗读是否可以聚焦到
+        accessibilityLevel: 'yes',
+        // 屏幕朗读最后播报的描述文本
+        accessibilityDescription: '点击操作保存图标',
+      },
+      {
+        value: $r('sys.media.ohos_ic_public_copy'),
+        symbolStyle: new SymbolGlyphModifier($r('sys.symbol.car')),
+        isEnabled: true,
+        action: () => Prompt.showToast({ message: 'show toast index 2' }),
+        accessibilityText: '复制',
+        // 此处为no，屏幕朗读不聚焦
+        accessibilityLevel: 'no',
+        accessibilityDescription: '点击操作复制图标',
+      },
+      {
+        value: $r('sys.media.ohos_ic_public_edit'),
+        symbolStyle: new SymbolGlyphModifier($r('sys.symbol.ai_edit')),
+        isEnabled: true,
+        action: () => Prompt.showToast({ message: 'show toast index 3' }),
+        accessibilityText: '编辑',
+        accessibilityLevel: 'yes',
+        accessibilityDescription: '点击操作编辑图标',
+      },
+      {
+        value: $r('sys.media.ohos_ic_public_remove'),
+        symbolStyle: new SymbolGlyphModifier($r('sys.symbol.remove_songlist')),
+        isEnabled: true,
+        action: () => Prompt.showToast({ message: "show toast index 4" }),
+        accessibilityText: '移除',
+        accessibilityLevel: 'yes',
+        accessibilityDescription: '点击操作移除图标',
+      }
+    ]
+
+  build() {
+    Row() {
+      Column() {
+        Divider().height(2).color(0xCCCCCC)
+        SelectTitleBar({
+          // 定义下拉列表选项
+          options: [
+            { value: '所有照片' },
+            { value: '本地（设备）' },
+            { value: '本地本地本地本地本地（储存卡）' },
+          ],
+          // 初始选择第一个下拉选项
+          selected: 0,
+          // 选中时触发函数
+          onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
+          // 隐藏左侧返回箭头
+          hidesBackButton: true,
+        })
+        Divider().height(2).color(0xCCCCCC)
+        SelectTitleBar({
+          options: [
+            { value: '所有照片' },
+            { value: '本地（设备）' },
+            { value: '本地本地本地本地本地（储存卡）' },
+          ],
+          selected: 0,
+          onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
+          hidesBackButton: false,
+        })
+        Divider().height(2).color(0xCCCCCC)
+        SelectTitleBar({
+          options: [
+            { value: '所有照片' },
+            { value: '本地（设备）' },
+            { value: '本地本地本地本地本地（储存卡）' },
+          ],
+          selected: 1,
+          onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
+          subtitle: 'example@example.com',
+        })
+        Divider().height(2).color(0xCCCCCC)
+        SelectTitleBar({
+          options: [
+            { value: '所有照片' },
+            { value: '本地（设备）' },
+            { value: '本地本地本地本地本地（储存卡）' },
+          ],
+          selected: 1,
+          onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
+          subtitle: 'example@example.com',
+          menuItems: [{
+            isEnabled: true, value: $r('sys.media.ohos_save_button_filled'),
+            action: () => Prompt.showToast({ message: 'show toast index 1' }),
+          }],
+        })
+        Divider().height(2).color(0xCCCCCC)
+        SelectTitleBar({
+          options: [
+            { value: '所有照片' },
+            { value: '本地（设备）' },
+            { value: '本地本地本地本地本地（储存卡）' },
+          ],
+          selected: 0,
+          onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
+          subtitle: 'example@example.com',
+          menuItems: this.menuItems,
+          badgeValue: 99,
+          hidesBackButton: true,
+        })
+        Divider().height(2).color(0xCCCCCC)
+      }.width('100%')
+    }.height('100%')
+  }
+}
 ```
-1. import { SelectTitleBar, Prompt, SelectTitleBarMenuItem, SymbolGlyphModifier } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. // 定义右侧菜单项目列表
-7. private menuItems: Array<SelectTitleBarMenuItem> =
-8. [
-9. {
-10. // 菜单图片资源
-11. value: $r('sys.media.ohos_save_button_filled'),
-12. // 菜单图片symbol资源
-13. symbolStyle: new SymbolGlyphModifier($r('sys.symbol.save')),
-14. // 启用图片
-15. isEnabled: true,
-16. // 点击菜单时触发事件
-17. action: () => Prompt.showToast({ message: 'show toast index 1' }),
-18. // 屏幕朗读播报文本，优先级比label高
-19. accessibilityText: '保存',
-20. // 屏幕朗读是否可以聚焦到
-21. accessibilityLevel: 'yes',
-22. // 屏幕朗读最后播报的描述文本
-23. accessibilityDescription: '点击操作保存图标',
-24. },
-25. {
-26. value: $r('sys.media.ohos_ic_public_copy'),
-27. symbolStyle: new SymbolGlyphModifier($r('sys.symbol.car')),
-28. isEnabled: true,
-29. action: () => Prompt.showToast({ message: 'show toast index 2' }),
-30. accessibilityText: '复制',
-31. // 此处为no，屏幕朗读不聚焦
-32. accessibilityLevel: 'no',
-33. accessibilityDescription: '点击操作复制图标',
-34. },
-35. {
-36. value: $r('sys.media.ohos_ic_public_edit'),
-37. symbolStyle: new SymbolGlyphModifier($r('sys.symbol.ai_edit')),
-38. isEnabled: true,
-39. action: () => Prompt.showToast({ message: 'show toast index 3' }),
-40. accessibilityText: '编辑',
-41. accessibilityLevel: 'yes',
-42. accessibilityDescription: '点击操作编辑图标',
-43. },
-44. {
-45. value: $r('sys.media.ohos_ic_public_remove'),
-46. symbolStyle: new SymbolGlyphModifier($r('sys.symbol.remove_songlist')),
-47. isEnabled: true,
-48. action: () => Prompt.showToast({ message: "show toast index 4" }),
-49. accessibilityText: '移除',
-50. accessibilityLevel: 'yes',
-51. accessibilityDescription: '点击操作移除图标',
-52. }
-53. ]
-
-55. build() {
-56. Row() {
-57. Column() {
-58. Divider().height(2).color(0xCCCCCC)
-59. SelectTitleBar({
-60. // 定义下拉列表选项
-61. options: [
-62. { value: '所有照片' },
-63. { value: '本地（设备）' },
-64. { value: '本地本地本地本地本地（储存卡）' },
-65. ],
-66. // 初始选择第一个下拉选项
-67. selected: 0,
-68. // 选中时触发函数
-69. onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
-70. // 隐藏左侧返回箭头
-71. hidesBackButton: true,
-72. })
-73. Divider().height(2).color(0xCCCCCC)
-74. SelectTitleBar({
-75. options: [
-76. { value: '所有照片' },
-77. { value: '本地（设备）' },
-78. { value: '本地本地本地本地本地（储存卡）' },
-79. ],
-80. selected: 0,
-81. onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
-82. hidesBackButton: false,
-83. })
-84. Divider().height(2).color(0xCCCCCC)
-85. SelectTitleBar({
-86. options: [
-87. { value: '所有照片' },
-88. { value: '本地（设备）' },
-89. { value: '本地本地本地本地本地（储存卡）' },
-90. ],
-91. selected: 1,
-92. onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
-93. subtitle: 'example@example.com',
-94. })
-95. Divider().height(2).color(0xCCCCCC)
-96. SelectTitleBar({
-97. options: [
-98. { value: '所有照片' },
-99. { value: '本地（设备）' },
-100. { value: '本地本地本地本地本地（储存卡）' },
-101. ],
-102. selected: 1,
-103. onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
-104. subtitle: 'example@example.com',
-105. menuItems: [{
-106. isEnabled: true, value: $r('sys.media.ohos_save_button_filled'),
-107. action: () => Prompt.showToast({ message: 'show toast index 1' }),
-108. }],
-109. })
-110. Divider().height(2).color(0xCCCCCC)
-111. SelectTitleBar({
-112. options: [
-113. { value: '所有照片' },
-114. { value: '本地（设备）' },
-115. { value: '本地本地本地本地本地（储存卡）' },
-116. ],
-117. selected: 0,
-118. onSelected: (index) => Prompt.showToast({ message: 'page index ' + index }),
-119. subtitle: 'example@example.com',
-120. menuItems: this.menuItems,
-121. badgeValue: 99,
-122. hidesBackButton: true,
-123. })
-124. Divider().height(2).color(0xCCCCCC)
-125. }.width('100%')
-126. }.height('100%')
-127. }
-128. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/3hqxOsWsT3-GnQ9bk7qt4A/zh-cn_image_0000002558766654.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/4pGb7KB6SgGCRH4aU6Y4Qw/zh-cn_image_0000002736435465.png)

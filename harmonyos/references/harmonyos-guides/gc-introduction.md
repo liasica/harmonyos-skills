@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gc-introducti
 title: GC垃圾回收
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS运行时 > GC垃圾回收
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:26:49+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:33c7efc3b3bb127a36a0f1ede73fa71db6f0f17ea4d916b0b37d479a25a74ad9
+scraped_at: 2026-09-02T14:59:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:009f10e27d1ff2dff170cb28475430d77e1523644d9d8b99431b0ea3a552a75d
 ---
 
 GC（全称 Garbage Collection），即垃圾回收。在计算机领域，GC是指识别并释放内存中的不再使用的对象，以回收内存空间。目前广泛使用的编程语言实现的GC算法主要分为两大类：引用计数和对象追踪（即Tracing GC）。
@@ -21,34 +21,34 @@ GC（全称 Garbage Collection），即垃圾回收。在计算机领域，GC是
 * 优点：引用计数算法设计简单，而且会在对象成为垃圾时及时回收该部分内存，因此无需引入单独的暂停业务代码（Stop The World，STW）阶段。
 * 缺点：在对象操作时插入了计数环节，增加了内存分配和赋值的开销，影响性能。存在因循环引用而导致的内存泄漏问题。
 
-```
-1. class Parent {
-2. constructor() {
-3. this.child = null;
-4. }
-5. child: Child | null = null;
-6. }
+```typescript
+class Parent {
+  constructor() {
+    this.child = null;
+  }
+  child: Child | null = null;
+}
 
-8. class Child {
-9. constructor() {
-10. this.parent = null;
-11. }
-12. parent: Parent | null = null;
-13. }
+class Child {
+  constructor() {
+    this.parent = null;
+  }
+  parent: Parent | null = null;
+}
 
-15. function main() {
-16. let parent: Parent = new Parent();
-17. let child: Child = new Child();
-18. parent.child = child;
-19. child.parent = parent;
-20. }
+function main() {
+  let parent: Parent = new Parent();
+  let child: Child = new Child();
+  parent.child = child;
+  child.parent = parent;
+}
 ```
 
 在上述代码中，对象parent被对象child持有，parent的引用计数加1。同时，child也被parent持有，child的引用计数也会加1。这形成了循环引用，导致直到main函数结束，parent和child都无法释放，从而引发内存泄漏。
 
 **对象追踪**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/uw86j0LKRQG5BEbmzz8c2w/zh-cn_image_0000002558604370.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/1Yj2jJr6QoaftkQtmRDrtg/zh-cn_image_0000002706673144.png)
 
 根对象包括程序运行中的栈内对象和全局对象等当前时刻一定存活的对象。从根对象开始，通过引用链可以访问到的所有对象（可达对象）也是存活的。通过遍历可以找到所有存活对象。如图所示，从根对象开始遍历，所有可达对象标记为蓝色，即为活对象。剩下的不可达对象标记为黄色，即为垃圾。
 
@@ -63,7 +63,7 @@ GC（全称 Garbage Collection），即垃圾回收。在计算机领域，GC是
 
 **标记-清扫回收**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/dbHepmvpQZitxfl6rGAwvg/zh-cn_image_0000002589323895.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/grnao-gvRg2YMK2xt7tfiw/zh-cn_image_0000002736432235.png)
 
 完成对象图遍历后，删除不可达对象内容，并将其放入空闲队列，以便下次对象分配。
 
@@ -71,7 +71,7 @@ GC（全称 Garbage Collection），即垃圾回收。在计算机领域，GC是
 
 **标记-复制回收**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/jhC3-pQuTIe4NUpG12Vpog/zh-cn_image_0000002589243835.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/w4XNGWLgR4Gpb5SnjKbxFg/zh-cn_image_0000002706833080.png)
 
 遍历对象图时，将可达对象复制到新内存空间。遍历完成后，回收旧内存空间。
 
@@ -79,7 +79,7 @@ GC（全称 Garbage Collection），即垃圾回收。在计算机领域，GC是
 
 **标记-整理回收**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/0w5D_msQSLeRyV_cW1ajiA/zh-cn_image_0000002558764028.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/4Jmfel3hQmKsD147xlvI_Q/zh-cn_image_0000002736312189.png)
 
 完成对象图遍历后，将可达对象（蓝色）复制到本区域或指定区域的头部空闲位置，然后将已复制的对象回收整理到空闲队列中。
 
@@ -94,7 +94,7 @@ HPP GC（High Performance Partial Garbage Collection），即高性能部分垃�
 
 ArkTS运行时采用传统的分代模型，将对象进行分类。大多数新分配的对象会在一次GC后被回收，而大多数经过多次GC后依然存活的对象会继续存活。ArkTS运行时将对象划分为年轻代和老年代对象，并分配到不同空间。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/RGX94ieKRler63hYNnr3fg/zh-cn_image_0000002558604372.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/C891wdt_QVKSFAgAwK7YFw/zh-cn_image_0000002706673146.png)
 
 ArkTS运行时将新分配的对象直接分配到年轻代（YoungSpace，又称SemiSpace）的From空间。经过一次GC后依然存活的对象，会移动到To空间。经过再次GC后依然存活的对象，会被移动到老年代（OldSpace）。
 
@@ -124,7 +124,7 @@ HPP GC流程中引入了大量的并发和并行优化，以减少对应用性�
 
 ## GC流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/FBuLD_LiQtu6nVhiUYgnLA/zh-cn_image_0000002589323897.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/svbv0nneT8aItTy9-ZnavA/zh-cn_image_0000002736432237.png)
 
 ### HPP GC的类型
 
@@ -219,7 +219,7 @@ Heap包含两种类型：LocalHeap和SharedHeap。LocalHeap是应用进程中每
 
 ### LocalHeap结构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/ceaqxyEWTdqxqowIYbN4kg/zh-cn_image_0000002589243837.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/3SDTCmqlRCSjGVqep4HFVA/zh-cn_image_0000002706833084.png)
 
 * YoungSpace：年轻代（Young Generation），又称SemiSpace，存放新创建出来的对象，存活率低，主要使用半空间复制算法进行内存回收。
 * OldSpace：老年代（Old Generation），存放年轻代多次回收仍存活的对象会被移动到该空间，根据场景混合多种算法进行内存回收。
@@ -229,19 +229,19 @@ Heap包含两种类型：LocalHeap和SharedHeap。LocalHeap是应用进程中每
 * SnapshotSpace：快照空间，转储堆快照时使用的空间。
 * MachineCodeSpace：机器码空间，存放程序机器码。
 
-说明
+**说明** 
 
 每个空间由一个或多个Region进行分区域管理。Region是空间向内存分配器申请的单位。
 
 ### LocalHeap相关参数
 
-注意
+**注意** 
 
 以下参数未提示可配置的均为不可配置项，由系统自行设定。
 
 根据系统分配堆空间总大小64MB-128MB/128MB-256MB/大于256MB的三个范围，以下参数系统会设置不同的大小。如果表格内范围仅有一个值，则表示该参数值不随堆空间总大小变化。手机设备堆空间总大小默认为大于256MB。
 
-开发者可以查阅[hidebug接口文档](../harmonyos-references/js-apis-hidebug.md)，使用相关接口查询内存信息。
+开发者可以查阅[@ohos.hidebug](../harmonyos-references/js-apis-hidebug.md)，使用相关接口查询内存信息。
 
 **堆大小相关参数**
 
@@ -312,14 +312,14 @@ Heap中生成两个SemiSpace，供复制使用。
 
 ### SharedHeap结构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/z3kT3pBQT624heoILCb8cw/zh-cn_image_0000002558764030.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/taFPQvkXTj6eyl48y-L5SQ/zh-cn_image_0000002736312191.png)
 
 * SharedOldSpace：共享堆老年代空间，存放一般的共享对象。
 * SharedHugeObjectSpace：共享堆大对象空间，使用单独的Region存放一个大对象的空间。
 * SharedReadOnlySpace：共享堆只读空间，存放运行期间的只读数据。
 * SharedNonMovableSpace：共享堆不可移动空间，存放不可移动的共享对象。
 
-说明
+**说明** 
 
 SharedHeap用于存储线程间共享对象，提高效率并节省内存。共享堆不单独属于任何线程，保存具有共享价值的对象，提高对象的存活率。
 
@@ -329,9 +329,9 @@ SharedHeap去除了SemiSpace类型，因为共享对象通常生命周期较长�
 
 ### SharedHeap相关参数
 
-以下参数适用于手机等大内存设备。
+以下参数适用于手机等大内存设备，开发者可以通过[getAllVMHeapMemoryInfo](../harmonyos-references/js-apis-util.md#getallvmheapmemoryinfo24)获取Shared堆内存信息。
 
-说明
+**说明** 
 
 SharedOldSpace和SharedHugeObjectSpace的阈值上限在共享堆初始化时均设定为SharedHeap剩余未分配空间的一半，手机设备默认分配的空间上限接近350MB，超过该值会发生内存溢出。
 
@@ -369,7 +369,7 @@ Smart GC是一种智能GC抑制机制，在冷启动场景和性能敏感场景�
 
 **交互流程**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/r6HKktKjQZO4xswl67m0Sg/zh-cn_image_0000002558604374.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/tqBCdLjGSvivwPaURXhHgQ/zh-cn_image_0000002706673148.png)
 
 ## 日志解释
 
@@ -379,56 +379,56 @@ Smart GC是一种智能GC抑制机制，在冷启动场景和性能敏感场景�
 
 **使用样例：**
 
-```
-1. # 设置开启GC全量日志参数，开启参数为0x905d，关闭GC全量日志，设置为默认值为0x105c
-2. hdc shell param set persist.ark.properties 0x905d
-3. # 重启生效
-4. hdc shell reboot
+```shell
+# 设置开启GC全量日志参数，开启参数为0x905d，关闭GC全量日志，设置为默认值为0x105c
+hdc shell param set persist.ark.properties 0x905d
+# 重启生效
+hdc shell reboot
 ```
 
 ### 典型日志
 
 以下日志统计了GC完整执行后的信息，不同GC类型可能有所差异。在导出的日志文件中搜索关键词[gc]查看GC日志，或搜索关键词ArkCompiler查看更全面的虚拟机日志。
 
-```
-1. // GC前对象实际占用大小（Region实际占用大小）->GC后对象实际占用大小（Region实际占用大小），总耗时（+concurrentMark耗时），GC触发原因。
-2. C03F00/ArkCompiler: [gc]  [ CompressGC ] 26.1164 (35) -> 7.10049 (10.5) MB, 160.626(+0)ms, Switch to background
-3. // GC运行时的各种状态以及应用名称
-4. C03F00/ArkCompiler: [gc] IsInBackground: 1; SensitiveStatus: 0; OnStartupEvent: 0; BundleName: com.example.demo;
-5. // GC运行时的各阶段耗时统计
-6. C03F00/ArkCompiler: [gc] /***************** GC Duration statistic: ****************/
-7. C03F00/ArkCompiler: [gc] TotalGC:                 160.626 ms
-8. C03F00/ArkCompiler: Initialize:              0.179   ms
-9. C03F00/ArkCompiler: Mark:                    159.204 ms
-10. C03F00/ArkCompiler: MarkRoots:               6.925   ms
-11. C03F00/ArkCompiler: ProcessMarkStack:        158.99  ms
-12. C03F00/ArkCompiler: Sweep:                   0.957   ms
-13. C03F00/ArkCompiler: Finish:                  0.277   ms
-14. // GC后各个部分占用的内存大小
-15. C03F00/ArkCompiler: [gc] /****************** GC Memory statistic: *****************/
-16. C03F00/ArkCompiler: [gc] AllSpaces        used:  7270.9KB     committed:   10752KB
-17. C03F00/ArkCompiler: ActiveSemiSpace  used:       0KB     committed:     256KB
-18. C03F00/ArkCompiler: OldSpace         used:  4966.9KB     committed:    5888KB
-19. C03F00/ArkCompiler: HugeObjectSpace  used:    2304KB     committed:    2304KB
-20. C03F00/ArkCompiler: NonMovableSpace  used:       0KB     committed:    2304KB
-21. C03F00/ArkCompiler: MachineCodeSpace used:       0KB     committed:       0KB
-22. C03F00/ArkCompiler: HugeMachineCodeSpace used:       0KB     committed:       0KB
-23. C03F00/ArkCompiler: SnapshotSpace    used:       0KB     committed:       0KB
-24. C03F00/ArkCompiler: AppSpawnSpace    used: 4736.34KB     committed:    4864KB
-25. C03F00/ArkCompiler: [gc] Anno memory usage size:  45      MB
-26. C03F00/ArkCompiler: Native memory usage size:2.99652 MB
-27. C03F00/ArkCompiler: NativeBindingSize:       0.577148KB
-28. C03F00/ArkCompiler: ArrayBufferNativeSize:   0.0117188KB
-29. C03F00/ArkCompiler: RegExpByteCodeNativeSize:0.280273KB
-30. C03F00/ArkCompiler: ChunkNativeSize:         19096   KB
-31. C03F00/ArkCompiler: [gc] Heap alive rate:         0.202871
-32. // 该虚拟机的此类型GC的整体统计
-33. C03F00/ArkCompiler: [gc] /***************** GC summary statistic: *****************/
-34. C03F00/ArkCompiler: [gc] CompressGC occurs count  6
-35. C03F00/ArkCompiler: CompressGC max pause:    2672.33 ms
-36. C03F00/ArkCompiler: CompressGC min pause:    160.626 ms
-37. C03F00/ArkCompiler: CompressGC average pause:1076.06 ms
-38. C03F00/ArkCompiler: Heap average alive rate: 0.635325
+```text
+// GC前对象实际占用大小（Region实际占用大小）->GC后对象实际占用大小（Region实际占用大小），总耗时（+concurrentMark耗时），GC触发原因。
+C03F00/ArkCompiler: [gc]  [ CompressGC ] 26.1164 (35) -> 7.10049 (10.5) MB, 160.626(+0)ms, Switch to background
+// GC运行时的各种状态以及应用名称
+C03F00/ArkCompiler: [gc] IsInBackground: 1; SensitiveStatus: 0; OnStartupEvent: 0; BundleName: com.example.demo;
+// GC运行时的各阶段耗时统计
+C03F00/ArkCompiler: [gc] /***************** GC Duration statistic: ****************/
+C03F00/ArkCompiler: [gc] TotalGC:                 160.626 ms
+C03F00/ArkCompiler: Initialize:              0.179   ms
+C03F00/ArkCompiler: Mark:                    159.204 ms
+C03F00/ArkCompiler: MarkRoots:               6.925   ms
+C03F00/ArkCompiler: ProcessMarkStack:        158.99  ms
+C03F00/ArkCompiler: Sweep:                   0.957   ms
+C03F00/ArkCompiler: Finish:                  0.277   ms
+// GC后各个部分占用的内存大小
+C03F00/ArkCompiler: [gc] /****************** GC Memory statistic: *****************/
+C03F00/ArkCompiler: [gc] AllSpaces        used:  7270.9KB     committed:   10752KB
+C03F00/ArkCompiler: ActiveSemiSpace  used:       0KB     committed:     256KB
+C03F00/ArkCompiler: OldSpace         used:  4966.9KB     committed:    5888KB
+C03F00/ArkCompiler: HugeObjectSpace  used:    2304KB     committed:    2304KB
+C03F00/ArkCompiler: NonMovableSpace  used:       0KB     committed:    2304KB
+C03F00/ArkCompiler: MachineCodeSpace used:       0KB     committed:       0KB
+C03F00/ArkCompiler: HugeMachineCodeSpace used:       0KB     committed:       0KB
+C03F00/ArkCompiler: SnapshotSpace    used:       0KB     committed:       0KB
+C03F00/ArkCompiler: AppSpawnSpace    used: 4736.34KB     committed:    4864KB
+C03F00/ArkCompiler: [gc] Anno memory usage size:  45      MB
+C03F00/ArkCompiler: Native memory usage size:2.99652 MB
+C03F00/ArkCompiler: NativeBindingSize:       0.577148KB
+C03F00/ArkCompiler: ArrayBufferNativeSize:   0.0117188KB
+C03F00/ArkCompiler: RegExpByteCodeNativeSize:0.280273KB
+C03F00/ArkCompiler: ChunkNativeSize:         19096   KB
+C03F00/ArkCompiler: [gc] Heap alive rate:         0.202871
+// 该虚拟机的此类型GC的整体统计
+C03F00/ArkCompiler: [gc] /***************** GC summary statistic: *****************/
+C03F00/ArkCompiler: [gc] CompressGC occurs count  6
+C03F00/ArkCompiler: CompressGC max pause:    2672.33 ms
+C03F00/ArkCompiler: CompressGC min pause:    160.626 ms
+C03F00/ArkCompiler: CompressGC average pause:1076.06 ms
+C03F00/ArkCompiler: Heap average alive rate: 0.635325
 ```
 
 * gc类型：[HPP YoungGC]、[HPP OldGC]、[CompressGC]、[SharedGC]。
@@ -448,7 +448,7 @@ Smart GC是一种智能GC抑制机制，在冷启动场景和性能敏感场景�
 
 ## GC开发者调试接口
 
-注意
+**注意** 
 
 以下接口仅供调试使用，非正式对外SDK接口，不应在应用正式版本中使用。
 
@@ -462,32 +462,33 @@ Smart GC是一种智能GC抑制机制，在冷启动场景和性能敏感场景�
 
 **使用参考：**
 
-```
-1. // 首先需要声明接口
-2. declare class ArkTools {
-3. static hintGC(): void;
-4. }
+```typescript
+// 首先需要声明接口
+declare class ArkTools {
+  static hintGC(): void;
+}
 
-6. @Entry
-7. @Component
-8. struct Index {
-9. @State message: string = 'Hello World';
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
 
-11. build() {
-12. Row() {
-13. Column() {
-14. Text(this.message)
-15. .fontSize(50)
-16. .fontWeight(FontWeight.Bold)
-17. Button("触发HintGC").onClick((event: ClickEvent) => {
-18. ArkTools.hintGC(); // 方法内直接调用
-19. })
-20. }
-21. .width('100%')
-22. }
-23. .height('100%')
-24. }
-25. }
+  build() {
+    Row() {
+      Column() {
+        Text(this.message)
+          .fontSize(50)
+          .fontWeight(FontWeight.Bold)
+        Button('触发HintGC').onClick((event: ClickEvent) => {
+          ArkTools.hintGC(); // 方法内直接调用
+          this.message = 'Success';
+        })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 ## GC常见问题
@@ -507,36 +508,36 @@ GC稳定性问题主要由两种异常引起：一是非法多线程操作导致
 
 0xffff000000000048 是对象的异常偏移地址。
 
-```
-1. Reason:Signal:SIGSEGV(SEGV_MAPERR)@0xffff000000000048
-2. Fault thread info:
-3. Tid:6490, Name:OS_GC_Thread
-4. #00 pc 0000000000507310 /system/lib64/platformsdk/libark_jsruntime.so(panda::ecmascript::JSHClass::SizeFromJSHClass(panda::ecmascript::TaggedObject*)+0)(a3d1ba664de66d31faed07d711ee1299)
-5. #01 pc 0000000000521f94 /system/lib64/platformsdk/libark_jsruntime.so(panda::ecmascript::CompressGCMarker::EvacuateObject(unsigned int, panda::ecmascript::TaggedObject*, panda::ecmascript::MarkWord const&, panda::ecmascript::ObjectSlot)+80)(a3d1ba664de66d31faed07d711ee1299)
-6. #02 pc 0000000000521ee4 /system/lib64/platformsdk/libark_jsruntime.so(panda::ecmascript::CompressGCMarker::MarkObject(unsigned int, panda::ecmascript::TaggedObject*, panda::ecmascript::ObjectSlot)+372)(a3d1ba664de66d31faed07d711ee1299)
-7. #03 pc 0000000000523e40 /system/lib64/platformsdk/libark_jsruntime.so(a3d1ba664de66d31faed07d711ee1299)
-8. #04 pc 0000000000516d74 /system/lib64/platformsdk/libark_jsruntime.so(a3d1ba664de66d31faed07d711ee1299)
-9. #05 pc 00000000005206d4 /system/lib64/platformsdk/libark_jsruntime.so(panda::ecmascript::CompressGCMarker::ProcessMarkStack(unsigned int)+160)(a3d1ba664de66d31faed07d711ee1299)
-10. #06 pc 000000000050460c /system/lib64/platformsdk/libark_jsruntime.so(panda::ecmascript::Heap::ParallelGCTask::Run(unsigned int)+228)(a3d1ba664de66d31faed07d711ee1299)
-11. #07 pc 000000000064f648 /system/lib64/platformsdk/libark_jsruntime.so(panda::ecmascript::Runner::Run(unsigned int)+188)(a3d1ba664de66d31faed07d711ee1299)
-12. #08 pc 000000000064f718 /system/lib64/platformsdk/libark_jsruntime.so(a3d1ba664de66d31faed07d711ee1299)
-13. #09 pc 00000000001ba6b8 /system/lib/ld-musl-aarch64.so.1(start+236)(8102fa8a64ba5e1e9f2257469d3fb251)
+```text
+Reason:Signal:SIGSEGV(SEGV_MAPERR)@0xffff000000000048
+Fault thread info:
+Tid:6490, Name:OS_GC_Thread
+#00 pc 0000000000507310 /system/lib64/platformsdk/libark_jsruntime.so(panda::ecmascript::JSHClass::SizeFromJSHClass(panda::ecmascript::TaggedObject*)+0)(a3d1ba664de66d31faed07d711ee1299)
+#01 pc 0000000000521f94 /system/lib64/platformsdk/libark_jsruntime.so(panda::ecmascript::CompressGCMarker::EvacuateObject(unsigned int, panda::ecmascript::TaggedObject*, panda::ecmascript::MarkWord const&, panda::ecmascript::ObjectSlot)+80)(a3d1ba664de66d31faed07d711ee1299)
+#02 pc 0000000000521ee4 /system/lib64/platformsdk/libark_jsruntime.so(panda::ecmascript::CompressGCMarker::MarkObject(unsigned int, panda::ecmascript::TaggedObject*, panda::ecmascript::ObjectSlot)+372)(a3d1ba664de66d31faed07d711ee1299)
+#03 pc 0000000000523e40 /system/lib64/platformsdk/libark_jsruntime.so(a3d1ba664de66d31faed07d711ee1299)
+#04 pc 0000000000516d74 /system/lib64/platformsdk/libark_jsruntime.so(a3d1ba664de66d31faed07d711ee1299)
+#05 pc 00000000005206d4 /system/lib64/platformsdk/libark_jsruntime.so(panda::ecmascript::CompressGCMarker::ProcessMarkStack(unsigned int)+160)(a3d1ba664de66d31faed07d711ee1299)
+#06 pc 000000000050460c /system/lib64/platformsdk/libark_jsruntime.so(panda::ecmascript::Heap::ParallelGCTask::Run(unsigned int)+228)(a3d1ba664de66d31faed07d711ee1299)
+#07 pc 000000000064f648 /system/lib64/platformsdk/libark_jsruntime.so(panda::ecmascript::Runner::Run(unsigned int)+188)(a3d1ba664de66d31faed07d711ee1299)
+#08 pc 000000000064f718 /system/lib64/platformsdk/libark_jsruntime.so(a3d1ba664de66d31faed07d711ee1299)
+#09 pc 00000000001ba6b8 /system/lib/ld-musl-aarch64.so.1(start+236)(8102fa8a64ba5e1e9f2257469d3fb251)
 ```
 
 指针异常问题常见堆栈信息：
 
 0x000056c2fffc0008 指针出现异常，指针映射出错。
 
-```
-1. Reason:Signal:SIGSEGV(SEGV_MAPERR)@0x000056c2fffc0008
-2. Fault thread info:
-3. Tid:2936, Name:OS_GC_Thread
-4. #00 pc 00000000004d2ec0 /system/lib64/platformsdk/libark_jsruntime.so(733f61d2f51e825872484cc344970fe5)
-5. #01 pc 00000000004c6cac /system/lib64/platformsdk/libark_jsruntime.so(733f61d2f51e825872484cc344970fe5)
-6. #02 pc 00000000004cd180 /system/lib64/platformsdk/libark_jsruntime.so(panda::ecmascript::NonMovableMarker::ProcessMarkStack(unsigned int)+256)(733f61d2f51e825872484cc344970fe5)
-7. #03 pc 000000000049d108 /system/lib64/platformsdk/libark_jsruntime.so(panda::ecmascript::ConcurrentMarker::ProcessConcurrentMarkTask(unsigned int)+52)(733f61d2f51e825872484cc344970fe5)
-8. #04 pc 00000000004b6620 /system/lib64/platformsdk/libark_jsruntime.so(panda::ecmascript::Heap::ParallelGCTask::Run(unsigned int)+236)(733f61d2f51e825872484cc344970fe5)
-9. #05 pc 00000000005d6e60 /system/lib64/platformsdk/libark_jsruntime.so(panda::ecmascript::Runner::Run(unsigned int)+168)(733f61d2f51e825872484cc344970fe5)
-10. #06 pc 00000000005d6f30 /system/lib64/platformsdk/libark_jsruntime.so(733f61d2f51e825872484cc344970fe5)
-11. #07 pc 00000000001bdb84 /system/lib/ld-musl-aarch64.so.1(start+236)(e65f5c83306cf9c7dd4643794946ab9f)
+```text
+Reason:Signal:SIGSEGV(SEGV_MAPERR)@0x000056c2fffc0008
+Fault thread info:
+Tid:2936, Name:OS_GC_Thread
+#00 pc 00000000004d2ec0 /system/lib64/platformsdk/libark_jsruntime.so(733f61d2f51e825872484cc344970fe5)
+#01 pc 00000000004c6cac /system/lib64/platformsdk/libark_jsruntime.so(733f61d2f51e825872484cc344970fe5)
+#02 pc 00000000004cd180 /system/lib64/platformsdk/libark_jsruntime.so(panda::ecmascript::NonMovableMarker::ProcessMarkStack(unsigned int)+256)(733f61d2f51e825872484cc344970fe5)
+#03 pc 000000000049d108 /system/lib64/platformsdk/libark_jsruntime.so(panda::ecmascript::ConcurrentMarker::ProcessConcurrentMarkTask(unsigned int)+52)(733f61d2f51e825872484cc344970fe5)
+#04 pc 00000000004b6620 /system/lib64/platformsdk/libark_jsruntime.so(panda::ecmascript::Heap::ParallelGCTask::Run(unsigned int)+236)(733f61d2f51e825872484cc344970fe5)
+#05 pc 00000000005d6e60 /system/lib64/platformsdk/libark_jsruntime.so(panda::ecmascript::Runner::Run(unsigned int)+168)(733f61d2f51e825872484cc344970fe5)
+#06 pc 00000000005d6f30 /system/lib64/platformsdk/libark_jsruntime.so(733f61d2f51e825872484cc344970fe5)
+#07 pc 00000000001bdb84 /system/lib/ld-musl-aarch64.so.1(start+236)(e65f5c83306cf9c7dd4643794946ab9f)
 ```

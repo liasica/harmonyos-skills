@@ -1,15 +1,15 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-spatialrecon-arengine-arsession
 title: AREngine_ARSession
-breadcrumb: API参考 > 图形 > Spatial Recon Kit（空间建模服务） > C API > 结构体 > AREngine_ARSession
+breadcrumb: API参考 > 图形 > Spatial Recon Kit（空间建模服务） > C API > 头文件和结构体 > 结构体 > AREngine_ARSession
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:52+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ada80361954868eb05a67170bc29c25b20c7fceb6724f79cea7a30b1354110a4
+scraped_at: 2026-09-02T14:53:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c8874efbd5cd5346aefebc4fe3690878470cc422e71f76bb28e9e7ddd0b3cee8
 ---
 
-```
-1. typedef struct AREngine_ARSession AREngine_ARSession
+```c
+typedef struct AREngine_ARSession AREngine_ARSession
 ```
 
 ## 概述

@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: Taro框架+H5接入智能填充
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 智能填充服务 > 三方框架+H5接入智能填充 > Taro框架+H5接入智能填充
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:40:20+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:bf0c4abe0fbb77f5b82573975bb5827e04bc92ed27f9acd9567da35216bcc994
+scraped_at: 2026-09-02T15:00:01+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:ad5ee7c75d48c5a3ad90ccd15ee8d6cfa0d04b5d4b3340186530a3137a3a3eb1
 ---
 
-说明
+**说明** 
 
 目前仅支持已适配HarmonyOS的三方框架应用使用。
 
@@ -27,143 +27,144 @@ Taro及HarmonyOS版工程的搭建请参考官方文档[Harmony Hybrid | Taro �
 
 ## 效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/hyNhse1-TkiSjgnl2VzQ5A/zh-cn_image_0000002589245469.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/9idy_rHZT5qWQ43_421ySw/zh-cn_image_0000002706835186.png)
 
 ## 示例代码
 
 示例代码仅展示接入智能填充相关部分，请按照实际场景修改后使用。在Taro的Input组件（Form表单的子节点）中添加nativeProps属性，并配置nativeProps中[autocomplete](scenario-fusion-mappingrelationship.md#h5-autocomplete和harmonyos的contenttype的映射关系)属性来支持智能填充，Form表单提交后，当页面导航发生变化时，满足历史表单输入保存的条件时会触发对应弹窗（建议使用HTML <button> 标签进行Form表单提交）。代码如下：
 
-```
-1. import { View, Text, Input, Form } from "@tarojs/components";
-2. import Taro, { useLoad } from "@tarojs/taro";
-3. import "./index.scss";
+```tsx
+import React from 'react';
+import { View, Text, Input, Form } from '@tarojs/components';
+import Taro, { useLoad  } from '@tarojs/taro';
+import './index.scss';
 
-5. export default function Demo() {
-6. useLoad(() => {
-7. console.info("Page loaded.");
-8. });
-9. function handleSubmit(e) {
-10. Taro.request({
-11. // 将URL设置为实际的接口路径。
-12. url: "",
-13. method: "POST",
-14. });
-15. }
-16. return (
-17. <Form onSubmit={handleSubmit}>
-18. <View className="native-form">
-19. <View className="form-item">
-20. <Text className="col-md-4">昵称：</Text>
-21. <View className="col-md-6">
-22. <Input
-23. className="form-value"
-24. name="nickname"
-25. type="text"
-26. nativeProps={{ autocomplete: "nickname" }}
-27. ></Input>
-28. </View>
-29. </View>
-30. <View className="form-item">
-31. <Text className="col-md-4">姓名：</Text>
-32. <View className="col-md-6">
-33. <Input
-34. className="form-value"
-35. name="name"
-36. type="text"
-37. nativeProps={{ autocomplete: "name" }}
-38. ></Input>
-39. </View>
-40. </View>
-41. <View className="form-item">
-42. <Text className="col-md-4">手机号：</Text>
-43. <View className="col-md-6">
-44. <Input
-45. className="form-value"
-46. name="tel"
-47. type="text"
-48. nativeProps={{ autocomplete: "tel-national" }}
-49. ></Input>
-50. </View>
-51. </View>
-52. <View className="form-item">
-53. <Text className="col-md-4">邮箱：</Text>
-54. <View className="col-md-6">
-55. <Input
-56. className="form-value"
-57. name="email"
-58. type="text"
-59. nativeProps={{ autocomplete: "email" }}
-60. ></Input>
-61. </View>
-62. </View>
-63. <View className="form-item">
-64. <Text className="col-md-4">身份证：</Text>
-65. <View className="col-md-6">
-66. <Input
-67. className="form-value"
-68. name="idcard"
-69. type="text"
-70. nativeProps={{ autocomplete: "id-card-number" }}
-71. ></Input>
-72. </View>
-73. </View>
-74. <View className="form-item">
-75. <Text className="col-md-4">带街道地址：</Text>
-76. <View className="col-md-6">
-77. <Input
-78. className="form-value"
-79. name="street-address"
-80. type="text"
-81. nativeProps={{ autocomplete: "street-address" }}
-82. ></Input>
-83. </View>
-84. </View>
-85. </View>
-86. <View className="button">
-87. <button className="button"> 提交</button>
-88. </View>
-89. </Form>
-90. );
-91. }
+export default function Demo() : React.ReactNode {
+  useLoad(() => {
+    console.info('Page loaded.');
+  });
+  function handleSubmit(e) : void {
+    Taro.request({
+      // 将URL设置为实际的接口路径。
+      url: '',
+      method: 'POST',
+    });
+  }
+  return (
+    <Form onSubmit={handleSubmit}>
+      <View className="native-form">
+        <View className="form-item">
+          <Text className="col-md-4">昵称：</Text>
+          <View className="col-md-6">
+            <Input
+              className="form-value"
+              name="nickname"
+              type="text"
+              nativeProps={{ autocomplete: 'nickname' }}
+            ></Input>
+          </View>
+        </View>
+        <View className="form-item">
+          <Text className="col-md-4">姓名：</Text>
+          <View className="col-md-6">
+            <Input
+              className="form-value"
+              name="name"
+              type="text"
+              nativeProps={{ autocomplete: 'name' }}
+            ></Input>
+          </View>
+        </View>
+        <View className="form-item">
+          <Text className="col-md-4">手机号：</Text>
+          <View className="col-md-6">
+            <Input
+              className="form-value"
+              name="tel"
+              type="text"
+              nativeProps={{ autocomplete: 'tel-national' }}
+            ></Input>
+          </View>
+        </View>
+        <View className="form-item">
+          <Text className="col-md-4">邮箱：</Text>
+          <View className="col-md-6">
+            <Input
+              className="form-value"
+              name="email"
+              type="text"
+              nativeProps={{ autocomplete: 'email' }}
+            ></Input>
+          </View>
+        </View>
+        <View className="form-item">
+          <Text className="col-md-4">身份证：</Text>
+          <View className="col-md-6">
+            <Input
+              className="form-value"
+              name="idcard"
+              type="text"
+              nativeProps={{ autocomplete: 'id-card-number' }}
+            ></Input>
+          </View>
+        </View>
+        <View className="form-item">
+          <Text className="col-md-4">带街道地址：</Text>
+          <View className="col-md-6">
+            <Input
+              className="form-value"
+              name="street-address"
+              type="text"
+              nativeProps={{ autocomplete: 'street-address' }}
+            ></Input>
+          </View>
+        </View>
+      </View>
+      <View>
+        <button className="button">提交</button>
+      </View>
+    </Form>
+  );
+}
 ```
 
 index.scss如下：
 
-```
-1. .form-item {
-2. display: flex;
-3. flex-wrap: wrap;
-4. flex-direction: row;
-5. align-items: center;
-6. justify-content: flex-start;
-7. margin-top: 20px;
-8. .col-md-4 {
-9. width: 30%;
-10. text-align: right;
-11. font-size: 32px;
-12. }
-13. .col-md-6 {
-14. width: 50%;
-15. .form-value {
-16. width: 100%;
-17. border-style: solid;
-18. border-width: 1px;
-19. border-color: #333333;
-20. font-size: 32px;
-21. }
-22. }
-23. }
-24. .button {
-25. width: 15%;
-26. background-color: #4caf50;
-27. border: none;
-28. color: white;
-29. padding: 16px 32px;
-30. text-align: center;
-31. text-decoration: none;
-32. display: inline-block;
-33. font-size: 24px;
-34. margin-left: 30%;
-35. margin-top: 20px;
-36. }
+```scss
+.form-item {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 20px;
+  .col-md-4 {
+    width: 30%;
+    text-align: right;
+    font-size: 32px;
+  }
+  .col-md-6 {
+    width: 50%;
+    .form-value {
+      width: 100%;
+      border-style: solid;
+      border-width: 1px;
+      border-color: #333333;
+      font-size: 32px;
+    }
+  }
+}
+.button {
+  width: 20%;
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  margin-left: 30%;
+  margin-top: 20px;
+}
 ```

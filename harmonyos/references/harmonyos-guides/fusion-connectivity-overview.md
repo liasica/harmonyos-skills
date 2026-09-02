@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fusion-connec
 title: 融合短距服务开发概述
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 融合短距 > 融合短距服务开发概述
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:32:36+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:2dfe6e3db368e32cb0fbe9889d9e236030d39bf492a79383e05be0fb2562a528
+scraped_at: 2026-09-02T14:59:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:91963745475c0f014fd9d8cc8b036250723c925782e289a4da064c7faacd8602
 ---
 
 ## 概述
@@ -22,7 +22,7 @@ content_hash: sha256:2dfe6e3db368e32cb0fbe9889d9e236030d39bf492a79383e05be0fb256
 
 ## 系统框架
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/F1NBKCi0S4ikwwn78Hbp3g/zh-cn_image_0000002558605264.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/wpdSMTNaTBebhbomYaRW9Q/zh-cn_image_0000002736433487.png)
 
 ### 模块功能说明
 
@@ -50,3 +50,7 @@ content_hash: sha256:2dfe6e3db368e32cb0fbe9889d9e236030d39bf492a79383e05be0fb256
   + **PartnerAgent服务生命周期管理**：该模块提供PartnerAgent服务进程的动态启停功能，防止资源浪费。
   + **代理通知**：该模块负责管理负一屏的通知提醒，主要用于提醒用户，伙伴设备Extension进程正在后台运行，会增加一定的功耗耗电，并且可能会控制HarmonyOS设备的媒体能力和通话能力。
   + **蓝牙服务/AbilityManager服务/SAMgr管理/通知服务**：HarmonyOS基础系统服务。蓝牙服务负责蓝牙扫描、蓝牙连接和蓝牙数据传输；AbilityManager服务提供拉起/销毁伙伴设备Extension的能力；SAMgr管理负责拉起/销毁PartnerAgent服务；通知服务负责在负一屏显示通知。
+
+## 模拟器支持情况
+
+星闪、蓝牙模块暂不支持模拟器。

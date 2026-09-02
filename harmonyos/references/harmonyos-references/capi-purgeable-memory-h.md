@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-purg
 title: purgeable_memory.h
 breadcrumb: API参考 > 公共基础能力 > C API > 头文件 > purgeable_memory.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:19+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:86ed369f66fdfa916b3a514895541bc82414faffd77eafc8ada1ee42656eba73
+scraped_at: 2026-09-02T15:03:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8b143164483db0499af5e883119ea912b4883d2d79660660fad12c53ab80cfb7
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供可丢弃内存的内存管理功能。
 
@@ -30,19 +28,13 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [PurgMem](capi-memory-purgmem.md) | OH\_PurgeableMemory | 可清除的内存结构。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -59,14 +51,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_PurgeableMemory\_ModifyFunc()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef bool (*OH_PurgeableMemory_ModifyFunc)(void *, size_t, void *)
+```c
+typedef bool (*OH_PurgeableMemory_ModifyFunc)(void *, size_t, void *)
 ```
 
 **描述**
@@ -91,10 +79,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PurgeableMemory\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_PurgeableMemory *OH_PurgeableMemory_Create(size_t size, OH_PurgeableMemory_ModifyFunc func, void *funcPara)
+```c
+OH_PurgeableMemory *OH_PurgeableMemory_Create(size_t size, OH_PurgeableMemory_ModifyFunc func, void *funcPara)
 ```
 
 **描述**
@@ -119,10 +105,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PurgeableMemory\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. bool OH_PurgeableMemory_Destroy(OH_PurgeableMemory *purgObj)
+```c
+bool OH_PurgeableMemory_Destroy(OH_PurgeableMemory *purgObj)
 ```
 
 **描述**
@@ -145,10 +129,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PurgeableMemory\_BeginRead()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. bool OH_PurgeableMemory_BeginRead(OH_PurgeableMemory *purgObj)
+```c
+bool OH_PurgeableMemory_BeginRead(OH_PurgeableMemory *purgObj)
 ```
 
 **描述**
@@ -171,10 +153,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PurgeableMemory\_EndRead()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_PurgeableMemory_EndRead(OH_PurgeableMemory *purgObj)
+```c
+void OH_PurgeableMemory_EndRead(OH_PurgeableMemory *purgObj)
 ```
 
 **描述**
@@ -191,10 +171,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PurgeableMemory\_BeginWrite()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. bool OH_PurgeableMemory_BeginWrite(OH_PurgeableMemory *purgObj)
+```c
+bool OH_PurgeableMemory_BeginWrite(OH_PurgeableMemory *purgObj)
 ```
 
 **描述**
@@ -217,10 +195,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PurgeableMemory\_EndWrite()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_PurgeableMemory_EndWrite(OH_PurgeableMemory *purgObj)
+```c
+void OH_PurgeableMemory_EndWrite(OH_PurgeableMemory *purgObj)
 ```
 
 **描述**
@@ -237,10 +213,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PurgeableMemory\_GetContent()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void *OH_PurgeableMemory_GetContent(OH_PurgeableMemory *purgObj)
+```c
+void *OH_PurgeableMemory_GetContent(OH_PurgeableMemory *purgObj)
 ```
 
 **描述**
@@ -263,10 +237,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PurgeableMemory\_ContentSize()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. size_t OH_PurgeableMemory_ContentSize(OH_PurgeableMemory *purgObj)
+```c
+size_t OH_PurgeableMemory_ContentSize(OH_PurgeableMemory *purgObj)
 ```
 
 **描述**
@@ -289,10 +261,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PurgeableMemory\_AppendModify()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. bool OH_PurgeableMemory_AppendModify(OH_PurgeableMemory *purgObj, OH_PurgeableMemory_ModifyFunc func, void *funcPara)
+```c
+bool OH_PurgeableMemory_AppendModify(OH_PurgeableMemory *purgObj, OH_PurgeableMemory_ModifyFunc func, void *funcPara)
 ```
 
 **描述**

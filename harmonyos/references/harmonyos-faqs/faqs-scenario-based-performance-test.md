@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-scenario-b
 title: 场景化性能测试
 breadcrumb: FAQ > DevEco Testing > 专项测试 > 场景化性能测试
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:30+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:896e5637911a58693b5ce84e3a9fc8b1c7e63b698a83c4d7f093a62b4bd24aba
+scraped_at: 2026-09-02T14:54:59+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:d4ccbb5d8dead5520fe9f00e5cdf00ba2816613d106084cf83024870e6e76ba0
 ---
 
 * **[执行报告用例的其中一个步骤，在视频中动效为什么只录了一半](faqs-scenario-based-performance-test-1.md)**
@@ -23,3 +23,5 @@ content_hash: sha256:896e5637911a58693b5ce84e3a9fc8b1c7e63b698a83c4d7f093a62b4bd
 * **[测试报告中，用例执行详情为红色，且无数据是什么原因](faqs-scenario-based-performance-test-13.md)**
 * **[时延类指标出现负数是什么原因](faqs-scenario-based-performance-test-14.md)**
 * **[测试结果中，指标值“0”和“-”有什么区别](faqs-scenario-based-performance-test-15.md)**
+* **[如何解决场景化性能测试脚本运行报错：'NoneType' object has no attribute 'replace'](faqs-scenario-based-performance-test-16.md)**
+* **[场景化性能测试任务创建及执行失败的常见问题](faqs-scenario-based-performance-test-17.md)**

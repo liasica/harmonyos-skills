@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@system.geolocation (地理位置)"
 breadcrumb: API参考 > 应用服务 > Location Kit（位置服务） > ArkTS API > 已停止维护的接口 > @system.geolocation (地理位置)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:05+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:09deaf69d7399bdddaacc7ac3fa33541b542f413504731b94fcc8f2b07c302e7
+scraped_at: 2026-09-02T15:02:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f98b29ec05e17a1d286b81be35afb84569c0ab48247ffc4d622060e8485050c4
 ---
 
 本模块仅提供GNSS定位、网络定位等基本功能。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 3开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 对于Lite Wearable设备类型，该模块长期维护，正常使用。
@@ -18,27 +18,21 @@ content_hash: sha256:09deaf69d7399bdddaacc7ac3fa33541b542f413504731b94fcc8f2b07c
 
 ## 导入模块
 
-WearableLite Wearable
-
-```
-1. import geolocation from '@system.geolocation';
+```js
+import geolocation from '@system.geolocation';
 ```
 
 ## 权限列表
-
-WearableLite Wearable
 
 ohos.permission.LOCATION
 
 ## geolocation.getLocation(deprecated)
 
-WearableLite Wearable
-
 getLocation(options?: GetLocationOption): void
 
 获取设备的地理位置。
 
-说明
+**说明** 
 
 除Lite Wearable外，从API version 9开始废弃，建议使用[geoLocationManager.getCurrentLocation](js-apis-geolocationmanager.md#geolocationmanagergetcurrentlocation)替代。
 
@@ -54,65 +48,63 @@ getLocation(options?: GetLocationOption): void
 
 **JS示例：**
 
-```
-1. <div class="container">
-2. <text class="title" style="font-size: {{fontSize}}; color: {{fontColor}};">
-3. getLocation
-4. </text>
-5. <input type="button" value="获取设备的地理位置" style="width: 240px; height: 50px;" onclick="getLocation"></input>
-6. </div>
-```
-
-```
-1. .container {
-2. display: flex;
-3. flex-direction: column;
-4. align-items: center;
-5. left: 0px;
-6. top: 0px;
-7. width: 454px;
-8. height: 454px;
-9. }
-
-11. .title {
-12. font-size: 100px;
-13. text-align: center;
-14. width: 200px;
-15. height: 100px;
-16. }
-
-18. .button {
-19. font-size: 30px;
-20. text-align: center;
-21. width: 200px;
-22. height: 100px;
-23. }
+```xml
+<div class="container">
+  <text class="title" style="font-size: {{fontSize}}; color: {{fontColor}};">
+    getLocation
+  </text>
+  <input type="button" value="获取设备的地理位置" style="width: 240px; height: 50px;" onclick="getLocation"></input>
+</div>
 ```
 
+```css
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 0px;
+  top: 0px;
+  width: 454px;
+  height: 454px;
+}
+
+.title {
+  font-size: 100px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
+
+.button {
+  font-size: 30px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
 ```
-1. export default {
-2. getLocation() {
-3. geolocation.getLocation({
-4. success: function(data) {
-5. console.info('success get location data. latitude:' + data.latitude);
-6. },
-7. fail: function(data, code) {
-8. console.info('fail to get location. code:' + code + ', data:' + data);
-9. }
-10. });
-11. },
-12. }
+
+```js
+export default {
+  getLocation() {
+    geolocation.getLocation({
+      success: function(data) {
+        console.info('success get location data. latitude:' + data.latitude);
+      },
+      fail: function(data, code) {
+        console.info('fail to get location. code:' + code + ', data:' + data);
+      }
+    });
+  },
+}
 ```
 
 ## geolocation.getLocationType(deprecated)
-
-WearableLite Wearable
 
 getLocationType(options?: GetLocationTypeOption): void
 
 获取当前设备支持的定位类型。
 
-说明
+**说明** 
 
 除Lite Wearable外，从API version 9开始废弃。位置服务子系统仅支持gnss和network两种定位类型，后续不再提供接口查询支持的定位类型。
 
@@ -126,65 +118,63 @@ getLocationType(options?: GetLocationTypeOption): void
 
 **JS示例：**
 
-```
-1. <div class="container">
-2. <text class="title" style="font-size: {{fontSize}}; color: {{fontColor}};">
-3. getLocationType
-4. </text>
-5. <input type="button" value="获取当前设备支持的定位类型" style="width: 240px; height: 50px;" onclick="getLocationType"></input>
-6. </div>
-```
-
-```
-1. .container {
-2. display: flex;
-3. flex-direction: column;
-4. align-items: center;
-5. left: 0px;
-6. top: 0px;
-7. width: 454px;
-8. height: 454px;
-9. }
-
-11. .title {
-12. font-size: 100px;
-13. text-align: center;
-14. width: 200px;
-15. height: 100px;
-16. }
-
-18. .button {
-19. font-size: 30px;
-20. text-align: center;
-21. width: 200px;
-22. height: 100px;
-23. }
+```xml
+<div class="container">
+  <text class="title" style="font-size: {{fontSize}}; color: {{fontColor}};">
+    getLocationType
+  </text>
+  <input type="button" value="获取当前设备支持的定位类型" style="width: 240px; height: 50px;" onclick="getLocationType"></input>
+</div>
 ```
 
+```css
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 0px;
+  top: 0px;
+  width: 454px;
+  height: 454px;
+}
+
+.title {
+  font-size: 100px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
+
+.button {
+  font-size: 30px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
 ```
-1. export default {
-2. getLocationType() {
-3. geolocation.getLocationType({
-4. success: function(data) {
-5. console.info('success get location type:' + data.types[0]);
-6. },
-7. fail: function(data, code) {
-8. console.info('fail to get location. code:' + code + ', data:' + data);
-9. },
-10. });
-11. },
-12. }
+
+```js
+export default {
+  getLocationType() {
+    geolocation.getLocationType({
+      success: function(data) {
+        console.info('success get location type:' + data.types[0]);
+      },
+      fail: function(data, code) {
+        console.info('fail to get location. code:' + code + ', data:' + data);
+       },
+     });
+  },
+}
 ```
 
 ## geolocation.subscribe(deprecated)
-
-WearableLite Wearable
 
 subscribe(options: SubscribeLocationOption): void
 
 订阅设备的地理位置信息。多次调用的话，只有最后一次的调用生效。
 
-说明
+**说明** 
 
 除Lite Wearable外，从API version 9开始废弃，建议使用[geoLocationManager.on('locationChange')](js-apis-geolocationmanager.md#geolocationmanageronlocationchange)替代。
 
@@ -200,65 +190,63 @@ subscribe(options: SubscribeLocationOption): void
 
 **JS示例：**
 
-```
-1. <div class="container">
-2. <text class="title" style="font-size: {{fontSize}}; color: {{fontColor}};">
-3. subscribe
-4. </text>
-5. <input type="button" value="订阅设备的地理位置信息" style="width: 240px; height: 50px;" onclick="subscribe"></input>
-6. </div>
-```
-
-```
-1. .container {
-2. display: flex;
-3. flex-direction: column;
-4. align-items: center;
-5. left: 0px;
-6. top: 0px;
-7. width: 454px;
-8. height: 454px;
-9. }
-
-11. .title {
-12. font-size: 100px;
-13. text-align: center;
-14. width: 200px;
-15. height: 100px;
-16. }
-
-18. .button {
-19. font-size: 30px;
-20. text-align: center;
-21. width: 200px;
-22. height: 100px;
-23. }
+```xml
+<div class="container">
+  <text class="title" style="font-size: {{fontSize}}; color: {{fontColor}};">
+    subscribe
+  </text>
+  <input type="button" value="订阅设备的地理位置信息" style="width: 240px; height: 50px;" onclick="subscribe"></input>
+</div>
 ```
 
+```css
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 0px;
+  top: 0px;
+  width: 454px;
+  height: 454px;
+}
+
+.title {
+  font-size: 100px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
+
+.button {
+  font-size: 30px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
 ```
-1. export default {
-2. subscribe() {
-3. geolocation.subscribe({
-4. success: function(data) {
-5. console.info('get location. latitude:' + data.latitude);
-6. },
-7. fail: function(data, code) {
-8. console.info('fail to get location. code:' + code + ', data:' + data);
-9. },
-10. });
-11. },
-12. }
+
+```js
+export default {
+  subscribe() {
+    geolocation.subscribe({
+      success: function(data) {
+        console.info('get location. latitude:' + data.latitude);
+      },
+      fail: function(data, code) {
+        console.info('fail to get location. code:' + code + ', data:' + data);
+      },
+    });
+  },
+}
 ```
 
 ## geolocation.unsubscribe(deprecated)
-
-WearableLite Wearable
 
 unsubscribe(): void
 
 取消订阅设备的地理位置信息。
 
-说明
+**说明** 
 
 除Lite Wearable外，从API version 9开始废弃，建议使用[geoLocationManager.off('locationChange')](js-apis-geolocationmanager.md#geolocationmanagerofflocationchange)替代。
 
@@ -268,58 +256,56 @@ unsubscribe(): void
 
 **JS示例：**
 
-```
-1. <div class="container">
-2. <text class="title" style="font-size: {{fontSize}}; color: {{fontColor}};">
-3. unsubscribe
-4. </text>
-5. <input type="button" value="取消订阅设备的地理位置信息" style="width: 240px; height: 50px;" onclick="unsubscribe"></input>
-6. </div>
-```
-
-```
-1. .container {
-2. display: flex;
-3. flex-direction: column;
-4. align-items: center;
-5. left: 0px;
-6. top: 0px;
-7. width: 454px;
-8. height: 454px;
-9. }
-
-11. .title {
-12. font-size: 100px;
-13. text-align: center;
-14. width: 200px;
-15. height: 100px;
-16. }
-
-18. .button {
-19. font-size: 30px;
-20. text-align: center;
-21. width: 200px;
-22. height: 100px;
-23. }
+```xml
+<div class="container">
+  <text class="title" style="font-size: {{fontSize}}; color: {{fontColor}};">
+    unsubscribe
+  </text>
+  <input type="button" value="取消订阅设备的地理位置信息" style="width: 240px; height: 50px;" onclick="unsubscribe"></input>
+</div>
 ```
 
+```css
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 0px;
+  top: 0px;
+  width: 454px;
+  height: 454px;
+}
+
+.title {
+  font-size: 100px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
+
+.button {
+  font-size: 30px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
 ```
-1. export default {
-2. unsubscribe() {
-3. geolocation.unsubscribe();
-4. },
-5. }
+
+```js
+export default {
+  unsubscribe() {
+    geolocation.unsubscribe();
+  },
+}
 ```
 
 ## geolocation.getSupportedCoordTypes(deprecated)
-
-WearableLite Wearable
 
 getSupportedCoordTypes(): Array<string>
 
 获取设备支持的坐标系类型。
 
-说明
+**说明** 
 
 除Lite Wearable外，从API version 9开始废弃。位置服务子系统仅支持WGS-84坐标系，后续不再提供接口查询支持的坐标系类型。
 
@@ -333,57 +319,55 @@ getSupportedCoordTypes(): Array<string>
 
 **JS示例：**
 
-```
-1. <div class="container">
-2. <text class="title" style="font-size: {{fontSize}}; color: {{fontColor}};">
-3. getSupportedCoordTypes
-4. </text>
-5. <input type="button" value="获取设备支持的坐标系类型" style="width: 240px; height: 50px;" onclick="getSupportedCoordTypes"></input>
-6. </div>
-```
-
-```
-1. .container {
-2. display: flex;
-3. flex-direction: column;
-4. align-items: center;
-5. left: 0px;
-6. top: 0px;
-7. width: 454px;
-8. height: 454px;
-9. }
-
-11. .title {
-12. font-size: 100px;
-13. text-align: center;
-14. width: 200px;
-15. height: 100px;
-16. }
-
-18. .button {
-19. font-size: 30px;
-20. text-align: center;
-21. width: 200px;
-22. height: 100px;
-23. }
+```xml
+<div class="container">
+  <text class="title" style="font-size: {{fontSize}}; color: {{fontColor}};">
+    getSupportedCoordTypes
+  </text>
+  <input type="button" value="获取设备支持的坐标系类型" style="width: 240px; height: 50px;" onclick="getSupportedCoordTypes"></input>
+</div>
 ```
 
+```css
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 0px;
+  top: 0px;
+  width: 454px;
+  height: 454px;
+}
+
+.title {
+  font-size: 100px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
+
+.button {
+  font-size: 30px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
 ```
-1. export default {
-2. getSupportedCoordTypes() {
-3. var types = geolocation.getSupportedCoordTypes();
-4. console.info('getSupportedCoordTypes:' types);
-5. },
-6. }
+
+```js
+export default {
+  getSupportedCoordTypes() {
+    var types = geolocation.getSupportedCoordTypes();
+    console.info('getSupportedCoordTypes:' types);
+  },
+}
 ```
 
 ## GetLocationOption(deprecated)
 
-WearableLite Wearable
-
 单次定位请求的配置参数。
 
-说明
+**说明** 
 
 除Lite Wearable外，从API version 9开始废弃，建议使用[geoLocationManager.CurrentLocationRequest](js-apis-geolocationmanager.md#currentlocationrequest)替代。
 
@@ -411,11 +395,9 @@ fail返回错误代码：
 
 ## GeolocationResponse(deprecated)
 
-WearableLite Wearable
-
 位置信息，包含经度、纬度、定位精度等信息。
 
-说明
+**说明** 
 
 除Lite Wearable外，从API version 9开始废弃，建议使用[geoLocationManager.Location](js-apis-geolocationmanager.md#location)替代。
 
@@ -431,11 +413,9 @@ WearableLite Wearable
 
 ## GetLocationTypeOption(deprecated)
 
-WearableLite Wearable
-
 查询定位类型接口的入参，用于存放回调函数，在查询成功或者失败时接收查询结果。
 
-说明
+**说明** 
 
 除Lite Wearable外，从API version 9开始废弃。
 
@@ -449,11 +429,9 @@ WearableLite Wearable
 
 ## GetLocationTypeResponse(deprecated)
 
-WearableLite Wearable
-
 当前设备支持的定位类型列表
 
-说明
+**说明** 
 
 除Lite Wearable外，从API version 9开始废弃。
 
@@ -465,11 +443,9 @@ WearableLite Wearable
 
 ## SubscribeLocationOption(deprecated)
 
-WearableLite Wearable
-
 持续定位请求的配置参数。
 
-说明
+**说明** 
 
 除Lite Wearable外，从API version 9开始废弃，建议使用[geoLocationManager.CurrentLocationRequest](js-apis-geolocationmanager.md#currentlocationrequest)替代。
 

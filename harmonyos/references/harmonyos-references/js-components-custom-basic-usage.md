@@ -3,40 +3,38 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 自定义组件的基本用法
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 自定义组件 > 自定义组件的基本用法
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:39+08:00
-doc_updated_at: 2026-03-23
-content_hash: sha256:f68e213c8e8a27542d210f54931cf9c8bc0af691a6eadcca2ddd02e365eb6041
+scraped_at: 2026-09-02T15:01:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:750881f29895ea59e6d2ddc8a04f6f2824d2d70d2521e910d3d169da809714b8
 ---
 
 自定义组件是用户根据业务需求，将已有的组件组合，封装成的新组件，可以在工程中多次调用，从而提高代码的可读性。自定义组件通过element引入到宿主页面，使用方法如下：
 
-```
-1. <element name='comp' src='../common/component/comp.hml'></element>
-2. <div>
-3. <comp prop1='xxxx' @child1="bindParentVmMethod"></comp>
-4. </div>
+```html
+<element name='comp' src='../common/component/comp.hml'></element>
+<div>
+  <comp prop1='xxxx' @child1="bindParentVmMethod"></comp>
+</div>
 ```
 
 结合if-else使用自定义组件的示例，showComp1为true时显示自定义组件comp1，否则显示comp2：
 
-```
-1. <element name='comp1' src='../common/component/comp1/comp1.hml'></element>
-2. <element name='comp2' src='../common/component/comp2/comp2.hml'></element>
-3. <div>
-4. <comp1 if="{{showComp1}}" prop1='xxxx' @child1="bindParentVmMethodOne"></comp1>
-5. <comp2 else prop1='xxxx' @child1="bindParentVmMethodTwo"></comp2>
-6. </div>
+```html
+<element name='comp1' src='../common/component/comp1/comp1.hml'></element>
+<element name='comp2' src='../common/component/comp2/comp2.hml'></element>
+<div>
+  <comp1 if="{{showComp1}}" prop1='xxxx' @child1="bindParentVmMethodOne"></comp1>
+  <comp2 else prop1='xxxx' @child1="bindParentVmMethodTwo"></comp2>
+</div>
 ```
 
 自定义组件的name属性指自定义组件名称(非必填)，组件名称对大小写不敏感，默认使用小写。src属性指自定义组件hml文件路径(必填)，若没有设置name属性，则默认使用hml文件名作为组件名。
 
 ## 自定义事件
 
-PhonePC/2in1TabletTVWearable
-
 父组件中绑定自定义子组件的事件使用(on|@)event-name="bindParentVmMethod"语法，子组件中通过this.$emit('eventName', { params: '传递参数' })触发事件并向上传递参数，父组件执行bindParentVmMethod方法并接收子组件传递的参数。
 
-说明
+**说明** 
 
 子组件中使用驼峰命名法命名的事件，在父组件中绑定时需要使用短横线分隔命名形式，例如：@children-event表示绑定子组件的childrenEvent事件。
 
@@ -44,120 +42,118 @@ PhonePC/2in1TabletTVWearable
 
 子组件comp定义如下：
 
-```
-1. <!-- comp.hml -->
-2. <div class="item">
-3. <text class="text-style" onclick="childClicked">点击这里查看隐藏文本</text>
-4. <text class="text-style" if="{{showObj}}">hello world</text>
-5. </div>
-```
-
-```
-1. /* comp.css */
-2. .item {
-3. width: 700px;
-4. flex-direction: column;
-5. height: 300px;
-6. align-items: center;
-7. margin-top: 100px;
-8. }
-9. .text-style {
-10. font-weight: 500;
-11. font-family: Courier;
-12. font-size: 40px;
-13. }
+```html
+<!-- comp.hml -->
+<div class="item">  
+   <text class="text-style" onclick="childClicked">点击这里查看隐藏文本</text> 
+   <text class="text-style" if="{{showObj}}">hello world</text> 
+</div>
 ```
 
+```css
+/* comp.css */
+.item {
+  width: 700px;
+  flex-direction: column;
+  height: 300px;
+  align-items: center;
+  margin-top: 100px;
+}
+.text-style {
+  font-weight: 500;
+  font-family: Courier;
+  font-size: 40px;
+}
 ```
-1. // comp.js
-2. export default {
-3. data: {
-4. showObj: false,
-5. },
-6. childClicked () {
-7. this.$emit('eventType1');
-8. this.showObj = !this.showObj;
-9. },
-10. }
+
+```js
+// comp.js
+export default {
+  data: {
+    showObj: false,
+  },
+  childClicked () {
+    this.$emit('eventType1');
+    this.showObj = !this.showObj;
+  },
+}
 ```
 
 引入子组件comp的父组件示例如下：
 
-```
-1. <!-- xxx.hml -->
-2. <element name='comp' src='../common/component/comp.hml'></element>
-3. <div class="container">
-4. <comp @event-type1="textClicked"></comp>
-5. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. background-color: #f8f8ff;
-4. flex: 1;
-5. flex-direction: column;
-6. align-content: center;
-7. }
+```html
+<!-- xxx.hml --> 
+<element name='comp' src='../common/component/comp.hml'></element>  
+<div class="container">  
+  <comp @event-type1="textClicked"></comp>  
+</div>
 ```
 
+```css
+/* xxx.css */
+.container {
+  background-color: #f8f8ff;
+  flex: 1;
+  flex-direction: column;
+  align-content: center;
+}
 ```
-1. // xxx.js
-2. export default {
-3. textClicked () {}
-4. }
+
+```js
+// xxx.js
+export default {
+  textClicked () {}
+}
 ```
 
 **示例2：有参数传递**
 
 子组件comp定义如下：
 
-```
-1. <!-- comp.hml -->
-2. <div class="item">
-3. <text class="text-style" onclick="childClicked">点击这里查看隐藏文本</text>
-4. <text class="text-style" if="{{ showObj }}">hello world</text>
-5. </div>
+```html
+<!-- comp.hml -->
+<div class="item">  
+   <text class="text-style" onclick="childClicked">点击这里查看隐藏文本</text> 
+   <text class="text-style" if="{{ showObj }}">hello world</text> 
+</div>
 ```
 
-```
-1. // comp.js
-2. export default {
-3. childClicked () {
-4. this.$emit('eventType1', { text: '收到子组件参数' });
-5. this.showObj = !this.showObj;
-6. },
-7. }
+```js
+// comp.js
+export default {
+  childClicked () {
+    this.$emit('eventType1', { text: '收到子组件参数' });
+    this.showObj = !this.showObj;
+  },
+}
 ```
 
 子组件向上传递参数text，父组件接收时通过e.detail来获取该参数：
 
-```
-1. <!-- xxx.hml -->
-2. <element name='comp' src='../common/comp/comp.hml'></element>
-3. <div class="container">
-4. <text>父组件：{{text}}</text>
-5. <comp @event-type1="textClicked"></comp>
-6. </div>
-```
-
-```
-1. // xxx.js
-2. export default {
-3. data: {
-4. text: '开始',
-5. },
-6. textClicked (e) {
-7. this.text = e.detail.text;
-8. },
-9. }
+```html
+<!-- xxx.hml -->
+<element name='comp' src='../common/comp/comp.hml'></element>
+<div class="container">  
+   <text>父组件：{{text}}</text> 
+   <comp @event-type1="textClicked"></comp>  
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/LSSduMQhSYyZhHRHsncyhQ/zh-cn_image_0000002558607122.gif)
+```js
+// xxx.js
+export default {
+  data: {
+    text: '开始',
+  },
+  textClicked (e) {
+    this.text = e.detail.text;
+  },
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/Q7DxVNC4Sbi11O38QShFjg/zh-cn_image_0000002736315551.gif)
 
 ## 自定义组件数据
-
-PhonePC/2in1TabletTVWearable
 
 自定义组件的js文件中可以通过声明data、props、computed等字段完成数据的定义、传递与处理，其中props与computed的具体使用请参考[数据传递与处理](js-components-custom-props.md)章节。
 

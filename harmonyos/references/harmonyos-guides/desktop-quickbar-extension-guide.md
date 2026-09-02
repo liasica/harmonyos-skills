@@ -3,30 +3,34 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/desktop-quick
 title: 应用接入快捷栏
 breadcrumb: 指南 > 系统 > 基础功能 > Desktop Extension Kit（桌面拓展服务） > 应用接入快捷栏
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:33:19+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:e643f0b46a4a95f629b73eea2aba9f4f0eb51edd1d28161cc2a576a8ef288fe0
+scraped_at: 2026-09-02T14:59:36+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:a5e8d1bdc9ba574180290a9c6b0d09b0babfbef464fafc57bfd735aafd6d16d2
 ---
 
-从6.0.2(22)开始，支持应用接入快捷栏。
+应用接入快捷栏之后，可自定义应用的右键菜单分组、应用的窗口分组、应用的图标和进度条。
+
+* 从API版本26.0.0开始，支持查询是否支持接入快捷栏和自定义快捷栏应用的图标和进度条。
+* 从API版本6.1.1(23)开始，支持自定义快捷栏应用的窗口分组。
+* 从API版本6.0.2(22)开始，支持自定义快捷栏应用的菜单分组。
 
 ## 场景介绍
 
 快捷栏指的是PC/2in1设备的屏幕底部的图标区域，具体如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/FLPMPMc4RfCSzvFYQCidfA/zh-cn_image_0000002558605292.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/feAXNR6kTLW_HuZ_RNtv5Q/zh-cn_image_0000002736313485.png)
 
 应用接入快捷栏之后，快捷栏的应用图标菜单会显示应用自定义的菜单项，应用可以添加、删除、更新、查询菜单项，具体效果如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/gvjRiOQBSc232r86du7HZg/zh-cn_image_0000002589324817.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/hWAS3xdARqC_B5z-qVWNAQ/zh-cn_image_0000002706674442.png)
 
 ## 接口说明
 
 以下列出应用接入快捷栏菜单的相关API，具体API说明详见[接口文档](../harmonyos-references/desktop-quickbar-extension-manager.md)。
 
-说明
+**说明** 
 
-Desktop Extension Kit相关API仅在2in1设备上生效。
+Desktop Extension Kit相关API仅在PC/2in1设备上生效。
 
 **表1** 应用接入快捷栏菜单相关功能接口介绍
 
@@ -44,320 +48,487 @@ Desktop Extension Kit相关API仅在2in1设备上生效。
 | [deleteQuickBarGroup](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagerdeletequickbargroup)(context: common.Context, groupKey: string): Promise<void> | 删除快捷栏分组。 |
 | [getQuickBarGroups](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagergetquickbargroups)(context: common.Context): Promise<QuickBarGroup[]> | 获取所有分组信息。 |
 | [setWindowToGroup](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagersetwindowtogroup)(context: common.Context, windowid:string, groupKey?: string): Promise<void> | 给分组增加窗口。 |
+| [setQuickBarCombineIcon](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagersetquickbarcombineicon)(context: common.Context, combineIcon: image.PixelMap): Promise<void> | 设置快捷栏融合图标。 |
+| [setQuickBarLayeredIcon](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagersetquickbarlayeredicon)(context: common.Context, foregroundIcon: image.PixelMap, backgroundIcon: image.PixelMap): Promise<void> | 设置快捷栏分层图标。 |
+| [setProgressState](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagersetprogressstate)(context: common.Context, state: ProgressState): Promise<void> | 设置快捷栏进度条状态。 |
+| [setProgressValue](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagersetprogressvalue)(context: common.Context, completed: number, total: number): Promise<void> | 设置快捷栏图标的进度条。 |
+| [isQuickBarCapabilitySupported](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagerisquickbarcapabilitysupported)(context: common.Context): Promise<boolean> | 检查是否支持快捷栏功能。 |
 
-## 快捷栏菜单分组
+## 检查是否支持快捷栏功能
 
 1. 导入相关模块。
 
+   ```typescript
+   import { quickBarManager } from '@kit.DeskTopExtensionKit';
    ```
-   1. import { quickBarManager }  from '@kit.DeskTopExtensionKit';
-   2. import { UIExtensionContentSession, Want, UIAbility } from '@kit.AbilityKit';
-   3. import { image } from '@kit.ImageKit';
-   4. import { resourceManager } from '@kit.LocalizationKit';
+2. 调用[isQuickBarCapabilitySupported](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagerisquickbarcapabilitysupported)判断当前设备是否支持接入快捷栏。仅当返回值isSupport为true时，方可进行自定义快捷栏的菜单分组、窗口分组、图标及进度条。
+
+   ```typescript
+   let context: Context | undefined = this.getUIContext().getHostContext();
+   if (context === undefined) {
+     return;
+   }
+
+   try {
+     const isSupport = await quickBarManager.isQuickBarCapabilitySupported(context);
+     console.info(`isQuickBarCapabilitySupported: ${isSupport}`);
+   } catch (error) {
+     console.error(`isQuickBarCapabilitySupported failed. error code: ${error.code}, error message: ${error.message}`);
+   }
+   ```
+
+## 快捷栏自定义菜单分组
+
+1. 导入相关模块。
+
+   ```typescript
+   import quickBarManager from '@hms.pcService.quickBarManager';
+   import { image } from '@kit.ImageKit';
+   import { resourceManager } from '@kit.LocalizationKit';
    ```
 2. 新建一个TestAbility.ets文件（例如在entry/src/main/ets/entryability文件夹下），同时新建一个TestIndex的页面（例如在entry/src/main/ets/pages目录下），点击图标菜单任务后可跳转到该页面。
 
-   ```
-   1. let TAG = 'TestAbility';
-   2. export default class TestAbility extends UIAbility {
-   3. onCreate() {
-   4. console.info(TAG, `onCreate`);
-   5. }
+   ```typescript
+   let TAG = 'TestAbility';
 
-   7. onSessionCreate(want: Want, session: UIExtensionContentSession) {
-   8. console.info(TAG, `onSessionCreate, want: ${want.abilityName}`);
-   9. // pages/TestIndex为点击菜单任务拉起的页面
-   10. session.loadContent('pages/TestIndex');
-   11. }
+   export default class TestAbility extends UIAbility {
+     onCreate() {
+       console.info(TAG, `onCreate`);
+     }
 
-   13. onForeground() {
-   14. console.info(TAG, `onForeground`);
-   15. }
+     onWindowStageCreate(windowStage: window.WindowStage) {
+       // 加载页面
+       windowStage.loadContent('pages/TestIndex');
+     }
 
-   17. onBackground() {
-   18. console.info(TAG, `onBackground`);
-   19. }
+     onForeground() {
+       console.info(TAG, `onForeground`);
+     }
 
-   21. onSessionDestroy(session: UIExtensionContentSession) {
-   22. console.info(TAG, `onSessionDestroy`);
-   23. }
+     onBackground() {
+       console.info(TAG, `onBackground`);
+     }
 
-   25. onDestroy() {
-   26. console.info(TAG, `onDestroy`);
-   27. }
-   28. }
+     onWindowStageDestroy(): void {
+       console.info(TAG, `onWindowStageDestroy`);
+     }
+
+     onDestroy() {
+       console.info(TAG, `onDestroy`);
+     }
+   }
    ```
 3. 在TestAbility所在模块下的module.json5文件中配置的Ability的信息。
 
-   ```
-   1. {
-   2. "name": "TestAbility",
-   3. "srcEntry": "./ets/entryability/TestAbility.ets",
-   4. "description": "$string:EntryAbility_desc",
-   5. "icon": "$media:layered_image",
-   6. "label": "$string:EntryAbility_label",
-   7. "startWindowIcon": "$media:startIcon",
-   8. "startWindowBackground": "$color:start_window_background",
-   9. "exported": true,
-   10. "skills": [
-   11. {
-   12. "entities": [
-   13. "entity.system.home"
-   14. ],
-   15. "actions": [
-   16. "action.system.home"
-   17. ]
-   18. }
-   19. ],
-   20. }
+   ```json5
+   {
+       "name": "TestAbility",
+       "srcEntry": "./ets/entryability/TestAbility.ets",
+       "description": "$string:EntryAbility_desc",
+       "icon": "$media:layered_image",
+       "label": "$string:EntryAbility_label",
+       "startWindowIcon": "$media:startIcon",
+       "startWindowBackground": "$color:start_window_background",
+       "exported": true,
+       "skills": [
+           {
+               "entities": [
+                   "entity.system.home"
+               ],
+               "actions": [
+                   "action.system.home"
+               ]
+           }
+       ],
+   }
    ```
 4. 在页面组件内(如：TestIndex.ets)中调用接口完成如下步骤。调用[addCustomCategory](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanageraddcustomcategory)接口添加一个快捷栏菜单分组，添加分组后才可以往分组里添加任务。
 
-   ```
-   1. let context: Context | undefined = this.getUIContext().getHostContext();
-   2. if (context === undefined) {
-   3. return;
-   4. }
-   5. try {
-   6. const res = await quickBarManager.addCustomCategory(context, '最近任务');
-   7. console.info(`customCategory info: ${JSON.stringify(res)}`);
-   8. } catch (error) {
-   9. console.error(`addCustomCategory failed. error code: ${error.code}, error message: ${error.message}`);
-   10. }
+   ```typescript
+   /**
+    * 可以通过自定义组件的内置方法获取Context信息
+    * 具体方法：this.getUIContext().getHostContext();
+    */
+   async function addCustomCategory(context: Context) {
+     if (context === undefined) {
+      return;
+     }
+     try {
+       const res = await quickBarManager.addCustomCategory(context, 'recent tasks')
+       console.info(`customCategory info: ${JSON.stringify(res)}`)
+     } catch (error) {
+       console.error(`addCustomCategory failed. error code: ${error.code}, error message: ${error.message}`);
+     }
+   }
    ```
 5. 添加分组后可以调用[addQuickTask](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanageraddquicktask)接口在分组中添加快捷栏菜单任务。打开应用图标在快捷栏的右键菜单，即可看到添加后对应的菜单项。
 
-   ```
-   1. let context: Context | undefined = this.getUIContext().getHostContext();
-   2. if (context === undefined) {
-   3. return;
-   4. }
-   5. // 获取resourceManager资源管理器
-   6. const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
-   7. // 创建任务的pixelMap，需在资源rawfile文件夹中预置testImage.png图片
-   8. const fileData = resourceMgr.getRawFileContentSync('testImage.png');
-   9. const imageSource = image.createImageSource(fileData.buffer);
-   10. const imagePixelMap = await imageSource.createPixelMap();
-   11. let parameters: quickBarManager.ParameterItem = {
-   12. key: 'testKey',
-   13. value: 'testValue'
-   14. }
-   15. // 构建task任务信息
-   16. const task: quickBarManager.QuickTaskInfo = {
-   17. taskName: '测试任务名称',
-   18. abilityName: 'TestAbility',
-   19. // 参数可选
-   20. moduleName: 'entry',
-   21. // 参数可选
-   22. taskIcon: imagePixelMap,
-   23. // 参数可选
-   24. taskDetail: '任务的描述',
-   25. // 参数可选
-   26. parameters: [parameters]
-   27. }
+   ```typescript
+   /**
+    * 可以通过自定义组件的内置方法获取Context信息
+    * 具体方法：this.getUIContext().getHostContext();
+    */
+   async function addQuickTask(context: Context) {
+     if (context === undefined) {
+      return
+     }
 
-   29. try {
-   30. // 获取所有的分组信息，将任务添加到想要的分组中
-   31. const categoryList = await quickBarManager.getCustomCategories(context);
-   32. // 选择添加任务到第一个分组中
-   33. const res = await quickBarManager.addQuickTask(context, categoryList[0].categoryId, task);
-   34. console.info(`quickTask info: ${JSON.stringify(res)}`);
-   35. } catch (error) {
-   36. console.error(`addQuickTask failed. error code: ${error.code}, error message: ${error.message}`);
-   37. }
+     // 获取resourceManager资源管理器
+     const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
+     // 创建white pixelMap，需在资源rawfile文件夹中预置taskImage.png图片，图片大小为24vp * 24vp
+     const fileData = resourceMgr.getRawFileContentSync('taskImage.png');
+     const imageSource = image.createImageSource(fileData.buffer);
+     const imagePixelMap = await imageSource.createPixelMap();
+
+     // 构建parameters
+     let parameters: quickBarManager.ParameterItem = {
+       key: 'testKey',
+       value: 'testValue'
+     }
+     let task: quickBarManager.QuickTaskInfo = {
+       taskName: 'test task name',
+       abilityName: 'TestAbility',
+       // 参数可选
+       moduleName: 'entry',
+       // 参数可选
+       taskIcon: imagePixelMap,
+       // 参数可选
+       taskDetail: 'description of the task',
+       // 参数可选
+       parameters: [parameters]
+     }
+     try {
+       // 获取所有的分组信息，将任务添加到想要的分组中
+       const categoryList = await quickBarManager.getCustomCategories(context);
+       // 选择添加任务到第一个分组中
+       let res = await quickBarManager.addQuickTask(context, categoryList[0].categoryId, task);
+       console.info(`quickTask info: ${JSON.stringify(res)}`);
+     } catch (error) {
+       console.error(`addQuickTask failed. error code: ${error.code}, error message: ${error.message}`);
+     }
+   }
    ```
 6. 调用[getCustomCategories](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagergetcustomcategories)接口获取定义所有分组信息。
 
-   ```
-   1. let context: Context | undefined = this.getUIContext().getHostContext();
-   2. if (context === undefined) {
-   3. return;
-   4. }
-   5. try {
-   6. const res = await quickBarManager.getCustomCategories(context);
-   7. console.info(`customCategoryList info: ${JSON.stringify(res)}`);
-   8. } catch (error) {
-   9. console.error(`getCustomCategories failed. error code: ${error.code}, error message: ${error.message}`);
-   10. }
+   ```typescript
+   /**
+    * 可以通过自定义组件的内置方法获取Context信息
+    * 具体方法：this.getUIContext().getHostContext();
+    */
+   async function getCustomCategories(context: Context) {
+     if (context === undefined) {
+       return;
+     }
+     try {
+       const res = await quickBarManager.getCustomCategories(context);
+       console.info(`customCategoryList info: ${JSON.stringify(res)}`);
+     } catch (error) {
+       console.error(`getCustomCategories failed. error code: ${error.code}, error message: ${error.message}`);
+     }
+   }
    ```
 7. 调用[getTasksFromCategory](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagergettasksfromcategory)接口获取分组下的所有任务信息，此处获取了第一个分组下的所有任务。
 
-   ```
-   1. let context: Context | undefined = this.getUIContext().getHostContext();
-   2. if (context === undefined) {
-   3. return;
-   4. }
-   5. try {
-   6. // 获取所有的分组信息，用于获取分组下所有的任务
-   7. const category = await quickBarManager.getCustomCategories(context);
-   8. // 选择获取第一个分组下的所有任务
-   9. const res = await quickBarManager.getTasksFromCategory(context, category[0].categoryId);
-   10. console.info(`quickTaskList info: ${JSON.stringify(res)}`);
-   11. } catch (error) {
-   12. console.error(`getTasksFromCategory failed. error code: ${error.code}, error message: ${error.message}`);
-   13. }
+   ```typescript
+   /**
+    * 可以通过自定义组件的内置方法获取Context信息
+    * 具体方法：this.getUIContext().getHostContext();
+    */
+   async function getTasksFromCategory(context: Context) {
+     if (context === undefined) {
+       return;
+     }
+     try {
+       // 获取所有的分组信息，用于获取分组下所有的任务
+       const category = await quickBarManager.getCustomCategories(context);
+       // 选择获取第一个分组下的所有任务
+       const res = await quickBarManager.getTasksFromCategory(context, category[0].categoryId)
+       console.info(`quickTaskList info: ${JSON.stringify(res)}`);
+     } catch (error) {
+       console.error(`getTasksFromCategory failed. error code: ${error.code}, error message: ${error.message}`);
+    }
+   }
    ```
 8. 调用[updateCustomCategory](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagerupdatecustomcategory)接口更新快捷栏菜单分组信息，此处更新了分组的名称。
 
-   ```
-   1. let context: Context | undefined = this.getUIContext().getHostContext();
-   2. if (context === undefined) {
-   3. return;
-   4. }
-   5. const category: quickBarManager.CustomCategory = {
-   6. categoryId: 1,
-   7. categoryName: 'demo'
-   8. }
-   9. try {
-   10. await quickBarManager.updateCustomCategory(context, category);
-   11. } catch (error) {
-   12. console.error(`updateCustomCategory failed. error code: ${error.code}, error message: ${error.message}`);
-   13. }
+   ```typescript
+   /**
+    * 可以通过自定义组件的内置方法获取Context信息
+    * 具体方法：this.getUIContext().getHostContext();
+    */
+   async function updateCustomCategory(context: Context) {
+     if (context === undefined) {
+       return;
+     }
+     const category: quickBarManager.CustomCategory = {
+       categoryId: 1,
+       categoryName: 'demo'
+     }
+     try {
+       await quickBarManager.updateCustomCategory(context, category);
+     } catch (error) {
+       console.error(`updateCustomCategory failed. error code: ${error.code}, error message: ${error.message}`);
+     }
+   }
    ```
 9. 调用[updateQuickTask](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagerupdatequicktask)接口更新快捷栏菜单任务信息。以下示例代码以更新任务的图标信息为例。
 
-   ```
-   1. let context: Context | undefined = this.getUIContext().getHostContext();
-   2. if (context === undefined) {
-   3. return;
-   4. }
-   5. // 获取resourceManager资源管理器
-   6. const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
-   7. // 创建任务的pixelMap，需在资源rawfile文件夹中预置testUpdateImage.png图片
-   8. const fileData = resourceMgr.getRawFileContentSync('testUpdateImage.png');
-   9. const imageSource = image.createImageSource(fileData.buffer);
-   10. const imagePixelMap = await imageSource.createPixelMap();
-   11. let parameters: quickBarManager.ParameterItem = {
-   12. key: 'testKey',
-   13. value: 'testValue'
-   14. }
-   15. // 构建task任务信息
-   16. const taskInfo: quickBarManager.QuickTaskInfo = {
-   17. taskName: '测试任务名称',
-   18. abilityName: 'TestAbility',
-   19. // 参数可选
-   20. moduleName: 'entry',
-   21. // 参数可选
-   22. taskIcon: imagePixelMap,
-   23. // 参数可选
-   24. taskDetail: '任务的描述',
-   25. // 参数可选
-   26. parameters: [parameters]
-   27. }
+   ```typescript
+   /**
+    * 可以通过自定义组件的内置方法获取Context信息
+    * 具体方法：this.getUIContext().getHostContext();
+    */
+   async function updateQuickTask(context: Context) {
+     if (context === undefined) {
+       return;
+     }
+     // 获取resourceManager资源管理器
+     const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
+     // 创建任务的pixelMap，需在资源rawfile文件夹中预置testUpdateImage.png图片
+     const fileData = resourceMgr.getRawFileContentSync('testUpdateImage.png');
+     const imageSource = image.createImageSource(fileData.buffer);
+     const imagePixelMap = await imageSource.createPixelMap();
+     // 构建parameters
+     let parameters: quickBarManager.ParameterItem = {
+       key: 'testKey',
+       value: 'testValue'
+     }
+     let taskInfo: quickBarManager.QuickTaskInfo = {
+       taskName: 'newTaskName',
+       abilityName: 'newEntryAbility',
+       // 参数可选
+       moduleName: 'newModuleName',
+       // 参数可选
+       taskIcon: imagePixelMap,
+       // 参数可选
+       taskDetail: '任务的描述',
+       // 参数可选
+       parameters: [parameters]
+     }
 
-   29. const task: quickBarManager.QuickTask = {
-   30. taskId: 1,
-   31. categoryId: 1,
-   32. taskInfo: taskInfo
-   33. }
+     const task: quickBarManager.QuickTask = {
+       taskId: 1,
+       categoryId: 1,
+       taskInfo: taskInfo
+     }
 
-   35. try {
-   36. await quickBarManager.updateQuickTask(context,task);
-   37. } catch (error) {
-   38. console.error(`updateQuickTask failed. error code: ${error.code}, error message: ${error.message}`);
-   39. }
+     try {
+       await quickBarManager.updateQuickTask(context, task);
+     } catch (error) {
+       console.error(`updateQuickTask failed. error code: ${error.code}, error message: ${error.message}`);
+     }
+   }
    ```
 10. 调用[deleteQuickTask](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagerdeletequicktask)接口删除不需要的快捷栏菜单任务，此处删除了taskId为1的任务。
 
-    ```
-    1. let context: Context | undefined = this.getUIContext().getHostContext();
-    2. if (context === undefined) {
-    3. return;
-    4. }
-    5. try {
-    6. // 删除taskId为1的任务
-    7. await quickBarManager.deleteQuickTask(context, 1);
-    8. } catch (error) {
-    9. console.error(`deleteQuickTask failed. error code: ${error.code}, error message: ${error.message}`);
-    10. }
+    ```typescript
+    /**
+     * 可以通过自定义组件的内置方法获取Context信息
+     * 具体方法：this.getUIContext().getHostContext();
+     */
+    async function deleteQuickTask(context: Context) {
+      if (context === undefined) {
+        return;
+      }
+      try {
+        // 删除任务id为1的任务
+        await quickBarManager.deleteQuickTask(context, 1);
+      } catch (error) {
+        console.error(`deleteQuickTask failed. error code: ${error.code}, error message: ${error.message}`);
+      }
+    }
     ```
 11. 调用[deleteCustomCategory](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagerdeletecustomcategory)接口删除不需要的快捷栏菜单分组，此处删除了categoryId为1的分组，它的所有任务也会被一起删除。
 
-    ```
-    1. let context: Context | undefined = this.getUIContext().getHostContext();
-    2. if (context === undefined) {
-    3. return;
-    4. }
-    5. try {
-    6. // 删除categoryId为1的分组
-    7. await quickBarManager.deleteCustomCategory(context, 1);
-    8. } catch (error) {
-    9. console.error(`deleteCustomCategory failed. error code: ${error.code}, error message: ${error.message}`);
-    10. }
+    ```typescript
+    /**
+     * 可以通过自定义组件的内置方法获取Context信息
+     * 具体方法：this.getUIContext().getHostContext();
+     */
+    async function deleteCustomCategory(context: Context) {
+      if (context === undefined) {
+        return;
+      }
+      try {
+        // 删除分组id为1的分组
+        await quickBarManager.deleteCustomCategory(context, 3);
+      } catch (error) {
+        console.error(`deleteCustomCategory failed. error code: ${error.code}, error message: ${error.message}`);
+      }
+    }
     ```
 
 ## 快捷栏自定义窗口分组
 
-1. 在entry/src/main/ets/pages目录下创建一个空页面文件，并增加一个按钮控件。
+1. 导入相关模块。
 
+   ```typescript
+   import { quickBarManager } from '@kit.DeskTopExtensionKit';
+   import { image } from '@kit.ImageKit';
+   import { resourceManager } from '@kit.LocalizationKit';
    ```
-   1. @Entry
-   2. @Component
-   3. struct Index {
-   4. build() {
-   5. Button('button')
-   6. .onClick(e => {
-   7. // 处理点击事件
-   8. })
-   9. }
-   10. }
-   ```
-2. 在按钮控件的onClick方法中调用[addQuickBarGroup](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanageraddquickbargroup)接口，增加快捷栏分组。
+2. 在entry/src/main/ets/pages目录下创建一个空页面文件，并增加一个按钮控件。 在按钮控件的onClick方法中调用[addQuickBarGroup](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanageraddquickbargroup)接口，增加快捷栏分组。
 
-   ```
-   1. import { quickBarManager } from '@kit.DeskTopExtensionKit';
-   2. import { image } from '@kit.ImageKit';
-   3. import { resourceManager } from '@kit.LocalizationKit';
+   ```typescript
+   // 获取资源管理器
+   const context: Context | undefined = this.getUIContext().getHostContext();
+   if (!context) {
+     console.error('context is null');
+     return;
+   }
+   const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
 
-   5. // 获取资源管理器
-   6. const resourceMgr: resourceManager.ResourceManager = getContext().resourceManager;
-   7. // 从rawfile目录中获取图片
-   8. const whiteFileData = resourceMgr.getRawFileContentSync('icon.png');
-   9. const whiteImageSource = image.createImageSource(whiteFileData.buffer);
-   10. const imagePixelMap = await whiteImageSource.createPixelMap();
-   11. try {
-   12. // 增加分组
-   13. await quickBarManager.addQuickBarGroup(getContext(), {
-   14. groupKey: 'group_one', // 分组名
-   15. groupIcon: imagePixelMap // 分组图标
-   16. });
-   17. } catch (error) {
-   18. console.error(`error code: ${error.code}, error message: ${error.message}`);
-   19. }
+   // 从rawfile目录中获取图片
+   const whiteFileData = resourceMgr.getRawFileContentSync('icon.png');
+   const whiteImageSource = image.createImageSource(whiteFileData.buffer);
+   const imagePixelMap = await whiteImageSource.createPixelMap();
+
+   try {
+     // 增加分组
+     await quickBarManager.addQuickBarGroup(context, {
+       groupKey: 'group_one', // 分组名
+       groupIcon: imagePixelMap // 分组图标
+     });
+   } catch (error) {
+     console.error(`error code: ${error.code}, error message: ${error.message}`);
+   }
    ```
 3. 新增加一个按钮控件，并在onClick方法中调用[getQuickBarGroups](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagergetquickbargroups)接口，获取所有分组信息。
 
-   ```
-   1. import { quickBarManager } from '@kit.DeskTopExtensionKit';
+   ```typescript
+   const context: Context | undefined = this.getUIContext().getHostContext();
+   if (!context) {
+     console.error('context is null');
+     return;
+   }
 
-   3. try {
-   4. // 获取所有分组
-   5. const groups = await quickBarManager.getQuickBarGroups(getContext());
-   6. } catch (error) {
-   7. console.error(`error code: ${error.code}, error message: ${error.message}`);
-   8. }
+   try {
+     // 获取所有分组
+     const groups = await quickBarManager.getQuickBarGroups(context);
+     console.info(`groups: ${JSON.stringify(groups)}`);
+   } catch (error) {
+     console.error(`error code: ${error.code}, error message: ${error.message}`);
+   }
    ```
 4. 新增加一个按钮控件，并在onClick方法中调用[setWindowToGroup](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagersetwindowtogroup)接口，给分组增加窗口信息。
 
-   ```
-   1. import { quickBarManager } from '@kit.DeskTopExtensionKit';
+   ```typescript
+   const context: Context | undefined = this.getUIContext().getHostContext();
+   if (!context) {
+     console.error('context is null');
+     return;
+   }
 
-   3. try {
-   4. // 将id为80的窗口，增加到分组名为 group_one 的分组
-   5. await quickBarManager.setWindowToGroup(getContext(), '80', 'group_one');
-   6. } catch (error) {
-   7. console.error(`deleteCustomCategory failed. error code: ${error.code}, error message: ${error.message}`);
-   8. }
+   try {
+     // 将id为80的窗口，增加到分组名为 group_one 的分组
+     await quickBarManager.setWindowToGroup(context, '80', 'group_one');
+   } catch (error) {
+     console.error(`deleteCustomCategory failed. error code: ${error.code}, error message: ${error.message}`);
+   }
    ```
 5. 新增加一个按钮控件，并在onClick方法中调用[deleteQuickBarGroup](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagerdeletequickbargroup)接口，删除快捷栏分组。
 
-   ```
-   1. import { quickBarManager } from '@kit.DeskTopExtensionKit';
+   ```typescript
+   const context: Context | undefined = this.getUIContext().getHostContext();
+   if (!context) {
+     console.error('context is null');
+     return;
+   }
 
-   3. try {
-   4. // 删除分组名为group_one的分组
-   5. await quickBarManager.deleteQuickBarGroup(getContext(), 'group_one');
-   6. } catch (error) {
-   7. console.error(`error code: ${error.code}, error message: ${error.message}`);
-   8. }
+   try {
+     // 删除分组名为group_one的分组
+     await quickBarManager.deleteQuickBarGroup(context, 'group_one');
+   } catch (error) {
+     console.error(`error code: ${error?.code}, error message: ${error?.message}`);
+   }
+   ```
+
+## 快捷栏自定义图标和进度条
+
+1. 导入相关模块。
+
+   ```typescript
+   import { quickBarManager }  from '@kit.DeskTopExtensionKit';
+   import { resourceManager } from '@kit.LocalizationKit';
+   import { image } from '@kit.ImageKit';
+   ```
+2. 调用[setQuickBarCombineIcon](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagersetquickbarcombineicon)设置快捷栏融合图标。
+
+   ```typescript
+   let context: Context | undefined = this.getUIContext().getHostContext();
+   if (context === undefined) {
+     return;
+   }
+   try {
+     // 获取resourceManager资源管理器
+     const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
+     // 创建图标的pixelMap，需在资源rawfile文件夹中预置icon.png图片
+     const fileData = resourceMgr.getRawFileContentSync('icon.png');
+     const imageSource = image.createImageSource(fileData.buffer);
+     const imagePixelMap = await imageSource.createPixelMap();
+
+     await quickBarManager.setQuickBarCombineIcon(context, imagePixelMap);
+     console.info('setQuickBarCombineIcon success');
+   } catch (error) {
+     console.error(`setQuickBarCombineIcon failed. error code: ${error.code}, error message: ${error.message}`);
+   }
+   ```
+3. 调用[setQuickBarLayeredIcon](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagersetquickbarlayeredicon)设置快捷栏分层图标。
+
+   ```typescript
+   let context: Context | undefined = this.getUIContext().getHostContext();
+   if (context === undefined) {
+     return;
+   }
+   try {
+     // 获取resourceManager资源管理器
+     const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
+     // 创建前景图的pixelMap，需在资源rawfile文件夹中预置foreground.png图片
+     const foregroundFileData = resourceMgr.getRawFileContentSync('foreground.png');
+     const foregroundImageSource = image.createImageSource(foregroundFileData.buffer);
+     const foregroundPixelMap = await foregroundImageSource.createPixelMap();
+
+     // 创建背景图的pixelMap，需在资源rawfile文件夹中预置background.png图片
+     const backgroundFileData = resourceMgr.getRawFileContentSync('background.png');
+     const backgroundImageSource = image.createImageSource(backgroundFileData.buffer);
+     const backgroundPixelMap = await backgroundImageSource.createPixelMap();
+
+     await quickBarManager.setQuickBarLayeredIcon(context, foregroundPixelMap, backgroundPixelMap);
+     console.info('setQuickBarLayeredIcon success');
+   } catch (error) {
+     console.error(`setQuickBarLayeredIcon failed. error code: ${error.code}, error message: ${error.message}`);
+   }
+   ```
+4. 调用[setProgressValue](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagersetprogressvalue)设置快捷栏进度条，如果调用该接口前未设置进度条状态，默认状态为NORMAL。
+
+   ```typescript
+   let context: Context | undefined = this.getUIContext().getHostContext();
+   if (context === undefined) {
+     return;
+   }
+   const completed: number = 50;
+   const total: number = 100;
+
+   try {
+     await quickBarManager.setProgressValue(context, completed, total);
+     console.info('setProgressValue success');
+   } catch (error) {
+     console.error(`setProgressValue failed. error code: ${error.code}, error message: ${error.message}`);
+   }
+   ```
+5. 调用[setProgressState](../harmonyos-references/desktop-quickbar-extension-manager.md#quickbarmanagersetprogressstate)设置快捷栏进度条状态。
+
+   ```typescript
+   let context: Context | undefined = this.getUIContext().getHostContext();
+   if (context === undefined) {
+     return;
+   }
+
+   try {
+     // 设置进度状态为PAUSED，暂停状态
+     await quickBarManager.setProgressState(context, quickBarManager.ProgressState.PAUSED);
+     console.info('setProgressState success');
+   } catch (error) {
+     console.error(`setProgressState failed. error code: ${error.code}, error message: ${error.message}`);
+   }
    ```

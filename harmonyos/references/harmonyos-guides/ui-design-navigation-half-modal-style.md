@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-nav
 title: 半模态样式
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 组件导航 > 半模态样式
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:30:20+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:b76161bffffb7a7478df4ed32f18fec4f3fe324be24a962b972389cfcc3e6e10
+scraped_at: 2026-09-02T14:49:58+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:6b574f58f170c931c435b3690a2600c6680f161974079234b5244dc70832cfe6
 ---
 
 ## 场景介绍
@@ -14,76 +14,76 @@ content_hash: sha256:b76161bffffb7a7478df4ed32f18fec4f3fe324be24a962b972389cfcc3
 
 用于半模态弹窗中使用导航组件场景。通过设置[HdsNavigationTitleMode](../harmonyos-references/ui-design-hdsnavigation.md#hdsnavigationtitlemode)为MODAL可以实现标题栏半模态样式及动态模糊。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/UU9Q-sxyRWCP_lB727k4KQ/zh-cn_image_0000002589324703.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/TKxfsFfrSzO7D3OStXq1EQ/zh-cn_image_0000002706834230.gif)
 
 ## 开发步骤
 
 1. 导入相关模块。
 
-   ```
-   1. // 从6.0.2(22)版本开始，无需手动导入HdsNavigationAttribute。具体请参考HdsNavigation的导入模块说明。
-   2. import { IconStyleMode, HdsNavigationAttribute, HdsNavigation, HdsNavigationTitleMode } from '@kit.UIDesignKit';
+   ```typescript
+   // 从6.0.2(22)版本开始，无需手动导入HdsNavigationAttribute。具体请参考HdsNavigation的导入模块说明。
+   import { IconStyleMode, HdsNavigationAttribute, HdsNavigation, HdsNavigationTitleMode } from '@kit.UIDesignKit';
    ```
 2. 创建一级导航组件，通过设置titleMode属性为HdsNavigationTitleMode.MODAL实现标题栏半模态样式。
 
-   ```
-   1. @Entry
-   2. @Component
-   3. struct SheetTransitionExample {
-   4. @State isShow: boolean = false;
-   5. scroller: Scroller = new Scroller();
+   ```typescript
+   @Entry
+   @Component
+   struct SheetTransitionExample {
+     @State isShow: boolean = false;
+     scroller: Scroller = new Scroller();
 
-   7. @Builder
-   8. HdsNavigationBuilder() {
-   9. HdsNavigation() {
-   10. Scroll(this.scroller) {
-   11. Image($r('app.media.scenery2'))
-   12. .height('100%')
-   13. }
-   14. .clip(false) // 设置不对子组件超出当前组件范围外的区域进行裁剪，使内容区可以穿透到标题栏下方
-   15. .scrollBar(BarState.Off)
-   16. .edgeEffect(EdgeEffect.Spring, { alwaysEnabled: true })
-   17. }
-   18. .titleBar({
-   19. enableComponentSafeArea: true, // 将标题栏设置为组件级安全区，内容区可避让标题栏
-   20. content: {
-   21. title: {
-   22. mainTitle: '壁纸',
-   23. },
-   24. // 设置HdsNavigation关闭按钮，与半模态按钮规格一致
-   25. menu: {
-   26. value: [{
-   27. content: {
-   28. icon: $r('sys.symbol.xmark'),
-   29. type: IconStyleMode.SMALL,
-   30. action: () => {
-   31. this.isShow = false;
-   32. },
-   33. }
-   34. }]
-   35. },
-   36. },
-   37. })
-   38. .titleMode(HdsNavigationTitleMode.MODAL) // 设置导航标题栏模式为半模态
-   39. .bindToScrollable([this.scroller]) // 绑定导航组件和可滚动容器组件
-   40. }
+     @Builder
+     HdsNavigationBuilder() {
+       HdsNavigation() {
+         Scroll(this.scroller) {
+           Image($r('app.media.scenery2'))
+             .height('100%')
+         }
+         .clip(false) // 设置不对子组件超出当前组件范围外的区域进行裁剪，使内容区可以穿透到标题栏下方
+         .scrollBar(BarState.Off)
+         .edgeEffect(EdgeEffect.Spring, { alwaysEnabled: true })
+       }
+       .titleBar({
+         enableComponentSafeArea: true, // 将标题栏设置为组件级安全区，内容区可避让标题栏
+         content: {
+           title: {
+             mainTitle: '壁纸'
+           },
+           // 设置HdsNavigation关闭按钮，与半模态按钮规格一致
+           menu: {
+             value: [{
+               content: {
+                 icon: $r('sys.symbol.xmark'),
+                 type: IconStyleMode.SMALL,
+                 action: () => {
+                   this.isShow = false;
+                 }
+               }
+             }]
+           }
+         }
+       })
+       .titleMode(HdsNavigationTitleMode.MODAL) // 设置导航标题栏模式为半模态
+       .bindToScrollable([this.scroller]) // 绑定导航组件和可滚动容器组件
+     }
 
-   42. build() {
-   43. Column({ space: 8 }) {
-   44. Button('open modal')
-   45. .onClick(() => {
-   46. this.isShow = true;
-   47. })
-   48. .fontSize(20)
-   49. .margin(10)
-   50. .bindSheet($$this.isShow, this.HdsNavigationBuilder(), {
-   51. detents: [SheetSize.MEDIUM, SheetSize.LARGE, 200],
-   52. showClose: false, // 关闭半模态关闭按钮，推荐使用HdsNavigation关闭按钮
-   53. enableFloatingDragBar: true,
-   54. })
-   55. }
-   56. .width('100%')
-   57. .height('100%')
-   58. }
-   59. }
+     build() {
+       Column({ space: 8 }) {
+         Button('open modal')
+           .onClick(() => {
+             this.isShow = true;
+           })
+           .fontSize(20)
+           .margin(10)
+           .bindSheet($$this.isShow, this.HdsNavigationBuilder(), {
+             detents: [SheetSize.MEDIUM, SheetSize.LARGE, 200],
+             showClose: false, // 取消半模态的关闭按钮，推荐使用HdsNavigation的menu配置关闭按钮
+             enableFloatingDragBar: true
+           })
+       }
+       .width('100%')
+       .height('100%')
+     }
+   }
    ```

@@ -3,32 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (FetchResult)
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS API > @ohos.file.photoAccessHelper (相册管理模块) > Interface (FetchResult)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:14+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fddac4cfa92ffc81d2b59f1ba5eaf1b51411bc9356664987e5f96bdc0614546b
+scraped_at: 2026-09-02T15:02:38+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:515d5358b0c03c858979fe1052b23f77807e09c70287544d4d15bf7252ba2901
 ---
 
 文件检索结果集。
 
-说明
+**说明** 
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { photoAccessHelper } from '@kit.MediaLibraryKit';
+```ts
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
 ```
 
 ## getCount
 
-PhonePC/2in1TabletTV
-
 getCount(): number
 
-获取文件检索结果中的文件总数。
+获取文件检索结果总数。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -53,25 +49,23 @@ getCount(): number
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-4. console.info('getCountDemo');
-5. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-6. let fetchOption: photoAccessHelper.FetchOptions = {
-7. fetchColumns: [],
-8. predicates: predicates
-9. };
-10. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
-11. let fetchCount = fetchResult.getCount();
-12. console.info('fetchCount = ', fetchCount);
-13. }
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('getCountDemo');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOption: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
+  let fetchCount = fetchResult.getCount();
+  console.info('fetchCount = ', fetchCount);
+}
 ```
 
 ## isAfterLast
-
-PhonePC/2in1TabletTV
 
 isAfterLast(): boolean
 
@@ -85,7 +79,7 @@ isAfterLast(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 当读到最后一条记录后，后续没有记录返回true，否则返回false。 |
+| boolean | 当结果集指向最后一行时返回true，否则返回false。 |
 
 **错误码：**
 
@@ -100,34 +94,34 @@ isAfterLast(): boolean
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-4. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-5. let fetchOption: photoAccessHelper.FetchOptions = {
-6. fetchColumns: [],
-7. predicates: predicates
-8. };
-9. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
-10. let fetchCount = fetchResult.getCount();
-11. console.info('count:' + fetchCount);
-12. let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getLastObject();
-13. if (fetchResult.isAfterLast()) {
-14. console.info('photoAsset isAfterLast displayName = ', photoAsset.displayName);
-15. } else {
-16. console.info('photoAsset not isAfterLast.');
-17. }
-18. }
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOption: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
+  let fetchCount = fetchResult.getCount();
+  console.info('count:' + fetchCount);
+  let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getLastObject();
+  if (fetchResult.isAfterLast()) {
+    if (photoAsset) {
+      console.info('photoAsset isAfterLast displayName = ', photoAsset.displayName);
+    }
+  } else {
+    console.info('photoAsset not isAfterLast.');
+  }
+}
 ```
 
 ## close
 
-PhonePC/2in1TabletTV
-
 close(): void
 
-释放FetchResult实例并使其失效，无法再调用其他方法。
+释放FetchResult实例并使其失效，释放后无法再调用其他方法。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -146,29 +140,27 @@ close(): void
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-4. console.info('fetchResultCloseDemo');
-5. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-6. let fetchOption: photoAccessHelper.FetchOptions = {
-7. fetchColumns: [],
-8. predicates: predicates
-9. };
-10. try {
-11. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
-12. fetchResult.close();
-13. console.info('close succeed.');
-14. } catch (err) {
-15. console.error(`close fail. error: ${err.code}, ${err.message}`);
-16. }
-17. }
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('fetchResultCloseDemo');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOption: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  try {
+    let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
+    fetchResult.close();
+    console.info('close succeed.');
+  } catch (err) {
+    console.error(`close fail. error: ${err.code}, ${err.message}`);
+  }
+}
 ```
 
 ## getFirstObject
-
-PhonePC/2in1TabletTV
 
 getFirstObject(callback: AsyncCallback<T>): void
 
@@ -197,30 +189,28 @@ getFirstObject(callback: AsyncCallback<T>): void
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-4. console.info('getFirstObjectDemo');
-5. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-6. let fetchOption: photoAccessHelper.FetchOptions = {
-7. fetchColumns: [],
-8. predicates: predicates
-9. };
-10. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
-11. fetchResult.getFirstObject((err, photoAsset) => {
-12. if (photoAsset !== undefined) {
-13. console.info('photoAsset displayName: ', photoAsset.displayName);
-14. } else {
-15. console.error(`photoAsset failed with err:${err.code}, ${err.message}`);
-16. }
-17. });
-18. }
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('getFirstObjectDemo');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOption: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
+  fetchResult.getFirstObject((err, photoAsset) => {
+    if (err) {
+      console.error(`Failed to getFirstObject. Code: ${err.code}, message: ${err.message}`);
+      return;
+    }
+      console.info('photoAsset displayName: ', photoAsset.displayName);
+  });
+}
 ```
 
 ## getFirstObject
-
-PhonePC/2in1TabletTV
 
 getFirstObject(): Promise<T>
 
@@ -234,7 +224,7 @@ getFirstObject(): Promise<T>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<T> | Promise对象，返回结果集中第一个对象。 |
+| Promise<T> | Promise对象，返回结果集中的第一个文件资产。 |
 
 **错误码：**
 
@@ -249,25 +239,23 @@ getFirstObject(): Promise<T>
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-4. console.info('getFirstObjectDemo');
-5. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-6. let fetchOption: photoAccessHelper.FetchOptions = {
-7. fetchColumns: [],
-8. predicates: predicates
-9. };
-10. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
-11. let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-12. console.info('photoAsset displayName: ', photoAsset.displayName);
-13. }
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('getFirstObjectDemo');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOption: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
+  let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+  console.info('photoAsset displayName: ', photoAsset.displayName);
+}
 ```
 
 ## getNextObject
-
-PhonePC/2in1TabletTV
 
 getNextObject(callback: AsyncCallback<T>): void
 
@@ -298,33 +286,31 @@ getNextObject(callback: AsyncCallback<T>): void
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-4. console.info('getNextObjectDemo');
-5. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-6. let fetchOption: photoAccessHelper.FetchOptions = {
-7. fetchColumns: [],
-8. predicates: predicates
-9. };
-10. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
-11. await fetchResult.getFirstObject();
-12. if (!fetchResult.isAfterLast()) {
-13. fetchResult.getNextObject((err, photoAsset) => {
-14. if (photoAsset !== undefined) {
-15. console.info('photoAsset displayName: ', photoAsset.displayName);
-16. } else {
-17. console.error(`photoAsset failed with err: ${err.code}, ${err.message}`);
-18. }
-19. });
-20. }
-21. }
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('getNextObjectDemo');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOption: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
+  await fetchResult.getFirstObject();
+  if (!fetchResult.isAfterLast()) {
+    fetchResult.getNextObject((err, photoAsset) => {
+      if (photoAsset !== undefined) {
+        console.info('photoAsset displayName: ', photoAsset.displayName);
+      } else {
+        console.error(`photoAsset failed with err: ${err.code}, ${err.message}`);
+      }
+    });
+  }
+}
 ```
 
 ## getNextObject
-
-PhonePC/2in1TabletTV
 
 getNextObject(): Promise<T>
 
@@ -340,7 +326,7 @@ getNextObject(): Promise<T>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<T> | Promise对象，返回结果集中下一个对象。 |
+| Promise<T> | Promise对象，返回结果集中的下一个文件资产。 |
 
 **错误码：**
 
@@ -355,28 +341,26 @@ getNextObject(): Promise<T>
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-4. console.info('getNextObjectDemo');
-5. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-6. let fetchOption: photoAccessHelper.FetchOptions = {
-7. fetchColumns: [],
-8. predicates: predicates
-9. };
-10. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
-11. await fetchResult.getFirstObject();
-12. if (!fetchResult.isAfterLast()) {
-13. let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getNextObject();
-14. console.info('photoAsset displayName: ', photoAsset.displayName);
-15. }
-16. }
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('getNextObjectDemo');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOption: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
+  await fetchResult.getFirstObject();
+  if (!fetchResult.isAfterLast()) {
+    let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getNextObject();
+    console.info('photoAsset displayName: ', photoAsset.displayName);
+  }
+}
 ```
 
 ## getLastObject
-
-PhonePC/2in1TabletTV
 
 getLastObject(callback: AsyncCallback<T>): void
 
@@ -405,30 +389,28 @@ getLastObject(callback: AsyncCallback<T>): void
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-4. console.info('getLastObjectDemo');
-5. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-6. let fetchOption: photoAccessHelper.FetchOptions = {
-7. fetchColumns: [],
-8. predicates: predicates
-9. };
-10. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
-11. fetchResult.getLastObject((err, photoAsset) => {
-12. if (photoAsset !== undefined) {
-13. console.info('photoAsset displayName: ', photoAsset.displayName);
-14. } else {
-15. console.error(`photoAsset failed with err: ${err.code}, ${err.message}`);
-16. }
-17. });
-18. }
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('getLastObjectDemo');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOption: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
+  fetchResult.getLastObject((err, photoAsset) => {
+    if (photoAsset !== undefined) {
+      console.info('photoAsset displayName: ', photoAsset.displayName);
+    } else {
+      console.error(`photoAsset failed with err: ${err.code}, ${err.message}`);
+    }
+  });
+}
 ```
 
 ## getLastObject
-
-PhonePC/2in1TabletTV
 
 getLastObject(): Promise<T>
 
@@ -442,7 +424,7 @@ getLastObject(): Promise<T>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<T> | Promise对象，返回结果集中的最后一个对象。 |
+| Promise<T> | Promise对象，返回结果集中的最后一个文件资产。 |
 
 **错误码：**
 
@@ -457,25 +439,23 @@ getLastObject(): Promise<T>
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-4. console.info('getLastObjectDemo');
-5. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-6. let fetchOption: photoAccessHelper.FetchOptions = {
-7. fetchColumns: [],
-8. predicates: predicates
-9. };
-10. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
-11. let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getLastObject();
-12. console.info('photoAsset displayName: ', photoAsset.displayName);
-13. }
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('getLastObjectDemo');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOption: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
+  let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getLastObject();
+  console.info('photoAsset displayName: ', photoAsset.displayName);
+}
 ```
 
 ## getObjectByPosition
-
-PhonePC/2in1TabletTV
 
 getObjectByPosition(index: number, callback: AsyncCallback<T>): void
 
@@ -505,30 +485,28 @@ getObjectByPosition(index: number, callback: AsyncCallback<T>): void
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-4. console.info('getObjectByPositionDemo');
-5. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-6. let fetchOption: photoAccessHelper.FetchOptions = {
-7. fetchColumns: [],
-8. predicates: predicates
-9. };
-10. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
-11. fetchResult.getObjectByPosition(0, (err, photoAsset) => {
-12. if (photoAsset !== undefined) {
-13. console.info('photoAsset displayName: ', photoAsset.displayName);
-14. } else {
-15. console.error(`photoAsset failed with err: ${err.code}, ${err.message}`);
-16. }
-17. });
-18. }
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('getObjectByPositionDemo');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOption: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
+  fetchResult.getObjectByPosition(0, (err, photoAsset) => {
+    if (photoAsset !== undefined) {
+      console.info('photoAsset displayName: ', photoAsset.displayName);
+    } else {
+      console.error(`photoAsset failed with err: ${err.code}, ${err.message}`);
+    }
+  });
+}
 ```
 
 ## getObjectByPosition
-
-PhonePC/2in1TabletTV
 
 getObjectByPosition(index: number): Promise<T>
 
@@ -548,7 +526,7 @@ getObjectByPosition(index: number): Promise<T>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<T> | Promise对象，返回结果集中指定索引的一个对象。 |
+| Promise<T> | Promise对象，返回结果集中指定索引的文件资产。 |
 
 **错误码：**
 
@@ -563,29 +541,27 @@ getObjectByPosition(index: number): Promise<T>
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-4. console.info('getObjectByPositionDemo');
-5. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-6. let fetchOption: photoAccessHelper.FetchOptions = {
-7. fetchColumns: [],
-8. predicates: predicates
-9. };
-10. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
-11. if (fetchResult === undefined) {
-12. console.error('fetchResult is undefined');
-13. return;
-14. }
-15. let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getObjectByPosition(0);
-16. console.info('photoAsset displayName: ', photoAsset.displayName);
-17. }
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('getObjectByPositionDemo');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOption: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
+  if (fetchResult === undefined) {
+    console.error('fetchResult is undefined');
+    return;
+  }
+  let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getObjectByPosition(0);
+  console.info('photoAsset displayName: ', photoAsset.displayName);
+}
 ```
 
 ## getAllObjects
-
-PhonePC/2in1TabletTV
 
 getAllObjects(callback: AsyncCallback<Array<T>>): void
 
@@ -614,30 +590,28 @@ getAllObjects(callback: AsyncCallback<Array<T>>): void
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-4. console.info('getAllObjectDemo');
-5. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-6. let fetchOption: photoAccessHelper.FetchOptions = {
-7. fetchColumns: [],
-8. predicates: predicates
-9. };
-10. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
-11. fetchResult.getAllObjects((err, photoAssetList) => {
-12. if (photoAssetList !== undefined) {
-13. console.info('photoAssetList length: ', photoAssetList.length);
-14. } else {
-15. console.error(`photoAssetList failed with err:${err.code}, ${err.message}`);
-16. }
-17. });
-18. }
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('getAllObjectDemo');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOption: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
+  fetchResult.getAllObjects((err, photoAssetList) => {
+    if (photoAssetList !== undefined) {
+      console.info('photoAssetList length: ', photoAssetList.length);
+    } else {
+      console.error(`photoAssetList failed with err:${err.code}, ${err.message}`);
+    }
+  });
+}
 ```
 
 ## getAllObjects
-
-PhonePC/2in1TabletTV
 
 getAllObjects(): Promise<Array<T>>
 
@@ -666,25 +640,23 @@ getAllObjects(): Promise<Array<T>>
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-4. console.info('getAllObjectDemo');
-5. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-6. let fetchOption: photoAccessHelper.FetchOptions = {
-7. fetchColumns: [],
-8. predicates: predicates
-9. };
-10. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
-11. let photoAssetList: Array<photoAccessHelper.PhotoAsset> = await fetchResult.getAllObjects();
-12. console.info('photoAssetList length: ', photoAssetList.length);
-13. }
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('getAllObjectDemo');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOption: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
+  let photoAssetList: Array<photoAccessHelper.PhotoAsset> = await fetchResult.getAllObjects();
+  console.info('photoAssetList length: ', photoAssetList.length);
+}
 ```
 
 ## contains23+
-
-PhonePC/2in1TabletTV
 
 contains(object: T): Promise<boolean>
 
@@ -712,30 +684,28 @@ contains(object: T): Promise<boolean>
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-4. console.info('fetchResultContainsDemo');
-5. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-6. let fetchOption: photoAccessHelper.FetchOptions = {
-7. fetchColumns: [],
-8. predicates: predicates
-9. };
-10. try {
-11. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
-12. let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-13. let ret: boolean = await fetchResult.contains(asset);
-14. console.info(`succeed. ${ret}`);
-15. } catch (err) {
-16. console.error(`fail. error: ${err.code}, ${err.message}`);
-17. }
-18. }
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('fetchResultContainsDemo');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOption: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  try {
+    let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
+    let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+    let ret: boolean = await fetchResult.contains(asset);
+    console.info(`succeed. ${ret}`);
+  } catch (err) {
+    console.error(`fail. error: ${err.code}, ${err.message}`);
+  }
+}
 ```
 
 ## getObjectsByIndexSet23+
-
-PhonePC/2in1TabletTV
 
 getObjectsByIndexSet(indexSet: number[]): Promise<T[]>
 
@@ -751,7 +721,7 @@ getObjectsByIndexSet(indexSet: number[]): Promise<T[]>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| indexSet | number[] | 是 | 指定的索引集合。 |
+| indexSet | number[] | 是 | 指定的索引数组。 |
 
 **返回值：**
 
@@ -771,30 +741,28 @@ getObjectsByIndexSet(indexSet: number[]): Promise<T[]>
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-4. console.info('fetchResultGetObjectsByIndexSetDemo');
-5. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-6. let fetchOption: photoAccessHelper.FetchOptions = {
-7. fetchColumns: [],
-8. predicates: predicates
-9. };
-10. try {
-11. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
-12. let indexSet: number[] = [0, 1];
-13. let ret: photoAccessHelper.PhotoAsset[] = await fetchResult.getObjectsByIndexSet(indexSet);
-14. console.info(`succeed. ${ret.length}`);
-15. } catch (err) {
-16. console.error(`fail. error: ${err.code}, ${err.message}`);
-17. }
-18. }
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('fetchResultGetObjectsByIndexSetDemo');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOption: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  try {
+    let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
+    let indexSet: number[] = [0, 1];
+    let ret: photoAccessHelper.PhotoAsset[] = await fetchResult.getObjectsByIndexSet(indexSet);
+    console.info(`succeed. ${ret.length}`);
+  } catch (err) {
+    console.error(`fail. error: ${err.code}, ${err.message}`);
+  }
+}
 ```
 
 ## getIndex23+
-
-PhonePC/2in1TabletTV
 
 getIndex(object: T): Promise<number>
 
@@ -822,30 +790,28 @@ getIndex(object: T): Promise<number>
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-4. console.info('fetchResultGetIndexDemo');
-5. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-6. let fetchOption: photoAccessHelper.FetchOptions = {
-7. fetchColumns: [],
-8. predicates: predicates
-9. };
-10. try {
-11. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
-12. let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-13. let ret: number = await fetchResult.getIndex(asset);
-14. console.info(`succeed. ${ret}`);
-15. } catch (err) {
-16. console.error(`fail. error: ${err.code}, ${err.message}`);
-17. }
-18. }
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('fetchResultGetIndexDemo');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOption: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  try {
+    let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
+    let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+    let ret: number = await fetchResult.getIndex(asset);
+    console.info(`succeed. ${ret}`);
+  } catch (err) {
+    console.error(`fail. error: ${err.code}, ${err.message}`);
+  }
+}
 ```
 
 ## getRangeObjects23+
-
-PhonePC/2in1TabletTV
 
 getRangeObjects(index: number, offset: number): Promise<T[]>
 
@@ -857,14 +823,14 @@ getRangeObjects(index: number, offset: number): Promise<T[]>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| index | number | 是 | 开始获取的文件资产索引，大于等于0，小于文件检索结果中对象数量。 |
+| index | number | 是 | 开始获取的文件资产索引，大于等于0，小于文件检索结果中对象数量。index和offset之和需要小于检索结果中的对象数量。 |
 | offset | number | 是 | 要获取的文件资产数量，大于0。  index和offset之和需要小于检索结果中的对象数量，否则抛出23800151错误码。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<T[]> | 返回Promise异步回调数组。 |
+| Promise<T[]> | Promise对象，返回指定索引范围内的文件资产数组。 |
 
 **错误码：**
 
@@ -879,30 +845,32 @@ getRangeObjects(index: number, offset: number): Promise<T[]>
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
-2. import { photoAccessHelper} from '@kit.MediaLibraryKit';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
+import { photoAccessHelper} from '@kit.MediaLibraryKit';
 
-4. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-5. console.info('getRangeObjectsDemo');
-6. type PhotoAsset = photoAccessHelper.PhotoAsset;
-7. let testNum: string = "getRangeObjects_test_003";
-8. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-9. let fetchOptions: photoAccessHelper.FetchOptions = {
-10. fetchColumns: [],
-11. predicates: predicates
-12. };
-13. let fetchResult1: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-14. await phAccessHelper.getAssets(fetchOptions);
-15. let fetchResult2: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-16. await phAccessHelper.getAssets(fetchOptions);
-17. let count: number = fetchResult1.getCount();
-18. const half: number = Math.ceil(count / 2);
-19. let promises: Promise<PhotoAsset[]>[] = [];
-20. promises[0] = fetchResult1.getRangeObjects(0, half);
-21. promises[1] = fetchResult2.getRangeObjects(half, count - half);
-22. let photoAssetsArray: PhotoAsset[][] = await Promise.all(promises);
-23. let photoAssets: PhotoAsset[] = photoAssetsArray[0].concat(photoAssetsArray[1]);
-24. console.info('photoAssets length: ', photoAssets.length);
-25. }
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('getRangeObjectsDemo');
+  type PhotoAsset = photoAccessHelper.PhotoAsset;
+  let testNum: string = "getRangeObjects_test_003";
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOptions: photoAccessHelper.FetchOptions = {
+      fetchColumns: [],
+      predicates: predicates
+  };
+  // 创建两个独立的FetchResult实例用于并行获取，提高大批量数据检索效率。
+  let fetchResult1: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+      await phAccessHelper.getAssets(fetchOptions);
+  let fetchResult2: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+      await phAccessHelper.getAssets(fetchOptions);
+  let count: number = fetchResult1.getCount();
+  const half: number = Math.ceil(count / 2);
+  // 将结果集分为两批并行获取：前半部分从fetchResult1获取，后半部分从fetchResult2获取。
+  let promises: Promise<PhotoAsset[]>[] = [];
+  promises[0] = fetchResult1.getRangeObjects(0, half);
+  promises[1] = fetchResult2.getRangeObjects(half, count - half);
+  let photoAssetsArray: PhotoAsset[][] = await Promise.all(promises);
+  let photoAssets: PhotoAsset[] = photoAssetsArray[0].concat(photoAssetsArray[1]);
+  console.info('photoAssets length: ', photoAssets.length);
+}
 ```

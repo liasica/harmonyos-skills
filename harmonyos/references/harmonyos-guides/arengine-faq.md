@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-faq
 title: AR Engine常见问题
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > AR Engine常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:59+08:00
-doc_updated_at: 2026-04-24
+scraped_at: 2026-09-02T15:17:35+08:00
+doc_updated_at: 2026-08-29
 content_hash: sha256:4483784d21951e78a0d6c276f0d49929e477e14962e434d967515e2d733050bb
 ---
 

@@ -1,58 +1,52 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdsnavdestination
-title: HdsNavDestination
-breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsNavDestination
+title: HdsNavDestination (导航子页面容器)
+breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsNavDestination (导航子页面容器)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:57:14+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:25f62368639ae7622e8b8fd345161ee03855731081fc255568abc3bfdd37e445
+scraped_at: 2026-09-02T15:01:39+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:32e39685caef4256582720b0cd4708abe2d8bee25a8b46113d1f665f50e4cb95
 ---
 
-作为子页面的根容器，用于显示[HdsNavigation](ui-design-hdsnavigation.md)的内容区，默认支持标题栏随内容区滚动的动态模糊样式。6.0.0(20)版本以后，推荐使用[bindToScrollable](ui-design-hdsnavdestination.md#bindtoscrollable)、[bindToNestedScrollable](ui-design-hdsnavdestination.md#bindtonestedscrollable)属性绑定导航组件和可滚动容器组件后，再使用导航组件滚动相关的功能，从而获得更优的体验。如滚动生效动态模糊样式，标题栏随内容区滚动动态显隐功能等。
+作为子页面的根容器，用于显示[HdsNavigation (导航根视图容器)](ui-design-hdsnavigation.md)的内容区，默认支持标题栏随内容区滚动的动态模糊样式。6.0.0(20)版本以后，推荐使用[bindToScrollable](ui-design-hdsnavdestination.md#bindtoscrollable)、[bindToNestedScrollable](ui-design-hdsnavdestination.md#bindtonestedscrollable)属性绑定导航组件和可滚动容器组件后，再使用导航组件滚动相关的功能，从而获得更优的体验。如滚动生效动态模糊样式，标题栏随内容区滚动动态显隐功能等。
 
 **起始版本：** 5.1.0(18)
 
-说明
+**说明** 
 
 * HdsNavDestination组件推荐配合HdsNavigation使用，作为HdsNavigation目的页面的根节点。如果单独使用HdsNavDestination，只能作为普通容器组件，不具备路由相关属性能力。
-* 如果路由栈中间页面的生命周期发生变化，跳转之前的栈顶Destination的生命周期(onWillShow, onShown, onHidden, onWillDisappear)与跳转之后的栈顶Destination的生命周期(onWillShow, onShown, onHidden, onWillDisappear)均在最后触发。
-* 不支持在HdsNavDestination上添加zIndex属性，会覆盖掉系统设置的层级，可能导致出现显示异常。
+* 如果路由栈中间页面的生命周期发生变化，跳转之前的栈顶HdsNavDestination的生命周期(onWillShow, onShown, onHidden, onWillDisappear)与跳转之后的栈顶HdsNavDestination的生命周期(onWillShow, onShown, onHidden, onWillDisappear)均在最后触发。
+* 不支持在HdsNavDestination上添加[zIndex](ts-universal-attributes-z-order.md#zindex)属性，会覆盖掉系统设置的层级，可能导致出现显示异常。
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-说明
+**说明** 
 
 * HdsNavDestinationAttribute是用于配置HdsNavDestination组件属性的关键接口。6.0.1(21)及之前版本，导入HdsNavDestination组件后需要开发者手动导入HdsNavDestinationAttribute，否则会编译报错。从6.0.2(22)版本开始，编译工具链识别到导入HdsNavDestination组件后，会自动导入HdsNavDestinationAttribute，无需开发者手动导入。
 * 如果开发者手动导入HdsNavDestinationAttribute，DevEco Studio会显示置灰，6.0.1(21)及之前版本删除会编译报错，从6.0.2(22)版本开始，删除对功能无影响。
 
 6.0.1(21)及之前版本：
 
-```
-1. import { HdsNavDestination, HdsNavDestinationAttribute } from '@kit.UIDesignKit';
+```typescript
+import { HdsNavDestination, HdsNavDestinationAttribute } from '@kit.UIDesignKit';
 ```
 
 6.0.2(22)及之后版本：
 
-```
-1. import { HdsNavDestination } from '@kit.UIDesignKit';
+```typescript
+import { HdsNavDestination } from '@kit.UIDesignKit';
 ```
 
 ## 子组件
-
-PhonePC/2in1TabletTV
 
 * 子组件类型：系统组件和自定义组件，支持渲染控制类型（[if/else](../harmonyos-guides/arkts-rendering-control-ifelse.md)、[ForEach](../harmonyos-guides/arkts-rendering-control-foreach.md)和[LazyForEach](../harmonyos-guides/arkts-rendering-control-lazyforeach.md)）。
 * 子组件个数：多个。
 
 ## 接口
 
-PhonePC/2in1TabletTV
-
 HdsNavDestination()
 
-创建[HdsNavigation](ui-design-hdsnavigation.md)子页面的根容器。
+创建[HdsNavigation (导航根视图容器)](ui-design-hdsnavigation.md)子页面的根容器。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -62,15 +56,11 @@ HdsNavDestination()
 
 ## 属性
 
-PhonePC/2in1TabletTV
-
 支持[通用属性](ts-component-general-attributes.md)。
 
 不推荐设置位置、大小等布局相关属性，可能会造成页面显示异常。
 
 ### titleBar
-
-PhonePC/2in1TabletTV
 
 titleBar(options?: HdsNavigationTitleBarOptions)
 
@@ -92,8 +82,6 @@ titleBar(options?: HdsNavigationTitleBarOptions)
 
 ### hideTitleBar
 
-PhonePC/2in1TabletTV
-
 hideTitleBar(hide: boolean, animated?: boolean)
 
 设置是否隐藏标题栏，并且可设置在标题栏显示隐藏的状态变化中是否使用动画。
@@ -113,8 +101,6 @@ hideTitleBar(hide: boolean, animated?: boolean)
 
 ### hideBackButton
 
-PhonePC/2in1TabletTV
-
 hideBackButton(value: boolean)
 
 设置是否隐藏标题栏中的返回键。
@@ -132,8 +118,6 @@ hideBackButton(value: boolean)
 | value | boolean | 是 | 是否隐藏标题栏中的返回键。  默认值：false。  - true：隐藏返回键。  - false：显示返回键。 |
 
 ### mode
-
-PhonePC/2in1TabletTV
 
 mode(value: NavDestinationMode)
 
@@ -153,8 +137,6 @@ mode(value: NavDestinationMode)
 
 ### toolbarConfiguration
 
-PhonePC/2in1TabletTV
-
 toolbarConfiguration(toolbarParam: Array<ToolbarItem> | CustomBuilder, options?: NavigationToolbarOptions)
 
 设置工具栏内容。未调用本接口时不显示工具栏。
@@ -172,13 +154,11 @@ toolbarConfiguration(toolbarParam: Array<ToolbarItem> | CustomBuilder, options?:
 | toolbarParam | Array<[ToolbarItem](ts-basic-components-navigation.md#toolbaritem10)> | [CustomBuilder](ts-types.md#custombuilder8) | 是 | 工具栏内容。  使用Array<[ToolbarItem](ts-basic-components-navigation.md#toolbaritem10)>写法设置的工具栏有如下特性：  - 如果为[Stack](ts-basic-components-navigation.md#navigationmode9枚举说明)模式，不推荐使用该写法。推荐使用[CustomBuilder](ts-types.md#custombuilder8)配合[ToolBar](ohos-arkui-advanced-toolbar.md)组件写法，避免布局显示问题。  - 工具栏所有选项均分底部工具栏，在每个均分内容区布局文本和图标。  - 文本超长时，若工具栏选项个数小于5个，优先拓展选项的宽度，最大宽度与屏幕等宽，其次逐级缩小，缩小之后换行，最后截断。  - 最多支持显示5个图标，多余的图标会被放入自动生成的更多图标。  使用[CustomBuilder](ts-types.md#custombuilder8)写法为用户自定义工具栏选项，除均分底部工具栏外不具备以上功能。 |
 | options | [NavigationToolbarOptions](ts-basic-components-navigation.md#navigationtoolbaroptions11) | 否 | 工具栏选项。 |
 
-说明
+**说明** 
 
 不支持通过SymbolGlyphModifier对象的fontSize属性修改图标大小、effectStrategy属性修改动效、symbolEffect属性修改动效类型。
 
 ### hideToolBar
-
-PhonePC/2in1TabletTV
 
 hideToolBar(hide: boolean, animated?: boolean)
 
@@ -199,8 +179,6 @@ hideToolBar(hide: boolean, animated?: boolean)
 
 ### ignoreLayoutSafeArea
 
-PhonePC/2in1TabletTV
-
 ignoreLayoutSafeArea(types?: Array<LayoutSafeAreaType>, edges?: Array<LayoutSafeAreaEdge>)
 
 控制组件的布局，使其扩展到非安全区域。
@@ -218,7 +196,7 @@ ignoreLayoutSafeArea(types?: Array<LayoutSafeAreaType>, edges?: Array<LayoutSafe
 | types | Array <[LayoutSafeAreaType](ts-universal-attributes-expand-safe-area.md#layoutsafeareatype12)> | 否 | 配置扩展安全区域的类型。  默认值：[LayoutSafeAreaType.SYSTEM]。 |
 | edges | Array <[LayoutSafeAreaEdge](ts-universal-attributes-expand-safe-area.md#layoutsafeareaedge12)> | 否 | 配置扩展安全区域的方向。  默认值：[LayoutSafeAreaEdge.TOP, LayoutSafeAreaEdge.BOTTOM]。 |
 
-说明
+**说明** 
 
 组件设置LayoutSafeArea之后生效的条件为：
 
@@ -229,8 +207,6 @@ ignoreLayoutSafeArea(types?: Array<LayoutSafeAreaType>, edges?: Array<LayoutSafe
 若组件延伸到非安全区域内，此时在非安全区域里触发的事件（例如：点击事件）等可能会被系统拦截，优先响应状态栏等系统组件。
 
 ### systemBarStyle
-
-PhonePC/2in1TabletTV
 
 systemBarStyle(originalStyle: Optional<SystemBarStyle>, scrollEffectStyle: Optional<SystemBarStyle>)
 
@@ -256,8 +232,6 @@ systemBarStyle(originalStyle: Optional<SystemBarStyle>, scrollEffectStyle: Optio
 
 ### recoverable
 
-PhonePC/2in1TabletTV
-
 recoverable(recoverable: Optional<boolean>)
 
 配置HdsNavDestination是否可恢复。如配置为可恢复，当应用进程异常退出并重新冷启动时，可自动创建该HdsNavDestination。该功能需HdsNavDestination对应的HdsNavigation也配置了可恢复属性使用。
@@ -275,8 +249,6 @@ recoverable(recoverable: Optional<boolean>)
 | recoverable | [Optional](ts-universal-attributes-custom-property.md#optionalt)<boolean> | 是 | HdsNavDestination是否可恢复，默认为不可恢复。  默认值：false。  - true：页面栈可恢复。  - false：页面栈不可恢复。 |
 
 ### dynamicHideTitleBar
-
-PhonePC/2in1TabletTV
 
 dynamicHideTitleBar(value: DynamicHideParams)
 
@@ -296,8 +268,6 @@ dynamicHideTitleBar(value: DynamicHideParams)
 
 ### bindToScrollable
 
-PhonePC/2in1TabletTV
-
 bindToScrollable(scrollers: Array<Scroller>)
 
 绑定导航组件和可滚动容器组件，动态显隐标题区域，状态栏及底部自定义区域，使能动态显隐更优体验。
@@ -316,8 +286,6 @@ bindToScrollable(scrollers: Array<Scroller>)
 
 ### bindToNestedScrollable
 
-PhonePC/2in1TabletTV
-
 bindToNestedScrollable(scrollers: Array<NestedScrollInfo>)
 
 绑定导航组件和嵌套的可滚动容器组件，动态显隐标题区域，状态栏及底部自定义区域，使能动态显隐更优体验。
@@ -334,15 +302,13 @@ bindToNestedScrollable(scrollers: Array<NestedScrollInfo>)
 | --- | --- | --- | --- |
 | scrollers | Array<[NestedScrollInfo](ui-design-hdsnavigation.md#nestedscrollinfo)> | 是 | 嵌套的可滚动容器组件的控制器。 |
 
-说明
+**说明** 
 
 当多个可滚动容器组件绑定了同一个导航组件时，滚动任何一个容器都会触发标题栏显示或隐藏效果。且当任何一个可滚动容器组件滑动到底部或顶部位置时，会立即触发标题栏显示动效。
 
 因此，为了获得最佳用户体验，不建议同时触发多个可滚动容器组件的滚动事件。
 
 ### systemTransition
-
-PhonePC/2in1TabletTV
 
 systemTransition(type: NavigationSystemTransitionType)
 
@@ -362,8 +328,6 @@ systemTransition(type: NavigationSystemTransitionType)
 
 ### customTransition
 
-PhonePC/2in1TabletTV
-
 customTransition(delegate: NavDestinationTransitionDelegate)
 
 设置HdsNavDestination自定义转场动画。
@@ -381,8 +345,6 @@ customTransition(delegate: NavDestinationTransitionDelegate)
 | delegate | [NavDestinationTransitionDelegate](ts-basic-components-navdestination.md#navdestinationtransitiondelegate15) | 是 | HdsNavDestination自定义动画的代理函数。 |
 
 ### titleMode
-
-PhonePC/2in1TabletTV
 
 titleMode(value: HdsNavDestinationTitleMode)
 
@@ -402,11 +364,9 @@ titleMode(value: HdsNavDestinationTitleMode)
 
 ### withTheme
 
-PhonePC/2in1TabletTV
-
 withTheme(value: WithThemeOptions)
 
-设置HdsNavDestination的[WithTheme](ts-container-with-theme.md)能力。使用本功能时，需确保HdsNavDestination组件与对应的[HdsNavigation](ui-design-hdsnavigation.md)组件配置的[WithTheme](ts-container-with-theme.md)属性保持一致。
+设置HdsNavDestination的[WithTheme](ts-container-with-theme.md)能力。使用本功能时，需确保HdsNavDestination组件与对应的[HdsNavigation (导航根视图容器)](ui-design-hdsnavigation.md)组件配置的[WithTheme](ts-container-with-theme.md)属性保持一致。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -420,11 +380,7 @@ withTheme(value: WithThemeOptions)
 
 ## 事件
 
-PhonePC/2in1TabletTV
-
 ### onShown
-
-PhonePC/2in1TabletTV
 
 onShown(callback: Callback<void>)
 
@@ -442,8 +398,6 @@ onShown(callback: Callback<void>)
 
 ### onShown
 
-PhonePC/2in1TabletTV
-
 onShown(callback: Callback<VisibilityChangeReason>)
 
 当显示HdsNavDestination页面时，触发onShown回调。通过[VisibilityChangeReason](ts-basic-components-navdestination.md#visibilitychangereason21)说明触发的原因。
@@ -459,8 +413,6 @@ onShown(callback: Callback<VisibilityChangeReason>)
 | callback | [Callback](ts-types.md#callback12)<[VisibilityChangeReason](ts-basic-components-navdestination.md#visibilitychangereason21)> | 是 | 当该HdsNavDestination页面显示时触发的回调。回调会提供入参VisibilityChangeReason以说明onShown触发的原因。 |
 
 ### onHidden
-
-PhonePC/2in1TabletTV
 
 onHidden(callback: Callback<void>)
 
@@ -478,11 +430,9 @@ onHidden(callback: Callback<void>)
 
 ### onHidden
 
-PhonePC/2in1TabletTV
-
 onHidden(callback: Callback<VisibilityChangeReason>)
 
-当隐藏HdsNavDestination页面时, 触发onHidden回调。通过[VisibilityChangeReason](ts-basic-components-navdestination.md#visibilitychangereason21)说明触发的原因。
+当隐藏HdsNavDestination页面时，触发onHidden回调。通过[VisibilityChangeReason](ts-basic-components-navdestination.md#visibilitychangereason21)说明触发的原因。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -495,8 +445,6 @@ onHidden(callback: Callback<VisibilityChangeReason>)
 | callback | [Callback](ts-types.md#callback12)<[VisibilityChangeReason](ts-basic-components-navdestination.md#visibilitychangereason21)> | 是 | 当该HdsNavDestination页面隐藏时触发的回调。回调会提供入参VisibilityChangeReason以说明onHidden触发的原因。 |
 
 ### onReady
-
-PhonePC/2in1TabletTV
 
 onReady(callback: Callback<NavDestinationContext>)
 
@@ -514,8 +462,6 @@ onReady(callback: Callback<NavDestinationContext>)
 
 ### onWillAppear
 
-PhonePC/2in1TabletTV
-
 onWillAppear(callback: Callback<void>)
 
 当该HdsNavDestination挂载之前触发此回调。在该回调中允许修改页面栈，当前帧生效。
@@ -531,8 +477,6 @@ onWillAppear(callback: Callback<void>)
 | callback | [Callback](ts-types.md#callback12)<void> | 是 | 当该HdsNavDestination挂载之前触发的回调。 |
 
 ### onWillDisappear
-
-PhonePC/2in1TabletTV
 
 onWillDisappear(callback: Callback<void>)
 
@@ -550,8 +494,6 @@ onWillDisappear(callback: Callback<void>)
 
 ### onWillShow
 
-PhonePC/2in1TabletTV
-
 onWillShow(callback: Callback<void>)
 
 当该HdsNavDestination显示之前触发此回调。
@@ -568,8 +510,6 @@ onWillShow(callback: Callback<void>)
 
 ### onWillHide
 
-PhonePC/2in1TabletTV
-
 onWillHide(callback: Callback<void>)
 
 当该HdsNavDestination隐藏之前触发此回调。
@@ -585,8 +525,6 @@ onWillHide(callback: Callback<void>)
 | callback | [Callback](ts-types.md#callback12)<void> | 是 | 当该HdsNavDestination隐藏之前触发的回调。 |
 
 ### onBackPressed
-
-PhonePC/2in1TabletTV
 
 onBackPressed(callback: Callback<void, boolean>)
 
@@ -606,8 +544,6 @@ onBackPressed(callback: Callback<void, boolean>)
 
 ### onActive
 
-PhonePC/2in1TabletTV
-
 onActive(callback: Optional<Callback<NavDestinationActiveReason>>)
 
 HdsNavDestination处于激活态（处于栈顶可操作，且上层无特殊组件遮挡）时，触发该回调。
@@ -624,8 +560,6 @@ HdsNavDestination处于激活态（处于栈顶可操作，且上层无特殊组
 
 ### onInactive
 
-PhonePC/2in1TabletTV
-
 onInactive(callback: Optional<Callback<NavDestinationActiveReason>>)
 
 HdsNavDestination处于非激活态（处于非栈顶不可操作，或处于栈顶时上层有特殊组件遮挡）时，触发该回调。
@@ -640,9 +574,47 @@ HdsNavDestination处于非激活态（处于非栈顶不可操作，或处于栈
 | --- | --- | --- | --- |
 | callback | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[Callback](ts-types.md#callback12)<[NavDestinationActiveReason](ts-basic-components-navdestination.md#navdestinationactivereason17)>> | 是 | HdsNavDestination由激活态变为非激活态的原因。 |
 
-## HdsNavDestinationTitleMode
+### onResult
 
-PhonePC/2in1TabletTV
+onResult(callback: Optional<Callback<ESObject>>)
+
+HdsNavDestination返回时触发该回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.UIDesign.HDSComponent.Core
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[Callback](ts-types.md#callback12)<ESObject>> | 是 | 页面返回回调。回调返回[pop](ts-basic-components-navigation.md#pop11)、[popToName](ts-basic-components-navigation.md#poptoname11)、[popToIndex](ts-basic-components-navigation.md#poptoindex11)接口传入的result参数；如果不传该参数，回调返回为undefined。 |
+
+### onNewParam
+
+onNewParam(callback: Optional<Callback<ESObject>>)
+
+当之前存在于栈中的HdsNavDestination页面通过[launchMode.MOVE\_TO\_TOP\_SINGLETON](ts-basic-components-navigation.md#launchmode12枚举说明)或[launchMode.POP\_TO\_SINGLETON](ts-basic-components-navigation.md#launchmode12枚举说明)移动到栈顶时，触发该回调。
+
+**说明** 
+
+[replacePath](ts-basic-components-navigation.md#replacepath12)、[replaceDestination](ts-basic-components-navigation.md#replacedestination18)不会触发该回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.UIDesign.HDSComponent.Core
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[Callback](ts-types.md#callback12)<ESObject>> | 是 | onNewParam触发时的回调函数，回调返回路由跳转时传递到目标页面的数据。 |
+
+## HdsNavDestinationTitleMode
 
 标题栏显示模式枚举。
 
@@ -659,109 +631,107 @@ PhonePC/2in1TabletTV
 
 ## 示例
 
-PhonePC/2in1TabletTV
-
 通过titleBar属性，自定义设置标题栏随内容区滚动的动态模糊样式。
 
+```typescript
+import { HdsNavDestination, HdsNavDestinationAttribute, ScrollEffectType } from '@kit.UIDesignKit';
+import { LengthMetrics } from '@kit.ArkUI';
+
+const TITLE_BAR_HEIGHT_MINI: number = 56;
+
+@Entry
+@Component
+struct PageOne {
+  scroller: Scroller = new Scroller();
+
+  build() {
+    HdsNavDestination() {
+      Scroll(this.scroller) {
+        Column() {
+          Blank().height(TITLE_BAR_HEIGHT_MINI)
+          Image($r('app.media.scenery')).width('100%') // scenery为自定义资源，开发者需替换本地资源
+        }
+      }.edgeEffect(EdgeEffect.Spring).scrollBar(BarState.Off)
+    }
+    .titleBar({
+      padding: {
+        start: LengthMetrics.vp(2),
+        end: LengthMetrics.vp(2)
+      },
+      style: {
+        scrollEffectOpts: {
+          enableScrollEffect: true,
+          scrollEffectType: ScrollEffectType.COMMON_BLUR,
+          blurEffectiveStartOffset: LengthMetrics.vp(0),
+          blurEffectiveEndOffset: LengthMetrics.vp(20)
+        },
+        originalStyle: {
+          backgroundStyle: {
+            backgroundColor: $r('sys.color.ohos_id_color_background')
+          },
+          contentStyle: {
+            titleStyle: { mainTitleColor: $r('sys.color.font_primary'), subTitleColor: $r('sys.color.font_secondary') },
+            menuStyle: {
+              backgroundColor: $r('sys.color.comp_background_tertiary'),
+              iconColor: $r('sys.color.icon_primary')
+            },
+            backIconStyle: {
+              backgroundColor: $r('sys.color.comp_background_tertiary'),
+              iconColor: $r('sys.color.icon_primary')
+            }
+          }
+        },
+        scrollEffectStyle: {
+          backgroundStyle: {
+            backgroundColor: $r('sys.color.ohos_id_color_background_transparent')
+          },
+          contentStyle: {
+            titleStyle: { mainTitleColor: $r('sys.color.font_primary'), subTitleColor: $r('sys.color.font_secondary') },
+            menuStyle: {
+              backgroundColor: $r('sys.color.comp_background_tertiary'),
+              iconColor: $r('sys.color.icon_primary')
+            },
+            backIconStyle: {
+              backgroundColor: $r('sys.color.comp_background_tertiary'),
+              iconColor: $r('sys.color.icon_primary')
+            }
+          }
+        }
+      },
+      content: {
+        title: {
+          mainTitle: 'PageOne',
+        },
+        menu: {
+          value: [{
+            content: {
+              label: 'menu1',
+              icon: 'resources/base/media/startIcon.png',
+              isEnabled: true,
+              action: () => {
+                console.info('HdsNavDestination menu1');
+              }
+            }
+          }, {
+            content: {
+              label: 'menu2',
+              icon: 'resources/base/media/startIcon.png',
+              isEnabled: true,
+              action: () => {
+                console.info('HdsNavDestination menu2');
+              }
+            }
+          }]
+        }
+      }
+    })
+    .bindToScrollable([this.scroller])
+    .systemBarStyle({ statusBarContentColor: '#0A59F7' }, { statusBarContentColor: '#C7C7CD' })
+    .hideBackButton(false)
+  }
+}
 ```
-1. // 从6.0.2(22)版本开始，无需手动导入HdsNavDestinationAttribute。具体请参考HdsNavDestination的导入模块说明。
-2. import { HdsNavDestination, HdsNavDestinationAttribute, ScrollEffectType } from '@kit.UIDesignKit';
-3. import { LengthMetrics } from '@kit.ArkUI';
 
-5. const TITLE_BAR_HEIGHT_MINI: number = 56;
-
-7. @Entry
-8. @Component
-9. struct PageOne {
-10. scroller: Scroller = new Scroller();
-
-12. build() {
-13. HdsNavDestination() {
-14. Scroll(this.scroller) {
-15. Column() {
-16. Blank().height(TITLE_BAR_HEIGHT_MINI)
-17. Image($r('app.media.scenery')).width('100%') // scenery为自定义资源，开发者需替换本地资源
-18. }
-19. }.edgeEffect(EdgeEffect.Spring).scrollBar(BarState.Off)
-20. }
-21. .titleBar({
-22. padding: {
-23. start: LengthMetrics.vp(2),
-24. end: LengthMetrics.vp(2)
-25. },
-26. style: {
-27. scrollEffectOpts: {
-28. enableScrollEffect: true,
-29. scrollEffectType: ScrollEffectType.COMMON_BLUR,
-30. blurEffectiveStartOffset: LengthMetrics.vp(0),
-31. blurEffectiveEndOffset: LengthMetrics.vp(20)
-32. },
-33. originalStyle: {
-34. backgroundStyle: {
-35. backgroundColor: $r('sys.color.ohos_id_color_background'),
-36. },
-37. contentStyle: {
-38. titleStyle: { mainTitleColor: $r('sys.color.font_primary'), subTitleColor: $r('sys.color.font_secondary') },
-39. menuStyle: {
-40. backgroundColor: $r('sys.color.comp_background_tertiary'),
-41. iconColor: $r('sys.color.icon_primary')
-42. },
-43. backIconStyle: {
-44. backgroundColor: $r('sys.color.comp_background_tertiary'),
-45. iconColor: $r('sys.color.icon_primary')
-46. }
-47. }
-48. },
-49. scrollEffectStyle: {
-50. backgroundStyle: {
-51. backgroundColor: $r('sys.color.ohos_id_color_background_transparent'),
-52. },
-53. contentStyle: {
-54. titleStyle: { mainTitleColor: $r('sys.color.font_primary'), subTitleColor: $r('sys.color.font_secondary') },
-55. menuStyle: {
-56. backgroundColor: $r('sys.color.comp_background_tertiary'),
-57. iconColor: $r('sys.color.icon_primary')
-58. },
-59. backIconStyle: {
-60. backgroundColor: $r('sys.color.comp_background_tertiary'),
-61. iconColor: $r('sys.color.icon_primary')
-62. }
-63. }
-64. }
-65. },
-66. content: {
-67. title: {
-68. mainTitle: "PageOne",
-69. },
-70. menu: {
-71. value: [{
-72. content: {
-73. label: 'menu1',
-74. icon: 'resources/base/media/startIcon.png',
-75. isEnabled: true,
-76. action: () => {
-77. console.info("HdsNavDestination menu1");
-78. }
-79. }
-80. }, {
-81. content: {
-82. label: 'menu2',
-83. icon: 'resources/base/media/startIcon.png',
-84. isEnabled: true,
-85. action: () => {
-86. console.info("HdsNavDestination menu2");
-87. }
-88. }
-89. }]
-90. },
-91. }
-92. })
-93. .systemBarStyle({ statusBarContentColor: '#0A59F7' }, { statusBarContentColor: '#C7C7CD' })
-94. .hideBackButton(false)
-95. }
-96. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/GBoF-FrFQGy7ZB0AlqKzcQ/zh-cn_image_0000002589246859.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/3HTycQrrS_y5yMjJN3mxJA/zh-cn_image_0000002736315825.gif)
 
 HdsNavDestination更多示例可以参考HdsNavigation[示例](ui-design-hdsnavigation.md#示例)。

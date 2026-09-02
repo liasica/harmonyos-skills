@@ -3,26 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: slider
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 基础组件 > slider
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:53+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:a4d153c83ae40db6192ce28f279e107c9e05e5f88c5294b475a249a1ecbeb73e
+scraped_at: 2026-09-02T15:01:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ec695fd385854f41b0a1ae9a79ede393f4ba6c5c912249498bb8ddd1873a45bb
 ---
 
 滑动条组件，用来快速调节设置值，如音量、亮度等。
 
-说明
+**说明** 
 
 该组件从API version 4 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 不支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
@@ -36,14 +32,12 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | change | ChangeEvent | 选择值发生变化时触发该事件。 |
 | click | - | 点击动作触发该事件。 |
 | longpress | - | 长按动作触发该事件。 |
-| swipe5+ | [SwipeEvent](js-lite-common-events.md) | 组件上快速滑动后触发。 |
+| swipe5+ | [SwipeEvent](js-lite-common-events.md#swipeevent) | 组件上快速滑动后触发。 |
 
 **表1** ChangeEvent
 
@@ -53,8 +47,6 @@ PhonePC/2in1TabletTVWearableLite Wearable
 | value5+ | number | 当前slider的进度值。 |
 
 ## 样式
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
@@ -75,54 +67,53 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 ## 方法
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | rotation | { focus: boolean } | 控制slider是否请求旋转表冠的焦点。设置focus参数为true，slider将获取旋转表冠的焦点，允许用户通过旋转表冠来滚动选择器中的选项；设置为false将释放旋转表冠的焦点。 |
 
 ## 示例
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <text>slider start value is {{startValue}}</text>
-4. <text>slider current value is {{currentValue}}</text>
-5. <text>slider end value is {{endValue}}</text>
-6. <slider min="0" max="100" value="{{value}}" ref="sliderObj"
-7. onchange="setValue" style="margin-top: 10%; width: 80%;height: 1%"></slider>
-8. </div>
+```html
+<!-- xxx.hml -->
+<div class="container">
+    <text>slider start value is {{startValue}}</text>
+    <text>slider current value is {{currentValue}}</text>
+    <text>slider end value is {{endValue}}</text>
+    <slider min="0" max="100" value="{{value}}" ref="sliderObj"
+            onchange="setValue" style="margin-top: 10%; width: 80%;height: 1%"></slider>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .container {
-3. flex-direction: column;
-4. justify-content: center;
-5. align-items: center;
-6. width: 100%;
-7. height: 100%;
-8. }
-```
-
-```
-1. // xxx.js
-2. export default {
-3. data: {
-4. value: 34,
-5. startValue: 0,
-6. currentValue: 0,
-7. endValue: 100,
-8. },
-9. onShow() {
-10. this.$refs.sliderObj.rotation({focus: true});
-11. },
-12. setValue(e) {
-13. this.currentValue = e.value;
-14. }
-15. }
+```css
+/* xxx.css */
+.container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/OIYAc3G6SdOcGYW8dcPkMQ/zh-cn_image_0000002589326807.png)
+```javascript
+// xxx.js
+export default {
+    data: {
+        value: 34,
+        startValue: 0,
+        currentValue: 0,
+        endValue: 100,
+    },
+    onShow() {
+        this.$refs.sliderObj.rotation({focus: true});
+    },
+    onHide() {
+        this.$refs.sliderObj.rotation({focus: false})
+    },
+    setValue(e) {
+        this.currentValue = e.value;
+    }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/zqeLyyW8R8-MwxXa3jnsuA/zh-cn_image_0000002706676668.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tenso
 title: SetData
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Tensor > SetData
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:05+08:00
+scraped_at: 2026-09-02T15:00:13+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:56942e5cd2c248a9bc6c5981802369772a47b637253185f5dece3a75364c3ea3
+content_hash: sha256:a5c627c744a3250a5673d9b9df7d306a16a231dbd7af6b4061cf9ba4423f3eb7
 ---
 
 ## 函数功能
@@ -14,19 +14,19 @@ content_hash: sha256:56942e5cd2c248a9bc6c5981802369772a47b637253185f5dece3a75364
 
 ## 函数原型
 
-说明
+**说明** 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 
-```
-1. graphStatus SetData(std::vector<uint8_t> &&data);
-2. graphStatus SetData(const std::vector<uint8_t> &data);
-3. graphStatus SetData(const uint8_t *data, size_t size);
-4. graphStatus SetData(const std::string &data);
-5. graphStatus SetData(const char_t *data);
-6. graphStatus SetData(const std::vector<std::string> &data);
-7. graphStatus SetData(const std::vector<AscendString> &datas);
-8. graphStatus SetData(uint8_t *data, size_t size, const Tensor::DeleteFunc &deleter_func);
+```cpp
+graphStatus SetData(std::vector<uint8_t> &&data);
+graphStatus SetData(const std::vector<uint8_t> &data);
+graphStatus SetData(const uint8_t *data, size_t size);
+graphStatus SetData(const std::string &data);
+graphStatus SetData(const char_t *data);
+graphStatus SetData(const std::vector<std::string> &data);
+graphStatus SetData(const std::vector<AscendString> &datas);
+graphStatus SetData(uint8_t *data, size_t size, const Tensor::DeleteFunc &deleter_func);
 ```
 
 ## 参数说明

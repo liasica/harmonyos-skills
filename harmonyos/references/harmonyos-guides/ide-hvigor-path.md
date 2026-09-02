@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-pa
 title: 自定义.hvigor目录路径
 breadcrumb: 指南 > 构建应用 > 配置构建流程 > 自定义.hvigor目录路径
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:47:16+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0e26a1e466aa9d172a7cdb122ba8408d7ce624ee6665aad5e50ebaf14c7f8965
+scraped_at: 2026-09-02T15:00:27+08:00
+doc_updated_at: 2026-07-15
+content_hash: sha256:dfe047135741a62eca4d43c5e49401464a767dc6a6d72589ee819728e36ed180
 ---
 
 .hvigor目录默认位于用户目录下：
@@ -18,7 +18,7 @@ content_hash: sha256:0e26a1e466aa9d172a7cdb122ba8408d7ce624ee6665aad5e50ebaf14c7
 
 若默认目录的磁盘空间不足，开发者需要自定义.hvigor目录路径，可通过以下方式自行配置。
 
-说明
+**说明** 
 
 自定义.hvigor目录时，不能包含空格。
 
@@ -30,7 +30,7 @@ content_hash: sha256:0e26a1e466aa9d172a7cdb122ba8408d7ce624ee6665aad5e50ebaf14c7
 
   变量值：自定义存放.hvigor目录的绝对路径。如D:\HvigorUserHome
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/_L82EhMSSj-q5dHlIWCHIQ/zh-cn_image_0000002530913062.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/6-8yzOHbTWiwww5yu93fmg/zh-cn_image_0000002731382159.png)
 * macOS环境变量设置方法：
 
   在macOS上为DevEco Studio设置环境变量需要使用launchd来设置。
@@ -38,21 +38,21 @@ content_hash: sha256:0e26a1e466aa9d172a7cdb122ba8408d7ce624ee6665aad5e50ebaf14c7
 
     在终端中执行launchctl setenv语句并重新启动DevEco Studio即可。
 
-    ```
-    1. launchctl setenv HVIGOR_USER_HOME /Users/xx #本处路径请替换为.hvigor目录的绝对路径
+    ```bash
+    launchctl setenv HVIGOR_USER_HOME /Users/xx #本处路径请替换为.hvigor目录的绝对路径
     ```
 
     该设置方式在重启电脑后将失效。
   + 重启不失效的设置方式：
 
-    说明
+    **说明** 
 
     在macOS上设置系统变量的方式因系统版本不同而存在多种差异，以下仅为在macOS上为DevEco Studio设置系统变量的一种示例，具体设置方式以系统版本为准。
 
     在/etc/launchd.conf（若该文件不存在，可自行创建）中添加如下内容。
 
-    ```
-    1. setenv HVIGOR_USER_HOME /Users/xx #本处路径请替换为.hvigor目录的绝对路径
+    ```bash
+    setenv HVIGOR_USER_HOME /Users/xx #本处路径请替换为.hvigor目录的绝对路径
     ```
 
     设置完成后，重启电脑后才可生效。
@@ -60,18 +60,18 @@ content_hash: sha256:0e26a1e466aa9d172a7cdb122ba8408d7ce624ee6665aad5e50ebaf14c7
 
   打开终端工具，执行以下命令。
 
-  ```
-  1. vim ~/.bashrc
+  ```bash
+  vim ~/.bashrc
   ```
 
   添加HVIGOR\_USER\_HOME环境变量。
 
-  ```
-  1. export HVIGOR_USER_HOME=/home/xx  #本处路径请替换为.hvigor目录的绝对路径
+  ```bash
+  export HVIGOR_USER_HOME=/home/xx  #本处路径请替换为.hvigor目录的绝对路径
   ```
 
   保存并关闭文件，使用source命令重新加载.bashrc配置文件。
 
-  ```
-  1. source ~/.bashrc
+  ```bash
+  source ~/.bashrc
   ```

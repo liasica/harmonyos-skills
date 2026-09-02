@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-avsessionkit-504
 title: AVSession Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.4(16) > OS平台能力 > API变更清单 > AVSession Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.4(16) > OS平台能力 > API变更清单 > AVSession Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:28+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:36+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:5017366405d76d4c4d019ae3b9af07aff08902eeca3d726962e1e0e36e989813
 ---
 

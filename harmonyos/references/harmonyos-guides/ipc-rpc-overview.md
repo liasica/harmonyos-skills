@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ipc-rpc-overv
 title: IPC Kit简介
 breadcrumb: 指南 > 应用框架 > IPC Kit（进程间通信服务） > IPC Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:39+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:f8518782fe971f15e78cdecaeee43f4998eac1c75c5279bb3fbabee93b0de341
+scraped_at: 2026-09-02T14:59:26+08:00
+doc_updated_at: 2026-08-03
+content_hash: sha256:569221b9dc736774a9334dc280b54505ee96a56debb367dd1c55064e2012ed42
 ---
 
 ## 基本概念
@@ -17,7 +17,7 @@ content_hash: sha256:f8518782fe971f15e78cdecaeee43f4998eac1c75c5279bb3fbabee93b0
 | Client | Client | 客户端 | 请求服务的一端，称为代理（Proxy）。 |
 | Server | Server | 服务端 | 提供服务的一端，称为Stub。 |
 
-说明
+**说明** 
 
 * 使用IPC和RPC进行跨进程通信时，需要先调用元能力的连接服务接口获取Proxy对象。IPC和RPC的典型使用场景包括：
 * IPC典型使用场景是后台服务，后台服务通过IPC机制提供单设备跨进程接口调用与数据传递能力。
@@ -27,7 +27,7 @@ content_hash: sha256:f8518782fe971f15e78cdecaeee43f4998eac1c75c5279bb3fbabee93b0
 
 IPC和RPC用于实现跨进程通信。IPC使用Binder驱动，适用于设备内的跨进程通信；RPC使用软总线驱动，适用于跨设备的跨进程通信。每个进程拥有独立的资源和内存空间，其他进程无法直接访问，因此需要使用IPC和RPC实现跨进程通信。
 
-IPC和RPC采用客户端-服务端（Client-Server）模型。在使用时，Client进程可以获取Server进程的代理（Proxy），通过Proxy读写数据和发起请求，Stub处理请求并应答结果，实现进程间通信。Proxy和Stub提供了一组由服务/业务自定义的接口，Proxy实现每一个具体的请求方法，Stub实现对应的每一个具体请求的处理方法以及应答数据的内容。
+IPC和RPC采用客户端-服务端（Client-Server）模型。在使用时，Client进程可以获取Server进程的代理（Proxy），通过Proxy读写数据和发起请求，Stub处理请求并应答结果，实现进程间通信。
 
 ## 约束与限制
 

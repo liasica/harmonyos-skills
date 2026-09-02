@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 通过API获取系统信息属性
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 场景化API > 通过API获取系统信息属性
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:45+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:9340777896e15dc208e2d9d88ca4fad18485fe2733babfa65f8013c2dc83708c
+scraped_at: 2026-09-02T14:50:32+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:92198e508c70b17f683d31ce7f4389dc34b41d41a5f043371d70d6d0cc7ca8d2
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ Scenario Fusion Kit提供获取系统信息属性API，调用该接口可以获�
 
 ## 约束与限制
 
-场景化API支持Phone、Tablet和2in1设备，并且从5.1.0(18)版本开始，新增支持Wearable和TV设备。
+场景化API支持Phone、Tablet和PC/2in1设备，并且从5.1.0(18)版本开始，新增支持Wearable和TV设备。
 
 ## 接口说明
 
@@ -28,33 +28,34 @@ Scenario Fusion Kit提供获取系统信息属性API，调用该接口可以获�
 
 1. 导入Scenario Fusion Kit模块以及相关公共模块。
 
-   ```
-   1. import { atomicService } from '@kit.ScenarioFusionKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { atomicService } from '@kit.ScenarioFusionKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 传入属性参数，调用接口获取对应属性值，代码如下：
 
-   ```
-   1. let stateArray: Array<atomicService.SystemInfoType> =
-   2. ['brand', 'deviceModel', 'screenWidth', 'screenHeight', 'language', 'osFullName', 'fontSizeSetting',
-   3. 'sdkApiVersion', 'bluetoothEnabled', 'wifiEnabled', 'locationEnabled', 'deviceOrientation', 'theme'];
-   4. try {
-   5. let data = atomicService.getSystemInfoSync(stateArray);
-   6. hilog.info(0x0000, 'testTag', 'succeeded in getting system info');
-   7. let brand: string | undefined = data.brand;
-   8. let deviceModel: string | undefined = data.deviceModel;
-   9. let screenWidth: number | undefined = data.screenWidth;
-   10. let screenHeight: number | undefined = data.screenHeight;
-   11. let language: string | undefined = data.language;
-   12. let osFullName: string | undefined = data.osFullName;
-   13. let fontSizeSetting: number | undefined = data.fontSizeSetting;
-   14. let sdkApiVersion: number | undefined = data.sdkApiVersion;
-   15. let bluetoothEnabled: boolean | undefined = data.bluetoothEnabled;
-   16. let wifiEnabled: boolean | undefined = data.wifiEnabled;
-   17. let locationEnabled: boolean | undefined = data.locationEnabled;
-   18. let deviceOrientation: string | undefined = data.deviceOrientation;
-   19. let theme: ColorMode | undefined = data.theme;
-   20. } catch (error) {
-   21. hilog.error(0x0000, 'testTag', 'failReason: %{public}d %{public}s', error.code, error.message);
-   22. }
+   ```typescript
+   let stateArray: atomicService.SystemInfoType[] =
+     ['brand', 'deviceModel', 'screenWidth', 'screenHeight', 'language', 'osFullName', 'fontSizeSetting',
+       'sdkApiVersion', 'bluetoothEnabled', 'wifiEnabled', 'locationEnabled', 'deviceOrientation', 'theme'];
+   try {
+     let data = atomicService.getSystemInfoSync(stateArray);
+     hilog.info(0x0000, 'testTag', 'succeeded in getting system info');
+     // 当前参数未调用，开发者自行实现参数的逻辑处理
+     let brand: string | undefined = data.brand;
+     let deviceModel: string | undefined = data.deviceModel;
+     let screenWidth: number | undefined = data.screenWidth;
+     let screenHeight: number | undefined = data.screenHeight;
+     let language: string | undefined = data.language;
+     let osFullName: string | undefined = data.osFullName;
+     let fontSizeSetting: number | undefined = data.fontSizeSetting;
+     let sdkApiVersion: number | undefined = data.sdkApiVersion;
+     let bluetoothEnabled: boolean | undefined = data.bluetoothEnabled;
+     let wifiEnabled: boolean | undefined = data.wifiEnabled;
+     let locationEnabled: boolean | undefined = data.locationEnabled;
+     let deviceOrientation: string | undefined = data.deviceOrientation;
+     let theme: ColorMode | undefined = data.theme;
+   } catch (error) {
+     hilog.error(0x0000, 'testTag', 'Failed to get system info, failReason: %{public}d %{public}s', error.code, error.message);
+   }
    ```

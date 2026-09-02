@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 窗口沉浸式
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备窗口形态 > 窗口沉浸式
 category: best-practices
-scraped_at: 2026-04-29T14:12:01+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:ccf47e9216e4698414f02c1c05aeb15f591cd159cdce5d1488bb1518ddee58ea
+scraped_at: 2026-09-02T15:03:18+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:ac93b4d451d9c770dc021333950493e1d6baf088e93bc825783ecc944a6bd888
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:ccf47e9216e4698414f02c1c05aeb15f591cd159cdce5d1488bb1518dde
 * 布局扩展：充分利用屏幕可视区域，使页面内容延伸到状态栏和导航条区域（即“安全区”之外的避让区），获得更大的布局空间。
 * 沉浸体验：在游戏、视频等场景中隐藏系统元素，提供无干扰的全屏体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/jhaO7bKjRy-gHVAQvTjmGw/zh-cn_image_0000002499414192.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/yy8QJ6g3RWOno65KY93okQ/zh-cn_image_0000002499414192.jpg "点击放大")
 
 本文将介绍沉浸式原理、实现方案，并提供常见沉浸式页面开发场景下适配问题的解决方案。
 
@@ -50,7 +50,7 @@ content_hash: sha256:ccf47e9216e4698414f02c1c05aeb15f591cd159cdce5d1488bb1518dde
   | --- | --- |
   |  |  |
 
-  说明
+  **说明** 
 
   [backgroundColor()](../harmonyos-references/ts-universal-attributes-background.md#backgroundcolor)：背景颜色限定在安全区内。
 
@@ -64,13 +64,13 @@ content_hash: sha256:ccf47e9216e4698414f02c1c05aeb15f591cd159cdce5d1488bb1518dde
   |  |  |
 * 方案三：安全区域拓展（组件级）
 
-  设置组件的[expandSafeArea](../harmonyos-references/ts-universal-attributes-expand-safe-area.md#expandsafearea)属性，将组件的安全区域延伸至状态栏或导航条区域，同时保持子组件在安全区内布局，无需额外避让处理。支持指定系统避让区域类型（[SafeAreaType](../harmonyos-references/ts-universal-attributes-expand-safe-area.md#safeareatype)）和延伸方向（[SafeAreaEdge](../harmonyos-references/ts-universal-attributes-expand-safe-area.md#safeareaedge)），实现沉浸式的方案可参考[组件安全区方案](../harmonyos-guides/arkts-develop-apply-immersive-effects.md#section202081847174413)。
+  设置组件的[expandSafeArea](../harmonyos-references/ts-universal-attributes-expand-safe-area.md#expandsafearea)属性，将组件的安全区域延伸至状态栏或导航条区域，同时保持子组件在安全区内布局，无需额外避让处理。支持指定系统避让区域类型（[SafeAreaType](../harmonyos-references/ts-universal-attributes-expand-safe-area.md#safeareatype)）和延伸方向（[SafeAreaEdge](../harmonyos-references/ts-universal-attributes-expand-safe-area.md#safeareaedge)），实现沉浸式的方案可参考[组件安全区方案](../harmonyos-guides/arkts-develop-apply-immersive-effects.md#组件安全区方案)。
 
   | 原始布局 | 扩展至状态栏和导航条 | 仅扩展至状态栏 | 仅扩展至导航条 |
   | --- | --- | --- | --- |
   |  |  |  |  |
 
-  说明
+  **说明** 
 
   + 边界重合要求：组件必须与安全区域边界重合（例如顶部组件需紧贴屏幕顶部）。
   + 组件尺寸限制：配置expandSafeArea属性将组件进行绘制扩展时，需要关注组件不能配置固定宽高尺寸，百分比除外。
@@ -124,7 +124,7 @@ content_hash: sha256:ccf47e9216e4698414f02c1c05aeb15f591cd159cdce5d1488bb1518dde
 * 使用[getTitleButtonRect()](../harmonyos-references/arkts-apis-window-window.md#gettitlebuttonrect11)获取窗口标题栏上的三键区位置和大小，用于不同场景下的页面布局避让。
 * 使用[on('windowTitleButtonRectChange')](../harmonyos-references/arkts-apis-window-window.md#onwindowtitlebuttonrectchange11)注册右上角三键大小变化监听。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/KJnAX4nARNuvdcX9wOZblw/zh-cn_image_0000002531334143.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/bWxfRhHGSq6WaztRwRxzkQ/zh-cn_image_0000002531334143.jpg "点击放大")
 
 ## 顶部或底部背景延伸案例
 
@@ -142,77 +142,67 @@ content_hash: sha256:ccf47e9216e4698414f02c1c05aeb15f591cd159cdce5d1488bb1518dde
 
    组件设置[background()](../harmonyos-references/ts-universal-attributes-background.md#background10)实现背景延伸，内容自动保留在安全区内，自动适配不同窗口模式和窗口方向下避让区的变化。
 
+   ```typescript
+   Column() {
+     // ...
+   }
+   // Add a background for the component to achieve immersive background effect
+   .background('#F1F3F5')
    ```
-   1. Column() {
-   2. // ...
-   3. }
-   4. // Add a background for the component to achieve immersive background effect
-   5. .background('#F1F3F5')
-   ```
-
-   [Shopping.ets](https://gitcode.com/harmonyos_samples/Immersive/blob/master/products/default/src/main/ets/pages/backgroundImmersive/componentBackgroundImmersive/Shopping.ets#L23-L29)
 2. 方案二：组件设置页面沉浸 + 避让处理
    * 通过设置[ignoreLayoutSafeArea()](../harmonyos-references/ts-universal-attributes-expand-safe-area.md#ignorelayoutsafearea20)并设置高度为LayoutPolicy.matchParent适应父组件，将页面扩展至避让区。
 
+     ```typescript
+     Column() {
+       // ...
+     }
+     // Expands the layout safe area of a component.
+     .ignoreLayoutSafeArea()
+     .height(LayoutPolicy.matchParent)
      ```
-     1. Column() {
-     2. // ...
-     3. }
-     4. // Expands the layout safe area of a component.
-     5. .ignoreLayoutSafeArea()
-     6. .height(LayoutPolicy.matchParent)
-     ```
-
-     [ShoppingAvoid.ets](https://gitcode.com/harmonyos_samples/Immersive/blob/master/products/default/src/main/ets/pages/backgroundImmersive/componentPageImmersive/ShoppingAvoid.ets#L27-L38)
    * 通过[Window.getWindowAvoidArea()](../harmonyos-references/arkts-apis-window-window.md#getwindowavoidarea9)方法获取状态栏和导航条高度，并用状态变量avoidSystem记录。
 
+     ```typescript
+     // Get the avoid area.
+     this.mainWindowInfo.avoidSystem = this.mainWindow.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);
      ```
-     1. // Get the avoid area.
-     2. this.mainWindowInfo.avoidSystem = this.mainWindow.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);
-     ```
-
-     [WindowUtil.ets](https://gitcode.com/harmonyos_samples/Immersive/blob/master/commons/commons/src/main/ets/utils/WindowUtil.ets#L206-L207)
    * 使用[on('avoidAreaChange')](../harmonyos-references/arkts-apis-window-window.md#onavoidareachange9)事件监听避让区域的变化，在监听回调中更新状态变量avoidSystem。
 
+     ```typescript
+     public onAvoidAreaChange: (avoidOptions: window.AvoidAreaOptions) => void =
+       (avoidOptions: window.AvoidAreaOptions) => {
+         if (avoidOptions.type === window.AvoidAreaType.TYPE_SYSTEM) {
+           // Default area of the system.
+           this.mainWindowInfo.avoidSystem = avoidOptions.area;
+         } else if (avoidOptions.type === window.AvoidAreaType.TYPE_CUTOUT) {
+           // Cutout area.
+           this.mainWindowInfo.avoidCutout = avoidOptions.area;
+           this.updateAvoidPadding(avoidOptions.area);
+         } else if (avoidOptions.type === window.AvoidAreaType.TYPE_SYSTEM_GESTURE) {
+           // Side return gesture area.
+           this.mainWindowInfo.avoidSystemGesture = avoidOptions.area;
+         } else if (avoidOptions.type === window.AvoidAreaType.TYPE_KEYBOARD) {
+           // Fixed soft keyboard area.
+           this.mainWindowInfo.avoidKeyboard = avoidOptions.area;
+         } else if (avoidOptions.type === window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR) {
+           // Bottom navigation bar.
+           this.mainWindowInfo.avoidNavigationIndicator = avoidOptions.area;
+         }
+       };
      ```
-     1. public onAvoidAreaChange: (avoidOptions: window.AvoidAreaOptions) => void =
-     2. (avoidOptions: window.AvoidAreaOptions) => {
-     3. if (avoidOptions.type === window.AvoidAreaType.TYPE_SYSTEM) {
-     4. // Default area of the system.
-     5. this.mainWindowInfo.avoidSystem = avoidOptions.area;
-     6. } else if (avoidOptions.type === window.AvoidAreaType.TYPE_CUTOUT) {
-     7. // Cutout area.
-     8. this.mainWindowInfo.avoidCutout = avoidOptions.area;
-     9. this.updateAvoidPadding(avoidOptions.area);
-     10. } else if (avoidOptions.type === window.AvoidAreaType.TYPE_SYSTEM_GESTURE) {
-     11. // Side return gesture area.
-     12. this.mainWindowInfo.avoidSystemGesture = avoidOptions.area;
-     13. } else if (avoidOptions.type === window.AvoidAreaType.TYPE_KEYBOARD) {
-     14. // Fixed soft keyboard area.
-     15. this.mainWindowInfo.avoidKeyboard = avoidOptions.area;
-     16. } else if (avoidOptions.type === window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR) {
-     17. // Bottom navigation bar.
-     18. this.mainWindowInfo.avoidNavigationIndicator = avoidOptions.area;
-     19. }
-     20. };
-     ```
-
-     [WindowUtil.ets](https://gitcode.com/harmonyos_samples/Immersive/blob/master/commons/commons/src/main/ets/utils/WindowUtil.ets#L59-L79)
    * 设置组件的上下padding分别为状态栏和导航条的高度，使内容避让状态栏和导航条，仅在安全区域显示。
 
+     ```typescript
+     Column() {
+       // ...
+     }
+     // ...
+     // Set the top and bottom padding to avoid status bar and navigation bar.
+     .padding({
+       top: this.windowUtil?.mainWindowInfo.avoidSystem?.topRect.height + 'px',
+       bottom: this.windowUtil?.mainWindowInfo.avoidNavigationIndicator?.bottomRect.height + 'px'
+     })
      ```
-     1. Column() {
-     2. // ...
-     3. }
-     4. // ...
-     5. // Set the top and bottom padding to avoid status bar and navigation bar.
-     6. .padding({
-     7. top: this.windowUtil?.mainWindowInfo.avoidSystem?.topRect.height + 'px',
-     8. bottom: this.windowUtil?.mainWindowInfo.avoidNavigationIndicator?.bottomRect.height + 'px'
-     9. })
-     ```
-
-     [ShoppingAvoid.ets](https://gitcode.com/harmonyos_samples/Immersive/blob/master/products/default/src/main/ets/pages/backgroundImmersive/componentPageImmersive/ShoppingAvoid.ets#L26-L44)
 
    推荐使用上述两种方案实现，相比窗口设置沉浸显示和安全区域拓展，这两种方案实现方式简单易理解，且自动适配不同窗口模式和方向。
 
@@ -238,100 +228,90 @@ content_hash: sha256:ccf47e9216e4698414f02c1c05aeb15f591cd159cdce5d1488bb1518dde
 
 1. 使用[ignoreLayoutSafeArea()](../harmonyos-references/ts-universal-attributes-expand-safe-area.md#ignorelayoutsafearea20)和height(LayoutPolicy.matchParent)，实现页面沉浸。
 
+   ```typescript
+   Column() {
+     // ...
+   }
+   // Expands the layout safe area of a component.
+   .ignoreLayoutSafeArea()
+   .height(LayoutPolicy.matchParent)
    ```
-   1. Column() {
-   2. // ...
-   3. }
-   4. // Expands the layout safe area of a component.
-   5. .ignoreLayoutSafeArea()
-   6. .height(LayoutPolicy.matchParent)
-   ```
-
-   [MiniGame.ets](https://gitcode.com/harmonyos_samples/Immersive/blob/master/products/default/src/main/ets/pages/fullScreenImmersive/componentPageImmersive/MiniGame.ets#L35-L50)
 2. 使用[setWindowSystemBarEnable()](../harmonyos-references/arkts-apis-window-window.md#setwindowsystembarenable9)隐藏状态栏和导航条。
 
+   ```typescript
+   // Hide the status bar and navigation bar.
+   this.mainWindow.setWindowSystemBarEnable([]).catch((error: BusinessError) => {
+     let err = error as BusinessError;
+     hilog.error(0x0000, 'testLog', `setWindowSystemBarEnable failed. Code:${err.code}, message:${err.message}`);
+   });
    ```
-   1. // Hide the status bar and navigation bar.
-   2. this.mainWindow.setWindowSystemBarEnable([]).catch((error: BusinessError) => {
-   3. let err = error as BusinessError;
-   4. hilog.error(0x0000, 'testLog', `setWindowSystemBarEnable failed. Code:${err.code}, message:${err.message}`);
-   5. });
-   ```
-
-   [WindowUtil.ets](https://gitcode.com/harmonyos_samples/Immersive/blob/master/commons/commons/src/main/ets/utils/WindowUtil.ets#L154-L158)
 3. 使用[on('avoidAreaChange')](../harmonyos-references/arkts-apis-window-window.md#onavoidareachange9)动态监听避让区变化，通过AvoidAreaType.TYPE\_CUTOUT来获取挖孔区域信息。
 
+   ```typescript
+   public onAvoidAreaChange: (avoidOptions: window.AvoidAreaOptions) => void =
+     (avoidOptions: window.AvoidAreaOptions) => {
+       if (avoidOptions.type === window.AvoidAreaType.TYPE_SYSTEM) {
+         // Default area of the system.
+         this.mainWindowInfo.avoidSystem = avoidOptions.area;
+       } else if (avoidOptions.type === window.AvoidAreaType.TYPE_CUTOUT) {
+         // Cutout area.
+         this.mainWindowInfo.avoidCutout = avoidOptions.area;
+         this.updateAvoidPadding(avoidOptions.area);
+       } else if (avoidOptions.type === window.AvoidAreaType.TYPE_SYSTEM_GESTURE) {
+         // Side return gesture area.
+         this.mainWindowInfo.avoidSystemGesture = avoidOptions.area;
+       } else if (avoidOptions.type === window.AvoidAreaType.TYPE_KEYBOARD) {
+         // Fixed soft keyboard area.
+         this.mainWindowInfo.avoidKeyboard = avoidOptions.area;
+       } else if (avoidOptions.type === window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR) {
+         // Bottom navigation bar.
+         this.mainWindowInfo.avoidNavigationIndicator = avoidOptions.area;
+       }
+     };
    ```
-   1. public onAvoidAreaChange: (avoidOptions: window.AvoidAreaOptions) => void =
-   2. (avoidOptions: window.AvoidAreaOptions) => {
-   3. if (avoidOptions.type === window.AvoidAreaType.TYPE_SYSTEM) {
-   4. // Default area of the system.
-   5. this.mainWindowInfo.avoidSystem = avoidOptions.area;
-   6. } else if (avoidOptions.type === window.AvoidAreaType.TYPE_CUTOUT) {
-   7. // Cutout area.
-   8. this.mainWindowInfo.avoidCutout = avoidOptions.area;
-   9. this.updateAvoidPadding(avoidOptions.area);
-   10. } else if (avoidOptions.type === window.AvoidAreaType.TYPE_SYSTEM_GESTURE) {
-   11. // Side return gesture area.
-   12. this.mainWindowInfo.avoidSystemGesture = avoidOptions.area;
-   13. } else if (avoidOptions.type === window.AvoidAreaType.TYPE_KEYBOARD) {
-   14. // Fixed soft keyboard area.
-   15. this.mainWindowInfo.avoidKeyboard = avoidOptions.area;
-   16. } else if (avoidOptions.type === window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR) {
-   17. // Bottom navigation bar.
-   18. this.mainWindowInfo.avoidNavigationIndicator = avoidOptions.area;
-   19. }
-   20. };
-   ```
-
-   [WindowUtil.ets](https://gitcode.com/harmonyos_samples/Immersive/blob/master/commons/commons/src/main/ets/utils/WindowUtil.ets#L59-L79)
 4. 根据挖孔区方位，确定避让方向，并记录在状态变量avoidAreaPadding中。
    * 挖孔区在顶部，则顶部避让 = 挖孔区距屏幕顶部边缘的距离 + 挖孔区域的高度。
    * 挖孔区在左侧，则左侧避让 = 挖孔区距屏幕左侧边缘的距离 + 挖孔区域的宽度。
    * 挖孔区在右侧，则右侧避让 = 屏幕宽度 - 挖孔区距屏幕左侧边缘的距离。
    * 挖孔区在底部，则底部避让 = 屏幕高度 - 挖孔区距屏幕顶部距离。
 
+   ```typescript
+   updateAvoidPadding(area: window.AvoidArea) {
+     const avoidAreaPadding: Padding = {};
+     try {
+       // Top cutout area: set top padding.
+       if (area.topRect.height > 0) {
+         avoidAreaPadding.top = this.uiContext?.px2vp(area.topRect.height + area.topRect.top);
+       }
+       // Left cutout area: set left padding.
+       if (area.leftRect.width > 0) {
+         avoidAreaPadding.left = this.uiContext?.px2vp(area.leftRect.left + area.leftRect.width);
+       }
+       // Right cutout area: set right padding.
+       if (area.rightRect.width > 0) {
+         avoidAreaPadding.right = this.uiContext?.px2vp(display.getDefaultDisplaySync().width - area.rightRect.left);
+       }
+       // Bottom cutout area: set bottom padding.
+       if (area.bottomRect.height > 0) {
+         avoidAreaPadding.bottom = this.uiContext?.px2vp(display.getDefaultDisplaySync().height - area.bottomRect.top);
+       }
+     } catch (error) {
+       let err = error as BusinessError;
+       hilog.error(0x0000, 'TestLog', `Failed to set avoid padding. Code: ${err.code}, message: ${err.message}`);
+     }
+     this.mainWindowInfo.avoidAreaPadding = avoidAreaPadding;
+   }
    ```
-   1. updateAvoidPadding(area: window.AvoidArea) {
-   2. const avoidAreaPadding: Padding = {};
-   3. try {
-   4. // Top cutout area: set top padding.
-   5. if (area.topRect.height > 0) {
-   6. avoidAreaPadding.top = this.uiContext?.px2vp(area.topRect.height + area.topRect.top);
-   7. }
-   8. // Left cutout area: set left padding.
-   9. if (area.leftRect.width > 0) {
-   10. avoidAreaPadding.left = this.uiContext?.px2vp(area.leftRect.left + area.leftRect.width);
-   11. }
-   12. // Right cutout area: set right padding.
-   13. if (area.rightRect.width > 0) {
-   14. avoidAreaPadding.right = this.uiContext?.px2vp(display.getDefaultDisplaySync().width - area.rightRect.left);
-   15. }
-   16. // Bottom cutout area: set bottom padding.
-   17. if (area.bottomRect.height > 0) {
-   18. avoidAreaPadding.bottom = this.uiContext?.px2vp(display.getDefaultDisplaySync().height - area.bottomRect.top);
-   19. }
-   20. } catch (error) {
-   21. let err = error as BusinessError;
-   22. hilog.error(0x0000, 'TestLog', `Failed to set avoid padding. Code: ${err.code}, message: ${err.message}`);
-   23. }
-   24. this.mainWindowInfo.avoidAreaPadding = avoidAreaPadding;
-   25. }
-   ```
-
-   [WindowUtil.ets](https://gitcode.com/harmonyos_samples/Immersive/blob/master/commons/commons/src/main/ets/utils/WindowUtil.ets#L83-L108)
 5. 设置组件padding，进行避让。
 
+   ```typescript
+   Column() {
+     // ...
+   }
+   // ...
+   // Set paddings to avoid notch.
+   .padding(this.mainWindowInfo?.avoidAreaPadding)
    ```
-   1. Column() {
-   2. // ...
-   3. }
-   4. // ...
-   5. // Set paddings to avoid notch.
-   6. .padding(this.mainWindowInfo?.avoidAreaPadding)
-   ```
-
-   [MiniGame.ets](https://gitcode.com/harmonyos_samples/Immersive/blob/master/products/default/src/main/ets/pages/fullScreenImmersive/componentPageImmersive/MiniGame.ets#L36-L57)
 
 ## 自由窗口标题栏沉浸案例
 
@@ -339,55 +319,45 @@ content_hash: sha256:ccf47e9216e4698414f02c1c05aeb15f591cd159cdce5d1488bb1518dde
 
 自由窗口模式下，需隐藏默认标题栏，保留关闭、最小化、最大化三键区，使页面延伸至原标题栏区域，实现窗口沉浸式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/Y4fkPx4IQY-gchRWvWEKqw/zh-cn_image_0000002531334153.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/aKY00fuKQ9W6CRNRvnTVjQ/zh-cn_image_0000002531334153.jpg "点击放大")
 
 ### 开发步骤
 
 1. 使用[setWindowDecorVisible(false)](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)接口设置标题栏的隐藏，仅保留右上角的三键区。
 
+   ```typescript
+   this.mainWindow.setWindowDecorVisible(false);
    ```
-   1. this.mainWindow.setWindowDecorVisible(false);
-   ```
-
-   [WindowUtil.ets](https://gitcode.com/harmonyos_samples/Immersive/blob/master/commons/commons/src/main/ets/utils/WindowUtil.ets#L118-L118)
 2. 使用[setWindowDecorHeight()](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorheight11)接口设置标题栏高度，控制右上角三键区显示高度。
 
+   ```typescript
+   this.mainWindow.setWindowDecorHeight(56);
    ```
-   1. this.mainWindow.setWindowDecorHeight(56);
-   ```
-
-   [WindowUtil.ets](https://gitcode.com/harmonyos_samples/Immersive/blob/master/commons/commons/src/main/ets/utils/WindowUtil.ets#L122-L122)
 3. 使用[setDecorButtonStyle()](../harmonyos-references/arkts-apis-window-window.md#setdecorbuttonstyle14)接口设置右上角按钮大小，和页面顶部icon大小保持一致。
 
+   ```typescript
+   this.mainWindow.setDecorButtonStyle({ buttonIconSize: 24 });
    ```
-   1. this.mainWindow.setDecorButtonStyle({ buttonIconSize: 24 });
-   ```
-
-   [WindowUtil.ets](https://gitcode.com/harmonyos_samples/Immersive/blob/master/commons/commons/src/main/ets/utils/WindowUtil.ets#L126-L126)
 4. 使用[on('windowTitleButtonRectChange')](../harmonyos-references/arkts-apis-window-window.md#onwindowtitlebuttonrectchange11)注册右上角三键大小变化监听，用于页面布局避让。
 
+   ```typescript
+   public onWindowButtonRectChange: (titleButtonRect: window.TitleButtonRect) => void =
+     (titleButtonRect: window.TitleButtonRect) => {
+       // Update the rectangle information of the title bar button.
+       this.mainWindowInfo.titleButtonRect = titleButtonRect;
+     }
    ```
-   1. public onWindowButtonRectChange: (titleButtonRect: window.TitleButtonRect) => void =
-   2. (titleButtonRect: window.TitleButtonRect) => {
-   3. // Update the rectangle information of the title bar button.
-   4. this.mainWindowInfo.titleButtonRect = titleButtonRect;
-   5. }
-   ```
-
-   [WindowUtil.ets](https://gitcode.com/harmonyos_samples/Immersive/blob/master/commons/commons/src/main/ets/utils/WindowUtil.ets#L43-L47)
 5. 使用padding进行布局避让。
 
+   ```typescript
+   Column() {
+     // ...
+   }
+   .padding({
+     right: this.mainWindowInfo.isImmersive === ImmersiveType.IMMERSIVE ? this.mainWindowInfo.titleButtonRect?.width :
+       0
+   })
    ```
-   1. Column() {
-   2. // ...
-   3. }
-   4. .padding({
-   5. right: this.mainWindowInfo.isImmersive === ImmersiveType.IMMERSIVE ? this.mainWindowInfo.titleButtonRect?.width :
-   6. 0
-   7. })
-   ```
-
-   [Header.ets](https://gitcode.com/harmonyos_samples/Immersive/blob/master/features/shopping/src/main/ets/view/Header.ets#L26-L71)
 
 ## 示例代码
 

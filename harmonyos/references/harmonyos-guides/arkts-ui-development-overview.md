@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-deve
 title: UI开发（ArkTS声明式开发范式）概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI开发（ArkTS声明式开发范式）概述
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:01+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:3506e1818376657195f963b05667cd9245702585d2bb42b754ae867baac3201a
+scraped_at: 2026-09-02T14:49:46+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:c9aab93a401b40384c05012809a572465b066be2432f89766dc520b7d53a028e
 ---
 
 基于ArkTS的声明式开发范式的方舟开发框架是一套开发极简、高性能、支持跨设备的UI开发框架，提供了构建应用UI所必需的能力，主要包括：
@@ -54,7 +54,7 @@ content_hash: sha256:3506e1818376657195f963b05667cd9245702585d2bb42b754ae867baac
 
 **图1** 整体架构图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/OR6vn95pQFKsF_YpYq8w1A/zh-cn_image_0000002558764042.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/3JtVsoarSjy0mn2wapFZqw/zh-cn_image_0000002736312213.png)
 
 * **声明式UI前端**
 
@@ -87,9 +87,9 @@ content_hash: sha256:3506e1818376657195f963b05667cd9245702585d2bb42b754ae867baac
 | 按钮与选择 | 介绍了几种常用按钮与选择组件的使用方法。 | - [按钮与选择组件](arkts-forms-overview.md) |
 | 添加组件 | 介绍了XComponent和Progress组件的使用方法。 | - [自定义渲染 (XComponent)](napi-xcomponent-guidelines.md)  - [进度条 (Progress)](arkts-common-components-progress-indicator.md) |
 | 使用弹窗 | 介绍了弹窗的应用场景与使用方法。 | - [使用弹出框](arkts-base-dialog-overview.md)  - [菜单](arkts-menu-overview.md)  - [气泡提示](arkts-popup-overview.md)  - [绑定模态页面](arkts-modal-overview.md)  - [即时反馈](arkts-create-toast.md)  - [设置浮层](arkts-create-overlaymanager.md) |
-| 显示图形 | 介绍了如何显示图片、绘制自定义几何图形以及使用画布绘制自定义图形。 | - [几何图形](arkts-shape-overview.md)  - [画布](arkts-drawing-customization-on-canvas.md) |
-| 添加交互响应 | 介绍了交互基础机制、输入设备与事件和手势响应的能力。 | - [交互基础机制](arkts-interaction-basic-principles.md)  - [输入设备与事件](rkts-interaction-development-guide-raw-input-event.md)  - [手势响应](rkts-interaction-development-guide-support-gesture.md) |
-| 使用动画 | 介绍了组件和页面使用动画的典型场景。 | - [属性动画](arkts-attribute-animation-overview.md)  - [转场动画](arkts-transition-overview.md)  - [粒子动画](arkts-particle-animation.md)  - [组件动画](arkts-component-animation.md)  - [动画曲线](arkts-traditional-curve.md)  - [动画衔接](arkts-animation-smoothing.md)  - [动画效果](arkts-blur-effect.md)  - [帧动画](arkts-animator.md) |
+| 绘制图形 | 介绍了如何绘制自定义几何图形以及使用画布绘制自定义图形。 | - [几何图形](arkts-shape-overview.md)  - [画布](arkts-drawing-customization-on-canvas.md) |
+| 添加交互响应 | 介绍了交互基础机制、输入设备与事件和手势响应的能力。 | - [交互基础机制](arkts-interaction-basic-principles.md)  - [输入设备与事件](arkts-interaction-development-guide-raw-input-event.md)  - [手势响应](arkts-interaction-development-guide-support-gesture.md) |
+| 使用动画 | 介绍了组件和页面使用动画的典型场景。 | - [属性动画](arkts-attribute-animation-overview.md)  - [转场动画](arkts-transition-overview.md)  - [粒子动画](arkts-particle-animation.md)  - [组件动画](arkts-component-animation.md)  - [动画曲线](arkts-traditional-curve.md)  - [动画衔接](arkts-animation-smoothing.md)  - [动态模糊](arkts-blur-effect.md)  - [帧动画](arkts-animator.md) |
 | 使用自定义能力 | 介绍了自定义能力的基本概念和如何使用自定义能力。 | - [自定义组合](arkts-user-defined-composition.md)  - [自定义节点](arkts-user-defined-node.md)  - [自定义扩展](arkts-user-defined-modifier.md) |
 | UI国际化 | 介绍如何实现应用程序UI界面的国际化，包含资源配置和镜像布局。 | - [UI国际化](arkts-internationalization.md) |
 | 无障碍与适老化 | 介绍了无障碍和适老化的使用场景和使用方法。 | - [支持无障碍](arkts-universal-attributes-accessibility.md)  [支持适老化](arkui-support-for-aging-adaptation.md) |

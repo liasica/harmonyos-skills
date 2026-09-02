@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-image-24
 title: 如何对GIF图片进行压缩
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 如何对GIF图片进行压缩
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:33+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:1ab660aa0f7f65a66f1fd60db34b9e44fa3935526b77e4d6899115ea3247a9d5
+scraped_at: 2026-09-02T14:54:42+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:1d9a693447a2224689069b260998b46d46e4a2e66bfdec26eac654c6b2cff74b
 ---
 
 * **方案一**
@@ -27,14 +27,14 @@ content_hash: sha256:1ab660aa0f7f65a66f1fd60db34b9e44fa3935526b77e4d6899115ea324
 
   可以使用-s设置图片的分辨率，例如，将一个GIF图片的分辨率降低，宽高设置为90x90像素，可以使用如下命令：
 
-  ```
-  1. ffmpeg -i input.gif -s 90x90 -y output.gif （设置宽高均为90像素）
+  ```powershell
+  ffmpeg -i input.gif -s 90x90 -y output.gif （设置宽高均为90像素）
   ```
 
   或者使用-vf参数配合scale过滤器，设置宽为90像素，高度自动等比例缩放。
 
-  ```
-  1. ffmpeg -i input.gif -vf "scale=90:-1" -y output.gif
+  ```powershell
+  ffmpeg -i input.gif -vf "scale=90:-1" -y output.gif
   ```
 
   以上命令的参数的意义如下：
@@ -49,8 +49,8 @@ content_hash: sha256:1ab660aa0f7f65a66f1fd60db34b9e44fa3935526b77e4d6899115ea324
 
   可以使用-r参数指定输出图片的帧率。例如，将一个GIF图片的帧率降低到16，可以使用如下命令：
 
-  ```
-  1. ffmpeg -i input.gif -r 16 output.gif
+  ```powershell
+  ffmpeg -i input.gif -r 16 output.gif
   ```
 
   此命令的参数的意义如下：

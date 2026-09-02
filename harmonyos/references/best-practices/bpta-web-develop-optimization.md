@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-web-develo
 title: Web加载性能优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > Web性能优化 > Web加载性能优化
 category: best-practices
-scraped_at: 2026-04-29T14:13:39+08:00
-doc_updated_at: 2026-03-26
-content_hash: sha256:3602b49d229375fe285f9bd8900f1cc8296a620dfe8059c75ef17c895ba2e193
+scraped_at: 2026-09-02T15:03:22+08:00
+doc_updated_at: 2026-08-26
+content_hash: sha256:f41b9d38c4a8b35292ccb42bd140219cc6113685aeb3039ddae2294782d672b7
 ---
 
 ## 概述
@@ -40,8 +40,8 @@ Web页面加载流程包括网络连接、资源下载（包括等待网络资�
 * 离线资源免拦截注入：在页面加载前，将所需的图片、样式表和脚本资源注入内存缓存，以减少首次加载时的网络请求时间。
 * 资源拦截替换加速：资源拦截替换加速支持ArrayBuffer格式的入参，开发者可直接使用ArrayBuffer格式的数据进行拦截替换，无需在应用侧进行格式转换。
 
-**图1** Web页面加载流程   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/D3ep0YH_SbCeuGnVyuoiMA/zh-cn_image_0000002229451093.png "点击放大")
+**图1** Web页面加载流程  
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/mJCWnOx7RCeAGj1iataL_Q/zh-cn_image_0000002229451093.png "点击放大")
 
 **由于所有的关键点都是建立在预处理的思路上，因此如果用户实际并未打开预处理的Web页面，将会造成额外的资源消耗。**下表列出了各优化方法的具体效果、代价和适用场景对比。
 
@@ -68,10 +68,10 @@ Web页面加载流程包括网络连接、资源下载（包括等待网络资�
 
 建议在Web页面启动前执行预启动Web渲染进程，例如在应用冷启动阶段或广告展示阶段。如果无法在冷启动期间预启动Web渲染进程，建议在系统空闲时间进行预启动。
 
-**图2** 预启动Web渲染流程   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/Asei7uo_QT6I3QAfQqK0DA/zh-cn_image_0000002229451109.png "点击放大")
+**图2** 预启动Web渲染流程  
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/aDH10W3IQAW6Oud0VYGmHg/zh-cn_image_0000002229451109.png "点击放大")
 
-说明
+**说明** 
 
 1. 该方案通过创建一个空白的ArkWeb组件来预启动Web渲染进程。额外创建ArkWeb组件会消耗内存和算力，预创建一个空白的Web组件大约消耗200MB内存。因此，建议后续页面加载复用预创建的Web组件。
 2. 应用全局共享一个Web渲染进程，仅在所有Web组件销毁时，该进程才会终止。因此，建议应用确保至少有一个Web组件处于活动状态。
@@ -82,80 +82,80 @@ Web页面加载流程包括网络连接、资源下载（包括等待网络资�
 
 点击跳转到下一页，直接加载Web页面。
 
-说明
+**说明** 
 
 该示例涉及网络地址访问，需配置网络权限。
 
-```
-1. // Index.ets
-2. @Entry
-3. @Component
-4. struct Index {
-5. pageInfos: NavPathStack = new NavPathStack()
+```screen
+// Index.ets
+@Entry
+@Component
+struct Index {
+  pageInfos: NavPathStack = new NavPathStack()
 
-7. build() {
-8. Navigation(this.pageInfos) {
-9. Column() {
-10. Button('加载测试页面', { stateEffect: true, type: ButtonType.Capsule })
-11. .width('80%')
-12. .height(40)
-13. .margin(20)
-14. .onClick(() => {
-15. // Put the NavDestination page information specified by name on the stack.
-16. this.pageInfos.pushPath({ name: 'pageOne' })
-17. })
-18. }
-19. }.title('NavIndex')
-20. }
-21. }
-```
-
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/Index.ets#L6-L26)
-
-```
-1. // Second.ets
-2. import { webview } from '@kit.ArkWeb'
-
-4. @Builder
-5. export function PageOneBuilder() {
-6. Second()
-7. }
-
-9. @Component
-10. export struct Second {
-11. webviewController: webview.WebviewController = new webview.WebviewController();
-
-13. aboutToAppear(): void {
-14. // Output Web page start loading time
-15. console.info(`load page start time: ${Date.now()}`);
-16. }
-
-18. build() {
-19. NavDestination() {
-20. Row() {
-21. Column() {
-22. // Please replace the URL with the real address.
-23. Web({ src: 'https://www.example.com', controller: this.webviewController })
-24. .height('100%')
-25. .width('100%')
-26. .onPageEnd((event) => {
-27. // Output Web page loading completion time
-28. console.info(`load page end time: ${Date.now()}`);
-29. })
-30. }
-31. .width('100%')
-32. }
-33. .height('100%')
-34. }
-35. }
-36. }
+  build() {
+    Navigation(this.pageInfos) {
+      Column() {
+        Button('加载测试页面', { stateEffect: true, type: ButtonType.Capsule })
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            // Put the NavDestination page information specified by name on the stack.
+            this.pageInfos.pushPath({ name: 'pageOne' })
+          })
+      }
+    }.title('NavIndex')
+  }
+}
 ```
 
-[Second.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/view/Second.ets#L2-L37)
+```screen
+// Second.ets
+import { webview } from '@kit.ArkWeb'
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-点击“加载测试页面”按钮，页面加载完成耗时1066ms，具体如下图所示：
+const DOMAIN = 0x0000;
+const TAG = 'Sample';
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/FRAYVwWvQzu54gcDUyVufQ/zh-cn_image_0000002229336649.png)
+@Builder
+export function PageOneBuilder() {
+  Second()
+}
+
+@Component
+export struct Second {
+  webviewController: webview.WebviewController = new webview.WebviewController();
+
+  aboutToAppear(): void {
+    // Output Web page start loading time
+    hilog.info(DOMAIN, TAG, `load page start time: ${Date.now()}`);
+  }
+
+  build() {
+    NavDestination() {
+      Row() {
+        Column() {
+          // Please replace the URL with the real address.
+          Web({ src: 'https://www.example.com', controller: this.webviewController })
+            .height('100%')
+            .width('100%')
+            .onPageEnd((event) => {
+              // Output Web page loading completion time
+              hilog.info(DOMAIN, TAG, `load page end time: ${Date.now()}`);
+            })
+        }
+        .width('100%')
+      }
+      .height('100%')
+    }
+  }
+}
+```
+
+点击“加载测试页面”按钮，页面加载完成耗时82ms，具体如下图所示：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/dbbMMjZGTg-bOoW4OYRmtg/zh-cn_image_0000002229336649.png "点击放大")
 
 【推荐用法】
 
@@ -163,216 +163,218 @@ Web页面加载流程包括网络连接、资源下载（包括等待网络资�
 
 1. 创建Node和对应的NodeController。在后台创建ArkWeb组件。
 
+   ```screen
+   // Create NodeController
+   // common.ets
+   import { UIContext } from '@kit.ArkUI';
+   import { webview } from '@kit.ArkWeb';
+   import { NodeController, BuilderNode, Size, FrameNode }  from '@kit.ArkUI';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+
+   const DOMAIN = 0x0000;
+   const TAG = 'Sample';
+
+   // Specific component contents of dynamic components in @Builder
+   // Data is a parameter encapsulation class.
+   class Data{
+     url: string = 'https://www.example.com';
+     controller: WebviewController = new webview.WebviewController();
+   }
+
+   let shouldInactive: boolean = true;
+   @Builder
+   function WebBuilder(data:Data) {
+     Column() {
+       Web({ src: data.url, controller: data.controller })
+         .domStorageAccess(true)
+         .zoomAccess(true)
+         .fileAccess(true)
+         .mixedMode(MixedMode.All)
+         .width('100%')
+         .height('100%')
+         .onPageBegin(() => {
+           data.controller.onActive();
+         })
+         .onPageEnd(() => {
+           hilog.info(DOMAIN, TAG, `load page end time: ${Date.now()}`);
+         })
+         .onFirstMeaningfulPaint(() =>{
+           if (!shouldInactive) {
+             return;
+           }
+           // stop render
+           data.controller.onInactive();
+           shouldInactive = false;
+         })
+     }
+   }
+
+   // Used to control and feedback the behavior of nodes on the corresponding NodeContainer, which needs to be used together with NodeContainer
+   export class MyNodeController extends NodeController {
+     private rootNode: BuilderNode<Data[]> | null = null;
+     private root: FrameNode | null = null;
+
+     // The method that must be overridden is used to build the number of nodes and return the nodes to be mounted in the corresponding NodeContainer.
+     // //Called when the corresponding NodeContainer is created, or refreshed by calling the rebuild method.
+     makeNode(uiContext: UIContext): FrameNode | null {
+       hilog.info(DOMAIN, TAG, ' uicontext is undefined : '+ (uiContext === undefined));
+       if (this.rootNode != null) {
+         const parent: FrameNode = this.rootNode.getFrameNode()?.getParent() as FrameNode;
+         if (parent) {
+           let inspectorInfo: string = JSON.stringify(parent.getInspectorInfo());
+           hilog.info(DOMAIN, TAG, inspectorInfo);
+           parent.removeChild(this.rootNode.getFrameNode());
+           this.root = null;
+         }
+         this.root = new FrameNode(uiContext);
+         this.root.appendChild(this.rootNode.getFrameNode());
+         // Returns the FrameNode node
+         return this.root;
+       }
+       // Returns a null node that controls the dynamic component to be unbound.
+       return null;
+     }
+     // Callback when layout size changes.
+     aboutToResize(size: Size): void {
+       hilog.info(DOMAIN, TAG, 'aboutToResize width : ' + size.width  +  ' height : ' + size.height);
+
+     }
+
+     // Call back when the NodeContainer corresponding to the controller is in Appear.
+     aboutToAppear(): void {
+       hilog.info(DOMAIN, TAG, 'aboutToAppear');
+     }
+
+     // Call back when the NodeContainer corresponding to the controller is Disappear.
+     aboutToDisappear(): void {
+       hilog.info(DOMAIN, TAG, 'aboutToDisappear');
+     }
+
+     // This function is a user-defined function and can be used as an initialization function.
+     // Initialize builderNode through UIContext, and then initialize the contents in @Builder through the Build interface in BuilderNode.
+     initWeb(url:string, uiContext:UIContext, control:WebviewController): void {
+       if(this.rootNode != null)
+       {
+         return;
+       }
+       // Creating a node requires uiContext.
+       this.rootNode = new BuilderNode(uiContext)
+       // Create dynamic Web components
+       this.rootNode.build(wrapBuilder<Data[]>(WebBuilder), { url:url, controller:control })
+     }
+   }
+
+   // Create the NodeController needed for Map saving.
+   let NodeMap:Map<string, MyNodeController | undefined> = new Map();
+   // Create WebViewController needed for Map saving.
+   let controllerMap:Map<string, WebviewController | undefined> = new Map();
+
+   // Initialization requires UIContext to be obtained in Ability.
+   export const createNWeb = (url: string, uiContext: UIContext) => {
+     // Create NodeController
+     let baseNode: MyNodeController = new MyNodeController();
+     let controller: WebviewController = new webview.WebviewController() ;
+     // Initialize a custom web component
+     baseNode.initWeb(url, uiContext, controller);
+     controllerMap.set(url, controller)
+     NodeMap.set(url, baseNode);
+   }
+
+   // Customize to get the NodeController interface.
+   export const getNWeb = (url : string) : MyNodeController | undefined => {
+     return NodeMap.get(url);
+   }
    ```
-   1. // Create NodeController
-   2. // common.ets
-   3. import { UIContext } from '@kit.ArkUI';
-   4. import { webview } from '@kit.ArkWeb';
-   5. import { NodeController, BuilderNode, Size, FrameNode }  from '@kit.ArkUI';
-
-   7. // Specific component contents of dynamic components in @Builder
-   8. // Data is a parameter encapsulation class.
-   9. class Data{
-   10. url: string = 'https://www.example.com';
-   11. controller: WebviewController = new webview.WebviewController();
-   12. }
-
-   14. let shouldInactive: boolean = true;
-   15. @Builder
-   16. function WebBuilder(data:Data) {
-   17. Column() {
-   18. Web({ src: data.url, controller: data.controller })
-   19. .domStorageAccess(true)
-   20. .zoomAccess(true)
-   21. .fileAccess(true)
-   22. .mixedMode(MixedMode.All)
-   23. .width('100%')
-   24. .height('100%')
-   25. .onPageBegin(() => {
-   26. data.controller.onActive();
-   27. })
-   28. .onPageEnd(() => {
-   29. console.info(`load page end time: ${Date.now()}`);
-   30. })
-   31. .onFirstMeaningfulPaint(() =>{
-   32. if (!shouldInactive) {
-   33. return;
-   34. }
-   35. // stop render
-   36. data.controller.onInactive();
-   37. shouldInactive = false;
-   38. })
-   39. }
-   40. }
-
-   43. // Used to control and feedback the behavior of nodes on the corresponding NodeContainer, which needs to be used together with NodeContainer
-   44. export class MyNodeController extends NodeController {
-   45. private rootNode: BuilderNode<Data[]> | null = null;
-   46. private root: FrameNode | null = null;
-
-   48. // The method that must be overridden is used to build the number of nodes and return the nodes to be mounted in the corresponding NodeContainer.
-   49. // //Called when the corresponding NodeContainer is created, or refreshed by calling the rebuild method.
-   50. makeNode(uiContext: UIContext): FrameNode | null {
-   51. console.log(' uicontext is undefined : '+ (uiContext === undefined));
-   52. if (this.rootNode != null) {
-   53. const parent: FrameNode = this.rootNode.getFrameNode()?.getParent() as FrameNode;
-   54. if (parent) {
-   55. console.info(JSON.stringify(parent.getInspectorInfo()));
-   56. parent.removeChild(this.rootNode.getFrameNode());
-   57. this.root = null;
-   58. }
-   59. this.root = new FrameNode(uiContext);
-   60. this.root.appendChild(this.rootNode.getFrameNode());
-   61. // Returns the FrameNode node
-   62. return this.root;
-   63. }
-   64. // Returns a null node that controls the dynamic component to be unbound.
-   65. return null;
-   66. }
-   67. // Callback when layout size changes.
-   68. aboutToResize(size: Size): void {
-   69. console.log('aboutToResize width : ' + size.width  +  ' height : ' + size.height )
-   70. }
-
-   72. // Call back when the NodeContainer corresponding to the controller is in Appear.
-   73. aboutToAppear(): void {
-   74. console.log('aboutToAppear')
-   75. }
-
-   77. // Call back when the NodeContainer corresponding to the controller is Disappear.
-   78. aboutToDisappear(): void {
-   79. console.log('aboutToDisappear')
-   80. }
-
-   82. // This function is a user-defined function and can be used as an initialization function.
-   83. // Initialize builderNode through UIContext, and then initialize the contents in @Builder through the Build interface in BuilderNode.
-   84. initWeb(url:string, uiContext:UIContext, control:WebviewController): void {
-   85. if(this.rootNode != null)
-   86. {
-   87. return;
-   88. }
-   89. // Creating a node requires uiContext.
-   90. this.rootNode = new BuilderNode(uiContext)
-   91. // Create dynamic Web components
-   92. this.rootNode.build(wrapBuilder<Data[]>(WebBuilder), { url:url, controller:control })
-   93. }
-   94. }
-
-   96. // Create the NodeController needed for Map saving.
-   97. let NodeMap:Map<string, MyNodeController | undefined> = new Map();
-   98. // Create WebViewController needed for Map saving.
-   99. let controllerMap:Map<string, WebviewController | undefined> = new Map();
-
-   101. // Initialization requires UIContext to be obtained in Ability.
-   102. export const createNWeb = (url: string, uiContext: UIContext) => {
-   103. // Create NodeController
-   104. let baseNode: MyNodeController = new MyNodeController();
-   105. let controller: WebviewController = new webview.WebviewController() ;
-   106. // Initialize a custom web component
-   107. baseNode.initWeb(url, uiContext, controller);
-   108. controllerMap.set(url, controller)
-   109. NodeMap.set(url, baseNode);
-   110. }
-
-   112. // Customize to get the NodeController interface.
-   113. export const getNWeb = (url : string) : MyNodeController | undefined => {
-   114. return NodeMap.get(url);
-   115. }
-   ```
-
-   [CreateNodeController.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/CreateNodeController.ets#L2-L116)
 2. 创建载体，并创建ArkWeb组件，加载一个blank页面。
 
-   ```
-   1. // Carrier Ability
-   2. import { UIAbility } from '@kit.AbilityKit';
-   3. import { window } from '@kit.ArkUI';
-   4. import { createNWeb } from '../pages/common';
+   ```screen
+   // Carrier Ability
+   import { UIAbility } from '@kit.AbilityKit';
+   import { window } from '@kit.ArkUI';
+   import { createNWeb } from '../pages/common';
 
-   6. export default class EntryAbility extends UIAbility {
-   7. onWindowStageCreate(windowStage: window.WindowStage): void {
-   8. windowStage.loadContent('pages/Index', (err) => {
-   9. // Create an empty ArkWeb dynamic component in advance (need to pass in UIContext) and start the rendering process.
-   10. createNWeb('about:blank', windowStage.getMainWindowSync().getUIContext());
-   11. });
-   12. }
-   13. }
+   export default class EntryAbility extends UIAbility {
+     onWindowStageCreate(windowStage: window.WindowStage): void {
+       windowStage.loadContent('pages/Index', (err) => {
+         // Create an empty ArkWeb dynamic component in advance (need to pass in UIContext) and start the rendering process.
+         createNWeb('about://blank', windowStage.getMainWindowSync().getUIContext());
+       });
+     }
+   }
    ```
-
-   [EntryAbility.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/entryability/EntryAbility.ets#L2-L14)
 3. 创建需要加载的ArkWeb组件。
 
    首页：
 
-   ```
-   1. // Index.ets
-   2. @Entry
-   3. @Component
-   4. struct Index {
-   5. pageInfos: NavPathStack = new NavPathStack()
+   ```screen
+   // Index.ets
+   @Entry
+   @Component
+   struct Index {
+     pageInfos: NavPathStack = new NavPathStack()
 
-   7. build() {
-   8. Navigation(this.pageInfos) {
-   9. Column() {
-   10. Button('加载测试页面', { stateEffect: true, type: ButtonType.Capsule })
-   11. .width('80%')
-   12. .height(40)
-   13. .margin(20)
-   14. .onClick(() => {
-   15. // Put the NavDestination page information specified by name on the stack.
-   16. this.pageInfos.pushPath({ name: 'pageOne' })
-   17. })
-   18. }
-   19. }.title('NavIndex')
-   20. }
-   21. }
+     build() {
+       Navigation(this.pageInfos) {
+         Column() {
+           Button('加载测试页面', { stateEffect: true, type: ButtonType.Capsule })
+             .width('80%')
+             .height(40)
+             .margin(20)
+             .onClick(() => {
+               // Put the NavDestination page information specified by name on the stack.
+               this.pageInfos.pushPath({ name: 'pageOne' })
+             })
+         }
+       }.title('NavIndex')
+     }
+   }
    ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/Index.ets#L6-L26)
 
    跳转测试页面：
 
+   ```screen
+   // Second.ets
+   import { webview } from '@kit.ArkWeb';
+   import { getNWeb } from './common';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+
+   const DOMAIN = 0x0000;
+   const TAG = 'Sample';
+
+   @Builder
+   export function PageOneBuilder() {
+     Second()
+   }
+
+   @Component
+   export struct Second {
+     webviewController: webview.WebviewController = new webview.WebviewController();
+     aboutToAppear(): void {
+       // Output Web page start loading time
+       hilog.info(DOMAIN, TAG, `load page start time: ${Date.now()}`);
+     }
+     build() {
+       NavDestination() {
+         Row() {
+           Column() {
+             // Please replace the URL with the real address.
+             NodeContainer(getNWeb('https://www.example.com'))
+               .height('100%')
+               .width('100%')
+           }
+           .width('100%')
+         }
+         .height('100%')
+       }
+     }
+   }
    ```
-   1. // Second.ets
-   2. import { webview } from '@kit.ArkWeb';
-   3. import { getNWeb } from './common';
 
-   5. @Builder
-   6. export function PageOneBuilder() {
-   7. Second()
-   8. }
+点击“加载测试页面”按钮，页面加载完成耗时44ms，具体如图所示：
 
-   10. @Component
-   11. export struct Second {
-   12. webviewController: webview.WebviewController = new webview.WebviewController();
-   13. aboutToAppear(): void {
-   14. // Output Web page start loading time
-   15. console.info(`load page start time: ${Date.now()}`);
-   16. }
-   17. build() {
-   18. NavDestination() {
-   19. Row() {
-   20. Column() {
-   21. // Please replace the URL with the real address.
-   22. NodeContainer(getNWeb('https://www.example.com'))
-   23. .height('100%')
-   24. .width('100%')
-   25. }
-   26. .width('100%')
-   27. }
-   28. .height('100%')
-   29. }
-   30. }
-   31. }
-   ```
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/_OAR0m9cTei3abhjEPll1g/zh-cn_image_0000002229336617.png "点击放大")
 
-   [Second.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/Second.ets#L2-L32)
-
-点击“加载测试页面”按钮，页面加载完成耗时927ms，具体如图所示：
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/u67Xjpv0SNus0FUkO5WEeg/zh-cn_image_0000002229336617.png)
-
-说明
+**说明** 
 
 开发者可以在后续页面操作中选择是否复用ArkWeb组件。
 
@@ -380,122 +382,120 @@ Web页面加载流程包括网络连接、资源下载（包括等待网络资�
 
 | 下一页加载方式 | 耗时(局限不同设备和场景，数据仅供参考) | 说明 |
 | --- | --- | --- |
-| 直接加载Web页面 | 1066ms | 页面加载时拉起渲染进程，增加加载时间 |
-| 使用预启动Web渲染进程方案 | 927ms | 在闲时提前拉起渲染进程，优化启动时间 |
+| 直接加载Web页面 | 82ms | 页面加载时拉起渲染进程，增加加载时间 |
+| 使用预启动Web渲染进程方案 | 44ms | 在闲时提前拉起渲染进程，优化启动时间 |
 
 ### 预解析和预连接优化
 
 **原理介绍**
 
-应用启动和UIAbility的onCreate生命周期完成后，Web组件才能初始化和运行。ArkWeb组件运行阶段包括onAppear、load、onPageBegin、onPageEnd步骤。预解析、预连接优化适用于Web页面启动和跳转场景，例如应用启动时加载Web首页。创建ArkWeb组件实例后，开发者可以选择不同时机设置URL并进行预解析、预连接。
+应用启动和UIAbility的onCreate生命周期完成后，Web组件才能初始化和运行。ArkWeb组件运行阶段包括onAppear()、load()、onPageBegin()、onPageEnd()步骤。预解析、预连接优化适用于Web页面启动和跳转场景，例如应用启动时加载Web首页。创建ArkWeb组件实例后，开发者可以选择不同时机设置URL并进行预解析、预连接。
 
 * 如下图中a节点所示，如果是应用首页，推荐在ArkWeb组件初始化后设置首页URL，进行预解析和预连接。
-* 如下图中b节点所示，对于应用内页面，推荐在ArkWeb组件的onAppear阶段设置当前页面的URL，进行预解析和预连接。
-* 如下图中c节点所示，页面加载完成后，设置用户下一步可能点击页面的URL，进行预解析和预连接，推荐在onPageEnd及后续时机执行。
+* 如下图中b节点所示，对于应用内页面，推荐在ArkWeb组件的onAppear()阶段设置当前页面的URL，进行预解析和预连接。
+* 如下图中c节点所示，页面加载完成后，设置用户下一步可能点击页面的URL，进行预解析和预连接，推荐在onPageEnd()及后续时机执行。
 
-**图3** 预连接优化原理图   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/wzdRYPXfSvKp-gikUM_99w/zh-cn_image_0000002194010808.png "点击放大")
+**图3** 预连接优化原理图  
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/sxUTsfCOR6OMRtI0muV29Q/zh-cn_image_0000002194010808.png "点击放大")
 
-说明
+**说明** 
 
 在设置预解析和预连接进行优化时，需要注意：
 
 * 预连接存在时效性，建议在5分钟内复用已建立的连接，超时后连接将被关闭。
 * 预连接存在耗时，建议预加载时间比页面实际时间提前150ms以上。
-* 当前页面加载完成后，即onPageEnd回调后，可复用当前ArkWeb组件预连接新的页面或预下载资源。
+* 当前页面加载完成后，即onPageEnd()回调后，可复用当前ArkWeb组件预连接新的页面或预下载资源。
 
 **实践案例**
 
-案例一：如果需要提前对应用的首页进行操作，可以调用initializeWebEngine()初始化ArkWeb组件的内核，然后调用prepareForPageLoad()预连接即将加载的页面。在prepareForPageLoad中，将第二个参数设为true以进行预连接，设为false时仅进行DNS预解析。具体代码如下所示。
+案例一：如果需要提前对应用的首页进行操作，可以调用initializeWebEngine()初始化ArkWeb组件的内核，然后调用prepareForPageLoad()预连接即将加载的页面。在prepareForPageLoad()中，将第二个参数设为true以进行预连接，设为false时仅进行DNS预解析。具体代码如下所示。
 
-```
-1. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-2. import { webview } from '@kit.ArkWeb';
+```screen
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { webview } from '@kit.ArkWeb';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-6. console.log('EntryAbility onCreate');
-7. webview.WebviewController.initializeWebEngine();
-8. // When pre-connecting, you need to replace' https://www.example.com' with the actual website address to visit
-9. // Specify that the second parameter is true, which means to pre-connect. If it is false, the interface will only pre-resolve the URL.
-10. // The third parameter, numSockets, has a value range of 1-6. If it exceeds 6, the parameter will be treated as 6.
-11. webview.WebviewController.prepareForPageLoad('https://www.example.com/', true, 2);
-12. AppStorage.setOrCreate('abilityWant', want);
-13. console.log('EntryAbility onCreate done');
-14. }
-15. }
-```
+const DOMAIN = 0x0000;
+const TAG = 'Sample';
 
-[CaseOne.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/CaseOne.ets#L2-L16)
-
-说明
-
-prepareForPageLoad预解析和预连接只和host相关，URL带参数的情况下也能进行预解析和预连接。
-
-案例二：如果需要提前连接当前页面的Web页面，可以在Web组件的 `onAppear` 方法中预连接要加载的页面。具体代码如下所示：
-
-```
-1. import { webview } from '@kit.ArkWeb';
-
-3. @Entry
-4. @Component
-5. struct WebComponent {
-6. webviewController: webview.WebviewController = new webview.WebviewController();
-7. build() {
-8. Column() {
-9. Button('loadData')
-10. .onClick(() => {
-11. if (this.webviewController.accessBackward()) {
-12. this.webviewController.backward();
-13. }
-14. })
-15. Web({ src: 'https://www.example.com/cn/', controller: this.webviewController})
-16. .onAppear(() => {
-17. // Specify that the second parameter is true, which means to pre-connect. If it is false, the interface will only pre-resolve the URL.
-18. // The third parameter is the number of socket to be pre-connected. A maximum of six are allowed.
-19. webview.WebviewController.prepareForPageLoad('https://www.example.com/cn/', true, 2);
-20. })
-21. }
-22. }
-23. }
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
+    hilog.info(DOMAIN, TAG, 'EntryAbility onCreate');
+    webview.WebviewController.initializeWebEngine();
+    // When pre-connecting, you need to replace' https://www.example.com' with the actual website address to visit
+    // Specify that the second parameter is true, which means to pre-connect. If it is false, the interface will only pre-resolve the URL.
+    // The third parameter, numSockets, has a value range of 1-6. If it exceeds 6, the parameter will be treated as 6.
+    webview.WebviewController.prepareForPageLoad('https://www.example.com/', true, 2);
+    AppStorage.setOrCreate('abilityWant', want);
+    hilog.info(DOMAIN, TAG, 'EntryAbility onCreate done');
+  }
+}
 ```
 
-[CaseTwo.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/CaseTwo.ets#L2-L24)
+**说明** 
+
+prepareForPageLoad()预解析和预连接只和host相关，URL带参数的情况下也能进行预解析和预连接。
+
+案例二：如果需要提前连接当前页面的Web页面，可以在Web组件的 onAppear()方法中预连接要加载的页面。具体代码如下所示：
+
+```screen
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct WebComponent {
+  webviewController: webview.WebviewController = new webview.WebviewController();
+  build() {
+    Column() {
+      Button('loadData')
+        .onClick(() => {
+          if (this.webviewController.accessBackward()) {
+            this.webviewController.backward();
+          }
+        })
+      Web({ src: 'https://www.example.com/cn/', controller: this.webviewController})
+        .onAppear(() => {
+          // Specify that the second parameter is true, which means to pre-connect. If it is false, the interface will only pre-resolve the URL.
+          // The third parameter is the number of socket to be pre-connected. A maximum of six are allowed.
+          webview.WebviewController.prepareForPageLoad('https://www.example.com/cn/', true, 2);
+        })
+    }
+  }
+}
+```
 
 案例三：当前页面显示完成后，可以在onPageEnd()中预连接下一个页面。
 
-```
-1. import { webview } from '@kit.ArkWeb';
+```typescript
+import { webview } from '@kit.ArkWeb';
 
-3. @Entry
-4. @Component
-5. struct WebComponent {
-6. webviewController: webview.WebviewController = new webview.WebviewController();
-7. build() {
-8. Column() {
-9. Web({ src: 'https://www.example.com/', controller: this.webviewController})
-10. .onPageEnd(() => {
-11. // Pre-connected https://www.example1.com/
-12. // The third parameter, numSockets, has a value range of 1-6. If it exceeds 6, the parameter will be treated as 6.
-13. webview.WebviewController.prepareForPageLoad('https://www.example.com/', true, 2);
-14. })
-15. }
-16. }
-17. }
+@Entry
+@Component
+struct WebComponent {
+  webviewController: webview.WebviewController = new webview.WebviewController();
+  build() {
+    Column() {
+      Web({ src: 'https://www.example.com/', controller: this.webviewController})
+        .onPageEnd(() => {
+          // Pre-connected https://www.example1.com/
+          // The third parameter, numSockets, has a value range of 1-6. If it exceeds 6, the parameter will be treated as 6.
+          webview.WebviewController.prepareForPageLoad('https://www.example.com/', true, 2);
+        })
+    }
+  }
+}
 ```
-
-[CaseThree.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/CaseThree.ets#L2-L18)
 
 ### 预下载优化
 
 **原理介绍**
 
-如下图所示，ArkWeb组件运行包含onAppear、load、onPageBegin、onPageEnd。开发者可以在onPageEnd设置下一步访问的URL，提前下载所需资源。这种方式适用于Web页面启动和跳转场景，例如，在引导流程完成后，预下载需要跳转的页面。创建ArkWeb组件实例后，可以在当前页面加载完成后，设置URL并进行预下载。本方案可以消除资源下载耗时及资源下载导致的页面DOM解析、JS代码编译执行的阻塞耗时，预估收益在数百毫秒（具体时间依赖当前网络环境）。
+如下图所示，ArkWeb组件运行包含onAppear()、load()、onPageBegin()、onPageEnd()。开发者可以在onPageEnd()设置下一步访问的URL，提前下载所需资源。这种方式适用于Web页面启动和跳转场景，例如，在引导流程完成后，预下载需要跳转的页面。创建ArkWeb组件实例后，可以在当前页面加载完成后，设置URL并进行预下载。本方案可以消除资源下载耗时及资源下载导致的页面DOM解析、JS代码编译执行的阻塞耗时，预估收益在数百毫秒（具体时间依赖当前网络环境）。
 
-**图4** 预下载优化原理图   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/tdG0-gKLT1aWgOnFVjAdtg/zh-cn_image_0000002194010844.png "点击放大")
+**图4** 预下载优化原理图  
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/WGl5ZgbIRsiRPjBpEdu1ww/zh-cn_image_0000002194010844.png "点击放大")
 
-说明
+**说明** 
 
 * 预下载行为包括连接和资源下载，耗时可能超过700毫秒（取决于当前网络环境），建议开发者为预下载预留充足的时间。
 * 预下载行为会消耗额外的流量和内存，建议针对高频页面使用。
@@ -503,30 +503,28 @@ prepareForPageLoad预解析和预连接只和host相关，URL带参数的情况�
 
 **实践案例**
 
-如下示例所示，在onPageEnd阶段，调用[prefetchPage()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#prefetchpage10)方法，即可提前下载页面所需的资源，包括主资源子资源，但不会执行网页JavaScript代码或呈现网页，以加快加载速度。
+如下示例所示，在onPageEnd()阶段，调用[prefetchPage()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#prefetchpage10)方法，即可提前下载页面所需的资源，包括主资源子资源，但不会执行网页JavaScript代码或呈现网页，以加快加载速度。
 
+```screen
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct WebComponent {
+  webviewController: webview.WebviewController = new webview.WebviewController();
+  build() {
+    Column() {
+      Web({ src: 'https://www.example.com/', controller: this.webviewController})
+        .onPageEnd(() => {
+          // Pre-connected https://www.iana.org/help/example-domains
+          this.webviewController.prefetchPage('https://www.iana.org/help/example-domains');
+        })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
 
-3. @Entry
-4. @Component
-5. struct WebComponent {
-6. webviewController: webview.WebviewController = new webview.WebviewController();
-7. build() {
-8. Column() {
-9. Web({ src: 'https://www.example.com/', controller: this.webviewController})
-10. .onPageEnd(() => {
-11. // Pre-connected https://www.iana.org/help/example-domains
-12. this.webviewController.prefetchPage('https://www.iana.org/help/example-domains');
-13. })
-14. }
-15. }
-16. }
-```
-
-[CaseFour.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/CaseFour.ets#L2-L17)
-
-说明
+**说明** 
 
 prefetchPage会缓存下载的资源，缓存时效为5分钟。
 
@@ -536,16 +534,16 @@ prefetchPage会缓存下载的资源，缓存时效为5分钟。
 
 预渲染优化适用于Web页面启动和跳转场景，例如首页跳转到子页。与预连接、预下载不同，预渲染需创建新的ArkWeb组件并进行后台预渲染，此时组件不会挂载到组件树上（状态为Hidden和InActive）。开发者可在后续按需动态挂载。
 
-具体原理如下图所示。首先，需要定义一个自定义组件封装 ArkWeb 组件，该组件被离线创建，并包含在一个无状态的节点 NodeContainer 中，与相应的 NodeController 绑定。ArkWeb 组件在后台完成预渲染后，需要展示时，再通过 NodeController 将其挂载到 ViewTree 的 NodeContainer 中，即通过 NodeController 绑定到对应的 NodeContainer 组件。预渲染通用实现的步骤如下：
+具体原理如下图所示。首先，需要定义一个自定义组件封装 ArkWeb 组件，该组件被离线创建，并包含在一个无状态的节点NodeContainer中，与相应的NodeController绑定。ArkWeb组件在后台完成预渲染后，需要展示时，再通过NodeController将其挂载到ViewTree的NodeContainer中，即通过NodeController绑定到对应的NodeContainer组件。预渲染通用实现的步骤如下：
 
 1. 创建自定义ArkWeb组件：根据实际场景创建封装，组件被离线创建。
 2. 创建并绑定[NodeController](../harmonyos-references/js-apis-arkui-nodecontroller.md)：实现NodeController接口，管理节点的创建、显示、更新等操作。将NodeController对象放入容器中，等待调用。
 3. 绑定[NodeContainer](../harmonyos-references/ts-basic-components-nodecontainer.md)组件：与NodeController绑定，实现动态页面显示。
 
-**图5** 预渲染优化原理图   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/U1hEBlZLRBqfhD8IhG19ng/zh-cn_image_0000002194010800.png "点击放大")
+**图5** 预渲染优化原理图  
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/k4uEeZ4wS7KVlQA-sjDxyw/zh-cn_image_0000002194010800.png "点击放大")
 
-说明
+**说明** 
 
 预渲染相比预下载和预连接方案，会消耗更多内存和算力，建议仅用于高频页面。单个应用后台创建的ArkWeb组件数量应少于200个。
 
@@ -555,175 +553,175 @@ prefetchPage会缓存下载的资源，缓存时效为5分钟。
 
 创建载体，并创建ArkWeb组件。
 
+```screen
+import { UIAbility } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
+// Carrier Ability
+// EntryAbility.ets
+import {createNWeb} from './common';
+export default class EntryAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage): void {
+    windowStage.loadContent('pages/Index', (err, data) => {
+      // Create ArkWeb dynamic components (need to pass in UIContext), which can be created at any time after loadContent.
+      createNWeb('https://www.example.com', windowStage.getMainWindowSync().getUIContext());
+      if (err.code) {
+        return;
+      }
+    });
+  }
+}
 ```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { window } from '@kit.ArkUI';
-3. // Carrier Ability
-4. // EntryAbility.ets
-5. import {createNWeb} from './common';
-6. export default class EntryAbility extends UIAbility {
-7. onWindowStageCreate(windowStage: window.WindowStage): void {
-8. windowStage.loadContent('pages/Index', (err, data) => {
-9. // Create ArkWeb dynamic components (need to pass in UIContext), which can be created at any time after loadContent.
-10. createNWeb('https://www.example.com', windowStage.getMainWindowSync().getUIContext());
-11. if (err.code) {
-12. return;
-13. }
-14. });
-15. }
-16. }
-```
-
-[CreateCarrier.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/CreateCarrier.ets#L2-L17)
 
 创建NodeContainer和对应的NodeController，渲染后台ArkWeb组件。
 
+```screen
+// Create NodeController
+// common.ets
+import { UIContext } from '@kit.ArkUI';
+import { webview } from '@kit.ArkWeb';
+import { NodeController, BuilderNode, Size, FrameNode }  from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN = 0x0000;
+const TAG = 'Sample';
+
+// Specific component contents of dynamic components in @Builder
+// Data is a parameter encapsulation class.
+class Data{
+  url: string = 'https://www.example.com';
+  controller: WebviewController = new webview.WebviewController();
+}
+
+let shouldInactive: boolean = true;
+@Builder
+function WebBuilder(data:Data) {
+  Column() {
+    Web({ src: data.url, controller: data.controller })
+      .domStorageAccess(true)
+      .zoomAccess(true)
+      .fileAccess(true)
+      .mixedMode(MixedMode.All)
+      .width('100%')
+      .height('100%')
+      .onPageBegin(() => {
+        data.controller.onActive();
+      })
+      .onPageEnd(() => {
+        hilog.info(DOMAIN, TAG, `load page end time: ${Date.now()}`);
+      })
+      .onFirstMeaningfulPaint(() =>{
+        if (!shouldInactive) {
+          return;
+        }
+        // stop render
+        data.controller.onInactive();
+        shouldInactive = false;
+      })
+  }
+}
+
+// Used to control and feedback the behavior of nodes on the corresponding NodeContainer, which needs to be used together with NodeContainer
+export class MyNodeController extends NodeController {
+  private rootNode: BuilderNode<Data[]> | null = null;
+  private root: FrameNode | null = null;
+
+  // The method that must be overridden is used to build the number of nodes and return the nodes to be mounted in the corresponding NodeContainer.
+  // //Called when the corresponding NodeContainer is created, or refreshed by calling the rebuild method.
+  makeNode(uiContext: UIContext): FrameNode | null {
+    hilog.info(DOMAIN, TAG, ' uicontext is undefined : '+ (uiContext === undefined));
+    if (this.rootNode != null) {
+      const parent: FrameNode = this.rootNode.getFrameNode()?.getParent() as FrameNode;
+      if (parent) {
+        let inspectorInfo: string = JSON.stringify(parent.getInspectorInfo());
+        hilog.info(DOMAIN, TAG, inspectorInfo);
+        parent.removeChild(this.rootNode.getFrameNode());
+        this.root = null;
+      }
+      this.root = new FrameNode(uiContext);
+      this.root.appendChild(this.rootNode.getFrameNode());
+      // Returns the FrameNode node
+      return this.root;
+    }
+    // Returns a null node that controls the dynamic component to be unbound.
+    return null;
+  }
+  // Callback when layout size changes.
+  aboutToResize(size: Size): void {
+    hilog.info(DOMAIN, TAG, 'aboutToResize width : ' + size.width  +  ' height : ' + size.height);
+
+  }
+
+  // Call back when the NodeContainer corresponding to the controller is in Appear.
+  aboutToAppear(): void {
+    hilog.info(DOMAIN, TAG, 'aboutToAppear');
+  }
+
+  // Call back when the NodeContainer corresponding to the controller is Disappear.
+  aboutToDisappear(): void {
+    hilog.info(DOMAIN, TAG, 'aboutToDisappear');
+  }
+
+  // This function is a user-defined function and can be used as an initialization function.
+  // Initialize builderNode through UIContext, and then initialize the contents in @Builder through the Build interface in BuilderNode.
+  initWeb(url:string, uiContext:UIContext, control:WebviewController): void {
+    if(this.rootNode != null)
+    {
+      return;
+    }
+    // Creating a node requires uiContext.
+    this.rootNode = new BuilderNode(uiContext)
+    // Create dynamic Web components
+    this.rootNode.build(wrapBuilder<Data[]>(WebBuilder), { url:url, controller:control })
+  }
+}
+
+// Create the NodeController needed for Map saving.
+let NodeMap:Map<string, MyNodeController | undefined> = new Map();
+// Create WebViewController needed for Map saving.
+let controllerMap:Map<string, WebviewController | undefined> = new Map();
+
+// Initialization requires UIContext to be obtained in Ability.
+export const createNWeb = (url: string, uiContext: UIContext) => {
+  // Create NodeController
+  let baseNode: MyNodeController = new MyNodeController();
+  let controller: WebviewController = new webview.WebviewController() ;
+  // Initialize a custom web component
+  baseNode.initWeb(url, uiContext, controller);
+  controllerMap.set(url, controller)
+  NodeMap.set(url, baseNode);
+}
+
+// Customize to get the NodeController interface.
+export const getNWeb = (url : string) : MyNodeController | undefined => {
+  return NodeMap.get(url);
+}
 ```
-1. // Create NodeController
-2. // common.ets
-3. import { UIContext } from '@kit.ArkUI';
-4. import { webview } from '@kit.ArkWeb';
-5. import { NodeController, BuilderNode, Size, FrameNode }  from '@kit.ArkUI';
-
-7. // Specific component contents of dynamic components in @Builder
-8. // Data is a parameter encapsulation class.
-9. class Data{
-10. url: string = 'https://www.example.com';
-11. controller: WebviewController = new webview.WebviewController();
-12. }
-
-14. let shouldInactive: boolean = true;
-15. @Builder
-16. function WebBuilder(data:Data) {
-17. Column() {
-18. Web({ src: data.url, controller: data.controller })
-19. .domStorageAccess(true)
-20. .zoomAccess(true)
-21. .fileAccess(true)
-22. .mixedMode(MixedMode.All)
-23. .width('100%')
-24. .height('100%')
-25. .onPageBegin(() => {
-26. data.controller.onActive();
-27. })
-28. .onPageEnd(() => {
-29. console.info(`load page end time: ${Date.now()}`);
-30. })
-31. .onFirstMeaningfulPaint(() =>{
-32. if (!shouldInactive) {
-33. return;
-34. }
-35. // stop render
-36. data.controller.onInactive();
-37. shouldInactive = false;
-38. })
-39. }
-40. }
-
-43. // Used to control and feedback the behavior of nodes on the corresponding NodeContainer, which needs to be used together with NodeContainer
-44. export class MyNodeController extends NodeController {
-45. private rootNode: BuilderNode<Data[]> | null = null;
-46. private root: FrameNode | null = null;
-
-48. // The method that must be overridden is used to build the number of nodes and return the nodes to be mounted in the corresponding NodeContainer.
-49. // //Called when the corresponding NodeContainer is created, or refreshed by calling the rebuild method.
-50. makeNode(uiContext: UIContext): FrameNode | null {
-51. console.log(' uicontext is undefined : '+ (uiContext === undefined));
-52. if (this.rootNode != null) {
-53. const parent: FrameNode = this.rootNode.getFrameNode()?.getParent() as FrameNode;
-54. if (parent) {
-55. console.info(JSON.stringify(parent.getInspectorInfo()));
-56. parent.removeChild(this.rootNode.getFrameNode());
-57. this.root = null;
-58. }
-59. this.root = new FrameNode(uiContext);
-60. this.root.appendChild(this.rootNode.getFrameNode());
-61. // Returns the FrameNode node
-62. return this.root;
-63. }
-64. // Returns a null node that controls the dynamic component to be unbound.
-65. return null;
-66. }
-67. // Callback when layout size changes.
-68. aboutToResize(size: Size): void {
-69. console.log('aboutToResize width : ' + size.width  +  ' height : ' + size.height )
-70. }
-
-72. // Call back when the NodeContainer corresponding to the controller is in Appear.
-73. aboutToAppear(): void {
-74. console.log('aboutToAppear')
-75. }
-
-77. // Call back when the NodeContainer corresponding to the controller is Disappear.
-78. aboutToDisappear(): void {
-79. console.log('aboutToDisappear')
-80. }
-
-82. // This function is a user-defined function and can be used as an initialization function.
-83. // Initialize builderNode through UIContext, and then initialize the contents in @Builder through the Build interface in BuilderNode.
-84. initWeb(url:string, uiContext:UIContext, control:WebviewController): void {
-85. if(this.rootNode != null)
-86. {
-87. return;
-88. }
-89. // Creating a node requires uiContext.
-90. this.rootNode = new BuilderNode(uiContext)
-91. // Create dynamic Web components
-92. this.rootNode.build(wrapBuilder<Data[]>(WebBuilder), { url:url, controller:control })
-93. }
-94. }
-
-96. // Create the NodeController needed for Map saving.
-97. let NodeMap:Map<string, MyNodeController | undefined> = new Map();
-98. // Create WebViewController needed for Map saving.
-99. let controllerMap:Map<string, WebviewController | undefined> = new Map();
-
-101. // Initialization requires UIContext to be obtained in Ability.
-102. export const createNWeb = (url: string, uiContext: UIContext) => {
-103. // Create NodeController
-104. let baseNode: MyNodeController = new MyNodeController();
-105. let controller: WebviewController = new webview.WebviewController() ;
-106. // Initialize a custom web component
-107. baseNode.initWeb(url, uiContext, controller);
-108. controllerMap.set(url, controller)
-109. NodeMap.set(url, baseNode);
-110. }
-
-112. // Customize to get the NodeController interface.
-113. export const getNWeb = (url : string) : MyNodeController | undefined => {
-114. return NodeMap.get(url);
-115. }
-```
-
-[CreateNodeController.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/CreateNodeController.ets#L2-L116)
 
 通过NodeContainer使用已经预渲染的页面。
 
-```
-1. // Use the Page page of NodeController.
-2. // Index.ets
-3. import {getNWeb} from './common';
+```screen
+// Use the Page page of NodeController.
+// Index.ets
+import {getNWeb} from './common';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. build() {
-9. Row() {
-10. Column() {
-11. // NodeContainer is used to bind with NodeController node, and rebuild will trigger makeNode.
-12. // Page page is bound to NodeController through NodeContainer interface to realize dynamic component page display.
-13. NodeContainer(getNWeb('https://www.example.com'))
-14. .height('90%')
-15. .width('100%')
-16. }
-17. .width('100%')
-18. }
-19. .height('100%')
-20. }
-21. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column() {
+        // NodeContainer is used to bind with NodeController node, and rebuild will trigger makeNode.
+        // Page page is bound to NodeController through NodeContainer interface to realize dynamic component page display.
+        NodeContainer(getNWeb('https://www.example.com'))
+          .height('90%')
+          .width('100%')
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-
-[UseNodeController.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/UseNodeController.ets#L2-L22)
 
 ### 预取POST请求优化
 
@@ -734,7 +732,7 @@ prefetchPage会缓存下载的资源，缓存时效为5分钟。
 1. 如果是应用首页，推荐在ArkWeb组件创建后或提前初始化Web内核后，对首页的POST请求进行预取，例如在XComponent.onCreate()或自定义组件的生命周期函数aboutToAppear()中。
 2. 当前页面加载完成后，可以对用户下一步可能点击的页面的POST请求进行预取，推荐在Web组件的生命周期函数onPageEnd()及后续时机进行。
 
-说明
+**说明** 
 
 1. 本方案能消除POST请求下载的耗时，预计收益在100毫秒左右，具体取决于POST请求的数据内容和当前网络环境。
 2. 预取POST请求行为包括连接和资源下载。连接和资源加载耗时可能达到数百毫秒，具体取决于POST请求的数据内容和当前网络环境。建议为预下载留出足够的时间。
@@ -747,7 +745,7 @@ prefetchPage会缓存下载的资源，缓存时效为5分钟。
 
 案例一：加载包含POST请求的首页。
 
-说明
+**说明** 
 
 预取POST不会影响首页加载时间。
 
@@ -755,23 +753,21 @@ prefetchPage会缓存下载的资源，缓存时效为5分钟。
 
 当首页包含POST请求，并且该请求耗时较长时，不建议直接加载Web页面。
 
+```screen
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct WebComponent {
+  webviewController: webview.WebviewController = new webview.WebviewController();
+
+  build() {
+    Column() {
+      Web({ src: 'https://www.example.com/', controller: this.webviewController })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-
-3. @Entry
-4. @Component
-5. struct WebComponent {
-6. webviewController: webview.WebviewController = new webview.WebviewController();
-
-8. build() {
-9. Column() {
-10. Web({ src: 'https://www.example.com/', controller: this.webviewController })
-11. }
-12. }
-13. }
-```
-
-[WebComponent.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/WebComponent.ets#L2-L14)
 
 【推荐用法】
 
@@ -779,80 +775,78 @@ prefetchPage会缓存下载的资源，缓存时效为5分钟。
 
 1. 通过initializeWebEngine()来提前初始化Web组件的内核，然后在初始化内核后调用prefetchResource()预获取将要加载页面中的POST请求。
 
-   ```
-   1. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-   2. import { webview } from '@kit.ArkWeb';
+   ```screen
+   import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+   import { webview } from '@kit.ArkWeb';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
 
-   4. export default class EntryAbility extends UIAbility {
-   5. // EntryAbility.ets
-   6. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-   7. console.log('EntryAbility onCreate.');
-   8. webview.WebviewController.initializeWebEngine();
-   9. // When pre-acquiring, 'https://www.example1.com/POST? E=f&g=h' is replaced by the actual website address to be visited.
-   10. webview.WebviewController.prefetchResource(
-   11. {
-   12. url: 'https://www.example.com/POST?e=f&g=h',
-   13. method: 'POST',
-   14. formData: 'a=x&b=y'
-   15. },
-   16. [{
-   17. headerKey: 'c',
-   18. headerValue: 'z'
-   19. }],
-   20. 'KeyX', 500
-   21. );
-   22. AppStorage.setOrCreate('abilityWant', want);
-   23. console.log('EntryAbility onCreate done.');
-   24. }
-   25. // ...
-   26. }
-   ```
+   const DOMAIN = 0x0000;
+   const TAG = 'Sample';
 
-   [PrefetchResource.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/PrefetchResource.ets#L2-L27)
+   export default class EntryAbility extends UIAbility {
+     // EntryAbility.ets
+     onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+       hilog.info(DOMAIN, TAG, 'EntryAbility onCreate.');
+       webview.WebviewController.initializeWebEngine();
+       // When pre-acquiring, 'https://www.example1.com/POST? E=f&g=h' is replaced by the actual website address to be visited.
+       webview.WebviewController.prefetchResource(
+         {
+           url: 'https://www.example.com/POST?e=f&g=h',
+           method: 'POST',
+           formData: 'a=x&b=y'
+         },
+         [{
+           headerKey: 'c',
+           headerValue: 'z'
+         }],
+         'KeyX', 500
+       );
+       AppStorage.setOrCreate('abilityWant', want);
+       hilog.info(DOMAIN, TAG, 'EntryAbility onCreate done.');
+     }
+     // ...
+   }
+   ```
 2. 通过Web组件加载包含POST请求的页面。
 
+   ```typescript
+   import { webview } from '@kit.ArkWeb';
+
+   @Entry
+   @Component
+   struct WebComponent {
+     webviewController: webview.WebviewController = new webview.WebviewController();
+
+     build() {
+       Column() {
+         Web({ src: 'https://www.example.com/', controller: this.webviewController })
+           .onPageEnd(() => {
+             // Clear the cache of pre-acquired resources that are no longer used in the future.
+             webview.WebviewController.clearPrefetchedResource(['KeyX']);
+           })
+       }
+     }
+   }
    ```
-   1. import { webview } from '@kit.ArkWeb';
-
-   3. @Entry
-   4. @Component
-   5. struct WebComponent {
-   6. webviewController: webview.WebviewController = new webview.WebviewController();
-
-   8. build() {
-   9. Column() {
-   10. Web({ src: 'https://www.example.com/', controller: this.webviewController })
-   11. .onPageEnd(() => {
-   12. // Clear the cache of pre-acquired resources that are no longer used in the future.
-   13. webview.WebviewController.clearPrefetchedResource(['KeyX']);
-   14. })
-   15. }
-   16. }
-   17. }
-   ```
-
-   [ClearResourceCache.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/ClearResourceCache.ets#L2-L18)
 3. 在页面加载的JavaScript文件中，发起POST请求，并将请求响应头ArkWebPostCacheKey设置为预取时的cachekey值'KeyX'。
 
+   ```typescript
+   const xhr = new XMLHttpRequest();
+   xhr.open('POST', 'https://www.example.com/POST?e=f&g=h', true);
+   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+   xhr.setRequestHeader('ArkWebPostCacheKey', 'KeyX');
+   xhr.onload = function () {
+     if (xhr.status >= 200 && xhr.status < 300) {
+       console.log('成功', xhr.responseText);
+     } else {
+       console.error('请求失败');
+     }
+   }
+   const formData = new FormData();
+   formData.append('a', 'x');
+   formData.append('b', 'y');
+   xhr.send(formData);
    ```
-   1. const xhr = new XMLHttpRequest();
-   2. xhr.open('POST', 'https://www.example.com/POST?e=f&g=h', true);
-   3. xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-   4. xhr.setRequestHeader('ArkWebPostCacheKey', 'KeyX');
-   5. xhr.onload = function () {
-   6. if (xhr.status >= 200 && xhr.status < 300) {
-   7. console.log('成功', xhr.responseText);
-   8. } else {
-   9. console.error('请求失败');
-   10. }
-   11. }
-   12. const formData = new FormData();
-   13. formData.append('a', 'x');
-   14. formData.append('b', 'y');
-   15. xhr.send(formData);
-   ```
-
-   [HttpRequestPost.js](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/utils/HttpRequestPost.js#L2-L16)
 
 案例二：加载包含POST请求的下一页。
 
@@ -860,27 +854,25 @@ prefetchPage会缓存下载的资源，缓存时效为5分钟。
 
 当即将加载的Web页面中包含POST请求，并且POST请求耗时较长时，不建议直接加载Web页面。
 
+```screen
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct WebComponent {
+  webviewController: webview.WebviewController = new webview.WebviewController();
+
+  build() {
+    Column() {
+      Button('加载页面')
+        .onClick(() => {
+          this.webviewController.loadUrl('https://www.example1.com/');
+        })
+      Web({ src: 'https://www.example.com/', controller: this.webviewController })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-
-3. @Entry
-4. @Component
-5. struct WebComponent {
-6. webviewController: webview.WebviewController = new webview.WebviewController();
-
-8. build() {
-9. Column() {
-10. Button('加载页面')
-11. .onClick(() => {
-12. this.webviewController.loadUrl('https://www.example1.com/');
-13. })
-14. Web({ src: 'https://www.example.com/', controller: this.webviewController })
-15. }
-16. }
-17. }
-```
-
-[WebComponentLoad.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/WebComponentLoad.ets#L2-L18)
 
 【推荐用法】
 
@@ -888,69 +880,65 @@ prefetchPage会缓存下载的资源，缓存时效为5分钟。
 
 1. 当前页面显示完成后，使用onPageEnd()预获取即将加载页面中的POST请求。
 
+   ```typescript
+   import { hiTraceMeter } from '@kit.PerformanceAnalysisKit';
+   import { webview } from '@kit.ArkWeb';
+
+   @Entry
+   @Component
+   struct WebComponent {
+     controller: webview.WebviewController = new webview.WebviewController();
+     webviewController: webview.WebviewController = new webview.WebviewController();
+
+     build() {
+       Column() {
+         // Load the business Web component at an appropriate time. This example takes the Button click trigger as an example.
+         Button('加载页面')
+           .onClick(() => {
+             // Performance dot
+             hiTraceMeter.startTrace('getMessageData', 1);
+             // Please replace the URL with the real address.
+             this.controller.loadUrl('https://www.example1.com/');
+           })
+         Web({ src: 'https://www.example.com/', controller: this.webviewController })
+           .onPageEnd(() => {
+             // When pre-acquiring, 'https://www.example1.com/POST? E=f&g=h' is replaced by the actual website address to be visited.
+             webview.WebviewController.prefetchResource(
+               {
+                 url: 'https://www.example1.com/POST?e=f&g=h',
+                 method: 'POST',
+                 formData: 'a=x&b=y'
+               },
+               [{
+                 headerKey: 'c',
+                 headerValue: 'z'
+               }],
+               'KeyX', 500
+             );
+           })
+       }
+     }
+   }
    ```
-   1. import { hiTraceMeter } from '@kit.PerformanceAnalysisKit';
-   2. import { webview } from '@kit.ArkWeb';
-
-   4. @Entry
-   5. @Component
-   6. struct WebComponent {
-   7. controller: webview.WebviewController = new webview.WebviewController();
-   8. webviewController: webview.WebviewController = new webview.WebviewController();
-
-   10. build() {
-   11. Column() {
-   12. // Load the business Web component at an appropriate time. This example takes the Button click trigger as an example.
-   13. Button('加载页面')
-   14. .onClick(() => {
-   15. // Performance dot
-   16. hiTraceMeter.startTrace('getMessageData', 1);
-   17. // Please replace the URL with the real address.
-   18. this.controller.loadUrl('https://www.example1.com/');
-   19. })
-   20. Web({ src: 'https://www.example.com/', controller: this.webviewController })
-   21. .onPageEnd(() => {
-   22. // When pre-acquiring, 'https://www.example1.com/POST? E=f&g=h' is replaced by the actual website address to be visited.
-   23. webview.WebviewController.prefetchResource(
-   24. {
-   25. url: 'https://www.example1.com/POST?e=f&g=h',
-   26. method: 'POST',
-   27. formData: 'a=x&b=y'
-   28. },
-   29. [{
-   30. headerKey: 'c',
-   31. headerValue: 'z'
-   32. }],
-   33. 'KeyX', 500
-   34. );
-   35. })
-   36. }
-   37. }
-   38. }
-   ```
-
-   [LoadWebComponentRight.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/LoadWebComponentRight.ets#L2-L39)
 2. 在将要加载的页面中，JavaScript发起POST请求，并将请求响应头ArkWebPostCacheKey设置为预取时设置的cachekey值'KeyX'。
 
+   ```screen
+   const xhr = new XMLHttpRequest();
+   xhr.open('POST', 'https://www.example.com/POST?e=f&g=h', true);
+   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+   xhr.setRequestHeader('ArkWebPostCacheKey', 'KeyX');
+   xhr.onload = function () {
+     if (xhr.status >= 200 && xhr.status < 300) {
+       console.log('成功', xhr.responseText);
+     } else {
+       console.error('请求失败');
+     }
+   }
+   const formData = new FormData();
+   formData.append('a', 'x');
+   formData.append('b', 'y');
+   xhr.send(formData);
    ```
-   1. const xhr = new XMLHttpRequest();
-   2. xhr.open('POST', 'https://www.example.com/POST?e=f&g=h', true);
-   3. xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-   4. xhr.setRequestHeader('ArkWebPostCacheKey', 'KeyX');
-   5. xhr.onload = function () {
-   6. if (xhr.status >= 200 && xhr.status < 300) {
-   7. console.log('成功', xhr.responseText);
-   8. } else {
-   9. console.error('请求失败');
-   10. }
-   11. }
-   12. const formData = new FormData();
-   13. formData.append('a', 'x');
-   14. formData.append('b', 'y');
-   15. xhr.send(formData);
-   ```
-
-   [HttpRequestPost.js](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/utils/HttpRequestPost.js#L2-L16)
 
 ### 预编译JavaScript生成字节码缓存（Code Cache）
 
@@ -960,7 +948,7 @@ prefetchPage会缓存下载的资源，缓存时效为5分钟。
 
 创建一个无需渲染的离线Web组件，用于预编译。预编译结束后，使用其他Web组件加载业务网页。
 
-说明
+**说明** 
 
 建议开发者优先使用[Code Linter扫描工具](../harmonyos-guides/ide-code-linter.md)进行代码检查，重点关注[@performance/js-code-cache-by-precompile-check](../harmonyos-guides/ide-js-code-cache-by-precompile-check.md)规则。若扫描结果中出现该规则相关问题，可参考本章节提供的优化建议进行调整。
 
@@ -973,47 +961,48 @@ prefetchPage会缓存下载的资源，缓存时效为5分钟。
 
 案例一：在未使用预编译JavaScript前提下，启动加载Web页面
 
+```screen
+import { webview } from '@kit.ArkWeb';
+import { hilog, hiTraceMeter } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN = 0x0000;
+const TAG = 'Sample';
+
+@Entry
+@Component
+struct Index {
+  controller: webview.WebviewController = new webview.WebviewController();
+
+  build() {
+    Column() {
+      // Load the business Web component at an appropriate time. This example takes the Button click trigger as an example.
+      Button('加载页面')
+        .onClick(() => {
+          // Performance dot
+          hiTraceMeter.startTrace('getMessageData', 1);
+          // Please replace the URL with the real address.
+          this.controller?.loadUrl('https://www.example.com/b.html');
+        })
+      Web({ src: 'https://www.example.com/a.html', controller: this.controller })
+        .fileAccess(true)
+        .onPageBegin((event) => {
+          hilog.info(DOMAIN, TAG, `load page begin: ${event?.url}`);
+        })
+        .onPageEnd((event) => {
+          // Performance dot
+          hiTraceMeter.finishTrace('getMessageData', 1);
+          hilog.info(DOMAIN, TAG, `load page end: ${event?.url}`);
+        })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-2. import { hiTraceMeter } from '@kit.PerformanceAnalysisKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. controller: webview.WebviewController = new webview.WebviewController();
+通过[HiTraceMeter](../harmonyos-references/js-apis-hitracemeter.md)在Web页面加载前后添加性能打点，点击“加载页面”按钮，[查询自定义打点信息](../harmonyos-guides/ide-insight-session-time.md#section1977218292919)获取的Trace数据如下，getMessageData进程中的Duration为加载页面开始到结束的耗时：
 
-9. build() {
-10. Column() {
-11. // Load the business Web component at an appropriate time. This example takes the Button click trigger as an example.
-12. Button('加载页面')
-13. .onClick(() => {
-14. // Performance dot
-15. hiTraceMeter.startTrace('unPrecompileJavaScript', 1);
-16. // Please replace the URL with the real address.
-17. this.controller?.loadUrl('https://www.example.com/b.html');
-18. })
-19. Web({ src: 'https://www.example.com/a.html', controller: this.controller })
-20. .fileAccess(true)
-21. .onPageBegin((event) => {
-22. console.log(`load page begin: ${event?.url}`);
-23. })
-24. .onPageEnd((event) => {
-25. // Performance dot
-26. hiTraceMeter.finishTrace('unPrecompileJavaScript', 1);
-27. console.log(`load page end: ${event?.url}`);
-28. })
-29. }
-30. }
-31. }
-```
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/7b9MUYr8Tr2I7OMcETjDSA/zh-cn_image_0000002193851232.png "点击放大")
 
-[PracticalCaseOne.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/PracticalCaseOne.ets#L2-L32)
-
-点击“加载页面”按钮，[性能打点](../harmonyos-references/js-apis-hitracemeter.md)数据如下，getMessageData进程中的Duration为加载页面开始到结束的耗时：
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/VRuMY0M6Stm3XKlqPYanjw/zh-cn_image_0000002193851232.png "点击放大")
-
-说明
+**说明** 
 
 JavaScript的编译时间受文件大小和逻辑复杂度的影响。
 
@@ -1021,68 +1010,68 @@ JavaScript的编译时间受文件大小和逻辑复杂度的影响。
 
 1. 配置预编译的JavaScript文件信息。
 
+   ```screen
+   import { webview } from '@kit.ArkWeb';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+
+   const DOMAIN = 0x0000;
+   const TAG = 'Sample';
+
+   interface Config {
+     url: string,
+     localPath: string, // local resource path
+     options: webview.CacheOptions
+   }
+
+   @Entry
+   @Component
+   struct Index {
+     controller: webview.WebviewController = new webview.WebviewController();
+     // Configure precompiled JavaScript file information
+     configs: Array<Config> = [
+       {
+         url: 'https://www.example.com/example.js',
+         localPath: 'example.js',
+         options: {
+           responseHeaders: [
+             { headerKey: 'E-Tag', headerValue: 'xxx' },
+             { headerKey: 'Last-Modified', headerValue: 'Web, 21 Mar 2024 10:38:41 GMT' }
+           ]
+         }
+       }
+     ]
+
+     // ...
+   }
    ```
-   1. import { webview } from '@kit.ArkWeb';
-
-   3. interface Config {
-   4. url: string,
-   5. localPath: string, // local resource path
-   6. options: webview.CacheOptions
-   7. }
-
-   9. @Entry
-   10. @Component
-   11. struct Index {
-   12. controller: webview.WebviewController = new webview.WebviewController();
-   13. // Configure precompiled JavaScript file information
-   14. configs: Array<Config> = [
-   15. {
-   16. url: 'https://www.example.com/example.js',
-   17. localPath: 'example.js',
-   18. options: {
-   19. responseHeaders: [
-   20. { headerKey: 'E-Tag', headerValue: 'xxx' },
-   21. { headerKey: 'Last-Modified', headerValue: 'Web, 21 Mar 2024 10:38:41 GMT' }
-   22. ]
-   23. }
-   24. }
-   25. ]
-
-   27. // ...
-   28. }
-   ```
-
-   [PracticalCaseTwo.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/PracticalCaseTwo.ets#L2-L54)
 2. 读取配置，进行预编译。
 
+   ```screen
+   Web({ src: 'https://www.example.com/a.html', controller: this.controller })
+     .onControllerAttached(async () => {
+       // Read the configuration and precompile.
+       for (const config of this.configs) {
+         this.getUIContext()
+           .getHostContext()?.resourceManager.getRawFileContent(config.localPath)
+           .then((content: Uint8Array) => {
+             this.controller.precompileJavaScript(config.url, content, config.options)
+               .then(() => {
+                 hilog.info(DOMAIN, TAG, 'precompile successfully!');
+               }).catch((errCode: number) => {
+               hilog.error(DOMAIN, TAG, 'precompile failed.' + errCode);
+             })
+           }).catch(() => {
+           hilog.error(DOMAIN, TAG, 'precompile failed!.');
+         })
+       }
+     })
    ```
-   1. Web({ src: 'https://www.example.com/a.html', controller: this.controller })
-   2. .onControllerAttached(async () => {
-   3. // Read the configuration and precompile.
-   4. for (const config of this.configs) {
-   5. this.getUIContext()
-   6. .getHostContext()?.resourceManager.getRawFileContent(config.localPath)
-   7. .then((content: Uint8Array) => {
-   8. this.controller.precompileJavaScript(config.url, content, config.options)
-   9. .then(() => {
-   10. console.log('precompile successfully!');
-   11. }).catch((errCode: number) => {
-   12. console.error('precompile failed.' + errCode);
-   13. })
-   14. }).catch(() => {
-   15. console.error('precompile failed!.');
-   16. })
-   17. }
-   18. })
-   ```
-
-   [PracticalCaseTwo.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/PracticalCaseTwo.ets#L32-L49)
 
    点击“加载页面”按钮，性能打点数据如下：getMessageData进程中的Duration表示加载页面从开始到结束的耗时。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/8XQ0L8p3R6Si6-Ot2gJ5EA/zh-cn_image_0000002229336625.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/YcFUVH_yQmuXxIzkTqsTEA/zh-cn_image_0000002229336625.png)
 
-   说明
+   **说明** 
 
    当需要更新本地已生成的编译字节码时，修改cacheOptions参数中responseHeaders的E-Tag或Last-Modified响应头对应的值，再次调用接口即可。
 
@@ -1101,24 +1090,24 @@ JavaScript的编译时间受文件大小和逻辑复杂度的影响。
 
 资源拦截替换的JavaScript生成字节码缓存适用于页面加载时需要加载网络JavaScript文件并进行拦截替换的场景。此功能支持将字节码缓存到本地，从而在页面非首次加载时节省编译时间。
 
-说明
+**说明** 
 
 建议开发者优先使用[Code Linter扫描工具](../harmonyos-guides/ide-code-linter.md)进行代码检查，重点关注[@performance/js-code-cache-by-interception-check](../harmonyos-guides/ide-js-code-cache-by-interception-check.md)规则。若扫描结果中出现该规则相关问题，可参考本章节提供的优化建议进行调整
 
 **图6** JS资源编译执行流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/keKnhiciTu6wh7MarUzcHQ/zh-cn_image_0000002193851224.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/dokvXaXSQR-pLt0JDuwCqA/zh-cn_image_0000002193851224.png "点击放大")
 
 **图7** 资源拦截替换后JS资源编译执行流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/oo7QDMQmQt2db3rMH0DCRw/zh-cn_image_0000002194010828.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/-4VxwGTJRaqmvZp7Ob82qQ/zh-cn_image_0000002194010828.png "点击放大")
 
 Web组件默认支持HTTP协议和自定义协议的JavaScript生成字节码缓存。具体步骤如下：
 
 1. 开发者需要在Web组件运行前注册自定义协议。
 2. 拦截自定义协议的JavaScript，设置ResponseData和ResponseDataID。
 
-说明
+**说明** 
 
 ResponseData为JavaScript内容，ResponseDataID用于区分内容是否变更。内容变更时，ResponseDataID也需要变更。
 
@@ -1132,298 +1121,280 @@ ResponseData为JavaScript内容，ResponseDataID用于区分内容是否变更�
 
 1. 构造前端H5界面
 
+   ```html
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport"
+             content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+       <meta http-equiv="X-UA-Compatible" content="ie=edge">
+       <title>Document</title>
+   </head>
+   <body>
+   <div id="div-1">this is a test div</div>
+   <div id="div-2">this is a test div</div>
+   <div id="div-3">this is a test div</div>
+   <div id="div-4">this is a test div</div>
+   <div id="div-5">this is a test div</div>
+   <div id="div-6">this is a test div</div>
+   <div id="div-7">this is a test div</div>
+   <div id="div-8">this is a test div</div>
+   <div id="div-9">this is a test div</div>
+   <div id="div-10">this is a test div</div>
+   <div id="div-11">this is a test div</div>
+   </body>
+   <script src="https://www.example.com/test.js"></script>
+   </html>
    ```
-   1. <!DOCTYPE html>
-   2. <html lang="en">
-   3. <head>
-   4. <meta charset="UTF-8">
-   5. <meta name="viewport"
-   6. content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-   7. <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   8. <title>Document</title>
-   9. </head>
-   10. <body>
-   11. <div id="div-1">this is a test div</div>
-   12. <div id="div-2">this is a test div</div>
-   13. <div id="div-3">this is a test div</div>
-   14. <div id="div-4">this is a test div</div>
-   15. <div id="div-5">this is a test div</div>
-   16. <div id="div-6">this is a test div</div>
-   17. <div id="div-7">this is a test div</div>
-   18. <div id="div-8">this is a test div</div>
-   19. <div id="div-9">this is a test div</div>
-   20. <div id="div-10">this is a test div</div>
-   21. <div id="div-11">this is a test div</div>
-   22. </body>
-   23. <script src="https://www.example.com/test.js"></script>
-   24. </html>
-   ```
-
-   [index.html](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/resources/rawfile/index.html#L2-L25)
 2. 不设置ResponseDataID，进行界面请求拦截替换
 
+   ```screen
+   import { webview } from '@kit.ArkWeb';
+   import { hiTraceMeter } from '@kit.PerformanceAnalysisKit';
+
+   @Entry
+   @Component
+   struct Index {
+     webViewController: webview.WebviewController = new webview.WebviewController();
+     responseResource: WebResourceResponse = new WebResourceResponse();
+     // The developer defines the response data, and the length of the response data must be greater than or equal to 1024 to generate CodeCache.
+     @State jsData: string = 'JavaScript Data';
+
+     build() {
+       Column() {
+         Web({ src: $rawfile('index.html'), controller: this.webViewController })
+           .onInterceptRequest(event => {
+             // Intercept page requests
+             if (event?.request.getRequestUrl() === 'https://www.example.com/test.js') {
+               // Construct response data
+               this.responseResource.setResponseData(this.jsData);
+               this.responseResource.setResponseEncoding('utf-8');
+               this.responseResource.setResponseMimeType('application/javascript');
+               this.responseResource.setResponseCode(200);
+               this.responseResource.setReasonMessage('OK');
+               return this.responseResource;
+             }
+             return null;
+           })
+           .onPageBegin(() => {
+             hiTraceMeter.startTrace('getMessageData', 0);
+           })
+           .onPageEnd(() => {
+             hiTraceMeter.finishTrace('getMessageData', 0);
+           })
+       }
+       .width('100%')
+     }
+   }
    ```
-   1. import { webview } from '@kit.ArkWeb';
-   2. import { hiTraceMeter } from '@kit.PerformanceAnalysisKit';
-
-   4. @Entry
-   5. @Component
-   6. struct Index {
-   7. webViewController: webview.WebviewController = new webview.WebviewController();
-   8. responseResource: WebResourceResponse = new WebResourceResponse();
-   9. // The developer defines the response data, and the length of the response data must be greater than or equal to 1024 to generate CodeCache.
-   10. @State jsData: string = 'JavaScript Data';
-
-   12. build() {
-   13. Column() {
-   14. Web({ src: $rawfile('index.html'), controller: this.webViewController })
-   15. .onInterceptRequest(event => {
-   16. // Intercept page requests
-   17. if (event?.request.getRequestUrl() === 'https://www.example.com/test.js') {
-   18. // Construct response data
-   19. this.responseResource.setResponseData(this.jsData);
-   20. this.responseResource.setResponseEncoding('utf-8');
-   21. this.responseResource.setResponseMimeType('application/javascript');
-   22. this.responseResource.setResponseCode(200);
-   23. this.responseResource.setReasonMessage('OK');
-   24. return this.responseResource;
-   25. }
-   26. return null;
-   27. })
-   28. .onPageBegin(() => {
-   29. hiTraceMeter.startTrace('getMessageData', 0);
-   30. })
-   31. .onPageEnd(() => {
-   32. hiTraceMeter.finishTrace('getMessageData', 0);
-   33. })
-   34. }
-   35. .width('100%')
-   36. }
-   37. }
-   ```
-
-   [PageRequestInterception.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/PageRequestInterception.ets#L2-L38)
 
 打开应用后关闭，重复两次，然后查看第三次页面加载的耗时。性能打点数据如下：getMessageData 进程中的 Duration 表示页面加载从开始到结束的耗时。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/BsdXAkOgQtq9XopnwH5Opw/zh-cn_image_0000002229451101.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/GQi3wZ5wTT-w6rzXEUCQ9w/zh-cn_image_0000002229451101.png)
 
 【推荐用法】
 
 在进行资源拦截替换时，设置请求头中的ResponseData和ResponseDataID。
 
+```screen
+import { webview } from '@kit.ArkWeb';
+import { hiTraceMeter } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@Component
+struct Index {
+  controller: webview.WebviewController = new webview.WebviewController();
+  responseResource: WebResourceResponse = new WebResourceResponse();
+  // Construct response data
+  @State jsData: string = 'JavaScript Data';
+
+  build() {
+    Column() {
+      Web({ src: $rawfile('index.html'), controller: this.controller })
+        .onInterceptRequest((event) => {
+          // Intercept page requests
+          if (event?.request.getRequestUrl() === 'https://www.example.com/test.js') {
+            // Construct response data
+            this.responseResource.setResponseHeader([
+              {
+                // Format: No more than 13 digits. Js ID, this field must be updated when Js is updated.
+                headerKey: 'ResponseDataID',
+                headerValue: '0000000000001'
+              }]);
+            this.responseResource.setResponseData(this.jsData);
+            this.responseResource.setResponseEncoding('utf-8');
+            this.responseResource.setResponseMimeType('application/javascript');
+            this.responseResource.setResponseCode(200);
+            this.responseResource.setReasonMessage('OK');
+            return this.responseResource;
+          }
+          return null;
+        })
+        .onPageBegin(() => {
+          hiTraceMeter.startTrace('getMessageData', 0);
+        })
+        .onPageEnd(() => {
+          hiTraceMeter.finishTrace('getMessageData', 0);
+        })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-2. import { hiTraceMeter } from '@kit.PerformanceAnalysisKit';
-
-4. @Entry
-5. @Component
-6. struct Index {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. responseResource: WebResourceResponse = new WebResourceResponse();
-9. // Construct response data
-10. @State jsData: string = 'JavaScript Data';
-
-12. build() {
-13. Column() {
-14. Web({ src: $rawfile('index.html'), controller: this.controller })
-15. .onInterceptRequest((event) => {
-16. // Intercept page requests
-17. if (event?.request.getRequestUrl() === 'https://www.example.com/test.js') {
-18. // Construct response data
-19. this.responseResource.setResponseHeader([
-20. {
-21. // Format: No more than 13 digits. Js ID, this field must be updated when Js is updated.
-22. headerKey: 'ResponseDataID',
-23. headerValue: '0000000000001'
-24. }]);
-25. this.responseResource.setResponseData(this.jsData);
-26. this.responseResource.setResponseEncoding('utf-8');
-27. this.responseResource.setResponseMimeType('application/javascript');
-28. this.responseResource.setResponseCode(200);
-29. this.responseResource.setReasonMessage('OK');
-30. return this.responseResource;
-31. }
-32. return null;
-33. })
-34. .onPageBegin(() => {
-35. hiTraceMeter.startTrace('getMessageData', 0);
-36. })
-37. .onPageEnd(() => {
-38. hiTraceMeter.finishTrace('getMessageData', 0);
-39. })
-40. }
-41. }
-42. }
-```
-
-[SetResposeData.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/SetResposeData.ets#L2-L43)
 
 打开应用后关闭，重复两次，然后查看第三次页面加载的耗时。性能打点数据如下：getMessageData 进程中的 Duration 表示页面加载从开始到结束的耗时。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/xdfYN_TbSVuehc2LcvCq1g/zh-cn_image_0000002193851248.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/Cbuk40I6R4i-ndOAntsDqQ/zh-cn_image_0000002193851248.png)
 
 案例二：调用ArkTS接口customizeSchemes()，在注册自定义协议的情况下，实现JavaScript生成字节码缓存，具体步骤如下：
 
 1. 将scheme对象的isCodeCacheSupported属性设置为true，支持自定义协议的JavaScript生成字节码缓存
 
+   ```screen
+   scheme1: webview.WebCustomScheme = { schemeName: "scheme1", isSupportCORS: true, isSupportFetch: true, isCodeCacheSupported: true }
    ```
-   1. scheme1: webview.WebCustomScheme = { schemeName: "scheme1", isSupportCORS: true, isSupportFetch: true, isCodeCacheSupported: true }
-   ```
-
-   [ByteCodeCache.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/ByteCodeCache.ets#L7-L7)
 2. 在Web组件运行前，向Web组件注册自定义协议。
 
-   说明
+   **说明** 
 
    请确保自定义协议不与Web内核内置协议相同。
 
+   ```screen
+   aboutToAppear(): void {
+     try {
+       webview.WebviewController.customizeSchemes([this.scheme1])
+     } catch (error) {
+       let e: business_error.BusinessError = error as business_error.BusinessError;
+       hilog.error(DOMAIN, TAG, `ErrorCode: ${e.code},  Message: ${e.message}`);
+     }
+   }
    ```
-   1. aboutToAppear(): void {
-   2. try {
-   3. webview.WebviewController.customizeSchemes([this.scheme1])
-   4. } catch (error) {
-   5. let e: business_error.BusinessError = error as business_error.BusinessError;
-   6. console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-   7. }
-   8. }
-   ```
-
-   [ByteCodeCache.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/ByteCodeCache.ets#L14-L21)
 3. 拦截自定义协议的JavaScript，设置ResponseData和ResponseDataID。ResponseData包含JavaScript内容，ResponseDataID用于标识JavaScript内容是否发生变化。
 
-   说明
+   **说明** 
 
    若JavaScript内容变更，ResponseDataID需要一起变更
 
-   ```
-   1. Web({
-   2. src: $rawfile('index.html'),
-   3. controller: this.webController
-   4. })
-   5. .fileAccess(true)
-   6. .javaScriptAccess(true)
-   7. .width('100%')
-   8. .height('100%')
-   9. .onConsole((event) => {
-   10. console.log('ets onConsole:' + event?.message.getMessage());
-   11. return false
-   12. })
-   13. .onInterceptRequest((event) => {
-   14. let responseResource = new WebResourceResponse()
-   15. // Intercept page requests
-   16. if (event?.request.getRequestUrl() == 'https://www.intercept.com/test-cc.js') {
-   17. // Construct response data
-   18. responseResource.setResponseHeader([
-   19. {
-   20. headerKey: 'ResponseDataID',
-   21. headerValue: '0000000000002'
-   22. // Format: No more than 13 digits. Js ID, this field must be updated when Js is updated.
-   23. }]);
-   24. responseResource.setResponseData(this.jsData);
-   25. responseResource.setResponseEncoding('utf-8');
-   26. responseResource.setResponseMimeType('application/javascript');
-   27. responseResource.setResponseCode(200);
-   28. responseResource.setReasonMessage('OK');
-   29. return responseResource;
+   ```screen
+   Web({
+     src: $rawfile('index.html'),
+     controller: this.webController
+   })
+     .fileAccess(true)
+     .javaScriptAccess(true)
+     .width('100%')
+     .height('100%')
+     .onConsole((event) => {
+       hilog.info(DOMAIN, TAG, 'ets onConsole:' + event?.message.getMessage());
+       return false
+     })
+     .onInterceptRequest((event) => {
+       let responseResource = new WebResourceResponse()
+       // Intercept page requests
+       if (event?.request.getRequestUrl() == 'https://www.intercept.com/test-cc.js') {
+         // Construct response data
+         responseResource.setResponseHeader([
+           {
+             headerKey: 'ResponseDataID',
+             headerValue: '0000000000002'
+             // Format: No more than 13 digits. Js ID, this field must be updated when Js is updated.
+           }]);
+         responseResource.setResponseData(this.jsData);
+         responseResource.setResponseEncoding('utf-8');
+         responseResource.setResponseMimeType('application/javascript');
+         responseResource.setResponseCode(200);
+         responseResource.setReasonMessage('OK');
+         return responseResource;
 
-   32. }
-   33. if (event?.request.getRequestUrl() == 'scheme1://www.intercept.com/test-cc2.js') {
-   34. // Construct response data
-   35. responseResource.setResponseHeader([
-   36. {
-   37. headerKey: 'ResponseDataID',
-   38. headerValue: '0000000000001'
-   39. // Format: No more than 13 digits. Js ID, this field must be updated when Js is updated.
-   40. }]);
-   41. responseResource.setResponseData(this.jsData2);
-   42. responseResource.setResponseEncoding('utf-8');
-   43. responseResource.setResponseMimeType('application/javascript');
-   44. responseResource.setResponseCode(200);
-   45. responseResource.setReasonMessage('OK');
-   46. return responseResource;
-   47. }
-   48. return null;
-   49. })
+       }
+       if (event?.request.getRequestUrl() == 'scheme1://www.intercept.com/test-cc2.js') {
+         // Construct response data
+         responseResource.setResponseHeader([
+           {
+             headerKey: 'ResponseDataID',
+             headerValue: '0000000000001'
+             // Format: No more than 13 digits. Js ID, this field must be updated when Js is updated.
+           }]);
+         responseResource.setResponseData(this.jsData2);
+         responseResource.setResponseEncoding('utf-8');
+         responseResource.setResponseMimeType('application/javascript');
+         responseResource.setResponseCode(200);
+         responseResource.setReasonMessage('OK');
+         return responseResource;
+       }
+       return null;
+     })
    ```
-
-   [ByteCodeCache.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/ByteCodeCache.ets#L27-L75)
 
 案例三：调用Native接口 `int32\_t OH\_ArkWeb\_RegisterCustomSchemes(const char \*scheme, int32\_t option)`，实现自定义协议的JavaScript生成字节码缓存。通过网络拦截接口拦截Web组件发出的请求。示例代码请参考[拦截Web组件发起的网络请求](../harmonyos-guides/web-scheme-handler.md)。具体步骤如下：
 
 1. 注册三方协议配置时，传入 `ARKWEB\_SCHEME\_OPTION\_CODE\_CACHE\_ENABLED` 参数。
 
+   ```screen
+   // register Custom Schemes before web initialized
+   static napi_value RegisterCustomSchemes(napi_env env, napi_callback_info info) {
+       OH_LOG_INFO(LOG_APP, "register custom schemes");
+       OH_ArkWeb_RegisterCustomSchemes("custom", ARKWEB_SCHEME_OPTION_STANDARD | ARKWEB_SCHEME_OPTION_CORS_ENABLED | ARKWEB_SCHEME_OPTION_CODE_CACHE_ENABLED);
+       return nullptr;
+   }
    ```
-   1. // register Custom Schemes before web initialized
-   2. static napi_value RegisterCustomSchemes(napi_env env, napi_callback_info info) {
-   3. OH_LOG_INFO(LOG_APP, "register custom schemes");
-   4. OH_ArkWeb_RegisterCustomSchemes("custom", ARKWEB_SCHEME_OPTION_STANDARD | ARKWEB_SCHEME_OPTION_CORS_ENABLED | ARKWEB_SCHEME_OPTION_CODE_CACHE_ENABLED);
-   5. return nullptr;
-   6. }
-   ```
-
-   [nnapi\_init.cpp](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/cpp/nnapi_init.cpp#L2-L7)
 2. 设置ResponseDataID。
 
+   ```screen
+   // Read Rawfile Data On Worker Thread
+   void RawfileRequest::ReadRawfileDataOnWorkerThread() {
+       OH_LOG_INFO(LOG_APP, "read rawfile in worker thread.");
+       const struct UrlInfo {
+           std::string resource;
+           std::string mimeType;
+       } urlInfos[] = {{"local.html", "text/html"},
+                       {"local_script.js", "text/javascript"},
+                       {"test-cc.js", "text/javascript"}
+                       };
+
+       if (!resourceManager()) {
+           OH_LOG_ERROR(LOG_APP, "read rawfile error, resource manager is nullptr.");
+           return;
+       }
+
+       RawFile *rawfile = OH_ResourceManager_OpenRawFile(resourceManager(), rawfilePath().c_str());
+       if (!rawfile) {
+           OH_ArkWebResponse_SetStatus(response(), 404);
+       } else {
+           OH_ArkWebResponse_SetStatus(response(), 200);
+       }
+
+       for (auto &urlInfo : urlInfos) {
+           if (urlInfo.resource == rawfilePath()) {
+               OH_ArkWebResponse_SetMimeType(response(), urlInfo.mimeType.c_str());
+               break;
+           }
+       }
+
+       if ("test-cc.js" == rawfilePath()) {
+           OH_LOG_ERROR(LOG_APP, "OH_ArkWebResponse_SetHeaderByName ResponseDataID");
+           OH_ArkWebResponse_SetHeaderByName(response(), "ResponseDataID", "0000000000001", true);
+       }
+       OH_ArkWebResponse_SetCharset(response(), "UTF-8");
+   }
    ```
-   1. // Read Rawfile Data On Worker Thread
-   2. void RawfileRequest::ReadRawfileDataOnWorkerThread() {
-   3. OH_LOG_INFO(LOG_APP, "read rawfile in worker thread.");
-   4. const struct UrlInfo {
-   5. std::string resource;
-   6. std::string mimeType;
-   7. } urlInfos[] = {{"local.html", "text/html"},
-   8. {"local_script.js", "text/javascript"},
-   9. {"test-cc.js", "text/javascript"}
-   10. };
-
-   13. if (!resourceManager()) {
-   14. OH_LOG_ERROR(LOG_APP, "read rawfile error, resource manager is nullptr.");
-   15. return;
-   16. }
-
-   19. RawFile *rawfile = OH_ResourceManager_OpenRawFile(resourceManager(), rawfilePath().c_str());
-   20. if (!rawfile) {
-   21. OH_ArkWebResponse_SetStatus(response(), 404);
-   22. } else {
-   23. OH_ArkWebResponse_SetStatus(response(), 200);
-   24. }
-
-   27. for (auto &urlInfo : urlInfos) {
-   28. if (urlInfo.resource == rawfilePath()) {
-   29. OH_ArkWebResponse_SetMimeType(response(), urlInfo.mimeType.c_str());
-   30. break;
-   31. }
-   32. }
-
-   35. if ("test-cc.js" == rawfilePath()) {
-   36. OH_LOG_ERROR(LOG_APP, "OH_ArkWebResponse_SetHeaderByName ResponseDataID");
-   37. OH_ArkWebResponse_SetHeaderByName(response(), "ResponseDataID", "0000000000001", true);
-   38. }
-   39. OH_ArkWebResponse_SetCharset(response(), "UTF-8");
-   40. }
-   ```
-
-   [nnapi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/cpp/nnapi_init.cpp#L11-L50)
 3. 注册三方协议并设置SchemeHandler。
 
+   ```screen
+   // EntryAbility.ets
+   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+     // register CustomSchemes
+     testNapi.registerCustomSchemes();
+     // initializeWebEngine
+     webview.WebviewController.initializeWebEngine();
+     // set SchemeHandler。
+     testNapi.setSchemeHandler();
+   }
    ```
-   1. // EntryAbility.ets
-   2. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-   3. // register CustomSchemes
-   4. testNapi.registerCustomSchemes();
-   5. // initializeWebEngine
-   6. webview.WebviewController.initializeWebEngine();
-   7. // set SchemeHandler。
-   8. testNapi.setSchemeHandler();
-   9. }
-   ```
-
-   [SetSchemeHandler.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/SetSchemeHandler.ets#L8-L16)
 
    性能打点数据如下，getMessageData进程中的Avg Wall Duration为两次加载页面开始到结束的平均耗时：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/ibm9vYBzTWScB030zmlDnQ/zh-cn_image_0000002193851216.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/FBMC0TvkR8Ct73s4ga0cYA/zh-cn_image_0000002193851216.png "点击放大")
 
 **总结****（以拦截替换HTTP协议的JavaScript生成字节码缓存场景性能数据举例）**
 
@@ -1440,7 +1411,7 @@ ResponseData为JavaScript内容，ResponseDataID用于区分内容是否变更�
 
 页面加载前，离线资源免拦截注入会将图片、样式表和脚本资源注入内存缓存，节省首次加载的网络请求时间。
 
-说明
+**说明** 
 
 1. 开发者需创建一个离线Web组件，用于将资源注入内存缓存，以便其他Web组件加载对应的业务网页。
 2. 仅使用HTTP或HTTPS协议请求的资源可被注入进内存缓存。
@@ -1456,150 +1427,148 @@ ResponseData为JavaScript内容，ResponseDataID用于区分内容是否变更�
 
 案例一：直接加载Web页面
 
+```screen
+import { webview } from '@kit.ArkWeb';
+import { hiTraceMeter } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@Component
+struct Index {
+  controller: webview.WebviewController = new webview.WebviewController();
+
+  build() {
+    Column() {
+      // Load business web components at the right time. This example is the example of Button click trigger.
+      Button('加载页面')
+        .onClick(() => {
+          // Performance hit point
+          hiTraceMeter.startTrace('getMessageData', 1);
+          this.controller.loadUrl('https://www.example.com/b.html');
+        })
+      Web({ src: 'https://www.example.com/a.html', controller: this.controller })
+        .fileAccess(true)
+        .onPageEnd(() => {
+          // Performance hit point
+          hiTraceMeter.finishTrace('getMessageData', 1);
+        })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-2. import { hiTraceMeter } from '@kit.PerformanceAnalysisKit';
-
-4. @Entry
-5. @Component
-6. struct Index {
-7. controller: webview.WebviewController = new webview.WebviewController();
-
-10. build() {
-11. Column() {
-12. // Load business web components at the right time. This example is the example of Button click trigger.
-13. Button('加载页面')
-14. .onClick(() => {
-15. // Performance hit point
-16. hiTraceMeter.startTrace('getMessageData', 1);
-17. this.controller.loadUrl('https://www.example.com/b.html');
-18. })
-19. Web({ src: 'https://www.example.com/a.html', controller: this.controller })
-20. .fileAccess(true)
-21. .onPageEnd(() => {
-22. // Performance hit point
-23. hiTraceMeter.finishTrace('getMessageData', 1);
-24. })
-25. }
-26. }
-27. }
-```
-
-[LoadWebPage.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/LoadWebPage.ets#L2-L28)
 
 性能打点数据如下，getMessageData进程中的Duration为加载页面开始到结束的耗时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/75PCz3pzSaqPDKFzp0R1gw/zh-cn_image_0000002229336641.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/s6gXe7JwTrWhRyqJO32AaQ/zh-cn_image_0000002229336641.png)
 
 案例二：使用资源免拦截注入加载Web页面，请参考以下步骤：
 
 1. 创建资源配置
 
+   ```screen
+   import { webview } from '@kit.ArkWeb';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+
+   const DOMAIN = 0x0000;
+   const TAG = 'Sample';
+
+   export interface ResourceConfig {
+     urlList: Array<string>,
+     type: webview.OfflineResourceType,
+     responseHeaders: Array<Header>,
+     localPath: string,
+   }
+
+   export interface ExceptionResource {
+     console: string,
+     urlList: Array<string> | undefined | null;
+     type: webview.OfflineResourceType  | undefined | null,
+     responseHeaders: Array<Header> | undefined | null,
+     resource?: Uint8Array | undefined | null
+     localPath?: string,
+   }
+
+   export const baseURL: string = 'http://localhost:8083/resource/';
+   export const baseURL1: string = 'http://localhost:8083/resource/';
+
+   export const basicResources: Array<ResourceConfig> = [
+     {
+       localPath: "in_cache_middle.png",
+       urlList: [
+         baseURL,
+         baseURL + "request.png",
+         baseURL1 + "request.png",
+       ],
+       type: webview.OfflineResourceType.IMAGE,
+       responseHeaders: []
+     },
+     {
+       localPath: "in_cache.js",
+       urlList: [
+         baseURL,
+         baseURL + "request.js",
+         baseURL1 + "request.js"
+       ],
+       type: webview.OfflineResourceType.CLASSIC_JS,
+       responseHeaders: [
+         {headerKey: "Content-Type", headerValue: "text/javascript" },
+         {headerKey: "Cache-Control", headerValue: "max-age=100000" },
+       ]
+     },
+     {
+       localPath: "in_cache_module1.js",
+       urlList: [
+         baseURL + "request_module1.js",
+       ],
+       type: webview.OfflineResourceType.MODULE_JS,
+       responseHeaders: [
+         {headerKey: "Content-Type", headerValue: "application/javascript" },
+         {headerKey: "Access-Control-Allow-Origin" , headerValue: "*"},
+         {headerKey: "Cache-Control", headerValue: "max-age=100000" },
+       ]
+     },
+     {
+       localPath: "in_cache_module2.js",
+       urlList: [
+         baseURL + "request_module2.js",
+       ],
+       type: webview.OfflineResourceType.MODULE_JS,
+       responseHeaders: [
+         {headerKey: "Content-Type", headerValue: "application/javascript" },
+         {headerKey: "Access-Control-Allow-Origin" , headerValue: "*"},
+         {headerKey: "Cache-Control", headerValue: "max-age=100000" },
+       ]
+     },
+     {
+       localPath: "in_cache.css",
+       urlList: [
+         baseURL,
+         baseURL + "request.css",
+         baseURL1 + "request.css",
+       ],
+       type: webview.OfflineResourceType.CSS,
+       responseHeaders: [
+         {headerKey: "resource-Type", headerValue: "text/css" },
+         {headerKey: "Cache-Control", headerValue: "max-age=100000" },
+       ]
+     },
+   ];
    ```
-   1. import { webview } from '@kit.ArkWeb';
-
-   3. export interface ResourceConfig {
-   4. urlList: Array<string>,
-   5. type: webview.OfflineResourceType,
-   6. responseHeaders: Array<Header>,
-   7. localPath: string,
-   8. }
-
-   11. export interface ExceptionResource {
-   12. console: string,
-   13. urlList: Array<string> | undefined | null;
-   14. type: webview.OfflineResourceType  | undefined | null,
-   15. responseHeaders: Array<Header> | undefined | null,
-   16. resource?: Uint8Array | undefined | null
-   17. localPath?: string,
-   18. }
-
-   21. export const baseURL: string = 'http://localhost:8083/resource/';
-   22. export const baseURL1: string = 'http://localhost:8083/resource/';
-
-   25. export const basicResources: Array<ResourceConfig> = [
-   26. {
-   27. localPath: "in_cache_middle.png",
-   28. urlList: [
-   29. baseURL,
-   30. baseURL + "request.png",
-   31. baseURL1 + "request.png",
-   32. ],
-   33. type: webview.OfflineResourceType.IMAGE,
-   34. responseHeaders: []
-   35. },
-   36. {
-   37. localPath: "in_cache.js",
-   38. urlList: [
-   39. baseURL,
-   40. baseURL + "request.js",
-   41. baseURL1 + "request.js"
-   42. ],
-   43. type: webview.OfflineResourceType.CLASSIC_JS,
-   44. responseHeaders: [
-   45. {headerKey: "Content-Type", headerValue: "text/javascript" },
-   46. {headerKey: "Cache-Control", headerValue: "max-age=100000" },
-   47. ]
-   48. },
-   49. {
-   50. localPath: "in_cache_module1.js",
-   51. urlList: [
-   52. baseURL + "request_module1.js",
-   53. ],
-   54. type: webview.OfflineResourceType.MODULE_JS,
-   55. responseHeaders: [
-   56. {headerKey: "Content-Type", headerValue: "application/javascript" },
-   57. {headerKey: "Access-Control-Allow-Origin" , headerValue: "*"},
-   58. {headerKey: "Cache-Control", headerValue: "max-age=100000" },
-   59. ]
-   60. },
-   61. {
-   62. localPath: "in_cache_module2.js",
-   63. urlList: [
-   64. baseURL + "request_module2.js",
-   65. ],
-   66. type: webview.OfflineResourceType.MODULE_JS,
-   67. responseHeaders: [
-   68. {headerKey: "Content-Type", headerValue: "application/javascript" },
-   69. {headerKey: "Access-Control-Allow-Origin" , headerValue: "*"},
-   70. {headerKey: "Cache-Control", headerValue: "max-age=100000" },
-   71. ]
-   72. },
-   73. {
-   74. localPath: "in_cache.css",
-   75. urlList: [
-   76. baseURL,
-   77. baseURL + "request.css",
-   78. baseURL1 + "request.css",
-   79. ],
-   80. type: webview.OfflineResourceType.CSS,
-   81. responseHeaders: [
-   82. {headerKey: "resource-Type", headerValue: "text/css" },
-   83. {headerKey: "Cache-Control", headerValue: "max-age=100000" },
-   84. ]
-   85. },
-   86. ];
-   ```
-
-   [CreateResourceConfig.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/utils/CreateResourceConfig.ets#L2-L87)
 2. 读取配置并注入资源
 
+   ```screen
+   // Call the offline resource injection cache interface
+   export async function injectOfflineResource(controller: WebviewController, resourceMapArr: Array<webview.OfflineResourceMap>): Promise<void> {
+     try {
+       controller.injectOfflineResources(resourceMapArr);
+     } catch (err) {
+       hilog.error(DOMAIN, TAG, 'qqq injectOfflineResource error: ' + err.code + ' ' + err.message);
+     }
+   }
    ```
-   1. // Call the offline resource injection cache interface
-   2. export async function injectOfflineResource(controller: WebviewController, resourceMapArr: Array<webview.OfflineResourceMap>): Promise<void> {
-   3. try {
-   4. controller.injectOfflineResources(resourceMapArr);
-   5. } catch (err) {
-   6. console.error("qqq injectOfflineResource error: " + err.code + " " + err.message);
-   7. }
-   8. }
-   ```
-
-   [CreateResourceConfig.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/utils/CreateResourceConfig.ets#L91-L98)
 
    性能打点数据如下：getMessageData进程中的Duration表示加载页面的总耗时。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/4UAyrJv0Rim5YPl9-53BaA/zh-cn_image_0000002229451121.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/B90js_2fQcm-d2cUVv5rrA/zh-cn_image_0000002229451121.png)
 
 **总结**
 
@@ -1616,7 +1585,7 @@ ResponseData为JavaScript内容，ResponseDataID用于区分内容是否变更�
 
 资源拦截替换加速在资源拦截替换接口基础上新增支持了ArrayBuffer格式的入参，开发者无需在应用侧进行ArrayBuffer到String格式的转换，可直接使用ArrayBuffer格式的数据进行拦截替换。
 
-说明
+**说明** 
 
 本方案与原有接口使用相同，开发者只需在调用WebResourceResponse.setResponseData()接口时传入ArrayBuffer格式的数据。
 
@@ -1624,174 +1593,198 @@ ResponseData为JavaScript内容，ResponseDataID用于区分内容是否变更�
 
 案例一：使用字符串格式的数据做拦截替换
 
+```screen
+import { webview } from '@kit.ArkWeb';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN = 0x0000;
+const TAG = 'Sample';
+
+@Entry
+@Component
+struct Index {
+  controller: webview.WebviewController = new webview.WebviewController();
+  responseResource: WebResourceResponse = new WebResourceResponse();
+  // Here is the string format data.
+  resourceStr: string = 'xxxxxxxxxxxxxxx';
+
+  build() {
+    Column() {
+      Button('1 MB')
+        .fontSize(12)
+        .margin(5)
+        .onClick(() => {
+          const chunk = 'x'.repeat(1024);
+          let result = '';
+          for (let i = 0; i < 1000; i++) {
+            result += chunk;
+          }
+          this.resourceStr = JSON.stringify({
+            status: 200,
+            result: result,
+          });
+          hilog.info(DOMAIN, TAG, `Generated string data, size: ${this.resourceStr.length} bytes (${1000} KB)`);
+        })
+      Web({ src: $rawfile("intercept.html"), controller: this.controller })
+        .onConsole((event) => {
+          hilog.error(DOMAIN, TAG, `getMessageData ${event?.message?.getMessage()}`);
+          return true;
+        })
+        .onInterceptRequest(event => {
+          if (event) {
+            if (!event.request.getRequestUrl().startsWith('http://bridge')) {
+              return null;
+            }
+          }
+          // Use string format data for interception and replacement
+          this.responseResource.setResponseData(this.resourceStr);
+          this.responseResource.setResponseEncoding('utf-8');
+          this.responseResource.setResponseMimeType('text/json');
+          this.responseResource.setResponseCode(200);
+          this.responseResource.setReasonMessage('OK');
+          this.responseResource.setResponseHeader([{ headerKey: 'Access-Control-Allow-Origin', headerValue: '*' }]);
+          hilog.info(DOMAIN, TAG, 'getMessageData return reponse');
+          return this.responseResource;
+        })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-
-3. @Entry
-4. @Component
-5. struct Index {
-6. controller: webview.WebviewController = new webview.WebviewController();
-7. responseResource: WebResourceResponse = new WebResourceResponse();
-8. // Here is the string format data.
-9. resourceStr: string = 'xxxxxxxxxxxxxxx';
-
-11. build() {
-12. Column() {
-13. Web({ src: 'https:www.example.com/test.html', controller: this.controller })
-14. .onInterceptRequest(event => {
-15. if (event) {
-16. if (!event.request.getRequestUrl().startsWith('https://www.example.com/')) {
-17. return null;
-18. }
-19. }
-20. // Use string format data for interception and replacement
-21. this.responseResource.setResponseData(this.resourceStr);
-22. this.responseResource.setResponseEncoding('utf-8');
-23. this.responseResource.setResponseMimeType('text/json');
-24. this.responseResource.setResponseCode(200);
-25. this.responseResource.setReasonMessage('OK');
-26. this.responseResource.setResponseHeader([{ headerKey: 'Access-Control-Allow-Origin', headerValue: '*' }]);
-27. return this.responseResource;
-28. })
-29. }
-30. }
-31. }
-```
-
-[UseStringInterceptReplace.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/UseStringInterceptReplace.ets#L2-L32)
 
 资源替换耗时如图所示。getMessageData和someFunction的执行时间表示页面加载资源的耗时。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/X6YePpwIS6OJY-h0UfBI6Q/zh-cn_image_0000002194010852.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/yNDdsS5gRM-pTmtX0qIERw/zh-cn_image_0000002194010852.png "点击放大")
 
 案例二：使用ArrayBuffer格式的数据做拦截替换
 
+```screen
+import { webview } from '@kit.ArkWeb';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN = 0x0000;
+const TAG = 'Sample';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController()
+  scheme1: webview.WebCustomScheme = { schemeName: "imeituan", isSupportCORS: true, isSupportFetch: true }
+  responseResource: WebResourceResponse = new WebResourceResponse()
+  // Developer Custom Response Data
+  data: string = "";
+  buffer: ArrayBuffer = new ArrayBuffer(this.data.length);
+  usingLen: number = 1;
+
+  aboutToAppear(): void {
+    // Configure the Web to open the debugging mode
+    webview.WebviewController.setWebDebuggingAccess(true);
+
+    try {
+      webview.WebviewController.customizeSchemes([this.scheme1])
+      hilog.info(DOMAIN, TAG, `customizeSchemes`)
+    } catch (error) {
+      hilog.error(DOMAIN, TAG, error);
+    }
+
+    this.initArrayBufferData(1);
+  }
+
+  onPageShow(): void {
+
+  }
+
+  initStringData(size: Number): void {
+    switch (size){
+      case 1:
+        this.usingLen = 10; //10k
+        break;
+      case 2:
+        this.usingLen = 1024; //1M
+        break;
+      case 3:
+        this.usingLen = 1024 * 10; //10M
+        break;
+      default:
+        this.usingLen = 1;
+    }
+
+    let str: string = "";
+    let str_1k: string = "";
+    for (let i = 0 ; i < 1024; i++) {
+      str_1k = str_1k.concat("x");
+    }
+    for (let j = 0; j < this.usingLen; j++) {
+      str = str.concat(str_1k);
+    }
+
+    this.data = JSON.stringify({
+      status: 200,
+      result: str,
+    });
+    hilog.info(DOMAIN, TAG, 'init data length: ' + this.data.length);
+  }
+
+  // size - 1:10k, 2:1M, 3:10M
+  initArrayBufferData(size:Number): void {
+    this.initStringData(size);
+    hilog.error(DOMAIN, TAG, 'target string: ' + this.data);
+    this.buffer = new ArrayBuffer(this.data.length);
+    const uint8Array: Uint8Array = new Uint8Array(this.buffer);
+    for (let i = 0; i < this.data.length; i++) {
+      uint8Array[i] = this.data.charCodeAt(i);
+    }
+  }
+
+  build() {
+    Column() {
+      Button('set to 10K')
+        .onClick(() => {
+          this.initArrayBufferData(1);
+          hilog.info(DOMAIN, TAG, 'datalen set to length '+ this.buffer.byteLength);
+        })
+      Button('set to 1M')
+        .onClick(() => {
+          this.initArrayBufferData(2);
+          hilog.info(DOMAIN, TAG, 'datalen set to length '+ this.buffer.byteLength);
+        })
+      Button('set to 10M')
+        .onClick(() => {
+          this.initArrayBufferData(3);
+          hilog.info(DOMAIN, TAG, 'datalen set to length '+ this.buffer.byteLength);
+        })
+      Web({ src: $rawfile("intercept.html"), controller: this.controller })
+        .onConsole((event) => {
+          hilog.error(DOMAIN, TAG, `getMessageData ${event?.message?.getMessage()}`);
+          return true;
+        })
+        .onInterceptRequest((event) => {
+          if (event) {
+            hilog.error(DOMAIN, TAG, 'url:' + event.request.getRequestUrl());
+            // Block Page Request
+            if (!event.request.getRequestUrl().startsWith('http://bridge')) {
+              return null;
+            }
+          }
+          // Construct response data
+          // const str: string = buffer.from(this.buffer).toString();
+          hilog.error(DOMAIN, TAG, 'response data length: ' + this.data.length);
+          this.responseResource.setResponseData(this.buffer);
+          this.responseResource.setResponseEncoding('utf-8');
+          this.responseResource.setResponseMimeType('text/json');
+          this.responseResource.setResponseCode(200);
+          this.responseResource.setReasonMessage('OK');
+          this.responseResource.setResponseHeader([{ headerKey: 'Access-Control-Allow-Origin', headerValue: '*' }]);
+          hilog.info(DOMAIN, TAG, 'getMessageData return reponse');
+          return this.responseResource;
+        })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-
-3. @Entry
-4. @Component
-5. struct WebComponent {
-6. controller: webview.WebviewController = new webview.WebviewController()
-7. scheme1: webview.WebCustomScheme = { schemeName: "imeituan", isSupportCORS: true, isSupportFetch: true }
-8. responseResource: WebResourceResponse = new WebResourceResponse()
-9. // Developer Custom Response Data
-10. data: string = "";
-11. buffer: ArrayBuffer = new ArrayBuffer(this.data.length);
-12. usingLen: number = 1;
-
-14. aboutToAppear(): void {
-15. // Configure the Web to open the debugging mode
-16. webview.WebviewController.setWebDebuggingAccess(true);
-
-18. try {
-19. webview.WebviewController.customizeSchemes([this.scheme1])
-20. console.info(`customizeSchemes`)
-21. } catch (error) {
-22. console.error(error);
-23. }
-
-25. this.initArrayBufferData(1);
-26. }
-
-28. onPageShow(): void {
-
-30. }
-
-32. initStringData(size: Number): void {
-33. switch (size){
-34. case 1:
-35. this.usingLen = 10; //10k
-36. break;
-37. case 2:
-38. this.usingLen = 1024; //1M
-39. break;
-40. case 3:
-41. this.usingLen = 1024 * 10; //10M
-42. break;
-43. default:
-44. this.usingLen = 1;
-45. }
-
-47. let str: string = "";
-48. let str_1k: string = "";
-49. for (let i = 0 ; i < 1024; i++) {
-50. str_1k = str_1k.concat("x");
-51. }
-52. for (let j = 0; j < this.usingLen; j++) {
-53. str = str.concat(str_1k);
-54. }
-
-56. this.data = JSON.stringify({
-57. status: 200,
-58. result: str,
-59. });
-60. console.info("init data length: " + this.data.length);
-61. }
-
-63. // size - 1:10k, 2:1M, 3:10M
-64. initArrayBufferData(size:Number): void {
-65. this.initStringData(size);
-66. console.error("target string: " + this.data);
-67. this.buffer = new ArrayBuffer(this.data.length);
-68. const uint8Array: Uint8Array = new Uint8Array(this.buffer);
-69. for (let i = 0; i < this.data.length; i++) {
-70. uint8Array[i] = this.data.charCodeAt(i);
-71. }
-72. }
-
-74. build() {
-75. Column() {
-76. Button('set to 10K')
-77. .onClick(() => {
-78. this.initArrayBufferData(1);
-79. console.log("datalen set to length "+ this.buffer.byteLength);
-80. })
-81. Button('set to 1M')
-82. .onClick(() => {
-83. this.initArrayBufferData(2);
-84. console.log("datalen set to length "+ this.buffer.byteLength);
-85. })
-86. Button('set to 10M')
-87. .onClick(() => {
-88. this.initArrayBufferData(3);
-89. console.log("datalen set to length "+ this.buffer.byteLength);
-90. })
-91. Web({ src: $rawfile("intercept.html"), controller: this.controller })
-92. .onConsole((event) => {
-93. console.error(`ygz ${event?.message?.getMessage()}`);
-94. return true;
-95. })
-96. .onInterceptRequest((event) => {
-97. if (event) {
-98. console.error('url:' + event.request.getRequestUrl());
-99. // Block Page Request
-100. if (!event.request.getRequestUrl().startsWith('http://bridge')) {
-101. return null;
-102. }
-103. }
-104. // Construct response data
-105. // const str: string = buffer.from(this.buffer).toString();
-106. console.error("response data length: " + this.data.length);
-107. this.responseResource.setResponseData(this.buffer);
-108. this.responseResource.setResponseEncoding('utf-8');
-109. this.responseResource.setResponseMimeType('text/json');
-110. this.responseResource.setResponseCode(200);
-111. this.responseResource.setReasonMessage('OK');
-112. this.responseResource.setResponseHeader([{ headerKey: 'Access-Control-Allow-Origin', headerValue: '*' }]);
-113. console.info(`ygz return reponse`);
-114. return this.responseResource;
-115. })
-116. }
-117. }
-118. }
-```
-
-[UseArrayBufferInterceptReplace.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/UseArrayBufferInterceptReplace.ets#L2-L119)
 
 资源替换耗时如图所示。getMessageData和william someFunction的执行时间表示页面加载资源的耗时。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/_vq_G-ywTNK5nv-KH9A5yw/zh-cn_image_0000002229451125.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/7jid4pvaSqmZJtotXrQ1Tg/zh-cn_image_0000002229451125.png "点击放大")
 
 **总结**
 
@@ -1799,8 +1792,8 @@ ResponseData为JavaScript内容，ResponseDataID用于区分内容是否变更�
 
 | 页面加载方式 | 耗时(局限不同设备和场景，数据仅供参考) | 说明 |
 | --- | --- | --- |
-| 使用String格式的数据做拦截替换 | 34ms | Web组件内部数据传输需要转换为ArrayBuffer，这会增加数据处理步骤和启动耗时 |
-| 使用ArrayBuffer格式的数据做拦截替换 | 13ms | 接口支持ArrayBuffer格式，优化了数据传输方式，减少转换和传输时间 |
+| 使用String格式的数据做拦截替换 | 15ms | Web组件内部数据传输需要转换为ArrayBuffer，这会增加数据处理步骤和启动耗时 |
+| 使用ArrayBuffer格式的数据做拦截替换 | 6ms | 接口支持ArrayBuffer格式，优化了数据传输方式，减少转换和传输时间 |
 
 ## JSBridge
 
@@ -1810,11 +1803,11 @@ ResponseData为JavaScript内容，ResponseDataID用于区分内容是否变更�
 
 应用使用ArkTS或C++语言混合开发，或应用架构接近小程序架构，自带C++环境，推荐使用ArkWeb在Native侧提供的ArkWeb\_ControllerAPI和ArkWeb\_ComponentAPI实现JSBridge功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/tyuqHKsjQziDMClkLEupWQ/zh-cn_image_0000002458691281.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/rH1IfZjqT5CAKH5FHNQmEw/zh-cn_image_0000002458691281.png "点击放大")
 
 上图展示了小程序的一般架构，逻辑层使用自带的JavaScript运行时，现有C++环境通过Native接口直接与视图层（ArkWeb渲染器）通信，无需返回ArkTS环境调用JSBridge接口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/EvGWft13TOysbgGlTx5gEg/zh-cn_image_0000002229451137.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/qnBwANICT82qzbrgDHr7Rw/zh-cn_image_0000002229451137.png "点击放大")
 
 Native JSBridge方案解决ArkTS环境的冗余切换，允许回调在非UI线程上报，避免UI阻塞。
 
@@ -1824,463 +1817,461 @@ Native JSBridge方案解决ArkTS环境的冗余切换，允许回调在非UI线�
 
 应用侧代码：
 
+```screen
+import { webview } from '@kit.ArkWeb';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN = 0x0000;
+const TAG = 'Sample';
+
+@Entry
+@Component
+struct WebComponent {
+  webviewController: webview.WebviewController = new webview.WebviewController();
+
+  aboutToAppear(): void {
+    // Configure the Web to open the debugging mode
+    webview.WebviewController.setWebDebuggingAccess(true);
+  }
+
+  build() {
+    Column() {
+      Button('runJavaScript')
+        .onClick(() => {
+          hilog.info(DOMAIN, TAG, '现在时间是:' + new Date().getTime());
+          // When the front-end page function has no parameters, delete the param.
+          this.webviewController.runJavaScript('htmlTest(param)');
+        })
+      Button('runJavaScriptCodePassed')
+        .onClick(() => {
+          // Pass runJavaScript side code method
+          this.webviewController.runJavaScript(`function changeColor(){document.getElementById('text').style.color = 'red'}`);
+        })
+      Web({ src: $rawfile('index.html'), controller: this.webviewController })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-
-3. @Entry
-4. @Component
-5. struct WebComponent {
-6. webviewController: webview.WebviewController = new webview.WebviewController();
-
-8. aboutToAppear(): void {
-9. // Configure the Web to open the debugging mode
-10. webview.WebviewController.setWebDebuggingAccess(true);
-11. }
-
-13. build() {
-14. Column() {
-15. Button('runJavaScript')
-16. .onClick(() => {
-17. console.info('现在时间是:' + new Date().getTime());
-18. // When the front-end page function has no parameters, delete the param.
-19. this.webviewController.runJavaScript('htmlTest(param)');
-20. })
-21. Button('runJavaScriptCodePassed')
-22. .onClick(() => {
-23. // Pass runJavaScript side code method
-24. this.webviewController.runJavaScript(`function changeColor(){document.getElementById('text').style.color = 'red'}`);
-25. })
-26. Web({ src: $rawfile('index.html'), controller: this.webviewController })
-27. }
-28. }
-29. }
-```
-
-[JsBridgeOfArkTS.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/JsBridgeOfArkTS.ets#L2-L30)
 
 前端页面代码：
 
+```html
+<!DOCTYPE html>
+<html>
+<body>
+<button type="button" onclick="callArkTS()">Click Me!</button>
+<h1 id="text">这是一个测试信息，默认字体为黑色，调用runJavaScript方法后字体为绿色，调用runJavaScriptCodePassed方法后字体为红色</h1>
+<script>
+    var param = "param: JavaScript Hello World!";
+    function htmlTest(param) {
+      document.getElementById('text').style.color = 'green';
+      document.getElementById('text').innerHTML = '现在时间：'+new Date().getTime()
+      console.log(param);
+    }
+    function htmlTest() {
+      document.getElementById('text').style.color = 'green';
+      document.getElementById('text').innerHTML = '现在时间：'+new Date().getTime();
+    }
+    function callArkTS() {
+      changeColor();
+    }
+</script>
+</body>
+</html>
 ```
-1. <!DOCTYPE html>
-2. <html>
-3. <body>
-4. <button type="button" onclick="callArkTS()">Click Me!</button>
-5. <h1 id="text">这是一个测试信息，默认字体为黑色，调用runJavaScript方法后字体为绿色，调用runJavaScriptCodePassed方法后字体为红色</h1>
-6. <script>
-7. var param = "param: JavaScript Hello World!";
-8. function htmlTest(param) {
-9. document.getElementById('text').style.color = 'green';
-10. document.getElementById('text').innerHTML = '现在时间：'+new Date().getTime()
-11. console.log(param);
-12. }
-13. function htmlTest() {
-14. document.getElementById('text').style.color = 'green';
-15. document.getElementById('text').innerHTML = '现在时间：'+new Date().getTime();
-16. }
-17. function callArkTS() {
-18. changeColor();
-19. }
-20. </script>
-21. </body>
-22. </html>
-```
-
-[test.html](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/resources/rawfile/test.html#L2-L23)
 
 点击runJavaScript按钮后，触发h5页面的htmlTest方法，页面内容将变更为当前时间戳。如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/2GiOUUUZRq-rLPnM3l-brA/zh-cn_image_0000002420463960.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/JyjCABMuTMCKdJKSP8nbDw/zh-cn_image_0000002420463960.png "点击放大")
 
-经过多轮测试，从点击ArkTS侧的Button到触发H5侧的htmlTest方法，耗时7到9毫秒。
+经过多轮测试，从点击ArkTS侧的Button到触发H5侧的htmlTest()方法，耗时7到9毫秒。
 
 案例二：使用NDK接口实现JSBridge通信。
 
 应用侧代码：
 
+```screen
+import testNapi from 'libentry.so';
+import { webview } from '@kit.ArkWeb';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN = 0x0000;
+const TAG = 'Sample';
+
+class testObj {
+  constructor() {
+  }
+
+  test(): string {
+    hilog.info(DOMAIN, TAG, 'ArkUI Web Component');
+    return "ArkUI Web Component";
+  }
+
+  toString(): void {
+    hilog.info(DOMAIN, TAG, 'Web Component toString');
+  }
+}
+
+@Entry
+@Component
+struct Index {
+  webTag: string = 'ArkWeb1';
+  controller: webview.WebviewController = new webview.WebviewController(this.webTag);
+  @State testObjtest: testObj = new testObj();
+
+  aboutToAppear(): void {
+    hilog.info(DOMAIN, TAG, 'aboutToAppear');
+    // init web ndk
+    testNapi.nativeWebInit(this.webTag);
+  }
+
+  build() {
+    Column() {
+      Row() {
+        Button('runJS hello')
+          .fontSize(12)
+          .onClick(() => {
+            hilog.info(DOMAIN, TAG, 'start:---->'+new Date().getTime());
+            testNapi.runJavaScript(this.webTag, "runJSRetStr(\"" + "hello" + "\")");
+          })
+      }.height('20%')
+
+      Row() {
+        Web({ src: $rawfile('runJS.html'), controller: this.controller })
+          .javaScriptAccess(true)
+          .fileAccess(true)
+          .onControllerAttached(() => {
+            hilog.error(DOMAIN, TAG, 'ndk onControllerAttached webId: ' + this.controller.getWebId());
+          })
+      }.height('80%')
+    }
+  }
+}
 ```
-1. import testNapi from 'libentry.so';
-2. import { webview } from '@kit.ArkWeb';
-
-4. class testObj {
-5. constructor() {
-6. }
-
-8. test(): string {
-9. console.log('ArkUI Web Component');
-10. return "ArkUI Web Component";
-11. }
-
-13. toString(): void {
-14. console.log('Web Component toString');
-15. }
-16. }
-
-18. @Entry
-19. @Component
-20. struct Index {
-21. webTag: string = 'ArkWeb1';
-22. controller: webview.WebviewController = new webview.WebviewController(this.webTag);
-23. @State testObjtest: testObj = new testObj();
-
-25. aboutToAppear(): void {
-26. console.info("aboutToAppear");
-27. // init web ndk
-28. testNapi.nativeWebInit(this.webTag);
-29. }
-
-31. build() {
-32. Column() {
-33. Row() {
-34. Button('runJS hello')
-35. .fontSize(12)
-36. .onClick(() => {
-37. console.log('start:---->'+new Date().getTime());
-38. testNapi.runJavaScript(this.webTag, "runJSRetStr(\"" + "hello" + "\")");
-39. })
-40. }.height('20%')
-
-42. Row() {
-43. Web({ src: $rawfile('runJS.html'), controller: this.controller })
-44. .javaScriptAccess(true)
-45. .fileAccess(true)
-46. .onControllerAttached(() => {
-47. console.error("ndk onControllerAttached webId: " + this.controller.getWebId());
-48. })
-49. }.height('80%')
-50. }
-51. }
-52. }
-```
-
-[JsBridgeOfNdk.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/JsBridgeOfNdk.ets#L2-L53)
 
 hello.cpp作为应用C++侧业务逻辑代码：
 
+```screen
+// Registration objects and methods, sending scripts to callbacks after H5 execution, parsing instances passed from the side of the storage application and other code logics are not displayed here, and developers realize them by themselves according to their own business scenarios.
+// Send the JS script to the H5 side for execution
+#include "napi/native_api.h"
+#include <bits/alltypes.h>
+#include <memory>
+#include <string>
+#include <sys/types.h>
+#include <thread>
+
+#include "hilog/log.h"
+#include "web/arkweb_interface.h"
+#include "jsbridge_object.h"
+
+constexpr unsigned int LOG_PRINT_DOMAIN = 0xFF00;
+std::shared_ptr<JSBridgeObject> jsbridge_object_ptr = nullptr;
+static ArkWeb_ControllerAPI *controller = nullptr;
+static ArkWeb_ComponentAPI *component = nullptr;
+
+static void RunJavaScriptCallback(const char *webTag, const char *result, void *userData) {
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk RunJavaScriptCallback webTag:%{public}s", webTag);
+    if (!userData) {
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk RunJavaScriptCallback userData is nullptr");
+        return;
+    }
+    std::weak_ptr<JSBridgeObject> jsb_weak_ptr = *static_cast<std::weak_ptr<JSBridgeObject> *>(userData);
+    if (auto jsb_ptr = jsb_weak_ptr.lock()) {
+        jsb_ptr->RunJavaScriptCallback(result);
+    } else {
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+                     "ndk RunJavaScriptCallback jsb_weak_ptr lock failed");
+    }
+}
+
+static void ProxyMethod1(const char *webTag, const ArkWeb_JavaScriptBridgeData *dataArray, size_t arraySize, void *userData) {
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk ProxyMethod1 webTag:%{public}s", webTag);
+    if (!userData) {
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk ProxyMethod1 userData is nullptr");
+        return;
+    }
+    std::weak_ptr<JSBridgeObject> jsb_weak_ptr = *static_cast<std::weak_ptr<JSBridgeObject> *>(userData);
+    if (auto jsb_ptr = jsb_weak_ptr.lock()) {
+        jsb_ptr->ProxyMethod1(dataArray, arraySize);
+    } else {
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk ProxyMethod1 jsb_weak_ptr lock failed");
+    }
+}
+
+static void ProxyMethod2(const char *webTag, const ArkWeb_JavaScriptBridgeData *dataArray, size_t arraySize, void *userData) {
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk ProxyMethod2 webTag:%{public}s", webTag);
+    if (!userData) {
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk ProxyMethod2 userData is nullptr");
+        return;
+    }
+    std::weak_ptr<JSBridgeObject> jsb_weak_ptr = *static_cast<std::weak_ptr<JSBridgeObject> *>(userData);
+
+    std::string jsCode = "runJSRetStr()";
+    ArkWeb_JavaScriptObject object = {(uint8_t *)jsCode.c_str(), jsCode.size(),
+                                     &JSBridgeObject::StaticRunJavaScriptCallback,
+                                     static_cast<void *>(jsbridge_object_ptr->GetWeakPtr())};
+    controller->runJavaScript(webTag, &object);
+
+    if (auto jsb_ptr = jsb_weak_ptr.lock()) {
+        jsb_ptr->ProxyMethod2(dataArray, arraySize);
+    } else {
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk ProxyMethod2 jsb_weak_ptr lock failed");
+    }
+}
+
+void ValidCallback(const char *webTag, void *userData) {
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk ValidCallback webTag: %{public}s", webTag);
+    if (!userData) {
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk ValidCallback userData is nullptr");
+        return;
+    }
+    std::weak_ptr<JSBridgeObject> jsb_weak_ptr = *static_cast<std::weak_ptr<JSBridgeObject> *>(userData);
+    if (auto jsb_ptr = jsb_weak_ptr.lock()) {
+        jsb_ptr->SaySomething("ValidCallback");
+    } else {
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk ValidCallback jsb_weak_ptr lock failed");
+    }
+    
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk RegisterJavaScriptProxy begin");
+    ArkWeb_ProxyMethod method1 = {"method1", ProxyMethod1, static_cast<void *>(jsbridge_object_ptr->GetWeakPtr())};
+    ArkWeb_ProxyMethod method2 = {"method2", ProxyMethod2, static_cast<void *>(jsbridge_object_ptr->GetWeakPtr())};
+    ArkWeb_ProxyMethod methodList[2] = {method1, method2};
+    ArkWeb_ProxyObject proxyObject = {"ndkProxy", methodList, 2};
+    controller->registerJavaScriptProxy(webTag, &proxyObject);
+
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk RegisterJavaScriptProxy end");
+}
+
+void LoadStartCallback(const char *webTag, void *userData) {
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk LoadStartCallback webTag: %{public}s", webTag);
+    if (!userData) {
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk LoadStartCallback userData is nullptr");
+        return;
+    }
+    std::weak_ptr<JSBridgeObject> jsb_weak_ptr = *static_cast<std::weak_ptr<JSBridgeObject> *>(userData);
+    if (auto jsb_ptr = jsb_weak_ptr.lock()) {
+        jsb_ptr->SaySomething("LoadStartCallback");
+    } else {
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk LoadStartCallback jsb_weak_ptr lock failed");
+    }
+}
+
+void LoadEndCallback(const char *webTag, void *userData) {
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk LoadEndCallback webTag: %{public}s", webTag);
+    if (!userData) {
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk LoadEndCallback userData is nullptr");
+        return;
+    }
+    std::weak_ptr<JSBridgeObject> jsb_weak_ptr = *static_cast<std::weak_ptr<JSBridgeObject> *>(userData);
+    if (auto jsb_ptr = jsb_weak_ptr.lock()) {
+        jsb_ptr->SaySomething("LoadEndCallback");
+    } else {
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk LoadEndCallback jsb_weak_ptr lock failed");
+    }
+}
+
+void DestroyCallback(const char *webTag, void *userData) {
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk DestroyCallback webTag: %{public}s", webTag);
+    if (!userData) {
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk DestroyCallback userData is nullptr");
+        return;
+    }
+    std::weak_ptr<JSBridgeObject> jsb_weak_ptr = *static_cast<std::weak_ptr<JSBridgeObject> *>(userData);
+    if (auto jsb_ptr = jsb_weak_ptr.lock()) {
+        jsb_ptr->SaySomething("DestroyCallback");
+    } else {
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk DestroyCallback jsb_weak_ptr lock failed");
+    }
+}
+
+void SetComponentCallback(ArkWeb_ComponentAPI * component, const char* webTagValue) {
+    if (!ARKWEB_MEMBER_MISSING(component, onControllerAttached)) {
+        component->onControllerAttached(webTagValue, ValidCallback,
+                                        static_cast<void *>(jsbridge_object_ptr->GetWeakPtr()));
+    } else {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb", "component onControllerAttached func not exist");
+    }
+
+    if (!ARKWEB_MEMBER_MISSING(component, onPageBegin)) {
+        component->onPageBegin(webTagValue, LoadStartCallback,
+                                        static_cast<void *>(jsbridge_object_ptr->GetWeakPtr()));
+    } else {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb", "component onPageBegin func not exist");
+    }
+
+    if (!ARKWEB_MEMBER_MISSING(component, onPageEnd)) {
+        component->onPageEnd(webTagValue, LoadEndCallback,
+                                        static_cast<void *>(jsbridge_object_ptr->GetWeakPtr()));
+    } else {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb", "component onPageEnd func not exist");
+    }
+
+    if (!ARKWEB_MEMBER_MISSING(component, onDestroy)) {
+        component->onDestroy(webTagValue, DestroyCallback,
+                                        static_cast<void *>(jsbridge_object_ptr->GetWeakPtr()));
+    } else {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb", "component onDestroy func not exist");
+    }
+}
+
+static napi_value NativeWebInit(napi_env env, napi_callback_info info) {
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk NativeWebInit start");
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    size_t webTagSize = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &webTagSize);
+    char *webTagValue = new (std::nothrow) char[webTagSize + 1];
+    size_t webTagLength = 0;
+    napi_get_value_string_utf8(env, args[0], webTagValue, webTagSize + 1, &webTagLength);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb", "ndk NativeWebInit webTag:%{public}s", webTagValue);
+    
+    jsbridge_object_ptr = std::make_shared<JSBridgeObject>(webTagValue);
+    if (jsbridge_object_ptr)
+        jsbridge_object_ptr->Init();
+
+    controller = reinterpret_cast<ArkWeb_ControllerAPI *>(OH_ArkWeb_GetNativeAPI(ARKWEB_NATIVE_CONTROLLER));
+    component = reinterpret_cast<ArkWeb_ComponentAPI *>(OH_ArkWeb_GetNativeAPI(ARKWEB_NATIVE_COMPONENT));
+    SetComponentCallback(component, webTagValue);
+
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk NativeWebInit end");
+    delete[] webTagValue;
+    return nullptr;
+}
+
+static napi_value RunJavaScript(napi_env env, napi_callback_info info) {
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    size_t webTagSize = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &webTagSize);
+    char *webTagValue = new (std::nothrow) char[webTagSize + 1];
+    size_t webTagLength = 0;
+    napi_get_value_string_utf8(env, args[0], webTagValue, webTagSize + 1, &webTagLength);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk OH_NativeArkWeb_RunJavaScript webTag:%{public}s",
+                 webTagValue);
+    
+    size_t bufferSize = 0;
+    napi_get_value_string_utf8(env, args[1], nullptr, 0, &bufferSize);
+    char *jsCode = new (std::nothrow) char[bufferSize + 1];
+    size_t byteLength = 0;
+    napi_get_value_string_utf8(env, args[1], jsCode, bufferSize + 1, &byteLength);
+
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+                 "ndk OH_NativeArkWeb_RunJavaScript jsCode len:%{public}zu", strlen(jsCode));
+    
+    ArkWeb_JavaScriptObject object = {(uint8_t *)jsCode, bufferSize, &JSBridgeObject::StaticRunJavaScriptCallback,
+                                     static_cast<void *>(jsbridge_object_ptr->GetWeakPtr())};
+    controller->runJavaScript(webTagValue, &object);
+    delete[] webTagValue;
+    delete[] jsCode;
+    return nullptr;
+}
+
+EXTERN_C_START
+static napi_value Init(napi_env env, napi_value exports) {
+    napi_property_descriptor desc[] = {
+        {"nativeWebInit", nullptr, NativeWebInit, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"runJavaScript", nullptr, RunJavaScript, nullptr, nullptr, nullptr, napi_default, nullptr},
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    return exports;
+}
+EXTERN_C_END
+
+static napi_module demoModule = {
+    .nm_version = 1,
+    .nm_flags = 0,
+    .nm_filename = nullptr,
+    .nm_register_func = Init,
+    .nm_modname = "entry",
+    .nm_priv = ((void *)0),
+    .reserved = {0},
+};
+
+extern "C" __attribute__((constructor)) void RegisterEntryModule(void) { napi_module_register(&demoModule); }
 ```
-1. // Registration objects and methods, sending scripts to callbacks after H5 execution, parsing instances passed from the side of the storage application and other code logics are not displayed here, and developers realize them by themselves according to their own business scenarios.
-2. // Send the JS script to the H5 side for execution
-3. #include "napi/native_api.h"
-4. #include <bits/alltypes.h>
-5. #include <memory>
-6. #include <string>
-7. #include <sys/types.h>
-8. #include <thread>
-
-10. #include "hilog/log.h"
-11. #include "web/arkweb_interface.h"
-12. #include "jsbridge_object.h"
-
-14. constexpr unsigned int LOG_PRINT_DOMAIN = 0xFF00;
-15. std::shared_ptr<JSBridgeObject> jsbridge_object_ptr = nullptr;
-16. static ArkWeb_ControllerAPI *controller = nullptr;
-17. static ArkWeb_ComponentAPI *component = nullptr;
-
-19. static void RunJavaScriptCallback(const char *webTag, const char *result, void *userData) {
-20. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk RunJavaScriptCallback webTag:%{public}s", webTag);
-21. if (!userData) {
-22. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk RunJavaScriptCallback userData is nullptr");
-23. return;
-24. }
-25. std::weak_ptr<JSBridgeObject> jsb_weak_ptr = *static_cast<std::weak_ptr<JSBridgeObject> *>(userData);
-26. if (auto jsb_ptr = jsb_weak_ptr.lock()) {
-27. jsb_ptr->RunJavaScriptCallback(result);
-28. } else {
-29. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
-30. "ndk RunJavaScriptCallback jsb_weak_ptr lock failed");
-31. }
-32. }
-
-34. static void ProxyMethod1(const char *webTag, const ArkWeb_JavaScriptBridgeData *dataArray, size_t arraySize, void *userData) {
-35. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk ProxyMethod1 webTag:%{public}s", webTag);
-36. if (!userData) {
-37. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk ProxyMethod1 userData is nullptr");
-38. return;
-39. }
-40. std::weak_ptr<JSBridgeObject> jsb_weak_ptr = *static_cast<std::weak_ptr<JSBridgeObject> *>(userData);
-41. if (auto jsb_ptr = jsb_weak_ptr.lock()) {
-42. jsb_ptr->ProxyMethod1(dataArray, arraySize);
-43. } else {
-44. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk ProxyMethod1 jsb_weak_ptr lock failed");
-45. }
-46. }
-
-48. static void ProxyMethod2(const char *webTag, const ArkWeb_JavaScriptBridgeData *dataArray, size_t arraySize, void *userData) {
-49. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk ProxyMethod2 webTag:%{public}s", webTag);
-50. if (!userData) {
-51. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk ProxyMethod2 userData is nullptr");
-52. return;
-53. }
-54. std::weak_ptr<JSBridgeObject> jsb_weak_ptr = *static_cast<std::weak_ptr<JSBridgeObject> *>(userData);
-
-56. std::string jsCode = "runJSRetStr()";
-57. ArkWeb_JavaScriptObject object = {(uint8_t *)jsCode.c_str(), jsCode.size(),
-58. &JSBridgeObject::StaticRunJavaScriptCallback,
-59. static_cast<void *>(jsbridge_object_ptr->GetWeakPtr())};
-60. controller->runJavaScript(webTag, &object);
-
-62. if (auto jsb_ptr = jsb_weak_ptr.lock()) {
-63. jsb_ptr->ProxyMethod2(dataArray, arraySize);
-64. } else {
-65. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk ProxyMethod2 jsb_weak_ptr lock failed");
-66. }
-67. }
-
-69. void ValidCallback(const char *webTag, void *userData) {
-70. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk ValidCallback webTag: %{public}s", webTag);
-71. if (!userData) {
-72. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk ValidCallback userData is nullptr");
-73. return;
-74. }
-75. std::weak_ptr<JSBridgeObject> jsb_weak_ptr = *static_cast<std::weak_ptr<JSBridgeObject> *>(userData);
-76. if (auto jsb_ptr = jsb_weak_ptr.lock()) {
-77. jsb_ptr->SaySomething("ValidCallback");
-78. } else {
-79. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk ValidCallback jsb_weak_ptr lock failed");
-80. }
-
-82. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk RegisterJavaScriptProxy begin");
-83. ArkWeb_ProxyMethod method1 = {"method1", ProxyMethod1, static_cast<void *>(jsbridge_object_ptr->GetWeakPtr())};
-84. ArkWeb_ProxyMethod method2 = {"method2", ProxyMethod2, static_cast<void *>(jsbridge_object_ptr->GetWeakPtr())};
-85. ArkWeb_ProxyMethod methodList[2] = {method1, method2};
-86. ArkWeb_ProxyObject proxyObject = {"ndkProxy", methodList, 2};
-87. controller->registerJavaScriptProxy(webTag, &proxyObject);
-
-89. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk RegisterJavaScriptProxy end");
-90. }
-
-92. void LoadStartCallback(const char *webTag, void *userData) {
-93. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk LoadStartCallback webTag: %{public}s", webTag);
-94. if (!userData) {
-95. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk LoadStartCallback userData is nullptr");
-96. return;
-97. }
-98. std::weak_ptr<JSBridgeObject> jsb_weak_ptr = *static_cast<std::weak_ptr<JSBridgeObject> *>(userData);
-99. if (auto jsb_ptr = jsb_weak_ptr.lock()) {
-100. jsb_ptr->SaySomething("LoadStartCallback");
-101. } else {
-102. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk LoadStartCallback jsb_weak_ptr lock failed");
-103. }
-104. }
-
-106. void LoadEndCallback(const char *webTag, void *userData) {
-107. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk LoadEndCallback webTag: %{public}s", webTag);
-108. if (!userData) {
-109. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk LoadEndCallback userData is nullptr");
-110. return;
-111. }
-112. std::weak_ptr<JSBridgeObject> jsb_weak_ptr = *static_cast<std::weak_ptr<JSBridgeObject> *>(userData);
-113. if (auto jsb_ptr = jsb_weak_ptr.lock()) {
-114. jsb_ptr->SaySomething("LoadEndCallback");
-115. } else {
-116. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk LoadEndCallback jsb_weak_ptr lock failed");
-117. }
-118. }
-
-120. void DestroyCallback(const char *webTag, void *userData) {
-121. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk DestroyCallback webTag: %{public}s", webTag);
-122. if (!userData) {
-123. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk DestroyCallback userData is nullptr");
-124. return;
-125. }
-126. std::weak_ptr<JSBridgeObject> jsb_weak_ptr = *static_cast<std::weak_ptr<JSBridgeObject> *>(userData);
-127. if (auto jsb_ptr = jsb_weak_ptr.lock()) {
-128. jsb_ptr->SaySomething("DestroyCallback");
-129. } else {
-130. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk DestroyCallback jsb_weak_ptr lock failed");
-131. }
-132. }
-
-134. void SetComponentCallback(ArkWeb_ComponentAPI * component, const char* webTagValue) {
-135. if (!ARKWEB_MEMBER_MISSING(component, onControllerAttached)) {
-136. component->onControllerAttached(webTagValue, ValidCallback,
-137. static_cast<void *>(jsbridge_object_ptr->GetWeakPtr()));
-138. } else {
-139. OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb", "component onControllerAttached func not exist");
-140. }
-
-142. if (!ARKWEB_MEMBER_MISSING(component, onPageBegin)) {
-143. component->onPageBegin(webTagValue, LoadStartCallback,
-144. static_cast<void *>(jsbridge_object_ptr->GetWeakPtr()));
-145. } else {
-146. OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb", "component onPageBegin func not exist");
-147. }
-
-149. if (!ARKWEB_MEMBER_MISSING(component, onPageEnd)) {
-150. component->onPageEnd(webTagValue, LoadEndCallback,
-151. static_cast<void *>(jsbridge_object_ptr->GetWeakPtr()));
-152. } else {
-153. OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb", "component onPageEnd func not exist");
-154. }
-
-156. if (!ARKWEB_MEMBER_MISSING(component, onDestroy)) {
-157. component->onDestroy(webTagValue, DestroyCallback,
-158. static_cast<void *>(jsbridge_object_ptr->GetWeakPtr()));
-159. } else {
-160. OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb", "component onDestroy func not exist");
-161. }
-162. }
-
-164. static napi_value NativeWebInit(napi_env env, napi_callback_info info) {
-165. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk NativeWebInit start");
-166. size_t argc = 1;
-167. napi_value args[1] = {nullptr};
-168. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-169. size_t webTagSize = 0;
-170. napi_get_value_string_utf8(env, args[0], nullptr, 0, &webTagSize);
-171. char *webTagValue = new (std::nothrow) char[webTagSize + 1];
-172. size_t webTagLength = 0;
-173. napi_get_value_string_utf8(env, args[0], webTagValue, webTagSize + 1, &webTagLength);
-174. OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ArkWeb", "ndk NativeWebInit webTag:%{public}s", webTagValue);
-
-176. jsbridge_object_ptr = std::make_shared<JSBridgeObject>(webTagValue);
-177. if (jsbridge_object_ptr)
-178. jsbridge_object_ptr->Init();
-
-180. controller = reinterpret_cast<ArkWeb_ControllerAPI *>(OH_ArkWeb_GetNativeAPI(ARKWEB_NATIVE_CONTROLLER));
-181. component = reinterpret_cast<ArkWeb_ComponentAPI *>(OH_ArkWeb_GetNativeAPI(ARKWEB_NATIVE_COMPONENT));
-182. SetComponentCallback(component, webTagValue);
-
-184. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk NativeWebInit end");
-185. delete[] webTagValue;
-186. return nullptr;
-187. }
-
-189. static napi_value RunJavaScript(napi_env env, napi_callback_info info) {
-190. size_t argc = 2;
-191. napi_value args[2] = {nullptr};
-192. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-
-194. size_t webTagSize = 0;
-195. napi_get_value_string_utf8(env, args[0], nullptr, 0, &webTagSize);
-196. char *webTagValue = new (std::nothrow) char[webTagSize + 1];
-197. size_t webTagLength = 0;
-198. napi_get_value_string_utf8(env, args[0], webTagValue, webTagSize + 1, &webTagLength);
-199. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk OH_NativeArkWeb_RunJavaScript webTag:%{public}s",
-200. webTagValue);
-
-202. size_t bufferSize = 0;
-203. napi_get_value_string_utf8(env, args[1], nullptr, 0, &bufferSize);
-204. char *jsCode = new (std::nothrow) char[bufferSize + 1];
-205. size_t byteLength = 0;
-206. napi_get_value_string_utf8(env, args[1], jsCode, bufferSize + 1, &byteLength);
-
-208. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
-209. "ndk OH_NativeArkWeb_RunJavaScript jsCode len:%{public}zu", strlen(jsCode));
-
-211. ArkWeb_JavaScriptObject object = {(uint8_t *)jsCode, bufferSize, &JSBridgeObject::StaticRunJavaScriptCallback,
-212. static_cast<void *>(jsbridge_object_ptr->GetWeakPtr())};
-213. controller->runJavaScript(webTagValue, &object);
-214. delete[] webTagValue;
-215. delete[] jsCode;
-216. return nullptr;
-217. }
-
-219. EXTERN_C_START
-220. static napi_value Init(napi_env env, napi_value exports) {
-221. napi_property_descriptor desc[] = {
-222. {"nativeWebInit", nullptr, NativeWebInit, nullptr, nullptr, nullptr, napi_default, nullptr},
-223. {"runJavaScript", nullptr, RunJavaScript, nullptr, nullptr, nullptr, napi_default, nullptr},
-224. };
-225. napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
-226. return exports;
-227. }
-228. EXTERN_C_END
-
-230. static napi_module demoModule = {
-231. .nm_version = 1,
-232. .nm_flags = 0,
-233. .nm_filename = nullptr,
-234. .nm_register_func = Init,
-235. .nm_modname = "entry",
-236. .nm_priv = ((void *)0),
-237. .reserved = {0},
-238. };
-
-240. extern "C" __attribute__((constructor)) void RegisterEntryModule(void) { napi_module_register(&demoModule); }
-```
-
-[hello.cpp](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/cpp/hello.cpp#L2-L241)
 
 Native侧业务代码entry/src/main/cpp/jsbridge\_object.h和entry/src/main/cpp/jsbridge\_object.cpp详见[应用侧与前端页面的相互调用(C/C++)](../harmonyos-guides/arkweb-ndk-jsbridge.md)。
 
 runJS.html作为应用前端页面：
 
+```html
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>run javascript demo</title>
+</head>
+<body>
+<h1>run JavaScript Ext demo</h1>
+<p id="webDemo"></p>
+<br>
+<button type="button" style="height:30px;width:200px" onclick="testNdkProxyObjMethod1()">test ndk method1 ! </button>
+<br>
+<br>
+<button type="button" style="height:30px;width:200px" onclick="testNdkProxyObjMethod2()">test ndk method2 ! </button>
+<br>
+</body>
+<script type="text/javascript">
+    function testNdkProxyObjMethod1() {
+      // Verify whether the ndk method has been registered in window
+      if (window.ndkProxy == undefined) {
+        document.getElementById("webDemo").innerHTML = "ndkProxy undefined";
+        return "objName undefined";
+      }
+      if (window.ndkProxy.method1 == undefined) {
+        document.getElementById("webDemo").innerHTML = "ndkProxy method1 undefined";
+        return "objName  test undefined";
+      }
+      if (window.ndkProxy.method2 == undefined) {
+        document.getElementById("webDemo").innerHTML = "ndkProxy method2 undefined";
+        return "objName  test undefined";
+      }
+      // Call the method1 method of ndk registered to window and display the results back to the p tag.
+      var retStr = window.ndkProxy.method1("hello", "world", [1.2, -3.4, 123.456], ["Saab", "Volvo", "BMW", undefined], 1.23456, 123789, true, false, 0,  undefined);
+      document.getElementById("webDemo").innerHTML  = "ndkProxy and method1 is ok, " + retStr;
+    }
+    function testNdkProxyObjMethod2() {
+      // Verify whether the ndk method has been registered in window
+      if (window.ndkProxy == undefined) {
+        document.getElementById("webDemo").innerHTML = "ndkProxy undefined";
+        return "objName undefined";
+      }
+      if (window.ndkProxy.method1 == undefined) {
+        document.getElementById("webDemo").innerHTML = "ndkProxy method1 undefined";
+        return "objName  test undefined";
+      }
+      if (window.ndkProxy.method2 == undefined) {
+        document.getElementById("webDemo").innerHTML = "ndkProxy method2 undefined";
+        return "objName  test undefined";
+      }
+      var student = {
+        name:"zhang",
+        sex:"man",
+        age:25
+      };
+      var cars = [student, 456, false, 4.567];
+      let params = "[\"{\\\"scope\\\"]";
+      // Call the method2 method of ndk registration to the windows and display the results back to the p tag
+      var retStr = window.ndkProxy.method2("hello", "world", false, cars, params);
+      document.getElementById("webDemo").innerHTML  = "ndkProxy and method2 is ok, " + retStr;
+    }
+    function runJSRetStr(data) {
+      const d = new Date();
+      let time = d.getTime();
+      document.getElementById("webDemo").innerHTML = new Date().getTime();
+      return JSON.stringify(time);
+    }
+</script>
+</html>
 ```
-1. <!DOCTYPE html>
-2. <html lang="en-gb">
-3. <head>
-4. <meta name="viewport" content="width=device-width, initial-scale=1.0">
-5. <title>run javascript demo</title>
-6. </head>
-7. <body>
-8. <h1>run JavaScript Ext demo</h1>
-9. <p id="webDemo"></p>
-10. <br>
-11. <button type="button" style="height:30px;width:200px" onclick="testNdkProxyObjMethod1()">test ndk method1 ! </button>
-12. <br>
-13. <br>
-14. <button type="button" style="height:30px;width:200px" onclick="testNdkProxyObjMethod2()">test ndk method2 ! </button>
-15. <br>
-16. </body>
-17. <script type="text/javascript">
-18. function testNdkProxyObjMethod1() {
-19. // Verify whether the ndk method has been registered in window
-20. if (window.ndkProxy == undefined) {
-21. document.getElementById("webDemo").innerHTML = "ndkProxy undefined";
-22. return "objName undefined";
-23. }
-24. if (window.ndkProxy.method1 == undefined) {
-25. document.getElementById("webDemo").innerHTML = "ndkProxy method1 undefined";
-26. return "objName  test undefined";
-27. }
-28. if (window.ndkProxy.method2 == undefined) {
-29. document.getElementById("webDemo").innerHTML = "ndkProxy method2 undefined";
-30. return "objName  test undefined";
-31. }
-32. // Call the method1 method of ndk registered to window and display the results back to the p tag.
-33. var retStr = window.ndkProxy.method1("hello", "world", [1.2, -3.4, 123.456], ["Saab", "Volvo", "BMW", undefined], 1.23456, 123789, true, false, 0,  undefined);
-34. document.getElementById("webDemo").innerHTML  = "ndkProxy and method1 is ok, " + retStr;
-35. }
-36. function testNdkProxyObjMethod2() {
-37. // Verify whether the ndk method has been registered in window
-38. if (window.ndkProxy == undefined) {
-39. document.getElementById("webDemo").innerHTML = "ndkProxy undefined";
-40. return "objName undefined";
-41. }
-42. if (window.ndkProxy.method1 == undefined) {
-43. document.getElementById("webDemo").innerHTML = "ndkProxy method1 undefined";
-44. return "objName  test undefined";
-45. }
-46. if (window.ndkProxy.method2 == undefined) {
-47. document.getElementById("webDemo").innerHTML = "ndkProxy method2 undefined";
-48. return "objName  test undefined";
-49. }
-50. var student = {
-51. name:"zhang",
-52. sex:"man",
-53. age:25
-54. };
-55. var cars = [student, 456, false, 4.567];
-56. let params = "[\"{\\\"scope\\\"]";
-57. // Call the method2 method of ndk registration to the windows and display the results back to the p tag
-58. var retStr = window.ndkProxy.method2("hello", "world", false, cars, params);
-59. document.getElementById("webDemo").innerHTML  = "ndkProxy and method2 is ok, " + retStr;
-60. }
-61. function runJSRetStr(data) {
-62. const d = new Date();
-63. let time = d.getTime();
-64. document.getElementById("webDemo").innerHTML = new Date().getTime();
-65. return JSON.stringify(time);
-66. }
-67. </script>
-68. </html>
-```
 
-[runJS.html](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/resources/rawfile/runJS.html#L2-L69)
+点击“runJS hello”按钮后，触发H5页面的runJSRetStr()方法，页面内容更新为当前时间戳。
 
-点击“runJS hello”按钮后，触发H5页面的`runJSRetStr`方法，页面内容更新为当前时间戳。
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/ypMBk9M0SG2fvVGnFn1sYg/zh-cn_image_0000002229336597.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/cLf4bMRzTn29-EY5jPWxQA/zh-cn_image_0000002229336597.png "点击放大")
 
 经过多轮测试，从点击ArkTS侧的Button到触发H5侧的runJSRetStr方法，耗时2到6毫秒。
 
@@ -2296,7 +2287,7 @@ JSBridge优化方案适用于ArkWeb应用与前端网页通信，开发者可根
 1. 应用使用ArkTS语言开发，推荐使用ArkWeb的runJavaScriptExt接口实现应用侧与前端页面的通信，并使用registerJavaScriptProxy接口实现前端页面与应用侧的通信。
 2. 应用使用ArkTS和C++语言混合开发，或应用结构类似于小程序架构，自带C++环境，推荐使用ArkWeb在NDK侧提供的OH\_NativeArkWeb\_RunJavaScript和OH\_NativeArkWeb\_RegisterJavaScriptProxy接口实现JSBridge功能。
 
-说明
+**说明** 
 
 开发者需根据当前业务区分是否存在C++侧环境（较为显著标志点为当前应用是否使用了Node API技术进行开发，若是则该应用具备C++侧环境）。 具备C++侧环境的应用开发，可使用ArkWeb提供的NDK侧JSBridge接口。 不具备C++侧环境的应用开发，可使用ArkWeb侧JSBridge接口。
 
@@ -2312,205 +2303,204 @@ JSBridge优化方案适用于ArkWeb应用与前端网页通信，开发者可根
 
 1. 只注册同步函数
 
+   ```screen
+   import { webview } from '@kit.ArkWeb';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+
+   const DOMAIN = 0x0000;
+   const TAG = 'Sample';
+
+   // Define ETS side objects and functions
+   class TestObj {
+     constructor() {}
+     test(testStr:string): string {
+       let start: number = Date.now();
+       // Simulate time-consuming operations
+       for(let i = 0; i < 500000; i++) {}
+       let end: number = Date.now();
+       hilog.info(DOMAIN, TAG, 'objName.test start: ' + start);
+       return 'objName.test Sync function took ' + (end - start) + 'ms';
+     }
+     asyncTestBool(testBol:boolean): Promise<string> {
+       return new Promise((resolve, reject) => {
+         let start: number = Date.now();
+         // Simulate time-consuming operation (asynchronous)
+         setTimeout(() => {
+           for(let i = 0; i < 500000; i++) {}
+           let end: number = Date.now();
+           hilog.info(DOMAIN, TAG, 'objAsyncName.asyncTestBool start: ' + start);
+           resolve('objName.asyncTestBool Async function took ' + (end - start) + 'ms');
+         }, 0); // Use 0 ms delay to simulate an asynchronous operation that starts immediately
+       });
+     }
+   }
+
+   class WebObj {
+     constructor() {}
+     webTest(): string {
+       let start: number = Date.now();
+       // Simulate time-consuming operations
+       for(let i = 0; i < 500000; i++) {}
+       let end: number = Date.now();
+       hilog.info(DOMAIN, TAG, 'objTestName.webTest start: ' + start);
+       return 'objTestName.webTest Sync function took ' + (end - start) + 'ms';
+     }
+     webString(): string {
+       let start: number = Date.now();
+       // Simulate time-consuming operations
+       for(let i = 0; i < 500000; i++) {}
+       let end: number = Date.now();
+       hilog.info(DOMAIN, TAG, 'objTestName.webString start: ' + start);
+       return 'objTestName.webString Sync function took ' + (end - start) + 'ms';
+     }
+   }
+
+   class AsyncObj {
+     constructor() {
+     }
+
+     asyncTest(): Promise<string> {
+       return new Promise((resolve, reject) => {
+         let start: number = Date.now();
+         // Simulate time-consuming operation (asynchronous)
+         setTimeout(() => {
+           for (let i = 0; i < 500000; i++) {
+           }
+           let end: number = Date.now();
+           hilog.info(DOMAIN, TAG, 'objAsyncName.asyncTest start: ' + start);
+           resolve('objAsyncName.asyncTest Async function took ' + (end - start) + 'ms');
+         }, 0); // Use 0 ms delay to simulate an asynchronous operation that starts immediately
+       });
+     }
+
+     asyncString(testStr:string): Promise<string> {
+       return new Promise((resolve, reject) => {
+         let start: number = Date.now();
+         // Simulate time-consuming operation (asynchronous)
+         setTimeout(() => {
+           for (let i = 0; i < 500000; i++) {
+           }
+           let end: number = Date.now();
+           hilog.info(DOMAIN, TAG, 'objAsyncName.asyncString start: ' + start);
+           resolve('objAsyncName.asyncString Async function took ' + (end - start) + 'ms');
+         }, 0); // Use 0 millisecond delay to simulate immediate asynchronous operation
+       });
+     }
+   }
+
+   @Entry
+   @Component
+   struct Index {
+     controller: webview.WebviewController = new webview.WebviewController();
+     @State testObjtest: TestObj = new TestObj();
+     @State webTestObj: WebObj = new WebObj();
+     @State asyncTestObj: AsyncObj = new AsyncObj();
+     build() {
+       Column() {
+         Button('refresh')
+           .onClick(()=>{
+             try{
+               this.controller.refresh();
+             } catch (error) {
+               hilog.error(DOMAIN, TAG, `ErrorCode:${(error as BusinessError).code},Message:${(error as BusinessError).message}`);
+             }
+           })
+         Button('Register JavaScript To Window')
+           .onClick(()=>{
+             try {
+               // Only register synchronization functions
+               this.controller.registerJavaScriptProxy(this.webTestObj,"objTestName",["webTest","webString"]);
+             } catch (error) {
+               hilog.error(DOMAIN, TAG, `ErrorCode:${(error as BusinessError).code},Message:${(error as BusinessError).message}`);
+             }
+           })
+         Web({src: $rawfile('index.html'),controller: this.controller}).javaScriptAccess(true)
+       }
+     }
+   }
    ```
-   1. import { webview } from '@kit.ArkWeb';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
-   3. // Define ETS side objects and functions
-   4. class TestObj {
-   5. constructor() {}
-   6. test(testStr:string): string {
-   7. let start: number = Date.now();
-   8. // Simulate time-consuming operations
-   9. for(let i = 0; i < 500000; i++) {}
-   10. let end: number = Date.now();
-   11. console.log('objName.test start: ' + start);
-   12. return 'objName.test Sync function took ' + (end - start) + 'ms';
-   13. }
-   14. asyncTestBool(testBol:boolean): Promise<string> {
-   15. return new Promise((resolve, reject) => {
-   16. let start: number = Date.now();
-   17. // Simulate time-consuming operation (asynchronous)
-   18. setTimeout(() => {
-   19. for(let i = 0; i < 500000; i++) {}
-   20. let end: number = Date.now();
-   21. console.log('objAsyncName.asyncTestBool start: ' + start);
-   22. resolve('objName.asyncTestBool Async function took ' + (end - start) + 'ms');
-   23. }, 0); // Use 0 ms delay to simulate an asynchronous operation that starts immediately
-   24. });
-   25. }
-   26. }
-
-   28. class WebObj {
-   29. constructor() {}
-   30. webTest(): string {
-   31. let start: number = Date.now();
-   32. // Simulate time-consuming operations
-   33. for(let i = 0; i < 500000; i++) {}
-   34. let end: number = Date.now();
-   35. console.log('objTestName.webTest start: ' + start);
-   36. return 'objTestName.webTest Sync function took ' + (end - start) + 'ms';
-   37. }
-   38. webString(): string {
-   39. let start: number = Date.now();
-   40. // Simulate time-consuming operations
-   41. for(let i = 0; i < 500000; i++) {}
-   42. let end: number = Date.now();
-   43. console.log('objTestName.webString start: ' + start);
-   44. return 'objTestName.webString Sync function took ' + (end - start) + 'ms';
-   45. }
-   46. }
-
-   48. class AsyncObj {
-   49. constructor() {
-   50. }
-
-   52. asyncTest(): Promise<string> {
-   53. return new Promise((resolve, reject) => {
-   54. let start: number = Date.now();
-   55. // Simulate time-consuming operation (asynchronous)
-   56. setTimeout(() => {
-   57. for (let i = 0; i < 500000; i++) {
-   58. }
-   59. let end: number = Date.now();
-   60. console.log('objAsyncName.asyncTest start: ' + start);
-   61. resolve('objAsyncName.asyncTest Async function took ' + (end - start) + 'ms');
-   62. }, 0); // Use 0 ms delay to simulate an asynchronous operation that starts immediately
-   63. });
-   64. }
-
-   66. asyncString(testStr:string): Promise<string> {
-   67. return new Promise((resolve, reject) => {
-   68. let start: number = Date.now();
-   69. // Simulate time-consuming operation (asynchronous)
-   70. setTimeout(() => {
-   71. for (let i = 0; i < 500000; i++) {
-   72. }
-   73. let end: number = Date.now();
-   74. console.log('objAsyncName.asyncString start: ' + start);
-   75. resolve('objAsyncName.asyncString Async function took ' + (end - start) + 'ms');
-   76. }, 0); // Use 0 millisecond delay to simulate immediate asynchronous operation
-   77. });
-   78. }
-   79. }
-
-   81. @Entry
-   82. @Component
-   83. struct Index {
-   84. controller: webview.WebviewController = new webview.WebviewController();
-   85. @State testObjtest: TestObj = new TestObj();
-   86. @State webTestObj: WebObj = new WebObj();
-   87. @State asyncTestObj: AsyncObj = new AsyncObj();
-   88. build() {
-   89. Column() {
-   90. Button('refresh')
-   91. .onClick(()=>{
-   92. try{
-   93. this.controller.refresh();
-   94. } catch (error) {
-   95. console.error(`ErrorCode:${(error as BusinessError).code},Message:${(error as BusinessError).message}`);
-   96. }
-   97. })
-   98. Button('Register JavaScript To Window')
-   99. .onClick(()=>{
-   100. try {
-   101. // Only register synchronization functions
-   102. this.controller.registerJavaScriptProxy(this.webTestObj,"objTestName",["webTest","webString"]);
-   103. } catch (error) {
-   104. console.error(`ErrorCode:${(error as BusinessError).code},Message:${(error as BusinessError).message}`);
-   105. }
-   106. })
-   107. Web({src: $rawfile('index.html'),controller: this.controller}).javaScriptAccess(true)
-   108. }
-   109. }
-   110. }
-   ```
-
-   [RegisterSyncFunction.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/RegisterSyncFunction.ets#L2-L111)
 2. H5侧调用JSBridge函数
 
+   ```html
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Document</title>
+   </head>
+   <body>
+   <button type="button" onclick="htmlTest()"> Click Me!</button>
+   <p id="demo"></p>
+   <p id="webDemo"></p>
+   <p id="asyncDemo"></p>
+   </body>
+   <script type="text/javascript">
+       async function htmlTest() {
+         document.getElementById("demo").innerHTML = '测试开始:' + new Date().getTime() + '\n';
+         const time1 = new Date().getTime();
+         objTestName.webString();
+         const time2 = new Date().getTime();
+         objAsyncName.asyncString();
+         const time3 = new Date().getTime();
+         objName.asyncTestBool();
+         const time4 = new Date().getTime();
+         objName.test();
+         const time5 = new Date().getTime();
+         objTestName.webTest();
+         const time6 = new Date().getTime();
+         objAsyncName.asyncTest();
+         const time7 = new Date().getTime();
+         const result = [
+           'objTestName.webString()耗时：'+ (time2 - time1),
+           'objAsyncName.asyncString()耗时：'+ (time3 - time2),
+           'objName.asyncTestBool()耗时：'+ (time4 - time3),
+           'objName.test()耗时：'+ (time5 - time4),
+           'objTestName.webTest()耗时：'+ (time6 - time5),
+           'objAsyncName.asyncTest()耗时：'+ (time7 - time6)
+         ]
+         document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + '\n' + result.join('\n');
+       }
+   </script>
+   </html>
    ```
-   1. <!DOCTYPE html>
-   2. <html lang="en">
-   3. <head>
-   4. <meta charset="UTF-8">
-   5. <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   6. <title>Document</title>
-   7. </head>
-   8. <body>
-   9. <button type="button" onclick="htmlTest()"> Click Me!</button>
-   10. <p id="demo"></p>
-   11. <p id="webDemo"></p>
-   12. <p id="asyncDemo"></p>
-   13. </body>
-   14. <script type="text/javascript">
-   15. async function htmlTest() {
-   16. document.getElementById("demo").innerHTML = '测试开始:' + new Date().getTime() + '\n';
-   17. const time1 = new Date().getTime();
-   18. objTestName.webString();
-   19. const time2 = new Date().getTime();
-   20. objAsyncName.asyncString();
-   21. const time3 = new Date().getTime();
-   22. objName.asyncTestBool();
-   23. const time4 = new Date().getTime();
-   24. objName.test();
-   25. const time5 = new Date().getTime();
-   26. objTestName.webTest();
-   27. const time6 = new Date().getTime();
-   28. objAsyncName.asyncTest();
-   29. const time7 = new Date().getTime();
-   30. const result = [
-   31. 'objTestName.webString()耗时：'+ (time2 - time1),
-   32. 'objAsyncName.asyncString()耗时：'+ (time3 - time2),
-   33. 'objName.asyncTestBool()耗时：'+ (time4 - time3),
-   34. 'objName.test()耗时：'+ (time5 - time4),
-   35. 'objTestName.webTest()耗时：'+ (time6 - time5),
-   36. 'objAsyncName.asyncTest()耗时：'+ (time7 - time6)
-   37. ]
-   38. document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + '\n' + result.join('\n');
-   39. }
-   40. </script>
-   41. </html>
-   ```
 
-   [demo.html](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/resources/rawfile/demo.html#L2-L42)
+案例二：使用registerJavaScriptProxy()或 javaScriptProxy()注册异步函数或异步同步共存函数。H5侧调用JSBridge函数时，建议避免使用不推荐的用法。
 
-案例二：使用 `registerJavaScriptProxy` 或 `javaScriptProxy` 注册异步函数或异步同步共存函数。H5 侧调用 JSBridge 函数时，建议避免使用不推荐的用法。
+```screen
+Button('refresh')
+  .onClick(()=>{
+    try{
+      this.controller.refresh();
+    } catch (error) {
+      hilog.error(DOMAIN, TAG, `ErrorCode:${(error as BusinessError).code},Message:${(error as BusinessError).message}`);
+    }
+  })
+Button('Register JavaScript To Window')
+  .onClick(()=>{
+    try {
+      // Only register synchronization functions
+      this.controller.registerJavaScriptProxy(this.webTestObj,"objTestName",["webTest","webString"]);
+    } catch (error) {
+      hilog.error(DOMAIN, TAG, `ErrorCode:${(error as BusinessError).code},Message:${(error as BusinessError).message}`);
+    }
+  })
+Web({src: $rawfile('index.html'),controller: this.controller}).javaScriptAccess(true)
 
+// Registration by javaScriptProxy
+// javaScriptProxy only supports the registration of one object. If you need to register multiple objects, please use registerJavaScriptProxy.
+Web({src: $rawfile('index.html'),controller: this.controller})
+ .javaScriptAccess(true)
+ .javaScriptProxy({
+   object: this.testObjtest,
+   name:"objName",
+   methodList: ["test","toString"],
+   // Specify the list of asynchronous functions
+   asyncMethodList: ["test","toString"],
+   controller: this.controller
+ })
 ```
-1. Button('refresh')
-2. .onClick(()=>{
-3. try{
-4. this.controller.refresh();
-5. } catch (error) {
-6. console.error(`ErrorCode:${(error as BusinessError).code},Message:${(error as BusinessError).message}`);
-7. }
-8. })
-9. Button('Register JavaScript To Window')
-10. .onClick(()=>{
-11. try {
-12. // Only register synchronization functions
-13. this.controller.registerJavaScriptProxy(this.webTestObj,"objTestName",["webTest","webString"]);
-14. } catch (error) {
-15. console.error(`ErrorCode:${(error as BusinessError).code},Message:${(error as BusinessError).message}`);
-16. }
-17. })
-18. Web({src: $rawfile('index.html'),controller: this.controller}).javaScriptAccess(true)
-
-20. // Registration by javaScriptProxy
-21. // javaScriptProxy only supports the registration of one object. If you need to register multiple objects, please use registerJavaScriptProxy.
-22. Web({src: $rawfile('index.html'),controller: this.controller})
-23. .javaScriptAccess(true)
-24. .javaScriptProxy({
-25. object: this.testObjtest,
-26. name:"objName",
-27. methodList: ["test","toString"],
-28. // Specify the list of asynchronous functions
-29. asyncMethodList: ["test","toString"],
-30. controller: this.controller
-31. })
-```
-
-[RegisterJavaScriptProxy.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/ets/pages/RegisterJavaScriptProxy.ets#L91-L121)
 
 **总结**
 
@@ -2521,9 +2511,9 @@ JSBridge优化方案适用于ArkWeb应用与前端网页通信，开发者可根
 | 同步方法 | 1398ms，2707ms，2705ms | 同步函数调用会阻塞JavaScript线程 |
 | 异步方法 | 2ms，2ms，4ms | 异步函数调用不阻塞JavaScript线程 |
 
-运行数据显示，`async`异步方法在JavaScript单线程任务队列中不会长时间占用，因为它们不需要等待结果。而同步方法则需要等待ArkTS侧主线程同步执行后才能返回结果。
+运行数据显示，async异步方法在JavaScript单线程任务队列中不会长时间占用，因为它们不需要等待结果。而同步方法则需要等待ArkTS侧主线程同步执行后才能返回结果。
 
-说明
+**说明** 
 
 JSBridge接口在注册时，即会根据注册调用的接口决定其调用方式（同步/异步）。开发者需根据当前业务区分， 是否将其注册为异步函数。
 
@@ -2534,68 +2524,66 @@ JSBridge接口在注册时，即会根据注册调用的接口决定其调用方
 
 附 NDK 接口实现 JSBridge 通信（C++ 侧注册异步函数）：
 
+```screen
+// Define the JSBridge function
+static void ProxyMethod1(const char* webTag, void* userData) {
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "Method1 webTag :%{public}s",webTag);
+}
+
+static void ProxyMethod2(const char* webTag, void* userData) {
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "Method2 webTag :%{public}s",webTag);
+}
+
+static void ProxyMethod3(const char* webTag, void* userData) {
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "Method3 webTag :%{public}s",webTag);
+}
+
+void RegisterCallback(const char *webTag) {
+    int myUserData = 100;
+    //Create function method structure
+    ArkWeb_ProxyMethod m1 = {
+        .methodName = "method1",
+        .callback = ProxyMethod1,
+        .userData = (void *)&myUserData
+    };
+    ArkWeb_ProxyMethod m2 = {
+        .methodName = "method2",
+        .callback = ProxyMethod2,
+        .userData = (void *)&myUserData
+    };
+    ArkWeb_ProxyMethod m3 = {
+        .methodName = "method3",
+        .callback = ProxyMethod3,
+        .userData = (void *)&myUserData
+    };
+    ArkWeb_ProxyMethod methodList[2] = {m1,m2};
+    
+    //Create a JSBridge object structure
+    ArkWeb_ProxyObject obj = {
+        .objName = "ndkProxy",
+        .methodList = methodList,
+        .size = 2
+    };
+    // Get the ArkWeb_Controller API structure
+    ArkWeb_AnyNativeAPI* apis = OH_ArkWeb_GetNativeAPI(ArkWeb_NativeAPIVariantKind::ARKWEB_NATIVE_CONTROLLER);
+    ArkWeb_ControllerAPI* ctrlApi = reinterpret_cast<ArkWeb_ControllerAPI*>(apis);
+
+        // Call the registration interface, registration function
+        ctrlApi->registerJavaScriptProxy(webTag, &obj);
+    
+    ArkWeb_ProxyMethod asyncMethodList[1] = {m3};
+    ArkWeb_ProxyObject obj2 = {
+        .objName = "ndkProxy",
+    .methodList = asyncMethodList,
+    .size = 1
+    };
+    ctrlApi->registerAsyncJavaScriptProxy(webTag, &obj2);
+}
 ```
-1. // Define the JSBridge function
-2. static void ProxyMethod1(const char* webTag, void* userData) {
-3. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "Method1 webTag :%{public}s",webTag);
-4. }
-
-6. static void ProxyMethod2(const char* webTag, void* userData) {
-7. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "Method2 webTag :%{public}s",webTag);
-8. }
-
-10. static void ProxyMethod3(const char* webTag, void* userData) {
-11. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "Method3 webTag :%{public}s",webTag);
-12. }
-
-14. void RegisterCallback(const char *webTag) {
-15. int myUserData = 100;
-16. //Create function method structure
-17. ArkWeb_ProxyMethod m1 = {
-18. .methodName = "method1",
-19. .callback = ProxyMethod1,
-20. .userData = (void *)&myUserData
-21. };
-22. ArkWeb_ProxyMethod m2 = {
-23. .methodName = "method2",
-24. .callback = ProxyMethod2,
-25. .userData = (void *)&myUserData
-26. };
-27. ArkWeb_ProxyMethod m3 = {
-28. .methodName = "method3",
-29. .callback = ProxyMethod3,
-30. .userData = (void *)&myUserData
-31. };
-32. ArkWeb_ProxyMethod methodList[2] = {m1,m2};
-
-34. //Create a JSBridge object structure
-35. ArkWeb_ProxyObject obj = {
-36. .objName = "ndkProxy",
-37. .methodList = methodList,
-38. .size = 2
-39. };
-40. // Get the ArkWeb_Controller API structure
-41. ArkWeb_AnyNativeAPI* apis = OH_ArkWeb_GetNativeAPI(ArkWeb_NativeAPIVariantKind::ARKWEB_NATIVE_CONTROLLER);
-42. ArkWeb_ControllerAPI* ctrlApi = reinterpret_cast<ArkWeb_ControllerAPI*>(apis);
-
-44. // Call the registration interface, registration function
-45. ctrlApi->registerJavaScriptProxy(webTag, &obj);
-
-47. ArkWeb_ProxyMethod asyncMethodList[1] = {m3};
-48. ArkWeb_ProxyObject obj2 = {
-49. .objName = "ndkProxy",
-50. .methodList = asyncMethodList,
-51. .size = 1
-52. };
-53. ctrlApi->registerAsyncJavaScriptProxy(webTag, &obj2);
-54. }
-```
-
-[DefineJSBridge.cpp](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/LoadPerformanceInWeb/entry/src/main/cpp/DefineJSBridge.cpp#L2-L55)
 
 ## 同层渲染
 
-同层渲染是一种优化技术，用于提高Web页面的渲染性能。同层渲染会将位于同一个图层的元素一起渲染，以减少重绘和重排的次数，从而提高页面的渲染效率。关于同层渲染的内容，可以参考[使用同层渲染在Web组件上渲染原生组件](bpta-render-web-using-same-layer-render.md)。
+同层渲染是一种优化技术，用于提高Web页面的渲染性能。同层渲染会将位于同一个图层的元素一起渲染，以减少重绘和重排的次数，从而提高页面的渲染效率。关于同层渲染的内容，可以参考[使用同层渲染在Web组件上渲染原生组件](../harmonyos-guides/same-layer-rendering-native-component.md#使用同层渲染)。
 
 ## 总结
 

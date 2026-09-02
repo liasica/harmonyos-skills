@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-kit-guid
 title: Scan Kit（统一扫码服务）
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:40+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3b168045c338d8ea19178168a7d611353cc2c233b6467c396505fe5f0c79b261
+scraped_at: 2026-09-02T14:50:19+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:2a55d563ee277ec52a70fb97fbcc8384b72a2274610a970e878beecf1e4add36
 ---
 
 * **[Scan Kit简介](scan-introduction.md)**
@@ -16,4 +16,5 @@ content_hash: sha256:3b168045c338d8ea19178168a7d611353cc2c233b6467c396505fe5f0c7
 * **[图像识码](scan-imagerecognition.md)**
 * **[码图生成](scan-generate.md)**
 * **[Scan Kit常见问题](scan-faq.md)**
+* **[Scan Kit术语](scan-glossary.md)**
 * **[个人数据处理说明](scan-personal-data.md)**

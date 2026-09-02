@@ -3,36 +3,33 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: Chip
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > Chip
 category: harmonyos-references
-scraped_at: 2026-04-29T13:52:57+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e54ab33f8991ab649eab1a21a2b28c3fb293baf421bbdd6283c08587dad6bcaf
+scraped_at: 2026-09-02T15:01:08+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:6c54e687cbbf5c74f8b15211b01a12b03ec9f29c7f3d525fc01e0e4671db5feb
 ---
 
-Chip用于搜索框历史记录、邮件发送列表等场景。
+Chip组件用于标签展示和交互场景，支持自定义样式、图标、激活态等功能，适用于搜索框历史记录、邮件发送列表等场景，可快速实现标签的创建、删除和交互能力。
 
-说明
+**说明** 
 
-该组件从API version 11开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 该组件从API version 11开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 本模块接口仅可在Stage模型下使用。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { Chip, ChipOptions, ChipSize } from '@kit.ArkUI';
+```ts
+import { Chip, ChipOptions, ChipSize } from '@kit.ArkUI';
 ```
 
 ## 子组件
-
-PhonePC/2in1TabletTVWearable
 
 无
 
 ## Chip
 
-PhonePC/2in1TabletTVWearable
-
 Chip(options:ChipOptions): void
+
+创建Chip组件。
 
 **装饰器类型：**@Builder
 
@@ -40,19 +37,17 @@ Chip(options:ChipOptions): void
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-**设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常， 异常信息中提示接口未定义，在其他设备中可正常调用。
+**设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
 **参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [ChipOptions](ohos-arkui-advanced-chip.md#chipoptions) | 是 | 定义Chip组件的参数。 |
+| options | [ChipOptions](ohos-arkui-advanced-chip.md#chipoptions) | 是 | 定义Chip组件的参数，包括尺寸、启用状态、激活态、前缀/后缀图标、文本内容、背景颜色、圆角、无障碍属性等，用于自定义Chip组件的样式和行为。 |
 
 ## ChipOptions
 
-PhonePC/2in1TabletTVWearable
-
-ChipOptions定义Chip的样式及具体式样参数。
+ChipOptions定义Chip的样式及具体样式参数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -60,44 +55,45 @@ ChipOptions定义Chip的样式及具体式样参数。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| size | [ChipSize](ohos-arkui-advanced-chip.md#chipsize) | [SizeOptions](ts-types.md#sizeoptions) | 否 | 是 | Chip尺寸。  默认值：ChipSize.NORMAL  SizeOptions类型参数不支持百分比设置，异常值按默认值处理。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **说明**：[适老化](../harmonyos-guides/arkui-support-for-aging-adaptation.md)在size指定具体宽高时不生效，size设置为{ height: 0, width: 0 }除外。 |
-| enabled | boolean | 否 | 是 | Chip是否可选中。  默认值：true。  true：操作块可选中；false：操作块不可选中。  值为undefined时，按默认值处理。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| activated12+ | boolean | 否 | 是 | Chip是否为激活态。  默认值：false。  true：操作块为激活态；false：操作块为非激活态。  值为undefined时，按默认值处理。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| prefixIcon | [PrefixIconOptions](ohos-arkui-advanced-chip.md#prefixiconoptions) | 否 | 是 | 前缀图标属性。  默认值：不显示前缀图标。  值为undefined时，按默认值处理。  prefixIcon和prefixSymbol同时设置时，显示prefixSymbol的效果，prefixIcon无效。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| prefixSymbol12+ | [ChipSymbolGlyphOptions](ohos-arkui-advanced-chip.md#chipsymbolglyphoptions12) | 否 | 是 | 前缀图标属性，symbol类型。  默认值：不显示前缀图标。  值为undefined时，按默认值处理。  prefixIcon和prefixSymbol同时设置时，显示prefixSymbol的效果，prefixIcon无效。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| label | [LabelOptions](ohos-arkui-advanced-chip.md#labeloptions) | 否 | 否 | 文本属性。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| suffixIcon | [SuffixIconOptions](ohos-arkui-advanced-chip.md#suffixiconoptions) | 否 | 是 | 后缀图标属性。  默认值：不显示后缀图标。  值为undefined时，按默认值处理。  suffixIcon和suffixSymbol同时设置时，显示suffixSymbol的效果，suffixIcon无效。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| suffixSymbol12+ | [ChipSymbolGlyphOptions](ohos-arkui-advanced-chip.md#chipsymbolglyphoptions12) | 否 | 是 | 后缀图标属性，symbol类型。  默认值：不显示后缀图标。  值为undefined时，按默认值处理。  suffixIcon和suffixSymbol同时设置时，显示suffixSymbol的效果，suffixIcon无效。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| suffixSymbolOptions14+ | [ChipSuffixSymbolGlyphOptions](ohos-arkui-advanced-chip.md#chipsuffixsymbolglyphoptions14) | 否 | 是 | symbol类型后缀图标属性的无障碍朗读功能属性。  默认值：不显示后缀图标。  值为undefined时，按默认值处理。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
-| backgroundColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | Chip背景颜色。  默认值：$r('sys.color.ohos\_id\_color\_button\_normal')。  值为undefined时，按默认值处理。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| activatedBackgroundColor12+ | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | Chip激活时的背景颜色。  默认值：$r('sys.color.ohos\_id\_color\_emphasize')。  值为undefined时，按默认值处理。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| borderRadius | [Dimension](ts-types.md#dimension10) | 否 | 是 | Chip背景圆角半径大小，不支持百分比。  默认值：$r('sys.float.ohos\_id\_corner\_radius\_button')。  值为undefined时，按默认值处理。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| allowClose | boolean | 否 | 是 | 关闭图标是否显示。  默认值：true  true：删除图标显示；false：删除图标不显示。  值为undefined时，按默认值处理。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| onClose | ()=>void | 否 | 是 | 默认关闭图标点击事件。  值为undefined时，关闭图标点击事件。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| onClicked12+ | Callback<void> | 否 | 是 | Chip点击事件。  值为undefined时，Chip不能被点击。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| direction12+ | [Direction](ts-appendix-enums.md#direction) | 否 | 是 | 布局方向。  默认值：Direction.Auto。  值为undefined时，按默认值处理。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| closeOptions14+ | [CloseOptions](ohos-arkui-advanced-chip.md#closeoptions14) | 否 | 是 | 默认关闭图标的无障碍朗读功能属性。  值为undefined时，按默认值处理。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
-| accessibilityDescription14+ | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | Chip组件的无障碍描述。此描述用于向用户详细解释当前组件，开发人员应为组件的这一属性提供较为详尽的文本说明，以协助用户理解即将执行的操作及其可能产生的结果。特别是当这些结果无法仅从组件的属性和无障碍文本中直接获知时。如果组件同时具备文本属性和无障碍说明属性，当组件被选中时，系统将首先播报组件的文本属性，随后播报无障碍说明属性的内容。  默认值：空字符串。  值为undefined时，按默认值处理。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
-| accessibilityLevel14+ | string | 否 | 是 | Chip组件无障碍重要性。用于控制后缀图标是否可被无障碍辅助服务所识别。  支持的值为:  "auto"：当前组件会转化为"yes"。  "yes"：当前组件可被无障碍辅助服务所识别。  "no"：当前组件不可被无障碍辅助服务所识别。  "no-hide-descendants"：当前组件及其所有子组件不可被无障碍辅助服务所识别。  默认值："auto"。  值为undefined时，按默认值处理。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
+| size | [ChipSize](ohos-arkui-advanced-chip.md#chipsize) | [SizeOptions](ts-types.md#sizeoptions) | 否 | 是 | Chip尺寸。  默认值：ChipSize.NORMAL  **使用场景**：ChipSize.NORMAL适用于常规场景；ChipSize.SMALL适用于紧凑布局场景，如标签列表、筛选栏等；自定义SizeOptions适用于需要特定尺寸的场景。  SizeOptions类型参数不支持百分比设置，异常值按默认值处理。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **说明**：[适老化](../harmonyos-guides/arkui-support-for-aging-adaptation.md)在size指定具体宽高时不生效，size设置为{ height: 0, width: 0 }除外。 |
+| enabled | boolean | 否 | 是 | Chip是否可用。  默认值：true。  true：Chip可用；false：Chip不可用。  **使用场景**：设置为false禁用Chip，适用于权限受限、数据未加载完成、条件不满足等需要禁止用户操作的场景。  值为undefined时，按默认值处理。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| activated12+ | boolean | 否 | 是 | Chip是否为激活态。  默认值：false。  true：Chip为激活态；false：Chip为非激活态。  值为undefined时，按默认值处理。  **使用场景**：常用于标签选择场景表示当前选中项等。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| prefixIcon | [PrefixIconOptions](ohos-arkui-advanced-chip.md#prefixiconoptions) | 否 | 是 | 设置Chip组件的前缀图标，显示在组件左侧。  默认值：不显示前缀图标。  值为undefined时，按默认值处理。  prefixIcon和prefixSymbol同时设置时，显示prefixSymbol的效果，prefixIcon无效。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| prefixSymbol12+ | [ChipSymbolGlyphOptions](ohos-arkui-advanced-chip.md#chipsymbolglyphoptions12) | 否 | 是 | 前缀图标属性，symbol类型。常用于需要系统标准图标、动态图标效果的场景。  默认值：不显示前缀图标。  值为undefined时，按默认值处理。  prefixIcon和prefixSymbol同时设置时，显示prefixSymbol的效果，prefixIcon无效。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| label | [LabelOptions](ohos-arkui-advanced-chip.md#labeloptions) | 否 | 否 | 设置Chip组件显示的文本内容及样式。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| suffixIcon | [SuffixIconOptions](ohos-arkui-advanced-chip.md#suffixiconoptions) | 否 | 是 | 设置Chip组件的后缀图标，显示在组件右侧。  默认值：不显示后缀图标。  值为undefined时，按默认值处理。  suffixIcon和suffixSymbol同时设置时，显示suffixSymbol的效果，suffixIcon无效。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| suffixSymbol12+ | [ChipSymbolGlyphOptions](ohos-arkui-advanced-chip.md#chipsymbolglyphoptions12) | 否 | 是 | 后缀图标属性，symbol类型。常用于需要系统标准图标、动态图标效果的场景。  默认值：不显示后缀图标。  值为undefined时，按默认值处理。  suffixIcon和suffixSymbol同时设置时，显示suffixSymbol的效果，suffixIcon无效。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| suffixSymbolOptions14+ | [ChipSuffixSymbolGlyphOptions](ohos-arkui-advanced-chip.md#chipsuffixsymbolglyphoptions14) | 否 | 是 | symbol类型后缀图标的无障碍朗读功能属性及点击事件回调等。  默认值：不设置对应属性。  值为undefined时，按默认值处理。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
+| backgroundColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | Chip背景颜色。  默认值：$r('sys.color.ohos\_id\_color\_button\_normal')。  值为undefined时，按默认值处理。赋值为非法值时，背景颜色透明。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| activatedBackgroundColor12+ | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | Chip激活态的背景颜色。  默认值：$r('sys.color.ohos\_id\_color\_emphasize')。  值为undefined时，按默认值处理。赋值为非法值时，背景颜色透明。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| backgroundSystemMaterial | [uiMaterial.Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 设置组件系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。适用于需要实现沉浸式背景效果、半透明磨砂效果等场景。不同材质具有不同的效果，能够影响组件的[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、[border](ts-universal-attributes-border.md#border)、[shadow](ts-universal-attributes-image-effect.md#shadow)等视觉属性。  默认值：undefined  值为undefined时，不应用材质样式。  **说明**：当设置backgroundSystemMaterial时，应将backgroundColor设为Color.Transparent，否则会与系统材质冲突；当backgroundSystemMaterial为undefined时，backgroundColor属性生效。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| activatedBackgroundSystemMaterial | [uiMaterial.Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 设置组件激活状态下的系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。适用于需要激活状态下保持或切换材质效果的交互场景，如标签选中、状态切换等。不同材质具有不同的效果，能够影响组件的[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、[border](ts-universal-attributes-border.md#border)、[shadow](ts-universal-attributes-image-effect.md#shadow)等视觉属性。  默认值：undefined  值为undefined时，不应用材质样式。  **说明**：当设置activatedBackgroundSystemMaterial时，应将activatedBackgroundColor设为Color.Transparent，否则会与系统材质冲突；当activatedBackgroundSystemMaterial为undefined时，activatedBackgroundColor属性生效。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| borderRadius | [Dimension](ts-types.md#dimension10) | 否 | 是 | Chip背景圆角半径大小，不支持百分比，传入百分比时按默认值处理。  取值范围：[0, +∞)  默认值：$r('sys.float.ohos\_id\_corner\_radius\_button')。  单位：vp  值为undefined时，按默认值处理。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| allowClose | boolean | 否 | 是 | 关闭图标是否显示。  默认值：true  true：关闭图标显示；false：关闭图标不显示。  值为undefined时，按默认值处理。  **说明**：当suffixSymbol有传入参数时，allowClose不生效；当suffixSymbol没有传入参数而suffixIcon有传入参数时，allowClose不生效；当suffixSymbol和suffixIcon都没有传入参数时，allowClose决定是否显示关闭图标。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| onClose | ()=>void | 否 | 是 | 默认关闭图标点击事件回调，无参数和返回值。当用户点击默认关闭图标时触发该回调。  值为undefined时，不触发关闭图标点击事件。  **说明**：仅当关闭图标显示时生效，即suffixSymbol和suffixIcon都未传入参数且allowClose为true时。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| onClicked12+ | Callback<void> | 否 | 是 | Chip组件点击事件回调，无参数和返回值。当用户点击Chip组件时触发该回调。  值为undefined时，Chip不能被点击。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| direction12+ | [Direction](ts-appendix-enums.md#direction) | 否 | 是 | 布局方向。  默认值：Direction.Auto。  值为undefined时，按默认值处理。  **使用场景**：常用于国际化场景，适配阿拉伯语等从右到左（RTL）阅读习惯的语言环境，实现界面镜像效果。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| closeOptions14+ | [CloseOptions](ohos-arkui-advanced-chip.md#closeoptions14) | 否 | 是 | 默认关闭图标的功能属性，包括无障碍朗读功能和字体大小等属性。仅在默认关闭图标显示时生效，即allowClose为true且suffixSymbol和suffixIcon均未设置传入参数时。  值为undefined时，按默认值处理。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
+| accessibilityDescription14+ | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | Chip组件的无障碍描述。用于向用户详细解释当前组件，开发人员应提供详尽的文本说明，协助用户理解即将执行的操作及其结果。特别是当这些结果无法仅从组件属性和无障碍文本中直接获知时。如果组件同时具备文本属性和无障碍说明属性，当组件被选中时，系统将首先播报组件的文本属性，随后播报无障碍说明属性的内容。  默认值：空字符串。  值为undefined时，按默认值处理。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
+| accessibilityLevel14+ | string | 否 | 是 | Chip组件无障碍重要性。用于控制Chip组件是否可被无障碍辅助服务所识别。  支持的值为：  "auto"：当前组件会转化为"yes"。  "yes"：当前组件可被无障碍辅助服务所识别。  "no"：当前组件不可被无障碍辅助服务所识别。  "no-hide-descendants"：当前组件及其所有子组件不可被无障碍辅助服务所识别。  默认值："auto"。  值为undefined时，按默认值处理。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
 | accessibilitySelectedType14+ | [AccessibilitySelectedType](ohos-arkui-advanced-chip.md#accessibilityselectedtype14) | 否 | 是 | Chip组件选中态类型。  默认值：当设置了activated属性但未指定accessibilitySelectedType时，默认使用CHECKED类型。当未设置activated属性时，默认使用CLICKED类型。  值为undefined时，按默认值处理。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
-| maxFontScale23+ | number | [Resource](ts-types.md#resource) | 否 | 是 | Chip组件文本与图标的最大的字体缩放倍数。  取值范围：[1, +∞)  设置的值小于1时，按值为1处理。异常值默认不生效。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
-| minFontScale23+ | number | [Resource](ts-types.md#resource) | 否 | 是 | Chip组件文本与图标的最小的字体缩放倍数。  取值范围：[0, 1]  设置的值小于0时，按值为0处理。设置的值大于1时，按值为1处理。异常值默认不生效。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
-| padding23+ | [LocalizedPadding](ts-types.md#localizedpadding12) | 否 | 是 | Chip组件的内边距。  默认值：  - size为ChipSize.SMALL并且activated为true时，默认值：{ start: LengthMetrics.resource('sys.float.chip\_activated\_small\_text\_padding'), end: LengthMetrics.resource('sys.float.chip\_activated\_small\_text\_padding'), top: LengthMetrics.vp(4), bottom: LengthMetrics.vp(4)}  - size为ChipSize.SMALL并且activated为false时，默认值：{ start: LengthMetrics.resource('sys.float.chip\_small\_text\_padding'), end: LengthMetrics.resource('sys.float.chip\_small\_text\_padding'), top: LengthMetrics.vp(4), bottom: LengthMetrics.vp(4)}  - size不为ChipSize.SMALL并且activated为true时，默认值：{ start: LengthMetrics.resource('sys.float.chip\_activated\_normal\_text\_padding'), end: LengthMetrics.resource('sys.float.chip\_activated\_normal\_text\_padding'), top: LengthMetrics.vp(4), bottom: LengthMetrics.vp(4)}  - size不为ChipSize.SMALL并且activated为false时，默认值：{ start: LengthMetrics.resource('sys.float.chip\_normal\_text\_padding'), end: LengthMetrics.resource('sys.float.chip\_normal\_text\_padding'), top: LengthMetrics.vp(4), bottom: LengthMetrics.vp(4)}  值为undefined时，按默认值处理。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
-| fontSize23+ | [Dimension](ts-types.md#dimension10) | 否 | 是 | 统一设置Chip组件的文本与图标的字体大小，不支持百分比。  该fontSize的优先级低于prefixSymbol、label、suffixSymbol和closeOptions中的fontSize属性。  默认值：  - size为ChipSize.SMALL时，文本默认值：$r('sys.float.chip\_small\_font\_size')；图标默认值：$r('sys.float.chip\_small\_icon\_size')  - 其他情况下，文本默认值：$r('sys.float.chip\_normal\_font\_size')；图标默认值：$r('sys.float.chip\_normal\_icon\_size')  值为undefined时，按默认值处理。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
+| maxFontScale23+ | number | [Resource](ts-types.md#resource) | 否 | 是 | Chip组件文本与图标的最大的字体缩放倍数。  取值范围：[1, +∞)  设置的值小于1时，按值为1处理。异常值默认不生效。  默认值：1  值为undefined时，按默认值处理。  **使用场景**：适用于需要限制字体放大上限的无障碍场景，防止字体过大导致布局溢出。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
+| minFontScale23+ | number | [Resource](ts-types.md#resource) | 否 | 是 | Chip组件文本与图标的最小的字体缩放倍数。  取值范围：[0, 1]  设置的值小于0时，按值为0处理。设置的值大于1时，按值为1处理。异常值默认不生效。  默认值：1  值为undefined时，按默认值处理。  **使用场景**：适用于需要限制字体缩小下限的场景，保证文本可读性。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
+| padding23+ | [LocalizedPadding](ts-types.md#localizedpadding12) | 否 | 是 | Chip组件的内边距。  默认值：  - size为ChipSize.SMALL并且activated为true时，默认值：{ start: LengthMetrics.resource('sys.float.chip\_activated\_small\_text\_padding'), end: LengthMetrics.resource('sys.float.chip\_activated\_small\_text\_padding'), top: LengthMetrics.vp(4), bottom: LengthMetrics.vp(4)}  - size为ChipSize.SMALL并且activated为false时，默认值：{ start: LengthMetrics.resource('sys.float.chip\_small\_text\_padding'), end: LengthMetrics.resource('sys.float.chip\_small\_text\_padding'), top: LengthMetrics.vp(4), bottom: LengthMetrics.vp(4)}  - size不为ChipSize.SMALL并且activated为true时，默认值：{ start: LengthMetrics.resource('sys.float.chip\_activated\_normal\_text\_padding'), end: LengthMetrics.resource('sys.float.chip\_activated\_normal\_text\_padding'), top: LengthMetrics.vp(4), bottom: LengthMetrics.vp(4)}  - size不为ChipSize.SMALL并且activated为false时，默认值：{ start: LengthMetrics.resource('sys.float.chip\_normal\_text\_padding'), end: LengthMetrics.resource('sys.float.chip\_normal\_text\_padding'), top: LengthMetrics.vp(4), bottom: LengthMetrics.vp(4)}  值为undefined时，按默认值处理。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
+| fontSize23+ | [Dimension](ts-types.md#dimension10) | 否 | 是 | 统一设置Chip组件的文本与图标的字体大小，不支持百分比，传入百分比时按默认值处理。  该fontSize的优先级低于prefixSymbol、label、suffixSymbol和closeOptions中的fontSize属性。  默认值：  - size为ChipSize.SMALL时，文本：$r('sys.float.chip\_small\_font\_size')；图标：$r('sys.float.chip\_small\_icon\_size')  - 其他情况下，文本：$r('sys.float.chip\_normal\_font\_size')；图标：$r('sys.float.chip\_normal\_icon\_size')  单位：fp  值为undefined时，按默认值处理。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
 
-说明
+**说明** 
 
-1. 当suffixSymbol有传入参数时，suffixIcon和allowClose不生效；当suffixSymbol没有传入参数而suffixIcon有传入参数时，allowClose不生效；当suffixSymbol和suffixIcon都没有传入参数时，allowClose决定是否显示删除图标。
+1. 当suffixSymbol有传入参数时，suffixIcon和allowClose不生效；当suffixSymbol没有传入参数而suffixIcon有传入参数时，allowClose不生效；当suffixSymbol和suffixIcon都没有传入参数时，allowClose决定是否显示关闭图标。
 2. backgroundColor和activatedBackgroundColor赋值为undefined时，显示默认背景颜色；赋值为非法值时，背景颜色透明。
-3. prefixSymbol/suffixSymbol的fontColor默认值为：normalFontColor: [$r('sys.color.ohos\_id\_color\_primary')]、activatedFontColor: [$r('sys.color.ohos\_id\_color\_text\_primary\_contrary')]。fontColor默认值为16。
-4. prefixIcon的fillColor默认值为：$r('sys.color.ohos\_id\_color\_secondary')，suffixIcon的fillColor默认值为：$r('sys.color.ohos\_id\_color\_primary')。fillColor对颜色的解析与Image组件保持一致。
-5. prefixIcon和suffixIcon的activatedFillColor默认值均为：$r('sys.color.ohos\_id\_color\_text\_primary\_contrary')。activatedFillColor对颜色的解析与Image组件保持一致。
+3. 当prefixSymbol或suffixSymbol设置了图标时，若Chip为非激活状态，图标颜色fontColor为[$r('sys.color.ohos\_id\_color\_secondary')]，若Chip为激活状态，图标颜色fontColor为[$r('sys.color.ohos\_id\_color\_text\_primary\_contrary')]。此外，当size为ChipSize.SMALL时，图标的默认字体大小fontSize为$r('sys.float.chip\_small\_icon\_size')；当size为ChipSize.NORMAL或自定义大小时，图标的默认字体大小fontSize为$r('sys.float.chip\_normal\_icon\_size')。
+4. 当prefixIcon和suffixIcon设置了图标时，fillColor默认值均为：$r('sys.color.chip\_usually\_icon\_color')。fillColor对颜色的解析与Image组件保持一致。
+5. 当prefixIcon和suffixIcon设置了图标时，activatedFillColor默认值均为：$r('sys.color.chip\_active\_icon\_color')。activatedFillColor对颜色的解析与Image组件保持一致。
+6. 从API版本26.0.0开始，当配置backgroundSystemMaterial为自动反色材质时，prefixIcon和suffixIcon的填充色以及prefixSymbol和suffixSymbol在非激活状态下的文字颜色会使用支持反色的系统资源，这些颜色会根据背景材质自动匹配反色效果。当设置activatedBackgroundSystemMaterial为自动反色材质时，prefixIcon和suffixIcon的激活态填充色以及prefixSymbol和suffixSymbol在激活状态下的文字颜色同样采用支持反色的系统资源，实现与背景材质反色的自动适配。
 
 ## ChipSize
 
-PhonePC/2in1TabletTVWearable
-
-ChipSize是Chip可指定的尺寸类型，如普通型Chip。
+ChipSize定义Chip组件可指定的尺寸类型，如普通型和小尺寸型。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -107,14 +103,12 @@ ChipSize是Chip可指定的尺寸类型，如普通型Chip。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| NORMAL | "NORMAL" | normal尺寸操作块。 |
-| SMALL | "SMALL" | small尺寸操作块。 |
+| NORMAL | "NORMAL" | normal尺寸操作块，适用于常规展示场景。 |
+| SMALL | "SMALL" | small尺寸操作块，适用于紧凑布局场景。 |
 
 ## AccessibilitySelectedType14+
 
-PhonePC/2in1TabletTVWearable
-
-AccessibilitySelectedType是Chip可指定的选中态类型，用于控制无障碍服务如何向用户传达组件的选中状态。不同的选中态类型提供了不同的语义和用户体验。
+AccessibilitySelectedType定义Chip可指定的选中态类型，用于控制无障碍服务如何向用户传达组件的选中状态。不同的选中态类型提供了不同的语义和用户体验。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
@@ -130,8 +124,6 @@ AccessibilitySelectedType是Chip可指定的选中态类型，用于控制无障
 
 ## IconCommonOptions
 
-PhonePC/2in1TabletTVWearable
-
 IconCommonOptions定义图标的共通属性。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -143,17 +135,15 @@ IconCommonOptions定义图标的共通属性。
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | src | [ResourceStr](ts-types.md#resourcestr) | 否 | 否 | 图标图片或图片地址引用。 |
-| size | [SizeOptions](ts-types.md#sizeoptions) | 否 | 是 | 图标大小，不支持百分比。  默认值：  - 当ChipOptions.size为ChipSize.SMALL时，默认值为：{width: $r('sys.float.chip\_small\_icon\_size'), height: $r('sys.float.chip\_small\_icon\_size')}  - 当ChipOptions.size为ChipSize.NORMAL时，默认值为：{width: $r('sys.float.chip\_normal\_icon\_size'), height: $r('sys.float.chip\_normal\_icon\_size')}  单位：vp  值为undefined时，按默认值处理。 |
-| fillColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 图标填充颜色。  默认值：$r('sys.color.chip\_usually\_icon\_color')  值为undefined时，按默认值处理。 |
-| activatedFillColor12+ | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 操作块激活时图标填充颜色。  默认值：$r('sys.color.chip\_active\_icon\_color')  值为undefined时，按默认值处理。 |
+| size | [SizeOptions](ts-types.md#sizeoptions) | 否 | 是 | 图标大小，不支持百分比，异常值按默认值处理。  默认值：  - 当ChipOptions.size为ChipSize.SMALL时，默认值为：{width: $r('sys.float.chip\_small\_icon\_size'), height: $r('sys.float.chip\_small\_icon\_size')}  - 当ChipOptions.size为ChipSize.NORMAL时，默认值为：{width: $r('sys.float.chip\_normal\_icon\_size'), height: $r('sys.float.chip\_normal\_icon\_size')}  单位：vp  值为undefined时，按默认值处理。 |
+| fillColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 图标填充颜色。仅在图片格式为SVG时生效。  默认值：$r('sys.color.chip\_usually\_icon\_color')  值为undefined时，按默认值处理。 |
+| activatedFillColor12+ | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | Chip激活时的图标填充颜色。仅在图片格式为SVG时生效。  默认值：$r('sys.color.chip\_active\_icon\_color')  值为undefined时，按默认值处理。 |
 
-说明
+**说明** 
 
 仅在图片格式为SVG时，fillColor和activatedFillColor属性才生效。
 
 ## PrefixIconOptions
-
-PhonePC/2in1TabletTVWearable
 
 PrefixIconOptions定义前缀图标的属性。
 
@@ -167,8 +157,6 @@ PrefixIconOptions定义前缀图标的属性。
 
 ## SuffixIconOptions
 
-PhonePC/2in1TabletTVWearable
-
 SuffixIconOptions定义后缀图标的属性。
 
 继承于[IconCommonOptions](ohos-arkui-advanced-chip.md#iconcommonoptions)。
@@ -179,14 +167,12 @@ SuffixIconOptions定义后缀图标的属性。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| action | () => void | 否 | 是 | 后缀图标设定事件。  值为undefined时，不设定后缀图标事件。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| accessibilityText14+ | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 后缀图标无障碍文本属性。当后缀图标不包含文本属性时，屏幕朗读选中后缀图标时不播报，使用者无法清楚地知道当前是否选中了后缀图标。为了解决此场景，开发人员可为不包含文字信息的后缀图标设置无障碍文本，当屏幕朗读选中后缀图标时播报无障碍文本的内容，帮助屏幕朗读的使用者清楚地知道自己是否选中了后缀图标。  默认值：‘ ’  值为undefined时，按默认值处理。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
-| accessibilityDescription14+ | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 后缀图标的无障碍描述。此描述用于向用户详细解释后缀图标，开发人员应为后缀图标的这一属性提供较为详尽的文本说明，以协助用户理解即将执行的操作及其可能产生的后果。特别是当这些后果无法仅从后缀图标的属性和无障碍文本中直接获知时。如果后缀图标同时具备文本属性和无障碍说明属性，当后缀图标被选中时，系统将首先播报后缀图标的文本属性，随后播报无障碍说明属性的内容。  默认值：‘ ’  值为undefined时，按默认值处理。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
-| accessibilityLevel14+ | string | 否 | 是 | 后缀图标的无障碍重要性。用于控制后缀图标是否可被无障碍辅助服务识别。  支持的值为:  "auto"：当前组件存在action时转化为"yes"，不存在action时，转化为"no"。  "yes"：当前组件可被无障碍辅助服务所识别。  "no"：当前组件不可被无障碍辅助服务所识别。  "no-hide-descendants"：当前组件及其所有子组件不可被无障碍辅助服务所识别。  默认值："auto"。  值为undefined时，按默认值处理。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
+| action | () => void | 否 | 是 | 后缀图标点击事件回调，无参数和返回值。当用户点击后缀图标时触发该回调。  值为undefined时，不设定后缀图标事件。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| accessibilityText14+ | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 后缀图标无障碍文本属性。当后缀图标不包含文本属性时，屏幕朗读选中后缀图标时不播报，使用者无法清楚地知道当前是否选中了后缀图标。开发人员可为此类图标设置无障碍文本，屏幕朗读选中时播报该文本内容。  默认值：‘ ’  值为undefined时，按默认值处理。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
+| accessibilityDescription14+ | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 后缀图标的无障碍描述。此描述用于向用户详细解释后缀图标，开发人员应提供较为详尽的文本说明，以协助用户理解即将执行的操作及其可能产生的后果，特别是当这些后果无法仅从后缀图标的属性和无障碍文本中直接获知时。如果后缀图标同时具备文本属性和无障碍说明属性，当后缀图标被选中时，系统将首先播报后缀图标的文本属性，随后播报无障碍说明属性的内容。  默认值：‘ ’  值为undefined时，按默认值处理。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
+| accessibilityLevel14+ | string | 否 | 是 | 后缀图标的无障碍重要性。用于控制后缀图标是否可被无障碍辅助服务识别。  支持的值为：  "auto"：当前组件存在action时转化为"yes"，不存在action时，转化为"no"。  "yes"：当前组件可被无障碍辅助服务所识别。  "no"：当前组件不可被无障碍辅助服务所识别。  "no-hide-descendants"：当前组件及其所有子组件不可被无障碍辅助服务所识别。  默认值："auto"。  值为undefined时，按默认值处理。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
 
 ## AccessibilityOptions14+
-
-PhonePC/2in1TabletTVWearable
 
 后缀图标的无障碍朗读功能属性。
 
@@ -200,13 +186,11 @@ PhonePC/2in1TabletTVWearable
 | --- | --- | --- | --- | --- |
 | accessibilityText | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 无障碍文本属性。当组件无文本属性时，屏幕朗读选中此组件不会播报，导致使用者无法清楚了解当前选中的组件。开发人员可为此类组件设置无障碍文本，屏幕朗读时将播报该文本，帮助使用者明确选中了什么组件。  默认值：‘ ’  值为undefined时，按默认值处理。 |
 | accessibilityDescription | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 无障碍描述。此描述用于向用户详细解释当前组件，开发人员应提供详尽的文本说明，以协助用户理解即将执行的操作及其后果。特别是当这些后果无法仅从组件的属性和无障碍文本中直接获知时。如果组件同时具备文本属性和无障碍说明属性，当组件被选中时，系统将首先播报组件的文本属性，随后播报无障碍说明属性的内容。  默认值：‘ ’  值为undefined时，按默认值处理。 |
-| accessibilityLevel | string | 否 | 是 | 无障碍重要性。用于控制组件是否可被无障碍辅助服务识别。  支持的值为:  "auto"：当前组件会转换为"yes"。  "yes"：当前组件可被无障碍辅助服务所识别。  "no"：当前组件不可被无障碍辅助服务所识别。  "no-hide-descendants"：当前组件及其所有子组件不可被无障碍辅助服务所识别。  默认值："auto"。  值为undefined时，按默认值处理。 |
+| accessibilityLevel | string | 否 | 是 | 无障碍重要性。用于控制组件是否可被无障碍辅助服务识别。  支持的值为：  "auto"：当前组件会转换为"yes"。  "yes"：当前组件可被无障碍辅助服务所识别。  "no"：当前组件不可被无障碍辅助服务所识别。  "no-hide-descendants"：当前组件及其所有子组件不可被无障碍辅助服务所识别。  默认值："auto"。  值为undefined时，按默认值处理。 |
 
 ## ChipSuffixSymbolGlyphOptions14+
 
-PhonePC/2in1TabletTVWearable
-
-symbol类型后缀图标属性的无障碍朗读功能属性类型。
+symbol类型后缀图标的无障碍朗读功能属性及点击事件回调。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
@@ -216,13 +200,11 @@ symbol类型后缀图标属性的无障碍朗读功能属性类型。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| action | [VoidCallback](ts-types.md#voidcallback12) | 否 | 是 | 后缀图标设定事件。  默认值：undefined |
+| action | [VoidCallback](ts-types.md#voidcallback12) | 否 | 是 | 后缀图标点击事件回调，无参数和返回值。当用户点击后缀图标时触发该回调。  值为undefined时，不设定后缀图标事件。  默认值：undefined |
 | normalAccessibility | [AccessibilityOptions](ohos-arkui-advanced-chip.md#accessibilityoptions14) | 否 | 是 | 非激活态无障碍朗读功能属性。  默认值：undefined |
 | activatedAccessibility | [AccessibilityOptions](ohos-arkui-advanced-chip.md#accessibilityoptions14) | 否 | 是 | 激活态无障碍朗读功能属性。  默认值：undefined |
 
 ## ChipSymbolGlyphOptions12+
-
-PhonePC/2in1TabletTVWearable
 
 ChipSymbolGlyphOptions定义前缀图标和后缀图标的属性。
 
@@ -234,16 +216,14 @@ ChipSymbolGlyphOptions定义前缀图标和后缀图标的属性。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| normal | [SymbolGlyphModifier](universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | 否 | 是 | 非激活时图标设定。  默认值：不显示前缀图标或后缀图标  值为undefined时，按默认值处理。 |
-| activated | [SymbolGlyphModifier](universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | 否 | 是 | 激活时图标设定。  默认值：不显示前缀图标或后缀图标  值为undefined时，按默认值处理。 |
+| normal | [SymbolGlyphModifier](ts-universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | 否 | 是 | 设置Chip在非激活状态下显示的symbol类型图标。  默认值：不显示前缀图标或后缀图标  值为undefined时，按默认值处理。 |
+| activated | [SymbolGlyphModifier](ts-universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | 否 | 是 | 设置Chip在激活状态下显示的symbol类型图标。  默认值：不显示前缀图标或后缀图标  值为undefined时，按默认值处理。 |
 
-说明
+**说明** 
 
 不支持使用[SymbolEffect](ts-basic-components-symbolglyph.md#symboleffect12对象说明)修改动效类型及effectStrategy设置动效。
 
 ## LabelOptions
-
-PhonePC/2in1TabletTVWearable
 
 LabelOptions定义文本属性。
 
@@ -255,17 +235,19 @@ LabelOptions定义文本属性。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| text | string | 否 | 否 | 文本文字内容。 |
-| fontSize | [Dimension](ts-types.md#dimension10) | 否 | 是 | 文字字号，不支持百分比。  默认值：$r('sys.float.ohos\_id\_text\_size\_button2')  值为undefined时，按默认值处理。 |
+| text | string | 否 | 否 | Chip组件显示的文本内容。 |
+| fontSize | [Dimension](ts-types.md#dimension10) | 否 | 是 | 字体大小，不支持百分比，传入百分比时按默认值处理。  传入负数时，按默认值处理。  默认值：$r('sys.float.ohos\_id\_text\_size\_button2')  单位：fp  值为undefined时，按默认值处理。 |
 | fontColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 文字颜色。  默认值：$r('sys.color.ohos\_id\_color\_text\_primary')  值为undefined时，按默认值处理。 |
-| activatedFontColor12+ | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 操作块激活时的文字颜色。  默认值：$r('sys.color.ohos\_id\_color\_text\_primary\_contrary')  值为undefined时，按默认值处理。 |
-| fontFamily | string | 否 | 是 | 文字字体。  默认值："HarmonyOS Sans"  值为undefined时，按默认值处理。 |
-| labelMargin | [LabelMarginOptions](ohos-arkui-advanced-chip.md#labelmarginoptions) | 否 | 是 | 文本与左右侧图标之间间距。  默认值：  size为ChipSize.SMALL时，默认值：{ left: 4, right: 4 }  size为ChipSize.NORMAL时，默认值：{ left: 6, right: 6 }  单位：vp  值为undefined时，按默认值处理。 |
-| localizedLabelMargin12+ | [LocalizedLabelMarginOptions](ohos-arkui-advanced-chip.md#localizedlabelmarginoptions12) | 否 | 是 | 本地化文本与左右侧图标之间间距。  默认值：  size为ChipSize.SMALL时，默认值：  { start: LengthMetrics.resource($r('sys.float.chip\_small\_text\_margin')), end: LengthMetrics.resource($r('sys.float.chip\_small\_text\_margin')) }  size为ChipSize.NORMAL时，默认值：  { start: LengthMetrics.resource($r('sys.float.chip\_normal\_text\_margin')), end: LengthMetrics.resource($r('sys.float.chip\_normal\_text\_margin')) }  值为undefined时，按默认值处理。 |
+| activatedFontColor12+ | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | Chip激活时的文字颜色。  默认值：$r('sys.color.ohos\_id\_color\_text\_primary\_contrary')  值为undefined时，按默认值处理。 |
+| fontFamily | string | 否 | 是 | 设置Chip组件文本的字体样式。  默认值："HarmonyOS Sans"  值为undefined时，按默认值处理。 |
+| labelMargin | [LabelMarginOptions](ohos-arkui-advanced-chip.md#labelmarginoptions) | 否 | 是 | 文本与左右侧图标之间间距。  默认值：  size为ChipSize.SMALL时，{ left: 4, right: 4 }  size为ChipSize.NORMAL时，{ left: 6, right: 6 }  单位：vp  值为undefined时，按默认值处理。 |
+| localizedLabelMargin12+ | [LocalizedLabelMarginOptions](ohos-arkui-advanced-chip.md#localizedlabelmarginoptions12) | 否 | 是 | 本地化文本与左右侧图标之间间距。  默认值：  size为ChipSize.SMALL时，  { start: LengthMetrics.resource($r('sys.float.chip\_small\_text\_margin')), end: LengthMetrics.resource($r('sys.float.chip\_small\_text\_margin')) }  size为ChipSize.NORMAL时，  { start: LengthMetrics.resource($r('sys.float.chip\_normal\_text\_margin')), end: LengthMetrics.resource($r('sys.float.chip\_normal\_text\_margin')) }  值为undefined时，按默认值处理。 |
+
+**说明** 
+
+从API版本26.0.0开始，backgroundSystemMaterial设置自动反色的系统材质时，fontColor使用支持反色的特殊系统资源，文字颜色自动适配到材质背景色的反色；activatedBackgroundSystemMaterial设置自动反色的系统材质时，activatedFontColor使用支持反色的特殊系统资源，Chip激活时的文字颜色自动适配到材质背景色的反色。
 
 ## CloseOptions14+
-
-PhonePC/2in1TabletTVWearable
 
 CloseOptions用于定义Chip组件默认的关闭图标功能属性，包括无障碍功能属性，其中accessibilityText默认为"删除"。
 
@@ -277,11 +259,9 @@ CloseOptions用于定义Chip组件默认的关闭图标功能属性，包括无�
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| fontSize23+ | [Dimension](ts-types.md#dimension10) | 否 | 是 | 设置Chip组件默认关闭图标的大小，不支持百分比。  默认值：  size为ChipSize.SMALL时，默认值：$r('sys.float.chip\_small\_font\_size')  其他情况默认值：$r('sys.float.chip\_normal\_font\_size')  值为undefined时，按默认值处理。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
+| fontSize23+ | [Dimension](ts-types.md#dimension10) | 否 | 是 | 设置Chip组件默认关闭图标的字体大小，不支持百分比，传入百分比时按默认值处理。  默认值：  size为ChipSize.SMALL时，$r('sys.float.chip\_small\_font\_size')  其他情况：$r('sys.float.chip\_normal\_font\_size')  单位：fp  传入负数时，按默认值处理。值为undefined时，按默认值处理。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
 
 ## LabelMarginOptions
-
-PhonePC/2in1TabletTVWearable
 
 LabelMarginOptions用于定义文本与左右侧图标之间间距。
 
@@ -293,12 +273,10 @@ LabelMarginOptions用于定义文本与左右侧图标之间间距。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| left | [Dimension](ts-types.md#dimension10) | 否 | 是 | 文本与左侧图标之间间距，不支持百分比。  默认值：  size为ChipSize.SMALL时，left默认值：4  size为ChipSize.NORMAL时，left默认值：6  单位：vp  超出取值范围按默认值处理。  取值范围：[0, +∞) |
+| left | [Dimension](ts-types.md#dimension10) | 否 | 是 | 文本与左侧图标的间距，不支持百分比。  默认值：  size为ChipSize.SMALL时，left默认值：4  size为ChipSize.NORMAL时，left默认值：6  单位：vp  超出取值范围按默认值处理。  取值范围：[0, +∞) |
 | right | [Dimension](ts-types.md#dimension10) | 否 | 是 | 文本与右侧图标之间间距，不支持百分比。  默认值：  size为ChipSize.SMALL时，right默认值：4  size为ChipSize.NORMAL时，right默认值：6  单位：vp  超出取值范围按默认值处理。  取值范围：[0, +∞) |
 
 ## LocalizedLabelMarginOptions12+
-
-PhonePC/2in1TabletTVWearable
 
 LocalizedLabelMarginOptions用于定义本地化文本与左右侧图标之间间距。
 
@@ -310,649 +288,709 @@ LocalizedLabelMarginOptions用于定义本地化文本与左右侧图标之间�
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| start | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 文本与左侧图标之间间距，不支持百分比。  默认值：  size为ChipSize.SMALL时，start默认值:  LengthMetrics.resource($r('sys.float.chip\_small\_text\_margin'))  size为ChipSize.NORMAL时，start默认值：  LengthMetrics.resource($r('sys.float.chip\_normal\_text\_margin'))  值为undefined时，按默认值处理。 |
-| end | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 文本与右侧图标之间间距，不支持百分比。  默认值：  size为ChipSize.SMALL时，end默认值：  LengthMetrics.resource($r('sys.float.chip\_small\_text\_margin'))  size为ChipSize.NORMAL时，end默认值:  LengthMetrics.resource($r('sys.float.chip\_normal\_text\_margin'))  值为undefined时，按默认值处理。 |
+| start | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 文本与起始侧图标的间距，不支持百分比。  默认值：  size为ChipSize.SMALL时，start默认值：  LengthMetrics.resource($r('sys.float.chip\_small\_text\_margin'))  size为ChipSize.NORMAL时，start默认值：  LengthMetrics.resource($r('sys.float.chip\_normal\_text\_margin'))  值为undefined时，按默认值处理。 |
+| end | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 文本与结束侧图标之间间距，不支持百分比。  默认值：  size为ChipSize.SMALL时，end默认值：  LengthMetrics.resource($r('sys.float.chip\_small\_text\_margin'))  size为ChipSize.NORMAL时，end默认值：  LengthMetrics.resource($r('sys.float.chip\_normal\_text\_margin'))  值为undefined时，按默认值处理。 |
 
 ## 示例
-
-PhonePC/2in1TabletTVWearable
 
 ### 示例1（自定义后缀图标）
 
 通过配置suffixIcon实现自定义操作块的后缀图标。
 
-```
-1. import { Chip, ChipSize, LengthMetrics } from '@kit.ArkUI';
+```ts
+import { Chip, ChipSize, LengthMetrics } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. build() {
-7. Column({ space: 10 }) {
-8. Chip({
-9. // 设置前缀图标属性。
-10. prefixIcon: {
-11. // 'app.media.chips'仅作示例，请替换为实际使用图片。
-12. src: $r('app.media.chips'),
-13. size: { width: 16, height: 16 },
-14. fillColor: Color.Red
-15. },
-16. // 设置文本属性。
-17. label: {
-18. text: '操作块',
-19. fontSize: 12,
-20. fontColor: Color.Blue,
-21. fontFamily: 'HarmonyOS Sans',
-22. labelMargin: { left: 20, right: 30 }
-23. },
-24. // 设置后缀图标属性。
-25. suffixIcon: {
-26. // 'app.media.close'仅作示例，请替换为实际使用图片。
-27. src: $r('app.media.close'),
-28. size: { width: 16, height: 16 },
-29. fillColor: Color.Red
-30. },
-31. size: ChipSize.NORMAL,
-32. allowClose: false,
-33. enabled: true,
-34. backgroundColor: $r('sys.color.ohos_id_color_button_normal'),
-35. borderRadius: $r('sys.float.ohos_id_corner_radius_button'),
-36. minFontScale: 0.2,
-37. maxFontScale: 2,
-38. padding: {
-39. start: LengthMetrics.vp(20),
-40. end: LengthMetrics.vp(20)
-41. },
-42. fontSize: 12
-43. })
-44. }
-45. }
-46. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Column({ space: 10 }) {
+      Chip({
+        // 设置前缀图标属性。
+        prefixIcon: {
+          // 'app.media.chips'仅作示例，请替换为实际使用图片。
+          src: $r('app.media.chips'),
+          size: { width: 16, height: 16 },
+          fillColor: Color.Red
+        },
+        // 设置文本属性。
+        label: {
+          text: '操作块',
+          fontSize: 12,
+          fontColor: Color.Blue,
+          fontFamily: 'HarmonyOS Sans',
+          labelMargin: { left: 20, right: 30 }
+        },
+        // 设置后缀图标属性。
+        suffixIcon: {
+          // 'app.media.close'仅作示例，请替换为实际使用图片。
+          src: $r('app.media.close'),
+          size: { width: 16, height: 16 },
+          fillColor: Color.Red
+        },
+        size: ChipSize.NORMAL,
+        allowClose: false,
+        enabled: true,
+        backgroundColor: $r('sys.color.ohos_id_color_button_normal'),
+        borderRadius: $r('sys.float.ohos_id_corner_radius_button'),
+        minFontScale: 0.2,
+        maxFontScale: 2,
+        padding: {
+          start: LengthMetrics.vp(20),
+          end: LengthMetrics.vp(20)
+        },
+        fontSize: 12
+      })
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/rmtkePsPQLO8WqHyebD4eQ/zh-cn_image_0000002558766620.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/-oqAA3NKQDCSnSVUWGx3aA/zh-cn_image_0000002736315367.png)
 
 ### 示例2（设置默认后缀图标）
 
-配置allowClose为true，显示后缀移除图标。
+配置allowClose为true，显示关闭图标。
 
+```ts
+import { Chip, ChipSize, LengthMetrics } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct Index {
+  build() {
+    Column({ space: 10 }) {
+      Chip({
+        // 设置前缀图标属性。
+        prefixIcon: {
+          // 'app.media.chips'仅作示例，请替换为实际使用图片。
+          src: $r('app.media.chips'),
+          size: { width: 16, height: 16 },
+          fillColor: Color.Blue
+        },
+        // 设置文本属性。
+        label: {
+          text: '操作块',
+          fontSize: 12,
+          fontColor: Color.Blue,
+          fontFamily: 'HarmonyOS Sans',
+          labelMargin: { left: 20, right: 30 }
+        },
+        size: ChipSize.NORMAL,
+        allowClose: true,
+        closeOptions: {fontSize: 12},
+        enabled: true,
+        backgroundColor: $r('sys.color.ohos_id_color_button_normal'),
+        borderRadius: $r('sys.float.ohos_id_corner_radius_button'),
+        minFontScale: 0.2,
+        maxFontScale: 2,
+        padding: {
+          start: LengthMetrics.vp(20),
+          end: LengthMetrics.vp(20)
+        },
+        fontSize: 12
+      })
+    }
+  }
+}
 ```
-1. import { Chip, ChipSize, LengthMetrics } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. build() {
-7. Column({ space: 10 }) {
-8. Chip({
-9. // 设置前缀图标属性。
-10. prefixIcon: {
-11. // 'app.media.chips'仅作示例，请替换为实际使用图片。
-12. src: $r('app.media.chips'),
-13. size: { width: 16, height: 16 },
-14. fillColor: Color.Blue
-15. },
-16. // 设置文本属性。
-17. label: {
-18. text: '操作块',
-19. fontSize: 12,
-20. fontColor: Color.Blue,
-21. fontFamily: 'HarmonyOS Sans',
-22. labelMargin: { left: 20, right: 30 }
-23. },
-24. size: ChipSize.NORMAL,
-25. allowClose: true,
-26. closeOptions: {fontSize: 12},
-27. enabled: true,
-28. backgroundColor: $r('sys.color.ohos_id_color_button_normal'),
-29. borderRadius: $r('sys.float.ohos_id_corner_radius_button'),
-30. minFontScale: 0.2,
-31. maxFontScale: 2,
-32. padding: {
-33. start: LengthMetrics.vp(20),
-34. end: LengthMetrics.vp(20)
-35. },
-36. fontSize: 12
-37. })
-38. }
-39. }
-40. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/v0vaNeFpR4a7fmsC-hZr2A/zh-cn_image_0000002558606960.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/ru9yaUvdQ96J62t5jszbog/zh-cn_image_0000002706676328.png)
 
 ### 示例3（不显示后缀图标）
 
-配置allowClose为false，隐藏后缀移除图标。
+配置allowClose为false，隐藏关闭图标。
 
-```
-1. import { Chip, ChipSize, LengthMetrics } from '@kit.ArkUI';
+```ts
+import { Chip, ChipSize, LengthMetrics } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. build() {
-7. Column({ space: 10 }) {
-8. Chip({
-9. // 设置前缀图标属性。
-10. prefixIcon: {
-11. // 'app.media.chips'仅作示例，请替换为实际使用图片。
-12. src: $r('app.media.chips'),
-13. size: { width: 16, height: 16 },
-14. fillColor: Color.Blue
-15. },
-16. // 设置文本属性。
-17. label: {
-18. text: '操作块',
-19. fontSize: 12,
-20. fontColor: Color.Blue,
-21. fontFamily: 'HarmonyOS Sans',
-22. labelMargin: { left: 20, right: 30 }
-23. },
-24. size: ChipSize.SMALL,
-25. allowClose: false,
-26. enabled: true,
-27. backgroundColor: $r('sys.color.ohos_id_color_button_normal'),
-28. borderRadius: $r('sys.float.ohos_id_corner_radius_button'),
-29. onClose: () => {
-30. console.info('chip on close');
-31. },
-32. minFontScale: 0.2,
-33. maxFontScale: 2,
-34. padding: {
-35. start: LengthMetrics.vp(20),
-36. end: LengthMetrics.vp(20)
-37. },
-38. fontSize: 12
-39. })
-40. }
-41. }
-42. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Column({ space: 10 }) {
+      Chip({
+        // 设置前缀图标属性。
+        prefixIcon: {
+          // 'app.media.chips'仅作示例，请替换为实际使用图片。
+          src: $r('app.media.chips'),
+          size: { width: 16, height: 16 },
+          fillColor: Color.Blue
+        },
+        // 设置文本属性。
+        label: {
+          text: '操作块',
+          fontSize: 12,
+          fontColor: Color.Blue,
+          fontFamily: 'HarmonyOS Sans',
+          labelMargin: { left: 20, right: 30 }
+        },
+        size: ChipSize.SMALL,
+        allowClose: false,
+        enabled: true,
+        backgroundColor: $r('sys.color.ohos_id_color_button_normal'),
+        borderRadius: $r('sys.float.ohos_id_corner_radius_button'),
+        minFontScale: 0.2,
+        maxFontScale: 2,
+        padding: {
+          start: LengthMetrics.vp(20),
+          end: LengthMetrics.vp(20)
+        },
+        fontSize: 12
+      })
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/W7MyWaRBRcCdrWOlFM505w/zh-cn_image_0000002589326487.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/yDdizcZUT2GJGlGOjzXpag/zh-cn_image_0000002736435415.png)
 
 ### 示例4（激活态操作块）
 
 该示例通过配置activated实现激活态操作块。
 
+```ts
+import { Chip, ChipSize } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct Index {
+  @State isActivated: boolean = false;
+
+  build() {
+    Column({ space: 10 }) {
+      Chip({
+        // 设置前缀图标属性。
+        prefixIcon: {
+          // 'app.media.chips'仅作示例，请替换为实际使用图片。
+          src: $r('app.media.chips'),
+          size: { width: 16, height: 16 },
+          fillColor: Color.Blue,
+          activatedFillColor: $r('sys.color.ohos_id_color_text_primary_contrary')
+        },
+        // 设置文本属性。
+        label: {
+          text: '操作块',
+          fontSize: 12,
+          fontColor: Color.Blue,
+          activatedFontColor: $r('sys.color.ohos_id_color_text_primary_contrary'),
+          fontFamily: 'HarmonyOS Sans',
+          labelMargin: { left: 20, right: 30 }
+        },
+        size: ChipSize.NORMAL,
+        allowClose: true,
+        enabled: true,
+        activated: this.isActivated,
+        backgroundColor: $r('sys.color.ohos_id_color_button_normal'),
+        activatedBackgroundColor: $r('sys.color.ohos_id_color_emphasize'),
+        borderRadius: $r('sys.float.ohos_id_corner_radius_button'),
+        onClose: () => {
+          console.info('chip on close');
+        },
+        onClicked: () => {
+          console.info('chip on clicked');
+        }
+      })
+      // 点击“改变激活状态”，用于控制操作块的激活与关闭。
+      Button('改变激活状态')
+        .onClick(() => {
+          this.isActivated = !this.isActivated;
+        })
+    }
+  }
+}
 ```
-1. import { Chip, ChipSize } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. @State isActivated: boolean = false;
-
-8. build() {
-9. Column({ space: 10 }) {
-10. Chip({
-11. // 设置前缀图标属性。
-12. prefixIcon: {
-13. // 'app.media.chips'仅作示例，请替换为实际使用图片。
-14. src: $r('app.media.chips'),
-15. size: { width: 16, height: 16 },
-16. fillColor: Color.Blue,
-17. activatedFillColor: $r('sys.color.ohos_id_color_text_primary_contrary')
-18. },
-19. // 设置文本属性。
-20. label: {
-21. text: '操作块',
-22. fontSize: 12,
-23. fontColor: Color.Blue,
-24. activatedFontColor: $r('sys.color.ohos_id_color_text_primary_contrary'),
-25. fontFamily: 'HarmonyOS Sans',
-26. labelMargin: { left: 20, right: 30 }
-27. },
-28. size: ChipSize.NORMAL,
-29. allowClose: true,
-30. enabled: true,
-31. activated: this.isActivated,
-32. backgroundColor: $r('sys.color.ohos_id_color_button_normal'),
-33. activatedBackgroundColor: $r('sys.color.ohos_id_color_emphasize'),
-34. borderRadius: $r('sys.float.ohos_id_corner_radius_button'),
-35. onClose: () => {
-36. console.info('chip on close');
-37. },
-38. onClicked: () => {
-39. console.info('chip on clicked');
-40. }
-41. })
-42. // 点击“改变激活状态”，用于控制操作块的激活与关闭。
-43. Button('改变激活状态')
-44. .onClick(() => {
-45. this.isActivated = !this.isActivated;
-46. })
-47. }
-48. }
-49. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/7cpGpCTQSuiLRxLwi1dfJQ/zh-cn_image_0000002589246429.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/7QZ4BSY4Tx-FhQFpyoLc7g/zh-cn_image_0000002706836264.gif)
 
 ### 示例5（设置symbol类型图标）
 
 Chip组件的前缀图标使用symbol类型资源展示。
 
+```ts
+import { Chip, ChipSize, SymbolGlyphModifier } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct Index {
+  @State isActivated: boolean = false;
+
+  build() {
+    Column({ space: 10 }) {
+      Chip({
+        // 设置前缀图标属性，symbol类型。
+        prefixSymbol: {
+          normal: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontSize(16).fontColor([Color.Green]),
+          activated: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontSize(16).fontColor([Color.Red]),
+        },
+        // 设置文本属性。
+        label: {
+          text: '操作块',
+          fontSize: 12,
+          fontColor: Color.Blue,
+          activatedFontColor: $r('sys.color.ohos_id_color_text_primary_contrary'),
+          fontFamily: 'HarmonyOS Sans',
+          labelMargin: { left: 20, right: 30 },
+        },
+        size: ChipSize.NORMAL,
+        allowClose: true,
+        enabled: true,
+        activated: this.isActivated,
+        backgroundColor: $r('sys.color.ohos_id_color_button_normal'),
+        activatedBackgroundColor: $r('sys.color.ohos_id_color_emphasize'),
+        borderRadius: $r('sys.float.ohos_id_corner_radius_button'),
+        onClose: () => {
+          console.info('chip on close');
+        },
+        onClicked: () => {
+          console.info('chip on clicked');
+        }
+      })
+
+      Button('改变激活状态')
+        .onClick(() => {
+          this.isActivated = !this.isActivated;
+        })
+    }
+  }
+}
 ```
-1. import { Chip, ChipSize, SymbolGlyphModifier } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. @State isActivated: boolean = false;
-
-8. build() {
-9. Column({ space: 10 }) {
-10. Chip({
-11. // 设置前缀图标属性，symbol类型。
-12. prefixSymbol: {
-13. normal: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontSize(16).fontColor([Color.Green]),
-14. activated: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontSize(16).fontColor([Color.Red]),
-15. },
-16. // 设置文本属性。
-17. label: {
-18. text: '操作块',
-19. fontSize: 12,
-20. fontColor: Color.Blue,
-21. activatedFontColor: $r('sys.color.ohos_id_color_text_primary_contrary'),
-22. fontFamily: 'HarmonyOS Sans',
-23. labelMargin: { left: 20, right: 30 },
-24. },
-25. size: ChipSize.NORMAL,
-26. allowClose: true,
-27. enabled: true,
-28. activated: this.isActivated,
-29. backgroundColor: $r('sys.color.ohos_id_color_button_normal'),
-30. activatedBackgroundColor: $r('sys.color.ohos_id_color_emphasize'),
-31. borderRadius: $r('sys.float.ohos_id_corner_radius_button'),
-32. onClose: () => {
-33. console.info('chip on close');
-34. },
-35. onClicked: () => {
-36. console.info('chip on clicked');
-37. }
-38. })
-
-40. Button('改变激活状态')
-41. .onClick(() => {
-42. this.isActivated = !this.isActivated;
-43. })
-44. }
-45. }
-46. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/xXKc8ldHSRq255Ig7X9ppg/zh-cn_image_0000002558766622.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/z850gtiPRjOnZXZEhk8IcQ/zh-cn_image_0000002736315369.gif)
 
 ### 示例6（设置镜像效果）
 
 配置direction实现Chip布局镜像化展示。
 
-```
-1. import { Chip, ChipSize, LengthMetrics } from '@kit.ArkUI';
+```ts
+import { Chip, ChipSize, LengthMetrics } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct ChipPage {
-6. build() {
-7. Column() {
-8. Chip({
-9. direction: Direction.Rtl,
-10. // 设置前缀图标属性。
-11. prefixIcon: {
-12. // 'app.media.chips'仅作示例，请替换为实际使用图片。
-13. src: $r('app.media.chips'),
-14. size: { width: 16, height: 16 },
-15. fillColor: Color.Red,
-16. },
-17. // 设置文本属性。
-18. label: {
-19. text: '操作块',
-20. fontSize: 12,
-21. fontColor: Color.Blue,
-22. fontFamily: 'HarmonyOS Sans',
-23. localizedLabelMargin: { start: LengthMetrics.vp(20), end: LengthMetrics.vp(20) },
-24. },
-25. // 设置后缀图标属性。
-26. suffixIcon: {
-27. // 'app.media.close'仅作示例，请替换为实际使用图片。
-28. src: $r('app.media.close'),
-29. size: { width: 16, height: 16 },
-30. fillColor: Color.Red,
-31. },
-32. size: ChipSize.NORMAL,
-33. allowClose: false,
-34. enabled: true,
-35. backgroundColor: $r('sys.color.ohos_id_color_button_normal'),
-36. borderRadius: $r('sys.float.ohos_id_corner_radius_button')
-37. })
-38. }
-39. .justifyContent(FlexAlign.Center)
-40. .width('100%')
-41. .height('100%')
-42. }
-43. }
+@Entry
+@Component
+struct ChipPage {
+  build() {
+    Column() {
+      Chip({
+        direction: Direction.Rtl,
+        // 设置前缀图标属性。
+        prefixIcon: {
+          // 'app.media.chips'仅作示例，请替换为实际使用图片。
+          src: $r('app.media.chips'),
+          size: { width: 16, height: 16 },
+          fillColor: Color.Red,
+        },
+        // 设置文本属性。
+        label: {
+          text: '操作块',
+          fontSize: 12,
+          fontColor: Color.Blue,
+          fontFamily: 'HarmonyOS Sans',
+          localizedLabelMargin: { start: LengthMetrics.vp(20), end: LengthMetrics.vp(20) },
+        },
+        // 设置后缀图标属性。
+        suffixIcon: {
+          // 'app.media.close'仅作示例，请替换为实际使用图片。
+          src: $r('app.media.close'),
+          size: { width: 16, height: 16 },
+          fillColor: Color.Red,
+        },
+        size: ChipSize.NORMAL,
+        allowClose: false,
+        enabled: true,
+        backgroundColor: $r('sys.color.ohos_id_color_button_normal'),
+        borderRadius: $r('sys.float.ohos_id_corner_radius_button')
+      })
+    }
+    .justifyContent(FlexAlign.Center)
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/9KRM23GwTLKrZAbz7zOYxA/zh-cn_image_0000002558606962.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/7mZMdjdqRh2qEZi5WQLWEA/zh-cn_image_0000002706676330.png)
 
 ### 示例7（Image类型无障碍朗读）
 
 该示例代码实现Chip组件Image类型后缀图标的无障碍朗读功能，点击后缀图标播报“图标，按钮，新手提醒”。
 
-```
-1. import { Chip } from '@kit.ArkUI';
+```ts
+import { Chip } from '@kit.ArkUI';
 
-3. @Builder
-4. function DefaultFunction(): void {
-5. }
+@Builder
+function defaultFunction(): void {
+}
 
-7. @Component
-8. struct SectionGroup {
-9. @Prop
-10. @Require
-11. title: ResourceStr;
-12. @BuilderParam
-13. @Require
-14. content: () => void = DefaultFunction;
+@Component
+struct SectionGroup {
+  @Prop
+  @Require
+  title: ResourceStr;
+  @BuilderParam
+  @Require
+  content: () => void = defaultFunction;
 
-16. build() {
-17. Column({ space: 4 }) {
-18. Text(this.title)
-19. .fontColor('#FF666666')
-20. .fontSize(12)
-21. Column({ space: 8 }) {
-22. this.content()
-23. }
-24. }
-25. .alignItems(HorizontalAlign.Start)
-26. .width('100%')
-27. }
-28. }
+  build() {
+    Column({ space: 4 }) {
+      Text(this.title)
+        .fontColor('#FF666666')
+        .fontSize(12)
+      Column({ space: 8 }) {
+        this.content()
+      }
+    }
+    .alignItems(HorizontalAlign.Start)
+    .width('100%')
+  }
+}
 
-30. @Component
-31. struct SectionItem {
-32. @Prop
-33. @Require
-34. title: ResourceStr;
-35. @BuilderParam
-36. @Require
-37. content: () => void = DefaultFunction;
+@Component
+struct SectionItem {
+  @Prop
+  @Require
+  title: ResourceStr;
+  @BuilderParam
+  @Require
+  content: () => void = defaultFunction;
 
-39. build() {
-40. Column({ space: 12 }) {
-41. Text(this.title)
-42. this.content()
-43. }
-44. .backgroundColor('#FFFFFFFF')
-45. .borderRadius(12)
-46. .padding(12)
-47. .width('100%')
-48. }
-49. }
+  build() {
+    Column({ space: 12 }) {
+      Text(this.title)
+      this.content()
+    }
+    .backgroundColor('#FFFFFFFF')
+    .borderRadius(12)
+    .padding(12)
+    .width('100%')
+  }
+}
 
-51. @Entry
-52. @Component
-53. struct ChipExample2 {
-54. @State activated: boolean = false;
+@Entry
+@Component
+struct ChipExample2 {
 
-56. build() {
-57. NavDestination() {
-58. Scroll() {
-59. SectionGroup({ title: '后缀图标播报' }) {
-60. SectionItem({ title: '自定义播报' }) {
-61. Chip({
-62. label: { text: '操作块' },
-63. suffixIcon: {
-64. src: $r('sys.media.ohos_ic_public_cut'),
-65. accessibilityText: '图标', // 播报“图标，按钮，新手提醒”
-66. accessibilityDescription: '新手提醒',
-67. action: () => {
-68. this.getUIContext().getPromptAction().showToast({
-69. message: '后缀图标被点击！'
-70. });
-71. }
-72. },
-73. onClicked: () => {
-74. this.getUIContext().getPromptAction().showToast({
-75. message: '操作块被点击！'
-76. });
-77. }
-78. })
-79. }
-80. }
-81. }
-82. }
-83. }
-84. }
+  build() {
+    NavDestination() {
+      Scroll() {
+        SectionGroup({ title: '后缀图标播报' }) {
+          SectionItem({ title: '自定义播报' }) {
+            Chip({
+              label: { text: '操作块' },
+              suffixIcon: {
+                src: $r('sys.media.ohos_ic_public_cut'),
+                accessibilityText: '图标', // 播报“图标，按钮，新手提醒”
+                accessibilityDescription: '新手提醒',
+                action: () => {
+                  this.getUIContext().getPromptAction().showToast({
+                    message: '后缀图标被点击！'
+                  });
+                }
+              },
+              onClicked: () => {
+                this.getUIContext().getPromptAction().showToast({
+                  message: '操作块被点击！'
+                });
+              }
+            })
+          }
+        }
+      }
+    }
+  }
+}
 ```
 
 ### 示例8（symbol类型无障碍朗读）
 
 该示例代码实现Chip组件symbol类型后缀图标的无障碍朗读功能，点击后缀图标播报“音乐，按钮，新手提醒”。
 
-```
-1. import { Chip, SymbolGlyphModifier } from '@kit.ArkUI';
+```ts
+import { Chip, SymbolGlyphModifier } from '@kit.ArkUI';
 
-3. @Builder
-4. function DefaultFunction(): void {
-5. }
+@Builder
+function defaultFunction(): void {
+}
 
-7. @Component
-8. struct SectionGroup {
-9. @Prop
-10. @Require
-11. title: ResourceStr;
-12. @BuilderParam
-13. @Require
-14. content: () => void = DefaultFunction;
+@Component
+struct SectionGroup {
+  @Prop
+  @Require
+  title: ResourceStr;
+  @BuilderParam
+  @Require
+  content: () => void = defaultFunction;
 
-16. build() {
-17. Column({ space: 4 }) {
-18. Text(this.title)
-19. .fontColor('#FF666666')
-20. .fontSize(12)
-21. Column({ space: 8 }) {
-22. this.content()
-23. }
-24. }
-25. .alignItems(HorizontalAlign.Start)
-26. .width('100%')
-27. }
-28. }
+  build() {
+    Column({ space: 4 }) {
+      Text(this.title)
+        .fontColor('#FF666666')
+        .fontSize(12)
+      Column({ space: 8 }) {
+        this.content()
+      }
+    }
+    .alignItems(HorizontalAlign.Start)
+    .width('100%')
+  }
+}
 
-30. @Component
-31. struct SectionItem {
-32. @Prop
-33. @Require
-34. title: ResourceStr;
-35. @BuilderParam
-36. @Require
-37. content: () => void = DefaultFunction;
+@Component
+struct SectionItem {
+  @Prop
+  @Require
+  title: ResourceStr;
+  @BuilderParam
+  @Require
+  content: () => void = defaultFunction;
 
-39. build() {
-40. Column({ space: 12 }) {
-41. Text(this.title)
-42. this.content()
-43. }
-44. .backgroundColor('#FFFFFFFF')
-45. .borderRadius(12)
-46. .padding(12)
-47. .width('100%')
-48. }
-49. }
+  build() {
+    Column({ space: 12 }) {
+      Text(this.title)
+      this.content()
+    }
+    .backgroundColor('#FFFFFFFF')
+    .borderRadius(12)
+    .padding(12)
+    .width('100%')
+  }
+}
 
-51. @Entry
-52. @Component
-53. struct ChipExample2 {
-54. @State activated: boolean = false;
+@Entry
+@Component
+struct ChipExample2 {
 
-56. build() {
-57. NavDestination() {
-58. Scroll() {
-59. SectionGroup({ title: '后缀Symbol播报' }) {
-60. SectionItem({ title: 'activatedAccessibility' }) {
-61. Chip({
-62. label: { text: '操作块' },
-63. activated: true,
-64. suffixSymbol: {
-65. activated: new SymbolGlyphModifier($r('sys.symbol.media_sound'))
-66. .fontSize(72),
-67. },
-68. suffixSymbolOptions: {
-69. activatedAccessibility: {
-70. accessibilityText: '音乐', // 播报“音乐，按钮，新手提醒”
-71. accessibilityDescription: '新手提醒'
-72. },
-73. action: () => {
-74. this.getUIContext().getPromptAction().showToast({
-75. message: '后缀Symbol被点击！'
-76. });
-77. }
-78. },
-79. onClicked: () => {
-80. this.getUIContext().getPromptAction().showToast({
-81. message: '操作块被点击！'
-82. });
-83. }
-84. })
-85. }
+  build() {
+    NavDestination() {
+      Scroll() {
+        SectionGroup({ title: '后缀Symbol播报' }) {
+          SectionItem({ title: 'activatedAccessibility' }) {
+            Chip({
+              label: { text: '操作块' },
+              activated: true,
+              suffixSymbol: {
+                activated: new SymbolGlyphModifier($r('sys.symbol.media_sound'))
+                  .fontSize(72),
+              },
+              suffixSymbolOptions: {
+                activatedAccessibility: {
+                  accessibilityText: '音乐', // 播报“音乐，按钮，新手提醒”
+                  accessibilityDescription: '新手提醒'
+                },
+                action: () => {
+                  this.getUIContext().getPromptAction().showToast({
+                    message: '后缀Symbol被点击！'
+                  });
+                }
+              },
+              onClicked: () => {
+                this.getUIContext().getPromptAction().showToast({
+                  message: '操作块被点击！'
+                });
+              }
+            })
+          }
 
-87. SectionItem({ title: 'normalAccessibility' }) {
-88. Chip({
-89. label: { text: '操作块' },
-90. suffixSymbol: {
-91. normal: new SymbolGlyphModifier($r('sys.symbol.media_sound'))
-92. .fontSize(72),
-93. },
-94. suffixSymbolOptions: {
-95. normalAccessibility: {
-96. accessibilityText: '音乐', // 播报“音乐，按钮，新手提醒”
-97. accessibilityDescription: '新手提醒'
-98. },
-99. action: () => {
-100. this.getUIContext().getPromptAction().showToast({
-101. message: '后缀Symbol被点击！'
-102. });
-103. }
-104. },
-105. onClicked: () => {
-106. this.getUIContext().getPromptAction().showToast({
-107. message: '操作块被点击！'
-108. });
-109. }
-110. })
-111. }
-112. }
-113. }
-114. }
-115. .padding({
-116. top: 8,
-117. bottom: 8,
-118. left: 16,
-119. right: 16,
-120. })
-121. }
-122. }
+          SectionItem({ title: 'normalAccessibility' }) {
+            Chip({
+              label: { text: '操作块' },
+              suffixSymbol: {
+                normal: new SymbolGlyphModifier($r('sys.symbol.media_sound'))
+                  .fontSize(72),
+              },
+              suffixSymbolOptions: {
+                normalAccessibility: {
+                  accessibilityText: '音乐', // 播报“音乐，按钮，新手提醒”
+                  accessibilityDescription: '新手提醒'
+                },
+                action: () => {
+                  this.getUIContext().getPromptAction().showToast({
+                    message: '后缀Symbol被点击！'
+                  });
+                }
+              },
+              onClicked: () => {
+                this.getUIContext().getPromptAction().showToast({
+                  message: '操作块被点击！'
+                });
+              }
+            })
+          }
+        }
+      }
+    }
+    .padding({
+      top: 8,
+      bottom: 8,
+      left: 16,
+      right: 16,
+    })
+  }
+}
 ```
 
 ### 示例9（Chip组件无障碍朗读）
 
 示例展示Chip组件的无障碍属性设置，包括不同的accessibilitySelectedType类型和各种无障碍属性。
 
+```ts
+import { AccessibilitySelectedType, Chip, ChipSize } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct ChipAccessibilityExample {
+  @State clickedChipActivated: boolean = false;
+  @State checkedChipActivated: boolean = false;
+  @State selectedChipActivated: boolean = false;
+
+  build() {
+    Column({ space: 20 }) {
+      Text('Chip组件无障碍属性示例').fontSize(20).fontWeight(FontWeight.Bold)
+
+      // 点击型Chip - CLICKED类型
+      Chip({
+        label: { text: '点击型Chip' },
+        prefixIcon: {
+          src: $r('sys.media.ohos_app_icon'),
+          fillColor: Color.Blue
+        },
+        size: ChipSize.NORMAL,
+        accessibilitySelectedType: AccessibilitySelectedType.CLICKED, // 点击型
+        accessibilityDescription: '这是一个点击型Chip', // 整体无障碍描述
+        accessibilityLevel: 'yes', // 确保可被无障碍服务识别
+        closeOptions: {
+          accessibilityDescription: '删除此Chip，此操作无法撤销' // 为删除按钮提供详细说明
+        },
+        activated: this.clickedChipActivated,
+        onClicked: () => {
+          this.clickedChipActivated = !this.clickedChipActivated;
+          this.getUIContext().getPromptAction().showToast({ message: '点击型Chip被点击' });
+        },
+        onClose: () => {
+          this.getUIContext().getPromptAction().showToast({ message: '点击型Chip的关闭按钮被点击' });
+        }
+      })
+
+      // 复选型Chip - CHECKED类型
+      Chip({
+        label: { text: '复选型Chip' },
+        prefixIcon: {
+          src: $r('sys.media.ohos_app_icon'),
+          fillColor: Color.Green
+        },
+        size: ChipSize.NORMAL,
+        accessibilitySelectedType: AccessibilitySelectedType.CHECKED, // 复选型
+        accessibilityDescription: '这是一个复选型Chip', // 整体无障碍描述
+        activated: this.checkedChipActivated,
+        onClicked: () => {
+          this.checkedChipActivated = !this.checkedChipActivated;
+          this.getUIContext().getPromptAction().showToast({
+            message: this.checkedChipActivated ? '复选型Chip被选中' : '复选型Chip被取消选中'
+          });
+        }
+      })
+
+      // 单选型Chip - SELECTED类型
+      Chip({
+        label: { text: '单选型Chip' },
+        prefixIcon: {
+          src: $r('sys.media.ohos_app_icon'),
+          fillColor: Color.Red
+        },
+        size: ChipSize.NORMAL,
+        accessibilitySelectedType: AccessibilitySelectedType.SELECTED, // 单选型
+        accessibilityDescription: '这是一个单选型Chip', // 整体无障碍描述
+        activated: this.selectedChipActivated,
+        onClicked: () => {
+          this.selectedChipActivated = !this.selectedChipActivated;
+          this.getUIContext().getPromptAction().showToast({
+            message: this.selectedChipActivated ? '单选型Chip被选中' : '单选型Chip被取消选中'
+          });
+        }
+      })
+
+      // 无障碍级别设置示例
+      Chip({
+        label: { text: '无障碍级别为no' },
+        size: ChipSize.NORMAL,
+        accessibilityLevel: 'no', // 此Chip不能被无障碍服务识别
+        closeOptions: {
+          accessibilityLevel: 'no'
+        },
+        backgroundColor: '#CCCCCC',
+        onClicked: () => {
+          this.getUIContext().getPromptAction().showToast({ message: '此Chip无法被无障碍服务识别' });
+        }
+      })
+    }
+    .width('100%')
+    .padding(16)
+  }
+}
 ```
-1. import { AccessibilitySelectedType, Chip, ChipSize } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct ChipAccessibilityExample {
-6. @State clickedChipActivated: boolean = false;
-7. @State checkedChipActivated: boolean = false;
-8. @State selectedChipActivated: boolean = false;
+### 示例10（设置系统材质样式）
 
-10. build() {
-11. Column({ space: 20 }) {
-12. Text('Chip组件无障碍属性示例').fontSize(20).fontWeight(FontWeight.Bold)
+该示例通过配置backgroundSystemMaterial和activatedBackgroundSystemMaterial实现系统材质样式，启用自动反色功能适配标签文本颜色。
 
-14. // 点击型Chip - CLICKED类型
-15. Chip({
-16. label: { text: '点击型Chip' },
-17. prefixIcon: {
-18. src: $r('sys.media.ohos_app_icon'),
-19. fillColor: Color.Blue
-20. },
-21. size: ChipSize.NORMAL,
-22. accessibilitySelectedType: AccessibilitySelectedType.CLICKED, // 点击型
-23. accessibilityDescription: '这是一个点击型Chip', // 整体无障碍描述
-24. accessibilityLevel: 'yes', // 确保可被无障碍服务识别
-25. closeOptions: {
-26. accessibilityDescription: '删除此Chip，此操作无法撤销' // 为删除按钮提供详细说明
-27. },
-28. activated: this.clickedChipActivated,
-29. onClicked: () => {
-30. this.clickedChipActivated = !this.clickedChipActivated;
-31. this.getUIContext().getPromptAction().showToast({ message: '点击型Chip被点击' });
-32. },
-33. onClose: () => {
-34. this.getUIContext().getPromptAction().showToast({ message: '点击型Chip的关闭按钮被点击' });
-35. }
-36. })
+从API版本26.0.0开始，[ChipOptions](ohos-arkui-advanced-chip.md#chipoptions)新增backgroundSystemMaterial和activatedBackgroundSystemMaterial属性。
 
-38. // 复选型Chip - CHECKED类型
-39. Chip({
-40. label: { text: '复选型Chip' },
-41. prefixIcon: {
-42. src: $r('sys.media.ohos_app_icon'),
-43. fillColor: Color.Green
-44. },
-45. size: ChipSize.NORMAL,
-46. accessibilitySelectedType: AccessibilitySelectedType.CHECKED, // 复选型
-47. accessibilityDescription: '这是一个复选型Chip', // 整体无障碍描述
-48. activated: this.checkedChipActivated,
-49. onClicked: () => {
-50. this.checkedChipActivated = !this.checkedChipActivated;
-51. this.getUIContext().getPromptAction().showToast({
-52. message: this.checkedChipActivated ? '复选型Chip被选中' : '复选型Chip被取消选中'
-53. });
-54. }
-55. })
+```ts
+import { Chip, ChipOptions, uiMaterial } from '@kit.ArkUI';
 
-57. // 单选型Chip - SELECTED类型
-58. Chip({
-59. label: { text: '单选型Chip' },
-60. prefixIcon: {
-61. src: $r('sys.media.ohos_app_icon'),
-62. fillColor: Color.Red
-63. },
-64. size: ChipSize.NORMAL,
-65. accessibilitySelectedType: AccessibilitySelectedType.SELECTED, // 单选型
-66. accessibilityDescription: '这是一个单选型Chip', // 整体无障碍描述
-67. activated: this.selectedChipActivated,
-68. onClicked: () => {
-69. this.selectedChipActivated = !this.selectedChipActivated;
-70. this.getUIContext().getPromptAction().showToast({
-71. message: this.selectedChipActivated ? '单选型Chip被选中' : '单选型Chip被取消选中'
-72. });
-73. }
-74. })
+@Entry
+@Component
+struct ChipMaterialExample {
+  private chipOptions: ChipOptions = {
+    label: {
+      text: '操作块',
+      // 将fontColor设置为特殊系统资源值，启用自动反色能力。
+      fontColor: $r('sys.color.font_primary'),
+      activatedFontColor: $r('sys.color.font_primary')
+    },
+    allowClose: false,
+    // 设置普通状态下的背景颜色为透明，否则会和系统材质冲突。
+    backgroundColor: Color.Transparent,
+    // 设置普通状态下的系统材质样式为ULTRA_THIN，并开启自动反色。
+    backgroundSystemMaterial: new uiMaterial.ImmersiveMaterial({
+      style: uiMaterial.ImmersiveStyle.ULTRA_THIN,
+      colorInvert: true
+    }),
+    // 设置激活状态下的背景颜色为透明，否则会和系统材质冲突。
+    activatedBackgroundColor: Color.Transparent,
+    // 设置激活状态下的系统材质样式。
+    activatedBackgroundSystemMaterial: new uiMaterial.ImmersiveMaterial({
+      style: uiMaterial.ImmersiveStyle.ULTRA_THIN
+    })
+  }
 
-76. // 无障碍级别设置示例
-77. Chip({
-78. label: { text: '无障碍级别为no' },
-79. size: ChipSize.NORMAL,
-80. accessibilityLevel: 'no', // 此Chip不能被无障碍服务识别
-81. closeOptions: {
-82. accessibilityLevel: 'no'
-83. },
-84. backgroundColor: '#CCCCCC',
-85. onClicked: () => {
-86. this.getUIContext().getPromptAction().showToast({ message: '此Chip无法被无障碍服务识别' });
-87. }
-88. })
-89. }
-90. .width('100%')
-91. .padding(16)
-92. }
-93. }
+  @Builder
+  NavigationTitle() {
+    Column({ space: 50 }) {
+      Chip(this.chipOptions)
+      Chip(this.chipOptions)
+    }
+    .linearGradient({
+      angle: 0, // 渐变角度，0度是从左到右。
+      colors: [
+        ['#FF9A9E', 0.0], // 起始颜色及位置（0.0表示起点）。
+        ['#FECFEF', 0.5], // 中间颜色及位置。
+        ['#3B324C', 1.0] // 结束颜色及位置（1.0表示终点）。
+      ]
+    })
+    .padding(12)
+    .width('100%')
+    .height(150)
+  }
+
+  build() {
+    Column() {
+      Navigation() {
+        // 页面内容
+      }
+      .title({ builder: this.NavigationTitle, height: '100%' })
+    }.width('100%').height('100%')
+  }
+}
 ```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/NYH39q6FR4ucU_C1sOZPrg/zh-cn_image_0000002736435417.png)

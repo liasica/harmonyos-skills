@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/reader-er
 title: ArkTS API错误码
 breadcrumb: API参考 > 应用服务 > Reader Kit（阅读服务） > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:36+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:44cd42bf9ab8b28b044003215cdc08dea877bb549a6896f03d96d350f2f14be0
+scraped_at: 2026-09-02T15:03:08+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:42d4a91b4afe974de9037589938a7af5875697551b0a78d7269a2212fc31524a
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 1016900002
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -31,8 +29,6 @@ ReadPageComponent没有初始化。
 
 ## 1016900003
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
 Invalid request.
@@ -46,8 +42,6 @@ Invalid request.
 尝试重试操作或请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
 
 ## 1016900999
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -63,8 +57,6 @@ Other error.
 
 ## 1016910001
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
 Invalid spine item.
@@ -79,8 +71,6 @@ Invalid spine item.
 
 ## 1016910002
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
 Unexpected spine item resource data.
@@ -94,8 +84,6 @@ Unexpected spine item resource data.
 尝试重试操作或请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
 
 ## 1016910003
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -112,8 +100,6 @@ Spine item resource data out of range.
 
 ## 1016910004
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
 Invalid caller.
@@ -128,11 +114,9 @@ Invalid caller.
 
 ## 1017000001
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
-Book parser is not initialized
+Book parser is not initialized.
 
 **错误描述**
 
@@ -143,8 +127,6 @@ Book parser is not initialized
 检查[getDefaultHandler](reader-book-parser.md#getdefaulthandler)是否调用并且成功，且需要在[startPlay](reader-read-core.md#startplay)之前调用[registerBookParser](reader-read-core.md#registerbookparser)注册handler。
 
 ## 1017000999
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -159,8 +141,6 @@ Other error.
 尝试重试操作或请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
 
 ## 1017010001
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -177,8 +157,6 @@ Invalid spine item.
 
 ## 1017010002
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
 Invalid request.
@@ -192,8 +170,6 @@ Invalid request.
 尝试重试操作或请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
 
 ## 1017010003
-
-PhonePC/2in1Tablet
 
 **错误信息**
 
@@ -210,11 +186,9 @@ Book file format is unexpected.
 
 ## 1017010004
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
-File is not existed.
+File is not exist.
 
 **错误描述**
 

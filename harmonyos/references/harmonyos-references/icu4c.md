@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/icu4c
 title: ICU4C
 breadcrumb: API参考 > 标准库 > ICU4C
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:32+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ce4e98bc0e76bab0aa635130a10a5563307771f9afb613e41bc0e9e648b13ab3
+scraped_at: 2026-09-02T14:53:37+08:00
+doc_updated_at: 2026-08-07
+content_hash: sha256:342bd6a8962e9c457930e9c4c6dc2fdcb763ef571dd6df5daa40ee3f46bc963e
 ---
 
 当今的软件市场是一个全球性的市场，应用程序的开发和维护需要支持多种语言。International Components for Unicode (ICU) 库为多平台多系统提供了强大且功能齐全的多语言文化信息处理能力。
@@ -35,14 +35,14 @@ content_hash: sha256:ce4e98bc0e76bab0aa635130a10a5563307771f9afb613e41bc0e9e648b
 
 如果开发者需要使用ICU4C相关功能，请按需要添加对应的头文件。本模块头文件需要添加unicode目录前缀，例如：
 
-```
-1. #include <unicode/uloc.h>
+```c
+#include <unicode/uloc.h>
 ```
 
-其次在CMakeLists.txt中添加以下动态库:
+其次在CMakeLists.txt中添加以下动态库：
 
-```
-1. libicu.so
+```c
+libicu.so
 ```
 
 ## 标准库中导出的符号列表

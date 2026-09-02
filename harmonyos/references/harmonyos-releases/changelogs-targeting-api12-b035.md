@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-targeting-api12-b035
 title: 针对API 12应用的变更
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Developer Beta3引入的接口行为变更 > 针对API 12应用的变更
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Developer Beta3引入的接口行为变更 > 针对API 12应用的变更
 category: harmonyos-releases
-scraped_at: 2026-04-29T13:24:09+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:f8057f24b8f37f001a72eb2f283f20106ad11bad7ef02f058c777f363eb74cf4
+scraped_at: 2026-09-02T14:58:53+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:bf9a8dc6cf3c1b67af90cf17a2aec2540627c38ea196c1e99f0cf095af943662
 ---
 
 ## ArkTS
@@ -20,10 +20,10 @@ JSON.parse解析非法字符串未抛JS异常，表现与预期及ECMA规范不�
 
 此变更涉及应用适配。
 
-```
-1. const strData = `{"k1": "hello", "k2": 3}`;
-2. const strErr = strData.substring(0, strData.length - 2); // `{"k1": "hello", "k2": `
-3. JSON.parse(strErr);
+```screen
+const strData = `{"k1": "hello", "k2": 3}`;
+const strErr = strData.substring(0, strData.length - 2); // `{"k1": "hello", "k2": `
+JSON.parse(strErr);
 ```
 
 变更前：JSON.parse解析非法字符串strErr能够正常解析，未抛出JS异常。
@@ -104,36 +104,36 @@ Sendable对象需要遵循[使用规则](../harmonyos-guides/sendable-constraint
 
 变更前
 
-```
-1. 'use shared';
-2. class NonSendableClass {};
-3. export default NonSendableClass; // 引发 GC 时崩溃
+```ts
+'use shared';
+class NonSendableClass {};
+export default NonSendableClass; // 引发 GC 时崩溃
 ```
 
 变更后
 
-```
-1. 'use shared';
-2. class NonSendableClass {};
-3. export default NonSendableClass; // 编译错误
+```ts
+'use shared';
+class NonSendableClass {};
+export default NonSendableClass; // 编译错误
 ```
 
 场景二：在共享模块中使用export type someType = someNonSendableType方式导出Non-sendable的别名时。影响：无提示变更为编辑警告、编译警告
 
 变更前
 
-```
-1. 'use shared';
-2. class NonSendableClass {};
-3. export type NonSendableAlias = NonSendableClass;
+```ts
+'use shared';
+class NonSendableClass {};
+export type NonSendableAlias = NonSendableClass;
 ```
 
 变更后
 
-```
-1. 'use shared';
-2. class NonSendableClass {};
-3. export type NonSendableAlias = NonSendableClass; // DevEco编辑界面警告提示 & 编译警告
+```ts
+'use shared';
+class NonSendableClass {};
+export type NonSendableAlias = NonSendableClass; // DevEco编辑界面警告提示 & 编译警告
 ```
 
 sendable class内部的变量使用约束
@@ -142,48 +142,48 @@ sendable class内部的变量使用约束
 
 变更前
 
-```
-1. import { taskpool } from '@kit.ArkTS';
+```ts
+import { taskpool } from '@kit.ArkTS';
 
-3. @Sendable
-4. export class SendableData {};
+@Sendable
+export class SendableData {};
 
-6. @Sendable
-7. class SendableClass {
-8. handle():void {
-9. new SendableData(); // 运行时异常
-10. }
-11. }
+@Sendable
+class SendableClass {
+    handle():void {
+      new SendableData(); // 运行时异常
+    }
+}
 
-13. @Concurrent
-14. async function taskHandle(sendable: SendableClass) {
-15. sendable.handle();
-16. }
+@Concurrent
+async function taskHandle(sendable: SendableClass) {
+  sendable.handle();
+}
 
-18. taskpool.execute(new taskpool.Task(taskHandle, new SendableClass()));
+taskpool.execute(new taskpool.Task(taskHandle, new SendableClass()));
 ```
 
 变更后
 
-```
-1. import { taskpool } from '@kit.ArkTS';
+```ts
+import { taskpool } from '@kit.ArkTS';
 
-3. @Sendable
-4. export class SendableData {};
+@Sendable
+export class SendableData {};
 
-6. @Sendable
-7. class SendableClass {
-8. handle():void {
-9. new SendableData(); // DevEco编辑界面警告提示 & 编译警告
-10. }
-11. }
+@Sendable
+class SendableClass {
+    handle():void {
+      new SendableData(); // DevEco编辑界面警告提示 & 编译警告
+    }
+}
 
-13. @Concurrent
-14. async function taskHandle(sendable: SendableClass) {
-15. sendable.handle();
-16. }
+@Concurrent
+async function taskHandle(sendable: SendableClass) {
+  sendable.handle();
+}
 
-18. taskpool.execute(new taskpool.Task(taskHandle, new SendableClass()));
+taskpool.execute(new taskpool.Task(taskHandle, new SendableClass()));
 ```
 
 **起始API Level**
@@ -214,7 +214,7 @@ API 11：RenderNode的clipToFrame设为false不生效，超出节点大小范围
 
 API 12及以上版本：RenderNode的clipToFrame设为false时，超出节点大小范围的子节点内容不会被剪裁。为保证变更前后clipToFrame的默认行为一致，开发者在未显式设置clipToFrame属性的情况下，clipToFrame默认值变更为true。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/fqQ9PMfjTeOk3DPtTbkb4g/zh-cn_image_0000001971091670.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/tpXvcR70QD2LDXgaQQ5VLg/zh-cn_image_0000001971091670.png)
 
 **起始API Level**
 
@@ -228,45 +228,45 @@ API 12及以上版本：RenderNode的clipToFrame设为false时，超出节点大
 
 若开发者在设置clipToFrame为false的情况下，仍想保持之前的“超出节点大小范围的内容会被剪裁”的行为，可通过设置clipToFrame为true来实现。
 
-```
-1. import {  RenderNode, FrameNode, NodeController } from '@kit.ArkUI';
+```ts
+import {  RenderNode, FrameNode, NodeController } from '@kit.ArkUI';
 
-3. const renderNode = new RenderNode();
-4. renderNode.frame = { x: 50, y: 50, width: 200, height: 200 };
-5. renderNode.backgroundColor = 0xffd5d5d5;
-6. renderNode.clipToFrame = true;  // 设置clipToFrame为true，对超出节点大小的内容进行剪裁。
+const renderNode = new RenderNode();
+renderNode.frame = { x: 50, y: 50, width: 200, height: 200 };
+renderNode.backgroundColor = 0xffd5d5d5;
+renderNode.clipToFrame = true;  // 设置clipToFrame为true，对超出节点大小的内容进行剪裁。
 
-8. const childNode = new RenderNode();
-9. childNode.frame = { x: 10, y: 10, width: 250, height: 100 };
-10. childNode.backgroundColor = 0xff004aaf;
-11. renderNode.appendChild(childNode);
+const childNode = new RenderNode();
+childNode.frame = { x: 10, y: 10, width: 250, height: 100 };
+childNode.backgroundColor = 0xff004aaf;
+renderNode.appendChild(childNode);
 
-13. class MyNodeController extends NodeController {
-14. private rootNode: FrameNode | null = null;
+class MyNodeController extends NodeController {
+  private rootNode: FrameNode | null = null;
 
-16. makeNode(uiContext: UIContext): FrameNode | null {
-17. this.rootNode = new FrameNode(uiContext);
+  makeNode(uiContext: UIContext): FrameNode | null {
+    this.rootNode = new FrameNode(uiContext);
 
-19. const rootRenderNode = this.rootNode.getRenderNode();
-20. if (rootRenderNode !== null) {
-21. rootRenderNode.appendChild(renderNode);
-22. }
+    const rootRenderNode = this.rootNode.getRenderNode();
+    if (rootRenderNode !== null) {
+      rootRenderNode.appendChild(renderNode);
+    }
 
-24. return this.rootNode;
-25. }
-26. }
+    return this.rootNode;
+  }
+}
 
-28. @Entry
-29. @Component
-30. struct Index {
-31. private myNodeController: MyNodeController = new MyNodeController();
+@Entry
+@Component
+struct Index {
+  private myNodeController: MyNodeController = new MyNodeController();
 
-33. build() {
-34. Row() {
-35. NodeContainer(this.myNodeController)
-36. }
-37. }
-38. }
+  build() {
+    Row() {
+      NodeContainer(this.myNodeController)
+    }
+  }
+}
 ```
 
 ### 使用局部@Builder方法引用传参时，使用bind(this)后，状态管理的父子关系和组件的父子关系不一致，比如使用@ohos.arkui.advanced.ChipGroup高级组件崩溃解决方法
@@ -275,8 +275,8 @@ API 12及以上版本：RenderNode的clipToFrame设为false时，超出节点大
 
 开发者使用局部@Builder方法引用传参时，使用bind(this)后，在使用 @Provide和@Consume时状态管理的父子关系和组件的父子关系不一致。运行时报错：
 
-```
-1. @Component 'MyComponent2'[11] missing @Provide property with name value.Fail to resolve @Consume(value).
+```txt
+@Component 'MyComponent2'[11] missing @Provide property with name value.Fail to resolve @Consume(value).
 ```
 
 **变更影响**
@@ -297,91 +297,91 @@ API 12及以上版本：RenderNode的clipToFrame设为false时，超出节点大
 
 变更前：
 
-```
-1. @Component
-2. struct MyComponent {
-3. @Provide("value") value: number = 10;
-4. @BuilderParam content: () => void;
+```ts
+@Component
+struct MyComponent {
+  @Provide("value") value: number = 10;
+  @BuilderParam content: () => void;
 
-6. build() {
-7. Column() {
-8. this.content();
-9. }
-10. }
-11. }
+  build() {
+    Column() {
+      this.content();
+    }
+  }
+}
 
-13. @Component
-14. struct MyComponent2 {
-15. @Consume("value") value: number;
+@Component
+struct MyComponent2 {
+  @Consume("value") value: number;
 
-17. build() {
-18. Text(`${this.value}`)
-19. }
-20. }
+  build() {
+    Text(`${this.value}`)
+  }
+}
 
-22. @Entry
-23. @Component
-24. struct Index {
-25. @State stateValue: string = '';
+@Entry
+@Component
+struct Index {
+  @State stateValue: string = '';
 
-27. @Builder
-28. content() {
-29. MyComponent2()
-30. }
+  @Builder
+  content() {
+    MyComponent2()
+  }
 
-32. build() {
-33. Column() {
-34. MyComponent({
-35. content: this.content.bind(this)
-36. })
-37. }
-38. }
-39. }
+  build() {
+    Column() {
+      MyComponent({
+        content: this.content.bind(this)
+      })
+    }
+  }
+}
 ```
 
 变更后：
 
-```
-1. @Component
-2. struct MyComponent {
-3. @Provide("value") value: number = 10;
-4. @BuilderParam content: () => void;
+```ts
+@Component
+struct MyComponent {
+  @Provide("value") value: number = 10;
+  @BuilderParam content: () => void;
 
-6. build() {
-7. Column() {
-8. this.content();
-9. }
-10. }
-11. }
+  build() {
+    Column() {
+      this.content();
+    }
+  }
+}
 
-13. @Component
-14. struct MyComponent2 {
-15. @Consume("value") value: number;
+@Component
+struct MyComponent2 {
+  @Consume("value") value: number;
 
-17. build() {
-18. Text(`${this.value}`)
-19. }
-20. }
+  build() {
+    Text(`${this.value}`)
+  }
+}
 
-22. @Entry
-23. @Component
-24. struct Index {
-25. @State stateValue: string = '';
-26. // 将 @Builder 改成@LocalBuilder
-27. @LocalBuilder
-28. content() {
-29. MyComponent2()
-30. }
+@Entry
+@Component
+struct Index {
+  @State stateValue: string = '';
+// 将 @Builder 改成@LocalBuilder
+  @LocalBuilder
+  content() {
+    MyComponent2()
+  }
 
-32. build() {
-33. Column() {
-34. // 去掉bind(this)
-35. MyComponent({
-36. content: this.content
-37. })
-38. }
-39. }
-40. }
+  build() {
+    Column() {
+      // 去掉bind(this)
+      MyComponent({
+        content: this.content
+      })
+    }
+  }
+}
 ```
 
 ### RichEditor设置预设样式的接口传入默认值时，文本样式效果变更
@@ -420,35 +420,35 @@ setTypingStyle
 
 开发者需要清除TypingStyle使用组件默认样式时，请参照如下代码。
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. controller: RichEditorController = new RichEditorController()
-5. options: RichEditorOptions = { controller: this.controller }
-6. build() {
-7. Column() {
-8. RichEditor(this.options)
-9. .borderWidth(1)
-10. .borderColor(Color.Green)
-11. .width("100%")
-12. .height("50%")
-13. Button('ResetTypingStyle')
-14. .fontSize(10)
-15. .onClick(() => {
-16. // 清除TypingStyle
-17. this.controller.setTypingStyle(undefined)
-18. // this.controller.setTypingStyle(null)
-19. })
-20. Button('SetTypingStyle')
-21. .fontSize(10)
-22. .onClick(() => {
-23. // 设置TypingStyle
-24. this.controller.setTypingStyle({fontColor:"#ff0000"})
-25. })
-26. }
-27. }
-28. }
+```ts
+@Entry
+@Component
+struct Index {
+  controller: RichEditorController = new RichEditorController()
+  options: RichEditorOptions = { controller: this.controller }
+  build() {
+      Column() {
+        RichEditor(this.options)
+          .borderWidth(1)
+          .borderColor(Color.Green)
+          .width("100%")
+          .height("50%")
+        Button('ResetTypingStyle')
+          .fontSize(10)
+          .onClick(() => {
+            // 清除TypingStyle
+            this.controller.setTypingStyle(undefined)
+            // this.controller.setTypingStyle(null)
+          })
+        Button('SetTypingStyle')
+          .fontSize(10)
+          .onClick(() => {
+            // 设置TypingStyle
+            this.controller.setTypingStyle({fontColor:"#ff0000"})
+          })
+    }
+  }
+}
 ```
 
 ### RichEditor占位文本接口中文本样式属性传入异常值/默认值时，占位文本样式的效果变更
@@ -488,40 +488,40 @@ PlaceHolderStyle
 
 以style为"{}"和fontcolor为默认值为例，见如下代码，请开发者自行排查。
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. controller: RichEditorController = new RichEditorController()
-5. options: RichEditorOptions = { controller: this.controller }
-6. @State style: PlaceholderStyle = { fontColor: "#ff0000" };
+```ts
+@Entry
+@Component
+struct Index {
+  controller: RichEditorController = new RichEditorController()
+  options: RichEditorOptions = { controller: this.controller }
+  @State style: PlaceholderStyle = { fontColor: "#ff0000" };
 
-8. build() {
-9. Column() {
-10. RichEditor(this.options)
-11. .borderWidth(1)
-12. .borderColor(Color.Green)
-13. .width("100%")
-14. .height("50%")
-15. .placeholder("hello world", this.style)
-16. Button('change style to {}')
-17. .fontSize(10)
-18. .onClick(() => {
-19. this.style = {};
-20. })
-21. Button('change style.fontColor to undefined')
-22. .fontSize(10)
-23. .onClick(() => {
-24. this.style = { fontColor: undefined };
-25. })
-26. Button('change style.fontColor to normal value')
-27. .fontSize(10)
-28. .onClick(() => {
-29. this.style = { fontColor: "#ff0000" };
-30. })
-31. }
-32. }
-33. }
+  build() {
+    Column() {
+      RichEditor(this.options)
+        .borderWidth(1)
+        .borderColor(Color.Green)
+        .width("100%")
+        .height("50%")
+        .placeholder("hello world", this.style)
+      Button('change style to {}')
+        .fontSize(10)
+        .onClick(() => {
+          this.style = {};
+        })
+      Button('change style.fontColor to undefined')
+        .fontSize(10)
+        .onClick(() => {
+          this.style = { fontColor: undefined };
+        })
+      Button('change style.fontColor to normal value')
+        .fontSize(10)
+        .onClick(() => {
+          this.style = { fontColor: "#ff0000" };
+        })
+    }
+  }
+}
 ```
 
 ### 自定义MenuItem的onChange触发逻辑变更
@@ -564,13 +564,13 @@ totalCount表示UI显示的数据个数。当0 < totalCount < arr.length时，�
 
 将arr.length设置为10，totalCount设置为5。显示效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/vLUuyJBvT0W5RxKZoj4G6A/zh-cn_image_0000002007771985.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/NHDfH2e1QKOIj_B5Iw9Shg/zh-cn_image_0000002007771985.jpeg)
 
 变更后：Repeat设置totalCount属性时，如果totalCount小于数据长度，显示的数据个数为totalCount值。
 
 将arr.length设置为10，totalCount设置为5。显示效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/w7MIl_RzSeWkquBl-ioxAQ/zh-cn_image_0000002007731453.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/OWV2ckXPSxO8GVv1Cglfjw/zh-cn_image_0000002007731453.jpeg)
 
 **起始API Level**
 
@@ -584,47 +584,47 @@ Repeat组件。
 
 如果开发者想要显示的数据个数为数据长度时，需要将totalCount值设置为数组长度。示例代码如下：
 
-```
-1. @Entry
-2. @ComponentV2
-3. struct TestPage {
-4. @Local simpleList: Array<string> = [];
-5. private totalCount: number = 50;
+```ts
+@Entry
+@ComponentV2
+struct TestPage {
+  @Local simpleList: Array<string> = [];
+  private totalCount: number = 50;
 
-7. aboutToAppear(): void {
-8. for (let i = 0; i < 50; i++) {
-9. this.simpleList.push('Hello ' + i);
-10. }
-11. }
+  aboutToAppear(): void {
+    for (let i = 0; i < 50; i++) {
+      this.simpleList.push('Hello ' + i);
+    }
+  }
 
-13. build() {
-14. Column({ space: 10 }) {
-15. List() {
-16. Repeat<string>(this.simpleList)
-17. .each((obj: RepeatItem<string>) => {
-18. ListItem() {
-19. Text('[each] ' + obj.item)
-20. .fontSize(30)
-21. .margin({ top: 10 })
-22. }
-23. })
-24. .key((item: string, index: number) => item)
-25. .virtualScroll({ totalCount: this.totalCount })
-26. .templateId((item: string, index: number) => "default")
-27. .template('default', (ri) => {
-28. Text('[template] ' + ri.item)
-29. .fontSize(30)
-30. .margin({ top: 10 })
-31. }, { cachedCount: 3 })
-32. }
-33. .cachedCount(1)
-34. .border({ width: 1 })
-35. .height('50%')
-36. }
-37. .height('100%')
-38. .justifyContent(FlexAlign.Center)
-39. }
-40. }
+  build() {
+    Column({ space: 10 }) {
+      List() {
+        Repeat<string>(this.simpleList)
+          .each((obj: RepeatItem<string>) => {
+            ListItem() {
+              Text('[each] ' + obj.item)
+                .fontSize(30)
+                .margin({ top: 10 })
+            }
+          })
+          .key((item: string, index: number) => item)
+          .virtualScroll({ totalCount: this.totalCount })
+          .templateId((item: string, index: number) => "default")
+          .template('default', (ri) => {
+            Text('[template] ' + ri.item)
+              .fontSize(30)
+              .margin({ top: 10 })
+          }, { cachedCount: 3 })
+      }
+      .cachedCount(1)
+      .border({ width: 1 })
+      .height('50%')
+    }
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
 
 ### Refresh组件promptText参数设置为undefined时清空文本内容
@@ -657,38 +657,38 @@ Refresh组件promptText参数
 
 开发者需要判断变更后promptText参数设置undefined时清空文本内容后的效果是否符合预期，如不符合可通过对[Refresh组件](../harmonyos-references-V5/ts-container-refresh-V5.md#refreshoptions对象说明)promptText参数设置期望值以达到预期。
 
-```
-1. @Entry
-2. @Component
-3. struct RefreshExample {
-4. @State isRefreshing: boolean = false
-5. @State arr: String[] = ['0', '1', '2', '3', '4','5','6','7','8','9','10']
-6. @State promptText: string|undefined = "Loading..."
+```ts
+@Entry
+@Component
+struct RefreshExample {
+  @State isRefreshing: boolean = false
+  @State arr: String[] = ['0', '1', '2', '3', '4','5','6','7','8','9','10']
+  @State promptText: string|undefined = "Loading..."
 
-8. build() {
-9. Column() {
-10. Refresh({ refreshing: $$this.isRefreshing ,
-11. promptText: this.promptText  // 设置刷新区域显示文本内容，设置为undefined时清空文本内容
-12. }) {
-13. List() {
-14. ForEach(this.arr, (item: string) => {
-15. ListItem() {
-16. Text('' + item)
-17. .width('80%').height(100).fontSize(16).margin(10)
-18. .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(0xFFFFFF)
-19. }
-20. }, (item: string) => item)
-21. }
-22. .width('100%')
-23. .height('100%')
-24. .alignListItem(ListItemAlign.Center)
-25. .scrollBar(BarState.Off)
-26. }
-27. .backgroundColor(0x89CFF0)
-28. .refreshOffset(96)
-29. }
-30. }
-31. }
+  build() {
+    Column() {
+      Refresh({ refreshing: $$this.isRefreshing ,
+        promptText: this.promptText  // 设置刷新区域显示文本内容，设置为undefined时清空文本内容
+      }) {
+        List() {
+          ForEach(this.arr, (item: string) => {
+            ListItem() {
+              Text('' + item)
+                .width('80%').height(100).fontSize(16).margin(10)
+                .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(0xFFFFFF)
+            }
+          }, (item: string) => item)
+        }
+        .width('100%')
+        .height('100%')
+        .alignListItem(ListItemAlign.Center)
+        .scrollBar(BarState.Off)
+      }
+      .backgroundColor(0x89CFF0)
+      .refreshOffset(96)
+    }
+  }
+}
 ```
 
 ## ArkWeb

@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: HapModuleInfo
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > bundleManager > HapModuleInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:47+08:00
-doc_updated_at: 2026-04-17
-content_hash: sha256:e01dee409a46fbbe8915df4d92c94d3f44f24e6e67f4c337c4723af69b6ccb8b
+scraped_at: 2026-09-02T15:00:35+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1fbf376ce6f45f79b4d3108ef6c5e4a7fd3bf2e7da43c05cecda6bc48304ce17
 ---
 
 HAP信息，可以通过[getBundleInfoForSelf](js-apis-bundlemanager.md#bundlemanagergetbundleinfoforself)获取自身的HAP信息，其中参数[bundleFlags](js-apis-bundlemanager.md#bundleflag)至少包含GET\_BUNDLE\_INFO\_WITH\_HAP\_MODULE。
 
-说明
+**说明** 
 
-本模块首批接口从API version 9 开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { bundleManager } from '@kit.AbilityKit';
+```ts
+import { bundleManager } from '@kit.AbilityKit';
 ```
 
 ## HapModuleInfo
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 
@@ -43,7 +39,7 @@ PhonePC/2in1TabletTVWearable
 | metadata | Array<[Metadata](js-apis-bundlemanager-metadata.md)> | 是 | 否 | 当前模块的元数据。通过调用[getBundleInfoForSelf](js-apis-bundlemanager.md#bundlemanagergetbundleinfoforself)接口，bundleFlags参数传入GET\_BUNDLE\_INFO\_WITH\_HAP\_MODULE和GET\_BUNDLE\_INFO\_WITH\_METADATA获取。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | deviceTypes | Array<string> | 是 | 否 | 模块支持安装运行的[设备类型](../harmonyos-guides/module-configuration-file.md#devicetypes标签)的集合。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | installationFree | boolean | 是 | 否 | 模块是否支持免安装（无需用户通过应用市场显式安装），取值为true表示支持免安装，取值为false表示不支持免安装。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| hashValue | string | 是 | 否 | 模块的Hash值。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| hashValue | string | 是 | 否 | 模块的Hash值，唯一标识模块。Hash值根据模块内容计算生成，可校验模块完整性和比对版本。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | type | [bundleManager.ModuleType](js-apis-bundlemanager.md#moduletype) | 是 | 否 | 标识当前模块的类型。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | preloads | Array<[PreloadItem](js-apis-bundlemanager-hapmoduleinfo.md#preloaditem)> | 是 | 否 | 元服务中模块的预加载列表。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | dependencies | Array<[Dependency](js-apis-bundlemanager-hapmoduleinfo.md#dependency)> | 是 | 否 | 模块运行依赖的动态共享库列表。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
@@ -53,8 +49,6 @@ PhonePC/2in1TabletTVWearable
 | nativeLibraryPath12+ | string | 是 | 否 | 应用程序内模块本地库文件路径。 |
 
 ## PreloadItem
-
-PhonePC/2in1TabletTVWearable
 
 描述元服务中模块的预加载模块信息。
 
@@ -67,8 +61,6 @@ PhonePC/2in1TabletTVWearable
 | moduleName | string | 是 | 否 | 模块名称。 |
 
 ## Dependency
-
-PhonePC/2in1TabletTVWearable
 
 描述模块所依赖的动态共享库信息。
 
@@ -83,8 +75,6 @@ PhonePC/2in1TabletTVWearable
 | versionCode10+ | number | 是 | 否 | 标识当前共享包的版本号。 |
 
 ## RouterItem12+
-
-PhonePC/2in1TabletTVWearable
 
 描述模块配置的路由表信息。
 
@@ -101,8 +91,6 @@ PhonePC/2in1TabletTVWearable
 | customData | string | 是 | 否 | 标识[路由表配置文件](../harmonyos-guides/module-configuration-file.md#routermap标签)中的任意类型的自定义数据，即customData字段的JSON字符串，开发者需要调用JSON.parse函数解析出具体内容。 |
 
 ## DataItem12+
-
-PhonePC/2in1TabletTVWearable
 
 描述模块配置的路由表中的自定义数据。
 

@@ -3,22 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: NotificationFlags
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > ArkTS API > notification > NotificationFlags
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:35+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e7bc8333247eb589597289c48cb3f290777c74fa4ebd163e8e5f91da8f51bc9c
+scraped_at: 2026-09-02T15:03:01+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6ffb1f1f69042bdab5dd06a5c0ce4c71f6495e61d110532ad528de33416de7f1
 ---
 
-描述通知标志的实例。
+描述[通知标志位](../harmonyos-guides/notification-glossary.md#notification-flags通知标志位)。应用可以使用NotificationFlags按需削减通知的提醒方式。
 
-说明
+**说明** 
 
 本模块首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## NotificationFlags
 
-PhonePC/2in1TabletTVWearable
-
-描述通知标志位。
+描述[通知标志位](../harmonyos-guides/notification-glossary.md#notification-flags通知标志位)。
 
 **系统能力**：SystemCapability.Notification.Notification
 
@@ -31,14 +29,12 @@ PhonePC/2in1TabletTVWearable
 
 ## NotificationFlagStatus11+
 
-PhonePC/2in1TabletTVWearable
-
 描述通知标志状态。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| TYPE\_NONE | 0 | 默认标志，与TYPE\_OPEN效果相同。 |
+| TYPE\_NONE | 0 | 未设置标志时的默认值，与TYPE\_OPEN效果相同。 |
 | TYPE\_OPEN | 1 | 通知标志打开。 |
 | TYPE\_CLOSE | 2 | 通知标志关闭。 |

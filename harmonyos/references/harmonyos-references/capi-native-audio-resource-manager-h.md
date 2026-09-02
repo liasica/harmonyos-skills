@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_audio_resource_manager.h
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 头文件 > native_audio_resource_manager.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:48+08:00
-doc_updated_at: 2026-03-27
-content_hash: sha256:2ac8545dad598cc4075fb383761e92681c9a1528ae0ae1f33cfc5016a6322d9e
+scraped_at: 2026-09-02T15:02:20+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:02d76ef35a4423f99202932743fb537a7a60b45ed7915f2acba7a71a2527f072
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明音频资源管理相关的接口。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,8 +32,6 @@ PhonePC/2in1TabletTVWearable
 | [OH\_AudioWorkgroup](capi-ohaudio-oh-audioworkgroup.md) | OH\_AudioWorkgroup | 声明音频工作组。将音频关键线程进行分组管理。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -53,14 +45,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AudioManager\_GetAudioResourceManager()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioManager_GetAudioResourceManager(OH_AudioResourceManager **resourceManager)
+```c
+OH_AudioCommon_Result OH_AudioManager_GetAudioResourceManager(OH_AudioResourceManager **resourceManager)
 ```
 
 **描述**
@@ -75,7 +63,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AudioResourceManager](capi-ohaudio-oh-audioresourcemanager.md) \*\*resourceManager | 指向OH\_AudioResourceManager用于接收创建的音频资源管理器实例。 |
+| [OH\_AudioResourceManager](capi-ohaudio-oh-audioresourcemanager.md) \*\*resourceManager | 指向OH\_AudioResourceManager指针的地址，用于接收创建的音频资源管理器实例。 |
 
 **返回：**
 
@@ -85,10 +73,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioResourceManager\_CreateWorkgroup()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioResourceManager_CreateWorkgroup(OH_AudioResourceManager *resourceManager,const char *name, OH_AudioWorkgroup **group)
+```c
+OH_AudioCommon_Result OH_AudioResourceManager_CreateWorkgroup(OH_AudioResourceManager *resourceManager,const char *name, OH_AudioWorkgroup **group)
 ```
 
 **描述**
@@ -103,7 +89,7 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | [OH\_AudioResourceManager](capi-ohaudio-oh-audioresourcemanager.md) \*resourceManager | 指向[OH\_AudioManager\_GetAudioResourceManager](capi-native-audio-resource-manager-h.md#oh_audiomanager_getaudioresourcemanager)创建的音频资源管理器实例OH\_AudioResourceManager。 |
 | const char \*name | 要创建的音频工作组的名称。 |
-| [OH\_AudioWorkgroup](capi-ohaudio-oh-audioworkgroup.md) \*\*group | 指向OH\_AudioWorkgroup用于接收返回的音频工作组实例的指针。 |
+| [OH\_AudioWorkgroup](capi-ohaudio-oh-audioworkgroup.md) \*\*group | 指向OH\_AudioWorkgroup指针的地址，用于接收返回的音频工作组实例的指针。 |
 
 **返回：**
 
@@ -113,10 +99,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioResourceManager\_ReleaseWorkgroup()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioResourceManager_ReleaseWorkgroup(OH_AudioResourceManager *resourceManager,OH_AudioWorkgroup *group)
+```c
+OH_AudioCommon_Result OH_AudioResourceManager_ReleaseWorkgroup(OH_AudioResourceManager *resourceManager,OH_AudioWorkgroup *group)
 ```
 
 **描述**
@@ -140,10 +124,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioWorkgroup\_AddCurrentThread()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioWorkgroup_AddCurrentThread(OH_AudioWorkgroup *group, int32_t *tokenId)
+```c
+OH_AudioCommon_Result OH_AudioWorkgroup_AddCurrentThread(OH_AudioWorkgroup *group, int32_t *tokenId)
 ```
 
 **描述**
@@ -167,10 +149,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioWorkgroup\_RemoveThread()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioWorkgroup_RemoveThread(OH_AudioWorkgroup *group, int32_t tokenId)
+```c
+OH_AudioCommon_Result OH_AudioWorkgroup_RemoveThread(OH_AudioWorkgroup *group, int32_t tokenId)
 ```
 
 **描述**
@@ -194,10 +174,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioWorkgroup\_Start()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioWorkgroup_Start(OH_AudioWorkgroup *group, uint64_t startTime, uint64_t deadlineTime)
+```c
+OH_AudioCommon_Result OH_AudioWorkgroup_Start(OH_AudioWorkgroup *group, uint64_t startTime, uint64_t deadlineTime)
 ```
 
 **描述**
@@ -211,8 +189,8 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AudioWorkgroup](capi-ohaudio-oh-audioworkgroup.md) \*group | 指向[OH\_AudioResourceManager\_CreateWorkgroup](capi-native-audio-resource-manager-h.md#oh_audioresourcemanager_createworkgroup)创建的音频工作组实例OH\_AudioWorkgroup。 |
-| uint64\_t startTime | 当前音频工作组启动的时间点。 |
-| uint64\_t deadlineTime | 当前音频工作组预期完成的时间。 |
+| uint64\_t startTime | 当前音频工作组启动的时间点，单位为毫秒（ms）。 |
+| uint64\_t deadlineTime | 当前音频工作组预期完成的时间，单位为毫秒（ms）。 |
 
 **返回：**
 
@@ -222,10 +200,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioWorkgroup\_Stop()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioWorkgroup_Stop(OH_AudioWorkgroup *group)
+```c
+OH_AudioCommon_Result OH_AudioWorkgroup_Stop(OH_AudioWorkgroup *group)
 ```
 
 **描述**

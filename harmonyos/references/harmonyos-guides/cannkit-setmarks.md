@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-setma
 title: SetMarks
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > InferenceContext > SetMarks
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:31+08:00
+scraped_at: 2026-09-02T15:00:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e15730f1e67a32f090c73d475ece1d0ff9c141fd7e8beae2ad775afa96dcda77
+content_hash: sha256:fb30a2336ecd9c928f5c2ca2ed14df0a3b04a7aef1315b16dc9374453b9996bb
 ---
 
 ## 函数功能
@@ -14,13 +14,13 @@ content_hash: sha256:e15730f1e67a32f090c73d475ece1d0ff9c141fd7e8beae2ad775afa96d
 
 ## 函数原型
 
-说明
+**说明** 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 
-```
-1. void SetMarks(const std::vector<std::string> &marks)
-2. void SetMarks(const std::vector<AscendString> &marks)
+```cpp
+void SetMarks(const std::vector<std::string> &marks)
+void SetMarks(const std::vector<AscendString> &marks)
 ```
 
 ## 参数说明

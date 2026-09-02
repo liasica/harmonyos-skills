@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-inpu
 title: Input_InterceptorOptions
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > C API > 结构体 > Input_InterceptorOptions
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:21+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:8294cf82fb14a89402fc3db1b306246898845698f2e6b7f911991e61e3a607c7
+scraped_at: 2026-09-02T14:52:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c370d72448c67f60d4d966814ff9a7a41a1f832da45ccbdd360beacded93fb57
 ---
 
-```
-1. typedef struct Input_InterceptorOptions Input_InterceptorOptions
+```c
+typedef struct Input_InterceptorOptions Input_InterceptorOptions
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-事件拦截选项。
+事件拦截选项，用于配置输入事件拦截的参数和规则，支持按键事件、鼠标事件、触屏事件和轴事件的拦截控制。
 
 **起始版本：** 12
 

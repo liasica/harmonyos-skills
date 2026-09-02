@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-sandbox-d
 title: 应用沙箱目录
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用沙箱目录
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:38+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fefec271a212f5af073427ee918d8b44da9bd05fe693ea6e31832ca270672bd3
+scraped_at: 2026-09-02T14:59:24+08:00
+doc_updated_at: 2026-07-17
+content_hash: sha256:55252a5b6738aff14af01ad901b37746c8b4334d6c322470acd7c89c2bd7e113
 ---
 
 应用沙箱是一种以安全防护为目的的隔离机制，避免数据受到恶意路径穿越访问。在这种沙箱的保护机制下，应用可见的目录范围即为“应用沙箱目录”。
@@ -18,7 +18,7 @@ content_hash: sha256:fefec271a212f5af073427ee918d8b44da9bd05fe693ea6e31832ca2706
 
 **图1** 应用沙箱文件访问关系图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/8XoV4zHcRQC5M1_3sNxnZQ/zh-cn_image_0000002558764754.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/1oI3-LxkQ4OGpGnOsw4e3g/zh-cn_image_0000002706834112.png)
 
 ## 应用沙箱目录与应用沙箱路径
 
@@ -30,7 +30,7 @@ content_hash: sha256:fefec271a212f5af073427ee918d8b44da9bd05fe693ea6e31832ca2706
 
 **图2** 应用沙箱路径（不同权限与角色的进程下可见的文件路径不同）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/mG6gvsmJRmWyaAtyuus8qQ/zh-cn_image_0000002558605098.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/KXeeYAFuQY6RL1bNcyuGyQ/zh-cn_image_0000002736313221.png)
 
 ## 应用文件目录与应用文件路径
 
@@ -42,9 +42,9 @@ content_hash: sha256:fefec271a212f5af073427ee918d8b44da9bd05fe693ea6e31832ca2706
 
 **图3** 应用文件目录结构图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/nTy5IFc_REKgBy9qlIDxzw/zh-cn_image_0000002589324623.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/vmGvuAnARH2ecjqMSQlQ-g/zh-cn_image_0000002706674178.png)
 
-说明
+**说明** 
 
 * 禁止直接使用上图中四级目录之前的目录名组成的路径字符串，否则可能导致后续应用版本因应用文件路径变化导致不兼容问题。
 * 应通过Context属性获取应用文件路径，包括但不限于上图中绿色背景的路径。 Context上下文获取及上述应用文件路径的获取，详见[应用上下文Context](application-context-stage.md)。
@@ -77,7 +77,7 @@ content_hash: sha256:fefec271a212f5af073427ee918d8b44da9bd05fe693ea6e31832ca2706
    * 在EL2的基础上，增加设备锁屏时的文件保护能力。在用户锁屏后，满足一定条件时，通过EL5能力保护的数据将无法被访问，但可以继续创建和读写新的文件。如无特殊必要，无需使用该方式。
    * 默认情况下不会生成EL5的相关目录，应用若需要使用EL5目录，则需要配置访问E类加密数据库的权限。具体配置方法详见[E类加密数据库的使用](encrypted-estore-guidelines.md)。
 
-   说明
+   **说明** 
 
    应用如无特殊需要，应将数据存放在el2加密目录下，以尽可能保证数据安全。但是对于某些场景，一些应用文件需要在用户首次认证前就可被访问，例如时钟、闹铃、壁纸等，此时应用需要将这些文件存放到设备级加密区（el1）。
 
@@ -96,10 +96,10 @@ content_hash: sha256:fefec271a212f5af073427ee918d8b44da9bd05fe693ea6e31832ca2706
 
    | 目录名 | Context属性名称 | 类型 | 说明 |
    | --- | --- | --- | --- |
-   | bundle | bundleCodeDir | 安装文件路径 | 应用安装后的App的HAP资源包所在目录；随应用卸载而清理。  不能通过拼接路径访问资源文件，应使用[资源管理接口](../harmonyos-references/js-apis-resource-manager.md)访问资源。  可以用于存储应用的代码资源数据，主要包括应用安装的HAP资源包、可重复使用的库文件以及插件资源等。此路径下存储的代码资源数据可以被用于动态加载。 |
+   | bundle | bundleCodeDir | 安装文件路径 | 应用安装后的App的HAP资源包所在目录；随应用卸载而清理。  不能通过拼接路径访问资源文件，应使用[@ohos.resourceManager (资源管理)](../harmonyos-references/js-apis-resource-manager.md)相关接口访问资源。  可以用于存储应用的代码资源数据，主要包括应用安装的HAP资源包、可重复使用的库文件以及插件资源等。此路径下存储的代码资源数据可以被用于动态加载。 |
    | base | NA | 本设备文件路径 | 应用在本设备上存放持久化数据的目录（随应用卸载而清理），子目录包含files/、cache/、temp/和haps/。  不建议将cookie、密码和token等高风险信息明文存储在此目录下。 |
    | database | databaseDir | 数据库路径 | 应用在el2加密条件下存放通过分布式数据库服务操作的文件目录；随应用卸载而清理。  仅用于保存应用的私有数据库数据，主要包括数据库文件等。此路径下仅适用于存储分布式数据库相关文件数据。 |
-   | distributedfiles | distributedFilesDir | 分布式文件路径 | 应用在el2加密条件下存放分布式文件的目录，应用将文件放入该目录可分布式跨设备直接访问；随应用卸载而清理。  可以用于保存应用分布式场景下的数据，主要包括应用多设备共享文件、应用多设备备份文件、应用多设备群组协助文件。此路径下存储这些数据，使得应用更加适合多设备使用场景。  **注意**：  distributedfiles下的.remote\_share目录由系统创建管理，应用请勿创建或操作。  distributedfiles目录支持直接操作其他设备文件，请勿随意删除该目录下的文件。详细注意事项请参考[跨设备文件共享和访问](file-access-across-devices.md) 。 |
+   | distributedfiles | distributedFilesDir | 分布式文件路径 | 应用在el2加密条件下存放分布式文件的目录，应用将文件放入该目录可分布式跨设备直接访问；随应用卸载而清理。  可以用于保存应用分布式场景下的数据，主要包括应用多设备共享文件、应用多设备备份文件、应用多设备群组协作文件。此路径下存储这些数据，使得应用更加适合多设备使用场景。  **注意**：  distributedfiles下的.remote\_share目录由系统创建管理，应用请勿创建或操作。  distributedfiles目录支持直接操作其他设备文件，请勿随意删除该目录下的文件。详细注意事项请参考[跨设备文件共享和访问](file-access-across-devices.md) 。 |
    | files | filesDir | 应用通用文件路径 | 应用在本设备内部存储上通用的存放默认长期保存的文件路径；随应用卸载而清理。  可以用于保存应用的任何私有数据，主要包括用户持久性文件、图片、媒体文件以及日志文件等。此路径下存储这些数据，使得数据保持私有、安全且持久有效。 |
    | cache | cacheDir | 应用缓存文件路径 | 应用在本设备内部存储上用于缓存下载的文件或可重新生成的缓存文件的路径，应用cache目录大小超过配额或者系统空间达到一定条件，自动触发清理该目录下文件；用户通过系统空间管理类应用也可能触发清理该目录。应用需判断文件是否仍存在，决策是否需重新缓存该文件；随应用卸载而清理。  可以用于保存应用的缓存数据，主要包括离线数据、图片缓存、数据库备份以及临时文件等。此路径下存储的数据可能会被系统自动清理，因此不要存储重要数据。 |
    | preferences | preferencesDir | 应用首选项文件路径 | 应用在本设备内部存储上通过数据库API存储配置类或首选项的目录；随应用卸载而清理。详见[通过用户首选项实现数据持久化](data-persistence-by-preferences.md)。  可以用于保存应用的首选项数据，主要包括应用首选项文件以及配置文件等。此路径下仅适用于存储少量数据。 |

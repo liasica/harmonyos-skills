@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-medi
 title: media_asset_change_request_capi.h
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > C API > 头文件 > media_asset_change_request_capi.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:22+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:a1eed8930473c78b6b7f5889f6eb3ce2a755a10f8229a063b0dd139712e4dde6
+scraped_at: 2026-09-02T15:02:38+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:dc87c0e36388cde42f1bb48486d9d4cb49295001e87bf47ac84f47eded06eafe
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 定义与媒体资产更改请求相关的API。提供更改资产的能力。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 函数
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -44,14 +38,10 @@ PhonePC/2in1TabletTV
 
 ## 函数说明
 
-PhonePC/2in1TabletTV
-
 ### OH\_MediaAssetChangeRequest\_Create()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_MediaAssetChangeRequest* OH_MediaAssetChangeRequest_Create(OH_MediaAsset* mediaAsset)
+```c
+OH_MediaAssetChangeRequest* OH_MediaAssetChangeRequest_Create(OH_MediaAsset* mediaAsset)
 ```
 
 **描述**
@@ -74,10 +64,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaAssetChangeRequest\_AddResourceWithUri()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_AddResourceWithUri(OH_MediaAssetChangeRequest* changeRequest,MediaLibrary_ResourceType resourceType, char* fileUri)
+```c
+MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_AddResourceWithUri(OH_MediaAssetChangeRequest* changeRequest,MediaLibrary_ResourceType resourceType, char* fileUri)
 ```
 
 **描述**
@@ -102,10 +90,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaAssetChangeRequest\_AddResourceWithBuffer()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_AddResourceWithBuffer(OH_MediaAssetChangeRequest* changeRequest,MediaLibrary_ResourceType resourceType, uint8_t* buffer, uint32_t length)
+```c
+MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_AddResourceWithBuffer(OH_MediaAssetChangeRequest* changeRequest,MediaLibrary_ResourceType resourceType, uint8_t* buffer, uint32_t length)
 ```
 
 **描述**
@@ -121,7 +107,7 @@ PhonePC/2in1TabletTV
 | [OH\_MediaAssetChangeRequest](capi-mediaassetmanager-oh-mediaassetchangerequest.md)\* changeRequest | [OH\_MediaAssetChangeRequest](capi-mediaassetmanager-oh-mediaassetchangerequest.md)实例。 |
 | [MediaLibrary\_ResourceType](capi-media-asset-base-capi-h.md#medialibrary_resourcetype) resourceType | 要添加的资源的类型。 |
 | uint8\_t\* buffer | 要添加的数据缓冲区。 |
-| uint32\_t length | 数据缓冲区的长度。 |
+| uint32\_t length | 数据缓冲区的长度，单位：字节（Byte）。 |
 
 **返回：**
 
@@ -131,10 +117,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaAssetChangeRequest\_GetWriteCacheHandler()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_GetWriteCacheHandler(OH_MediaAssetChangeRequest* changeRequest,int32_t* fd)
+```c
+MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_GetWriteCacheHandler(OH_MediaAssetChangeRequest* changeRequest,int32_t* fd)
 ```
 
 **描述**
@@ -150,7 +134,7 @@ PhonePC/2in1TabletTV
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_MediaAssetChangeRequest](capi-mediaassetmanager-oh-mediaassetchangerequest.md)\* changeRequest | [OH\_MediaAssetChangeRequest](capi-mediaassetmanager-oh-mediaassetchangerequest.md)实例。 |
-| int32\_t\* fd | 临时文件写句柄。 |
+| int32\_t\* fd | 输出参数，用于获取临时文件的写句柄，通过该句柄可以向临时文件写入数据。使用完毕后请及时关闭句柄，避免资源泄漏。 |
 
 **返回：**
 
@@ -160,15 +144,19 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaAssetChangeRequest\_SaveCameraPhoto()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_SaveCameraPhoto(OH_MediaAssetChangeRequest* changeRequest,MediaLibrary_ImageFileType imageFileType)
+```c
+MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_SaveCameraPhoto(OH_MediaAssetChangeRequest* changeRequest,MediaLibrary_ImageFileType imageFileType)
 ```
 
 **描述**
 
 保存相机拍摄的照片资源。
+
+**说明** 
+
+* 非YUV拍摄模式下，照片资源保存的编码格式与[Camera\_Format](capi-camera-h.md#camera_format)中的编码格式保持一致。
+* YUV拍摄模式下，该接口根据[MediaLibrary\_ImageFileType](capi-media-asset-base-capi-h.md#medialibrary_imagefiletype)将YUV对象编码保存为指定格式。
+* 当该接口与[OH\_MediaAssetChangeRequest\_AddResourceWithUri](capi-media-asset-change-request-capi-h.md#oh_mediaassetchangerequest_addresourcewithuri)或[OH\_MediaAssetChangeRequest\_AddResourceWithBuffer](capi-media-asset-change-request-capi-h.md#oh_mediaassetchangerequest_addresourcewithbuffer)组合使用时，照片资源保存的编码格式与[OH\_MediaAssetChangeRequest\_AddResourceWithUri](capi-media-asset-change-request-capi-h.md#oh_mediaassetchangerequest_addresourcewithuri)或[OH\_MediaAssetChangeRequest\_AddResourceWithBuffer](capi-media-asset-change-request-capi-h.md#oh_mediaassetchangerequest_addresourcewithbuffer)添加资源的编码格式保持一致。
 
 **起始版本：** 12
 
@@ -187,10 +175,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaAssetChangeRequest\_DiscardCameraPhoto()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_DiscardCameraPhoto(OH_MediaAssetChangeRequest* changeRequest)
+```c
+MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_DiscardCameraPhoto(OH_MediaAssetChangeRequest* changeRequest)
 ```
 
 **描述**
@@ -213,10 +199,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaAssetChangeRequest\_Release()
 
-PhonePC/2in1TabletTV
-
-```
-1. MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_Release(OH_MediaAssetChangeRequest* changeRequest)
+```c
+MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_Release(OH_MediaAssetChangeRequest* changeRequest)
 ```
 
 **描述**

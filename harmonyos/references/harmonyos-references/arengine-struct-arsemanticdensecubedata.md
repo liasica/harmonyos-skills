@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-
 title: AREngine_ARSemanticDenseCubeData
 breadcrumb: API参考 > 图形 > AR Engine（AR引擎服务） > C API > 头文件和结构体 > 结构体 > AREngine_ARSemanticDenseCubeData
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:34+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:15f2c3d82b25a362de618c61bf178b44a5c8a9c4e2909cf54fcd2a3785f7c78c
+scraped_at: 2026-09-02T15:02:40+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:17e01756939dd9243ddbb74e3bff3f95042f1e1c7a43057403e7a140ea07191a
 ---
 
 ## 概述
-
-PhoneTabletTV
 
 高精几何重建对象的立方体数据。
 
@@ -24,11 +22,7 @@ PhoneTabletTV
 
 ## 汇总
 
-PhoneTabletTV
-
 ### 成员变量
-
-PhoneTabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -40,14 +34,10 @@ PhoneTabletTV
 
 ## 结构体成员变量说明
 
-PhoneTabletTV
-
 ### id
 
-PhoneTabletTV
-
-```
-1. int32_t AREngine_ARSemanticDenseCubeData::id
+```cpp
+int32_t AREngine_ARSemanticDenseCubeData::id
 ```
 
 **描述**
@@ -56,10 +46,8 @@ PhoneTabletTV
 
 ### vertexSize
 
-PhoneTabletTV
-
-```
-1. int32_t AREngine_ARSemanticDenseCubeData::vertexSize
+```cpp
+int32_t AREngine_ARSemanticDenseCubeData::vertexSize
 ```
 
 **描述**
@@ -68,10 +56,8 @@ PhoneTabletTV
 
 ### vertexData
 
-PhoneTabletTV
-
-```
-1. float* AREngine_ARSemanticDenseCubeData::vertexData
+```cpp
+float* AREngine_ARSemanticDenseCubeData::vertexData
 ```
 
 **描述**
@@ -80,10 +66,8 @@ PhoneTabletTV
 
 ### confidence
 
-PhoneTabletTV
-
-```
-1. float AREngine_ARSemanticDenseCubeData::confidence
+```cpp
+float AREngine_ARSemanticDenseCubeData::confidence
 ```
 
 **描述**
@@ -92,10 +76,8 @@ PhoneTabletTV
 
 ### label
 
-PhoneTabletTV
-
-```
-1. AREngine_ARSemanticPlaneLabel AREngine_ARSemanticDenseCubeData::label
+```cpp
+AREngine_ARSemanticPlaneLabel AREngine_ARSemanticDenseCubeData::label
 ```
 
 **描述**

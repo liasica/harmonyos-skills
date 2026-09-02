@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-avsessionkit-6101
 title: AVSession Kit
-breadcrumb: 版本说明 > HarmonyOS 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta1引入的变更 > AVSession Kit
+breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta1引入的变更 > AVSession Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:26+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:16:21+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:8c57d726532e119d6af3b1869abae28ad2d9b98bc80365067279192dd69e6676
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-23
 title: pthread创建的线程中如何读取rawfile
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > pthread创建的线程中如何读取rawfile
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:59+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:14+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:3adf39fb604b4e5912089add16cc0af94bf6d673c5e3bd4849333ef1c6f1f6e1
 ---
 

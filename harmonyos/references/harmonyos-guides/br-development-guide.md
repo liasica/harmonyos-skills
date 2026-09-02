@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/br-developmen
 title: 蓝牙设置
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 蓝牙 > 蓝牙设置
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:32:28+08:00
+scraped_at: 2026-09-02T14:59:33+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:5d1d2c1bbd4f075474b0bb41c1afa127ecef62280586138dc86195dc2d2cd900
+content_hash: sha256:d17fc8c084c621e161938e99f39a34089f9bc864ee45b308291bdfb58bbd2f1a
 ---
 
 ## 简介
@@ -22,56 +22,56 @@ content_hash: sha256:5d1d2c1bbd4f075474b0bb41c1afa127ecef62280586138dc86195dc2d2
 
 导入access和错误码模块。
 
-```
-1. import { access } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { access } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 ```
 
 ### 订阅蓝牙开关状态变化事件
 
 通过订阅开关状态变化事件，可以获取实时的蓝牙开关状态。蓝牙开启或者关闭过程中，涉及多种蓝牙状态的跃迁。其中[STATE\_OFF](../harmonyos-references/js-apis-bluetooth-access.md#bluetoothstate)表示蓝牙已关闭，此状态下，应用不可以使用蓝牙其他功能；[STATE\_ON](../harmonyos-references/js-apis-bluetooth-access.md#bluetoothstate)表示蓝牙已打开，此状态下，应用可以使用蓝牙其他功能。
 
-```
-1. // 定义蓝牙开关状态变化函数回调
-2. function onReceiveEvent(data: access.BluetoothState) {
-3. let btStateMessage = '';
-4. switch (data) {
-5. case access.BluetoothState.STATE_OFF:
-6. // 表示蓝牙是关闭的
-7. btStateMessage += 'STATE_OFF';
-8. break;
-9. case access.BluetoothState.STATE_TURNING_ON:
-10. btStateMessage += 'STATE_TURNING_ON';
-11. break;
-12. case access.BluetoothState.STATE_ON:
-13. // 表示蓝牙是开启的，此时应用才可以使用蓝牙其他功能
-14. btStateMessage += 'STATE_ON';
-15. break;
-16. case access.BluetoothState.STATE_TURNING_OFF:
-17. btStateMessage += 'STATE_TURNING_OFF';
-18. break;
-19. case access.BluetoothState.STATE_BLE_TURNING_ON:
-20. btStateMessage += 'STATE_BLE_TURNING_ON';
-21. break;
-22. case access.BluetoothState.STATE_BLE_ON:
-23. btStateMessage += 'STATE_BLE_ON';
-24. break;
-25. case access.BluetoothState.STATE_BLE_TURNING_OFF:
-26. btStateMessage += 'STATE_BLE_TURNING_OFF';
-27. break;
-28. default:
-29. btStateMessage += 'unknown state';
-30. break;
-31. }
-32. console.info('bluetooth state: ' + btStateMessage);
-33. }
+```ts
+// 定义蓝牙开关状态变化函数回调
+function onReceiveEvent(data: access.BluetoothState) {
+  let btStateMessage = '';
+  switch (data) {
+    case access.BluetoothState.STATE_OFF:
+      // 表示蓝牙是关闭的
+      btStateMessage += 'STATE_OFF';
+      break;
+    case access.BluetoothState.STATE_TURNING_ON:
+      btStateMessage += 'STATE_TURNING_ON';
+      break;
+    case access.BluetoothState.STATE_ON:
+      // 表示蓝牙是开启的，此时应用才可以使用蓝牙其他功能
+      btStateMessage += 'STATE_ON';
+      break;
+    case access.BluetoothState.STATE_TURNING_OFF:
+      btStateMessage += 'STATE_TURNING_OFF';
+      break;
+    case access.BluetoothState.STATE_BLE_TURNING_ON:
+      btStateMessage += 'STATE_BLE_TURNING_ON';
+      break;
+    case access.BluetoothState.STATE_BLE_ON:
+      btStateMessage += 'STATE_BLE_ON';
+      break;
+    case access.BluetoothState.STATE_BLE_TURNING_OFF:
+      btStateMessage += 'STATE_BLE_TURNING_OFF';
+      break;
+    default:
+      btStateMessage += 'unknown state';
+      break;
+  }
+  console.info('bluetooth state: ' + btStateMessage);
+}
 
-35. try {
-36. // 发起订阅
-37. access.on('stateChange', onReceiveEvent);
-38. } catch (err) {
-39. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-40. }
+try {
+    // 发起订阅
+    access.on('stateChange', onReceiveEvent);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ### 开启蓝牙
@@ -80,21 +80,21 @@ content_hash: sha256:5d1d2c1bbd4f075474b0bb41c1afa127ecef62280586138dc86195dc2d2
 
 系统弹出对话框并提示应用“想要开启蓝牙”，如下图1。若用户同意授权，将开启蓝牙。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/wFGosIv0REGtiME-qtRUGw/zh-cn_image_0000002589324787.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/hRmfceQYRZi1ZvyFYGvoKA/zh-cn_image_0000002736313435.png)
 
 **图1** 开启蓝牙对话框
 
-```
-1. try {
-2. // 主动获取蓝牙当前的开关状态
-3. let state = access.getState();
-4. if (state == access.BluetoothState.STATE_OFF) {
-5. // 若蓝牙是关闭的，则主动开启蓝牙
-6. access.enableBluetooth();
-7. }
-8. } catch (err) {
-9. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-10. }
+```ts
+try {
+    // 主动获取蓝牙当前的开关状态
+    let state = access.getState();
+    if (state == access.BluetoothState.STATE_OFF) {
+        // 若蓝牙是关闭的，则主动开启蓝牙
+        access.enableBluetooth();
+    }
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ### 关闭蓝牙
@@ -103,98 +103,98 @@ content_hash: sha256:5d1d2c1bbd4f075474b0bb41c1afa127ecef62280586138dc86195dc2d2
 
 系统弹出对话框并提示应用“想要关闭蓝牙”，如下图2。若用户同意授权，将关闭蓝牙。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/M4OJVJ8CQ5yWT1CGwFCphg/zh-cn_image_0000002589244725.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/kjaBkOV3Sbm1TMRlTWCUXg/zh-cn_image_0000002706674394.png)
 
 **图2** 关闭蓝牙对话框
 
-```
-1. try {
-2. // 主动获取蓝牙当前的开关状态
-3. let state = access.getState();
-4. if (state == access.BluetoothState.STATE_ON) {
-5. // 若蓝牙是开启的，则主动关闭蓝牙
-6. access.disableBluetooth();
-7. }
-8. } catch (err) {
-9. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-10. }
+```ts
+try {
+   // 主动获取蓝牙当前的开关状态
+   let state = access.getState();
+   if (state == access.BluetoothState.STATE_ON) {
+     // 若蓝牙是开启的，则主动关闭蓝牙
+     access.disableBluetooth();
+  }
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## 完整示例
 
-```
-1. import { access } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { access } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export class AdapterManager {
-5. // 定义蓝牙开关状态变化函数回调
-6. onReceiveEvent = (data: access.BluetoothState) => {
-7. let btStateMessage = '';
-8. switch (data) {
-9. case access.BluetoothState.STATE_OFF:
-10. // 表示蓝牙是关闭的
-11. btStateMessage += 'STATE_OFF';
-12. break;
-13. case access.BluetoothState.STATE_TURNING_ON:
-14. btStateMessage += 'STATE_TURNING_ON';
-15. break;
-16. case access.BluetoothState.STATE_ON:
-17. // 表示蓝牙是开启的，此时应用才可以使用蓝牙其他功能
-18. btStateMessage += 'STATE_ON';
-19. break;
-20. case access.BluetoothState.STATE_TURNING_OFF:
-21. btStateMessage += 'STATE_TURNING_OFF';
-22. break;
-23. case access.BluetoothState.STATE_BLE_TURNING_ON:
-24. btStateMessage += 'STATE_BLE_TURNING_ON';
-25. break;
-26. case access.BluetoothState.STATE_BLE_ON:
-27. btStateMessage += 'STATE_BLE_ON';
-28. break;
-29. case access.BluetoothState.STATE_BLE_TURNING_OFF:
-30. btStateMessage += 'STATE_BLE_TURNING_OFF';
-31. break;
-32. default:
-33. btStateMessage += 'unknown state';
-34. break;
-35. }
-36. console.info('bluetooth state: ' + btStateMessage);
-37. };
+export class AdapterManager {
+  // 定义蓝牙开关状态变化函数回调
+  onReceiveEvent = (data: access.BluetoothState) => {
+    let btStateMessage = '';
+    switch (data) {
+      case access.BluetoothState.STATE_OFF:
+        // 表示蓝牙是关闭的
+        btStateMessage += 'STATE_OFF';
+        break;
+      case access.BluetoothState.STATE_TURNING_ON:
+        btStateMessage += 'STATE_TURNING_ON';
+        break;
+      case access.BluetoothState.STATE_ON:
+        // 表示蓝牙是开启的，此时应用才可以使用蓝牙其他功能
+        btStateMessage += 'STATE_ON';
+        break;
+      case access.BluetoothState.STATE_TURNING_OFF:
+        btStateMessage += 'STATE_TURNING_OFF';
+        break;
+      case access.BluetoothState.STATE_BLE_TURNING_ON:
+        btStateMessage += 'STATE_BLE_TURNING_ON';
+        break;
+      case access.BluetoothState.STATE_BLE_ON:
+        btStateMessage += 'STATE_BLE_ON';
+        break;
+      case access.BluetoothState.STATE_BLE_TURNING_OFF:
+        btStateMessage += 'STATE_BLE_TURNING_OFF';
+        break;
+      default:
+        btStateMessage += 'unknown state';
+        break;
+    }
+    console.info('bluetooth state: ' + btStateMessage);
+  };
 
-39. // 开启蓝牙
-40. public openBluetooth() {
-41. try {
-42. access.on('stateChange', this.onReceiveEvent);
-43. } catch (err) {
-44. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-45. }
-46. try {
-47. // 主动获取蓝牙当前的开关状态
-48. let state = access.getState();
-49. if (state == access.BluetoothState.STATE_OFF) {
-50. // 若蓝牙是关闭的，则主动开启蓝牙
-51. access.enableBluetooth();
-52. }
-53. } catch (err) {
-54. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-55. }
-56. }
+  // 开启蓝牙
+  public openBluetooth() {
+    try {
+      access.on('stateChange', this.onReceiveEvent);
+    } catch (err) {
+      console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+    }
+    try {
+      // 主动获取蓝牙当前的开关状态
+      let state = access.getState();
+      if (state == access.BluetoothState.STATE_OFF) {
+        // 若蓝牙是关闭的，则主动开启蓝牙
+        access.enableBluetooth();
+      }
+    } catch (err) {
+      console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+    }
+  }
 
-58. // 关闭蓝牙
-59. public closeBluetooth() {
-60. try {
-61. // 主动获取蓝牙当前的开关状态
-62. let state = access.getState();
-63. if (state == access.BluetoothState.STATE_ON) {
-64. // 若蓝牙是开启的，则主动关闭蓝牙
-65. access.disableBluetooth();
-66. }
-67. } catch (err) {
-68. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-69. }
-70. }
-71. }
+  // 关闭蓝牙
+  public closeBluetooth() {
+    try {
+      // 主动获取蓝牙当前的开关状态
+      let state = access.getState();
+      if (state == access.BluetoothState.STATE_ON) {
+        // 若蓝牙是开启的，则主动关闭蓝牙
+        access.disableBluetooth();
+      }
+    } catch (err) {
+      console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+    }
+  }
+}
 
-73. let adapterManager = new AdapterManager();
-74. export default adapterManager as AdapterManager;
+let adapterManager = new AdapterManager();
+export default adapterManager as AdapterManager;
 ```

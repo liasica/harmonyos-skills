@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-infer
 title: GetRequiredInputShape
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > InferShapeContext > GetRequiredInputShape
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:01+08:00
+scraped_at: 2026-09-02T14:50:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:09fc8818661c55ef7fd5358c66073c9bf9997bbf8312b7c08986a36cf7157b89
+content_hash: sha256:015bb127aae4ad1a04053e9992cc8720454eba0d10506f762c127c7d7d83e90d
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:09fc8818661c55ef7fd5358c66073c9bf9997bbf8312b7c08986a36cf71
 
 ## 函数原型
 
-```
-1. const Shape *GetRequiredInputShape(const size_t ir_index) const;
+```cpp
+const Shape *GetRequiredInputShape(const size_t ir_index) const;
 ```
 
 ## 参数说明
@@ -36,9 +36,9 @@ content_hash: sha256:09fc8818661c55ef7fd5358c66073c9bf9997bbf8312b7c08986a36cf71
 
 ## 调用示例
 
-```
-1. ge::graphStatus InferShapeForXXX(InferShapeContext *context) {
-2. auto in_shape = context->GetRequiredInputShape(2);
-3. // ...
-4. }
+```cpp
+ge::graphStatus InferShapeForXXX(InferShapeContext *context) {
+  auto in_shape = context->GetRequiredInputShape(2);
+  // ...
+}
 ```

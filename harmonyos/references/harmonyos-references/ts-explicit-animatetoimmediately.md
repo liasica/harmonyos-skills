@@ -3,34 +3,31 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-explic
 title: 显式动画立即下发 (animateToImmediately)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 显式动画立即下发 (animateToImmediately)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:52:43+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fae15c83e9b65949023f0d14d61bb6d5189c2c41a2add2ee519734a4a8fdc71d
+scraped_at: 2026-09-02T15:01:06+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:56e66e7cec141f16eedc1b5218c34a74bc9768652bd03f86e4728735cfaf4d34
 ---
 
-animateToImmediately接口用来提供[显式动画](ts-explicit-animation.md)立即下发功能。同时加载多个属性动画的情况下，使用该接口可以立即执行闭包代码中状态变化导致的过渡动效。
+animateToImmediately接口提供[显式动画](ts-explicit-animation.md)立即下发功能。典型应用场景包括：页面切换时优先展示关键过渡效果、主线程耗时期间提前刷新可见区域UI等。同时加载多个属性动画的情况下，使用该接口可以立即执行闭包代码中状态变化导致的过渡动效。
 
-与[animateTo](arkts-apis-uicontext-uicontext.md#animateto)相比，animateToImmediately能即时将生成的动画指令发送至渲染层执行，无需等待vsync信号，从而在视觉效果上实现部分动画的优先呈现。当应用的主线程存在耗时操作，且需提前更新部分用户界面时，此接口可有效缩短应用的响应延迟。需要注意的是，animateToImmediately仅支持渲染层上的属性动画提前执行，无法用于UI侧的逐帧动画。
+与[animateTo](arkts-apis-uicontext-uicontext.md#animateto)相比，animateTo需等待vsync信号后下发动画指令，而animateToImmediately能即时将生成的动画指令发送至渲染层执行，无需等待vsync信号，从而在视觉效果上实现闭包内涉及的动画属性的优先呈现。当应用的主线程存在耗时操作，且需提前更新闭包内涉及的用户界面时，此接口可有效缩短应用的响应延迟。需要注意的是，animateToImmediately仅支持渲染层上的属性动画提前执行，无法用于UI侧的逐帧动画。
 
-此外，该接口会将调用前的状态和新生成的动画一并发送至渲染层，因此渲染结果可能会基于调用时的状态进行。务必确保调用时的状态完整，否则前几帧可能出现渲染异常。
+此外，该接口会将调用animateToImmediately前的UI状态和新生成的动画一并发送至渲染层，因此渲染结果可能会基于调用animateToImmediately时的UI状态进行。务必确保调用时所有涉及动画的属性值已正确设置，否则动画开始的少量帧可能出现渲染异常。
 
-因此，建议开发者优先使用[animateTo](arkts-apis-uicontext-uicontext.md#animateto)，以防止干扰框架的显示时序，避免在动画启动时因状态设置不完整而导致的显示错误。
+因此，建议开发者优先使用[animateTo](arkts-apis-uicontext-uicontext.md#animateto)，仅在应用主线程存在耗时操作且需提前更新部分用户界面时使用animateToImmediately，以防止干扰框架的显示时序，避免在动画启动时因状态设置不完整而导致的显示错误。
 
-说明
+**说明** 
 
-从API version 12开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 从API version 12开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 本模块接口仅可在Stage模型下使用。
 
 ## 接口
 
-PhonePC/2in1TabletTVWearable
-
 ## animateToImmediately
 
-PhonePC/2in1TabletTVWearable
+animateToImmediately(value: AnimateParam, event: () => void): void
 
-animateToImmediately(value: AnimateParam , event: () => void): void
-
-提供显式动画立即下发功能。
+提供显式动画立即下发功能。该接口仅支持渲染层上的属性动画提前执行，无法用于UI侧的逐帧动画。建议开发者优先使用[animateTo](arkts-apis-uicontext-uicontext.md#animateto)，以防止干扰框架的显示时序，避免在动画启动时因状态设置不完整而导致的显示错误。务必确保调用时所有涉及动画的属性值已正确设置，否则动画开始的少量帧可能出现渲染异常。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -40,69 +37,69 @@ animateToImmediately(value: AnimateParam , event: () => void): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [AnimateParam](ts-explicit-animation.md#animateparam对象说明) | 是 | 设置动画效果相关参数。 |
-| event | () => void | 是 | 指定显示动效的闭包函数，在闭包函数中导致的状态变化系统会自动插入过渡动画。 |
+| value | [AnimateParam](ts-explicit-animation.md#animateparam对象说明) | 是 | 设置动画效果相关参数，动画参数将作用于event闭包函数中状态变化产生的过渡动效。各属性的取值范围及含义详见[AnimateParam对象说明](ts-explicit-animation.md#animateparam对象说明)。animateToImmediately接口对AnimateParam各属性的使用与[animateTo](arkts-apis-uicontext-uicontext.md#animateto)一致，但仅支持渲染层上的属性动画，无法用于UI侧的逐帧动画。 |
+| event | () => void | 是 | 指定显式动效的闭包函数，闭包中仅支持渲染层上的属性动画相关的状态变化，无法用于UI侧的逐帧动画。在闭包函数中导致的状态变化系统会自动插入过渡动画，动画效果由value参数控制。务必确保调用时所有涉及动画的属性值已正确设置，否则动画开始的少量帧可能出现渲染异常。 |
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
+该示例主要演示使用[animateToImmediately](ts-explicit-animatetoimmediately.md#animatetoimmediately)接口实现显式动画立即下发。
 
-该示例主要演示通过[animateToImmediately](ts-explicit-animatetoimmediately.md#animatetoimmediately)接口来实现显式动画立即下发。
+```ts
+// xxx.ets
+@Entry
+@Component
+struct AnimateToImmediatelyExample {
+  @State widthSize: number = 250;
+  @State heightSize: number = 100;
+  @State opacitySize: number = 0;
+  private flag: boolean = true;
 
+  build() {
+    Column() {
+      Column()
+      .width(this.widthSize)
+      .height(this.heightSize)
+      .backgroundColor(Color.Green)
+      .opacity(this.opacitySize)
+      Button('change size')
+        .margin(30)
+        .onClick(() => {
+          // 通过if/else分支对比演示：animateToImmediately立即下发动画与animateTo延迟下发动画的效果差异
+          // flag切换演示场景：true时透明度立即下发、尺寸延迟下发；false时尺寸立即下发、透明度延迟下发
+          if (this.flag) {
+            animateToImmediately({
+              delay: 0,
+              duration: 1000
+            }, () => {
+              this.opacitySize = 1;
+            })
+            this.getUIContext()?.animateTo({
+              delay: 1000,
+              duration: 1000
+            }, () => {
+              this.widthSize = 150;
+              this.heightSize = 60;
+            })
+          } else {
+            animateToImmediately({
+              delay: 0,
+              duration: 1000
+            }, () => {
+              this.widthSize = 250;
+              this.heightSize = 100;
+            })
+            this.getUIContext()?.animateTo({
+              delay: 1000,
+              duration: 1000
+            }, () => {
+              this.opacitySize = 0;
+            })
+          }
+          this.flag = !this.flag;
+        })
+    }.width('100%').margin({ top: 5 })
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct AnimateToImmediatelyExample {
-5. @State widthSize: number = 250;
-6. @State heightSize: number = 100;
-7. @State opacitySize: number = 0;
-8. private flag: boolean = true;
 
-10. build() {
-11. Column() {
-12. Column()
-13. .width(this.widthSize)
-14. .height(this.heightSize)
-15. .backgroundColor(Color.Green)
-16. .opacity(this.opacitySize)
-17. Button('change size')
-18. .margin(30)
-19. .onClick(() => {
-20. if (this.flag) {
-21. animateToImmediately({
-22. delay: 0,
-23. duration: 1000
-24. }, () => {
-25. this.opacitySize = 1;
-26. })
-27. this.getUIContext()?.animateTo({
-28. delay: 1000,
-29. duration: 1000
-30. }, () => {
-31. this.widthSize = 150;
-32. this.heightSize = 60;
-33. })
-34. } else {
-35. animateToImmediately({
-36. delay: 0,
-37. duration: 1000
-38. }, () => {
-39. this.widthSize = 250;
-40. this.heightSize = 100;
-41. })
-42. this.getUIContext()?.animateTo({
-43. delay: 1000,
-44. duration: 1000
-45. }, () => {
-46. this.opacitySize = 0;
-47. })
-48. }
-49. this.flag = !this.flag;
-50. })
-51. }.width('100%').margin({ top: 5 })
-52. }
-53. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/P5oJcbaCSTCpjazGg9g5ng/zh-cn_image_0000002589246367.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/X1Zdqa1ZRYaNgEcV-2Bnhg/zh-cn_image_0000002736315301.gif)

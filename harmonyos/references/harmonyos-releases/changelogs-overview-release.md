@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-overview-release
 title: 总览
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > 接口行为变更说明 > 总览
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > 接口行为变更说明 > 总览
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:36:08+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:40+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:65669fb6f9c2910b0312c48c710f0febf5c552e0d5ae9c30b55a86e8853b07b8
 ---
 

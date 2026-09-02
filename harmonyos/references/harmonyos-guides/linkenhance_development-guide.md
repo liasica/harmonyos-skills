@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/linkenhance_d
 title: 增强连接开发指导
 breadcrumb: 指南 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > 应用跨设备连接管理 > 增强连接开发指导
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:32:37+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:370d7ad3a66170d0c8c82cce10812b6e12519e3ebc8b02990536dd8d58171380
+scraped_at: 2026-09-02T14:59:34+08:00
+doc_updated_at: 2026-08-21
+content_hash: sha256:e3273dca2266af0862e698172c7dbc6575832bb1e5ac3025b2906fe3a3b08c8d
 ---
 
 ## 简介
@@ -20,7 +20,7 @@ HarmonyOS提供了分布式增强连接能力，实现跨设备互联，完成�
 
 两个设备的交互实现如下，在使用[linkEnhance](../harmonyos-references/js-apis-link-enhance.md)能力后，当两端同时发起连接时，会自动识别合并底层多余物理链路，减少实际物理链路的个数，减少蓝牙链路资源的消耗，增加可用连接数量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/mRtj2guHQ-GhgN_QqLHZnA/zh-cn_image_0000002558605266.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/esvsCykxRNeQ60qW-igUMw/zh-cn_image_0000002736433489.png)
 
 ### 约束与限制
 
@@ -56,7 +56,7 @@ HarmonyOS提供了分布式增强连接能力，实现跨设备互联，完成�
 | sendData(data:ArrayBuffer) | 向远端设备发送数据。 |
 | on(type: 'connectResult') | 订阅连接结果通知变化的事件。 |
 | on(type: 'disconnected') | 订阅连接状态断开的事件。 |
-| on(type: 'dataReceived') | 注册收数据的通知事件。 |
+| on(type: 'dataReceived') | 订阅接收数据的通知事件。 |
 | createConnection(deviceId: string,name:string) | 创建一个connection对象。 |
 | start() | 服务端开启服务。 |
 | stop() | 服务端停止服务。 |
@@ -75,195 +75,195 @@ HarmonyOS提供了分布式增强连接能力，实现跨设备互联，完成�
 
 1. 导入所需的模块。
 
-   ```
-   1. import {linkEnhance} from '@kit.DistributedServiceKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```ts
+   import {linkEnhance} from '@kit.DistributedServiceKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 在module.json5配置文件中配置分布式数据同步权限ohos.permission.DISTRIBUTED\_DATASYNC。
 
-   ```
-   1. {
-   2. "module" : {
-   3. "requestPermissions":[
-   4. {
-   5. "name" : "ohos.permission.DISTRIBUTED_DATASYNC",
-   6. "reason": "$string:distributed_permission",
-   7. "usedScene": {
-   8. "abilities": [
-   9. "MainAbility"
-   10. ],
-   11. "when": "inuse"
-   12. }
-   13. }
-   14. ]
-   15. }
-   16. }
+   ```ts
+   {
+     "module" : {
+       "requestPermissions":[
+         {
+           "name" : "ohos.permission.DISTRIBUTED_DATASYNC",
+           "reason": "$string:distributed_permission",
+           "usedScene": {
+             "abilities": [
+               "MainAbility"
+             ],
+             "when": "inuse"
+           }
+         }
+       ]
+     }
+   }
    ```
 3. 创建server对象，并开启服务，注册监听。
 
-   ```
-   1. const TAG = 'TEST';
-   2. // server端注册服务
-   3. linkEnhanceStart(name: string) {
-   4. console.info(TAG + 'start server deviceId = ' + name);
-   5. try {
-   6. // 使用服务名构造Server
-   7. let server: linkEnhance.Server = linkEnhance.createServer(name);
+   ```ts
+   const TAG = 'TEST';
+   // server端注册服务
+   linkEnhanceStart(name: string) {
+     console.info(TAG + 'start server deviceId = ' + name);
+     try {
+     // 使用服务名构造Server
+     let server: linkEnhance.Server = linkEnhance.createServer(name);
 
-   9. // 订阅服务接收事件和服务停止事件
-   10. server.on('connectionAccepted', (connection: linkEnhance.Connection): void => {
-   11. console.info(TAG + 'serverOnCallback');
-   12. });
-   13. server.on('serverStopped', (reason: number): void => {
-   14. console.info(TAG, 'serverStopped， reason= ' + reason);
-   15. });
-   16. // 启动服务
-   17. server.start();
-   18. } catch (err) {
-   19. console.error(TAG + 'start server errCode: ' + (err as BusinessError).code + ', errMessage: ' +
-   20. (err as BusinessError).message);
-   21. }
-   22. }
+       // 订阅服务接收事件和服务停止事件
+       server.on('connectionAccepted', (connection: linkEnhance.Connection): void => {
+         console.info(TAG + 'serverOnCallback');
+       });
+       server.on('serverStopped', (reason: number): void => {
+         console.info(TAG, 'serverStopped, reason= ' + reason);
+       });
+       // 启动服务
+       server.start();
+     } catch (err) {
+       console.error(TAG + 'start server errCode: ' + (err as BusinessError).code + ', errMessage: ' +
+       (err as BusinessError).message);
+     }
+   }
    ```
 4. 当连接被连上时，需要保存connection对象。
 
-   ```
-   1. serverAcceptOnCallback = (connection: linkEnhance.Connection): void => {
-   2. console.info(TAG + 'serverOnCallback');
-   3. try {
+   ```ts
+   serverAcceptOnCallback = (connection: linkEnhance.Connection): void => {
+     console.info(TAG + 'serverOnCallback');
+     try {
 
-   5. // 收到连接请求后，订阅connection的断连事件。
-   6. connection.on('disconnected', (reason: number)=> {
-   7. console.info(TAG + 'disconnected, reason = ' + reason);
-   8. });
-   9. // 收到连接请求后，订阅connection的数据接收事件。
-   10. connection.on('dataReceived', (data: ArrayBuffer)=> {
-   11. console.info(TAG + 'dataReceived, dataLen=' + data.byteLength);
-   12. });
+       // 收到连接请求后，订阅connection的断连事件。
+       connection.on('disconnected', (reason: number)=> {
+         console.info(TAG + 'disconnected, reason = ' + reason);
+       });
+       // 收到连接请求后，订阅connection的数据接收事件。
+       connection.on('dataReceived', (data: ArrayBuffer)=> {
+         console.info(TAG + 'dataReceived, dataLen=' + data.byteLength);
+       });
 
-   14. let len = 1;
-   15. let arraybuffer = new ArrayBuffer(len);
-   16. // 向远端发送数据。
-   17. connection.sendData(arraybuffer);
-   18. } catch (err) {
-   19. console.error(TAG + 'server on callback errCode: ' + (err as BusinessError).code + ', errMessage: ' +
-   20. (err as BusinessError).message);
-   21. }
-   22. }
+       let len = 1;
+       let arraybuffer = new ArrayBuffer(len);
+       // 向远端发送数据。
+       connection.sendData(arraybuffer);
+     } catch (err) {
+       console.error(TAG + 'server on callback errCode: ' + (err as BusinessError).code + ', errMessage: ' +
+       (err as BusinessError).message);
+     }
+   }
    ```
 5. 断开连接并销毁Connection对象。
 
-   ```
-   1. // 断连接。
-   2. linkEnhanceDisconnect(connection: linkEnhance.Connection) {
-   3. console.info(TAG + 'disconnect deviceId = ' + connection.getPeerDeviceId());
-   4. try {
-   5. connection.disconnect();
-   6. connection.close();
-   7. } catch (err) {
-   8. console.error(TAG + 'disconnect errCode: ' + (err as BusinessError).code + ', errMessage: ' +
-   9. (err as BusinessError).message);
-   10. }
-   11. }
+   ```ts
+   // 断开连接。
+   linkEnhanceDisconnect(connection: linkEnhance.Connection) {
+     console.info(TAG + 'disconnect deviceId = ' + connection.getPeerDeviceId());
+     try {
+       connection.disconnect();
+       connection.close();
+     } catch (err) {
+       console.error(TAG + 'disconnect errCode: ' + (err as BusinessError).code + ', errMessage: ' +
+       (err as BusinessError).message);
+     }
+   }
    ```
 6. 停止服务并销毁server对象。
 
-   ```
-   1. // Server端停止服务
-   2. linkEnhanceStop(server: linkEnhance.Server) {
-   3. console.info(TAG + 'stop server');
-   4. try {
-   5. server.stop();
-   6. } catch (err) {
-   7. console.info(TAG + 'stop server errCode: ' + (err as BusinessError).code + ', errMessage: ' +
-   8. (err as BusinessError).message);
-   9. }
-   10. }
-   11. // Server端停止服务并取消所有的订阅事件
-   12. linkEnhanceClose(server: linkEnhance.Server) {
-   13. console.info(TAG + 'close server' );
-   14. try {
-   15. server.close();
-   16. } catch (err) {
-   17. console.error(TAG + 'close server errCode: ' + (err as BusinessError).code + ', errMessage: ' +
-   18. (err as BusinessError).message);
-   19. }
-   20. }
+   ```ts
+   // Server端停止服务
+   linkEnhanceStop(server: linkEnhance.Server) {
+     console.info(TAG + 'stop server');
+     try {
+       server.stop();
+     } catch (err) {
+       console.error(TAG + 'stop server errCode: ' + (err as BusinessError).code + ', errMessage: ' +
+       (err as BusinessError).message);
+     }
+   }
+   // Server端停止服务并取消所有的订阅事件
+   linkEnhanceClose(server: linkEnhance.Server) {
+     console.info(TAG + 'close server');
+     try {
+       server.close();
+     } catch (err) {
+       console.error(TAG + 'close server errCode: ' + (err as BusinessError).code + ', errMessage: ' +
+       (err as BusinessError).message);
+     }
+   }
    ```
 
 ### 客户端开发指导
 
 1. 导入所需的模块。
 
-   ```
-   1. import { linkEnhance } from '@kit.DistributedServiceKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```ts
+   import { linkEnhance } from '@kit.DistributedServiceKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 在module.json5配置文件中配置分布式数据同步权限ohos.permission.DISTRIBUTED\_DATASYNC。
 
-   ```
-   1. {
-   2. "module" : {
-   3. "requestPermissions":[
-   4. {
-   5. "name" : "ohos.permission.DISTRIBUTED_DATASYNC",
-   6. "reason": "$string:distributed_permission",
-   7. "usedScene": {
-   8. "abilities": [
-   9. "MainAbility"
-   10. ],
-   11. "when": "inuse"
-   12. }
-   13. }
-   14. ]
-   15. }
-   16. }
+   ```ts
+   {
+     "module" : {
+       "requestPermissions":[
+         {
+           "name" : "ohos.permission.DISTRIBUTED_DATASYNC",
+           "reason": "$string:distributed_permission",
+           "usedScene": {
+             "abilities": [
+               "MainAbility"
+             ],
+             "when": "inuse"
+           }
+         }
+       ]
+     }
+   }
    ```
 3. 创建connection对象，订阅连接结果通知变化的事件，连接服务端。
 
-   ```
-   1. const TAG = "testDemo";
-   2. // client端主动连接时调用
-   3. linkEnhanceConnect(peerDeviceId: string) {
-   4. console.info(TAG + 'connection server deviceId = ' + peerDeviceId);
-   5. try {
-   6. // 使用peerDeviceId构造Connection后续的交互都需要使用该对象
-   7. let connection: linkEnhance.Connection = linkEnhance.createConnection(peerDeviceId, "demo");
-   8. // 订阅连接结果
-   9. connection.on('connectResult', (data: linkEnhance.ConnectResult): void => {
-   10. console.info(TAG + 'clientConnectResultCallback result = ' + data.success);
-   11. if (data.success) {
-   12. // 向服务端发送数据
-   13. let len = 1;
-   14. let arraybuffer = new ArrayBuffer(len);
-   15. connection.sendData(arraybuffer);
-   16. }
-   17. });
-   18. connection.on('disconnected', (reason: number)=> {
-   19. console.info(TAG + 'disconnected reason = ' + reason);
-   20. });
-   21. connection.on('dataReceived', (data: ArrayBuffer)=> {
-   22. console.info(TAG + 'dataReceived, dataLen=' + data.byteLength);
-   23. });
-   24. // 发起连接
-   25. connection.connect();
-   26. } catch (err) {
-   27. console.error(TAG + 'connect errCode: ' + (err as BusinessError).code + ', errMessage: ' +
-   28. (err as BusinessError).message);
-   29. }
-   30. }
+   ```ts
+   const TAG = "TEST";
+   // client端主动连接时调用
+   linkEnhanceConnect(peerDeviceId: string) {
+     console.info(TAG + 'connection server deviceId = ' + peerDeviceId);
+     try {
+       // 使用peerDeviceId构造Connection后续的交互都需要使用该对象
+       let connection: linkEnhance.Connection = linkEnhance.createConnection(peerDeviceId, "demo");
+       // 订阅连接结果
+       connection.on('connectResult', (data: linkEnhance.ConnectResult): void => {
+         console.info(TAG + 'clientConnectResultCallback result = ' + data.success);
+         if (data.success) {
+           // 向服务端发送数据
+           let len = 1;
+           let arraybuffer = new ArrayBuffer(len);
+           connection.sendData(arraybuffer);
+         }
+       });
+       connection.on('disconnected', (reason: number)=> {
+         console.info(TAG + 'disconnected reason = ' + reason);
+       });
+       connection.on('dataReceived', (data: ArrayBuffer)=> {
+       console.info(TAG + 'dataReceived, dataLen=' + data.byteLength);
+       });
+       // 发起连接
+       connection.connect();
+     } catch (err) {
+       console.error(TAG + 'connect errCode: ' + (err as BusinessError).code + ', errMessage: ' +
+       (err as BusinessError).message);
+     }
+   }
    ```
 4. 断开连接，销毁Connection对象。
 
-   ```
-   1. disconnect(connection: linkEnhance.Connection) {
-   2. console.info(TAG + 'disconnect deviceId = ' + connection.getPeerDeviceId());
-   3. try {
-   4. connection.disconnect();
-   5. connection.close();
-   6. } catch (err) {
-   7. console.error(TAG + 'disconnect errCode: ' + (err as BusinessError).code + ', errMessage: ' +
-   8. (err as BusinessError).message);
-   9. }
-   10. }
+   ```ts
+   disconnect(connection: linkEnhance.Connection) {
+     console.info(TAG + 'disconnect deviceId = ' + connection.getPeerDeviceId());
+     try {
+       connection.disconnect();
+       connection.close();
+     } catch (err) {
+       console.error(TAG + 'disconnect errCode: ' + (err as BusinessError).code + ', errMessage: ' +
+       (err as BusinessError).message);
+     }
+   }
    ```

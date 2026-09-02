@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ffrt-concurre
 title: Function Flow Runtime串行队列(C)
 breadcrumb: 指南 > 系统 > 基础功能 > Function Flow Runtime Kit（任务并发调度服务） > Function Flow Runtime开发样例(C) > Function Flow Runtime串行队列(C)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:28+08:00
-doc_updated_at: 2026-04-08
-content_hash: sha256:33ca77c6fd2991b9c540de8dc8ef52738ea9f05ee03202d0a453608b75ad0c19
+scraped_at: 2026-09-02T14:59:36+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1e5a9605d32f3471cf891404556ece8ce19002c6a57683baf23cba52686aff79
 ---
 
 ## 概述
@@ -27,145 +27,145 @@ FFRT串行队列基于协程调度模型实现，提供高效的消息队列功�
 
 用例简化了异常处理和线程安全相关的一些逻辑，实现代码如下所示：
 
-```
-1. #include <cstdio>
-2. #include <cstdlib>
-3. #include <cstring>
-4. #include <unistd.h>
-5. #include "hilog/log.h"
-6. #include "ffrt/ffrt.h" // 来自 OpenHarmony 第三方库 "@ppd/ffrt"
-```
-
-```
-1. #undef LOG_TAG
-2. #define LOG_TAG "SerialTag"
-
-4. typedef struct {
-5. FILE *logFile;          // 日志文件指针
-6. ffrt_queue_t queue;     // 任务队列
-7. } LoggerT;
-
-9. // 全局Logger变量
-10. LoggerT* g_logger = nullptr;
-
-12. // 初始化日志系统
-13. LoggerT *LoggerCreate(const char *filename)
-14. {
-15. LoggerT *logger = (LoggerT *)malloc(sizeof(LoggerT));
-16. if (!logger) {
-17. OH_LOG_ERROR(LOG_APP, "Failed to allocate memory for LoggerT");
-18. return nullptr;
-19. }
-
-21. // 打开日志文件
-22. logger->logFile = stdout;
-23. if (!logger->logFile) {
-24. OH_LOG_ERROR(LOG_APP, "Failed to open log file");
-25. free(logger);
-26. return nullptr;
-27. }
-28. OH_LOG_INFO(LOG_APP, "Log file opened: %{public}s", filename);
-
-30. // 创建任务队列
-31. logger->queue = ffrt_queue_create(ffrt_queue_serial, "logger_queue_c", NULL);
-32. if (!logger->queue) {
-33. OH_LOG_ERROR(LOG_APP, "Failed to create queue");
-34. fclose(logger->logFile);
-35. free(logger);
-36. return nullptr;
-37. }
-
-39. return logger;
-40. }
-
-42. // 销毁日志系统
-43. void LoggerDestroy(LoggerT *logger)
-44. {
-45. if (logger) {
-46. // 销毁队列
-47. if (logger->queue) {
-48. ffrt_queue_destroy(logger->queue);
-49. }
-
-51. // 关闭日志文件
-52. if (logger->logFile) {
-53. fclose(logger->logFile);
-54. OH_LOG_INFO(LOG_APP, "Log file closed");
-55. }
-
-57. free(logger);
-58. }
-59. }
-
-61. // 日志任务
-62. void WriteTask(void *arg)
-63. {
-64. char *message = (char *)arg;
-65. if (g_logger && g_logger->logFile) {
-66. OH_LOG_INFO(LOG_APP, "Writing message %{public}s", message);
-67. fflush(g_logger->logFile);
-68. }
-
-70. free(message);
-71. }
-
-73. // 添加日志任务
-74. void LoggerLog(LoggerT *logger, const char *message)
-75. {
-76. if (!logger || !logger->queue) {
-77. return;
-78. }
-
-80. // 复制消息字符串
-81. char *messageCopy = strdup(message);
-82. if (!messageCopy) {
-83. OH_LOG_ERROR(LOG_APP, "Failed to allocate memory for message");
-84. return;
-85. }
-
-87. ffrt_queue_submit_f(logger->queue, WriteTask, messageCopy, NULL);
-88. }
-
-90. int SerialQueueCExec()
-91. {
-92. // 初始化全局logger
-93. g_logger = LoggerCreate("log_c.txt");
-94. if (!g_logger) {
-95. return -1;
-96. }
-
-98. // 使用全局logger添加日志任务
-99. LoggerLog(g_logger, "Log message 1");
-100. LoggerLog(g_logger, "Log message 2");
-101. LoggerLog(g_logger, "Log message 3");
-
-103. // 模拟主线程继续执行其他任务
-104. sleep(1);
-
-106. // 销毁全局logger
-107. LoggerDestroy(g_logger);
-108. g_logger = nullptr;
-109. return 0;
-110. }
+```c
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <unistd.h>
+#include "hilog/log.h"
+#include "ffrt/ffrt.h" // 来自 OpenHarmony 第三方库 "@ppd/ffrt"
 ```
 
-说明
+```
+#undef LOG_TAG
+#define LOG_TAG "SerialTag"
+
+typedef struct {
+    FILE *logFile;          // 日志文件指针
+    ffrt_queue_t queue;     // 任务队列
+} LoggerT;
+
+// 全局Logger变量
+LoggerT* g_logger = nullptr;
+
+// 初始化日志系统
+LoggerT *LoggerCreate(const char *filename)
+{
+    LoggerT *logger = (LoggerT *)malloc(sizeof(LoggerT));
+    if (!logger) {
+        OH_LOG_ERROR(LOG_APP, "Failed to allocate memory for LoggerT");
+        return nullptr;
+    }
+
+    // 打开日志文件
+    logger->logFile = stdout;
+    if (!logger->logFile) {
+        OH_LOG_ERROR(LOG_APP, "Failed to open log file");
+        free(logger);
+        return nullptr;
+    }
+    OH_LOG_INFO(LOG_APP, "Log file opened: %{public}s", filename);
+
+    // 创建任务队列
+    logger->queue = ffrt_queue_create(ffrt_queue_serial, "logger_queue_c", NULL);
+    if (!logger->queue) {
+        OH_LOG_ERROR(LOG_APP, "Failed to create queue");
+        fclose(logger->logFile);
+        free(logger);
+        return nullptr;
+    }
+
+    return logger;
+}
+
+// 销毁日志系统
+void LoggerDestroy(LoggerT *logger)
+{
+    if (logger) {
+        // 销毁队列
+        if (logger->queue) {
+            ffrt_queue_destroy(logger->queue);
+        }
+
+        // 关闭日志文件
+        if (logger->logFile) {
+            fclose(logger->logFile);
+            OH_LOG_INFO(LOG_APP, "Log file closed");
+        }
+
+        free(logger);
+    }
+}
+
+// 日志任务
+void WriteTask(void *arg)
+{
+    char *message = (char *)arg;
+    if (g_logger && g_logger->logFile) {
+        OH_LOG_INFO(LOG_APP, "Writing message %{public}s", message);
+        fflush(g_logger->logFile);
+    }
+
+    free(message);
+}
+
+// 添加日志任务
+void LoggerLog(LoggerT *logger, const char *message)
+{
+    if (!logger || !logger->queue) {
+        return;
+    }
+
+    // 复制消息字符串
+    char *messageCopy = strdup(message);
+    if (!messageCopy) {
+        OH_LOG_ERROR(LOG_APP, "Failed to allocate memory for message");
+        return;
+    }
+
+    ffrt_queue_submit_f(logger->queue, WriteTask, messageCopy, NULL);
+}
+
+int SerialQueueCExec()
+{
+    // 初始化全局logger
+    g_logger = LoggerCreate("log_c.txt");
+    if (!g_logger) {
+        return -1;
+    }
+
+    // 使用全局logger添加日志任务
+    LoggerLog(g_logger, "Log message 1");
+    LoggerLog(g_logger, "Log message 2");
+    LoggerLog(g_logger, "Log message 3");
+
+    // 模拟主线程继续执行其他任务
+    sleep(1);
+
+    // 销毁全局logger
+    LoggerDestroy(g_logger);
+    g_logger = nullptr;
+    return 0;
+}
+```
+
+**说明** 
 
 ffrt\_queue\_submit\_h\_f接口可以接收裸函数指针任务作为参数，如果任务存在前后处理可以参见[ffrt\_alloc\_auto\_managed\_function\_storage\_base](ffrt-api-guideline-c.md#ffrt_alloc_auto_managed_function_storage_base)函数查看如何构造任务结构体。
 
 ## 接口说明
 
-上述样例中涉及到主要的FFRT的接口包括：
+上述样例中涉及到主要的FFRT的接口如下，详情请参考[ffrt\_queue\_t](ffrt-api-guideline-c.md#ffrt_queue_t)下的方法：
 
 | 名称 | 描述 |
 | --- | --- |
-| [ffrt\_queue\_create](ffrt-api-guideline-c.md#ffrt_queue_t) | 创建队列。 |
-| [ffrt\_queue\_destroy](ffrt-api-guideline-c.md#ffrt_queue_t) | 销毁队列。 |
-| [ffrt\_queue\_submit\_f](ffrt-api-guideline-c.md#ffrt_queue_t) | 向队列提交一个任务。  **说明**：从API version 20开始，支持该接口。 |
+| ffrt\_queue\_create | 创建队列。 |
+| ffrt\_queue\_destroy | 销毁队列。 |
+| ffrt\_queue\_submit\_f | 向队列提交一个任务。  **说明**：从API version 20开始，支持该接口。 |
 
-说明
+**说明** 
 
-* 如何使用FFRT C++ API详见：[FFRT C++接口三方库使用指导](ffrt-development-guideline.md#using-ffrt-c-api-1)。
+* 如何使用FFRT C++ API详见：[FFRT C++接口三方库使用指导](ffrt-development-guideline.md#使用ffrt-c-api-1)。
 * 使用FFRT C接口或C++接口时，都可以通过FFRT C++接口三方库简化头文件包含，即使用#include "ffrt/ffrt.h"头文件包含语句。
 
 ## 约束限制

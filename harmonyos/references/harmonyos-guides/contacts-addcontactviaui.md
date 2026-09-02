@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/contacts-addc
 title: 使用picker管理联系人
 breadcrumb: 指南 > 应用服务 > Contacts Kit（联系人服务） > 使用picker管理联系人
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:53+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:77b2e47cf35b0339806bede9320b424a8a83e740c5e6779b352b7fd8d78ca9a3
+scraped_at: 2026-09-02T14:50:25+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:224aef80aae6694687663b920d2622688d703b95751b910a32ccbfec6fab76df
 ---
 
 ## 接口说明
@@ -19,81 +19,81 @@ content_hash: sha256:77b2e47cf35b0339806bede9320b424a8a83e740c5e6779b352b7fd8d78
 
 调用新建联系人接口，打开新建联系人UI界面，用户可在UI界面中填写并新建联系人。
 
-```
-1. import { common } from '@kit.AbilityKit';
-2. import { contact } from '@kit.ContactsKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { common } from '@kit.AbilityKit';
+import { contact } from '@kit.ContactsKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. @Entry
-7. @Component
-8. struct Index {
-9. @State message: string = 'Hello World';
-
-11. build() {
-12. Column() {
-13. Text(this.message)
-14. .fontSize(50)
-15. .fontWeight(FontWeight.Bold)
-16. .onClick(() => {
-17. let contactInfo: contact.Contact = {
-18. name: {
-19. fullName: 'xxx'
-20. },
-21. phoneNumbers: [{
-22. phoneNumber: '138xxxxxx'
-23. }]
-24. }
-25. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-26. let promise = contact.addContactViaUI(context, contactInfo);
-27. promise.then((data) => {
-28. console.info(`Succeeded in add Contact via UI.data->${JSON.stringify(data)}`);
-29. }).catch((err: BusinessError) => {
-30. console.error(`Failed to add Contact via UI. Code: ${err.code}, message: ${err.message}`);
-31. });
-32. })
-33. }
-34. }
-35. }
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
+    
+  build() {
+    Column() {
+      Text(this.message)
+        .fontSize(50)
+        .fontWeight(FontWeight.Bold)
+        .onClick(() => {
+          let contactInfo: contact.Contact = {
+            name: {
+              fullName: 'xxx'
+            },
+            phoneNumbers: [{
+              phoneNumber: '138xxxxxx'
+            }]
+          };
+          let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+          let promise = contact.addContactViaUI(context, contactInfo);
+          promise.then((data) => {
+              console.info(`Succeeded in add Contact via UI.data->${JSON.stringify(data)}`);
+            }).catch((err: BusinessError) => {
+              console.error(`Failed to add Contact via UI. Code: ${err.code}, message: ${err.message}`);
+            });
+        })
+    }
+  }
+}
 ```
 
 ## 使用picker更新联系人信息
 
 可以通过拉起picker，将选中的联系人信息更新到现有联系人中。
 
-```
-1. import { common } from '@kit.AbilityKit';
-2. import { contact } from '@kit.ContactsKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { common } from '@kit.AbilityKit';
+import { contact } from '@kit.ContactsKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. @Entry
-7. @Component
-8. struct Index {
-9. @State message: string = 'Hello World';
-
-11. build() {
-12. Column() {
-13. Text(this.message)
-14. .fontSize(50)
-15. .fontWeight(FontWeight.Bold)
-16. .onClick(() => {
-17. let contactInfo: contact.Contact = {
-18. id: 1,
-19. name: {
-20. fullName: 'xxx'
-21. },
-22. phoneNumbers: [{
-23. phoneNumber: '138xxxxxx'
-24. }]
-25. }
-26. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-27. let promise = contact.saveToExistingContactViaUI(context, contactInfo);
-28. promise.then((data) => {
-29. console.info(`Succeeded in save to existing Contact via UI.data->${JSON.stringify(data)}`);
-30. }).catch((err: BusinessError) => {
-31. console.error(`Failed to save to existing Contact via UI. Code: ${err.code}, message: ${err.message}`);
-32. });
-33. })
-34. }
-35. }
-36. }
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
+    
+  build() {
+    Column() {
+      Text(this.message)
+        .fontSize(50)
+        .fontWeight(FontWeight.Bold)
+        .onClick(() => {
+          let contactInfo: contact.Contact = {
+            id: 1,
+            name: {
+              fullName: 'xxx'
+            },
+            phoneNumbers: [{
+              phoneNumber: '138xxxxxx'
+            }]
+          }
+          let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+          let promise = contact.saveToExistingContactViaUI(context, contactInfo);
+          promise.then((data) => {
+              console.info(`Succeeded in save to existing Contact via UI.data->${JSON.stringify(data)}`);
+            }).catch((err: BusinessError) => {
+              console.error(`Failed to save to existing Contact via UI. Code: ${err.code}, message: ${err.message}`);
+            });
+        })
+    }
+  }
+}
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-pdfview-a
 title: 批注
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > PdfView预览组件 > 批注
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:47+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:15d440e5695c125ecd7ae11188ca0ee4be8adbac15b33cf4d4a275b628c7317b
+scraped_at: 2026-09-02T14:50:30+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:6a0d6f5187bf6617292d643c496e9215535640d4091c41888639a04bb20b984f
 ---
 
 进入批注模式，目前支持高亮、下划线和删除线类型批注。
@@ -22,38 +22,39 @@ content_hash: sha256:15d440e5695c125ecd7ae11188ca0ee4be8adbac15b33cf4d4a275b628c
 2. 调用PdfView预览组件，渲染显示。
 3. 调用enableAnnotation方法，进入批注模式。
 
-```
-1. import { pdfService, pdfViewManager, PdfView } from '@kit.PDFKit';
+```typescript
+import { pdfService, pdfViewManager, PdfView } from '@kit.PDFKit';
+// ...
 
-3. @Entry
-4. @Component
-5. struct PdfPage {
-6. private pdfController = new pdfViewManager.PdfController();
-7. private context = this.getUIContext().getHostContext() as Context;
+@Entry
+@Component
+struct AnnotationPage {
+  private pdfController = new pdfViewManager.PdfController();
+  private context = this.getUIContext().getHostContext() as Context;
 
-9. aboutToAppear(): void {
-10. // 确保沙箱目录有input.pdf文档
-11. let filePath = this.context.resourceDir + '/input.pdf';
-12. (async () => {
-13. let loadResult: pdfService.ParseResult = await this.pdfController.loadDocument(filePath);
-14. if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
-15. // 添加删除线批注
-16. this.pdfController.enableAnnotation(pdfViewManager.SupportedAnnotationType.STRIKETHROUGH, 0xAAEEEEEE);
-17. }
-18. })()
-19. }
+  aboutToAppear(): void {
+    // 确保在工程目录src/main/resources/resfile里有input.pdf文档
+    let filePath = this.context.resourceDir + '/input.pdf';
+    (async () => {
+      let loadResult: pdfService.ParseResult = await this.pdfController.loadDocument(filePath);
+      if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
+        this.pdfController.enableAnnotation(pdfViewManager.SupportedAnnotationType.STRIKETHROUGH, 0xAAFF0000);
+      }
+    })()
+  }
 
-21. build() {
-22. Column() {
-23. // 加载PdfView组件进行预览
-24. PdfView({
-25. controller: this.pdfController,
-26. pageFit: pdfService.PageFit.FIT_WIDTH,
-27. showScroll: true
-28. })
-29. .id('pdfview_app_view')
-30. .layoutWeight(1);
-31. }
-32. }
-33. }
+  build() {
+  // ...
+      Column() {
+        PdfView({
+          controller: this.pdfController,
+          pageFit: pdfService.PageFit.FIT_WIDTH,
+          showScroll: true
+        })
+          .id('pdfview_app_view')
+          .layoutWeight(1);
+      }
+      // ...
+  }
+}
 ```

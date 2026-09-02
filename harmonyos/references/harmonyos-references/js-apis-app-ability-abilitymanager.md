@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.abilityManager (Ability信息管理)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.app.ability.abilityManager (Ability信息管理)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:30+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:b16faceee811dd3d946d5da6b26718fe3a09020bf99f44e28479d12d97607285
+scraped_at: 2026-09-02T15:00:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e73951f3748ee4c5fb2b260a9edf88ebd4c7fbf8e1c9ed3b8d2bd486baeedd15
 ---
 
 AbilityManager模块提供获取Ability相关信息和运行状态信息的能力。
 
-说明
+**说明** 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { abilityManager } from '@kit.AbilityKit';
+```ts
+import { abilityManager } from '@kit.AbilityKit';
 ```
 
 ## AbilityState14+
-
-PhonePC/2in1TabletTVWearable
 
 Ability的状态，该类型为枚举，可配合[AbilityRunningInfo](js-apis-inner-application-abilityrunninginfo.md)返回Ability的状态。
 
@@ -41,13 +37,11 @@ Ability的状态，该类型为枚举，可配合[AbilityRunningInfo](js-apis-in
 
 ## abilityManager.getAbilityRunningInfos14+
 
-PhonePC/2in1TabletTVWearable
-
 getAbilityRunningInfos(): Promise<Array<AbilityRunningInfo>>
 
 获取UIAbility运行时的相关信息。使用Promise异步回调。
 
-说明
+**说明** 
 
 如果应用申请了ohos.permission.GET\_RUNNING\_INFO权限，可以获取所有应用UIAbility的运行信息，否则只能获取当前应用UIAbility的运行信息。
 
@@ -71,34 +65,32 @@ getAbilityRunningInfos(): Promise<Array<AbilityRunningInfo>>
 
 **示例**：
 
-```
-1. import { abilityManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { abilityManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. abilityManager.getAbilityRunningInfos()
-6. .then((data: abilityManager.AbilityRunningInfo[]) => {
-7. console.info(`getAbilityRunningInfos success, data: ${JSON.stringify(data)}`);
-8. })
-9. .catch((error: BusinessError) => {
-10. console.error(`getAbilityRunningInfos fail, error code: ${JSON.stringify(error.code)}, error msg: ${JSON.stringify(error.message)}`);
-11. })
-12. } catch (e) {
-13. let code = (e as BusinessError).code;
-14. let msg = (e as BusinessError).message;
-15. console.error(`getAbilityRunningInfos fail, error code: ${JSON.stringify(code)}, error msg: ${JSON.stringify(msg)}`);
-16. }
+try {
+  abilityManager.getAbilityRunningInfos()
+    .then((data: abilityManager.AbilityRunningInfo[]) => {
+      console.info(`getAbilityRunningInfos success, data: ${JSON.stringify(data)}`);
+    })
+    .catch((error: BusinessError) => {
+      console.error(`getAbilityRunningInfos fail, error code: ${JSON.stringify(error.code)}, error msg: ${JSON.stringify(error.message)}`);
+    })
+} catch (e) {
+  let code = (e as BusinessError).code;
+  let msg = (e as BusinessError).message;
+  console.error(`getAbilityRunningInfos fail, error code: ${JSON.stringify(code)}, error msg: ${JSON.stringify(msg)}`);
+}
 ```
 
 ## abilityManager.restartSelfAtomicService20+
-
-PhonePC/2in1TabletTVWearable
 
 restartSelfAtomicService(context: Context): void
 
 重启当前元服务。
 
-说明
+**说明** 
 
 * 当前仅支持以独立窗口方式拉起元服务。
 * 在调用本接口成功后的3秒内，再次调用本接口、[ApplicationContext.restartApp()](js-apis-inner-application-applicationcontext.md#applicationcontextrestartapp12)或[UIAbilityContext.restartApp()](js-apis-inner-application-uiabilitycontext.md#restartapp22)接口中的任一接口，系统将返回错误码16000064。
@@ -129,24 +121,53 @@ restartSelfAtomicService(context: Context): void
 
 **示例**：
 
-```
-1. import { AbilityConstant, EmbeddableUIAbility, Want, abilityManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { AbilityConstant, EmbeddableUIAbility, Want, abilityManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends EmbeddableUIAbility {
-5. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-6. try {
-7. abilityManager.restartSelfAtomicService(this.context);
-8. } catch (e) {
-9. console.error(`restartSelfAtomicService error: ${JSON.stringify(e as BusinessError)}`);
-10. }
-11. }
-12. }
+export default class EntryAbility extends EmbeddableUIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    try {
+      abilityManager.restartSelfAtomicService(this.context);
+    } catch (e) {
+      console.error(`restartSelfAtomicService error: ${JSON.stringify(e as BusinessError)}`);
+    }
+  }
+}
+```
+
+## abilityManager.isEmbeddedUIExtensionSupported
+
+isEmbeddedUIExtensionSupported(): boolean
+
+开发者通过调用该接口判断[EmbeddedUIExtensionAbility](../harmonyos-guides/embeddeduiextensionability.md)是否可以在当前设备上使用。
+
+**起始版本**：26.0.0
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 当前设备是否支持[EmbeddedUIExtensionAbility](../harmonyos-guides/embeddeduiextensionability.md)。返回true表示当前设备支持；返回false表示当前设备不支持。 |
+
+**示例：**
+
+```ts
+import { abilityManager, UIAbility } from '@kit.AbilityKit';
+
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    let isSupported: boolean = abilityManager.isEmbeddedUIExtensionSupported();
+    console.info(`isEmbeddedUIExtensionSupported is ${isSupported}`);
+  }
+}
 ```
 
 ## AbilityRunningInfo14+
-
-PhonePC/2in1TabletTVWearable
 
 type AbilityRunningInfo = \_AbilityRunningInfo
 
@@ -160,8 +181,6 @@ AbilityRunningInfo二级模块。
 
 ## AbilityStateData14+
 
-PhonePC/2in1TabletTVWearable
-
 type AbilityStateData = \_AbilityStateData.default
 
 AbilityStateData二级模块。
@@ -170,4 +189,4 @@ AbilityStateData二级模块。
 
 | 类型 | 说明 |
 | --- | --- |
-| [\_AbilityStateData.default](js-apis-inner-application-abilitystatedata.md) | AbilityStateData二级模块，提供Ability状态信息。 |
+| [\_AbilityStateData](js-apis-inner-application-abilitystatedata.md).default | AbilityStateData二级模块，提供Ability状态信息。 |

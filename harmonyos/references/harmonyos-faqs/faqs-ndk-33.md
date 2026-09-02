@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-33
 title: 如何通过AKI三方库实现ArkTS与C/C++之间的跨语言调用
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何通过AKI三方库实现ArkTS与C/C++之间的跨语言调用
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:15:51+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:d32e90292982459d9eeb96f9fc1d0b1d0d80b5927c38ebc469556c9dbe20bd0e
+scraped_at: 2026-09-02T14:53:57+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:1f8367acc2a1d87fe6bcc90c122cbfa3115ae389819f05d8622ff72ab878c55a
 ---
 
 ArkTS与C/C++之间交互，涉及到跨语言调用中数据转换，以及跨线程交互等内容。沿用Node-API标准实现，支持的Node-API接口可参见[Node-API支持的数据类型和接口](../harmonyos-guides/napi-data-types-interfaces.md)。
@@ -16,53 +16,49 @@ ArkTS与C/C++之间交互，涉及到跨语言调用中数据转换，以及跨�
 
    在指定路径下（例如：项目根路径/entry），输入以下命令安装ohpm har包依赖。
 
-   ```
-   1. cd entry
-   2. ohpm install @ohos/aki
+   ```powershell
+   cd entry 
+   ohpm install @ohos/aki
    ```
 
    在CMakeLists.txt中添加依赖，假设编译的动态库名为libhello.so。
 
+   ```text
+   # ...
+
+   # 1. Set the AKI root path
+   set(AKI_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../../../oh_modules/@ohos/aki)
+   set(CMAKE_MODULE_PATH ${AKI_ROOT_PATH})
+   find_package(Aki REQUIRED)
+
+   # ...
+
+   add_library(entry SHARED napi_init.cpp)
+   # 2. To link the binary dependencies & header file, you need to make sure that the target (e.g. entry) is the same as the target in the add_library() method
+   target_link_libraries(entry PUBLIC Aki::libjsbind)
    ```
-   1. # ...
-
-   3. # 1. Set the AKI root path
-   4. set(AKI_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../../../oh_modules/@ohos/aki)
-   5. set(CMAKE_MODULE_PATH ${AKI_ROOT_PATH})
-   6. find_package(Aki REQUIRED)
-
-   8. # ...
-
-   10. add_library(entry SHARED napi_init.cpp)
-   11. # 2. To link the binary dependencies & header file, you need to make sure that the target (e.g. entry) is the same as the target in the add_library() method
-   12. target_link_libraries(entry PUBLIC Aki::libjsbind)
-   ```
-
-   [CMakeLists.txt](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/Ndk/ndk1/nativeAki/src/main/cpp/CMakeLists.txt#L3-L27)
 
    在右上角同步工程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/IK8JOxziQn6iH747Tv2aRg/zh-cn_image_0000002229604253.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/SCRxMJXpTEq7IdGvQDVfqg/zh-cn_image_0000002624475900.png)
 2. 在napi\_init.cpp文件中定义业务，并将业务接口导出给 ArkTS。
 
+   ```cpp
+   #include <aki/jsbind.h> 
+   #include <string>
+   // 1、User defined business 
+   std::string SayHello(std::string msg){  return msg + " too.";}  
+    
+   // 2、Export business interface
+   // Step 1: Register the AKI plugin
+   JSBIND_ADDON(entry) // Register AKI plugin name: This is the compiled *. so name, following the same rules as Node API
+    
+   // Step 2: Register FFI Features
+   JSBIND_GLOBAL() 
+   { 
+     JSBIND_FUNCTION(SayHello); 
+   }
    ```
-   1. #include <aki/jsbind.h>
-   2. #include <string>
-   3. // 1、User defined business
-   4. std::string SayHello(std::string msg){  return msg + " too.";}
-
-   6. // 2、Export business interface
-   7. // Step 1: Register the AKI plugin
-   8. JSBIND_ADDON(entry) // Register AKI plugin name: This is the compiled *. so name, following the same rules as Node API
-
-   10. // Step 2: Register FFI Features
-   11. JSBIND_GLOBAL()
-   12. {
-   13. JSBIND_FUNCTION(SayHello);
-   14. }
-   ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/Ndk/ndk1/nativeAki/src/main/cpp/napi_init.cpp#L5-L18)
 
 注册的AKI插件名需与模块级 oh-package.json5 文件中 dependencies 标签下的 “lib<AKI插件名>” 字段名称一致。例如，libentry.so。
 
@@ -71,32 +67,30 @@ ArkTS与C/C++之间交互，涉及到跨语言调用中数据转换，以及跨�
    export const SayHello: (msg: string) => string;
 2. 在ArkTS文件中调用.so文件中的接口。
 
+   ```ts
+   import aki from 'libentry.so' // *. so compiled from the project
+
+   @Entry
+   @Component
+   struct Index {
+     @State message: string = 'Hello World';
+
+     build() {
+       Row() {
+         Column() {
+           Text(this.message)
+             .fontSize(50)
+             .fontWeight(FontWeight.Bold)
+             .onClick(() => {
+               console.info(aki.SayHello("hello world")); // 调用.so文件中的代码接口
+             })
+         }
+         .width('100%')
+       }
+       .height('100%')
+     }
+   }
    ```
-   1. import aki from 'libentry.so' // *. so compiled from the project
-
-   3. @Entry
-   4. @Component
-   5. struct Index {
-   6. @State message: string = 'Hello World';
-
-   8. build() {
-   9. Row() {
-   10. Column() {
-   11. Text(this.message)
-   12. .fontSize(50)
-   13. .fontWeight(FontWeight.Bold)
-   14. .onClick(() => {
-   15. console.info(aki.SayHello("hello world")); // 调用.so文件中的代码接口
-   16. })
-   17. }
-   18. .width('100%')
-   19. }
-   20. .height('100%')
-   21. }
-   22. }
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/Ndk/ndk1/nativeAki/src/main/ets/pages/Index.ets#L5-L26)
 
 **参考链接**
 

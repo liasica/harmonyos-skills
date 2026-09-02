@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-k
 title: oh_key_code.h
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > C API > 头文件 > oh_key_code.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:17+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:5ca2d7b992585c39ea96c5304a84014edc28e3ed655a93813184ab2566d81ec3
+scraped_at: 2026-09-02T15:02:08+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0cdc8cd35d1ea9690d7b6bd264d7f19f070c11d088408429ab5c18fa582c0654
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 按键设备的键值。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,14 +32,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### Input\_KeyCode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Input_KeyCode
+```c
+enum Input_KeyCode
 ```
 
 **描述**
@@ -127,8 +117,8 @@ PhonePC/2in1TabletTVWearable
 | KEYCODE\_TAB = 2049 | Tab键 |
 | KEYCODE\_SPACE = 2050 | 空格键 |
 | KEYCODE\_SYM = 2051 | 符号修改器按键 |
-| KEYCODE\_EXPLORER = 2052 | 浏览器功能键，此键用于启动浏览器应用程序 |
-| KEYCODE\_ENVELOPE = 2053 | 电子邮件功能键，此键用于启动电子邮件应用程序 |
+| KEYCODE\_EXPLORER = 2052 | 浏览器功能键，此键用于启动浏览器应用程序。 |
+| KEYCODE\_ENVELOPE = 2053 | 电子邮件功能键，此键用于启动电子邮件应用程序。 |
 | KEYCODE\_ENTER = 2054 | 回车键 |
 | KEYCODE\_DEL = 2055 | 退格键 |
 | KEYCODE\_GRAVE = 2056 | 按键'`' |
@@ -231,14 +221,14 @@ PhonePC/2in1TabletTVWearable
 | KEYCODE\_STOP = 2616 | 停止键  **起始版本：** 22 |
 | KEYCODE\_AGAIN = 2617 | 重复键  **起始版本：** 22 |
 | KEYCODE\_PROPS = 2618 | 道具键  **起始版本：** 22 |
-| KEYCODE\_UNDO = 2619 | 撤消键  **起始版本：** 22 |
+| KEYCODE\_UNDO = 2619 | 撤销键  **起始版本：** 22 |
 | KEYCODE\_COPY = 2620 | 复制键  **起始版本：** 22 |
 | KEYCODE\_OPEN = 2621 | 打开键  **起始版本：** 22 |
 | KEYCODE\_PASTE = 2622 | 粘贴键  **起始版本：** 22 |
 | KEYCODE\_FIND = 2623 | 查找键  **起始版本：** 22 |
 | KEYCODE\_CUT = 2624 | 剪切键  **起始版本：** 22 |
 | KEYCODE\_HELP = 2625 | 帮助键  **起始版本：** 22 |
-| KEYCODE\_CALC = 2626 | 计算器特殊功能键，用于启动计算器应用程序  **起始版本：** 22 |
+| KEYCODE\_CALC = 2626 | 计算器特殊功能键，用于启动计算器应用程序。  **起始版本：** 22 |
 | KEYCODE\_FILE = 2627 | 文件按键  **起始版本：** 22 |
 | KEYCODE\_BOOKMARKS = 2628 | 书签键  **起始版本：** 22 |
 | KEYCODE\_NEXT = 2629 | Page Down键  **起始版本：** 22 |
@@ -317,7 +307,7 @@ PhonePC/2in1TabletTVWearable
 | KEYCODE\_SPREADSHEET = 2703 | 电子表格键  **起始版本：** 22 |
 | KEYCODE\_GRAPHICSEDITOR = 2704 | 图形编辑器键  **起始版本：** 22 |
 | KEYCODE\_PRESENTATION = 2705 | 演示文稿键  **起始版本：** 22 |
-| KEYCODE\_DATABASE = 2706 | 数据库键标  **起始版本：** 22 |
+| KEYCODE\_DATABASE = 2706 | 数据库键  **起始版本：** 22 |
 | KEYCODE\_NEWS = 2707 | 新闻键  **起始版本：** 22 |
 | KEYCODE\_VOICEMAIL = 2708 | 语音信箱  **起始版本：** 22 |
 | KEYCODE\_ADDRESSBOOK = 2709 | 通讯簿  **起始版本：** 22 |
@@ -337,12 +327,15 @@ PhonePC/2in1TabletTVWearable
 | KEYCODE\_KBD\_LAYOUT\_NEXT = 2723 | 下一个键盘布局键  **起始版本：** 22 |
 | KEYCODE\_BRIGHTNESS\_MIN = 2724 | 最小亮度键  **起始版本：** 22 |
 | KEYCODE\_BRIGHTNESS\_MAX = 2725 | 最大亮度键  **起始版本：** 22 |
-| KEYCODE\_KBDINPUTASSIST\_PREV = 2726 | 键盘输入Assist\_Previous，查看输入法输入记录  **起始版本：** 22 |
-| KEYCODE\_KBDINPUTASSIST\_NEXT = 2727 | 键盘输入Assist\_Next，查看输入法输入拓展  **起始版本：** 22 |
-| KEYCODE\_KBDINPUTASSIST\_PREVGROUP = 2728 | 键盘输入Assist\_Previous，切换输入组中上一个输入法  **起始版本：** 22 |
-| KEYCODE\_KBDINPUTASSIST\_NEXTGROUP = 2729 | 键盘输入Assist\_Next，切换输入组中下一个输入法  **起始版本：** 22 |
+| KEYCODE\_KBDINPUTASSIST\_PREV = 2726 | 键盘输入Assist\_Previous，查看输入法输入记录。  **起始版本：** 22 |
+| KEYCODE\_KBDINPUTASSIST\_NEXT = 2727 | 键盘输入Assist\_Next，查看输入法输入拓展。  **起始版本：** 22 |
+| KEYCODE\_KBDINPUTASSIST\_PREVGROUP = 2728 | 键盘输入Assist\_Previous，切换输入组中上一个输入法。  **起始版本：** 22 |
+| KEYCODE\_KBDINPUTASSIST\_NEXTGROUP = 2729 | 键盘输入Assist\_Next，切换输入组中下一个输入法。  **起始版本：** 22 |
 | KEYCODE\_KBDINPUTASSIST\_ACCEPT = 2730 | 键盘输入Assist\_Accept  **起始版本：** 22 |
 | KEYCODE\_KBDINPUTASSIST\_CANCEL = 2731 | 键盘输入Assist\_Cancel  **起始版本：** 22 |
+| KEYCODE\_MOUSE\_ASSISTANT = 2732 | 鼠标AI助手键  **起始版本：** 26.0.0 |
+| KEYCODE\_MOUSE\_INTELLIGENCE\_SELECTION = 2733 | 鼠标智慧框选键  **起始版本：** 26.0.0 |
+| KEYCODE\_AOD\_SINGLE\_CLICK = 2740 | 手机触摸屏单击事件，在熄屏显示状态下使用。  **起始版本：** 26.0.0 |
 | KEYCODE\_FRONT = 2800 | 挡风玻璃除雾器开关  **起始版本：** 22 |
 | KEYCODE\_SETUP = 2801 | 设置键  **起始版本：** 22 |
 | KEYCODE\_WAKEUP = 2802 | 唤醒键  **起始版本：** 22 |
@@ -382,7 +375,7 @@ PhonePC/2in1TabletTVWearable
 | KEYCODE\_SPORT = 2837 | 运动按键  **起始版本：** 22 |
 | KEYCODE\_SHOP = 2838 | 商城键  **起始版本：** 22 |
 | KEYCODE\_ALTERASE = 2839 | 交替键  **起始版本：** 22 |
-| KEYCODE\_SWITCHVIDEOMODE = 2841 | 在可用视频之间循环输出（监视器/LCD/TV输出/等）  **起始版本：** 22 |
+| KEYCODE\_SWITCHVIDEOMODE = 2841 | 在可用视频之间循环输出（监视器/LCD/TV输出/等）。  **起始版本：** 22 |
 | KEYCODE\_BATTERY = 2842 | 电池按键  **起始版本：** 22 |
 | KEYCODE\_BLUETOOTH = 2843 | 蓝牙按键  **起始版本：** 22 |
 | KEYCODE\_WLAN = 2844 | 无线局域网  **起始版本：** 22 |
@@ -404,3 +397,6 @@ PhonePC/2in1TabletTVWearable
 | KEYCODE\_DAGGER\_DOUBLE\_CLICK = 3212 | 智能手表智感窗按键双击  **起始版本：** 22 |
 | KEYCODE\_DAGGER\_LONG\_PRESS = 3213 | 智能手表智感窗按键长按  **起始版本：** 22 |
 | KEYCODE\_DIV = 3220 | 智能手表左按键  **起始版本：** 22 |
+| KEYCODE\_XKEY = 3232 | 自定义快捷键  **起始版本：** 26.0.0 |
+| KEYCODE\_FINGERPRINT\_SLIDE\_UP = 3233 | 智控键上滑  **起始版本：** 26.0.0 |
+| KEYCODE\_FINGERPRINT\_SLIDE\_DOWN = 3234 | 智控键下滑  **起始版本：** 26.0.0 |

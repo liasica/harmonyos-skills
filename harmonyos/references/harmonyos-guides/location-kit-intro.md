@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/location-kit-
 title: Location Kit简介
 breadcrumb: 指南 > 应用服务 > Location Kit（位置服务） > Location Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:38:55+08:00
+scraped_at: 2026-09-02T14:59:57+08:00
 doc_updated_at: 2026-04-28
 content_hash: sha256:da490d0a8dc9b3c4cfd1d34d4396c4083df1dc67a9b9c9f1d8b659cf71f1c339
 ---

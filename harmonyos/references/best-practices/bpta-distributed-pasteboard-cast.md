@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-distribute
 title: 跨设备剪贴板
 breadcrumb: 最佳实践 > 自由流转 > 多端协同 > 跨设备剪贴板
 category: best-practices
-scraped_at: 2026-04-29T14:12:49+08:00
-doc_updated_at: 2026-04-01
-content_hash: sha256:c743fe5d7b9ba3b9625386eee2b0570a5d7813aa26b02e6dfce29638b8ef5de1
+scraped_at: 2026-09-02T15:03:19+08:00
+doc_updated_at: 2026-05-18
+content_hash: sha256:4d171dbbcc39c1e45f98dc7308119832f93c7eb2df87e78441762cc65164b386
 ---
 
 剪贴板分为本地剪贴板和跨设备剪贴板，本地剪贴板提供设备内的内容复制粘贴，跨设备剪贴板提供跨设备的内容复制粘贴。
@@ -14,11 +14,11 @@ content_hash: sha256:c743fe5d7b9ba3b9625386eee2b0570a5d7813aa26b02e6dfce29638b8e
 
 当开发者正在开发一款浏览器类应用，或是备忘录、笔记、邮件等富文本编辑类应用时，均可接入跨设备剪贴板，提升用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/YsxtzshkSfqKbckorIJiWA/zh-cn_image_0000002533352062.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/FEttxB4ZTm-ZJ4vMtMRR6g/zh-cn_image_0000002594404769.gif "点击放大")
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/mke0f-7STr2mP73UQR10Uw/zh-cn_image_0000002533512006.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/Lmpj2AHWTCK5Qyfcu5-zyQ/zh-cn_image_0000002563685436.png "点击放大")
 
 1. 用户在设备A复制数据。
 
@@ -48,41 +48,41 @@ content_hash: sha256:c743fe5d7b9ba3b9625386eee2b0570a5d7813aa26b02e6dfce29638b8e
 
 ## 开发示例
 
-说明
+**说明** 
 
 跨设备复制的数据两分钟内有效。
 
 * 设备A复制数据，写入到剪贴板服务。
 
-  ```
-  1. import pasteboard from '@ohos.pasteboard';
-  2. import { BusinessError } from '@ohos.base';
-  3. export async function setPasteDataTest(): Promise<void> {
-  4. let text: string = 'hello world';
-  5. let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, text);
-  6. let systemPasteBoard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-  7. await systemPasteBoard.setData(pasteData).catch((err: BusinessError) => {
-  8. console.error(`Failed to set pastedata. Code: ${err.code}, message: ${err.message}`);
-  9. });
-  10. }
+  ```screen
+  import pasteboard from '@ohos.pasteboard';
+  import { BusinessError } from '@ohos.base';
+  export async function setPasteDataTest(): Promise<void> {
+      let text: string = 'hello world';
+      let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, text);
+      let systemPasteBoard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteBoard.setData(pasteData).catch((err: BusinessError) => {
+          console.error(`Failed to set pastedata. Code: ${err.code}, message: ${err.message}`);
+      });
+  }
   ```
 * 设备B粘贴数据，读取剪贴板内容。
 
-  ```
-  1. import pasteboard from '@ohos.pasteboard';
-  2. import { BusinessError } from '@ohos.base';
-  3. // 设备B粘贴数据，读取剪贴板内容
-  4. export async function getPasteDataTest(): Promise<void> {
-  5. let systemPasteBoard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-  6. systemPasteBoard.getData((err: BusinessError, data: pasteboard.PasteData) => {
-  7. if (err) {
-  8. console.error(`Failed to get pastedata. Code: ${err.code}, message: ${err.message}`);
-  9. return;
-  10. }
-  11. // 对pastedata进行处理，获取类型，个数等
-  12. let recordCount: number = data.getRecordCount(); // 获取剪贴板内record的个数
-  13. let types: string = data.getPrimaryMimeType(); // 获取剪贴板内数据的类型
-  14. let primaryText: string = data.getPrimaryText(); // 获取剪贴板内数据的内容
-  15. });
-  16. }
+  ```screen
+  import pasteboard from '@ohos.pasteboard';
+  import { BusinessError } from '@ohos.base';
+  // 设备B粘贴数据，读取剪贴板内容
+  export async function getPasteDataTest(): Promise<void> {
+      let systemPasteBoard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+      systemPasteBoard.getData((err: BusinessError, data: pasteboard.PasteData) => {
+          if (err) {
+              console.error(`Failed to get pastedata. Code: ${err.code}, message: ${err.message}`);
+              return;
+          }
+          // 对pastedata进行处理，获取类型，个数等
+          let recordCount: number = data.getRecordCount(); // 获取剪贴板内record的个数
+          let types: string = data.getPrimaryMimeType(); // 获取剪贴板内数据的类型
+          let primaryText: string = data.getPrimaryText(); // 获取剪贴板内数据的内容
+      });
+  }
   ```

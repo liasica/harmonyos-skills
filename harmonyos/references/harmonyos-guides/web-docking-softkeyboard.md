@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-docking-s
 title: Web组件对接软键盘
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 > Web组件对接软键盘
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:19f340595cd015f3a60895f4eb613c561cacc01276a48a5a25008f0575f0c6ad
+scraped_at: 2026-09-02T14:59:23+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1af5854dcee296f09b567a2451db421db792e8b762a951e1ce2ef85040377ae8
 ---
 
 开发者能够通过Web组件对接软键盘，来处理系统软键盘的显示与交互问题，同时实现软键盘的自定义功能。主要有以下场景：
@@ -67,7 +67,7 @@ content_hash: sha256:19f340595cd015f3a60895f4eb613c561cacc01276a48a5a25008f0575f
   | search | 执行搜索 |
   | send | 发送信息 |
 
-说明
+**说明** 
 
 点击网页输入框时，屏幕下方将弹出系统默认的软键盘，用户可以进行文字输入。
 
@@ -79,42 +79,42 @@ inputmode优化移动设备键盘输入体验，不影响基本行为或验证�
 
 为提升用户体验，可以在页面完成加载后，输入框自动获焦并弹出软键盘。通过调用[showTextInput()](../harmonyos-references/js-apis-inputmethod.md#showtextinput10)设置软键盘自动弹出功能。
 
-```
-1. <!-- index.html -->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <title>测试网页</title>
-6. </head>
-7. <body>
-8. <h1>DEMO</h1>
-9. <input type="text" id="input_a">
-10. </body>
-11. </html>
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>测试网页</title>
+  </head>
+  <body>
+    <h1>DEMO</h1>
+    <input type="text" id="input_a">
+  </body>
+</html>
 ```
 
-```
-1. // Index.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { inputMethod } from '@kit.IMEKit';
+```ts
+// Index.ets
+import { webview } from '@kit.ArkWeb';
+import { inputMethod } from '@kit.IMEKit';
 
-5. @Entry
-6. @Component
-7. struct WebComponent {
-8. controller: webview.WebviewController = new webview.WebviewController();
-9. build() {
-10. Column() {
-11. Web({ src: $rawfile("index.html"), controller: this.controller})
-12. .onPageEnd(() => {
-13. this.controller.runJavaScript(`document.getElementById('input_a').focus()`).then(() => {
-14. setTimeout(() => {
-15. inputMethod.getController().showTextInput();
-16. }, 10);
-17. });
-18. });
-19. }
-20. }
-21. }
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  build() {
+    Column() {
+      Web({ src: $rawfile("index.html"), controller: this.controller})
+        .onPageEnd(() => {
+          this.controller.runJavaScript(`document.getElementById('input_a').focus()`).then(() => {
+            setTimeout(() => {
+              inputMethod.getController().showTextInput();
+            }, 10);
+          });
+        });
+    }
+  }
+}
 ```
 
 ## 设置软键盘避让模式
@@ -128,74 +128,70 @@ inputmode优化移动设备键盘输入体验，不影响基本行为或验证�
 
 （1）设置UIContext的软键盘避让模式。
 
+```typescript
+import { KeyboardAvoidMode } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+// ···
+onWindowStageCreate(windowStage: window.WindowStage) {
+  hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+
+  windowStage.loadContent('pages/Index', (err, data) => {
+    let keyboardAvoidMode = windowStage.getMainWindowSync().getUIContext().getKeyboardAvoidMode();
+    // 设置虚拟键盘抬起时压缩页面大小为减去键盘的高度
+  windowStage.getMainWindowSync().getUIContext().setKeyboardAvoidMode(KeyboardAvoidMode.RESIZE);
+    if (err.code) {
+      hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
+      return;
+    }
+    hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
+  });
+}
 ```
-1. import { KeyboardAvoidMode } from '@kit.ArkUI';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-4. // ···
-5. onWindowStageCreate(windowStage: window.WindowStage) {
-6. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
-
-8. windowStage.loadContent('pages/Index', (err, data) => {
-9. let keyboardAvoidMode = windowStage.getMainWindowSync().getUIContext().getKeyboardAvoidMode();
-10. // 设置虚拟键盘抬起时压缩页面大小为减去键盘的高度
-11. windowStage.getMainWindowSync().getUIContext().setKeyboardAvoidMode(KeyboardAvoidMode.RESIZE);
-12. if (err.code) {
-13. hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
-14. return;
-15. }
-16. hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
-17. });
-18. }
-```
-
-[Entry2Ability.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ManageWebPageInteracts/entry2/src/main/ets/entry2ability/Entry2Ability.ets#L18-L48)
 
 （2）在Web组件中调起软键盘。
 
-```
-1. <!-- index.html -->
-2. <!DOCTYPE html>
-3. <html>
-4. <head>
-5. <title>测试网页</title>
-6. </head>
-7. <body>
-8. <h1>DEMO</h1>
-9. <input type="text" id="input_a">
-10. </body>
-11. </html>
-```
-
-```
-1. // Index.ets
-2. import { webview } from '@kit.ArkWeb';
-
-4. @Entry
-5. @Component
-6. struct KeyboardAvoidExample {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. build() {
-9. Column() {
-10. Row().height("50%").width("100%").backgroundColor(Color.Gray)
-11. Web({ src: $rawfile("index.html"),controller: this.controller})
-12. Text("I can see the bottom of the page").width("100%").textAlign(TextAlign.Center).backgroundColor(Color.Pink).layoutWeight(1)
-13. }.width('100%').height("100%")
-14. }
-15. }
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>测试网页</title>
+  </head>
+  <body>
+    <h1>DEMO</h1>
+    <input type="text" id="input_a">
+  </body>
+</html>
 ```
 
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ManageWebPageInteracts/entry2/src/main/ets/pages/Index.ets#L16-L32)
+```typescript
+// Index.ets
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct KeyboardAvoidExample {
+  controller: webview.WebviewController = new webview.WebviewController();
+  build() {
+    Column() {
+      Row().height("50%").width("100%").backgroundColor(Color.Gray)
+      Web({ src: $rawfile("index.html"),controller: this.controller})
+      Text("I can see the bottom of the page").width("100%").textAlign(TextAlign.Center).backgroundColor(Color.Pink).layoutWeight(1)
+    }.width('100%').height("100%")
+  }
+}
+```
 
 ArkWeb组件将跟随ArkUI重新布局，效果如图1和图2所示。
 
 **图1** Web组件网页默认软键盘避让模式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/odmBjU5CQXqWWb0wwBIdsA/zh-cn_image_0000002589324577.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/uPX-zFexTYeuJ6WAxxahLg/zh-cn_image_0000002706674122.png)
 
 **图2** Web组件网页跟随ArkUI软键盘避让模式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/ifg0PKCBT4m9txOq7kY-Kg/zh-cn_image_0000002589244515.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/jyCxyj6dTRi-4GWlZ8twjQ/zh-cn_image_0000002736433213.png)
 
 2.在UIContext的键盘避让模式为Offset模式时，应用可通过[WebKeyboardAvoidMode()](../harmonyos-references/arkts-basic-components-web-e.md#webkeyboardavoidmode12)设置ArkWeb组件的键盘避让模式。Web组件的[WebKeyboardAvoidMode()](../harmonyos-references/arkts-basic-components-web-e.md#webkeyboardavoidmode12)接口优先级高于W3C侧virtualKeyboard.overlayContent。
 
@@ -203,7 +199,7 @@ ArkWeb组件将跟随ArkUI重新布局，效果如图1和图2所示。
 * RESIZE\_CONTENT：调整可视视口和布局视口的大小。
 * OVERLAYS\_CONTENT：不调整任何视口的大小，获焦input元素没有滚动到可视区域的行为。
 
-说明
+**说明** 
 
 可视视口指用户正在看到的网站的区域，该区域的宽度等于移动设备的浏览器窗口的宽度。
 
@@ -211,56 +207,54 @@ ArkWeb组件将跟随ArkUI重新布局，效果如图1和图2所示。
 
 在应用代码中设置ArkWeb的软键盘避让模式。
 
-```
-1. // Index.ets
-2. import { webview } from '@kit.ArkWeb';
+```typescript
+// Index.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct KeyboardAvoidExample {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. build() {
-9. Column() {
-10. Row().height('50%').width('100%').backgroundColor(Color.Gray)
-11. Web({ src: $rawfile('index.html'),controller: this.controller})
-12. .keyboardAvoidMode(WebKeyboardAvoidMode.OVERLAYS_CONTENT) // 此时ArkWeb组件不会调整任何视口的大小。
-13. Text('I can see the bottom of the page')
-14. .width('100%')
-15. .textAlign(TextAlign.Center)
-16. .backgroundColor(Color.Pink)
-17. .layoutWeight(1)
-18. }.width('100%').height('100%')
-19. }
-20. }
+@Entry
+@Component
+struct KeyboardAvoidExample {
+  controller: webview.WebviewController = new webview.WebviewController();
+  build() {
+    Column() {
+      Row().height('50%').width('100%').backgroundColor(Color.Gray)
+      Web({ src: $rawfile('index.html'),controller: this.controller})
+        .keyboardAvoidMode(WebKeyboardAvoidMode.OVERLAYS_CONTENT) // 此时ArkWeb组件不会调整任何视口的大小。
+      Text('I can see the bottom of the page')
+        .width('100%')
+        .textAlign(TextAlign.Center)
+        .backgroundColor(Color.Pink)
+        .layoutWeight(1)
+    }.width('100%').height('100%')
+  }
+}
 ```
-
-[SetSKBMode\_one.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ManageWebPageInteracts/entry/src/main/ets/pages/SetSKBMode_one.ets#L16-L37)
 
 ArkWeb组件根据避让模式进行避让，效果见图3。
 
 **图3** Web组件网页自身软键盘避让模式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/Eta1ezpgTpO02MrxqFowvw/zh-cn_image_0000002558764708.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/1a3WpAaOQMeMjruNRLIfFg/zh-cn_image_0000002706834058.png)
 
 3.在软键盘弹出时，为使Web组件不发生避让行为，可通过调用[expandSafeArea()](../harmonyos-references/ts-universal-attributes-expand-safe-area.md#expandsafearea)设置Web组件扩展安全区域。更多详细示例可参考[网页中安全区域计算和避让适配](web-safe-area-insets.md)。
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
 
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-9. build() {
-10. Column() {
-11. Web({ src: 'www.example.com', controller: this.controller })
-12. .width('100%').height('100%')
-13. .expandSafeArea([SafeAreaType.KEYBOARD, SafeAreaType.SYSTEM])
-14. }
-15. }
-16. }
+  build() {
+    Column() {
+      Web({ src: 'www.example.com', controller: this.controller })
+        .width('100%').height('100%')
+        .expandSafeArea([SafeAreaType.KEYBOARD, SafeAreaType.SYSTEM])
+    }
+  }
+}
 ```
 
 与其他Web组件行为的交互场景：
@@ -282,177 +276,177 @@ ArkWeb组件根据避让模式进行避让，效果见图3。
 * 使用带有定制Enter键的系统软键盘
 * 使用完全由应用程序自定义的软键盘
 
+```ts
+  // Index.ets
+  import { webview } from '@kit.ArkWeb';
+  import { inputMethodEngine } from '@kit.IMEKit';
+
+  @Entry
+  @Component
+  struct WebComponent {
+    controller: webview.WebviewController = new webview.WebviewController();
+    webKeyboardController: WebKeyboardController = new WebKeyboardController();
+    inputAttributeMap: Map<string, number> = new Map([
+        ['UNSPECIFIED', inputMethodEngine.ENTER_KEY_TYPE_UNSPECIFIED],
+        ['GO', inputMethodEngine.ENTER_KEY_TYPE_GO],
+        ['SEARCH', inputMethodEngine.ENTER_KEY_TYPE_SEARCH],
+        ['SEND', inputMethodEngine.ENTER_KEY_TYPE_SEND],
+        ['NEXT', inputMethodEngine.ENTER_KEY_TYPE_NEXT],
+        ['DONE', inputMethodEngine.ENTER_KEY_TYPE_DONE],
+        ['PREVIOUS', inputMethodEngine.ENTER_KEY_TYPE_PREVIOUS]
+      ])
+
+      /**
+       * 自定义键盘组件Builder
+       */
+      @Builder
+      customKeyboardBuilder() {
+      // 这里实现自定义键盘组件，对接WebKeyboardController实现输入、删除、关闭等操作。
+        Row() {
+          Text("完成")
+            .fontSize(20)
+            .fontColor(Color.Blue)
+            .onClick(() => {
+              this.webKeyboardController.close();
+            })
+          // 插入字符。
+          Button("insertText").onClick(() => {
+            this.webKeyboardController.insertText('insert ');
+          }).margin({
+            bottom: 200,
+          })
+          // 从后往前删除length参数指定长度的字符。
+          Button("deleteForward").onClick(() => {
+            this.webKeyboardController.deleteForward(1);
+          }).margin({
+            bottom: 200,
+          })
+          // 从前往后删除length参数指定长度的字符。
+          Button("deleteBackward").onClick(() => {
+            this.webKeyboardController.deleteBackward(1);
+          }).margin({
+            left: -220,
+          })
+          // 插入功能按键。
+          Button("sendFunctionKey").onClick(() => {
+            this.webKeyboardController.sendFunctionKey(6);
+          })
+        }
+      }
+
+    build() {
+      Column() {
+        Web({ src: $rawfile('index.html'), controller: this.controller })
+        .onInterceptKeyboardAttach((KeyboardCallbackInfo) => {
+          // option初始化，默认使用系统默认键盘
+          let option: WebKeyboardOptions = {
+            useSystemKeyboard: true,
+          };
+          if (!KeyboardCallbackInfo) {
+            return option;
+          }
+
+          // 保存WebKeyboardController，使用自定义键盘时候，需要使用该handler控制输入、删除、软键盘关闭等行为
+          this.webKeyboardController = KeyboardCallbackInfo.controller;
+          let attributes: Record<string, string> = KeyboardCallbackInfo.attributes;
+          // 遍历attributes
+          let attributeKeys = Object.keys(attributes);
+          for (let i = 0; i < attributeKeys.length; i++) {
+            console.info('WebCustomKeyboard key = ' + attributeKeys[i] + ', value = ' + attributes[attributeKeys[i]]);
+          }
+
+          if (attributes) {
+            if (attributes['data-keyboard'] == 'customKeyboard') {
+              // 根据html可编辑元素的属性，判断使用不同的软键盘，例如这里如果属性包含有data-keyboard，且值为customKeyboard，则使用自定义键盘
+              console.info('WebCustomKeyboard use custom keyboard');
+              option.useSystemKeyboard = false;
+              // 设置自定义键盘builder
+              option.customKeyboard = () => {
+                this.customKeyboardBuilder()
+              }
+              return option;
+            }
+
+            if (attributes['keyboard-return'] != undefined) {
+              // 根据html可编辑元素的属性，判断使用不同的软键盘，例如这里如果属性包含有keyboard-return，使用系统键盘，并且指定系统软键盘enterKey类型
+              option.useSystemKeyboard = true;
+              let enterKeyType: number | undefined = this.inputAttributeMap.get(attributes['keyboard-return']);
+              if (enterKeyType != undefined) {
+                option.enterKeyType = enterKeyType;
+              }
+              return option;
+            }
+          }
+
+          return option;
+        })
+      }
+    }
+  }
 ```
-1. // Index.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { inputMethodEngine } from '@kit.IMEKit';
 
-5. @Entry
-6. @Component
-7. struct WebComponent {
-8. controller: webview.WebviewController = new webview.WebviewController();
-9. webKeyboardController: WebKeyboardController = new WebKeyboardController();
-10. inputAttributeMap: Map<string, number> = new Map([
-11. ['UNSPECIFIED', inputMethodEngine.ENTER_KEY_TYPE_UNSPECIFIED],
-12. ['GO', inputMethodEngine.ENTER_KEY_TYPE_GO],
-13. ['SEARCH', inputMethodEngine.ENTER_KEY_TYPE_SEARCH],
-14. ['SEND', inputMethodEngine.ENTER_KEY_TYPE_SEND],
-15. ['NEXT', inputMethodEngine.ENTER_KEY_TYPE_NEXT],
-16. ['DONE', inputMethodEngine.ENTER_KEY_TYPE_DONE],
-17. ['PREVIOUS', inputMethodEngine.ENTER_KEY_TYPE_PREVIOUS]
-18. ])
+```html
+<!-- index.html -->
+    <!DOCTYPE html>
+    <html>
 
-20. /**
-21. * 自定义键盘组件Builder
-22. */
-23. @Builder
-24. customKeyboardBuilder() {
-25. // 这里实现自定义键盘组件，对接WebKeyboardController实现输入、删除、关闭等操作。
-26. Row() {
-27. Text("完成")
-28. .fontSize(20)
-29. .fontColor(Color.Blue)
-30. .onClick(() => {
-31. this.webKeyboardController.close();
-32. })
-33. // 插入字符。
-34. Button("insertText").onClick(() => {
-35. this.webKeyboardController.insertText('insert ');
-36. }).margin({
-37. bottom: 200,
-38. })
-39. // 从后往前删除length参数指定长度的字符。
-40. Button("deleteForward").onClick(() => {
-41. this.webKeyboardController.deleteForward(1);
-42. }).margin({
-43. bottom: 200,
-44. })
-45. // 从前往后删除length参数指定长度的字符。
-46. Button("deleteBackward").onClick(() => {
-47. this.webKeyboardController.deleteBackward(1);
-48. }).margin({
-49. left: -220,
-50. })
-51. // 插入功能按键。
-52. Button("sendFunctionKey").onClick(() => {
-53. this.webKeyboardController.sendFunctionKey(6);
-54. })
-55. }
-56. }
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0">
+    </head>
 
-58. build() {
-59. Column() {
-60. Web({ src: $rawfile('index.html'), controller: this.controller })
-61. .onInterceptKeyboardAttach((KeyboardCallbackInfo) => {
-62. // option初始化，默认使用系统默认键盘
-63. let option: WebKeyboardOptions = {
-64. useSystemKeyboard: true,
-65. };
-66. if (!KeyboardCallbackInfo) {
-67. return option;
-68. }
+    <body>
 
-70. // 保存WebKeyboardController，使用自定义键盘时候，需要使用该handler控制输入、删除、软键盘关闭等行为
-71. this.webKeyboardController = KeyboardCallbackInfo.controller;
-72. let attributes: Record<string, string> = KeyboardCallbackInfo.attributes;
-73. // 遍历attributes
-74. let attributeKeys = Object.keys(attributes);
-75. for (let i = 0; i < attributeKeys.length; i++) {
-76. console.info('WebCustomKeyboard key = ' + attributeKeys[i] + ', value = ' + attributes[attributeKeys[i]]);
-77. }
+    <p style="font-size:12px">input标签，原有默认行为：</p>
+    <input type="text" style="width: 300px; height: 20px"><br>
+    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
-79. if (attributes) {
-80. if (attributes['data-keyboard'] == 'customKeyboard') {
-81. // 根据html可编辑元素的属性，判断使用不同的软键盘，例如这里如果属性包含有data-keyboard，且值为customKeyboard，则使用自定义键盘
-82. console.info('WebCustomKeyboard use custom keyboard');
-83. option.useSystemKeyboard = false;
-84. // 设置自定义键盘builder
-85. option.customKeyboard = () => {
-86. this.customKeyboardBuilder()
-87. }
-88. return option;
-89. }
+    <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key UNSPECIFIED：</p>
+    <input type="text" keyboard-return="UNSPECIFIED" style="width: 300px; height: 20px"><br>
+    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
-91. if (attributes['keyboard-return'] != undefined) {
-92. // 根据html可编辑元素的属性，判断使用不同的软键盘，例如这里如果属性包含有keyboard-return，使用系统键盘，并且指定系统软键盘enterKey类型
-93. option.useSystemKeyboard = true;
-94. let enterKeyType: number | undefined = this.inputAttributeMap.get(attributes['keyboard-return']);
-95. if (enterKeyType != undefined) {
-96. option.enterKeyType = enterKeyType;
-97. }
-98. return option;
-99. }
-100. }
+    <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key GO：</p>
+    <input type="text" keyboard-return="GO" style="width: 300px; height: 20px"><br>
+    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
-102. return option;
-103. })
-104. }
-105. }
-106. }
-```
+    <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key SEARCH：</p>
+    <input type="text" keyboard-return="SEARCH" style="width: 300px; height: 20px"><br>
+    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
-```
-1. <!-- index.html -->
-2. <!DOCTYPE html>
-3. <html>
+    <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key SEND：</p>
+    <input type="text" keyboard-return="SEND" style="width: 300px; height: 20px"><br>
+    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
-5. <head>
-6. <meta charset="utf-8">
-7. <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0">
-8. </head>
+    <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key NEXT：</p>
+    <input type="text" keyboard-return="NEXT" style="width: 300px; height: 20px"><br>
+    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
-10. <body>
+    <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key DONE：</p>
+    <input type="text" keyboard-return="DONE" style="width: 300px; height: 20px"><br>
+    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
-12. <p style="font-size:12px">input标签，原有默认行为：</p>
-13. <input type="text" style="width: 300px; height: 20px"><br>
-14. <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+    <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key PREVIOUS：</p>
+    <input type="text" keyboard-return="PREVIOUS" style="width: 300px; height: 20px"><br>
+    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
-16. <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key UNSPECIFIED：</p>
-17. <input type="text" keyboard-return="UNSPECIFIED" style="width: 300px; height: 20px"><br>
-18. <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+    <p style="font-size:12px">input标签，应用自定义键盘：</p>
+    <input type="text" data-keyboard="customKeyboard" style="width: 300px; height: 20px"><br>
 
-20. <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key GO：</p>
-21. <input type="text" keyboard-return="GO" style="width: 300px; height: 20px"><br>
-22. <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+    </body>
 
-24. <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key SEARCH：</p>
-25. <input type="text" keyboard-return="SEARCH" style="width: 300px; height: 20px"><br>
-26. <hr style="height:2px;border-width:0;color:gray;background-color:gray">
-
-28. <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key SEND：</p>
-29. <input type="text" keyboard-return="SEND" style="width: 300px; height: 20px"><br>
-30. <hr style="height:2px;border-width:0;color:gray;background-color:gray">
-
-32. <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key NEXT：</p>
-33. <input type="text" keyboard-return="NEXT" style="width: 300px; height: 20px"><br>
-34. <hr style="height:2px;border-width:0;color:gray;background-color:gray">
-
-36. <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key DONE：</p>
-37. <input type="text" keyboard-return="DONE" style="width: 300px; height: 20px"><br>
-38. <hr style="height:2px;border-width:0;color:gray;background-color:gray">
-
-40. <p style="font-size:12px">input标签，系统键盘自定义enterKeyType属性 enter key PREVIOUS：</p>
-41. <input type="text" keyboard-return="PREVIOUS" style="width: 300px; height: 20px"><br>
-42. <hr style="height:2px;border-width:0;color:gray;background-color:gray">
-
-44. <p style="font-size:12px">input标签，应用自定义键盘：</p>
-45. <input type="text" data-keyboard="customKeyboard" style="width: 300px; height: 20px"><br>
-
-47. </body>
-
-49. </html>
+    </html>
 ```
 
 ArkWeb自定义键盘的示例效果如图4、图5和图6所示。
 
 **图4** ArkWeb自定义键盘数字键盘
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/qg6yQ2-QRGmiSM-lU8HDuA/zh-cn_image_0000002558605054.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/u_NIVSWjTiyo-H1sKSjzDw/zh-cn_image_0000002736313167.png)
 
 **图5** ArkWeb自定义键盘字母键盘
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/dR_2-6sGQs2tiDYKiupDTg/zh-cn_image_0000002589324579.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/lH-Vi-DeR1S3OW8bcWV18g/zh-cn_image_0000002706674124.png)
 
 **图6** ArkWeb自定义键盘符号键盘
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/6iqTQ_jwT7O3U7Ut5GxU_w/zh-cn_image_0000002589244517.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/ThOGDr16QOWq_Qs60MbW2Q/zh-cn_image_0000002736433215.png)

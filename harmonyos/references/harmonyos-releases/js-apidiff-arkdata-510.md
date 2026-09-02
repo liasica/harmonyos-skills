@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-arkdata-510
 title: ArkData
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.1.0(18) > OS平台能力 > API变更清单 > ArkData
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.0(18) > OS平台能力 > API变更清单 > ArkData
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:02+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:33+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:4819d5adf8d22b6ad8baa5dc6cecb01a8e1fab043bc1daa15d0b7229cecf677b
 ---
 

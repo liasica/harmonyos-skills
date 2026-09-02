@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 如何使用Sqlite全文检索能力
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 如何使用Sqlite全文检索能力
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:14+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:51+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:2fa534ac7ba018ad99bd152f5b5174839e5a0d5b97d5b01f95c3a911f186e736
 ---
 

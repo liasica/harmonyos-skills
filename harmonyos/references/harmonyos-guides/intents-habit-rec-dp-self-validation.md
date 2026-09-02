@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-habit
 title: 开发者测试
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 习惯推荐方案 > 开发者测试
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:43:33+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:2c0051251ef7e459b2f2a17fba1257beef8ccc3784fa9bc917f76b3549f55d0d
+scraped_at: 2026-09-02T14:50:44+08:00
+doc_updated_at: 2026-05-26
+content_hash: sha256:bda8c2c3a668373ca04906f498cd0a22f84a121de283caf6dcd3ad69cc78b8f8
 ---
 
 Intents Kit向开发者提供真机测试能力，即开发者可连接设备进行调测。开发者完成代码开发之后，功能正式上架应用市场前，可以在HarmonyOS 5及以上的设备上面进行自验证，打磨体验。真机测试分为三个步骤：基础信息提供，环境准备，联调验证。
 
 ## 基础信息提供
 
-达成开发意向后，开发者发送邮件到邮箱（hagservice@huawei.com）或者联系华为意图框架接口同事，向华为提供测试应用的信息。
+开发者在AppGallery Connect平台上提交的习惯推荐方案能力申请审核成功后，可根据审核成功的反馈提示，提供测试应用的信息。能力申请的步骤参考[Intents Kit接入流程](intents-access-flow.md)。
 
 | **序号** | **基础信息** | **描述** |
 | --- | --- | --- |
@@ -31,19 +31,19 @@ Intents Kit向开发者提供真机测试能力，即开发者可连接设备进
 1. 保持设备联网，并且设备时间和实际北京时间保持一致。
 2. 点击桌面的小艺建议卡片。此时卡片显示的是“欢迎使用小艺建议”，点击卡片打开小艺的隐私页面，并选择“同意”。如果此前已经同意过小艺的隐私协议，此步骤可以跳过。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/9fQnyTL1QDCl_KtCeVc29g/zh-cn_image_0000002589245623.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/MtMIojXnTKGzduxzugKjFw/zh-cn_image_0000002736434529.png)
 3. 打开开发者调试模式：进入设置 > 机型 > 关于手机，连续点击软件版本7次，弹出“开启“开发者模式””，点击“确认开启”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/ek63Cl9VT7KNFE6i57v0mw/zh-cn_image_0000002558765814.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/_TH5xpaVSC28CeG83duSkA/zh-cn_image_0000002706835382.png)
 4. 长按电源键唤醒小艺，将半屏态小艺向上拉升至全屏态，点击左上角返回上层，返回后点击右上角的头像，进入“设置”，找到并进入应用网络设置，打开“WLAN下自动更新”开关。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/95uHFgdUQzuoZ472389uqg/zh-cn_image_0000002558606158.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/Je_E8ZsDSai156SowJevDw/zh-cn_image_0000002736314487.png)
 5. 在上一步页面中下滑，点击“个性化推荐”，进入后打开“个性化推荐”的开关。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/lzNcAb3KSNChvSnja_qWDQ/zh-cn_image_0000002589325685.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/nGuBBfzNT9q4ruKGZRTZFg/zh-cn_image_0000002706675444.png)
 6. 进入设置 > 系统 > 开发者选项 > 意图框架调试，打开意图框架调试开关，如果下方显示已切换至真机模式并且测试应用包名在“本设备支持测试应用”下，则代表真机模式切换成功。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/2wgKKIhJQtenD2zbJbt6iQ/zh-cn_image_0000002589245625.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/zLJAoN_wTAGrzo_jQ2p_LQ/zh-cn_image_0000002736434531.png)
 
    【提示】如果出现意图框架调试打开后，设备长时间无法出现“已切换至真机模式”或者出现“已切换至真机模式”但没有包名的时候，可以尝试以下操作：
 
@@ -53,9 +53,9 @@ Intents Kit向开发者提供真机测试能力，即开发者可连接设备进
 
 ## 联调验证
 
-1. 意图共享：在测试应用当中成功触发意图共享。即通过测试应用内的操作触发[shareIntent()](../harmonyos-references/intents-arkts-api-insightintent.md#insightintentshareintent)接口的调用，并且意图共享成功。
+1. 意图共享：在测试应用当中成功触发意图共享。即通过测试应用内的操作触发[shareIntent()](../harmonyos-references/intents-arkts-api-insightintent.md#shareintent)接口的调用，并且意图共享成功。
 
-   【举例】某音乐APP接入意图框架音乐续播的特性。通过播放某一首歌曲的用户操作，触发某音乐APP调用系统接口[shareIntent()](../harmonyos-references/intents-arkts-api-insightintent.md#insightintentshareintent)。某音乐APP的开发者通过日志确认[shareIntent()](../harmonyos-references/intents-arkts-api-insightintent.md#insightintentshareintent)接口调用成功，则可以认为某音乐APP本次意图共享是成功的。
+   【举例】某音乐App接入意图框架音乐续播的特性。通过播放某一首歌曲的用户操作，触发某音乐App调用系统接口[shareIntent()](../harmonyos-references/intents-arkts-api-insightintent.md#shareintent)。开发者可通过接口回调的信息来确认本次意图共享是否成功。
 2. 卡片渲染：点击桌面上的小艺建议卡片中任意服务，然后返回桌面，会触发小艺建议卡片强制刷新。刷新之后会展示前一步意图共享的数据所形成的模板卡片。具体卡片样式可参考具体特性的场景说明文档。
 
    【提示】重复意图共享和卡片渲染两步，可以触发卡片上文字元素和图片元素的刷新。

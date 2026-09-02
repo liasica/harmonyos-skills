@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.appstartup.StartupTask (启动框架任务)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.appstartup.StartupTask (启动框架任务)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:24+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:d6bb245af2552b6afbe63d6297cee40b634ed5e438368e002f86fb69bb0af29a
+scraped_at: 2026-09-02T15:00:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f7788b82bebdfc9bcea33cdb66cdd898b9a0900bb1116945fe706f3b165ec436
 ---
 
 本模块提供[应用启动框架](../harmonyos-guides/app-startup.md)任务的相关能力。
 
-说明
+**说明** 
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -18,15 +18,11 @@ content_hash: sha256:d6bb245af2552b6afbe63d6297cee40b634ed5e438368e002f86fb69bb0
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { StartupTask } from '@kit.AbilityKit';
+```js
+import { StartupTask } from '@kit.AbilityKit';
 ```
 
 ## StartupTask
-
-PhonePC/2in1TabletTVWearable
 
 该类提供启动任务的相关能力，使用[@Sendable装饰器](../harmonyos-guides/arkts-sendable.md#sendable装饰器)装饰。
 
@@ -34,11 +30,13 @@ PhonePC/2in1TabletTVWearable
 
 ### onDependencyCompleted
 
-PhonePC/2in1TabletTVWearable
-
 onDependencyCompleted?(dependency: string, result: Object): void
 
-当依赖的启动任务执行完成时该方法将会被调用。
+当依赖的启动任务执行完成时回调该方法，开发者可在该方法中处理依赖任务的执行结果。
+
+**说明** 
+
+每当一个依赖任务完成时触发一次。该方法在[init](js-apis-app-appstartup-startuptask.md#init)方法之前被调用，可用于处理单个依赖任务的执行结果。init方法则在所有依赖任务都完成后被调用一次。
 
 **系统能力**：SystemCapability.Ability.AppStartup
 
@@ -51,31 +49,29 @@ onDependencyCompleted?(dependency: string, result: Object): void
 
 **示例：**
 
-```
-1. import { StartupTask, common } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { StartupTask, common } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. @Sendable
-5. export default class StartupTask_001 extends StartupTask {
-6. constructor() {
-7. super();
-8. }
+@Sendable
+export default class StartupTask_001 extends StartupTask {
+  constructor() {
+    super();
+  }
 
-10. async init(context: common.AbilityStageContext) {
-11. // ...
-12. }
+  async init(context: common.AbilityStageContext) {
+    // ...
+  }
 
-14. onDependencyCompleted(dependency: string, result: Object): void {
-15. hilog.info(0x0000, 'testTag', 'StartupTask_001 onDependencyCompleted, dependency: %{public}s, result: %{public}s',
-16. dependency, JSON.stringify(result));
-17. // ...
-18. }
-19. }
+  onDependencyCompleted(dependency: string, result: Object): void {
+    hilog.info(0x0000, 'testTag', 'StartupTask_001 onDependencyCompleted, dependency: %{public}s, result: %{public}s',
+      dependency, JSON.stringify(result));
+    // ...
+  }
+}
 ```
 
 ### init
-
-PhonePC/2in1TabletTVWearable
 
 init(context: AbilityStageContext): Promise<Object | void>
 
@@ -97,24 +93,24 @@ init(context: AbilityStageContext): Promise<Object | void>
 
 **示例：**
 
-```
-1. import { StartupTask, common } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { StartupTask, common } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. @Sendable
-5. export default class StartupTask_001 extends StartupTask {
-6. constructor() {
-7. super();
-8. }
-9. async init(context: common.AbilityStageContext) {
-10. hilog.info(0x0000, 'testTag', 'StartupTask_001 init.');
-11. // ...
+@Sendable
+export default class StartupTask_001 extends StartupTask {
+  constructor() {
+    super();
+  }
+  async init(context: common.AbilityStageContext) {
+    hilog.info(0x0000, 'testTag', 'StartupTask_001 init.');
+    // ...
+    
+    return 'StartupTask_001';
+  }
 
-13. return "StartupTask_001";
-14. }
-
-16. onDependencyCompleted(dependency: string, result: Object): void {
-17. // ...
-18. }
-19. }
+  onDependencyCompleted(dependency: string, result: Object): void {
+    // ...
+  }
+}
 ```

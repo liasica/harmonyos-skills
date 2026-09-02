@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-advent
 title: 户外探险
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 数据类型 > 锻炼记录数据 > 户外探险
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e4111c3b614eaa457957f79994f56807fc06714e864db5aa7a1afca1bc682aae
+scraped_at: 2026-09-02T14:50:27+08:00
+doc_updated_at: 2026-07-09
+content_hash: sha256:9896a4174442347c4d6024fc98e3d863d926c09106fb1e23ceb49e8100d5280f
 ---
 
 户外探险相关锻炼记录类型如下：
 
 | **锻炼记录子类型常量** | **描述** | 数据来源 |
 | --- | --- | --- |
-| [exerciseSequenceHelper.adventures.EXERCISE\_TYPE](../harmonyos-references/health-api-exercisedequencehelper.md#常量-1) | 户外探险 | 部分专业手表 |
+| [exerciseSequenceHelper.adventures.EXERCISE\_TYPE](../harmonyos-references/health-api-exercisesequencehelper.md#常量-1) | 户外探险 | 部分专业手表 |
 
 ## 关联的统计数据说明
 
-* 字段定义：[exerciseSequenceHelper.adventures.SummaryFields](../harmonyos-references/health-api-exercisedequencehelper.md#summaryfields)
+* 字段定义：[exerciseSequenceHelper.adventures.SummaryFields](../harmonyos-references/health-api-exercisesequencehelper.md#summaryfields)
 
 | **字段**列表 | 描述 | **类型** | 可选/必选 |
 | --- | --- | --- | --- |
@@ -28,7 +28,7 @@ content_hash: sha256:e4111c3b614eaa457957f79994f56807fc06714e864db5aa7a1afca1bc6
 
 ## 关联的明细数据说明
 
-* 字段定义：[exerciseSequenceHelper.adventures.DetailFields](../harmonyos-references/health-api-exercisedequencehelper.md#detailfields)
+* 字段定义：[exerciseSequenceHelper.adventures.DetailFields](../harmonyos-references/health-api-exercisesequencehelper.md#detailfields)
 
 | **字段**列表 | 描述 | **类型** | 可选/必选 |
 | --- | --- | --- | --- |

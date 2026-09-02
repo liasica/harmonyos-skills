@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getbl
 title: GetBlockDim
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > TilingContext > GetBlockDim
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:19+08:00
+scraped_at: 2026-09-02T14:50:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c62e0144b43128a0a80a53ecc5c863962ed6d82a654da61995213a31eb5056f4
+content_hash: sha256:f229b2004175186bf16fc238463d9153b380e2919c55b8ff38b62bfbb868b615
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:c62e0144b43128a0a80a53ecc5c863962ed6d82a654da61995213a31eb5
 
 ## 函数原型
 
-```
-1. uint32_t GetBlockDim() const;
+```cpp
+uint32_t GetBlockDim() const;
 ```
 
 ## 参数说明
@@ -32,9 +32,9 @@ content_hash: sha256:c62e0144b43128a0a80a53ecc5c863962ed6d82a654da61995213a31eb5
 
 ## 调用示例
 
-```
-1. ge::graphStatus Tiling4XXX(TilingContext* context) {
-2. auto block_dim = context->GetBlockDim();
-3. // ...
-4. }
+```cpp
+ge::graphStatus Tiling4XXX(TilingContext* context) {
+  auto block_dim = context->GetBlockDim();
+  // ...
+}
 ```

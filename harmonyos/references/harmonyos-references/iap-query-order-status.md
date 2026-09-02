@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-query
 title: 订单状态查询（消耗型/非消耗型/非续期订阅商品）
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API > 订单状态查询（消耗型/非消耗型/非续期订阅商品）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:56+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:13c226244a5c68d2f6cd6467216603c25fe3de6ec5461c449ac2937dbb84a16f
+scraped_at: 2026-09-02T15:02:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6bfbe44f603158fc3562698b45fb032d27115b917d0367f6f89ede787bc8a3f5
 ---
 
 ## 功能介绍
@@ -49,15 +49,15 @@ content_hash: sha256:13c226244a5c68d2f6cd6467216603c25fe3de6ec5461c449ac2937dbb8
 
 更多语言及详细的代码示例，请参考[IAP Kit-Sample-ServerDemo](https://gitcode.com/HarmonyOS_Samples/iapkit-sample-serverdemo)。
 
-```
-1. POST /order/harmony/v1/application/order/status/query
-2. Content-Type: application/json;charset=UTF-8
-3. Authorization: Bearer ***.***.***
-4. Accept: application/json
-5. {
-6. "purchaseToken": "***.*.***",
-7. "purchaseOrderId": "***.***"
-8. }
+```javascript
+POST /order/harmony/v1/application/order/status/query
+Content-Type: application/json;charset=UTF-8
+Authorization: Bearer ***.***.***
+Accept: application/json
+{
+  "purchaseToken": "***.*.***",
+  "purchaseOrderId": "***.***"
+}
 ```
 
 ## 响应参数
@@ -78,12 +78,12 @@ content_hash: sha256:13c226244a5c68d2f6cd6467216603c25fe3de6ec5461c449ac2937dbb8
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json;charset=UTF-8
-3. {
-4. "responseCode": "0",
-5. "responseMessage": "success",
-6. "jwsPurchaseOrder": "***"
-7. }
+```javascript
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+{
+  "responseCode": "0",
+  "responseMessage": "success",
+  "jwsPurchaseOrder": "***"
+}
 ```

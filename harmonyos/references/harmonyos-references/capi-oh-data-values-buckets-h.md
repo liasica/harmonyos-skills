@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-d
 title: oh_data_values_buckets.h
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 头文件 > oh_data_values_buckets.h
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:28+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:18666044734e4f569463bdc387f542493ea987eb53996feff81e31a23dd52d1f
+scraped_at: 2026-09-02T15:00:42+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9e995aeafc22d7fb57ae29d92f69f854451b38c27404ee4b127b2e988f4e133c
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供与存储数据值相关的结构定义、函数和枚举。
 
@@ -26,19 +24,13 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [OH\_Data\_VBuckets](capi-rdb-oh-data-vbuckets.md) | OH\_Data\_VBuckets | 定义OH\_Data\_VBuckets结构类型。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -50,14 +42,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_VBuckets\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Data_VBuckets *OH_VBuckets_Create(void)
+```c
+OH_Data_VBuckets *OH_VBuckets_Create(void)
 ```
 
 **描述**
@@ -70,14 +58,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_Data\_VBuckets](capi-rdb-oh-data-vbuckets.md) | 执行成功时返回指向[OH\_Data\_VBuckets](capi-rdb-oh-data-vbuckets.md)实例的指针。否则返回nullptr。  使用完成后，必须通过[OH\_VBuckets\_Destroy](capi-oh-data-values-buckets-h.md#oh_vbuckets_destroy)接口释放内存。 |
+| [OH\_Data\_VBuckets](capi-rdb-oh-data-vbuckets.md) \* | 执行成功时返回指向[OH\_Data\_VBuckets](capi-rdb-oh-data-vbuckets.md)实例的指针。否则返回nullptr。  使用完成后，必须通过[OH\_VBuckets\_Destroy](capi-oh-data-values-buckets-h.md#oh_vbuckets_destroy)接口释放内存。 |
 
 ### OH\_VBuckets\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_VBuckets_Destroy(OH_Data_VBuckets *buckets)
+```c
+int OH_VBuckets_Destroy(OH_Data_VBuckets *buckets)
 ```
 
 **描述**
@@ -100,10 +86,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VBuckets\_PutRow()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_VBuckets_PutRow(OH_Data_VBuckets *buckets, const OH_VBucket *row)
+```c
+int OH_VBuckets_PutRow(OH_Data_VBuckets *buckets, const OH_VBucket *row)
 ```
 
 **描述**
@@ -127,10 +111,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VBuckets\_PutRows()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_VBuckets_PutRows(OH_Data_VBuckets *buckets, const OH_Data_VBuckets *rows)
+```c
+int OH_VBuckets_PutRows(OH_Data_VBuckets *buckets, const OH_Data_VBuckets *rows)
 ```
 
 **描述**
@@ -154,10 +136,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VBuckets\_RowCount()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_VBuckets_RowCount(OH_Data_VBuckets *buckets, size_t *count)
+```c
+int OH_VBuckets_RowCount(OH_Data_VBuckets *buckets, size_t *count)
 ```
 
 **描述**

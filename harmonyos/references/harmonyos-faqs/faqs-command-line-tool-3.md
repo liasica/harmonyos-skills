@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-command-li
 title: "编译时DevEco Studio报“ohpm ERROR: EINSTALL install failed, Error: Dependency node build failed Install failed”错"
 breadcrumb: "FAQ > DevEco Studio > 命令行工具 > 编译时DevEco Studio报“ohpm ERROR: EINSTALL install failed, Error: Dependency node build failed Install failed”错"
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:22+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:18+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:c1199c6c58ac2ead6c1dc803ccf3171052070351335671b92cc7d0fb0d71f049
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: DevEco Studio无法打开
 breadcrumb: FAQ > DevEco Studio > 环境准备 > DevEco Studio无法打开
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:53+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:13+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:ff191129abdbdc539d23982892e16d168b4d5ae3402509bc47a0edd0884c78ec
 ---
 

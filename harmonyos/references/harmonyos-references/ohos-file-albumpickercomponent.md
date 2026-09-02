@@ -3,37 +3,33 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-file
 title: "@ohos.file.AlbumPickerComponent (Album Picker组件)"
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS组件 > @ohos.file.AlbumPickerComponent (Album Picker组件)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:18+08:00
-doc_updated_at: 2026-03-26
-content_hash: sha256:bd416b66c2cd6d0d9edc66b55f1730de6271fa97fd940839dbebef6429f5c682
+scraped_at: 2026-09-02T15:02:37+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a6166f2a66e9d1da112110d59e3e9dc972abede3aa8b3d3e7aea74c0c8b90019
 ---
 
 应用可以在布局中嵌入AlbumPickerComponent组件，通过此组件，应用无需申请权限，即可访问公共目录中的相册列表。
 
+请注意AlbumPickerComponent不支持嵌套，且不应在其上覆盖设置overlay属性或更高层级组件，以免导致手势事件失效。
+
 需配合[PhotoPickerComponent](ohos-file-photopickercomponent.md)一起使用，用户通过AlbumPickerComponent组件选择对应相册并通知PhotoPickerComponent组件刷新为对应相册的图片和视频。
 
-说明
+**说明** 
 
 * 该组件从API version 12开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 该组件不支持[同层渲染](../harmonyos-guides/web-same-layer.md)。
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { AlbumPickerComponent, AlbumPickerOptions, AlbumInfo, photoAccessHelper, EmptyAreaClickCallback } from '@kit.MediaLibraryKit';
+```ts
+import { AlbumPickerComponent, AlbumPickerOptions, AlbumInfo, photoAccessHelper, EmptyAreaClickCallback } from '@kit.MediaLibraryKit';
 ```
 
 ## 属性
 
-PhonePC/2in1TabletTV
-
 支持[通用属性](ts-component-general-attributes.md)。
 
 ## AlbumPickerComponent
-
-PhonePC/2in1TabletTV
 
 AlbumPickerComponent( {albumPickerOptions?: AlbumPickerOptions, onAlbumClick?: (albumInfo: AlbumInfo) => boolean, onEmptyAreaClick?: EmptyAreaClickCallback, albumPickerController?: AlbumPickerController })
 
@@ -54,8 +50,6 @@ AlbumPickerComponent( {albumPickerOptions?: AlbumPickerOptions, onAlbumClick?: (
 
 ## AlbumPickerOptions
 
-PhonePC/2in1TabletTV
-
 Album Picker配置选项。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
@@ -68,8 +62,6 @@ Album Picker配置选项。
 
 ## EmptyAreaClickCallback13+
 
-PhonePC/2in1TabletTV
-
 type EmptyAreaClickCallback = () => void
 
 点击相册组件空白区域时产生的回调事件。
@@ -79,8 +71,6 @@ type EmptyAreaClickCallback = () => void
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 ## AlbumInfo
-
-PhonePC/2in1TabletTV
 
 相册相关信息。
 
@@ -95,8 +85,6 @@ PhonePC/2in1TabletTV
 
 ## AlbumPickerController20+
 
-PhonePC/2in1TabletTV
-
 应用可通过AlbumPickerController向组件发送数据。
 
 **装饰器类型**：@Observed
@@ -104,8 +92,6 @@ PhonePC/2in1TabletTV
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 ### setFontSize20+
-
-PhonePC/2in1TabletTV
 
 setFontSize(fontSize: number | string): void
 
@@ -123,45 +109,43 @@ setFontSize(fontSize: number | string): void
 
 ## 示例
 
-PhonePC/2in1TabletTV
+```ts
+// xxx.ets
+import { AlbumPickerComponent, AlbumPickerOptions, AlbumInfo, PickerColorMode, photoAccessHelper, EmptyAreaClickCallback } from '@kit.MediaLibraryKit';
 
-```
-1. // xxx.ets
-2. import { AlbumPickerComponent, AlbumPickerOptions, AlbumInfo, PickerColorMode, photoAccessHelper, EmptyAreaClickCallback } from '@kit.MediaLibraryKit';
+@Entry
+@Component
+struct PickerDemo {
+  albumPickerOptions: AlbumPickerOptions = new AlbumPickerOptions();
+  private emptyAreaClickCallback: EmptyAreaClickCallback = (): void => this.onEmptyAreaClick();
 
-4. @Entry
-5. @Component
-6. struct PickerDemo {
-7. albumPickerOptions: AlbumPickerOptions = new AlbumPickerOptions();
-8. private emptyAreaClickCallback: EmptyAreaClickCallback = (): void => this.onEmptyAreaClick();
+  aboutToAppear() {
+    this.albumPickerOptions.themeColorMode = PickerColorMode.AUTO;
+    this.albumPickerOptions.filterType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
+  }
+  
+  private onAlbumClick(albumInfo: AlbumInfo): boolean {
+    if (albumInfo?.uri) {
+      // 通过pickerController向PhotoPickerComponent发送消息，通知其刷新。
+    }
+    if (albumInfo?.albumName) {
+      // 基于获取到的albumName后续逻辑处理。
+    }
+    return true;
+  }
+  
+  private onEmptyAreaClick(): void {
+    // 点击组件空白区域回调。
+  }
 
-10. aboutToAppear() {
-11. this.albumPickerOptions.themeColorMode = PickerColorMode.AUTO;
-12. this.albumPickerOptions.filterType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
-13. }
-
-15. private onAlbumClick(albumInfo: AlbumInfo): boolean {
-16. if (albumInfo?.uri) {
-17. // 通过pickerController向PhotoPickerComponent发送消息，通知其刷新。
-18. }
-19. if (albumInfo?.albumName) {
-20. // 基于获取到的albumName后续逻辑处理。
-21. }
-22. return true;
-23. }
-
-25. private onEmptyAreaClick(): void {
-26. // 点击组件空白区域回调。
-27. }
-
-29. build() {
-30. Stack() {
-31. AlbumPickerComponent({
-32. albumPickerOptions: this.albumPickerOptions,
-33. onAlbumClick:(albumInfo: AlbumInfo): boolean => this.onAlbumClick(albumInfo),
-34. onEmptyAreaClick: this.emptyAreaClickCallback,
-35. }).height('100%').width('100%')
-36. }
-37. }
-38. }
+  build() {
+    Stack() {
+      AlbumPickerComponent({
+        albumPickerOptions: this.albumPickerOptions,
+        onAlbumClick:(albumInfo: AlbumInfo): boolean => this.onAlbumClick(albumInfo),
+        onEmptyAreaClick: this.emptyAreaClickCallback,
+      }).height('100%').width('100%')
+    }
+  }
+}
 ```

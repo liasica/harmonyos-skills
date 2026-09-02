@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“Cannot find module XXX or its corresponding type declarations”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“Cannot find module XXX or its corresponding type declarations”
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:20:22+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:09f18f04e744b8f775b9dfc188d6396e81346db9421ce1353feb25c84a9a907a
+scraped_at: 2026-09-02T14:54:54+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:f433667e6ddbf61e08df3d27271a7705b23ceef55e31ada72b28703923ba9ff7
 ---
 
 * **场景一：**
@@ -22,12 +22,12 @@ content_hash: sha256:09f18f04e744b8f775b9dfc188d6396e81346db9421ce1353feb25c84a9
 
   1. 在对应cpp目录下新建types/libxxx目录，并在该目录下新增index.d.ts用于声明native文件的类型符号；新增oh-package.json5配置文件用于校验工具的模块查询。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/0nywl8TURKqy3mE5AIixYg/zh-cn_image_0000002229604373.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/fWxgFzuCSXGzesG2zID9Lg/zh-cn_image_0000002654837773.png)
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/BPTvHjBVR-y-gT4Qhi9hrw/zh-cn_image_0000002194158980.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/HJGIDx5RRdO8-c8dnqBvJA/zh-cn_image_0000002624478464.png)
   2. 在native文件引用的模块内的oh-package.json5中添加native文件的本地依赖，并根据DevEco Studio提示点击\*\*Sync Now\*\*同步工程，下图以entry模块引用native文件为例。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/3qbSwyLgSFW_oOxbxgPHmA/zh-cn_image_0000002194318572.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/n5vQyiGUSP6mptEor36Vcw/zh-cn_image_0000002654797827.png)
 
 * **场景二：**
 
@@ -35,7 +35,7 @@ content_hash: sha256:09f18f04e744b8f775b9dfc188d6396e81346db9421ce1353feb25c84a9
 
   API 11 Stage模板工程编译失败，提示“Cannot find module '@kit.xxx' or its corresponding type declarations”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/ug8AYAWVQZeHe7s-QN7svg/zh-cn_image_0000002229758849.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/1tUYv8vCRPabbuGLQXPx_A/zh-cn_image_0000002624638370.png)
 
   **问题原因**
 
@@ -53,7 +53,7 @@ content_hash: sha256:09f18f04e744b8f775b9dfc188d6396e81346db9421ce1353feb25c84a9
 
   引用第三方包，构建失败，提示“Cannot find module 'xxx' or its corresponding type declarations”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/hV3j4xkNRpejYzfDKeOeqw/zh-cn_image_0000002229758853.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/GnOBkMNSQN6ntDXYAe8X1g/zh-cn_image_0000002654837775.png)
 
   **解决措施**
 
@@ -66,30 +66,30 @@ content_hash: sha256:09f18f04e744b8f775b9dfc188d6396e81346db9421ce1353feb25c84a9
 
   例如：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/msRhOhtESMOs2DJDvfJemw/zh-cn_image_0000002194158984.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/kTo5yFSrRO-Gr2OrNeRNoQ/zh-cn_image_0000002624478466.png)
 
   代码中这样引用
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/N6JgifJ9QkC8HNeTDKJLHQ/zh-cn_image_0000002229758861.png)这样引用会找不到模块，导致报错。
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/geIvx9ZKTfqX6bHZBDYWug/zh-cn_image_0000002654797829.png)这样引用会找不到模块，导致报错。
 
   **解决措施**
 
   修改引用方式，采用推荐的方式。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/x-WmboZXS9ysOFn9vjcewA/zh-cn_image_0000002194158972.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/e2kClQxkQ5C4Sps9iYGz8Q/zh-cn_image_0000002624638372.png)
 * **场景五：**
 
   **问题现象**
 
   被引用模块oh-package.json5配置有误，执行了ohpm install 并且成功地安装了依赖，但是还报错模块找不到。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/z9vVSX6iQ0m41azj9PwGeg/zh-cn_image_0000002194158976.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/Hqui-g5ORh-udmlPEAcAEg/zh-cn_image_0000002654837777.png)
 
   被引用模块的 oh-package.json5 中配置了错误的types字段。
 
   该字段优先于main字段。 如果 types 字段配置的不存在，就会报错模块找不到。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/RqN-TOi9TLaHXKg0EmWg1A/zh-cn_image_0000002229604353.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/BBgotMbATNiZN861wWzLzQ/zh-cn_image_0000002624478468.png)
 
   **解决措施**
 
@@ -120,7 +120,7 @@ content_hash: sha256:09f18f04e744b8f775b9dfc188d6396e81346db9421ce1353feb25c84a9
 
   Stage模板工程编译构建失败，提示“Cannot find module '@bundle:rollup\_plugin\_ignore\_empty\_module\_placeholder' or its corresponding type declarations”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/9i2FoN5KSQO7jE2kcz_FfQ/zh-cn_image_0000002229758841.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/ZNHm_7VpQPGHgdGyJa3KTg/zh-cn_image_0000002654797831.png)
 
   **解决措施**
 
@@ -128,14 +128,14 @@ content_hash: sha256:09f18f04e744b8f775b9dfc188d6396e81346db9421ce1353feb25c84a9
 
   1. 在build目录搜索`rollup\_plugin\_ignore\_empty\_module\_placeholder`定位问题模块。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/nDr8vPz7RHehPvyxEjT3zA/zh-cn_image_0000002194158956.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/0hLkPEZuTPSI7oSR9Mt1iA/zh-cn_image_0000002624638374.png)
 
      在输入栏中输入“rollup\_plugin\_ignore\_empty\_module\_placeholder”，找到问题模块的中间文件。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/T8rq9CEYTzi8tOZvBV_ZUw/zh-cn_image_0000002194158964.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/jdheP4tDQUiFwDEruUVDhg/zh-cn_image_0000002654837779.png)
   2. 在引用类型文件中通过添加type显式声明符号类型。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/26kSvc89SbOoT4hxR6-nzw/zh-cn_image_0000002229758865.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/EGJfBJPDSuewFAV_tkjP1w/zh-cn_image_0000002624478470.png)
   3. 同时排查是否从d.ts/d.ets中引用值类型符号。禁止在声明文件中声明值变量。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/ZpJMwK_BTJC6wp8Wzo6_7g/zh-cn_image_0000002194158968.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/BIbpP21DRm-6yPkpp1pEcw/zh-cn_image_0000002654797833.png)

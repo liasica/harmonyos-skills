@@ -3,29 +3,39 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-w
 title: "@ohos.WorkSchedulerExtensionAbility (延迟任务调度回调)"
 breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > ArkTS API > @ohos.WorkSchedulerExtensionAbility (延迟任务调度回调)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:34+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:17a313dd25806c4435baab979fbb1aebf2b724ea46f16a488c66d3735967de5b
+scraped_at: 2026-09-02T15:01:29+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2715c1d31ee246462edfdc450ab8a669c4252f7ad40b9b2e8cd6fa398c1d9d61
 ---
 
 本模块提供延迟任务回调能力。开发者可重写模块接口，在延迟任务触发时，系统可通过本模块接口回调应用，在回调里处理任务逻辑。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本模块接口仅可在Stage模型下使用。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
+```ts
+import { WorkSchedulerExtensionAbility } from '@kit.BackgroundTasksKit';
+```
 
-```
-1. import { WorkSchedulerExtensionAbility } from '@kit.BackgroundTasksKit';
-```
+## 约束限制
+
+为保障系统安全性和稳定性，防止WorkSchedulerExtensionAbility滥用系统资源，系统对其能力进行管控，不支持以下模块的引用：
+
+[@ohos.resourceschedule.backgroundTaskManager (后台任务管理)](js-apis-resourceschedule-backgroundtaskmanager.md)
+
+[@ohos.backgroundTaskManager (后台任务管理)](js-apis-backgroundtaskmanager.md)
+
+[@ohos.multimedia.camera (相机管理)](arkts-apis-camera.md)
+
+[@ohos.multimedia.audio (音频管理)](arkts-apis-audio.md)
+
+[@ohos.multimedia.media (媒体服务)](arkts-apis-media.md)
 
 ## WorkSchedulerExtensionContext10+
-
-PhonePC/2in1TabletTVWearable
 
 type WorkSchedulerExtensionContext = \_WorkSchedulerExtensionContext
 
@@ -39,13 +49,9 @@ WorkSchedulerExtensionContext是WorkSchedulerExtensionAbility的上下文环境�
 
 ## WorkSchedulerExtensionAbility
 
-PhonePC/2in1TabletTVWearable
-
 延迟任务回调，当满足调度条件或调度结束时，系统会回调应用WorkSchedulerExtensionAbility中[onWorkStart()](js-apis-workschedulerextensionability.md#onworkstart)或[onWorkStop()](js-apis-workschedulerextensionability.md#onworkstop)的方法。
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.ResourceSchedule.WorkScheduler
 
@@ -54,8 +60,6 @@ PhonePC/2in1TabletTVWearable
 | context10+ | [WorkSchedulerExtensionContext](js-apis-workschedulerextensioncontext.md) | 否 | 否 | WorkSchedulerExtension的上下文环境，继承自ExtensionContext。 |
 
 ### onWorkStart
-
-PhonePC/2in1TabletTVWearable
 
 onWorkStart(work: workScheduler.WorkInfo): void
 
@@ -71,21 +75,19 @@ onWorkStart(work: workScheduler.WorkInfo): void
 
 **示例：**
 
-```
-1. import { workScheduler } from '@kit.BackgroundTasksKit';
-2. import { WorkSchedulerExtensionAbility } from '@kit.BackgroundTasksKit';
+```ts
+import { workScheduler } from '@kit.BackgroundTasksKit';
+import { WorkSchedulerExtensionAbility } from '@kit.BackgroundTasksKit';
 
-4. export default class MyWorkSchedulerExtensionAbility extends WorkSchedulerExtensionAbility {
-5. onWorkStart(workInfo: workScheduler.WorkInfo) {
-6. console.info(`MyWorkSchedulerExtensionAbility onWorkStart, workId: ${workInfo.workId},
-7. bundleName: ${workInfo.bundleName}, abilityName: ${workInfo.abilityName}.`);
-8. }
-9. }
+export default class MyWorkSchedulerExtensionAbility extends WorkSchedulerExtensionAbility {
+  onWorkStart(workInfo: workScheduler.WorkInfo) {
+      console.info(`MyWorkSchedulerExtensionAbility onWorkStart, workId: ${workInfo.workId},
+          bundleName: ${workInfo.bundleName}, abilityName: ${workInfo.abilityName}.`);
+  }
+}
 ```
 
 ### onWorkStop
-
-PhonePC/2in1TabletTVWearable
 
 onWorkStop(work: workScheduler.WorkInfo): void
 
@@ -101,14 +103,14 @@ onWorkStop(work: workScheduler.WorkInfo): void
 
 **示例：**
 
-```
-1. import { workScheduler } from '@kit.BackgroundTasksKit';
-2. import { WorkSchedulerExtensionAbility } from '@kit.BackgroundTasksKit';
+```ts
+import { workScheduler } from '@kit.BackgroundTasksKit';
+import { WorkSchedulerExtensionAbility } from '@kit.BackgroundTasksKit';
 
-4. export default class MyWorkSchedulerExtensionAbility extends WorkSchedulerExtensionAbility {
-5. onWorkStop(workInfo: workScheduler.WorkInfo) {
-6. console.info(`MyWorkSchedulerExtensionAbility onWorkStop, workId: ${workInfo.workId},
-7. bundleName: ${workInfo.bundleName}, abilityName: ${workInfo.abilityName}.`);
-8. }
-9. }
+export default class MyWorkSchedulerExtensionAbility extends WorkSchedulerExtensionAbility {
+  onWorkStop(workInfo: workScheduler.WorkInfo) {
+      console.info(`MyWorkSchedulerExtensionAbility onWorkStop, workId: ${workInfo.workId},
+          bundleName: ${workInfo.bundleName}, abilityName: ${workInfo.abilityName}.`);
+  }
+}
 ```

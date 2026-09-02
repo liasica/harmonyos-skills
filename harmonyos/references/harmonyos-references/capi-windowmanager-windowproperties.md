@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-wind
 title: WindowManager_WindowProperties
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > WindowManager_WindowProperties
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:38+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:85d7f86bf5d24f08cc839dc9af53b895b28d298cf23559b146bf96be3e922f52
+scraped_at: 2026-09-02T15:01:24+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f7d7e277413e359a6f12a75d3ad9cfd5550fb242992408df9ef119b865484a36
 ---
 
-```
-1. typedef struct {...} WindowManager_WindowProperties
+```c
+typedef struct {...} WindowManager_WindowProperties
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 窗口属性。
 
@@ -26,16 +24,12 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
 | [WindowManager\_Rect](capi-windowmanager-rect.md) windowRect | 窗口的位置和尺寸。 |
-| [WindowManager\_Rect](capi-windowmanager-rect.md) drawableRect | 窗口内可绘制区域的尺寸。 |
+| [WindowManager\_Rect](capi-windowmanager-rect.md) drawableRect | 窗口内可绘制区域的位置和尺寸。 |
 | [WindowManager\_WindowType](capi-oh-window-comm-h.md#windowmanager_windowtype) type | 窗口类型。 |
 | bool isFullScreen | 窗口是否全屏模式。默认值为false。true表示窗口是全屏模式，false表示窗口是非全屏模式。 |
 | bool isLayoutFullScreen | 窗口布局是否沉浸式。默认值为false。true表示窗口布局是沉浸式，false表示窗口布局是非沉浸式。 |
@@ -46,4 +40,4 @@ PhonePC/2in1TabletTVWearable
 | bool isPrivacyMode | 窗口是否打开隐私模式。默认值为false。true表示窗口打开隐私模式，false表示窗口关闭隐私模式。 |
 | bool isTransparent | 窗口是否透明。默认值为false。true表示窗口透明，false表示窗口非透明。 |
 | uint32\_t id | 窗口id。默认值为0，该参数为整数。 |
-| uint32\_t displayId | 窗口所在屏幕的id，默认返回主屏幕id，该参数为整数 |
+| uint32\_t displayId | 窗口所在屏幕的ID，默认返回主屏幕ID，该参数为整数。 |

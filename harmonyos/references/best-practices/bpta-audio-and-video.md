@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-and-
 title: 音频和视频
 breadcrumb: 最佳实践 > 媒体 > 音频和视频
 category: best-practices
-scraped_at: 2026-04-28T08:20:25+08:00
-doc_updated_at: 2026-04-27
-content_hash: sha256:6fe75660bdf2c26dc219fc3beaeee58b32166a08ce147f4bb8f7585b1fefd06d
+scraped_at: 2026-09-02T14:53:40+08:00
+doc_updated_at: 2026-07-09
+content_hash: sha256:f218c12253b673089a194135c2c24a1e5d69e94f7cdf298fa99fae62c3d6988f
 ---
 
 * **[基于AVPlayer播放视频系列开发实践](bpta-avplayer-video-practices.md)**
@@ -16,11 +16,9 @@ content_hash: sha256:6fe75660bdf2c26dc219fc3beaeee58b32166a08ce147f4bb8f7585b1fe
 * **[基于Surface模式进行视频编码](bpta-surface-encoder.md)**
 * **[基于Buffer模式进行视频转码](bpta-buffer-mode-transcoding.md)**
 * **[音频焦点管理解决方案](bpta-audio-focus-management.md)**
-* **[在线视频播放卡顿优化](bpta-online-video-playback-lags-practice.md)**
 * **[HDR Vivid视频播放与录制开发实践](bpta-hdrvivid.md)**
 * **[HDR Vivid视频转码SDR视频开发实践](bpta-hdrtosdr.md)**
 * **[基于系统能力获取视频缩略图](bpta-video-thumbnail.md)**
-* **[音画同步](bpta-audio-video-synchronization.md)**
 * **[基于AVScreenCapture实现屏幕录制](bpta-avscreencapture-for-screen-recording.md)**
 * **[音质切换开发实践](bpta-sound-quality-switching.md)**
 * **[图片合成视频开发实践](bpta-image-to-video-synthesis.md)**

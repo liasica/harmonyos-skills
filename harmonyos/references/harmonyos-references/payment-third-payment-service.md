@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-t
 title: thirdPaymentService(三方支付服务)
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > ArkTS API > thirdPaymentService(三方支付服务)
 category: harmonyos-references
-scraped_at: 2026-04-29T14:08:22+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:0e8ce2fe8528e12e79f6d9c4e5565b3b343d8ea040ba57114f8052391ddeb9c9
+scraped_at: 2026-09-02T15:03:02+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f77b68b4fbd152ed9dceba376dfc6f3f6b6764de3f35599933a5948e1f1b6ad1
 ---
 
 本模块提供直接通过依赖包拉起第三方支付方式收银台能力。
@@ -20,15 +20,11 @@ content_hash: sha256:0e8ce2fe8528e12e79f6d9c4e5565b3b343d8ea040ba57114f8052391dd
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { thirdPaymentService } from '@kit.PaymentKit';
+```typescript
+import { thirdPaymentService } from '@kit.PaymentKit';
 ```
 
 ## PayMethod
-
-PhonePC/2in1Tablet
 
 三方支付方式。
 
@@ -42,13 +38,11 @@ PhonePC/2in1Tablet
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| WECHAT\_PAY | wechat\_pay | 微信支付。 |
-| ALI\_PAY | ali\_pay | 支付宝支付。 |
-| WECHAT\_MINI\_PROGRAM | wechat\_mini\_program | 拉起微信小程序。 |
+| WECHAT\_PAY | 'wechat\_pay' | 微信支付。 |
+| ALI\_PAY | 'ali\_pay' | 支付宝支付。 |
+| WECHAT\_MINI\_PROGRAM | 'wechat\_mini\_program' | 拉起微信小程序。 |
 
 ## ThirdPayClient
-
-PhonePC/2in1Tablet
 
 支付请求客户端。
 
@@ -61,8 +55,6 @@ PhonePC/2in1Tablet
 **起始版本：** 6.0.0(20)
 
 ### constructor
-
-PhonePC/2in1Tablet
 
 constructor(context: common.UIAbilityContext, payMethod: PayMethod, thirdAppId: string);
 
@@ -86,59 +78,57 @@ constructor(context: common.UIAbilityContext, payMethod: PayMethod, thirdAppId: 
 
 **示例**：
 
-```
-1. import { thirdPaymentService } from '@kit.PaymentKit';
-2. import { common } from '@kit.AbilityKit';
+```typescript
+import { thirdPaymentService } from '@kit.PaymentKit';
+import { common } from '@kit.AbilityKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. @State private thirdPayClient: thirdPaymentService.ThirdPayClient | null = null;
+@Entry
+@Component
+struct Index {
+@State private thirdPayClient: thirdPaymentService.ThirdPayClient | null = null;
 
-9. aboutToAppear() {
-10. try {
-11. // 初始化第三方支付客户端
-12. this.thirdPayClient = new thirdPaymentService.ThirdPayClient(
-13. this.getUIContext().getHostContext() as common.UIAbilityContext,
-14. thirdPaymentService.PayMethod.WECHAT_PAY,
-15. "third_appid_123456"
-16. );
-17. } catch (error) {
-18. console.error("支付客户端初始化失败:", error);
-19. // 可在此处提示用户或跳转错误页面
-20. }
-21. }
-22. payButtonClicked() {
-23. if (!this.thirdPayClient) {
-24. console.error("支付客户端未初始化");
-25. return;
-26. }
+  aboutToAppear() {
+    try {
+      const thirdAppid ='third_appid_123456'
+      // 初始化第三方支付客户端
+      this.thirdPayClient = new thirdPaymentService.ThirdPayClient(
+        this.getUIContext().getHostContext() as common.UIAbilityContext,
+        thirdPaymentService.PayMethod.WECHAT_PAY,
+        thirdAppid
+      );
+    } catch (error) {
+      console.error('支付客户端初始化失败:', error);
+      // 可在此处提示用户或跳转错误页面
+    }
+  }
+  payButtonClicked() {
+    if (!this.thirdPayClient) {
+      console.error('支付客户端未初始化');
+      return;
+    }
+    // 调用支付接口，传递订单信息
+    this.thirdPayClient.pay('{"xxx1":"***", "xxx2":"***", "token":"***"}');
+  }
 
-28. // 调用支付接口，传递订单信息
-29. this.thirdPayClient.pay('{"xxx1":"***", "xxx2":"***", "token":"***"}');
-30. }
-
-32. build() {
-33. Column() {
-34. Button("立即支付")
-35. .onClick(() => {
-36. this.payButtonClicked();
-37. })
-38. }
-39. .width("100%")
-40. .height("100%")
-41. .justifyContent(FlexAlign.Center)
-42. }
-43. }
+  build() {
+    Column() {
+      Button('立即支付')
+        .onClick(() => {
+          this.payButtonClicked();
+        })
+    }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
 
 ### pay
 
-PhonePC/2in1Tablet
-
 pay(payInfo: string): Promise<void>;
 
-该方法提供拉起三方支付方式收银台等功能，调用方法前请确保网络已连接，调用该方法后会拉起三方支付收银台，完成后使用Promise异步返回。
+该方法提供拉起三方支付方式收银台等功能，调用方法前请确保网络已连接，调用该方法后会拉起三方支付收银台，完成后使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -162,10 +152,11 @@ pay(payInfo: string): Promise<void>;
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](payment-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-payment.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
 | 1022830000 | The operation was canceled by the user. |
 | 1022830001 | Pay failed. |
 | 1022830002 | The payInfo invalid. Possible causes: 1.Data format is not json string; 2.Mandatory parameters are left unspecified. |
@@ -174,49 +165,46 @@ pay(payInfo: string): Promise<void>;
 
 示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { thirdPaymentService } from '@kit.PaymentKit';
-3. import { common } from '@kit.AbilityKit';
+```typescript
+import { thirdPaymentService } from '@kit.PaymentKit';
+import { common } from '@kit.AbilityKit';
 
-5. export let thirdPayClient: thirdPaymentService.ThirdPayClient | undefined = undefined;
+export let thirdPayClient: thirdPaymentService.ThirdPayClient | undefined = undefined;
 
-7. @Entry
-8. @Component
-9. struct Index {
-10. context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-11. thirdPaymentServicePayPromise() {
-12. thirdPayClient = new thirdPaymentService.ThirdPayClient(this.context, thirdPaymentService.PayMethod.WECHAT_PAY, "appid_123456");
-13. // 不同支付方式参数构建参考示例如下：
-14. // PayMethod.WECHAT_PAY：'{"appId":"***","partnerId":"***","prepayId":"***","packageValue":"***","nonceStr":"***","timeStamp":"***","sign":"***","extData":"***","token":"***"}'
-15. // PayMethod.ALI_PAY：'{"orderInfo":"***", "token":"***"}'
-16. // PayMethod.WECHAT_MINI_PROGRAM：'{"userName":"原始id", "path":"小程序启动路径", "miniProgramType":"小程序的类型，0-正式版 1-开发版 2-体验版 默认0", "extData":"***", "token":"***"}'
-17. const payInfo = '{"xxx1":"***", "xxx2":"***", "token":"***"}';
-18. thirdPayClient.pay(payInfo).then(() => {
-19. // 支付成功
-20. console.info('succeeded in paying.');
-21. })
-22. }
+@Entry
+@Component
+struct Index {
+  context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  thirdPaymentServicePayPromise() {
+    thirdPayClient = new thirdPaymentService.ThirdPayClient(this.context, thirdPaymentService.PayMethod.WECHAT_PAY, 'appid_123456');
+    // 不同支付方式参数构建参考示例如下：
+    // PayMethod.WECHAT_PAY：'{"appId":"***","partnerId":"***","prepayId":"***","packageValue":"***","nonceStr":"***","timeStamp":"***","sign":"***","extData":"***","token":"***"}'
+    // PayMethod.ALI_PAY：'{"orderInfo":"***", "token":"***"}'
+    // PayMethod.WECHAT_MINI_PROGRAM：'{"userName":"原始id", "path":"小程序启动路径", "miniProgramType":"小程序的类型，0-正式版 1-开发版 2-体验版 默认0", "extData":"***", "token":"***"}'
+    const payInfo = '{"xxx1":"***", "xxx2":"***", "token":"***"}';
+    thirdPayClient.pay(payInfo).then(() => {
+      // 支付成功
+      console.info('succeeded in paying.');
+    });
+  }
 
-24. build() {
-25. Column() {
-26. Button('thirdPaymentServicePayPromise')
-27. .type(ButtonType.Capsule)
-28. .width('50%')
-29. .margin(20)
-30. .onClick(() => {
-31. this.thirdPaymentServicePayPromise();
-32. })
-33. }
-34. .width('100%')
-35. .height('100%')
-36. }
-37. }
+  build() {
+    Column() {
+      Button('thirdPaymentServicePayPromise')
+        .type(ButtonType.Capsule)
+        .width('50%')
+        .margin(20)
+        .onClick(() => {
+          this.thirdPaymentServicePayPromise();
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ### handlePayCallback
-
-PhonePC/2in1Tablet
 
 handlePayCallback(want: Want): boolean;
 
@@ -242,22 +230,30 @@ handlePayCallback(want: Want): boolean;
 | --- | --- |
 | boolean | 回调处理结果（该结果为用户支付操作处理结果，非实际支付结果，实际支付结果以三方支付结果为准）。  - true：用户支付操作成功  - false：用户支付操作失败 |
 
+**错误码**：
+
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-payment.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+
 **示例**：
 
-```
-1. import { UIAbility, Want } from '@kit.AbilityKit';
-2. // 需要从thirdPayClient对象定义文档中导入三方支付客户端对象，以下为示例，具体以应用定义路径为准。
-3. import { thirdPayClient } from '../pages/thirdPaymentServicetest';
+```typescript
+import { UIAbility, Want } from '@kit.AbilityKit';
+// 需要从thirdPayClient对象定义文档中导入三方支付客户端对象，以下为示例，具体以应用定义路径为准。
+import { thirdPayClient } from '../pages/thirdPaymentServicetest';
 
-5. // 如果已有Ability实现类，可直接添加onNewWant生命周期方法处理即可。
-6. export default class EntryAbility extends UIAbility {
-7. onNewWant(want: Want): void {
-8. // 需要和拉起支付收银台的三方支付客户端对象为同一个
-9. if (thirdPayClient) {
-10. console.info('clientForThirdPayment handlePayCallback');
-11. let handlePayCallback = thirdPayClient.handlePayCallback(want);
-12. console.info(`clientForThirdPayment handlePayCallback result: ${handlePayCallback}`);
-13. }
-14. }
-15. }
+// 如果已有Ability实现类，可直接添加onNewWant生命周期方法处理即可。
+export default class EntryAbility extends UIAbility {
+  onNewWant(want: Want): void {
+    // 需要和拉起支付收银台的三方支付客户端对象为同一个
+    if (thirdPayClient) {
+      console.info('clientForThirdPayment handlePayCallback');
+      let handlePayCallback = thirdPayClient.handlePayCallback(want);
+      console.info(`clientForThirdPayment handlePayCallback result: ${handlePayCallback}`);
+    }
+  }
+}
 ```

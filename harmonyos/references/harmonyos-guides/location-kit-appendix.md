@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/location-kit-
 title: 附录
 breadcrumb: 指南 > 应用服务 > Location Kit（位置服务） > 附录
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:42+08:00
+scraped_at: 2026-09-02T14:59:57+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:7d7a15694cb008e0924c39d31755b2204076031d43e9042f9573fdd0a47ec459
+content_hash: sha256:9bf9c82c3800158d88099c2b9f208a6d6a4484076ff22b19b5efaf67dee81f66
 ---
 
 ## 支持的国家/地区
 
-说明
+**说明** 
 
 支持的设备中Wearable设备支持以下国家/地区，其他设备仅支持中国境内（不包含中国香港、中国澳门、中国台湾）。
 

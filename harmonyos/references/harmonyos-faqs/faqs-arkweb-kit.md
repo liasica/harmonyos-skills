@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-kit
 title: Web开发（ArkWeb）
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb）
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:35+08:00
-doc_updated_at: 2026-04-22
-content_hash: sha256:0af9dbf8929e286323014c246d9bf1219c81b37fa95edc9066ae95c5e383586c
+scraped_at: 2026-09-02T14:54:31+08:00
+doc_updated_at: 2026-08-26
+content_hash: sha256:85a7581208b74399b2bad08eb9dead0af5aa366f7f24bee0560d66ece61199c7
 ---
 
 * **[Web组件的onLoadIntercept返回结果是否影响onInterceptRequest](faqs-arkweb-2.md)**
@@ -14,11 +14,11 @@ content_hash: sha256:0af9dbf8929e286323014c246d9bf1219c81b37fa95edc9066ae95c5e38
 * **[如何解决Web组件加载的HTML页面内检测网络状态失败](faqs-arkweb-8.md)**
 * **[Web组件中如何通过手势滑动返回上一个Web页面](faqs-arkweb-10.md)**
 * **[WebView中，双向交互可以使用JSBridge技术，也可以使用端口通信技术，这两者有什么区别](faqs-arkweb-11.md)**
-* **[注册的自定义字体在webview中无效](faqs-arkweb-16.md)**
+* **[注册的自定义字体在 webview 中无效](faqs-arkweb-16.md)**
 * **[Web组件加载某个页面，出现白屏、页面显示不出来，如何解决和定位](faqs-arkweb-19.md)**
 * **[javaScriptProxy和registerJavaScriptProxy有什么区别，能注册多少个对象](faqs-arkweb-20.md)**
 * **[Webview的runJavaScript和runJavaScriptExt有什么区别，在页面生命周期（如onPageShow、onPageEnd）的什么时候进行调用](faqs-arkweb-21.md)**
-* **[通过网络请求而来的Cookie如何同步配置到web中](faqs-arkweb-24.md)**
+* **[通过网络请求而来的 Cookie 如何同步配置到web中](faqs-arkweb-24.md)**
 * **[多个Cookie如何进行批量设置](faqs-arkweb-25.md)**
 * **[登录信息的cookie应该在什么时机注入？如何确保刚刚打开的web能注入登录信息cookie](faqs-arkweb-26.md)**
 * **[如何控制只在Web组件第一次加载url的时候触发onPageBegin，onPageEnd](faqs-arkweb-34.md)**
@@ -31,11 +31,9 @@ content_hash: sha256:0af9dbf8929e286323014c246d9bf1219c81b37fa95edc9066ae95c5e38
 * **[Web加载的H5页面跳转后，如何避免原有页面注册的资源被清空](faqs-arkweb-42.md)**
 * **[Web组件使用rawFile加载离线html时,如何在url后拼接参数](faqs-arkweb-45.md)**
 * **[如何在webview中使用H5中的alert](faqs-arkweb-46.md)**
-* **[HarmonyOS是否支持web内核独立升级](faqs-arkweb-48.md)**
 * **[是否支持使用第三方的webview内核](faqs-arkweb-49.md)**
 * **[webview是否支持CodeCache](faqs-arkweb-51.md)**
 * **[动态创建web组件应该在什么场景下使用，性能如何](faqs-arkweb-52.md)**
-* **[如何查看cookie的保存位置](faqs-arkweb-53.md)**
 * **[PDF预览如何隐藏PDF操作按钮栏](faqs-arkweb-54.md)**
 * **[如何解决webview离线加载白屏问题](faqs-arkweb-56.md)**
 * **[如何解决webview loaddata白屏问题](faqs-arkweb-57.md)**
@@ -54,14 +52,13 @@ content_hash: sha256:0af9dbf8929e286323014c246d9bf1219c81b37fa95edc9066ae95c5e38
 * **[如何使用Web组件下载pdf文件并展示给用户](faqs-arkweb-74.md)**
 * **[HarmonyOS Webview如何实现透明效果](faqs-arkweb-76.md)**
 * **[Web组件的滚动条能否设置隐藏](faqs-arkweb-77.md)**
-* **[Webview目前支持预览什么文件](faqs-arkweb-78.md)**
+* **[Webview 目前支持预览什么文件](faqs-arkweb-78.md)**
 * **[web组件访问过程中的illegal、fraud、risk和warning这4个风险等级区别是什么？是否可以自定义](faqs-arkweb-79.md)**
 * **[有无api判断web组件是否与controller绑定](faqs-arkweb-81.md)**
 * **[在onInterceptRequest接口中，如何异步处理响应数据](faqs-arkweb-82.md)**
 * **[在onInterceptRequest接口中，通过request.getRequestHeader()可以获取所有的请求头吗](faqs-arkweb-83.md)**
-* **[Web组件是否有加载PDF失败时的监听或者回调方法](faqs-arkweb-84.md)**
 * **[Webview如何加载带有#路由的链接](faqs-arkweb-86.md)**
-* **[Webview accessBackward不符合预期的可能情况](faqs-arkweb-88.md)**
+* **[Webview设置UA的时候为什么accessBackward返回都是false](faqs-arkweb-88.md)**
 * **[WebviewController的getPageHeight方法在哪个生命周期函数中调用](faqs-arkweb-89.md)**
 * **[ArkWeb组件是否支持深拷贝](faqs-arkweb-90.md)**
 * **[ArkWeb如何适配多种设备](faqs-arkweb-92.md)**
@@ -73,3 +70,103 @@ content_hash: sha256:0af9dbf8929e286323014c246d9bf1219c81b37fa95edc9066ae95c5e38
 * **[网络问题导致image组件加载在线图片失败](faqs-arkweb-98.md)**
 * **[Web使用vh适配网页被缩小](faqs-arkweb-99.md)**
 * **[同层渲染场景下控件使能沉浸光感效果变透明](faqs-arkweb-100.md)**
+* **[视频只支持竖屏全屏播放，不支持横屏全屏播放](faqs-arkweb-101.md)**
+* **[应用内弹窗无法通过侧滑关闭](faqs-arkweb-102.md)**
+* **[Web页面点击无响应](faqs-arkweb-103.md)**
+* **[页面顶部会显示一个网址链接信息](faqs-arkweb-104.md)**
+* **[Web页面内容重复加载](faqs-arkweb-105.md)**
+* **[H5页面弹出错误提示信息](faqs-arkweb-106.md)**
+* **[进入页面后，页面内容抖动](faqs-arkweb-107.md)**
+* **[应用内网页输入时，键盘弹出或收起行为异常](faqs-arkweb-108.md)**
+* **[跳转到的目标页面为空白页](faqs-arkweb-109.md)**
+* **[网页弹窗点击后，跳转失败停留空白页面](faqs-arkweb-110.md)**
+* **[视频详情页加载时，视频出现由小变大的缩放问题](faqs-arkweb-111.md)**
+* **[Web页面如何适配深色模式](faqs-arkweb-112.md)**
+* **[Web加载视频布局异常](faqs-arkweb-113.md)**
+* **[加载网页，图片被截断且页面能够横向滑动](faqs-arkweb-114.md)**
+* **[图片展示页面，图片序号显示有误](faqs-arkweb-115.md)**
+* **[H5页面点击邮件链接后跳转空白页面](faqs-arkweb-116.md)**
+* **[应用返回前台后，退出了全屏播放](faqs-arkweb-117.md)**
+* **[H5页面上的音频播放时没有声音](faqs-arkweb-118.md)**
+* **[页面标题内容快速变化](faqs-arkweb-119.md)**
+* **[应用查询设备信息提示信息有误](faqs-arkweb-120.md)**
+* **[点击H5页面中的按钮，未正常跳转其他页面](faqs-arkweb-121.md)**
+* **[视频播放页面出现标签栏](faqs-arkweb-122.md)**
+* **[Web组件如何正确设置User-Agent](faqs-arkweb-123.md)**
+* **[进入Web页面后，点击返回出现空白页面，再次返回正常](faqs-arkweb-124.md)**
+* **[Web组件调用WebviewController相关接口报17100001错误](faqs-arkweb-125.md)**
+* **[Web组件上PDF的预览下载以及常见问题定位解决](faqs-arkweb-126.md)**
+* **[Web场景下主动拉起软键盘](faqs-arkweb-127.md)**
+* **[Web组件如何实现页面截图](faqs-arkweb-128.md)**
+* **[loadUrl加载Web页面时添加headers参数失败](faqs-arkweb-129.md)**
+* **[H5页面实现页面后退](faqs-arkweb-130.md)**
+* **[通过网页拉起摄像头/麦克风实现拍照、录音录像、视频通话和拉起图库等功能](faqs-arkweb-131.md)**
+* **[如何解决Scroll组件嵌套Web组件后无法跟随页面整体滚动的问题](faqs-arkweb-132.md)**
+* **[Web组件内容过长时，底部的内容无法滑动联动如何解决](faqs-arkweb-133.md)**
+* **[如何解决Web组件首次加载完网页立即滑动发生明显卡顿问题](faqs-arkweb-134.md)**
+* **[Web组件点击全屏播放导致页面布局错乱的问题如何处理](faqs-arkweb-135.md)**
+* **[如何解决Web组件高度无法动态改变的问题](faqs-arkweb-136.md)**
+* **[使用ArkWeb下载文件提示完成但文件为何为空](faqs-arkweb-137.md)**
+* **[Web组件加载视频时无法隐藏下载按钮怎么处理](faqs-arkweb-138.md)**
+* **[如何解决网页发生重定向后JS对象丢失的问题](faqs-arkweb-139.md)**
+* **[Web组件频繁改变高度卡顿](faqs-arkweb-140.md)**
+* **[如何使用Web播放16进制数据流格式的音频](faqs-arkweb-141.md)**
+* **[如何实现长按识别H5页面的二维码图片](faqs-arkweb-142.md)**
+* **[Web组件如何实现拦截网络超链接后在浏览器中打开](faqs-arkweb-143.md)**
+* **[如何解决Web组件加载H5页面时拉起系统拨号等功能出现白屏](faqs-arkweb-144.md)**
+* **[Web组件加载H5，页面中视频全屏按钮置灰](faqs-arkweb-145.md)**
+* **[如何获取runJavaScript执行异步方法后的返回值](faqs-arkweb-146.md)**
+* **[Web组件加载链接，如何修改链接网页中的文本](faqs-arkweb-147.md)**
+* **[应用侧如何获取H5返回对象的全部键值](faqs-arkweb-148.md)**
+* **[Webview中如何使用自定义字体](faqs-arkweb-149.md)**
+* **[Web组件如何实现屏幕共享功能](faqs-arkweb-150.md)**
+* **[Web组件如何监听页面加载进度](faqs-arkweb-151.md)**
+* **[Tabs组件嵌套Web，无法左右滑动](faqs-arkweb-152.md)**
+* **[Web组件loadUrl加载修改hash参数的链接页面未刷新](faqs-arkweb-153.md)**
+* **[如何获取Web组件的宽度](faqs-arkweb-154.md)**
+* **[如何实现系统状态栏颜色随H5改变](faqs-arkweb-155.md)**
+* **[如何使Web组件不自动获取焦点](faqs-arkweb-156.md)**
+* **[Web组件加载网页如何获取网页的标题及标题来源](faqs-arkweb-157.md)**
+* **[如何解决H5页面的输入框在聚焦和失焦时，键盘的自动拉起和隐藏问题](faqs-arkweb-158.md)**
+* **[使用Web组件的同层渲染，同层组件无法触发Web组件的滚动](faqs-arkweb-159.md)**
+* **[Web组件使用JavaScriptProxy注入JsBridge对象时，Jsb Permission Denied报错如何解决](faqs-arkweb-160.md)**
+* **[Web组件如何解决切换可见状态出现残留帧](faqs-arkweb-161.md)**
+* **[Web组件拦截请求跳转指定页面后再返回时白屏](faqs-arkweb-162.md)**
+* **[如何在H5中调用麦克风](faqs-arkweb-163.md)**
+* **[ArkWeb如何根据异步请求返回数据加载真实Url页面](faqs-arkweb-164.md)**
+* **[应用侧如何获取H5中input元素的accept属性值](faqs-arkweb-165.md)**
+* **[Navigation组件管理两个界面都加载本地H5进行交互跳转，如何进行页面刷新](faqs-arkweb-166.md)**
+* **[Web如何拦截网页加载错误并重新加载指定页面](faqs-arkweb-167.md)**
+* **[根据Web页面是否成功加载动态展示不同页面](faqs-arkweb-168.md)**
+* **[H5页面如何调用应用自定义弹窗并传递参数](faqs-arkweb-169.md)**
+* **[Scroll内Web嵌套其他组件时滑动优先级设置](faqs-arkweb-170.md)**
+* **[如何根据Web中的权限请求去动态申请权限](faqs-arkweb-171.md)**
+* **[如何处理H5页面的定时器退到后台不执行问题](faqs-arkweb-172.md)**
+* **[Web组件加载网络链接失败后如何加载错误页面](faqs-arkweb-173.md)**
+* **[如何解决Web加载H5页面时出现的白屏问题](faqs-arkweb-174.md)**
+* **[网页在HarmonyOS PC上的华为浏览器中无法打开如何处理](faqs-arkweb-175.md)**
+* **[HarmonyOS系统浏览器下载内容页面如何获取到文件类型对应的图标](faqs-arkweb-176.md)**
+* **[Web组件同层渲染时如何传自定义参数](faqs-arkweb-177.md)**
+* **[Web组件页面加载失败后如何获取加载异常的信息](faqs-arkweb-178.md)**
+* **[H5适配HarmonyOS开发指导](faqs-arkweb-179.md)**
+* **[Web组件如何加载HEIF、HEIC、SVGA、SVG文件](faqs-arkweb-180.md)**
+* **[Web组件如何清除缓存信息](faqs-arkweb-181.md)**
+* **[如何通过User-Agent识别系统类型和设备类型](faqs-arkweb-182.md)**
+* **[HarmonyOS NEXT系统浏览器UA问题](faqs-arkweb-183.md)**
+* **[应用ArkTS侧如何通过代码手动控制H5中视频](faqs-arkweb-184.md)**
+* **[Web加载网页性能提升方式与使用场景总结](faqs-arkweb-185.md)**
+* **[H5网页中Cookie跨域场景及解决方案](faqs-arkweb-186.md)**
+* **[如何避免多个页面同时触发onRenderExited回调](faqs-arkweb-187.md)**
+* **[Web中登录界面登录后如何不触发密码保险箱保存密码](faqs-arkweb-188.md)**
+* **[如何解决应用侧从H5侧接收参数报错问题](faqs-arkweb-189.md)**
+* **[如何解决Web组件设置Cookie属性无法生效的问题](faqs-arkweb-190.md)**
+* **[Web组件的metaViewport属性使用注意事项](faqs-arkweb-191.md)**
+* **[Web组件使用loadData加载富文本失败如何处理](faqs-arkweb-192.md)**
+* **[ArkWeb本地资源跨域问题和解决方案](faqs-arkweb-193.md)**
+* **[如何实现Web组件在折叠屏上分栏展示](faqs-arkweb-194.md)**
+* **[Web组件的请求拦截接口使用场景总结](faqs-arkweb-195.md)**
+* **[如何解决ArkWeb视频播放异常问题](faqs-arkweb-196.md)**
+* **[Web组件加载网页过程中遇到的证书相关问题及解决方案](faqs-arkweb-197.md)**
+* **[如何解决应用侧浮层被Web遮挡及触摸事件穿透问题](faqs-arkweb-198.md)**
+* **[如何调试定位应用内嵌H5白屏问题](faqs-arkweb-kit-new-00001.md)**
+* **[ASCF框架web-view组件如何向H5的window对象注入方法或属性](faqs-arkweb-kit-new-00002.md)**

@@ -3,32 +3,31 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: CalendarPicker
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > CalendarPicker
 category: harmonyos-references
-scraped_at: 2026-04-29T13:51:59+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:c184b56f0a95b0baa15dd25890761e0876063eed7be201702dfeb1da8fb1ba49
+scraped_at: 2026-09-02T15:01:01+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:30ef4c9607acf76e169e8b18e3112f7675a5b424a1d7f34ef973c5fa83b1193d
 ---
 
-日历选择器组件，提供下拉日历弹窗，可以让用户选择日期。
+日历选择器组件，提供下拉日历弹窗，用户可快速选择日期。适用于需要用户选择具体日期的场景，如预订系统、日程安排、日期筛选等，提供直观的日历视图，提升用户日期输入体验。
 
-说明
+**说明** 
 
-该组件从API version 10开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 该组件从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+* 该组件从API版本26.0.0开始支持[WithTheme](ts-container-with-theme.md)。
 
 ## 子组件
-
-PhonePC/2in1TabletTVWearable
 
 无
 
 ## 接口
-
-PhonePC/2in1TabletTVWearable
 
 CalendarPicker(options?: CalendarOptions)
 
 日历选择器。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -38,23 +37,21 @@ CalendarPicker(options?: CalendarOptions)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [CalendarOptions](ts-basic-components-calendarpicker.md#calendaroptions对象说明) | 否 | 配置日历选择器组件的参数。 |
+| options | [CalendarOptions](ts-basic-components-calendarpicker.md#calendaroptions对象说明) | 否 | 配置日历选择器组件的参数。未设置该参数时使用默认配置。 |
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](ts-component-general-attributes.md)外，还支持以下属性：
 
 ### edgeAlign
-
-PhonePC/2in1TabletTVWearable
 
 edgeAlign(alignType: CalendarAlign, offset?: Offset)
 
 设置选择器与入口组件的对齐方式。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -65,17 +62,17 @@ edgeAlign(alignType: CalendarAlign, offset?: Offset)
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | alignType | [CalendarAlign](ts-basic-components-calendarpicker.md#calendaralign枚举说明) | 是 | 对齐方式的类型。  默认值：CalendarAlign.END |
-| offset | [Offset](ts-types.md#offset) | 否 | 按照对齐方式对齐后，选择器相对入口组件的偏移量。  默认值：{dx: 0, dy: 0} |
+| offset | [Offset](ts-types.md#offset) | 否 | 按照对齐方式对齐后，选择器相对入口组件的偏移量。  默认值：{dx: 0, dy: 0}  单位：vp |
 
 ### edgeAlign18+
-
-PhonePC/2in1TabletTVWearable
 
 edgeAlign(alignType: Optional<CalendarAlign>, offset?: Offset)
 
 设置选择器与入口组件的对齐方式。与[edgeAlign](ts-basic-components-calendarpicker.md#edgealign)相比，alignType参数新增了对undefined类型的支持。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -86,17 +83,17 @@ edgeAlign(alignType: Optional<CalendarAlign>, offset?: Offset)
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | alignType | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[CalendarAlign](ts-basic-components-calendarpicker.md#calendaralign枚举说明)> | 是 | 对齐方式的类型。  默认值：CalendarAlign.END  当alignType的值为undefined时，使用默认值。 |
-| offset | [Offset](ts-types.md#offset) | 否 | 按照对齐方式对齐后，选择器相对入口组件的偏移量。  默认值：{dx: 0, dy: 0} |
+| offset | [Offset](ts-types.md#offset) | 否 | 按照对齐方式对齐后，选择器相对入口组件的偏移量。  默认值：{dx: 0, dy: 0}  单位：vp |
 
 ### textStyle
 
-PhonePC/2in1TabletTVWearable
-
 textStyle(value: PickerTextStyle)
 
-入口区的文本颜色、字号、字体粗细。
+设置入口区的文本颜色、字号、字体粗细。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -110,13 +107,13 @@ textStyle(value: PickerTextStyle)
 
 ### textStyle18+
 
-PhonePC/2in1TabletTVWearable
-
 textStyle(style: Optional<PickerTextStyle>)
 
-入口区的文本颜色、字号、字体粗细。与[textStyle](ts-basic-components-calendarpicker.md#textstyle)相比，style参数新增了对undefined类型的支持。
+设置入口区的文本颜色、字号、字体粗细。与[textStyle](ts-basic-components-calendarpicker.md#textstyle)相比，style参数新增了对undefined类型的支持。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -130,13 +127,13 @@ textStyle(style: Optional<PickerTextStyle>)
 
 ### markToday19+
 
-PhonePC/2in1TabletTVWearable
-
 markToday(enabled: boolean)
 
 设置日历选择器中系统当前日期是否保持高亮显示。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -150,13 +147,9 @@ markToday(enabled: boolean)
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用事件](ts-component-general-events.md)，还支持以下事件：
 
 ### onChange
-
-PhonePC/2in1TabletTVWearable
 
 onChange(callback: Callback<Date>)
 
@@ -164,6 +157,8 @@ onChange(callback: Callback<Date>)
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
@@ -172,21 +167,21 @@ onChange(callback: Callback<Date>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | [Callback](ts-types.md#callback12)<Date> | 是 | 选中的日期值。 |
+| callback | [Callback](ts-types.md#callback12)<Date> | 是 | 日期选择时触发的回调函数。回调参数为Date类型的选中日期值，开发者可在回调函数中获取用户选中的日期并进行相应处理。 |
 
 ### onChange18+
-
-PhonePC/2in1TabletTVWearable
 
 onChange(callback: Optional<Callback<Date>>)
 
 选择日期时触发该事件。不能通过双向绑定的状态变量触发。与[onChange](ts-basic-components-calendarpicker.md#onchange)相比，callback参数新增了对undefined类型的支持。
 
-说明
+**说明** 
 
 从API version 20开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -196,13 +191,13 @@ onChange(callback: Optional<Callback<Date>>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[Callback](ts-types.md#callback12)<Date>> | 是 | 选中的日期值。  当callback的值为undefined时，不使用回调函数。 |
+| callback | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[Callback](ts-types.md#callback12)<Date>> | 是 | 日期选择时触发的回调函数，回调参数为选中的日期值。  当callback的值为undefined时，不使用回调函数。 |
 
 ## CalendarOptions对象说明
 
-PhonePC/2in1TabletTVWearable
-
 日历选择器组件的参数说明。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -210,13 +205,13 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| hintRadius | number | [Resource](ts-types.md#resource) | 否 | 是 | 描述日期选中态底板样式。  取值范围：[0.0, 16.0]  单位：vp  默认值：16.0，即底板样式为圆形。  **说明：**  当hintRadius为0.0时表示底板样式为直角矩形；当hintRadius为(0.0, 16.0)时，底板样式为圆角矩形；当hintRadius为负数或大于16.0时，恢复为默认值16.0。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| selected | Date | 否 | 是 | 设置选中项的日期。选中的日期未设置或日期格式不符合规范则为默认值。  默认值：当前系统日期。  取值范围：[Date('0001-01-01'), Date('5000-12-31')]  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| start18+ | Date | 否 | 是 | 设置开始日期。  默认值：Date('0001-01-01')  取值范围：[Date('0001-01-01'), Date('5000-12-31')]  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| end18+ | Date | 否 | 是 | 设置结束日期。  默认值：Date('5000-12-31')  取值范围：[Date('0001-01-01'), Date('5000-12-31')]  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| disabledDateRange19+ | [DateRange](ts-picker-common.md#daterange19对象说明)[] | 否 | 是 | 设置禁用日期区间。  **说明：**  1. 若日期区间内的开始日期或结束日期未设置或设置为异常值，则该日期区间无效。  2. 若在日期区间内，结束日期早于开始日期，则该日期区间无效。  3. 当在入口区选定某日期，通过上下箭头调整日期进行增加或减少操作时，若遇到禁用日期，系统将自动跳过整个禁用区间。  **元服务API：** 从API version 19开始，该接口支持在元服务中使用。 |
+| hintRadius | number | [Resource](ts-types.md#resource) | 否 | 是 | 设置日期选中态底板样式。  取值范围：[0.0, 16.0]  单位：vp  默认值：16.0，即底板样式为圆形。  **说明：**  当hintRadius为0.0时表示底板样式为直角矩形；当hintRadius为(0.0, 16.0)时，底板样式为圆角矩形；当hintRadius为16.0时，底板样式为圆形；当hintRadius为负数或大于16.0时，恢复为默认值16.0。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| selected | Date | 否 | 是 | 设置选中项的日期。当需要预设选中日期时传入此参数，不需要预设时使用当前系统日期。选中的日期未设置或日期格式不符合规范则为默认值。选中日期与start、end参数的配合关系见[start和end设置规则](ts-basic-components-calendarpicker.md#start和end设置规则)。  默认值：当前系统日期。  取值范围：[Date('0001-01-01'), Date('5000-12-31')]  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| start18+ | Date | 否 | 是 | 设置开始日期。  默认值：Date('0001-01-01')  取值范围：[Date('0001-01-01'), Date('5000-12-31')]  **说明：** 若start日期晚于end日期，则start日期、end日期都设置无效，选中日期为默认值。详见[start和end设置规则](ts-basic-components-calendarpicker.md#start和end设置规则)。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| end18+ | Date | 否 | 是 | 设置结束日期。  默认值：Date('5000-12-31')  取值范围：[Date('0001-01-01'), Date('5000-12-31')]  **说明：** 若start日期晚于end日期，则start日期、end日期都设置无效，选中日期为默认值。详见[start和end设置规则](ts-basic-components-calendarpicker.md#start和end设置规则)。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| disabledDateRange19+ | [DateRange](ts-picker-common.md#daterange19对象说明)[] | 否 | 是 | 设置禁用日期区间。不传此参数时不禁用任何日期。  **说明：**  1. 若日期区间内的开始日期或结束日期未设置或设置为异常值，则该日期区间无效。  2. 若在日期区间内，结束日期早于开始日期，则该日期区间无效。  3. 当在入口区选定某日期，通过上下箭头调整日期进行增加或减少操作时，若遇到禁用日期，系统将自动跳过整个禁用区间。  **元服务API：** 从API version 19开始，该接口支持在元服务中使用。 |
 
-**start和end设置规则：**
+### start和end设置规则
 
 | 场景 | 说明 |
 | --- | --- |
@@ -225,15 +220,15 @@ PhonePC/2in1TabletTVWearable
 | 选中日期晚于end日期 | 选中日期为end日期 |
 | start日期晚于当前系统日期，选中日期未设置 | 选中日期为start日期 |
 | end日期早于当前系统日期，选中日期未设置 | 选中日期为end日期 |
-| 日期格式不符合规范，如‘1999-13-32’ | start日期或end日期设置无效，选中日期取默认值 |
+| 日期格式不符合规范，如1999-13-32 | start日期或end日期设置无效，选中日期取默认值 |
 
 ## CalendarAlign枚举说明
-
-PhonePC/2in1TabletTVWearable
 
 对齐方式类型。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -247,38 +242,36 @@ PhonePC/2in1TabletTVWearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 ### 示例1（设置下拉日历弹窗）
 
 该示例通过calendarPicker实现了日历选择器组件，提供下拉日历弹窗。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct CalendarPickerExample {
+  private selectedDate: Date = new Date('2024-03-05');
+
+  build() {
+    Column() {
+      Column() {
+        CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
+          .edgeAlign(CalendarAlign.END)
+          .textStyle({ color: '#ff182431', font: { size: 20, weight: FontWeight.Normal } })
+          .margin(10)
+          .onChange((value) => {
+            console.info(`CalendarPicker onChange: ${value.toString()}`);
+          })
+      }.alignItems(HorizontalAlign.End).width("100%")
+
+      Text('日历日期选择器').fontSize(30)
+    }.width('100%').margin({ top: 350 })
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct CalendarPickerExample {
-5. private selectedDate: Date = new Date('2024-03-05');
 
-7. build() {
-8. Column() {
-9. Column() {
-10. CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
-11. .edgeAlign(CalendarAlign.END)
-12. .textStyle({ color: "#ff182431", font: { size: 20, weight: FontWeight.Normal } })
-13. .margin(10)
-14. .onChange((value) => {
-15. console.info(`CalendarPicker onChange: ${value.toString()}`);
-16. })
-17. }.alignItems(HorizontalAlign.End).width("100%")
-
-19. Text('日历日期选择器').fontSize(30)
-20. }.width('100%').margin({ top: 350 })
-21. }
-22. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/pwH84JJHTlyl8xiejhM7qw/zh-cn_image_0000002558606570.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/Qor8KBL2QTmuupChNOTnug/zh-cn_image_0000002706675928.gif)
 
 ### 示例2（设置开始日期和结束日期）
 
@@ -286,32 +279,32 @@ PhonePC/2in1TabletTVWearable
 
 从API version 18开始，[CalendarOptions](ts-basic-components-calendarpicker.md#calendaroptions对象说明)中新增了start、end属性。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct CalendarPickerExample {
-5. private selectedDate: Date = new Date('2025-01-15');
-6. private startDate: Date = new Date('2025-01-05');
-7. private endDate: Date = new Date('2025-01-25');
+```ts
+// xxx.ets
+@Entry
+@Component
+struct CalendarPickerExample {
+  private selectedDate: Date = new Date('2025-01-15');
+  private startDate: Date = new Date('2025-01-05');
+  private endDate: Date = new Date('2025-01-25');
 
-9. build() {
-10. Column() {
-11. Column() {
-12. CalendarPicker({ hintRadius: 10, selected: this.selectedDate, start: this.startDate, end: this.endDate })
-13. .edgeAlign(CalendarAlign.END)
-14. .textStyle({ color: "#ff182431", font: { size: 20, weight: FontWeight.Normal } })
-15. .margin(10)
-16. .onChange((value) => {
-17. console.info(`CalendarPicker onChange: ${value.toString()}`);
-18. })
-19. }.alignItems(HorizontalAlign.End).width("100%")
-20. }.width('100%').margin({ top: 350 })
-21. }
-22. }
+  build() {
+    Column() {
+      Column() {
+        CalendarPicker({ hintRadius: 10, selected: this.selectedDate, start: this.startDate, end: this.endDate })
+          .edgeAlign(CalendarAlign.END)
+          .textStyle({ color: '#ff182431', font: { size: 20, weight: FontWeight.Normal } })
+          .margin(10)
+          .onChange((value) => {
+            console.info(`CalendarPicker onChange: ${value.toString()}`);
+          })
+      }.alignItems(HorizontalAlign.End).width("100%")
+    }.width('100%').margin({ top: 350 })
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/YJ-4xtYuQ1Kx0vTr4bXrpQ/zh-cn_image_0000002589326097.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/jqM7b6ypTvGVzhe8bJc-RQ/zh-cn_image_0000002736435015.png)
 
 ### 示例3（设置日历选择器在系统当前日期时，保持高亮显示和禁用日期区间）
 
@@ -319,30 +312,30 @@ PhonePC/2in1TabletTVWearable
 
 从API version 19开始，新增了[markToday](ts-basic-components-calendarpicker.md#marktoday19)接口，[CalendarOptions](ts-basic-components-calendarpicker.md#calendaroptions对象说明)中新增了disabledDateRange属性。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct CalendarPickerExample {
-5. private disabledDateRange: DateRange[] = [
-6. { start: new Date('2025-01-01'), end: new Date('2025-01-02') },
-7. { start: new Date('2025-01-09'), end: new Date('2025-01-10') },
-8. { start: new Date('2025-01-15'), end: new Date('2025-01-16') },
-9. { start: new Date('2025-01-19'), end: new Date('2025-01-19') },
-10. { start: new Date('2025-01-22'), end: new Date('2025-01-25') }
-11. ];
+```ts
+// xxx.ets
+@Entry
+@Component
+struct CalendarPickerExample {
+  private disabledDateRange: DateRange[] = [
+    { start: new Date('2025-01-01'), end: new Date('2025-01-02') },
+    { start: new Date('2025-01-09'), end: new Date('2025-01-10') },
+    { start: new Date('2025-01-15'), end: new Date('2025-01-16') },
+    { start: new Date('2025-01-19'), end: new Date('2025-01-19') },
+    { start: new Date('2025-01-22'), end: new Date('2025-01-25') }
+  ];
 
-13. build() {
-14. Column() {
-15. CalendarPicker({ disabledDateRange: this.disabledDateRange })
-16. .margin(10)
-17. .markToday(true)
-18. .onChange((value) => {
-19. console.info(`CalendarPicker onChange: ${value.toString()}`);
-20. })
-21. }.alignItems(HorizontalAlign.End).width('100%')
-22. }
-23. }
+  build() {
+    Column() {
+      CalendarPicker({ disabledDateRange: this.disabledDateRange })
+        .margin(10)
+        .markToday(true)
+        .onChange((value) => {
+          console.info(`CalendarPicker onChange: ${value.toString()}`);
+        })
+    }.alignItems(HorizontalAlign.End).width('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/fOAPhaQKQr-a1wXCF_80qg/zh-cn_image_0000002589246039.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/WNbKveArSnySf79HR7wwng/zh-cn_image_0000002706835868.gif)

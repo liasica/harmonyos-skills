@@ -3,34 +3,30 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/vision-im
 title: visionImageAnalyzer（AI识图控件）
 breadcrumb: API参考 > AI > Vision Kit（场景化视觉服务） > ArkTS API > visionImageAnalyzer（AI识图控件）
 category: harmonyos-references
-scraped_at: 2026-04-29T14:09:52+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:68831bcd51322f9660ff51d6a8e0f97867302f2d5aa807f5faacdef5d183eca9
+scraped_at: 2026-09-02T15:03:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e34d79758d4646d45764c84e22d7a4c3d42298fd42a31355de5e28d80ed313e4
 ---
 
-AI识图是通过聚合OCR（Optical Character Recognition）、主体分割、实体识别、多目标识别等AI能力，提供场景化的文本识别、主体分割、识图搜索功能。
+AI识图是通过聚合OCR（Optical Character Recognition，光学字符识别，指通过图像处理和模式识别技术将图像中的文字转换为机器编码的技术）、主体分割、实体识别、多目标识别等AI能力，提供场景化的文本识别、主体分割、识图搜索功能。
 
-说明
-
-调用接口需捕获异常。
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 ```
 
 ## Menu
 
-PhonePC/2in1Tablet
-
 AI识图菜单。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -41,28 +37,28 @@ AI识图菜单。
 
 ## Rect
 
-PhonePC/2in1Tablet
-
 矩形数据结构。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| left | number | 否 | 是 | 矩形的左方位置。取值范围在图片的左边界到右边界之间。单位：vp。 |
-| top | number | 否 | 是 | 矩形的上方位置。取值范围在图片的上边界到下边界之间。单位：vp。 |
-| right | number | 否 | 是 | 矩形的右方位置。取值范围在图片的左边界到右边界之间。单位：vp。 |
-| bottom | number | 否 | 是 | 矩形的下方位置。取值范围在图片的上边界到下边界之间。单位：vp。 |
+| left | number | 否 | 是 | 矩形的左方位置。取值范围在图片的左边界到右边界之间。单位：vp。默认值 0 |
+| top | number | 否 | 是 | 矩形的上方位置。取值范围在图片的上边界到下边界之间。单位：vp。默认值 0 |
+| right | number | 否 | 是 | 矩形的右方位置。取值范围在图片的左边界到右边界之间。单位：vp。默认值 0 |
+| bottom | number | 否 | 是 | 矩形的下方位置。取值范围在图片的上边界到下边界之间。单位：vp。默认值 0 |
 
 ## Subject
-
-PhonePC/2in1Tablet
 
 主体识别结果。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -71,15 +67,15 @@ PhonePC/2in1Tablet
 | id | number | 否 | 否 | 主体id。取值范围：[0，6]。 |
 | image | [PixelMap](arkts-apis-image-pixelmap.md) | 否 | 否 | 主体识别的图片。 |
 | boundingBox | [Rect](vision-image-analyzer.md#rect) | 否 | 否 | 主体识别图片结果的外接矩形框。 |
-| maskData | Int32Array | 否 | 是 | 基于原图大小的一维数组，表示主体掩码。0-255取值范围。0代表背景，255代表主体，中间值代表是否是显著性主体的概率。  **起始版本**：5.1.0(18)。  **说明：**  maskData参数数据可能较大，通过JSON.stringify()方法解析打印日志会比较耗时，可能会影响接口性能，请按需打印。 |
+| maskData | Int32Array | 否 | 是 | 基于原图大小的一维数组，表示主体掩码。0-255取值范围。0代表背景，255代表主体，中间值代表是否是显著性主体的概率。默认值： []  **起始版本**：5.1.0(18)。  **说明：**  maskData参数数据可能较大，通过JSON.stringify()方法解析打印日志会比较耗时，可能会影响接口性能，请按需打印。 |
 
 ## SelectedStatus
-
-PhonePC/2in1Tablet
 
 识图对象选中状态的枚举值。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -90,11 +86,11 @@ PhonePC/2in1Tablet
 
 ## ImageAnalyzerVisibility
 
-PhonePC/2in1Tablet
-
 AI识图控件可见状态的枚举值。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -105,11 +101,11 @@ AI识图控件可见状态的枚举值。
 
 ## AIButtonStatus
 
-PhonePC/2in1Tablet
-
 AIButton状态的枚举值。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -121,11 +117,11 @@ AIButton状态的枚举值。
 
 ## ObjectSearchPanelVisibility
 
-PhonePC/2in1Tablet
-
 图片搜索界面可见状态的枚举值。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.1(13)
 
@@ -136,11 +132,11 @@ PhonePC/2in1Tablet
 
 ## ImageAnalyzerUIStatus
 
-PhonePC/2in1Tablet
-
 图片分析界面状态的枚举值。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.2(14)
 
@@ -154,23 +150,23 @@ PhonePC/2in1Tablet
 
 ## VisionImageAnalyzerController
 
-PhonePC/2in1Tablet
-
 这是视觉图像控制器，用于控制交互。继承自[ImageAnalyzerController](ts-image-common.md#imageanalyzercontroller12)类。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **起始版本：** 5.0.0(12)
 
 ### setImageAnalyzerVisibility
-
-PhonePC/2in1Tablet
 
 setImageAnalyzerVisibility(visibility: ImageAnalyzerVisibility): void
 
 设置AI识图控件的可见性。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -182,42 +178,42 @@ setImageAnalyzerVisibility(visibility: ImageAnalyzerVisibility): void
 
 **示例：**
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. aboutToAppear() {
-9. this.visionImageAnalyzerController.setImageAnalyzerVisibility(visionImageAnalyzer.ImageAnalyzerVisibility.HIDDEN)
-10. }
-11. build() {
-12. Stack() {
-13. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-14. Image($r('app.media.img'), {
-15. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-16. aiController: this.visionImageAnalyzerController
-17. })
-18. .width('100%')
-19. .height('100%')
-20. .enableAnalyzer(true)
-21. .objectFit(ImageFit.Contain)
-22. }.width('100%').height('100%')
-23. }
-24. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear() {
+    this.visionImageAnalyzerController.setImageAnalyzerVisibility(visionImageAnalyzer.ImageAnalyzerVisibility.HIDDEN);
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+          types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+          aiController: this.visionImageAnalyzerController
+        })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### setAIButtonPosition
-
-PhonePC/2in1Tablet
 
 setAIButtonPosition(position: Rect): void
 
 设置AIButton的位置。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -229,46 +225,50 @@ setAIButtonPosition(position: Rect): void
 
 **示例：**
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. aboutToAppear() {
-9. let position: visionImageAnalyzer.Rect = {
-10. bottom: 300
-11. }
-12. this.visionImageAnalyzerController.setAIButtonPosition(position)
-13. this.visionImageAnalyzerController.setAIButtonVisibility(true)
-14. }
-15. build() {
-16. Stack() {
-17. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-18. Image($r('app.media.6'), {
-19. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-20. aiController: this.visionImageAnalyzerController
-21. })
-22. .width('100%')
-23. .height('100%')
-24. .enableAnalyzer(true)
-25. .objectFit(ImageFit.Contain)
-26. }.width('100%').height('100%')
-27. }
-28. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear() {
+    let position: visionImageAnalyzer.Rect = {
+      bottom: 300
+    };
+    this.visionImageAnalyzerController.setAIButtonPosition(position);
+    this.visionImageAnalyzerController.setAIButtonVisibility(true);
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.6'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
+
+示例图如下，AIButton离底部300vp
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/ePY54rbgT_ySwSbssNAYTw/zh-cn_image_0000002706677192.png)
 
 ### setAIButtonVisibility
-
-PhonePC/2in1Tablet
 
 setAIButtonVisibility(visible: boolean): void
 
 设置AIButton的可见性。配置AIButton属性可见后，会对图片进行预分析，当图片中存在文本且文本区域大于图片区域的5%时AIButton才会显示。开启AIButton会触发图片的预分析从而导致一定的功耗开销，建议评估场景，对图片中文本内容较为关注的场景下按需开启，带给消费者良好的图片浏览体验的同时降低不必要的功耗开销。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -280,42 +280,46 @@ setAIButtonVisibility(visible: boolean): void
 
 **示例：**
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. aboutToAppear() {
-9. this.visionImageAnalyzerController.setAIButtonVisibility(true)
-10. }
-11. build() {
-12. Stack() {
-13. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-14. Image($r('app.media.img'), {
-15. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-16. aiController: this.visionImageAnalyzerController
-17. })
-18. .width('100%')
-19. .height('100%')
-20. .enableAnalyzer(true)
-21. .objectFit(ImageFit.Contain)
-22. }.width('100%').height('100%')
-23. }
-24. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear() {
+    this.visionImageAnalyzerController.setAIButtonVisibility(true);
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+          types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+          aiController: this.visionImageAnalyzerController
+        })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
+
+AIButton可见时如下图所示
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/3siyYYS8Q-yGdF79iBfNRQ/zh-cn_image_0000002736436281.jpg)
 
 ### setCustomTextMenuItems
-
-PhonePC/2in1Tablet
 
 setCustomTextMenuItems(menus: Menu[]): void
 
 设置自定义的文字分析菜单项。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -327,95 +331,98 @@ setCustomTextMenuItems(menus: Menu[]): void
 
 **示例：**
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. aboutToAppear() {
-9. this.visionImageAnalyzerController.setAIButtonVisibility(true)
-10. this.visionImageAnalyzerController.setCustomTextMenuItems([
-11. {
-12. value: "menu2",
-13. action: (param: string | visionImageAnalyzer.Subject[]) => {
-14. console.info("DEMO_TAG", "text menu clicked")
-15. }
-16. }
-17. ]
-18. )
-19. }
-20. build() {
-21. Stack() {
-22. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-23. Image($r('app.media.img'), {
-24. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-25. aiController: this.visionImageAnalyzerController
-26. })
-27. .width('100%')
-28. .height('100%')
-29. .enableAnalyzer(true)
-30. .objectFit(ImageFit.Contain)
-31. }.width('100%').height('100%')
-32. }
-33. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear() {
+    this.visionImageAnalyzerController.setAIButtonVisibility(true);
+    this.visionImageAnalyzerController.setCustomTextMenuItems([
+      {
+        value: 'menu2',
+        action: (param: string | visionImageAnalyzer.Subject[]) => {
+          console.info('DEMO_TAG', 'text menu clicked');
+        }
+      }
+    ]);
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
+
+示例如下图所示，菜单右侧增加自定义菜单项。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/sEqa2KsnR5qwRjbdSTO9xg/zh-cn_image_0000002706837130.jpg)
 
 ### startSubjectAnalyzer
 
-PhonePC/2in1Tablet
-
 startSubjectAnalyzer(): void
 
-开启主体识别，前提需确保当前设备支持主体识别功能。可通过监听 “subjectAnalysis”事件回调获取主体, 注意在等待返回主体时增加超时处理，避免因未识别到主体而一直处于等待状态。
+开启主体识别，前提需确保当前设备支持主体识别功能。可通过监听 “subjectAnalysis” 事件回调获取主体，注意在等待返回主体时增加超时处理，避免因未识别到主体而一直处于等待状态。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
 **示例：**
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. aboutToAppear() {
-9. let supportTypes = this.visionImageAnalyzerController.getImageAnalyzerSupportTypes();
-10. if (supportTypes.includes(ImageAnalyzerType.SUBJECT)) {
-11. this.visionImageAnalyzerController.startSubjectAnalyzer()
-12. }
-13. }
-14. build() {
-15. Stack() {
-16. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-17. Image($r('app.media.img'), {
-18. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-19. aiController: this.visionImageAnalyzerController
-20. })
-21. .width('100%')
-22. .height('100%')
-23. .enableAnalyzer(true)
-24. .objectFit(ImageFit.Contain)
-25. }.width('100%').height('100%')
-26. }
-27. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear() {
+    let supportTypes = this.visionImageAnalyzerController.getImageAnalyzerSupportTypes();
+    if (supportTypes.includes(ImageAnalyzerType.SUBJECT)) {
+       this.visionImageAnalyzerController.startSubjectAnalyzer();
+    }
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### setCustomSubjectMenuItems
-
-PhonePC/2in1Tablet
 
 setCustomSubjectMenuItems(menus: Menu[]): void
 
 设置自定义的主体分析菜单项。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -427,50 +434,49 @@ setCustomSubjectMenuItems(menus: Menu[]): void
 
 **示例：**
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. aboutToAppear() {
-9. this.visionImageAnalyzerController.setCustomSubjectMenuItems([
-10. {
-11. value: "menu2",
-12. action: (param: string | visionImageAnalyzer.Subject[]) => {
-13. console.info("DEMO_TAG", "subject menu clicked")
-14. }
-15. }
-16. ]
-17. )
-18. }
-19. build() {
-20. Stack() {
-21. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-22. Image($r('app.media.img'), {
-23. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-24. aiController: this.visionImageAnalyzerController
-25. })
-26. .width('100%')
-27. .height('100%')
-28. .enableAnalyzer(true)
-29. .objectFit(ImageFit.Contain)
-30. }.width('100%').height('100%')
-31. }
-32. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear() {
+    this.visionImageAnalyzerController.setCustomSubjectMenuItems([
+      {
+        value: 'menu2',
+        action: (param: string | visionImageAnalyzer.Subject[]) => {
+          console.info('DEMO_TAG', 'subject menu clicked');
+        }
+      }
+    ]);
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### setSelectedSubjects
-
-PhonePC/2in1Tablet
 
 setSelectedSubjects(subjectIds: number[]): void
 
 根据主体id列表设置选中的主体。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -482,47 +488,47 @@ setSelectedSubjects(subjectIds: number[]): void
 
 **示例：**
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct SingleImageTest2 {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. aboutToAppear() {
-9. this.visionImageAnalyzerController.on('subjectAnalysis', (subjects: visionImageAnalyzer.Subject[]) => {
-10. console.info("DEMO_TAG", `subjectAnalysis result: ${JSON.stringify(subjects)}`)
-11. if(subjects.length > 0) {
-12. this.visionImageAnalyzerController.setSelectedSubjects([subjects[0].id])
-13. }
-14. })
-15. }
-16. build() {
-17. Stack() {
-18. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-19. Image($r('app.media.img'), {
-20. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-21. aiController: this.visionImageAnalyzerController
-22. })
-23. .width('100%')
-24. .height('100%')
-25. .enableAnalyzer(true)
-26. .objectFit(ImageFit.Contain)
-27. }.width('100%').height('100%')
-28. }
-29. }
+@Entry
+@Component
+struct SingleImageTest2 {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear() {
+    this.visionImageAnalyzerController.on('subjectAnalysis', (subjects: visionImageAnalyzer.Subject[]) => {
+      console.info('DEMO_TAG', `subjectAnalysis result: ${JSON.stringify(subjects)}`);
+      if (subjects.length > 0) {
+        this.visionImageAnalyzerController.setSelectedSubjects([subjects[0].id]);
+      }
+    });
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### getSelectedSubjects
-
-PhonePC/2in1Tablet
 
 getSelectedSubjects(): Promise<Subject[] | null>
 
 获取当前选中的主体。使用Promise异步回调。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -534,44 +540,44 @@ getSelectedSubjects(): Promise<Subject[] | null>
 
 **示例：**
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. getSelectedSubjects() {
-9. void this.visionImageAnalyzerController.getSelectedSubjects().then((subjects: visionImageAnalyzer.Subject[] | null) => {
-10. console.info("DEMO_TAG", `getSelectedSubjects result: ${JSON.stringify(subjects)}`)
-11. })
-12. }
-13. build() {
-14. Stack() {
-15. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-16. Image($r('app.media.img'), {
-17. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-18. aiController: this.visionImageAnalyzerController
-19. })
-20. .width('100%')
-21. .height('100%')
-22. .enableAnalyzer(true)
-23. .objectFit(ImageFit.Contain)
-24. }.width('100%').height('100%')
-25. }
-26. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  getSelectedSubjects() {
+    void this.visionImageAnalyzerController.getSelectedSubjects().then((subjects: visionImageAnalyzer.Subject[] | null) => {
+      console.info('DEMO_TAG', `getSelectedSubjects result: ${JSON.stringify(subjects)}`);
+    })
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### getSubject
-
-PhonePC/2in1Tablet
 
 getSubject(point: visionBase.Point): Promise<Subject | null>
 
 根据点位获取对应位置的主体。使用Promise异步回调。调用此接口前需先调用[startSubjectAnalyzer](vision-image-analyzer.md#startsubjectanalyzer)开启主体识别。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -589,45 +595,45 @@ getSubject(point: visionBase.Point): Promise<Subject | null>
 
 **示例：**
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
-2. import { visionBase } from '@kit.CoreVisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
+import { visionBase } from '@kit.CoreVisionKit';
 
-4. @Entry
-5. @Component
-6. struct ImageDemo {
-7. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController = new visionImageAnalyzer.VisionImageAnalyzerController()
-8. getSelectedSubjects() {
-9. let searchPoint: visionBase.Point = { x: 100, y: 100 }
-10. void this.visionImageAnalyzerController.getSubject(searchPoint).then((subjects: visionImageAnalyzer.Subject | null) => {
-11. console.info("DEMO_TAG", `getSubject result: ${JSON.stringify(subjects)}`)
-12. })
-13. }
-14. build() {
-15. Stack() {
-16. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-17. Image($r('app.media.img'), {
-18. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-19. aiController: this.visionImageAnalyzerController
-20. })
-21. .width('100%')
-22. .height('100%')
-23. .enableAnalyzer(true)
-24. .objectFit(ImageFit.Contain)
-25. }.width('100%').height('100%')
-26. }
-27. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController = new visionImageAnalyzer.VisionImageAnalyzerController();
+  getSelectedSubjects() {
+    let searchPoint: visionBase.Point = { x: 100, y: 100 };
+    void this.visionImageAnalyzerController.getSubject(searchPoint).then((subjects: visionImageAnalyzer.Subject | null) => {
+      console.info('DEMO_TAG', `getSubject result: ${JSON.stringify(subjects)}`);
+    });
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### getSubjectsImage
-
-PhonePC/2in1Tablet
 
 getSubjectsImage(subjectIds: number[]): Promise<PixelMap | null>
 
 根据主体id获取对应主体组装成的图像。使用Promise异步回调。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -645,52 +651,53 @@ getSubjectsImage(subjectIds: number[]): Promise<PixelMap | null>
 
 **示例：**
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. getSubjectsImage() {
-9. this.visionImageAnalyzerController.on('subjectAnalysis', (subjects: visionImageAnalyzer.Subject[]) => {
-10. console.info("DEMO_TAG", `subjectAnalysis result: ${JSON.stringify(subjects)}`)
-11. if(subjects.length > 0) {
-12. let ids: number[] = [subjects[0].id]
-13. this.visionImageAnalyzerController.getSubjectsImage(ids).then((image: PixelMap | null) => {
-14. console.info('Image data obtained successfully: ', image);
-15. }).catch((error: Error) => {
-16. console.error('Failed to obtain image data: ', error);
-17. })
-18. }
-19. })
-20. }
-21. build() {
-22. Stack() {
-23. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-24. Image($r('app.media.img'), {
-25. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-26. aiController: this.visionImageAnalyzerController
-27. })
-28. .width('100%')
-29. .height('100%')
-30. .enableAnalyzer(true)
-31. .objectFit(ImageFit.Contain)
-32. }.width('100%').height('100%')
-33. }
-34. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  getSubjectsImage() {
+    this.visionImageAnalyzerController.on('subjectAnalysis', (subjects: visionImageAnalyzer.Subject[]) => {
+      console.info('DEMO_TAG', `subjectAnalysis result: ${JSON.stringify(subjects)}`);
+      if (subjects.length > 0) {
+        let ids: number[] = [subjects[0].id];
+        this.visionImageAnalyzerController.getSubjectsImage(ids).then((image: PixelMap | null) => {
+          console.info('DEMO_TAG', 'Image data obtained successfully');
+        }).catch((error: BusinessError) => {
+          console.error('DEMO_TAG', `Failed to obtain image data. Code: ${error.code}, message: ${error.message}`);
+        })
+      }
+    });
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### getImageAnalyzerUIStatus
-
-PhonePC/2in1Tablet
 
 getImageAnalyzerUIStatus(): Promise<ImageAnalyzerUIStatus>
 
 获取当前图片分析UI状态。使用Promise异步回调。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.2(14)
 
@@ -702,57 +709,56 @@ getImageAnalyzerUIStatus(): Promise<ImageAnalyzerUIStatus>
 
 **示例：**
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. aboutToAppear() {
-9. this.visionImageAnalyzerController.setAIButtonVisibility(true);
-10. this.visionImageAnalyzerController.on('objectSearchPanelVisibilityChange', (objectSearchPanelVisibility: visionImageAnalyzer.ObjectSearchPanelVisibility) => {
-11. this.visionImageAnalyzerController.getImageAnalyzerUIStatus().then((status: visionImageAnalyzer.ImageAnalyzerUIStatus) => {
-12. console.info('Image data obtained successfully: ', status);
-13. }).catch((error: Error) => {
-14. console.error('Failed to obtain image data: ', error);
-15. })
-16. })
-17. }
-18. build() {
-19. Stack() {
-20. Image($r('app.media.img'), {
-21. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-22. aiController: this.visionImageAnalyzerController
-23. })
-24. .width('100%')
-25. .height('60%')
-26. .enableAnalyzer(true)
-27. .objectFit(ImageFit.Contain)
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear() {
+    this.visionImageAnalyzerController.setAIButtonVisibility(true);
+    this.visionImageAnalyzerController.on('objectSearchPanelVisibilityChange', (objectSearchPanelVisibility: visionImageAnalyzer.ObjectSearchPanelVisibility) => {
+      this.visionImageAnalyzerController.getImageAnalyzerUIStatus().then((status: visionImageAnalyzer.ImageAnalyzerUIStatus) => {
+        console.info('Image data obtained successfully: ', status);
+      }).catch((error: BusinessError) => {
+        console.error('DEMO_TAG', `Failed to obtain image data. Code: ${error.code}, message: ${error.message}`);
+      })
+    });
+  }
+  build() {
+    Stack() {
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('60%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
 
-29. Button('获取当前图片分析UI状态', { stateEffect: true, type: ButtonType.Capsule })
-30. .width('80%')
-31. .height(40)
-32. .onClick(() => {
-33. this.visionImageAnalyzerController.getImageAnalyzerUIStatus()
-34. .then((status: visionImageAnalyzer.ImageAnalyzerUIStatus) => {
-35. console.info('Image data obtained successfully: ', status);
-36. })
-37. .catch((error: Error) => {
-38. console.error('Failed to obtain image data: ', error);
-39. })
-40. })
-41. .id('getImageAnalyzerUIStatus')
-42. .width('40%')
-43. }.width('100%').height('100%')
-44. }
-45. }
+      Button('获取当前图片分析UI状态', { stateEffect: true, type: ButtonType.Capsule })
+        .width('80%')
+        .height(40)
+        .onClick(() => {
+          this.visionImageAnalyzerController.getImageAnalyzerUIStatus()
+            .then((status: visionImageAnalyzer.ImageAnalyzerUIStatus) => {
+              console.info('DEMO_TAG', 'Image data obtained successfully: ', status);
+            })
+            .catch((error: BusinessError) => {
+              console.error('DEMO_TAG', `Failed to obtain image data. Code: ${error.code}, message: ${error.message}`);
+            })
+        })
+        .id('getImageAnalyzerUIStatus')
+        .width('40%')
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### startObjectSearch
-
-PhonePC/2in1Tablet
 
 startObjectSearch(): Promise<boolean>
 
@@ -761,6 +767,8 @@ startObjectSearch(): Promise<boolean>
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
 
 **设备行为差异：** 该接口在PC/2in1上无效果，在其他设备类型中可正常调用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -772,36 +780,36 @@ startObjectSearch(): Promise<boolean>
 
 **示例：**
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. startObjectSearch() {
-9. this.visionImageAnalyzerController.startObjectSearch()
-10. }
-11. build() {
-12. Stack() {
-13. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-14. Image($r('app.media.img'), {
-15. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-16. aiController: this.visionImageAnalyzerController
-17. })
-18. .width('100%')
-19. .height('100%')
-20. .enableAnalyzer(true)
-21. .objectFit(ImageFit.Contain)
-22. }.width('100%').height('100%')
-23. }
-24. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  async startObjectSearch() {
+    // 开启视觉搜索后会拉起搜索界面
+    let result: boolean = await this.visionImageAnalyzerController.startObjectSearch();
+    console.info('DEMO_TAG', `startObjectSearch result: ${result}`);
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### stopObjectSearch
-
-PhonePC/2in1Tablet
 
 stopObjectSearch(): void
 
@@ -813,44 +821,46 @@ stopObjectSearch(): void
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **示例：**
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. stopObjectSearch() {
-9. this.visionImageAnalyzerController.stopObjectSearch()
-10. }
-11. build() {
-12. Stack() {
-13. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-14. Image($r('app.media.img'), {
-15. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-16. aiController: this.visionImageAnalyzerController
-17. })
-18. .width('100%')
-19. .height('100%')
-20. .enableAnalyzer(true)
-21. .objectFit(ImageFit.Contain)
-22. }.width('100%').height('100%')
-23. }
-24. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  stopObjectSearch() {
+    this.visionImageAnalyzerController.stopObjectSearch();
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### setSubjectMenuVisibility
-
-PhonePC/2in1Tablet
 
 setSubjectMenuVisibility(visible: boolean): void
 
 设置图像分割菜单状态。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.1(13)
 
@@ -860,42 +870,42 @@ setSubjectMenuVisibility(visible: boolean): void
 | --- | --- | --- | --- |
 | visible | boolean | 是 | 设置图像分割菜单状态。  true：显示图像分割菜单；false：隐藏图像分割菜单。  默认是true。 |
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. setSubjectMenuVisibility(visible: boolean) {
-9. this.visionImageAnalyzerController.setSubjectMenuVisibility(visible)
-10. }
-11. build() {
-12. Stack() {
-13. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-14. Image($r('app.media.img'), {
-15. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-16. aiController: this.visionImageAnalyzerController
-17. })
-18. .width('100%')
-19. .height('100%')
-20. .enableAnalyzer(true)
-21. .objectFit(ImageFit.Contain)
-22. }.width('100%').height('100%')
-23. }
-24. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  setSubjectMenuVisibility(visible: boolean) {
+    this.visionImageAnalyzerController.setSubjectMenuVisibility(visible);
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### on(type: 'aiButtonStatusChange')
 
-PhonePC/2in1Tablet
-
 on(type: 'aiButtonStatusChange', callback: Callback<AIButtonStatus>): void
 
-监听AIButton展示状态。
+监听AIButton展示状态。使用callback异步回调。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -904,49 +914,49 @@ on(type: 'aiButtonStatusChange', callback: Callback<AIButtonStatus>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"aiButtonStatusChange"。监听AIButton展示状态。 |
-| callback | [Callback](js-apis-base.md#callback)<[AIButtonStatus](vision-image-analyzer.md#aibuttonstatus)> | 是 | callback回调函数。接收AIButton展示状态。 |
+| callback | [Callback](js-apis-base.md#callback)<[AIButtonStatus](vision-image-analyzer.md#aibuttonstatus)> | 是 | 回调函数。返回AIButton展示状态。 |
 
 **示例：**
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. aboutToAppear(): void {
-9. this.visionImageAnalyzerController?.setAIButtonVisibility(true)
-10. this.visionImageAnalyzerController.on('aiButtonStatusChange', (aiButtonState: visionImageAnalyzer.AIButtonStatus) => {
-11. console.info("DEMO_TAG", `aiButtonStatusChange result: ${JSON.stringify(aiButtonState)}`)
-12. })
-13. }
-14. build() {
-15. Stack() {
-16. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-17. Image($r('app.media.img'), {
-18. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-19. aiController: this.visionImageAnalyzerController
-20. })
-21. .width('100%')
-22. .height('100%')
-23. .enableAnalyzer(true)
-24. .objectFit(ImageFit.Contain)
-25. }.width('100%').height('100%')
-26. }
-27. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear(): void {
+    this.visionImageAnalyzerController?.setAIButtonVisibility(true);
+    this.visionImageAnalyzerController.on('aiButtonStatusChange', (aiButtonState: visionImageAnalyzer.AIButtonStatus) => {
+      console.info('DEMO_TAG', `aiButtonStatusChange result: ${JSON.stringify(aiButtonState)}`);
+    });
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### off(type: 'aiButtonStatusChange')
 
-PhonePC/2in1Tablet
-
 off(type: 'aiButtonStatusChange', callback?: Callback<AIButtonStatus>): void
 
-取消监听AIButton展示状态。
+取消监听AIButton展示状态。使用callback异步回调。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -955,52 +965,52 @@ off(type: 'aiButtonStatusChange', callback?: Callback<AIButtonStatus>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"aiButtonStatusChange"。取消监听AIButton展示状态。 |
-| callback | [Callback](js-apis-base.md#callback)<[AIButtonStatus](vision-image-analyzer.md#aibuttonstatus)> | 否 | 需要取消注册的回调函数，需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
+| callback | [Callback](js-apis-base.md#callback)<[AIButtonStatus](vision-image-analyzer.md#aibuttonstatus)> | 否 | 回调函数，返回AIButton展示状态。需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
 
 **示例：**
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. aboutToAppear(): void {
-9. this.visionImageAnalyzerController?.setAIButtonVisibility(true)
-10. this.visionImageAnalyzerController.on('aiButtonStatusChange', (aiButtonState: visionImageAnalyzer.AIButtonStatus) => {
-11. console.info("DEMO_TAG", `aiButtonStatusChange result: ${JSON.stringify(aiButtonState)}`)
-12. })
-13. }
-14. aboutToDisappear(): void {
-15. this.visionImageAnalyzerController.off('aiButtonStatusChange')
-16. }
-17. build() {
-18. Stack() {
-19. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-20. Image($r('app.media.img'), {
-21. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-22. aiController: this.visionImageAnalyzerController
-23. })
-24. .width('100%')
-25. .height('100%')
-26. .enableAnalyzer(true)
-27. .objectFit(ImageFit.Contain)
-28. }.width('100%').height('100%')
-29. }
-30. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear(): void {
+    this.visionImageAnalyzerController?.setAIButtonVisibility(true);
+    this.visionImageAnalyzerController.on('aiButtonStatusChange', (aiButtonState: visionImageAnalyzer.AIButtonStatus) => {
+      console.info('DEMO_TAG', `aiButtonStatusChange result: ${JSON.stringify(aiButtonState)}`);
+    });
+  }
+  aboutToDisappear(): void {
+    this.visionImageAnalyzerController.off('aiButtonStatusChange');
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### on(type: 'imageAnalyzerVisibilityChange')
 
-PhonePC/2in1Tablet
-
 on(type: 'imageAnalyzerVisibilityChange', callback: Callback<ImageAnalyzerVisibility>): void
 
-监听AI识图控件可见状态。
+监听AI识图控件可见状态。使用callback异步回调。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -1009,52 +1019,52 @@ on(type: 'imageAnalyzerVisibilityChange', callback: Callback<ImageAnalyzerVisibi
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"imageAnalyzerVisibilityChange"。监听AI识图控件可见状态。 |
-| callback | [Callback](js-apis-base.md#callback)<[ImageAnalyzerVisibility](vision-image-analyzer.md#imageanalyzervisibility)> | 是 | callback回调函数。接收AI识图控件可见状态。 |
+| callback | [Callback](js-apis-base.md#callback)<[ImageAnalyzerVisibility](vision-image-analyzer.md#imageanalyzervisibility)> | 是 | 回调函数。返回AI识图控件可见状态。 |
 
 **示例：**
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. aboutToAppear(): void {
-9. this.visionImageAnalyzerController?.setAIButtonVisibility(true)
-10. this.visionImageAnalyzerController.on('imageAnalyzerVisibilityChange', (visibility: visionImageAnalyzer.ImageAnalyzerVisibility) => {
-11. console.info("DEMO_TAG", `imageAnalyzerVisibilityChange result: ${JSON.stringify(visibility)}`)
-12. })
-13. }
-14. aboutToDisappear(): void {
-15. this.visionImageAnalyzerController.off('imageAnalyzerVisibilityChange')
-16. }
-17. build() {
-18. Stack() {
-19. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-20. Image($r('app.media.img'), {
-21. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-22. aiController: this.visionImageAnalyzerController
-23. })
-24. .width('100%')
-25. .height('100%')
-26. .enableAnalyzer(true)
-27. .objectFit(ImageFit.Contain)
-28. }.width('100%').height('100%')
-29. }
-30. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear(): void {
+    this.visionImageAnalyzerController?.setAIButtonVisibility(true);
+    this.visionImageAnalyzerController.on('imageAnalyzerVisibilityChange', (visibility: visionImageAnalyzer.ImageAnalyzerVisibility) => {
+      console.info('DEMO_TAG', `imageAnalyzerVisibilityChange result: ${JSON.stringify(visibility)}`);
+    });
+  }
+  aboutToDisappear(): void {
+    this.visionImageAnalyzerController.off('imageAnalyzerVisibilityChange');
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### off(type: 'imageAnalyzerVisibilityChange')
 
-PhonePC/2in1Tablet
-
 off(type: 'imageAnalyzerVisibilityChange', callback?: Callback<ImageAnalyzerVisibility>): void
 
-取消AI识图控件可见状态的监听。
+取消AI识图控件可见状态的监听。使用callback异步回调。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -1063,52 +1073,52 @@ off(type: 'imageAnalyzerVisibilityChange', callback?: Callback<ImageAnalyzerVisi
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"imageAnalyzerVisibilityChange"。取消AI识图控件可见状态的监听。 |
-| callback | [Callback](js-apis-base.md#callback)<[ImageAnalyzerVisibility](vision-image-analyzer.md#imageanalyzervisibility)> | 否 | 需要取消注册的回调函数，需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
+| callback | [Callback](js-apis-base.md#callback)<[ImageAnalyzerVisibility](vision-image-analyzer.md#imageanalyzervisibility)> | 否 | 回调函数。返回AI识图控件可见状态。需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
 
 **示例：**
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. aboutToAppear(): void {
-9. this.visionImageAnalyzerController?.setAIButtonVisibility(true)
-10. this.visionImageAnalyzerController.on('imageAnalyzerVisibilityChange', (visibility: visionImageAnalyzer.ImageAnalyzerVisibility) => {
-11. console.info("DEMO_TAG", `imageAnalyzerVisibilityChange result: ${JSON.stringify(visibility)}`)
-12. })
-13. }
-14. aboutToDisappear(): void {
-15. this.visionImageAnalyzerController.off('imageAnalyzerVisibilityChange')
-16. }
-17. build() {
-18. Stack() {
-19. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-20. Image($r('app.media.img'), {
-21. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-22. aiController: this.visionImageAnalyzerController
-23. })
-24. .width('100%')
-25. .height('100%')
-26. .enableAnalyzer(true)
-27. .objectFit(ImageFit.Contain)
-28. }.width('100%').height('100%')
-29. }
-30. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear(): void {
+    this.visionImageAnalyzerController?.setAIButtonVisibility(true);
+    this.visionImageAnalyzerController.on('imageAnalyzerVisibilityChange', (visibility: visionImageAnalyzer.ImageAnalyzerVisibility) => {
+      console.info('DEMO_TAG', `imageAnalyzerVisibilityChange result: ${JSON.stringify(visibility)}`);
+    });
+  }
+  aboutToDisappear(): void {
+    this.visionImageAnalyzerController.off('imageAnalyzerVisibilityChange');
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### on(type: 'textAnalysis')
 
-PhonePC/2in1Tablet
-
 on(type: 'textAnalysis', callback: Callback<string>): void
 
-监听文字分析结果。默认在首次长按图片文本时触发文本分析，PC/2in1是在图片首次加载时触发文本分析。
+监听文字分析结果。默认在首次长按图片文本时触发文本分析，PC/2in1是在图片首次加载时触发文本分析。使用callback异步回调。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -1117,51 +1127,51 @@ on(type: 'textAnalysis', callback: Callback<string>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"textAnalysis"。监听文字分析结果。 |
-| callback | [Callback](js-apis-base.md#callback)<string> | 是 | callback回调函数。接收文字分析结果。 |
+| callback | [Callback](js-apis-base.md#callback)<string> | 是 | 回调函数。返回文字分析结果。 |
 
 **示例：**
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. aboutToAppear(): void {
-9. this.visionImageAnalyzerController.on('textAnalysis', (text: string) => {
-10. console.info("DEMO_TAG", `textAnalysis result: ${JSON.stringify(text)}`)
-11. })
-12. }
-13. aboutToDisappear(): void {
-14. this.visionImageAnalyzerController.off('textAnalysis')
-15. }
-16. build() {
-17. Stack() {
-18. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-19. Image($r('app.media.img'), {
-20. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-21. aiController: this.visionImageAnalyzerController
-22. })
-23. .width('100%')
-24. .height('100%')
-25. .enableAnalyzer(true)
-26. .objectFit(ImageFit.Contain)
-27. }.width('100%').height('100%')
-28. }
-29. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear(): void {
+    this.visionImageAnalyzerController.on('textAnalysis', (text: string) => {
+      console.info('DEMO_TAG', `textAnalysis result: ${JSON.stringify(text)}`);
+    });
+  }
+  aboutToDisappear(): void {
+    this.visionImageAnalyzerController.off('textAnalysis');
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### off(type: 'textAnalysis')
 
-PhonePC/2in1Tablet
-
 off(type: 'textAnalysis', callback?: Callback<string>): void
 
-取消文字分析结果的监听。
+取消文字分析结果的监听。使用callback异步回调。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -1170,51 +1180,51 @@ off(type: 'textAnalysis', callback?: Callback<string>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"textAnalysis"。取消文字分析结果的监听。 |
-| callback | [Callback](js-apis-base.md#callback)<string> | 否 | 需要取消注册的回调函数，需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
+| callback | [Callback](js-apis-base.md#callback)<string> | 否 | 回调函数。返回文字分析结果。需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
 
 **示例：**
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. aboutToAppear(): void {
-9. this.visionImageAnalyzerController.on('textAnalysis', (text: string) => {
-10. console.info("DEMO_TAG", `textAnalysis result: ${JSON.stringify(text)}`)
-11. })
-12. }
-13. aboutToDisappear(): void {
-14. this.visionImageAnalyzerController.off('textAnalysis')
-15. }
-16. build() {
-17. Stack() {
-18. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-19. Image($r('app.media.img'), {
-20. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-21. aiController: this.visionImageAnalyzerController
-22. })
-23. .width('100%')
-24. .height('100%')
-25. .enableAnalyzer(true)
-26. .objectFit(ImageFit.Contain)
-27. }.width('100%').height('100%')
-28. }
-29. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear(): void {
+    this.visionImageAnalyzerController.on('textAnalysis', (text: string) => {
+      console.info('DEMO_TAG', `textAnalysis result: ${JSON.stringify(text)}`);
+    })
+  }
+  aboutToDisappear(): void {
+    this.visionImageAnalyzerController.off('textAnalysis');
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### on(type: 'selectedTextChange')
 
-PhonePC/2in1Tablet
-
 on(type: 'selectedTextChange', callback: Callback<string>): void
 
-监听文字选中结果。
+监听文字选中结果。使用callback异步回调。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -1223,51 +1233,51 @@ on(type: 'selectedTextChange', callback: Callback<string>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"selectedTextChange"。监听文字选中结果。 |
-| callback | [Callback](js-apis-base.md#callback)<string> | 是 | callback回调函数。接收文字选中结果。 |
+| callback | [Callback](js-apis-base.md#callback)<string> | 是 | 回调函数。返回文字选中结果。 |
 
 **示例：**
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. aboutToAppear(): void {
-9. this.visionImageAnalyzerController.on('selectedTextChange', (selectedText: string) => {
-10. console.info("DEMO_TAG", `selectedTextChange result: ${JSON.stringify(selectedText)}`)
-11. })
-12. }
-13. aboutToDisappear(): void {
-14. this.visionImageAnalyzerController.off('selectedTextChange')
-15. }
-16. build() {
-17. Stack() {
-18. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-19. Image($r('app.media.img'), {
-20. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-21. aiController: this.visionImageAnalyzerController
-22. })
-23. .width('100%')
-24. .height('100%')
-25. .enableAnalyzer(true)
-26. .objectFit(ImageFit.Contain)
-27. }.width('100%').height('100%')
-28. }
-29. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear(): void {
+    this.visionImageAnalyzerController.on('selectedTextChange', (selectedText: string) => {
+      console.info('DEMO_TAG', `selectedTextChange result: ${JSON.stringify(selectedText)}`);
+    });
+  }
+  aboutToDisappear(): void {
+    this.visionImageAnalyzerController.off('selectedTextChange');
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### off(type: 'selectedTextChange')
 
-PhonePC/2in1Tablet
-
 off(type: 'selectedTextChange', callback?: Callback<string>): void
 
-取消文字选中结果的监听。
+取消文字选中结果的监听。使用callback异步回调。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -1276,51 +1286,51 @@ off(type: 'selectedTextChange', callback?: Callback<string>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"selectedTextChange"。取消文字选中结果的监听。 |
-| callback | [Callback](js-apis-base.md#callback)<string> | 否 | 需要取消注册的回调函数，需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
+| callback | [Callback](js-apis-base.md#callback)<string> | 否 | 回调函数。返回文字选中结果。需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
 
 **示例：**
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. aboutToAppear(): void {
-9. this.visionImageAnalyzerController.on('selectedTextChange', (selectedText: string) => {
-10. console.info("DEMO_TAG", `selectedTextChange result: ${JSON.stringify(selectedText)}`)
-11. })
-12. }
-13. aboutToDisappear(): void {
-14. this.visionImageAnalyzerController.off('selectedTextChange')
-15. }
-16. build() {
-17. Stack() {
-18. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-19. Image($r('app.media.img'), {
-20. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-21. aiController: this.visionImageAnalyzerController
-22. })
-23. .width('100%')
-24. .height('100%')
-25. .enableAnalyzer(true)
-26. .objectFit(ImageFit.Contain)
-27. }.width('100%').height('100%')
-28. }
-29. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear(): void {
+    this.visionImageAnalyzerController.on('selectedTextChange', (selectedText: string) => {
+      console.info('DEMO_TAG', `selectedTextChange result: ${JSON.stringify(selectedText)}`);
+    });
+  }
+  aboutToDisappear(): void {
+    this.visionImageAnalyzerController.off('selectedTextChange');
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### on(type: 'subjectAnalysis')
 
-PhonePC/2in1Tablet
-
 on(type: 'subjectAnalysis', callback: Callback<Subject[]>): void
 
-监听主体分析结果，返回所有主体信息。
+监听主体分析结果，返回所有主体信息。使用callback异步回调。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -1329,51 +1339,51 @@ on(type: 'subjectAnalysis', callback: Callback<Subject[]>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"subjectAnalysis"。监听主体分析结果， 返回所有主体信息。 |
-| callback | [Callback](js-apis-base.md#callback)<[Subject](vision-image-analyzer.md#subject)[]> | 是 | callback回调函数。接收主体分析结果， 返回所有主体信息。 |
+| callback | [Callback](js-apis-base.md#callback)<[Subject](vision-image-analyzer.md#subject)[]> | 是 | 回调函数。返回主体分析结果对象数组。 |
 
 **示例：**
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. aboutToAppear(): void {
-9. this.visionImageAnalyzerController.on('subjectAnalysis', (subjects: visionImageAnalyzer.Subject[]) => {
-10. console.info("DEMO_TAG", `subjectAnalysis result: ${JSON.stringify(subjects)}`)
-11. })
-12. }
-13. aboutToDisappear(): void {
-14. this.visionImageAnalyzerController.off('subjectAnalysis')
-15. }
-16. build() {
-17. Stack() {
-18. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-19. Image($r('app.media.img'), {
-20. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-21. aiController: this.visionImageAnalyzerController
-22. })
-23. .width('100%')
-24. .height('100%')
-25. .enableAnalyzer(true)
-26. .objectFit(ImageFit.Contain)
-27. }.width('100%').height('100%')
-28. }
-29. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear(): void {
+    this.visionImageAnalyzerController.on('subjectAnalysis', (subjects: visionImageAnalyzer.Subject[]) => {
+      console.info('DEMO_TAG', `subjectAnalysis result: ${JSON.stringify(subjects)}`);
+    });
+  }
+  aboutToDisappear(): void {
+    this.visionImageAnalyzerController.off('subjectAnalysis');
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### off(type: 'subjectAnalysis')
 
-PhonePC/2in1Tablet
-
 off(type: 'subjectAnalysis', callback?: Callback<Subject[]>): void
 
-取消主体分析结果的监听。
+取消主体分析结果的监听。使用callback异步回调。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -1382,51 +1392,51 @@ off(type: 'subjectAnalysis', callback?: Callback<Subject[]>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"subjectAnalysis"。取消主体分析结果的监听。 |
-| callback | [Callback](js-apis-base.md#callback)<[Subject](vision-image-analyzer.md#subject)[]> | 否 | 需要取消注册的回调函数，需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
+| callback | [Callback](js-apis-base.md#callback)<[Subject](vision-image-analyzer.md#subject)[]> | 否 | 回调函数。返回主体分析结果对象数组。需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
 
 **示例：**
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. aboutToAppear(): void {
-9. this.visionImageAnalyzerController.on('subjectAnalysis', (subjects: visionImageAnalyzer.Subject[]) => {
-10. console.info("DEMO_TAG", `subjectAnalysis result: ${JSON.stringify(subjects)}`)
-11. })
-12. }
-13. aboutToDisappear(): void {
-14. this.visionImageAnalyzerController.off('subjectAnalysis')
-15. }
-16. build() {
-17. Stack() {
-18. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-19. Image($r('app.media.img'), {
-20. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-21. aiController: this.visionImageAnalyzerController
-22. })
-23. .width('100%')
-24. .height('100%')
-25. .enableAnalyzer(true)
-26. .objectFit(ImageFit.Contain)
-27. }.width('100%').height('100%')
-28. }
-29. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear(): void {
+    this.visionImageAnalyzerController.on('subjectAnalysis', (subjects: visionImageAnalyzer.Subject[]) => {
+      console.info('DEMO_TAG', `subjectAnalysis result: ${JSON.stringify(subjects)}`);
+    });
+  }
+  aboutToDisappear(): void {
+    this.visionImageAnalyzerController.off('subjectAnalysis');
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### on(type: 'selectedSubjectsChange')
 
-PhonePC/2in1Tablet
-
 on(type: 'selectedSubjectsChange', callback: Callback<Subject[]>): void
 
-监听选中的主体。
+监听选中的主体。使用callback异步回调。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -1435,51 +1445,51 @@ on(type: 'selectedSubjectsChange', callback: Callback<Subject[]>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"selectedSubjectsChange"。监听选中的主体。 |
-| callback | [Callback](js-apis-base.md#callback)<[Subject](vision-image-analyzer.md#subject)[]> | 是 | callback回调函数。接收选中的主体信息。 |
+| callback | [Callback](js-apis-base.md#callback)<[Subject](vision-image-analyzer.md#subject)[]> | 是 | 回调函数。返回选中的主体信息对象数组。 |
 
 **示例：**
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. aboutToAppear(): void {
-9. this.visionImageAnalyzerController.on('selectedSubjectsChange', (subjects: visionImageAnalyzer.Subject[]) => {
-10. console.info("DEMO_TAG", `selectedSubjectsChange result: ${JSON.stringify(subjects)}`)
-11. })
-12. }
-13. aboutToDisappear(): void {
-14. this.visionImageAnalyzerController.off('selectedSubjectsChange')
-15. }
-16. build() {
-17. Stack() {
-18. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-19. Image($r('app.media.img'), {
-20. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-21. aiController: this.visionImageAnalyzerController
-22. })
-23. .width('100%')
-24. .height('100%')
-25. .enableAnalyzer(true)
-26. .objectFit(ImageFit.Contain)
-27. }.width('100%').height('100%')
-28. }
-29. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear(): void {
+    this.visionImageAnalyzerController.on('selectedSubjectsChange', (subjects: visionImageAnalyzer.Subject[]) => {
+      console.info('DEMO_TAG', `selectedSubjectsChange result: ${JSON.stringify(subjects)}`);
+    });
+  }
+  aboutToDisappear(): void {
+    this.visionImageAnalyzerController.off('selectedSubjectsChange');
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### off(type: 'selectedSubjectsChange')
 
-PhonePC/2in1Tablet
-
 off(type: 'selectedSubjectsChange', callback?: Callback<Subject[]>): void
 
-取消对选中主体的监听。
+取消对选中主体的监听。使用callback异步回调。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -1488,51 +1498,51 @@ off(type: 'selectedSubjectsChange', callback?: Callback<Subject[]>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"selectedSubjectsChange"。取消对选中主体的监听。 |
-| callback | [Callback](js-apis-base.md#callback)<[Subject](vision-image-analyzer.md#subject)[]> | 否 | 需要取消注册的回调函数，需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
+| callback | [Callback](js-apis-base.md#callback)<[Subject](vision-image-analyzer.md#subject)[]> | 否 | 回调函数。返回选中的主体信息对象数组。需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
 
 **示例：**
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. aboutToAppear(): void {
-9. this.visionImageAnalyzerController.on('selectedSubjectsChange', (subjects: visionImageAnalyzer.Subject[]) => {
-10. console.info("DEMO_TAG", `selectedSubjectsChange result: ${JSON.stringify(subjects)}`)
-11. })
-12. }
-13. aboutToDisappear(): void {
-14. this.visionImageAnalyzerController.off('selectedSubjectsChange')
-15. }
-16. build() {
-17. Stack() {
-18. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-19. Image($r('app.media.img'), {
-20. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-21. aiController: this.visionImageAnalyzerController
-22. })
-23. .width('100%')
-24. .height('100%')
-25. .enableAnalyzer(true)
-26. .objectFit(ImageFit.Contain)
-27. }.width('100%').height('100%')
-28. }
-29. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear(): void {
+    this.visionImageAnalyzerController.on('selectedSubjectsChange', (subjects: visionImageAnalyzer.Subject[]) => {
+      console.info('DEMO_TAG', `selectedSubjectsChange result: ${JSON.stringify(subjects)}`);
+    });
+  }
+  aboutToDisappear(): void {
+    this.visionImageAnalyzerController.off('selectedSubjectsChange');
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### on(type: 'objectSearchPanelVisibilityChange')
-
-PhonePC/2in1Tablet
 
 on(type: 'objectSearchPanelVisibilityChange', callback: Callback<ObjectSearchPanelVisibility>): void
 
 监听图片搜索事件。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.1(13)
 
@@ -1541,49 +1551,49 @@ on(type: 'objectSearchPanelVisibilityChange', callback: Callback<ObjectSearchPan
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"objectSearchPanelVisibilityChange"。监听图片搜索事件。 |
-| callback | [Callback](js-apis-base.md#callback)<[ObjectSearchPanelVisibility](vision-image-analyzer.md#objectsearchpanelvisibility)> | 是 | callback回调函数。接收图片搜索事件信息。 |
+| callback | [Callback](js-apis-base.md#callback)<[ObjectSearchPanelVisibility](vision-image-analyzer.md#objectsearchpanelvisibility)> | 是 | 回调函数。返回图片搜索事件信息。 |
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. aboutToAppear(): void {
-9. this.visionImageAnalyzerController.on('objectSearchPanelVisibilityChange', (status: visionImageAnalyzer.ObjectSearchPanelVisibility) => {
-10. console.info("DEMO_TAG", `objectSearchPanelVisibilityChange result: ${JSON.stringify(status)}`)
-11. })
-12. }
-13. aboutToDisappear(): void {
-14. this.visionImageAnalyzerController.off('objectSearchPanelVisibilityChange')
-15. }
-16. build() {
-17. Stack() {
-18. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-19. Image($r('app.media.img'), {
-20. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-21. aiController: this.visionImageAnalyzerController
-22. })
-23. .width('100%')
-24. .height('100%')
-25. .enableAnalyzer(true)
-26. .objectFit(ImageFit.Contain)
-27. }.width('100%').height('100%')
-28. }
-29. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear(): void {
+    this.visionImageAnalyzerController.on('objectSearchPanelVisibilityChange', (status: visionImageAnalyzer.ObjectSearchPanelVisibility) => {
+      console.info('DEMO_TAG', `objectSearchPanelVisibilityChange result: ${JSON.stringify(status)}`);
+    });
+  }
+  aboutToDisappear(): void {
+    this.visionImageAnalyzerController.off('objectSearchPanelVisibilityChange');
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### off(type: 'objectSearchPanelVisibilityChange')
 
-PhonePC/2in1Tablet
-
 off(type: 'objectSearchPanelVisibilityChange', callback?: Callback<ObjectSearchPanelVisibility>): void
 
-取消图片搜索事件的监听。
+取消图片搜索事件的监听。使用callback异步回调。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.1(13)
 
@@ -1592,49 +1602,49 @@ off(type: 'objectSearchPanelVisibilityChange', callback?: Callback<ObjectSearchP
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"objectSearchPanelVisibilityChange"。取消监听图片搜索事件。 |
-| callback | [Callback](js-apis-base.md#callback)<[ObjectSearchPanelVisibility](vision-image-analyzer.md#objectsearchpanelvisibility)> | 否 | 需要取消注册的回调函数，需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
+| callback | [Callback](js-apis-base.md#callback)<[ObjectSearchPanelVisibility](vision-image-analyzer.md#objectsearchpanelvisibility)> | 否 | 回调函数。返回图片搜索事件信息。需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. aboutToAppear(): void {
-9. this.visionImageAnalyzerController.on('objectSearchPanelVisibilityChange', (status: visionImageAnalyzer.ObjectSearchPanelVisibility) => {
-10. console.info("DEMO_TAG", `objectSearchPanelVisibilityChange result: ${JSON.stringify(status)}`)
-11. })
-12. }
-13. aboutToDisappear(): void {
-14. this.visionImageAnalyzerController.off('objectSearchPanelVisibilityChange')
-15. }
-16. build() {
-17. Stack() {
-18. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-19. Image($r('app.media.img'), {
-20. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-21. aiController: this.visionImageAnalyzerController
-22. })
-23. .width('100%')
-24. .height('100%')
-25. .enableAnalyzer(true)
-26. .objectFit(ImageFit.Contain)
-27. }.width('100%').height('100%')
-28. }
-29. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear(): void {
+    this.visionImageAnalyzerController.on('objectSearchPanelVisibilityChange', (status: visionImageAnalyzer.ObjectSearchPanelVisibility) => {
+      console.info('DEMO_TAG', `objectSearchPanelVisibilityChange result: ${JSON.stringify(status)}`);
+    });
+  }
+  aboutToDisappear(): void {
+    this.visionImageAnalyzerController.off('objectSearchPanelVisibilityChange');
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### on(type: 'cursorMoveInText')
 
-PhonePC/2in1Tablet
-
 on(type: 'cursorMoveInText', callback: Callback<void>): void
 
-监听光标移入图片内文字区域事件。
+监听光标移入图片内文字区域事件。使用callback异步回调。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.0(18)
 
@@ -1643,49 +1653,49 @@ on(type: 'cursorMoveInText', callback: Callback<void>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"cursorMoveInText"。监听光标移入图片内文字区域事件。 |
-| callback | [Callback](js-apis-base.md#callback)<void> | 是 | callback回调函数。接收光标移入图片内文字区域事件信息。 |
+| callback | [Callback](js-apis-base.md#callback)<void> | 是 | 回调函数。返回为空，表示光标移入图片内文字区域。 |
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. aboutToAppear(): void {
-9. this.visionImageAnalyzerController.on('cursorMoveInText', () => {
-10. console.info("DEMO_TAG", `cursorMoveInText on`)
-11. })
-12. }
-13. aboutToDisappear(): void {
-14. this.visionImageAnalyzerController.off('cursorMoveInText')
-15. }
-16. build() {
-17. Stack() {
-18. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-19. Image($r('app.media.img'), {
-20. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-21. aiController: this.visionImageAnalyzerController
-22. })
-23. .width('100%')
-24. .height('100%')
-25. .enableAnalyzer(true)
-26. .objectFit(ImageFit.Contain)
-27. }.width('100%').height('100%')
-28. }
-29. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear(): void {
+    this.visionImageAnalyzerController.on('cursorMoveInText', () => {
+      console.info('DEMO_TAG', `cursorMoveInText on`);
+    });
+  }
+  aboutToDisappear(): void {
+    this.visionImageAnalyzerController.off('cursorMoveInText');
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### off(type: 'cursorMoveInText')
 
-PhonePC/2in1Tablet
-
 off(type: 'cursorMoveInText', callback?: Callback<void>): void
 
-取消光标移入图片内文字区域事件的监听。
+取消光标移入图片内文字区域事件的监听。使用callback异步回调。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.0(18)
 
@@ -1694,49 +1704,49 @@ off(type: 'cursorMoveInText', callback?: Callback<void>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"cursorMoveInText"。取消监听光标移入图片内文字区域事件。 |
-| callback | [Callback](js-apis-base.md#callback)<void> | 否 | 需要取消注册的回调函数，需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
+| callback | [Callback](js-apis-base.md#callback)<void> | 否 | 回调函数。返回为空，表示光标移入图片内文字区域。需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. aboutToAppear(): void {
-9. this.visionImageAnalyzerController.on('cursorMoveInText', () => {
-10. console.info("DEMO_TAG", `cursorMoveInText on`)
-11. })
-12. }
-13. aboutToDisappear(): void {
-14. this.visionImageAnalyzerController.off('cursorMoveInText')
-15. }
-16. build() {
-17. Stack() {
-18. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-19. Image($r('app.media.img'), {
-20. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-21. aiController: this.visionImageAnalyzerController
-22. })
-23. .width('100%')
-24. .height('100%')
-25. .enableAnalyzer(true)
-26. .objectFit(ImageFit.Contain)
-27. }.width('100%').height('100%')
-28. }
-29. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear(): void {
+    this.visionImageAnalyzerController.on('cursorMoveInText', () => {
+      console.info('DEMO_TAG', `cursorMoveInText on`);
+    });
+  }
+  aboutToDisappear(): void {
+    this.visionImageAnalyzerController.off('cursorMoveInText');
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### on(type: 'cursorMoveOutText')
 
-PhonePC/2in1Tablet
-
 on(type: 'cursorMoveOutText', callback: Callback<void>): void
 
-监听光标移出图片内文字区域事件。
+监听光标移出图片内文字区域事件。使用callback异步回调。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.0(18)
 
@@ -1745,49 +1755,49 @@ on(type: 'cursorMoveOutText', callback: Callback<void>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"cursorMoveOutText"。监听光标移出图片内文字区域事件。 |
-| callback | [Callback](js-apis-base.md#callback)<void> | 是 | callback回调函数。接收光标移出图片内文字区域事件信息。 |
+| callback | [Callback](js-apis-base.md#callback)<void> | 是 | 回调函数。返回为空。表示光标移出图片内文字区域事件。 |
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. aboutToAppear(): void {
-9. this.visionImageAnalyzerController.on('cursorMoveOutText', () => {
-10. console.info("DEMO_TAG", `cursorMoveOutText on`)
-11. })
-12. }
-13. aboutToDisappear(): void {
-14. this.visionImageAnalyzerController.off('cursorMoveOutText')
-15. }
-16. build() {
-17. Stack() {
-18. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-19. Image($r('app.media.img'), {
-20. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-21. aiController: this.visionImageAnalyzerController
-22. })
-23. .width('100%')
-24. .height('100%')
-25. .enableAnalyzer(true)
-26. .objectFit(ImageFit.Contain)
-27. }.width('100%').height('100%')
-28. }
-29. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear(): void {
+    this.visionImageAnalyzerController.on('cursorMoveOutText', () => {
+      console.info('DEMO_TAG', `cursorMoveOutText on`);
+    });
+  }
+  aboutToDisappear(): void {
+    this.visionImageAnalyzerController.off('cursorMoveOutText');
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### off(type: 'cursorMoveOutText')
 
-PhonePC/2in1Tablet
-
 off(type: 'cursorMoveOutText', callback?: Callback<void>): void
 
-取消光标移出图片内文字区域事件的监听。
+取消光标移出图片内文字区域事件的监听。使用callback异步回调。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.0(18)
 
@@ -1796,49 +1806,49 @@ off(type: 'cursorMoveOutText', callback?: Callback<void>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"cursorMoveOutText"。取消监听光标移出图片内文字区域事件。 |
-| callback | [Callback](js-apis-base.md#callback)<void> | 否 | 需要取消注册的回调函数，需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
+| callback | [Callback](js-apis-base.md#callback)<void> | 否 | 回调函数。返回为空。需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
 
-3. @Entry
-4. @Component
-5. struct ImageDemo {
-6. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-7. new visionImageAnalyzer.VisionImageAnalyzerController()
-8. aboutToAppear(): void {
-9. this.visionImageAnalyzerController.on('cursorMoveOutText', () => {
-10. console.info("DEMO_TAG", `cursorMoveOutText on`)
-11. })
-12. }
-13. aboutToDisappear(): void {
-14. this.visionImageAnalyzerController.off('cursorMoveOutText')
-15. }
-16. build() {
-17. Stack() {
-18. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-19. Image($r('app.media.img'), {
-20. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-21. aiController: this.visionImageAnalyzerController
-22. })
-23. .width('100%')
-24. .height('100%')
-25. .enableAnalyzer(true)
-26. .objectFit(ImageFit.Contain)
-27. }.width('100%').height('100%')
-28. }
-29. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear(): void {
+    this.visionImageAnalyzerController.on('cursorMoveOutText', () => {
+      console.info('DEMO_TAG', `cursorMoveOutText on`);
+    });
+  }
+  aboutToDisappear(): void {
+    this.visionImageAnalyzerController.off('cursorMoveOutText');
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### on(type: 'analyzerFailed')
 
-PhonePC/2in1Tablet
-
 on(type: 'analyzerFailed', callback: ErrorCallback): void
 
-监听AI识图的异常场景。
+监听AI识图的异常场景。使用callback异步回调。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -1847,11 +1857,11 @@ on(type: 'analyzerFailed', callback: ErrorCallback): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"analyzerFailed"。监听AI识图异常场景。 |
-| callback | [ErrorCallback](js-apis-base.md#errorcallback) | 是 | callback回调函数。接收AI识图异常场景信息。 |
+| callback | [ErrorCallback](js-apis-base.md#errorcallback) | 是 | 回调函数。返回AI识图异常场景错误信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](vision-error-code.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-vision.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1860,48 +1870,48 @@ on(type: 'analyzerFailed', callback: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct ImageDemo {
-7. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-8. new visionImageAnalyzer.VisionImageAnalyzerController()
-9. aboutToAppear(): void {
-10. this.visionImageAnalyzerController.on('analyzerFailed', (error: BusinessError) => {
-11. console.error("DEMO_TAG", `analyzerFailed result: ${JSON.stringify(error)}`)
-12. })
-13. }
-14. aboutToDisappear(): void {
-15. this.visionImageAnalyzerController.off('analyzerFailed')
-16. }
-17. build() {
-18. Stack() {
-19. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-20. Image($r('app.media.img'), {
-21. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-22. aiController: this.visionImageAnalyzerController
-23. })
-24. .width('100%')
-25. .height('100%')
-26. .enableAnalyzer(true)
-27. .objectFit(ImageFit.Contain)
-28. }.width('100%').height('100%')
-29. }
-30. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear(): void {
+    this.visionImageAnalyzerController.on('analyzerFailed', (error: BusinessError) => {
+      console.error('DEMO_TAG', `Failed to analyzer image. Code: ${error.code}, message: ${error.message}`);
+    });
+  }
+  aboutToDisappear(): void {
+    this.visionImageAnalyzerController.off('analyzerFailed');
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 ### off(type: 'analyzerFailed')
 
-PhonePC/2in1Tablet
-
 off(type: 'analyzerFailed', callback?: ErrorCallback): void
 
-取消AI识图异常场景的监听。
+取消AI识图异常场景的监听。使用callback异步回调。
 
 **系统能力：** SystemCapability.AI.VisionImageAnalyzer
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -1910,11 +1920,11 @@ off(type: 'analyzerFailed', callback?: ErrorCallback): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"analyzerFailed"。取消AI识图异常场景的监听。 |
-| callback | [ErrorCallback](js-apis-base.md#errorcallback) | 否 | 需要取消注册的回调函数，需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
+| callback | [ErrorCallback](js-apis-base.md#errorcallback) | 否 | 回调函数。返回AI识图异常场景错误信息。需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](vision-error-code.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-vision.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1923,35 +1933,35 @@ off(type: 'analyzerFailed', callback?: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { visionImageAnalyzer } from '@kit.VisionKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { visionImageAnalyzer } from '@kit.VisionKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct ImageDemo {
-7. private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
-8. new visionImageAnalyzer.VisionImageAnalyzerController()
-9. aboutToAppear(): void {
-10. this.visionImageAnalyzerController.on('analyzerFailed', (error: BusinessError) => {
-11. console.error("DEMO_TAG", `analyzerFailed result: ${JSON.stringify(error)}`)
-12. })
-13. }
-14. aboutToDisappear(): void {
-15. this.visionImageAnalyzerController.off('analyzerFailed')
-16. }
-17. build() {
-18. Stack() {
-19. // 此处图片需单独配置，添加到src/main/resources/base/media路径下
-20. Image($r('app.media.img'), {
-21. types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
-22. aiController: this.visionImageAnalyzerController
-23. })
-24. .width('100%')
-25. .height('100%')
-26. .enableAnalyzer(true)
-27. .objectFit(ImageFit.Contain)
-28. }.width('100%').height('100%')
-29. }
-30. }
+@Entry
+@Component
+struct ImageDemo {
+  private visionImageAnalyzerController: visionImageAnalyzer.VisionImageAnalyzerController =
+    new visionImageAnalyzer.VisionImageAnalyzerController();
+  aboutToAppear(): void {
+    this.visionImageAnalyzerController.on('analyzerFailed', (error: BusinessError) => {
+      console.error('DEMO_TAG', `Failed to analyzer image. Code: ${error.code}, message: ${error.message}`);
+    });
+  }
+  aboutToDisappear(): void {
+    this.visionImageAnalyzerController.off('analyzerFailed');
+  }
+  build() {
+    Stack() {
+      // 此处图片需单独配置，添加到src/main/resources/base/media路径下
+      Image($r('app.media.img'), {
+        types: [ImageAnalyzerType.TEXT, ImageAnalyzerType.SUBJECT, ImageAnalyzerType.OBJECT_LOOKUP],
+        aiController: this.visionImageAnalyzerController
+      })
+        .width('100%')
+        .height('100%')
+        .enableAnalyzer(true)
+        .objectFit(ImageFit.Contain)
+    }.width('100%').height('100%')
+  }
+}
 ```

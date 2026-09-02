@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-67
 title: 如何实现ArkTS与C/C++的HashMap转换
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何实现ArkTS与C/C++的HashMap转换
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:41+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:2a039988e1663e7dd6ead6694ea9e85f7d88510deeafc4c3539f0d06b2809dee
+scraped_at: 2026-09-02T14:53:57+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:01ff1743384bc825acb3cd05e8c1aa3bc4c20ed85ac86f4a8dbae982e7cb3c74
 ---
 
 **问题详情：**
@@ -20,57 +20,53 @@ content_hash: sha256:2a039988e1663e7dd6ead6694ea9e85f7d88510deeafc4c3539f0d06b28
 
   ArkTS侧传递数组。
 
-  ```
-  1. let hashMap: HashMap<string, number> = new HashMap();
-  2. hashMap.set("Abc", 123);
-  3. hashMap.set("Bcd", 234);
-  4. hashMap.set("Cde", 345);
+  ```ts
+  let hashMap: HashMap<string, number> = new HashMap();
+  hashMap.set("Abc", 123);
+  hashMap.set("Bcd", 234);
+  hashMap.set("Cde", 345);
 
-  6. let keysArray: Array<string> = Array.from(hashMap.keys());
-  7. let valuesArray: Array<number> = Array.from(hashMap.values());
-  8. testNapi.tsPutMap(keysArray, valuesArray, hashMap.length);
+  let keysArray: Array<string> = Array.from(hashMap.keys());
+  let valuesArray: Array<number> = Array.from(hashMap.values());
+  testNapi.tsPutMap(keysArray, valuesArray, hashMap.length);
   ```
-
-  [HashMap.ets](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/Ndk/Ndk2/entry/src/main/ets/pages/HashMap.ets#L50-L57)
 
   在Native侧组装Map。
 
-  ```
-  1. // Convert value to string and return
-  2. std::string HashMap::value2String(napi_env env, napi_value value) {
-  3. size_t stringSize = 0;
-  4. napi_get_value_string_utf8(env, value, nullptr, 0, &stringSize); // 获取字符串长度
-  5. std::string valueString;
-  6. valueString.resize(stringSize + 1);
-  7. napi_get_value_string_utf8(env, value, &valueString[0], stringSize + 1, &stringSize); // 根据长度转换成字符串
-  8. return valueString;
-  9. }
-  10. napi_value HashMap::TsPutMap(napi_env env, napi_callback_info info) {
-  11. std::map<std::string, int> myMap;
-  12. size_t argc = 3;
-  13. napi_value args[3] = {nullptr};
-  14. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-  15. napi_value mapKey = args[0]; // key
-  16. napi_value mapVal = args[1]; // value
-  17. napi_value mapNum = args[2]; // length
+  ```cpp
+  // Convert value to string and return
+  std::string HashMap::value2String(napi_env env, napi_value value) {
+      size_t stringSize = 0;
+      napi_get_value_string_utf8(env, value, nullptr, 0, &stringSize); // 获取字符串长度
+      std::string valueString;
+      valueString.resize(stringSize + 1);
+      napi_get_value_string_utf8(env, value, &valueString[0], stringSize + 1, &stringSize); // 根据长度转换成字符串
+      return valueString;
+  }
+  napi_value HashMap::TsPutMap(napi_env env, napi_callback_info info) {
+      std::map<std::string, int> myMap;
+      size_t argc = 3;
+      napi_value args[3] = {nullptr};
+      napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+      napi_value mapKey = args[0]; // key
+      napi_value mapVal = args[1]; // value
+      napi_value mapNum = args[2]; // length
 
-  20. uint32_t mapCNum = 0;
-  21. napi_get_value_uint32(env, mapNum, &mapCNum);
-  22. for (uint32_t i = 0; i < mapCNum; i++) {
-  23. napi_value keyNIndex, valNIndex;
-  24. napi_get_element(env, mapKey, i, &keyNIndex);
-  25. napi_get_element(env, mapVal, i, &valNIndex);
-  26. std::string keyIndex = value2String(env, keyNIndex);
-  27. int valIndex = 0;
-  28. napi_get_value_int32(env, valNIndex, &valIndex);
-  29. myMap[keyIndex] = valIndex;
-  30. OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "Pure", "%{public}s %{public}d", keyIndex.c_str(), myMap[keyIndex]);
-  31. }
-  32. return nullptr;
-  33. }
+      uint32_t mapCNum = 0;
+      napi_get_value_uint32(env, mapNum, &mapCNum);
+      for (uint32_t i = 0; i < mapCNum; i++) {
+          napi_value keyNIndex, valNIndex;
+          napi_get_element(env, mapKey, i, &keyNIndex);
+          napi_get_element(env, mapVal, i, &valNIndex);
+          std::string keyIndex = value2String(env, keyNIndex);
+          int valIndex = 0;
+          napi_get_value_int32(env, valNIndex, &valIndex);
+          myMap[keyIndex] = valIndex;
+          OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "Pure", "%{public}s %{public}d", keyIndex.c_str(), myMap[keyIndex]);
+      }
+      return nullptr;
+  }
   ```
-
-  [HashMap.cpp](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/Ndk/Ndk2/entry/src/main/cpp/HashMap/HashMap.cpp#L25-L57)
 * 方案二：传递JSON。
 
   将HashMap转换为Json数据传至Native侧，在Native侧反序列化用Map承接。
@@ -79,53 +75,47 @@ content_hash: sha256:2a039988e1663e7dd6ead6694ea9e85f7d88510deeafc4c3539f0d06b28
 
   1. JSON.stringify不支持对HashMap操作，需要先将其转成Record
 
+     ```ts
+     map2rec(map: HashMap<string, ESObject>): Record<string, ESObject> {
+       // Map to Record
+       let Rec: Record<string, ESObject> = {}
+       map.forEach((value: ESObject, key: string) => {
+         if (value instanceof HashMap) {
+           //Value may be HashMap
+           let vRec: Record<string, ESObject> = this.map2rec(value)
+           value = vRec
+         }
+         Rec[key] = value
+       })
+       return Rec
+     }
      ```
-     1. map2rec(map: HashMap<string, ESObject>): Record<string, ESObject> {
-     2. // Map to Record
-     3. let Rec: Record<string, ESObject> = {}
-     4. map.forEach((value: ESObject, key: string) => {
-     5. if (value instanceof HashMap) {
-     6. //Value may be HashMap
-     7. let vRec: Record<string, ESObject> = this.map2rec(value)
-     8. value = vRec
-     9. }
-     10. Rec[key] = value
-     11. })
-     12. return Rec
-     13. }
-     ```
-
-     [HashMap.ets](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/Ndk/Ndk2/entry/src/main/ets/pages/HashMap.ets#L27-L39)
   2. 然后使用JSON.stringify序列化
 
+     ```ts
+     let myRec: Record<string, ESObject> = this.map2rec(hashMap);
+     let str: string = JSON.stringify(myRec);
+     testNapi.mapJson(str);
      ```
-     1. let myRec: Record<string, ESObject> = this.map2rec(hashMap);
-     2. let str: string = JSON.stringify(myRec);
-     3. testNapi.mapJson(str);
-     ```
-
-     [HashMap.ets](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/Ndk/Ndk2/entry/src/main/ets/pages/HashMap.ets#L61-L63)
 
   Native侧反序列化。
 
   C++没有直接反序列化的接口，需要使用三方库，本demo采用lycium交叉编译工具编译json三方库。
 
+  ```cpp
+  napi_value HashMap::MapJson(napi_env env, napi_callback_info info) {
+
+      size_t argc = 1;
+      napi_value args[1] = {nullptr};
+      napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+      std::string jsonStr = value2String(env, args[0]);
+
+      std::map<std::string, int> myMap = nlohmann::json::parse(jsonStr.c_str());
+
+      OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "Pure", "%{public}d %{public}d %{public}d", myMap["Abc"], myMap["Bcd"],
+                   myMap["Cde"]);
+
+      return nullptr;
+  }
   ```
-  1. napi_value HashMap::MapJson(napi_env env, napi_callback_info info) {
-
-  3. size_t argc = 1;
-  4. napi_value args[1] = {nullptr};
-  5. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-
-  7. std::string jsonStr = value2String(env, args[0]);
-
-  9. std::map<std::string, int> myMap = nlohmann::json::parse(jsonStr.c_str());
-
-  11. OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "Pure", "%{public}d %{public}d %{public}d", myMap["Abc"], myMap["Bcd"],
-  12. myMap["Cde"]);
-
-  14. return nullptr;
-  15. }
-  ```
-
-  [HashMap.cpp](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/Ndk/Ndk2/entry/src/main/cpp/HashMap/HashMap.cpp#L61-L75)

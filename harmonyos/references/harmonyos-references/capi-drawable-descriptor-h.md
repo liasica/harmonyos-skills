@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: drawable_descriptor.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > drawable_descriptor.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:45+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3f1fec4766eff585786457e9ca50b0fca29d238ef15ee8081f7786c6bd941e9a
+scraped_at: 2026-09-02T15:01:15+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:08b0529c7e62b1934827a4ed88f39ec9b3b3b15577f071759b6bc3899783f841
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供NativeDrawableDescriptor接口的类型定义。
 
@@ -28,32 +26,25 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [ArkUI\_DrawableDescriptor](capi-arkui-nativemodule-arkui-drawabledescriptor.md) | ArkUI\_DrawableDescriptor | 定义DrawableDescriptor对象。 |
 | [OH\_PixelmapNative](capi-image-nativemodule-oh-pixelmapnative.md) | - | 使用Image Kit定义的Native侧的OH\_PixelmapNative对象。 |
 | [OH\_PixelmapNative\*](capi-arkui-nativemodule-oh-pixelmapnative8h.md) | OH\_PixelmapNativeHandle | 定义OH\_PixelmapNative对象指针类型。 |
-| [ArkUI\_Node](capi-arkui-nativemodule-arkui-node-descriptor.md) | - | 定义ArkUI native组件实例对象。  **起始版本：** 22 |
-| [ArkUI\_Node\*](capi-arkui-nativemodule-arkui-node8h.md) | ArkUI\_NodeHandle | 定义ArkUI native组件实例对象指针定义。  **起始版本：** 22 |
-| [ArkUI\_DrawableDescriptor\_AnimationController](module-arkui-drawabledescriptoranimationcontroller.md) | ArkUI\_DrawableDescriptor\_AnimationController | 定义DrawableDescriptor动图控制器对象。  **起始版本：** 22 |
+| [ArkUI\_Node](capi-arkui-nativemodule-arkui-node-descriptor.md) | - | 定义ArkUI Native组件实例对象，供ArkUI\_NodeHandle指针在Native接口中标识和传递组件实例。  **起始版本：** 22 |
+| [ArkUI\_Node\*](capi-arkui-nativemodule-arkui-node8h.md) | ArkUI\_NodeHandle | 定义 ArkUI Native 组件实例对象指针，用于在 ArkUI Native 接口中标识和传递组件实例，例如创建、挂载、移除或销毁组件节点。  **起始版本：** 22 |
+| [ArkUI\_DrawableDescriptor\_AnimationController](capi-arkui-nativemodule-arkui-drawabledescriptoranimationcontroller.md) | ArkUI\_DrawableDescriptor\_AnimationController | 定义DrawableDescriptor动图控制器对象。  **起始版本：** 22 |
 
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [DrawableDescriptor\_AnimationStatus](capi-drawable-descriptor-h.md#drawabledescriptor_animationstatus) | DrawableDescriptor\_AnimationStatus | 定义DrawableDescriptor动图的播放状态。 |
+| [DrawableDescriptor\_AnimationStopMode](capi-drawable-descriptor-h.md#drawabledescriptor_animationstopmode) | DrawableDescriptor\_AnimationStopMode | 定义[DrawableDescriptor](capi-arkui-nativemodule-arkui-drawabledescriptor.md)动图的停止模式。  **起始版本：** 24 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -62,7 +53,7 @@ PhonePC/2in1TabletTVWearable
 | [void OH\_ArkUI\_DrawableDescriptor\_Dispose(ArkUI\_DrawableDescriptor\* drawableDescriptor)](capi-drawable-descriptor-h.md#oh_arkui_drawabledescriptor_dispose) | 销毁DrawableDescriptor对象指针。 |
 | [OH\_PixelmapNativeHandle OH\_ArkUI\_DrawableDescriptor\_GetStaticPixelMap(ArkUI\_DrawableDescriptor\* drawableDescriptor)](capi-drawable-descriptor-h.md#oh_arkui_drawabledescriptor_getstaticpixelmap) | 获取PixelMap图片对象指针。 |
 | [OH\_PixelmapNativeHandle\* OH\_ArkUI\_DrawableDescriptor\_GetAnimatedPixelMapArray(ArkUI\_DrawableDescriptor\* drawableDescriptor)](capi-drawable-descriptor-h.md#oh_arkui_drawabledescriptor_getanimatedpixelmaparray) | 获取用于播放动画的PixelMap图片数组数据。 |
-| [int32\_t OH\_ArkUI\_DrawableDescriptor\_GetAnimatedPixelMapArraySize(ArkUI\_DrawableDescriptor\* drawableDescriptor)](capi-drawable-descriptor-h.md#oh_arkui_drawabledescriptor_getanimatedpixelmaparraysize) | 获取用于播放动画的PixelMap图片数组数据。 |
+| [int32\_t OH\_ArkUI\_DrawableDescriptor\_GetAnimatedPixelMapArraySize(ArkUI\_DrawableDescriptor\* drawableDescriptor)](capi-drawable-descriptor-h.md#oh_arkui_drawabledescriptor_getanimatedpixelmaparraysize) | 获取用于播放动画的PixelMap图片数组的大小。 |
 | [void OH\_ArkUI\_DrawableDescriptor\_SetAnimationDuration(ArkUI\_DrawableDescriptor\* drawableDescriptor, int32\_t duration)](capi-drawable-descriptor-h.md#oh_arkui_drawabledescriptor_setanimationduration) | 设置PixelMap图片数组播放总时长。 |
 | [int32\_t OH\_ArkUI\_DrawableDescriptor\_GetAnimationDuration(ArkUI\_DrawableDescriptor\* drawableDescriptor)](capi-drawable-descriptor-h.md#oh_arkui_drawabledescriptor_getanimationduration) | 获取PixelMap图片数组播放总时长。 |
 | [void OH\_ArkUI\_DrawableDescriptor\_SetAnimationIteration(ArkUI\_DrawableDescriptor\* drawableDescriptor, int32\_t iteration)](capi-drawable-descriptor-h.md#oh_arkui_drawabledescriptor_setanimationiteration) | 设置PixelMap图片数组播放次数。 |
@@ -71,24 +62,22 @@ PhonePC/2in1TabletTVWearable
 | [int32\_t OH\_ArkUI\_DrawableDescriptor\_GetAnimationFrameDurations(ArkUI\_DrawableDescriptor\* drawableDescriptor, uint32\_t\* durations, size\_t\* size)](capi-drawable-descriptor-h.md#oh_arkui_drawabledescriptor_getanimationframedurations) | 获取动图中的单帧播放时间。 |
 | [int32\_t OH\_ArkUI\_DrawableDescriptor\_SetAnimationAutoPlay(ArkUI\_DrawableDescriptor\* drawableDescriptor, uint32\_t autoPlay)](capi-drawable-descriptor-h.md#oh_arkui_drawabledescriptor_setanimationautoplay) | 设置动图是否自动播放。 |
 | [int32\_t OH\_ArkUI\_DrawableDescriptor\_GetAnimationAutoPlay(ArkUI\_DrawableDescriptor\* drawableDescriptor, uint32\_t\* autoPlay)](capi-drawable-descriptor-h.md#oh_arkui_drawabledescriptor_getanimationautoplay) | 获取动图是否自动播放。 |
+| [int32\_t OH\_ArkUI\_DrawableDescriptor\_SetAnimationStopMode(ArkUI\_DrawableDescriptor\* drawableDescriptor, DrawableDescriptor\_AnimationStopMode mode)](capi-drawable-descriptor-h.md#oh_arkui_drawabledescriptor_setanimationstopmode) | 设置动图的停止模式。 |
+| [int32\_t OH\_ArkUI\_DrawableDescriptor\_GetAnimationStopMode(const ArkUI\_DrawableDescriptor\* drawableDescriptor, DrawableDescriptor\_AnimationStopMode\* mode)](capi-drawable-descriptor-h.md#oh_arkui_drawabledescriptor_getanimationstopmode) | 获取动图的停止模式。 |
 | [int32\_t OH\_ArkUI\_DrawableDescriptor\_CreateAnimationController(ArkUI\_DrawableDescriptor\* drawableDescriptor, ArkUI\_NodeHandle node, ArkUI\_DrawableDescriptor\_AnimationController\*\* controller)](capi-drawable-descriptor-h.md#oh_arkui_drawabledescriptor_createanimationcontroller) | 创建动图控制器。 |
 | [void OH\_ArkUI\_DrawableDescriptor\_DisposeAnimationController( ArkUI\_DrawableDescriptor\_AnimationController\* controller)](capi-drawable-descriptor-h.md#oh_arkui_drawabledescriptor_disposeanimationcontroller) | 销毁动图控制器。 |
 | [int32\_t OH\_ArkUI\_DrawableDescriptor\_StartAnimation(ArkUI\_DrawableDescriptor\_AnimationController\* controller)](capi-drawable-descriptor-h.md#oh_arkui_drawabledescriptor_startanimation) | 从首帧开始播放。 |
-| [int32\_t OH\_ArkUI\_DrawableDescriptor\_StopAnimation(ArkUI\_DrawableDescriptor\_AnimationController\* controller)](capi-drawable-descriptor-h.md#oh_arkui_drawabledescriptor_stopanimation) | 停止动图播放并回到首帧。 |
+| [int32\_t OH\_ArkUI\_DrawableDescriptor\_StopAnimation(ArkUI\_DrawableDescriptor\_AnimationController\* controller)](capi-drawable-descriptor-h.md#oh_arkui_drawabledescriptor_stopanimation) | 停止动图播放。停止后的位置由OH\_ArkUI\_DrawableDescriptor\_SetAnimationStopMode设置的停止模式决定。 |
 | [int32\_t OH\_ArkUI\_DrawableDescriptor\_ResumeAnimation(ArkUI\_DrawableDescriptor\_AnimationController\* controller)](capi-drawable-descriptor-h.md#oh_arkui_drawabledescriptor_resumeanimation) | 从当前帧恢复动图播放。 |
 | [int32\_t OH\_ArkUI\_DrawableDescriptor\_PauseAnimation(ArkUI\_DrawableDescriptor\_AnimationController\* controller)](capi-drawable-descriptor-h.md#oh_arkui_drawabledescriptor_pauseanimation) | 暂停动图的播放，保持在当前帧。 |
 | [int32\_t OH\_ArkUI\_DrawableDescriptor\_GetAnimationStatus(ArkUI\_DrawableDescriptor\_AnimationController\* controller, DrawableDescriptor\_AnimationStatus\* status)](capi-drawable-descriptor-h.md#oh_arkui_drawabledescriptor_getanimationstatus) | 获取动图的播放状态。 |
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### DrawableDescriptor\_AnimationStatus
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum DrawableDescriptor_AnimationStatus
+```c
+enum DrawableDescriptor_AnimationStatus
 ```
 
 **描述：**
@@ -104,16 +93,29 @@ PhonePC/2in1TabletTVWearable
 | DRAWABLE\_DESCRIPTOR\_ANIMATION\_STATUS\_PAUSED = 2 | 动画处于暂停状态。 |
 | DRAWABLE\_DESCRIPTOR\_ANIMATION\_STATUS\_STOPPED = 3 | 动画处于停止状态。 |
 
-## 函数说明
+### DrawableDescriptor\_AnimationStopMode
 
-PhonePC/2in1TabletTVWearable
+```c
+enum DrawableDescriptor_AnimationStopMode
+```
+
+**描述：**
+
+定义[DrawableDescriptor](capi-arkui-nativemodule-arkui-drawabledescriptor.md)动图的停止模式。
+
+**起始版本：** 24
+
+| 枚举项 | 描述 |
+| --- | --- |
+| DRAWABLE\_DESCRIPTOR\_ANIMATION\_FIRST\_FRAME = 0 | 动图停止时回到首帧。 |
+| DRAWABLE\_DESCRIPTOR\_ANIMATION\_LAST\_FRAME = 1 | 动图停止时停留在最后一帧。 |
+
+## 函数说明
 
 ### OH\_ArkUI\_DrawableDescriptor\_CreateFromPixelMap()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. ArkUI_DrawableDescriptor* OH_ArkUI_DrawableDescriptor_CreateFromPixelMap(OH_PixelmapNativeHandle pixelMap)
+```c
+ArkUI_DrawableDescriptor* OH_ArkUI_DrawableDescriptor_CreateFromPixelMap(OH_PixelmapNativeHandle pixelMap)
 ```
 
 **描述：**
@@ -136,10 +138,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ArkUI\_DrawableDescriptor\_CreateFromAnimatedPixelMap()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. ArkUI_DrawableDescriptor* OH_ArkUI_DrawableDescriptor_CreateFromAnimatedPixelMap(OH_PixelmapNativeHandle* array, int32_t size)
+```c
+ArkUI_DrawableDescriptor* OH_ArkUI_DrawableDescriptor_CreateFromAnimatedPixelMap(OH_PixelmapNativeHandle* array, int32_t size)
 ```
 
 **描述：**
@@ -153,7 +153,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_PixelmapNativeHandle](capi-arkui-nativemodule-oh-pixelmapnative8h.md)\* array | PixelMap图片数组对象指针。 |
-| int32\_t size | PixelMap图片数组大小。 |
+| int32\_t size | PixelMap图片数组大小，单位为元素个数，必须为正整数；传入 NULL 数组或 size <= 0 时返回 nullptr。 |
 
 **返回：**
 
@@ -163,10 +163,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ArkUI\_DrawableDescriptor\_Dispose()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_ArkUI_DrawableDescriptor_Dispose(ArkUI_DrawableDescriptor* drawableDescriptor)
+```c
+void OH_ArkUI_DrawableDescriptor_Dispose(ArkUI_DrawableDescriptor* drawableDescriptor)
 ```
 
 **描述：**
@@ -183,10 +181,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ArkUI\_DrawableDescriptor\_GetStaticPixelMap()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_PixelmapNativeHandle OH_ArkUI_DrawableDescriptor_GetStaticPixelMap(ArkUI_DrawableDescriptor* drawableDescriptor)
+```c
+OH_PixelmapNativeHandle OH_ArkUI_DrawableDescriptor_GetStaticPixelMap(ArkUI_DrawableDescriptor* drawableDescriptor)
 ```
 
 **描述：**
@@ -209,10 +205,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ArkUI\_DrawableDescriptor\_GetAnimatedPixelMapArray()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_PixelmapNativeHandle* OH_ArkUI_DrawableDescriptor_GetAnimatedPixelMapArray(ArkUI_DrawableDescriptor* drawableDescriptor)
+```c
+OH_PixelmapNativeHandle* OH_ArkUI_DrawableDescriptor_GetAnimatedPixelMapArray(ArkUI_DrawableDescriptor* drawableDescriptor)
 ```
 
 **描述：**
@@ -235,15 +229,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ArkUI\_DrawableDescriptor\_GetAnimatedPixelMapArraySize()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ArkUI_DrawableDescriptor_GetAnimatedPixelMapArraySize(ArkUI_DrawableDescriptor* drawableDescriptor)
+```c
+int32_t OH_ArkUI_DrawableDescriptor_GetAnimatedPixelMapArraySize(ArkUI_DrawableDescriptor* drawableDescriptor)
 ```
 
 **描述：**
 
-获取用于播放动画的PixelMap图片数组数据。
+获取用于播放动画的PixelMap图片数组的大小。
 
 **起始版本：** 12
 
@@ -261,10 +253,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ArkUI\_DrawableDescriptor\_SetAnimationDuration()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_ArkUI_DrawableDescriptor_SetAnimationDuration(ArkUI_DrawableDescriptor* drawableDescriptor, int32_t duration)
+```c
+void OH_ArkUI_DrawableDescriptor_SetAnimationDuration(ArkUI_DrawableDescriptor* drawableDescriptor, int32_t duration)
 ```
 
 **描述：**
@@ -282,10 +272,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ArkUI\_DrawableDescriptor\_GetAnimationDuration()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ArkUI_DrawableDescriptor_GetAnimationDuration(ArkUI_DrawableDescriptor* drawableDescriptor)
+```c
+int32_t OH_ArkUI_DrawableDescriptor_GetAnimationDuration(ArkUI_DrawableDescriptor* drawableDescriptor)
 ```
 
 **描述：**
@@ -308,10 +296,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ArkUI\_DrawableDescriptor\_SetAnimationIteration()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_ArkUI_DrawableDescriptor_SetAnimationIteration(ArkUI_DrawableDescriptor* drawableDescriptor, int32_t iteration)
+```c
+void OH_ArkUI_DrawableDescriptor_SetAnimationIteration(ArkUI_DrawableDescriptor* drawableDescriptor, int32_t iteration)
 ```
 
 **描述：**
@@ -329,10 +315,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ArkUI\_DrawableDescriptor\_GetAnimationIteration()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ArkUI_DrawableDescriptor_GetAnimationIteration(ArkUI_DrawableDescriptor* drawableDescriptor)
+```c
+int32_t OH_ArkUI_DrawableDescriptor_GetAnimationIteration(ArkUI_DrawableDescriptor* drawableDescriptor)
 ```
 
 **描述：**
@@ -355,10 +339,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ArkUI\_DrawableDescriptor\_SetAnimationFrameDurations()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ArkUI_DrawableDescriptor_SetAnimationFrameDurations(ArkUI_DrawableDescriptor* drawableDescriptor, uint32_t* durations, size_t size)
+```c
+int32_t OH_ArkUI_DrawableDescriptor_SetAnimationFrameDurations(ArkUI_DrawableDescriptor* drawableDescriptor, uint32_t* durations, size_t size)
 ```
 
 **描述：**
@@ -379,14 +361,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 输入参数错误。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 输入参数错误。 |
 
 ### OH\_ArkUI\_DrawableDescriptor\_GetAnimationFrameDurations()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ArkUI_DrawableDescriptor_GetAnimationFrameDurations(ArkUI_DrawableDescriptor* drawableDescriptor, uint32_t* durations, size_t* size)
+```c
+int32_t OH_ArkUI_DrawableDescriptor_GetAnimationFrameDurations(ArkUI_DrawableDescriptor* drawableDescriptor, uint32_t* durations, size_t* size)
 ```
 
 **描述：**
@@ -407,14 +387,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 输入参数错误。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 输入参数错误。 |
 
 ### OH\_ArkUI\_DrawableDescriptor\_SetAnimationAutoPlay()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ArkUI_DrawableDescriptor_SetAnimationAutoPlay(ArkUI_DrawableDescriptor* drawableDescriptor, uint32_t autoPlay)
+```c
+int32_t OH_ArkUI_DrawableDescriptor_SetAnimationAutoPlay(ArkUI_DrawableDescriptor* drawableDescriptor, uint32_t autoPlay)
 ```
 
 **描述：**
@@ -428,20 +406,18 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [ArkUI\_DrawableDescriptor](capi-arkui-nativemodule-arkui-drawabledescriptor.md)\* drawableDescriptor | DrawableDescriptor对象指针。 |
-| uint32\_t autoPlay | 是否自动播放。  1表示自动播放，0表示不自动播放。  默认值为1。 |
+| uint32\_t autoPlay | 控制动图是否自动播放。  1表示自动播放，0表示不自动播放。  默认值为1。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 输入参数错误。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 输入参数错误。 |
 
 ### OH\_ArkUI\_DrawableDescriptor\_GetAnimationAutoPlay()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ArkUI_DrawableDescriptor_GetAnimationAutoPlay(ArkUI_DrawableDescriptor* drawableDescriptor, uint32_t* autoPlay)
+```c
+int32_t OH_ArkUI_DrawableDescriptor_GetAnimationAutoPlay(ArkUI_DrawableDescriptor* drawableDescriptor, uint32_t* autoPlay)
 ```
 
 **描述：**
@@ -461,19 +437,67 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 输入参数错误。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 输入参数错误。 |
 
-### OH\_ArkUI\_DrawableDescriptor\_CreateAnimationController()
+### OH\_ArkUI\_DrawableDescriptor\_SetAnimationStopMode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ArkUI_DrawableDescriptor_CreateAnimationController(ArkUI_DrawableDescriptor* drawableDescriptor, ArkUI_NodeHandle node, ArkUI_DrawableDescriptor_AnimationController** controller)
+```c
+int32_t OH_ArkUI_DrawableDescriptor_SetAnimationStopMode(ArkUI_DrawableDescriptor* drawableDescriptor, DrawableDescriptor_AnimationStopMode mode)
 ```
 
 **描述：**
 
-创建动图控制器。
+设置动图的停止模式。
+
+**起始版本：** 24
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [ArkUI\_DrawableDescriptor](capi-arkui-nativemodule-arkui-drawabledescriptor.md)\* drawableDescriptor | [DrawableDescriptor](capi-arkui-nativemodule-arkui-drawabledescriptor.md)对象指针。 |
+| [DrawableDescriptor\_AnimationStopMode](capi-drawable-descriptor-h.md#drawabledescriptor_animationstopmode) mode | 动图停止模式。  取值为[DrawableDescriptor\_AnimationStopMode](capi-drawable-descriptor-h.md#drawabledescriptor_animationstopmode)枚举值，默认值为[DRAWABLE\_DESCRIPTOR\_ANIMATION\_FIRST\_FRAME](capi-drawable-descriptor-h.md#drawabledescriptor_animationstopmode)。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 输入参数错误。 |
+
+### OH\_ArkUI\_DrawableDescriptor\_GetAnimationStopMode()
+
+```c
+int32_t OH_ArkUI_DrawableDescriptor_GetAnimationStopMode(const ArkUI_DrawableDescriptor* drawableDescriptor, DrawableDescriptor_AnimationStopMode* mode)
+```
+
+**描述：**
+
+获取动图的停止模式。
+
+**起始版本：** 24
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [ArkUI\_DrawableDescriptor](capi-arkui-nativemodule-arkui-drawabledescriptor.md)\* drawableDescriptor | [DrawableDescriptor](capi-arkui-nativemodule-arkui-drawabledescriptor.md)对象指针。 |
+| [DrawableDescriptor\_AnimationStopMode](capi-drawable-descriptor-h.md#drawabledescriptor_animationstopmode)\* mode | 动图停止模式。  取值含义请参考[DrawableDescriptor\_AnimationStopMode](capi-drawable-descriptor-h.md#drawabledescriptor_animationstopmode)。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 输入参数错误。 |
+
+### OH\_ArkUI\_DrawableDescriptor\_CreateAnimationController()
+
+```c
+int32_t OH_ArkUI_DrawableDescriptor_CreateAnimationController(ArkUI_DrawableDescriptor* drawableDescriptor, ArkUI_NodeHandle node, ArkUI_DrawableDescriptor_AnimationController** controller)
+```
+
+**描述：**
+
+创建动图控制器。当需要手动控制动图播放（如逐帧播放、暂停、跳转到指定帧、设置单帧时长）而非使用自动播放时，通过本接口获取控制器，再调用 StartAnimation/Pause 等控制接口。
 
 **起始版本：** 22
 
@@ -481,22 +505,20 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [ArkUI\_DrawableDescriptor](capi-arkui-nativemodule-arkui-drawabledescriptor.md)\* drawableDescriptor | DrawableDescriptor对象指针。 |
-| [ArkUI\_NodeHandle](capi-arkui-nativemodule-arkui-node8h.md) node | 组件节点指针。 |
-| [ArkUI\_DrawableDescriptor\_AnimationController](module-arkui-drawabledescriptoranimationcontroller.md)\*\* controller | DrawableDescriptor动图控制器对象指针。 |
+| [ArkUI\_DrawableDescriptor](capi-arkui-nativemodule-arkui-drawabledescriptor.md)\* drawableDescriptor | DrawableDescriptor对象指针。必须是通过[OH\_ArkUI\_DrawableDescriptor\_CreateFromAnimatedPixelMap](capi-drawable-descriptor-h.md#oh_arkui_drawabledescriptor_createfromanimatedpixelmap)创建的动图对象。 |
+| [ArkUI\_NodeHandle](capi-arkui-nativemodule-arkui-node8h.md) node | 组件节点指针。必须是有效的ArkUI组件节点。 |
+| [ArkUI\_DrawableDescriptor\_AnimationController](capi-arkui-nativemodule-arkui-drawabledescriptoranimationcontroller.md)\*\* controller | DrawableDescriptor动图控制器对象指针。输出参数，调用成功时返回控制器指针。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 输入参数错误。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 输入参数错误。 |
 
 ### OH\_ArkUI\_DrawableDescriptor\_DisposeAnimationController()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_ArkUI_DrawableDescriptor_DisposeAnimationController(ArkUI_DrawableDescriptor_AnimationController* controller)
+```c
+void OH_ArkUI_DrawableDescriptor_DisposeAnimationController(ArkUI_DrawableDescriptor_AnimationController* controller)
 ```
 
 **描述：**
@@ -509,14 +531,12 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [ArkUI\_DrawableDescriptor\_AnimationController](module-arkui-drawabledescriptoranimationcontroller.md)\* controller | DrawableDescriptor动图控制器对象指针。 |
+| [ArkUI\_DrawableDescriptor\_AnimationController](capi-arkui-nativemodule-arkui-drawabledescriptoranimationcontroller.md)\* controller | DrawableDescriptor动图控制器对象指针。 |
 
 ### OH\_ArkUI\_DrawableDescriptor\_StartAnimation()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ArkUI_DrawableDescriptor_StartAnimation(ArkUI_DrawableDescriptor_AnimationController* controller);
+```c
+int32_t OH_ArkUI_DrawableDescriptor_StartAnimation(ArkUI_DrawableDescriptor_AnimationController* controller)
 ```
 
 **描述：**
@@ -529,20 +549,18 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [ArkUI\_DrawableDescriptor\_AnimationController](module-arkui-drawabledescriptoranimationcontroller.md)\* controller | DrawableDescriptor动图控制器对象指针。 |
+| [ArkUI\_DrawableDescriptor\_AnimationController](capi-arkui-nativemodule-arkui-drawabledescriptoranimationcontroller.md)\* controller | DrawableDescriptor动图控制器对象指针。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 输入参数错误。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 输入参数错误。 |
 
 ### OH\_ArkUI\_DrawableDescriptor\_StopAnimation()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ArkUI_DrawableDescriptor_StopAnimation(ArkUI_DrawableDescriptor_AnimationController* controller);
+```c
+int32_t OH_ArkUI_DrawableDescriptor_StopAnimation(ArkUI_DrawableDescriptor_AnimationController* controller)
 ```
 
 **描述：**
@@ -555,20 +573,18 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [ArkUI\_DrawableDescriptor\_AnimationController](module-arkui-drawabledescriptoranimationcontroller.md)\* controller | DrawableDescriptor动图控制器对象指针。 |
+| [ArkUI\_DrawableDescriptor\_AnimationController](capi-arkui-nativemodule-arkui-drawabledescriptoranimationcontroller.md)\* controller | DrawableDescriptor动图控制器对象指针。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 输入参数错误。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 输入参数错误。 |
 
 ### OH\_ArkUI\_DrawableDescriptor\_ResumeAnimation()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ArkUI_DrawableDescriptor_ResumeAnimation(ArkUI_DrawableDescriptor_AnimationController* controller);
+```c
+int32_t OH_ArkUI_DrawableDescriptor_ResumeAnimation(ArkUI_DrawableDescriptor_AnimationController* controller)
 ```
 
 **描述：**
@@ -581,20 +597,18 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [ArkUI\_DrawableDescriptor\_AnimationController](module-arkui-drawabledescriptoranimationcontroller.md)\* controller | DrawableDescriptor动图控制器对象指针。 |
+| [ArkUI\_DrawableDescriptor\_AnimationController](capi-arkui-nativemodule-arkui-drawabledescriptoranimationcontroller.md)\* controller | DrawableDescriptor动图控制器对象指针。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 输入参数错误。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 输入参数错误。 |
 
 ### OH\_ArkUI\_DrawableDescriptor\_PauseAnimation()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ArkUI_DrawableDescriptor_PauseAnimation(ArkUI_DrawableDescriptor_AnimationController* controller);
+```c
+int32_t OH_ArkUI_DrawableDescriptor_PauseAnimation(ArkUI_DrawableDescriptor_AnimationController* controller)
 ```
 
 **描述：**
@@ -607,20 +621,18 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [ArkUI\_DrawableDescriptor\_AnimationController](module-arkui-drawabledescriptoranimationcontroller.md)\* controller | DrawableDescriptor动图控制器对象指针。 |
+| [ArkUI\_DrawableDescriptor\_AnimationController](capi-arkui-nativemodule-arkui-drawabledescriptoranimationcontroller.md)\* controller | DrawableDescriptor动图控制器对象指针。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 输入参数错误。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 输入参数错误。 |
 
 ### OH\_ArkUI\_DrawableDescriptor\_GetAnimationStatus()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_ArkUI_DrawableDescriptor_GetAnimationStatus(ArkUI_DrawableDescriptor_AnimationController* controller, DrawableDescriptor_AnimationStatus* status);
+```c
+int32_t OH_ArkUI_DrawableDescriptor_GetAnimationStatus(ArkUI_DrawableDescriptor_AnimationController* controller, DrawableDescriptor_AnimationStatus* status)
 ```
 
 **描述：**
@@ -633,11 +645,11 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [ArkUI\_DrawableDescriptor\_AnimationController](module-arkui-drawabledescriptoranimationcontroller.md)\* controller | DrawableDescriptor动图控制器对象指针。 |
+| [ArkUI\_DrawableDescriptor\_AnimationController](capi-arkui-nativemodule-arkui-drawabledescriptoranimationcontroller.md)\* controller | DrawableDescriptor动图控制器对象指针。 |
 | [DrawableDescriptor\_AnimationStatus](capi-drawable-descriptor-h.md#drawabledescriptor_animationstatus)\* status | DrawableDescriptor动图的播放状态。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 输入参数错误。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 输入参数错误。 |

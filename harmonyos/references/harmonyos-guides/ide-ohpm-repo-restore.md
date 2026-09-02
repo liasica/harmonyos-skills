@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo restore
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo restore
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:44:41+08:00
+scraped_at: 2026-09-02T15:00:18+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:e4a4f6981608f09ff3798fdc35ca12a8b4bae2aa7ec45370f1b3744ab89d7cee
+content_hash: sha256:d0d4134b38875a36d1e347f8bdcbf22c38f4c1234512c31ea72f1586400a9f98
 ---
 
 将ohpm-repo pack打包产物替换<deploy\_root>目录下相应文件，重启服务。
@@ -17,15 +17,15 @@ content_hash: sha256:e4a4f6981608f09ff3798fdc35ca12a8b4bae2aa7ec45370f1b3744ab89
 
 ## 命令格式
 
-```
-1. ohpm-repo restore <file_path>
+```screen
+ohpm-repo restore <file_path>
 ```
 
 ## 功能描述
 
 该命令会停止当前ohpm-repo服务，并用打包文件<file\_path>中的内容替换ohpm-repo部署根目录<deploy\_root>的相应文件，然后重启ohpm-repo服务。该命令执行前必须已执行过ohpm-repo实例启动命令ohpm-repo start。
 
-说明
+**说明** 
 
 * <file\_path>：由ohpm-repo pack命令得到的打包产物。
 
@@ -46,10 +46,10 @@ content_hash: sha256:e4a4f6981608f09ff3798fdc35ca12a8b4bae2aa7ec45370f1b3744ab89
 
 执行以下命令：
 
-```
-1. ohpm-repo restore "D:\pack_1702625827995.zip"
+```screen
+ohpm-repo restore "D:\pack_1702625827995.zip"
 ```
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Hs-aAkTuSbGfnca7QLancQ/zh-cn_image_0000002561831217.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/9n6cr-QxQvmTsMTmf3H1Fw/zh-cn_image_0000002731541779.png "点击放大")

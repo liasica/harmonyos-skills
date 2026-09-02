@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-m
 title: 循环渲染迁移
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1-V2迁移指导 > 状态管理V1向V2迁移场景 > 循环渲染迁移
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:29+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6140f1b01499f28919a5ade8224aca2c4e554e62a7bec0d4718430bb2f731aaa
+scraped_at: 2026-09-02T14:59:16+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6bcb1c580b926f961c57193d4b43ce5b88c2df698572b830e1c098f0ae01a968
 ---
 
 本文档主要介绍组件循环渲染从V1向V2的迁移，涉及如下渲染控制组件。
@@ -27,104 +27,104 @@ Repeat需要和状态管理V2一起使用，状态管理V2提供了@ObservedV2�
 * 其余V1装饰器遵循迁移规则，替换成V2相关装饰器。
 * 直接把ForEach的循环结构替换成Repeat结构。
 
-```
-1. @ObservedV2
-2. class ArticleChangeChild {
-3. public id: string;
-4. public title: string;
-5. public brief: string;
-6. @Trace public isLiked: boolean;
-7. @Trace public likesCount: number;
+```typescript
+@ObservedV2
+export class ArticleChangeChild {
+  public id: string;
+  public title: string;
+  public brief: string;
+  @Trace public isLiked: boolean;
+  @Trace public likesCount: number;
 
-9. constructor(id: string, title: string, brief: string, isLiked: boolean, likesCount: number) {
-10. this.id = id;
-11. this.title = title;
-12. this.brief = brief;
-13. this.isLiked = isLiked;
-14. this.likesCount = likesCount;
-15. }
-16. }
+  constructor(id: string, title: string, brief: string, isLiked: boolean, likesCount: number) {
+    this.id = id;
+    this.title = title;
+    this.brief = brief;
+    this.isLiked = isLiked;
+    this.likesCount = likesCount;
+  }
+}
 
-18. @Entry
-19. @ComponentV2
-20. struct ArticleListChangeView {
-21. @Local articleList: Array<ArticleChangeChild> = [
-22. new ArticleChangeChild('001', 'Article 0', 'Abstract', false, 100),
-23. new ArticleChangeChild('002', 'Article 1', 'Abstract', false, 100),
-24. new ArticleChangeChild('003', 'Article 2', 'Abstract', false, 100),
-25. new ArticleChangeChild('004', 'Article 4', 'Abstract', false, 100),
-26. new ArticleChangeChild('005', 'Article 5', 'Abstract', false, 100),
-27. new ArticleChangeChild('006', 'Article 6', 'Abstract', false, 100),
-28. ];
+@Entry
+@ComponentV2
+export struct ArticleListChangeView {
+  @Local articleList: Array<ArticleChangeChild> = [
+    new ArticleChangeChild('001', 'Article 0', 'Abstract', false, 100),
+    new ArticleChangeChild('002', 'Article 1', 'Abstract', false, 100),
+    new ArticleChangeChild('003', 'Article 2', 'Abstract', false, 100),
+    new ArticleChangeChild('004', 'Article 4', 'Abstract', false, 100),
+    new ArticleChangeChild('005', 'Article 5', 'Abstract', false, 100),
+    new ArticleChangeChild('006', 'Article 6', 'Abstract', false, 100),
+  ];
 
-30. build() {
-31. List() {
-32. // Repeat结构体
-33. Repeat(this.articleList)
-34. .each((obj: RepeatItem<ArticleChangeChild>) => {
-35. ListItem() {
-36. ArticleCardChangeChild({ article: obj.item })
-37. .margin({ top: 20 })
-38. }
-39. })
-40. .key(item => item.id)
-41. }
-42. .padding(20)
-43. .scrollBar(BarState.Off)
-44. .backgroundColor(0xF1F3F5)
-45. }
-46. }
+  build() {
+    List() {
+      // Repeat结构体
+      Repeat(this.articleList)
+        .each((obj: RepeatItem<ArticleChangeChild>) => {
+          ListItem() {
+            ArticleCardChangeChild({ article: obj.item })
+              .margin({ top: 20 })
+          }
+        })
+        .key(item => item.id)
+    }
+    .padding(20)
+    .scrollBar(BarState.Off)
+    .backgroundColor(0xF1F3F5)
+  }
+}
 
-48. @ComponentV2
-49. struct ArticleCardChangeChild {
-50. @Require @Param article: ArticleChangeChild;
+@ComponentV2
+export struct ArticleCardChangeChild {
+  @Require @Param article: ArticleChangeChild;
 
-52. handleLiked() {
-53. this.article.isLiked = !this.article.isLiked;
-54. this.article.likesCount = this.article.isLiked ? this.article.likesCount + 1 : this.article.likesCount - 1;
-55. }
+  handleLiked() {
+    this.article.isLiked = !this.article.isLiked;
+    this.article.likesCount = this.article.isLiked ? this.article.likesCount + 1 : this.article.likesCount - 1;
+  }
 
-57. build() {
-58. Row() {
-59. // 此处'app.media.startIcon'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
-60. Image($r('app.media.startIcon'))
-61. .width(80)
-62. .height(80)
-63. .margin({ right: 20 })
+  build() {
+    Row() {
+      // 此处'app.media.startIcon'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
+      Image($r('app.media.startIcon'))
+        .width(80)
+        .height(80)
+        .margin({ right: 20 })
 
-65. Column() {
-66. Text(this.article.title)
-67. .fontSize(20)
-68. .margin({ bottom: 8 })
-69. Text(this.article.brief)
-70. .fontSize(16)
-71. .fontColor(Color.Gray)
-72. .margin({ bottom: 8 })
+      Column() {
+        Text(this.article.title)
+          .fontSize(20)
+          .margin({ bottom: 8 })
+        Text(this.article.brief)
+          .fontSize(16)
+          .fontColor(Color.Gray)
+          .margin({ bottom: 8 })
 
-74. Row() {
-75. // 此处app.media.iconLiked'，'app.media.iconUnLiked'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
-76. Image(this.article.isLiked ? $r('app.media.iconLiked') : $r('app.media.iconUnLiked'))
-77. .width(24)
-78. .height(24)
-79. .margin({ right: 8 })
-80. Text(this.article.likesCount.toString())
-81. .fontSize(16)
-82. }
-83. .onClick(() => this.handleLiked())
-84. .justifyContent(FlexAlign.Center)
-85. }
-86. .alignItems(HorizontalAlign.Start)
-87. .width('80%')
-88. .height('100%')
-89. }
-90. .padding(20)
-91. .borderRadius(12)
-92. .backgroundColor('#FFECECEC')
-93. .height(120)
-94. .width('100%')
-95. .justifyContent(FlexAlign.SpaceBetween)
-96. }
-97. }
+        Row() {
+          // 此处app.media.iconLiked'，'app.media.iconUnliked'仅作示例，请开发者自行替换，否则imageSource创建失败会导致后续无法正常执行。
+          Image(this.article.isLiked ? $r('app.media.iconLiked') : $r('app.media.iconUnliked'))
+            .width(24)
+            .height(24)
+            .margin({ right: 8 })
+          Text(this.article.likesCount.toString())
+            .fontSize(16)
+        }
+        .onClick(() => this.handleLiked())
+        .justifyContent(FlexAlign.Center)
+      }
+      .alignItems(HorizontalAlign.Start)
+      .width('80%')
+      .height('100%')
+    }
+    .padding(20)
+    .borderRadius(12)
+    .backgroundColor('#FFECECEC')
+    .height(120)
+    .width('100%')
+    .justifyContent(FlexAlign.SpaceBetween)
+  }
+}
 ```
 
 ## LazyForEach迁移Repeat
@@ -139,52 +139,57 @@ LazyForEach根据数据源循环渲染子组件。
 
 **示例1 - 迁移前**
 
-```
-1. /* BasicDataSource代码见文档末尾BasicDataSource示例代码: string类型数组的BasicDataSource代码 */
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+// BasicDataSource代码见文档末尾BasicDataSource示例代码: string类型数组的BasicDataSource代码。
+import { BasicDataSource } from './BasicDataSource';
 
-3. class MyDataSource extends BasicDataSource {
-4. private dataArray: string[] = [];
+const TAG = '[Sample_RenderingControl]';
+const DOMAIN = 0xF811;
 
-6. public totalCount(): number {
-7. return this.dataArray.length;
-8. }
+export class MyDataSource extends BasicDataSource {
+  private dataArray: string[] = [];
 
-10. public getData(index: number): string {
-11. return this.dataArray[index];
-12. }
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
 
-14. public pushData(data: string): void {
-15. this.dataArray.push(data);
-16. this.notifyDataAdd(this.dataArray.length - 1);
-17. }
-18. }
+  public getData(index: number): string {
+    return this.dataArray[index];
+  }
 
-20. @Entry
-21. @Component
-22. struct MyComponent {
-23. private data: MyDataSource = new MyDataSource();
+  public pushData(data: string): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
+}
 
-25. aboutToAppear() {
-26. for (let i = 0; i <= 20; i++) {
-27. this.data.pushData(`Hello ${i}`);
-28. }
-29. }
+@Entry
+@Component
+export struct MyComponent {
+  private data: MyDataSource = new MyDataSource();
 
-31. build() {
-32. List({ space: 3 }) {
-33. LazyForEach(this.data, (item: string) => {
-34. ListItem() {
-35. Row() {
-36. Text(item).fontSize(50)
-37. .onAppear(() => {
-38. console.info(`appear: ${item}`);
-39. })
-40. }.margin({ left: 10, right: 10 })
-41. }
-42. }, (item: string) => item)
-43. }.cachedCount(5)
-44. }
-45. }
+  aboutToAppear() {
+    for (let i = 0; i <= 20; i++) {
+      this.data.pushData(`Hello ${i}`);
+    }
+  }
+
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (item: string) => {
+        ListItem() {
+          Row() {
+            Text(item).fontSize(50)
+              .onAppear(() => {
+                hilog.info(DOMAIN, TAG, `appear: ${item}`);
+              })
+          }.margin({ left: 10, right: 10 })
+        }
+      }, (item: string) => item)
+    }.cachedCount(5)
+  }
+}
 ```
 
 以上是一个典型的使用LazyForEach循环渲染子组件的场景，下面将介绍如何将此示例迁移至Repeat。
@@ -195,51 +200,51 @@ LazyForEach根据数据源循环渲染子组件。
 
    Repeat推荐和状态管理V2装饰器配合使用（[懒加载](arkts-new-rendering-control-repeat.md#懒加载能力说明)模式下只支持和状态管理V2装饰器配合使用）。如果之前使用的是状态管理V1装饰器，需要修改为状态管理V2装饰器。
 
-   ```
-   1. // 迁移前 - LazyForEach
-   2. @Component // 状态管理V1
-   3. struct MyComponent {
-   4. build() {
-   5. // ...
-   6. LazyForEach(...)
-   7. // ...
-   8. }
-   9. // ...其他属性、方法
-   10. }
-
-   12. // 迁移后 - Repeat
-   13. @ComponentV2 // 状态管理V2
-   14. struct MyComponent {
-   15. build() {
-   16. // ...
-   17. Repeat(...)
-   18. // ...
-   19. }
-   20. // ...其他属性、方法
-   21. }
+   ```typescript
+   // 迁移前 - LazyForEach
+   @Component // 状态管理V1
+   struct MyComponent {
+     build() {
+       // ...
+       LazyForEach(...)
+       // ...
+     }
+     // ...其他属性、方法
+   }
+     
+   // 迁移后 - Repeat
+   @ComponentV2 // 状态管理V2
+   struct MyComponent {
+     build() {
+       // ...
+       Repeat(...)
+       // ...
+     }
+     // ...其他属性、方法
+   }
    ```
 2. 迁移数据源。
 
    LazyForEach使用专用的数据结构[IDataSource](../harmonyos-references/ts-rendering-control-lazyforeach.md#idatasource)作为数据源。迁移至Repeat后，不再使用IDataSource作为数据源，而是使用状态管理V2装饰的数组作为数据源。
 
-   ```
-   1. // 迁移前 - LazyForEach
-   2. class MyDataSource implements IDataSource {
-   3. private dataArray: string[] = [];
+   ```typescript
+   // 迁移前 - LazyForEach
+   class MyDataSource implements IDataSource {
+     private dataArray: string[] = [];
+     
+     public totalCount(): number {
+       return this.dataArray.length;
+     }
+     
+     public getData(index: number): string {
+       return this.dataArray[index];
+     }
+     
+     // ...其他方法
+   }
 
-   5. public totalCount(): number {
-   6. return this.dataArray.length;
-   7. }
-
-   9. public getData(index: number): string {
-   10. return this.dataArray[index];
-   11. }
-
-   13. // ...其他方法
-   14. }
-
-   16. // 迁移后 - Repeat
-   17. @Local data: Array<string> = [];
+   // 迁移后 - Repeat
+   @Local data: Array<string> = [];
    ```
 3. 迁移组件生成函数和键值生成函数。
 
@@ -247,30 +252,30 @@ LazyForEach根据数据源循环渲染子组件。
 
    从LazyForEach迁移至Repeat时，两者的语法存在差异。Repeat需要在[.each()](../harmonyos-references/ts-rendering-control-repeat.md#each)或[.template()](../harmonyos-references/ts-rendering-control-repeat.md#template)中设置组件生成函数，在[.key()](../harmonyos-references/ts-rendering-control-repeat.md#key)中设置键值生成函数。
 
-   ```
-   1. // 迁移前 - LazyForEach
-   2. List() {
-   3. LazyForEach(
-   4. this.data, // 数据源
-   5. (item: string, index: number) => { // 组件生成函数
-   6. ListItem() {
-   7. Text(item)
-   8. }
-   9. },
-   10. (item: string, index: number) => item // 键值生成函数
-   11. )
-   12. }
+   ```typescript
+   // 迁移前 - LazyForEach
+   List() {
+     LazyForEach(
+       this.data, // 数据源
+       (item: string, index: number) => { // 组件生成函数
+         ListItem() {
+           Text(item)
+         }
+       },
+       (item: string, index: number) => item // 键值生成函数
+     )
+   }
 
-   14. // 迁移后 - Repeat
-   15. List() {
-   16. Repeat<string>(this.data) // 数据源
-   17. .each((repeatItem: RepeatItem<string>) => { // 组件生成函数
-   18. ListItem() {
-   19. Text(repeatItem.item)
-   20. }
-   21. })
-   22. .key((item: string, index: number) => item) // 键值生成函数
-   23. }
+   // 迁移后 - Repeat
+   List() {
+     Repeat<string>(this.data) // 数据源
+       .each((repeatItem: RepeatItem<string>) => { // 组件生成函数
+         ListItem() {
+           Text(repeatItem.item)
+         }
+       })
+       .key((item: string, index: number) => item) // 键值生成函数
+   }
    ```
 4. 配置懒加载功能。
 
@@ -281,13 +286,13 @@ LazyForEach根据数据源循环渲染子组件。
 
    从LazyForEach迁移至Repeat时，需要调用[virtualScroll](../harmonyos-references/ts-rendering-control-repeat.md#virtualscroll)属性，使能懒加载。
 
-   ```
-   1. // 迁移前 - LazyForEach
-   2. LazyForEach(data, (item) => {...}, (item) => item)
+   ```typescript
+   // 迁移前 - LazyForEach
+   LazyForEach(data, (item) => {...}, (item) => item)
 
-   4. // 迁移后 - Repeat
-   5. Repeat(data)
-   6. .virtualScroll() // 使能懒加载
+   // 迁移后 - Repeat
+   Repeat(data)
+     .virtualScroll() // 使能懒加载
    ```
 
 **迁移后代码**
@@ -296,41 +301,45 @@ LazyForEach根据数据源循环渲染子组件。
 
 **示例1 - 迁移后**
 
-```
-1. @Entry
-2. @ComponentV2 // 使用状态管理V2
-3. struct MyComponent {
-4. @Local data: Array<string> = []; // 数据源为状态管理V2装饰的数组
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+const TAG = '[Sample_RenderingControl]';
+const DOMAIN = 0xF811;
 
-6. aboutToAppear() {
-7. for (let i = 0; i <= 20; i++) {
-8. this.data.push(`Hello ${i}`);
-9. }
-10. }
+@Entry
+@ComponentV2 // 使用状态管理V2
+export struct MyComponent {
+  @Local data: Array<string> = []; // 数据源为状态管理V2装饰的数组
 
-12. build() {
-13. List({ space: 3 }) {
-14. Repeat(this.data) // 使用Repeat
-15. .each((repeatItem: RepeatItem<string>) => { // 组件生成函数
-16. ListItem() {
-17. Row() {
-18. Text(repeatItem.item).fontSize(50)
-19. .onAppear(() => {
-20. console.info(`appear: ${repeatItem.item}`);
-21. })
-22. }.margin({ left: 10, right: 10 })
-23. }
-24. })
-25. .key((item: string) => item) // 键值生成函数
-26. .virtualScroll() // 使能懒加载
-27. }.cachedCount(5)
-28. }
-29. }
+  aboutToAppear() {
+    for (let i = 0; i <= 20; i++) {
+      this.data.push(`Hello ${i}`);
+    }
+  }
+
+  build() {
+    List({ space: 3 }) {
+      Repeat(this.data) // 使用Repeat
+        .each((repeatItem: RepeatItem<string>) => { // 组件生成函数
+          ListItem() {
+            Row() {
+              Text(repeatItem.item).fontSize(50)
+                .onAppear(() => {
+                  hilog.info(DOMAIN, TAG, `appear: ${repeatItem.item}`);
+                })
+            }.margin({ left: 10, right: 10 })
+          }
+        })
+        .key((item: string) => item) // 键值生成函数
+        .virtualScroll() // 使能懒加载
+    }.cachedCount(5)
+  }
+}
 ```
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/o69-CAHkTKGzNKiKvmOkqg/zh-cn_image_0000002589323987.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/nASId9cbRjWVr1X0rAezyA/zh-cn_image_0000002736432467.gif)
 
 ### 数据更新操作
 
@@ -342,106 +351,111 @@ LazyForEach根据数据源循环渲染子组件。
 
 **示例2 - 迁移前**
 
-```
-1. /* BasicDataSource代码见文档末尾BasicDataSource示例代码: string类型数组的BasicDataSource代码 */
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+// BasicDataSource代码见文档末尾BasicDataSource示例代码: string类型数组的BasicDataSource代码。
+import { BasicDataSource } from './BasicDataSource';
 
-3. class MyDataSource extends BasicDataSource {
-4. private dataArray: string[] = [];
+const TAG = '[Sample_RenderingControl]';
+const DOMAIN = 0xF811;
 
-6. public totalCount(): number {
-7. return this.dataArray.length;
-8. }
+export class MyDataSource extends BasicDataSource {
+  private dataArray: string[] = [];
 
-10. public getData(index: number): string {
-11. return this.dataArray[index];
-12. }
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
 
-14. // 添加数据
-15. public pushData(data: string): void {
-16. this.dataArray.push(data);
-17. this.notifyDataAdd(this.dataArray.length - 1);
-18. }
+  public getData(index: number): string {
+    return this.dataArray[index];
+  }
 
-20. // 删除数据
-21. public deleteData(index: number): void {
-22. this.dataArray.splice(index, 1);
-23. this.notifyDataDelete(index);
-24. }
+  // 添加数据
+  public pushData(data: string): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
 
-26. // 交换数据
-27. public moveData(from: number, to: number): void {
-28. let temp: string = this.dataArray[from];
-29. this.dataArray[from] = this.dataArray[to];
-30. this.dataArray[to] = temp;
-31. this.notifyDataMove(from, to);
-32. }
+  // 删除数据
+  public deleteData(index: number): void {
+    this.dataArray.splice(index, 1);
+    this.notifyDataDelete(index);
+  }
 
-34. // 修改单个数据
-35. public changeData(index: number, data: string): void {
-36. this.dataArray.splice(index, 1, data);
-37. this.notifyDataChange(index);
-38. }
+  // 交换数据
+  public moveData(from: number, to: number): void {
+    let temp: string = this.dataArray[from];
+    this.dataArray[from] = this.dataArray[to];
+    this.dataArray[to] = temp;
+    this.notifyDataMove(from, to);
+  }
 
-40. // 修改多个数据
-41. public modifyAllData(): void {
-42. this.dataArray = this.dataArray.map((item: string) => {
-43. return 'Changed ' + item;
-44. });
-45. this.notifyDataReload();
-46. }
-47. }
+  // 修改单个数据
+  public changeData(index: number, data: string): void {
+    this.dataArray.splice(index, 1, data);
+    this.notifyDataChange(index);
+  }
 
-49. @Entry
-50. @Component
-51. struct MyComponent {
-52. private data: MyDataSource = new MyDataSource();
-53. private count: number = 0;
+  // 修改多个数据
+  public modifyAllData(): void {
+    this.dataArray = this.dataArray.map((item: string) => {
+      return 'Changed ' + item;
+    });
+    this.notifyDataReload();
+  }
+}
 
-55. aboutToAppear() {
-56. for (let i = 0; i <= 10; i++) {
-57. this.data.pushData(`Hello ${i}`);
-58. }
-59. }
+@Entry
+@Component
+export struct MyComponent {
+  private data: MyDataSource = new MyDataSource();
+  private count: number = 0;
 
-61. build() {
-62. Column({ space: 3 }) {
-63. // 点击追加子组件
-64. Button('Add new item')
-65. .onClick(() => {
-66. this.data.pushData(`New item ${this.count++}`);
-67. })
-68. // 点击删除子组件
-69. Button('Delete item 0')
-70. .onClick(() => {
-71. this.data.deleteData(0);
-72. })
-73. // 点击交换子组件
-74. Button('Swap item 0 and item 1')
-75. .onClick(() => {
-76. this.data.moveData(0, 1);
-77. })
-78. // 点击修改单个子组件
-79. Button('Change item 0')
-80. .onClick(() => {
-81. this.data.changeData(0, `Changed item ${this.count++}`);
-82. })
-83. // 点击修改多个子组件
-84. Button('Change all items')
-85. .onClick(() => {
-86. this.data.modifyAllData();
-87. })
-88. List({ space: 3 }) {
-89. LazyForEach(this.data, (item: string) => {
-90. ListItem() {
-91. Row() {
-92. Text(item).fontSize(25)
-93. }
-94. }
-95. }, (item: string) => item)
-96. }.cachedCount(5)
-97. }
-98. }
-99. }
+  aboutToAppear() {
+    for (let i = 0; i <= 10; i++) {
+      this.data.pushData(`Hello ${i}`);
+    }
+  }
+
+  build() {
+    Column({ space: 3 }) {
+      // 点击追加子组件
+      Button('Add new item')
+        .onClick(() => {
+          this.data.pushData(`New item ${this.count++}`);
+        })
+      // 点击删除子组件
+      Button('Delete item 0')
+        .onClick(() => {
+          this.data.deleteData(0);
+        })
+      // 点击交换子组件
+      Button('Swap item 0 and item 1')
+        .onClick(() => {
+          this.data.moveData(0, 1);
+        })
+      // 点击修改单个子组件
+      Button('Change item 0')
+        .onClick(() => {
+          this.data.changeData(0, `Changed item ${this.count++}`);
+        })
+      // 点击修改多个子组件
+      Button('Change all items')
+        .onClick(() => {
+          this.data.modifyAllData();
+        })
+      List({ space: 3 }) {
+        LazyForEach(this.data, (item: string) => {
+          ListItem() {
+            Row() {
+              Text(item).fontSize(25)
+            }
+          }
+        }, (item: string) => item)
+      }.cachedCount(5)
+    }
+  }
+}
 ```
 
 以上是一个典型的更新数据后LazyForEach重新渲染子组件的场景，下面将介绍如何将此示例迁移至Repeat。
@@ -461,22 +475,22 @@ LazyForEach根据数据源循环渲染子组件。
    * 对于LazyForEach，在修改数据源后需要调用对应的接口通知其更新。
    * 对于Repeat，由状态管理V2监听其数据源变化，并触发更新。因此，开发者直接修改数据源即可，无需其他额外操作。
 
-   ```
-   1. // 以修改单个数据为例
-   2. // 迁移前 - LazyForEach
-   3. class MyDataSource implements IDataSource {
-   4. private dataArray: string[] = [];
+   ```typescript
+   // 以修改单个数据为例
+   // 迁移前 - LazyForEach
+   class MyDataSource implements IDataSource {
+     private dataArray: string[] = [];
+     
+     public changeData(index: number, data: string): void {
+       this.dataArray.splice(index, 1, data);
+       this.notifyDataChange(index);
+     }
+     
+     // ...其他方法
+   }
 
-   6. public changeData(index: number, newData: string): void {
-   7. this.dataArray.splice(index, 1, data);
-   8. this.notifyDataChange(index);
-   9. }
-
-   11. // ...其他方法
-   12. }
-
-   14. // 迁移后 - Repeat
-   15. this.data.splice(index, 1, data);
+   // 迁移后 - Repeat
+   this.data.splice(index, 1, data);
    ```
 
    其他数据更新操作，如添加数据、删除数据、交换数据等，与以上方法类似，可通过直接修改数据源数组实现。
@@ -487,58 +501,60 @@ LazyForEach根据数据源循环渲染子组件。
 
 **示例2 - 迁移后**
 
-```
-1. @Entry
-2. @ComponentV2
-3. struct MyComponent {
-4. @Local data: Array<string> = [];
-5. private count: number = 0;
+```typescript
+@Entry
+@ComponentV2
+export struct MyComponent {
+  @Local data: Array<string> = [];
+  private count: number = 0;
 
-7. aboutToAppear() {
-8. for (let i = 0; i <= 10; i++) {
-9. this.data.push(`Hello ${i}`);
-10. }
-11. }
+  aboutToAppear() {
+    for (let i = 0; i <= 10; i++) {
+      this.data.push(`Hello ${i}`);
+    }
+  }
 
-13. build() {
-14. Column({ space: 3 }) {
-15. // 点击追加子组件
-16. Button('Add new item')
-17. .onClick(() => { this.data.push(`New item ${this.count++}`); })
-18. // 点击删除子组件
-19. Button('Delete item 0')
-20. .onClick(() => { this.data.splice(0, 1); })
-21. // 点击交换子组件
-22. Button('Swap item 0 and item 1')
-23. .onClick(() => { let temp: string = this.data[0];
-24. this.data[0] = this.data[1];
-25. this.data[1] = temp; })
-26. // 点击修改单个子组件
-27. Button('Change item 0')
-28. .onClick(() => { this.data.splice(0, 1, `Changed item ${this.count++}`); })
-29. // 点击修改多个子组件
-30. Button('Change all items')
-31. .onClick(() => { this.data = this.data.map((item: string) => { return 'Changed ' + item; }); })
-32. List({ space: 3 }) {
-33. Repeat(this.data)
-34. .each((repeatItem: RepeatItem<string>) => {
-35. ListItem() {
-36. Row() {
-37. Text(repeatItem.item).fontSize(25)
-38. }
-39. }
-40. })
-41. .key((item: string) => item)
-42. .virtualScroll()
-43. }.cachedCount(5)
-44. }
-45. }
-46. }
+  build() {
+    Column({ space: 3 }) {
+      // 点击追加子组件
+      Button('Add new item')
+        .onClick(() => { this.data.push(`New item ${this.count++}`); })
+      // 点击删除子组件
+      Button('Delete item 0')
+        .onClick(() => { this.data.splice(0, 1); })
+      // 点击交换子组件
+      Button('Swap item 0 and item 1')
+        .onClick(() => {
+          let temp: string = this.data[0];
+          this.data[0] = this.data[1];
+          this.data[1] = temp;
+          })
+      // 点击修改单个子组件
+      Button('Change item 0')
+        .onClick(() => { this.data.splice(0, 1, `Changed item ${this.count++}`); })
+      // 点击修改多个子组件
+      Button('Change all items')
+        .onClick(() => { this.data = this.data.map((item: string) => { return 'Changed ' + item; }); })
+      List({ space: 3 }) {
+        Repeat(this.data)
+          .each((repeatItem: RepeatItem<string>) => {
+            ListItem() {
+              Row() {
+                Text(repeatItem.item).fontSize(25)
+              }
+            }
+          })
+          .key((item: string) => item)
+          .virtualScroll()
+      }.cachedCount(5)
+    }
+  }
+}
 ```
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/uqfWBUDaQ1G-KswwEQZPkA/zh-cn_image_0000002589243927.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/v9Aan8BsSBumhW1Gsq6Jrg/zh-cn_image_0000002706833314.gif)
 
 ### 修改数据子属性
 
@@ -550,128 +566,136 @@ LazyForEach可以使用[@Observed与@ObjectLink](arkts-observed-and-objectlink.m
 
 **示例3 - 迁移前**
 
-```
-1. /* BasicDataSource代码见文档末尾BasicDataSource示例代码: StringData类型数组的BasicDataSource代码 */
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+// GenericBasicDataSource代码见文档末尾GenericBasicDataSource示例代码。
+import { GenericBasicDataSource } from './GenericBasicDataSource';
+const TAG = '[Sample_RenderingControl]';
+const DOMAIN = 0xF811;
 
-3. class MyDataSource extends BasicDataSource {
-4. private dataArray: StringData[] = [];
+@Observed
+export class StringData {
+  public message: string;
 
-6. public totalCount(): number {
-7. return this.dataArray.length;
-8. }
+  constructor(message: string) {
+    this.message = message;
+  }
+}
 
-10. public getData(index: number): StringData {
-11. return this.dataArray[index];
-12. }
+export class MyDataSource extends GenericBasicDataSource<StringData> {
+  private dataArray: StringData[] = [];
 
-14. public pushData(data: StringData): void {
-15. this.dataArray.push(data);
-16. this.notifyDataAdd(this.dataArray.length - 1);
-17. }
-18. }
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
 
-20. @Observed
-21. class StringData {
-22. message: string;
+  public getData(index: number): StringData {
+    return this.dataArray[index];
+  }
 
-24. constructor(message: string) {
-25. this.message = message;
-26. }
-27. }
+  public pushData(data: StringData): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
+}
 
-29. @Entry
-30. @Component
-31. struct MyComponent {
-32. private data: MyDataSource = new MyDataSource();
+@Entry
+@Component
+export struct MyComponent {
+  private data: MyDataSource = new MyDataSource();
 
-34. aboutToAppear() {
-35. for (let i = 0; i <= 20; i++) {
-36. this.data.pushData(new StringData(`Hello ${i}`));
-37. }
-38. }
+  aboutToAppear() {
+    for (let i = 0; i <= 20; i++) {
+      this.data.pushData(new StringData(`Hello ${i}`));
+    }
+  }
 
-40. build() {
-41. List({ space: 3 }) {
-42. LazyForEach(this.data, (item: StringData, index: number) => {
-43. ListItem() {
-44. ChildComponent({ data: item })
-45. }
-46. .onClick(() => {
-47. item.message += '0';
-48. })
-49. }, (item: StringData, index: number) => index.toString())
-50. }.cachedCount(5)
-51. }
-52. }
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (item: StringData, index: number) => {
+        ListItem() {
+          ChildComponent({ data: item })
+        }
+        .onClick(() => {
+          item.message += '0';
+        })
+      }, (item: StringData, index: number) => index.toString())
+    }.cachedCount(5)
+  }
+}
 
-54. @Component
-55. struct ChildComponent {
-56. @ObjectLink data: StringData;
+@Component
+export struct ChildComponent {
+  @ObjectLink data: StringData;
 
-58. build() {
-59. Row() {
-60. Text(this.data.message).fontSize(50)
-61. .onAppear(() => {
-62. console.info(`appear: ${this.data.message}`);
-63. })
-64. }.margin({ left: 10, right: 10 })
-65. }
-66. }
+  build() {
+    Row() {
+      Text(this.data.message).fontSize(50)
+        .onAppear(() => {
+          hilog.info(DOMAIN, TAG, `appear: ${this.data.message}`);
+        })
+    }.margin({ left: 10, right: 10 })
+  }
+}
 ```
 
 **迁移Repeat**
 
-Repeat需要和状态管理V2一起使用，状态管理V2提供了[@ObservedV2和@Trace](arkts-new-observedv2-and-trace.md)装饰器对子属性进行深度观测。迁移时，需要将@Observe和@ObjectLink装饰器迁移至@ObserveV2和@Trace装饰器。
+Repeat需要和状态管理V2一起使用，状态管理V2提供了[@ObservedV2和@Trace](arkts-new-observedv2-and-trace.md)装饰器对子属性进行深度观测。迁移时，需要将@Observed和@ObjectLink装饰器迁移至@ObservedV2和@Trace装饰器。
 
 迁移后的示例如下所示。
 
 **示例3 - 迁移后**
 
-```
-1. @ObservedV2
-2. class StringData {
-3. @Trace message: string; // 观测子属性
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+const TAG = '[Sample_RenderingControl]';
+const DOMAIN = 0xF811;
 
-5. constructor(message: string) {
-6. this.message = message;
-7. }
-8. }
+@ObservedV2
+export class StringData {
+  @Trace public message: string; // 观测子属性
 
-10. @Entry
-11. @ComponentV2
-12. struct MyComponent {
-13. @Local data: StringData[] = [];
+  constructor(message: string) {
+    this.message = message;
+  }
+}
 
-15. aboutToAppear() {
-16. for (let i = 0; i <= 20; i++) {
-17. this.data.push(new StringData(`Hello ${i}`));
-18. }
-19. }
+@Entry
+@ComponentV2
+export struct MyComponent {
+  @Local data: StringData[] = [];
 
-21. build() {
-22. List({ space: 3 }) {
-23. Repeat(this.data)
-24. .each((repeatItem) => {
-25. ListItem() {
-26. Text(repeatItem.item.message).fontSize(50)
-27. .onAppear(() => {
-28. console.info(`appear: ${repeatItem.item.message}`);
-29. })
-30. }
-31. .onClick(() => {
-32. repeatItem.item.message += '0';
-33. })
-34. })
-35. .key((item: StringData, index: number) => index.toString())
-36. .virtualScroll()
-37. }.cachedCount(5)
-38. }
-39. }
+  aboutToAppear() {
+    for (let i = 0; i <= 20; i++) {
+      this.data.push(new StringData(`Hello ${i}`));
+    }
+  }
+
+  build() {
+    List({ space: 3 }) {
+      Repeat(this.data)
+        .each((repeatItem) => {
+          ListItem() {
+            Text(repeatItem.item.message).fontSize(50)
+              .onAppear(() => {
+                hilog.info(DOMAIN, TAG, `appear: ${repeatItem.item.message}`);
+              })
+          }
+          .onClick(() => {
+            repeatItem.item.message += '0';
+          })
+        })
+        .key((item: StringData, index: number) => index.toString())
+        .virtualScroll()
+    }.cachedCount(5)
+  }
+}
 ```
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/885TUuR_RkqBjWqEcoJLiA/zh-cn_image_0000002558764120.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/TLKfXm1_RJSFKHFDZTbnjQ/zh-cn_image_0000002736312423.gif)
 
 ### 状态管理V2观测组件内部状态
 
@@ -683,78 +707,79 @@ Repeat需要和状态管理V2一起使用，状态管理V2提供了[@ObservedV2�
 
 **示例4 - 迁移前**
 
-```
-1. /* BasicDataSource代码见文档末尾BasicDataSource示例代码: StringData类型数组的BasicDataSource代码 */
+```typescript
+// GenericBasicDataSource代码见文档末尾GenericBasicDataSource示例代码。
+import { GenericBasicDataSource } from './GenericBasicDataSource';
 
-3. class MyDataSource extends BasicDataSource {
-4. private dataArray: StringData[] = [];
+@ObservedV2
+export class StringData {
+  @Trace public message: string;
 
-6. public totalCount(): number {
-7. return this.dataArray.length;
-8. }
+  constructor(message: string) {
+    this.message = message;
+  }
+}
 
-10. public getData(index: number): StringData {
-11. return this.dataArray[index];
-12. }
+export class MyDataSource extends GenericBasicDataSource<StringData> {
+  private dataArray: StringData[] = [];
 
-14. public pushData(data: StringData): void {
-15. this.dataArray.push(data);
-16. this.notifyDataAdd(this.dataArray.length - 1);
-17. }
-18. }
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
 
-20. @ObservedV2
-21. class StringData {
-22. @Trace message: string;
+  public getData(index: number): StringData {
+    return this.dataArray[index];
+  }
 
-24. constructor(message: string) {
-25. this.message = message;
-26. }
-27. }
+  public pushData(data: StringData): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
+}
 
-29. @Entry
-30. @ComponentV2
-31. struct MyComponent {
-32. data: MyDataSource = new MyDataSource();
+@Entry
+@ComponentV2
+export struct MyComponent {
+  private data: MyDataSource = new MyDataSource();
 
-34. aboutToAppear() {
-35. for (let i = 0; i <= 20; i++) {
-36. this.data.pushData(new StringData(`Hello ${i}`));
-37. }
-38. }
+  aboutToAppear() {
+    for (let i = 0; i <= 20; i++) {
+      this.data.pushData(new StringData(`Hello ${i}`));
+    }
+  }
 
-40. build() {
-41. List({ space: 3 }) {
-42. LazyForEach(this.data, (item: StringData, index: number) => {
-43. ListItem() {
-44. Row() {
-45. Text(item.message).fontSize(50)
-46. .onClick(() => {
-47. // 修改@ObservedV2装饰类中@Trace装饰的变量，触发刷新此处Text组件
-48. item.message += '!';
-49. })
-50. ChildComponent()
-51. }
-52. }
-53. }, (item: StringData, index: number) => index.toString())
-54. }.cachedCount(5)
-55. }
-56. }
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (item: StringData, index: number) => {
+        ListItem() {
+          Row() {
+            Text(item.message).fontSize(50)
+              .onClick(() => {
+                // 修改@ObservedV2装饰类中@Trace装饰的变量，触发刷新此处Text组件
+                item.message += '!';
+              })
+            ChildComponent()
+          }
+        }
+      }, (item: StringData, index: number) => index.toString())
+    }.cachedCount(5)
+  }
+}
 
-58. @ComponentV2
-59. struct ChildComponent {
-60. @Local message: string = '?';
+@ComponentV2
+export struct ChildComponent {
+  @Local message: string = '?';
 
-62. build() {
-63. Row() {
-64. Text(this.message).fontSize(50)
-65. .onClick(() => {
-66. // 修改@Local装饰的变量，触发刷新此处Text组件
-67. this.message += '?';
-68. })
-69. }
-70. }
-71. }
+  build() {
+    Row() {
+      Text(this.message).fontSize(50)
+        .onClick(() => {
+          // 修改@Local装饰的变量，触发刷新此处Text组件
+          this.message += '?';
+        })
+    }
+  }
+}
 ```
 
 **迁移Repeat**
@@ -765,67 +790,67 @@ Repeat本身支持与状态管理V2联合使用，将LazyForEach相关代码修�
 
 **示例4 - 迁移后**
 
-```
-1. @ObservedV2
-2. class StringData {
-3. @Trace message: string;
+```typescript
+@ObservedV2
+export class StringData {
+  @Trace public message: string;
 
-5. constructor(message: string) {
-6. this.message = message;
-7. }
-8. }
+  constructor(message: string) {
+    this.message = message;
+  }
+}
 
-10. @Entry
-11. @ComponentV2
-12. struct MyComponent {
-13. @Local data: StringData[] = [];
+@Entry
+@ComponentV2
+export struct MyComponent {
+  @Local data: StringData[] = [];
 
-15. aboutToAppear() {
-16. for (let i = 0; i <= 20; i++) {
-17. this.data.push(new StringData(`Hello ${i}`));
-18. }
-19. }
+  aboutToAppear() {
+    for (let i = 0; i <= 20; i++) {
+      this.data.push(new StringData(`Hello ${i}`));
+    }
+  }
 
-21. build() {
-22. List({ space: 3 }) {
-23. Repeat(this.data)
-24. .each((repeatItem) => {
-25. ListItem() {
-26. Row() {
-27. Text(repeatItem.item.message).fontSize(50)
-28. .onClick(() => {
-29. // 修改@ObservedV2装饰类中@Trace装饰的变量，触发刷新此处Text组件
-30. repeatItem.item.message += '!';
-31. })
-32. ChildComponent()
-33. }
-34. }
-35. })
-36. .key((item: StringData, index: number) => index.toString())
-37. .virtualScroll()
-38. }.cachedCount(5)
-39. }
-40. }
+  build() {
+    List({ space: 3 }) {
+      Repeat(this.data)
+        .each((repeatItem) => {
+          ListItem() {
+            Row() {
+              Text(repeatItem.item.message).fontSize(50)
+                .onClick(() => {
+                  // 修改@ObservedV2装饰类中@Trace装饰的变量，触发刷新此处Text组件
+                  repeatItem.item.message += '!';
+                })
+              ChildComponent()
+            }
+          }
+        })
+        .key((item: StringData, index: number) => index.toString())
+        .virtualScroll()
+    }.cachedCount(5)
+  }
+}
 
-42. @ComponentV2
-43. struct ChildComponent {
-44. @Local message: string = '?';
+@ComponentV2
+export struct ChildComponent {
+  @Local message: string = '?';
 
-46. build() {
-47. Row() {
-48. Text(this.message).fontSize(50)
-49. .onClick(() => {
-50. // 修改@Local装饰的变量，触发刷新此处Text组件
-51. this.message += '?';
-52. })
-53. }
-54. }
-55. }
+  build() {
+    Row() {
+      Text(this.message).fontSize(50)
+        .onClick(() => {
+          // 修改@Local装饰的变量，触发刷新此处Text组件
+          this.message += '?';
+        })
+    }
+  }
+}
 ```
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/j7myAGuvQjyefY888Kmv_A/zh-cn_image_0000002558604464.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/3JBZ88AHT9Cjfgp0QAf_xg/zh-cn_image_0000002706673378.gif)
 
 ### 状态管理V2观测组件外部输入
 
@@ -837,70 +862,71 @@ Repeat本身支持与状态管理V2联合使用，将LazyForEach相关代码修�
 
 **示例5 - 迁移前**
 
-```
-1. /* BasicDataSource代码见文档末尾BasicDataSource示例代码: StringData类型数组的BasicDataSource代码 */
+```typescript
+// GenericBasicDataSource代码见文档末尾GenericBasicDataSource示例代码。
+import { GenericBasicDataSource } from './GenericBasicDataSource';
 
-3. class MyDataSource extends BasicDataSource {
-4. private dataArray: StringData[] = [];
+@ObservedV2
+export class StringData {
+  @Trace public message: string;
 
-6. public totalCount(): number {
-7. return this.dataArray.length;
-8. }
+  constructor(message: string) {
+    this.message = message;
+  }
+}
 
-10. public getData(index: number): StringData {
-11. return this.dataArray[index];
-12. }
+export class MyDataSource extends GenericBasicDataSource<StringData> {
+  private dataArray: StringData[] = [];
 
-14. public pushData(data: StringData): void {
-15. this.dataArray.push(data);
-16. this.notifyDataAdd(this.dataArray.length - 1);
-17. }
-18. }
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
 
-20. @ObservedV2
-21. class StringData {
-22. @Trace message: string;
+  public getData(index: number): StringData {
+    return this.dataArray[index];
+  }
 
-24. constructor(message: string) {
-25. this.message = message;
-26. }
-27. }
+  public pushData(data: StringData): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
+}
 
-29. @Entry
-30. @ComponentV2
-31. struct MyComponent {
-32. data: MyDataSource = new MyDataSource();
+@Entry
+@ComponentV2
+export struct MyComponent {
+  private data: MyDataSource = new MyDataSource();
 
-34. aboutToAppear() {
-35. for (let i = 0; i <= 20; i++) {
-36. this.data.pushData(new StringData(`Hello ${i}`));
-37. }
-38. }
+  aboutToAppear() {
+    for (let i = 0; i <= 20; i++) {
+      this.data.pushData(new StringData(`Hello ${i}`));
+    }
+  }
 
-40. build() {
-41. List({ space: 3 }) {
-42. LazyForEach(this.data, (item: StringData, index: number) => {
-43. ListItem() {
-44. ChildComponent({ data: item.message }) // 向自定义组件内传入变量
-45. .onClick(() => {
-46. item.message += '!';
-47. })
-48. }
-49. }, (item: StringData, index: number) => index.toString())
-50. }.cachedCount(5)
-51. }
-52. }
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (item: StringData, index: number) => {
+        ListItem() {
+          ChildComponent({ data: item.message }) // 向自定义组件内传入变量
+            .onClick(() => {
+              item.message += '!';
+            })
+        }
+      }, (item: StringData, index: number) => index.toString())
+    }.cachedCount(5)
+  }
+}
 
-54. @ComponentV2
-55. struct ChildComponent {
-56. @Param @Require data: string = ''; // 接收来自外部的变量
+@ComponentV2
+export struct ChildComponent {
+  @Param @Require data: string = ''; // 接收来自外部的变量
 
-58. build() {
-59. Row() {
-60. Text(this.data).fontSize(50)
-61. }
-62. }
-63. }
+  build() {
+    Row() {
+      Text(this.data).fontSize(50)
+    }
+  }
+}
 ```
 
 **迁移Repeat**
@@ -911,59 +937,59 @@ Repeat本身支持与状态管理V2联合使用，将LazyForEach相关代码修�
 
 **示例5 - 迁移后**
 
-```
-1. @ObservedV2
-2. class StringData {
-3. @Trace message: string;
+```typescript
+@ObservedV2
+export class StringData {
+  @Trace public message: string;
 
-5. constructor(message: string) {
-6. this.message = message;
-7. }
-8. }
+  constructor(message: string) {
+    this.message = message;
+  }
+}
 
-10. @Entry
-11. @ComponentV2
-12. struct MyComponent {
-13. @Local data: StringData[] = [];
+@Entry
+@ComponentV2
+export struct MyComponent {
+  @Local data: StringData[] = [];
 
-15. aboutToAppear() {
-16. for (let i = 0; i <= 20; i++) {
-17. this.data.push(new StringData(`Hello ${i}`));
-18. }
-19. }
+  aboutToAppear() {
+    for (let i = 0; i <= 20; i++) {
+      this.data.push(new StringData(`Hello ${i}`));
+    }
+  }
 
-21. build() {
-22. List({ space: 3 }) {
-23. Repeat(this.data)
-24. .each((repeatItem) => {
-25. ListItem() {
-26. ChildComponent({ data: repeatItem.item.message }) // 向自定义组件内传入变量
-27. .onClick(() => {
-28. repeatItem.item.message += '!';
-29. })
-30. }
-31. })
-32. .key((item: StringData, index: number) => index.toString())
-33. .virtualScroll()
-34. }.cachedCount(5)
-35. }
-36. }
+  build() {
+    List({ space: 3 }) {
+      Repeat(this.data)
+        .each((repeatItem) => {
+          ListItem() {
+            ChildComponent({ data: repeatItem.item.message }) // 向自定义组件内传入变量
+              .onClick(() => {
+                repeatItem.item.message += '!';
+              })
+          }
+        })
+        .key((item: StringData, index: number) => index.toString())
+        .virtualScroll()
+    }.cachedCount(5)
+  }
+}
 
-38. @ComponentV2
-39. struct ChildComponent {
-40. @Param @Require data: string = ''; // 接收来自外部的变量
+@ComponentV2
+export struct ChildComponent {
+  @Param @Require data: string = ''; // 接收来自外部的变量
 
-42. build() {
-43. Row() {
-44. Text(this.data).fontSize(50)
-45. }
-46. }
-47. }
+  build() {
+    Row() {
+      Text(this.data).fontSize(50)
+    }
+  }
+}
 ```
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/N2nx0VZWReCburRACH7KJw/zh-cn_image_0000002589323989.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/IlxwtMvqQViahs9rlRqblA/zh-cn_image_0000002736432469.gif)
 
 ### 拖拽排序
 
@@ -975,65 +1001,70 @@ LazyForEach的[onMove](../harmonyos-references/ts-universal-attributes-drag-sort
 
 **示例6 - 迁移前**
 
-```
-1. /* BasicDataSource代码见文档末尾BasicDataSource示例代码: string类型数组的BasicDataSource代码 */
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+// BasicDataSource代码见文档末尾BasicDataSource示例代码: string类型数组的BasicDataSource代码。
+import { BasicDataSource } from './BasicDataSource';
 
-3. class MyDataSource extends BasicDataSource {
-4. private dataArray: string[] = [];
+const TAG = '[Sample_RenderingControl]';
+const DOMAIN = 0xF811;
 
-6. public totalCount(): number {
-7. return this.dataArray.length;
-8. }
+export class MyDataSource extends BasicDataSource {
+  private dataArray: string[] = [];
 
-10. public getData(index: number): string {
-11. return this.dataArray[index];
-12. }
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
 
-14. public moveDataWithoutNotify(from: number, to: number): void {
-15. let tmp = this.dataArray.splice(from, 1);
-16. this.dataArray.splice(to, 0, tmp[0]);
-17. }
+  public getData(index: number): string {
+    return this.dataArray[index];
+  }
 
-19. public pushData(data: string): void {
-20. this.dataArray.push(data);
-21. this.notifyDataAdd(this.dataArray.length - 1);
-22. }
-23. }
+  public moveDataWithoutNotify(from: number, to: number): void {
+    let tmp = this.dataArray.splice(from, 1);
+    this.dataArray.splice(to, 0, tmp[0]);
+  }
 
-25. @Entry
-26. @Component
-27. struct Parent {
-28. private data: MyDataSource = new MyDataSource();
+  public pushData(data: string): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
+}
 
-30. aboutToAppear(): void {
-31. for (let i = 0; i < 100; i++) {
-32. this.data.pushData(i.toString());
-33. }
-34. }
+@Entry
+@Component
+export struct Parent {
+  private data: MyDataSource = new MyDataSource();
 
-36. build() {
-37. Row() {
-38. List() {
-39. LazyForEach(this.data, (item: string) => {
-40. ListItem() {
-41. Text(item.toString())
-42. .fontSize(16)
-43. .textAlign(TextAlign.Center)
-44. .size({ height: 100, width: '100%' })
-45. }.margin(10)
-46. .borderRadius(10)
-47. .backgroundColor('#FFFFFFFF')
-48. }, (item: string) => item)
-49. .onMove((from: number, to: number) => { // 实现拖拽排序
-50. this.data.moveDataWithoutNotify(from, to);
-51. })
-52. }
-53. .width('100%')
-54. .height('100%')
-55. .backgroundColor('#FFDCDCDC')
-56. }
-57. }
-58. }
+  aboutToAppear(): void {
+    for (let i = 0; i < 100; i++) {
+      this.data.pushData(i.toString());
+    }
+  }
+
+  build() {
+    Row() {
+      List() {
+        LazyForEach(this.data, (item: string) => {
+          ListItem() {
+            Text(item)
+              .fontSize(16)
+              .textAlign(TextAlign.Center)
+              .size({ height: 100, width: '100%' })
+          }.margin(10)
+          .borderRadius(10)
+          .backgroundColor('#FFFFFFFF')
+        }, (item: string) => item)
+        .onMove((from: number, to: number) => { // 实现拖拽排序
+          this.data.moveDataWithoutNotify(from, to);
+        })
+      }
+      .width('100%')
+      .height('100%')
+      .backgroundColor('#FFDCDCDC')
+    }
+  }
+}
 ```
 
 **迁移Repeat**
@@ -1044,54 +1075,54 @@ Repeat具有与LazyForEach相同的onMove属性。将LazyForEach相关代码修�
 
 **示例6 - 迁移后**
 
-```
-1. @Entry
-2. @ComponentV2
-3. struct Parent {
-4. @Local data: string[] = [];
+```typescript
+@Entry
+@ComponentV2
+export struct Parent {
+  @Local data: string[] = [];
 
-6. aboutToAppear(): void {
-7. for (let i = 0; i < 100; i++) {
-8. this.data.push(i.toString());
-9. }
-10. }
+  aboutToAppear(): void {
+    for (let i = 0; i < 100; i++) {
+      this.data.push(i.toString());
+    }
+  }
 
-12. moveData(from: number, to: number) {
-13. let tmp = this.data.splice(from, 1);
-14. this.data.splice(to, 0, tmp[0]);
-15. }
+  moveData(from: number, to: number) {
+    let tmp = this.data.splice(from, 1);
+    this.data.splice(to, 0, tmp[0]);
+  }
 
-17. build() {
-18. Row() {
-19. List() {
-20. Repeat(this.data)
-21. .each((repeatItem) => {
-22. ListItem() {
-23. Text(repeatItem.item.toString())
-24. .fontSize(16)
-25. .textAlign(TextAlign.Center)
-26. .size({ height: 100, width: '100%' })
-27. }.margin(10)
-28. .borderRadius(10)
-29. .backgroundColor('#FFFFFFFF')
-30. })
-31. .key((item: string) => item)
-32. .virtualScroll()
-33. .onMove((from: number, to: number) => { // 实现拖拽排序
-34. this.moveData(from, to);
-35. })
-36. }
-37. .width('100%')
-38. .height('100%')
-39. .backgroundColor('#FFDCDCDC')
-40. }
-41. }
-42. }
+  build() {
+    Row() {
+      List() {
+        Repeat(this.data)
+          .each((repeatItem) => {
+            ListItem() {
+              Text(repeatItem.item.toString())
+                .fontSize(16)
+                .textAlign(TextAlign.Center)
+                .size({ height: 100, width: '100%' })
+            }.margin(10)
+            .borderRadius(10)
+            .backgroundColor('#FFFFFFFF')
+          })
+          .key((item: string) => item)
+          .virtualScroll()
+          .onMove((from: number, to: number) => { // 实现拖拽排序
+            this.moveData(from, to);
+          })
+      }
+      .width('100%')
+      .height('100%')
+      .backgroundColor('#FFDCDCDC')
+    }
+  }
+}
 ```
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/vh5Co8fDST-Oua2NOaxvMw/zh-cn_image_0000002589243929.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/mndO-qYpRoKniJR_eLOphQ/zh-cn_image_0000002706833316.gif)
 
 ### 组件复用
 
@@ -1103,84 +1134,88 @@ LazyForEach自身并不具备组件复用能力，为实现组件复用，需要
 
 **示例7 - 迁移前**
 
-```
-1. /* BasicDataSource代码见文档末尾BasicDataSource示例代码: StringData类型数组的BasicDataSource代码 */
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+// GenericBasicDataSource代码见文档末尾GenericBasicDataSource示例代码。
+import { GenericBasicDataSource } from './GenericBasicDataSource';
+const TAG = '[Sample_RenderingControl]';
+const DOMAIN = 0xF811;
 
-3. class MyDataSource extends BasicDataSource {
-4. private dataArray: StringData[] = [];
+export class StringData {
+  public message: string;
 
-6. public totalCount(): number {
-7. return this.dataArray.length;
-8. }
+  constructor(message: string) {
+    this.message = message;
+  }
+}
 
-10. public getData(index: number): StringData {
-11. return this.dataArray[index];
-12. }
+export class MyDataSource extends GenericBasicDataSource<StringData> {
+  private dataArray: StringData[] = [];
 
-14. public pushData(data: StringData): void {
-15. this.dataArray.push(data);
-16. this.notifyDataAdd(this.dataArray.length - 1);
-17. }
-18. }
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
 
-20. class StringData {
-21. message: string;
+  public getData(index: number): StringData {
+    return this.dataArray[index];
+  }
 
-23. constructor(message: string) {
-24. this.message = message;
-25. }
-26. }
+  public pushData(data: StringData): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
+}
 
-28. @Entry
-29. @Component
-30. struct MyComponent {
-31. data: MyDataSource = new MyDataSource();
+@Entry
+@Component
+export struct MyComponent {
+  private data: MyDataSource = new MyDataSource();
 
-33. aboutToAppear() {
-34. for (let i = 0; i <= 30; i++) {
-35. this.data.pushData(new StringData(`Hello${i}`));
-36. }
-37. }
+  aboutToAppear() {
+    for (let i = 0; i <= 30; i++) {
+      this.data.pushData(new StringData(`Hello${i}`));
+    }
+  }
 
-39. build() {
-40. List({ space: 3 }) {
-41. LazyForEach(this.data, (item: StringData, index: number) => {
-42. ListItem() {
-43. ChildComponent({ data: item })
-44. .onAppear(() => {
-45. console.info(`onAppear: ${item.message}`);
-46. })
-47. }
-48. }, (item: StringData, index: number) => index.toString())
-49. }.cachedCount(5)
-50. }
-51. }
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (item: StringData, index: number) => {
+        ListItem() {
+          ChildComponent({ data: item })
+            .onAppear(() => {
+              hilog.info(DOMAIN, TAG, `onAppear: ${item.message}`);
+            })
+        }
+      }, (item: StringData, index: number) => index.toString())
+    }.cachedCount(5)
+  }
+}
 
-53. @Reusable
-54. @Component
-55. struct ChildComponent {
-56. @State data: StringData = new StringData('');
+@Reusable
+@Component
+export struct ChildComponent {
+  @State data: StringData = new StringData('');
 
-58. aboutToAppear(): void {
-59. console.info(`aboutToAppear: ${this.data.message}`);
-60. }
+  aboutToAppear(): void {
+    hilog.info(DOMAIN, TAG, `aboutToAppear: ${this.data.message}`);
+  }
 
-62. aboutToRecycle(): void {
-63. console.info(`aboutToRecycle: ${this.data.message}`);
-64. }
+  aboutToRecycle(): void {
+    hilog.info(DOMAIN, TAG, `aboutToRecycle: ${this.data.message}`);
+  }
 
-66. // 对复用的组件进行数据更新
-67. aboutToReuse(params: Record<string, ESObject>): void {
-68. this.data = params.data as StringData;
-69. console.info(`aboutToReuse: ${this.data.message}`);
-70. }
+  // 对复用的组件进行数据更新
+  aboutToReuse(params: Record<string, ESObject>): void {
+    this.data = params.data as StringData;
+    hilog.info(DOMAIN, TAG, `aboutToReuse: ${this.data.message}`);
+  }
 
-72. build() {
-73. Row() {
-74. Text(this.data.message).fontSize(50)
-75. }
-76. }
-77. }
+  build() {
+    Row() {
+      Text(this.data.message).fontSize(50)
+    }
+  }
+}
 ```
 
 **迁移Repeat**
@@ -1198,39 +1233,43 @@ Repeat本身具备复用能力，且默认开启。将LazyForEach相关代码迁
 
 修改后的示例如下。
 
-```
-1. class StringData {
-2. message: string;
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+const TAG = '[Sample_RenderingControl]';
+const DOMAIN = 0xF811;
 
-4. constructor(message: string) {
-5. this.message = message;
-6. }
-7. }
+export class StringData {
+  public message: string;
 
-9. @Entry
-10. @ComponentV2
-11. struct MyComponent {
-12. @Local data: StringData[] = [];
+  constructor(message: string) {
+    this.message = message;
+  }
+}
 
-14. aboutToAppear() {
-15. for (let i = 0; i <= 30; i++) {
-16. this.data.push(new StringData(`Hello${i}`));
-17. }
-18. }
+@Entry
+@ComponentV2
+export struct MyComponent {
+  @Local data: StringData[] = [];
 
-20. build() {
-21. List({ space: 3 }) {
-22. Repeat(this.data) // Repeat自身具备复用功能
-23. .each((repeatItem) => {
-24. ListItem() {
-25. Text(repeatItem.item.message).fontSize(50)
-26. }
-27. })
-28. .key((item: StringData, index: number) => index.toString())
-29. .virtualScroll()
-30. }.cachedCount(5)
-31. }
-32. }
+  aboutToAppear() {
+    for (let i = 0; i <= 30; i++) {
+      this.data.push(new StringData(`Hello${i}`));
+    }
+  }
+
+  build() {
+    List({ space: 3 }) {
+      Repeat(this.data) // Repeat自身具备复用功能
+        .each((repeatItem) => {
+          ListItem() {
+            Text(repeatItem.item.message).fontSize(50)
+          }
+        })
+        .key((item: StringData, index: number) => index.toString())
+        .virtualScroll()
+    }.cachedCount(5)
+  }
+}
 ```
 
 **示例7 - 迁移方案2：使用@ReusableV2装饰器**
@@ -1241,72 +1280,76 @@ Repeat本身具备复用能力，且默认开启。将LazyForEach相关代码迁
 
 使用@ReusableV2装饰器的迁移示例如下所示。
 
-```
-1. class StringData {
-2. message: string;
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+const TAG = '[Sample_RenderingControl]';
+const DOMAIN = 0xF811;
 
-4. constructor(message: string) {
-5. this.message = message;
-6. }
-7. }
+export class StringData {
+  public message: string;
 
-9. @Entry
-10. @ComponentV2
-11. struct MyComponent {
-12. @Local data: StringData[] = [];
+  constructor(message: string) {
+    this.message = message;
+  }
+}
 
-14. aboutToAppear() {
-15. for (let i = 0; i <= 30; i++) {
-16. this.data.push(new StringData(`Hello${i}`));
-17. }
-18. }
+@Entry
+@ComponentV2
+export struct MyComponent {
+  @Local data: StringData[] = [];
 
-20. build() {
-21. List({ space: 3 }) {
-22. Repeat(this.data)
-23. .each((repeatItem) => {
-24. ListItem() {
-25. ChildComponent({ data: repeatItem.item })
-26. .onAppear(() => {
-27. console.info(`onAppear: ${repeatItem.item.message}`);
-28. })
-29. }
-30. })
-31. .key((item: StringData, index: number) => index.toString())
-32. .virtualScroll({ reusable: false }) // 关闭Repeat自身的复用功能（API 19）
-33. }.cachedCount(5)
-34. }
-35. }
+  aboutToAppear() {
+    for (let i = 0; i <= 30; i++) {
+      this.data.push(new StringData(`Hello${i}`));
+    }
+  }
 
-37. // 使用@ReusableV2实现组件复用（API 18）
-38. @ReusableV2
-39. @ComponentV2
-40. struct ChildComponent {
-41. @Param data: StringData = new StringData('');
+  build() {
+    List({ space: 3 }) {
+      Repeat(this.data)
+        .each((repeatItem) => {
+          ListItem() {
+            ChildComponent({ data: repeatItem.item })
+              .onAppear(() => {
+                hilog.info(DOMAIN, TAG, `onAppear: ${repeatItem.item.message}`);
+              })
+          }
+        })
+        .key((item: StringData, index: number) => index.toString())
+        .virtualScroll({ reusable: false }) // 关闭Repeat自身的复用功能（API 18）
+    }.cachedCount(5)
+  }
+}
 
-43. aboutToAppear(): void {
-44. console.info(`aboutToAppear: ${this.data.message}`);
-45. }
+// 使用@ReusableV2实现组件复用（API 18）
+@ReusableV2
+@ComponentV2
+export struct ChildComponent {
+  @Param data: StringData = new StringData('');
 
-47. aboutToRecycle(): void {
-48. console.info(`aboutToRecycle: ${this.data.message}`);
-49. }
+  aboutToAppear(): void {
+    hilog.info(DOMAIN, TAG, `aboutToAppear: ${this.data.message}`);
+  }
 
-51. aboutToReuse(): void {
-52. console.info(`aboutToReuse: ${this.data.message}`);
-53. }
+  aboutToRecycle(): void {
+    hilog.info(DOMAIN, TAG, `aboutToRecycle: ${this.data.message}`);
+  }
 
-55. build() {
-56. Row() {
-57. Text(this.data.message).fontSize(50)
-58. }
-59. }
-60. }
+  aboutToReuse(): void {
+    hilog.info(DOMAIN, TAG, `aboutToReuse: ${this.data.message}`);
+  }
+
+  build() {
+    Row() {
+      Text(this.data.message).fontSize(50)
+    }
+  }
+}
 ```
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/kQdf7tY1TSSUzbrgl75qPw/zh-cn_image_0000002558764122.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/N4WX2SBXT8ie-XnxC8FXEQ/zh-cn_image_0000002736312425.gif)
 
 ### 模板渲染
 
@@ -1318,131 +1361,135 @@ LazyForEach自身并不具备模板渲染能力。为实现模板渲染能力，
 
 **示例8 - 迁移前**
 
-```
-1. /* BasicDataSource代码见文档末尾BasicDataSource示例代码: StringData类型数组的BasicDataSource代码 */
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+// GenericBasicDataSource代码见文档末尾GenericBasicDataSource示例代码。
+import { GenericBasicDataSource } from './GenericBasicDataSource';
+const TAG = '[Sample_RenderingControl]';
+const DOMAIN = 0xF811;
 
-3. class MyDataSource extends BasicDataSource {
-4. private dataArray: StringData[] = [];
+export class StringData {
+  public message: string;
+  public type: number;
 
-6. public totalCount(): number {
-7. return this.dataArray.length;
-8. }
+  constructor(message: string, type: number) {
+    this.message = message;
+    this.type = type;
+  }
 
-10. public getData(index: number): StringData {
-11. return this.dataArray[index];
-12. }
+  getType(): number {
+    if (this.type >= 1) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
+}
 
-14. public pushData(data: StringData): void {
-15. this.dataArray.push(data);
-16. this.notifyDataAdd(this.dataArray.length - 1);
-17. }
-18. }
+export class MyDataSource extends GenericBasicDataSource<StringData> {
+  private dataArray: StringData[] = [];
 
-20. class StringData {
-21. message: string;
-22. type: number;
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
 
-24. constructor(message: string, type: number) {
-25. this.message = message;
-26. this.type = type;
-27. }
+  public getData(index: number): StringData {
+    return this.dataArray[index];
+  }
 
-29. getType(): number {
-30. if (this.type >= 1) {
-31. return 1;
-32. } else {
-33. return 0;
-34. }
-35. }
-36. }
+  public pushData(data: StringData): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
+}
 
-38. @Entry
-39. @Component
-40. struct MyComponent {
-41. data: MyDataSource = new MyDataSource();
+@Entry
+@Component
+export struct MyComponent {
+  private data: MyDataSource = new MyDataSource();
 
-43. aboutToAppear() {
-44. for (let i = 0; i <= 200; i++) {
-45. this.data.pushData(new StringData(`Hello${i}`, i % 2));
-46. }
-47. }
+  aboutToAppear() {
+    for (let i = 0; i <= 200; i++) {
+      this.data.pushData(new StringData(`Hello${i}`, i % 2));
+    }
+  }
 
-49. build() {
-50. List({ space: 3 }) {
-51. LazyForEach(this.data, (item: StringData, index: number) => {
-52. ListItem() {
-53. // 开发者自己实现逻辑判断，为不同的数据项选择不同的渲染模板
-54. if (item.getType() == 0) {
-55. // 模板A
-56. ChildComponentA({ data: item })
-57. .onAppear(() => {
-58. console.info(`type A onAppear: ${item.message}`);
-59. })
-60. } else {
-61. // 模板B
-62. ChildComponentB({ data: item })
-63. .onAppear(() => {
-64. console.info(`type B onAppear: ${item.message}`);
-65. })
-66. }
-67. }
-68. }, (item: StringData, index: number) => index.toString())
-69. }.cachedCount(5)
-70. }
-71. }
+  build() {
+    List({ space: 3 }) {
+      LazyForEach(this.data, (item: StringData, index: number) => {
+        ListItem() {
+          // 开发者自己实现逻辑判断，为不同的数据项选择不同的渲染模板
+          if (item.getType() == 0) {
+            // 模板A
+            ChildComponentA({ data: item })
+              .onAppear(() => {
+                hilog.info(DOMAIN, TAG, `type A onAppear: ${item.message}`);
+              })
+          } else {
+            // 模板B
+            ChildComponentB({ data: item })
+              .onAppear(() => {
+                hilog.info(DOMAIN, TAG, `type B onAppear: ${item.message}`);
+              })
+          }
+        }
+      }, (item: StringData, index: number) => index.toString())
+    }.cachedCount(5)
+  }
+}
 
-73. // 使用@Reusable实现组件复用
-74. @Reusable
-75. @Component
-76. struct ChildComponentA {
-77. @State data: StringData = new StringData('', 0);
+// 使用@Reusable实现组件复用
+@Reusable
+@Component
+export struct ChildComponentA {
+  @State data: StringData = new StringData('', 0);
 
-79. aboutToAppear(): void {
-80. console.info(`type A aboutToAppear: ${this.data.message}`);
-81. }
+  aboutToAppear(): void {
+    hilog.info(DOMAIN, TAG, `type A aboutToAppear: ${this.data.message}`);
+  }
 
-83. aboutToRecycle(): void {
-84. console.info(`type A aboutToRecycle: ${this.data.message}`);
-85. }
+  aboutToRecycle(): void {
+    hilog.info(DOMAIN, TAG, `type A aboutToRecycle: ${this.data.message}`);
+  }
 
-87. aboutToReuse(params: Record<string, ESObject>): void {
-88. this.data = params.data as StringData;
-89. console.info(`type A aboutToReuse: ${this.data.message}`);
-90. }
+  aboutToReuse(params: Record<string, ESObject>): void {
+    this.data = params.data as StringData;
+    hilog.info(DOMAIN, TAG, `type A aboutToReuse: ${this.data.message}`);
+  }
 
-92. build() {
-93. Row() {
-94. Text(this.data.message).fontSize(50)
-95. Button('Type A')
-96. }
-97. }
-98. }
+  build() {
+    Row() {
+      Text(this.data.message).fontSize(50)
+      Button('Type A')
+    }
+  }
+}
 
-100. @Reusable
-101. @Component
-102. struct ChildComponentB {
-103. @State data: StringData = new StringData('', 0);
+@Reusable
+@Component
+export struct ChildComponentB {
+  @State data: StringData = new StringData('', 0);
 
-105. aboutToAppear(): void {
-106. console.info(`type B aboutToAppear: ${this.data.message}`);
-107. }
+  aboutToAppear(): void {
+    hilog.info(DOMAIN, TAG, `type B aboutToAppear: ${this.data.message}`);
+  }
 
-109. aboutToRecycle(): void {
-110. console.info(`type B aboutToRecycle: ${this.data.message}`);
-111. }
+  aboutToRecycle(): void {
+    hilog.info(DOMAIN, TAG, `type B aboutToRecycle: ${this.data.message}`);
+  }
 
-113. aboutToReuse(params: Record<string, ESObject>): void {
-114. this.data = params.data as StringData;
-115. console.info(`type B aboutToReuse: ${this.data.message}`);
-116. }
+  aboutToReuse(params: Record<string, ESObject>): void {
+    this.data = params.data as StringData;
+    hilog.info(DOMAIN, TAG, `type B aboutToReuse: ${this.data.message}`);
+  }
 
-118. build() {
-119. Row() {
-120. Text(this.data.message).fontSize(50).fontColor(Color.Gray)
-121. Text('Type B')
-122. }
-123. }
-124. }
+  build() {
+    Row() {
+      Text(this.data.message).fontSize(50).fontColor(Color.Gray)
+      Text('Type B')
+    }
+  }
+}
 ```
 
 **迁移Repeat**
@@ -1453,334 +1500,348 @@ Repeat本身具备模板渲染能力，开发者可以通过[templateId](../harm
 
 **示例8 - 迁移方案1：使用Repeat自身的模板渲染能力**
 
-```
-1. class StringData {
-2. message: string;
-3. type: number;
+```typescript
+export class StringData {
+  public message: string;
+  public type: number;
 
-5. constructor(message: string, type: number) {
-6. this.message = message;
-7. this.type = type;
-8. }
+  constructor(message: string, type: number) {
+    this.message = message;
+    this.type = type;
+  }
 
-10. getType(): number {
-11. if (this.type >= 1) {
-12. return 1;
-13. } else {
-14. return 0;
-15. }
-16. }
-17. }
+  getType(): number {
+    if (this.type >= 1) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
+}
 
-19. @Entry
-20. @ComponentV2
-21. struct MyComponent {
-22. data: StringData[] = [];
+@Entry
+@ComponentV2
+export struct MyComponent {
+  @Local data: StringData[] = [];
 
-24. aboutToAppear() {
-25. for (let i = 0; i <= 200; i++) {
-26. this.data.push(new StringData(`Hello${i}`, i % 2));
-27. }
-28. }
+  aboutToAppear() {
+    for (let i = 0; i <= 200; i++) {
+      this.data.push(new StringData(`Hello${i}`, i % 2));
+    }
+  }
 
-30. build() {
-31. List({ space: 3 }) {
-32. Repeat(this.data)
-33. .each((repeatItem) => {
-34. ListItem() {
-35. Text('Default item')
-36. }
-37. })
-38. .template('A', (repeatItem) => { // 模板A
-39. ListItem() {
-40. Row() {
-41. Text(repeatItem.item.message).fontSize(50)
-42. Button('Type A')
-43. }
-44. }
-45. })
-46. .template('B', (repeatItem) => { // 模板B
-47. ListItem() {
-48. Row() {
-49. Text(repeatItem.item.message).fontSize(50).fontColor(Color.Gray)
-50. Text('Type B')
-51. }
-52. }
-53. })
-54. .templateId((item: StringData) => { // 为不同的数据项选择不同的模板
-55. if (item.getType() == 0) {
-56. return 'A';
-57. } else {
-58. return 'B';
-59. }
-60. })
-61. .key((item: StringData, index: number) => index.toString())
-62. .virtualScroll()
-63. }.cachedCount(5)
-64. }
-65. }
+  build() {
+    List({ space: 3 }) {
+      Repeat(this.data)
+        .each((repeatItem) => {
+          ListItem() {
+            Text('Default item')
+          }
+        })
+        .template('A', (repeatItem) => { // 模板A
+          ListItem() {
+            Row() {
+              Text(repeatItem.item.message).fontSize(50)
+              Button('Type A')
+            }
+          }
+        })
+        .template('B', (repeatItem) => { // 模板B
+          ListItem() {
+            Row() {
+              Text(repeatItem.item.message).fontSize(50).fontColor(Color.Gray)
+              Text('Type B')
+            }
+          }
+        })
+        .templateId((item: StringData) => { // 为不同的数据项选择不同的模板
+          if (item.getType() == 0) {
+            return 'A';
+          } else {
+            return 'B';
+          }
+        })
+        .key((item: StringData, index: number) => index.toString())
+        .virtualScroll()
+    }.cachedCount(5)
+  }
+}
 ```
 
 **示例8 - 迁移方案2：由开发者实现模板渲染能力**
 
-```
-1. class StringData {
-2. message: string;
-3. type: number;
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+const TAG = '[Sample_RenderingControl]';
+const DOMAIN = 0xF811;
 
-5. constructor(message: string, type: number) {
-6. this.message = message;
-7. this.type = type;
-8. }
+export class StringData {
+  public message: string;
+  public type: number;
 
-10. getType(): number {
-11. if (this.type >= 1) {
-12. return 1;
-13. } else {
-14. return 0;
-15. }
-16. }
-17. }
+  constructor(message: string, type: number) {
+    this.message = message;
+    this.type = type;
+  }
 
-19. @Entry
-20. @ComponentV2
-21. struct MyComponent {
-22. data: StringData[] = [];
+  getType(): number {
+    if (this.type >= 1) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
+}
 
-24. aboutToAppear() {
-25. for (let i = 0; i <= 200; i++) {
-26. this.data.push(new StringData(`Hello${i}`, i % 2));
-27. }
-28. }
+@Entry
+@ComponentV2
+export struct MyComponent {
+  @Local data: StringData[] = [];
 
-30. build() {
-31. List({ space: 3 }) {
-32. Repeat(this.data)
-33. .each((repeatItem) => {
-34. ListItem() {
-35. // 开发者自己实现逻辑判断，为不同的数据项选择不同的渲染模板
-36. if (repeatItem.item.getType() == 0) {
-37. ChildComponentA({ data: repeatItem.item }) // 模板A
-38. .onAppear(() => {
-39. console.info(`type A onAppear: ${repeatItem.item.message}`);
-40. })
-41. } else {
-42. ChildComponentB({ data: repeatItem.item }) // 模板B
-43. .onAppear(() => {
-44. console.info(`type B onAppear: ${repeatItem.item.message}`);
-45. })
-46. }
-47. }
-48. })
-49. .key((item: StringData, index: number) => index.toString())
-50. .virtualScroll({ reusable: false }) // 关闭Repeat自身的复用功能（API 19），避免渲染异常
-51. }.cachedCount(5)
-52. }
-53. }
+  aboutToAppear() {
+    for (let i = 0; i <= 200; i++) {
+      this.data.push(new StringData(`Hello${i}`, i % 2));
+    }
+  }
 
-55. // 使用@ReusableV2实现组件复用（API version 18开始支持使用）
-56. @ReusableV2
-57. @ComponentV2
-58. struct ChildComponentA {
-59. @Param data: StringData = new StringData('', 0);
+  build() {
+    List({ space: 3 }) {
+      Repeat(this.data)
+        .each((repeatItem) => {
+          ListItem() {
+            // 开发者自己实现逻辑判断，为不同的数据项选择不同的渲染模板
+            if (repeatItem.item.getType() == 0) {
+              ChildComponentA({ data: repeatItem.item }) // 模板A
+                .onAppear(() => {
+                  hilog.info(DOMAIN, TAG, `type A onAppear: ${repeatItem.item.message}`);
+                })
+            } else {
+              ChildComponentB({ data: repeatItem.item }) // 模板B
+                .onAppear(() => {
+                  hilog.info(DOMAIN, TAG, `type B onAppear: ${repeatItem.item.message}`);
+                })
+            }
+          }
+        })
+        .key((item: StringData, index: number) => index.toString())
+        .virtualScroll({ reusable: false }) // 关闭Repeat自身的复用功能（API 18），避免渲染异常
+    }.cachedCount(5)
+  }
+}
 
-61. aboutToAppear(): void {
-62. console.info(`type A aboutToAppear: ${this.data.message}`);
-63. }
+// 使用@ReusableV2实现组件复用（API version 18开始支持使用）
+@ReusableV2
+@ComponentV2
+export struct ChildComponentA {
+  @Param data: StringData = new StringData('', 0);
 
-65. aboutToRecycle(): void {
-66. console.info(`type A aboutToRecycle: ${this.data.message}`);
-67. }
+  aboutToAppear(): void {
+    hilog.info(DOMAIN, TAG, `type A aboutToAppear: ${this.data.message}`);
+  }
 
-69. aboutToReuse(): void {
-70. console.info(`type A aboutToReuse: ${this.data.message}`);
-71. }
+  aboutToRecycle(): void {
+    hilog.info(DOMAIN, TAG, `type A aboutToRecycle: ${this.data.message}`);
+  }
 
-73. build() {
-74. Row() {
-75. Text(this.data.message).fontSize(50)
-76. Button('Type A')
-77. }
-78. }
-79. }
+  aboutToReuse(): void {
+    hilog.info(DOMAIN, TAG, `type A aboutToReuse: ${this.data.message}`);
+  }
 
-81. @ReusableV2
-82. @ComponentV2
-83. struct ChildComponentB {
-84. @Param data: StringData = new StringData('', 0);
+  build() {
+    Row() {
+      Text(this.data.message).fontSize(50)
+      Button('Type A')
+    }
+  }
+}
 
-86. aboutToAppear(): void {
-87. console.info(`type B aboutToAppear: ${this.data.message}`);
-88. }
+@ReusableV2
+@ComponentV2
+export struct ChildComponentB {
+  @Param data: StringData = new StringData('', 0);
 
-90. aboutToRecycle(): void {
-91. console.info(`type B aboutToRecycle: ${this.data.message}`);
-92. }
+  aboutToAppear(): void {
+    hilog.info(DOMAIN, TAG, `type B aboutToAppear: ${this.data.message}`);
+  }
 
-94. aboutToReuse(): void {
-95. console.info(`type B aboutToReuse: ${this.data.message}`);
-96. }
+  aboutToRecycle(): void {
+    hilog.info(DOMAIN, TAG, `type B aboutToRecycle: ${this.data.message}`);
+  }
 
-98. build() {
-99. Row() {
-100. Text(this.data.message).fontSize(50).fontColor(Color.Gray)
-101. Text('Type B')
-102. }
-103. }
-104. }
+  aboutToReuse(): void {
+    hilog.info(DOMAIN, TAG, `type B aboutToReuse: ${this.data.message}`);
+  }
+
+  build() {
+    Row() {
+      Text(this.data.message).fontSize(50).fontColor(Color.Gray)
+      Text('Type B')
+    }
+  }
+}
 ```
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/GMwDtGr7RAa0S0mIvJ5t7Q/zh-cn_image_0000002558604466.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/8aG0KDYfT1OAdoZ6tyWf3w/zh-cn_image_0000002706673380.gif)
 
 ## BasicDataSource示例代码
 
 ### string类型数组的BasicDataSource代码
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+const TAG = '[Sample_RenderingControl]';
+const DOMAIN = 0xF811;
+
+// BasicDataSource实现了IDataSource接口，用于管理listener监听，以及通知LazyForEach数据更新
+export class BasicDataSource implements IDataSource {
+  private listeners: DataChangeListener[] = [];
+  private originDataArray: string[] = [];
+
+  public totalCount(): number {
+    return this.originDataArray.length;
+  }
+
+  public getData(index: number): string {
+    return this.originDataArray[index];
+  }
+
+  // 该方法为框架侧调用，为LazyForEach组件向其数据源处添加listener监听
+  registerDataChangeListener(listener: DataChangeListener): void {
+    if (this.listeners.indexOf(listener) < 0) {
+      hilog.info(DOMAIN, TAG, 'add listener');
+      this.listeners.push(listener);
+    }
+  }
+
+  // 该方法为框架侧调用，为对应的LazyForEach组件在数据源处去除listener监听
+  unregisterDataChangeListener(listener: DataChangeListener): void {
+    const pos = this.listeners.indexOf(listener);
+    if (pos >= 0) {
+      hilog.info(DOMAIN, TAG, 'remove listener');
+      this.listeners.splice(pos, 1);
+    }
+  }
+
+  // 通知LazyForEach组件需要重载所有子组件
+  notifyDataReload(): void {
+    this.listeners.forEach(listener => {
+      listener.onDataReloaded();
+    });
+  }
+
+  // 通知LazyForEach组件需要在index对应索引处添加子组件
+  notifyDataAdd(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataAdd(index);
+      // 写法2：listener.onDatasetChange([{type: DataOperationType.ADD, index: index}]);
+    });
+  }
+
+  // 通知LazyForEach组件在index对应索引处数据有变化，需要重建该子组件
+  notifyDataChange(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataChange(index);
+      // 写法2：listener.onDatasetChange([{type: DataOperationType.CHANGE, index: index}]);
+    });
+  }
+
+  // 通知LazyForEach组件需要在index对应索引处删除该子组件
+  notifyDataDelete(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataDelete(index);
+      // 写法2：listener.onDatasetChange([{type: DataOperationType.DELETE, index: index}]);
+    });
+  }
+
+  // 通知LazyForEach组件将from索引和to索引处的子组件进行交换
+  notifyDataMove(from: number, to: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataMove(from, to);
+      // 写法2：listener.onDatasetChange(
+      // [{type: DataOperationType.EXCHANGE, index: {start: from, end: to}}]);
+    });
+  }
+
+  notifyDatasetChange(operations: DataOperation[]): void {
+    this.listeners.forEach(listener => {
+      listener.onDatasetChange(operations);
+    });
+  }
+}
 ```
-1. // BasicDataSource实现了IDataSource接口，用于管理listener监听，以及通知LazyForEach数据更新
-2. class BasicDataSource implements IDataSource {
-3. private listeners: DataChangeListener[] = [];
-4. private originDataArray: string[] = [];
 
-6. public totalCount(): number {
-7. return this.originDataArray.length;
-8. }
+### GenericBasicDataSource示例代码
 
-10. public getData(index: number): string {
-11. return this.originDataArray[index];
-12. }
+```typescript
+// GenericBasicDataSource实现了IDataSource接口，用于管理listener监听，以及通知LazyForEach数据更新
+export class GenericBasicDataSource<T> implements IDataSource {
+  private listeners: DataChangeListener[] = [];
+  private originDataArray: T[] = [];
 
-14. // 该方法为框架侧调用，为LazyForEach组件向其数据源处添加listener监听
-15. registerDataChangeListener(listener: DataChangeListener): void {
-16. if (this.listeners.indexOf(listener) < 0) {
-17. console.info('add listener');
-18. this.listeners.push(listener);
-19. }
-20. }
+  public totalCount(): number {
+    return this.originDataArray.length;
+  }
 
-22. // 该方法为框架侧调用，为对应的LazyForEach组件在数据源处去除listener监听
-23. unregisterDataChangeListener(listener: DataChangeListener): void {
-24. const pos = this.listeners.indexOf(listener);
-25. if (pos >= 0) {
-26. console.info('remove listener');
-27. this.listeners.splice(pos, 1);
-28. }
-29. }
+  public getData(index: number): T {
+    return this.originDataArray[index];
+  }
 
-31. // 通知LazyForEach组件需要重载所有子组件
-32. notifyDataReload(): void {
-33. this.listeners.forEach(listener => {
-34. listener.onDataReloaded();
-35. });
-36. }
+  // 该方法为框架侧调用，为LazyForEach组件向其数据源处添加listener监听
+  registerDataChangeListener(listener: DataChangeListener): void {
+    if (this.listeners.indexOf(listener) < 0) {
+      this.listeners.push(listener);
+    }
+  }
 
-38. // 通知LazyForEach组件需要在index对应索引处添加子组件
-39. notifyDataAdd(index: number): void {
-40. this.listeners.forEach(listener => {
-41. listener.onDataAdd(index);
-42. // 写法2：listener.onDatasetChange([{type: DataOperationType.ADD, index: index}]);
-43. });
-44. }
+  // 该方法为框架侧调用，为对应的LazyForEach组件在数据源处去除listener监听
+  unregisterDataChangeListener(listener: DataChangeListener): void {
+    const pos = this.listeners.indexOf(listener);
+    if (pos >= 0) {
+      this.listeners.splice(pos, 1);
+    }
+  }
 
-46. // 通知LazyForEach组件在index对应索引处数据有变化，需要重建该子组件
-47. notifyDataChange(index: number): void {
-48. this.listeners.forEach(listener => {
-49. listener.onDataChange(index);
-50. // 写法2：listener.onDatasetChange([{type: DataOperationType.CHANGE, index: index}]);
-51. });
-52. }
+  // 通知LazyForEach组件需要重载所有子组件
+  notifyDataReload(): void {
+    this.listeners.forEach(listener => {
+      listener.onDataReloaded();
+    });
+  }
 
-54. // 通知LazyForEach组件需要在index对应索引处删除该子组件
-55. notifyDataDelete(index: number): void {
-56. this.listeners.forEach(listener => {
-57. listener.onDataDelete(index);
-58. // 写法2：listener.onDatasetChange([{type: DataOperationType.DELETE, index: index}]);
-59. });
-60. }
+  // 通知LazyForEach组件需要在index对应索引处添加子组件
+  notifyDataAdd(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataAdd(index);
+    });
+  }
 
-62. // 通知LazyForEach组件将from索引和to索引处的子组件进行交换
-63. notifyDataMove(from: number, to: number): void {
-64. this.listeners.forEach(listener => {
-65. listener.onDataMove(from, to);
-66. // 写法2：listener.onDatasetChange(
-67. // [{type: DataOperationType.EXCHANGE, index: {start: from, end: to}}]);
-68. });
-69. }
+  // 通知LazyForEach组件在index对应索引处数据有变化，需要重建该子组件
+  notifyDataChange(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataChange(index);
+    });
+  }
 
-71. notifyDatasetChange(operations: DataOperation[]): void {
-72. this.listeners.forEach(listener => {
-73. listener.onDatasetChange(operations);
-74. });
-75. }
-76. }
-```
+  // 通知LazyForEach组件需要在index对应索引处删除该子组件
+  notifyDataDelete(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataDelete(index);
+    });
+  }
 
-### StringData类型数组的BasicDataSource代码
+  // 通知LazyForEach组件将from索引和to索引处的子组件进行交换
+  notifyDataMove(from: number, to: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataMove(from, to);
+    });
+  }
 
-```
-1. class BasicDataSource implements IDataSource {
-2. private listeners: DataChangeListener[] = [];
-3. private originDataArray: StringData[] = [];
-
-5. public totalCount(): number {
-6. return this.originDataArray.length;
-7. }
-
-9. public getData(index: number): StringData {
-10. return this.originDataArray[index];
-11. }
-
-13. registerDataChangeListener(listener: DataChangeListener): void {
-14. if (this.listeners.indexOf(listener) < 0) {
-15. console.info('add listener');
-16. this.listeners.push(listener);
-17. }
-18. }
-
-20. unregisterDataChangeListener(listener: DataChangeListener): void {
-21. const pos = this.listeners.indexOf(listener);
-22. if (pos >= 0) {
-23. console.info('remove listener');
-24. this.listeners.splice(pos, 1);
-25. }
-26. }
-
-28. notifyDataReload(): void {
-29. this.listeners.forEach(listener => {
-30. listener.onDataReloaded();
-31. });
-32. }
-
-34. notifyDataAdd(index: number): void {
-35. this.listeners.forEach(listener => {
-36. listener.onDataAdd(index);
-37. });
-38. }
-
-40. notifyDataChange(index: number): void {
-41. this.listeners.forEach(listener => {
-42. listener.onDataChange(index);
-43. });
-44. }
-
-46. notifyDataDelete(index: number): void {
-47. this.listeners.forEach(listener => {
-48. listener.onDataDelete(index);
-49. });
-50. }
-
-52. notifyDataMove(from: number, to: number): void {
-53. this.listeners.forEach(listener => {
-54. listener.onDataMove(from, to);
-55. });
-56. }
-
-58. notifyDatasetChange(operations: DataOperation[]): void {
-59. this.listeners.forEach(listener => {
-60. listener.onDatasetChange(operations);
-61. });
-62. }
-63. }
+  notifyDatasetChange(operations: DataOperation[]): void {
+    this.listeners.forEach(listener => {
+      listener.onDatasetChange(operations);
+    });
+  }
+}
 ```

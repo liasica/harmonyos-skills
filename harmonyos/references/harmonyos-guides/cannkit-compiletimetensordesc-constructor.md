@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-compi
 title: 构造函数
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > CompileTimeTensorDesc > 构造函数
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:50+08:00
+scraped_at: 2026-09-02T14:50:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e3c976e6274d5e6e9f276a84d16a3a710db333a5e683ba402108fc3967ea5178
+content_hash: sha256:025729f35e1cc9bab041407d1ffd9410d4b53973273b1b4d4c4c6905f30d8c8d
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ CompileTimeTensorDesc类用于描述编译时的Tensor描述信息，包含dtype
 
 ## 函数原型
 
-```
-1. CompileTimeTensorDesc()
+```cpp
+CompileTimeTensorDesc()
 ```
 
 ## 参数说明

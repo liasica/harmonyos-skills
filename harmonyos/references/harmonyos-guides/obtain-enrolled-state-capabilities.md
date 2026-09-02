@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/obtain-enrolled-state-capabilities
 title: 查询用户注册凭据的状态
-breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 用户身份认证开发指导 > 查询用户注册凭据的状态
+breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 查询用户注册凭据的状态
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:32:25+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:a98f9202a98db7701343cd814bedef3ccc539e32d432c67eb34366b55758e452
+scraped_at: 2026-09-02T14:50:05+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f71c8efa2d32e2c3e1534e0a61a9294c29641a0d5053aaa2af8a933f7330759b
 ---
 
 调用者需感知用户注册凭据（人脸、指纹、口令）的变化，可使用该接口查询当前用户注册凭据的状态。
@@ -25,22 +25,20 @@ content_hash: sha256:a98f9202a98db7701343cd814bedef3ccc539e32d432c67eb34366b5575
 
 以查询用户人脸注册凭据的状态为例：
 
+```typescript
+obtainingEnrolledCredentialInformation() {
+  try {
+    let enrolledState = userAuth.getEnrolledState(userAuth.UserAuthType.FACE);
+    Logger.info('get current enrolled state successfully.');
+    return enrolledState.credentialDigest;
+  } catch (error) {
+    const err: BusinessError = error as BusinessError;
+    Logger.error(`get current enrolled state failed, code is ${err?.code}, message is ${err?.message}`);
+    return false;
+  }
+}
 ```
-1. obtainingEnrolledCredentialInformation() {
-2. try {
-3. let enrolledState = userAuth.getEnrolledState(userAuth.UserAuthType.FACE);
-4. Logger.info('get current enrolled state successfully.');
-5. return enrolledState.credentialDigest;
-6. } catch (error) {
-7. const err: BusinessError = error as BusinessError;
-8. Logger.error(`get current enrolled state failed, code is ${err?.code}, message is ${err?.message}`);
-9. return false;
-10. }
-11. }
-```
-
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/UserAuthentication/entry/src/main/ets/pages/Index.ets#L546-L559)
 
 ## 示例代码
 
-* [查询用户注册凭据的状态](https://gitcode.com/openharmony/applications_app_samples/blob/master/code/DocsSample/UserAuthentication)
+* [查询用户注册凭据的状态](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/UserAuthentication)

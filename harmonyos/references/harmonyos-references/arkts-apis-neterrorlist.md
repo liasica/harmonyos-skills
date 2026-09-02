@@ -3,30 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: "@ohos.web.netErrorList (ArkWeb网络协议栈错误列表)"
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.netErrorList (ArkWeb网络协议栈错误列表)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:12+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:b6eac359f4be97a5b419b23bd42a3761027b927c1ec732184bcfb55dfb3f10c3
+scraped_at: 2026-09-02T15:01:27+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:78ed1b7fad8e8fde0866f7a674da70647501559fda546880eb26ca6e820a5373
 ---
 
-ArkWeb的网络协议栈错误列表。
+ArkWeb的网络协议栈错误列表，错误码直接映射Chromium错误码[net\_error\_list.h](https://chromium.googlesource.com/chromium/src.git/+/refs/heads/main/net/base/net_error_list.h)，可在网络请求异常时基于标准化错误码快速定位问题、统一错误处理，提升排查效率。
 
-ArkWeb网络协议栈错误码直接映射Chromium错误码[net\_error\_list.h](https://chromium.googlesource.com/chromium/src.git/+/refs/heads/main/net/base/net_error_list.h)。
-
-说明
+**说明** 
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { WebNetErrorList } from '@kit.ArkWeb';
+```js
+import { WebNetErrorList } from '@kit.ArkWeb';
 ```
 
 ## WebNetErrorList
-
-PhonePC/2in1TabletTVWearable
 
 ArkWeb的网络协议栈错误列表
 
@@ -36,19 +30,19 @@ ArkWeb的网络协议栈错误列表
 | --- | --- | --- |
 | NET\_OK | 0 | 访问正常。 |
 | ERR\_IO\_PENDING | -1 | 异步IO操作尚未完成。 |
-| ERR\_FAILED | -2 | 一般性的错误。 |
+| ERR\_FAILED | -2 | 一般性的错误，网页加载失败请参考[定位网页加载问题](../harmonyos-guides/web-page-loading.md)。 |
 | ERR\_ABORTED | -3 | 操作已被中止。 |
 | ERR\_INVALID\_ARGUMENT | -4 | 参数无效。 |
 | ERR\_INVALID\_HANDLE | -5 | 文件描述符的句柄是无效的。 |
 | ERR\_FILE\_NOT\_FOUND | -6 | 文件未找到。 |
 | ERR\_TIMED\_OUT | -7 | 操作超时。 |
 | ERR\_FILE\_TOO\_LARGE | -8 | 文件过大。 |
-| ERR\_UNEXPECTED | -9 | 遇到了一个未被预期或未被特定处理的问题。 |
+| ERR\_UNEXPECTED | -9 | 遇到了未被预期或未被特定处理的问题。 |
 | ERR\_ACCESS\_DENIED | -10 | 访问除了网络以外的资源被拒绝。 |
 | ERR\_NOT\_IMPLEMENTED | -11 | 功能未实现，导致操作失败。 |
 | ERR\_INSUFFICIENT\_RESOURCES | -12 | 系统或程序执行所需的资源不足。 |
 | ERR\_OUT\_OF\_MEMORY | -13 | 内存溢出。 |
-| ERR\_UPLOAD\_FILE\_CHANGED | -14 | 上传文件失败因为文件的修改时间不符合预期。 |
+| ERR\_UPLOAD\_FILE\_CHANGED | -14 | 上传文件失败，因为文件的修改时间不符合预期。 |
 | ERR\_SOCKET\_NOT\_CONNECTED | -15 | 长连接断开。 |
 | ERR\_FILE\_EXISTS | -16 | 文件已存在。 |
 | ERR\_FILE\_PATH\_TOO\_LONG | -17 | 文件路径或者文件名过长。 |
@@ -57,13 +51,13 @@ ArkWeb的网络协议栈错误列表
 | ERR\_BLOCKED\_BY\_CLIENT | -20 | 客户端已阻止该请求。 |
 | ERR\_NETWORK\_CHANGED | -21 | 网络发生变化。 |
 | ERR\_BLOCKED\_BY\_ADMINISTRATOR | -22 | 被管理员阻止。 |
-| ERR\_SOCKET\_CONNECTED | -23 | socket已经处于连接状态。 |
-| ERR\_UPLOAD\_STREAM\_REWIND\_NOT\_SUPPORTED | -25 | 上传重传不支持。 |
+| ERR\_SOCKET\_CONNECTED | -23 | socket 已经处于连接状态。 |
+| ERR\_UPLOAD\_STREAM\_REWIND\_NOT\_SUPPORTED | -25 | 由于重试或重定向，需要重新读取上传流，但上传流不支持该操作，因此上传失败。 |
 | ERR\_CONTEXT\_SHUT\_DOWN | -26 | 因为上下文已关闭导致请求失败。 |
 | ERR\_BLOCKED\_BY\_RESPONSE | -27 | 请求失败，因为响应不满足要求（例如“X-Frame-Options”和“Content Security Policy”检查以及“Cross Origin Resource Policy”）。 |
 | ERR\_CLEARTEXT\_NOT\_PERMITTED | -29 | 该请求被系统策略阻止，不允许部分或全部明文请求。 |
 | ERR\_BLOCKED\_BY\_CSP | -30 | 请求被内容安全策略阻止。 |
-| ERR\_H2\_OR\_QUIC\_REQUIRED | -31 | 由于没有H/2或QUIC会话，请求被阻止。 |
+| ERR\_H2\_OR\_QUIC\_REQUIRED | -31 | 由于没有HTTP/2或QUIC会话，请求被阻止。 |
 | ERR\_BLOCKED\_BY\_ORB | -32 | 请求被 CORB 或 ORB 阻止。 |
 | ERR\_CONNECTION\_CLOSED | -100 | 连接已关闭（对应于TCP FIN）。 |
 | ERR\_CONNECTION\_RESET | -101 | 连接被重置（对应于TCP RST）。 |
@@ -90,7 +84,7 @@ ArkWeb的网络协议栈错误列表
 | ERR\_SSL\_NO\_RENEGOTIATION | -123 | 对方发送了SSL no\_renegotiation警报消息。 |
 | ERR\_WINSOCK\_UNEXPECTED\_WRITTEN\_BYTES | -124 | Winsock有时会报告写入的数据多于传递的数据。这可能是由于LSP损坏。 |
 | ERR\_SSL\_DECOMPRESSION\_FAILURE\_ALERT | -125 | SSL对等端向本端发送了致命的解压失败警报。当对等方错误地认为它支持DEFLATE压缩时，通常会发生这种情况。 |
-| ERR\_SSL\_BAD\_RECORD\_MAC\_ALERT | -126 | SSL对等端向本端发送了致命的bad\_record\_mac警报。一个对DELEGATE支持有问题的服务器可能发生这个情况。 |
+| ERR\_SSL\_BAD\_RECORD\_MAC\_ALERT | -126 | SSL对等端向本端发送了致命的bad\_record\_mac警报。一个对DEFLATE支持有问题的服务器可能发生这个情况。 |
 | ERR\_PROXY\_AUTH\_REQUESTED | -127 | 代理请求身份验证（用于隧道建立）。 |
 | ERR\_PROXY\_CONNECTION\_FAILED | -130 | 无法创建到代理服务器的连接。域名解析或连接套接字时出错。请注意，这不包括HTTP代理的实际“CONNECT”方法期间的故障。 |
 | ERR\_MANDATORY\_PROXY\_CONFIGURATION\_FAILED | -131 | 无法使用强制代理配置。目前，这意味着无法获取、解析或执行强制的PAC脚本。 |
@@ -104,7 +98,7 @@ ArkWeb的网络协议栈错误列表
 | ERR\_HTTPS\_PROXY\_TUNNEL\_RESPONSE\_REDIRECT | -140 | 通过HTTPS代理创建SSL隧道连接的请求收到302（响应正文可能包括请求失败原因的描述）。 |
 | ERR\_SSL\_CLIENT\_AUTH\_SIGNATURE\_FAILED | -141 | 无法使用客户端证书的私钥对SSL客户端身份验证握手的CertificateVerify数据进行签名。 |
 | ERR\_MSG\_TOO\_BIG | -142 | 消息太大，无法传输。（例如，超过大小阈值的UDP消息）。 |
-| ERR\_WS\_PROTOCOL\_ERROR | -145 | Websocket协议错误。表示由于帧格式错误或其他协议冲突，正在终止连接。 |
+| ERR\_WS\_PROTOCOL\_ERROR | -145 | WebSocket协议错误。表示由于帧格式错误或其他协议冲突，正在终止连接。 |
 | ERR\_ADDRESS\_IN\_USE | -147 | 尝试绑定已在使用的地址时返回。 |
 | ERR\_SSL\_HANDSHAKE\_NOT\_COMPLETED | -148 | 由于SSL握手尚未完成，操作失败。 |
 | ERR\_SSL\_BAD\_PEER\_PUBLIC\_KEY | -149 | SSL 公钥错误。 |
@@ -121,7 +115,7 @@ ArkWeb的网络协议栈错误列表
 | ERR\_SSL\_CLIENT\_AUTH\_CERT\_BAD\_FORMAT | -164 | 无法将客户端证书从平台存储导入SSL库。 |
 | ERR\_ICANN\_NAME\_COLLISION | -166 | 将主机名解析为包含IPv4地址“127.0.53.53”的IP地址列表。这是ICANN建议的一个特殊IP地址，用于表示存在名称冲突，并提醒管理员注意潜在问题。 |
 | ERR\_SSL\_SERVER\_CERT\_BAD\_FORMAT | -167 | SSL服务器提供了一个无法解码的证书。这不是证书错误代码，因为没有X509Certificate对象可用。此错误是致命的。 |
-| ERR\_CT\_STH\_PARSING\_FAILED | -168 | Certificate Transparency：解析signed tree head失败。 |
+| ERR\_CT\_STH\_PARSING\_FAILED | -168 | Certificate Transparency: 解析signed tree head失败。 |
 | ERR\_CT\_STH\_INCOMPLETE | -169 | Certificate Transparency: 解析signed tree head成功，但是缺少了一些信息。 |
 | ERR\_UNABLE\_TO\_REUSE\_CONNECTION\_FOR\_PROXY\_AUTH | -170 | 在使用AuthController生成凭据之前，尝试重新使用连接发送代理身份验证凭据失败。调用方应使用新连接重新使用控制器。 |
 | ERR\_CT\_CONSISTENCY\_PROOF\_PARSING\_FAILED | -171 | Certificate Transparency: 一致性验证解析失败。 |
@@ -139,19 +133,19 @@ ArkWeb的网络协议栈错误列表
 | ERR\_ECH\_FALLBACK\_CERTIFICATE\_INVALID | -184 | ECH已启用，服务器无法解密加密的ClientHello，并且没有提供对公用名称有效的证书。 |
 | ERR\_CERT\_COMMON\_NAME\_INVALID | -200 | 服务器响应时使用的证书的公用名称与主机名不匹配。这可能意味着：1.攻击者已将本端的流量重定向到他们的服务器，并提供了他们知道私钥的证书。2.服务器配置错误，使用错误的证书进行响应。3.用户在无线网络上，并被重定向到网络的登录页面。4.操作系统使用了DNS搜索后缀，服务器在地址栏中没有缩写名称的证书。 |
 | ERR\_CERT\_DATE\_INVALID | -201 | 证书已过期。这可能意味着：1.攻击者正在出示一个旧证书，他们已设法获得该证书的私钥。2.服务器配置错误，没有提供有效的证书。3.设备的时钟错了。 |
-| ERR\_CERT\_AUTHORITY\_INVALID | -202 | 未信任的证书签发机构。这可能意味着：1.攻击者用真实证书代替了包含其公钥并由其表亲签名的证书。2.服务器操作员拥有来自本端不知道但应该信任的CA的合法证书。3.服务器提供了一个自签名证书，无法抵御主动攻击者。 |
+| ERR\_CERT\_AUTHORITY\_INVALID | -202 | 未信任的证书签发机构。这可能意味着：1.攻击者已将真实的证书替换为包含其公钥并由其同伙签名的证书。2.服务器操作员拥有来自本端不知道但应该信任的CA的合法证书。3.服务器提供了一个自签名证书，无法抵御主动攻击者。 |
 | ERR\_CERT\_CONTAINS\_ERRORS | -203 | 证书中包含错误。 |
 | ERR\_CERT\_NO\_REVOCATION\_MECHANISM | -204 | 证书无撤销机制，实际上，此证书不能被吊销。 |
 | ERR\_CERT\_UNABLE\_TO\_CHECK\_REVOCATION | -205 | 此网站的安全证书的吊销信息不可用。这可能意味着：1.一个攻击者破坏了证书中的私钥，并阻止了本端发现证书已被吊销的尝试。2.证书未被吊销，但吊销服务器正忙或不可用。 |
 | ERR\_CERT\_REVOKED | -206 | 证书已撤销。本端有能力忽略这个错误，但这可能不是本端应该做的事情。 |
-| ERR\_CERT\_INVALID | -207 | 证书非法。 |
-| ERR\_CERT\_WEAK\_SIGNATURE\_ALGORITHM | -208 | 服务器以使用弱签名算法签名的证书作为响应。 |
+| ERR\_CERT\_INVALID | -207 | 证书无效。 |
+| ERR\_CERT\_WEAK\_SIGNATURE\_ALGORITHM | -208 | 服务器使用弱签名算法签名的证书作为响应。 |
 | ERR\_CERT\_NON\_UNIQUE\_NAME | -210 | 证书中指定的域名不是唯一的。 |
 | ERR\_CERT\_WEAK\_KEY | -211 | 服务器以包含弱密钥（例如，RSA密钥太小）的证书作为响应。 |
 | ERR\_CERT\_NAME\_CONSTRAINT\_VIOLATION | -212 | 违反证书名称约束。 |
 | ERR\_CERT\_VALIDITY\_TOO\_LONG | -213 | 证书有效期过长。 |
-| ERR\_CERTIFICATE\_TRANSPARENCY\_REQUIRED | -214 | 此连接需要Certificate Transparency，但服务器未提供符合策略的CT信息。 |
-| ERR\_CERT\_SYMANTEC\_LEGACY | -215 | 该证书链接到不再受信任的旧赛门铁克根目录。 |
+| ERR\_CERTIFICATE\_TRANSPARENCY\_REQUIRED | -214 | 此连接需要 Certificate Transparency，但服务器未提供符合策略的CT信息。 |
+| ERR\_CERT\_SYMANTEC\_LEGACY | -215 | 证书链接到不再受信任的旧版Symantec根证书。 |
 | ERR\_CERT\_KNOWN\_INTERCEPTION\_BLOCKED | -217 | 已知该证书被设备所有者以外的实体用于拦截。 |
 | ERR\_SSL\_OBSOLETE\_VERSION\_OR\_CIPHER | -218 | 连接使用过时版本的 SSL/TLS 或密码。 |
 | ERR\_CERT\_END | -219 | 紧跟在上一个证书错误代码之后的值。 |
@@ -167,8 +161,8 @@ ArkWeb的网络协议栈错误列表
 | ERR\_METHOD\_UNSUPPORTED | -322 | 方法不支持。 |
 | ERR\_UNEXPECTED\_PROXY\_AUTH | -323 | 意外的代理身份验证。 |
 | ERR\_EMPTY\_RESPONSE | -324 | 空返回错误。 |
-| ERR\_RESPONSE\_HEADERS\_TOO\_BIG | -325 | 返回体中 headers 太大。 |
-| ERR\_PAC\_SCRIPT\_FAILED | -327 | pac 脚本错误。 |
+| ERR\_RESPONSE\_HEADERS\_TOO\_BIG | -325 | HTTP响应标头过大。 |
+| ERR\_PAC\_SCRIPT\_FAILED | -327 | PAC 脚本错误。 |
 | ERR\_REQUEST\_RANGE\_NOT\_SATISFIABLE | -328 | 请求范围不可满足。 |
 | ERR\_MALFORMED\_IDENTITY | -329 | 用于身份验证的标识无效。 |
 | ERR\_CONTENT\_DECODING\_FAILED | -330 | 响应正文的内容解码失败。 |
@@ -184,15 +178,15 @@ ArkWeb的网络协议栈错误列表
 | ERR\_MISSING\_AUTH\_CREDENTIALS | -341 | 缺少身份验证凭据。 |
 | ERR\_UNEXPECTED\_SECURITY\_LIBRARY\_STATUS | -342 | 意外的安全库状态。 |
 | ERR\_MISCONFIGURED\_AUTH\_ENVIRONMENT | -343 | 配置错误的身份验证环境。 |
-| ERR\_UNDOCUMENTED\_SECURITY\_LIBRARY\_STATUS | -344 | 取消文档安全库状态。 |
+| ERR\_UNDOCUMENTED\_SECURITY\_LIBRARY\_STATUS | -344 | 未记录的SSPI或GSSAPI状态码。 |
 | ERR\_RESPONSE\_BODY\_TOO\_BIG\_TO\_DRAIN | -345 | 响应体太大。 |
-| ERR\_RESPONSE\_HEADERS\_MULTIPLE\_CONTENT\_LENGTH | -346 | 响应 headers 多个内容长度。 |
-| ERR\_INCOMPLETE\_HTTP2\_HEADERS | -347 | 不完整的 HTTP/2 headers。 |
-| ERR\_PAC\_NOT\_IN\_DHCP | -348 | pac 不在 dhcp 中。 |
+| ERR\_RESPONSE\_HEADERS\_MULTIPLE\_CONTENT\_LENGTH | -346 | HTTP响应包含了多个不同的Content-Length响应头。 |
+| ERR\_INCOMPLETE\_HTTP2\_HEADERS | -347 | 不完整的HTTP/2标头。 |
+| ERR\_PAC\_NOT\_IN\_DHCP | -348 | PAC 不在 DHCP 中。 |
 | ERR\_RESPONSE\_HEADERS\_MULTIPLE\_CONTENT\_DISPOSITION | -349 | 响应标头多重内容处置。 |
 | ERR\_RESPONSE\_HEADERS\_MULTIPLE\_LOCATION | -350 | 多个位置的响应标头。 |
 | ERR\_HTTP2\_SERVER\_REFUSED\_STREAM | -351 | HTTP/2 服务器拒绝流。 |
-| ERR\_HTTP2\_PING\_FAILED | -352 | HTTP/2 ping 失败。 |
+| ERR\_HTTP2\_PING\_FAILED | -352 | HTTP/2 ping失败。 |
 | ERR\_CONTENT\_LENGTH\_MISMATCH | -354 | 当连接关闭时，HTTP 响应主体传输的字节数少于 Content-Length 头中公布的字节数。 |
 | ERR\_INCOMPLETE\_CHUNKED\_ENCODING | -355 | HTTP 响应体使用分块编码传输，但在连接关闭时从未发送终止零长度块。 |
 | ERR\_QUIC\_PROTOCOL\_ERROR | -356 | 存在QUIC协议错误。 |
@@ -215,7 +209,7 @@ ArkWeb的网络协议栈错误列表
 | ERR\_HTTP2\_STREAM\_CLOSED | -376 | 在已关闭的流上收到一个 HTTP/2 帧。 |
 | ERR\_HTTP2\_CLIENT\_REFUSED\_STREAM | -377 | 客户端拒绝了一个 HTTP/2 流。 |
 | ERR\_HTTP2\_PUSHED\_RESPONSE\_DOES\_NOT\_MATCH | -378 | 基于匹配的 URL 和请求头，一个 HTTP/2 推送的流被请求所接收，但是推送的响应头并不匹配请求。 |
-| ERR\_HTTP\_RESPONSE\_CODE\_FAILURE | -379 | 服务器返回了non-2xx的HTTP响应代码。 |
+| ERR\_HTTP\_RESPONSE\_CODE\_FAILURE | -379 | 服务器返回了 non-2xx 的HTTP响应代码。 |
 | ERR\_QUIC\_UNKNOWN\_CERT\_ROOT | -380 | 在 QUIC 连接上展示的证书未链接到已知根证书，并且连接到的原始服务器不在允许未知根证书的域名列表中。 |
 | ERR\_QUIC\_GOAWAY\_REQUEST\_CAN\_BE\_RETRIED | -381 | 已接收到一个 GOAWAY 帧，表明请求未得到处理，因此可以安全地在不同的连接上重试。 |
 | ERR\_TOO\_MANY\_ACCEPT\_CH\_RESTARTS | -382 | ACCEPT\_CH 重启已被触发太多次。 |
@@ -271,6 +265,6 @@ ArkWeb的网络协议栈错误列表
 | ERR\_DNS\_SEARCH\_EMPTY | -805 | 后缀搜索列表规则阻止了给定主机名的解析。 |
 | ERR\_DNS\_SORT\_ERROR | -806 | 未能根据RFC3484对地址进行排序。 |
 | ERR\_DNS\_SECURE\_RESOLVER\_HOSTNAME\_RESOLUTION\_FAILED | -808 | 未能解析DNS-over-HTTPS服务器的主机名。 |
-| ERR\_DNS\_NAME\_HTTPS\_ONLY | -809 | DNS已识别请求因不安全的连接（http/ws）而被禁止。应用程序应该像处理HTTP重定向一样处理这个错误，将连接重定向到安全的https或wss。 |
+| ERR\_DNS\_NAME\_HTTPS\_ONLY | -809 | DNS已识别请求因不安全的连接（HTTP/WS）而被禁止。应用程序应该像处理HTTP重定向一样处理这个错误，将连接重定向到安全的HTTPS或WSS。 |
 | ERR\_DNS\_REQUEST\_CANCELED | -810 | 与此任务相关的所有 DNS 请求已被取消。 |
-| ERR\_DNS\_NO\_MATCHING\_SUPPORTED\_ALPN | -811 | HTTPS记录的主机名解析预期未能使用受支持协议的ALPN值进行解析。 |
+| ERR\_DNS\_NO\_MATCHING\_SUPPORTED\_ALPN | -811 | HTTPS记录的主机名解析未能使用受支持协议的ALPN值进行解析。 |

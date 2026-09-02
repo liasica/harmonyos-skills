@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 开发预加载资源接口
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 预加载 > 开发预加载资源接口
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:37:52+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:58ef6cd3ab51e21d3e71cccbfadc90abe94709a6beaaff19c415e3e65cf756e4
+scraped_at: 2026-09-02T14:59:54+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:a04f8cefd8bc29404fc9de70c860b253d4d232fd3e07524fa017686e75ecaf6b
 ---
 
 使用预加载服务之前，开发者需要完成云侧接口的开发，以提供预加载所需的资源数据。华为提供两种方式供开发者选择：云函数和开发者服务器，开发者可根据实际业务需要进行选择。
@@ -14,7 +14,7 @@ content_hash: sha256:58ef6cd3ab51e21d3e71cccbfadc90abe94709a6beaaff19c415e3e65cf
 
 开发者需要先按照云函数接口规范开发函数，然后在AGC云端创建函数，并可测试函数运行是否正常。流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/5bbSbTxqRLK3IsvChF6YIg/zh-cn_image_0000002589245177.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/qaIaMlfaSTmU-pT7eaAS_g/zh-cn_image_0000002706674952.png)
 
 1. [开发函数](cloudfoundation-develop-function-nodejs.md)：按照云函数接口规范开发函数。
 2. [创建函数](cloudfoundation-create-and-config-function.md)：函数业务代码开发完成后，即可在AGC云端创建函数。
@@ -34,113 +34,113 @@ content_hash: sha256:58ef6cd3ab51e21d3e71cccbfadc90abe94709a6beaaff19c415e3e65cf
 
 * 安装预加载
 
-  ```
-  1. import axios from 'axios';
+  ```javascript
+  import axios from 'axios';
 
-  3. let myHandler = async function (event, context, callback, logger) {
-  4. logger.info("event:" + JSON.stringify(event));
-  5. let env1 = context.env.env1; // 环境变量
-  6. logger.info("env1: " + env1)
-  7. try {
-  8. let body = event.body ? JSON.parse(event.body) : event;
-  9. let appId = body.appId;
+  let myHandler = async function (event, context, callback, logger) {
+      logger.info("event:" + JSON.stringify(event));
+      let env1 = context.env.env1; // 获取环境变量env1
+      logger.info("env1: " + env1)
+      try {
+          let body = event.body ? JSON.parse(event.body) : event;
+          let appId = body.appId;
 
-  11. logger.info("appId: " + appId);
+          logger.info("appId: " + appId);
 
-  13. // http请求示例，请按照实际业务修改
-  14. let url = 'https://example.com/prefetchApi';  // 页面资源数据的请求url
-  15. let headers = { 'k1': 'v1' };  // 请求header
-  16. let res;  // 返回数据
-  17. await axios.post(url, {}, { headers })  // http post请求
-  18. .then(response => {
-  19. res = response.data;
-  20. })
-  21. logger.info("--------Finished-------");
-  22. callback(res);
-  23. } catch (error) {
-  24. logger.error("--------Error-------");
-  25. logger.error("error: " + error);
-  26. callback(error);
-  27. }
-  28. };
+          // http请求示例，请按照实际业务修改
+          let url = 'https://example.com/prefetchApi';  // 页面资源数据的请求url
+          let headers = { 'k1': 'v1' };  // 请求header
+          let res;  // 返回数据
+          await axios.post(url, {}, { headers })  // http post请求
+              .then(response => {
+                  res = response.data;
+              })
+          logger.info("--------Finished-------");
+          callback(res);
+      } catch (error) {
+          logger.error("--------Error-------");
+          logger.error("error: " + error);
+          callback(error);
+      }
+  };
 
-  30. export { myHandler };
+  export { myHandler };
   ```
 * 周期性预加载
 
-  ```
-  1. import axios from 'axios';
+  ```javascript
+  import axios from 'axios';
 
-  3. let myHandler = async function (event, context, callback, logger) {
-  4. logger.info("event:" + JSON.stringify(event));
-  5. let env1 = context.env.env1; // 环境变量
-  6. logger.info("env1: " + env1)
-  7. try {
-  8. let body = event.body ? JSON.parse(event.body) : event;
-  9. let appId = body.appId;
-  10. let token = body.token;
-  11. let paramsStr = body.params; // 如果需要解析json结构paramsStr中的参数，需要使用 let params = JSON.parse(paramsStr);
+  let myHandler = async function (event, context, callback, logger) {
+      logger.info("event:" + JSON.stringify(event));
+      let env1 = context.env.env1; // 获取环境变量env1
+      logger.info("env1: " + env1)
+      try {
+          let body = event.body ? JSON.parse(event.body) : event;
+          let appId = body.appId;
+          let token = body.token;
+          let paramsStr = body.params; // 如果需要解析json结构paramsStr中的参数，需要使用 let params = JSON.parse(paramsStr);
 
-  13. logger.info("appId: " + appId + ",token:" + token + ",params:" + paramsStr);
+          logger.info("appId: " + appId + ",token:" + token + ",params:" + paramsStr);
 
-  15. // http请求示例，请按照实际业务修改
-  16. let url = 'https://example.com/prefetchApi'; // 页面资源数据的请求url
-  17. let headers = { 'k1': 'v1' }; // 请求header
-  18. let res; // 返回数据
-  19. await axios.post(url, {}, { headers }) // http post请求
-  20. .then(response => {
-  21. res = response.data;
-  22. })
-  23. logger.info("--------Finished-------");
-  24. callback(res);
-  25. } catch (error) {
-  26. logger.error("--------Error-------");
-  27. logger.error("error: " + error);
-  28. callback(error);
-  29. }
-  30. };
+          // http请求示例，请按照实际业务修改
+          let url = 'https://example.com/prefetchApi'; // 页面资源数据的请求url
+          let headers = { 'k1': 'v1' }; // 请求header
+          let res; // 返回数据
+          await axios.post(url, {}, { headers }) // http post请求
+              .then(response => {
+                  res = response.data;
+              })
+          logger.info("--------Finished-------");
+          callback(res);
+      } catch (error) {
+          logger.error("--------Error-------");
+          logger.error("error: " + error);
+          callback(error);
+      }
+  };
 
-  32. export { myHandler };
+  export { myHandler };
   ```
 * 跳链安装预加载
 
-  ```
-  1. import axios from 'axios';
+  ```javascript
+  import axios from 'axios';
 
-  3. let myHandler = async function (event, context, callback, logger) {
-  4. logger.info("event:" + JSON.stringify(event));
-  5. let env1 = context.env.env1; // 环境变量
-  6. logger.info("env1: " + env1)
-  7. try {
-  8. let body = event.body ? JSON.parse(event.body) : event;
-  9. let appId = body.appId;
-  10. let link = body.link; // 跳链安装预加载link信息
+  let myHandler = async function (event, context, callback, logger) {
+      logger.info("event:" + JSON.stringify(event));
+      let env1 = context.env.env1; // 获取环境变量env1
+      logger.info("env1: " + env1)
+      try {
+          let body = event.body ? JSON.parse(event.body) : event;
+          let appId = body.appId;
+          let link = body.link; // 跳链安装预加载link信息
 
-  12. logger.info("appId: " + appId + ",link:" + link);
+          logger.info("appId: " + appId + ",link:" + link);
 
-  14. // http请求示例，请按照实际业务修改
-  15. let url = 'https://example.com/prefetchApi'; // 页面资源数据的请求url
-  16. let headers = { 'k1': 'v1' }; // 请求header
-  17. let res; // 返回数据
-  18. await axios.post(url, {}, { headers }) // http post请求
-  19. .then(response => {
-  20. res = response.data;
-  21. })
-  22. logger.info("--------Finished-------");
-  23. callback(res);
-  24. } catch (error) {
-  25. logger.error("--------Error-------");
-  26. logger.error("error: " + error);
-  27. callback(error);
-  28. }
-  29. };
+          // http请求示例，请按照实际业务修改
+          let url = 'https://example.com/prefetchApi'; // 页面资源数据的请求url
+          let headers = { 'k1': 'v1' }; // 请求header
+          let res; // 返回数据
+          await axios.post(url, {}, { headers }) // http post请求
+              .then(response => {
+                  res = response.data;
+              })
+          logger.info("--------Finished-------");
+          callback(res);
+      } catch (error) {
+          logger.error("--------Error-------");
+          logger.error("error: " + error);
+          callback(error);
+      }
+  };
 
-  31. export { myHandler };
+  export { myHandler };
   ```
 
 ## 开发者服务器
 
-申请开通开发者服务器权限之后，开发者使用自己的服务器自行开发和实现预加载资源接口，接口需遵循开发者服务器接口规范。
+开发者使用自己的服务器自行开发和实现预加载资源接口，接口需遵循开发者服务器接口规范。
 
 ### 开发者服务器接口规范
 
@@ -154,6 +154,6 @@ content_hash: sha256:58ef6cd3ab51e21d3e71cccbfadc90abe94709a6beaaff19c415e3e65cf
 
 定义名称为prefetchData的接口，示例如下：
 
-```
-1. https://www.example.com/prefetchData?appId=1234&token=xxxx&params=yyyy
+```txt
+https://www.example.com/prefetchData?appId=1234&token=xxxx&params=yyyy
 ```

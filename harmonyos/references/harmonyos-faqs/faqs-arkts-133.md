@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-133
 title: 对于网络请求这类I/O密集型任务是否需要使用多线程进行处理
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 对于网络请求这类I/O密集型任务是否需要使用多线程进行处理
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:16+08:00
-doc_updated_at: 2026-03-17
+scraped_at: 2026-09-02T15:21:15+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:2d957b6dea39eef019e6611ce4070c0589e9b3e3ff55c91ca5979b9ff4045977
 ---
 

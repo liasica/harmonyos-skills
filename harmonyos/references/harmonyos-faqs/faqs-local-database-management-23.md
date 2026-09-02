@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 关系型数据库RDB支持哪些搜索能力
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 关系型数据库RDB支持哪些搜索能力
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:16+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:51+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:b96c4879dd5a443f71415b0896b3064d78e534f4c89955b8eec2b51f56ab0bc7
 ---
 

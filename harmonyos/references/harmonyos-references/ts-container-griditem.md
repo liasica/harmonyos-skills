@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: GridItem
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > GridItem
 category: harmonyos-references
-scraped_at: 2026-04-29T13:51:45+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b6f3b04c0540544eea68d648d86d52fdd861b57840790938bb5fc439d74e269a
+scraped_at: 2026-09-02T15:00:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c6a68ee62396f7f120e56b08f4d139e438712c81d73e7c9b9751c187c52c0f46
 ---
 
 网格容器中单项内容容器。
 
-说明
+**说明** 
 
 * 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 仅支持作为[Grid](ts-container-grid.md)组件的子组件使用。
@@ -19,13 +19,9 @@ content_hash: sha256:b6f3b04c0540544eea68d648d86d52fdd861b57840790938bb5fc439d74
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 可以包含单个子组件。
 
 ## 接口
-
-PhonePC/2in1TabletTVWearable
 
 GridItem(value?: GridItemOptions)
 
@@ -39,15 +35,11 @@ GridItem(value?: GridItemOptions)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value11+ | [GridItemOptions](ts-container-griditem.md#griditemoptions11对象说明) | 否 | 为GridItem提供可选参数，该对象内含有[GridItemStyle](ts-container-griditem.md#griditemstyle11枚举说明)枚举类型的style参数。 |
+| value11+ | [GridItemOptions](ts-container-griditem.md#griditemoptions11对象说明) | 否 | 为GridItem提供可选参数，该对象内包含[GridItemStyle](ts-container-griditem.md#griditemstyle11枚举说明)枚举类型的style参数。不传入时使用默认样式，即GridItemStyle.NONE。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
 ### rowStart
-
-PhonePC/2in1TabletTVWearable
 
 rowStart(value: number)
 
@@ -61,11 +53,9 @@ rowStart(value: number)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | 是 | 当前元素起始行号。  需要指定GridItem起始行列号和所占行列数的场景推荐使用[Grid的layoutOptions参数](ts-container-grid.md#gridlayoutoptions10对象说明)，详细可参考[Grid的示例1](ts-container-grid.md#示例1固定行列grid)和[Grid的示例3](ts-container-grid.md#示例3可滚动grid设置跨行跨列节点)。  取值范围：[0, 总行数-1] |
+| value | number | 是 | 当前元素起始行号。  需要指定GridItem起始行列号和所占行列数的场景推荐使用Grid的[GridLayoutOptions](ts-container-grid.md#gridlayoutoptions10对象说明)参数，详细可参考Grid的[示例1（固定行列Grid）](ts-container-grid.md#示例1固定行列grid)和[示例3（可滚动Grid设置跨行跨列节点）](ts-container-grid.md#示例3可滚动grid设置跨行跨列节点)。  取值范围：[0, 总行数-1] |
 
 ### rowEnd
-
-PhonePC/2in1TabletTVWearable
 
 rowEnd(value: number)
 
@@ -79,11 +69,9 @@ rowEnd(value: number)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | 是 | 当前元素终点行号。  需要指定GridItem起始行列号和所占行列数的场景推荐使用[Grid的layoutOptions参数](ts-container-grid.md#gridlayoutoptions10对象说明)，详细可参考[Grid的示例1](ts-container-grid.md#示例1固定行列grid)和[Grid的示例3](ts-container-grid.md#示例3可滚动grid设置跨行跨列节点)。  取值范围：[0, 总行数-1] |
+| value | number | 是 | 当前元素终点行号。  需要指定GridItem起始行列号和所占行列数的场景推荐使用Grid的[GridLayoutOptions](ts-container-grid.md#gridlayoutoptions10对象说明)参数，详细可参考Grid的[示例1（固定行列Grid）](ts-container-grid.md#示例1固定行列grid)和[示例3（可滚动Grid设置跨行跨列节点）](ts-container-grid.md#示例3可滚动grid设置跨行跨列节点)。  取值范围：[0, 总行数-1] |
 
 ### columnStart
-
-PhonePC/2in1TabletTVWearable
 
 columnStart(value: number)
 
@@ -97,11 +85,9 @@ columnStart(value: number)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | 是 | 当前元素起始列号。  需要指定GridItem起始行列号和所占行列数的场景推荐使用[Grid的layoutOptions参数](ts-container-grid.md#gridlayoutoptions10对象说明)，详细可参考[Grid的示例1](ts-container-grid.md#示例1固定行列grid)和[Grid的示例3](ts-container-grid.md#示例3可滚动grid设置跨行跨列节点)。  取值范围：[0, 总列数-1] |
+| value | number | 是 | 当前元素起始列号。  需要指定GridItem起始行列号和所占行列数的场景推荐使用Grid的[GridLayoutOptions](ts-container-grid.md#gridlayoutoptions10对象说明)参数，详细可参考Grid的[示例1（固定行列Grid）](ts-container-grid.md#示例1固定行列grid)和[示例3（可滚动Grid设置跨行跨列节点）](ts-container-grid.md#示例3可滚动grid设置跨行跨列节点)。  取值范围：[0, 总列数-1] |
 
 ### columnEnd
-
-PhonePC/2in1TabletTVWearable
 
 columnEnd(value: number)
 
@@ -115,9 +101,9 @@ columnEnd(value: number)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | 是 | 当前元素终点列号。  需要指定GridItem起始行列号和所占行列数的场景推荐使用[Grid的layoutOptions参数](ts-container-grid.md#gridlayoutoptions10对象说明)，详细可参考[Grid的示例1](ts-container-grid.md#示例1固定行列grid)和[Grid的示例3](ts-container-grid.md#示例3可滚动grid设置跨行跨列节点)。  取值范围：[0, 总列数-1] |
+| value | number | 是 | 当前元素终点列号。  需要指定GridItem起始行列号和所占行列数的场景推荐使用Grid的[GridLayoutOptions](ts-container-grid.md#gridlayoutoptions10对象说明)参数，详细可参考Grid的[示例1（固定行列Grid）](ts-container-grid.md#示例1固定行列grid)和[示例3（可滚动Grid设置跨行跨列节点）](ts-container-grid.md#示例3可滚动grid设置跨行跨列节点)。  取值范围：[0, 总列数-1] |
 
-需要指定GridItem起始行列号和所占行列数的场景推荐使用[Grid的layoutOptions参数](ts-container-grid.md#gridlayoutoptions10对象说明)，详细可参考[Grid的示例1](ts-container-grid.md#示例1固定行列grid)和[Grid的示例3](ts-container-grid.md#示例3可滚动grid设置跨行跨列节点)。
+需要指定GridItem起始行列号和所占行列数的场景推荐使用Grid的[GridLayoutOptions](ts-container-grid.md#gridlayoutoptions10对象说明)参数，详细可参考Grid的[示例1（固定行列Grid）](ts-container-grid.md#示例1固定行列grid)和[示例3（可滚动Grid设置跨行跨列节点）](ts-container-grid.md#示例3可滚动grid设置跨行跨列节点)。
 
 起始行号、终点行号、起始列号、终点列号生效规则如下：
 
@@ -142,13 +128,11 @@ columnEnd(value: number)
 
 ### forceRebuild(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 forceRebuild(value: boolean)
 
 设置在触发组件build时是否重新创建此节点。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。GridItem会根据自身属性和子组件变化自行决定是否需要重新创建，无需设置。
 
@@ -158,11 +142,9 @@ forceRebuild(value: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | boolean | 是 | 在触发组件build时是否重新创建此节点。  默认值：false |
+| value | boolean | 是 | 设置为true时，在触发组件build时重新创建此节点；设置为false时，不强制重新创建此节点。  默认值：false |
 
 ### selectable8+
-
-PhonePC/2in1TabletTVWearable
 
 selectable(value: boolean)
 
@@ -182,8 +164,6 @@ selectable(value: boolean)
 
 ### selected10+
 
-PhonePC/2in1TabletTVWearable
-
 selected(value: boolean)
 
 设置当前GridItem选中状态。该属性支持[$$](../harmonyos-guides/arkts-two-way-sync.md)双向绑定变量。
@@ -192,54 +172,52 @@ selected(value: boolean)
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | boolean | 是 | 当前GridItem选中状态。设置为true时为选中状态，设置为false时为默认状态。  默认值：false |
+| value | boolean | 是 | 当前GridItem选中状态。设置为true时为选中状态，设置为false时为非选中状态。  默认值：false |
 
 ## GridItemOptions11+对象说明
 
-PhonePC/2in1TabletTVWearable
-
-GridItem样式对象。
+GridItem样式对象，用于配置GridItem的样式选项。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| style | [GridItemStyle](ts-container-griditem.md#griditemstyle11枚举说明) | 否 | 是 | 设置GridItem样式。  默认值：GridItemStyle.NONE  设置为GridItemStyle.NONE时无样式。  设置为GridItemStyle.PLAIN时，显示Hover、Press态样式。 |
+| style | [GridItemStyle](ts-container-griditem.md#griditemstyle11枚举说明) | 否 | 是 | 设置GridItem样式。  默认值：GridItemStyle.NONE  设置为GridItemStyle.NONE时无样式。  设置为GridItemStyle.PLAIN时，显示Hover、Press态样式。Hover态为鼠标悬停时的样式，Press态为按下时的样式。 |
 
 ## GridItemStyle11+枚举说明
 
-PhonePC/2in1TabletTVWearable
-
-GridItem样式枚举。
+GridItem样式枚举，用于定义GridItem的交互态样式。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| NONE | 0 | 无样式。 |
-| PLAIN | 1 | 显示Hover、Press态样式。 |
+| NONE | 0 | 无样式，不显示Hover、Press态样式。 |
+| PLAIN | 1 | 显示Hover、Press态样式。Hover态为鼠标悬停时的样式，Press态为按下时的样式。 |
 
-说明
+**说明** 
 
 GridItem焦点态样式设置：Grid组件需要设置4vp规格以上的内边距，用于显示GridItem的焦点框。
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 ### onSelect8+
-
-PhonePC/2in1TabletTVWearable
 
 onSelect(event: (isSelected: boolean) => void)
 
@@ -253,128 +231,126 @@ GridItem元素被鼠标框选的状态改变时触发回调。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| isSelected | boolean | 是 | 进入鼠标框选范围即被选中返回true， 移出鼠标框选范围即未被选中返回false。 |
+| isSelected | boolean | 是 | 进入鼠标框选范围即被选中返回true，移出鼠标框选范围即未被选中返回false。 |
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 ### 示例1（GridItem设置自身位置）
 
-GridItem通过设置合理的ColumnStart、ColumnEnd、RowStart、RowEnd属性来设置自身位置。需要指定GridItem起始行列号和所占行列数的场景推荐使用[Grid的layoutOptions参数](ts-container-grid.md#gridlayoutoptions10对象说明)，详细可参考[Grid的示例1](ts-container-grid.md#示例1固定行列grid)和[Grid的示例3](ts-container-grid.md#示例3可滚动grid设置跨行跨列节点)。
+GridItem通过设置合理的rowStart、rowEnd、columnStart、columnEnd属性来设置自身位置。需要指定GridItem起始行列号和所占行列数的场景推荐使用Grid的[GridLayoutOptions](ts-container-grid.md#gridlayoutoptions10对象说明)参数，详细可参考Grid的[示例1（固定行列Grid）](ts-container-grid.md#示例1固定行列grid)和[示例3（可滚动Grid设置跨行跨列节点）](ts-container-grid.md#示例3可滚动grid设置跨行跨列节点)。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct GridItemExample {
+  @State numbers: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'];
+
+  build() {
+    Column() {
+      Grid() {
+        GridItem() {
+          Text('4')
+            .fontSize(16)
+            .backgroundColor(0xFAEEE0)
+            .width('100%')
+            .height('100%')
+            .textAlign(TextAlign.Center)
+        }.rowStart(1).rowEnd(2).columnStart(1).columnEnd(2) // 同时设置合理的行列号
+
+        ForEach(this.numbers, (item: string) => {
+          GridItem() {
+            Text(item)
+              .fontSize(16)
+              .backgroundColor(0xF9CF93)
+              .width('100%')
+              .height('100%')
+              .textAlign(TextAlign.Center)
+          }
+        }, (item: string) => item)
+
+        GridItem() {
+          Text('5')
+            .fontSize(16)
+            .backgroundColor(0xDBD0C0)
+            .width('100%')
+            .height('100%')
+            .textAlign(TextAlign.Center)
+        }.columnStart(1).columnEnd(4) // 未设置行号，不按columnStart(1)定位；此处从第5行、索引为0的列开始并跨4列布局
+      }
+      .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
+      .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
+      .width('90%').height(300)
+    }.width('100%').margin({ top: 5 })
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct GridItemExample {
-5. @State numbers: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'];
 
-7. build() {
-8. Column() {
-9. Grid() {
-10. GridItem() {
-11. Text('4')
-12. .fontSize(16)
-13. .backgroundColor(0xFAEEE0)
-14. .width('100%')
-15. .height('100%')
-16. .textAlign(TextAlign.Center)
-17. }.rowStart(1).rowEnd(2).columnStart(1).columnEnd(2) // 同时设置合理的行列号
-
-19. ForEach(this.numbers, (item: string) => {
-20. GridItem() {
-21. Text(item)
-22. .fontSize(16)
-23. .backgroundColor(0xF9CF93)
-24. .width('100%')
-25. .height('100%')
-26. .textAlign(TextAlign.Center)
-27. }
-28. }, (item: string) => item)
-
-30. GridItem() {
-31. Text('5')
-32. .fontSize(16)
-33. .backgroundColor(0xDBD0C0)
-34. .width('100%')
-35. .height('100%')
-36. .textAlign(TextAlign.Center)
-37. }.columnStart(1).columnEnd(4) // 只设置列号，不会从第1列开始布局
-38. }
-39. .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
-40. .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
-41. .width('90%').height(300)
-42. }.width('100%').margin({ top: 5 })
-43. }
-44. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/_GkRUXkYRySFcRtSc4aCcA/zh-cn_image_0000002558766154.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/Tw5QB4dhTzaXy6BmL4H-hw/zh-cn_image_0000002736434931.gif)
 
 ### 示例2（设置GridItem样式）
 
 使用GridItemOptions设置GridItem样式。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct GridItemExample {
+  @State numbers: string[] = ['0', '1', '2'];
+
+  build() {
+    Column({ space: 5 }) {
+      Grid() {
+        ForEach(this.numbers, (rowItem: string) => {
+          ForEach(this.numbers, (item: string) => {
+            GridItem({ style: GridItemStyle.NONE }) {
+              Text(item)
+                .fontSize(16)
+                .width('100%')
+                .height('100%')
+                .textAlign(TextAlign.Center)
+                .focusable(true)
+            }
+            .backgroundColor(0xF9CF93)
+          }, (item: string) => item)
+        }, (rowItem: string) => rowItem)
+      }
+      .columnsTemplate('1fr 1fr 1fr')
+      .rowsTemplate('1fr 1fr')
+      .columnsGap(4)
+      .rowsGap(4)
+      .width('60%')
+      .backgroundColor(0xFAEEE0)
+      .height(150)
+      .padding(4)
+
+      Grid() {
+        ForEach(this.numbers, (rowItem: string) => {
+          ForEach(this.numbers, (item: string) => {
+            GridItem({ style: GridItemStyle.PLAIN }) {
+              Text(item)
+                .fontSize(16)
+                .width('100%')
+                .height('100%')
+                .textAlign(TextAlign.Center)
+                .focusable(true)
+            }
+            .backgroundColor(0xF9CF93)
+          }, (item: string) => item)
+        }, (rowItem: string) => rowItem)
+      }
+      .columnsTemplate('1fr 1fr 1fr')
+      .rowsTemplate('1fr 1fr')
+      .columnsGap(4)
+      .rowsGap(4)
+      .width('60%')
+      .backgroundColor(0xFAEEE0)
+      .height(150)
+      .padding(4)
+    }.width('100%').margin({ top: 5 })
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct GridItemExample {
-5. @State numbers: String[] = ['0', '1', '2'];
 
-7. build() {
-8. Column({ space: 5 }) {
-9. Grid() {
-10. ForEach(this.numbers, (day: string) => {
-11. ForEach(this.numbers, (day: string) => {
-12. GridItem({style:GridItemStyle.NONE}) {
-13. Text(day)
-14. .fontSize(16)
-15. .width('100%')
-16. .height('100%')
-17. .textAlign(TextAlign.Center)
-18. .focusable(true)
-19. }
-20. .backgroundColor(0xF9CF93)
-21. }, (day: string) => day)
-22. }, (day: string) => day)
-23. }
-24. .columnsTemplate('1fr 1fr 1fr')
-25. .rowsTemplate('1fr 1fr')
-26. .columnsGap(4)
-27. .rowsGap(4)
-28. .width('60%')
-29. .backgroundColor(0xFAEEE0)
-30. .height(150)
-31. .padding('4vp')
-
-33. Grid() {
-34. ForEach(this.numbers, (day: string) => {
-35. ForEach(this.numbers, (day: string) => {
-36. GridItem({style:GridItemStyle.PLAIN}) {
-37. Text(day)
-38. .fontSize(16)
-39. .width('100%')
-40. .height('100%')
-41. .textAlign(TextAlign.Center)
-42. .focusable(true)
-43. }
-44. .backgroundColor(0xF9CF93)
-45. }, (day: string) => day)
-46. }, (day: string) => day)
-47. }
-48. .columnsTemplate('1fr 1fr 1fr')
-49. .rowsTemplate('1fr 1fr')
-50. .columnsGap(4)
-51. .rowsGap(4)
-52. .width('60%')
-53. .backgroundColor(0xFAEEE0)
-54. .height(150)
-55. .padding('4vp')
-56. }.width('100%').margin({ top: 5 })
-57. }
-58. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/FyIgAo4-TLGhvk5VjB5fSw/zh-cn_image_0000002558606496.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/H8LmcehDRvaekA9t3WTtMw/zh-cn_image_0000002706835784.png)

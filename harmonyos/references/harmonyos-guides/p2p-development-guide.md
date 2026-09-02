@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/p2p-developme
 title: P2P模式开发指南
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > WLAN > P2P模式开发指南
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:44+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:ef91c3f94269ff288c49dcf7dc0d0a9b6ee7b5966d8dc5cc1ee29a4731889a2e
+scraped_at: 2026-09-02T14:59:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9bb9053430e46c3b343d699d2a5199d429f48cedb806eb6ffc7f48e7376e6043
 ---
 
 ## 简介
@@ -46,71 +46,71 @@ P2P模式，主要提供了WLAN设备的一种点对点连接技术，它可以�
 
 1. import需要的Wi-Fi模块。
 
-   ```
-   1. import { wifiManager } from '@kit.ConnectivityKit';
+   ```typescript
+   import { wifiManager } from '@kit.ConnectivityKit';
    ```
 2. 开启设备的Wi-Fi。
 3. 需要SystemCapability.Communication.WiFi.P2P系统能力。
 4. 创建/删除P2P群组。
 
-   ```
-   1. async createGroup() {
-   2. try {
-   3. let deviceInfo = await wifiManager.getP2pLocalDevice();
-   4. let config:wifiManager.WifiP2PConfig = {
-   5. deviceAddress: deviceInfo.deviceAddress,
-   6. netId: this.netId,
-   7. passphrase: this.passphrase,
-   8. groupName: this.groupName,
-   9. goBand: this.goBand,
-   10. }
-   11. hilog.info(`deviceAddress: ${config.deviceAddress}, netId: ${config.netId}, pwd: ${config.passphrase}, gpname: ${config.groupName}, goBand: ${config.goBand}`);
-   12. await wifiManager.createGroup(config);
-   13. this.promptAction.showToast({
-   14. message: 'createGroup success',
-   15. duration: 2000
-   16. });
-   17. } catch (e) {
-   18. hilog.info(TAG, `createGroup Error: ${JSON.stringify(e)}`);
-   19. }
-   20. }
+   ```typescript
+   async createGroup() {
+     try {
+       let deviceInfo = await wifiManager.getP2pLocalDevice();
+       let config:wifiManager.WifiP2PConfig = {
+         deviceAddress: deviceInfo.deviceAddress,
+         netId: this.netId,
+         passphrase: this.passphrase,
+         groupName: this.groupName,
+         goBand: this.goBand,
+       }
+       hilog.info(`deviceAddress: ${config.deviceAddress}, netId: ${config.netId}, pwd: ${config.passphrase}, gpname: ${config.groupName}, goBand: ${config.goBand}`);
+       await wifiManager.createGroup(config);
+       this.promptAction.showToast({
+         message: 'createGroup success',
+         duration: 2000
+       });
+     } catch (e) {
+       hilog.info(TAG, `createGroup Error: ${JSON.stringify(e)}`);
+     }
+   }
    ```
 5. 示例代码：
 
-   ```
-   1. import { wifiManager } from '@kit.ConnectivityKit';
+   ```ts
+   import { wifiManager } from '@kit.ConnectivityKit';
 
-   3. // 创建群组，将当前设备当作GO使用时，需要该步骤
-   4. // netId：-1表示创建临时组，下次和已连接过的设备连接，需要重新进行GO协商，以及WPS密钥协商;
-   5. // netId：-2表示创建永久组，下次和已连接过的设备连接，不需要重新进行GO和WPS密钥协商;
+   // 创建群组，将当前设备当作GO使用时，需要该步骤
+   // netId：-1表示创建临时组，下次和已连接过的设备连接，需要重新进行GO协商，以及WPS密钥协商;
+   // netId：-2表示创建永久组，下次和已连接过的设备连接，不需要重新进行GO和WPS密钥协商;
 
-   7. let recvP2pPersistentGroupChangeFunc = () => {
-   8. console.info("p2p persistent group change receive event");
+   let recvP2pPersistentGroupChangeFunc = () => {
+     console.info("p2p persistent group change receive event");
 
-   10. // 永久组创建好后需要处理的业务
-   11. }
-   12. // 创建永久组，需要注册永久组状态改变事件回调
-   13. wifiManager.on("p2pPersistentGroupChange", recvP2pPersistentGroupChangeFunc);
-   14. try {
-   15. let config: wifiManager.WifiP2PConfig = {
-   16. deviceAddress: "00:11:22:33:44:55",
-   17. deviceAddressType: 1,
-   18. netId: -2,
-   19. passphrase: "12345678",
-   20. groupName: "testGroup",
-   21. goBand: 0
-   22. }
-   23. wifiManager.createGroup(config);
-   24. } catch (error) {
-   25. console.error("failed:" + JSON.stringify(error));
-   26. }
+     // 永久组创建好后需要处理的业务
+   }
+   // 创建永久组，需要注册永久组状态改变事件回调
+   wifiManager.on("p2pPersistentGroupChange", recvP2pPersistentGroupChangeFunc);
+   try {
+     let config: wifiManager.WifiP2PConfig = {
+       deviceAddress: "00:11:22:33:44:55",
+       deviceAddressType: 1,
+       netId: -2,
+       passphrase: "12345678",
+       groupName: "testGroup",
+       goBand: 0
+   }
+     wifiManager.createGroup(config);
+   } catch (error) {
+     console.error("failed:" + JSON.stringify(error));
+   }
 
-   28. // 删除群组
-   29. try {
-   30. wifiManager.removeGroup();
-   31. } catch (error) {
-   32. console.error("failed:" + JSON.stringify(error));
-   33. }
+   // 删除群组
+   try {
+     wifiManager.removeGroup();
+   } catch (error) {
+     console.error("failed:" + JSON.stringify(error));
+   }
    ```
 6. 错误码请参见[WIFI错误码](../harmonyos-references/errorcode-wifi.md)。
 
@@ -118,111 +118,111 @@ P2P模式，主要提供了WLAN设备的一种点对点连接技术，它可以�
 
 1. import需要的Wi-Fi模块。
 
-   ```
-   1. import { wifiManager } from '@kit.ConnectivityKit';
+   ```typescript
+   import { wifiManager } from '@kit.ConnectivityKit';
    ```
 2. 开启设备的Wi-Fi。
 3. 需要SystemCapability.Communication.WiFi.P2P系统能力。
 4. 注册"p2pPeerDeviceChange"事件回调，并在回调实现中执行P2P连接。
 
-   ```
-   1. connectP2p(p2pScanInfo: wifiManager.WifiP2pDevice) {
-   2. this.promptAction.showToast({
-   3. message: 'connect to device',
-   4. duration: 2000
-   5. });
-   6. hilog.info(TAG , `connect deviceAddress=${ p2pScanInfo.deviceAddress }`);
-   7. hilog.info(TAG , `p2pScanInfo:` + JSON.stringify(p2pScanInfo));
-   8. let config: wifiManager.WifiP2PConfig = {
-   9. deviceAddress : p2pScanInfo.deviceAddress,
-   10. netId : - 2 ,
-   11. deviceAddressType: 1,
-   12. passphrase : '' ,
-   13. groupName : '' ,
-   14. goBand : 0
-   15. }
-   16. wifiManager.p2pConnect(config);
-   17. }
+   ```typescript
+   connectP2p(p2pScanInfo: wifiManager.WifiP2pDevice) {
+     this.promptAction.showToast({
+       message: 'connect to device',
+       duration: 2000
+     });
+     hilog.info(TAG , `connect deviceAddress=${ p2pScanInfo.deviceAddress }`);
+     hilog.info(TAG , `p2pScanInfo:` + JSON.stringify(p2pScanInfo));
+     let config: wifiManager.WifiP2PConfig = {
+       deviceAddress : p2pScanInfo.deviceAddress,
+       netId : - 2 ,
+       deviceAddressType: 1,
+       passphrase : '' ,
+       groupName : '' ,
+       goBand : 0
+     }
+     wifiManager.p2pConnect(config);
+   }
    ```
 5. 开始P2P设备发现。
 
-   ```
-   1. aboutToAppear() {
-   2. // 如果wifi是开的，就记录下状态，然后扫描p2p设备，并获取连接信息
-   3. if (!wifiManager.isWifiActive()) {
-   4. this.promptAction.showToast({
-   5. message: 'please activate wifi',
-   6. duration: 2000
-   7. });
-   8. return;
-   9. }
-   10. this.isSwitchOn = true;
-   11. wifiManager.startDiscoverDevices();
-   12. this.addListener();
-   13. }
+   ```typescript
+   aboutToAppear() {
+     // 如果wifi是开的，就记录下状态，然后扫描p2p设备，并获取连接信息
+     if (!wifiManager.isWifiActive()) {
+       this.promptAction.showToast({
+         message: 'please active wifi',
+         duration: 2000
+       });
+       return;
+     }
+     this.isSwitchOn = true;
+     wifiManager.startDiscoverDevices();
+     this.addListener();
+   }
 
-   15. aboutToDisappear() {
-   16. wifiManager.off('p2pPeerDeviceChange');
-   17. wifiManager.off('p2pConnectionChange');
-   18. }
+   aboutToDisappear() {
+     wifiManager.off('p2pPeerDeviceChange');
+     wifiManager.off('p2pConnectionChange');
+   }
    ```
 6. 示例代码：
 
-   ```
-   1. import { wifiManager } from '@kit.ConnectivityKit';
+   ```ts
+   import { wifiManager } from '@kit.ConnectivityKit';
 
-   3. let recvP2pConnectionChangeFunc = (result: wifiManager.WifiP2pLinkedInfo) => {
-   4. console.info("p2p connection change receive event: " + JSON.stringify(result));
-   5. wifiManager.getP2pLinkedInfo((err, data) => {
-   6. if (err) {
-   7. console.error("failed to get P2pLinkedInfo: " + JSON.stringify(err));
-   8. return;
-   9. }
-   10. console.info("get getP2pLinkedInfo: " + JSON.stringify(data));
-   11. // 添加P2P连接成功或者失败场景的业务处理
-   12. });
-   13. }
-   14. // P2P连接完成，会调用"p2pConnectionChange"事件回调
-   15. wifiManager.on("p2pConnectionChange", recvP2pConnectionChangeFunc);
+   let recvP2pConnectionChangeFunc = (result: wifiManager.WifiP2pLinkedInfo) => {
+     console.info("p2p connection change receive event: " + JSON.stringify(result));
+     wifiManager.getP2pLinkedInfo((err, data) => {
+       if (err) {
+         console.error("failed to get P2pLinkedInfo: " + JSON.stringify(err));
+         return;
+       }
+       console.info("get getP2pLinkedInfo: " + JSON.stringify(data));
+       // 添加P2P连接成功或者失败场景的业务处理
+     });
+   }
+   // P2P连接完成，会调用"p2pConnectionChange"事件回调
+   wifiManager.on("p2pConnectionChange", recvP2pConnectionChangeFunc);
 
-   17. let recvP2pPeerDeviceChangeFunc = (result: wifiManager.WifiP2pDevice[]) => {
-   18. console.info("p2p peer device change receive event: " + JSON.stringify(result));
-   19. wifiManager.getP2pPeerDevices((err, data) => {
-   20. if (err) {
-   21. console.error("failed to get peer devices: " + JSON.stringify(err));
-   22. return;
-   23. }
-   24. console.info("get peer devices: " + JSON.stringify(data));
-   25. let len = data.length;
-   26. for (let i = 0; i < len; ++i) {
-   27. // 选择符合条件的对端P2P设备
-   28. if (data[i].deviceName === "my_test_device") {
-   29. console.info("p2p connect to test device: " + data[i].deviceAddress);
-   30. let config: wifiManager.WifiP2PConfig = {
-   31. deviceAddress: data[i].deviceAddress,
-   32. deviceAddressType: 1,
-   33. netId: -2,
-   34. passphrase: "",
-   35. groupName: "",
-   36. goBand: 0,
-   37. }
-   38. // 执行P2P连接，作为GO时不能主动发起连接
-   39. wifiManager.p2pConnect(config);
-   40. }
-   41. }
-   42. });
-   43. }
-   44. // P2P扫描结果上报时会调用"p2pPeerDeviceChange"事件回调
-   45. wifiManager.on("p2pPeerDeviceChange", recvP2pPeerDeviceChangeFunc);
+   let recvP2pPeerDeviceChangeFunc = (result: wifiManager.WifiP2pDevice[]) => {
+     console.info("p2p peer device change receive event: " + JSON.stringify(result));
+     wifiManager.getP2pPeerDevices((err, data) => {
+       if (err) {
+         console.error("failed to get peer devices: " + JSON.stringify(err));
+         return;
+       }
+       console.info("get peer devices: " + JSON.stringify(data));
+       let len = data.length;
+       for (let i = 0; i < len; ++i) {
+         // 选择符合条件的对端P2P设备
+         if (data[i].deviceName === "my_test_device") {
+           console.info("p2p connect to test device: " + data[i].deviceAddress);
+           let config: wifiManager.WifiP2PConfig = {
+             deviceAddress: data[i].deviceAddress,
+             deviceAddressType: 1,
+             netId: -2,
+             passphrase: "",
+             groupName: "",
+             goBand: 0,
+           }
+           // 执行P2P连接，作为GO时不能主动发起连接
+           wifiManager.p2pConnect(config);
+         }
+       }
+     });
+   }
+   // P2P扫描结果上报时会调用"p2pPeerDeviceChange"事件回调
+   wifiManager.on("p2pPeerDeviceChange", recvP2pPeerDeviceChangeFunc);
 
-   47. setTimeout(() => {
-   48. wifiManager.off("p2pConnectionChange", recvP2pConnectionChangeFunc);
-   49. }, 125 * 1000);
-   50. setTimeout(() => {
-   51. wifiManager.off("p2pPeerDeviceChange", recvP2pPeerDeviceChangeFunc);
-   52. }, 125 * 1000);
-   53. // 开始发现P2P设备，即，开始P2P扫描
-   54. console.info("start discover devices -> " + wifiManager.startDiscoverDevices());
+   setTimeout(() => {
+     wifiManager.off("p2pConnectionChange", recvP2pConnectionChangeFunc);
+   }, 125 * 1000);
+   setTimeout(() => {
+     wifiManager.off("p2pPeerDeviceChange", recvP2pPeerDeviceChangeFunc);
+   }, 125 * 1000);
+   // 开始发现P2P设备，即，开始P2P扫描
+   console.info("start discover devices -> " + wifiManager.startDiscoverDevices());
    ```
 7. 错误码请参见[WIFI错误码](../harmonyos-references/errorcode-wifi.md)。
 

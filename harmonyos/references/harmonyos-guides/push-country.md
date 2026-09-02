@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-country
 title: 支持的国家/地区
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 附录 > 支持的国家/地区
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:37+08:00
+scraped_at: 2026-09-02T15:00:01+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6e1cd961c2877a4d78c4b79c6c78e01d9a0a16e7195df06c339adad7496b942d
+content_hash: sha256:b649e1f92d98ce0bac904413f0a72d34dce9b8cd032be662b8adc28c911242a0
 ---
 
-说明
+**说明** 
 
 支持的设备中Wearable设备支持以下国家/地区，其他设备仅支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。
 

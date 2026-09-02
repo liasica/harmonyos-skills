@@ -3,22 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 禁用控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 交互属性 > 禁用控制
 category: harmonyos-references
-scraped_at: 2026-04-29T13:51:25+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:e9cbf862fedf8c89a4f0b6f0988f51d429793f1b9b112749ce1f64c96e090f76
+scraped_at: 2026-09-02T15:00:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:01b32aa6c282ab712a05e017fdf8287e7e7bdf31338c6cc673a76648a4310500
 ---
 
-组件可交互状态下响应[点击事件](ts-universal-events-click.md)、[触摸事件](ts-universal-events-touch.md)、[拖拽事件](ts-universal-events-drag-drop.md)、[按键事件](ts-universal-events-key.md)、[焦点事件](ts-universal-focus-event.md)、[鼠标事件](ts-universal-mouse-key.md)、[轴事件](ts-universal-events-axis.md)、[悬浮事件](ts-universal-events-hover.md)、[无障碍悬浮事件](ts-universal-accessibility-hover-event.md)、[手势事件](ts-gesture-settings.md)、[焦点轴事件](ts-universal-events-focus_axis.md)和[表冠事件](ts-universal-events-crown.md)。
+禁用控制用于设置组件是否可交互。组件可交互状态下可以响应[点击事件](ts-universal-events-click.md)、[触摸事件](ts-universal-events-touch.md)、[拖拽事件](ts-universal-events-drag-drop.md)、[按键事件](ts-universal-events-key.md)、[焦点事件](ts-universal-focus-event.md)、[鼠标事件](ts-universal-mouse-key.md)、[轴事件](ts-universal-events-axis.md)、[悬浮事件](ts-universal-events-hover.md)、[无障碍悬浮事件](ts-universal-accessibility-hover-event.md)、[手势事件](ts-gesture-settings.md)、[焦点轴事件](ts-universal-events-focus_axis.md)和[表冠事件](ts-universal-events-crown.md)；组件不可交互状态下不响应上述操作，适用于需要临时阻止用户交互的场景。
 
-说明
+**说明** 
 
-从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 禁用控制属性仅在按下时生效，交互过程中更改enabled属性无效。
 
 ## enabled
-
-PhonePC/2in1TabletTVWearable
 
 enabled(value: boolean): T
 
@@ -40,29 +38,27 @@ enabled(value: boolean): T
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，支持链式调用。 |
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
+该示例通过enabled设置按钮是否可交互。
 
-该示例通过enabled设置按钮可交互性。
-
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct EnabledExample {
-5. build() {
-6. Flex({ justifyContent: FlexAlign.SpaceAround }) {
-7. // 点击时无响应
-8. Button('disable').enabled(false).backgroundColor(0x317aff).opacity(0.4)
-9. Button('enable').backgroundColor(0x317aff)
-10. }
-11. .width('100%')
-12. .padding({ top: 5 })
-13. }
-14. }
+```ts
+// xxx.ets
+@Entry
+@Component
+struct EnabledExample {
+  build() {
+    Flex({ justifyContent: FlexAlign.SpaceAround }) {
+      // 点击时无响应
+      Button('disable').enabled(false).backgroundColor(0x317aff).opacity(0.4)
+      Button('enable').backgroundColor(0x317aff)
+    }
+    .width('100%')
+    .padding({ top: 5 })
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/-cWtFkLtSS-JrZC95z0BrA/zh-cn_image_0000002589245857.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/IApgbhZFR1qO1SZx-YNK_A/zh-cn_image_0000002706835660.gif)

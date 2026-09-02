@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: MDNS错误码
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 错误码 > MDNS错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:46+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1dd4cb17c2795275b45890996214216581fe8e6decd02311b370b88f434dc710
+scraped_at: 2026-09-02T15:01:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e736723f0dc4ed62a644f14d5ef507a67ecf9dfd58b3b106be7fa57de71d3ddf
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码](errorcode-universal.md)说明文档。
 
 ## 2100002 连接服务失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -30,11 +28,9 @@ Failed to connect to the service.
 
 **处理步骤**
 
-检查系统服务运行状态是否正常。
+请检查系统服务运行状态并重试。如果问题仍然存在，收集完整日志后联系技术支持获取帮助。
 
 ## 2100003 系统内部错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -54,11 +50,27 @@ System internal error.
 
 1.检查内存空间是否充足，清理内存后重试。
 
-2.系统异常，请稍后重试或重启设备。
+2.系统异常，请稍后重试或重启设备。如果问题仍然存在，收集完整日志后联系技术支持获取帮助。
+
+## 2204002 未找到目标服务
+
+**错误信息**
+
+Callback not found.
+
+**错误描述**
+
+未找到目标服务。
+
+**可能原因**
+
+取消注册未注册的mDNS服务或者取消搜索未在搜索的mDNS服务。
+
+**处理步骤**
+
+检查调用取消注册mDNS和取消搜索mDNS接口的入参是否正确。
 
 ## 2204003 重复注册
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -96,8 +108,6 @@ Service instance duplicated.
 
 ## 2204008 删除服务失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to delete the service instance.
@@ -134,8 +144,6 @@ Failed to send packet.
 
 ## 2204010 发送消息失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to send the message.
@@ -153,8 +161,6 @@ Failed to send the message.
 检查局域网内目标mDNS服务是否存在。
 
 ## 2204006 解析服务超时
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 

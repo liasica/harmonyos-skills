@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-data
 title: data_asset.h
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 头文件 > data_asset.h
 category: harmonyos-references
-scraped_at: 2026-04-29T13:49:41+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:c996e5d09cd2ae67d386324c5b1bb3fe96dbbb4bba19285c5eb45dc959b07947
+scraped_at: 2026-09-02T15:00:42+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:90631dde76d7f577555ca574d07776242a5d6ab6837f5540c755f19daea76097
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供资产类型数据结构。
 
@@ -28,11 +26,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -40,15 +34,11 @@ PhonePC/2in1TabletTVWearable
 
 ### 枚举
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [Data\_AssetStatus](capi-data-asset-h.md#data_assetstatus) | Data\_AssetStatus | 资产状态值类型。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -73,14 +63,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### Data\_AssetStatus
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Data_AssetStatus
+```c
+enum Data_AssetStatus
 ```
 
 **描述**
@@ -101,14 +87,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Data\_Asset\_SetName()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Data_Asset_SetName(Data_Asset *asset, const char *name)
+```c
+int OH_Data_Asset_SetName(Data_Asset *asset, const char *name)
 ```
 
 **描述**
@@ -132,10 +114,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Data\_Asset\_SetUri()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Data_Asset_SetUri(Data_Asset *asset, const char *uri)
+```c
+int OH_Data_Asset_SetUri(Data_Asset *asset, const char *uri)
 ```
 
 **描述**
@@ -159,10 +139,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Data\_Asset\_SetPath()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Data_Asset_SetPath(Data_Asset *asset, const char *path)
+```c
+int OH_Data_Asset_SetPath(Data_Asset *asset, const char *path)
 ```
 
 **描述**
@@ -186,10 +164,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Data\_Asset\_SetCreateTime()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Data_Asset_SetCreateTime(Data_Asset *asset, int64_t createTime)
+```c
+int OH_Data_Asset_SetCreateTime(Data_Asset *asset, int64_t createTime)
 ```
 
 **描述**
@@ -213,10 +189,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Data\_Asset\_SetModifyTime()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Data_Asset_SetModifyTime(Data_Asset *asset, int64_t modifyTime)
+```c
+int OH_Data_Asset_SetModifyTime(Data_Asset *asset, int64_t modifyTime)
 ```
 
 **描述**
@@ -240,10 +214,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Data\_Asset\_SetSize()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Data_Asset_SetSize(Data_Asset *asset, size_t size)
+```c
+int OH_Data_Asset_SetSize(Data_Asset *asset, size_t size)
 ```
 
 **描述**
@@ -267,10 +239,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Data\_Asset\_SetStatus()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Data_Asset_SetStatus(Data_Asset *asset, Data_AssetStatus status)
+```c
+int OH_Data_Asset_SetStatus(Data_Asset *asset, Data_AssetStatus status)
 ```
 
 **描述**
@@ -294,10 +264,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Data\_Asset\_GetName()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Data_Asset_GetName(Data_Asset *asset, char *name, size_t *length)
+```c
+int OH_Data_Asset_GetName(Data_Asset *asset, char *name, size_t *length)
 ```
 
 **描述**
@@ -322,10 +290,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Data\_Asset\_GetUri()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Data_Asset_GetUri(Data_Asset *asset, char *uri, size_t *length)
+```c
+int OH_Data_Asset_GetUri(Data_Asset *asset, char *uri, size_t *length)
 ```
 
 **描述**
@@ -350,10 +316,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Data\_Asset\_GetPath()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Data_Asset_GetPath(Data_Asset *asset, char *path, size_t *length)
+```c
+int OH_Data_Asset_GetPath(Data_Asset *asset, char *path, size_t *length)
 ```
 
 **描述**
@@ -378,10 +342,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Data\_Asset\_GetCreateTime()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Data_Asset_GetCreateTime(Data_Asset *asset, int64_t *createTime)
+```c
+int OH_Data_Asset_GetCreateTime(Data_Asset *asset, int64_t *createTime)
 ```
 
 **描述**
@@ -409,10 +371,8 @@ Data\_Asset
 
 ### OH\_Data\_Asset\_GetModifyTime()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Data_Asset_GetModifyTime(Data_Asset *asset, int64_t *modifyTime)
+```c
+int OH_Data_Asset_GetModifyTime(Data_Asset *asset, int64_t *modifyTime)
 ```
 
 **描述**
@@ -436,10 +396,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Data\_Asset\_GetSize()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Data_Asset_GetSize(Data_Asset *asset, size_t *size)
+```c
+int OH_Data_Asset_GetSize(Data_Asset *asset, size_t *size)
 ```
 
 **描述**
@@ -463,10 +421,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Data\_Asset\_GetStatus()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Data_Asset_GetStatus(Data_Asset *asset, Data_AssetStatus *status)
+```c
+int OH_Data_Asset_GetStatus(Data_Asset *asset, Data_AssetStatus *status)
 ```
 
 **描述**
@@ -490,10 +446,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Data\_Asset\_CreateOne()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Data_Asset *OH_Data_Asset_CreateOne(void)
+```c
+Data_Asset *OH_Data_Asset_CreateOne(void)
 ```
 
 **描述**
@@ -506,14 +460,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [Data\_Asset](capi-rdb-data-asset.md) | 创建成功则返回一个指向[Data\_Asset](capi-rdb-data-asset.md)结构体实例的指针，否则返回NULL。  使用完成后，必须通过[OH\_Data\_Asset\_DestroyOne](capi-data-asset-h.md#oh_data_asset_destroyone)接口释放内存。 |
+| [Data\_Asset](capi-rdb-data-asset.md) \* | 创建成功则返回一个指向[Data\_Asset](capi-rdb-data-asset.md)结构体实例的指针，否则返回NULL。  使用完成后，必须通过[OH\_Data\_Asset\_DestroyOne](capi-data-asset-h.md#oh_data_asset_destroyone)接口释放内存。 |
 
 ### OH\_Data\_Asset\_DestroyOne()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Data_Asset_DestroyOne(Data_Asset *asset)
+```c
+int OH_Data_Asset_DestroyOne(Data_Asset *asset)
 ```
 
 **描述**
@@ -536,10 +488,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Data\_Asset\_CreateMultiple()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Data_Asset **OH_Data_Asset_CreateMultiple(uint32_t count)
+```c
+Data_Asset **OH_Data_Asset_CreateMultiple(uint32_t count)
 ```
 
 **描述**
@@ -552,20 +502,18 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| uint32\_t count | 代表创建的资产类型数据的数量。 |
+| uint32\_t count | 表示要创建的[Data\_Asset](capi-rdb-data-asset.md)类型实例的数量。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [Data\_Asset](capi-rdb-data-asset.md) | 创建成功则返回一个指向[Data\_Asset](capi-rdb-data-asset.md)结构体实例的指针，否则返回NULL。  使用完成后，必须通过[OH\_Data\_Asset\_DestroyMultiple](capi-data-asset-h.md#oh_data_asset_destroymultiple)接口释放内存。 |
+| [Data\_Asset](capi-rdb-data-asset.md) \*\* | 创建成功则返回一个指向[Data\_Asset](capi-rdb-data-asset.md)结构体指针数组的指针，否则返回NULL。  使用完成后，必须通过[OH\_Data\_Asset\_DestroyMultiple](capi-data-asset-h.md#oh_data_asset_destroymultiple)接口释放内存。 |
 
 ### OH\_Data\_Asset\_DestroyMultiple()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Data_Asset_DestroyMultiple(Data_Asset **assets, uint32_t count)
+```c
+int OH_Data_Asset_DestroyMultiple(Data_Asset **assets, uint32_t count)
 ```
 
 **描述**
@@ -578,7 +526,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [Data\_Asset](capi-rdb-data-asset.md) \*\*assets | 表示指向[Data\_Asset](capi-rdb-data-asset.md)实例的指针。 |
+| [Data\_Asset](capi-rdb-data-asset.md) \*\*assets | 表示指向[Data\_Asset](capi-rdb-data-asset.md)结构体指针数组的指针。 |
 | uint32\_t count | 代表需要销毁的[Data\_Asset](capi-rdb-data-asset.md)类型对象的数量。 |
 
 **返回：**

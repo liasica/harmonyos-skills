@@ -3,41 +3,41 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/start-with-et
 title: 构建第一个HarmonyOS应用（ArkTS）
 breadcrumb: 指南 > 基础入门 > 快速入门 > 构建第一个HarmonyOS应用（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:25:27+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:eeb5517bf0e3b0354d2dc20218c2c7641aa69fddccea1f57e76e3b341302d1a4
+scraped_at: 2026-09-02T14:59:08+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a50a4a58fd148fe773daabf1204eec2fbda2aa41550dc244e8d80f777fda4cef
 ---
 
-说明
+**说明** 
 
-为确保运行效果，本文以使用[DevEco Studio 6.1.0 Release版本](https://developer.huawei.com/consumer/cn/download/)为例。
+为确保运行效果，本文以使用[DevEco Studio 26.0.0 Release版本](https://developer.huawei.com/consumer/cn/download/)为例。
 
 ## 创建ArkTS工程
 
 1. 若首次打开**DevEco Studio**，请单击**Create Project**创建工程。如果已经打开了一个工程，请在菜单栏选择**File** > **New** > **Create Project**来创建一个新工程。
-2. 选择**Application**应用开发（本文以应用开发为例，[Atomic Service](glossary.md#section10825114113817)对应为元服务开发），选择模板**Empty Ability**，单击**Next**进行下一步配置。
+2. 选择**Application**应用开发（本文以应用开发为例，[Atomic Service](glossary.md#atomic-service元服务)对应为元服务开发），选择模板**Empty Ability**，单击**Next**进行下一步配置。
 
    若开发者需要进行Native相关工程的开发，请选择**Native C++** 模板，更多模板的使用和说明请见[工程模板介绍](ide-template.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/AM-GY5m5Qp2v2cpl_aH7BQ/zh-cn_image_0000002558763960.png)
-3. 进入配置工程界面，**Compatible SDK**表示兼容的最低API Version，此处以选择**6.1.0(23)** 为例，其他参数保持默认设置即可。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/cRdC6bsRRX-hgZHj_4Q2vw/zh-cn_image_0000002706832984.png)
+3. 进入配置工程界面，**Compatible SDK**表示兼容的最低API Version，此处以选择**26.0.0** 为例，其他参数保持默认设置即可。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/5lfvP650RvSN0ozhYqhwhg/zh-cn_image_0000002558604304.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/5AHmBbQGT86JNi9zjRglRw/zh-cn_image_0000002736312093.png)
 4. 单击**Finish**，工具会自动生成示例代码和相关资源，等待工程创建完成。
 
 ## ArkTS工程目录结构（Stage模型）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/xey6Vf5YQwyu60MKGbojOg/zh-cn_image_0000002589323829.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/OMKaJw3YQAqFZKLyFWZRDw/zh-cn_image_0000002706673050.png)
 
 * **AppScope > app.json5**：应用的全局配置信息，详见[app.json5配置文件](app-configuration-file.md)。
-* **entry**：HarmonyOS工程模块，编译构建生成一个[HAP](application-package-glossary.md#hap)包。
+* **entry**：HarmonyOS工程模块，编译构建生成一个[HAP](hap-package.md)包。
 
   + **src > main > ets**：用于存放ArkTS源码。
   + **src > main > ets > entryability**：应用/服务的入口。
   + **src > main > ets > entrybackupability**：应用提供扩展的备份恢复能力。
   + **src > main > ets > pages**：应用/服务包含的页面。
   + **src > main > resources**：用于存放应用/服务所用到的资源文件，如图形、多媒体、字符串、布局文件等。关于资源文件，详见[资源分类与访问](resource-categories-and-access.md)。
-  + **src > main > module.json5**：[模块](application-package-glossary.md#module)配置文件。主要包含HAP包的配置信息、应用/服务在具体设备上的配置信息以及应用/服务的全局配置信息。具体的配置文件说明，详见[module.json5配置文件](module-configuration-file.md)。
+  + **src > main > module.json5**：[模块](application-package-glossary.md#module模块)配置文件。主要包含HAP包的配置信息、应用/服务在具体设备上的配置信息以及应用/服务的全局配置信息。具体的配置文件说明，详见[module.json5配置文件](module-configuration-file.md)。
   + **build-profile.json5**：当前的模块信息 、编译信息配置项，包括buildOption、targets配置等。
   + **hvigorfile.ts**：模块级编译构建任务脚本。
   + **obfuscation-rules.txt**：混淆规则文件。混淆开启后，在使用Release模式进行编译时，会对代码进行编译、混淆及压缩处理，保护代码资产。详见[开启代码混淆](ide-build-obfuscation.md)。
@@ -57,66 +57,66 @@ content_hash: sha256:eeb5517bf0e3b0354d2dc20218c2c7641aa69fddccea1f57e76e3b34130
 
    **Index.ets**文件的示例如下：
 
-   ```
-   1. // Index.ets
-   2. @Entry
-   3. @Component
-   4. struct Index {
-   5. @State message: string = 'Hello World';
+   ```ts
+   // Index.ets
+   @Entry
+   @Component
+   struct Index {
+     @State message: string = 'Hello World';
 
-   7. build() {
-   8. Row() {
-   9. Column() {
-   10. Text(this.message)
-   11. .fontSize(50)
-   12. .fontWeight(FontWeight.Bold)
-   13. }
-   14. .width('100%')
-   15. }
-   16. .height('100%')
-   17. }
-   18. }
+     build() {
+       Row() {
+         Column() {
+           Text(this.message)
+             .fontSize(50)
+             .fontWeight(FontWeight.Bold)
+         }
+         .width('100%')
+       }
+       .height('100%')
+     }
+   }
    ```
 2. 添加按钮。
 
-   在默认页面基础上，我们添加一个Button组件，作为按钮响应用户onClick事件，从而实现跳转到另一个页面。**Index.ets**文件的示例如下：
+   在上述页面基础上，我们添加一个Button组件，作为按钮响应用户onClick事件，从而实现跳转到另一个页面。**Index.ets**文件的示例如下：
 
-   ```
-   1. // Index.ets
-   2. @Entry
-   3. @Component
-   4. struct Index {
-   5. @State message: string = 'Hello World';
+   ```ts
+   // Index.ets
+   @Entry
+   @Component
+   struct Index {
+     @State message: string = 'Hello World';
 
-   7. build() {
-   8. Row() {
-   9. Column() {
-   10. Text(this.message)
-   11. .fontSize(50)
-   12. .fontWeight(FontWeight.Bold)
-   13. // 添加按钮，以响应用户onClick事件
-   14. Button() {
-   15. Text('Next')
-   16. .fontSize(30)
-   17. .fontWeight(FontWeight.Bold)
-   18. }
-   19. .type(ButtonType.Capsule)
-   20. .margin({
-   21. top: 20
-   22. })
-   23. .backgroundColor('#0D9FFB')
-   24. .width('40%')
-   25. .height('5%')
-   26. }
-   27. .width('100%')
-   28. }
-   29. .height('100%')
-   30. }
-   31. }
+     build() {
+       Row() {
+         Column() {
+           Text(this.message)
+             .fontSize(50)
+             .fontWeight(FontWeight.Bold)
+           // 添加按钮，以响应用户onClick事件
+           Button() {
+             Text('Next')
+               .fontSize(30)
+               .fontWeight(FontWeight.Bold)
+           }
+           .type(ButtonType.Capsule)
+           .margin({
+             top: 20
+           })
+           .backgroundColor('#0D9FFB')
+           .width('40%')
+           .height('5%')
+         }
+         .width('100%')
+       }
+       .height('100%')
+     }
+   }
    ```
 3. 在编辑窗口**右上角**的侧边工具栏，单击**Previewer**，打开预览器。第一个页面效果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/KGoB4YyMS-KpvSOEGTJYHQ/zh-cn_image_0000002589243767.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/625mwZ3QQcqusijWvwCFOg/zh-cn_image_0000002736432141.png)
 
 ## 构建第二个页面
 
@@ -124,56 +124,56 @@ content_hash: sha256:eeb5517bf0e3b0354d2dc20218c2c7641aa69fddccea1f57e76e3b34130
 
    * 新建第二个页面文件。在**Project**窗口，打开**entry > src > main > ets**，右键单击**pages**文件夹，选择**New > ArkTS File**，命名为**Second**，单击**回车键**。可以看到文件目录结构如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/ugjH5nJZTbeh_z_p1ketlg/zh-cn_image_0000002558763962.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/eEzX8crVTxKoXcnv7GFuDg/zh-cn_image_0000002706832986.png)
 
-     说明
+     **说明** 
 
      开发者也可以在右键单击**pages**文件夹时，选择**New > Page** **> Empty Page**，命名为**Second**，单击**Finish**完成第二个页面的创建。使用此种方式则无需再进行下文中第二个页面路由的手动配置。
    * 配置第二个页面的路由。在**Project**窗口，打开**entry > src > main > resources > base > profile**，在main\_pages.json文件中的"src"下配置第二个页面的路由"pages/Second"。示例如下：
 
-     ```
-     1. {
-     2. "src": [
-     3. "pages/Index",
-     4. "pages/Second"
-     5. ]
-     6. }
+     ```json
+     {
+       "src": [
+         "pages/Index",
+         "pages/Second"
+       ]
+     }
      ```
 2. 添加文本及按钮。
 
    参照第一个页面，在第二个页面添加Text组件、Button组件等，并设置其样式。**Second.ets**文件的示例如下：
 
-   ```
-   1. // Second.ets
-   2. @Entry
-   3. @Component
-   4. struct Second {
-   5. @State message: string = 'Hi there';
+   ```ts
+   // Second.ets
+   @Entry
+   @Component
+   struct Second {
+     @State message: string = 'Hi there';
 
-   7. build() {
-   8. Row() {
-   9. Column() {
-   10. Text(this.message)
-   11. .fontSize(50)
-   12. .fontWeight(FontWeight.Bold)
-   13. Button() {
-   14. Text('Back')
-   15. .fontSize(30)
-   16. .fontWeight(FontWeight.Bold)
-   17. }
-   18. .type(ButtonType.Capsule)
-   19. .margin({
-   20. top: 20
-   21. })
-   22. .backgroundColor('#0D9FFB')
-   23. .width('40%')
-   24. .height('5%')
-   25. }
-   26. .width('100%')
-   27. }
-   28. .height('100%')
-   29. }
-   30. }
+     build() {
+       Row() {
+         Column() {
+           Text(this.message)
+             .fontSize(50)
+             .fontWeight(FontWeight.Bold)
+           Button() {
+             Text('Back')
+               .fontSize(30)
+               .fontWeight(FontWeight.Bold)
+           }
+           .type(ButtonType.Capsule)
+           .margin({
+             top: 20
+           })
+           .backgroundColor('#0D9FFB')
+           .width('40%')
+           .height('5%')
+         }
+         .width('100%')
+       }
+       .height('100%')
+     }
+   }
    ```
 
 ## 实现页面间的跳转
@@ -186,121 +186,121 @@ content_hash: sha256:eeb5517bf0e3b0354d2dc20218c2c7641aa69fddccea1f57e76e3b34130
 
    在第一个页面中，跳转按钮绑定onClick事件，单击按钮时跳转到第二页。**Index.ets**文件的示例如下：
 
-   ```
-   1. // Index.ets
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```ts
+   // Index.ets
+   import { BusinessError } from '@kit.BasicServicesKit';
 
-   4. @Entry
-   5. @Component
-   6. struct Index {
-   7. @State message: string = 'Hello World';
+   @Entry
+   @Component
+   struct Index {
+     @State message: string = 'Hello World';
 
-   9. build() {
-   10. Row() {
-   11. Column() {
-   12. Text(this.message)
-   13. .fontSize(50)
-   14. .fontWeight(FontWeight.Bold)
-   15. // 添加按钮，以响应用户onClick事件
-   16. Button() {
-   17. Text('Next')
-   18. .fontSize(30)
-   19. .fontWeight(FontWeight.Bold)
-   20. }
-   21. .type(ButtonType.Capsule)
-   22. .margin({
-   23. top: 20
-   24. })
-   25. .backgroundColor('#0D9FFB')
-   26. .width('40%')
-   27. .height('5%')
-   28. // 跳转按钮绑定onClick事件，单击时跳转到第二页
-   29. .onClick(() => {
-   30. console.info(`Succeeded in clicking the 'Next' button.`)
-   31. // 获取UIContext
-   32. let uiContext: UIContext = this.getUIContext();
-   33. let router = uiContext.getRouter();
-   34. // 跳转到第二页
-   35. router.pushUrl({ url: 'pages/Second' }).then(() => {
-   36. console.info('Succeeded in jumping to the second page.')
+     build() {
+       Row() {
+         Column() {
+           Text(this.message)
+             .fontSize(50)
+             .fontWeight(FontWeight.Bold)
+           // 添加按钮，以响应用户onClick事件
+           Button() {
+             Text('Next')
+               .fontSize(30)
+               .fontWeight(FontWeight.Bold)
+           }
+           .type(ButtonType.Capsule)
+           .margin({
+             top: 20
+           })
+           .backgroundColor('#0D9FFB')
+           .width('40%')
+           .height('5%')
+           // 跳转按钮绑定onClick事件，单击时跳转到第二页
+           .onClick(() => {
+             console.info(`Succeeded in clicking the 'Next' button.`)
+             // 获取UIContext
+             let uiContext: UIContext = this.getUIContext();
+             let router = uiContext.getRouter();
+             // 跳转到第二页
+             router.pushUrl({ url: 'pages/Second' }).then(() => {
+               console.info('Succeeded in jumping to the second page.')
 
-   38. }).catch((err: BusinessError) => {
-   39. console.error(`Failed to jump to the second page. Code is ${err.code}, message is ${err.message}`)
-   40. })
-   41. })
-   42. }
-   43. .width('100%')
-   44. }
-   45. .height('100%')
-   46. }
-   47. }
+             }).catch((err: BusinessError) => {
+               console.error(`Failed to jump to the second page. Code is ${err.code}, message is ${err.message}`)
+             })
+           })
+         }
+         .width('100%')
+       }
+       .height('100%')
+     }
+   }
    ```
 2. 第二个页面返回到第一个页面。
 
    在第二个页面中，返回按钮绑定onClick事件，单击按钮时返回到第一页。**Second.ets**文件的示例如下：
 
+   ```ts
+   // Second.ets
+   import { BusinessError } from '@kit.BasicServicesKit';
+
+   @Entry
+   @Component
+   struct Second {
+     @State message: string = 'Hi there';
+
+     build() {
+       Row() {
+         Column() {
+           Text(this.message)
+             .fontSize(50)
+             .fontWeight(FontWeight.Bold)
+           Button() {
+             Text('Back')
+               .fontSize(30)
+               .fontWeight(FontWeight.Bold)
+           }
+           .type(ButtonType.Capsule)
+           .margin({
+             top: 20
+           })
+           .backgroundColor('#0D9FFB')
+           .width('40%')
+           .height('5%')
+           // 返回按钮绑定onClick事件，单击按钮时返回到第一页
+           .onClick(() => {
+             console.info(`Succeeded in clicking the 'Back' button.`)
+             // 获取UIContext
+             let uiContext: UIContext = this.getUIContext();
+             let router = uiContext.getRouter();
+             try {
+               // 返回第一页
+               router.back()
+               console.info('Succeeded in returning to the first page.')
+             } catch (err) {
+               let code = (err as BusinessError).code;
+               let message = (err as BusinessError).message;
+               console.error(`Failed to return to the first page. Code is ${code}, message is ${message}`)
+             }
+           })
+         }
+         .width('100%')
+       }
+       .height('100%')
+     }
+   }
    ```
-   1. // Second.ets
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+3. 打开**Index.ets**文件，单击预览器中的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/08KIz7i1TIOOZmlSs5hY9w/zh-cn_image_0000002736312095.png)按钮进行刷新。效果如下图所示：
 
-   4. @Entry
-   5. @Component
-   6. struct Second {
-   7. @State message: string = 'Hi there';
-
-   9. build() {
-   10. Row() {
-   11. Column() {
-   12. Text(this.message)
-   13. .fontSize(50)
-   14. .fontWeight(FontWeight.Bold)
-   15. Button() {
-   16. Text('Back')
-   17. .fontSize(30)
-   18. .fontWeight(FontWeight.Bold)
-   19. }
-   20. .type(ButtonType.Capsule)
-   21. .margin({
-   22. top: 20
-   23. })
-   24. .backgroundColor('#0D9FFB')
-   25. .width('40%')
-   26. .height('5%')
-   27. // 返回按钮绑定onClick事件，单击按钮时返回到第一页
-   28. .onClick(() => {
-   29. console.info(`Succeeded in clicking the 'Back' button.`)
-   30. // 获取UIContext
-   31. let uiContext: UIContext = this.getUIContext();
-   32. let router = uiContext.getRouter();
-   33. try {
-   34. // 返回第一页
-   35. router.back()
-   36. console.info('Succeeded in returning to the first page.')
-   37. } catch (err) {
-   38. let code = (err as BusinessError).code;
-   39. let message = (err as BusinessError).message;
-   40. console.error(`Failed to return to the first page. Code is ${code}, message is ${message}`)
-   41. }
-   42. })
-   43. }
-   44. .width('100%')
-   45. }
-   46. .height('100%')
-   47. }
-   48. }
-   ```
-3. 打开**Index.ets**文件，单击预览器中的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/eMZKaBjERyK5Z8bw8VAQ0Q/zh-cn_image_0000002558604306.png)按钮进行刷新。效果如下图所示：
-
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/i8vuQvQvRw-wqVeI4PBQAg/zh-cn_image_0000002589323831.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/n8TyUkBvQkaBubxU1I0ZNg/zh-cn_image_0000002706673052.png)
 
 ## 使用真机运行应用
 
 1. 将搭载HarmonyOS系统的真机与电脑连接。具体指导及要求，可查看[使用本地真机运行应用/服务](ide-run-device.md)。
-2. 进入**File > Project Structure... > Project > Signing Configs**界面，勾选“**Automatically generate signature**”，即可完成签名。如果未登录，请先单击**Sign In**进行登录，然后自动完成签名。具体请见[配置调试签名](ide-signing.md#section151231211105010)。如下图所示：
+2. 进入**File > Project Structure... > Project > Signing Configs**界面，勾选“**Automatically generate signature**”，即可完成签名。如果未登录，请先单击**Sign In**进行登录，然后自动完成签名。具体请见[配置调试签名](ide-signing-auto.md#section1172562862811)。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/Msdqi8qNTH-uG7HHSo6fcA/zh-cn_image_0000002589243769.png)
-3. 在编辑窗口右上角的工具栏，单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/OubFx_fMTbavz-7K5Ju6xA/zh-cn_image_0000002558763964.png)按钮运行。效果如下图所示：
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/WFceBQ8tR5ymVlp8_5lYhA/zh-cn_image_0000002736432143.png)
+3. 在编辑窗口右上角的工具栏，单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/HObjC1v7Qs6RqoUxJQ58Eg/zh-cn_image_0000002706832988.png)按钮运行。效果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/r4GJxBoCSRquVsTvRDoknQ/zh-cn_image_0000002558604308.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/yUS2FjDaQT6d7uxKUeNeUw/zh-cn_image_0000002736312097.png)
 
 恭喜您已经基于ArkTS语言构建完成第一个HarmonyOS应用，快来探索更多的HarmonyOS功能吧。

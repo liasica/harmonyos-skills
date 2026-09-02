@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-hopping
 title: 自由流转概述
 breadcrumb: 最佳实践 > 自由流转 > 自由流转概述
 category: best-practices
-scraped_at: 2026-04-29T14:12:38+08:00
-doc_updated_at: 2026-04-01
-content_hash: sha256:169e90ced2002dc42ddb4b0996bf810a9c3c08a466d3c48205cf22182b105fc7
+scraped_at: 2026-09-02T15:03:19+08:00
+doc_updated_at: 2026-08-26
+content_hash: sha256:5e255870c6b468f794ca5291db7bd93bb5c9badce855b418bad5f78591bfe4cc
 ---
 
 ## 概述
@@ -32,7 +32,7 @@ content_hash: sha256:169e90ced2002dc42ddb4b0996bf810a9c3c08a466d3c48205cf22182b1
 
   常见的多端协同场景实例：
 
-  场景一：两台设备A和B打开备忘录同一篇笔记进行双端协同编辑，在设备A上可以使用本地图库中的图片资源插入编辑，设备B上进行文字内容编辑。
+  场景一：两台设备A和B打开备忘录同一篇笔记，在设备A上可以使用本地图库中的图片资源插入编辑，设备B上进行文字内容编辑。
 
   场景二：设备A上正在和客户进行聊天，客户需要的资料在设备B上，可以通过聊天软件打开设备B上的文档应用选择到想要的资料回传到设备A上，然后通过聊天软件发送给客户。
 
@@ -42,9 +42,9 @@ content_hash: sha256:169e90ced2002dc42ddb4b0996bf810a9c3c08a466d3c48205cf22182b1
 
 ### 框架
 
-自由流转依赖于鸿蒙系统提供的分布式运行环境，底层依托分布式软总线，解决设备发现、连接、组网等痛点，打通1+8+N互联互通能力，对外提供硬件、数据、应用三个维度的跨设备访问能力，应用开发只需遵循框架并适配应用层提供的指定的API，就能实现设备之间的跨端迁移和多端协同。
+自由流转依赖于鸿蒙系统提供的分布式运行环境，底层依托分布式软总线，解决设备发现、连接、组网等痛点，打通1+8+N互联互通能力，对外提供硬件、数据、应用三个维度的跨设备访问能力，应用开发只需遵循框架并适配应用层提供的API，就能实现设备之间的跨端迁移和多端协同。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/I4ZhAVTnRlq4nSXmR8I5xg/zh-cn_image_0000002564391897.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/ufGTS9yzQWubwdbPTXx_HA/zh-cn_image_0000002563685202.png "点击放大")
 
 ### 特性
 

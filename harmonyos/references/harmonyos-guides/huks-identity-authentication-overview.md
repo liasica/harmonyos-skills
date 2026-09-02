@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-identity
 title: 用户身份认证访问控制简介
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥使用 > 访问控制 > 用户身份认证访问控制简介
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:32:03+08:00
+scraped_at: 2026-09-02T14:59:32+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9e5a386337b575b9ae42094183cf51a29e1a1937a265ea8420f37834822cd038
+content_hash: sha256:9fbd5b313d3b34c623d9a04aaaaed2a51445fae0f40b3452d97fe9c4bea84032
 ---
 
 HUKS提供了完备的密钥访问控制能力，以保证存储在HUKS中的密钥被合法正确地访问：
@@ -14,7 +14,7 @@ HUKS提供了完备的密钥访问控制能力，以保证存储在HUKS中的密
 * 支持密钥的用户身份认证访问控制，对于高安全级别、保护敏感数据的业务密钥，需要在使用密钥的时候，再次要求用户即时地验证锁屏密码或生物特征，验证通过后，才能使用业务密钥。
 * 支持严格限制密钥的使用用途，如支持只允许AES密钥进行加密解密，只允许RSA密钥进行签名验签。
 
-说明
+**说明** 
 
 轻量级智能穿戴不支持用户身份认证访问控制功能。
 
@@ -70,7 +70,7 @@ HUKS提供了完备的密钥访问控制能力，以保证存储在HUKS中的密
 
 * **根据AuthToken进行访问控制**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/yHnstc8dRZWb3cLvoob_5Q/zh-cn_image_0000002589324779.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/Uo3xPOHHTV-pMtJ1CTMYCw/zh-cn_image_0000002706674384.png)
 
   用户身份认证访问控制流程如上图所示。
 

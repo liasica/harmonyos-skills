@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_IntSize
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_IntSize
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:21+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:b3af803bd6b1f2b995b8f9299b5b816b5ba68480a3e8805cf811e8b6be992889
+scraped_at: 2026-09-02T15:01:23+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3b22ec413e277a5ead3b50efdec76366e4a315ebb23121d7039fe54a21e8823b
 ---
 
-```
-1. typedef struct {...} ArkUI_IntSize
+```c
+typedef struct {...} ArkUI_IntSize
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 尺寸类型，用于描述组件的宽高。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/distributedse
 title: Distributed Service Kit简介
 breadcrumb: 指南 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > Distributed Service Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:45+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:bad189a2e0eb78ac591b1bf3606b66679fe764daee367c33902688a9ee2fca37
+scraped_at: 2026-09-02T14:50:05+08:00
+doc_updated_at: 2026-05-08
+content_hash: sha256:0303db28ed75bfcc30119e7c8c604563d61d8d3bb1be9fca73caeba20cc17ef7
 ---
 
 Distributed Service Kit（分布式管理服务）实现了分布式设备管理、分布式硬件管理、分布式键鼠穿越、分布式组件管理等能力。
@@ -21,3 +21,7 @@ Distributed Service Kit（分布式管理服务）实现了分布式设备管理
 ## 约束与限制
 
 使用分布式设备管理，需要用户进行相关权限的申请。
+
+## 模拟器支持情况
+
+本模块暂不支持模拟器。

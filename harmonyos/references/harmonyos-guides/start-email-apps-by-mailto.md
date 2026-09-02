@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/start-email-apps-by-mailto
 title: 拉起邮件类应用（mailto方式）
-breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > 应用间跳转 > 拉起指定类型的应用 > 拉起邮件类应用（mailto方式）
+breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起指定类型的应用 > 拉起邮件类应用（mailto方式）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:25:53+08:00
+scraped_at: 2026-09-02T14:59:10+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:dbb15f9c356cbfb7c0a7feb054008fba1568e2cfc6399a7bbaf169b66da59dbc
+content_hash: sha256:01fbf0567c1d611edc6f255f3039226950398f393d77ef8e6dae1dc7d0b9727c
 ---
 
 ## 使用场景
@@ -21,7 +21,7 @@ content_hash: sha256:dbb15f9c356cbfb7c0a7feb054008fba1568e2cfc6399a7bbaf169b66da
   + 移动应用中，用户点击“反馈”按钮时，应用调用系统功能，拉起默认邮件客户端，预先填写反馈邮箱、问题描述等信息。
   + 移动应用中，当用户点击“通过邮件分享”按钮时，应用会通过 mailto 调用邮件客户端，预填邮件主题和正文。
 
-    说明
+    **说明** 
 
     - 如果使用mailto方式拉起邮件应用，需要拉起方先按mailto格式封装字符串，再使用mailto方式拉起。邮件应用会解析收到的mailto协议字符串，并填充发件人、收件人、邮件内容等信息。
     - 如果拉起方已知发件人、收件人、邮件内容等信息，推荐[使用startAbilityByType方式拉起邮件应用](start-email-apps.md)。
@@ -30,8 +30,8 @@ content_hash: sha256:dbb15f9c356cbfb7c0a7feb054008fba1568e2cfc6399a7bbaf169b66da
 
 mailto协议标准格式如下：
 
-```
-1. mailto:someone@example.com?key1=value1&key2=value2
+```txt
+mailto:someone@example.com?key1=value1&key2=value2
 ```
 
 * mailto:：mailto scheme，必填。
@@ -62,95 +62,95 @@ mailto协议标准格式如下：
 
 网页中的超链接需要满足mailto协议。示例如下：
 
-```
-1. <a href="mailto:support@example.com?subject=Product Inquiry&body=I am interested in...">联系我们</a>
+```html
+<a href="mailto:support@example.com?subject=Product Inquiry&body=I am interested in...">联系我们</a>
 ```
 
 实际开发时，需要将邮箱地址替换为真实的邮箱，邮件内容可以根据需要进行配置。
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/h3D6rDN4SxWQxR3vgH3uXQ/zh-cn_image_0000002589243803.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/iNPSavN0Q4qS6H2hW7DleQ/zh-cn_image_0000002706833034.gif)
 
 ### 从应用拉起
 
 保证mailto字符串传入uri参数即可，在应用中page页面可通过 getHostContext() 获取context，在ability中可通过this.context获取context。
 
-```
-1. import { common } from '@kit.AbilityKit';
+```ts
+import { common } from '@kit.AbilityKit';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. build() {
-7. Column() {
-8. Button('反馈')
-9. .onClick(() => {
-10. let ctx = this.getUIContext().getHostContext() as common.UIAbilityContext;
-11. ctx.startAbility({
-12. action: 'ohos.want.action.sendToData',
-13. uri: 'mailto:feedback@example.com?subject=App Feedback&body=Please describe your feedback here...'
-14. })
-15. })
-16. }
-17. }
-18. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Button('反馈')
+        .onClick(() => {
+          let ctx = this.getUIContext().getHostContext() as common.UIAbilityContext;
+          ctx.startAbility({
+            action: 'ohos.want.action.sendToData',
+            uri: 'mailto:feedback@example.com?subject=App Feedback&body=Please describe your feedback here...'
+          })
+        })
+    }
+  }
+}
 ```
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/-wLnrddOTc6sv0twPnGaLQ/zh-cn_image_0000002558763998.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/ncag0JELQduXuCidvVuPWg/zh-cn_image_0000002736312143.gif)
 
 ## 目标方开发步骤
 
 1. 为了能够支持被其他应用通过mailto协议拉起，目标应用需要在[module.json5配置文件](module-configuration-file.md)中声明mailto。
 
-   ```
-   1. {
-   2. "module": {
-   3. // ...
-   4. "abilities": [
-   5. {
-   6. // ...
-   7. "skills": [
-   8. {
-   9. "actions": [
-   10. 'ohos.want.action.sendToData'
-   11. ],
-   12. "uris": [
-   13. {
-   14. "scheme": "mailto",
-   15. // linkFeature 用于适配垂类面板拉起
-   16. "linkFeature": 'ComposeMail'
-   17. }
-   18. ]
-   19. }
-   20. ]
-   21. }
-   22. ]
-   23. }
-   24. }
+   ```json
+   {
+     "module": {
+       // ...
+       "abilities": [
+         {
+           // ...
+           "skills": [
+             {
+             "actions": [
+                 'ohos.want.action.sendToData'
+               ],
+               "uris": [
+                 {
+                   "scheme": "mailto",
+                   // linkFeature 用于适配垂类面板拉起
+                   "linkFeature": 'ComposeMail'
+                 }
+               ]
+             }
+           ]
+         }
+       ]
+     }
+   }
    ```
 2. 目标应用在代码中取出uri参数进行解析。
 
-   ```
-   1. export default class EntryAbility extends UIAbility {
-   2. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-   3. // 应用冷启动生命周期回调，其他业务处理...
-   4. this.parseMailto(want);
-   5. }
+   ```ts
+   export default class EntryAbility extends UIAbility {
+     onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+       // 应用冷启动生命周期回调，其他业务处理...
+       this.parseMailto(want);
+     }
 
-   7. onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-   8. // 应用热启动生命周期回调，其他业务处理...
-   9. this.parseMailto(want);
-   10. }
+     onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+       // 应用热启动生命周期回调，其他业务处理...
+       this.parseMailto(want);
+     }
 
-   12. public parseMailto(want: Want) {
-   13. const uri = want?.uri;
-   14. if (!uri || uri.length <= 0) {
-   15. return;
-   16. }
-   17. // 开始解析 mailto...
-   18. }
-   19. }
+     public parseMailto(want: Want) {
+       const uri = want?.uri;
+       if (!uri || uri.length <= 0) {
+         return;
+       }
+       // 开始解析 mailto...
+     }
+   }
    ```

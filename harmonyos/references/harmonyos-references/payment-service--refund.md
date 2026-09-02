@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-s
 title: 申请退款
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 直连商户 > 基础支付 > 申请退款
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:45+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c688dbd15e4d5416e51888730e6023161b304356e548e4d2567c74af8103ae1b
+scraped_at: 2026-09-02T14:53:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:73b2fbb15234e5d9297a1d1f0c74d8d1a68f3e9ee1a6d51c3a2c563fcd82d8c9
 ---
 
 ## 功能介绍
@@ -65,19 +65,19 @@ content_hash: sha256:c688dbd15e4d5416e51888730e6023161b304356e548e4d2567c74af810
 
 ## 请求示例
 
-```
-1. POST /api/v1/aggr/transactions/refunds HTTP/1.1
-2. Content-Type: application/json;charset=UTF-8
-3. PayMercAuth: {"callerId":"10132120***","traceId":"202305151442062977847","time":1684132926969,"authId":"120291744647139***","headerSign":"BpOBa8o+gJnKG+vHVI7u********************mVuKDV8iPqNJ+Y8b4XDpSi3FHgjozsWH+uLoTSIg=","bodySign":"lHjrX3dv44zyfu+PO1G+oa9tJi2********************EatA8QTjLPsSPKfM="}
-4. Accept: application/json
-5. {
-6. "mercOrderNo": "czl00120240705***",
-7. "mercRefundOrderNo": "czl0012024070914***",
-8. "reason": "123456",
-9. "callbackUrl": "https://www.xxxxxx.com/hw/pay/callback",
-10. "refundAmount": 2,
-11. "payload": "example-payload"
-12. }
+```json
+POST /api/v1/aggr/transactions/refunds HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+PayMercAuth: {"callerId":"10132120***","traceId":"202305151442062977847","time":1684132926969,"authId":"120291744647139***","headerSign":"BpOBa8o+gJnKG+vHVI7u********************mVuKDV8iPqNJ+Y8b4XDpSi3FHgjozsWH+uLoTSIg=","bodySign":"lHjrX3dv44zyfu+PO1G+oa9tJi2********************EatA8QTjLPsSPKfM="}
+Accept: application/json
+{
+  "mercOrderNo": "czl00120240705***",
+  "mercRefundOrderNo": "czl0012024070914***",
+  "reason": "123456",
+  "callbackUrl": "https://www.xxxxxx.com/hw/pay/callback",
+  "refundAmount": 2,
+  "payload": "example-payload"
+}
 ```
 
 ## 响应参数
@@ -97,7 +97,7 @@ content_hash: sha256:c688dbd15e4d5416e51888730e6023161b304356e548e4d2567c74af810
 | subCode | 否 | String | 业务错误码。 |
 | subDesc | 否 | String | 业务错误描述信息。 |
 | sign | 是 | String | 签名值。用于开发者对响应报文进行防篡改验证。 |
-| mercRefundOrderNo | 是 | String | 商户退款订单号。 |
+| mercRefundOrderNo | 是 | String | 商户退款订单号。最大长度64。 |
 | sysRefundOrderNo | 是 | String | 华为支付退款订单号。 |
 | sysTransOrderNo | 是 | String | 华为支付系统订单号。 |
 | mercOrderNo | 是 | String | 商户订单号，由商户自己生成，商户需保证订单信息唯一性。最大长度46。 |
@@ -106,20 +106,20 @@ content_hash: sha256:c688dbd15e4d5416e51888730e6023161b304356e548e4d2567c74af810
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json; charset=UTF-8
-3. {
-4. "resultCode": "000000",
-5. "resultDesc": "Success.",
-6. "sign": "MEUCIEhVD6FuZ5iIh41AScvWO********************uZCdiWp/WVE8SoZOSXWMI0JGRXrj0=",
-7. "mercRefundOrderNo": "czl0012024070914***",
-8. "sysRefundOrderNo": "12407030900270084914518***",
-9. "sysTransOrderNo": "12407030857530004914518***",
-10. "mercOrderNo": "czl00120240705***",
-11. "refundAmount": 2,
-12. "payerRefundAmount": 2
-13. }
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+{
+  "resultCode": "000000",
+  "resultDesc": "Success.",
+  "sign": "MEUCIEhVD6FuZ5iIh41AScvWO********************uZCdiWp/WVE8SoZOSXWMI0JGRXrj0=",
+  "mercRefundOrderNo": "czl0012024070914***",
+  "sysRefundOrderNo": "12407030900270084914518***",
+  "sysTransOrderNo": "12407030857530004914518***",
+  "mercOrderNo": "czl00120240705***",
+  "refundAmount": 2,
+  "payerRefundAmount": 2
+}
 ```
 
 ## 错误码

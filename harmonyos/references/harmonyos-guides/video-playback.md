@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-playbac
 title: 使用AVPlayer播放视频(ArkTS)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 播放 > 使用AVPlayer播放视频(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:35:23+08:00
+scraped_at: 2026-09-02T14:59:46+08:00
 doc_updated_at: 2026-04-13
-content_hash: sha256:b379c899e3c66c62b9564cca6bc2ccd4d7cb776ba23b893f6b4e058be72ea23a
+content_hash: sha256:f080da86a7cbb39bbb4742dece81b1f8ec541254f2df5e027c9772a054317695
 ---
 
 当前提供两种视频播放开发的方案：
@@ -19,7 +19,7 @@ content_hash: sha256:b379c899e3c66c62b9564cca6bc2ccd4d7cb776ba23b893f6b4e058be72
 
 **图1** 播放状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/rL-Mt6tMR4GqgCX3ECfW6w/zh-cn_image_0000002589244901.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/GgJRKbkQTRWbwNTMZERNJw/zh-cn_image_0000002736313679.png)
 
 状态的详细说明请参考[AVPlayerState](../harmonyos-references/arkts-apis-media-t.md#avplayerstate9)。当播放处于prepared / playing / paused / completed状态时，播放引擎处于工作状态，这需要占用系统较多的运行内存。当客户端暂时不使用播放器时，调用reset()或release()回收内存资源，做好资源释放。
 
@@ -38,11 +38,11 @@ content_hash: sha256:b379c899e3c66c62b9564cca6bc2ccd4d7cb776ba23b893f6b4e058be72
 
 1. 调用createAVPlayer()创建AVPlayer实例，初始化进入idle状态。
 
-   ```
-   1. import { media } from '@kit.MediaKit';
+   ```ts
+   import { media } from '@kit.MediaKit';
 
-   3. // 创建avPlayer实例对象。
-   4. let avPlayer = await media.createAVPlayer();
+   // 创建avPlayer实例对象。
+   let avPlayer = await media.createAVPlayer();
    ```
 2. 设置业务需要的监听事件，搭配全流程场景使用。支持的监听事件包括：
 
@@ -62,54 +62,54 @@ content_hash: sha256:b379c899e3c66c62b9564cca6bc2ccd4d7cb776ba23b893f6b4e058be72
    | videoSizeChange | 用于视频播放，监听视频播放的宽高信息，可用于调整窗口大小、比例。 |
    | audioInterrupt | 监听音频焦点切换信息，搭配属性audioInterruptMode使用。  如果当前设备存在多个媒体正在播放，音频焦点被切换（即播放其他媒体如通话等）时将上报该事件，应用可以及时处理。 |
 
-   ```
-   1. // 此处仅为示例，开发者根据需要设置合适的监听事件。
-   2. import { BusinessError } from '@kit.BasicServicesKit';
-   3. import { audio } from '@kit.AudioKit';
+   ```ts
+   // 此处仅为示例，开发者根据需要设置合适的监听事件。
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { audio } from '@kit.AudioKit';
 
-   5. avPlayer.on('stateChange', async (state: string, reason: media.StateChangeReason) => {
-   6. // 开发者根据需要写入业务逻辑。
-   7. });
-   8. avPlayer.on('error', (error: BusinessError) => {
-   9. // 开发者根据需要写入业务逻辑。
-   10. });
-   11. avPlayer.on('durationUpdate', (duration: number) => {
-   12. // 开发者根据需要写入业务逻辑。
-   13. });
-   14. avPlayer.on('timeUpdate', (time:number) => {
-   15. // 开发者根据需要写入业务逻辑。
-   16. });
-   17. avPlayer.on('seekDone', (seekDoneTime:number) => {
-   18. // 开发者根据需要写入业务逻辑。
-   19. });
-   20. avPlayer.on('speedDone', (speed:number) => {
-   21. // 开发者根据需要写入业务逻辑。
-   22. });
-   23. avPlayer.on('volumeChange', (vol: number) => {
-   24. // 开发者根据需要写入业务逻辑。
-   25. });
-   26. avPlayer.on('bitrateDone', (bitrate:number) => {
-   27. // 开发者根据需要写入业务逻辑。
-   28. });
-   29. avPlayer.on('availableBitrates', (bitrates: Array<number>) => {
-   30. // 开发者根据需要写入业务逻辑。
-   31. });
-   32. avPlayer.on('bufferingUpdate', (infoType: media.BufferingInfoType, value: number) => {
-   33. // 开发者根据需要写入业务逻辑。
-   34. });
-   35. avPlayer.on('startRenderFrame', () => {
-   36. // 开发者根据需要写入业务逻辑。
-   37. });
-   38. avPlayer.on('videoSizeChange', (width: number, height: number) => {
-   39. // 开发者根据需要写入业务逻辑。
-   40. });
-   41. avPlayer.on('audioInterrupt', (info: audio.InterruptEvent) => {
-   42. // 开发者根据需要写入业务逻辑。
-   43. });
+   avPlayer.on('stateChange', async (state: string, reason: media.StateChangeReason) => {
+       // 开发者根据需要写入业务逻辑。
+   });
+   avPlayer.on('error', (error: BusinessError) => {
+       // 开发者根据需要写入业务逻辑。
+   });
+   avPlayer.on('durationUpdate', (duration: number) => {
+       // 开发者根据需要写入业务逻辑。
+   });
+   avPlayer.on('timeUpdate', (time:number) => {
+       // 开发者根据需要写入业务逻辑。
+   });
+   avPlayer.on('seekDone', (seekDoneTime:number) => {
+       // 开发者根据需要写入业务逻辑。
+   });
+   avPlayer.on('speedDone', (speed:number) => {
+       // 开发者根据需要写入业务逻辑。
+   });
+   avPlayer.on('volumeChange', (vol: number) => {
+       // 开发者根据需要写入业务逻辑。
+   });
+   avPlayer.on('bitrateDone', (bitrate:number) => {
+       // 开发者根据需要写入业务逻辑。
+   });
+   avPlayer.on('availableBitrates', (bitrates: Array<number>) => {
+       // 开发者根据需要写入业务逻辑。
+   });
+   avPlayer.on('bufferingUpdate', (infoType: media.BufferingInfoType, value: number) => {
+       // 开发者根据需要写入业务逻辑。
+   });
+   avPlayer.on('startRenderFrame', () => {
+       // 开发者根据需要写入业务逻辑。
+   });
+   avPlayer.on('videoSizeChange', (width: number, height: number) => {
+       // 开发者根据需要写入业务逻辑。
+   });
+   avPlayer.on('audioInterrupt', (info: audio.InterruptEvent) => {
+       // 开发者根据需要写入业务逻辑。
+   });
    ```
 3. 设置资源：设置属性url，AVPlayer进入initialized状态。
 
-   说明
+   **说明** 
 
    下面代码示例中的url仅作示意使用，开发者需根据实际情况，确认资源有效性并设置：
 
@@ -118,125 +118,125 @@ content_hash: sha256:b379c899e3c66c62b9564cca6bc2ccd4d7cb776ba23b893f6b4e058be72
    * 可以使用ResourceManager.[getRawFd](../harmonyos-references/js-apis-resource-manager.md#getrawfd9)打开HAP资源文件描述符。
    * 需要使用[支持的播放格式与协议](media-kit-intro.md#支持的格式与协议)。
 
-   ```
-   1. let url = 'https://xxx.xxx.xxx.mp4';
-   2. if (avPlayer == null) {
-   3. return;
-   4. }
-   5. avPlayer.url = url;
+   ```ts
+   let url = 'https://xxx.xxx.xxx.mp4';
+   if (avPlayer == null) {
+       return;
+   }
+   avPlayer.url = url;
    ```
 4. 设置窗口：获取并设置属性surfaceId，用于设置显示画面。
 
    应用需要从XComponent组件获取surfaceId，获取方式请参考[getXComponentSurfaceId](../harmonyos-references/ts-basic-components-xcomponent.md#getxcomponentsurfaceid9)。
 
-   ```
-   1. // 通过接口getXComponentSurfaceId获取surfaceId。
-   2. let surfaceId = '';
-   3. if (avPlayer == null) {
-   4. return;
-   5. }
-   6. if (surfaceId === '') {
-   7. return;
-   8. }
-   9. avPlayer.surfaceId = surfaceId;
+   ```ts
+   // 通过接口getXComponentSurfaceId获取surfaceId。
+   let surfaceId = '';
+   if (avPlayer == null) {
+       return;
+   }
+   if (surfaceId === '') {
+       return;
+   }
+   avPlayer.surfaceId = surfaceId;
    ```
 5. 准备播放：调用prepare()，AVPlayer进入prepared状态，此时可以获取duration，设置缩放模式、音量等。
 
-   ```
-   1. import { BusinessError } from '@kit.BasicServicesKit';
+   ```ts
+   import { BusinessError } from '@kit.BasicServicesKit';
 
-   3. avPlayer.prepare((err: BusinessError) => {
-   4. if (err) {
-   5. console.error('Failed to prepare,error message is :' + err.message);
-   6. } else {
-   7. console.info('Succeeded in preparing');
-   8. }
-   9. });
+   avPlayer.prepare((err: BusinessError) => {
+       if (err) {
+           console.error('Failed to prepare,error message is :' + err.message);
+       } else {
+           console.info('Succeeded in preparing');
+       }
+   });
    ```
 6. 视频播控：播放play()，暂停pause()，跳转seek()，停止stop() 等操作。
 
-   ```
-   1. import { BusinessError } from '@kit.BasicServicesKit';
+   ```ts
+   import { BusinessError } from '@kit.BasicServicesKit';
 
-   3. // 播放操作。
-   4. avPlayer.play().then(() => {
-   5. console.info('Succeeded in playing');
-   6. }, (err: BusinessError) => {
-   7. console.error('Failed to play,error message is :' + err.message);
-   8. });
-   9. // 暂停操作。
-   10. avPlayer.pause((err: BusinessError) => {
-   11. if (err) {
-   12. console.error('Failed to pause,error message is :' + err.message);
-   13. } else {
-   14. console.info('Succeeded in pausing');
-   15. }
-   16. });
-   17. // 跳转操作。
-   18. let seekTime: number = 1000;
-   19. avPlayer.seek(seekTime, media.SeekMode.SEEK_PREV_SYNC);
-   20. // 停止操作。
-   21. avPlayer.stop((err: BusinessError) => {
-   22. if (err) {
-   23. console.error('Failed to stop,error message is :' + err.message);
-   24. } else {
-   25. console.info('Succeeded in stopping');
-   26. }
-   27. });
+   // 播放操作。
+   avPlayer.play().then(() => {
+       console.info('Succeeded in playing');
+   }, (err: BusinessError) => {
+       console.error('Failed to play,error message is :' + err.message);
+   });
+   // 暂停操作。
+   avPlayer.pause((err: BusinessError) => {
+       if (err) {
+           console.error('Failed to pause,error message is :' + err.message);
+       } else {
+           console.info('Succeeded in pausing');
+       }
+   });
+   // 跳转操作。
+   let seekTime: number = 1000;
+   avPlayer.seek(seekTime, media.SeekMode.SEEK_PREV_SYNC);
+   // 停止操作。
+   avPlayer.stop((err: BusinessError) => {
+       if (err) {
+           console.error('Failed to stop,error message is :' + err.message);
+       } else {
+           console.info('Succeeded in stopping');
+       }
+   });
    ```
 7. （可选）更换资源：调用reset()重置资源，AVPlayer重新进入idle状态，允许更换资源url。
 
-   ```
-   1. import { BusinessError } from '@kit.BasicServicesKit';
+   ```ts
+   import { BusinessError } from '@kit.BasicServicesKit';
 
-   3. avPlayer.reset((err: BusinessError) => {
-   4. avPlayer.url = url;
-   5. if (err) {
-   6. console.error('Failed to reset,error message is :' + err.message);
-   7. } else {
-   8. console.info('Succeeded in resetting');
-   9. }
-   10. });
-   11. // 更换url。
-   12. let url = 'https://xxx.xxx.xxx.mp4';
-   13. if (avPlayer == null) {
-   14. return;
-   15. }
-   16. avPlayer.url = url;
+   avPlayer.reset((err: BusinessError) => {
+       avPlayer.url = url;
+       if (err) {
+           console.error('Failed to reset,error message is :' + err.message);
+       } else {
+           console.info('Succeeded in resetting');
+       }
+   });
+   // 更换url。
+   let url = 'https://xxx.xxx.xxx.mp4';
+   if (avPlayer == null) {
+       return;
+   }
+   avPlayer.url = url;
    ```
 8. 退出播放：调用release()销毁实例，AVPlayer进入released状态，退出播放。
 
-   ```
-   1. import { BusinessError } from '@kit.BasicServicesKit';
+   ```ts
+   import { BusinessError } from '@kit.BasicServicesKit';
 
-   3. avPlayer.release((err: BusinessError) => {
-   4. if (err) {
-   5. console.error('Failed to release,error message is :' + err.message);
-   6. } else {
-   7. console.info('Succeeded in releasing');
-   8. }
-   9. });
+   avPlayer.release((err: BusinessError) => {
+       if (err) {
+           console.error('Failed to release,error message is :' + err.message);
+       } else {
+           console.info('Succeeded in releasing');
+       }
+   });
    ```
 
 ## 运行完整示例
 
 1. 新建工程，下载[示例工程](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/Media/AVPlayer/AVPlayerArkTSVideo)，并将示例工程的以下资源复制到对应目录。
 
-   ```
-   1. AVPlayerArkTSVideo
-   2. entry/src/main/ets/
-   3. └── pages
-   4. └── Index.ets (播放界面)
-   5. entry/src/main/resources/
-   6. ├── base
-   7. │   ├── element
-   8. │   │   ├── color.json
-   9. │   │   ├── float.json
-   10. │   │   └── string.json
-   11. │   └── media
-   12. │       ├── ic_video_play.svg  (播放键图片资源)
-   13. │       └── ic_video_pause.svg (暂停键图片资源)
-   14. └── rawfile
-   15. └── test1.mp4 （视频资源）
+   ```text
+   AVPlayerArkTSVideo
+   entry/src/main/ets/
+   └── pages
+       └── Index.ets (播放界面)
+   entry/src/main/resources/
+   ├── base
+   │   ├── element
+   │   │   ├── color.json
+   │   │   ├── float.json
+   │   │   └── string.json
+   │   └── media
+   │       ├── ic_video_play.svg  (播放键图片资源)
+   │       └── ic_video_pause.svg (暂停键图片资源)
+   └── rawfile
+       └── test1.mp4 （视频资源）
    ```
 2. 编译新建工程并运行。

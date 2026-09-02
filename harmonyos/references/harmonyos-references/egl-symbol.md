@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/egl-symbo
 title: Native api中导出的EGL符号列表
 breadcrumb: API参考 > 标准库 > 附录 > Native api中导出的EGL符号列表
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:39+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-02T15:20:59+08:00
+doc_updated_at: 2026-08-29
 content_hash: sha256:e7c2f3bc8d051a4f6b7163a8a962574022e758c876127a8221162a93f47b1204
 ---
 

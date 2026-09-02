@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avme
 title: avmedia_source.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > avmedia_source.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:57+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:074b654d7810da61993322ebdda27858595cb04e905f3797efa4317172e8386d
+scraped_at: 2026-09-02T15:02:36+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b97370b3c2888f6451c4cefd276cf60b72ebbdf994be1010e8f3a71faa34c876
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义AVMediaSource的结构体和枚举类型。
 
@@ -22,15 +20,11 @@ PhonePC/2in1TabletTVWearable
 
 **起始版本：** 23
 
-**相关模块：** [avmedia\_source](capi-avmedia-source.md)
+**相关模块：** [AVMediaSource](capi-avmedia-source.md)
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -41,15 +35,11 @@ PhonePC/2in1TabletTVWearable
 
 ### 枚举
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [AVLoadingRequestError](capi-avmedia-source-h.md#avloadingrequesterror) | AVLoadingRequestError | 网络加载请求的错误码枚举。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -80,14 +70,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### AVLoadingRequestError
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum AVLoadingRequestError
+```c
+enum AVLoadingRequestError
 ```
 
 **描述**
@@ -108,14 +94,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AVHttpHeader\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVHttpHeader *OH_AVHttpHeader_Create(void)
+```c
+OH_AVHttpHeader *OH_AVHttpHeader_Create(void)
 ```
 
 **描述**
@@ -132,10 +114,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVHttpHeader\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVHttpHeader_Destroy(OH_AVHttpHeader *header)
+```c
+OH_AVErrCode OH_AVHttpHeader_Destroy(OH_AVHttpHeader *header)
 ```
 
 **描述**
@@ -158,10 +138,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVHttpHeader\_GetCount()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVHttpHeader_GetCount(OH_AVHttpHeader *header, uint32_t *count)
+```c
+OH_AVErrCode OH_AVHttpHeader_GetCount(OH_AVHttpHeader *header, uint32_t *count)
 ```
 
 **描述**
@@ -185,10 +163,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVHttpHeader\_AddRecord()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVHttpHeader_AddRecord(OH_AVHttpHeader *header, const char *key, const char *value)
+```c
+OH_AVErrCode OH_AVHttpHeader_AddRecord(OH_AVHttpHeader *header, const char *key, const char *value)
 ```
 
 **描述**
@@ -213,10 +189,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVHttpHeader\_GetRecord()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVHttpHeader_GetRecord(OH_AVHttpHeader *header, uint32_t index, const char **key, const char **value)
+```c
+OH_AVErrCode OH_AVHttpHeader_GetRecord(OH_AVHttpHeader *header, uint32_t index, const char **key, const char **value)
 ```
 
 **描述**
@@ -242,10 +216,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMediaSource\_CreateWithUrl()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVMediaSource *OH_AVMediaSource_CreateWithUrl(const char *url, OH_AVHttpHeader *header)
+```c
+OH_AVMediaSource *OH_AVMediaSource_CreateWithUrl(const char *url, OH_AVHttpHeader *header)
 ```
 
 **描述**
@@ -269,10 +241,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMediaSource\_CreateWithDataSource()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVMediaSource *OH_AVMediaSource_CreateWithDataSource(OH_AVDataSource *dataSource)
+```c
+OH_AVMediaSource *OH_AVMediaSource_CreateWithDataSource(OH_AVDataSource *dataSource)
 ```
 
 **描述**
@@ -295,10 +265,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMediaSource\_CreateWithFd()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVMediaSource *OH_AVMediaSource_CreateWithFd(int32_t fd, int64_t offset, int64_t size)
+```c
+OH_AVMediaSource *OH_AVMediaSource_CreateWithFd(int32_t fd, int64_t offset, int64_t size)
 ```
 
 **描述**
@@ -323,10 +291,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMediaSource\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVMediaSource_Destroy(OH_AVMediaSource *source)
+```c
+OH_AVErrCode OH_AVMediaSource_Destroy(OH_AVMediaSource *source)
 ```
 
 **描述**
@@ -349,10 +315,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMediaSource\_SetMimeType()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVMediaSource_SetMimeType(OH_AVMediaSource *source, const char *mimetype)
+```c
+OH_AVErrCode OH_AVMediaSource_SetMimeType(OH_AVMediaSource *source, const char *mimetype)
 ```
 
 **描述**
@@ -366,7 +330,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AVMediaSource](capi-avmedia-source-oh-avmediasource.md) \*source | 指向OH\_AVMediaSource的指针。 |
-| const char \*mimetype | 媒体源的MIME类型[AV\_MimeTypes](arkts-apis-media-e.md#avmimetypes12)。 |
+| const char \*mimetype | 媒体源的MIME类型[AVMimeTypes](arkts-apis-media-e.md#avmimetypes12)。 |
 
 **返回：**
 
@@ -376,10 +340,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMediaSourceLoadingRequest\_GetUrl()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVMediaSourceLoadingRequest_GetUrl(OH_AVMediaSourceLoadingRequest *request, const char **url)
+```c
+OH_AVErrCode OH_AVMediaSourceLoadingRequest_GetUrl(OH_AVMediaSourceLoadingRequest *request, const char **url)
 ```
 
 **描述**
@@ -403,10 +365,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMediaSourceLoadingRequest\_GetHttpHeader()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVMediaSourceLoadingRequest_GetHttpHeader(OH_AVMediaSourceLoadingRequest *request, OH_AVHttpHeader **header)
+```c
+OH_AVErrCode OH_AVMediaSourceLoadingRequest_GetHttpHeader(OH_AVMediaSourceLoadingRequest *request, OH_AVHttpHeader **header)
 ```
 
 **描述**
@@ -430,10 +390,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMediaSourceLoadingRequest\_RespondData()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_AVMediaSourceLoadingRequest_RespondData(OH_AVMediaSourceLoadingRequest *request, int64_t uuid, int64_t offset, const uint8_t *data, uint64_t dataSize)
+```c
+int32_t OH_AVMediaSourceLoadingRequest_RespondData(OH_AVMediaSourceLoadingRequest *request, int64_t uuid, int64_t offset, const uint8_t *data, uint64_t dataSize)
 ```
 
 **描述**
@@ -460,10 +418,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMediaSourceLoadingRequest\_RespondHeader()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_AVMediaSourceLoadingRequest_RespondHeader(OH_AVMediaSourceLoadingRequest *request, int64_t uuid, OH_AVHttpHeader *header, const char *redirectUrl)
+```c
+void OH_AVMediaSourceLoadingRequest_RespondHeader(OH_AVMediaSourceLoadingRequest *request, int64_t uuid, OH_AVHttpHeader *header, const char *redirectUrl)
 ```
 
 **描述**
@@ -483,10 +439,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMediaSourceLoadingRequest\_FinishLoading()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_AVMediaSourceLoadingRequest_FinishLoading(OH_AVMediaSourceLoadingRequest *request, int64_t uuid, AVLoadingRequestError error)
+```c
+void OH_AVMediaSourceLoadingRequest_FinishLoading(OH_AVMediaSourceLoadingRequest *request, int64_t uuid, AVLoadingRequestError error)
 ```
 
 **描述**
@@ -505,10 +459,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMediaSourceLoader\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVMediaSourceLoader *OH_AVMediaSourceLoader_Create(void)
+```c
+OH_AVMediaSourceLoader *OH_AVMediaSourceLoader_Create(void)
 ```
 
 **描述**
@@ -519,10 +471,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMediaSourceLoader\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVMediaSourceLoader_Destroy(OH_AVMediaSourceLoader *loader)
+```c
+OH_AVErrCode OH_AVMediaSourceLoader_Destroy(OH_AVMediaSourceLoader *loader)
 ```
 
 **描述**
@@ -545,10 +495,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMediaSource\_SetMediaSourceLoader()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVMediaSource_SetMediaSourceLoader(OH_AVMediaSource *source, OH_AVMediaSourceLoader *loader)
+```c
+OH_AVErrCode OH_AVMediaSource_SetMediaSourceLoader(OH_AVMediaSource *source, OH_AVMediaSourceLoader *loader)
 ```
 
 **描述**
@@ -572,10 +520,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMediaSourceLoaderOnSourceOpenedCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef int64_t (*OH_AVMediaSourceLoaderOnSourceOpenedCallback)(OH_AVMediaSourceLoadingRequest *request, void *userData)
+```c
+typedef int64_t (*OH_AVMediaSourceLoaderOnSourceOpenedCallback)(OH_AVMediaSourceLoadingRequest *request, void *userData)
 ```
 
 **描述**
@@ -599,10 +545,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMediaSourceLoaderOnSourceReadCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_AVMediaSourceLoaderOnSourceReadCallback)(int64_t uuid, int64_t requestedOffset, int64_t requestedLength, void *userData)
+```c
+typedef void (*OH_AVMediaSourceLoaderOnSourceReadCallback)(int64_t uuid, int64_t requestedOffset, int64_t requestedLength, void *userData)
 ```
 
 **描述**
@@ -622,10 +566,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMediaSourceLoaderOnSourceClosedCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_AVMediaSourceLoaderOnSourceClosedCallback)(int64_t uuid, void *userData)
+```c
+typedef void (*OH_AVMediaSourceLoaderOnSourceClosedCallback)(int64_t uuid, void *userData)
 ```
 
 **描述**
@@ -643,10 +585,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMediaSourceLoader\_SetSourceOpenCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVMediaSourceLoader_SetSourceOpenCallback(OH_AVMediaSourceLoader *loader, OH_AVMediaSourceLoaderOnSourceOpenedCallback callback, void *userData)
+```c
+OH_AVErrCode OH_AVMediaSourceLoader_SetSourceOpenCallback(OH_AVMediaSourceLoader *loader, OH_AVMediaSourceLoaderOnSourceOpenedCallback callback, void *userData)
 ```
 
 **描述**
@@ -671,10 +611,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMediaSourceLoader\_SetSourceReadCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVMediaSourceLoader_SetSourceReadCallback(OH_AVMediaSourceLoader *loader, OH_AVMediaSourceLoaderOnSourceReadCallback callback, void *userData)
+```c
+OH_AVErrCode OH_AVMediaSourceLoader_SetSourceReadCallback(OH_AVMediaSourceLoader *loader, OH_AVMediaSourceLoaderOnSourceReadCallback callback, void *userData)
 ```
 
 **描述**
@@ -699,10 +637,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVMediaSourceLoader\_SetSourceCloseCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVMediaSourceLoader_SetSourceCloseCallback(OH_AVMediaSourceLoader *loader, OH_AVMediaSourceLoaderOnSourceClosedCallback callback, void *userData)
+```c
+OH_AVErrCode OH_AVMediaSourceLoader_SetSourceCloseCallback(OH_AVMediaSourceLoader *loader, OH_AVMediaSourceLoaderOnSourceClosedCallback callback, void *userData)
 ```
 
 **描述**

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-matmu
 title: 构造函数
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 高阶API > 矩阵相乘 > Matmul Tiling > 构造函数
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:30+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:766893846b47cb28c78e08617fa8f0c8685f3202fcd44be68f02daf66aa9130b
+scraped_at: 2026-09-02T14:50:37+08:00
+doc_updated_at: 2026-08-18
+content_hash: sha256:009d7a4d55f33f3491bec3fd87179a1b26ce484d69404330cad506fe0a641b03
 ---
 
 ## 功能说明
@@ -18,18 +18,18 @@ content_hash: sha256:766893846b47cb28c78e08617fa8f0c8685f3202fcd44be68f02daf66aa
 
   + 使用PlatformAscendC类传入信息
 
-    ```
-    1. explicit MatmulApiTiling(const platform_ascendc::PlatformAscendC& ascendcPlatform)
-    2. explicit MultiCoreMatmulTiling(const platform_ascendc::PlatformAscendC& ascendcPlatform)
-    3. explicit BatchMatmulTiling(const platform_ascendc::PlatformAscendC &ascendcPlatform)
+    ```cpp
+    explicit MatmulApiTiling(const platform_ascendc::PlatformAscendC& ascendcPlatform)
+    explicit MultiCoreMatmulTiling(const platform_ascendc::PlatformAscendC& ascendcPlatform)
+    explicit BatchMatmulTiling(const platform_ascendc::PlatformAscendC &ascendcPlatform)
     ```
   + 使用PlatformInfo传入信息
 
     当platform\_ascendc::PlatformAscendC无法在Tiling运行时获取时，需要开发者自己构造PlatformInfo结构体，透传给MatmulApiTiling构造函数。
 
-    ```
-    1. explicit MatmulApiTiling(const PlatformInfo& platform)
-    2. explicit MultiCoreMatmulTiling(const PlatformInfo &platform)
+    ```cpp
+    explicit MatmulApiTiling(const PlatformInfo& platform)
+    explicit MultiCoreMatmulTiling(const PlatformInfo &platform)
     ```
 * 无参构造函数
 
@@ -37,19 +37,21 @@ content_hash: sha256:766893846b47cb28c78e08617fa8f0c8685f3202fcd44be68f02daf66aa
 
   Kirin9020系列处理器
 
-  ```
-  1. MatmulApiTiling()
-  2. MultiCoreMatmulTiling()
-  3. BatchMatmulTiling()
+  Kirin9030系列处理器
+
+  ```cpp
+  MatmulApiTiling()
+  MultiCoreMatmulTiling()
+  BatchMatmulTiling()
   ```
 * 基类构造函数
 
   MatmulApiTiling、MultiCoreMatmulTiling和BatchMatmulTiling都继承自基类MatmulApiTilingBase，其构造函数如下。
 
-  ```
-  1. MatmulApiTilingBase()
-  2. explicit MatmulApiTilingBase(const platform_ascendc::PlatformAscendC& ascendcPlatform)
-  3. explicit MatmulApiTilingBase(const PlatformInfo& platform)
+  ```cpp
+  MatmulApiTilingBase()
+  explicit MatmulApiTilingBase(const platform_ascendc::PlatformAscendC& ascendcPlatform)
+  explicit MatmulApiTilingBase(const PlatformInfo& platform)
   ```
 
 ## 参数说明
@@ -73,52 +75,52 @@ content_hash: sha256:766893846b47cb28c78e08617fa8f0c8685f3202fcd44be68f02daf66aa
 
 * 无参构造函数
 
-  ```
-  1. // 单核Tiling
-  2. matmul_tiling::MatmulApiTiling tiling;
-  3. tiling.SetAType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT16);
-  4. // ...
-  5. optiling::TCubeTiling tilingData;
-  6. int ret = tiling.GetTiling(tilingData);    // if ret = -1, gen tiling failed
+  ```cpp
+  // 单核Tiling
+  matmul_tiling::MatmulApiTiling tiling;
+  tiling.SetAType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT16);
+  // ...
+  optiling::TCubeTiling tilingData;
+  int ret = tiling.GetTiling(tilingData); // 若返回值ret为-1，表示Tiling参数生成失败
 
-  8. // 多核Tiling
-  9. matmul_tiling::MultiCoreMatmulTiling tiling;
-  10. tiling.SetDim(1);
-  11. // ...
-  12. optiling::TCubeTiling tilingData;
-  13. int ret = tiling.GetTiling(tilingData);    // if ret = -1, gen tiling failed
+  // 多核Tiling
+  matmul_tiling::MultiCoreMatmulTiling tiling;
+  tiling.SetDim(1);
+  // ...
+  optiling::TCubeTiling tilingData;
+  int ret = tiling.GetTiling(tilingData); // 若返回值ret为-1，表示Tiling参数生成失败
 
-  15. // BatchMatmul Tiling
-  16. matmul_tiling::BatchMatmulTiling bmmTiling;
-  17. bmmTiling.SetAType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT16);
-  18. // ...
-  19. optiling::TCubeTiling tilingData;
-  20. int ret = bmmTiling.GetTiling(tilingData);    // if ret = -1, gen tiling failed
+  // BatchMatmul Tiling
+  matmul_tiling::BatchMatmulTiling bmmTiling;
+  bmmTiling.SetAType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT16);
+  // ...
+  optiling::TCubeTiling tilingData;
+  int ret = bmmTiling.GetTiling(tilingData); // 若返回值ret为-1，表示Tiling参数生成失败
   ```
 * 带参构造函数
 
-  ```
-  1. // 单核Tiling
-  2. auto ascendcPlatform = platform_ascendc::PlatformAscendC(context->GetPlatformInfo());
-  3. matmul_tiling::MatmulApiTiling tiling(ascendcPlatform);
-  4. tiling.SetAType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT16);
-  5. // ...
-  6. optiling::TCubeTiling tilingData;
-  7. int ret = tiling.GetTiling(tilingData);    // if ret = -1, gen tiling failed
+  ```cpp
+  // 单核Tiling
+  auto ascendcPlatform = platform_ascendc::PlatformAscendC(context->GetPlatformInfo());
+  matmul_tiling::MatmulApiTiling tiling(ascendcPlatform);
+  tiling.SetAType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT16);
+  // ...
+  optiling::TCubeTiling tilingData;
+  int ret = tiling.GetTiling(tilingData); // 若返回值ret为-1，表示Tiling参数生成失败
 
-  9. // 多核Tiling
-  10. auto ascendcPlatform = platform_ascendc::PlatformAscendC(context->GetPlatformInfo());
-  11. matmul_tiling::MultiCoreMatmulTiling tiling(ascendcPlatform);
-  12. tiling.SetDim(1);
-  13. // ...
-  14. optiling::TCubeTiling tilingData;
-  15. int ret = tiling.GetTiling(tilingData);    // if ret = -1, gen tiling failed
+  // 多核Tiling
+  auto ascendcPlatform = platform_ascendc::PlatformAscendC(context->GetPlatformInfo());
+  matmul_tiling::MultiCoreMatmulTiling tiling(ascendcPlatform);
+  tiling.SetDim(1);
+  // ...
+  optiling::TCubeTiling tilingData;
+  int ret = tiling.GetTiling(tilingData); // 若返回值ret为-1，表示Tiling参数生成失败
 
-  17. // BatchMatmul Tiling
-  18. auto ascendcPlatform = platform_ascendc::PlatformAscendC(context->GetPlatformInfo());
-  19. matmul_tiling::BatchMatmulTiling bmmTiling(ascendcPlatform);
-  20. bmmTiling.SetAType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT16);
-  21. // ...
-  22. optiling::TCubeTiling tilingData;
-  23. int ret = tiling.GetTiling(tilingData);    // if ret = -1, gen tiling failed
+  // BatchMatmul Tiling
+  auto ascendcPlatform = platform_ascendc::PlatformAscendC(context->GetPlatformInfo());
+  matmul_tiling::BatchMatmulTiling bmmTiling(ascendcPlatform);
+  bmmTiling.SetAType(matmul_tiling::TPosition::GM, matmul_tiling::CubeFormat::ND, matmul_tiling::DataType::DT_FLOAT16);
+  // ...
+  optiling::TCubeTiling tilingData;
+  int ret = bmmTiling.GetTiling(tilingData); // 若返回值ret为-1，表示Tiling参数生成失败
   ```

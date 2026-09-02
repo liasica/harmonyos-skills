@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-429
 title: 如何区分onPageHide的两种场景：应用退到后台，以及有新的页面打开
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 如何区分onPageHide的两种场景：应用退到后台，以及有新的页面打开
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何区分onPageHide的两种场景：应用退到后台，以及有新的页面打开
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:52+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:37+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:b86fc1cd8d75dbee6fd03434bc5e032dd1ea1aedd64d447dcabe6fca412d3b26
 ---
 

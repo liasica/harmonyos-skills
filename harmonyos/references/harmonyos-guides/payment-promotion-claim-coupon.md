@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-promo
 title: 领券场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 运营工具 > 平台券 > 领券场景
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7f08e2364628ae2a8770999458a5da285124ab9904f815eb6f745f5da33000c1
+scraped_at: 2026-09-02T14:59:59+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:04ddfd768a7c7c0cb69a3a49c46cfd951d2f359ff8a400af990474cec77ba198
 ---
 
 ## 场景介绍
@@ -22,7 +22,7 @@ content_hash: sha256:7f08e2364628ae2a8770999458a5da285124ab9904f815eb6f745f5da33
 
 领券场景展示效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/ULDxJ_HqQS-DhFXWugeIvQ/zh-cn_image_0000002552959098.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/uMfB3IipQs-ZtBCWZ0dEog/zh-cn_image_0000002736434273.png)
 
 ## 接入流程
 
@@ -35,7 +35,7 @@ content_hash: sha256:7f08e2364628ae2a8770999458a5da285124ab9904f815eb6f745f5da33
 
 关于领券场景的业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/9LFbAww6SFiORVn1wX5fTQ/zh-cn_image_0000002583479099.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/lTRGmEcST96ew26U0dWxvg/zh-cn_image_0000002706835122.png)
 
 1. 用户进入商户服务。
 2. 商户客户端调用Payment Kit客户端的[startPromotionEntryDialog](../harmonyos-references/payment-promotionservice.md#startpromotionentrydialog)拉起活动入口组件。
@@ -68,29 +68,30 @@ content_hash: sha256:7f08e2364628ae2a8770999458a5da285124ab9904f815eb6f745f5da33
 
 针对领券场景，商户服务需要先拉起活动入口组件引导用户领券。示例代码如下：
 
-```
-1. import { promotionService } from "@kit.PaymentKit";
+```typescript
+import { promotionService } from '@kit.PaymentKit';
 
-3. @Component
-4. struct StartPromotionEntryDialogDemo {
-5. controller: promotionService.PromotionComponentController = new promotionService.PromotionComponentController(this.getUIContext());
-6. build() {
-7. Column() {
-8. Button('拉起活动入口组件')
-9. .type(ButtonType.Capsule)
-10. .width('50%')
-11. .margin(20)
-12. .onClick(async () => {
-13. try {
-14. // 拉起活动入口组件
-15. let userAction = await this.controller.startPromotionEntryDialog('100000000000', 10);
-16. // 点击关闭、去使用后会分别返回doNothing、useButtonClicked为true
-17. console.info(`userAction ${JSON.stringify(userAction)}`);
-18. } catch (e) {
-19. console.error(`startUserSelectCouponsPopup error ${JSON.stringify(e)}`);
-20. }
-21. })
-22. }
-23. }
-24. }
+@Component
+struct StartPromotionEntryDialogDemo {
+  controller: promotionService.PromotionComponentController =
+    new promotionService.PromotionComponentController(this.getUIContext());
+  build() {
+    Column() {
+      Button('拉起活动入口组件')
+        .type(ButtonType.Capsule)
+        .width('50%')
+        .margin(20)
+        .onClick(async () => {
+          try {
+            // 拉起活动入口组件
+            let userAction = await this.controller.startPromotionEntryDialog('100000000000', 10);
+            // 点击关闭、去使用后会分别返回doNothing、useButtonClicked为true
+            console.info(`userAction ${JSON.stringify(userAction)}`);
+          } catch (e) {
+            console.error(`startUserSelectCouponsPopup error ${JSON.stringify(e)}`);
+          }
+        })
+    }
+  }
+}
 ```

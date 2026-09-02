@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 智慧数据平台错误码
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > 错误码 > 智慧数据平台错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:49+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d4678196646e0f2ece72e25d12c79a03497c17a04e07ef7d9cd205d5246ed72d
+scraped_at: 2026-09-02T14:51:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:89a474e606d1c3968ff68b60ba290c1f168ea23a27f5fe11b69c9d14ddf20da4
 ---
 
 说明：
@@ -13,8 +13,6 @@ content_hash: sha256:d4678196646e0f2ece72e25d12c79a03497c17a04e07ef7d9cd205d5246
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 31300000 服务内部异常
-
-PhonePC/2in1Tablet
 
 **错误信息**
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-92
 title: ArkWeb如何适配多种设备
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > ArkWeb如何适配多种设备
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:49+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:54+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:e987967f9d22cc15c0b273ea6714f8d15b5c92e4cae6c700527673114fb32a09
 ---
 

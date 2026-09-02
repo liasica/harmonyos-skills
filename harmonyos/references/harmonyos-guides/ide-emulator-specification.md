@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-
 title: 模拟器与真机的差异
 breadcrumb: 指南 > 编写与调试应用 > 使用模拟器运行应用 > 概述 > 模拟器与真机的差异
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:40+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:89ff79286347556b342836c4c553899fc704b6416d15e8874af1e61fa78c77d1
+scraped_at: 2026-09-02T14:50:54+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:995a7e85bb51bc3489f2cf30f44b074724e789f6be309d8d806e79a788780307
 ---
 
 模拟器是开发和调试HarmonyOS应用/元服务的便捷工具，例如不需要配置服务器域名即可开发和调试元服务，在大多数情况下，模拟器上推包调试不需要签名，但部分Kit仍需签名后才能正常运行，具体要求请参考Kit的开发指南。
@@ -24,7 +24,7 @@ content_hash: sha256:89ff79286347556b342836c4c553899fc704b6416d15e8874af1e61fa78
 
 ## 图形接口差异
 
-* Mac模拟器不支持OpenGL ES 3.1、3.2接口。
+* 模拟器不支持OpenGL ES 3.1、3.2接口。
 * DevEco Studio 6.1.0 Beta2之前的版本，不支持Vulkan接口，从DevEco Studio 6.1.0 Beta2版本开始，支持除vkGetSwapchainGrallocUsageOHOS、vkAcquireImageOHOS、vkQueueSignalReleaseImageOHOS之外的接口。
 
 ## 多媒体差异
@@ -41,8 +41,8 @@ content_hash: sha256:89ff79286347556b342836c4c553899fc704b6416d15e8874af1e61fa78
 
 Kit不支持导致的报错信息如：
 
-```
-1. LastFatalMessage:[default] [LoadJSPandaFile:00] resolveBufferCallback get hsp buffer failed，hsp path:/data/storage/el1/bundle/com.huawei.hmos.{KitName}.kit
+```txt
+LastFatalMessage:[default] [LoadJSPandaFile:00] resolveBufferCallback get hsp buffer failed，hsp path:/data/storage/el1/bundle/com.huawei.hmos.{KitName}.kit
 ```
 
 ## 其他差异
@@ -51,13 +51,13 @@ Kit不支持导致的报错信息如：
 
 | 模拟器和真机的其他重要差异 | 影响场景 |
 | --- | --- |
-| SIM卡 | 不支持拨打电话、发送短信 |
-| USB | 不支持连接、数据传输 |
-| 蓝牙 | 不支持蓝牙设备扫描、连接、数据传输 |
-| 星闪 | 不支持星闪设备扫描、连接、数据传输、分布式能力 |
-| NFC | 不支持NFC卡片读写、刷卡 |
-| TEE（Trusted Execution Environment，可信执行环境） | 不支持安全GPS、设备证书等，部分安全相关Kit暂不支持，详情参考[安全Kit简介](system-security.md) |
-| NPU | 部分AI相关Kit暂不支持，详情参考[AI Kit简介](hmaf-introduction.md) |
-| 生物识别 | 不支持指纹、人脸认证等 |
-| 摄像头/麦克风 | 依赖电脑设备，不支持多摄像头切换（广角/长焦）、闪光灯、降噪算法等 |
-| 电源 | 模拟电源，不支持温控、快充等场景 |
+| SIM卡 | 不支持拨打电话、发送短信。 |
+| USB | 不支持连接、数据传输。 |
+| 蓝牙 | 不支持蓝牙设备扫描、连接、数据传输。 |
+| 星闪 | 不支持星闪设备扫描、连接、数据传输、分布式能力。 |
+| NFC | 不支持NFC卡片读写、刷卡。 |
+| TEE（Trusted Execution Environment，可信执行环境） | 不支持安全GPS、设备证书等，部分安全相关Kit暂不支持，详情参考[安全Kit简介](system-security.md)。 |
+| NPU | 部分AI相关Kit暂不支持，详情参考[AI Kit简介](hmaf-introduction.md)。 |
+| 生物识别 | 不支持指纹、人脸认证等。 |
+| 摄像头/麦克风 | 依赖电脑设备，不支持多摄像头切换（广角/长焦）、色彩空间、闪光灯、降噪算法等。如果没有摄像头，可以使用[虚拟相机](ide-emulator-more-features.md#section11725194916439)。 |
+| 电源 | 模拟电源，不支持温控、快充等场景。 |

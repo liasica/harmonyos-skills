@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-link
 title: "@Link装饰器：父子双向同步"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理组件拥有的状态 > @Link装饰器：父子双向同步
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:15+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:aed7b40451c489e055ca807b9f3b7ce449ab262b23bd2d311de27eb033b959dc
+scraped_at: 2026-09-02T14:59:15+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a809f06ec1e4f15ed2b4b1f22e4d84daa077d7ed2aa9cf2a0f1ae5e10648328f
 ---
 
-子组件中被@Link装饰的变量与其父组件中对应的数据源建立双向数据绑定。
+子组件中被[@Link](../harmonyos-references/ts-state-management-link.md#link)装饰的变量与其父组件中对应的数据源建立双向数据绑定。
 
 在阅读@Link文档前，建议先熟悉[@State](arkts-state.md)的基本用法。最佳实践请参考[状态管理最佳实践](../best-practices/bpta-status-management.md)。常见问题请参考[状态管理常见问题](arkts-state-management-faq.md)。
 
-说明
+**说明** 
 
 从API version 9开始，该装饰器支持在ArkTS卡片中使用。
 
@@ -42,7 +42,7 @@ content_hash: sha256:aed7b40451c489e055ca807b9f3b7ce449ab262b23bd2d311de27eb033b
 
 **图1** 初始化规则示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/1BTv6K7TT06OYAza9a_xXg/zh-cn_image_0000002558764092.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/DaN-GwnLThyNiLdBmfbIuw/zh-cn_image_0000002706833192.png)
 
 ## 观察变化和行为表现
 
@@ -79,165 +79,156 @@ content_hash: sha256:aed7b40451c489e055ca807b9f3b7ce449ab262b23bd2d311de27eb033b
 1. @Link装饰器不建议在[@Entry](arkts-create-custom-components.md#entry)装饰的自定义组件中使用，否则编译时会抛出警告；若该自定义组件作为页面根节点使用，则会抛出运行时错误。
 2. @Link装饰的变量禁止本地初始化，否则编译期会报错。
 
-   ```
-   1. // 错误写法，编译报错
-   2. @Link count: number = 10;
+   ```ts
+   // 错误写法，编译报错
+   @Link count: number = 10;
 
-   4. // 正确写法
-   5. @Link count: number;
+   // 正确写法
+   @Link count: number;
    ```
 3. @Link装饰的变量的类型要和数据源类型保持一致，否则编译期会报错。同时，数据源必须是状态变量，否则框架会抛出运行时错误。
 
-   说明
+   **说明** 
 
    从API version 23开始，添加对@Link数据源错误的校验，运行时错误变为编译期报错。详情参见[UI相关应用崩溃常见问题](arkts-stability-crash-issues.md)。
 
    【反例】
 
-   ```
-   1. class Info {
-   2. value: string = 'Hello';
-   3. }
+   ```ts
+   class Info {
+     value: string = 'Hello';
+   }
 
-   5. class Cousin {
-   6. name: string = 'Hello';
-   7. }
+   class Cousin {
+     name: string = 'Hello';
+   }
 
-   9. @Component
-   10. struct Child {
-   11. // 错误写法1：@Link装饰的变量与@State装饰的变量类型不一致
-   12. @Link test: Cousin;
-   13. // 错误写法2：数据源非状态变量
-   14. @Link testStr: string;
+   @Component
+   struct Child {
+     // 错误写法1：@Link装饰的变量与@State装饰的变量类型不一致
+     @Link test: Cousin;
+     // 错误写法2：数据源非状态变量
+     @Link testStr: string;
 
-   16. build() {
-   17. Column() {
-   18. Text(this.test.name)
-   19. Text(this.testStr)
-   20. }
-   21. }
-   22. }
+     build() {
+       Column() {
+         Text(this.test.name)
+         Text(this.testStr)
+       }
+     }
+   }
 
-   24. @Entry
-   25. @Component
-   26. struct LinkExample {
-   27. @State info: Info = new Info();
+   @Entry
+   @Component
+   struct LinkExample {
+     @State info: Info = new Info();
 
-   29. build() {
-   30. Column() {
-   31. Child({
-   32. // 错误写法1：@Link装饰的变量与@State装饰的变量类型不一致
-   33. test: this.info,
-   34. // 错误写法2：数据源非状态变量
-   35. testStr: this.info.value
-   36. })
-   37. }
-   38. }
-   39. }
+     build() {
+       Column() {
+         Child({
+           // 错误写法1：@Link装饰的变量与@State装饰的变量类型不一致
+           test: this.info,
+           // 错误写法2：数据源非状态变量
+           testStr: this.info.value
+         })
+       }
+     }
+   }
    ```
 
    【正例】
 
+   ```typescript
+   class LinkInfo {
+     public value: string = 'Hello';
+   }
+
+   @Component
+   struct LinkChild {
+     // 在子组件中，使用@Link装饰LinkInfo类型的test变量
+     @Link test: LinkInfo;
+
+     build() {
+       Text(this.test.value)
+         .fontSize(20)
+         .margin(10)
+     }
+   }
+
+   @Entry
+   @Component
+   struct LinkExample {
+     @State info: LinkInfo = new LinkInfo();
+
+     build() {
+       Column() {
+         // 在父组件中，使用@State装饰的info变量初始化LinkChild组件的test变量
+         LinkChild({test: this.info})
+       }
+       .width('100%')
+     }
+   }
    ```
-   1. class LinkInfo {
-   2. public value: string = 'Hello';
-   3. }
 
-   5. @Component
-   6. struct LinkChild {
-   7. // 在子组件中，使用@Link装饰LinkInfo类型的test变量
-   8. @Link test: LinkInfo;
-
-   10. build() {
-   11. Text(this.test.value)
-   12. }
-   13. }
-
-   15. @Entry
-   16. @Component
-   17. struct LinkExample {
-   18. @State info: LinkInfo = new LinkInfo();
-
-   20. build() {
-   21. Column() {
-   22. // 在父组件中，使用@State装饰的info变量初始化LinkChild组件的test变量
-   23. LinkChild({test: this.info})
-   24. }
-   25. }
-   26. }
-   ```
-
-   [LinkUsage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentStateManagement/entry/src/main/ets/pages/LinkDecorator/LinkUsage.ets#L16-L43)
-4. @Link装饰的变量仅能被状态变量初始化，不能使用常规变量初始化，否则编译期会给出告警，并在运行时崩溃。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/mJOcczRVQBOGkgwqWJ9kBA/zh-cn_image_0000002736312299.png)
+4. @Link装饰的变量仅能被状态变量初始化，不能使用常规变量初始化，否则会编译报错。
 
    【反例】
 
-   ```
-   1. class Info {
-   2. info: string = 'Hello';
-   3. }
+   ```typescript
+   @Component
+   struct Child {
+     @Link message: string;
 
-   5. @Component
-   6. struct Child {
-   7. @Link msg: string;
-   8. @Link info: string;
+     build() {
+       Text(`${this.message}`).margin('20%')
+     }
+   }
 
-   10. build() {
-   11. Text(this.msg + this.info)
-   12. }
-   13. }
+   @Entry
+   @Component
+   struct LinkExample {
+     message: string = 'Hello';
 
-   15. @Entry
-   16. @Component
-   17. struct LinkExample {
-   18. @State message: string = 'Hello';
-   19. @State info: Info = new Info();
-
-   21. build() {
-   22. Column() {
-   23. // 错误写法，常规变量不能初始化@Link
-   24. Child({msg: 'World', info: this.info.info})
-   25. }
-   26. }
-   27. }
+     build() {
+       Column() {
+         // 错误写法，常规变量不能初始化@Link
+         Child({ message: this.message })
+       }
+     }
+   }
    ```
 
    【正例】
 
-   ```
-   1. class LinkInfo2 {
-   2. public info: string = 'Hello';
-   3. }
+   ```typescript
+   @Component
+   struct LinkChild2 {
+     @Link message: string;
 
-   5. @Component
-   6. struct LinkChild2 {
-   7. @Link msg: string;
-   8. @Link info: LinkInfo2;
+     build() {
+       Text(`${this.message}`).margin('20%')
+     }
+   }
 
-   10. build() {
-   11. Text(this.msg + this.info.info)
-   12. }
-   13. }
+   @Entry
+   @Component
+   struct LinkExample2 {
+     @State message: string = 'Hello';
 
-   15. @Entry
-   16. @Component
-   17. struct LinkExample2 {
-   18. @State message: string = 'Hello';
-   19. @State info: LinkInfo2 = new LinkInfo2();
-
-   21. build() {
-   22. Column() {
-   23. // 正确写法
-   24. LinkChild2({msg: this.message, info: this.info})
-   25. }
-   26. }
-   27. }
+     build() {
+       Column() {
+         // 正确写法
+         LinkChild2({ message: this.message })
+       }
+     }
+   }
    ```
 
-   [LinkUsage2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentStateManagement/entry/src/main/ets/pages/LinkDecorator/LinkUsage2.ets#L16-L44)
-5. @Link不支持装饰Function类型的变量，API version 23之前，框架会抛出运行时错误。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/3lt9Siw0RrmyzK37wXX0aw/zh-cn_image_0000002736312299.png)
+5. @Link不支持装饰Function类型的变量，API version 23之前，应用在运行时会出现错误。
 
-   从API version 23开始，添加对@Link装饰Function类型变量的校验，编译期会报错。
+   从API version 23开始，在应用编译时添加了相关校验，@Link装饰Function类型变量会提示ERROR，应在代码中删除Function类型变量的@Link装饰器。
 
 ## 使用场景
 
@@ -249,431 +240,492 @@ content_hash: sha256:aed7b40451c489e055ca807b9f3b7ce449ab262b23bd2d311de27eb033b
 
 2.当点击父组件ShufflingContainer中的Button时，@State会发生变化，并同步给@Link，子组件也会进行对应的刷新。
 
+```typescript
+class GreenButtonState {
+  public width: number = 0;
+
+  constructor(width: number) {
+    this.width = width;
+  }
+}
+
+@Component
+struct GreenButton {
+  @Link greenButtonState: GreenButtonState;
+
+  build() {
+    Button('Green Button')
+      .width(this.greenButtonState.width)
+      .height(40)
+      .backgroundColor('#64bb5c')
+      .fontColor('#FFFFFF')
+      .onClick(() => {
+        if (this.greenButtonState.width < 700) {
+          // 更新class的属性，变化可以被观察到同步回父组件
+          this.greenButtonState.width += 60;
+        } else {
+          // 更新class，变化可以被观察到同步回父组件
+          this.greenButtonState = new GreenButtonState(180);
+        }
+      })
+  }
+}
+
+@Component
+struct YellowButton {
+  @Link yellowButtonState: number;
+
+  build() {
+    Button('Yellow Button')
+      .width(this.yellowButtonState)
+      .height(40)
+      .backgroundColor('#f7ce00')
+      .fontColor('#FFFFFF')
+      .onClick(() => {
+        // 子组件的简单类型可以同步回父组件
+        this.yellowButtonState += 40.0;
+      })
+  }
+}
+
+@Entry
+@Component
+struct ShufflingContainer {
+  @State greenButtonState: GreenButtonState = new GreenButtonState(180);
+  @State yellowButtonProp: number = 180;
+
+  build() {
+    Column() {
+      Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center }) {
+        // 简单类型从父组件@State向子组件@Link数据同步
+        Button('Parent View: Set yellowButton')
+          .width(this.yellowButtonProp)
+          .height(40)
+          .margin(12)
+          .fontColor('#FFFFFF')
+          .onClick(() => {
+            this.yellowButtonProp = (this.yellowButtonProp < 700) ? this.yellowButtonProp + 40 : 100;
+          })
+        // class类型从父组件@State向子组件@Link数据同步
+        Button('Parent View: Set GreenButton')
+          .width(this.greenButtonState.width)
+          .height(40)
+          .margin(12)
+          .fontColor('#FFFFFF')
+          .onClick(() => {
+            this.greenButtonState.width = (this.greenButtonState.width < 700) ? this.greenButtonState.width + 100 : 100;
+          })
+        // class类型初始化@Link
+        GreenButton({ greenButtonState: this.greenButtonState }).margin(12)
+        // 简单类型初始化@Link
+        YellowButton({ yellowButtonState: this.yellowButtonProp }).margin(12)
+      }
+    }
+  }
+}
 ```
-1. class GreenButtonState {
-2. public width: number = 0;
 
-4. constructor(width: number) {
-5. this.width = width;
-6. }
-7. }
-
-9. @Component
-10. struct GreenButton {
-11. @Link greenButtonState: GreenButtonState;
-
-13. build() {
-14. Button('Green Button')
-15. .width(this.greenButtonState.width)
-16. .height(40)
-17. .backgroundColor('#64bb5c')
-18. .fontColor('#FFFFFF')
-19. .onClick(() => {
-20. if (this.greenButtonState.width < 700) {
-21. // 更新class的属性，变化可以被观察到同步回父组件
-22. this.greenButtonState.width += 60;
-23. } else {
-24. // 更新class，变化可以被观察到同步回父组件
-25. this.greenButtonState = new GreenButtonState(180);
-26. }
-27. })
-28. }
-29. }
-
-31. @Component
-32. struct YellowButton {
-33. @Link yellowButtonState: number;
-
-35. build() {
-36. Button('Yellow Button')
-37. .width(this.yellowButtonState)
-38. .height(40)
-39. .backgroundColor('#f7ce00')
-40. .fontColor('#FFFFFF')
-41. .onClick(() => {
-42. // 子组件的简单类型可以同步回父组件
-43. this.yellowButtonState += 40.0;
-44. })
-45. }
-46. }
-
-48. @Entry
-49. @Component
-50. struct ShufflingContainer {
-51. @State greenButtonState: GreenButtonState = new GreenButtonState(180);
-52. @State yellowButtonProp: number = 180;
-
-54. build() {
-55. Column() {
-56. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center }) {
-57. // 简单类型从父组件@State向子组件@Link数据同步
-58. Button('Parent View: Set yellowButton')
-59. .width(this.yellowButtonProp)
-60. .height(40)
-61. .margin(12)
-62. .fontColor('#FFFFFF')
-63. .onClick(() => {
-64. this.yellowButtonProp = (this.yellowButtonProp < 700) ? this.yellowButtonProp + 40 : 100;
-65. })
-66. // class类型从父组件@State向子组件@Link数据同步
-67. Button('Parent View: Set GreenButton')
-68. .width(this.greenButtonState.width)
-69. .height(40)
-70. .margin(12)
-71. .fontColor('#FFFFFF')
-72. .onClick(() => {
-73. this.greenButtonState.width = (this.greenButtonState.width < 700) ? this.greenButtonState.width + 100 : 100;
-74. })
-75. // class类型初始化@Link
-76. GreenButton({ greenButtonState: this.greenButtonState }).margin(12)
-77. // 简单类型初始化@Link
-78. YellowButton({ yellowButtonState: this.yellowButtonProp }).margin(12)
-79. }
-80. }
-81. }
-82. }
-```
-
-[UsingLinkwithPrimitiveandClassTypes.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentStateManagement/entry/src/main/ets/pages/LinkDecorator/UsingLinkwithPrimitiveandClassTypes.ets#L16-L99)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/1NYfFlWISnadhXSLTKcUiA/zh-cn_image_0000002558604436.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/DETr4_T-SoWaSB0l3iSXPA/zh-cn_image_0000002706673256.gif)
 
 ### 数组类型的@Link
 
+```typescript
+@Component
+struct ArrayTypesChild {
+  @Link items: number[];
+
+  build() {
+    Column() {
+      Button(`Button1: push`)
+        .margin(12)
+        .width(312)
+        .height(40)
+        .fontColor('#FFFFFF')
+        .onClick(() => {
+          this.items.push(this.items.length + 1);
+        })
+      // 子组件的数组类型可以同步回父组件
+      Button(`Button2: replace whole item`)
+        .margin(12)
+        .width(312)
+        .height(40)
+        .fontColor('#FFFFFF')
+        .onClick(() => {
+          this.items = [100, 200, 300];
+        })
+    }
+  }
+}
+
+@Entry
+@Component
+struct ArrayTypes {
+  @State arr: number[] = [1, 2, 3];
+
+  build() {
+    Column() {
+      ArrayTypesChild({ items: $arr })
+        .margin(12)
+      ForEach(this.arr,
+        (item: number) => {
+          Button(`${item}`)
+            .margin(12)
+            .width(312)
+            .height(40)
+            .backgroundColor('#11a2a2a2')
+            .fontColor('#e6000000')
+        },
+        (item: number) => item.toString()
+      )
+    }
+  }
+}
 ```
-1. @Component
-2. struct ArrayTypesChild {
-3. @Link items: number[];
 
-5. build() {
-6. Column() {
-7. Button(`Button1: push`)
-8. .margin(12)
-9. .width(312)
-10. .height(40)
-11. .fontColor('#FFFFFF')
-12. .onClick(() => {
-13. this.items.push(this.items.length + 1);
-14. })
-15. // 子组件的数组类型可以同步回父组件
-16. Button(`Button2: replace whole item`)
-17. .margin(12)
-18. .width(312)
-19. .height(40)
-20. .fontColor('#FFFFFF')
-21. .onClick(() => {
-22. this.items = [100, 200, 300];
-23. })
-24. }
-25. }
-26. }
-
-28. @Entry
-29. @Component
-30. struct ArrayTypes {
-31. @State arr: number[] = [1, 2, 3];
-
-33. build() {
-34. Column() {
-35. ArrayTypesChild({ items: $arr })
-36. .margin(12)
-37. ForEach(this.arr,
-38. (item: number) => {
-39. Button(`${item}`)
-40. .margin(12)
-41. .width(312)
-42. .height(40)
-43. .backgroundColor('#11a2a2a2')
-44. .fontColor('#e6000000')
-45. },
-46. (item: ForEachInterface) => item.toString()
-47. )
-48. }
-49. }
-50. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/OmM9dKRbT_Kol3K8jSTDUA/zh-cn_image_0000002589323961.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/0HH6cpQeSbytONFaom7hkg/zh-cn_image_0000002736432347.gif)
 
 状态管理框架可以观察到数组元素的添加、删除和替换。在该示例中，@State和@Link的类型均为number[]，不支持将@Link定义成number类型（@Link item : number），并用@State数组中的每个数据项在父组件中创建子组件。如需使用这种场景，可以参考[@Prop](arkts-prop.md)和[@Observed](arkts-observed-and-objectlink.md)。
 
 ### 装饰Map类型变量
 
-说明
+**说明** 
 
 从API version 11开始，@Link支持Map类型。
 
-在下面的示例中，value类型为Map<number, string>，点击Button改变message的值，视图会随之刷新。
+在下面的示例中，value类型为Map<number, string>，点击Button改变value的值，视图会随之刷新。
 
+```typescript
+@Component
+struct MapSampleChild {
+  @Link value: Map<number, string>;
+
+  build() {
+    Column() {
+      ForEach(Array.from(this.value.entries()), (item: [number, string]) => {
+        Text(`${item[0]}`)
+          .fontSize(30)
+          .margin(10)
+        Text(`${item[1]}`)
+          .fontSize(30)
+          .margin(10)
+        Divider()
+      })
+      // 子组件的Map类型可以同步回父组件
+      Button('child init map')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.value = new Map([[0, 'a'], [1, 'b'], [3, 'c']]);
+        })
+      Button('child set new one')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.value.set(4, 'd');
+        })
+      Button('child clear')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.value.clear();
+        })
+      Button('child replace the first one')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.value.set(0, 'aa');
+        })
+      Button('child delete the first one')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.value.delete(0);
+        })
+    }
+    .width('100%')
+  }
+}
+
+@Entry
+@Component
+struct MapSample {
+  @State message: Map<number, string> = new Map([[0, 'a'], [1, 'b'], [3, 'c']]);
+
+  build() {
+    Row() {
+      Column() {
+        MapSampleChild({ value: this.message })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-1. @Component
-2. struct MapSampleChild {
-3. @Link value: Map<number, string>;
 
-5. build() {
-6. Column() {
-7. ForEach(Array.from(this.value.entries()), (item: [number, string]) => {
-8. Text(`${item[0]}`).fontSize(30)
-9. Text(`${item[1]}`).fontSize(30)
-10. Divider()
-11. })
-12. // 子组件的Map类型可以同步回父组件
-13. Button('child init map').onClick(() => {
-14. this.value = new Map([[0, 'a'], [1, 'b'], [3, 'c']]);
-15. })
-16. Button('child set new one').onClick(() => {
-17. this.value.set(4, 'd');
-18. })
-19. Button('child clear').onClick(() => {
-20. this.value.clear();
-21. })
-22. Button('child replace the first one').onClick(() => {
-23. this.value.set(0, 'aa');
-24. })
-25. Button('child delete the first one').onClick(() => {
-26. this.value.delete(0);
-27. })
-28. }
-29. }
-30. }
-
-33. @Entry
-34. @Component
-35. struct MapSample {
-36. @State message: Map<number, string> = new Map([[0, 'a'], [1, 'b'], [3, 'c']]);
-
-38. build() {
-39. Row() {
-40. Column() {
-41. MapSampleChild({ value: this.message })
-42. }
-43. .width('100%')
-44. }
-45. .height('100%')
-46. }
-47. }
-```
-
-[DecoratingVariablesMapType.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentStateManagement/entry/src/main/ets/pages/LinkDecorator/DecoratingVariablesMapType.ets#L16-L63)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/AgURTcY-RmKMWxw-ITzwcg/zh-cn_image_0000002706833194.gif)
 
 ### 装饰Set类型变量
 
-说明
+**说明** 
 
 从API version 11开始，@Link支持Set类型。
 
 在下面的示例中，message类型为Set<number>，点击Button改变message的值，视图会随之刷新。
 
+```typescript
+@Component
+struct SetSampleChild {
+  @Link message: Set<number>;
+
+  build() {
+    Column() {
+      ForEach(Array.from(this.message.entries()), (item: [number, number]) => {
+        Text(`${item[0]}`)
+          .fontSize(30)
+          .margin(10)
+        Divider()
+      })
+      // 子组件的Set类型可以同步回父组件
+      Button('init set')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.message = new Set([0, 1, 2, 3, 4]);
+        })
+      Button('set new one')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.message.add(5);
+        })
+      Button('clear')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.message.clear();
+        })
+      Button('delete the first one')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.message.delete(0);
+        })
+    }
+    .width('100%')
+  }
+}
+
+@Entry
+@Component
+struct SetSample {
+  @State message: Set<number> = new Set([0, 1, 2, 3, 4]);
+
+  build() {
+    Row() {
+      Column() {
+        SetSampleChild({ message: this.message })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-1. @Component
-2. struct SetSampleChild {
-3. @Link message: Set<number>;
 
-5. build() {
-6. Column() {
-7. ForEach(Array.from(this.message.entries()), (item: [number, number]) => {
-8. Text(`${item[0]}`).fontSize(30)
-9. Divider()
-10. })
-11. // 子组件的Set类型可以同步回父组件
-12. Button('init set').onClick(() => {
-13. this.message = new Set([0, 1, 2, 3, 4]);
-14. })
-15. Button('set new one').onClick(() => {
-16. this.message.add(5);
-17. })
-18. Button('clear').onClick(() => {
-19. this.message.clear();
-20. })
-21. Button('delete the first one').onClick(() => {
-22. this.message.delete(0);
-23. })
-24. }
-25. .width('100%')
-26. }
-27. }
-
-30. @Entry
-31. @Component
-32. struct SetSample {
-33. @State message: Set<number> = new Set([0, 1, 2, 3, 4]);
-
-35. build() {
-36. Row() {
-37. Column() {
-38. SetSampleChild({ message: this.message })
-39. }
-40. .width('100%')
-41. }
-42. .height('100%')
-43. }
-44. }
-```
-
-[DecoratingVariablesSetType.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentStateManagement/entry/src/main/ets/pages/LinkDecorator/DecoratingVariablesSetType.ets#L16-L60)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/QYFGecHXToC0QDUnTpyPLA/zh-cn_image_0000002736312303.gif)
 
 ### 装饰Date类型变量
 
 在下面的示例中，selectedDate类型为Date，点击Button改变selectedDate的值，视图会随之刷新。
 
+```typescript
+@Component
+struct DateComponent {
+  @Link selectedDate: Date;
+
+  build() {
+    Column() {
+      // 子组件的Date类型可以同步回父组件
+      Button(`child increase the year by 1`)
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.selectedDate.setFullYear(this.selectedDate.getFullYear() + 1);
+        })
+      Button('child update the new date')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.selectedDate = new Date('2023-09-09');
+        })
+      DatePicker({
+        start: new Date('1970-1-1'),
+        end: new Date('2100-1-1'),
+        selected: this.selectedDate
+      })
+    }
+    .width('100%')
+  }
+}
+
+@Entry
+@Component
+struct ParentComponent {
+  @State parentSelectedDate: Date = new Date('2021-08-08');
+
+  build() {
+    Column() {
+      Button('parent increase the month by 1')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.parentSelectedDate.setMonth(this.parentSelectedDate.getMonth() + 1);
+        })
+      Button('parent update the new date')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.parentSelectedDate = new Date('2023-07-07');
+        })
+      DatePicker({
+        start: new Date('1970-1-1'),
+        end: new Date('2100-1-1'),
+        selected: this.parentSelectedDate
+      })
+
+      DateComponent({ selectedDate:this.parentSelectedDate })
+    }
+    .width('100%')
+  }
+}
 ```
-1. @Component
-2. struct DateComponent {
-3. @Link selectedDate: Date;
 
-5. build() {
-6. Column() {
-7. // 子组件的Date类型可以同步回父组件
-8. Button(`child increase the year by 1`)
-9. .onClick(() => {
-10. this.selectedDate.setFullYear(this.selectedDate.getFullYear() + 1);
-11. })
-12. Button('child update the new date')
-13. .margin(10)
-14. .onClick(() => {
-15. this.selectedDate = new Date('2023-09-09');
-16. })
-17. DatePicker({
-18. start: new Date('1970-1-1'),
-19. end: new Date('2100-1-1'),
-20. selected: this.selectedDate
-21. })
-22. }
-23. }
-24. }
-
-26. @Entry
-27. @Component
-28. struct ParentComponent {
-29. @State parentSelectedDate: Date = new Date('2021-08-08');
-
-31. build() {
-32. Column() {
-33. Button('parent increase the month by 1')
-34. .margin(10)
-35. .onClick(() => {
-36. this.parentSelectedDate.setMonth(this.parentSelectedDate.getMonth() + 1);
-37. })
-38. Button('parent update the new date')
-39. .margin(10)
-40. .onClick(() => {
-41. this.parentSelectedDate = new Date('2023-07-07');
-42. })
-43. DatePicker({
-44. start: new Date('1970-1-1'),
-45. end: new Date('2100-1-1'),
-46. selected: this.parentSelectedDate
-47. })
-
-49. DateComponent({ selectedDate:this.parentSelectedDate })
-50. }
-51. }
-52. }
-```
-
-[DecoratingVariablesDateType.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentStateManagement/entry/src/main/ets/pages/LinkDecorator/DecoratingVariablesDateType.ets#L16-L68)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/R8AUTJNNQvqm768BKFLHqA/zh-cn_image_0000002706673258.gif)
 
 ### 使用双向同步机制更改本地其他变量
 
 通过[@Watch](arkts-watch.md)可以在双向同步时更改本地变量。
 
-以下示例中，在@Link的@Watch里面修改了一个@State装饰的变量memberMessage，实现父子组件间的变量同步。但是@State装饰的变量memberMessage在本地修改不会影响到父组件中的变量改变。
+以下示例中，在@Link的@Watch里面修改了一个@State装饰的变量memberMessage，实现父子组件间的变量同步，但是@State装饰的变量memberMessage在本地修改不会影响到父组件中的变量改变。
 
+```typescript
+@Entry
+@Component
+struct ChangeVariables {
+  @State sourceNumber: number = 0;
+
+  build() {
+    Column() {
+      Text(`sourceNumber of the parent component:` + this.sourceNumber)
+        .fontSize(20)
+        .margin(10)
+      ChangeVariablesChild({ sourceNumber: this.sourceNumber })
+      Button('Change sourceNumber in Parent Component')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.sourceNumber++;
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
+
+@Component
+struct ChangeVariablesChild {
+  @State memberMessage: string = 'Hello World';
+  @Link @Watch('onSourceChange') sourceNumber: number;
+
+  onSourceChange() {
+    // memberMessage在子组件中本地修改不会影响到父组件中的变量改变
+    this.memberMessage = this.sourceNumber.toString();
+  }
+
+  build() {
+    Column() {
+      Text(this.memberMessage)
+        .fontSize(20)
+        .margin(10)
+      Text(`sourceNumber of the child component:` + this.sourceNumber.toString())
+        .fontSize(20)
+        .margin(10)
+      Button('Change memberMessage in Child Component')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.memberMessage = 'Hello memberMessage';
+        })
+    }
+    .width('100%')
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct ChangeVariables {
-4. @State sourceNumber: number = 0;
 
-6. build() {
-7. Column() {
-8. Text(`sourceNumber of the parent component:` + this.sourceNumber)
-9. ChangeVariablesChild({ sourceNumber: this.sourceNumber })
-10. // sourceNumber的修改不会影响到父组件中的变量改变
-11. Button('Change sourceNumber in Parent Component')
-12. .onClick(() => {
-13. this.sourceNumber++;
-14. })
-15. }
-16. .width('100%')
-17. .height('100%')
-18. }
-19. }
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/SkE48TNBREOcimIJSA7mSQ/zh-cn_image_0000002736432349.gif)
 
-21. @Component
-22. struct ChangeVariablesChild {
-23. @State memberMessage: string = 'Hello World';
-24. @Link @Watch('onSourceChange') sourceNumber: number;
-
-26. onSourceChange() {
-27. this.memberMessage = this.sourceNumber.toString();
-28. }
-
-30. build() {
-31. Column() {
-32. Text(this.memberMessage)
-33. Text(`sourceNumber of the child component:` + this.sourceNumber.toString())
-34. Button('Change memberMessage in Child Component')
-35. .onClick(() => {
-36. this.memberMessage = 'Hello memberMessage';
-37. })
-38. }
-39. }
-40. }
-```
-
-[UseWatchToChangeLocalVariables.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentStateManagement/entry/src/main/ets/pages/LinkDecorator/UseWatchToChangeLocalVariables.ets#L16-L56)
-
-### Link支持联合类型实例
+### @Link支持联合类型实例
 
 @Link支持联合类型、undefined和null。在以下示例中，name类型为string | undefined。点击父组件UnionTypes中的按钮可以改变name的属性或类型，UnionChild组件也会相应刷新。
 
+```typescript
+@Component
+struct UnionChild {
+  // @Link支持联合类型
+  @Link name: string | undefined;
+
+  build() {
+    Column() {
+      Button('Child change name to Bob')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.name = 'Bob';
+        })
+
+      Button('Child change name to undefined')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.name = undefined;
+        })
+
+    }
+    .width('100%')
+  }
+}
+
+@Entry
+@Component
+struct UnionTypes {
+  @State name: string | undefined = 'mary';
+
+  build() {
+    Column() {
+      Text(`The name is  ${this.name}`)
+        .fontSize(20)
+        .margin(10)
+
+      UnionChild({ name: this.name })
+
+      Button('Parents change name to Peter')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.name = 'Peter';
+        })
+
+      Button('Parents change name to undefined')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.name = undefined;
+        })
+    }
+    .width('100%')
+  }
+}
 ```
-1. @Component
-2. struct UnionChild {
-3. // @Link支持联合类型
-4. @Link name: string | undefined;
 
-6. build() {
-7. Column() {
-
-9. Button('Child change name to Bob')
-10. .onClick(() => {
-11. this.name = 'Bob';
-12. })
-
-14. Button('Child change name to undefined')
-15. .onClick(() => {
-16. this.name = undefined;
-17. })
-
-19. }.width('100%')
-20. }
-21. }
-
-23. @Entry
-24. @Component
-25. struct UnionTypes {
-26. @State name: string | undefined = 'mary';
-
-28. build() {
-29. Column() {
-30. Text(`The name is  ${this.name}`).fontSize(30)
-
-32. UnionChild({ name: this.name })
-
-34. Button('Parents change name to Peter')
-35. .onClick(() => {
-36. this.name = 'Peter';
-37. })
-
-39. Button('Parents change name to undefined')
-40. .onClick(() => {
-41. this.name = undefined;
-42. })
-43. }
-44. }
-45. }
-```
-
-[UsingUnionTypes.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentStateManagement/entry/src/main/ets/pages/LinkDecorator/UsingUnionTypes.ets#L16-L61)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/hYZmgPxZSJioUoTDDCpNXA/zh-cn_image_0000002706833196.gif)

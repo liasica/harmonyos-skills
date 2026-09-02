@@ -3,34 +3,30 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: nfctech (标准NFC-Tag Nfc 技术)
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > tag > nfctech (标准NFC-Tag Nfc 技术)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:58:35+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:edc386add6620649d187d72b08fabe20e38973de4303f3997c7a79654946b7e8
+scraped_at: 2026-09-02T15:01:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:85cefdfeac4491fae0eaee4c3aa8bae5ce2559c1d51e54d624a3f0ab279eddc8
 ---
 
 本模块主要用于采用不同Nfc技术的Tag的读写操作。
 
-说明
+**说明** 
 
 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
-注意
+**注意** 
 
 导入tag模块编辑器报错，在某个具体设备型号上能力可能超出工程默认设备定义的能力集范围，如需要使用此部分能力需额外配置自定义syscap，参考[syscap开发指南](syscap.md)。
 
 ## 导入模块
 
-PhoneWearable
-
-```
-1. import { tag } from '@kit.ConnectivityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
 ```
 
 ## NfcATag
 
-PhoneWearable
-
-NfcATag 提供 NFC-A(ISO 14443-3A)技术的属性和I/O操作的访问，继承自[TagSession](js-apis-tagsession.md)。
+NfcATag提供对NFC-A(ISO 14443-3A)技术的属性和I/O操作的访问，继承自[TagSession](js-apis-tagsession.md)。
 
 TagSession是所有NFC Tag技术类型的基类， 提供建立连接和发送数据等共同接口。具体请参见[TagSession](js-apis-tagsession.md)。
 
@@ -39,8 +35,6 @@ NfcATag获取方式请参考[nfc-tag开发指南](../harmonyos-guides/nfc-tag-ac
 以下是NfcATag的独有接口。
 
 ### NfcATag.getSak
-
-PhoneWearable
 
 getSak(): number
 
@@ -58,17 +52,15 @@ getSak(): number
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
 
-3. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 nfcA
-4. let sak : number = nfcA.getSak();
-5. console.info("nfcA sak: " + sak);
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 nfcA
+let sak : number = nfcA.getSak();
+console.info("nfcA sak: " + sak);
 ```
 
 ### NfcATag.getAtqa
-
-PhoneWearable
 
 getAtqa(): number[]
 
@@ -86,17 +78,15 @@ getAtqa(): number[]
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
 
-3. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 nfcA
-4. let atqa : number[] = nfcA.getAtqa();
-5. console.info("nfcA atqa: " + atqa);
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 nfcA
+let atqa : number[] = nfcA.getAtqa();
+console.info("nfcA atqa: " + atqa);
 ```
 
 ## NfcBTag
-
-PhoneWearable
 
 NfcBTag 提供对NFC-B(ISO 14443-3B)技术的属性和I/O操作的访问，继承自TagSession。
 
@@ -107,8 +97,6 @@ NfcBTag获取方式请参考[nfc-tag开发指南](../harmonyos-guides/nfc-tag-ac
 以下是NfcBTag的独有接口。
 
 ### NfcBTag.getRespAppData
-
-PhoneWearable
 
 getRespAppData(): number[]
 
@@ -126,17 +114,15 @@ getRespAppData(): number[]
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
 
-3. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 nfcB
-4. let respAppData : number[] = nfcB.getRespAppData();
-5. console.info("nfcB respAppData: " + respAppData);
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 nfcB
+let respAppData : number[] = nfcB.getRespAppData();
+console.info("nfcB respAppData: " + respAppData);
 ```
 
 ### NfcBTag.getRespProtocol
-
-PhoneWearable
 
 getRespProtocol(): number[]
 
@@ -154,17 +140,15 @@ getRespProtocol(): number[]
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
 
-3. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 nfcB
-4. let respProtocol : number[] = nfcB.getRespProtocol();
-5. console.info("nfcB respProtocol: " + respProtocol);
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 nfcB
+let respProtocol : number[] = nfcB.getRespProtocol();
+console.info("nfcB respProtocol: " + respProtocol);
 ```
 
 ## NfcFTag
-
-PhoneWearable
 
 NfcFTag 提供对NFC-F(JIS 6319-4)技术的属性和I/O操作的访问，继承自TagSession。
 
@@ -175,8 +159,6 @@ NfcFTag获取方式请参考[nfc-tag开发指南](../harmonyos-guides/nfc-tag-ac
 以下是NfcFTag的独有接口。
 
 ### NfcFTag.getSystemCode
-
-PhoneWearable
 
 getSystemCode(): number[]
 
@@ -194,17 +176,15 @@ getSystemCode(): number[]
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
 
-3. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 nfcF
-4. let systemCode : number[] = nfcF.getSystemCode();
-5. console.info("nfcF systemCode: " + systemCode);
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 nfcF
+let systemCode : number[] = nfcF.getSystemCode();
+console.info("nfcF systemCode: " + systemCode);
 ```
 
 ### NfcFTag.getPmm
-
-PhoneWearable
 
 getPmm(): number[]
 
@@ -222,17 +202,15 @@ getPmm(): number[]
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
 
-3. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 nfcF
-4. let pmm : number[] = nfcF.getPmm();
-5. console.info("nfcF pmm: " + pmm);
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 nfcF
+let pmm : number[] = nfcF.getPmm();
+console.info("nfcF pmm: " + pmm);
 ```
 
 ## NfcVTag
-
-PhoneWearable
 
 NfcVTag 提供对NFC-V(ISO 15693)技术的属性和I/O操作的访问，继承自TagSession。
 
@@ -243,8 +221,6 @@ NfcVTag获取方式请参考[nfc-tag开发指南](../harmonyos-guides/nfc-tag-ac
 以下是NfcVTag的独有接口。
 
 ### NfcVTag.getResponseFlags
-
-PhoneWearable
 
 getResponseFlags(): number
 
@@ -262,17 +238,15 @@ getResponseFlags(): number
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
 
-3. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 nfcV
-4. let responseFlags : number = nfcV.getResponseFlags();
-5. console.info("nfcV responseFlags: " + responseFlags);
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 nfcV
+let responseFlags : number = nfcV.getResponseFlags();
+console.info("nfcV responseFlags: " + responseFlags);
 ```
 
 ### NfcVTag.getDsfId
-
-PhoneWearable
 
 getDsfId(): number
 
@@ -290,17 +264,15 @@ getDsfId(): number
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
 
-3. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 nfcV
-4. let dsfId : number = nfcV.getDsfId();
-5. console.info("nfcV dsfId: " + dsfId);
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 nfcV
+let dsfId : number = nfcV.getDsfId();
+console.info("nfcV dsfId: " + dsfId);
 ```
 
 ## IsoDepTag9+
-
-PhoneWearable
 
 IsoDepTag 提供对ISO-DEP(ISO 14443-4)技术的属性和I/O操作的访问，继承自TagSession。
 
@@ -311,8 +283,6 @@ IsoDepTag获取方式请参考[nfc-tag开发指南](../harmonyos-guides/nfc-tag-
 以下是IsoDepTag的独有接口。
 
 ### IsoDepTag.getHistoricalBytes9+
-
-PhoneWearable
 
 getHistoricalBytes(): number[]
 
@@ -330,17 +300,15 @@ getHistoricalBytes(): number[]
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
 
-3. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 isoDep
-4. let historicalBytes : number[] = isoDep.getHistoricalBytes();
-5. console.info("isoDep historicalBytes: " + historicalBytes);
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 isoDep
+let historicalBytes : number[] = isoDep.getHistoricalBytes();
+console.info("isoDep historicalBytes: " + historicalBytes);
 ```
 
 ### IsoDepTag.getHiLayerResponse9+
-
-PhoneWearable
 
 getHiLayerResponse(): number[]
 
@@ -358,17 +326,15 @@ getHiLayerResponse(): number[]
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
 
-3. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 isoDep
-4. let hiLayerResponse : number[] = isoDep.getHiLayerResponse();
-5. console.info("isoDep hiLayerResponse: " + hiLayerResponse);
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 isoDep
+let hiLayerResponse : number[] = isoDep.getHiLayerResponse();
+console.info("isoDep hiLayerResponse: " + hiLayerResponse);
 ```
 
 ### IsoDepTag.isExtendedApduSupported9+
-
-PhoneWearable
 
 isExtendedApduSupported(): Promise<boolean>
 
@@ -399,35 +365,33 @@ isExtendedApduSupported(): Promise<boolean>
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 isoDep
-5. function nfcTechDemo() {
-6. // 如果没有连接Tag，请先连接
-7. if (!isoDep.isTagConnected()) {
-8. if (!isoDep.connectTag()) {
-9. console.error("isoDep connectTag failed.");
-10. return;
-11. }
-12. }
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 isoDep
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!isoDep.isTagConnected()) {
+        if (!isoDep.connectTag()) {
+            console.error("isoDep connectTag failed.");
+            return;
+        }
+    }
 
-14. try {
-15. isoDep.isExtendedApduSupported().then((response: boolean) => {
-16. console.info("isoDep isExtendedApduSupported Promise response: " + response);
-17. }).catch((err: BusinessError) => {
-18. console.error(`isoDep isExtendedApduSupported Promise Code: ${err.code}, message: ${err.message}`);
-19. });
-20. } catch (businessError) {
-21. console.error(`isoDep isExtendedApduSupported Promise Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-22. }
-23. }
+    try {
+        isoDep.isExtendedApduSupported().then((response: boolean) => {
+            console.info("isoDep isExtendedApduSupported Promise response: " + response);
+        }).catch((err: BusinessError) => {
+            console.error(`isoDep isExtendedApduSupported Promise Code: ${err.code}, message: ${err.message}`);
+        });
+    } catch (businessError) {
+        console.error(`isoDep isExtendedApduSupported Promise Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### IsoDepTag.isExtendedApduSupported9+
-
-PhoneWearable
 
 isExtendedApduSupported(callback: AsyncCallback<boolean>): void
 
@@ -458,41 +422,37 @@ isExtendedApduSupported(callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 isoDep
-5. function nfcTechDemo() {
-6. // 如果没有连接Tag，请先连接
-7. if (!isoDep.isTagConnected()) {
-8. if (!isoDep.connectTag()) {
-9. console.error("isoDep connectTag failed.");
-10. return;
-11. }
-12. }
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 isoDep
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!isoDep.isTagConnected()) {
+        if (!isoDep.connectTag()) {
+            console.error("isoDep connectTag failed.");
+            return;
+        }
+    }
 
-14. try {
-15. isoDep.isExtendedApduSupported((err: BusinessError, response: boolean) => {
-16. if (err) {
-17. console.error(`isoDep isExtendedApduSupported AsyncCallback Code: ${err.code}, message: ${err. message}`);
-18. } else {
-19. console.info("isoDep isExtendedApduSupported AsyncCallback response: " + response);
-20. }
-21. });
-22. } catch (businessError) {
-23. console.error(`isoDep isExtendedApduSupported AsyncCallback Code: ${(businessError as Business).code}, message: ${(businessError as Business).message}`);
-24. }
-25. }
+    try {
+        isoDep.isExtendedApduSupported((err: BusinessError, response: boolean) => {
+            if (err) {
+                console.error(`isoDep isExtendedApduSupported AsyncCallback Code: ${err.code}, message: ${err. message}`);
+            } else {
+                console.info("isoDep isExtendedApduSupported AsyncCallback response: " + response);
+            }
+        });
+    } catch (businessError) {
+        console.error(`isoDep isExtendedApduSupported AsyncCallback Code: ${(businessError as Business).code}, message: ${(businessError as Business).message}`);
+    }
+}
 ```
 
 ## NdefMessage9+
 
-PhoneWearable
-
 ### NdefMessage.getNdefRecords9+
-
-PhoneWearable
 
 getNdefRecords(): [tag.NdefRecord](js-apis-nfctag.md#ndefrecord9)[]
 
@@ -510,22 +470,20 @@ getNdefRecords(): [tag.NdefRecord](js-apis-nfctag.md#ndefrecord9)[]
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
 
-3. // 从 tag.ndef.createNdefMessage 或 ndefTag.getNdefMessage 获取 ndefMessage。
-4. // let ndefMessage : tag.NdefMessage = tag.ndef.createNdefMessage(...);
-5. // let ndefMessage : tag.NdefMessage = ndefTag.getNdefMessage();
+// 从 tag.ndef.createNdefMessage 或 ndefTag.getNdefMessage 获取 ndefMessage。
+// let ndefMessage : tag.NdefMessage = tag.ndef.createNdefMessage(...);
+// let ndefMessage : tag.NdefMessage = ndefTag.getNdefMessage();
 
-7. let ndefRecords : tag.NdefRecord[] = ndefMessage.getNdefRecords();
-8. console.info("ndef ndefRecords number: " + ndefRecords.length);
+let ndefRecords : tag.NdefRecord[] = ndefMessage.getNdefRecords();
+console.info("ndef ndefRecords number: " + ndefRecords.length);
 ```
 
 ## NdefTag9+
 
-PhoneWearable
-
-提供对已格式化为NDEF的NFC标签的数据和操作的访问，继承自TagSession。
+NdefTag提供对已格式化为NDEF的NFC标签的数据和操作的访问，继承自[TagSession](js-apis-tagsession.md)。
 
 TagSession是所有NFC Tag技术类型的基类，提供建立连接和发送数据等共同接口。具体请参见[TagSession](js-apis-tagsession.md)。
 
@@ -534,8 +492,6 @@ NdefTag获取方式请参考[nfc-tag开发指南](../harmonyos-guides/nfc-tag-ac
 以下是NdefTag的独有接口。
 
 ### NdefTag.getNdefTagType9+
-
-PhoneWearable
 
 getNdefTagType(): [tag.NfcForumType](js-apis-nfctag.md#nfcforumtype9)
 
@@ -553,17 +509,15 @@ getNdefTagType(): [tag.NfcForumType](js-apis-nfctag.md#nfcforumtype9)
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
 
-3. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefTag
-4. let ndefTagType : tag.NfcForumType = ndefTag.getNdefTagType();
-5. console.info("ndef ndefTagType: " + ndefTagType);
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefTag
+let ndefTagType : tag.NfcForumType = ndefTag.getNdefTagType();
+console.info("ndef ndefTagType: " + ndefTagType);
 ```
 
 ### NdefTag.getNdefMessage9+
-
-PhoneWearable
 
 getNdefMessage(): [NdefMessage](js-apis-nfctech.md#ndefmessage9)
 
@@ -581,17 +535,15 @@ getNdefMessage(): [NdefMessage](js-apis-nfctech.md#ndefmessage9)
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
 
-3. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefTag
-4. let ndefMessage : tag.NdefMessage = ndefTag.getNdefMessage();
-5. console.info("ndef ndefMessage: " + ndefMessage);
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefTag
+let ndefMessage : tag.NdefMessage = ndefTag.getNdefMessage();
+console.info("ndef ndefMessage: " + ndefMessage);
 ```
 
 ### NdefTag.isNdefWritable9+
-
-PhoneWearable
 
 isNdefWritable(): boolean
 
@@ -609,17 +561,15 @@ isNdefWritable(): boolean
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
 
-3. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefTag
-4. let isWritable : boolean = ndefTag.isNdefWritable();
-5. console.info("ndef isNdefWritable: " + isWritable);
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefTag
+let isWritable : boolean = ndefTag.isNdefWritable();
+console.info("ndef isNdefWritable: " + isWritable);
 ```
 
 ### NdefTag.readNdef9+
-
-PhoneWearable
 
 readNdef(): Promise<[NdefMessage](js-apis-nfctech.md#ndefmessage9)>
 
@@ -650,35 +600,33 @@ readNdef(): Promise<[NdefMessage](js-apis-nfctech.md#ndefmessage9)>
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefTag
-5. function nfcTechDemo(){
-6. // 如果没有连接Tag，请先连接
-7. if (!ndefTag.isTagConnected()) {
-8. if (!ndefTag.connectTag()) {
-9. console.error("ndefTag connectTag failed.");
-10. return;
-11. }
-12. }
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefTag
+function nfcTechDemo(){
+    // 如果没有连接Tag，请先连接
+    if (!ndefTag.isTagConnected()) {
+        if (!ndefTag.connectTag()) {
+            console.error("ndefTag connectTag failed.");
+            return;
+        }
+    }
 
-14. try {
-15. ndefTag.readNdef().then((ndefmessage : tag.NdefMessage) => {
-16. console.info("ndef readNdef Promise ndefmessage: " + ndefmessage);
-17. }).catch((err : BusinessError)=> {
-18. console.error("ndef readNdef Promise err Code: ${err.code}, message: ${err.message}");
-19. });
-20. } catch (businessError) {
-21. console.error(`ndef readNdef Promise catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-22. }
-23. }
+    try {
+        ndefTag.readNdef().then((ndefmessage : tag.NdefMessage) => {
+            console.info("ndef readNdef Promise ndefmessage: " + ndefmessage);
+        }).catch((err : BusinessError)=> {
+            console.error(`ndef readNdef Promise err Code: ${err.code}, message: ${err.message}`);
+        });
+    } catch (businessError) {
+        console.error(`ndef readNdef Promise catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### NdefTag.readNdef9+
-
-PhoneWearable
 
 readNdef(callback: AsyncCallback<[NdefMessage](js-apis-nfctech.md#ndefmessage9)>): void
 
@@ -709,37 +657,35 @@ readNdef(callback: AsyncCallback<[NdefMessage](js-apis-nfctech.md#ndefmessage9)>
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefTag
-5. function nfcTechDemo() {
-6. // 如果没有连接Tag，请先连接
-7. if (!ndefTag.isTagConnected()) {
-8. if (!ndefTag.connectTag()) {
-9. console.error("ndefTag connectTag failed.");
-10. return;
-11. }
-12. }
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefTag
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!ndefTag.isTagConnected()) {
+        if (!ndefTag.connectTag()) {
+            console.error("ndefTag connectTag failed.");
+            return;
+        }
+    }
 
-14. try {
-15. ndefTag.readNdef((err : BusinessError, ndefmessage : tag.NdefMessage)=> {
-16. if (err) {
-17. console.error(`ndef readNdef AsyncCallback err Code: ${err.code}, message: ${err.message}`);
-18. } else {
-19. console.info("ndef readNdef AsyncCallback ndefmessage: " + ndefmessage);
-20. }
-21. });
-22. } catch (businessError) {
-23. console.error(`ndef readNdef AsyncCallback catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-24. }
-25. }
+    try {
+        ndefTag.readNdef((err : BusinessError, ndefmessage : tag.NdefMessage)=> {
+            if (err) {
+                console.error(`ndef readNdef AsyncCallback err Code: ${err.code}, message: ${err.message}`);
+            } else {
+                console.info("ndef readNdef AsyncCallback ndefmessage: " + ndefmessage);
+            }
+        });
+    } catch (businessError) {
+        console.error(`ndef readNdef AsyncCallback catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### NdefTag.writeNdef9+
-
-PhoneWearable
 
 writeNdef(msg: [NdefMessage](js-apis-nfctech.md#ndefmessage9)): Promise<void>
 
@@ -776,40 +722,38 @@ writeNdef(msg: [NdefMessage](js-apis-nfctech.md#ndefmessage9)): Promise<void>
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefTag
-5. // 从原始数据创建的ndefMessage，例如：
-6. let ndefMessage : tag.NdefMessage =
-7. tag.ndef.createNdefMessage([0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43]);  // 必须是可以被解析的NDEF记录。
-8. // 或从 tag.ndef.createNdefMessage(ndefRecords:NdefRecord[]) 创建 ndefMessage
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefTag
+// 从原始数据创建的ndefMessage，例如：
+let ndefMessage : tag.NdefMessage =
+    tag.ndef.createNdefMessage([0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43]);  // 必须是可以被解析的NDEF记录。
+// 或从 tag.ndef.createNdefMessage(ndefRecords:NdefRecord[]) 创建 ndefMessage
 
-10. function nfcTechDemo() {
-11. // 如果没有连接Tag，请先连接
-12. if (!ndefTag.isTagConnected()) {
-13. if (!ndefTag.connectTag()) {
-14. console.error("ndefTag connectTag failed.");
-15. return;
-16. }
-17. }
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!ndefTag.isTagConnected()) {
+        if (!ndefTag.connectTag()) {
+            console.error("ndefTag connectTag failed.");
+            return;
+        }
+    }
 
-19. try {
-20. ndefTag.writeNdef(ndefMessage).then(() => {
-21. console.info("ndef writeNdef Promise success.");
-22. }).catch((err : BusinessError)=> {
-23. console.error(`ndef writeNdef err Code: ${err.code}, message: ${err.message}`);
-24. });
-25. } catch (businessError) {
-26. console.error(`ndef writeNdef Promise catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-27. }
-28. }
+    try {
+        ndefTag.writeNdef(ndefMessage).then(() => {
+            console.info("ndef writeNdef Promise success.");
+        }).catch((err : BusinessError)=> {
+            console.error(`ndef writeNdef err Code: ${err.code}, message: ${err.message}`);
+        });
+    } catch (businessError) {
+        console.error(`ndef writeNdef Promise catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### NdefTag.writeNdef9+
-
-PhoneWearable
 
 writeNdef(msg: [NdefMessage](js-apis-nfctech.md#ndefmessage9), callback: AsyncCallback<void>): void
 
@@ -841,42 +785,40 @@ writeNdef(msg: [NdefMessage](js-apis-nfctech.md#ndefmessage9), callback: AsyncCa
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefTag
-5. // 从原始数据创建的ndefMessage，例如：
-6. let ndefMessage : tag.NdefMessage =
-7. tag.ndef.createNdefMessage([0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43]);  // 必须是可以被解析的NDEF记录。
-8. // 或从 tag.ndef.createNdefMessage(ndefRecords:NdefRecord[]) 创建 ndefMessage
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefTag
+// 从原始数据创建的ndefMessage，例如：
+let ndefMessage : tag.NdefMessage =
+    tag.ndef.createNdefMessage([0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43]);  // 必须是可以被解析的NDEF记录。
+// 或从 tag.ndef.createNdefMessage(ndefRecords:NdefRecord[]) 创建 ndefMessage
 
-10. function nfcTechDemo() {
-11. // 如果没有连接Tag，请先连接
-12. if (!ndefTag.isTagConnected()) {
-13. if (!ndefTag.connectTag()) {
-14. console.error("ndefTag connectTag failed.");
-15. return;
-16. }
-17. }
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!ndefTag.isTagConnected()) {
+        if (!ndefTag.connectTag()) {
+            console.error("ndefTag connectTag failed.");
+            return;
+        }
+    }
 
-19. try {
-20. ndefTag.writeNdef(ndefMessage, (err : BusinessError)=> {
-21. if (err) {
-22. console.error("ndef writeNdef AsyncCallback Code: ${err.code}, message: ${err.message}");
-23. } else {
-24. console.info("ndef writeNdef AsyncCallback success.");
-25. }
-26. });
-27. } catch (businessError) {
-28. console.error(`ndef writeNdef AsyncCallback catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-29. }
-30. }
+    try {
+        ndefTag.writeNdef(ndefMessage, (err : BusinessError)=> {
+            if (err) {
+                console.error("ndef writeNdef AsyncCallback Code: ${err.code}, message: ${err.message}");
+            } else {
+                console.info("ndef writeNdef AsyncCallback success.");
+            }
+        });
+    } catch (businessError) {
+        console.error(`ndef writeNdef AsyncCallback catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### NdefTag.canSetReadOnly9+
-
-PhoneWearable
 
 canSetReadOnly(): boolean
 
@@ -905,17 +847,15 @@ canSetReadOnly(): boolean
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
 
-3. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefTag
-4. let canSetReadOnly : boolean = ndefTag.canSetReadOnly();
-5. console.info("ndef canSetReadOnly: " + canSetReadOnly);
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefTag
+let canSetReadOnly : boolean = ndefTag.canSetReadOnly();
+console.info("ndef canSetReadOnly: " + canSetReadOnly);
 ```
 
 ### NdefTag.setReadOnly9+
-
-PhoneWearable
 
 setReadOnly(): Promise<void>
 
@@ -946,36 +886,34 @@ setReadOnly(): Promise<void>
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefTag
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefTag
 
-6. function nfcTechDemo() {
-7. // 如果没有连接Tag，请先连接
-8. if (!ndefTag.isTagConnected()) {
-9. if (!ndefTag.connectTag()) {
-10. console.error("ndefTag connectTag failed.");
-11. return;
-12. }
-13. }
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!ndefTag.isTagConnected()) {
+        if (!ndefTag.connectTag()) {
+            console.error("ndefTag connectTag failed.");
+            return;
+        }
+    }
 
-15. try {
-16. ndefTag.setReadOnly().then(() => {
-17. console.info("ndef setReadOnly Promise success.");
-18. }).catch((err : BusinessError)=> {
-19. console.error("ndef setReadOnly Promise err Code: ${err.code}, message: ${err.message}");
-20. });
-21. } catch (businessError) {
-22. console.error(`ndef setReadOnly Promise catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-23. }
-24. }
+    try {
+        ndefTag.setReadOnly().then(() => {
+            console.info("ndef setReadOnly Promise success.");
+        }).catch((err : BusinessError)=> {
+            console.error("ndef setReadOnly Promise err Code: ${err.code}, message: ${err.message}");
+        });
+    } catch (businessError) {
+        console.error(`ndef setReadOnly Promise catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### NdefTag.setReadOnly9+
-
-PhoneWearable
 
 setReadOnly(callback: AsyncCallback<void>): void
 
@@ -1006,38 +944,36 @@ setReadOnly(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefTag
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefTag
 
-6. function nfcTechDemo() {
-7. // 如果没有连接Tag，请先连接
-8. if (!ndefTag.isTagConnected()) {
-9. if (!ndefTag.connectTag()) {
-10. console.error("ndefTag connectTag failed.");
-11. return;
-12. }
-13. }
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!ndefTag.isTagConnected()) {
+        if (!ndefTag.connectTag()) {
+            console.error("ndefTag connectTag failed.");
+            return;
+        }
+    }
 
-15. try {
-16. ndefTag.setReadOnly((err : BusinessError)=> {
-17. if (err) {
-18. console.error(`ndef setReadOnly AsyncCallback err Code: ${err.code}, message: ${err.message}`);
-19. } else {
-20. console.info("ndef setReadOnly AsyncCallback success.");
-21. }
-22. });
-23. } catch (businessError) {
-24. console.error(`ndef setReadOnly AsyncCallback catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-25. }
-26. }
+    try {
+        ndefTag.setReadOnly((err : BusinessError)=> {
+            if (err) {
+                console.error(`ndef setReadOnly AsyncCallback err Code: ${err.code}, message: ${err.message}`);
+            } else {
+                console.info("ndef setReadOnly AsyncCallback success.");
+            }
+        });
+    } catch (businessError) {
+        console.error(`ndef setReadOnly AsyncCallback catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### NdefTag.getNdefTagTypeString9+
-
-PhoneWearable
 
 getNdefTagTypeString(type: [tag.NfcForumType](js-apis-nfctag.md#nfcforumtype9)): string
 
@@ -1069,23 +1005,21 @@ getNdefTagTypeString(type: [tag.NfcForumType](js-apis-nfctag.md#nfcforumtype9)):
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefTag
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefTag
 
-6. try {
-7. let ndefTypeString : string = ndefTag.getNdefTagTypeString(tag.NfcForumType.NFC_FORUM_TYPE_1);
-8. console.info("ndef ndefTypeString: " + ndefTypeString);
-9. } catch (businessError) {
-10. console.error(`ndef getNdefTagTypeString catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-11. }
+try {
+    let ndefTypeString : string = ndefTag.getNdefTagTypeString(tag.NfcForumType.NFC_FORUM_TYPE_1);
+    console.info("ndef ndefTypeString: " + ndefTypeString);
+} catch (businessError) {
+    console.error(`ndef getNdefTagTypeString catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+}
 ```
 
 ## MifareClassicTag9+
-
-PhoneWearable
 
 MifareClassicTag提供对MIFARE Classic属性和I/O操作的访问，继承自[TagSession](js-apis-tagsession.md)。
 
@@ -1096,8 +1030,6 @@ MifareClassicTag获取方式请参考[nfc-tag开发指南](../harmonyos-guides/n
 以下是MifareClassicTag的独有接口。
 
 ### MifareClassicTag.authenticateSector9+
-
-PhoneWearable
 
 authenticateSector(sectorIndex: number, key: number[], isKeyA: boolean): Promise<void>
 
@@ -1136,38 +1068,36 @@ authenticateSector(sectorIndex: number, key: number[], isKeyA: boolean): Promise
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
 
-6. function nfcTechDemo() {
-7. // 如果没有连接Tag，请先连接
-8. if (!mifareClassic.isTagConnected()) {
-9. if (!mifareClassic.connectTag()) {
-10. console.error("mifareClassic connectTag failed.");
-11. return;
-12. }
-13. }
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!mifareClassic.isTagConnected()) {
+        if (!mifareClassic.connectTag()) {
+            console.error("mifareClassic connectTag failed.");
+            return;
+        }
+    }
 
-15. try {
-16. let sectorIndex = 1; // 将其更改为正确的 index
-17. let key = [0x01, 0x02, 0x03, 0x04, 0x05, 0x06]  // 必须是6个字节，将其更改为正确的key
-18. mifareClassic.authenticateSector(sectorIndex, key, true).then(() => {
-19. console.info("mifareClassic authenticateSector Promise success.");
-20. }).catch((err : BusinessError)=> {
-21. console.error("mifareClassic authenticateSector Promise errCode: ${err.code}, " + "message: ${err.message}");
-22. });
-23. } catch (businessError) {
-24. console.error(`mifareClassic authenticateSector Promise catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-25. }
-26. }
+    try {
+        let sectorIndex = 1; // 将其更改为正确的 index
+        let key = [0x01, 0x02, 0x03, 0x04, 0x05, 0x06];  // 必须是6个字节，将其更改为正确的key
+        mifareClassic.authenticateSector(sectorIndex, key, true).then(() => {
+            console.info("mifareClassic authenticateSector Promise success.");
+        }).catch((err : BusinessError)=> {
+            console.error("mifareClassic authenticateSector Promise errCode: ${err.code}, " + "message: ${err.message}");
+        });
+    } catch (businessError) {
+        console.error(`mifareClassic authenticateSector Promise catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### MifareClassicTag.authenticateSector9+
-
-PhoneWearable
 
 authenticateSector(sectorIndex: number, key: number[], isKeyA: boolean, callback: AsyncCallback<void>): void
 
@@ -1201,40 +1131,38 @@ authenticateSector(sectorIndex: number, key: number[], isKeyA: boolean, callback
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
 
-6. function nfcTechDemo() {
-7. // 如果没有连接Tag，请先连接
-8. if (!mifareClassic.isTagConnected()) {
-9. if (!mifareClassic.connectTag()) {
-10. console.error("mifareClassic connectTag failed.");
-11. return;
-12. }
-13. }
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!mifareClassic.isTagConnected()) {
+        if (!mifareClassic.connectTag()) {
+            console.error("mifareClassic connectTag failed.");
+            return;
+        }
+    }
 
-15. try {
-16. let sectorIndex = 1; // 将其更改为正确的 index
-17. let key = [0x01, 0x02, 0x03, 0x04, 0x05, 0x06]  // 必须是6个字节，将其更改为正确的key
-18. mifareClassic.authenticateSector(sectorIndex, key, true, (err : BusinessError)=> {
-19. if (err) {
-20. console.error(`mifareClassic authenticateSector AsyncCallback errCode: ${err.code}, message: ${err.message}`);
-21. } else {
-22. console.info("mifareClassic authenticateSector AsyncCallback success.");
-23. }
-24. });
-25. } catch (businessError) {
-26. console.error(`mifareClassic authenticateSector AsyncCallback catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-27. }
-28. }
+    try {
+        let sectorIndex = 1; // 将其更改为正确的 index
+        let key = [0x01, 0x02, 0x03, 0x04, 0x05, 0x06];  // 必须是6个字节，将其更改为正确的key
+        mifareClassic.authenticateSector(sectorIndex, key, true, (err : BusinessError)=> {
+            if (err) {
+                console.error(`mifareClassic authenticateSector AsyncCallback errCode: ${err.code}, message: ${err.message}`);
+            } else {
+                console.info("mifareClassic authenticateSector AsyncCallback success.");
+            }
+        });
+    } catch (businessError) {
+        console.error(`mifareClassic authenticateSector AsyncCallback catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### MifareClassicTag.readSingleBlock9+
-
-PhoneWearable
 
 readSingleBlock(blockIndex: number): Promise<number[]>
 
@@ -1271,37 +1199,35 @@ readSingleBlock(blockIndex: number): Promise<number[]>
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
 
-6. function nfcTechDemo() {
-7. // 如果没有连接Tag，请先连接
-8. if (!mifareClassic.isTagConnected()) {
-9. if (!mifareClassic.connectTag()) {
-10. console.error("mifareClassic connectTag failed.");
-11. return;
-12. }
-13. }
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!mifareClassic.isTagConnected()) {
+        if (!mifareClassic.connectTag()) {
+            console.error("mifareClassic connectTag failed.");
+            return;
+        }
+    }
 
-15. try {
-16. let blockIndex = 1; // 将其更改为正确的 index
-17. mifareClassic.readSingleBlock(blockIndex).then((data : number[]) => {
-18. console.info("mifareClassic readSingleBlock Promise data: " + data);
-19. }).catch((err : BusinessError)=> {
-20. console.error(`mifareClassic readSingleBlock Promise errCode: ${err.code}, message: ${err.message}`);
-21. });
-22. } catch (businessError) {
-23. console.error(`mifareClassic readSingleBlock Promise catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-24. }
-25. }
+    try {
+        let blockIndex = 1; // 将其更改为正确的 index
+        mifareClassic.readSingleBlock(blockIndex).then((data : number[]) => {
+            console.info("mifareClassic readSingleBlock Promise data: " + data);
+        }).catch((err : BusinessError)=> {
+            console.error(`mifareClassic readSingleBlock Promise errCode: ${err.code}, message: ${err.message}`);
+        });
+    } catch (businessError) {
+        console.error(`mifareClassic readSingleBlock Promise catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### MifareClassicTag.readSingleBlock9+
-
-PhoneWearable
 
 readSingleBlock(blockIndex: number, callback: AsyncCallback<number[]>): void
 
@@ -1333,39 +1259,37 @@ readSingleBlock(blockIndex: number, callback: AsyncCallback<number[]>): void
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
 
-6. function nfcTechDemo() {
-7. // 如果没有连接Tag，请先连接
-8. if (!mifareClassic.isTagConnected()) {
-9. if (!mifareClassic.connectTag()) {
-10. console.error("mifareClassic connectTag failed.");
-11. return;
-12. }
-13. }
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!mifareClassic.isTagConnected()) {
+        if (!mifareClassic.connectTag()) {
+            console.error("mifareClassic connectTag failed.");
+            return;
+        }
+    }
 
-15. try {
-16. let blockIndex = 1;  // 将其更改为正确的 index
-17. mifareClassic.readSingleBlock(blockIndex, (err : BusinessError, data : number[])=> {
-18. if (err) {
-19. console.error("mifareClassic readSingleBlock AsyncCallback err: " + err);
-20. } else {
-21. console.info("mifareClassic readSingleBlock AsyncCallback data: " + data);
-22. }
-23. });
-24. } catch (businessError) {
-25. console.error(`mifareClassic readSingleBlock AsyncCallback catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-26. }
-27. }
+    try {
+        let blockIndex = 1;  // 将其更改为正确的 index
+        mifareClassic.readSingleBlock(blockIndex, (err : BusinessError, data : number[])=> {
+            if (err) {
+                console.error("mifareClassic readSingleBlock AsyncCallback err: " + err);
+            } else {
+                console.info("mifareClassic readSingleBlock AsyncCallback data: " + data);
+            }
+        });
+    } catch (businessError) {
+        console.error(`mifareClassic readSingleBlock AsyncCallback catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### MifareClassicTag.writeSingleBlock9+
-
-PhoneWearable
 
 writeSingleBlock(blockIndex: number, data: number[]): Promise<void>
 
@@ -1403,39 +1327,37 @@ writeSingleBlock(blockIndex: number, data: number[]): Promise<void>
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
 
-6. function nfcTechDemo() {
-7. // 如果没有连接Tag，请先连接
-8. if (!mifareClassic.isTagConnected()) {
-9. if (!mifareClassic.connectTag()) {
-10. console.error("mifareClassic connectTag failed.");
-11. return;
-12. }
-13. }
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!mifareClassic.isTagConnected()) {
+        if (!mifareClassic.connectTag()) {
+            console.error("mifareClassic connectTag failed.");
+            return;
+        }
+    }
 
-15. try {
-16. let blockIndex = 1; // 将其更改为正确的 index
-17. let rawData = [0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A,
-18. 0x0B, 0x0C, 0x0D, 0x0E, 0x0F, 0x10]; // 必须是16个字节，将其更改为正确的key
-19. mifareClassic.writeSingleBlock(blockIndex, rawData).then(() => {
-20. console.info("mifareClassic writeSingleBlock Promise success.");
-21. }).catch((err : BusinessError)=> {
-22. console.error("mifareClassic writeSingleBlock Promise errCode: ${err.code}, message: ${err.message}");
-23. });
-24. } catch (businessError) {
-25. console.error(`mifareClassic writeSingleBlock Promise catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-26. }
-27. }
+    try {
+        let blockIndex = 1; // 将其更改为正确的 index
+        let rawData = [0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A,
+            0x0B, 0x0C, 0x0D, 0x0E, 0x0F, 0x10]; // 必须是16个字节，将其更改为正确的key
+        mifareClassic.writeSingleBlock(blockIndex, rawData).then(() => {
+            console.info("mifareClassic writeSingleBlock Promise success.");
+        }).catch((err : BusinessError)=> {
+            console.error("mifareClassic writeSingleBlock Promise errCode: ${err.code}, message: ${err.message}");
+        });
+    } catch (businessError) {
+        console.error(`mifareClassic writeSingleBlock Promise catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### MifareClassicTag.writeSingleBlock9+
-
-PhoneWearable
 
 writeSingleBlock(blockIndex: number, data: number[], callback: AsyncCallback<void>): void
 
@@ -1468,41 +1390,39 @@ writeSingleBlock(blockIndex: number, data: number[], callback: AsyncCallback<voi
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
 
-6. function nfcTechDemo() {
-7. // 如果没有连接Tag，请先连接
-8. if (!mifareClassic.isTagConnected()) {
-9. if (!mifareClassic.connectTag()) {
-10. console.error("mifareClassic connectTag failed.");
-11. return;
-12. }
-13. }
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!mifareClassic.isTagConnected()) {
+        if (!mifareClassic.connectTag()) {
+            console.error("mifareClassic connectTag failed.");
+            return;
+        }
+    }
 
-15. try {
-16. let blockIndex = 1; // 将其更改为正确的 index
-17. let rawData = [0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A,
-18. 0x0B, 0x0C, 0x0D, 0x0E, 0x0F, 0x10]; // 必须是16个字节，将其更改为正确的data
-19. mifareClassic.writeSingleBlock(blockIndex, rawData, (err : BusinessError)=> {
-20. if (err) {
-21. console.error(`mifareClassic writeSingleBlock AsyncCallback err Code: ${err.code}, message: ${err.message}`);
-22. } else {
-23. console.info("mifareClassic writeSingleBlock AsyncCallback success.");
-24. }
-25. });
-26. } catch (businessError) {
-27. console.error(`mifareClassic writeSingleBlock AsyncCallback catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-28. }
-29. }
+    try {
+        let blockIndex = 1; // 将其更改为正确的 index
+        let rawData = [0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A,
+            0x0B, 0x0C, 0x0D, 0x0E, 0x0F, 0x10]; // 必须是16个字节，将其更改为正确的data
+        mifareClassic.writeSingleBlock(blockIndex, rawData, (err : BusinessError)=> {
+            if (err) {
+                console.error(`mifareClassic writeSingleBlock AsyncCallback err Code: ${err.code}, message: ${err.message}`);
+            } else {
+                console.info("mifareClassic writeSingleBlock AsyncCallback success.");
+            }
+        });
+    } catch (businessError) {
+        console.error(`mifareClassic writeSingleBlock AsyncCallback catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### MifareClassicTag.incrementBlock9+
-
-PhoneWearable
 
 incrementBlock(blockIndex: number, value: number): Promise<void>
 
@@ -1540,38 +1460,36 @@ incrementBlock(blockIndex: number, value: number): Promise<void>
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
 
-6. function nfcTechDemo() {
-7. // 如果没有连接Tag，请先连接
-8. if (!mifareClassic.isTagConnected()) {
-9. if (!mifareClassic.connectTag()) {
-10. console.error("mifareClassic connectTag failed.");
-11. return;
-12. }
-13. }
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!mifareClassic.isTagConnected()) {
+        if (!mifareClassic.connectTag()) {
+            console.error("mifareClassic connectTag failed.");
+            return;
+        }
+    }
 
-15. try {
-16. let blockIndex = 1; // 将其更改为正确的 index
-17. let value = 0x20; // 将其更改为正确的数据
-18. mifareClassic.incrementBlock(blockIndex, value).then(() => {
-19. console.info("mifareClassic incrementBlock Promise success.");
-20. }).catch((err : BusinessError)=> {
-21. console.error(`mifareClassic incrementBlock Promise err Code: ${err.code}, message: ${err.message}`);
-22. });
-23. } catch (businessError) {
-24. console.error(`mifareClassic incrementBlock Promise catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-25. }
-26. }
+    try {
+        let blockIndex = 1; // 将其更改为正确的 index
+        let value = 0x20; // 将其更改为正确的数据
+        mifareClassic.incrementBlock(blockIndex, value).then(() => {
+            console.info("mifareClassic incrementBlock Promise success.");
+        }).catch((err : BusinessError)=> {
+            console.error(`mifareClassic incrementBlock Promise err Code: ${err.code}, message: ${err.message}`);
+        });
+    } catch (businessError) {
+        console.error(`mifareClassic incrementBlock Promise catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### MifareClassicTag.incrementBlock9+
-
-PhoneWearable
 
 incrementBlock(blockIndex: number, value: number, callback: AsyncCallback<void>): void
 
@@ -1604,40 +1522,38 @@ incrementBlock(blockIndex: number, value: number, callback: AsyncCallback<void>)
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
 
-6. function nfcTechDemo() {
-7. // 如果没有连接Tag，请先连接
-8. if (!mifareClassic.isTagConnected()) {
-9. if (!mifareClassic.connectTag()) {
-10. console.error("mifareClassic connectTag failed.");
-11. return;
-12. }
-13. }
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!mifareClassic.isTagConnected()) {
+        if (!mifareClassic.connectTag()) {
+            console.error("mifareClassic connectTag failed.");
+            return;
+        }
+    }
 
-15. try {
-16. let blockIndex = 1; // 将其更改为正确的 index
-17. let value = 0x20; // 将其更改为正确的数据
-18. mifareClassic.incrementBlock(blockIndex, value, (err : BusinessError)=> {
-19. if (err) {
-20. console.error(`mifareClassic incrementBlock AsyncCallback err Code: ${err.code}, message: ${err.message}`);
-21. } else {
-22. console.info("mifareClassic incrementBlock AsyncCallback success.");
-23. }
-24. });
-25. } catch (businessError) {
-26. console.error(`mifareClassic incrementBlock AsyncCallback catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-27. }
-28. }
+    try {
+        let blockIndex = 1; // 将其更改为正确的 index
+        let value = 0x20; // 将其更改为正确的数据
+        mifareClassic.incrementBlock(blockIndex, value, (err : BusinessError)=> {
+            if (err) {
+                console.error(`mifareClassic incrementBlock AsyncCallback err Code: ${err.code}, message: ${err.message}`);
+            } else {
+                console.info("mifareClassic incrementBlock AsyncCallback success.");
+            }
+        });
+    } catch (businessError) {
+        console.error(`mifareClassic incrementBlock AsyncCallback catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### MifareClassicTag.decrementBlock9+
-
-PhoneWearable
 
 decrementBlock(blockIndex: number, value: number): Promise<void>
 
@@ -1675,38 +1591,36 @@ decrementBlock(blockIndex: number, value: number): Promise<void>
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
 
-6. function nfcTechDemo() {
-7. // 如果没有连接Tag，请先连接
-8. if (!mifareClassic.isTagConnected()) {
-9. if (!mifareClassic.connectTag()) {
-10. console.error("mifareClassic connectTag failed.");
-11. return;
-12. }
-13. }
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!mifareClassic.isTagConnected()) {
+        if (!mifareClassic.connectTag()) {
+            console.error("mifareClassic connectTag failed.");
+            return;
+        }
+    }
 
-15. try {
-16. let blockIndex = 1; // 将其更改为正确的 index
-17. let value = 0x20; // 将其更改为正确的数据
-18. mifareClassic.decrementBlock(blockIndex, value).then(() => {
-19. console.info("mifareClassic decrementBlock Promise success.");
-20. }).catch((err : BusinessError)=> {
-21. console.error("mifareClassic decrementBlock Promise errCode: ${err.code}, message: ${err.message}");
-22. });
-23. } catch (businessError) {
-24. console.error(`mifareClassic decrementBlock Promise catch businessError: Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-25. }
-26. }
+    try {
+        let blockIndex = 1; // 将其更改为正确的 index
+        let value = 0x20; // 将其更改为正确的数据
+        mifareClassic.decrementBlock(blockIndex, value).then(() => {
+            console.info("mifareClassic decrementBlock Promise success.");
+        }).catch((err : BusinessError)=> {
+            console.error("mifareClassic decrementBlock Promise errCode: ${err.code}, message: ${err.message}");
+        });
+    } catch (businessError) {
+        console.error(`mifareClassic decrementBlock Promise catch businessError: Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### MifareClassicTag.decrementBlock9+
-
-PhoneWearable
 
 decrementBlock(blockIndex: number, value: number, callback: AsyncCallback<void>): void
 
@@ -1739,45 +1653,43 @@ decrementBlock(blockIndex: number, value: number, callback: AsyncCallback<void>)
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
 
-6. function nfcTechDemo() {
-7. // 如果没有连接Tag，请先连接
-8. if (!mifareClassic.isTagConnected()) {
-9. if (!mifareClassic.connectTag()) {
-10. console.error("mifareClassic connectTag failed.");
-11. return;
-12. }
-13. }
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!mifareClassic.isTagConnected()) {
+        if (!mifareClassic.connectTag()) {
+            console.error("mifareClassic connectTag failed.");
+            return;
+        }
+    }
 
-15. try {
-16. let blockIndex = 1; // 将其更改为正确的 index
-17. let value = 0x20; // 将其更改为正确的数据
-18. mifareClassic.decrementBlock(blockIndex, value, (err : BusinessError)=> {
-19. if (err) {
-20. console.error("mifareClassic decrementBlock AsyncCallback errCode:" +
-21. "${err.code}, message: ${err.message}");
-22. } else {
-23. console.info("mifareClassic decrementBlock AsyncCallback success.");
-24. }
-25. });
-26. } catch (businessError) {
-27. console.error(`mifareClassic decrementBlock AsyncCallback catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-28. }
-29. }
+    try {
+        let blockIndex = 1; // 将其更改为正确的 index
+        let value = 0x20; // 将其更改为正确的数据
+        mifareClassic.decrementBlock(blockIndex, value, (err : BusinessError)=> {
+            if (err) {
+                console.error("mifareClassic decrementBlock AsyncCallback errCode:" +
+                  "${err.code}, message: ${err.message}");
+            } else {
+                console.info("mifareClassic decrementBlock AsyncCallback success.");
+            }
+        });
+    } catch (businessError) {
+        console.error(`mifareClassic decrementBlock AsyncCallback catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### MifareClassicTag.transferToBlock9+
 
-PhoneWearable
-
 transferToBlock(blockIndex: number): Promise<void>
 
-将临时寄存器的值转移到指定的块。使用Promise异步异步回调。
+将临时寄存器的值转移到指定的块。使用Promise异步回调。
 
 **需要权限：** ohos.permission.NFC\_TAG
 
@@ -1810,37 +1722,35 @@ transferToBlock(blockIndex: number): Promise<void>
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
 
-6. function nfcTechDemo() {
-7. // 如果没有连接Tag，请先连接
-8. if (!mifareClassic.isTagConnected()) {
-9. if (!mifareClassic.connectTag()) {
-10. console.error("mifareClassic connectTag failed.");
-11. return;
-12. }
-13. }
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!mifareClassic.isTagConnected()) {
+        if (!mifareClassic.connectTag()) {
+            console.error("mifareClassic connectTag failed.");
+            return;
+        }
+    }
 
-15. try {
-16. let blockIndex = 1; // 将其更改为正确的 index
-17. mifareClassic.transferToBlock(blockIndex).then(() => {
-18. console.info("mifareClassic transferToBlock Promise success.");
-19. }).catch((err : BusinessError)=> {
-20. console.error(`mifareClassic transferToBlock Promise err Code: ${err.code}, message: ${err.message}`);
-21. });
-22. } catch (businessError) {
-23. console.error(`mifareClassic transferToBlock Promise catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-24. }
-25. }
+    try {
+        let blockIndex = 1; // 将其更改为正确的 index
+        mifareClassic.transferToBlock(blockIndex).then(() => {
+            console.info("mifareClassic transferToBlock Promise success.");
+        }).catch((err : BusinessError)=> {
+            console.error(`mifareClassic transferToBlock Promise err Code: ${err.code}, message: ${err.message}`);
+        });
+    } catch (businessError) {
+        console.error(`mifareClassic transferToBlock Promise catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### MifareClassicTag.transferToBlock9+
-
-PhoneWearable
 
 transferToBlock(blockIndex: number, callback: AsyncCallback<void>): void
 
@@ -1872,39 +1782,37 @@ transferToBlock(blockIndex: number, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
 
-6. function nfcTechDemo() {
-7. // 如果没有连接Tag，请先连接
-8. if (!mifareClassic.isTagConnected()) {
-9. if (!mifareClassic.connectTag()) {
-10. console.error("mifareClassic connectTag failed.");
-11. return;
-12. }
-13. }
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!mifareClassic.isTagConnected()) {
+        if (!mifareClassic.connectTag()) {
+            console.error("mifareClassic connectTag failed.");
+            return;
+        }
+    }
 
-15. try {
-16. let blockIndex = 1; // 将其更改为正确的 index
-17. mifareClassic.transferToBlock(blockIndex, (err : BusinessError)=> {
-18. if (err) {
-19. console.error(`mifareClassic transferToBlock AsyncCallback errCode: ${err.code}, message: ${err.message}`);
-20. } else {
-21. console.info("mifareClassic transferToBlock AsyncCallback success.");
-22. }
-23. });
-24. } catch (businessError) {
-25. console.error(`mifareClassic transferToBlock AsyncCallback catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-26. }
-27. }
+    try {
+        let blockIndex = 1; // 将其更改为正确的 index
+        mifareClassic.transferToBlock(blockIndex, (err : BusinessError)=> {
+            if (err) {
+                console.error(`mifareClassic transferToBlock AsyncCallback errCode: ${err.code}, message: ${err.message}`);
+            } else {
+                console.info("mifareClassic transferToBlock AsyncCallback success.");
+            }
+        });
+    } catch (businessError) {
+        console.error(`mifareClassic transferToBlock AsyncCallback catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### MifareClassicTag.restoreFromBlock9+
-
-PhoneWearable
 
 restoreFromBlock(blockIndex: number): Promise<void>
 
@@ -1941,37 +1849,35 @@ restoreFromBlock(blockIndex: number): Promise<void>
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
 
-6. function nfcTechDemo() {
-7. // 如果没有连接Tag，请先连接
-8. if (!mifareClassic.isTagConnected()) {
-9. if (!mifareClassic.connectTag()) {
-10. console.error("mifareClassic connectTag failed.");
-11. return;
-12. }
-13. }
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!mifareClassic.isTagConnected()) {
+        if (!mifareClassic.connectTag()) {
+            console.error("mifareClassic connectTag failed.");
+            return;
+        }
+    }
 
-15. try {
-16. let blockIndex = 1; // 将其更改为正确的 index
-17. mifareClassic.restoreFromBlock(blockIndex).then(() => {
-18. console.info("mifareClassic restoreFromBlock Promise success.");
-19. }).catch((err : BusinessError)=> {
-20. console.error(`mifareClassic restoreFromBlock Promise errCode: ${err.code}, message: ${err.message}`);
-21. });
-22. } catch (businessError) {
-23. console.error(`mifareClassic restoreFromBlock Promise catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-24. }
-25. }
+    try {
+        let blockIndex = 1; // 将其更改为正确的 index
+        mifareClassic.restoreFromBlock(blockIndex).then(() => {
+            console.info("mifareClassic restoreFromBlock Promise success.");
+        }).catch((err : BusinessError)=> {
+            console.error(`mifareClassic restoreFromBlock Promise errCode: ${err.code}, message: ${err.message}`);
+        });
+    } catch (businessError) {
+        console.error(`mifareClassic restoreFromBlock Promise catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### MifareClassicTag.restoreFromBlock9+
-
-PhoneWearable
 
 restoreFromBlock(blockIndex: number, callback: AsyncCallback<void>): void
 
@@ -2003,39 +1909,37 @@ restoreFromBlock(blockIndex: number, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
 
-6. function nfcTechDemo() {
-7. // 如果没有连接Tag，请先连接
-8. if (!mifareClassic.isTagConnected()) {
-9. if (!mifareClassic.connectTag()) {
-10. console.error("mifareClassic connectTag failed.");
-11. return;
-12. }
-13. }
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!mifareClassic.isTagConnected()) {
+        if (!mifareClassic.connectTag()) {
+            console.error("mifareClassic connectTag failed.");
+            return;
+        }
+    }
 
-15. try {
-16. let blockIndex = 1; // 将其更改为正确的 index
-17. mifareClassic.restoreFromBlock(blockIndex, (err : BusinessError)=> {
-18. if (err) {
-19. console.error(`mifareClassic restoreFromBlock AsyncCallback err Code: ${err.code}, message: ${err.message}`);
-20. } else {
-21. console.info("mifareClassic restoreFromBlock AsyncCallback success.");
-22. }
-23. });
-24. } catch (businessError) {
-25. console.error(`mifareClassic restoreFromBlock AsyncCallback catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-26. }
-27. }
+    try {
+        let blockIndex = 1; // 将其更改为正确的 index
+        mifareClassic.restoreFromBlock(blockIndex, (err : BusinessError)=> {
+            if (err) {
+                console.error(`mifareClassic restoreFromBlock AsyncCallback err Code: ${err.code}, message: ${err.message}`);
+            } else {
+                console.info("mifareClassic restoreFromBlock AsyncCallback success.");
+            }
+        });
+    } catch (businessError) {
+        console.error(`mifareClassic restoreFromBlock AsyncCallback catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### MifareClassicTag.getSectorCount9+
-
-PhoneWearable
 
 getSectorCount(): number
 
@@ -2053,18 +1957,16 @@ getSectorCount(): number
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
-5. let sectorCount : number = mifareClassic.getSectorCount();
-6. console.info("mifareClassic sectorCount: " + sectorCount);
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
+let sectorCount : number = mifareClassic.getSectorCount();
+console.info("mifareClassic sectorCount: " + sectorCount);
 ```
 
 ### MifareClassicTag.getBlockCountInSector9+
-
-PhoneWearable
 
 getBlockCountInSector(sectorIndex: number): number
 
@@ -2096,24 +1998,22 @@ getBlockCountInSector(sectorIndex: number): number
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
 
-6. try {
-7. let sectorIndex = 1; // 将其更改为正确的 index
-8. let blockCnt : number = mifareClassic.getBlockCountInSector(sectorIndex);
-9. console.info("mifareClassic blockCnt: " + blockCnt);
-10. } catch (businessError) {
-11. console.error(`mifareClassic getBlockCountInSector catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-12. }
+try {
+    let sectorIndex = 1; // 将其更改为正确的 index
+    let blockCnt : number = mifareClassic.getBlockCountInSector(sectorIndex);
+    console.info("mifareClassic blockCnt: " + blockCnt);
+} catch (businessError) {
+    console.error(`mifareClassic getBlockCountInSector catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+}
 ```
 
 ### MifareClassicTag.getType9+
-
-PhoneWearable
 
 getType(): [tag.MifareClassicType](js-apis-nfctag.md#mifareclassictype9)
 
@@ -2131,17 +2031,15 @@ getType(): [tag.MifareClassicType](js-apis-nfctag.md#mifareclassictype9)
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
 
-3. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
-4. let getType : tag.MifareClassicType = mifareClassic.getType();
-5. console.info("mifareClassic getType: " + getType);
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
+let getType : tag.MifareClassicType = mifareClassic.getType();
+console.info("mifareClassic getType: " + getType);
 ```
 
 ### MifareClassicTag.getTagSize9+
-
-PhoneWearable
 
 getTagSize(): number
 
@@ -2159,18 +2057,16 @@ getTagSize(): number
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
-5. let tagSize : number = mifareClassic.getTagSize();
-6. console.info("mifareClassic tagSize: " + tagSize);
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
+let tagSize : number = mifareClassic.getTagSize();
+console.info("mifareClassic tagSize: " + tagSize);
 ```
 
 ### MifareClassicTag.isEmulatedTag9+
-
-PhoneWearable
 
 isEmulatedTag(): boolean
 
@@ -2188,18 +2084,16 @@ isEmulatedTag(): boolean
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
-5. let isEmulatedTag : boolean = mifareClassic.isEmulatedTag();
-6. console.info("mifareClassic isEmulatedTag: " + isEmulatedTag);
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
+let isEmulatedTag : boolean = mifareClassic.isEmulatedTag();
+console.info("mifareClassic isEmulatedTag: " + isEmulatedTag);
 ```
 
 ### MifareClassicTag.getBlockIndex9+
-
-PhoneWearable
 
 getBlockIndex(sectorIndex: number): number
 
@@ -2231,24 +2125,22 @@ getBlockIndex(sectorIndex: number): number
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
 
-6. try {
-7. let sectorIndex = 1; // 将其更改为正确的 index
-8. let blockIndex : number = mifareClassic.getBlockIndex(sectorIndex);
-9. console.info("mifareClassic blockIndex: " + blockIndex);
-10. } catch (businessError) {
-11. console.error(`mifareClassic getBlockIndex catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-12. }
+try {
+    let sectorIndex = 1; // 将其更改为正确的 index
+    let blockIndex : number = mifareClassic.getBlockIndex(sectorIndex);
+    console.info("mifareClassic blockIndex: " + blockIndex);
+} catch (businessError) {
+    console.error(`mifareClassic getBlockIndex catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+}
 ```
 
 ### MifareClassicTag.getSectorIndex9+
-
-PhoneWearable
 
 getSectorIndex(blockIndex: number): number
 
@@ -2280,24 +2172,22 @@ getSectorIndex(blockIndex: number): number
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareClassic
 
-6. try {
-7. let blockIndex = 1; // 将其更改为正确的 index
-8. let sectorIndex : number = mifareClassic.getSectorIndex(blockIndex);
-9. console.info("mifareClassic sectorIndex: " + sectorIndex);
-10. } catch (businessError) {
-11. console.error(`mifareClassic getSectorIndex catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-12. }
+try {
+    let blockIndex = 1; // 将其更改为正确的 index
+    let sectorIndex : number = mifareClassic.getSectorIndex(blockIndex);
+    console.info("mifareClassic sectorIndex: " + sectorIndex);
+} catch (businessError) {
+    console.error(`mifareClassic getSectorIndex catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+}
 ```
 
 ## MifareUltralightTag9+
-
-PhoneWearable
 
 MifareUltralightTag 提供对MIFARE Ultralight属性和I/O操作的访问，继承自TagSession。
 
@@ -2309,11 +2199,9 @@ MifareUltralightTag获取方式请参考[nfc-tag开发指南](../harmonyos-guide
 
 ### MifareUltralightTag.readMultiplePages9+
 
-PhoneWearable
-
 readMultiplePages(pageIndex: number): Promise<number[]>
 
-读取标签的4页数据，共16字节的数据。每个页面数据大小为4字节。使用Promise异步回调
+读取标签的4页数据，共16字节的数据。每个页面数据大小为4字节。使用Promise异步回调。
 
 **需要权限：** ohos.permission.NFC\_TAG
 
@@ -2346,37 +2234,35 @@ readMultiplePages(pageIndex: number): Promise<number[]>
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareUltralight
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareUltralight
 
-6. function nfcTechDemo() {
-7. // 如果没有连接Tag，请先连接
-8. if (!mifareUltralight.isTagConnected()) {
-9. if (!mifareUltralight.connectTag()) {
-10. console.error("mifareUltralight connectTag failed.");
-11. return;
-12. }
-13. }
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!mifareUltralight.isTagConnected()) {
+        if (!mifareUltralight.connectTag()) {
+            console.error("mifareUltralight connectTag failed.");
+            return;
+        }
+    }
 
-15. try {
-16. let pageIndex = 1; // 将其更改为正确的 index
-17. mifareUltralight.readMultiplePages(pageIndex).then((data : number[]) => {
-18. console.info("mifareUltralight readMultiplePages Promise data = " + data);
-19. }).catch((err : BusinessError)=> {
-20. console.error(`mifareUltralight readMultiplePages Promise Code: ${err.code}, message: ${err.message}`);
-21. });
-22. } catch (businessError) {
-23. console.error(`mifareUltralight readMultiplePages Promise catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-24. }
-25. }
+    try {
+        let pageIndex = 1; // 将其更改为正确的 index
+        mifareUltralight.readMultiplePages(pageIndex).then((data : number[]) => {
+            console.info("mifareUltralight readMultiplePages Promise data = " + data);
+        }).catch((err : BusinessError)=> {
+            console.error(`mifareUltralight readMultiplePages Promise Code: ${err.code}, message: ${err.message}`);
+        });
+    } catch (businessError) {
+        console.error(`mifareUltralight readMultiplePages Promise catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### MifareUltralightTag.readMultiplePages9+
-
-PhoneWearable
 
 readMultiplePages(pageIndex: number, callback: AsyncCallback<number[]>): void
 
@@ -2408,39 +2294,37 @@ readMultiplePages(pageIndex: number, callback: AsyncCallback<number[]>): void
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareUltralight
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareUltralight
 
-6. function nfcTechDemo() {
-7. // 如果没有连接Tag，请先连接
-8. if (!mifareUltralight.isTagConnected()) {
-9. if (!mifareUltralight.connectTag()) {
-10. console.error("mifareUltralight connectTag failed.");
-11. return;
-12. }
-13. }
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!mifareUltralight.isTagConnected()) {
+        if (!mifareUltralight.connectTag()) {
+            console.error("mifareUltralight connectTag failed.");
+            return;
+        }
+    }
 
-15. try {
-16. let pageIndex = 1; // 将其更改为正确的 index
-17. mifareUltralight.readMultiplePages(pageIndex, (err : BusinessError, data : number[])=> {
-18. if (err) {
-19. console.error(`mifareUltralight readMultiplePages AsyncCallback Code: ${err.code}, message: ${err.message}`);
-20. } else {
-21. console.info("mifareUltralight readMultiplePages AsyncCallback data: " + data);
-22. }
-23. });
-24. } catch (businessError) {
-25. console.error(`mifareUltralight readMultiplePages AsyncCallback catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-26. }
-27. }
+    try {
+        let pageIndex = 1; // 将其更改为正确的 index
+        mifareUltralight.readMultiplePages(pageIndex, (err : BusinessError, data : number[])=> {
+            if (err) {
+                console.error(`mifareUltralight readMultiplePages AsyncCallback Code: ${err.code}, message: ${err.message}`);
+            } else {
+                console.info("mifareUltralight readMultiplePages AsyncCallback data: " + data);
+            }
+        });
+    } catch (businessError) {
+        console.error(`mifareUltralight readMultiplePages AsyncCallback catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### MifareUltralightTag.writeSinglePage9+
-
-PhoneWearable
 
 writeSinglePage(pageIndex: number, data: number[]): Promise<void>
 
@@ -2478,38 +2362,36 @@ writeSinglePage(pageIndex: number, data: number[]): Promise<void>
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareUltralight
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareUltralight
 
-6. function nfcTechDemo() {
-7. // 如果没有连接Tag，请先连接
-8. if (!mifareUltralight.isTagConnected()) {
-9. if (!mifareUltralight.connectTag()) {
-10. console.error("mifareUltralight connectTag failed.");
-11. return;
-12. }
-13. }
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!mifareUltralight.isTagConnected()) {
+        if (!mifareUltralight.connectTag()) {
+            console.error("mifareUltralight connectTag failed.");
+            return;
+        }
+    }
 
-15. try {
-16. let pageIndex = 1; // 将其更改为正确的 index
-17. let rawData = [0x01, 0x02, 0x03, 0x04]; // 必须是4个字节，将其更改为正确的data
-18. mifareUltralight.writeSinglePage(pageIndex, rawData).then(() => {
-19. console.info("mifareUltralight writeSinglePage Promise success.");
-20. }).catch((err : BusinessError)=> {
-21. console.error(`mifareUltralight writeSinglePage Promise err Code: ${err.code}, message: ${err.message}`);
-22. });
-23. } catch (businessError) {
-24. console.error(`mifareUltralight writeSinglePage Promise catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-25. }
-26. }
+    try {
+        let pageIndex = 1; // 将其更改为正确的 index
+        let rawData = [0x01, 0x02, 0x03, 0x04]; // 必须是4个字节，将其更改为正确的data
+        mifareUltralight.writeSinglePage(pageIndex, rawData).then(() => {
+            console.info("mifareUltralight writeSinglePage Promise success.");
+        }).catch((err : BusinessError)=> {
+            console.error(`mifareUltralight writeSinglePage Promise err Code: ${err.code}, message: ${err.message}`);
+        });
+    } catch (businessError) {
+        console.error(`mifareUltralight writeSinglePage Promise catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### MifareUltralightTag.writeSinglePage9+
-
-PhoneWearable
 
 writeSinglePage(pageIndex: number, data: number[], callback: AsyncCallback<void>): void
 
@@ -2542,40 +2424,38 @@ writeSinglePage(pageIndex: number, data: number[], callback: AsyncCallback<void>
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareUltralight
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareUltralight
 
-6. function nfcTechDemo() {
-7. // 如果没有连接Tag，请先连接
-8. if (!mifareUltralight.isTagConnected()) {
-9. if (!mifareUltralight.connectTag()) {
-10. console.error("mifareUltralight connectTag failed.");
-11. return;
-12. }
-13. }
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!mifareUltralight.isTagConnected()) {
+        if (!mifareUltralight.connectTag()) {
+            console.error("mifareUltralight connectTag failed.");
+            return;
+        }
+    }
 
-15. try {
-16. let pageIndex = 1; // 将其更改为正确的 index
-17. let rawData = [0x01, 0x02, 0x03, 0x04];  // 必须是4个字节，将其更改为正确的data
-18. mifareUltralight.writeSinglePage(pageIndex, rawData, (err : BusinessError)=> {
-19. if (err) {
-20. console.error(`mifareUltralight writeSinglePage AsyncCallback Code: ${err.code}, message: ${err.message}`);
-21. } else {
-22. console.info("mifareUltralight writeSinglePage AsyncCallback success.");
-23. }
-24. });
-25. } catch (businessError) {
-26. console.error(`mifareUltralight writeSinglePage AsyncCallback catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-27. }
-28. }
+    try {
+        let pageIndex = 1; // 将其更改为正确的 index
+        let rawData = [0x01, 0x02, 0x03, 0x04];  // 必须是4个字节，将其更改为正确的data
+        mifareUltralight.writeSinglePage(pageIndex, rawData, (err : BusinessError)=> {
+        if (err) {
+                console.error(`mifareUltralight writeSinglePage AsyncCallback Code: ${err.code}, message: ${err.message}`);
+            } else {
+                console.info("mifareUltralight writeSinglePage AsyncCallback success.");
+            }
+        });
+    } catch (businessError) {
+        console.error(`mifareUltralight writeSinglePage AsyncCallback catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### MifareUltralightTag.getType9+
-
-PhoneWearable
 
 getType(): [tag.MifareUltralightType](js-apis-nfctag.md#mifareultralighttype9)
 
@@ -2593,17 +2473,15 @@ getType(): [tag.MifareUltralightType](js-apis-nfctag.md#mifareultralighttype9)
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
 
-3. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareUltralight
-4. let getType : tag.MifareUltralightType = mifareUltralight.getType();
-5. console.info("mifareUltralight getType: " + getType);
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 mifareUltralight
+let getType : tag.MifareUltralightType = mifareUltralight.getType();
+console.info("mifareUltralight getType: " + getType);
 ```
 
 ## NdefFormatableTag9+
-
-PhoneWearable
 
 NdefFormatableTag为NDEF Formattable的标签提供格式化操作，继承自TagSession。
 
@@ -2614,8 +2492,6 @@ NdefFormatableTag获取方式请参考[nfc-tag开发指南](../harmonyos-guides/
 以下是NdefFormatableTag的独有接口。
 
 ### NdefFormatableTag.format9+
-
-PhoneWearable
 
 format(message: [NdefMessage](js-apis-nfctech.md#ndefmessage9)): Promise<void>
 
@@ -2652,41 +2528,39 @@ format(message: [NdefMessage](js-apis-nfctech.md#ndefmessage9)): Promise<void>
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefFormatable
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefFormatable
 
-6. function nfcTechDemo() {
-7. // 如果没有连接Tag，请先连接
-8. if (!ndefFormatable.isTagConnected()) {
-9. if (!ndefFormatable.connectTag()) {
-10. console.error("ndefFormatable connectTag failed.");
-11. return;
-12. }
-13. }
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!ndefFormatable.isTagConnected()) {
+        if (!ndefFormatable.connectTag()) {
+            console.error("ndefFormatable connectTag failed.");
+            return;
+        }
+    }
 
-15. try {
-16. // 从原始数据创建的ndefMessage，例如：
-17. let ndefMessage = tag.ndef.createNdefMessage([0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43]);
-18. // 必须是可以被解析的NDEF记录
-19. // 或从 tag.ndef.createNdefMessage(ndefRecords:NdefRecord[]) 创建 ndefMessage
+    try {
+        // 从原始数据创建的ndefMessage，例如：
+        let ndefMessage = tag.ndef.createNdefMessage([0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43]);
+        // 必须是可以被解析的NDEF记录
+        // 或从 tag.ndef.createNdefMessage(ndefRecords:NdefRecord[]) 创建 ndefMessage
 
-21. ndefFormatable.format(ndefMessage).then(() => {
-22. console.info("ndefFormatable format Promise success.");
-23. }).catch((err : BusinessError)=> {
-24. console.error(`ndefFormatable format Promise err Code: ${err.code}, message: ${err.message}`);
-25. });
-26. } catch (businessError) {
-27. console.error(`ndefFormatable format Promise catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-28. }
-29. }
+        ndefFormatable.format(ndefMessage).then(() => {
+            console.info("ndefFormatable format Promise success.");
+        }).catch((err : BusinessError)=> {
+            console.error(`ndefFormatable format Promise err Code: ${err.code}, message: ${err.message}`);
+        });
+    } catch (businessError) {
+        console.error(`ndefFormatable format Promise catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### NdefFormatableTag.format9+
-
-PhoneWearable
 
 format(message: [NdefMessage](js-apis-nfctech.md#ndefmessage9), callback: AsyncCallback<void>): void
 
@@ -2718,42 +2592,40 @@ format(message: [NdefMessage](js-apis-nfctech.md#ndefmessage9), callback: AsyncC
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefFormatable
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefFormatable
 
-6. function nfcTechDemo() {
-7. // 如果没有连接Tag，请先连接
-8. if (!ndefFormatable.isTagConnected()) {
-9. if (!ndefFormatable.connectTag()) {
-10. console.error("ndefFormatable connectTag failed.");
-11. return;
-12. }
-13. }
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!ndefFormatable.isTagConnected()) {
+        if (!ndefFormatable.connectTag()) {
+            console.error("ndefFormatable connectTag failed.");
+            return;
+        }
+    }
 
-15. try {
-16. // 从原始数据创建的ndefMessage，例如：
-17. let ndefMessage = tag.ndef.createNdefMessage([0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43]);  // 必须是可以被解析的NDEF记录
-18. // 或从 tag.ndef.createNdefMessage(ndefRecords:NdefRecord[]) 创建 ndefMessage
+    try {
+        // 从原始数据创建的ndefMessage，例如：
+        let ndefMessage = tag.ndef.createNdefMessage([0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43]);  // 必须是可以被解析的NDEF记录
+        // 或从 tag.ndef.createNdefMessage(ndefRecords:NdefRecord[]) 创建 ndefMessage
 
-20. ndefFormatable.format(ndefMessage, (err : BusinessError)=> {
-21. if (err) {
-22. console.error(`ndefFormatable format AsyncCallback Code: ${err.code}, message: ${err.message}`);
-23. } else {
-24. console.info("ndefFormatable format AsyncCallback success.");
-25. }
-26. });
-27. } catch (businessError) {
-28. console.error(`ndefFormatable format AsyncCallback catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-29. }
-30. }
+        ndefFormatable.format(ndefMessage, (err : BusinessError)=> {
+            if (err) {
+                console.error(`ndefFormatable format AsyncCallback Code: ${err.code}, message: ${err.message}`);
+            } else {
+                console.info("ndefFormatable format AsyncCallback success.");
+            }
+        });
+    } catch (businessError) {
+        console.error(`ndefFormatable format AsyncCallback catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### NdefFormatableTag.formatReadOnly9+
-
-PhoneWearable
 
 formatReadOnly(message: [NdefMessage](js-apis-nfctech.md#ndefmessage9)): Promise<void>
 
@@ -2790,41 +2662,39 @@ formatReadOnly(message: [NdefMessage](js-apis-nfctech.md#ndefmessage9)): Promise
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefFormatable
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefFormatable
 
-6. function nfcTechDemo() {
-7. // 如果没有连接Tag，请先连接
-8. if (!ndefFormatable.isTagConnected()) {
-9. if (!ndefFormatable.connectTag()) {
-10. console.error("ndefFormatable connectTag failed.");
-11. return;
-12. }
-13. }
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!ndefFormatable.isTagConnected()) {
+        if (!ndefFormatable.connectTag()) {
+            console.error("ndefFormatable connectTag failed.");
+            return;
+        }
+    }
 
-15. try {
-16. // 从原始数据创建的ndefMessage，例如：
-17. let ndefMessage = tag.ndef.createNdefMessage([0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43]);
-18. // 必须是可以被解析的NDEF记录
-19. // 或从 tag.ndef.createNdefMessage(ndefRecords:NdefRecord[]) 创建 ndefMessage
+    try {
+        // 从原始数据创建的ndefMessage，例如：
+        let ndefMessage = tag.ndef.createNdefMessage([0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43]);
+        // 必须是可以被解析的NDEF记录
+        // 或从 tag.ndef.createNdefMessage(ndefRecords:NdefRecord[]) 创建 ndefMessage
 
-21. ndefFormatable.formatReadOnly(ndefMessage).then(() => {
-22. console.info("ndefFormatable formatReadOnly Promise success.");
-23. }).catch((err : BusinessError)=> {
-24. console.error(`ndefFormatable formatReadOnly Promise Code: ${err.code}, message: ${err.message}`);
-25. });
-26. } catch (businessError) {
-27. console.error(`ndefFormatable formatReadOnly Promise catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-28. }
-29. }
+        ndefFormatable.formatReadOnly(ndefMessage).then(() => {
+            console.info("ndefFormatable formatReadOnly Promise success.");
+        }).catch((err : BusinessError)=> {
+            console.error(`ndefFormatable formatReadOnly Promise Code: ${err.code}, message: ${err.message}`);
+        });
+    } catch (businessError) {
+        console.error(`ndefFormatable formatReadOnly Promise catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ### NdefFormatableTag.formatReadOnly9+
-
-PhoneWearable
 
 formatReadOnly(message: [NdefMessage](js-apis-nfctech.md#ndefmessage9), callback: AsyncCallback<void>): void
 
@@ -2856,43 +2726,41 @@ formatReadOnly(message: [NdefMessage](js-apis-nfctech.md#ndefmessage9), callback
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefFormatable
+// 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，获取正确的 ndefFormatable
 
-6. function nfcTechDemo() {
-7. // 如果没有连接Tag，请先连接
-8. if (!ndefFormatable.isTagConnected()) {
-9. if (!ndefFormatable.connectTag()) {
-10. console.error("ndefFormatable connectTag failed.");
-11. return;
-12. }
-13. }
+function nfcTechDemo() {
+    // 如果没有连接Tag，请先连接
+    if (!ndefFormatable.isTagConnected()) {
+        if (!ndefFormatable.connectTag()) {
+            console.error("ndefFormatable connectTag failed.");
+            return;
+        }
+    }
 
-15. try {
-16. // 从原始数据创建的ndefMessage，例如：
-17. let ndefMessage = tag.ndef.createNdefMessage([0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43]);
-18. // 必须是可以被解析的NDEF记录
-19. // 或从 tag.ndef.createNdefMessage(ndefRecords:NdefRecord[]) 创建 ndefMessage
+    try {
+        // 从原始数据创建的ndefMessage，例如：
+        let ndefMessage = tag.ndef.createNdefMessage([0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43]);
+        // 必须是可以被解析的NDEF记录
+        // 或从 tag.ndef.createNdefMessage(ndefRecords:NdefRecord[]) 创建 ndefMessage
 
-21. ndefFormatable.formatReadOnly(ndefMessage, (err : BusinessError)=> {
-22. if (err) {
-23. console.error(`ndefFormatable formatReadOnly AsyncCallback err Code: ${err.code}, message: ${err.message}`);
-24. } else {
-25. console.info("ndefFormatable formatReadOnly AsyncCallback success.");
-26. }
-27. });
-28. } catch (businessError) {
-29. console.error(`ndefFormatable formatReadOnly AsyncCallback catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
-30. }
-31. }
+        ndefFormatable.formatReadOnly(ndefMessage, (err : BusinessError)=> {
+            if (err) {
+                console.error(`ndefFormatable formatReadOnly AsyncCallback err Code: ${err.code}, message: ${err.message}`);
+            } else {
+                console.info("ndefFormatable formatReadOnly AsyncCallback success.");
+            }
+        });
+    } catch (businessError) {
+        console.error(`ndefFormatable formatReadOnly AsyncCallback catch Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
+    }
+}
 ```
 
 ## BarcodeTag18+
-
-PhoneWearable
 
 BarcodeTag提供读取条形码标签的属性和访问I/O操作的能力，继承自TagSession。
 
@@ -2903,8 +2771,6 @@ BarcodeTag获取方式请参考[nfc-tag开发指南](../harmonyos-guides/nfc-tag
 以下是BarcodeTag的独有接口。
 
 ### BarcodeTag.getBarcode18+
-
-PhoneWearable
 
 getBarcode(): Promise<ArrayBuffer>
 

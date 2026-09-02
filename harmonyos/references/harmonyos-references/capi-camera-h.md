@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-came
 title: camera.h
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 头文件 > camera.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:43+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:597a868f69b03057cd340739dba0ca4529fa2493cfdc4f70eecf8038f86f2f01
+scraped_at: 2026-09-02T15:02:27+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:cda792714e8d0bef75a9ffcfadbdc58c58a1cad01e1349581fa6096f9061d2a2
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义相机的基本接口和功能。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -47,7 +41,7 @@ PhonePC/2in1TabletTVWearable
 | [Camera\_PhotoCaptureSetting](capi-oh-camera-camera-photocapturesetting.md) | Camera\_PhotoCaptureSetting | 要设置的拍照捕获选项。 |
 | [Camera\_FrameShutterInfo](capi-oh-camera-camera-frameshutterinfo.md) | Camera\_FrameShutterInfo | 帧快门回调信息。 |
 | [Camera\_CaptureEndInfo](capi-oh-camera-camera-captureendinfo.md) | Camera\_CaptureEndInfo | 捕获结束信息。 |
-| [Camera\_Rect](capi-oh-camera-camera-rect.md) | Camera\_Rect | 矩形定义。  检测点应在0-1坐标系内，该坐标系左上角为(0，0)，右下角为(1，1)。  此坐标系以设备充电口在右侧时的横向设备方向为基准。  例如应用的预览界面布局以设备充电口在下侧时的竖向方向为基准，布局宽高为(w，h)， 返回点为(x，y)，则转换后的坐标点为(1-y，x)。 |
+| [Camera\_Rect](capi-oh-camera-camera-rect.md) | Camera\_Rect | 相机矩形。用于各类检测对象的矩形框绘制。  检测点坐标系以设备横向位置（充电口朝右）为基准。  坐标系原点位于左上角 (0, 0)，右下角对应相机预览流的像素分辨率。  所有参数均为整型像素值，其中topLeftX与topLeftY表示矩形左上角坐标，width与height分别表示矩形的宽高。 |
 | [Camera\_MetadataObject](capi-oh-camera-camera-metadataobject.md) | Camera\_MetadataObject | 元数据对象基础。 |
 | [Camera\_TorchStatusInfo](capi-oh-camera-camera-torchstatusinfo.md) | Camera\_TorchStatusInfo | 手电筒状态信息。 |
 | [Camera\_SmoothZoomInfo](capi-oh-camera-camera-smoothzoominfo.md) | Camera\_SmoothZoomInfo | 平滑变焦参数信息。 |
@@ -58,11 +52,13 @@ PhonePC/2in1TabletTVWearable
 | [Camera\_ConcurrentInfo](capi-oh-camera-camera-concurrentinfo.md) | Camera\_ConcurrentInfo | 相机并发能力信息。 |
 | [Camera\_ControlCenterStatusInfo](capi-oh-camera-camera-controlcenterstatusinfo.md) | Camera\_ControlCenterStatusInfo | 控制器效果激活状态信息。 |
 | [Camera\_OcclusionDetectionResult](capi-oh-camera-camera-occlusiondetectionresult.md) | Camera\_OcclusionDetectionResult | 相机镜头遮挡、脏污检测结果。 |
+| [OH\_Camera\_ZoomRange](capi-oh-camera-oh-camera-zoomrange.md) | OH\_Camera\_ZoomRange | 变焦范围配置。 |
+| [OH\_Camera\_PhysicalAperture](capi-oh-camera-oh-camera-physicalaperture.md) | OH\_Camera\_PhysicalAperture | 物理光圈配置。 |
+| [OH\_Camera\_ZoomPointInfo](capi-oh-camera-oh-camera-zoompointinfo.md) | OH\_Camera\_ZoomPointInfo | 描述变焦点信息。 |
+| [OH\_Camera\_Rect\_Ext](capi-oh-camera-oh-camera-rect-ext.md) | OH\_Camera\_Rect\_Ext | 矩形定义。  检测点应在0-1坐标系内，该坐标系左上角为(0，0)，右下角为(1，1)。  此坐标系以设备充电口在右侧时的横向设备方向为基准。  例如应用的预览界面布局以设备充电口在下侧时的竖向方向为基准，布局宽高为(w，h)，返回点为(x，y)，则转换后的坐标点为(1-y，x)。 |
 | [Camera\_Manager](capi-oh-camera-camera-manager.md) | Camera\_Manager | 相机管理器对象。  可以使用[OH\_Camera\_GetCameraManager](capi-camera-h.md#oh_camera_getcameramanager)方法创建指针。 |
 
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -72,9 +68,12 @@ PhonePC/2in1TabletTVWearable
 | [Camera\_Position](capi-camera-h.md#camera_position) | Camera\_Position | 相机位置的枚举。 |
 | [Camera\_Type](capi-camera-h.md#camera_type) | Camera\_Type | 相机类型的枚举。 |
 | [Camera\_Connection](capi-camera-h.md#camera_connection) | Camera\_Connection | 相机连接类型的枚举。 |
+| [OH\_Camera\_SensorColorFilterArrangement](capi-camera-h.md#oh_camera_sensorcolorfilterarrangement) | OH\_Camera\_SensorColorFilterArrangement | 传感器滤色阵列排列方式。 |
 | [Camera\_Format](capi-camera-h.md#camera_format) | Camera\_Format | 相机格式类型的枚举。 |
 | [Camera\_FlashMode](capi-camera-h.md#camera_flashmode) | Camera\_FlashMode | 闪光模式的枚举。 |
+| [OH\_Camera\_FlashState](capi-camera-h.md#oh_camera_flashstate) | OH\_Camera\_FlashState | 闪光灯状态枚举。 |
 | [Camera\_ExposureMode](capi-camera-h.md#camera_exposuremode) | Camera\_ExposureMode | 曝光模式的枚举。 |
+| [OH\_Camera\_ExposureMeteringMode](capi-camera-h.md#oh_camera_exposuremeteringmode) | OH\_Camera\_ExposureMeteringMode | 曝光测光模式枚举。 |
 | [Camera\_FocusMode](capi-camera-h.md#camera_focusmode) | Camera\_FocusMode | 聚焦模式的枚举。 |
 | [Camera\_FocusState](capi-camera-h.md#camera_focusstate) | Camera\_FocusState | 焦点状态的枚举。 |
 | [Camera\_VideoStabilizationMode](capi-camera-h.md#camera_videostabilizationmode) | Camera\_VideoStabilizationMode | 录像防抖模式的枚举。 |
@@ -93,10 +92,13 @@ PhonePC/2in1TabletTVWearable
 | [Camera\_WhiteBalanceMode](capi-camera-h.md#camera_whitebalancemode) | Camera\_WhiteBalanceMode | 白平衡模式枚举。 |
 | [Camera\_ControlCenterEffectType](capi-camera-h.md#camera_controlcentereffecttype) | Camera\_ControlCenterEffectType | 控制器效果类型枚举。 |
 | [Camera\_PhotoQualityPrioritization](capi-camera-h.md#camera_photoqualityprioritization) | Camera\_PhotoQualityPrioritization | 拍照画质优先策略枚举。 |
+| [OH\_Camera\_OISMode](capi-camera-h.md#oh_camera_oismode) | OH\_Camera\_OISMode | 光学防抖（Optical Image Stabilization）模式枚举。 |
+| [OH\_Camera\_OISAxes](capi-camera-h.md#oh_camera_oisaxes) | OH\_Camera\_OISAxes | 光学防抖（OIS）轴枚举。 |
+| [OH\_Camera\_ExposureState](capi-camera-h.md#oh_camera_exposurestate) | OH\_Camera\_ExposureState | 枚举相机曝光状态。 |
+| [OH\_Camera\_MetadataObjectEmotion](capi-camera-h.md#oh_camera_metadataobjectemotion) | OH\_Camera\_MetadataObjectEmotion | 元数据对象情绪类型枚举。 |
+| [OH\_Camera\_AutomotiveCameraPosition](capi-camera-h.md#oh_camera_automotivecameraposition) | OH\_Camera\_AutomotiveCameraPosition | Car设备摄像头位置的枚举。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -105,14 +107,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### Camera\_ErrorCode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Camera_ErrorCode
+```c
+enum Camera_ErrorCode
 ```
 
 **描述**
@@ -134,14 +132,14 @@ PhonePC/2in1TabletTVWearable
 | CAMERA\_DEVICE\_DISABLED = 7400108 | 由于安全原因，相机已禁用。 |
 | CAMERA\_DEVICE\_PREEMPTED = 7400109 | 因被抢占而无法使用相机。 |
 | CAMERA\_UNRESOLVED\_CONFLICTS\_WITH\_CURRENT\_CONFIGURATIONS = 7400110 | 与当前配置存在冲突。  **起始版本：** 12 |
+| CAMERA\_ERROR\_OPTIONAL\_PROPERTY\_NOT\_EXIST = 7400113 | 可选属性不存在。  **起始版本：** 26.0.0 |
 | CAMERA\_SERVICE\_FATAL\_ERROR = 7400201 | 相机服务异常。  比如没有相机权限、相机服务重启、跨进程调用异常等。 |
+| CAMERA\_ERROR\_CAPABILITY\_NOT\_SUPPORTED = 7400114 | 表示设备当前不支持该能力。  **起始版本：** 26.0.0 |
 
 ### Camera\_Status
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Camera_Status
+```c
+enum Camera_Status
 ```
 
 **描述**
@@ -159,10 +157,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Camera\_SceneMode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Camera_SceneMode
+```c
+enum Camera_SceneMode
 ```
 
 **描述**
@@ -179,10 +175,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Camera\_Position
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Camera_Position
+```c
+enum Camera_Position
 ```
 
 **描述**
@@ -199,10 +193,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Camera\_Type
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Camera_Type
+```c
+enum Camera_Type
 ```
 
 **描述**
@@ -221,10 +213,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Camera\_Connection
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Camera_Connection
+```c
+enum Camera_Connection
 ```
 
 **描述**
@@ -239,12 +229,29 @@ PhonePC/2in1TabletTVWearable
 | CAMERA\_CONNECTION\_USB\_PLUGIN = 1 | 使用USB连接的相机。 |
 | CAMERA\_CONNECTION\_REMOTE = 2 | 远程相机。 |
 
+### OH\_Camera\_SensorColorFilterArrangement
+
+```c
+enum OH_Camera_SensorColorFilterArrangement
+```
+
+**描述**
+
+传感器滤色阵列排列方式。
+
+**起始版本：** 24
+
+| 枚举项 | 描述 |
+| --- | --- |
+| OH\_CAMERA\_SENSOR\_CFA\_BGGR = 0 | BGGR（Blue-Green-Green-Red）滤色阵列排列。  **起始版本：** 24 |
+| OH\_CAMERA\_SENSOR\_CFA\_GBRG = 1 | GBRG（Green-Blue-Red-Green）滤色阵列排列。  **起始版本：** 24 |
+| OH\_CAMERA\_SENSOR\_CFA\_GRBG = 2 | GRBG（Green-Red-Blue-Green）滤色阵列排列。  **起始版本：** 24 |
+| OH\_CAMERA\_SENSOR\_CFA\_RGGB = 3 | RGGB（Red-Green-Green-Blue）滤色阵列排列。  **起始版本：** 24 |
+
 ### Camera\_Format
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Camera_Format
+```c
+enum Camera_Format
 ```
 
 **描述**
@@ -256,6 +263,8 @@ PhonePC/2in1TabletTVWearable
 | 枚举项 | 描述 |
 | --- | --- |
 | CAMERA\_FORMAT\_RGBA\_8888 = 3 | RGBA 8888格式。 |
+| CAMERA\_FORMAT\_DNG = 4 | DNG格式。  **起始版本：** 24 |
+| CAMERA\_FORMAT\_DNG\_XDRAW = 5 | 增强型DNG格式。  **起始版本：** 26.0.0 |
 | CAMERA\_FORMAT\_YUV\_420\_SP = 1003 | YUV 420格式。 |
 | CAMERA\_FORMAT\_JPEG = 2000 | JPEG格式。 |
 | CAMERA\_FORMAT\_YCBCR\_P010 = 2001 | YCBCR P010 格式。  **起始版本：** 12 |
@@ -264,10 +273,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Camera\_FlashMode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Camera_FlashMode
+```c
+enum Camera_FlashMode
 ```
 
 **描述**
@@ -283,12 +290,28 @@ PhonePC/2in1TabletTVWearable
 | FLASH\_MODE\_AUTO = 2 | 自动模式。 |
 | FLASH\_MODE\_ALWAYS\_OPEN = 3 | 始终打开模式。 |
 
+### OH\_Camera\_FlashState
+
+```c
+enum OH_Camera_FlashState
+```
+
+**描述**
+
+闪光灯状态枚举。
+
+**起始版本：** 24
+
+| 枚举项 | 描述 |
+| --- | --- |
+| OH\_CAMERA\_FLASH\_STATE\_UNAVAILABLE = 0 | 闪光灯为不可用状态，为默认值。  **起始版本：** 24 |
+| OH\_CAMERA\_FLASH\_STATE\_READY = 1 | 闪光灯为可用状态。  **起始版本：** 24 |
+| OH\_CAMERA\_FLASH\_STATE\_FLASHING = 2 | 闪光灯已经被打开。  **起始版本：** 24 |
+
 ### Camera\_ExposureMode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Camera_ExposureMode
+```c
+enum Camera_ExposureMode
 ```
 
 **描述**
@@ -299,16 +322,34 @@ PhonePC/2in1TabletTVWearable
 
 | 枚举项 | 描述 |
 | --- | --- |
+| EXPOSURE\_MODE\_UNSPECIFIED = -1 | 曝光模式未指定。  **起始版本：** 24 |
 | EXPOSURE\_MODE\_LOCKED = 0 | 锁定曝光模式。 不支持曝光区域中心点设置。  设置该模式后，每次拍照时曝光都会默认锁定。 |
 | EXPOSURE\_MODE\_AUTO = 1 | 自动曝光模式。支持曝光区域中心点设置，可以使用[OH\_CaptureSession\_SetMeteringPoint](capi-capture-session-h.md#oh_capturesession_setmeteringpoint)接口设置曝光区域中心点。  设置该模式后，仅设置后的首次拍照生效。 |
 | EXPOSURE\_MODE\_CONTINUOUS\_AUTO = 2 | 连续自动曝光。  设置该模式后，拍照系统会根据每次的环境变化自动调整曝光。 |
+| EXPOSURE\_MODE\_MANUAL = 3 | 手动曝光模式。可以使用[OH\_CaptureSession\_SetExposureDuration](capi-capture-session-h.md#oh_capturesession_setexposureduration)接口设置曝光时长。  **起始版本：** 24 |
+
+### OH\_Camera\_ExposureMeteringMode
+
+```c
+enum OH_Camera_ExposureMeteringMode
+```
+
+**描述**
+
+曝光测光模式枚举。
+
+**起始版本：** 24
+
+| 枚举项 | 描述 |
+| --- | --- |
+| OH\_CAMERA\_EXPOSURE\_METERING\_MODE\_MATRIX = 0 | 矩阵测光模式。对整个画面测光，适用于自然风景拍摄。  **起始版本：** 24 |
+| OH\_CAMERA\_EXPOSURE\_METERING\_MODE\_CENTER = 1 | 中央测光模式。对画面中心区域测光，适用于人像拍摄。  **起始版本：** 24 |
+| OH\_CAMERA\_EXPOSURE\_METERING\_MODE\_SPOT = 2 | 点测光模式。对指定微小区域测光，适用于拍摄主体细节（如人物眼睛）。  **起始版本：** 24 |
 
 ### Camera\_FocusMode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Camera_FocusMode
+```c
+enum Camera_FocusMode
 ```
 
 **描述**
@@ -326,10 +367,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Camera\_FocusState
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Camera_FocusState
+```c
+enum Camera_FocusState
 ```
 
 **描述**
@@ -346,10 +385,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Camera\_VideoStabilizationMode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Camera_VideoStabilizationMode
+```c
+enum Camera_VideoStabilizationMode
 ```
 
 **描述**
@@ -368,10 +405,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Camera\_ImageRotation
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Camera_ImageRotation
+```c
+enum Camera_ImageRotation
 ```
 
 **描述**
@@ -393,10 +428,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Camera\_QualityLevel
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Camera_QualityLevel
+```c
+enum Camera_QualityLevel
 ```
 
 **描述**
@@ -413,10 +446,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Camera\_MetadataObjectType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Camera_MetadataObjectType
+```c
+enum Camera_MetadataObjectType
 ```
 
 **描述**
@@ -430,13 +461,18 @@ PhonePC/2in1TabletTVWearable
 | FACE\_DETECTION = 0 | 元数据的对象类型，用于人脸检测。  从API version 23开始，推荐使用新枚举值[CAMERA\_METADATA\_OBJECT\_TYPE\_FACE\_DETECTION](capi-camera-h.md#camera_metadataobjecttype)。 |
 | CAMERA\_METADATA\_OBJECT\_TYPE\_FACE\_DETECTION = 0 | 元数据的对象类型，用于人脸检测。  **起始版本：** 23 |
 | CAMERA\_METADATA\_OBJECT\_TYPE\_HUMAN\_BODY = 1 | 元数据的对象类型，用于人体检测。  **起始版本：** 23 |
+| CAMERA\_METADATA\_OBJECT\_TYPE\_CAT\_FACE = 2 | 元数据的对象类型，用于猫脸检测。  **起始版本：** 26.0.0 |
+| CAMERA\_METADATA\_OBJECT\_TYPE\_CAT\_BODY = 3 | 元数据的对象类型，用于猫体检测。  **起始版本：** 26.0.0 |
+| CAMERA\_METADATA\_OBJECT\_TYPE\_DOG\_FACE = 4 | 元数据的对象类型，用于狗脸检测。  **起始版本：** 26.0.0 |
+| CAMERA\_METADATA\_OBJECT\_TYPE\_DOG\_BODY = 5 | 元数据的对象类型，用于狗体检测。  **起始版本：** 26.0.0 |
+| CAMERA\_METADATA\_OBJECT\_TYPE\_SALIENT\_DETECTION = 6 | 元数据的对象类型，用于显著性物体检测。  **起始版本：** 26.0.0 |
+| CAMERA\_METADATA\_OBJECT\_TYPE\_BAR\_CODE\_DETECTION = 7 | 元数据的对象类型，用于二维码检测。  **起始版本：** 26.0.0 |
+| CAMERA\_METADATA\_OBJECT\_TYPE\_BASIC\_FACE\_DETECTION = 8 | 元数据的对象类型，用于基础人脸检测。  **起始版本：** 26.0.0 |
 
 ### Camera\_TorchMode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Camera_TorchMode
+```c
+enum Camera_TorchMode
 ```
 
 **描述**
@@ -456,10 +492,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Camera\_SmoothZoomMode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Camera_SmoothZoomMode
+```c
+enum Camera_SmoothZoomMode
 ```
 
 **描述**
@@ -475,10 +509,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Camera\_SystemPressureLevel
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Camera_SystemPressureLevel
+```c
+enum Camera_SystemPressureLevel
 ```
 
 **描述**
@@ -497,10 +529,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Camera\_PreconfigType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Camera_PreconfigType
+```c
+enum Camera_PreconfigType
 ```
 
 **描述**
@@ -515,14 +545,12 @@ PhonePC/2in1TabletTVWearable
 | PRECONFIG\_1080P = 1 | 预配置照片分辨率为1080P。 |
 | PRECONFIG\_4K = 2 | 预配置照片分辨率为4K。 |
 | PRECONFIG\_HIGH\_QUALITY = 3 | 预配置照片为高质量。 |
-| PRECONFIG\_HIGH\_QUALITY\_PHOTOSESSION\_BT2020 = 4 | 预配置支持预览高动态范围显示和HDR动图拍摄。  **起始版本:** 23 |
+| PRECONFIG\_HIGH\_QUALITY\_PHOTOSESSION\_BT2020 = 4 | 预配置支持预览高动态范围显示和HDR动图拍摄。  **起始版本：** 23 |
 
 ### Camera\_PreconfigRatio
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Camera_PreconfigRatio
+```c
+enum Camera_PreconfigRatio
 ```
 
 **描述**
@@ -539,10 +567,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Camera\_HostDeviceType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Camera_HostDeviceType
+```c
+enum Camera_HostDeviceType
 ```
 
 **描述**
@@ -559,10 +585,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Camera\_FoldStatus
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Camera_FoldStatus
+```c
+enum Camera_FoldStatus
 ```
 
 **描述**
@@ -582,10 +606,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Camera\_QualityPrioritization
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Camera_QualityPrioritization
+```c
+enum Camera_QualityPrioritization
 ```
 
 **描述**
@@ -601,10 +623,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Camera\_ConcurrentType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Camera_ConcurrentType
+```c
+enum Camera_ConcurrentType
 ```
 
 **描述**
@@ -620,10 +640,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Camera\_WhiteBalanceMode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Camera_WhiteBalanceMode
+```c
+enum Camera_WhiteBalanceMode
 ```
 
 **描述**
@@ -644,10 +662,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Camera\_ControlCenterEffectType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Camera_ControlCenterEffectType
+```c
+enum Camera_ControlCenterEffectType
 ```
 
 **描述**
@@ -660,13 +676,13 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | CONTROL\_CENTER\_EFFECT\_TYPE\_BEAUTY = 0 | 控制器效果类型：美颜。 |
 | CONTROL\_CENTER\_EFFECT\_TYPE\_PORTRAIT = 1 | 控制器效果类型：人像虚化。 |
+| CONTROL\_CENTER\_EFFECT\_TYPE\_AUTO\_FRAMING = 2 | 控制器效果类型：自动对焦。  **起始版本：** 24 |
+| CONTROL\_CENTER\_EFFECT\_TYPE\_COLOR\_EFFECT = 3 | 控制器效果类型：XMAGE风格。  **起始版本：** 26.0.0 |
 
 ### Camera\_PhotoQualityPrioritization
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Camera_PhotoQualityPrioritization
+```c
+enum Camera_PhotoQualityPrioritization
 ```
 
 **描述**
@@ -680,16 +696,113 @@ PhonePC/2in1TabletTVWearable
 | CAMERA\_PHOTO\_QUALITY\_PRIORITIZATION\_HIGH\_QUALITY = 0 | 画质优先，拍照需要较长的时间，以输出高画质的图片。 |
 | CAMERA\_PHOTO\_QUALITY\_PRIORITIZATION\_SPEED = 1 | 性能优先，会降低画质来提升拍照的速度。 |
 
-## 函数说明
+### OH\_Camera\_OISMode
 
-PhonePC/2in1TabletTVWearable
+```c
+enum OH_Camera_OISMode
+```
+
+**描述**
+
+光学防抖（Optical Image Stabilization）模式枚举。
+
+**起始版本：** 24
+
+| 枚举项 | 描述 |
+| --- | --- |
+| OH\_CAMERA\_OIS\_MODE\_OFF = 0 | 关闭光学防抖模式。 |
+| OH\_CAMERA\_OIS\_MODE\_AUTO = 1 | 自动光学防抖模式。 |
+| OH\_CAMERA\_OIS\_MODE\_CUSTOM = 2 | 手动光学防抖模式。 |
+
+### OH\_Camera\_OISAxes
+
+```c
+enum OH_Camera_OISAxes
+```
+
+**描述**
+
+光学防抖（OIS）轴枚举。
+
+**起始版本：** 24
+
+| 枚举项 | 描述 |
+| --- | --- |
+| OH\_CAMERA\_OIS\_AXES\_PITCH = 0 | 俯仰轴：控制相机机身上下旋转，即机身围绕与镜头水平方向的轴旋转。 |
+| OH\_CAMERA\_OIS\_AXES\_YAW = 1 | 偏航轴：控制相机机身左右旋转，即机身围绕与镜头垂直方向的轴旋转。 |
+
+### OH\_Camera\_ExposureState
+
+```c
+enum OH_Camera_ExposureState
+```
+
+**描述**
+
+枚举相机曝光状态。
+
+**起始版本：** 26.0.0
+
+| 枚举项 | 描述 |
+| --- | --- |
+| OH\_CAMERA\_EXPOSURE\_STATE\_SCAN = 0 | 表示曝光处于扫描状态。  **起始版本：** 26.0.0 |
+| OH\_CAMERA\_EXPOSURE\_STATE\_CONVERGED = 1 | 表示曝光已经收敛。  **起始版本：** 26.0.0 |
+
+### OH\_Camera\_MetadataObjectEmotion
+
+```c
+enum OH_Camera_MetadataObjectEmotion
+```
+
+**描述**
+
+元数据对象情绪类型枚举。
+
+**起始版本：** 26.0.0
+
+| 枚举项 | 描述 |
+| --- | --- |
+| OH\_CAMERA\_METADATA\_OBJECT\_EMOTION\_NEUTRAL = 0 | 平静。  **起始版本：** 26.0.0 |
+| OH\_CAMERA\_METADATA\_OBJECT\_EMOTION\_SADNESS = 1 | 悲伤。  **起始版本：** 26.0.0 |
+| OH\_CAMERA\_METADATA\_OBJECT\_EMOTION\_SMILE = 2 | 微笑。  **起始版本：** 26.0.0 |
+| OH\_CAMERA\_METADATA\_OBJECT\_EMOTION\_SURPRISE = 3 | 惊讶。  **起始版本：** 26.0.0 |
+
+### OH\_Camera\_AutomotiveCameraPosition
+
+```c
+enum OH_Camera_AutomotiveCameraPosition
+```
+
+**描述**
+
+Car设备摄像头位置的枚举。
+
+**起始版本：** 26.0.0
+
+| 枚举项 | 描述 |
+| --- | --- |
+| OH\_CAMERA\_AUTOMOTIVE\_CAMERA\_POSITION\_EXTERIOR\_OTHER = 0 | Car设备外部其他位置摄像头。  **起始版本：** 26.0.0 |
+| OH\_CAMERA\_AUTOMOTIVE\_CAMERA\_POSITION\_EXTERIOR\_FRONT = 1 | Car设备外部前侧摄像头。  **起始版本：** 26.0.0 |
+| OH\_CAMERA\_AUTOMOTIVE\_CAMERA\_POSITION\_EXTERIOR\_REAR = 2 | Car设备外部后侧摄像头。  **起始版本：** 26.0.0 |
+| OH\_CAMERA\_AUTOMOTIVE\_CAMERA\_POSITION\_EXTERIOR\_LEFT = 3 | Car设备外部左侧摄像头。  **起始版本：** 26.0.0 |
+| OH\_CAMERA\_AUTOMOTIVE\_CAMERA\_POSITION\_EXTERIOR\_RIGHT = 4 | Car设备外部右侧摄像头。  **起始版本：** 26.0.0 |
+| OH\_CAMERA\_AUTOMOTIVE\_CAMERA\_POSITION\_INTERIOR\_OTHER = 5 | Car设备内部其他位置摄像头。  **起始版本：** 26.0.0 |
+| OH\_CAMERA\_AUTOMOTIVE\_CAMERA\_POSITION\_INTERIOR\_ROW\_1\_LEFT = 6 | Car设备内部第一排左侧摄像头。  **起始版本：** 26.0.0 |
+| OH\_CAMERA\_AUTOMOTIVE\_CAMERA\_POSITION\_INTERIOR\_ROW\_1\_CENTER = 7 | Car设备内部第一排中央摄像头。  **起始版本：** 26.0.0 |
+| OH\_CAMERA\_AUTOMOTIVE\_CAMERA\_POSITION\_INTERIOR\_ROW\_1\_RIGHT = 8 | Car设备内部第一排右侧摄像头。  **起始版本：** 26.0.0 |
+| OH\_CAMERA\_AUTOMOTIVE\_CAMERA\_POSITION\_INTERIOR\_ROW\_2\_LEFT = 9 | Car设备内部第二排左侧摄像头。  **起始版本：** 26.0.0 |
+| OH\_CAMERA\_AUTOMOTIVE\_CAMERA\_POSITION\_INTERIOR\_ROW\_2\_CENTER = 10 | Car设备内部第二排中央摄像头。  **起始版本：** 26.0.0 |
+| OH\_CAMERA\_AUTOMOTIVE\_CAMERA\_POSITION\_INTERIOR\_ROW\_2\_RIGHT = 11 | Car设备内部第二排右侧摄像头。  **起始版本：** 26.0.0 |
+| OH\_CAMERA\_AUTOMOTIVE\_CAMERA\_POSITION\_INTERIOR\_ROW\_3\_LEFT = 12 | Car设备内部第三排左侧摄像头。  **起始版本：** 26.0.0 |
+| OH\_CAMERA\_AUTOMOTIVE\_CAMERA\_POSITION\_INTERIOR\_ROW\_3\_CENTER = 13 | Car设备内部第三排中央摄像头。  **起始版本：** 26.0.0 |
+| OH\_CAMERA\_AUTOMOTIVE\_CAMERA\_POSITION\_INTERIOR\_ROW\_3\_RIGHT = 14 | Car设备内部第三排右侧摄像头。  **起始版本：** 26.0.0 |
+
+## 函数说明
 
 ### OH\_Camera\_GetCameraManager()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_Camera_GetCameraManager(Camera_Manager** cameraManager)
+```c
+Camera_ErrorCode OH_Camera_GetCameraManager(Camera_Manager** cameraManager)
 ```
 
 **描述**
@@ -712,10 +825,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Camera\_DeleteCameraManager()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_Camera_DeleteCameraManager(Camera_Manager* cameraManager)
+```c
+Camera_ErrorCode OH_Camera_DeleteCameraManager(Camera_Manager* cameraManager)
 ```
 
 **描述**

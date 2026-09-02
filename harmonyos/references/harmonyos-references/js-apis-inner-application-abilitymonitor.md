@@ -3,34 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: AbilityMonitor
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > application > AbilityMonitor
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:36+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:5bce53cd9cd70583fef025b73f95d60f50f84a53055401a55339be5e6cdf882a
+scraped_at: 2026-09-02T15:00:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:34bba2aca0d1a9d3747f800680c4d8d55332964af6de49b3a6fb687404b603b6
 ---
 
-本模块提供监听指定[UIAbility](js-apis-app-ability-uiability.md)生命周期状态变化的能力。开发者可以将AbilityMonitor作为[abilityDelegator.addAbilityMonitor](js-apis-inner-application-abilitydelegator.md#addabilitymonitor9)的入参来注册监听。
+本模块提供监听指定[UIAbility](js-apis-app-ability-uiability.md)生命周期状态变化的能力。开发者可以将AbilityMonitor作为[abilityDelegator.addAbilityMonitor](js-apis-inner-application-abilitydelegator.md#addabilitymonitor)的入参来注册监听。
 
-说明
+**说明** 
 
 本模块首批接口从API version 9 开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
 ```
 
 ## 使用说明
 
-PhonePC/2in1TabletTVWearable
-
-可以作为abilityDelegator中的[addAbilityMonitor](js-apis-inner-application-abilitydelegator.md#addabilitymonitor9)的入参来监听指定Ability的生命周期变化。
+可以作为abilityDelegator中的[addAbilityMonitor](js-apis-inner-application-abilitydelegator.md#addabilitymonitor)的入参来监听指定UIAbility的生命周期变化。
 
 ## AbilityMonitor
-
-PhonePC/2in1TabletTVWearable
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -50,25 +44,25 @@ PhonePC/2in1TabletTVWearable
 
 **示例：**
 
-```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
-2. import { UIAbility } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. function onAbilityCreateCallback(data: UIAbility) {
-6. console.info(`onAbilityCreateCallback, data: ${JSON.stringify(data)}`);
-7. }
+function onAbilityCreateCallback(data: UIAbility) {
+  console.info(`onAbilityCreateCallback, data: ${JSON.stringify(data)}`);
+}
 
-9. let monitor: abilityDelegatorRegistry.AbilityMonitor = {
-10. abilityName: 'abilityname',
-11. moduleName: "moduleName",
-12. onAbilityCreate: onAbilityCreateCallback
-13. }
+let monitor: abilityDelegatorRegistry.AbilityMonitor = {
+  abilityName: 'abilityname',
+  moduleName: "moduleName",
+  onAbilityCreate: onAbilityCreateCallback
+}
 
-15. let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-16. abilityDelegator.addAbilityMonitor(monitor, (error: BusinessError) => {
-17. if (error) {
-18. console.error(`addAbilityMonitor fail, error: ${JSON.stringify(error)}`);
-19. }
-20. });
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.addAbilityMonitor(monitor, (error: BusinessError) => {
+  if (error) {
+    console.error(`addAbilityMonitor fail, error: ${JSON.stringify(error)}`);
+  }
+});
 ```

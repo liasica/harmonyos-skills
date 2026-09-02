@@ -1,18 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-project-management-13
-title: 如何解决mac启动DevEco Studio报错提示“DevEco Studio”意外退出问题
-breadcrumb: FAQ > DevEco Studio > 工程管理 > 如何解决mac启动DevEco Studio报错提示“DevEco Studio”意外退出问题
+title: 如何解决mac启动DevEco Studio报错提示“devecostudio”意外退出问题
+breadcrumb: FAQ > DevEco Studio > 工程管理 > 如何解决mac启动DevEco Studio报错提示“devecostudio”意外退出问题
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:20:11+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:043b4b7ef18f3bf65bce0c74805ceab1029bc2ea2421b0b90457596425fe36e0
+scraped_at: 2026-09-02T14:54:53+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:253925c1f50079b224991a3681bfb0d9fc9fc1f1886fd01f2ee5150948bd95ba
 ---
 
 **问题描述**
 
 Mac启动DevEco Studio时，“DevEco Studio”意外退出。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/xw5amg6hRWmOGQHtEntGPA/zh-cn_image_0000002229758581.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/h1RKsZdxSKuXeQhWnRtESA/zh-cn_image_0000002654797799.png)
 
 **解决方案**
 

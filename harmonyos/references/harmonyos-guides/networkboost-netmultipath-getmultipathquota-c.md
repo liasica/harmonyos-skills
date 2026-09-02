@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-
 title: 多网配额查询(C/C++)
 breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务） > 连接迁移(多网并发)（C/C++） > 多网配额查询(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:02+08:00
+scraped_at: 2026-09-02T14:50:06+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:5c49b5e85e24f27e07570a030399d94d5b6ebad841cf71733d8a55c75535d0a7
+content_hash: sha256:664df4aaf68091ff3cd7bb546f57185e589bae5ae51d086f8e53d5a4c1bf67c8
 ---
 
 从6.0.2(22)开始，支持多网配额查询。
@@ -26,27 +26,27 @@ content_hash: sha256:5c49b5e85e24f27e07570a030399d94d5b6ebad841cf71733d8a55c7553
 
 1. 导入Network Boost Kit模块。
 
-   ```
-   1. #include "NetworkBoostKit/network_boost_handover.h"
-   2. #include <cstdio>
+   ```cpp
+   #include "NetworkBoostKit/network_boost_handover.h"
+   #include <cstdio>
    ```
 2. CMakeLists.txt中添加以下lib，具体请见[C API开发准备](networkboost-preparations.md#c-api开发准备)。
 
-   ```
-   1. libnetwork_boost.so
+   ```cpp
+   libnetwork_boost.so
    ```
 3. 调用GetMultiPathQuotaStats接口，获取多网配额信息。
 
-   ```
-   1. int32_t GetMultiPathQuotaStats()
-   2. {
-   3. NetworkBoost_MultiPathQuota quota = { 0 };
-   4. int32_t ret = HMS_NetworkBoost_GetMultiPathQuotaStats(&quota);
-   5. printf("获取多网配额信息结果: %d\n", ret);
-   6. printf("获取多网配额信息已使用时长: %d\n", quota.used.duration);
-   7. printf("获取多网配额信息已使用次数: %d\n", quota.used.count);
-   8. printf("获取多网配额信息剩余总时长: %d\n", quota.remaining.duration);
-   9. printf("获取多网配额信息剩余总次数: %d\n", quota.remaining.count);
-   10. return ret;
-   11. }
+   ```cpp
+   int32_t GetMultiPathQuotaStats()
+   {
+       NetworkBoost_MultiPathQuota quota = { 0 };
+       int32_t ret = HMS_NetworkBoost_GetMultiPathQuotaStats(&quota);
+       printf("获取多网配额信息结果: %d\n", ret);
+       printf("获取多网配额信息已使用时长: %d\n", quota.used.duration);
+       printf("获取多网配额信息已使用次数: %d\n", quota.used.count);
+       printf("获取多网配额信息剩余总时长: %d\n", quota.remaining.duration);
+       printf("获取多网配额信息剩余总次数: %d\n", quota.remaining.count);
+       return ret;
+   }
    ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-fileur
 title: FileUri开发指导(C/C++)
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 用户文件 > FileUri开发指导(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:17+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:89994b8da6ae92a714272113e48e75b9e49f8092597c7500659b6ae9455b4735
+scraped_at: 2026-09-02T14:49:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:802d820aae31865ce93f3781bac47619869604eab214f5130cb85bfbb2a60254
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ FileUri提供了关于文件URI的基本操作，将URI转换成对应的沙箱�
 
 ## 约束限制
 
-* URI转路径时，URI来源建议使用系统能力获取，例如：picker、剪切板、拖拽、及系统提供的路径转URI接口等系统能力返回的URI；如果转换应用或用户拼接的URI，则转换后的路径可能无法访问。
+* URI转路径时，URI来源建议使用系统能力获取，例如：picker、剪贴板、拖拽、及系统提供的路径转URI接口等系统能力返回的URI；如果转换应用或用户拼接的URI，则转换后的路径可能无法访问。
 * 为保证数据的准确性，在转换或判断过程中应保持单对象处理，避免资源竞争导致数据异常。
 
 ## 接口说明
@@ -39,174 +39,164 @@ FileUri提供了关于文件URI的基本操作，将URI转换成对应的沙箱�
 
 CMakeLists.txt中添加以下lib。
 
-```
-1. target_link_libraries(sample PUBLIC libohfileuri.so)
+```txt
+target_link_libraries(sample PUBLIC libohfileuri.so)
 ```
 
 **添加头文件**
 
 ```
-1. #include <filemanagement/file_uri/oh_file_uri.h>
+#include <filemanagement/file_uri/oh_file_uri.h>
 ```
 
 1. 调用OH\_FileUri\_GetUriFromPath接口，在接口中malloc的内存需要在使用完后释放，因此需要free对应的内存，避免内存泄漏。示例代码如下所示：
 
    ```
-   1. static napi_value NAPI_Global_OH_FileUri_GetUriFromPathExample(napi_env env, napi_callback_info info)
-   2. {
-   3. // ...
-   4. // 为 char* uri 分配内存
-   5. char *path = new char[strLength + 1]; // +1 for null terminator
-   6. // 将 JavaScript 字符串复制到 uri
-   7. // ...
-   8. unsigned int length = strlen(path);
-   9. // 输出传入路径字符串
-   10. // ...
-   11. char *uriResult = nullptr;
-   12. FileManagement_ErrCode ret = OH_FileUri_GetUriFromPath(path, length, &uriResult);
-   13. // 输出结果uri字符串
-   14. // ...
-   15. if (ret == 0 && uriResult != nullptr) {
-   16. // 将C字符串转换为napi_value
-   17. napi_status status = napi_create_string_utf8(env, uriResult, NAPI_AUTO_LENGTH, &result);
-   18. if (status != napi_ok) {
-   19. free(uriResult);
-   20. return nullptr;
-   21. }
-   22. free(uriResult); // 释放临时字符串
-   23. } else {
-   24. // 将C字符串转换为napi_value
-   25. napi_status status = napi_create_string_utf8(env, "Hello World", NAPI_AUTO_LENGTH, &result);
-   26. if (status != napi_ok) {
-   27. return nullptr;
-   28. }
-   29. }
-   30. return result;
-   31. }
+   static napi_value NAPI_Global_OH_FileUri_GetUriFromPathExample(napi_env env, napi_callback_info info)
+   {
+       // ...
+       // 为 char* uri 分配内存
+       char *path = new char[strLength + 1]; // +1 for null terminator
+       // 将 JavaScript 字符串复制到 uri
+       // ...
+       unsigned int length = strlen(path);
+       // 输出传入路径字符串
+       // ...
+       char *uriResult = nullptr;
+       FileManagement_ErrCode ret = OH_FileUri_GetUriFromPath(path, length, &uriResult);
+       // 输出结果uri字符串
+       // ...
+       if (ret == 0 && uriResult != nullptr) {
+           // 将C字符串转换为napi_value
+           napi_status status = napi_create_string_utf8(env, uriResult, NAPI_AUTO_LENGTH, &result);
+           if (status != napi_ok) {
+               free(uriResult);
+               return nullptr;
+           }
+           free(uriResult); // 释放临时字符串
+       } else {
+           // 将C字符串转换为napi_value
+           napi_status status = napi_create_string_utf8(env, "Hello World", NAPI_AUTO_LENGTH, &result);
+           if (status != napi_ok) {
+               return nullptr;
+           }
+       }
+       return result;
+   }
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/CoreFile/UserFile/FileUriDevelopment_C/entry/src/main/cpp/napi_init.cpp#L24-L72)
 2. 调用OH\_FileUri\_GetPathFromUri通过URI转成对应的路径，在接口中malloc的内存需要在使用完后释放，因此需要free对应的内存，避免内存泄漏。示例代码如下所示。
 
    ```
-   1. static napi_value NAPI_Global_OH_FileUri_GetPathFromUriExample(napi_env env, napi_callback_info info)
-   2. {
-   3. // ...
-   4. char *uri = new char[strLength + 1]; // +1 for null terminator
-   5. // 将 JavaScript 字符串复制到 uri
-   6. napi_get_value_string_utf8(env, args[0], uri, strLength + 1, &strLength);
+   static napi_value NAPI_Global_OH_FileUri_GetPathFromUriExample(napi_env env, napi_callback_info info)
+   {
+       // ...
+       char *uri = new char[strLength + 1]; // +1 for null terminator
+       // 将 JavaScript 字符串复制到 uri
+       napi_get_value_string_utf8(env, args[0], uri, strLength + 1, &strLength);
 
-   8. unsigned int length = strlen(uri);
-   9. // 输出传入uri字符串
-   10. OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.WatcherType=OnTrigger: %{public}s", uri);
-   11. char *pathResult = nullptr;
-   12. FileManagement_ErrCode ret = OH_FileUri_GetPathFromUri(uri, length, &pathResult);
-   13. // 输出获取路径结果字符串
-   14. // ...
-   15. if (ret == 0 && pathResult != nullptr) {
-   16. // 将C字符串转换为napi_value
-   17. napi_status status = napi_create_string_utf8(env, pathResult, NAPI_AUTO_LENGTH, &result);
-   18. if (status != napi_ok) {
-   19. free(pathResult);
-   20. return nullptr;
-   21. }
-   22. free(pathResult); // 释放临时字符串
-   23. } else {
-   24. // 将空字符串转换为napi_value
-   25. napi_status status = napi_create_string_utf8(env, "", NAPI_AUTO_LENGTH, &result);
-   26. if (status != napi_ok) {
-   27. return nullptr;
-   28. }
-   29. }
-   30. return result;
-   31. }
+       unsigned int length = strlen(uri);
+       // 输出传入uri字符串
+       OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.WatcherType=OnTrigger: %{public}s", uri);
+       char *pathResult = nullptr;
+       FileManagement_ErrCode ret = OH_FileUri_GetPathFromUri(uri, length, &pathResult);
+       // 输出获取路径结果字符串
+       // ...
+       if (ret == 0 && pathResult != nullptr) {
+           // 将C字符串转换为napi_value
+           napi_status status = napi_create_string_utf8(env, pathResult, NAPI_AUTO_LENGTH, &result);
+           if (status != napi_ok) {
+               free(pathResult);
+               return nullptr;
+           }
+           free(pathResult); // 释放临时字符串
+       } else {
+           // 将空字符串转换为napi_value
+           napi_status status = napi_create_string_utf8(env, "", NAPI_AUTO_LENGTH, &result);
+           if (status != napi_ok) {
+               return nullptr;
+           }
+       }
+       return result;
+   }
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/CoreFile/UserFile/FileUriDevelopment_C/entry/src/main/cpp/napi_init.cpp#L74-L120)
 3. 调用OH\_FileUri\_GetFullDirectoryUri获取URI所在路径的URI，在接口中malloc的内存需要在使用完后释放，因此需要free对应的内存，避免内存泄漏。示例代码如下所示。
 
    ```
-   1. static napi_value NAPI_Global_OH_FileUri_GetFullDirectoryUriExample(napi_env env, napi_callback_info info)
-   2. {
-   3. // ...
-   4. char *uri = new char[strLength + 1]; // +1 for null terminator
-   5. // 将 JavaScript 字符串复制到 uri
-   6. napi_get_value_string_utf8(env, args[0], uri, strLength + 1, &strLength);
+   static napi_value NAPI_Global_OH_FileUri_GetFullDirectoryUriExample(napi_env env, napi_callback_info info)
+   {
+       // ...
+       char *uri = new char[strLength + 1]; // +1 for null terminator
+       // 将 JavaScript 字符串复制到 uri
+       napi_get_value_string_utf8(env, args[0], uri, strLength + 1, &strLength);
 
-   8. unsigned int length = strlen(uri);
-   9. // 输出传入uri字符串
-   10. OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.WatcherType=OnTrigger: %{public}s", uri);
-   11. char *uriResult = nullptr;
-   12. FileManagement_ErrCode ret = OH_FileUri_GetFullDirectoryUri(uri, length, &uriResult);
-   13. // 输出所在路径uri字符串
-   14. // ...
-   15. if (ret == 0 && uriResult != nullptr) {
-   16. // 使用napi接口创建一个字符串类型的napi_value来返回正确结果
-   17. napi_create_string_utf8(env, uriResult, NAPI_AUTO_LENGTH, &result);
-   18. } else {
-   19. // 使用napi接口创建一个表示null值的napi_value来返回错误或空值情况
-   20. napi_get_null(env, &result);
-   21. }
-   22. if (uriResult != nullptr) {
-   23. free(uriResult);
-   24. }
-   25. return result;
-   26. }
+       unsigned int length = strlen(uri);
+       // 输出传入uri字符串
+       OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.WatcherType=OnTrigger: %{public}s", uri);
+       char *uriResult = nullptr;
+       FileManagement_ErrCode ret = OH_FileUri_GetFullDirectoryUri(uri, length, &uriResult);
+       // 输出所在路径uri字符串
+       // ...
+       if (ret == 0 && uriResult != nullptr) {
+           // 使用napi接口创建一个字符串类型的napi_value来返回正确结果
+           napi_create_string_utf8(env, uriResult, NAPI_AUTO_LENGTH, &result);
+       } else {
+           // 使用napi接口创建一个表示null值的napi_value来返回错误或空值情况
+           napi_get_null(env, &result);
+       }
+       if (uriResult != nullptr) {
+           free(uriResult);
+       }
+       return result;
+   }
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/CoreFile/UserFile/FileUriDevelopment_C/entry/src/main/cpp/napi_init.cpp#L122-L163)
 4. 可以调用OH\_FileUri\_IsValidUri接口进行URI格式验证。 示例代码如下所示。
 
    ```
-   1. static napi_value NAPI_Global_OH_FileUri_IsValidUriExample(napi_env env, napi_callback_info info)
-   2. {
-   3. // ...
-   4. char *uri = new char[strLength + 1]; // +1 for null terminator
-   5. // 将 JavaScript 字符串复制到 uri
-   6. napi_get_value_string_utf8(env, args[0], uri, strLength + 1, &strLength);
-   7. unsigned int length = strlen(uri);
-   8. // 输出传入uri字符串
-   9. OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.WatcherType=OnTrigger: %{public}s", uri);
-   10. bool flags = OH_FileUri_IsValidUri(uri, length);
-   11. // ...
-   12. }
+   static napi_value NAPI_Global_OH_FileUri_IsValidUriExample(napi_env env, napi_callback_info info)
+   {
+       // ...
+       char *uri = new char[strLength + 1]; // +1 for null terminator
+       // 将 JavaScript 字符串复制到 uri
+       napi_get_value_string_utf8(env, args[0], uri, strLength + 1, &strLength);
+       unsigned int length = strlen(uri);
+       // 输出传入uri字符串
+       OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.WatcherType=OnTrigger: %{public}s", uri);
+       bool flags = OH_FileUri_IsValidUri(uri, length);
+       // ...
+   }
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/CoreFile/UserFile/FileUriDevelopment_C/entry/src/main/cpp/napi_init.cpp#L165-L199)
 5. 调用OH\_FileUri\_GetFileName获取URI中的文件名称，在接口中malloc的内存需要在使用完后释放，因此需要free对应的内存，避免内存泄漏。示例代码如下所示。
 
    ```
-   1. static napi_value NAPI_Global_OH_FileUri_GetFileNameExample(napi_env env, napi_callback_info info)
-   2. {
-   3. // ...
-   4. char *uri = new char[strLength + 1]; // +1 for null terminator
-   5. // 将 JavaScript 字符串复制到 uri
-   6. napi_get_value_string_utf8(env, args[0], uri, strLength + 1, &strLength);
+   static napi_value NAPI_Global_OH_FileUri_GetFileNameExample(napi_env env, napi_callback_info info)
+   {
+       // ...
+       char *uri = new char[strLength + 1]; // +1 for null terminator
+       // 将 JavaScript 字符串复制到 uri
+       napi_get_value_string_utf8(env, args[0], uri, strLength + 1, &strLength);
 
-   8. unsigned int length = strlen(uri);
-   9. // 输出传入uri字符串
-   10. OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.WatcherType=OnTrigger: %{public}s", uri);
-   11. char *uriResult = nullptr;
-   12. FileManagement_ErrCode ret = OH_FileUri_GetFileName(uri, length, &uriResult);
-   13. // 输出获取到的文件名称
-   14. // ...
-   15. if (ret == 0 && uriResult != nullptr) {
-   16. // 将C字符串转换为napi_value
-   17. napi_status status = napi_create_string_utf8(env, uriResult, NAPI_AUTO_LENGTH, &result);
-   18. if (status != napi_ok) {
-   19. free(uriResult);
-   20. return NULL;
-   21. }
-   22. free(uriResult); // 释放临时字符串
-   23. } else {
-   24. // 将空字符串转换为napi_value
-   25. napi_status status = napi_create_string_utf8(env, "", NAPI_AUTO_LENGTH, &result);
-   26. if (status != napi_ok) {
-   27. return nullptr;
-   28. }
-   29. }
-   30. return result;
-   31. }
+       unsigned int length = strlen(uri);
+       // 输出传入uri字符串
+       OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.WatcherType=OnTrigger: %{public}s", uri);
+       char *uriResult = nullptr;
+       FileManagement_ErrCode ret = OH_FileUri_GetFileName(uri, length, &uriResult);
+       // 输出获取到的文件名称
+       // ...
+       if (ret == 0 && uriResult != nullptr) {
+           // 将C字符串转换为napi_value
+           napi_status status = napi_create_string_utf8(env, uriResult, NAPI_AUTO_LENGTH, &result);
+           if (status != napi_ok) {
+               free(uriResult);
+               return NULL;
+           }
+           free(uriResult); // 释放临时字符串
+       } else {
+           // 将空字符串转换为napi_value
+           napi_status status = napi_create_string_utf8(env, "", NAPI_AUTO_LENGTH, &result);
+           if (status != napi_ok) {
+               return nullptr;
+           }
+       }
+       return result;
+   }
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/CoreFile/UserFile/FileUriDevelopment_C/entry/src/main/cpp/napi_init.cpp#L201-L247)

@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bluetooth.a2dp (蓝牙a2dp模块)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.bluetooth.a2dp (蓝牙a2dp模块)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:54+08:00
-doc_updated_at: 2026-03-20
-content_hash: sha256:ddfa0a7c464f751837893f8a24b5dc4a9e5fb9410c3a211a3e7386aa4e537e50
+scraped_at: 2026-09-02T15:01:48+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:833306b673c46d517856eff3f48c3ee160b10526b60a5ffd2d84df15094ee992
 ---
 
 本模块提供基于增强音频分发协议（Advanced Audio Distribution Profile，[A2DP](../harmonyos-guides/terminology.md#a2dp)）的蓝牙媒体音频能力，支持获取媒体播放状态和连接状态等方法。
 
-说明
+**说明** 
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { a2dp } from '@kit.ConnectivityKit';
+```js
+import { a2dp } from '@kit.ConnectivityKit';
 ```
 
 ## BaseProfile
-
-PhonePC/2in1TabletTVWearable
 
 type BaseProfile = baseProfile.BaseProfile
 
@@ -38,11 +34,9 @@ type BaseProfile = baseProfile.BaseProfile
 
 ## a2dp.createA2dpSrcProfile
 
-PhonePC/2in1TabletTVWearable
-
 createA2dpSrcProfile(): A2dpSourceProfile
 
-创建蓝牙媒体[A2DP Source](../harmonyos-guides/terminology.md#a2dp-source)实例。通过该实例可以使用本端作为A2DP Source设备的方法，如：获取和其他设备间的蓝牙媒体音频播放状态。
+创建蓝牙媒体[A2DP Source](../harmonyos-guides/terminology.md#a2dp-source)实例。通过该实例，可以使用本端作为A2DP Source设备时提供的各项方法，如：获取和其他设备间的蓝牙媒体音频播放状态。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
@@ -63,19 +57,17 @@ createA2dpSrcProfile(): A2dpSourceProfile
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. try {
-3. let a2dpProfile = a2dp.createA2dpSrcProfile();
-4. console.info('a2dp success');
-5. } catch (err) {
-6. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-7. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+try {
+    let a2dpProfile = a2dp.createA2dpSrcProfile();
+    console.info('a2dp success');
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## A2dpSourceProfile
-
-PhonePC/2in1TabletTVWearable
 
 该实例表示蓝牙媒体音频中的[A2DP Source](../harmonyos-guides/terminology.md#a2dp-source)角色。
 
@@ -85,11 +77,9 @@ PhonePC/2in1TabletTVWearable
 
 ### getPlayingState
 
-PhonePC/2in1TabletTVWearable
-
 getPlayingState(deviceId: string): PlayingState
 
-获取本端和对端设备间的媒体音频播放状态。
+获取本端和对端设备间的媒体音频播放状态。例如，在音乐播放器应用中可用于检查蓝牙音频是否正在播放，从而同步更新界面的播放/暂停按钮状态。
 
 * 从API version 21开始，此接口支持使用对端设备的实际MAC地址获取媒体音频播放状态。
 
@@ -125,19 +115,17 @@ getPlayingState(deviceId: string): PlayingState
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. try {
-3. let a2dpSrc = a2dp.createA2dpSrcProfile();
-4. let state = a2dpSrc.getPlayingState('XX:XX:XX:XX:XX:XX');
-5. } catch (err) {
-6. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-7. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+try {
+    let a2dpSrc = a2dp.createA2dpSrcProfile();
+    let state = a2dpSrc.getPlayingState('XX:XX:XX:XX:XX:XX');
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## PlayingState
-
-PhonePC/2in1TabletTVWearable
 
 枚举，蓝牙媒体音频播放状态。
 
@@ -149,8 +137,6 @@ PhonePC/2in1TabletTVWearable
 | STATE\_PLAYING | 1 | 正在播放媒体音频。 |
 
 ## CodecInfo11+
-
-PhonePC/2in1TabletTVWearable
 
 蓝牙媒体音频使用的编解码器。
 
@@ -167,8 +153,6 @@ PhonePC/2in1TabletTVWearable
 
 ## CodecInfoList19+
 
-PhonePC/2in1TabletTVWearable
-
 蓝牙媒体音频编解码器支持的能力集合。不同编解码器支持的位深、声道模式、采样率、码率和帧长类型与音频接收器设备端能力有关。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
@@ -183,8 +167,6 @@ PhonePC/2in1TabletTVWearable
 | codecFrameLengthArray | [CodecFrameLength](js-apis-bluetooth-a2dp.md#codecframelength19)[] | 否 | 否 | 编解码器支持的帧长能力集合。 |
 
 ## CodecType11+
-
-PhonePC/2in1TabletTVWearable
 
 枚举，蓝牙媒体音频编解码器类型。
 
@@ -201,8 +183,6 @@ PhonePC/2in1TabletTVWearable
 
 ## CodecChannelMode11+
 
-PhonePC/2in1TabletTVWearable
-
 枚举，蓝牙媒体音频编解码器的声道模式，表示音频播放时独立的空间信号路径数量。声道模式影响声音的立体感和空间定位‌。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
@@ -214,8 +194,6 @@ PhonePC/2in1TabletTVWearable
 | CODEC\_CHANNEL\_MODE\_STEREO | 2 | 双声道。 |
 
 ## CodecBitsPerSample11+
-
-PhonePC/2in1TabletTVWearable
 
 枚举，蓝牙媒体音频编解码器的位深，表示蓝牙音频信号在数字表示中使用的位数，单位为bit。位深决定每个采样点可以表示的动态范围和精度。
 
@@ -229,8 +207,6 @@ PhonePC/2in1TabletTVWearable
 | CODEC\_BITS\_PER\_SAMPLE\_32 | 3 | 32bit |
 
 ## CodecSampleRate11+
-
-PhonePC/2in1TabletTVWearable
 
 枚举，蓝牙媒体音频编解码器的采样率，表示每秒对蓝牙音频采样的次数，单位为Hz。采样率的选择会影响音质和传输效率。
 
@@ -248,9 +224,7 @@ PhonePC/2in1TabletTVWearable
 
 ## CodecBitRate19+
 
-PhonePC/2in1TabletTVWearable
-
-枚举，蓝牙媒体音频编解码器的码率，表示单位时间内音频数据的传输量，单位为kbps。码率影响音频音质和文件大小。
+枚举，蓝牙媒体音频编解码器的码率，表示单位时间内音频数据的传输量，单位为kbps。码率影响音频音质和传输带宽。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
@@ -264,15 +238,13 @@ PhonePC/2in1TabletTVWearable
 | CODEC\_BIT\_RATE\_480000 | 5 | 480kbps |
 | CODEC\_BIT\_RATE\_640000 | 6 | 640kbps |
 | CODEC\_BIT\_RATE\_960000 | 7 | 960kbps |
-| CODEC\_BIT\_RATE\_ABR | 8 | 自适应码率（根据网络条件自动调整）。 |
+| CODEC\_BIT\_RATE\_ABR | 8 | 自适应码率（根据蓝牙链路质量自动调整）。 |
 | CODEC\_BIT\_RATE\_150000021+ | 9 | 1500kbps |
 | CODEC\_BIT\_RATE\_230000021+ | 10 | 2300kbps |
 
 ## CodecFrameLength19+
 
-PhonePC/2in1TabletTVWearable
-
-枚举，蓝牙媒体音频编解码器的帧长，表示一帧音频数据播放的时长。
+枚举，蓝牙媒体音频编解码器的帧长，表示一帧音频数据播放的时长，单位为ms。帧长影响音频传输的延迟和效率。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 

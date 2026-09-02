@@ -3,174 +3,217 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-picture-a
 title: 多设备图片美化界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备图片美化界面
 category: best-practices
-scraped_at: 2026-04-29T14:12:35+08:00
-doc_updated_at: 2026-03-26
-content_hash: sha256:34f36da1465126f0021ef6ae4b06c681be4eb3322ef6ab918087df20f8c22b73
+scraped_at: 2026-09-02T15:03:19+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:6f9db8971b2d5dabdd0fdeb19c3e3bd9b7f11cc2f1f29c071101c6dd6bcf49a0
 ---
 
 ## 概述
 
-本文从目前流行的垂类市场中，选择图片美化应用作为典型案例详细介绍“一多”在实际开发中的应用。一多图片美化应用包含相册，大图预览，图片编辑功能。
+本文从当前常见的多设备应用场景中，选取图片美化应用作为典型案例，详细介绍“一多”在实际开发中的应用。
 
-本文的重点内容包括：
+图片美化应用的核心功能是用户交互，主要功能模块包含对话聊天、通讯录和社交圈等。开发者在开发“一多”应用时，常面临多端适配问题。本文针对图片美化应用的常见多端适配问题，提供解决方案。
 
-* [根据宽度自适应相册列数](multi-picture-app.md#section12641735489)
-* [双指缩放控制图片缩放](multi-picture-app.md#section255214446101)
+应用当前已适配的设备包括：直板机、双折叠（Mate X系列）、三折叠、阔折叠、平板和电脑。
 
-当前系统的产品形态包括手机、折叠屏、平板三种。本文从UX设计、架构设计和页面开发三个角度，提供符合“一多”设计原则的参考样例，介绍“一多”图片美化应用在开发过程中的最佳实践。
+**说明** 
 
-* [UX设计](multi-picture-app.md#section206991621369)章节介绍图片美化应用的交互逻辑，类似的设计要点可以直接应用于其他项目。
-* [架构设计](multi-picture-app.md#section171321517134515)章节介绍一多项目的三层架构，开发者可以去相关文章或章节了解。
-* [页面开发](multi-picture-app.md#section12641735489)章节主要介绍图片美化三个页面的布局设计及如何实现。
+阅读本文前，开发者需熟悉[ArkUI（方舟UI框架）](../harmonyos-guides/arkui.md)和[一次开发，多端部署概览](bpta-multi-device-overview.md)相关知识。
 
-说明
+下文将从UX设计、工程管理、页面开发三个角度，介绍图片美化应用在多设备开发中的最佳实践。
 
-阅读本文前，开发者需熟悉[ArkUI（方舟UI框架）](../harmonyos-guides/arkui.md)和页面开发的“一多”能力（参考[一次开发，多端部署概览](bpta-multi-device-overview.md)）。下文将详细介绍它们在“一多”开发实践中如何使用。
+* [UX设计](multi-picture-app.md#section18771832172516)：介绍图片美化应用的交互逻辑和通用设计要点，对于类似的设计要点，开发者可以直接参考。
+* [工程管理](multi-picture-app.md#section73711812196)：推荐“一多”项目采用分层架构，明确各层逻辑。同时，介绍图片美化应用适用的三层架构配置。
+* [移动端页面](multi-picture-app.md#section202931220101020)和[电脑端页面](multi-picture-app.md#section5748352172710)：遵循实际应用开发流程，以页面为基本单元，逐项讲解各页面在窗口适配、页面开发的设计思路与实现方法。
 
 ## UX设计
 
-本示例中的图片美化应用包含相册、大图预览、图片编辑页面。详细的UX设计可以参考[拍摄美化类设计](../design-guides/responsive-design-examples3-0000001746498074.md)。
+图片美化应用的UX设计可参考社交通讯类多设备响应式设计指南的[拍摄美化类](../design-guides/responsive-design-examples3-0000001746498074.md)章节，设计参考图如下所示。
 
-## 架构设计
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/DMM3MFaFScW_5FckYM2Ukw/zh-cn_image_0000002610145561.png "点击放大")
 
-HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特性层和公共能力层，为开发者构建了一个清晰、高效、可扩展的设计架构。更多详情请参考[分层架构设计](bpta-layered-architecture-design.md)。
+## 工程管理
 
-## 页面开发
+为确保“一多”工程代码的可复用性与可维护性，推荐开发者采用分层架构组织代码工程。分层架构将项目划分为产品定制层（products）、基础特性层（features）和公共能力层（common）三个层级，各层级权责明确且功能独立，为开发者提供了清晰、高效且可扩展的设计架构。关于分层架构的具体设计细节，可参考[分层架构设计](bpta-layered-architecture-design.md)。
 
-本章介绍图片美化应用中如何使用“一多”布局能力，完成页面层级的代码编写和多端适配，同时介绍图片美化应用中的[交互开发](multi-picture-app.md#section255214446101)。
+### 创建工程
 
-### 布局能力
+建议开发者参考[多设备工程部署与发布](bpta-multi-device-ide.md)相关内容，在掌握分层架构工程的创建与配置方法后，创建模板项目工程，并根据图片美化应用的开发需求进行针对性修改，确保工程架构贴合实际业务需求。
 
-本节介绍每个页面区域的具体布局能力，帮助开发者从零开始进行图片美化应用的开发。
+### 工程结构
 
-**相册**
+图片美化应用基于推荐的分层架构，按products、features、common三个层级组织代码工程。每个层级的设计如下：
 
-相册页显示所有图片。通过观察相册页在折叠屏上的UX设计图，可以进行如下设计：
+* products层：图片美化应用需适配的设备包括直板机、双折叠（Mate X系列）、三折叠、阔折叠、平板和电脑。由于电脑设备的界面布局与其他设备差异较大，因此在products层单独创建名称为“pc”的HAP包作为电脑端的应用入口；直板机、双折叠（Mate X系列）、三折叠、阔折叠和平板设备的界面布局整体相似，部分差异可通过“一多”[自适应布局](bpta-multi-device-adaptive-layout.md)和[响应式布局](bpta-multi-device-responsive-layout.md)适配，因此在products层创建名称为“default”的HAP包作为这些设备的应用入口。
+* features层：图片美化应用包含两个核心业务模块，分别为照片浏览（multipicturebrowsing）和照片编辑（multipictureediting）。在features层为两个业务模块分别创建对应的HAR包，供products层按需引用。两个业务模块相对独立，互不依赖，便于后续维护与迭代。
+* common层：为提升代码复用性、减少冗余，在common层集中存放公共常量、路由跳转工具及窗口管理工具等需被多个模块共用的基础能力，供其他模块统一调用。
 
-* 相册页的两个基础区域及其实现方案如下图所示：
+工程结构如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/Uwdey7ciT1yDjXi46hF-Yg/zh-cn_image_0000002194009916.png "点击放大")
+```screen
+├──features                                   
+│  ├──multipicturebrowsing                    // 照片浏览模块
+│  │  └──src/main
+│  │     ├──ets
+│  │     │  ├──constants                      // 照片浏览常量类
+│  │     │  ├──datasource                     // 照片数据源类
+│  │     │  ├──model                          // 照片浏览模块数据模型
+│  │     │  ├──view                           // 照片浏览模块视图
+│  │     │  └──viewmodel                      // 照片浏览模块视图模型
+│  │     └──resources                         // 照片浏览模块资源
+│  └──multipictureediting                     // 照片编辑模块
+│     └──src/main
+│        ├──ets
+│        │  ├──constants                      // 照片编辑常量类
+│        │  ├──model                          // 照片编辑模块数据模型
+│        │  ├──view                           // 照片编辑模块视图
+│        │  └──viewmodel                      // 照片编辑模块视图模型
+│        └──resources                         // 照片编辑模块资源
+├──multipicturecommon                                     
+│  └──src/main
+│     ├──ets
+│     │  ├──constants                         // 公共常量定义
+│     │  └──utils                             // 工具类
+│     └──resources                            // 公共资源
+└──products                                    
+  ├──multipicturedefaultsample                // 手机/平板设备
+  │  └──src/main
+  │     ├──ets
+  │     │  ├──constants                       // 常量类
+  │     │  ├──defaultability                  // 入口类
+  │     │  ├──defaultbackupability            // 应用数据备份恢复自定义拓展类
+  │     │  ├──model                           // 数据模型
+  │     │  ├──pages                           // 入口页面
+  │     │  ├──view                            // 视图
+  │     │  └──viewmodel                       // 视图模型
+  │     └──resources                          // 资源文件
+  └──multipicturepcsample                     // 电脑设备
+    └──src/main
+       ├──ets
+       │  ├──constants                        // 常量类
+       │  ├──model                            // 数据模型
+       │  ├──pages                            // 入口页面
+       │  ├──pcability                        // 入口类
+       │  └──pcbackupability                  // 应用数据备份恢复自定义拓展类
+       │  ├──view                             // 视图
+       │  └──viewmodel                        // 视图模型
+       └──resources                           // 资源文件
+```
 
-相册页的2个基础区域介绍及实现方案如下表所示：
+## 移动端页面
+
+本章介绍如何针对直板机、双折叠（Mate X系列）、三折叠、阔折叠和平板设备上的图片美化应用，使用“一多”布局能力，实现页面层级“一套代码、多端适配”的目标。同时，介绍这些设备上的窗口适配方案。
+
+### 窗口适配
+
+* 窗口模式
+
+  适配设备支持全屏、分屏、悬浮窗和自由窗口模式，具体参见[窗口模式](bpta-multi-device-window-mode.md)。其中，分屏模式与悬浮窗无需特殊设计，可通过系统方式进入。应用内需监听窗口尺寸变化，[通过断点刷新UI](bpta-multi-device-responsive-layout.md#section175001836203617)即可自动适配全屏、分屏、悬浮窗及自由窗口模式的布局。
+* 窗口方向
+
+  在类直板机型中推荐仅竖屏显示，在双折叠展开态、三折叠G态及平板等大屏幕场景下推荐支持四方向旋转，并受控于控制中心的旋转开关。图片美化类应用在module.json5配置文件中，建议设置orientation为FOLLOW\_DESKTOP，详细说明请参考[窗口方向](bpta-multi-device-window-direction.md)。
+* 窗口沉浸式
+
+  根据UX设计要求，需实现不同窗口模式（全屏、分屏、悬浮窗、自由窗口）下的沉浸式效果，具体实现指南请参考[窗口沉浸式](bpta-multi-device-window-immersive.md)。推荐开发者采用组件级沉浸方案（通过组件设置页面沉浸）实现效果，同时需执行动态安全区避让，确保沉浸式显示效果。自由窗口模式下应使用window.[setWindowDecorVisible()](../harmonyos-references/arkts-apis-window-window.md#setwindowdecorvisible11)隐藏标题栏，仅保留右上角三键。此时，应用页面延伸至标题栏区域，实现沉浸式显示效果。
+
+### 照片浏览页
+
+图片美化应用的照片浏览页主要用于展示照片和提供分类导航，以满足用户查看不同相册照片的需求。根据功能设计，将照片浏览页的相关内容划分为4个区域，效果如下：
+
+| 横向断点 | sm/md（横/纵断点） | sm | md | lg、xl |
+| --- | --- | --- | --- | --- |
+| 效果图 |  |  |  |  |
+
+**界面开发**
+
+具体介绍及实现方案如下表所示：
 
 | 区域编号 | 简介 | 实现方案 |
 | --- | --- | --- |
-| 1 | 顶部返回 | 使用[自适应布局](bpta-multi-device-adaptive-layout.md)实现左侧返回图标、文字以及右侧图标。 |
-| 2 | 相册列表 | 使用[网格布局](bpta-multi-device-page-layout.md#section1373617413916)实现相册列表。 |
+| 1 | 侧边导航栏 | 使用[HdsNavigation](../harmonyos-references/ui-design-hdsnavigation.md)组件实现，通过窗口宽度与高宽比，控制窗口变化时，修改mode单双栏显示。 |
+| 2 | 顶部标题栏 | 使用[HdsNavDestination](../harmonyos-references/ui-design-hdsnavdestination.md)组件设置[titleBar](../harmonyos-references/ui-design-hdsnavigation.md#titlebar)属性实现。在不同的设备宽度下组件自适应占满一屏。 |
+| 3 | 底部导航栏 | 使用[HdsTabs](../harmonyos-references/ui-design-hdstabs.md)组件实现，通过[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性设置页签悬浮样式。 |
+| 4 | 图片内容区 | 使用[Grid](../harmonyos-references/ts-container-grid.md)组件实现，通过[@Env环境变量](../harmonyos-references/ts-env-system-property.md)修改不同断点下columnsTemplate，显示不同的列数，并设置图片的[aspectioRatio](../harmonyos-references/ts-universal-attributes-layout-constraints.md#aspectratio)属性固定宽高比。 |
 
-示意图如下：
+### 照片编辑页
 
-| 示意图 | sm | md | lg |
-| --- | --- | --- | --- |
-| 效果图 |  |  |  |
+图片美化应用的照片编辑页主要用于一键套用预设滤镜，以满足用户的个性化表达需求。根据功能设计，将照片编辑页的相关内容划分为4个区域，效果如下：
 
-当组件区域宽度变化时，可以通过[onAreaChange()](../harmonyos-references/ts-universal-component-area-change-event.md#onareachange) 获取组件的相关信息，并调整相册列数。
+| 横向断点 | sm/md（横/纵断点） | sm | md | lg |
+| --- | --- | --- | --- | --- |
+| 消息页 |  |  |  |  |
 
-```
-1. Flex({ direction: FlexDirection.Column }) {
-2. // ...
-3. .onAreaChange((oldValue: Area, newValue: Area) => {
-4. this.gridColumn = this.getGridColumn(newValue.width);
-5. })
-6. // ...
-7. }
-```
+**界面开发**
 
-[AlbumView.ets](https://gitcode.com/harmonyos_codelabs/MultiPictureBeautification/blob/master/features/albumView/src/main/ets/views/AlbumView.ets#L162-L192)
-
-```
-1. // Change the number of Grid columns based on the width of the Grid component.
-2. getGridColumn(value: Length): number {
-3. return Math.floor(2 * ((parseInt(JSON.stringify(value)) / 360) - 1) + 4);
-4. }
-```
-
-[AlbumView.ets](https://gitcode.com/harmonyos_codelabs/MultiPictureBeautification/blob/master/features/albumView/src/main/ets/views/AlbumView.ets#L50-L53)
-
-**大图预览**
-
-大图预览显示一张图片。观察大图预览页在折叠屏上的用户体验设计图，可以进行以下设计：
-
-* 将大图预览页划分为4个区域，效果图如下：
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/904E5PH6R0GfJVTDQf7iuQ/zh-cn_image_0000002194009904.png "点击放大")
-
-大图预览页的4个基础区域及其实现方案如下表所示：
+具体介绍及实现方案如下表所示：
 
 | 区域编号 | 简介 | 实现方案 |
 | --- | --- | --- |
-| 1 | 顶部返回 | 使用[自适应布局](bpta-multi-device-adaptive-layout.md)实现左侧返回图标、文字以及右侧图标。 |
-| 2 | 图片展示 | 使用[Image](../harmonyos-references/ts-basic-components-image.md)组件展示图片。 |
-| 3 | 相册滚动展示 | 使用[List](../harmonyos-references/ts-container-list.md)实现相册滚动展示。 |
-| 4 | 图片操作 | 使用[自适应布局](bpta-multi-device-adaptive-layout.md)实现图标自适应摆放。 |
-
-示意图如下：
-
-| 示意图 | sm | md | lg |
-| --- | --- | --- | --- |
-| 效果图 |  |  |  |
-
-**图片编辑**
-
-在折叠屏中，可以切换图片区域和编辑操作区域的位置。观察折叠屏上的图片编辑页UX设计图，可以这样设计：
-
-* 图片编辑页划分为3个区域，效果图如下：
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/2ST3LhuNSJ65Na987PMgcA/zh-cn_image_0000002502028274.png "点击放大")
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/isOak9SyQEWXzXP34YzOsQ/zh-cn_image_0000002501868592.png "点击放大")
-
-* 区域2与区域3使用[Flex](../harmonyos-references/ts-container-flex.md)组件实现左右摆放与上下摆放的切换
-
-图片编辑的3个基础区域及其实现方案如下表所示：
-
-| 区域编号 | 简介 | 实现方案 |
-| --- | --- | --- |
-| 1 | 顶部返回 | 使用[自适应布局](bpta-multi-device-adaptive-layout.md)实现左侧返回图标、文字以及右侧图标。 |
-| 2 | 图片展示 | 使用[Image](../harmonyos-references/ts-basic-components-image.md)组件展示图片。 |
-| 3 | 编辑操作栏 | 使用[Flex](../harmonyos-references/ts-container-flex.md)组件实现编辑操作栏的自适应摆放。 |
-
-示意图如下：
-
-| 示意图 | sm | md | lg |
-| --- | --- | --- | --- |
-| 效果图 |  |  |  |
+| 1 | 顶部标题栏 | 使用[Row](../harmonyos-references/ts-container-row.md)组件自定义TitleView实现。在不同的设备宽度下组件自适应占满一屏。 |
+| 2 | 底部/侧边工具栏 | 使用[Flex](../harmonyos-references/ts-container-flex.md)组件实现，通过窗口宽度与高宽比，控制窗口变化时，子组件排列方向为Row或Column。 |
+| 3 | 图片内容区 | 使用堆叠容器[Stack](../harmonyos-references/ts-container-stack.md)组件嵌套[Image](../harmonyos-references/ts-basic-components-image.md)组件实现，设置图片的[aspectioRatio](../harmonyos-references/ts-universal-attributes-layout-constraints.md#aspectratio)属性固定宽高比。并通过监听断点变化，动态调整两侧边距。 |
+| 4 | 警告弹窗 | 使用[警告弹窗AlertDialog](../harmonyos-references/ts-methods-alert-dialog-box.md)实现，仅在PuraX外屏等小屏场景弹出。 |
 
 ### 交互开发
 
-针对不同类型的智能设备，交互方式包括触摸屏、鼠标、触控板等。单独适配各种交互方式会增加开发工作量并产生大量重复代码。为了解决这一问题，我们统一了各种交互方式的API，实现了[多设备交互](bpta-multi-interaction.md)。常见的交互方式有触屏事件、键鼠事件、焦点事件。图片美化涉及的交互主要为图片的缩放。
+在照片浏览页面，用户可通过双指缩放手势动态调整图片宫格布局的显示大小。双指向外张开时，宫格放大，每行图片数量减少；双指向内捏合时，宫格缩小，每行图片数量增多。效果图如下：
 
-**双指缩放**
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/4qtJHiaNSTyAgmjWJd71Kw/zh-cn_image_0000002579625672.gif "点击放大")
 
-在触控屏和触控板上，使用双指捏合或张开可实现缩放功能。本文有两处提到双指缩放操作：
+使用[PinchGesture](../harmonyos-references/ts-basic-gestures-pinchgesture.md)实现双指捏合手势触发时，动态修改Grid组件的显示列数。开发详情请参考[多设备交互](bpta-multi-interaction.md#section182814229423)或[示例代码](multi-picture-app.md#section23671643329)。
 
-* 相册页，双指缩放控制相册中图片列数变更。可以参考[多设备长视频界面](multi-video-app.md#zh-cn_topic_0000001744653537_section3198710114717)。
-* 大图预览页，双指缩放控制图片的宽高变更。
+## 电脑端页面
 
-  双指缩放使用[PinchGesture()](../harmonyos-references/ts-basic-gestures-pinchgesture.md) API实现， 当触发双指缩放时，可以实时获取缩放比例参数，传入[scale()](../harmonyos-references/ts-universal-attributes-transformation.md#scale) API（控制组件缩放的API）即可调整图片的比例。
+本章介绍如何基于现有移动端界面开发方案实现布局复用，以高效完成电脑设备上图片美化应用的界面开发，同时介绍电脑端的窗口适配方案。
 
-  ```
-  1. Row() {
-  2. Column() {
-  3. Image($r('app.media.photo'))
-  4. .autoResize(true)
-  5. }
-  6. }
-  7. // ...
-  8. .scale({ x: this.scaleValue, y: this.scaleValue, z: 1 })
-  9. .gesture(PinchGesture({ fingers: 2 })
-  10. .onActionUpdate((event: GestureEvent | undefined) => {
-  11. if (event) {
-  12. this.scaleValue = this.pinchValue * event.scale;
-  13. }
-  14. })
-  15. .onActionEnd(() => {
-  16. this.pinchValue = this.scaleValue;
-  17. }))
-  ```
+### 窗口适配
 
-  [CenterPart.ets](https://gitcode.com/harmonyos_codelabs/MultiPictureBeautification/blob/master/features/pictureView/src/main/ets/view/CenterPart.ets#L29-L48)
+* 窗口模式
+
+  适配设备支持全屏与自由窗口模式，详情请参考[窗口模式](bpta-multi-device-window-mode.md)。应用内监听窗口尺寸变化，[通过断点刷新UI](bpta-multi-device-responsive-layout.md#section175001836203617)，即可自动适配全屏与自由窗口模式下的布局。
+* 窗口方向
+
+  电脑设备上应用的窗口方向跟随屏幕方向显示，不支持开发者自定义，相关内容请参考[窗口方向](bpta-multi-device-window-direction.md)。
+* 窗口沉浸式
+
+  根据UX设计要求，需在自由窗口模式下实现沉浸式效果。推荐开发者使用window.setWindowDecorVisible(false)隐藏标题栏，仅保留右上角三键，并设置三键大小及右侧进行。此时应用页面拓展至标题栏区域，实现沉浸式显示效果，详情可参考[窗口沉浸式](bpta-multi-device-window-immersive.md)。
+
+### 照片浏览页
+
+图片美化应用的照片浏览页主要用于展示照片及分类导航，以满足用户查看不同相册照片的需求。根据功能设计，将照片浏览页相关内容划分为3个区域，效果如下：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/n5Afp7R9TnaeRDHlvpyGzw/zh-cn_image_0000002579785584.png "点击放大")
+
+**界面开发**
+
+具体介绍及实现方案如下表所示：
+
+| 区域编号 | 简介 | 实现方案 |
+| --- | --- | --- |
+| 1 | 侧边导航栏 | 同移动端[照片浏览页](multi-picture-app.md#section6120145294418)对应区域的布局实现方案一致。 |
+| 2 | 顶部标题栏 |
+| 3 | 图片内容区 |
+
+### 照片编辑页
+
+图片美化应用的照片编辑页主要用于一键套用预设滤镜，以满足用户的个性化表达需求。根据功能设计，将照片编辑页的相关内容划分为3个区域，效果如下：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/twA8Ma3TSpOwne5f4NRl2w/zh-cn_image_0000002610065459.png "点击放大")
+
+**界面开发**
+
+具体介绍及实现方案如下表所示：
+
+| 区域编号 | 简介 | 实现方案 |
+| --- | --- | --- |
+| 1 | 顶部标题栏 | 同移动端[照片编辑页](multi-picture-app.md#section36831643877)对应区域的布局实现方案一致。 |
+| 2 | 底部/侧边工具栏 |
+| 3 | 图片内容区 |
+
+### 交互开发
+
+在照片浏览页面，电脑端支持通过触控屏或触控板的双指捏合操作实现图片宫格布局的动态缩放切换，两种交互事件均可由PinchGesture实现，详情可参考移动端[交互开发](multi-picture-app.md#section4985124512505)。
 
 ## 示例代码
 
-* [多设备图片美化界面](https://gitcode.com/harmonyos_codelabs/MultiPictureBeautification)
+* [多设备图片美化界面](https://gitcode.com/HarmonyOS_Samples/MultiPictureBeautification)

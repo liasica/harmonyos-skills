@@ -3,28 +3,29 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 修改策略
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 守护策略管理 > 修改策略
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:40:29+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:39a3a09ab107f0b0ac5e43a391da794a4df03cd954ba1dff0a6620bad2d11dea
+scraped_at: 2026-09-02T15:00:02+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:7b2ca1c13d7a60c7f2756792106a9a6b16e8f361365983f7479dbca61db8148a
 ---
 
 ## 场景介绍
 
-当用户希望调整现有的屏幕时间守护规则时，可以调用更新管控策略的接口。我们kit支持根据参数中传入的策略名以及修改策略的方案，用户可以修改各种策略，如调整各个应用的停用起止时间。一旦修改完成并保存，系统将根据新的规则对用户的屏幕使用行为进行管控。
+当管控应用希望调整现有的管控策略时，可以调用更新管控策略的接口。Screen Time Guard Kit支持根据参数中传入的策略名以及新的管控策略来修改指定策略，如调整被管控应用的停用时间。一旦修改完成并保存，系统将根据新的规则对用户的屏幕使用行为进行管控。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/l26cj4DnRQ2miBkVVMGyHw/zh-cn_image_0000002589325541.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/vJ3Su0mTQW6fPnQlDAITMA/zh-cn_image_0000002706675258.png)
 
 流程说明：
 
 1. 应用调用更新管控策略的接口时，会拉起健康使用设备查询本应用是否已申请权限，以及用户是否对本应用授权。
-2. 若没有权限，则抛出相应错误码；若有权限，则解析参数中传入的策略，并判断策略是否有效、是否存在。
+2. 若开发者没有权限或用户没有授权，则抛出相应错误码。若开发者有权限且用户已授权，则解析参数中传入的策略，并判断策略是否有效、是否存在。
 3. 若策略有效，则记录到本地数据库，策略完成修改；否则，抛出相应错误码。
 
-说明
+**说明** 
 
-1. 更新管控策略的策略名需和当前已有的策略一致，否则会抛出策略不存在错误。
+1. 待更新管控策略的策略名需和当前已有的策略一致，否则会抛出策略不存在错误。
+2. 新的策略名可以和当前待更新的策略名一致，除此之外，不能和其他当前已有的策略一致，否则会抛出参数错误。
 
 ## 接口说明
 
@@ -42,49 +43,21 @@ content_hash: sha256:39a3a09ab107f0b0ac5e43a391da794a4df03cd954ba1dff0a6620bad2d
 
 1. 导入相关模块。
 
-   ```
-   1. import { guardService, appPicker } from '@kit.ScreenTimeGuardKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
-   3. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { guardService } from '@kit.ScreenTimeGuardKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 调用updateGuardStrategy，修改管控策略。
 
-   ```
-   1. @Entry
-   2. @Component
-   3. struct TestPage {
-   4. build() {
-   5. Column() {
-   6. Button("TestUpdateGuardStrategy")
-   7. .onClick(async () => {
-   8. try {
-   9. // 先调用startAppPicker获取相应应用的token
-   10. const tokens = await appPicker.startAppPicker(this.getUIContext().getHostContext(), { appTokens: [] });
-
-   12. const strategyName = "TestStrategy";
-   13. const time: guardService.TimeStrategy = {
-   14. type: guardService.TimeStrategyType.START_END_TIME_TYPE,
-   15. startTime: "08:00",
-   16. endTime: "19:00",
-   17. repeat: [1,2,3]
-   18. }
-   19. const info: guardService.AppInfo = {
-   20. appTokens: tokens
-   21. }
-   22. const strategy: guardService.GuardStrategy = {
-   23. name: strategyName,
-   24. timeStrategy: time,
-   25. appInfo: info,
-   26. appRestrictionType: guardService.RestrictionType.BLOCKLIST_TYPE
-   27. }
-   28. await guardService.updateGuardStrategy(strategyName, strategy);
-   29. } catch (err) {
-   30. const message = (err as BusinessError).message;
-   31. const code = (err as BusinessError).code;
-   32. hilog.error(0x0000, `ScreenTimeGuard:updateGuardStrategy`, `updateGuardStrategy failed with error code: ${code}, message: ${message}`);
-   33. }
-   34. })
-   35. }
-   36. }
-   37. }
+   ```typescript
+   private async updateStrategy(strategyName: string, guardStrategy: guardService.GuardStrategy): Promise<void> {
+     try {
+       await guardService.updateGuardStrategy(strategyName, guardStrategy);
+     } catch (error) {
+       let err: BusinessError = error as BusinessError;
+       hilog.error(0x0000, 'GuardService',
+         `updateGuardStrategy failed, errCode is ${err.code}, errMessage is ${err.message}`);
+     }
+   }
    ```

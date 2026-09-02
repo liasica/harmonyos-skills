@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/ide-changelogs-504-release
 title: 变更说明
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.4(16) > DevEco Studio > 变更说明
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.4(16) > DevEco Studio > 变更说明
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:29+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:c5b9ae1863efc96622765c7c108eaddd143c0ba1e3e94cfcbe2ad8a48afdb51e
+scraped_at: 2026-09-02T14:49:23+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:df3b3ac05b4092ec83c924b8b5faeefcae17772a9855ababc9eeb550c6fe6bdf
 ---
 
 ## DevEco Studio连接设备时更改设备日志输出等级为INFO
@@ -22,6 +22,6 @@ content_hash: sha256:c5b9ae1863efc96622765c7c108eaddd143c0ba1e3e94cfcbe2ad8a48af
 
 连接DevEco Studio时，可通过以下命令自定义设备日志输出等级。
 
-```
-1. hdc shell hilog -b <loglevel>
+```screen
+hdc shell hilog -b <loglevel>
 ```

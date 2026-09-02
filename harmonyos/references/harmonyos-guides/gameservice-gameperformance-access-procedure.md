@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 开发指导(ArkTS)
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏场景感知（可选） > 开发指导(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:38:11+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6d5fe6c6000159cf69c941f340e8dd68429c9518c139edc295f80b55a5a0db57
+scraped_at: 2026-09-02T14:59:55+08:00
+doc_updated_at: 2026-07-03
+content_hash: sha256:28c8e99f415f1463ad28d240da527cc9cce8a7be9f9b6f3a050ab454dc824133
 ---
 
 游戏场景感知包括：
@@ -15,7 +15,7 @@ content_hash: sha256:6d5fe6c6000159cf69c941f340e8dd68429c9518c139edc295f80b55a5a
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/wZknRLVXSAWEMx6YxMKruQ/zh-cn_image_0000002589245205.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/N_9u2xgZSN-luE1LNAAxcw/zh-cn_image_0000002736314025.png)
 
 1. 游戏启动后调用[gamePerformance.init](../harmonyos-references/gameservice-gameperformance.md#gameperformanceinit)接口对游戏场景感知进行初始化。
 2. 初始化成功后，游戏调用[gamePerformance.on](../harmonyos-references/gameservice-gameperformance.md#gameperformanceondevicestatechanged)接口注册设备状态变化事件监听，订阅设备状态变化通知。
@@ -27,7 +27,7 @@ content_hash: sha256:6d5fe6c6000159cf69c941f340e8dd68429c9518c139edc295f80b55a5a
 8. 如不再需要订阅，游戏可调用[gamePerformance.off](../harmonyos-references/gameservice-gameperformance.md#gameperformanceoffdevicestatechanged)接口取消设备状态变化事件监听。
 9. 游戏调用[gamePerformance.getDeviceInfoByScope](../harmonyos-references/gameservice-gameperformance.md#gameperformancegetdeviceinfobyscope)接口向游戏场景感知主动查询设备状态信息。
 
-说明
+**说明** 
 
 Mali系列GPU不支持采集GPU性能信息，调用订阅和查询设备状态信息接口时无法获取设备GPU性能信息。
 
@@ -50,173 +50,173 @@ Mali系列GPU不支持采集GPU性能信息，调用订阅和查询设备状态�
 
 导入Game Service Kit及公共模块。
 
-```
-1. import { gamePerformance } from '@kit.GameServiceKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { gamePerformance } from '@kit.GameServiceKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 ```
 
 ### 初始化
 
 导入相关模块后，需先调用[init](../harmonyos-references/gameservice-gameperformance.md#gameperformanceinit)接口对游戏场景感知进行初始化。
 
-说明
+**说明** 
 
 init接口是调用其他接口的前提，如果未初始化或初始化失败，将无法调用其他接口。
 
-```
-1. let gamePackageInfo: gamePerformance.GamePackageInfo = {
-2. messageType: 0,
-3. bundleName: "com.example.demo", // 仅示例，请替换为实际的游戏包名
-4. appVersion: "1.0"
-5. }
-6. try {
-7. gamePerformance.init(gamePackageInfo).then(() => {
-8. // 初始化成功
-9. hilog.info(0x0001, 'demo', `Succeeded in initializing.`);
-10. })
-11. } catch (error) {
-12. // 初始化失败
-13. let err = error as BusinessError;
-14. hilog.error(0x0001, 'demo', `Failed to initialize. Code: ${err.code}, message: ${err.message}`);
-15. }
+```typescript
+let gamePackageInfo: gamePerformance.GamePackageInfo = {
+  messageType: 0,
+  bundleName: 'com.example.demo', // 请替换为实际的游戏包名
+  appVersion: '1.0'
+};
+try {
+  gamePerformance.init(gamePackageInfo).then(() => {
+    // 初始化成功
+    hilog.info(0x0001, 'demo', `Succeeded in initializing.`);
+  });
+} catch (error) {
+  // 初始化失败
+  let err = error as BusinessError;
+  hilog.error(0x0001, 'demo', `Failed to initialize. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ### 订阅设备状态变化
 
 调用[on](../harmonyos-references/gameservice-gameperformance.md#gameperformanceondevicestatechanged)接口可以订阅设备状态变化事件，获取设备状态变化的通知（如设备温控档位）。
 
-```
-1. function onDeviceStateChange(data:gamePerformance.DeviceInfo) {
-2. // 设备信息详情
-3. hilog.info(0x0001, 'demo', `device state changed. tempLevel is ${data.tempLevel}`);
-4. }
+```typescript
+function onDeviceStateChange(data:gamePerformance.DeviceInfo) {
+  // 设备信息详情
+  hilog.info(0x0001, 'demo', `device state changed. tempLevel is ${data.tempLevel}`);
+}
 
-6. // 订阅deviceStateChanged事件
-7. try {
-8. gamePerformance.on('deviceStateChanged', onDeviceStateChange);
-9. } catch (error) {
-10. // 订阅失败
-11. let err = error as BusinessError;
-12. hilog.error(0x0001, 'demo', `Failed to subscribe. Code: ${err.code}, message: ${err.message}`);
-13. }
+// 订阅deviceStateChanged事件
+try {
+  gamePerformance.on('deviceStateChanged', onDeviceStateChange);
+} catch (error) {
+  // 订阅失败
+  let err = error as BusinessError;
+  hilog.error(0x0001, 'demo', `Failed to subscribe. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 目前支持订阅GPU和温度变化趋势两种类型的设备状态数据，也可以调用[on](../harmonyos-references/gameservice-gameperformance.md#gameperformanceondevicestatechanged-1)接口按需订阅，如只订阅GPU数据：
 
-```
-1. function onDeviceStateChange(data:gamePerformance.DeviceInfo) {
-2. // data中仅含有gpuInfo
-3. hilog.info(0x0001, 'demo', `device state changed. tempLevel is ${data.tempLevel}`);
-4. }
+```typescript
+function onDeviceStateChange(data:gamePerformance.DeviceInfo) {
+  // data中仅含有gpuInfo
+  hilog.info(0x0001, 'demo', `device state changed. tempLevel is ${data.tempLevel}`);
+}
 
-6. // 订阅deviceStateChanged事件
-7. try {
-8. let types:Array<gamePerformance.DeviceInfoType> = [gamePerformance.DeviceInfoType.GPU];
-9. gamePerformance.on('deviceStateChanged', onDeviceStateChange, types);
-10. } catch (error) {
-11. // 订阅失败
-12. let err = error as BusinessError;
-13. hilog.error(0x0001, 'demo', `Failed to subscribe. Code: ${err.code}, message: ${err.message}`);
-14. }
+// 订阅deviceStateChanged事件
+try {
+  let types:Array<gamePerformance.DeviceInfoType> = [gamePerformance.DeviceInfoType.GPU];
+  gamePerformance.on('deviceStateChanged', onDeviceStateChange, types);
+} catch (error) {
+  // 订阅失败
+  let err = error as BusinessError;
+  hilog.error(0x0001, 'demo', `Failed to subscribe. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ### 上报游戏信息
 
 初始化成功后，可以通过调用[updateGameInfo](../harmonyos-references/gameservice-gameperformance.md#gameperformanceupdategameinfo)接口上报游戏信息（包信息、配置信息、场景信息和网络信息等）。若需上报自定义数据，可调用[addGameCustomData](../harmonyos-references/gameservice-gameperformance.md#gameperformanceaddgamecustomdata)接口。
 
-```
-1. // 以更新游戏场景信息为例
-2. let gameSceneInfo: gamePerformance.GameSceneInfo = {
-3. messageType: 2,
-4. sceneID: 7,
-5. importanceLevel: 4
-6. }
-7. try {
-8. gamePerformance.updateGameInfo(gameSceneInfo).then(() => {
-9. // 更新游戏场景信息成功
-10. hilog.info(0x0001, 'demo', `Succeeded in updating.`);
-11. });
-12. } catch (error) {
-13. // 更新游戏场景信息失败
-14. let err = error as BusinessError;
-15. hilog.error(0x0001, 'demo', `Failed to update. Code: ${err.code}, message: ${err.message}`);
-16. }
+```typescript
+// 以更新游戏场景信息为例
+let gameSceneInfo: gamePerformance.GameSceneInfo = {
+  messageType: 2,
+  sceneID: 7,
+  importanceLevel: 4
+};
+try {
+  gamePerformance.updateGameInfo(gameSceneInfo).then(() => {
+    // 更新游戏场景信息成功
+    hilog.info(0x0001, 'demo', `Succeeded in updating.`);
+  });
+} catch (error) {
+  // 更新游戏场景信息失败
+  let err = error as BusinessError;
+  hilog.error(0x0001, 'demo', `Failed to update. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ### 取消订阅设备状态
 
 如不再需要订阅，则可以通过调用[off](../harmonyos-references/gameservice-gameperformance.md#gameperformanceoffdevicestatechanged)接口取消订阅设备状态。
 
-```
-1. function onDeviceStateChange(data:gamePerformance.DeviceInfo) {
-2. // 设备信息详情
-3. hilog.info(0x0001, 'demo', `device state changed. tempLevel is ${data.tempLevel}`);
-4. }
+```typescript
+function onDeviceStateChange(data:gamePerformance.DeviceInfo) {
+  // 设备信息详情
+  hilog.info(0x0001, 'demo', `device state changed. tempLevel is ${data.tempLevel}`);
+}
 
-6. // 取消订阅deviceStateChanged事件
-7. try {
-8. gamePerformance.off('deviceStateChanged', onDeviceStateChange);
-9. } catch (error) {
-10. // 取消订阅失败
-11. let err = error as BusinessError;
-12. hilog.error(0x0001, 'demo', `Failed to unsubscribe. Code: ${err.code}, message: ${err.message}`);
-13. }
+// 取消订阅deviceStateChanged事件
+try {
+  gamePerformance.off('deviceStateChanged', onDeviceStateChange);
+} catch (error) {
+  // 取消订阅失败
+  let err = error as BusinessError;
+  hilog.error(0x0001, 'demo', `Failed to unsubscribe. Code: ${err.code}, message: ${err.message}`);
+}
 
-15. // 取消deviceStateChanged事件的全部订阅
-16. try {
-17. gamePerformance.off("deviceStateChanged");
-18. } catch (error) {
-19. // 取消订阅失败
-20. let err = error as BusinessError;
-21. hilog.error(0x0001, 'demo', `Failed to unsubscribe. Code: ${err.code}, message: ${err.message}`);
-22. }
+// 取消deviceStateChanged事件的全部订阅
+try {
+  gamePerformance.off('deviceStateChanged');
+} catch (error) {
+  // 取消订阅失败
+  let err = error as BusinessError;
+  hilog.error(0x0001, 'demo', `Failed to unsubscribe. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ### 查询设备状态信息
 
 除订阅设备状态变化的方式外，也可以通过调用[getDeviceInfoByScope](../harmonyos-references/gameservice-gameperformance.md#gameperformancegetdeviceinfobyscope)接口主动查询设备状态：
 
-```
-1. // 查询设备状态
-2. try {
-3. let gpuParam: gamePerformance.DeviceInfoParameter = {
-4. deviceInfoType: gamePerformance.DeviceInfoType.GPU
-5. }
-6. let thermalParam: gamePerformance.DeviceInfoParameter = {
-7. deviceInfoType: gamePerformance.DeviceInfoType.THERMAL
-8. }
-9. let gameInfos: Array<gamePerformance.DeviceInfoParameter> = [gpuParam, thermalParam];
-10. gamePerformance.getDeviceInfoByScope(gameInfos).then((deviceInfo:gamePerformance.DeviceInfo) => {
-11. hilog.info(0x0001, 'demo', `Succeeded in querying device info. tempLevel is ${deviceInfo.tempLevel}`);
-12. });
-13. } catch (error) {
-14. // 查询失败
-15. let err = error as BusinessError;
-16. hilog.error(0x0001, 'demo', `Failed to query. Code: ${err.code}, message: ${err.message}`);
-17. }
+```typescript
+// 查询设备状态
+try {
+  let gpuParam: gamePerformance.DeviceInfoParameter = {
+    deviceInfoType: gamePerformance.DeviceInfoType.GPU
+  };
+  let thermalParam: gamePerformance.DeviceInfoParameter = {
+    deviceInfoType: gamePerformance.DeviceInfoType.THERMAL
+  };
+  let gameInfos: Array<gamePerformance.DeviceInfoParameter> = [gpuParam, thermalParam];
+  gamePerformance.getDeviceInfoByScope(gameInfos).then((deviceInfo:gamePerformance.DeviceInfo) => {
+    hilog.info(0x0001, 'demo', `Succeeded in querying device info. tempLevel is ${deviceInfo.tempLevel}`);
+  });
+} catch (error) {
+  // 查询失败
+  let err = error as BusinessError;
+  hilog.error(0x0001, 'demo', `Failed to query. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 主动查询接口同样支持按需查询，如只查询温度变化趋势数据：
 
-```
-1. // 只查询设备温度数据
-2. try {
-3. let thermalParam: gamePerformance.DeviceInfoParameter = {
-4. deviceInfoType: gamePerformance.DeviceInfoType.THERMAL
-5. }
-6. let gameInfos: Array<gamePerformance.DeviceInfoParameter> = [thermalParam];
-7. gamePerformance.getDeviceInfoByScope(gameInfos).then((deviceInfo:gamePerformance.DeviceInfo) => {
-8. // 此处的查询结果中将不含有gpuInfo
-9. hilog.info(0x0001, 'demo', `Succeeded in querying device info. tempLevel is ${deviceInfo.tempLevel}`);
-10. });
-11. } catch (error) {
-12. // 查询失败
-13. let err = error as BusinessError;
-14. hilog.error(0x0001, 'demo', `Failed to query. Code: ${err.code}, message: ${err.message}`);
-15. }
+```typescript
+// 只查询设备温度数据
+try {
+  let thermalParam: gamePerformance.DeviceInfoParameter = {
+    deviceInfoType: gamePerformance.DeviceInfoType.THERMAL
+  };
+  let gameInfos: Array<gamePerformance.DeviceInfoParameter> = [thermalParam];
+  gamePerformance.getDeviceInfoByScope(gameInfos).then((deviceInfo:gamePerformance.DeviceInfo) => {
+    // 此处的查询结果中将不含有gpuInfo
+    hilog.info(0x0001, 'demo', `Succeeded in querying device info. tempLevel is ${deviceInfo.tempLevel}`);
+  });
+} catch (error) {
+  // 查询失败
+  let err = error as BusinessError;
+  hilog.error(0x0001, 'demo', `Failed to query. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
-说明
+**说明** 
 
 查询温度变化趋势需要历史数据作为计算依据，调用该接口时请保证设备已启动至少一分钟，否则会返回1010300003错误。

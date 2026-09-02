@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-command-li
 title: 如何查看项目中har版本冲突
 breadcrumb: FAQ > DevEco Studio > 命令行工具 > 如何查看项目中har版本冲突
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:23+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:18+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:a6b8808092ef711d8e1e09733c9b194134ca0e8d5881c2700b0696ffa4617867
 ---
 

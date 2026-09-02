@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-383
 title: Surface模式下的XComponent组件在设置renderFit后如果出现显示异常，该如何调整以获得正确的显示效果
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > Surface模式下的XComponent组件在设置renderFit后如果出现显示异常，该如何调整以获得正确的显示效果
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Surface模式下的XComponent组件在设置renderFit后如果出现显示异常，该如何调整以获得正确的显示效果
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:39+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:4d78f575b10ea619f130e32c10fb1b32a923226a3bd7ce8a0c5691977f0dc2a2
+scraped_at: 2026-09-02T14:53:59+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:116eb38ae7dceb9afbc8076f0dfde9e9d541f27e2bbf58d6c9b10c3c8374186c
 ---
 
 **解决措施**
@@ -14,28 +14,26 @@ content_hash: sha256:4d78f575b10ea619f130e32c10fb1b32a923226a3bd7ce8a0c5691977f0
 
 **示例代码**
 
-```
-1. @Entry
-2. @Component
-3. struct XComponentSurfaceRenderFit {
-4. @State xcWidth: number = 500;
-5. @State xcHeight: number = 700;
-6. myXComponentController: XComponentController = new XComponentController();
+```ts
+@Entry
+@Component
+struct XComponentSurfaceRenderFit {
+  @State xcWidth: number = 500;
+  @State xcHeight: number = 700;
+  myXComponentController: XComponentController = new XComponentController();
 
-8. build() {
-9. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Start }) {
-10. XComponent({
-11. id: 'myXComponent_RenderFitSurface', // When the string of the id contains "RenderFitSurface", RenderFit can be displayed correctly
-12. type: XComponentType.SURFACE,
-13. controller: this.myXComponentController
-14. })
-15. .width(this.xcWidth)
-16. .height(this.xcHeight)
-17. .renderFit(RenderFit.CENTER)
-18. }
-19. .width('100%')
-20. }
-21. }
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Start }) {
+      XComponent({
+        id: 'myXComponent_RenderFitSurface', // When the string of the id contains "RenderFitSurface", RenderFit can be displayed correctly
+        type: XComponentType.SURFACE,
+        controller: this.myXComponentController
+      })
+        .width(this.xcWidth)
+        .height(this.xcHeight)
+        .renderFit(RenderFit.CENTER)
+    }
+    .width('100%')
+  }
+}
 ```
-
-[XComponentSurfaceRenderFit.ets](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkUI/entry/src/main/ets/pages/XComponentSurfaceRenderFit.ets#L20-L41)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-animate
 title: 动画帧
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 动效开发指导 > JS动画 > 插值器动画 > 动画帧
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:56+08:00
+scraped_at: 2026-09-02T14:59:21+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:859846d13b664245cdffebf923b6f8dba501b5d2424866e50a59ba62f28f0b39
+content_hash: sha256:b42e4682bf10b7d557ef3f48704aca6aa340572fed362c65311c23c9d846cd15
 ---
 
 ## 请求动画帧
@@ -14,96 +14,96 @@ content_hash: sha256:859846d13b664245cdffebf923b6f8dba501b5d2424866e50a59ba62f28
 
 runframe在调用requestAnimationFrame时传入带有timestamp参数的回调函数step，将step中的timestamp赋予起始的startTime。当timestamp与startTime的差值小于规定的时间时，会再次调用requestAnimationFrame，最终动画将会停止。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <tabs onchange="changecontent">
-4. <tab-content>
-5. <div class="container">
-6. <stack style="width: 300px;height: 300px;margin-top: 100px;margin-bottom: 100px;">
-7. <canvas id="mycanvas" style="width: 100%;height: 100%;background-color: coral;">
-8. </canvas>
-9. <div style="width: 50px;height: 50px;border-radius: 25px;background-color: indigo;position: absolute;left: {{left}};top: {{top}};">
-10. </div>
-11. </stack>
-12. <button type="capsule" value="play" onclick="runframe"></button>
-13. </div>
-14. </tab-content>
-15. </tabs>
-16. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. flex-direction: column;
-4. justify-content: center;
-5. align-items: center;
-6. width: 100%;
-7. height: 100%;
-8. }
-9. button{
-10. width: 300px;
-11. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <tabs onchange="changecontent">
+    <tab-content>
+      <div class="container">
+        <stack style="width: 300px;height: 300px;margin-top: 100px;margin-bottom: 100px;">
+          <canvas id="mycanvas" style="width: 100%;height: 100%;background-color: coral;">
+          </canvas>
+          <div style="width: 50px;height: 50px;border-radius: 25px;background-color: indigo;position: absolute;left: {{left}};top: {{top}};">
+          </div>
+        </stack>
+        <button type="capsule" value="play" onclick="runframe"></button>
+      </div>
+    </tab-content>
+  </tabs>
+</div>
 ```
 
-```
-1. // xxx.js
-2. export default {
-3. data: {
-4. timer: null,
-5. left: 0,
-6. top: 0,
-7. flag: true,
-8. animation: null,
-9. startTime: 0,
-10. },
-11. onShow() {
-12. var test = this.$element("mycanvas");
-13. var ctx = test.getContext("2d");
-14. ctx.beginPath();
-15. ctx.moveTo(0, 0);
-16. ctx.lineTo(300, 300);
-17. ctx.lineWidth = 5;
-18. ctx.strokeStyle = "red";
-19. ctx.stroke();
-20. },
-21. runframe() {
-22. this.left = 0;
-23. this.top = 0;
-24. this.flag = true;
-25. this.animation = requestAnimationFrame(this.step);
-26. },
-27. step(timestamp) {
-28. if (this.flag) {
-29. this.left += 5;
-30. this.top += 5;
-31. if (this.startTime == 0) {
-32. this.startTime = timestamp;
-33. }
-34. var elapsed = timestamp - this.startTime;
-35. if (elapsed < 500) {
-36. console.info('callback step timestamp: ' + timestamp);
-37. this.animation = requestAnimationFrame(this.step);
-38. }
-39. } else {
-40. this.left -= 5;
-41. this.top -= 5;
-42. this.animation = requestAnimationFrame(this.step);
-43. }
-44. if (this.left == 250 || this.left == 0) {
-45. this.flag = !this.flag;
-46. }
-47. },
-48. onDestroy() {
-49. cancelAnimationFrame(this.animation);
-50. }
-51. }
+```css
+/* xxx.css */
+.container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+button{
+  width: 300px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/I-55slynSSm5Ub-8gZckYA/zh-cn_image_0000002589324511.gif)
+```js
+// xxx.js
+export default {
+  data: {
+    timer: null,
+    left: 0,
+    top: 0,
+    flag: true,
+    animation: null,
+    startTime: 0,
+  },
+  onShow() {
+    var test = this.$element("mycanvas");
+    var ctx = test.getContext("2d");
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(300, 300);
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = "red";
+    ctx.stroke();
+  },
+  runframe() {
+    this.left = 0;
+    this.top = 0;
+    this.flag = true;
+    this.animation = requestAnimationFrame(this.step);
+  },
+  step(timestamp) {
+    if (this.flag) {
+      this.left += 5;
+      this.top += 5;
+      if (this.startTime == 0) {
+        this.startTime = timestamp;
+      }
+      var elapsed = timestamp - this.startTime;
+        if (elapsed < 500) {
+          console.info('callback step timestamp: ' + timestamp);
+          this.animation = requestAnimationFrame(this.step);
+        }
+      } else {
+        this.left -= 5;
+        this.top -= 5;
+        this.animation = requestAnimationFrame(this.step);
+      }
+      if (this.left == 250 || this.left == 0) {
+        this.flag = !this.flag;
+     }
+    },
+    onDestroy() {
+      cancelAnimationFrame(this.animation);
+    }
+}
+```
 
-说明
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/UXa56GzeSnyXUfFdDlKSbg/zh-cn_image_0000002706833980.gif)
+
+**说明** 
 
 requestAnimationFrame函数在调用回调函数时在第一个参数位置传入timestamp时间戳，表示requestAnimationFrame开始去执行回调函数的时刻。
 
@@ -111,87 +111,87 @@ requestAnimationFrame函数在调用回调函数时在第一个参数位置传�
 
 通过cancelAnimationFrame函数取消逐帧回调，在调用cancelAnimationFrame函数时取消requestAnimationFrame函数的请求。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <tabs onchange="changecontent">
-4. <tab-content>
-5. <div class="container">
-6. <stack style="width: 300px;height: 300px;margin-top: 100px;margin-bottom: 100px;">
-7. <canvas id="mycanvas" style="width: 100%;height: 100%;background-color: coral;">
-8. </canvas>
-9. <div style="width: 50px;height: 50px;border-radius: 25px;background-color: indigo;position: absolute;left: {{left}};top: {{top}};">
-10. </div>
-11. </stack>
-12. <button type="capsule" value="play" onclick="runframe"></button>
-13. </div>
-14. </tab-content>
-15. </tabs>
-16. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. flex-direction: column;
-4. justify-content: center;
-5. align-items: center;
-6. width: 100%;
-7. height: 100%;
-8. }
-9. button{
-10. width: 300px;
-11. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <tabs onchange="changecontent">
+    <tab-content>
+      <div class="container">
+        <stack style="width: 300px;height: 300px;margin-top: 100px;margin-bottom: 100px;">
+          <canvas id="mycanvas" style="width: 100%;height: 100%;background-color: coral;">
+          </canvas>
+          <div style="width: 50px;height: 50px;border-radius: 25px;background-color: indigo;position: absolute;left: {{left}};top: {{top}};">
+          </div>
+        </stack>
+        <button type="capsule" value="play" onclick="runframe"></button>
+      </div>
+    </tab-content>
+  </tabs>
+</div>
 ```
 
-```
-1. // xxx.js
-2. export default {
-3. data: {
-4. timer: null,
-5. left: 0,
-6. top: 0,
-7. flag: true,
-8. animation: null
-9. },
-10. onShow() {
-11. var test = this.$element("mycanvas");
-12. var ctx = test.getContext("2d");
-13. ctx.beginPath();
-14. ctx.moveTo(0, 0);
-15. ctx.lineTo(300, 300);
-16. ctx.lineWidth = 5;
-17. ctx.strokeStyle = "red";
-18. ctx.stroke();
-19. },
-20. runframe() {
-21. this.left = 0;
-22. this.top = 0;
-23. this.flag = true;
-24. this.animation = requestAnimationFrame(this.step);
-25. },
-26. step(timestamp) {
-27. if (this.flag) {
-28. this.left += 5;
-29. this.top += 5;
-30. this.animation = requestAnimationFrame(this.step);
-31. } else {
-32. this.left -= 5;
-33. this.top -= 5;
-34. this.animation = requestAnimationFrame(this.step);
-35. }
-36. if (this.left == 250 || this.left == 0) {
-37. this.flag = !this.flag;
-38. }
-39. },
-40. onDestroy() {
-41. cancelAnimationFrame(this.animation);
-42. }
-43. }
+```css
+/* xxx.css */
+.container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+button{
+  width: 300px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/YUHRJ5yyRMK_q6jjQDvOrw/zh-cn_image_0000002589244449.gif)
+```js
+// xxx.js
+export default {
+  data: {
+    timer: null,
+    left: 0,
+    top: 0,
+    flag: true,
+    animation: null
+  },
+  onShow() {
+    var test = this.$element("mycanvas");
+    var ctx = test.getContext("2d");
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(300, 300);
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = "red";
+    ctx.stroke();
+  },
+  runframe() {
+    this.left = 0;
+    this.top = 0;
+    this.flag = true;
+    this.animation = requestAnimationFrame(this.step);
+  },
+  step(timestamp) {
+    if (this.flag) {
+      this.left += 5;
+      this.top += 5;
+      this.animation = requestAnimationFrame(this.step);
+    } else {
+      this.left -= 5;
+      this.top -= 5;
+      this.animation = requestAnimationFrame(this.step);
+    }
+    if (this.left == 250 || this.left == 0) {
+      this.flag = !this.flag;
+    }
+  },
+  onDestroy() {
+    cancelAnimationFrame(this.animation);
+  }
+}
+```
 
-说明
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/XOgrb0d-Qxy-v_3Cl1VmzQ/zh-cn_image_0000002736313089.gif)
+
+**说明** 
 
 在调用该函数时需传入一个具有标识id的参数。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-dev-guide
 title: 使用入门
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 使用入门
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:23+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0d096cd9ddc9b1c9aaa41a57ab77ed90d15cfc36236e4027a86fb4a04766a2af
+scraped_at: 2026-09-02T14:50:27+08:00
+doc_updated_at: 2026-05-26
+content_hash: sha256:e074e7bea926142febb2ec220e137a80ffb871c73263608e81bc7ec351ad50b4
 ---
 
 ## 快速上手体验
@@ -20,7 +20,7 @@ content_hash: sha256:0d096cd9ddc9b1c9aaa41a57ab77ed90d15cfc36236e4027a86fb4a0476
 | --- | --- | --- |
 | 1 | [开通商户服务](iap-enable-merchant-service.md) | 在开发应用前，请先参考“[应用开发准备](application-dev-overview.md)”完成基本准备工作。其中**配置签名信息**时，请使用**手动签名**方式。  开发者需开通商户服务才能开启应用内购买服务。商户服务里配置的银行卡账号、币种，用于开发者接收华为分成收益。 |
 | 2 | [创建项目和应用](iap-create-project-and-application.md) | 在开始应用开发前，开发者需要先在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)上完成项目和应用的创建。 |
-| 3 | [开启和激活应用内购买服务](iap-enable-in-app-purchases.md) | 开发者需开启和激活应用内购买服务才能使用华为应用内支付服务。 |
+| 3 | [开启和激活应用内购买服务](iap-enable-in-app-purchases.md) | 开发者需开启和激活应用内购买服务才能使用IAP Kit。 |
 | 4 | [（可选）配置应用内购买服务参数](iap-set-necessary-parameters.md) | - 配置订单/订阅通知接收地址。  - 配置密钥。 |
 | 5 | [配置商品信息](iap-config-product.md) | 开发者需要在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中完成相关商品配置。在应用调用购买接口时，需传入此处配置的商品ID和商品类型。 |
 | 6 | [配置签名](iap-config-sign.md) | 开发者需要在IDE上完成签名配置，确保能顺利完成项目的编译与开发 |

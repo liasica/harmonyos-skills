@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ux-publish
 title: 实际情况与测试结果有偏差，该如何处理
 breadcrumb: FAQ > DevEco Testing > 上架预检 > UX基础质量测试 > 实际情况与测试结果有偏差，该如何处理
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:35+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:9eb098abb333f55cd4ffa69bb3c1043da5448c78f3d8ef1092fb612ea618ce61
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lit
 title: 使用MindSpore Lite进行模型推理 (C/C++)
 breadcrumb: 指南 > AI > MindSpore Lite Kit（昇思推理框架服务） > 模型部署 > 使用MindSpore Lite进行模型推理 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:43:45+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:89531d6929b4625d3a1ee76b18b1edd8dc3e442af0be17ebcc457476ffaae9f5
+scraped_at: 2026-09-02T15:00:15+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d5338d78421b7eaba91a4e940ad230dc4d21a796cac125d3824df28f566c0675
 ---
 
 ## 场景介绍
@@ -13,14 +13,6 @@ content_hash: sha256:89531d6929b4625d3a1ee76b18b1edd8dc3e442af0be17ebcc457476ffa
 MindSpore Lite是一款AI引擎，它提供了面向不同硬件设备AI模型推理的功能，目前已经在图像分类、目标识别、人脸识别、文字识别等应用中广泛使用。
 
 本文介绍使用MindSpore Lite推理引擎进行模型推理的通用开发流程。
-
-## 基本概念
-
-在进行开发前，请先了解以下概念。
-
-**张量**：它与数组和矩阵非常相似，是MindSpore Lite网络运算中的基本数据结构。
-
-**Float16推理模式**： Float16又称半精度，它使用16比特表示一个数。Float16推理模式表示推理的时候用半精度进行推理。
 
 ## 接口说明
 
@@ -62,32 +54,32 @@ MindSpore Lite是一款AI引擎，它提供了面向不同硬件设备AI模型�
 
 **图 1** 使用MindSpore Lite进行模型推理的开发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/sIjPdsTBTSGirzhwWhc64Q/zh-cn_image_0000002558606190.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/cs7wh7d8Q_GVsF_Pc8I-TA/zh-cn_image_0000002706835424.png)
 
 进入主要流程之前需要先引用相关的头文件，并编写函数生成随机的输入，具体如下：
 
-```
-1. #include <stdlib.h>
-2. #include <stdio.h>
-3. #include <unistd.h>
-4. #include "mindspore/model.h"
+```c
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include "mindspore/model.h"
 
-6. //生成随机的输入
-7. int GenerateInputDataWithRandom(OH_AI_TensorHandleArray inputs) {
-8. for (size_t i = 0; i < inputs.handle_num; ++i) {
-9. float *input_data = (float *)OH_AI_TensorGetMutableData(inputs.handle_list[i]);
-10. if (input_data == NULL) {
-11. printf("MSTensorGetMutableData failed.\n");
-12. return OH_AI_STATUS_LITE_ERROR;
-13. }
-14. int64_t num = OH_AI_TensorGetElementNum(inputs.handle_list[i]);
-15. const int divisor = 10;
-16. for (size_t j = 0; j < num; j++) {
-17. input_data[j] = (float)(rand() % divisor) / divisor;  // 0--0.9f
-18. }
-19. }
-20. return OH_AI_STATUS_SUCCESS;
-21. }
+// 生成随机的输入
+int GenerateInputDataWithRandom(OH_AI_TensorHandleArray inputs) {
+  for (size_t i = 0; i < inputs.handle_num; ++i) {
+    float *input_data = (float *)OH_AI_TensorGetMutableData(inputs.handle_list[i]);
+    if (input_data == NULL) {
+      printf("MSTensorGetMutableData failed.\n");
+      return OH_AI_STATUS_LITE_ERROR;
+    }
+    int64_t num = OH_AI_TensorGetElementNum(inputs.handle_list[i]);
+    const int divisor = 10;
+    for (size_t j = 0; j < num; j++) {
+      input_data[j] = (float)(rand() % divisor) / divisor;  // 0--0.9f
+    }
+  }
+  return OH_AI_STATUS_SUCCESS;
+}
 ```
 
 然后进入主要的开发步骤，具体包括模型的准备、读取、编译、推理和释放，具体开发过程及细节请见下文的开发步骤及示例。
@@ -104,57 +96,57 @@ MindSpore Lite是一款AI引擎，它提供了面向不同硬件设备AI模型�
 
    情形1：仅创建CPU推理上下文。
 
+   ```c
+   // 创建并配置上下文，设置运行时的线程数量为2，绑核策略为大核优先
+   OH_AI_ContextHandle context = OH_AI_ContextCreate();
+   if (context == NULL) {
+     printf("OH_AI_ContextCreate failed.\n");
+     return OH_AI_STATUS_LITE_ERROR;
+   }
+   const int thread_num = 2;
+   OH_AI_ContextSetThreadNum(context, thread_num);
+   OH_AI_ContextSetThreadAffinityMode(context, 1);
+   //设置运行设备为CPU，不使用Float16推理
+   OH_AI_DeviceInfoHandle cpu_device_info = OH_AI_DeviceInfoCreate(OH_AI_DEVICETYPE_CPU);
+   if (cpu_device_info == NULL) {
+     printf("OH_AI_DeviceInfoCreate failed.\n");
+     OH_AI_ContextDestroy(&context);
+     return OH_AI_STATUS_LITE_ERROR;
+   }
+   OH_AI_DeviceInfoSetEnableFP16(cpu_device_info, false);
+   OH_AI_ContextAddDeviceInfo(context, cpu_device_info);
    ```
-   1. // 创建并配置上下文，设置运行时的线程数量为2，绑核策略为大核优先
-   2. OH_AI_ContextHandle context = OH_AI_ContextCreate();
-   3. if (context == NULL) {
-   4. printf("OH_AI_ContextCreate failed.\n");
-   5. return OH_AI_STATUS_LITE_ERROR;
-   6. }
-   7. const int thread_num = 2;
-   8. OH_AI_ContextSetThreadNum(context, thread_num);
-   9. OH_AI_ContextSetThreadAffinityMode(context, 1);
-   10. //设置运行设备为CPU，不使用Float16推理
-   11. OH_AI_DeviceInfoHandle cpu_device_info = OH_AI_DeviceInfoCreate(OH_AI_DEVICETYPE_CPU);
-   12. if (cpu_device_info == NULL) {
-   13. printf("OH_AI_DeviceInfoCreate failed.\n");
-   14. OH_AI_ContextDestroy(&context);
-   15. return OH_AI_STATUS_LITE_ERROR;
-   16. }
-   17. OH_AI_DeviceInfoSetEnableFP16(cpu_device_info, false);
-   18. OH_AI_ContextAddDeviceInfo(context, cpu_device_info);
-   ```
 
-   情形2：创建NNRT（Neural Network Runtime）和CPU异构推理上下文。
+   情形2：创建NNRT（Neural Network Runtime）和CPU[异构推理](mindspore-lite-term.md#heterogeneous-inference异构推理)上下文。
 
-   NNRT是面向AI领域的跨芯片推理计算运行时，一般来说，NNRT对接的加速硬件如NPU，推理能力较强，但支持的算子规格少；而通用CPU推理能力较弱，但支持算子规格更全面。MindSpore Lite支持配置NNRT硬件和CPU异构推理：优先将模型算子调度到NNRT推理，若某些算子NNRT不支持，将其调度到CPU进行推理。通过下面的操作即可配置NNRT/CPU异构推理。
+   NNRT是面向AI领域的跨芯片推理计算运行时，一般来说，NNRT对接的加速硬件如[NPU](mindspore-lite-term.md#npu)，推理能力较强，但支持的[算子](mindspore-lite-term.md#operator算子)规格少；而通用CPU推理能力较弱，但支持算子规格更全面。MindSpore Lite支持配置NNRT硬件和CPU异构推理：优先将模型算子调度到NNRT推理，若某些算子NNRT不支持，将其调度到CPU进行推理。通过下面的操作即可配置NNRT/CPU异构推理。
 
-   ```
-   1. // 创建并配置上下文，设置运行时的线程数量为2，绑核策略为大核优先
-   2. OH_AI_ContextHandle context = OH_AI_ContextCreate();
-   3. if (context == NULL) {
-   4. printf("OH_AI_ContextCreate failed.\n");
-   5. return OH_AI_STATUS_LITE_ERROR;
-   6. }
-   7. // 优先使用NNRT推理。
-   8. // 这里利用查找到的第一个ACCELERATORS类别的NNRT硬件，来创建nnrt设备信息，并设置硬件使用高性能模式推理。还可以通过如：OH_AI_GetAllNNRTDeviceDescs()接口获取当前环境中所有NNRT硬件的描述信息，按设备名、类型等信息查找，找到某一具体设备作为NNRT推理硬件。
-   9. OH_AI_DeviceInfoHandle nnrt_device_info = OH_AI_CreateNNRTDeviceInfoByType(OH_AI_NNRTDEVICE_ACCELERATOR);
-   10. if (nnrt_device_info == NULL) {
-   11. printf("OH_AI_DeviceInfoCreate failed.\n");
-   12. OH_AI_ContextDestroy(&context);
-   13. return OH_AI_STATUS_LITE_ERROR;
-   14. }
-   15. OH_AI_DeviceInfoSetPerformanceMode(nnrt_device_info, OH_AI_PERFORMANCE_HIGH);
-   16. OH_AI_ContextAddDeviceInfo(context, nnrt_device_info);
+   ```c
+   // 创建并配置上下文，设置运行时的线程数量为2，绑核策略为大核优先
+   OH_AI_ContextHandle context = OH_AI_ContextCreate();
+   if (context == NULL) {
+     printf("OH_AI_ContextCreate failed.\n");
+     return OH_AI_STATUS_LITE_ERROR;
+   }
+   // 优先使用NNRT推理。
+   // 这里利用查找到的第一个ACCELERATORS类别的NNRT硬件，来创建nnrt设备信息，并设置硬件使用高性能模式推理。还可以通过如：OH_AI_GetAllNNRTDeviceDescs()接口获取当前环境中所有NNRT硬件的描述信息，按设备名、类型等信息查找，找到某一具体设备作为NNRT推理硬件。
+   OH_AI_DeviceInfoHandle nnrt_device_info = OH_AI_CreateNNRTDeviceInfoByType(OH_AI_NNRTDEVICE_ACCELERATOR);
+   if (nnrt_device_info == NULL) {
+     printf("OH_AI_DeviceInfoCreate failed.\n");
+     OH_AI_ContextDestroy(&context);
+     return OH_AI_STATUS_LITE_ERROR;
+   }
+   OH_AI_DeviceInfoSetPerformanceMode(nnrt_device_info, OH_AI_PERFORMANCE_HIGH);
+   OH_AI_ContextAddDeviceInfo(context, nnrt_device_info);
 
-   18. // 其次设置CPU推理。
-   19. OH_AI_DeviceInfoHandle cpu_device_info = OH_AI_DeviceInfoCreate(OH_AI_DEVICETYPE_CPU);
-   20. if (cpu_device_info == NULL) {
-   21. printf("OH_AI_DeviceInfoCreate failed.\n");
-   22. OH_AI_ContextDestroy(&context);
-   23. return OH_AI_STATUS_LITE_ERROR;
-   24. }
-   25. OH_AI_ContextAddDeviceInfo(context, cpu_device_info);
+   // 其次设置CPU推理。
+   OH_AI_DeviceInfoHandle cpu_device_info = OH_AI_DeviceInfoCreate(OH_AI_DEVICETYPE_CPU);
+   if (cpu_device_info == NULL) {
+     printf("OH_AI_DeviceInfoCreate failed.\n");
+     OH_AI_ContextDestroy(&context);
+     return OH_AI_STATUS_LITE_ERROR;
+   }
+   OH_AI_ContextAddDeviceInfo(context, cpu_device_info);
    ```
 3. 创建、加载与编译模型。
 
@@ -162,119 +154,119 @@ MindSpore Lite是一款AI引擎，它提供了面向不同硬件设备AI模型�
 
    本例中传入OH\_AI\_ModelBuildFromFile的argv[1]参数是从控制台中输入的模型文件路径。
 
-   ```
-   1. // 创建模型
-   2. OH_AI_ModelHandle model = OH_AI_ModelCreate();
-   3. if (model == NULL) {
-   4. printf("OH_AI_ModelCreate failed.\n");
-   5. OH_AI_ContextDestroy(&context);
-   6. return OH_AI_STATUS_LITE_ERROR;
-   7. }
+   ```c
+   // 创建模型
+   OH_AI_ModelHandle model = OH_AI_ModelCreate();
+   if (model == NULL) {
+     printf("OH_AI_ModelCreate failed.\n");
+     OH_AI_ContextDestroy(&context);
+     return OH_AI_STATUS_LITE_ERROR;
+   }
 
-   9. // 加载与编译模型，模型的类型为OH_AI_MODELTYPE_MINDIR
-   10. if (access(argv[1], F_OK) != 0) {
-   11. printf("model file not exists.\n");
-   12. OH_AI_ModelDestroy(&model);
-   13. OH_AI_ContextDestroy(&context);
-   14. return OH_AI_STATUS_LITE_ERROR;
-   15. }
-   16. int ret = OH_AI_ModelBuildFromFile(model, argv[1], OH_AI_MODELTYPE_MINDIR, context);
-   17. if (ret != OH_AI_STATUS_SUCCESS) {
-   18. printf("OH_AI_ModelBuildFromFile failed, ret: %d.\n", ret);
-   19. OH_AI_ModelDestroy(&model);
-   20. OH_AI_ContextDestroy(&context);
-   21. return ret;
-   22. }
+   // 加载与编译模型，模型的类型为OH_AI_MODELTYPE_MINDIR
+   if (access(argv[1], F_OK) != 0) {
+       printf("model file not exists.\n");
+       OH_AI_ModelDestroy(&model);
+       OH_AI_ContextDestroy(&context);
+       return OH_AI_STATUS_LITE_ERROR;
+   }
+   int ret = OH_AI_ModelBuildFromFile(model, argv[1], OH_AI_MODELTYPE_MINDIR, context);
+   if (ret != OH_AI_STATUS_SUCCESS) {
+     printf("OH_AI_ModelBuildFromFile failed, ret: %d.\n", ret);
+     OH_AI_ModelDestroy(&model);
+     OH_AI_ContextDestroy(&context);
+     return ret;
+   }
    ```
 4. 输入数据。
 
    模型执行之前需要向输入的张量中填充数据。本例使用随机的数据对模型进行填充。
 
-   ```
-   1. // 获得输入张量
-   2. OH_AI_TensorHandleArray inputs = OH_AI_ModelGetInputs(model);
-   3. if (inputs.handle_list == NULL) {
-   4. printf("OH_AI_ModelGetInputs failed, ret: %d.\n", ret);
-   5. OH_AI_ModelDestroy(&model);
-   6. OH_AI_ContextDestroy(&context);
-   7. return ret;
-   8. }
-   9. // 使用随机数据填充张量
-   10. ret = GenerateInputDataWithRandom(inputs);
-   11. if (ret != OH_AI_STATUS_SUCCESS) {
-   12. printf("GenerateInputDataWithRandom failed, ret: %d.\n", ret);
-   13. OH_AI_ModelDestroy(&model);
-   14. OH_AI_ContextDestroy(&context);
-   15. return ret;
-   16. }
+   ```c
+   // 获得输入张量
+   OH_AI_TensorHandleArray inputs = OH_AI_ModelGetInputs(model);
+   if (inputs.handle_list == NULL) {
+     printf("OH_AI_ModelGetInputs failed.\n");
+     OH_AI_ModelDestroy(&model);
+     OH_AI_ContextDestroy(&context);
+     return ret;
+   }
+   // 使用随机数据填充张量
+   ret = GenerateInputDataWithRandom(inputs);
+   if (ret != OH_AI_STATUS_SUCCESS) {
+     printf("GenerateInputDataWithRandom failed, ret: %d.\n", ret);
+     OH_AI_ModelDestroy(&model);
+     OH_AI_ContextDestroy(&context);
+     return ret;
+   }
    ```
 5. 执行推理。
 
    使用OH\_AI\_ModelPredict接口进行模型推理。
 
-   ```
-   1. // 执行模型推理
-   2. OH_AI_TensorHandleArray outputs;
-   3. ret = OH_AI_ModelPredict(model, inputs, &outputs, NULL, NULL);
-   4. if (ret != OH_AI_STATUS_SUCCESS) {
-   5. printf("OH_AI_ModelPredict failed, ret: %d.\n", ret);
-   6. OH_AI_ModelDestroy(&model);
-   7. OH_AI_ContextDestroy(&context);
-   8. return ret;
-   9. }
+   ```c
+   // 执行模型推理
+   OH_AI_TensorHandleArray outputs;
+   ret = OH_AI_ModelPredict(model, inputs, &outputs, NULL, NULL);
+   if (ret != OH_AI_STATUS_SUCCESS) {
+     printf("OH_AI_ModelPredict failed, ret: %d.\n", ret);
+     OH_AI_ModelDestroy(&model);
+     OH_AI_ContextDestroy(&context);
+     return ret;
+   }
    ```
 6. 获取输出。
 
    模型推理结束之后，可以通过输出张量得到推理结果。
 
-   ```
-   1. // 获取模型的输出张量，并打印
-   2. for (size_t i = 0; i < outputs.handle_num; ++i) {
-   3. OH_AI_TensorHandle tensor = outputs.handle_list[i];
-   4. long long element_num = OH_AI_TensorGetElementNum(tensor);
-   5. printf("Tensor name: %s, tensor size is %zu ,elements num: %lld.\n", OH_AI_TensorGetName(tensor),
-   6. OH_AI_TensorGetDataSize(tensor), element_num);
-   7. const float *data = (const float *)OH_AI_TensorGetData(tensor);
-   8. if (data == NULL) {
-   9. printf("OH_AI_TensorGetData failed.\n");
-   10. OH_AI_ModelDestroy(&model);
-   11. OH_AI_ContextDestroy(&context);
-   12. return OH_AI_STATUS_LITE_ERROR;
-   13. }
-   14. printf("output data is:\n");
-   15. const int max_print_num = 50;
-   16. for (int j = 0; j < element_num && j <= max_print_num; ++j) {
-   17. printf("%f ", data[j]);
-   18. }
-   19. printf("\n");
-   20. }
+   ```c
+   // 获取模型的输出张量，并打印
+   for (size_t i = 0; i < outputs.handle_num; ++i) {
+     OH_AI_TensorHandle tensor = outputs.handle_list[i];
+     long long element_num = OH_AI_TensorGetElementNum(tensor);
+     printf("Tensor name: %s, tensor size is %zu ,elements num: %lld.\n", OH_AI_TensorGetName(tensor),
+           OH_AI_TensorGetDataSize(tensor), element_num);
+     const float *data = (const float *)OH_AI_TensorGetData(tensor);
+     if (data == NULL) {
+       printf("OH_AI_TensorGetData failed.\n");
+       OH_AI_ModelDestroy(&model);
+       OH_AI_ContextDestroy(&context);
+       return OH_AI_STATUS_LITE_ERROR;
+     }
+     printf("output data is:\n");
+     const int max_print_num = 50;
+     for (int j = 0; j < element_num && j <= max_print_num; ++j) {
+       printf("%f ", data[j]);
+     }
+     printf("\n");
+   }
    ```
 7. 释放模型。
 
-   不再使用MindSpore Lite推理框架时，需要释放已经创建的模型。
+   不再使用MindSpore Lite推理框架时，需要释放对应的资源。model使用了context资源，释放时需先释放model，后释放context。
 
-   ```
-   1. // 释放模型和上下文
-   2. OH_AI_ModelDestroy(&model);
-   3. OH_AI_ContextDestroy(&context);
+   ```c
+   // 释放模型和上下文
+   OH_AI_ModelDestroy(&model);
+   OH_AI_ContextDestroy(&context);
    ```
 
 ## 调测验证
 
 1. 编写CMakeLists.txt。
 
-   ```
-   1. cmake_minimum_required(VERSION 3.14)
-   2. project(Demo)
+   ```cmake
+   cmake_minimum_required(VERSION 3.14)
+   project(Demo)
 
-   4. add_executable(demo main.c)
+   add_executable(demo main.c)
 
-   6. target_link_libraries(
-   7. demo
-   8. mindspore_lite_ndk
-   9. pthread
-   10. dl
-   11. )
+   target_link_libraries(
+           demo
+           mindspore_lite_ndk
+           pthread
+           dl
+   )
    ```
 
    * 使用ohos-sdk交叉编译，需要指定CMake的工具链路径，即：-DCMAKE\_TOOLCHAIN\_FILE="/{sdkPath}/native/build/cmake/ohos.toolchain.cmake"。
@@ -286,15 +278,15 @@ MindSpore Lite是一款AI引擎，它提供了面向不同硬件设备AI模型�
    * 使用hdc\_std连接设备，并将demo和mobilenetv2.ms推送到设备中的相同目录。
    * 使用hdc\_std shell进入设备，并进入demo所在的目录执行如下命令，即可得到结果。
 
-   ```
-   1. ./demo mobilenetv2.ms
+   ```shell
+   ./demo mobilenetv2.ms
    ```
 
-   得到如下输出:
+   得到如下输出：
 
-   ```
-   1. # ./demo ./mobilenetv2.ms
-   2. Tensor name: Softmax-65, tensor size is 4004 ,elements num: 1001.
-   3. output data is:
-   4. 0.000018 0.000012 0.000026 0.000194 0.000156 0.001501 0.000240 0.000825 0.000016 0.000006 0.000007 0.000004 0.000004 0.000004 0.000015 0.000099 0.000011 0.000013 0.000005 0.000023 0.000004 0.000008 0.000003 0.000003 0.000008 0.000014 0.000012 0.000006 0.000019 0.000006 0.000018 0.000024 0.000010 0.000002 0.000028 0.000372 0.000010 0.000017 0.000008 0.000004 0.000007 0.000010 0.000007 0.000012 0.000005 0.000015 0.000007 0.000040 0.000004 0.000085 0.000023
+   ```shell
+   # ./demo ./mobilenetv2.ms
+   Tensor name: Softmax-65, tensor size is 4004 ,elements num: 1001.
+   output data is:
+   0.000018 0.000012 0.000026 0.000194 0.000156 0.001501 0.000240 0.000825 0.000016 0.000006 0.000007 0.000004 0.000004 0.000004 0.000015 0.000099 0.000011 0.000013 0.000005 0.000023 0.000004 0.000008 0.000003 0.000003 0.000008 0.000014 0.000012 0.000006 0.000019 0.000006 0.000018 0.000024 0.000010 0.000002 0.000028 0.000372 0.000010 0.000017 0.000008 0.000004 0.000007 0.000010 0.000007 0.000012 0.000005 0.000015 0.000007 0.000040 0.000004 0.000085 0.000023
    ```

@@ -1,15 +1,15 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-spatialrecon-arengine-arframe
 title: AREngine_ARFrame
-breadcrumb: API参考 > 图形 > Spatial Recon Kit（空间建模服务） > C API > 结构体 > AREngine_ARFrame
+breadcrumb: API参考 > 图形 > Spatial Recon Kit（空间建模服务） > C API > 头文件和结构体 > 结构体 > AREngine_ARFrame
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:52+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c79d297d548f776bd7dfa1c25313d288df27ae540303e0ba5f9a6ddba01c4904
+scraped_at: 2026-09-02T14:53:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:99ec10bb2f6690b133086dfdd7c688a16278eebc95a841b68b3211d9ede8239e
 ---
 
-```
-1. typedef struct AREngine_ARFrame AREngine_ARFrame
+```c
+typedef struct AREngine_ARFrame AREngine_ARFrame
 ```
 
 ## 概述

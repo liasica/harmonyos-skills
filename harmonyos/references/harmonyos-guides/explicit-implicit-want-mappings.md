@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/explicit-implicit-want-mappings
 title: 显式Want与隐式Want匹配规则
-breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > Stage模型应用组件 > 信息传递载体Want > 显式Want与隐式Want匹配规则
+breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > 信息传递载体Want > 显式Want与隐式Want匹配规则
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:25:47+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:f3961f00cbdede0c2df7e24e22e867614502dfb7e88d8c900bb22c3c646c5b17
+scraped_at: 2026-09-02T14:59:09+08:00
+doc_updated_at: 2026-08-03
+content_hash: sha256:de3b8af1a51878130c27e7d326118b6bb364203dfd5ee50fe76043d9a986e9e8
 ---
 
 在启动目标应用组件时，会通过显式[Want](../harmonyos-references/js-apis-app-ability-want.md)或者隐式[Want](../harmonyos-references/js-apis-app-ability-want.md)进行目标应用组件的匹配，这里说的匹配规则就是调用方传入的[want](../harmonyos-references/js-apis-app-ability-want.md)参数中设置的参数如何与目标应用组件声明的配置文件进行匹配。
@@ -52,7 +52,7 @@ content_hash: sha256:f3961f00cbdede0c2df7e24e22e867614502dfb7e88d8c900bb22c3c646
 系统将调用方传入的want参数（包含action、entities、uri、type和parameters属性）与已安装待匹配应用组件的skills配置（包含actions、entities、uris和type属性）进行匹配。当want参数五个属性匹配均未配置，隐式匹配失败。
 
 * 当parameters中的linkFeature字段取值不为空时，系统将优先进行linkFeature匹配。
-  + 如果linkFeature匹配成功，并且want中配置了uri或type，则继续匹配uri和type属性，均匹配成功则隐式匹配成功；否则，匹配失败。如果want中未配置uri和type, 则隐式匹配成功。
+  + 如果linkFeature匹配成功，并且want中配置了uri或type，则继续匹配uri和type属性，均匹配成功则隐式匹配成功；否则，匹配失败。如果want中未配置uri和type，则隐式匹配成功。
   + 如果linkFeature匹配失败，则不进行后续属性匹配，匹配失败。
 * 当parameters中的linkFeature未配置或取值为空时，只有当action、entities、uri和type四个属性均匹配通过时，此应用才会被应用选择器展示给用户进行选择。
 
@@ -68,7 +68,7 @@ content_hash: sha256:f3961f00cbdede0c2df7e24e22e867614502dfb7e88d8c900bb22c3c646
 
 **图1** want参数的action匹配规则
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/lcoumBAtRriC_73WUHWAig/zh-cn_image_0000002558763986.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/lAoKAfCOTEG4ftdQ3odojw/zh-cn_image_0000002706833014.png)
 
 ### want参数的entities匹配规则
 
@@ -82,7 +82,7 @@ content_hash: sha256:f3961f00cbdede0c2df7e24e22e867614502dfb7e88d8c900bb22c3c646
 
 **图2** want参数的entities匹配规则
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/PsDQQ9q9QgeoqSxLUzXW6Q/zh-cn_image_0000002558604330.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/iRK_eP6RQKCeYCdYgqK_vg/zh-cn_image_0000002736312123.png)
 
 ### want参数的uri和type匹配规则
 
@@ -113,7 +113,7 @@ content_hash: sha256:f3961f00cbdede0c2df7e24e22e867614502dfb7e88d8c900bb22c3c646
 
 **图3** want参数中uri和type皆不为空时的匹配规则
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/eC3vt4ISTJGsLOrISjKwUA/zh-cn_image_0000002589323855.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/9PZpSQGZTb2QFPLI4GVi9Q/zh-cn_image_0000002706673080.png)
 
 为了简化描述：
 
@@ -122,7 +122,7 @@ content_hash: sha256:f3961f00cbdede0c2df7e24e22e867614502dfb7e88d8c900bb22c3c646
 
 **图4** want参数中uri和type的具体匹配规则
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/JdCmlNqwSH6liPa4EM_PDQ/zh-cn_image_0000002589243793.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/rqicfLppRWeZP-VRA3z9FQ/zh-cn_image_0000002736432171.png)
 
 ### uri匹配规则
 
@@ -136,7 +136,7 @@ content_hash: sha256:f3961f00cbdede0c2df7e24e22e867614502dfb7e88d8c900bb22c3c646
 * 如果s\_uri的pathStartWith不为空，当w\_uri包含s\_uri**前缀表达式**时匹配成功，否则继续进行pathRegex的匹配。
 * 如果s\_uri的pathRegex不为空，当w\_uri满足s\_uri**正则表达式**时匹配成功，否则匹配失败。
 
-说明
+**说明** 
 
 待匹配应用组件的skills配置的uris中scheme、host、port、path、pathStartWith和pathRegex属性拼接，如果依次声明了path、pathStartWith和pathRegex属性时，uris将分别拼接为如下四种表达式：
 
@@ -148,15 +148,17 @@ content_hash: sha256:f3961f00cbdede0c2df7e24e22e867614502dfb7e88d8c900bb22c3c646
 * **前缀表达式**：scheme://host:port/pathStartWith
 * **正则表达式**：scheme://host:port/pathRegex
 
-系统应用预留uri的scheme统一以ohos开头，例如ohosclock://。三方应用组件配置的uri不能与系统应用重复，否则会导致无法通过该uri拉起三方应用组件。
+以ohos为前缀的scheme为系统预留，如ohosclock://。建议第三方应用组件在配置scheme时避免以ohos开头，否则可能导致无法通过该uri拉起目标组件。
+
+此外，store、filemanager、hww等scheme已被系统应用占用，系统会优先匹配系统应用导致三方应用的scheme无效，请避免使用。datashare为系统后台数据服务专用，亦请避免使用。
 
 **图5** want参数中uri的匹配规则示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/nNfkrKNqT7yFWCsGDdD5-A/zh-cn_image_0000002558763988.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/Ms_KWD9XSGOoMTn2s1mdHg/zh-cn_image_0000002706833016.png)
 
 ### type匹配规则
 
-说明
+**说明** 
 
 本章节所述的type匹配规则的适用性需建立在want参数内type不为空的基础上。当want参数内type为空时请参见[want参数的uri和type匹配规则](explicit-implicit-want-mappings.md#want参数的uri和type匹配规则)。
 
@@ -169,17 +171,17 @@ content_hash: sha256:f3961f00cbdede0c2df7e24e22e867614502dfb7e88d8c900bb22c3c646
 
 ### linkFeature匹配规则
 
-说明
+**说明** 
 
 本章节所述的linkFeature匹配规则适用于want参数中的parameters包含linkFeature键，且对应取值不为空的场景。
 
-将调用方传入的want参数的parameters与待匹配应用组件的skills配置中的uris进行匹配。为了简化描述, 称调用方传入的want参数中的linkFeature参数为w\_linkFeature, 具体的匹配规则如下：
+将调用方传入的want参数的parameters与待匹配应用组件的skills配置中的uris进行匹配。为了简化描述，称调用方传入的want参数中的linkFeature参数为w\_linkFeature，具体的匹配规则如下：
 
-* want参数的uri和type均为空, 只匹配linkFeature，当w\_linkFeature和s\_uri的linkFeature相同时匹配成功，否则匹配失败。
-* want参数的uri或type不为空, 依次匹配linkFeature、uri、type (参见[want参数的uri和type匹配规则](explicit-implicit-want-mappings.md#want参数的uri和type匹配规则))，当三个字段均匹配成功时，则匹配成功，否则匹配失败。
+* want参数的uri和type均为空，只匹配linkFeature，当w\_linkFeature和s\_uri的linkFeature相同时匹配成功，否则匹配失败。
+* want参数的uri或type不为空，依次匹配linkFeature、uri、type (参见[want参数的uri和type匹配规则](explicit-implicit-want-mappings.md#want参数的uri和type匹配规则))，当三个字段均匹配成功时，则匹配成功，否则匹配失败。
 
 **图6** want参数中linkFeature具体匹配规则
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/gR67S0GbQoK_NlmQQdQIsg/zh-cn_image_0000002558604332.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/POx2CEd3R1C8ElJ83EuDuQ/zh-cn_image_0000002736312125.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/UbuJZwdSRLKJVrOPsVS6EA/zh-cn_image_0000002589323857.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/yoFK6NBDRXuh7JmBnFJiLQ/zh-cn_image_0000002706673082.png)

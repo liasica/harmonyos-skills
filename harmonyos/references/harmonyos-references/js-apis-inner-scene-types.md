@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: SceneType
 breadcrumb: API参考 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkTS API > graphics3d > SceneType
 category: harmonyos-references
-scraped_at: 2026-04-29T14:06:13+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:1d0dc176ae2b810943d2305ef22cbbf035b71b5df2020ae526fe98fb0430bcc3
+scraped_at: 2026-09-02T15:02:47+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:126b54077f62d1c4b3eece6445a2346407bec1feb858c1a49e8ff677b0bd747f
 ---
 
-本模块提供3D图形中常用的数据类型。
+本模块提供ArkGraphics 3D中常用的数据类型。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 12开始支持，后续版本的新增接口，采用上角标标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { Vec2, Vec3, Vec4, Quaternion, Aabb, Color, Rect, GeometryType, PrimitiveTopology, CustomGeometry, CubeGeometry, PlaneGeometry, SphereGeometry, CylinderGeometry, Position3, Rotation3, Scale3 } from '@kit.ArkGraphics3D';
+```ts
+import { Vec2, Vec3, Vec4, Quaternion, Aabb, Color, Rect, RenderingPipelineType, GeometryType, GeometryDefinition, PrimitiveTopology, ShadowAlgorithmType, CustomGeometry, CubeGeometry, PlaneGeometry, SphereGeometry, CylinderGeometry, Mat4x4, Position3, Rotation3, Scale3 } from '@kit.ArkGraphics3D';
 ```
 
 ## Vec2
-
-PhonePC/2in1TabletTVWearable
 
 二维向量，通常用于表示2D空间中的点或方向，由x和y两个分量组成。
 
@@ -36,8 +32,6 @@ PhonePC/2in1TabletTVWearable
 | y | number | 否 | 否 | y轴分量，取值范围是实数。 |
 
 ## Vec3
-
-PhonePC/2in1TabletTVWearable
 
 三维向量，通常用于表示3D空间中的点、方向或向量变换，由x、y和z三个分量组成。
 
@@ -51,9 +45,7 @@ PhonePC/2in1TabletTVWearable
 
 ## Vec4
 
-PhonePC/2in1TabletTVWearable
-
-四维向量，通常用于表示4D空间中的点、方向或向量变换，由x、y、z和w四个分量组成，增加第四个分量为各种计算和变换增加了规整性和便捷性。
+四维向量，通常用于表示4D空间中的点、方向或向量变换，由x、y、z和w四个分量组成。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
 
@@ -65,8 +57,6 @@ PhonePC/2in1TabletTVWearable
 | w | number | 否 | 否 | w轴分量，取值范围是实数。 |
 
 ## Quaternion
-
-PhonePC/2in1TabletTVWearable
 
 用于表示3D空间中旋转的数学结构。与传统的欧拉角相比，四元数在数值稳定性和避免万向节锁方面具有优势。
 
@@ -81,8 +71,6 @@ PhonePC/2in1TabletTVWearable
 
 ## Aabb
 
-PhonePC/2in1TabletTVWearable
-
 轴对齐边界盒，主要用于判断空间中的物体是否重叠。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
@@ -93,8 +81,6 @@ PhonePC/2in1TabletTVWearable
 | aabbMax | [Vec3](js-apis-inner-scene-types.md#vec3) | 否 | 否 | 轴对齐边界盒的大值点，单位为世界坐标系下的场景单位（比如cm、m、km等）。 |
 
 ## Color
-
-PhonePC/2in1TabletTVWearable
 
 用于表示RGBA格式的颜色，包含四个分量，依次为红色、绿色、蓝色和透明度。
 
@@ -109,8 +95,6 @@ PhonePC/2in1TabletTVWearable
 
 ## Rect
 
-PhonePC/2in1TabletTVWearable
-
 用于表示平面中的矩形。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
@@ -124,8 +108,6 @@ PhonePC/2in1TabletTVWearable
 
 ## RenderingPipelineType21+
 
-PhonePC/2in1TabletTVWearable
-
 渲染管线类型枚举。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
@@ -136,8 +118,6 @@ PhonePC/2in1TabletTVWearable
 | FORWARD | 1 | 高质量前向渲染管线，用于复杂的视觉效果（例如光晕）。 |
 
 ## GeometryType18+
-
-PhonePC/2in1TabletTVWearable
 
 几何类型枚举，用于指定不同的几何类型。
 
@@ -153,8 +133,6 @@ PhonePC/2in1TabletTVWearable
 
 ## GeometryDefinition18+
 
-PhonePC/2in1TabletTVWearable
-
 几何类型定义抽象类，用于解释特定几何类型的属性。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
@@ -165,8 +143,6 @@ PhonePC/2in1TabletTVWearable
 
 ## PrimitiveTopology18+
 
-PhonePC/2in1TabletTVWearable
-
 图元拓扑枚举，在顶点处理过程中，指定顶点的不同处理方式。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
@@ -176,9 +152,21 @@ PhonePC/2in1TabletTVWearable
 | TRIANGLE\_LIST | 0 | 由不相交的顶点集合构成不同的三角形。 |
 | TRIANGLE\_STRIP | 1 | 每个顶点和前一个三角形的一条边构成新的三角形。 |
 
-## CustomGeometry18+
+## ShadowAlgorithmType
 
-PhonePC/2in1TabletTVWearable
+阴影算法的枚举类型。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUi.Graphics3D
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| PCF | 0 | 百分比邻近过滤算法。 |
+
+## CustomGeometry18+
 
 自定义几何类型，继承自[GeometryDefinition](js-apis-inner-scene-types.md#geometrydefinition18)。
 
@@ -195,8 +183,6 @@ PhonePC/2in1TabletTVWearable
 
 ## CubeGeometry18+
 
-PhonePC/2in1TabletTVWearable
-
 立方体几何类型，继承自[GeometryDefinition](js-apis-inner-scene-types.md#geometrydefinition18)。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
@@ -207,8 +193,6 @@ PhonePC/2in1TabletTVWearable
 
 ## PlaneGeometry18+
 
-PhonePC/2in1TabletTVWearable
-
 平面几何类型，继承自[GeometryDefinition](js-apis-inner-scene-types.md#geometrydefinition18)。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
@@ -218,8 +202,6 @@ PhonePC/2in1TabletTVWearable
 | size | [Vec2](js-apis-inner-scene-types.md#vec2) | 否 | 否 | 平面的宽、高，表示平面的大小，单位为世界坐标系下的场景单位（比如cm、m、km等）。 |
 
 ## SphereGeometry18+
-
-PhonePC/2in1TabletTVWearable
 
 球体几何类型，继承自[GeometryDefinition](js-apis-inner-scene-types.md#geometrydefinition18)。
 
@@ -232,8 +214,6 @@ PhonePC/2in1TabletTVWearable
 
 ## CylinderGeometry23+
 
-PhonePC/2in1TabletTVWearable
-
 圆柱体几何类型，继承自[GeometryDefinition](js-apis-inner-scene-types.md#geometrydefinition18)。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
@@ -244,19 +224,17 @@ PhonePC/2in1TabletTVWearable
 | height | number | 否 | 否 | 圆柱体的高度，单位为世界坐标系下的场景单位（比如cm、m、km等），取值范围大于0。 |
 | segmentCount | number | 否 | 否 | 圆柱体圆周方向的分段面数量，取值范围是大于等于3的正整数，若设为浮点数将自动向下取整。该数值直接影响圆柱体侧面的光滑度：数值越大，侧面包含的面片数量越多，视觉上越接近光滑曲面；数值越小，侧面会呈现明显的多边形轮廓。注意数值过大会延长几何创建耗时，还可能导致线程阻塞。 |
 
-说明
+**说明** 
 
 开发者需保证上述三个参数设置正确，否则无法创建圆柱体并可能引发不可预期的行为。
 
 以radius=0.5，height=1，segmentCount=20为例，生成圆柱体的网格以及UV布局如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/Nd5krR9cSI25YWHyLGUMWw/zh-cn_image_0000002589327293.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/W-Mae-XuSs-CHxHY6bvWpQ/zh-cn_image_0000002736436253.png)
 
 ## Mat4x423+
 
-PhonePC/2in1TabletTVWearable
-
-相机矩阵，它是一个将三维世界坐标映射到二维图像坐标的数学工具。
+4x4矩阵类型，可用于坐标变换。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
 
@@ -268,8 +246,6 @@ PhonePC/2in1TabletTVWearable
 | w | [Vec4](js-apis-inner-scene-types.md#vec4) | 否 | 否 | 矩阵的第四列，其值是一个四维向量。 |
 
 ## Position3
-
-PhonePC/2in1TabletTVWearable
 
 type Position3 = Vec3
 
@@ -283,8 +259,6 @@ type Position3 = Vec3
 
 ## Rotation3
 
-PhonePC/2in1TabletTVWearable
-
 type Rotation3 = Vec3
 
 用于表示3维空间中物体的旋转，是[Vec3](js-apis-inner-scene-types.md#vec3)类型。
@@ -296,8 +270,6 @@ type Rotation3 = Vec3
 | [Vec3](js-apis-inner-scene-types.md#vec3) | 类型为三维向量，单位为弧度（rad），可取任意值。 |
 
 ## Scale3
-
-PhonePC/2in1TabletTVWearable
 
 type Scale3 = Vec3
 

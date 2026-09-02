@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 测试过程中，设备断连重连后任务能否继续进行
 breadcrumb: FAQ > DevEco Testing > 专项测试 > 性能基础质量测试 > 测试过程中，设备断连重连后任务能否继续进行
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:27+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:e7048e00009408b3b85d62409ef8ece456d82b113e0c44a5241526498a362c30
 ---
 

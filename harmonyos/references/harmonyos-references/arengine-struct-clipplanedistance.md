@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-
 title: AREngine_ClipPlaneDistance
 breadcrumb: API参考 > 图形 > AR Engine（AR引擎服务） > C API > 头文件和结构体 > 结构体 > AREngine_ClipPlaneDistance
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:34+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d44626d6b9a86362ce2cc22208a389c14ba738814a9af7205c0cac2a52c75d1e
+scraped_at: 2026-09-02T15:02:40+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1deda74297a6e1c3f76b773836f1f325010339d0e3cb3d05a2b11168830b8647
 ---
 
 ## 概述
-
-PhoneTabletTV
 
 裁剪平面距离数据。
 
@@ -24,11 +22,7 @@ PhoneTabletTV
 
 ## 汇总
 
-PhoneTabletTV
-
 ### 成员变量
-
-PhoneTabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -37,14 +31,10 @@ PhoneTabletTV
 
 ## 结构体成员变量说明
 
-PhoneTabletTV
-
 ### far
 
-PhoneTabletTV
-
-```
-1. float AREngine_ClipPlaneDistance::far
+```cpp
+float AREngine_ClipPlaneDistance::far
 ```
 
 **描述**
@@ -53,10 +43,8 @@ OpenGL远裁剪平面距离，以m为单位。
 
 ### near
 
-PhoneTabletTV
-
-```
-1. float AREngine_ClipPlaneDistance::near
+```cpp
+float AREngine_ClipPlaneDistance::near
 ```
 
 **描述**

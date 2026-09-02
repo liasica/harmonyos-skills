@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 获取诈骗消息
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 反诈选择器 > 获取诈骗消息
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:31:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:24033c9b882fe2a3f8d4615f4f39f09598b7523c618420e936a8c30dd3c2491a
+scraped_at: 2026-09-02T14:59:30+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:84c8ca314c6b0f8d5ccaa37954530014a25d2263f835a3ecb2c1c27787f0c010
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:24033c9b882fe2a3f8d4615f4f39f09598b7523c618420e936a8c30dd3c
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/NsloJY9CQ0uOd0b6nBpdZg/zh-cn_image_0000002589324769.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/Fh4xcP_9QHW3V39K5V3RgA/zh-cn_image_0000002736313413.png)
 
 **流程说明：**
 
@@ -33,11 +33,11 @@ content_hash: sha256:24033c9b882fe2a3f8d4615f4f39f09598b7523c618420e936a8c30dd3c
 
 | 接口名 | 描述 |
 | --- | --- |
-| selectFraudMessage(context: common.Context, options?: AntifraudMessageOptions): Promise<AntifraudMessageResult> | 获取诈骗消息信息。 |
+| selectFraudMessage(context: common.Context, options?: AntifraudMessageOptions): Promise<AntifraudCallLogResult> | 获取诈骗消息信息。 |
 
 ## 开发步骤
 
-说明
+**说明** 
 
 * 在开发准备过程中，需要申请权限：ohos.permission.USE\_FRAUD\_MESSAGES\_PICKER。
 * 只允许清单内的应用申请该权限，申请方式请参考：[申请使用受限权限](declare-permissions-in-acl.md)
@@ -45,27 +45,27 @@ content_hash: sha256:24033c9b882fe2a3f8d4615f4f39f09598b7523c618420e936a8c30dd3c
 
 1. 导入Device Security Kit模块及相关公共模块。
 
-   ```
-   1. import { antifraudPicker} from '@kit.DeviceSecurityKit';
-   2. import { BusinessError} from '@kit.BasicServicesKit';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
-   4. import { common} from '@kit.AbilityKit';
+   ```typescript
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import antifraudPicker from '@hms.security.antifraudPicker';
+   import hilog from '@ohos.hilog';
+   import { common } from '@kit.AbilityKit';
    ```
 2. 调用selectFraudMessage接口获取诈骗消息信息。
 
-   ```
-   1. const TAG = "AntifraudPickerJsTest";
+   ```typescript
+   const TAG = "AntifraudPickerJsTest";
 
-   3. // 请求获取诈骗消息信息，并进行业务处理
-   4. let options: antifraudPicker.AntifraudMessageOptions = {
-   5. maxSelectNumber: 5
-   6. };
-   7. try {
-   8. hilog.info(0x0000, TAG, 'SelectFraudMessage begin.');
-   9. let context = this.getUIContext().getHostContext();
-   10. const result: antifraudPicker.AntifraudMessageResult = await antifraudPicker.selectFraudMessage(context, options);
-   11. } catch (err) {
-   12. let e: BusinessError = err as BusinessError;
-   13. hilog.error(0x0000, TAG, 'SelectFraudMessage failed: %{public}d %{public}s', e.code, e.message);
-   14. }
+   // 请求获取诈骗消息信息，并进行业务处理
+   let options: antifraudPicker.AntifraudMessageOptions = {
+     maxSelectNumber: 5
+   };
+   try {
+     hilog.info(0x0000, TAG, 'SelectFraudMessage begin.');
+     let context = this.getUIContext().getHostContext();
+     const result: antifraudPicker.AntifraudMessageResult = await antifraudPicker.selectFraudMessage(context, options);
+   } catch (err) {
+     let e: BusinessError = err as BusinessError;
+     hilog.error(0x0000, TAG, 'SelectFraudMessage failed: %{public}d %{public}s', e.code, e.message);
+   }
    ```

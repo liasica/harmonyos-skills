@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getsi
 title: GetSizeInBytes
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > GetSizeInBytes
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:15+08:00
+scraped_at: 2026-09-02T14:50:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:99b62b826ac552806e9d121cc71bb8151bfde085da4fa74a14294060579b589d
+content_hash: sha256:e172558ac5811e44d17227a6c0c0a8d40d6cddb9c58539b916e5aa970e44d297
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:99b62b826ac552806e9d121cc71bb8151bfde085da4fa74a14294060579
 
 ## 函数原型
 
-```
-1. int64_t GetSizeInBytes(int64_t element_count, DataType data_type)
+```cpp
+int64_t GetSizeInBytes(int64_t element_count, DataType data_type)
 ```
 
 ## 参数说明

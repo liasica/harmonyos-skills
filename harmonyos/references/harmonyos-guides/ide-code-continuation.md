@@ -1,14 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-continuation
 title: 代码续写
-breadcrumb: 指南 > 使用AI智能辅助编程 > 编辑区代码生成 > 代码续写
+breadcrumb: 指南 > 使用AI智能辅助编程（不推荐） > 编辑区代码生成 > 代码续写
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:45:11+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:b668e9b5f0f2324265314b292f486f268ca540755324ab83121e65253b12d0cd
+scraped_at: 2026-09-02T15:00:30+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:5de8bda9070089aa45aeef9b8f75f4f97868d62816f8622979f663e527075b44
 ---
 
-利用AI大模型分析并理解开发者在代码编辑区的上下文信息或自然语言描述信息，智能续写符合上下文的ArkTS或C++代码片段，减少重复编码工作。
+利用AI大模型分析并理解开发者在代码编辑区的上下文信息或自然语言描述信息，智能续写符合上下文的ArkTS代码片段，减少重复编码工作。
 
 ## 使用约束
 
@@ -17,7 +17,13 @@ content_hash: sha256:b668e9b5f0f2324265314b292f486f268ca540755324ab83121e65253b1
 
 ## 续写设置
 
-### **DevEco Studio 6.1.0 Release及以上版本**
+### 26.0.0 Beta1及以上版本
+
+进入**File > Settings...**（macOS为**DevEco Studio > Preferences/Settings） > CodeGenie > Code Suggestion**，勾选**Enable Flow Editor**，点击**OK**或**Apply**，开启续写设置。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/Hu1aBizdRp2FeNYAjDySdQ/zh-cn_image_0000002731543211.png)
+
+### DevEco Studio 6.1.0 Release及以上版本
 
 进入**File > Settings...**（macOS为**DevEco Studio > Preferences/Settings**）**>** **CodeGenie > Code Suggestion** **& Inline Chat**页面进行设置，若没登录华为开发者账号请先登录。
 
@@ -40,9 +46,9 @@ CodeGenie为续写功能提供了内置的模型，也可使用三方模型和�
 * **Model**：选择代码续写的模型，模型内容请参考：[模型（Model）配置](ide-agent-model.md)。
 * **Prompt format**：提示词格式，此处列出了主流的FIM提示词格式，并自动与模型选项联动。设置时需要选择与模型匹配的提示词格式，续写才能正常工作，开发者可在模型官网或者模型技术报告获取提示词格式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/ghqbEX7fQry4e4V4BA753g/zh-cn_image_0000002530913706.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/xI98EMRFQm6WhWDYjI7-mg/zh-cn_image_0000002701823936.png)
 
-### **DevEco Studio 6.1.0 Beta2**
+### DevEco Studio 6.1.0 Beta2
 
 进入**File > Settings...**（macOS为**DevEco Studio > Preferences/Settings**）**>** **CodeGenie > Code Completion** **& Inline Chat**页面进行设置，若没登录华为开发者账号请先登录。
 
@@ -56,7 +62,7 @@ CodeGenie为续写功能提供了内置的模型，也可使用三方模型和�
 
 * **Enable code auto completion**：自动续写开关，开启后将会根据代码上下文在合适位置自动触发代码续写。
 * **Frequency**：控制自动续写的触发频率。
-* **Auto-completion is allowed when code completion is triggerd**：是否允许自动续写与编辑器联想功能同时存在。取消勾选后，编辑器联想功能优先级更高。
+* **Auto-completion is allowed when code completion is triggered**：是否允许自动续写与编辑器联想功能同时存在。取消勾选后，编辑器联想功能优先级更高。
 
 **续写模型设置**选项**：**
 
@@ -65,31 +71,37 @@ CodeGenie为续写功能提供了内置的模型，也可使用三方模型和�
 * **Model**：选择代码续写的模型，模型内容请参考：[模型（Model）配置](ide-agent-model.md)。
 * **Prompt format**：提示词格式，此处列出了主流的FIM提示词格式，并自动与模型选项联动。设置时需要选择与模型匹配的提示词格式，续写才能正常工作，开发者可在模型官网或者模型技术报告获取提示词格式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/0JXDZyPeQ1-63DiNKBSbSQ/zh-cn_image_0000002530913702.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/BZjqDWaYR3KjOuNPHZPZIw/zh-cn_image_0000002731383235.png)
 
-### **DevEco Studio 6.1.0 Beta2以下版本**
+### DevEco Studio 6.1.0 Beta2以下版本
 
 进入**File > Settings...**（macOS为****DevEco Studio > Preferences/Settings****）**>** **CodeGenie > Code Generation**页面勾选**Enable code generation**，开启代码续写功能。如果已经熟悉了CodeGenie常用的快捷键，想要更加沉浸的体验，可以在该页面勾选**Do not disturb** **mode**，隐藏代码生成工具栏及快捷键提示。
 
 同时，根据编码习惯，选择**Enable snippet generation**（片段续写）和**Enable inline generation**（行内续写），以及设置续写时延。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/Tb6bNBQjRhWlnkNpKnKAhA/zh-cn_image_0000002530753714.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/IdZ_4DWPR8Ge4FJsOs-nyQ/zh-cn_image_0000002701823934.png)
 
 ## 续写触发和采纳
 
 ### 续写触发
 
+**26.0.0 Beta1及以上版本**
+
+打开续写设置后，在代码编辑器区域，会自动续写代码和给出代码修改建议。
+
+因续写为自动触发，可能会与LSP共存，使用**Alt + S**快捷键（macOS上为**Option+S**）可切换至仅开启代码续写功能。
+
 **DevEco Studio 6.1.0 Release及以上版本**
 
 Enable inline generation（行内续写）与Enable snippet generation（片段续写）合并为**Auto Suggestion**，取消了**Delay**设置项，通过设置**Frequency**调整自动续写的触发频次。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/0ZwqRX6eR5O0FaMKhvDicg/zh-cn_image_0000002530913708.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/QkZlum-WQAqh8aJpebuLeg/zh-cn_image_0000002701664014.png)
 
 **DevEco Studio 6.1.0 Beta2**
 
 Enable inline generation（行内续写）与Enable snippet generation（片段续写）合并为**Enable code auto completion**，取消了**Delay**设置项，通过设置**Frequency**调整自动续写的触发频次。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/1f3tSB9sSqGs-LWhImnmdw/zh-cn_image_0000002561753647.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/rmZMAsKYQOmTZzb9Y5q3Jg/zh-cn_image_0000002731543207.png)
 
 **DevEco Studio 6.1.0 Beta2以下版本**
 
@@ -97,20 +109,21 @@ Enable inline generation（行内续写）与Enable snippet generation（片段�
 * **Enable snippet generation**（片段续写）：输入回车，CodeGenie将根据上下文生成代码片段。
 * 在编辑区输入**Alt+C**快捷键（macOS上为**Option+C**）触发代码续写。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/Dt7jfI3hSq-aG89mlBW4Hw/zh-cn_image_0000002530753712.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/m780inPuQve81GIZJ487Yw/zh-cn_image_0000002731383233.png)
 
-### 续写采纳
+### 续写触发和采纳快捷键
 
-**续写内容采纳方式****：**
+**26.0.0 Beta1及以上版本**
 
-* 可通过按**Ta****b**键采纳该内容。
-* **Ctrl + ↓（**macOS中为**Command + ↓****）**逐行采纳该内容。
-* **Ctrl + →****（**macOS中为**Option + →****）**逐单词采纳该内容。
-* 通过按**ESC**键忽略该内容。
+|  |  |  |
+| --- | --- | --- |
+| **操作** | **macOS** | **Windows** |
+| 采纳续写生成的代码 | Tab | Tab |
+| 忽略续写生成的代码 | Esc | Esc |
+| 代码逐行采纳 | Command + ↓ | Ctrl + ↓ |
+| 代码逐行取消 | Command + ↑ | Ctrl + ↑ |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/LODTQYkeTGqIY2XdmGSAQQ/zh-cn_image_0000002530753710.png)
-
-**CodeGenie续写常用快捷键如下：**
+**26.0.0 Beta1以下版本**
 
 |  |  |  |
 | --- | --- | --- |

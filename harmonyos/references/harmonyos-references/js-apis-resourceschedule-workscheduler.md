@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-r
 title: "@ohos.resourceschedule.workScheduler (延迟任务调度)"
 breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > ArkTS API > @ohos.resourceschedule.workScheduler (延迟任务调度)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:33+08:00
-doc_updated_at: 2026-04-02
-content_hash: sha256:90a8812141e1ecf8041aa4b65ce25bc62288a9c494412c18df0ac49a7cc7b4c8
+scraped_at: 2026-09-02T15:01:30+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7e529f91d2e49bff1e4c2e9cc54f5a5cac80f7c94fd9375abdb537d2a5360c01
 ---
 
 本模块提供延迟任务注册、取消、查询的能力。在开发过程中，对于实时性要求不高的任务，可以调用本模块接口注册延迟任务，在系统空闲时根据性能、功耗、热等情况进行调度执行。开发指导请参考[延迟任务开发指南](../harmonyos-guides/work-scheduler.md)。
 
-说明
+**说明** 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -18,15 +18,11 @@ content_hash: sha256:90a8812141e1ecf8041aa4b65ce25bc62288a9c494412c18df0ac49a7cc
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { workScheduler } from '@kit.BackgroundTasksKit';
+```ts
+import { workScheduler } from '@kit.BackgroundTasksKit';
 ```
 
 ## workScheduler.startWork
-
-PhonePC/2in1TabletTVWearable
 
 startWork(work: WorkInfo): void
 
@@ -55,35 +51,33 @@ startWork(work: WorkInfo): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { workScheduler } from '@kit.BackgroundTasksKit';
-
-4. let workInfo: workScheduler.WorkInfo = {
-5. workId: 1,
-6. batteryStatus:workScheduler.BatteryStatus.BATTERY_STATUS_LOW,
-7. isRepeat: false,
-8. isPersisted: true,
-9. bundleName: "com.example.myapplication",
-10. abilityName: "MyExtension",
-11. parameters: {
-12. mykey0: 1,
-13. mykey1: "string value",
-14. mykey2: true,
-15. mykey3: 1.5
-16. }
-17. }
-18. try{
-19. workScheduler.startWork(workInfo);
-20. console.info('workschedulerLog startWork success');
-21. } catch (error) {
-22. console.error(`workschedulerLog startwork failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
-23. }
+```ts
+  import { BusinessError } from '@kit.BasicServicesKit';
+  import { workScheduler } from '@kit.BackgroundTasksKit';
+  
+  let workInfo: workScheduler.WorkInfo = {
+      workId: 1,
+      batteryStatus:workScheduler.BatteryStatus.BATTERY_STATUS_LOW,
+      isRepeat: false,
+      isPersisted: true,
+      bundleName: "com.example.myapplication",
+      abilityName: "MyExtension",
+      parameters: {
+          mykey0: 1,
+          mykey1: "string value",
+          mykey2: true,
+          mykey3: 1.5
+      }
+  }
+  try{
+    workScheduler.startWork(workInfo);
+    console.info('workschedulerLog startWork success');
+  } catch (error) {
+    console.error(`workschedulerLog startwork failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
+  }
 ```
 
 ## workScheduler.stopWork
-
-PhonePC/2in1TabletTVWearable
 
 stopWork(work: WorkInfo, needCancel?: boolean): void
 
@@ -112,35 +106,33 @@ stopWork(work: WorkInfo, needCancel?: boolean): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { workScheduler } from '@kit.BackgroundTasksKit';
+```ts
+  import { BusinessError } from '@kit.BasicServicesKit';
+  import { workScheduler } from '@kit.BackgroundTasksKit';
 
-4. let workInfo: workScheduler.WorkInfo = {
-5. workId: 1,
-6. batteryStatus:workScheduler.BatteryStatus.BATTERY_STATUS_LOW,
-7. isRepeat: false,
-8. isPersisted: true,
-9. bundleName: "com.example.myapplication",
-10. abilityName: "MyExtension",
-11. parameters: {
-12. mykey0: 1,
-13. mykey1: "string value",
-14. mykey2: true,
-15. mykey3: 1.5
-16. }
-17. }
-18. try{
-19. workScheduler.stopWork(workInfo, false);
-20. console.info('workschedulerLog stopWork success');
-21. } catch (error) {
-22. console.error(`workschedulerLog stopWork failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
-23. }
+  let workInfo: workScheduler.WorkInfo = {
+      workId: 1,
+      batteryStatus:workScheduler.BatteryStatus.BATTERY_STATUS_LOW,
+      isRepeat: false,
+      isPersisted: true,
+      bundleName: "com.example.myapplication",
+      abilityName: "MyExtension",
+      parameters: {
+          mykey0: 1,
+          mykey1: "string value",
+          mykey2: true,
+          mykey3: 1.5
+      }
+     }
+  try{
+    workScheduler.stopWork(workInfo, false);
+    console.info('workschedulerLog stopWork success');
+  } catch (error) {
+    console.error(`workschedulerLog stopWork failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
+  }
 ```
 
 ## workScheduler.getWorkStatus
-
-PhonePC/2in1TabletTVWearable
 
 getWorkStatus(workId: number, callback : AsyncCallback<WorkInfo>): void
 
@@ -169,22 +161,20 @@ getWorkStatus(workId: number, callback : AsyncCallback<WorkInfo>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { workScheduler } from '@kit.BackgroundTasksKit';
+```ts
+  import { BusinessError } from '@kit.BasicServicesKit';
+  import { workScheduler } from '@kit.BackgroundTasksKit';
 
-4. workScheduler.getWorkStatus(50, (error: BusinessError, res: workScheduler.WorkInfo) => {
-5. if (error) {
-6. console.error(`workschedulerLog getWorkStatus failed. code is ${error.code} message is ${error.message}`);
-7. } else {
-8. console.info(`workschedulerLog getWorkStatus success, ${JSON.stringify(res)}`);
-9. }
-10. });
+  workScheduler.getWorkStatus(50, (error: BusinessError, res: workScheduler.WorkInfo) => {
+    if (error) {
+      console.error(`workschedulerLog getWorkStatus failed. code is ${error.code} message is ${error.message}`);
+    } else {
+      console.info(`workschedulerLog getWorkStatus success, ${JSON.stringify(res)}`);
+    }
+  });
 ```
 
 ## workScheduler.getWorkStatus
-
-PhonePC/2in1TabletTVWearable
 
 getWorkStatus(workId: number): Promise<WorkInfo>
 
@@ -218,26 +208,24 @@ getWorkStatus(workId: number): Promise<WorkInfo>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { workScheduler } from '@kit.BackgroundTasksKit';
+```ts
+  import { BusinessError } from '@kit.BasicServicesKit';
+  import { workScheduler } from '@kit.BackgroundTasksKit';
 
-4. workScheduler.getWorkStatus(50).then((res: workScheduler.WorkInfo) => {
-5. console.info(`workschedulerLog getWorkStatus success, ${JSON.stringify(res)}`);
-6. }).catch((error: BusinessError) => {
-7. console.error(`workschedulerLog getWorkStatus failed. code is ${error.code} message is ${error.message}`);
-8. })
+  workScheduler.getWorkStatus(50).then((res: workScheduler.WorkInfo) => {
+    console.info(`workschedulerLog getWorkStatus success, ${JSON.stringify(res)}`);
+  }).catch((error: BusinessError) => {
+    console.error(`workschedulerLog getWorkStatus failed. code is ${error.code} message is ${error.message}`);
+  })
 ```
 
 ## workScheduler.obtainAllWorks(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
-obtainAllWorks(callback : AsyncCallback<void>) : Array<WorkInfo>
+obtainAllWorks(callback: AsyncCallback<void>) : Array<WorkInfo>
 
 获取当前应用所有的延迟任务，使用Callback异步回调。
 
-说明
+**说明** 
 
 从API version 9开始支持，从API version 10开始废弃，建议使用[obtainAllWorks10+](js-apis-resourceschedule-workscheduler.md#workschedulerobtainallworks10)替代。
 
@@ -268,9 +256,7 @@ obtainAllWorks(callback : AsyncCallback<void>) : Array<WorkInfo>
 
 ## workScheduler.obtainAllWorks10+
 
-PhonePC/2in1TabletTVWearable
-
-obtainAllWorks(callback : AsyncCallback<Array<WorkInfo>>): void
+obtainAllWorks(callback: AsyncCallback<Array<WorkInfo>>): void
 
 获取当前应用所有的延迟任务，使用Callback异步回调。
 
@@ -295,22 +281,20 @@ obtainAllWorks(callback : AsyncCallback<Array<WorkInfo>>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { workScheduler } from '@kit.BackgroundTasksKit';
+```ts
+  import { BusinessError } from '@kit.BasicServicesKit';
+  import { workScheduler } from '@kit.BackgroundTasksKit';
 
-4. workScheduler.obtainAllWorks((error: BusinessError, res: Array<workScheduler.WorkInfo>) =>{
-5. if (error) {
-6. console.error(`workschedulerLog obtainAllWorks failed. code is ${error.code} message is ${error.message}`);
-7. } else {
-8. console.info(`workschedulerLog obtainAllWorks success, data is: ${JSON.stringify(res)}`);
-9. }
-10. });
+  workScheduler.obtainAllWorks((error: BusinessError, res: Array<workScheduler.WorkInfo>) =>{
+    if (error) {
+      console.error(`workschedulerLog obtainAllWorks failed. code is ${error.code} message is ${error.message}`);
+    } else {
+      console.info(`workschedulerLog obtainAllWorks success, data is: ${JSON.stringify(res)}`);
+    }
+  });
 ```
 
 ## workScheduler.obtainAllWorks
-
-PhonePC/2in1TabletTVWearable
 
 obtainAllWorks(): Promise<Array<WorkInfo>>
 
@@ -337,24 +321,22 @@ obtainAllWorks(): Promise<Array<WorkInfo>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { workScheduler } from '@kit.BackgroundTasksKit';
+```ts
+  import { BusinessError } from '@kit.BasicServicesKit';
+  import { workScheduler } from '@kit.BackgroundTasksKit';
 
-4. workScheduler.obtainAllWorks().then((res: Array<workScheduler.WorkInfo>) => {
-5. console.info(`workschedulerLog obtainAllWorks success, data is: ${JSON.stringify(res)}`);
-6. }).catch((error: BusinessError) => {
-7. console.error(`workschedulerLog obtainAllWorks failed. code is ${error.code} message is ${error.message}`);
-8. })
+  workScheduler.obtainAllWorks().then((res: Array<workScheduler.WorkInfo>) => {
+    console.info(`workschedulerLog obtainAllWorks success, data is: ${JSON.stringify(res)}`);
+  }).catch((error: BusinessError) => {
+    console.error(`workschedulerLog obtainAllWorks failed. code is ${error.code} message is ${error.message}`);
+  })
 ```
 
 ## workScheduler.stopAndClearWorks
 
-PhonePC/2in1TabletTVWearable
-
 stopAndClearWorks(): void
 
-停止和取消当前应用所有的延迟任务。
+停止和取消当前应用所有的延迟任务。适用于应用退出或卸载时清理所有延迟任务的场景。
 
 **系统能力：** SystemCapability.ResourceSchedule.WorkScheduler
 
@@ -371,21 +353,19 @@ stopAndClearWorks(): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { workScheduler } from '@kit.BackgroundTasksKit';
+```ts
+  import { BusinessError } from '@kit.BasicServicesKit';
+  import { workScheduler } from '@kit.BackgroundTasksKit';
 
-4. try{
-5. workScheduler.stopAndClearWorks();
-6. console.info(`workschedulerLog stopAndClearWorks success`);
-7. } catch (error) {
-8. console.error(`workschedulerLog stopAndClearWorks failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
-9. }
+  try{
+    workScheduler.stopAndClearWorks();
+    console.info(`workschedulerLog stopAndClearWorks success`);
+  } catch (error) {
+    console.error(`workschedulerLog stopAndClearWorks failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
+  }
 ```
 
 ## workScheduler.isLastWorkTimeOut(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isLastWorkTimeOut(workId: number, callback : AsyncCallback<void>): boolean
 
@@ -422,9 +402,7 @@ isLastWorkTimeOut(workId: number, callback : AsyncCallback<void>): boolean
 
 ## workScheduler.isLastWorkTimeOut10+
 
-PhonePC/2in1TabletTVWearable
-
-isLastWorkTimeOut(workId: number, callback : AsyncCallback<boolean>): void
+isLastWorkTimeOut(workId: number, callback: AsyncCallback<boolean>): void
 
 检查延迟任务的最后一次执行是否超时，使用Callback异步回调。
 
@@ -451,22 +429,20 @@ isLastWorkTimeOut(workId: number, callback : AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { workScheduler } from '@kit.BackgroundTasksKit';
+```ts
+  import { BusinessError } from '@kit.BasicServicesKit';
+  import { workScheduler } from '@kit.BackgroundTasksKit';
 
-4. workScheduler.isLastWorkTimeOut(500, (error: BusinessError, res: boolean) =>{
-5. if (error) {
-6. console.error(`workschedulerLog isLastWorkTimeOut failed. code is ${error.code} message is ${error.message}`);
-7. } else {
-8. console.info(`workschedulerLog isLastWorkTimeOut success, data is: ${res}`);
-9. }
-10. });
+  workScheduler.isLastWorkTimeOut(500, (error: BusinessError, res: boolean) =>{
+    if (error) {
+      console.error(`workschedulerLog isLastWorkTimeOut failed. code is ${error.code} message is ${error.message}`);
+    } else {
+      console.info(`workschedulerLog isLastWorkTimeOut success, data is: ${res}`);
+    }
+  });
 ```
 
 ## workScheduler.isLastWorkTimeOut
-
-PhonePC/2in1TabletTVWearable
 
 isLastWorkTimeOut(workId: number): Promise<boolean>
 
@@ -500,26 +476,24 @@ isLastWorkTimeOut(workId: number): Promise<boolean>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { workScheduler } from '@kit.BackgroundTasksKit';
+```ts
+  import { BusinessError } from '@kit.BasicServicesKit';
+  import { workScheduler } from '@kit.BackgroundTasksKit';
 
-4. workScheduler.isLastWorkTimeOut(500)
-5. .then((res: boolean) => {
-6. console.info(`workschedulerLog isLastWorkTimeOut success, data is: ${res}`);
-7. })
-8. .catch((error: BusinessError) =>  {
-9. console.error(`workschedulerLog isLastWorkTimeOut failed. code is ${error.code} message is ${error.message}`);
-10. });
+  workScheduler.isLastWorkTimeOut(500)
+    .then((res: boolean) => {
+      console.info(`workschedulerLog isLastWorkTimeOut success, data is: ${res}`);
+    })
+    .catch((error: BusinessError) =>  {
+      console.error(`workschedulerLog isLastWorkTimeOut failed. code is ${error.code} message is ${error.message}`);
+    });
 ```
 
 ## WorkInfo
 
-PhonePC/2in1TabletTVWearable
+延迟任务的具体信息，用于设置延迟任务的触发条件等。
 
-延迟任务的具体信息, 用于设置延迟任务的触发条件等。
-
-说明
+**说明** 
 
 WorkInfo参数设置时需遵循以下规则：
 
@@ -553,8 +527,6 @@ WorkInfo参数设置时需遵循以下规则：
 
 ## NetworkType
 
-PhonePC/2in1TabletTVWearable
-
 触发延迟任务回调的网络类型。
 
 **系统能力：** SystemCapability.ResourceSchedule.WorkScheduler
@@ -570,8 +542,6 @@ PhonePC/2in1TabletTVWearable
 
 ## ChargingType
 
-PhonePC/2in1TabletTVWearable
-
 触发延迟任务回调的充电类型。
 
 **系统能力：** SystemCapability.ResourceSchedule.WorkScheduler
@@ -585,8 +555,6 @@ PhonePC/2in1TabletTVWearable
 
 ## BatteryStatus
 
-PhonePC/2in1TabletTVWearable
-
 触发延迟任务回调的电池状态。
 
 **系统能力：** SystemCapability.ResourceSchedule.WorkScheduler
@@ -598,8 +566,6 @@ PhonePC/2in1TabletTVWearable
 | BATTERY\_STATUS\_LOW\_OR\_OKAY | 2 | 表示这个触发条件是从低电恢复到正常电量或者低电告警。 |
 
 ## StorageRequest
-
-PhonePC/2in1TabletTVWearable
 
 触发延迟任务回调的存储状态。
 

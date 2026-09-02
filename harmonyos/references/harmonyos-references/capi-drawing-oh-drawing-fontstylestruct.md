@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: OH_Drawing_FontStyleStruct
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 结构体 > OH_Drawing_FontStyleStruct
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:466fbcc96b4f7d74e32f8224eca030e8483fda138f8ac52242bbf75490ac1fc1
+scraped_at: 2026-09-02T15:02:46+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e6fb9ee02f67b43419b58189c8489b96873d36d818faa0dfeae28268a818c505
 ---
 
-```
-1. typedef struct OH_Drawing_FontStyleStruct {...} OH_Drawing_FontStyleStruct
+```c
+typedef struct OH_Drawing_FontStyleStruct {...} OH_Drawing_FontStyleStruct
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义字体样式信息的结构体。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

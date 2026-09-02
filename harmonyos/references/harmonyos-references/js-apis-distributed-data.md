@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.data.distributedData (分布式数据管理)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > 已停止维护的接口 > @ohos.data.distributedData (分布式数据管理)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:22+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:746c15efde7421d3f81f1cb587ccce322c0a199a0db89c79ea797b1aa9ad443c
+scraped_at: 2026-09-02T15:00:42+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:daab10c4273434b1284561f6ec19d07694e2d5d2b62f5499074a5b1625246145
 ---
 
 分布式数据管理为应用程序提供不同设备间数据库的分布式协同能力。通过调用分布式数据各个接口，应用程序可将数据保存到分布式数据库中，并可对分布式数据库中的数据进行增加、删除、修改、查询、同步等操作。
@@ -19,23 +19,19 @@ content_hash: sha256:746c15efde7421d3f81f1cb587ccce322c0a199a0db89c79ea797b1aa9a
 * [SingleKVStore](js-apis-distributed-data.md#singlekvstore)：单版本分布式数据库，继承自[KVStore](js-apis-distributed-data.md#kvstore)，不对数据所属设备进行区分，提供查询数据和同步数据的方法。
 * [DeviceKVStore8+](js-apis-distributed-data.md#devicekvstore8)：设备协同数据库，继承自[KVStore](js-apis-distributed-data.md#kvstore)，以设备维度对数据进行区分，提供查询数据和同步数据的方法。
 
-说明
+**说明** 
 
-* 从API Version 9开始，该接口不再维护，推荐使用新接口[@ohos.data.distributedKVStore](js-apis-distributedkvstore.md)。
+* 从API Version 9开始，该接口不再维护，推荐使用新接口[@ohos.data.distributedKVStore (分布式键值数据库)](js-apis-distributedkvstore.md)。
 * 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本模块中所有需要获取deviceId的接口，都仅系统应用可用。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import distributedData from '@ohos.data.distributedData';
+```js
+import distributedData from '@ohos.data.distributedData';
 ```
 
 ## distributedData.createKVManager
-
-PhonePC/2in1TabletTVWearable
 
 createKVManager(config: KVManagerConfig, callback: AsyncCallback<KVManager>): void
 
@@ -52,32 +48,30 @@ createKVManager(config: KVManagerConfig, callback: AsyncCallback<KVManager>): vo
 
 **示例：**
 
-```
-1. let kvManager;
-2. try {
-3. const kvManagerConfig = {
-4. bundleName : 'com.example.datamanagertest',
-5. userInfo : {
-6. userId : '0',
-7. userType : distributedData.UserType.SAME_USER_ID
-8. }
-9. }
-10. distributedData.createKVManager(kvManagerConfig, function (err, manager) {
-11. if (err) {
-12. console.log("Failed to create KVManager: "  + JSON.stringify(err));
-13. return;
-14. }
-15. console.log("Succeeded in creating KVManager");
-16. kvManager = manager;
-17. });
-18. } catch (e) {
-19. console.log("An unexpected error occurred. Error:" + e);
-20. }
+```js
+let kvManager;
+try {
+    const kvManagerConfig = {
+        bundleName : 'com.example.datamanagertest',
+        userInfo : {
+            userId : '0',
+            userType : distributedData.UserType.SAME_USER_ID
+        }
+    }
+    distributedData.createKVManager(kvManagerConfig, function (err, manager) {
+        if (err) {
+            console.error("Failed to create KVManager: "  + JSON.stringify(err));
+            return;
+        }
+        console.info("Succeeded in creating KVManager");
+        kvManager = manager;
+    });
+} catch (e) {
+    console.error("An unexpected error occurred. Error:" + e);
+}
 ```
 
 ## distributedData.createKVManager
-
-PhonePC/2in1TabletTVWearable
 
 createKVManager(config: KVManagerConfig): Promise<KVManager>
 
@@ -99,29 +93,27 @@ createKVManager(config: KVManagerConfig): Promise<KVManager>
 
 **示例：**
 
-```
-1. try {
-2. const kvManagerConfig = {
-3. bundleName: 'com.example.datamanagertest',
-4. userInfo: {
-5. userId: '0',
-6. userType: distributedData.UserType.SAME_USER_ID
-7. }
-8. }
-9. distributedData.createKVManager(kvManagerConfig).then((manager) => {
-10. console.log("Succeeded in creating KVManager");
-11. kvManager = manager;
-12. }).catch((err) => {
-13. console.error("Failed to create KVManager: " + JSON.stringify(err));
-14. });
-15. } catch (e) {
-16. console.log("An unexpected error occurred. Error:" + e);
-17. }
+```js
+try {
+  const kvManagerConfig = {
+    bundleName: 'com.example.datamanagertest',
+    userInfo: {
+      userId: '0',
+      userType: distributedData.UserType.SAME_USER_ID
+    }
+  }
+  distributedData.createKVManager(kvManagerConfig).then((manager) => {
+    console.info("Succeeded in creating KVManager");
+    kvManager = manager;
+  }).catch((err) => {
+    console.error("Failed to create KVManager: " + JSON.stringify(err));
+  });
+} catch (e) {
+  console.error("An unexpected error occurred. Error:" + e);
+}
 ```
 
 ## KVManagerConfig
-
-PhonePC/2in1TabletTVWearable
 
 提供KVManager实例的配置信息，包括调用方的Bundle名称和用户信息。
 
@@ -134,8 +126,6 @@ PhonePC/2in1TabletTVWearable
 
 ## UserInfo
 
-PhonePC/2in1TabletTVWearable
-
 用户信息。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
@@ -147,8 +137,6 @@ PhonePC/2in1TabletTVWearable
 
 ## UserType
 
-PhonePC/2in1TabletTVWearable
-
 用户类型枚举。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
@@ -159,13 +147,9 @@ PhonePC/2in1TabletTVWearable
 
 ## KVManager
 
-PhonePC/2in1TabletTVWearable
-
 数据管理实例，用于获取KVStore的相关信息。在调用KVManager的方法前，需要先通过[createKVManager](js-apis-distributed-data.md#distributeddatacreatekvmanager)构建一个KVManager实例。
 
 ### getKVStore
-
-PhonePC/2in1TabletTVWearable
 
 getKVStore<T extends KVStore>(storeId: string, options: Options, callback: AsyncCallback<T>): void
 
@@ -183,34 +167,32 @@ getKVStore<T extends KVStore>(storeId: string, options: Options, callback: Async
 
 **示例：**
 
-```
-1. let kvStore;
-2. let kvManager;
-3. try {
-4. const options = {
-5. createIfMissing : true,
-6. encrypt : false,
-7. backup : false,
-8. autoSync : true,
-9. kvStoreType : distributedData.KVStoreType.SINGLE_VERSION,
-10. securityLevel : distributedData.SecurityLevel.S3,
-11. };
-12. kvManager.getKVStore('storeId', options, function (err, store) {
-13. if (err) {
-14. console.log("getKVStore err: "  + JSON.stringify(err));
-15. return;
-16. }
-17. console.log("getKVStore success");
-18. kvStore = store;
-19. });
-20. } catch (e) {
-21. console.log("An unexpected error occurred. Error:" + e);
-22. }
+```js
+let kvStore;
+let kvManager;
+try {
+    const options = {
+        createIfMissing : true,
+        encrypt : false,
+        backup : false,
+        autoSync : true,
+        kvStoreType : distributedData.KVStoreType.SINGLE_VERSION,
+        securityLevel : distributedData.SecurityLevel.S3,
+    };
+    kvManager.getKVStore('storeId', options, function (err, store) {
+        if (err) {
+            console.error("getKVStore err: "  + JSON.stringify(err));
+            return;
+        }
+        console.info("getKVStore success");
+        kvStore = store;
+    });
+} catch (e) {
+    console.error("An unexpected error occurred. Error:" + e);
+}
 ```
 
 ### getKVStore
-
-PhonePC/2in1TabletTVWearable
 
 getKVStore<T extends KVStore>(storeId: string, options: Options): Promise<T>
 
@@ -233,32 +215,30 @@ getKVStore<T extends KVStore>(storeId: string, options: Options): Promise<T>
 
 **示例：**
 
-```
-1. let kvStore;
-2. let kvManager;
-3. try {
-4. const options = {
-5. createIfMissing : true,
-6. encrypt : false,
-7. backup : false,
-8. autoSync : true,
-9. kvStoreType : distributedData.KVStoreType.SINGLE_VERSION,
-10. securityLevel : distributedData.SecurityLevel.S3,
-11. };
-12. kvManager.getKVStore('storeId', options).then((store) => {
-13. console.log("getKVStore success");
-14. kvStore = store;
-15. }).catch((err) => {
-16. console.log("getKVStore err: "  + JSON.stringify(err));
-17. });
-18. } catch (e) {
-19. console.log("An unexpected error occurred. Error:" + e);
-20. }
+```js
+let kvStore;
+let kvManager;
+try {
+    const options = {
+        createIfMissing : true,
+        encrypt : false,
+        backup : false,
+        autoSync : true,
+        kvStoreType : distributedData.KVStoreType.SINGLE_VERSION,
+        securityLevel : distributedData.SecurityLevel.S3,
+    };
+    kvManager.getKVStore('storeId', options).then((store) => {
+        console.info("getKVStore success");
+        kvStore = store;
+    }).catch((err) => {
+        console.error("getKVStore err: "  + JSON.stringify(err));
+    });
+} catch (e) {
+    console.error("An unexpected error occurred. Error:" + e);
+}
 ```
 
 ### closeKVStore8+
-
-PhonePC/2in1TabletTVWearable
 
 closeKVStore(appId: string, storeId: string, kvStore: KVStore, callback: AsyncCallback<void>): void
 
@@ -277,34 +257,32 @@ closeKVStore(appId: string, storeId: string, kvStore: KVStore, callback: AsyncCa
 
 **示例：**
 
-```
-1. let kvStore;
-2. let kvManager;
-3. const options = {
-4. createIfMissing: true,
-5. encrypt: false,
-6. backup: false,
-7. autoSync: false,
-8. kvStoreType: distributedData.KVStoreType.SINGLE_VERSION,
-9. schema: undefined,
-10. securityLevel: distributedData.SecurityLevel.S3,
-11. }
-12. try {
-13. kvManager.getKVStore('storeId', options, async function (err, store) {
-14. console.log('getKVStore success');
-15. kvStore = store;
-16. kvManager.closeKVStore('appId', 'storeId', kvStore, function (err, data) {
-17. console.log('closeKVStore success');
-18. });
-19. });
-20. } catch (e) {
-21. console.log('closeKVStore e ' + e);
-22. }
+```js
+let kvStore;
+let kvManager;
+const options = {
+    createIfMissing: true,
+    encrypt: false,
+    backup: false,
+    autoSync: false,
+    kvStoreType: distributedData.KVStoreType.SINGLE_VERSION,
+    schema: undefined,
+    securityLevel: distributedData.SecurityLevel.S3,
+}
+try {
+    kvManager.getKVStore('storeId', options, async function (err, store) {
+        console.info('getKVStore success');
+        kvStore = store;
+        kvManager.closeKVStore('appId', 'storeId', kvStore, function (err, data) {
+            console.info('closeKVStore success');
+        });
+    });
+} catch (e) {
+    console.error('closeKVStore e ' + e);
+}
 ```
 
 ### closeKVStore8+
-
-PhonePC/2in1TabletTVWearable
 
 closeKVStore(appId: string, storeId: string, kvStore: KVStore): Promise<void>
 
@@ -328,38 +306,36 @@ closeKVStore(appId: string, storeId: string, kvStore: KVStore): Promise<void>
 
 **示例：**
 
-```
-1. let kvManager;
-2. let kvStore;
-3. const options = {
-4. createIfMissing: true,
-5. encrypt: false,
-6. backup: false,
-7. autoSync: false,
-8. kvStoreType: distributedData.KVStoreType.SINGLE_VERSION,
-9. schema: undefined,
-10. securityLevel: distributedData.SecurityLevel.S3,
-11. }
-12. try {
-13. kvManager.getKVStore('storeId', options).then(async (store) => {
-14. console.log('getKVStore success');
-15. kvStore = store;
-16. kvManager.closeKVStore('appId', 'storeId', kvStore).then(() => {
-17. console.log('closeKVStore success');
-18. }).catch((err) => {
-19. console.log('closeKVStore err ' + JSON.stringify(err));
-20. });
-21. }).catch((err) => {
-22. console.log('CloseKVStore getKVStore err ' + JSON.stringify(err));
-23. });
-24. } catch (e) {
-25. console.log('closeKVStore e ' + e);
-26. }
+```js
+let kvManager;
+let kvStore;
+const options = {
+    createIfMissing: true,
+    encrypt: false,
+    backup: false,
+    autoSync: false,
+    kvStoreType: distributedData.KVStoreType.SINGLE_VERSION,
+    schema: undefined,
+    securityLevel: distributedData.SecurityLevel.S3,
+}
+try {
+    kvManager.getKVStore('storeId', options).then(async (store) => {
+        console.info('getKVStore success');
+        kvStore = store;
+        kvManager.closeKVStore('appId', 'storeId', kvStore).then(() => {
+            console.info('closeKVStore success');
+        }).catch((err) => {
+            console.error('closeKVStore err ' + JSON.stringify(err));
+        });
+    }).catch((err) => {
+        console.error('CloseKVStore getKVStore err ' + JSON.stringify(err));
+    });
+} catch (e) {
+    console.error('closeKVStore e ' + e);
+}
 ```
 
 ### deleteKVStore8+
-
-PhonePC/2in1TabletTVWearable
 
 deleteKVStore(appId: string, storeId: string, callback: AsyncCallback<void>): void
 
@@ -377,34 +353,32 @@ deleteKVStore(appId: string, storeId: string, callback: AsyncCallback<void>): vo
 
 **示例：**
 
-```
-1. let kvManager;
-2. let kvStore;
-3. const options = {
-4. createIfMissing : true,
-5. encrypt : false,
-6. backup : false,
-7. autoSync : true,
-8. kvStoreType : distributedData.KVStoreType.SINGLE_VERSION,
-9. schema : undefined,
-10. securityLevel : distributedData.SecurityLevel.S3,
-11. }
-12. try {
-13. kvManager.getKVStore('store', options, async function (err, store) {
-14. console.log('getKVStore success');
-15. kvStore = store;
-16. kvManager.deleteKVStore('appId', 'storeId', function (err, data) {
-17. console.log('deleteKVStore success');
-18. });
-19. });
-20. } catch (e) {
-21. console.log('DeleteKVStore e ' + e);
-22. }
+```js
+let kvManager;
+let kvStore;
+const options = {
+    createIfMissing : true,
+    encrypt : false,
+    backup : false,
+    autoSync : true,
+    kvStoreType : distributedData.KVStoreType.SINGLE_VERSION,
+    schema : undefined,
+    securityLevel : distributedData.SecurityLevel.S3,
+}
+try {
+    kvManager.getKVStore('store', options, async function (err, store) {
+        console.info('getKVStore success');
+        kvStore = store;
+        kvManager.deleteKVStore('appId', 'storeId', function (err, data) {
+            console.info('deleteKVStore success');
+        });
+    });
+} catch (e) {
+    console.error('DeleteKVStore e ' + e);
+}
 ```
 
 ### deleteKVStore8+
-
-PhonePC/2in1TabletTVWearable
 
 deleteKVStore(appId: string, storeId: string): Promise<void>
 
@@ -427,38 +401,36 @@ deleteKVStore(appId: string, storeId: string): Promise<void>
 
 **示例：**
 
-```
-1. let kvManager;
-2. let kvStore;
-3. const options = {
-4. createIfMissing : true,
-5. encrypt : false,
-6. backup : false,
-7. autoSync : true,
-8. kvStoreType : distributedData.KVStoreType.SINGLE_VERSION,
-9. schema : undefined,
-10. securityLevel : distributedData.SecurityLevel.S3,
-11. }
-12. try {
-13. kvManager.getKVStore('storeId', options).then(async (store) => {
-14. console.log('getKVStore success');
-15. kvStore = store;
-16. kvManager.deleteKVStore('appId', 'storeId').then(() => {
-17. console.log('deleteKVStore success');
-18. }).catch((err) => {
-19. console.log('deleteKVStore err ' + JSON.stringify(err));
-20. });
-21. }).catch((err) => {
-22. console.log('getKVStore err ' + JSON.stringify(err));
-23. });
-24. } catch (e) {
-25. console.log('deleteKVStore e ' + e);
-26. }
+```js
+let kvManager;
+let kvStore;
+const options = {
+    createIfMissing : true,
+    encrypt : false,
+    backup : false,
+    autoSync : true,
+    kvStoreType : distributedData.KVStoreType.SINGLE_VERSION,
+    schema : undefined,
+    securityLevel : distributedData.SecurityLevel.S3,
+}
+try {
+    kvManager.getKVStore('storeId', options).then(async (store) => {
+        console.info('getKVStore success');
+        kvStore = store;
+        kvManager.deleteKVStore('appId', 'storeId').then(() => {
+            console.info('deleteKVStore success');
+        }).catch((err) => {
+            console.error('deleteKVStore err ' + JSON.stringify(err));
+        });
+    }).catch((err) => {
+        console.error('getKVStore err ' + JSON.stringify(err));
+    });
+} catch (e) {
+    console.error('deleteKVStore e ' + e);
+}
 ```
 
 ### getAllKVStoreId8+
-
-PhonePC/2in1TabletTVWearable
 
 getAllKVStoreId(appId: string, callback: AsyncCallback<string[]>): void
 
@@ -475,21 +447,19 @@ getAllKVStoreId(appId: string, callback: AsyncCallback<string[]>): void
 
 **示例：**
 
-```
-1. let kvManager;
-2. try {
-3. kvManager.getAllKVStoreId('appId', function (err, data) {
-4. console.log('GetAllKVStoreId success');
-5. console.log('GetAllKVStoreId size = ' + data.length);
-6. });
-7. } catch (e) {
-8. console.log('GetAllKVStoreId e ' + e);
-9. }
+```js
+let kvManager;
+try {
+    kvManager.getAllKVStoreId('appId', function (err, data) {
+        console.info('GetAllKVStoreId success');
+        console.info('GetAllKVStoreId size = ' + data.length);
+    });
+} catch (e) {
+    console.error('GetAllKVStoreId e ' + e);
+}
 ```
 
 ### getAllKVStoreId8+
-
-PhonePC/2in1TabletTVWearable
 
 getAllKVStoreId(appId: string): Promise<string[]>
 
@@ -511,24 +481,22 @@ getAllKVStoreId(appId: string): Promise<string[]>
 
 **示例：**
 
-```
-1. let kvManager;
-2. try {
-3. console.log('GetAllKVStoreId');
-4. kvManager.getAllKVStoreId('appId').then((data) => {
-5. console.log('getAllKVStoreId success');
-6. console.log('size = ' + data.length);
-7. }).catch((err) => {
-8. console.log('getAllKVStoreId err ' + JSON.stringify(err));
-9. });
-10. } catch(e) {
-11. console.log('getAllKVStoreId e ' + e);
-12. }
+```js
+let kvManager;
+try {
+    console.info('GetAllKVStoreId');
+    kvManager.getAllKVStoreId('appId').then((data) => {
+        console.info('getAllKVStoreId success');
+        console.info('size = ' + data.length);
+    }).catch((err) => {
+        console.error('getAllKVStoreId err ' + JSON.stringify(err));
+    });
+} catch(e) {
+    console.error('getAllKVStoreId e ' + e);
+}
 ```
 
 ### on('distributedDataServiceDie')8+
-
-PhonePC/2in1TabletTVWearable
 
 on(event: 'distributedDataServiceDie', deathCallback: Callback<void>): void
 
@@ -545,22 +513,20 @@ on(event: 'distributedDataServiceDie', deathCallback: Callback<void>): void
 
 **示例：**
 
-```
-1. let kvManager;
-2. try {
-3. console.log('KVManagerOn');
-4. const deathCallback = function () {
-5. console.log('death callback call');
-6. }
-7. kvManager.on('distributedDataServiceDie', deathCallback);
-8. } catch (e) {
-9. console.log("An unexpected error occurred. Error:" + e);
-10. }
+```js
+let kvManager;
+try {
+    console.info('KVManagerOn');
+    const deathCallback = function () {
+        console.info('death callback call');
+    }
+    kvManager.on('distributedDataServiceDie', deathCallback);
+} catch (e) {
+    console.error("An unexpected error occurred. Error:" + e);
+}
 ```
 
 ### off('distributedDataServiceDie')8+
-
-PhonePC/2in1TabletTVWearable
 
 off(event: 'distributedDataServiceDie', deathCallback?: Callback<void>): void
 
@@ -577,22 +543,20 @@ off(event: 'distributedDataServiceDie', deathCallback?: Callback<void>): void
 
 **示例：**
 
-```
-1. let kvManager;
-2. try {
-3. console.log('KVManagerOff');
-4. const deathCallback = function () {
-5. console.log('death callback call');
-6. }
-7. kvManager.off('distributedDataServiceDie', deathCallback);
-8. } catch (e) {
-9. console.log("An unexpected error occurred. Error:" + e);
-10. }
+```js
+let kvManager;
+try {
+    console.info('KVManagerOff');
+    const deathCallback = function () {
+        console.info('death callback call');
+    }
+    kvManager.off('distributedDataServiceDie', deathCallback);
+} catch (e) {
+    console.error("An unexpected error occurred. Error:" + e);
+}
 ```
 
 ## Options
-
-PhonePC/2in1TabletTVWearable
 
 用于提供创建数据库的配置信息。
 
@@ -608,8 +572,6 @@ PhonePC/2in1TabletTVWearable
 
 ## KVStoreType
 
-PhonePC/2in1TabletTVWearable
-
 KVStore数据库类型枚举。
 
 | 名称 | 值 | 说明 |
@@ -619,8 +581,6 @@ KVStore数据库类型枚举。
 | MULTI\_VERSION | 2 | 表示多版本数据库。当前暂不支持使用此接口。  **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore |
 
 ## SecurityLevel
-
-PhonePC/2in1TabletTVWearable
 
 数据库的安全级别枚举。
 
@@ -634,8 +594,6 @@ PhonePC/2in1TabletTVWearable
 | S4 | 6 | 表示数据库的安全级别为关键级别，当数据泄露时会产生严重影响。例如，包含认证凭据、财务数据等信息的数据库。  **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core |
 
 ## Constants
-
-PhonePC/2in1TabletTVWearable
 
 KVStore常量。
 
@@ -652,8 +610,6 @@ KVStore常量。
 
 ## Schema8+
 
-PhonePC/2in1TabletTVWearable
-
 表示数据库模式，可以在创建或打开数据库时创建Schema对象并将它们放入[Options](js-apis-distributed-data.md#options)中。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
@@ -667,8 +623,6 @@ PhonePC/2in1TabletTVWearable
 
 ### constructor8+
 
-PhonePC/2in1TabletTVWearable
-
 constructor()
 
 用于创建Schema实例的构造函数。
@@ -677,8 +631,6 @@ constructor()
 
 ## FieldNode8+
 
-PhonePC/2in1TabletTVWearable
-
 表示 Schema 实例的节点，提供定义存储在数据库中的值的方法。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
@@ -686,12 +638,10 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |
 | nullable8+ | boolean | 是 | 是 | 表示数据库字段是否可以为空。 |
-| default8+ | string | 是 | 是 | 表示Fieldnode的默认值。 |
+| default8+ | string | 是 | 是 | 表示FieldNode的默认值。 |
 | type8+ | number | 是 | 是 | 表示指定节点对应数据类型的值。 |
 
 ### constructor8+
-
-PhonePC/2in1TabletTVWearable
 
 constructor(name: string)
 
@@ -706,8 +656,6 @@ constructor(name: string)
 | name | string | 是 | FieldNode的值。 |
 
 ### appendChild8+
-
-PhonePC/2in1TabletTVWearable
 
 appendChild(child: FieldNode): boolean
 
@@ -729,37 +677,33 @@ appendChild(child: FieldNode): boolean
 
 **示例：**
 
-```
-1. import ddm from '@ohos.data.distributedData';
-2. try {
-3. let node = new ddm.FieldNode("root");
-4. let child1 = new ddm.FieldNode("child1");
-5. let child2 = new ddm.FieldNode("child2");
-6. let child3 = new ddm.FieldNode("child3");
-7. node.appendChild(child1);
-8. node.appendChild(child2);
-9. node.appendChild(child3);
-10. console.log("appendNode " + JSON.stringify(node));
-11. child1 = null;
-12. child2 = null;
-13. child3 = null;
-14. node = null;
-15. } catch (e) {
-16. console.log("AppendChild " + e);
-17. }
+```js
+import ddm from '@ohos.data.distributedData';
+try {
+    let node = new ddm.FieldNode("root");
+    let child1 = new ddm.FieldNode("child1");
+    let child2 = new ddm.FieldNode("child2");
+    let child3 = new ddm.FieldNode("child3");
+    node.appendChild(child1);
+    node.appendChild(child2);
+    node.appendChild(child3);
+    console.info("appendNode " + JSON.stringify(node));
+    child1 = null;
+    child2 = null;
+    child3 = null;
+    node = null;
+} catch (e) {
+    console.error("AppendChild " + e);
+}
 ```
 
 ## KvStoreResultSet8+
-
-PhonePC/2in1TabletTVWearable
 
 提供获取KVStore数据库结果集的相关方法，包括查询和移动数据读取位置等。
 
 在调用KvStoreResultSet的方法前，需要先通过[getKVStore](js-apis-distributed-data.md#getkvstore)构建一个KVStore实例。
 
 ### getCount8+
-
-PhonePC/2in1TabletTVWearable
 
 getCount(): number
 
@@ -775,26 +719,24 @@ getCount(): number
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let resultSet;
-4. kvStore.getResultSet('batch_test_string_key').then((result) => {
-5. console.log('getResultSet succeed.');
-6. resultSet = result;
-7. }).catch((err) => {
-8. console.log('getResultSet failed: ' + err);
-9. });
-10. const count = resultSet.getCount();
-11. console.log("getCount succeed:" + count);
-12. } catch (e) {
-13. console.log("getCount failed: " + e);
-14. }
+```js
+let kvStore;
+try {
+    let resultSet;
+    kvStore.getResultSet('batch_test_string_key').then((result) => {
+        console.info('getResultSet succeed.');
+        resultSet = result;
+    }).catch((err) => {
+        console.error('getResultSet failed: ' + err);
+    });
+    const count = resultSet.getCount();
+    console.info("getCount succeed:" + count);
+} catch (e) {
+    console.error("getCount failed: " + e);
+}
 ```
 
 ### getPosition8+
-
-PhonePC/2in1TabletTVWearable
 
 getPosition(): number
 
@@ -810,26 +752,24 @@ getPosition(): number
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let resultSet;
-4. kvStore.getResultSet('batch_test_string_key').then((result) => {
-5. console.log('getResultSet succeeded.');
-6. resultSet = result;
-7. }).catch((err) => {
-8. console.log('getResultSet failed: ' + err);
-9. });
-10. const position = resultSet.getPosition();
-11. console.log("getPosition succeed:" + position);
-12. } catch (e) {
-13. console.log("getPosition failed: " + e);
-14. }
+```js
+let kvStore;
+try {
+    let resultSet;
+    kvStore.getResultSet('batch_test_string_key').then((result) => {
+        console.info('getResultSet succeeded.');
+        resultSet = result;
+    }).catch((err) => {
+        console.error('getResultSet failed: ' + err);
+    });
+    const position = resultSet.getPosition();
+    console.info("getPosition succeed:" + position);
+} catch (e) {
+    console.error("getPosition failed: " + e);
+}
 ```
 
 ### moveToFirst8+
-
-PhonePC/2in1TabletTVWearable
 
 moveToFirst(): boolean
 
@@ -845,26 +785,24 @@ moveToFirst(): boolean
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let resultSet;
-4. kvStore.getResultSet('batch_test_string_key').then((result) => {
-5. console.log('getResultSet succeed.');
-6. resultSet = result;
-7. }).catch((err) => {
-8. console.log('getResultSet failed: ' + err);
-9. });
-10. const moved1 = resultSet.moveToFirst();
-11. console.log("moveToFirst succeed: " + moved1);
-12. } catch (e) {
-13. console.log("moveToFirst failed " + e);
-14. }
+```js
+let kvStore;
+try {
+    let resultSet;
+    kvStore.getResultSet('batch_test_string_key').then((result) => {
+        console.info('getResultSet succeed.');
+        resultSet = result;
+    }).catch((err) => {
+        console.error('getResultSet failed: ' + err);
+    });
+    const moved1 = resultSet.moveToFirst();
+    console.info("moveToFirst succeed: " + moved1);
+} catch (e) {
+    console.error("moveToFirst failed " + e);
+}
 ```
 
 ### moveToLast8+
-
-PhonePC/2in1TabletTVWearable
 
 moveToLast(): boolean
 
@@ -880,26 +818,24 @@ moveToLast(): boolean
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let resultSet;
-4. kvStore.getResultSet('batch_test_string_key').then((result) => {
-5. console.log('getResultSet succeed.');
-6. resultSet = result;
-7. }).catch((err) => {
-8. console.log('getResultSet failed: ' + err);
-9. });
-10. const moved2 = resultSet.moveToLast();
-11. console.log("moveToLast succeed:" + moved2);
-12. } catch (e) {
-13. console.log("moveToLast failed: " + e);
-14. }
+```js
+let kvStore;
+try {
+    let resultSet;
+    kvStore.getResultSet('batch_test_string_key').then((result) => {
+        console.info('getResultSet succeed.');
+        resultSet = result;
+    }).catch((err) => {
+        console.error('getResultSet failed: ' + err);
+    });
+    const moved2 = resultSet.moveToLast();
+    console.info("moveToLast succeed:" + moved2);
+} catch (e) {
+    console.error("moveToLast failed: " + e);
+}
 ```
 
 ### moveToNext8+
-
-PhonePC/2in1TabletTVWearable
 
 moveToNext(): boolean
 
@@ -915,26 +851,24 @@ moveToNext(): boolean
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let resultSet;
-4. kvStore.getResultSet('batch_test_string_key').then((result) => {
-5. console.log('getResultSet succeed.');
-6. resultSet = result;
-7. }).catch((err) => {
-8. console.log('getResultSet failed: ' + err);
-9. });
-10. const moved3 = resultSet.moveToNext();
-11. console.log("moveToNext succeed: " + moved3);
-12. } catch (e) {
-13. console.log("moveToNext failed: " + e);
-14. }
+```js
+let kvStore;
+try {
+    let resultSet;
+    kvStore.getResultSet('batch_test_string_key').then((result) => {
+        console.info('getResultSet succeed.');
+        resultSet = result;
+    }).catch((err) => {
+        console.error('getResultSet failed: ' + err);
+    });
+    const moved3 = resultSet.moveToNext();
+    console.info("moveToNext succeed: " + moved3);
+} catch (e) {
+    console.error("moveToNext failed: " + e);
+}
 ```
 
 ### moveToPrevious8+
-
-PhonePC/2in1TabletTVWearable
 
 moveToPrevious(): boolean
 
@@ -950,26 +884,24 @@ moveToPrevious(): boolean
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let resultSet;
-4. kvStore.getResultSet('batch_test_string_key').then((result) => {
-5. console.log('getResultSet succeed.');
-6. resultSet = result;
-7. }).catch((err) => {
-8. console.log('getResultSet failed: ' + err);
-9. });
-10. const moved4 = resultSet.moveToPrevious();
-11. console.log("moveToPrevious succeed:" + moved4);
-12. } catch (e) {
-13. console.log("moveToPrevious failed: " + e);
-14. }
+```js
+let kvStore;
+try {
+    let resultSet;
+    kvStore.getResultSet('batch_test_string_key').then((result) => {
+        console.info('getResultSet succeed.');
+        resultSet = result;
+    }).catch((err) => {
+        console.error('getResultSet failed: ' + err);
+    });
+    const moved4 = resultSet.moveToPrevious();
+    console.info("moveToPrevious succeed:" + moved4);
+} catch (e) {
+    console.error("moveToPrevious failed: " + e);
+}
 ```
 
 ### move8+
-
-PhonePC/2in1TabletTVWearable
 
 move(offset: number): boolean
 
@@ -991,26 +923,24 @@ move(offset: number): boolean
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let resultSet;
-4. kvStore.getResultSet('batch_test_string_key').then((result) => {
-5. console.log('getResultSet succeed.');
-6. resultSet = result;
-7. }).catch((err) => {
-8. console.log('getResultSet failed: ' + err);
-9. });
-10. const moved5 = resultSet.move(1);
-11. console.log("move succeed:" + moved5);
-12. } catch (e) {
-13. console.log("move failed: " + e);
-14. }
+```js
+let kvStore;
+try {
+    let resultSet;
+    kvStore.getResultSet('batch_test_string_key').then((result) => {
+        console.info('getResultSet succeed.');
+        resultSet = result;
+    }).catch((err) => {
+        console.error('getResultSet failed: ' + err);
+    });
+    const moved5 = resultSet.move(1);
+    console.info("move succeed:" + moved5);
+} catch (e) {
+    console.error("move failed: " + e);
+}
 ```
 
 ### moveToPosition8+
-
-PhonePC/2in1TabletTVWearable
 
 moveToPosition(position: number): boolean
 
@@ -1032,26 +962,24 @@ moveToPosition(position: number): boolean
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let resultSet;
-4. kvStore.getResultSet('batch_test_string_key').then((result) => {
-5. console.log('getResultSet succeed.');
-6. resultSet = result;
-7. }).catch((err) => {
-8. console.log('getResultSet failed: ' + err);
-9. });
-10. const moved6 = resultSet.moveToPosition(1);
-11. console.log("moveToPosition succeed: " + moved6);
-12. } catch (e) {
-13. console.log("moveToPosition failed: " + e);
-14. }
+```js
+let kvStore;
+try {
+    let resultSet;
+    kvStore.getResultSet('batch_test_string_key').then((result) => {
+        console.info('getResultSet succeed.');
+        resultSet = result;
+    }).catch((err) => {
+        console.error('getResultSet failed: ' + err);
+    });
+    const moved6 = resultSet.moveToPosition(1);
+    console.info("moveToPosition succeed: " + moved6);
+} catch (e) {
+    console.error("moveToPosition failed: " + e);
+}
 ```
 
 ### isFirst8+
-
-PhonePC/2in1TabletTVWearable
 
 isFirst(): boolean
 
@@ -1067,26 +995,24 @@ isFirst(): boolean
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let resultSet;
-4. kvStore.getResultSet('batch_test_string_key').then((result) => {
-5. console.log('getResultSet succeed.');
-6. resultSet = result;
-7. }).catch((err) => {
-8. console.log('getResultSet failed: ' + err);
-9. });
-10. const isfirst = resultSet.isFirst();
-11. console.log("Check isFirst succeed:" + isfirst);
-12. } catch (e) {
-13. console.log("Check isFirst failed: " + e);
-14. }
+```js
+let kvStore;
+try {
+    let resultSet;
+    kvStore.getResultSet('batch_test_string_key').then((result) => {
+        console.info('getResultSet succeed.');
+        resultSet = result;
+    }).catch((err) => {
+        console.error('getResultSet failed: ' + err);
+    });
+    const isfirst = resultSet.isFirst();
+    console.info("Check isFirst succeed:" + isfirst);
+} catch (e) {
+    console.error("Check isFirst failed: " + e);
+}
 ```
 
 ### isLast8+
-
-PhonePC/2in1TabletTVWearable
 
 isLast(): boolean
 
@@ -1102,26 +1028,24 @@ isLast(): boolean
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let resultSet;
-4. kvStore.getResultSet('batch_test_string_key').then((result) => {
-5. console.log('getResultSet succeed.');
-6. resultSet = result;
-7. }).catch((err) => {
-8. console.log('getResultSet failed: ' + err);
-9. });
-10. const islast = resultSet.isLast();
-11. console.log("Check isLast succeed: " + islast);
-12. } catch (e) {
-13. console.log("Check isLast failed: " + e);
-14. }
+```js
+let kvStore;
+try {
+    let resultSet;
+    kvStore.getResultSet('batch_test_string_key').then((result) => {
+        console.info('getResultSet succeed.');
+        resultSet = result;
+    }).catch((err) => {
+        console.error('getResultSet failed: ' + err);
+    });
+    const islast = resultSet.isLast();
+    console.info("Check isLast succeed: " + islast);
+} catch (e) {
+    console.error("Check isLast failed: " + e);
+}
 ```
 
 ### isBeforeFirst8+
-
-PhonePC/2in1TabletTVWearable
 
 isBeforeFirst(): boolean
 
@@ -1137,26 +1061,24 @@ isBeforeFirst(): boolean
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let resultSet;
-4. kvStore.getResultSet('batch_test_string_key').then((result) => {
-5. console.log('getResultSet succeed.');
-6. resultSet = result;
-7. }).catch((err) => {
-8. console.log('getResultSet failed: ' + err);
-9. });
-10. const isbeforefirst = resultSet.isBeforeFirst();
-11. console.log("Check isBeforeFirst succeed: " + isbeforefirst);
-12. } catch (e) {
-13. console.log("Check isBeforeFirst failed: " + e);
-14. }
+```js
+let kvStore;
+try {
+    let resultSet;
+    kvStore.getResultSet('batch_test_string_key').then((result) => {
+        console.info('getResultSet succeed.');
+        resultSet = result;
+    }).catch((err) => {
+        console.error('getResultSet failed: ' + err);
+    });
+    const isbeforefirst = resultSet.isBeforeFirst();
+    console.info("Check isBeforeFirst succeed: " + isbeforefirst);
+} catch (e) {
+    console.error("Check isBeforeFirst failed: " + e);
+}
 ```
 
 ### isAfterLast8+
-
-PhonePC/2in1TabletTVWearable
 
 isAfterLast(): boolean
 
@@ -1172,26 +1094,24 @@ isAfterLast(): boolean
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let resultSet;
-4. kvStore.getResultSet('batch_test_string_key').then((result) => {
-5. console.log('getResultSet succeed.');
-6. resultSet = result;
-7. }).catch((err) => {
-8. console.log('getResultSet failed: ' + err);
-9. });
-10. const isafterlast = resultSet.isAfterLast();
-11. console.log("Check isAfterLast succeed:" + isafterlast);
-12. } catch (e) {
-13. console.log("Check isAfterLast failed: " + e);
-14. }
+```js
+let kvStore;
+try {
+    let resultSet;
+    kvStore.getResultSet('batch_test_string_key').then((result) => {
+        console.info('getResultSet succeed.');
+        resultSet = result;
+    }).catch((err) => {
+        console.error('getResultSet failed: ' + err);
+    });
+    const isafterlast = resultSet.isAfterLast();
+    console.info("Check isAfterLast succeed:" + isafterlast);
+} catch (e) {
+    console.error("Check isAfterLast failed: " + e);
+}
 ```
 
 ### getEntry8+
-
-PhonePC/2in1TabletTVWearable
 
 getEntry(): Entry
 
@@ -1207,34 +1127,30 @@ getEntry(): Entry
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let resultSet;
-4. kvStore.getResultSet('batch_test_string_key').then((result) => {
-5. console.log('getResultSet succeed.');
-6. resultSet = result;
-7. }).catch((err) => {
-8. console.log('getResultSet failed: ' + err);
-9. });
-10. const entry  = resultSet.getEntry();
-11. console.log("getEntry succeed:" + JSON.stringify(entry));
-12. } catch (e) {
-13. console.log("getEntry failed: " + e);
-14. }
+```js
+let kvStore;
+try {
+    let resultSet;
+    kvStore.getResultSet('batch_test_string_key').then((result) => {
+        console.info('getResultSet succeed.');
+        resultSet = result;
+    }).catch((err) => {
+        console.error('getResultSet failed: ' + err);
+    });
+    const entry  = resultSet.getEntry();
+    console.info("getEntry succeed:" + JSON.stringify(entry));
+} catch (e) {
+    console.error("getEntry failed: " + e);
+}
 ```
 
 ## Query8+
-
-PhonePC/2in1TabletTVWearable
 
 使用谓词表示数据库查询，提供创建Query实例、查询数据库中的数据和添加谓词的方法。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 ### constructor8+
-
-PhonePC/2in1TabletTVWearable
 
 constructor()
 
@@ -1243,8 +1159,6 @@ constructor()
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 ### reset8+
-
-PhonePC/2in1TabletTVWearable
 
 reset(): Query
 
@@ -1260,22 +1174,20 @@ reset(): Query
 
 **示例：**
 
-```
-1. try {
-2. let query = new distributedData.Query();
-3. query.equalTo("key", "value");
-4. console.log("query is " + query.getSqlLike());
-5. query.reset();
-6. console.log("query is " + query.getSqlLike());
-7. query = null;
-8. } catch (e) {
-9. console.log("simply calls should be ok :" + e);
-10. }
+```js
+try {
+    let query = new distributedData.Query();
+    query.equalTo("key", "value");
+    console.info("query is " + query.getSqlLike());
+    query.reset();
+    console.info("query is " + query.getSqlLike());
+    query = null;
+} catch (e) {
+    console.error("simply calls should be ok :" + e);
+}
 ```
 
 ### equalTo8+
-
-PhonePC/2in1TabletTVWearable
 
 equalTo(field: string, value: number|string|boolean): Query
 
@@ -1298,20 +1210,18 @@ equalTo(field: string, value: number|string|boolean): Query
 
 **示例：**
 
-```
-1. try {
-2. let query = new distributedData.Query();
-3. query.equalTo("field", "value");
-4. console.log("query is " + query.getSqlLike());
-5. query = null;
-6. } catch (e) {
-7. console.log("duplicated calls should be ok :" + e);
-8. }
+```js
+try {
+    let query = new distributedData.Query();
+    query.equalTo("field", "value");
+    console.info("query is " + query.getSqlLike());
+    query = null;
+} catch (e) {
+    console.error("duplicated calls should be ok :" + e);
+}
 ```
 
 ### notEqualTo8+
-
-PhonePC/2in1TabletTVWearable
 
 notEqualTo(field: string, value: number|string|boolean): Query
 
@@ -1334,20 +1244,18 @@ notEqualTo(field: string, value: number|string|boolean): Query
 
 **示例：**
 
-```
-1. try {
-2. let query = new distributedData.Query();
-3. query.notEqualTo("field", "value");
-4. console.log("query is " + query.getSqlLike());
-5. query = null;
-6. } catch (e) {
-7. console.log("duplicated calls should be ok :" + e);
-8. }
+```js
+try {
+    let query = new distributedData.Query();
+    query.notEqualTo("field", "value");
+    console.info("query is " + query.getSqlLike());
+    query = null;
+} catch (e) {
+    console.error("duplicated calls should be ok :" + e);
+}
 ```
 
 ### greaterThan8+
-
-PhonePC/2in1TabletTVWearable
 
 greaterThan(field: string, value: number|string|boolean): Query
 
@@ -1370,20 +1278,18 @@ greaterThan(field: string, value: number|string|boolean): Query
 
 **示例：**
 
-```
-1. try {
-2. let query = new distributedData.Query();
-3. query.greaterThan("field", "value");
-4. console.log("query is " + query.getSqlLike());
-5. query = null;
-6. } catch (e) {
-7. console.log("duplicated calls should be ok :" + e);
-8. }
+```js
+try {
+    let query = new distributedData.Query();
+    query.greaterThan("field", "value");
+    console.info("query is " + query.getSqlLike());
+    query = null;
+} catch (e) {
+    console.error("duplicated calls should be ok :" + e);
+}
 ```
 
 ### lessThan8+
-
-PhonePC/2in1TabletTVWearable
 
 lessThan(field: string, value: number|string): Query
 
@@ -1406,20 +1312,18 @@ lessThan(field: string, value: number|string): Query
 
 **示例：**
 
-```
-1. try {
-2. let query = new distributedData.Query();
-3. query.lessThan("field", "value");
-4. console.log("query is " + query.getSqlLike());
-5. query = null;
-6. } catch (e) {
-7. console.log("duplicated calls should be ok :" + e);
-8. }
+```js
+try {
+    let query = new distributedData.Query();
+    query.lessThan("field", "value");
+    console.info("query is " + query.getSqlLike());
+    query = null;
+} catch (e) {
+    console.error("duplicated calls should be ok :" + e);
+}
 ```
 
 ### greaterThanOrEqualTo8+
-
-PhonePC/2in1TabletTVWearable
 
 greaterThanOrEqualTo(field: string, value: number|string): Query
 
@@ -1442,20 +1346,18 @@ greaterThanOrEqualTo(field: string, value: number|string): Query
 
 **示例：**
 
-```
-1. try {
-2. let query = new distributedData.Query();
-3. query.greaterThanOrEqualTo("field", "value");
-4. console.log("query is " + query.getSqlLike());
-5. query = null;
-6. } catch (e) {
-7. console.log("duplicated calls should be ok :" + e);
-8. }
+```js
+try {
+    let query = new distributedData.Query();
+    query.greaterThanOrEqualTo("field", "value");
+    console.info("query is " + query.getSqlLike());
+    query = null;
+} catch (e) {
+    console.error("duplicated calls should be ok :" + e);
+}
 ```
 
 ### lessThanOrEqualTo8+
-
-PhonePC/2in1TabletTVWearable
 
 lessThanOrEqualTo(field: string, value: number|string): Query
 
@@ -1478,20 +1380,18 @@ lessThanOrEqualTo(field: string, value: number|string): Query
 
 **示例：**
 
-```
-1. try {
-2. let query = new distributedData.Query();
-3. query.lessThanOrEqualTo("field", "value");
-4. console.log("query is " + query.getSqlLike());
-5. query = null;
-6. } catch (e) {
-7. console.log("duplicated calls should be ok :" + e);
-8. }
+```js
+try {
+    let query = new distributedData.Query();
+    query.lessThanOrEqualTo("field", "value");
+    console.info("query is " + query.getSqlLike());
+    query = null;
+} catch (e) {
+    console.error("duplicated calls should be ok :" + e);
+}
 ```
 
 ### isNull8+
-
-PhonePC/2in1TabletTVWearable
 
 isNull(field: string): Query
 
@@ -1513,20 +1413,18 @@ isNull(field: string): Query
 
 **示例：**
 
-```
-1. try {
-2. let query = new distributedData.Query();
-3. query.isNull("field");
-4. console.log("query is " + query.getSqlLike());
-5. query = null;
-6. } catch (e) {
-7. console.log("duplicated calls should be ok :" + e);
-8. }
+```js
+try {
+    let query = new distributedData.Query();
+    query.isNull("field");
+    console.info("query is " + query.getSqlLike());
+    query = null;
+} catch (e) {
+    console.error("duplicated calls should be ok :" + e);
+}
 ```
 
 ### inNumber8+
-
-PhonePC/2in1TabletTVWearable
 
 inNumber(field: string, valueList: number[]): Query
 
@@ -1549,20 +1447,18 @@ inNumber(field: string, valueList: number[]): Query
 
 **示例：**
 
-```
-1. try {
-2. let query = new distributedData.Query();
-3. query.inNumber("field", [0, 1]);
-4. console.log("query is " + query.getSqlLike());
-5. query = null;
-6. } catch (e) {
-7. console.log("duplicated calls should be ok :" + e);
-8. }
+```js
+try {
+    let query = new distributedData.Query();
+    query.inNumber("field", [0, 1]);
+    console.info("query is " + query.getSqlLike());
+    query = null;
+} catch (e) {
+    console.error("duplicated calls should be ok :" + e);
+}
 ```
 
 ### inString8+
-
-PhonePC/2in1TabletTVWearable
 
 inString(field: string, valueList: string[]): Query
 
@@ -1585,20 +1481,18 @@ inString(field: string, valueList: string[]): Query
 
 **示例：**
 
-```
-1. try {
-2. let query = new distributedData.Query();
-3. query.inString("field", ['test1', 'test2']);
-4. console.log("query is " + query.getSqlLike());
-5. query = null;
-6. } catch (e) {
-7. console.log("duplicated calls should be ok :" + e);
-8. }
+```js
+try {
+    let query = new distributedData.Query();
+    query.inString("field", ['test1', 'test2']);
+    console.info("query is " + query.getSqlLike());
+    query = null;
+} catch (e) {
+    console.error("duplicated calls should be ok :" + e);
+}
 ```
 
 ### notInNumber8+
-
-PhonePC/2in1TabletTVWearable
 
 notInNumber(field: string, valueList: number[]): Query
 
@@ -1621,20 +1515,18 @@ notInNumber(field: string, valueList: number[]): Query
 
 **示例：**
 
-```
-1. try {
-2. let query = new distributedData.Query();
-3. query.notInNumber("field", [0, 1]);
-4. console.log("query is " + query.getSqlLike());
-5. query = null;
-6. } catch (e) {
-7. console.log("duplicated calls should be ok :" + e);
-8. }
+```js
+try {
+    let query = new distributedData.Query();
+    query.notInNumber("field", [0, 1]);
+    console.info("query is " + query.getSqlLike());
+    query = null;
+} catch (e) {
+    console.error("duplicated calls should be ok :" + e);
+}
 ```
 
 ### notInString8+
-
-PhonePC/2in1TabletTVWearable
 
 notInString(field: string, valueList: string[]): Query
 
@@ -1657,20 +1549,18 @@ notInString(field: string, valueList: string[]): Query
 
 **示例：**
 
-```
-1. try {
-2. let query = new distributedData.Query();
-3. query.notInString("field", ['test1', 'test2']);
-4. console.log("query is " + query.getSqlLike());
-5. query = null;
-6. } catch (e) {
-7. console.log("duplicated calls should be ok :" + e);
-8. }
+```js
+try {
+    let query = new distributedData.Query();
+    query.notInString("field", ['test1', 'test2']);
+    console.info("query is " + query.getSqlLike());
+    query = null;
+} catch (e) {
+    console.error("duplicated calls should be ok :" + e);
+}
 ```
 
 ### like8+
-
-PhonePC/2in1TabletTVWearable
 
 like(field: string, value: string): Query
 
@@ -1693,20 +1583,18 @@ like(field: string, value: string): Query
 
 **示例：**
 
-```
-1. try {
-2. let query = new distributedData.Query();
-3. query.like("field", "value");
-4. console.log("query is " + query.getSqlLike());
-5. query = null;
-6. } catch (e) {
-7. console.log("duplicated calls should be ok :" + e);
-8. }
+```js
+try {
+    let query = new distributedData.Query();
+    query.like("field", "value");
+    console.info("query is " + query.getSqlLike());
+    query = null;
+} catch (e) {
+    console.error("duplicated calls should be ok :" + e);
+}
 ```
 
 ### unlike8+
-
-PhonePC/2in1TabletTVWearable
 
 unlike(field: string, value: string): Query
 
@@ -1729,20 +1617,18 @@ unlike(field: string, value: string): Query
 
 **示例：**
 
-```
-1. try {
-2. let query = new distributedData.Query();
-3. query.unlike("field", "value");
-4. console.log("query is " + query.getSqlLike());
-5. query = null;
-6. } catch (e) {
-7. console.log("duplicated calls should be ok :" + e);
-8. }
+```js
+try {
+    let query = new distributedData.Query();
+    query.unlike("field", "value");
+    console.info("query is " + query.getSqlLike());
+    query = null;
+} catch (e) {
+    console.error("duplicated calls should be ok :" + e);
+}
 ```
 
 ### and8+
-
-PhonePC/2in1TabletTVWearable
 
 and(): Query
 
@@ -1758,22 +1644,20 @@ and(): Query
 
 **示例：**
 
-```
-1. try {
-2. let query = new distributedData.Query();
-3. query.notEqualTo("field", "value1");
-4. query.and();
-5. query.notEqualTo("field", "value2");
-6. console.log("query is " + query.getSqlLike());
-7. query = null;
-8. } catch (e) {
-9. console.log("duplicated calls should be ok :" + e);
-10. }
+```js
+try {
+    let query = new distributedData.Query();
+    query.notEqualTo("field", "value1");
+    query.and();
+    query.notEqualTo("field", "value2");
+    console.info("query is " + query.getSqlLike());
+    query = null;
+} catch (e) {
+    console.error("duplicated calls should be ok :" + e);
+}
 ```
 
 ### or8+
-
-PhonePC/2in1TabletTVWearable
 
 or(): Query
 
@@ -1789,22 +1673,20 @@ or(): Query
 
 **示例：**
 
-```
-1. try {
-2. let query = new distributedData.Query();
-3. query.notEqualTo("field", "value1");
-4. query.or();
-5. query.notEqualTo("field", "value2");
-6. console.log("query is " + query.getSqlLike());
-7. query = null;
-8. } catch (e) {
-9. console.log("duplicated calls should be ok :" + e);
-10. }
+```js
+try {
+    let query = new distributedData.Query();
+    query.notEqualTo("field", "value1");
+    query.or();
+    query.notEqualTo("field", "value2");
+    console.info("query is " + query.getSqlLike());
+    query = null;
+} catch (e) {
+    console.error("duplicated calls should be ok :" + e);
+}
 ```
 
 ### orderByAsc8+
-
-PhonePC/2in1TabletTVWearable
 
 orderByAsc(field: string): Query
 
@@ -1826,21 +1708,19 @@ orderByAsc(field: string): Query
 
 **示例：**
 
-```
-1. try {
-2. let query = new distributedData.Query();
-3. query.notEqualTo("field", "value");
-4. query.orderByAsc("field");
-5. console.log("query is " + query.getSqlLike());
-6. query = null;
-7. } catch (e) {
-8. console.log("duplicated calls should be ok :" + e);
-9. }
+```js
+try {
+    let query = new distributedData.Query();
+    query.notEqualTo("field", "value");
+    query.orderByAsc("field");
+    console.info("query is " + query.getSqlLike());
+    query = null;
+} catch (e) {
+    console.error("duplicated calls should be ok :" + e);
+}
 ```
 
 ### orderByDesc8+
-
-PhonePC/2in1TabletTVWearable
 
 orderByDesc(field: string): Query
 
@@ -1862,21 +1742,19 @@ orderByDesc(field: string): Query
 
 **示例：**
 
-```
-1. try {
-2. let query = new distributedData.Query();
-3. query.notEqualTo("field", "value");
-4. query.orderByDesc("field");
-5. console.log("query is " + query.getSqlLike());
-6. query = null;
-7. } catch (e) {
-8. console.log("duplicated calls should be ok :" + e);
-9. }
+```js
+try {
+    let query = new distributedData.Query();
+    query.notEqualTo("field", "value");
+    query.orderByDesc("field");
+    console.info("query is " + query.getSqlLike());
+    query = null;
+} catch (e) {
+    console.error("duplicated calls should be ok :" + e);
+}
 ```
 
 ### limit8+
-
-PhonePC/2in1TabletTVWearable
 
 limit(total: number, offset: number): Query
 
@@ -1899,23 +1777,21 @@ limit(total: number, offset: number): Query
 
 **示例：**
 
-```
-1. let total = 10;
-2. let offset = 1;
-3. try {
-4. let query = new distributedData.Query();
-5. query.notEqualTo("field", "value");
-6. query.limit(total, offset);
-7. console.log("query is " + query.getSqlLike());
-8. query = null;
-9. } catch (e) {
-10. console.log("duplicated calls should be ok :" + e);
-11. }
+```js
+let total = 10;
+let offset = 1;
+try {
+    let query = new distributedData.Query();
+    query.notEqualTo("field", "value");
+    query.limit(total, offset);
+    console.info("query is " + query.getSqlLike());
+    query = null;
+} catch (e) {
+    console.error("duplicated calls should be ok :" + e);
+}
 ```
 
 ### isNotNull8+
-
-PhonePC/2in1TabletTVWearable
 
 isNotNull(field: string): Query
 
@@ -1937,20 +1813,18 @@ isNotNull(field: string): Query
 
 **示例：**
 
-```
-1. try {
-2. let query = new distributedData.Query();
-3. query.isNotNull("field");
-4. console.log("query is " + query.getSqlLike());
-5. query = null;
-6. } catch (e) {
-7. console.log("duplicated calls should be ok :" + e);
-8. }
+```js
+try {
+    let query = new distributedData.Query();
+    query.isNotNull("field");
+    console.info("query is " + query.getSqlLike());
+    query = null;
+} catch (e) {
+    console.error("duplicated calls should be ok :" + e);
+}
 ```
 
 ### beginGroup8+
-
-PhonePC/2in1TabletTVWearable
 
 beginGroup(): Query
 
@@ -1966,22 +1840,20 @@ beginGroup(): Query
 
 **示例：**
 
-```
-1. try {
-2. let query = new distributedData.Query();
-3. query.beginGroup();
-4. query.isNotNull("field");
-5. query.endGroup();
-6. console.log("query is " + query.getSqlLike());
-7. query = null;
-8. } catch (e) {
-9. console.log("duplicated calls should be ok :" + e);
-10. }
+```js
+try {
+    let query = new distributedData.Query();
+    query.beginGroup();
+    query.isNotNull("field");
+    query.endGroup();
+    console.info("query is " + query.getSqlLike());
+    query = null;
+} catch (e) {
+    console.error("duplicated calls should be ok :" + e);
+}
 ```
 
 ### endGroup8+
-
-PhonePC/2in1TabletTVWearable
 
 endGroup(): Query
 
@@ -1997,22 +1869,20 @@ endGroup(): Query
 
 **示例：**
 
-```
-1. try {
-2. let query = new distributedData.Query();
-3. query.beginGroup();
-4. query.isNotNull("field");
-5. query.endGroup();
-6. console.log("query is " + query.getSqlLike());
-7. query = null;
-8. } catch (e) {
-9. console.log("duplicated calls should be ok :" + e);
-10. }
+```js
+try {
+    let query = new distributedData.Query();
+    query.beginGroup();
+    query.isNotNull("field");
+    query.endGroup();
+    console.info("query is " + query.getSqlLike());
+    query = null;
+} catch (e) {
+    console.error("duplicated calls should be ok :" + e);
+}
 ```
 
 ### prefixKey8+
-
-PhonePC/2in1TabletTVWearable
 
 prefixKey(prefix: string): Query
 
@@ -2034,21 +1904,19 @@ prefixKey(prefix: string): Query
 
 **示例：**
 
-```
-1. try {
-2. let query = new distributedData.Query();
-3. query.prefixKey("$.name");
-4. query.prefixKey("0");
-5. console.log("query is " + query.getSqlLike());
-6. query = null;
-7. } catch (e) {
-8. console.log("duplicated calls should be ok :" + e);
-9. }
+```js
+try {
+    let query = new distributedData.Query();
+    query.prefixKey("$.name");
+    query.prefixKey("0");
+    console.info("query is " + query.getSqlLike());
+    query = null;
+} catch (e) {
+    console.error("duplicated calls should be ok :" + e);
+}
 ```
 
 ### setSuggestIndex8+
-
-PhonePC/2in1TabletTVWearable
 
 setSuggestIndex(index: string): Query
 
@@ -2070,31 +1938,23 @@ setSuggestIndex(index: string): Query
 
 **示例：**
 
-```
-1. try {
-2. let query = new distributedData.Query();
-3. query.setSuggestIndex("$.name");
-4. query.setSuggestIndex("0");
-5. console.log("query is " + query.getSqlLike());
-6. query = null;
-7. } catch (e) {
-8. console.log("duplicated calls should be ok :" + e);
-9. }
+```js
+try {
+    let query = new distributedData.Query();
+    query.setSuggestIndex("$.name");
+    query.setSuggestIndex("0");
+    console.info("query is " + query.getSqlLike());
+    query = null;
+} catch (e) {
+   console.error("duplicated calls should be ok :" + e);
+}
 ```
 
 ### deviceId8+
 
-PhonePC/2in1TabletTVWearable
-
 deviceId(deviceId:string):Query
 
 添加设备ID作为key的前缀。
-
-说明
-
-其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
-
-deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.md#sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
@@ -2112,19 +1972,17 @@ deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.m
 
 **示例：**
 
-```
-1. try {
-2. let query = new distributedData.Query();
-3. query.deviceId("deviceId");
-4. console.log("query is " + query.getSqlLike());
-5. } catch (e) {
-6. console.log("should be ok on Method Chaining : " + e);
-7. }
+```js
+try {
+    let query = new distributedData.Query();
+    query.deviceId("deviceId");
+    console.info("query is " + query.getSqlLike());
+} catch (e) {
+    console.error("should be ok on Method Chaining : " + e);
+}
 ```
 
 ### getSqlLike8+
-
-PhonePC/2in1TabletTVWearable
 
 getSqlLike():string
 
@@ -2140,27 +1998,23 @@ getSqlLike():string
 
 **示例：**
 
-```
-1. try {
-2. let query = new distributedData.Query();
-3. let sql1 = query.getSqlLike();
-4. console.log("GetSqlLike sql=" + sql1);
-5. } catch (e) {
-6. console.log("duplicated calls should be ok : " + e);
-7. }
+```js
+try {
+    let query = new distributedData.Query();
+    let sql1 = query.getSqlLike();
+    console.info("GetSqlLike sql=" + sql1);
+} catch (e) {
+    console.error("duplicated calls should be ok : " + e);
+}
 ```
 
 ## KVStore
-
-PhonePC/2in1TabletTVWearable
 
 KVStore数据库实例，提供增加数据、删除数据和订阅数据变更、订阅数据同步完成的方法。
 
 在调用KVStore的方法前，需要先通过[getKVStore](js-apis-distributed-data.md#getkvstore)构建一个KVStore实例。
 
 ### put
-
-PhonePC/2in1TabletTVWearable
 
 put(key: string, value: Uint8Array | string | number | boolean, callback: AsyncCallback<void>): void
 
@@ -2178,26 +2032,24 @@ put(key: string, value: Uint8Array | string | number | boolean, callback: AsyncC
 
 **示例：**
 
-```
-1. let kvStore;
-2. const KEY_TEST_STRING_ELEMENT = 'key_test_string';
-3. const VALUE_TEST_STRING_ELEMENT = 'value-test-string';
-4. try {
-5. kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT, function (err,data) {
-6. if (err != undefined) {
-7. console.log("put err: " + JSON.stringify(err));
-8. return;
-9. }
-10. console.log("put success");
-11. });
-12. }catch (e) {
-13. console.log("An unexpected error occurred. Error:" + e);
-14. }
+```js
+let kvStore;
+const KEY_TEST_STRING_ELEMENT = 'key_test_string';
+const VALUE_TEST_STRING_ELEMENT = 'value-test-string';
+try {
+    kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT, function (err,data) {
+        if (err != undefined) {
+            console.error("put err: " + JSON.stringify(err));
+            return;
+        }
+        console.info("put success");
+    });
+}catch (e) {
+    console.error("An unexpected error occurred. Error:" + e);
+}
 ```
 
 ### put
-
-PhonePC/2in1TabletTVWearable
 
 put(key: string, value: Uint8Array | string | number | boolean): Promise<void>
 
@@ -2220,24 +2072,22 @@ put(key: string, value: Uint8Array | string | number | boolean): Promise<void>
 
 **示例：**
 
-```
-1. let kvStore;
-2. const KEY_TEST_STRING_ELEMENT = 'key_test_string';
-3. const VALUE_TEST_STRING_ELEMENT = 'value-test-string';
-4. try {
-5. kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT).then((data) => {
-6. console.log("put success: " + JSON.stringify(data));
-7. }).catch((err) => {
-8. console.log("put err: " + JSON.stringify(err));
-9. });
-10. }catch (e) {
-11. console.log("An unexpected error occurred. Error:" + e);
-12. }
+```js
+let kvStore;
+const KEY_TEST_STRING_ELEMENT = 'key_test_string';
+const VALUE_TEST_STRING_ELEMENT = 'value-test-string';
+try {
+    kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT).then((data) => {
+        console.info("put success: " + JSON.stringify(data));
+    }).catch((err) => {
+        console.error("put err: " + JSON.stringify(err));
+    });
+}catch (e) {
+    console.error("An unexpected error occurred. Error:" + e);
+}
 ```
 
 ### delete
-
-PhonePC/2in1TabletTVWearable
 
 delete(key: string, callback: AsyncCallback<void>): void
 
@@ -2254,33 +2104,31 @@ delete(key: string, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. let kvStore;
-2. const KEY_TEST_STRING_ELEMENT = 'key_test_string';
-3. const VALUE_TEST_STRING_ELEMENT = 'value-test-string';
-4. try {
-5. kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT, function (err,data) {
-6. if (err != undefined) {
-7. console.log("put err: " + JSON.stringify(err));
-8. return;
-9. }
-10. console.log("put success");
-11. kvStore.delete(KEY_TEST_STRING_ELEMENT, function (err,data) {
-12. if (err != undefined) {
-13. console.log("delete err: " + JSON.stringify(err));
-14. return;
-15. }
-16. console.log("delete success");
-17. });
-18. });
-19. }catch (e) {
-20. console.log("An unexpected error occurred. Error:" + e);
-21. }
+```js
+let kvStore;
+const KEY_TEST_STRING_ELEMENT = 'key_test_string';
+const VALUE_TEST_STRING_ELEMENT = 'value-test-string';
+try {
+    kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT, function (err,data) {
+        if (err != undefined) {
+            console.error("put err: " + JSON.stringify(err));
+            return;
+        }
+        console.info("put success");
+        kvStore.delete(KEY_TEST_STRING_ELEMENT, function (err,data) {
+            if (err != undefined) {
+                console.error("delete err: " + JSON.stringify(err));
+                return;
+            }
+            console.info("delete success");
+        });
+    });
+}catch (e) {
+    console.error("An unexpected error occurred. Error:" + e);
+}
 ```
 
 ### delete
-
-PhonePC/2in1TabletTVWearable
 
 delete(key: string): Promise<void>
 
@@ -2302,29 +2150,27 @@ delete(key: string): Promise<void>
 
 **示例：**
 
-```
-1. let kvStore;
-2. const KEY_TEST_STRING_ELEMENT = 'key_test_string';
-3. const VALUE_TEST_STRING_ELEMENT = 'value-test-string';
-4. try {
-5. kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT).then((data) => {
-6. console.log("put success: " + JSON.stringify(data));
-7. kvStore.delete(KEY_TEST_STRING_ELEMENT).then((data) => {
-8. console.log("delete success");
-9. }).catch((err) => {
-10. console.log("delete err: " + JSON.stringify(err));
-11. });
-12. }).catch((err) => {
-13. console.log("put err: " + JSON.stringify(err));
-14. });
-15. }catch (e) {
-16. console.log("An unexpected error occurred. Error:" + e);
-17. }
+```js
+let kvStore;
+const KEY_TEST_STRING_ELEMENT = 'key_test_string';
+const VALUE_TEST_STRING_ELEMENT = 'value-test-string';
+try {
+    kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT).then((data) => {
+        console.info("put success: " + JSON.stringify(data));
+        kvStore.delete(KEY_TEST_STRING_ELEMENT).then((data) => {
+            console.info("delete success");
+        }).catch((err) => {
+            console.error("delete err: " + JSON.stringify(err));
+        });
+    }).catch((err) => {
+        console.error("put err: " + JSON.stringify(err));
+    });
+}catch (e) {
+    console.error("An unexpected error occurred. Error:" + e);
+}
 ```
 
 ### on('dataChange')
-
-PhonePC/2in1TabletTVWearable
 
 on(event: 'dataChange', type: SubscribeType, listener: Callback<ChangeNotification>): void
 
@@ -2342,16 +2188,14 @@ on(event: 'dataChange', type: SubscribeType, listener: Callback<ChangeNotificati
 
 **示例：**
 
-```
-1. let kvStore;
-2. kvStore.on('dataChange', distributedData.SubscribeType.SUBSCRIBE_TYPE_LOCAL, function (data) {
-3. console.log("dataChange callback call data: " + JSON.stringify(data));
-4. });
+```js
+let kvStore;
+kvStore.on('dataChange', distributedData.SubscribeType.SUBSCRIBE_TYPE_LOCAL, function (data) {
+    console.info("dataChange callback call data: " + JSON.stringify(data));
+});
 ```
 
 ### on('syncComplete')
-
-PhonePC/2in1TabletTVWearable
 
 on(event: 'syncComplete', syncCallback: Callback<Array<[string, number]>>): void
 
@@ -2368,16 +2212,14 @@ on(event: 'syncComplete', syncCallback: Callback<Array<[string, number]>>): void
 
 **示例：**
 
-```
-1. let kvStore;
-2. kvStore.on('syncComplete', function (data) {
-3. console.log("callback call data: " + data);
-4. });
+```js
+let kvStore;
+kvStore.on('syncComplete', function (data) {
+    console.info("callback call data: " + data);
+});
 ```
 
 ### off('dataChange')8+
-
-PhonePC/2in1TabletTVWearable
 
 off(event:'dataChange', listener?: Callback<ChangeNotification>): void
 
@@ -2394,28 +2236,26 @@ off(event:'dataChange', listener?: Callback<ChangeNotification>): void
 
 **示例：**
 
-```
-1. let kvStore;
-2. class KvstoreModel {
-3. call(data) {
-4. console.log("dataChange: " + data);
-5. }
-6. subscribeDataChange() {
-7. if (kvStore != null) {
-8. kvStore.on('dataChange', distributedData.SubscribeType.SUBSCRIBE_TYPE_REMOTE, this.call);
-9. }
-10. }
-11. unsubscribeDataChange() {
-12. if (kvStore != null) {
-13. kvStore.off('dataChange', this.call);
-14. }
-15. }
-16. }
+```js
+let kvStore;
+class KvstoreModel {
+    call(data) {
+        console.info("dataChange: " + data);
+    }
+    subscribeDataChange() {
+        if (kvStore != null) {
+            kvStore.on('dataChange', distributedData.SubscribeType.SUBSCRIBE_TYPE_REMOTE, this.call);
+        }
+    }
+    unsubscribeDataChange() {
+        if (kvStore != null) {
+            kvStore.off('dataChange', this.call);
+        }
+    }
+}
 ```
 
 ### off('syncComplete')8+
-
-PhonePC/2in1TabletTVWearable
 
 off(event: 'syncComplete', syncCallback?: Callback<Array<[string, number]>>): void
 
@@ -2432,28 +2272,26 @@ off(event: 'syncComplete', syncCallback?: Callback<Array<[string, number]>>): vo
 
 **示例：**
 
-```
-1. let kvStore;
-2. class KvstoreModel {
-3. call(data) {
-4. console.log("syncComplete: " + data);
-5. }
-6. subscribeSyncComplete() {
-7. if (kvStore != null) {
-8. kvStore.on('syncComplete', this.call);
-9. }
-10. }
-11. unsubscribeSyncComplete() {
-12. if (kvStore != null) {
-13. kvStore.off('syncComplete', this.call);
-14. }
-15. }
-16. }
+```js
+let kvStore;
+class KvstoreModel {
+    call(data) {
+        console.info("syncComplete: " + data);
+    }
+    subscribeSyncComplete() {
+        if (kvStore != null) {
+            kvStore.on('syncComplete', this.call);
+        }
+    }
+    unsubscribeSyncComplete() {
+        if (kvStore != null) {
+            kvStore.off('syncComplete', this.call);
+        }
+    }
+}
 ```
 
 ### putBatch8+
-
-PhonePC/2in1TabletTVWearable
 
 putBatch(entries: Entry[], callback: AsyncCallback<void>): void
 
@@ -2470,38 +2308,36 @@ putBatch(entries: Entry[], callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let entries = [];
-4. for (var i = 0; i < 10; i++) {
-5. var key = 'batch_test_string_key';
-6. var entry = {
-7. key : key + i,
-8. value : {
-9. type : distributedData.ValueType.STRING,
-10. value : 'batch_test_string_value'
-11. }
-12. }
-13. entries.push(entry);
-14. }
-15. console.log('entries: ' + JSON.stringify(entries));
-16. kvStore.putBatch(entries, async function (err,data) {
-17. console.log('putBatch success');
-18. kvStore.getEntries('batch_test_string_key', function (err,entries) {
-19. console.log('getEntries success');
-20. console.log('entries.length: ' + entries.length);
-21. console.log('entries[0]: ' + JSON.stringify(entries[0]));
-22. });
-23. });
-24. }catch(e) {
-25. console.log('PutBatch e ' + JSON.stringify(e));
-26. }
+```js
+let kvStore;
+try {
+    let entries = [];
+    for (var i = 0; i < 10; i++) {
+        var key = 'batch_test_string_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.STRING,
+                value : 'batch_test_string_value'
+            }
+        }
+        entries.push(entry);
+    }
+    console.info('entries: ' + JSON.stringify(entries));
+    kvStore.putBatch(entries, async function (err,data) {
+        console.info('putBatch success');
+        kvStore.getEntries('batch_test_string_key', function (err,entries) {
+            console.info('getEntries success');
+            console.info('entries.length: ' + entries.length);
+            console.info('entries[0]: ' + JSON.stringify(entries[0]));
+        });
+    });
+}catch(e) {
+    console.error('PutBatch e ' + JSON.stringify(e));
+}
 ```
 
 ### putBatch8+
-
-PhonePC/2in1TabletTVWearable
 
 putBatch(entries: Entry[]): Promise<void>
 
@@ -2523,41 +2359,39 @@ putBatch(entries: Entry[]): Promise<void>
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let entries = [];
-4. for (var i = 0; i < 10; i++) {
-5. var key = 'batch_test_string_key';
-6. var entry = {
-7. key : key + i,
-8. value : {
-9. type : distributedData.ValueType.STRING,
-10. value : 'batch_test_string_value'
-11. }
-12. }
-13. entries.push(entry);
-14. }
-15. console.log('entries: ' + JSON.stringify(entries));
-16. kvStore.putBatch(entries).then(async (err) => {
-17. console.log('putBatch success');
-18. kvStore.getEntries('batch_test_string_key').then((entries) => {
-19. console.log('getEntries success');
-20. console.log('PutBatch ' + JSON.stringify(entries));
-21. }).catch((err) => {
-22. console.log('getEntries fail ' + JSON.stringify(err));
-23. });
-24. }).catch((err) => {
-25. console.log('putBatch fail ' + JSON.stringify(err));
-26. });
-27. }catch(e) {
-28. console.log('PutBatch e ' + JSON.stringify(e));
-29. }
+```js
+let kvStore;
+try {
+    let entries = [];
+    for (var i = 0; i < 10; i++) {
+        var key = 'batch_test_string_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.STRING,
+                value : 'batch_test_string_value'
+            }
+        }
+        entries.push(entry);
+    }
+    console.info('entries: ' + JSON.stringify(entries));
+    kvStore.putBatch(entries).then(async (err) => {
+        console.info('putBatch success');
+        kvStore.getEntries('batch_test_string_key').then((entries) => {
+            console.info('getEntries success');
+            console.info('PutBatch ' + JSON.stringify(entries));
+        }).catch((err) => {
+            console.error('getEntries fail ' + JSON.stringify(err));
+        });
+    }).catch((err) => {
+        console.error('putBatch fail ' + JSON.stringify(err));
+    });
+}catch(e) {
+    console.error('PutBatch e ' + JSON.stringify(e));
+}
 ```
 
 ### deleteBatch8+
-
-PhonePC/2in1TabletTVWearable
 
 deleteBatch(keys: string[], callback: AsyncCallback<void>): void
 
@@ -2574,38 +2408,36 @@ deleteBatch(keys: string[], callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let entries = [];
-4. let keys = [];
-5. for (var i = 0; i < 5; i++) {
-6. var key = 'batch_test_string_key';
-7. var entry = {
-8. key : key + i,
-9. value : {
-10. type : distributedData.ValueType.STRING,
-11. value : 'batch_test_string_value'
-12. }
-13. }
-14. entries.push(entry);
-15. keys.push(key + i);
-16. }
-17. console.log('entries: ' + JSON.stringify(entries));
-18. kvStore.putBatch(entries, async function (err,data) {
-19. console.log('putBatch success');
-20. kvStore.deleteBatch(keys, async function (err,data) {
-21. console.log('deleteBatch success');
-22. });
-23. });
-24. }catch(e) {
-25. console.log('DeleteBatch e ' + e);
-26. }
+```js
+let kvStore;
+try {
+    let entries = [];
+    let keys = [];
+    for (var i = 0; i < 5; i++) {
+        var key = 'batch_test_string_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.STRING,
+                value : 'batch_test_string_value'
+            }
+        }
+        entries.push(entry);
+        keys.push(key + i);
+    }
+    console.info('entries: ' + JSON.stringify(entries));
+    kvStore.putBatch(entries, async function (err,data) {
+        console.info('putBatch success');
+        kvStore.deleteBatch(keys, async function (err,data) {
+            console.info('deleteBatch success');
+        });
+    });
+}catch(e) {
+    console.error('DeleteBatch e ' + e);
+}
 ```
 
 ### deleteBatch8+
-
-PhonePC/2in1TabletTVWearable
 
 deleteBatch(keys: string[]): Promise<void>
 
@@ -2627,42 +2459,40 @@ deleteBatch(keys: string[]): Promise<void>
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let entries = [];
-4. let keys = [];
-5. for (var i = 0; i < 5; i++) {
-6. var key = 'batch_test_string_key';
-7. var entry = {
-8. key : key + i,
-9. value : {
-10. type : distributedData.ValueType.STRING,
-11. value : 'batch_test_string_value'
-12. }
-13. }
-14. entries.push(entry);
-15. keys.push(key + i);
-16. }
-17. console.log('entries: ' + JSON.stringify(entries));
-18. kvStore.putBatch(entries).then(async (err) => {
-19. console.log('putBatch success');
-20. kvStore.deleteBatch(keys).then((err) => {
-21. console.log('deleteBatch success');
-22. }).catch((err) => {
-23. console.log('deleteBatch fail ' + JSON.stringify(err));
-24. });
-25. }).catch((err) => {
-26. console.log('putBatch fail ' + JSON.stringify(err));
-27. });
-28. }catch(e) {
-29. console.log('DeleteBatch e ' + e);
-30. }
+```js
+let kvStore;
+try {
+    let entries = [];
+    let keys = [];
+    for (var i = 0; i < 5; i++) {
+        var key = 'batch_test_string_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.STRING,
+                value : 'batch_test_string_value'
+            }
+        }
+        entries.push(entry);
+        keys.push(key + i);
+    }
+    console.info('entries: ' + JSON.stringify(entries));
+    kvStore.putBatch(entries).then(async (err) => {
+        console.info('putBatch success');
+        kvStore.deleteBatch(keys).then((err) => {
+            console.info('deleteBatch success');
+        }).catch((err) => {
+            console.error('deleteBatch fail ' + JSON.stringify(err));
+        });
+    }).catch((err) => {
+        console.error('putBatch fail ' + JSON.stringify(err));
+    });
+}catch(e) {
+    console.error('DeleteBatch e ' + e);
+}
 ```
 
 ### startTransaction8+
-
-PhonePC/2in1TabletTVWearable
 
 startTransaction(callback: AsyncCallback<void>): void
 
@@ -2678,44 +2508,42 @@ startTransaction(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. let kvStore;
-2. function putBatchString(len, prefix) {
-3. let entries = [];
-4. for (var i = 0; i < len; i++) {
-5. var entry = {
-6. key : prefix + i,
-7. value : {
-8. type : distributedData.ValueType.STRING,
-9. value : 'batch_test_string_value'
-10. }
-11. }
-12. entries.push(entry);
-13. }
-14. return entries;
-15. }
-16. try {
-17. var count = 0;
-18. kvStore.on('dataChange', 0, function (data) {
-19. console.log('startTransaction 0' + data)
-20. count++;
-21. });
-22. kvStore.startTransaction(async function (err,data) {
-23. console.log('startTransaction success');
-24. let entries = putBatchString(10, 'batch_test_string_key');
-25. console.log('entries: ' + JSON.stringify(entries));
-26. kvStore.putBatch(entries, async function (err,data) {
-27. console.log('putBatch success');
-28. });
-29. });
-30. }catch(e) {
-31. console.log('startTransaction e ' + e);
-32. }
+```js
+let kvStore;
+function putBatchString(len, prefix) {
+    let entries = [];
+    for (var i = 0; i < len; i++) {
+        var entry = {
+            key : prefix + i,
+            value : {
+                type : distributedData.ValueType.STRING,
+                value : 'batch_test_string_value'
+            }
+        }
+        entries.push(entry);
+    }
+    return entries;
+}
+try {
+    var count = 0;
+    kvStore.on('dataChange', 0, function (data) {
+        console.info('startTransaction 0' + data)
+        count++;
+    });
+    kvStore.startTransaction(async function (err,data) {
+        console.info('startTransaction success');
+        let entries = putBatchString(10, 'batch_test_string_key');
+        console.info('entries: ' + JSON.stringify(entries));
+        kvStore.putBatch(entries, async function (err,data) {
+            console.info('putBatch success');
+        });
+    });
+}catch(e) {
+    console.error('startTransaction e ' + e);
+}
 ```
 
 ### startTransaction8+
-
-PhonePC/2in1TabletTVWearable
 
 startTransaction(): Promise<void>
 
@@ -2731,27 +2559,25 @@ startTransaction(): Promise<void>
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. var count = 0;
-4. kvStore.on('dataChange', distributedData.SubscribeType.SUBSCRIBE_TYPE_ALL, function (data) {
-5. console.log('startTransaction ' + JSON.stringify(data));
-6. count++;
-7. });
-8. kvStore.startTransaction().then(async (err) => {
-9. console.log('startTransaction success');
-10. }).catch((err) => {
-11. console.log('startTransaction fail ' + JSON.stringify(err));
-12. });
-13. }catch(e) {
-14. console.log('startTransaction e ' + e);
-15. }
+```js
+let kvStore;
+try {
+    var count = 0;
+    kvStore.on('dataChange', distributedData.SubscribeType.SUBSCRIBE_TYPE_ALL, function (data) {
+        console.info('startTransaction ' + JSON.stringify(data));
+        count++;
+    });
+    kvStore.startTransaction().then(async (err) => {
+        console.info('startTransaction success');
+    }).catch((err) => {
+        console.error('startTransaction fail ' + JSON.stringify(err));
+    });
+}catch(e) {
+    console.error('startTransaction e ' + e);
+}
 ```
 
 ### commit8+
-
-PhonePC/2in1TabletTVWearable
 
 commit(callback: AsyncCallback<void>): void
 
@@ -2767,24 +2593,22 @@ commit(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. kvStore.commit(function (err,data) {
-4. if (err == undefined) {
-5. console.log('commit success');
-6. } else {
-7. console.log('commit fail');
-8. }
-9. });
-10. }catch(e) {
-11. console.log('Commit e ' + e);
-12. }
+```js
+let kvStore;
+try {
+    kvStore.commit(function (err,data) {
+        if (err == undefined) {
+            console.info('commit success');
+        } else {
+            console.error('commit fail');
+        }
+    });
+}catch(e) {
+    console.error('Commit e ' + e);
+}
 ```
 
 ### commit8+
-
-PhonePC/2in1TabletTVWearable
 
 commit(): Promise<void>
 
@@ -2800,22 +2624,20 @@ commit(): Promise<void>
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. kvStore.commit().then(async (err) => {
-4. console.log('commit success');
-5. }).catch((err) => {
-6. console.log('commit fail ' + JSON.stringify(err));
-7. });
-8. }catch(e) {
-9. console.log('Commit e ' + e);
-10. }
+```js
+let kvStore;
+try {
+    kvStore.commit().then(async (err) => {
+        console.info('commit success');
+    }).catch((err) => {
+        console.error('commit fail ' + JSON.stringify(err));
+    });
+}catch(e) {
+    console.error('Commit e ' + e);
+}
 ```
 
 ### rollback8+
-
-PhonePC/2in1TabletTVWearable
 
 rollback(callback: AsyncCallback<void>): void
 
@@ -2831,24 +2653,22 @@ rollback(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. kvStore.rollback(function (err,data) {
-4. if (err == undefined) {
-5. console.log('commit success');
-6. } else {
-7. console.log('commit fail');
-8. }
-9. });
-10. }catch(e) {
-11. console.log('Rollback e ' + e);
-12. }
+```js
+let kvStore;
+try {
+    kvStore.rollback(function (err,data) {
+        if (err == undefined) {
+            console.info('commit success');
+        } else {
+            console.error('commit fail');
+        }
+    });
+}catch(e) {
+    console.error('Rollback e ' + e);
+}
 ```
 
 ### rollback8+
-
-PhonePC/2in1TabletTVWearable
 
 rollback(): Promise<void>
 
@@ -2864,22 +2684,20 @@ rollback(): Promise<void>
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. kvStore.rollback().then(async (err) => {
-4. console.log('rollback success');
-5. }).catch((err) => {
-6. console.log('rollback fail ' + JSON.stringify(err));
-7. });
-8. }catch(e) {
-9. console.log('Rollback e ' + e);
-10. }
+```js
+let kvStore;
+try {
+    kvStore.rollback().then(async (err) => {
+        console.info('rollback success');
+    }).catch((err) => {
+        console.error('rollback fail ' + JSON.stringify(err));
+    });
+}catch(e) {
+    console.error('Rollback e ' + e);
+}
 ```
 
 ### enableSync8+
-
-PhonePC/2in1TabletTVWearable
 
 enableSync(enabled: boolean, callback: AsyncCallback<void>): void
 
@@ -2896,24 +2714,22 @@ enableSync(enabled: boolean, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. kvStore.enableSync(true, function (err,data) {
-4. if (err == undefined) {
-5. console.log('enableSync success');
-6. } else {
-7. console.log('enableSync fail');
-8. }
-9. });
-10. }catch(e) {
-11. console.log('EnableSync e ' + e);
-12. }
+```js
+let kvStore;
+try {
+    kvStore.enableSync(true, function (err,data) {
+        if (err == undefined) {
+            console.info('enableSync success');
+        } else {
+            console.error('enableSync fail');
+        }
+    });
+}catch(e) {
+    console.error('EnableSync e ' + e);
+}
 ```
 
 ### enableSync8+
-
-PhonePC/2in1TabletTVWearable
 
 enableSync(enabled: boolean): Promise<void>
 
@@ -2935,22 +2751,20 @@ enableSync(enabled: boolean): Promise<void>
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. kvStore.enableSync(true).then((err) => {
-4. console.log('enableSync success');
-5. }).catch((err) => {
-6. console.log('enableSync fail ' + JSON.stringify(err));
-7. });
-8. }catch(e) {
-9. console.log('EnableSync e ' + e);
-10. }
+```js
+let kvStore;
+try {
+    kvStore.enableSync(true).then((err) => {
+        console.info('enableSync success');
+    }).catch((err) => {
+        console.error('enableSync fail ' + JSON.stringify(err));
+    });
+}catch(e) {
+    console.error('EnableSync e ' + e);
+}
 ```
 
 ### setSyncRange8+
-
-PhonePC/2in1TabletTVWearable
 
 setSyncRange(localLabels: string[], remoteSupportLabels: string[], callback: AsyncCallback<void>): void
 
@@ -2968,22 +2782,20 @@ setSyncRange(localLabels: string[], remoteSupportLabels: string[], callback: Asy
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. const localLabels = ['A', 'B'];
-4. const remoteSupportLabels = ['C', 'D'];
-5. kvStore.setSyncRange(localLabels, remoteSupportLabels, function (err,data) {
-6. console.log('SetSyncRange put success');
-7. });
-8. }catch(e) {
-9. console.log('SetSyncRange e ' + e);
-10. }
+```js
+let kvStore;
+try {
+    const localLabels = ['A', 'B'];
+    const remoteSupportLabels = ['C', 'D'];
+    kvStore.setSyncRange(localLabels, remoteSupportLabels, function (err,data) {
+        console.info('SetSyncRange put success');
+    });
+}catch(e) {
+    console.error('SetSyncRange e ' + e);
+}
 ```
 
 ### setSyncRange8+
-
-PhonePC/2in1TabletTVWearable
 
 setSyncRange(localLabels: string[], remoteSupportLabels: string[]): Promise<void>
 
@@ -3006,24 +2818,22 @@ setSyncRange(localLabels: string[], remoteSupportLabels: string[]): Promise<void
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. const localLabels = ['A', 'B'];
-4. const remoteSupportLabels = ['C', 'D'];
-5. kvStore.setSyncRange(localLabels, remoteSupportLabels).then((err) => {
-6. console.log('setSyncRange success');
-7. }).catch((err) => {
-8. console.log('delete fail ' + err);
-9. });
-10. }catch(e) {
-11. console.log('SetSyncRange e ' + e);
-12. }
+```js
+let kvStore;
+try {
+    const localLabels = ['A', 'B'];
+    const remoteSupportLabels = ['C', 'D'];
+    kvStore.setSyncRange(localLabels, remoteSupportLabels).then((err) => {
+        console.info('setSyncRange success');
+    }).catch((err) => {
+        console.error('delete fail ' + err);
+    });
+}catch(e) {
+    console.error('SetSyncRange e ' + e);
+}
 ```
 
 ## SubscribeType
-
-PhonePC/2in1TabletTVWearable
 
 订阅类型枚举。
 
@@ -3036,8 +2846,6 @@ PhonePC/2in1TabletTVWearable
 | SUBSCRIBE\_TYPE\_ALL | 2 | 表示订阅远端和本地数据变更。 |
 
 ## ChangeNotification
-
-PhonePC/2in1TabletTVWearable
 
 数据变更时通知的对象，包括数据插入的数据、更新的数据、删除的数据和设备ID。
 
@@ -3052,8 +2860,6 @@ PhonePC/2in1TabletTVWearable
 
 ## Entry
 
-PhonePC/2in1TabletTVWearable
-
 存储在数据库中的键值对。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
@@ -3065,8 +2871,6 @@ PhonePC/2in1TabletTVWearable
 
 ## Value
 
-PhonePC/2in1TabletTVWearable
-
 存储在数据库中的值对象。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
@@ -3077,8 +2881,6 @@ PhonePC/2in1TabletTVWearable
 | value | Uint8Array | string | number | boolean | 是 | 值。 |
 
 ## ValueType
-
-PhonePC/2in1TabletTVWearable
 
 数据类型枚举。
 
@@ -3095,8 +2897,6 @@ PhonePC/2in1TabletTVWearable
 
 ## SingleKVStore
 
-PhonePC/2in1TabletTVWearable
-
 单版本数据库，继承自[KVStore](js-apis-distributed-data.md#kvstore)数据库，提供查询数据和同步数据的方法。
 
 单版本数据库，不对数据所属设备进行区分，不同设备使用相同键写入数据会互相覆盖。比如，可以使用单版本数据库实现个人日历、联系人数据在不同设备间的数据同步。
@@ -3104,8 +2904,6 @@ PhonePC/2in1TabletTVWearable
 在调用SingleKVStore的方法前，需要先通过[getKVStore](js-apis-distributed-data.md#getkvstore)构建一个SingleKVStore实例。
 
 ### get
-
-PhonePC/2in1TabletTVWearable
 
 get(key: string, callback: AsyncCallback<Uint8Array | string | boolean | number>): void
 
@@ -3122,29 +2920,27 @@ get(key: string, callback: AsyncCallback<Uint8Array | string | boolean | number>
 
 **示例：**
 
-```
-1. let kvStore;
-2. const KEY_TEST_STRING_ELEMENT = 'key_test_string';
-3. const VALUE_TEST_STRING_ELEMENT = 'value-test-string';
-4. try {
-5. kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT, function (err,data) {
-6. if (err != undefined) {
-7. console.log("put err: " + JSON.stringify(err));
-8. return;
-9. }
-10. console.log("put success");
-11. kvStore.get(KEY_TEST_STRING_ELEMENT, function (err,data) {
-12. console.log("get success data: " + data);
-13. });
-14. });
-15. }catch (e) {
-16. console.log("An unexpected error occurred. Error:" + e);
-17. }
+```js
+let kvStore;
+const KEY_TEST_STRING_ELEMENT = 'key_test_string';
+const VALUE_TEST_STRING_ELEMENT = 'value-test-string';
+try {
+    kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT, function (err,data) {
+        if (err != undefined) {
+            console.error("put err: " + JSON.stringify(err));
+            return;
+        }
+        console.info("put success");
+        kvStore.get(KEY_TEST_STRING_ELEMENT, function (err,data) {
+            console.info("get success data: " + data);
+        });
+    });
+}catch (e) {
+    console.error("An unexpected error occurred. Error:" + e);
+}
 ```
 
 ### get
-
-PhonePC/2in1TabletTVWearable
 
 get(key: string): Promise<Uint8Array | string | boolean | number>
 
@@ -3166,29 +2962,27 @@ get(key: string): Promise<Uint8Array | string | boolean | number>
 
 **示例：**
 
-```
-1. let kvStore;
-2. const KEY_TEST_STRING_ELEMENT = 'key_test_string';
-3. const VALUE_TEST_STRING_ELEMENT = 'value-test-string';
-4. try {
-5. kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT).then((data) => {
-6. console.log("put success: " + JSON.stringify(data));
-7. kvStore.get(KEY_TEST_STRING_ELEMENT).then((data) => {
-8. console.log("get success data: " + data);
-9. }).catch((err) => {
-10. console.log("get err: " + JSON.stringify(err));
-11. });
-12. }).catch((err) => {
-13. console.log("put err: " + JSON.stringify(err));
-14. });
-15. }catch (e) {
-16. console.log("An unexpected error occurred. Error:" + e);
-17. }
+```js
+let kvStore;
+const KEY_TEST_STRING_ELEMENT = 'key_test_string';
+const VALUE_TEST_STRING_ELEMENT = 'value-test-string';
+try {
+    kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT).then((data) => {
+        console.info("put success: " + JSON.stringify(data));
+        kvStore.get(KEY_TEST_STRING_ELEMENT).then((data) => {
+            console.info("get success data: " + data);
+        }).catch((err) => {
+            console.error("get err: " + JSON.stringify(err));
+        });
+    }).catch((err) => {
+        console.error("put err: " + JSON.stringify(err));
+    });
+}catch (e) {
+    console.error("An unexpected error occurred. Error:" + e);
+}
 ```
 
 ### getEntries8+
-
-PhonePC/2in1TabletTVWearable
 
 getEntries(keyPrefix: string, callback: AsyncCallback<Entry[]>): void
 
@@ -3205,37 +2999,35 @@ getEntries(keyPrefix: string, callback: AsyncCallback<Entry[]>): void
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let entries = [];
-4. for (var i = 0; i < 10; i++) {
-5. var key = 'batch_test_number_key';
-6. var entry = {
-7. key : key + i,
-8. value : {
-9. type : distributedData.ValueType.INTEGER,
-10. value : 222
-11. }
-12. }
-13. entries.push(entry);
-14. }
-15. kvStore.putBatch(entries, async function (err,data) {
-16. console.log('putBatch success');
-17. kvStore.getEntries('batch_test_number_key', function (err,entries) {
-18. console.log('getEntries success');
-19. console.log('entries.length: ' + entries.length);
-20. console.log('entries[0]: ' + JSON.stringify(entries[0]));
-21. });
-22. });
-23. }catch(e) {
-24. console.log('PutBatch e ' + e);
-25. }
+```js
+let kvStore;
+try {
+    let entries = [];
+    for (var i = 0; i < 10; i++) {
+        var key = 'batch_test_number_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.INTEGER,
+                value : 222
+            }
+        }
+        entries.push(entry);
+    }
+    kvStore.putBatch(entries, async function (err,data) {
+        console.info('putBatch success');
+        kvStore.getEntries('batch_test_number_key', function (err,entries) {
+            console.info('getEntries success');
+            console.info('entries.length: ' + entries.length);
+            console.info('entries[0]: ' + JSON.stringify(entries[0]));
+        });
+    });
+}catch(e) {
+    console.error('PutBatch e ' + e);
+}
 ```
 
 ### getEntries8+
-
-PhonePC/2in1TabletTVWearable
 
 getEntries(keyPrefix: string): Promise<Entry[]>
 
@@ -3257,44 +3049,42 @@ getEntries(keyPrefix: string): Promise<Entry[]>
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let entries = [];
-4. for (var i = 0; i < 10; i++) {
-5. var key = 'batch_test_string_key';
-6. var entry = {
-7. key : key + i,
-8. value : {
-9. type : distributedData.ValueType.STRING,
-10. value : 'batch_test_string_value'
-11. }
-12. }
-13. entries.push(entry);
-14. }
-15. console.log('entries: ' + entries);
-16. kvStore.putBatch(entries).then(async (err) => {
-17. console.log('putBatch success');
-18. kvStore.getEntries('batch_test_string_key').then((entries) => {
-19. console.log('getEntries success');
-20. console.log('entries.length: ' + entries.length);
-21. console.log('entries[0]: ' + JSON.stringify(entries[0]));
-22. console.log('entries[0].value: ' + JSON.stringify(entries[0].value));
-23. console.log('entries[0].value.value: ' + entries[0].value.value);
-24. }).catch((err) => {
-25. console.log('getEntries fail ' + JSON.stringify(err));
-26. });
-27. }).catch((err) => {
-28. console.log('putBatch fail ' + JSON.stringify(err));
-29. });
-30. }catch(e) {
-31. console.log('PutBatch e ' + e);
-32. }
+```js
+let kvStore;
+try {
+    let entries = [];
+    for (var i = 0; i < 10; i++) {
+        var key = 'batch_test_string_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.STRING,
+                value : 'batch_test_string_value'
+            }
+        }
+        entries.push(entry);
+    }
+    console.info('entries: ' + entries);
+    kvStore.putBatch(entries).then(async (err) => {
+        console.info('putBatch success');
+        kvStore.getEntries('batch_test_string_key').then((entries) => {
+            console.info('getEntries success');
+            console.info('entries.length: ' + entries.length);
+            console.info('entries[0]: ' + JSON.stringify(entries[0]));
+            console.info('entries[0].value: ' + JSON.stringify(entries[0].value));
+            console.info('entries[0].value.value: ' + entries[0].value.value);
+        }).catch((err) => {
+            console.error('getEntries fail ' + JSON.stringify(err));
+        });
+    }).catch((err) => {
+        console.error('putBatch fail ' + JSON.stringify(err));
+    });
+}catch(e) {
+    console.error('PutBatch e ' + e);
+}
 ```
 
 ### getEntries8+
-
-PhonePC/2in1TabletTVWearable
 
 getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
 
@@ -3311,42 +3101,40 @@ getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. var arr = new Uint8Array([21,31]);
-4. let entries = [];
-5. for (var i = 0; i < 10; i++) {
-6. var key = 'batch_test_bool_key';
-7. var entry = {
-8. key : key + i,
-9. value : {
-10. type : distributedData.ValueType.BYTE_ARRAY,
-11. value : arr
-12. }
-13. }
-14. entries.push(entry);
-15. }
-16. console.log('entries: ' + JSON.stringify(entries));
-17. kvStore.putBatch(entries, async function (err,data) {
-18. console.log('putBatch success');
-19. const query = new distributedData.Query();
-20. query.prefixKey("batch_test");
-21. kvStore.getEntries(query, function (err,entries) {
-22. console.log('getEntries success');
-23. console.log('entries.length: ' + entries.length);
-24. console.log('entries[0]: ' + JSON.stringify(entries[0]));
-25. });
-26. });
-27. console.log('GetEntries success');
-28. }catch(e) {
-29. console.log('GetEntries e ' + e);
-30. }
+```js
+let kvStore;
+try {
+    var arr = new Uint8Array([21,31]);
+    let entries = [];
+    for (var i = 0; i < 10; i++) {
+        var key = 'batch_test_bool_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.BYTE_ARRAY,
+                value : arr
+            }
+        }
+        entries.push(entry);
+    }
+    console.info('entries: ' + JSON.stringify(entries));
+    kvStore.putBatch(entries, async function (err,data) {
+        console.info('putBatch success');
+        const query = new distributedData.Query();
+        query.prefixKey("batch_test");
+        kvStore.getEntries(query, function (err,entries) {
+            console.info('getEntries success');
+            console.info('entries.length: ' + entries.length);
+            console.info('entries[0]: ' + JSON.stringify(entries[0]));
+        });
+    });
+    console.info('GetEntries success');
+}catch(e) {
+    console.error('GetEntries e ' + e);
+}
 ```
 
 ### getEntries8+
-
-PhonePC/2in1TabletTVWearable
 
 getEntries(query: Query): Promise<Entry[]>
 
@@ -3368,44 +3156,42 @@ getEntries(query: Query): Promise<Entry[]>
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. var arr = new Uint8Array([21,31]);
-4. let entries = [];
-5. for (var i = 0; i < 10; i++) {
-6. var key = 'batch_test_bool_key';
-7. var entry = {
-8. key : key + i,
-9. value : {
-10. type : distributedData.ValueType.BYTE_ARRAY,
-11. value : arr
-12. }
-13. }
-14. entries.push(entry);
-15. }
-16. console.log('entries: ' + JSON.stringify(entries));
-17. kvStore.putBatch(entries).then(async (err) => {
-18. console.log('putBatch success');
-19. const query = new distributedData.Query();
-20. query.prefixKey("batch_test");
-21. kvStore.getEntries(query).then((entries) => {
-22. console.log('getEntries success');
-23. }).catch((err) => {
-24. console.log('getEntries fail ' + JSON.stringify(err));
-25. });
-26. }).catch((err) => {
-27. console.log('GetEntries putBatch fail ' + JSON.stringify(err))
-28. });
-29. console.log('GetEntries success');
-30. }catch(e) {
-31. console.log('GetEntries e ' + e);
-32. }
+```js
+let kvStore;
+try {
+    var arr = new Uint8Array([21,31]);
+    let entries = [];
+    for (var i = 0; i < 10; i++) {
+        var key = 'batch_test_bool_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.BYTE_ARRAY,
+                value : arr
+            }
+        }
+        entries.push(entry);
+    }
+    console.info('entries: ' + JSON.stringify(entries));
+    kvStore.putBatch(entries).then(async (err) => {
+        console.info('putBatch success');
+        const query = new distributedData.Query();
+        query.prefixKey("batch_test");
+        kvStore.getEntries(query).then((entries) => {
+            console.info('getEntries success');
+        }).catch((err) => {
+            console.error('getEntries fail ' + JSON.stringify(err));
+        });
+    }).catch((err) => {
+        console.error('GetEntries putBatch fail ' + JSON.stringify(err))
+    });
+    console.info('GetEntries success');
+}catch(e) {
+    console.error('GetEntries e ' + e);
+}
 ```
 
 ### getResultSet8+
-
-PhonePC/2in1TabletTVWearable
 
 getResultSet(keyPrefix: string, callback: AsyncCallback<KvStoreResultSet>): void
 
@@ -3422,40 +3208,38 @@ getResultSet(keyPrefix: string, callback: AsyncCallback<KvStoreResultSet>): void
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let resultSet;
-4. let entries = [];
-5. for (var i = 0; i < 10; i++) {
-6. var key = 'batch_test_string_key';
-7. var entry = {
-8. key : key + i,
-9. value : {
-10. type : distributedData.ValueType.STRING,
-11. value : 'batch_test_string_value'
-12. }
-13. }
-14. entries.push(entry);
-15. }
-16. kvStore.putBatch(entries, async function (err, data) {
-17. console.log('GetResultSet putBatch success');
-18. kvStore.getResultSet('batch_test_string_key', async function (err, result) {
-19. console.log('GetResultSet getResultSet succeed.');
-20. resultSet = result;
-21. kvStore.closeResultSet(resultSet, function (err, data) {
-22. console.log('GetResultSet closeResultSet success');
-23. })
-24. });
-25. });
-26. }catch(e) {
-27. console.log('GetResultSet e ' + e);
-28. }
+```js
+let kvStore;
+try {
+    let resultSet;
+    let entries = [];
+    for (var i = 0; i < 10; i++) {
+        var key = 'batch_test_string_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.STRING,
+                value : 'batch_test_string_value'
+            }
+        }
+        entries.push(entry);
+    }
+    kvStore.putBatch(entries, async function (err, data) {
+        console.info('GetResultSet putBatch success');
+        kvStore.getResultSet('batch_test_string_key', async function (err, result) {
+            console.info('GetResultSet getResultSet succeed.');
+            resultSet = result;
+            kvStore.closeResultSet(resultSet, function (err, data) {
+                console.info('GetResultSet closeResultSet success');
+            })
+        });
+    });
+}catch(e) {
+    console.error('GetResultSet e ' + e);
+}
 ```
 
 ### getResultSet8+
-
-PhonePC/2in1TabletTVWearable
 
 getResultSet(keyPrefix: string): Promise<KvStoreResultSet>
 
@@ -3477,46 +3261,44 @@ getResultSet(keyPrefix: string): Promise<KvStoreResultSet>
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let resultSet;
-4. let entries = [];
-5. for (var i = 0; i < 10; i++) {
-6. var key = 'batch_test_string_key';
-7. var entry = {
-8. key : key + i,
-9. value : {
-10. type : distributedData.ValueType.STRING,
-11. value : 'batch_test_string_value'
-12. }
-13. }
-14. entries.push(entry);
-15. }
-16. kvStore.putBatch(entries).then(async (err) => {
-17. console.log('putBatch success');
-18. }).catch((err) => {
-19. console.log('PutBatch putBatch fail ' + JSON.stringify(err));
-20. });
-21. kvStore.getResultSet('batch_test_string_key').then((result) => {
-22. console.log('GetResult getResultSet succeed.');
-23. resultSet = result;
-24. }).catch((err) => {
-25. console.log('getResultSet failed: ' + JSON.stringify(err));
-26. });
-27. kvStore.closeResultSet(resultSet).then((err) => {
-28. console.log('GetResult closeResultSet success');
-29. }).catch((err) => {
-30. console.log('closeResultSet fail ' + JSON.stringify(err));
-31. });
-32. }catch(e) {
-33. console.log('GetResult e ' + e);
-34. }
+```js
+let kvStore;
+try {
+    let resultSet;
+    let entries = [];
+    for (var i = 0; i < 10; i++) {
+        var key = 'batch_test_string_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.STRING,
+                value : 'batch_test_string_value'
+            }
+        }
+        entries.push(entry);
+    }
+    kvStore.putBatch(entries).then(async (err) => {
+        console.info('putBatch success');
+    }).catch((err) => {
+        console.error('PutBatch putBatch fail ' + JSON.stringify(err));
+    });
+    kvStore.getResultSet('batch_test_string_key').then((result) => {
+        console.info('GetResult getResultSet succeed.');
+        resultSet = result;
+    }).catch((err) => {
+        console.error('getResultSet failed: ' + JSON.stringify(err));
+    });
+    kvStore.closeResultSet(resultSet).then((err) => {
+        console.info('GetResult closeResultSet success');
+    }).catch((err) => {
+        console.error('closeResultSet fail ' + JSON.stringify(err));
+    });
+}catch(e) {
+    console.error('GetResult e ' + e);
+}
 ```
 
 ### getResultSet8+
-
-PhonePC/2in1TabletTVWearable
 
 getResultSet(query: Query, callback: AsyncCallback<KvStoreResultSet>): void
 
@@ -3533,39 +3315,37 @@ getResultSet(query: Query, callback: AsyncCallback<KvStoreResultSet>): void
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let resultSet;
-4. let entries = [];
-5. for (var i = 0; i < 10; i++) {
-6. var key = 'batch_test_string_key';
-7. var entry = {
-8. key : key + i,
-9. value : {
-10. type : distributedData.ValueType.STRING,
-11. value : 'batch_test_string_value'
-12. }
-13. }
-14. entries.push(entry);
-15. }
-16. kvStore.putBatch(entries, async function (err, data) {
-17. console.log('putBatch success');
-18. const query = new distributedData.Query();
-19. query.prefixKey("batch_test");
-20. kvStore.getResultSet(query, async function (err, result) {
-21. console.log('getResultSet succeed.');
-22. resultSet = result;
-23. });
-24. });
-25. } catch(e) {
-26. console.log('GetResultSet e ' + e);
-27. }
+```js
+let kvStore;
+try {
+    let resultSet;
+    let entries = [];
+    for (var i = 0; i < 10; i++) {
+        var key = 'batch_test_string_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.STRING,
+                value : 'batch_test_string_value'
+            }
+        }
+        entries.push(entry);
+    }
+    kvStore.putBatch(entries, async function (err, data) {
+        console.info('putBatch success');
+        const query = new distributedData.Query();
+        query.prefixKey("batch_test");
+        kvStore.getResultSet(query, async function (err, result) {
+            console.info('getResultSet succeed.');
+            resultSet = result;
+        });
+    });
+} catch(e) {
+    console.error('GetResultSet e ' + e);
+}
 ```
 
 ### getResultSet8+
-
-PhonePC/2in1TabletTVWearable
 
 getResultSet(query: Query): Promise<KvStoreResultSet>
 
@@ -3587,43 +3367,41 @@ getResultSet(query: Query): Promise<KvStoreResultSet>
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let resultSet;
-4. let entries = [];
-5. for (var i = 0; i < 10; i++) {
-6. var key = 'batch_test_string_key';
-7. var entry = {
-8. key : key + i,
-9. value : {
-10. type : distributedData.ValueType.STRING,
-11. value : 'batch_test_string_value'
-12. }
-13. }
-14. entries.push(entry);
-15. }
-16. kvStore.putBatch(entries).then(async (err) => {
-17. console.log('putBatch success');
-18. }).catch((err) => {
-19. console.log('putBatch fail ' + JSON.stringify(err));
-20. });
-21. const query = new distributedData.Query();
-22. query.prefixKey("batch_test");
-23. kvStore.getResultSet(query).then((result) => {
-24. console.log(' getResultSet succeed.');
-25. resultSet = result;
-26. }).catch((err) => {
-27. console.log('getResultSet failed: ' + JSON.stringify(err));
-28. });
-29. }catch(e) {
-30. console.log('GetResultSet e ' + e);
-31. }
+```js
+let kvStore;
+try {
+    let resultSet;
+    let entries = [];
+    for (var i = 0; i < 10; i++) {
+        var key = 'batch_test_string_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.STRING,
+                value : 'batch_test_string_value'
+            }
+        }
+        entries.push(entry);
+    }
+    kvStore.putBatch(entries).then(async (err) => {
+        console.info('putBatch success');
+    }).catch((err) => {
+        console.error('putBatch fail ' + JSON.stringify(err));
+    });
+    const query = new distributedData.Query();
+    query.prefixKey("batch_test");
+    kvStore.getResultSet(query).then((result) => {
+        console.info(' getResultSet succeed.');
+        resultSet = result;
+    }).catch((err) => {
+        console.error('getResultSet failed: ' + JSON.stringify(err));
+    });
+}catch(e) {
+    console.error('GetResultSet e ' + e);
+}
 ```
 
 ### closeResultSet8+
-
-PhonePC/2in1TabletTVWearable
 
 closeResultSet(resultSet: KvStoreResultSet, callback: AsyncCallback<void>): void
 
@@ -3640,25 +3418,23 @@ closeResultSet(resultSet: KvStoreResultSet, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let resultSet = null;
-4. kvStore.closeResultSet(resultSet, function (err, data) {
-5. if (err == undefined) {
-6. console.log('closeResultSet success');
-7. } else {
-8. console.log('closeResultSet fail');
-9. }
-10. });
-11. }catch(e) {
-12. console.log('CloseResultSet e ' + e);
-13. }
+```js
+let kvStore;
+try {
+    let resultSet = null;
+    kvStore.closeResultSet(resultSet, function (err, data) {
+        if (err == undefined) {
+            console.info('closeResultSet success');
+        } else {
+            console.error('closeResultSet fail');
+        }
+    });
+}catch(e) {
+    console.error('CloseResultSet e ' + e);
+}
 ```
 
 ### closeResultSet8+
-
-PhonePC/2in1TabletTVWearable
 
 closeResultSet(resultSet: KvStoreResultSet): Promise<void>
 
@@ -3680,23 +3456,21 @@ closeResultSet(resultSet: KvStoreResultSet): Promise<void>
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let resultSet = null;
-4. kvStore.closeResultSet(resultSet).then(() => {
-5. console.log('closeResultSet success');
-6. }).catch((err) => {
-7. console.log('closeResultSet fail ' + JSON.stringify(err));
-8. });
-9. }catch(e) {
-10. console.log('CloseResultSet e ' + e);
-11. }
+```js
+let kvStore;
+try {
+    let resultSet = null;
+    kvStore.closeResultSet(resultSet).then(() => {
+        console.info('closeResultSet success');
+    }).catch((err) => {
+        console.error('closeResultSet fail ' + JSON.stringify(err));
+    });
+}catch(e) {
+    console.error('CloseResultSet e ' + e);
+}
 ```
 
 ### getResultSize8+
-
-PhonePC/2in1TabletTVWearable
 
 getResultSize(query: Query, callback: AsyncCallback<number>): void
 
@@ -3713,37 +3487,35 @@ getResultSize(query: Query, callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let entries = [];
-4. for (var i = 0; i < 10; i++) {
-5. var key = 'batch_test_string_key';
-6. var entry = {
-7. key : key + i,
-8. value : {
-9. type : distributedData.ValueType.STRING,
-10. value : 'batch_test_string_value'
-11. }
-12. }
-13. entries.push(entry);
-14. }
-15. kvStore.putBatch(entries, async function (err, data) {
-16. console.log('putBatch success');
-17. const query = new distributedData.Query();
-18. query.prefixKey("batch_test");
-19. kvStore.getResultSize(query, async function (err, resultSize) {
-20. console.log('getResultSet succeed.');
-21. });
-22. });
-23. } catch(e) {
-24. console.log('GetResultSize e ' + e);
-25. }
+```js
+let kvStore;
+try {
+    let entries = [];
+    for (var i = 0; i < 10; i++) {
+        var key = 'batch_test_string_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.STRING,
+                value : 'batch_test_string_value'
+            }
+        }
+        entries.push(entry);
+    }
+    kvStore.putBatch(entries, async function (err, data) {
+        console.info('putBatch success');
+        const query = new distributedData.Query();
+        query.prefixKey("batch_test");
+        kvStore.getResultSize(query, async function (err, resultSize) {
+            console.info('getResultSet succeed.');
+        });
+    });
+} catch(e) {
+    console.error('GetResultSize e ' + e);
+}
 ```
 
 ### getResultSize8+
-
-PhonePC/2in1TabletTVWearable
 
 getResultSize(query: Query): Promise<number>
 
@@ -3765,51 +3537,43 @@ getResultSize(query: Query): Promise<number>
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let entries = [];
-4. for (var i = 0; i < 10; i++) {
-5. var key = 'batch_test_string_key';
-6. var entry = {
-7. key : key + i,
-8. value : {
-9. type : distributedData.ValueType.STRING,
-10. value : 'batch_test_string_value'
-11. }
-12. }
-13. entries.push(entry);
-14. }
-15. kvStore.putBatch(entries).then(async (err) => {
-16. console.log('putBatch success');
-17. }).catch((err) => {
-18. console.log('putBatch fail ' + JSON.stringify(err));
-19. });
-20. const query = new distributedData.Query();
-21. query.prefixKey("batch_test");
-22. kvStore.getResultSize(query).then((resultSize) => {
-23. console.log('getResultSet succeed.');
-24. }).catch((err) => {
-25. console.log('getResultSet failed: ' + JSON.stringify(err));
-26. });
-27. }catch(e) {
-28. console.log('GetResultSize e ' + e);
-29. }
+```js
+let kvStore;
+try {
+    let entries = [];
+    for (var i = 0; i < 10; i++) {
+        var key = 'batch_test_string_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.STRING,
+                value : 'batch_test_string_value'
+            }
+        }
+        entries.push(entry);
+    }
+    kvStore.putBatch(entries).then(async (err) => {
+        console.info('putBatch success');
+    }).catch((err) => {
+        console.error('putBatch fail ' + JSON.stringify(err));
+    });
+    const query = new distributedData.Query();
+    query.prefixKey("batch_test");
+    kvStore.getResultSize(query).then((resultSize) => {
+        console.info('getResultSet succeed.');
+    }).catch((err) => {
+        console.error('getResultSet failed: ' + JSON.stringify(err));
+    });
+}catch(e) {
+    console.error('GetResultSize e ' + e);
+}
 ```
 
 ### removeDeviceData8+
 
-PhonePC/2in1TabletTVWearable
-
 removeDeviceData(deviceId: string, callback: AsyncCallback<void>): void
 
 删除指定设备的数据，使用callback异步回调。
-
-说明
-
-其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
-
-deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.md#sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
@@ -3822,43 +3586,35 @@ deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.m
 
 **示例：**
 
-```
-1. let kvStore;
-2. const KEY_TEST_STRING_ELEMENT = 'key_test_string_2';
-3. const VALUE_TEST_STRING_ELEMENT = 'value-string-002';
-4. try {
-5. kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT, async function (err,data) {
-6. console.log('put success');
-7. const deviceid = 'no_exist_device_id';
-8. kvStore.removeDeviceData(deviceid, async function (err,data) {
-9. if (err == undefined) {
-10. console.log('removeDeviceData success');
-11. } else {
-12. console.log('removeDeviceData fail');
-13. kvStore.get(KEY_TEST_STRING_ELEMENT, async function (err,data) {
-14. console.log('RemoveDeviceData get success');
-15. });
-16. }
-17. });
-18. });
-19. }catch(e) {
-20. console.log('RemoveDeviceData e ' + e);
-21. }
+```js
+let kvStore;
+const KEY_TEST_STRING_ELEMENT = 'key_test_string_2';
+const VALUE_TEST_STRING_ELEMENT = 'value-string-002';
+try {
+    kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT, async function (err,data) {
+        console.info('put success');
+        const deviceid = 'no_exist_device_id';
+        kvStore.removeDeviceData(deviceid, async function (err,data) {
+            if (err == undefined) {
+                console.info('removeDeviceData success');
+            } else {
+                console.error('removeDeviceData fail');
+                kvStore.get(KEY_TEST_STRING_ELEMENT, async function (err,data) {
+                    console.info('RemoveDeviceData get success');
+                });
+            }
+        });
+    });
+}catch(e) {
+    console.error('RemoveDeviceData e ' + e);
+}
 ```
 
 ### removeDeviceData8+
 
-PhonePC/2in1TabletTVWearable
-
 removeDeviceData(deviceId: string): Promise<void>
 
 删除指定设备的数据，使用Promise异步回调。
-
-说明
-
-其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
-
-deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.md#sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
@@ -3876,43 +3632,37 @@ deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.m
 
 **示例：**
 
-```
-1. let kvStore;
-2. const KEY_TEST_STRING_ELEMENT = 'key_test_string_2';
-3. const VALUE_TEST_STRING_ELEMENT = 'value-string-001';
-4. try {
-5. kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT).then((err) => {
-6. console.log('removeDeviceData put success');
-7. }).catch((err) => {
-8. console.log('put fail ' + JSON.stringify(err));
-9. });
-10. const deviceid = 'no_exist_device_id';
-11. kvStore.removeDeviceData(deviceid).then((err) => {
-12. console.log('removeDeviceData success');
-13. }).catch((err) => {
-14. console.log('removeDeviceData fail ' + JSON.stringify(err));
-15. });
-16. kvStore.get(KEY_TEST_STRING_ELEMENT).then((data) => {
-17. console.log('get success data:' + data);
-18. }).catch((err) => {
-19. console.log('RemoveDeviceData get fail ' + JSON.stringify(err));
-20. });
-21. }catch(e) {
-22. console.log('RemoveDeviceData e ' + e);
-23. }
+```js
+let kvStore;
+const KEY_TEST_STRING_ELEMENT = 'key_test_string_2';
+const VALUE_TEST_STRING_ELEMENT = 'value-string-001';
+try {
+    kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT).then((err) => {
+        console.info('removeDeviceData put success');
+    }).catch((err) => {
+        console.error('put fail ' + JSON.stringify(err));
+    });
+    const deviceid = 'no_exist_device_id';
+    kvStore.removeDeviceData(deviceid).then((err) => {
+        console.info('removeDeviceData success');
+    }).catch((err) => {
+        console.error('removeDeviceData fail ' + JSON.stringify(err));
+    });
+    kvStore.get(KEY_TEST_STRING_ELEMENT).then((data) => {
+        console.info('get success data:' + data);
+    }).catch((err) => {
+        console.error('RemoveDeviceData get fail ' + JSON.stringify(err));
+    });
+}catch(e) {
+    console.error('RemoveDeviceData e ' + e);
+}
 ```
 
 ### sync
 
-PhonePC/2in1TabletTVWearable
-
 sync(deviceIds: string[], mode: SyncMode, delayMs?: number): void
 
 在手动同步方式下，触发数据库同步。
-
-说明
-
-其中deviceIds为DeviceInfo中的networkId，通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
 
 **需要权限**： ohos.permission.DISTRIBUTED\_DATASYNC。
 
@@ -3928,47 +3678,30 @@ sync(deviceIds: string[], mode: SyncMode, delayMs?: number): void
 
 **示例：**
 
-```
-1. import deviceManager from '@ohos.distributedHardware.deviceManager';
-
-3. let devManager;
-4. let kvStore;
-5. const KEY_TEST_SYNC_ELEMENT = 'key_test_sync';
-6. const VALUE_TEST_SYNC_ELEMENT = 'value-string-001';
-7. // create deviceManager
-8. deviceManager.createDeviceManager('bundleName', (err, value) => {
-9. if (!err) {
-10. devManager = value;
-11. let deviceIds = [];
-12. if (devManager != null) {
-13. var devices = devManager.getTrustedDeviceListSync();
-14. for (var i = 0; i < devices.length; i++) {
-15. deviceIds[i] = devices[i].networkId;
-16. }
-17. }
-18. try {
-19. kvStore.on('syncComplete', function (data) {
-20. console.log('Sync dataChange');
-21. });
-22. kvStore.put(KEY_TEST_SYNC_ELEMENT + 'testSync101', VALUE_TEST_SYNC_ELEMENT, function (err, data) {
-23. if (err != undefined) {
-24. console.log("put err: " + JSON.stringify(err));
-25. return;
-26. }
-27. console.log('Succeeded in putting data');
-28. const mode = distributedData.SyncMode.PULL_ONLY;
-29. kvStore.sync(deviceIds, mode, 1000);
-30. });
-31. } catch (e) {
-32. console.log('Sync e' + e);
-33. }
-34. }
-35. });
+```js
+let kvStore;
+const KEY_TEST_SYNC_ELEMENT = 'key_test_sync';
+const VALUE_TEST_SYNC_ELEMENT = 'value-string-001';
+const deviceIds = ['networkId1', 'networkId2'];
+try {
+  kvStore.on('syncComplete', function (data) {
+    console.info('Sync dataChange');
+  });
+  kvStore.put(KEY_TEST_SYNC_ELEMENT + 'testSync101', VALUE_TEST_SYNC_ELEMENT, function (err, data) {
+    if (err != undefined) {
+      console.error("put err: " + JSON.stringify(err));
+      return;
+    }
+    console.info('Succeeded in putting data');
+    const mode = distributedData.SyncMode.PULL_ONLY;
+    kvStore.sync(deviceIds, mode, 1000);
+  });
+} catch (e) {
+  console.error('Sync e' + e);
+}
 ```
 
 ### on('dataChange')8+
-
-PhonePC/2in1TabletTVWearable
 
 on(event: 'dataChange', type: SubscribeType, listener: Callback<ChangeNotification>): void
 
@@ -3986,16 +3719,14 @@ on(event: 'dataChange', type: SubscribeType, listener: Callback<ChangeNotificati
 
 **示例：**
 
-```
-1. let kvStore;
-2. kvStore.on('dataChange', distributedData.SubscribeType.SUBSCRIBE_TYPE_LOCAL, function (data) {
-3. console.log("dataChange callback call data: " + JSON.stringify(data));
-4. });
+```js
+let kvStore;
+kvStore.on('dataChange', distributedData.SubscribeType.SUBSCRIBE_TYPE_LOCAL, function (data) {
+    console.info("dataChange callback call data: " + JSON.stringify(data));
+});
 ```
 
 ### on('syncComplete')8+
-
-PhonePC/2in1TabletTVWearable
 
 on(event: 'syncComplete', syncCallback: Callback<Array<[string, number]>>): void
 
@@ -4012,27 +3743,25 @@ on(event: 'syncComplete', syncCallback: Callback<Array<[string, number]>>): void
 
 **示例：**
 
-```
-1. let kvStore;
-2. const KEY_TEST_FLOAT_ELEMENT = 'key_test_float';
-3. const VALUE_TEST_FLOAT_ELEMENT = 321.12;
-4. try {
-5. kvStore.on('syncComplete', function (data) {
-6. console.log('syncComplete ' + data)
-7. });
-8. kvStore.put(KEY_TEST_FLOAT_ELEMENT, VALUE_TEST_FLOAT_ELEMENT).then((data) => {
-9. console.log('syncComplete put success');
-10. }).catch((error) => {
-11. console.log('syncComplete put fail ' + error);
-12. });
-13. }catch(e) {
-14. console.log('syncComplete put e ' + e);
-15. }
+```js
+let kvStore;
+const KEY_TEST_FLOAT_ELEMENT = 'key_test_float';
+const VALUE_TEST_FLOAT_ELEMENT = 321.12;
+try {
+    kvStore.on('syncComplete', function (data) {
+        console.info('syncComplete ' + data)
+    });
+    kvStore.put(KEY_TEST_FLOAT_ELEMENT, VALUE_TEST_FLOAT_ELEMENT).then((data) => {
+        console.info('syncComplete put success');
+    }).catch((error) => {
+        console.error('syncComplete put fail ' + error);
+    });
+}catch(e) {
+    console.error('syncComplete put e ' + e);
+}
 ```
 
 ### off('dataChange')8+
-
-PhonePC/2in1TabletTVWearable
 
 off(event:'dataChange', listener?: Callback<ChangeNotification>): void
 
@@ -4049,28 +3778,26 @@ off(event:'dataChange', listener?: Callback<ChangeNotification>): void
 
 **示例：**
 
-```
-1. let kvStore;
-2. class KvstoreModel {
-3. call(data) {
-4. console.log("dataChange: " + data);
-5. }
-6. subscribeDataChange() {
-7. if (kvStore != null) {
-8. kvStore.on('dataChange', distributedData.SubscribeType.SUBSCRIBE_TYPE_REMOTE, this.call);
-9. }
-10. }
-11. unsubscribeDataChange() {
-12. if (kvStore != null) {
-13. kvStore.off('dataChange', this.call);
-14. }
-15. }
-16. }
+```js
+let kvStore;
+class KvstoreModel {
+    call(data) {
+        console.info("dataChange: " + data);
+    }
+    subscribeDataChange() {
+        if (kvStore != null) {
+            kvStore.on('dataChange', distributedData.SubscribeType.SUBSCRIBE_TYPE_REMOTE, this.call);
+        }
+    }
+    unsubscribeDataChange() {
+        if (kvStore != null) {
+            kvStore.off('dataChange', this.call);
+        }
+    }
+}
 ```
 
 ### off('syncComplete')8+
-
-PhonePC/2in1TabletTVWearable
 
 off(event: 'syncComplete', syncCallback?: Callback<Array<[string, number]>>): void
 
@@ -4087,28 +3814,26 @@ off(event: 'syncComplete', syncCallback?: Callback<Array<[string, number]>>): vo
 
 **示例：**
 
-```
-1. let kvStore;
-2. class KvstoreModel {
-3. call(data) {
-4. console.log("syncComplete: " + data);
-5. }
-6. subscribeSyncComplete() {
-7. if (kvStore != null) {
-8. kvStore.on('syncComplete', this.call);
-9. }
-10. }
-11. unsubscribeSyncComplete() {
-12. if (kvStore != null) {
-13. kvStore.off('syncComplete', this.call);
-14. }
-15. }
-16. }
+```js
+let kvStore;
+class KvstoreModel {
+    call(data) {
+        console.info("syncComplete: " + data);
+    }
+    subscribeSyncComplete() {
+        if (kvStore != null) {
+            kvStore.on('syncComplete', this.call);
+        }
+    }
+    unsubscribeSyncComplete() {
+        if (kvStore != null) {
+            kvStore.off('syncComplete', this.call);
+        }
+    }
+}
 ```
 
 ### setSyncParam8+
-
-PhonePC/2in1TabletTVWearable
 
 setSyncParam(defaultAllowedDelayMs: number, callback: AsyncCallback<void>): void
 
@@ -4125,21 +3850,19 @@ setSyncParam(defaultAllowedDelayMs: number, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. const defaultAllowedDelayMs = 500;
-4. kvStore.setSyncParam(defaultAllowedDelayMs, function (err,data) {
-5. console.log('SetSyncParam put success');
-6. });
-7. }catch(e) {
-8. console.log('testSingleKvStoreSetSyncParam e ' + e);
-9. }
+```js
+let kvStore;
+try {
+    const defaultAllowedDelayMs = 500;
+    kvStore.setSyncParam(defaultAllowedDelayMs, function (err,data) {
+        console.info('SetSyncParam put success');
+    });
+}catch(e) {
+    console.error('testSingleKvStoreSetSyncParam e ' + e);
+}
 ```
 
 ### setSyncParam8+
-
-PhonePC/2in1TabletTVWearable
 
 setSyncParam(defaultAllowedDelayMs: number): Promise<void>
 
@@ -4161,23 +3884,21 @@ setSyncParam(defaultAllowedDelayMs: number): Promise<void>
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. const defaultAllowedDelayMs = 500;
-4. kvStore.setSyncParam(defaultAllowedDelayMs).then((err) => {
-5. console.log('SetSyncParam put success');
-6. }).catch((err) => {
-7. console.log('SetSyncParam put fail ' + JSON.stringify(err));
-8. });
-9. }catch(e) {
-10. console.log('SetSyncParam e ' + e);
-11. }
+```js
+let kvStore;
+try {
+    const defaultAllowedDelayMs = 500;
+    kvStore.setSyncParam(defaultAllowedDelayMs).then((err) => {
+        console.info('SetSyncParam put success');
+    }).catch((err) => {
+        console.error('SetSyncParam put fail ' + JSON.stringify(err));
+    });
+}catch(e) {
+    console.error('SetSyncParam e ' + e);
+}
 ```
 
 ### getSecurityLevel8+
-
-PhonePC/2in1TabletTVWearable
 
 getSecurityLevel(callback: AsyncCallback<SecurityLevel>): void
 
@@ -4193,20 +3914,18 @@ getSecurityLevel(callback: AsyncCallback<SecurityLevel>): void
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. kvStore.getSecurityLevel(function (err,data) {
-4. console.log('getSecurityLevel success');
-5. });
-6. }catch(e) {
-7. console.log('GetSecurityLevel e ' + e);
-8. }
+```js
+let kvStore;
+try {
+    kvStore.getSecurityLevel(function (err,data) {
+        console.info('getSecurityLevel success');
+    });
+}catch(e) {
+    console.error('GetSecurityLevel e ' + e);
+}
 ```
 
 ### getSecurityLevel8+
-
-PhonePC/2in1TabletTVWearable
 
 getSecurityLevel(): Promise<SecurityLevel>
 
@@ -4222,22 +3941,20 @@ getSecurityLevel(): Promise<SecurityLevel>
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. kvStore.getSecurityLevel().then((data) => {
-4. console.log(' getSecurityLevel success');
-5. }).catch((err) => {
-6. console.log('getSecurityLevel fail ' + JSON.stringify(err));
-7. });
-8. }catch(e) {
-9. console.log('GetSecurityLevel e ' + e);
-10. }
+```js
+let kvStore;
+try {
+    kvStore.getSecurityLevel().then((data) => {
+        console.info(' getSecurityLevel success');
+    }).catch((err) => {
+        console.error('getSecurityLevel fail ' + JSON.stringify(err));
+    });
+}catch(e) {
+    console.error('GetSecurityLevel e ' + e);
+}
 ```
 
 ## DeviceKVStore8+
-
-PhonePC/2in1TabletTVWearable
 
 设备协同数据库，继承自KVStore，提供查询数据和同步数据的方法。
 
@@ -4249,17 +3966,9 @@ PhonePC/2in1TabletTVWearable
 
 ### get8+
 
-PhonePC/2in1TabletTVWearable
-
 get(deviceId: string, key: string, callback: AsyncCallback<boolean|string|number|Uint8Array>): void
 
 获取与指定设备ID和key匹配的string值，使用callback异步回调。
-
-说明
-
-其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
-
-deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.md#sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
@@ -4273,35 +3982,27 @@ deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.m
 
 **示例：**
 
-```
-1. let kvStore;
-2. const KEY_TEST_STRING_ELEMENT = 'key_test_string_2';
-3. const VALUE_TEST_STRING_ELEMENT = 'value-string-002';
-4. try{
-5. kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT, async function (err,data) {
-6. console.log('put success');
-7. kvStore.get('localDeviceId', KEY_TEST_STRING_ELEMENT, function (err,data) {
-8. console.log('get success');
-9. });
-10. })
-11. }catch(e) {
-12. console.log('get e' + e);
-13. }
+```js
+let kvStore;
+const KEY_TEST_STRING_ELEMENT = 'key_test_string_2';
+const VALUE_TEST_STRING_ELEMENT = 'value-string-002';
+try{
+    kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT, async function (err,data) {
+        console.info('put success');
+        kvStore.get('localDeviceId', KEY_TEST_STRING_ELEMENT, function (err,data) {
+            console.info('get success');
+        });
+    })
+}catch(e) {
+    console.error('get e' + e);
+}
 ```
 
 ### get8+
 
-PhonePC/2in1TabletTVWearable
-
 get(deviceId: string, key: string): Promise<boolean|string|number|Uint8Array>
 
 获取与指定设备ID和key匹配的string值，使用Promise异步回调。
-
-说明
-
-其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
-
-deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.md#sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
@@ -4320,39 +4021,31 @@ deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.m
 
 **示例：**
 
-```
-1. let kvStore;
-2. const KEY_TEST_STRING_ELEMENT = 'key_test_string_2';
-3. const VALUE_TEST_STRING_ELEMENT = 'value-string-002';
-4. try {
-5. kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT).then(async (data) => {
-6. console.log(' put success');
-7. kvStore.get('localDeviceId', KEY_TEST_STRING_ELEMENT).then((data) => {
-8. console.log('get success');
-9. }).catch((err) => {
-10. console.log('get fail ' + JSON.stringify(err));
-11. });
-12. }).catch((error) => {
-13. console.log('put error' + error);
-14. });
-15. } catch (e) {
-16. console.log('Get e ' + e);
-17. }
+```js
+let kvStore;
+const KEY_TEST_STRING_ELEMENT = 'key_test_string_2';
+const VALUE_TEST_STRING_ELEMENT = 'value-string-002';
+try {
+    kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT).then(async (data) => {
+        console.info(' put success');
+        kvStore.get('localDeviceId', KEY_TEST_STRING_ELEMENT).then((data) => {
+            console.info('get success');
+        }).catch((err) => {
+            console.error('get fail ' + JSON.stringify(err));
+        });
+    }).catch((error) => {
+        console.error('put error' + error);
+    });
+} catch (e) {
+    console.error('Get e ' + e);
+}
 ```
 
 ### getEntries8+
 
-PhonePC/2in1TabletTVWearable
-
 getEntries(deviceId: string, keyPrefix: string, callback: AsyncCallback<Entry[]>): void
 
 获取与指定设备ID和key前缀匹配的所有键值对，使用callback异步回调。
-
-说明
-
-其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
-
-deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.md#sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
@@ -4366,48 +4059,40 @@ deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.m
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let entries = [];
-4. for (var i = 0; i < 10; i++) {
-5. var key = 'batch_test_string_key';
-6. var entry = {
-7. key : key + i,
-8. value : {
-9. type : distributedData.ValueType.STRING,
-10. value : 'batch_test_string_value'
-11. }
-12. }
-13. entries.push(entry);
-14. }
-15. console.log('entries: ' + entries);
-16. kvStore.putBatch(entries, async function (err,data) {
-17. console.log('putBatch success');
-18. kvStore.getEntries('localDeviceId', 'batch_test_string_key', function (err,entries) {
-19. console.log('getEntries success');
-20. console.log('entries.length: ' + entries.length);
-21. console.log('entries[0]: ' + JSON.stringify(entries[0]));
-22. });
-23. });
-24. }catch(e) {
-25. console.log('PutBatch e ' + e);
-26. }
+```js
+let kvStore;
+try {
+    let entries = [];
+    for (var i = 0; i < 10; i++) {
+        var key = 'batch_test_string_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.STRING,
+                value : 'batch_test_string_value'
+            }
+        }
+        entries.push(entry);
+    }
+    console.info('entries: ' + entries);
+    kvStore.putBatch(entries, async function (err,data) {
+        console.info('putBatch success');
+        kvStore.getEntries('localDeviceId', 'batch_test_string_key', function (err,entries) {
+            console.info('getEntries success');
+            console.info('entries.length: ' + entries.length);
+            console.info('entries[0]: ' + JSON.stringify(entries[0]));
+        });
+    });
+}catch(e) {
+    console.error('PutBatch e ' + e);
+}
 ```
 
 ### getEntries8+
 
-PhonePC/2in1TabletTVWearable
-
 getEntries(deviceId: string, keyPrefix: string): Promise<Entry[]>
 
 获取与指定设备ID和key前缀匹配的所有键值对，使用Promise异步回调。
-
-说明
-
-其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
-
-deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.md#sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
@@ -4426,44 +4111,42 @@ deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.m
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let entries = [];
-4. for (var i = 0; i < 10; i++) {
-5. var key = 'batch_test_string_key';
-6. var entry = {
-7. key : key + i,
-8. value : {
-9. type : distributedData.ValueType.STRING,
-10. value : 'batch_test_string_value'
-11. }
-12. }
-13. entries.push(entry);
-14. }
-15. console.log('entries: ' + entries);
-16. kvStore.putBatch(entries).then(async (err) => {
-17. console.log('putBatch success');
-18. kvStore.getEntries('localDeviceId', 'batch_test_string_key').then((entries) => {
-19. console.log('getEntries success');
-20. console.log('entries.length: ' + entries.length);
-21. console.log('entries[0]: ' + JSON.stringify(entries[0]));
-22. console.log('entries[0].value: ' + JSON.stringify(entries[0].value));
-23. console.log('entries[0].value.value: ' + entries[0].value.value);
-24. }).catch((err) => {
-25. console.log('getEntries fail ' + JSON.stringify(err));
-26. });
-27. }).catch((err) => {
-28. console.log('putBatch fail ' + JSON.stringify(err));
-29. });
-30. }catch(e) {
-31. console.log('PutBatch e ' + e);
-32. }
+```js
+let kvStore;
+try {
+    let entries = [];
+    for (var i = 0; i < 10; i++) {
+        var key = 'batch_test_string_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.STRING,
+                value : 'batch_test_string_value'
+            }
+        }
+        entries.push(entry);
+    }
+    console.info('entries: ' + entries);
+    kvStore.putBatch(entries).then(async (err) => {
+        console.info('putBatch success');
+        kvStore.getEntries('localDeviceId', 'batch_test_string_key').then((entries) => {
+            console.info('getEntries success');
+            console.info('entries.length: ' + entries.length);
+            console.info('entries[0]: ' + JSON.stringify(entries[0]));
+            console.info('entries[0].value: ' + JSON.stringify(entries[0].value));
+            console.info('entries[0].value.value: ' + entries[0].value.value);
+        }).catch((err) => {
+            console.error('getEntries fail ' + JSON.stringify(err));
+        });
+    }).catch((err) => {
+        console.error('putBatch fail ' + JSON.stringify(err));
+    });
+}catch(e) {
+    console.error('PutBatch e ' + e);
+}
 ```
 
 ### getEntries8+
-
-PhonePC/2in1TabletTVWearable
 
 getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
 
@@ -4480,43 +4163,41 @@ getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. var arr = new Uint8Array([21,31]);
-4. let entries = [];
-5. for (var i = 0; i < 10; i++) {
-6. var key = 'batch_test_bool_key';
-7. var entry = {
-8. key : key + i,
-9. value : {
-10. type : distributedData.ValueType.BYTE_ARRAY,
-11. value : arr
-12. }
-13. }
-14. entries.push(entry);
-15. }
-16. console.log('entries: ' + JSON.stringify(entries));
-17. kvStore.putBatch(entries, async function (err,data) {
-18. console.log('putBatch success');
-19. const query = new distributedData.Query();
-20. query.prefixKey("batch_test");
-21. query.deviceId('localDeviceId');
-22. kvStore.getEntries(query, function (err,entries) {
-23. console.log('getEntries success');
-24. console.log('entries.length: ' + entries.length);
-25. console.log('entries[0]: ' + JSON.stringify(entries[0]));
-26. });
-27. });
-28. console.log('GetEntries success');
-29. }catch(e) {
-30. console.log('GetEntries e ' + e);
-31. }
+```js
+let kvStore;
+try {
+    var arr = new Uint8Array([21,31]);
+    let entries = [];
+    for (var i = 0; i < 10; i++) {
+        var key = 'batch_test_bool_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.BYTE_ARRAY,
+                value : arr
+            }
+        }
+        entries.push(entry);
+    }
+    console.info('entries: ' + JSON.stringify(entries));
+    kvStore.putBatch(entries, async function (err,data) {
+        console.info('putBatch success');
+        const query = new distributedData.Query();
+        query.prefixKey("batch_test");
+        query.deviceId('localDeviceId');
+        kvStore.getEntries(query, function (err,entries) {
+            console.info('getEntries success');
+            console.info('entries.length: ' + entries.length);
+            console.info('entries[0]: ' + JSON.stringify(entries[0]));
+        });
+    });
+    console.info('GetEntries success');
+}catch(e) {
+    console.error('GetEntries e ' + e);
+}
 ```
 
 ### getEntries8+
-
-PhonePC/2in1TabletTVWearable
 
 getEntries(query: Query): Promise<Entry[]>
 
@@ -4538,54 +4219,46 @@ getEntries(query: Query): Promise<Entry[]>
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. var arr = new Uint8Array([21,31]);
-4. let entries = [];
-5. for (var i = 0; i < 10; i++) {
-6. var key = 'batch_test_bool_key';
-7. var entry = {
-8. key : key + i,
-9. value : {
-10. type : distributedData.ValueType.BYTE_ARRAY,
-11. value : arr
-12. }
-13. }
-14. entries.push(entry);
-15. }
-16. console.log('entries: ' + JSON.stringify(entries));
-17. kvStore.putBatch(entries).then(async (err) => {
-18. console.log('putBatch success');
-19. const query = new distributedData.Query();
-20. query.prefixKey("batch_test");
-21. kvStore.getEntries(query).then((entries) => {
-22. console.log('getEntries success');
-23. }).catch((err) => {
-24. console.log('getEntries fail ' + JSON.stringify(err));
-25. });
-26. }).catch((err) => {
-27. console.log('GetEntries putBatch fail ' + JSON.stringify(err))
-28. });
-29. console.log('GetEntries success');
-30. }catch(e) {
-31. console.log('GetEntries e ' + e);
-32. }
+```js
+let kvStore;
+try {
+    var arr = new Uint8Array([21,31]);
+    let entries = [];
+    for (var i = 0; i < 10; i++) {
+        var key = 'batch_test_bool_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.BYTE_ARRAY,
+                value : arr
+            }
+        }
+        entries.push(entry);
+    }
+    console.info('entries: ' + JSON.stringify(entries));
+    kvStore.putBatch(entries).then(async (err) => {
+        console.info('putBatch success');
+        const query = new distributedData.Query();
+        query.prefixKey("batch_test");
+        kvStore.getEntries(query).then((entries) => {
+            console.info('getEntries success');
+        }).catch((err) => {
+            console.error('getEntries fail ' + JSON.stringify(err));
+        });
+    }).catch((err) => {
+        console.error('GetEntries putBatch fail ' + JSON.stringify(err))
+    });
+    console.info('GetEntries success');
+}catch(e) {
+    console.error('GetEntries e ' + e);
+}
 ```
 
 ### getEntries8+
 
-PhonePC/2in1TabletTVWearable
-
 getEntries(deviceId: string, query: Query, callback: AsyncCallback<Entry[]>): void
 
 获取与指定设备ID和Query对象匹配的键值对列表，使用callback异步回调。
-
-说明
-
-其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
-
-deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.md#sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
@@ -4599,53 +4272,45 @@ deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.m
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. var arr = new Uint8Array([21,31]);
-4. let entries = [];
-5. for (var i = 0; i < 10; i++) {
-6. var key = 'batch_test_bool_key';
-7. var entry = {
-8. key : key + i,
-9. value : {
-10. type : distributedData.ValueType.BYTE_ARRAY,
-11. value : arr
-12. }
-13. }
-14. entries.push(entry);
-15. }
-16. console.log('entries: ' + JSON.stringify(entries));
-17. kvStore.putBatch(entries, async function (err,data) {
-18. console.log('putBatch success');
-19. var query = new distributedData.Query();
-20. query.deviceId('localDeviceId');
-21. query.prefixKey("batch_test");
-22. kvStore.getEntries('localDeviceId', query, function (err,entries) {
-23. console.log('getEntries success');
-24. console.log('entries.length: ' + entries.length);
-25. console.log('entries[0]: ' + JSON.stringify(entries[0]));
-26. })
-27. });
-28. console.log('GetEntries success');
-29. }catch(e) {
-30. console.log('GetEntries e ' + e);
-31. }
+```js
+let kvStore;
+try {
+    var arr = new Uint8Array([21,31]);
+    let entries = [];
+    for (var i = 0; i < 10; i++) {
+        var key = 'batch_test_bool_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.BYTE_ARRAY,
+                value : arr
+            }
+        }
+        entries.push(entry);
+    }
+    console.info('entries: ' + JSON.stringify(entries));
+    kvStore.putBatch(entries, async function (err,data) {
+        console.info('putBatch success');
+        var query = new distributedData.Query();
+        query.deviceId('localDeviceId');
+        query.prefixKey("batch_test");
+        kvStore.getEntries('localDeviceId', query, function (err,entries) {
+            console.info('getEntries success');
+            console.info('entries.length: ' + entries.length);
+            console.info('entries[0]: ' + JSON.stringify(entries[0]));
+        })
+    });
+    console.info('GetEntries success');
+}catch(e) {
+    console.error('GetEntries e ' + e);
+}
 ```
 
 ### getEntries8+
 
-PhonePC/2in1TabletTVWearable
-
 getEntries(deviceId: string, query: Query): Promise<Entry[]>
 
 获取与指定设备ID和Query对象匹配的键值对列表，使用Promise异步回调。
-
-说明
-
-其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
-
-deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.md#sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
@@ -4664,55 +4329,47 @@ deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.m
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. var arr = new Uint8Array([21,31]);
-4. let entries = [];
-5. for (var i = 0; i < 10; i++) {
-6. var key = 'batch_test_bool_key';
-7. var entry = {
-8. key : key + i,
-9. value : {
-10. type : distributedData.ValueType.BYTE_ARRAY,
-11. value : arr
-12. }
-13. }
-14. entries.push(entry);
-15. }
-16. console.log('entries: ' + JSON.stringify(entries));
-17. kvStore.putBatch(entries).then(async (err) => {
-18. console.log('putBatch success');
-19. var query = new distributedData.Query();
-20. query.deviceId('localDeviceId');
-21. query.prefixKey("batch_test");
-22. kvStore.getEntries('localDeviceId', query).then((entries) => {
-23. console.log('getEntries success');
-24. }).catch((err) => {
-25. console.log('getEntries fail ' + JSON.stringify(err));
-26. });
-27. }).catch((err) => {
-28. console.log('putBatch fail ' + JSON.stringify(err));
-29. });
-30. console.log('GetEntries success');
-31. }catch(e) {
-32. console.log('GetEntries e ' + e);
-33. }
+```js
+let kvStore;
+try {
+    var arr = new Uint8Array([21,31]);
+    let entries = [];
+    for (var i = 0; i < 10; i++) {
+        var key = 'batch_test_bool_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.BYTE_ARRAY,
+                value : arr
+            }
+        }
+        entries.push(entry);
+    }
+    console.info('entries: ' + JSON.stringify(entries));
+    kvStore.putBatch(entries).then(async (err) => {
+        console.info('putBatch success');
+        var query = new distributedData.Query();
+        query.deviceId('localDeviceId');
+        query.prefixKey("batch_test");
+        kvStore.getEntries('localDeviceId', query).then((entries) => {
+            console.info('getEntries success');
+        }).catch((err) => {
+            console.error('getEntries fail ' + JSON.stringify(err));
+        });
+    }).catch((err) => {
+        console.error('putBatch fail ' + JSON.stringify(err));
+    });
+    console.info('GetEntries success');
+}catch(e) {
+    console.error('GetEntries e ' + e);
+}
 ```
 
 ### getResultSet8+
 
-PhonePC/2in1TabletTVWearable
-
 getResultSet(deviceId: string, keyPrefix: string, callback: AsyncCallback<KvStoreResultSet>): void
 
 获取与指定设备ID和key前缀匹配的KvStoreResultSet对象，使用callback异步回调。
-
-说明
-
-其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
-
-deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.md#sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
@@ -4726,35 +4383,27 @@ deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.m
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let resultSet;
-4. kvStore.getResultSet('localDeviceId', 'batch_test_string_key', async function (err, result) {
-5. console.log('getResultSet succeed.');
-6. resultSet = result;
-7. kvStore.closeResultSet(resultSet, function (err, data) {
-8. console.log('closeResultSet success');
-9. })
-10. });
-11. }catch(e) {
-12. console.log('GetResultSet e ' + e);
-13. }
+```js
+let kvStore;
+try {
+    let resultSet;
+    kvStore.getResultSet('localDeviceId', 'batch_test_string_key', async function (err, result) {
+        console.info('getResultSet succeed.');
+        resultSet = result;
+        kvStore.closeResultSet(resultSet, function (err, data) {
+            console.info('closeResultSet success');
+        })
+    });
+}catch(e) {
+    console.error('GetResultSet e ' + e);
+}
 ```
 
 ### getResultSet8+
 
-PhonePC/2in1TabletTVWearable
-
 getResultSet(deviceId: string, keyPrefix: string): Promise<KvStoreResultSet>
 
 获取与指定设备ID和key前缀匹配的KvStoreResultSet对象，使用Promise异步回调。
-
-说明
-
-其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
-
-deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.md#sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
@@ -4773,29 +4422,27 @@ deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.m
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let resultSet;
-4. kvStore.getResultSet('localDeviceId', 'batch_test_string_key').then((result) => {
-5. console.log('getResultSet succeed.');
-6. resultSet = result;
-7. }).catch((err) => {
-8. console.log('getResultSet failed: ' + JSON.stringify(err));
-9. });
-10. kvStore.closeResultSet(resultSet).then((err) => {
-11. console.log('closeResultSet success');
-12. }).catch((err) => {
-13. console.log('closeResultSet fail ' + JSON.stringify(err));
-14. });
-15. }catch(e) {
-16. console.log('GetResultSet e ' + e);
-17. }
+```js
+let kvStore;
+try {
+    let resultSet;
+    kvStore.getResultSet('localDeviceId', 'batch_test_string_key').then((result) => {
+        console.info('getResultSet succeed.');
+        resultSet = result;
+    }).catch((err) => {
+        console.error('getResultSet failed: ' + JSON.stringify(err));
+    });
+    kvStore.closeResultSet(resultSet).then((err) => {
+        console.info('closeResultSet success');
+    }).catch((err) => {
+        console.error('closeResultSet fail ' + JSON.stringify(err));
+    });
+}catch(e) {
+    console.error('GetResultSet e ' + e);
+}
 ```
 
 ### getResultSet8+
-
-PhonePC/2in1TabletTVWearable
 
 getResultSet(query: Query, callback: AsyncCallback<KvStoreResultSet>): void
 
@@ -4812,43 +4459,41 @@ getResultSet(query: Query, callback: AsyncCallback<KvStoreResultSet>): void
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let resultSet;
-4. let entries = [];
-5. for (var i = 0; i < 10; i++) {
-6. var key = 'batch_test_string_key';
-7. var entry = {
-8. key : key + i,
-9. value : {
-10. type : distributedData.ValueType.STRING,
-11. value : 'batch_test_string_value'
-12. }
-13. }
-14. entries.push(entry);
-15. }
-16. kvStore.putBatch(entries, async function (err, data) {
-17. console.log('putBatch success');
-18. const query = new distributedData.Query();
-19. query.prefixKey("batch_test");
-20. query.deviceId('localDeviceId');
-21. kvStore.getResultSet(query, async function (err, result) {
-22. console.log('getResultSet succeed.');
-23. resultSet = result;
-24. kvStore.closeResultSet(resultSet, function (err, data) {
-25. console.log('closeResultSet success');
-26. })
-27. });
-28. });
-29. } catch(e) {
-30. console.log('GetResultSet e ' + e);
-31. }
+```js
+let kvStore;
+try {
+    let resultSet;
+    let entries = [];
+    for (var i = 0; i < 10; i++) {
+        var key = 'batch_test_string_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.STRING,
+                value : 'batch_test_string_value'
+            }
+        }
+        entries.push(entry);
+    }
+    kvStore.putBatch(entries, async function (err, data) {
+        console.info('putBatch success');
+        const query = new distributedData.Query();
+        query.prefixKey("batch_test");
+        query.deviceId('localDeviceId');
+        kvStore.getResultSet(query, async function (err, result) {
+            console.info('getResultSet succeed.');
+            resultSet = result;
+            kvStore.closeResultSet(resultSet, function (err, data) {
+                console.info('closeResultSet success');
+            })
+        });
+    });
+} catch(e) {
+    console.error('GetResultSet e ' + e);
+}
 ```
 
 ### getResultSet8+
-
-PhonePC/2in1TabletTVWearable
 
 getResultSet(query: Query): Promise<KvStoreResultSet>
 
@@ -4870,60 +4515,52 @@ getResultSet(query: Query): Promise<KvStoreResultSet>
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let resultSet;
-4. let entries = [];
-5. for (var i = 0; i < 10; i++) {
-6. var key = 'batch_test_string_key';
-7. var entry = {
-8. key : key + i,
-9. value : {
-10. type : distributedData.ValueType.STRING,
-11. value : 'batch_test_string_value'
-12. }
-13. }
-14. entries.push(entry);
-15. }
-16. kvStore.putBatch(entries).then(async (err) => {
-17. console.log('putBatch success');
-18. }).catch((err) => {
-19. console.log('putBatch fail ' + err);
-20. });
-21. const query = new distributedData.Query();
-22. query.deviceId('localDeviceId');
-23. query.prefixKey("batch_test");
-24. console.log("GetResultSet " + query.getSqlLike());
-25. kvStore.getResultSet(query).then((result) => {
-26. console.log('getResultSet succeed.');
-27. resultSet = result;
-28. }).catch((err) => {
-29. console.log('getResultSet failed: ' + JSON.stringify(err));
-30. });
-31. kvStore.closeResultSet(resultSet).then((err) => {
-32. console.log('closeResultSet success');
-33. }).catch((err) => {
-34. console.log('closeResultSet fail ' + JSON.stringify(err));
-35. });
-36. }catch(e) {
-37. console.log('GetResultSet e ' + e);
-38. }
+```js
+let kvStore;
+try {
+    let resultSet;
+    let entries = [];
+    for (var i = 0; i < 10; i++) {
+        var key = 'batch_test_string_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.STRING,
+                value : 'batch_test_string_value'
+            }
+        }
+        entries.push(entry);
+    }
+    kvStore.putBatch(entries).then(async (err) => {
+        console.info('putBatch success');
+    }).catch((err) => {
+        console.error('putBatch fail ' + err);
+    });
+    const query = new distributedData.Query();
+    query.deviceId('localDeviceId');
+    query.prefixKey("batch_test");
+    console.info("GetResultSet " + query.getSqlLike());
+    kvStore.getResultSet(query).then((result) => {
+        console.info('getResultSet succeed.');
+        resultSet = result;
+    }).catch((err) => {
+        console.error('getResultSet failed: ' + JSON.stringify(err));
+    });
+    kvStore.closeResultSet(resultSet).then((err) => {
+        console.info('closeResultSet success');
+    }).catch((err) => {
+        console.error('closeResultSet fail ' + JSON.stringify(err));
+    });
+}catch(e) {
+    console.error('GetResultSet e ' + e);
+}
 ```
 
 ### getResultSet8+
 
-PhonePC/2in1TabletTVWearable
-
 getResultSet(deviceId: string, query: Query, callback: AsyncCallback<KvStoreResultSet>): void
 
 获取与指定设备ID和Query对象匹配的KvStoreResultSet对象，使用callback异步回调。
-
-说明
-
-其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
-
-deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.md#sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
@@ -4937,52 +4574,44 @@ deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.m
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let resultSet;
-4. let entries = [];
-5. for (var i = 0; i < 10; i++) {
-6. var key = 'batch_test_string_key';
-7. var entry = {
-8. key : key + i,
-9. value : {
-10. type : distributedData.ValueType.STRING,
-11. value : 'batch_test_string_value'
-12. }
-13. }
-14. entries.push(entry);
-15. }
-16. kvStore.putBatch(entries, async function (err, data) {
-17. console.log('putBatch success');
-18. const query = new distributedData.Query();
-19. query.prefixKey("batch_test");
-20. kvStore.getResultSet('localDeviceId', query, async function (err, result) {
-21. console.log('getResultSet succeed.');
-22. resultSet = result;
-23. kvStore.closeResultSet(resultSet, function (err, data) {
-24. console.log('closeResultSet success');
-25. })
-26. });
-27. });
-28. } catch(e) {
-29. console.log('GetResultSet e ' + e);
-30. }
+```js
+let kvStore;
+try {
+    let resultSet;
+    let entries = [];
+    for (var i = 0; i < 10; i++) {
+        var key = 'batch_test_string_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.STRING,
+                value : 'batch_test_string_value'
+            }
+        }
+        entries.push(entry);
+    }
+    kvStore.putBatch(entries, async function (err, data) {
+        console.info('putBatch success');
+        const query = new distributedData.Query();
+        query.prefixKey("batch_test");
+        kvStore.getResultSet('localDeviceId', query, async function (err, result) {
+            console.info('getResultSet succeed.');
+            resultSet = result;
+            kvStore.closeResultSet(resultSet, function (err, data) {
+                console.info('closeResultSet success');
+            })
+        });
+    });
+} catch(e) {
+    console.error('GetResultSet e ' + e);
+}
 ```
 
 ### getResultSet8+
 
-PhonePC/2in1TabletTVWearable
-
 getResultSet(deviceId: string, query: Query): Promise<KvStoreResultSet>
 
 获取与指定设备ID和Query对象匹配的KvStoreResultSet对象，使用Promise异步回调。
-
-说明
-
-其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
-
-deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.md#sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
@@ -5001,51 +4630,49 @@ deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.m
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let resultSet;
-4. let entries = [];
-5. for (var i = 0; i < 10; i++) {
-6. var key = 'batch_test_string_key';
-7. var entry = {
-8. key : key + i,
-9. value : {
-10. type : distributedData.ValueType.STRING,
-11. value : 'batch_test_string_value'
-12. }
-13. }
-14. entries.push(entry);
-15. }
-16. kvStore.putBatch(entries).then(async (err) => {
-17. console.log('GetResultSet putBatch success');
-18. }).catch((err) => {
-19. console.log('PutBatch putBatch fail ' + JSON.stringify(err));
-20. });
-21. const query = new distributedData.Query();
-22. query.prefixKey("batch_test");
-23. kvStore.getResultSet('localDeviceId', query).then((result) => {
-24. console.log('GetResultSet getResultSet succeed.');
-25. resultSet = result;
-26. }).catch((err) => {
-27. console.log('GetResultSet getResultSet failed: ' + JSON.stringify(err));
-28. });
-29. query.deviceId('localDeviceId');
-30. console.log("GetResultSet " + query.getSqlLike());
-31. kvStore.closeResultSet(resultSet).then((err) => {
-32. console.log('GetResultSet closeResultSet success');
-33. }).catch((err) => {
-34. console.log('GetResultSet closeResultSet fail ' + JSON.stringify(err));
-35. });
+```js
+let kvStore;
+try {
+    let resultSet;
+    let entries = [];
+    for (var i = 0; i < 10; i++) {
+        var key = 'batch_test_string_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.STRING,
+                value : 'batch_test_string_value'
+            }
+        }
+        entries.push(entry);
+    }
+    kvStore.putBatch(entries).then(async (err) => {
+        console.info('GetResultSet putBatch success');
+    }).catch((err) => {
+        console.error('PutBatch putBatch fail ' + JSON.stringify(err));
+    });
+    const query = new distributedData.Query();
+    query.prefixKey("batch_test");
+    kvStore.getResultSet('localDeviceId', query).then((result) => {
+        console.info('GetResultSet getResultSet succeed.');
+        resultSet = result;
+    }).catch((err) => {
+        console.error('GetResultSet getResultSet failed: ' + JSON.stringify(err));
+    });
+    query.deviceId('localDeviceId');
+    console.info("GetResultSet " + query.getSqlLike());
+    kvStore.closeResultSet(resultSet).then((err) => {
+        console.info('GetResultSet closeResultSet success');
+    }).catch((err) => {
+        console.error('GetResultSet closeResultSet fail ' + JSON.stringify(err));
+    });
 
-37. }catch(e) {
-38. console.log('GetResultSet e ' + e);
-39. }
+}catch(e) {
+    console.error('GetResultSet e ' + e);
+}
 ```
 
 ### closeResultSet8+
-
-PhonePC/2in1TabletTVWearable
 
 closeResultSet(resultSet: KvStoreResultSet, callback: AsyncCallback<void>): void
 
@@ -5062,26 +4689,24 @@ closeResultSet(resultSet: KvStoreResultSet, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. console.log('CloseResultSet success');
-4. let resultSet = null;
-5. kvStore.closeResultSet(resultSet, function (err, data) {
-6. if (err == undefined) {
-7. console.log('closeResultSet success');
-8. } else {
-9. console.log('closeResultSet fail');
-10. }
-11. });
-12. }catch(e) {
-13. console.log('CloseResultSet e ' + e);
-14. }
+```js
+let kvStore;
+try {
+    console.info('CloseResultSet success');
+    let resultSet = null;
+    kvStore.closeResultSet(resultSet, function (err, data) {
+        if (err == undefined) {
+            console.info('closeResultSet success');
+        } else {
+            console.error('closeResultSet fail');
+        }
+    });
+}catch(e) {
+    console.error('CloseResultSet e ' + e);
+}
 ```
 
 ### closeResultSet8+
-
-PhonePC/2in1TabletTVWearable
 
 closeResultSet(resultSet: KvStoreResultSet): Promise<void>
 
@@ -5103,24 +4728,22 @@ closeResultSet(resultSet: KvStoreResultSet): Promise<void>
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. console.log('CloseResultSet success');
-4. let resultSet = null;
-5. kvStore.closeResultSet(resultSet).then(() => {
-6. console.log('closeResultSet success');
-7. }).catch((err) => {
-8. console.log('closeResultSet fail ' + JSON.stringify(err));
-9. });
-10. }catch(e) {
-11. console.log('CloseResultSet e ' + e);
-12. }
+```js
+let kvStore;
+try {
+    console.info('CloseResultSet success');
+    let resultSet = null;
+    kvStore.closeResultSet(resultSet).then(() => {
+        console.info('closeResultSet success');
+    }).catch((err) => {
+        console.error('closeResultSet fail ' + JSON.stringify(err));
+    });
+}catch(e) {
+    console.error('CloseResultSet e ' + e);
+}
 ```
 
 ### getResultSize8+
-
-PhonePC/2in1TabletTVWearable
 
 getResultSize(query: Query, callback: AsyncCallback<number>): void
 
@@ -5137,38 +4760,36 @@ getResultSize(query: Query, callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let entries = [];
-4. for (var i = 0; i < 10; i++) {
-5. var key = 'batch_test_string_key';
-6. var entry = {
-7. key : key + i,
-8. value : {
-9. type : distributedData.ValueType.STRING,
-10. value : 'batch_test_string_value'
-11. }
-12. }
-13. entries.push(entry);
-14. }
-15. kvStore.putBatch(entries, async function (err, data) {
-16. console.log('putBatch success');
-17. const query = new distributedData.Query();
-18. query.prefixKey("batch_test");
-19. query.deviceId('localDeviceId');
-20. kvStore.getResultSize(query, async function (err, resultSize) {
-21. console.log('getResultSet succeed.');
-22. });
-23. });
-24. } catch(e) {
-25. console.log('GetResultSize e ' + e);
-26. }
+```js
+let kvStore;
+try {
+    let entries = [];
+    for (var i = 0; i < 10; i++) {
+        var key = 'batch_test_string_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.STRING,
+                value : 'batch_test_string_value'
+            }
+        }
+        entries.push(entry);
+    }
+    kvStore.putBatch(entries, async function (err, data) {
+        console.info('putBatch success');
+        const query = new distributedData.Query();
+        query.prefixKey("batch_test");
+        query.deviceId('localDeviceId');
+        kvStore.getResultSize(query, async function (err, resultSize) {
+            console.info('getResultSet succeed.');
+        });
+    });
+} catch(e) {
+    console.error('GetResultSize e ' + e);
+}
 ```
 
 ### getResultSize8+
-
-PhonePC/2in1TabletTVWearable
 
 getResultSize(query: Query): Promise<number>
 
@@ -5190,52 +4811,44 @@ getResultSize(query: Query): Promise<number>
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let entries = [];
-4. for (var i = 0; i < 10; i++) {
-5. var key = 'batch_test_string_key';
-6. var entry = {
-7. key : key + i,
-8. value : {
-9. type : distributedData.ValueType.STRING,
-10. value : 'batch_test_string_value'
-11. }
-12. }
-13. entries.push(entry);
-14. }
-15. kvStore.putBatch(entries).then(async (err) => {
-16. console.log('putBatch success');
-17. }).catch((err) => {
-18. console.log('putBatch fail ' + JSON.stringify(err));
-19. });
-20. const query = new distributedData.Query();
-21. query.prefixKey("batch_test");
-22. query.deviceId('localDeviceId');
-23. kvStore.getResultSize(query).then((resultSize) => {
-24. console.log('getResultSet succeed.');
-25. }).catch((err) => {
-26. console.log('getResultSet failed: ' + JSON.stringify(err));
-27. });
-28. }catch(e) {
-29. console.log('GetResultSize e ' + e);
-30. }
+```js
+let kvStore;
+try {
+    let entries = [];
+    for (var i = 0; i < 10; i++) {
+        var key = 'batch_test_string_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.STRING,
+                value : 'batch_test_string_value'
+            }
+        }
+        entries.push(entry);
+    }
+    kvStore.putBatch(entries).then(async (err) => {
+        console.info('putBatch success');
+    }).catch((err) => {
+        console.error('putBatch fail ' + JSON.stringify(err));
+    });
+    const query = new distributedData.Query();
+    query.prefixKey("batch_test");
+    query.deviceId('localDeviceId');
+    kvStore.getResultSize(query).then((resultSize) => {
+        console.info('getResultSet succeed.');
+    }).catch((err) => {
+        console.error('getResultSet failed: ' + JSON.stringify(err));
+    });
+}catch(e) {
+    console.error('GetResultSize e ' + e);
+}
 ```
 
 ### getResultSize8+
 
-PhonePC/2in1TabletTVWearable
-
 getResultSize(deviceId: string, query: Query, callback: AsyncCallback<number>): void;
 
 获取与指定设备ID和Query对象匹配的结果数，使用callback异步回调。
-
-说明
-
-其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
-
-deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.md#sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
@@ -5249,47 +4862,39 @@ deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.m
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let entries = [];
-4. for (var i = 0; i < 10; i++) {
-5. var key = 'batch_test_string_key';
-6. var entry = {
-7. key : key + i,
-8. value : {
-9. type : distributedData.ValueType.STRING,
-10. value : 'batch_test_string_value'
-11. }
-12. }
-13. entries.push(entry);
-14. }
-15. kvStore.putBatch(entries, async function (err, data) {
-16. console.log('putBatch success');
-17. const query = new distributedData.Query();
-18. query.prefixKey("batch_test");
-19. kvStore.getResultSize('localDeviceId', query, async function (err, resultSize) {
-20. console.log('getResultSet succeed.');
-21. });
-22. });
-23. } catch(e) {
-24. console.log('GetResultSize e ' + e);
-25. }
+```js
+let kvStore;
+try {
+    let entries = [];
+    for (var i = 0; i < 10; i++) {
+        var key = 'batch_test_string_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.STRING,
+                value : 'batch_test_string_value'
+            }
+        }
+        entries.push(entry);
+    }
+    kvStore.putBatch(entries, async function (err, data) {
+        console.info('putBatch success');
+        const query = new distributedData.Query();
+        query.prefixKey("batch_test");
+        kvStore.getResultSize('localDeviceId', query, async function (err, resultSize) {
+            console.info('getResultSet succeed.');
+        });
+    });
+} catch(e) {
+    console.error('GetResultSize e ' + e);
+}
 ```
 
 ### getResultSize8+
 
-PhonePC/2in1TabletTVWearable
-
 getResultSize(deviceId: string, query: Query): Promise<number>
 
 获取与指定设备ID和Query对象匹配的结果数，使用Promise异步回调。
-
-说明
-
-其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
-
-deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.md#sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
@@ -5308,51 +4913,43 @@ deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.m
 
 **示例：**
 
-```
-1. let kvStore;
-2. try {
-3. let entries = [];
-4. for (var i = 0; i < 10; i++) {
-5. var key = 'batch_test_string_key';
-6. var entry = {
-7. key : key + i,
-8. value : {
-9. type : distributedData.ValueType.STRING,
-10. value : 'batch_test_string_value'
-11. }
-12. }
-13. entries.push(entry);
-14. }
-15. kvStore.putBatch(entries).then(async (err) => {
-16. console.log('putBatch success');
-17. }).catch((err) => {
-18. console.log('putBatch fail ' + JSON.stringify(err));
-19. });
-20. var query = new distributedData.Query();
-21. query.prefixKey("batch_test");
-22. kvStore.getResultSize('localDeviceId', query).then((resultSize) => {
-23. console.log('getResultSet succeed.');
-24. }).catch((err) => {
-25. console.log('getResultSet failed: ' + JSON.stringify(err));
-26. });
-27. }catch(e) {
-28. console.log('GetResultSize e ' + e);
-29. }
+```js
+let kvStore;
+try {
+    let entries = [];
+    for (var i = 0; i < 10; i++) {
+        var key = 'batch_test_string_key';
+        var entry = {
+            key : key + i,
+            value : {
+                type : distributedData.ValueType.STRING,
+                value : 'batch_test_string_value'
+            }
+        }
+        entries.push(entry);
+    }
+    kvStore.putBatch(entries).then(async (err) => {
+        console.info('putBatch success');
+    }).catch((err) => {
+        console.error('putBatch fail ' + JSON.stringify(err));
+    });
+    var query = new distributedData.Query();
+    query.prefixKey("batch_test");
+    kvStore.getResultSize('localDeviceId', query).then((resultSize) => {
+        console.info('getResultSet succeed.');
+    }).catch((err) => {
+        console.error('getResultSet failed: ' + JSON.stringify(err));
+    });
+}catch(e) {
+    console.error('GetResultSize e ' + e);
+}
 ```
 
 ### removeDeviceData8+
 
-PhonePC/2in1TabletTVWearable
-
 removeDeviceData(deviceId: string, callback: AsyncCallback<void>): void
 
 从当前数据库中删除指定设备的数据，使用callback异步回调。
-
-说明
-
-其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
-
-deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.md#sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
@@ -5365,43 +4962,35 @@ deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.m
 
 **示例：**
 
-```
-1. let kvStore;
-2. const KEY_TEST_STRING_ELEMENT = 'key_test_string';
-3. const VALUE_TEST_STRING_ELEMENT = 'value-string-001';
-4. try {
-5. kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT, async function (err,data) {
-6. console.log('RemoveDeviceData  put success');
-7. const deviceid = 'no_exist_device_id';
-8. kvStore.removeDeviceData(deviceid, async function (err,data) {
-9. if (err == undefined) {
-10. console.log('removeDeviceData success');
-11. } else {
-12. console.log('removeDeviceData fail');
-13. kvStore.get('localDeviceId', KEY_TEST_STRING_ELEMENT, async function (err,data) {
-14. console.log('RemoveDeviceData get success');
-15. });
-16. }
-17. });
-18. });
-19. }catch(e) {
-20. console.log('RemoveDeviceData e ' + e);
-21. }
+```js
+let kvStore;
+const KEY_TEST_STRING_ELEMENT = 'key_test_string';
+const VALUE_TEST_STRING_ELEMENT = 'value-string-001';
+try {
+    kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT, async function (err,data) {
+        console.info('RemoveDeviceData  put success');
+        const deviceid = 'no_exist_device_id';
+        kvStore.removeDeviceData(deviceid, async function (err,data) {
+            if (err == undefined) {
+                console.info('removeDeviceData success');
+            } else {
+                console.error('removeDeviceData fail');
+                kvStore.get('localDeviceId', KEY_TEST_STRING_ELEMENT, async function (err,data) {
+                    console.info('RemoveDeviceData get success');
+                });
+            }
+        });
+    });
+}catch(e) {
+    console.error('RemoveDeviceData e ' + e);
+}
 ```
 
 ### removeDeviceData8+
 
-PhonePC/2in1TabletTVWearable
-
 removeDeviceData(deviceId: string): Promise<void>
 
 从当前数据库中删除指定设备的数据，使用Promise异步回调。
-
-说明
-
-其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
-
-deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.md#sync)。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
@@ -5419,43 +5008,37 @@ deviceId具体获取方式请参考[sync接口示例](js-apis-distributed-data.m
 
 **示例：**
 
-```
-1. let kvStore;
-2. const KEY_TEST_STRING_ELEMENT = 'key_test_string';
-3. const VALUE_TEST_STRING_ELEMENT = 'value-string-001';
-4. try {
-5. kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT).then((err) => {
-6. console.log('RemoveDeviceData put success');
-7. }).catch((err) => {
-8. console.log('RemoveDeviceData put fail ' + JSON.stringify(err));
-9. });
-10. const deviceid = 'no_exist_device_id';
-11. kvStore.removeDeviceData(deviceid).then((err) => {
-12. console.log('removeDeviceData success');
-13. }).catch((err) => {
-14. console.log('removeDeviceData fail ' + JSON.stringify(err));
-15. });
-16. kvStore.get('localDeviceId', KEY_TEST_STRING_ELEMENT).then((data) => {
-17. console.log('RemoveDeviceData get success data:' + data);
-18. }).catch((err) => {
-19. console.log('RemoveDeviceData get fail ' + JSON.stringify(err));
-20. });
-21. }catch(e) {
-22. console.log('RemoveDeviceData e ' + e);
-23. }
+```js
+let kvStore;
+const KEY_TEST_STRING_ELEMENT = 'key_test_string';
+const VALUE_TEST_STRING_ELEMENT = 'value-string-001';
+try {
+    kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT).then((err) => {
+        console.info('RemoveDeviceData put success');
+    }).catch((err) => {
+        console.error('RemoveDeviceData put fail ' + JSON.stringify(err));
+    });
+    const deviceid = 'no_exist_device_id';
+    kvStore.removeDeviceData(deviceid).then((err) => {
+        console.info('removeDeviceData success');
+    }).catch((err) => {
+        console.error('removeDeviceData fail ' + JSON.stringify(err));
+    });
+    kvStore.get('localDeviceId', KEY_TEST_STRING_ELEMENT).then((data) => {
+        console.info('RemoveDeviceData get success data:' + data);
+    }).catch((err) => {
+        console.error('RemoveDeviceData get fail ' + JSON.stringify(err));
+    });
+}catch(e) {
+    console.error('RemoveDeviceData e ' + e);
+}
 ```
 
 ### sync8+
 
-PhonePC/2in1TabletTVWearable
-
 sync(deviceIds: string[], mode: SyncMode, delayMs?: number): void
 
 在手动同步方式下，触发数据库同步。
-
-说明
-
-其中deviceIds为DeviceInfo中的networkId，通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
 
 **需要权限**： ohos.permission.DISTRIBUTED\_DATASYNC。
 
@@ -5471,47 +5054,30 @@ sync(deviceIds: string[], mode: SyncMode, delayMs?: number): void
 
 **示例：**
 
-```
-1. import deviceManager from '@ohos.distributedHardware.deviceManager';
-
-3. let devManager;
-4. let kvStore;
-5. const KEY_TEST_SYNC_ELEMENT = 'key_test_sync';
-6. const VALUE_TEST_SYNC_ELEMENT = 'value-string-001';
-7. // create deviceManager
-8. deviceManager.createDeviceManager('bundleName', (err, value) => {
-9. if (!err) {
-10. devManager = value;
-11. let deviceIds = [];
-12. if (devManager != null) {
-13. var devices = devManager.getTrustedDeviceListSync();
-14. for (var i = 0; i < devices.length; i++) {
-15. deviceIds[i] = devices[i].networkId;
-16. }
-17. }
-18. try {
-19. kvStore.on('syncComplete', function (data) {
-20. console.log('Sync dataChange');
-21. });
-22. kvStore.put(KEY_TEST_SYNC_ELEMENT + 'testSync101', VALUE_TEST_SYNC_ELEMENT, function (err, data) {
-23. if (err != undefined) {
-24. console.log("put err: " + JSON.stringify(err));
-25. return;
-26. }
-27. console.log('Succeeded in putting data');
-28. const mode = distributedData.SyncMode.PULL_ONLY;
-29. kvStore.sync(deviceIds, mode, 1000);
-30. });
-31. } catch (e) {
-32. console.log('Sync e' + e);
-33. }
-34. }
-35. });
+```js
+let kvStore;
+const KEY_TEST_SYNC_ELEMENT = 'key_test_sync';
+const VALUE_TEST_SYNC_ELEMENT = 'value-string-001';
+const deviceIds = ['networkId1', 'networkId2'];
+try {
+  kvStore.on('syncComplete', function (data) {
+    console.info('Sync dataChange');
+  });
+  kvStore.put(KEY_TEST_SYNC_ELEMENT + 'testSync101', VALUE_TEST_SYNC_ELEMENT, function (err, data) {
+    if (err != undefined) {
+      console.error("put err: " + JSON.stringify(err));
+      return;
+    }
+    console.info('Succeeded in putting data');
+    const mode = distributedData.SyncMode.PULL_ONLY;
+    kvStore.sync(deviceIds, mode, 1000);
+  });
+} catch (e) {
+  console.error('Sync e' + e);
+}
 ```
 
 ### on('dataChange')8+
-
-PhonePC/2in1TabletTVWearable
 
 on(event: 'dataChange', type: SubscribeType, listener: Callback<ChangeNotification>): void
 
@@ -5529,16 +5095,14 @@ on(event: 'dataChange', type: SubscribeType, listener: Callback<ChangeNotificati
 
 **示例：**
 
-```
-1. let kvStore;
-2. kvStore.on('dataChange', distributedData.SubscribeType.SUBSCRIBE_TYPE_LOCAL, function (data) {
-3. console.log("dataChange callback call data: " + JSON.stringify(data));
-4. });
+```js
+let kvStore;
+kvStore.on('dataChange', distributedData.SubscribeType.SUBSCRIBE_TYPE_LOCAL, function (data) {
+    console.info("dataChange callback call data: " + JSON.stringify(data));
+});
 ```
 
 ### on('syncComplete')8+
-
-PhonePC/2in1TabletTVWearable
 
 on(event: 'syncComplete', syncCallback: Callback<Array<[string, number]>>): void
 
@@ -5555,27 +5119,25 @@ on(event: 'syncComplete', syncCallback: Callback<Array<[string, number]>>): void
 
 **示例：**
 
-```
-1. let kvStore;
-2. const KEY_TEST_FLOAT_ELEMENT = 'key_test_float';
-3. const VALUE_TEST_FLOAT_ELEMENT = 321.12;
-4. try {
-5. kvStore.on('syncComplete', function (data) {
-6. console.log('syncComplete ' + data)
-7. });
-8. kvStore.put(KEY_TEST_FLOAT_ELEMENT, VALUE_TEST_FLOAT_ELEMENT).then((data) => {
-9. console.log('syncComplete put success');
-10. }).catch((error) => {
-11. console.log('syncComplete put fail ' + error);
-12. });
-13. }catch(e) {
-14. console.log('syncComplete put e ' + e);
-15. }
+```js
+let kvStore;
+const KEY_TEST_FLOAT_ELEMENT = 'key_test_float';
+const VALUE_TEST_FLOAT_ELEMENT = 321.12;
+try {
+    kvStore.on('syncComplete', function (data) {
+        console.info('syncComplete ' + data)
+    });
+    kvStore.put(KEY_TEST_FLOAT_ELEMENT, VALUE_TEST_FLOAT_ELEMENT).then((data) => {
+        console.info('syncComplete put success');
+    }).catch((error) => {
+        console.error('syncComplete put fail ' + error);
+    });
+}catch(e) {
+    console.error('syncComplete put e ' + e);
+}
 ```
 
 ### off('dataChange')8+
-
-PhonePC/2in1TabletTVWearable
 
 off(event:'dataChange', listener?: Callback<ChangeNotification>): void
 
@@ -5592,28 +5154,26 @@ off(event:'dataChange', listener?: Callback<ChangeNotification>): void
 
 **示例：**
 
-```
-1. let kvStore;
-2. class KvstoreModel {
-3. call(data) {
-4. console.log("dataChange: " + data);
-5. }
-6. subscribeDataChange() {
-7. if (kvStore != null) {
-8. kvStore.on('dataChange', distributedData.SubscribeType.SUBSCRIBE_TYPE_REMOTE, this.call);
-9. }
-10. }
-11. unsubscribeDataChange() {
-12. if (kvStore != null) {
-13. kvStore.off('dataChange', this.call);
-14. }
-15. }
-16. }
+```js
+let kvStore;
+class KvstoreModel {
+    call(data) {
+        console.info("dataChange: " + data);
+    }
+    subscribeDataChange() {
+        if (kvStore != null) {
+            kvStore.on('dataChange', distributedData.SubscribeType.SUBSCRIBE_TYPE_REMOTE, this.call);
+        }
+    }
+    unsubscribeDataChange() {
+        if (kvStore != null) {
+            kvStore.off('dataChange', this.call);
+        }
+    }
+}
 ```
 
 ### off('syncComplete')8+
-
-PhonePC/2in1TabletTVWearable
 
 off(event: 'syncComplete', syncCallback?: Callback<Array<[string, number]>>): void
 
@@ -5630,28 +5190,26 @@ off(event: 'syncComplete', syncCallback?: Callback<Array<[string, number]>>): vo
 
 **示例：**
 
-```
-1. let kvStore;
-2. class KvstoreModel {
-3. call(data) {
-4. console.log("syncComplete: " + data);
-5. }
-6. subscribeSyncComplete() {
-7. if (kvStore != null) {
-8. kvStore.on('syncComplete', this.call);
-9. }
-10. }
-11. unsubscribeSyncComplete() {
-12. if (kvStore != null) {
-13. kvStore.off('syncComplete', this.call);
-14. }
-15. }
-16. }
+```js
+let kvStore;
+class KvstoreModel {
+    call(data) {
+        console.info("syncComplete: " + data);
+    }
+    subscribeSyncComplete() {
+        if (kvStore != null) {
+            kvStore.on('syncComplete', this.call);
+        }
+    }
+    unsubscribeSyncComplete() {
+        if (kvStore != null) {
+            kvStore.off('syncComplete', this.call);
+        }
+    }
+}
 ```
 
 ## SyncMode
-
-PhonePC/2in1TabletTVWearable
 
 同步模式枚举。
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 概述
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 基础游戏服务（必选） > 游戏登录 > 概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:03+08:00
+scraped_at: 2026-09-02T14:59:55+08:00
 doc_updated_at: 2026-04-20
 content_hash: sha256:484863ff40b1be70eb3d874b6e256f36cb5088b934a6e0dc135923053dc5dcab
 ---

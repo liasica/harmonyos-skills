@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-commo
 title: 混合支付场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 通用收银台接入 > 混合支付场景
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:33+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:eeaee0bd31c4b634728df52c7776e8922900e2e97b12508121f8dfdfe0d51328
+scraped_at: 2026-09-02T14:59:59+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:6021c3985c57f842c22d2e335f061c0a0346c817b689e2cbdaa79c1495ea6e88
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:eeaee0bd31c4b634728df52c7776e8922900e2e97b12508121f8dfdfe0d
 
 通用收银台混合支付页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/XDy7PvPdSq2zESvHiAAZgA/zh-cn_image_0000002558765592.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/luTosuBwQhypl_9Oa9C1iw/zh-cn_image_0000002706835114.png)
 
 ## 接入流程
 
@@ -34,7 +34,7 @@ content_hash: sha256:eeaee0bd31c4b634728df52c7776e8922900e2e97b12508121f8dfdfe0d
 
 混合支付模式，收银台上用户可选择华为支付或三方支付方式支付。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/bi1-nzZPS6KgqyHi01b0RA/zh-cn_image_0000002558605936.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/nHIGZeRIRTuF1zG48sER5g/zh-cn_image_0000002736314221.png)
 
 1. 商户客户端请求商户服务器创建订单。
 2. 商户服务器按照商户模型调用Payment Kit服务端[直连商户预下单](../harmonyos-references/payment-prepay.md)或[平台类商户/服务商预下单](../harmonyos-references/payment-agent-prepay.md)接口。
@@ -133,45 +133,45 @@ content_hash: sha256:eeaee0bd31c4b634728df52c7776e8922900e2e97b12508121f8dfdfe0d
 
 商户客户端使用[orderStr](../harmonyos-references/payment-model.md#orderstr)作为参数调用[requestPayment](../harmonyos-references/payment-paymentservice.md#requestpayment)接口拉起Payment Kit支付收银台。
 
-当接口通过.then()方法返回时，则表示当前接口请求响应正常，通过.catch()方法返回表示接口请求响应异常。当此次请求有异常时，可通过**error.code**获取错误码，错误码相关信息请参见[错误码](../harmonyos-references/payment-error-code.md)。示例代码如下：
+当接口通过.then()方法返回时，则表示当前接口请求响应正常，通过.catch()方法返回表示接口请求响应异常。当此次请求有异常时，可通过**error.code**获取错误码，错误码相关信息请参见[错误码](../harmonyos-references/errorcode-payment.md)。示例代码如下：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { paymentService } from '@kit.PaymentKit';
-3. import { common } from '@kit.AbilityKit';
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { paymentService } from '@kit.PaymentKit';
+import { common } from '@kit.AbilityKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-9. requestPaymentPromise() {
-10. // used orderStr to pay for an order, use your own orderStr.
-11. const orderStr = '{"app_id":"***","merc_no":"***","prepay_id":"xxx","timestamp":"1680259863114","noncestr":"1487b8a60ed9f9ecc0ba759fbec23f4f","sign":"****","auth_id":"***"}';
-12. paymentService.requestPayment(this.context, orderStr, "")
-13. .then((payResult: paymentService.PayResult) => {
-14. // succeeded in paying
-15. console.info('succeeded in paying, pay result: ', payResult);
-16. })
-17. .catch((error: BusinessError) => {
-18. // failed to pay
-19. console.error(`failed to pay, error.code: ${error.code}, error.message: ${error.message}`);
-20. });
-21. }
+@Entry
+@Component
+struct Index {
+  context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  requestPaymentPromise() {
+    // 请开发者使用自己的订单信息（orderStr）
+    const orderStr = '{"app_id":"***","merc_no":"***","prepay_id":"xxx","timestamp":"1680259863114","noncestr":"1487b8a60ed9f9ecc0ba759fbec23f4f","sign":"****","auth_id":"***"}';
+    paymentService.requestPayment(this.context, orderStr, '')
+      .then((payResult: paymentService.PayResult) => {
+        // 支付成功
+        console.info('succeeded in paying, pay result: ', payResult);
+      })
+      .catch((error: BusinessError) => {
+        // 支付失败
+        console.error(`failed to pay, error.code: ${error.code}, error.message: ${error.message}`);
+      });
+  }
 
-23. build() {
-24. Column() {
-25. Button('requestPaymentPromise')
-26. .type(ButtonType.Capsule)
-27. .width('50%')
-28. .margin(20)
-29. .onClick(() => {
-30. this.requestPaymentPromise();
-31. })
-32. }
-33. .width('100%')
-34. .height('100%')
-35. }
-36. }
+  build() {
+    Column() {
+      Button('requestPaymentPromise')
+        .type(ButtonType.Capsule)
+        .width('50%')
+        .margin(20)
+        .onClick(() => {
+          this.requestPaymentPromise();
+        })
+      }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ### 支付处理
@@ -186,7 +186,7 @@ content_hash: sha256:eeaee0bd31c4b634728df52c7776e8922900e2e97b12508121f8dfdfe0d
 2. 验签前需要对返回数据进行排序拼接，sign字段是签名值，排序拼接后的待验签内容需要排除sign字段。
 3. 验签公钥使用[华为支付证书](payment-certificates-config.md#华为支付证书)。
 
-说明
+**说明** 
 
 * 如果用户没有提前登录，系统会自动拉起华为账号登录页面让用户登录。
 * 支付成功，不建议以客户端返回作为用户的支付结果，需以服务器接收到的结果通知或者查询API返回为准。

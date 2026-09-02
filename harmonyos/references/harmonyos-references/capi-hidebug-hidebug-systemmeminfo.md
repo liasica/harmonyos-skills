@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hide
 title: HiDebug_SystemMemInfo
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > C API > 结构体 > HiDebug_SystemMemInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:27+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:52b05a1ac12bb0114c7dfbbdd955c2d5fb8558b35470c4477b66d8b7ebbc44cd
+scraped_at: 2026-09-02T15:02:17+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:40c6ae65d8fddf8d4d9bbf3e0953126b5927dc710992a0a738f20b47d9139dda
 ---
 
-```
-1. typedef struct HiDebug_SystemMemInfo {...} HiDebug_SystemMemInfo
+```c
+typedef struct HiDebug_SystemMemInfo {...} HiDebug_SystemMemInfo
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-系统内存信息结构类型定义。
+系统内存信息结构类型定义。用于获取系统内存的总量、空闲量、可用量等关键信息，适用于系统性能分析、内存监控、故障诊断等场景，帮助开发者了解系统内存使用状况，优化内存管理策略。
 
 **起始版本：** 12
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

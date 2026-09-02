@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: Hilog模块提供的OH_LOG_SetCallback接口返回的日志与系统落盘的Hilog日志是否一致
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > Hilog模块提供的OH_LOG_SetCallback接口返回的日志与系统落盘的Hilog日志是否一致
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:23+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:13+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:edc25aa0405d4f61ae9ae6997b044f530ffe92bd85b2a66fcecabe0c5d3bb3ce
 ---
 

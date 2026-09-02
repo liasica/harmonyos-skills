@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/one-time-auth
 title: 向用户申请单次授权
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 申请应用权限 > 向用户申请单次授权
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:30:35+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:b1d4ad629801e85973a133e519053b2e9a025ed52b7418e465f0cc8f1058b75b
+scraped_at: 2026-09-02T14:49:58+08:00
+doc_updated_at: 2026-07-17
+content_hash: sha256:5ee171a892212a63097f3b600902e0fc08dee50555923148f0dbe4d234726c99
 ---
 
 基于授权最小化原则，防止应用获取和滥用用户数据。针对部分应用敏感权限，在弹窗向用户申请授权时，新增“允许本次使用”的授权选项。
@@ -14,7 +14,7 @@ content_hash: sha256:b1d4ad629801e85973a133e519053b2e9a025ed52b7418e465f0cc8f105
 
 授权弹窗如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/F-6JsTkpQH2GwgQfV4iXOg/zh-cn_image_0000002558605198.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/KzJrcBjES_KQyYVEaeKbDg/zh-cn_image_0000002736433405.png)
 
 同时，用户可以在“设置”中修改授权。修改路径：设置 > 隐私 > 权限管理 > 应用 > 目标应用 > 位置信息。
 
@@ -22,7 +22,7 @@ content_hash: sha256:b1d4ad629801e85973a133e519053b2e9a025ed52b7418e465f0cc8f105
 
 当前仅支持以下权限，当应用向用户申请这些权限时，弹窗将显示“允许本次使用”的选项；在设置中修改这些权限时，系统将显示“每次询问”的选项。
 
-* 剪切板：["ohos.permission.READ\_PASTEBOARD"](restricted-permissions.md#ohospermissionread_pasteboard)
+* 剪贴板：["ohos.permission.READ\_PASTEBOARD"](restricted-permissions.md#ohospermissionread_pasteboard)
 * 模糊位置：["ohos.permission.APPROXIMATELY\_LOCATION"](permissions-for-all-user.md#ohospermissionapproximately_location)
 * 位置：["ohos.permission.LOCATION"](permissions-for-all-user.md#ohospermissionlocation)
 * 后台位置：["ohos.permission.LOCATION\_IN\_BACKGROUND"](permissions-for-all-user.md#ohospermissionlocation_in_background)
@@ -40,5 +40,5 @@ content_hash: sha256:b1d4ad629801e85973a133e519053b2e9a025ed52b7418e465f0cc8f105
 
     如下图样例所示，小艺建议处于卡片可见状态：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/FTi3iLE1TDm5b7hRHB14KQ/zh-cn_image_0000002589324723.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/-6Na9eBPTROR6YB_dd8tQA/zh-cn_image_0000002706834250.png)
 * 当用户在权限设置中选择“每次询问”时，应用将获得模糊位置和位置临时权限。取消临时授权的操作与此相同。

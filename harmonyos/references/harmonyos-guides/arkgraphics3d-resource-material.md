@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d
 title: 创建并使用材质资源
 breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkGraphics 3D资源创建以及使用 > 创建并使用材质资源
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:21+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1a5e6965ed57422db0fd50bf44996db3f5247f99b417a6754abde1944cad4369
+scraped_at: 2026-09-02T14:59:50+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4bea6fddba6d139ee29f0f0d7c1918680790f8a38522f27155b0775f10d11d1c
 ---
 
 材质（Material）：材质是用于定义物体表面视觉效果的重要资源。材质决定了物体如何与光线交互，从而影响其最终的渲染效果，如颜色、金属感、粗糙度等外观属性。
@@ -48,7 +48,7 @@ ArkGraphics 3D中的材质类型通过[MaterialType](../harmonyos-references/js-
 * cullMode：剔除模式，决定是否剔除背面几何体，默认值为BACK，即剔除背面。
 
   适用场景：普通实体模型一般开启剔除背面提升渲染效率；透明或双面材质（如树叶、布料）需要禁用剔除以显示完整模型。
-* blend：是否启用材质的透明效果模式。true表示开启透明，false表示关闭透明，默认值为false。
+* blend：材质的透明效果设置，默认值为undefined，即禁用材质的透明属性。
 
   适用场景：表现透明或半透明材质时开启，如玻璃、水面、烟雾、透明塑料等。
 * alphaCutoff：透明度阈值，取值范围[0,1]，默认值为1。像素的alpha值低于该阈值时不进行渲染，用于实现透明裁剪效果。
@@ -57,6 +57,9 @@ ArkGraphics 3D中的材质类型通过[MaterialType](../harmonyos-references/js-
 * renderSort：渲染排序设置，用于控制材质在渲染队列中的渲染顺序，确保透明或特殊效果材质正确叠加显示。
 
   适用场景：多重透明材质、叠加特效、UI元素等需要严格渲染顺序的场景。
+* polygonMode：模型的多边形绘制模式，默认值为FILL。
+
+  适用场景：以线框模式渲染3D物体的网格，可直观显示模型的建模结构。
 
 ### PBR材质属性
 
@@ -101,176 +104,162 @@ ArkGraphics 3D中的材质类型通过[MaterialType](../harmonyos-references/js-
 
    在页面脚本中导入ArkGraphics 3D提供的核心类型，用于创建Shader材质及绑定Shader资源。
 
+   ```typescript
+   import { Camera, Environment, Geometry, Image, Material, MaterialType, Scene, SceneResourceFactory,
+     SceneResourceParameters, Shader, ShaderMaterial, EnvironmentBackgroundType } from '@kit.ArkGraphics3D';
    ```
-   1. import { Camera, Environment, Geometry, Image, Material, MaterialType, Scene, SceneResourceFactory,
-   2. SceneResourceParameters, Shader, ShaderMaterial, EnvironmentBackgroundType } from '@kit.ArkGraphics3D';
-   ```
-
-   [resource.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics3D/entry/src/main/ets/arkgraphic/resource.ets#L16-L19)
 2. 加载场景并设置渲染参数。
 
    调用Scene.load()方法加载.glb或.gltf格式的模型文件，并在加载完成后获取Scene对象。随后构建SceneOptions对象，指定场景及渲染模式，用于后续通过Component3D将场景内容渲染到界面中。
 
+   ```typescript
+   if (this.scene === null) {
+     // Switched from .gltf to .glb; same content, different format
+     Scene.load($rawfile('gltf/CubeWithFloor/glTF/AnimatedCube.glb'))
+       .then(async (result: Scene) => {
+         // Assign loaded scene to globalScene for unified resource creation
+         globalScene = result;
+         this.scene = result;
+         this.sceneOpt = { scene: this.scene, modelType: ModelType.SURFACE } as SceneOptions;
+         this.rf = this.scene.getResourceFactory();
+         // ...
+       })
+       .catch((error: string) => {
+         console.error('init error: ' + error + '.');
+       });
+   }
    ```
-   1. if (this.scene === null) {
-   2. // Switched from .gltf to .glb; same content, different format
-   3. Scene.load($rawfile('gltf/CubeWithFloor/glTF/AnimatedCube.glb'))
-   4. .then(async (result: Scene) => {
-   5. // Assign loaded scene to globalScene for unified resource creation
-   6. globalScene = result;
-   7. this.scene = result;
-   8. this.sceneOpt = { scene: this.scene, modelType: ModelType.SURFACE } as SceneOptions;
-   9. this.rf = this.scene.getResourceFactory();
-   10. // ...
-   11. })
-   12. .catch((error: string) => {
-   13. console.error('init error: ' + error + '.');
-   14. });
-   15. }
-   ```
-
-   [resource.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics3D/entry/src/main/ets/arkgraphic/resource.ets#L178-L207)
 3. 初始化相机。
 
    创建相机对象并设置相机启用状态与观察位置，用于后续展示模型。
 
+   ```typescript
+   this.cam = await this.rf.createCamera({ 'name': 'Camera1' });
+   this.cam.enabled = true;
+   this.cam.position.z = 5;
    ```
-   1. this.cam = await this.rf.createCamera({ 'name': 'Camera1' });
-   2. this.cam.enabled = true;
-   3. this.cam.position.z = 5;
-   ```
-
-   [resource.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics3D/entry/src/main/ets/arkgraphic/resource.ets#L189-L193)
 4. 获取几何体节点。
 
    通过Scene.getNodeByPath()方法获取目标模型的几何体（Geometry）节点，并记录其原始材质，以便在后续修改材质后可进行回退或恢复操作。
 
-   ```
-   1. this.geom = this.scene.getNodeByPath('rootNode_/Unnamed Node 1/AnimatedCube') as Geometry;
+   ```typescript
+   this.geom = this.scene.getNodeByPath('rootNode_/Unnamed Node 1/AnimatedCube') as Geometry;
 
-   3. // record original material
-   4. this.originalMat = this.geom.mesh.subMeshes[0].material;
+   // record original material
+   this.originalMat = this.geom.mesh.subMeshes[0].material;
    ```
-
-   [resource.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics3D/entry/src/main/ets/arkgraphic/resource.ets#L195-L200)
 5. 创建Shader材质（空白）。
 
    调用SceneResourceFactory.createMaterial()创建Shader类型的空白材质，为后续绑定自定义Shader做准备。
 
+   ```typescript
+   function createMaterialPromise(): Promise<Material> {
+     return new Promise((resolve, reject) => {
+       // Ensure the scene is loaded before accessing sceneFactory
+       if (globalScene) {
+         let sceneFactory: SceneResourceFactory = globalScene.getResourceFactory();
+         let sceneMaterialParameter: SceneResourceParameters = { name: 'material' };
+         // Create Material
+         let material: Promise<Material> = sceneFactory.createMaterial(sceneMaterialParameter, MaterialType.SHADER);
+         material.then(resolve)
+         .catch((err: string) => {
+           console.error('Blank material create failed: ' + err);
+           reject(err);
+         });
+       } else {
+         reject('Scene is not loaded yet.');
+       }
+     });
+   }
    ```
-   1. function createMaterialPromise(): Promise<Material> {
-   2. return new Promise((resolve, reject) => {
-   3. // Ensure the scene is loaded before accessing sceneFactory
-   4. if (globalScene) {
-   5. let sceneFactory: SceneResourceFactory = globalScene.getResourceFactory();
-   6. let sceneMaterialParameter: SceneResourceParameters = { name: 'material' };
-   7. // Create Material
-   8. let material: Promise<Material> = sceneFactory.createMaterial(sceneMaterialParameter, MaterialType.SHADER);
-   9. material.then(resolve)
-   10. .catch((err: string) => {
-   11. console.error('Blank material create failed: ' + err);
-   12. reject(err);
-   13. });
-   14. } else {
-   15. reject('Scene is not loaded yet.');
-   16. }
-   17. });
-   18. }
+6. 创建Shader资源。
+
+   通过SceneResourceFactory.createShader()创建自定义着色器资源，创建的shader资源可在后续步骤中绑定到Shader材质上，实现自定义渲染逻辑。
+
+   ```typescript
+   function createShaderPromise(): Promise<Shader> {
+     return new Promise((resolve, reject) => {
+       // Ensure the scene is loaded before accessing sceneFactory
+       if (globalScene) {
+         let sceneFactory: SceneResourceFactory = globalScene.getResourceFactory();
+
+         // Create a SceneResourceParameters object and use it to create a shader
+         let sceneResourceParameter: SceneResourceParameters = {
+           name: 'shaderResource',
+           uri: $rawfile('shaders/custom_shader/custom_material_sample.shader')
+         };
+
+         let shader: Promise<Shader> = sceneFactory.createShader(sceneResourceParameter);
+         shader.then((shaderEntity: Shader) => {
+           resolve(shaderEntity);
+         }).catch((err: string) => {
+           console.error('Shader load failed: ' + err + '.');
+           reject(err);
+         });
+       } else {
+         reject('Scene is not loaded yet.');
+       }
+     });
+   }
    ```
+7. 将Shader材质绑定至几何体节点。
 
-   [resource.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics3D/entry/src/main/ets/arkgraphic/resource.ets#L24-L43)
-6. 创建并绑定Shader资源。
+   将着色器资源绑定至Shader材质，再将Shader材质绑定至几何体节点，使用自定义渲染逻辑进行绘制。通过按钮点击事件可触发材质切换，实现运行时从默认材质到Shader材质的动态过渡。
 
-   通过SceneResourceFactory.createShader()创建自定义着色器资源，并将其绑定到Shader材质上，实现自定义渲染逻辑。
+   ```typescript
+   Button('Replace with a blank material')
+     // ...
+     .onClick(async (): Promise<void> => {
+       console.info('Start to replace with a blank material');
 
+       if (!this.blankMat) {
+         this.blankMat = await createMaterialPromise();
+       }
+
+       if (!this.scene || !this.rf) {
+         return;
+       }
+
+       this.geom = this.scene.getNodeByPath('rootNode_/Unnamed Node 1/AnimatedCube') as Geometry;
+
+       this.geom.mesh.materialOverride = undefined;
+       if (this.blankMat) {
+         this.geom.mesh.subMeshes[0].material = this.blankMat;
+       }
+
+     });
+
+   Button('Replace with a Shader material')
+     // ...
+     .onClick(async (): Promise<void> => {
+       console.info('Start to replace with a shader material');
+
+       if (!this.shader) {
+         this.shader = await createShaderPromise();
+       }
+
+       if (!this.scene || !this.rf) {
+         return;
+       }
+
+       if (!this.shaderMat) {
+         let rf = this.scene.getResourceFactory();
+         this.shaderMat = await rf.createMaterial({ name: 'shaderMat' }, MaterialType.SHADER);
+       }
+
+       if (this.shader) {
+         this.shaderMat.colorShader = this.shader;
+       }
+
+       this.geom = this.scene.getNodeByPath('rootNode_/Unnamed Node 1/AnimatedCube') as Geometry;
+
+       this.geom.mesh.materialOverride = undefined;
+
+       if (this.shaderMat) {
+         this.geom.mesh.subMeshes[0].material = this.shaderMat;
+       }
+     })
    ```
-   1. function createShaderPromise(): Promise<Shader> {
-   2. return new Promise((resolve, reject) => {
-   3. // Ensure the scene is loaded before accessing sceneFactory
-   4. if (globalScene) {
-   5. let sceneFactory: SceneResourceFactory = globalScene.getResourceFactory();
-
-   7. // Create a SceneResourceParameters object and use it to create a shader
-   8. let sceneResourceParameter: SceneResourceParameters = {
-   9. name: 'shaderResource',
-   10. uri: $rawfile('shaders/custom_shader/custom_material_sample.shader')
-   11. };
-
-   13. let shader: Promise<Shader> = sceneFactory.createShader(sceneResourceParameter);
-   14. shader.then((shaderEntity: Shader) => {
-   15. resolve(shaderEntity);
-   16. }).catch((err: string) => {
-   17. console.error('Shader load failed: ' + err + '.');
-   18. reject(err);
-   19. });
-   20. } else {
-   21. reject('Scene is not loaded yet.');
-   22. }
-   23. });
-   24. }
-   ```
-
-   [resource.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics3D/entry/src/main/ets/arkgraphic/resource.ets#L45-L70)
-7. 应用Shader材质到几何体节点。
-
-   通过按钮点击事件调用不同的函数，可在运行时动态切换模型的材质，实现从默认材质到Shader材质的过渡效果。
-
-   ```
-   1. Button('Replace with a blank material')
-   2. // ...
-   3. .onClick(async (): Promise<void> => {
-   4. console.info('Start to replace with a blank material');
-
-   6. if (!this.blankMat) {
-   7. this.blankMat = await createMaterialPromise();
-   8. }
-
-   10. if (!this.scene || !this.rf) {
-   11. return;
-   12. }
-
-   14. this.geom = this.scene.getNodeByPath('rootNode_/Unnamed Node 1/AnimatedCube') as Geometry;
-
-   16. this.geom.mesh.materialOverride = undefined;
-   17. if (this.blankMat) {
-   18. this.geom.mesh.subMeshes[0].material = this.blankMat;
-   19. }
-
-   21. });
-
-   23. Button('Replace with a Shader material')
-   24. // ...
-   25. .onClick(async (): Promise<void> => {
-   26. console.info('Start to replace with a shader material');
-
-   28. if (!this.shader) {
-   29. this.shader = await createShaderPromise();
-   30. }
-
-   32. if (!this.scene || !this.rf) {
-   33. return;
-   34. }
-
-   36. if (!this.shaderMat) {
-   37. let rf = this.scene.getResourceFactory();
-   38. this.shaderMat = await rf.createMaterial({ name: 'shaderMat' }, MaterialType.SHADER);
-   39. }
-
-   41. if (this.shader) {
-   42. this.shaderMat.colorShader = this.shader;
-   43. }
-
-   45. this.geom = this.scene.getNodeByPath('rootNode_/Unnamed Node 1/AnimatedCube') as Geometry;
-
-   47. this.geom.mesh.materialOverride = undefined;
-
-   49. if (this.shaderMat) {
-   50. this.geom.mesh.subMeshes[0].material = this.shaderMat;
-   51. }
-   52. })
-   ```
-
-   [resource.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics3D/entry/src/main/ets/arkgraphic/resource.ets#L222-L285)
 
 ## 创建PBR材质并设置属性
 
@@ -280,147 +269,129 @@ ArkGraphics 3D中的材质类型通过[MaterialType](../harmonyos-references/js-
 
    在页面脚本中导入ArkGraphics 3D提供的核心类型，用于创建PBR材质及绑定贴图资源。
 
+   ```typescript
+   import { Scene, Camera, Material, Node, Image, SceneResourceFactory, Geometry, EnvironmentBackgroundType,
+     PostProcessSettings, ToneMappingType, MetallicRoughnessMaterial, Vec4 } from '@kit.ArkGraphics3D';
+   import {lookAt, OrbitCameraHelper } from '../common/utils';
    ```
-   1. import { Scene, Camera, Material, Node, Image, SceneResourceFactory, Geometry, EnvironmentBackgroundType,
-   2. PostProcessSettings, ToneMappingType, MetallicRoughnessMaterial, Vec4 } from '@kit.ArkGraphics3D';
-   3. import {lookAt, OrbitCameraHelper } from '../common/utils';
-   ```
-
-   [pbr\_clearcoat.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics3D/entry/src/main/ets/material/pbr_clearcoat.ets#L17-L21)
 2. 加载场景资源。
 
    调用Scene.load()方法加载.glb或.gltf格式的模型文件，并在加载完成后获取Scene对象。场景加载完成后，可以访问场景的资源工厂以创建材质和其他资源。
 
-   ```
-   1. if (this.scene == null) {
-   2. // Switched from .gltf to .glb; same content, different format
-   3. Scene.load($rawfile('gltf/CompareClearcoat/CompareClearcoat.glb'))
-   4. .then(async (scene: Scene) => {
-   5. this.scene = scene;
-   6. if (!this.scene.root) {
-   7. return;
-   8. }
-   9. let rf: SceneResourceFactory = scene.getResourceFactory();
+   ```typescript
+   if (this.scene == null) {
+     // Switched from .gltf to .glb; same content, different format
+     Scene.load($rawfile('gltf/CompareClearcoat/CompareClearcoat.glb'))
+       .then(async (scene: Scene) => {
+         this.scene = scene;
+         if (!this.scene.root) {
+           return;
+         }
+         let rf: SceneResourceFactory = scene.getResourceFactory();
 
-   11. // ...
-   12. });
-   13. }
+         // ...
+       });
+   }
    ```
-
-   [pbr\_clearcoat.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics3D/entry/src/main/ets/material/pbr_clearcoat.ets#L49-L117)
 3. 获取几何体节点并预加载纹理。
 
    通过场景的节点路径获取目标几何体节点，并提取其材质，随后预加载清漆层（Clearcoat）相关的纹理资源。
 
+   ```typescript
+   let pbrNode: Node | null | undefined = this.scene.root?.getNodeByPath('Unnamed Node 1/GeoSphere003');
+   if (pbrNode) {
+     this.material = (pbrNode as Geometry).mesh.subMeshes[0].material;
+     let mrMaterial = (this.material as MetallicRoughnessMaterial);
+     let original: Image | null = mrMaterial.clearCoat.image;
+     const helmAlbedo: Resource = $rawfile('image/round_pattern.png');
+     const irregularUri: Resource = $rawfile('image/irregular_pattern.png');
+     let round: Image | null = await rf.createImage({name: 'round', uri: helmAlbedo });
+     let irregular: Image | null = await rf.createImage({name: 'irregular', uri: irregularUri });
+     if (original && round && irregular ) {
+       this.textures.push(original);
+       this.textures.push(round);
+       this.textures.push(irregular);
+     }
+   }
    ```
-   1. let pbrNode: Node | null | undefined = this.scene.root?.getNodeByPath('Unnamed Node 1/GeoSphere003');
-   2. if (pbrNode) {
-   3. this.material = (pbrNode as Geometry).mesh.subMeshes[0].material;
-   4. let mrMaterial = (this.material as MetallicRoughnessMaterial);
-   5. let original: Image | null = mrMaterial.clearCoat.image;
-   6. const helmAlbedo: Resource = $rawfile('image/round_pattern.png');
-   7. const irregularUri: Resource = $rawfile('image/irregular_pattern.png');
-   8. let round: Image | null = await rf.createImage({name: 'round', uri: helmAlbedo });
-   9. let irregular: Image | null = await rf.createImage({name: 'irregular', uri: irregularUri });
-   10. if (original && round && irregular ) {
-   11. this.textures.push(original);
-   12. this.textures.push(round);
-   13. this.textures.push(irregular);
-   14. }
-   15. }
-   ```
-
-   [pbr\_clearcoat.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics3D/entry/src/main/ets/material/pbr_clearcoat.ets#L62-L78)
 4. 配置环境光照。
 
    创建图像基础的光照（IBL）环境，配置环境贴图和辐射贴图，以实现真实的环境光照效果。
 
+   ```typescript
+   scene.environment = await rf.createEnvironment({ name: 'env' });
+   scene.environment.backgroundType = EnvironmentBackgroundType.BACKGROUND_CUBEMAP;
+   scene.environment.environmentImage = await rf.createImage({ name: 'cube', uri: $rawfile('Environment/quarry_02_2k_skybox.ktx') });
+   scene.environment.radianceImage = await rf.createImage({ name: 'rad', uri: $rawfile('Environment/quarry_02_2k_radiance.ktx') });
+   scene.environment.irradianceCoefficients =
+     [{ x: 1.080343842506409, y: 0.936282396316528, z: 0.665518164634705 },
+       { x: 0.959947884082794, y: 0.828918874263763, z: 0.569704353809357 },
+       { x: 0.848236382007599, y: 0.715092182159424, z: 0.473145037889481 },
+       { x: -0.591795265674591, y: -0.501678705215454, z: -0.334018945693970 },
+       { x: -0.775423347949982, y: -0.655484378337860, z: -0.437325984239578 },
+       { x: 1.053589701652527, y: 0.887459456920624, z: 0.587381422519684 },
+       { x: -0.018954016268253, y: -0.014871496707201, z: -0.008891185745597 },
+       { x: -0.566255271434784, y: -0.476870059967041, z: -0.314557582139969 },
+       { x: -0.239390164613724, y: -0.200478553771973, z: -0.132790848612785 }];
    ```
-   1. scene.environment = await rf.createEnvironment({ name: 'env' });
-   2. scene.environment.backgroundType = EnvironmentBackgroundType.BACKGROUND_CUBEMAP;
-   3. scene.environment.environmentImage = await rf.createImage({ name: 'cube', uri: $rawfile('Environment/quarry_02_2k_skybox.ktx') });
-   4. scene.environment.radianceImage = await rf.createImage({ name: 'rad', uri: $rawfile('Environment/quarry_02_2k_radiance.ktx') });
-   5. scene.environment.irradianceCoefficients =
-   6. [{ x: 1.080343842506409, y: 0.936282396316528, z: 0.665518164634705 },
-   7. { x: 0.959947884082794, y: 0.828918874263763, z: 0.569704353809357 },
-   8. { x: 0.848236382007599, y: 0.715092182159424, z: 0.473145037889481 },
-   9. { x: -0.591795265674591, y: -0.501678705215454, z: -0.334018945693970 },
-   10. { x: -0.775423347949982, y: -0.655484378337860, z: -0.437325984239578 },
-   11. { x: 1.053589701652527, y: 0.887459456920624, z: 0.587381422519684 },
-   12. { x: -0.018954016268253, y: -0.014871496707201, z: -0.008891185745597 },
-   13. { x: -0.566255271434784, y: -0.476870059967041, z: -0.314557582139969 },
-   14. { x: -0.239390164613724, y: -0.200478553771973, z: -0.132790848612785 }];
-   ```
-
-   [pbr\_clearcoat.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics3D/entry/src/main/ets/material/pbr_clearcoat.ets#L81-L96)
 5. 创建相机并设置视角。
 
    创建一个相机对象，并设置其位置和观察目标。然后启用轨道控制功能，让用户可以通过手势旋转和缩放视图。
 
+   ```typescript
+   this.cam = await rf.createCamera({ 'name': 'ClearcoatCam' });
+   this.cam.enabled = true;
+   lookAt(this.cam,{x:0,y:0,z:-3},{x:0,y:0,z:0},{x:0,y:1,z:0});
+   this.sceneOpt = { scene: this.scene, modelType: ModelType.SURFACE } as SceneOptions;
+   this.orbitCamera.SetOrbitFromEye(this.cam.position, this.scene.root.position, this.cam.rotation);
    ```
-   1. this.cam = await rf.createCamera({ 'name': 'ClearcoatCam' });
-   2. this.cam.enabled = true;
-   3. lookAt(this.cam,{x:0,y:0,z:-3},{x:0,y:0,z:0},{x:0,y:1,z:0});
-   4. this.sceneOpt = { scene: this.scene, modelType: ModelType.SURFACE } as SceneOptions;
-   5. this.orbitCamera.SetOrbitFromEye(this.cam.position, this.scene.root.position, this.cam.rotation);
-   ```
-
-   [pbr\_clearcoat.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics3D/entry/src/main/ets/material/pbr_clearcoat.ets#L98-L104)
 6. 切换清漆层纹理。
 
    允许用户在不同的清漆纹理之间切换。通过按下按钮或触发事件来实现纹理的动态切换。
 
+   ```typescript
+   changeClearcoatTex() {
+     if (this.textures.length > 0) {
+       let i = ++this.textureInUse % this.textures.length;
+       (this.material as MetallicRoughnessMaterial).clearCoat.image = this.textures[i];
+     }
+   }
    ```
-   1. changeClearcoatTex() {
-   2. if (this.textures.length > 0) {
-   3. let i = ++this.textureInUse % this.textures.length;
-   4. (this.material as MetallicRoughnessMaterial).clearCoat.image = this.textures[i];
-   5. }
-   6. }
-   ```
-
-   [pbr\_clearcoat.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics3D/entry/src/main/ets/material/pbr_clearcoat.ets#L121-L128)
 7. 调整清漆层强度。
 
    通过滑动条调整清漆层的强度。这个方法通过更新材质的clearCoat.factor属性来实现。
 
+   ```typescript
+   setClearcoat(v: number) {
+     if (this.material) {
+       const f: Vec4 = (this.material as MetallicRoughnessMaterial).clearCoat.factor;
+       f.x = v / RESO;
+       (this.material as MetallicRoughnessMaterial).clearCoat.factor = f;
+     }
+   }
    ```
-   1. setClearcoat(v: number) {
-   2. if (this.material) {
-   3. const f: Vec4 = (this.material as MetallicRoughnessMaterial).clearCoat.factor;
-   4. f.x = v / RESO;
-   5. (this.material as MetallicRoughnessMaterial).clearCoat.factor = f;
-   6. }
-   7. }
+8. 切换清漆层粗糙度纹理。
+
+   类似于清漆层纹理切换，用户也可以在不同的清漆层粗糙度纹理之间切换。
+
+   ```typescript
+   changeClearcoatRoughTex() {
+     if (this.textures.length > 0) {
+       let i = ++this.textureInUse % this.textures.length;
+       (this.material as MetallicRoughnessMaterial).clearCoatRoughness.image = this.textures[i];
+     }
+   }
    ```
-
-   [pbr\_clearcoat.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics3D/entry/src/main/ets/material/pbr_clearcoat.ets#L131-L139)
-8. 切换粗糙度纹理。
-
-   类似于清漆层纹理切换，用户也可以在不同的粗糙度纹理之间切换。
-
-   ```
-   1. changeClearcoatRoughTex() {
-   2. if (this.textures.length > 0) {
-   3. let i = ++this.textureInUse % this.textures.length;
-   4. (this.material as MetallicRoughnessMaterial).clearCoatRoughness.image = this.textures[i];
-   5. }
-   6. }
-   ```
-
-   [pbr\_clearcoat.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics3D/entry/src/main/ets/material/pbr_clearcoat.ets#L142-L149)
 9. 调整清漆层粗糙度。
 
    通过滑动条调整清漆层的粗糙度，同样地，这通过更新clearCoatRoughness.factor来实现。
 
+   ```typescript
+   setClearcoatRoughness(v: number) {
+     if (this.material) {
+       const f: Vec4 = (this.material as MetallicRoughnessMaterial).clearCoatRoughness.factor;
+       f.y = v / RESO;
+       (this.material as MetallicRoughnessMaterial).clearCoatRoughness.factor = f;
+     }
+   }
    ```
-   1. setClearcoatRoughness(v: number) {
-   2. if (this.material) {
-   3. const f: Vec4 = (this.material as MetallicRoughnessMaterial).clearCoatRoughness.factor;
-   4. f.y = v / RESO;
-   5. (this.material as MetallicRoughnessMaterial).clearCoatRoughness.factor = f;
-   6. }
-   7. }
-   ```
-
-   [pbr\_clearcoat.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics3D/entry/src/main/ets/material/pbr_clearcoat.ets#L152-L160)

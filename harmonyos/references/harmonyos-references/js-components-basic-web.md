@@ -3,38 +3,30 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: web
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > web
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:09+08:00
-doc_updated_at: 2026-04-08
-content_hash: sha256:569810fd270fee466d33f029ada764c1fdd86084af9a16a2e322fef6b6e8f8c0
+scraped_at: 2026-09-02T15:01:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:10585170924f9cd663fbcc7b14c16bcd075f1c2fcb417c3f59ed35290fa904c9
 ---
 
 展示网页内容的组件。
 
-说明
+**说明** 
 
 该组件从API version 6开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 权限列表
 
-PhonePC/2in1TabletTVWearable
-
 访问在线网页时需添加网络权限：ohos.permission.INTERNET。
 
 ## 约束
-
-PhonePC/2in1TabletTVWearable
 
 web组件不跟随转场动画。一个页面仅支持一个web组件。
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 不支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 参数类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
@@ -43,13 +35,9 @@ PhonePC/2in1TabletTVWearable
 
 ## 样式
 
-PhonePC/2in1TabletTVWearable
-
 不支持通用样式设置。
 
 ## 事件
-
-PhonePC/2in1TabletTVWearable
 
 仅支持如下事件：
 
@@ -61,8 +49,6 @@ PhonePC/2in1TabletTVWearable
 
 ## 方法
 
-PhonePC/2in1TabletTVWearable
-
 仅支持如下方法：
 
 | 名称 | 参数 | 描述 |
@@ -71,35 +57,33 @@ PhonePC/2in1TabletTVWearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div style="height: 500px; width: 500px; flex-direction: column;">
-3. <button onclick="reloadWeb">click to reload</button>
-4. <web src="www.example.com" id="web" onpagestart="pageStart" onpagefinish="pageFinish" on:error="pageError"></web>
-5. </div>
+```html
+<!-- xxx.hml -->
+<div style="height: 500px; width: 500px; flex-direction: column;">
+    <button onclick="reloadWeb">click to reload</button>
+    <web src="www.example.com" id="web" onpagestart="pageStart" onpagefinish="pageFinish" on:error="pageError"></web>
+</div>
 ```
 
-```
-1. // xxx.js
-2. export default {
-3. reloadWeb() {
-4. this.$element('web').reload()
-5. },
+```js
+// xxx.js
+export default {
+    reloadWeb() {
+        this.$element('web').reload()
+    },
 
-7. pageStart: function(e) {
-8. console.info('web pageStart: ' + e.url)
-9. },
+    pageStart: function(e) {
+        console.info('web pageStart: ' + e.url)
+    },
 
-11. pageFinish: function(e) {
-12. console.info('web pageFinish: ' + e.url)
-13. },
+    pageFinish: function(e) {
+        console.info('web pageFinish: ' + e.url)
+    },
 
-15. pageError: function(e) {
-16. console.info('web pageError url: ' + e.url)
-17. console.info('web pageError errorCode: ' + e.errorCode)
-18. console.info('web pageError description: ' + e.description)
-19. }
-20. }
+    pageError: function(e) {
+        console.info('web pageError url: ' + e.url)
+        console.info('web pageError errorCode: ' + e.errorCode)
+        console.info('web pageError description: ' + e.description)
+    }
+}
 ```

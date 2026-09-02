@@ -1,14 +1,100 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-liveform-sceneanimation-development
 title: 场景动效类型互动卡片开发指导
-breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > 互动卡片开发 > 场景动效类型互动卡片 > 场景动效类型互动卡片开发指导
+breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > 互动卡片开发 > 场景动效类型互动卡片开发指导
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:30:01+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:eb662e3fb17651b7b774429baf40da3650fc11936cde77e6fd6ac936376bbe5b
+scraped_at: 2026-09-02T14:59:25+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:bf7c266efa9a99ce9b038eb207ac31e3f7d0dc9d2161c57a8d60600a851f5d6f
 ---
 
-本文档提供了场景动效类型互动卡片的开发指导，包括卡片非激活态和激活态UI界面开发、卡片配置文件开发。
+从API version 20开始，场景动效类型互动卡片支持在特定场景下触发互动卡片的特有效果。例如，开发者可以选择将动效渲染区域扩展到卡片自身的渲染区域之外，营造“破框”效果。本文档提供了场景动效类型互动卡片的开发指导，包括场景动效类型互动卡片概念、约束和限制、卡片非激活态、激活态UI界面开发和卡片配置文件开发。
+
+## 基本概念
+
+场景动效类型互动卡片主要包含两个状态：激活态和非激活态。卡片生命周期中的事件，如数据定时或定点刷新、用户点击等交互场景，可触发卡片动效，使卡片切换至激活态。动效结束后，卡片切回非激活态。
+
+**非激活态**：在此状态下，卡片与普通卡片行为无异，遵循既有的卡片开发规范，卡片UI由卡片提供方widgetCard.ets中的内容所呈现。
+
+**激活态**： 表示互动卡片动效渲染状态，在此状态下，卡片UI由卡片提供方所开发的[LiveFormExtensionAbility](../harmonyos-references/js-apis-app-form-liveformextensionability.md)对应page页面完成渲染。
+
+**图1** 互动卡片状态切换说明
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/__cU1ysuSVyLUuV7d7vRlA/zh-cn_image_0000002736313281.png)
+
+**图2** 互动卡片动效触发流程
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/R2rkR-YDSbSZOvJ9_ZA95g/zh-cn_image_0000002706674238.png)
+
+## 实现原理
+
+开发者可以通过[formProvider.requestOverflow](../harmonyos-references/js-apis-app-form-formprovider.md#formproviderrequestoverflow20)接口触发互动卡片动效，例如在用户点击时触发，典型时序图如下。
+
+**图3** 点击触发互动卡片动效时序图
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/t0dR-OmjTm69Kov1F_3bFg/zh-cn_image_0000002736433329.png)
+
+**图4** 定时定点触发互动卡片动效时序图
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/-r0lIPBmRPuW-_UIQa4agw/zh-cn_image_0000002706834174.png)
+
+**图5** 摇一摇触发互动卡片动效时序图
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/G_aZaY1QTsWbCwMvfAoUyA/zh-cn_image_0000002736313283.png)
+
+## 约束和限制
+
+### 支持的场景
+
+1. 当前互动卡片动效只有在[FormLocation](../harmonyos-references/js-apis-app-form-forminfo.md#formlocation20)为“DESKTOP”的单张卡片上面才能生效。
+2. 由于性能功耗影响只支持部分机型，在不支持的机型会报[801](../harmonyos-references/errorcode-universal.md#section801-该设备不支持此api)错误码。
+
+### 请求参数约束
+
+1. 互动卡片申请动效的最大合法动效时长：3500ms，倒计时结束时，卡片将切换回非激活态。
+2. 由卡片定时定点刷新触发的互动卡片动效，一天内单张卡片最多触发50次。
+3. 最大可申请动效区域：如下图，矩形ABCD表示卡片自身渲染区域，矩形IJKL表示卡片最大可申请动效区域。两个矩形中心对齐。尺寸满足以下表格描述。
+
+| 卡片样式 | JK 边长 | IJ 边长 |
+| --- | --- | --- |
+| 1 \* 2 | 不超过AD边长的150%。 | 不超过AB边长的200%。 |
+| 2 \* 2 | 不超过AD边长的150%。 | 不超过AB边长的150%。 |
+| 2 \* 4 | 不超过AD边长的125%。 | 不超过AB边长的150%。 |
+| 4 \* 4 | 不超过AD边长的125%。 | 不超过AB边长的125%。 |
+| 6 \* 4 | 不超过AD边长的125%。 | 不超过AB边长的110%。 |
+
+**图6** 互动卡片动效区域申请规则说明
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/aa4cmIopSseMMzFHzuKxQQ/zh-cn_image_0000002706674240.png)
+
+例如：某设备上一个2\*2卡片宽度为158vp，高度为158vp。对应上图则有：
+
+（1）AD=158vp，AB=158vp，IJ=158\*1.5=237vp，JK=158\*1.5=237vp。
+
+（2）IA两点水平相距39.5vp，垂直相距39.5vp。
+
+因此，以A点为原点，向右为X轴正方向，向下为Y轴正方向，图5中E点的合法坐标可以是（-20，-20），EF边长合法值可以是200vp，EH边长合法值可以是200vp。
+
+互动卡片可以通过调用[formProvider.getFormRect](../harmonyos-references/js-apis-app-form-formprovider.md#formprovidergetformrect20)接口获取卡片在窗口中的尺寸及相对坐标位置信息。卡片提供方以此计算动效申请范围，坐标计算时，以上图A点为（0，0）点，计算矩形EFGH对应参数，单位为vp。
+
+调用[formProvider.requestOverflow](../harmonyos-references/js-apis-app-form-formprovider.md#formproviderrequestoverflow20)接口时，[overflowInfo](../harmonyos-references/js-apis-app-form-forminfo.md#overflowinfo20)中描述的互动卡片动效渲染区域（矩形EFGH）需要满足：
+
+1. 包含了卡片（矩形ABCD）的全部区域。
+2. 不超过矩形IJKL（矩形IJKL完整包含矩形EFGH）。
+
+### 功耗约束
+
+1. 设备进入省电模式时，互动卡片不响应动效请求。
+2. 当设备热档位进入HOT时，不再响应非点击触发的动效请求；当热档位进入OVERHEATED时，不再响应所有动效请求。具体可参考[热档位信息](../harmonyos-references/js-apis-thermal.md#thermallevel)。
+
+### 动效请求约束
+
+1. 同一时刻，全局只有一个卡片执行互动卡片动效。
+2. 当用户通过点击等方式主动触发互动卡片动效时，优先响应此次请求。此时，当前卡片切换到激活态，执行动效，其他卡片切换到非激活态。
+3. 其他触发方式，例如通过卡片定时定点数据刷新机制触发动效，遵循先到先得原则。系统只处理第一个合法动效请求。其他请求返回失败，同时不做缓存。
+4. 用户在桌面的其他有效操作（点击应用、卡片等，滑动翻页，下拉进入全搜、双中心、拖动卡片、长按卡片等）均会打断当前动效，卡片重新变成非激活态。
+5. 互动卡片执行动效期间，超过卡片自身渲染范围（对应图6中的矩形ABCD）的交互事件，互动卡片不做响应。
+6. 更多场景动效类型互动卡片激活态能力约束，可参考[LiveFormExtensionAbility](../harmonyos-references/js-apis-app-form-liveformextensionability.md)中说明。
 
 ## 接口说明
 
@@ -34,206 +120,206 @@ content_hash: sha256:eb662e3fb17651b7b774429baf40da3650fc11936cde77e6fd6ac936376
 
    通过[LiveFormExtensionAbility](../harmonyos-references/js-apis-app-form-liveformextensionability.md)创建互动卡片，创建时加载互动卡片页面。
 
-   ```
-   1. // entry/src/main/ets/myliveformextensionability/MyLiveFormExtensionAbility.ets
-   2. import { formInfo, LiveFormInfo, LiveFormExtensionAbility } from '@kit.FormKit';
-   3. import { UIExtensionContentSession } from '@kit.AbilityKit';
-   4. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   // entry/src/main/ets/myliveformextensionability/MyLiveFormExtensionAbility.ets
+   import { formInfo, LiveFormExtensionAbility, LiveFormInfo } from '@kit.FormKit';
+   import { UIExtensionContentSession } from '@kit.AbilityKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
 
-   6. const DOMAIN = 0x0000;
+   const DOMAIN = 0x0000;
 
-   8. export default class MyLiveFormExtensionAbility extends LiveFormExtensionAbility {
-   9. onLiveFormCreate(liveFormInfo: LiveFormInfo, session: UIExtensionContentSession) {
-   10. let storage: LocalStorage = new LocalStorage();
-   11. storage.setOrCreate('context', this.context);
-   12. storage.setOrCreate('session', session);
-   13. let formId: string = liveFormInfo.formId;
-   14. storage.setOrCreate('formId', formId);
+   export default class MyLiveFormExtensionAbility extends LiveFormExtensionAbility {
+     onLiveFormCreate(liveFormInfo: LiveFormInfo, session: UIExtensionContentSession) {
+       let storage: LocalStorage = new LocalStorage();
+       storage.setOrCreate('context', this.context);
+       storage.setOrCreate('session', session);
+       let formId: string = liveFormInfo.formId;
+       storage.setOrCreate('formId', formId);
 
-   16. // 获取卡片圆角信息
-   17. let borderRadius: number = liveFormInfo.borderRadius;
-   18. storage.setOrCreate('borderRadius', borderRadius);
+       // 获取卡片圆角信息
+       let borderRadius: number = liveFormInfo.borderRadius;
+       storage.setOrCreate('borderRadius', borderRadius);
 
-   20. // liveFormInfo.rect字段表示非激活态卡片组件相对激活态UI的位置和尺寸信息
-   21. let formRect: formInfo.Rect = liveFormInfo.rect;
-   22. storage.setOrCreate('formRect', formRect);
-   23. hilog.info(DOMAIN, 'testTag', `MyLiveFormExtensionAbility onSessionCreate formId: ${formId}` +
-   24. `, borderRadius: ${borderRadius}, formRectInfo: ${JSON.stringify(formRect)}`);
+       // liveFormInfo.rect字段表示非激活态卡片组件相对激活态UI的位置和尺寸信息
+       let formRect: formInfo.Rect = liveFormInfo.rect;
+       storage.setOrCreate('formRect', formRect);
+       hilog.info(DOMAIN, 'testTag', `MyLiveFormExtensionAbility onLiveFormCreate formId: ${formId}` +
+         `, borderRadius: ${borderRadius}, formRectInfo: ${JSON.stringify(formRect)}`);
 
-   26. // 加载互动页面
-   27. session.loadContent('myliveformextensionability/pages/MyLiveFormPage', storage);
-   28. }
+       // 加载互动页面
+       session.loadContent('myliveformextensionability/pages/MyLiveFormPage', storage);
+     }
 
-   30. onLiveFormDestroy(liveFormInfo: LiveFormInfo) {
-   31. hilog.info(DOMAIN, 'testTag', `MyLiveFormExtensionAbility onDestroy`);
-   32. }
-   33. };
+     onLiveFormDestroy(liveFormInfo: LiveFormInfo) {
+       hilog.info(DOMAIN, 'testTag', `MyLiveFormExtensionAbility onDestroy`);
+     }
+   };
    ```
 2. 实现互动卡片页面
 
-   ```
-   1. // entry/src/main/ets/myliveformextensionability/pages/MyLiveFormPage.ets
-   2. import { formInfo, formProvider } from '@kit.FormKit';
-   3. import { BusinessError } from '@kit.BasicServicesKit';
-   4. import { common } from '@kit.AbilityKit';
-   5. // Constants实现参考“互动卡片动效工具函数实现”小节
-   6. import { Constants } from '../../common/Constants';
-   7. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   // entry/src/main/ets/myliveformextensionability/pages/MyLiveFormPage.ets
+   import { formInfo, formProvider } from '@kit.FormKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { common } from '@kit.AbilityKit';
+   // Constants实现参考“互动卡片动效工具函数实现”小节
+   import { Constants } from '../../common/Constants';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
 
-   9. const ANIMATION_RECT_SIZE: number = 100;
-   10. const END_SCALE: number = 1.5;
-   11. const END_TRANSLATE: number = -300;
-   12. const DOMAIN = 0x0000;
+   const ANIMATION_RECT_SIZE: number = 100;
+   const END_SCALE: number = 1.5;
+   const END_TRANSLATE: number = -300;
+   const DOMAIN = 0x0000;
 
-   14. @Entry
-   15. @Component
-   16. struct MyLiveFormPage {
-   17. @State columnScale: number = 1.0;
-   18. @State columnTranslate: number = 0.0;
-   19. private uiContext: UIContext | undefined = undefined;
-   20. private storageForMyLiveFormPage: LocalStorage | undefined = undefined;
-   21. private formId: string | undefined = undefined;
-   22. private formRect: formInfo.Rect | undefined = undefined;
-   23. private formBorderRadius: number | undefined = undefined;
-   24. private liveFormContext: common.LiveFormExtensionContext | undefined = undefined;
+   @Entry
+   @Component
+   struct MyLiveFormPage {
+     @State columnScale: number = 1.0;
+     @State columnTranslate: number = 0.0;
+     private uiContext: UIContext | undefined = undefined;
+     private storageForMyLiveFormPage: LocalStorage | undefined = undefined;
+     private formId: string | undefined = undefined;
+     private formRect: formInfo.Rect | undefined = undefined;
+     private formBorderRadius: number | undefined = undefined;
+     private liveFormContext: common.LiveFormExtensionContext | undefined = undefined;
 
-   26. aboutToAppear(): void {
-   27. this.uiContext = this.getUIContext();
-   28. if (!this.uiContext) {
-   29. hilog.error(DOMAIN, 'testTag', 'no uiContext');
-   30. return;
-   31. }
-   32. this.initParams();
-   33. }
+     aboutToAppear(): void {
+       this.uiContext = this.getUIContext();
+       if (!this.uiContext) {
+         hilog.error(DOMAIN, 'testTag', 'no uiContext');
+         return;
+       }
+       this.initParams();
+     }
 
-   35. private initParams(): void {
-   36. this.storageForMyLiveFormPage = this.uiContext?.getSharedLocalStorage();
-   37. this.formId = this.storageForMyLiveFormPage?.get<string>('formId');
-   38. this.formRect = this.storageForMyLiveFormPage?.get<formInfo.Rect>('formRect');
-   39. this.formBorderRadius = this.storageForMyLiveFormPage?.get<number>('borderRadius');
-   40. this.liveFormContext = this.storageForMyLiveFormPage?.get<common.LiveFormExtensionContext>('context');
-   41. }
+     private initParams(): void {
+       this.storageForMyLiveFormPage = this.uiContext?.getSharedLocalStorage();
+       this.formId = this.storageForMyLiveFormPage?.get<string>('formId');
+       this.formRect = this.storageForMyLiveFormPage?.get<formInfo.Rect>('formRect');
+       this.formBorderRadius = this.storageForMyLiveFormPage?.get<number>('borderRadius');
+       this.liveFormContext = this.storageForMyLiveFormPage?.get<common.LiveFormExtensionContext>('context');
+     }
 
-   43. // 执行动效
-   44. private runAnimation(): void {
-   45. this.uiContext?.animateTo({
-   46. duration: Constants.OVERFLOW_DURATION,
-   47. curve: Curve.Ease
-   48. }, () => {
-   49. this.columnScale = END_SCALE;
-   50. this.columnTranslate = END_TRANSLATE;
-   51. });
-   52. }
+     // 执行动效
+     private runAnimation(): void {
+       this.uiContext?.animateTo({
+         duration: Constants.OVERFLOW_DURATION,
+         curve: Curve.Ease
+       }, () => {
+         this.columnScale = END_SCALE;
+         this.columnTranslate = END_TRANSLATE;
+       });
+     }
 
-   54. private startAbilityByLiveForm(): void {
-   55. try {
-   56. // 请开发者替换为实际的want信息
-   57. this.liveFormContext?.startAbilityByLiveForm({
-   58. bundleName: 'com.samples.formlivedemo',
-   59. abilityName: 'EntryAbility',
-   60. })
-   61. .then(() => {
-   62. hilog.info(DOMAIN, 'testTag', 'startAbilityByLiveForm succeed');
-   63. })
-   64. .catch((err: BusinessError) => {
-   65. hilog.error(DOMAIN, 'testTag',
-   66. `startAbilityByLiveForm failed, code is ${err?.code}, message is ${err?.message}`);
-   67. });
-   68. } catch (e) {
-   69. hilog.error(DOMAIN, 'testTag', `startAbilityByLiveForm failed, code is ${e?.code}, message is ${e?.message}`);
-   70. }
-   71. }
+     private startAbilityByLiveForm(): void {
+       try {
+         // 请开发者替换为实际的want信息
+         this.liveFormContext?.startAbilityByLiveForm({
+           bundleName: 'com.samples.formlivedemo',
+           abilityName: 'EntryAbility',
+         })
+           .then(() => {
+             hilog.info(DOMAIN, 'testTag', 'startAbilityByLiveForm succeed');
+           })
+           .catch((err: BusinessError) => {
+             hilog.error(DOMAIN, 'testTag',
+               `startAbilityByLiveForm failed, code is ${err?.code}, message is ${err?.message}`);
+           });
+       } catch (e) {
+         hilog.error(DOMAIN, 'testTag', `startAbilityByLiveForm failed, code is ${e?.code}, message is ${e?.message}`);
+       }
+     }
 
-   73. build() {
-   74. Stack({ alignContent: Alignment.TopStart }) {
-   75. // 背景组件和普通卡片一样大
-   76. Column()
-   77. .width(this.formRect ? this.formRect.width : 0)
-   78. .height(this.formRect ? this.formRect.height : 0)
-   79. .offset({
-   80. x: this.formRect ? this.formRect.left : 0,
-   81. y: this.formRect ? this.formRect.top : 0,
-   82. })
-   83. .borderRadius(this.formBorderRadius ? this.formBorderRadius : 0)
-   84. .backgroundColor('#2875F5')
-   85. Stack() {
-   86. this.buildContent();
-   87. }
-   88. .width('100%')
-   89. .height('100%')
-   90. }
-   91. .width('100%')
-   92. .height('100%')
-   93. .onClick(() => {
-   94. hilog.info(DOMAIN, 'testTag', 'MyLiveFormPage click to start ability');
-   95. if (!this.liveFormContext) {
-   96. hilog.info(DOMAIN, 'testTag', 'MyLiveFormPage liveFormContext is empty');
-   97. return;
-   98. }
-   99. this.startAbilityByLiveForm();
-   100. })
-   101. }
+     build() {
+       Stack({ alignContent: Alignment.TopStart }) {
+         // 背景组件和普通卡片一样大
+         Column()
+           .width(this.formRect ? this.formRect.width : 0)
+           .height(this.formRect ? this.formRect.height : 0)
+           .offset({
+             x: this.formRect ? this.formRect.left : 0,
+             y: this.formRect ? this.formRect.top : 0,
+           })
+           .borderRadius(this.formBorderRadius ? this.formBorderRadius : 0)
+           .backgroundColor('#2875F5')
+         Stack() {
+           this.buildContent();
+         }
+         .width('100%')
+         .height('100%')
+       }
+       .width('100%')
+       .height('100%')
+       .onClick(() => {
+         hilog.info(DOMAIN, 'testTag', 'MyLiveFormPage click to start ability');
+         if (!this.liveFormContext) {
+           hilog.info(DOMAIN, 'testTag', 'MyLiveFormPage liveFormContext is empty');
+           return;
+         }
+         this.startAbilityByLiveForm();
+       })
+     }
 
-   103. @Builder
-   104. buildContent() {
-   105. Stack()
-   106. .width(ANIMATION_RECT_SIZE)
-   107. .height(ANIMATION_RECT_SIZE)
-   108. .backgroundColor(Color.White)
-   109. .scale({
-   110. x: this.columnScale,
-   111. y: this.columnScale,
-   112. })
-   113. .translate({
-   114. y: this.columnTranslate
-   115. })
-   116. .onAppear(() => {
-   117. // 在页面出现时执行动效
-   118. this.runAnimation();
-   119. })
-   120. // $r('app.string.button_cancel')需要在相应的资源文件string.json中定义
-   121. Button($r('app.string.button_cancel'))
-   122. .backgroundColor(Color.Grey)
-   123. .onClick(() => {
-   124. if (!this.formId) {
-   125. hilog.info(DOMAIN, 'testTag', 'MyLiveFormPage formId is empty, cancel overflow failed');
-   126. return;
-   127. }
-   128. hilog.info(DOMAIN, 'testTag', 'MyLiveFormPage cancel overflow animation');
-   129. formProvider.cancelOverflow(this.formId);
-   130. })
-   131. }
-   132. }
+     @Builder
+     buildContent() {
+       Stack()
+         .width(ANIMATION_RECT_SIZE)
+         .height(ANIMATION_RECT_SIZE)
+         .backgroundColor(Color.White)
+         .scale({
+           x: this.columnScale,
+           y: this.columnScale,
+         })
+         .translate({
+           y: this.columnTranslate
+         })
+         .onAppear(() => {
+           // 在页面出现时执行动效
+           this.runAnimation();
+         })
+       // $r('app.string.button_cancel')需要在相应的资源文件string.json中定义
+       Button($r('app.string.button_cancel'))
+         .backgroundColor(Color.Grey)
+         .onClick(() => {
+           if (!this.formId) {
+             hilog.info(DOMAIN, 'testTag', 'MyLiveFormPage formId is empty, cancel overflow failed');
+             return;
+           }
+           hilog.info(DOMAIN, 'testTag', 'MyLiveFormPage cancel overflow animation');
+           formProvider.cancelOverflow(this.formId);
+         })
+     }
+   }
    ```
 3. 互动卡片LiveFormExtensionAbility配置
 
    在module.json5配置文件中[extensionAbilities标签](module-configuration-file.md#extensionabilities标签)下配置LiveFormExtensionAbility。
 
-   ```
-   1. // entry/src/main/module.json5
-   2. // ...
-   3. "extensionAbilities": [
-   4. // ...
-   5. {
-   6. "name": "MyLiveFormExtensionAbility",
-   7. "srcEntry": "./ets/myliveformextensionability/MyLiveFormExtensionAbility.ets",
-   8. "description": "MyLiveFormExtensionAbility",
-   9. "type": "liveForm"
-   10. }
-   11. ],
-   12. // ...
+   ```json5
+   // entry/src/main/module.json5
+   // ...
+       "extensionAbilities": [
+         // ...
+         {
+           "name": "MyLiveFormExtensionAbility",
+           "srcEntry": "./ets/myliveformextensionability/MyLiveFormExtensionAbility.ets",
+           "description": "MyLiveFormExtensionAbility",
+           "type": "liveForm"
+         }
+       ],
+       // ...
    ```
 
    在main\_pages.json文件中声明互动卡片页面。
 
-   ```
-   1. // entry/src/main/resources/base/profile/main_pages.json
-   2. {
-   3. "src": [
-   4. "pages/Index",
-   5. "myliveformextensionability/pages/MyLiveFormPage"
-   6. ]
-   7. }
+   ```ts
+   // entry/src/main/resources/base/profile/main_pages.json
+   {
+     "src": [
+       "pages/Index",
+       "myliveformextensionability/pages/MyLiveFormPage"
+     ]
+   }
    ```
 
 ### 卡片非激活态UI开发
@@ -242,185 +328,185 @@ content_hash: sha256:eb662e3fb17651b7b774429baf40da3650fc11936cde77e6fd6ac936376
 
    非激活态卡片页面开发同普通卡片开发流程完全一致，在widgetCard.ets中完成。widgetCard.ets文件在卡片创建时自动生成，卡片创建流程可以参考[创建ArkTS卡片](arkts-ui-widget-creation.md)。在非激活态卡片页面实现点击卡片时，发起卡片动效请求。
 
-   ```
-   1. // entry/src/main/ets/widget/pages/WidgetCard.ets
-   2. @Entry
-   3. @Component
-   4. struct WidgetCard {
-   5. build() {
-   6. Row() {
-   7. Column() {
-   8. // $r('app.string.liveform_click1')需要在相应的资源文件string.json中定义
-   9. Text($r('app.string.liveform_click1'))
-   10. // $r('app.float.font_size')需开发者根据实际情况替换相应的资源或值
-   11. .fontSize($r('app.float.font_size'))
-   12. .fontWeight(FontWeight.Medium)
-   13. // $r('sys.color.font_primary')需开发者根据实际情况替换相应的资源或值
-   14. .fontColor($r('sys.color.font_primary'))
-   15. }
-   16. .width('100%')
-   17. }
-   18. .height('100%')
-   19. .onClick(() => {
-   20. // 点击卡片时，选择向EntryFormAbility发送消息，并在其onFormEvent回调中调用formProvider.requestOverflow，请求卡片动效
-   21. postCardAction(this, {
-   22. action: 'message',
-   23. abilityName: 'EntryFormAbility',
-   24. params: {
-   25. message: 'requestOverflow'
-   26. }
-   27. });
-   28. })
-   29. }
-   30. }
+   ```typescript
+   // entry/src/main/ets/widget/pages/WidgetCard.ets
+   @Entry
+   @Component
+   struct WidgetCard {
+     build() {
+       Row() {
+         Column() {
+           // $r('app.string.liveform_click1')需要在相应的资源文件string.json中定义
+           Text($r('app.string.liveform_click1'))
+             // $r('app.float.font_size')需开发者根据实际情况替换相应的资源或值
+             .fontSize($r('app.float.font_size'))
+             .fontWeight(FontWeight.Medium)
+             // $r('sys.color.font_primary')需开发者根据实际情况替换相应的资源或值
+             .fontColor($r('sys.color.font_primary'))
+         }
+         .width('100%')
+       }
+       .height('100%')
+       .onClick(() => {
+         // 点击卡片时，选择向EntryFormAbility发送消息，并在其onFormEvent回调中调用formProvider.requestOverflow，请求卡片动效
+         postCardAction(this, {
+           action: 'message',
+           abilityName: 'EntryFormAbility',
+           params: {
+             message: 'requestOverflow'
+           }
+         });
+       })
+     }
+   }
    ```
 2. form\_config.json配置
 
    在form\_config.json配置文件中新增sceneAnimationParams配置项。
 
-   ```
-   1. // entry/src/main/resources/base/profile/form_config.json
-   2. {
-   3. "forms": [
-   4. {
-   5. "name": "widget",
-   6. "displayName": "$string:widget_display_name",
-   7. "description": "$string:widget_desc",
-   8. "src": "./ets/widget/pages/WidgetCard.ets",
-   9. "uiSyntax": "arkts",
-   10. "window": {
-   11. "designWidth": 720,
-   12. "autoDesignWidth": true
-   13. },
-   14. "colorMode": "auto",
-   15. "isDefault": true,
-   16. "updateEnabled": true,
-   17. "scheduledUpdateTime": "10:30",
-   18. "updateDuration": 1,
-   19. "defaultDimension": "2*2",
-   20. "supportDimensions": [
-   21. "2*2"
-   22. ],
-   23. "formConfigAbility": "ability://EntryAbility",
-   24. "dataProxyEnabled": false,
-   25. "isDynamic": true,
-   26. "transparencyEnabled": false,
-   27. "metadata": [],
-   28. "sceneAnimationParams": {
-   29. "abilityName": "MyLiveFormExtensionAbility"
-   30. }
-   31. }
-   32. ]
-   33. }
+   ```ts
+   // entry/src/main/resources/base/profile/form_config.json
+   {
+     "forms": [
+       {
+         "name": "widget",
+         "displayName": "$string:widget_display_name",
+         "description": "$string:widget_desc",
+         "src": "./ets/widget/pages/WidgetCard.ets",
+         "uiSyntax": "arkts",
+         "window": {
+           "designWidth": 720,
+           "autoDesignWidth": true
+         },
+         "colorMode": "auto",
+         "isDefault": true,
+         "updateEnabled": true,
+         "scheduledUpdateTime": "10:30",
+         "updateDuration": 1,
+         "defaultDimension": "2*2",
+         "supportDimensions": [
+           "2*2"
+         ],
+         "formConfigAbility": "ability://EntryAbility",
+         "dataProxyEnabled": false,
+         "isDynamic": true,
+         "transparencyEnabled": false,
+         "metadata": [],
+         "sceneAnimationParams": {
+           "abilityName": "MyLiveFormExtensionAbility"
+         }
+       }
+     ]
+   }
    ```
 
 ### 互动卡片动效实现
 
 1. 触发互动卡片动效
 
-   互动卡片通过调用[formProvider.requestOverflow](../harmonyos-references/js-apis-app-form-formprovider.md#formproviderrequestoverflow20)接口触发动效，调用时需要明确：（1）动效申请范围。（2）动效持续时间。（3）是否使用系统提供的默认切换动效。具体可参考[formInfo.OverflowInfo](../harmonyos-references/js-apis-app-form-forminfo.md#overflowinfo20)。其中，互动卡片可以通过调用[formProvider.getFormRect](../harmonyos-references/js-apis-app-form-formprovider.md#formprovidergetformrect20)接口获取卡片尺寸和在窗口内的位置信息。卡片提供方以此计算动效申请范围，单位为vp。计算规则具体请参考[互动卡片请求参数约束](arkts-ui-liveform-sceneanimation-overview.md#请求参数约束)。
+   互动卡片通过调用[formProvider.requestOverflow](../harmonyos-references/js-apis-app-form-formprovider.md#formproviderrequestoverflow20)接口触发动效，调用时需要明确：（1）动效申请范围。（2）动效持续时间。（3）是否使用系统提供的默认切换动效。具体可参考[formInfo.OverflowInfo](../harmonyos-references/js-apis-app-form-forminfo.md#overflowinfo20)。其中，互动卡片可以通过调用[formProvider.getFormRect](../harmonyos-references/js-apis-app-form-formprovider.md#formprovidergetformrect20)接口获取卡片尺寸和在窗口内的位置信息。卡片提供方以此计算动效申请范围，单位为vp。计算规则具体请参考[互动卡片请求参数约束](arkts-ui-liveform-sceneanimation-development.md#请求参数约束)。
 
-   ```
-   1. // entry/src/main/ets/entryformability/EntryFormAbility.ets
-   2. import { FormExtensionAbility, formInfo, formProvider } from '@kit.FormKit';
-   3. import { BusinessError } from '@kit.BasicServicesKit';
-   4. // Constants实现参考“互动卡片动效工具函数实现”小节
-   5. import { Constants } from '../common/Constants';
-   6. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   // entry/src/main/ets/entryformability/EntryFormAbility.ets
+   import { FormExtensionAbility, formInfo, formProvider } from '@kit.FormKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   // Constants实现参考“互动卡片动效工具函数实现”小节
+   import { Constants } from '../common/Constants';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
 
-   8. const TAG: string = 'EntryFormAbility';
-   9. const DOMAIN_NUMBER: number = 0xFF00;
+   const TAG: string = 'EntryFormAbility';
+   const DOMAIN_NUMBER: number = 0xFF00;
 
-   11. export default class EntryFormAbility extends FormExtensionAbility {
-   12. async onFormEvent(formId: string, message: string) {
-   13. let shortMessage: string = JSON.parse(message)['message'];
+   export default class EntryFormAbility extends FormExtensionAbility {
+     async onFormEvent(formId: string, message: string) {
+       let shortMessage: string = JSON.parse(message)['message'];
 
-   15. // 当接收的message为requestOverflow，触发互动卡片动效
-   16. if (shortMessage === 'requestOverflow') {
-   17. let formRect: formInfo.Rect = await formProvider.getFormRect(formId);
-   18. this.requestOverflow(formId, formRect.width, formRect.height);
-   19. return;
-   20. }
-   21. }
+       // 当接收的message为requestOverflow，触发互动卡片动效
+       if (shortMessage === 'requestOverflow') {
+         let formRect: formInfo.Rect = await formProvider.getFormRect(formId);
+         this.requestOverflow(formId, formRect.width, formRect.height);
+         return;
+       }
+     }
 
-   23. private requestOverflow(formId: string, formWidth: number, formHeight: number): void {
-   24. if (formWidth <= 0 || formHeight <= 0) {
-   25. hilog.info(DOMAIN_NUMBER, TAG, 'requestOverflow failed, form size is not correct.');
-   26. return;
-   27. }
+     private requestOverflow(formId: string, formWidth: number, formHeight: number): void {
+       if (formWidth <= 0 || formHeight <= 0) {
+         hilog.info(DOMAIN_NUMBER, TAG, 'requestOverflow failed, form size is not correct.');
+         return;
+       }
 
-   29. // 基于卡片自身尺寸信息，计算卡片动效渲染区域
-   30. let left: number = -Constants.OVERFLOW_LEFT_RATIO * formWidth;
-   31. let top: number = -Constants.OVERFLOW_TOP_RATIO * formHeight;
-   32. let width: number = Constants.OVERFLOW_WIDTH_RATIO * formWidth;
-   33. let height: number = Constants.OVERFLOW_HEIGHT_RATIO * formHeight;
-   34. let duration: number = Constants.OVERFLOW_DURATION;
+       // 基于卡片自身尺寸信息，计算卡片动效渲染区域
+       let left: number = -Constants.OVERFLOW_LEFT_RATIO * formWidth;
+       let top: number = -Constants.OVERFLOW_TOP_RATIO * formHeight;
+       let width: number = Constants.OVERFLOW_WIDTH_RATIO * formWidth;
+       let height: number = Constants.OVERFLOW_HEIGHT_RATIO * formHeight;
+       let duration: number = Constants.OVERFLOW_DURATION;
 
-   36. // 发起互动卡片动效申请
-   37. try {
-   38. formProvider.requestOverflow(formId, {
-   39. // 动效申请范围
-   40. area: {
-   41. left: left,
-   42. top: top,
-   43. width: width,
-   44. height: height
-   45. },
-   46. // 动效持续时间
-   47. duration: duration,
-   48. // 指定是否使用系统提供的默认切换动效
-   49. useDefaultAnimation: true,
-   50. }).then(() => {
-   51. hilog.info(DOMAIN_NUMBER, TAG, 'requestOverflow requestOverflow succeed');
-   52. }).catch((error: BusinessError) => {
-   53. hilog.info(DOMAIN_NUMBER, TAG, `requestOverflow requestOverflow catch error` + `,
-   54. code: ${error.code}, message: ${error.message}`);
-   55. })
-   56. } catch (e) {
-   57. hilog.info(DOMAIN_NUMBER, TAG, `requestOverflow call requestOverflow catch error` + `,
-   58. code: ${e.code}, message: ${e.message}`);
-   59. }
-   60. }
-   61. }
+       // 发起互动卡片动效申请
+       try {
+         formProvider.requestOverflow(formId, {
+           // 动效申请范围
+           area: {
+             left: left,
+             top: top,
+             width: width,
+             height: height
+           },
+           // 动效持续时间
+           duration: duration,
+           // 指定是否使用系统提供的默认切换动效
+           useDefaultAnimation: true,
+         }).then(() => {
+           hilog.info(DOMAIN_NUMBER, TAG, 'requestOverflow requestOverflow succeed');
+         }).catch((error: BusinessError) => {
+           hilog.info(DOMAIN_NUMBER, TAG, `requestOverflow requestOverflow catch error` + `,
+             code: ${error.code}, message: ${error.message}`);
+         })
+       } catch (e) {
+         hilog.info(DOMAIN_NUMBER, TAG, `requestOverflow call requestOverflow catch error` + `,
+           code: ${e.code}, message: ${e.message}`);
+       }
+     }
+   }
    ```
 2. 互动卡片动效工具函数实现
 
-   ```
-   1. // entry/src/main/ets/common/Constants.ets
-   2. // 动效相关常量的开发
-   3. export class Constants {
-   4. // 互动卡片动效超范围，左侧偏移百分比 = 偏移值/卡片宽度
-   5. public static readonly OVERFLOW_LEFT_RATIO: number = 0.1;
-   6. // 互动卡片动效超范围，上侧偏移百分比 = 偏移值/卡片高度
-   7. public static readonly OVERFLOW_TOP_RATIO: number = 0.15;
-   8. // 互动卡片动效超范围，宽度放大百分比
-   9. public static readonly OVERFLOW_WIDTH_RATIO: number = 1.2;
-   10. // 互动卡片动效超范围，高度放大百分比
-   11. public static readonly OVERFLOW_HEIGHT_RATIO: number = 1.3;
-   12. // 互动卡片动效超范围，动效时长
-   13. public static readonly OVERFLOW_DURATION: number = 3500;
-   14. }
+   ```typescript
+   // entry/src/main/ets/common/Constants.ets
+   // 动效相关常量的开发
+   export class Constants {
+     // 互动卡片动效超范围，左侧偏移百分比 = 偏移值/卡片宽度
+     public static readonly OVERFLOW_LEFT_RATIO: number = 0.1;
+     // 互动卡片动效超范围，上侧偏移百分比 = 偏移值/卡片高度
+     public static readonly OVERFLOW_TOP_RATIO: number = 0.15;
+     // 互动卡片动效超范围，宽度放大百分比
+     public static readonly OVERFLOW_WIDTH_RATIO: number = 1.2;
+     // 互动卡片动效超范围，高度放大百分比
+     public static readonly OVERFLOW_HEIGHT_RATIO: number = 1.3;
+     // 互动卡片动效超范围，动效时长
+     public static readonly OVERFLOW_DURATION: number = 3500;
+   }
    ```
 3. 需要的资源文件string.json
 
-   ```
-   1. {
-   2. "string": [
-   3. // ...
-   4. {
-   5. "name": "liveform_click1",
-   6. "value": "点击触发互动卡片动效"
-   7. },
-   8. {
-   9. "name": "button_cancel",
-   10. "value": "强制取消动效"
-   11. }
-   12. ]
-   13. }
+   ```json5
+   {
+       "string": [
+         // ...
+         {
+           "name": "liveform_click1",
+           "value": "点击触发互动卡片动效"
+         },
+         {
+           "name": "button_cancel",
+           "value": "强制取消动效"
+         }
+       ]
+   }
    ```
 
 ## 实现效果
 
 以下是按照本文档代码示例开发而成的效果demo，demo执行动效时，点击按钮，将调用 [formProvider.cancelOverflow](../harmonyos-references/js-apis-app-form-formprovider.md#formprovidercanceloverflow20) 接口，打断当前破框动效，卡片切换为非激活态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/Dh9YjMH1TbOm-QwSB8VdWw/zh-cn_image_0000002589324679.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/DqX_FgdAQpWn9doBCEs2_Q/zh-cn_image_0000002736433331.gif)

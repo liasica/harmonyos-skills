@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-40
 title: 如何处理父子组件间的事件传递，例如，如何解决滑动冲突
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 如何处理父子组件间的事件传递，例如，如何解决滑动冲突
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何处理父子组件间的事件传递，例如，如何解决滑动冲突
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:25:06+08:00
-doc_updated_at: 2026-03-17
+scraped_at: 2026-09-02T15:21:20+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:ec775de8e45bfdbe77e37f8a3f7f5c3651b40d28a9b177526b473b5e24e75f38
 ---
 

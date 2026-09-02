@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: ImageEffect_FilterDelegate
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 结构体 > ImageEffect_FilterDelegate
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:38+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:afe12c2b6e58e3bfbb6dcb31f74d89d64ca430c5104aca42436275c61a2f7ebe
+scraped_at: 2026-09-02T15:02:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:78bdd89e9c3ffbe879f5fe956a2475d2c263a9c82514502de17dfb1ccc64b76c
 ---
 
-```
-1. typedef struct ImageEffect_FilterDelegate {...} ImageEffect_FilterDelegate
+```c
+typedef struct ImageEffect_FilterDelegate {...} ImageEffect_FilterDelegate
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 自定义滤镜回调函数结构体。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 成员变量
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |

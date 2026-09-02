@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getsu
 title: GetSubFormat
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > GetSubFormat
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:15+08:00
+scraped_at: 2026-09-02T14:50:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:bc5f381d1fe52092f6e916578aa43e1547205a55352b64ef8042ca2c0c424d54
+content_hash: sha256:93420f0e90b6f669f2e2f1155ab0d12a772e4cf809b1bee9756c2a9e6640c4ec
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:bc5f381d1fe52092f6e916578aa43e1547205a55352b64ef8042ca2c0c4
 
 ## 函数原型
 
-```
-1. inline int32_t GetSubFormat(int32_t format)
+```cpp
+inline int32_t GetSubFormat(int32_t format)
 ```
 
 ## 参数说明

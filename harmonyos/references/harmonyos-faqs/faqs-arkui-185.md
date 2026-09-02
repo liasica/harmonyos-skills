@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-185
 title: 使用@Watch监听并在回调函数中调用其他异步接口时UI响应慢
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 使用@Watch监听并在回调函数中调用其他异步接口时UI响应慢
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 使用@Watch监听并在回调函数中调用其他异步接口时UI响应慢
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:25:48+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:21+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:51a2acebaf1c56f86fa6edbc8a598602682ac0d8d6338555dfbb58658329352b
 ---
 

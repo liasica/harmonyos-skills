@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: ShortcutInfo
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > bundleManager > ShortcutInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:48+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3273a55e76ac10317cadb3cb6dba03f310eda7f490c24708e848f8a77ff0192d
+scraped_at: 2026-09-02T15:00:36+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:bee9e60d8672d4ad741674bd5efc3b761d24db292f15b0f58caae1da46bec8f6
 ---
 
 应用[module.json5配置文件](../harmonyos-guides/module-configuration-file.md#shortcuts标签)中定义的快捷方式信息，可以通过[getAllShortcutInfoForSelf接口](js-apis-shortcutmanager.md#shortcutmanagergetallshortcutinfoforself)获取。
 
-说明
+**说明** 
 
-本模块首批接口从API version 20 开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+本模块首批接口从API version 20开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { shortcutManager } from '@kit.AbilityKit';
+```ts
+import { shortcutManager } from '@kit.AbilityKit';
 ```
 
 ## ShortcutWant
-
-PhonePC/2in1TabletTVWearable
 
 快捷方式内定义的目标[wants](../harmonyos-guides/module-configuration-file.md#wants标签)信息集合。
 
@@ -39,8 +35,6 @@ PhonePC/2in1TabletTVWearable
 
 ## ShortcutInfo
 
-PhonePC/2in1TabletTVWearable
-
 快捷方式的配置信息。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Launcher
@@ -50,7 +44,7 @@ PhonePC/2in1TabletTVWearable
 | id | string | 否 | 否 | 快捷方式的ID。 |
 | bundleName | string | 否 | 否 | 快捷方式所属应用的包名。 |
 | moduleName | string | 否 | 是 | 快捷方式的模块名。 |
-| hostAbility | string | 否 | 是 | 快捷方式的宿主组件名, 即承载此快捷方式的组件名。 |
+| hostAbility | string | 否 | 是 | 快捷方式的宿主组件名，即承载此快捷方式的组件名。 |
 | icon | string | 否 | 是 | 快捷方式的图标，取值为资源文件的索引。 |
 | iconId | number | 否 | 是 | 快捷方式图标的资源ID。 |
 | label | string | 否 | 是 | 快捷方式的标签信息，即快捷方式对外显示的文字描述信息。可以是描述性内容，也可以是标识label的资源索引。 |
@@ -61,8 +55,6 @@ PhonePC/2in1TabletTVWearable
 | visible | boolean | 否 | 是 | 快捷方式是否显示。true：快捷方式显示；false：快捷方式不显示。默认值为true。 |
 
 ## ParameterItem
-
-PhonePC/2in1TabletTVWearable
 
 快捷方式配置信息中的自定义数据。由开发者自行决定传入的键值对，可以通过key值获取对应的value值。
 

@@ -3,26 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: marquee
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 基础组件 > marquee
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:52+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:2dfe1d7298719c29c6cef7b9be54b0627bb505cc9395c0fc75f68d362afee09c
+scraped_at: 2026-09-02T15:01:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:52996ad1634d2f2d9042cecf9eaef8e46f372ff962cfc19fa2f09e38ea2a4418
 ---
 
 跑马灯组件，用于展示一段单行滚动的文字。
 
-说明
+**说明** 
 
 该组件从API version 4 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 不支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
@@ -34,8 +30,6 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | click | - | 点击动作触发该事件。 |
@@ -43,8 +37,6 @@ PhonePC/2in1TabletTVWearableLite Wearable
 | swipe5+ | [SwipeEvent](js-lite-common-events.md) | 组件上快速滑动后触发。 |
 
 ## 样式
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
@@ -67,66 +59,64 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <marquee class="customMarquee" scrollamount="{{scrollAmount}}">{{marqueeCustomData}}</marquee>
-4. <text class="text" onclick="addSpeed">speed+</text>
-5. <text class="text" onclick="downSpeed">speed-</text>
-6. <text class="text" onclick="changeData">changeData</text>
-7. </div>
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <marquee class="customMarquee" scrollamount="{{scrollAmount}}">{{marqueeCustomData}}</marquee>
+  <text class="text" onclick="addSpeed">speed+</text>
+  <text class="text" onclick="downSpeed">speed-</text>
+  <text class="text" onclick="changeData">changeData</text>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .container {
-3. flex-direction: column;
-4. width: 100%;
-5. height: 100%;
-6. flex-direction: column;
-7. align-items: center;
-8. }
-9. .customMarquee {
-10. width: 50%;
-11. height: 80px;
-12. padding: 10px;
-13. margin: 20px;
-14. border-width: 4px;
-15. border-color: #ffffff;
-16. border-radius: 20px;
-17. font-size: 38px;
-18. }
-19. .text {
-20. font-size: 30px;
-21. text-align: center;
-22. width: 30%;
-23. height: 10%;
-24. margin-top: 5%;
-25. background-color: #f2f2f2;
-26. border-radius: 40px;
-27. color: #0d81f2;
-28. }
-```
-
-```
-1. // xxx.js
-2. export default {
-3. data: {
-4. scrollAmount: 30,
-5. marqueeCustomData: 'Custom marquee Custom marquee Custom marquee'
-6. },
-7. addSpeed() {
-8. this.scrollAmount++;
-9. },
-10. downSpeed() {
-11. this.scrollAmount--;
-12. },
-13. changeData() {
-14. this.marqueeCustomData = 'Change Data Change Data Change Data';
-15. }
-16. }
+```css
+/* xxx.css */
+.container {
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+.customMarquee {
+  width: 50%;
+  height: 80px;
+  padding: 10px;
+  margin: 20px;
+  border-width: 4px;
+  border-color: #ffffff;
+  border-radius: 20px;
+  font-size: 38px;
+}
+.text {
+  font-size: 30px;
+  text-align: center;
+  width: 30%;
+  height: 10%;
+  margin-top: 5%;
+  background-color: #f2f2f2;
+  border-radius: 40px;
+  color: #0d81f2;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/vPwFqs8HSSSS5x1NqBZv0g/zh-cn_image_0000002589326805.gif)
+```javascript
+// xxx.js
+export default {
+  data: {
+    scrollAmount: 30,
+    marqueeCustomData: 'Custom marquee Custom marquee Custom marquee'
+  },
+  addSpeed() {
+    this.scrollAmount++;
+  },
+  downSpeed() {
+    this.scrollAmount--;
+  },
+  changeData() {
+    this.marqueeCustomData = 'Change Data Change Data Change Data';
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/x8NxwZHJRO2HZo_hSWs6og/zh-cn_image_0000002706676666.gif)

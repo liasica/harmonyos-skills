@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-stability-
 title: 为什么稳定性测试过程中的AppFreeze问题，有时Testing报告上显示的比设备faultlogger实际产生的问题数量少
 breadcrumb: FAQ > DevEco Testing > 专项测试 > 稳定性基础质量测试 > 为什么稳定性测试过程中的AppFreeze问题，有时Testing报告上显示的比设备faultlogger实际产生的问题数量少
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:30+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:d312b20b2bde717898176815277e1a2e81f2dd7816619b6bc3666587c64cb86d
 ---
 

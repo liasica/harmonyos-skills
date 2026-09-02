@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observe
 title: "@Observed装饰器和@ObjectLink装饰器：嵌套类对象属性变化"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理组件拥有的状态 > @Observed装饰器和@ObjectLink装饰器：嵌套类对象属性变化
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:14+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:a47ceb531e97a3ef6679e5fcf40e3c3e057c8f228de57442eaf6c84e40a4629b
+scraped_at: 2026-09-02T14:59:15+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:01bc5ede17de3a1beacf705bbfb564d34de12dd60a99d9acb757cc062ea0b24f
 ---
 
-上文所述的装饰器（包括[@State](arkts-state.md)、[@Prop](arkts-prop.md)、[@Link](arkts-link.md)、[@Provide和@Consume](arkts-provide-and-consume.md)装饰器）仅能观察到第一层的变化，但是在实际应用开发中，应用会根据开发需要，封装自己的数据模型。对于多层嵌套的情况，比如二维数组、对象数组、嵌套类场景，无法观察到第二层的属性变化。因此，为了实现对嵌套数据结构中深层属性变化的观察，引入了@Observed和@ObjectLink装饰器。
+上文所述的装饰器（包括[@State](arkts-state.md)、[@Prop](arkts-prop.md)、[@Link](arkts-link.md)、[@Provide和@Consume](arkts-provide-and-consume.md)装饰器）仅能观察到第一层的变化，但是在实际应用开发中，应用会根据开发需要，封装自己的数据模型。对于多层嵌套的情况，比如二维数组、对象数组、嵌套类场景，无法观察到第二层的属性变化。因此，为了实现对嵌套数据结构中深层属性变化的观察，引入了[@Observed](../harmonyos-references/ts-state-management-observed.md#observed)和[@ObjectLink](../harmonyos-references/ts-state-management-objectlink.md#objectlink)装饰器。
 
 @Observed/@ObjectLink适用于观察嵌套对象（对象的属性是对象）属性的变化，需要开发者对装饰器的基本观察能力有一定的了解，再来对比阅读该文档。建议提前阅读：[@State](arkts-state.md)的基本用法。最佳实践请参考[状态管理最佳实践](../best-practices/bpta-status-management.md)。常见问题请参考[状态管理常见问题](arkts-state-management-faq.md)。
 
-说明
+**说明** 
 
 从API version 9开始，这两个装饰器支持在ArkTS卡片中使用。
 
@@ -38,19 +38,19 @@ content_hash: sha256:a47ceb531e97a3ef6679e5fcf40e3c3e057c8f228de57442eaf6c84e40a
 | @ObjectLink变量装饰器 | 说明 |
 | --- | --- |
 | 装饰器参数 | 无。 |
-| 允许装饰的变量类型 | 支持继承Date、[Array](arkts-observed-and-objectlink.md#二维数组)的class实例。  API version 11及以后支持继承[Map](arkts-observed-and-objectlink.md#继承map类)、[Set](arkts-observed-and-objectlink.md#继承set类)的class实例以及@Observed装饰类和undefined或null组成的联合类型，比如ClassA | ClassB、 ClassA | undefined 或者 ClassA | null, 示例请参考[@ObjectLink支持联合类型](arkts-observed-and-objectlink.md#objectlink支持联合类型)。  API version 19之前，必须为被@Observed装饰的class实例。  API version 19及以后，@ObjectLink可以被复杂类型初始化，即class、object或built-in类型。但当观察嵌套类型时，仍需其接收@Observed装饰的类实例或makeV1Observed的返回值。  **说明：**  @ObjectLink不支持简单类型，如果开发者需要使用简单类型，可以使用[@Prop](arkts-prop.md)。 |
+| 允许装饰的变量类型 | 支持继承Date、[Array](arkts-observed-and-objectlink.md#二维数组)的class实例。  API version 11及以后支持继承[Map](arkts-observed-and-objectlink.md#继承map类)、[Set](arkts-observed-and-objectlink.md#继承set类)的class实例以及@Observed装饰类和undefined或null组成的联合类型，比如ClassA | ClassB、 ClassA | undefined 或者 ClassA | null，示例请参考[@ObjectLink支持联合类型](arkts-observed-and-objectlink.md#objectlink支持联合类型)。  API version 19之前，必须为被@Observed装饰的class实例。  API version 19及以后，@ObjectLink可以被复杂类型初始化，即class、object或built-in类型。但当观察嵌套类型时，仍需其接收@Observed装饰的类实例或makeV1Observed的返回值。  **说明：**  @ObjectLink不支持简单类型，如果开发者需要使用简单类型，可以使用[@Prop](arkts-prop.md)。 |
 | 被装饰变量的初始值 | 禁止本地初始化。 |
 
 @ObjectLink的属性可以被改变，但不允许整体赋值，即@ObjectLink装饰的变量是只读的。
 
-```
-1. // 允许@ObjectLink装饰的数据属性赋值
-2. this.objLink.a= ...
-3. // 不允许@ObjectLink装饰的数据自身赋值
-4. this.objLink= ...
+```ts
+// 允许@ObjectLink装饰的数据属性赋值
+this.objLink.a= ...
+// 不允许@ObjectLink装饰的数据自身赋值
+this.objLink= ...
 ```
 
-说明
+**说明** 
 
 @ObjectLink装饰的变量不能被赋值，如果要使用赋值操作，请使用[@Prop](arkts-prop.md)。
 
@@ -67,7 +67,7 @@ content_hash: sha256:a47ceb531e97a3ef6679e5fcf40e3c3e057c8f228de57442eaf6c84e40a
 
 **图1** 初始化规则图示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/jb_mThRvQpqS9K8F_hvgtw/zh-cn_image_0000002589323963.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/9JlarWsTTN6DlXMi4LjkkA/zh-cn_image_0000002706673268.png)
 
 ## 观察变化和行为表现
 
@@ -86,67 +86,75 @@ API version 19之前，如果需要观察嵌套场景的变化，如嵌套类，
 
 @ObjectLink装饰继承于Date的class时，可以观察到Date整体的赋值，同时可通过调用Date的接口setFullYear, setMonth, setDate, setHours, setMinutes, setSeconds, setMilliseconds, setTime, setUTCFullYear, setUTCMonth, setUTCDate, setUTCHours, setUTCMinutes, setUTCSeconds, setUTCMilliseconds 更新Date的属性。
 
+```typescript
+@Observed
+class DateClass extends Date {
+  constructor(args: number | string) {
+    super(args);
+  }
+}
+
+@Observed
+class NewDate {
+  public data: DateClass;
+
+  constructor(data: DateClass) {
+    this.data = data;
+  }
+}
+
+@Component
+struct Child {
+  label: string = 'date';
+  @ObjectLink data: DateClass;
+
+  build() {
+    Column() {
+      // data被@Observed和@ObjectLink装饰，可以被观察到Date整体的赋值以及调用Date接口带来的变化
+      Button('child increase the day by 1')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.data.setDate(this.data.getDate() + 1);
+        })
+      DatePicker({
+        start: new Date('1970-1-1'),
+        end: new Date('2100-1-1'),
+        selected: this.data
+      })
+    }
+    .width('100%')
+  }
+}
+
+@Entry
+@Component
+struct Parent {
+  @State newData: NewDate = new NewDate(new DateClass('2023-1-1'));
+
+  build() {
+    Column() {
+      Child({ label: 'date', data: this.newData.data })
+
+      Button('parent update the new date')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.newData.data = new DateClass('2023-07-07');
+        })
+      Button(`2023-08-20`)
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.newData = new NewDate(new DateClass('2023-08-20'));
+        })
+    }
+    .width('100%')
+  }
+}
 ```
-1. @Observed
-2. class DateClass extends Date {
-3. constructor(args: number | string) {
-4. super(args);
-5. }
-6. }
 
-8. @Observed
-9. class NewDate {
-10. public data: DateClass;
-
-12. constructor(data: DateClass) {
-13. this.data = data;
-14. }
-15. }
-
-17. @Component
-18. struct Child {
-19. label: string = 'date';
-20. @ObjectLink data: DateClass;
-
-22. build() {
-23. Column() {
-24. // data被@Observed和@ObjectLink装饰，可以被观察到Date整体的赋值以及调用Date接口带来的变化
-25. Button('child increase the day by 1')
-26. .onClick(() => {
-27. this.data.setDate(this.data.getDate() + 1);
-28. })
-29. DatePicker({
-30. start: new Date('1970-1-1'),
-31. end: new Date('2100-1-1'),
-32. selected: this.data
-33. })
-34. }
-35. }
-36. }
-
-38. @Entry
-39. @Component
-40. struct Parent {
-41. @State newData: NewDate = new NewDate(new DateClass('2023-1-1'));
-
-43. build() {
-44. Column() {
-45. Child({ label: 'date', data: this.newData.data })
-
-47. Button('parent update the new date')
-48. .onClick(() => {
-49. this.newData.data = new DateClass('2023-07-07');
-50. })
-51. Button(`ViewB: this.newData = new NewDate(new DateClass('2023-08-20'))`)
-52. .onClick(() => {
-53. this.newData = new NewDate(new DateClass('2023-08-20'));
-54. })
-55. }
-56. }
-57. }
-```
-
-[ObservationChangeInheritance.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedandobjectlink/entry/src/main/ets/pages/overview/ObservationChangeInheritance.ets#L15-L72)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/85h_FpbNT-K6EacxOBsG1Q/zh-cn_image_0000002736432359.gif)
 
 @ObjectLink装饰继承于Map的class时，可以观察到Map整体的赋值，同时可通过调用Map的接口set, clear, delete 更新Map的值。示例请参考[继承Map类](arkts-observed-and-objectlink.md#继承map类)。
 
@@ -168,145 +176,153 @@ API version 19之前，如果需要观察嵌套场景的变化，如嵌套类，
 3. @ObjectLink装饰的类型必须是复杂类型，否则会有编译时报错。
 4. API version 19前，@ObjectLink装饰的变量类型必须是显式地由@Observed装饰的类。如果未指定类型，或不是@Observed装饰的class，编译时报错。
 
-   API version 19及以后，@ObjectLink也可以被[makeV1Observed](../harmonyos-references/js-apis-statemanagement.md#makev1observed19)的返回值初始化，若@ObjectLink接收未使用@Observed装饰的class或makeV1Observed返回值进行初始化，则会有运行时告警日志。
+   API version 19及以后，@ObjectLink也可以被[makeV1Observed](../harmonyos-references/js-apis-statemanagement.md#makev1observed19)的返回值初始化，若@ObjectLink接收的初始化值既不是@Observed装饰的class实例，也不是makeV1Observed的返回值，则会有运行时告警日志。
 
+   ```ts
+   class Test {
+     msg: number;
+
+     constructor(msg: number) {
+       this.msg = msg;
+     }
+   }
+   // 错误写法，count未指定类型，编译报错
+   @ObjectLink count;
+   // 错误写法，Test未被@Observed装饰，编译报错
+   @ObjectLink test: Test;
    ```
-   1. class Test {
-   2. msg: number;
 
-   4. constructor(msg: number) {
-   5. this.msg = msg;
-   6. }
-   7. }
-   8. // 错误写法，count未指定类型，编译报错
-   9. @ObjectLink count;
-   10. // 错误写法，Test未被@Observed装饰，编译报错
-   11. @ObjectLink test: Test;
-   ```
+   ```typescript
+   @Observed
+   class Info {
+     public count: number;
 
-   ```
-   1. @Observed
-   2. class Info {
-   3. public count: number;
-
-   5. constructor(count: number) {
-   6. this.count = count;
-   7. }
-   8. }
-   9. // ...
-   10. // 正确写法
-   11. @ObjectLink count: Info;
+     constructor(count: number) {
+       this.count = count;
+     }
+   }
+   // ...
+   // 正确写法
+   @ObjectLink count: Info;
    ```
 5. @ObjectLink装饰的变量不能本地初始化，仅能通过构造参数从父组件传入初始值，否则编译时会报错。
 
-   ```
-   1. // 错误写法，编译报错
-   2. @ObjectLink count: CountInfo = new CountInfo(10);
+   ```ts
+   // 错误写法，编译报错
+   @ObjectLink count: CountInfo = new CountInfo(10);
    ```
 
-   ```
-   1. @Observed
-   2. class CountInfo {
-   3. public count: number;
+   ```typescript
+   @Observed
+   class CountInfo {
+     public count: number;
 
-   5. constructor(count: number) {
-   6. this.count = count;
-   7. }
-   8. }
-   9. // ...
-   10. // 正确写法
-   11. @ObjectLink count: CountInfo;
+     constructor(count: number) {
+       this.count = count;
+     }
+   }
+   // ...
+   // 正确写法
+   @ObjectLink count: CountInfo;
    ```
 6. @ObjectLink装饰的变量是只读的，不能被赋值，否则会有运行时报错提示Cannot set property when setter is undefined。如果需要对@ObjectLink装饰的变量进行整体替换，可以在父组件对其进行整体替换。
 
    【反例】
 
-   ```
-   1. @Observed
-   2. class Info {
-   3. count: number;
+   ```ts
+   @Observed
+   class Info {
+     count: number;
 
-   5. constructor(count: number) {
-   6. this.count = count;
-   7. }
-   8. }
+     constructor(count: number) {
+       this.count = count;
+     }
+   }
 
-   10. @Component
-   11. struct Child {
-   12. @ObjectLink num: Info;
+   @Component
+   struct Child {
+     @ObjectLink num: Info;
 
-   14. build() {
-   15. Column() {
-   16. Text(`num的值: ${this.num.count}`)
-   17. .onClick(() => {
-   18. // 错误写法，@ObjectLink装饰的变量不能被赋值，运行时报错
-   19. this.num = new Info(10);
-   20. })
-   21. }
-   22. }
-   23. }
+     build() {
+       Column() {
+         Text(`num的值: ${this.num.count}`)
+           .onClick(() => {
+             // 错误写法，@ObjectLink装饰的变量不能被赋值，运行时报错
+             this.num = new Info(10);
+           })
+       }
+     }
+   }
 
-   25. @Entry
-   26. @Component
-   27. struct Parent {
-   28. @State num: Info = new Info(10);
+   @Entry
+   @Component
+   struct Parent {
+     @State num: Info = new Info(10);
 
-   30. build() {
-   31. Column() {
-   32. Text(`count的值: ${this.num.count}`)
-   33. Child({num: this.num})
-   34. }
-   35. }
-   36. }
+     build() {
+       Column() {
+         Text(`count的值: ${this.num.count}`)
+         Child({num: this.num})
+       }
+     }
+   }
    ```
 
    【正例】
 
+   ```typescript
+   @Observed
+   class Info {
+     public count: number;
+
+     constructor(count: number) {
+       this.count = count;
+     }
+   }
+
+   @Component
+   struct Child {
+     @ObjectLink num: Info;
+
+     build() {
+       Column() {
+         Text(`num value: ${this.num.count}`)
+           .fontSize(20)
+           .margin(10)
+           .onClick(() => {
+             // 正确写法，可以更改@ObjectLink装饰变量的成员属性
+             this.num.count = 20;
+           })
+       }
+       .width('100%')
+     }
+   }
+
+   @Entry
+   @Component
+   struct Parent {
+     @State num: Info = new Info(10);
+
+     build() {
+       Column() {
+         Text(`count value: ${this.num.count}`)
+           .fontSize(20)
+           .margin(10)
+         Button('click')
+           .width(300)
+           .margin(10)
+           .onClick(() => {
+             // 可以在父组件做整体替换
+             this.num = new Info(30);
+           })
+         Child({ num: this.num })
+       }
+       .width('100%')
+     }
+   }
    ```
-   1. @Observed
-   2. class Info {
-   3. public count: number;
 
-   5. constructor(count: number) {
-   6. this.count = count;
-   7. }
-   8. }
-
-   10. @Component
-   11. struct Child {
-   12. @ObjectLink num: Info;
-
-   14. build() {
-   15. Column() {
-   16. Text(`num value: ${this.num.count}`)
-   17. .onClick(() => {
-   18. // 正确写法，可以更改@ObjectLink装饰变量的成员属性
-   19. this.num.count = 20;
-   20. })
-   21. }
-   22. }
-   23. }
-
-   25. @Entry
-   26. @Component
-   27. struct Parent {
-   28. @State num: Info = new Info(10);
-
-   30. build() {
-   31. Column() {
-   32. Text(`count value: ${this.num.count}`)
-   33. Button('click')
-   34. .onClick(() => {
-   35. // 可以在父组件做整体替换
-   36. this.num = new Info(30);
-   37. })
-   38. Child({ num: this.num })
-   39. }
-   40. }
-   41. }
-   ```
-
-   [ReadOnlyVariable.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedandobjectlink/entry/src/main/ets/pages/restrictiveconditions/ReadOnlyVariable.ets#L15-L58)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/-bEWmLZcQi6q1mCElJy48Q/zh-cn_image_0000002706833206.gif)
 
 ## 使用场景
 
@@ -314,119 +330,121 @@ API version 19之前，如果需要观察嵌套场景的变化，如嵌套类，
 
 该场景包含built-in类型（Array、Map、Set和Date）和普通class。从API version 19开始，@ObjectLink接收@State传递built-in类型和普通class对象，可以观察其API调用和第一层变化，无需额外添加@Observed装饰。因为@State等状态变量装饰器，会给对象（外层对象）添加一层“代理”包装，其功能等同于添加@Observed装饰。
 
+```typescript
+class Book {
+  public name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+}
+
+@Component
+struct BookCard {
+  @ObjectLink book: Book;
+
+  build() {
+    Column() {
+      Text(`BookCard: ${this.book.name}`) // 可以观察到name的变化
+        .fontSize(20)
+        .margin(10)
+        .width(320)
+        .textAlign(TextAlign.Center)
+
+      Button('change book.name')
+        .width(320)
+        .margin(10)
+        .onClick(() => {
+          this.book.name = 'C++';
+        })
+    }
+    .width('100%')
+  }
+}
+
+@Entry
+@Component
+struct Index {
+  @State book: Book = new Book('JS');
+
+  build() {
+    Column() {
+      BookCard({ book: this.book })
+    }
+  }
+}
 ```
-1. class Book {
-2. public name: string;
 
-4. constructor(name: string) {
-5. this.name = name;
-6. }
-7. }
-
-9. @Component
-10. struct BookCard {
-11. @ObjectLink book: Book;
-
-13. build() {
-14. Column() {
-15. Text(`BookCard: ${this.book.name}`) // 可以观察到name的变化
-16. .width(320)
-17. .margin(10)
-18. .textAlign(TextAlign.Center)
-
-20. Button('change book.name')
-21. .width(320)
-22. .margin(10)
-23. .onClick(() => {
-24. this.book.name = 'C++';
-25. })
-26. }
-27. }
-28. }
-
-30. @Entry
-31. @Component
-32. struct Index {
-33. @State book: Book = new Book('JS');
-
-35. build() {
-36. Column() {
-37. BookCard({ book: this.book })
-38. }
-39. }
-40. }
-```
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/23cgEb46TzGtn-WJz7qWSQ/zh-cn_image_0000002736312315.gif)
 
 ### 嵌套对象
 
+```typescript
+@Observed
+class Book {
+  public name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+}
+
+@Observed
+class Bag {
+  public book: Book;
+
+  constructor(book: Book) {
+    this.book = book;
+  }
+}
+
+@Component
+struct BookCard {
+  @ObjectLink book: Book;
+
+  build() {
+    Column() {
+      Text(`BookCard: ${this.book.name}`) // 可以观察到name的变化
+        .width(320)
+        .margin(10)
+        .textAlign(TextAlign.Center)
+
+      Button('change book.name')
+        .width(320)
+        .margin(10)
+        .onClick(() => {
+          this.book.name = 'C++';
+        })
+    }
+  }
+}
+
+@Entry
+@Component
+struct Index {
+  @State bag: Bag = new Bag(new Book('JS'));
+
+  build() {
+    Column() {
+      Text(`Index: ${this.bag.book.name}`) // 无法观察到name的变化
+        .width(320)
+        .margin(10)
+        .textAlign(TextAlign.Center)
+
+      Button('change bag.book.name')
+        .width(320)
+        .margin(10)
+        .onClick(() => {
+          this.bag.book.name = 'TS';
+        })
+
+      BookCard({ book: this.bag.book })
+    }
+  }
+}
 ```
-1. @Observed
-2. class Book {
-3. public name: string;
 
-5. constructor(name: string) {
-6. this.name = name;
-7. }
-8. }
-
-10. @Observed
-11. class Bag {
-12. public book: Book;
-
-14. constructor(book: Book) {
-15. this.book = book;
-16. }
-17. }
-
-19. @Component
-20. struct BookCard {
-21. @ObjectLink book: Book;
-
-23. build() {
-24. Column() {
-25. Text(`BookCard: ${this.book.name}`) // 可以观察到name的变化
-26. .width(320)
-27. .margin(10)
-28. .textAlign(TextAlign.Center)
-
-30. Button('change book.name')
-31. .width(320)
-32. .margin(10)
-33. .onClick(() => {
-34. this.book.name = 'C++';
-35. })
-36. }
-37. }
-38. }
-
-40. @Entry
-41. @Component
-42. struct Index {
-43. @State bag: Bag = new Bag(new Book('JS'));
-
-45. build() {
-46. Column() {
-47. Text(`Index: ${this.bag.book.name}`) // 无法观察到name的变化
-48. .width(320)
-49. .margin(10)
-50. .textAlign(TextAlign.Center)
-
-52. Button('change bag.book.name')
-53. .width(320)
-54. .margin(10)
-55. .onClick(() => {
-56. this.bag.book.name = 'TS';
-57. })
-
-59. BookCard({ book: this.bag.book })
-60. }
-61. }
-62. }
-```
-
-[NestedObject.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedandobjectlink/entry/src/main/ets/pages/objectLinkusagescenarios/NestedObject.ets#L15-L79)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/5-vIhCk8T5CQW7kwzvJRLA/zh-cn_image_0000002589243903.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/Lx9i7ia5RWy2sMr2qQYb6A/zh-cn_image_0000002706673272.gif)
 
 上述示例中：
 
@@ -438,114 +456,112 @@ API version 19之前，如果需要观察嵌套场景的变化，如嵌套类，
 
 对象数组是一种常用的数据结构。以下示例展示了对象数组的用法。
 
-说明
+**说明** 
 
 NextID是用来在[ForEach循环渲染](arkts-rendering-control-foreach.md)过程中，为每个数组元素生成一个唯一且持久的键值，标识对应的组件。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN = 0x0001;
+const TAG = 'ArkTSObservedAndObjectlink';
+let nextID: number = 1;
+
+@Observed
+class Info {
+  public id: number;
+  public info: number;
+
+  constructor(info: number) {
+    this.id = nextID++;
+    this.info = info;
+  }
+}
+
+@Component
+struct Child {
+  // 子组件Child的@ObjectLink的类型是Info
+  @ObjectLink info: Info;
+  label: string = 'ViewChild';
+
+  build() {
+    Row() {
+      Button(`ViewChild [${this.label}] this.info.info = ${this.info ? this.info.info : 'undefined'}`)
+        .width(320)
+        .margin(10)
+        .onClick(() => {
+          this.info.info += 1;
+        })
+    }
+  }
+}
+
+@Entry
+@Component
+struct Parent {
+  // Parent中有@State装饰的Info[]
+  @State arrA: Info[] = [new Info(0), new Info(0)];
+
+  build() {
+    Column() {
+      ForEach(this.arrA,
+        (item: Info) => {
+          Child({ label: `#${item.id}`, info: item })
+        },
+        (item: Info): string => item.id.toString()
+      )
+      // 使用@State装饰的数组的数组项初始化@ObjectLink，其中数组项是被@Observed装饰的Info的实例
+      Child({ label: 'ViewChild this.arrA[first]', info: this.arrA[0] })
+      Child({ label: 'ViewChild this.arrA[last]', info: this.arrA[this.arrA.length-1] })
+
+      Button('ViewParent: reset array')
+        .width(320)
+        .margin(10)
+        .onClick(() => {
+          this.arrA = [new Info(0), new Info(0)];
+        })
+      Button('ViewParent: push')
+        .width(320)
+        .margin(10)
+        .onClick(() => {
+          this.arrA.push(new Info(0));
+        })
+      Button('ViewParent: shift')
+        .width(320)
+        .margin(10)
+        .onClick(() => {
+          if (this.arrA.length > 0) {
+            this.arrA.shift();
+          } else {
+            hilog.info(DOMAIN, TAG, 'length <= 0');
+          }
+        })
+      Button('ViewParent: item property in middle')
+        .width(320)
+        .margin(10)
+        .onClick(() => {
+          this.arrA[Math.floor(this.arrA.length / 2)].info = 10;
+        })
+      Button('ViewParent: item property in middle')
+        .width(320)
+        .margin(10)
+        .onClick(() => {
+          this.arrA[Math.floor(this.arrA.length / 2)] = new Info(11);
+        })
+    }
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. const DOMAIN = 0x0001;
-4. const TAG = 'ArkTSObservedAndObjectlink';
-5. let nextID: number = 1;
-
-7. @Observed
-8. class Info {
-9. public id: number;
-10. public info: number;
-
-12. constructor(info: number) {
-13. this.id = nextID++;
-14. this.info = info;
-15. }
-16. }
-
-18. @Component
-19. struct Child {
-20. // 子组件Child的@ObjectLink的类型是Info
-21. @ObjectLink info: Info;
-22. label: string = 'ViewChild';
-
-24. build() {
-25. Row() {
-26. Button(`ViewChild [${this.label}] this.info.info = ${this.info ? this.info.info : 'undefined'}`)
-27. .width(320)
-28. .margin(10)
-29. .onClick(() => {
-30. this.info.info += 1;
-31. })
-32. }
-33. }
-34. }
-
-36. @Entry
-37. @Component
-38. struct Parent {
-39. // Parent中有@State装饰的Info[]
-40. @State arrA: Info[] = [new Info(0), new Info(0)];
-
-42. build() {
-43. Column() {
-44. ForEach(this.arrA,
-45. (item: Info) => {
-46. Child({ label: `#${item.id}`, info: item })
-47. },
-48. (item: Info): string => item.id.toString()
-49. )
-50. // 使用@State装饰的数组的数组项初始化@ObjectLink，其中数组项是被@Observed装饰的Info的实例
-51. Child({ label: 'ViewChild this.arrA[first]', info: this.arrA[0] })
-52. Child({ label: 'ViewChild this.arrA[last]', info: this.arrA[this.arrA.length-1] })
-
-54. Button('ViewParent: reset array')
-55. .width(320)
-56. .margin(10)
-57. .onClick(() => {
-58. this.arrA = [new Info(0), new Info(0)];
-59. })
-60. Button('ViewParent: push')
-61. .width(320)
-62. .margin(10)
-63. .onClick(() => {
-64. this.arrA.push(new Info(0));
-65. })
-66. Button('ViewParent: shift')
-67. .width(320)
-68. .margin(10)
-69. .onClick(() => {
-70. if (this.arrA.length > 0) {
-71. this.arrA.shift();
-72. } else {
-73. hilog.info(DOMAIN, TAG, 'length <= 0');
-74. }
-75. })
-76. Button('ViewParent: item property in middle')
-77. .width(320)
-78. .margin(10)
-79. .onClick(() => {
-80. this.arrA[Math.floor(this.arrA.length / 2)].info = 10;
-81. })
-82. Button('ViewParent: item property in middle')
-83. .width(320)
-84. .margin(10)
-85. .onClick(() => {
-86. this.arrA[Math.floor(this.arrA.length / 2)] = new Info(11);
-87. })
-88. }
-89. }
-90. }
-```
-
-[ObjectArray.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedandobjectlink/entry/src/main/ets/pages/objectLinkusagescenarios/ObjectArray.ets#L15-L107)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/TA8aTVCxSUejNzMUPwTi0Q/zh-cn_image_0000002558764096.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/bcz9XSFkRTKt-4FAacwbiw/zh-cn_image_0000002736432361.gif)
 
 * this.arrA[Math.floor(this.arrA.length/2)] = new Info(..) ：该状态变量的改变触发2次更新：
 
-  1. ForEach：数组项的赋值导致ForEach的[itemGenerator](../harmonyos-references/ts-rendering-control-foreach.md)被修改，因此数组项被识别为有更改，ForEach的item builder将执行，创建新的Child组件实例。
+  1. ForEach：数组项的赋值导致[ForEach](../harmonyos-references/ts-rendering-control-foreach.md)的itemGenerator被修改，因此数组项被识别为有更改，ForEach的item builder将执行，创建新的Child组件实例。
   2. Child({ label: 'ViewChild this.arrA[last]', info: this.arrA[this.arrA.length-1] })：上述更改改变了数组中第二个元素，所以绑定this.arrA[1]的Child将被更新。
 * this.arrA.push(new Info(0)) ： 将触发2次不同效果的更新：
 
-  1. ForEach：新添加的Info对象对于ForEach是未知的[itemGenerator](../harmonyos-references/ts-rendering-control-foreach.md)，ForEach的item builder将执行，创建新的Child组件实例。
+  1. ForEach：新添加的Info对象对于ForEach是未知的itemGenerator，ForEach的item builder将执行，创建新的Child组件实例。
   2. Child({ label: 'ViewChild this.arrA[last]', info: this.arrA[this.arrA.length-1] })：数组的最后一项有更改，因此引起第二个Child的实例的更改。对于Child({ label: 'ViewChild this.arrA[first]', info: this.arrA[0] })，数组的更改并没有触发一个数组项更改的改变，所以第一个Child不会刷新。
 * this.arrA[Math.floor(this.arrA.length/2)].info：@State无法观察到第二层的变化，但是Info被@Observed装饰，Info的属性的变化将被@ObjectLink观察到。
 
@@ -553,436 +569,435 @@ NextID是用来在[ForEach循环渲染](arkts-rendering-control-foreach.md)过�
 
 使用@Observed观察二维数组的变化。可以声明一个被@Observed装饰的继承Array的子类。
 
-```
-1. @Observed
-2. class ObservedArray<T> extends Array<T> {
-3. }
+```typescript
+@Observed
+class ObservedArray<T> extends Array<T> {
+}
 ```
 
 声明一个继承自Array的类ObservedArray<T>，并使用new操作符创建ObservedArray<string>的实例，该实例可以观察到属性变化。
 
 在下面的示例中，展示了如何利用@Observed观察二维数组的变化。
 
+```typescript
+@Observed
+class ObservedArray<T> extends Array<T> {
+}
+
+@Component
+struct Item {
+  @ObjectLink itemArr: ObservedArray<string>;
+
+  build() {
+    Row() {
+      ForEach(this.itemArr, (item: string, index: number) => {
+        Text(`${index}: ${item}`)
+          .fontSize(20)
+          .margin(5)
+          .width(120)
+          .height(100)
+      }, (item: string) => item)
+    }
+  }
+}
+
+@Entry
+@Component
+struct IndexPage {
+  // new操作符创建的ObservedArray<string>的实例可以观察到属性变化
+  @State arr: Array<ObservedArray<string>> = [
+    new ObservedArray<string>('apple'),
+    new ObservedArray<string>('banana'),
+    new ObservedArray<string>('orange')
+  ];
+
+  build() {
+    Column() {
+      ForEach(this.arr, (itemArr: ObservedArray<string>) => {
+        Item({ itemArr: itemArr })
+      })
+
+      Divider()
+
+      Button('push two-dimensional array item')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.arr[0].push('strawberry');
+        })
+
+      Button('push array item')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.arr.push(new ObservedArray<string>('pear'));
+        })
+
+      Button('change two-dimensional array first item')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.arr[0][0] = 'APPLE';
+        })
+
+      Button('change array first item')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.arr[0] = new ObservedArray<string>('watermelon');
+        })
+    }
+    .width('100%')
+  }
+}
 ```
-1. @Observed
-2. class ObservedArray<T> extends Array<T> {
-3. }
 
-5. @Component
-6. struct Item {
-7. @ObjectLink itemArr: ObservedArray<string>;
-
-9. build() {
-10. Row() {
-11. ForEach(this.itemArr, (item: string, index: number) => {
-12. Text(`${index}: ${item}`)
-13. .width(100)
-14. .height(100)
-15. }, (item: string) => item)
-16. }
-17. }
-18. }
-
-20. @Entry
-21. @Component
-22. struct IndexPage {
-23. // new操作符创建的ObservedArray<string>的实例可以观察到属性变化
-24. @State arr: Array<ObservedArray<string>> = [
-25. new ObservedArray<string>('apple'),
-26. new ObservedArray<string>('banana'),
-27. new ObservedArray<string>('orange')
-28. ];
-
-30. build() {
-31. Column() {
-32. ForEach(this.arr, (itemArr: ObservedArray<string>) => {
-33. Item({ itemArr: itemArr })
-34. })
-
-36. Divider()
-
-38. Button('push two-dimensional array item')
-39. .margin(10)
-40. .onClick(() => {
-41. this.arr[0].push('strawberry');
-42. })
-
-44. Button('push array item')
-45. .margin(10)
-46. .onClick(() => {
-47. this.arr.push(new ObservedArray<string>('pear'));
-48. })
-
-50. Button('change two-dimensional array first item')
-51. .margin(10)
-52. .onClick(() => {
-53. this.arr[0][0] = 'APPLE';
-54. })
-
-56. Button('change array first item')
-57. .margin(10)
-58. .onClick(() => {
-59. this.arr[0] = new ObservedArray<string>('watermelon');
-60. })
-61. }
-62. }
-63. }
-```
-
-[TwoDimensionalArray.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedandobjectlink/entry/src/main/ets/pages/objectLinkusagescenarios/TwoDimensionalArray.ets#L16-L80)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/Wr8or9GaR6mX9CTskVHRDw/zh-cn_image_0000002706833208.gif)
 
 API version 19及以后，@ObjectLink也可以被[makeV1Observed](../harmonyos-references/js-apis-statemanagement.md#makev1observed19)的返回值初始化。所以开发者如果不想额外声明继承Array的类，也可以使用makeV1Observed来达到同样的效果。
 
 完整例子如下。
 
+```typescript
+import { UIUtils } from '@kit.ArkUI';
+
+@Component
+struct Item {
+  @ObjectLink itemArr: Array<string>;
+
+  build() {
+    Row() {
+      ForEach(this.itemArr, (item: string, index: number) => {
+        Text(`${index}: ${item}`)
+          .width(100)
+          .height(100)
+      }, (item: string) => item)
+    }
+  }
+}
+
+@Entry
+@Component
+struct IndexPage {
+  // 利用makeV1Observed观察二维数组的变化
+  @State arr: Array<Array<string>> =
+    [UIUtils.makeV1Observed(['apple']), UIUtils.makeV1Observed(['banana']), UIUtils.makeV1Observed(['orange'])];
+
+  build() {
+    Column() {
+      ForEach(this.arr, (itemArr: Array<string>) => {
+        Item({ itemArr: itemArr })
+      })
+
+      Divider()
+
+      Button('push two-dimensional array item')
+        .margin(10)
+        .onClick(() => {
+          this.arr[0].push('strawberry');
+        })
+
+      Button('push array item')
+        .margin(10)
+        .onClick(() => {
+          this.arr.push(UIUtils.makeV1Observed(['pear']));
+        })
+
+      Button('change two-dimensional array first item')
+        .margin(10)
+        .onClick(() => {
+          this.arr[0][0] = 'APPLE';
+        })
+
+      Button('change array first item')
+        .margin(10)
+        .onClick(() => {
+          this.arr[0] = UIUtils.makeV1Observed(['watermelon']);
+        })
+    }
+  }
+}
 ```
-1. import { UIUtils } from '@kit.ArkUI';
 
-3. @Component
-4. struct Item {
-5. @ObjectLink itemArr: Array<string>;
-
-7. build() {
-8. Row() {
-9. ForEach(this.itemArr, (item: string, index: number) => {
-10. Text(`${index}: ${item}`)
-11. .width(100)
-12. .height(100)
-13. }, (item: string) => item)
-14. }
-15. }
-16. }
-
-18. @Entry
-19. @Component
-20. struct IndexPage {
-21. // 利用makeV1Observed观察二维数组的变化
-22. @State arr: Array<Array<string>> =
-23. [UIUtils.makeV1Observed(['apple']), UIUtils.makeV1Observed(['banana']), UIUtils.makeV1Observed(['orange'])];
-
-25. build() {
-26. Column() {
-27. ForEach(this.arr, (itemArr: Array<string>) => {
-28. Item({ itemArr: itemArr })
-29. })
-
-31. Divider()
-
-33. Button('push two-dimensional array item')
-34. .margin(10)
-35. .onClick(() => {
-36. this.arr[0].push('strawberry');
-37. })
-
-39. Button('push array item')
-40. .margin(10)
-41. .onClick(() => {
-42. this.arr.push(UIUtils.makeV1Observed(['pear']));
-43. })
-
-45. Button('change two-dimensional array first item')
-46. .margin(10)
-47. .onClick(() => {
-48. this.arr[0][0] = 'APPLE';
-49. })
-
-51. Button('change array first item')
-52. .margin(10)
-53. .onClick(() => {
-54. this.arr[0] = UIUtils.makeV1Observed(['watermelon']);
-55. })
-56. }
-57. }
-58. }
-```
-
-[CompleteExampleTwoDimensionalArray.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedandobjectlink/entry/src/main/ets/pages/objectLinkusagescenarios/CompleteExampleTwoDimensionalArray.ets#L15-L73)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/aCKIneXRQoSmdimR06PCeg/zh-cn_image_0000002558604440.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/cRt_hfBVSwqbPamzYbqVzg/zh-cn_image_0000002736312317.gif)
 
 ### 继承Map类
 
-说明
+**说明** 
 
 从API version 11开始，@ObjectLink支持@Observed装饰Map类型和继承Map类的类型。
 
 在下面的示例中，myMap类型为MyMap<number, string>，点击Button改变myMap的属性，视图会随之刷新。
 
+```typescript
+@Observed
+class Info {
+  public info: MyMap<number, string>;
+
+  constructor(info: MyMap<number, string>) {
+    this.info = info;
+  }
+}
+
+@Observed
+export class MyMap<K, V> extends Map<K, V> {
+  public name: string;
+
+  constructor(name?: string, args?: [K, V][]) {
+    super(args);
+    this.name = name ? name : 'My Map';
+  }
+
+  getName() {
+    return this.name;
+  }
+}
+
+@Entry
+@Component
+struct MapSampleNested {
+  @State message: Info = new Info(new MyMap('myMap', [[0, 'a'], [1, 'b'], [3, 'c']]));
+
+  build() {
+    Row() {
+      Column() {
+        MapSampleNestedChild({ myMap: this.message.info })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
+
+@Component
+struct MapSampleNestedChild {
+  @ObjectLink myMap: MyMap<number, string>;
+
+  build() {
+    Row() {
+      Column() {
+        ForEach(Array.from(this.myMap.entries()), (item: [number, string]) => {
+          Text(`${item[0]}`).fontSize(30)
+          Text(`${item[1]}`).fontSize(30)
+          Divider().strokeWidth(5)
+        })
+
+        // myMap被@Observed和@ObjectLink装饰，可以被观察到Map整体的赋值以及调用Map接口带来的变化
+        Button('set new one')
+          .width(200)
+          .margin(10)
+          .onClick(() => {
+            this.myMap.set(4, 'd');
+          })
+        Button('clear')
+          .width(200)
+          .margin(10)
+          .onClick(() => {
+            this.myMap.clear();
+          })
+        Button('replace the first one')
+          .width(200)
+          .margin(10)
+          .onClick(() => {
+            this.myMap.set(0, 'aa');
+          })
+        Button('delete the first one')
+          .width(200)
+          .margin(10)
+          .onClick(() => {
+            this.myMap.delete(0);
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-1. @Observed
-2. class Info {
-3. public info: MyMap<number, string>;
 
-5. constructor(info: MyMap<number, string>) {
-6. this.info = info;
-7. }
-8. }
-
-10. @Observed
-11. export class MyMap<K, V> extends Map<K, V> {
-12. public name: string;
-
-14. constructor(name?: string, args?: [K, V][]) {
-15. super(args);
-16. this.name = name ? name : 'My Map';
-17. }
-
-19. getName() {
-20. return this.name;
-21. }
-22. }
-
-24. @Entry
-25. @Component
-26. struct MapSampleNested {
-27. @State message: Info = new Info(new MyMap('myMap', [[0, 'a'], [1, 'b'], [3, 'c']]));
-
-29. build() {
-30. Row() {
-31. Column() {
-32. MapSampleNestedChild({ myMap: this.message.info })
-33. }
-34. .width('100%')
-35. }
-36. .height('100%')
-37. }
-38. }
-
-40. @Component
-41. struct MapSampleNestedChild {
-42. @ObjectLink myMap: MyMap<number, string>;
-
-44. build() {
-45. Row() {
-46. Column() {
-47. ForEach(Array.from(this.myMap.entries()), (item: [number, string]) => {
-48. Text(`${item[0]}`).fontSize(30)
-49. Text(`${item[1]}`).fontSize(30)
-50. Divider().strokeWidth(5)
-51. })
-
-53. // myMap被@Observed和@ObjectLink装饰，可以被观察到Map整体的赋值以及调用Map接口带来的变化
-54. Button('set new one')
-55. .width(200)
-56. .margin(10)
-57. .onClick(() => {
-58. this.myMap.set(4, 'd');
-59. })
-60. Button('clear')
-61. .width(200)
-62. .margin(10)
-63. .onClick(() => {
-64. this.myMap.clear();
-65. })
-66. Button('replace the first one')
-67. .width(200)
-68. .margin(10)
-69. .onClick(() => {
-70. this.myMap.set(0, 'aa');
-71. })
-72. Button('delete the first one')
-73. .width(200)
-74. .margin(10)
-75. .onClick(() => {
-76. this.myMap.delete(0);
-77. })
-78. }
-79. .width('100%')
-80. }
-81. .height('100%')
-82. }
-83. }
-```
-
-[InheritFromMapClass.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedandobjectlink/entry/src/main/ets/pages/objectLinkusagescenarios/InheritFromMapClass.ets#L15-L99)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/7ZzNl04DQP6Ddv_ttQFCIw/zh-cn_image_0000002589323965.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/Lx0F84G_RfS-yThtkwCBbw/zh-cn_image_0000002706673274.gif)
 
 ### 继承Set类
 
-说明
+**说明** 
 
 从API version 11开始，@ObjectLink支持@Observed装饰Set类型和继承Set类的类型。
 
 在下面的示例中，mySet类型为MySet<number>，点击Button改变mySet的属性，视图会随之刷新。
 
+```typescript
+@Observed
+class Info {
+  public info: MySet<number>;
+
+  constructor(info: MySet<number>) {
+    this.info = info;
+  }
+}
+
+@Observed
+export class MySet<T> extends Set<T> {
+  public name: string;
+
+  constructor(name?: string, args?: T[]) {
+    super(args);
+    this.name = name ? name : 'My Set';
+  }
+
+  getName() {
+    return this.name;
+  }
+}
+
+@Entry
+@Component
+struct SetSampleNested {
+  @State message: Info = new Info(new MySet('Set', [0, 1, 2, 3, 4]));
+
+  build() {
+    Row() {
+      Column() {
+        SetSampleNestedChild({ mySet: this.message.info })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
+
+@Component
+struct SetSampleNestedChild {
+  @ObjectLink mySet: MySet<number>;
+
+  build() {
+    Row() {
+      Column() {
+        ForEach(Array.from(this.mySet.entries()), (item: [number, number]) => {
+          Text(`${item}`).fontSize(30)
+          Divider()
+        })
+        // mySet被@Observed和@ObjectLink装饰，可以被观察到Set整体的赋值以及调用Set接口带来的变化
+        Button('set new one')
+          .width(200)
+          .margin(10)
+          .onClick(() => {
+            this.mySet.add(5);
+          })
+        Button('clear')
+          .width(200)
+          .margin(10)
+          .onClick(() => {
+            this.mySet.clear();
+          })
+        Button('delete the first one')
+          .width(200)
+          .margin(10)
+          .onClick(() => {
+            this.mySet.delete(0);
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-1. @Observed
-2. class Info {
-3. public info: MySet<number>;
 
-5. constructor(info: MySet<number>) {
-6. this.info = info;
-7. }
-8. }
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/Pc9Z-LHuSNSnS3pPuJW-_w/zh-cn_image_0000002736432363.gif)
 
-10. @Observed
-11. export class MySet<T> extends Set<T> {
-12. public name: string;
-
-14. constructor(name?: string, args?: T[]) {
-15. super(args);
-16. this.name = name ? name : 'My Set';
-17. }
-
-19. getName() {
-20. return this.name;
-21. }
-22. }
-
-24. @Entry
-25. @Component
-26. struct SetSampleNested {
-27. @State message: Info = new Info(new MySet('Set', [0, 1, 2, 3, 4]));
-
-29. build() {
-30. Row() {
-31. Column() {
-32. SetSampleNestedChild({ mySet: this.message.info })
-33. }
-34. .width('100%')
-35. }
-36. .height('100%')
-37. }
-38. }
-
-40. @Component
-41. struct SetSampleNestedChild {
-42. @ObjectLink mySet: MySet<number>;
-
-44. build() {
-45. Row() {
-46. Column() {
-47. ForEach(Array.from(this.mySet.entries()), (item: [number, number]) => {
-48. Text(`${item}`).fontSize(30)
-49. Divider()
-50. })
-51. // mySet被@Observed和@ObjectLink装饰，可以被观察到Set整体的赋值以及调用Set接口带来的变化
-52. Button('set new one')
-53. .width(200)
-54. .margin(10)
-55. .onClick(() => {
-56. this.mySet.add(5);
-57. })
-58. Button('clear')
-59. .width(200)
-60. .margin(10)
-61. .onClick(() => {
-62. this.mySet.clear();
-63. })
-64. Button('delete the first one')
-65. .width(200)
-66. .margin(10)
-67. .onClick(() => {
-68. this.mySet.delete(0);
-69. })
-70. }
-71. .width('100%')
-72. }
-73. .height('100%')
-74. }
-75. }
-```
-
-[InheritFromSetClass.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedandobjectlink/entry/src/main/ets/pages/objectLinkusagescenarios/InheritFromSetClass.ets#L15-L91)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/qShI7X5qRRGNkPMQDFTE7w/zh-cn_image_0000002589243905.gif)
-
-### ObjectLink支持联合类型
+### @ObjectLink支持联合类型
 
 @ObjectLink支持@Observed装饰类和undefined或null组成的联合类型，在下面的示例中，count类型为Source | Data | undefined，点击父组件Parent中的Button改变count的属性或者类型，Child组件中对应的Text组件刷新。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN = 0x0001;
+const TAG = 'ArkTSObservedAndObjectlink';
+
+@Observed
+class Source {
+  public source: number;
+
+  constructor(source: number) {
+    this.source = source;
+  }
+}
+
+@Observed
+class Data {
+  public data: number;
+
+  constructor(data: number) {
+    this.data = data;
+  }
+}
+
+@Entry
+@Component
+struct Parent {
+  @State count: Source | Data | undefined = new Source(10);
+
+  build() {
+    Column() {
+      Child({ count: this.count })
+
+      Button('change count property')
+        .margin(10)
+        .onClick(() => {
+          // 判断count的类型，做属性的更新
+          if (this.count instanceof Source) {
+            this.count.source += 1;
+          } else if (this.count instanceof Data) {
+            this.count.data += 1;
+          } else {
+            hilog.info(DOMAIN, TAG, `count is undefined, cannot change property`);
+          }
+        })
+
+      Button('change count to Source')
+        .margin(10)
+        .onClick(() => {
+          // 赋值为Source的实例
+          this.count = new Source(100);
+        })
+
+      Button('change count to Data')
+        .margin(10)
+        .onClick(() => {
+          // 赋值为Data的实例
+          this.count = new Data(100);
+        })
+
+      Button('change count to undefined')
+        .margin(10)
+        .onClick(() => {
+          // 赋值为undefined
+          this.count = undefined;
+        })
+    }.width('100%')
+  }
+}
+
+@Component
+struct Child {
+  @ObjectLink count: Source | Data | undefined;
+
+  build() {
+    Column() {
+      Text(`count is instanceof ${this.count instanceof Source ? 'Source' :
+        this.count instanceof Data ? 'Data' : 'undefined'}`)
+        .fontSize(30)
+        .margin(10)
+
+      Text(`count's property is  ${this.count instanceof Source ? this.count.source : this.count?.data}`).fontSize(15)
+
+    }.width('100%')
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. const DOMAIN = 0x0001;
-4. const TAG = 'ArkTSObservedAndObjectlink';
-
-6. @Observed
-7. class Source {
-8. public source: number;
-
-10. constructor(source: number) {
-11. this.source = source;
-12. }
-13. }
-
-15. @Observed
-16. class Data {
-17. public data: number;
-
-19. constructor(data: number) {
-20. this.data = data;
-21. }
-22. }
-
-24. @Entry
-25. @Component
-26. struct Parent {
-27. @State count: Source | Data | undefined = new Source(10);
-
-29. build() {
-30. Column() {
-31. Child({ count: this.count })
-
-33. Button('change count property')
-34. .margin(10)
-35. .onClick(() => {
-36. // 判断count的类型，做属性的更新
-37. if (this.count instanceof Source) {
-38. this.count.source += 1;
-39. } else if (this.count instanceof Data) {
-40. this.count.data += 1;
-41. } else {
-42. hilog.info(DOMAIN, TAG, `count is undefined, cannot change property`);
-43. }
-44. })
-
-46. Button('change count to Source')
-47. .margin(10)
-48. .onClick(() => {
-49. // 赋值为Source的实例
-50. this.count = new Source(100);
-51. })
-
-53. Button('change count to Data')
-54. .margin(10)
-55. .onClick(() => {
-56. // 赋值为Data的实例
-57. this.count = new Data(100);
-58. })
-
-60. Button('change count to undefined')
-61. .margin(10)
-62. .onClick(() => {
-63. // 赋值为undefined
-64. this.count = undefined;
-65. })
-66. }.width('100%')
-67. }
-68. }
-
-70. @Component
-71. struct Child {
-72. @ObjectLink count: Source | Data | undefined;
-
-74. build() {
-75. Column() {
-76. Text(`count is instanceof ${this.count instanceof Source ? 'Source' :
-77. this.count instanceof Data ? 'Data' : 'undefined'}`)
-78. .fontSize(30)
-79. .margin(10)
-
-81. Text(`count's property is  ${this.count instanceof Source ? this.count.source : this.count?.data}`).fontSize(15)
-
-83. }.width('100%')
-84. }
-85. }
-```
-
-[ObjectLinkSupportsUnionTypes.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedandobjectlink/entry/src/main/ets/pages/objectLinkusagescenarios/ObjectLinkSupportsUnionTypes.ets#L15-L102)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/50cWy7oWTzqJeVeHgiqwFA/zh-cn_image_0000002558764098.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/8ad-CsjXTJ6k7st7w22SgA/zh-cn_image_0000002706833210.gif)
 
 ## 常见问题
 
@@ -996,212 +1011,228 @@ API version 19及以后，@ObjectLink也可以被[makeV1Observed](../harmonyos-r
 
 下面的例子中，一些UI组件并不会更新。
 
+```ts
+class Parent {
+  parentId: number;
+
+  constructor(parentId: number) {
+    this.parentId = parentId;
+  }
+
+  getParentId(): number {
+    return this.parentId;
+  }
+
+  setParentId(parentId: number): void {
+    this.parentId = parentId;
+  }
+}
+
+class Child {
+  childId: number;
+
+  constructor(childId: number) {
+    this.childId = childId;
+  }
+
+  getChildId(): number {
+    return this.childId;
+  }
+
+  setChildId(childId: number): void {
+    this.childId = childId;
+  }
+}
+
+class Cousin extends Parent {
+  cousinId: number = 47;
+  child: Child;
+
+  constructor(parentId: number, cousinId: number, childId: number) {
+    super(parentId);
+    this.cousinId = cousinId;
+    this.child = new Child(childId);
+  }
+
+  getCousinId(): number {
+    return this.cousinId;
+  }
+
+  setCousinId(cousinId: number): void {
+    this.cousinId = cousinId;
+  }
+
+  getChild(): number {
+    return this.child.getChildId();
+  }
+
+  setChild(childId: number): void {
+    this.child.setChildId(childId);
+  }
+}
+
+@Entry
+@Component
+struct MyView {
+  @State cousin: Cousin = new Cousin(10, 20, 30);
+
+  build() {
+    Column({ space: 10 }) {
+      Text(`parentId: ${this.cousin.parentId}`)
+      Button('Change Parent.parent')
+        .onClick(() => {
+          this.cousin.parentId += 1;
+        })
+
+      Text(`cousinId: ${this.cousin.cousinId}`)
+      Button('Change Cousin.cousinId')
+        .onClick(() => {
+          this.cousin.cousinId += 1;
+        })
+
+      Text(`childId: ${this.cousin.child.childId}`)
+      Button('Change Cousin.Child.childId')
+        .onClick(() => {
+          // 点击时上面的Text组件不会刷新
+          this.cousin.child.childId += 1;
+        })
+    }
+  }
+}
 ```
-1. class Parent {
-2. parentId: number;
 
-4. constructor(parentId: number) {
-5. this.parentId = parentId;
-6. }
-
-8. getParentId(): number {
-9. return this.parentId;
-10. }
-
-12. setParentId(parentId: number): void {
-13. this.parentId = parentId;
-14. }
-15. }
-
-17. class Child {
-18. childId: number;
-
-20. constructor(childId: number) {
-21. this.childId = childId;
-22. }
-
-24. getChildId(): number {
-25. return this.childId;
-26. }
-
-28. setChildId(childId: number): void {
-29. this.childId = childId;
-30. }
-31. }
-
-33. class Cousin extends Parent {
-34. cousinId: number = 47;
-35. child: Child;
-
-37. constructor(parentId: number, cousinId: number, childId: number) {
-38. super(parentId);
-39. this.cousinId = cousinId;
-40. this.child = new Child(childId);
-41. }
-
-43. getCousinId(): number {
-44. return this.cousinId;
-45. }
-
-47. setCousinId(cousinId: number): void {
-48. this.cousinId = cousinId;
-49. }
-
-51. getChild(): number {
-52. return this.child.getChildId();
-53. }
-
-55. setChild(childId: number): void {
-56. this.child.setChildId(childId);
-57. }
-58. }
-
-60. @Entry
-61. @Component
-62. struct MyView {
-63. @State cousin: Cousin = new Cousin(10, 20, 30);
-
-65. build() {
-66. Column({ space: 10 }) {
-67. Text(`parentId: ${this.cousin.parentId}`)
-68. Button('Change Parent.parent')
-69. .onClick(() => {
-70. this.cousin.parentId += 1;
-71. })
-
-73. Text(`cousinId: ${this.cousin.cousinId}`)
-74. Button('Change Cousin.cousinId')
-75. .onClick(() => {
-76. this.cousin.cousinId += 1;
-77. })
-
-79. Text(`childId: ${this.cousin.child.childId}`)
-80. Button('Change Cousin.Child.childId')
-81. .onClick(() => {
-82. // 点击时上面的Text组件不会刷新
-83. this.cousin.child.childId += 1;
-84. })
-85. }
-86. }
-87. }
-```
-
-* 最后一个Text组件Text('child: ${this.cousin.child.childId}')，当点击该组件时UI不会刷新。 因为，@State cousin : Cousin 只能观察到this.cousin属性的变化，比如this.cousin.parentId, this.cousin.cousinId 和this.cousin.child的变化，但是无法观察嵌套在属性中的属性，即this.cousin.child.childId（属性childId是内嵌在cousin中的对象Child的属性）。
+* 最后一个Text组件Text(childId: ${this.cousin.child.childId})，当点击该组件时UI不会刷新。 因为，@State cousin : Cousin 只能观察到this.cousin属性的变化，比如this.cousin.parentId, this.cousin.cousinId 和this.cousin.child的变化，但是无法观察嵌套在属性中的属性，即this.cousin.child.childId（属性childId是内嵌在cousin中的对象Child的属性）。
 * 为了观察到嵌套于内部的Child的属性，需要做如下改变：
 
   + 构造一个子组件，用于单独渲染Child的实例。 该子组件可以使用@ObjectLink child : Child或@Prop child : Child。通常会使用@ObjectLink，除非子组件需要对其Child对象进行本地修改。
-  + 嵌套的Child必须用@Observed装饰。当在Cousin中创建Child对象时（本示例中的Cousin(10, 20, 30）)，它将被包装在ES6代理中，当Child属性更改时（this.cousin.child.childId += 1），该代码将修改通知到@ObjectLink变量。
+  + 嵌套的Child必须用@Observed装饰。当在Cousin中创建Child对象时（本示例中的Cousin(10, 20, 30)），它将被包装在ES6代理中，当Child属性更改时（this.cousin.child.childId += 1），该代码将修改通知到@ObjectLink变量。
 
 【正例】
 
 以下示例使用@Observed/@ObjectLink来观察嵌套对象的属性更改。
 
+```typescript
+class Parent {
+  public parentId: number;
+
+  constructor(parentId: number) {
+    this.parentId = parentId;
+  }
+
+  getParentId(): number {
+    return this.parentId;
+  }
+
+  setParentId(parentId: number): void {
+    this.parentId = parentId;
+  }
+}
+
+@Observed
+class Child {
+  public childId: number;
+
+  constructor(childId: number) {
+    this.childId = childId;
+  }
+
+  getChildId(): number {
+    return this.childId;
+  }
+
+  setChildId(childId: number): void {
+    this.childId = childId;
+  }
+}
+
+class Cousin extends Parent {
+  public cousinId: number = 47;
+  public child: Child;
+
+  constructor(parentId: number, cousinId: number, childId: number) {
+    super(parentId);
+    this.cousinId = cousinId;
+    this.child = new Child(childId);
+  }
+
+  getCousinId(): number {
+    return this.cousinId;
+  }
+
+  setCousinId(cousinId: number): void {
+    this.cousinId = cousinId;
+  }
+
+  getChild(): number {
+    return this.child.getChildId();
+  }
+
+  setChild(childId: number): void {
+    this.child.setChildId(childId);
+  }
+}
+
+@Component
+struct ViewChild {
+  @ObjectLink child: Child;
+
+  build() {
+    Column({ space: 10 }) {
+      Text(`childId: ${this.child.getChildId()}`)
+        .fontSize(20)
+        .margin(10)
+      Button('Change childId')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.child.setChildId(this.child.getChildId() + 1);
+        })
+    }
+    .width('100%')
+  }
+}
+
+@Entry
+@Component
+struct MyView {
+  @State cousin: Cousin = new Cousin(10, 20, 30);
+
+  build() {
+    Column({ space: 10 }) {
+      Text(`parentId: ${this.cousin.parentId}`)
+        .fontSize(20)
+        .margin(10)
+      Button('Change Parent.parentId')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.cousin.parentId += 1;
+        })
+
+      Text(`cousinId: ${this.cousin.cousinId}`)
+        .fontSize(20)
+        .margin(10)
+      Button('Change Cousin.cousinId')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.cousin.cousinId += 1;
+        })
+
+      ViewChild({ child: this.cousin.child }) // Text(`childId: ${this.cousin.child.childId}`)的替代写法
+      Button('Change Cousin.Child.childId')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.cousin.child.childId += 1;
+        })
+    }
+    .width('100%')
+  }
+}
 ```
-1. class Parent {
-2. public parentId: number;
 
-4. constructor(parentId: number) {
-5. this.parentId = parentId;
-6. }
-
-8. getParentId(): number {
-9. return this.parentId;
-10. }
-
-12. setParentId(parentId: number): void {
-13. this.parentId = parentId;
-14. }
-15. }
-
-17. @Observed
-18. class Child {
-19. public childId: number;
-
-21. constructor(childId: number) {
-22. this.childId = childId;
-23. }
-
-25. getChildId(): number {
-26. return this.childId;
-27. }
-
-29. setChildId(childId: number): void {
-30. this.childId = childId;
-31. }
-32. }
-
-34. class Cousin extends Parent {
-35. public cousinId: number = 47;
-36. public child: Child;
-
-38. constructor(parentId: number, cousinId: number, childId: number) {
-39. super(parentId);
-40. this.cousinId = cousinId;
-41. this.child = new Child(childId);
-42. }
-
-44. getCousinId(): number {
-45. return this.cousinId;
-46. }
-
-48. setCousinId(cousinId: number): void {
-49. this.cousinId = cousinId;
-50. }
-
-52. getChild(): number {
-53. return this.child.getChildId();
-54. }
-
-56. setChild(childId: number): void {
-57. this.child.setChildId(childId);
-58. }
-59. }
-
-61. @Component
-62. struct ViewChild {
-63. @ObjectLink child: Child;
-
-65. build() {
-66. Column({ space: 10 }) {
-67. Text(`childId: ${this.child.getChildId()}`)
-68. Button('Change childId')
-69. .onClick(() => {
-70. this.child.setChildId(this.child.getChildId() + 1);
-71. })
-72. }
-73. }
-74. }
-
-76. @Entry
-77. @Component
-78. struct MyView {
-79. @State cousin: Cousin = new Cousin(10, 20, 30);
-
-81. build() {
-82. Column({ space: 10 }) {
-83. Text(`parentId: ${this.cousin.parentId}`)
-84. Button('Change Parent.parentId')
-85. .onClick(() => {
-86. this.cousin.parentId += 1;
-87. })
-
-89. Text(`cousinId: ${this.cousin.cousinId}`)
-90. Button('Change Cousin.cousinId')
-91. .onClick(() => {
-92. this.cousin.cousinId += 1;
-93. })
-
-95. ViewChild({ child: this.cousin.child }) // Text(`childId: ${this.cousin.child.childId}`)的替代写法
-96. Button('Change Cousin.Child.childId')
-97. .onClick(() => {
-98. this.cousin.child.childId += 1;
-99. })
-100. }
-101. }
-102. }
-```
-
-[BasicNesting.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedandobjectlink/entry/src/main/ets/pages/ObservedAndObjectLinkFAQs/BasicNesting.ets#L15-L118)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/RcNnXFSuS0O4LRoYAQmYJQ/zh-cn_image_0000002736312319.gif)
 
 ### 复杂嵌套对象属性更改失效
 
@@ -1209,95 +1240,95 @@ API version 19及以后，@ObjectLink也可以被[makeV1Observed](../harmonyos-r
 
 以下示例创建了一个带有@ObjectLink装饰变量的子组件，用于渲染一个含有嵌套属性的ParentCounter，用@Observed装饰嵌套在ParentCounter中的SubCounter。
 
-```
-1. let nextId = 1;
-2. @Observed
-3. class SubCounter {
-4. counter: number;
-5. constructor(c: number) {
-6. this.counter = c;
-7. }
-8. }
-9. @Observed
-10. class ParentCounter {
-11. id: number;
-12. counter: number;
-13. subCounter: SubCounter;
-14. incrCounter() {
-15. this.counter++;
-16. }
-17. incrSubCounter(c: number) {
-18. this.subCounter.counter += c;
-19. }
-20. setSubCounter(c: number): void {
-21. this.subCounter.counter = c;
-22. }
-23. constructor(c: number) {
-24. this.id = nextId++;
-25. this.counter = c;
-26. this.subCounter = new SubCounter(c);
-27. }
-28. }
-29. @Component
-30. struct CounterComp {
-31. @ObjectLink value: ParentCounter;
-32. build() {
-33. Column({ space: 10 }) {
-34. Text(`${this.value.counter}`)
-35. .fontSize(25)
-36. .onClick(() => {
-37. this.value.incrCounter();
-38. })
-39. Text(`${this.value.subCounter.counter}`)
-40. .onClick(() => {
-41. this.value.incrSubCounter(1);
-42. })
-43. Divider().height(2)
-44. }
-45. }
-46. }
-47. @Entry
-48. @Component
-49. struct ParentComp {
-50. @State counter: ParentCounter[] = [new ParentCounter(1), new ParentCounter(2), new ParentCounter(3)];
-51. build() {
-52. Row() {
-53. Column() {
-54. CounterComp({ value: this.counter[0] })
-55. CounterComp({ value: this.counter[1] })
-56. CounterComp({ value: this.counter[2] })
-57. Divider().height(5)
-58. ForEach(this.counter,
-59. (item: ParentCounter) => {
-60. CounterComp({ value: item })
-61. },
-62. (item: ParentCounter) => item.id.toString()
-63. )
-64. Divider().height(5)
-65. // 第一个点击事件
-66. Text('Parent: incr counter[0].counter')
-67. .fontSize(20).height(50)
-68. .onClick(() => {
-69. this.counter[0].incrCounter();
-70. // 每次触发时自增10
-71. this.counter[0].incrSubCounter(10);
-72. })
-73. // 第二个点击事件
-74. Text('Parent: set.counter to 10')
-75. .fontSize(20).height(50)
-76. .onClick(() => {
-77. // 无法将value设置为10，UI不会刷新
-78. this.counter[0].setSubCounter(10);
-79. })
-80. Text('Parent: reset entire counter')
-81. .fontSize(20).height(50)
-82. .onClick(() => {
-83. this.counter = [new ParentCounter(1), new ParentCounter(2), new ParentCounter(3)];
-84. })
-85. }
-86. }
-87. }
-88. }
+```ts
+let nextId = 1;
+@Observed
+class SubCounter {
+  counter: number;
+  constructor(c: number) {
+    this.counter = c;
+  }
+}
+@Observed
+class ParentCounter {
+  id: number;
+  counter: number;
+  subCounter: SubCounter;
+  incrCounter() {
+    this.counter++;
+  }
+  incrSubCounter(c: number) {
+    this.subCounter.counter += c;
+  }
+  setSubCounter(c: number): void {
+    this.subCounter.counter = c;
+  }
+  constructor(c: number) {
+    this.id = nextId++;
+    this.counter = c;
+    this.subCounter = new SubCounter(c);
+  }
+}
+@Component
+struct CounterComp {
+  @ObjectLink value: ParentCounter;
+  build() {
+    Column({ space: 10 }) {
+      Text(`${this.value.counter}`)
+        .fontSize(25)
+        .onClick(() => {
+          this.value.incrCounter();
+        })
+      Text(`${this.value.subCounter.counter}`)
+        .onClick(() => {
+          this.value.incrSubCounter(1);
+        })
+      Divider().height(2)
+    }
+  }
+}
+@Entry
+@Component
+struct ParentComp {
+  @State counter: ParentCounter[] = [new ParentCounter(1), new ParentCounter(2), new ParentCounter(3)];
+  build() {
+    Row() {
+      Column() {
+        CounterComp({ value: this.counter[0] })
+        CounterComp({ value: this.counter[1] })
+        CounterComp({ value: this.counter[2] })
+        Divider().height(5)
+        ForEach(this.counter,
+          (item: ParentCounter) => {
+            CounterComp({ value: item })
+          },
+          (item: ParentCounter) => item.id.toString()
+        )
+        Divider().height(5)
+        // 第一个点击事件
+        Text('Parent: incr counter[0].counter')
+          .fontSize(20).height(50)
+          .onClick(() => {
+            this.counter[0].incrCounter();
+            // 每次触发时自增10
+            this.counter[0].incrSubCounter(10);
+          })
+        // 第二个点击事件
+        Text('Parent: set.counter to 10')
+          .fontSize(20).height(50)
+          .onClick(() => {
+            // 无法将value设置为10，UI不会刷新
+            this.counter[0].setSubCounter(10);
+          })
+        Text('Parent: reset entire counter')
+          .fontSize(20).height(50)
+          .onClick(() => {
+            this.counter = [new ParentCounter(1), new ParentCounter(2), new ParentCounter(3)];
+          })
+      }
+    }
+  }
+}
 ```
 
 对于Text('Parent: incr counter[0].counter')的onClick事件，this.counter[0].incrSubCounter(10)调用incrSubCounter方法使SubCounter的counter值增加10，UI同步刷新。
@@ -1312,190 +1343,201 @@ incrSubCounter和setSubCounter都是同一个SubCounter的函数。在第一个�
 
 对于上述问题，为了直接观察SubCounter中的属性，以便this.counter[0].setSubCounter(10)操作有效，可以利用下面的方法：
 
+```typescript
+let nextId = 1;
+
+@Observed
+class SubCounter {
+  public counter: number;
+
+  constructor(c: number) {
+    this.counter = c;
+  }
+}
+
+@Observed
+class ParentCounter {
+  public id: number;
+  public counter: number;
+  public subCounter: SubCounter;
+
+  incrCounter() {
+    this.counter++;
+  }
+
+  incrSubCounter(c: number) {
+    this.subCounter.counter += c;
+  }
+
+  setSubCounter(c: number): void {
+    this.subCounter.counter = c;
+  }
+
+  constructor(c: number) {
+    this.id = nextId++;
+    this.counter = c;
+    this.subCounter = new SubCounter(c);
+  }
+}
+
+@Entry
+@Component
+struct ParentComp {
+  @State counter: ParentCounter[] = [new ParentCounter(1), new ParentCounter(2), new ParentCounter(3)];
+  build() {
+    Row() {
+        CounterComp({ value: this.counter[0] }) // ParentComp组件传递 ParentCounter 给 CounterComp 组件
+    }
+  }
+}
+
+@Component
+struct CounterComp {
+  @ObjectLink value: ParentCounter; // @ObjectLink 接收 ParentCounter
+  build() {
+      // CounterChild 是 CounterComp 的子组件，CounterComp 传递 this.value.subCounter 给 CounterChild 组件
+      CounterChild({ subValue: this.value.subCounter })
+  }
+}
+
+@Component
+struct CounterChild {
+  @ObjectLink subValue: SubCounter; // @ObjectLink 接收 SubCounter
+  build() {
+    Text(`${this.subValue.counter}`)
+      .fontSize(20)
+      .margin(10)
+      .onClick(() => {
+        this.subValue.counter += 1;
+      })
+  }
+}
 ```
-1. let nextId = 1;
 
-3. @Observed
-4. class SubCounter {
-5. public counter: number;
-
-7. constructor(c: number) {
-8. this.counter = c;
-9. }
-10. }
-
-12. @Observed
-13. class ParentCounter {
-14. public id: number;
-15. public counter: number;
-16. public subCounter: SubCounter;
-
-18. incrCounter() {
-19. this.counter++;
-20. }
-
-22. incrSubCounter(c: number) {
-23. this.subCounter.counter += c;
-24. }
-
-26. setSubCounter(c: number): void {
-27. this.subCounter.counter = c;
-28. }
-
-30. constructor(c: number) {
-31. this.id = nextId++;
-32. this.counter = c;
-33. this.subCounter = new SubCounter(c);
-34. }
-35. }
-
-38. @Entry
-39. @Component
-40. struct ParentComp {
-41. @State counter: ParentCounter[] = [new ParentCounter(1), new ParentCounter(2), new ParentCounter(3)];
-42. build() {
-43. Row() {
-44. CounterComp({ value: this.counter[0] }) // ParentComp组件传递 ParentCounter 给 CounterComp 组件
-45. }
-46. }
-47. }
-
-49. @Component
-50. struct CounterComp {
-51. @ObjectLink value: ParentCounter; // @ObjectLink 接收 ParentCounter
-52. build() {
-53. // CounterChild 是 CounterComp 的子组件，CounterComp 传递 this.value.subCounter 给 CounterChild 组件
-54. CounterChild({ subValue: this.value.subCounter })
-55. }
-56. }
-
-58. @Component
-59. struct CounterChild {
-60. @ObjectLink subValue: SubCounter; // @ObjectLink 接收 SubCounter
-61. build() {
-62. Text(`${this.subValue.counter}`)
-63. .onClick(() => {
-64. this.subValue.counter += 1;
-65. })
-66. }
-67. }
-```
-
-[ComplexMethodsNesting.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedandobjectlink/entry/src/main/ets/pages/ObservedAndObjectLinkFAQs/ComplexMethodsNesting.ets#L15-L83)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/CFu3XYU8QpWi_cCs-_zgHQ/zh-cn_image_0000002706673276.gif)
 
 该方法使得@ObjectLink分别代理了ParentCounter和SubCounter的属性，这样对于这两个类的属性的变化都可以观察到，即都会对UI视图进行刷新。即使删除了上面所说的this.counter[0].incrCounter()，UI也会进行正确的刷新。
 
 该方法可用于实现“两个层级”的观察，即外部对象和内部嵌套对象的观察。但是该方法只能用于@ObjectLink装饰器，无法作用于@Prop（@Prop通过深拷贝传入对象）。详情参考[@Prop与@ObjectLink的差异](arkts-observed-and-objectlink.md#prop与objectlink的差异)。
 
+```typescript
+let nextId = 1;
+
+@Observed
+class SubCounter {
+  public counter: number;
+
+  constructor(c: number) {
+    this.counter = c;
+  }
+}
+
+@Observed
+class ParentCounter {
+  public id: number;
+  public counter: number;
+  public subCounter: SubCounter;
+
+  incrCounter() {
+    this.counter++;
+  }
+
+  incrSubCounter(c: number) {
+    this.subCounter.counter += c;
+  }
+
+  setSubCounter(c: number): void {
+    this.subCounter.counter = c;
+  }
+
+  constructor(c: number) {
+    this.id = nextId++;
+    this.counter = c;
+    this.subCounter = new SubCounter(c);
+  }
+}
+
+@Component
+struct CounterComp {
+  @ObjectLink value: ParentCounter;
+
+  build() {
+    Column({ space: 10 }) {
+      Text(`${this.value.counter}`)
+        .fontSize(25)
+        .onClick(() => {
+          this.value.incrCounter();
+        })
+      CounterChild({ subValue: this.value.subCounter })
+      Divider().height(2)
+    }
+    .width('100%')
+  }
+}
+
+@Component
+struct CounterChild {
+  @ObjectLink subValue: SubCounter;
+
+  build() {
+    Text(`${this.subValue.counter}`)
+      .fontSize(20)
+      .onClick(() => {
+        this.subValue.counter += 1;
+      })
+  }
+}
+
+@Entry
+@Component
+struct ParentComp {
+  // @ObjectLink分别代理了ParentCounter和SubCounter的属性，这两个类的属性的变化都可以观察到
+  @State counter: ParentCounter[] = [new ParentCounter(1), new ParentCounter(2), new ParentCounter(3)];
+
+  build() {
+    Row() {
+      Column() {
+        CounterComp({ value: this.counter[0] })
+        CounterComp({ value: this.counter[1] })
+        CounterComp({ value: this.counter[2] })
+        Divider().height(5)
+        ForEach(this.counter,
+          (item: ParentCounter) => {
+            CounterComp({ value: item })
+          },
+          (item: ParentCounter) => item.id.toString()
+        )
+        Divider().height(5)
+        Text('Parent: reset entire counter')
+          .fontSize(20)
+          .margin(5)
+          .height(50)
+          .onClick(() => {
+            this.counter = [new ParentCounter(1), new ParentCounter(2), new ParentCounter(3)];
+          })
+        Text('Parent: incr counter[0].counter')
+          .fontSize(20)
+          .margin(5)
+          .height(50)
+          .onClick(() => {
+            this.counter[0].incrCounter();
+            this.counter[0].incrSubCounter(10);
+          })
+        Text('Parent: set.counter to 10')
+          .fontSize(20)
+          .margin(5)
+          .height(50)
+          .onClick(() => {
+            this.counter[0].setSubCounter(10);
+          })
+      }
+      .width('100%')
+    }
+  }
+}
 ```
-1. let nextId = 1;
 
-3. @Observed
-4. class SubCounter {
-5. public counter: number;
-
-7. constructor(c: number) {
-8. this.counter = c;
-9. }
-10. }
-
-12. @Observed
-13. class ParentCounter {
-14. public id: number;
-15. public counter: number;
-16. public subCounter: SubCounter;
-
-18. incrCounter() {
-19. this.counter++;
-20. }
-
-22. incrSubCounter(c: number) {
-23. this.subCounter.counter += c;
-24. }
-
-26. setSubCounter(c: number): void {
-27. this.subCounter.counter = c;
-28. }
-
-30. constructor(c: number) {
-31. this.id = nextId++;
-32. this.counter = c;
-33. this.subCounter = new SubCounter(c);
-34. }
-35. }
-
-37. @Component
-38. struct CounterComp {
-39. @ObjectLink value: ParentCounter;
-
-41. build() {
-42. Column({ space: 10 }) {
-43. Text(`${this.value.counter}`)
-44. .fontSize(25)
-45. .onClick(() => {
-46. this.value.incrCounter();
-47. })
-48. CounterChild({ subValue: this.value.subCounter })
-49. Divider().height(2)
-50. }
-51. }
-52. }
-
-54. @Component
-55. struct CounterChild {
-56. @ObjectLink subValue: SubCounter;
-
-58. build() {
-59. Text(`${this.subValue.counter}`)
-60. .onClick(() => {
-61. this.subValue.counter += 1;
-62. })
-63. }
-64. }
-
-66. @Entry
-67. @Component
-68. struct ParentComp {
-69. // @ObjectLink分别代理了ParentCounter和SubCounter的属性，这两个类的属性的变化都可以观察到
-70. @State counter: ParentCounter[] = [new ParentCounter(1), new ParentCounter(2), new ParentCounter(3)];
-
-72. build() {
-73. Row() {
-74. Column() {
-75. CounterComp({ value: this.counter[0] })
-76. CounterComp({ value: this.counter[1] })
-77. CounterComp({ value: this.counter[2] })
-78. Divider().height(5)
-79. ForEach(this.counter,
-80. (item: ParentCounter) => {
-81. CounterComp({ value: item })
-82. },
-83. (item: ParentCounter) => item.id.toString()
-84. )
-85. Divider().height(5)
-86. Text('Parent: reset entire counter')
-87. .fontSize(20).height(50)
-88. .onClick(() => {
-89. this.counter = [new ParentCounter(1), new ParentCounter(2), new ParentCounter(3)];
-90. })
-91. Text('Parent: incr counter[0].counter')
-92. .fontSize(20).height(50)
-93. .onClick(() => {
-94. this.counter[0].incrCounter();
-95. this.counter[0].incrSubCounter(10);
-96. })
-97. Text('Parent: set.counter to 10')
-98. .fontSize(20).height(50)
-99. .onClick(() => {
-100. this.counter[0].setSubCounter(10);
-101. })
-102. }
-103. }
-104. }
-105. }
-```
-
-[ComplexNestingComplete.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedandobjectlink/entry/src/main/ets/pages/ObservedAndObjectLinkFAQs/ComplexNestingComplete.ets#L15-L121)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/ZybMi6s3RhW83POsjEg2Ew/zh-cn_image_0000002736432365.gif)
 
 ### @Prop与@ObjectLink的差异
 
@@ -1506,59 +1548,71 @@ incrSubCounter和setSubCounter都是同一个SubCounter的函数。在第一个�
 1. 修改@ObjectLink装饰的对象内容将影响数据源对象，并重新同步给@Prop，因此两个Text组件都将刷新。
 2. 修改@Prop装饰的对象内容仅影响使用该对象的Text2组件，不会影响数据源对象。
 
+```typescript
+let nextId = 0;
+
+@Observed
+class User {
+  public id: number;
+
+  constructor() {
+    this.id = nextId++;
+  }
+}
+
+@Entry
+@Component
+struct Index {
+  @State users: User[] = [new User(), new User(), new User()];
+
+  build() {
+    Column() {
+      UserChild({ firstUserByObjectLink: this.users[0], firstUserByProp: this.users[0] })
+    }
+    .width('100%')
+  }
+}
+
+@Component
+struct UserChild {
+  @ObjectLink firstUserByObjectLink: User;
+  @Prop firstUserByProp: User;
+
+  build() {
+    Column() {
+      // 比较结果为false说明@Prop经过深拷贝后得到的对象与原对象已不是同一个对象
+      Text(`firstUserByObjectLink equals firstUserByProp? : ${this.firstUserByObjectLink === this.firstUserByProp}`)
+        .fontSize(20)
+        .margin(10)
+      Text(`UserChild firstUserByObjectLink.id: ${this.firstUserByObjectLink.id}`) // Text1
+        .fontSize(20)
+        .margin(10)
+      Text(`UserChild firstUserByProp.id: ${this.firstUserByProp.id}`) // Text2
+        .fontSize(20)
+        .margin(10)
+      Button('change @ObjectLink value')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.firstUserByObjectLink.id++;
+        })
+      Button('change @Prop value')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.firstUserByProp.id++;
+        })
+    }
+    .width('100%')
+  }
+}
 ```
-1. let nextId = 0;
 
-3. @Observed
-4. class User {
-5. public id: number;
-
-7. constructor() {
-8. this.id = nextId++;
-9. }
-10. }
-
-12. @Entry
-13. @Component
-14. struct Index {
-15. @State users: User[] = [new User(), new User(), new User()];
-
-17. build() {
-18. Column() {
-19. UserChild({ firstUserByObjectLink: this.users[0], firstUserByProp: this.users[0] })
-20. }
-21. }
-22. }
-
-24. @Component
-25. struct UserChild {
-26. @ObjectLink firstUserByObjectLink: User;
-27. @Prop firstUserByProp: User;
-
-29. build() {
-30. Column() {
-31. // 比较结果为false说明@Prop经过深拷贝后得到的对象与原对象已不是同一个对象
-32. Text(`firstUserByObjectLink equals firstUserByProp? : ${this.firstUserByObjectLink === this.firstUserByProp}`)
-33. Text(`UserChild firstUserByObjectLink.id: ${this.firstUserByObjectLink.id}`) // Text1
-34. Text(`UserChild firstUserByProp.id: ${this.firstUserByProp.id}`) // Text2
-35. Button('change @ObjectLink value')
-36. .onClick(() => {
-37. this.firstUserByObjectLink.id++;
-38. })
-39. Button('change @Prop value')
-40. .onClick(() => {
-41. this.firstUserByProp.id++;
-42. })
-43. }
-44. }
-45. }
-```
-
-[DifferencesPropObjectLink.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedandobjectlink/entry/src/main/ets/pages/ObservedAndObjectLinkFAQs/DifferencesPropObjectLink.ets#L15-L61)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/tDrvqrzkQiiEP2WdTSYhZg/zh-cn_image_0000002706833212.gif)
 
 上面的示例关系如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/b2u59-lMQDWcYkikHlMkTw/zh-cn_image_0000002558604442.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/9NsS3RrdQJq0JgmonTEyiA/zh-cn_image_0000002736312321.jpg)
 
 ### 在@Observed装饰类的构造函数中延时更改成员变量
 
@@ -1568,183 +1622,190 @@ incrSubCounter和setSubCounter都是同一个SubCounter的函数。在第一个�
 
 【反例】
 
-```
-1. @Observed
-2. class RenderClass {
-3. waitToRender: boolean = false;
+```ts
+@Observed
+class RenderClass {
+  waitToRender: boolean = false;
 
-5. constructor() {
-6. setTimeout(() => {
-7. this.waitToRender = true;
-8. console.info('更改waitToRender的值为：' + this.waitToRender);
-9. }, 1000)
-10. }
-11. }
+  constructor() {
+    setTimeout(() => {
+      this.waitToRender = true;
+      console.info('更改waitToRender的值为：' + this.waitToRender);
+    }, 1000)
+  }
+}
 
-13. @Entry
-14. @Component
-15. struct Index {
-16. @State @Watch('renderClassChange') renderClass: RenderClass = new RenderClass();
-17. @State textColor: Color = Color.Black;
+@Entry
+@Component
+struct Index {
+  @State @Watch('renderClassChange') renderClass: RenderClass = new RenderClass();
+  @State textColor: Color = Color.Black;
 
-19. renderClassChange() {
-20. console.info('renderClass的值被更改为：' + this.renderClass.waitToRender);
-21. }
+  renderClassChange() {
+    console.info('renderClass的值被更改为：' + this.renderClass.waitToRender);
+  }
 
-23. build() {
-24. Row() {
-25. Column() {
-26. Text('renderClass的值为：' + this.renderClass.waitToRender)
-27. .fontSize(20)
-28. .fontColor(this.textColor)
-29. Button('Show')
-30. .onClick(() => {
-31. // 使用其他状态变量强行刷新UI的做法并不推荐，此处仅用来检测waitToRender的值是否更新
-32. this.textColor = Color.Red;
-33. })
-34. }
-35. .width('100%')
-36. }
-37. .height('100%')
-38. }
-39. }
+  build() {
+    Row() {
+      Column() {
+        Text('renderClass的值为：' + this.renderClass.waitToRender)
+          .fontSize(20)
+          .fontColor(this.textColor)
+        Button('Show')
+          .onClick(() => {
+            // 使用其他状态变量强行刷新UI的做法并不推荐，此处仅用来检测waitToRender的值是否更新
+            this.textColor = Color.Red;
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 上文的示例代码中在RenderClass的构造函数中使用定时器在1秒后修改了waitToRender的值，但是不会触发UI的刷新。此时，点击按钮强行刷新Text组件，可以看到waitToRender的值已经被修改成了true。
 
 【正例】
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN = 0x0001;
+const TAG = 'ArkTSObservedAndObjectlink';
+
+@Observed
+class RenderClass {
+  public waitToRender: boolean = false;
+
+  constructor() {
+  }
+}
+
+@Entry
+@Component
+struct DelayedChangeIndex {
+  @State @Watch('renderClassChange') renderClass: RenderClass = new RenderClass();
+
+  renderClassChange() {
+    hilog.info(DOMAIN, TAG, `The value of renderClass is changed to: ${this.renderClass.waitToRender}`);
+  }
+
+  onPageShow() {
+    setTimeout(() => {
+      this.renderClass.waitToRender = true;
+    }, 1000);
+  }
+
+  build() {
+    Row() {
+      Column() {
+        Text(`The value of renderClass is: ${this.renderClass.waitToRender}`)
+          .fontSize(20)
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. const DOMAIN = 0x0001;
-4. const TAG = 'ArkTSObservedAndObjectlink';
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/xVY3PL6ZRUm8SDRkMN6TJw/zh-cn_image_0000002706673278.png)
 
-6. @Observed
-7. class RenderClass {
-8. public waitToRender: boolean = false;
-
-10. constructor() {
-11. }
-12. }
-
-14. @Entry
-15. @Component
-16. struct DelayedChangeIndex {
-17. @State @Watch('renderClassChange') renderClass: RenderClass = new RenderClass();
-
-19. renderClassChange() {
-20. hilog.info(DOMAIN, TAG, `The value of renderClass is changed to: ${this.renderClass.waitToRender}`);
-21. }
-
-23. onPageShow() {
-24. setTimeout(() => {
-25. this.renderClass.waitToRender = true;
-26. }, 1000);
-27. }
-
-29. build() {
-30. Row() {
-31. Column() {
-32. Text(`The value of renderClass is: ${this.renderClass.waitToRender}`)
-33. .fontSize(20)
-34. }
-35. .width('100%')
-36. }
-37. .height('100%')
-38. }
-39. }
-```
-
-[DelayedChange.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedandobjectlink/entry/src/main/ets/pages/ObservedAndObjectLinkFAQs/DelayedChange.ets#L15-L55)
-
-上文的示例代码将定时器修改移入到组件内，此时界面显示时会先显示“The value of renderClass is：false”。待定时器触发时，renderClass的值改变，触发[@Watch](arkts-watch.md)回调，此时界面刷新显示“The value of renderClass is：true”，日志输出“The value of renderClass is changed to：true”。
+上文的示例代码将定时器修改移入到组件内，此时界面显示时会先显示“The value of renderClass is: false”。待定时器触发时，renderClass的值改变，触发[@Watch](arkts-watch.md)回调，此时界面刷新显示“The value of renderClass is: true”，日志输出“The value of renderClass is changed to: true”。
 
 因此，更推荐开发者在组件中对@Observed装饰的类成员变量进行修改，以实现刷新。
 
 ### @ObjectLink数据源更新时机
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN = 0x0001;
+const TAG = 'ArkTSObservedAndObjectlink';
+
+@Observed
+class Person {
+  public name: string = '';
+  public age: number = 0;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+@Observed
+class Info {
+  public person: Person;
+
+  constructor(person: Person) {
+    this.person = person;
+  }
+}
+
+@Entry
+@Component
+struct Parent {
+  @State @Watch('onChange01') info: Info =
+    new Info(
+      new Person('Bob', 10)
+    );
+
+  onChange01() {
+    hilog.info(DOMAIN, TAG, `:::onChange01: + ${this.info.person.name}`); // 2
+  }
+
+  build() {
+    Column() {
+      Text(this.info.person.name)
+        .fontSize(20)
+        .margin(10)
+        .height(40)
+      Child({
+        per: this.info.person, clickEvent: () => {
+          hilog.info(DOMAIN, TAG, `:::clickEvent before ${this.info.person.name}`); // 1
+          this.info.person = new Person('Jack', 12);
+          hilog.info(DOMAIN, TAG, `:::clickEvent after ${this.info.person.name}`); // 3
+        }
+      })
+    }
+    .width('100%')
+  }
+}
+
+@Component
+struct Child {
+  @ObjectLink @Watch('onChange02') per: Person;
+  clickEvent?: () => void;
+
+  onChange02() {
+    hilog.info(DOMAIN, TAG, `:::onChange02:${this.per.name}`); // 5
+  }
+
+  build() {
+    Column() {
+      Button(this.per.name)
+        .width(300)
+        .margin(10)
+        .height(40)
+        .onClick(() => {
+          this.onClickType();
+        })
+    }
+    .width('100%')
+  }
+
+  private onClickType() {
+    if (this.clickEvent) {
+      this.clickEvent();
+    }
+    hilog.info(DOMAIN, TAG, `:::--------this.per.name in Child is still: ${this.per.name}`); // 4
+  };
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. const DOMAIN = 0x0001;
-4. const TAG = 'ArkTSObservedAndObjectlink';
-
-6. @Observed
-7. class Person {
-8. public name: string = '';
-9. public age: number = 0;
-
-11. constructor(name: string, age: number) {
-12. this.name = name;
-13. this.age = age;
-14. }
-15. }
-
-17. @Observed
-18. class Info {
-19. public person: Person;
-
-21. constructor(person: Person) {
-22. this.person = person;
-23. }
-24. }
-
-26. @Entry
-27. @Component
-28. struct Parent {
-29. @State @Watch('onChange01') info: Info =
-30. new Info(
-31. new Person('Bob', 10)
-32. );
-
-34. onChange01() {
-35. hilog.info(DOMAIN, TAG, `:::onChange01: + ${this.info.person.name}`); // 2
-36. }
-
-38. build() {
-39. Column() {
-40. Text(this.info.person.name).height(40)
-41. Child({
-42. per: this.info.person, clickEvent: () => {
-43. hilog.info(DOMAIN, TAG, `:::clickEvent before ${this.info.person.name}`); // 1
-44. this.info.person = new Person('Jack', 12);
-45. hilog.info(DOMAIN, TAG, `:::clickEvent after ${this.info.person.name}`); // 3
-46. }
-47. })
-48. }
-49. }
-50. }
-
-52. @Component
-53. struct Child {
-54. @ObjectLink @Watch('onChange02') per: Person;
-55. clickEvent?: () => void;
-
-57. onChange02() {
-58. hilog.info(DOMAIN, TAG, `:::onChange02:${this.per.name}`); // 5
-59. }
-
-61. build() {
-62. Column() {
-63. Button(this.per.name)
-64. .height(40)
-65. .onClick(() => {
-66. this.onClickType();
-67. })
-68. }
-69. }
-
-71. private onClickType() {
-72. if (this.clickEvent) {
-73. this.clickEvent();
-74. }
-75. hilog.info(DOMAIN, TAG, `:::--------this.per.name in Child is still: ${this.per.name}`); // 4
-76. };
-77. }
-```
-
-[ObjectLinkDataSourceUpdate.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedandobjectlink/entry/src/main/ets/pages/ObservedAndObjectLinkFAQs/ObjectLinkDataSourceUpdate.ets#L15-L93)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/34ZeiLQPRpeS8cY7Y0LHtg/zh-cn_image_0000002736432367.gif)
 
 @ObjectLink的数据源更新依赖其父组件，当父组件中数据源改变引起父组件刷新时，会重新设置子组件@ObjectLink的数据源。这个过程不是在父组件数据源变化后立刻发生的，而是在父组件实际刷新时才会进行。上述示例中，Parent包含Child，Parent传递箭头函数给Child，在点击时，日志打印顺序是1-2-3-4-5，打印到日志4时，点击事件流程结束，此时仅仅是将子组件Child标记为需要父组件更新的节点，因此日志4打印的this.per.name的值仍为Bob，等到父组件真正更新时，才会更新Child的数据源。
 
@@ -1762,17 +1823,15 @@ incrSubCounter和setSubCounter都是同一个SubCounter的函数。在第一个�
 
 当clickEvent中更改this.info.person.name时，修改会立刻生效，此时日志4打印的值是Jack。
 
+```typescript
+Child({
+  per: this.info.person, clickEvent: () => {
+    hilog.info(DOMAIN, TAG, `:::clickEvent before ${this.info.person.name}`); // 1
+    this.info.person.name = 'Jack';
+    hilog.info(DOMAIN, TAG, `:::clickEvent after ${this.info.person.name}`); // 3
+  }
+})
 ```
-1. Child({
-2. per: this.info.person, clickEvent: () => {
-3. hilog.info(DOMAIN, TAG, `:::clickEvent before ${this.info.person.name}`); // 1
-4. this.info.person.name = 'Jack';
-5. hilog.info(DOMAIN, TAG, `:::clickEvent after ${this.info.person.name}`); // 3
-6. }
-7. })
-```
-
-[ClickEventJack.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/arktsobservedandobjectlink/entry/src/main/ets/pages/ObservedAndObjectLinkFAQs/ClickEventJack.ets#L52-L60)
 
 此时Parent中Text组件不会刷新，因为this.info.person.name属于两层嵌套。
 
@@ -1782,67 +1841,72 @@ incrSubCounter和setSubCounter都是同一个SubCounter的函数。在第一个�
 
 【反例】
 
-```
-1. @Observed
-2. class DataDownloader {
-3. state: number;
-4. constructor() {
-5. this.state = 0;
-6. setInterval(() => {
-7. // 从构造函数修改成员变量，不触发UI更新
-8. this.state += 1;
-9. }, 2000);
-10. }
-11. }
+```ts
+@Observed
+class DataDownloader {
+  state: number;
+  constructor() {
+    this.state = 0;
+    setInterval(() => {
+      // 从构造函数修改成员变量，不触发UI更新
+      this.state += 1;
+    }, 2000);
+  }
+}
 
-13. @Entry
-14. @Component
-15. struct Index {
-16. @State dataDownloader: DataDownloader = new DataDownloader();
-17. build() {
-18. Column() {
-19. Text(`Download state is ${this.dataDownloader.state}`)
-20. }
-21. }
-22. }
+@Entry
+@Component
+struct Index {
+  @State dataDownloader: DataDownloader = new DataDownloader();
+  build() {
+    Column() {
+      Text(`Download state is ${this.dataDownloader.state}`)
+    }
+  }
+}
 ```
 
 【正例】
 
+```typescript
+@Observed
+class DataDownloader {
+  public state: number;
+  private intervalId: number = -1;
+
+  constructor() {
+    this.state = 0;
+  }
+
+  startIntervalUpdate() {
+    this.intervalId = setInterval(() => {
+      this.state += 1;
+    }, 2000);
+  }
+
+  stopIntervalUpdate() {
+    clearInterval(this.intervalId);
+  }
+}
+
+@Entry
+@Component
+struct Index {
+  @State dataDownloader: DataDownloader = new DataDownloader();
+
+  aboutToAppear() {
+    this.dataDownloader.startIntervalUpdate(); // @Observed装饰的类构建后再修改属性可以触发更新UI
+  }
+
+  build() {
+    Column() {
+      Text(`Download state is ${this.dataDownloader.state}`)
+    }
+  }
+}
 ```
-1. @Observed
-2. class DataDownloader {
-3. public state: number;
 
-5. constructor() {
-6. this.state = 0;
-7. }
-
-9. startIntervalUpdate() {
-10. setInterval(() => {
-11. this.state += 1;
-12. }, 2000);
-13. }
-14. }
-
-16. @Entry
-17. @Component
-18. struct Index {
-19. @State dataDownloader: DataDownloader = new DataDownloader();
-
-21. aboutToAppear() {
-22. this.dataDownloader.startIntervalUpdate(); // @Observed装饰的类构建后再修改属性可以触发更新UI
-23. }
-
-25. build() {
-26. Column() {
-27. Text(`Download state is ${this.dataDownloader.state}`)
-28. }
-29. }
-30. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/D6wKNCppT6qrm9g-_CvDQA/zh-cn_image_0000002589323967.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/l2qyLkGASa6wZt8Gq7bbxQ/zh-cn_image_0000002706833214.gif)
 
 ### LazyForEach和@ObjectLink一起使用时，替换数组数据后UI不刷新
 
@@ -1850,281 +1914,281 @@ incrSubCounter和setSubCounter都是同一个SubCounter的函数。在第一个�
 
 【反例】
 
-```
-1. // LazyForEach遍历数据基类
-2. class BasicDataSource implements IDataSource {
-3. private listeners: DataChangeListener[] = [];
-4. private originDataArray: StringData[] = [];
+```ts
+// LazyForEach遍历数据基类
+class BasicDataSource implements IDataSource {
+  private listeners: DataChangeListener[] = [];
+  private originDataArray: StringData[] = [];
 
-6. public totalCount(): number {
-7. return this.originDataArray.length;
-8. }
+  public totalCount(): number {
+    return this.originDataArray.length;
+  }
 
-10. public getData(index: number): StringData {
-11. return this.originDataArray[index];
-12. }
+  public getData(index: number): StringData {
+    return this.originDataArray[index];
+  }
 
-14. registerDataChangeListener(listener: DataChangeListener): void {
-15. if (this.listeners.indexOf(listener) < 0) {
-16. console.info('add listener');
-17. this.listeners.push(listener);
-18. }
-19. }
+  registerDataChangeListener(listener: DataChangeListener): void {
+    if (this.listeners.indexOf(listener) < 0) {
+      console.info('add listener');
+      this.listeners.push(listener);
+    }
+  }
 
-21. unregisterDataChangeListener(listener: DataChangeListener): void {
-22. const pos = this.listeners.indexOf(listener);
-23. if (pos >= 0) {
-24. console.info('remove listener');
-25. this.listeners.splice(pos, 1);
-26. }
-27. }
+  unregisterDataChangeListener(listener: DataChangeListener): void {
+    const pos = this.listeners.indexOf(listener);
+    if (pos >= 0) {
+      console.info('remove listener');
+      this.listeners.splice(pos, 1);
+    }
+  }
 
-29. notifyDataAdd(index: number): void {
-30. this.listeners.forEach(listener => {
-31. listener.onDataAdd(index);
-32. });
-33. }
-34. }
+  notifyDataAdd(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataAdd(index);
+    });
+  }
+}
 
-36. // LazyForEach遍历数据类型
-37. class MyDataSource extends BasicDataSource {
-38. public dataArray: StringData[] = [];
+// LazyForEach遍历数据类型
+class MyDataSource extends BasicDataSource {
+  public dataArray: StringData[] = [];
 
-40. public totalCount(): number {
-41. return this.dataArray.length;
-42. }
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
 
-44. public getData(index: number): StringData {
-45. return this.dataArray[index];
-46. }
+  public getData(index: number): StringData {
+    return this.dataArray[index];
+  }
 
-48. public pushData(data: StringData): void {
-49. this.dataArray.push(data);
-50. this.notifyDataAdd(this.dataArray.length - 1);
-51. }
-52. }
+  public pushData(data: StringData): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
+}
 
-54. @Observed
-55. class StringData {
-56. message: string;
+@Observed
+class StringData {
+  message: string;
 
-58. constructor(message: string) {
-59. this.message = message;
-60. }
-61. }
+  constructor(message: string) {
+    this.message = message;
+  }
+}
 
-63. @Entry
-64. @Component
-65. struct MyComponent {
-66. private data: MyDataSource = new MyDataSource();
-67. helloCount: number = 4;
+@Entry
+@Component
+struct MyComponent {
+  private data: MyDataSource = new MyDataSource();
+  helloCount: number = 4;
 
-69. aboutToAppear() {
-70. for (let i = 0; i <= 3; i++) {
-71. this.data.pushData(new StringData(`Hello ${i}`));
-72. }
-73. }
+  aboutToAppear() {
+    for (let i = 0; i <= 3; i++) {
+      this.data.pushData(new StringData(`Hello ${i}`));
+    }
+  }
 
-75. build() {
-76. Column() {
-77. List({ space: 3 }) {
-78. // 使用LazyForEach懒加载遍历数据
-79. LazyForEach(this.data, (item: StringData, index: number) => {
-80. ListItem() {
-81. ChildComponent({ data: item })
-82. }
-83. }, (item: StringData, index: number) => index.toString() + item.message)
-84. }.cachedCount(3)
-85. Button('替换第一个元素')
-86. .onClick(() => {
-87. // 替换数组元素不刷新UI，此时新替换的值还未绑定到LazyForEach组件上。
-88. this.data.dataArray[0] = new StringData('Hello ' + this.helloCount++)
-89. })
-90. Button('修改第一个元素的数据')
-91. .onClick(() => {
-92. // 替换数组元素后修改元素值也不会刷新UI。
-93. this.data.dataArray[0].message += '1';
-94. })
-95. }
-96. }
-97. }
+  build() {
+    Column() {
+      List({ space: 3 }) {
+        // 使用LazyForEach懒加载遍历数据
+        LazyForEach(this.data, (item: StringData, index: number) => {
+          ListItem() {
+            ChildComponent({ data: item })
+          }
+        }, (item: StringData, index: number) => index.toString() + item.message)
+      }.cachedCount(3)
+      Button('替换第一个元素')
+        .onClick(() => {
+          // 替换数组元素不刷新UI，此时新替换的值还未绑定到LazyForEach组件上。
+          this.data.dataArray[0] = new StringData('Hello ' + this.helloCount++)
+        })
+      Button('修改第一个元素的数据')
+        .onClick(() => {
+          // 替换数组元素后修改元素值也不会刷新UI。
+          this.data.dataArray[0].message += '1';
+        })
+    }
+  }
+}
 
-99. // 使用@Reusable实现组件复用
-100. @Reusable
-101. @Component
-102. struct ChildComponent {
-103. // 使用@ObjectLink接收@Observed装饰的类的数据
-104. @ObjectLink data: StringData;
+// 使用@Reusable实现组件复用
+@Reusable
+@Component
+struct ChildComponent {
+  // 使用@ObjectLink接收@Observed装饰的类的数据
+  @ObjectLink data: StringData;
 
-106. aboutToAppear(): void {
-107. console.info(`aboutToAppear: ${this.data.message}`);
-108. }
+  aboutToAppear(): void {
+    console.info(`aboutToAppear: ${this.data.message}`);
+  }
 
-110. aboutToRecycle(): void {
-111. console.info(`aboutToRecycle: ${this.data.message}`);
-112. }
+  aboutToRecycle(): void {
+    console.info(`aboutToRecycle: ${this.data.message}`);
+  }
 
-114. // 对复用的组件进行数据更新
-115. aboutToReuse(params: Record<string, ESObject>): void {
-116. this.data.message = (params.data as StringData).message;
-117. console.info(`aboutToReuse: ${this.data.message}`);
-118. }
+  // 对复用的组件进行数据更新
+  aboutToReuse(params: Record<string, ESObject>): void {
+    this.data.message = (params.data as StringData).message;
+    console.info(`aboutToReuse: ${this.data.message}`);
+  }
 
-120. build() {
-121. Row() {
-122. Text(this.data.message)
-123. .fontSize(50)
-124. .onAppear(() => {
-125. console.info(`appear: ${this.data.message}`);
-126. })
-127. }.margin({ left: 10, right: 10 })
-128. }
-129. }
+  build() {
+    Row() {
+      Text(this.data.message)
+        .fontSize(50)
+        .onAppear(() => {
+          console.info(`appear: ${this.data.message}`);
+        })
+    }.margin({ left: 10, right: 10 })
+  }
+}
 ```
 
 【正例】
 
+```typescript
+// LazyForEach遍历数据基类
+class BasicDataSource implements IDataSource {
+  private listeners: DataChangeListener[] = [];
+  private originDataArray: StringData[] = [];
+
+  public totalCount(): number {
+    return this.originDataArray.length;
+  }
+
+  public getData(index: number): StringData {
+    return this.originDataArray[index];
+  }
+
+  registerDataChangeListener(listener: DataChangeListener): void {
+    if (this.listeners.indexOf(listener) < 0) {
+      console.info('add listener');
+      this.listeners.push(listener);
+    }
+  }
+
+  unregisterDataChangeListener(listener: DataChangeListener): void {
+    const pos = this.listeners.indexOf(listener);
+    if (pos >= 0) {
+      console.info('remove listener');
+      this.listeners.splice(pos, 1);
+    }
+  }
+
+  notifyDataAdd(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataAdd(index);
+    });
+  }
+
+  // 通知LazyForEach处理数据替换
+  notifyDataChanged(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataChange(index);
+    })
+  }
+}
+
+// LazyForEach遍历数据类型
+class MyDataSource extends BasicDataSource {
+  public dataArray: StringData[] = [];
+
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
+
+  public getData(index: number): StringData {
+    return this.dataArray[index];
+  }
+
+  public pushData(data: StringData): void {
+    this.dataArray.push(data);
+    this.notifyDataAdd(this.dataArray.length - 1);
+  }
+}
+
+@Observed
+class StringData {
+  public message: string;
+
+  constructor(message: string) {
+    this.message = message;
+  }
+}
+
+@Entry
+@Component
+struct MyComponent {
+  private data: MyDataSource = new MyDataSource();
+  helloCount: number = 4;
+
+  aboutToAppear() {
+    for (let i = 0; i <= 2; i++) {
+      this.data.pushData(new StringData(`Hello ${i}`));
+    }
+  }
+
+  build() {
+    Column({ space: 3 }) {
+      List({ space: 3 }) {
+        // 使用LazyForEach懒加载遍历数据
+        LazyForEach(this.data, (item: StringData, index: number) => {
+          ListItem() {
+            ChildComponent({ data: item })
+          }.width('100%')
+          // LazyForEach的key从index和message构建，每次替换元素时，需要修改key才能触发UI刷新。
+        }, (item: StringData, index: number) => index.toString() + item.message)
+      }.cachedCount(3)
+      Button('替换第一个元素')
+        .onClick(() => {
+          this.data.dataArray[0] = new StringData('Hello ' + this.helloCount++);
+          // 替换元素后通知LazyForEach，可以刷新UI。
+          this.data.notifyDataChanged(0);
+        })
+      Button('修改第一个元素的数据')
+        .onClick(() => {
+          // 替换元素后由于重新建立绑定，后续修改元素值也能刷新UI。
+          this.data.dataArray[0].message += '1';
+        })
+    }
+    .width('100%')
+    .alignItems(HorizontalAlign.Center)
+  }
+}
+
+// 使用Reusable使能组件复用
+@Reusable
+@Component
+struct ChildComponent {
+  // 使用@ObjectLink接收@Observed类数据
+  @ObjectLink data: StringData;
+
+  aboutToAppear(): void {
+    console.info(`aboutToAppear: ${this.data.message}`);
+  }
+
+  aboutToRecycle(): void {
+    console.info(`aboutToRecycle: ${this.data.message}`);
+  }
+
+  // 对复用的组件进行数据更新
+  aboutToReuse(params: Record<string, ESObject>): void {
+    this.data.message = (params.data as StringData).message;
+    console.info(`aboutToReuse: ${this.data.message}`);
+  }
+
+  build() {
+    Row() {
+      Text(this.data.message)
+        .fontSize(50)
+        .onAppear(() => {
+          console.info(`appear: ${this.data.message}`);
+        })
+    }.margin({ left: 10, right: 10 })
+  }
+}
 ```
-1. // LazyForEach遍历数据基类
-2. class BasicDataSource implements IDataSource {
-3. private listeners: DataChangeListener[] = [];
-4. private originDataArray: StringData[] = [];
 
-6. public totalCount(): number {
-7. return this.originDataArray.length;
-8. }
-
-10. public getData(index: number): StringData {
-11. return this.originDataArray[index];
-12. }
-
-14. registerDataChangeListener(listener: DataChangeListener): void {
-15. if (this.listeners.indexOf(listener) < 0) {
-16. console.info('add listener');
-17. this.listeners.push(listener);
-18. }
-19. }
-
-21. unregisterDataChangeListener(listener: DataChangeListener): void {
-22. const pos = this.listeners.indexOf(listener);
-23. if (pos >= 0) {
-24. console.info('remove listener');
-25. this.listeners.splice(pos, 1);
-26. }
-27. }
-
-29. notifyDataAdd(index: number): void {
-30. this.listeners.forEach(listener => {
-31. listener.onDataAdd(index);
-32. });
-33. }
-
-35. // 通知LazyForEach处理数据替换
-36. notifyDataChanged(index: number): void {
-37. this.listeners.forEach(listener => {
-38. listener.onDataChange(index);
-39. })
-40. }
-41. }
-
-43. // LazyForEach遍历数据类型
-44. class MyDataSource extends BasicDataSource {
-45. public dataArray: StringData[] = [];
-
-47. public totalCount(): number {
-48. return this.dataArray.length;
-49. }
-
-51. public getData(index: number): StringData {
-52. return this.dataArray[index];
-53. }
-
-55. public pushData(data: StringData): void {
-56. this.dataArray.push(data);
-57. this.notifyDataAdd(this.dataArray.length - 1);
-58. }
-59. }
-
-61. @Observed
-62. class StringData {
-63. public message: string;
-
-65. constructor(message: string) {
-66. this.message = message;
-67. }
-68. }
-
-70. @Entry
-71. @Component
-72. struct MyComponent {
-73. private data: MyDataSource = new MyDataSource();
-74. helloCount: number = 4;
-
-76. aboutToAppear() {
-77. for (let i = 0; i <= 2; i++) {
-78. this.data.pushData(new StringData(`Hello ${i}`));
-79. }
-80. }
-
-82. build() {
-83. Column({ space: 3 }) {
-84. List({ space: 3 }) {
-85. // 使用LazyForEach懒加载遍历数据
-86. LazyForEach(this.data, (item: StringData, index: number) => {
-87. ListItem() {
-88. ChildComponent({ data: item })
-89. }.width('100%')
-90. // LazyForEach的key从index和message构建，每次替换元素时，需要修改key才能触发UI刷新。
-91. }, (item: StringData, index: number) => index.toString() + item.message)
-92. }.cachedCount(3)
-93. Button('替换第一个元素')
-94. .onClick(() => {
-95. this.data.dataArray[0] = new StringData('Hello ' + this.helloCount++);
-96. // 替换元素后通知LazyForEach，可以刷新UI。
-97. this.data.notifyDataChanged(0);
-98. })
-99. Button('修改第一个元素的数据')
-100. .onClick(() => {
-101. // 替换元素后由于重新建立绑定，后续修改元素值也能刷新UI。
-102. this.data.dataArray[0].message += '1';
-103. })
-104. }
-105. .width('100%')
-106. .alignItems(HorizontalAlign.Center)
-107. }
-108. }
-
-110. // 使用Reusable使能组件复用
-111. @Reusable
-112. @Component
-113. struct ChildComponent {
-114. // 使用@ObjectLink接受@Observed类数据
-115. @ObjectLink data: StringData;
-
-117. aboutToAppear(): void {
-118. console.info(`aboutToAppear: ${this.data.message}`);
-119. }
-
-121. aboutToRecycle(): void {
-122. console.info(`aboutToRecycle: ${this.data.message}`);
-123. }
-
-125. // 对复用的组件进行数据更新
-126. aboutToReuse(params: Record<string, ESObject>): void {
-127. this.data.message = (params.data as StringData).message;
-128. console.info(`aboutToReuse: ${this.data.message}`);
-129. }
-
-131. build() {
-132. Row() {
-133. Text(this.data.message)
-134. .fontSize(50)
-135. .onAppear(() => {
-136. console.info(`appear: ${this.data.message}`);
-137. })
-138. }.margin({ left: 10, right: 10 })
-139. }
-140. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/fOC1X8uNTyeLsL_NkcoA3g/zh-cn_image_0000002589243907.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/l3vd3_kXTlqLvBK1JD-CNw/zh-cn_image_0000002736312323.gif)

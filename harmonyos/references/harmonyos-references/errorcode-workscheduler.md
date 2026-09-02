@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: workScheduler错误码
 breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > 错误码 > workScheduler错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:40+08:00
-doc_updated_at: 2026-04-10
-content_hash: sha256:1b5857ce6222b362cf216efdf5b074cd8f81334817cdf9b96c958f5e67d4a9ea
+scraped_at: 2026-09-02T15:01:30+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:47def55ead512388863a1215be0696e54764c886970dc32f1e1e43d8c08e249f
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 9700001 内存操作失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -36,8 +34,6 @@ Memory operation failed.
 
 ## 9700002 Parcel读写操作失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory.
@@ -56,8 +52,6 @@ IPC通信读写Parcel数据失败。
 系统内部工作异常，请稍候重试，或者重启设备尝试。
 
 ## 9700003 系统服务失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -78,8 +72,6 @@ System service operation failed.
 
 ## 9700004 workInfo校验失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Check on workInfo failed.
@@ -98,8 +90,6 @@ Check on workInfo failed.
 请检查workInfo参数。
 
 ## 9700005 StartWork失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 

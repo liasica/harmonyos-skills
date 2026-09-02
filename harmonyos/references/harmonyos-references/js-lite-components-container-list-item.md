@@ -3,26 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: list-item
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 容器组件 > list-item
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:26+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:499afdc41c9ab04696bc419ebc32695239c004b1f3574c14a9bd99c65c5fc22d
+scraped_at: 2026-09-02T15:01:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:cd0868819115a651125b9e1c9c3db5ba4911b6701a7cff103461b07f70c88c4e
 ---
 
 <[list](js-lite-components-container-list.md)>的子组件，用来展示列表具体item。
 
-说明
+**说明** 
 
 该组件从API version 4 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
@@ -33,17 +29,13 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | click | - | 点击动作触发该事件。 |
 | longpress | - | 长按动作触发该事件。 |
-| swipe5+ | [SwipeEvent](js-lite-common-events.md) | 组件上快速滑动后触发。 |
+| swipe5+ | [SwipeEvent](js-lite-common-events.md#swipeevent) | 组件上快速滑动后触发。 |
 
 ## 样式
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
@@ -59,7 +51,5 @@ PhonePC/2in1TabletTVWearableLite Wearable
 | display | string | flex | 否 | 确定一个元素所产生的框的类型，可选值为：  - flex：弹性布局。  - none：不渲染此元素。 |
 
 ## 示例
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 参考 [list示例](js-lite-components-container-list.md#示例)。

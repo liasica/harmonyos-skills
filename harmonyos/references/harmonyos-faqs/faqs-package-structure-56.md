@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 应用免安装的限制、字段解释以及如何自测
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 应用免安装的限制、字段解释以及如何自测
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:36+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:14+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:fc90ab9a95a86520ab989b7b50ea9e3de35462558d8e89e5b7e976e3ec570864
 ---
 

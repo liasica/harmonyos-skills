@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: Camera_Input
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 结构体 > Camera_Input
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:53+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f85105087d5f04a3218a0ed156c19d1ab04d7d614cb2aced7d29c54da766fef2
+scraped_at: 2026-09-02T14:52:53+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7445ecae7da0cf085c0f36093d63ec9e18681c4a18d8794bba0a4f2d51e4c4d3
 ---
 
-```
-1. typedef struct Camera_Input Camera_Input
+```c
+typedef struct Camera_Input Camera_Input
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 相机输入对象。可以使用[OH\_CameraManager\_CreateCameraInput](capi-camera-manager-h.md#oh_cameramanager_createcamerainput)方法创建指针。
 

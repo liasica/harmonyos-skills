@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-unpu
 title: ohpm unpublish错误码
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm unpublish错误码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:47+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:e16d02b6aa194d44f087c1bc23c86495721c42dd17bdcb2ea35543d1430c9440
+scraped_at: 2026-09-02T14:50:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5d6b960c3f8d99c4a5f574ef56c4542eadda47bea070f6fe889ddc5976b34429
 ---
 
 ## 00610001 执行下架命令时未指定版本号
@@ -20,8 +20,8 @@ Delete All Version Pkg Not Force.
 
 **可能原因**
 
-下架时未指定版本号，且未使用强制下架。
+执行ohpm unpublish pkg命令时，未指定三方库版本号，且未配置强制下架参数--force。
 
 **处理步骤**
 
-如果未指定版本，默认下架三方库的所有版本，并且需要加上 -f 配置参数。
+未指定三方库版本时，需添加--force参数，强制下架该库所有版本。

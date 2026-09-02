@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API接口操作bigint类型值
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口操作bigint类型值
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:02+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b3c7d7d65d5ef16a2531e9202529117eb71c2605970703c0b8652a3f97473eba
+scraped_at: 2026-09-02T15:00:15+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:bf521480c23146f2d50075c234848e9d078fdcb7a39d4f2e15adf3ff2c90b7a8
 ---
 
 ## 简介
@@ -37,16 +37,16 @@ Node-API接口开发流程参考[使用Node-API实现跨语言交互开发流程
 
 本文cpp部分代码所需引用的头文件如下：
 
-```
-1. #include "napi/native_api.h"
-2. #include "hilog/log.h"
+```cpp
+#include "napi/native_api.h"
+#include "hilog/log.h"
 ```
 
 本文ArkTS侧示例代码所需的模块导入如下：
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import testNapi from 'libentry.so';
+```ts
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import testNapi from 'libentry.so';
 ```
 
 ### napi\_create\_bigint\_int64
@@ -56,32 +56,32 @@ Node-API接口开发流程参考[使用Node-API实现跨语言交互开发流程
 cpp部分代码
 
 ```
-1. // napi_create_bigint_int64
-2. static napi_value CreateBigintInt64t(napi_env env, napi_callback_info info)
-3. {
-4. // 声明int64_t的变量value
-5. int64_t value = -5555555555555555555;
-6. // 将value转化为napi_value类型返回
-7. napi_value returnValue = nullptr;
-8. napi_create_bigint_int64(env, value, &returnValue);
-9. return returnValue;
-10. }
+// napi_create_bigint_int64
+static napi_value CreateBigintInt64t(napi_env env, napi_callback_info info)
+{
+    // 声明int64_t的变量value
+    int64_t value = -5555555555555555555;
+    // 将value转化为napi_value类型返回
+    napi_value returnValue = nullptr;
+    napi_create_bigint_int64(env, value, &returnValue);
+    return returnValue;
+}
 ```
 
 接口声明
 
 index.d.ts
 
-```
-1. export const createBigintInt64t: () => bigint; // napi_create_bigint_int64
+```typescript
+export const createBigintInt64t: () => bigint; // napi_create_bigint_int64
 ```
 
 ArkTS侧示例代码
 
-```
-1. // napi_create_bigint_int64
-2. hilog.info(0x0000, 'testTag', 'Test Node-API napi_create_bigint_int64: %{public}d',
-3. testNapi.createBigintInt64t());
+```typescript
+// napi_create_bigint_int64
+hilog.info(0x0000, 'testTag', 'Test Node-API napi_create_bigint_int64: %{public}d',
+  testNapi.createBigintInt64t());
 ```
 
 ### napi\_create\_bigint\_uint64
@@ -91,32 +91,32 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. // napi_create_bigint_uint64
-2. static napi_value CreateBigintUint64t(napi_env env, napi_callback_info info)
-3. {
-4. // 声明uint64_t的变量value
-5. uint64_t value = 5555555555555555555;
-6. // 将value转化为napi_value类型返回
-7. napi_value returnValue = nullptr;
-8. napi_create_bigint_uint64(env, value, &returnValue);
-9. return returnValue;
-10. }
+// napi_create_bigint_uint64
+static napi_value CreateBigintUint64t(napi_env env, napi_callback_info info)
+{
+    // 声明uint64_t的变量value
+    uint64_t value = 5555555555555555555;
+    // 将value转化为napi_value类型返回
+    napi_value returnValue = nullptr;
+    napi_create_bigint_uint64(env, value, &returnValue);
+    return returnValue;
+}
 ```
 
 接口声明
 
 index.d.ts
 
-```
-1. export const createBigintUint64t: () => bigint; // napi_create_bigint_uint64
+```typescript
+export const createBigintUint64t: () => bigint; // napi_create_bigint_uint64
 ```
 
 ArkTS侧示例代码
 
-```
-1. // napi_create_bigint_uint64
-2. hilog.info(0x0000, 'testTag', 'Test Node-API napi_create_bigint_uint64: %{public}d',
-3. testNapi.createBigintUint64t());
+```typescript
+// napi_create_bigint_uint64
+hilog.info(0x0000, 'testTag', 'Test Node-API napi_create_bigint_uint64: %{public}d',
+  testNapi.createBigintUint64t());
 ```
 
 ### napi\_create\_bigint\_words
@@ -126,43 +126,43 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. // napi_create_bigint_words
-2. static napi_value CreateBigintWords(napi_env env, napi_callback_info info)
-3. {
-4. // 使用napi_create_bigint_words接口创建一个BigInt对象
-5. int signBit = 0;
-6. size_t wordCount = 3;
-7. uint64_t words[] = {12ULL, 34ULL, 56ULL};
-8. napi_value returnValue = nullptr;
-9. napi_status status = napi_create_bigint_words(env, signBit, wordCount, words, &returnValue);
-10. if (status != napi_ok) {
-11. napi_throw_error(env, nullptr, "napi_create_bigint_words fail");
-12. return nullptr;
-13. }
-14. return returnValue;
-15. }
+// napi_create_bigint_words
+static napi_value CreateBigintWords(napi_env env, napi_callback_info info)
+{
+    // 使用napi_create_bigint_words接口创建一个BigInt对象
+    int signBit = 0;
+    size_t wordCount = 3;
+    uint64_t words[] = {12ULL, 34ULL, 56ULL};
+    napi_value returnValue = nullptr;
+    napi_status status = napi_create_bigint_words(env, signBit, wordCount, words, &returnValue);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "napi_create_bigint_words fail");
+        return nullptr;
+    }
+    return returnValue;
+}
 ```
 
 接口声明
 
 index.d.ts
 
-```
-1. export const createBigintWords: () => bigint | undefined; // napi_create_bigint_words
+```typescript
+export const createBigintWords: () => bigint | undefined; // napi_create_bigint_words
 ```
 
 ArkTS侧示例代码
 
-```
-1. // napi_create_bigint_words
-2. try {
-3. hilog.info(0x0000, 'testTag', 'Test Node-API napi_create_bigint_words: %{public}d',
-4. testNapi.createBigintWords());
-5. // ...
-6. } catch (error) {
-7. hilog.error(0x0000, 'testTag', 'Test Node-API NapiGetValueBigint: %{public}s', error.message);
-8. // ...
-9. }
+```typescript
+// napi_create_bigint_words
+try {
+  hilog.info(0x0000, 'testTag', 'Test Node-API napi_create_bigint_words: %{public}d',
+    testNapi.createBigintWords());
+  // ...
+} catch (error) {
+  hilog.error(0x0000, 'testTag', 'Test Node-API NapiGetValueBigint: %{public}s', error.message);
+  // ...
+}
 ```
 
 ### napi\_get\_value\_bigint\_int64
@@ -172,54 +172,54 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. // napi_get_value_bigint_int64
-2. static napi_value GetValueBigintInt64t(napi_env env, napi_callback_info info)
-3. {
-4. size_t argc = 1;
-5. napi_value args[1] = {nullptr};
-6. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-7. // 从传入的参数中提取64位整数的BigInt数据
-8. int64_t value = 0;
-9. bool lossLess = false;
-10. napi_status status = napi_get_value_bigint_int64(env, args[0], &value, &lossLess);
-11. // 判断从ArkTS侧获取bigint是否为无损转换，如果不是抛出异常
-12. if (!lossLess) {
-13. napi_throw_error(env, nullptr, "BigInt values have not been lossless converted");
-14. return nullptr;
-15. }
-16. // 如果接口调用成功正常调用则返回true给ArkTS侧
-17. napi_value returnValue = nullptr;
-18. if (status == napi_ok) {
-19. napi_get_boolean(env, true, &returnValue);
-20. return returnValue;
-21. } else {
-22. napi_throw_error(env, nullptr, "napi_get_value_bigint_int64 failed");
-23. return nullptr;
-24. }
-25. }
+// napi_get_value_bigint_int64
+static napi_value GetValueBigintInt64t(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 从传入的参数中提取64位整数的BigInt数据
+    int64_t value = 0;
+    bool lossLess = false;
+    napi_status status = napi_get_value_bigint_int64(env, args[0], &value, &lossLess);
+    // 判断从ArkTS侧获取bigint是否为无损转换，如果不是抛出异常
+    if (!lossLess) {
+        napi_throw_error(env, nullptr, "BigInt values have not been lossless converted");
+        return nullptr;
+    }
+    // 如果接口调用成功正常调用则返回true给ArkTS侧
+    napi_value returnValue = nullptr;
+    if (status == napi_ok) {
+        napi_get_boolean(env, true, &returnValue);
+        return returnValue;
+    } else {
+        napi_throw_error(env, nullptr, "napi_get_value_bigint_int64 failed");
+        return nullptr;
+    }
+}
 ```
 
 接口声明
 
 index.d.ts
 
-```
-1. export const getValueBigintInt64t: (bigInt64: bigint) => boolean | undefined; // napi_get_value_bigint_int64
+```typescript
+export const getValueBigintInt64t: (bigInt64: bigint) => boolean | undefined; // napi_get_value_bigint_int64
 ```
 
 ArkTS侧示例代码
 
-```
-1. // napi_get_value_bigint_int64
-2. let bigInt = BigInt(-5555555555555555);
-3. try {
-4. hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_value_bigint_int64: %{public}s',
-5. JSON.stringify(testNapi.getValueBigintInt64t(bigInt)));
-6. // ...
-7. } catch (error) {
-8. hilog.error(0x0000, 'testTag', 'Test Node-API NapiGetValueBigint: %{public}s', error.message);
-9. // ...
-10. }
+```typescript
+// napi_get_value_bigint_int64
+let bigInt = BigInt(-5555555555555555);
+try {
+  hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_value_bigint_int64: %{public}s',
+    JSON.stringify(testNapi.getValueBigintInt64t(bigInt)));
+  // ...
+} catch (error) {
+  hilog.error(0x0000, 'testTag', 'Test Node-API NapiGetValueBigint: %{public}s', error.message);
+  // ...
+}
 ```
 
 ### napi\_get\_value\_bigint\_uint64
@@ -229,49 +229,49 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. // napi_get_value_bigint_uint64
-2. static napi_value GetValueBigintUint64t(napi_env env, napi_callback_info info)
-3. {
-4. size_t argc = 1;
-5. napi_value args[1] = {nullptr};
-6. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-7. // 从参数值中获取BigInt的数值
-8. uint64_t value = 0;
-9. bool lossLess = false;
-10. napi_status status = napi_get_value_bigint_uint64(env, args[0], &value, &lossLess);
-11. // 判断从ArkTS侧获取bigint是否为无损转换，如果不是抛出异常
-12. if (!lossLess) {
-13. napi_throw_error(env, nullptr, "BigInt values have no lossless converted");
-14. return nullptr;
-15. }
-16. // 如果接口调用成功正常调用则返回true给ArkTS侧
-17. napi_value returnValue = nullptr;
-18. napi_get_boolean(env, status == napi_ok, &returnValue);
-19. return returnValue;
-20. }
+// napi_get_value_bigint_uint64
+static napi_value GetValueBigintUint64t(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 从参数值中获取BigInt的数值
+    uint64_t value = 0;
+    bool lossLess = false;
+    napi_status status = napi_get_value_bigint_uint64(env, args[0], &value, &lossLess);
+    // 判断从ArkTS侧获取bigint是否为无损转换，如果不是抛出异常
+    if (!lossLess) {
+        napi_throw_error(env, nullptr, "BigInt values have no lossless converted");
+        return nullptr;
+    }
+    // 如果接口调用成功正常调用则返回true给ArkTS侧
+    napi_value returnValue = nullptr;
+    napi_get_boolean(env, status == napi_ok, &returnValue);
+    return returnValue;
+}
 ```
 
 接口声明
 
 index.d.ts
 
-```
-1. export const getValueBigintUint64t: (bigUint64: bigint) => boolean | undefined; // napi_get_value_bigint_uint64
+```typescript
+export const getValueBigintUint64t: (bigUint64: bigint) => boolean | undefined; // napi_get_value_bigint_uint64
 ```
 
 ArkTS侧示例代码
 
-```
-1. // napi_get_value_bigint_uint64
-2. let bigUint = BigInt(5555555555555555);
-3. try {
-4. hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_value_bigint_uint64: %{public}s',
-5. JSON.stringify(testNapi.getValueBigintUint64t(bigUint)));
-6. // ...
-7. } catch (error) {
-8. hilog.error(0x0000, 'testTag', 'Test Node-API NapiGetValueBigint: %{public}s', error.message);
-9. // ...
-10. }
+```typescript
+// napi_get_value_bigint_uint64
+let bigUint = BigInt(5555555555555555);
+try {
+  hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_value_bigint_uint64: %{public}s',
+    JSON.stringify(testNapi.getValueBigintUint64t(bigUint)));
+  // ...
+} catch (error) {
+  hilog.error(0x0000, 'testTag', 'Test Node-API NapiGetValueBigint: %{public}s', error.message);
+  // ...
+}
 ```
 
 ### napi\_get\_value\_bigint\_words
@@ -281,87 +281,87 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. // napi_get_value_bigint_words
-2. static napi_value GetValueBigintWords(napi_env env, napi_callback_info info)
-3. {
-4. size_t argc = 1;
-5. napi_value args[1] = {nullptr};
-6. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-7. int signBit = 0;
-8. size_t wordCount = 0;
-9. // 调用napi_get_value_bigint_words接口获取wordCount
-10. napi_status status = napi_get_value_bigint_words(env, args[0], nullptr, &wordCount, nullptr);
-11. OH_LOG_INFO(LOG_APP, "Node-API , wordCount:%{public}d.", wordCount);
-12. if (status != napi_ok) {
-13. OH_LOG_ERROR(LOG_APP, "Node-API , get wordCount fail, status:%{public}d.", status);
-14. napi_throw_error(env, nullptr, "napi_get_value_bigint_words call failed");
-15. return nullptr;
-16. }
-17. if (wordCount == 0) {
-18. OH_LOG_ERROR(LOG_APP, "Node-API , wordCount is 0, invalid BigInt or empty value.");
-19. napi_throw_error(env, nullptr, "napi_get_value_bigint_words returned wordCount 0");
-20. return nullptr;
-21. }
-
-23. const size_t MAX_ALLOWED_WORDS = 1024; // 限制wordCount上限（业务防护，根据实际场景调整）示例：最多允许1024个uint64_t（8KB）
-24. if (wordCount > MAX_ALLOWED_WORDS) {
-25. OH_LOG_ERROR(LOG_APP, "Node-API , wordCount(%{public}zu) exceeds max limit(%{public}zu)",
-26. wordCount, MAX_ALLOWED_WORDS);
-27. napi_throw_error(env, nullptr, "wordCount is too large");
-28. return nullptr;
-29. }
-30. // 分配足够空间存储所有word
-31. uint64_t* words = new uint64_t[wordCount];
-32. // 调用napi_get_value_bigint_words接口获取传入bigInt相关信息，如：signBit传入bigInt正负信息
-33. status = napi_get_value_bigint_words(env, args[0], &signBit, &wordCount, words);
-34. OH_LOG_INFO(LOG_APP, "Node-API , signBit: %{public}d.", signBit);
-35. if (status != napi_ok) {
-36. OH_LOG_ERROR(LOG_APP, "Node-API , reason:%{public}d.", status);
-37. delete[] words;
-38. napi_throw_error(env, nullptr, "napi_get_value_bigint_words fail");
-39. return nullptr;
-40. }
-41. // 可在此处处理words数组内容，如日志输出等
-42. // ...
-43. // 将符号位转化为int类型传出去
-44. napi_value returnValue = nullptr;
-45. napi_create_int32(env, signBit, &returnValue);
-46. delete[] words;
-47. return returnValue;
-48. }
+// napi_get_value_bigint_words
+static napi_value GetValueBigintWords(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int signBit = 0;
+    size_t wordCount = 0;
+    // 调用napi_get_value_bigint_words接口获取wordCount
+    napi_status status = napi_get_value_bigint_words(env, args[0], nullptr, &wordCount, nullptr);
+    OH_LOG_INFO(LOG_APP, "Node-API , wordCount:%{public}d.", wordCount);
+    if (status != napi_ok) {
+        OH_LOG_ERROR(LOG_APP, "Node-API , get wordCount fail, status:%{public}d.", status);
+        napi_throw_error(env, nullptr, "napi_get_value_bigint_words call failed");
+        return nullptr;
+    }
+    if (wordCount == 0) {
+        OH_LOG_ERROR(LOG_APP, "Node-API , wordCount is 0, invalid BigInt or empty value.");
+        napi_throw_error(env, nullptr, "napi_get_value_bigint_words returned wordCount 0");
+        return nullptr;
+    }
+    
+    const size_t MAX_ALLOWED_WORDS = 1024; // 限制wordCount上限（业务防护，根据实际场景调整）示例：最多允许1024个uint64_t（8KB）
+    if (wordCount > MAX_ALLOWED_WORDS) {
+        OH_LOG_ERROR(LOG_APP, "Node-API , wordCount(%{public}zu) exceeds max limit(%{public}zu)",
+            wordCount, MAX_ALLOWED_WORDS);
+        napi_throw_error(env, nullptr, "wordCount is too large");
+        return nullptr;
+    }
+    // 分配足够空间存储所有word
+    uint64_t* words = new uint64_t[wordCount];
+    // 调用napi_get_value_bigint_words接口获取传入bigInt相关信息，如：signBit传入bigInt正负信息
+    status = napi_get_value_bigint_words(env, args[0], &signBit, &wordCount, words);
+    OH_LOG_INFO(LOG_APP, "Node-API , signBit: %{public}d.", signBit);
+    if (status != napi_ok) {
+        OH_LOG_ERROR(LOG_APP, "Node-API , reason:%{public}d.", status);
+        delete[] words;
+        napi_throw_error(env, nullptr, "napi_get_value_bigint_words fail");
+        return nullptr;
+    }
+    // 可在此处处理words数组内容，如日志输出等
+    // ...
+    // 将符号位转化为int类型传出去
+    napi_value returnValue = nullptr;
+    napi_create_int32(env, signBit, &returnValue);
+    delete[] words;
+    return returnValue;
+}
 ```
 
 接口声明
 
 index.d.ts
 
-```
-1. export const getValueBigintWords: (bigIntWords: bigint) => bigint | undefined; // napi_get_value_bigint_words
+```typescript
+export const getValueBigintWords: (bigIntWords: bigint) => number | undefined; // napi_get_value_bigint_words
 ```
 
 ArkTS侧示例代码
 
-```
-1. // napi_get_value_bigint_words
-2. let bigInt = BigInt(-5555555555555555);
-3. let bigUint = BigInt(5555555555555555);
-4. try {
-5. hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_value_bigint_words signBit is: %{public}d',
-6. testNapi.getValueBigintWords(bigInt));
-7. hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_value_bigint_words signBit is: %{public}d',
-8. testNapi.getValueBigintWords(bigUint));
-9. // ...
-10. } catch (error) {
-11. hilog.error(0x0000, 'testTag', 'Test Node-API NapiGetValueBigint: %{public}s', error.message);
-12. // ...
-13. }
+```typescript
+// napi_get_value_bigint_words
+let bigInt = BigInt(-5555555555555555);
+let bigUint = BigInt(5555555555555555);
+try {
+  hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_value_bigint_words signBit is: %{public}d',
+    testNapi.getValueBigintWords(bigInt));
+  hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_value_bigint_words signBit is: %{public}d',
+    testNapi.getValueBigintWords(bigUint));
+  // ...
+} catch (error) {
+  hilog.error(0x0000, 'testTag', 'Test Node-API NapiGetValueBigint: %{public}s', error.message);
+  // ...
+}
 ```
 
 以上代码如果要在native cpp中打印日志，需在CMakeLists.txt文件中添加以下配置信息（并添加头文件：#include "hilog/log.h"）：
 
-```
-1. // CMakeLists.txt
-2. add_definitions( "-DLOG_DOMAIN=0xd0d0" )
-3. add_definitions( "-DLOG_TAG=\"testTag\"" )
-4. target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
+```text
+// CMakeLists.txt
+add_definitions( "-DLOG_DOMAIN=0xd0d0" )
+add_definitions( "-DLOG_TAG=\"testTag\"" )
+target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
 ```

@@ -3,22 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-lowp
 title: LowPowerVideoSink
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 模块 > LowPowerVideoSink
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:50+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ce9ece86a16cfafc629f24eabded962b1f5ceed6a82c68597c3a8d30b72b7c83
+scraped_at: 2026-09-02T14:52:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9fa50619674b35c55deeffa68aa53224e11ecdcf4443efef94194c3f077b1f55
 ---
 
 ## 概述
-
-PhonePC/2in1Tablet
 
 LowPowerVideoSink子模块为低功耗播放视频组件提供变量、属性和函数。
 
 **起始版本：** 20
 
 ## 文件汇总
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |

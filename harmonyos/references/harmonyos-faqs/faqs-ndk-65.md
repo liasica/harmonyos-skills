@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-65
 title: 使用napi_run_script_path接口执行包内abc文件的使用限制
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 使用napi_run_script_path接口执行包内abc文件的使用限制
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:41+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:18+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:5e20643ec1779d76e6bbf172b574c64e334922ec07a706ad5fe86966cead6976
 ---
 

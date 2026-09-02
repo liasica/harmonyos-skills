@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-inpu
 title: OH_PixelmapNative
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > C API > 结构体 > OH_PixelmapNative
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:19+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:a2965d3865253a3e167e8d1736a93af609026172db9800a4e3e2d64bc1224369
+scraped_at: 2026-09-02T14:52:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9aa10b594a24cf86ebeff739add6b36cbc35d9c8205af25a892424bc45e3f7d6
 ---
 
-```
-1. typedef struct OH_PixelmapNative OH_PixelmapNative
+```c
+typedef struct OH_PixelmapNative OH_PixelmapNative
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-像素图。
+像素图，用于表示和操作像素图像数据，支持图像的创建、读取、修改和渲染等操作。
 
 **起始版本：** 22
 

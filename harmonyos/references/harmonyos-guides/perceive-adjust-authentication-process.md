@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/perceive-adjust-authentication-process
 title: 感知和调整认证过程
-breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 用户身份认证开发指导 > 感知和调整认证过程
+breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 感知和调整认证过程
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:32:25+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:8819d4d145aa85de852cda00d21dd47f67977df38e4f10ce176bf037d7cd5f54
+scraped_at: 2026-09-02T14:50:04+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2ae963b20f2d466bcc7a55516eacc7014b710f95da2a9350e5b1eb330898db55
 ---
 
 从API version 20开始，在应用发起身份认证时，可通过接口调整认证过程，以及感知认证过程。
@@ -34,58 +34,56 @@ content_hash: sha256:8819d4d145aa85de852cda00d21dd47f67977df38e4f10ce176bf037d7c
 
 以跳过禁用的生物认证，订阅认证信息为例：
 
+```typescript
+perceiveAndAdjustAuthentication() {
+  try {
+    const randData = getRandData();
+    if (!randData) {
+      return;
+    }
+    // 设置认证参数
+    const authParam: userAuth.AuthParam = {
+      challenge: randData,
+      authType: [userAuth.UserAuthType.PIN, userAuth.UserAuthType.FACE, userAuth.UserAuthType.FINGERPRINT],
+      authTrustLevel: userAuth.AuthTrustLevel.ATL3,
+      skipLockedBiometricAuth: true
+    };
+    // 配置认证界面
+    const widgetParam: userAuth.WidgetParam = {
+      title: resourceToString($r('app.string.title')),
+    };
+    // 获取认证对象
+    const userAuthInstance = userAuth.getUserAuthInstance(authParam, widgetParam);
+    Logger.info('get userAuth instance successfully.');
+    // 订阅认证过程中的提示信息。
+    userAuthInstance.on('authTip', (authTipInfo: userAuth.AuthTipInfo) => {
+      try {
+        Logger.info('userAuthInstance callback.');
+        this.result[ResultIndex.PERCEIVE_ADJUST] = (`${authTipInfo.tipType}`);
+        // 认证完成后取消订阅
+        userAuthInstance.off('result');
+      } catch (error) {
+        const err: BusinessError = error as BusinessError;
+        Logger.error(`onResult failed, code: ${err?.code}, Message: ${err?.message}`);
+      }
+    });
+    // 开始认证
+    userAuthInstance.start();
+    // ...
+      // 取消订阅认证过程中的提示信息。
+      userAuthInstance.off('authTip');
+      Logger.info('off authTip successfully.');
+      // 取消认证
+      userAuthInstance.cancel();
+      Logger.info('auth cancel successfully.');
+      // ...
+  } catch (error) {
+    const err: BusinessError = error as BusinessError;
+    Logger.error(`auth failed, code is ${err?.code as number}, message is ${err?.message}`);
+  }
+}
 ```
-1. perceiveAndAdjustAuthentication() {
-2. try {
-3. const randData = getRandData();
-4. if (!randData) {
-5. return;
-6. }
-7. // 设置认证参数
-8. const authParam: userAuth.AuthParam = {
-9. challenge: randData,
-10. authType: [userAuth.UserAuthType.PIN, userAuth.UserAuthType.FACE, userAuth.UserAuthType.FINGERPRINT],
-11. authTrustLevel: userAuth.AuthTrustLevel.ATL3,
-12. skipLockedBiometricAuth: true
-13. };
-14. // 配置认证界面
-15. const widgetParam: userAuth.WidgetParam = {
-16. title: resourceToString($r('app.string.title')),
-17. };
-18. // 获取认证对象
-19. const userAuthInstance = userAuth.getUserAuthInstance(authParam, widgetParam);
-20. Logger.info('get userAuth instance successfully.');
-21. // 订阅认证过程中的提示信息。
-22. userAuthInstance.on('authTip', (authTipInfo: userAuth.AuthTipInfo) => {
-23. try {
-24. Logger.info('userAuthInstance callback.');
-25. this.result[ResultIndex.PERCEIVE_ADJUST] = (`${authTipInfo.tipType}`);
-26. // 认证完成后取消订阅
-27. userAuthInstance.off('result');
-28. } catch (error) {
-29. const err: BusinessError = error as BusinessError;
-30. Logger.error(`onResult failed, code: ${err?.code}, Message: ${err?.message}`);
-31. }
-32. });
-33. // 开始认证
-34. userAuthInstance.start();
-35. // ...
-36. // 取消订阅认证过程中的提示信息。
-37. userAuthInstance.off('authTip');
-38. Logger.info('off authTip successfully.');
-39. // 取消认证
-40. userAuthInstance.cancel();
-41. Logger.info('auth cancel successfully.');
-42. // ...
-43. } catch (error) {
-44. const err: BusinessError = error as BusinessError;
-45. Logger.error(`auth failed, code is ${err?.code as number}, message is ${err?.message}`);
-46. }
-47. }
-```
-
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/UserAuthentication/entry/src/main/ets/pages/Index.ets#L401-L455)
 
 ## 示例代码
 
-* [感知和调整认证过程](https://gitcode.com/openharmony/applications_app_samples/blob/master/code/DocsSample/UserAuthentication)
+* [感知和调整认证过程](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/UserAuthentication)

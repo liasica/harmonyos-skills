@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-noti
 title: notification.h
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > C API > 头文件 > notification.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:38+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:a40a8ce4a3d30ec92217c2f020d9d3983e371904f13db76ae1aba95cde2344dd
+scraped_at: 2026-09-02T15:03:02+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1008174edb581b874042b3fc37987ac3847364cff801d475702bf1beddac1ad1
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义通知服务API接口。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -38,14 +32,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Notification\_IsNotificationEnabled()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. bool OH_Notification_IsNotificationEnabled(void)
+```c
+bool OH_Notification_IsNotificationEnabled(void)
 ```
 
 **描述**

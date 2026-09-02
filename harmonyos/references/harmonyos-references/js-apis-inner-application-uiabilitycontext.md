@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: UIAbilityContext
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > application > UIAbilityContext
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0e17b462fa8c3866a1491504c0070195f22ba78685de62839a90411ee043b567
+scraped_at: 2026-09-02T15:00:35+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1e6819c255c4f80c31630b47483f8283d20c7c2f4ea98efc33dfd7cdf865fda8
 ---
 
 UIAbilityContext是[UIAbility](js-apis-app-ability-uiability.md)组件的上下文，继承自[Context](js-apis-inner-application-context.md)。各类Context之间的关联与差异详见[应用上下文Context](../harmonyos-guides/application-context-stage.md)。
 
 每个UIAbility组件实例化时，系统都会自动创建对应的UIAbilityContext。开发者可以通过UIAbilityContext获取组件信息AbilityInfo、获取应用信息ApplicationInfo、拉起其他UIAbility、连接系统服务、销毁UIAbility等。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本模块接口仅可在Stage模型下使用。
@@ -20,19 +20,13 @@ UIAbilityContext是[UIAbility](js-apis-app-ability-uiability.md)组件的上下�
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { common } from '@kit.AbilityKit';
+```ts
+import { common } from '@kit.AbilityKit';
 ```
 
 ## UIAbilityContext
 
-PhonePC/2in1TabletTVWearable
-
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
@@ -45,13 +39,11 @@ PhonePC/2in1TabletTVWearable
 
 ### startAbility
 
-PhonePC/2in1TabletTVWearable
-
 startAbility(want: Want, callback: AsyncCallback<void>): void
 
 启动一个UIAbility。使用callback异步回调。仅支持在主线程调用。
 
-说明
+**说明** 
 
 组件启动规则详见：[组件启动规则（Stage模型）](../harmonyos-guides/component-startup-rules.md)。
 
@@ -72,7 +64,7 @@ startAbility(want: Want, callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | The application does not have permission to call the interface. |
+| 201 | The application does not have permission to call the interface.  适用版本：10+ |
 | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
 | 16000001 | The specified ability does not exist. |
 | 16000002 | Incorrect ability type. |
@@ -83,65 +75,63 @@ startAbility(want: Want, callback: AsyncCallback<void>): void
 | 16000009 | An ability cannot be started or stopped in Wukong mode. |
 | 16000010 | The call with the continuation and prepare continuation flag is forbidden. |
 | 16000011 | The context does not exist. |
-| 16000012 | The application is controlled. |
-| 16000013 | The application is controlled by EDM. |
-| 16000018 | Redirection to a third-party application is not allowed in API version greater than 11. |
-| 16000019 | No matching ability is found. |
+| 16000012 | The application is controlled.  适用版本：10+ |
+| 16000013 | The application is controlled by EDM.  适用版本：10+ |
+| 16000018 | Redirection to a third-party application is not allowed in API version greater than 11.  适用版本：12+ |
+| 16000019 | No matching ability is found.  适用版本：12+ |
 | 16000050 | Internal error. |
 | 16000053 | The ability is not on the top of the UI. |
 | 16000055 | Installation-free timed out. |
-| 16000071 | App clone is not supported. |
-| 16000072 | App clone or multi-instance is not supported. |
-| 16000073 | The app clone index is invalid. |
-| 16000076 | The app instance key is invalid. |
-| 16000077 | The number of app instances reaches the limit. |
-| 16000078 | The multi-instance is not supported. |
-| 16000079 | The APP\_INSTANCE\_KEY cannot be specified. |
-| 16000080 | Creating a new instance is not supported. |
+| 16000071 | App clone is not supported.  适用版本：14+ |
+| 16000072 | App clone or multi-instance is not supported.  适用版本：14+ |
+| 16000073 | The app clone index is invalid.  适用版本：12+ |
+| 16000076 | The app instance key is invalid.  适用版本：14+ |
+| 16000077 | The number of app instances reaches the limit.  适用版本：14+ |
+| 16000078 | The multi-instance is not supported.  适用版本：14+ |
+| 16000079 | The APP\_INSTANCE\_KEY cannot be specified.  适用版本：14+ |
+| 16000080 | Creating a new instance is not supported.  适用版本：14+ |
 | 16200001 | The caller has been released. |
 
 **示例：**
 
-```
-1. import { UIAbility, Want } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility, Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onForeground() {
-6. let want: Want = {
-7. bundleName: 'com.example.myapplication',
-8. abilityName: 'EntryAbility'
-9. };
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    let want: Want = {
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility'
+    };
 
-11. try {
-12. this.context.startAbility(want, (err: BusinessError) => {
-13. if (err.code) {
-14. // 处理业务逻辑错误
-15. console.error(`startAbility failed, code is ${err.code}, message is ${err.message}`);
-16. return;
-17. }
-18. // 执行正常业务
-19. console.info('startAbility succeed');
-20. });
-21. } catch (err) {
-22. // 处理入参错误异常
-23. let code = (err as BusinessError).code;
-24. let message = (err as BusinessError).message;
-25. console.error(`startAbility failed, code is ${code}, message is ${message}`);
-26. }
-27. }
-28. }
+    try {
+      this.context.startAbility(want, (err: BusinessError) => {
+        if (err.code) {
+          // 处理业务逻辑错误
+          console.error(`startAbility failed, code is ${err.code}, message is ${err.message}`);
+          return;
+        }
+        // 执行正常业务
+        console.info('startAbility succeed');
+      });
+    } catch (err) {
+      // 处理入参错误异常
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`startAbility failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```
 
 ### startAbility
-
-PhonePC/2in1TabletTVWearable
 
 startAbility(want: Want, options: StartOptions, callback: AsyncCallback<void>): void
 
 启动一个UIAbility。使用callback异步回调。仅支持在主线程调用。
 
-说明
+**说明** 
 
 组件启动规则详见：[组件启动规则（Stage模型）](../harmonyos-guides/component-startup-rules.md)。
 
@@ -163,82 +153,82 @@ startAbility(want: Want, options: StartOptions, callback: AsyncCallback<void>): 
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | The application does not have permission to call the interface. |
+| 201 | The application does not have permission to call the interface.  适用版本：10+ |
 | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
-| 801 | Capability not support. |
+| 801 | Capability not support.  适用版本：12+ |
 | 16000001 | The specified ability does not exist. |
+| 16000002 | Incorrect ability type.  适用版本：9 |
 | 16000004 | Cannot start an invisible component. |
 | 16000005 | The specified process does not have the permission. |
 | 16000006 | Cross-user operations are not allowed. |
 | 16000008 | The crowdtesting application expires. |
 | 16000009 | An ability cannot be started or stopped in Wukong mode. |
+| 16000010 | The call with the continuation and prepare continuation flag is forbidden.  适用版本：9 |
 | 16000011 | The context does not exist. |
-| 16000012 | The application is controlled. |
-| 16000013 | The application is controlled by EDM. |
-| 16000018 | Redirection to a third-party application is not allowed in API version greater than 11. |
-| 16000019 | No matching ability is found. |
+| 16000012 | The application is controlled.  适用版本：10+ |
+| 16000013 | The application is controlled by EDM.  适用版本：10+ |
+| 16000018 | Redirection to a third-party application is not allowed in API version greater than 11.  适用版本：12+ |
+| 16000019 | No matching ability is found.  适用版本：12+ |
 | 16000050 | Internal error. |
 | 16000053 | The ability is not on the top of the UI. |
 | 16000055 | Installation-free timed out. |
-| 16000067 | The StartOptions check failed. |
-| 16000068 | The ability is already running. |
-| 16300003 | The target application is not the current application. |
-| 16000071 | App clone is not supported. |
-| 16000072 | App clone or multi-instance is not supported. |
-| 16000073 | The app clone index is invalid. |
-| 16000076 | The app instance key is invalid. |
-| 16000077 | The number of app instances reaches the limit. |
-| 16000078 | The multi-instance is not supported. |
-| 16000079 | The APP\_INSTANCE\_KEY cannot be specified. |
-| 16000080 | Creating a new instance is not supported. |
+| 16000067 | The StartOptions check failed.  适用版本：12+ |
+| 16000068 | The ability is already running.  适用版本：12+ |
+| 16300003 | The target application is not the current application.  适用版本：12+ |
+| 16000071 | App clone is not supported.  适用版本：14+ |
+| 16000072 | App clone or multi-instance is not supported.  适用版本：14+ |
+| 16000073 | The app clone index is invalid.  适用版本：12+ |
+| 16000076 | The app instance key is invalid.  适用版本：14+ |
+| 16000077 | The number of app instances reaches the limit.  适用版本：14+ |
+| 16000078 | The multi-instance is not supported.  适用版本：14+ |
+| 16000079 | The APP\_INSTANCE\_KEY cannot be specified.  适用版本：14+ |
+| 16000080 | Creating a new instance is not supported.  适用版本：14+ |
 | 16200001 | The caller has been released. |
 
 **示例：**
 
-```
-1. import { UIAbility, Want, StartOptions } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility, Want, StartOptions } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onForeground() {
-6. let want: Want = {
-7. deviceId: '',
-8. bundleName: 'com.example.myapplication',
-9. abilityName: 'EntryAbility'
-10. };
-11. let options: StartOptions = {
-12. displayId: 0
-13. };
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    let want: Want = {
+      deviceId: '',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility'
+    };
+    let options: StartOptions = {
+      displayId: 0
+    };
 
-15. try {
-16. this.context.startAbility(want, options, (err: BusinessError) => {
-17. if (err.code) {
-18. // 处理业务逻辑错误
-19. console.error(`startAbility failed, code is ${err.code}, message is ${err.message}`);
-20. return;
-21. }
-22. // 执行正常业务
-23. console.info('startAbility succeed');
-24. });
-25. } catch (err) {
-26. // 处理入参错误异常
-27. let code = (err as BusinessError).code;
-28. let message = (err as BusinessError).message;
-29. console.error(`startAbility failed, code is ${code}, message is ${message}`);
-30. }
-31. }
-32. }
+    try {
+      this.context.startAbility(want, options, (err: BusinessError) => {
+        if (err.code) {
+          // 处理业务逻辑错误
+          console.error(`startAbility failed, code is ${err.code}, message is ${err.message}`);
+          return;
+        }
+        // 执行正常业务
+        console.info('startAbility succeed');
+      });
+    } catch (err) {
+      // 处理入参错误异常
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`startAbility failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```
 
 ### startAbility
-
-PhonePC/2in1TabletTVWearable
 
 startAbility(want: Want, options?: StartOptions): Promise<void>
 
 启动一个UIAbility。使用Promise异步回调。仅支持在主线程调用。
 
-说明
+**说明** 
 
 组件启动规则详见：[组件启动规则（Stage模型）](../harmonyos-guides/component-startup-rules.md)。
 
@@ -265,9 +255,9 @@ startAbility(want: Want, options?: StartOptions): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | The application does not have permission to call the interface. |
+| 201 | The application does not have permission to call the interface.  适用版本：10+ |
 | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
-| 801 | Capability not support. |
+| 801 | Capability not support.  适用版本：12+ |
 | 16000001 | The specified ability does not exist. |
 | 16000002 | Incorrect ability type. |
 | 16000004 | Cannot start an invisible component. |
@@ -277,65 +267,63 @@ startAbility(want: Want, options?: StartOptions): Promise<void>
 | 16000009 | An ability cannot be started or stopped in Wukong mode. |
 | 16000010 | The call with the continuation and prepare continuation flag is forbidden. |
 | 16000011 | The context does not exist. |
-| 16000012 | The application is controlled. |
-| 16000013 | The application is controlled by EDM. |
-| 16000018 | Redirection to a third-party application is not allowed in API version greater than 11. |
-| 16000019 | No matching ability is found. |
+| 16000012 | The application is controlled.  适用版本：10+ |
+| 16000013 | The application is controlled by EDM.  适用版本：10+ |
+| 16000018 | Redirection to a third-party application is not allowed in API version greater than 11.  适用版本：12+ |
+| 16000019 | No matching ability is found.  适用版本：12+ |
 | 16000050 | Internal error. |
 | 16000053 | The ability is not on the top of the UI. |
 | 16000055 | Installation-free timed out. |
-| 16000067 | The StartOptions check failed. |
-| 16000068 | The ability is already running. |
-| 16300003 | The target application is not the current application. |
-| 16000071 | App clone is not supported. |
-| 16000072 | App clone or multi-instance is not supported. |
-| 16000073 | The app clone index is invalid. |
-| 16000076 | The app instance key is invalid. |
-| 16000077 | The number of app instances reaches the limit. |
-| 16000078 | The multi-instance is not supported. |
-| 16000079 | The APP\_INSTANCE\_KEY cannot be specified. |
-| 16000080 | Creating a new instance is not supported. |
+| 16000067 | The StartOptions check failed.  适用版本：12+ |
+| 16000068 | The ability is already running.  适用版本：12+ |
+| 16300003 | The target application is not the current application.  适用版本：12+ |
+| 16000071 | App clone is not supported.  适用版本：14+ |
+| 16000072 | App clone or multi-instance is not supported.  适用版本：14+ |
+| 16000073 | The app clone index is invalid.  适用版本：12+ |
+| 16000076 | The app instance key is invalid.  适用版本：14+ |
+| 16000077 | The number of app instances reaches the limit.  适用版本：14+ |
+| 16000078 | The multi-instance is not supported.  适用版本：14+ |
+| 16000079 | The APP\_INSTANCE\_KEY cannot be specified.  适用版本：14+ |
+| 16000080 | Creating a new instance is not supported.  适用版本：14+ |
 | 16200001 | The caller has been released. |
 
 **示例：**
 
-```
-1. import { UIAbility, Want, StartOptions } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility, Want, StartOptions } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onForeground() {
-6. let want: Want = {
-7. bundleName: 'com.example.myapplication',
-8. abilityName: 'EntryAbility'
-9. };
-10. let options: StartOptions = {
-11. displayId: 0
-12. };
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    let want: Want = {
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility'
+    };
+    let options: StartOptions = {
+      displayId: 0
+    };
 
-14. try {
-15. this.context.startAbility(want, options)
-16. .then(() => {
-17. // 执行正常业务
-18. console.info('startAbility succeed');
-19. })
-20. .catch((err: BusinessError) => {
-21. // 处理业务逻辑错误
-22. console.error(`startAbility failed, code is ${err.code}, message is ${err.message}`);
-23. });
-24. } catch (err) {
-25. // 处理入参错误异常
-26. let code = (err as BusinessError).code;
-27. let message = (err as BusinessError).message;
-28. console.error(`startAbility failed, code is ${code}, message is ${message}`);
-29. }
-30. }
-31. }
+    try {
+      this.context.startAbility(want, options)
+        .then(() => {
+          // 执行正常业务
+          console.info('startAbility succeed');
+        })
+        .catch((err: BusinessError) => {
+          // 处理业务逻辑错误
+          console.error(`startAbility failed, code is ${err.code}, message is ${err.message}`);
+        });
+    } catch (err) {
+      // 处理入参错误异常
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`startAbility failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```
 
 ### startAbilityForResult
-
-PhonePC/2in1TabletTVWearable
 
 startAbilityForResult(want: Want, callback: AsyncCallback<AbilityResult>): void
 
@@ -347,7 +335,7 @@ UIAbility被启动后，有如下情况：
 * 异常情况下比如杀死UIAbility会将异常结果返回给调用方，异常结果中resultCode为-1。
 * 如果被启动的UIAbility是[单实例模式](../harmonyos-guides/uiability-launch-type.md#singleton启动模式)，且这个UIAbility被不同应用多次调用该接口启动，当这个UIAbility调用[terminateSelfWithResult](js-apis-inner-application-uiabilitycontext.md#terminateselfwithresult)接口销毁自身时，只将正常结果返回给最后一个调用方，其它调用方返回异常结果，异常结果中resultCode为-1。
 
-说明
+**说明** 
 
 组件启动规则详见：[组件启动规则（Stage模型）](../harmonyos-guides/component-startup-rules.md)。
 
@@ -368,7 +356,7 @@ UIAbility被启动后，有如下情况：
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | The application does not have permission to call the interface. |
+| 201 | The application does not have permission to call the interface.  适用版本：10+ |
 | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
 | 16000001 | The specified ability does not exist. |
 | 16000002 | Incorrect ability type. |
@@ -379,60 +367,58 @@ UIAbility被启动后，有如下情况：
 | 16000009 | An ability cannot be started or stopped in Wukong mode. |
 | 16000010 | The call with the continuation and prepare continuation flag is forbidden. |
 | 16000011 | The context does not exist. |
-| 16000012 | The application is controlled. |
-| 16000013 | The application is controlled by EDM. |
-| 16000018 | Redirection to a third-party application is not allowed in API version greater than 11. |
-| 16000019 | No matching ability is found. |
+| 16000012 | The application is controlled.  适用版本：10+ |
+| 16000013 | The application is controlled by EDM.  适用版本：10+ |
+| 16000018 | Redirection to a third-party application is not allowed in API version greater than 11.  适用版本：12+ |
+| 16000019 | No matching ability is found.  适用版本：12+ |
 | 16000050 | Internal error. |
 | 16000053 | The ability is not on the top of the UI. |
 | 16000055 | Installation-free timed out. |
-| 16000071 | App clone is not supported. |
-| 16000072 | App clone or multi-instance is not supported. |
-| 16000073 | The app clone index is invalid. |
-| 16000076 | The app instance key is invalid. |
-| 16000077 | The number of app instances reaches the limit. |
-| 16000078 | The multi-instance is not supported. |
-| 16000079 | The APP\_INSTANCE\_KEY cannot be specified. |
-| 16000080 | Creating a new instance is not supported. |
+| 16000071 | App clone is not supported.  适用版本：14+ |
+| 16000072 | App clone or multi-instance is not supported.  适用版本：14+ |
+| 16000073 | The app clone index is invalid.  适用版本：12+ |
+| 16000076 | The app instance key is invalid.  适用版本：14+ |
+| 16000077 | The number of app instances reaches the limit.  适用版本：14+ |
+| 16000078 | The multi-instance is not supported.  适用版本：14+ |
+| 16000079 | The APP\_INSTANCE\_KEY cannot be specified.  适用版本：14+ |
+| 16000080 | Creating a new instance is not supported.  适用版本：14+ |
 | 16200001 | The caller has been released. |
 
 **示例：**
 
-```
-1. import { UIAbility, Want, common } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility, Want, common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onForeground() {
-6. let want: Want = {
-7. deviceId: '',
-8. bundleName: 'com.example.myapplication',
-9. abilityName: 'EntryAbility'
-10. };
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    let want: Want = {
+      deviceId: '',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility'
+    };
 
-12. try {
-13. this.context.startAbilityForResult(want, (err: BusinessError, result: common.AbilityResult) => {
-14. if (err.code) {
-15. // 处理业务逻辑错误
-16. console.error(`startAbilityForResult failed, code is ${err.code}, message is ${err.message}`);
-17. return;
-18. }
-19. // 执行正常业务
-20. console.info('startAbilityForResult succeed');
-21. });
-22. } catch (err) {
-23. // 处理入参错误异常
-24. let code = (err as BusinessError).code;
-25. let message = (err as BusinessError).message;
-26. console.error(`startAbilityForResult failed, code is ${code}, message is ${message}`);
-27. }
-28. }
-29. }
+    try {
+      this.context.startAbilityForResult(want, (err: BusinessError, result: common.AbilityResult) => {
+        if (err.code) {
+          // 处理业务逻辑错误
+          console.error(`startAbilityForResult failed, code is ${err.code}, message is ${err.message}`);
+          return;
+        }
+        // 执行正常业务
+        console.info('startAbilityForResult succeed');
+      });
+    } catch (err) {
+      // 处理入参错误异常
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`startAbilityForResult failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```
 
 ### startAbilityForResult
-
-PhonePC/2in1TabletTVWearable
 
 startAbilityForResult(want: Want, options: StartOptions, callback: AsyncCallback<AbilityResult>): void
 
@@ -444,7 +430,7 @@ UIAbility被启动后，有如下情况：
 * 异常情况下比如杀死UIAbility会将异常结果返回给调用方，异常结果中resultCode为-1。
 * 如果被启动的UIAbility是[单实例模式](../harmonyos-guides/uiability-launch-type.md#singleton启动模式)，且这个UIAbility被不同应用多次调用该接口启动，当这个UIAbility调用[terminateSelfWithResult](js-apis-inner-application-uiabilitycontext.md#terminateselfwithresult)接口销毁自身时，只将正常结果返回给最后一个调用方，其它调用方返回异常结果，异常结果中resultCode为-1。
 
-说明
+**说明** 
 
 组件启动规则详见：[组件启动规则（Stage模型）](../harmonyos-guides/component-startup-rules.md)。
 
@@ -466,72 +452,72 @@ UIAbility被启动后，有如下情况：
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | The application does not have permission to call the interface. |
+| 201 | The application does not have permission to call the interface.  适用版本：10+ |
 | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
 | 16000001 | The specified ability does not exist. |
+| 16000002 | Incorrect ability type.  适用版本：9 |
 | 16000004 | Cannot start an invisible component. |
 | 16000005 | The specified process does not have the permission. |
 | 16000006 | Cross-user operations are not allowed. |
 | 16000008 | The crowdtesting application expires. |
 | 16000009 | An ability cannot be started or stopped in Wukong mode. |
+| 16000010 | The call with the continuation and prepare continuation flag is forbidden.  适用版本：9 |
 | 16000011 | The context does not exist. |
-| 16000012 | The application is controlled. |
-| 16000013 | The application is controlled by EDM. |
-| 16000018 | Redirection to a third-party application is not allowed in API version greater than 11. |
-| 16000019 | No matching ability is found. |
+| 16000012 | The application is controlled.  适用版本：10+ |
+| 16000013 | The application is controlled by EDM.  适用版本：10+ |
+| 16000018 | Redirection to a third-party application is not allowed in API version greater than 11.  适用版本：12+ |
+| 16000019 | No matching ability is found.  适用版本：12+ |
 | 16000050 | Internal error. |
 | 16000053 | The ability is not on the top of the UI. |
 | 16000055 | Installation-free timed out. |
-| 16000071 | App clone is not supported. |
-| 16000072 | App clone or multi-instance is not supported. |
-| 16000073 | The app clone index is invalid. |
-| 16000076 | The app instance key is invalid. |
-| 16000077 | The number of app instances reaches the limit. |
-| 16000078 | The multi-instance is not supported. |
-| 16000079 | The APP\_INSTANCE\_KEY cannot be specified. |
-| 16000080 | Creating a new instance is not supported. |
+| 16000071 | App clone is not supported.  适用版本：14+ |
+| 16000072 | App clone or multi-instance is not supported.  适用版本：14+ |
+| 16000073 | The app clone index is invalid.  适用版本：12+ |
+| 16000076 | The app instance key is invalid.  适用版本：14+ |
+| 16000077 | The number of app instances reaches the limit.  适用版本：14+ |
+| 16000078 | The multi-instance is not supported.  适用版本：14+ |
+| 16000079 | The APP\_INSTANCE\_KEY cannot be specified.  适用版本：14+ |
+| 16000080 | Creating a new instance is not supported.  适用版本：14+ |
 | 16200001 | The caller has been released. |
 
 **示例：**
 
-```
-1. import { UIAbility, Want, common, StartOptions } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility, Want, common, StartOptions } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onForeground() {
-6. let want: Want = {
-7. deviceId: '',
-8. bundleName: 'com.example.myapplication',
-9. abilityName: 'EntryAbility'
-10. };
-11. let options: StartOptions = {
-12. displayId: 0
-13. };
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    let want: Want = {
+      deviceId: '',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility'
+    };
+    let options: StartOptions = {
+      displayId: 0
+    };
 
-15. try {
-16. this.context.startAbilityForResult(want, options, (err: BusinessError, result: common.AbilityResult) => {
-17. if (err.code) {
-18. // 处理业务逻辑错误
-19. console.error(`startAbilityForResult failed, code is ${err.code}, message is ${err.message}`);
-20. return;
-21. }
-22. // 执行正常业务
-23. console.info('startAbilityForResult succeed');
-24. });
-25. } catch (err) {
-26. // 处理入参错误异常
-27. let code = (err as BusinessError).code;
-28. let message = (err as BusinessError).message;
-29. console.error(`startAbilityForResult failed, code is ${code}, message is ${message}`);
-30. }
-31. }
-32. }
+    try {
+      this.context.startAbilityForResult(want, options, (err: BusinessError, result: common.AbilityResult) => {
+        if (err.code) {
+          // 处理业务逻辑错误
+          console.error(`startAbilityForResult failed, code is ${err.code}, message is ${err.message}`);
+          return;
+        }
+        // 执行正常业务
+        console.info('startAbilityForResult succeed');
+      });
+    } catch (err) {
+      // 处理入参错误异常
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`startAbilityForResult failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```
 
 ### startAbilityForResult
-
-PhonePC/2in1TabletTVWearable
 
 startAbilityForResult(want: Want, options?: StartOptions): Promise<AbilityResult>
 
@@ -543,7 +529,7 @@ UIAbility被启动后，有如下情况：
 * 异常情况下比如杀死UIAbility会将异常结果返回给调用方，异常结果中resultCode为-1。
 * 如果被启动的UIAbility是[单实例模式](../harmonyos-guides/uiability-launch-type.md#singleton启动模式)，且这个UIAbility被不同应用多次调用该接口启动，当这个UIAbility调用[terminateSelfWithResult](js-apis-inner-application-uiabilitycontext.md#terminateselfwithresult)接口销毁自身时，只将正常结果返回给最后一个调用方，其它调用方返回异常结果，异常结果中resultCode为-1。
 
-说明
+**说明** 
 
 组件启动规则详见：[组件启动规则（Stage模型）](../harmonyos-guides/component-startup-rules.md)。
 
@@ -570,7 +556,7 @@ UIAbility被启动后，有如下情况：
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | The application does not have permission to call the interface. |
+| 201 | The application does not have permission to call the interface.  适用版本：10+ |
 | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
 | 16000001 | The specified ability does not exist. |
 | 16000002 | Incorrect ability type. |
@@ -581,68 +567,66 @@ UIAbility被启动后，有如下情况：
 | 16000009 | An ability cannot be started or stopped in Wukong mode. |
 | 16000010 | The call with the continuation and prepare continuation flag is forbidden. |
 | 16000011 | The context does not exist. |
-| 16000012 | The application is controlled. |
-| 16000013 | The application is controlled by EDM. |
-| 16000018 | Redirection to a third-party application is not allowed in API version greater than 11. |
-| 16000019 | No matching ability is found. |
+| 16000012 | The application is controlled.  适用版本：10+ |
+| 16000013 | The application is controlled by EDM.  适用版本：10+ |
+| 16000018 | Redirection to a third-party application is not allowed in API version greater than 11.  适用版本：12+ |
+| 16000019 | No matching ability is found.  适用版本：12+ |
 | 16000050 | Internal error. |
 | 16000053 | The ability is not on the top of the UI. |
 | 16000055 | Installation-free timed out. |
-| 16000071 | App clone is not supported. |
-| 16000072 | App clone or multi-instance is not supported. |
-| 16000073 | The app clone index is invalid. |
-| 16000076 | The app instance key is invalid. |
-| 16000077 | The number of app instances reaches the limit. |
-| 16000078 | The multi-instance is not supported. |
-| 16000079 | The APP\_INSTANCE\_KEY cannot be specified. |
-| 16000080 | Creating a new instance is not supported. |
+| 16000071 | App clone is not supported.  适用版本：14+ |
+| 16000072 | App clone or multi-instance is not supported.  适用版本：14+ |
+| 16000073 | The app clone index is invalid.  适用版本：12+ |
+| 16000076 | The app instance key is invalid.  适用版本：14+ |
+| 16000077 | The number of app instances reaches the limit.  适用版本：14+ |
+| 16000078 | The multi-instance is not supported.  适用版本：14+ |
+| 16000079 | The APP\_INSTANCE\_KEY cannot be specified.  适用版本：14+ |
+| 16000080 | Creating a new instance is not supported.  适用版本：14+ |
 | 16200001 | The caller has been released. |
 
 **示例：**
 
-```
-1. import { UIAbility, Want, common, StartOptions } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility, Want, common, StartOptions } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onForeground() {
-6. let want: Want = {
-7. bundleName: 'com.example.myapplication',
-8. abilityName: 'EntryAbility'
-9. };
-10. let options: StartOptions = {
-11. displayId: 0
-12. };
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    let want: Want = {
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility'
+    };
+    let options: StartOptions = {
+      displayId: 0
+    };
 
-14. try {
-15. this.context.startAbilityForResult(want, options)
-16. .then((result: common.AbilityResult) => {
-17. // 执行正常业务
-18. console.info('startAbilityForResult succeed');
-19. })
-20. .catch((err: BusinessError) => {
-21. // 处理业务逻辑错误
-22. console.error(`startAbilityForResult failed, code is ${err.code}, message is ${err.message}`);
-23. });
-24. } catch (err) {
-25. // 处理入参错误异常
-26. let code = (err as BusinessError).code;
-27. let message = (err as BusinessError).message;
-28. console.error(`startAbilityForResult failed, code is ${code}, message is ${message}`);
-29. }
-30. }
-31. }
+    try {
+      this.context.startAbilityForResult(want, options)
+        .then((result: common.AbilityResult) => {
+          // 执行正常业务
+          console.info('startAbilityForResult succeed');
+        })
+        .catch((err: BusinessError) => {
+          // 处理业务逻辑错误
+          console.error(`startAbilityForResult failed, code is ${err.code}, message is ${err.message}`);
+        });
+    } catch (err) {
+      // 处理入参错误异常
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`startAbilityForResult failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```
 
 ### terminateSelf
-
-PhonePC/2in1TabletTVWearable
 
 terminateSelf(callback: AsyncCallback<void>): void
 
 销毁UIAbility自身。使用callback异步回调。仅支持在主线程调用。
 
-说明
+**说明** 
 
 调用该接口后，任务中心的任务默认不会清理，如需清理，需要配置[removeMissionAfterTerminate](../harmonyos-guides/module-configuration-file.md#abilities标签)为true。
 
@@ -663,6 +647,9 @@ terminateSelf(callback: AsyncCallback<void>): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 16000005 | The specified process does not have the permission.  适用版本：9 |
+| 16000004 | Cannot start an invisible component.  适用版本：9 |
+| 16000001 | The specified ability does not exist.  适用版本：9 |
 | 16000009 | An ability cannot be started or stopped in Wukong mode. |
 | 16000011 | The context does not exist. |
 | 16000050 | Internal error. |
@@ -671,56 +658,54 @@ terminateSelf(callback: AsyncCallback<void>): void
 
 1. 使用terminateSelf接口停止UIAbility示例代码如下，默认情况下应用会在最近任务列表中保留快照。
 
-   ```
-   1. import { UIAbility } from '@kit.AbilityKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```ts
+   import { UIAbility } from '@kit.AbilityKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
 
-   4. export default class EntryAbility extends UIAbility {
-   5. onForeground() {
-   6. try {
-   7. this.context.terminateSelf((err: BusinessError) => {
-   8. if (err.code) {
-   9. // 处理业务逻辑错误
-   10. console.error(`terminateSelf failed, code is ${err.code}, message is ${err.message}`);
-   11. return;
-   12. }
-   13. // 执行正常业务
-   14. console.info('terminateSelf succeed');
-   15. });
-   16. } catch (err) {
-   17. // 捕获同步的参数错误
-   18. let code = (err as BusinessError).code;
-   19. let message = (err as BusinessError).message;
-   20. console.error(`terminateSelf failed, code is ${code}, message is ${message}`);
-   21. }
-   22. }
-   23. }
+   export default class EntryAbility extends UIAbility {
+     onForeground() {
+       try {
+         this.context.terminateSelf((err: BusinessError) => {
+           if (err.code) {
+             // 处理业务逻辑错误
+             console.error(`terminateSelf failed, code is ${err.code}, message is ${err.message}`);
+             return;
+           }
+           // 执行正常业务
+           console.info('terminateSelf succeed');
+         });
+       } catch (err) {
+         // 捕获同步的参数错误
+         let code = (err as BusinessError).code;
+         let message = (err as BusinessError).message;
+         console.error(`terminateSelf failed, code is ${code}, message is ${message}`);
+       }
+     }
+   }
    ```
 2. （可选）如果需要在停止UIAbility时，清理任务中心的相关任务（即不保留最近任务列表中的快照），需要在[module.json5](../harmonyos-guides/module-configuration-file.md)配置文件中将removeMissionAfterTerminate字段取值配置为true。
 
-   ```
-   1. {
-   2. "module": {
-   3. // ...
-   4. "abilities": [
-   5. {
-   6. // ...
-   7. "removeMissionAfterTerminate": true
-   8. }
-   9. ]
-   10. }
-   11. }
+   ```json5
+   {
+     "module": {
+       // ...
+       "abilities": [
+         {
+           // ...
+           "removeMissionAfterTerminate": true
+         }
+       ]
+     }
+   }
    ```
 
 ### terminateSelf
-
-PhonePC/2in1TabletTVWearable
 
 terminateSelf(): Promise<void>
 
 销毁UIAbility自身。使用Promise异步回调。仅支持在主线程调用。
 
-说明
+**说明** 
 
 调用该接口后，任务中心的任务默认不会清理，如需清理，需要配置[removeMissionAfterTerminate](../harmonyos-guides/module-configuration-file.md#abilities标签)为true。
 
@@ -740,6 +725,9 @@ terminateSelf(): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 16000005 | The specified process does not have the permission.  适用版本：9 |
+| 16000004 | Cannot start an invisible component.  适用版本：9 |
+| 16000001 | The specified ability does not exist.  适用版本：9 |
 | 16000009 | An ability cannot be started or stopped in Wukong mode. |
 | 16000011 | The context does not exist. |
 | 16000050 | Internal error. |
@@ -748,50 +736,48 @@ terminateSelf(): Promise<void>
 
 1. 使用terminateSelf接口停止UIAbility示例代码如下，默认情况下应用会在最近任务列表中保留快照。
 
-   ```
-   1. import { UIAbility } from '@kit.AbilityKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```ts
+   import { UIAbility } from '@kit.AbilityKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
 
-   4. export default class EntryAbility extends UIAbility {
-   5. onForeground() {
-   6. try {
-   7. this.context.terminateSelf()
-   8. .then(() => {
-   9. // 执行正常业务
-   10. console.info('terminateSelf succeed');
-   11. })
-   12. .catch((err: BusinessError) => {
-   13. // 处理业务逻辑错误
-   14. console.error(`terminateSelf failed, code is ${err.code}, message is ${err.message}`);
-   15. });
-   16. } catch (err) {
-   17. // 捕获同步的参数错误
-   18. let code = (err as BusinessError).code;
-   19. let message = (err as BusinessError).message;
-   20. console.error(`terminateSelf failed, code is ${code}, message is ${message}`);
-   21. }
-   22. }
-   23. }
+   export default class EntryAbility extends UIAbility {
+     onForeground() {
+       try {
+         this.context.terminateSelf()
+           .then(() => {
+             // 执行正常业务
+             console.info('terminateSelf succeed');
+           })
+           .catch((err: BusinessError) => {
+             // 处理业务逻辑错误
+             console.error(`terminateSelf failed, code is ${err.code}, message is ${err.message}`);
+           });
+       } catch (err) {
+         // 捕获同步的参数错误
+         let code = (err as BusinessError).code;
+         let message = (err as BusinessError).message;
+         console.error(`terminateSelf failed, code is ${code}, message is ${message}`);
+       }
+     }
+   }
    ```
 2. （可选）如果需要在停止UIAbility时，清理任务中心的相关任务（即不保留最近任务列表中的快照），需要在[module.json5](../harmonyos-guides/module-configuration-file.md)配置文件中将removeMissionAfterTerminate字段取值配置为true。
 
-   ```
-   1. {
-   2. "module": {
-   3. // ...
-   4. "abilities": [
-   5. {
-   6. // ...
-   7. "removeMissionAfterTerminate": true
-   8. }
-   9. ]
-   10. }
-   11. }
+   ```json5
+   {
+     "module": {
+       // ...
+       "abilities": [
+         {
+           // ...
+           "removeMissionAfterTerminate": true
+         }
+       ]
+     }
+   }
    ```
 
 ### terminateSelfWithResult
-
-PhonePC/2in1TabletTVWearable
 
 terminateSelfWithResult(parameter: AbilityResult, callback: AsyncCallback<void>): void
 
@@ -799,7 +785,7 @@ terminateSelfWithResult(parameter: AbilityResult, callback: AsyncCallback<void>)
 
 仅当UIAbility通过[startAbilityForResult](js-apis-inner-application-uiabilitycontext.md#startabilityforresult)接口拉起时，调用terminateSelfWithResult接口销毁UIAbility，才会返回结果给调用方。
 
-说明
+**说明** 
 
 调用该接口后，任务中心的任务默认不会清理，如需清理，需要配置[removeMissionAfterTerminate](../harmonyos-guides/module-configuration-file.md#abilities标签)为true。
 
@@ -821,52 +807,53 @@ terminateSelfWithResult(parameter: AbilityResult, callback: AsyncCallback<void>)
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 16000005 | The specified process does not have the permission.  适用版本：9 |
+| 16000004 | Cannot start an invisible component.  适用版本：9 |
+| 16000001 | The specified ability does not exist.  适用版本：9 |
 | 16000009 | An ability cannot be started or stopped in Wukong mode. |
 | 16000011 | The context does not exist. |
 | 16000050 | Internal error. |
 
 **示例：**
 
-```
-1. import { UIAbility, Want, common } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility, Want, common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onForeground() {
-6. let want: Want = {
-7. bundleName: 'com.example.myapplication',
-8. abilityName: 'EntryAbility'
-9. };
-10. let resultCode = 100;
-11. // 返回给接口调用方AbilityResult信息
-12. let abilityResult: common.AbilityResult = {
-13. want,
-14. resultCode
-15. };
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    let want: Want = {
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility'
+    };
+    let resultCode = 100;
+    // 返回给接口调用方AbilityResult信息
+    let abilityResult: common.AbilityResult = {
+      want,
+      resultCode
+    };
 
-17. try {
-18. this.context.terminateSelfWithResult(abilityResult, (err: BusinessError) => {
-19. if (err.code) {
-20. // 处理业务逻辑错误
-21. console.error(`terminateSelfWithResult failed, code is ${err.code}, message is ${err.message}`);
-22. return;
-23. }
-24. // 执行正常业务
-25. console.info('terminateSelfWithResult succeed');
-26. });
-27. } catch (err) {
-28. // 处理入参错误异常
-29. let code = (err as BusinessError).code;
-30. let message = (err as BusinessError).message;
-31. console.error(`terminateSelfWithResult failed, code is ${code}, message is ${message}`);
-32. }
-33. }
-34. }
+    try {
+      this.context.terminateSelfWithResult(abilityResult, (err: BusinessError) => {
+        if (err.code) {
+          // 处理业务逻辑错误
+          console.error(`terminateSelfWithResult failed, code is ${err.code}, message is ${err.message}`);
+          return;
+        }
+        // 执行正常业务
+        console.info('terminateSelfWithResult succeed');
+      });
+    } catch (err) {
+      // 处理入参错误异常
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`terminateSelfWithResult failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```
 
 ### terminateSelfWithResult
-
-PhonePC/2in1TabletTVWearable
 
 terminateSelfWithResult(parameter: AbilityResult): Promise<void>
 
@@ -874,7 +861,7 @@ terminateSelfWithResult(parameter: AbilityResult): Promise<void>
 
 仅当UIAbility通过[startAbilityForResult](js-apis-inner-application-uiabilitycontext.md#startabilityforresult)接口拉起时，调用terminateSelfWithResult接口销毁UIAbility，才会返回结果给调用方。
 
-说明
+**说明** 
 
 调用该接口后，任务中心的任务默认不会清理，如需清理，需要配置[removeMissionAfterTerminate](../harmonyos-guides/module-configuration-file.md#abilities标签)为true。
 
@@ -901,58 +888,59 @@ terminateSelfWithResult(parameter: AbilityResult): Promise<void>
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 16000005 | The specified process does not have the permission.  适用版本：9 |
+| 16000004 | Cannot start an invisible component.  适用版本：9 |
+| 16000001 | The specified ability does not exist.  适用版本：9 |
 | 16000009 | An ability cannot be started or stopped in Wukong mode. |
 | 16000011 | The context does not exist. |
 | 16000050 | Internal error. |
 
 **示例：**
 
-```
-1. import { UIAbility, Want, common } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility, Want, common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onForeground() {
-6. let want: Want = {
-7. bundleName: 'com.example.myapplication',
-8. abilityName: 'EntryAbility'
-9. };
-10. let resultCode = 100;
-11. // 返回给接口调用方AbilityResult信息
-12. let abilityResult: common.AbilityResult = {
-13. want,
-14. resultCode
-15. };
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    let want: Want = {
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility'
+    };
+    let resultCode = 100;
+    // 返回给接口调用方AbilityResult信息
+    let abilityResult: common.AbilityResult = {
+      want,
+      resultCode
+    };
 
-17. try {
-18. this.context.terminateSelfWithResult(abilityResult)
-19. .then(() => {
-20. // 执行正常业务
-21. console.info('terminateSelfWithResult succeed');
-22. })
-23. .catch((err: BusinessError) => {
-24. // 处理业务逻辑错误
-25. console.error(`terminateSelfWithResult failed, code is ${err.code}, message is ${err.message}`);
-26. });
-27. } catch (err) {
-28. // 处理入参错误异常
-29. let code = (err as BusinessError).code;
-30. let message = (err as BusinessError).message;
-31. console.error(`terminateSelfWithResult failed, code is ${code}, message is ${message}`);
-32. }
-33. }
-34. }
+    try {
+      this.context.terminateSelfWithResult(abilityResult)
+        .then(() => {
+          // 执行正常业务
+          console.info('terminateSelfWithResult succeed');
+        })
+        .catch((err: BusinessError) => {
+          // 处理业务逻辑错误
+          console.error(`terminateSelfWithResult failed, code is ${err.code}, message is ${err.message}`);
+        });
+    } catch (err) {
+      // 处理入参错误异常
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`terminateSelfWithResult failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```
 
 ### connectServiceExtensionAbility
-
-PhonePC/2in1TabletTVWearable
 
 connectServiceExtensionAbility(want: Want, options: ConnectOptions): number
 
 将当前UIAbility连接到一个[ServiceExtensionAbility](../harmonyos-guides/extensionability-overview.md)，通过返回的proxy与ServiceExtensionAbility进行通信，以使用ServiceExtensionAbility对外提供的能力。仅支持在主线程调用。
 
-说明
+**说明** 
 
 组件启动规则详见：[组件启动规则（Stage模型）](../harmonyos-guides/component-startup-rules.md)。
 
@@ -980,62 +968,60 @@ connectServiceExtensionAbility(want: Want, options: ConnectOptions): number
 | 201 | The application does not have permission to call the interface. |
 | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
 | 16000001 | The specified ability does not exist. |
-| 16000002 | Incorrect ability type. |
-| 16000004 | Cannot start an invisible component. |
+| 16000002 | Incorrect ability type.  适用版本：10+ |
+| 16000004 | Cannot start an invisible component.  适用版本：10+ |
 | 16000005 | The specified process does not have the permission. |
-| 16000006 | Cross-user operations are not allowed. |
-| 16000008 | The crowdtesting application expires. |
+| 16000006 | Cross-user operations are not allowed.  适用版本：10+ |
+| 16000008 | The crowdtesting application expires.  适用版本：10+ |
 | 16000011 | The context does not exist. |
-| 16000012 | The application is controlled. |
-| 16000013 | The application is controlled by EDM. |
+| 16000012 | The application is controlled.  适用版本：10+ |
+| 16000013 | The application is controlled by EDM.  适用版本：10+ |
 | 16000050 | Internal error. |
-| 16000053 | The ability is not on the top of the UI. |
-| 16000055 | Installation-free timed out. |
+| 16000053 | The ability is not on the top of the UI.  适用版本：10+ |
+| 16000055 | Installation-free timed out.  适用版本：10+ |
 
 **示例：**
 
-```
-1. import { UIAbility, Want, common } from '@kit.AbilityKit';
-2. import { rpc } from '@kit.IPCKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility, Want, common } from '@kit.AbilityKit';
+import { rpc } from '@kit.IPCKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. export default class EntryAbility extends UIAbility {
-6. onForeground() {
-7. let want: Want = {
-8. deviceId: '',
-9. bundleName: 'com.example.myapplication',
-10. abilityName: 'ServiceExtensionAbility'
-11. };
-12. let commRemote: rpc.IRemoteObject;
-13. let options: common.ConnectOptions = {
-14. onConnect(elementName, remote) {
-15. commRemote = remote;
-16. console.info('onConnect...');
-17. },
-18. onDisconnect(elementName) {
-19. console.info('onDisconnect...');
-20. },
-21. onFailed(code) {
-22. console.info('onFailed...');
-23. }
-24. };
-25. let connection: number;
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    let want: Want = {
+      deviceId: '',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'ServiceExtensionAbility'
+    };
+    let commRemote: rpc.IRemoteObject;
+    let options: common.ConnectOptions = {
+      onConnect(elementName, remote) {
+        commRemote = remote;
+        console.info('onConnect...');
+      },
+      onDisconnect(elementName) {
+        console.info('onDisconnect...');
+      },
+      onFailed(code) {
+        console.info('onFailed...');
+      }
+    };
+    let connection: number;
 
-27. try {
-28. connection = this.context.connectServiceExtensionAbility(want, options);
-29. } catch (err) {
-30. // 处理入参错误异常
-31. let code = (err as BusinessError).code;
-32. let message = (err as BusinessError).message;
-33. console.error(`connectServiceExtensionAbility failed, code is ${code}, message is ${message}`);
-34. }
-35. }
-36. }
+    try {
+      connection = this.context.connectServiceExtensionAbility(want, options);
+    } catch (err) {
+      // 处理入参错误异常
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`connectServiceExtensionAbility failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```
 
 ### disconnectServiceExtensionAbility
-
-PhonePC/2in1TabletTVWearable
 
 disconnectServiceExtensionAbility(connection: number): Promise<void>
 
@@ -1067,40 +1053,38 @@ disconnectServiceExtensionAbility(connection: number): Promise<void>
 
 **示例：**
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { rpc } from '@kit.IPCKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { rpc } from '@kit.IPCKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. export default class EntryAbility extends UIAbility {
-6. onForeground() {
-7. // connection为connectServiceExtensionAbility中的返回值
-8. let connection = 1;
-9. let commRemote: rpc.IRemoteObject | null;
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    // connection为connectServiceExtensionAbility中的返回值
+    let connection = 1;
+    let commRemote: rpc.IRemoteObject | null;
 
-11. try {
-12. this.context.disconnectServiceExtensionAbility(connection).then(() => {
-13. commRemote = null;
-14. // 执行正常业务
-15. console.info('disconnectServiceExtensionAbility succeed');
-16. }).catch((err: BusinessError) => {
-17. // 处理业务逻辑错误
-18. console.error(`disconnectServiceExtensionAbility failed, code is ${err.code}, message is ${err.message}`);
-19. });
-20. } catch (err) {
-21. commRemote = null;
-22. // 处理入参错误异常
-23. let code = (err as BusinessError).code;
-24. let message = (err as BusinessError).message;
-25. console.error(`disconnectServiceExtensionAbility failed, code is ${code}, message is ${message}`);
-26. }
-27. }
-28. }
+    try {
+      this.context.disconnectServiceExtensionAbility(connection).then(() => {
+        commRemote = null;
+        // 执行正常业务
+        console.info('disconnectServiceExtensionAbility succeed');
+      }).catch((err: BusinessError) => {
+        // 处理业务逻辑错误
+        console.error(`disconnectServiceExtensionAbility failed, code is ${err.code}, message is ${err.message}`);
+      });
+    } catch (err) {
+      commRemote = null;
+      // 处理入参错误异常
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`disconnectServiceExtensionAbility failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```
 
 ### disconnectServiceExtensionAbility
-
-PhonePC/2in1TabletTVWearable
 
 disconnectServiceExtensionAbility(connection: number, callback: AsyncCallback<void>): void
 
@@ -1127,42 +1111,40 @@ disconnectServiceExtensionAbility(connection: number, callback: AsyncCallback<vo
 
 **示例：**
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { rpc } from '@kit.IPCKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { rpc } from '@kit.IPCKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. export default class EntryAbility extends UIAbility {
-6. onForeground() {
-7. // connection为connectServiceExtensionAbility中的返回值
-8. let connection = 1;
-9. let commRemote: rpc.IRemoteObject | null;
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    // connection为connectServiceExtensionAbility中的返回值
+    let connection = 1;
+    let commRemote: rpc.IRemoteObject | null;
 
-11. try {
-12. this.context.disconnectServiceExtensionAbility(connection, (err: BusinessError) => {
-13. commRemote = null;
-14. if (err.code) {
-15. // 处理业务逻辑错误
-16. console.error(`disconnectServiceExtensionAbility failed, code is ${err.code}, message is ${err.message}`);
-17. return;
-18. }
-19. // 执行正常业务
-20. console.info('disconnectServiceExtensionAbility succeed');
-21. });
-22. } catch (err) {
-23. commRemote = null;
-24. // 处理入参错误异常
-25. let code = (err as BusinessError).code;
-26. let message = (err as BusinessError).message;
-27. console.error(`disconnectServiceExtensionAbility failed, code is ${code}, message is ${message}`);
-28. }
-29. }
-30. }
+    try {
+      this.context.disconnectServiceExtensionAbility(connection, (err: BusinessError) => {
+        commRemote = null;
+        if (err.code) {
+          // 处理业务逻辑错误
+          console.error(`disconnectServiceExtensionAbility failed, code is ${err.code}, message is ${err.message}`);
+          return;
+        }
+        // 执行正常业务
+        console.info('disconnectServiceExtensionAbility succeed');
+      });
+    } catch (err) {
+      commRemote = null;
+      // 处理入参错误异常
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`disconnectServiceExtensionAbility failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```
 
 ### startAbilityByCall
-
-PhonePC/2in1TabletTVWearable
 
 startAbilityByCall(want: Want): Promise<Caller>
 
@@ -1170,7 +1152,7 @@ startAbilityByCall(want: Want): Promise<Caller>
 
 该接口不支持拉起启动模式为[specified模式](../harmonyos-guides/uiability-launch-type.md#specified启动模式)的UIAbility。
 
-说明
+**说明** 
 
 * 跨设备场景下，调用方与目标方必须为同一应用。
 * 同设备场景下，要求调用方与目标方为不同应用，且调用方具备ohos.permission.ABILITY\_BACKGROUND\_COMMUNICATION权限（该权限仅系统应用可申请）。
@@ -1178,7 +1160,7 @@ startAbilityByCall(want: Want): Promise<Caller>
 
 **需要权限**：ohos.permission.DISTRIBUTED\_DATASYNC
 
-说明
+**说明** 
 
 * API version 10及之前版本，需申请ohos.permission.ABILITY\_BACKGROUND\_COMMUNICATION（该权限仅系统应用可用）。
 * API version 11开始，仅需申请ohos.permission.DISTRIBUTED\_DATASYNC（该权限仅当执行应用间建链操作时由软总线实施权限校验，在应用拉起阶段不做校验）。
@@ -1208,150 +1190,150 @@ startAbilityByCall(want: Want): Promise<Caller>
 | 16000001 | The specified ability does not exist. |
 | 16000002 | Incorrect ability type. |
 | 16000004 | Cannot start an invisible component. |
+| 16000005 | The specified process does not have the permission.  适用版本：9 |
 | 16000006 | Cross-user operations are not allowed. |
 | 16000008 | The crowdtesting application expires. |
 | 16000011 | The context does not exist. |
-| 16000012 | The application is controlled. |
-| 16000013 | The application is controlled by EDM. |
-| 16000018 | Redirection to a third-party application is not allowed in API version greater than 11. |
+| 16000012 | The application is controlled.  适用版本：10+ |
+| 16000013 | The application is controlled by EDM.  适用版本：10+ |
+| 16000018 | Redirection to a third-party application is not allowed in API version greater than 11.  适用版本：12+ |
 | 16000050 | Internal error. Possible causes: 1.Connect to system service failed. 2.Sending restart message to system service failed. 3.System service failed to communicate with dependency module. 4.Non-system applications are only allowed to call this interface across devices, not on the current device. |
-| 16000071 | App clone is not supported. |
-| 16000072 | App clone or multi-instance is not supported. |
-| 16000073 | The app clone index is invalid. |
-| 16000076 | The app instance key is invalid. |
-| 16000077 | The number of app instances reaches the limit. |
-| 16000078 | The multi-instance is not supported. |
-| 16000079 | The APP\_INSTANCE\_KEY cannot be specified. |
-| 16000080 | Creating a new instance is not supported. |
+| 16000071 | App clone is not supported.  适用版本：14+ |
+| 16000072 | App clone or multi-instance is not supported.  适用版本：14+ |
+| 16000073 | The app clone index is invalid.  适用版本：12+ |
+| 16000076 | The app instance key is invalid.  适用版本：14+ |
+| 16000077 | The number of app instances reaches the limit.  适用版本：14+ |
+| 16000078 | The multi-instance is not supported.  适用版本：14+ |
+| 16000079 | The APP\_INSTANCE\_KEY cannot be specified.  适用版本：14+ |
+| 16200001 | The caller has been released.  适用版本：9 |
+| 16000080 | Creating a new instance is not supported.  适用版本：14+ |
 
 **示例：**
 
 下面代码展示的是，调用方启动目标方到后台，获取Caller成功后发消息到目标方，然后释放Caller对象。
 
-```
-1. import { Caller, UIAbility, Want } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { rpc } from '@kit.IPCKit';
+```ts
+import { Caller, UIAbility, Want } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { rpc } from '@kit.IPCKit';
 
-5. const DOMAIN = 0x0000;
-6. const LOG_TAG = 'TEST_TAG';
+const DOMAIN = 0x0000;
+const LOG_TAG = 'TEST_TAG';
 
-8. class TestParcelable implements rpc.Parcelable {
-9. age: number = 0;
-10. name: string = '';
-11. marshalling(dataOut: rpc.MessageSequence): boolean {
-12. dataOut.writeInt(this.age);
-13. dataOut.writeString(this.name);
-14. return true;
-15. }
-16. unmarshalling(dataIn: rpc.MessageSequence): boolean {
-17. this.age = dataIn.readInt();
-18. this.name = dataIn.readString();
-19. return true;
-20. }
-21. }
+class TestParcelable implements rpc.Parcelable {
+  age: number = 0;
+  name: string = '';
+  marshalling(dataOut: rpc.MessageSequence): boolean {
+    dataOut.writeInt(this.age);
+    dataOut.writeString(this.name);
+    return true;
+  }
+  unmarshalling(dataIn: rpc.MessageSequence): boolean {
+    this.age = dataIn.readInt();
+    this.name = dataIn.readString();
+    return true;
+  }
+}
 
-23. export default class EntryAbility extends UIAbility {
-24. async onForeground() {
-25. let caller: Caller;
-26. // 后台启动Ability
-27. let wantBackground: Want = {
-28. bundleName: 'com.example.myapplication',
-29. abilityName: 'EntryAbility',
-30. };
+export default class EntryAbility extends UIAbility {
+  async onForeground() {
+    let caller: Caller;
+    // 后台启动Ability
+    let wantBackground: Want = {
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility',
+    };
 
-32. try {
-33. caller = await this.context.startAbilityByCall(wantBackground);
-34. await caller.call('TEST_CALL', new TestParcelable());
-35. caller.release();
-36. } catch (err) {
-37. // 处理入参错误异常
-38. hilog.error(DOMAIN, LOG_TAG, `startAbilityByCall failed ${err}`);
-39. }
-40. }
-41. }
+    try {
+      caller = await this.context.startAbilityByCall(wantBackground);
+      await caller.call('TEST_CALL', new TestParcelable());
+      caller.release();
+    } catch (err) {
+      // 处理入参错误异常
+      hilog.error(DOMAIN, LOG_TAG, `startAbilityByCall failed ${err}`);
+    }
+  }
+}
 ```
 
 下面代码展示，目标方启动后注册监听，销毁时取消监听。
 
-```
-1. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { rpc } from '@kit.IPCKit';
+```ts
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { rpc } from '@kit.IPCKit';
 
-5. const DOMAIN = 0x0000;
-6. const LOG_TAG = 'TEST_TAG';
+const DOMAIN = 0x0000;
+const LOG_TAG = 'TEST_TAG';
 
-8. class TestParcelable implements rpc.Parcelable {
-9. age: number = 0;
-10. name: string = '';
-11. marshalling(dataOut: rpc.MessageSequence): boolean {
-12. dataOut.writeInt(this.age);
-13. dataOut.writeString(this.name);
-14. return true;
-15. }
-16. unmarshalling(dataIn: rpc.MessageSequence): boolean {
-17. this.age = dataIn.readInt();
-18. this.name = dataIn.readString();
-19. return true;
-20. }
-21. }
+class TestParcelable implements rpc.Parcelable {
+  age: number = 0;
+  name: string = '';
+  marshalling(dataOut: rpc.MessageSequence): boolean {
+    dataOut.writeInt(this.age);
+    dataOut.writeString(this.name);
+    return true;
+  }
+  unmarshalling(dataIn: rpc.MessageSequence): boolean {
+    this.age = dataIn.readInt();
+    this.name = dataIn.readString();
+    return true;
+  }
+}
 
-23. export default class EntryAbility extends UIAbility {
-24. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-25. hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'Ability onCreate');
-26. // 注册监听
-27. this.callee.on('TEST_CALL', (data: rpc.MessageSequence) => {
-28. let recv = new TestParcelable();
-29. data.readParcelable(recv);
-30. recv.age++;
-31. return recv;
-32. });
-33. }
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'Ability onCreate');
+    // 注册监听
+    this.callee.on('TEST_CALL', (data: rpc.MessageSequence) => {
+      let recv = new TestParcelable();
+      data.readParcelable(recv);
+      recv.age++;
+      return recv;
+    });
+  }
 
-35. onDestroy(): void {
-36. hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'Ability onDestroy');
-37. // 取消监听
-38. this.callee.off('TEST_CALL');
-39. }
-40. }
+  onDestroy(): void {
+    hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'Ability onDestroy');
+    // 取消监听
+    this.callee.off('TEST_CALL');
+  }
+}
 ```
 
 下面代码展示，调用方启动目标方到前台场景。
 
-```
-1. import { Caller, UIAbility, Want } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { Caller, UIAbility, Want } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. const DOMAIN = 0x0000;
-5. const LOG_TAG = 'TEST_TAG';
+const DOMAIN = 0x0000;
+const LOG_TAG = 'TEST_TAG';
 
-7. export default class EntryAbility extends UIAbility {
-8. async onForeground() {
-9. let caller: Caller;
-10. // 启动UIAbility到前台，将parameters中的'ohos.aafwk.param.callAbilityToForeground'配置为true
-11. let wantForeground: Want = {
-12. bundleName: 'com.example.myapplication',
-13. abilityName: 'EntryAbility',
-14. parameters: {
-15. 'ohos.aafwk.param.callAbilityToForeground': true
-16. }
-17. };
+export default class EntryAbility extends UIAbility {
+  async onForeground() {
+    let caller: Caller;
+    // 启动UIAbility到前台，将parameters中的'ohos.aafwk.param.callAbilityToForeground'配置为true
+    let wantForeground: Want = {
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility',
+      parameters: {
+        'ohos.aafwk.param.callAbilityToForeground': true
+      }
+    };
 
-19. try {
-20. caller = await this.context.startAbilityByCall(wantForeground);
-21. caller.release();
-22. } catch (err) {
-23. // 处理入参错误异常
-24. hilog.error(DOMAIN, LOG_TAG, `startAbilityByCall failed ${err}`);
-25. }
-26. }
-27. }
+    try {
+      caller = await this.context.startAbilityByCall(wantForeground);
+      caller.release();
+    } catch (err) {
+      // 处理入参错误异常
+      hilog.error(DOMAIN, LOG_TAG, `startAbilityByCall failed ${err}`);
+    }
+  }
+}
 ```
 
 ### setMissionLabel
-
-PhonePC/2in1TabletTVWearable
 
 setMissionLabel(label: string, callback: AsyncCallback<void>): void
 
@@ -1380,22 +1362,20 @@ setMissionLabel(label: string, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { UIAbility, AbilityConstant, Want } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility, AbilityConstant, Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-6. this.context.setMissionLabel('test', (result: BusinessError) => {
-7. console.info(`setMissionLabel: ${JSON.stringify(result)}`);
-8. });
-9. }
-10. }
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
+    this.context.setMissionLabel('test', (result: BusinessError) => {
+      console.info(`setMissionLabel: ${JSON.stringify(result)}`);
+    });
+  }
+}
 ```
 
 ### setMissionLabel
-
-PhonePC/2in1TabletTVWearable
 
 setMissionLabel(label: string): Promise<void>
 
@@ -1429,26 +1409,24 @@ setMissionLabel(label: string): Promise<void>
 
 **示例：**
 
-```
-1. import { UIAbility, AbilityConstant, Want } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility, AbilityConstant, Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-6. this.context.setMissionLabel('test').then(() => {
-7. console.info('success');
-8. }).catch((err: BusinessError) => {
-9. let code = (err as BusinessError).code;
-10. let message = (err as BusinessError).message;
-11. console.error(`setMissionLabel failed, code is ${code}, message is ${message}`);
-12. });
-13. }
-14. }
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
+    this.context.setMissionLabel('test').then(() => {
+      console.info('success');
+    }).catch((err: BusinessError) => {
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`setMissionLabel failed, code is ${code}, message is ${message}`);
+    });
+  }
+}
 ```
 
 ### setMissionContinueState10+
-
-PhonePC/2in1TabletTVWearable
 
 setMissionContinueState(state: AbilityConstant.ContinueState, callback: AsyncCallback<void>): void
 
@@ -1457,6 +1435,8 @@ setMissionContinueState(state: AbilityConstant.ContinueState, callback: AsyncCal
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备调用不生效。
 
 **参数：**
 
@@ -1477,22 +1457,20 @@ setMissionContinueState(state: AbilityConstant.ContinueState, callback: AsyncCal
 
 **示例：**
 
-```
-1. import { UIAbility, AbilityConstant } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility, AbilityConstant } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onForeground() {
-6. this.context.setMissionContinueState(AbilityConstant.ContinueState.INACTIVE, (result: BusinessError) => {
-7. console.info(`setMissionContinueState: ${JSON.stringify(result)}`);
-8. });
-9. }
-10. }
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    this.context.setMissionContinueState(AbilityConstant.ContinueState.INACTIVE, (result: BusinessError) => {
+      console.info(`setMissionContinueState: ${JSON.stringify(result)}`);
+    });
+  }
+}
 ```
 
 ### setMissionContinueState10+
-
-PhonePC/2in1TabletTVWearable
 
 setMissionContinueState(state: AbilityConstant.ContinueState): Promise<void>
 
@@ -1501,6 +1479,8 @@ setMissionContinueState(state: AbilityConstant.ContinueState): Promise<void>
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
+**设备行为差异：** 该接口在不支持分布式业务的Wearable设备调用不生效。
 
 **参数：**
 
@@ -1526,24 +1506,22 @@ setMissionContinueState(state: AbilityConstant.ContinueState): Promise<void>
 
 **示例：**
 
-```
-1. import { UIAbility, AbilityConstant } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility, AbilityConstant } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onForeground() {
-6. this.context.setMissionContinueState(AbilityConstant.ContinueState.INACTIVE).then(() => {
-7. console.info('success');
-8. }).catch((err: BusinessError) => {
-9. console.error(`setMissionContinueState failed, code is ${err.code}, message is ${err.message}`);
-10. });
-11. }
-12. }
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    this.context.setMissionContinueState(AbilityConstant.ContinueState.INACTIVE).then(() => {
+      console.info('success');
+    }).catch((err: BusinessError) => {
+      console.error(`setMissionContinueState failed, code is ${err.code}, message is ${err.message}`);
+    });
+  }
+}
 ```
 
 ### restoreWindowStage
-
-PhonePC/2in1TabletTVWearable
 
 restoreWindowStage(localStorage: LocalStorage): void
 
@@ -1571,20 +1549,18 @@ restoreWindowStage(localStorage: LocalStorage): void
 
 **示例：**
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
+```ts
+import { UIAbility } from '@kit.AbilityKit';
 
-3. export default class EntryAbility extends UIAbility {
-4. onForeground() {
-5. let storage = new LocalStorage();
-6. this.context.restoreWindowStage(storage);
-7. }
-8. }
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    let storage = new LocalStorage();
+    this.context.restoreWindowStage(storage);
+  }
+}
 ```
 
 ### isTerminating
-
-PhonePC/2in1TabletTVWearable
 
 isTerminating(): boolean
 
@@ -1610,26 +1586,24 @@ isTerminating(): boolean
 
 **示例：**
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
+```ts
+import { UIAbility } from '@kit.AbilityKit';
 
-3. export default class EntryAbility extends UIAbility {
-4. onForeground() {
-5. let isTerminating: boolean = this.context.isTerminating();
-6. console.info(`ability state is ${isTerminating}`);
-7. }
-8. }
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    let isTerminating: boolean = this.context.isTerminating();
+    console.info(`ability state is ${isTerminating}`);
+  }
+}
 ```
 
 ### requestDialogService
-
-PhonePC/2in1TabletTVWearable
 
 requestDialogService(want: Want, result: AsyncCallback<dialogRequest.RequestResult>): void
 
 启动一个支持模态弹框的ServiceExtensionAbility。ServiceExtensionAbility被启动后，应用弹出模态弹框，通过调用[setRequestResult](js-apis-app-ability-dialogrequest.md#requestcallbacksetrequestresult)接口返回结果给调用者。使用callback异步回调。仅支持在主线程调用。
 
-说明
+**说明** 
 
 组件启动规则详见：[组件启动规则（Stage模型）](../harmonyos-guides/component-startup-rules.md)。
 
@@ -1648,7 +1622,7 @@ requestDialogService(want: Want, result: AsyncCallback<dialogRequest.RequestResu
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | The application does not have permission to call the interface. |
+| 201 | The application does not have permission to call the interface.  适用版本：10+ |
 | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
 | 16000001 | The specified ability does not exist. |
 | 16000002 | Incorrect ability type. |
@@ -1659,8 +1633,8 @@ requestDialogService(want: Want, result: AsyncCallback<dialogRequest.RequestResu
 | 16000009 | An ability cannot be started or stopped in Wukong mode. |
 | 16000010 | The call with the continuation and prepare continuation flag is forbidden. |
 | 16000011 | The context does not exist. |
-| 16000012 | The application is controlled. |
-| 16000013 | The application is controlled by EDM. |
+| 16000012 | The application is controlled.  适用版本：10+ |
+| 16000013 | The application is controlled by EDM.  适用版本：10+ |
 | 16000050 | Internal error. |
 | 16000053 | The ability is not on the top of the UI. |
 | 16000055 | Installation-free timed out. |
@@ -1668,47 +1642,45 @@ requestDialogService(want: Want, result: AsyncCallback<dialogRequest.RequestResu
 
 **示例：**
 
-```
-1. import { UIAbility, Want, dialogRequest } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility, Want, dialogRequest } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onForeground() {
-6. let want: Want = {
-7. deviceId: '',
-8. bundleName: 'com.example.myapplication',
-9. abilityName: 'AuthAccountServiceExtension'
-10. };
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    let want: Want = {
+      deviceId: '',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'AuthAccountServiceExtension'
+    };
 
-12. try {
-13. this.context.requestDialogService(want, (err: BusinessError, result: dialogRequest.RequestResult) => {
-14. if (err.code) {
-15. // 处理业务逻辑错误
-16. console.error(`requestDialogService failed, code is ${err.code}, message is ${err.message}`);
-17. return;
-18. }
-19. // 执行正常业务
-20. console.info(`requestDialogService succeed, result = ${JSON.stringify(result)}`);
-21. });
-22. } catch (err) {
-23. // 处理入参错误异常
-24. let code = (err as BusinessError).code;
-25. let message = (err as BusinessError).message;
-26. console.error(`requestDialogService failed, code is ${code}, message is ${message}`);
-27. }
-28. }
-29. }
+    try {
+      this.context.requestDialogService(want, (err: BusinessError, result: dialogRequest.RequestResult) => {
+        if (err.code) {
+          // 处理业务逻辑错误
+          console.error(`requestDialogService failed, code is ${err.code}, message is ${err.message}`);
+          return;
+        }
+        // 执行正常业务
+        console.info(`requestDialogService succeed, result = ${JSON.stringify(result)}`);
+      });
+    } catch (err) {
+      // 处理入参错误异常
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`requestDialogService failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```
 
 ### requestDialogService
-
-PhonePC/2in1TabletTVWearable
 
 requestDialogService(want: Want): Promise<dialogRequest.RequestResult>
 
 启动一个支持模态弹框的ServiceExtensionAbility。ServiceExtensionAbility被启动后，应用弹出模态弹框，通过调用[setRequestResult](js-apis-app-ability-dialogrequest.md#requestcallbacksetrequestresult)接口返回结果给调用者。使用Promise异步回调。仅支持在主线程调用。
 
-说明
+**说明** 
 
 组件启动规则详见：[组件启动规则（Stage模型）](../harmonyos-guides/component-startup-rules.md)。
 
@@ -1732,7 +1704,7 @@ requestDialogService(want: Want): Promise<dialogRequest.RequestResult>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | The application does not have permission to call the interface. |
+| 201 | The application does not have permission to call the interface.  适用版本：10+ |
 | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
 | 16000001 | The specified ability does not exist. |
 | 16000002 | Incorrect ability type. |
@@ -1743,8 +1715,8 @@ requestDialogService(want: Want): Promise<dialogRequest.RequestResult>
 | 16000009 | An ability cannot be started or stopped in Wukong mode. |
 | 16000010 | The call with the continuation and prepare continuation flag is forbidden. |
 | 16000011 | The context does not exist. |
-| 16000012 | The application is controlled. |
-| 16000013 | The application is controlled by EDM. |
+| 16000012 | The application is controlled.  适用版本：10+ |
+| 16000013 | The application is controlled by EDM.  适用版本：10+ |
 | 16000050 | Internal error. |
 | 16000053 | The ability is not on the top of the UI. |
 | 16000055 | Installation-free timed out. |
@@ -1752,40 +1724,38 @@ requestDialogService(want: Want): Promise<dialogRequest.RequestResult>
 
 **示例：**
 
-```
-1. import { UIAbility, Want, dialogRequest } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility, Want, dialogRequest } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onForeground() {
-6. let want: Want = {
-7. bundleName: 'com.example.myapplication',
-8. abilityName: 'AuthAccountServiceExtension'
-9. };
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    let want: Want = {
+      bundleName: 'com.example.myapplication',
+      abilityName: 'AuthAccountServiceExtension'
+    };
 
-11. try {
-12. this.context.requestDialogService(want)
-13. .then((result: dialogRequest.RequestResult) => {
-14. // 执行正常业务
-15. console.info(`requestDialogService succeed, result = ${JSON.stringify(result)}`);
-16. })
-17. .catch((err: BusinessError) => {
-18. // 处理业务逻辑错误
-19. console.error(`requestDialogService failed, code is ${err.code}, message is ${err.message}`);
-20. });
-21. } catch (err) {
-22. // 处理入参错误异常
-23. let code = (err as BusinessError).code;
-24. let message = (err as BusinessError).message;
-25. console.error(`requestDialogService failed, code is ${code}, message is ${message}`);
-26. }
-27. }
-28. }
+    try {
+      this.context.requestDialogService(want)
+        .then((result: dialogRequest.RequestResult) => {
+          // 执行正常业务
+          console.info(`requestDialogService succeed, result = ${JSON.stringify(result)}`);
+        })
+        .catch((err: BusinessError) => {
+          // 处理业务逻辑错误
+          console.error(`requestDialogService failed, code is ${err.code}, message is ${err.message}`);
+        });
+    } catch (err) {
+      // 处理入参错误异常
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`requestDialogService failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```
 
 ### reportDrawnCompleted10+
-
-PhonePC/2in1TabletTVWearable
 
 reportDrawnCompleted(callback: AsyncCallback<void>): void
 
@@ -1812,43 +1782,41 @@ reportDrawnCompleted(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { window } from '@kit.ArkUI';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. export default class EntryAbility extends UIAbility {
-6. onWindowStageCreate(windowStage: window.WindowStage) {
-7. windowStage.loadContent('pages/Index', (err, data) => {
-8. if (err.code) {
-9. return;
-10. }
+export default class EntryAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    windowStage.loadContent('pages/Index', (err, data) => {
+      if (err.code) {
+        return;
+      }
 
-12. try {
-13. this.context.reportDrawnCompleted((err) => {
-14. if (err.code) {
-15. // 处理业务逻辑错误
-16. console.error(`reportDrawnCompleted failed, code is ${err.code}, message is ${err.message}`);
-17. return;
-18. }
-19. // 执行正常业务
-20. console.info('reportDrawnCompleted succeed');
-21. });
-22. } catch (err) {
-23. // 捕获同步的参数错误
-24. let code = (err as BusinessError).code;
-25. let message = (err as BusinessError).message;
-26. console.error(`reportDrawnCompleted failed, code is ${code}, message is ${message}`);
-27. }
-28. });
-29. console.info("MainAbility onWindowStageCreate");
-30. }
-31. };
+      try {
+        this.context.reportDrawnCompleted((err) => {
+          if (err.code) {
+            // 处理业务逻辑错误
+            console.error(`reportDrawnCompleted failed, code is ${err.code}, message is ${err.message}`);
+            return;
+          }
+          // 执行正常业务
+          console.info('reportDrawnCompleted succeed');
+        });
+      } catch (err) {
+        // 捕获同步的参数错误
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`reportDrawnCompleted failed, code is ${code}, message is ${message}`);
+      }
+    });
+    console.info("MainAbility onWindowStageCreate");
+  }
+};
 ```
 
 ### startAbilityByType11+
-
-PhonePC/2in1TabletTVWearable
 
 startAbilityByType(type: string, wantParam: Record<string, Object>, abilityStartCallback: AbilityStartCallback, callback: AsyncCallback<void>) : void
 
@@ -1873,42 +1841,45 @@ startAbilityByType(type: string, wantParam: Record<string, Object>, abilityStart
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 201 | The application does not have permission to call the interface.  适用版本：11 |
+| 16000004 | Cannot start an invisible component.  适用版本：11 |
+| 16200001 | The caller has been released.  适用版本：11 |
+| 16000002 | Incorrect ability type.  适用版本：11 |
+| 16000001 | The specified ability does not exist.  适用版本：11 |
 | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
 | 16000050 | Internal error. |
 
 **示例：**
 
-```
-1. import { UIAbility, common } from '@kit.AbilityKit';
+```ts
+import { UIAbility, common } from '@kit.AbilityKit';
 
-3. export default class EntryAbility extends UIAbility {
-4. onForeground() {
-5. let wantParam: Record<string, Object> = {
-6. 'time': '2023-10-23 20:45'
-7. };
-8. let abilityStartCallback: common.AbilityStartCallback = {
-9. onError: (code: number, name: string, message: string) => {
-10. console.info(`code:` + code + `name:` + name + `message:` + message);
-11. },
-12. onResult: (abilityResult: common.AbilityResult) => {
-13. console.info(`resultCode:` + abilityResult.resultCode + `bundleName:` + abilityResult.want?.bundleName);
-14. }
-15. };
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    let wantParam: Record<string, Object> = {
+      'time': '2023-10-23 20:45'
+    };
+    let abilityStartCallback: common.AbilityStartCallback = {
+      onError: (code: number, name: string, message: string) => {
+        console.error(`code:` + code + `name:` + name + `message:` + message);
+      },
+      onResult: (abilityResult: common.AbilityResult) => {
+        console.info(`resultCode:` + abilityResult.resultCode + `bundleName:` + abilityResult.want?.bundleName);
+      }
+    };
 
-17. this.context.startAbilityByType("photoEditor", wantParam, abilityStartCallback, (err) => {
-18. if (err) {
-19. console.error(`startAbilityByType fail, err: ${JSON.stringify(err)}`);
-20. } else {
-21. console.info(`success`);
-22. }
-23. });
-24. }
-25. }
+    this.context.startAbilityByType("photoEditor", wantParam, abilityStartCallback, (err) => {
+      if (err) {
+        console.error(`startAbilityByType fail, err: ${JSON.stringify(err)}`);
+      } else {
+        console.info(`success`);
+      }
+    });
+  }
+}
 ```
 
 ### startAbilityByType11+
-
-PhonePC/2in1TabletTVWearable
 
 startAbilityByType(type: string, wantParam: Record<string, Object>, abilityStartCallback: AbilityStartCallback) : Promise<void>
 
@@ -1938,41 +1909,44 @@ startAbilityByType(type: string, wantParam: Record<string, Object>, abilityStart
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 201 | The application does not have permission to call the interface.  适用版本：11 |
+| 16000004 | Cannot start an invisible component.  适用版本：11 |
+| 16200001 | The caller has been released.  适用版本：11 |
+| 16000002 | Incorrect ability type.  适用版本：11 |
+| 16000001 | The specified ability does not exist.  适用版本：11 |
 | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
 | 16000050 | Internal error. |
 
 **示例：**
 
-```
-1. import { UIAbility, common } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility, common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onForeground() {
-6. let wantParam: Record<string, Object> = {
-7. 'time': '2023-10-23 20:45'
-8. };
-9. let abilityStartCallback: common.AbilityStartCallback = {
-10. onError: (code: number, name: string, message: string) => {
-11. console.info(`code:` + code + `name:` + name + `message:` + message);
-12. },
-13. onResult: (abilityResult: common.AbilityResult) => {
-14. console.info(`resultCode:` + abilityResult.resultCode + `bundleName:` + abilityResult.want?.bundleName);
-15. }
-16. };
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    let wantParam: Record<string, Object> = {
+      'time': '2023-10-23 20:45'
+    };
+    let abilityStartCallback: common.AbilityStartCallback = {
+      onError: (code: number, name: string, message: string) => {
+        console.error(`code:` + code + `name:` + name + `message:` + message);
+      },
+      onResult: (abilityResult: common.AbilityResult) => {
+        console.info(`resultCode:` + abilityResult.resultCode + `bundleName:` + abilityResult.want?.bundleName);
+      }
+    };
 
-18. this.context.startAbilityByType("photoEditor", wantParam, abilityStartCallback).then(() => {
-19. console.info(`startAbilityByType success`);
-20. }).catch((err: BusinessError) => {
-21. console.error(`startAbilityByType fail, err: ${JSON.stringify(err)}`);
-22. });
-23. }
-24. }
+    this.context.startAbilityByType("photoEditor", wantParam, abilityStartCallback).then(() => {
+      console.info(`startAbilityByType success`);
+    }).catch((err: BusinessError) => {
+      console.error(`startAbilityByType fail, err: ${JSON.stringify(err)}`);
+    });
+  }
+}
 ```
 
 ### showAbility12+
-
-PhonePC/2in1TabletTVWearable
 
 showAbility(): Promise<void>
 
@@ -2002,80 +1976,78 @@ showAbility(): Promise<void>
 
 **示例：**
 
+```ts
+// Index.ets
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+@Entry
+@Component
+struct Index {
+  @State showAbility: string = 'showAbility'
+
+  build() {
+    Row() {
+      Column() {
+        Text(this.showAbility)
+          .fontSize(30)
+          .fontWeight(FontWeight.Bold)
+          .onClick(() => {
+            let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+
+            context.showAbility().then(() => {
+              console.info(`showAbility success`);
+            }).catch((err: BusinessError) => {
+              console.error(`showAbility fail, err: ${JSON.stringify(err)}`);
+            });
+          });
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-1. // Index.ets
-2. import { common } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. @State showAbility: string = 'showAbility'
+```ts
+// EntryAbility.ts
+import { UIAbility, Want, StartOptions, contextConstant } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-10. build() {
-11. Row() {
-12. Column() {
-13. Text(this.showAbility)
-14. .fontSize(30)
-15. .fontWeight(FontWeight.Bold)
-16. .onClick(() => {
-17. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    let want: Want = {
+      deviceId: '',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility'
+    };
+    let options: StartOptions = {
+      displayId: 0,
+      processMode: contextConstant.ProcessMode.NEW_PROCESS_ATTACH_TO_STATUS_BAR_ITEM,
+      startupVisibility: contextConstant.StartupVisibility.STARTUP_SHOW
+    };
 
-19. context.showAbility().then(() => {
-20. console.info(`showAbility success`);
-21. }).catch((err: BusinessError) => {
-22. console.error(`showAbility fail, err: ${JSON.stringify(err)}`);
-23. });
-24. });
-25. }
-26. .width('100%')
-27. }
-28. .height('100%')
-29. }
-30. }
-```
-
-```
-1. // EntryAbility.ts
-2. import { UIAbility, Want, StartOptions, contextConstant } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
-
-5. export default class EntryAbility extends UIAbility {
-6. onForeground() {
-7. let want: Want = {
-8. deviceId: '',
-9. bundleName: 'com.example.myapplication',
-10. abilityName: 'EntryAbility'
-11. };
-12. let options: StartOptions = {
-13. displayId: 0,
-14. processMode: contextConstant.ProcessMode.NEW_PROCESS_ATTACH_TO_STATUS_BAR_ITEM,
-15. startupVisibility: contextConstant.StartupVisibility.STARTUP_SHOW
-16. };
-
-18. try {
-19. this.context.startAbility(want, options, (err: BusinessError) => {
-20. if (err.code) {
-21. // 处理业务逻辑错误
-22. console.error(`startAbility failed, code is ${err.code}, message is ${err.message}`);
-23. return;
-24. }
-25. // 执行正常业务
-26. console.info('startAbility succeed');
-27. });
-28. } catch (err) {
-29. // 处理入参错误异常
-30. let code = (err as BusinessError).code;
-31. let message = (err as BusinessError).message;
-32. console.error(`startAbility failed, code is ${code}, message is ${message}`);
-33. }
-34. }
-35. }
+    try {
+      this.context.startAbility(want, options, (err: BusinessError) => {
+        if (err.code) {
+          // 处理业务逻辑错误
+          console.error(`startAbility failed, code is ${err.code}, message is ${err.message}`);
+          return;
+        }
+        // 执行正常业务
+        console.info('startAbility succeed');
+      });
+    } catch (err) {
+      // 处理入参错误异常
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`startAbility failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```
 
 ### hideAbility12+
-
-PhonePC/2in1TabletTVWearable
 
 hideAbility(): Promise<void>
 
@@ -2105,80 +2077,78 @@ hideAbility(): Promise<void>
 
 **示例：**
 
+```ts
+// Index.ets
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+@Entry
+@Component
+struct Index {
+  @State hideAbility: string = 'hideAbility'
+
+  build() {
+    Row() {
+      Column() {
+        Text(this.hideAbility)
+          .fontSize(30)
+          .fontWeight(FontWeight.Bold)
+          .onClick(() => {
+            let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+
+            context.hideAbility().then(() => {
+              console.info(`hideAbility success`);
+            }).catch((err: BusinessError) => {
+              console.error(`hideAbility fail, err: ${JSON.stringify(err)}`);
+            });
+          });
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-1. // Index.ets
-2. import { common } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. @State hideAbility: string = 'hideAbility'
+```ts
+// EntryAbility.ts
+import { UIAbility, Want, StartOptions, contextConstant } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-10. build() {
-11. Row() {
-12. Column() {
-13. Text(this.hideAbility)
-14. .fontSize(30)
-15. .fontWeight(FontWeight.Bold)
-16. .onClick(() => {
-17. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    let want: Want = {
+      deviceId: '',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility'
+    };
+    let options: StartOptions = {
+      displayId: 0,
+      processMode: contextConstant.ProcessMode.NEW_PROCESS_ATTACH_TO_STATUS_BAR_ITEM,
+      startupVisibility: contextConstant.StartupVisibility.STARTUP_HIDE
+    };
 
-19. context.hideAbility().then(() => {
-20. console.info(`hideAbility success`);
-21. }).catch((err: BusinessError) => {
-22. console.error(`hideAbility fail, err: ${JSON.stringify(err)}`);
-23. });
-24. });
-25. }
-26. .width('100%')
-27. }
-28. .height('100%')
-29. }
-30. }
-```
-
-```
-1. // EntryAbility.ts
-2. import { UIAbility, Want, StartOptions, contextConstant } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
-
-5. export default class EntryAbility extends UIAbility {
-6. onForeground() {
-7. let want: Want = {
-8. deviceId: '',
-9. bundleName: 'com.example.myapplication',
-10. abilityName: 'EntryAbility'
-11. };
-12. let options: StartOptions = {
-13. displayId: 0,
-14. processMode: contextConstant.ProcessMode.NEW_PROCESS_ATTACH_TO_STATUS_BAR_ITEM,
-15. startupVisibility: contextConstant.StartupVisibility.STARTUP_HIDE
-16. };
-
-18. try {
-19. this.context.startAbility(want, options, (err: BusinessError) => {
-20. if (err.code) {
-21. // 处理业务逻辑错误
-22. console.error(`startAbility failed, code is ${err.code}, message is ${err.message}`);
-23. return;
-24. }
-25. // 执行正常业务
-26. console.info('startAbility succeed');
-27. });
-28. } catch (err) {
-29. // 处理入参错误异常
-30. let code = (err as BusinessError).code;
-31. let message = (err as BusinessError).message;
-32. console.error(`startAbility failed, code is ${code}, message is ${message}`);
-33. }
-34. }
-35. }
+    try {
+      this.context.startAbility(want, options, (err: BusinessError) => {
+        if (err.code) {
+          // 处理业务逻辑错误
+          console.error(`startAbility failed, code is ${err.code}, message is ${err.message}`);
+          return;
+        }
+        // 执行正常业务
+        console.info('startAbility succeed');
+      });
+    } catch (err) {
+      // 处理入参错误异常
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`startAbility failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```
 
 ### moveAbilityToBackground12+
-
-PhonePC/2in1TabletTVWearable
 
 moveAbilityToBackground(): Promise<void>
 
@@ -2192,8 +2162,10 @@ moveAbilityToBackground(): Promise<void>
 
 **设备行为差异**：
 
-* 从API version 12开始，该接口仅在Phone、Wearable和TV设备中可正常调用，在其他设备上返回16000061错误码。
-* 从API version 13开始，该接口仅在Phone、Tablet、Wearable和TV设备中可正常调用，在其他设备上返回16000061错误码。
+* 从API version 12开始，该接口仅在Phone设备中可正常调用，在其他设备上返回16000061错误码。
+* 从API version 13开始，该接口仅在Phone和Tablet设备中可正常调用，在其他设备上返回16000061错误码。
+* 从API version 18开始，该接口仅在Phone、Tablet和Wearable设备中可正常调用，在其他设备上返回16000061错误码。
+* 从API version 19开始，该接口仅在Phone、Tablet、Wearable和TV设备中可正常调用，在其他设备上返回16000061错误码。
 
 **返回值：**
 
@@ -2215,41 +2187,39 @@ moveAbilityToBackground(): Promise<void>
 
 **示例：**
 
-```
-1. import { common } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. @State moveAbilityToBackground: string = 'Move To Background'
+@Entry
+@Component
+struct Index {
+  @State moveAbilityToBackground: string = 'Move To Background'
 
-9. build() {
-10. Row() {
-11. Column() {
-12. Text(this.moveAbilityToBackground)
-13. .fontSize(30)
-14. .fontWeight(FontWeight.Bold)
-15. .onClick(() => {
-16. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  build() {
+    Row() {
+      Column() {
+        Text(this.moveAbilityToBackground)
+          .fontSize(30)
+          .fontWeight(FontWeight.Bold)
+          .onClick(() => {
+            let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
 
-18. context.moveAbilityToBackground().then(() => {
-19. console.info(`moveAbilityToBackground success.`);
-20. }).catch((err: BusinessError) => {
-21. console.error(`moveAbilityToBackground error: ${JSON.stringify(err)}.`);
-22. });
-23. });
-24. }
-25. .width('100%')
-26. }
-27. .height('100%')
-28. }
-29. }
+            context.moveAbilityToBackground().then(() => {
+              console.info(`moveAbilityToBackground success.`);
+            }).catch((err: BusinessError) => {
+              console.error(`moveAbilityToBackground error: ${JSON.stringify(err)}.`);
+            });
+          });
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 ### openAtomicService12+
-
-PhonePC/2in1TabletTVWearable
 
 openAtomicService(appId: string, options?: AtomicServiceOptions): Promise<AbilityResult>
 
@@ -2259,9 +2229,9 @@ openAtomicService(appId: string, options?: AtomicServiceOptions): Promise<Abilit
 
 * 正常情况下元服务可以通过[terminateSelfWithResult](js-apis-inner-application-uiabilitycontext.md#terminateselfwithresult)接口销毁自身，并且返回结果给调用方。
 * 异常情况下比如杀死元服务会返回异常结果给调用方，异常结果的resultCode为-1。
-* 如果不同应用多次调用该接口启动同一个元服务，当这个元服务调用[terminateSelfWithResult](js-apis-inner-application-uiabilitycontext.md#terminateselfwithresult)接口销毁自身时，只将正常结果返回给最后一个调用方, 其它调用方返回异常结果，异常结果中resultCode为-1。
+* 如果不同应用多次调用该接口启动同一个元服务，当这个元服务调用[terminateSelfWithResult](js-apis-inner-application-uiabilitycontext.md#terminateselfwithresult)接口销毁自身时，只将正常结果返回给最后一个调用方，其它调用方返回异常结果，异常结果中resultCode为-1。
 
-说明
+**说明** 
 
 组件启动规则详见：[组件启动规则（Stage模型）](../harmonyos-guides/component-startup-rules.md)。
 
@@ -2301,40 +2271,38 @@ openAtomicService(appId: string, options?: AtomicServiceOptions): Promise<Abilit
 
 **示例：**
 
-```
-1. import { UIAbility, common, AtomicServiceOptions } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility, common, AtomicServiceOptions } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onForeground() {
-6. let appId: string = '6918661953712445909';
-7. let options: AtomicServiceOptions = {
-8. displayId: 0
-9. };
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    let appId: string = '6918661953712445909';
+    let options: AtomicServiceOptions = {
+      displayId: 0
+    };
 
-11. try {
-12. this.context.openAtomicService(appId, options)
-13. .then((result: common.AbilityResult) => {
-14. // 执行正常业务
-15. console.info('openAtomicService succeed');
-16. })
-17. .catch((err: BusinessError) => {
-18. // 处理业务逻辑错误
-19. console.error(`openAtomicService failed, code is ${err.code}, message is ${err.message}`);
-20. });
-21. } catch (err) {
-22. // 处理入参错误异常
-23. let code = (err as BusinessError).code;
-24. let message = (err as BusinessError).message;
-25. console.error(`openAtomicService failed, code is ${code}, message is ${message}`);
-26. }
-27. }
-28. }
+    try {
+      this.context.openAtomicService(appId, options)
+        .then((result: common.AbilityResult) => {
+          // 执行正常业务
+          console.info('openAtomicService succeed');
+        })
+        .catch((err: BusinessError) => {
+          // 处理业务逻辑错误
+          console.error(`openAtomicService failed, code is ${err.code}, message is ${err.message}`);
+        });
+    } catch (err) {
+      // 处理入参错误异常
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`openAtomicService failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```
 
 ### openLink12+
-
-PhonePC/2in1TabletTVWearable
 
 openLink(link: string, options?: OpenLinkOptions, callback?: AsyncCallback<AbilityResult>): Promise<void>
 
@@ -2350,7 +2318,7 @@ openLink(link: string, options?: OpenLinkOptions, callback?: AsyncCallback<Abili
 
 传入的参数不合法时，如未设置必选参数或link字符串不是标准格式的URL，接口会直接抛出异常。参数校验通过，拉起目标方时出现的错误通过promise返回错误信息。
 
-说明
+**说明** 
 
 组件启动规则详见：[组件启动规则（Stage模型）](../harmonyos-guides/component-startup-rules.md)。
 
@@ -2394,61 +2362,59 @@ openLink(link: string, options?: OpenLinkOptions, callback?: AsyncCallback<Abili
 | 16000019 | No matching ability is found. |
 | 16200001 | The caller has been released. |
 | 16000053 | The ability is not on the top of the UI. |
-| 16000136 | The UIAbility is prohibited from launching itself via App Linking. |
+| 16000136 | The UIAbility is prohibited from launching itself via App Linking.  适用版本：23+ |
 
 **示例：**
 
-```
-1. import { common, OpenLinkOptions } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { common, OpenLinkOptions } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. const DOMAIN = 0xeeee;
-6. const TAG: string = '[openLinkDemo]';
+const DOMAIN = 0xeeee;
+const TAG: string = '[openLinkDemo]';
 
-8. @Entry
-9. @Component
-10. struct Index {
-11. build() {
-12. RelativeContainer() {
-13. Button("Call StartAbilityForResult")
-14. .onClick(() => {
-15. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-16. let link: string = 'https://www.example.com';
-17. let openLinkOptions: OpenLinkOptions = {
-18. appLinkingOnly: true,
-19. parameters: { demo_key: 'demo_value' }
-20. };
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Button("Call StartAbilityForResult")
+        .onClick(() => {
+          let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+          let link: string = 'https://www.example.com';
+          let openLinkOptions: OpenLinkOptions = {
+            appLinkingOnly: true,
+            parameters: { demo_key: 'demo_value' }
+          };
 
-22. try {
-23. context.openLink(
-24. link,
-25. openLinkOptions,
-26. (err, result) => {
-27. hilog.error(DOMAIN, TAG, `openLink callback error.code: ${JSON.stringify(err)}`);
-28. hilog.info(DOMAIN, TAG, `openLink callback result: ${JSON.stringify(result.resultCode)}`);
-29. hilog.info(DOMAIN, TAG, `openLink callback result data: ${JSON.stringify(result.want)}`);
-30. }
-31. ).then(() => {
-32. hilog.info(DOMAIN, TAG, `open link success.`);
-33. }).catch((err: BusinessError) => {
-34. hilog.error(DOMAIN, TAG, `open link failed, errCode ${JSON.stringify(err.code)}`);
-35. });
-36. }
-37. catch (e) {
-38. hilog.error(DOMAIN, TAG, `exception occured, errCode ${JSON.stringify(e.code)}`);
-39. }
-40. })
-41. }
-42. .height('100%')
-43. .width('100%')
-44. }
-45. }
+          try {
+            context.openLink(
+              link,
+              openLinkOptions,
+              (err, result) => {
+                hilog.error(DOMAIN, TAG, `openLink callback error.code: ${JSON.stringify(err)}`);
+                hilog.info(DOMAIN, TAG, `openLink callback result: ${JSON.stringify(result.resultCode)}`);
+                hilog.info(DOMAIN, TAG, `openLink callback result data: ${JSON.stringify(result.want)}`);
+              }
+            ).then(() => {
+              hilog.info(DOMAIN, TAG, `open link success.`);
+            }).catch((err: BusinessError) => {
+              hilog.error(DOMAIN, TAG, `open link failed, errCode ${JSON.stringify(err.code)}`);
+            });
+          }
+          catch (e) {
+            hilog.error(DOMAIN, TAG, `exception occurred, errCode ${JSON.stringify(e.code)}`);
+          }
+        })
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 ### backToCallerAbilityWithResult12+
-
-PhonePC/2in1TabletTVWearable
 
 backToCallerAbilityWithResult(abilityResult: AbilityResult, requestCode: string): Promise<void>
 
@@ -2463,7 +2429,7 @@ backToCallerAbilityWithResult(abilityResult: AbilityResult, requestCode: string)
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | abilityResult | [AbilityResult](js-apis-inner-ability-abilityresult.md) | 是 | 包含目标方返回给拉起方的结果。 |
-| requestCode | string | 是 | 通过[startAbilityForResult](js-apis-inner-application-uiabilitycontext.md#startabilityforresult)或[openLink](js-apis-inner-application-uiabilitycontext.md#openlink12)拉起目标方Ability且需要目标方返回结果时，系统生成的用于标识本次调用的requestCode。该值可以通过want中的[CALLER\_REQUEST\_CODE](js-apis-app-ability-wantconstant.md)字段获取。 |
+| requestCode | string | 是 | 通过[startAbilityForResult](js-apis-inner-application-uiabilitycontext.md#startabilityforresult)或[openLink](js-apis-inner-application-uiabilitycontext.md#openlink12)拉起目标方Ability且需要目标方返回结果时，系统生成的用于标识本次调用的requestCode。该值可以通过[wantConstant](js-apis-app-ability-wantconstant.md)中的CALLER\_REQUEST\_CODE字段获取。 |
 
 **返回值：**
 
@@ -2487,126 +2453,130 @@ backToCallerAbilityWithResult(abilityResult: AbilityResult, requestCode: string)
 
 **示例：**
 
-调用方通过startAbilityForResult接口拉起目标方, 目标方再调用backToCallerAbilityWithResult接口返回到调用方。
+调用方通过startAbilityForResult接口拉起目标方，目标方再调用backToCallerAbilityWithResult接口返回到调用方。
 
+```ts
+// 调用方
+// index.ets
+import { common, Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
+
+  build() {
+    Row() {
+      Column() {
+        Text(this.message)
+          .fontSize(30)
+          .fontWeight(FontWeight.Bold)
+
+        Button("Call StartAbilityForResult")
+          .onClick(() => {
+            let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+            let want: Want = {
+              bundleName: 'com.example.demo2',
+              abilityName: 'EntryAbility'
+            };
+
+            try {
+              // 通过startAbilityForResult拉起目标应用
+              context.startAbilityForResult(want, (err: BusinessError, result: common.AbilityResult) => {
+                if (err.code) {
+                  // 处理业务逻辑错误
+                  hilog.error(0x0000, 'testTag', `startAbilityForResult failed, code is ${err.code}, message is ${err.message}`);
+                  this.message = `startAbilityForResult failed: code is ${err.code}, message is ${err.message}`
+                  return;
+                }
+                // 执行正常业务
+                hilog.info(0x0000, 'testTag', `startAbilityForResult succeed`);
+                hilog.info(0x0000, 'testTag', `AbilityResult is ${JSON.stringify(result)}`);
+                this.message = `AbilityResult.resultCode: ${JSON.stringify(result.resultCode)}`
+              });
+            } catch (err) {
+              // 处理入参错误异常
+              let code = (err as BusinessError).code;
+              let message = (err as BusinessError).message;
+              hilog.error(0x0000, 'testTag', `startAbilityForResult failed, code is ${code}, message is ${message}`);
+              this.message = `startAbilityForResult failed, code is ${code}, message is ${message}`;
+            }
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-1. // 调用方
-2. // index.ets
-3. import { common, Want } from '@kit.AbilityKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
-5. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-7. @Entry
-8. @Component
-9. struct Index {
-10. @State message: string = 'Hello World';
+```ts
+// 目标方
+// EntryAbility.ets
+import { AbilityConstant, common, UIAbility, Want, wantConstant } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-12. build() {
-13. Row() {
-14. Column() {
-15. Text(this.message)
-16. .fontSize(30)
-17. .fontWeight(FontWeight.Bold)
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    // 从want中获取调用方的CALLER_REQUEST_CODE，并保存
+    let callerRequestCode: string = want?.parameters?.[wantConstant.Params.CALLER_REQUEST_CODE] as string;
+    AppStorage.setOrCreate<string>("callerRequestCode", callerRequestCode)
+  }
 
-19. Button("Call StartAbilityForResult")
-20. .onClick(() => {
-21. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-22. let want: Want = {
-23. bundleName: 'com.example.demo2',
-24. abilityName: 'EntryAbility'
-25. };
+  onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    let callerRequestCode: string = want?.parameters?.[wantConstant.Params.CALLER_REQUEST_CODE] as string;
+    AppStorage.setOrCreate<string>("callerRequestCode", callerRequestCode)
+  }
 
-27. try {
-28. // 通过startAbilityForResult拉起目标应用
-29. context.startAbilityForResult(want, (err: BusinessError, result: common.AbilityResult) => {
-30. if (err.code) {
-31. // 处理业务逻辑错误
-32. hilog.error(0x0000, 'testTag', `startAbilityForResult failed, code is ${err.code}, message is ${err.message}`);
-33. this.message = `startAbilityForResult failed: code is ${err.code}, message is ${err.message}`
-34. return;
-35. }
-36. // 执行正常业务
-37. hilog.info(0x0000, 'testTag', `startAbilityForResult succeed`);
-38. hilog.info(0x0000, 'testTag', `AbilityResult is ${JSON.stringify(result)}`);
-39. this.message = `AbilityResult.resultCode: ${JSON.stringify(result.resultCode)}`
-40. });
-41. } catch (err) {
-42. // 处理入参错误异常
-43. let code = (err as BusinessError).code;
-44. let message = (err as BusinessError).message;
-45. hilog.error(0x0000, 'testTag', `startAbilityForResult failed, code is ${code}, message is ${message}`);
-46. this.message = `startAbilityForResult failed, code is ${code}, message is ${message}`;
-47. }
-48. })
-49. }
-50. .width('100%')
-51. }
-52. .height('100%')
-53. }
-54. }
-```
-
-```
-1. // 目标方
-2. // EntryAbility.ets
-3. import { AbilityConstant, common, UIAbility, Want, wantConstant } from '@kit.AbilityKit';
-4. import { hilog } from '@kit.PerformanceAnalysisKit';
-5. import { BusinessError } from '@kit.BasicServicesKit';
-
-7. export default class EntryAbility extends UIAbility {
-8. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-9. // 从want中获取调用方的CALLER_REQUEST_CODE，并保存
-10. let callerRequestCode: string = want?.parameters?.[wantConstant.Params.CALLER_REQUEST_CODE] as string;
-11. AppStorage.setOrCreate<string>("callerRequestCode", callerRequestCode)
-12. }
-
-14. onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-15. let callerRequestCode: string = want?.parameters?.[wantConstant.Params.CALLER_REQUEST_CODE] as string;
-16. AppStorage.setOrCreate<string>("callerRequestCode", callerRequestCode)
-17. }
-
-19. onForeground(): void {
-20. // 获取保存的CALLER_REQUEST_CODE
-21. let callerRequestCode: string = AppStorage.get<string>("callerRequestCode") as string;
-22. hilog.info(0x0000, 'testTag', `callerRequestCode is ${callerRequestCode}`);
-23. let want: Want = {};
-24. let resultCode = 100;
-25. let abilityResult: common.AbilityResult = {
-26. want,
-27. resultCode
-28. };
-29. try {
-30. // 将结果信息返回给调用方
-31. this.context.backToCallerAbilityWithResult(abilityResult, callerRequestCode)
-32. .then(() => {
-33. // 执行正常业务
-34. hilog.info(0x0000, 'testTag', 'backToCallerAbilityWithResult succeed');
-35. })
-36. .catch((err: BusinessError) => {
-37. // 处理业务逻辑错误
-38. hilog.error(0x0000, 'testTag', `backToCallerAbilityWithResult failed, code is ${err.code}, message is ${err.message}`);
-39. });
-40. } catch (err) {
-41. // 捕获同步的参数错误
-42. let code = (err as BusinessError).code;
-43. let message = (err as BusinessError).message;
-44. hilog.error(0x0000, 'testTag', `backToCallerAbilityWithResult failed, code is ${code}, message is ${message}`);
-45. }
-46. }
-47. }
+  onForeground(): void {
+    // 获取保存的CALLER_REQUEST_CODE
+    let callerRequestCode: string = AppStorage.get<string>("callerRequestCode") as string;
+    hilog.info(0x0000, 'testTag', `callerRequestCode is ${callerRequestCode}`);
+    let want: Want = {};
+    let resultCode = 100;
+    let abilityResult: common.AbilityResult = {
+      want,
+      resultCode
+    };
+    try {
+      // 将结果信息返回给调用方
+      this.context.backToCallerAbilityWithResult(abilityResult, callerRequestCode)
+        .then(() => {
+          // 执行正常业务
+          hilog.info(0x0000, 'testTag', 'backToCallerAbilityWithResult succeed');
+        })
+        .catch((err: BusinessError) => {
+          // 处理业务逻辑错误
+          hilog.error(0x0000, 'testTag', `backToCallerAbilityWithResult failed, code is ${err.code}, message is ${err.message}`);
+        });
+    } catch (err) {
+      // 捕获同步的参数错误
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      hilog.error(0x0000, 'testTag', `backToCallerAbilityWithResult failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```
 
 ### setRestoreEnabled14+
-
-PhonePC/2in1TabletTVWearable
 
 setRestoreEnabled(enabled: boolean): void
 
 设置UIAbility是否启用备份恢复。
 
+**说明** 
+
+如果应用设置[removeMissionAfterTerminate](../harmonyos-guides/module-configuration-file.md#abilities标签)为true，备份恢复功能不生效。
+
 **元服务API**：从API version 14开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
+**设备行为差异**：UIAbility备份恢复功能仅在Phone、Tablet、Wearable和TV设备中生效，PC/2in1设备不支持备份恢复功能，Tablet设备开启自由多窗后备份恢复功能也不生效。
 
 **参数：**
 
@@ -2625,33 +2595,31 @@ setRestoreEnabled(enabled: boolean): void
 
 **示例：**
 
-```
-1. import { UIAbility, AbilityConstant, Want } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility, AbilityConstant, Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-6. let enabled = true;
-7. try {
-8. this.context.setRestoreEnabled(enabled);
-9. } catch (paramError) {
-10. let code = (paramError as BusinessError).code;
-11. let message = (paramError as BusinessError).message;
-12. console.error(`setRestoreEnabled failed, err code: ${code}, err msg: ${message}`);
-13. }
-14. }
-15. }
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    let enabled = true;
+    try {
+      this.context.setRestoreEnabled(enabled);
+    } catch (paramError) {
+      let code = (paramError as BusinessError).code;
+      let message = (paramError as BusinessError).message;
+      console.error(`setRestoreEnabled failed, err code: ${code}, err msg: ${message}`);
+    }
+  }
+}
 ```
 
 ### startUIServiceExtensionAbility14+
-
-PhonePC/2in1TabletTVWearable
 
 startUIServiceExtensionAbility(want: Want): Promise<void>
 
 启动一个UIServiceExtensionAbility。使用Promise异步回调。
 
-说明
+**说明** 
 
 组件启动规则详见：[组件启动规则（Stage模型）](../harmonyos-guides/component-startup-rules.md)。
 
@@ -2696,51 +2664,49 @@ startUIServiceExtensionAbility(want: Want): Promise<void>
 
 **示例：**
 
-```
-1. import { common, Want } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { common, Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. Column() {
-9. Row() {
-10. // 创建启动按钮
-11. Button('start ability')
-12. .enabled(true)
-13. .onClick(() => {
-14. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-15. let startWant: Want = {
-16. bundleName: 'com.acts.uiserviceextensionability',
-17. abilityName: 'UiServiceExtAbility',
-18. };
-19. try {
-20. // 启动UIServiceExtensionAbility
-21. context.startUIServiceExtensionAbility(startWant).then(() => {
-22. console.info('startUIServiceExtensionAbility success');
-23. }).catch((error: BusinessError) => {
-24. console.info('startUIServiceExtensionAbility error', JSON.stringify(error));
-25. })
-26. } catch (err) {
-27. console.info('startUIServiceExtensionAbility failed', JSON.stringify(err));
-28. }
-29. })
-30. }
-31. }
-32. }
-33. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Row() {
+        // 创建启动按钮
+        Button('start ability')
+          .enabled(true)
+          .onClick(() => {
+            let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+            let startWant: Want = {
+              bundleName: 'com.acts.uiserviceextensionability',
+              abilityName: 'UiServiceExtAbility',
+            };
+            try {
+              // 启动UIServiceExtensionAbility
+              context.startUIServiceExtensionAbility(startWant).then(() => {
+                console.info('startUIServiceExtensionAbility success');
+              }).catch((error: BusinessError) => {
+                console.error('startUIServiceExtensionAbility error', JSON.stringify(error));
+              })
+            } catch (err) {
+              console.error('startUIServiceExtensionAbility failed', JSON.stringify(err));
+            }
+          })
+      }
+    }
+  }
+}
 ```
 
 ### connectUIServiceExtensionAbility14+
-
-PhonePC/2in1TabletTVWearable
 
 connectUIServiceExtensionAbility(want: Want, callback: UIServiceExtensionConnectCallback) : Promise<UIServiceProxy>
 
 连接一个UIServiceExtensionAbility。使用Promise异步回调。
 
-说明
+**说明** 
 
 组件启动规则详见：[组件启动规则（Stage模型）](../harmonyos-guides/component-startup-rules.md)。
 
@@ -2755,7 +2721,7 @@ connectUIServiceExtensionAbility(want: Want, callback: UIServiceExtensionConnect
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | [Want](js-apis-app-ability-want.md) | 是 | 连接UIServiceExtensionAbility的必要信息。 |
-| callback | [UIServiceExtensionConnectCallback](nner-application-uiserviceextensionconnectcallback.md) | 是 | 连接UIServiceExtensionAbility回调。 |
+| callback | [UIServiceExtensionConnectCallback](js-apis-inner-application-uiserviceextensionconnectcallback.md) | 是 | 连接UIServiceExtensionAbility回调。 |
 
 **返回值：**
 
@@ -2784,79 +2750,77 @@ connectUIServiceExtensionAbility(want: Want, callback: UIServiceExtensionConnect
 
 **示例：**
 
-```
-1. import { common, Want } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { common, Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. const TAG: string = '[Extension] ';
+const TAG: string = '[Extension] ';
 
-6. @Entry
-7. @Component
-8. struct UIServiceExtensionAbility {
-9. dataCallBack : common.UIServiceExtensionConnectCallback = {
-10. // 接收数据
-11. onData: (data: Record<string, Object>) => {
-12. console.info(`dataCallBack received data`, JSON.stringify(data));
-13. },
-14. // 连接断开
-15. onDisconnect: () => {
-16. console.info(`dataCallBack onDisconnect`);
-17. }
-18. }
+@Entry
+@Component
+struct UIServiceExtensionAbility {
+  dataCallBack : common.UIServiceExtensionConnectCallback = {
+    // 接收数据
+    onData: (data: Record<string, Object>) => {
+      console.info(`dataCallBack received data`, JSON.stringify(data));
+    },
+    // 连接断开
+    onDisconnect: () => {
+      console.info(`dataCallBack onDisconnect`);
+    }
+  }
 
-20. async myConnect() {
-21. // 获取上下文
-22. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-23. let startWant: Want = {
-24. deviceId: '',
-25. bundleName: 'com.example.myapplication',
-26. abilityName: 'UiServiceExtAbility'
-27. };
+  async myConnect() {
+    // 获取上下文
+    let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    let startWant: Want = {
+      deviceId: '',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'UiServiceExtAbility'
+    };
 
-29. try {
-30. // 连接服务
-31. context.connectUIServiceExtensionAbility(startWant, this.dataCallBack)
-32. .then((proxy: common.UIServiceProxy) => {
-33. console.info(TAG + `try to connectUIServiceExtensionAbility`, JSON.stringify(proxy));
-34. }).catch((err: Error) => {
-35. let code = (err as BusinessError).code;
-36. let message = (err as BusinessError).message;
-37. console.error(TAG + `connectUIServiceExtensionAbility failed, code is ${code}, message is ${message}`);
-38. });
-39. } catch (err) {
-40. let code = (err as BusinessError).code;
-41. let message = (err as BusinessError).message;
-42. console.error(TAG + `connectUIServiceExtensionAbility failed, code is ${code}, message is ${message}`);
-43. };
-44. }
+    try {
+      // 连接服务
+      context.connectUIServiceExtensionAbility(startWant, this.dataCallBack)
+        .then((proxy: common.UIServiceProxy) => {
+          console.info(TAG + `try to connectUIServiceExtensionAbility`, JSON.stringify(proxy));
+        }).catch((err: Error) => {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(TAG + `connectUIServiceExtensionAbility failed, code is ${code}, message is ${message}`);
+      });
+    } catch (err) {
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(TAG + `connectUIServiceExtensionAbility failed, code is ${code}, message is ${message}`);
+    };
+  }
 
-46. build() {
-47. RelativeContainer() {
-48. // 创建连接按钮
-49. Button('connectServiceExtensionAbility', { type: ButtonType.Capsule, stateEffect: true })
-50. .alignRules({
-51. center: { anchor: '__container__', align: VerticalAlign.Center },
-52. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-53. })
-54. .onClick(() => {
-55. this.myConnect()
-56. });
-57. }
-58. .height('100%')
-59. .width('100%')
-60. }
-61. }
+  build() {
+    RelativeContainer() {
+      // 创建连接按钮
+      Button('connectServiceExtensionAbility', { type: ButtonType.Capsule, stateEffect: true })
+        .alignRules({
+          center: { anchor: '__container__', align: VerticalAlign.Center },
+          middle: { anchor: '__container__', align: HorizontalAlign.Center }
+        })
+        .onClick(() => {
+          this.myConnect()
+        });
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 ### disconnectUIServiceExtensionAbility14+
-
-PhonePC/2in1TabletTVWearable
 
 disconnectUIServiceExtensionAbility(proxy: UIServiceProxy): Promise<void>
 
 断开与UIServiceExtensionAbility的连接。使用Promise异步回调。
 
-说明
+**说明** 
 
 组件启动规则详见：[组件启动规则（Stage模型）](../harmonyos-guides/component-startup-rules.md)。
 
@@ -2888,66 +2852,64 @@ disconnectUIServiceExtensionAbility(proxy: UIServiceProxy): Promise<void>
 
 **示例：**
 
-```
-1. import { common } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. const TAG: string = '[Extension] ';
+const TAG: string = '[Extension] ';
 
-6. @Entry
-7. @Component
-8. struct UIServiceExtensionAbility {
-9. comProxy: common.UIServiceProxy | null = null;
+@Entry
+@Component
+struct UIServiceExtensionAbility {
+  comProxy: common.UIServiceProxy | null = null;
 
-11. build() {
-12. Scroll() {
-13. Column() {
-14. // 创建断开连接的按钮
-15. Button('disconnectUIServiceExtensionAbility', { type: ButtonType.Capsule, stateEffect: true })
-16. .margin({
-17. top: 5,
-18. left: 10,
-19. right: 10,
-20. bottom: 5
-21. })
-22. .alignRules({
-23. center: { anchor: '__container__', align: VerticalAlign.Center },
-24. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-25. })
-26. .onClick(() => {
-27. this.myDisconnectUIServiceExtensionAbility()
-28. });
-29. }
-30. .width('100%')
-31. }
-32. .height('100%')
-33. }
+  build() {
+    Scroll() {
+      Column() {
+        // 创建断开连接的按钮
+        Button('disconnectUIServiceExtensionAbility', { type: ButtonType.Capsule, stateEffect: true })
+          .margin({
+            top: 5,
+            left: 10,
+            right: 10,
+            bottom: 5
+          })
+          .alignRules({
+            center: { anchor: '__container__', align: VerticalAlign.Center },
+            middle: { anchor: '__container__', align: HorizontalAlign.Center }
+          })
+          .onClick(() => {
+            this.myDisconnectUIServiceExtensionAbility()
+          });
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
 
-35. myDisconnectUIServiceExtensionAbility() {
-36. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  myDisconnectUIServiceExtensionAbility() {
+    let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
 
-38. try {
-39. // 断开UIServiceExtension连接
-40. context.disconnectUIServiceExtensionAbility(this.comProxy)
-41. .then(() => {
-42. console.info(TAG + `disconnectUIServiceExtensionAbility succeed ${this.comProxy}`);
-43. }).catch((err: Error) => {
-44. let code = (err as BusinessError).code;
-45. let message = (err as BusinessError).message;
-46. console.error(TAG + `disconnectUIServiceExtensionAbility failed, code is ${code}, message is ${message}`);
-47. });
-48. } catch (err) {
-49. let code = (err as BusinessError).code;
-50. let message = (err as BusinessError).message;
-51. console.error(TAG + `disconnectUIServiceExtensionAbility failed, code is ${code}, message is ${message}`);
-52. }
-53. }
-54. }
+    try {
+      // 断开UIServiceExtension连接
+      context.disconnectUIServiceExtensionAbility(this.comProxy)
+        .then(() => {
+          console.info(TAG + `disconnectUIServiceExtensionAbility succeed ${this.comProxy}`);
+        }).catch((err: Error) => {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(TAG + `disconnectUIServiceExtensionAbility failed, code is ${code}, message is ${message}`);
+      });
+    } catch (err) {
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(TAG + `disconnectUIServiceExtensionAbility failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```
 
 ### setAbilityInstanceInfo15+
-
-PhonePC/2in1TabletTVWearable
 
 setAbilityInstanceInfo(label: string, icon: image.PixelMap): Promise<void>
 
@@ -2986,47 +2948,45 @@ setAbilityInstanceInfo(label: string, icon: image.PixelMap): Promise<void>
 
 **示例**：
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { image } from '@kit.ImageKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
-4. import { window } from '@kit.ArkUI';
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { image } from '@kit.ImageKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { window } from '@kit.ArkUI';
 
-6. export default class EntryAbility extends UIAbility {
-7. onWindowStageCreate(windowStage: window.WindowStage): void {
-8. windowStage.loadContent('pages/Index', async (err, data) => {
-9. if (err.code) {
-10. console.error(`loadContent failed, code is ${err.code}`);
-11. return;
-12. }
+export default class EntryAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage): void {
+    windowStage.loadContent('pages/Index', async (err, data) => {
+      if (err.code) {
+        console.error(`loadContent failed, code is ${err.code}`);
+        return;
+      }
 
-14. let newLabel: string = 'instance label';
-15. let color = new ArrayBuffer(512 * 512 * 4); // 创建一个ArrayBuffer对象，用于存储图像像素。该对象的大小为（height * width * 4）字节。
-16. let bufferArr = new Uint8Array(color);
-17. for (let i = 0; i < bufferArr.length; i += 4) {
-18. bufferArr[i] = 255;
-19. bufferArr[i+1] = 0;
-20. bufferArr[i+2] = 122;
-21. bufferArr[i+3] = 255;
-22. }
-23. let opts: image.InitializationOptions = {
-24. editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 512, width: 512 }
-25. };
-26. let imagePixelMap: image.PixelMap = await image.createPixelMap(color, opts);
-27. this.context.setAbilityInstanceInfo(newLabel, imagePixelMap)
-28. .then(() => {
-29. console.info('setAbilityInstanceInfo success');
-30. }).catch((err: BusinessError) => {
-31. console.error(`setAbilityInstanceInfo failed, code is ${err.code}, message is ${err.message}`);
-32. });
-33. });
-34. }
-35. }
+      let newLabel: string = 'instance label';
+      let color = new ArrayBuffer(512 * 512 * 4); // 创建一个ArrayBuffer对象，用于存储图像像素。该对象的大小为（height * width * 4）字节。
+      let bufferArr = new Uint8Array(color);
+      for (let i = 0; i < bufferArr.length; i += 4) {
+        bufferArr[i] = 255;
+        bufferArr[i+1] = 0;
+        bufferArr[i+2] = 122;
+        bufferArr[i+3] = 255;
+      }
+      let opts: image.InitializationOptions = {
+        editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 512, width: 512 }
+      };
+      let imagePixelMap: image.PixelMap = await image.createPixelMap(color, opts);
+      this.context.setAbilityInstanceInfo(newLabel, imagePixelMap)
+        .then(() => {
+          console.info('setAbilityInstanceInfo success');
+        }).catch((err: BusinessError) => {
+        console.error(`setAbilityInstanceInfo failed, code is ${err.code}, message is ${err.message}`);
+      });
+    });
+  }
+}
 ```
 
 ### revokeDelegator17+
-
-PhonePC/2in1TabletTVWearable
 
 revokeDelegator(): Promise<void>
 
@@ -3034,7 +2994,7 @@ revokeDelegator(): Promise<void>
 
 当DelegatorAbility完成特定操作时，可以使用该接口回到首个UIAbility。使用Promise异步回调。
 
-说明
+**说明** 
 
 当接口调用成功后，DelegatorAbility中的[Window](arkts-apis-window.md)方法会失效。
 
@@ -3065,48 +3025,46 @@ revokeDelegator(): Promise<void>
 
    在[module.json5](../harmonyos-guides/module-configuration-file.md)配置文件标签中配置abilitySrcEntryDelegator和abilityStageSrcEntryDelegator。当Module下首个UIAbility冷启动时，系统优先启动abilitySrcEntryDelegator指向的UIAbility。
 
-   说明
+   **说明** 
 
    * 当UIAbility是通过[startAbilityByCall](js-apis-inner-application-uiabilitycontext.md#startabilitybycall)启动时，系统会忽略在[module.json5](../harmonyos-guides/module-configuration-file.md)配置文件标签中配置的abilitySrcEntryDelegator和abilityStageSrcEntryDelegator。
    * abilityStageSrcEntryDelegator指定的ModuleName不能与当前ModuleName相同。
 
-   ```
-   1. {
-   2. "module": {
-   3. // ...
-   4. "abilityStageSrcEntryDelegator": "xxxModuleName",
-   5. "abilitySrcEntryDelegator": "xxxAbilityName",
-   6. // ...
-   7. }
-   8. }
+   ```json5
+   {
+     "module": {
+       // ...
+       "abilityStageSrcEntryDelegator": "xxxModuleName",
+       "abilitySrcEntryDelegator": "xxxAbilityName",
+       // ...
+     }
+   }
    ```
 2. 取消DelegatorAbility。
 
-   ```
-   1. import { UIAbility } from '@kit.AbilityKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```ts
+   import { UIAbility } from '@kit.AbilityKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
 
-   4. export default class DelegatorAbility extends UIAbility {
-   5. onForeground() {
-   6. // DelegatorAbility完成特定操作后，调用revokeDelegator回到首个UIAbility
-   7. this.context.revokeDelegator().then(() => {
-   8. console.info('revokeDelegator success');
-   9. }).catch((err: BusinessError) => {
-   10. console.error(`revokeDelegator failed, code is ${err.code}, message is ${err.message}`);
-   11. });
-   12. }
-   13. }
+   export default class DelegatorAbility extends UIAbility {
+     onForeground() {
+       // DelegatorAbility完成特定操作后，调用revokeDelegator回到首个UIAbility
+       this.context.revokeDelegator().then(() => {
+         console.info('revokeDelegator success');
+       }).catch((err: BusinessError) => {
+         console.error(`revokeDelegator failed, code is ${err.code}, message is ${err.message}`);
+       });
+     }
+   }
    ```
 
 ### setColorMode18+
-
-PhonePC/2in1TabletTVWearable
 
 setColorMode(colorMode: ConfigurationConstant.ColorMode): void
 
 设置UIAbility的深浅色模式。调用该接口前需要保证该UIAbility对应页面已完成加载。仅支持主线程调用。
 
-说明
+**说明** 
 
 * 调用该接口前，需要确保窗口已完成创建、且UIAbility对应的页面已完成加载，即在[onWindowStageCreate()](js-apis-app-ability-uiability.md#onwindowstagecreate)生命周期中通过[loadContent](arkts-apis-window-windowstage.md#loadcontent9)方法加载页面之后调用。
 * 调用该接口后会创建新的资源管理器对象，如果此前有缓存资源管理器，需要进行更新。
@@ -3120,7 +3078,7 @@ setColorMode(colorMode: ConfigurationConstant.ColorMode): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| colorMode | [ConfigurationConstant.ColorMode](js-apis-app-ability-configurationconstant.md) | 是 | 设置颜色模式，包括:  - COLOR\_MODE\_DARK：深色模式  - COLOR\_MODE\_LIGHT：浅色模式  - COLOR\_MODE\_NOT\_SET：不设置（跟随系统或应用） |
+| colorMode | [ConfigurationConstant](js-apis-app-ability-configurationconstant.md).ColorMode | 是 | 设置颜色模式，包括：  - COLOR\_MODE\_DARK：深色模式  - COLOR\_MODE\_LIGHT：浅色模式  - COLOR\_MODE\_NOT\_SET：不设置（跟随系统或应用） |
 
 **错误码**：
 
@@ -3132,34 +3090,32 @@ setColorMode(colorMode: ConfigurationConstant.ColorMode): void
 
 **示例**：
 
-```
-1. import { UIAbility, ConfigurationConstant } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { window } from '@kit.ArkUI';
+```ts
+import { UIAbility, ConfigurationConstant } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { window } from '@kit.ArkUI';
 
-5. export default class MyAbility extends UIAbility {
-6. onWindowStageCreate(windowStage: window.WindowStage) {
-7. windowStage.loadContent('pages/Index', (err, data) => {
-8. if (err.code) {
-9. hilog.error(0x0000, 'testTag', 'Failed to load the content.');
-10. return;
-11. }
-12. let uiAbilityContext = this.context;
-13. uiAbilityContext.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
-14. });
-15. }
-16. }
+export default class MyAbility extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    windowStage.loadContent('pages/Index', (err, data) => {
+      if (err.code) {
+        hilog.error(0x0000, 'testTag', 'Failed to load the content.');
+        return;
+      }
+      let uiAbilityContext = this.context;
+      uiAbilityContext.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
+    });
+  }
+}
 ```
 
 ### startAppServiceExtensionAbility20+
-
-PhonePC/2in1TabletTVWearable
 
 startAppServiceExtensionAbility(want: Want): Promise<void>
 
 启动[AppServiceExtensionAbility](js-apis-app-ability-appserviceextensionability.md)实例。使用Promise异步回调。
 
-说明
+**说明** 
 
 该接口的调用方必须为[AppServiceExtensionAbility](js-apis-app-ability-appserviceextensionability.md)所属应用或者在AppServiceExtensionAbility支持的应用清单（即[extensionAbilities标签](../harmonyos-guides/module-configuration-file.md#extensionabilities标签)的appIdentifierAllowList属性）中的应用。
 
@@ -3201,47 +3157,45 @@ startAppServiceExtensionAbility(want: Want): Promise<void>
 
 **示例：**
 
-```
-1. import { UIAbility, Want } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility, Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onForeground() {
-6. let want: Want = {
-7. deviceId: '',
-8. bundleName: 'com.example.myapplication',
-9. abilityName: 'AppServiceExtensionAbility'
-10. };
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    let want: Want = {
+      deviceId: '',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'AppServiceExtensionAbility'
+    };
 
-12. try {
-13. this.context.startAppServiceExtensionAbility(want)
-14. .then(() => {
-15. // 执行正常业务
-16. console.info('startAppServiceExtensionAbility succeed');
-17. })
-18. .catch((err: BusinessError) => {
-19. // 处理业务逻辑错误
-20. console.error(`startAppServiceExtensionAbility failed, code is ${err.code}, message is ${err.message}`);
-21. });
-22. } catch (err) {
-23. // 处理入参错误异常
-24. let code = (err as BusinessError).code;
-25. let message = (err as BusinessError).message;
-26. console.error(`startAppServiceExtensionAbility failed, code is ${code}, message is ${message}`);
-27. }
-28. }
-29. }
+    try {
+      this.context.startAppServiceExtensionAbility(want)
+        .then(() => {
+          // 执行正常业务
+          console.info('startAppServiceExtensionAbility succeed');
+        })
+        .catch((err: BusinessError) => {
+          // 处理业务逻辑错误
+          console.error(`startAppServiceExtensionAbility failed, code is ${err.code}, message is ${err.message}`);
+        });
+    } catch (err) {
+      // 处理入参错误异常
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`startAppServiceExtensionAbility failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```
 
 ### stopAppServiceExtensionAbility20+
-
-PhonePC/2in1TabletTVWearable
 
 stopAppServiceExtensionAbility(want: Want): Promise<void>
 
 停止[AppServiceExtensionAbility](js-apis-app-ability-appserviceextensionability.md)实例。使用Promise异步回调。
 
-说明
+**说明** 
 
 该接口的调用方必须为[AppServiceExtensionAbility](js-apis-app-ability-appserviceextensionability.md)所属应用或者在AppServiceExtensionAbility支持的应用清单（即[extensionAbilities标签](../harmonyos-guides/module-configuration-file.md#extensionabilities标签)的appIdentifierAllowList属性）中的应用。
 
@@ -3279,47 +3233,45 @@ stopAppServiceExtensionAbility(want: Want): Promise<void>
 
 **示例：**
 
-```
-1. import { UIAbility, Want } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility, Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onForeground() {
-6. let want: Want = {
-7. deviceId: '',
-8. bundleName: 'com.example.myapplication',
-9. abilityName: 'AppServiceExtensionAbility'
-10. };
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    let want: Want = {
+      deviceId: '',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'AppServiceExtensionAbility'
+    };
 
-12. try {
-13. this.context.stopAppServiceExtensionAbility(want)
-14. .then(() => {
-15. // 执行正常业务
-16. console.info('stopAppServiceExtensionAbility succeed');
-17. })
-18. .catch((err: BusinessError) => {
-19. // 处理业务逻辑错误
-20. console.error(`stopAppServiceExtensionAbility failed, code is ${err.code}, message is ${err.message}`);
-21. });
-22. } catch (err) {
-23. // 处理入参错误异常
-24. let code = (err as BusinessError).code;
-25. let message = (err as BusinessError).message;
-26. console.error(`stopAppServiceExtensionAbility failed, code is ${code}, message is ${message}`);
-27. }
-28. }
-29. }
+    try {
+      this.context.stopAppServiceExtensionAbility(want)
+        .then(() => {
+          // 执行正常业务
+          console.info('stopAppServiceExtensionAbility succeed');
+        })
+        .catch((err: BusinessError) => {
+          // 处理业务逻辑错误
+          console.error(`stopAppServiceExtensionAbility failed, code is ${err.code}, message is ${err.message}`);
+        });
+    } catch (err) {
+      // 处理入参错误异常
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`stopAppServiceExtensionAbility failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```
 
 ### connectAppServiceExtensionAbility20+
-
-PhonePC/2in1TabletTVWearable
 
 connectAppServiceExtensionAbility(want: Want, callback: ConnectOptions): number
 
 将当前UIAbility连接到[AppServiceExtensionAbility](js-apis-app-ability-appserviceextensionability.md)。通过返回的proxy与AppServiceExtensionAbility进行通信，以使用AppServiceExtensionAbility对外提供的能力。仅支持在主线程调用。
 
-说明
+**说明** 
 
 如果[AppServiceExtensionAbility](js-apis-app-ability-appserviceextensionability.md)实例未启动，该接口的调用方必须为AppServiceExtensionAbility所属应用或者在AppServiceExtensionAbility支持的应用清单（即[extensionAbilities标签](../harmonyos-guides/module-configuration-file.md#extensionabilities标签)的appIdentifierAllowList属性）中的应用。
 
@@ -3359,48 +3311,46 @@ connectAppServiceExtensionAbility(want: Want, callback: ConnectOptions): number
 
 **示例：**
 
-```
-1. import { UIAbility, Want, common } from '@kit.AbilityKit';
-2. import { rpc } from '@kit.IPCKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility, Want, common } from '@kit.AbilityKit';
+import { rpc } from '@kit.IPCKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. export default class EntryAbility extends UIAbility {
-6. onForeground() {
-7. let want: Want = {
-8. deviceId: '',
-9. bundleName: 'com.example.myapplication',
-10. abilityName: 'AppServiceExtensionAbility'
-11. };
-12. let commRemote: rpc.IRemoteObject;
-13. let callback: common.ConnectOptions = {
-14. onConnect(elementName, remote) {
-15. commRemote = remote;
-16. console.info('onConnect...');
-17. },
-18. onDisconnect(elementName) {
-19. console.info('onDisconnect...');
-20. },
-21. onFailed(code) {
-22. console.info('onFailed...');
-23. }
-24. };
-25. let connection: number;
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    let want: Want = {
+      deviceId: '',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'AppServiceExtensionAbility'
+    };
+    let commRemote: rpc.IRemoteObject;
+    let callback: common.ConnectOptions = {
+      onConnect(elementName, remote) {
+        commRemote = remote;
+        console.info('onConnect...');
+      },
+      onDisconnect(elementName) {
+        console.info('onDisconnect...');
+      },
+      onFailed(code) {
+        console.info('onFailed...');
+      }
+    };
+    let connection: number;
 
-27. try {
-28. connection = this.context.connectAppServiceExtensionAbility(want, callback);
-29. } catch (err) {
-30. // 处理入参错误异常
-31. let code = (err as BusinessError).code;
-32. let message = (err as BusinessError).message;
-33. console.error(`connectAppServiceExtensionAbility failed, code is ${code}, message is ${message}`);
-34. }
-35. }
-36. }
+    try {
+      connection = this.context.connectAppServiceExtensionAbility(want, callback);
+    } catch (err) {
+      // 处理入参错误异常
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`connectAppServiceExtensionAbility failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```
 
 ### disconnectAppServiceExtensionAbility20+
-
-PhonePC/2in1TabletTVWearable
 
 disconnectAppServiceExtensionAbility(connection: number): Promise<void>
 
@@ -3436,46 +3386,44 @@ disconnectAppServiceExtensionAbility(connection: number): Promise<void>
 
 **示例：**
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { rpc } from '@kit.IPCKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { rpc } from '@kit.IPCKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. export default class EntryAbility extends UIAbility {
-6. onForeground() {
-7. // connection为connectAppServiceExtensionAbility中的返回值
-8. let connection = 1;
-9. let commRemote: rpc.IRemoteObject | null;
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    // connection为connectAppServiceExtensionAbility中的返回值
+    let connection = 1;
+    let commRemote: rpc.IRemoteObject | null;
 
-11. try {
-12. this.context.disconnectAppServiceExtensionAbility(connection).then(() => {
-13. commRemote = null;
-14. // 执行正常业务
-15. console.info('disconnectAppServiceExtensionAbility succeed');
-16. }).catch((err: BusinessError) => {
-17. // 处理业务逻辑错误
-18. console.error(`disconnectAppServiceExtensionAbility failed, code is ${err.code}, message is ${err.message}`);
-19. });
-20. } catch (err) {
-21. commRemote = null;
-22. // 处理入参错误异常
-23. let code = (err as BusinessError).code;
-24. let message = (err as BusinessError).message;
-25. console.error(`disconnectAppServiceExtensionAbility failed, code is ${code}, message is ${message}`);
-26. }
-27. }
-28. }
+    try {
+      this.context.disconnectAppServiceExtensionAbility(connection).then(() => {
+        commRemote = null;
+        // 执行正常业务
+        console.info('disconnectAppServiceExtensionAbility succeed');
+      }).catch((err: BusinessError) => {
+        // 处理业务逻辑错误
+        console.error(`disconnectAppServiceExtensionAbility failed, code is ${err.code}, message is ${err.message}`);
+      });
+    } catch (err) {
+      commRemote = null;
+      // 处理入参错误异常
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`disconnectAppServiceExtensionAbility failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```
 
 ### setOnNewWantSkipScenarios20+
-
-PhonePC/2in1TabletTVWearable
 
 setOnNewWantSkipScenarios(scenarios: number): Promise<void>
 
 在特定场景下拉起UIAbility时，如果不需要触发[onNewWant](js-apis-app-ability-uiability.md#onnewwant)生命周期回调，可以通过该接口设置。仅支持在主线程调用。使用Promise异步回调。
 
-说明
+**说明** 
 
 该接口通常用于[onCreate](js-apis-app-ability-uiability.md#oncreate)生命周期回调中。入参取值建议包含所有的[Scenarios](js-apis-app-ability-contextconstant.md#scenarios20)枚举值。详见下方示例代码。
 
@@ -3505,43 +3453,41 @@ setOnNewWantSkipScenarios(scenarios: number): Promise<void>
 
 **示例：**
 
-```
-1. import { AbilityConstant, contextConstant, UIAbility, Want } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { AbilityConstant, contextConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-6. let scenarios: number = contextConstant.Scenarios.SCENARIO_MOVE_MISSION_TO_FRONT |
-7. contextConstant.Scenarios.SCENARIO_SHOW_ABILITY |
-8. contextConstant.Scenarios.SCENARIO_BACK_TO_CALLER_ABILITY_WITH_RESULT;
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
+    let scenarios: number = contextConstant.Scenarios.SCENARIO_MOVE_MISSION_TO_FRONT |
+      contextConstant.Scenarios.SCENARIO_SHOW_ABILITY |
+      contextConstant.Scenarios.SCENARIO_BACK_TO_CALLER_ABILITY_WITH_RESULT;
 
-10. try {
-11. this.context.setOnNewWantSkipScenarios(scenarios).then(() => {
-12. // 执行正常业务
-13. console.info('setOnNewWantSkipScenarios succeed');
-14. }).catch((err: BusinessError) => {
-15. // 处理业务逻辑错误
-16. console.error(`setOnNewWantSkipScenarios failed, code is ${err.code}, message is ${err.message}`);
-17. });
-18. } catch (err) {
-19. // 处理入参错误异常
-20. let code = (err as BusinessError).code;
-21. let message = (err as BusinessError).message;
-22. console.error(`setOnNewWantSkipScenarios failed, code is ${code}, message is ${message}`);
-23. }
-24. }
-25. }
+    try {
+      this.context.setOnNewWantSkipScenarios(scenarios).then(() => {
+        // 执行正常业务
+        console.info('setOnNewWantSkipScenarios succeed');
+      }).catch((err: BusinessError) => {
+        // 处理业务逻辑错误
+        console.error(`setOnNewWantSkipScenarios failed, code is ${err.code}, message is ${err.message}`);
+      });
+    } catch (err) {
+      // 处理入参错误异常
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`setOnNewWantSkipScenarios failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```
 
 ### startSelfUIAbilityInCurrentProcess22+
-
-PhonePC/2in1TabletTVWearable
 
 startSelfUIAbilityInCurrentProcess(want: Want, specifiedFlag: string, options?: StartOptions): Promise<void>
 
 在当前进程中启动应用程序自己的UIAbility。
 
-说明
+**说明** 
 
 * 只能冷启动目标UIAbility，如果目标UIAbility实例已经启动过，则启动失败。
 * 通过该接口启动的UIAbility实例，将运行在调用方所在的进程中。其他关于目标UIAbility的进程相关的策略（例如在[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中通过isolationProcess或isolationMode字段来指定进程），均不会生效。
@@ -3588,39 +3534,37 @@ startSelfUIAbilityInCurrentProcess(want: Want, specifiedFlag: string, options?: 
 
 **示例：**
 
-```
-1. import { UIAbility, StartOptions, Want } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility, StartOptions, Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onForeground() {
-6. let want: Want = {
-7. deviceId: '',
-8. bundleName: 'com.example.myapplication',
-9. abilityName: 'EntryAbility'
-10. };
-11. let accountId = 100;
-12. let options: StartOptions = {
-13. displayId: 0
-14. };
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    let want: Want = {
+      deviceId: '',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'EntryAbility'
+    };
+    let accountId = 100;
+    let options: StartOptions = {
+      displayId: 0
+    };
+    
+    let instanceFlag = 'instance1';
 
-16. let instanceFlag = 'instance1';
-
-18. try {
-19. this.context.startSelfUIAbilityInCurrentProcess(want, instanceFlag, options);
-20. } catch (err) {
-21. // 处理入参错误异常
-22. let code = (err as BusinessError).code;
-23. let message = (err as BusinessError).message;
-24. console.error(`startSelfUIAbilityInCurrentProcess failed, code is ${code}, message is ${message}`);
-25. }
-26. }
-27. }
+    try {
+      this.context.startSelfUIAbilityInCurrentProcess(want, instanceFlag, options);
+    } catch (err) {
+      // 处理入参错误异常
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`startSelfUIAbilityInCurrentProcess failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```
 
 ### restartApp22+
-
-PhonePC/2in1TabletTVWearable
 
 restartApp(want: Want): Promise<void>
 
@@ -3628,7 +3572,7 @@ restartApp(want: Want): Promise<void>
 
 如果指定UIAbility就是当前UIAbility，则会刷新窗口至初始状态；如果是其他UIAbility，则会跳转并打开新的UIAbility窗口。
 
-说明
+**说明** 
 
 通过该接口重启进程时，不会触发进程中Ability的onDestroy生命周期回调。
 
@@ -3669,53 +3613,51 @@ restartApp(want: Want): Promise<void>
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { common, Want } from '@kit.AbilityKit';
+```ts
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { common, Want } from '@kit.AbilityKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. @State message: string = 'restartApp with window';
+@Entry
+@Component
+struct Index {
+  @State message: string = 'restartApp with window';
 
-9. build() {
-10. RelativeContainer() {
-11. Text(this.message)
-12. .id('HelloWorld')
-13. .fontSize($r('app.float.page_text_font_size'))
-14. .fontWeight(FontWeight.Bold)
-15. .alignRules({
-16. center: { anchor: '__container__', align: VerticalAlign.Center },
-17. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-18. })
-19. .onClick(async () => {
-20. let want: Want = {
-21. bundleName: 'com.example.myapplication',
-22. abilityName: 'EntryAbility'
-23. };
-24. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-25. try {
-26. await context.restartApp(want);
-27. } catch (err) {
-28. hilog.error(0x0000, 'testTag', `restart failed: ${err.code}, ${err.message}`);
-29. }
-30. })
-31. }
-32. .height('100%')
-33. .width('100%')
-34. }
-35. }
+  build() {
+    RelativeContainer() {
+      Text(this.message)
+        .id('HelloWorld')
+        .fontSize($r('app.float.page_text_font_size'))
+        .fontWeight(FontWeight.Bold)
+        .alignRules({
+          center: { anchor: '__container__', align: VerticalAlign.Center },
+          middle: { anchor: '__container__', align: HorizontalAlign.Center }
+        })
+        .onClick(async () => {
+          let want: Want = {
+            bundleName: 'com.example.myapplication',
+            abilityName: 'EntryAbility'
+          };
+          let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+          try {
+            await context.restartApp(want);
+          } catch (err) {
+            hilog.error(0x0000, 'testTag', `restart failed: ${err.code}, ${err.message}`);
+          }
+        })
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 ### setMissionWindowIcon22+
-
-PhonePC/2in1TabletTVWearable
 
 setMissionWindowIcon(windowIcon: image.PixelMap): Promise<void>
 
 设置当前UIAbility在应用窗口、任务中心应用卡片、快捷栏窗口快照的图标。使用Promise异步回调。
 
-说明
+**说明** 
 
 setMissionWindowIcon和[setAbilityInstanceInfo](js-apis-inner-application-uiabilitycontext.md#setabilityinstanceinfo15)之间不存在调用优先级关系。当多个接口被依次调用时，后一次调用的接口所设置的图标信息将覆盖之前调用接口所设置的内容，最终生效的图标以最后一次调用的接口为准。
 
@@ -3747,36 +3689,177 @@ setMissionWindowIcon和[setAbilityInstanceInfo](js-apis-inner-application-uiabil
 
 **示例：**
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { image } from '@kit.ImageKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { image } from '@kit.ImageKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. export default class EntryAbility extends UIAbility {
-6. onForeground() {
-7. let imagePixelMap: image.PixelMap;
-8. let color = new ArrayBuffer(1024 * 1024 * 4); // 创建一个ArrayBuffer对象，用于存储图像像素。该对象的大小为（height * width * 4）字节。
-9. let bufferArr = new Uint8Array(color);
-10. for (let i = 0; i < bufferArr.length; i += 4) {
-11. bufferArr[i] = 255;
-12. bufferArr[i+1] = 0;
-13. bufferArr[i+2] = 122;
-14. bufferArr[i+3] = 255;
-15. }
-16. image.createPixelMap(color, {
-17. editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 1024, width: 1024 }
-18. }).then((data) => {
-19. imagePixelMap = data;
-20. this.context.setMissionWindowIcon(imagePixelMap)
-21. .then(() => {
-22. console.info('setMissionWindowIcon succeed');
-23. })
-24. .catch((err: BusinessError) => {
-25. console.error(`setMissionWindowIcon failed, code is ${err.code}, message is ${err.message}`);
-26. });
-27. }).catch((err: BusinessError) => {
-28. console.error(`createPixelMap failed, code is ${err.code}, message is ${err.message}`);
-29. });
-30. }
-31. }
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    let imagePixelMap: image.PixelMap;
+    let color = new ArrayBuffer(1024 * 1024 * 4); // 创建一个ArrayBuffer对象，用于存储图像像素。该对象的大小为（height * width * 4）字节。
+    let bufferArr = new Uint8Array(color);
+    for (let i = 0; i < bufferArr.length; i += 4) {
+      bufferArr[i] = 255;
+      bufferArr[i+1] = 0;
+      bufferArr[i+2] = 122;
+      bufferArr[i+3] = 255;
+    }
+    image.createPixelMap(color, {
+      editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 1024, width: 1024 }
+    }).then((data) => {
+      imagePixelMap = data;
+      this.context.setMissionWindowIcon(imagePixelMap)
+        .then(() => {
+          console.info('setMissionWindowIcon succeed');
+        })
+        .catch((err: BusinessError) => {
+          console.error(`setMissionWindowIcon failed, code is ${err.code}, message is ${err.message}`);
+        });
+    }).catch((err: BusinessError) => {
+      console.error(`createPixelMap failed, code is ${err.code}, message is ${err.message}`);
+    });
+  }
+}
+```
+
+### startSelf
+
+startSelf(): Promise<void>
+
+启动当前UIAbility实例，将UIAbility切换至前台，用于将停留在中间阶段的Native UIAbility拉到前台。使用Promise异步回调。
+
+**说明** 
+
+对于配置了Native模块的UIAbility，其启动可能因startupPhase配置停留在特定阶段：PRE\_WINDOW、PRE\_FOREGROUND。
+
+如果UIAbility未配置Native模块，调用该接口会返回801错误码。
+
+**起始版本：** 26.0.0
+
+**系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
+**设备行为差异**：该接口仅在PC/2in1设备中可正常调用，在其他设备中返回801错误码。
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[元能力子系统错误码](errorcode-ability.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported, because starting self to foreground from background is not supported in current device or current UIAbility is a non-native UIAbility. |
+| 16000011 | The context does not exist. |
+| 16000050 | Internal error. Connect to system service failed. |
+| 16000082 | The UIAbility is being started. The UIAbility has not completed onCreate or onWindowStageCreate. |
+
+**示例：**
+
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+export default class EntryAbility extends UIAbility {
+  onCreate() {
+    try {
+      setTimeout((): void => {
+        this.context.startSelf()
+          .then((): void => {
+            console.info('startSelf succeed');
+          })
+          .catch((err: BusinessError): void => {
+            console.error(`startSelf failed, code is ${err.code}, message is ${err.message}`);
+          });
+      }, 100);
+    } catch (err) {
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`startSelf failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
+```
+
+### startSelfUIAbilityInChildProcess
+
+startSelfUIAbilityInChildProcess(want: Want, specifiedFlag: string): Promise<void>
+
+在子进程中启动当前应用的UIAbility，子进程中的UIAbility支持加载Native模块。使用Promise异步回调。
+
+**说明** 
+
+子进程生命周期跟随父进程，父进程退出时子进程自动退出。
+
+**起始版本：** 26.0.0
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
+**设备行为差异**：该接口仅在PC/2in1设备中可正常调用，在其他设备中返回801错误码。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| want | [Want](js-apis-app-ability-want.md) | 是 | 启动Ability的必要信息。只支持[显式启动](../harmonyos-guides/explicit-implicit-want-mappings.md#显式want匹配原理)，不支持[隐式启动](../harmonyos-guides/explicit-implicit-want-mappings.md#隐式want匹配原理)。 |
+| specifiedFlag | string | 是 | 开发者自定义的UIAbility标识。该标识不能与已启动的UIAbility标识相同，否则将返回错误。  **说明：**  当通过该接口拉起启动模式为[specified](../harmonyos-guides/uiability-launch-type.md#specified启动模式)的UIAbility时，将不会触发[onAcceptWant](js-apis-app-ability-abilitystage.md#onacceptwant)回调。 |
+| **返回值：** |  |  |  |
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[元能力子系统错误码](errorcode-ability.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 16000001 | The specified ability does not exist. |
+| 16000008 | The crowdtesting application expires. |
+| 16000009 | An ability cannot be started or stopped in Wukong mode. |
+| 16000011 | The context does not exist. |
+| 16000050 | Internal error. Connect to system service failed. |
+| 16000053 | The ability is not on the top of the UI. |
+| 16000122 | The target component is blocked by the system module and does not support startup. |
+| 16000123 | Implicit startup is not supported. |
+| 16000124 | Starting a remote UIAbility is not supported. |
+| 16000130 | The UIAbility not belong to caller. |
+| 16000131 | The UIAbility is already exist, can not start again. |
+
+**示例：**
+
+```ts
+import { UIAbility, Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    let want: Want = {
+      bundleName: 'com.example.myapplication',
+      abilityName: 'ChildProcessAbility'
+    };
+    let instanceFlag = 'instance1';
+    try {
+      this.context.startSelfUIAbilityInChildProcess(want, instanceFlag)
+        .then(() => {
+          console.info('startSelfUIAbilityInChildProcess succeed');
+        })
+        .catch((err: BusinessError) => {
+          console.error(`startSelfUIAbilityInChildProcess failed, code is ${err.code}, message is ${err.message}`);
+        });
+    } catch (err) {
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`startSelfUIAbilityInChildProcess failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```

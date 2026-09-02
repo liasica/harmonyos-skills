@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dlp-guidelines
-title: 数据防泄漏服务开发指导
-breadcrumb: 指南 > 系统 > 安全 > Data Protection Kit（数据保护服务） > 数据防泄漏服务 > 数据防泄漏服务开发指导
+title: 数据防泄漏服务开发指导(ArkTS)
+breadcrumb: 指南 > 系统 > 安全 > Data Protection Kit（数据保护服务） > 数据防泄漏服务 > 数据防泄漏服务开发指导(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:46+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:57939755dd9678f027a556eb542b55443c778021493e0c1c5b5394e890e50c6e
+scraped_at: 2026-09-02T14:59:29+08:00
+doc_updated_at: 2026-04-28
+content_hash: sha256:f89e5f05b065b1993b27a8aa8e6b602a5619690ed01b724480158662129510dd
 ---
 
 DLP是系统提供的系统级的数据防泄漏解决方案，提供一种称为DLP的文件格式。后缀格式为“原始文件名（包含原始文件后缀）.dlp”，例如“test.docx.dlp”，文件由授权凭证和原始文件密文组成。
@@ -75,25 +75,25 @@ DLP作为HarmonyOS系统级数据防泄漏方案，可以让应用在零适配�
 
 * 应用需要支持打开以下文件类型中的其中一种或几种，也就是当前DLP支持的文件类型。包括：
 
-  ```
-  1. ".doc", ".docm", ".docx", ".dot", ".dotm", ".dotx", ".odp", ".odt", ".pdf", ".pot", ".potm", ".potx", ".ppa",
-  2. ".ppam", ".pps", ".ppsm", ".ppsx", ".ppt", ".pptm", ".pptx", ".rtf", ".txt", ".wps", ".xla", ".xlam", ".xls",
-  3. ".xlsb", ".xlsm", ".xlsx", ".xlt", ".xltm", ".xltx", ".xlw", ".xml", ".xps"
+  ```ts
+    ".doc", ".docm", ".docx", ".dot", ".dotm", ".dotx", ".odp", ".odt", ".pdf", ".pot", ".potm", ".potx", ".ppa",
+    ".ppam", ".pps", ".ppsm", ".ppsx", ".ppt", ".pptm", ".pptx", ".rtf", ".txt", ".wps", ".xla", ".xlam", ".xls",
+    ".xlsb", ".xlsm", ".xlsx", ".xlt", ".xltm", ".xltx", ".xlw", ".xml", ".xps"
   ```
 * 应用需要具备ohos.want.action.viewData或ohos.want.action.editData的skills，可在module.json5文件中增加相应配置：
 
-  ```
-  1. "skills":[
-  2. {
-  3. "entities":[
-  4. ...
-  5. ],
-  6. "actions":[
-  7. ...
-  8. "ohos.want.action.viewData"
-  9. ]
-  10. }
-  11. ]
+  ```json
+    "skills":[
+      {
+        "entities":[
+          ...
+        ],
+        "actions":[
+          ...
+          "ohos.want.action.viewData"
+        ]
+      }
+    ]
   ```
 * 使用的设备需要具备域账号环境。
 
@@ -101,8 +101,8 @@ DLP作为HarmonyOS系统级数据防泄漏方案，可以让应用在零适配�
 
 引入[dlpPermission](../harmonyos-references/js-apis-dlppermission.md)模块。
 
-```
-1. import { dlpPermission } from '@kit.DataProtectionKit';
+```ts
+import { dlpPermission } from '@kit.DataProtectionKit';
 ```
 
 ### 应用支持打开DLP文件绑定的FUSE文件
@@ -111,127 +111,127 @@ DLP作为HarmonyOS系统级数据防泄漏方案，可以让应用在零适配�
 
 打开DLP文件时，应用被安装为DLP沙箱分身应用（后续简称为分身），分身会收到want请求，分身可以对其中一些字段进行解析：
 
-```
-1. import { Want } from '@kit.AbilityKit';
+```ts
+import { Want } from '@kit.AbilityKit';
 
-3. interface DLPUriObj {
-4. name: string
-5. };
+interface DLPUriObj {
+  name: string
+};
 
-7. interface DLPWriteable {
-8. name:boolean
-9. };
+interface DLPWriteable {
+  name:boolean
+};
 
-11. interface DLPNameObj {
-12. dateModified: string,
-13. displayName: string,
-14. relativePath: string,
-15. };
+interface DLPNameObj {
+  dateModified: string,
+  displayName: string,
+  relativePath: string,
+};
 
-17. interface DLPLinkNameObj {
-18. name: string
-19. };
+interface DLPLinkNameObj {
+  name: string
+};
 
-21. function getParams(want: Want) {
-22. // 接收打开DLP文件传过来的参数
-23. let dlpFuseUri: string = want.uri? want.uri : '';  // FUSE文件的uri, 存放解密后的明文
-24. let dlpFuseWriteable: boolean = (want.parameters?.linkFileWriteable as DLPWriteable).name; // 对FUSE文件是否有写权限
-25. let dlpUri: string = (want.parameters?.dlpUri as DLPUriObj).name; // DLP文件的uri
-26. let dlpName: string = (want.parameters?.fileAsset as DLPNameObj).displayName; // DLP文件的文件名
-27. let dlpFuseName: string = (want.parameters?.linkFileName as DLPLinkNameObj).name; // FUSE文件的文件名
-28. }
+function getParams(want: Want) {
+  // 接收打开DLP文件传过来的参数
+  let dlpFuseUri: string = want.uri? want.uri : '';  // FUSE文件的uri, 存放解密后的明文
+  let dlpFuseWriteable: boolean = (want.parameters?.linkFileWriteable as DLPWriteable).name; // 对FUSE文件是否有写权限
+  let dlpUri: string = (want.parameters?.dlpUri as DLPUriObj).name; // DLP文件的uri
+  let dlpName: string = (want.parameters?.fileAsset as DLPNameObj).displayName; // DLP文件的文件名
+  let dlpFuseName: string = (want.parameters?.linkFileName as DLPLinkNameObj).name; // FUSE文件的文件名
+}
 ```
 
 分身可以通过把want.uri打开为fd，获取FUSE文件的内容：
 
-```
-1. import { fileIo } from '@kit.CoreFileKit';
-2. import { util } from '@kit.ArkTS';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { fileIo } from '@kit.CoreFileKit';
+import { util } from '@kit.ArkTS';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. const TAG: string = 'dlp';
+const TAG: string = 'dlp';
 
-7. function readFileContent(dlpFuseUri: string): string {
-8. let content: string = '';
-9. let file: fileIo.File | undefined = undefined;
-10. try {
-11. file = fileIo.openSync(dlpFuseUri, fileIo.OpenMode.READ_ONLY);
-12. } catch (err) {
-13. hilog.error(0x0000, TAG, 'openSync failed. ' + err);
-14. if (file) {
-15. fileIo.closeSync(file);
-16. }
-17. return content;
-18. }
+function readFileContent(dlpFuseUri: string): string {
+  let content: string = '';
+  let file: fileIo.File | undefined = undefined;
+  try {
+    file = fileIo.openSync(dlpFuseUri, fileIo.OpenMode.READ_ONLY);
+  } catch (err) {
+    hilog.error(0x0000, TAG, 'openSync failed. ' + err);
+    if (file) {
+      fileIo.closeSync(file);
+    }
+    return content;
+  }
 
-20. try {
-21. let buffer = new ArrayBuffer(4096);
-22. let bytesRead = fileIo.readSync(file.fd, buffer);
-23. let actualBuffer = buffer.slice(0, bytesRead);
-24. content = bufferToString(actualBuffer);
-25. } catch (err) {
-26. hilog.error(0x0000, TAG,'readSync failed. ' + err);
-27. } finally {
-28. if (file) {
-29. fileIo.closeSync(file);
-30. }
-31. }
-32. return content;
-33. }
+  try {
+    let buffer = new ArrayBuffer(4096);
+    let bytesRead = fileIo.readSync(file.fd, buffer);
+    let actualBuffer = buffer.slice(0, bytesRead);
+    content = bufferToString(actualBuffer);
+  } catch (err) {
+    hilog.error(0x0000, TAG,'readSync failed. ' + err);
+  } finally {
+    if (file) {
+      fileIo.closeSync(file);
+    }
+  }
+  return content;
+}
 
-35. function bufferToString(buffer: ArrayBuffer): string {
-36. let textDecoder = new util.TextDecoder('utf-8', {
-37. ignoreBOM: true
-38. });
-39. return textDecoder.decodeToString(new Uint8Array(buffer), {
-40. stream: true
-41. });
-42. }
+function bufferToString(buffer: ArrayBuffer): string {
+  let textDecoder = new util.TextDecoder('utf-8', {
+    ignoreBOM: true
+  });
+  return textDecoder.decodeToString(new Uint8Array(buffer), {
+    stream: true
+  });
+}
 ```
 
 如果有FUSE文件的读写权限，也可以更新FUSE文件内容：
 
-```
-1. import { fileIo } from '@kit.CoreFileKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { fileIo } from '@kit.CoreFileKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. const TAG: string = 'dlp';
+const TAG: string = 'dlp';
 
-6. function writeFileContent(dlpFuseUri: string, content: string): void {
-7. let file: fileIo.File | undefined = undefined;
+function writeFileContent(dlpFuseUri: string, content: string): void {
+  let file: fileIo.File | undefined = undefined;
 
-9. try {
-10. file = fileIo.openSync(dlpFuseUri, fileIo.OpenMode.CREATE | fileIo.OpenMode.READ_WRITE);
-11. // O_RDWR: 读写模式, O_CREAT: 文件不存在时创建
-12. let writeLen: number = fileIo.writeSync(file.fd, content);
+  try {
+    file = fileIo.openSync(dlpFuseUri, fileIo.OpenMode.CREATE | fileIo.OpenMode.READ_WRITE);
+    // O_RDWR: 读写模式, O_CREAT: 文件不存在时创建
+    let writeLen: number = fileIo.writeSync(file.fd, content);
 
-14. } catch (err) {
-15. hilog.error(0x0000, TAG, '文件操作失败: ' + err);
-16. } finally {
-17. if (file) {
-18. fileIo.closeSync(file);
-19. }
-20. }
-21. }
+  } catch (err) {
+    hilog.error(0x0000, TAG, '文件操作失败: ' + err);
+  } finally {
+    if (file) {
+      fileIo.closeSync(file);
+    }
+  }
+}
 ```
 
 ### 应用根据DLP文件的权限对界面进行适配
 
 DLP沙箱分身中可以调用[getDLPPermissionInfo](../harmonyos-references/js-apis-dlppermission.md#dlppermissiongetdlppermissioninfo)方法查询当前系统登陆的域账号用户对本DLP文件的用户权限和操作权限，不同用户权限可以对应不同的对文档的操作权限。
 
-```
-1. import { dlpPermission } from '@kit.DataProtectionKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { dlpPermission } from '@kit.DataProtectionKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. const TAG: string = 'dlp';
+const TAG: string = 'dlp';
 
-7. dlpPermission.getDLPPermissionInfo().then((data: dlpPermission.DLPPermissionInfo)=> {
-8. let userAccess: dlpPermission.DLPFileAccess = data.dlpFileAccess; // 用户对本DLP文件的用户权限
-9. let isEditable: number = data.flags & dlpPermission.ActionFlagType.ACTION_EDIT; // 用户对本DLP文件的操作权限
-10. }).catch((err: BusinessError) => {
-11. hilog.error(0x0000, TAG, 'getDLPPermissionInfo: ' + JSON.stringify(err));
-12. });
+dlpPermission.getDLPPermissionInfo().then((data: dlpPermission.DLPPermissionInfo)=> {
+  let userAccess: dlpPermission.DLPFileAccess = data.dlpFileAccess; // 用户对本DLP文件的用户权限
+  let isEditable: number = data.flags & dlpPermission.ActionFlagType.ACTION_EDIT; // 用户对本DLP文件的操作权限
+}).catch((err: BusinessError) => {
+  hilog.error(0x0000, TAG, 'getDLPPermissionInfo: ' + JSON.stringify(err));
+});
 ```
 
 getDLPPermissionInfo返回的data为[DLPPermissionInfo](../harmonyos-references/js-apis-dlppermission.md#dlppermissioninfo)类型，其中dlpFileAccess表示用户权限，flags表示操作权限的按位组合的结果。可以根据返回的flags字段对照[ActionFlagType](../harmonyos-references/js-apis-dlppermission.md#actionflagtype)判断DLP沙箱分身是否具有对应的操作权限，可以用于界面按钮置灰操作等。
@@ -260,20 +260,20 @@ DLP沙箱分身是普通应用的分身，所有数据都是全新的，如果�
 
    普通应用和DLP沙箱分身都可以调用该接口，但DLP沙箱分身必须在读取DLP文件内容之前才允许调用。
 
-   ```
-   1. import { dlpPermission } from '@kit.DataProtectionKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```ts
+   import { dlpPermission } from '@kit.DataProtectionKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
 
-   5. const TAG: string = 'dlp';
+   const TAG: string = 'dlp';
 
-   7. async function setSandboxAppConfig() {
-   8. try {
-   9. await dlpPermission.setSandboxAppConfig('configInfo'); // 设置配置信息
-   10. } catch (err) {
-   11. hilog.error(0x0000, TAG, 'setSandboxAppConfig error: ' + JSON.stringify(err)); // 失败报错
-   12. }
-   13. }
+   async function setSandboxAppConfig() {
+     try {
+       await dlpPermission.setSandboxAppConfig('configInfo'); // 设置配置信息
+     } catch (err) {
+       hilog.error(0x0000, TAG, 'setSandboxAppConfig error: ' + JSON.stringify(err)); // 失败报错
+     }
+   }
    ```
 2. 清理配置信息。
 
@@ -281,20 +281,20 @@ DLP沙箱分身是普通应用的分身，所有数据都是全新的，如果�
 
    该接口只允许普通应用中调用。
 
-   ```
-   1. import { dlpPermission } from '@kit.DataProtectionKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```ts
+   import { dlpPermission } from '@kit.DataProtectionKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
 
-   5. const TAG: string = 'dlp';
+   const TAG: string = 'dlp';
 
-   7. async function cleanSandboxAppConfig() {
-   8. try {
-   9. await dlpPermission.cleanSandboxAppConfig(); // 清理配置信息
-   10. } catch (err) {
-   11. hilog.error(0x0000, TAG, 'cleanSandboxAppConfig error: ' + JSON.stringify(err)); // 失败报错
-   12. }
-   13. }
+   async function cleanSandboxAppConfig() {
+     try {
+       await dlpPermission.cleanSandboxAppConfig(); // 清理配置信息
+     } catch (err) {
+       hilog.error(0x0000, TAG, 'cleanSandboxAppConfig error: ' + JSON.stringify(err)); // 失败报错
+     }
+   }
    ```
 3. 获取配置信息。
 
@@ -302,20 +302,20 @@ DLP沙箱分身是普通应用的分身，所有数据都是全新的，如果�
 
    普通应用和DLP沙箱分身都可以调用。
 
-   ```
-   1. import { dlpPermission } from '@kit.DataProtectionKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```ts
+   import { dlpPermission } from '@kit.DataProtectionKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
 
-   5. const TAG: string = 'dlp';
+   const TAG: string = 'dlp';
 
-   7. async function getSandboxAppConfig() {
-   8. try {
-   9. let res:string = await dlpPermission.getSandboxAppConfig(); // 查询配置信息
-   10. } catch (err) {
-   11. hilog.error(0x0000, TAG, 'getSandboxAppConfig error: ' + JSON.stringify(err)); // 失败报错
-   12. }
-   13. }
+   async function getSandboxAppConfig() {
+     try {
+       let res:string = await dlpPermission.getSandboxAppConfig(); // 查询配置信息
+     } catch (err) {
+       hilog.error(0x0000, TAG, 'getSandboxAppConfig error: ' + JSON.stringify(err)); // 失败报错
+     }
+   }
    ```
 
 ### 应用支持更新最近打开记录
@@ -326,63 +326,63 @@ DLP沙箱分身是普通应用的分身，所有数据都是全新的，如果�
 
   仅有DLP沙箱分身有打开DLP文件场景：普通应用启动时，可以通过接口获取到历史通过本应用的DLP沙箱分身打开的DLP文件。
 
-  ```
-  1. import { dlpPermission } from '@kit.DataProtectionKit';
-  2. import { BusinessError } from '@kit.BasicServicesKit';
-  3. import { hilog } from '@kit.PerformanceAnalysisKit';
+  ```ts
+  import { dlpPermission } from '@kit.DataProtectionKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
+  import { hilog } from '@kit.PerformanceAnalysisKit';
 
-  5. const TAG: string = 'dlp';
+  const TAG: string = 'dlp';
 
-  7. async function getDLPFileAccessRecords() {
-  8. try {
-  9. let res:Array<dlpPermission.AccessedDLPFileInfo> = await dlpPermission.getDLPFileAccessRecords(); // 获取DLP访问列表
-  10. hilog.info(0x0000, TAG, 'res' + JSON.stringify(res))
-  11. } catch (err) {
-  12. hilog.error(0x0000, TAG, 'error:' + JSON.stringify(err)); // 失败报错
-  13. }
-  14. }
+  async function getDLPFileAccessRecords() {
+    try {
+      let res:Array<dlpPermission.AccessedDLPFileInfo> = await dlpPermission.getDLPFileAccessRecords(); // 获取DLP访问列表
+      hilog.info(0x0000, TAG, 'res' + JSON.stringify(res))
+    } catch (err) {
+      hilog.error(0x0000, TAG, 'error:' + JSON.stringify(err)); // 失败报错
+    }
+  }
   ```
 * **普通应用已启动，可以感知到DLP沙箱分身打开的DLP文件**。
 
   DLP沙箱分身有打开DLP文件场景：普通应用可以订阅本应用的DLP沙箱分身打开DLP文件的事件。
 
-  ```
-  1. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-  2. import { dlpPermission } from '@kit.DataProtectionKit';
-  3. import { BusinessError } from '@kit.BasicServicesKit';
-  4. import { hilog } from '@kit.PerformanceAnalysisKit';
+  ```ts
+  import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+  import { dlpPermission } from '@kit.DataProtectionKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
+  import { hilog } from '@kit.PerformanceAnalysisKit';
 
-  6. const TAG: string = 'dlp';
+  const TAG: string = 'dlp';
 
-  9. export default class TestAbility extends UIAbility {
-  10. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-  11. this.subscribe();
-  12. }
+  export default class TestAbility extends UIAbility {
+    onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+      this.subscribe();
+    }
 
-  14. onDestroy(): void {
-  15. this.unSubscribe();
-  16. }
+    onDestroy(): void {
+      this.unSubscribe();
+    }
 
-  18. event(info: dlpPermission.AccessedDLPFileInfo) {
-  19. hilog.info(0x0000, TAG, 'openDlpFile event');
-  20. }
+    event(info: dlpPermission.AccessedDLPFileInfo) {
+      hilog.info(0x0000, TAG, 'openDlpFile event');
+    }
 
-  22. unSubscribe() {
-  23. try {
-  24. dlpPermission.off('openDLPFile', this.event); // 取消订阅
-  25. } catch (err) {
-  26. hilog.error(0x0000, TAG, 'error:' + JSON.stringify(err)); // 失败报错
-  27. }
-  28. }
+    unSubscribe() {
+      try {
+        dlpPermission.off('openDLPFile', this.event); // 取消订阅
+      } catch (err) {
+        hilog.error(0x0000, TAG, 'error:' + JSON.stringify(err)); // 失败报错
+      }
+    }
 
-  30. subscribe() {
-  31. try {
-  32. dlpPermission.on('openDLPFile', this.event); // 订阅
-  33. } catch (err) {
-  34. hilog.error(0x0000, TAG, 'error:' + JSON.stringify(err)); // 失败报错
-  35. }
-  36. }
-  37. }
+    subscribe() {
+      try {
+        dlpPermission.on('openDLPFile', this.event); // 订阅
+      } catch (err) {
+        hilog.error(0x0000, TAG, 'error:' + JSON.stringify(err)); // 失败报错
+      }
+    }
+  }
   ```
 
 ### 应用内支持打开选定的DLP文件
@@ -393,36 +393,36 @@ DLP沙箱分身是普通应用的分身，所有数据都是全新的，如果�
 2. 获取[UIAbilityContext](../harmonyos-references/js-apis-app-ability-common.md)的context。
 3. 调用context的[startAbility](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#startability)方法传入want参数，打开dlp文件。
 
-```
-1. import { Want, common } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { UIContext } from '@kit.ArkUI';
-4. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { Want, common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { UIContext } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-6. const TAG: string = 'dlp';
+const TAG: string = 'dlp';
 
-8. function openDlpFile(dlpUri: string, fileName: string) {
-9. let want: Want = {
-10. "action": "ohos.want.action.viewData",
-11. "bundleName": "com.example.example_bundle_name",
-12. "abilityName": "exampleAbility",
-13. "uri": dlpUri,
-14. "parameters": {
-15. "fileName": {
-16. "name": fileName
-17. }
-18. }
-19. }
-20. let context = new UIContext().getHostContext() as common.UIAbilityContext; // 获取当前UIAbilityContext
-21. try {
-22. hilog.info(0x0000, TAG, 'openDLPFile:' + JSON.stringify(want));
-23. hilog.info(0x0000, TAG, 'openDLPFile: delegator:' + JSON.stringify(context));
-24. context.startAbility(want);
-25. } catch (err) {
-26. hilog.error(0x0000, TAG, 'openDLPFile startAbility failed:' + JSON.stringify(err));
-27. return;
-28. }
-29. }
+function openDlpFile(dlpUri: string, fileName: string) {
+  let want: Want = {
+    "action": "ohos.want.action.viewData",
+    "bundleName": "com.example.example_bundle_name",
+    "abilityName": "exampleAbility",
+    "uri": dlpUri,
+    "parameters": {
+      "fileName": {
+        "name": fileName
+      }
+    }
+  }
+  let context = new UIContext().getHostContext() as common.UIAbilityContext; // 获取当前UIAbilityContext
+  try {
+    hilog.info(0x0000, TAG, 'openDLPFile:' + JSON.stringify(want));
+    hilog.info(0x0000, TAG, 'openDLPFile: delegator:' + JSON.stringify(context));
+    context.startAbility(want);
+  } catch (err) {
+    hilog.error(0x0000, TAG, 'openDLPFile startAbility failed:' + JSON.stringify(err));
+    return;
+  }
+}
 ```
 
 ### 应用内支持对DLP文件权限设置
@@ -439,78 +439,78 @@ DLP沙箱分身是普通应用的分身，所有数据都是全新的，如果�
 
   调用以下代码：
 
-  ```
-  1. import { common, Want } from '@kit.AbilityKit';
-  2. import { BusinessError } from '@kit.BasicServicesKit';
-  3. import { dlpPermission } from '@kit.DataLossPreventionKit';
-  4. import { UIContext } from '@kit.ArkUI';
-  5. import { hilog } from '@kit.PerformanceAnalysisKit';
+  ```ts
+  import { common, Want } from '@kit.AbilityKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
+  import { dlpPermission } from '@kit.DataLossPreventionKit';
+  import { UIContext } from '@kit.ArkUI';
+  import { hilog } from '@kit.PerformanceAnalysisKit';
 
-  7. const TAG: string = 'dlp';
+  const TAG: string = 'dlp';
 
-  9. try {
-  10. let fileUri: string = "file://docs/storage/Users/currentUser/test.txt";
-  11. let fileName: string = "test.txt";
-  12. let context = new UIContext().getHostContext() as common.UIAbilityContext; // 获取当前UIAbilityContext
-  13. let want: Want = {
-  14. 'uri': fileUri,
-  15. 'parameters': {
-  16. 'displayName': fileName
-  17. }
-  18. }; // 请求参数
-  19. dlpPermission.startDLPManagerForResult(context, want).then((res: dlpPermission.DLPManagerResult) => {
-  20. hilog.info(0x0000, TAG, 'startDLPManagerForResult res.resultCode:' + res.resultCode);
-  21. hilog.info(0x0000, TAG, 'startDLPManagerForResult res.want:' + JSON.stringify(res.want));
-  22. }); // 拉起DLP权限管理应用 设置权限
-  23. } catch (err) {
-  24. hilog.error(0x0000, TAG, 'startDLPManagerForResult error:' + (err as BusinessError).code + (err as BusinessError).message);
-  25. }
+  try {
+    let fileUri: string = "file://docs/storage/Users/currentUser/test.txt";
+    let fileName: string = "test.txt";
+    let context = new UIContext().getHostContext() as common.UIAbilityContext; // 获取当前UIAbilityContext
+    let want: Want = {
+      'uri': fileUri,
+      'parameters': {
+        'displayName': fileName
+      }
+    }; // 请求参数
+    dlpPermission.startDLPManagerForResult(context, want).then((res: dlpPermission.DLPManagerResult) => {
+      hilog.info(0x0000, TAG, 'startDLPManagerForResult res.resultCode:' + res.resultCode);
+      hilog.info(0x0000, TAG, 'startDLPManagerForResult res.want:' + JSON.stringify(res.want));
+    }); // 拉起DLP权限管理应用 设置权限
+  } catch (err) {
+    hilog.error(0x0000, TAG, 'startDLPManagerForResult error:' + (err as BusinessError).code + (err as BusinessError).message);
+  }
   ```
 * **DLP沙箱分身内权限修改，查看和解除**
 
   + 如果当前的账号是DLP文档的创建者，则该用户拥有修改这个DLP文件权限或者解除这个DLP文档权限还原为普通文件的能力，调用以下代码，拉起DLP管理应用的设置权限页面，在该页面中选择更改加密进行权限修改或者解除加密；如果当前账号拥有DLP文档只读或者编辑权限，调用以下代码则可以查看当前用户权限内容。
 
-    ```
-    1. import { common, Want } from '@kit.AbilityKit';
-    2. import { BusinessError } from '@kit.BasicServicesKit';
-    3. import { dlpPermission } from '@kit.DataLossPreventionKit';
-    4. import { UIContext } from '@kit.ArkUI';
-    5. import { hilog } from '@kit.PerformanceAnalysisKit';
+    ```ts
+    import { common, Want } from '@kit.AbilityKit';
+    import { BusinessError } from '@kit.BasicServicesKit';
+    import { dlpPermission } from '@kit.DataLossPreventionKit';
+    import { UIContext } from '@kit.ArkUI';
+    import { hilog } from '@kit.PerformanceAnalysisKit';
 
-    7. const TAG: string = 'dlp';
+    const TAG: string = 'dlp';
 
-    9. try {
-    10. let fileUri: string = "file://docs/storage/Users/currentUser/test.txt.dlp";// DLP文件的uri
-    11. let fileName: string = "test.txt.dlp";
-    12. let context = new UIContext().getHostContext() as common.UIAbilityContext; // 获取当前UIAbilityContext
-    13. let want: Want = {
-    14. 'uri': fileUri,
-    15. 'parameters': {
-    16. 'displayName': fileName
-    17. }
-    18. }; // 请求参数
-    19. dlpPermission.startDLPManagerForResult(context, want).then((res: dlpPermission.DLPManagerResult) => {
-    20. hilog.info(0x0000, TAG, 'startDLPManagerForResult res.resultCode:' + res.resultCode);
-    21. hilog.info(0x0000, TAG, 'startDLPManagerForResult res.want:' + JSON.stringify(res.want));
-    22. }); // 拉起DLP权限管理应用 设置权限
-    23. } catch (err) {
-    24. hilog.error(0x0000, TAG, 'startDLPManagerForResult error:' + (err as BusinessError).code + (err as BusinessError).message);
-    25. }
+    try {
+      let fileUri: string = "file://docs/storage/Users/currentUser/test.txt.dlp";// DLP文件的uri
+      let fileName: string = "test.txt.dlp";
+      let context = new UIContext().getHostContext() as common.UIAbilityContext; // 获取当前UIAbilityContext
+      let want: Want = {
+        'uri': fileUri,
+        'parameters': {
+          'displayName': fileName
+        }
+      }; // 请求参数
+      dlpPermission.startDLPManagerForResult(context, want).then((res: dlpPermission.DLPManagerResult) => {
+        hilog.info(0x0000, TAG, 'startDLPManagerForResult res.resultCode:' + res.resultCode);
+        hilog.info(0x0000, TAG, 'startDLPManagerForResult res.want:' + JSON.stringify(res.want));
+      }); // 拉起DLP权限管理应用 设置权限
+    } catch (err) {
+      hilog.error(0x0000, TAG, 'startDLPManagerForResult error:' + (err as BusinessError).code + (err as BusinessError).message);
+    }
     ```
   + DLP沙箱分身中可以调用[getDLPPermissionInfo](../harmonyos-references/js-apis-dlppermission.md#dlppermissiongetdlppermissioninfo)方法查询当前用户DLP文件权限，DLP沙箱分身的权限限制，参考[沙箱限制](dlp-guidelines.md#沙箱限制)。
 
-    ```
-    1. import { dlpPermission } from '@kit.DataProtectionKit';
-    2. import { BusinessError } from '@kit.BasicServicesKit';
-    3. import { hilog } from '@kit.PerformanceAnalysisKit';
+    ```ts
+    import { dlpPermission } from '@kit.DataProtectionKit';
+    import { BusinessError } from '@kit.BasicServicesKit';
+    import { hilog } from '@kit.PerformanceAnalysisKit';
 
-    5. const TAG: string = 'dlp';
+    const TAG: string = 'dlp';
 
-    7. dlpPermission.getDLPPermissionInfo().then((data:dlpPermission.DLPPermissionInfo)=> {
-    8. hilog.info(0x0000, TAG, 'getDLPPermissionInfo, result: ' + JSON.stringify(data));
-    9. }).catch((err: BusinessError) => {
-    10. hilog.error(0x0000, TAG, 'getDLPPermissionInfo: ' + JSON.stringify(err));
-    11. });
+    dlpPermission.getDLPPermissionInfo().then((data:dlpPermission.DLPPermissionInfo)=> {
+      hilog.info(0x0000, TAG, 'getDLPPermissionInfo, result: ' + JSON.stringify(data));
+    }).catch((err: BusinessError) => {
+      hilog.error(0x0000, TAG, 'getDLPPermissionInfo: ' + JSON.stringify(err));
+    });
     ```
 
 ### 其他DLP能力增强
@@ -519,40 +519,40 @@ DLP沙箱分身是普通应用的分身，所有数据都是全新的，如果�
 
   传入文件的fd查询对应文件是否是DLP文件，是DLP文件则按[文档指导](dlp-guidelines.md#应用内支持打开选定的dlp文件)打开该文件。
 
-  ```
-  1. import { dlpPermission } from '@kit.DataProtectionKit';
-  2. import { fileIo } from '@kit.CoreFileKit';
-  3. import { BusinessError } from '@kit.BasicServicesKit';
-  4. import { hilog } from '@kit.PerformanceAnalysisKit';
+  ```ts
+  import { dlpPermission } from '@kit.DataProtectionKit';
+  import { fileIo } from '@kit.CoreFileKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
+  import { hilog } from '@kit.PerformanceAnalysisKit';
 
-  6. const TAG: string = 'dlp';
+  const TAG: string = 'dlp';
 
-  8. let uri = "file://docs/storage/Users/currentUser/Desktop/test.txt.dlp";
-  9. let file = fileIo.openSync(uri);
-  10. try {
-  11. let res: boolean = await dlpPermission.isDLPFile(file.fd); // 是否加密DLP文件
-  12. hilog.info(0x0000, TAG, 'res' + JSON.stringify(res));
-  13. } catch (err) {
-  14. hilog.error(0x0000, TAG, 'startDLPManagerForResult error:' + (err as BusinessError).code + (err as BusinessError).message); // 失败报错
-  15. }
-  16. fileIo.closeSync(file);
+  let uri = "file://docs/storage/Users/currentUser/Desktop/test.txt.dlp";
+  let file = fileIo.openSync(uri);
+  try {
+    let res: boolean = await dlpPermission.isDLPFile(file.fd); // 是否加密DLP文件
+    hilog.info(0x0000, TAG, 'res' + JSON.stringify(res));
+  } catch (err) {
+    hilog.error(0x0000, TAG, 'startDLPManagerForResult error:' + (err as BusinessError).code + (err as BusinessError).message); // 失败报错
+  }
+  fileIo.closeSync(file);
   ```
 * **判断当前所在应用是否是DLP沙箱分身**
 
   在应用中调用[isInSandbox](../harmonyos-references/js-apis-dlppermission.md#dlppermissionisinsandbox)接口判断当前是否是DLP沙箱分身，如果是DLP沙箱分身则可以结合[调用接口查询权限](dlp-guidelines.md#应用根据dlp文件的权限对界面进行适配)的结果进行对应功能按钮的置灰或屏蔽。比如：如果只有只读权限，则编辑保存入口可以置灰，如果是只读或者编辑权限，则修改权限入口可以置灰。
 
-  ```
-  1. import { dlpPermission } from '@kit.DataProtectionKit';
-  2. import { BusinessError } from '@kit.BasicServicesKit';
-  3. import { hilog } from '@kit.PerformanceAnalysisKit';
+  ```ts
+  import { dlpPermission } from '@kit.DataProtectionKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
+  import { hilog } from '@kit.PerformanceAnalysisKit';
 
-  5. const TAG: string = 'dlp';
+  const TAG: string = 'dlp';
 
-  7. dlpPermission.isInSandbox().then((data: boolean)=> {
-  8. hilog.info(0x0000, TAG, 'isInSandbox, result: ' + JSON.stringify(data));
-  9. }).catch((err: BusinessError) => {
-  10. hilog.error(0x0000, TAG, 'isInSandbox: ' + JSON.stringify(err));
-  11. });
+  dlpPermission.isInSandbox().then((data: boolean)=> {
+    hilog.info(0x0000, TAG, 'isInSandbox, result: ' + JSON.stringify(data));
+  }).catch((err: BusinessError) => {
+    hilog.error(0x0000, TAG, 'isInSandbox: ' + JSON.stringify(err));
+  });
   ```
 * **保留沙箱**。
 
@@ -560,57 +560,57 @@ DLP沙箱分身是普通应用的分身，所有数据都是全新的，如果�
 
   + 调用接口[setRetentionState](../harmonyos-references/js-apis-dlppermission.md#dlppermissionsetretentionstate)设置保留沙箱，传入参数为本沙箱内打开的dlp文件的uri列表，该接口只允许在沙箱中调用。
 
-    ```
-    1. import { dlpPermission } from '@kit.DataProtectionKit';
-    2. import { BusinessError } from '@kit.BasicServicesKit';
-    3. import { hilog } from '@kit.PerformanceAnalysisKit';
+    ```ts
+    import { dlpPermission } from '@kit.DataProtectionKit';
+    import { BusinessError } from '@kit.BasicServicesKit';
+    import { hilog } from '@kit.PerformanceAnalysisKit';
 
-    5. const TAG: string = 'dlp';
+    const TAG: string = 'dlp';
 
-    8. async function setRetentionSandboxList() {
-    9. let docUris: Array<string>=["file://docs/storage/Users/currentUser/Desktop/test.txt.dlp"]
-    10. try {
-    11. await dlpPermission.setRetentionState(docUris); // 设置沙箱保留
-    12. } catch (err) {
-    13. hilog.error(0x0000, TAG, 'startDLPManagerForResult error:' + (err as BusinessError).code + (err as BusinessError).message); // 失败报错
-    14. }
-    15. }
+    async function setRetentionSandboxList() {
+      let docUris: Array<string>=["file://docs/storage/Users/currentUser/Desktop/test.txt.dlp"]
+      try {
+        await dlpPermission.setRetentionState(docUris); // 设置沙箱保留
+      } catch (err) {
+        hilog.error(0x0000, TAG, 'startDLPManagerForResult error:' + (err as BusinessError).code + (err as BusinessError).message); // 失败报错
+      }
+    }
     ```
   + 调用接口[cancelRetentionState](../harmonyos-references/js-apis-dlppermission.md#dlppermissioncancelretentionstate)取消保留沙箱，该接口只允许沙箱中调用。
 
-    ```
-    1. import { dlpPermission } from '@kit.DataProtectionKit';
-    2. import { BusinessError } from '@kit.BasicServicesKit';
-    3. import { hilog } from '@kit.PerformanceAnalysisKit';
+    ```ts
+    import { dlpPermission } from '@kit.DataProtectionKit';
+    import { BusinessError } from '@kit.BasicServicesKit';
+    import { hilog } from '@kit.PerformanceAnalysisKit';
 
-    5. const TAG: string = 'dlp';
+    const TAG: string = 'dlp';
 
-    8. async function setRetentionSandboxList() {
-    9. let docUris: Array<string>=["file://docs/storage/Users/currentUser/Desktop/test.txt.dlp"]
-    10. try {
-    11. await dlpPermission.cancelRetentionState(docUris); // 取消保留沙箱
-    12. } catch (err) {
-    13. hilog.error(0x0000, TAG, 'startDLPManagerForResult error:' + (err as BusinessError).code + (err as BusinessError).message); // 失败报错
-    14. }
-    15. }
+    async function setRetentionSandboxList() {
+      let docUris: Array<string>=["file://docs/storage/Users/currentUser/Desktop/test.txt.dlp"]
+      try {
+        await dlpPermission.cancelRetentionState(docUris); // 取消保留沙箱
+      } catch (err) {
+        hilog.error(0x0000, TAG, 'startDLPManagerForResult error:' + (err as BusinessError).code + (err as BusinessError).message); // 失败报错
+      }
+    }
     ```
   + 调用接口[getRetentionSandboxList](../harmonyos-references/js-apis-dlppermission.md#dlppermissiongetretentionsandboxlist)获取保留沙箱记录，该接口允许原应用和DLP沙箱分身中调用。
 
-    ```
-    1. import { dlpPermission } from '@kit.DataProtectionKit';
-    2. import { BusinessError } from '@kit.BasicServicesKit';
-    3. import { hilog } from '@kit.PerformanceAnalysisKit';
+    ```ts
+    import { dlpPermission } from '@kit.DataProtectionKit';
+    import { BusinessError } from '@kit.BasicServicesKit';
+    import { hilog } from '@kit.PerformanceAnalysisKit';
 
-    5. const TAG: string = 'dlp';
+    const TAG: string = 'dlp';
 
-    7. async function getRetentionSandboxList() {
-    8. try {
-    9. let res:Array<dlpPermission.RetentionSandboxInfo> = await dlpPermission.getRetentionSandboxList(); // 获取保留沙箱记录
-    10. hilog.info(0x0000, TAG, 'res' + JSON.stringify(res))
-    11. } catch (err) {
-    12. hilog.error(0x0000, TAG, 'startDLPManagerForResult error:' + (err as BusinessError).code + (err as BusinessError).message);// 失败报错
-    13. }
-    14. }
+    async function getRetentionSandboxList() {
+      try {
+        let res:Array<dlpPermission.RetentionSandboxInfo> = await dlpPermission.getRetentionSandboxList(); // 获取保留沙箱记录
+        hilog.info(0x0000, TAG, 'res' + JSON.stringify(res))
+      } catch (err) {
+        hilog.error(0x0000, TAG, 'startDLPManagerForResult error:' + (err as BusinessError).code + (err as BusinessError).message);// 失败报错
+      }
+    }
     ```
 
 ## 典型问题自排查

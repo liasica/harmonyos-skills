@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-p
 title: 预下单
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 平台类商户/服务商 > 合单支付（仅支持平台类商户） > 预下单
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:07+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3525f68cdf68fddf35ec8cae70a552f20b933df21b6387891e6ce1f0241be6e1
+scraped_at: 2026-09-02T14:53:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0e856c6feec7ac3303131adc05e2191c3315483dbae0a6ebf04f675522317240
 ---
 
 ## 功能介绍
@@ -42,7 +42,7 @@ content_hash: sha256:3525f68cdf68fddf35ec8cae70a552f20b933df21b6387891e6ce1f0241
 
 | 参数 | 是否必选 | 类型 | 说明 |
 | --- | --- | --- | --- |
-| combinedMercOrderNo | 是 | String | 合单支付商户主订单号，由商户自己生成，**商户需保证订单信息唯一性**。最大长度46。 |
+| combinedMercOrderNo | 是 | String | 合单支付商户主订单号，由商户在创建合单支付订单时生成，商户需保证订单信息唯一性。最大长度46。 |
 | combinedAppId | 是 | String | 合单支付商户关联的应用id。 |
 | combinedMercNo | 是 | String | 合单支付发起方商户号。 |
 | tradeSummary | 是 | String | 合单支付交易摘要。最大长度128。 |
@@ -54,29 +54,29 @@ content_hash: sha256:3525f68cdf68fddf35ec8cae70a552f20b933df21b6387891e6ce1f0241
 
 ## 请求示例
 
-```
-1. POST /api/v2/partner/combined/preorder/create/app HTTP/1.1
-2. Content-Type: application/json;charset=UTF-8
-3. PayMercAuth: {"callerId":"10132120***","traceId":"202305151026422776499","time":1684117602555,"authId":"120291744647139***","headerSign":"u+H1Oe3fXV9mGCES89XA7tSjp8+TELY******************Yaq1jDH/+VmefC29ZXpK54c5DwKJH7rMv6SB******************N1jKg/lOG7eAFfwjEWJu5JyvY5KunSeE6DiKs=","bodySign":"yWDtXOBqDoItPgHmF57L6U5G7F/LhsILChu8YSp******************xPAHE0TIkTxHMcUWx7N6405QrcBimTcTN7pBpFA7pvFexUasPj10******************vta6J5UxIUmAp+wGdV/juGEvQ="}
-4. Accept: application/json
-5. {
-6. "combinedAppId":"5765880207853***",
-7. "combinedMercNo": "10132120***",
-8. "combinedMercOrderNo": "czl00120240705***",
-9. "callbackUrl": "https://www.xxxxxx.com/hw/pay/callback",
-10. "subOrders": [
-11. {
-12. "allocationType": "NO_ALLOCATION",
-13. "currency": "CNY",
-14. "totalAmount": 100,
-15. "tradeSummary": "xx服务-杂志报刊",
-16. "mercNo": "10132120***",
-17. "mercOrderNo": "czl00120240705***",
-18. "payload": "example-payload"
-19. }
-20. ],
-21. "tradeSummary": "xx服务-合单交易摘要"
-22. }
+```json
+POST /api/v2/partner/combined/preorder/create/app HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+PayMercAuth: {"callerId":"10132120***","traceId":"202305151026422776499","time":1684117602555,"authId":"120291744647139***","headerSign":"u+H1Oe3fXV9mGCES89XA7tSjp8+TELY******************Yaq1jDH/+VmefC29ZXpK54c5DwKJH7rMv6SB******************N1jKg/lOG7eAFfwjEWJu5JyvY5KunSeE6DiKs=","bodySign":"yWDtXOBqDoItPgHmF57L6U5G7F/LhsILChu8YSp******************xPAHE0TIkTxHMcUWx7N6405QrcBimTcTN7pBpFA7pvFexUasPj10******************vta6J5UxIUmAp+wGdV/juGEvQ="}
+Accept: application/json
+{
+  "combinedAppId":"5765880207853***",
+  "combinedMercNo": "10132120***",
+  "combinedMercOrderNo": "czl00120240705***",
+  "callbackUrl": "https://www.xxxxxx.com/hw/pay/callback",
+  "subOrders": [
+    {
+      "allocationType": "NO_ALLOCATION",
+      "currency": "CNY",
+      "totalAmount": 100,
+      "tradeSummary": "xx服务-杂志报刊",
+      "mercNo": "10132120***",
+      "mercOrderNo": "czl00120240705***",
+      "payload": "example-payload"
+    }
+  ],
+  "tradeSummary": "xx服务-合单交易摘要"
+}
 ```
 
 ## 响应参数
@@ -97,20 +97,20 @@ content_hash: sha256:3525f68cdf68fddf35ec8cae70a552f20b933df21b6387891e6ce1f0241
 | subDesc | 否 | String | 业务错误描述信息。 |
 | sign | 是 | String | 签名值。用于开发者对响应报文进行防篡改验证。 |
 | prepayId | 是 | String | 预支付ID。有效期10分钟。 |
-| combinedMercOrderNo | 否 | String | 合单支付商户主订单号。 |
+| combinedMercOrderNo | 否 | String | 合单支付商户主订单号，由商户在创建合单支付订单时生成，商户需保证订单信息唯一性。最大长度46。 |
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json; charset=UTF-8
-3. {
-4. "resultCode": "000000",
-5. "resultDesc": "Success.",
-6. "sign": "MEQCIEIWzdpziRyTi8vhwWHFuDdxfsiw**********YAMabeCgTDG77e+2XJItvq/ZkIcCN5/B20pQ==",
-7. "prepayId": "12407091401520894056950***",
-8. "combinedMercOrderNo": "2023032******118876122"
-9. }
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+{
+  "resultCode": "000000",
+  "resultDesc": "Success.",
+  "sign": "MEQCIEIWzdpziRyTi8vhwWHFuDdxfsiw**********YAMabeCgTDG77e+2XJItvq/ZkIcCN5/B20pQ==",
+  "prepayId": "12407091401520894056950***",
+  "combinedMercOrderNo": "2023032******118876122"
+}
 ```
 
 ## 错误码

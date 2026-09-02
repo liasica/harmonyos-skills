@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: 多语言支持
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 框架说明 > 多语言支持
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:34+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:ec8fa400308acecc9ebf88c268c3e53310860d769c3fb935bed5179d2361a353
+scraped_at: 2026-09-02T14:51:42+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:74282d76861b21e82bbfd45237c4d00d5bf1b333a958cae2cc303da1a5c8e0a4
 ---
 
 基于开发框架的应用会覆盖多个国家和地区，开发框架支持多语言能力后，可以让应用开发者无需开发多个不同语言的版本，就可以同时支持多种语言的切换，为项目维护带来便利。
@@ -13,8 +13,6 @@ content_hash: sha256:ec8fa400308acecc9ebf88c268c3e53310860d769c3fb935bed5179d236
 开发者仅需要通过[定义资源文件](js-service-widget-multiple-languages.md#定义资源文件)和[引用资源](js-service-widget-multiple-languages.md#引用资源)两个步骤，就可以使用开发框架的多语言能力。
 
 ## 定义资源文件
-
-PhonePC/2in1TabletTVWearable
 
 资源文件用于存放应用在多种语言场景下的资源内容，开发框架使用JSON文件保存资源定义。
 
@@ -24,41 +22,39 @@ PhonePC/2in1TabletTVWearable
 
 以en-US.json和ar-AE.json为例，资源文件内容格式如下：
 
-```
-1. {
-2. "strings": {
-3. "hello": "Hello world!",
-4. "symbol": "@#$%^&*()_+-={}[]\\|:;\"'<>,./?",
-5. "plurals": {
-6. "one": "one person",
-7. "other": "other people"
-8. }
-9. },
+```json
+{
+    "strings": {
+        "hello": "Hello world!",
+        "symbol": "@#$%^&*()_+-={}[]\\|:;\"'<>,./?",
+        "plurals": {
+            "one": "one person",
+            "other": "other people"
+        }
+    },
 
-11. "files": {
-12. "image": "image/en_picture.PNG"
-13. }
-14. }
+    "files": {
+        "image": "image/en_picture.PNG"
+    }
+}
 ```
 
-```
-1. {
-2. "strings": {
-3. "plurals": {
-4. "zero": "لا أحد",
-5. "one": "وحده",
-6. "two": "اثنان",
-7. "few": "ستة اشخاص",
-8. "many": "خمسون شخص",
-9. "other": "مائة شخص"
-10. }
-11. }
-12. }
+```json
+{
+    "strings": {
+        "plurals": {
+            "zero": "لا أحد",
+            "one": "وحده",
+            "two": "اثنان",
+            "few": "ستة اشخاص",
+            "many": "خمسون شخص",
+            "other": "مائة شخص"
+        }
+    }
+}
 ```
 
 ## 引用资源
-
-PhonePC/2in1TabletTVWearable
 
 在应用开发的页面中使用多语言的语法，包含简单格式化和单复数格式化两种，都可以在hml或js中使用。
 
@@ -79,12 +75,12 @@ PhonePC/2in1TabletTVWearable
   | path | string | 是 | 资源路径 |
 * 简单格式化示例代码
 
-  ```
-  1. <!-- xxx.hml -->
-  2. <div>
-  3. <text>{{ $t('strings.hello') }}</text>
-  4. <image src="{{ $t('files.image') }}" class="image"></image>
-  5. </div>
+  ```html
+  <!-- xxx.hml -->
+   <div> 
+     <text>{{ $t('strings.hello') }}</text>  
+     <image src="{{ $t('files.image') }}" class="image"></image> 
+   </div>
   ```
 * 单复数格式化方法
 
@@ -102,20 +98,20 @@ PhonePC/2in1TabletTVWearable
   | count | number | 是 | 要表达的值 |
 * 单复数格式化示例代码
 
-  ```
-  1. <!--xxx.hml-->
-  2. <div>
-  3. <!-- 传递数值为0时： "0 people" 阿拉伯语中此处匹配key为zero的词条-->
-  4. <text>{{ $tc('strings.plurals', 0) }}</text>
-  5. <!-- 传递数值为1时： "one person" 阿拉伯语中此处匹配key为one的词条-->
-  6. <text>{{ $tc('strings.plurals', 1) }}</text>
-  7. <!-- 传递数值为2时： "2 people" 阿拉伯语中此处匹配key为two的词条-->
-  8. <text>{{ $tc('strings.plurals', 2) }}</text>
-  9. <!-- 传递数值为6时： "6 people" 阿拉伯语中此处匹配key为few的词条-->
-  10. <text>{{ $tc('strings.plurals', 6) }}</text>
-  11. <!-- 传递数值为50时： "50 people" 阿拉伯语中此处匹配key为many的词条-->
-  12. <text>{{ $tc('strings.plurals', 50) }}</text>
-  13. <!-- 传递数值为100时： "100 people" 阿拉伯语中此处匹配key为other的词条-->
-  14. <text>{{ $tc('strings.plurals', 100) }}</text>
-  15. </div>
+  ```html
+  <!--xxx.hml-->
+  <div>
+    <!-- 传递数值为0时： "0 people" 阿拉伯语中此处匹配key为zero的词条-->
+    <text>{{ $tc('strings.plurals', 0) }}</text>
+    <!-- 传递数值为1时： "one person" 阿拉伯语中此处匹配key为one的词条-->
+    <text>{{ $tc('strings.plurals', 1) }}</text>
+    <!-- 传递数值为2时： "2 people" 阿拉伯语中此处匹配key为two的词条-->
+    <text>{{ $tc('strings.plurals', 2) }}</text>
+    <!-- 传递数值为6时： "6 people" 阿拉伯语中此处匹配key为few的词条-->
+    <text>{{ $tc('strings.plurals', 6) }}</text>
+    <!-- 传递数值为50时： "50 people" 阿拉伯语中此处匹配key为many的词条-->
+    <text>{{ $tc('strings.plurals', 50) }}</text>
+    <!-- 传递数值为100时： "100 people" 阿拉伯语中此处匹配key为other的词条-->
+    <text>{{ $tc('strings.plurals', 100) }}</text>
+  </div>
   ```

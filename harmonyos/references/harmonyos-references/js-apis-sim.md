@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.telephony.sim (SIM卡管理)"
 breadcrumb: API参考 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > ArkTS API > @ohos.telephony.sim (SIM卡管理)
 category: harmonyos-references
-scraped_at: 2026-04-29T14:00:00+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:048345b215760b867b7080840c84f63c4d5e81245ca5a2e14d68fa9016c7df6e
+scraped_at: 2026-09-02T15:02:00+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a5cbc017207492cc1bdec12a5f22585cc0f70719d75e2ff31b3805faec5b2d8b
 ---
 
-SIM卡管理模块提供了SIM卡管理的基础能力，包括获取指定卡槽SIM卡的ISO国家码、归属PLMN号、服务提供商名称、SIM卡状态、卡类型、是否插卡、是否激活等。
+SIM卡管理模块提供了SIM卡管理的基础能力，包括获取指定卡槽SIM卡的ISO国家码、归属PLMN号、服务提供商名称、SIM卡状态、卡类型、是否插卡、是否激活、SIM卡账户信息、运营商权限、OpKey/OpName、默认语音业务卡信息、卡槽数量、SIM卡标签等，适用于需要在应用中查询和管理SIM卡基础信息及状态的场景。
 
-说明
+**说明** 
 
 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhoneTabletWearable
-
-```
-1. import { sim } from '@kit.TelephonyKit';
+```ts
+import { sim } from '@kit.TelephonyKit';
 ```
 
 ## sim.isSimActive7+
-
-PhoneTabletWearable
 
 isSimActive(slotId: number, callback: AsyncCallback<boolean>): void
 
@@ -37,22 +33,24 @@ isSimActive(slotId: number, callback: AsyncCallback<boolean>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | slotId | number | 是 | 卡槽ID。  - 0：卡槽1。  - 1：卡槽2。 |
-| callback | AsyncCallback<boolean> | 是 | 回调函数。返回指定卡槽是否激活。  - true:激活。  - false：未激活。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。返回指定卡槽是否激活。  - true：激活。  - false：未激活。 |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. sim.isSimActive(0, (err: BusinessError, data: boolean) => {
-5. console.info(`callback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-6. });
+sim.isSimActive(0, (err: BusinessError, data: boolean) => {
+    if (err) {
+        console.err(`isSimActive failed. callback: err->${JSON.stringify(err)}`);
+        return;
+    }
+    console.info(`callback: data->${JSON.stringify(data)}`);
+});
 ```
 
 ## sim.isSimActive7+
-
-PhoneTabletWearable
 
 isSimActive(slotId: number): Promise<boolean>
 
@@ -70,24 +68,22 @@ isSimActive(slotId: number): Promise<boolean>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<boolean> | 以Promise形式返回指定卡槽是否激活。  - true:激活。  - false：未激活。 |
+| Promise<boolean> | 以Promise形式返回指定卡槽是否激活。  - true：激活。  - false：未激活。 |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. sim.isSimActive(0).then((data: boolean) => {
-5. console.info(`isSimActive success, promise: data->${JSON.stringify(data)}`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`isSimActive failed, promise: err->${JSON.stringify(err)}`);
-8. });
+sim.isSimActive(0).then((data: boolean) => {
+    console.info(`isSimActive success, promise: data->${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+    console.error(`isSimActive failed, promise: err->${JSON.stringify(err)}`);
+});
 ```
 
 ## sim.isSimActiveSync10+
-
-PhoneTabletWearable
 
 isSimActiveSync(slotId: number): boolean
 
@@ -105,20 +101,18 @@ isSimActiveSync(slotId: number): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 返回指定卡槽是否激活。  - true:激活。  - false：未激活。 |
+| boolean | 返回指定卡槽是否激活。  - true：激活。  - false：未激活。 |
 
 **示例：**
 
-```
-1. import { sim } from '@kit.TelephonyKit';
+```ts
+import { sim } from '@kit.TelephonyKit';
 
-3. let isSimActive: boolean = sim.isSimActiveSync(0);
-4. console.info(`the sim is active:` + isSimActive);
+let isSimActive: boolean = sim.isSimActiveSync(0);
+console.info(`the sim is active:` + isSimActive);
 ```
 
 ## sim.getDefaultVoiceSlotId7+
-
-PhoneTabletWearable
 
 getDefaultVoiceSlotId(callback: AsyncCallback<number>): void
 
@@ -134,18 +128,20 @@ getDefaultVoiceSlotId(callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. sim.getDefaultVoiceSlotId((err: BusinessError, data: number) => {
-5. console.info(`callback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-6. });
+sim.getDefaultVoiceSlotId((err: BusinessError, data: number) => {
+    if (err) {
+        console.err(`getDefaultVoiceSlotId failed. callback: err->${JSON.stringify(err)}`);
+        return;
+    }
+    console.info(`callback: data->${JSON.stringify(data)}`);
+});
 ```
 
 ## sim.getDefaultVoiceSlotId7+
-
-PhoneTabletWearable
 
 getDefaultVoiceSlotId(): Promise<number>
 
@@ -161,24 +157,22 @@ getDefaultVoiceSlotId(): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. sim.getDefaultVoiceSlotId().then((data: number) => {
-5. console.info(`getDefaultVoiceSlotId success, promise: data->${JSON.stringify(data)}`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`getDefaultVoiceSlotId failed, promise: err->${JSON.stringify(err)}`);
-8. });
+sim.getDefaultVoiceSlotId().then((data: number) => {
+    console.info(`getDefaultVoiceSlotId success, promise: data->${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+    console.error(`getDefaultVoiceSlotId failed, promise: err->${JSON.stringify(err)}`);
+});
 ```
 
 ## sim.hasOperatorPrivileges7+
 
-PhoneTabletWearable
-
 hasOperatorPrivileges(slotId: number, callback: AsyncCallback<boolean>): void
 
-检查应用(调用者)是否已被授予运营商权限。使用callback异步回调。
+检查应用（调用者）是否已被授予运营商权限。使用callback异步回调。
 
 **系统能力**：SystemCapability.Telephony.CoreService
 
@@ -187,7 +181,7 @@ hasOperatorPrivileges(slotId: number, callback: AsyncCallback<boolean>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | slotId | number | 是 | 卡槽ID。  - 0：卡槽1。  - 1：卡槽2。 |
-| callback | AsyncCallback<boolean> | 是 | 回调函数。 返回检查应用（调用者）是否已被授予运营商权限。  - true:授权。  - false：未授权（未插入SIM卡或停用）。 |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。 返回检查应用（调用者）是否已被授予运营商权限。  - true：授权。  - false：未授权（未插入SIM卡或停用）。 |
 
 **错误码：**
 
@@ -203,22 +197,24 @@ hasOperatorPrivileges(slotId: number, callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. sim.hasOperatorPrivileges(0, (err: BusinessError, data: boolean) => {
-5. console.info(`callback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-6. });
+sim.hasOperatorPrivileges(0, (err: BusinessError, data: boolean) => {
+    if (err) {
+        console.err(`hasOperatorPrivileges failed. callback: err->${JSON.stringify(err)}`);
+        return;
+    }
+    console.info(`callback: data->${JSON.stringify(data)}`);
+});
 ```
 
 ## sim.hasOperatorPrivileges7+
 
-PhoneTabletWearable
-
 hasOperatorPrivileges(slotId: number): Promise<boolean>
 
-检查应用(调用者)是否已被授予运营商权限。使用Promise异步回调。
+检查应用（调用者）是否已被授予运营商权限。使用Promise异步回调。
 
 **系统能力**：SystemCapability.Telephony.CoreService
 
@@ -232,7 +228,7 @@ hasOperatorPrivileges(slotId: number): Promise<boolean>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<boolean> | 以Promise形式返回检查应用(调用者)是否已被授予运营商权限。  - true:授权。  - false：未授权（未插入SIM卡或停用）。 |
+| Promise<boolean> | 以Promise形式返回检查应用(调用者)是否已被授予运营商权限。  - true：授权。  - false：未授权（未插入SIM卡或停用）。 |
 
 **错误码：**
 
@@ -248,20 +244,18 @@ hasOperatorPrivileges(slotId: number): Promise<boolean>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. sim.hasOperatorPrivileges(0).then((data: boolean) => {
-5. console.info(`hasOperatorPrivileges success, promise: data->${JSON.stringify(data)}`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`hasOperatorPrivileges failed, promise: err->${JSON.stringify(err)}`);
-8. });
+sim.hasOperatorPrivileges(0).then((data: boolean) => {
+    console.info(`hasOperatorPrivileges success, promise: data->${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+    console.error(`hasOperatorPrivileges failed, promise: err->${JSON.stringify(err)}`);
+});
 ```
 
 ## sim.getISOCountryCodeForSim
-
-PhoneTabletWearable
 
 getISOCountryCodeForSim(slotId: number, callback: AsyncCallback<string>): void
 
@@ -274,7 +268,7 @@ getISOCountryCodeForSim(slotId: number, callback: AsyncCallback<string>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | slotId | number | 是 | 卡槽ID。  - 0：卡槽1。  - 1：卡槽2。 |
-| callback | AsyncCallback<string> | 是 | 回调函数。返回国家码，例如：CN(中国)。 |
+| callback | AsyncCallback<string> | 是 | 回调函数。返回国家码，例如：CN（中国）。 |
 
 **错误码：**
 
@@ -291,18 +285,20 @@ getISOCountryCodeForSim(slotId: number, callback: AsyncCallback<string>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. sim.getISOCountryCodeForSim(0, (err: BusinessError, data: string) => {
-5. console.info(`callback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-6. });
+sim.getISOCountryCodeForSim(0, (err: BusinessError, data: string) => {
+    if (err) {
+        console.err(`getISOCountryCodeForSim failed. callback: err->${JSON.stringify(err)}`);
+        return;
+    }
+    console.info(`callback: data->${JSON.stringify(data)}`);
+});
 ```
 
 ## sim.getISOCountryCodeForSim
-
-PhoneTabletWearable
 
 getISOCountryCodeForSim(slotId: number): Promise<string>
 
@@ -320,7 +316,7 @@ getISOCountryCodeForSim(slotId: number): Promise<string>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<string> | 以Promise形式返回获取指定卡槽SIM卡的ISO国家码。例如：CN(中国)。 |
+| Promise<string> | 以Promise形式返回获取指定卡槽SIM卡的ISO国家码。例如：CN（中国）。 |
 
 **错误码：**
 
@@ -337,20 +333,18 @@ getISOCountryCodeForSim(slotId: number): Promise<string>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. sim.getISOCountryCodeForSim(0).then((data: string) => {
-5. console.info(`getISOCountryCodeForSim success, promise: data->${JSON.stringify(data)}`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`getISOCountryCodeForSim failed, promise: err->${JSON.stringify(err)}`);
-8. });
+sim.getISOCountryCodeForSim(0).then((data: string) => {
+    console.info(`getISOCountryCodeForSim success, promise: data->${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+    console.error(`getISOCountryCodeForSim failed, promise: err->${JSON.stringify(err)}`);
+});
 ```
 
 ## sim.getISOCountryCodeForSimSync10+
-
-PhoneTabletWearable
 
 getISOCountryCodeForSimSync(slotId: number): string
 
@@ -368,20 +362,18 @@ getISOCountryCodeForSimSync(slotId: number): string
 
 | 类型 | 说明 |
 | --- | --- |
-| string | 返回获取指定卡槽SIM卡的ISO国家码。例如：CN(中国)。 |
+| string | 返回获取指定卡槽SIM卡的ISO国家码。例如：CN（中国）。 |
 
 **示例：**
 
-```
-1. import { sim } from '@kit.TelephonyKit';
+```ts
+import { sim } from '@kit.TelephonyKit';
 
-3. let countryCode: string = sim.getISOCountryCodeForSimSync(0);
-4. console.info(`the country ISO is:` + countryCode);
+let countryCode: string = sim.getISOCountryCodeForSimSync(0);
+console.info(`the country ISO is:` + countryCode);
 ```
 
 ## sim.getSimOperatorNumeric
-
-PhoneTabletWearable
 
 getSimOperatorNumeric(slotId: number, callback: AsyncCallback<string>): void
 
@@ -411,18 +403,20 @@ getSimOperatorNumeric(slotId: number, callback: AsyncCallback<string>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. sim.getSimOperatorNumeric(0, (err: BusinessError, data: string) => {
-5. console.info(`callback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-6. });
+sim.getSimOperatorNumeric(0, (err: BusinessError, data: string) => {
+    if (err) {
+        console.err(`getSimOperatorNumeric failed. callback: err->${JSON.stringify(err)}`);
+        return;
+    }
+    console.info(`callback: data->${JSON.stringify(data)}`);
+});
 ```
 
 ## sim.getSimOperatorNumeric
-
-PhoneTabletWearable
 
 getSimOperatorNumeric(slotId: number): Promise<string>
 
@@ -457,20 +451,18 @@ getSimOperatorNumeric(slotId: number): Promise<string>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. sim.getSimOperatorNumeric(0).then((data: string) => {
-5. console.info(`getSimOperatorNumeric success, promise: data->${JSON.stringify(data)}`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`getSimOperatorNumeric failed, promise: err->${JSON.stringify(err)}`);
-8. });
+sim.getSimOperatorNumeric(0).then((data: string) => {
+    console.info(`getSimOperatorNumeric success, promise: data->${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+    console.error(`getSimOperatorNumeric failed, promise: err->${JSON.stringify(err)}`);
+});
 ```
 
 ## sim.getSimOperatorNumericSync10+
-
-PhoneTabletWearable
 
 getSimOperatorNumericSync(slotId: number): string
 
@@ -492,20 +484,18 @@ getSimOperatorNumericSync(slotId: number): string
 
 **示例：**
 
-```
-1. import { sim } from '@kit.TelephonyKit';
+```ts
+import { sim } from '@kit.TelephonyKit';
 
-3. let numeric: string = sim.getSimOperatorNumericSync(0);
-4. console.info(`the sim operator numeric is:` + numeric);
+let numeric: string = sim.getSimOperatorNumericSync(0);
+console.info(`the sim operator numeric is:` + numeric);
 ```
 
 ## sim.getSimSpn
 
-PhoneTabletWearable
-
 getSimSpn(slotId: number, callback: AsyncCallback<string>): void
 
-获取指定卡槽SIM卡的服务提供商名称(Service Provider Name，SPN)。使用callback异步回调。
+获取指定卡槽SIM卡的服务提供商名称（Service Provider Name，SPN）。使用callback异步回调。
 
 **系统能力**：SystemCapability.Telephony.CoreService
 
@@ -531,22 +521,24 @@ getSimSpn(slotId: number, callback: AsyncCallback<string>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. sim.getSimSpn(0, (err: BusinessError, data: string) => {
-5. console.info(`callback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-6. });
+sim.getSimSpn(0, (err: BusinessError, data: string) => {
+    if (err) {
+        console.err(`getSimSpn failed. callback: err->${JSON.stringify(err)}`);
+        return;
+    }
+    console.info(`callback: data->${JSON.stringify(data)}`);
+});
 ```
 
 ## sim.getSimSpn
 
-PhoneTabletWearable
-
 getSimSpn(slotId: number): Promise<string>
 
-获取指定卡槽SIM卡的服务提供商名称(Service Provider Name，SPN)。使用Promise异步回调。
+获取指定卡槽SIM卡的服务提供商名称（Service Provider Name，SPN）。使用Promise异步回调。
 
 **系统能力**：SystemCapability.Telephony.CoreService
 
@@ -577,24 +569,22 @@ getSimSpn(slotId: number): Promise<string>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. sim.getSimSpn(0).then((data: string) => {
-5. console.info(`getSimSpn success, promise: data->${JSON.stringify(data)}`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`getSimSpn failed, promise: err->${JSON.stringify(err)}`);
-8. });
+sim.getSimSpn(0).then((data: string) => {
+    console.info(`getSimSpn success, promise: data->${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+    console.error(`getSimSpn failed, promise: err->${JSON.stringify(err)}`);
+});
 ```
 
 ## sim.getSimSpnSync10+
 
-PhoneTabletWearable
-
 getSimSpnSync(slotId: number): string
 
-获取指定卡槽SIM卡的服务提供商名称(Service Provider Name，SPN)。
+获取指定卡槽SIM卡的服务提供商名称（Service Provider Name，SPN）。
 
 **系统能力**：SystemCapability.Telephony.CoreService
 
@@ -612,16 +602,14 @@ getSimSpnSync(slotId: number): string
 
 **示例：**
 
-```
-1. import { sim } from '@kit.TelephonyKit';
+```ts
+import { sim } from '@kit.TelephonyKit';
 
-3. let spn: string = sim.getSimSpnSync(0);
-4. console.info(`the sim card spn is:` + spn);
+let spn: string = sim.getSimSpnSync(0);
+console.info(`the sim card spn is:` + spn);
 ```
 
 ## sim.getSimState
-
-PhoneTabletWearable
 
 getSimState(slotId: number, callback: AsyncCallback<SimState>): void
 
@@ -650,18 +638,20 @@ getSimState(slotId: number, callback: AsyncCallback<SimState>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. sim.getSimState(0, (err: BusinessError, data: sim.SimState) => {
-5. console.info(`callback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-6. });
+sim.getSimState(0, (err: BusinessError, data: sim.SimState) => {
+    if (err) {
+        console.err(`getSimState failed. callback: err->${JSON.stringify(err)}`);
+        return;
+    }
+    console.info(`callback: data->${JSON.stringify(data)}`);
+});
 ```
 
 ## sim.getSimState
-
-PhoneTabletWearable
 
 getSimState(slotId: number): Promise<SimState>
 
@@ -695,20 +685,18 @@ getSimState(slotId: number): Promise<SimState>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. sim.getSimState(0).then((data: sim.SimState) => {
-5. console.info(`getSimState success, promise: data->${JSON.stringify(data)}`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`getSimState failed, promise: err->${JSON.stringify(err)}`);
-8. });
+sim.getSimState(0).then((data: sim.SimState) => {
+    console.info(`getSimState success, promise: data->${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+    console.error(`getSimState failed, promise: err->${JSON.stringify(err)}`);
+});
 ```
 
 ## sim.getSimStateSync10+
-
-PhoneTabletWearable
 
 getSimStateSync(slotId: number): SimState
 
@@ -730,16 +718,14 @@ getSimStateSync(slotId: number): SimState
 
 **示例：**
 
-```
-1. import { sim } from '@kit.TelephonyKit';
+```ts
+import { sim } from '@kit.TelephonyKit';
 
-3. let simState: sim.SimState = sim.getSimStateSync(0);
-4. console.info(`The sim state is:` + simState);
+let simState: sim.SimState = sim.getSimStateSync(0);
+console.info(`The sim state is:` + simState);
 ```
 
 ## sim.getCardType7+
-
-PhoneTabletWearable
 
 getCardType(slotId: number, callback: AsyncCallback<CardType>): void
 
@@ -769,18 +755,20 @@ getCardType(slotId: number, callback: AsyncCallback<CardType>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. sim.getCardType(0, (err: BusinessError, data: sim.CardType) => {
-5. console.info(`callback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-6. });
+sim.getCardType(0, (err: BusinessError, data: sim.CardType) => {
+    if (err) {
+        console.err(`getCardType failed. callback: err->${JSON.stringify(err)}`);
+        return;
+    }
+    console.info(`callback: data->${JSON.stringify(data)}`);
+});
 ```
 
 ## sim.getCardType7+
-
-PhoneTabletWearable
 
 getCardType(slotId: number): Promise<CardType>
 
@@ -815,20 +803,18 @@ getCardType(slotId: number): Promise<CardType>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. sim.getCardType(0).then((data: sim.CardType) => {
-5. console.info(`getCardType success, promise: data->${JSON.stringify(data)}`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`getCardType failed, promise: err->${JSON.stringify(err)}`);
-8. });
+sim.getCardType(0).then((data: sim.CardType) => {
+    console.info(`getCardType success, promise: data->${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+    console.error(`getCardType failed, promise: err->${JSON.stringify(err)}`);
+});
 ```
 
 ## sim.getCardTypeSync10+
-
-PhoneTabletWearable
 
 getCardTypeSync(slotId: number): CardType
 
@@ -850,16 +836,14 @@ getCardTypeSync(slotId: number): CardType
 
 **示例：**
 
-```
-1. import { sim } from '@kit.TelephonyKit';
+```ts
+import { sim } from '@kit.TelephonyKit';
 
-3. let cardType: sim.CardType = sim.getCardTypeSync(0);
-4. console.info(`the card type is:` + cardType);
+let cardType: sim.CardType = sim.getCardTypeSync(0);
+console.info(`the card type is:` + cardType);
 ```
 
 ## sim.hasSimCard7+
-
-PhoneTabletWearable
 
 hasSimCard(slotId: number, callback: AsyncCallback<boolean>): void
 
@@ -872,7 +856,7 @@ hasSimCard(slotId: number, callback: AsyncCallback<boolean>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | slotId | number | 是 | 卡槽ID。  - 0：卡槽1。  - 1：卡槽2。 |
-| callback | AsyncCallback<boolean> | 是 | 回调返回指定卡槽是否插卡。  - true:插卡。  - false：未插卡。 |
+| callback | AsyncCallback<boolean> | 是 | 回调返回指定卡槽是否插卡。  - true：插卡。  - false：未插卡。 |
 
 **错误码：**
 
@@ -888,18 +872,20 @@ hasSimCard(slotId: number, callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
-5. console.info(`callback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-6. });
+sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
+    if (err) {
+        console.err(`hasSimCard failed. callback: err->${JSON.stringify(err)}`);
+        return;
+    }
+    console.info(`callback: data->${JSON.stringify(data)}`);
+});
 ```
 
 ## sim.hasSimCard7+
-
-PhoneTabletWearable
 
 hasSimCard(slotId: number): Promise<boolean>
 
@@ -917,7 +903,7 @@ hasSimCard(slotId: number): Promise<boolean>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<boolean> | 以Promise形式返回指定卡槽是否插卡。  - true:插卡。  - false：未插卡。 |
+| Promise<boolean> | 以Promise形式返回指定卡槽是否插卡。  - true：插卡。  - false：未插卡。 |
 
 **错误码：**
 
@@ -933,20 +919,18 @@ hasSimCard(slotId: number): Promise<boolean>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. sim.hasSimCard(0).then((data: boolean) => {
-5. console.info(`hasSimCard success, promise: data->${JSON.stringify(data)}`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`hasSimCard failed, promise: err->${JSON.stringify(err)}`);
-8. });
+sim.hasSimCard(0).then((data: boolean) => {
+    console.info(`hasSimCard success, promise: data->${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+    console.error(`hasSimCard failed, promise: err->${JSON.stringify(err)}`);
+});
 ```
 
 ## sim.hasSimCardSync10+
-
-PhoneTabletWearable
 
 hasSimCardSync(slotId: number): boolean
 
@@ -964,20 +948,18 @@ hasSimCardSync(slotId: number): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 返回指定卡槽是否插卡。  - true:插卡。  - false：未插卡。 |
+| boolean | 返回指定卡槽是否插卡。  - true：插卡。  - false：未插卡。 |
 
 **示例：**
 
-```
-1. import { sim } from '@kit.TelephonyKit';
+```ts
+import { sim } from '@kit.TelephonyKit';
 
-3. let hasSimCard: boolean = sim.hasSimCardSync(0);
-4. console.info(`has sim card: ` + hasSimCard);
+let hasSimCard: boolean = sim.hasSimCardSync(0);
+console.info(`has sim card: ` + hasSimCard);
 ```
 
 ## sim.getSimAccountInfo10+
-
-PhoneTabletWearable
 
 getSimAccountInfo(slotId: number, callback: AsyncCallback<IccAccountInfo>): void
 
@@ -985,7 +967,7 @@ getSimAccountInfo(slotId: number, callback: AsyncCallback<IccAccountInfo>): void
 
 **需要权限**：ohos.permission.GET\_TELEPHONY\_STATE
 
-说明
+**说明** 
 
 获取ICCID和号码信息时需要GET\_TELEPHONY\_STATE权限，ICCID和号码信息为敏感数据，不向三方应用开放。调用接口时，获取到的ICCID和号码信息为空。
 
@@ -1014,18 +996,20 @@ getSimAccountInfo(slotId: number, callback: AsyncCallback<IccAccountInfo>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. sim.getSimAccountInfo(0, (err:BusinessError , data: sim.IccAccountInfo) => {
-5. console.info(`callback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-6. });
+sim.getSimAccountInfo(0, (err:BusinessError , data: sim.IccAccountInfo) => {
+    if (err) {
+        console.err(`getSimAccountInfo failed. callback: err->${JSON.stringify(err)}`);
+        return;
+    }
+    console.info(`callback: data->${JSON.stringify(data)}`);
+});
 ```
 
 ## sim.getSimAccountInfo10+
-
-PhoneTabletWearable
 
 getSimAccountInfo(slotId: number): Promise<IccAccountInfo>
 
@@ -1033,7 +1017,7 @@ getSimAccountInfo(slotId: number): Promise<IccAccountInfo>
 
 **需要权限**：ohos.permission.GET\_TELEPHONY\_STATE
 
-说明
+**说明** 
 
 获取ICCID和号码信息时需要GET\_TELEPHONY\_STATE权限，ICCID和号码信息为敏感数据，不向三方应用开放。调用接口时，获取到的ICCID和号码信息为空。
 
@@ -1067,20 +1051,18 @@ getSimAccountInfo(slotId: number): Promise<IccAccountInfo>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. sim.getSimAccountInfo(0).then((data: sim.IccAccountInfo) => {
-5. console.info(`getSimAccountInfo success, promise: data->${JSON.stringify(data)}`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`getSimAccountInfo failed, promise: err->${JSON.stringify(err)}`);
-8. });
+sim.getSimAccountInfo(0).then((data: sim.IccAccountInfo) => {
+    console.info(`getSimAccountInfo success, promise: data->${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+    console.error(`getSimAccountInfo failed, promise: err->${JSON.stringify(err)}`);
+});
 ```
 
 ## sim.getActiveSimAccountInfoList10+
-
-PhoneTabletWearable
 
 getActiveSimAccountInfoList(callback: AsyncCallback<Array<IccAccountInfo>>): void
 
@@ -1088,7 +1070,7 @@ getActiveSimAccountInfoList(callback: AsyncCallback<Array<IccAccountInfo>>): voi
 
 **需要权限**：ohos.permission.GET\_TELEPHONY\_STATE
 
-说明
+**说明** 
 
 获取ICCID和号码信息时需要GET\_TELEPHONY\_STATE权限，ICCID和号码信息为敏感数据，不向三方应用开放。调用接口时，获取到的ICCID和号码信息为空。
 
@@ -1115,18 +1097,20 @@ getActiveSimAccountInfoList(callback: AsyncCallback<Array<IccAccountInfo>>): voi
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. sim.getActiveSimAccountInfoList((err: BusinessError, data: Array<sim.IccAccountInfo>) => {
-5. console.info(`callback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-6. });
+sim.getActiveSimAccountInfoList((err: BusinessError, data: Array<sim.IccAccountInfo>) => {
+    if (err) {
+        console.err(`getActiveSimAccountInfoList failed. callback: err->${JSON.stringify(err)}`);
+        return;
+    }
+    console.info(`callback: data->${JSON.stringify(data)}`);
+});
 ```
 
 ## sim.getMaxSimCount7+
-
-PhoneTabletWearable
 
 getMaxSimCount(): number
 
@@ -1142,15 +1126,13 @@ getMaxSimCount(): number
 
 **示例：**
 
-```
-1. import { sim } from '@kit.TelephonyKit';
+```ts
+import { sim } from '@kit.TelephonyKit';
 
-3. console.info("Result: "+ sim.getMaxSimCount());
+console.info('Result: '+ sim.getMaxSimCount());
 ```
 
 ## sim.getActiveSimAccountInfoList10+
-
-PhoneTabletWearable
 
 getActiveSimAccountInfoList(): Promise<Array<IccAccountInfo>>
 
@@ -1158,7 +1140,7 @@ getActiveSimAccountInfoList(): Promise<Array<IccAccountInfo>>
 
 **需要权限**：ohos.permission.GET\_TELEPHONY\_STATE
 
-说明
+**说明** 
 
 获取ICCID和号码信息时需要GET\_TELEPHONY\_STATE权限，ICCID和号码信息为敏感数据，不向三方应用开放。调用接口时，获取到的ICCID和号码信息为空。
 
@@ -1183,24 +1165,22 @@ getActiveSimAccountInfoList(): Promise<Array<IccAccountInfo>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. sim.getActiveSimAccountInfoList().then((data: Array<sim.IccAccountInfo>) => {
-5. console.info(`getActiveSimAccountInfoList success, promise: data->${JSON.stringify(data)}`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`getActiveSimAccountInfoList failed, promise: err->${JSON.stringify(err)}`);
-8. });
+sim.getActiveSimAccountInfoList().then((data: Array<sim.IccAccountInfo>) => {
+    console.info(`getActiveSimAccountInfoList success, promise: data->${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+    console.error(`getActiveSimAccountInfoList failed, promise: err->${JSON.stringify(err)}`);
+});
 ```
 
 ## sim.getOpKey9+
 
-PhoneTabletWearable
-
 getOpKey(slotId: number, callback: AsyncCallback<string>): void
 
-获取指定卡槽中SIM卡的opkey。使用callback异步回调。
+获取指定卡槽中SIM卡的OpKey。使用callback异步回调。
 
 **系统能力**：SystemCapability.Telephony.CoreService
 
@@ -1209,7 +1189,7 @@ getOpKey(slotId: number, callback: AsyncCallback<string>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | slotId | number | 是 | 卡槽ID。  - 0：卡槽1。  - 1：卡槽2。 |
-| callback | AsyncCallback<string> | 是 | 回调函数。 |
+| callback | AsyncCallback<string> | 是 | 回调函数。返回指定卡槽中SIM卡的OpKey。 |
 
 **错误码：**
 
@@ -1226,30 +1206,28 @@ getOpKey(slotId: number, callback: AsyncCallback<string>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. try {
-5. sim.getOpKey(0, (err: BusinessError, data: string) => {
-6. if (err) {
-7. console.error("getOpKey failed, err: " + JSON.stringify(err));
-8. } else {
-9. console.info('getOpKey successfully, data: ' + JSON.stringify(data));
-10. }
-11. });
-12. } catch (err) {
-13. console.error("getOpKey err: " + JSON.stringify(err));
-14. }
+try {
+    sim.getOpKey(0, (err: BusinessError, data: string) => {
+    if (err) {
+      console.error("getOpKey failed, err: " + JSON.stringify(err));
+    } else {
+      console.info('getOpKey successfully, data: ' + JSON.stringify(data));
+    }
+  });
+} catch (err) {
+  console.error('getOpKey err: ' + JSON.stringify(err));
+}
 ```
 
 ## sim.getOpKey9+
 
-PhoneTabletWearable
-
 getOpKey(slotId: number): Promise<string>
 
-获取指定卡槽中SIM卡的opkey。使用Promise异步回调。
+获取指定卡槽中SIM卡的OpKey。使用Promise异步回调。
 
 **系统能力**：SystemCapability.Telephony.CoreService
 
@@ -1263,7 +1241,7 @@ getOpKey(slotId: number): Promise<string>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<string> | 以Promise形式返回指定卡槽中SIM卡的opkey。 |
+| Promise<string> | 以Promise形式返回指定卡槽中SIM卡的OpKey。 |
 
 **错误码：**
 
@@ -1280,24 +1258,22 @@ getOpKey(slotId: number): Promise<string>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. sim.getOpKey(0).then((data: string) => {
-5. console.info(`getOpKey success, promise: data->${JSON.stringify(data)}`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`getOpKey failed, promise: err->${JSON.stringify(err)}`);
-8. });
+sim.getOpKey(0).then((data: string) => {
+    console.info(`getOpKey success, promise: data->${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+    console.error(`getOpKey failed, promise: err->${JSON.stringify(err)}`);
+});
 ```
 
 ## sim.getOpKeySync10+
 
-PhoneTabletWearable
-
 getOpKeySync(slotId: number): string
 
-获取指定卡槽中SIM卡的opkey。
+获取指定卡槽中SIM卡的OpKey。
 
 **系统能力**：SystemCapability.Telephony.CoreService
 
@@ -1311,24 +1287,22 @@ getOpKeySync(slotId: number): string
 
 | 类型 | 说明 |
 | --- | --- |
-| string | 返回指定卡槽中SIM卡的opkey。 |
+| string | 返回指定卡槽中SIM卡的OpKey。 |
 
 **示例：**
 
-```
-1. import { sim } from '@kit.TelephonyKit';
+```ts
+import { sim } from '@kit.TelephonyKit';
 
-3. let data: string = sim.getOpKeySync(0);
-4. console.info(`getOpKey success, promise: data->${JSON.stringify(data)}`);
+let data: string = sim.getOpKeySync(0);
+console.info(`getOpKey success, data->${JSON.stringify(data)}`);
 ```
 
 ## sim.getOpName9+
 
-PhoneTabletWearable
-
 getOpName(slotId: number, callback: AsyncCallback<string>): void
 
-获取指定卡槽中SIM卡的OpName。使用callback异步回调。
+获取指定卡槽中SIM卡的OpName（运营商名称）。使用callback异步回调。
 
 **系统能力**：SystemCapability.Telephony.CoreService
 
@@ -1337,7 +1311,7 @@ getOpName(slotId: number, callback: AsyncCallback<string>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | slotId | number | 是 | 卡槽ID。  - 0：卡槽1。  - 1：卡槽2。 |
-| callback | AsyncCallback<string> | 是 | 回调函数。 |
+| callback | AsyncCallback<string> | 是 | 回调函数。返回指定卡槽中SIM卡的OpName。 |
 
 **错误码：**
 
@@ -1354,26 +1328,24 @@ getOpName(slotId: number, callback: AsyncCallback<string>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. try {
-5. sim.getOpName(0, (err: BusinessError, data: string) => {
-6. if (err) {
-7. console.error("getOpName failed, err: " + JSON.stringify(err));
-8. } else {
-9. console.info('getOpName successfully, data: ' + JSON.stringify(data));
-10. }
-11. });
-12. } catch (err) {
-13. console.error("getOpName err: " + JSON.stringify(err));
-14. }
+try {
+    sim.getOpName(0, (err: BusinessError, data: string) => {
+    if (err) {
+      console.error('getOpName failed, err: ' + JSON.stringify(err));
+    } else {
+      console.info('getOpName successfully, data: ' + JSON.stringify(data));
+    }
+  });
+} catch (err) {
+  console.error('getOpName err: ' + JSON.stringify(err));
+}
 ```
 
 ## sim.getOpName9+
-
-PhoneTabletWearable
 
 getOpName(slotId: number): Promise<string>
 
@@ -1408,20 +1380,18 @@ getOpName(slotId: number): Promise<string>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. sim.getOpName(0).then((data: string) => {
-5. console.info(`getOpName success, promise: data->${JSON.stringify(data)}`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`getOpName failed, promise: err->${JSON.stringify(err)}`);
-8. });
+sim.getOpName(0).then((data: string) => {
+    console.info(`getOpName success, promise: data->${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+    console.error(`getOpName failed, promise: err->${JSON.stringify(err)}`);
+});
 ```
 
 ## sim.getOpNameSync10+
-
-PhoneTabletWearable
 
 getOpNameSync(slotId: number): string
 
@@ -1443,16 +1413,14 @@ getOpNameSync(slotId: number): string
 
 **示例：**
 
-```
-1. import { sim } from '@kit.TelephonyKit';
+```ts
+import { sim } from '@kit.TelephonyKit';
 
-3. let data: string = sim.getOpNameSync(0);
-4. console.info(`getOpName success, promise: data->${JSON.stringify(data)}`);
+let data: string = sim.getOpNameSync(0);
+console.info(`getOpName success, data->${JSON.stringify(data)}`);
 ```
 
 ## sim.getDefaultVoiceSimId10+
-
-PhoneTabletWearable
 
 getDefaultVoiceSimId(callback: AsyncCallback<number>): void
 
@@ -1482,18 +1450,20 @@ getDefaultVoiceSimId(callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. sim.getDefaultVoiceSimId((err: BusinessError, data: number) => {
-5. console.info(`callback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-6. });
+sim.getDefaultVoiceSimId((err: BusinessError, data: number) => {
+    if (err) {
+        console.err(`getDefaultVoiceSimId failed. callback: err->${JSON.stringify(err)}`);
+        return;
+    }
+    console.info(`callback: data->${JSON.stringify(data)}`);
+});
 ```
 
 ## sim.getDefaultVoiceSimId10+
-
-PhoneTabletWearable
 
 getDefaultVoiceSimId(): Promise<number>
 
@@ -1522,28 +1492,23 @@ getDefaultVoiceSimId(): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. let promise = sim.getDefaultVoiceSimId();
-5. promise.then((data: number) => {
-6. console.info(`getDefaultVoiceSimId success, promise: data->${JSON.stringify(data)}`);
-7. }).catch((err: BusinessError) => {
-8. console.error(`getDefaultVoiceSimId failed, promise: err->${JSON.stringify(err)}`);
-9. });
+let promise = sim.getDefaultVoiceSimId();
+promise.then((data: number) => {
+    console.info(`getDefaultVoiceSimId success, promise: data->${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+    console.error(`getDefaultVoiceSimId failed, promise: err->${JSON.stringify(err)}`);
+});
 ```
 
 ## sim.getSimLabel20+
 
-PhoneTabletWearable
-
 getSimLabel(slotId: number, callback: AsyncCallback<SimLabel>): void
 
-查看卡槽ID和SIM卡的对应关系：
-
-* 卡槽1对应SIM卡1或SIM卡2
-* 卡槽2对应SIM卡2或ESIMX
+获取SIM卡的标签信息。使用callback异步回调。
 
 **系统能力**：SystemCapability.Telephony.CoreService
 
@@ -1567,18 +1532,20 @@ getSimLabel(slotId: number, callback: AsyncCallback<SimLabel>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. sim.getSimLabel(0, (err: BusinessError, data: sim.SimLabel) => {
-5. console.info(`callback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-6. });
+sim.getSimLabel(0, (err: BusinessError, data: sim.SimLabel) => {
+  if (err) {
+        console.err(`getSimLabel failed. callback: err->${JSON.stringify(err)}`);
+        return;
+    }
+    console.info(`callback: data->${JSON.stringify(data)}`);
+});
 ```
 
 ## sim.getSimLabel20+
-
-PhoneTabletWearable
 
 getSimLabel(slotId: number): Promise<SimLabel>
 
@@ -1596,7 +1563,7 @@ getSimLabel(slotId: number): Promise<SimLabel>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[SimLabel](js-apis-sim.md#simlabel20) > | 回调函数。获取SIM卡标签信息。 |
+| Promise<[SimLabel](js-apis-sim.md#simlabel20) > | Promise对象，返回获取SIM卡的标签信息。 |
 
 **错误码：**
 
@@ -1611,20 +1578,18 @@ getSimLabel(slotId: number): Promise<SimLabel>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { sim } from '@kit.TelephonyKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { sim } from '@kit.TelephonyKit';
 
-4. sim.getSimLabel(0).then((data: sim.SimLabel) => {
-5. console.info(`getSimLabel success, promise: data->${JSON.stringify(data)}`);
-6. }).catch((err: BusinessError) => {
-7. console.error(`getSimState failed, promise: err->${JSON.stringify(err)}`);
-8. });
+sim.getSimLabel(0).then((data: sim.SimLabel) => {
+  console.info(`getSimLabel success, promise: data->${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+  console.error(`getSimLabel failed, promise: err->${JSON.stringify(err)}`);
+});
 ```
 
 ## sim.getSimLabelSync20+
-
-PhoneTabletWearable
 
 getSimLabelSync(slotId: number): SimLabel
 
@@ -1646,16 +1611,14 @@ getSimLabelSync(slotId: number): SimLabel
 
 **示例：**
 
-```
-1. import { sim } from '@kit.TelephonyKit';
+```ts
+import { sim } from '@kit.TelephonyKit';
 
-4. let simLabel: sim.SimLabel = sim.getSimLabelSync(0);
-5. console.info(`The sim state is:` + simLabel);
+let simLabel: sim.SimLabel = sim.getSimLabelSync(0);
+console.info(`The sim label is:` + simLabel);
 ```
 
 ## SimType20+
-
-PhoneTabletWearable
 
 SIM卡类型的枚举。
 
@@ -1668,8 +1631,6 @@ SIM卡类型的枚举。
 
 ## SimLabel20+
 
-PhoneTabletWearable
-
 SIM卡标签。
 
 **系统能力**：SystemCapability.Telephony.CoreService
@@ -1677,11 +1638,9 @@ SIM卡标签。
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | simType | [SimType](js-apis-sim.md#simtype20) | 否 | 否 | 表示SIM卡类型的枚举。 |
-| index | number | 否 | 否 | SIM卡的唯一标识索引值。 |
+| index | number | 否 | 否 | SIM卡的唯一标识索引值，从1开始递增，取值范围1到2。 |
 
 ## SimState
-
-PhoneTabletWearable
 
 SIM卡状态。
 
@@ -1697,8 +1656,6 @@ SIM卡状态。
 | SIM\_STATE\_LOADED | 5 | 表示SIM卡处于loaded状态，即SIM卡在位且所有卡文件加载完毕。 |
 
 ## CardType7+
-
-PhoneTabletWearable
 
 卡类型。
 
@@ -1719,18 +1676,16 @@ PhoneTabletWearable
 
 ## IccAccountInfo10+
 
-PhoneTabletWearable
-
 Icc账户信息。
 
 **系统能力**：SystemCapability.Telephony.CoreService
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| simId | number | 否 | 否 | SIM卡ID。 |
-| slotIndex | number | 否 | 否 | 卡槽ID。 |
-| isEsim | boolean | 否 | 否 | 标记卡是否是eSim。  - true:是eSim。  - false：不是eSim。 |
-| isActive | boolean | 否 | 否 | 卡是否被激活。  - true:激活。  - false：未激活。 |
+| simId | number | 否 | 否 | SIM卡ID。与SIM卡绑定，从1开始递增。 |
+| slotIndex | number | 否 | 否 | 卡槽ID。  - 0：卡槽1。  - 1：卡槽2。 |
+| isEsim | boolean | 否 | 否 | 标记卡是否是eSIM。  - true：是eSIM。  - false：不是eSIM。 |
+| isActive | boolean | 否 | 否 | 卡是否被激活。  - true：激活。  - false：未激活。 |
 | iccId | string | 否 | 否 | ICCID号码。 |
 | showName | string | 否 | 否 | SIM卡显示名称。 |
 | showNumber | string | 否 | 否 | SIM卡显示号码。 |

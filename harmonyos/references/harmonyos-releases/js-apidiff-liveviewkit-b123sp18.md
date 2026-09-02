@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-liveviewkit-b123sp18
 title: Live View Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.2(14) > OS平台能力 > API变更清单 > Live View Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.2(14) > OS平台能力 > API变更清单 > Live View Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:51+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:38+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:c84b0705e63aa2805e54e76979351180ad68074cbdb87fea61772d883c756090
 ---
 

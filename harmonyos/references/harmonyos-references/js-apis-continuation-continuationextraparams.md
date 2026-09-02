@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: ContinuationExtraParams
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > continuation > ContinuationExtraParams
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:25+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:15646be3205f5226ac6dcda64a84e17d83ff993944059b2c30836d6c6783c930
+scraped_at: 2026-09-02T15:00:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:171520865006e019bb9f766db139ef3380cfada51a3f33459d0782e4f939b5c6
 ---
 
 流转管理入口中设备选择模块所需的过滤参数，可以作为[startContinuationDeviceManager](js-apis-continuation-continuationmanager.md#continuationmanagerstartcontinuationdevicemanagerdeprecated)的入参。
 
-说明
+**说明** 
 
 本模块首批接口从API version 8开始支持，从API version 22开始废弃，建议使用[分布式设备管理](js-apis-distributeddevicemanager.md)替代。
 
@@ -18,11 +18,9 @@ content_hash: sha256:15646be3205f5226ac6dcda64a84e17d83ff993944059b2c30836d6c678
 
 ## ContinuationExtraParams(deprecated)
 
-PhonePC/2in1TabletTV
-
 表示流转管理入口中设备选择模块所需的过滤参数。
 
-说明
+**说明** 
 
 从API version 22开始废弃，建议使用[devicebasicinfo](js-apis-distributeddevicemanager.md#devicebasicinfo)代替。
 

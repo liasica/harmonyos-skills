@@ -3,14 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-c-ge
 title: 识别平面语义（C/C++）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 平面语义 > 识别平面语义（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:52+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:0286b5c26ff6562b0c4ad9142da4305ef4f1a4b19bbabde9329f3f9993afc9c2
+scraped_at: 2026-09-02T14:50:19+08:00
+doc_updated_at: 2026-08-14
+content_hash: sha256:30d4a76780312342a885bccd6f5b25b1ab30a445e88c174aaae3dd0088961e40
 ---
+
+本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/harmonyos_samples/arengine_-sample-code_-clientdemo_cpp)。
 
 ## 约束与限制
 
-识别平面语义能力支持部分Phone、部分Tablet设备。请参考[硬件要求](arengine-preparations.md#硬件要求)判断设备是否支持运动跟踪及平面识别特性（[ARENGINE\_FEATURE\_TYPE\_SEMANTIC](../harmonyos-references/arengine-capi-arengine.md#arengine_featuretype)）。
+从5.0.0(12)开始，识别平面语义能力支持部分Phone、部分Tablet设备。请参考[硬件要求](arengine-preparations.md#硬件要求)判断设备是否支持平面语义及物体语义特性（[ARENGINE\_FEATURE\_TYPE\_SEMANTIC](../harmonyos-references/arengine-capi-arengine.md#arengine_featuretype)）。
 
 ## 引入AR Engine
 
@@ -21,16 +23,15 @@ content_hash: sha256:0286b5c26ff6562b0c4ad9142da4305ef4f1a4b19bbabde9329f3f9993a
 创建AR会话并配置为平面语义识别模式。
 
 ```
-1. AREngine_ARSession *arSession = nullptr;
-2. // 创建AR会话。
-3. HMS_AREngine_ARSession_Create(nullptr, nullptr, &arSession);
-4. AREngine_ARConfig *arConfig = nullptr;
-5. // 创建AR会话配置器。
-6. HMS_AREngine_ARConfig_Create(arSession, &arConfig);
-7. // 设置语义识别模式为平面语义识别。
-8. HMS_AREngine_ARConfig_SetSemanticMode(arSession, arConfig, ARENGINE_SEMANTIC_MODE_PLANE);
-9. // 配置器设置给AR会话。
-10. HMS_AREngine_ARSession_Configure(arSession, arConfig);
+CHECK(HMS_AREngine_ARSession_Create(nullptr, nullptr, &mArSession));
+
+AREngine_ARConfig *arConfig = nullptr;
+CHECK(HMS_AREngine_ARConfig_Create(mArSession, &arConfig));
+// ...
+SetSemanticDenseMode(params.semanticDenseMode, mArSession, arConfig);
+AREngine_ARSemanticDenseMode outSemanticDenseMode = ARENGINE_SEMANTIC_DENSE_MODE_DISABLED;
+HMS_AREngine_ARConfig_GetSemanticDenseMode(mArSession, arConfig, &outSemanticDenseMode);
+CHECK(HMS_AREngine_ARSession_Configure(mArSession, arConfig));
 ```
 
 ## 检测环境中的平面
@@ -41,45 +42,16 @@ content_hash: sha256:0286b5c26ff6562b0c4ad9142da4305ef4f1a4b19bbabde9329f3f9993a
 
 创建并初始化平面语义标签label，用于描述平面的语义。
 
-```
-1. AREngine_ARSemanticPlaneLabel label = ARENGINE_PLANE_UNKNOWN;
+```cpp
+AREngine_ARSemanticPlaneLabel planeLabel = ARENGINE_PLANE_UNKNOWN;
 ```
 
-平面语义标签定义为枚举类型，包括12种枚举值（1种未知类型+11种平面类型）。
-
-```
-1. typedef enum {
-2. /** Unknown type. */
-3. ARENGINE_PLANE_UNKNOWN = 0,
-4. /** Wall. */
-5. ARENGINE_PLANE_WALL = 1,
-6. /** Floor. */
-7. ARENGINE_PLANE_FLOOR = 2,
-8. /** Seat. */
-9. ARENGINE_PLANE_SEAT = 3,
-10. /** Table. */
-11. ARENGINE_PLANE_TABLE = 4,
-12. /** Ceiling. */
-13. ARENGINE_PLANE_CEILING = 5,
-14. /** Door. */
-15. ARENGINE_PLANE_DOOR = 6,
-16. /** Window. */
-17. ARENGINE_PLANE_WINDOW = 7,
-18. /** Bed. */
-19. ARENGINE_PLANE_BED = 8,
-20. /** Plane Space. */
-21. ARENGINE_PLANE_SPACE = 9,
-22. /** Cube Volume. */
-23. ARENGINE_CUBE_VOLUME = 10,
-24. /** Cube Space. */
-25. ARENGINE_CUBE_SPACE = 11,
-26. } AREngine_ARSemanticPlaneLabel;
-```
+平面语义标签定义为枚举类型，包括12种枚举值（1种未知类型+11种平面类型）。 参考[AREngine\_ARSemanticPlaneLabel](../harmonyos-references/arengine-capi-arengine.md#arengine_arsemanticplanelabel)
 
 ## 识别平面类型
 
 调用[HMS\_AREngine\_ARPlane\_GetLabel](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_arplane_getlabel)函数，获取平面类型，结果存放在label中。平面的获取可以参考[获取平面实例](arengine-c-get-plane.md#获取平面实例)。
 
-```
-1. HMS_AREngine_ARPlane_GetLabel(arSession, arPlane, &label);
+```cpp
+HMS_AREngine_ARPlane_GetLabel(arSession, arPlane, &planeLabel);
 ```

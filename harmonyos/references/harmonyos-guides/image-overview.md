@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-overvie
 title: Image Kit简介
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > Image Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:35:11+08:00
-doc_updated_at: 2026-03-20
-content_hash: sha256:fbb1782f0fc353a423af170812edd3cc234b5ce2209d1b20926de2856192f5a1
+scraped_at: 2026-09-02T14:59:45+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:86a51ebb67541205dc86f4baa1aa909ec421e0118898b0b5facade6a8809dc90
 ---
 
 开发者通过调用Image Kit（图片处理服务）提供的接口，可以实现图片的解码、编码、编辑、元数据处理和图片接收等功能。
@@ -51,11 +51,11 @@ Image Kit还提供了读取和[编辑图片EXIF信息](image-tool.md)的能力�
 
 **图1** 图片解码流程示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/F6sM6AyeTXOT0m7dFeU-9A/zh-cn_image_0000002558605428.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/x5HOL5ThTweE2FCM4FbeHg/zh-cn_image_0000002736433713.png)
 
 **图2** 图片编码流程示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/99B0g4rgRA2dE2L5xeqPFw/zh-cn_image_0000002589324955.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/_6JQOMKdRyGe_WxKPBX-eA/zh-cn_image_0000002706834562.png)
 
 ## 约束与限制
 
@@ -73,13 +73,17 @@ Image Kit还提供了读取和[编辑图片EXIF信息](image-tool.md)的能力�
 
     这类接口除了提供上述图片框架基础功能，还可以完成多图编解码等新特性，相关开发指导请参考[图片开发指导(C/C++)](image-source-c.md)节点下的内容。开发者可查看[Image\_NativeModule](../harmonyos-references/capi-image-nativemodule.md)模块下的C API，确认API范围。这部分API从API version 12开始支持，并将持续演进，**推荐开发者使用**。
 
-  注意
+  **注意** 
 
   两套C API不建议同时使用，在部分场景下存在不兼容的问题。
 
 ## 模拟器支持情况
 
-本Kit暂不支持模拟器。
+本Kit支持模拟器，但与真机存在部分能力差异，具体差异如下。
+
+* 模拟器不支持将图片解码为Picture。
+* 模拟器不支持HDR效果。
+* 通用差异：请参见[模拟器与真机的差异](ide-emulator-specification.md#section1227613205203)。
 
 ## 与相关Kit的关系
 

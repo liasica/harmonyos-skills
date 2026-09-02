@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-form-6
 title: 元服务与服务卡片的区别
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 元服务与服务卡片的区别
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:57+08:00
-doc_updated_at: 2026-03-17
+scraped_at: 2026-09-02T15:21:18+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:5b88aa07743c0cd096a213c82b0749735892b083fe4dc3d3c35b8406d10794a1
 ---
 

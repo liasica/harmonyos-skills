@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-heat
 title: 热力图
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 热力图
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:12+08:00
+scraped_at: 2026-09-02T14:50:28+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2439375c98a75fd80e2e77a4554eb6c968fea8fe93a4adc2117d094d1b275e27
+content_hash: sha256:c829a70aa101f53f2896e46761e2b117cb0d667e7e1f2e25f5ab0c51aebc6295
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:2439375c98a75fd80e2e77a4554eb6c968fea8fe93a4adc2117d094d1b2
 
 6.0.0(20)开始，支持热力图功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/dQF9R8eET62thcqzpfGViw/zh-cn_image_0000002558605890.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/na0UoXv0Q9yeHTU463dWUQ/zh-cn_image_0000002706675130.jpg "点击放大")
 
 ## 接口说明
 
@@ -30,76 +30,76 @@ content_hash: sha256:2439375c98a75fd80e2e77a4554eb6c968fea8fe93a4adc2117d094d1b2
 
 1. 导入相关模块。
 
-   ```
-   1. import { map, mapCommon, MapComponent } from '@kit.MapKit';
-   2. import { AsyncCallback } from '@kit.BasicServicesKit';
+   ```typescript
+   import { map, mapCommon, MapComponent } from '@kit.MapKit';
+   import { AsyncCallback } from '@kit.BasicServicesKit';
    ```
 2. 增加热力图。
 
-   ```
-   1. @Entry
-   2. @Component
-   3. struct HeatMapDemo {
-   4. private TAG = "OHMapSDK_HeatMapDemo";
-   5. private mapOption?: mapCommon.MapOptions;
-   6. private mapController?: map.MapComponentController;
-   7. private callback?: AsyncCallback<map.MapComponentController>;
+   ```typescript
+   @Entry
+   @Component
+   struct HeatMapDemo {
+     private TAG = "OHMapSDK_HeatMapDemo";
+     private mapOption?: mapCommon.MapOptions;
+     private mapController?: map.MapComponentController;
+     private callback?: AsyncCallback<map.MapComponentController>;
 
-   9. aboutToAppear(): void {
-   10. this.mapOption = {
-   11. position: {
-   12. target: {
-   13. latitude: 31.000000,
-   14. longitude: 118.000000
-   15. },
-   16. zoom: 11
-   17. }
-   18. }
-   19. this.callback = async (err, mapController) => {
-   20. console.info(this.TAG, "mapCallback err=" + JSON.stringify(err) +
-   21. "; mapController=" + JSON.stringify(mapController));
-   22. if (!err) {
-   23. this.mapController = mapController;
-   24. let data: mapCommon.WeightedLatLng[] = [];
-   25. // 生成500个随机坐标点，用于热力图数据
-   26. for (let i = 0; i < 500; i++) {
-   27. data.push({
-   28. point: {
-   29. longitude: 118.000000 + Math.random() * 1 - 0.25,
-   30. latitude: 31.000000 + Math.random() * 1 - 0.25
-   31. },
-   32. intensity: 1
-   33. });
-   34. }
-   35. let heatMapOptions: mapCommon.HeatmapParams = {
-   36. id: 'heatmap0001',
-   37. data:data,
-   38. radius:20,
-   39. intensity: {
-   40. 2: 1,
-   41. 5: 5,
-   42. 8: 10
-   43. }
-   44. }
-   45. try {
-   46. // 添加热力图
-   47. await this.mapController?.addHeatmap(heatMapOptions);
-   48. } catch (e) {
-   49. console.error(this.TAG, `code:${e.code}, message:${e.message}`);
-   50. }
-   51. } else {
-   52. console.error(`Failed to initialize the map, code is：${err.code}, message is ${err.message}`);
-   53. }
-   54. }
-   55. }
-   56. build() {
-   57. Stack() {
-   58. Column() {
-   59. MapComponent({ mapOptions: this.mapOption, mapCallback: this.callback })
-   60. .width('100%')
-   61. .height('100%');
-   62. }.width('100%')
-   63. }.height('100%')
-   64. }
-   65. }
+     aboutToAppear(): void {
+       this.mapOption = {
+         position: {
+           target: {
+             latitude: 31.000000,
+             longitude: 118.000000
+           },
+           zoom: 11
+         }
+       }
+       this.callback = async (err, mapController) => {
+         console.info(this.TAG, "mapCallback err=" + JSON.stringify(err) +
+           "; mapController=" + JSON.stringify(mapController));
+         if (!err) {
+           this.mapController = mapController;
+           let data: mapCommon.WeightedLatLng[] = [];
+           // 生成500个随机坐标点，用于热力图数据
+           for (let i = 0; i < 500; i++) {
+             data.push({
+               point: {
+                 longitude: 118.000000 + Math.random() * 1 - 0.25,
+                 latitude: 31.000000 + Math.random() * 1 - 0.25
+               },
+               intensity: 1
+             });
+           }
+           let heatMapOptions: mapCommon.HeatmapParams = {
+             id: 'heatmap0001',
+             data:data,
+             radius:20,
+             intensity: {
+               2: 1,
+               5: 5,
+               8: 10
+             }
+           }
+           try {
+             // 添加热力图
+             await this.mapController?.addHeatmap(heatMapOptions);
+           } catch (e) {
+             console.error(this.TAG, `code:${e.code}, message:${e.message}`);
+           }
+         } else {
+           console.error(`Failed to initialize the map, code is：${err.code}, message is ${err.message}`);
+         }
+       }
+     }
+     build() {
+       Stack() {
+         Column() {
+           MapComponent({ mapOptions: this.mapOption, mapCallback: this.callback })
+             .width('100%')
+             .height('100%');
+         }.width('100%')
+       }.height('100%')
+     }
+   }
    ```

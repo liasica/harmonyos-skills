@@ -3,29 +3,29 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 开发云对象
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云对象 > 开发云对象
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:45:01+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:5efb6b48017ae1f76557ad6d1bf8979a06bf00cd228683ddab1ab91ef1b39cb0
+scraped_at: 2026-09-02T15:00:19+08:00
+doc_updated_at: 2026-07-15
+content_hash: sha256:4a85f4cab8868cf8bba60be91ba2bf464ce5f55e6c52ae6c538759425075993c
 ---
 
 云对象创建完成后，您便可以直接在云对象中编写需要实现的方法。例如，通过云对象实现add与subtract两个方法。
 
 1. 打开云对象入口文件（此处以“myCloudObject.ts”为例），添加add与subtract方法。
 
-   ```
-   1. export class MyCloudObject {
-   2. add(num1: number, num2: number) {
-   3. return { result: num1 + num2 };
-   4. }
-   5. subtract(num1: number, num2: number) {
-   6. return { result: num1 - num2 };
-   7. }
-   8. }
+   ```screen
+   export class MyCloudObject {
+       add(num1: number, num2: number) {
+           return { result: num1 + num2 };
+       }
+       subtract(num1: number, num2: number) {
+           return { result: num1 - num2 };
+       }
+   }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/wENWXiT4Si2Oba5cUs5QcA/zh-cn_image_0000002179338600.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/AP6XsTyzQtWE9mQ2NcD-nA/zh-cn_image_0000002179338600.png)
 
-   注意
+   **注意** 
 
    * 云对象是无状态性的。云对象部署至云侧后，每一次调用都可能是不同的后台节点，因此在云对象上定义类成员变量是无意义的。从一个Method中对一个类成员属性赋值，然后期望从另一个Method去获取类成员属性，这样的做法是错误的。
    * 云对象无需编写构造函数。云侧在收到对云对象的某一个函数的请求时，会调用云对象的默认的无参构造函数。
@@ -37,12 +37,12 @@ content_hash: sha256:5efb6b48017ae1f76557ad6d1bf8979a06bf00cd228683ddab1ab91ef1b
 
    下文以添加“@hw-agconnect/cloud-server”依赖为例进行说明，请添加实际业务所需的依赖。
 
-   说明
+   **说明** 
 
    右击“package.json”文件，选择“Run 'npm install'”菜单，也可以实现依赖包安装。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/rcxs25jEQcK6xJHTR0KSrg/zh-cn_image_0000002425894173.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/wj3aOf76QtaUF5TwjzBFGw/zh-cn_image_0000002425894173.png)
 
    所有安装的依赖包都会存储在当前云对象的“node\_modules”目录下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/Kjp6XYZrQwmQyNZJ8xqeug/zh-cn_image_0000002425974957.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/q6o42Iw0Tm2xdnObP2OV4Q/zh-cn_image_0000002425974957.png)

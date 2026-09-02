@@ -3,16 +3,10 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-msg-
 title: 消息撤回
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 消息撤回
 category: harmonyos-references
-scraped_at: 2026-04-29T14:09:11+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:61176b508d2ed9ff3103b5f14b9ed38eeb4713adfefbc8b9e61d04198b730e26
+scraped_at: 2026-09-02T15:03:07+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c8a3338a5c89240f5fb6c1c3869dabd455371b8742d358ae34dbc47b5cb810a5
 ---
-
-说明
-
-为了更安全的网络访问，华为Push Kit于2022年11月30日关闭Push相关域名的TLS1.0、TLS1.1协议及规定之外的加密套件，当前应用使用TLS1.2以下协议或使用规定外的加密套件将无法正常推送消息。
-
-若您的应用访问Push相关域名使用协议是TLS1.0或TLS1.1，可能无法正常发送消息，请您务必升级到TLS1.2及以上版本。
 
 ## 功能介绍
 
@@ -31,7 +25,7 @@ content_hash: sha256:61176b508d2ed9ff3103b5f14b9ed38eeb4713adfefbc8b9e61d04198b7
 
   响应消息：Content-Type: application/json
 
-说明
+**说明** 
 
 **[clientId]** ：请替换为您应用的Client ID（参考[指导](../app/agc-help-view-app-info-0000002282674569.md)获取）
 
@@ -53,16 +47,16 @@ content_hash: sha256:61176b508d2ed9ff3103b5f14b9ed38eeb4713adfefbc8b9e61d04198b7
 
 ## 请求示例
 
-```
-1. // 按照notifyId和token撤回
-2. {
-3. "notifyId": 3114932,
-4. "token": [
-5. "pushToken1",
-6. "pushToken2",
-7. "pushToken3"
-8. ]
-9. }
+```json5
+// 按照notifyId和token撤回
+{
+    "notifyId": 3114932,
+    "token": [
+        "pushToken1",
+        "pushToken2",
+        "pushToken3"
+    ]
+}
 ```
 
 ## 响应参数
@@ -79,22 +73,22 @@ content_hash: sha256:61176b508d2ed9ff3103b5f14b9ed38eeb4713adfefbc8b9e61d04198b7
 
 **响应成功示例：**
 
-```
-1. {
-2. "code": "80000000",
-3. "msg": "Success",
-4. "requestId": "157*******006"
-5. }
+```json
+{
+    "code": "80000000",
+    "msg": "Success",
+    "requestId": "157*******006"
+}
 ```
 
 **响应失败示例：**
 
-```
-1. {
-2. "code": "80100003",
-3. "msg": "Illegal payload, The header does not contain valid push-type",
-4. "requestId": "1690*******1701"
-5. }
+```json
+{
+    "code": "80100003",
+    "msg": "Illegal payload, The header does not contain valid push-type",
+    "requestId": "1690*******1701"
+}
 ```
 
 ## HTTP响应码
@@ -104,7 +98,7 @@ content_hash: sha256:61176b508d2ed9ff3103b5f14b9ed38eeb4713adfefbc8b9e61d04198b7
 | 200 | 成功。 | - |
 | 400 | 参数错误。 | 请检查业务响应码并根据业务响应码进一步排查问题。 |
 | 401 | 鉴权失败。 | 请检查HTTP头中Authorization参数。 |
-| 404 | 找不到服务。 | 请检查请求URI是否正确。 |
+| 404 | 找不到服务。 | 请检查请求URL是否正确。 |
 | 500 | 服务内部错误。 | 请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 502 | 请求连接异常，常见于网络状况不稳定。 | 建议稍后重试，或通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 503 | 流量控制。 | · 平均分配发送速度。  · 平均分配推送时间段，不要集中发送。 |
@@ -196,7 +190,7 @@ Authentication Error.
 **可能原因**
 
 1. 发送消息时未添加Authorization参数或Authorization的值为空。
-2. 用于申请JWT Token的Project Id和推送消息的Project Id不一致。
+2. 用于申请JWT Token的Project Id和推送消息的Client Id不属于同一个项目。
 3. Authorization参数中的JWT Token与实际应用不匹配。
 
 **处理步骤**
@@ -204,7 +198,7 @@ Authentication Error.
 请根据响应消息中的提示，排查请求头中Authorization参数鉴权失败是否存在以下情况：
 
 1. 请检查发送消息时是否添加Authorization参数或Authorization的值为空。
-2. 请参考[鉴权令牌生成步骤](../harmonyos-guides/push-jwt-token.md#开发步骤)中的步骤二，检查推送请求URL（https://push-api.cloud.huawei.com/**v3**/[projectId]/messages:send）中的projectId，确保与您当前应用所属的项目保持一致。
+2. 请参考[鉴权令牌生成步骤](../harmonyos-guides/push-jwt-token.md#开发步骤)中的步骤二，检查推送请求URL（https://push-api.cloud.huawei.com/v1/**[clientId]**/messages:revoke）中的clientId，确保与您当前应用所属的项目保持一致。
 3. 请检查Authorization参数中的JWT Token与实际应用是否匹配，详情参见[基于服务账号生成鉴权令牌](../harmonyos-guides/push-jwt-token.md)。
 
 重新生成JWT Token后再发送请求。
@@ -289,9 +283,9 @@ All the tokens are invalid.
 2. 请确保客户端应用配置的应用包名、应用ID与[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站上申请是一致的。
 3. 请确保终端设备升级至HarmonyOS NEXT版本后，重新生成对应的Push Token，并使用[HarmonyOS NEXT版本的请求体参数](push-scenariozed-api-request-param.md)进行消息请求。
 
-   请确保使用v3版本的请求URL（https://push-api.cloud.huawei.com/**v3**/[projectId]/messages:send）发送REST API请求。
+   请确保使用v1版本的请求URL（https://push-api.cloud.huawei.com/v1/**[clientId]**/messages:revoke）发送REST API请求。
 
-   建议您在应用启动时调用getToken()接口，若设备的Push Token发生变化，及时上报到您的应用服务器更新Push Token。
+   建议您在应用启动时调用getToken接口，若设备的Push Token发生变化，及时上报到您的应用服务器更新Push Token。
 
 ### 80300010 消息体中的Token数量为0或超过系统设置的默认值
 

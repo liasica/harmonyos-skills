@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-runnin
 title: 模拟器上部分视频无法正常播放
 breadcrumb: FAQ > DevEco Studio > 应用运行 > 模拟器上部分视频无法正常播放
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:02+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:17+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:49c558e7e96dc6ae87f72fff4f134cfb6f68ddd73e11b1285486df48901fb08f
 ---
 

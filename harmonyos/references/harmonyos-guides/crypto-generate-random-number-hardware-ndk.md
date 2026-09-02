@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-genera
 title: 使用硬件熵源生成安全随机数(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 随机数 > 使用硬件熵源生成安全随机数(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e4ea12ecf0030a9a27556fd2466a4229e30f1e3e34bebd82bf60d74a4a21b639
+scraped_at: 2026-09-02T14:50:01+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7634d4e913b87348b362ac019609aed0481ae3aa43edc7ff666895584073c12e
 ---
 
-从API version 21开始，可以选择使用硬件熵源生成安全随机数。
+从API版本21开始，可以选择使用硬件熵源生成安全随机数。
 
 随机数主要用于临时会话密钥生成和非对称加密算法密钥生成等场景。在加解密场景中，安全随机数生成器需要具备随机性、不可预测性和不可重现性。
 
@@ -50,60 +50,58 @@ content_hash: sha256:e4ea12ecf0030a9a27556fd2466a4229e30f1e3e34bebd82bf60d74a4a2
 5. 调用[OH\_CryptoRand\_GetAlgoName](../harmonyos-references/capi-crypto-rand-h.md#oh_cryptorand_getalgoname)，获取随机数生成器使用的算法名称。
 
 ```
-1. #include "CryptoArchitectureKit/crypto_architecture_kit.h"
-2. #include <cstdio>
-3. #include "file.h"
+#include "CryptoArchitectureKit/crypto_architecture_kit.h"
+#include <cstdio>
+#include "file.h"
 
-5. OH_Crypto_ErrCode doTestHardwareRandomNumber()
-6. {
-7. // 创建随机数生成器。
-8. OH_CryptoRand *rand = nullptr;
-9. OH_Crypto_ErrCode ret = OH_CryptoRand_Create(&rand);
-10. if (ret != CRYPTO_SUCCESS) {
-11. return ret;
-12. }
+OH_Crypto_ErrCode doTestHardwareRandomNumber()
+{
+    // 创建随机数生成器。
+    OH_CryptoRand *rand = nullptr;
+    OH_Crypto_ErrCode ret = OH_CryptoRand_Create(&rand);
+    if (ret != CRYPTO_SUCCESS) {
+        return ret;
+    }
 
-14. // 开启硬件熵源。
-15. ret = OH_CryptoRand_EnableHardwareEntropy(rand);
-16. if (ret != CRYPTO_SUCCESS) {
-17. OH_CryptoRand_Destroy(rand);
-18. return ret;
-19. }
+    // 开启硬件熵源。
+    ret = OH_CryptoRand_EnableHardwareEntropy(rand);
+    if (ret != CRYPTO_SUCCESS) {
+        OH_CryptoRand_Destroy(rand);
+        return ret;
+    }
 
-21. // 设置随机种子（可选）。
-22. uint8_t seedData[12] = {0x25, 0x65, 0x58, 0x89, 0x85, 0x55, 0x66, 0x77, 0x88, 0x99, 0x11, 0x22};
-23. Crypto_DataBlob seed = {
-24. .data = seedData,
-25. .len = sizeof(seedData)
-26. };
-27. ret = OH_CryptoRand_SetSeed(rand, &seed);
-28. if (ret != CRYPTO_SUCCESS) {
-29. OH_CryptoRand_Destroy(rand);
-30. return ret;
-31. }
+    // 设置随机种子（可选）。
+    uint8_t seedData[12] = {0x25, 0x65, 0x58, 0x89, 0x85, 0x55, 0x66, 0x77, 0x88, 0x99, 0x11, 0x22};
+    Crypto_DataBlob seed = {
+        .data = seedData,
+        .len = sizeof(seedData)
+    };
+    ret = OH_CryptoRand_SetSeed(rand, &seed);
+    if (ret != CRYPTO_SUCCESS) {
+        OH_CryptoRand_Destroy(rand);
+        return ret;
+    }
 
-33. // 生成指定长度的随机数。
-34. Crypto_DataBlob out = {0};
-35. uint32_t randomLength = 24; // 生成24字节的随机数。
-36. ret = OH_CryptoRand_GenerateRandom(rand, randomLength, &out);
-37. if (ret != CRYPTO_SUCCESS) {
-38. OH_CryptoRand_Destroy(rand);
-39. return ret;
-40. }
+    // 生成指定长度的随机数。
+    Crypto_DataBlob out = {0};
+    int randomLength = 24; // 生成24字节的随机数。
+    ret = OH_CryptoRand_GenerateRandom(rand, randomLength, &out);
+    if (ret != CRYPTO_SUCCESS) {
+        OH_CryptoRand_Destroy(rand);
+        return ret;
+    }
 
-42. // 获取并打印随机数生成器的算法名称。
-43. const char *algoName = OH_CryptoRand_GetAlgoName(rand);
-44. if (algoName != nullptr) {
-45. printf("Random number generator algorithm: %s\n", algoName);
-46. }
+    // 获取并打印随机数生成器的算法名称。
+    const char *algoName = OH_CryptoRand_GetAlgoName(rand);
+    if (algoName != nullptr) {
+        printf("Random number generator algorithm: %s\n", algoName);
+    }
 
-48. printf("Generated random number length: %u\n", out.len);
+    printf("Generated random number length: %u\n", out.len);
 
-50. // 清理资源。
-51. OH_Crypto_FreeDataBlob(&out);
-52. OH_CryptoRand_Destroy(rand);
-53. return CRYPTO_SUCCESS;
-54. }
+    // 清理资源。
+    OH_Crypto_FreeDataBlob(&out);
+    OH_CryptoRand_Destroy(rand);
+    return CRYPTO_SUCCESS;
+}
 ```
-
-[rand\_test.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Security/CryptoArchitectureKit/SecureHardWareRandomNumberGeneration/entry/src/main/cpp/types/project/rand_test.cpp#L16-L71)

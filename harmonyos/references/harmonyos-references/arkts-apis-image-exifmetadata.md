@@ -3,30 +3,27 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (ExifMetadata)
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.image (图片处理) > Class (ExifMetadata)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:11+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1c9c7e89b1cae7dc2ec1a66f49b5d9643a7e4fb00842fc484512bc57c9d77500
+scraped_at: 2026-09-02T15:02:30+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:416dc126b139ca7f4d83979628e6dce1829bef438eb79342ac79b4ebf09b3260
 ---
 
 ExifMetadata implements Metadata
 
 Exif（Exchangeable image file format）元数据。
 
-说明
+**说明** 
 
-本模块首批接口从API version 23开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+* 本模块首批接口从API version 23开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+* 应用通过[PhotoAccessHelper](arkts-apis-photoaccesshelper-photoaccesshelper.md)查询媒体库图片，在读取gpsLatitude、gpsLongitude、gpsAltitude、gpsTimestamp等GPS相关属性前，应先声明并向用户申请[ohos.permission.MEDIA\_LOCATION](../harmonyos-guides/permissions-for-all-user.md#ohospermissionmedia_location)权限。如果GPS相关属性返回全为0或为空，请先检查该权限是否已获授权，并确认原始图片是否包含GPS信息。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { image } from '@kit.ImageKit';
+```ts
+import { image } from '@kit.ImageKit';
 ```
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -46,7 +43,7 @@ PhonePC/2in1TabletTVWearable
 | imageDescription | string | 否 | 是 | 图像描述。 |
 | make | string | 否 | 是 | 拍摄设备的品牌制造商名称。 |
 | model | string | 否 | 是 | 相机型号。 |
-| stripOffsets | number[] | 否 | 是 | 图像数据的分块存储偏移量，单位为字节。  为提高大图像访问效率，原始像素数据被分割为多个连续区块（称为条带）。  此标签按顺序存储每个条带在文件中的起始位置偏移量。 |
+| stripOffsets | number[] | 否 | 是 | 图像数据的分块存储偏移量，单位为字节（Byte）。  为提高大图像访问效率，原始像素数据被分割为多个连续区块（称为条带）。  此标签按顺序存储每个条带在文件中的起始位置偏移量。 |
 | orientation | [Orientation](arkts-apis-image-e.md#orientation23) | 否 | 是 | 图像方向。 |
 | samplesPerPixel | number | 否 | 是 | 记录每个像素的颜色分量数量，适用于RGB（红绿蓝，Red Green Blue）和YCbCr（亮度-蓝色色差-红色色差，Luma-Chrominance）色彩模型。  由于这两种模型都是三分量模型（一个亮度分量加两个色度分量，或三个颜色通道），因此该标签的标准值为3。  对于JPEG压缩图像，此标签将会被对应的JPEG标记替换。 |
 | rowsPerStrip | number | 否 | 是 | 每条图像数据的行数。 |
@@ -110,7 +107,7 @@ PhonePC/2in1TabletTVWearable
 | oecf | ArrayBuffer | 否 | 是 | ISO 14524中规定的光电转换函数（OECF）。 |
 | sensitivityType | number | 否 | 是 | 灵敏度类型。 |
 | standardOutputSensitivity | number | 否 | 是 | 标准输出灵敏度。 |
-| recommendedExposureIndex | number | 否 | 是 | GPS测量模式。 |
+| recommendedExposureIndex | number | 否 | 是 | 推荐曝光指数。 |
 | isoSpeedLatitudeyyy | number | 否 | 是 | 表示相机传感器在单次曝光中可记录的最大动态范围。单位为EV。 |
 | isoSpeedLatitudezzz | number | 否 | 是 | 表示相机传感器在过曝方向保护高光细节的能力边界。单位为EV。 |
 | exifVersion | string | 否 | 是 | 支持的Exif标准的版本。 |
@@ -130,7 +127,7 @@ PhonePC/2in1TabletTVWearable
 | meteringMode | number | 否 | 是 | 测光模式。 |
 | lightSource | number | 否 | 是 | 光源。 |
 | flash | number | 否 | 是 | 闪光。 |
-| focalLength | number | 否 | 是 | 焦距。单位为毫米。 |
+| focalLength | number | 否 | 是 | 焦距。单位为毫米（mm）。 |
 | subjectArea | number[] | 否 | 是 | 用于指示主要对象在整个场景中的位置和区域。 |
 | makerNote | ArrayBuffer | 否 | 是 | Exif/相机文件系统设计规则DCF（Design rule for Camera File system）写入器制造商记录所需信息的标签。 |
 | userComment | string | 否 | 是 | 用户评论。 |
@@ -179,8 +176,6 @@ PhonePC/2in1TabletTVWearable
 
 ## createInstance
 
-PhonePC/2in1TabletTVWearable
-
 static createInstance(): ExifMetadata
 
 创建一个空的[ExifMetadata](arkts-apis-image-exifmetadata.md)实例。
@@ -197,18 +192,16 @@ static createInstance(): ExifMetadata
 
 **示例：**
 
-```
-1. async function exifMetadataCreateInstance(context: Context) {
-2. let exifMetadata = image.ExifMetadata.createInstance();
-3. if (exifMetadata != undefined) {
-4. console.info("createInstance success");
-5. }
-6. }
+```ts
+async function exifMetadataCreateInstance(context: Context) {
+  let exifMetadata = image.ExifMetadata.createInstance();
+  if (exifMetadata != undefined) {
+    console.info("Succeeded in creating an ExifMetadata instance.");
+  }
+}
 ```
 
 ## getProperties
-
-PhonePC/2in1TabletTVWearable
 
 getProperties(key: Array<string>): Promise<Record<string, string | null>>
 
@@ -242,36 +235,34 @@ getProperties(key: Array<string>): Promise<Record<string, string | null>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { fileIo } from '@kit.CoreFileKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileIo } from '@kit.CoreFileKit';
 
-4. function getFileFd(context: Context): number | undefined {
-5. const filePath: string = context.cacheDir + '/exif.jpg';  // 图片包含exif metadata。
-6. const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
-7. const fd: number = file?.fd;
-8. return fd;
-9. }
+function getFileFd(context: Context): number | undefined {
+  const filePath: string = context.cacheDir + '/exif.jpg';  // 图片包含exif metadata。
+  const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
+  const fd: number = file?.fd;
+  return fd;
+}
 
-11. async function exifMetadataGetProperties(context: Context) {
-12. let fd = getFileFd(context);
-13. let imageSource = image.createImageSource(fd);
-14. let metaData = await imageSource.readImageMetadata(["ImageWidth", "ImageLength"]);
-15. if (metaData != undefined && metaData.exifMetadata != undefined) {
-16. await metaData.exifMetadata.getProperties(["ImageWidth", "ImageLength"]).then((data) => {
-17. console.info('Get properties ',JSON.stringify(data));
-18. }).catch((error: BusinessError) => {
-19. console.error(`Get properties failed error.code is ${error.code}, error.message is ${error.message}`);
-20. });
-21. } else {
-22. console.error('Metadata is null.');
-23. }
-24. }
+async function exifMetadataGetProperties(context: Context) {
+  let fd = getFileFd(context);
+  let imageSource = image.createImageSource(fd);
+  let metaData = await imageSource.readImageMetadata(["ImageWidth", "ImageLength"]);
+  if (metaData != undefined && metaData.exifMetadata != undefined) {
+    await metaData.exifMetadata.getProperties(["ImageWidth", "ImageLength"]).then((data) => {
+      console.info(`Succeeded in getting properties. Data: ${JSON.stringify(data)}.`);
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to get properties. Code: ${error.code}, message: ${error.message}.`);
+    });
+  } else {
+    console.error('Metadata is null.');
+  }
+}
 ```
 
 ## setProperties
-
-PhonePC/2in1TabletTVWearable
 
 setProperties(records: Record<string, string | null>): Promise<void>
 
@@ -305,40 +296,38 @@ setProperties(records: Record<string, string | null>): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { fileIo } from '@kit.CoreFileKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileIo } from '@kit.CoreFileKit';
 
-4. function getFileFd(context: Context): number | undefined {
-5. const filePath: string = context.cacheDir + '/exif.jpg';  // 图片包含exif metadata。
-6. const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
-7. const fd: number = file?.fd;
-8. return fd;
-9. }
+function getFileFd(context: Context): number | undefined {
+  const filePath: string = context.cacheDir + '/exif.jpg';  // 图片包含exif metadata。
+  const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
+  const fd: number = file?.fd;
+  return fd;
+}
 
-11. async function exifMetadataSetProperties(context: Context) {
-12. let fd = getFileFd(context);
-13. let imageSource = image.createImageSource(fd);
-14. let metaData = await imageSource.readImageMetadata(["ImageWidth", "ImageLength"]);
-15. if (metaData != undefined && metaData.exifMetadata != undefined) {
-16. let setkey: Record<string, string | null> = {
-17. "ImageWidth": "200",
-18. "ImageLength": "300"
-19. };
-20. await metaData.exifMetadata.setProperties(setkey).then(async () => {
-21. console.info('Set properties success.');
-22. }).catch((error: BusinessError) => {
-23. console.error(`Failed to set metadata Properties. code is ${error.code}, message is ${error.message}`);
-24. })
-25. } else {
-26. console.error('metadata is null. ');
-27. }
-28. }
+async function exifMetadataSetProperties(context: Context) {
+  let fd = getFileFd(context);
+  let imageSource = image.createImageSource(fd);
+  let metaData = await imageSource.readImageMetadata(["ImageWidth", "ImageLength"]);
+  if (metaData != undefined && metaData.exifMetadata != undefined) {
+    let setkey: Record<string, string | null> = {
+      "ImageWidth": "200",
+      "ImageLength": "300"
+    };
+    await metaData.exifMetadata.setProperties(setkey).then(async () => {
+      console.info('Succeeded in setting properties.');
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to set metadata Properties. code is ${error.code}, message is ${error.message}`);
+    })
+  } else {
+    console.error('metadata is null. ');
+  }
+}
 ```
 
 ## getAllProperties
-
-PhonePC/2in1TabletTVWearable
 
 getAllProperties(): Promise<Record<string, string | null>>
 
@@ -356,38 +345,35 @@ getAllProperties(): Promise<Record<string, string | null>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { fileIo } from '@kit.CoreFileKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileIo } from '@kit.CoreFileKit';
 
-4. function getFileFd(context: Context): number | undefined {
-5. const filePath: string = context.cacheDir + '/exif.jpg';  // 图片包含exif metadata。
-6. const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
-7. const fd: number = file?.fd;
-8. return fd;
-9. }
+function getFileFd(context: Context): number | undefined {
+  const filePath: string = context.cacheDir + '/exif.jpg';  // 图片包含exif metadata。
+  const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
+  const fd: number = file?.fd;
+  return fd;
+}
 
-11. async function exifMetadataGetAllProperties(context: Context) {
-12. let fd = getFileFd(context);
-13. let imageSource = image.createImageSource(fd);
-14. let metaData = await imageSource.readImageMetadata(["ImageWidth", "ImageLength"]);
-15. if (metaData != undefined && metaData.exifMetadata != undefined) {
-16. await metaData.exifMetadata.getAllProperties().then((data) => {
-17. const count = Object.keys(data).length;
-18. console.info('Metadata have ', count, ' properties');
-19. console.info(`Get metadata all properties: ${data}`);
-20. }).catch((error: BusinessError) => {
-21. console.error(`Get metadata all properties failed error.code is ${error.code}, error.message is ${error.message}`);
-22. });
-23. } else {
-24. console.error('Metadata is null.');
-25. }
-26. }
+async function exifMetadataGetAllProperties(context: Context) {
+  let fd = getFileFd(context);
+  let imageSource = image.createImageSource(fd);
+  let metaData = await imageSource.readImageMetadata(["ImageWidth", "ImageLength"]);
+  if (metaData != undefined && metaData.exifMetadata != undefined) {
+    await metaData.exifMetadata.getAllProperties().then((data) => {
+      const count = Object.keys(data).length;
+      console.info(`Succeeded in getting all properties. Count: ${count}, data: ${JSON.stringify(data)}.`);
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to get all properties. Code: ${error.code}, message: ${error.message}.`);
+    });
+  } else {
+    console.error('Metadata is null.');
+  }
+}
 ```
 
 ## clone
-
-PhonePC/2in1TabletTVWearable
 
 clone(): Promise<ExifMetadata>
 
@@ -405,37 +391,35 @@ clone(): Promise<ExifMetadata>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { fileIo } from '@kit.CoreFileKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileIo } from '@kit.CoreFileKit';
 
-4. function getFileFd(context: Context): number | undefined {
-5. const filePath: string = context.cacheDir + '/exif.jpg';  // 图片包含exif metadata。
-6. const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
-7. const fd: number = file?.fd;
-8. return fd;
-9. }
+function getFileFd(context: Context): number | undefined {
+  const filePath: string = context.cacheDir + '/exif.jpg';  // 图片包含exif metadata。
+  const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
+  const fd: number = file?.fd;
+  return fd;
+}
 
-11. async function exifMetadataClone(context: Context) {
-12. let fd = getFileFd(context);
-13. let imageSource = image.createImageSource(fd);
-14. let metaData = await imageSource.readImageMetadata(["ImageWidth", "ImageLength"]);
-15. if (metaData != undefined && metaData.exifMetadata != undefined) {
-16. let new_metadata = await metaData.exifMetadata.clone();
-17. new_metadata.getProperties(["ImageWidth"]).then((data1) => {
-18. console.info(`Clone new_metadata and get Properties: ${data1}`);
-19. }).catch((err: BusinessError) => {
-20. console.error(`Clone new_metadata failed, error : ${err}`);
-21. });
-22. } else {
-23. console.error('Metadata is null.');
-24. }
-25. }
+async function exifMetadataClone(context: Context) {
+  let fd = getFileFd(context);
+  let imageSource = image.createImageSource(fd);
+  let metaData = await imageSource.readImageMetadata(["ImageWidth", "ImageLength"]);
+  if (metaData != undefined && metaData.exifMetadata != undefined) {
+    let new_metadata = await metaData.exifMetadata.clone();
+    new_metadata.getProperties(["ImageWidth"]).then((data1) => {
+      console.info(`Succeeded in cloning metadata and getting properties. Data: ${JSON.stringify(data1)}.`);
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to clone metadata and get properties. Code: ${err.code}, message: ${err.message}.`);
+    });
+  } else {
+    console.error('Metadata is null.');
+  }
+}
 ```
 
 ## getBlob
-
-PhonePC/2in1TabletTVWearable
 
 getBlob(): Promise<ArrayBuffer>
 
@@ -453,32 +437,30 @@ getBlob(): Promise<ArrayBuffer>
 
 **示例：**
 
-```
-1. import { fileIo } from '@kit.CoreFileKit';
+```ts
+import { fileIo } from '@kit.CoreFileKit';
 
-3. function getFileFd(context: Context): number | undefined {
-4. const filePath: string = context.cacheDir + '/exif.jpg';  // 图片包含exif metadata。
-5. const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
-6. const fd: number = file?.fd;
-7. return fd;
-8. }
+function getFileFd(context: Context): number | undefined {
+  const filePath: string = context.cacheDir + '/exif.jpg';  // 图片包含exif metadata。
+  const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
+  const fd: number = file?.fd;
+  return fd;
+}
 
-10. async function exifMetadataGetBlob(context: Context) {
-11. let fd = getFileFd(context);
-12. let imageSource = image.createImageSource(fd);
-13. let metaData = await imageSource.readImageMetadata(["ImageWidth", "ImageLength"]);
-14. if (metaData != undefined && metaData.exifMetadata != undefined) {
-15. let blob = await metaData.exifMetadata.getBlob();
-16. if (blob != undefined) {
-17. console.info("get blob success");
-18. }
-19. }
-20. }
+async function exifMetadataGetBlob(context: Context) {
+  let fd = getFileFd(context);
+  let imageSource = image.createImageSource(fd);
+  let metaData = await imageSource.readImageMetadata(["ImageWidth", "ImageLength"]);
+  if (metaData != undefined && metaData.exifMetadata != undefined) {
+    let blob = await metaData.exifMetadata.getBlob();
+    if (blob != undefined) {
+      console.info("Succeeded in getting blob.");
+    }
+  }
+}
 ```
 
 ## setBlob
-
-PhonePC/2in1TabletTVWearable
 
 setBlob(blob: ArrayBuffer): Promise<void>
 
@@ -510,30 +492,30 @@ setBlob(blob: ArrayBuffer): Promise<void>
 
 **示例：**
 
-```
-1. import { fileIo } from '@kit.CoreFileKit';
+```ts
+import { fileIo } from '@kit.CoreFileKit';
 
-3. function getFileFd(context: Context): number | undefined {
-4. const filePath: string = context.cacheDir + '/exif.jpg';  // 图片包含exif metadata。
-5. const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
-6. const fd: number = file?.fd;
-7. return fd;
-8. }
+function getFileFd(context: Context): number | undefined {
+  const filePath: string = context.cacheDir + '/exif.jpg';  // 图片包含exif metadata。
+  const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
+  const fd: number = file?.fd;
+  return fd;
+}
 
-10. async function exifMetadataSetBlob(context: Context) {
-11. let fd = getFileFd(context);
-12. let imageSource = image.createImageSource(fd);
-13. let metaData = await imageSource.readImageMetadata(["ImageWidth", "ImageLength"]);
-14. if (metaData != undefined && metaData.exifMetadata != undefined) {
-15. let blob = await metaData.exifMetadata.getBlob();
-16. if (blob != undefined) {
-17. console.info("get blob success");
-18. metaData.exifMetadata.setBlob(blob);
-19. }
-20. let new_blob = metaData.exifMetadata.getBlob();
-21. if (new_blob != undefined) {
-22. console.info("new_blob is not undefined");
-23. }
-24. }
-25. }
+async function exifMetadataSetBlob(context: Context) {
+  let fd = getFileFd(context);
+  let imageSource = image.createImageSource(fd);
+  let metaData = await imageSource.readImageMetadata(["ImageWidth", "ImageLength"]);
+  if (metaData != undefined && metaData.exifMetadata != undefined) {
+    let blob = await metaData.exifMetadata.getBlob();
+    if (blob != undefined) {
+      console.info("Succeeded in getting blob.");
+      metaData.exifMetadata.setBlob(blob);
+    }
+    let new_blob = metaData.exifMetadata.getBlob();
+    if (new_blob != undefined) {
+      console.info("new_blob is not undefined");
+    }
+  }
+}
 ```

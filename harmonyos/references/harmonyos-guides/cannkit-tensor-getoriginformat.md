@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tenso
 title: GetOriginFormat
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Tensor > GetOriginFormat
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:03+08:00
+scraped_at: 2026-09-02T14:50:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ca32cb2c121c8bdbffda1a1f567ad7a9bf42eeabba83fe146003db462107101b
+content_hash: sha256:c746badcd773e9bc773c99ff60d9aa0e40053116ec73c59d8b9cafebe097935e
 ---
 
 ## 函数功能
@@ -16,8 +16,8 @@ content_hash: sha256:ca32cb2c121c8bdbffda1a1f567ad7a9bf42eeabba83fe146003db46210
 
 ## 函数原型
 
-```
-1. ge::Format GetOriginFormat() const;
+```cpp
+ge::Format GetOriginFormat() const;
 ```
 
 ## 参数说明

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hilog-guideli
 title: 使用HiLog打印日志（C/C++）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 日志打印 > 使用HiLog打印日志（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:00+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:635a50d8e655fa1263a046cafc1733625adb09de29713133bd07b9a462f02d12
+scraped_at: 2026-09-02T14:59:39+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:c7a8dc9e64ce9f8d62b08f1bd0ea893c4a4e2becbefde88e4bfbf881e385172a
 ---
 
 在应用开发过程中，可在关键代码处输出日志信息。在运行应用后，通过查看日志信息来分析应用执行情况（如应用是否正常运行、代码运行时序、运行逻辑分支是否正常等）。
@@ -28,13 +28,13 @@ HiLog中定义了DEBUG、INFO、WARN、ERROR、FATAL五种日志级别，并提�
 | #define OH\_LOG\_WARN(type, ...) ((void)OH\_LOG\_Print((type), LOG\_WARN, LOG\_DOMAIN, LOG\_TAG, **VA\_ARGS**)) | WARN级别写日志，宏封装接口。 |
 | #define OH\_LOG\_ERROR(type, ...) ((void)OH\_LOG\_Print((type), LOG\_ERROR, LOG\_DOMAIN, LOG\_TAG, **VA\_ARGS**)) | ERROR级别写日志，宏封装接口。 |
 | #define OH\_LOG\_FATAL(type, ...) ((void)OH\_LOG\_Print((type), LOG\_FATAL, LOG\_DOMAIN, LOG\_TAG, **VA\_ARGS**)) | FATAL级别写日志，宏封装接口。 |
-| void OH\_LOG\_SetCallback(LogCallback callback) | 注册函数，注册后可通过LogCallback回调获取本进程的hilog日志。若OH\_LOG\_IsLoggable接口返回true，则回调函数可获取到该条日志。 |
+| void OH\_LOG\_SetCallback(LogCallback callback) | 注册函数，注册后可通过LogCallback回调获取本进程的HiLog日志。若OH\_LOG\_IsLoggable接口返回true，则回调函数可获取到该条日志。 |
 | void OH\_LOG\_SetMinLogLevel(LogLevel level) | 设置应用日志打印的最低日志级别，用于拦截低级别日志打印。  **说明**：从API version 15开始，支持该接口。 |
 | void OH\_LOG\_SetLogLevel(LogLevel level, PreferStrategy prefer) | 设置当前应用程序进程的最低日志级别。可以配置不同的偏好策略。  **说明**：从API version 21开始，支持该接口。 |
 
-注意
+**注意** 
 
-hilog日志接口是非信号安全函数，禁止在信号处理函数中调用非信号安全的hilog日志接口。
+hilog日志接口是非信号安全函数，禁止在信号处理函数中调用非信号安全的HiLog日志接口。
 
 如果设置的日志级别低于[全局日志级别](hilog.md#查看和设置日志级别)，OH\_LOG\_SetMinLogLevel()设置不生效。
 
@@ -64,7 +64,7 @@ debug版本应用下，OH\_LOG\_SetMinLogLevel()和OH\_LOG\_SetLogLevel()函数�
   debug应用无隐私管控机制，使用上述任意隐私标识符打印日志，都可明文显示参数。
 * args：可以为0个或多个参数，是格式字符串中参数类型对应的参数列表。参数的数量、类型必须与格式字符串中的标识一一对应。
 
-说明
+**说明** 
 
 * OH\_LOG\_IsLoggable()和OH\_LOG\_Print()使用的domain、tag和level应保持一致。
 * OH\_LOG\_IsLoggable()返回值：如果指定的domain、tag、level日志可以打印则返回true；否则返回false。
@@ -83,67 +83,67 @@ debug版本应用下，OH\_LOG\_SetMinLogLevel()和OH\_LOG\_SetLogLevel()函数�
 
 1. 在CMakeLists.txt中新增libhilog\_ndk.z.so链接：
 
-   ```
-   1. target_link_libraries(entry PUBLIC libhilog_ndk.z.so)
+   ```txt
+   target_link_libraries(entry PUBLIC libhilog_ndk.z.so)
    ```
 2. 在源文件中包含hilog头文件，并定义domain、tag宏：
 
    ```
-   1. #include "hilog/log.h"
+   #include "hilog/log.h"
    ```
 
    ```
-   1. #undef LOG_DOMAIN
-   2. #undef LOG_TAG
-   3. #define LOG_DOMAIN 0x3200  // 全局domain宏，标识业务领域
-   4. #define LOG_TAG "MY_TAG"   // 全局tag宏，标识模块日志tag
+   #undef LOG_DOMAIN
+   #undef LOG_TAG
+   #define LOG_DOMAIN 0x3200  // 全局domain宏，标识业务领域
+   #define LOG_TAG "MY_TAG"   // 全局tag宏，标识模块日志tag
    ```
 3. 打印日志：
 
    ```
-   1. OH_LOG_INFO(LOG_APP, "Failed to visit path.");
-   2. // 设置应用日志最低打印级别，设置完成后，低于Warn级别的日志将无法打印
-   3. OH_LOG_SetMinLogLevel(LOG_WARN);
-   4. OH_LOG_INFO(LOG_APP, "this is an info level log");
-   5. OH_LOG_ERROR(LOG_APP, "this is an error level log");
-   6. // 设置应用日志PREFER_OPEN_LOG策略的最低打印级别，设置完成后，不低于INFO级别的日志都可打印
-   7. OH_LOG_SetLogLevel(LOG_WARN, PREFER_OPEN_LOG);
-   8. OH_LOG_INFO(LOG_APP, "this is an another info level log");
-   9. OH_LOG_ERROR(LOG_APP, "this is an another error level log");
+   OH_LOG_INFO(LOG_APP, "Failed to visit path.");
+   // 设置应用日志最低打印级别，设置完成后，低于Warn级别的日志将无法打印
+   OH_LOG_SetMinLogLevel(LOG_WARN);
+   OH_LOG_INFO(LOG_APP, "this is an info level log");
+   OH_LOG_ERROR(LOG_APP, "this is an error level log");
+   // 设置应用日志PREFER_OPEN_LOG策略的最低打印级别，设置完成后，不低于INFO级别的日志都可打印
+   OH_LOG_SetLogLevel(LOG_WARN, PREFER_OPEN_LOG);
+   OH_LOG_INFO(LOG_APP, "this is an another info level log");
+   OH_LOG_ERROR(LOG_APP, "this is an another error level log");
    ```
 4. 输出结果：
 
-```
-1. 01-02 08:39:38.915   9012-9012     A03200/com.example.hilogDemo/MY_TAG  com.example.hilogDemo  I     Failed to visit path.
-2. 01-02 08:39:38.915   9012-9012     A03200/com.example.hilogDemo/MY_TAG  com.example.hilogDemo  E     this is an error level log
-3. 01-02 08:39:38.915   9012-9012     A03200/com.example.hilogDemo/MY_TAG  com.example.hilogDemo  I     this is an another info level log
-4. 01-02 08:39:38.915   9012-9012     A03200/com.example.hilogDemo/MY_TAG  com.example.hilogDemo  E     this is an another error level log
+```txt
+   01-02 08:39:38.915   9012-9012     A03200/com.example.hilogDemo/MY_TAG  com.example.hilogDemo  I     Failed to visit path.
+   01-02 08:39:38.915   9012-9012     A03200/com.example.hilogDemo/MY_TAG  com.example.hilogDemo  E     this is an error level log
+   01-02 08:39:38.915   9012-9012     A03200/com.example.hilogDemo/MY_TAG  com.example.hilogDemo  I     this is an another info level log
+   01-02 08:39:38.915   9012-9012     A03200/com.example.hilogDemo/MY_TAG  com.example.hilogDemo  E     this is an another error level log
 ```
 
 ### 日志回调接口使用示例
 
-注意
+**注意** 
 
-1.在回调函数中禁止递归调用hilog接口，否则会导致循环调用问题。
+1.在回调函数中禁止递归调用HiLog接口，否则会导致循环调用问题。
 
 2.一个进程只需注册一次回调函数，若多次注册，以最后一次注册的回调函数为准。
 
 ```
-1. #include "hilog/log.h"
+#include "hilog/log.h"
 
-3. // 回调函数，开发者自定义的日志处理函数
-4. void MyHiLog(const LogType type, const LogLevel level, const unsigned int domain, const char *tag, const char *msg)
-5. {
-6. // user-defined to handle your log, such as redirect/filter
-7. // 注意: 在回调函数中禁止递归调用hilog接口，否则会导致循环调用问题。
-8. }
+// 回调函数，开发者自定义的日志处理函数
+void MyHiLog(const LogType type, const LogLevel level, const unsigned int domain, const char *tag, const char *msg)
+{
+    // user-defined to handle your log, such as redirect/filter
+    // 注意: 在回调函数中禁止递归调用HiLog接口，否则会导致循环调用问题。
+}
 
-10. static void Test(void)
-11. {
-12. // 1.注册回调接口
-13. OH_LOG_SetCallback(MyHiLog);
-
-15. // 2.调用hilog接口打印日志，日志内容会输出到hilog，同时通过回调返回给MyHiLog，开发者可以在MyHiLog中自行处理日志
-16. OH_LOG_INFO(LOG_APP, "hello world");
-17. }
+static void Test(void)
+{
+   // 1.注册回调接口
+   OH_LOG_SetCallback(MyHiLog);
+    
+   // 2.调用HiLog接口打印日志，日志内容会输出到HiLog，同时通过回调返回给MyHiLog，开发者可以在MyHiLog中自行处理日志
+   OH_LOG_INFO(LOG_APP, "hello world");
+}
 ```

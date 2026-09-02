@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-memory-bas
 title: 内存基础知识
 breadcrumb: 最佳实践 > 性能 > 性能分析 > 分析内存占用问题 > 内存基础知识
 category: best-practices
-scraped_at: 2026-04-29T14:13:23+08:00
+scraped_at: 2026-09-02T15:03:21+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:6056d52eb2b2b0361f7b1d1b909d4b09697fb1fdd1444496116f094eca660138
+content_hash: sha256:4f2627cd2c92e4662be1a2b3863468e551650e8d40633f99ad799675aaca1555
 ---
 
 ## 基本概念
 
 **内存组成关系图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/JUAAt4E7TcOOkk0ZCrsKqg/zh-cn_image_0000002404124981.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/p58PCWCjRu2iQkz4Z0b_6Q/zh-cn_image_0000002404124981.png "点击放大")
 
 上图展示了内存基础的组成部分（RSS，PSS，VSS，物理内存，Swap）之间的关系, 下表对内存各组成部分进行详细介绍。
 
@@ -35,7 +35,7 @@ content_hash: sha256:6056d52eb2b2b0361f7b1d1b909d4b09697fb1fdd1444496116f094eca6
 | 匿名页（Anonymous Page） | 不对应任何具体文件的数据页，通常由堆、栈或mmap分配而来。 | 如果没有足够的物理内存，可能会被交换出去。 | - |
 | 文件页（File backed Page） | 对应于某个文件的数据页，可以直接从文件系统恢复。 | 可以直接丢弃并重新加载，无需保存到交换分区。 | - |
 
-说明
+**说明** 
 
 私有内存是指由特定进程独立拥有、供其独占使用且无法被其他进程直接共享或修改的物理内存区域。
 
@@ -47,7 +47,7 @@ content_hash: sha256:6056d52eb2b2b0361f7b1d1b909d4b09697fb1fdd1444496116f094eca6
 
 **应用内存组成图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/QRrKcVouRumz2ReQhHQQqw/zh-cn_image_0000002370405428.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/jtp7sPT3Ta6O1FHXhltCqw/zh-cn_image_0000002370405428.png "点击放大")
 
 上图展示了应用进程映射的虚拟内存空间基本的组成部分，下表对内存各组成部分进行详细介绍。
 

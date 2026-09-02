@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-t
 title: "@ohos.multimodalInput.touchEvent (触屏输入事件)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.touchEvent (触屏输入事件)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:15+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:dd874ef0995f222e6eb865612bd2e301df4a6a4cbe504284246e767e81b7bb24
+scraped_at: 2026-09-02T15:02:08+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:538ba96f218815897a8fc89042eae7c74c178f883d8379cb0b7abdf3529ae37b
 ---
 
 设备上报的触屏输入事件，继承自[InputEvent](js-apis-inputevent.md)。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { Action,ToolType,SourceType,Touch,TouchEvent } from '@kit.InputKit';
+```js
+import { KeyAction,ToolType,SourceType,Touch,TouchEvent } from '@kit.InputKit';
 ```
 
 ## Action
-
-PhonePC/2in1TabletTVWearable
 
 触屏输入事件类型。
 
@@ -36,10 +32,11 @@ PhonePC/2in1TabletTVWearable
 | DOWN | 1 | 触屏按下。 |
 | MOVE | 2 | 触屏移动。 |
 | UP | 3 | 触屏抬起。 |
+| PULL\_DOWN | 4 | 触屏开始拖拽。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| PULL\_MOVE | 5 | 触屏拖拽移动。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| PULL\_UP | 6 | 触屏结束拖拽。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## ToolType
-
-PhonePC/2in1TabletTVWearable
 
 操作触屏的工具类型。
 
@@ -58,9 +55,7 @@ PhonePC/2in1TabletTVWearable
 
 ## SourceType
 
-PhonePC/2in1TabletTVWearable
-
-触屏来源的设备类型，当前仅支持触摸屏、触控板类型上报。
+触屏来源的设备类型，当前支持触屏、手写笔、触控板类型上报。
 
 **系统能力：** SystemCapability.MultimodalInput.Input.Core
 
@@ -72,8 +67,6 @@ PhonePC/2in1TabletTVWearable
 
 ## Touch
 
-PhonePC/2in1TabletTVWearable
-
 触屏点信息。
 
 **系统能力：** SystemCapability.MultimodalInput.Input.Core
@@ -81,29 +74,27 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id | number | 否 | 否 | 触屏输入事件ID。 |
-| pressedTime | number | 否 | 否 | 按下时间戳，单位：μs。 |
-| screenX | number | 否 | 否 | 该触屏输入事件以指定屏幕左上角为原点的相对坐标系的X坐标。当前仅支持整数。 |
-| screenY | number | 否 | 否 | 该触屏输入事件以指定屏幕左上角为原点的相对坐标系的Y坐标。当前仅支持整数。 |
-| windowX | number | 否 | 否 | 触屏所在窗口左上角为原点的相对坐标系的X坐标。当前仅支持整数。 |
-| windowY | number | 否 | 否 | 触屏所在窗口左上角为原点的相对坐标系的Y坐标。当前仅支持整数。 |
+| pressedTime | number | 否 | 否 | 按下时间戳，表示系统启动运行至今逝去的微秒数，单位为微秒（μs）。 |
+| screenX | number | 否 | 否 | 该触屏输入事件以指定屏幕左上角为原点的相对坐标系的X坐标。当前仅支持整数，单位为像素（px）。 |
+| screenY | number | 否 | 否 | 该触屏输入事件以指定屏幕左上角为原点的相对坐标系的Y坐标。当前仅支持整数，单位为像素（px）。 |
+| windowX | number | 否 | 否 | 触屏所在窗口左上角为原点的相对坐标系的X坐标。当前仅支持整数，单位为像素（px）。 |
+| windowY | number | 否 | 否 | 触屏所在窗口左上角为原点的相对坐标系的Y坐标。当前仅支持整数，单位为像素（px）。 |
 | pressure | number | 否 | 否 | 压力值，取值范围是[0.0, 1.0]，0.0表示不支持。 |
-| width | number | 否 | 否 | 触屏区域的宽度。当前仅支持整数。 |
-| height | number | 否 | 否 | 触屏区域的高度。当前仅支持整数。 |
-| tiltX | number | 否 | 否 | 相对YZ平面的角度，取值的范围[-90, 90]，其中正值是向右倾斜。 |
-| tiltY | number | 否 | 否 | 相对XZ平面的角度，取值的范围[-90, 90]，其中正值是向下倾斜。 |
-| toolX | number | 否 | 否 | 工具区域的中心点以指定屏幕左上角为原点的相对坐标系的X坐标。当前仅支持整数。 |
-| toolY | number | 否 | 否 | 工具区域的中心点以指定屏幕左上角为原点的相对坐标系的Y坐标。当前仅支持整数。 |
-| toolWidth | number | 否 | 否 | 工具区域宽度。当前仅支持整数。 |
-| toolHeight | number | 否 | 否 | 工具区域高度。当前仅支持整数。 |
-| rawX | number | 否 | 否 | 输入设备上的X坐标。当前仅支持整数。 |
-| rawY | number | 否 | 否 | 输入设备上的Y坐标。当前仅支持整数。 |
+| width | number | 否 | 否 | 触屏区域的宽度，单位为像素（px）。当前仅支持整数。 |
+| height | number | 否 | 否 | 触屏区域的高度，单位为像素（px）。当前仅支持整数。 |
+| tiltX | number | 否 | 否 | 相对YZ平面的角度，单位为度，取值的范围[-90, 90]，其中正值是向右倾斜。 |
+| tiltY | number | 否 | 否 | 相对XZ平面的角度，单位为度，取值的范围[-90, 90]，其中正值是向下倾斜。 |
+| toolX | number | 否 | 否 | 工具区域的中心点以指定屏幕左上角为原点的相对坐标系的X坐标。当前仅支持整数，单位为像素（px）。 |
+| toolY | number | 否 | 否 | 工具区域的中心点以指定屏幕左上角为原点的相对坐标系的Y坐标。当前仅支持整数，单位为像素（px）。 |
+| toolWidth | number | 否 | 否 | 工具区域宽度，单位为像素（px）。当前仅支持整数。 |
+| toolHeight | number | 否 | 否 | 工具区域高度，单位为像素（px）。当前仅支持整数。 |
+| rawX | number | 否 | 否 | 输入设备上的X坐标。当前仅支持整数，单位为像素（px）。 |
+| rawY | number | 否 | 否 | 输入设备上的Y坐标。当前仅支持整数，单位为像素（px）。 |
 | toolType | [ToolType](js-apis-touchevent.md#tooltype) | 否 | 否 | 工具类型。 |
-| globalX20+ | number | 否 | 是 | 该触屏输入事件以主屏左上角为原点的全局坐标系的X坐标。作为出参时，由系统上报。 |
-| globalY20+ | number | 否 | 是 | 该触屏输入事件以主屏左上角为原点的全局坐标系的Y坐标。作为出参时，由系统上报。 |
+| globalX20+ | number | 否 | 是 | 该触屏输入事件以主屏左上角为原点的全局坐标系的X坐标，单位为像素（px）。作为出参时，由系统上报。 |
+| globalY20+ | number | 否 | 是 | 该触屏输入事件以主屏左上角为原点的全局坐标系的Y坐标，单位为像素（px）。作为出参时，由系统上报。 |
 
 ## TouchEvent
-
-PhonePC/2in1TabletTVWearable
 
 触屏输入事件。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-mass-poin
 title: 海量点图层
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 海量点图层
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:68af310cec0fa5dec18d6e46fbf8b21c5b20477079d66805ce5d3a528cd762e0
+scraped_at: 2026-09-02T14:59:58+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:22baf3b8bac8fa66ca610dae5d0904adb9905cb425b1066fc3b0c1410a2f6179
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:68af310cec0fa5dec18d6e46fbf8b21c5b20477079d66805ce5d3a528cd
 
 6.0.0(20)开始，支持海量点图层功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/7l-nfR9LQUO5gVbk7Viruw/zh-cn_image_0000002558765548.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/gyjd_XqzRz2YYBQBe6iQaw/zh-cn_image_0000002736314175.jpg "点击放大")
 
 ## 接口说明
 
@@ -32,91 +32,97 @@ content_hash: sha256:68af310cec0fa5dec18d6e46fbf8b21c5b20477079d66805ce5d3a528cd
 
 1. 导入相关模块。
 
-   ```
-   1. import { mapCommon, map, MapComponent } from '@kit.MapKit';
-   2. import { AsyncCallback } from '@kit.BasicServicesKit';
+   ```typescript
+   import { mapCommon, map, MapComponent } from '@kit.MapKit';
+   import { AsyncCallback } from '@kit.BasicServicesKit';
    ```
 2. 绘制海量点图层。
 
-   ```
-   1. @Entry
-   2. @Component
-   3. struct MassPointOverlayDemo {
-   4. private TAG = 'OHMapSDK_MassPointOverlayDemo';
-   5. private mapOption?: mapCommon.MapOptions;
-   6. private mapController?: map.MapComponentController;
-   7. private callback?: AsyncCallback<map.MapComponentController>;
-   8. private massPointOverlay?: map.MassPointOverlay;
-   9. @State currentTimestamp: number = 0;
-   10. @State mapHeight: string = '65%'
-   11. @State mapWidth: string = '100%'
-   12. aboutToAppear(): void {
-   13. this.mapOption = {
-   14. position: {
-   15. target: {
-   16. latitude: 32.11111,
-   17. longitude: 118.11111
-   18. },
-   19. zoom: 9
-   20. },
-   21. scaleControlsEnabled: true
-   22. }
-   23. this.callback = async (err, mapController) => {
-   24. if (!err) {
-   25. this.mapController = mapController;
-   26. let items: mapCommon.MassPointItem[] = [];
-   27. for (let i = 0; i < 1000; i++) {
-   28. // 将海量点存入items
-   29. items.push({
-   30. itemId: 'test' + i,
-   31. position: {
-   32. longitude: 118.11111 + Math.random() * 1 - 0.5,
-   33. latitude: 32.11111 + Math.random() * 1 - 0.5
-   34. },
-   35. snippet: 'test' + i,
-   36. title: 'test' + i
-   37. })
-   38. }
-   39. let params: mapCommon.MassPointOverlayParams = {
-   40. id: 'test',
-   41. items: items,
-   42. // 图标存放在resources/rawfile，icon参数传入rawfile文件夹下的相对路径
-   43. icon: 'icon/maps_blue_dot.png'
-   44. }
-   45. try {
-   46. this.massPointOverlay = await this.mapController?.addMassPointOverlay(params);
-   47. } catch (e) {
-   48. console.error(this.TAG, `code:${e.code}, message:${e.message}`);
-   49. }
-   50. } else {
-   51. console.error(`Failed to initialize the map, code is：${err.code}, message is ${err.message}`);
-   52. }
-   53. }
-   54. }
-   55. build() {
-   56. Stack() {
-   57. Column() {
-   58. MapComponent({ mapOptions: this.mapOption, mapCallback: this.callback, })
-   59. .width(this.mapWidth)
-   60. .height(this.mapHeight);
-   61. }.width('100%')
-   62. }.height('100%')
-   63. }
-   64. }
+   ```typescript
+   @Entry
+   @Component
+   struct MapMassPointDemo {
+     // ...
+     private TAG = 'OHMapSDK_MassPointOverlayDemo';
+     private mapOptions?: mapCommon.MapOptions;
+     private mapController?: map.MapComponentController;
+     private callback?: AsyncCallback<map.MapComponentController>;
+     private massPointOverlay?: map.MassPointOverlay;
+     @State currentTimestamp: number = 0;
+     @State mapHeight: string = '65%'
+     @State mapWidth: string = '100%'
+
+     aboutToAppear(): void {
+       this.mapOptions = {
+         position: {
+           target: {
+             latitude: 32.11111,
+             longitude: 118.11111
+           },
+           zoom: 9
+         },
+         scaleControlsEnabled: true
+       }
+       this.callback = async (err, mapController) => {
+         if (!err) {
+           this.mapController = mapController;
+           let items: mapCommon.MassPointItem[] = [];
+           for (let i = 0; i < 1000; i++) {
+             // 将海量点存入items
+             items.push({
+               itemId: 'test' + i,
+               position: {
+                 longitude: 118.11111 + Math.random() * 1 - 0.5,
+                 latitude: 32.11111 + Math.random() * 1 - 0.5
+               },
+               snippet: 'test' + i,
+               title: 'test' + i
+             })
+           }
+           let params: mapCommon.MassPointOverlayParams = {
+             id: 'test',
+             items: items,
+             // 图标存放在resources/rawfile，icon参数传入rawfile文件夹下的相对路径
+             icon: 'icon/maps_blue_dot.png'
+           }
+           try {
+             this.massPointOverlay = await this.mapController?.addMassPointOverlay(params);
+           } catch (e) {
+             console.error(this.TAG, `code:${e.code}, message:${e.message}`);
+           }
+         } else {
+           console.error(`Failed to initialize the map, code is：${err.code}, message is ${err.message}`);
+         }
+       }
+     }
+
+     build() {
+       // ...
+         Stack() {
+           Column() {
+             MapComponent({ mapOptions: this.mapOptions, mapCallback: this.callback })
+               .width(this.mapWidth)
+               .height(this.mapHeight);
+           }.width('100%')
+         }.height('100%')
+
+         // ...
+     }
+   }
    ```
 
 ### 海量点点击事件
 
-```
-1. // 初始化地图组件的监听事件管理接口
-2. let mapEventManager = this.mapController?.getEventManager();
-3. let massCallback: map.MassPointOverlayCallback = (overlay, item) => {
-4. console.info(`overlayId:${overlay.getId()},item :${JSON.stringify(item)}`);
-5. }
-6. // 启动海量点点击事件监听
-7. mapEventManager.on('massPointOverlayClick', massCallback);
-8. // 停止海量点点击事件监听,传入指定callback
-9. mapEventManager.off('massPointOverlayClick', massCallback);
-10. // 停止所有海量点点击事件监听，无需传入callback
-11. mapEventManager.off('massPointOverlayClick');
+```typescript
+// 初始化地图组件的监听事件管理接口
+let mapEventManager = this.mapController?.getEventManager();
+let massCallback: map.MassPointOverlayCallback = (overlay, item) => {
+  console.info(`overlayId:${overlay.getId()},item :${JSON.stringify(item)}`);
+}
+// 启动海量点点击事件监听
+mapEventManager?.on('massPointOverlayClick', massCallback);
+// 停止海量点点击事件监听,传入指定callback
+mapEventManager?.off('massPointOverlayClick', massCallback);
+// 停止所有海量点点击事件监听，无需传入callback
+mapEventManager?.off('massPointOverlayClick');
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-a
 title: 人脸核身实人验证结果查询
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 通用接口 > 人脸核身实人验证 > 人脸核身实人验证结果查询
 category: harmonyos-references
-scraped_at: 2026-04-29T14:08:53+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:015a3729c178c8b013385c7fb3ca1ac2008ab910c1d6bcce6c21e5d376ada3e9
+scraped_at: 2026-09-02T14:53:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c4738d6201d1df26319ab5ce5344f1eb59e4fd2789c8336fcba903d8bc29c52f
 ---
 
 ## 功能介绍
@@ -45,15 +45,15 @@ content_hash: sha256:015a3729c178c8b013385c7fb3ca1ac2008ab910c1d6bcce6c21e5d376a
 
 ## 请求示例
 
-```
-1. POST /api/v1/realname/face-verification/result HTTP/1.1
-2. Content-Type: application/json;charset=UTF-8
-3. PayDevAuth: {"clientId":"10132120***","accessToken":"DQEBALZh0tlSKKiNDJ9lYYg0Du0EB3E6PvcGlFsyB*******************XR+k2EX8ry1IGdDUZG1PjfcWQ94xnK7w3ag==","traceId":"202305151026422776499","time":1684117602555, "developerSignKeyId":"76e5ee072756417a829201fa********************f9a292d23ca949202c3dac548120", "petalpaySignKeyId":"DEVELOPER_SIGN_EB48251AC36***", "headerSign":"u+H3F14Oe3fS34d32S9mGCES89XA7tSjp8+********************lOGS7eADFfw2E45WJu52vY5Ku4KGcSCnSeE6DiKs=", "bodySign":"y3DFDtDLXDBqDoItDgHmFJ343H57LKH6U5G7F/*******************asPj10iDUIFeHaszDFHpiHRT23LGHaxvHJKta6J5UxIUmApL+wGdV/juGEvQ="}
-4. Accept: application/json
-5. {
-6. "verifyResultId": "12407091401520894056950***"
-7. "openId": "88e9eae22447d7a138357cbf0af2d9a3a84819ec18419631c*******************2b9cc4e33ad29e2048318b47ec98be41cecdd4e153e6216a6bd60851"
-8. }
+```json
+POST /api/v1/realname/face-verification/result HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+PayDevAuth: {"clientId":"10132120***","accessToken":"DQEBALZh0tlSKKiNDJ9lYYg0Du0EB3E6PvcGlFsyB*******************XR+k2EX8ry1IGdDUZG1PjfcWQ94xnK7w3ag==","traceId":"202305151026422776499","time":1684117602555, "developerSignKeyId":"76e5ee072756417a829201fa********************f9a292d23ca949202c3dac548120", "petalpaySignKeyId":"DEVELOPER_SIGN_EB48251AC36***", "headerSign":"u+H3F14Oe3fS34d32S9mGCES89XA7tSjp8+********************lOGS7eADFfw2E45WJu52vY5Ku4KGcSCnSeE6DiKs=", "bodySign":"y3DFDtDLXDBqDoItDgHmFJ343H57LKH6U5G7F/*******************asPj10iDUIFeHaszDFHpiHRT23LGHaxvHJKta6J5UxIUmApL+wGdV/juGEvQ="}
+Accept: application/json
+{
+  "verifyResultId": "12407091401520894056950***",
+  "openId": "88e9eae22447d7a138357cbf0af2d9a3a84819ec18419631c*******************2b9cc4e33ad29e2048318b47ec98be41cecdd4e153e6216a6bd60851"
+}
 ```
 
 ## 响应参数
@@ -77,15 +77,15 @@ content_hash: sha256:015a3729c178c8b013385c7fb3ca1ac2008ab910c1d6bcce6c21e5d376a
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json; charset=UTF-8
-3. {
-4. "resultCode": "000000",
-5. "resultDesc": "Success.",
-6. "sign": "MEQCIEIWzdpziRyTi8vhwWHFu********************0YAMabeCgTDG77e+2XJItvq/ZkIcCN5/B20pQ==",
-7. "verifyResult": true
-8. }
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+{
+  "resultCode": "000000",
+  "resultDesc": "Success.",
+  "sign": "MEQCIEIWzdpziRyTi8vhwWHFu********************0YAMabeCgTDG77e+2XJItvq/ZkIcCN5/B20pQ==",
+  "verifyResult": true
+}
 ```
 
 ## 错误码

@@ -1,16 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-condition-variable-h
 title: condition_variable.h
-breadcrumb: API参考 > 系统 > 基础功能 > Function Flow Runtime Kit > C API > 头文件 > condition_variable.h
+breadcrumb: API参考 > 系统 > 基础功能 > Function Flow Runtime Kit（任务并发调度服务） > C API > 头文件 > condition_variable.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:05+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:daf982f31801fb966193a6fdaa2e7b55beb2ef23a2870589ded2ad951ae69173
+scraped_at: 2026-09-02T15:02:07+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:bdcfcd71c396f5083d2540f07fed5ce0c3a825fd52fa2844567a3510d82a78a0
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明条件变量的C接口。
 
@@ -26,36 +24,28 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
-| [FFRT\_C\_API int ffrt\_cond\_init(ffrt\_cond\_t\* cond, const ffrt\_condattr\_t\* attr)](capi-condition-variable-h.md#ffrt_cond_init) | 初始化条件变量。 |
-| [FFRT\_C\_API int ffrt\_cond\_signal(ffrt\_cond\_t\* cond)](capi-condition-variable-h.md#ffrt_cond_signal) | 唤醒阻塞在条件变量上的一个任务。 |
-| [FFRT\_C\_API int ffrt\_cond\_broadcast(ffrt\_cond\_t\* cond)](capi-condition-variable-h.md#ffrt_cond_broadcast) | 唤醒阻塞在条件变量上的所有任务。 |
-| [FFRT\_C\_API int ffrt\_cond\_wait(ffrt\_cond\_t\* cond, ffrt\_mutex\_t\* mutex)](capi-condition-variable-h.md#ffrt_cond_wait) | 条件变量等待函数，条件变量不满足时阻塞当前任务。 |
-| [FFRT\_C\_API int ffrt\_cond\_timedwait(ffrt\_cond\_t\* cond, ffrt\_mutex\_t\* mutex, const struct timespec\* time\_point)](capi-condition-variable-h.md#ffrt_cond_timedwait) | 条件变量超时等待函数，条件变量不满足时阻塞当前任务，超时等待返回。如果达到最大等待时间点时没有调用ffrt\_cond\_signal或ffrt\_cond\_broadcast函数解除线程阻塞，则线程会被自动解除阻塞。 |
-| [FFRT\_C\_API int ffrt\_cond\_destroy(ffrt\_cond\_t\* cond)](capi-condition-variable-h.md#ffrt_cond_destroy) | 销毁条件变量。 |
+| [FFRT\_C\_API int ffrt\_cond\_init(ffrt\_cond\_t\* cond, const ffrt\_condattr\_t\* attr)](capi-condition-variable-h.md#ffrt_cond_init) | 初始化条件变量。该条件变量不再使用时，必须通过[ffrt\_cond\_destroy](capi-condition-variable-h.md#ffrt_cond_destroy)销毁。 |
+| [FFRT\_C\_API int ffrt\_cond\_signal(ffrt\_cond\_t\* cond)](capi-condition-variable-h.md#ffrt_cond_signal) | 唤醒至少一个阻塞在条件变量上的线程。 |
+| [FFRT\_C\_API int ffrt\_cond\_broadcast(ffrt\_cond\_t\* cond)](capi-condition-variable-h.md#ffrt_cond_broadcast) | 唤醒当前阻塞在条件变量上的所有线程。 |
+| [FFRT\_C\_API int ffrt\_cond\_wait(ffrt\_cond\_t\* cond, ffrt\_mutex\_t\* mutex)](capi-condition-variable-h.md#ffrt_cond_wait) | 将调用线程阻塞在条件变量上。调用线程在进入时必须持有该mutex。阻塞期间会原子地释放该mutex，并在函数返回前重新获取，因此调用方在唤醒时重新获得mutex的所有权。线程由另一个线程调用[ffrt\_cond\_signal](capi-condition-variable-h.md#ffrt_cond_signal)或[ffrt\_cond\_broadcast](capi-condition-variable-h.md#ffrt_cond_broadcast)唤醒。调用方需在唤醒后重新检查谓词，以防止虚假唤醒。 |
+| [FFRT\_C\_API int ffrt\_cond\_timedwait(ffrt\_cond\_t\* cond, ffrt\_mutex\_t\* mutex, const struct timespec\* time\_point)](capi-condition-variable-h.md#ffrt_cond_timedwait) | 将调用线程阻塞至给定的时间点。如果在到达time\_point前没有调用[ffrt\_cond\_signal](capi-condition-variable-h.md#ffrt_cond_signal)或[ffrt\_cond\_broadcast](capi-condition-variable-h.md#ffrt_cond_broadcast)来唤醒线程，线程会被自动唤醒。 |
+| [FFRT\_C\_API int ffrt\_cond\_destroy(ffrt\_cond\_t\* cond)](capi-condition-variable-h.md#ffrt_cond_destroy) | 销毁条件变量。该条件变量必须已通过[ffrt\_cond\_init](capi-condition-variable-h.md#ffrt_cond_init)初始化，且在调用本接口时不得被任何线程引用。 |
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### ffrt\_cond\_init()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. FFRT_C_API int ffrt_cond_init(ffrt_cond_t* cond, const ffrt_condattr_t* attr)
+```c
+FFRT_C_API int ffrt_cond_init(ffrt_cond_t* cond, const ffrt_condattr_t* attr)
 ```
 
 **描述**
 
-初始化条件变量。
+初始化条件变量。该条件变量不再使用时，必须通过[ffrt\_cond\_destroy](capi-condition-variable-h.md#ffrt_cond_destroy)销毁。
 
 **起始版本：** 10
 
@@ -63,26 +53,24 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [ffrt\_cond\_t](capi-ffrt-ffrt-cond-t.md)\* cond | 条件变量指针。 |
-| [const ffrt\_condattr\_t](capi-ffrt-ffrt-condattr-t.md)\* attr | 条件变量属性指针。 |
+| [ffrt\_cond\_t](capi-ffrt-ffrt-cond-t.md)\* cond | 指向条件变量的指针。 |
+| [const ffrt\_condattr\_t](capi-ffrt-ffrt-condattr-t.md)\* attr | 指向条件变量属性的指针。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| FFRT\_C\_API int | 初始化条件变量成功返回ffrt\_success，  初始化条件变量失败返回ffrt\_error\_inval。 |
+| FFRT\_C\_API int | 条件变量初始化成功时返回ffrt\_success；  否则返回ffrt\_error\_inval。 |
 
 ### ffrt\_cond\_signal()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. FFRT_C_API int ffrt_cond_signal(ffrt_cond_t* cond)
+```c
+FFRT_C_API int ffrt_cond_signal(ffrt_cond_t* cond)
 ```
 
 **描述**
 
-唤醒阻塞在条件变量上的一个任务。
+唤醒至少一个阻塞在条件变量上的线程。
 
 **起始版本：** 10
 
@@ -90,25 +78,27 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [ffrt\_cond\_t](capi-ffrt-ffrt-cond-t.md)\* cond | 条件变量指针。 |
+| [ffrt\_cond\_t](capi-ffrt-ffrt-cond-t.md)\* cond | 指向条件变量的指针。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| FFRT\_C\_API int | 唤醒成功返回ffrt\_success，  唤醒失败返回ffrt\_error\_inval。 |
+| FFRT\_C\_API int | 线程被唤醒时返回ffrt\_success；  否则返回ffrt\_error\_inval。 |
+
+**参考：**
+
+[ffrt\_cond\_wait](capi-condition-variable-h.md#ffrt_cond_wait)
 
 ### ffrt\_cond\_broadcast()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. FFRT_C_API int ffrt_cond_broadcast(ffrt_cond_t* cond)
+```c
+FFRT_C_API int ffrt_cond_broadcast(ffrt_cond_t* cond)
 ```
 
 **描述**
 
-唤醒阻塞在条件变量上的所有任务。
+唤醒当前阻塞在条件变量上的所有线程。
 
 **起始版本：** 10
 
@@ -116,25 +106,27 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [ffrt\_cond\_t](capi-ffrt-ffrt-cond-t.md)\* cond | 条件变量指针。 |
+| [ffrt\_cond\_t](capi-ffrt-ffrt-cond-t.md)\* cond | 指向条件变量的指针。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| FFRT\_C\_API int | 唤醒成功返回ffrt\_success，  唤醒失败返回ffrt\_error\_inval。 |
+| FFRT\_C\_API int | 线程被唤醒时返回ffrt\_success；  否则返回ffrt\_error\_inval。 |
+
+**参考：**
+
+[ffrt\_cond\_wait](capi-condition-variable-h.md#ffrt_cond_wait)
 
 ### ffrt\_cond\_wait()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. FFRT_C_API int ffrt_cond_wait(ffrt_cond_t* cond, ffrt_mutex_t* mutex)
+```c
+FFRT_C_API int ffrt_cond_wait(ffrt_cond_t* cond, ffrt_mutex_t* mutex)
 ```
 
 **描述**
 
-条件变量等待函数，条件变量不满足时阻塞当前任务。
+将调用线程阻塞在条件变量上。调用线程在进入时必须持有该mutex。阻塞期间会原子地释放该mutex，并在函数返回前重新获取，因此调用方在唤醒时重新获得mutex的所有权。线程由另一个线程调用[ffrt\_cond\_signal](capi-condition-variable-h.md#ffrt_cond_signal)或[ffrt\_cond\_broadcast](capi-condition-variable-h.md#ffrt_cond_broadcast)唤醒。调用方需在唤醒后重新检查谓词，以防止虚假唤醒。
 
 **起始版本：** 10
 
@@ -142,26 +134,32 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [ffrt\_cond\_t](capi-ffrt-ffrt-cond-t.md)\* cond | 条件变量指针。 |
-| [ffrt\_mutex\_t](capi-ffrt-ffrt-mutex-t.md)\* mutex | mutex指针。 |
+| [ffrt\_cond\_t](capi-ffrt-ffrt-cond-t.md)\* cond | 指向条件变量的指针。 |
+| [ffrt\_mutex\_t](capi-ffrt-ffrt-mutex-t.md)\* mutex | 指向调用线程持有的mutex的指针。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| FFRT\_C\_API int | 等待后被成功唤醒返回ffrt\_success，  等待失败返回ffrt\_error\_inval。 |
+| FFRT\_C\_API int | 阻塞后被成功唤醒时返回ffrt\_success；  否则返回ffrt\_error\_inval。 |
+
+**参考：**
+
+[ffrt\_cond\_timedwait](capi-condition-variable-h.md#ffrt_cond_timedwait)
+
+[ffrt\_cond\_signal](capi-condition-variable-h.md#ffrt_cond_signal)
+
+[ffrt\_cond\_broadcast](capi-condition-variable-h.md#ffrt_cond_broadcast)
 
 ### ffrt\_cond\_timedwait()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. FFRT_C_API int ffrt_cond_timedwait(ffrt_cond_t* cond, ffrt_mutex_t* mutex, const struct timespec* time_point)
+```c
+FFRT_C_API int ffrt_cond_timedwait(ffrt_cond_t* cond, ffrt_mutex_t* mutex, const struct timespec* time_point)
 ```
 
 **描述**
 
-条件变量超时等待函数，条件变量不满足时阻塞当前任务，超时等待返回。如果达到最大等待时间点时没有调用ffrt\_cond\_signal或ffrt\_cond\_broadcast函数解除线程阻塞，则线程会被自动解除阻塞。
+将调用线程阻塞至给定的时间点。如果在到达time\_point前没有调用[ffrt\_cond\_signal](capi-condition-variable-h.md#ffrt_cond_signal)或[ffrt\_cond\_broadcast](capi-condition-variable-h.md#ffrt_cond_broadcast)来唤醒线程，线程会被自动唤醒。
 
 **起始版本：** 10
 
@@ -169,27 +167,33 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [ffrt\_cond\_t](capi-ffrt-ffrt-cond-t.md)\* cond | 条件变量指针。 |
-| [ffrt\_mutex\_t](capi-ffrt-ffrt-mutex-t.md)\* mutex | mutex指针。 |
-| const struct timespec\* time\_point | 最大等待到的时间点，超过这个时间点等待返回。 |
+| [ffrt\_cond\_t](capi-ffrt-ffrt-cond-t.md)\* cond | 指向条件变量的指针。 |
+| [ffrt\_mutex\_t](capi-ffrt-ffrt-mutex-t.md)\* mutex | 指向mutex的指针。 |
+| const struct timespec\* time\_point | 等待到期的绝对时间点。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| FFRT\_C\_API int | 等待后被成功唤醒返回ffrt\_success，  等待超时返回ffrt\_error\_timedout，  等待失败ffrt\_error\_inval。 |
+| FFRT\_C\_API int | 阻塞后被成功唤醒时返回ffrt\_success；  未被唤醒且到达time\_point时返回ffrt\_error\_timedout；  cond、mutex或time\_point任一为null时返回ffrt\_error\_inval。 |
+
+**参考：**
+
+[ffrt\_cond\_wait](capi-condition-variable-h.md#ffrt_cond_wait)
+
+[ffrt\_cond\_signal](capi-condition-variable-h.md#ffrt_cond_signal)
+
+[ffrt\_cond\_broadcast](capi-condition-variable-h.md#ffrt_cond_broadcast)
 
 ### ffrt\_cond\_destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. FFRT_C_API int ffrt_cond_destroy(ffrt_cond_t* cond)
+```c
+FFRT_C_API int ffrt_cond_destroy(ffrt_cond_t* cond)
 ```
 
 **描述**
 
-销毁条件变量。
+销毁条件变量。该条件变量必须已通过[ffrt\_cond\_init](capi-condition-variable-h.md#ffrt_cond_init)初始化，且在调用本接口时不得被任何线程引用。
 
 **起始版本：** 10
 
@@ -197,10 +201,10 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [ffrt\_cond\_t](capi-ffrt-ffrt-cond-t.md)\* cond | 条件变量指针。 |
+| [ffrt\_cond\_t](capi-ffrt-ffrt-cond-t.md)\* cond | 指向条件变量的指针。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| FFRT\_C\_API int | 销毁条件变量成功返回ffrt\_success，  销毁条件变量失败返回ffrt\_error\_inval。 |
+| FFRT\_C\_API int | 条件变量销毁成功时返回ffrt\_success；  否则返回ffrt\_error\_inval。 |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web_full_scre
 title: Web组件支持视频沉浸式全屏播放
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 使用网页多媒体 > Web组件支持视频沉浸式全屏播放
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:27+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:b93f5deece4c379ccaf9e98299de7765982e959a590e1639b3262d13fee72287
+scraped_at: 2026-09-02T14:59:23+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:247240fa7a4e6ed9910941c5cc2060b217eca4c73d4fae07320260a67f71e6cd
 ---
 
 Web组件提供了视频进入全屏和退出全屏的事件功能，应用可通过监听这些事件实现进入和退出沉浸式全屏模式。
@@ -20,46 +20,166 @@ Web组件可通过[onFullScreenEnter](../harmonyos-references/arkts-basic-compon
 
 可见性[visibility](../harmonyos-references/ts-universal-attributes-visibility.md#visibility)是ArkUI提供的组件通用属性。开发者可通过设置组件属性visibility的不同值，控制组件的显隐状态。
 
+```typescript
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct ShortWebPage {
+  controller: webview.WebviewController = new webview.WebviewController();
+  CONSTANT_HEIGHT = 100;
+  @State isVisible: boolean = true; // 自定义标志位isVisible，来控制是否需要显示组件
+
+  build() {
+    Column() {
+      Text('TextTextTextText')
+        .width('100%')
+        .height(this.CONSTANT_HEIGHT)
+        .backgroundColor('#e1dede')
+        .visibility(this.isVisible ? Visibility.Visible :
+          Visibility.None) // 当isVisible标志位为true的时候，组件状态为可见，否则组件状态为不可见，不参与布局、不进行占位
+      Web({
+        src: $rawfile('FullScreen.html'), // 示例网址
+        controller: this.controller
+      })
+        .onFullScreenEnter((event) => {
+          console.info('onFullScreenEnter...');
+          // 当全屏的时候，isVisible标志位为false，组件状态为不可见，不参与布局、不进行占位
+          this.isVisible = false;
+        })
+        .onFullScreenExit(() => {
+          console.info('onFullScreenExit...');
+          // 当退出全屏的时候，isVisible标志位为true，组件状态为可见
+          this.isVisible = true;
+        })
+        .width('100%')
+        .height('100%')
+        .zIndex(10)
+        .zoomAccess(true)
+    }.width('100%').height('100%')
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
 
-3. @Entry
-4. @Component
-5. struct ShortWebPage {
-6. controller: webview.WebviewController = new webview.WebviewController();
-7. CONSTANT_HEIGHT = 100;
-8. @State marginTop: number = this.CONSTANT_HEIGHT;
-9. @State isVisible: boolean = true; // 自定义标志位isVisible，来控制是否需要显示组件
+## 常见问题
 
-11. build() {
-12. Column() {
-13. Text('TextTextTextText')
-14. .width('100%')
-15. .height(this.CONSTANT_HEIGHT)
-16. .backgroundColor('#e1dede') // 当isVisible标志位为true的时候，组件状态为可见，否则组件状态为不可见，不参与布局、不进行占位
-17. .visibility(this.isVisible ? Visibility.Visible :
-18. Visibility.None)
-19. Web({
-20. src: $rawfile('FullScreen.html'), // 示例网址
-21. controller: this.controller
-22. })
-23. .onFullScreenEnter((event) => {
-24. console.info('onFullScreenEnter...');
-25. // 当全屏的时候，isVisible标志位为false，组件状态为不可见，不参与布局、不进行占位
-26. this.isVisible = false;
-27. })
-28. .onFullScreenExit(() => {
-29. console.info('onFullScreenExit...');
-30. // 当退出全屏的时候，isVisible标志位为true，组件状态为可见
-31. this.isVisible = true;
-32. })
-33. .width('100%')
-34. .height('100%')
-35. .zIndex(10)
-36. .zoomAccess(true)
-37. }.width('100%').height('100%')
-38. }
-39. }
+全屏播放中可能会遇到的问题如下。
+
+### Web组件加载视频，点击全屏按钮怎么切换横竖屏显示
+
+**问题现象**
+
+播放视频时点击全屏按钮，进入沉浸式全屏界面，但不是横屏。
+
+**可能原因**
+
+Web组件全屏模式仅改变内容布局，不触发应用窗口方向切换。
+
+**解决措施**
+
+使用Web组件进入全屏模式时，窗口的横竖屏状态不会主动发生变化，需要通过Web组件的[onFullScreenEnter](../harmonyos-references/arkts-basic-components-web-events.md#onfullscreenenter9)和[onFullScreenExit](../harmonyos-references/arkts-basic-components-web-events.md#onfullscreenexit9)方法，监听Web组件进入和退出全屏模式事件。
+
+```typescript
+Web({ src:$rawfile("video.html"), controller: this.controller }) // 注意替换
+  .domStorageAccess(true)
+  .expandSafeArea([SafeAreaType.SYSTEM])
+  .onFullScreenEnter(() => {
+    this.isFullScreen = true;
+    this.changeOrientation(true);
+  })
+  .onFullScreenExit(() => {
+    this.isFullScreen = false;
+    this.changeOrientation(false);
+  })
 ```
 
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/ArkWebPictureInPicture/entry1/src/main/ets/pages/Index.ets#L16-L56)
+通过Window提供的setPreferredOrientation方法设置横竖屏。
+
+```typescript
+// 改变设备横竖屏状态
+private changeOrientation(isLandscape: boolean) {
+  // 获取UIAbility实例的上下文信息
+  let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  // 调用该接口手动改变设备横竖屏状态
+  window.getLastWindow(context).then((lastWindow) => {
+    lastWindow.setPreferredOrientation(isLandscape ? window.Orientation.LANDSCAPE : window.Orientation.PORTRAIT);
+  }).catch((err: Error) => {
+    console.error(`获取窗口失败: ${err.message}`);
+  });
+}
+```
+
+自定义侧滑操作时，判断当前视频是否处于全屏状态，若处于全屏状态下则先执行侧滑退出全屏的逻辑。
+
+```typescript
+ onBackPress(): boolean | void {
+    if (this.isFullScreen) {
+      this.isFullScreen = false;
+      this.changeOrientation(false);
+      return true;
+    } else {
+      router.back();
+      return true;
+    }
+  }
+```
+
+完整示例：
+
+```typescript
+import { webview } from '@kit.ArkWeb';
+import { window, router } from '@kit.ArkUI';
+import { common } from '@kit.AbilityKit';
+
+@Entry
+@Component
+struct WebVideo {
+  controller: webview.WebviewController = new webview.WebviewController();
+  @State isFullScreen: boolean = false;
+
+  // 改变设备横竖屏状态
+  private changeOrientation(isLandscape: boolean) {
+  // 获取UIAbility实例的上下文信息
+  let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  // 调用该接口手动改变设备横竖屏状态
+    window.getLastWindow(context).then((lastWindow) => {
+      lastWindow.setPreferredOrientation(isLandscape ? window.Orientation.LANDSCAPE : window.Orientation.PORTRAIT);
+    }).catch((err: Error) => {
+      console.error(`获取窗口失败: ${err.message}`);
+    });
+  }
+
+  onBackPress(): boolean | void {
+    if (this.isFullScreen) {
+      this.isFullScreen = false;
+      this.changeOrientation(false);
+      return true;
+    } else {
+      router.back();
+      return true;
+    }
+  }
+
+  build() {
+    Column() {
+      Web({
+        src:$rawfile('video.html'), // 需要替换
+        controller: this.controller
+      })
+        .domStorageAccess(true)
+        .expandSafeArea([SafeAreaType.SYSTEM])
+        .onFullScreenEnter(() => {
+          this.isFullScreen = true;
+          this.changeOrientation(true);
+        })
+        .onFullScreenExit(() => {
+          this.isFullScreen = false;
+          this.changeOrientation(false);
+        })
+    }
+    .height('100%')
+    .width('100%')
+    .backgroundColor('#000000')
+  }
+}
+```

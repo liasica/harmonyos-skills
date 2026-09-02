@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-modular-de
 title: 模块化设计
 breadcrumb: 最佳实践 > 应用架构 > 模块化设计
 category: best-practices
-scraped_at: 2026-04-29T14:10:17+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:25bc23a3cc97dacaf22bfc9d9aea9adb46a5e0383ba30ad8276a7c50de50d840
+scraped_at: 2026-09-02T15:03:15+08:00
+doc_updated_at: 2026-05-18
+content_hash: sha256:448322baad621185fdf4edb3aad969bee2d22afa4d354a6e500f62a9ead093f0
 ---
 
 ## 模块化设计理念
@@ -61,7 +61,7 @@ HarmonyOS应用的业务逻辑需要通过[UIAbility组件](../harmonyos-guides/
 对于大型软件，不同业务和基础能力由多个团队开发，各团队之间需要代码仓隔离。如果某个或若干个HAR工程模块由某个团队负责，又想代码仓隔离，可以在独立工程中开发这些HAR，并通过公司私有的OHPM仓发布和集成编译产物。如下图所示。
 
 **图1** 多工程合作模式  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/RKgMIBnlQoiQ9rsBB1PZGw/zh-cn_image_0000002462347089.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/2NYKq4WlSOe4VEIfyjpDxA/zh-cn_image_0000002462347089.png "点击放大")
 
 这部分可以发布到OHPM仓的模块，叫做共享模块，可以将公共能力共享给多个应用使用，如公司内部多个应用使用某个公共能力网络库；或者也可以将该公共能力封装成库贡献给社区，给其他应用集成使用，这样的话这个模块也只能是HAR模块。
 
@@ -89,7 +89,7 @@ HarmonyOS应用的业务逻辑需要通过[UIAbility组件](../harmonyos-guides/
 在多HAP/HSP引用相同HAR包时，由于共享包的动态和静态差异，HAR包中的单例可能失效，影响应用冷启动性能。
 
 **图2** HAP包和HSP包分别引用相同HAR包  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/5h9xTZJsQ9mzEoxpe9vX2A/zh-cn_image_0000002428868504.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/BgCvh9kMT_WDEuZYpOes_A/zh-cn_image_0000002428868504.png "点击放大")
 
 如上图所示，工程内包含三个模块：HAP包作为应用主入口模块，HSP包作为应用主界面显示模块，HAR\_COMMON集成了所有通用工具类，其中funcResult是func方法的执行结果。
 
@@ -98,72 +98,62 @@ HarmonyOS应用的业务逻辑需要通过[UIAbility组件](../harmonyos-guides/
 仅从性能角度考虑，可以采用以下方式进行修改，以缩短冷启动阶段的耗时。
 
 **图3** 切换为HAP包和HAR包分别引用相同HAR包  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/dPlI3SElTUWBeR7bnp2tBQ/zh-cn_image_0000002462467345.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/M4bmF-zkTNubv_etpcgefQ/zh-cn_image_0000002462467345.png "点击放大")
 
-说明
+**说明** 
 
 * 在多HAP/HSP引用相同HAR包的情况下，如果HSP包和HAR包均能满足业务需求，建议将HSP包改为HAR包。
 * 若使用的HSP为[集成态HSP](../harmonyos-guides/integrated-hsp.md)，可跳过该优化方案。
 
 1. 在被引用HAR\_COMMON包中写入功能示例。
 
+   ```typescript
+   // har_common/src/main/ets/utils/Utils.ets
+   const LARGE_NUMBER = 100000000;
+
+   function func(): number {
+     let count = 0;
+     while (count < LARGE_NUMBER) {
+       count++;
+     }
+     return count;
+   }
+
+   export let funcResult = func();
    ```
-   1. // har_common/src/main/ets/utils/Utils.ets
-   2. const LARGE_NUMBER = 100000000;
-
-   4. function func(): number {
-   5. let count = 0;
-   6. while (count < LARGE_NUMBER) {
-   7. count++;
-   8. }
-   9. return count;
-   10. }
-
-   12. export let funcResult = func();
-   ```
-
-   [Utils.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/HapAndHarDependHar/har_common/src/main/ets/utils/Utils.ets#L21-L32)
 2. 分别通过使用HSP包和HAR包来引用该HAR\_COMMON包中的功能进行性能对比实验。
    * 使用HAP包和HSP包引用该HAR\_COMMON包中的功能。
 
      HAP包引用HAR\_COMMON包中的功能。
 
+     ```typescript
+     // entry/src/main/ets/pages/Index.ets
+     import { MainPage } from 'har_library';
+     import { funcResult } from 'har_common';
      ```
-     1. // entry/src/main/ets/pages/Index.ets
-     2. import { MainPage } from 'har_library';
-     3. import { funcResult } from 'har_common';
-     ```
-
-     [Index.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/HapAndHarDependHar/entry/src/main/ets/pages/Index.ets#L21-L23)
 
      HSP包引用HAR\_COMMON包中的功能。
 
+     ```typescript
+     // har_library/src/main/ets/pages/MainPage.ets
+     import { funcResult } from 'har_common';
      ```
-     1. // har_library/src/main/ets/pages/MainPage.ets
-     2. import { funcResult } from 'har_common';
-     ```
-
-     [MainPage.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/HapAndHarDependHar/har_library/src/main/ets/components/mainpage/MainPage.ets#L21-L22)
    * 使用HAP包和HAR包引用该HAR\_COMMON包中的功能。
 
      HAP包引用HAR\_COMMON包中的功能。
 
+     ```typescript
+     // entry/src/main/ets/pages/Index.ets
+     import { MainPage } from 'har_library';
+     import { funcResult } from 'har_common';
      ```
-     1. // entry/src/main/ets/pages/Index.ets
-     2. import { MainPage } from 'har_library';
-     3. import { funcResult } from 'har_common';
-     ```
-
-     [Index.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/HapAndHarDependHar/entry/src/main/ets/pages/Index.ets#L21-L23)
 
      HAR包引用HAR\_COMMON包中的功能。
 
+     ```typescript
+     // har_library/src/main/ets/pages/MainPage.ets
+     import { funcResult } from 'har_common';
      ```
-     1. // har_library/src/main/ets/pages/MainPage.ets
-     2. import { funcResult } from 'har_common';
-     ```
-
-     [MainPage.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/HapAndHarDependHar/har_library/src/main/ets/components/mainpage/MainPage.ets#L21-L22)
 
 使用[Launch模板](../harmonyos-guides/ide-insight-session-launch.md)，对优化前后启动性能进行对比分析。
 
@@ -171,11 +161,11 @@ HarmonyOS应用的业务逻辑需要通过[UIAbility组件](../harmonyos-guides/
 
 **图4** 优化前，使用HSP包
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/64Xe5_PIQAiyawbBzJNggA/zh-cn_image_0000002194010360.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/gZhp-YjbQJaMiI-jgyjWiA/zh-cn_image_0000002194010360.png "点击放大")
 
 **图5** 优化后，使用HAR代替HSP
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/Y-ZFcU2DSn2NYd71dgYjGw/zh-cn_image_0000002229336161.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/L8m-RoQJSxKnCM0n5Imd9w/zh-cn_image_0000002229336161.png "点击放大")
 
 优化前后的对比数据如下：
 
@@ -184,9 +174,11 @@ HarmonyOS应用的业务逻辑需要通过[UIAbility组件](../harmonyos-guides/
 | （优化前）使用HSP包 | 3125 |
 | （优化后）使用HAR代替HSP | 853.9 |
 
-说明
+**说明** 
 
-上述示例为凸显出差异，func执行函数循环次数为100000000，开发者实际修改后收益需根据实际情况测试。
+* 上述示例为凸显差异，func函数的执行循环次数为100000000。
+
+* 以上实验数据为测试环境中手动修改测试包为HSP和HAR包后的结果，具体收益在不同版本与设备间存在差异，需根据实际情况测试。
 
 测试数据表明，将HSP替换为HAR包后，应用启动耗时明显缩短。
 
@@ -198,12 +190,12 @@ HarmonyOS应用的业务逻辑需要通过[UIAbility组件](../harmonyos-guides/
 
 对于不需要按需加载且仅包含一个Entry类型的HAP的App，可以直接全部采用HAR进行开发设计。如下图所示：
 
-说明
+**说明** 
 
 这里提到的“仅有一个HAP”是指一种设备类型仅包含一个HAP，而不是指.app文件包中仅有一个HAP。.app文件包可以包含其他设备的HAP包，例如手表和大屏设备的HAP包，以支持多设备分发。
 
 **图6** 非按需加载工程模型  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/kmVzNySUTlWjPhool1FKbA/zh-cn_image_0000002428709052.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/HJRWRvYZRfqabIutnKEw_A/zh-cn_image_0000002428709052.png "点击放大")
 
 上图工程架构中，除了产品模块层中与设备相关的HAP外，其他模块均为HAR。这些被依赖的HAR最终都会被编译进HAP中。
 
@@ -217,7 +209,7 @@ HarmonyOS应用的业务逻辑需要通过[UIAbility组件](../harmonyos-guides/
 
 在单HAP工程中实现按需加载功能时，对应的组件需采用HSP作为按需加载模块。HAR是静态共享库，若多个HAP或HSP依赖同一份HAR，该HAR在应用内会被重复存储。HSP是动态共享库，其安装和加载会有性能损失，过多的HSP可能影响安装效率和App启动性能。需考虑App占用空间是否受限及启动性能的敏感度，根据业务需求在App Size与启动性能之间做好平衡。
 
-说明
+**说明** 
 
 这里提到的App Size指用户安装按需加载模块后，应用的整体大小。
 
@@ -226,11 +218,11 @@ HarmonyOS应用的业务逻辑需要通过[UIAbility组件](../harmonyos-guides/
 对于App Size优先的，可以考虑将公共依赖的模块封装在一个HSP模块壳中，如下图所示：
 
 **图7** 公共依赖模块通过HSP模块壳承载  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/6qenMSOMQS-odp_rsuGMLA/zh-cn_image_0000002428709172.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/LguErO76SyGkQVzwpyGpAw/zh-cn_image_0000002428709172.png "点击放大")
 
 hap\_A依赖于独有的共享库har\_A，同时需要依赖于har\_C和har\_D；而按需加载模块hsp\_B依赖于独有的共享库har\_B，同时需要依赖于har\_C和har\_D。
 
-说明
+**说明** 
 
 这里的共享库har\_A、har\_B、har\_C、har\_D不一定本地工程，有可能是从ohpm仓上依赖下载的。
 
@@ -241,7 +233,7 @@ hap\_A依赖于独有的共享库har\_A，同时需要依赖于har\_C和har\_D�
 对于性能优先的，则不需要再封装一个公共的HSP模块，直接依赖公共HAR包：
 
 **图8** 公共依赖模块使用HAR模块承载  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/Pv_doWTRSnWJA2Mz9WZCig/zh-cn_image_0000002428869404.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/Z48qnWtpQ_G9ZTx99P3dlA/zh-cn_image_0000002428869404.png "点击放大")
 
 因为公共HSP包需要安装和加载，所以会有一些性能损耗。对于启动性能敏感型的应用，则将hap\_A和hsp\_B直接依赖于har\_C和har\_D。最终编译产物里面有2个，hap\_A.hap和hsp\_B.hsp，但是这两个编译产物里面均会包含har\_C和har\_D，App Size会比采用公共HSP模型大。
 
@@ -258,7 +250,7 @@ hap\_A依赖于独有的共享库har\_A，同时需要依赖于har\_C和har\_D�
 一般多HAP应用架构普适性采用以下模型，除了产品组件中存在HAP包之外，其余的均是HAR包，如下图所示：
 
 **图9** 多HAP工程模块示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/cimjsskvTe-5Yj_PWL4aBg/zh-cn_image_0000002462468177.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/mVDCd9_gSJiklWpCqcOjmA/zh-cn_image_0000002462468177.png "点击放大")
 
 编译产物中，多个HAP之间存在相同的HAR包（如har\_2、har\_3、har\_C、har\_D、har\_E）。这种情况下，App Size可能会增大。如果App Size不是应用的瓶颈，或者HAR包的大小较小，对App Size的影响可控，可以采用这种模型，从而减少动态加载的性能损耗。
 
@@ -267,9 +259,9 @@ hap\_A依赖于独有的共享库har\_A，同时需要依赖于har\_C和har\_D�
 上述问题的本质在于如何在HAP和HSP之间分布HAR包，以最小化App的大小并减少HAR的重复编译和打包。主要思路是将公共能力模块封装为公共HSP，从而最小化App Size。如下图所示：
 
 **图10** 多HAP工程模块示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/sQH5KDF1TzSglTIceLij_w/zh-cn_image_0000002428869664.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/Nna90qOhSEijwca2vxKawA/zh-cn_image_0000002428869664.png "点击放大")
 
-说明
+**说明** 
 
 需要注意，在应用间共享的HAR包，原则上是不允许依赖HSP包，因为HSP包是专属于应用，和bundleName进行了绑定，一旦HAR包依赖于应用内HSP，该HAR包就丢失了共享性，无法再给其他应用共享。
 

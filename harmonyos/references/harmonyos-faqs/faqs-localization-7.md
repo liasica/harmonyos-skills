@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-localizati
 title: 如何将Resource资源对象转成string类型
 breadcrumb: FAQ > 应用框架开发 > 无障碍和本地化 > 本地化开发（Localization） > 如何将Resource资源对象转成string类型
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:33+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:53+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:f57c8e37821a68a3da76dc24c880760ce48a11f2370a74315a1ab8096eb7fc29
 ---
 

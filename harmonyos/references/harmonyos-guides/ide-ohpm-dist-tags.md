@@ -3,21 +3,21 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-dist
 title: ohpm dist-tags
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm dist-tags
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:45+08:00
-doc_updated_at: 2026-04-22
-content_hash: sha256:47009c523e8e82060c6498bdb47c3e435a07354941cbe5c942261f41b4f8312e
+scraped_at: 2026-09-02T15:00:29+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9fb0465bc12d527062c8d55531eec92a8424d4c314ef0bceeb128c02a0b0a0df
 ---
 
 tag可标记一个三方库的某个版本，在install时可用tag代替版本号安装包。
 
 ## 命令格式
 
-```
-1. ohpm dist-tags [subcommand] [<@group>/]<pkg>[@<version>] <tag>
-2. alias: dist-tags
+```screen
+ohpm dist-tags [subcommand] [<@group>/]<pkg>[@<version>] <tag>
+alias: dist-tags
 ```
 
-说明
+**说明** 
 
 * subcommand: 包含list、add、update、remove四个子命令。
 * @group: 三方库的命名空间，可选。
@@ -29,7 +29,7 @@ tag可标记一个三方库的某个版本，在install时可用tag代替版本�
 
 操作tag。分为查看三方库的所有tag，给三方库的某个版本添加tag，修改tag到三方库的另一个版本，删除三方库的某个tag。
 
-说明
+**说明** 
 
 "latest"是一个预设的标签，不允许直接通过dist-tags命令来进行修改。该标签自动指向最高的正式版本；若无正式版本，则默认指向最高的先行版本。
 
@@ -39,35 +39,35 @@ tag可标记一个三方库的某个版本，在install时可用tag代替版本�
 
 ### list
 
-```
-1. ohpm dist-tags list [<@group>/]<pkg>
-2. alias: ls
+```screen
+ohpm dist-tags list [<@group>/]<pkg>
+alias: ls
 ```
 
 列出指定三方库的所有标签。输出结果中，`latest`标签始终位于首位，其他标签按照字典序排列显示。
 
 ### add
 
-```
-1. ohpm dist-tags add [<@group>/]<pkg>[@<version>] <tag>
+```screen
+ohpm dist-tags add [<@group>/]<pkg>[@<version>] <tag>
 ```
 
 给某个版本的三方库增加一个标签。若该三方库已存在相同标签，则添加操作将会失败。
 
 ### update
 
-```
-1. ohpm dist-tags update [<@group>/]<pkg>[@<version>] <tag>
-2. alias: up
+```screen
+ohpm dist-tags update [<@group>/]<pkg>[@<version>] <tag>
+alias: up
 ```
 
 更新指定包的某个标签所对应的版本。如果指定的标签不存在，则更新操作将失败。
 
 ### remove
 
-```
-1. ohpm dist-tags remove [<@group>/]<pkg> <tag>
-2. alias: rm
+```screen
+ohpm dist-tags remove [<@group>/]<pkg> <tag>
+alias: rm
 ```
 
 删除指定包的一个标签。如果该标签并未存在于包中，则删除操作将会失败。
@@ -115,21 +115,23 @@ tag可标记一个三方库的某个版本，在install时可用tag代替版本�
 * 默认值：true
 * 类型： Boolean
 
-可以在 dist-tags 命令后面配置 --strict\_ssl true 参数，校验 https 证书；配置 --strict\_ssl false 参数，不校验 https 证书。
+可以在dist-tags命令后面不配置参数、配置--strict\_ssl或--strict\_ssl true参数时，开启校验HTTPS证书。
+
+从ohpm 26.0.0.630版本开始，如需关闭校验，可配置--no-strict\_ssl或--strict\_ssl false参数，推荐使用--no-strict\_ssl参数。
 
 ### log\_level
 
 * 默认值：无
-* 类型： String
+* 类型：String
 
-从ohpm 6.0.2.636版本开始，可以在 dist-tags 命令后配置--log\_level <string>参数，指定执行当前命令的日志级别（info、debug、warn、error），如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
+从ohpm 6.0.2.636版本开始，可以在 dist-tags 命令后配置--log\_level <string>参数，指定执行当前命令的日志级别（info、debug、warn、error），如果未指定该值则日志级别为.ohpmrc中配置的log\_level。
 
 ### debug
 
 * 默认值：false
-* 类型： Boolean
+* 类型：Boolean
 
-从ohpm 6.0.2.636版本开始，可以在命令后配置--debug参数，指定执行当前命令的日志级别为debug，该配置仅在当前命令行生效，不修改.ohpmrc中的日志级别，如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
+从ohpm 6.0.2.636版本开始，可以在命令后配置--debug参数，指定执行当前命令的日志级别为debug，该配置仅在当前命令行生效，不修改.ohpmrc中的日志级别，如果未指定该值则日志级别为.ohpmrc中配置的log\_level。
 
 ## 示例
 
@@ -137,19 +139,18 @@ tag可标记一个三方库的某个版本，在install时可用tag代替版本�
 
 1. 通过ohpm dist-tags的子命令add，对包@ohos/axios的1.0.0版本添加标签名beta。
 
-```
-1. ohpm dist-tags add @ohos/axios@1.0.0 beta
-```
-
+   ```screen
+   ohpm dist-tags add @ohos/axios@1.0.0 beta
+   ```
 2. 在oh-package.json5文件中，使用标签beta引入包@ohos/axios的1.0.0版本。
 
-```
-1. {
-2. "dependencies": {
-3. // tag标签引入，引入标签为"beta"对应的版本号1.0.0
-4. "@ohos/axios": "tag:beta"
-5. }
-6. ...
-7. ...
-8. }
-```
+   ```screen
+   {
+     "dependencies": {
+       // 标签引入，引入标签为"beta"对应的版本号1.0.0
+       "@ohos/axios": "tag:beta"
+     }
+     ...
+     ...
+   }
+   ```

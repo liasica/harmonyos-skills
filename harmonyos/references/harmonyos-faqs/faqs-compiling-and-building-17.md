@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“Schema validate failed”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“Schema validate failed”
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:20:24+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:d3c4741227e9ab2fc4e2b9fc9c5ecf8e9a5d7042fc9f88d9ceb9a4d72c55c978
+scraped_at: 2026-09-02T14:54:54+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:90a42d2a2b46fb41eaf8ad210cbbcaf612fd619da8ddfaa8d9a3a67dca2386df
 ---
 
 **问题现象**
@@ -18,80 +18,80 @@ DevEco Studio编译时出现“Schema validate failed”错误。
 
 如将module.json5文件中abilities标签中的 “name” 错写为 “nam”，报错信息如下：
 
-```
-1. Detail: Please check the following fields.
-2. {
-3. instancePath: 'module.abilities[0]',
-4. keyword: 'required',
-5. params: { missingProperty: 'name' },
-6. message: "must have required property 'name'",
-7. location: 'D:/MyApplication/entry/src/main/module.json5:15:8'
-8. }
-9. {
-10. instancePath: 'module.abilities[0]',
-11. keyword: 'required',
-12. params: { missingProperty: 'srcEntrance' },
-13. message: "must have required property 'srcEntrance'",
-14. location: 'D:/MyApplication/entry/src/main/module.json5:15:8'
-15. }
-16. {
-17. instancePath: 'module.abilities[0]',
-18. keyword: 'required',
-19. params: { missingProperty: 'name' },
-20. message: "must have required property 'name'",
-21. location: 'D:/MyApplication/entry/src/main/module.json5:15:8'
-22. }
-23. {
-24. instancePath: 'module.abilities[0]',
-25. keyword: 'oneOf',
-26. params: { passingSchemas: null },
-27. message: 'must match exactly one schema in oneOf',
-28. location: 'D:/MyApplication/entry/src/main/module.json5:15:8'
-29. }
-30. {
-31. instancePath: 'module.abilities[0]',
-32. keyword: 'enum',
-33. params: {
-34. allowedValues: [
-35. 'priority',
-36. 'name',
-37. 'srcEntrance',
-38. 'srcEntry',
-39. 'launchType',
-40. 'description',
-41. 'icon',
-42. 'label',
-43. 'permissions',
-44. 'metadata',
-45. 'visible',
-46. 'exported',
-47. 'skills',
-48. 'backgroundModes',
-49. 'continuable',
-50. 'startWindowIcon',
-51. 'startWindowBackground',
-52. 'removeMissionAfterTerminate',
-53. 'orientation',
-54. 'supportWindowMode',
-55. 'maxWindowRatio',
-56. 'minWindowRatio',
-57. 'maxWindowWidth',
-58. 'minWindowWidth',
-59. 'maxWindowHeight',
-60. 'minWindowHeight',
-61. 'excludeFromMissions'
-62. ]
-63. },
-64. message: 'must be equal to one of the allowed values',
-65. location: 'D:/MyApplication/entry/src/main/module.json5:15:8'
-66. }
-67. {
-68. instancePath: 'module.abilities[0]',
-69. keyword: 'propertyNames',
-70. params: { propertyName: 'nam' },
-71. message: 'property name must be valid',
-72. location: 'D:/MyApplication/entry/src/main/module.json5:15:8'
-73. }
+```json
+Detail: Please check the following fields.
+{
+  instancePath: 'module.abilities[0]',
+  keyword: 'required',
+  params: { missingProperty: 'name' },
+  message: "must have required property 'name'",
+  location: 'D:/MyApplication/entry/src/main/module.json5:15:8'
+} 
+{
+  instancePath: 'module.abilities[0]',
+  keyword: 'required',
+  params: { missingProperty: 'srcEntrance' },
+  message: "must have required property 'srcEntrance'",
+  location: 'D:/MyApplication/entry/src/main/module.json5:15:8'
+} 
+{
+  instancePath: 'module.abilities[0]',
+  keyword: 'required',
+  params: { missingProperty: 'name' },
+  message: "must have required property 'name'",
+  location: 'D:/MyApplication/entry/src/main/module.json5:15:8'
+} 
+{
+  instancePath: 'module.abilities[0]',
+  keyword: 'oneOf',
+  params: { passingSchemas: null },
+  message: 'must match exactly one schema in oneOf',
+  location: 'D:/MyApplication/entry/src/main/module.json5:15:8'
+} 
+{
+  instancePath: 'module.abilities[0]',
+  keyword: 'enum',
+  params: {
+    allowedValues: [
+      'priority',
+      'name',
+      'srcEntrance',
+      'srcEntry',
+      'launchType',
+      'description',
+      'icon',
+      'label',
+      'permissions',
+      'metadata',
+      'visible',
+      'exported',
+      'skills',
+      'backgroundModes',
+      'continuable',
+      'startWindowIcon',
+      'startWindowBackground',
+      'removeMissionAfterTerminate',
+      'orientation',
+      'supportWindowMode',
+      'maxWindowRatio',
+      'minWindowRatio',
+      'maxWindowWidth',
+      'minWindowWidth',
+      'maxWindowHeight',
+      'minWindowHeight',
+      'excludeFromMissions'
+    ]
+  },
+  message: 'must be equal to one of the allowed values',
+  location: 'D:/MyApplication/entry/src/main/module.json5:15:8'
+} 
+{
+  instancePath: 'module.abilities[0]',
+  keyword: 'propertyNames',
+  params: { propertyName: 'nam' },
+  message: 'property name must be valid',
+  location: 'D:/MyApplication/entry/src/main/module.json5:15:8'
+}
 ```
 
 以上报错为例，解释报错中关键词的含义，帮助开发者理解报错信息，从而完成问题定位和修改。
@@ -101,7 +101,7 @@ DevEco Studio编译时出现“Schema validate failed”错误。
   + required：表示该字段为必选配置项。若缺失或拼写错误将导致属性未配置。
   + oneOf：表示当前配置不符合oneOf要求。通过instancePath已经确认报错出现在abilities标签，在DevEco Studio中，按住Ctrl点击"abilities"跳转到对应的module.json文件，可以查看到必须配置以下两组中的一组。根据对比排查，可识别到因拼写错误导致"name"属性未配置。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/joXujhYmQ-im9vYytJ70Fw/zh-cn_image_0000002194158784.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/V-DsHIcPTN6krqeCS560PQ/zh-cn_image_0000002654797847.png)
   + enum：所有可配置的属性。开发者可根据枚举值确认属性的正确写法。
   + propertyNames：字段拼写错误时，propertyName: 'nam'指明 "nam" 为错误属性。
 * params：不同keyword对应不同的详细说明。例如，当keyword为'required'时，params的missingProperty: 'name'表示缺失的属性为“name”。

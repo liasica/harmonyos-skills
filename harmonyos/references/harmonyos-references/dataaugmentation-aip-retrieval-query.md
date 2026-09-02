@@ -1,16 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataaugmentation-aip-retrieval-query
 title: aip_retrieval_query.h
-breadcrumb: API参考 > 应用框架 > Data Augmentation Kit（数据增强服务） > C API > 头文件和结构体 > aip_retrieval_query.h
+breadcrumb: API参考 > 应用框架 > Data Augmentation Kit（数据增强服务） > C API > 头文件 > aip_retrieval_query.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:59+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:151f89d67aa1d75ef5071740f6fe23e1db72652cd86deb080a46f823ee07a336
+scraped_at: 2026-09-02T15:01:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ee95b7d96f83ebd61de949e2d75851dc875006525854773e1381f1299d1bdcaa
 ---
 
 ## 概述
-
-PhonePC/2in1Tablet
 
 提供与检索查询相关的接口。
 
@@ -26,8 +24,6 @@ PhonePC/2in1Tablet
 
 ## 汇总
 
-PhonePC/2in1Tablet
-
 ### 类型定义
 
 | 名称 | 描述 |
@@ -40,4 +36,4 @@ PhonePC/2in1Tablet
 | --- | --- |
 | [OH\_Retrieval\_Query](dataaugmentation-capi-retrieval.md#oh_retrieval_query) \* [OH\_Retrieval\_CreateQuery](dataaugmentation-capi-retrieval.md#oh_retrieval_createquery) () | 创建检索词，作为检索接口的入参。 |
 | int [OH\_Retrieval\_DestroyQuery](dataaugmentation-capi-retrieval.md#oh_retrieval_destroyquery) ([OH\_Retrieval\_Query](dataaugmentation-capi-retrieval.md#oh_retrieval_query) \*query) | 销毁通过[OH\_Retrieval\_CreateQuery](dataaugmentation-capi-retrieval.md#oh_retrieval_createquery)获得的检索词。 |
-| int [OH\_Retrieval\_SetOriginalQuestion](dataaugmentation-capi-retrieval.md#oh_retrieval_setoriginalquestion) ([OH\_Retrieval\_Query](dataaugmentation-capi-retrieval.md#oh_retrieval_query) \*query, const char \*question) | 设置[OH\_Retrieval\_Query](dataaugmentation-capi-retrieval.md#oh_retrieval_query)中的检索词。 |
+| int [OH\_Retrieval\_SetOriginalQuestion](dataaugmentation-capi-retrieval.md#oh_retrieval_setoriginalquestion) ([OH\_Retrieval\_Query](dataaugmentation-capi-retrieval.md#oh_retrieval_query) \*query, const char \*question) | 设置[OH\_Retrieval\_Query](dataaugmentation-capi-retrieval.md#oh_retrieval_query)中的检索词。其中，参数question为待检索的纯文本字符串，用于指定具体的检索内容。该参数不能为空，且长度不得超过512个字符。 |

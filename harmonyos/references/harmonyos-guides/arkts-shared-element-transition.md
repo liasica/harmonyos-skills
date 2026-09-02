@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-shared-
 title: 共享元素转场 (一镜到底)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 转场动画 > 共享元素转场 (一镜到底)
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:45347ff33e4aed844d34b21c715df44f3304a1e0125dc7dcaf78c985845faaa5
+scraped_at: 2026-09-02T14:59:19+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b84210e024e4f8a88a38dc364584983777ab177ee94bdc1dc70e7d33e7c89725
 ---
 
 共享元素转场是一种界面切换时对相同或者相似的两个元素做的一种位置和大小匹配的过渡动画效果，也称一镜到底动效。
@@ -23,8 +23,8 @@ content_hash: sha256:45347ff33e4aed844d34b21c715df44f3304a1e0125dc7dcaf78c985845
 | 一镜到底实现方式 | 特点 | 适用场景 |
 | --- | --- | --- |
 | 不新建容器直接变化原容器 | 不发生路由跳转，需要在一个组件中实现展开及关闭两种状态的布局，展开后组件层级不变。 | 适用于转场开销小的简单场景，如点开页面无需加载大量数据及组件。 |
-| 新建容器并跨容器迁移组件 | 通过使用NodeController，将组件从一个容器迁移到另一个容器，在开始迁移时，需要根据前后两个布局的位置大小等信息对组件添加位移及缩放，确保迁移开始时组件能够对齐初始布局，避免出现视觉上的跳变现象。之后再添加动画将位移及缩放等属性复位，实现组件从初始布局到目标布局的一镜到底过渡效果。 | 适用于新建对象开销大的场景，如视频直播组件点击转为全屏等。 |
-| 使用geometryTransition共享元素转场 | 利用系统能力，转场前后两个组件调用geometryTransition接口绑定同一id，同时将转场逻辑置于animateTo动画闭包内，这样系统侧会自动为二者添加一镜到底的过渡效果。 | 系统将调整绑定的两个组件的宽高及位置至相同值，并切换二者的透明度，以实现一镜到底过渡效果。因此，为了实现流畅的动画效果，需要确保对绑定geometryTransition的节点添加宽高动画不会有跳变。此方式适用于创建新节点开销小的场景。 |
+| 新建容器并跨容器迁移组件 | 通过使用[NodeController](../harmonyos-references/js-apis-arkui-nodecontroller.md)，将组件从一个容器迁移到另一个容器，在开始迁移时，需要根据前后两个布局的位置大小等信息对组件添加位移及缩放，确保迁移开始时组件能够对齐初始布局，避免出现视觉上的跳变现象。之后再添加动画将位移及缩放等属性复位，实现组件从初始布局到目标布局的一镜到底过渡效果。 | 适用于新建对象开销大的场景，如视频直播组件点击转为全屏等。 |
+| 使用geometryTransition共享元素转场 | 利用系统能力，转场前后两个组件调用[geometryTransition](../harmonyos-references/ts-transition-animation-geometrytransition.md)接口绑定同一id，同时将转场逻辑置于[animateTo](../harmonyos-references/ts-explicit-animation.md)动画闭包内，这样系统侧会自动为二者添加一镜到底的过渡效果。 | 系统将调整绑定的两个组件的宽高及位置至相同值，并切换二者的透明度，以实现一镜到底过渡效果。因此，为了实现流畅的动画效果，需要确保对绑定geometryTransition的节点添加宽高动画不会有跳变。此方式适用于创建新节点开销小的场景。 |
 
 ## 不新建容器并直接变化原容器
 
@@ -37,164 +37,162 @@ content_hash: sha256:45347ff33e4aed844d34b21c715df44f3304a1e0125dc7dcaf78c985845
 
 以点击卡片后显示卡片内容详情场景为例：
 
+```typescript
+import { common } from '@kit.AbilityKit';
+
+class PostData {
+  // 请将$r('app.media.flower')替换为实际资源文件
+  avatar: Resource = $r('app.media.flower');
+  name: string = '';
+  message: ResourceStr = '';
+  images: Resource[] = [];
+}
+
+@Entry
+@Component
+struct Index {
+  @State isExpand: boolean = false;
+  @State @Watch('onItemClicked') selectedIndex: number = -1;
+  private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  // 数组中图片均使用Resource资源，需用户自定义
+  private allPostData: PostData[] = [
+    {
+      // 请将$r('app.media.flower')替换为实际资源文件
+      avatar: $r('app.media.flower'),
+      name: 'Alice',
+      // 请将$r('app.string.shareTransition_text1')替换为实际资源文件，在本示例中该资源文件的value值为"天气晴朗"
+      message: $r('app.string.shareTransition_text1'),
+      // 请将$r('app.media.spring')替换为实际资源文件
+      // 请将$r('app.media.tall_tree')替换为实际资源文件
+      images: [$r('app.media.spring'), $r('app.media.tall_tree')]
+    },
+    {
+      // 请将$r('app.media.sunset_sky')替换为实际资源文件
+      avatar: $r('app.media.sunset_sky'),
+      name: 'Bob',
+      // 请将$r('app.string.shareTransition_text2')替换为实际资源文件，在本示例中该资源文件的value值为"你好世界"
+      message: $r('app.string.shareTransition_text2'),
+      // 请将$r('app.media.island')替换为实际资源文件
+      images: [$r('app.media.island')]
+    },
+    {
+      // 请将$r('app.media.tall_tree')替换为实际资源文件
+      avatar: $r('app.media.tall_tree'),
+      name: 'Carl',
+      // 请将$r('app.string.shareTransition_text3')替换为实际资源文件，在本示例中该资源文件的value值为"万物生长"
+      message: $r('app.string.shareTransition_text3'),
+      // 请将$r('app.media.flower')替换为实际资源文件
+      // 请将$r('app.media.sunset_sky')替换为实际资源文件
+      // 请将$r('app.media.spring')替换为实际资源文件
+      images: [$r('app.media.flower'), $r('app.media.sunset_sky'), $r('app.media.spring')]
+    }];
+
+  private onItemClicked(): void {
+    if (this.selectedIndex < 0) {
+      return;
+    }
+    this.getUIContext()?.animateTo({
+      duration: 350,
+      curve: Curve.Friction
+    }, () => {
+      this.isExpand = !this.isExpand;
+    });
+  }
+
+  build() {
+    Column({ space: 20 }) {
+      ForEach(this.allPostData, (postData: PostData, index: number) => {
+        // 当点击了某个post后，会使其余的post消失下树
+        if (!this.isExpand || this.selectedIndex === index) {
+          Column() {
+            Post({ data: postData, selectedIndex: this.selectedIndex, index: index })
+          }
+          .width('100%')
+          // 对出现消失的post添加透明度转场和位移转场效果
+          .transition(TransitionEffect.OPACITY
+            .combine(TransitionEffect.translate({ y: index < this.selectedIndex ? -250 : 250 }))
+            .animation({ duration: 350, curve: Curve.Friction }))
+        }
+      }, (postData: PostData, index: number) => index.toString())
+    }
+    .size({ width: '100%', height: '100%' })
+    .backgroundColor('#40808080')
+  }
+}
+
+@Component
+export default struct Post {
+  @Link selectedIndex: number;
+  @Prop data: PostData;
+  @Prop index: number;
+  @State itemHeight: number = 250;
+  @State isExpand: boolean = false;
+  @State expandImageSize: number = 100;
+  @State avatarSize: number = 50;
+
+  build() {
+    Column({ space: 20 }) {
+      Row({ space: 10 }) {
+        Image(this.data.avatar)
+          .size({ width: this.avatarSize, height: this.avatarSize })
+          .borderRadius(this.avatarSize / 2)
+          .clip(true)
+
+        Text(this.data.name)
+      }
+      .justifyContent(FlexAlign.Start)
+
+      Text(this.data.message)
+
+      Row({ space: 15 }) {
+        ForEach(this.data.images, (imageResource: Resource, index: number) => {
+          Image(imageResource)
+            .size({ width: this.expandImageSize, height: this.expandImageSize })
+        }, (imageResource: Resource, index: number) => index.toString())
+      }
+
+      // 展开态下组件增加的内容
+      if (this.isExpand) {
+        Column() {
+          // 请将$r('app.string.shareTransition_text4')替换为实际资源文件，在本示例中该资源文件的value值为"评论区"
+          Text($r('app.string.shareTransition_text4'))
+          // 对评论区文本添加出现消失转场效果
+            .transition(TransitionEffect.OPACITY
+              .animation({ duration: 350, curve: Curve.Friction }))
+            .padding({ top: 10 })
+        }
+        .transition(TransitionEffect.asymmetric(
+          TransitionEffect.opacity(0.99)
+            .animation({ duration: 350, curve: Curve.Friction }),
+          TransitionEffect.OPACITY.animation({ duration: 0 })
+        ))
+        .size({ width: '100%' })
+      }
+    }
+    .backgroundColor(Color.White)
+    .size({ width: '100%', height: this.itemHeight })
+    .alignItems(HorizontalAlign.Start)
+    .padding({ left: 10, top: 10 })
+    .onClick(() => {
+      this.selectedIndex = -1;
+      this.selectedIndex = this.index;
+      this.getUIContext()?.animateTo({
+        duration: 350,
+        curve: Curve.Friction
+      }, () => {
+        // 对展开的post做宽高动画，并对头像尺寸和图片尺寸加动画
+        this.isExpand = !this.isExpand;
+        this.itemHeight = this.isExpand ? 780 : 250;
+        this.avatarSize = this.isExpand ? 75 : 50;
+        this.expandImageSize = (this.isExpand && this.data.images.length > 0)
+          ? (360 - (this.data.images.length + 1) * 15) / this.data.images.length : 100;
+      })
+    })
+  }
+}
 ```
-1. import { common } from '@kit.AbilityKit';
 
-3. class PostData {
-4. // 请将$r('app.media.flower')替换为实际资源文件
-5. avatar: Resource = $r('app.media.flower');
-6. name: string = '';
-7. message: ResourceStr = '';
-8. images: Resource[] = [];
-9. }
-
-11. @Entry
-12. @Component
-13. struct Index {
-14. @State isExpand: boolean = false;
-15. @State @Watch('onItemClicked') selectedIndex: number = -1;
-16. private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-17. // 数组中图片均使用Resource资源，需用户自定义
-18. private allPostData: PostData[] = [
-19. {
-20. // 请将$r('app.media.flower')替换为实际资源文件
-21. avatar: $r('app.media.flower'),
-22. name: 'Alice',
-23. // 请将$r('app.string.shareTransition_text1')替换为实际资源文件，在本示例中该资源文件的value值为"天气晴朗"
-24. message: $r('app.string.shareTransition_text1'),
-25. // 请将$r('app.media.spring')替换为实际资源文件
-26. // 请将$r('app.media.tall_tree')替换为实际资源文件
-27. images: [$r('app.media.spring'), $r('app.media.tall_tree')]
-28. },
-29. {
-30. // 请将$r('app.media.sunset_sky')替换为实际资源文件
-31. avatar: $r('app.media.sunset_sky'),
-32. name: 'Bob',
-33. // 请将$r('app.string.shareTransition_text2')替换为实际资源文件，在本示例中该资源文件的value值为"你好世界"
-34. message: $r('app.string.shareTransition_text2'),
-35. // 请将$r('app.media.island')替换为实际资源文件
-36. images: [$r('app.media.island')]
-37. },
-38. {
-39. // 请将$r('app.media.tall_tree')替换为实际资源文件
-40. avatar: $r('app.media.tall_tree'),
-41. name: 'Carl',
-42. // 请将$r('app.string.shareTransition_text3')替换为实际资源文件，在本示例中该资源文件的value值为"万物生长"
-43. message: $r('app.string.shareTransition_text3'),
-44. // 请将$r('app.media.flower')替换为实际资源文件
-45. // 请将$r('app.media.sunset_sky')替换为实际资源文件
-46. // 请将$r('app.media.spring')替换为实际资源文件
-47. images: [$r('app.media.flower'), $r('app.media.sunset_sky'), $r('app.media.spring')]
-48. }];
-
-50. private onItemClicked(): void {
-51. if (this.selectedIndex < 0) {
-52. return;
-53. }
-54. this.getUIContext()?.animateTo({
-55. duration: 350,
-56. curve: Curve.Friction
-57. }, () => {
-58. this.isExpand = !this.isExpand;
-59. });
-60. }
-
-62. build() {
-63. Column({ space: 20 }) {
-64. ForEach(this.allPostData, (postData: PostData, index: number) => {
-65. // 当点击了某个post后，会使其余的post消失下树
-66. if (!this.isExpand || this.selectedIndex === index) {
-67. Column() {
-68. Post({ data: postData, selectedIndex: this.selectedIndex, index: index })
-69. }
-70. .width('100%')
-71. // 对出现消失的post添加透明度转场和位移转场效果
-72. .transition(TransitionEffect.OPACITY
-73. .combine(TransitionEffect.translate({ y: index < this.selectedIndex ? -250 : 250 }))
-74. .animation({ duration: 350, curve: Curve.Friction }))
-75. }
-76. }, (postData: PostData, index: number) => index.toString())
-77. }
-78. .size({ width: '100%', height: '100%' })
-79. .backgroundColor('#40808080')
-80. }
-81. }
-
-83. @Component
-84. export default struct Post {
-85. @Link selectedIndex: number;
-86. @Prop data: PostData;
-87. @Prop index: number;
-88. @State itemHeight: number = 250;
-89. @State isExpand: boolean = false;
-90. @State expandImageSize: number = 100;
-91. @State avatarSize: number = 50;
-
-93. build() {
-94. Column({ space: 20 }) {
-95. Row({ space: 10 }) {
-96. Image(this.data.avatar)
-97. .size({ width: this.avatarSize, height: this.avatarSize })
-98. .borderRadius(this.avatarSize / 2)
-99. .clip(true)
-
-101. Text(this.data.name)
-102. }
-103. .justifyContent(FlexAlign.Start)
-
-105. Text(this.data.message)
-
-107. Row({ space: 15 }) {
-108. ForEach(this.data.images, (imageResource: Resource, index: number) => {
-109. Image(imageResource)
-110. .size({ width: this.expandImageSize, height: this.expandImageSize })
-111. }, (imageResource: Resource, index: number) => index.toString())
-112. }
-
-114. // 展开态下组件增加的内容
-115. if (this.isExpand) {
-116. Column() {
-117. // 请将$r('app.string.shareTransition_text4')替换为实际资源文件，在本示例中该资源文件的value值为"评论区"
-118. Text($r('app.string.shareTransition_text4'))
-119. // 对评论区文本添加出现消失转场效果
-120. .transition(TransitionEffect.OPACITY
-121. .animation({ duration: 350, curve: Curve.Friction }))
-122. .padding({ top: 10 })
-123. }
-124. .transition(TransitionEffect.asymmetric(
-125. TransitionEffect.opacity(0.99)
-126. .animation({ duration: 350, curve: Curve.Friction }),
-127. TransitionEffect.OPACITY.animation({ duration: 0 })
-128. ))
-129. .size({ width: '100%' })
-130. }
-131. }
-132. .backgroundColor(Color.White)
-133. .size({ width: '100%', height: this.itemHeight })
-134. .alignItems(HorizontalAlign.Start)
-135. .padding({ left: 10, top: 10 })
-136. .onClick(() => {
-137. this.selectedIndex = -1;
-138. this.selectedIndex = this.index;
-139. this.getUIContext()?.animateTo({
-140. duration: 350,
-141. curve: Curve.Friction
-142. }, () => {
-143. // 对展开的post做宽高动画，并对头像尺寸和图片尺寸加动画
-144. this.isExpand = !this.isExpand;
-145. this.itemHeight = this.isExpand ? 780 : 250;
-146. this.avatarSize = this.isExpand ? 75 : 50;
-147. this.expandImageSize = (this.isExpand && this.data.images.length > 0)
-148. ? (360 - (this.data.images.length + 1) * 15) / this.data.images.length : 100;
-149. })
-150. })
-151. }
-152. }
-```
-
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/shareTransition/template2/Index.ets#L16-L170)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/KSXF96bWR9K7gkIQrIm6iA/zh-cn_image_0000002558604822.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/9I4UbrP3SJiIf_0mH0qqAA/zh-cn_image_0000002706833780.gif)
 
 ## 新建容器并跨容器迁移组件
 
@@ -209,377 +207,373 @@ content_hash: sha256:45347ff33e4aed844d34b21c715df44f3304a1e0125dc7dcaf78c985845
 * 收起卡片时，对展开页B添加属性动画，使之收起并运动到收起时的位置，即被点击卡片A的位置，实现一镜到底的动画效果。
 * 在动画结束回调函数中将展开页B中的组件迁移回被点击卡片A处。
 
-```
-1. // Index.ets
-2. import { createPostNode, getPostNode, PostNode } from './PostNode';
-3. import { componentUtils, curves, UIContext } from '@kit.ArkUI';
+```typescript
+// Index.ets
+import { createPostNode, getPostNode, PostNode } from './PostNode';
+import { componentUtils, curves, UIContext } from '@kit.ArkUI';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. // 新建一镜到底动画类
-9. private uiContext: UIContext = this.getUIContext();
-10. @State animationProperties: AnimationProperties = new AnimationProperties(this.uiContext);
-11. private listArray: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+@Entry
+@Component
+struct Index {
+  // 新建一镜到底动画类
+  private uiContext: UIContext = this.getUIContext();
+  @State animationProperties: AnimationProperties = new AnimationProperties(this.uiContext);
+  private listArray: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-13. build() {
-14. // 卡片折叠态，展开态的共同父组件
-15. Stack() {
-16. List({ space: 20 }) {
-17. ForEach(this.listArray, (item: number) => {
-18. ListItem() {
-19. // 卡片折叠态
-20. PostItem({ index: item, animationProperties: this.animationProperties })
-21. }
-22. })
-23. }
-24. .clip(false)
-25. .alignListItem(ListItemAlign.Center)
+  build() {
+    // 卡片折叠态，展开态的共同父组件
+    Stack() {
+      List({ space: 20 }) {
+        ForEach(this.listArray, (item: number) => {
+          ListItem() {
+            // 卡片折叠态
+            PostItem({ index: item, animationProperties: this.animationProperties })
+          }
+        })
+      }
+      .clip(false)
+      .alignListItem(ListItemAlign.Center)
 
-27. if (this.animationProperties.isExpandPageShow) {
-28. // 卡片展开态
-29. ExpandPage({ animationProperties: this.animationProperties })
-30. }
-31. }
-32. .key('rootStack')
-33. .enabled(this.animationProperties.isEnabled)
-34. }
-35. }
+      if (this.animationProperties.isExpandPageShow) {
+        // 卡片展开态
+        ExpandPage({ animationProperties: this.animationProperties })
+      }
+    }
+    .key('rootStack')
+    .enabled(this.animationProperties.isEnabled)
+  }
+}
 
-37. @Component
-38. struct PostItem {
-39. @Prop index: number
-40. @Link animationProperties: AnimationProperties;
-41. @State nodeController: PostNode | undefined = undefined;
-42. // 折叠时详细内容隐藏
-43. private showDetailContent: boolean = false;
+@Component
+struct PostItem {
+  @Prop index: number
+  @Link animationProperties: AnimationProperties;
+  @State nodeController: PostNode | undefined = undefined;
+  // 折叠时详细内容隐藏
+  private showDetailContent: boolean = false;
 
-45. aboutToAppear(): void {
-46. this.nodeController = createPostNode(this.getUIContext(), this.index.toString(), this.showDetailContent);
-47. if (this.nodeController != undefined) {
-48. // 设置回调，当卡片从展开态回到折叠态时触发
-49. this.nodeController.setCallback(this.resetNode.bind(this));
-50. }
-51. }
+  aboutToAppear(): void {
+    this.nodeController = createPostNode(this.getUIContext(), this.index.toString(), this.showDetailContent);
+    if (this.nodeController != undefined) {
+      // 设置回调，当卡片从展开态回到折叠态时触发
+      this.nodeController.setCallback(this.resetNode.bind(this));
+    }
+  }
 
-53. resetNode() {
-54. this.nodeController = getPostNode(this.index.toString());
-55. }
+  resetNode() {
+    this.nodeController = getPostNode(this.index.toString());
+  }
 
-57. build() {
-58. Stack() {
-59. NodeContainer(this.nodeController)
-60. }
-61. .width('100%')
-62. .height(100)
-63. .key(this.index.toString())
-64. .onClick(() => {
-65. if (this.nodeController != undefined) {
-66. // 卡片从折叠态节点下树
-67. this.nodeController.onRemove();
-68. }
-69. // 触发卡片从折叠到展开态的动画
-70. this.animationProperties.expandAnimation(this.index);
-71. })
-72. }
-73. }
+  build() {
+    Stack() {
+      NodeContainer(this.nodeController)
+    }
+    .width('100%')
+    .height(100)
+    .key(this.index.toString())
+    .onClick(() => {
+      if (this.nodeController != undefined) {
+        // 卡片从折叠态节点下树
+        this.nodeController.onRemove();
+      }
+      // 触发卡片从折叠到展开态的动画
+      this.animationProperties.expandAnimation(this.index);
+    })
+  }
+}
 
-75. @Component
-76. struct ExpandPage {
-77. @Link animationProperties: AnimationProperties;
-78. @State nodeController: PostNode | undefined = undefined;
-79. // 展开时详细内容出现
-80. private showDetailContent: boolean = true;
+@Component
+struct ExpandPage {
+  @Link animationProperties: AnimationProperties;
+  @State nodeController: PostNode | undefined = undefined;
+  // 展开时详细内容出现
+  private showDetailContent: boolean = true;
 
-82. aboutToAppear(): void {
-83. // 获取对应序号的卡片组件
-84. this.nodeController = getPostNode(this.animationProperties.curIndex.toString());
-85. // 更新为详细内容出现
-86. this.nodeController?.update(this.animationProperties.curIndex.toString(), this.showDetailContent);
-87. }
+  aboutToAppear(): void {
+    // 获取对应序号的卡片组件
+    this.nodeController = getPostNode(this.animationProperties.curIndex.toString());
+    // 更新为详细内容出现
+    this.nodeController?.update(this.animationProperties.curIndex.toString(), this.showDetailContent);
+  }
 
-89. build() {
-90. Stack() {
-91. NodeContainer(this.nodeController)
-92. }
-93. .width('100%')
-94. .height(this.animationProperties.changedHeight ? '100%' : 100)
-95. .translate({ x: this.animationProperties.translateX, y: this.animationProperties.translateY })
-96. .position({ x: this.animationProperties.positionX, y: this.animationProperties.positionY })
-97. .onClick(() => {
-98. this.getUIContext()?.animateTo({
-99. curve: curves.springMotion(0.6, 0.9),
-100. onFinish: () => {
-101. if (this.nodeController != undefined) {
-102. // 执行回调，折叠态节点获取卡片组件
-103. this.nodeController.callCallback();
-104. // 当前展开态节点的卡片组件下树
-105. this.nodeController.onRemove();
-106. }
-107. // 卡片展开态节点下树
-108. this.animationProperties.isExpandPageShow = false;
-109. this.animationProperties.isEnabled = true;
-110. }
-111. }, () => {
-112. // 卡片从展开态回到折叠态
-113. this.animationProperties.isEnabled = false;
-114. this.animationProperties.translateX = 0;
-115. this.animationProperties.translateY = 0;
-116. this.animationProperties.changedHeight = false;
-117. // 更新为详细内容消失
-118. this.nodeController?.update(this.animationProperties.curIndex.toString(), false);
-119. })
-120. })
-121. }
-122. }
+  build() {
+    Stack() {
+      NodeContainer(this.nodeController)
+    }
+    .width('100%')
+    .height(this.animationProperties.changedHeight ? '100%' : 100)
+    .translate({ x: this.animationProperties.translateX, y: this.animationProperties.translateY })
+    .position({ x: this.animationProperties.positionX, y: this.animationProperties.positionY })
+    .onClick(() => {
+      this.getUIContext()?.animateTo({
+        curve: curves.springMotion(0.6, 0.9),
+        onFinish: () => {
+          if (this.nodeController != undefined) {
+            // 执行回调，折叠态节点获取卡片组件
+            this.nodeController.callCallback();
+            // 当前展开态节点的卡片组件下树
+            this.nodeController.onRemove();
+          }
+          // 卡片展开态节点下树
+          this.animationProperties.isExpandPageShow = false;
+          this.animationProperties.isEnabled = true;
+        }
+      }, () => {
+        // 卡片从展开态回到折叠态
+        this.animationProperties.isEnabled = false;
+        this.animationProperties.translateX = 0;
+        this.animationProperties.translateY = 0;
+        this.animationProperties.changedHeight = false;
+        // 更新为详细内容消失
+        this.nodeController?.update(this.animationProperties.curIndex.toString(), false);
+      })
+    })
+  }
+}
 
-124. class RectInfo {
-125. left: number = 0;
-126. top: number = 0;
-127. right: number = 0;
-128. bottom: number = 0;
-129. width: number = 0;
-130. height: number = 0;
-131. }
+class RectInfo {
+  left: number = 0;
+  top: number = 0;
+  right: number = 0;
+  bottom: number = 0;
+  width: number = 0;
+  height: number = 0;
+}
 
-133. // 封装的一镜到底动画类
-134. @Observed
-135. class AnimationProperties {
-136. public isExpandPageShow: boolean = false;
-137. // 控制组件是否响应点击事件
-138. public isEnabled: boolean = true;
-139. // 展开卡片的序号
-140. public curIndex: number = -1;
-141. public translateX: number = 0;
-142. public translateY: number = 0;
-143. public positionX: number = 0;
-144. public positionY: number = 0;
-145. public changedHeight: boolean = false;
-146. private calculatedTranslateX: number = 0;
-147. private calculatedTranslateY: number = 0;
-148. // 设置卡片展开后相对父组件的位置
-149. private expandTranslateX: number = 0;
-150. private expandTranslateY: number = 0;
-151. private uiContext: UIContext;
+// 封装的一镜到底动画类
+@Observed
+class AnimationProperties {
+  public isExpandPageShow: boolean = false;
+  // 控制组件是否响应点击事件
+  public isEnabled: boolean = true;
+  // 展开卡片的序号
+  public curIndex: number = -1;
+  public translateX: number = 0;
+  public translateY: number = 0;
+  public positionX: number = 0;
+  public positionY: number = 0;
+  public changedHeight: boolean = false;
+  private calculatedTranslateX: number = 0;
+  private calculatedTranslateY: number = 0;
+  // 设置卡片展开后相对父组件的位置
+  private expandTranslateX: number = 0;
+  private expandTranslateY: number = 0;
+  private uiContext: UIContext;
 
-153. constructor(uiContext: UIContext) {
-154. this.uiContext = uiContext
-155. }
+  constructor(uiContext: UIContext) {
+    this.uiContext = uiContext
+  }
 
-157. public expandAnimation(index: number): void {
-158. // 记录展开态卡片的序号
-159. if (index != undefined) {
-160. this.curIndex = index;
-161. }
-162. // 计算折叠态卡片相对父组件的位置
-163. this.calculateData(index.toString());
-164. // 展开态卡片上树
-165. this.isExpandPageShow = true;
-166. // 卡片展开的属性动画
-167. this.uiContext?.animateTo({
-168. curve: curves.springMotion(0.6, 0.9)
-169. }, () => {
-170. this.translateX = this.calculatedTranslateX;
-171. this.translateY = this.calculatedTranslateY;
-172. this.changedHeight = true;
-173. })
-174. }
+  public expandAnimation(index: number): void {
+    // 记录展开态卡片的序号
+    if (index != undefined) {
+      this.curIndex = index;
+    }
+    // 计算折叠态卡片相对父组件的位置
+    this.calculateData(index.toString());
+    // 展开态卡片上树
+    this.isExpandPageShow = true;
+    // 卡片展开的属性动画
+    this.uiContext?.animateTo({
+      curve: curves.springMotion(0.6, 0.9)
+    }, () => {
+      this.translateX = this.calculatedTranslateX;
+      this.translateY = this.calculatedTranslateY;
+      this.changedHeight = true;
+    })
+  }
 
-176. // 获取需要跨节点迁移的组件的位置，及迁移前后节点的公共父节点的位置，用以计算做动画组件的动画参数
-177. public calculateData(key: string): void {
-178. let clickedImageInfo = this.getRectInfoById(this.uiContext, key);
-179. let rootStackInfo = this.getRectInfoById(this.uiContext, 'rootStack');
-180. this.positionX = this.uiContext.px2vp(clickedImageInfo.left - rootStackInfo.left);
-181. this.positionY = this.uiContext.px2vp(clickedImageInfo.top - rootStackInfo.top);
-182. this.calculatedTranslateX = this.uiContext.px2vp(rootStackInfo.left - clickedImageInfo.left) +
-183. this.expandTranslateX;
-184. this.calculatedTranslateY = this.uiContext.px2vp(rootStackInfo.top - clickedImageInfo.top) + this.expandTranslateY;
-185. }
+  // 获取需要跨节点迁移的组件的位置，及迁移前后节点的公共父节点的位置，用以计算做动画组件的动画参数
+  public calculateData(key: string): void {
+    let clickedImageInfo = this.getRectInfoById(this.uiContext, key);
+    let rootStackInfo = this.getRectInfoById(this.uiContext, 'rootStack');
+    this.positionX = this.uiContext.px2vp(clickedImageInfo.left - rootStackInfo.left);
+    this.positionY = this.uiContext.px2vp(clickedImageInfo.top - rootStackInfo.top);
+    this.calculatedTranslateX = this.uiContext.px2vp(rootStackInfo.left - clickedImageInfo.left) +
+      this.expandTranslateX;
+    this.calculatedTranslateY = this.uiContext.px2vp(rootStackInfo.top - clickedImageInfo.top) + this.expandTranslateY;
+  }
 
-187. // 根据组件的id获取组件的位置信息
-188. private getRectInfoById(context: UIContext, id: string): RectInfo {
-189. let componentInfo: componentUtils.ComponentInfo = context.getComponentUtils().getRectangleById(id);
+  // 根据组件的id获取组件的位置信息
+  private getRectInfoById(context: UIContext, id: string): RectInfo {
+    let componentInfo: componentUtils.ComponentInfo = context.getComponentUtils().getRectangleById(id);
 
-191. if (!componentInfo) {
-192. throw Error('object is empty');
-193. }
+    if (!componentInfo) {
+      throw Error('object is empty');
+    }
 
-195. let rstRect: RectInfo = new RectInfo();
-196. const widthScaleGap = componentInfo.size.width * (1 - componentInfo.scale.x) / 2;
-197. const heightScaleGap = componentInfo.size.height * (1 - componentInfo.scale.y) / 2;
-198. rstRect.left = componentInfo.translate.x + componentInfo.windowOffset.x + widthScaleGap;
-199. rstRect.top = componentInfo.translate.y + componentInfo.windowOffset.y + heightScaleGap;
-200. rstRect.right =
-201. componentInfo.translate.x + componentInfo.windowOffset.x + componentInfo.size.width - widthScaleGap;
-202. rstRect.bottom =
-203. componentInfo.translate.y + componentInfo.windowOffset.y + componentInfo.size.height - heightScaleGap;
-204. rstRect.width = rstRect.right - rstRect.left;
-205. rstRect.height = rstRect.bottom - rstRect.top;
+    let rstRect: RectInfo = new RectInfo();
+    const widthScaleGap = componentInfo.size.width * (1 - componentInfo.scale.x) / 2;
+    const heightScaleGap = componentInfo.size.height * (1 - componentInfo.scale.y) / 2;
+    rstRect.left = componentInfo.translate.x + componentInfo.windowOffset.x + widthScaleGap;
+    rstRect.top = componentInfo.translate.y + componentInfo.windowOffset.y + heightScaleGap;
+    rstRect.right =
+      componentInfo.translate.x + componentInfo.windowOffset.x + componentInfo.size.width - widthScaleGap;
+    rstRect.bottom =
+      componentInfo.translate.y + componentInfo.windowOffset.y + componentInfo.size.height - heightScaleGap;
+    rstRect.width = rstRect.right - rstRect.left;
+    rstRect.height = rstRect.bottom - rstRect.top;
 
-207. return {
-208. left: rstRect.left,
-209. right: rstRect.right,
-210. top: rstRect.top,
-211. bottom: rstRect.bottom,
-212. width: rstRect.width,
-213. height: rstRect.height
-214. }
-215. }
-216. }
-```
-
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/shareTransition/template3/Index.ets#L15-L233)
-
-```
-1. // PostNode.ets
-2. // 跨容器迁移能力
-3. import { UIContext, curves, NodeController, BuilderNode, FrameNode } from '@kit.ArkUI';
-4. import { common } from '@kit.AbilityKit';
-
-6. class Data {
-7. public item: string | null = null;
-8. public isExpand: boolean = false;
-9. }
-10. let context: undefined | common.UIAbilityContext = undefined;
-11. @Builder
-12. function postBuilder(data: Data) {
-13. // 跨容器迁移组件置于@Builder内
-14. Column() {
-15. Row() {
-16. Row()
-17. .backgroundColor(Color.Pink)
-18. .borderRadius(20)
-19. .width(80)
-20. .height(80)
-21. Column() {
-22. // 请在resources\base\element\string.json文件中配置name为'shareTransition_text5'，value为非空字符串的资源
-23. Text((context as common.UIAbilityContext)?.resourceManager.getStringByNameSync('shareTransition_text5') + data.item)
-24. .fontSize(20)
-25. // 请将$r('app.string.shareTransition_text6')替换为实际资源文件，在本示例中该资源文件的value值为"共享元素转场"
-26. Text($r('app.string.shareTransition_text6'))
-27. .fontSize(12)
-28. .fontColor(0x909399)
-29. }
-30. .alignItems(HorizontalAlign.Start)
-31. .justifyContent(FlexAlign.SpaceAround)
-32. .margin({ left: 10 })
-33. .height(80)
-34. }
-35. .width('90%')
-36. .height(100)
-
-38. // 展开后显示细节内容
-39. if (data.isExpand) {
-40. Row() {
-41. // 请将$r('app.string.shareTransition_text7')替换为实际资源文件，在本示例中该资源文件的value值为"展开态"
-42. Text($r('app.string.shareTransition_text7'))
-43. .fontSize(28)
-44. .fontColor(0x909399)
-45. .textAlign(TextAlign.Center)
-46. .transition(TransitionEffect.OPACITY.animation({ curve: curves.springMotion(0.6, 0.9) }))
-47. }
-48. .width('90%')
-49. .justifyContent(FlexAlign.Center)
-50. }
-51. }
-52. .width('90%')
-53. .height('100%')
-54. .alignItems(HorizontalAlign.Center)
-55. .borderRadius(10)
-56. .margin({ top: 15 })
-57. .backgroundColor(Color.White)
-58. .shadow({
-59. radius: 20,
-60. color: 0x909399,
-61. offsetX: 20,
-62. offsetY: 10
-63. })
-64. }
-
-66. class InternalValue {
-67. public flag: boolean = false;
-68. };
-
-70. export class PostNode extends NodeController {
-71. private node: BuilderNode<Data[]> | null = null;
-72. private isRemove: InternalValue = new InternalValue();
-73. private callback: Function | undefined = undefined;
-74. private data: Data | null = null;
-
-76. makeNode(uiContext: UIContext): FrameNode | null {
-77. if (this.isRemove.flag === true) {
-78. return null;
-79. }
-80. if (this.node != null) {
-81. return this.node.getFrameNode();
-82. }
-
-84. return null;
-85. }
-
-87. init(uiContext: UIContext, id: string, isExpand: boolean) {
-88. if (this.node != null) {
-89. return;
-90. }
-91. // 创建节点，需要uiContext
-92. this.node = new BuilderNode(uiContext);
-93. context = uiContext.getHostContext() as common.UIAbilityContext;
-94. // 创建离线组件
-95. this.data = { item: id, isExpand: isExpand };
-96. this.node.build(wrapBuilder<Data[]>(postBuilder), this.data);
-97. }
-
-99. update(id: string, isExpand: boolean) {
-100. if (this.node !== null) {
-101. // 调用update进行更新。
-102. this.data = { item: id, isExpand: isExpand };
-103. this.node.update(this.data);
-104. }
-105. }
-
-107. setCallback(callback: Function | undefined) {
-108. this.callback = callback;
-109. }
-
-111. callCallback() {
-112. if (this.callback != undefined) {
-113. this.callback();
-114. }
-115. }
-
-117. onRemove() {
-118. this.isRemove.flag = true;
-119. // 组件迁移出节点时触发重建
-120. this.rebuild();
-121. this.isRemove.flag = false;
-122. }
-123. }
-
-125. let gNodeMap: Map<string, PostNode | undefined> = new Map();
-
-127. export const createPostNode =
-128. (uiContext: UIContext, id: string, isExpand: boolean): PostNode | undefined => {
-129. let node = new PostNode();
-130. node.init(uiContext, id, isExpand);
-131. gNodeMap.set(id, node);
-132. return node;
-133. }
-
-135. export const getPostNode = (id: string): PostNode | undefined => {
-136. if (!gNodeMap.has(id)) {
-137. return undefined;
-138. }
-139. return gNodeMap.get(id);
-140. }
-
-142. export const deleteNode = (id: string) => {
-143. gNodeMap.delete(id);
-144. }
+    return {
+      left: rstRect.left,
+      right: rstRect.right,
+      top: rstRect.top,
+      bottom: rstRect.bottom,
+      width: rstRect.width,
+      height: rstRect.height
+    }
+  }
+}
 ```
 
-[PostNode.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/shareTransition/template3/PostNode.ets#L16-L162)
+```typescript
+// PostNode.ets
+// 跨容器迁移能力
+import { UIContext, curves, NodeController, BuilderNode, FrameNode } from '@kit.ArkUI';
+import { common } from '@kit.AbilityKit';
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/pu4Qek_oT_i_7WXj7Hnkqg/zh-cn_image_0000002589324347.gif)
+class Data {
+  public item: string | null = null;
+  public isExpand: boolean = false;
+}
+let context: undefined | common.UIAbilityContext = undefined;
+@Builder
+function postBuilder(data: Data) {
+  // 跨容器迁移组件置于@Builder内
+  Column() {
+    Row() {
+      Row()
+        .backgroundColor(Color.Pink)
+        .borderRadius(20)
+        .width(80)
+        .height(80)
+      Column() {
+        // 请在resources\base\element\string.json文件中配置name为'shareTransition_text5'，value为非空字符串的资源
+        Text((context as common.UIAbilityContext)?.resourceManager.getStringByNameSync('shareTransition_text5') + data.item)
+          .fontSize(20)
+        // 请将$r('app.string.shareTransition_text6')替换为实际资源文件，在本示例中该资源文件的value值为"共享元素转场"
+        Text($r('app.string.shareTransition_text6'))
+          .fontSize(12)
+          .fontColor(0x909399)
+      }
+      .alignItems(HorizontalAlign.Start)
+      .justifyContent(FlexAlign.SpaceAround)
+      .margin({ left: 10 })
+      .height(80)
+    }
+    .width('90%')
+    .height(100)
+
+    // 展开后显示细节内容
+    if (data.isExpand) {
+      Row() {
+        // 请将$r('app.string.shareTransition_text7')替换为实际资源文件，在本示例中该资源文件的value值为"展开态"
+        Text($r('app.string.shareTransition_text7'))
+          .fontSize(28)
+          .fontColor(0x909399)
+          .textAlign(TextAlign.Center)
+          .transition(TransitionEffect.OPACITY.animation({ curve: curves.springMotion(0.6, 0.9) }))
+      }
+      .width('90%')
+      .justifyContent(FlexAlign.Center)
+    }
+  }
+  .width('90%')
+  .height('100%')
+  .alignItems(HorizontalAlign.Center)
+  .borderRadius(10)
+  .margin({ top: 15 })
+  .backgroundColor(Color.White)
+  .shadow({
+    radius: 20,
+    color: 0x909399,
+    offsetX: 20,
+    offsetY: 10
+  })
+}
+
+class InternalValue {
+  public flag: boolean = false;
+};
+
+export class PostNode extends NodeController {
+  private node: BuilderNode<Data[]> | null = null;
+  private isRemove: InternalValue = new InternalValue();
+  private callback: Function | undefined = undefined;
+  private data: Data | null = null;
+
+  makeNode(uiContext: UIContext): FrameNode | null {
+    if (this.isRemove.flag === true) {
+      return null;
+    }
+    if (this.node != null) {
+      return this.node.getFrameNode();
+    }
+
+    return null;
+  }
+
+  init(uiContext: UIContext, id: string, isExpand: boolean) {
+    if (this.node != null) {
+      return;
+    }
+    // 创建节点，需要uiContext
+    this.node = new BuilderNode(uiContext);
+    context = uiContext.getHostContext() as common.UIAbilityContext;
+    // 创建离线组件
+    this.data = { item: id, isExpand: isExpand };
+    this.node.build(wrapBuilder<Data[]>(postBuilder), this.data);
+  }
+
+  update(id: string, isExpand: boolean) {
+    if (this.node !== null) {
+      // 调用update进行更新。
+      this.data = { item: id, isExpand: isExpand };
+      this.node.update(this.data);
+    }
+  }
+
+  setCallback(callback: Function | undefined) {
+    this.callback = callback;
+  }
+
+  callCallback() {
+    if (this.callback != undefined) {
+      this.callback();
+    }
+  }
+
+  onRemove() {
+    this.isRemove.flag = true;
+    // 组件迁移出节点时触发重建
+    this.rebuild();
+    this.isRemove.flag = false;
+  }
+}
+
+let gNodeMap: Map<string, PostNode | undefined> = new Map();
+
+export const createPostNode =
+  (uiContext: UIContext, id: string, isExpand: boolean): PostNode | undefined => {
+    let node = new PostNode();
+    node.init(uiContext, id, isExpand);
+    gNodeMap.set(id, node);
+    return node;
+  }
+
+export const getPostNode = (id: string): PostNode | undefined => {
+  if (!gNodeMap.has(id)) {
+    return undefined;
+  }
+  return gNodeMap.get(id);
+}
+
+export const deleteNode = (id: string) => {
+  gNodeMap.delete(id);
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/RUK2x85yQB-QBqy_69hPcw/zh-cn_image_0000002736312889.gif)
 
 ### 结合Navigation使用
 
@@ -592,781 +586,763 @@ content_hash: sha256:45347ff33e4aed844d34b21c715df44f3304a1e0125dc7dcaf78c985845
 * 点击缩略图后共享元素组件从PageOne被迁移至PageTwo，随后触发由PageOne至PageTwo的自定义转场动画，即PageTwo的共享元素组件从原来的缩略图状态做动画到全屏状态。
 * 由全屏状态返回到缩略图时，触发由PageTwo至PageOne的自定义转场动画，即PageTwo的共享元素组件从全屏状态做动画到原PageOne的缩略图状态，转场结束后共享元素组件从PageTwo被迁移回PageOne。
 
-```
-1. ├──entry/src/main/ets                 // 代码区
-2. │  ├──CustomTransition
-3. │  │  ├──AnimationProperties.ets      // 一镜到底转场动画封装
-4. │  │  └──CustomNavigationUtils.ets    // Navigation自定义转场动画配置
-5. │  ├──entryability
-6. │  │  └──EntryAbility.ets             // 程序入口类
-7. │  ├──NodeContainer
-8. │  │  └──CustomComponent.ets          // 自定义占位节点
-9. │  ├──pages
-10. │  │  ├──Index.ets                    // 导航页面
-11. │  │  ├──PageOne.ets                  // 缩略图页面
-12. │  │  └──PageTwo.ets                  // 全屏展开页面
-13. │  └──utils
-14. │     ├──ComponentAttrUtils.ets       // 组件位置获取
-15. │     └──WindowUtils.ets              // 窗口信息
-16. └──entry/src/main/resources           // 资源文件
-```
-
-```
-1. // Index.ets
-2. import { AnimateCallback, CustomTransition } from '../../../CustomTransition/CustomNavigationUtils';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-5. const TAG: string = 'Index';
-6. const DOMAIN = 0xF811;
-
-8. @Entry
-9. @Component
-10. struct Index {
-11. private pageInfos: NavPathStack = new NavPathStack();
-12. // 允许进行自定义转场的页面名称
-13. private allowedCustomTransitionFromPageName: string[] = ['PageOne'];
-14. private allowedCustomTransitionToPageName: string[] = ['PageTwo'];
-
-16. aboutToAppear(): void {
-17. this.pageInfos.pushPath({ name: 'PageOne' });
-18. }
-
-20. private isCustomTransitionEnabled(fromName: string, toName: string): boolean {
-21. // 点击和返回均需要进行自定义转场，因此需要分别判断
-22. if ((this.allowedCustomTransitionFromPageName.includes(fromName) &&
-23. this.allowedCustomTransitionToPageName.includes(toName)) ||
-24. (this.allowedCustomTransitionFromPageName.includes(toName) &&
-25. this.allowedCustomTransitionToPageName.includes(fromName))) {
-26. return true;
-27. }
-28. return false;
-29. }
-
-31. build() {
-32. Navigation(this.pageInfos)
-33. .hideNavBar(true)
-34. .customNavContentTransition((from: NavContentInfo, to: NavContentInfo, operation: NavigationOperation) => {
-35. if ((!from || !to) || (!from.name || !to.name)) {
-36. return undefined;
-37. }
-
-39. // 通过from和to的name对自定义转场路由进行管控
-40. if (!this.isCustomTransitionEnabled(from.name, to.name)) {
-41. return undefined;
-42. }
-
-44. // 需要对转场页面是否注册了animation进行判断，来决定是否进行自定义转场
-45. let fromParam: AnimateCallback = CustomTransition.getInstance().getAnimateParam(from.index);
-46. let toParam: AnimateCallback = CustomTransition.getInstance().getAnimateParam(to.index);
-47. if (!fromParam.animation || !toParam.animation) {
-48. return undefined;
-49. }
-
-51. // 一切判断完成后，构造customAnimation给系统侧调用，执行自定义转场动画
-52. let customAnimation: NavigationAnimatedTransition = {
-53. onTransitionEnd: (isSuccess: boolean) => {
-54. hilog.info(DOMAIN, 'current transition result is', 'isSuccess: %s', isSuccess.toString());
-55. },
-56. timeout: 2000,
-57. transition: (transitionProxy: NavigationTransitionProxy) => {
-58. hilog.info(DOMAIN, TAG, 'trigger transition callback');
-59. if (fromParam.animation) {
-60. fromParam.animation(operation === NavigationOperation.PUSH, true, transitionProxy);
-61. }
-62. if (toParam.animation) {
-63. toParam.animation(operation === NavigationOperation.PUSH, false, transitionProxy);
-64. }
-65. }
-66. };
-67. return customAnimation;
-68. })
-69. }
-70. }
+```txt
+├──entry/src/main/ets                 // 代码区
+│  ├──CustomTransition
+│  │  ├──AnimationProperties.ets      // 一镜到底转场动画封装
+│  │  └──CustomNavigationUtils.ets    // Navigation自定义转场动画配置
+│  ├──entryability
+│  │  └──EntryAbility.ets             // 程序入口类
+│  ├──NodeContainer
+│  │  └──CustomComponent.ets          // 自定义占位节点
+│  ├──pages
+│  │  ├──Index.ets                    // 导航页面
+│  │  ├──PageOne.ets                  // 缩略图页面
+│  │  └──PageTwo.ets                  // 全屏展开页面
+│  └──utils
+│     ├──ComponentAttrUtils.ets       // 组件位置获取
+│     └──WindowUtils.ets              // 窗口信息
+└──entry/src/main/resources           // 资源文件
 ```
 
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/shareTransition/template4/Index.ets#L15-L87)
+```typescript
+// Index.ets
+import { AnimateCallback, CustomTransition } from '../../../CustomTransition/CustomNavigationUtils';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-```
-1. // PageOne.ets
-2. import { CustomTransition } from '../../../CustomTransition/CustomNavigationUtils';
-3. import { MyNodeController, createMyNode, getMyNode } from '../../../NodeContainer/CustomComponent';
-4. import { ComponentAttrUtils, RectInfoInPx } from '../../../utils/ComponentAttrUtils';
-5. import { WindowUtils } from '../../../utils/WindowUtils';
+const TAG: string = 'Index';
+const DOMAIN = 0xF811;
 
-7. @Builder
-8. export function PageOneBuilder() {
-9. PageOne();
-10. }
+@Entry
+@Component
+struct Index {
+  private pageInfos: NavPathStack = new NavPathStack();
+  // 允许进行自定义转场的页面名称
+  private allowedCustomTransitionFromPageName: string[] = ['PageOne'];
+  private allowedCustomTransitionToPageName: string[] = ['PageTwo'];
 
-12. @Component
-13. export struct PageOne {
-14. private pageInfos: NavPathStack = new NavPathStack();
-15. private pageId: number = -1;
-16. @State myNodeController: MyNodeController | undefined = new MyNodeController(false);
+  aboutToAppear(): void {
+    this.pageInfos.pushPath({ name: 'PageOne' });
+  }
 
-18. aboutToAppear(): void {
-19. let node = getMyNode();
-20. if (node === undefined) {
-21. // 新建自定义节点
-22. createMyNode(this.getUIContext());
-23. }
-24. this.myNodeController = getMyNode();
-25. }
+  private isCustomTransitionEnabled(fromName: string, toName: string): boolean {
+    // 点击和返回均需要进行自定义转场，因此需要分别判断
+    if ((this.allowedCustomTransitionFromPageName.includes(fromName) &&
+      this.allowedCustomTransitionToPageName.includes(toName)) ||
+      (this.allowedCustomTransitionFromPageName.includes(toName) &&
+      this.allowedCustomTransitionToPageName.includes(fromName))) {
+      return true;
+    }
+    return false;
+  }
 
-27. private doFinishTransition(): void {
-28. // PageTwo结束转场时将节点从PageTwo迁移回PageOne
-29. this.myNodeController = getMyNode();
-30. }
+  build() {
+    Navigation(this.pageInfos)
+      .hideNavBar(true)
+      .customNavContentTransition((from: NavContentInfo, to: NavContentInfo, operation: NavigationOperation) => {
+        if ((!from || !to) || (!from.name || !to.name)) {
+          return undefined;
+        }
 
-32. private registerCustomTransition(): void {
-33. // 注册自定义动画协议
-34. CustomTransition.getInstance().registerNavParam(this.pageId,
-35. (isPush: boolean, isExit: boolean, transitionProxy: NavigationTransitionProxy) => {
-36. }, 500);
-37. }
+        // 通过from和to的name对自定义转场路由进行管控
+        if (!this.isCustomTransitionEnabled(from.name, to.name)) {
+          return undefined;
+        }
 
-39. private onCardClicked(): void {
-40. let cardItemInfo: RectInfoInPx =
-41. ComponentAttrUtils.getRectInfoById(WindowUtils.window.getUIContext(), 'card');
-42. let param: Record<string, Object> = {};
-43. param['cardItemInfo'] = cardItemInfo;
-44. param['doDefaultTransition'] = (myController: MyNodeController) => {
-45. this.doFinishTransition();
-46. };
-47. this.pageInfos.pushPath({ name: 'PageTwo', param: param });
-48. // 自定义节点从PageOne下树
-49. if (this.myNodeController != undefined) {
-50. (this.myNodeController as MyNodeController).onRemove();
-51. }
-52. }
+        // 需要对转场页面是否注册了animation进行判断，来决定是否进行自定义转场
+        let fromParam: AnimateCallback = CustomTransition.getInstance().getAnimateParam(from.index);
+        let toParam: AnimateCallback = CustomTransition.getInstance().getAnimateParam(to.index);
+        if (!fromParam.animation || !toParam.animation) {
+          return undefined;
+        }
 
-54. build() {
-55. NavDestination() {
-56. Stack() {
-57. Column({ space: 20 }) {
-58. Row({ space: 10 }) {
-59. // 请将$r('app.media.avatar')替换为实际资源文件
-60. Image($r('app.media.avatar'))
-61. .size({ width: 50, height: 50 })
-62. .borderRadius(25)
-63. .clip(true)
-
-65. Text('Alice')
-66. }
-67. .justifyContent(FlexAlign.Start)
-
-69. // 请将$r('app.string.shareTransition_text2')替换为实际资源文件，在本示例中该资源文件的value值为"你好世界"
-70. Text($r('app.string.shareTransition_text2'))
-
-72. NodeContainer(this.myNodeController)
-73. .size({ width: 320, height: 250 })
-74. .onClick(() => {
-75. this.onCardClicked();
-76. })
-77. }
-78. .alignItems(HorizontalAlign.Start)
-79. .margin(30)
-80. }
-81. }
-82. .onReady((context: NavDestinationContext) => {
-83. this.pageInfos = context.pathStack;
-84. this.pageId = this.pageInfos.getAllPathName().length - 1;
-85. this.registerCustomTransition();
-86. })
-87. .onDisAppear(() => {
-88. CustomTransition.getInstance().unRegisterNavParam(this.pageId);
-89. // 自定义节点从PageOne下树
-90. if (this.myNodeController != undefined) {
-91. (this.myNodeController as MyNodeController).onRemove();
-92. }
-93. })
-94. }
-95. }
+        // 一切判断完成后，构造customAnimation给系统侧调用，执行自定义转场动画
+        let customAnimation: NavigationAnimatedTransition = {
+          onTransitionEnd: (isSuccess: boolean) => {
+            hilog.info(DOMAIN, 'current transition result is', 'isSuccess: %s', isSuccess.toString());
+          },
+          timeout: 2000,
+          transition: (transitionProxy: NavigationTransitionProxy) => {
+            hilog.info(DOMAIN, TAG, 'trigger transition callback');
+            if (fromParam.animation) {
+              fromParam.animation(operation === NavigationOperation.PUSH, true, transitionProxy);
+            }
+            if (toParam.animation) {
+              toParam.animation(operation === NavigationOperation.PUSH, false, transitionProxy);
+            }
+          }
+        };
+        return customAnimation;
+      })
+  }
+}
 ```
 
-[PageOne.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/shareTransition/template4/PageOne.ets#L16-L113)
+```typescript
+// PageOne.ets
+import { CustomTransition } from '../../../CustomTransition/CustomNavigationUtils';
+import { MyNodeController, createMyNode, getMyNode } from '../../../NodeContainer/CustomComponent';
+import { ComponentAttrUtils, RectInfoInPx } from '../../../utils/ComponentAttrUtils';
+import { WindowUtils } from '../../../utils/WindowUtils';
 
-```
-1. // PageTwo.ets
-2. import { CustomTransition } from '../../../CustomTransition/CustomNavigationUtils';
-3. import { AnimationProperties } from '../../../CustomTransition/AnimationProperties';
-4. import { RectInfoInPx } from '../../../utils/ComponentAttrUtils';
-5. import { getMyNode, MyNodeController } from '../../../NodeContainer/CustomComponent';
+@Builder
+export function PageOneBuilder() {
+  PageOne();
+}
 
-7. @Builder
-8. export function PageTwoBuilder() {
-9. PageTwo();
-10. }
+@Component
+export struct PageOne {
+  private pageInfos: NavPathStack = new NavPathStack();
+  private pageId: number = -1;
+  @State myNodeController: MyNodeController | undefined = new MyNodeController(false);
 
-12. @Component
-13. export struct PageTwo {
-14. @State pageInfos: NavPathStack = new NavPathStack();
-15. @State animationProperties: AnimationProperties = new AnimationProperties(this.getUIContext());
-16. @State myNodeController: MyNodeController | undefined = new MyNodeController(false);
-17. private pageId: number = -1;
-18. private shouldDoDefaultTransition: boolean = false;
-19. private prePageDoFinishTransition: () => void = () => {};
-20. private cardItemInfo: RectInfoInPx = new RectInfoInPx();
-21. @StorageProp('windowSizeChanged') @Watch('unRegisterNavParam') windowSizeChangedTime: number = 0;
-22. @StorageProp('onConfigurationUpdate') @Watch('unRegisterNavParam') onConfigurationUpdateTime: number = 0;
+  aboutToAppear(): void {
+    let node = getMyNode();
+    if (node === undefined) {
+      // 新建自定义节点
+      createMyNode(this.getUIContext());
+    }
+    this.myNodeController = getMyNode();
+  }
 
-24. aboutToAppear(): void {
-25. // 迁移自定义节点至当前页面
-26. this.myNodeController = getMyNode();
-27. }
+  private doFinishTransition(): void {
+    // PageTwo结束转场时将节点从PageTwo迁移回PageOne
+    this.myNodeController = getMyNode();
+  }
 
-29. private unRegisterNavParam(): void {
-30. this.shouldDoDefaultTransition = true;
-31. }
+  private registerCustomTransition(): void {
+    // 注册自定义动画协议
+    CustomTransition.getInstance().registerNavParam(this.pageId,
+      (isPush: boolean, isExit: boolean, transitionProxy: NavigationTransitionProxy) => {
+      }, 500);
+  }
 
-33. private onBackPressed(): boolean {
-34. if (this.shouldDoDefaultTransition) {
-35. CustomTransition.getInstance().unRegisterNavParam(this.pageId);
-36. this.pageInfos.pop();
-37. this.prePageDoFinishTransition();
-38. this.shouldDoDefaultTransition = false;
-39. return true;
-40. }
-41. this.pageInfos.pop();
-42. return true;
-43. }
+  private onCardClicked(): void {
+    let cardItemInfo: RectInfoInPx =
+      ComponentAttrUtils.getRectInfoById(WindowUtils.window.getUIContext(), 'card');
+    let param: Record<string, Object> = {};
+    param['cardItemInfo'] = cardItemInfo;
+    param['doDefaultTransition'] = (myController: MyNodeController) => {
+      this.doFinishTransition();
+    };
+    this.pageInfos.pushPath({ name: 'PageTwo', param: param });
+    // 自定义节点从PageOne下树
+    if (this.myNodeController != undefined) {
+      (this.myNodeController as MyNodeController).onRemove();
+    }
+  }
 
-45. build() {
-46. NavDestination() {
-47. // Stack需要设置alignContent为TopStart，否则在高度变化过程中，截图和内容都会随高度重新布局位置
-48. Stack({ alignContent: Alignment.TopStart }) {
-49. Stack({ alignContent: Alignment.TopStart }) {
-50. Column({ space: 20 }) {
-51. NodeContainer(this.myNodeController);
-52. if (this.animationProperties.showDetailContent) {
-53. // 请将$r('app.string.shareTransition_text8')替换为实际资源文件，在本示例中该资源文件的value值为"展开态内容"
-54. Text($r('app.string.shareTransition_text8'))
-55. .fontSize(20)
-56. .transition(TransitionEffect.OPACITY)
-57. .margin(30)
-58. }
-59. }
-60. .alignItems(HorizontalAlign.Start)
-61. }
-62. .position({ y: this.animationProperties.positionValue });
-63. }
-64. .scale({ x: this.animationProperties.scaleValue, y: this.animationProperties.scaleValue })
-65. .translate({ x: this.animationProperties.translateX, y: this.animationProperties.translateY })
-66. .width(this.animationProperties.clipWidth)
-67. .height(this.animationProperties.clipHeight)
-68. .borderRadius(this.animationProperties.radius)
-69. // expandSafeArea使得Stack做沉浸式效果，向上扩到状态栏，向下扩到导航条
-70. .expandSafeArea([SafeAreaType.SYSTEM])
-71. // 对高度进行裁切
-72. .clip(true)
-73. }
-74. .backgroundColor(this.animationProperties.navDestinationBgColor)
-75. .hideTitleBar(true)
-76. .onReady((context: NavDestinationContext) => {
-77. this.pageInfos = context.pathStack;
-78. this.pageId = this.pageInfos.getAllPathName().length - 1;
-79. let param = context.pathInfo?.param as Record<string, Object>;
-80. this.prePageDoFinishTransition = param['doDefaultTransition'] as () => void;
-81. this.cardItemInfo = param['cardItemInfo'] as RectInfoInPx;
-82. CustomTransition.getInstance().registerNavParam(this.pageId,
-83. (isPush: boolean, isExit: boolean, transitionProxy: NavigationTransitionProxy) => {
-84. this.animationProperties.doAnimation(
-85. this.cardItemInfo, isPush, isExit, transitionProxy, 0,
-86. this.prePageDoFinishTransition, this.myNodeController);
-87. }, 500);
-88. })
-89. .onBackPressed(() => {
-90. return this.onBackPressed();
-91. })
-92. .onDisAppear(() => {
-93. CustomTransition.getInstance().unRegisterNavParam(this.pageId);
-94. })
-95. }
-96. }
+  build() {
+    NavDestination() {
+      Stack() {
+        Column({ space: 20 }) {
+          Row({ space: 10 }) {
+            // 请将$r('app.media.avatar')替换为实际资源文件
+            Image($r('app.media.avatar'))
+              .size({ width: 50, height: 50 })
+              .borderRadius(25)
+              .clip(true)
+
+            Text('Alice')
+          }
+          .justifyContent(FlexAlign.Start)
+
+          // 请将$r('app.string.shareTransition_text2')替换为实际资源文件，在本示例中该资源文件的value值为"你好世界"
+          Text($r('app.string.shareTransition_text2'))
+
+          NodeContainer(this.myNodeController)
+            .size({ width: 320, height: 250 })
+            .onClick(() => {
+              this.onCardClicked();
+            })
+        }
+        .alignItems(HorizontalAlign.Start)
+        .margin(30)
+      }
+    }
+    .onReady((context: NavDestinationContext) => {
+      this.pageInfos = context.pathStack;
+      this.pageId = this.pageInfos.getAllPathName().length - 1;
+      this.registerCustomTransition();
+    })
+    .onDisAppear(() => {
+      CustomTransition.getInstance().unRegisterNavParam(this.pageId);
+      // 自定义节点从PageOne下树
+      if (this.myNodeController != undefined) {
+        (this.myNodeController as MyNodeController).onRemove();
+      }
+    })
+  }
+}
 ```
 
-[PageTwo.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/shareTransition/template4/PageTwo.ets#L16-L114)
+```typescript
+// PageTwo.ets
+import { CustomTransition } from '../../../CustomTransition/CustomNavigationUtils';
+import { AnimationProperties } from '../../../CustomTransition/AnimationProperties';
+import { RectInfoInPx } from '../../../utils/ComponentAttrUtils';
+import { getMyNode, MyNodeController } from '../../../NodeContainer/CustomComponent';
 
-```
-1. // CustomNavigationUtils.ets
-2. // 配置Navigation自定义转场动画
-3. export interface AnimateCallback {
-4. animation: ((isPush: boolean, isExit: boolean, transitionProxy: NavigationTransitionProxy) => void | undefined)
-5. | undefined;
-6. timeout: (number | undefined) | undefined;
-7. }
+@Builder
+export function PageTwoBuilder() {
+  PageTwo();
+}
 
-9. const customTransitionMap: Map<number, AnimateCallback> = new Map();
+@Component
+export struct PageTwo {
+  @State pageInfos: NavPathStack = new NavPathStack();
+  @State animationProperties: AnimationProperties = new AnimationProperties(this.getUIContext());
+  @State myNodeController: MyNodeController | undefined = new MyNodeController(false);
+  private pageId: number = -1;
+  private shouldDoDefaultTransition: boolean = false;
+  private prePageDoFinishTransition: () => void = () => {};
+  private cardItemInfo: RectInfoInPx = new RectInfoInPx();
+  @StorageProp('windowSizeChanged') @Watch('unRegisterNavParam') windowSizeChangedTime: number = 0;
+  @StorageProp('onConfigurationUpdate') @Watch('unRegisterNavParam') onConfigurationUpdateTime: number = 0;
 
-11. export class CustomTransition {
-12. private constructor() {
-13. };
+  aboutToAppear(): void {
+    // 迁移自定义节点至当前页面
+    this.myNodeController = getMyNode();
+  }
 
-15. static delegate = new CustomTransition();
+  private unRegisterNavParam(): void {
+    this.shouldDoDefaultTransition = true;
+  }
 
-17. static getInstance() {
-18. return CustomTransition.delegate;
-19. }
+  private onBackPressed(): boolean {
+    if (this.shouldDoDefaultTransition) {
+      CustomTransition.getInstance().unRegisterNavParam(this.pageId);
+      this.pageInfos.pop();
+      this.prePageDoFinishTransition();
+      this.shouldDoDefaultTransition = false;
+      return true;
+    }
+    this.pageInfos.pop();
+    return true;
+  }
 
-21. // 注册页面的动画回调，name是注册页面的动画的回调
-22. // animationCallback是需要执行的动画内容，timeout是转场结束的超时时间
-23. registerNavParam(
-24. name: number,
-25. animationCallback: (operation: boolean, isExit: boolean, transitionProxy: NavigationTransitionProxy) => void,
-26. timeout: number): void {
-27. if (customTransitionMap.has(name)) {
-28. let param = customTransitionMap.get(name);
-29. if (param != undefined) {
-30. param.animation = animationCallback;
-31. param.timeout = timeout;
-32. return;
-33. }
-34. }
-35. let params: AnimateCallback = { timeout: timeout, animation: animationCallback };
-36. customTransitionMap.set(name, params);
-37. }
-
-39. unRegisterNavParam(name: number): void {
-40. customTransitionMap.delete(name);
-41. }
-
-43. getAnimateParam(name: number): AnimateCallback {
-44. let result: AnimateCallback = {
-45. animation: customTransitionMap.get(name)?.animation,
-46. timeout: customTransitionMap.get(name)?.timeout,
-47. };
-48. return result;
-49. }
-50. }
-```
-
-[CustomNavigationUtils.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/CustomTransition/CustomNavigationUtils.ets#L15-L67)
-
-```
-1. // 工程配置文件module.json5中配置 {"routerMap": "$profile:route_map"}
-2. // route_map.json
-3. {
-4. "routerMap": [
-5. {
-6. "name": "PageOne",
-7. "pageSourceFile": "src/main/ets/pages/PageOne.ets",
-8. "buildFunction": "PageOneBuilder"
-9. },
-10. {
-11. "name": "PageTwo",
-12. "pageSourceFile": "src/main/ets/pages/PageTwo.ets",
-13. "buildFunction": "PageTwoBuilder"
-14. }
-15. ]
-16. }
-```
-
-```
-1. // AnimationProperties.ets
-2. // 一镜到底转场动画封装
-3. import { curves, UIContext } from '@kit.ArkUI';
-4. import { RectInfoInPx } from '../utils/ComponentAttrUtils';
-5. import { WindowUtils } from '../utils/WindowUtils';
-6. import { MyNodeController } from '../NodeContainer/CustomComponent';
-7. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-9. const TAG: string = 'AnimationProperties';
-10. const DOMAIN = 0xF811;
-11. const DEVICE_BORDER_RADIUS: number = 34;
-
-13. // 将自定义一镜到底转场动画进行封装，其他界面也需要做自定义一镜到底转场的话，可以直接复用，减少工作量
-14. @Observed
-15. export class AnimationProperties {
-16. public navDestinationBgColor: ResourceColor = Color.Transparent;
-17. public translateX: number = 0;
-18. public translateY: number = 0;
-19. public scaleValue: number = 1;
-20. public clipWidth: Dimension = 0;
-21. public clipHeight: Dimension = 0;
-22. public radius: number = 0;
-23. public positionValue: number = 0;
-24. public showDetailContent: boolean = false;
-25. private uiContext: UIContext;
-
-27. constructor(uiContext: UIContext) {
-28. this.uiContext = uiContext;
-29. }
-
-31. public doAnimation(cardItemInfoPx: RectInfoInPx, isPush: boolean, isExit: boolean,
-32. transitionProxy: NavigationTransitionProxy, extraTranslateValue: number,
-33. prePageOnFinish: (index: MyNodeController) => void, myNodeController: MyNodeController | undefined): void {
-34. // 首先计算卡片的宽高与窗口宽高的比例
-35. let widthScaleRatio = cardItemInfoPx.width / WindowUtils.windowWidthPx;
-36. let heightScaleRatio = cardItemInfoPx.height / WindowUtils.windowHeightPx;
-37. let isUseWidthScale = widthScaleRatio > heightScaleRatio;
-38. let initScale: number = isUseWidthScale ? widthScaleRatio : heightScaleRatio;
-
-40. let initTranslateX: number = 0;
-41. let initTranslateY: number = 0;
-42. let initClipWidth: Dimension = 0;
-43. let initClipHeight: Dimension = 0;
-44. // 使得PageTwo卡片向上扩到状态栏
-45. let initPositionValue: number = -this.uiContext.px2vp(WindowUtils.topAvoidAreaHeightPx + extraTranslateValue);
-
-47. if (isUseWidthScale) {
-48. initTranslateX = this.uiContext.px2vp(cardItemInfoPx.left -
-49. (WindowUtils.windowWidthPx - cardItemInfoPx.width) / 2);
-50. initClipWidth = '100%';
-51. initClipHeight = this.uiContext.px2vp((cardItemInfoPx.height) / initScale);
-52. initTranslateY = this.uiContext.px2vp(cardItemInfoPx.top - ((this.uiContext.vp2px(initClipHeight) -
-53. this.uiContext.vp2px(initClipHeight) * initScale) / 2));
-54. } else {
-55. initTranslateY = this.uiContext.px2vp(cardItemInfoPx.top -
-56. (WindowUtils.windowHeightPx - cardItemInfoPx.height) / 2);
-57. initClipHeight = '100%';
-58. initClipWidth = this.uiContext.px2vp((cardItemInfoPx.width) / initScale);
-59. initTranslateX = this.uiContext.px2vp(cardItemInfoPx.left -
-60. (WindowUtils.windowWidthPx / 2 - cardItemInfoPx.width / 2));
-61. }
-
-63. // 转场动画开始前通过计算scale、translate、position和clip height & width，确定节点迁移前后位置一致
-64. hilog.info(DOMAIN, TAG, 'initScale: ' + initScale + ' initTranslateX ' + initTranslateX +
-65. ' initTranslateY ' + initTranslateY + ' initClipWidth ' + initClipWidth +
-66. ' initClipHeight ' + initClipHeight + ' initPositionValue ' + initPositionValue);
-
-68. // 转场至新页面
-69. if (isPush && !isExit) {
-70. this.scaleValue = initScale;
-71. this.translateX = initTranslateX;
-72. this.clipWidth = initClipWidth;
-73. this.clipHeight = initClipHeight;
-74. this.translateY = initTranslateY;
-75. this.positionValue = initPositionValue;
-
-77. this.uiContext?.animateTo({
-78. curve: curves.interpolatingSpring(0, 1, 328, 36),
-79. onFinish: () => {
-80. if (transitionProxy) {
-81. transitionProxy.finishTransition();
-82. }
-83. }
-84. }, () => {
-85. this.scaleValue = 1.0;
-86. this.translateX = 0;
-87. this.translateY = 0;
-88. this.clipWidth = '100%';
-89. this.clipHeight = '100%';
-90. // 页面圆角与系统圆角一致
-91. this.radius = DEVICE_BORDER_RADIUS;
-92. this.showDetailContent = true;
-93. })
-
-95. this.uiContext?.animateTo({
-96. duration: 100,
-97. curve: Curve.Sharp,
-98. }, () => {
-99. // 页面由透明逐渐变为设置背景色
-100. this.navDestinationBgColor = '#00ffffff';
-101. })
-
-103. // 返回旧页面
-104. } else if (!isPush && isExit) {
-
-106. this.uiContext?.animateTo({
-107. duration: 350,
-108. curve: Curve.EaseInOut,
-109. onFinish: () => {
-110. if (transitionProxy) {
-111. transitionProxy.finishTransition();
-112. }
-113. prePageOnFinish(myNodeController);
-114. // 自定义节点从PageTwo下树
-115. if (myNodeController != undefined) {
-116. (myNodeController as MyNodeController).onRemove();
-117. }
-118. }
-119. }, () => {
-120. this.scaleValue = initScale;
-121. this.translateX = initTranslateX;
-122. this.translateY = initTranslateY;
-123. this.radius = 0;
-124. this.clipWidth = initClipWidth;
-125. this.clipHeight = initClipHeight;
-126. this.showDetailContent = false;
-127. })
-
-129. this.uiContext?.animateTo({
-130. duration: 200,
-131. delay: 150,
-132. curve: Curve.Friction,
-133. }, () => {
-134. this.navDestinationBgColor = Color.Transparent;
-135. })
-136. }
-137. }
-138. }
+  build() {
+    NavDestination() {
+      // Stack需要设置alignContent为TopStart，否则在高度变化过程中，截图和内容都会随高度重新布局位置
+      Stack({ alignContent: Alignment.TopStart }) {
+        Stack({ alignContent: Alignment.TopStart }) {
+          Column({ space: 20 }) {
+            NodeContainer(this.myNodeController);
+            if (this.animationProperties.showDetailContent) {
+              // 请将$r('app.string.shareTransition_text8')替换为实际资源文件，在本示例中该资源文件的value值为"展开态内容"
+              Text($r('app.string.shareTransition_text8'))
+                .fontSize(20)
+                .transition(TransitionEffect.OPACITY)
+                .margin(30)
+            }
+          }
+          .alignItems(HorizontalAlign.Start)
+        }
+        .position({ y: this.animationProperties.positionValue });
+      }
+      .scale({ x: this.animationProperties.scaleValue, y: this.animationProperties.scaleValue })
+      .translate({ x: this.animationProperties.translateX, y: this.animationProperties.translateY })
+      .width(this.animationProperties.clipWidth)
+      .height(this.animationProperties.clipHeight)
+      .borderRadius(this.animationProperties.radius)
+      // expandSafeArea使得Stack做沉浸式效果，向上扩到状态栏，向下扩到导航条
+      .expandSafeArea([SafeAreaType.SYSTEM])
+      // 对高度进行裁切
+      .clip(true)
+    }
+    .backgroundColor(this.animationProperties.navDestinationBgColor)
+    .hideTitleBar(true)
+    .onReady((context: NavDestinationContext) => {
+      this.pageInfos = context.pathStack;
+      this.pageId = this.pageInfos.getAllPathName().length - 1;
+      let param = context.pathInfo?.param as Record<string, Object>;
+      this.prePageDoFinishTransition = param['doDefaultTransition'] as () => void;
+      this.cardItemInfo = param['cardItemInfo'] as RectInfoInPx;
+      CustomTransition.getInstance().registerNavParam(this.pageId,
+        (isPush: boolean, isExit: boolean, transitionProxy: NavigationTransitionProxy) => {
+          this.animationProperties.doAnimation(
+            this.cardItemInfo, isPush, isExit, transitionProxy, 0,
+            this.prePageDoFinishTransition, this.myNodeController);
+        }, 500);
+    })
+    .onBackPressed(() => {
+      return this.onBackPressed();
+    })
+    .onDisAppear(() => {
+      CustomTransition.getInstance().unRegisterNavParam(this.pageId);
+    })
+  }
+}
 ```
 
-[AnimationProperties.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/CustomTransition/AnimationProperties.ets#L15-L155)
+```typescript
+// CustomNavigationUtils.ets
+// 配置Navigation自定义转场动画
+export interface AnimateCallback {
+  animation: ((isPush: boolean, isExit: boolean, transitionProxy: NavigationTransitionProxy) => void | undefined)
+    | undefined;
+  timeout: (number | undefined) | undefined;
+}
 
-```
-1. // ComponentAttrUtils.ets
-2. // 获取组件相对窗口的位置
-3. import { componentUtils, UIContext } from '@kit.ArkUI';
-4. import { JSON } from '@kit.ArkTS';
+const customTransitionMap: Map<number, AnimateCallback> = new Map();
 
-6. export class ComponentAttrUtils {
-7. // 根据组件的id获取组件的位置信息
-8. public static getRectInfoById(context: UIContext, id: string): RectInfoInPx {
-9. if (!context || !id) {
-10. throw Error('object is empty');
-11. }
-12. let componentInfo: componentUtils.ComponentInfo = context.getComponentUtils().getRectangleById(id);
+export class CustomTransition {
+  private constructor() {
+  };
 
-14. if (!componentInfo) {
-15. throw Error('object is empty');
-16. }
+  static delegate = new CustomTransition();
 
-18. let rstRect: RectInfoInPx = new RectInfoInPx();
-19. const widthScaleGap = componentInfo.size.width * (1 - componentInfo.scale.x) / 2;
-20. const heightScaleGap = componentInfo.size.height * (1 - componentInfo.scale.y) / 2;
-21. rstRect.left = componentInfo.translate.x + componentInfo.windowOffset.x + widthScaleGap;
-22. rstRect.top = componentInfo.translate.y + componentInfo.windowOffset.y + heightScaleGap;
-23. rstRect.right =
-24. componentInfo.translate.x + componentInfo.windowOffset.x + componentInfo.size.width - widthScaleGap;
-25. rstRect.bottom =
-26. componentInfo.translate.y + componentInfo.windowOffset.y + componentInfo.size.height - heightScaleGap;
-27. rstRect.width = rstRect.right - rstRect.left;
-28. rstRect.height = rstRect.bottom - rstRect.top;
-29. return {
-30. left: rstRect.left,
-31. right: rstRect.right,
-32. top: rstRect.top,
-33. bottom: rstRect.bottom,
-34. width: rstRect.width,
-35. height: rstRect.height
-36. }
-37. }
-38. }
+  static getInstance() {
+    return CustomTransition.delegate;
+  }
 
-40. export class RectInfoInPx {
-41. public left: number = 0;
-42. public top: number = 0;
-43. public right: number = 0;
-44. public bottom: number = 0;
-45. public width: number = 0;
-46. public height: number = 0;
-47. }
+  // 注册页面的动画回调，name是注册页面的动画的回调
+  // animationCallback是需要执行的动画内容，timeout是转场结束的超时时间
+  registerNavParam(
+    name: number,
+    animationCallback: (operation: boolean, isExit: boolean, transitionProxy: NavigationTransitionProxy) => void,
+    timeout: number): void {
+    if (customTransitionMap.has(name)) {
+      let param = customTransitionMap.get(name);
+      if (param != undefined) {
+        param.animation = animationCallback;
+        param.timeout = timeout;
+        return;
+      }
+    }
+    let params: AnimateCallback = { timeout: timeout, animation: animationCallback };
+    customTransitionMap.set(name, params);
+  }
 
-49. export class RectJson {
-50. public $rect: Array<number> = [];
-51. }
+  unRegisterNavParam(name: number): void {
+    customTransitionMap.delete(name);
+  }
+
+  getAnimateParam(name: number): AnimateCallback {
+    let result: AnimateCallback = {
+      animation: customTransitionMap.get(name)?.animation,
+      timeout: customTransitionMap.get(name)?.timeout,
+    };
+    return result;
+  }
+}
 ```
 
-[ComponentAttrUtils.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/utils/ComponentAttrUtils.ets#L16-L69)
-
-```
-1. // WindowUtils.ets
-2. // 窗口信息
-3. import { window } from '@kit.ArkUI';
-
-5. export class WindowUtils {
-6. public static window: window.Window;
-7. public static windowWidthPx: number;
-8. public static windowHeightPx: number;
-9. public static topAvoidAreaHeightPx: number;
-10. public static navigationIndicatorHeightPx: number;
-11. }
-```
-
-[WindowUtils.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/utils/WindowUtils.ets#L16-L29)
-
-```
-1. // EntryAbility.ets
-2. // 程序入口处的onWindowStageCreate增加对窗口宽高等的抓取
-
-4. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-5. import { WindowUtils } from '../utils/WindowUtils';
-6. import { display, window } from '@kit.ArkUI';
-7. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-9. const DOMAIN = 0x0000;
-10. const TAG: string = 'EntryAbility';
-
-12. export default class EntryAbility extends UIAbility {
-13. private currentBreakPoint: string = '';
-
-15. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-16. hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onCreate');
-17. }
-
-19. onDestroy(): void {
-20. hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onDestroy');
-21. }
-
-23. onWindowStageCreate(windowStage: window.WindowStage): void {
-24. // Main window is created, set main page for this ability
-25. hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onWindowStageCreate');
-26. // ...
-27. // 获取窗口宽高
-28. WindowUtils.window = windowStage.getMainWindowSync();
-29. WindowUtils.windowWidthPx = WindowUtils.window.getWindowProperties().windowRect.width;
-30. WindowUtils.windowHeightPx = WindowUtils.window.getWindowProperties().windowRect.height;
-
-32. this.updateBreakpoint(WindowUtils.windowWidthPx);
-
-34. // 获取上方避让区(状态栏等)高度
-35. let avoidArea = WindowUtils.window.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);
-36. WindowUtils.topAvoidAreaHeightPx = avoidArea.topRect.height;
-
-38. // 获取导航条高度
-39. let navigationArea = WindowUtils.window.getWindowAvoidArea(window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR);
-40. WindowUtils.navigationIndicatorHeightPx = navigationArea.bottomRect.height;
-
-42. hilog.info(DOMAIN, TAG, 'the width is ' + WindowUtils.windowWidthPx + '  ' + WindowUtils.windowHeightPx + '  ' +
-43. WindowUtils.topAvoidAreaHeightPx + '  ' + WindowUtils.navigationIndicatorHeightPx);
-
-45. // 监听窗口尺寸、状态栏高度及导航条高度的变化并更新
-46. try {
-47. WindowUtils.window.on('windowSizeChange', (data) => {
-48. hilog.info(DOMAIN, TAG, 'on windowSizeChange, the width is ' + data.width + ', the height is ' + data.height);
-49. WindowUtils.windowWidthPx = data.width;
-50. WindowUtils.windowHeightPx = data.height;
-51. this.updateBreakpoint(data.width);
-52. AppStorage.setOrCreate('windowSizeChanged', Date.now());
-53. })
-
-55. WindowUtils.window.on('avoidAreaChange', (data) => {
-56. if (data.type === window.AvoidAreaType.TYPE_SYSTEM) {
-57. let topRectHeight = data.area.topRect.height;
-58. hilog.info(DOMAIN, TAG, 'on avoidAreaChange, the top avoid area height is ' + topRectHeight);
-59. WindowUtils.topAvoidAreaHeightPx = topRectHeight;
-60. } else if (data.type === window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR) {
-61. let bottomRectHeight = data.area.bottomRect.height;
-62. hilog.info(DOMAIN, TAG, 'on avoidAreaChange, the navigation indicator height is ' + bottomRectHeight);
-63. WindowUtils.navigationIndicatorHeightPx = bottomRectHeight;
-64. }
-65. })
-66. } catch (exception) {
-67. hilog.error(DOMAIN, TAG, `register failed. code: ${exception.code}, message: ${exception.message}`);
-68. }
-
-70. windowStage.loadContent('pages/Index', (err) => {
-71. if (err.code) {
-72. hilog.error(DOMAIN, TAG, 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
-73. return;
-74. }
-75. hilog.info(DOMAIN, TAG, 'Succeeded in loading the content.');
-76. });
-77. }
-
-79. updateBreakpoint(width: number) {
-80. let windowWidthVp = width / (display.getDefaultDisplaySync().densityDPI / 160);
-81. let newBreakPoint: string = '';
-82. if (windowWidthVp < 400) {
-83. newBreakPoint = 'xs';
-84. } else if (windowWidthVp < 600) {
-85. newBreakPoint = 'sm';
-86. } else if (windowWidthVp < 800) {
-87. newBreakPoint = 'md';
-88. } else {
-89. newBreakPoint = 'lg';
-90. }
-91. if (this.currentBreakPoint !== newBreakPoint) {
-92. this.currentBreakPoint = newBreakPoint;
-93. // 使用状态变量记录当前断点值
-94. AppStorage.setOrCreate('currentBreakpoint', this.currentBreakPoint);
-95. }
-96. }
-97. onWindowStageDestroy(): void {
-98. // Main window is destroyed, release UI related resources
-99. hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onWindowStageDestroy');
-100. }
-
-102. onForeground(): void {
-103. // Ability has brought to foreground
-104. hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onForeground');
-105. }
-
-107. onBackground(): void {
-108. // Ability has back to background
-109. hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onBackground');
-110. }
-111. }
+```ts
+// 工程配置文件module.json5中配置 {"routerMap": "$profile:route_map"}
+// route_map.json
+{
+  "routerMap": [
+    {
+      "name": "PageOne",
+      "pageSourceFile": "src/main/ets/pages/PageOne.ets",
+      "buildFunction": "PageOneBuilder"
+    },
+    {
+      "name": "PageTwo",
+      "pageSourceFile": "src/main/ets/pages/PageTwo.ets",
+      "buildFunction": "PageTwoBuilder"
+    }
+  ]
+}
 ```
 
-[EntryAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/entryability/EntryAbility.ets#L15-L161)
+```typescript
+// AnimationProperties.ets
+// 一镜到底转场动画封装
+import { curves, UIContext } from '@kit.ArkUI';
+import { RectInfoInPx } from '../utils/ComponentAttrUtils';
+import { WindowUtils } from '../utils/WindowUtils';
+import { MyNodeController } from '../NodeContainer/CustomComponent';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
+const TAG: string = 'AnimationProperties';
+const DOMAIN = 0xF811;
+const DEVICE_BORDER_RADIUS: number = 34;
+
+// 将自定义一镜到底转场动画进行封装，其他界面也需要做自定义一镜到底转场的话，可以直接复用，减少工作量
+@Observed
+export class AnimationProperties {
+  public navDestinationBgColor: ResourceColor = Color.Transparent;
+  public translateX: number = 0;
+  public translateY: number = 0;
+  public scaleValue: number = 1;
+  public clipWidth: Dimension = 0;
+  public clipHeight: Dimension = 0;
+  public radius: number = 0;
+  public positionValue: number = 0;
+  public showDetailContent: boolean = false;
+  private uiContext: UIContext;
+
+  constructor(uiContext: UIContext) {
+    this.uiContext = uiContext;
+  }
+
+  public doAnimation(cardItemInfoPx: RectInfoInPx, isPush: boolean, isExit: boolean,
+    transitionProxy: NavigationTransitionProxy, extraTranslateValue: number,
+    prePageOnFinish: (index: MyNodeController) => void, myNodeController: MyNodeController | undefined): void {
+    // 首先计算卡片的宽高与窗口宽高的比例
+    let widthScaleRatio = cardItemInfoPx.width / WindowUtils.windowWidthPx;
+    let heightScaleRatio = cardItemInfoPx.height / WindowUtils.windowHeightPx;
+    let isUseWidthScale = widthScaleRatio > heightScaleRatio;
+    let initScale: number = isUseWidthScale ? widthScaleRatio : heightScaleRatio;
+
+    let initTranslateX: number = 0;
+    let initTranslateY: number = 0;
+    let initClipWidth: Dimension = 0;
+    let initClipHeight: Dimension = 0;
+    // 使得PageTwo卡片向上扩到状态栏
+    let initPositionValue: number = -this.uiContext.px2vp(WindowUtils.topAvoidAreaHeightPx + extraTranslateValue);
+
+    if (isUseWidthScale) {
+      initTranslateX = this.uiContext.px2vp(cardItemInfoPx.left -
+        (WindowUtils.windowWidthPx - cardItemInfoPx.width) / 2);
+      initClipWidth = '100%';
+      initClipHeight = this.uiContext.px2vp((cardItemInfoPx.height) / initScale);
+      initTranslateY = this.uiContext.px2vp(cardItemInfoPx.top - ((this.uiContext.vp2px(initClipHeight) -
+        this.uiContext.vp2px(initClipHeight) * initScale) / 2));
+    } else {
+      initTranslateY = this.uiContext.px2vp(cardItemInfoPx.top -
+        (WindowUtils.windowHeightPx - cardItemInfoPx.height) / 2);
+      initClipHeight = '100%';
+      initClipWidth = this.uiContext.px2vp((cardItemInfoPx.width) / initScale);
+      initTranslateX = this.uiContext.px2vp(cardItemInfoPx.left -
+        (WindowUtils.windowWidthPx / 2 - cardItemInfoPx.width / 2));
+    }
+
+    // 转场动画开始前通过计算scale、translate、position和clip height & width，确定节点迁移前后位置一致
+    hilog.info(DOMAIN, TAG, 'initScale: ' + initScale + ' initTranslateX ' + initTranslateX +
+      ' initTranslateY ' + initTranslateY + ' initClipWidth ' + initClipWidth +
+      ' initClipHeight ' + initClipHeight + ' initPositionValue ' + initPositionValue);
+
+    // 转场至新页面
+    if (isPush && !isExit) {
+      this.scaleValue = initScale;
+      this.translateX = initTranslateX;
+      this.clipWidth = initClipWidth;
+      this.clipHeight = initClipHeight;
+      this.translateY = initTranslateY;
+      this.positionValue = initPositionValue;
+
+      this.uiContext?.animateTo({
+        curve: curves.interpolatingSpring(0, 1, 328, 36),
+        onFinish: () => {
+          if (transitionProxy) {
+            transitionProxy.finishTransition();
+          }
+        }
+      }, () => {
+        this.scaleValue = 1.0;
+        this.translateX = 0;
+        this.translateY = 0;
+        this.clipWidth = '100%';
+        this.clipHeight = '100%';
+        // 页面圆角与系统圆角一致
+        this.radius = DEVICE_BORDER_RADIUS;
+        this.showDetailContent = true;
+      })
+
+      this.uiContext?.animateTo({
+        duration: 100,
+        curve: Curve.Sharp,
+      }, () => {
+        // 页面由透明逐渐变为设置背景色
+        this.navDestinationBgColor = '#00ffffff';
+      })
+
+      // 返回旧页面
+    } else if (!isPush && isExit) {
+
+      this.uiContext?.animateTo({
+        duration: 350,
+        curve: Curve.EaseInOut,
+        onFinish: () => {
+          if (transitionProxy) {
+            transitionProxy.finishTransition();
+          }
+          prePageOnFinish(myNodeController);
+          // 自定义节点从PageTwo下树
+          if (myNodeController != undefined) {
+            (myNodeController as MyNodeController).onRemove();
+          }
+        }
+      }, () => {
+        this.scaleValue = initScale;
+        this.translateX = initTranslateX;
+        this.translateY = initTranslateY;
+        this.radius = 0;
+        this.clipWidth = initClipWidth;
+        this.clipHeight = initClipHeight;
+        this.showDetailContent = false;
+      })
+
+      this.uiContext?.animateTo({
+        duration: 200,
+        delay: 150,
+        curve: Curve.Friction,
+      }, () => {
+        this.navDestinationBgColor = Color.Transparent;
+      })
+    }
+  }
+}
 ```
-1. // CustomComponent.ets
-2. // 自定义占位节点，跨容器迁移能力
-3. import { BuilderNode, FrameNode, NodeController } from '@kit.ArkUI';
 
-5. @Builder
-6. function cardBuilder() {
-7. // 请将$r('app.media.card')替换为实际资源文件
-8. Image($r('app.media.card'))
-9. .width('100%')
-10. .id('card')
-11. }
+```typescript
+// ComponentAttrUtils.ets
+// 获取组件相对窗口的位置
+import { componentUtils, UIContext } from '@kit.ArkUI';
+import { JSON } from '@kit.ArkTS';
 
-13. export class MyNodeController extends NodeController {
-14. private cardNode: BuilderNode<[]> | null = null;
-15. private wrapBuilder: WrappedBuilder<[]> = wrapBuilder(cardBuilder);
-16. private needCreate: boolean = false;
-17. private isRemove: boolean = false;
+export class ComponentAttrUtils {
+  // 根据组件的id获取组件的位置信息
+  public static getRectInfoById(context: UIContext, id: string): RectInfoInPx {
+    if (!context || !id) {
+      throw Error('object is empty');
+    }
+    let componentInfo: componentUtils.ComponentInfo = context.getComponentUtils().getRectangleById(id);
 
-19. constructor(create: boolean) {
-20. super();
-21. this.needCreate = create;
-22. }
+    if (!componentInfo) {
+      throw Error('object is empty');
+    }
 
-24. makeNode(uiContext: UIContext): FrameNode | null {
-25. if (this.isRemove === true) {
-26. return null;
-27. }
-28. if (this.needCreate && this.cardNode === null) {
-29. this.cardNode = new BuilderNode(uiContext);
-30. this.cardNode.build(this.wrapBuilder);
-31. }
-32. if (this.cardNode === null) {
-33. return null;
-34. }
-35. return this.cardNode!.getFrameNode()!;
-36. }
+    let rstRect: RectInfoInPx = new RectInfoInPx();
+    const widthScaleGap = componentInfo.size.width * (1 - componentInfo.scale.x) / 2;
+    const heightScaleGap = componentInfo.size.height * (1 - componentInfo.scale.y) / 2;
+    rstRect.left = componentInfo.translate.x + componentInfo.windowOffset.x + widthScaleGap;
+    rstRect.top = componentInfo.translate.y + componentInfo.windowOffset.y + heightScaleGap;
+    rstRect.right =
+      componentInfo.translate.x + componentInfo.windowOffset.x + componentInfo.size.width - widthScaleGap;
+    rstRect.bottom =
+      componentInfo.translate.y + componentInfo.windowOffset.y + componentInfo.size.height - heightScaleGap;
+    rstRect.width = rstRect.right - rstRect.left;
+    rstRect.height = rstRect.bottom - rstRect.top;
+    return {
+      left: rstRect.left,
+      right: rstRect.right,
+      top: rstRect.top,
+      bottom: rstRect.bottom,
+      width: rstRect.width,
+      height: rstRect.height
+    }
+  }
+}
 
-38. getNode(): BuilderNode<[]> | null {
-39. return this.cardNode;
-40. }
+export class RectInfoInPx {
+  public left: number = 0;
+  public top: number = 0;
+  public right: number = 0;
+  public bottom: number = 0;
+  public width: number = 0;
+  public height: number = 0;
+}
 
-42. setNode(node: BuilderNode<[]> | null) {
-43. this.cardNode = node;
-44. this.rebuild();
-45. }
-
-47. onRemove() {
-48. this.isRemove = true;
-49. this.rebuild();
-50. this.isRemove = false;
-51. }
-
-53. init(uiContext: UIContext) {
-54. this.cardNode = new BuilderNode(uiContext);
-55. this.cardNode.build(this.wrapBuilder);
-56. }
-57. }
-
-59. let myNode: MyNodeController | undefined;
-
-61. export const createMyNode =
-62. (uiContext: UIContext) => {
-63. myNode = new MyNodeController(false);
-64. myNode.init(uiContext);
-65. }
-
-67. export const getMyNode = (): MyNodeController | undefined => {
-68. return myNode;
-69. }
+export class RectJson {
+  public $rect: Array<number> = [];
+}
 ```
 
-[CustomComponent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/NodeContainer/CustomComponent.ets#L15-L86)
+```typescript
+// WindowUtils.ets
+// 窗口信息
+import { window } from '@kit.ArkUI';
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/-D3ZbfgJRvyOswJf9-4WhQ/zh-cn_image_0000002589244287.gif)
+export class WindowUtils {
+  public static window: window.Window;
+  public static windowWidthPx: number;
+  public static windowHeightPx: number;
+  public static topAvoidAreaHeightPx: number;
+  public static navigationIndicatorHeightPx: number;
+}
+```
+
+```typescript
+// EntryAbility.ets
+// 程序入口处的onWindowStageCreate增加对窗口宽高等的抓取
+
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { WindowUtils } from '../utils/WindowUtils';
+import { display, window } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN = 0x0000;
+const TAG: string = 'EntryAbility';
+
+export default class EntryAbility extends UIAbility {
+  private currentBreakPoint: string = '';
+
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onCreate');
+  }
+
+  onDestroy(): void {
+    hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onDestroy');
+  }
+
+  onWindowStageCreate(windowStage: window.WindowStage): void {
+    // Main window is created, set main page for this ability
+    hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onWindowStageCreate');
+    // ...
+    // 获取窗口宽高
+    WindowUtils.window = windowStage.getMainWindowSync();
+    WindowUtils.windowWidthPx = WindowUtils.window.getWindowProperties().windowRect.width;
+    WindowUtils.windowHeightPx = WindowUtils.window.getWindowProperties().windowRect.height;
+
+    this.updateBreakpoint(WindowUtils.windowWidthPx);
+
+    // 获取上方避让区(状态栏等)高度
+    let avoidArea = WindowUtils.window.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);
+    WindowUtils.topAvoidAreaHeightPx = avoidArea.topRect.height;
+
+    // 获取导航条高度
+    let navigationArea = WindowUtils.window.getWindowAvoidArea(window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR);
+    WindowUtils.navigationIndicatorHeightPx = navigationArea.bottomRect.height;
+
+    hilog.info(DOMAIN, TAG, 'the width is ' + WindowUtils.windowWidthPx + '  ' + WindowUtils.windowHeightPx + '  ' +
+    WindowUtils.topAvoidAreaHeightPx + '  ' + WindowUtils.navigationIndicatorHeightPx);
+
+    // 监听窗口尺寸、状态栏高度及导航条高度的变化并更新
+    try {
+      WindowUtils.window.on('windowSizeChange', (data) => {
+        hilog.info(DOMAIN, TAG, 'on windowSizeChange, the width is ' + data.width + ', the height is ' + data.height);
+        WindowUtils.windowWidthPx = data.width;
+        WindowUtils.windowHeightPx = data.height;
+        this.updateBreakpoint(data.width);
+        AppStorage.setOrCreate('windowSizeChanged', Date.now());
+      })
+
+      WindowUtils.window.on('avoidAreaChange', (data) => {
+        if (data.type === window.AvoidAreaType.TYPE_SYSTEM) {
+          let topRectHeight = data.area.topRect.height;
+          hilog.info(DOMAIN, TAG, 'on avoidAreaChange, the top avoid area height is ' + topRectHeight);
+          WindowUtils.topAvoidAreaHeightPx = topRectHeight;
+        } else if (data.type === window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR) {
+          let bottomRectHeight = data.area.bottomRect.height;
+          hilog.info(DOMAIN, TAG, 'on avoidAreaChange, the navigation indicator height is ' + bottomRectHeight);
+          WindowUtils.navigationIndicatorHeightPx = bottomRectHeight;
+        }
+      })
+    } catch (exception) {
+      hilog.error(DOMAIN, TAG, `register failed. code: ${exception.code}, message: ${exception.message}`);
+    }
+
+    windowStage.loadContent('pages/Index', (err) => {
+      if (err.code) {
+        hilog.error(DOMAIN, TAG, 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
+        return;
+      }
+      hilog.info(DOMAIN, TAG, 'Succeeded in loading the content.');
+    });
+  }
+
+  updateBreakpoint(width: number) {
+    let windowWidthVp = width / (display.getDefaultDisplaySync().densityDPI / 160);
+    let newBreakPoint: string = '';
+    if (windowWidthVp < 400) {
+      newBreakPoint = 'xs';
+    } else if (windowWidthVp < 600) {
+      newBreakPoint = 'sm';
+    } else if (windowWidthVp < 800) {
+      newBreakPoint = 'md';
+    } else {
+      newBreakPoint = 'lg';
+    }
+    if (this.currentBreakPoint !== newBreakPoint) {
+      this.currentBreakPoint = newBreakPoint;
+      // 使用状态变量记录当前断点值
+      AppStorage.setOrCreate('currentBreakpoint', this.currentBreakPoint);
+    }
+  }
+  onWindowStageDestroy(): void {
+    // Main window is destroyed, release UI related resources
+    hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onWindowStageDestroy');
+  }
+
+  onForeground(): void {
+    // Ability has brought to foreground
+    hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onForeground');
+  }
+
+  onBackground(): void {
+    // Ability has back to background
+    hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onBackground');
+  }
+}
+```
+
+```typescript
+// CustomComponent.ets
+// 自定义占位节点，跨容器迁移能力
+import { BuilderNode, FrameNode, NodeController } from '@kit.ArkUI';
+
+@Builder
+function cardBuilder() {
+  // 请将$r('app.media.card')替换为实际资源文件
+  Image($r('app.media.card'))
+    .width('100%')
+    .id('card')
+}
+
+export class MyNodeController extends NodeController {
+  private cardNode: BuilderNode<[]> | null = null;
+  private wrapBuilder: WrappedBuilder<[]> = wrapBuilder(cardBuilder);
+  private needCreate: boolean = false;
+  private isRemove: boolean = false;
+
+  constructor(create: boolean) {
+    super();
+    this.needCreate = create;
+  }
+
+  makeNode(uiContext: UIContext): FrameNode | null {
+    if (this.isRemove === true) {
+      return null;
+    }
+    if (this.needCreate && this.cardNode === null) {
+      this.cardNode = new BuilderNode(uiContext);
+      this.cardNode.build(this.wrapBuilder);
+    }
+    if (this.cardNode === null) {
+      return null;
+    }
+    return this.cardNode!.getFrameNode()!;
+  }
+
+  getNode(): BuilderNode<[]> | null {
+    return this.cardNode;
+  }
+
+  setNode(node: BuilderNode<[]> | null) {
+    this.cardNode = node;
+    this.rebuild();
+  }
+
+  onRemove() {
+    this.isRemove = true;
+    this.rebuild();
+    this.isRemove = false;
+  }
+
+  init(uiContext: UIContext) {
+    this.cardNode = new BuilderNode(uiContext);
+    this.cardNode.build(this.wrapBuilder);
+  }
+}
+
+let myNode: MyNodeController | undefined;
+
+export const createMyNode =
+  (uiContext: UIContext) => {
+    myNode = new MyNodeController(false);
+    myNode.init(uiContext);
+  }
+
+export const getMyNode = (): MyNodeController | undefined => {
+  return myNode;
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/IHlqofmjRPaRRhs1g7VvRg/zh-cn_image_0000002706673846.gif)
 
 ### 结合BindSheet使用
 
@@ -1380,543 +1356,535 @@ content_hash: sha256:45347ff33e4aed844d34b21c715df44f3304a1e0125dc7dcaf78c985845
 * 需注意，半模态页面的弹起高度不同，其页面起始位置也有所不同，而全模态则是全屏显示，两者存在一高度差，做一镜到底动画时，需要计算差值并进行修正，具体可见demo。
 * 还可以配合一镜到底动画，给初始界面图片也增加一个从透明到出现的动画，使得动效更为流畅。
 
-```
-1. ├──entry/src/main/ets                 // 代码区
-2. │  ├──entryability
-3. │  │  └──EntryAbility.ets             // 程序入口类
-4. │  ├──NodeContainer
-5. │  │  └──CustomComponent.ets          // 自定义占位节点
-6. │  ├──pages
-7. │  │  └──Index.ets                    // 进行共享元素转场的主页面
-8. │  └──utils
-9. │     ├──ComponentAttrUtils.ets       // 组件位置获取
-10. │     └──WindowUtils.ets              // 窗口信息
-11. └──entry/src/main/resources           // 资源文件
-```
-
-```
-1. // index.ets
-2. import { MyNodeController, createMyNode, getMyNode } from '../NodeContainer/CustomComponent';
-3. import { ComponentAttrUtils, RectInfoInPx } from '../utils/ComponentAttrUtils';
-4. import { WindowUtils } from '../utils/WindowUtils';
-5. import { inspector } from '@kit.ArkUI'
-
-7. class AnimationInfo {
-8. scale: number = 0;
-9. translateX: number = 0;
-10. translateY: number = 0;
-11. clipWidth: Dimension = 0;
-12. clipHeight: Dimension = 0;
-13. }
-
-15. @Entry
-16. @Component
-17. struct Index {
-18. @State isShowSheet: boolean = false;
-19. @State isShowImage: boolean = false;
-20. @State isShowOverlay: boolean = false;
-21. @State isAnimating: boolean = false;
-22. @State isEnabled: boolean = true;
-
-24. @State scaleValue: number = 0;
-25. @State translateX: number = 0;
-26. @State translateY: number = 0;
-27. @State clipWidth: Dimension = 0;
-28. @State clipHeight: Dimension = 0;
-29. @State radius: number = 0;
-30. // 原图的透明度
-31. @State opacityDegree: number = 1;
-
-33. // 抓取照片原位置信息
-34. private originInfo: AnimationInfo = new AnimationInfo;
-35. // 抓取照片在半模态页上位置信息
-36. private targetInfo: AnimationInfo = new AnimationInfo;
-37. // 半模态高度
-38. private bindSheetHeight: number = 450;
-39. // 半模态上图片圆角
-40. private sheetRadius: number = 20;
-
-42. // 设置半模态上图片的布局监听
-43. listener:inspector.ComponentObserver = this.getUIContext().getUIInspector().createComponentObserver('target');
-44. aboutToAppear(): void {
-45. // 设置半模态上图片的布局完成回调
-46. let onLayoutComplete:()=>void=():void=>{
-47. // 目标图片布局完成时抓取布局信息
-48. this.targetInfo = this.calculateData('target');
-49. // 仅半模态正确布局且此时无动画时触发一镜到底动画
-50. if (this.targetInfo.scale != 0 && this.targetInfo.clipWidth != 0 && this.targetInfo.clipHeight != 0 && !this.isAnimating) {
-51. this.isAnimating = true;
-52. // 用于一镜到底的模态页的属性动画
-53. this.getUIContext()?.animateTo({
-54. duration: 1000,
-55. curve: Curve.Friction,
-56. onFinish: () => {
-57. // 模态转场页（overlay）上的自定义节点下树
-58. this.isShowOverlay = false;
-59. // 半模态上的自定义节点上树，由此完成节点迁移
-60. this.isShowImage = true;
-61. }
-62. }, () => {
-63. this.scaleValue = this.targetInfo.scale;
-64. this.translateX = this.targetInfo.translateX;
-65. this.clipWidth = this.targetInfo.clipWidth;
-66. this.clipHeight = this.targetInfo.clipHeight;
-67. // 修正因半模态高度和缩放导致的高度差
-68. this.translateY = this.targetInfo.translateY +
-69. (this.getUIContext().px2vp(WindowUtils.windowHeight_px) - this.bindSheetHeight
-70. - this.getUIContext().px2vp(WindowUtils.navigationIndicatorHeight_px) - this.getUIContext().px2vp(WindowUtils.topAvoidAreaHeight_px));
-71. // 修正因缩放导致的圆角差异
-72. this.radius = this.sheetRadius / this.scaleValue
-73. })
-74. // 原图从透明到出现的动画
-75. this.getUIContext()?.animateTo({
-76. duration: 2000,
-77. curve: Curve.Friction,
-78. }, () => {
-79. this.opacityDegree = 1;
-80. })
-81. }
-82. }
-83. // 打开布局监听
-84. this.listener.on('layout', onLayoutComplete)
-85. }
-
-87. // 获取对应id的组件相对窗口左上角的属性
-88. calculateData(id: string): AnimationInfo {
-89. let itemInfo: RectInfoInPx =
-90. ComponentAttrUtils.getRectInfoById(WindowUtils.window.getUIContext(), id);
-91. // 首先计算图片的宽高与窗口宽高的比例
-92. let widthScaleRatio = itemInfo.width / WindowUtils.windowWidth_px;
-93. let heightScaleRatio = itemInfo.height / WindowUtils.windowHeight_px;
-94. let isUseWidthScale = widthScaleRatio > heightScaleRatio;
-95. let itemScale: number = isUseWidthScale ? widthScaleRatio : heightScaleRatio;
-96. let itemTranslateX: number = 0;
-97. let itemClipWidth: Dimension = 0;
-98. let itemClipHeight: Dimension = 0;
-99. let itemTranslateY: number = 0;
-
-101. if (isUseWidthScale) {
-102. itemTranslateX = this.getUIContext().px2vp(itemInfo.left - (WindowUtils.windowWidth_px - itemInfo.width) / 2);
-103. itemClipWidth = '100%';
-104. itemClipHeight = this.getUIContext().px2vp((itemInfo.height) / itemScale);
-105. itemTranslateY = this.getUIContext().px2vp(itemInfo.top - ((this.getUIContext().vp2px(itemClipHeight) - this.getUIContext().vp2px(itemClipHeight) * itemScale) / 2));
-106. } else {
-107. itemTranslateY = this.getUIContext().px2vp(itemInfo.top - (WindowUtils.windowHeight_px - itemInfo.height) / 2);
-108. itemClipHeight = '100%';
-109. itemClipWidth = this.getUIContext().px2vp((itemInfo.width) / itemScale);
-110. itemTranslateX = this.getUIContext().px2vp(itemInfo.left - (WindowUtils.windowWidth_px / 2 - itemInfo.width / 2));
-111. }
-
-113. return {
-114. scale: itemScale,
-115. translateX: itemTranslateX ,
-116. translateY: itemTranslateY,
-117. clipWidth: itemClipWidth,
-118. clipHeight: itemClipHeight,
-119. }
-120. }
-
-122. // 照片页
-123. build() {
-124. Column() {
-125. Text('照片')
-126. .textAlign(TextAlign.Start)
-127. .width('100%')
-128. .fontSize(30)
-129. .padding(20)
-130. // 图片使用Resource资源，需用户自定义
-131. Image($r("app.media.flower"))
-132. .opacity(this.opacityDegree)
-133. .width('90%')
-134. .id('origin')// 挂载半模态页
-135. .enabled(this.isEnabled)
-136. .onClick(() => {
-137. // 获取原始图像的位置信息，将模态页上图片移动缩放至该位置
-138. this.originInfo = this.calculateData('origin');
-139. this.scaleValue = this.originInfo.scale;
-140. this.translateX = this.originInfo.translateX;
-141. this.translateY = this.originInfo.translateY;
-142. this.clipWidth = this.originInfo.clipWidth;
-143. this.clipHeight = this.originInfo.clipHeight;
-144. this.radius = 0;
-145. this.opacityDegree = 0;
-146. // 启动半模态页和模态页
-147. this.isShowSheet = true;
-148. this.isShowOverlay = true;
-149. // 设置原图为不可交互抗打断
-150. this.isEnabled = false;
-151. })
-152. }
-153. .width('100%')
-154. .height('100%')
-155. .padding({ top: 20 })
-156. .alignItems(HorizontalAlign.Center)
-157. .bindSheet(this.isShowSheet, this.mySheet(), {
-158. // Embedded模式使得其他页面可以高于半模态页
-159. mode: SheetMode.EMBEDDED,
-160. height: this.bindSheetHeight,
-161. onDisappear: () => {
-162. // 保证半模态消失时状态正确
-163. this.isShowImage = false;
-164. this.isShowSheet = false;
-165. // 设置一镜到底动画又进入可触发状态
-166. this.isAnimating = false;
-167. // 原图重新变为可交互状态
-168. this.isEnabled = true;
-169. }
-170. }) // 挂载模态页作为一镜到底动画的实现页
-171. .bindContentCover(this.isShowOverlay, this.overlayNode(), {
-172. // 模态页面设置为无转场
-173. transition: TransitionEffect.IDENTITY,
-174. })
-175. }
-
-177. // 半模态页面
-178. @Builder
-179. mySheet() {
-180. Column({space: 20}) {
-181. Text('半模态页面')
-182. .fontSize(30)
-183. Row({space: 40}) {
-184. Column({space: 20}) {
-185. ForEach([1, 2, 3, 4], () => {
-186. Stack()
-187. .backgroundColor(Color.Pink)
-188. .borderRadius(20)
-189. .width(60)
-190. .height(60)
-191. })
-192. }
-193. Column() {
-194. if (this.isShowImage) {
-195. // 半模态页面的自定义图片节点
-196. ImageNode()
-197. }
-198. else {
-199. // 抓取布局和占位用，实际不显示
-200. // 图片使用Resource资源，需用户自定义
-201. Image($r("app.media.flower"))
-202. .visibility(Visibility.Hidden)
-203. }
-204. }
-205. .height(300)
-206. .width(200)
-207. .borderRadius(20)
-208. .clip(true)
-209. .id('target')
-210. }
-211. .alignItems(VerticalAlign.Top)
-212. }
-213. .alignItems(HorizontalAlign.Start)
-214. .height('100%')
-215. .width('100%')
-216. .margin(40)
-217. }
-
-219. @Builder
-220. overlayNode() {
-221. // Stack需要设置alignContent为TopStart，否则在高度变化过程中，截图和内容都会随高度重新布局位置
-222. Stack({ alignContent: Alignment.TopStart }) {
-223. ImageNode()
-224. }
-225. .scale({ x: this.scaleValue, y: this.scaleValue, centerX: undefined, centerY: undefined})
-226. .translate({ x: this.translateX, y: this.translateY })
-227. .width(this.clipWidth)
-228. .height(this.clipHeight)
-229. .borderRadius(this.radius)
-230. .clip(true)
-231. }
-232. }
-
-234. @Component
-235. struct ImageNode {
-236. @State myNodeController: MyNodeController | undefined = new MyNodeController(false);
-
-238. aboutToAppear(): void {
-239. // 获取自定义节点
-240. let node = getMyNode();
-241. if (node == undefined) {
-242. // 新建自定义节点
-243. createMyNode(this.getUIContext());
-244. }
-245. this.myNodeController = getMyNode();
-246. }
-
-248. aboutToDisappear(): void {
-249. if (this.myNodeController != undefined) {
-250. // 节点下树
-251. this.myNodeController.onRemove();
-252. }
-253. }
-254. build() {
-255. NodeContainer(this.myNodeController)
-256. }
-257. }
+```txt
+├──entry/src/main/ets                 // 代码区
+│  ├──entryability
+│  │  └──EntryAbility.ets             // 程序入口类
+│  ├──NodeContainer
+│  │  └──CustomComponent.ets          // 自定义占位节点
+│  ├──pages
+│  │  └──Index.ets                    // 进行共享元素转场的主页面
+│  └──utils
+│     ├──ComponentAttrUtils.ets       // 组件位置获取
+│     └──WindowUtils.ets              // 窗口信息
+└──entry/src/main/resources           // 资源文件
 ```
 
+```ts
+// Index.ets
+import { MyNodeController, createMyNode, getMyNode } from '../NodeContainer/CustomComponent';
+import { ComponentAttrUtils, RectInfoInPx } from '../utils/ComponentAttrUtils';
+import { WindowUtils } from '../utils/WindowUtils';
+import { inspector } from '@kit.ArkUI'
+
+class AnimationInfo {
+  scale: number = 0;
+  translateX: number = 0;
+  translateY: number = 0;
+  clipWidth: Dimension = 0;
+  clipHeight: Dimension = 0;
+}
+
+@Entry
+@Component
+struct Index {
+  @State isShowSheet: boolean = false;
+  @State isShowImage: boolean = false;
+  @State isShowOverlay: boolean = false;
+  @State isAnimating: boolean = false;
+  @State isEnabled: boolean = true;
+
+  @State scaleValue: number = 0;
+  @State translateX: number = 0;
+  @State translateY: number = 0;
+  @State clipWidth: Dimension = 0;
+  @State clipHeight: Dimension = 0;
+  @State radius: number = 0;
+  // 原图的透明度
+  @State opacityDegree: number = 1;
+
+  // 抓取照片原位置信息
+  private originInfo: AnimationInfo = new AnimationInfo;
+  // 抓取照片在半模态页上位置信息
+  private targetInfo: AnimationInfo = new AnimationInfo;
+  // 半模态高度
+  private bindSheetHeight: number = 450;
+  // 半模态上图片圆角
+  private sheetRadius: number = 20;
+
+  // 设置半模态上图片的布局监听
+  listener:inspector.ComponentObserver = this.getUIContext().getUIInspector().createComponentObserver('target');
+  aboutToAppear(): void {
+    // 设置半模态上图片的布局完成回调
+    let onLayoutComplete:()=>void=():void=>{
+      // 目标图片布局完成时抓取布局信息
+      this.targetInfo = this.calculateData('target');
+      // 仅半模态正确布局且此时无动画时触发一镜到底动画
+      if (this.targetInfo.scale != 0 && this.targetInfo.clipWidth != 0 && this.targetInfo.clipHeight != 0 && !this.isAnimating) {
+        this.isAnimating = true;
+        // 用于一镜到底的模态页的属性动画
+        this.getUIContext()?.animateTo({
+          duration: 1000,
+          curve: Curve.Friction,
+          onFinish: () => {
+            // 模态转场页（overlay）上的自定义节点下树
+            this.isShowOverlay = false;
+            // 半模态上的自定义节点上树，由此完成节点迁移
+            this.isShowImage = true;
+          }
+        }, () => {
+          this.scaleValue = this.targetInfo.scale;
+          this.translateX = this.targetInfo.translateX;
+          this.clipWidth = this.targetInfo.clipWidth;
+          this.clipHeight = this.targetInfo.clipHeight;
+          // 修正因半模态高度和缩放导致的高度差
+          this.translateY = this.targetInfo.translateY +
+            (this.getUIContext().px2vp(WindowUtils.windowHeightPx) - this.bindSheetHeight
+              - this.getUIContext().px2vp(WindowUtils.navigationIndicatorHeightPx) - this.getUIContext().px2vp(WindowUtils.topAvoidAreaHeightPx));
+          // 修正因缩放导致的圆角差异
+          this.radius = this.sheetRadius / this.scaleValue
+        })
+        // 原图从透明到出现的动画
+        this.getUIContext()?.animateTo({
+          duration: 2000,
+          curve: Curve.Friction,
+        }, () => {
+          this.opacityDegree = 1;
+        })
+      }
+    }
+    // 打开布局监听
+    this.listener.on('layout', onLayoutComplete)
+  }
+
+  // 获取对应id的组件相对窗口左上角的属性
+  calculateData(id: string): AnimationInfo {
+    let itemInfo: RectInfoInPx =
+      ComponentAttrUtils.getRectInfoById(WindowUtils.window.getUIContext(), id);
+    // 首先计算图片的宽高与窗口宽高的比例
+    let widthScaleRatio = itemInfo.width / WindowUtils.windowWidthPx;
+    let heightScaleRatio = itemInfo.height / WindowUtils.windowHeightPx;
+    let isUseWidthScale = widthScaleRatio > heightScaleRatio;
+    let itemScale: number = isUseWidthScale ? widthScaleRatio : heightScaleRatio;
+    let itemTranslateX: number = 0;
+    let itemClipWidth: Dimension = 0;
+    let itemClipHeight: Dimension = 0;
+    let itemTranslateY: number = 0;
+
+    if (isUseWidthScale) {
+      itemTranslateX = this.getUIContext().px2vp(itemInfo.left - (WindowUtils.windowWidthPx - itemInfo.width) / 2);
+      itemClipWidth = '100%';
+      itemClipHeight = this.getUIContext().px2vp((itemInfo.height) / itemScale);
+      itemTranslateY = this.getUIContext().px2vp(itemInfo.top - ((this.getUIContext().vp2px(itemClipHeight) - this.getUIContext().vp2px(itemClipHeight) * itemScale) / 2));
+    } else {
+      itemTranslateY = this.getUIContext().px2vp(itemInfo.top - (WindowUtils.windowHeightPx - itemInfo.height) / 2);
+      itemClipHeight = '100%';
+      itemClipWidth = this.getUIContext().px2vp((itemInfo.width) / itemScale);
+      itemTranslateX = this.getUIContext().px2vp(itemInfo.left - (WindowUtils.windowWidthPx / 2 - itemInfo.width / 2));
+    }
+
+    return {
+      scale: itemScale,
+      translateX: itemTranslateX ,
+      translateY: itemTranslateY,
+      clipWidth: itemClipWidth,
+      clipHeight: itemClipHeight,
+    }
+  }
+
+  // 照片页
+  build() {
+    Column() {
+      Text('照片')
+        .textAlign(TextAlign.Start)
+        .width('100%')
+        .fontSize(30)
+        .padding(20)
+      // 图片使用Resource资源，需用户自定义
+      Image($r("app.media.flower"))
+        .opacity(this.opacityDegree)
+        .width('90%')
+        .id('origin')// 挂载半模态页
+        .enabled(this.isEnabled)
+        .onClick(() => {
+          // 获取原始图像的位置信息，将模态页上图片移动缩放至该位置
+          this.originInfo = this.calculateData('origin');
+          this.scaleValue = this.originInfo.scale;
+          this.translateX = this.originInfo.translateX;
+          this.translateY = this.originInfo.translateY;
+          this.clipWidth = this.originInfo.clipWidth;
+          this.clipHeight = this.originInfo.clipHeight;
+          this.radius = 0;
+          this.opacityDegree = 0;
+          // 启动半模态页和模态页
+          this.isShowSheet = true;
+          this.isShowOverlay = true;
+          // 设置原图为不可交互抗打断
+          this.isEnabled = false;
+        })
+    }
+    .width('100%')
+    .height('100%')
+    .padding({ top: 20 })
+    .alignItems(HorizontalAlign.Center)
+    .bindSheet(this.isShowSheet, this.mySheet(), {
+      // Embedded模式使得其他页面可以高于半模态页
+      mode: SheetMode.EMBEDDED,
+      height: this.bindSheetHeight,
+      onDisappear: () => {
+        // 保证半模态消失时状态正确
+        this.isShowImage = false;
+        this.isShowSheet = false;
+        // 设置一镜到底动画又进入可触发状态
+        this.isAnimating = false;
+        // 原图重新变为可交互状态
+        this.isEnabled = true;
+      }
+    }) // 挂载模态页作为一镜到底动画的实现页
+    .bindContentCover(this.isShowOverlay, this.overlayNode(), {
+      // 模态页面设置为无转场
+      transition: TransitionEffect.IDENTITY,
+    })
+  }
+
+  // 半模态页面
+  @Builder
+  mySheet() {
+    Column({space: 20}) {
+      Text('半模态页面')
+        .fontSize(30)
+      Row({space: 40}) {
+        Column({space: 20}) {
+          ForEach([1, 2, 3, 4], () => {
+            Stack()
+              .backgroundColor(Color.Pink)
+              .borderRadius(20)
+              .width(60)
+              .height(60)
+          })
+        }
+        Column() {
+          if (this.isShowImage) {
+            // 半模态页面的自定义图片节点
+            ImageNode()
+          }
+          else {
+            // 抓取布局和占位用，实际不显示
+            // 图片使用Resource资源，需用户自定义
+            Image($r("app.media.flower"))
+              .visibility(Visibility.Hidden)
+          }
+        }
+        .height(300)
+        .width(200)
+        .borderRadius(20)
+        .clip(true)
+        .id('target')
+      }
+      .alignItems(VerticalAlign.Top)
+    }
+    .alignItems(HorizontalAlign.Start)
+    .height('100%')
+    .width('100%')
+    .margin(40)
+  }
+
+  @Builder
+  overlayNode() {
+    // Stack需要设置alignContent为TopStart，否则在高度变化过程中，截图和内容都会随高度重新布局位置
+    Stack({ alignContent: Alignment.TopStart }) {
+      ImageNode()
+    }
+    .scale({ x: this.scaleValue, y: this.scaleValue, centerX: undefined, centerY: undefined})
+    .translate({ x: this.translateX, y: this.translateY })
+    .width(this.clipWidth)
+    .height(this.clipHeight)
+    .borderRadius(this.radius)
+    .clip(true)
+  }
+}
+
+@Component
+struct ImageNode {
+  @State myNodeController: MyNodeController | undefined = new MyNodeController(false);
+
+  aboutToAppear(): void {
+    // 获取自定义节点
+    let node = getMyNode();
+    if (node == undefined) {
+      // 新建自定义节点
+      createMyNode(this.getUIContext());
+    }
+    this.myNodeController = getMyNode();
+  }
+
+  aboutToDisappear(): void {
+    if (this.myNodeController != undefined) {
+      // 节点下树
+      this.myNodeController.onRemove();
+    }
+  }
+  build() {
+    NodeContainer(this.myNodeController)
+  }
+}
 ```
-1. // CustomComponent.ets
-2. // 自定义占位节点，跨容器迁移能力
-3. import { BuilderNode, FrameNode, NodeController } from '@kit.ArkUI';
 
-5. @Builder
-6. function flowerBuilder() {
-7. // 请将$r('app.media.longevity_flower')替换为实际资源文件
-8. Image($r('app.media.longevity_flower'))
-9. // 避免第一次加载图片时图片闪烁
-10. .syncLoad(true);
-11. }
+```typescript
+// CustomComponent.ets
+// 自定义占位节点，跨容器迁移能力
+import { BuilderNode, FrameNode, NodeController } from '@kit.ArkUI';
 
-13. export class MyNodeController extends NodeController {
-14. private flowerNode: BuilderNode<[]> | null = null;
-15. private wrapBuilder: WrappedBuilder<[]> = wrapBuilder(flowerBuilder);
-16. private needCreate: boolean = false;
-17. private isRemove: boolean = false;
+@Builder
+function flowerBuilder() {
+  // 请将$r('app.media.longevity_flower')替换为实际资源文件
+  Image($r('app.media.longevity_flower'))
+  // 避免第一次加载图片时图片闪烁
+    .syncLoad(true);
+}
 
-19. constructor(create: boolean) {
-20. super();
-21. this.needCreate = create;
-22. }
+export class MyNodeController extends NodeController {
+  private flowerNode: BuilderNode<[]> | null = null;
+  private wrapBuilder: WrappedBuilder<[]> = wrapBuilder(flowerBuilder);
+  private needCreate: boolean = false;
+  private isRemove: boolean = false;
 
-24. makeNode(uiContext: UIContext): FrameNode | null {
-25. if (this.isRemove === true) {
-26. return null;
-27. }
-28. if (this.needCreate && this.flowerNode === null) {
-29. this.flowerNode = new BuilderNode(uiContext);
-30. this.flowerNode.build(this.wrapBuilder);
-31. }
-32. if (this.flowerNode === null) {
-33. return null;
-34. }
-35. return this.flowerNode!.getFrameNode()!;
-36. }
+  constructor(create: boolean) {
+    super();
+    this.needCreate = create;
+  }
 
-38. getNode(): BuilderNode<[]> | null {
-39. return this.flowerNode;
-40. }
+  makeNode(uiContext: UIContext): FrameNode | null {
+    if (this.isRemove === true) {
+      return null;
+    }
+    if (this.needCreate && this.flowerNode === null) {
+      this.flowerNode = new BuilderNode(uiContext);
+      this.flowerNode.build(this.wrapBuilder);
+    }
+    if (this.flowerNode === null) {
+      return null;
+    }
+    return this.flowerNode!.getFrameNode()!;
+  }
 
-42. setNode(node: BuilderNode<[]> | null) {
-43. this.flowerNode = node;
-44. this.rebuild();
-45. }
+  getNode(): BuilderNode<[]> | null {
+    return this.flowerNode;
+  }
 
-47. onRemove() {
-48. this.isRemove = true;
-49. this.rebuild();
-50. this.isRemove = false;
-51. }
+  setNode(node: BuilderNode<[]> | null) {
+    this.flowerNode = node;
+    this.rebuild();
+  }
 
-53. init(uiContext: UIContext) {
-54. this.flowerNode = new BuilderNode(uiContext);
-55. this.flowerNode.build(this.wrapBuilder);
-56. }
-57. }
+  onRemove() {
+    this.isRemove = true;
+    this.rebuild();
+    this.isRemove = false;
+  }
 
-59. let myNode: MyNodeController | undefined;
+  init(uiContext: UIContext) {
+    this.flowerNode = new BuilderNode(uiContext);
+    this.flowerNode.build(this.wrapBuilder);
+  }
+}
 
-61. export const createMyNode =
-62. (uiContext: UIContext) => {
-63. myNode = new MyNodeController(false);
-64. myNode.init(uiContext);
-65. }
+let myNode: MyNodeController | undefined;
 
-67. export const getMyNode = (): MyNodeController | undefined => {
-68. return myNode;
-69. }
+export const createMyNode =
+  (uiContext: UIContext) => {
+    myNode = new MyNodeController(false);
+    myNode.init(uiContext);
+  }
+
+export const getMyNode = (): MyNodeController | undefined => {
+  return myNode;
+}
 ```
 
-[CustomComponentBindSheet.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/NodeContainer/CustomComponentBindSheet.ets#L15-L86)
+```typescript
+// ComponentAttrUtils.ets
+// 获取组件相对窗口的位置
+import { componentUtils, UIContext } from '@kit.ArkUI';
+import { JSON } from '@kit.ArkTS';
 
-```
-1. // ComponentAttrUtils.ets
-2. // 获取组件相对窗口的位置
-3. import { componentUtils, UIContext } from '@kit.ArkUI';
-4. import { JSON } from '@kit.ArkTS';
+export class ComponentAttrUtils {
+  // 根据组件的id获取组件的位置信息
+  public static getRectInfoById(context: UIContext, id: string): RectInfoInPx {
+    if (!context || !id) {
+      throw Error('object is empty');
+    }
+    let componentInfo: componentUtils.ComponentInfo = context.getComponentUtils().getRectangleById(id);
 
-6. export class ComponentAttrUtils {
-7. // 根据组件的id获取组件的位置信息
-8. public static getRectInfoById(context: UIContext, id: string): RectInfoInPx {
-9. if (!context || !id) {
-10. throw Error('object is empty');
-11. }
-12. let componentInfo: componentUtils.ComponentInfo = context.getComponentUtils().getRectangleById(id);
+    if (!componentInfo) {
+      throw Error('object is empty');
+    }
 
-14. if (!componentInfo) {
-15. throw Error('object is empty');
-16. }
+    let rstRect: RectInfoInPx = new RectInfoInPx();
+    const widthScaleGap = componentInfo.size.width * (1 - componentInfo.scale.x) / 2;
+    const heightScaleGap = componentInfo.size.height * (1 - componentInfo.scale.y) / 2;
+    rstRect.left = componentInfo.translate.x + componentInfo.windowOffset.x + widthScaleGap;
+    rstRect.top = componentInfo.translate.y + componentInfo.windowOffset.y + heightScaleGap;
+    rstRect.right =
+      componentInfo.translate.x + componentInfo.windowOffset.x + componentInfo.size.width - widthScaleGap;
+    rstRect.bottom =
+      componentInfo.translate.y + componentInfo.windowOffset.y + componentInfo.size.height - heightScaleGap;
+    rstRect.width = rstRect.right - rstRect.left;
+    rstRect.height = rstRect.bottom - rstRect.top;
+    return {
+      left: rstRect.left,
+      right: rstRect.right,
+      top: rstRect.top,
+      bottom: rstRect.bottom,
+      width: rstRect.width,
+      height: rstRect.height
+    }
+  }
+}
 
-18. let rstRect: RectInfoInPx = new RectInfoInPx();
-19. const widthScaleGap = componentInfo.size.width * (1 - componentInfo.scale.x) / 2;
-20. const heightScaleGap = componentInfo.size.height * (1 - componentInfo.scale.y) / 2;
-21. rstRect.left = componentInfo.translate.x + componentInfo.windowOffset.x + widthScaleGap;
-22. rstRect.top = componentInfo.translate.y + componentInfo.windowOffset.y + heightScaleGap;
-23. rstRect.right =
-24. componentInfo.translate.x + componentInfo.windowOffset.x + componentInfo.size.width - widthScaleGap;
-25. rstRect.bottom =
-26. componentInfo.translate.y + componentInfo.windowOffset.y + componentInfo.size.height - heightScaleGap;
-27. rstRect.width = rstRect.right - rstRect.left;
-28. rstRect.height = rstRect.bottom - rstRect.top;
-29. return {
-30. left: rstRect.left,
-31. right: rstRect.right,
-32. top: rstRect.top,
-33. bottom: rstRect.bottom,
-34. width: rstRect.width,
-35. height: rstRect.height
-36. }
-37. }
-38. }
+export class RectInfoInPx {
+  public left: number = 0;
+  public top: number = 0;
+  public right: number = 0;
+  public bottom: number = 0;
+  public width: number = 0;
+  public height: number = 0;
+}
 
-40. export class RectInfoInPx {
-41. public left: number = 0;
-42. public top: number = 0;
-43. public right: number = 0;
-44. public bottom: number = 0;
-45. public width: number = 0;
-46. public height: number = 0;
-47. }
-
-49. export class RectJson {
-50. public $rect: Array<number> = [];
-51. }
+export class RectJson {
+  public $rect: Array<number> = [];
+}
 ```
 
-[ComponentAttrUtils.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/utils/ComponentAttrUtils.ets#L16-L69)
+```typescript
+// WindowUtils.ets
+// 窗口信息
+import { window } from '@kit.ArkUI';
 
-```
-1. // WindowUtils.ets
-2. // 窗口信息
-3. import { window } from '@kit.ArkUI';
-
-5. export class WindowUtils {
-6. public static window: window.Window;
-7. public static windowWidthPx: number;
-8. public static windowHeightPx: number;
-9. public static topAvoidAreaHeightPx: number;
-10. public static navigationIndicatorHeightPx: number;
-11. }
+export class WindowUtils {
+  public static window: window.Window;
+  public static windowWidthPx: number;
+  public static windowHeightPx: number;
+  public static topAvoidAreaHeightPx: number;
+  public static navigationIndicatorHeightPx: number;
+}
 ```
 
-[WindowUtils.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/utils/WindowUtils.ets#L16-L29)
+```typescript
+// EntryAbility.ets
+// 程序入口处的onWindowStageCreate增加对窗口宽高等的抓取
 
-```
-1. // EntryAbility.ets
-2. // 程序入口处的onWindowStageCreate增加对窗口宽高等的抓取
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { WindowUtils } from '../utils/WindowUtils';
+import { display, window } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-5. import { WindowUtils } from '../utils/WindowUtils';
-6. import { display, window } from '@kit.ArkUI';
-7. import { hilog } from '@kit.PerformanceAnalysisKit';
+const DOMAIN = 0x0000;
+const TAG: string = 'EntryAbility';
 
-9. const DOMAIN = 0x0000;
-10. const TAG: string = 'EntryAbility';
+export default class EntryAbility extends UIAbility {
+  private currentBreakPoint: string = '';
 
-12. export default class EntryAbility extends UIAbility {
-13. private currentBreakPoint: string = '';
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onCreate');
+  }
 
-15. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-16. hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onCreate');
-17. }
+  onDestroy(): void {
+    hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onDestroy');
+  }
 
-19. onDestroy(): void {
-20. hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onDestroy');
-21. }
+  onWindowStageCreate(windowStage: window.WindowStage): void {
+    // Main window is created, set main page for this ability
+    hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onWindowStageCreate');
+    // ...
+    // 获取窗口宽高
+    WindowUtils.window = windowStage.getMainWindowSync();
+    WindowUtils.windowWidthPx = WindowUtils.window.getWindowProperties().windowRect.width;
+    WindowUtils.windowHeightPx = WindowUtils.window.getWindowProperties().windowRect.height;
 
-23. onWindowStageCreate(windowStage: window.WindowStage): void {
-24. // Main window is created, set main page for this ability
-25. hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onWindowStageCreate');
-26. // ...
-27. // 获取窗口宽高
-28. WindowUtils.window = windowStage.getMainWindowSync();
-29. WindowUtils.windowWidthPx = WindowUtils.window.getWindowProperties().windowRect.width;
-30. WindowUtils.windowHeightPx = WindowUtils.window.getWindowProperties().windowRect.height;
+    this.updateBreakpoint(WindowUtils.windowWidthPx);
 
-32. this.updateBreakpoint(WindowUtils.windowWidthPx);
+    // 获取上方避让区(状态栏等)高度
+    let avoidArea = WindowUtils.window.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);
+    WindowUtils.topAvoidAreaHeightPx = avoidArea.topRect.height;
 
-34. // 获取上方避让区(状态栏等)高度
-35. let avoidArea = WindowUtils.window.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);
-36. WindowUtils.topAvoidAreaHeightPx = avoidArea.topRect.height;
+    // 获取导航条高度
+    let navigationArea = WindowUtils.window.getWindowAvoidArea(window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR);
+    WindowUtils.navigationIndicatorHeightPx = navigationArea.bottomRect.height;
 
-38. // 获取导航条高度
-39. let navigationArea = WindowUtils.window.getWindowAvoidArea(window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR);
-40. WindowUtils.navigationIndicatorHeightPx = navigationArea.bottomRect.height;
+    hilog.info(DOMAIN, TAG, 'the width is ' + WindowUtils.windowWidthPx + '  ' + WindowUtils.windowHeightPx + '  ' +
+    WindowUtils.topAvoidAreaHeightPx + '  ' + WindowUtils.navigationIndicatorHeightPx);
 
-42. hilog.info(DOMAIN, TAG, 'the width is ' + WindowUtils.windowWidthPx + '  ' + WindowUtils.windowHeightPx + '  ' +
-43. WindowUtils.topAvoidAreaHeightPx + '  ' + WindowUtils.navigationIndicatorHeightPx);
+    // 监听窗口尺寸、状态栏高度及导航条高度的变化并更新
+    try {
+      WindowUtils.window.on('windowSizeChange', (data) => {
+        hilog.info(DOMAIN, TAG, 'on windowSizeChange, the width is ' + data.width + ', the height is ' + data.height);
+        WindowUtils.windowWidthPx = data.width;
+        WindowUtils.windowHeightPx = data.height;
+        this.updateBreakpoint(data.width);
+        AppStorage.setOrCreate('windowSizeChanged', Date.now());
+      })
 
-45. // 监听窗口尺寸、状态栏高度及导航条高度的变化并更新
-46. try {
-47. WindowUtils.window.on('windowSizeChange', (data) => {
-48. hilog.info(DOMAIN, TAG, 'on windowSizeChange, the width is ' + data.width + ', the height is ' + data.height);
-49. WindowUtils.windowWidthPx = data.width;
-50. WindowUtils.windowHeightPx = data.height;
-51. this.updateBreakpoint(data.width);
-52. AppStorage.setOrCreate('windowSizeChanged', Date.now());
-53. })
+      WindowUtils.window.on('avoidAreaChange', (data) => {
+        if (data.type === window.AvoidAreaType.TYPE_SYSTEM) {
+          let topRectHeight = data.area.topRect.height;
+          hilog.info(DOMAIN, TAG, 'on avoidAreaChange, the top avoid area height is ' + topRectHeight);
+          WindowUtils.topAvoidAreaHeightPx = topRectHeight;
+        } else if (data.type === window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR) {
+          let bottomRectHeight = data.area.bottomRect.height;
+          hilog.info(DOMAIN, TAG, 'on avoidAreaChange, the navigation indicator height is ' + bottomRectHeight);
+          WindowUtils.navigationIndicatorHeightPx = bottomRectHeight;
+        }
+      })
+    } catch (exception) {
+      hilog.error(DOMAIN, TAG, `register failed. code: ${exception.code}, message: ${exception.message}`);
+    }
 
-55. WindowUtils.window.on('avoidAreaChange', (data) => {
-56. if (data.type === window.AvoidAreaType.TYPE_SYSTEM) {
-57. let topRectHeight = data.area.topRect.height;
-58. hilog.info(DOMAIN, TAG, 'on avoidAreaChange, the top avoid area height is ' + topRectHeight);
-59. WindowUtils.topAvoidAreaHeightPx = topRectHeight;
-60. } else if (data.type === window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR) {
-61. let bottomRectHeight = data.area.bottomRect.height;
-62. hilog.info(DOMAIN, TAG, 'on avoidAreaChange, the navigation indicator height is ' + bottomRectHeight);
-63. WindowUtils.navigationIndicatorHeightPx = bottomRectHeight;
-64. }
-65. })
-66. } catch (exception) {
-67. hilog.error(DOMAIN, TAG, `register failed. code: ${exception.code}, message: ${exception.message}`);
-68. }
+    windowStage.loadContent('pages/Index', (err) => {
+      if (err.code) {
+        hilog.error(DOMAIN, TAG, 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
+        return;
+      }
+      hilog.info(DOMAIN, TAG, 'Succeeded in loading the content.');
+    });
+  }
 
-70. windowStage.loadContent('pages/Index', (err) => {
-71. if (err.code) {
-72. hilog.error(DOMAIN, TAG, 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
-73. return;
-74. }
-75. hilog.info(DOMAIN, TAG, 'Succeeded in loading the content.');
-76. });
-77. }
+  updateBreakpoint(width: number) {
+    let windowWidthVp = width / (display.getDefaultDisplaySync().densityDPI / 160);
+    let newBreakPoint: string = '';
+    if (windowWidthVp < 400) {
+      newBreakPoint = 'xs';
+    } else if (windowWidthVp < 600) {
+      newBreakPoint = 'sm';
+    } else if (windowWidthVp < 800) {
+      newBreakPoint = 'md';
+    } else {
+      newBreakPoint = 'lg';
+    }
+    if (this.currentBreakPoint !== newBreakPoint) {
+      this.currentBreakPoint = newBreakPoint;
+      // 使用状态变量记录当前断点值
+      AppStorage.setOrCreate('currentBreakpoint', this.currentBreakPoint);
+    }
+  }
+  onWindowStageDestroy(): void {
+    // Main window is destroyed, release UI related resources
+    hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onWindowStageDestroy');
+  }
 
-79. updateBreakpoint(width: number) {
-80. let windowWidthVp = width / (display.getDefaultDisplaySync().densityDPI / 160);
-81. let newBreakPoint: string = '';
-82. if (windowWidthVp < 400) {
-83. newBreakPoint = 'xs';
-84. } else if (windowWidthVp < 600) {
-85. newBreakPoint = 'sm';
-86. } else if (windowWidthVp < 800) {
-87. newBreakPoint = 'md';
-88. } else {
-89. newBreakPoint = 'lg';
-90. }
-91. if (this.currentBreakPoint !== newBreakPoint) {
-92. this.currentBreakPoint = newBreakPoint;
-93. // 使用状态变量记录当前断点值
-94. AppStorage.setOrCreate('currentBreakpoint', this.currentBreakPoint);
-95. }
-96. }
-97. onWindowStageDestroy(): void {
-98. // Main window is destroyed, release UI related resources
-99. hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onWindowStageDestroy');
-100. }
+  onForeground(): void {
+    // Ability has brought to foreground
+    hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onForeground');
+  }
 
-102. onForeground(): void {
-103. // Ability has brought to foreground
-104. hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onForeground');
-105. }
-
-107. onBackground(): void {
-108. // Ability has back to background
-109. hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onBackground');
-110. }
-111. }
+  onBackground(): void {
+    // Ability has back to background
+    hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onBackground');
+  }
+}
 ```
 
-[EntryAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/entryability/EntryAbility.ets#L15-L161)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/AsR98LiaTuCtESpqqKznLQ/zh-cn_image_0000002558764480.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/xA5EbF8KTcaiaVv86EN3PQ/zh-cn_image_0000002736432937.gif)
 
 ## 使用geometryTransition共享元素转场
 
@@ -1930,258 +1898,1063 @@ geometryTransition绑定两个对象的实现方式使得geometryTransition区�
 
 对于同一个页面中的两个元素的一镜到底效果，geometryTransition接口的简单使用示例如下：
 
+```typescript
+import { curves } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct IfElseGeometryTransition {
+  @State isShow: boolean = false;
+
+  build() {
+    Stack({ alignContent: Alignment.Center }) {
+      if (this.isShow) {
+        // 请将$r('app.media.spring')替换为实际资源文件
+        Image($r('app.media.spring'))
+          .autoResize(false)
+          .clip(true)
+          .width(200)
+          .height(200)
+          .borderRadius(100)
+          .geometryTransition('picture')
+          .transition(TransitionEffect.OPACITY)
+          // 在打断场景下，即动画过程中点击页面触发下一次转场，如果不加id，则会出现重影
+          // 加了id之后，新建的spring图片会复用之前的spring图片节点，不会重新创建节点，也就不会有重影问题
+          // 加id的规则为加在if和else下的第一个节点上，有多个并列节点则也需要进行添加
+          .id('item1')
+      } else {
+        // geometryTransition此处绑定的是容器，那么容器内的子组件需设为相对布局跟随父容器变化，
+        // 套多层容器为了说明相对布局约束传递
+        Column() {
+          Column() {
+            // 请将$r('app.media.sunset_sky')替换为实际资源文件
+            Image($r('app.media.sunset_sky'))
+              .size({ width: '100%', height: '100%' })
+          }
+          .size({ width: '100%', height: '100%' })
+        }
+        .width(100)
+        .height(100)
+        // geometryTransition会同步圆角，但仅限于geometryTransition绑定处，此处绑定的是容器
+        // 则对容器本身有圆角同步而不会操作容器内部子组件的borderRadius
+        .borderRadius(50)
+        .clip(true)
+        .geometryTransition('picture')
+        // transition保证节点离场不被立即析构，设置通用转场效果
+        .transition(TransitionEffect.OPACITY)
+        .position({ x: 40, y: 40 })
+        .id('item2')
+      }
+    }
+    .onClick(() => {
+      this.getUIContext()?.animateTo({
+        curve: curves.springMotion()
+      }, () => {
+        this.isShow = !this.isShow;
+      })
+    })
+    .size({ width: '100%', height: '100%' })
+  }
+}
 ```
-1. import { curves } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct IfElseGeometryTransition {
-6. @State isShow: boolean = false;
-
-8. build() {
-9. Stack({ alignContent: Alignment.Center }) {
-10. if (this.isShow) {
-11. // 请将$r('app.media.spring')替换为实际资源文件
-12. Image($r('app.media.spring'))
-13. .autoResize(false)
-14. .clip(true)
-15. .width(200)
-16. .height(200)
-17. .borderRadius(100)
-18. .geometryTransition('picture')
-19. .transition(TransitionEffect.OPACITY)
-20. // 在打断场景下，即动画过程中点击页面触发下一次转场，如果不加id，则会出现重影
-21. // 加了id之后，新建的spring图片会复用之前的spring图片节点，不会重新创建节点，也就不会有重影问题
-22. // 加id的规则为加在if和else下的第一个节点上，有多个并列节点则也需要进行添加
-23. .id('item1')
-24. } else {
-25. // geometryTransition此处绑定的是容器，那么容器内的子组件需设为相对布局跟随父容器变化，
-26. // 套多层容器为了说明相对布局约束传递
-27. Column() {
-28. Column() {
-29. // 请将$r('app.media.sunset_sky')替换为实际资源文件
-30. Image($r('app.media.sunset_sky'))
-31. .size({ width: '100%', height: '100%' })
-32. }
-33. .size({ width: '100%', height: '100%' })
-34. }
-35. .width(100)
-36. .height(100)
-37. // geometryTransition会同步圆角，但仅限于geometryTransition绑定处，此处绑定的是容器
-38. // 则对容器本身有圆角同步而不会操作容器内部子组件的borderRadius
-39. .borderRadius(50)
-40. .clip(true)
-41. .geometryTransition('picture')
-42. // transition保证节点离场不被立即析构，设置通用转场效果
-43. .transition(TransitionEffect.OPACITY)
-44. .position({ x: 40, y: 40 })
-45. .id('item2')
-46. }
-47. }
-48. .onClick(() => {
-49. this.getUIContext()?.animateTo({
-50. curve: curves.springMotion()
-51. }, () => {
-52. this.isShow = !this.isShow;
-53. })
-54. })
-55. .size({ width: '100%', height: '100%' })
-56. }
-57. }
-```
-
-[IfElseGeometryTransition.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/shareTransition/template6/IfElseGeometryTransition.ets#L15-L74)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/bj2zO0bAT5GwHnl97Zb-7w/zh-cn_image_0000002558604824.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/TI7RnDjHSRCTXBA0zEtmSA/zh-cn_image_0000002706833782.gif)
 
 ### geometryTransition结合模态转场使用
 
 更多的场景中，需要对一个页面的元素与另一个页面的元素添加一镜到底动效。可以通过geometryTransition搭配模态转场接口实现。以点击头像弹出个人信息页的demo为例：
 
+```typescript
+import { common } from '@kit.AbilityKit';
+
+class PostData {
+  // 请将$r('app.media.flower')替换为实际资源文件
+  avatar: Resource = $r('app.media.flower');
+  name: string = '';
+  message: ResourceStr = '';
+  images: Resource[] = [];
+}
+
+@Entry
+@Component
+struct Index {
+  @State isPersonalPageShow: boolean = false;
+  @State selectedIndex: number = 0;
+  @State alphaValue: number = 1;
+  private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+
+  // 数组中图片均使用Resource资源，需用户自定义
+  private allPostData: PostData[] = [
+    {
+      // 请将$r('app.media.flower')替换为实际资源文件
+      avatar: $r('app.media.flower'),
+      name: 'Alice',
+      // 请将$r('app.string.shareTransition_text1')替换为实际资源文件，在本示例中该资源文件的value值为"天气晴朗"
+      message: $r('app.string.shareTransition_text1'),
+      // 请将$r('app.media.spring')替换为实际资源文件
+      // 请将$r('app.media.tall_tree')替换为实际资源文件
+      images: [$r('app.media.spring'), $r('app.media.tall_tree')]
+    },
+    {
+      // 请将$r('app.media.sunset_sky')替换为实际资源文件
+      avatar: $r('app.media.sunset_sky'),
+      name: 'Bob',
+      // 请将$r('app.string.shareTransition_text2')替换为实际资源文件，在本示例中该资源文件的value值为"你好世界"
+      message: $r('app.string.shareTransition_text2'),
+      // 请将$r('app.media.island')替换为实际资源文件
+      images: [$r('app.media.island')]
+    },
+    {
+      // 请将$r('app.media.tall_tree')替换为实际资源文件
+      avatar: $r('app.media.tall_tree'),
+      name: 'Carl',
+      // 请将$r('app.string.shareTransition_text3')替换为实际资源文件，在本示例中该资源文件的value值为"万物生长"
+      message: $r('app.string.shareTransition_text3'),
+      // 请将$r('app.media.flower')替换为实际资源文件
+      // 请将$r('app.media.sunset_sky')替换为实际资源文件
+      // 请将$r('app.media.spring')替换为实际资源文件
+      images: [$r('app.media.flower'), $r('app.media.sunset_sky'), $r('app.media.spring')]
+    }];
+
+  private onAvatarClicked(index: number): void {
+    this.selectedIndex = index;
+    this.getUIContext()?.animateTo({
+      duration: 350,
+      curve: Curve.Friction
+    }, () => {
+      this.isPersonalPageShow = !this.isPersonalPageShow;
+      this.alphaValue = 0;
+    });
+  }
+
+  private onPersonalPageBack(index: number): void {
+    this.getUIContext()?.animateTo({
+      duration: 350,
+      curve: Curve.Friction
+    }, () => {
+      this.isPersonalPageShow = !this.isPersonalPageShow;
+      this.alphaValue = 1;
+    });
+  }
+
+  @Builder
+  PersonalPageBuilder(index: number) {
+    Column({ space: 20 }) {
+      Image(this.allPostData[index].avatar)
+        .size({ width: 200, height: 200 })
+        .borderRadius(100)
+        // 头像配置共享元素效果，与点击的头像的id匹配
+        .geometryTransition(index.toString())
+        .clip(true)
+        .transition(TransitionEffect.opacity(0.99))
+
+      Text(this.allPostData[index].name)
+        .font({ size: 30, weight: 600 })
+        // 对文本添加出现转场效果
+        .transition(TransitionEffect.asymmetric(
+          TransitionEffect.OPACITY
+            .combine(TransitionEffect.translate({ y: 100 })),
+          TransitionEffect.OPACITY.animation({ duration: 0 })
+        ))
+
+      // 请在resources\base\element\string.json文件中配置name为'shareTransition_text11'，value为非空字符串的资源
+      Text(this.context.resourceManager.getStringByNameSync('shareTransition_text11') + this.allPostData[index].name)
+      // 对文本添加出现转场效果
+        .transition(TransitionEffect.asymmetric(
+          TransitionEffect.OPACITY
+            .combine(TransitionEffect.translate({ y: 100 })),
+          TransitionEffect.OPACITY.animation({ duration: 0 })
+        ))
+    }
+    .padding({ top: 20 })
+    .size({ width: 360, height: 780 })
+    .backgroundColor(Color.White)
+    .onClick(() => {
+      this.onPersonalPageBack(index);
+    })
+    .transition(TransitionEffect.asymmetric(
+      TransitionEffect.opacity(0.99),
+      TransitionEffect.OPACITY
+    ))
+  }
+
+  build() {
+    Column({ space: 20 }) {
+      ForEach(this.allPostData, (postData: PostData, index: number) => {
+        Column() {
+          Post({
+            data: postData, index: index, onAvatarClicked: (index: number) => {
+              this.onAvatarClicked(index);
+            }
+          })
+        }
+        .width('100%')
+      }, (postData: PostData, index: number) => index.toString())
+    }
+    .size({ width: '100%', height: '100%' })
+    .backgroundColor('#40808080')
+    .bindContentCover(this.isPersonalPageShow,
+      this.PersonalPageBuilder(this.selectedIndex), { modalTransition: ModalTransition.NONE })
+    .opacity(this.alphaValue)
+  }
+}
+
+@Component
+export default struct Post {
+  @Prop data: PostData;
+  @Prop index: number;
+  @State expandImageSize: number = 100;
+  @State avatarSize: number = 50;
+  private onAvatarClicked: (index: number) => void = (index: number) => { };
+
+  build() {
+    Column({ space: 20 }) {
+      Row({ space: 10 }) {
+        Image(this.data.avatar)
+          .size({ width: this.avatarSize, height: this.avatarSize })
+          .borderRadius(this.avatarSize / 2)
+          .clip(true)
+          .onClick(() => {
+            this.onAvatarClicked(this.index);
+          })
+          // 对头像绑定共享元素转场的id
+          .geometryTransition(this.index.toString(), { follow: true })
+          .transition(TransitionEffect.OPACITY.animation({ duration: 350, curve: Curve.Friction }))
+
+        Text(this.data.name)
+      }
+      .justifyContent(FlexAlign.Start)
+
+      Text(this.data.message)
+
+      Row({ space: 15 }) {
+        ForEach(this.data.images, (imageResource: Resource, index: number) => {
+          Image(imageResource)
+            .size({ width: 100, height: 100 })
+        }, (imageResource: Resource, index: number) => index.toString())
+      }
+    }
+    .backgroundColor(Color.White)
+    .size({ width: '100%', height: 250 })
+    .alignItems(HorizontalAlign.Start)
+    .padding({ left: 10, top: 10 })
+  }
+}
 ```
-1. import { common } from '@kit.AbilityKit';
-
-3. class PostData {
-4. // 请将$r('app.media.flower')替换为实际资源文件
-5. avatar: Resource = $r('app.media.flower');
-6. name: string = '';
-7. message: ResourceStr = '';
-8. images: Resource[] = [];
-9. }
-
-11. @Entry
-12. @Component
-13. struct Index {
-14. @State isPersonalPageShow: boolean = false;
-15. @State selectedIndex: number = 0;
-16. @State alphaValue: number = 1;
-17. private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-
-19. // 数组中图片均使用Resource资源，需用户自定义
-20. private allPostData: PostData[] = [
-21. {
-22. // 请将$r('app.media.flower')替换为实际资源文件
-23. avatar: $r('app.media.flower'),
-24. name: 'Alice',
-25. // 请将$r('app.string.shareTransition_text1')替换为实际资源文件，在本示例中该资源文件的value值为"天气晴朗"
-26. message: $r('app.string.shareTransition_text1'),
-27. // 请将$r('app.media.spring')替换为实际资源文件
-28. // 请将$r('app.media.tall_tree')替换为实际资源文件
-29. images: [$r('app.media.spring'), $r('app.media.tall_tree')]
-30. },
-31. {
-32. // 请将$r('app.media.sunset_sky')替换为实际资源文件
-33. avatar: $r('app.media.sunset_sky'),
-34. name: 'Bob',
-35. // 请将$r('app.string.shareTransition_text2')替换为实际资源文件，在本示例中该资源文件的value值为"你好世界"
-36. message: $r('app.string.shareTransition_text2'),
-37. // 请将$r('app.media.island')替换为实际资源文件
-38. images: [$r('app.media.island')]
-39. },
-40. {
-41. // 请将$r('app.media.tall_tree')替换为实际资源文件
-42. avatar: $r('app.media.tall_tree'),
-43. name: 'Carl',
-44. // 请将$r('app.string.shareTransition_text3')替换为实际资源文件，在本示例中该资源文件的value值为"万物生长"
-45. message: $r('app.string.shareTransition_text3'),
-46. // 请将$r('app.media.flower')替换为实际资源文件
-47. // 请将$r('app.media.sunset_sky')替换为实际资源文件
-48. // 请将$r('app.media.spring')替换为实际资源文件
-49. images: [$r('app.media.flower'), $r('app.media.sunset_sky'), $r('app.media.spring')]
-50. }];
-
-52. private onAvatarClicked(index: number): void {
-53. this.selectedIndex = index;
-54. this.getUIContext()?.animateTo({
-55. duration: 350,
-56. curve: Curve.Friction
-57. }, () => {
-58. this.isPersonalPageShow = !this.isPersonalPageShow;
-59. this.alphaValue = 0;
-60. });
-61. }
-
-63. private onPersonalPageBack(index: number): void {
-64. this.getUIContext()?.animateTo({
-65. duration: 350,
-66. curve: Curve.Friction
-67. }, () => {
-68. this.isPersonalPageShow = !this.isPersonalPageShow;
-69. this.alphaValue = 1;
-70. });
-71. }
-
-73. @Builder
-74. PersonalPageBuilder(index: number) {
-75. Column({ space: 20 }) {
-76. Image(this.allPostData[index].avatar)
-77. .size({ width: 200, height: 200 })
-78. .borderRadius(100)
-79. // 头像配置共享元素效果，与点击的头像的id匹配
-80. .geometryTransition(index.toString())
-81. .clip(true)
-82. .transition(TransitionEffect.opacity(0.99))
-
-84. Text(this.allPostData[index].name)
-85. .font({ size: 30, weight: 600 })
-86. // 对文本添加出现转场效果
-87. .transition(TransitionEffect.asymmetric(
-88. TransitionEffect.OPACITY
-89. .combine(TransitionEffect.translate({ y: 100 })),
-90. TransitionEffect.OPACITY.animation({ duration: 0 })
-91. ))
-
-93. // 请在resources\base\element\string.json文件中配置name为'shareTransition_text11'，value为非空字符串的资源
-94. Text(this.context.resourceManager.getStringByNameSync('shareTransition_text11') + this.allPostData[index].name)
-95. // 对文本添加出现转场效果
-96. .transition(TransitionEffect.asymmetric(
-97. TransitionEffect.OPACITY
-98. .combine(TransitionEffect.translate({ y: 100 })),
-99. TransitionEffect.OPACITY.animation({ duration: 0 })
-100. ))
-101. }
-102. .padding({ top: 20 })
-103. .size({ width: 360, height: 780 })
-104. .backgroundColor(Color.White)
-105. .onClick(() => {
-106. this.onPersonalPageBack(index);
-107. })
-108. .transition(TransitionEffect.asymmetric(
-109. TransitionEffect.opacity(0.99),
-110. TransitionEffect.OPACITY
-111. ))
-112. }
-
-114. build() {
-115. Column({ space: 20 }) {
-116. ForEach(this.allPostData, (postData: PostData, index: number) => {
-117. Column() {
-118. Post({
-119. data: postData, index: index, onAvatarClicked: (index: number) => {
-120. this.onAvatarClicked(index);
-121. }
-122. })
-123. }
-124. .width('100%')
-125. }, (postData: PostData, index: number) => index.toString())
-126. }
-127. .size({ width: '100%', height: '100%' })
-128. .backgroundColor('#40808080')
-129. .bindContentCover(this.isPersonalPageShow,
-130. this.PersonalPageBuilder(this.selectedIndex), { modalTransition: ModalTransition.NONE })
-131. .opacity(this.alphaValue)
-132. }
-133. }
-
-135. @Component
-136. export default struct Post {
-137. @Prop data: PostData;
-138. @Prop index: number;
-139. @State expandImageSize: number = 100;
-140. @State avatarSize: number = 50;
-141. private onAvatarClicked: (index: number) => void = (index: number) => { };
-
-143. build() {
-144. Column({ space: 20 }) {
-145. Row({ space: 10 }) {
-146. Image(this.data.avatar)
-147. .size({ width: this.avatarSize, height: this.avatarSize })
-148. .borderRadius(this.avatarSize / 2)
-149. .clip(true)
-150. .onClick(() => {
-151. this.onAvatarClicked(this.index);
-152. })
-153. // 对头像绑定共享元素转场的id
-154. .geometryTransition(this.index.toString(), { follow: true })
-155. .transition(TransitionEffect.OPACITY.animation({ duration: 350, curve: Curve.Friction }))
-
-157. Text(this.data.name)
-158. }
-159. .justifyContent(FlexAlign.Start)
-
-161. Text(this.data.message)
-
-163. Row({ space: 15 }) {
-164. ForEach(this.data.images, (imageResource: Resource, index: number) => {
-165. Image(imageResource)
-166. .size({ width: 100, height: 100 })
-167. }, (imageResource: Resource, index: number) => index.toString())
-168. }
-169. }
-170. .backgroundColor(Color.White)
-171. .size({ width: '100%', height: 250 })
-172. .alignItems(HorizontalAlign.Start)
-173. .padding({ left: 10, top: 10 })
-174. }
-175. }
-```
-
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/Animation/entry/src/main/ets/pages/shareTransition/template7/Index.ets#L16-L193)
 
 效果为点击主页的头像后，弹出模态页面显示个人信息，并且两个页面之间的头像做一镜到底动效：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/Dp2dGyGcQrKfvuUhEUhhuw/zh-cn_image_0000002589324349.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/D7btXkT-RA6SMz_hYB08kQ/zh-cn_image_0000002736312891.gif)
 
-## 示例代码
+## 元素转场案例
 
-* [转场动效合集](https://gitcode.com/harmonyos_samples/transitions-collection)
+### 图片展开一镜到底
+
+* 双指放大转场
+
+  图片使用双指放大转场显示图片详情页。
+
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/rDmDz_CIQMazpARw0zBb2Q/zh-cn_image_0000002706673848.gif)
+
+  通过NodeContainer组件实现跨节点迁移，通过手势捏合来控制节点的上下树，达成一镜到底动效。
+
+  1. 小图模式和大图模式分别为两个页面，通过监听expand值来进行页面切换。
+
+     ```ts
+     @StorageProp('expand') @Watch('goToPageTwo') num1: number = 0;
+     // ...
+
+     aboutToAppear(): void {
+       if (!getMyNode()) {
+         createMyNode(this.getUIContext(), false);
+       }
+       this.imageGalleryNodeController = getMyNode();
+     }
+     ```
+  2. 创建NodeContainer节点类。
+
+     ```ts
+     export class ImageGalleryNodeController extends NodeController {
+       private rootNode: BuilderNode<[Params]> | null = null;
+       private wrapBuilder: WrappedBuilder<[Params]> = wrapBuilder(ImageGalleryBuilder);
+       private isExpand: boolean = false;
+
+       constructor(isExpand: boolean) {
+         super();
+         this.isExpand = isExpand;
+       }
+
+       makeNode(uiContext: UIContext): FrameNode | null {
+         if (this.rootNode === null) {
+           this.rootNode = new BuilderNode(uiContext);
+           this.rootNode.build(this.wrapBuilder, { isExpand: this.isExpand });
+         }
+         return this.rootNode.getFrameNode();
+       }
+
+       init(uiContext: UIContext) {
+         this.rootNode = new BuilderNode(uiContext);
+         this.rootNode.build(this.wrapBuilder, { isExpand: this.isExpand });
+       }
+
+       update(isExpand: boolean) {
+         if (this.rootNode !== null) {
+           this.rootNode.update({ isExpand });
+         }
+       }
+     }
+     ```
+  3. 在小图界面当对图片进行双指捏合操作时，改变isExpand值。
+
+     ```ts
+     PinchGesture()
+       .onActionStart((event: GestureEvent) => {
+         this.offsetY = getTranslateToFullScreen(this.getUIContext(), 'swiper')?.offsetY || 0
+         this.imageHeight = this.getUIContext().vp2px(Number(event.target.area.height))
+         this.imageWidth = this.getUIContext().vp2px(Number(event.target.area.width))
+         this.status = Status.PINCHING;
+         this.updateCenter([this.getUIContext().vp2px(event.pinchCenterX),
+           this.getUIContext().vp2px(event.pinchCenterY)])
+         this.updateTranslateAccordingToCenter();
+         this.startGestureScale = this.imageScale;
+         this.gestureCount++;
+       })
+       .onActionUpdate((event: GestureEvent) => {
+         this.imageScale = this.startGestureScale * event.scale;
+         if (!this.isExpand && this.imageScale >= 1) {
+           this.onExpand();
+         }
+         this.updateExtremeOffset();
+       })
+     ```
+  4. 当expand值更改时，页面进行切换到大图页面，完成一镜到底页面切换。
+
+     ```ts
+     NavDestination() {
+       NodeContainer(this.imageGalleryNodeController)
+     }
+     .mode(NavDestinationMode.DIALOG)
+     .height('100%')
+     .width('100%')
+     .hideTitleBar(true)
+     .onReady((context: NavDestinationContext) => {
+       this.pageInfo = context.pathStack;
+       const param = context.pathInfo?.param as Record<string, Object>;
+       this.onBack = param['onBack'] as () => void;
+     })
+     .onBackPressed(() => {
+       AppStorage.setOrCreate('reset', new Date());
+       this.getUIContext().animateTo({ duration: 300, curve: Curve.EaseIn }, () => {
+         this.backToPageOne();
+       })
+       return true;
+     })
+     ```
+* 查看大图转场
+
+  比如图片在九宫格中显示，点击查看大图，同时还支持手势下拉返回到九宫格。
+
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/0eKDimTiQ4W72NzWtm9l1g/zh-cn_image_0000002736432939.gif)
+
+  设置geometryTransition属性将图片首页和大图页面的图片绑定同一id值，结合属性动画效果实现一镜到底效果。核心代码如下：
+
+  1. 首页通过网格布局实现三行三列图片布局，并给每个图片设置geometryTransition属性，绑定唯一id值，绑定共享的两个图片组件。
+
+     ```ts
+     NavDestination() {
+       Column() {
+         Grid(this.scroller) {
+           ForEach(this.data, (item: number) => {
+             GridItem() {
+               if (this.clickedIndex !== item || (this.isFirstPageShow)) {
+                 Image($r(`app.media.img_${item % 9}`))
+                   .width('100%')
+                   .height('100%')
+                   .objectFit(ImageFit.Cover)
+                   .id('item2_' + item)
+                   .onClick(() => {
+                     this.onItemClick(item);
+                   })
+                   .geometryTransition(this.clickedIndex === item ? 'app.media.img_' + item.toString() : '')
+                   .transition(TransitionEffect.opacity(0.99))
+               }
+             }
+             .width(this.getUIContext().px2vp(381))
+             .height(this.getUIContext().px2vp(381))
+           }, (item: number) => item + '')
+         }
+         .rowsTemplate('1fr 1fr 1fr')
+         .columnsTemplate('1fr 1fr 1fr')
+         .columnsGap(2)
+         .rowsGap(2)
+         .size({
+           width: this.getUIContext().px2vp(1169),
+           height: this.getUIContext().px2vp(1169)
+         })
+         .margin({ top: 16 })
+       }
+     }
+     .title('View larger picture')
+     .height('100%')
+     .width('100%')
+     .onReady((context: NavDestinationContext) => {
+       this.pageInfo = context.pathStack;
+     })
+     ```
+  2. 通过属性动画来进行小图和大图页面的切换，同时为了避免触发Navigation的转场动画，在pushPath()的时候把动画选项设置成了false。
+
+     ```ts
+     onItemClick(index: number): void {
+       let param: Record<string, Object> = {};
+       this.needFollow = false;
+       this.clickedIndex = index;
+       param['selectedIndex'] = this.clickedIndex;
+       param['onIndexChange'] = (index: number) => {
+         this.onIndexChange(index);
+       };
+       param['onBackToFirstPage'] = () => {
+         this.onBack();
+       }
+
+       this.getUIContext().animateTo({
+         duration: 250,
+         curve: Curve.EaseIn,
+       }, () => {
+         this.pageInfo.pushPath({ name: 'ShowLargeImageWithGesturePageTwo', param: param }, false);
+         this.isFirstPageShow = false;
+       })
+     }
+     ```
+* 半模态转场
+
+  图片从页面向半模态弹窗中转场显示。
+
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/wiwwIrDSQhGZu3sPGiU92Q/zh-cn_image_0000002706833784.gif)
+
+  利用NodeContainer组件实现跨节点迁移，将半模态SheetOptions()中的mode设置为SheetMode.EMBEDDED，该模式下新起的页面可以覆盖在半模态弹窗上，页面返回后该半模态依旧存在，半模态面板内容不丢失。通过属性动画，展示组件从初始界面至半模态页面的一镜到底动效，并在动画结束时关闭页面，并将该组件迁移至半模态页面。
+
+  1. 创建NodeContainer节点类。
+
+     ```ts
+     export class MyNodeController extends NodeController {
+       // ...
+     }
+     ```
+  2. 首页图片绑定半模态弹窗，并通过bindContentCover设置模态转场动画。
+
+     ```ts
+     NavDestination() {
+       Column() {
+         Image($r('app.media.flower'))
+           .opacity(this.opacityDegree)
+           .width('90%')
+           .id('origin')
+           .enabled(this.isEnabled)
+           .onClick(() => {
+             this.originInfo = this.calculateData('origin');
+             this.scaleValue = this.originInfo.scale;
+             this.translateX = this.originInfo.translateX;
+             this.translateY = this.originInfo.translateY;
+             this.clipWidth = this.originInfo.clipWidth;
+             this.clipHeight = this.originInfo.clipHeight;
+             this.radius = 0;
+             this.opacityDegree = 0;
+             this.isShowSheet = true;
+             this.isShowOverlay = true;
+             this.isEnabled = false;
+           })
+       }
+       .width('100%')
+       .height('100%')
+       .padding({ top: 16 })
+       .alignItems(HorizontalAlign.Center)
+       .bindSheet(this.isShowSheet, this.mySheet(), {
+         mode: SheetMode.EMBEDDED,
+         height: this.bindSheetHeight,
+         onDisappear: () => {
+           this.isShowImage = false;
+           this.isShowSheet = false;
+           this.isAnimating = false;
+           this.isEnabled = true;
+         }
+       })
+       .bindContentCover(this.isShowOverlay, this.overlayNode(), {
+         transition: TransitionEffect.IDENTITY
+       })
+     }
+     .backgroundColor('#F1F3F5')
+     .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.BOTTOM])
+     .title('half mode')
+     ```
+  3. 点击首页图片后将图片节点迁移至半模态，当半模态完成布局之后，触发onLayoutComplete()函数，获取到图片初始位置和半模态位置，通过自定义显示动画完成一镜到底的效果。
+
+     ```ts
+     aboutToAppear(): void {
+       let onLayoutComplete: () => void = (): void => {
+         this.targetInfo = this.calculateData('target');
+         if (this.targetInfo.scale !== 0 && this.targetInfo.clipWidth !== 0 && this.targetInfo.clipHeight !== 0 &&
+           !this.isAnimating) {
+           this.isAnimating = true;
+           this.getUIContext().animateTo({
+             duration: 1000,
+             curve: Curve.Friction,
+             onFinish: () => {
+               this.isShowOverlay = false;
+               this.isShowImage = true;
+             }
+           }, () => {
+             this.scaleValue = AppStorage.get('currentBreakpoint') === 'md' ? 0.382 : this.targetInfo.scale;
+             this.translateX = AppStorage.get('currentBreakpoint') === 'md' ? 93.5 : this.targetInfo.translateX;
+             this.clipWidth = AppStorage.get('currentBreakpoint') === 'md' ? 525 : this.targetInfo.clipWidth;
+             this.clipHeight = AppStorage.get('currentBreakpoint') === 'md' ? 785 : this.targetInfo.clipHeight;
+             this.translateY = this.targetInfo.translateY +
+               (this.getUIContext().px2vp(WindowUtils.windowHeight_px) - this.bindSheetHeight -
+               this.getUIContext().px2vp(WindowUtils.navigationIndicatorHeight_px) -
+               this.getUIContext().px2vp(WindowUtils.topAvoidAreaHeight_px)) -
+               (AppStorage.get('currentBreakpoint') === 'md' ? 134.3 : 0);
+             this.radius = this.sheetRadius / this.scaleValue;
+           })
+           this.getUIContext().animateTo({
+             duration: 2000,
+             curve: Curve.Friction,
+           }, () => {
+             this.opacityDegree = 1;
+           })
+         }
+       };
+       this.listener.on('layout', onLayoutComplete);
+     }
+     ```
+
+### 图标（搜索框、头像等）展开一镜到底
+
+搜索框点击后，转场到搜索结果页面。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/FkigJadwSgW407vNhwAyWA/zh-cn_image_0000002736312893.gif)
+
+将搜索框首页与搜索框页面的Search组件同时设置geometryTransition属性，并绑定同一id值。设置显式动画和transition属性的转场效果，实现搜索框的一镜到底效果。
+
+1. 搜索框首页在Search组件添加geometryTransition属性，并绑定id值，禁用掉Navigation本身转场的动画。
+
+   ```ts
+   private showSearchPage(): void {
+     this.transitionEffect = TransitionEffect.OPACITY;
+     this.getUIContext().animateTo({
+       curve: curves.interpolatingSpring(0, 1, 342, 38)
+     }, () => {
+       this.pageInfos.pushPath({ name: 'SearchLongTakeTransitionPageTwo' }, false);
+     })
+   }
+   ```
+2. 搜索页面中的Search组件添加geometryTransition()，并添加与搜索框首页中的同一id值。
+
+   ```ts
+   Search({ placeholder: 'Search' })
+     .height(40)
+     .placeholderColor($r('sys.color.mask_secondary'))
+     .width('100%')
+     .geometryTransition('SEARCH_ONE_SHOT_DEMO_TRANSITION_ID', { follow: true })
+     .backgroundColor('#0D000000')
+     .defaultFocus(false)
+     .focusOnTouch(false)
+     .focusable(false)
+   ```
+
+## 容器转场案例
+
+### 卡片、列表展开一镜到底
+
+在瀑布流或列表流布局中，当用户点击其中一个卡片或列表项时，应用将执行平滑的转场动画，引导用户从概览页面切换到详情页面。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/7Qb_wl80ThKjIDiJ0SjM3A/zh-cn_image_0000002706673850.gif)
+
+使用WaterFlow()和LazyForEach()实现卡片列表瀑布流。利用Navigation的自定义导航转场动画能力，通过customNavContentTransition()配置列表页与详情页的自定义导航转场动画，结合componentSnapshot()将卡片进行截图避免跳转页面白屏。
+
+1. 卡片列表页使用WaterFlow和LazyForEach实现页面布局。
+
+   ```ts
+   private onColumnClicked(indexValue: string): void {
+     let param: Record<string, Object> = {};
+     let clickedIndex = parseInt(indexValue);
+     param['indexValue'] = clickedIndex;
+     this.clickedIndex = clickedIndex;
+     this.getUIContext()
+       .getComponentSnapshot()
+       .get('FlowItem_' + indexValue, (error: BusinessError, pixelMap: image.PixelMap) => {
+         if (error) {
+           hilog.error(0x0000, 'CardLongTakePageOne',
+             `componentSnapshot.get error, reason: Code is ${error.code}, message is ${error.message}`);
+           this.pageInfos.pushPath({ name: 'CardLongTakeTransitionPageTwo', param: param });
+           return;
+         } else {
+           hilog.info(0x0000, 'CardLongTakePageOne', 'componentSnapshot.get success!');
+           param['clickedComponentId'] = CardUtil.getFlowItemIdByIndex(indexValue);
+           param['doDefaultTransition'] = () => {
+             this.doFinishTransition();
+           };
+           SnapShotImage.pixelMap = pixelMap;
+           this.pageInfos.pushPath({ name: 'CardLongTakeTransitionPageTwo', param: param });
+           this.dataSource.getData(this.clickedIndex).isVisible = Visibility.Hidden;
+         }
+       })
+   }
+   ```
+2. 卡片详情页通过Navigation自定义动画实现一镜到底。这里套了两层Stack()，因为要放截图，以及把原来的详情页内容转移过来。缩放、translate属性设置在Stack()这层上实现边界动画，透明度属性设置在截图上实现内容过渡。在onReady()里面注册自定义动画，通过id对动画属性进行初始化。
+
+   ```ts
+   tryRegisterCustomTransition(clickedCardId: string): void {
+     try {
+       this.longTakeAnimationProperties.init(clickedCardId, this.prePageDoFinishTransition);
+       CustomTransition.getInstance().registerNavParam(this.pageId, 2000,
+         (transitionProxy: NavigationTransitionProxy) => {
+           this.longTakeAnimationProperties.doAnimation(transitionProxy);
+         });
+       hilog.info(0x0000, 'CardLongTakePageTwo', 'register successes');
+     } catch (error) {
+       let err = error as BusinessError;
+       hilog.error(0x0000, 'CardLongTakePageTwo', `this is error:code=${err.code}, message=${err.message}`);
+       this.longTakeAnimationProperties.setFinalStatus();
+     }
+   }
+
+   // ...
+
+   build() {
+     NavDestination() {
+       Stack({ alignContent: Alignment.TopStart }) {
+         Stack({ alignContent: Alignment.TopStart }) {
+           Image(this.snapShotImage)
+             .size(this.longTakeAnimationProperties.snapShotSize)
+             .objectFit(ImageFit.Auto)
+             .opacity(this.longTakeAnimationProperties.snapShotOpacity)
+             .syncLoad(true)
+             .position({
+               x: this.longTakeAnimationProperties.snapShotPositionX,
+               y: this.longTakeAnimationProperties.snapShotPositionY
+             })
+
+           DetailPageContent({
+             indexValue: this.indexValue,
+             pageInfos: this.pageInfos,
+             onBackPressed: () => {
+               this.onBackPressed()
+             },
+             SharedComponentId: CardUtil.getPostPageImageId(this.clickedCardId)
+           })
+             .size({
+               width: '100%',
+               height: '100%'
+             })
+             .opacity(this.longTakeAnimationProperties.postPageOpacity)
+         }
+         .width('100%')
+         .position({
+           x: this.longTakeAnimationProperties.positionXValue,
+           y: this.longTakeAnimationProperties.positionYValue
+         })
+       }
+       .scale({
+         x: this.longTakeAnimationProperties.scaleValue,
+         y: this.longTakeAnimationProperties.scaleValue
+       })
+       .translate({
+         x: this.longTakeAnimationProperties.translateX,
+         y: this.longTakeAnimationProperties.translateY
+       })
+       .width(this.longTakeAnimationProperties.clipWidth)
+       .height(this.longTakeAnimationProperties.clipHeight)
+       .borderRadius(this.longTakeAnimationProperties.radius)
+       .expandSafeArea([SafeAreaType.SYSTEM])
+       .backgroundColor($r('app.color.water_flow_background_color'))
+       .clip(true)
+     }
+     .backgroundColor(this.longTakeAnimationProperties.navDestinationBgColor)
+     .GestureStyles()
+     .hideTitleBar(true)
+     .onReady((context: NavDestinationContext) => {
+       this.pageInfos = context.pathStack;
+       let param = context.pathInfo?.param as Record<string, Object>;
+       let clickedCardId = param['clickedComponentId'] as string;
+       this.indexValue = param['indexValue'] as number;
+       this.prePageDoFinishTransition = param['doDefaultTransition'] as () => void;
+       if (context.navDestinationId && clickedCardId) {
+         this.pageId = context.navDestinationId;
+         this.clickedCardId = clickedCardId;
+         this.tryRegisterCustomTransition(clickedCardId);
+       }
+     })
+     .onBackPressed(() => {
+       return this.onBackPressed();
+     })
+     .onDisAppear(() => {
+       CustomTransition.getInstance().unRegisterNavParam(this.pageId);
+     })
+   }
+
+   // ...
+   ```
+
+列表一镜到底效果图。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/fVv0gpLGTue9ZR4M030mQA/zh-cn_image_0000002736432941.gif)
+
+将列表项与详情页面同时设置geometryTransition属性，并绑定同一id值。每个列表项设置显式动画和transition属性的转场效果，实现列表展开的一镜到底效果。
+
+1. 列表页面中每一个列表项设置geometryTransition属性，并绑定当前列表的id值。
+
+   ```ts
+   @Component
+   export struct MyButton {
+     @Prop listContent: ListContent;
+     @Prop indexValue: string;
+     @State scaleValue: number = 1;
+
+     build() {
+       Column({ space: 10 }) {
+         Row({ space: 5 }) {
+           Line()
+             .startPoint([0, 0])
+             .endPoint([0, 20])
+             .strokeWidth(5)
+             .stroke(Color.Yellow)
+             .strokeLineCap(LineCapStyle.Round)
+           Text(this.listContent.title)
+             .fontWeight(FontWeight.Medium)
+             .fontSize(16)
+         }
+
+         Text(this.listContent.content)
+           .fontColor(Color.Grey)
+           .maxLines(1)
+           .textOverflow({ overflow: TextOverflow.Ellipsis })
+           .fontSize(14)
+       }
+       .alignItems(HorizontalAlign.Start)
+       .padding({
+         left: 20,
+         right: 20,
+         top: 20,
+         bottom: 20
+       })
+       .width('91%')
+       .backgroundColor(Color.White)
+       .clip(true)
+       .borderRadius(20)
+       .scale({
+         x: this.scaleValue,
+         y: this.scaleValue
+       })
+       .geometryTransition(this.indexValue, { follow: true })
+       .onTouch((event?: TouchEvent) => {
+         this.onTouchProcess(event);
+       })
+       .onClick(() => {
+         this.onButtonClicked?.(this.indexValue);
+       })
+     }
+
+     onButtonClicked: (index: string) => void = (_index: string) => {
+     };
+
+     private onTouchProcess(event?: TouchEvent): void {
+       if (!event) {
+         return;
+       }
+       if (event.type === TouchType.Down) {
+         this.getUIContext().animateTo({ curve: curves.interpolatingSpring(0, 1, 350, 35) }, () => {
+           this.scaleValue = 0.95;
+         })
+       } else if (event.type === TouchType.Up) {
+         this.getUIContext().animateTo({ curve: curves.interpolatingSpring(0, 1, 350, 35) }, () => {
+           this.scaleValue = 1;
+         })
+       } else if (event.type === TouchType.Cancel) {
+         this.getUIContext().animateTo({ curve: curves.interpolatingSpring(0, 1, 350, 35) }, () => {
+           this.scaleValue = 1;
+         })
+       }
+     }
+   }
+   ```
+2. 列表详情页中的容器组件Column组件设置geometryTransition属性，并绑定对应列表项的id值，完成一镜到底效果。
+
+   ```ts
+   NavDestination() {
+     Column({ space: 20 }) {
+       Text(this.param.title)
+         .fontSize(30)
+         .fontWeight(FontWeight.Medium)
+       Text(this.param.content)
+         .fontColor($r('sys.color.password_icon_focus_color'))
+         .lineHeight(28)
+         .fontSize(16)
+     }
+     .alignItems(HorizontalAlign.Start)
+     .clip(true)
+     .size({
+       width: '100%',
+       height: '100%'
+     })
+     .geometryTransition(this.param.geometryId)
+   }
+   .padding({
+     top: 46,
+     left: 16,
+     right: 16
+   })
+   .backgroundColor(Constants.DEFAULT_BG_COLOR)
+   .transition(TransitionEffect.OPACITY)
+   .hideTitleBar(true)
+   .backgroundColor(Color.Transparent)
+   .onReady((context: NavDestinationContext) => {
+     this.pageInfos = context.pathStack;
+     this.param = (context.pathInfo.param as ListDetailPageExtraInfo);
+   })
+   .onBackPressed(() => {
+     this.getUIContext().animateTo({ curve: curves.interpolatingSpring(0, 1, 342, 38) }, () => {
+       this.pageInfos.pop(false);
+     })
+     return true;
+   })
+   ```
+
+### “图书”翻页展开一镜到底
+
+阅读类应用中，点击一本“图书”的图标后，模拟图书翻页展开的效果，转场到书本内容页面，同时支持手势返回。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/65gdNBhCSTuQsdKJ39X7mQ/zh-cn_image_0000002706833786.gif)
+
+利用Navigation的自定义导航转场动画能力，通过customNavContentTransition()配置书籍页与详情页的自定义导航转场动画实现图书翻页一镜到底效果。使用rotate属性实现书籍翻页的旋转效果。
+
+1. 书架页面通过Grid组件实现书架第一行书籍布局，使用Swiper()组件实现书架第一行书籍布局。
+
+   ```ts
+   build() {
+     NavDestination() {
+       Scroll() {
+         Column({ space: 12 }) {
+           Grid() {
+             ForEach(this.dataSource, (item: BookItem, index: number) => {
+               GridItem() {
+                 Image($r(item.coverImageUrl))
+                   .id(item.id)
+                   .width('100%')
+                   .onClick(() => {
+                     this.onColumnClicked(item.id, item.coverImageUrl, this.dataSource[0].id, () => {
+                       this.dataSource.sort((a, b) => b.timestamp - a.timestamp);
+                     })
+                     this.dataSource[index].timestamp = Number(new Date());
+                   })
+               }
+               .width(this.columnWidth)
+             }, (item: BookItem) => JSON.stringify(item))
+           }
+           .padding({
+             left: 12,
+             right: 12,
+             top: 12
+           })
+           .columnsTemplate(this.columnType)
+           .columnsGap(10)
+           .rowsGap(10)
+
+           Column({ space: 12 }) {
+             Text('Recently read')
+               .fontSize(16)
+               .fontWeight(FontWeight.Medium)
+               .fontColor(Color.Gray)
+             Swiper(this.swiperController) {
+               ForEach(this.recentData, (item: BookItem) => {
+                 GridItem() {
+                   Image($r(item.coverImageUrl))
+                     .id(item.id)
+                     .onClick(() => {
+                       this.onColumnClicked(item.id, item.coverImageUrl);
+                     })
+                 }
+               }, (item: BookItem) => JSON.stringify(item))
+             }
+             .indicator(false)
+             .displayCount(3)
+             .loop(false)
+             .itemSpace(10)
+           }
+           .padding({
+             left: 12,
+             right: 12
+           })
+           .alignItems(HorizontalAlign.Start)
+         }
+       }
+     }
+     // ...
+   }
+
+   // ...
+
+   private onColumnClicked(bookId: string, bookCoverUrl: string, toBookId?: string, prePageCallback?: () => void): void {
+     try {
+       CustomTransition.getInstance().unRegisterNavParam(this.pageId);
+       const fromCardItemInfo: RectInfoInPx =
+         ComponentAttrUtils.getRectInfoById(WindowUtils.window.getUIContext(), bookId);
+       let param: Record<string, Object> = {};
+       param['fromCardItemInfo'] = fromCardItemInfo;
+       param['bookCoverUrl'] = bookCoverUrl;
+       if (toBookId) {
+         const toCardItemInfo: RectInfoInPx =
+           ComponentAttrUtils.getRectInfoById(WindowUtils.window.getUIContext(), toBookId);
+         param['toCardItemInfo'] = toCardItemInfo;
+       }
+       if (prePageCallback) {
+         param['prePageCallback'] = prePageCallback;
+       }
+       this.pageInfos.pushPath({ name: 'BookFlipLongTakeTransitionPageTwo', param: param });
+     } catch (err) {
+       let error = err as BusinessError;
+       hilog.error(0x0000, 'BookFlipLongTakeTransitionPageOne',
+         `onColumnClicked failed. error code=${error.code}, message=${error.message}`);
+     }
+   }
+   ```
+2. 书籍详情页通过Navigation自定义动画实现一镜到底。
+
+   ```ts
+   NavDestination() {
+     Stack() {
+       Column() {
+         Text($r('app.string.DetailPage_text'))
+           .fontColor($r('sys.color.password_icon_focus_color'))
+           .lineHeight(28)
+           .fontSize(16)
+       }
+       .width(AppStorage.get('currentBreakpoint') === 'md' ? '75%' : '100%')
+       .height('100%')
+       .alignItems(HorizontalAlign.Start)
+       .padding({
+         left: 16,
+         right: 16,
+         top: 46
+       })
+
+       if (!this.doDefaultTransition) {
+         Image($r(this.bookCoverUrl))
+           .objectFit(ImageFit.Cover)
+           .syncLoad(true)
+           .rotate({
+             x: 0,
+             y: 1,
+             z: 0,
+             angle: this.bookFlipLongTakeTransitionProperties.coverRotateAngle,
+             centerX: 0,
+             centerY: '50%'
+           })
+           .scale({
+             x: this.bookFlipLongTakeTransitionProperties.coverScale,
+             centerX: 0,
+             centerY: '50%'
+           })
+       }
+     }
+     .scale({
+       x: this.bookFlipLongTakeTransitionProperties.scaleValue,
+       y: this.bookFlipLongTakeTransitionProperties.scaleValue
+     })
+     .translate({
+       x: this.bookFlipLongTakeTransitionProperties.translateX,
+       y: this.bookFlipLongTakeTransitionProperties.translateY
+     })
+     .width(this.bookFlipLongTakeTransitionProperties.clipWidth)
+     .height(this.bookFlipLongTakeTransitionProperties.clipHeight)
+     .backgroundColor('#DEDFDF')
+   }
+   .backgroundColor(this.bookFlipLongTakeTransitionProperties.navDestinationBgColor)
+   .GestureStyles()
+   .hideTitleBar(true)
+   .onReady((context: NavDestinationContext) => {
+     this.pageInfos = context.pathStack;
+     let param = context.pathInfo?.param as Record<string, Object>;
+     this.bookCoverUrl = param['bookCoverUrl'] as string;
+     this.fromCardItemInfo = param['fromCardItemInfo'] as RectInfoInPx;
+     this.toCardItemInfo = (param['toCardItemInfo'] || param['fromCardItemInfo']) as RectInfoInPx;
+     this.prePageCallback = param['prePageCallback'] as () => void;
+     if (context.navDestinationId) {
+       this.pageId = context.navDestinationId;
+     }
+     CustomTransition.getInstance()
+       .registerNavParam(this.pageId, 500, (transitionProxy: NavigationTransitionProxy) => {
+         this.bookFlipLongTakeTransitionProperties.doAnimation(transitionProxy, this.fromCardItemInfo,
+           this.toCardItemInfo);
+       }, () => {
+         this.bookFlipLongTakeTransitionProperties.onInteractiveFinish();
+       }, () => {
+         this.bookFlipLongTakeTransitionProperties.onInteractive(
+           this.fromCardItemInfo, this.toCardItemInfo);
+       });
+   })
+   .onBackPressed(() => {
+     return this.onBackPressed();
+   })
+   .onDisAppear(() => {
+     CustomTransition.getInstance().unRegisterNavParam(this.pageId);
+   })
+   ```
+
+### 视频展开一镜到底
+
+视频组件从一个页面向目标页面的转场，在一镜到底的过程中，视频需要持续播放。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/WEKXIso3SyqhdmtiDuR5iQ/zh-cn_image_0000002736312895.gif)
+
+使用WaterFlow()和LazyForEach()实现卡片列表瀑布流。利用NodeController实现组件的跨节点迁移，通过customNavContentTransition配置概览页与视频详情的自定义导航转场动画，给节点的迁移过程赋予一镜到底效果。
+
+1. 创建NodeController节点类。
+
+   ```ts
+   export class MyNodeController extends NodeController {
+     // ...
+   }
+   ```
+2. 视频首页使用WaterFlow()和LazyForEach()实现页面布局，点击视频后将视频节点迁移至视频播放页面，通过Navigation自定义动画完成一镜到底的效果。
+
+   ```ts
+   NavDestination() {
+     WaterFlow() {
+       LazyForEach(this.dataSource, (_: CardAttr, index: number) => {
+         FlowItem() {
+           VideoCardComponent({
+             isPlaying: false,
+             index,
+             onColumnClicked: (prePageCallback) => {
+               this.onColumnClicked(`xComponent_${index}`, prePageCallback)
+             }
+           })
+         }
+         .width('100%')
+         .borderRadius(10)
+         .clip(true)
+         .id('FlowItem_' + index.toString())
+       }, (item: string) => item)
+     }
+     .edgeEffect(EdgeEffect.Spring)
+     .onScrollIndex((first: number) => {
+       this.scrollFirstIndex = first;
+     })
+     .padding(12)
+     .columnsTemplate(this.columnType)
+     .columnsGap(12)
+     .rowsGap(10)
+     .width('100%')
+     .height('100%')
+   }
+   .backgroundColor(Constants.DEFAULT_BG_COLOR)
+   .title(getResourceString(this.getUIContext(), $r('app.string.video_title'), this))
+   .onReady((context: NavDestinationContext) => {
+     this.pageInfos = context.pathStack;
+     if (context.navDestinationId) {
+       this.pageId = context.navDestinationId;
+     }
+   })
+   .onDisAppear(() => {
+     CustomTransition.getInstance().unRegisterNavParam(this.pageId);
+   })
+   ```

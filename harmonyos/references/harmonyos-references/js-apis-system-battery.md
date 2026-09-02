@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@system.battery (电量信息)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 已停止维护的接口 > @system.battery (电量信息)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b7de8a2887594951900366b26807aee9d0ec62eb7226b8158b28ac1580be095b
+scraped_at: 2026-09-02T15:02:04+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:deb405586292a41c9720794ad2a1c684f622d4a160547701f03e225869a4dada
 ---
 
 该模块提供充电状态及剩余电量的查询功能。
 
-说明
+**说明** 
 
 * 模块维护策略：
 
@@ -21,15 +21,11 @@ content_hash: sha256:b7de8a2887594951900366b26807aee9d0ec62eb7226b8158b28ac1580b
 
 ## 导入模块
 
-WearableLite Wearable
-
-```
-1. import {Battery, BatteryResponse } from '@kit.BasicServicesKit';
+```js
+import {Battery, BatteryResponse } from '@kit.BasicServicesKit';
 ```
 
 ## Battery.getStatus(deprecated)
-
-WearableLite Wearable
 
 getStatus(options?: GetStatusOptions): void;
 
@@ -45,20 +41,76 @@ getStatus(options?: GetStatusOptions): void;
 
 **示例：**
 
+ArkTS示例：
+
+```js
+Battery.getStatus({
+    success: (data: BatteryResponse) => {
+        console.info('success get battery level:' + data.level);
+    },
+    fail: (data: string, code: number) => {
+        console.error('fail to get battery level code:' + code + ', data: ' + data);
+    }
+});
 ```
-1. Battery.getStatus({
-2. success: (data: BatteryResponse) => {
-3. console.info('success get battery level:' + data.level);
-4. },
-5. fail: (data: string, code: number) => {
-6. console.error('fail to get battery level code:' + code + ', data: ' + data);
-7. }
-8. });
+
+JS示例：
+
+```xml
+<!-- xxx.hml -->
+<div class="container">
+    <input type="button" value="Get Data" style="width: 240px; height: 50px; margin: 5px;" onclick="getBatteryInfo"></input>
+    <text class="title">level: {{ capacity }}</text>
+    <text class="title">charging: {{ charging }}</text>
+</div>
+```
+
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.title {
+  width: 200px;
+  font-size: 30px;
+  text-align: center;
+}
+```
+
+```js
+// xxx.js
+import Battery from '@system.battery';
+
+export default {
+    data: {
+        capacity: '',
+        charging: ''
+    },
+    getBatteryInfo() {
+        let TAG = 'get_status_success_test';
+        Battery.getStatus({
+            success: (batteryResponse) => {
+                this.capacity = batteryResponse.level;
+                this.charging = batteryResponse.charging;
+                console.info(`${TAG} batteryResponse.level: ${batteryResponse.level}`);
+                console.info(`${TAG} batteryResponse.charging: ${batteryResponse.charging}`);
+            },
+            fail: (data, code) => {
+                console.error(`${TAG} fail data: ${data}, code: ${code}`);
+            },
+            complete: () => {
+                console.info(`${TAG} getStatus complete`);
+            }
+        });
+    },
+}
 ```
 
 ## GetStatusOptions(deprecated)
-
-WearableLite Wearable
 
 包含接口调用结果的对象。
 
@@ -72,13 +124,11 @@ WearableLite Wearable
 
 ## BatteryResponse(deprecated)
 
-WearableLite Wearable
-
 包含充电状态及剩余电量的对象。
 
 **系统能力：** SystemCapability.PowerManager.BatteryManager.Lite
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| charging | boolean | 否 | 否 | 当前电池是否在充电中。true表示在充电，false表示没有充电，默认为false。  **说明：** 除Lite Wearable外，从API Version 6开始不再维护，建议使用[batteryInfo.chargingStatus](js-apis-battery-info.md#常量)替代。 |
-| level | number | 否 | 否 | 当前电池的电量，取值范围：0.00 - 1.00 。  **说明：** 除Lite Wearable外，从API Version 6开始不再维护，建议使用[batteryInfo.batterySOC](js-apis-battery-info.md#常量)替代。 |
+| charging | boolean | 否 | 否 | 当前电池是否在充电中。true表示在充电，false表示没有充电，默认为false。  **说明：** 除Lite Wearable外，从API Version 6开始不再维护，建议使用batteryInfo.[chargingStatus](js-apis-battery-info.md#常量)替代。 |
+| level | number | 否 | 否 | 当前电池的电量百分比，取值范围：**0.00~1.00**。  **说明：** 除Lite Wearable外，从API Version 6开始不再维护，建议使用batteryInfo.[batterySOC](js-apis-battery-info.md#常量)替代。 |

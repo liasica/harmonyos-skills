@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-outpu
 title: Output
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > Host API > 原型注册与管理 > OpDef > Output
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:33+08:00
+scraped_at: 2026-09-02T14:50:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:38c017da348b8b384db27920a1b807da4937703e6ae06db8fc9f95a441b8b1f2
+content_hash: sha256:65d11ab108b4955ec977bf262addbb05c0cd43ff4a49c13df855b10b62927bcf
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:38c017da348b8b384db27920a1b807da4937703e6ae06db8fc9f95a441b
 
 ## 函数原型
 
-```
-1. OpParamDef &Output(const char *name);
+```cpp
+OpParamDef &Output(const char *name);
 ```
 
 ## 参数说明

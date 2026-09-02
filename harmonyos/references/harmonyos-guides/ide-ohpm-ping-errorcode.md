@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-ping
 title: ohpm ping错误码
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm ping错误码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:49+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:b30d88911a0983a8605c2f1c55dcaa132090c54295632b430fb3dada2f832802
+scraped_at: 2026-09-02T14:50:59+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:2376f301d5f735a02bbd612193cabba205ffd5df76dd16417fb4c9f15b186679
 ---
 
 ## 00632001 ping仓库失败
@@ -24,7 +24,7 @@ ping仓库地址失败。
 
 **处理步骤**
 
-检查仓库地址以及检查网络连接是否可用。
+检查仓库地址以及网络连接是否可用。
 
 ## 00632002 仓库地址为空
 

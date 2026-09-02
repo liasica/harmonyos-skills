@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: BundleInfo
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > bundleManager > BundleInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:46+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:64426790dc465ff6746bedb9cc38ebfed41c7429cdb9e1ef5df9c1b1e69beb97
+scraped_at: 2026-09-02T15:00:36+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2e72fd3acd1ff20f1611d478aaecc650ed28db0646ef14b8ec6df407475df59a
 ---
 
 应用包信息，可以通过[bundleManager.getBundleInfoForSelf](js-apis-bundlemanager.md#bundlemanagergetbundleinfoforself)获取自身的应用包信息，其中参数[bundleFlags](js-apis-bundlemanager.md#bundleflag)指定所返回的[BundleInfo](js-apis-bundlemanager-bundleinfo.md)中所包含的信息。
 
-说明
+**说明** 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { bundleManager } from '@kit.AbilityKit';
+```ts
+import { bundleManager } from '@kit.AbilityKit';
 ```
 
 ## BundleInfo
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 
@@ -50,11 +46,9 @@ PhonePC/2in1TabletTVWearable
 
 ## ReqPermissionDetail
 
-PhonePC/2in1TabletTVWearable
-
 应用运行时需向系统申请的权限集合的详细信息。
 
-说明
+**说明** 
 
 * 如果应用内多包申请的权限名称一样，但是权限申请理由不一致，系统只会返回一个权限申请理由，优先级从高到低顺序为entry类型HAP、feature类型HAP、应用内HSP。
 
@@ -72,9 +66,7 @@ PhonePC/2in1TabletTVWearable
 
 ## UsedScene
 
-PhonePC/2in1TabletTVWearable
-
-描述权限使用的场景和时机。
+描述权限的使用场景和时机，帮助开发者合理申请和使用权限。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -87,9 +79,7 @@ PhonePC/2in1TabletTVWearable
 
 ## SignatureInfo
 
-PhonePC/2in1TabletTVWearable
-
-描述应用包的签名信息。
+描述应用包的签名信息，可标识应用来源、确保应用完整性，并用于应用安全校验与识别。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -104,8 +94,6 @@ PhonePC/2in1TabletTVWearable
 
 ## AppCloneIdentity14+
 
-PhonePC/2in1TabletTVWearable
-
 描述应用包的身份信息。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
@@ -113,4 +101,20 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | bundleName | string | 是 | 否 | 应用的bundleName。 |
-| appIndex | number | 是 | 否 | 应用包的分身索引信息。 |
+| appIndex | number | 是 | 否 | 应用包的分身索引信息。取值为整数，范围：[0-5]，0表示主应用，1-5等表示分身应用。 |
+
+## AlternateIconInfo
+
+描述应用备用图标信息。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| iconName | string | 是 | 否 | 备用图标的名称。 |
+| iconId | number | 是 | 否 | 备用图标的资源id，是编译构建时根据应用配置的icon自动生成的资源id。 |
+| enabled | boolean | 是 | 否 | 备用图标是否启用。  true：表示当前备用图标启用。  false：表示当前备用图标未启用。  **说明：** 应用最多只能启用一个备用图标。 |

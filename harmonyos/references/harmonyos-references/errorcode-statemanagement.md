@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 状态管理错误码
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > 错误码 > UI界面 > 状态管理错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:57+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:cfb0c635f46d220318bf8ea17d933e5b98b2f9fe1be472618524eb29e619f991
+scraped_at: 2026-09-02T15:01:25+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c6e42de322743de6917e794c8594c6d1e714efac289ffd9f57b5e0f3107a3181
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码](errorcode-universal.md)。
 
 ## 130000 addMonitor/clearMonitor非法目标对象
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -28,7 +26,7 @@ The target is not a custom component instance or V2 class instance.
 
 目标对象不满足以下情况：
 
-* [@ObservedV2](../harmonyos-guides/arkts-new-observedv2-and-trace.md)装饰的class(至少有一个[@Trace](../harmonyos-guides/arkts-new-observedv2-and-trace.md)装饰的变量)。
+* [@ObservedV2](../harmonyos-guides/arkts-new-observedv2-and-trace.md)装饰的类（至少有一个[@Trace](../harmonyos-guides/arkts-new-observedv2-and-trace.md)装饰的变量）。
 * [@ComponentV2](../harmonyos-guides/arkts-create-custom-components.md#componentv2)装饰的自定义组件的实例。
 
 **处理步骤**
@@ -36,8 +34,6 @@ The target is not a custom component instance or V2 class instance.
 确保addMonitor/clearMonitor的目标对象合法，详情请参见[addMonitor/clearMonitor开发指南](../harmonyos-guides/arkts-new-addmonitor-clearmonitor.md#限制条件)。
 
 ## 130001 addMonitor/clearMonitor非法路径
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -49,19 +45,17 @@ addMonitor/clearMonitor的路径参数不合法。
 
 **可能原因**
 
-路径不是string或者不是数组类型。
+路径既不是string类型，也不是数组类型。
 
 **处理步骤**
 
-确保addMonitor/clearMonitor的路径合法，详情可见[addMonitor/clearMonitor开发指南](../harmonyos-guides/arkts-new-addmonitor-clearmonitor.md#限制条件)。
+确保addMonitor/clearMonitor的路径合法，详情请参见[addMonitor/clearMonitor开发指南](../harmonyos-guides/arkts-new-addmonitor-clearmonitor.md#限制条件)。
 
 ## 130002 addMonitor/clearMonitor非法回调方法
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
-monitorCallback is not a function or an anonymous function.
+addMonitor/clearMonitor failed because the monitorFunc is illegal, monitorFunc must be function or but cannot be an anonymous function.
 
 **错误描述**
 
@@ -69,15 +63,13 @@ addMonitor/clearMonitor的回调方法参数不合法。
 
 **可能原因**
 
-回调方法不是function类型，或者是匿名function。
+回调方法不是function类型，或者是匿名function类型。
 
 **处理步骤**
 
-确保addMonitor/clearMonitor的回调方法合法，详情可见[addMonitor/clearMonitor开发指南](../harmonyos-guides/arkts-new-addmonitor-clearmonitor.md#限制条件)。
+确保addMonitor/clearMonitor的回调方法合法，详情请参见[addMonitor/clearMonitor开发指南](../harmonyos-guides/arkts-new-addmonitor-clearmonitor.md#限制条件)。
 
 ## 140001 applySync/flushUpdates/flushUIUpdates非法调用
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -85,11 +77,11 @@ The function is not allowed to be called in @Computed.
 
 **错误描述**
 
-applySync/flushUpdates/flushUIUpdates接口在@Computed装饰的getter方法内调用是不合法的。
+applySync/flushUpdates/flushUIUpdates接口在[@Computed](../harmonyos-guides/arkts-new-computed.md)装饰的getter方法内调用是不合法的。
 
 **可能原因**
 
-applySync/flushUpdates/flushUIUpdates接口在@Computed装饰的getter方法内被调用。
+applySync/flushUpdates/flushUIUpdates接口在@Computed装饰的getter方法内被调用。@Computed装饰的getter方法用于派生值的计算，在其中调用这些接口会触发额外的状态刷新，破坏计算属性的求值逻辑，具体限制请参见[applySync/flushUpdates/flushUIUpdates接口限制条件](../harmonyos-guides/arkts-new-applysync-flushupdates-flushuiupdates.md#限制条件)。
 
 **处理步骤**
 
@@ -97,19 +89,17 @@ applySync/flushUpdates/flushUIUpdates接口在@Computed装饰的getter方法内�
 
 ## 140002 flushUpdates/flushUIUpdates非法调用
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The function is not allowed to be called in @Monitor.
 
 **错误描述**
 
-flushUpdates/flushUIUpdates接口在@Monitor回调方法内调用是不合法的。
+flushUpdates/flushUIUpdates接口在[@Monitor](../harmonyos-guides/arkts-new-monitor.md)回调方法内调用是不合法的。
 
 **可能原因**
 
-flushUpdates/flushUIUpdates接口在@Monitor回调方法内被调用。
+flushUpdates/flushUIUpdates接口在@Monitor回调方法内被调用。@Monitor的回调方法在状态变化时被触发，在其中调用这些接口会导致重复的状态刷新，可能引发循环更新，具体限制请参见[applySync/flushUpdates/flushUIUpdates接口限制条件](../harmonyos-guides/arkts-new-applysync-flushupdates-flushuiupdates.md#限制条件)。
 
 **处理步骤**
 
@@ -131,7 +121,7 @@ Not supported type! The type should have function constructor signature.
 
 **处理步骤**
 
-确保connect/globalConnect传入type类型是TypeConstructorWithArgs<T>类型，具体支持类型见[PersistenceV2使用限制](../harmonyos-guides/arkts-new-persistencev2.md#使用限制)和[AppStorageV2使用限制](../harmonyos-guides/arkts-new-appstoragev2.md#使用限制)。
+确保connect/globalConnect传入的type为TypeConstructorWithArgs<T>类型，具体支持类型见[PersistenceV2使用限制](../harmonyos-guides/arkts-new-persistencev2.md#使用限制)和[AppStorageV2使用限制](../harmonyos-guides/arkts-new-appstoragev2.md#使用限制)。
 
 ## 140104 AppStorageV2和PersistenceV2使用非法的默认值创建函数
 
@@ -141,7 +131,7 @@ The default creator should be function when first connect.
 
 **错误描述**
 
-使用[AppStorageV2](js-apis-statemanagement.md#appstoragev2)的[connect](js-apis-statemanagement.md#connect)或[PersistenceV2](js-apis-statemanagement.md#persistencev2)的[connect](js-apis-statemanagement.md#connect)和[globalConnect](js-apis-statemanagement.md#globalconnect18)时，defaultCreator默认数据的构造器不是[StorageDefaultCreator<T>](js-apis-statemanagement.md#storagedefaultcreatort)。
+首次使用[AppStorageV2](js-apis-statemanagement.md#appstoragev2)的[connect](js-apis-statemanagement.md#connect)或[PersistenceV2](js-apis-statemanagement.md#persistencev2)的[connect](js-apis-statemanagement.md#connect)和[globalConnect](js-apis-statemanagement.md#globalconnect18)时，defaultCreator默认数据的构造器不是[StorageDefaultCreator<T>](js-apis-statemanagement.md#storagedefaultcreatort)。
 
 **可能原因**
 
@@ -149,7 +139,7 @@ defaultCreator不是StorageDefaultCreator<T>类型。
 
 **处理步骤**
 
-确保connect/globalConnect传入的defaultCreator为StorageDefaultCreator<T>类型。以globalConnect为例，示例请参考[globalConnect示例](js-apis-statemanagement.md#globalconnect18)。
+确保connect/globalConnect传入的defaultCreator为StorageDefaultCreator<T>类型。以globalConnect为例，示例请参考[globalConnect](js-apis-statemanagement.md#globalconnect18)。
 
 ## 140105 PersistenceV2混用connect和globalConnect并使用相同的key
 
@@ -167,7 +157,7 @@ connect和globalConnect使用了相同的key。
 
 **处理步骤**
 
-connect和globalConnect不建议混用，如果开发者需要混用，则要保证这两个接口不能使用相同的key，详情见[PersistenceV2使用限制](../harmonyos-guides/arkts-new-persistencev2.md#使用限制)。
+不建议混用connect和globalConnect；如确需混用，请确保这两个接口不使用相同的key。详情请参见[PersistenceV2使用限制](../harmonyos-guides/arkts-new-persistencev2.md#使用限制)。
 
 ## 140106 使用PersistenceV2存储数据到不支持的加密级别
 
@@ -181,11 +171,11 @@ AreaMode Value Error! value range can only in EL1-EL5
 
 **可能原因**
 
-设置globalConnect参数[ConnectOptions](js-apis-statemanagement.md#connectoptions18)的[areaMode](js-apis-statemanagement.md#connectoptions18)属性范围不在EL1-EL5内。
+设置globalConnect参数[ConnectOptions](js-apis-statemanagement.md#connectoptionst18)的[areaMode](js-apis-statemanagement.md#connectoptionst18)属性范围不在EL1-EL5内。
 
 **处理步骤**
 
-设置存储范围为EL1-EL5，示例请参考[使用globalConnect存储数据](../harmonyos-guides/arkts-new-persistencev2.md#使用globalconnect存储数据)。
+设置加密级别范围为EL1-EL5，示例请参考[使用globalConnect存储数据](../harmonyos-guides/arkts-new-persistencev2.md#使用globalconnect存储数据)。
 
 ## 140107 AppStorageV2和PersistenceV2数据类型不匹配
 
@@ -204,10 +194,10 @@ The type of target mismatches the type of source.
 
 **处理步骤**
 
-* type类型和defaultCreator返回类型一致。
-* 需要保证数据持久化前后类型不变。如果要改变类型，需要手动卸载应用，清空当前应用的持久化的数据，并再次安装。
+* 确保type类型和defaultCreator返回类型一致。
+* 需要保证数据持久化前后类型不变。如果要改变类型，需要手动卸载应用，清空当前应用持久化的数据，并再次安装。
 
-## 140108 PersistenceV2缺少类型参数
+## 140108 PersistenceV2缺少@Type装饰器
 
 **错误信息**
 
@@ -241,7 +231,7 @@ Miss @Type.
 
 **处理步骤**
 
-不在@Builder装饰的函数内部修改入参内容，可使用[MutableBinding](js-apis-statemanagement.md#mutablebindingt20)代替，示例请参考[在@Builder装饰的函数内部修改入参内容](../harmonyos-guides/arkts-builder.md#在builder装饰的函数内部修改入参内容)。
+不在@Builder装饰的函数内部修改入参属性，可使用[MutableBinding](js-apis-statemanagement.md#mutablebindingt20)代替，示例请参考[在@Builder装饰的函数内部修改入参内容](../harmonyos-guides/arkts-builder.md#在builder装饰的函数内部修改入参内容)。
 
 ## 140110 在UI中使用非@Track装饰的属性发生运行时报错
 
@@ -251,7 +241,7 @@ Illegal usage of not @Track'ed property on UI!
 
 **错误描述**
 
-如果类里中一个[@Track](../harmonyos-guides/arkts-track.md)装饰的属性，则禁止在UI中使用该类中未被@Track装饰的属性。
+如果类中有一个[@Track](../harmonyos-guides/arkts-track.md)装饰的属性，则禁止在UI中使用该类中未被@Track装饰的属性。
 
 **可能原因**
 
@@ -259,7 +249,7 @@ Illegal usage of not @Track'ed property on UI!
 
 **处理步骤**
 
-给报错的属性也加上@Track装饰器装饰，例子见[在UI中使用非@Track装饰的属性发生运行时报错](../harmonyos-guides/arkts-track.md#在ui中使用非track装饰的属性发生运行时报错)。
+为报错信息中提示的属性添加@Track装饰，示例请参考[在UI中使用非@Track装饰的属性发生运行时报错](../harmonyos-guides/arkts-track.md#在ui中使用非track装饰的属性发生运行时报错)。
 
 ## 140112 @Consume缺失对应的@Provide
 
@@ -276,7 +266,7 @@ Illegal usage of not @Track'ed property on UI!
 @Consume寻找@Provide失败，一般有以下两种原因：
 
 1. @Consume所在组件的父组件没有定义相同key的@Provide，且@Consume没有设置默认值，导致@Consume初始化失败。
-2. @Consume向上查找定义@Provide所在组件时，其父组件或祖先节点已被销毁，导致@Consume查找失败。
+2. @Consume向上查找定义@Provide所在组件时，@Consume所在组件的父组件或祖先节点已被销毁，导致@Consume查找失败。
 
 **处理步骤**
 
@@ -291,7 +281,7 @@ Old toolchain detected. Please upgrade to the latest.
 
 **错误描述**
 
-从API version 23开始，支持[@Reusable](../harmonyos-guides/arkts-reusable.md)（父组件）中创建[@ComponentV2](../harmonyos-guides/arkts-create-custom-components.md#componentv2)（子组件），但需要开发者使用API version 18及以上SDK，详情见[@ReusableV2使用限制](../harmonyos-guides/arkts-new-reusablev2.md#使用限制)。
+从API version 18开始，支持[@Reusable](../harmonyos-guides/arkts-reusable.md)（父组件）中创建[@ComponentV2](../harmonyos-guides/arkts-create-custom-components.md#componentv2)（子组件），但需要开发者使用API version 18及以上SDK，否则会有运行时报错。从API version 23开始，将返回此错误码，详情见[@ReusableV2使用限制](../harmonyos-guides/arkts-new-reusablev2.md#使用限制)。
 
 **可能原因**
 
@@ -317,7 +307,7 @@ duplicate @Provide property. Property with this name is provided by one of the a
 
 **处理步骤**
 
-保证在同一个组件，包括其父组件和其祖先节点中，@Provide的key不同。或将相同key的@Provide设置为[allowOverride](ts-state-management-v1-parameter.md#provideoptions)，示例见[@Provide支持allowOverride参数](../harmonyos-guides/arkts-provide-and-consume.md#provide支持allowoverride参数)。
+保证在同一个组件，包括其父组件和其祖先节点中，@Provide的key不同。或将相同key设置为可重写，即设置[ProvideOptions](ts-state-management-provide.md#provideoptions11)中的allowOverride参数，示例见[@Provide支持allowOverride参数](../harmonyos-guides/arkts-provide-and-consume.md#provide支持allowoverride参数)。
 
 ## 140115 状态管理V1状态变量使用了非法的类型
 
@@ -331,13 +321,13 @@ Illegal variable value error with decorated variable
 
 **可能原因**
 
-使用V1状态变量装饰器装饰的类型不合法。
+使用V1状态变量装饰器（如@State、@Prop、@Link等）装饰了不支持的类型。
 
 **处理步骤**
 
 使用状态管理V1的状态变量支持的类型，以@State为例，详情见[@State装饰器使用规则说明](../harmonyos-guides/arkts-state.md#装饰器使用规则说明)。
 
-## 140116 AppStorageV2使用非法的key
+## 140116 AppStorageV2或PersistenceV2使用非法的key
 
 **错误信息**
 

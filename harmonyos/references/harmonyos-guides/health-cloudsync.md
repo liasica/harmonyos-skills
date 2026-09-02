@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-clouds
 title: 手动数据同步
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > Phone/Tablet应用开发 > 手动数据同步
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f849d058a7e9e96911cc09194be567cff846cf512fbeddf0e893244af6fb2257
+scraped_at: 2026-09-02T14:59:56+08:00
+doc_updated_at: 2026-07-17
+content_hash: sha256:7a3dec7dd51ae9c2b635e5f379c951646ccd5f85fcf849ca6d4d119fc5daca00
 ---
 
 ## 场景介绍
@@ -18,9 +18,9 @@ content_hash: sha256:f849d058a7e9e96911cc09194be567cff846cf512fbeddf0e893244af6f
 
 | 权限 | 权限描述 |
 | --- | --- |
-| <https://www.huawei.com/healthkit/huaweihealthdata.cloudsync> | 允许触发华为运动健康应用同步个人数据到云（基于华为运动健康应用的数据同步管理设置）。 |
+| https://www.huawei.com/healthkit/huaweihealthdata.cloudsync | 允许触发华为运动健康应用同步个人数据到云（基于华为运动健康应用的数据同步管理设置）。 |
 
-说明
+**说明** 
 
 该权限仅企业开发者账号可见。
 
@@ -41,17 +41,17 @@ content_hash: sha256:f849d058a7e9e96911cc09194be567cff846cf512fbeddf0e893244af6f
 
 1. 导入运动健康服务功能模块及相关公共模块。
 
-   ```
-   1. import { healthStore } from '@kit.HealthServiceKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { healthStore } from '@kit.HealthServiceKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 调用[syncAll](../harmonyos-references/health-api-healthstore.md#healthstoresyncall)方法同步数据，并处理返回结果。
 
-   ```
-   1. try {
-   2. await healthStore.syncAll();
-   3. hilog.info(0x0000, 'testTag', 'Succeeded in synchronizing data.');
-   4. } catch (err) {
-   5. hilog.error(0x0000, 'testTag', `Failed to synchronize data. Code: ${err.code}, message: ${err.message}`);
-   6. }
+   ```typescript
+   try {
+     await healthStore.syncAll();
+     hilog.info(0x0000, 'testTag', 'Succeeded in synchronizing data.');
+   } catch (err) {
+     hilog.error(0x0000, 'testTag', `Failed to synchronize data. Code: ${err.code}, message: ${err.message}`);
+   }
    ```

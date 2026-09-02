@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-useles
 title: "@typescript-eslint/no-useless-constructor"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-useless-constructor
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:43+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:b50abcc4ebfdc5ba09d1b811a4234fddf73842cc60d5b86a14efa62e15637709
+scraped_at: 2026-09-02T14:50:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9d28c00fc67922958cf3a3f8a64ee13c0bc57a17b544a2dedff6587e5a6f1216
 ---
 
 禁止不必要的构造函数。
@@ -14,66 +14,66 @@ content_hash: sha256:b50abcc4ebfdc5ba09d1b811a4234fddf73842cc60d5b86a14efa62e156
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@typescript-eslint/no-useless-constructor": "error"
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@typescript-eslint/no-useless-constructor": "error"
+  }
+}
 ```
 
 ## 选项
 
-该规则无需配置额外选项。
+该规则无需配置选项。
 
 ## 正例
 
-```
-1. class A {
-2. public name: string = 'hello';
-3. }
+```screen
+class A {
+  public name: string = 'hello';
+}
 
-5. export class B {
-6. public name: string = 'name';
+export class B {
+  public name: string = 'name';
 
-8. public constructor() {
-9. console.info('hello');
-10. }
-11. }
+  public constructor() {
+    console.info('hello');
+  }
+}
 
-13. export class C extends A {
-14. public constructor() {
-15. super();
-16. console.info('hello');
-17. }
-18. }
+export class C extends A {
+  public constructor() {
+    super();
+    console.info('hello');
+  }
+}
 ```
 
 ## 反例
 
-```
-1. class A {
-2. public name: string = 'name';
+```screen
+class A {
+  public name: string = 'name';
 
-4. constructor() {
+  constructor() {
 
-6. }
-7. }
+  }
+}
 
-9. export class B extends A {
-10. public name: string = 'name';
+export class B extends A {
+  public name: string = 'name';
 
-12. constructor() {
-13. super();
-14. }
-15. }
+  constructor() {
+    super();
+  }
+}
 ```
 
 ## 规则集
 
-```
-1. plugin:@typescript-eslint/all
+```screen
+plugin:@typescript-eslint/all
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

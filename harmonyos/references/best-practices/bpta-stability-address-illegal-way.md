@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-address-illegal-way
 title: 地址越界类问题分析方法
-breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 地址越界类问题分析方法
+breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 开发态稳定性分析 > 应用崩溃类问题分析 > 地址越界类问题分析方法
 category: best-practices
-scraped_at: 2026-04-29T14:14:09+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:ea198bd4893ee3153130c958ea0acdf77fea571e9fdec9c304d4c73bb546ccfc
+scraped_at: 2026-09-02T15:03:24+08:00
+doc_updated_at: 2026-07-22
+content_hash: sha256:41aff4eebe8d7588646fe0bf1e23734bdb9e24a95b555d31794193d456d85170
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:ea198bd4893ee3153130c958ea0acdf77fea571e9fdec9c304d4c73bb54
 
 ## 检测能力
 
-目前系统提供了ASan、HWASan、GWP-ASan等检测工具，支撑应用解决地址越界问题，相关介绍、检测问题类型均在[《使用ASan检测内存错误》](bpta-stability-asan-detection.md)、[《使用GWP-ASan检测内存错误》](bpta-stability-gwpasan-detection.md)已有讲解，不再赘述。
+目前系统提供了ASan、HWASan、GWP-ASan等检测工具，支撑应用解决地址越界问题，相关介绍、检测问题类型均在[《使用ASan检测内存错误》](bpta-stability-asan-detection.md)、[使用GWP-ASan检测内存错误](bpta-stability-gwpasan-detection.md)已有讲解，不再赘述。
 
 ## 分析定位思路
 
@@ -24,11 +24,11 @@ content_hash: sha256:ea198bd4893ee3153130c958ea0acdf77fea571e9fdec9c304d4c73bb54
 
 如下，由于地址越界问题在应用的故障现象通常为崩溃闪退（Crash），且Crash的栈可能不是第一现场，而是受害者的栈，因此这类问题分析难度较高，且经常依赖于天网版本复现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/iagPolJqROOR87EYf-GrXg/zh-cn_image_0000002404045321.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/ZmBfIXuWQVCMTP06Tw-yFw/zh-cn_image_0000002404045321.png "点击放大")
 
 以下为踩内存问题的通用分析流程，力求提升踩内存问题检测和定位效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/3p8ZM8CES3CGMn8PXGygPQ/zh-cn_image_0000002375398170.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/TqoXYYteRFOdkXrrzq3uDw/zh-cn_image_0000002375398170.png)
 
 **第一步：****问题类型分析**
 
@@ -49,9 +49,9 @@ content_hash: sha256:ea198bd4893ee3153130c958ea0acdf77fea571e9fdec9c304d4c73bb54
 
 1. 地址直接从某个内存取出来的，取错了，例如从this解引用出来一个值放x0，再做一次解引用，如果第二行挂了，那说明this上面的值是坏的。
 
-   ```
-   1. LDR       X0, [this] // ARM64架构示例，X0寄存器存储this指针值
-   2. LDR       X8, [X0]   // ARM64架构示例，X8寄存器存储X0寄存器指向的值
+   ```screen
+   LDR       X0, [this] // ARM64架构示例，X0寄存器存储this指针值
+   LDR       X8, [X0]   // ARM64架构示例，X8寄存器存储X0寄存器指向的值
    ```
 
    可能的原因：
@@ -64,7 +64,7 @@ content_hash: sha256:ea198bd4893ee3153130c958ea0acdf77fea571e9fdec9c304d4c73bb54
 
    如下图所示，IDA（反汇编工具）展示了一个典型的函数指针数组操作，w8是数组下标，从1开始，x9是reference解引用出来的，如果blr x8这条挂了，说明x9[x8]上面的值是坏的，而如果是ldr x8, [x9,x8,LSL#3]这条挂了，说明x9[x8]这个地址是无效的。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/mFbDxemUQRC-lOw9jsXOwA/zh-cn_image_0000002404125165.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/hQiJI14xTi26XH9mbaejTA/zh-cn_image_0000002404125165.png)
 
 **找出现问题的内存大小：**
 
@@ -72,7 +72,7 @@ content_hash: sha256:ea198bd4893ee3153130c958ea0acdf77fea571e9fdec9c304d4c73bb54
 
 以native内存分配器jemalloc为例，内存统计布局如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/ymNzyJM4Rx2iKfBraH-oZA/zh-cn_image_0000002370405612.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/QUZ7Jg9AS1SI7c9QTQT30A/zh-cn_image_0000002370405612.png)
 
 假设踩内存大小为32，查看上图右边红框标记出来的地方表示128个32字节的内存会挤在1个page上，刚好是32\*128=4096字节。同样，下面80字节的内存块，每256个都挤在5个page上，80\*256==20480=4096\*5。17-32字节的内存分配，都会从这个32档位sizeclass的内存页上去分配，也就是说，如果发生overflow，凶手前后多半也是32字节的，因此受害者是32字节的，如果发生uaf（use-after-free），那么free的内存会被另一个17-32字节的申请者拿走，这个申请者就成为了受害者。
 
@@ -96,7 +96,7 @@ content_hash: sha256:ea198bd4893ee3153130c958ea0acdf77fea571e9fdec9c304d4c73bb54
 
 明确应用进程中已经有哪些so插桩，有条件插桩的应用侧so都应该部署插桩。由于踩内存产生的crash调用栈存在很多随机性，而且反复复现编译很浪费时间，因此建议插桩越全越好，进程加载的so可基于crash文件的maps数据段确定，尽量都用HWASan编译。并且so链接时如果有静态库，静态库本身最好也用HWASan编译。插桩方法可见[配置HWASan](bpta-stability-hwasan-detection.md#section10791454125320)，继而基于上文部署的用例进行压测。
 
-说明
+**说明** 
 
 应用天网版本：应用开启地址越界检测能力后编译的版本，具体参考[地址越界检测能力概述](bpta-stability-address-sanitizer-overview.md)。
 
@@ -125,68 +125,66 @@ content_hash: sha256:ea198bd4893ee3153130c958ea0acdf77fea571e9fdec9c304d4c73bb54
 
 地址越界问题类型的示例代码如下。
 
+```cpp
+int AddressOverflowCode(int argc)
+{
+    int stack_array[99];
+    stack_array[1] = 0;
+    return stack_array[argc + 100]; // BOOM
+}
 ```
-1. int AddressOverflowCode(int argc)
-2. {
-3. int stack_array[99];
-4. stack_array[1] = 0;
-5. return stack_array[argc + 100]; // BOOM
-6. }
-```
-
-[address\_problems.cpp](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MemoryDetection/entry/src/main/cpp/address_problems.cpp#L75-L80)
 
 * 地址越界问题日志分析
 
 开启HWASan检测，上报的地址越界问题日志如下，
 
-```
-1. ==27137==ERROR: HWAddressSanitizer: tag-mismatch on address 0x007fdfd21014 at pc 0x005578a3dad0
-2. READ of size 4 at 0x007fdfd21014 tags: c6/00 (ptr/mem) in thread T0
-3. #0 0x5578a3dad0  (/data/local/tmp/test.out+0x1ad0)
-4. #1 0x7fbd30c574  (/lib/ld-musl-aarch64.so.1+0xa0574) (BuildId: 8504e35ee1068ac2f54be5cafe869af6)
-5. #2 0x5578a3d8b4  (/data/local/tmp/test.out+0x18b4)
-6. Cause: stack tag-mismatch
-7. Address 0x007fdfd21014 is located in stack of thread T0
-8. Thread: T0 0x007600002000 stack: [0x007fdf522000,0x007fdfd22000) sz: 8388608 tls: [0x007fbd45c200,0x007fbd45c8f8)
-9. Previously allocated frames:
-10. record_addr:0x7fbd21c630 record:0x2102005578a3da1c  (/data/local/tmp/test.out+0x1a1c)
-11. Memory tags around the buggy address (one tag corresponds to 16 bytes):
-12. 0x007efdfd2080: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
-13. 0x007efdfd2090: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
-14. 0x007efdfd20a0: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
-15. 0x007efdfd20b0: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
-16. 0x007efdfd20c0: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
-17. 0x007efdfd20d0: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
-18. 0x007efdfd20e0: 00  00  00  00  00  00  00  00  c6  c6  c6  c6  c6  c6  c6  c6
-19. 0x007efdfd20f0: c6  c6  c6  c6  c6  c6  c6  c6  c6  c6  c6  c6  c6  c6  c6  c6
-20. =>0x007efdfd2100: 0c [00] 00  00  00  00  00  00  00  00  00  00  00  00  00  00
-21. 0x007efdfd2110: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
-22. 0x007efdfd2120: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
-23. 0x007efdfd2130: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
-24. 0x007efdfd2140: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
-25. 0x007efdfd2150: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
-26. 0x007efdfd2160: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
-27. 0x007efdfd2170: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
-28. 0x007efdfd2180: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
-29. Tags for short granules around the buggy address (one tag corresponds to 16 bytes):
-30. 0x007efdfd20f0: ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..
-31. =>0x007efdfd2100: c6 [..] ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..
-32. 0x007efdfd2110: ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..
-33. See https://clang.llvm.org/docs/HardwareAssistedAddressSanitizerDesign.html#short-granules for a description of short granule tags
-34. Registers where the failure occurred (pc 0x005578a3dad0):
-35. x0  c600007fdfd21014  x1  c600007fdfd20e84  x2  0000007fdfd21010  x3  0000000000006000
-36. x4  0000007fdfd20fdc  x5  0000007fdfd20fdc  x6  0000000033313732  x7  3a6b636174735f6c
-37. x8  0000000000000000  x9  0200007efdfd20e8  x10 c600007fdfd20e80  x11 0000000000000065
-38. x12 000000000000000c  x13 0101010101010101  x14 0000000000000002  x15 0000000000000000
-39. x16 0000007fbc3a74ac  x17 0000000000000007  x18 0000000000000000  x19 0000007fdfd210a8
-40. x20 0200007700000000  x21 0000005578a3d9f4  x22 0000007fdfd210b8  x23 00000000000000f0
-41. x24 0000007fbd45c060  x25 0000007fbd459140  x26 0000007fbd45c988  x27 0000000000000001
-42. x28 0000007fbd45c0b0  x29 0000007fdfd21020  x30 0000005578a3dad4   sp 0000007fdfd20e70
-43. SUMMARY: HWAddressSanitizer: tag-mismatch (/data/local/tmp/test.out+0x1ad0)
-44. ==27137==End Hwasan report
+```screen
+==27137==ERROR: HWAddressSanitizer: tag-mismatch on address 0x007fdfd21014 at pc 0x005578a3dad0
+READ of size 4 at 0x007fdfd21014 tags: c6/00 (ptr/mem) in thread T0
+    #0 0x5578a3dad0  (/data/local/tmp/test.out+0x1ad0)
+    #1 0x7fbd30c574  (/lib/ld-musl-aarch64.so.1+0xa0574) (BuildId: 8504e35ee1068ac2f54be5cafe869af6)
+    #2 0x5578a3d8b4  (/data/local/tmp/test.out+0x18b4)
+Cause: stack tag-mismatch
+Address 0x007fdfd21014 is located in stack of thread T0
+Thread: T0 0x007600002000 stack: [0x007fdf522000,0x007fdfd22000) sz: 8388608 tls: [0x007fbd45c200,0x007fbd45c8f8)
+Previously allocated frames:
+  record_addr:0x7fbd21c630 record:0x2102005578a3da1c  (/data/local/tmp/test.out+0x1a1c)
+Memory tags around the buggy address (one tag corresponds to 16 bytes):
+  0x007efdfd2080: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0x007efdfd2090: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0x007efdfd20a0: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0x007efdfd20b0: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0x007efdfd20c0: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0x007efdfd20d0: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0x007efdfd20e0: 00  00  00  00  00  00  00  00  c6  c6  c6  c6  c6  c6  c6  c6
+  0x007efdfd20f0: c6  c6  c6  c6  c6  c6  c6  c6  c6  c6  c6  c6  c6  c6  c6  c6
+=>0x007efdfd2100: 0c [00] 00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0x007efdfd2110: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0x007efdfd2120: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0x007efdfd2130: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0x007efdfd2140: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0x007efdfd2150: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0x007efdfd2160: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0x007efdfd2170: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0x007efdfd2180: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+Tags for short granules around the buggy address (one tag corresponds to 16 bytes):
+  0x007efdfd20f0: ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..
+=>0x007efdfd2100: c6 [..] ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..
+  0x007efdfd2110: ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..
+See https://clang.llvm.org/docs/HardwareAssistedAddressSanitizerDesign.html#short-granules for a description of short granule tags
+Registers where the failure occurred (pc 0x005578a3dad0):
+    x0  c600007fdfd21014  x1  c600007fdfd20e84  x2  0000007fdfd21010  x3  0000000000006000
+    x4  0000007fdfd20fdc  x5  0000007fdfd20fdc  x6  0000000033313732  x7  3a6b636174735f6c
+    x8  0000000000000000  x9  0200007efdfd20e8  x10 c600007fdfd20e80  x11 0000000000000065
+    x12 000000000000000c  x13 0101010101010101  x14 0000000000000002  x15 0000000000000000
+    x16 0000007fbc3a74ac  x17 0000000000000007  x18 0000000000000000  x19 0000007fdfd210a8
+    x20 0200007700000000  x21 0000005578a3d9f4  x22 0000007fdfd210b8  x23 00000000000000f0
+    x24 0000007fbd45c060  x25 0000007fbd459140  x26 0000007fbd45c988  x27 0000000000000001
+    x28 0000007fbd45c0b0  x29 0000007fdfd21020  x30 0000005578a3dad4   sp 0000007fdfd20e70
+SUMMARY: HWAddressSanitizer: tag-mismatch (/data/local/tmp/test.out+0x1ad0)
+==27137==End Hwasan report
 ```
 
 对应的日志结构如下，以#0栈为例，可使用反编译工具[llvm-addr2line](bpta-stability-app-crash-cpp-way.md#section14952241528)，输入地址的偏移0x1ad0，即可解析出对应的源代码行号。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/8oSJxteVQ7Suci331OtnQw/zh-cn_image_0000002412946788.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/v35mBodQQkWx5j22blsDEg/zh-cn_image_0000002412946788.png)

@@ -3,30 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@system.app (应用上下文)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 已停止维护的接口 > @system.app (应用上下文)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:49+08:00
-doc_updated_at: 2026-03-27
-content_hash: sha256:632c7fdce469c2d8eb20819357fbcc6bf557b723417d8e43b1421093f1b07a3f
+scraped_at: 2026-09-02T15:00:53+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b4dabb86caf5cbb2f5a132e20e3e0774d83f981ea83c8a569c976ea782ec436a
 ---
 
-说明
+**说明** 
 
 本模块首批接口从API version 3开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
-```
-1. import app, { AppResponse } from '@system.app';
+```ts
+import app, { AppResponse } from '@system.app';
 ```
 
 ## App
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 ### getInfo
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 static getInfo(): AppResponse
 
@@ -40,7 +34,7 @@ static getInfo(): AppResponse
 
 **返回值：**
 
-| 参数类型 | 说明 |
+| 类型 | 说明 |
 | --- | --- |
 | [AppResponse](js-apis-system-app.md#appresponse) | 定义AppResponse信息。 |
 
@@ -48,126 +42,124 @@ static getInfo(): AppResponse
 
 ArkTS示例：
 
-```
-1. import app, { AppResponse } from '@system.app';
-2. export default class Info {
-3. getInfo() {
-4. let info:AppResponse = app.getInfo();
-5. console.info(JSON.stringify(info));
-6. }
-7. }
+```ts
+import app, { AppResponse } from '@system.app';
+export default class Info {
+  getInfo() {
+    let info:AppResponse = app.getInfo();
+    console.info(JSON.stringify(info));
+  }
+}
 ```
 
 JS示例：
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <text class="title" style="font-size: {{fontSize}}; color: {{fontColor}};">
-4. app.getInfo example
-5. </text>
-6. <div class="info-item">
-7. <text class="label">appName:</text>
-8. <text class="value">{{appName}}</text>
-9. </div>
-10. <div class="info-item">
-11. <text class="label">versionName:</text>
-12. <text class="value">{{versionName}}</text>
-13. </div>
-14. <div class="info-item">
-15. <text class="label">versionCode:</text>
-16. <text class="value">{{versionCode}}</text>
-17. </div>
-18. <input type="button" value="getAppInfo" style="width: 240px; height: 50px; margin: 5px;" onclick="getAppInfo"></input>
-19. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. display: flex;
-4. flex-direction: column;
-5. align-items: center;
-6. left: 0px;
-7. top: 0px;
-8. width: 454px;
-9. height: 454px;
-10. background-color: #000000;
-11. }
-12. .title {
-13. font-size: 32px;
-14. text-align: center;
-15. width: 400px;
-16. height: 80px;
-17. margin-top: 20px;
-18. color: #ffffff;
-19. }
-20. .info-item {
-21. width: 400px;
-22. height: 60px;
-23. flex-direction: row;
-24. justify-content: space-between;
-25. align-items: center;
-26. margin-top: 10px;
-27. padding-left: 20px;
-28. padding-right: 20px;
-29. background-color: #1a1a1a;
-30. border-radius: 10px;
-31. }
-32. .label {
-33. font-size: 24px;
-34. color: #aaaaaa;
-35. }
-36. .value {
-37. font-size: 24px;
-38. color: #ffffff;
-39. }
+```xml
+<!-- xxx.hml -->
+<div class="container">
+    <text class="title" style="font-size: {{fontSize}}; color: {{fontColor}};">
+        app.getInfo example
+    </text>
+    <div class="info-item">
+        <text class="label">appName:</text>
+        <text class="value">{{appName}}</text>
+    </div>
+    <div class="info-item">
+        <text class="label">versionName:</text>
+        <text class="value">{{versionName}}</text>
+    </div>
+    <div class="info-item">
+        <text class="label">versionCode:</text>
+        <text class="value">{{versionCode}}</text>
+    </div>
+    <input type="button" value="getAppInfo" style="width: 240px; height: 50px; margin: 5px;" onclick="getAppInfo"></input>
+</div>
 ```
 
+```css
+/* xxx.css */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 0px;
+    top: 0px;
+    width: 454px;
+    height: 454px;
+    background-color: #000000;
+}
+.title {
+    font-size: 32px;
+    text-align: center;
+    width: 400px;
+    height: 80px;
+    margin-top: 20px;
+    color: #ffffff;
+}
+.info-item {
+    width: 400px;
+    height: 60px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+}
+.label {
+    font-size: 24px;
+    color: #aaaaaa;
+}
+.value {
+    font-size: 24px;
+    color: #ffffff;
+}
 ```
-1. // xxx.js
-2. import app from '@system.app';
 
-4. export default {
-5. data: {
-6. fontSize: '32px',
-7. fontColor: '#ffffff',
-8. appName: '',
-9. versionName: '',
-10. versionCode: ''
-11. },
-12. onInit() {
-13. this.getAppInfo();
-14. },
-15. getAppInfo() {
-16. try {
-17. const info = app.getInfo();
-18. console.info('app.getInfo success');
-19. console.info('appName: ' + info.appName);
-20. console.info('versionName: ' + info.versionName);
-21. console.info('versionCode: ' + info.versionCode);
-22. this.appName = info.appName || 'Unknown';
-23. this.versionName = info.versionName || 'Unknown';
-24. this.versionCode = String(info.versionCode) || 'Unknown';
-25. } catch (error) {
-26. console.error('app.getInfo failed: ' + error.message);
-27. this.appName = 'Failed';
-28. this.versionName = 'Failed';
-29. this.versionCode = 'Failed';
-30. }
-31. }
-32. }
+```js
+// xxx.js
+import app from '@system.app';
+
+export default {
+    data: {
+        fontSize: '32px',
+        fontColor: '#ffffff',
+        appName: '',
+        versionName: '',
+        versionCode: ''
+    },
+    onInit() {
+        this.getAppInfo();
+    },
+    getAppInfo() {
+        try {
+            const info = app.getInfo();
+            console.info('app.getInfo success');
+            console.info('appName: ' + info.appName);
+            console.info('versionName: ' + info.versionName);
+            console.info('versionCode: ' + info.versionCode);
+            this.appName = info.appName || 'Unknown';
+            this.versionName = info.versionName || 'Unknown';
+            this.versionCode = String(info.versionCode) || 'Unknown';
+        } catch (error) {
+            console.error('app.getInfo failed: ' + error.message);
+            this.appName = 'Failed';
+            this.versionName = 'Failed';
+            this.versionCode = 'Failed';
+        }
+    }
+}
 ```
 
 ### terminate
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 static terminate(): void
 
 退出当前Ability。在Stage模型下接口功能不生效。
 
-从API version 7开始，推荐使用[@ohos.ability.featureAbility](js-apis-ability-featureability.md)。
+从API version 7开始，推荐使用[@ohos.ability.featureAbility (FeatureAbility模块)](js-apis-ability-featureability.md)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -177,84 +169,82 @@ static terminate(): void
 
 ArkTS示例：
 
-```
-1. import app, { AppResponse } from '@system.app';
-2. export default class TerM {
-3. terminate() {
-4. app.terminate();
-5. }
-6. }
+```ts
+import app, { AppResponse } from '@system.app';
+export default class TerM {
+  terminate() {
+    app.terminate();
+  }
+}
 ```
 
 JS示例：
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <text class="title" style="font-size: {{fontSize}}; color: {{fontColor}};">
-4. app.terminate example
-5. </text>
-6. <text class="desc">
-7. Click the button below to exit the app
-8. </text>
-9. <input type="button" value="exit app" style="width: 240px; height: 50px; margin: 5px;" onclick="terminateApp"></input>
-10. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. display: flex;
-4. flex-direction: column;
-5. align-items: center;
-6. left: 0px;
-7. top: 0px;
-8. width: 454px;
-9. height: 454px;
-10. background-color: #000000;
-11. }
-12. .title {
-13. font-size: 32px;
-14. text-align: center;
-15. width: 400px;
-16. height: 80px;
-17. margin-top: 60px;
-18. color: #ffffff;
-19. }
-20. .desc {
-21. font-size: 24px;
-22. text-align: center;
-23. width: 290px;
-24. height: 120px;
-25. margin-top: 20px;
-26. color: #aaaaaa;
-27. }
+```xml
+<!-- xxx.hml -->
+<div class="container">
+    <text class="title" style="font-size: {{fontSize}}; color: {{fontColor}};">
+        app.terminate example
+    </text>
+    <text class="desc">
+        Click the button below to exit the app
+    </text>
+    <input type="button" value="exit app" style="width: 240px; height: 50px; margin: 5px;" onclick="terminateApp"></input>
+</div>
 ```
 
+```css
+/* xxx.css */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 0px;
+    top: 0px;
+    width: 454px;
+    height: 454px;
+    background-color: #000000;
+}
+.title {
+    font-size: 32px;
+    text-align: center;
+    width: 400px;
+    height: 80px;
+    margin-top: 60px;
+    color: #ffffff;
+}
+.desc {
+    font-size: 24px;
+    text-align: center;
+    width: 290px;
+    height: 120px;
+    margin-top: 20px;
+    color: #aaaaaa;
+}
 ```
-1. // xxx.js
-2. import app from '@system.app';
 
-4. export default {
-5. data: {
-6. fontSize: '32px',
-7. fontColor: '#ffffff'
-8. },
-9. terminateApp() {
-10. console.info('Calling app.terminate...');
-11. try {
-12. app.terminate();
-13. console.info('app.terminate called');
-14. } catch (error) {
-15. console.error('app.terminate failed: ' + error.message);
-16. }
-17. }
-18. }
+```js
+// xxx.js
+import app from '@system.app';
+
+export default {
+    data: {
+        fontSize: '32px',
+        fontColor: '#ffffff'
+    },
+    terminateApp() {
+        console.info('Calling app.terminate...');
+        try {
+            app.terminate();
+            console.info('app.terminate called');
+        } catch (error) {
+            console.error('app.terminate failed: ' + error.message);
+        }
+    }
+}
 ```
 
 ### setImageCacheCount7+
-
-PhonePC/2in1TabletTVWearable
 
 static setImageCacheCount(value: number): void
 
@@ -262,7 +252,7 @@ static setImageCacheCount(value: number): void
 
 setImageCacheCount方法需要在@Entry标记的页面，[onPageShow](ts-custom-component-lifecycle.md#onpageshow)或[aboutToAppear](ts-custom-component-lifecycle.md#abouttoappear)里面设置才生效。
 
-setImageCacheCount、setImageRawDataCacheSize、和setImageFileCacheSize并不灵活，后续不继续演进，对于复杂情况，更推荐使用[ImageKnife](https://gitcode.com/openharmony-tpc/ImageKnife)。
+setImageCacheCount、setImageRawDataCacheSize、和setImageFileCacheSize并不灵活，后续不继续演进，对于复杂情况，更推荐使用[ImageKnife](https://gitcode.com/CPF-ApplicationTPC/ImageKnife)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -276,36 +266,34 @@ setImageCacheCount、setImageRawDataCacheSize、和setImageFileCacheSize并不�
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import app, { AppResponse } from '@system.app';
+```ts
+// xxx.ets
+import app, { AppResponse } from '@system.app';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. onPageShow() {
-8. // 设置解码后图片内存缓存上限为100张
-9. app.setImageCacheCount(100);
-10. console.info('Application onPageShow');
-11. }
-12. onDestroy() {
-13. console.info('Application onDestroy');
-14. }
+@Entry
+@Component
+struct Index {
+  onPageShow() {
+    // 设置解码后图片内存缓存上限为100张
+    app.setImageCacheCount(100);
+    console.info('Application onPageShow');
+  }
+  onDestroy() {
+    console.info('Application onDestroy');
+  }
 
-16. build() {
-17. Row(){
-18. // xxxxxxxxxxxxx为图片地址
-19. Image('xxxxxxxxxxxxx')
-20. .width(200)
-21. .height(50)
-22. }.width('100%')
-23. }
-24. }
+  build() {
+    Row(){
+      // xxxxxxxxxxxxx为图片地址
+      Image('xxxxxxxxxxxxx')
+        .width(200)
+        .height(50)
+    }.width('100%')
+  }
+}
 ```
 
 ### setImageRawDataCacheSize7+
-
-PhonePC/2in1TabletTVWearable
 
 static setImageRawDataCacheSize(value: number): void
 
@@ -325,36 +313,34 @@ setImageRawDataCacheSize方法需要在@Entry标记的页面，[onPageShow](ts-c
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import app, { AppResponse } from '@system.app';
+```ts
+// xxx.ets
+import app, { AppResponse } from '@system.app';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. onPageShow() {
-8. // 设置解码前图片数据内存缓存上限为100MB (100MB=100*1024*1024B=104857600B)
-9. app.setImageRawDataCacheSize(104857600);
-10. console.info('Application onPageShow');
-11. }
-12. onDestroy() {
-13. console.info('Application onDestroy');
-14. }
+@Entry
+@Component
+struct Index {
+  onPageShow() {
+    // 设置解码前图片数据内存缓存上限为100MB (100MB=100*1024*1024B=104857600B)
+    app.setImageRawDataCacheSize(104857600);
+    console.info('Application onPageShow');
+  }
+  onDestroy() {
+    console.info('Application onDestroy');
+  }
 
-16. build() {
-17. Row(){
-18. // xxxxxxxxxxxxx为图片地址
-19. Image('xxxxxxxxxxxxx')
-20. .width(200)
-21. .height(50)
-22. }.width('100%')
-23. }
-24. }
+  build() {
+    Row(){
+      // xxxxxxxxxxxxx为图片地址
+      Image('xxxxxxxxxxxxx')
+        .width(200)
+        .height(50)
+    }.width('100%')
+  }
+}
 ```
 
 ### setImageFileCacheSize7+
-
-PhonePC/2in1TabletTVWearable
 
 static setImageFileCacheSize(value: number): void
 
@@ -372,25 +358,23 @@ static setImageFileCacheSize(value: number): void
 
 **示例：**
 
-```
-1. // app.ets
-2. import app, { AppResponse } from '@system.app';
+```ts
+// app.ets
+import app, { AppResponse } from '@system.app';
 
-4. export default class OnC {
-5. onCreate() {
-6. app.setImageFileCacheSize(209715200);
-7. // 设置图片文件数据缓存上限为200MB (200MB=200*1024*1024B=209715200B)
-8. console.info('Application onCreate');
-9. }
-10. onDestroy() {
-11. console.info('Application onDestroy');
-12. }
-13. }
+export default class OnC {
+  onCreate() {
+    app.setImageFileCacheSize(209715200);
+    // 设置图片文件数据缓存上限为200MB (200MB=200*1024*1024B=209715200B)
+    console.info('Application onCreate');
+  }
+  onDestroy() {
+    console.info('Application onDestroy');
+  }
+}
 ```
 
 ### ScreenOnVisible(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 static screenOnVisible(options?: ScreenOnVisibleOptions): void
 
@@ -406,8 +390,6 @@ static screenOnVisible(options?: ScreenOnVisibleOptions): void
 
 ### requestFullWindow(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 static requestFullWindow(options?: RequestFullWindowOptions): void
 
 请求应用以全窗口运行，FA在某些场景下（如半模态FA）会以非全窗口运行，调用该接口会从非全窗口切换为全窗口运行，如果已经以全窗口运行则该接口调用无效。
@@ -420,24 +402,22 @@ static requestFullWindow(options?: RequestFullWindowOptions): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [RequestFullWindowOptions](js-apis-system-app.md#requestfullwindowoptions) | 否 | 请求全屏时，设定非全屏到全屏的过渡时间，单位为毫秒，默认时间与非全屏到全屏的距离成正比。 |
+| options | [RequestFullWindowOptions](js-apis-system-app.md#requestfullwindowoptions) | 否 | 请求全窗口时，设定非全窗口到全窗口的过渡时间，单位为毫秒，默认时间与非全窗口到全窗口的距离成正比。 |
 
 **示例：**
 
-```
-1. import app, { AppResponse } from '@system.app';
-2. export default class Req {
-3. requestFullWindow() {
-4. app.requestFullWindow({
-5. duration: 200
-6. });
-7. }
-8. }
+```ts
+import app, { AppResponse } from '@system.app';
+export default class Req {
+  requestFullWindow() {
+    app.requestFullWindow({
+      duration: 200
+    });
+  }
+}
 ```
 
 ## AppResponse
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 定义AppResponse信息。
 
@@ -454,8 +434,6 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 ## ScreenOnVisibleOptions
 
-PhonePC/2in1TabletTVWearable
-
 定义屏幕上可见接口的选项。
 
 **系统能力：** 以下各项对应的系统能力均为SystemCapability.ArkUI.ArkUI.Full
@@ -468,8 +446,6 @@ PhonePC/2in1TabletTVWearable
 | complete | () => void | 否 | 接口调用结束的回调函数。 |
 
 ## RequestFullWindowOptions
-
-PhonePC/2in1TabletTVWearable
 
 定义RequestFullWindow接口的选项。
 

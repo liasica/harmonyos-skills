@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-animate
 title: 组件动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 动效开发指导 > JS动画 > 组件动画
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:56+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:d7183d765675f32b5b5fc41a5c0363a154b048c90b516c47d7d7e6c832b12b0f
+scraped_at: 2026-09-02T14:59:21+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:cddaa222e65caecfb93b0ce94bebcba024d21c5a02229e7b55e3723065245b86
 ---
 
 在组件上创建和运行动画的快捷方式。具体用法请参考[通用方法](../harmonyos-references/js-components-common-methods.md)。
@@ -14,60 +14,60 @@ content_hash: sha256:d7183d765675f32b5b5fc41a5c0363a154b048c90b516c47d7d7e6c832b
 
 通过调用animate方法获得animation对象，animation对象支持动画属性、动画方法和动画事件。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <div id="content" class="box" onclick="Show"></div>
-4. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. flex-direction: column;
-4. justify-content: center;
-5. align-items: center;
-6. width: 100%;
-7. }
-8. .box{
-9. width: 200px;
-10. height: 200px;
-11. background-color: #ff0000;
-12. margin-top: 30px;
-13. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <div id="content" class="box" onclick="Show"></div>
+</div>
 ```
 
-```
-1. /* xxx.js */
-2. export default {
-3. data: {
-4. animation: '',
-5. options: {},
-6. frames: {}
-7. },
-8. onInit() {
-9. this.options = {
-10. duration: 1500,
-11. };
-12. this.frames = [
-13. {
-14. width: 200, height: 200,
-15. },
-16. {
-17. width: 300, height: 300,
-18. }
-19. ];
-20. },
-21. Show() {
-22. this.animation = this.$element('content').animate(this.frames, this.options); //获取动画对象
-23. this.animation.play();
-24. }
-25. }
+```css
+/* xxx.css */
+.container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.box{
+  width: 200px;
+  height: 200px;
+  background-color: #ff0000;
+  margin-top: 30px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/cMGoOf76RtegSuxcmMvr7w/zh-cn_image_0000002558604982.gif)
+```js
+/* xxx.js */
+export default {
+    data: {
+        animation: '',
+        options: {},
+        frames: {}
+    },
+    onInit() {
+        this.options = {
+            duration: 1500,
+        };
+        this.frames = [
+            {
+                width: 200, height: 200,
+            },
+            {
+                width: 300, height: 300,
+            }
+        ];
+    },
+    Show() {
+        this.animation = this.$element('content').animate(this.frames, this.options); // 获取动画对象
+        this.animation.play();
+    }
+}
+```
 
-说明
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/71GGpgSPQcy7MRXdsDcttg/zh-cn_image_0000002736433133.gif)
+
+**说明** 
 
 * 使用animate方法时必须传入Keyframes和Options参数。
 * 多次调用animate方法时，采用replace策略，即最后一次调用时传入的参数生效。
@@ -76,145 +76,145 @@ content_hash: sha256:d7183d765675f32b5b5fc41a5c0363a154b048c90b516c47d7d7e6c832b
 
 在获取动画对象后，通过设置参数Keyframes设置动画在组件上的样式。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <div id="content" class="box" onclick="Show"></div>
-4. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. flex-direction: column;
-4. justify-content: center;
-5. align-items: center;
-6. width: 100%;
-7. height: 100%;
-8. }
-9. .box{
-10. width: 200px;
-11. height: 200px;
-12. background-color: #ff0000;
-13. margin-top: 30px;
-14. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+   <div id="content" class="box" onclick="Show"></div>
+</div>
 ```
 
-```
-1. /* xxx.js */
-2. export default {
-3. data: {
-4. animation: '',
-5. keyframes:{},
-6. options:{}
-7. },
-8. onInit() {
-9. this.options = {
-10. duration: 4000,
-11. }
-12. this.keyframes = [
-13. {
-14. transform: {
-15. translate: '-120px -0px',
-16. scale: 1,
-17. rotate: 0
-18. },
-19. transformOrigin: '100px 100px',
-20. offset: 0.0,
-21. width: 200,
-22. height: 200
-23. },
-24. {
-25. transform: {
-26. translate: '120px 0px',
-27. scale: 1.5,
-28. rotate: 90
-29. },
-30. transformOrigin: '100px 100px',
-31. offset: 1.0,
-32. width: 300,
-33. height: 300
-34. }
-35. ]
-36. },
-37. Show() {
-38. this.animation = this.$element('content').animate(this.keyframes, this.options)
-39. this.animation.play()
-40. }
-41. }
+```css
+/* xxx.css */
+.container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.box{
+  width: 200px;
+  height: 200px;
+  background-color: #ff0000;
+  margin-top: 30px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/4xzgZfjSRRS_DLO3S686bQ/zh-cn_image_0000002589324509.gif)
+```js
+/* xxx.js */
+export default {
+  data: {
+    animation: '',
+    keyframes:{},
+    options:{}
+  },
+  onInit() {
+    this.options = {
+      duration: 4000,
+    }
+    this.keyframes = [
+    {
+      transform: {
+        translate: '-120px -0px',
+        scale: 1,
+        rotate: 0
+        },
+        transformOrigin: '100px 100px',
+        offset: 0.0,
+        width: 200,
+        height: 200
+      },
+      {
+        transform: {
+          translate: '120px 0px',
+          scale: 1.5,
+          rotate: 90
+          },
+          transformOrigin: '100px 100px',
+          offset: 1.0,
+          width: 300,
+          height: 300
+      }
+    ]
+  },
+  Show() {
+    this.animation = this.$element('content').animate(this.keyframes, this.options)
+    this.animation.play()
+  }
+}
+```
 
-说明
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/ZoG-C5xlTuqNh1X4C2Z1Dg/zh-cn_image_0000002706833978.gif)
+
+**说明** 
 
 * translate、scale和rotate的先后顺序会影响动画效果。
 * transformOrigin只对scale和rotate起作用。
 
 在获取动画对象后，通过设置参数Options来设置动画的属性。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <div id="content" class="box" onclick="Show"></div>
-4. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. flex-direction: column;
-4. justify-content: center;
-5. align-items: center;
-6. width: 100%;
-7. }
-8. .box{
-9. width: 200px;
-10. height: 200px;
-11. background-color: #ff0000;
-12. margin-top: 30px;
-13. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+   <div id="content" class="box" onclick="Show"></div>
+</div>
 ```
 
-```
-1. /* xxx.js */
-2. export default {
-3. data: {
-4. animation: '',
-5. options: {},
-6. frames: {}
-7. },
-8. onInit() {
-9. this.options = {
-10. duration: 1500,
-11. easing: 'ease-in',
-12. delay: 5,
-13. iterations: 2,
-14. direction: 'normal',
-15. };
-16. this.frames = [
-17. {
-18. transform: {
-19. translate: '-150px -0px'
-20. }
-21. },
-22. {
-23. transform: {
-24. translate: '150px 0px'
-25. }
-26. }
-27. ];
-28. },
-29. Show() {
-30. this.animation = this.$element('content').animate(this.frames, this.options);
-31. this.animation.play();
-32. }
-33. }
+```css
+/* xxx.css */
+.container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.box{
+  width: 200px;
+  height: 200px;
+  background-color: #ff0000;
+  margin-top: 30px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/Jb8ZirkoRVm6Mq-ZuMtz8A/zh-cn_image_0000002589244447.gif)
+```js
+/* xxx.js */
+export default {
+    data: {
+        animation: '',
+        options: {},
+        frames: {}
+    },
+    onInit() {
+        this.options = {
+            duration: 1500,
+            easing: 'ease-in',
+            delay: 5,
+            iterations: 2,
+            direction: 'normal',
+        };
+        this.frames = [
+            {
+                transform: {
+                    translate: '-150px -0px'
+                }
+            },
+            {
+                transform: {
+                    translate: '150px 0px'
+                }
+            }
+        ];
+    },
+    Show() {
+        this.animation = this.$element('content').animate(this.frames, this.options);
+        this.animation.play();
+    }
+}
+```
 
-说明
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/1irDa_VbSoa-HZ8_sz4mQA/zh-cn_image_0000002736313087.gif)
+
+**说明** 
 
 direction：指定动画的播放模式。
 

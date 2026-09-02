@@ -3,24 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-medi
 title: OH_MediaAssetManager
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > C API > 结构体 > OH_MediaAssetManager
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:22+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:c4a30ee2a669bfab3c71aa0ab909744a23c416db9f5031875b30f1702ae01b19
+scraped_at: 2026-09-02T14:53:03+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3c1cbc2cb95a053d8676130557fc54594b11b1b400972dc1fe0b1145a1db3831
 ---
 
-```
-1. typedef struct OH_MediaAssetManager OH_MediaAssetManager
+```c
+typedef struct OH_MediaAssetManager OH_MediaAssetManager
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 定义媒体资产管理器。
 
 此结构提供了请求媒体库资源的能力。
 
-如果创建失败，则返回空指针。
+创建该结构体实例失败时返回空指针。
 
 **起始版本：** 12
 

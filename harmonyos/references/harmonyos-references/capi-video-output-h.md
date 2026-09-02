@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-vide
 title: video_output.h
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 头文件 > video_output.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:46+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1ee1fa8235c8aaded61ec313a638d903ab9ea68aa801101310783cbe690378c7
+scraped_at: 2026-09-02T15:02:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c88b3f27ef972a94e1f04445425509758c0b6337ab999deb290ff6b38176a80d
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明录像输出概念。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,8 +32,6 @@ PhonePC/2in1TabletTVWearable
 | [Camera\_VideoOutput](capi-oh-camera-camera-videooutput.md) | Camera\_VideoOutput | 录像输出对象。  可以使用[OH\_CameraManager\_CreateVideoOutput](capi-camera-manager-h.md#oh_cameramanager_createvideooutput)方法创建指针。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -64,14 +56,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_VideoOutput\_OnFrameStart()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_VideoOutput_OnFrameStart)(Camera_VideoOutput* videoOutput)
+```c
+typedef void (*OH_VideoOutput_OnFrameStart)(Camera_VideoOutput* videoOutput)
 ```
 
 **描述**
@@ -88,10 +76,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VideoOutput\_OnFrameEnd()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_VideoOutput_OnFrameEnd)(Camera_VideoOutput* videoOutput, int32_t frameCount)
+```c
+typedef void (*OH_VideoOutput_OnFrameEnd)(Camera_VideoOutput* videoOutput, int32_t frameCount)
 ```
 
 **描述**
@@ -109,10 +95,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VideoOutput\_OnError()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_VideoOutput_OnError)(Camera_VideoOutput* videoOutput, Camera_ErrorCode errorCode)
+```c
+typedef void (*OH_VideoOutput_OnError)(Camera_VideoOutput* videoOutput, Camera_ErrorCode errorCode)
 ```
 
 **描述**
@@ -134,10 +118,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VideoOutput\_RegisterCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_VideoOutput_RegisterCallback(Camera_VideoOutput* videoOutput, VideoOutput_Callbacks* callback)
+```c
+Camera_ErrorCode OH_VideoOutput_RegisterCallback(Camera_VideoOutput* videoOutput, VideoOutput_Callbacks* callback)
 ```
 
 **描述**
@@ -161,10 +143,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VideoOutput\_UnregisterCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_VideoOutput_UnregisterCallback(Camera_VideoOutput* videoOutput, VideoOutput_Callbacks* callback)
+```c
+Camera_ErrorCode OH_VideoOutput_UnregisterCallback(Camera_VideoOutput* videoOutput, VideoOutput_Callbacks* callback)
 ```
 
 **描述**
@@ -188,10 +168,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VideoOutput\_Start()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_VideoOutput_Start(Camera_VideoOutput* videoOutput)
+```c
+Camera_ErrorCode OH_VideoOutput_Start(Camera_VideoOutput* videoOutput)
 ```
 
 **描述**
@@ -214,10 +192,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VideoOutput\_Stop()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_VideoOutput_Stop(Camera_VideoOutput* videoOutput)
+```c
+Camera_ErrorCode OH_VideoOutput_Stop(Camera_VideoOutput* videoOutput)
 ```
 
 **描述**
@@ -240,10 +216,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VideoOutput\_Release()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_VideoOutput_Release(Camera_VideoOutput* videoOutput)
+```c
+Camera_ErrorCode OH_VideoOutput_Release(Camera_VideoOutput* videoOutput)
 ```
 
 **描述**
@@ -266,10 +240,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VideoOutput\_GetActiveProfile()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_VideoOutput_GetActiveProfile(Camera_VideoOutput* videoOutput, Camera_VideoProfile** profile)
+```c
+Camera_ErrorCode OH_VideoOutput_GetActiveProfile(Camera_VideoOutput* videoOutput, Camera_VideoProfile** profile)
 ```
 
 **描述**
@@ -293,10 +265,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VideoOutput\_DeleteProfile()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_VideoOutput_DeleteProfile(Camera_VideoProfile* profile)
+```c
+Camera_ErrorCode OH_VideoOutput_DeleteProfile(Camera_VideoProfile* profile)
 ```
 
 **描述**
@@ -319,10 +289,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VideoOutput\_IsMirrorSupported()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_VideoOutput_IsMirrorSupported(Camera_VideoOutput* videoOutput, bool* isSupported)
+```c
+ Camera_ErrorCode OH_VideoOutput_IsMirrorSupported(Camera_VideoOutput* videoOutput, bool* isSupported)
 ```
 
 **描述**
@@ -346,10 +314,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VideoOutput\_EnableMirror()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_VideoOutput_EnableMirror(Camera_VideoOutput* videoOutput, bool mirrorMode)
+```c
+ Camera_ErrorCode OH_VideoOutput_EnableMirror(Camera_VideoOutput* videoOutput, bool mirrorMode)
 ```
 
 **描述**
@@ -373,10 +339,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VideoOutput\_GetVideoRotation()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_VideoOutput_GetVideoRotation(Camera_VideoOutput* videoOutput, int deviceDegree, Camera_ImageRotation* imageRotation)
+```c
+ Camera_ErrorCode OH_VideoOutput_GetVideoRotation(Camera_VideoOutput* videoOutput, int deviceDegree, Camera_ImageRotation* imageRotation)
 ```
 
 **描述**
@@ -401,10 +365,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VideoOutput\_GetVideoRotationWithoutDeviceDegree()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_VideoOutput_GetVideoRotationWithoutDeviceDegree(Camera_VideoOutput* videoOutput, Camera_ImageRotation* imageRotation)
+```c
+Camera_ErrorCode OH_VideoOutput_GetVideoRotationWithoutDeviceDegree(Camera_VideoOutput* videoOutput, Camera_ImageRotation* imageRotation)
 ```
 
 **描述**
@@ -428,10 +390,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VideoOutput\_GetSupportedFrameRates()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_VideoOutput_GetSupportedFrameRates(Camera_VideoOutput* videoOutput, Camera_FrameRateRange** frameRateRange, uint32_t* size)
+```c
+Camera_ErrorCode OH_VideoOutput_GetSupportedFrameRates(Camera_VideoOutput* videoOutput, Camera_FrameRateRange** frameRateRange, uint32_t* size)
 ```
 
 **描述**
@@ -456,10 +416,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VideoOutput\_DeleteFrameRates()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_VideoOutput_DeleteFrameRates(Camera_VideoOutput* videoOutput, Camera_FrameRateRange* frameRateRange)
+```c
+Camera_ErrorCode OH_VideoOutput_DeleteFrameRates(Camera_VideoOutput* videoOutput, Camera_FrameRateRange* frameRateRange)
 ```
 
 **描述**
@@ -483,10 +441,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VideoOutput\_SetFrameRate()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_VideoOutput_SetFrameRate(Camera_VideoOutput* videoOutput, int32_t minFps, int32_t maxFps)
+```c
+Camera_ErrorCode OH_VideoOutput_SetFrameRate(Camera_VideoOutput* videoOutput, int32_t minFps, int32_t maxFps)
 ```
 
 **描述**
@@ -511,10 +467,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_VideoOutput\_GetActiveFrameRate()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_VideoOutput_GetActiveFrameRate(Camera_VideoOutput* videoOutput, Camera_FrameRateRange* frameRateRange)
+```c
+Camera_ErrorCode OH_VideoOutput_GetActiveFrameRate(Camera_VideoOutput* videoOutput, Camera_FrameRateRange* frameRateRange)
 ```
 
 **描述**

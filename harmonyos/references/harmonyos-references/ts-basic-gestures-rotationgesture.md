@@ -3,24 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: RotationGesture
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 基础手势 > RotationGesture
 category: harmonyos-references
-scraped_at: 2026-04-29T13:51:35+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:e0a385d0adb2da5ecb84ea808f1a15f56f04bdc9276bc8d6c2547e2462bd1001
+scraped_at: 2026-09-02T15:00:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:cc18d67022d5f443be862df230e5e18399b2ea8889ce4b33b6c13d9f5912414f
 ---
 
-用于触发旋转手势，最少需要2指，最多5指，最小改变度数为1度。该手势不支持通过触控板双指旋转操作触发。
+用于触发旋转手势，最少需要2指，最多5指，最小角度变化为1度，适用于需要识别用户多指旋转操作并实现旋转类交互的场景。该手势不支持通过触控板双指旋转操作触发。
 
-说明
+**说明** 
 
-从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 接口
 
-PhonePC/2in1TabletTVWearable
-
 ### RotationGesture
-
-PhonePC/2in1TabletTVWearable
 
 RotationGesture(value?: { fingers?: number; angle?: number })
 
@@ -38,13 +34,13 @@ RotationGesture(value?: { fingers?: number; angle?: number })
 
 ### RotationGesture15+
 
-PhonePC/2in1TabletTVWearable
-
 RotationGesture(options?: RotationGestureHandlerOptions)
 
 设置旋转手势事件。与[RotationGesture](ts-basic-gestures-rotationgesture.md#rotationgesture-1)相比，options参数新增了isFingerCountLimited参数，表示是否检查触摸屏幕的手指数量。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -56,19 +52,15 @@ RotationGesture(options?: RotationGestureHandlerOptions)
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
-说明
+**说明** 
 
 在[GestureEvent](ts-gesture-common.md#gestureevent对象说明)的fingerList元素中，手指索引编号与位置相对应，即fingerList[index]的id为index。对于先按下但未参与当前手势触发的手指，fingerList中对应的位置为空。建议优先使用fingerInfos。
 
 ### onActionStart
 
-PhonePC/2in1TabletTVWearable
-
 onActionStart(event: (event: GestureEvent) => void)
 
-Rotation手势识别成功后触发的回调。
+旋转手势识别成功后触发的回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -78,15 +70,13 @@ Rotation手势识别成功后触发的回调。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | (event: [GestureEvent](ts-gesture-common.md#gestureevent对象说明)) => void | 是 | 手势事件回调函数。 |
+| event | (event: [GestureEvent](ts-gesture-common.md#gestureevent对象说明)) => void | 是 | 手势事件回调函数。GestureEvent的fingerList元素中，手指索引编号与位置相对应，即fingerList[index]的id为index；对于先按下但未参与当前手势触发的手指，fingerList中对应的位置为空，建议优先使用fingerInfos。 |
 
 ### onActionUpdate
 
-PhonePC/2in1TabletTVWearable
-
 onActionUpdate(event: (event: GestureEvent) => void)
 
-Rotation手势移动过程中触发的回调。
+旋转手势移动过程中触发的回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -100,11 +90,9 @@ Rotation手势移动过程中触发的回调。
 
 ### onActionEnd
 
-PhonePC/2in1TabletTVWearable
-
 onActionEnd(event: (event: GestureEvent) => void)
 
-Rotation手势识别成功，当抬起最后一根满足手势触发条件的手指后触发的回调。
+旋转手势识别成功，当抬起最后一根满足手势触发条件的手指后触发的回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -118,11 +106,9 @@ Rotation手势识别成功，当抬起最后一根满足手势触发条件的手
 
 ### onActionCancel
 
-PhonePC/2in1TabletTVWearable
-
 onActionCancel(event: () => void)
 
-Rotation手势识别成功，接收到触摸取消事件触发的回调。该回调不返回手势事件信息。
+旋转手势识别成功，接收到触摸取消事件时触发的回调。该回调不返回手势事件信息。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -132,17 +118,17 @@ Rotation手势识别成功，接收到触摸取消事件触发的回调。该回
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | () => void | 是 | 手势事件回调函数。 |
+| event | () => void | 是 | 手势事件回调函数，用于处理旋转手势取消事件；该回调不接收参数，不返回手势事件信息。 |
 
 ### onActionCancel18+
 
-PhonePC/2in1TabletTVWearable
-
 onActionCancel(event: Callback<GestureEvent>)
 
-Rotation手势识别成功，接收到触摸取消事件触发的回调。与[onActionCancel](ts-basic-gestures-rotationgesture.md#onactioncancel)相比，该回调返回手势事件信息。
+旋转手势识别成功，接收到触摸取消事件时触发的回调。与[onActionCancel](ts-basic-gestures-rotationgesture.md#onactioncancel)相比，该回调返回手势事件信息。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -150,52 +136,52 @@ Rotation手势识别成功，接收到触摸取消事件触发的回调。与[on
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | Callback<[GestureEvent](ts-gesture-common.md#gestureevent对象说明)> | 是 | 手势事件回调函数。 |
+| event | Callback<[GestureEvent](ts-gesture-common.md#gestureevent对象说明)> | 是 | 手势事件回调函数，用于接收旋转手势取消时的手势事件信息，回调参数为GestureEvent对象。 |
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 该示例通过配置RotationGesture实现了双指旋转手势的识别。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct RotationGestureExample {
-5. @State angle: number = 0;
-6. @State rotateValue: number = 0;
+```ts
+// xxx.ets
+@Entry
+@Component
+struct RotationGestureExample {
+  @State angle: number = 0;
+  @State rotateValue: number = 0;
 
-8. build() {
-9. Column() {
-10. Column() {
-11. Text('RotationGesture angle:' + this.angle)
-12. }
-13. .height(200)
-14. .width(300)
-15. .padding(20)
-16. .border({ width: 3 })
-17. .margin(80)
-18. .rotate({ angle: this.angle })
-19. // 双指旋转触发该手势事件
-20. .gesture(
-21. RotationGesture()
-22. .onActionStart((event: GestureEvent) => {
-23. console.info('Rotation start')
-24. })
-25. .onActionUpdate((event: GestureEvent) => {
-26. if (event) {
-27. this.angle = this.rotateValue + event.angle
-28. }
-29. })
-30. .onActionEnd((event: GestureEvent) => {
-31. this.rotateValue = this.angle
-32. console.info('Rotation end')
-33. })
-34. )
-35. }.width('100%')
-36. }
-37. }
+  build() {
+    Column() {
+      Column() {
+        Text('RotationGesture angle:' + this.angle)
+      }
+      .height(200)
+      .width(300)
+      .padding(20)
+      .border({ width: 3 })
+      .margin(80)
+      .rotate({ angle: this.angle })
+      // 双指旋转触发该手势事件
+      .gesture(
+      RotationGesture()
+        .onActionStart(() => {
+          console.info('Rotation start');
+        })
+        .onActionUpdate((event: GestureEvent) => {
+          if (event) {
+            // 根据本次手势变化角度和已保存旋转角度，更新组件当前旋转角度。
+            this.angle = this.rotateValue + event.angle;
+          }
+        })
+        .onActionEnd(() => {
+          // 手势结束时保存当前旋转角度，作为下一次旋转计算的初始值。
+          this.rotateValue = this.angle;
+          console.info('Rotation end');
+        })
+      )
+    }.width('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/dRnoNfuFRaqq_iKb9DMWzA/zh-cn_image_0000002558766106.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/aNmTlWq1TrOzacJB13GQvw/zh-cn_image_0000002706835730.png)

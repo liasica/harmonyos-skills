@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___bu
 title: Rcp_Buffer
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > C API > 结构体 > Rcp_Buffer
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:09dd051ee2c64c92ecd15a00fafc0a20b40234ff0024a95e7f10c1a5bd32af42
+scraped_at: 2026-09-02T15:01:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:241a10a1b5ada982f4fbd16226ec962829a8e4b5e09f5df806222042741ad512
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 文本存储结构。
 
@@ -22,11 +20,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -35,14 +29,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTVWearable
-
 ### buffer
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char* Rcp_Buffer::buffer
+```cpp
+const char* Rcp_Buffer::buffer
 ```
 
 **描述**
@@ -51,10 +41,8 @@ PhonePC/2in1TabletTVWearable
 
 ### length
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. uint32_t Rcp_Buffer::length
+```cpp
+uint32_t Rcp_Buffer::length
 ```
 
 **描述**

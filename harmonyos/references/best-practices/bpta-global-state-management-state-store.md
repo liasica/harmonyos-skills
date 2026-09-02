@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-global-sta
 title: 基于StateStore的全局状态管理
 breadcrumb: 最佳实践 > 声明式语法 > 基于StateStore的全局状态管理
 category: best-practices
-scraped_at: 2026-04-29T14:10:34+08:00
+scraped_at: 2026-09-02T15:03:16+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:d1c1bc9ddfae9baa49a7db822b5863e71a1afdeb7a32a000d68d9d6c0f35c0f9
+content_hash: sha256:5bdb0f152631bc1615f69a7e43bc55ca960c708df8053a4774c633aa695b9e04
 ---
 
 ## 概述
@@ -28,15 +28,15 @@ StateStore提供了下列功能特性：
 
 **图1** 待办列表效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/voWPrqBNSYaapGq3hfQSVQ/zh-cn_image_0000002194011108.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/XNuajLpIRlSbaiP6nc8J_Q/zh-cn_image_0000002194011108.png "点击放大")
 
 新增和删除功能按钮分别位于两个兄弟组件中。在开发时，父组件需要维护一个listDatas列表，并通过@Link装饰器实现数据的双向同步，从而实现兄弟组件之间的状态同步。删除功能和新增功能逻辑分别由两个子组件处理，但是这两个组件都需要引入与UI渲染无关的listDatas数据，造成了状态与UI的高耦合。使得状态管理变得复杂，难以维护和扩展。组件结构图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/U5wkspZ0TD-eBFmK9ou2bw/zh-cn_image_0000002194011116.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/R3wXyokjQz6Vx9Qp1_K0TQ/zh-cn_image_0000002194011116.png)
 
 引入StateStore库后，开发者可以将listDatas数据存储在全局仓库（Store）中，组件从Store中获取数据进行UI渲染，并通过向Store发送事件来更新数据。这样，状态更新逻辑被集中管理，组件无需额外引入状态进行逻辑处理，从而实现了状态与UI的低耦合。组件结构图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/561ATwz0SI2v1swUOKy1hg/zh-cn_image_0000002194011104.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/QWxPyradR7mmW6Qo3bFbFw/zh-cn_image_0000002194011104.png)
 
 ## 实现原理
 
@@ -52,7 +52,7 @@ StateStore基于ArkUI的状态管理特性（[@Observed](../harmonyos-guides/ark
 
 **图2** **运行原理图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/1B87Pc-yRTmQEo0DFeh94A/zh-cn_image_0000002194011124.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/UkFprvg1RQOYgYyuDAW2uQ/zh-cn_image_0000002194011124.png "点击放大")
 
 **核心概念解释**
 
@@ -76,7 +76,7 @@ StateStore基于ArkUI的状态管理特性（[@Observed](../harmonyos-guides/ark
 
 数据改变刷新UI的能力依赖系统侧@Observed/@ObservedV2对数据的观测能力，StateStore不接管数据驱动UI更新。
 
-说明
+**说明** 
 
 以上概念与基本使用参考[StateStore](https://gitcode.com/openharmony-sig/state_store)
 
@@ -115,7 +115,7 @@ StateStore基于ArkUI的状态管理特性（[@Observed](../harmonyos-guides/ark
 
 **图3** **效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/WkSBmcJ2T663bfF9RvkOTA/zh-cn_image_0000002194011120.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/_Pq6l21JS2qlMnydhG6qxw/zh-cn_image_0000002194011120.png "点击放大")
 
 ### 开发步骤
 
@@ -123,176 +123,162 @@ StateStore基于ArkUI的状态管理特性（[@Observed](../harmonyos-guides/ark
 
    使用@ObservedV2定义页面需要的数据TodoList、TodoItem。
 
-   ```
-   1. @ObservedV2
-   2. export class TodoStoreModel {
-   3. @Trace todoList: TodoItemData[] = [];
-   4. @Trace isShow: boolean = false;
-   5. addTaskTextInputValue: string = '';
-   6. // ...
+   ```typescript
+   @ObservedV2
+   export class TodoStoreModel {
+     @Trace todoList: TodoItemData[] = [];
+     @Trace isShow: boolean = false;
+     addTaskTextInputValue: string = '';
+     // ...
 
-   8. @Computed
-   9. get uncompletedTodoList(): TodoItemData[] {
-   10. return this.todoList.filter(item => !item.selected);
-   11. }
+     @Computed
+     get uncompletedTodoList(): TodoItemData[] {
+       return this.todoList.filter(item => !item.selected);
+     }
 
-   13. @Computed
-   14. get completedTodoList(): TodoItemData[] {
-   15. return this.todoList.filter(item => item.selected);
-   16. }
-   17. }
-   ```
-
-   [TodoListModel.ets](https://gitcode.com/harmonyos_samples/StateStore/blob/master/entry/src/main/ets/model/TodoListModel.ets#L86-L114)
-
-   ```
-   1. @ObservedV2
-   2. export class TodoItemData {
-   3. id: number = 0;
-   4. @Trace taskDetail: string = '';
-   5. @Trace selected?: boolean;
-   6. // ...
-
-   8. constructor(taskDetail: string, selected?: boolean, id?: number) {
-   9. this.id = id ? id : Date.now();
-   10. this.taskDetail = taskDetail;
-   11. this.selected = selected;
-   12. // ...
-   13. }
-
-   15. // ...
-   16. }
+     @Computed
+     get completedTodoList(): TodoItemData[] {
+       return this.todoList.filter(item => item.selected);
+     }
+   }
    ```
 
-   [TodoListModel.ets](https://gitcode.com/harmonyos_samples/StateStore/blob/master/entry/src/main/ets/model/TodoListModel.ets#L19-L48)
+   ```typescript
+   @ObservedV2
+   export class TodoItemData {
+     id: number = 0;
+     @Trace taskDetail: string = '';
+     @Trace selected?: boolean;
+     // ...
+
+     constructor(taskDetail: string, selected?: boolean, id?: number) {
+       this.id = id ? id : Date.now();
+       this.taskDetail = taskDetail;
+       this.selected = selected;
+       // ...
+     }
+
+     // ...
+   }
+   ```
 2. 创建状态管理仓库
    * 定义状态更新事件类型Action
 
+     ```typescript
+     export default class TodoListActions {
+       static getTodoList: Action = StateStore.createAction('getTodoList');
+       static addTodoList: Action = StateStore.createAction('addTodoList');
+       static deleteTodoItem: Action = StateStore.createAction('deleteTodoItem');
+       static updateTaskDetail: Action = StateStore.createAction('updateTaskDetail');
+       static completeTodoItem: Action = StateStore.createAction('completeTodoItem');
+       // ...
+     };
      ```
-     1. export default class TodoListActions {
-     2. static getTodoList: Action = StateStore.createAction('getTodoList');
-     3. static addTodoList: Action = StateStore.createAction('addTodoList');
-     4. static deleteTodoItem: Action = StateStore.createAction('deleteTodoItem');
-     5. static updateTaskDetail: Action = StateStore.createAction('updateTaskDetail');
-     6. static completeTodoItem: Action = StateStore.createAction('completeTodoItem');
-     7. // ...
-     8. };
-     ```
-
-     [TodoListActions.ets](https://gitcode.com/harmonyos_samples/StateStore/blob/master/entry/src/main/ets/store/TodoListActions.ets#L19-L36)
    * 定义状态处理函数TodoReducer
 
+     ```typescript
+     export const todoReducer: Reducer<TodoStoreModel> = (state: TodoStoreModel, action: Action) => {
+       let GlobalContent = GlobalContext.getInstance();
+       uiContext = GlobalContent.getUIContext()
+       switch (action.type) {
+         case TodoListActions.getTodoList.type:
+           return async () => {
+             state.todoList = (await RdbUtil.getInstance(uiContext?.getHostContext()!)).query();
+           };
+         case TodoListActions.addTodoList.type:
+           if (state.addTaskTextInputValue === '') {
+             uiContext!.getPromptAction().showToast({ message: $r('app.string.empty') });
+             return null;
+           }
+           state.todoList.push(new TodoItemData(state.addTaskTextInputValue));
+           state.isShow = false;
+           state.addTaskTextInputValue = '';
+           break;
+         case TodoListActions.deleteTodoItem.type:
+           // ...
+           break;
+         case TodoListActions.updateTaskDetail.type:
+           // ...
+           break;
+         case TodoListActions.completeTodoItem.type:
+           // ...
+           break;
+         // ...
+       }
+       return null;
+     };
      ```
-     1. export const todoReducer: Reducer<TodoStoreModel> = (state: TodoStoreModel, action: Action) => {
-     2. let GlobalContent = GlobalContext.getInstance();
-     3. uiContext = GlobalContent.getUIContext()
-     4. switch (action.type) {
-     5. case TodoListActions.getTodoList.type:
-     6. return async () => {
-     7. state.todoList = (await RdbUtil.getInstance(uiContext?.getHostContext()!)).query();
-     8. };
-     9. case TodoListActions.addTodoList.type:
-     10. if (state.addTaskTextInputValue === '') {
-     11. uiContext!.getPromptAction().showToast({ message: $r('app.string.empty') });
-     12. return null;
-     13. }
-     14. state.todoList.push(new TodoItemData(state.addTaskTextInputValue));
-     15. state.isShow = false;
-     16. state.addTaskTextInputValue = '';
-     17. break;
-     18. case TodoListActions.deleteTodoItem.type:
-     19. // ...
-     20. break;
-     21. case TodoListActions.updateTaskDetail.type:
-     22. // ...
-     23. break;
-     24. case TodoListActions.completeTodoItem.type:
-     25. // ...
-     26. break;
-     27. // ...
-     28. }
-     29. return null;
-     30. };
-     ```
-
-     [TodoListReducer.ets](https://gitcode.com/harmonyos_samples/StateStore/blob/master/entry/src/main/ets/store/TodoListReducer.ets#L26-L168)
    * 创建状态管理仓库
 
-     ```
-     1. export const TODO_LIST_STORE_ID = 'todoListStore';
+     ```typescript
+     export const TODO_LIST_STORE_ID = 'todoListStore';
 
-     3. export const TodoStore: Store<TodoStoreModel> =
-     4. StateStore.createStore(TODO_LIST_STORE_ID, new TodoStoreModel(), todoReducer, [LogMiddleware]);
+     export const TodoStore: Store<TodoStoreModel> =
+       StateStore.createStore(TODO_LIST_STORE_ID, new TodoStoreModel(), todoReducer, [LogMiddleware]);
      ```
-
-     [TodoListStore.ets](https://gitcode.com/harmonyos_samples/StateStore/blob/master/entry/src/main/ets/store/TodoListStore.ets#L22-L26)
 3. 在UI中使用
    * 通过getState()拿到Store中的状态数据。
    * 使用dispatch()派发一个状态更新事件来刷新UI。
 
    如下例子中：Index组件内，通过getState()方法获取状态数据并绑定UI，通过dispatch触发GetTodoList事件获取全量数据并更新状态；TodoItem子组件中通过dispatch方法派发一个CompleteTodoItem事件来改变全局状态，将当前项设置为已完成。
 
-   ```
-   1. @Entry
-   2. @ComponentV2
-   3. struct Index {
-   4. @Local viewModel: TodoStoreModel = TodoStore.getState();
-   5. // ...
-   6. aboutToAppear(): void {
-   7. // The dispatch triggers a GetTodoList event to get the full data and update the status
-   8. TodoStore.dispatch(TodoListActions.getTodoList);
-   9. }
+   ```screen
+   @Entry
+   @ComponentV2
+   struct Index {
+     @Local viewModel: TodoStoreModel = TodoStore.getState();
+     // ...
+     aboutToAppear(): void {
+       // The dispatch triggers a GetTodoList event to get the full data and update the status
+       TodoStore.dispatch(TodoListActions.getTodoList);
+     }
 
-   11. // ...
-   12. build() {
-   13. Column() {
-   14. // ...
-   15. if (this.viewModel.todoList.length > 0) {
-   16. List({ space: 12 }) {
-   17. if (this.viewModel.uncompletedTodoList.length > 0) {
-   18. ListItemGroup({ header: this.todayGroupHeader(), space: 12 }) {
-   19. ForEach(this.viewModel.uncompletedTodoList, (item: TodoItemData) => {
-   20. ListItem() {
-   21. TodoItem({ itemData: item });
-   22. };
-   23. }, (item: TodoItemData) => item.id.toString());
-   24. };
-   25. }
-   26. // ...
-   27. }.width('100%')
-   28. .height('100%')
-   29. .layoutWeight(1);
+     // ...
+     build() {
+       Column() {
+         // ...
+         if (this.viewModel.todoList.length > 0) {
+           List({ space: 12 }) {
+             if (this.viewModel.uncompletedTodoList.length > 0) {
+               ListItemGroup({ header: this.todayGroupHeader(), space: 12 }) {
+                 ForEach(this.viewModel.uncompletedTodoList, (item: TodoItemData) => {
+                   ListItem() {
+                     TodoItem({ itemData: item });
+                   };
+                 }, (item: TodoItemData) => item.id.toString());
+               };
+             }
+             // ...
+           }.width('100%')
+           .height('100%')
+           .layoutWeight(1);
 
-   31. // ...
-   32. }
-   33. }
-   ```
-
-   [Index.ets](https://gitcode.com/harmonyos_samples/StateStore/blob/master/entry/src/main/ets/pages/Index.ets#L26-L168)
-
-   ```
-   1. @ComponentV2
-   2. export struct TodoItem {
-   3. @Param @Require itemData: TodoItemData;
-   4. // ...
-
-   6. build() {
-   7. Row({ space: 8 }) {
-   8. Checkbox({ name: 'checkbox1', group: 'checkboxGroup' })
-   9. .select(this.itemData.selected)
-   10. .shape(CheckBoxShape.CIRCLE)
-   11. .onChange((_value) => {
-   12. // The child component changes the global state by sending a CompleteTodoItem event through the dispatch method, setting the current item to complete
-   13. TodoStore.dispatch(TodoListActions.completeTodoItem.setPayload({ id: this.itemData.id, value: _value }));
-   14. });
-   15. // ...
-   16. }
-   17. // ...
-   18. }
-   19. }
+           // ...
+     }
+   }
    ```
 
-   [TodoItem.ets](https://gitcode.com/harmonyos_samples/StateStore/blob/master/entry/src/main/ets/components/TodoItem.ets#L21-L101)
+   ```typescript
+   @ComponentV2
+   export struct TodoItem {
+     @Param @Require itemData: TodoItemData;
+     // ...
+
+     build() {
+       Row({ space: 8 }) {
+         Checkbox({ name: 'checkbox1', group: 'checkboxGroup' })
+           .select(this.itemData.selected)
+           .shape(CheckBoxShape.CIRCLE)
+           .onChange((_value) => {
+             // The child component changes the global state by sending a CompleteTodoItem event through the dispatch method, setting the current item to complete
+             TodoStore.dispatch(TodoListActions.completeTodoItem.setPayload({ id: this.itemData.id, value: _value }));
+           });
+         // ...
+       }
+       // ...
+     }
+   }
+   ```
 
 通过StateStore库的使用，在UI上就没有任何状态更新逻辑，UI层面只需要关注界面描述和事件分发，保持了UI层的纯粹性。UI界面通过事件触发dispatch操作发送Action给Store来执行具体的逻辑，达到UI和状态解耦的效果。
 
@@ -308,7 +294,7 @@ StateStore基于ArkUI的状态管理特性（[@Observed](../harmonyos-guides/ark
 
 **图4** **效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/FejRzYljRZi_zQrOVR6kdA/zh-cn_image_0000002229336913.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/pq8mkh6lTSyy_SaJoVZNYQ/zh-cn_image_0000002229336913.gif)
 
 上图效果图中，用户点击同步数据库按钮，子线程去读写数据库，同时更新进度条。
 
@@ -316,24 +302,22 @@ StateStore基于ArkUI的状态管理特性（[@Observed](../harmonyos-guides/ark
 
 1. 定义数据
 
-   ```
-   1. @Sendable
-   2. export class ToDoItemSendable implements lang.ISendable {
-   3. id: number;
-   4. detail: string;
-   5. selected: boolean;
-   6. state: number;
+   ```typescript
+   @Sendable
+   export class ToDoItemSendable implements lang.ISendable {
+     id: number;
+     detail: string;
+     selected: boolean;
+     state: number;
 
-   8. constructor(id: number, detail: string, selected: boolean = false) {
-   9. this.id = id;
-   10. this.selected = selected;
-   11. this.detail = detail;
-   12. this.state = 0;
-   13. }
-   14. }
+     constructor(id: number, detail: string, selected: boolean = false) {
+       this.id = id;
+       this.selected = selected;
+       this.detail = detail;
+       this.state = 0;
+     }
+   }
    ```
-
-   [TodoListModel.ets](https://gitcode.com/harmonyos_samples/StateStore/blob/master/entry/src/main/ets/model/TodoListModel.ets#L52-L66)
 2. 定义子线程操作函数并发送SendableAction
 
    通过StateStore.createSendableAction方法定义一个sendableAction事件，它的作用与Action的作用一致，在子线程中需要使用taskpool的sendData发送一个sendableAction事件。
@@ -344,98 +328,90 @@ StateStore基于ArkUI的状态管理特性（[@Observed](../harmonyos-guides/ark
    * type: string，必选参数，用于描述当前的sendableAction的事件类型，需要在reducer中有对应的类型逻辑事件。
    * payload?: ESObject，可选参数，事件的参数。
 
-     ```
-     1. @Concurrent
-     2. async function concurrentUpdateProgress(context: Context, data: ToDoItemSendable[]): Promise<void> {
-     3. try {
-     4. let rdb = await RdbUtil.getInstance(context);
-     5. const originalIds = rdb.getAllIds();
-     6. const toAdd = data.filter(todo =>!originalIds.some(id => todo.id === id));
-     7. const toUpdate = data.filter(todo => todo.state === 0 && originalIds.indexOf(todo.id) > -1);
-     8. const toDelete = originalIds.filter(id =>!data.some(todo => todo.id === id));
-     9. // send setTotal event to set the total number of progress bars
-     10. taskpool.Task.sendData(StateStore.createSendableAction(TODO_LIST_STORE_ID, TodoListActions.setTotal.type,
-     11. toAdd.length + toUpdate.length + toDelete.length));
+     ```typescript
+     @Concurrent
+     async function concurrentUpdateProgress(context: Context, data: ToDoItemSendable[]): Promise<void> {
+       try {
+         let rdb = await RdbUtil.getInstance(context);
+         const originalIds = rdb.getAllIds();
+         const toAdd = data.filter(todo =>!originalIds.some(id => todo.id === id));
+         const toUpdate = data.filter(todo => todo.state === 0 && originalIds.indexOf(todo.id) > -1);
+         const toDelete = originalIds.filter(id =>!data.some(todo => todo.id === id));
+         // send setTotal event to set the total number of progress bars
+         taskpool.Task.sendData(StateStore.createSendableAction(TODO_LIST_STORE_ID, TodoListActions.setTotal.type,
+           toAdd.length + toUpdate.length + toDelete.length));
 
-     13. for (const todo of toAdd) {
-     14. rdb.inset(todo);
-     15. await sleep(500);
-     16. // send the update progress bar event updateProgress
-     17. taskpool.Task.sendData(StateStore.createSendableAction(TODO_LIST_STORE_ID, TodoListActions.updateProgress.type,
-     18. todo.id));
-     19. }
-     20. // ...
-     21. } catch (err) {
-     22. console.error(`${err.message}\n${err.stack}`);
-     23. return undefined;
-     24. }
-     25. }
+         for (const todo of toAdd) {
+           rdb.inset(todo);
+           await sleep(500);
+           // send the update progress bar event updateProgress
+           taskpool.Task.sendData(StateStore.createSendableAction(TODO_LIST_STORE_ID, TodoListActions.updateProgress.type,
+             todo.id));
+         }
+         // ...
+       } catch (err) {
+         console.error(`${err.message}\n${err.stack}`);
+         return undefined;
+       }
+     }
      ```
-
-     [TaskpoolUtil.ets](https://gitcode.com/harmonyos_samples/StateStore/blob/master/entry/src/main/ets/utils/TaskpoolUtil.ets#L44-L81)
 3. 主线程接收后触发dispatch修改状态数据
 
    主线程中使用onReceiveData接收sendData发送的sendableAction事件，然后调用StateStore.receiveSendableAction来执行这个事件通知reducer修改状态。
 
+   ```typescript
+   export async function syncDatabase() {
+     try {
+       const todos: TodoItemData[] = TodoStore.getState().todoList;
+       const ToBeSynced = todos.map(item => item.toDoItemSendable);
+       let task: taskpool.Task = new taskpool.Task(concurrentUpdateProgress, uiContext?.getHostContext()!, ToBeSynced);
+       task.onReceiveData((data: SendableAction) => {
+         // Use the receiveSendableAction method to trigger the Action sent by the child thread to refresh the state
+         StateStore.receiveSendableAction(data);
+       });
+       await taskpool.execute(task);
+       TodoStore.dispatch(TodoListActions.clearProgress);
+     } catch (err) {
+       console.error(`${err.message}\n${err.stack}`);
+     }
+   }
    ```
-   1. export async function syncDatabase() {
-   2. try {
-   3. const todos: TodoItemData[] = TodoStore.getState().todoList;
-   4. const ToBeSynced = todos.map(item => item.toDoItemSendable);
-   5. let task: taskpool.Task = new taskpool.Task(concurrentUpdateProgress, uiContext?.getHostContext()!, ToBeSynced);
-   6. task.onReceiveData((data: SendableAction) => {
-   7. // Use the receiveSendableAction method to trigger the Action sent by the child thread to refresh the state
-   8. StateStore.receiveSendableAction(data);
-   9. });
-   10. await taskpool.execute(task);
-   11. TodoStore.dispatch(TodoListActions.clearProgress);
-   12. } catch (err) {
-   13. console.error(`${err.message}\n${err.stack}`);
-   14. }
-   15. }
-   ```
-
-   [TaskpoolUtil.ets](https://gitcode.com/harmonyos_samples/StateStore/blob/master/entry/src/main/ets/utils/TaskpoolUtil.ets#L26-L40)
 4. Reducer定义数据操作逻辑
 
+   ```typescript
+   case TodoListActions.updateProgress.type:
+     let item = state.syncTodoList.find(item => item.id === action.payload);
+     item?.updateState(1);
+     state.progress.value++;
+     break;
+   case TodoListActions.setTotal.type:
+     state.syncTodoList = state.todoList.filter(item => item.state === 0);
+     state.progress.total = action.payload;
+     break;
    ```
-   1. case TodoListActions.updateProgress.type:
-   2. let item = state.syncTodoList.find(item => item.id === action.payload);
-   3. item?.updateState(1);
-   4. state.progress.value++;
-   5. break;
-   6. case TodoListActions.setTotal.type:
-   7. state.syncTodoList = state.todoList.filter(item => item.state === 0);
-   8. state.progress.total = action.payload;
-   9. break;
-   ```
-
-   [TodoListReducer.ets](https://gitcode.com/harmonyos_samples/StateStore/blob/master/entry/src/main/ets/store/TodoListReducer.ets#L147-L155)
 5. UI渲染
 
-   ```
-   1. @CustomDialog
-   2. export struct AsyncProgressBuilder {
-   3. controller: CustomDialogController;
-   4. // ...
+   ```typescript
+   @CustomDialog
+   export struct AsyncProgressBuilder {
+     controller: CustomDialogController;
+     // ...
 
-   6. build() {
-   7. Column() {
-   8. // ...
-   9. Progress({
-   10. value: TodoStore.getState().progress.value,
-   11. total: TodoStore.getState().progress.total,
-   12. type: ProgressType.Linear
-   13. }).style({ enableSmoothEffect: true })
-   14. .width('100%')
-   15. .height(24);
-   16. }
-   17. // ...
-   18. }
-   19. }
+     build() {
+       Column() {
+         // ...
+         Progress({
+           value: TodoStore.getState().progress.value,
+           total: TodoStore.getState().progress.total,
+           type: ProgressType.Linear
+         }).style({ enableSmoothEffect: true })
+           .width('100%')
+           .height(24);
+       }
+       // ...
+     }
+   }
    ```
-
-   [AsyncProgress.ets](https://gitcode.com/harmonyos_samples/StateStore/blob/master/entry/src/main/ets/components/AsyncProgress.ets#L20-L76)
 
 ## 状态更新日志埋点
 
@@ -448,11 +424,11 @@ StateStore基于ArkUI的状态管理特性（[@Observed](../harmonyos-guides/ark
 在本节中，我们将通过日志埋点场景，展示如何利用中间件优雅地扩展状态管理功能。
 
 **图5** **日志效果图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/Geg8XI7HTcuUk8YDCopINQ/zh-cn_image_0000002194011100.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/v3tF-3mwQdiE1TB8FsWXPw/zh-cn_image_0000002194011100.png "点击放大")
 
 **图6** **中间件执行流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/e5LzjdBKSSKpowHgPsburg/zh-cn_image_0000002229451401.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/-1S8K9GXSnqnthj6_gAQUA/zh-cn_image_0000002229451401.png)
 
 ### 开发步骤
 
@@ -460,38 +436,34 @@ StateStore基于ArkUI的状态管理特性（[@Observed](../harmonyos-guides/ark
 
    开发者根据业务逻辑需要来实现beforeAction和afterAction两个钩子方法，分别在状态更新前后执行自定义逻辑。
 
+   ```typescript
+   export class MiddlewareInstance<T> extends Middleware<T> {
+     beforeAction: MiddlewareFuncType<T>;
+     afterAction: MiddlewareFuncType<T>;
+
+     constructor(beforeAction: MiddlewareFuncType<T>, afterAction: MiddlewareFuncType<T>) {
+       super();
+       this.beforeAction = beforeAction;
+       this.afterAction = afterAction;
+     }
+   }
+
+   export const LogMiddleware = new MiddlewareInstance<TodoStoreModel>((state: TodoStoreModel, action: Action) => {
+     hilog.info(0x0000, 'StateStoreSample', `logMiddleware-before1: ${JSON.stringify(state.todoList)}, ${action.type}`);
+     return MiddlewareStatus.NEXT;
+   }, (state: TodoStoreModel) => {
+     hilog.info(0x0000, 'StateStoreSample', `logMiddleware-after: ${JSON.stringify(state.todoList)}`);
+     return MiddlewareStatus.NEXT;
+   });
    ```
-   1. export class MiddlewareInstance<T> extends Middleware<T> {
-   2. beforeAction: MiddlewareFuncType<T>;
-   3. afterAction: MiddlewareFuncType<T>;
-
-   5. constructor(beforeAction: MiddlewareFuncType<T>, afterAction: MiddlewareFuncType<T>) {
-   6. super();
-   7. this.beforeAction = beforeAction;
-   8. this.afterAction = afterAction;
-   9. }
-   10. }
-
-   12. export const LogMiddleware = new MiddlewareInstance<TodoStoreModel>((state: TodoStoreModel, action: Action) => {
-   13. hilog.info(0x0000, 'StateStoreSample', `logMiddleware-before1: ${JSON.stringify(state.todoList)}, ${action.type}`);
-   14. return MiddlewareStatus.NEXT;
-   15. }, (state: TodoStoreModel) => {
-   16. hilog.info(0x0000, 'StateStoreSample', `logMiddleware-after: ${JSON.stringify(state.todoList)}`);
-   17. return MiddlewareStatus.NEXT;
-   18. });
-   ```
-
-   [LoggerMiddleware.ets](https://gitcode.com/harmonyos_samples/StateStore/blob/master/entry/src/main/ets/middleware/LoggerMiddleware.ets#L21-L39)
 2. 使用中间件
 
-   ```
-   1. export const TODO_LIST_STORE_ID = 'todoListStore';
+   ```typescript
+   export const TODO_LIST_STORE_ID = 'todoListStore';
 
-   3. export const TodoStore: Store<TodoStoreModel> =
-   4. StateStore.createStore(TODO_LIST_STORE_ID, new TodoStoreModel(), todoReducer, [LogMiddleware]);
+   export const TodoStore: Store<TodoStoreModel> =
+     StateStore.createStore(TODO_LIST_STORE_ID, new TodoStoreModel(), todoReducer, [LogMiddleware]);
    ```
-
-   [TodoListStore.ets](https://gitcode.com/harmonyos_samples/StateStore/blob/master/entry/src/main/ets/store/TodoListStore.ets#L22-L26)
 
 在Store中注册LogMiddleware后，所有状态更新逻辑执行前都会触发LogMiddleware的beforeAction 逻辑打印日志，状态更新逻辑执行后也会触发afterAction 逻辑打印日志。
 

@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cm-n
 title: cm_native_api.h
 breadcrumb: API参考 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > C API > 头文件 > cm_native_api.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:41+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:f6926072f32d003a1eb7ba4ce2d3f1112d00cc35c7513fc72faf412e33f97e96
+scraped_at: 2026-09-02T15:01:45+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:70592fbd1f81618989acc74a53176f008897439effdc1161895a900bf4fd3aa8
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明用于获取特定类型证书详情的接口。
 
 **引用文件：** <device\_certificate/certmanager/cm\_native\_api.h>
 
-**库：** libohcert\_manager.so
+**库：** libohcert\_manager.z.so
 
 **系统能力：** SystemCapability.Security.CertificateManager
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -42,14 +36,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_CertManager\_GetUkeyCertificate()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_CertManager_GetUkeyCertificate(const OH_CM_Blob *keyUri, const OH_CM_UkeyInfo *ukeyInfo, OH_CM_CredentialDetailList *certificateList)
+```c
+int32_t OH_CertManager_GetUkeyCertificate(const OH_CM_Blob *keyUri, const OH_CM_UkeyInfo *ukeyInfo, OH_CM_CredentialDetailList *certificateList)
 ```
 
 **描述**
@@ -72,14 +62,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | [OH\_CM\_ErrorCode](capi-cm-native-type-h.md#oh_cm_errorcode)：  OH\_CM\_SUCCESS = 0 ：操作成功。  OH\_CM\_HAS\_NO\_PERMISSION = 201 ：权限校验失败。  OH\_CM\_CAPABILITY\_NOT\_SUPPORTED = 801 ：设备不支持。  OH\_CM\_PARAMETER\_VALIDATION\_FAILED = 17500011 ：入参校验失败。可能原因：  1.参数格式错误。  2.参数范围无效。  OH\_CM\_INNER\_FAILURE = 17500001 ：内部错误。可能原因：  1.IPC通讯失败。  2.内存操作错误。  3.文件操作错误。  OH\_CM\_NOT\_FOUND = 17500002 ：证书不存在。  OH\_CM\_ACCESS\_UKEY\_SERVICE\_FAILED = 17500010 ：USB证书凭据访问失败。 |
+| int32\_t | [OH\_CM\_ErrorCode](capi-cm-native-type-h.md#oh_cm_errorcode)：  OH\_CM\_SUCCESS = 0 ：操作成功。  OH\_CM\_HAS\_NO\_PERMISSION = 201 ：权限校验失败。  OH\_CM\_CAPABILITY\_NOT\_SUPPORTED = 801 ：设备不支持。  OH\_CM\_PARAMETER\_VALIDATION\_FAILED = 17500011 ：入参校验失败。可能原因：  1.参数格式错误。  2.参数范围无效。  OH\_CM\_INNER\_FAILURE = 17500001 ：内部错误。可能原因：  1.IPC通信失败。  2.内存操作错误。  3.文件操作错误。  OH\_CM\_NOT\_FOUND = 17500002 ：证书不存在。  OH\_CM\_ACCESS\_UKEY\_SERVICE\_FAILED = 17500010 ：USB证书凭据访问失败。 |
 
 ### OH\_CertManager\_GetPrivateCertificate()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_CertManager_GetPrivateCertificate(const OH_CM_Blob *keyUri, OH_CM_Credential *certificate)
+```c
+int32_t OH_CertManager_GetPrivateCertificate(const OH_CM_Blob *keyUri, OH_CM_Credential *certificate)
 ```
 
 **描述**
@@ -101,14 +89,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | [OH\_CM\_ErrorCode](capi-cm-native-type-h.md#oh_cm_errorcode)：  OH\_CM\_SUCCESS = 0 ：操作成功。  OH\_CM\_HAS\_NO\_PERMISSION = 201 ：权限校验失败。  OH\_CM\_PARAMETER\_VALIDATION\_FAILED = 17500011 ：入参校验失败。可能原因：  1.参数格式错误。  2.参数范围无效。  OH\_CM\_INNER\_FAILURE = 17500001 ：内部错误。可能原因：  1.IPC通讯失败。  2.内存操作错误。  3.文件操作错误。  OH\_CM\_NOT\_FOUND = 17500002 ：证书不存在。 |
+| int32\_t | [OH\_CM\_ErrorCode](capi-cm-native-type-h.md#oh_cm_errorcode)：  OH\_CM\_SUCCESS = 0 ：操作成功。  OH\_CM\_HAS\_NO\_PERMISSION = 201 ：权限校验失败。  OH\_CM\_PARAMETER\_VALIDATION\_FAILED = 17500011 ：入参校验失败。可能原因：  1.参数格式错误。  2.参数范围无效。  OH\_CM\_INNER\_FAILURE = 17500001 ：内部错误。可能原因：  1.IPC通信失败。  2.内存操作错误。  3.文件操作错误。  OH\_CM\_NOT\_FOUND = 17500002 ：证书不存在。 |
 
 ### OH\_CertManager\_GetPublicCertificate()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_CertManager_GetPublicCertificate(const OH_CM_Blob *keyUri, OH_CM_Credential *certificate)
+```c
+int32_t OH_CertManager_GetPublicCertificate(const OH_CM_Blob *keyUri, OH_CM_Credential *certificate)
 ```
 
 **描述**
@@ -130,19 +116,17 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | [OH\_CM\_ErrorCode](capi-cm-native-type-h.md#oh_cm_errorcode)：  OH\_CM\_SUCCESS = 0 ：操作成功。  OH\_CM\_HAS\_NO\_PERMISSION = 201 ：权限校验失败。  OH\_CM\_PARAMETER\_VALIDATION\_FAILED = 17500011 ：入参校验失败。可能原因：  1.参数格式错误。  2.参数范围无效。  OH\_CM\_INNER\_FAILURE = 17500001 ：内部错误。可能原因：  1.IPC通讯失败。  2.内存操作错误。  3.文件操作错误。  OH\_CM\_NOT\_FOUND = 17500002 ：证书不存在。  OH\_CM\_NO\_AUTHORIZATION = 17500005 ：应用未经用户授权。 |
+| int32\_t | [OH\_CM\_ErrorCode](capi-cm-native-type-h.md#oh_cm_errorcode)：  OH\_CM\_SUCCESS = 0 ：操作成功。  OH\_CM\_HAS\_NO\_PERMISSION = 201 ：权限校验失败。  OH\_CM\_PARAMETER\_VALIDATION\_FAILED = 17500011 ：入参校验失败。可能原因：  1.参数格式错误。  2.参数范围无效。  OH\_CM\_INNER\_FAILURE = 17500001 ：内部错误。可能原因：  1.IPC通信失败。  2.内存操作错误。  3.文件操作错误。  OH\_CM\_NOT\_FOUND = 17500002 ：证书不存在。  OH\_CM\_NO\_AUTHORIZATION = 17500005 ：应用未经用户授权。 |
 
 ### OH\_CertManager\_FreeUkeyCertificate()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_CertManager_FreeUkeyCertificate(OH_CM_CredentialDetailList *certificateList)
+```c
+void OH_CertManager_FreeUkeyCertificate(OH_CM_CredentialDetailList *certificateList)
 ```
 
 **描述**
 
-销毁证书详情信息列表。
+销毁证书凭据详细信息列表。
 
 **起始版本：** 22
 
@@ -150,19 +134,17 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_CM\_CredentialDetailList](capi-certmanagertype-oh-cm-credentialdetaillist.md) \*certificateList | 待销毁的证书凭据详细列表。 |
+| [OH\_CM\_CredentialDetailList](capi-certmanagertype-oh-cm-credentialdetaillist.md) \*certificateList | 待销毁的证书凭据详细信息列表。 |
 
 ### OH\_CertManager\_FreeCredential()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_CertManager_FreeCredential(OH_CM_Credential *certificate)
+```c
+void OH_CertManager_FreeCredential(OH_CM_Credential *certificate)
 ```
 
 **描述**
 
-销毁证书详情。
+销毁证书凭据详情。
 
 **起始版本：** 22
 

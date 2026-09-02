@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-abil
 title: ability_base_common.h
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > C API > 头文件 > ability_base_common.h
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:57+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:5b396882d6a71d42c5aa871796afac6fe96b75c4fd72db940deb8485d97d66ae
+scraped_at: 2026-09-02T15:00:36+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b4caeb9326b1fa607af07d9922b02eb8b27a2e020418f8e23400bb5c775d4d44
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明AbilityBase定义的相关错误码。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,14 +32,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### AbilityBase\_ErrorCode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum AbilityBase_ErrorCode
+```c
+enum AbilityBase_ErrorCode
 ```
 
 **描述**

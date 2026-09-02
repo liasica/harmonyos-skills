@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-listening
 title: 事件交互
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图交互 > 事件交互
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:47+08:00
+scraped_at: 2026-09-02T14:59:58+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d159e5387abb6b686808178ff9138be31ed42615cb1bcc8fde9d6c3275a6bcc3
+content_hash: sha256:88f0a2d587f41b5464c21121f9937394bfcafc16dcb8e2dede64d3c0725550cd
 ---
 
 本章节包含地图的点击和长按、相机移动（华为地图的移动是通过模拟相机移动的方式实现的）、以及“我的位置”按钮点击等事件监听。
@@ -29,26 +29,26 @@ content_hash: sha256:d159e5387abb6b686808178ff9138be31ed42615cb1bcc8fde9d6c3275a
 
 ### 初始化地图组件的事件管理接口
 
-```
-1. this.mapEventManager = this.mapController.getEventManager();
+```typescript
+this.mapEventManager = this.mapController.getEventManager();
 ```
 
 ### 地图点击事件监听
 
-```
-1. let callback = (position: mapCommon.LatLng) => {
-2. console.info("mapClick", `on-mapClick position = ${position.longitude}`);
-3. };
-4. this.mapEventManager.on("mapClick", callback);
+```typescript
+let callback = (position: mapCommon.LatLng) => {
+  console.info("mapClick", `on-mapClick position = ${position.longitude}`);
+};
+this.mapEventManager.on("mapClick", callback);
 ```
 
 ### 地图长按事件监听
 
-```
-1. let callback = (position: mapCommon.LatLng) => {
-2. console.info("mapLongClick", `on-mapLongClick position = ${position.longitude}`);
-3. };
-4. this.mapEventManager.on("mapLongClick", callback);
+```typescript
+let callback = (position: mapCommon.LatLng) => {
+  console.info("mapLongClick", `on-mapLongClick position = ${position.longitude}`);
+};
+this.mapEventManager.on("mapLongClick", callback);
 ```
 
 ### 相机移动监听
@@ -57,60 +57,60 @@ content_hash: sha256:d159e5387abb6b686808178ff9138be31ed42615cb1bcc8fde9d6c3275a
 
 * 当相机开始移动时，会回调cameraMoveStart。
 
-```
-1. let callback = (reason: number) => {
-2. console.info("cameraMoveStart", `on-cameraMoveStart reason = ${reason}`);
-3. };
-4. this.mapEventManager.on("cameraMoveStart", callback);
+```typescript
+let callback = (reason: number) => {
+  console.info("cameraMoveStart", `on-cameraMoveStart reason = ${reason}`);
+};
+this.mapEventManager.on("cameraMoveStart", callback);
 ```
 
 * 当相机移动或用户与触摸屏交互时，会多次调用cameraMove。
 
-```
-1. let callback = () => {
-2. console.info("cameraMove", `on-cameraMove`);
-3. };
-4. this.mapEventManager.on("cameraMove", callback);
+```typescript
+let callback = () => {
+  console.info("cameraMove", `on-cameraMove`);
+};
+this.mapEventManager.on("cameraMove", callback);
 ```
 
 * 当相机停止移动时，会回调cameraIdle。
 
-```
-1. let callback = () => {
-2. console.info("cameraIdle", `on-cameraIdle`);
-3. };
-4. this.mapEventManager.on("cameraIdle", callback);
+```typescript
+let callback = () => {
+  console.info("cameraIdle", `on-cameraIdle`);
+};
+this.mapEventManager.on("cameraIdle", callback);
 ```
 
 ### 标记点击事件监听
 
 标记是指在地图的指定位置添加标记以标识位置、商家、建筑等。详情请参见[标记](map-marker.md)。
 
-```
-1. let callback = (marker: map.Marker) => {
-2. console.info("markerClick", `markerClick: ${marker.getId()}`);
-3. };
-4. this.mapEventManager.on("markerClick", callback);
+```typescript
+let callback = (marker: map.Marker) => {
+  console.info("markerClick", `markerClick: ${marker.getId()}`);
+};
+this.mapEventManager.on("markerClick", callback);
 ```
 
 ### 我的位置监听
 
 详情请参见[显示我的位置](map-location.md)。
 
-```
-1. let callback = () => {
-2. console.info("myLocationButtonClick", `myLocationButtonClick`);
-3. };
-4. this.mapEventManager.on("myLocationButtonClick", callback);
+```typescript
+let callback = () => {
+  console.info("myLocationButtonClick", `myLocationButtonClick`);
+};
+this.mapEventManager.on("myLocationButtonClick", callback);
 ```
 
 ### 点注释事件监听
 
 点注释是指在地图的指定位置添加点注释以标识位置、商家、建筑等，并可以通过信息窗口展示详细信息。详情请参见[点注释](map-annotation.md)。
 
-```
-1. let callback = (pointAnnotation: map.PointAnnotation) => {
-2. console.info("pointAnnotationClick", `pointAnnotationClick: ${pointAnnotation.getId()}`);
-3. };
-4. this.mapEventManager.on("pointAnnotationClick", callback);
+```typescript
+let callback = (pointAnnotation: map.PointAnnotation) => {
+  console.info("pointAnnotationClick", `pointAnnotationClick: ${pointAnnotation.getId()}`);
+};
+this.mapEventManager.on("pointAnnotationClick", callback);
 ```

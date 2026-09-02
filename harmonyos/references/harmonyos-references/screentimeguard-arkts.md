@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/screentim
 title: ArkTS API
 breadcrumb: API参考 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:39+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:dff5910c187569354f49cdd2406f94fe807989c57f032164d6b14d4f5188a9fe
+scraped_at: 2026-09-02T14:53:31+08:00
+doc_updated_at: 2026-07-03
+content_hash: sha256:c9297b7d7e51343f1154f4041eeb9c3fcc187b706099029c35b98cfcf67ca309
 ---
 
-* **[GuardService（屏幕时间守护服务）](screentimeguard-guardservice.md)**
-* **[AppPicker（应用选择页）](screentimeguard-app-picker.md)**
-* **[TimeGuardExtensionAbility（屏幕时间守护扩展Ability）](screentimeguard-timeguardextensionability.md)**
-* **[TimeGuardExtensionContext（屏幕时间守护扩展Context）](screentimeguard-timeguardextensioncontext.md)**
-* **[ArkTS API错误码](screentimeguard-error-code.md)**
+* **[@hms.utilityApplication.screenTimeGuard.guardService（屏幕时间守护服务）](screentimeguard-guardservice.md)**
+* **[@hms.utilityApplication.screenTimeGuard.appPicker（应用选择）](screentimeguard-app-picker.md)**
+* **[@hms.utilityApplication.screenTimeGuard.TimeGuardExtensionAbility（屏幕时间守护扩展Ability）](screentimeguard-timeguardextensionability.md)**
+* **[@hms.utilityApplication.screenTimeGuard.TimeGuardExtensionContext（屏幕时间守护扩展Context）](screentimeguard-timeguardextensioncontext.md)**
+* **[ArkTS API错误码](errorcode-screentimeguard.md)**

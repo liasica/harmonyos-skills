@@ -3,22 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-memo
 title: memory
 breadcrumb: API参考 > 公共基础能力 > C API > 模块 > memory
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:18+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:ae7591e65e933fec03603bf6439d295fc97b9b5a587841acf2f498e7163164fb
+scraped_at: 2026-09-02T14:53:36+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0801bd1eb6ba7a2a0df3899eb3adcfe49524f4cc8010ff96e838d8704a353b08
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供内存管理功能。提供的功能包括内存分配、内存释放等操作。
 
 **起始版本：** 10
 
 ## 文件汇总
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: Camera_FrameRateRange
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 结构体 > Camera_FrameRateRange
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:47+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:be4ef6bd762334a959550a9c197473cdc00433d80415526716a138499c4cd8ea
+scraped_at: 2026-09-02T15:02:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:98bacea72e98cee5343e466b53e2fa8eb203d7931c0ecdf6ea081829a84c0530
 ---
 
-```
-1. typedef struct Camera_FrameRateRange {...} Camera_FrameRateRange
+```c
+typedef struct Camera_FrameRateRange {...} Camera_FrameRateRange
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 帧速率范围。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

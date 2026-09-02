@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-unnece
 title: "@typescript-eslint/no-unnecessary-type-assertion"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-unnecessary-type-assertion
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:40+08:00
+scraped_at: 2026-09-02T14:50:51+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:d966dd0abf59ddc87113dd907dbbb31df45a56af574208737bdc03b8f6ebab65
+content_hash: sha256:fff19fd3bd44e172f64484a5c4e09dc9c2ca87668dcd9caf4ba213d907e80dc7
 ---
 
 禁止不必要的类型断言。
@@ -14,13 +14,13 @@ content_hash: sha256:d966dd0abf59ddc87113dd907dbbb31df45a56af574208737bdc03b8f6e
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@typescript-eslint/no-unnecessary-type-assertion": "error"
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@typescript-eslint/no-unnecessary-type-assertion": "error"
+  }
+}
 ```
 
 ## 选项
@@ -29,24 +29,24 @@ content_hash: sha256:d966dd0abf59ddc87113dd907dbbb31df45a56af574208737bdc03b8f6e
 
 ## 正例
 
-```
-1. const num = 3;
-2. export const foo2 = num as number;
-3. export const foo3 = 'foo' as string;
+```screen
+const num = 3;
+export const foo2 = num as number;
+export const foo3 = 'foo' as string;
 ```
 
 ## 反例
 
-```
-1. const num = 3;
-2. export const foo = num;
-3. export const bar = foo!;
+```screen
+const num = 3;
+export const foo = num;
+export const bar = foo!;
 ```
 
 ## 规则集
 
-```
-1. plugin:@typescript-eslint/all
+```screen
+plugin:@typescript-eslint/all
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

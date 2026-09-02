@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-c
 title: 开发后自检
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 基础游戏服务（必选） > 游戏登录 > 开发后自检
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:03+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:89ec138b488837ecfef11e106b61ae75e51ad2cdefe0f76bbd99678f8da44235
+scraped_at: 2026-09-02T14:50:26+08:00
+doc_updated_at: 2026-07-03
+content_hash: sha256:4678296d17ffea0c254f633eb9a89eb16cc26637f04947338837b6e243aabde2
 ---
 
 为减少提交审核后被驳回的概率，请参考如下自检CheckList进行自检。
@@ -15,7 +15,7 @@ content_hash: sha256:89ec138b488837ecfef11e106b61ae75e51ad2cdefe0f76bbd99678f8da
 | 一级分类 | 二级分类 | 检查项 | 影响 |
 | --- | --- | --- | --- |
 | 合规检查 | 隐私、游戏资质等 | 游戏内容、游戏安全性、用户隐私等符合华为应用市场审核规定，具体参考[应用审核指南](../50104.md)。 | 如不符合华为应用市场审核要求，游戏将会被驳回。 |
-| 合规检查 | 用户实名认证信息 | 游戏提交上架前在AppGallery Connect完成[版署实名认证申请](../games-guides/game-center-identification-applyfor-0000002392353221.md)并通过审核。 | 上架申请可能会被驳回。 |
+| 合规检查 | 用户实名认证信息 | 游戏提交上架前在AppGallery Connect完成版署实名认证申请并通过审核。 | 上架申请可能会被驳回。 |
 | 配置检查 | 应用类型 | 登录AppGallery Connect，检查应用类型是否为游戏。 | 如果不是游戏类型，会导致游戏防沉迷异常，提交审核会被驳回。 |
 | 配置检查 | 发布包版本 | 上架游戏要求使用release版本的发布包。在SDK目录下检查oh-uni-package.json文件，非release要求替换，或者出包后解压并查看HAP资源文件夹，检查pack.info文件的releaseType字段。 | 使用非release版本的发布包申请上架会被驳回。 |
 | 配置检查 | 签名证书指纹信息 | 在发布阶段要求添加发布证书对应的指纹。 | 未添加发布证书对应的指纹会影响上架。 |
@@ -30,5 +30,5 @@ content_hash: sha256:89ec138b488837ecfef11e106b61ae75e51ad2cdefe0f76bbd99678f8da
 | 代码检查 | 登录 | 游戏登录后，要求调用[verifyLocalPlayer](../harmonyos-references/gameservice-gameplayer.md#gameplayerverifylocalplayer)接口进行合规校验，华为侧将校验当前设备的华为账号实名认证和游戏防沉迷管控情况，如校验未通过将返回对应的错误码。 | 游戏如未调用verifyLocalPlayer接口将导致审核被驳回。 |
 | 代码检查 | 支付 | 若游戏内提供商品购买，则要求接入[IAP Kit（应用内支付服务）](iap-introduction.md)。 | 游戏如未调用createPurchase接口将导致审核被驳回。 |
 | 代码检查 | 支付 | purchase接口传入的商品ID和商品类型与AppGallery Connect创建的商品ID和商品类型一致。 | 如果支付时传入的商品ID或商品类型与AppGallery Connect不一致，将无法拉起支付页面。 |
-| 代码检查 | 支付 | 支付接口调用返回时、应用启动时均进行了补单处理和错误码[1001860001](../harmonyos-references/iap-error-code.md#section1001860001-内部错误)、[1001860051](../harmonyos-references/iap-error-code.md#section1001860051-由于已经拥有该商品购买失败)。请参考[权益发放](iap-delivering-products.md)。 | 如未在适当时机进行补单处理，会导致异常场景下（如关闭进程、崩溃）商品未正常发放。 |
+| 代码检查 | 支付 | 支付接口调用返回时、应用启动时均进行了补单处理和错误码[1001860001](../harmonyos-references/errorcode-iap.md#section1001860001-内部错误)、[1001860051](../harmonyos-references/errorcode-iap.md#section1001860051-由于已经拥有该商品购买失败)。请参考[权益发放](iap-delivering-products.md)。 | 如未在适当时机进行补单处理，会导致异常场景下（如关闭进程、崩溃）商品未正常发放。 |
 | 代码检查 | 游戏退出 | 发布中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）的游戏要求具备玩家退出功能。 | 如不具备退出功能，审核将会被驳回。 |

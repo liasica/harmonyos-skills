@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-parse
 title: ParseParamsByOperatorFn
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OpRegistrationData > ParseParamsByOperatorFn
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:42:19+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:94863fefb8d880400df56505a3b4be71d9f5d2c95063068e2d9a6b1be6ce4845
+content_hash: sha256:c5d5fa7b9993120c7fb39fe710ebd15ee8d0b51bb7f4b667adc6b885915a3282
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:94863fefb8d880400df56505a3b4be71d9f5d2c95063068e2d9a6b1be6c
 
 ## 函数原型
 
-```
-1. OpRegistrationData &ParseParamsByOperatorFn(const ParseParamByOpFunc &parse_param_by_op_fn)
+```cpp
+OpRegistrationData &ParseParamsByOperatorFn(const ParseParamByOpFunc &parse_param_by_op_fn)
 ```
 
 ## 参数说明
@@ -28,8 +28,8 @@ content_hash: sha256:94863fefb8d880400df56505a3b4be71d9f5d2c95063068e2d9a6b1be6c
 
 开发者自定义并实现ParseParamByOpFunc类函数，完成原始模型中算子属性到适配AI处理器的模型中属性的映射，将结果填入Operator类中。
 
-```
-1. Status ParseParamByOpFunc(const ge::Operator &op_origin, ge::Operator &op_dest)
+```cpp
+Status ParseParamByOpFunc(const ge::Operator &op_origin, ge::Operator &op_dest)
 ```
 
 **表1** 参数说明
@@ -47,41 +47,41 @@ content_hash: sha256:94863fefb8d880400df56505a3b4be71d9f5d2c95063068e2d9a6b1be6c
 
 原始TensorFlow算子与适配AI处理器的算子属性一一映射的场景：
 
-```
-1. REGISTER_CUSTOM_OP("SoftplusGrad")
-2. .FrameworkType(TENSORFLOW)
-3. .OriginOpType("SoftplusGrad")
-4. .ParseParamsByOperatorFn(AutoMappingByOpFn)
-5. .ImplyType(ImplyType::TVM);
+```cpp
+REGISTER_CUSTOM_OP("SoftplusGrad")
+.FrameworkType(TENSORFLOW)
+.OriginOpType("SoftplusGrad")
+.ParseParamsByOperatorFn(AutoMappingByOpFn)
+.ImplyType(ImplyType::TVM);
 ```
 
 原始TensorFlow算子与适配AI处理器的算子属性无法一一映射的场景：
 
-```
-1. Status ParseResizeArea(const ge::Operator &op_src, ge::Operator& op)
-2. {
-3. AutoMappingByOpFn(op_src, op);
-
-5. ge::TensorDesc input_tensor = op.GetInputDesc("images");
-6. input_tensor.SetOriginFormat(ge::FORMAT_NHWC);
-7. input_tensor.SetFormat(ge::FORMAT_NHWC);
-8. auto ret = op.UpdateInputDesc("images", input_tensor);
-9. if(ret != ge::GRAPH_SUCCESS){
-10. return FAILED;
-11. }
-12. ge::TensorDesc output_tensor = op.GetOutputDesc("y");
-13. output_tensor.SetOriginFormat(ge::FORMAT_NHWC);
-14. output_tensor.SetFormat(ge::FORMAT_NHWC);
-15. auto ret_output = op.UpdateOutputDesc("y", output_tensor);
-16. if(ret_output != ge::GRAPH_SUCCESS){
-17. return FAILED;
-18. }
-19. return SUCCESS;
-20. }
-21. // register ResizeArea op to GE
-22. REGISTER_CUSTOM_OP("ResizeArea")
-23. .FrameworkType(TENSORFLOW)
-24. .OriginOpType("ResizeArea")
-25. .ParseParamsByOperatorFn(ParseResizeArea)
-26. .ImplyType(ImplyType::AI_CPU);
+```cpp
+Status ParseResizeArea(const ge::Operator &op_src, ge::Operator& op)
+  {
+    AutoMappingByOpFn(op_src, op);
+ 
+    ge::TensorDesc input_tensor = op.GetInputDesc("images");
+    input_tensor.SetOriginFormat(ge::FORMAT_NHWC);
+    input_tensor.SetFormat(ge::FORMAT_NHWC);
+    auto ret = op.UpdateInputDesc("images", input_tensor);
+    if(ret != ge::GRAPH_SUCCESS){
+        return FAILED;
+    }
+    ge::TensorDesc output_tensor = op.GetOutputDesc("y");
+    output_tensor.SetOriginFormat(ge::FORMAT_NHWC);
+    output_tensor.SetFormat(ge::FORMAT_NHWC);
+    auto ret_output = op.UpdateOutputDesc("y", output_tensor);
+    if(ret_output != ge::GRAPH_SUCCESS){
+        return FAILED;
+    }
+    return SUCCESS;
+  }
+// register ResizeArea op to GE
+REGISTER_CUSTOM_OP("ResizeArea")
+  .FrameworkType(TENSORFLOW)
+  .OriginOpType("ResizeArea")
+  .ParseParamsByOperatorFn(ParseResizeArea)
+  .ImplyType(ImplyType::AI_CPU);
 ```

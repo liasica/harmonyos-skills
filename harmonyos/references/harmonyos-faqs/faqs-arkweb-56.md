@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-56
 title: 如何解决webview离线加载白屏问题
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 如何解决webview离线加载白屏问题
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:43+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:53+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:739b42e884ba934a8c655291ef58a3f476cf6d0e8c6cf58b72ca825736ea7637
 ---
 

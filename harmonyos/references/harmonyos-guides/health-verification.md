@@ -3,30 +3,32 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-verifi
 title: 申请验证获取正式权限
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 申请验证获取正式权限
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:38:31+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ff0474153c66213c77e7f15b739a538e1e02ebd875d39976625df4b48376988e
+scraped_at: 2026-09-02T14:59:56+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:32f95718c5bddaee5ed372147d81b959f04db7948575b99006151711f25f5640
 ---
 
 完成[申请运动健康服务](health-apply.md)后，审核通过的权限为测试权限，有100个用户数量的限制。为解除用户数的限制，应用开发完成后，在上架之前，请按照以下步骤提交验证申请，以获取正式权限。完成验证后，您的应用可支持正式大规模商用。
 
 ## 申请验证
 
-1. 登录[开发者联盟网站](https://developer.huawei.com/consumer/cn/)，进入“管理中心”，在应用服务中，单击**Health Service Kit**卡片。如果无“Health Service Kit”卡片，请单击右上角“自定义桌面”添加卡片。
+1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)，选择**开发与服务**。
+2. 在项目列表选择项目，并在应用列表下选择需要申请运动健康服务的应用。
+3. 进入**项目设置** > **开放能力管理**页面，点击**运动健康服务**对应的**管理**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/Iz7lx44tRDaVYm6p_dhE_A/zh-cn_image_0000002558765414.png)
-2. 单击“申请验证”按钮，选择验证的权限，提交审核材料由专家组进行评审，审批周期约为15个工作日，请耐心等待。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/ydujelUnSNalmIR88aLKiA/zh-cn_image_0000002706674988.png)
+4. 单击“申请验证”按钮，选择验证的权限，提交审核材料由专家组进行评审，审批周期约为15个工作日，请耐心等待。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/6lbYL5_1TSegRJilu24Yxg/zh-cn_image_0000002558605758.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/Qc5EP_AATd-VgBkFtvDw6Q/zh-cn_image_0000002736314037.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/qpzhq3PrRg-TrRPkyF4hOw/zh-cn_image_0000002589325285.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/oKYG8pGzQ26Gwi5Qow9A8A/zh-cn_image_0000002706674994.png)
 
    审核结果会出现以下两种类型，将以短信和邮件的形式通知您。
 
    1. “验证通过”，应用可正式接入运动健康服务；
    2. “验证驳回”，我们会以邮件的形式告知驳回原因（也可在开发者联盟中运动健康服务卡片上查看您应用的状态信息），请在我们的指引下调整并再次提交“申请验证”。重新提交的审核周期约为15个工作日，如有其他疑问，请通过[智能客服](https://developer.huawei.com/consumer/cn/customerService/#/bot-dev-top/faq-top/faq-talk-top)反馈。
 
-   说明
+   **说明** 
 
    申请验证审核通过后，您申请的权限将于24小时后生效。
 
@@ -34,7 +36,7 @@ content_hash: sha256:ff0474153c66213c77e7f15b739a538e1e02ebd875d39976625df4b4837
 
 以下为申请验证被驳回的高频问题，请您在申请前阅读以下内容，避免在您的申请材料中出现下述问题影响您审核通过的进度。若您已提交申请并被驳回，也可参考以下解决方案修改申请材料并重新提交。
 
-说明
+**说明** 
 
 * 应用上线checkList中自检结果为必填内容，请正确、完整地填写。您提交的应用上线checkList中的各场景的举证材料，需要符合checkList中的标准，请注意对应场景处理过程的视频内容需要完整。
 * 举证材料提交不符合要求将会影响您的审核通过进度，请在上传材料前仔细核查。

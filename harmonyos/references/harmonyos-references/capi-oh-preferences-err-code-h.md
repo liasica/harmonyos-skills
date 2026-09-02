@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-p
 title: oh_preferences_err_code.h
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 头文件 > oh_preferences_err_code.h
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:26+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:9b599fb82d6d18a200cfe9f7c15117a59a26e7ec60423b8e01d9a53e89194d9d
+scraped_at: 2026-09-02T15:00:42+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c3f4b2a9e207375d6744da3b40c576c6e55cfc708fbef0b68fe75bec21daf35b
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明首选项模块统一使用的错误码信息。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,14 +32,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Preferences\_ErrCode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_Preferences_ErrCode
+```c
+enum OH_Preferences_ErrCode
 ```
 
 **描述**

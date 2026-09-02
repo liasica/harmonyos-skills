@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-interface
 title: ohpm仓库接口协议
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > ohpm仓库接口协议
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:56+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:487d1f80a40295c54e751d7daa4cedcc0224cb6b4147a2481f405c1c80427046
+scraped_at: 2026-09-02T15:00:19+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a0ddce7877699403d6d5bfe2696dc1e44c95baa94074f6e7e1aa72d66364a008
 ---
 
 ## 概述
@@ -27,7 +27,7 @@ ohpm客户端在访问ohpm-repo时，支持公私钥和Access Token两种认证�
 * 在使用公私钥认证时，ohpm客户端通过Login API从ohpm-repo获取一个Token（Token生成细节请参考Login API的具体定义），然后在调用publish，unpublish和dist-tags的API时，会在Http Header的Authorization字段携带相应的Token，该Token具有读写权限。
 * 在使用Access Token认证时，需要在ohpm客户端配置[AccessToken](ide-ohpm-certification.md#section1631316181327)。Access Token 按权限范围分为两类：只读Access Token和读写Access Token。在ohpm客户端访问ohpm-repo时，Http Header的Authorization字段将携带相应的Access Token。在调用Fetch Metadata时，如果配置不支持[匿名访问](ide-ohpm-system-settings.md#section71112584105)，系统会优先识别只读Access Token，只读Access Token不存在将继续识别读写Access Token；在调用其他需读写权限API时，ohpm客户端仅识别读写Access Token。Access Token一般通过ohpm-repo管理界面生成，当然也可以使用[认证插件](ide-custom-auth-plugin.md)，将Access Token的生成代理给专门的认证服务实现，进而调用认证服务的API来完成相应的认证操作。
 
-说明
+**说明** 
 
 从ohpm-repo 5.4.3 Beta版本开始，Fetch Metadata API支持获取三方库的精简元数据。
 
@@ -37,8 +37,8 @@ ohpm客户端在访问ohpm-repo时，支持公私钥和Access Token两种认证�
 
 返回指定包的metadata元数据。
 
-```
-1. GET <router-prefix>/:group?/:package_name
+```screen
+GET <router-prefix>/:group?/:package_name
 ```
 
 | 属性 | 类型 | 必填项 | 描述 |
@@ -48,14 +48,14 @@ ohpm客户端在访问ohpm-repo时，支持公私钥和Access Token两种认证�
 
 **请求示例**（以请求一个应用内的HAR包 @test/package1 为例）**：**
 
-```
-1. 请求方法：GET
-2. // http://myohpmrepo.com：ohpm-repo仓库地址，开发过程中需要替换为实际搭建的ohpm-repo仓库域名或IP地址。
-3. // repos：固定字段。
-4. // ohpm：指定访问的仓库名称，开发过程中需要替换为实际使用的仓库。
-5. 请求  URL：http://myohpmrepo.com/repos/ohpm/@test/package1
-6. 请求头：
-7. authorization: NjJmNjFhODI3N2ZlNDUwMzlhYmUwNjQxZjQ3ZTNhZDU=
+```screen
+请求方法：GET
+// http://myohpmrepo.com：ohpm-repo仓库地址，开发过程中需要替换为实际搭建的ohpm-repo仓库域名或IP地址。
+// repos：固定字段。
+// ohpm：指定访问的仓库名称，开发过程中需要替换为实际使用的仓库。
+请求  URL：http://myohpmrepo.com/repos/ohpm/@test/package1  
+请求头：
+authorization: NjJmNjFhODI3N2ZlNDUwMzlhYmUwNjQxZjQ3ZTNhZDU=
 ```
 
 请求头包含两个字段，描述如下：
@@ -63,15 +63,16 @@ ohpm客户端在访问ohpm-repo时，支持公私钥和Access Token两种认证�
 | 属性 | 类型 | 必填项 | 描述 |
 | --- | --- | --- | --- |
 | authorization | string | 是 | 填写只读或者读写AccessToken，选填项，当ohpm-repo配置不支持匿名访问时必须填写。 |
-| x-ohpm-metadata-type | string | 否 | 当值为"install+v1"，返回精简元数据。 |
+| x-ohpm-metadata-type | string | 否 | 当值为"install+v1"，返回所有精简元数据。 |
+| x-ohpm-metadata-special-version | string | 否 | ohpm-repo 5.5.1版本新增。  用于返回固定版本的元数据，值支持固定版本号、latest版本号、tag版本号，示例如下。  ```screen 固定版本号： "3.0.0"  latest版本号："latest" tag版本号："tag:t310" ```  如未配置或者配置上述三种情况之外的值，返回所有元数据。 |
 
 **响应失败示例**（以请求一个应用内的HAR包 @test/package1 为例）**：**
 
-```
-1. {
-2. "code": 1018,
-3. "message": "package not found: @test/package1"
-4. }
+```screen
+{
+    "code": 1018,
+    "message": "package not found: @test/package1"
+}
 ```
 
 响应失败有两个字段，描述如下：
@@ -83,103 +84,103 @@ ohpm客户端在访问ohpm-repo时，支持公私钥和Access Token两种认证�
 
 **响应成功示例**（以请求一个应用内的HAR包 @test/package1 为例）：
 
-```
-1. {
-2. "_id": "@test/package1",
-3. "name": "@test/package1",
-4. "description": "Please describe the basic information.",
-5. "dist-tags": {
-6. "latest": "2.0.0"
-7. },
-8. "versions": {
-9. "1.0.0": {
-10. "name": "@test/package1",
-11. "version": "1.0.0",
-12. "description": "Please describe the basic information.",
-13. "main": "Index.ets",
-14. "author": {
-15. "name": "apple11",
-16. "url": "",
-17. "email": ""
-18. },
-19. "license": "Apache-2.0",
-20. "dependencies": {
-21. },
-22. "artifactType": "original",
-23. "_nodeVersion": "20.14.0",
-24. "_ohpmVersion": "ohpm-repo-5.0.3",
-25. "_id": "@test/package1@1.0.0",
-26. "dist": {
-27. "integrity": "sha512-UAPn6H3lsqQvwmevJSbWWv52PA8Ii6rgutLeJnVAHkNrUX2isytQ2pkzjodHuroYb64XKcwg+E6I8tUcFxwF3A==",
-28. "tarball": "https://myohpmrepo.com/repos/ohpm/@test/package1/-/@test/package1-1.0.0.har"
-29. }
-30. },
-31. "2.0.0": {
-32. "name": "@test/package1",
-33. "version": "2.0.0",
-34. "description": "Please describe the basic information.",
-35. "main": "Index.ets",
-36. "author": {
-37. "name": "apple11",
-38. "url": "",
-39. "email": ""
-40. },
-41. "license": "Apache-2.0",
-42. "dependencies": {
-43. },
-44. "artifactType": "original",
-45. "_nodeVersion": "20.14.0",
-46. "_ohpmVersion": "ohpm-repo-5.0.3-rc.2",
-47. "_id": "@test/package1@2.0.0",
-48. "dist": {
-49. "integrity": "sha512-6C47XiyVfUAljbS2d08LWEJE2dZHPFi6SNYEsR0REQVKUwlNKf6hNI8wKaI0dHCmDPhQPymOdGeTF+2E3fZWgQ==",
-50. "tarball": "https://10.70.95.74:8077/ohpm/@test/package1/-/@test/package1-2.0.0.har"
-51. }
-52. }
-53. },
-54. "_rev": "2",
-55. "time": {
-56. "1.0.0": "2024-06-26T14:48:17.302+08:00",
-57. "created": "2024-06-26T14:48:17.302+08:00",
-58. "modified": "2024-06-26T14:48:27.785+08:00",
-59. "2.0.0": "2024-06-26T14:48:27.785+08:00"
-60. }
-61. }
+```screen
+{
+  "_id": "@test/package1",
+  "name": "@test/package1",
+  "description": "Please describe the basic information.",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@test/package1",
+      "version": "1.0.0",
+      "description": "Please describe the basic information.",
+      "main": "Index.ets",
+      "author": {
+        "name": "apple11",
+        "url": "",
+        "email": ""
+      },
+      "license": "Apache-2.0",
+      "dependencies": {
+      },
+      "artifactType": "original",
+      "_nodeVersion": "20.14.0",
+      "_ohpmVersion": "ohpm-repo-5.0.3",
+      "_id": "@test/package1@1.0.0",
+      "dist": {
+        "integrity": "sha512-UAPn6H3lsqQvwmevJSbWWv52PA8Ii6rgutLeJnVAHkNrUX2isytQ2pkzjodHuroYb64XKcwg+E6I8tUcFxwF3A==",
+        "tarball": "https://myohpmrepo.com/repos/ohpm/@test/package1/-/@test/package1-1.0.0.har"
+      }
+    },
+    "2.0.0": {
+      "name": "@test/package1",
+      "version": "2.0.0",
+      "description": "Please describe the basic information.",
+      "main": "Index.ets",
+      "author": {
+        "name": "apple11",
+        "url": "",
+        "email": ""
+      },
+      "license": "Apache-2.0",
+      "dependencies": {
+      },
+      "artifactType": "original",
+      "_nodeVersion": "20.14.0",
+      "_ohpmVersion": "ohpm-repo-5.0.3-rc.2",
+      "_id": "@test/package1@2.0.0",
+      "dist": {
+        "integrity": "sha512-6C47XiyVfUAljbS2d08LWEJE2dZHPFi6SNYEsR0REQVKUwlNKf6hNI8wKaI0dHCmDPhQPymOdGeTF+2E3fZWgQ==",
+        "tarball": "https://10.70.95.74:8077/ohpm/@test/package1/-/@test/package1-2.0.0.har"
+      }
+    }
+  },
+  "_rev": "2",
+  "time": {
+    "1.0.0": "2024-06-26T14:48:17.302+08:00",
+    "created": "2024-06-26T14:48:17.302+08:00",
+    "modified": "2024-06-26T14:48:27.785+08:00",
+    "2.0.0": "2024-06-26T14:48:27.785+08:00"
+  }
+}
 ```
 
-如请求头通过x-ohpm-metadata-type携带value值"install+v1"即可拉取精简元数据，最外层对象只保留name、packageType、versions、dist-tags四个字段，versions版本对象层只保留name、version、dependencies、dynamicDependencies、dist、packageType、debug、\_ohpmVersion 8个字段；上述返回成功示例如下：
+如请求头通过x-ohpm-metadata-type携带value值"install+v1"即可拉取精简元数据，最外层对象只保留name、packageType、versions、dist-tags四个字段，versions版本对象层只保留name、version、dependencies、dynamicDependencies、dist、packageType、debug、\_ohpmVersion字段。上述返回成功示例如下：
 
-```
-1. {
-2. "name": "@test/package1",
-3. "dist-tags": {
-4. "latest": "2.0.0"
-5. },
-6. "versions": {
-7. "1.0.0": {
-8. "name": "@test/package1",
-9. "version": "1.0.0",
-10. "dependencies": {
-11. },
-12. "_ohpmVersion": "ohpm-repo-5.0.3",
-13. "dist": {
-14. "integrity": "sha512-UAPn6H3lsqQvwmevJSbWWv52PA8Ii6rgutLeJnVAHkNrUX2isytQ2pkzjodHuroYb64XKcwg+E6I8tUcFxwF3A==",
-15. "tarball": "https://myohpmrepo.com/repos/ohpm/@test/package1/-/@test/package1-1.0.0.har"
-16. }
-17. },
-18. "2.0.0": {
-19. "name": "@test/package1",
-20. "version": "2.0.0",
-21. "dependencies": {
-22. },
-23. "_ohpmVersion": "ohpm-repo-5.0.3-rc.2",
-24. "dist": {
-25. "integrity": "sha512-6C47XiyVfUAljbS2d08LWEJE2dZHPFi6SNYEsR0REQVKUwlNKf6hNI8wKaI0dHCmDPhQPymOdGeTF+2E3fZWgQ==",
-26. "tarball": "https://10.70.95.74:8077/ohpm/@test/package1/-/@test/package1-2.0.0.har"
-27. }
-28. }
-29. }
-30. }
+```screen
+{
+  "name": "@test/package1",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@test/package1",
+      "version": "1.0.0",
+      "dependencies": {
+      },
+      "_ohpmVersion": "ohpm-repo-5.0.3",
+      "dist": {
+        "integrity": "sha512-UAPn6H3lsqQvwmevJSbWWv52PA8Ii6rgutLeJnVAHkNrUX2isytQ2pkzjodHuroYb64XKcwg+E6I8tUcFxwF3A==",
+        "tarball": "https://myohpmrepo.com/repos/ohpm/@test/package1/-/@test/package1-1.0.0.har"
+      }
+    },
+    "2.0.0": {
+      "name": "@test/package1",
+      "version": "2.0.0",
+      "dependencies": {
+      },
+      "_ohpmVersion": "ohpm-repo-5.0.3-rc.2",
+      "dist": {
+        "integrity": "sha512-6C47XiyVfUAljbS2d08LWEJE2dZHPFi6SNYEsR0REQVKUwlNKf6hNI8wKaI0dHCmDPhQPymOdGeTF+2E3fZWgQ==",
+        "tarball": "https://10.70.95.74:8077/ohpm/@test/package1/-/@test/package1-2.0.0.har"
+      }
+    }
+  }
+}
 ```
 
 ### metadata响应数据说明
@@ -250,8 +251,8 @@ ohpm客户端在访问ohpm-repo时，支持公私钥和Access Token两种认证�
 
 客户端登录，获得上传包，下架包和编辑标签tag时所需的token。
 
-```
-1. POST <router-prefix>/login
+```screen
+POST <router-prefix>/login
 ```
 
 | 属性 | 类型 | 必填项 | 描述 |
@@ -261,22 +262,22 @@ ohpm客户端在访问ohpm-repo时，支持公私钥和Access Token两种认证�
 
 **请求示例**：
 
-```
-1. 请求方法：POST
-2. // http://myohpmrepo.com：ohpm-repo仓库地址，开发过程中需要替换为实际搭建的ohpm-repo仓库域名或IP地址。
-3. // repos：固定字段。
-4. // ohpm：指定访问的仓库名称，开发过程中需要替换为实际使用的仓库。
-5. 请求 URL：http://myohpmrepo.com/repos/ohpm/login
-6. 请求头：
-7. command: login；
-8. 请求体（json格式内容）：
-9. {
-10. "publishId": "95115BAFDE",
-11. "timestamp": 1702088629606,
-12. "nonce": "e3b3d53f91d0488f9838c86e306ca9f5",
-13. "signature": "qXYUnUK8Quy95a...",
-14. "version": "v1"
-15. }
+```screen
+请求方法：POST
+// http://myohpmrepo.com：ohpm-repo仓库地址，开发过程中需要替换为实际搭建的ohpm-repo仓库域名或IP地址。
+// repos：固定字段。
+// ohpm：指定访问的仓库名称，开发过程中需要替换为实际使用的仓库。
+请求 URL：http://myohpmrepo.com/repos/ohpm/login  
+请求头：
+command: login；
+请求体（json格式内容）：
+{
+  "publishId": "95115BAFDE",
+  "timestamp": 1702088629606,
+  "nonce": "e3b3d53f91d0488f9838c86e306ca9f5",
+  "signature": "qXYUnUK8Quy95a...",
+  "version": "v1"
+}
 ```
 
 请求头包含四个字段，描述如下：
@@ -305,11 +306,11 @@ ohpm客户端在访问ohpm-repo时，支持公私钥和Access Token两种认证�
 
 **响应成功示例：**
 
-```
-1. {
-2. "success": true,
-3. "token": "7100c3f38dddf3cf8234...."
-4. }
+```screen
+{
+  "success": true,
+  "token": "7100c3f38dddf3cf8234...."
+}
 ```
 
 成功响应体包含2个字段，描述如下：
@@ -321,11 +322,11 @@ ohpm客户端在访问ohpm-repo时，支持公私钥和Access Token两种认证�
 
 **响应失败示例：**
 
-```
-1. {
-2. "success": false,
-3. "error": "The timestamp is expired"
-4. }
+```screen
+{
+    "success": false,
+    "error": "The timestamp is expired"
+}
 ```
 
 失败响应体包含2个字段，描述如下：
@@ -335,7 +336,7 @@ ohpm客户端在访问ohpm-repo时，支持公私钥和Access Token两种认证�
 | success | boolean | 响应是否成功，值为false |
 | error | string | 认证失败返回的错误原因 |
 
-说明
+**说明** 
 
 token: 使用公私钥认证时，ohpm-repo生成的认证信息。认证信息必须验证有效，才有权限执行上传包、下架包和编辑标签tag等操作。
 
@@ -343,79 +344,79 @@ token: 使用公私钥认证时，ohpm-repo生成的认证信息。认证信息�
 
 ### 上传一个HAR/HSP包到ohpm-repo私仓中
 
-```
-1. PUT <router-prefix>/:package_name
+```screen
+PUT <router-prefix>/:package_name
 ```
 
 | 属性 | 类型 | 必填项 | 描述 |
 | --- | --- | --- | --- |
 | package\_name | string | 是 | 包名 |
 
-说明
+**说明** 
 
 若包名中包含组织名，则package\_name为包名进行url编码后的结果，比如：当包名为@myscope/mypkg时，package\_name为@myscope%2fmypkg。
 
 请求示例（以上传一个应用内的HSP包@myscope/myhsppkg为例）：
 
-```
-1. 请求方法：PUT
-2. // http://myohpmrepo.com：ohpm-repo仓库地址，开发过程中需要替换为实际搭建的ohpm-repo仓库域名或IP地址。
-3. // repos：固定字段。
-4. // ohpm：指定访问的仓库名称，开发过程中需要替换为实际使用的仓库。
-5. 请求 URL：http://myohpmrepo.com/repos/ohpm/@myscope%2fmypkg
-6. 请求头：
-7. command: publish
-8. Authorization：<token>
-9. 请求体（包的metadata数据，由ohpm客户端生成）：
-10. {
-11. "_id": "@myscope/myhsppkg",
-12. "name": "@myscope/myhsppkg",
-13. "packageType": "InterfaceHar",
-14. "description": "Please describe the basic information.",
-15. "dist-tags": {
-16. "latest": "1.0.4"
-17. },
-18. "versions": {
-19. "1.0.4": {
-20. "name": "@myscope/myhsppkg",
-21. "version": "1.0.4",
-22. "description": "Please describe the basic information.",
-23. "author": {
-24. "name": "fsq",
-25. "url": "",
-26. "email": ""
-27. },
-28. "license": "Apache-2.0",
-29. "packageType": "InterfaceHar",
-30. "dependencies": {
-31. "pkga": "1.0.0",
-32. "pkgb": "1.0.0"
-33. },
-34. "types": "Index.d.ets",
-35. "_nodeVersion": "16.20.1",
-36. "_ohpmVersion": "1.4.0",
-37. "_id": "@myscope/myhsppkg@1.0.4",
-38. "dist": {
-39. "integrity": "sha512-0bHCBS2JtlyX7Gq5q6tbO2eRRbj0RO2cAAagC/K6/zmDZHPGrnIScDkD3Yjip8I/YWq7VbY7HYlHXtcLApILVg==",
-40. "tarball": "https://localhost:8081/repos/ohpm/@myscope/myhsppkg/-/@myscope/myhsppkg-1.0.4.har",
-41. "integrity_hsp": "sha512-3B7KlJFEHuQ9X+Zxl+oRVIL8CCczaPu2nEGQvXrULrViXuY80Ld2CnkQEVFfd/eZK6DNAFTS1wBhqOTLYtOqow=="
-42. }
-43. }
-44. },
-45. "_attachments": {
-46. "@test/ohpmhsplib-1.0.4.har": {
-47. "content_type": "application/octet-stream",
-48. "data": "H4sIAAAAAAAACu1ZUU...",
-49. "length": 858
-50. },
-51. "@test/ohpmhsplib-1.0.4.hsp": {
-52. "content_type": "application/octet-stream",
-53. "data": "UEsDBAoAAAgAAAAAIU5v...",
-54. "length": 29185
-55. }
-56. },
-57. "hspType": "bundle_app"
-58. }
+```screen
+请求方法：PUT
+// http://myohpmrepo.com：ohpm-repo仓库地址，开发过程中需要替换为实际搭建的ohpm-repo仓库域名或IP地址。
+// repos：固定字段。
+// ohpm：指定访问的仓库名称，开发过程中需要替换为实际使用的仓库。
+请求 URL：http://myohpmrepo.com/repos/ohpm/@myscope%2fmypkg  
+请求头：
+command: publish
+Authorization：<token>
+请求体（包的metadata数据，由ohpm客户端生成）：
+{
+  "_id": "@myscope/myhsppkg",
+  "name": "@myscope/myhsppkg",
+  "packageType": "InterfaceHar",
+  "description": "Please describe the basic information.",
+  "dist-tags": {
+    "latest": "1.0.4"
+  },
+  "versions": {
+    "1.0.4": {
+      "name": "@myscope/myhsppkg",
+      "version": "1.0.4",
+      "description": "Please describe the basic information.",
+      "author": {
+        "name": "fsq",
+        "url": "",
+        "email": ""
+      },
+      "license": "Apache-2.0",
+      "packageType": "InterfaceHar",
+      "dependencies": {
+        "pkga": "1.0.0",
+        "pkgb": "1.0.0"
+      },
+      "types": "Index.d.ets",
+      "_nodeVersion": "16.20.1",
+      "_ohpmVersion": "1.4.0",
+      "_id": "@myscope/myhsppkg@1.0.4",
+      "dist": {
+        "integrity": "sha512-0bHCBS2JtlyX7Gq5q6tbO2eRRbj0RO2cAAagC/K6/zmDZHPGrnIScDkD3Yjip8I/YWq7VbY7HYlHXtcLApILVg==",
+        "tarball": "https://localhost:8081/repos/ohpm/@myscope/myhsppkg/-/@myscope/myhsppkg-1.0.4.har",
+        "integrity_hsp": "sha512-3B7KlJFEHuQ9X+Zxl+oRVIL8CCczaPu2nEGQvXrULrViXuY80Ld2CnkQEVFfd/eZK6DNAFTS1wBhqOTLYtOqow=="
+      }
+    }
+  },
+  "_attachments": {
+    "@test/ohpmhsplib-1.0.4.har": {
+      "content_type": "application/octet-stream",
+      "data": "H4sIAAAAAAAACu1ZUU...",
+      "length": 858
+    },
+    "@test/ohpmhsplib-1.0.4.hsp": {
+      "content_type": "application/octet-stream",
+      "data": "UEsDBAoAAAgAAAAAIU5v...",
+      "length": 29185
+    }
+  },
+  "hspType": "bundle_app"
+}
 ```
 
 请求头包含五个字段，描述如下：
@@ -438,7 +439,7 @@ token: 使用公私钥认证时，ohpm-repo生成的认证信息。认证信息�
 | \_attachments | json | 待发布包的包数据信息 |
 | hspType | json | hsp包的类型 |
 
-说明
+**说明** 
 
 1. 当上传的包为应用内HSP包时，包格式为tgz格式，内部包含.har及.hsp两个文件，且在元数据的\_attachments部分会包含这两个文件。
 2. 当上传的包为HAR包，包格式为.har格式。
@@ -447,28 +448,28 @@ token: 使用公私钥认证时，ohpm-repo生成的认证信息。认证信息�
 
 **成功响应体示例：**
 
-```
-1. {
-2. "code": 200,
-3. "message": "success"，
-4. }
+```screen
+{
+    "code": 200,
+    "message": "success"，
+}
 ```
 
 **失败响应体示例：**
 
-```
-1. {
-2. "success": false,
-3. "error": "<error message>"，
-4. }
+```screen
+{
+    "success": false,
+    "error": "<error message>"，
+ }
 ```
 
 ### 流式上传一个HAR/HSP到ohpm-repo
 
 ohpm客户端（5.0.1版本）和ohpm-repo（5.0.1版本）开始支持使用流式上传，当上传的三方包大小超过阈值（默认5M，可在.ohpmrc中自定义配置）时，ohpm会优先调用流式上传接口进行上传。
 
-```
-1. POST <router-prefix>/stream/:package_name
+```screen
+POST <router-prefix>/stream/:package_name
 ```
 
 | 属性 | 类型 | 必填项 | 描述 |
@@ -477,62 +478,62 @@ ohpm客户端（5.0.1版本）和ohpm-repo（5.0.1版本）开始支持使用流
 
 **请求示例**（以上传一个应用内的HSP包@myscope/myhsppkg为例）：
 
-```
-1. 请求方法：POST
-2. // http://myohpmrepo.com：ohpm-repo仓库地址，开发过程中需要替换为实际搭建的ohpm-repo仓库域名或IP地址。
-3. // repos：固定字段。
-4. // ohpm：指定访问的仓库名称，开发过程中需要替换为实际使用的仓库。
-5. 请求 URL：http://myohpmrepo.com/repos/ohpm/stream/@myscope%2fmypkg
-6. 请求头：
-7. command: publish
-8. Authorization：<token>
-9. 请求体：formData数据格式，由两部分组成：
-10. 1）metadata=<file.json>：包的元数据
-11. 2）pkg_stream=<@hsp.tgz;application/octet-stream>：待上传包的文件流数据
+```screen
+请求方法：POST
+// http://myohpmrepo.com：ohpm-repo仓库地址，开发过程中需要替换为实际搭建的ohpm-repo仓库域名或IP地址。
+// repos：固定字段。
+// ohpm：指定访问的仓库名称，开发过程中需要替换为实际使用的仓库。
+请求 URL：http://myohpmrepo.com/repos/ohpm/stream/@myscope%2fmypkg  
+请求头：
+command: publish
+Authorization：<token>
+请求体：formData数据格式，由两部分组成：
+1）metadata=<file.json>：包的元数据
+2）pkg_stream=<@hsp.tgz;application/octet-stream>：待上传包的文件流数据
 ```
 
 请求示例中请求体的包元数据内容如下所示：
 
-```
-1. {
-2. "_id": "@myscope/myhsppkg",
-3. "name": "@myscope/myhsppkg",
-4. "packageType": "InterfaceHar",
-5. "description": "Please describe the basic information.",
-6. "dist-tags": {
-7. "latest": "1.0.4"
-8. },
-9. "versions": {
-10. "1.0.4": {
-11. "name": "@myscope/myhsppkg",
-12. "version": "1.0.4",
-13. "description": "Please describe the basic information.",
-14. "author": {
-15. "name": "fsq",
-16. "url": "",
-17. "email": ""
-18. },
-19. "license": "Apache-2.0",
-20. "packageType": "InterfaceHar",
-21. "dependencies": {
-22. "pkga": "1.0.0",
-23. "pkgb": "1.0.0"
-24. },
-25. "types": "Index.d.ets",
-26. "_nodeVersion": "16.20.1",
-27. "_ohpmVersion": "1.4.0",
-28. "_id": "@myscope/myhsppkg@1.0.4",
-29. "dist": {
-30. "integrity": "sha512-0bHCBS2JtlyX7Gq5q6tbO2eRRbj0RO2cAAagC/K6/zmDZHPGrnIScDkD3Yjip8I/YWq7VbY7HYlHXtcLApILVg==",
-31. "tarball": "https://localhost:8081/repos/ohpm/@myscope/myhsppkg/-/@myscope/myhsppkg-1.0.4.har",
-32. "integrity_hsp": "sha512-3B7KlJFEHuQ9X+Zxl+oRVIL8CCczaPu2nEGQvXrULrViXuY80Ld2CnkQEVFfd/eZK6DNAFTS1wBhqOTLYtOqow=="
-33. }
-34. }
-35. },
-36. "hspType": "bundle_app"
-37. "pkg": "D:\\basicData\\har\\package.tgz",
-38. "isTgz": true
-39. }
+```screen
+{
+  "_id": "@myscope/myhsppkg",
+  "name": "@myscope/myhsppkg",
+  "packageType": "InterfaceHar",
+  "description": "Please describe the basic information.",
+  "dist-tags": {
+    "latest": "1.0.4"
+  },
+  "versions": {
+    "1.0.4": {
+      "name": "@myscope/myhsppkg",
+      "version": "1.0.4",
+      "description": "Please describe the basic information.",
+      "author": {
+        "name": "fsq",
+        "url": "",
+        "email": ""
+      },
+      "license": "Apache-2.0",
+      "packageType": "InterfaceHar",
+      "dependencies": {
+        "pkga": "1.0.0",
+        "pkgb": "1.0.0"
+      },
+      "types": "Index.d.ets",
+      "_nodeVersion": "16.20.1",
+      "_ohpmVersion": "1.4.0",
+      "_id": "@myscope/myhsppkg@1.0.4",
+      "dist": {
+        "integrity": "sha512-0bHCBS2JtlyX7Gq5q6tbO2eRRbj0RO2cAAagC/K6/zmDZHPGrnIScDkD3Yjip8I/YWq7VbY7HYlHXtcLApILVg==",
+        "tarball": "https://localhost:8081/repos/ohpm/@myscope/myhsppkg/-/@myscope/myhsppkg-1.0.4.har",
+        "integrity_hsp": "sha512-3B7KlJFEHuQ9X+Zxl+oRVIL8CCczaPu2nEGQvXrULrViXuY80Ld2CnkQEVFfd/eZK6DNAFTS1wBhqOTLYtOqow=="
+      }
+    }
+  },
+  "hspType": "bundle_app"
+   "pkg": "D:\\basicData\\har\\package.tgz",
+   "isTgz": true
+}
 ```
 
 请求头包含五个字段，描述如下：
@@ -556,7 +557,7 @@ ohpm客户端（5.0.1版本）和ohpm-repo（5.0.1版本）开始支持使用流
 | pkg | string | 记录上传包的路径 |
 | isTgz | boolean | 记录是否是tgz包 |
 
-说明
+**说明** 
 
 1. 当上传的包为应用内HSP包时，包格式为tgz格式，内部包含.har及.hsp两个文件。
 2. 当上传的包为HAR包，包格式为.har格式。
@@ -565,35 +566,35 @@ ohpm客户端（5.0.1版本）和ohpm-repo（5.0.1版本）开始支持使用流
 
 **成功响应体示例：**
 
-```
-1. {
-2. "code": 200,
-3. "message": "success"
-4. }
+```screen
+{
+    "code": 200,
+    "message": "success"
+}
 ```
 
 **失败响应体示例：**
 
-```
-1. {
-2. "success": false,
-3. "error": "<error message>"
-4. }
+```screen
+{
+    "success": false,
+    "error": "<error message>"
+ }
 ```
 
 ## Unpublish
 
 从ohpm-repo中下架一个HAR/HSP包 （下架一个包的某个版本，或是整个包）。
 
-```
-1. DELETE <router-prefix>/:package_name
+```screen
+DELETE <router-prefix>/:package_name
 ```
 
 | 属性 | 类型 | 必填项 | 描述 |
 | --- | --- | --- | --- |
 | package\_name | string | 是 | 包名 |
 
-说明
+**说明** 
 
 1. 若包名中包含组织名，则package\_name为包名进行url编码后的结果，比如：当包名为@myscope/myhsppkg时，package\_name为@myscope%2fmyhsppkg。
 2. 若指定具体版本需要在请求体中加上<version>部分，比如：{"version":"1.0.0"}。
@@ -601,17 +602,17 @@ ohpm客户端（5.0.1版本）和ohpm-repo（5.0.1版本）开始支持使用流
 
 请求示例：
 
-```
-1. 请求方法：DELETE
-2. // http://myohpmrepo.com：ohpm-repo仓库地址，开发过程中需要替换为实际搭建的ohpm-repo仓库域名或IP地址。
-3. // repos：固定字段。
-4. // ohpm：指定访问的仓库名称，开发过程中需要替换为实际使用的仓库。
-5. 请求 URL：http://myohpmrepo.com/repos/ohpm/@myscope%2fmyhsppkg
-6. 请求头：
-7. command: unpublish
-8. Authorization：<token>
-9. 请求体：
-10. {"version":"1.0.0"}
+```screen
+请求方法：DELETE
+// http://myohpmrepo.com：ohpm-repo仓库地址，开发过程中需要替换为实际搭建的ohpm-repo仓库域名或IP地址。
+// repos：固定字段。
+// ohpm：指定访问的仓库名称，开发过程中需要替换为实际使用的仓库。
+请求 URL：http://myohpmrepo.com/repos/ohpm/@myscope%2fmyhsppkg  
+请求头：
+command: unpublish
+Authorization：<token>
+请求体：
+{"version":"1.0.0"}
 ```
 
 请求头包含五个字段，描述如下：
@@ -623,56 +624,56 @@ ohpm客户端（5.0.1版本）和ohpm-repo（5.0.1版本）开始支持使用流
 
 **成功响应体示例：**
 
-```
-1. {
-2. "code": 200,
-3. "message": "success"
-4. }
+```screen
+{
+    "code": 200,
+    "message": "success"
+}
 ```
 
 **失败响应体示例：**
 
-```
-1. {
-2. "success": false,
-3. "error": "<error message>"
-4. }
+```screen
+{
+    "success": false,
+    "error": "<error message>"
+ }
 ```
 
 ## Ping
 
 检测与ohpm-repo仓库的网络连通性。
 
-```
-1. GET <router-prefix>/-/ping
+```screen
+GET <router-prefix>/-/ping
 ```
 
 请求示例：
 
-```
-1. 请求方法：GET
-2. // http://myohpmrepo.com：ohpm-repo仓库地址，开发过程中需要替换为实际搭建的ohpm-repo仓库域名或IP地址。
-3. // repos：固定字段。
-4. // ohpm：指定访问的仓库名称，开发过程中需要替换为实际使用的仓库。
-5. 请求 URL：http://myohpmrepo.com/repos/ohpm/-/ping
+```screen
+请求方法：GET
+// http://myohpmrepo.com：ohpm-repo仓库地址，开发过程中需要替换为实际搭建的ohpm-repo仓库域名或IP地址。
+// repos：固定字段。
+// ohpm：指定访问的仓库名称，开发过程中需要替换为实际使用的仓库。
+请求 URL：http://myohpmrepo.com/repos/ohpm/-/ping
 ```
 
 响应成功示例：
 
-```
-1. {
-2. "code": 200,
-3. "message": "success"
-4. }
+```screen
+{
+    "code": 200,
+    "message": "success"
+}
 ```
 
 失败响应体示例：
 
-```
-1. {
-2. "success": false,
-3. "error": "<error message>"
-4. }
+```screen
+{
+    "success": false,
+    "error": "<error message>"
+ }
 ```
 
 ## DistTags
@@ -681,8 +682,8 @@ ohpm客户端（5.0.1版本）和ohpm-repo（5.0.1版本）开始支持使用流
 
 为包添加tag。
 
-```
-1. POST <router-prefix>/-/package/:package_name/dist-tags/:tag
+```screen
+POST <router-prefix>/-/package/:package_name/dist-tags/:tag
 ```
 
 | 属性 | 类型 | 必填项 | 描述 |
@@ -690,23 +691,23 @@ ohpm客户端（5.0.1版本）和ohpm-repo（5.0.1版本）开始支持使用流
 | package\_name | string | 是 | 包名 |
 | tag | string | 是 | 标签名 |
 
-说明
+**说明** 
 
 若包名中包含组织名，则package\_name为包名进行url编码后的结果，比如：当包名为@myscope/mypkg时，package\_name为@myscope%2fmypkg。
 
 请求示例（为包@myscope/myhsppkg@1.0.0增加标签（tag）test）：
 
-```
-1. 请求方法：POST
-2. // http://myohpmrepo.com：ohpm-repo仓库地址，开发过程中需要替换为实际搭建的ohpm-repo仓库域名或IP地址。
-3. // repos：固定字段。
-4. // ohpm：指定访问的仓库名称，开发过程中需要替换为实际使用的仓库。
-5. 请求 URL：http://myohpmrepo.com/repos/ohpm/-/package/@myscope%2fmypkg/dist-tags/test
-6. 请求头：
-7. command: dist-tags
-8. Authorization：<token>
-9. 请求体：
-10. {"version":"1.0.0"}
+```screen
+请求方法：POST
+// http://myohpmrepo.com：ohpm-repo仓库地址，开发过程中需要替换为实际搭建的ohpm-repo仓库域名或IP地址。
+// repos：固定字段。
+// ohpm：指定访问的仓库名称，开发过程中需要替换为实际使用的仓库。
+请求 URL：http://myohpmrepo.com/repos/ohpm/-/package/@myscope%2fmypkg/dist-tags/test
+请求头：
+command: dist-tags
+Authorization：<token>
+请求体：
+{"version":"1.0.0"}
 ```
 
 请求头包含五个字段，描述如下：
@@ -718,28 +719,28 @@ ohpm客户端（5.0.1版本）和ohpm-repo（5.0.1版本）开始支持使用流
 
 响应成功示例：
 
-```
-1. {
-2. "code": 200,
-3. "message": "success"
-4. }
+```screen
+{
+    "code": 200,
+    "message": "success"
+}
 ```
 
 失败响应体示例：
 
-```
-1. {
-2. "success": false,
-3. "error": "<error message>"
-4. }
+```screen
+{
+    "success": false,
+    "error": "<error message>"
+ }
 ```
 
 ### 更新tag
 
 修改包tag对应的版本号。
 
-```
-1. PUT <router-prefix>/-/package/:package_name/dist-tags/:tag
+```screen
+PUT <router-prefix>/-/package/:package_name/dist-tags/:tag
 ```
 
 | 属性 | 类型 | 必填项 | 描述 |
@@ -749,17 +750,17 @@ ohpm客户端（5.0.1版本）和ohpm-repo（5.0.1版本）开始支持使用流
 
 请求示例（为包@myscope/myhsppkg修改标签（tag）test对应版本号为2.0.0）：
 
-```
-1. 请求方法：PUT
-2. // http://myohpmrepo.com：ohpm-repo仓库地址，开发过程中需要替换为实际搭建的ohpm-repo仓库域名或IP地址。
-3. // repos：固定字段。
-4. // ohpm：指定访问的仓库名称，开发过程中需要替换为实际使用的仓库。
-5. 请求 URL：http://myohpmrepo.com/repos/ohpm/-/package/@myscope%2fmypkg/dist-tags/test
-6. 请求头：
-7. command: dist-tags
-8. Authorization：<token>
-9. 请求体：
-10. {"version":"2.0.0"}
+```screen
+请求方法：PUT
+// http://myohpmrepo.com：ohpm-repo仓库地址，开发过程中需要替换为实际搭建的ohpm-repo仓库域名或IP地址。
+// repos：固定字段。
+// ohpm：指定访问的仓库名称，开发过程中需要替换为实际使用的仓库。
+请求 URL：http://myohpmrepo.com/repos/ohpm/-/package/@myscope%2fmypkg/dist-tags/test
+请求头：
+command: dist-tags
+Authorization：<token>
+请求体：
+{"version":"2.0.0"}
 ```
 
 请求头包含五个字段，描述如下：
@@ -771,28 +772,28 @@ ohpm客户端（5.0.1版本）和ohpm-repo（5.0.1版本）开始支持使用流
 
 **响应成功示例：**
 
-```
-1. {
-2. "code": 200,
-3. "message": "success"
-4. }
+```screen
+{
+    "code": 200,
+    "message": "success"
+}
 ```
 
 **失败响应体示例：**
 
-```
-1. {
-2. "success": false,
-3. "error": "<error message>"
-4. }
+```screen
+{
+    "success": false,
+    "error": "<error message>"
+ }
 ```
 
 ### 删除tag
 
 删除包的tag。
 
-```
-1. DELETE <router-prefix>/-/package/:package_name/dist-tags/:tag
+```screen
+DELETE <router-prefix>/-/package/:package_name/dist-tags/:tag
 ```
 
 | 属性 | 类型 | 必填项 | 描述 |
@@ -802,15 +803,15 @@ ohpm客户端（5.0.1版本）和ohpm-repo（5.0.1版本）开始支持使用流
 
 **请求示例**（删除包@myscope/myhsppkg的标签（tag）test）：
 
-```
-1. 请求方法：DELETE
-2. // http://myohpmrepo.com：ohpm-repo仓库地址，开发过程中需要替换为实际搭建的ohpm-repo仓库域名或IP地址。
-3. // repos：固定字段。
-4. // ohpm：指定访问的仓库名称，开发过程中需要替换为实际使用的仓库。
-5. 请求 URL：http://myohpmrepo.com/repos/ohpm/-/package/@myscope%2fmypkg/dist-tags/test
-6. 请求头：
-7. command: dist-tags
-8. Authorization：<token>
+```screen
+请求方法：DELETE
+// http://myohpmrepo.com：ohpm-repo仓库地址，开发过程中需要替换为实际搭建的ohpm-repo仓库域名或IP地址。
+// repos：固定字段。
+// ohpm：指定访问的仓库名称，开发过程中需要替换为实际使用的仓库。
+请求 URL：http://myohpmrepo.com/repos/ohpm/-/package/@myscope%2fmypkg/dist-tags/test
+请求头：
+command: dist-tags
+Authorization：<token>
 ```
 
 请求头包含五个字段，描述如下：
@@ -822,28 +823,28 @@ ohpm客户端（5.0.1版本）和ohpm-repo（5.0.1版本）开始支持使用流
 
 **响应成功示例：**
 
-```
-1. {
-2. "code": 200,
-3. "message": "success"
-4. }
+```screen
+{
+    "code": 200,
+    "message": "success"
+}
 ```
 
 **失败响应体示例：**
 
-```
-1. {
-2. "success": false,
-3. "error": "<error message>"
-4. }
+```screen
+{
+    "success": false,
+    "error": "<error message>"
+ }
 ```
 
 ## Versions
 
 用于查看三方库版本列表，查询结果按照发布时间升序排列，以列表形式进行分页展示。
 
-```
-1. GET <router-prefix>/:group?/:package_name/versions?pageNum=1&pageSize=10
+```screen
+GET <router-prefix>/:group?/:package_name/versions?pageNum=1&pageSize=10
 ```
 
 | 属性 | 类型 | 必填项 | 描述 |
@@ -853,20 +854,20 @@ ohpm客户端（5.0.1版本）和ohpm-repo（5.0.1版本）开始支持使用流
 | pageNum | number | 否 | 页码，取值范围：[1, 10000] |
 | pageSize | number | 否 | 每页的版本数量，取值范围：[1, 500] |
 
-说明
+**说明** 
 
 若包名中包含组织名，则package\_name为包名进行url编码后的结果，比如：当包名为@myscope/mypkg时，package\_name为@myscope%2fmypkg。
 
 请求示例（以查看@myscope/myhsppkg包中的版本为例）：
 
-```
-1. 请求方法：GET
-2. // http://myohpmrepo.com：ohpm-repo仓库地址，开发过程中需要替换为实际搭建的ohpm-repo仓库域名或IP地址。
-3. // repos：固定字段。
-4. // ohpm：指定访问的仓库名称，开发过程中需要替换为实际使用的仓库。
-5. 请求 URL：http://myohpmrepo.com/repos/ohpm/@myscope%2fmypkg/versions?pageNum=1&pageSize=10
-6. 请求头：
-7. authorization: NjJmNjFhODI3N2ZlNDUwMzlhYmUwNjQxZjQ3ZTNhZDU=
+```screen
+请求方法：GET
+// http://myohpmrepo.com：ohpm-repo仓库地址，开发过程中需要替换为实际搭建的ohpm-repo仓库域名或IP地址。
+// repos：固定字段。
+// ohpm：指定访问的仓库名称，开发过程中需要替换为实际使用的仓库。
+请求 URL：http://myohpmrepo.com/repos/ohpm/@myscope%2fmypkg/versions?pageNum=1&pageSize=10
+请求头：
+authorization: NjJmNjFhODI3N2ZlNDUwMzlhYmUwNjQxZjQ3ZTNhZDU=
 ```
 
 请求头包含一个字段，描述如下：
@@ -877,11 +878,11 @@ ohpm客户端（5.0.1版本）和ohpm-repo（5.0.1版本）开始支持使用流
 
 **响应失败示例**（以请求一个应用内的HAR包 @test/package1 为例）**：**
 
-```
-1. {
-2. "code": 1018,
-3. "message": "package not found: @test/package1"
-4. }
+```screen
+{
+    "code": 1018,
+    "message": "package not found: @test/package1"
+}
 ```
 
 响应失败有两个字段，描述如下：
@@ -893,34 +894,34 @@ ohpm客户端（5.0.1版本）和ohpm-repo（5.0.1版本）开始支持使用流
 
 **响应成功示例**：
 
-```
-1. {
-2. "code": 200,
-3. "body": {
-4. "total": 2,
-5. "pageNum": 1,
-6. "pageSize": 10,
-7. "rows": ["1.0.1","1.0.2"],
-8. "pages": 1
-9. }
-10. }
+```screen
+{
+    "code": 200,
+    "body": {
+        "total": 2,
+        "pageNum": 1,
+        "pageSize": 10,
+        "rows": ["1.0.1","1.0.2"],
+        "pages": 1
+    } 
+}
 ```
 
 **失败响应体示例**：
 
-```
-1. {
-2. "code": 404,
-3. "error": "<error message>"
-4. }
+```screen
+{
+    "code": 404,
+    "error": "<error message>"
+ }
 ```
 
 ## CheckUpdate
 
 用于查询当前引入的三方库是否有更新，查询结果会过滤掉不存在的包以列表形式展示，一次最多可查询50个库。
 
-```
-1. POST <router-prefix>/checkUpdate
+```screen
+POST <router-prefix>/checkUpdate
 ```
 
 请求体body为一个array数组，数组最大长度为50，body的item是一个json对象，包含五个字段，描述如下：
@@ -935,25 +936,25 @@ ohpm客户端（5.0.1版本）和ohpm-repo（5.0.1版本）开始支持使用流
 
 请求示例（以查看@myscope/myhsppkg包的版本更新为例）：
 
-```
-1. 请求方法：post
-2. // http://myohpmrepo.com：ohpm-repo仓库地址，开发过程中需要替换为实际搭建的ohpm-repo仓库域名或IP地址。
-3. // repos：固定字段。
-4. // ohpm：指定访问的仓库名称，开发过程中需要替换为实际使用的仓库。
-5. // checkUpdate：固定字段。
-6. 请求 URL：http://myohpmrepo.com/repos/ohpm/checkUpdate
-7. 请求头：
-8. Authorization: NjJmNjFhODI3N2ZlNDUwMzlhYmUwNjQxZjQ3ZTNhZDU=
-9. 请求体：
-10. [
-11. {
-12. "packageName":"@myscope/myhsppkg",
-13. "moduleName":"modulea",
-14. "dependencyConfig":"*",
-15. "installedVersion":"1.0.0",
-16. "depth":0
-17. }
-18. ]
+```screen
+请求方法：post
+// http://myohpmrepo.com：ohpm-repo仓库地址，开发过程中需要替换为实际搭建的ohpm-repo仓库域名或IP地址。
+// repos：固定字段。
+// ohpm：指定访问的仓库名称，开发过程中需要替换为实际使用的仓库。
+// checkUpdate：固定字段。
+请求 URL：http://myohpmrepo.com/repos/ohpm/checkUpdate
+请求头：
+Authorization: NjJmNjFhODI3N2ZlNDUwMzlhYmUwNjQxZjQ3ZTNhZDU=
+请求体：
+[
+    {
+        "packageName":"@myscope/myhsppkg",
+        "moduleName":"modulea",
+        "dependencyConfig":"*",
+        "installedVersion":"1.0.0",
+        "depth":0
+    }
+]
 ```
 
 请求头包含一个字段，描述如下：
@@ -964,26 +965,26 @@ ohpm客户端（5.0.1版本）和ohpm-repo（5.0.1版本）开始支持使用流
 
 **响应成功示例**：
 
-```
-1. {
-2. "code": 200,
-3. "body": [
-4. {
-5. "packageName": "@myscope/myhsppkg",
-6. "depth": 0,
-7. "moduleName": "modulea",
-8. "installedVersion": "1.0.0",
-9. "wantedVersion": "2.0.0",
-10. "latestVersion": "2.0.0",
-11. "updateType": "major",
-12. "description": "major update",
-13. "dependentPackageName": "",
-14. "homePage": "",
-15. "recommend": [],
-16. "security": []
-17. }
-18. ]
-19. }
+```screen
+{
+    "code": 200,
+    "body": [
+        {
+            "packageName": "@myscope/myhsppkg",
+            "depth": 0,
+            "moduleName": "modulea",
+            "installedVersion": "1.0.0",
+            "wantedVersion": "2.0.0",
+            "latestVersion": "2.0.0",
+            "updateType": "major",
+            "description": "major update",
+            "dependentPackageName": "",
+            "homePage": "",
+            "recommend": [],
+            "security": []
+        }
+    ]
+}
 ```
 
 响应体包含两个字段，描述如下：
@@ -1012,11 +1013,11 @@ body的item是一个json对象，包含十二个字段，描述如下：
 
 **响应失败示例****：**
 
-```
-1. {
-2. "code": 1001,
-3. "error": "ModuleName verification failed"
-4. }
+```screen
+{
+    "code": 1001,
+    "error": "ModuleName verification failed"
+}
 ```
 
 ## 仓库响应码说明
@@ -1030,6 +1031,6 @@ body的item是一个json对象，包含十二个字段，描述如下：
 | 500 | 仓库所有接口 | 服务器内部错误 |
 | 598 | Publish | 当仓库上传接口返回的响应状态码为598时，ohpm 5.0.1及以上版本会尝试去重新上传 |
 
-注意
+**注意** 
 
 由于[流式上传接口](ide-interface-protocol.md#section08863329310)在ohpm 5.0.1版本才开始支持，当ohpm调用该接口时，若返回的响应状态码为404时，ohpm客户端会再次调用[上传接口](ide-interface-protocol.md#section444511511524)上传。为了保证与ohpm客户端的兼容性，请确保当访问仓库不存在的接口仓库的响应状态码为404。

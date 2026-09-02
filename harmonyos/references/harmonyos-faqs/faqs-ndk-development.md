@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-develo
 title: NDK开发
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:28+08:00
-doc_updated_at: 2026-03-20
-content_hash: sha256:a1b01409f42af4c2b4f95e5d63e150064f84cd0f1180e71123aeb5ceb0e34bc4
+scraped_at: 2026-09-02T14:53:56+08:00
+doc_updated_at: 2026-08-27
+content_hash: sha256:e5af035ecba9e404b17c1627f9b6a01f06205ee450ac8ff24e3b7367bf9cba6e
 ---
 
 * **[在Native侧如何精准获取ArkTS侧传入的字符串长度](faqs-ndk-1.md)**
@@ -46,10 +46,10 @@ content_hash: sha256:a1b01409f42af4c2b4f95e5d63e150064f84cd0f1180e71123aeb5ceb0e
 * **[如何正确地在CMakeLists.txt文件中配置头文件搜索路径](faqs-ndk-43.md)**
 * **[Native侧如何引入头文件deviceinfo.h](faqs-ndk-44.md)**
 * **[如何在Native侧构建一个ArkTS对象](faqs-ndk-45.md)**
-* **[Native C++模板中，生成的so库的名称在哪里定义，需要与哪些内容保持一致](faqs-ndk-46.md)**
+* **[Native C++模版中，生成的so库的名称在哪里定义，需要与哪些内容保持一致](faqs-ndk-46.md)**
 * **[Native侧如何打印char指针](faqs-ndk-47.md)**
-* **[C++创建的（napi\_create\_object），或者作为参数传下来的JS value，如果想持久持有，需要怎么做？以及怎么主动销毁或减少引用计数](faqs-ndk-48.md)**
-* **[使用Node-API实现ArkTS与C/C++语言交互](faqs-ndk-49.md)**
+* **[c++创建的（napi\_create\_object），或者作为参数传下来的js value，如果想持久持有，需要怎么做？以及怎么主动销毁或减少引用计数](faqs-ndk-48.md)**
+* **[在ArkTS层往C++层注册一个object或function，C++层可以按需往这个回调上进行扔消息同步到上层应用么，请提供示例？在注册object或function时，napi\_env是否可以被长时持有？扔消息同步到上层应用时，是否需要在特定线程](faqs-ndk-49.md)**
 * **[Cmake编译时如何显示不同级别的日志信息](faqs-ndk-50.md)**
 * **[ArkTS侧如何释放绑定的C++侧对象](faqs-ndk-51.md)**
 * **[Native侧如何获取ArkTS侧的Uint8Array实例](faqs-ndk-52.md)**
@@ -77,3 +77,25 @@ content_hash: sha256:a1b01409f42af4c2b4f95e5d63e150064f84cd0f1180e71123aeb5ceb0e
 * **[Native侧如何合理管控对象的生命周期](faqs-ndk-80.md)**
 * **[C/C++是否提供有OpenSSL库](faqs-ndk-81.md)**
 * **[如何在Native侧释放ArkTS对象](faqs-ndk-82.md)**
+* **[ArkTS与Native C++间数据传递异常](faqs-ndk-development-1.md)**
+* **[NAPI调用失败常见问题处理](faqs-ndk-development-2.md)**
+* **[如何解决napi\_create\_bool无法创建C++的bool类型](faqs-ndk-development-3.md)**
+* **[修改编译配置文件参数后导致SO文件异常变大的问题如何处理](faqs-ndk-development-4.md)**
+* **[NDK工程编译时找不到符号](faqs-ndk-development-5.md)**
+* **[NDK工程使用AES加密算法对任意长度明文加密失败](faqs-ndk-development-6.md)**
+* **[如何实现ArkTS到Native的跨模块长调用](faqs-ndk-development-7.md)**
+* **[如何在C++侧打开Picker获取的用户文件](faqs-ndk-development-8.md)**
+* **[NDK中实现AVScreenCapture在Surface模式下回调编码数据到ArkTS侧](faqs-ndk-development-9.md)**
+* **[如何解决构建HAR包时头文件未被打包的问题](faqs-ndk-development-10.md)**
+* **[从napi导出的C++类如何在ArkTS侧被派生](faqs-ndk-development-11.md)**
+* **[如何避免调用napi\_release\_threadsafe\_function释放tsfn后js\_cb被再次执行](faqs-ndk-development-12.md)**
+* **[NDK工程编译时提示找不到SO文件](faqs-ndk-development-13.md)**
+* **[C++侧使用ArrayBuffer接收Float数组时异常](faqs-ndk-development-14.md)**
+* **[native如何通过父类创建子类并返回到ArkTS侧](faqs-ndk-development-15.md)**
+* **[ArkTS侧传入的string转换成std::string类型时报错](faqs-ndk-development-16.md)**
+* **[元服务/智能表应用能否使用NDK开发](faqs-ndk-development-17.md)**
+* **[ArkTS侧如何批量传递函数到native侧](faqs-ndk-development-18.md)**
+* **[napi\_load\_module\_with\_info使用限制和注意事项](faqs-ndk-development-19.md)**
+* **[在HarmonyOS工程中如何引用外部构建的so库](faqs-ndk-development-20.md)**
+* **[如何将C++中的复杂类传递至ArkTS](faqs-ndk-development-21.md)**
+* **[NDK线程开发中的Env使用问题](faqs-ndk-development-22.md)**

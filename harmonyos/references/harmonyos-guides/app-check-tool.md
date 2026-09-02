@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-check-too
 title: 扫描工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > 扫描工具
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:34:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:93990e302701b66ded30fa7db0a12c81084ca2b48bc21ce514e918bd22ccafc6
+scraped_at: 2026-09-02T14:50:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4264c52435db6892412f7ba302bac188c78d7288ac0da21f7a001b41fb6659e1
 ---
 
 ## 简介
@@ -20,7 +20,7 @@ content_hash: sha256:93990e302701b66ded30fa7db0a12c81084ca2b48bc21ce514e918bd22c
 
 扫描工具app\_check\_tool.jar需要从SDK路径下的toolchains目录中获取。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/eM3ufJQeQ16B8TzDmx5LTg/zh-cn_image_0000002558765022.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/RyB7bLTRTLqPPnakamSdiw/zh-cn_image_0000002736313563.png)
 
 ## 约束与限制
 
@@ -31,8 +31,8 @@ content_hash: sha256:93990e302701b66ded30fa7db0a12c81084ca2b48bc21ce514e918bd22c
 
 **命令示例：**
 
-```
-1. java -jar app_check_tool.jar --input ./test.app --out-path ./test --stat-duplicate true
+```text
+java -jar app_check_tool.jar --input ./test.app --out-path ./test --stat-duplicate true
 ```
 
 **表1 扫描重复文件指令参数说明**
@@ -45,22 +45,22 @@ content_hash: sha256:93990e302701b66ded30fa7db0a12c81084ca2b48bc21ce514e918bd22c
 
 **JSON统计结果：**
 
-```
-1. [{
-2. "taskType":1,
-3. "taskDesc":"find the duplicated files",
-4. "param":"--stat-duplicate",
-5. "startTime":"2023-11-17 14:48:01:265",
-6. "stopTime":"2023-11-17 14:48:01:434",
-7. "result":[{
-8. "md5":"975c41f5727b416b1ffefa5bb0f073b2",
-9. "size":1108880,
-10. "files":[
-11. "/application-entry-default.hap/libs/armeabi-v7a/example.so",
-12. "/entry-default.hap/libs/armeabi-v7a/example.so"
-13. ]
-14. }]
-15. }]
+```text
+[{
+    "taskType":1,
+    "taskDesc":"find the duplicated files",
+    "param":"--stat-duplicate",
+    "startTime":"2023-11-17 14:48:01:265",
+    "stopTime":"2023-11-17 14:48:01:434",
+    "result":[{
+        "md5":"975c41f5727b416b1ffefa5bb0f073b2",
+        "size":1108880,
+        "files":[
+            "/application-entry-default.hap/libs/armeabi-v7a/example.so",
+            "/entry-default.hap/libs/armeabi-v7a/example.so"
+        ]
+    }]
+}]
 ```
 
 **表2 扫描重复文件字段信息**
@@ -72,7 +72,7 @@ content_hash: sha256:93990e302701b66ded30fa7db0a12c81084ca2b48bc21ce514e918bd22c
 | param | String | 扫描程序传入参数。 |
 | startTime | String | 任务开始时间。 |
 | stopTime | String | 任务结束时间。 |
-| result | Struct | 重复文件统计结果字段信息，具体内容参考表3。 |
+| result | Vector<Struct> | 重复文件统计结果字段信息，具体内容参考表3。 |
 
 **表3 重复文件统计结果字段信息**
 
@@ -86,8 +86,8 @@ content_hash: sha256:93990e302701b66ded30fa7db0a12c81084ca2b48bc21ce514e918bd22c
 
 **命令示例：**
 
-```
-1. java -jar app_check_tool.jar --input ./test.app --out-path ./test --stat-file-size 4
+```text
+java -jar app_check_tool.jar --input ./test.app --out-path ./test --stat-file-size 4
 ```
 
 **表4 扫描超出指定大小的文件的指令参数说明**
@@ -100,18 +100,18 @@ content_hash: sha256:93990e302701b66ded30fa7db0a12c81084ca2b48bc21ce514e918bd22c
 
 **JSON统计结果：**
 
-```
-1. [{
-2. "taskType":2,
-3. "taskDesc":"find files whose size exceed the limit size",
-4. "param":"--stat-file-size 4",
-5. "startTime":"2023-11-17 14:48:01:458",
-6. "stopTime":"2023-11-17 14:48:01:491",
-7. "result":[{
-8. "file":"/application-entry-default.hap/libs/x86_64/example.so",
-9. "size":1292840
-10. }]
-11. }]
+```text
+[{
+    "taskType":2,
+    "taskDesc":"find files whose size exceed the limit size",
+    "param":"--stat-file-size 4",
+    "startTime":"2023-11-17 14:48:01:458",
+    "stopTime":"2023-11-17 14:48:01:491",
+    "result":[{
+            "file":"/application-entry-default.hap/libs/x86_64/example.so",
+            "size":1292840
+    }]
+}]
 ```
 
 **表5 扫描超出指定大小的文件字段信息**
@@ -123,7 +123,7 @@ content_hash: sha256:93990e302701b66ded30fa7db0a12c81084ca2b48bc21ce514e918bd22c
 | param | String | 扫描程序传入参数。 |
 | startTime | String | 任务开始时间。 |
 | stopTime | String | 任务结束时间。 |
-| result | Struct | 超出指定大小的文件统计结果字段信息，具体内容参考表6。 |
+| result | Vector<Struct> | 超出指定大小的文件统计结果字段信息，具体内容参考表6。 |
 
 **表6 超出指定大小的文件统计结果字段信息**
 
@@ -136,8 +136,8 @@ content_hash: sha256:93990e302701b66ded30fa7db0a12c81084ca2b48bc21ce514e918bd22c
 
 **命令示例：**
 
-```
-1. java -jar app_check_tool.jar --input ./test.app --out-path ./test --stat-suffix true
+```text
+java -jar app_check_tool.jar --input ./test.app --out-path ./test --stat-suffix true
 ```
 
 **表7 统计各类型文件大小占比指令参数说明**
@@ -150,39 +150,39 @@ content_hash: sha256:93990e302701b66ded30fa7db0a12c81084ca2b48bc21ce514e918bd22c
 
 **JSON统计结果：**
 
-```
-1. [{
-2. "taskType":3,
-3. "taskDesc":"show files group by file type[.suffix]",
-4. "param":"--stat-suffix",
-5. "startTime":"2023-11-17 14:48:01:497",
-6. "stopTime":"2023-11-17 14:48:01:537",
-7. "pathList":[
-8. "test.app/application-entry-default.hap",
-9. "test.app/entry-default.hap"
-10. ],
-11. "result":[{
-12. "suffix":"so",
-13. "totalSize":1292840,
-14. "files":[{
-15. "compress":"false",
-16. "file":"/application-entry-default.hap/libs/x86_64/example.so",
-17. "size":1292840
-18. }]
-19. },
-20. {
-21. "suffix":"abc",
-22. "totalSize":84852,
-23. "files":[{
-24. "file":"/application-entry-default.hap/ets/modules.abc",
-25. "size":76304
-26. },
-27. {
-28. "file":"/entry-default.hap/ets/modules.abc",
-29. "size":8548
-30. }]
-31. }]
-32. }]
+```text
+[{
+    "taskType":3,
+    "taskDesc":"show files group by file type[.suffix]",
+    "param":"--stat-suffix",
+    "startTime":"2023-11-17 14:48:01:497",
+    "stopTime":"2023-11-17 14:48:01:537",
+    "pathList":[
+        "test.app/application-entry-default.hap",
+        "test.app/entry-default.hap"
+    ],
+    "result":[{
+        "suffix":"so",
+        "totalSize":1292840,
+        "files":[{
+            "compress":"false",
+            "file":"/application-entry-default.hap/libs/x86_64/example.so",
+            "size":1292840
+        }]
+    },
+    {
+        "suffix":"abc",
+        "totalSize":84852,
+        "files":[{
+            "file":"/application-entry-default.hap/ets/modules.abc",
+            "size":76304
+        },
+        {
+            "file":"/entry-default.hap/ets/modules.abc",
+            "size":8548
+        }]
+    }]
+}]
 ```
 
 **表8 统计各类型文件大小占比字段信息**
@@ -195,7 +195,7 @@ content_hash: sha256:93990e302701b66ded30fa7db0a12c81084ca2b48bc21ce514e918bd22c
 | startTime | String | 任务开始时间。 |
 | stopTime | String | 任务结束时间。 |
 | pathList | Vector<String> | 多个HAP、HSP包的路径。 |
-| result | Struct | 各类型文件大小占比统计结果字段信息，具体内容参考表9。 |
+| result | Vector<Struct> | 各类型文件大小占比统计结果字段信息，具体内容参考表9。 |
 
 **表9 各类型文件大小占比统计结果字段信息**
 
@@ -203,7 +203,7 @@ content_hash: sha256:93990e302701b66ded30fa7db0a12c81084ca2b48bc21ce514e918bd22c
 | --- | --- | --- |
 | suffix | String | 同类型文件后缀名。 |
 | totalSize | int | 扫描的同类型文件的总大小，单位为Byte。 |
-| files | Struct | 同类型文件的对应路径和大小字段信息，具体内容参考表10。 |
+| files | Vector<Struct> | 同类型文件的对应路径和大小字段信息，具体内容参考表10。 |
 
 **表10 同类型文件的对应路径和大小字段信息**
 

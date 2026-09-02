@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-appen
 title: AppendDim
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > Shape > AppendDim
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:09+08:00
+scraped_at: 2026-09-02T14:50:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:43d5cbc07a49e547f50f90bd20c2a2e9de60ccb2967dae8247392ac88c5ce71e
+content_hash: sha256:b3236d430c3a30a42b504e17b6f3ae60be84f435995fbb7648f0f1732c53be5c
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:43d5cbc07a49e547f50f90bd20c2a2e9de60ccb2967dae8247392ac88c5
 
 ## 函数原型
 
-```
-1. Shape& AppendDim(const int64_t value)
+```cpp
+Shape& AppendDim(const int64_t value)
 ```
 
 ## 参数说明
@@ -34,7 +34,7 @@ this引用。
 
 ## 调用示例
 
-```
-1. Shape shape0({3, 256, 256});
-2. shape0.AppendDim(1024); // 3,256,256,1024
+```cpp
+Shape shape0({3, 256, 256});
+shape0.AppendDim(1024); // 3,256,256,1024
 ```

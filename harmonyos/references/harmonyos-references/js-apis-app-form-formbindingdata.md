@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.form.formBindingData (卡片数据绑定类)"
 breadcrumb: API参考 > 应用框架 > Form Kit（卡片开发服务） > ArkTS API > @ohos.app.form.formBindingData (卡片数据绑定类)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:56:30+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:3cd8a5cb58397d61cb9cf2fa6fbf85c570249d1fb772695f763ada9fd0f6ae76
+scraped_at: 2026-09-02T15:01:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b5f796e932a5e2382b6b69a571bdafc23c7b87f5380a23cf02b3804958a5cdff
 ---
 
-卡片数据绑定模块提供卡片数据绑定的能力。包括FormBindingData对象的创建、相关信息的描述。
+卡片数据绑定模块提供卡片数据绑定的能力，支持创建FormBindingData对象并设置卡片展示数据。适用于卡片数据更新、图片数据传递等场景，能够帮助开发者便捷地管理卡片展示内容，提升卡片数据管理的效率。
 
-说明
+**说明** 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { formBindingData } from '@kit.FormKit';
+```ts
+import { formBindingData } from '@kit.FormKit';
 ```
 
 ## ProxyData10+
-
-PhonePC/2in1TabletTVWearable
 
 卡片代理刷新订阅数据信息。
 
@@ -36,14 +32,12 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| key10+ | string | 否 | 否 | 卡片代理刷新的订阅标识，与数据发布者保持一致。 |
-| subscriberId10+ | string | 否 | 是 | 卡片代理刷新的订阅条件，默认值为当前卡片的formId。 |
+| key | string | 否 | 否 | 卡片代理刷新的订阅标识，与数据发布者保持一致。 |
+| subscriberId | string | 否 | 是 | 卡片代理刷新的订阅条件，用于指定订阅的消息过滤条件。设置后会根据subscriberId匹配相应的代理刷新消息，默认值为当前卡片的formId。当需要指定特定的订阅条件时传入此参数，不传入时默认值为当前卡片的formId。 |
 
 ## FormBindingData
 
-PhonePC/2in1TabletTVWearable
-
-FormBindingData相关描述。
+FormBindingData对象的属性定义。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -51,12 +45,10 @@ FormBindingData相关描述。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| data | Object | 否 | 否 | 卡片要展示的数据。可以是包含若干键值对的Object或者 json 格式的字符串。 |
-| proxies10+ | Array<[ProxyData](js-apis-app-form-formbindingdata.md#proxydata10)> | 否 | 是 | 卡片代理刷新的订阅信息，默认为空数组。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| data | Object | 否 | 否 | 卡片要展示的数据。可以是包含若干键值对的Object或者JSON格式的字符串。 |
+| proxies10+ | Array<[ProxyData](js-apis-app-form-formbindingdata.md#proxydata10)> | 否 | 是 | 卡片代理刷新的订阅信息，配置后会订阅代理刷新消息。默认为空数组，表示不订阅代理刷新消息。当需要使用卡片代理刷新功能时传入此参数，不传入时默认为空数组（不使用代理刷新）。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## formBindingData.createFormBindingData
-
-PhonePC/2in1TabletTVWearable
 
 createFormBindingData(obj?: Object | string): FormBindingData
 
@@ -70,13 +62,13 @@ createFormBindingData(obj?: Object | string): FormBindingData
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| obj | Object | string | 否 | 卡片要展示的数据。可以是包含若干键值对的Object或者 json 格式的字符串。其中图片数据以'formImages'作为标识，内容为图片标识与图片文件描述符的键值对{'formImages': {'key1': fd1, 'key2': fd2}}。  **说明：** 在[卡片刷新](../harmonyos-guides/arkts-ui-widget-interaction-overview.md)过程中，卡片UI通过[@LocalStorageProp](../harmonyos-guides/arkts-localstorage.md#localstorageprop)接收卡片数据时，FormBindingData对象会序列化，即卡片数据会转换成string类型。从API version 20开始，如果卡片刷新的数据通过共享内存更新，刷新数据总大小不超过10MB，刷新图片数量不超过20张，API version 19及之前的版本，图片文件数量上限为5张，每张限制内存2MB，超出限制的图片会显示异常。 |
+| obj | Object | string | 否 | 卡片要展示的数据，用于绑定卡片UI显示的内容。当需要向卡片传递数据时传入此参数，可以是包含若干键值对的Object或者JSON格式的字符串。不传入时创建一个空的FormBindingData对象，卡片将显示默认内容。其中图片数据以'formImages'作为标识，内容为图片标识与图片文件描述符的键值对{'formImages': {'key1': fd1, 'key2': fd2}}。  **说明：** 在[卡片刷新](../harmonyos-guides/arkts-ui-widget-interaction-overview.md)过程中，卡片UI通过[@LocalStorageProp](../harmonyos-guides/arkts-localstorage.md#localstorageprop)接收卡片数据时，FormBindingData对象会序列化，即卡片数据会转换成string类型。从API version 20开始，如果卡片刷新的数据通过共享内存更新，刷新数据总大小不超过10MB，刷新图片数量不超过20张，API version 19及之前的版本，图片文件数量上限为5张，每张限制内存2MB，超出限制的图片会显示异常。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [FormBindingData](js-apis-app-form-formbindingdata.md#formbindingdata) | 根据传入数据创建的FormBindingData对象。 |
+| [FormBindingData](js-apis-app-form-formbindingdata.md#formbindingdata) | 根据传入数据创建的FormBindingData对象，用于卡片数据绑定，向卡片提供要展示的数据。 |
 
 **错误码：**
 
@@ -88,40 +80,45 @@ createFormBindingData(obj?: Object | string): FormBindingData
 
 **示例：**
 
-```
-1. import { formBindingData } from '@kit.FormKit';
-2. import { fileIo } from '@kit.CoreFileKit';
-3. import { common } from '@kit.AbilityKit';
+```ts
+import { formBindingData } from '@kit.FormKit';
+import { fileIo } from '@kit.CoreFileKit';
+import { common } from '@kit.AbilityKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. content = this.getUIContext().getHostContext() as common.UIAbilityContext;
-9. pathDir: string = this.content.filesDir;
+@Entry
+@Component
+struct Index {
+  content = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  pathDir: string = this.content.filesDir;
 
-11. createFormBindingData() {
-12. try {
-13. let filePath = this.pathDir + "/form.png";
-14. let file = fileIo.openSync(filePath);
-15. let formImagesParam: Record<string, number> = {
-16. 'image': file.fd
-17. };
-18. let createFormBindingDataParam: Record<string, string | Record<string, number>> = {
-19. 'name': '21°',
-20. 'imgSrc': 'image',
-21. 'formImages': formImagesParam
-22. };
-23. formBindingData.createFormBindingData(createFormBindingDataParam);
-24. } catch (error) {
-25. console.error(`catch error, code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message})`);
-26. }
-27. }
+  createFormBindingData() {
+    let filePath = this.pathDir + "/form.png";
+    let fd: number = -1;
+    try {
+      fd = fileIo.openSync(filePath, fileIo.OpenMode.READ_ONLY).fd;
+      let formImagesParam: Record<string, number> = {
+        'image': fd
+      };
+      let createFormBindingDataParam: Record<string, string | Record<string, number>> = {
+        'name': '21°',
+        'imgSrc': 'image',
+        'formImages': formImagesParam
+      };
+      let formBindingDataObj = formBindingData.createFormBindingData(createFormBindingDataParam);
+    } catch (error) {
+      console.error(`catch error, code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
+    } finally {
+      if (fd !== -1) {
+        fileIo.closeSync(fd);
+      }
+    }
+  }
 
-29. build() {
-30. Button('createFormBindingData')
-31. .onClick((event: ClickEvent) => {
-32. this.createFormBindingData();
-33. })
-34. }
-35. }
+  build() {
+    Button('createFormBindingData')
+      .onClick((event: ClickEvent) => {
+        this.createFormBindingData();
+      })
+  }
+}
 ```

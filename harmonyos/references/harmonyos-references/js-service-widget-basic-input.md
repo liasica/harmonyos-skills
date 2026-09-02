@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: input
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 基础组件 > input
 category: harmonyos-references
-scraped_at: 2026-04-29T13:54:03+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:091e55fa960f1cec583e5901b1d35c0bffc94758305c816220e11997a3446c58
+scraped_at: 2026-09-02T15:01:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0233edad90f4d9d34c58d74e2b2eaaa03721eb02b0803acd1b92897420eb3d7f
 ---
 
 交互式组件，提供单选框功能。
 
-说明
+**说明** 
 
 从API version 8 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-service-widget-common-attributes.md)外，还支持如下属性：
 
@@ -29,13 +27,9 @@ PhonePC/2in1TabletTVWearable
 
 ## 样式
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用样式](js-service-widget-common-styles.md)。
 
 ## 事件
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
@@ -44,40 +38,38 @@ PhonePC/2in1TabletTVWearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div class="content">
-3. <input type="radio" checked='true' name="radioSample" value="radio1" onchange="onRadioChange"></input>
-4. <input type="radio" checked='false' name="radioSample" value="radio2" onchange="onRadioChange"></input>
-5. <input type="radio" checked='false' name="radioSample" value="radio3" onchange="onRadioChange"></input>
-6. </div>
+```html
+<!-- xxx.hml -->
+<div class="content">
+  <input type="radio" checked='true' name="radioSample" value="radio1" onchange="onRadioChange"></input>
+  <input type="radio" checked='false' name="radioSample" value="radio2" onchange="onRadioChange"></input>
+  <input type="radio" checked='false' name="radioSample" value="radio3" onchange="onRadioChange"></input>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .content{
-3. width: 100%;
-4. height: 200px;
-5. justify-content: center;
-6. align-items: center;
-7. }
+```css
+/* xxx.css */
+.content{
+  width: 100%;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+}
 ```
 
-```
-1. {
-2. "actions": {
-3. "onRadioChange":{
-4. "action": "message",
-5. "params": {
-6. "checkedRadio": "$event.checkedItem"
-7. }
-8. }
-9. }
-10. }
+```json
+{
+  "actions": {
+    "onRadioChange":{
+      "action": "message",
+      "params": {
+        "checkedRadio": "$event.checkedItem"
+      }
+    }
+  }
+}
 ```
 
 **4\*4卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/eKA_Ef-rQbKQqR-waITvqA/zh-cn_image_0000002558766958.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/tAxGQdxwTYeZUV4GsTqG_Q/zh-cn_image_0000002706836622.gif)

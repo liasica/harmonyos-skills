@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/universal
 title: 结构体
 breadcrumb: API参考 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:49+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:fc38cfb49ef6806733fa5e51cf96add880b26c34e40adf113a70445f9bcf9a9d
+scraped_at: 2026-09-02T14:52:14+08:00
+doc_updated_at: 2026-06-03
+content_hash: sha256:601caaa93cb03a66690b5fc5add7c4b4b4f754e4ca1a5a1f9c522351e5ae1eb1
 ---
 
-* **[OH\_Huks\_ExternalCryptoParam](sexternalcryptotypeapi-oh-huks-externalcryptoparam.md)**
-* **[OH\_Huks\_ExternalCryptoParamSet](ternalcryptotypeapi-oh-huks-externalcryptoparamset.md)**
+* **[OH\_Huks\_ExternalCryptoParam](capi-huksexternalcryptotypeapi-oh-huks-externalcryptoparam.md)**
+* **[OH\_Huks\_ExternalCryptoParamSet](capi-huksexternalcryptotypeapi-oh-huks-externalcryptoparamset.md)**
 * **[OH\_Huks\_Result](capi-hukstypeapi-oh-huks-result.md)**
 * **[OH\_Huks\_Blob](capi-hukstypeapi-oh-huks-blob.md)**
 * **[OH\_Huks\_Param](capi-hukstypeapi-oh-huks-param.md)**

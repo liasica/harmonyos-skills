@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-2
 title: 系统播放器AVPlayer支持的流媒体协议与功能
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 媒体（Media ） > 系统播放器AVPlayer支持的流媒体协议与功能
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:40+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:05+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:3ff57e27e31d03944b0a8e0954f7938c946693081d5d2cc877c489d92314021f
 ---
 

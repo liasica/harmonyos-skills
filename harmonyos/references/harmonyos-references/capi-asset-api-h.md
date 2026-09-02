@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-asse
 title: asset_api.h
 breadcrumb: API参考 > 系统 > 安全 > Asset Store Kit（关键资产存储服务） > C API > 头文件 > asset_api.h
 category: harmonyos-references
-scraped_at: 2026-04-29T13:57:17+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:3b589929521cc6df585ab67330be16a6025d376241aac24b8748da59dd7b8bce
+scraped_at: 2026-09-02T15:01:40+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7d78ef52f760b8bdb9def2d1bf1359fa9fc85c1139dd54fa3d027f9feb383981
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明用于访问关键资产的接口。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -47,14 +41,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Asset\_Add()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_Asset_Add(const Asset_Attr *attributes, uint32_t attrCnt)
+```c
+int32_t OH_Asset_Add(const Asset_Attr *attributes, uint32_t attrCnt)
 ```
 
 **描述**
@@ -76,14 +66,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | [Asset\_ResultCode](capi-asset-type-h.md#asset_resultcode):  ASSET\_SUCCESS = 0：操作成功。  ASSET\_PERMISSION\_DENIED = 201：调用方不是一个系统应用。  ASSET\_INVALID\_ARGUMENT = 401：参数错误。 可能原因:  1. 必选参数未指定。  2. 参数类型错误。  3. 参数校验失败。  ASSET\_SERVICE\_UNAVAILABLE = 24000001：关键资产服务不可用。  ASSET\_DUPLICATED = 24000003：关键资产已存在。  ASSET\_STATUS\_MISMATCH = 24000005：锁屏状态不匹配。  ASSET\_OUT\_OF\_MEMORY = 24000006：系统内存不足。  ASSET\_DATA\_CORRUPTED = 24000007：关键资产损坏。  ASSET\_DATABASE\_ERROR = 24000008：数据库操作失败。  ASSET\_CRYPTO\_ERROR = 24000009：算法库操作失败。  ASSET\_IPC\_ERROR = 24000010：进程通信错误。  ASSET\_BMS\_ERROR = 24000011：包管理服务异常。  ASSET\_ACCOUNT\_ERROR = 24000012：账号系统服务异常。  ASSET\_ACCESS\_TOKEN\_ERROR = 24000013：访问控制服务异常。  ASSET\_FILE\_OPERATION\_ERROR = 24000014：文件操作失败。  ASSET\_GET\_SYSTEM\_TIME\_ERROR = 24000015：获取系统时间失败。 |
+| int32\_t | [Asset\_ResultCode](capi-asset-type-h.md#asset_resultcode)：  ASSET\_SUCCESS = 0：操作成功。  ASSET\_PERMISSION\_DENIED = 201：调用者没有权限。  ASSET\_INVALID\_ARGUMENT = 401：参数错误。 可能原因：  1. 必选参数未指定。  2. 参数类型错误。  3. 参数校验失败。  ASSET\_SERVICE\_UNAVAILABLE = 24000001：关键资产服务不可用。  ASSET\_DUPLICATED = 24000003：关键资产已存在。  ASSET\_STATUS\_MISMATCH = 24000005：锁屏状态不匹配。  ASSET\_OUT\_OF\_MEMORY = 24000006：系统内存不足。  ASSET\_DATA\_CORRUPTED = 24000007：关键资产损坏。  ASSET\_DATABASE\_ERROR = 24000008：数据库操作失败。  ASSET\_CRYPTO\_ERROR = 24000009：算法库操作失败。  ASSET\_IPC\_ERROR = 24000010：进程通信错误。  ASSET\_BMS\_ERROR = 24000011：包管理服务异常。  ASSET\_ACCOUNT\_ERROR = 24000012：账号系统服务异常。  ASSET\_ACCESS\_TOKEN\_ERROR = 24000013：访问控制服务异常。  ASSET\_FILE\_OPERATION\_ERROR = 24000014：文件操作失败。  ASSET\_GET\_SYSTEM\_TIME\_ERROR = 24000015：获取系统时间失败。 |
 
 ### OH\_Asset\_Remove()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_Asset_Remove(const Asset_Attr *query, uint32_t queryCnt)
+```c
+int32_t OH_Asset_Remove(const Asset_Attr *query, uint32_t queryCnt)
 ```
 
 **描述**
@@ -103,14 +91,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | [Asset\_ResultCode](capi-asset-type-h.md#asset_resultcode):  ASSET\_SUCCESS = 0：操作成功。  ASSET\_INVALID\_ARGUMENT = 401：参数错误。 可能原因:  1. 参数类型错误。  2. 参数校验失败。  ASSET\_SERVICE\_UNAVAILABLE = 24000001：关键资产服务不可用。  ASSET\_NOT\_FOUND = 24000002：未找到关键资产。  ASSET\_OUT\_OF\_MEMORY = 24000006：系统内存不足。  ASSET\_DATA\_CORRUPTED = 24000007：关键资产损坏。  ASSET\_DATABASE\_ERROR = 24000008：数据库操作失败。  ASSET\_IPC\_ERROR = 24000010：进程通信错误。  ASSET\_BMS\_ERROR = 24000011：包管理服务异常。  ASSET\_ACCOUNT\_ERROR = 24000012：账号系统服务异常。  ASSET\_ACCESS\_TOKEN\_ERROR = 24000013：访问控制服务异常。  ASSET\_GET\_SYSTEM\_TIME\_ERROR = 24000015：获取系统时间失败。 |
+| int32\_t | [Asset\_ResultCode](capi-asset-type-h.md#asset_resultcode)：  ASSET\_SUCCESS = 0：操作成功。  ASSET\_INVALID\_ARGUMENT = 401：参数错误。 可能原因：  1. 参数类型错误。  2. 参数校验失败。  ASSET\_SERVICE\_UNAVAILABLE = 24000001：关键资产服务不可用。  ASSET\_NOT\_FOUND = 24000002：未找到关键资产。  ASSET\_OUT\_OF\_MEMORY = 24000006：系统内存不足。  ASSET\_DATA\_CORRUPTED = 24000007：关键资产损坏。  ASSET\_DATABASE\_ERROR = 24000008：数据库操作失败。  ASSET\_IPC\_ERROR = 24000010：进程通信错误。  ASSET\_BMS\_ERROR = 24000011：包管理服务异常。  ASSET\_ACCOUNT\_ERROR = 24000012：账号系统服务异常。  ASSET\_ACCESS\_TOKEN\_ERROR = 24000013：访问控制服务异常。  ASSET\_GET\_SYSTEM\_TIME\_ERROR = 24000015：获取系统时间失败。 |
 
 ### OH\_Asset\_Update()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_Asset_Update(const Asset_Attr *query, uint32_t queryCnt,const Asset_Attr *attributesToUpdate, uint32_t updateCnt)
+```c
+int32_t OH_Asset_Update(const Asset_Attr *query, uint32_t queryCnt, const Asset_Attr *attributesToUpdate, uint32_t updateCnt)
 ```
 
 **描述**
@@ -132,14 +118,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | [Asset\_ResultCode](capi-asset-type-h.md#asset_resultcode):  ASSET\_SUCCESS = 0：操作成功。  ASSET\_INVALID\_ARGUMENT = 401：参数错误。 可能原因:  1. 必选参数未指定。  2. 参数类型错误。  3. 参数校验失败。  ASSET\_SERVICE\_UNAVAILABLE = 24000001：关键资产服务不可用。  ASSET\_NOT\_FOUND = 24000002：未找到关键资产。  ASSET\_STATUS\_MISMATCH = 24000005：锁屏状态不匹配。  ASSET\_OUT\_OF\_MEMORY = 24000006：系统内存不足。  ASSET\_DATA\_CORRUPTED = 24000007：关键资产损坏。  ASSET\_DATABASE\_ERROR = 24000008：数据库操作失败。  ASSET\_CRYPTO\_ERROR = 24000009：算法库操作失败。  ASSET\_IPC\_ERROR = 24000010：进程通信错误。  ASSET\_BMS\_ERROR = 24000011：包管理服务异常。  ASSET\_ACCOUNT\_ERROR = 24000012：账号系统服务异常。  ASSET\_ACCESS\_TOKEN\_ERROR = 24000013：访问控制服务异常。  ASSET\_GET\_SYSTEM\_TIME\_ERROR = 24000015：获取系统时间失败。 |
+| int32\_t | [Asset\_ResultCode](capi-asset-type-h.md#asset_resultcode)：  ASSET\_SUCCESS = 0：操作成功。  ASSET\_INVALID\_ARGUMENT = 401：参数错误。 可能原因：  1. 必选参数未指定。  2. 参数类型错误。  3. 参数校验失败。  ASSET\_SERVICE\_UNAVAILABLE = 24000001：关键资产服务不可用。  ASSET\_NOT\_FOUND = 24000002：未找到关键资产。  ASSET\_STATUS\_MISMATCH = 24000005：锁屏状态不匹配。  ASSET\_OUT\_OF\_MEMORY = 24000006：系统内存不足。  ASSET\_DATA\_CORRUPTED = 24000007：关键资产损坏。  ASSET\_DATABASE\_ERROR = 24000008：数据库操作失败。  ASSET\_CRYPTO\_ERROR = 24000009：算法库操作失败。  ASSET\_IPC\_ERROR = 24000010：进程通信错误。  ASSET\_BMS\_ERROR = 24000011：包管理服务异常。  ASSET\_ACCOUNT\_ERROR = 24000012：账号系统服务异常。  ASSET\_ACCESS\_TOKEN\_ERROR = 24000013：访问控制服务异常。  ASSET\_GET\_SYSTEM\_TIME\_ERROR = 24000015：获取系统时间失败。 |
 
 ### OH\_Asset\_PreQuery()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_Asset_PreQuery(const Asset_Attr *query, uint32_t queryCnt, Asset_Blob *challenge)
+```c
+int32_t OH_Asset_PreQuery(const Asset_Attr *query, uint32_t queryCnt, Asset_Blob *challenge)
 ```
 
 **描述**
@@ -160,14 +144,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | [Asset\_ResultCode](capi-asset-type-h.md#asset_resultcode):  ASSET\_SUCCESS = 0：操作成功。  ASSET\_INVALID\_ARGUMENT = 401：参数错误。 可能原因:  1. 参数类型错误。  2. 参数校验失败。  ASSET\_SERVICE\_UNAVAILABLE = 24000001：关键资产服务不可用。  ASSET\_NOT\_FOUND = 24000002：未找到关键资产。  ASSET\_STATUS\_MISMATCH = 24000005：锁屏状态不匹配。  ASSET\_OUT\_OF\_MEMORY = 24000006：系统内存不足。  ASSET\_DATA\_CORRUPTED = 24000007：关键资产损坏。  ASSET\_DATABASE\_ERROR = 24000008：数据库操作失败。  ASSET\_CRYPTO\_ERROR = 24000009：算法库操作失败。  ASSET\_IPC\_ERROR = 24000010：进程通信错误。  ASSET\_BMS\_ERROR = 24000011：包管理服务异常。  ASSET\_ACCOUNT\_ERROR = 24000012：账号系统服务异常。  ASSET\_ACCESS\_TOKEN\_ERROR = 24000013：访问控制服务异常。  ASSET\_LIMIT\_EXCEEDED = 24000016：缓存数量超限。  ASSET\_UNSUPPORTED = 24000017：该子功能不支持。 |
+| int32\_t | [Asset\_ResultCode](capi-asset-type-h.md#asset_resultcode)：  ASSET\_SUCCESS = 0：操作成功。  ASSET\_INVALID\_ARGUMENT = 401：参数错误。 可能原因：  1. 参数类型错误。  2. 参数校验失败。  ASSET\_SERVICE\_UNAVAILABLE = 24000001：关键资产服务不可用。  ASSET\_NOT\_FOUND = 24000002：未找到关键资产。  ASSET\_STATUS\_MISMATCH = 24000005：锁屏状态不匹配。  ASSET\_OUT\_OF\_MEMORY = 24000006：系统内存不足。  ASSET\_DATA\_CORRUPTED = 24000007：关键资产损坏。  ASSET\_DATABASE\_ERROR = 24000008：数据库操作失败。  ASSET\_CRYPTO\_ERROR = 24000009：算法库操作失败。  ASSET\_IPC\_ERROR = 24000010：进程通信错误。  ASSET\_BMS\_ERROR = 24000011：包管理服务异常。  ASSET\_ACCOUNT\_ERROR = 24000012：账号系统服务异常。  ASSET\_ACCESS\_TOKEN\_ERROR = 24000013：访问控制服务异常。  ASSET\_LIMIT\_EXCEEDED = 24000016：缓存数量超限。  ASSET\_UNSUPPORTED = 24000017：该子功能不支持。 |
 
 ### OH\_Asset\_Query()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_Asset_Query(const Asset_Attr *query, uint32_t queryCnt, Asset_ResultSet *resultSet)
+```c
+int32_t OH_Asset_Query(const Asset_Attr *query, uint32_t queryCnt, Asset_ResultSet *resultSet)
 ```
 
 **描述**
@@ -188,14 +170,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | [Asset\_ResultCode](capi-asset-type-h.md#asset_resultcode):  ASSET\_SUCCESS = 0：操作成功。  ASSET\_INVALID\_ARGUMENT = 401：参数错误。 可能原因:  1. 参数类型错误。  2. 参数校验失败。  ASSET\_SERVICE\_UNAVAILABLE = 24000001：关键资产服务不可用。  ASSET\_NOT\_FOUND = 24000002：未找到关键资产。  ASSET\_ACCESS\_DENIED = 24000004：访问被拒绝。  ASSET\_STATUS\_MISMATCH = 24000005：锁屏状态不匹配。  ASSET\_OUT\_OF\_MEMORY = 24000006：系统内存不足。  ASSET\_DATA\_CORRUPTED = 24000007：关键资产损坏。  ASSET\_DATABASE\_ERROR = 24000008：数据库操作失败。  ASSET\_CRYPTO\_ERROR = 24000009：算法库操作失败。  ASSET\_IPC\_ERROR = 24000010：进程通信错误。  ASSET\_BMS\_ERROR = 24000011：包管理服务异常。  ASSET\_ACCOUNT\_ERROR = 24000012：账号系统服务异常。  ASSET\_ACCESS\_TOKEN\_ERROR = 24000013：访问控制服务异常。  ASSET\_UNSUPPORTED = 24000017：该子功能不支持。 |
+| int32\_t | [Asset\_ResultCode](capi-asset-type-h.md#asset_resultcode)：  ASSET\_SUCCESS = 0：操作成功。  ASSET\_INVALID\_ARGUMENT = 401：参数错误。 可能原因：  1. 参数类型错误。  2. 参数校验失败。  ASSET\_SERVICE\_UNAVAILABLE = 24000001：关键资产服务不可用。  ASSET\_NOT\_FOUND = 24000002：未找到关键资产。  ASSET\_ACCESS\_DENIED = 24000004：访问被拒绝。  ASSET\_STATUS\_MISMATCH = 24000005：锁屏状态不匹配。  ASSET\_OUT\_OF\_MEMORY = 24000006：系统内存不足。  ASSET\_DATA\_CORRUPTED = 24000007：关键资产损坏。  ASSET\_DATABASE\_ERROR = 24000008：数据库操作失败。  ASSET\_CRYPTO\_ERROR = 24000009：算法库操作失败。  ASSET\_IPC\_ERROR = 24000010：进程通信错误。  ASSET\_BMS\_ERROR = 24000011：包管理服务异常。  ASSET\_ACCOUNT\_ERROR = 24000012：账号系统服务异常。  ASSET\_ACCESS\_TOKEN\_ERROR = 24000013：访问控制服务异常。  ASSET\_UNSUPPORTED = 24000017：该子功能不支持。 |
 
 ### OH\_Asset\_PostQuery()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_Asset_PostQuery(const Asset_Attr *handle, uint32_t handleCnt)
+```c
+int32_t OH_Asset_PostQuery(const Asset_Attr *handle, uint32_t handleCnt)
 ```
 
 **描述**
@@ -215,14 +195,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | [Asset\_ResultCode](capi-asset-type-h.md#asset_resultcode):  ASSET\_SUCCESS = 0：操作成功。  ASSET\_INVALID\_ARGUMENT = 401：参数错误。 可能原因:  1. 必选参数未指定。  2. 参数类型错误。  3. 参数校验失败。  ASSET\_SERVICE\_UNAVAILABLE = 24000001：关键资产服务不可用。  ASSET\_OUT\_OF\_MEMORY = 24000006：系统内存不足。  ASSET\_IPC\_ERROR = 24000010：进程通信错误。  ASSET\_BMS\_ERROR = 24000011：包管理服务异常。  ASSET\_ACCOUNT\_ERROR = 24000012：账号系统服务异常。  ASSET\_ACCESS\_TOKEN\_ERROR = 24000013：访问控制服务异常。 |
+| int32\_t | [Asset\_ResultCode](capi-asset-type-h.md#asset_resultcode)：  ASSET\_SUCCESS = 0：操作成功。  ASSET\_INVALID\_ARGUMENT = 401：参数错误。 可能原因：  1. 必选参数未指定。  2. 参数类型错误。  3. 参数校验失败。  ASSET\_SERVICE\_UNAVAILABLE = 24000001：关键资产服务不可用。  ASSET\_OUT\_OF\_MEMORY = 24000006：系统内存不足。  ASSET\_IPC\_ERROR = 24000010：进程通信错误。  ASSET\_BMS\_ERROR = 24000011：包管理服务异常。  ASSET\_ACCOUNT\_ERROR = 24000012：账号系统服务异常。  ASSET\_ACCESS\_TOKEN\_ERROR = 24000013：访问控制服务异常。 |
 
 ### OH\_Asset\_QuerySyncResult()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_Asset_QuerySyncResult(const Asset_Attr *query, uint32_t queryCnt, Asset_SyncResult *syncResult)
+```c
+int32_t OH_Asset_QuerySyncResult(const Asset_Attr *query, uint32_t queryCnt, Asset_SyncResult *syncResult)
 ```
 
 **描述**
@@ -247,10 +225,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Asset\_ParseAttr()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Asset_Attr *OH_Asset_ParseAttr(const Asset_Result *result, Asset_Tag tag)
+```c
+Asset_Attr *OH_Asset_ParseAttr(const Asset_Result *result, Asset_Tag tag)
 ```
 
 **描述**
@@ -270,14 +246,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [Asset\_Attr](capi-assettype-asset-attr.md) | 如果操作成功，则以Asset\_Attr的形式返回属性，该属性不需要业务进行释放；否则返回NULL。 |
+| [Asset\_Attr](capi-assettype-asset-attr.md)\* | 如果操作成功，则以Asset\_Attr的形式返回属性，该属性不需要业务进行释放；否则返回NULL。 |
 
 ### OH\_Asset\_FreeBlob()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Asset_FreeBlob(Asset_Blob *blob)
+```c
+void OH_Asset_FreeBlob(Asset_Blob *blob)
 ```
 
 **描述**
@@ -294,10 +268,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Asset\_FreeResultSet()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Asset_FreeResultSet(Asset_ResultSet *resultSet)
+```c
+void OH_Asset_FreeResultSet(Asset_ResultSet *resultSet)
 ```
 
 **描述**

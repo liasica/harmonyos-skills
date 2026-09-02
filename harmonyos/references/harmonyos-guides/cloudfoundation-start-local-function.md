@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 启动本地云函数
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 云函数 > （可选）通过端云一体化开发工程调试本地云函数 > 启动本地云函数
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:37:44+08:00
+scraped_at: 2026-09-02T14:59:54+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4b0592c71e145bad7c7e368b820e40f3e2c7aef7149f7d08577cbd1ac4919ed2
+content_hash: sha256:ba3239ea70c48a899a190e03580a1b0f5b61ff2f7ad2dd2550d2acb44b62ebf8
 ---
 
 请按照如下步骤启动本地云函数：
@@ -15,7 +15,7 @@ content_hash: sha256:4b0592c71e145bad7c7e368b820e40f3e2c7aef7149f7d08577cbd1ac49
 
    调试函数过程中，如果下方通知栏的“cloudfunctions”窗口显示“Cloud Functions loaded successfully”，则表示本地云函数启动成功，将生成本地函数的Function URI。**请记录下该Function URI的域名和端口信息，例如下图中的http://localhost:18090，后续[调用本地云函数](cloudfoundation-call-local-function.md)时需要使用这些信息。**
 
-   注意
+   **注意** 
 
    由于本地云函数和部署至云端的函数获取请求体的方式不同，开发本地云函数时必须按照如下示例获取请求体，否则将无法成功获取请求体：
 
@@ -23,4 +23,4 @@ content_hash: sha256:4b0592c71e145bad7c7e368b820e40f3e2c7aef7149f7d08577cbd1ac49
 
    完整示例代码请参见[函数示例](cloudfoundation-develop-function-nodejs.md#函数示例)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/vbDy66zTQ_aZA1brceJLPg/zh-cn_image_0000002558605704.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/iJSGIM3lR0WTDU2pXQyUOg/zh-cn_image_0000002736434029.png)

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-p
 title: oh_preferences_value.h
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 头文件 > oh_preferences_value.h
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:27+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:decf81bf11f867b5a0a564601d6631e7954d1f21cba6ed8b81f265f1383758bc
+scraped_at: 2026-09-02T15:00:42+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:347644142773f4bd4a2e274e1208c51adf6aeed1393327f368c1b28f9408b6ca
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供访问Preferences值（PreferencesValue）对象的接口、枚举类型与数据结构。
 
@@ -26,20 +24,14 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| [OH\_PreferencesPair](capi-preferences-oh-preferencespair.md) | OH\_PreferencesPair | 定义Preferences使用的KV数据对象类型。 |
+| [OH\_PreferencesPair](capi-preferences-oh-preferencespair.md) | OH\_PreferencesPair | 定义Preferences使用的键值对数据对象类型。 |
 | [OH\_PreferencesValue](capi-preferences-oh-preferencesvalue.md) | OH\_PreferencesValue | 定义PreferencesValue对象类型。 |
 
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -47,12 +39,10 @@ PhonePC/2in1TabletTVWearable
 
 ### 函数
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 描述 |
 | --- | --- |
-| [const char \*OH\_PreferencesPair\_GetKey(const OH\_PreferencesPair \*pairs, uint32\_t index)](capi-oh-preferences-value-h.md#oh_preferencespair_getkey) | 获取KV数据中索引对应数据的键。 |
-| [const OH\_PreferencesValue \*OH\_PreferencesPair\_GetPreferencesValue(const OH\_PreferencesPair \*pairs, uint32\_t index)](capi-oh-preferences-value-h.md#oh_preferencespair_getpreferencesvalue) | 获取KV数据数组中索引对应的值。 |
+| [const char \*OH\_PreferencesPair\_GetKey(const OH\_PreferencesPair \*pairs, uint32\_t index)](capi-oh-preferences-value-h.md#oh_preferencespair_getkey) | 获取键值对数据中索引对应数据的键。 |
+| [const OH\_PreferencesValue \*OH\_PreferencesPair\_GetPreferencesValue(const OH\_PreferencesPair \*pairs, uint32\_t index)](capi-oh-preferences-value-h.md#oh_preferencespair_getpreferencesvalue) | 获取键值对数据数组中索引对应的值。 |
 | [Preference\_ValueType OH\_PreferencesValue\_GetValueType(const OH\_PreferencesValue \*object)](capi-oh-preferences-value-h.md#oh_preferencesvalue_getvaluetype) | 获取PreferencesValue对象的数据类型。 |
 | [int OH\_PreferencesValue\_GetInt(const OH\_PreferencesValue \*object, int \*value)](capi-oh-preferences-value-h.md#oh_preferencesvalue_getint) | 从PreferencesValue对象[OH\_PreferencesValue](capi-preferences-oh-preferencesvalue.md)中获取一个整型值。 |
 | [int OH\_PreferencesValue\_GetBool(const OH\_PreferencesValue \*object, bool \*value)](capi-oh-preferences-value-h.md#oh_preferencesvalue_getbool) | 从PreferencesValue对象[OH\_PreferencesValue](capi-preferences-oh-preferencesvalue.md)中获取一个布尔值。 |
@@ -82,14 +72,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### Preference\_ValueType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Preference_ValueType
+```c
+enum Preference_ValueType
 ```
 
 **描述**
@@ -116,19 +102,15 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_PreferencesPair\_GetKey()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char *OH_PreferencesPair_GetKey(const OH_PreferencesPair *pairs, uint32_t index)
+```c
+const char *OH_PreferencesPair_GetKey(const OH_PreferencesPair *pairs, uint32_t index)
 ```
 
 **描述**
 
-获取KV数据中索引对应数据的键。
+获取键值对数据中索引对应数据的键。
 
 **起始版本：** 13
 
@@ -136,8 +118,8 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| const [OH\_PreferencesPair](capi-preferences-oh-preferencespair.md) \*pairs | 目标KV数据[OH\_PreferencesPair](capi-preferences-oh-preferencespair.md)的指针。 |
-| uint32\_t index | 目标KV数据[OH\_PreferencesPair](capi-preferences-oh-preferencespair.md)的索引值。 |
+| const [OH\_PreferencesPair](capi-preferences-oh-preferencespair.md) \*pairs | 目标键值对数据[OH\_PreferencesPair](capi-preferences-oh-preferencespair.md)的指针。 |
+| uint32\_t index | 目标键值对数据[OH\_PreferencesPair](capi-preferences-oh-preferencespair.md)的索引值。 |
 
 **返回：**
 
@@ -147,15 +129,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreferencesPair\_GetPreferencesValue()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const OH_PreferencesValue *OH_PreferencesPair_GetPreferencesValue(const OH_PreferencesPair *pairs, uint32_t index)
+```c
+const OH_PreferencesValue *OH_PreferencesPair_GetPreferencesValue(const OH_PreferencesPair *pairs, uint32_t index)
 ```
 
 **描述**
 
-获取KV数据数组中索引对应的值。
+获取键值对数据数组中索引对应的值。
 
 **起始版本：** 13
 
@@ -163,21 +143,19 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| const [OH\_PreferencesPair](capi-preferences-oh-preferencespair.md) \*pairs | 目标KV数据[OH\_PreferencesPair](capi-preferences-oh-preferencespair.md)的指针。 |
-| uint32\_t index | 目标KV数据[OH\_PreferencesPair](capi-preferences-oh-preferencespair.md)的索引值。 |
+| const [OH\_PreferencesPair](capi-preferences-oh-preferencespair.md) \*pairs | 目标键值对数据[OH\_PreferencesPair](capi-preferences-oh-preferencespair.md)的指针。 |
+| uint32\_t index | 目标键值对数据[OH\_PreferencesPair](capi-preferences-oh-preferencespair.md)的索引值，取值范围[0, count-1]（count为pairs数组长度）。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| const [OH\_PreferencesValue](capi-preferences-oh-preferencesvalue.md) | 如果操作成功，返回获取到的值对象的指针。操作失败或传参不合法返回空指针。 |
+| const [OH\_PreferencesValue](capi-preferences-oh-preferencesvalue.md) \* | 如果操作成功，返回获取到的值对象的指针。操作失败或传参不合法返回空指针。 |
 
 ### OH\_PreferencesValue\_GetValueType()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Preference_ValueType OH_PreferencesValue_GetValueType(const OH_PreferencesValue *object)
+```c
+Preference_ValueType OH_PreferencesValue_GetValueType(const OH_PreferencesValue *object)
 ```
 
 **描述**
@@ -200,10 +178,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreferencesValue\_GetInt()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PreferencesValue_GetInt(const OH_PreferencesValue *object, int *value)
+```c
+int OH_PreferencesValue_GetInt(const OH_PreferencesValue *object, int *value)
 ```
 
 **描述**
@@ -227,10 +203,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreferencesValue\_GetBool()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PreferencesValue_GetBool(const OH_PreferencesValue *object, bool *value)
+```c
+int OH_PreferencesValue_GetBool(const OH_PreferencesValue *object, bool *value)
 ```
 
 **描述**
@@ -254,10 +228,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreferencesValue\_GetString()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PreferencesValue_GetString(const OH_PreferencesValue *object, char **value, uint32_t *valueLen)
+```c
+int OH_PreferencesValue_GetString(const OH_PreferencesValue *object, char **value, uint32_t *valueLen)
 ```
 
 **描述**
@@ -282,10 +254,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreferencesPair\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_PreferencesPair_Destroy(OH_PreferencesPair *pairs, uint32_t count)
+```c
+void OH_PreferencesPair_Destroy(OH_PreferencesPair *pairs, uint32_t count)
 ```
 
 **描述**
@@ -303,10 +273,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreferencesValue\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_PreferencesValue* OH_PreferencesValue_Create(void)
+```c
+OH_PreferencesValue* OH_PreferencesValue_Create(void)
 ```
 
 **描述**
@@ -319,14 +287,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_PreferencesValue\*](capi-preferences-oh-preferencesvalue.md) | 如果操作成功，返回指向[OH\_PreferencesValue](capi-preferences-oh-preferencesvalue.md)值对象的指针，否则返回nullptr。 |
+| [OH\_PreferencesValue](capi-preferences-oh-preferencesvalue.md)\* | 如果操作成功，返回指向[OH\_PreferencesValue](capi-preferences-oh-preferencesvalue.md)值对象的指针，否则返回nullptr。 |
 
 ### OH\_PreferencesValue\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_PreferencesValue_Destroy(OH_PreferencesValue *value)
+```c
+void OH_PreferencesValue_Destroy(OH_PreferencesValue *value)
 ```
 
 **描述**
@@ -343,10 +309,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PreferencesValue\_SetInt()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PreferencesValue_SetInt(const OH_PreferencesValue *object, int value)
+```c
+int OH_PreferencesValue_SetInt(const OH_PreferencesValue *object, int value)
 ```
 
 **描述**
@@ -366,14 +330,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。  若错误码PREFERENCES\_OK表示操作成功。  若错误码PREFERENCES\_ERROR\_INVALID\_PARAM表示参数不合法。  若错误码PREFERENCES\_ERROR\_STORAGE表示存储异常。  若错误码PREFERENCES\_ERROR\_MALLOC表示内存分配失败。 |
+| int | 返回执行的错误码。  若错误码为PREFERENCES\_OK，表示操作成功。  若错误码为PREFERENCES\_ERROR\_INVALID\_PARAM，表示参数不合法。  若错误码为PREFERENCES\_ERROR\_STORAGE，表示存储异常。  若错误码为PREFERENCES\_ERROR\_MALLOC，表示内存分配失败。 |
 
 ### OH\_PreferencesValue\_SetBool()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PreferencesValue_SetBool(const OH_PreferencesValue *object, bool value)
+```c
+int OH_PreferencesValue_SetBool(const OH_PreferencesValue *object, bool value)
 ```
 
 **描述**
@@ -393,14 +355,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。  若错误码PREFERENCES\_OK表示操作成功。  若错误码PREFERENCES\_ERROR\_INVALID\_PARAM表示参数不合法。  若错误码PREFERENCES\_ERROR\_STORAGE表示存储异常。  若错误码PREFERENCES\_ERROR\_MALLOC表示内存分配失败。 |
+| int | 返回执行的错误码。  若错误码为PREFERENCES\_OK，表示操作成功。  若错误码为PREFERENCES\_ERROR\_INVALID\_PARAM，表示参数不合法。  若错误码为PREFERENCES\_ERROR\_STORAGE，表示存储异常。  若错误码为PREFERENCES\_ERROR\_MALLOC，表示内存分配失败。 |
 
 ### OH\_PreferencesValue\_SetString()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PreferencesValue_SetString(const OH_PreferencesValue *object, const char *value)
+```c
+int OH_PreferencesValue_SetString(const OH_PreferencesValue *object, const char *value)
 ```
 
 **描述**
@@ -414,20 +374,18 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [const OH\_PreferencesValue](capi-preferences-oh-preferencesvalue.md) \*object | 指向目标[OH\_PreferencesValue](capi-preferences-oh-preferencesvalue.md)实例的指针。 |
-| const char \*value | 需要设置的字符串值。 |
+| const char \*value | 指向需要设置的字符串值的指针。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。  若错误码PREFERENCES\_OK表示操作成功。  若错误码PREFERENCES\_ERROR\_INVALID\_PARAM表示参数不合法。  若错误码PREFERENCES\_ERROR\_STORAGE表示存储异常。  若错误码PREFERENCES\_ERROR\_MALLOC表示内存分配失败。 |
+| int | 返回执行的错误码。  若错误码为PREFERENCES\_OK，表示操作成功。  若错误码为PREFERENCES\_ERROR\_INVALID\_PARAM，表示参数不合法。  若错误码为PREFERENCES\_ERROR\_STORAGE，表示存储异常。  若错误码为PREFERENCES\_ERROR\_MALLOC，表示内存分配失败。 |
 
 ### OH\_PreferencesValue\_SetInt64()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PreferencesValue_SetInt64(const OH_PreferencesValue *object, int64_t value)
+```c
+int OH_PreferencesValue_SetInt64(const OH_PreferencesValue *object, int64_t value)
 ```
 
 **描述**
@@ -447,14 +405,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。  若错误码PREFERENCES\_OK表示操作成功。  若错误码PREFERENCES\_ERROR\_INVALID\_PARAM表示参数不合法。  若错误码PREFERENCES\_ERROR\_STORAGE表示存储异常。  若错误码PREFERENCES\_ERROR\_MALLOC表示内存分配失败。 |
+| int | 返回执行的错误码。  若错误码为PREFERENCES\_OK，表示操作成功。  若错误码为PREFERENCES\_ERROR\_INVALID\_PARAM，表示参数不合法。  若错误码为PREFERENCES\_ERROR\_STORAGE，表示存储异常。  若错误码为PREFERENCES\_ERROR\_MALLOC，表示内存分配失败。 |
 
 ### OH\_PreferencesValue\_GetInt64()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PreferencesValue_GetInt64(const OH_PreferencesValue *object, int64_t *value)
+```c
+int OH_PreferencesValue_GetInt64(const OH_PreferencesValue *object, int64_t *value)
 ```
 
 **描述**
@@ -474,14 +430,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。  若错误码PREFERENCES\_OK表示操作成功。  若错误码PREFERENCES\_ERROR\_INVALID\_PARAM表示参数不合法。  若错误码PREFERENCES\_ERROR\_STORAGE表示存储异常。  若错误码PREFERENCES\_ERROR\_MALLOC表示内存分配失败。 |
+| int | 返回执行的错误码。  若错误码为PREFERENCES\_OK，表示操作成功。  若错误码为PREFERENCES\_ERROR\_INVALID\_PARAM，表示参数不合法。  若错误码为PREFERENCES\_ERROR\_STORAGE，表示存储异常。  若错误码为PREFERENCES\_ERROR\_MALLOC，表示内存分配失败。 |
 
 ### OH\_PreferencesValue\_SetDouble()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PreferencesValue_SetDouble(const OH_PreferencesValue *object, double value)
+```c
+int OH_PreferencesValue_SetDouble(const OH_PreferencesValue *object, double value)
 ```
 
 **描述**
@@ -501,14 +455,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。  若错误码PREFERENCES\_OK表示操作成功。  若错误码PREFERENCES\_ERROR\_INVALID\_PARAM表示参数不合法。  若错误码PREFERENCES\_ERROR\_STORAGE表示存储异常。  若错误码PREFERENCES\_ERROR\_MALLOC表示内存分配失败。 |
+| int | 返回执行的错误码。  若错误码为PREFERENCES\_OK，表示操作成功。  若错误码为PREFERENCES\_ERROR\_INVALID\_PARAM，表示参数不合法。  若错误码为PREFERENCES\_ERROR\_STORAGE，表示存储异常。  若错误码为PREFERENCES\_ERROR\_MALLOC，表示内存分配失败。 |
 
 ### OH\_PreferencesValue\_GetDouble()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PreferencesValue_GetDouble(const OH_PreferencesValue *object, double *value)
+```c
+int OH_PreferencesValue_GetDouble(const OH_PreferencesValue *object, double *value)
 ```
 
 **描述**
@@ -528,14 +480,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。  若错误码PREFERENCES\_OK表示操作成功。  若错误码PREFERENCES\_ERROR\_INVALID\_PARAM表示参数不合法。  若错误码PREFERENCES\_ERROR\_STORAGE表示存储异常。  若错误码PREFERENCES\_ERROR\_MALLOC表示内存分配失败。 |
+| int | 返回执行的错误码。  若错误码为PREFERENCES\_OK，表示操作成功。  若错误码为PREFERENCES\_ERROR\_INVALID\_PARAM，表示参数不合法。  若错误码为PREFERENCES\_ERROR\_STORAGE，表示存储异常。  若错误码为PREFERENCES\_ERROR\_MALLOC，表示内存分配失败。 |
 
 ### OH\_PreferencesValue\_SetIntArray()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PreferencesValue_SetIntArray(const OH_PreferencesValue *object, const int *value, uint32_t count)
+```c
+int OH_PreferencesValue_SetIntArray(const OH_PreferencesValue *object, const int *value, uint32_t count)
 ```
 
 **描述**
@@ -549,21 +499,19 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [const OH\_PreferencesValue](capi-preferences-oh-preferencesvalue.md) \*object | 指向目标[OH\_PreferencesValue](capi-preferences-oh-preferencesvalue.md)实例的指针。 |
-| const int \*value | 需要设置的整型数组值。 |
-| uint32\_t count | 指向需要设置的数组大小的指针。 |
+| const int \*value | 指向需要设置的整型数组值的指针。 |
+| uint32\_t count | 需要设置的数组大小。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。  若错误码PREFERENCES\_OK表示操作成功。  若错误码PREFERENCES\_ERROR\_INVALID\_PARAM表示参数不合法。  若错误码PREFERENCES\_ERROR\_STORAGE表示存储异常。  若错误码PREFERENCES\_ERROR\_MALLOC表示内存分配失败。 |
+| int | 返回执行的错误码。  若错误码为PREFERENCES\_OK，表示操作成功。  若错误码为PREFERENCES\_ERROR\_INVALID\_PARAM，表示参数不合法。  若错误码为PREFERENCES\_ERROR\_STORAGE，表示存储异常。  若错误码为PREFERENCES\_ERROR\_MALLOC，表示内存分配失败。 |
 
 ### OH\_PreferencesValue\_GetIntArray()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PreferencesValue_GetIntArray(const OH_PreferencesValue *object, int **value, uint32_t *count)
+```c
+int OH_PreferencesValue_GetIntArray(const OH_PreferencesValue *object, int **value, uint32_t *count)
 ```
 
 **描述**
@@ -584,14 +532,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。  若错误码PREFERENCES\_OK表示操作成功。  若错误码PREFERENCES\_ERROR\_INVALID\_PARAM表示参数不合法。  若错误码PREFERENCES\_ERROR\_STORAGE表示存储异常。  若错误码PREFERENCES\_ERROR\_MALLOC表示内存分配失败。 |
+| int | 返回执行的错误码。  若错误码为PREFERENCES\_OK，表示操作成功。  若错误码为PREFERENCES\_ERROR\_INVALID\_PARAM，表示参数不合法。  若错误码为PREFERENCES\_ERROR\_STORAGE，表示存储异常。  若错误码为PREFERENCES\_ERROR\_MALLOC，表示内存分配失败。 |
 
 ### OH\_PreferencesValue\_SetBoolArray()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PreferencesValue_SetBoolArray(const OH_PreferencesValue *object, const bool *value, uint32_t count)
+```c
+int OH_PreferencesValue_SetBoolArray(const OH_PreferencesValue *object, const bool *value, uint32_t count)
 ```
 
 **描述**
@@ -605,21 +551,19 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [const OH\_PreferencesValue](capi-preferences-oh-preferencesvalue.md) \*object | 指向目标[OH\_PreferencesValue](capi-preferences-oh-preferencesvalue.md)实例的指针。 |
-| const bool \*value | 需要设置的布尔数组值。 |
-| uint32\_t count | 指向需要设置的数组大小的指针。 |
+| const bool \*value | 指向需要设置的布尔数组值的指针。 |
+| uint32\_t count | 需要设置的数组大小。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。  若错误码PREFERENCES\_OK表示操作成功。  若错误码PREFERENCES\_ERROR\_INVALID\_PARAM表示参数不合法。  若错误码PREFERENCES\_ERROR\_STORAGE表示存储异常。  若错误码PREFERENCES\_ERROR\_MALLOC表示内存分配失败。 |
+| int | 返回执行的错误码。  若错误码为PREFERENCES\_OK，表示操作成功。  若错误码为PREFERENCES\_ERROR\_INVALID\_PARAM，表示参数不合法。  若错误码为PREFERENCES\_ERROR\_STORAGE，表示存储异常。  若错误码为PREFERENCES\_ERROR\_MALLOC，表示内存分配失败。 |
 
 ### OH\_PreferencesValue\_GetBoolArray()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PreferencesValue_GetBoolArray(const OH_PreferencesValue *object, bool **value, uint32_t *count)
+```c
+int OH_PreferencesValue_GetBoolArray(const OH_PreferencesValue *object, bool **value, uint32_t *count)
 ```
 
 **描述**
@@ -640,14 +584,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。  若错误码PREFERENCES\_OK表示操作成功。  若错误码PREFERENCES\_ERROR\_INVALID\_PARAM表示参数不合法。  若错误码PREFERENCES\_ERROR\_STORAGE表示存储异常。  若错误码PREFERENCES\_ERROR\_MALLOC表示内存分配失败。 |
+| int | 返回执行的错误码。  若错误码为PREFERENCES\_OK，表示操作成功。  若错误码为PREFERENCES\_ERROR\_INVALID\_PARAM，表示参数不合法。  若错误码为PREFERENCES\_ERROR\_STORAGE，表示存储异常。  若错误码为PREFERENCES\_ERROR\_MALLOC，表示内存分配失败。 |
 
 ### OH\_PreferencesValue\_SetStringArray()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PreferencesValue_SetStringArray(const OH_PreferencesValue *object, const char **value, uint32_t count)
+```c
+int OH_PreferencesValue_SetStringArray(const OH_PreferencesValue *object, const char **value, uint32_t count)
 ```
 
 **描述**
@@ -661,21 +603,19 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [const OH\_PreferencesValue](capi-preferences-oh-preferencesvalue.md) \*object | 指向目标[OH\_PreferencesValue](capi-preferences-oh-preferencesvalue.md)实例的指针。 |
-| const char \*\*value | 需要设置的字符串数组值。 |
-| uint32\_t count | 指向需要设置的数组大小的指针。 |
+| const char \*\*value | 指向需要设置的字符串数组值的二级指针。 |
+| uint32\_t count | 需要设置的数组大小。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。  若错误码PREFERENCES\_OK表示操作成功。  若错误码PREFERENCES\_ERROR\_INVALID\_PARAM表示参数不合法。  若错误码PREFERENCES\_ERROR\_STORAGE表示存储异常。  若错误码PREFERENCES\_ERROR\_MALLOC表示内存分配失败。 |
+| int | 返回执行的错误码。  若错误码为PREFERENCES\_OK，表示操作成功。  若错误码为PREFERENCES\_ERROR\_INVALID\_PARAM，表示参数不合法。  若错误码为PREFERENCES\_ERROR\_STORAGE，表示存储异常。  若错误码为PREFERENCES\_ERROR\_MALLOC，表示内存分配失败。 |
 
 ### OH\_PreferencesValue\_GetStringArray()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PreferencesValue_GetStringArray(const OH_PreferencesValue *object, char ***value, uint32_t *count)
+```c
+int OH_PreferencesValue_GetStringArray(const OH_PreferencesValue *object, char ***value, uint32_t *count)
 ```
 
 **描述**
@@ -689,21 +629,19 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [const OH\_PreferencesValue](capi-preferences-oh-preferencesvalue.md) \*object | 指向目标[OH\_PreferencesValue](capi-preferences-oh-preferencesvalue.md)实例的指针。 |
-| char \*\*\*value | 指向获取到的字符串数组值的二级指针。 |
+| char \*\*\*value | 指向获取到的字符串数组值的三级指针。 |
 | uint32\_t \*count | 指向获取到的数组大小的指针。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。  若错误码PREFERENCES\_OK表示操作成功。  若错误码PREFERENCES\_ERROR\_INVALID\_PARAM表示参数不合法。  若错误码PREFERENCES\_ERROR\_STORAGE表示存储异常。  若错误码PREFERENCES\_ERROR\_MALLOC表示内存分配失败。 |
+| int | 返回执行的错误码。  若错误码为PREFERENCES\_OK，表示操作成功。  若错误码为PREFERENCES\_ERROR\_INVALID\_PARAM，表示参数不合法。  若错误码为PREFERENCES\_ERROR\_STORAGE，表示存储异常。  若错误码为PREFERENCES\_ERROR\_MALLOC，表示内存分配失败。 |
 
 ### OH\_PreferencesValue\_SetInt64Array()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PreferencesValue_SetInt64Array(const OH_PreferencesValue *object, const int64_t *value, uint32_t count)
+```c
+int OH_PreferencesValue_SetInt64Array(const OH_PreferencesValue *object, const int64_t *value, uint32_t count)
 ```
 
 **描述**
@@ -717,21 +655,19 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [const OH\_PreferencesValue](capi-preferences-oh-preferencesvalue.md) \*object | 指向目标[OH\_PreferencesValue](capi-preferences-oh-preferencesvalue.md)实例的指针。 |
-| const int64\_t \*value | 需要设置的int64数组值。 |
-| uint32\_t count | 指向需要设置的数组大小的指针。 |
+| const int64\_t \*value | 指向需要设置的int64数组值的指针。 |
+| uint32\_t count | 需要设置的数组大小。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。  若错误码PREFERENCES\_OK表示操作成功。  若错误码PREFERENCES\_ERROR\_INVALID\_PARAM表示参数不合法。  若错误码PREFERENCES\_ERROR\_STORAGE表示存储异常。  若错误码PREFERENCES\_ERROR\_MALLOC表示内存分配失败。 |
+| int | 返回执行的错误码。  若错误码为PREFERENCES\_OK，表示操作成功。  若错误码为PREFERENCES\_ERROR\_INVALID\_PARAM，表示参数不合法。  若错误码为PREFERENCES\_ERROR\_STORAGE，表示存储异常。  若错误码为PREFERENCES\_ERROR\_MALLOC，表示内存分配失败。 |
 
 ### OH\_PreferencesValue\_GetInt64Array()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PreferencesValue_GetInt64Array(const OH_PreferencesValue *object, int64_t **value, uint32_t *count)
+```c
+int OH_PreferencesValue_GetInt64Array(const OH_PreferencesValue *object, int64_t **value, uint32_t *count)
 ```
 
 **描述**
@@ -752,14 +688,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。  若错误码PREFERENCES\_OK表示操作成功。  若错误码PREFERENCES\_ERROR\_INVALID\_PARAM表示参数不合法。  若错误码PREFERENCES\_ERROR\_STORAGE表示存储异常。  若错误码PREFERENCES\_ERROR\_MALLOC表示内存分配失败。 |
+| int | 返回执行的错误码。  若错误码为PREFERENCES\_OK，表示操作成功。  若错误码为PREFERENCES\_ERROR\_INVALID\_PARAM，表示参数不合法。  若错误码为PREFERENCES\_ERROR\_STORAGE，表示存储异常。  若错误码为PREFERENCES\_ERROR\_MALLOC，表示内存分配失败。 |
 
 ### OH\_PreferencesValue\_SetDoubleArray()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PreferencesValue_SetDoubleArray(const OH_PreferencesValue *object, const double *value, uint32_t count)
+```c
+int OH_PreferencesValue_SetDoubleArray(const OH_PreferencesValue *object, const double *value, uint32_t count)
 ```
 
 **描述**
@@ -773,21 +707,19 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [const OH\_PreferencesValue](capi-preferences-oh-preferencesvalue.md) \*object | 指向目标[OH\_PreferencesValue](capi-preferences-oh-preferencesvalue.md)实例的指针。 |
-| const double \*value | 需要设置的double数组值。 |
-| uint32\_t count | 指向需要设置的数组大小的指针。 |
+| const double \*value | 指向需要设置的double数组值的指针。 |
+| uint32\_t count | 需要设置的数组大小。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。  若错误码PREFERENCES\_OK表示操作成功。  若错误码PREFERENCES\_ERROR\_INVALID\_PARAM表示参数不合法。  若错误码PREFERENCES\_ERROR\_STORAGE表示存储异常。  若错误码PREFERENCES\_ERROR\_MALLOC表示内存分配失败。 |
+| int | 返回执行的错误码。  若错误码为PREFERENCES\_OK，表示操作成功。  若错误码为PREFERENCES\_ERROR\_INVALID\_PARAM，表示参数不合法。  若错误码为PREFERENCES\_ERROR\_STORAGE，表示存储异常。  若错误码为PREFERENCES\_ERROR\_MALLOC，表示内存分配失败。 |
 
 ### OH\_PreferencesValue\_GetDoubleArray()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PreferencesValue_GetDoubleArray(const OH_PreferencesValue *object, double **value, uint32_t *count)
+```c
+int OH_PreferencesValue_GetDoubleArray(const OH_PreferencesValue *object, double **value, uint32_t *count)
 ```
 
 **描述**
@@ -808,14 +740,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。  若错误码PREFERENCES\_OK表示操作成功。  若错误码PREFERENCES\_ERROR\_INVALID\_PARAM表示参数不合法。  若错误码PREFERENCES\_ERROR\_STORAGE表示存储异常。  若错误码PREFERENCES\_ERROR\_MALLOC表示内存分配失败。 |
+| int | 返回执行的错误码。  若错误码为PREFERENCES\_OK，表示操作成功。  若错误码为PREFERENCES\_ERROR\_INVALID\_PARAM，表示参数不合法。  若错误码为PREFERENCES\_ERROR\_STORAGE，表示存储异常。  若错误码为PREFERENCES\_ERROR\_MALLOC，表示内存分配失败。 |
 
 ### OH\_PreferencesValue\_SetBlob()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PreferencesValue_SetBlob(const OH_PreferencesValue *object, const uint8_t *value, uint32_t count)
+```c
+int OH_PreferencesValue_SetBlob(const OH_PreferencesValue *object, const uint8_t *value, uint32_t count)
 ```
 
 **描述**
@@ -829,21 +759,19 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [const OH\_PreferencesValue](capi-preferences-oh-preferencesvalue.md) \*object | 指向目标[OH\_PreferencesValue](capi-preferences-oh-preferencesvalue.md)实例的指针。 |
-| const uint8\_t \*value | 需要设置的二进制值。 |
-| uint32\_t count | 指向需要设置的二进制大小的指针。 |
+| const uint8\_t \*value | 指向需要设置的二进制值的指针。 |
+| uint32\_t count | 需要设置的二进制数据大小。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。  若错误码PREFERENCES\_OK表示操作成功。  若错误码PREFERENCES\_ERROR\_INVALID\_PARAM表示参数不合法。  若错误码PREFERENCES\_ERROR\_STORAGE表示存储异常。  若错误码PREFERENCES\_ERROR\_MALLOC表示内存分配失败。 |
+| int | 返回执行的错误码。  若错误码为PREFERENCES\_OK，表示操作成功。  若错误码为PREFERENCES\_ERROR\_INVALID\_PARAM，表示参数不合法。  若错误码为PREFERENCES\_ERROR\_STORAGE，表示存储异常。  若错误码为PREFERENCES\_ERROR\_MALLOC，表示内存分配失败。 |
 
 ### OH\_PreferencesValue\_GetBlob()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PreferencesValue_GetBlob(const OH_PreferencesValue *object, uint8_t **value, uint32_t *count)
+```c
+int OH_PreferencesValue_GetBlob(const OH_PreferencesValue *object, uint8_t **value, uint32_t *count)
 ```
 
 **描述**
@@ -864,4 +792,4 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。  若错误码PREFERENCES\_OK表示操作成功。  若错误码PREFERENCES\_ERROR\_INVALID\_PARAM表示参数不合法。  若错误码PREFERENCES\_ERROR\_STORAGE表示存储异常。  若错误码PREFERENCES\_ERROR\_MALLOC表示内存分配失败。 |
+| int | 返回执行的错误码。  若错误码为PREFERENCES\_OK，表示操作成功。  若错误码为PREFERENCES\_ERROR\_INVALID\_PARAM，表示参数不合法。  若错误码为PREFERENCES\_ERROR\_STORAGE，表示存储异常。  若错误码为PREFERENCES\_ERROR\_MALLOC，表示内存分配失败。 |

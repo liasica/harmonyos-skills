@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: mPaas框架+H5接入智能填充
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 智能填充服务 > 三方框架+H5接入智能填充 > mPaas框架+H5接入智能填充
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:49+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3bafb7d69af0ab0cf7717c29f2b7187b0bab759be1e04610870ba97c26e34ed9
+scraped_at: 2026-09-02T15:00:01+08:00
+doc_updated_at: 2026-07-17
+content_hash: sha256:3666a873e25c834d16b80227d274379c353d2398849231d05703b9160d5b2541
 ---
 
-说明
+**说明** 
 
-目前仅支持已适配HarmonyOS的三方框架应用使用。
+目前仅支持在已适配HarmonyOS的三方框架应用中的H5页面使用。
 
 HarmonyOS版工程接入mPaas请参考官方文档：[接入HarmonyOS NEXT快速开始](https://help.aliyun.com/document_detail/2680148.html?spm=a2c4g.2692566.0.0.5e716b17UWpjij)。
 

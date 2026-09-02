@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 代理通道管理错误码
 breadcrumb: API参考 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > 错误码 > 代理通道管理错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:17+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:bea66582ae516b3fcc2fe01c1e7cb6e3480d37c71631914d2bd14931257c7345
+scraped_at: 2026-09-02T15:01:53+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ef4fdf5026af5439377ef3e447f34ede67456f5680e36b889b957a9652eaecbe
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 32390001 蓝牙已关闭
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -32,9 +30,7 @@ BR is disabled.
 
 打开本端设备蓝牙，重新尝试操作。
 
-## 32390002 蓝牙未配对
-
-PhonePC/2in1TabletTVWearable
+## 32390002 设备未配对
 
 **错误信息**
 
@@ -47,18 +43,16 @@ Device not paired.
 **可能原因**
 
 1. 本端设备未与目标设备完成蓝牙配对。
-2. 对端设备的服务未起监听。
-3. 使用了无效的mac或者uuid。
+2. 目标设备未启动服务监听。
+3. 使用了无效的MAC或者UUID。
 
 **处理步骤**
 
-1. 使用运动健康APP完成设备添加及配对。
+1. 使用运动健康应用完成设备添加及配对。
 2. 检查目标设备服务监听情况。
-3. 检查输入的mac和uuid的有效性。
+3. 检查输入的MAC和UUID的有效性，MAC应为XX:XX:XX:XX:XX:XX格式的蓝牙MAC地址字符串，UUID应为标准UUID格式字符串，如xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx。
 
 ## 32390004 通道ID非法或者不可用
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -66,21 +60,19 @@ ChannelId is invalid or unavailable.
 
 **错误描述**
 
-通道ID非法或者不可用。
+调用代理通道接口时传入的通道ID不符合要求或该通道已失效，导致操作无法继续。
 
 **可能原因**
 
-1. 传入了非法的channelId，即该channelId不是openProxyChannel返回的channelId。
-2. 相关通道已关闭。
+1. 传入了非法的channelId，channelId应为openProxyChannel返回的number类型通道标识。
+2. 该channelId对应的通道已通过closeProxyChannel关闭，关闭后channelId不再可用。
 
 **处理步骤**
 
 1. 检查代码逻辑，确认传入的channelId是否为openProxyChannel返回的channelId。
-2. 检查代码逻辑，确认该channelId是否已经关闭然后继续使用。
+2. 检查代码逻辑，确认该channelId对应的通道是否已关闭，若已关闭则不应继续使用该channelId；如需继续通信，请重新调用openProxyChannel建立新通道。
 
 ## 32390006 参数错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -88,20 +80,19 @@ Parameter error.
 
 **错误描述**
 
-参数校验异常。
+调用代理通道接口时传入的参数不符合要求，如MAC或UUID格式异常、入参类型错误等，导致接口调用失败。
 
 **可能原因**
 
-1. 传入的mac或者uuid格式异常。
+1. 传入的MAC或者UUID格式异常（MAC应为XX:XX:XX:XX:XX:XX格式的蓝牙MAC地址字符串，UUID应为标准UUID格式字符串，如xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx）。
 2. 函数入参类型错误。
 
 **处理步骤**
 
-检查代码逻辑，确认mac和uuid的格式正确，以及入参类型正确。
+1. 检查代码逻辑，确认MAC为XX:XX:XX:XX:XX:XX格式的蓝牙MAC地址字符串，UUID为标准UUID格式字符串，如xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx。
+2. 检查代码逻辑，确认入参类型与接口定义一致。
 
 ## 32390100 内部异常
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -109,7 +100,7 @@ Internal error.
 
 **错误描述**
 
-内部异常。
+系统内部发生异常，可能导致当前操作执行失败或服务不可用。
 
 **可能原因**
 
@@ -117,11 +108,11 @@ Internal error.
 
 **处理步骤**
 
-尝试重试操作，如果依然无法解决，可以重启应用、升级应用或升级设备版本等。
+1. 重试操作。
+2. 若问题仍存在，重启应用。
+3. 若重启无效，升级应用或升级设备版本。
 
 ## 32390101 调用受限
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -129,7 +120,7 @@ Call is restricted.
 
 **错误描述**
 
-非法调用，调用受限。
+未授权调用，调用受限。
 
 **可能原因**
 
@@ -137,11 +128,9 @@ Call is restricted.
 
 **处理步骤**
 
-申请对应权限。
+申请代理通道管理所需权限（请从代理通道管理API接口文档中确认具体权限名称），并在应用配置中声明对应权限后重新尝试。
 
 ## 32390102 操作失败或者连接超时
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -149,7 +138,7 @@ Operation failed or Connection timed out.
 
 **错误描述**
 
-操作失败或者连接超时。
+蓝牙底层故障导致代理通道操作未成功完成，或在规定时间内未建立连接而超时。
 
 **可能原因**
 
@@ -157,12 +146,10 @@ Operation failed or Connection timed out.
 
 **处理步骤**
 
-1. 重新开关本端设备和目标设备的蓝牙。
+1. 关闭后重新开启本端设备和目标设备的蓝牙。
 2. 重启本端设备和目标设备后，再打开设备的蓝牙。
 
 ## 32390103 发送数据超长
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -170,7 +157,7 @@ Data too long.
 
 **错误描述**
 
-发送数据超长。
+通过代理通道发送的数据长度超过最大限制（4096字节），导致发送失败。
 
 **可能原因**
 
@@ -178,11 +165,9 @@ Data too long.
 
 **处理步骤**
 
-检查发送的数据长度。
+确保发送的数据长度不超过4096字节，如数据过长请分段发送。
 
 ## 32390104 发送数据失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -190,11 +175,11 @@ Send failed.
 
 **错误描述**
 
-发送数据失败。
+通过代理通道发送数据时因蓝牙故障导致数据未能成功送达目标设备。
 
 **可能原因**
 
-蓝牙故障。
+底层蓝牙连接故障或协议异常。
 
 **处理步骤**
 

@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@arkts.math.Decimal (高精度数学库Decimal)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @arkts.math.Decimal (高精度数学库Decimal)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:74a2d2054440f11afaed749d963c4eccdc2e12797e137678adf816c357181a9b
+scraped_at: 2026-09-02T15:00:46+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:42f08371570c0e8447544f3302dcc12c14ac1c21fb0b899a75a07990b5d5a1cf
 ---
 
 Decimal用于提供高精度数学运算的能力，支持高精度浮点计算。
 
-说明
+**说明** 
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -18,21 +18,17 @@ Decimal用于提供高精度数学运算的能力，支持高精度浮点计算�
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { Decimal } from '@kit.ArkTS';
+```ts
+import { Decimal } from '@kit.ArkTS';
 ```
 
 ## Value
-
-PhonePC/2in1TabletTVWearable
 
 type Value = string | number | Decimal
 
 表示用于构建Decimal的参数类型。
 
-取值类型为下列类型中的并集。
+取值可以是下列类型中的任意一种。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -40,19 +36,17 @@ type Value = string | number | Decimal
 
 | 类型 | 说明 |
 | --- | --- |
-| string | 表示值类型为字符串，可取任意值。 |
-| number | 表示值类型为数字，可取任意值。 |
+| string | 表示值类型为字符串，用于构造Decimal时可接受数字格式的字符串。 |
+| number | 表示值类型为数字，用于构造Decimal时可接受有限数字值。 |
 | [Decimal](js-apis-arkts-decimal.md#decimal) | 表示值类型为Decimal类型。 |
 
 ## Rounding
-
-PhonePC/2in1TabletTVWearable
 
 type Rounding = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
 
 表示可设置的舍入类型。
 
-取值类型为下列类型中的并集。
+取值可以是下列类型中的任意一种。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -72,13 +66,11 @@ type Rounding = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
 
 ## Modulo
 
-PhonePC/2in1TabletTVWearable
-
 type Modulo = Rounding | 9
 
 表示可设置的取模方法舍入类型。
 
-取值类型为下列类型中的并集。
+取值可以是下列类型中的任意一种。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -86,12 +78,10 @@ type Modulo = Rounding | 9
 
 | 类型 | 说明 |
 | --- | --- |
-| [Rounding](js-apis-arkts-decimal.md#rounding) | 模运算下的舍入类型。与[Rounding](js-apis-arkts-decimal.md#常量)表示的舍入模式相同。 |
-| 9 | 余模运算下，余数始终为正。欧几里得除法，与[Decimal.EUCLIDEAN](js-apis-arkts-decimal.md#常量)一致。 |
+| [Rounding](js-apis-arkts-decimal.md#rounding) | 模运算下的舍入类型。与[Rounding](js-apis-arkts-decimal.md#rounding)表示的舍入模式相同。 |
+| 9 | 模运算下，余数始终为正。欧几里得除法，与[Decimal.EUCLIDEAN](js-apis-arkts-decimal.md#常量)一致。 |
 
 ## DecimalConfig
-
-PhonePC/2in1TabletTVWearable
 
 用于设置Decimal的配置属性，可使用[Decimal.set](js-apis-arkts-decimal.md#set)方法进行配置。
 
@@ -102,24 +92,20 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | precision | number | 否 | 是 | 运算结果的最大有效位数，取值范围为[1, 1e9]，默认值为20。 |
-| rounding | [Rounding](js-apis-arkts-decimal.md#rounding) | 否 | 是 | 舍入模式，取值范围为0到8的整数，默认值为4。 |
+| rounding | [Rounding](js-apis-arkts-decimal.md#rounding) | 否 | 是 | 舍入模式，取值范围为[0, 8]的整数，默认值为4。 |
 | toExpNeg | number | 否 | 是 | 指数表示法的负指数值的极限值，若Decimal的负指数小于等于该值时，使用科学计数法表示，[toString](js-apis-arkts-decimal.md#tostring)方法中使用，取值范围为[-9e15, 0]，默认值为-7。 |
 | toExpPos | number | 否 | 是 | 指数表示法的正指数值的极限值，若Decimal的正指数大于等于该值时，使用科学计数法表示，[toString](js-apis-arkts-decimal.md#tostring)方法中使用，取值范围为[0, 9e15]，默认值为21。 |
 | minE | number | 否 | 是 | 负指数极限，若Decimal的指数值小于该值，会下溢到零，取值范围为[-9e15, 0]，默认值为-9e15。 |
 | maxE | number | 否 | 是 | 正指数极限，若Decimal的指数值大于该值，会溢出至无穷大，取值范围为[0, 9e15]，默认值为9e15。 |
 | crypto | boolean | 否 | 是 | 确定是否使用加密安全伪随机数生成的值，true表示使用加密安全伪随机数，false表示不使用，默认值为false。该能力不支持使用，报错的错误码为：10200061。 |
-| modulo | [Modulo](js-apis-arkts-decimal.md#modulo) | 否 | 是 | 模计算时使用的舍入模式，取值范围为0到9的整数，默认值为1。 |
+| modulo | [Modulo](js-apis-arkts-decimal.md#modulo) | 否 | 是 | 模计算时使用的舍入模式，取值范围为[0, 9]的整数，默认值为1。 |
 | defaults | boolean | 否 | 是 | 表示未指定的属性是否被设置为默认值，true表示使用默认值，false表示不使用默认值，默认值为false。 |
 
 ## Decimal
 
-PhonePC/2in1TabletTVWearable
-
 任意精度的Decimal类型。
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -132,8 +118,6 @@ PhonePC/2in1TabletTVWearable
 | s | number | 是 | 否 | sign：表示Decimal数的符号位，0表示正数，1表示负数。 |
 
 ### 常量
-
-PhonePC/2in1TabletTVWearable
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -153,8 +137,6 @@ PhonePC/2in1TabletTVWearable
 | EUCLIDEAN | number | 9 | 模运算下，余数始终为正。使用欧几里得除法：q = sign(x) \* floor(a / abs(x))。 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(n: Value)
 
@@ -180,14 +162,12 @@ Decimal的构造函数。
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(5);
-2. console.info("test Decimal constructor:" + data.toString()); // 'test Decimal constructor:5'
+```ts
+let data: Decimal = new Decimal(5);
+console.info("test Decimal constructor:" + data.toString()); // 'test Decimal constructor:5'
 ```
 
 ### abs
-
-PhonePC/2in1TabletTVWearable
 
 abs(): Decimal
 
@@ -205,14 +185,12 @@ abs(): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(-0.5).abs();
-2. console.info("test Decimal abs:" + data.toString()); // 'test Decimal abs:0.5'
+```ts
+let data: Decimal = new Decimal(-0.5).abs();
+console.info("test Decimal abs:" + data.toString()); // 'test Decimal abs:0.5'
 ```
 
 ### floor
-
-PhonePC/2in1TabletTVWearable
 
 floor(): Decimal
 
@@ -226,18 +204,16 @@ floor(): Decimal
 
 | 类型 | 说明 |
 | --- | --- |
-| [Decimal](js-apis-arkts-decimal.md#decimal) | 返回舍入之后的Decimal对象实例。 |
+| [Decimal](js-apis-arkts-decimal.md#decimal) | 返回向负无穷方向舍入后的Decimal对象实例。 |
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(1.8).floor();
-2. console.info("test Decimal floor:" + data.toString()); // 'test Decimal floor:1'
+```ts
+let data: Decimal = new Decimal(1.8).floor();
+console.info("test Decimal floor:" + data.toString()); // 'test Decimal floor:1'
 ```
 
 ### ceil
-
-PhonePC/2in1TabletTVWearable
 
 ceil(): Decimal
 
@@ -251,18 +227,16 @@ ceil(): Decimal
 
 | 类型 | 说明 |
 | --- | --- |
-| [Decimal](js-apis-arkts-decimal.md#decimal) | 返回舍入之后的Decimal对象实例。 |
+| [Decimal](js-apis-arkts-decimal.md#decimal) | 返回向正无穷方向舍入后的Decimal对象实例。 |
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(1.8).ceil();
-2. console.info("test Decimal ceil:" + data.toString()); // 'test Decimal ceil:2'
+```ts
+let data: Decimal = new Decimal(1.8).ceil();
+console.info("test Decimal ceil:" + data.toString()); // 'test Decimal ceil:2'
 ```
 
 ### trunc
-
-PhonePC/2in1TabletTVWearable
 
 trunc(): Decimal
 
@@ -280,14 +254,12 @@ trunc(): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(2.5).trunc();
-2. console.info("test Decimal trunc:" + data.toString()); // 'test Decimal trunc:2'
+```ts
+let data: Decimal = new Decimal(2.5).trunc();
+console.info("test Decimal trunc:" + data.toString()); // 'test Decimal trunc:2'
 ```
 
 ### clamp
-
-PhonePC/2in1TabletTVWearable
 
 clamp(min: Value, max: Value): Decimal
 
@@ -321,26 +293,22 @@ clamp(min: Value, max: Value): Decimal
 
 **示例：**
 
-```
-1. let data1: Decimal = new Decimal(10.1).clamp(0, 10);
-2. console.info("test Decimal clamp:" + data1.toString()); // 'test Decimal clamp:10'
+```ts
+let data1: Decimal = new Decimal(10.1).clamp(0, 10);
+console.info("test Decimal clamp:" + data1.toString()); // 'test Decimal clamp:10'
 
-4. let data2: Decimal = new Decimal(-5).clamp(0, 10);
-5. console.info("test Decimal clamp:" + data2.toString()); // 'test Decimal clamp:0'
+let data2: Decimal = new Decimal(-5).clamp(0, 10);
+console.info("test Decimal clamp:" + data2.toString()); // 'test Decimal clamp:0'
 
-7. let data3: Decimal = new Decimal(7.5).clamp(0, 10);
-8. console.info("test Decimal clamp:" + data3.toString()); // 'test Decimal clamp:7.5'
+let data3: Decimal = new Decimal(7.5).clamp(0, 10);
+console.info("test Decimal clamp:" + data3.toString()); // 'test Decimal clamp:7.5'
 ```
 
 ### add
 
-PhonePC/2in1TabletTVWearable
-
 add(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是将此Decimal的值加上n。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -368,20 +336,16 @@ add(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(0.5).add(0.5);
-2. console.info("test Decimal add:" + data.toString()); // 'test Decimal add:1'
+```ts
+let data: Decimal = new Decimal(0.5).add(0.5);
+console.info("test Decimal add:" + data.toString()); // 'test Decimal add:1'
 ```
 
 ### sub
 
-PhonePC/2in1TabletTVWearable
-
 sub(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是将此Decimal的值减去n。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -409,20 +373,16 @@ sub(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(1).sub(0.5);
-2. console.info("test Decimal sub:" + data.toString()); // 'test Decimal sub:0.5'
+```ts
+let data: Decimal = new Decimal(1).sub(0.5);
+console.info("test Decimal sub:" + data.toString()); // 'test Decimal sub:0.5'
 ```
 
 ### mul
 
-PhonePC/2in1TabletTVWearable
-
 mul(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是将此Decimal的值乘以n。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -450,20 +410,16 @@ mul(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(1).mul(0.5);
-2. console.info("test Decimal mul:" + data.toString()); // 'test Decimal mul:0.5'
+```ts
+let data: Decimal = new Decimal(1).mul(0.5);
+console.info("test Decimal mul:" + data.toString()); // 'test Decimal mul:0.5'
 ```
 
 ### div
 
-PhonePC/2in1TabletTVWearable
-
 div(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是将此Decimal的值除以n。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -491,20 +447,16 @@ div(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(1).div(0.5);
-2. console.info("test Decimal div:" + data.toString()); // 'test Decimal div:2'
+```ts
+let data: Decimal = new Decimal(1).div(0.5);
+console.info("test Decimal div:" + data.toString()); // 'test Decimal div:2'
 ```
 
 ### mod
 
-PhonePC/2in1TabletTVWearable
-
 mod(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是将此Decimal的值除以n后的模。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -514,13 +466,13 @@ mod(n: Value): Decimal
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| n | [Value](js-apis-arkts-decimal.md#value) | 是 | 取模运算的除数。 |
+| n | [Value](js-apis-arkts-decimal.md#value) | 是 | 模运算的除数。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [Decimal](js-apis-arkts-decimal.md#decimal) | 返回取模运算后的Decimal对象实例。 |
+| [Decimal](js-apis-arkts-decimal.md#decimal) | 返回模运算后的Decimal对象实例。 |
 
 **错误码：**
 
@@ -532,20 +484,16 @@ mod(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(2).mod(1);
-2. console.info("test Decimal mod:" + data.toString()); // 'test Decimal mod:0'
+```ts
+let data: Decimal = new Decimal(2).mod(1);
+console.info("test Decimal mod:" + data.toString()); // 'test Decimal mod:0'
 ```
 
 ### sqrt
 
-PhonePC/2in1TabletTVWearable
-
 sqrt(): Decimal
 
 返回一个新的Decimal对象，其值是当前Decimal的平方根。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -559,20 +507,16 @@ sqrt(): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(3).sqrt();
-2. console.info("test Decimal sqrt:" + data.toString()); // 'test Decimal sqrt:1.7320508075688772935'
+```ts
+let data: Decimal = new Decimal(3).sqrt();
+console.info("test Decimal sqrt:" + data.toString()); // 'test Decimal sqrt:1.7320508075688772935'
 ```
 
 ### cbrt
 
-PhonePC/2in1TabletTVWearable
-
 cbrt(): Decimal
 
 返回一个新的Decimal对象，其值是当前Decimal对象的立方根。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -586,20 +530,16 @@ cbrt(): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(3).cbrt();
-2. console.info("test Decimal cbrt:" + data.toString()); // 'test Decimal cbrt:1.4422495703074083823'
+```ts
+let data: Decimal = new Decimal(3).cbrt();
+console.info("test Decimal cbrt:" + data.toString()); // 'test Decimal cbrt:1.4422495703074083823'
 ```
 
 ### pow
 
-PhonePC/2in1TabletTVWearable
-
 pow(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是这个Decimal值的n次幂。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -609,7 +549,7 @@ pow(n: Value): Decimal
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| n | [Value](js-apis-arkts-decimal.md#value) | 是 | 幂运算的幂的值。 |
+| n | [Value](js-apis-arkts-decimal.md#value) | 是 | 幂运算的指数值。 |
 
 **返回值：**
 
@@ -628,20 +568,16 @@ pow(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(3).pow(-2);
-2. console.info("test Decimal pow:" + data.toString()); // 'test Decimal pow:0.11111111111111111111'
+```ts
+let data: Decimal = new Decimal(3).pow(-2);
+console.info("test Decimal pow:" + data.toString()); // 'test Decimal pow:0.11111111111111111111'
 ```
 
 ### exp
 
-PhonePC/2in1TabletTVWearable
-
 exp(): Decimal
 
 返回一个新的Decimal对象，其值是此Decimal值的自然指数。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -663,20 +599,16 @@ exp(): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(2).exp();
-2. console.info("test Decimal exp:" + data.toString()); // 'test Decimal exp:7.3890560989306502272'
+```ts
+let data: Decimal = new Decimal(2).exp();
+console.info("test Decimal exp:" + data.toString()); // 'test Decimal exp:7.3890560989306502272'
 ```
 
 ### log
 
-PhonePC/2in1TabletTVWearable
-
 log(n: Value): Decimal
 
-返回一个对数运算后的Decimal对象，其值是以n为底的对数值。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
+返回一个对数运算后的Decimal对象，其值是以n为底的此Decimal的对数值。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -705,20 +637,16 @@ log(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(2).log(256);
-2. console.info("test Decimal log:" + data.toString()); // 'test Decimal log:0.125'
+```ts
+let data: Decimal = new Decimal(2).log(256);
+console.info("test Decimal log:" + data.toString()); // 'test Decimal log:0.125'
 ```
 
 ### ln
 
-PhonePC/2in1TabletTVWearable
-
 ln(): Decimal
 
 返回一个新的Decimal对象，其值是此Decimal值的自然对数。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -740,18 +668,16 @@ ln(): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(1.23e+30).ln();
-2. console.info("test Decimal ln:" + data.toString()); // 'test Decimal ln:69.284566959205696648'
+```ts
+let data: Decimal = new Decimal(1.23e+30).ln();
+console.info("test Decimal ln:" + data.toString()); // 'test Decimal ln:69.284566959205696648'
 ```
 
 ### cos
 
-PhonePC/2in1TabletTVWearable
-
 cos(): Decimal
 
-返回一个新的Decimal对象，其值是此Decimal的余弦值。
+返回一个新的Decimal对象，其值是此Decimal的余弦值。输入值以弧度为单位。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -765,14 +691,12 @@ cos(): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(-0.25).cos();
-2. console.info("test Decimal cos:" + data.toString()); // 'test Decimal cos:0.96891242171064478414'
+```ts
+let data: Decimal = new Decimal(-0.25).cos();
+console.info("test Decimal cos:" + data.toString()); // 'test Decimal cos:0.96891242171064478414'
 ```
 
 ### sin
-
-PhonePC/2in1TabletTVWearable
 
 sin(): Decimal
 
@@ -790,14 +714,12 @@ sin(): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(0.75).sin();
-2. console.info("test Decimal sin:" + data.toString()); // 'test Decimal sin:0.68163876002333416673'
+```ts
+let data: Decimal = new Decimal(0.75).sin();
+console.info("test Decimal sin:" + data.toString()); // 'test Decimal sin:0.68163876002333416673'
 ```
 
 ### tan
-
-PhonePC/2in1TabletTVWearable
 
 tan(): Decimal
 
@@ -815,14 +737,12 @@ tan(): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(0.75).tan();
-2. console.info("test Decimal tan:" + data.toString()); // 'test Decimal tan:0.93159645994407246117'
+```ts
+let data: Decimal = new Decimal(0.75).tan();
+console.info("test Decimal tan:" + data.toString()); // 'test Decimal tan:0.93159645994407246117'
 ```
 
 ### cosh
-
-PhonePC/2in1TabletTVWearable
 
 cosh(): Decimal
 
@@ -840,14 +760,12 @@ cosh(): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(0.5).cosh();
-2. console.info("test Decimal cosh:" + data.toString()); // 'test Decimal cosh:1.1276259652063807852'
+```ts
+let data: Decimal = new Decimal(0.5).cosh();
+console.info("test Decimal cosh:" + data.toString()); // 'test Decimal cosh:1.1276259652063807852'
 ```
 
 ### sinh
-
-PhonePC/2in1TabletTVWearable
 
 sinh(): Decimal
 
@@ -865,14 +783,12 @@ sinh(): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(0.5).sinh();
-2. console.info("test Decimal sinh:" + data.toString()); // 'test Decimal sinh:0.52109530549374736162'
+```ts
+let data: Decimal = new Decimal(0.5).sinh();
+console.info("test Decimal sinh:" + data.toString()); // 'test Decimal sinh:0.52109530549374736162'
 ```
 
 ### tanh
-
-PhonePC/2in1TabletTVWearable
 
 tanh(): Decimal
 
@@ -890,14 +806,12 @@ tanh(): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(0.5).tanh();
-2. console.info("test Decimal tanh:" + data.toString()); // 'test Decimal tanh:0.4621171572600097585'
+```ts
+let data: Decimal = new Decimal(0.5).tanh();
+console.info("test Decimal tanh:" + data.toString()); // 'test Decimal tanh:0.4621171572600097585'
 ```
 
 ### acos
-
-PhonePC/2in1TabletTVWearable
 
 acos(): Decimal
 
@@ -923,14 +837,12 @@ acos(): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(0.5).acos();
-2. console.info("test Decimal acos:" + data.toString()); // 'test Decimal acos:1.0471975511965977462'
+```ts
+let data: Decimal = new Decimal(0.5).acos();
+console.info("test Decimal acos:" + data.toString()); // 'test Decimal acos:1.0471975511965977462'
 ```
 
 ### asin
-
-PhonePC/2in1TabletTVWearable
 
 asin(): Decimal
 
@@ -956,14 +868,12 @@ asin(): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(0.75).asin();
-2. console.info("test Decimal asin:" + data.toString()); // 'test Decimal asin:0.84806207898148100805'
+```ts
+let data: Decimal = new Decimal(0.75).asin();
+console.info("test Decimal asin:" + data.toString()); // 'test Decimal asin:0.84806207898148100805'
 ```
 
 ### atan
-
-PhonePC/2in1TabletTVWearable
 
 atan(): Decimal
 
@@ -989,18 +899,16 @@ atan(): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(0.75).atan();
-2. console.info("test Decimal atan:" + data.toString()); // 'test Decimal atan:0.6435011087932843868'
+```ts
+let data: Decimal = new Decimal(0.75).atan();
+console.info("test Decimal atan:" + data.toString()); // 'test Decimal atan:0.6435011087932843868'
 ```
 
 ### acosh
 
-PhonePC/2in1TabletTVWearable
-
 acosh(): Decimal
 
-返回一个新的Decimal对象，其值是此Decimal值的双曲余弦的倒数。
+返回一个新的Decimal对象，其值是此Decimal值的反双曲余弦。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -1010,7 +918,7 @@ acosh(): Decimal
 
 | 类型 | 说明 |
 | --- | --- |
-| [Decimal](js-apis-arkts-decimal.md#decimal) | 返回计算双曲余弦的倒数值的Decimal对象实例。 |
+| [Decimal](js-apis-arkts-decimal.md#decimal) | 返回计算反双曲余弦值的Decimal对象实例。 |
 
 **错误码**：
 
@@ -1022,18 +930,16 @@ acosh(): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(50).acosh();
-2. console.info("test Decimal acosh:" + data.toString()); // 'test Decimal acosh:4.6050701709847571595'
+```ts
+let data: Decimal = new Decimal(50).acosh();
+console.info("test Decimal acosh:" + data.toString()); // 'test Decimal acosh:4.6050701709847571595'
 ```
 
 ### asinh
 
-PhonePC/2in1TabletTVWearable
-
 asinh(): Decimal
 
-返回一个新的Decimal对象，其值是此Decimal值的双曲正弦的倒数。
+返回一个新的Decimal对象，其值是此Decimal值的反双曲正弦。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -1043,7 +949,7 @@ asinh(): Decimal
 
 | 类型 | 说明 |
 | --- | --- |
-| [Decimal](js-apis-arkts-decimal.md#decimal) | 返回计算双曲正弦的倒数值的Decimal对象实例。 |
+| [Decimal](js-apis-arkts-decimal.md#decimal) | 返回计算反双曲正弦值的Decimal对象实例。 |
 
 **错误码**：
 
@@ -1055,18 +961,16 @@ asinh(): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(50).asinh();
-2. console.info("test Decimal asinh:" + data.toString()); // 'test Decimal asinh:4.6052701709914238266'
+```ts
+let data: Decimal = new Decimal(50).asinh();
+console.info("test Decimal asinh:" + data.toString()); // 'test Decimal asinh:4.6052701709914238266'
 ```
 
 ### atanh
 
-PhonePC/2in1TabletTVWearable
-
 atanh(): Decimal
 
-返回一个新的Decimal对象，其值是此Decimal值的双曲正切的倒数。
+返回一个新的Decimal对象，其值是此Decimal值的反双曲正切。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -1076,7 +980,7 @@ atanh(): Decimal
 
 | 类型 | 说明 |
 | --- | --- |
-| [Decimal](js-apis-arkts-decimal.md#decimal) | 返回计算双曲正切的倒数值的Decimal对象实例。 |
+| [Decimal](js-apis-arkts-decimal.md#decimal) | 返回计算反双曲正切值的Decimal对象实例。 |
 
 **错误码**：
 
@@ -1088,18 +992,16 @@ atanh(): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(0.75).atanh();
-2. console.info("test Decimal atanh:" + data.toString()); // 'test Decimal atanh:0.97295507452765665255'
+```ts
+let data: Decimal = new Decimal(0.75).atanh();
+console.info("test Decimal atanh:" + data.toString()); // 'test Decimal atanh:0.97295507452765665255'
 ```
 
 ### comparedTo
 
-PhonePC/2in1TabletTVWearable
-
 comparedTo(n: Value): number
 
-Decimal的比较方法。
+返回该Decimal与比较值的比较结果。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -1115,7 +1017,7 @@ Decimal的比较方法。
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 返回该Decimal与n的比较结果：  1:该Decimal大于比较值。  -1:该Decimal小于比较值。  0:该Decimal等于比较值。  NaN:该Decimal与比较值有一个值为NaN。 |
+| number | 返回该Decimal与n的比较结果。  1:该Decimal大于比较值。  -1:该Decimal小于比较值。  0:该Decimal等于比较值。  NaN:该Decimal与比较值有一个值为NaN。 |
 
 **错误码**：
 
@@ -1127,19 +1029,17 @@ Decimal的比较方法。
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(Infinity);
-2. let data1: Decimal = new Decimal(5);
-3. let data2: number = data.comparedTo(data1);
-4. console.info("test Decimal comparedTo:" + data2); // 'test Decimal comparedTo:1'
+```ts
+let data: Decimal = new Decimal(Infinity);
+let data1: Decimal = new Decimal(5);
+let data2: number = data.comparedTo(data1);
+console.info("test Decimal comparedTo:" + data2); // 'test Decimal comparedTo:1'
 
-6. let data3: number = data1.comparedTo(10.5);
-7. console.info("test Decimal comparedTo:" + data3); // 'test Decimal comparedTo:-1'
+let data3: number = data1.comparedTo(10.5);
+console.info("test Decimal comparedTo:" + data3); // 'test Decimal comparedTo:-1'
 ```
 
 ### equals
-
-PhonePC/2in1TabletTVWearable
 
 equals(n: Value): boolean
 
@@ -1159,7 +1059,7 @@ equals(n: Value): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | true表示该Decimal与比较值相等，其余情况为false。 |
+| boolean | true表示该Decimal与比较值相等，false表示该Decimal与比较值不相等。 |
 
 **错误码**：
 
@@ -1171,15 +1071,13 @@ equals(n: Value): boolean
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(0);
-2. let data1: boolean = data.equals('1e-324');
-3. console.info("test Decimal equals:" + data1); // 'test Decimal equals:false'
+```ts
+let data: Decimal = new Decimal(0);
+let data1: boolean = data.equals('1e-324');
+console.info("test Decimal equals:" + data1); // 'test Decimal equals:false'
 ```
 
 ### greaterThan
-
-PhonePC/2in1TabletTVWearable
 
 greaterThan(n: Value): boolean
 
@@ -1199,7 +1097,7 @@ greaterThan(n: Value): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | true表示该Decimal大于比较值，其余情况为false。 |
+| boolean | true表示该Decimal大于比较值，false表示该Decimal小于等于比较值。 |
 
 **错误码**：
 
@@ -1211,15 +1109,13 @@ greaterThan(n: Value): boolean
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(0.1);
-2. let data1: boolean = data.greaterThan(new Decimal(0.3).sub(0.2));
-3. console.info("test Decimal greaterThan:" + data1); // 'test Decimal greaterThan:false'
+```ts
+let data: Decimal = new Decimal(0.1);
+let data1: boolean = data.greaterThan(new Decimal(0.3).sub(0.2));
+console.info("test Decimal greaterThan:" + data1); // 'test Decimal greaterThan:false'
 ```
 
 ### greaterThanOrEqualTo
-
-PhonePC/2in1TabletTVWearable
 
 greaterThanOrEqualTo(n: Value): boolean
 
@@ -1239,7 +1135,7 @@ greaterThanOrEqualTo(n: Value): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | true表示该Decimal大于等于比较值，其余情况为false。 |
+| boolean | true表示该Decimal大于等于比较值，false表示该Decimal小于比较值。 |
 
 **错误码**：
 
@@ -1251,15 +1147,13 @@ greaterThanOrEqualTo(n: Value): boolean
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(0.3).sub(0.2);
-2. let data1: boolean = data.greaterThanOrEqualTo(0.1);
-3. console.info("test Decimal greaterThanOrEqualTo:" + data1); // 'test Decimal greaterThanOrEqualTo:true'
+```ts
+let data: Decimal = new Decimal(0.3).sub(0.2);
+let data1: boolean = data.greaterThanOrEqualTo(0.1);
+console.info("test Decimal greaterThanOrEqualTo:" + data1); // 'test Decimal greaterThanOrEqualTo:true'
 ```
 
 ### lessThan
-
-PhonePC/2in1TabletTVWearable
 
 lessThan(n: Value): boolean
 
@@ -1279,7 +1173,7 @@ lessThan(n: Value): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | true表示该Decimal小于比较值，其余情况为false。 |
+| boolean | true表示该Decimal小于比较值，false表示该Decimal大于等于比较值。 |
 
 **错误码**：
 
@@ -1291,15 +1185,13 @@ lessThan(n: Value): boolean
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(0.3).sub(0.2);
-2. let data1: boolean = data.lessThan(0.1)
-3. console.info("test Decimal lessThan:" + data1); // 'test Decimal lessThan:false'
+```ts
+let data: Decimal = new Decimal(0.3).sub(0.2);
+let data1: boolean = data.lessThan(0.1);
+console.info("test Decimal lessThan:" + data1); // 'test Decimal lessThan:false'
 ```
 
 ### lessThanOrEqualTo
-
-PhonePC/2in1TabletTVWearable
 
 lessThanOrEqualTo(n: Value): boolean
 
@@ -1319,7 +1211,7 @@ lessThanOrEqualTo(n: Value): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | true表示该Decimal小于等于比较值，其余情况为false。 |
+| boolean | true表示该Decimal小于等于比较值，false表示该Decimal大于比较值。 |
 
 **错误码**：
 
@@ -1331,15 +1223,13 @@ lessThanOrEqualTo(n: Value): boolean
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(0.1);
-2. let data1: boolean = data.lessThanOrEqualTo(new Decimal(0.3).sub(0.2))
-3. console.info("test Decimal lessThanOrEqualTo:" + data1); // 'test Decimal lessThanOrEqualTo:true'
+```ts
+let data: Decimal = new Decimal(0.1);
+let data1: boolean = data.lessThanOrEqualTo(new Decimal(0.3).sub(0.2));
+console.info("test Decimal lessThanOrEqualTo:" + data1); // 'test Decimal lessThanOrEqualTo:true'
 ```
 
 ### isFinite
-
-PhonePC/2in1TabletTVWearable
 
 isFinite(): boolean
 
@@ -1353,19 +1243,17 @@ isFinite(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | true表示该Decimal为有限值，其余情况为false。 |
+| boolean | true表示该Decimal为有限值，false表示该Decimal不是有限值（如Infinity或NaN）。 |
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(1);
-2. let data1: boolean = data.isFinite();
-3. console.info("test Decimal isFinite:" + data1); // 'test Decimal isFinite:true'
+```ts
+let data: Decimal = new Decimal(1);
+let data1: boolean = data.isFinite();
+console.info("test Decimal isFinite:" + data1); // 'test Decimal isFinite:true'
 ```
 
 ### isInteger
-
-PhonePC/2in1TabletTVWearable
 
 isInteger(): boolean
 
@@ -1379,19 +1267,17 @@ isInteger(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | true表示该Decimal为整数，其余情况为false。 |
+| boolean | true表示该Decimal为整数，false表示该Decimal不为整数。 |
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(123.456);
-2. let data1: boolean = data.isInteger();
-3. console.info("test Decimal isInteger:" + data1); // 'test Decimal isInteger:false'
+```ts
+let data: Decimal = new Decimal(123.456);
+let data1: boolean = data.isInteger();
+console.info("test Decimal isInteger:" + data1); // 'test Decimal isInteger:false'
 ```
 
 ### isNaN
-
-PhonePC/2in1TabletTVWearable
 
 isNaN(): boolean
 
@@ -1405,19 +1291,17 @@ isNaN(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | true表示该Decimal为NaN，其余情况为false。 |
+| boolean | true表示该Decimal为NaN，false表示该Decimal不为NaN。 |
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(NaN);
-2. let data1: boolean = data.isNaN();
-3. console.info("test Decimal isNaN:" + data1); // 'test Decimal isNaN:true'
+```ts
+let data: Decimal = new Decimal(NaN);
+let data1: boolean = data.isNaN();
+console.info("test Decimal isNaN:" + data1); // 'test Decimal isNaN:true'
 ```
 
 ### isNegative
-
-PhonePC/2in1TabletTVWearable
 
 isNegative(): boolean
 
@@ -1431,23 +1315,21 @@ isNegative(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | true表示该Decimal为负数，其余情况为false。 |
+| boolean | true表示该Decimal为负数，false表示该Decimal不为负数。 |
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(-5);
-2. let data1: boolean = data.isNegative();
-3. console.info("test Decimal isNegative:" + data1); // 'test Decimal isNegative:true'
+```ts
+let data: Decimal = new Decimal(-5);
+let data1: boolean = data.isNegative();
+console.info("test Decimal isNegative:" + data1); // 'test Decimal isNegative:true'
 
-5. let data2: Decimal = new Decimal(-0);
-6. let data3: boolean = data2.isNegative();
-7. console.info("test Decimal isNegative:" + data3); // 'test Decimal isNegative:true'
+let data2: Decimal = new Decimal(-0);
+let data3: boolean = data2.isNegative();
+console.info("test Decimal isNegative:" + data3); // 'test Decimal isNegative:true'
 ```
 
 ### isPositive
-
-PhonePC/2in1TabletTVWearable
 
 isPositive(): boolean
 
@@ -1461,23 +1343,21 @@ isPositive(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | true表示该Decimal为正数，其余情况为false。 |
+| boolean | true表示该Decimal为正数，false表示该Decimal不为正数。 |
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(5);
-2. let data1: boolean = data.isPositive();
-3. console.info("test Decimal isPositive:" + data1); // 'test Decimal isPositive:true'
+```ts
+let data: Decimal = new Decimal(5);
+let data1: boolean = data.isPositive();
+console.info("test Decimal isPositive:" + data1); // 'test Decimal isPositive:true'
 
-5. let data2: Decimal = new Decimal(0);
-6. let data3: boolean = data2.isPositive();
-7. console.info("test Decimal isPositive:" + data3); // 'test Decimal isPositive:true'
+let data2: Decimal = new Decimal(0);
+let data3: boolean = data2.isPositive();
+console.info("test Decimal isPositive:" + data3); // 'test Decimal isPositive:true'
 ```
 
 ### isZero
-
-PhonePC/2in1TabletTVWearable
 
 isZero(): boolean
 
@@ -1491,25 +1371,21 @@ isZero(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | true表示该Decimal为0或是-0，其余情况为false。 |
+| boolean | true表示该Decimal为0或是-0，false表示该Decimal不为0且不为-0。 |
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(0);
-2. let data1: boolean = data.isZero();
-3. console.info("test Decimal isZero:" + data1.toString()); // 'test Decimal isZero:true'
+```ts
+let data: Decimal = new Decimal(0);
+let data1: boolean = data.isZero();
+console.info("test Decimal isZero:" + data1.toString()); // 'test Decimal isZero:true'
 ```
 
 ### dividedToIntegerBy
 
-PhonePC/2in1TabletTVWearable
-
 dividedToIntegerBy(n: Value): Decimal
 
 返回该Decimal除以n后获得的整数部分。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -1537,20 +1413,18 @@ dividedToIntegerBy(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(5);
-2. let data1: Decimal = new Decimal(3);
-3. let data2: Decimal = data.dividedToIntegerBy(data1);
-4. console.info("test Decimal dividedToIntegerBy:" + data2.toString()); // 'test Decimal dividedToIntegerBy:1'
+```ts
+let data: Decimal = new Decimal(5);
+let data1: Decimal = new Decimal(3);
+let data2: Decimal = data.dividedToIntegerBy(data1);
+console.info("test Decimal dividedToIntegerBy:" + data2.toString()); // 'test Decimal dividedToIntegerBy:1'
 ```
 
 ### negate
 
-PhonePC/2in1TabletTVWearable
-
 negate(): Decimal
 
-对Decimal值进行取反操作。
+对Decimal值进行取负操作（乘以-1）。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -1564,21 +1438,17 @@ negate(): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(1.8);
-2. let data1: Decimal = data.negate();
-3. console.info("test Decimal negate:" + data1.toString()); // 'test Decimal negate:-1.8'
+```ts
+let data: Decimal = new Decimal(1.8);
+let data1: Decimal = data.negate();
+console.info("test Decimal negate:" + data1.toString()); // 'test Decimal negate:-1.8'
 ```
 
 ### toBinary
 
-PhonePC/2in1TabletTVWearable
-
 toBinary(): string
 
 将Decimal转换为二进制表示的字符串。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -1592,15 +1462,13 @@ toBinary(): string
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(256);
-2. let data1: string = data.toBinary();
-3. console.info("test Decimal toBinary:" + data1); // 'test Decimal toBinary:0b100000000'
+```ts
+let data: Decimal = new Decimal(256);
+let data1: string = data.toBinary();
+console.info("test Decimal toBinary:" + data1); // 'test Decimal toBinary:0b100000000'
 ```
 
 ### toBinary
-
-PhonePC/2in1TabletTVWearable
 
 toBinary(significantDigits: number): string
 
@@ -1634,15 +1502,13 @@ toBinary(significantDigits: number): string
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(256);
-2. let data1: string = data.toBinary(1);
-3. console.info("test Decimal toBinary:" + data1); // 'test Decimal toBinary:0b1p+8'
+```ts
+let data: Decimal = new Decimal(256);
+let data1: string = data.toBinary(1);
+console.info("test Decimal toBinary:" + data1); // 'test Decimal toBinary:0b1p+8'
 ```
 
 ### toBinary
-
-PhonePC/2in1TabletTVWearable
 
 toBinary(significantDigits: number, rounding: Rounding): string
 
@@ -1675,21 +1541,17 @@ toBinary(significantDigits: number, rounding: Rounding): string
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(256);
-2. let data1: string = data.toBinary(1, Decimal.ROUND_HALF_UP);
-3. console.info("test Decimal toBinary:" + data1); // 'test Decimal toBinary:0b1p+8'
+```ts
+let data: Decimal = new Decimal(256);
+let data1: string = data.toBinary(1, Decimal.ROUND_HALF_UP);
+console.info("test Decimal toBinary:" + data1); // 'test Decimal toBinary:0b1p+8'
 ```
 
 ### toOctal
 
-PhonePC/2in1TabletTVWearable
-
 toOctal(): string
 
 转换为八进制表示的字符串。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -1703,15 +1565,13 @@ toOctal(): string
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(256);
-2. let data1: string = data.toOctal();
-3. console.info("test Decimal toOctal:" + data1); // 'test Decimal toOctal:0o400'
+```ts
+let data: Decimal = new Decimal(256);
+let data1: string = data.toOctal();
+console.info("test Decimal toOctal:" + data1); // 'test Decimal toOctal:0o400'
 ```
 
 ### toOctal
-
-PhonePC/2in1TabletTVWearable
 
 toOctal(significantDigits: number): string
 
@@ -1745,15 +1605,13 @@ toOctal(significantDigits: number): string
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(256);
-2. let data1: string = data.toOctal(1);
-3. console.info("test Decimal toOctal:" + data1); // 'test Decimal toOctal:0o1p+8'
+```ts
+let data: Decimal = new Decimal(256);
+let data1: string = data.toOctal(1);
+console.info("test Decimal toOctal:" + data1); // 'test Decimal toOctal:0o1p+8'
 ```
 
 ### toOctal
-
-PhonePC/2in1TabletTVWearable
 
 toOctal(significantDigits: number, rounding: Rounding): string
 
@@ -1786,21 +1644,17 @@ toOctal(significantDigits: number, rounding: Rounding): string
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(256);
-2. let data1: string = data.toOctal(1, Decimal.ROUND_HALF_UP);
-3. console.info("test Decimal toOctal:" + data1); // 'test Decimal toOctal:0o1p+8'
+```ts
+let data: Decimal = new Decimal(256);
+let data1: string = data.toOctal(1, Decimal.ROUND_HALF_UP);
+console.info("test Decimal toOctal:" + data1); // 'test Decimal toOctal:0o1p+8'
 ```
 
 ### toHexadecimal
 
-PhonePC/2in1TabletTVWearable
-
 toHexadecimal(): string
 
 转换为十六进制表示的字符串。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -1814,15 +1668,13 @@ toHexadecimal(): string
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(256);
-2. let data1: string = data.toHexadecimal();
-3. console.info("test Decimal toHexadecimal:" + data1); // 'test Decimal toHexadecimal:0x100'
+```ts
+let data: Decimal = new Decimal(256);
+let data1: string = data.toHexadecimal();
+console.info("test Decimal toHexadecimal:" + data1); // 'test Decimal toHexadecimal:0x100'
 ```
 
 ### toHexadecimal
-
-PhonePC/2in1TabletTVWearable
 
 toHexadecimal(significantDigits: number): string
 
@@ -1856,15 +1708,13 @@ toHexadecimal(significantDigits: number): string
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(256);
-2. let data1: string = data.toHexadecimal(1);
-3. console.info("test Decimal toHexadecimal:" + data1); // 'test Decimal toHexadecimal:0x1p+8'
+```ts
+let data: Decimal = new Decimal(256);
+let data1: string = data.toHexadecimal(1);
+console.info("test Decimal toHexadecimal:" + data1); // 'test Decimal toHexadecimal:0x1p+8'
 ```
 
 ### toHexadecimal
-
-PhonePC/2in1TabletTVWearable
 
 toHexadecimal(significantDigits: number, rounding: Rounding): string
 
@@ -1897,19 +1747,17 @@ toHexadecimal(significantDigits: number, rounding: Rounding): string
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(256);
-2. let data1: string = data.toHexadecimal(1, Decimal.ROUND_HALF_UP);
-3. console.info("test Decimal toHexadecimal:" + data1); // 'test Decimal toHexadecimal:0x1p+8'
+```ts
+let data: Decimal = new Decimal(256);
+let data1: string = data.toHexadecimal(1, Decimal.ROUND_HALF_UP);
+console.info("test Decimal toHexadecimal:" + data1); // 'test Decimal toHexadecimal:0x1p+8'
 ```
 
 ### toDecimalPlaces
 
-PhonePC/2in1TabletTVWearable
-
 toDecimalPlaces(): Decimal
 
-返回一个保留小数点后指定位数的Decimal对象，不进行小数的取舍。
+返回一个保留小数点后指定位数的Decimal对象，不进行小数的舍入。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -1923,15 +1771,13 @@ toDecimalPlaces(): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(12.34567);
-2. let data1: Decimal = data.toDecimalPlaces();
-3. console.info("test Decimal toDecimalPlaces:" + data1.toString()); // 'test Decimal toDecimalPlaces:12.34567'
+```ts
+let data: Decimal = new Decimal(12.34567);
+let data1: Decimal = data.toDecimalPlaces();
+console.info("test Decimal toDecimalPlaces:" + data1.toString()); // 'test Decimal toDecimalPlaces:12.34567'
 ```
 
 ### toDecimalPlaces
-
-PhonePC/2in1TabletTVWearable
 
 toDecimalPlaces(decimalPlaces: number): Decimal
 
@@ -1965,15 +1811,13 @@ toDecimalPlaces(decimalPlaces: number): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(9876.54321);
-2. let data1: Decimal = data.toDecimalPlaces(3);
-3. console.info("test Decimal toDecimalPlaces:" + data1.toString()); // 'test Decimal toDecimalPlaces:9876.543'
+```ts
+let data: Decimal = new Decimal(9876.54321);
+let data1: Decimal = data.toDecimalPlaces(3);
+console.info("test Decimal toDecimalPlaces:" + data1.toString()); // 'test Decimal toDecimalPlaces:9876.543'
 ```
 
 ### toDecimalPlaces
-
-PhonePC/2in1TabletTVWearable
 
 toDecimalPlaces(decimalPlaces: number, rounding: Rounding): Decimal
 
@@ -2006,16 +1850,14 @@ toDecimalPlaces(decimalPlaces: number, rounding: Rounding): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(9876.54321);
-2. let data1: Decimal = data.toDecimalPlaces(1, 0);
-3. console.info("test Decimal toDecimalPlaces:" + data1.toString()); // 'test Decimal toDecimalPlaces:9876.6'
-4. data1 = data.toDecimalPlaces(1, Decimal.ROUND_DOWN) // data1：'9876.5'
+```ts
+let data: Decimal = new Decimal(9876.54321);
+let data1: Decimal = data.toDecimalPlaces(1, 0);
+console.info("test Decimal toDecimalPlaces:" + data1.toString()); // 'test Decimal toDecimalPlaces:9876.6'
+data1 = data.toDecimalPlaces(1, Decimal.ROUND_DOWN); // data1：'9876.5'
 ```
 
 ### toExponential
-
-PhonePC/2in1TabletTVWearable
 
 toExponential(): string
 
@@ -2033,15 +1875,13 @@ toExponential(): string
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(45.6);
-2. let data1: string = data.toExponential();
-3. console.info("test Decimal toExponential:" + data1); // 'test Decimal toExponential:4.56e+1'
+```ts
+let data: Decimal = new Decimal(45.6);
+let data1: string = data.toExponential();
+console.info("test Decimal toExponential:" + data1); // 'test Decimal toExponential:4.56e+1'
 ```
 
 ### toExponential
-
-PhonePC/2in1TabletTVWearable
 
 toExponential(decimalPlaces: number): string
 
@@ -2075,17 +1915,15 @@ toExponential(decimalPlaces: number): string
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(45.6);
-2. let data1: string = data.toExponential(0);
-3. console.info("test Decimal toExponential:" + data1); // 'test Decimal toExponential:5e+1'
-4. data1 = data.toExponential(1); // data1：'4.6e+1'
-5. data1 = data.toExponential(3); // data1：'4.560e+1'
+```ts
+let data: Decimal = new Decimal(45.6);
+let data1: string = data.toExponential(0);
+console.info("test Decimal toExponential:" + data1); // 'test Decimal toExponential:5e+1'
+data1 = data.toExponential(1); // data1：'4.6e+1'
+data1 = data.toExponential(3); // data1：'4.560e+1'
 ```
 
 ### toExponential
-
-PhonePC/2in1TabletTVWearable
 
 toExponential(decimalPlaces: number, rounding: Rounding): string
 
@@ -2118,19 +1956,17 @@ toExponential(decimalPlaces: number, rounding: Rounding): string
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(45.6);
-2. let data1 = data.toExponential(1, Decimal.ROUND_DOWN);
-3. console.info("test Decimal toExponential:" + data1); // 'test Decimal toExponential:4.5e+1'
+```ts
+let data: Decimal = new Decimal(45.6);
+let data1 = data.toExponential(1, Decimal.ROUND_DOWN);
+console.info("test Decimal toExponential:" + data1); // 'test Decimal toExponential:4.5e+1'
 ```
 
 ### toFixed
 
-PhonePC/2in1TabletTVWearable
-
 toFixed(): string
 
-将数值转换为十进制定点模式表示的字符串，不进行小数的取舍。
+将数值转换为十进制定点模式表示的字符串，不进行小数的舍入。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2144,19 +1980,17 @@ toFixed(): string
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(3.456);
-2. let data1: string = data.toFixed();
-3. console.info("test Decimal toFixed:" + data1); // 'test Decimal toFixed:3.456'
+```ts
+let data: Decimal = new Decimal(3.456);
+let data1: string = data.toFixed();
+console.info("test Decimal toFixed:" + data1); // 'test Decimal toFixed:3.456'
 ```
 
 ### toFixed
 
-PhonePC/2in1TabletTVWearable
-
 toFixed(decimalPlaces: number): string
 
-将数组转换为十进制定点模式表示的字符串，可按照decimalPlaces设置小数位数。
+将数值转换为十进制定点模式表示的字符串，可按照decimalPlaces设置小数位数。
 
 使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
@@ -2186,17 +2020,15 @@ toFixed(decimalPlaces: number): string
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(3.456);
-2. let data1: string = data.toFixed(0)
-3. console.info("test Decimal toFixed:" + data1); // 'test Decimal toFixed:3'
-4. data1 = data.toFixed(2) // data1：'3.46'
-5. data1 = data.toFixed(5) // data1：'3.45600'
+```ts
+let data: Decimal = new Decimal(3.456);
+let data1: string = data.toFixed(0);
+console.info("test Decimal toFixed:" + data1); // 'test Decimal toFixed:3'
+data1 = data.toFixed(2); // data1：'3.46'
+data1 = data.toFixed(5); // data1：'3.45600'
 ```
 
 ### toFixed
-
-PhonePC/2in1TabletTVWearable
 
 toFixed(decimalPlaces: number, rounding: Rounding): string
 
@@ -2229,15 +2061,13 @@ toFixed(decimalPlaces: number, rounding: Rounding): string
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(3.456);
-2. let data1: string = data.toFixed(2, Decimal.ROUND_DOWN);
-3. console.info("test Decimal toFixed:" + data1); // b：'test Decimal toFixed:3.45'
+```ts
+let data: Decimal = new Decimal(3.456);
+let data1: string = data.toFixed(2, Decimal.ROUND_DOWN);
+console.info("test Decimal toFixed:" + data1); // data1：'test Decimal toFixed:3.45'
 ```
 
 ### toFraction
-
-PhonePC/2in1TabletTVWearable
 
 toFraction(): Decimal[]
 
@@ -2255,15 +2085,13 @@ toFraction(): Decimal[]
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(1.75);
-2. let data1: Decimal[] = data.toFraction();
-3. console.info("test Decimal toFraction:" + data1.toString()); // 'test Decimal toFraction:7,4'
+```ts
+let data: Decimal = new Decimal(1.75);
+let data1: Decimal[] = data.toFraction();
+console.info("test Decimal toFraction:" + data1.toString()); // 'test Decimal toFraction:7,4'
 ```
 
 ### toFraction
-
-PhonePC/2in1TabletTVWearable
 
 toFraction(maxDenominator: Value): Decimal[]
 
@@ -2295,23 +2123,21 @@ toFraction(maxDenominator: Value): Decimal[]
 
 **示例：**
 
-```
-1. let pi: Decimal = new Decimal('3.14159265358');
-2. let data1 = pi.toFraction(); // data1：'157079632679,50000000000'
-3. data1 = pi.toFraction(100000); // data1：'312689, 99532'
-4. data1 = pi.toFraction(10000); // data1：'355, 113'
-5. data1 = pi.toFraction(100); // data1：'311, 99'
-6. data1 = pi.toFraction(10); // data1：'22, 7'
-7. data1 = pi.toFraction(1); // data1：'3, 1'
+```ts
+let pi: Decimal = new Decimal('3.14159265358');
+let data1 = pi.toFraction(); // data1：'157079632679,50000000000'
+data1 = pi.toFraction(100000); // data1：'312689, 99532'
+data1 = pi.toFraction(10000); // data1：'355, 113'
+data1 = pi.toFraction(100); // data1：'311, 99'
+data1 = pi.toFraction(10); // data1：'22, 7'
+data1 = pi.toFraction(1); // data1：'3, 1'
 ```
 
 ### toNearest
 
-PhonePC/2in1TabletTVWearable
-
 toNearest(n: Value): Decimal
 
-返回一个新的Decimal对象，此Decimal为指定值乘以一个倍数后与原Decimal最接近的值。
+返回一个新的Decimal对象，其值为指定值n的整数倍中最接近原Decimal值的值。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2327,7 +2153,7 @@ toNearest(n: Value): Decimal
 
 | 类型 | 说明 |
 | --- | --- |
-| Decimal | 返回一个Decimal对象，为最接近原值的指定值的倍数值。 |
+| [Decimal](js-apis-arkts-decimal.md#decimal) | 返回一个Decimal对象，为最接近原值的指定值的倍数值。 |
 
 **错误码：**
 
@@ -2339,19 +2165,17 @@ toNearest(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(1.39);
-2. let data1: Decimal = data.toNearest(0.25);
-3. console.info("test Decimal toNearest:" + data1.toString()); // 'test Decimal toNearest:1.5'
+```ts
+let data: Decimal = new Decimal(1.39);
+let data1: Decimal = data.toNearest(0.25);
+console.info("test Decimal toNearest:" + data1.toString()); // 'test Decimal toNearest:1.5'
 ```
 
 ### toNearest
 
-PhonePC/2in1TabletTVWearable
-
 toNearest(n: Value, rounding: Rounding): Decimal
 
-返回一个新的Decimal对象，此Decimal为指定值乘以一个倍数后与原Decimal最接近的值，可按照rounding设置舍入模式。
+返回一个新的Decimal对象，其值为指定值n的整数倍中最接近原Decimal值的值，可按照rounding设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2381,21 +2205,17 @@ toNearest(n: Value, rounding: Rounding): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(9.499);
-2. let data1 = data.toNearest(0.5, Decimal.ROUND_UP); // data1：'9.5'
-3. data1 = data.toNearest(0.5, Decimal.ROUND_DOWN); // data1：'9'
+```ts
+let data: Decimal = new Decimal(9.499);
+let data1 = data.toNearest(0.5, Decimal.ROUND_UP); // data1：'9.5'
+data1 = data.toNearest(0.5, Decimal.ROUND_DOWN); // data1：'9'
 ```
 
 ### toPrecision
 
-PhonePC/2in1TabletTVWearable
-
 toPrecision(): string
 
 将Decimal对象转换为字符串。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2409,15 +2229,13 @@ toPrecision(): string
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(45.6);
-2. let data1: string = data.toPrecision();
-3. console.info("test Decimal toPrecision:" + data1); // 'test Decimal toPrecision:45.6'
+```ts
+let data: Decimal = new Decimal(45.6);
+let data1: string = data.toPrecision();
+console.info("test Decimal toPrecision:" + data1); // 'test Decimal toPrecision:45.6'
 ```
 
 ### toPrecision
-
-PhonePC/2in1TabletTVWearable
 
 toPrecision(significantDigits: number): string
 
@@ -2433,7 +2251,7 @@ toPrecision(significantDigits: number): string
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| significantDigits | number | 是 | 转换时保留的有效数字。 |
+| significantDigits | number | 是 | 转换时保留的有效数字，取值范围为[1, 1e9]的整数。 |
 
 **返回值：**
 
@@ -2451,16 +2269,14 @@ toPrecision(significantDigits: number): string
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(45.6);
-2. let data1: string = data.toPrecision(1);
-3. console.info("test Decimal toPrecision:" + data1); // 'test Decimal toPrecision:5e+1'
-4. data1 = data.toPrecision(5); // data1：'45.600'
+```ts
+let data: Decimal = new Decimal(45.6);
+let data1: string = data.toPrecision(1);
+console.info("test Decimal toPrecision:" + data1); // 'test Decimal toPrecision:5e+1'
+data1 = data.toPrecision(5); // data1：'45.600'
 ```
 
 ### toPrecision
-
-PhonePC/2in1TabletTVWearable
 
 toPrecision(significantDigits: number, rounding: Rounding): string
 
@@ -2493,21 +2309,17 @@ toPrecision(significantDigits: number, rounding: Rounding): string
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(45.6);
-2. let data1: string = data.toPrecision(2, Decimal.ROUND_UP); // data1：'46'
-3. data1 = data.toPrecision(2, Decimal.ROUND_DOWN); // data1：'45'
+```ts
+let data: Decimal = new Decimal(45.6);
+let data1: string = data.toPrecision(2, Decimal.ROUND_UP); // data1：'46'
+data1 = data.toPrecision(2, Decimal.ROUND_DOWN); // data1：'45'
 ```
 
 ### toSignificantDigits
 
-PhonePC/2in1TabletTVWearable
-
 toSignificantDigits(): Decimal
 
 返回一个按照保留有效数字的转换的Decimal对象。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2521,15 +2333,13 @@ toSignificantDigits(): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(987.654321);
-2. let data1: Decimal = data.toSignificantDigits();
-3. console.info("test Decimal toSignificantDigits:" + data1.toString()); // 'test Decimal toSignificantDigits:987.654321'
+```ts
+let data: Decimal = new Decimal(987.654321);
+let data1: Decimal = data.toSignificantDigits();
+console.info("test Decimal toSignificantDigits:" + data1.toString()); // 'test Decimal toSignificantDigits:987.654321'
 ```
 
 ### toSignificantDigits
-
-PhonePC/2in1TabletTVWearable
 
 toSignificantDigits(significantDigits: number): Decimal
 
@@ -2545,7 +2355,7 @@ toSignificantDigits(significantDigits: number): Decimal
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| significantDigits | number | 是 | 转换时保留的有效数字。 |
+| significantDigits | number | 是 | 转换时保留的有效数字，取值范围为[1, 1e9]的整数。 |
 
 **返回值：**
 
@@ -2563,15 +2373,13 @@ toSignificantDigits(significantDigits: number): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(987.654321);
-2. let data1: Decimal = data.toSignificantDigits(6);
-3. console.info("test Decimal toSignificantDigits:" + data1.toString()); // 'test Decimal toSignificantDigits:987.654'
+```ts
+let data: Decimal = new Decimal(987.654321);
+let data1: Decimal = data.toSignificantDigits(6);
+console.info("test Decimal toSignificantDigits:" + data1.toString()); // 'test Decimal toSignificantDigits:987.654'
 ```
 
 ### toSignificantDigits
-
-PhonePC/2in1TabletTVWearable
 
 toSignificantDigits(significantDigits: number, rounding: Rounding): Decimal
 
@@ -2604,15 +2412,13 @@ toSignificantDigits(significantDigits: number, rounding: Rounding): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(987.654321);
-2. let data1: Decimal = data.toSignificantDigits(6, Decimal.ROUND_UP);
-3. console.info("test Decimal toSignificantDigits:" + data1.toString()); // 'test Decimal toSignificantDigits:987.655'
+```ts
+let data: Decimal = new Decimal(987.654321);
+let data1: Decimal = data.toSignificantDigits(6, Decimal.ROUND_UP);
+console.info("test Decimal toSignificantDigits:" + data1.toString()); // 'test Decimal toSignificantDigits:987.655'
 ```
 
 ### toNumber
-
-PhonePC/2in1TabletTVWearable
 
 toNumber(): number
 
@@ -2630,15 +2436,13 @@ toNumber(): number
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(456.789);
-2. let data1: number = data.toNumber();
-3. console.info("test Decimal toNumber:" + data1.toString()); // 'test Decimal toNumber:456.789'
+```ts
+let data: Decimal = new Decimal(456.789);
+let data1: number = data.toNumber();
+console.info("test Decimal toNumber:" + data1.toString()); // 'test Decimal toNumber:456.789'
 ```
 
 ### toString
-
-PhonePC/2in1TabletTVWearable
 
 toString(): string
 
@@ -2656,24 +2460,22 @@ toString(): string
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(750000);
-2. let data1: string = data.toString();
-3. console.info("test Decimal toString:" + data1); // 'test Decimal toString:750000'
+```ts
+let data: Decimal = new Decimal(750000);
+let data1: string = data.toString();
+console.info("test Decimal toString:" + data1); // 'test Decimal toString:750000'
 
-5. Decimal.set({ toExpPos: 5 });
-6. data1 = data.toString(); // data1:'7.5e+5'
+Decimal.set({ toExpPos: 5 });
+data1 = data.toString(); // data1:'7.5e+5'
 
-8. let data2: Decimal = new Decimal(0.000000123);
-9. console.info("test Decimal toString:" + data2.toString()); // 'test Decimal toString:1.23e-7'
+let data2: Decimal = new Decimal(0.000000123);
+console.info("test Decimal toString:" + data2.toString()); // 'test Decimal toString:1.23e-7'
 
-11. Decimal.set({ toExpNeg: -7 });
-12. data1 = data2.toString(); // data1:'1.23e-7'
+Decimal.set({ toExpNeg: -7 });
+data1 = data2.toString(); // data1:'1.23e-7'
 ```
 
 ### valueOf
-
-PhonePC/2in1TabletTVWearable
 
 valueOf(): string
 
@@ -2691,15 +2493,13 @@ valueOf(): string
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(-0);
-2. let data1: string = data.valueOf();
-3. console.info("test Decimal valueOf:" + data1); // 'test Decimal valueOf:-0'
+```ts
+let data: Decimal = new Decimal(-0);
+let data1: string = data.valueOf();
+console.info("test Decimal valueOf:" + data1); // 'test Decimal valueOf:-0'
 ```
 
 ### decimalPlaces
-
-PhonePC/2in1TabletTVWearable
 
 decimalPlaces(): number
 
@@ -2717,15 +2517,13 @@ decimalPlaces(): number
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(1.234);
-2. let data1: number = data.decimalPlaces();
-3. console.info("test Decimal decimalPlaces:" + data1); // 'test Decimal decimalPlaces:3'
+```ts
+let data: Decimal = new Decimal(1.234);
+let data1: number = data.decimalPlaces();
+console.info("test Decimal decimalPlaces:" + data1); // 'test Decimal decimalPlaces:3'
 ```
 
 ### precision
-
-PhonePC/2in1TabletTVWearable
 
 precision(): number
 
@@ -2743,15 +2541,13 @@ precision(): number
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(1.234);
-2. let data1: number = data.precision();
-3. console.info("test Decimal precision:" + data1); // 'test Decimal precision:4'
+```ts
+let data: Decimal = new Decimal(1.234);
+let data1: number = data.precision();
+console.info("test Decimal precision:" + data1); // 'test Decimal precision:4'
 ```
 
 ### precision
-
-PhonePC/2in1TabletTVWearable
 
 precision(includeZeros: boolean | number): number
 
@@ -2783,16 +2579,14 @@ precision(includeZeros: boolean | number): number
 
 **示例：**
 
-```
-1. let data: Decimal = new Decimal(987000);
-2. let data1: number = data.precision();
-3. console.info("test Decimal precision:" + data1); // 'test Decimal precision:3'
-4. data1 = data.precision(true); // data1:'6'
+```ts
+let data: Decimal = new Decimal(987000);
+let data1: number = data.precision();
+console.info("test Decimal precision:" + data1); // 'test Decimal precision:3'
+data1 = data.precision(true); // data1:'6'
 ```
 
 ### abs
-
-PhonePC/2in1TabletTVWearable
 
 static abs(n: Value): Decimal
 
@@ -2824,18 +2618,16 @@ static abs(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.abs(-0.5);
-2. console.info("test Decimal abs:" + data.toString()); // 'test Decimal abs:0.5'
+```ts
+let data: Decimal = Decimal.abs(-0.5);
+console.info("test Decimal abs:" + data.toString()); // 'test Decimal abs:0.5'
 ```
 
 ### floor
 
-PhonePC/2in1TabletTVWearable
-
 static floor(n: Value): Decimal
 
-返回一个新的Decimal对象，其值为该Decimal向负无穷方向舍入得到的结果。
+返回一个新的Decimal对象，其值为参数n向负无穷方向舍入得到的结果。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2863,18 +2655,16 @@ static floor(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.floor(1.8);
-2. console.info("test Decimal floor:" + data.toString()); // 'test Decimal floor:1'
+```ts
+let data: Decimal = Decimal.floor(1.8);
+console.info("test Decimal floor:" + data.toString()); // 'test Decimal floor:1'
 ```
 
 ### ceil
 
-PhonePC/2in1TabletTVWearable
-
 static ceil(n: Value): Decimal
 
-返回一个新的Decimal对象，其值为该Decimal向正无穷方向舍入得到的结果。
+返回一个新的Decimal对象，其值为参数n向正无穷方向舍入得到的结果。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2902,18 +2692,16 @@ static ceil(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.ceil(1.8);
-2. console.info("test Decimal ceil:" + data.toString()); // 'test Decimal ceil:2'
+```ts
+let data: Decimal = Decimal.ceil(1.8);
+console.info("test Decimal ceil:" + data.toString()); // 'test Decimal ceil:2'
 ```
 
 ### trunc
 
-PhonePC/2in1TabletTVWearable
-
 static trunc(n: Value): Decimal
 
-返回一个新的Decimal对象，其值是将此Decimal截断为整数部分。
+返回一个新的Decimal对象，其值是将参数n截断为整数部分。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2941,18 +2729,16 @@ static trunc(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.trunc(2.5);
-2. console.info("test Decimal trunc:" + data.toString()); // 'test Decimal trunc:2'
+```ts
+let data: Decimal = Decimal.trunc(2.5);
+console.info("test Decimal trunc:" + data.toString()); // 'test Decimal trunc:2'
 ```
 
 ### clamp
 
-PhonePC/2in1TabletTVWearable
-
 static clamp(n: Value, min: Value, max: Value): Decimal
 
-返回一个值为将该Decimal的值限制在min到max范围内的Decimal对象，当大于限制的最大值时返回max，小于限制的最小值时返回min，在范围内返回值不变。
+返回一个值为将参数n的值限制在min到max范围内的Decimal对象，当n大于max时返回max，当n小于min时返回min，在范围内返回值不变。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -2983,20 +2769,16 @@ static clamp(n: Value, min: Value, max: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.clamp(10.1, 0, 10);
-2. console.info("test Decimal clamp:" + data.toString()); // 'test Decimal clamp:10'
+```ts
+let data: Decimal = Decimal.clamp(10.1, 0, 10);
+console.info("test Decimal clamp:" + data.toString()); // 'test Decimal clamp:10'
 ```
 
 ### add
 
-PhonePC/2in1TabletTVWearable
-
 static add(x: Value, y: Value): Decimal
 
 返回一个值为x加y的和的Decimal对象。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3025,20 +2807,16 @@ static add(x: Value, y: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.add(0.5, 0.5);
-2. console.info("test Decimal add:" + data.toString()); // 'test Decimal add:1'
+```ts
+let data: Decimal = Decimal.add(0.5, 0.5);
+console.info("test Decimal add:" + data.toString()); // 'test Decimal add:1'
 ```
 
 ### sum
 
-PhonePC/2in1TabletTVWearable
-
 static sum(...n: Value[]): Decimal
 
 返回一个值为数组元素和的Decimal对象。该接口用于对参数求和，当无入参时会抛出运行时异常。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3066,20 +2844,16 @@ static sum(...n: Value[]): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.sum(0.5, 0.5);
-2. console.info("test Decimal sum:" + data.toString()); // 'test Decimal sum:1'
+```ts
+let data: Decimal = Decimal.sum(0.5, 0.5);
+console.info("test Decimal sum:" + data.toString()); // 'test Decimal sum:1'
 ```
 
 ### sub
 
-PhonePC/2in1TabletTVWearable
-
 static sub(x: Value, y: Value): Decimal
 
 返回一个值为x减y的差的Decimal对象。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3108,20 +2882,16 @@ static sub(x: Value, y: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.sub(1, 0.5);
-2. console.info("test Decimal sub:" + data.toString()); // 'test Decimal sub:0.5'
+```ts
+let data: Decimal = Decimal.sub(1, 0.5);
+console.info("test Decimal sub:" + data.toString()); // 'test Decimal sub:0.5'
 ```
 
 ### mul
 
-PhonePC/2in1TabletTVWearable
-
 static mul(x: Value, y: Value): Decimal
 
 返回一个值为x乘以y的积的Decimal对象。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3150,20 +2920,16 @@ static mul(x: Value, y: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.mul(1, 0.5);
-2. console.info("test Decimal mul:" + data.toString()); // 'test Decimal mul:0.5'
+```ts
+let data: Decimal = Decimal.mul(1, 0.5);
+console.info("test Decimal mul:" + data.toString()); // 'test Decimal mul:0.5'
 ```
 
 ### div
 
-PhonePC/2in1TabletTVWearable
-
 static div(x: Value, y: Value): Decimal
 
 返回一个值为x除以y的商的Decimal对象。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3192,20 +2958,16 @@ static div(x: Value, y: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.div(1, 0.5);
-2. console.info("test Decimal div:" + data.toString()); // 'test Decimal div:2'
+```ts
+let data: Decimal = Decimal.div(1, 0.5);
+console.info("test Decimal div:" + data.toString()); // 'test Decimal div:2'
 ```
 
 ### mod
 
-PhonePC/2in1TabletTVWearable
-
 static mod(x: Value, y: Value): Decimal
 
 返回一个新的Decimal对象，其值是x除以y的模。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3215,14 +2977,14 @@ static mod(x: Value, y: Value): Decimal
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| x | [Value](js-apis-arkts-decimal.md#value) | 是 | 模除运算的被除数。 |
-| y | [Value](js-apis-arkts-decimal.md#value) | 是 | 模除运算的除数。 |
+| x | [Value](js-apis-arkts-decimal.md#value) | 是 | 模运算的被除数。 |
+| y | [Value](js-apis-arkts-decimal.md#value) | 是 | 模运算的除数。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [Decimal](js-apis-arkts-decimal.md#decimal) | 返回模除运算后的Decimal对象实例。 |
+| [Decimal](js-apis-arkts-decimal.md#decimal) | 返回模运算后的Decimal对象实例。 |
 
 **错误码：**
 
@@ -3234,20 +2996,16 @@ static mod(x: Value, y: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.mod(2, 1);
-2. console.info("test Decimal mod:" + data.toString()); // 'test Decimal mod:0'
+```ts
+let data: Decimal = Decimal.mod(2, 1);
+console.info("test Decimal mod:" + data.toString()); // 'test Decimal mod:0'
 ```
 
 ### sqrt
 
-PhonePC/2in1TabletTVWearable
-
 static sqrt(n: Value): Decimal
 
 返回一个值为n的平方根的Decimal对象。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3275,20 +3033,16 @@ static sqrt(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.sqrt(3);
-2. console.info("test Decimal sqrt:" + data.toString()); // 'test Decimal sqrt:1.7320508075688772935'
+```ts
+let data: Decimal = Decimal.sqrt(3);
+console.info("test Decimal sqrt:" + data.toString()); // 'test Decimal sqrt:1.7320508075688772935'
 ```
 
 ### cbrt
 
-PhonePC/2in1TabletTVWearable
-
 static cbrt(n: Value): Decimal
 
 返回一个值为n的立方根的Decimal对象。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3316,14 +3070,12 @@ static cbrt(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.cbrt(3);
-2. console.info("test Decimal cbrt:" + data.toString()); // 'test Decimal cbrt:1.4422495703074083823'
+```ts
+let data: Decimal = Decimal.cbrt(3);
+console.info("test Decimal cbrt:" + data.toString()); // 'test Decimal cbrt:1.4422495703074083823'
 ```
 
 ### pow
-
-PhonePC/2in1TabletTVWearable
 
 static pow(base: Value, exponent: Value): Decimal
 
@@ -3338,7 +3090,7 @@ static pow(base: Value, exponent: Value): Decimal
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | base | [Value](js-apis-arkts-decimal.md#value) | 是 | 幂运算的底数的值。 |
-| exponent | [Value](js-apis-arkts-decimal.md#value) | 是 | 幂运算的幂的值。 |
+| exponent | [Value](js-apis-arkts-decimal.md#value) | 是 | 幂运算的指数值。 |
 
 **返回值：**
 
@@ -3357,20 +3109,16 @@ static pow(base: Value, exponent: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.pow(3, -2);
-2. console.info("test Decimal pow:" + data.toString()); // 'test Decimal pow:0.11111111111111111111'
+```ts
+let data: Decimal = Decimal.pow(3, -2);
+console.info("test Decimal pow:" + data.toString()); // 'test Decimal pow:0.11111111111111111111'
 ```
 
 ### exp
 
-PhonePC/2in1TabletTVWearable
-
 static exp(n: Value): Decimal
 
 返回一个值为n的自然指数的Decimal对象。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3399,20 +3147,16 @@ static exp(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.exp(2);
-2. console.info("test Decimal exp:" + data.toString()); // 'test Decimal exp:7.3890560989306502272'
+```ts
+let data: Decimal = Decimal.exp(2);
+console.info("test Decimal exp:" + data.toString()); // 'test Decimal exp:7.3890560989306502272'
 ```
 
 ### log
 
-PhonePC/2in1TabletTVWearable
-
 static log(n: Value, base: Value): Decimal
 
 返回一个以base为底n的对数的Decimal对象。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3442,20 +3186,16 @@ static log(n: Value, base: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.log(2, 256);
-2. console.info("test Decimal log:" + data.toString()); // 'test Decimal log:0.125'
+```ts
+let data: Decimal = Decimal.log(2, 256);
+console.info("test Decimal log:" + data.toString()); // 'test Decimal log:0.125'
 ```
 
 ### ln
 
-PhonePC/2in1TabletTVWearable
-
 static ln(n: Value): Decimal
 
 返回一个值为n的自然对数的Decimal对象。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3484,20 +3224,16 @@ static ln(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.ln(1.23e+30);
-2. console.info("test Decimal ln:" + data.toString()); // 'test Decimal ln:69.284566959205696648'
+```ts
+let data: Decimal = Decimal.ln(1.23e+30);
+console.info("test Decimal ln:" + data.toString()); // 'test Decimal ln:69.284566959205696648'
 ```
 
 ### log2
 
-PhonePC/2in1TabletTVWearable
-
 static log2(n: Value): Decimal
 
 返回一个以2为底n的对数的Decimal对象。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3526,20 +3262,16 @@ static log2(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.log2(4);
-2. console.info("test Decimal log2:" + data.toString()); // 'test Decimal log2:2'
+```ts
+let data: Decimal = Decimal.log2(4);
+console.info("test Decimal log2:" + data.toString()); // 'test Decimal log2:2'
 ```
 
 ### log10
 
-PhonePC/2in1TabletTVWearable
-
 static log10(n: Value): Decimal
 
 返回一个以10为底n的对数的Decimal对象。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3568,20 +3300,16 @@ static log10(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.log10(10000);
-2. console.info("test Decimal log10:" + data.toString()); // 'test Decimal log10:4'
+```ts
+let data: Decimal = Decimal.log10(10000);
+console.info("test Decimal log10:" + data.toString()); // 'test Decimal log10:4'
 ```
 
 ### cos
 
-PhonePC/2in1TabletTVWearable
-
 static cos(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是n的余弦值。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3609,20 +3337,16 @@ static cos(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.cos(-0.25);
-2. console.info("test Decimal cos:" + data.toString()); // 'test Decimal cos:0.96891242171064478414'
+```ts
+let data: Decimal = Decimal.cos(-0.25);
+console.info("test Decimal cos:" + data.toString()); // 'test Decimal cos:0.96891242171064478414'
 ```
 
 ### sin
 
-PhonePC/2in1TabletTVWearable
-
 static sin(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是n的正弦值。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3650,20 +3374,16 @@ static sin(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.sin(0.75);
-2. console.info("test Decimal sin:" + data.toString()); // 'test Decimal sin:0.68163876002333416673'
+```ts
+let data: Decimal = Decimal.sin(0.75);
+console.info("test Decimal sin:" + data.toString()); // 'test Decimal sin:0.68163876002333416673'
 ```
 
 ### tan
 
-PhonePC/2in1TabletTVWearable
-
 static tan(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是n的正切值。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3691,20 +3411,16 @@ static tan(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.tan(0.75);
-2. console.info("test Decimal tan:" + data.toString()); // 'test Decimal tan:0.93159645994407246117'
+```ts
+let data: Decimal = Decimal.tan(0.75);
+console.info("test Decimal tan:" + data.toString()); // 'test Decimal tan:0.93159645994407246117'
 ```
 
 ### cosh
 
-PhonePC/2in1TabletTVWearable
-
 static cosh(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是n的双曲余弦值。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3732,20 +3448,16 @@ static cosh(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.cosh(0.5);
-2. console.info("test Decimal cosh:" + data.toString()); // 'test Decimal cosh:1.1276259652063807852'
+```ts
+let data: Decimal = Decimal.cosh(0.5);
+console.info("test Decimal cosh:" + data.toString()); // 'test Decimal cosh:1.1276259652063807852'
 ```
 
 ### sinh
 
-PhonePC/2in1TabletTVWearable
-
 static sinh(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是n的双曲正弦值。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3773,20 +3485,16 @@ static sinh(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.sinh(0.5);
-2. console.info("test Decimal sinh:" + data.toString()); // 'test Decimal sinh:0.52109530549374736162'
+```ts
+let data: Decimal = Decimal.sinh(0.5);
+console.info("test Decimal sinh:" + data.toString()); // 'test Decimal sinh:0.52109530549374736162'
 ```
 
 ### tanh
 
-PhonePC/2in1TabletTVWearable
-
 static tanh(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是n的双曲正切值。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3814,20 +3522,16 @@ static tanh(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.tanh(0.5);
-2. console.info("test Decimal tanh:" + data.toString()); // 'test Decimal tanh:0.4621171572600097585'
+```ts
+let data: Decimal = Decimal.tanh(0.5);
+console.info("test Decimal tanh:" + data.toString()); // 'test Decimal tanh:0.4621171572600097585'
 ```
 
 ### acos
 
-PhonePC/2in1TabletTVWearable
-
 static acos(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是n的反余弦值。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3856,20 +3560,16 @@ static acos(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.acos(0.5);
-2. console.info("test Decimal acos:" + data.toString()); // 'test Decimal acos:1.0471975511965977462'
+```ts
+let data: Decimal = Decimal.acos(0.5);
+console.info("test Decimal acos:" + data.toString()); // 'test Decimal acos:1.0471975511965977462'
 ```
 
 ### asin
 
-PhonePC/2in1TabletTVWearable
-
 static asin(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是n的反正弦值。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3898,20 +3598,16 @@ static asin(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.asin(0.75);
-2. console.info("test Decimal asin:" + data.toString()); // 'test Decimal asin:0.84806207898148100805'
+```ts
+let data: Decimal = Decimal.asin(0.75);
+console.info("test Decimal asin:" + data.toString()); // 'test Decimal asin:0.84806207898148100805'
 ```
 
 ### atan
 
-PhonePC/2in1TabletTVWearable
-
 static atan(n: Value): Decimal
 
 返回一个新的Decimal对象，其值是n的反正切值。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3940,20 +3636,16 @@ static atan(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.atan(0.75);
-2. console.info("test Decimal atan:" + data.toString()); // 'test Decimal atan:0.6435011087932843868'
+```ts
+let data: Decimal = Decimal.atan(0.75);
+console.info("test Decimal atan:" + data.toString()); // 'test Decimal atan:0.6435011087932843868'
 ```
 
 ### acosh
 
-PhonePC/2in1TabletTVWearable
-
 static acosh(n: Value): Decimal
 
-返回一个新的Decimal对象，其值是n的双曲余弦值的倒数。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
+返回一个新的Decimal对象，其值是n的反双曲余弦值。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -3963,13 +3655,13 @@ static acosh(n: Value): Decimal
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| n | [Value](js-apis-arkts-decimal.md#value) | 是 | 需要求的双曲余弦的倒数的值。 |
+| n | [Value](js-apis-arkts-decimal.md#value) | 是 | 需要求反双曲余弦值的值。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [Decimal](js-apis-arkts-decimal.md#decimal) | 返回n的双曲余弦的倒数对应的Decimal对象实例。 |
+| [Decimal](js-apis-arkts-decimal.md#decimal) | 返回n的反双曲余弦值对应的Decimal对象实例。 |
 
 **错误码**：
 
@@ -3982,20 +3674,16 @@ static acosh(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.acosh(50);
-2. console.info("test Decimal acosh:" + data.toString()); // 'test Decimal acosh:4.6050701709847571595'
+```ts
+let data: Decimal = Decimal.acosh(50);
+console.info("test Decimal acosh:" + data.toString()); // 'test Decimal acosh:4.6050701709847571595'
 ```
 
 ### asinh
 
-PhonePC/2in1TabletTVWearable
-
 static asinh(n: Value): Decimal
 
-返回一个新的Decimal对象，其值是n的双曲正弦值的倒数。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
+返回一个新的Decimal对象，其值是n的反双曲正弦值。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -4005,13 +3693,13 @@ static asinh(n: Value): Decimal
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| n | [Value](js-apis-arkts-decimal.md#value) | 是 | 需要求双曲正弦的倒数的值。 |
+| n | [Value](js-apis-arkts-decimal.md#value) | 是 | 需要求反双曲正弦值的值。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [Decimal](js-apis-arkts-decimal.md#decimal) | 返回n的双曲正弦的倒数对应的Decimal对象实例。 |
+| [Decimal](js-apis-arkts-decimal.md#decimal) | 返回n的反双曲正弦值对应的Decimal对象实例。 |
 
 **错误码**：
 
@@ -4024,20 +3712,16 @@ static asinh(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.asinh(50);
-2. console.info("test Decimal asinh:" + data.toString()); // 'test Decimal asinh:4.6052701709914238266'
+```ts
+let data: Decimal = Decimal.asinh(50);
+console.info("test Decimal asinh:" + data.toString()); // 'test Decimal asinh:4.6052701709914238266'
 ```
 
 ### atanh
 
-PhonePC/2in1TabletTVWearable
-
 static atanh(n: Value): Decimal
 
-返回一个新的Decimal对象，其值是n的双曲正切值的倒数。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
+返回一个新的Decimal对象，其值是n的反双曲正切值。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -4047,13 +3731,13 @@ static atanh(n: Value): Decimal
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| n | [Value](js-apis-arkts-decimal.md#value) | 是 | 需要求双曲正切的倒数的值。 |
+| n | [Value](js-apis-arkts-decimal.md#value) | 是 | 需要求反双曲正切值的值。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [Decimal](js-apis-arkts-decimal.md#decimal) | 返回n的双曲正切的倒数对应的Decimal对象实例。 |
+| [Decimal](js-apis-arkts-decimal.md#decimal) | 返回n的反双曲正切值对应的Decimal对象实例。 |
 
 **错误码**：
 
@@ -4066,21 +3750,17 @@ static atanh(n: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.atanh(0.75);
-2. console.info("test Decimal atanh:" + data.toString()); // 'test Decimal atanh:0.97295507452765665255'
+```ts
+let data: Decimal = Decimal.atanh(0.75);
+console.info("test Decimal atanh:" + data.toString()); // 'test Decimal atanh:0.97295507452765665255'
 ```
 
 ### atan2
-
-PhonePC/2in1TabletTVWearable
 
 static atan2(y: Value, x: Value): Decimal
 
 返回一个新的Decimal对象，其值是为-π到π范围内的y/x反正切值。
 
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
-
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Utils.Lang
@@ -4089,14 +3769,14 @@ static atan2(y: Value, x: Value): Decimal
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| y | [Value](js-apis-arkts-decimal.md#value) | 是 | 除法的被除数。 |
-| x | [Value](js-apis-arkts-decimal.md#value) | 是 | 除法的除数。 |
+| y | [Value](js-apis-arkts-decimal.md#value) | 是 | y坐标值，用于计算y/x的反正切值并确定象限。 |
+| x | [Value](js-apis-arkts-decimal.md#value) | 是 | x坐标值，用于计算y/x的反正切值并确定象限。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [Decimal](js-apis-arkts-decimal.md#decimal) | 返回-pi 到 pi 范围内的"y/x"反正切值对应的Decimal对象实例。 |
+| [Decimal](js-apis-arkts-decimal.md#decimal) | 返回-π到π范围内的"y/x"反正切值对应的Decimal对象实例。 |
 
 **错误码**：
 
@@ -4109,20 +3789,16 @@ static atan2(y: Value, x: Value): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.atan2(2, 3);
-2. console.info("test Decimal atan2:" + data.toString()); // 'test Decimal atan2:0.58800260354756755125'
+```ts
+let data: Decimal = Decimal.atan2(2, 3);
+console.info("test Decimal atan2:" + data.toString()); // 'test Decimal atan2:0.58800260354756755125'
 ```
 
 ### hypot
 
-PhonePC/2in1TabletTVWearable
-
 static hypot(...n: Value[]): Decimal
 
 返回一个新的Decimal对象，其值是参数平方和的平方根。无入参时默认返回0。
-
-使用[DecimalConfig.precision](js-apis-arkts-decimal.md#decimalconfig)的值进行有效数字的保留，使用[DecimalConfig.rounding](js-apis-arkts-decimal.md#decimalconfig)的值设置舍入模式。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -4150,14 +3826,12 @@ static hypot(...n: Value[]): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.hypot(2, 3, 4);
-2. console.info("test Decimal hypot:" + data.toString()); // 'test Decimal hypot:5.3851648071345040313'
+```ts
+let data: Decimal = Decimal.hypot(2, 3, 4);
+console.info("test Decimal hypot:" + data.toString()); // 'test Decimal hypot:5.3851648071345040313'
 ```
 
 ### max
-
-PhonePC/2in1TabletTVWearable
 
 static max(...n: Value[]): Decimal
 
@@ -4189,14 +3863,12 @@ static max(...n: Value[]): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.max(2, 3, 4);
-2. console.info("test Decimal max:" + data.toString()); // 'test Decimal max:4'
+```ts
+let data: Decimal = Decimal.max(2, 3, 4);
+console.info("test Decimal max:" + data.toString()); // 'test Decimal max:4'
 ```
 
 ### min
-
-PhonePC/2in1TabletTVWearable
 
 static min(...n: Value[]): Decimal
 
@@ -4228,14 +3900,12 @@ static min(...n: Value[]): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.min(2, 3, 4);
-2. console.info("test Decimal min:" + data.toString()); // 'test Decimal min:2'
+```ts
+let data: Decimal = Decimal.min(2, 3, 4);
+console.info("test Decimal min:" + data.toString()); // 'test Decimal min:2'
 ```
 
 ### random
-
-PhonePC/2in1TabletTVWearable
 
 static random(): Decimal
 
@@ -4261,13 +3931,11 @@ static random(): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.random();
+```ts
+let data: Decimal = Decimal.random();
 ```
 
 ### random
-
-PhonePC/2in1TabletTVWearable
 
 static random(significantDigits: number): Decimal
 
@@ -4300,17 +3968,15 @@ static random(significantDigits: number): Decimal
 
 **示例：**
 
-```
-1. let data: Decimal = Decimal.random(20);
+```ts
+let data: Decimal = Decimal.random(20);
 ```
 
 ### sign
 
-PhonePC/2in1TabletTVWearable
-
 static sign(n: Value): number
 
-根据参数的值进行判断返回对应的值：当n>0返回1，当n<0返回-1，当n==0返回0，当n==-0返回-0，否则返回NaN。
+根据参数的值进行判断返回对应的值：当n>0返回1，当n<0返回-1，当n==0返回0，否则返回NaN。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -4326,7 +3992,7 @@ static sign(n: Value): number
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 根据参数的值进行判断返回对应的值。 |
+| number | 返回参数的符号判断结果。  1：参数为正数。  -1：参数为负数。  0：参数为0。  NaN：参数为NaN。 |
 
 **错误码：**
 
@@ -4338,35 +4004,33 @@ static sign(n: Value): number
 
 **示例：**
 
-```
-1. let data1: number = Decimal.sign(2);
-2. console.info("test Decimal sign:" + data1); // 'test Decimal sign:1'
+```ts
+let data1: number = Decimal.sign(2);
+console.info("test Decimal sign:" + data1); // 'test Decimal sign:1'
 
-4. let data2: number = Decimal.sign(-3);
-5. console.info("test Decimal sign:" + data2); // 'test Decimal sign:-1'
+let data2: number = Decimal.sign(-3);
+console.info("test Decimal sign:" + data2); // 'test Decimal sign:-1'
 
-7. let data3: number = Decimal.sign(0);
-8. console.info("test Decimal sign:" + data3); // 'test Decimal sign:0'
+let data3: number = Decimal.sign(0);
+console.info("test Decimal sign:" + data3); // 'test Decimal sign:0'
 
-10. let data4: number = Decimal.sign(3.14);
-11. console.info("test Decimal sign:" + data4); // 'test Decimal sign:1'
+let data4: number = Decimal.sign(3.14);
+console.info("test Decimal sign:" + data4); // 'test Decimal sign:1'
 
-13. let data5: number = Decimal.sign(-1.618);
-14. console.info("test Decimal sign:" + data5); // 'test Decimal sign:-1'
+let data5: number = Decimal.sign(-1.618);
+console.info("test Decimal sign:" + data5); // 'test Decimal sign:-1'
 
-16. let data6: number = Decimal.sign("100");
-17. console.info("test Decimal sign:" + data6); // 'test Decimal sign:1'
+let data6: number = Decimal.sign("100");
+console.info("test Decimal sign:" + data6); // 'test Decimal sign:1'
 
-19. let data7: number = Decimal.sign("-50");
-20. console.info("test Decimal sign:" + data7); // 'test Decimal sign:-1'
+let data7: number = Decimal.sign("-50");
+console.info("test Decimal sign:" + data7); // 'test Decimal sign:-1'
 
-22. let data8: number = Decimal.sign(NaN);
-23. console.info("test Decimal sign:" + data8); // 'test Decimal sign:NaN'
+let data8: number = Decimal.sign(NaN);
+console.info("test Decimal sign:" + data8); // 'test Decimal sign:NaN'
 ```
 
 ### round
-
-PhonePC/2in1TabletTVWearable
 
 static round(n: Value): Decimal
 
@@ -4398,15 +4062,13 @@ static round(n: Value): Decimal
 
 **示例：**
 
-```
-1. let x = 3.3333333333333;
-2. let data = Decimal.round(x);
-3. console.info("test Decimal round:" + data.toString()); // 'test Decimal round:3'
+```ts
+let x = 3.3333333333333;
+let data = Decimal.round(x);
+console.info("test Decimal round:" + data.toString()); // 'test Decimal round:3'
 ```
 
 ### set
-
-PhonePC/2in1TabletTVWearable
 
 static set(config: DecimalConfig):void
 
@@ -4434,98 +4096,98 @@ static set(config: DecimalConfig):void
 
 **示例1：**
 
-```
-1. let data : Decimal = new Decimal(1.2345678901234567);
-2. Decimal.set({
-3. precision: 5,
-4. rounding: 4,
-5. toExpNeg: -7,
-6. toExpPos: 7,
-7. maxE: 9e15,
-8. minE: -9e15,
-9. modulo: 1,
-10. crypto: false
-11. });
-12. let data1 : Decimal = data.add(0.5);
-13. console.info("test Decimal set:" + data1.toString()); // "test Decimal set:1.7346"
-14. // 将配置属性全部设置为默认值
-15. Decimal.set({ defaults: true });
-16. let data2 : Decimal = data.add(0.5);
-17. console.info("test Decimal set:" + data2.toString()); // "test Decimal set:1.7345678901234567"
-18. // 最大有效位数设置为10，其余配置属性设置为默认值
-19. Decimal.set({ precision: 10, defaults: true });
-20. let data3 : Decimal = data.add(0.5);
-21. console.info("test Decimal set:" + data3.toString()); // "test Decimal set:1.73456789"
+```ts
+let data : Decimal = new Decimal(1.2345678901234567);
+Decimal.set({
+    precision: 5,
+    rounding: 4,
+    toExpNeg: -7,
+    toExpPos: 7,
+    maxE: 9e15,
+    minE: -9e15,
+    modulo: 1,
+    crypto: false
+});
+let data1 : Decimal = data.add(0.5);
+console.info("test Decimal set:" + data1.toString()); // "test Decimal set:1.7346"
+// 将配置属性全部设置为默认值
+Decimal.set({ defaults: true });
+let data2 : Decimal = data.add(0.5);
+console.info("test Decimal set:" + data2.toString()); // "test Decimal set:1.7345678901234567"
+// 最大有效位数设置为10，其余配置属性设置为默认值
+Decimal.set({ precision: 10, defaults: true });
+let data3 : Decimal = data.add(0.5);
+console.info("test Decimal set:" + data3.toString()); // "test Decimal set:1.73456789"
 
-23. // toExpNeg和toExpPos的用法
-24. Decimal.set({ toExpNeg: -7 });
-25. let x0 : Decimal = new Decimal(0.00000123); // x0:'0.00000123'
-26. let x1 : Decimal = new Decimal(0.000000123); // x1:'1.23e-7'
+// toExpNeg和toExpPos的用法
+Decimal.set({ toExpNeg: -7 });
+let x0 : Decimal = new Decimal(0.00000123); // x0:'0.00000123'
+let x1 : Decimal = new Decimal(0.000000123); // x1:'1.23e-7'
 
-28. Decimal.set({ toExpPos: 2 });
-29. let y0 : Decimal = new Decimal(12.3); // y0:'12.3'
-30. let y1 : Decimal = new Decimal(123); // y1:'1.23e+2'
+Decimal.set({ toExpPos: 2 });
+let y0 : Decimal = new Decimal(12.3); // y0:'12.3'
+let y1 : Decimal = new Decimal(123); // y1:'1.23e+2'
 
-32. // 所有数据均使用科学计数法表示
-33. Decimal.set({ toExpPos: 0 });
+// 所有数据均使用科学计数法表示
+Decimal.set({ toExpPos: 0 });
 
-35. // minE和maxE的用法
-36. Decimal.set({ minE: -500 });
-37. let a0 : Decimal = new Decimal('1e-500'); // a0:'1e-500'
-38. let a1 : Decimal = new Decimal('9.9e-501'); // a1:'0e0'
+// minE和maxE的用法
+Decimal.set({ minE: -500 });
+let a0 : Decimal = new Decimal('1e-500'); // a0:'1e-500'
+let a1 : Decimal = new Decimal('9.9e-501'); // a1:'0e0'
 
-40. Decimal.set({ minE: -3 });
-41. let b0 : Decimal = new Decimal(0.001); // b0:'0.001'
-42. let b1 : Decimal = new Decimal(0.0001); // b1:'0e0'
+Decimal.set({ minE: -3 });
+let b0 : Decimal = new Decimal(0.001); // b0:'0.001'
+let b1 : Decimal = new Decimal(0.0001); // b1:'0e0'
 
-44. Decimal.set({ maxE: 500 });
-45. let c0 : Decimal = new Decimal('9.999e500'); // c0:'9.999e+500'
-46. let c1 : Decimal = new Decimal('1e501'); // c1:'Infinity'
+Decimal.set({ maxE: 500 });
+let c0 : Decimal = new Decimal('9.999e500'); // c0:'9.999e+500'
+let c1 : Decimal = new Decimal('1e501'); // c1:'Infinity'
 
-48. Decimal.set({ maxE: 4 });
-49. let d0 : Decimal = new Decimal(99999); // d0:'9.9999e+4'
-50. let d1 : Decimal = new Decimal(100000); // d1:'Infinity'
+Decimal.set({ maxE: 4 });
+let d0 : Decimal = new Decimal(99999); // d0:'9.9999e+4'
+let d1 : Decimal = new Decimal(100000); // d1:'Infinity'
 ```
 
 **示例2：**
 
-```
-1. // /entry/src/main/ets/pages/test.ets
-2. export function test(){
-3. let data : Decimal = new Decimal(1.2345678901234567);
-4. Decimal.set({
-5. precision: 5,
-6. rounding: 0,
-7. toExpNeg: -7,
-8. toExpPos: 7,
-9. maxE: 9e15,
-10. minE: -9e15,
-11. modulo: 1,
-12. crypto: false
-13. });
-14. let data1 : Decimal = data.add(0.5);
-15. console.info("test Decimal set:" + data1.toString()); // 'test Decimal set:1.7346'
-16. }
+```ts
+// /entry/src/main/ets/pages/test.ets
+export function test() {
+  let data : Decimal = new Decimal(1.2345678901234567);
+  Decimal.set({
+    precision: 5,
+    rounding: 0,
+    toExpNeg: -7,
+    toExpPos: 7,
+    maxE: 9e15,
+    minE: -9e15,
+    modulo: 1,
+    crypto: false
+  });
+  let data1 : Decimal = data.add(0.5);
+  console.info("test Decimal set:" + data1.toString()); // 'test Decimal set:1.7346'
+}
 ```
 
-```
-1. // /entry/src/main/ets/pages/Index.ets
-2. import {test} from './test';
+```ts
+// /entry/src/main/ets/pages/Index.ets
+import {test} from './test';
 
-4. let data : Decimal = new Decimal(1.2345678901234567);
-5. Decimal.set({
-6. precision: 6,
-7. rounding: 1,
-8. toExpNeg: -7,
-9. toExpPos: 7,
-10. maxE: 9e15,
-11. minE: -9e15,
-12. modulo: 1,
-13. crypto: false
-14. });
-15. let data1 : Decimal = data.add(0.5);
-16. console.info("test Decimal set:" + data1.toString()); // 'test Decimal set:1.73456'
-17. test();
-18. data1 = data1.add(0); // data1:'1.7346'
-19. console.info("test Decimal set:" + data1.toString()); // 'test Decimal set:1.7346'
+let data : Decimal = new Decimal(1.2345678901234567);
+Decimal.set({
+  precision: 6,
+  rounding: 1,
+  toExpNeg: -7,
+  toExpPos: 7,
+  maxE: 9e15,
+  minE: -9e15,
+  modulo: 1,
+  crypto: false
+});
+let data1 : Decimal = data.add(0.5);
+console.info("test Decimal set:" + data1.toString()); // 'test Decimal set:1.73456'
+test();
+data1 = data1.add(0); // data1:'1.7346'
+console.info("test Decimal set:" + data1.toString()); // 'test Decimal set:1.7346'
 ```

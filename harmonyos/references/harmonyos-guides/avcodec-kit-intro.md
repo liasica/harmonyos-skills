@@ -3,25 +3,25 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avcodec-kit-i
 title: AVCodec Kit简介
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > AVCodec Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:34:38+08:00
-doc_updated_at: 2026-04-02
-content_hash: sha256:77c9bd83208af302937da9b92c2a2e89cc48ef29f31b9af156a1339ab8f17cdb
+scraped_at: 2026-09-02T14:50:14+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:20deccb9ec2a64575fab72578509a1dc6255b55c56c5c3d09b4f2272f7e808e8
 ---
 
-AVCodec Kit（Audio & Video Codec Kit，音视频编解码，封装解析）是媒体系统中的音视频的编解码、媒体文件的解析、封装、媒体数据输入等原子能力。
+AVCodec Kit（Audio & Video Codec Kit，音视频编解码，封装，解封装）是媒体系统中的音视频的编解码、媒体文件的封装、解封装、媒体数据输入等原子能力。
 
 基于性能考虑，AVCodec Kit仅提供C接口。
 
 ## 能力范围
 
-* 媒体数据输入：媒体应用可以传入文件fd、或者流媒体url，进行后续的媒体信息解析等处理。
+* 媒体数据输入：媒体应用可以传入文件fd、或者流媒体url，进行后续的媒体信息解封装等处理。
 * 媒体基础能力（Media Foundation）：提供媒体数据处理的公共基础类型，包括[AVBuffer](../harmonyos-references/capi-native-avbuffer-h.md)、[AVFormat](../harmonyos-references/capi-native-avformat-h.md)等。
 * 音频编码：音频类应用（比如音频通话、音频录制等）可以将未压缩的音频数据送到音频编码器进行编码，应用可以设置编码要用到的编码格式、码率、采样率等参数，控制编码的输出，达到压缩音频文件的目的。
 * 视频编码：视频类应用（比如视频通话、视频录制等）可以将未压缩的视频数据送到视频编码器进行编码，应用可以设置编码要用到的编码格式、码率、帧率等参数，控制编码的输出，达到压缩视频文件的目的。
 * 音频解码：音频类应用（比如音频通话、音频播放器等）将音频码流通过音频解码器解码，解码后的数据可以送到音频设备播放。
 * 视频解码：视频类应用（比如视频通话、视频播放器等）将视频码流通过视频解码器解码，解码后的图像数据可以送到视频显示设备显示。
-* 媒体文件解析：在媒体应用（音视频播放器等），将本地或者网络接收到的媒体文件解析，获得音视频的码流、音视频的呈现时间、编码格式、文件的一些基本属性信息等。
 * 媒体文件封装：在媒体应用（音视频录制等），将音视频编码器编码后的码流数据封装成媒体文件（mp4、m4a），将音视频的码流、音视频的呈现时间、编码格式、文件的一些基本属性信息等按照文件格式写入应用指定的文件中。
+* 媒体文件解封装：在媒体应用（音视频播放器等），将本地或者网络接收到的媒体文件解封装，获得音视频的码流、音视频的呈现时间、编码格式、文件的一些基本属性信息等。
 
 ## 亮点/特征
 
@@ -54,7 +54,7 @@ AVCodec Kit（Audio & Video Codec Kit，音视频编解码，封装解析）是�
 
   视频编解码的逻辑如图所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/bJXOMzQdQgaGrNd-uO-sHQ/zh-cn_image_0000002558605382.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/Jc4dUaTtTiCRq2CWdprY0A/zh-cn_image_0000002736433637.png)
 
   具体开发指导请参考[视频解码Surface模式](video-decoding.md#surface模式)、[视频编码Surface模式](video-encoding.md#surface模式)。
 * 音频编解码
@@ -65,27 +65,27 @@ AVCodec Kit（Audio & Video Codec Kit，音视频编解码，封装解析）是�
 
   音频编解码逻辑如图所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/u6CeTzqjQqaIk_MtyD7_LQ/zh-cn_image_0000002589324909.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/Dc-IOUQHSEeiYBwjIYZZWg/zh-cn_image_0000002706834486.png)
 
   具体开发指导请参考[音频解码](audio-decoding.md)、[音频编码](audio-encoding.md)。
-* 文件解析封装
+* 文件封装与解封装
 
   在文件封装环节，应用将AVBuffer送入Codec对应的接口，执行数据封装，AVBuffer可以是由上述编码输出的AVBuffer，也可以是应用创建的AVBuffer，AVBuffer中要携带有效的码流数据和相关的时间描述等信息。
 
-  在文件解析环节，应用从Codec对应的接口获得携带有码流数据的AVBuffer，该AVBuffer可以送入上述视频和音频编解码对应接口。
+  在文件解封装环节，应用从Codec对应的接口获得携带有码流数据的AVBuffer，该AVBuffer可以送入上述视频和音频编解码对应接口。
 
-  文件封装解封装逻辑如图所示。
+  文件封装、解封装逻辑如图所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/gHus7p1RTW2m9ZS8FCzf2w/zh-cn_image_0000002589244845.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/L1MQ4eRBQjWhaGAcKN7EZg/zh-cn_image_0000002736313593.png)
 
-  具体开发指导请参考[媒体数据解析](audio-video-demuxer.md)、[媒体数据封装](audio-video-muxer.md)。
+  具体开发指导请参考[媒体数据封装](audio-video-muxer.md)和[媒体数据解封装](audio-video-demuxer.md)。
 
 ## 模拟器支持情况
 
 本Kit支持模拟器，但与真机存在部分能力差异，具体差异如下。
 
 * 通用差异：请参见[模拟器与真机的差异](ide-emulator-specification.md#section1227613205203)。
-* 媒体数据解析支持模拟器，具体规格参考[解封装格式](avcodec-support-formats.md#媒体数据解析)。
-* 媒体数据封装支持模拟器，具体规格参考[封装格式](avcodec-support-formats.md#媒体数据封装)。
-* 视频编解码仅软件解码支持模拟器（h265格式除外），具体规格参考[视频解码](avcodec-support-formats.md#视频解码)。
 * 音频编解码支持模拟器，具体规格参考[音频编解码](avcodec-support-formats.md#音频解码)。
+* 视频编解码仅软件解码支持模拟器（h265格式除外），具体规格参考[视频解码](avcodec-support-formats.md#视频解码)。
+* 媒体数据封装支持模拟器，具体规格参考[媒体数据封装](avcodec-support-formats.md#媒体数据封装)。
+* 媒体数据解封装支持模拟器，具体规格参考[媒体数据解封装](avcodec-support-formats.md#媒体数据解封装)。

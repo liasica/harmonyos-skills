@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 网络共享错误码
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 错误码 > 网络共享错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:46+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:e96927e3bc23ef8f6d55617eebfd2a43b95beb6bc7c748be7eda7b8594499b39
+scraped_at: 2026-09-02T15:01:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4b3d1a81a2fb4a13ddac8e50bd65165f5c07f268eb37497bc7b12ec33b7f69ee
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码](errorcode-universal.md)说明文档。
 
 ## 2200001 非法参数值
-
-PhonePC/2in1TabletWearable
 
 **错误信息**
 
@@ -34,8 +32,6 @@ Invalid parameter value.
 
 ## 2200002 连接服务失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to connect to the service.
@@ -53,8 +49,6 @@ Failed to connect to the service.
 检查系统服务运行状态是否正常。
 
 ## 2200003 系统内部错误
-
-PhonePC/2in1TabletWearable
 
 **错误信息**
 
@@ -126,15 +120,13 @@ Bluetooth sharing failed.
 
 **可能原因**
 
-1.未开启蓝牙。
-
-2.没有连接网络，获取默认网络失败。
+1. 未开启蓝牙。
+2. 没有连接网络，获取默认网络失败。
 
 **处理步骤**
 
-1.点击蓝牙图标，开启蓝牙模式。
-
-2.检查网络的连接是否正常。
+1. 点击蓝牙图标，开启蓝牙模式。
+2. 检查网络的连接是否正常。
 
 ## 2202009 网络共享开启转发错误
 

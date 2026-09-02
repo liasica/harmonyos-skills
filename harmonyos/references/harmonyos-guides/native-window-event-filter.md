@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-window-event-filter
-title: 使用WindowManager管理多模输入事件（C/C++）
-breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 使用WindowManager管理多模输入事件（C/C++）
+title: 使用WindowManager管理多模输入事件 (C/C++)
+breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 其他开发场景 > 使用WindowManager管理多模输入事件 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:42+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:8ad38e55de4cffdfe0fb7c702be666c9ec50fd74cc8aa7022fca991d65556cbc
+scraped_at: 2026-09-02T14:59:22+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1414c3b731ca69824e1e30f737f412f1088cc567e89afe51917d899db6d5ccd8
 ---
 
 ## 场景介绍
@@ -20,17 +20,8 @@ content_hash: sha256:8ad38e55de4cffdfe0fb7c702be666c9ec50fd74cc8aa7022fca991d655
 
 ### 在CMake脚本中链接动态库
 
-```
-1. target_link_libraries(entry PUBLIC libnative_window_manager.so libohinput.so)
-```
-
-### 添加头文件
-
-```
-1. #include "multimodalinput/oh_input_manager.h"
-2. #include "multimodalinput/oh_key_code.h"
-3. #include "window_manager/oh_window_comm.h"
-4. #include "window_manager/oh_window_event_filter.h"
+```txt
+target_link_libraries(entry PUBLIC libnative_window_manager.so libohinput.so)
 ```
 
 ### 接口使用说明
@@ -50,68 +41,65 @@ content_hash: sha256:8ad38e55de4cffdfe0fb7c702be666c9ec50fd74cc8aa7022fca991d655
 以下示例代码中介绍了如何注册过滤函数和取消过滤函数，以过滤ESC退出按键和数字按键为例。
 
 ```
-1. #include "napi/native_api.h"
-2. #include "window_manager/oh_window_comm.h"
-3. #include "window_manager/oh_window_event_filter.h"
-4. #include "multimodalinput/oh_input_manager.h"
-5. #include "multimodalinput/oh_key_code.h"
+#include "napi/native_api.h"
+#include "window_manager/oh_window_comm.h"
+#include "window_manager/oh_window_event_filter.h"
+#include "multimodalinput/oh_input_manager.h"
+#include "multimodalinput/oh_key_code.h"
 
-7. // 设置过滤函数
-8. static bool filterFunc(Input_KeyEvent *event) {
-9. auto keyCode = OH_Input_GetKeyEventKeyCode(event);
-10. auto action = OH_Input_GetKeyEventAction(event);
-11. // case1: 过滤escape
-12. // return keyCode == Input_KeyCode::KEYCODE_ESCAPE;
+// 设置过滤函数
+static bool filterFunc(Input_KeyEvent *event)
+{
+    auto keyCode = OH_Input_GetKeyEventKeyCode(event);
+    auto action = OH_Input_GetKeyEventAction(event);
+    
+    // 过滤escape和数字键的按下
+    return (keyCode >= Input_KeyCode::KEYCODE_0 && keyCode <= Input_KeyCode::KEYCODE_9
+         && action == Input_KeyEventAction::KEY_ACTION_DOWN) || (keyCode == Input_KeyCode::KEYCODE_ESCAPE);
+}
 
-14. // case2: 过滤数字键的按下，抬起不过滤
-15. // return keyCode >= Input_KeyCode::KEYCODE_0 && keyCode <= Input_KeyCode::KEYCODE_9
-16. //  && action == Input_KeyEventAction::KEY_ACTION_DOWN;
+static napi_value registerFilter(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    int32_t windowId;
+    napi_get_value_int32(env, args[0], &windowId);
+    
+    // 向windowId对应的窗口注册filterFunc的过滤函数
+    auto res = OH_NativeWindowManager_RegisterKeyEventFilter(windowId, filterFunc);
+    
+    napi_value errCode;
+    napi_create_int32(env, res, &errCode);
+    return errCode;
+}
 
-18. // 过滤escape和数字键的按下(case1 || case2)
-19. return (keyCode >= Input_KeyCode::KEYCODE_0 && keyCode <= Input_KeyCode::KEYCODE_9
-20. && action == Input_KeyEventAction::KEY_ACTION_DOWN) || (keyCode == Input_KeyCode::KEYCODE_ESCAPE);
-21. }
+static napi_value clearFilter(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
-23. static napi_value registerFilter(napi_env env, napi_callback_info info) {
-24. size_t argc = 1;
-25. napi_value args[1] = {nullptr};
-26. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t windowId;
+    napi_get_value_int32(env, args[0], &windowId);
 
-28. int32_t windowId;
-29. napi_get_value_int32(env, args[0], &windowId);
+    auto res = OH_NativeWindowManager_UnregisterKeyEventFilter(windowId);
+    napi_value errCode;
+    napi_create_int32(env, res, &errCode);
+    return errCode;
+}
 
-31. // 向windowId对应的窗口注册filterFunc的过滤函数
-32. auto res = OH_NativeWindowManager_RegisterKeyEventFilter(windowId, filterFunc);
-
-34. napi_value errCode;
-35. napi_create_int32(env, res, &errCode);
-36. return errCode;
-37. }
-
-39. static napi_value clearFilter(napi_env env, napi_callback_info info) {
-40. size_t argc = 1;
-41. napi_value args[1] = {nullptr};
-42. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-
-44. int32_t windowId;
-45. napi_get_value_int32(env, args[0], &windowId);
-
-47. auto res = OH_NativeWindowManager_UnregisterKeyEventFilter(windowId);
-48. napi_value errCode;
-49. napi_create_int32(env, res, &errCode);
-50. return errCode;
-
-52. }
-
-54. EXTERN_C_START
-55. static napi_value Init(napi_env env, napi_value exports) {
-56. napi_property_descriptor desc[] = {
-57. {"registerFilter", nullptr, registerFilter, nullptr, nullptr, nullptr, napi_default, nullptr},
-58. {"clearFilter", nullptr, clearFilter, nullptr, nullptr, nullptr, napi_default, nullptr}};
-59. napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
-60. return exports;
-61. }
-62. EXTERN_C_END
+EXTERN_C_START
+static napi_value Init(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {
+        {"registerFilter", nullptr, registerFilter, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"clearFilter", nullptr, clearFilter, nullptr, nullptr, nullptr, napi_default, nullptr}};
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    return exports;
+}
+EXTERN_C_END
 ```
 
 ## 将多模触摸事件注入给目标窗口
@@ -120,16 +108,8 @@ content_hash: sha256:8ad38e55de4cffdfe0fb7c702be666c9ec50fd74cc8aa7022fca991d655
 
 ### 在CMake脚本中链接动态库
 
-```
-1. target_link_libraries(entry PUBLIC libnative_window_manager.so libohinput.so)
-```
-
-### 添加头文件
-
-```
-1. #include "multimodalinput/oh_input_manager.h"
-2. #include "window_manager/oh_window.h"
-3. #include "napi/native_api.h"
+```txt
+target_link_libraries(entry PUBLIC libnative_window_manager.so libohinput.so)
 ```
 
 ### 接口使用说明
@@ -167,72 +147,84 @@ content_hash: sha256:8ad38e55de4cffdfe0fb7c702be666c9ec50fd74cc8aa7022fca991d655
 以下示例代码介绍了如何将多模触摸事件注入目标窗口，以单次事件注入为例。
 
 ```
-1. #include "napi/native_api.h"
-2. #include "window_manager/oh_window.h"
-3. #include "multimodalinput/oh_input_manager.h"
+#include "napi/native_api.h"
+#include "window_manager/oh_window.h"
+#include "multimodalinput/oh_input_manager.h"
 
-5. static napi_value injectEvent(napi_env env, napi_callback_info info) {
-6. size_t argc = 10;
-7. napi_value args[10] = {nullptr};
-8. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+const int32_t ARGS_TWO = 2;
+const int32_t ARGS_THREE = 3;
+const int32_t ARGS_FOUR = 4;
+const int32_t ARGS_FIVE = 5;
+const int32_t ARGS_SIX = 6;
+const int32_t ARGS_SEVEN = 7;
+const int32_t ARGS_EIGHT = 8;
+const int32_t ARGS_NINE = 9;
+const int32_t ARGS_TEN = 10;
 
-10. int32_t windowId;
-11. napi_get_value_int32(env, args[0], &windowId);
+static napi_value injectEvent(napi_env env, napi_callback_info info)
+{
+    size_t argc = ARGS_TEN;
+    napi_value args[ARGS_TEN] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
-13. int32_t displayId;
-14. napi_get_value_int32(env, args[1], &displayId);
+    int32_t windowId;
+    napi_get_value_int32(env, args[0], &windowId);
 
-16. int32_t windowX;
-17. napi_get_value_int32(env, args[2], &windowX);
+    int32_t displayId;
+    napi_get_value_int32(env, args[1], &displayId);
 
-19. int32_t windowY;
-20. napi_get_value_int32(env, args[3], &windowY);
+    int32_t windowX;
+    napi_get_value_int32(env, args[ARGS_TWO], &windowX);
 
-22. int32_t action;
-23. napi_get_value_int32(env, args[4], &action);
+    int32_t windowY;
+    napi_get_value_int32(env, args[ARGS_THREE], &windowY);
 
-25. int32_t fingerId;
-26. napi_get_value_int32(env, args[5], &fingerId);
+    int32_t action;
+    napi_get_value_int32(env, args[ARGS_FOUR], &action);
 
-28. int32_t displayX;
-29. napi_get_value_int32(env, args[6], &displayX);
+    int32_t fingerId;
+    napi_get_value_int32(env, args[ARGS_FIVE], &fingerId);
 
-31. int32_t displayY;
-32. napi_get_value_int32(env, args[7], &displayY);
+    int32_t displayX;
+    napi_get_value_int32(env, args[ARGS_SIX], &displayX);
 
-34. int32_t actionTime;
-35. napi_get_value_int32(env, args[8], &actionTime);
+    int32_t displayY;
+    napi_get_value_int32(env, args[ARGS_SEVEN], &displayY);
 
-37. int32_t TE_WindowId;
-38. napi_get_value_int32(env, args[9], &TE_WindowId);
+    int32_t actionTime;
+    napi_get_value_int32(env, args[ARGS_EIGHT], &actionTime);
 
-40. // 构造多模事件touchEvent
-41. Input_TouchEvent* touchEvent = OH_Input_CreateTouchEvent();
-42. OH_Input_SetTouchEventAction(touchEvent, action);
-43. OH_Input_SetTouchEventFingerId(touchEvent, fingerId);
-44. OH_Input_SetTouchEventDisplayX(touchEvent, displayX);
-45. OH_Input_SetTouchEventDisplayY(touchEvent, displayY);
-46. OH_Input_SetTouchEventActionTime(touchEvent, actionTime);
-47. OH_Input_SetTouchEventWindowId(touchEvent, TE_WindowId);
-48. OH_Input_SetTouchEventDisplayId(touchEvent, displayId);
+    int32_t TE_WindowId;
+    napi_get_value_int32(env, args[ARGS_NINE], &TE_WindowId);
+    
+    // 构造多模事件touchEvent
+    Input_TouchEvent* touchEvent = OH_Input_CreateTouchEvent();
+    OH_Input_SetTouchEventAction(touchEvent, action);
+    OH_Input_SetTouchEventFingerId(touchEvent, fingerId);
+    OH_Input_SetTouchEventDisplayX(touchEvent, displayX);
+    OH_Input_SetTouchEventDisplayY(touchEvent, displayY);
+    OH_Input_SetTouchEventActionTime(touchEvent, actionTime);
+    OH_Input_SetTouchEventWindowId(touchEvent, TE_WindowId);
+    OH_Input_SetTouchEventDisplayId(touchEvent, displayId);
 
-50. // 向windowId对应的窗口注入多模触摸事件
-51. auto res = OH_WindowManager_InjectTouchEvent(windowId, touchEvent, windowX, windowY);
+    // 向windowId对应的窗口注入多模触摸事件
+    auto res = OH_WindowManager_InjectTouchEvent(windowId, touchEvent, windowX, windowY);
 
-53. // 使用完touchEvent后销毁对象
-54. OH_Input_DestroyTouchEvent(&touchEvent);
+    // 使用完touchEvent后销毁对象
+    OH_Input_DestroyTouchEvent(&touchEvent);
+    
+    napi_value errCode;
+    napi_create_int32(env, res, &errCode);
+    return errCode;
+}
 
-56. napi_value errCode;
-57. napi_create_int32(env, res, &errCode);
-58. return errCode;
-59. }
-
-61. EXTERN_C_START
-62. static napi_value Init(napi_env env, napi_value exports) {
-63. napi_property_descriptor desc[] = {
-64. {"injectEvent", nullptr, injectEvent, nullptr, nullptr, nullptr, napi_default, nullptr}};
-65. napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
-66. return exports;
-67. }
-68. EXTERN_C_END
+EXTERN_C_START
+static napi_value Init(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {
+        {"injectEvent", nullptr, injectEvent, nullptr, nullptr, nullptr, napi_default, nullptr}};
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    return exports;
+}
+EXTERN_C_END
 ```

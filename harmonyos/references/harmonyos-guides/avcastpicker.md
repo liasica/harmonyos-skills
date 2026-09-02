@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avcastpicker
 title: 音视频投播
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 应用接入播控自检 > 应用接入播控检查项详细说明 > 音视频投播
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:34:51+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:e30750915b6d8a5918e1905079200597dc296f9a4d09d9b98626aa74ef95e77e
+scraped_at: 2026-09-02T14:59:44+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f8a85518315cdebdfdcc878eeb08e65f9135dcd7b7da67c143a1ea79fe14b5a8
 ---
 
 针对音视频类应用，播控中心提供系统级设备切换、投播能力选择入口，提供音视频发声设备统一投播组件。应用通过接入统一投播组件，可以实现在应用内及系统播控中心，将应用音视频资源通过Cast+协议/DLNA协议投播到远端设备。应用需先按自检要求接入[基础播控](basic-playback-control.md)，才可正常接入音视频投播组件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/YRiYu20YSzGExHT1EK9i3g/zh-cn_image_0000002589324933.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/RUstyj40RsqHOuyzD0GbFg/zh-cn_image_0000002589244869.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/QCBT8iR2TYqaty2yAolLYA/zh-cn_image_0000002736313635.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/srCw-AmwQ0ucAFhTCAkE3A/zh-cn_image_0000002706674592.png)
 
 ## 基础投播能力
 
 ### Cast+协议音视频投播/DLNA协议音视频投播
 
-注意
+**须知** 
 
-**自验证关注点：** 播放可投播的音视频资源，点击投播至3.1以上的华为智慧屏/DLNA协议的设备，查看投播功能是否正常可用，且在应用内及系统播控中心内能控制远端投播。
+**自验证关注点：** 播放可投播的音视频资源，点击投播至3.1以上的TV设备/DLNA协议的设备，查看投播功能是否正常可用，且在应用内及系统播控中心内能控制远端投播。
 
 1. 界面是否正确显示Picker。
 
@@ -35,15 +35,15 @@ content_hash: sha256:e30750915b6d8a5918e1905079200597dc296f9a4d09d9b98626aa74ef9
 
 ### DRM数字加密视频投播
 
-注意
+**须知** 
 
-**自验证关注点：** 播放可投播的DRM数字加密视频资源，点击投播至3.1以上的华为智慧屏，或支持DRM硬件解码的大屏设备，查看投播功能是否正常可用。
+**自验证关注点：** 播放可投播的DRM数字加密视频资源，点击投播至3.1以上的TV设备，或支持DRM硬件解码的大屏设备，查看投播功能是否正常可用。
 
 ## 投播能力增强
 
 ### 镜像投屏自动切换资源投播
 
-注意
+**须知** 
 
 **自验证关注点：** 在控制中心发起无线投屏后，在应用内播放可投播的音视频资源，查看是否自动切换为资源投播模式（Cast+协议音视频投播/DLNA协议音视频投播）。
 

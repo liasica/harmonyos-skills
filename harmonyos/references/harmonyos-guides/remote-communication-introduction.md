@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: Remote Communication Kit简介
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > Remote Communication Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:01+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fe7988139fb02b1d06c033c88b0c950075a43de1282c9cf388584ad7db3f4317
+scraped_at: 2026-09-02T14:50:06+08:00
+doc_updated_at: 2026-08-07
+content_hash: sha256:ce842f34dcdb2052545e78677548116e28945886294d1cf2bd9e8a141dcd5ed6
 ---
 
 ## 概述
 
-Remote Communication Kit提供请求网络数据的功能，当前包含以下能力：
+Remote Communication Kit（远场通信服务）提供请求网络数据的功能，当前包含以下能力：
 
 * HTTP请求能力。Remote Communication Kit构建了一种场景化HTTP通信能力。和Network Kit提供的标准HTTP能力不同的是，Remote Communication Kit构建了场景化API，强调易用性，详见[支持的HTTP网络请求场景](remote-communication-introduction.md#支持的http网络请求场景)。开发者可根据需要选择合适的Kit。
 * URPC（Unified Remote Procedure Call）高性能rpc通信库。可实现远程函数调用能力，且具有抗弱网传输、多径传输（蜂窝网络和Wi-Fi）等特性。开发者可通过URPC完成简单方便的远程过程调用。

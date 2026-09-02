@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_interface_bundle.h
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > C API > 头文件 > native_interface_bundle.h
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:59+08:00
-doc_updated_at: 2026-04-10
-content_hash: sha256:f0a20363059826ffcea06e65927bd1b3c0acbb6d7156c6a28eeca239abb5c4de
+scraped_at: 2026-09-02T15:00:36+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:30cdd98c2a094abb4a5cc827b35de040a45e0489a920ccf979753455799fa64e
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供查询应用包信息的功能，包括应用包名、应用指纹、应用appId等。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -40,8 +34,6 @@ PhonePC/2in1TabletTVWearable
 | [OH\_NativeBundle\_ModuleMetadata](capi-native-bundle-oh-nativebundle-modulemetadata.md) | OH\_NativeBundle\_ModuleMetadata | 模块元数据的信息。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -56,14 +48,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_NativeBundle\_GetCurrentApplicationInfo()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_NativeBundle_ApplicationInfo OH_NativeBundle_GetCurrentApplicationInfo()
+```c
+OH_NativeBundle_ApplicationInfo OH_NativeBundle_GetCurrentApplicationInfo()
 ```
 
 **描述**
@@ -80,10 +68,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeBundle\_GetAppId()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. char* OH_NativeBundle_GetAppId()
+```c
+char* OH_NativeBundle_GetAppId()
 ```
 
 **描述**
@@ -96,14 +82,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| char\* | 返回一个新创建的字符串，用于指示appID信息。如果返回的对象为NULL，则表示创建失败。  失败的可能原因是应用程序地址空间已满，导致空间分配失败。 |
+| char\* | 返回一个新创建的字符串，用于指示appId信息。如果返回的对象为NULL，则表示创建失败。  失败的可能原因是应用程序地址空间已满，导致空间分配失败。 |
 
 ### OH\_NativeBundle\_GetAppIdentifier()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. char* OH_NativeBundle_GetAppIdentifier()
+```c
+char* OH_NativeBundle_GetAppIdentifier()
 ```
 
 **描述**
@@ -120,10 +104,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeBundle\_GetMainElementName()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_NativeBundle_ElementName OH_NativeBundle_GetMainElementName()
+```c
+OH_NativeBundle_ElementName OH_NativeBundle_GetMainElementName()
 ```
 
 **描述**
@@ -136,14 +118,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_NativeBundle\_ElementName](capi-native-bundle-oh-nativebundle-elementname.md) | 返回新创建的OH\_NativeBundle\_ElementName对象。如果返回的对象为NULL，则表示创建失败。  失败的可能原因是应用程序地址空间已满，导致空间分配失败。 |
+| [OH\_NativeBundle\_ElementName](capi-native-bundle-oh-nativebundle-elementname.md) | 返回新创建的OH\_NativeBundle\_ElementName对象。如果返回的对象中存在为NULL的字段，则表示创建失败。  失败的可能原因是应用程序地址空间已满，导致空间分配失败。 |
 
 ### OH\_NativeBundle\_GetCompatibleDeviceType()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. char* OH_NativeBundle_GetCompatibleDeviceType()
+```c
+char* OH_NativeBundle_GetCompatibleDeviceType()
 ```
 
 **描述**
@@ -160,10 +140,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeBundle\_IsDebugMode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. bool OH_NativeBundle_IsDebugMode(bool* isDebugMode)
+```c
+bool OH_NativeBundle_IsDebugMode(bool* isDebugMode)
 ```
 
 **描述**
@@ -186,10 +164,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeBundle\_GetModuleMetadata()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_NativeBundle_ModuleMetadata* OH_NativeBundle_GetModuleMetadata(size_t* size)
+```c
+OH_NativeBundle_ModuleMetadata* OH_NativeBundle_GetModuleMetadata(size_t* size)
 ```
 
 **描述**
@@ -212,10 +188,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeBundle\_GetAbilityResourceInfo()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. BundleManager_ErrorCode OH_NativeBundle_GetAbilityResourceInfo(char* fileType, OH_NativeBundle_AbilityResourceInfo** abilityResourceInfo, size_t* size)
+```c
+BundleManager_ErrorCode OH_NativeBundle_GetAbilityResourceInfo(char* fileType, OH_NativeBundle_AbilityResourceInfo** abilityResourceInfo, size_t* size)
 ```
 
 **描述**
@@ -232,8 +206,8 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| char\* fileType | 表示待查询的特定文件类型，推荐使用[UTD类型](../harmonyos-guides/uniform-data-type-descriptors.md)，比如：'general.plain-text'、'general.image'。目前也可以兼容使用[MIME type类型](https://www.iana.org/assignments/media-types/media-types.xhtml?utm_source=ld246.com)和文件后缀名称，如：'text/xml' 、 '.png'等。文件后缀与文件类型的映射关系参见[UTD预置列表](../harmonyos-guides/uniform-data-type-list.md)。不支持传'\*/\*'。 |
-| [OH\_NativeBundle\_AbilityResourceInfo](-native-bundle-oh-nativebundle-abilityresourceinfo.md)\*\* abilityResourceInfo | 表示返回的组件资源信息列表。 |
+| char\* fileType | 表示待查询的特定文件类型，推荐使用[UTD类型](../harmonyos-guides/uniform-data-type-descriptors.md)，比如："general.plain-text"、"general.image"。目前也可以兼容使用[MIME type类型](https://www.iana.org/assignments/media-types/media-types.xhtml?utm_source=ld246.com)和文件后缀名称，如："text/xml" 、 ".png"等。文件后缀与文件类型的映射关系参见[UTD预置列表](../harmonyos-guides/uniform-data-type-list.md)。不支持传"\*/\*"。 |
+| [OH\_NativeBundle\_AbilityResourceInfo](capi-native-bundle-oh-nativebundle-abilityresourceinfo.md)\*\* abilityResourceInfo | 表示返回的组件资源信息列表。 |
 | size\_t\* size | 表示返回的组件资源信息列表大小。 |
 
 **返回：**

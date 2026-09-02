@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getfo
 title: GetFormatFromSubAndC0
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > GetFormatFromSubAndC0
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:14+08:00
+scraped_at: 2026-09-02T14:50:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9fa2d7864f50031e87350ade574d89d7cdfa85b5ce5cdf6dca17af8e5e704fd1
+content_hash: sha256:ae9a54ec4bb1c95e9c696600585d6f828f10fdddf70e706f236adeb069615349
 ---
 
 ## 函数功能
@@ -30,8 +30,8 @@ content_hash: sha256:9fa2d7864f50031e87350ade574d89d7cdfa85b5ce5cdf6dca17af8e5e7
 
 ## 函数原型
 
-```
-1. inline int32_t GetFormatFromSubAndC0(int32_t primary_format, int32_t sub_format, int32_t c0_format)
+```cpp
+inline int32_t GetFormatFromSubAndC0(int32_t primary_format, int32_t sub_format, int32_t c0_format)
 ```
 
 ## 参数说明

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservi
 title: game_performance.h
 breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > C API > 头文件和结构体 > 头文件 > game_performance.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:46+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0e3fc425633ec46443ae83df801152a206c7d6c60c2493031abec7f06b59f5e0
+scraped_at: 2026-09-02T15:02:54+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f2ed6f46aefbb1e1637e65e6c72e732f167800562f57e6b29c598d042c0ea093
 ---
 
 ## 概述
-
-PhonePC/2in1Tablet
 
 声明游戏场景感知的类型及相关接口。
 
@@ -26,11 +24,7 @@ PhonePC/2in1Tablet
 
 ## 汇总
 
-PhonePC/2in1Tablet
-
 ### 类型定义
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
@@ -59,8 +53,6 @@ PhonePC/2in1Tablet
 
 ### 枚举
 
-PhonePC/2in1Tablet
-
 | 名称 | 描述 |
 | --- | --- |
 | [GamePerformance\_EngineType](gameservice-game-performance.md#gameperformance_enginetype-1) {  GAME\_PERFORMANCE\_ENGINE\_TYPE\_UNITY = 1,  GAME\_PERFORMANCE\_ENGINE\_TYPE\_UNREAL = 2,  GAME\_PERFORMANCE\_ENGINE\_TYPE\_MESSIAH = 3,  GAME\_PERFORMANCE\_ENGINE\_TYPE\_COCOS = 4,  GAME\_PERFORMANCE\_ENGINE\_TYPE\_OTHERS = 200  } | 此枚举描述引擎类型。 |
@@ -75,8 +67,6 @@ PhonePC/2in1Tablet
 | [GamePerformance\_DeviceInfoType](gameservice-game-performance.md#gameperformance_deviceinfotype-1) {  GAME\_PERFORMANCE\_DEVICEINFO\_TYPE\_THERMAL = 0,  GAME\_PERFORMANCE\_DEVICEINFO\_TYPE\_GPU = 1,  GAME\_PERFORMANCE\_DEVICEINFO\_TYPE\_CPU = 2  } | 此枚举描述设备性能信息类型。  GAME\_PERFORMANCE\_DEVICEINFO\_TYPE\_CPU 从6.0.2(22)开始支持。 |
 
 ### 函数
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
@@ -153,7 +143,7 @@ PhonePC/2in1Tablet
 | [GamePerformance\_ErrorCode](gameservice-game-performance.md#gameperformance_errorcode-1) [HMS\_GamePerformance\_DestroyThermalInfoQueryParameters](gameservice-game-performance.md#hms_gameperformance_destroythermalinfoqueryparameters) ([GamePerformance\_ThermalInfoQueryParameters](gameservice-game-performance.md#gameperformance_thermalinfoqueryparameters) \*\*parameters) | 当[GamePerformance\_ThermalInfoQueryParameters](gameservice-game-performance.md#gameperformance_thermalinfoqueryparameters)实例不再使用，销毁该实例。 |
 | [GamePerformance\_ErrorCode](gameservice-game-performance.md#gameperformance_errorcode-1) [HMS\_GamePerformance\_ThermalInfoQueryParameters\_SetNeedsPrediction](gameservice-game-performance.md#hms_gameperformance_thermalinfoqueryparameters_setneedsprediction) ([GamePerformance\_ThermalInfoQueryParameters](gameservice-game-performance.md#gameperformance_thermalinfoqueryparameters) \*parameters, const bool needsPrediction) | 为[GamePerformance\_ThermalInfoQueryParameters](gameservice-game-performance.md#gameperformance_thermalinfoqueryparameters)实例设置是否需要预测温升趋势。 |
 | [GamePerformance\_ErrorCode](gameservice-game-performance.md#gameperformance_errorcode-1) [HMS\_GamePerformance\_ThermalInfoQueryParameters\_SetTargetThermalLevel](gameservice-game-performance.md#hms_gameperformance_thermalinfoqueryparameters_settargetthermallevel) ([GamePerformance\_ThermalInfoQueryParameters](gameservice-game-performance.md#gameperformance_thermalinfoqueryparameters) \*parameters, const int32\_t targetThermalLevel) | 为[GamePerformance\_ThermalInfoQueryParameters](gameservice-game-performance.md#gameperformance_thermalinfoqueryparameters)实例设置预测温升趋势的目标温度等级。 |
-| [GamePerformance\_ErrorCode](gameservice-game-performance.md#gameperformance_errorcode-1) [HMS\_GamePerformance\_QueryThermalInfo](gameservice-game-performance.md#hms_gameperformance_querythermalinfo) ([GamePerformance\_ThermalInfoQueryParameters](gameservice-game-performance.md#gameperformance_thermalinfoqueryparameters) \*parameters，[GamePerformance\_ThermalInfo](gameservice-game-performance.md#gameperformance_thermalinfo) \*\*thermalInfo) | 查询温度信息。 |
+| [GamePerformance\_ErrorCode](gameservice-game-performance.md#gameperformance_errorcode-1) [HMS\_GamePerformance\_QueryThermalInfo](gameservice-game-performance.md#hms_gameperformance_querythermalinfo) ([GamePerformance\_ThermalInfoQueryParameters](gameservice-game-performance.md#gameperformance_thermalinfoqueryparameters) \*parameters, [GamePerformance\_ThermalInfo](gameservice-game-performance.md#gameperformance_thermalinfo) \*\*thermalInfo) | 查询温度信息。 |
 | [GamePerformance\_ErrorCode](gameservice-game-performance.md#gameperformance_errorcode-1) [HMS\_GamePerformance\_DestroyThermalInfo](gameservice-game-performance.md#hms_gameperformance_destroythermalinfo) ([GamePerformance\_ThermalInfo](gameservice-game-performance.md#gameperformance_thermalinfo) \*\*thermalInfo) | 当[GamePerformance\_ThermalInfo](gameservice-game-performance.md#gameperformance_thermalinfo)实例不再使用，销毁该实例。 |
 | [GamePerformance\_ErrorCode](gameservice-game-performance.md#gameperformance_errorcode-1) [HMS\_GamePerformance\_QueryGpuInfo](gameservice-game-performance.md#hms_gameperformance_querygpuinfo) ([GamePerformance\_GpuInfo](gameservice-game-performance.md#gameperformance_gpuinfo) \*\*gpuInfo) | 查询GPU性能信息。 |
 | [GamePerformance\_ErrorCode](gameservice-game-performance.md#gameperformance_errorcode-1) [HMS\_GamePerformance\_DestroyGpuInfo](gameservice-game-performance.md#hms_gameperformance_destroygpuinfo) ([GamePerformance\_GpuInfo](gameservice-game-performance.md#gameperformance_gpuinfo) \*\*gpuInfo) | 当[GamePerformance\_GpuInfo](gameservice-game-performance.md#gameperformance_gpuinfo)实例不再使用，销毁该实例。 |

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-exte
 title: external_window.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > external_window.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:06+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:301a08939859761c0b256a25327dec7df8f292357aecd52a83c8e778c893f2df
+scraped_at: 2026-09-02T15:02:45+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:20a225950adc1f6d8c903b9a2385ffc2ad102829fbd7e572f9fdeb0f47341c6e
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义获取和使用NativeWindow的相关函数。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -45,26 +39,22 @@ PhonePC/2in1TabletTVWearable
 
 ### 枚举
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [NativeWindowOperation](capi-external-window-h.md#nativewindowoperation) | NativeWindowOperation | OH\_NativeWindow\_NativeWindowHandleOpt函数中的操作码。 |
-| [OHScalingMode](capi-external-window-h.md#ohscalingmode) | OHScalingMode | 缩放模式Scaling Mode。 |
+| [OHScalingMode](capi-external-window-h.md#ohscalingmode) | OHScalingMode | 缩放模式。 |
 | [OHScalingModeV2](capi-external-window-h.md#ohscalingmodev2) | OHScalingModeV2 | 渲染缩放模式枚举。 |
 | [OHHDRMetadataKey](capi-external-window-h.md#ohhdrmetadatakey) | OHHDRMetadataKey | 枚举HDR元数据关键字。 |
 | [OHSurfaceSource](capi-external-window-h.md#ohsurfacesource) | OHSurfaceSource | 本地窗口内容来源类型枚举。 |
 
 ### 函数
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 描述 |
 | --- | --- |
 | [OHNativeWindow\* OH\_NativeWindow\_CreateNativeWindow(void\* pSurface)](capi-external-window-h.md#oh_nativewindow_createnativewindow) | 创建OHNativeWindow实例，每次调用都会产生一个新的OHNativeWindow实例。  说明：此接口不可用，可通过OH\_NativeImage\_AcquireNativeWindow创建，或通过XComponent创建。 |
 | [void OH\_NativeWindow\_DestroyNativeWindow(OHNativeWindow\* window)](capi-external-window-h.md#oh_nativewindow_destroynativewindow) | 将OHNativeWindow对象的引用计数减1，当引用计数为0的时候，该OHNativeWindow对象会被析构掉。  本接口为非线程安全类型接口。 |
 | [OHNativeWindowBuffer\* OH\_NativeWindow\_CreateNativeWindowBufferFromSurfaceBuffer(void\* pSurfaceBuffer)](capi-external-window-h.md#oh_nativewindow_createnativewindowbufferfromsurfacebuffer) | 创建OHNativeWindowBuffer实例，每次调用都会产生一个新的OHNativeWindowBuffer实例。  说明：此接口不可用，使用OH\_NativeWindow\_CreateNativeWindowBufferFromNativeBuffer替代。 |
-| [OHNativeWindowBuffer\* OH\_NativeWindow\_CreateNativeWindowBufferFromNativeBuffer(OH\_NativeBuffer\* nativeBuffer)](capi-external-window-h.md#oh_nativewindow_createnativewindowbufferfromnativebuffer) | 创建OHNativeWindowBuffer实例，每次调用都会产生一个新的OHNativeWindowBuffer实例。  本接口需要与[OH\_NativeWindow\_DestroyNativeWindowBuffer](capi-external-window-h.md#oh_nativewindow_destroynativewindowbuffer)接口配合使用，否则会存在内存泄露。  本接口为非线程安全类型接口。 |
+| [OHNativeWindowBuffer\* OH\_NativeWindow\_CreateNativeWindowBufferFromNativeBuffer(OH\_NativeBuffer\* nativeBuffer)](capi-external-window-h.md#oh_nativewindow_createnativewindowbufferfromnativebuffer) | 创建OHNativeWindowBuffer实例，每次调用都会产生一个新的OHNativeWindowBuffer实例。  本接口需要与[OH\_NativeWindow\_DestroyNativeWindowBuffer](capi-external-window-h.md#oh_nativewindow_destroynativewindowbuffer)接口配合使用，否则会存在内存泄漏。  本接口为非线程安全类型接口。 |
 | [void OH\_NativeWindow\_DestroyNativeWindowBuffer(OHNativeWindowBuffer\* buffer)](capi-external-window-h.md#oh_nativewindow_destroynativewindowbuffer) | 将OHNativeWindowBuffer对象的引用计数减1，当引用计数为0的时候，该OHNativeWindowBuffer对象会被析构掉。  本接口为非线程安全类型接口。 |
 | [int32\_t OH\_NativeWindow\_NativeWindowRequestBuffer(OHNativeWindow \*window,OHNativeWindowBuffer \*\*buffer, int \*fenceFd)](capi-external-window-h.md#oh_nativewindow_nativewindowrequestbuffer) | 通过OHNativeWindow对象申请一块OHNativeWindowBuffer，用以内容生产。  在调用本接口前，需要通过[SET\_BUFFER\_GEOMETRY](capi-external-window-h.md#nativewindowoperation)对OHNativeWindow设置宽高。  本接口需要与[OH\_NativeWindow\_NativeWindowFlushBuffer](capi-external-window-h.md#oh_nativewindow_nativewindowflushbuffer)接口配合使用，否则内存会耗尽。  当fenceFd使用完，用户需要将其close。  本接口为非线程安全类型接口。 |
 | [int32\_t OH\_NativeWindow\_NativeWindowFlushBuffer(OHNativeWindow \*window, OHNativeWindowBuffer \*buffer,int fenceFd, Region region)](capi-external-window-h.md#oh_nativewindow_nativewindowflushbuffer) | 通过OHNativeWindow将生产好内容的OHNativeWindowBuffer放回到Buffer队列中，用以内容消费。  系统会将fenceFd关闭，无需用户close。  本接口为非线程安全类型接口。 |
@@ -72,7 +62,7 @@ PhonePC/2in1TabletTVWearable
 | [int32\_t OH\_NativeWindow\_NativeWindowAbortBuffer(OHNativeWindow \*window, OHNativeWindowBuffer \*buffer)](capi-external-window-h.md#oh_nativewindow_nativewindowabortbuffer) | 通过OHNativeWindow将之前申请出来的OHNativeWindowBuffer返还到Buffer队列中，供下次再申请。  本接口为非线程安全类型接口。 |
 | [int32\_t OH\_NativeWindow\_NativeWindowHandleOpt(OHNativeWindow \*window, int code, ...)](capi-external-window-h.md#oh_nativewindow_nativewindowhandleopt) | 设置/获取OHNativeWindow的属性，包括设置/获取宽高、内容格式等。  本接口为非线程安全类型接口。 |
 | [BufferHandle \*OH\_NativeWindow\_GetBufferHandleFromNative(OHNativeWindowBuffer \*buffer)](capi-external-window-h.md#oh_nativewindow_getbufferhandlefromnative) | 通过OHNativeWindowBuffer获取该buffer的BufferHandle指针。  本接口为非线程安全类型接口。 |
-| [int32\_t OH\_NativeWindow\_NativeObjectReference(void \*obj)](capi-external-window-h.md#oh_nativewindow_nativeobjectreference) | 增加一个NativeObject的引用计数。  本接口需要与[OH\_NativeWindow\_NativeObjectUnreference](capi-external-window-h.md#oh_nativewindow_nativeobjectunreference)接口配合使用，否则会存在内存泄露。  本接口为非线程安全类型接口。 |
+| [int32\_t OH\_NativeWindow\_NativeObjectReference(void \*obj)](capi-external-window-h.md#oh_nativewindow_nativeobjectreference) | 增加一个NativeObject的引用计数。  本接口需要与[OH\_NativeWindow\_NativeObjectUnreference](capi-external-window-h.md#oh_nativewindow_nativeobjectunreference)接口配合使用，否则会存在内存泄漏。  本接口为非线程安全类型接口。 |
 | [int32\_t OH\_NativeWindow\_NativeObjectUnreference(void \*obj)](capi-external-window-h.md#oh_nativewindow_nativeobjectunreference) | 减少一个NativeObject的引用计数，当引用计数减少为0时，该NativeObject将被析构掉。  本接口为非线程安全类型接口。 |
 | [int32\_t OH\_NativeWindow\_GetNativeObjectMagic(void \*obj)](capi-external-window-h.md#oh_nativewindow_getnativeobjectmagic) | 获取NativeObject的MagicId。  本接口为非线程安全类型接口。 |
 | [int32\_t OH\_NativeWindow\_NativeWindowSetScalingMode(OHNativeWindow \*window, uint32\_t sequence,OHScalingMode scalingMode)](capi-external-window-h.md#oh_nativewindow_nativewindowsetscalingmode) | 设置OHNativeWindow的ScalingMode。 |
@@ -82,9 +72,9 @@ PhonePC/2in1TabletTVWearable
 | [int32\_t OH\_NativeWindow\_NativeWindowAttachBuffer(OHNativeWindow \*window, OHNativeWindowBuffer \*buffer)](capi-external-window-h.md#oh_nativewindow_nativewindowattachbuffer) | 将OHNativeWindowBuffer添加进OHNativeWindow中。  本接口需要与[OH\_NativeWindow\_NativeWindowDetachBuffer](capi-external-window-h.md#oh_nativewindow_nativewindowdetachbuffer)接口配合使用，否则会存在内存管理混乱问题。  本接口为非线程安全类型接口。 |
 | [int32\_t OH\_NativeWindow\_NativeWindowDetachBuffer(OHNativeWindow \*window, OHNativeWindowBuffer \*buffer)](capi-external-window-h.md#oh_nativewindow_nativewindowdetachbuffer) | 将OHNativeWindowBuffer从OHNativeWindow中分离。  本接口为非线程安全类型接口。 |
 | [int32\_t OH\_NativeWindow\_GetSurfaceId(OHNativeWindow \*window, uint64\_t \*surfaceId)](capi-external-window-h.md#oh_nativewindow_getsurfaceid) | 通过OHNativeWindow获取对应的surfaceId。  本接口为非线程安全类型接口。 |
-| [int32\_t OH\_NativeWindow\_CreateNativeWindowFromSurfaceId(uint64\_t surfaceId, OHNativeWindow \*\*window)](capi-external-window-h.md#oh_nativewindow_createnativewindowfromsurfaceid) | 通过surfaceId创建对应的OHNativeWindow。  本接口需要与[OH\_NativeWindow\_DestroyNativeWindow](capi-external-window-h.md#oh_nativewindow_destroynativewindow)接口配合使用，否则会存在内存泄露。  如果存在并发释放OHNativeWindow的情况，需要通过[OH\_NativeWindow\_NativeObjectReference](capi-external-window-h.md#oh_nativewindow_nativeobjectreference)和[OH\_NativeWindow\_NativeObjectUnreference](capi-external-window-h.md#oh_nativewindow_nativeobjectunreference)对OHNativeWindow进行引用计数加一和减一。  通过surfaceId获取的surface需要是在本进程中创建的，不能跨进程获取surface。  本接口为非线程安全类型接口。 |
+| [int32\_t OH\_NativeWindow\_CreateNativeWindowFromSurfaceId(uint64\_t surfaceId, OHNativeWindow \*\*window)](capi-external-window-h.md#oh_nativewindow_createnativewindowfromsurfaceid) | 通过surfaceId创建对应的OHNativeWindow。  本接口需要与[OH\_NativeWindow\_DestroyNativeWindow](capi-external-window-h.md#oh_nativewindow_destroynativewindow)接口配合使用，否则会存在内存泄漏。  如果存在并发释放OHNativeWindow的情况，需要通过[OH\_NativeWindow\_NativeObjectReference](capi-external-window-h.md#oh_nativewindow_nativeobjectreference)和[OH\_NativeWindow\_NativeObjectUnreference](capi-external-window-h.md#oh_nativewindow_nativeobjectunreference)对OHNativeWindow进行引用计数加一和减一。  通过surfaceId获取的surface需要是在本进程中创建的，不能跨进程获取surface。  本接口为非线程安全类型接口。 |
 | [int32\_t OH\_NativeWindow\_NativeWindowSetScalingModeV2(OHNativeWindow\* window, OHScalingModeV2 scalingMode)](capi-external-window-h.md#oh_nativewindow_nativewindowsetscalingmodev2) | 设置OHNativeWindow的渲染缩放模式。  本接口为非线程安全类型接口。 |
-| [int32\_t OH\_NativeWindow\_GetLastFlushedBufferV2(OHNativeWindow \*window, OHNativeWindowBuffer \*\*buffer,int \*fenceFd, float matrix[16])](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-external-window-h#oh_nativewindow_getlastflushedbufferv2) | 从OHNativeWindow获取上次送回到buffer队列中的OHNativeWindowBuffer,与OH\_NativeWindow\_GetLastFlushedBuffer的差异在于matrix不同。  本接口需要与[OH\_NativeWindow\_NativeObjectUnreference](capi-external-window-h.md#oh_nativewindow_nativeobjectunreference)接口配合使用，否则会存在内存泄露。  本接口为非线程安全类型接口。 |
+| [int32\_t OH\_NativeWindow\_GetLastFlushedBufferV2(OHNativeWindow \*window, OHNativeWindowBuffer \*\*buffer,int \*fenceFd, float matrix[16])](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-external-window-h#oh_nativewindow_getlastflushedbufferv2) | 从OHNativeWindow获取上次送回到buffer队列中的OHNativeWindowBuffer，与OH\_NativeWindow\_GetLastFlushedBuffer的差异在于matrix不同。  本接口需要与[OH\_NativeWindow\_NativeObjectUnreference](capi-external-window-h.md#oh_nativewindow_nativeobjectunreference)接口配合使用，否则会存在内存泄漏。  本接口为非线程安全类型接口。 |
 | [void OH\_NativeWindow\_SetBufferHold(OHNativeWindow \*window)](capi-external-window-h.md#oh_nativewindow_setbufferhold) | 启用单帧缓存机制，通过提前缓存一帧buffer并延迟显示，用于平滑帧率波动。 |
 | [int32\_t OH\_NativeWindow\_WriteToParcel(OHNativeWindow \*window, OHIPCParcel \*parcel)](capi-external-window-h.md#oh_nativewindow_writetoparcel) | 将窗口对象写入IPC序列化对象中。  本接口为非线程安全类型接口。 |
 | [int32\_t OH\_NativeWindow\_ReadFromParcel(OHIPCParcel \*parcel, OHNativeWindow \*\*window)](capi-external-window-h.md#oh_nativewindow_readfromparcel) | 从IPC序列化对象中读取窗口对象。  本接口将会创建一个OHNativeWindow，当窗口对象使用完，开发者需要与[OH\_NativeWindow\_DestroyNativeWindow](capi-external-window-h.md#oh_nativewindow_destroynativewindow)接口配合使用，否则会存在内存泄漏。  本接口为非线程安全类型接口。 |
@@ -96,17 +86,15 @@ PhonePC/2in1TabletTVWearable
 | [int32\_t OH\_NativeWindow\_PreAllocBuffers(OHNativeWindow \*window, uint32\_t allocBufferCnt)](capi-external-window-h.md#oh_nativewindow_preallocbuffers) | 通过OHNativeWindow对象提前申请多块OHNativeWindowBuffer，用以内容生产。  在调用本接口前，需要通过[OH\_NativeWindow\_NativeWindowHandleOpt](capi-external-window-h.md#oh_nativewindow_nativewindowhandleopt)对OHNativeWindow设置宽高。  本接口为非线程安全类型接口。 |
 | [int32\_t OH\_NativeWindow\_LockBuffer(OHNativeWindow\* window, Region region, OHNativeWindowBuffer\*\* buffer)](capi-external-window-h.md#oh_nativewindow_lockbuffer) | 通过OHNativeWindow对象申请一块OHNativeWindowBuffer，用以内容生产，并对该OHNativeWindowBuffer加锁。  本接口需要和[OH\_NativeWindow\_UnlockAndFlushBuffer](capi-external-window-h.md#oh_nativewindow_unlockandflushbuffer)接口配合使用。  本接口对OHNativeWindowBuffer加锁后，需要调[OH\_NativeWindow\_UnlockAndFlushBuffer](capi-external-window-h.md#oh_nativewindow_unlockandflushbuffer)接口解锁后才能重新对OHNativeWindowBuffer加锁。  若用本接口重复对OHNativeWindowBuffer加锁，会返回操作非法错误码。  本接口支持通过CPU上的内存读写直接渲染图像。  本接口为非线程安全类型接口。 |
 | [int32\_t OH\_NativeWindow\_UnlockAndFlushBuffer(OHNativeWindow\* window)](capi-external-window-h.md#oh_nativewindow_unlockandflushbuffer) | 通过OHNativeWindow将生产好内容的OHNativeWindowBuffer放回到Buffer队列中，用以内容消费，并对OHNativeWindowBuffer解锁。  本接口需要和[OH\_NativeWindow\_LockBuffer](capi-external-window-h.md#oh_nativewindow_lockbuffer)接口配合使用。  若用本接口重复对OHNativeWindowBuffer解锁，会返回操作非法错误码。  本接口为非线程安全类型接口。 |
+| [int32\_t OH\_NativeWindow\_Set3DMetadataValue(OHNativeWindow \*window, OH\_NativeBuffer\_3D\_MetadataKey metadataKey, int32\_t size, uint8\_t \*metadata)](capi-external-window-h.md#oh_nativewindow_set3dmetadatavalue) | 为OHNativeWindow设置3D元数据属性值。  本接口为非线程安全类型接口。 |
+| [int32\_t OH\_NativeWindow\_Get3DMetadataValue(OHNativeWindow \*window, OH\_NativeBuffer\_3D\_MetadataKey metadataKey, int32\_t \*size, uint8\_t \*\*metadata)](capi-external-window-h.md#oh_nativewindow_get3dmetadatavalue) | 获取OHNativeWindow的3D元数据属性值。  本接口为非线程安全类型接口。 |
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### NativeWindowOperation
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum NativeWindowOperation
+```c
+enum NativeWindowOperation
 ```
 
 **描述**
@@ -129,14 +117,14 @@ OH\_NativeWindow\_NativeWindowHandleOpt函数中的操作码。
 | GET\_STRIDE | 获取本地窗口缓冲区步幅，函数中的可变参数是[输出] int32\_t \*stride。  **废弃版本：** 16  **替代方案：** 使用[OH\_NativeWindow\_GetBufferHandleFromNative](capi-external-window-h.md#oh_nativewindow_getbufferhandlefromnative)接口获取BufferHandle实例，从[BufferHandle](capi-nativewindow-bufferhandle.md)实例中获取stride值。 |
 | SET\_SWAP\_INTERVAL | 设置本地窗口缓冲区交换间隔，函数中的可变参数是[输入] int32\_t interval。 |
 | GET\_SWAP\_INTERVAL | 获取本地窗口缓冲区交换间隔，函数中的可变参数是[输出] int32\_t \*interval。 |
-| SET\_TIMEOUT | 设置请求本地窗口请求缓冲区的超时等待时间，未手动设置时默认值为3000毫秒，函数中的可变参数是[输入] int32\_t timeout, 单位为毫秒。 |
-| GET\_TIMEOUT | 获取请求本地窗口请求缓冲区的超时等待时间，未手动设置时默认值为3000毫秒，函数中的可变参数是[输出] int32\_t \*timeout，单位为毫秒。 |
+| SET\_TIMEOUT | 设置本地窗口请求缓冲区的超时等待时间，未手动设置时默认值为3000毫秒，函数中的可变参数是[输入] int32\_t timeout，单位为毫秒。 |
+| GET\_TIMEOUT | 获取本地窗口请求缓冲区的超时等待时间，未手动设置时默认值为3000毫秒，函数中的可变参数是[输出] int32\_t \*timeout，单位为毫秒。 |
 | SET\_COLOR\_GAMUT | 设置本地窗口缓冲区色彩空间，函数中的可变参数是[输入] int32\_t colorGamut，取值具体可见[OH\_NativeBuffer\_ColorGamut](capi-native-buffer-h.md#oh_nativebuffer_colorgamut)枚举值。 |
 | GET\_COLOR\_GAMUT | 获取本地窗口缓冲区色彩空间，函数中的可变参数是[输出] int32\_t \*colorGamut，取值具体可见[OH\_NativeBuffer\_ColorGamut](capi-native-buffer-h.md#oh_nativebuffer_colorgamut)枚举值。 |
 | SET\_TRANSFORM | 设置本地窗口缓冲区变换，函数中的可变参数是[输入] int32\_t transform，取值具体可见[OH\_NativeBuffer\_TransformType](capi-buffer-common-h.md#oh_nativebuffer_transformtype)枚举值。 |
 | GET\_TRANSFORM | 获取本地窗口缓冲区变换，函数中的可变参数是[输出] int32\_t \*transform，取值具体可见[OH\_NativeBuffer\_TransformType](capi-buffer-common-h.md#oh_nativebuffer_transformtype)枚举值。 |
 | SET\_UI\_TIMESTAMP | 设置本地窗口缓冲区UI时间戳，函数中的可变参数是[输入] uint64\_t uiTimestamp。 |
-| GET\_BUFFERQUEUE\_SIZE | 获取内存队列大小，函数中的可变参数是[输出] int32\_t \*size。  **起始版本：** 12 |
+| GET\_BUFFERQUEUE\_SIZE | 获取缓冲区队列大小，函数中的可变参数是[输出] int32\_t \*size。  **起始版本：** 12 |
 | SET\_SOURCE\_TYPE | 设置本地窗口内容来源，函数中的可变参数是[输入] int32\_t sourceType，取值具体可见[OHSurfaceSource](capi-external-window-h.md#ohsurfacesource)枚举值。  **起始版本：** 12 |
 | GET\_SOURCE\_TYPE | 获取本地窗口内容来源，函数中的可变参数是[输出] int32\_t \*sourceType，取值具体可见[OHSurfaceSource](capi-external-window-h.md#ohsurfacesource)枚举值。  **起始版本：** 12 |
 | SET\_APP\_FRAMEWORK\_TYPE | 设置本地窗口应用框架名称，函数中的可变参数是[输入] char\* frameworkType，最大支持64字节。  **起始版本：** 12 |
@@ -147,15 +135,13 @@ OH\_NativeWindow\_NativeWindowHandleOpt函数中的操作码。
 
 ### OHScalingMode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OHScalingMode
+```c
+enum OHScalingMode
 ```
 
 **描述**
 
-缩放模式Scaling Mode。
+缩放模式。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeWindow
 
@@ -174,10 +160,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OHScalingModeV2
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OHScalingModeV2
+```c
+enum OHScalingModeV2
 ```
 
 **描述**
@@ -198,10 +182,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OHHDRMetadataKey
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OHHDRMetadataKey
+```c
+enum OHHDRMetadataKey
 ```
 
 **描述**
@@ -233,10 +215,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OHSurfaceSource
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OHSurfaceSource
+```c
+enum OHSurfaceSource
 ```
 
 **描述**
@@ -257,14 +237,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_NativeWindow\_CreateNativeWindow()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OHNativeWindow* OH_NativeWindow_CreateNativeWindow(void* pSurface)
+```c
+OHNativeWindow* OH_NativeWindow_CreateNativeWindow(void* pSurface)
 ```
 
 **描述**
@@ -283,7 +259,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| void\* pSurface | 一个指向生产者ProduceSurface的指针，类型为sptr<OHOS::Surface>。 |
+| void\* pSurface | 一个指向生产者ProducerSurface的指针，类型为sptr<OHOS::Surface>。 |
 
 **返回：**
 
@@ -293,10 +269,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_DestroyNativeWindow()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_NativeWindow_DestroyNativeWindow(OHNativeWindow* window)
+```c
+void OH_NativeWindow_DestroyNativeWindow(OHNativeWindow* window)
 ```
 
 **描述**
@@ -317,10 +291,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_CreateNativeWindowBufferFromSurfaceBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OHNativeWindowBuffer* OH_NativeWindow_CreateNativeWindowBufferFromSurfaceBuffer(void* pSurfaceBuffer)
+```c
+OHNativeWindowBuffer* OH_NativeWindow_CreateNativeWindowBufferFromSurfaceBuffer(void* pSurfaceBuffer)
 ```
 
 **描述**
@@ -341,7 +313,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| void\* pSurfaceBuffer | 一个指向生产者buffer的指针，类型为sptrOHOS::SurfaceBuffer。 |
+| void\* pSurfaceBuffer | 一个指向生产者buffer的指针，类型为sptr<OHOS::SurfaceBuffer>。 |
 
 **返回：**
 
@@ -351,17 +323,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_CreateNativeWindowBufferFromNativeBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OHNativeWindowBuffer* OH_NativeWindow_CreateNativeWindowBufferFromNativeBuffer(OH_NativeBuffer* nativeBuffer)
+```c
+OHNativeWindowBuffer* OH_NativeWindow_CreateNativeWindowBufferFromNativeBuffer(OH_NativeBuffer* nativeBuffer)
 ```
 
 **描述**
 
 创建OHNativeWindowBuffer实例，每次调用都会产生一个新的OHNativeWindowBuffer实例。
 
-本接口需要与[OH\_NativeWindow\_DestroyNativeWindowBuffer](capi-external-window-h.md#oh_nativewindow_destroynativewindowbuffer)接口配合使用，否则会存在内存泄露。
+本接口需要与[OH\_NativeWindow\_DestroyNativeWindowBuffer](capi-external-window-h.md#oh_nativewindow_destroynativewindowbuffer)接口配合使用，否则会存在内存泄漏。
 
 本接口为非线程安全类型接口。
 
@@ -383,10 +353,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_DestroyNativeWindowBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_NativeWindow_DestroyNativeWindowBuffer(OHNativeWindowBuffer* buffer)
+```c
+void OH_NativeWindow_DestroyNativeWindowBuffer(OHNativeWindowBuffer* buffer)
 ```
 
 **描述**
@@ -407,10 +375,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_NativeWindowRequestBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_NativeWindowRequestBuffer(OHNativeWindow *window,OHNativeWindowBuffer **buffer, int *fenceFd)
+```c
+int32_t OH_NativeWindow_NativeWindowRequestBuffer(OHNativeWindow *window,OHNativeWindowBuffer **buffer, int *fenceFd)
 ```
 
 **描述**
@@ -447,10 +413,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_NativeWindowFlushBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_NativeWindowFlushBuffer(OHNativeWindow *window, OHNativeWindowBuffer *buffer,int fenceFd, Region region)
+```c
+int32_t OH_NativeWindow_NativeWindowFlushBuffer(OHNativeWindow *window, OHNativeWindowBuffer *buffer,int fenceFd, Region region)
 ```
 
 **描述**
@@ -482,10 +446,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_GetLastFlushedBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_GetLastFlushedBuffer(OHNativeWindow *window, OHNativeWindowBuffer **buffer,int *fenceFd, float matrix[16])
+```c
+int32_t OH_NativeWindow_GetLastFlushedBuffer(OHNativeWindow *window, OHNativeWindowBuffer **buffer,int *fenceFd, float matrix[16])
 ```
 
 **描述**
@@ -517,10 +479,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_NativeWindowAbortBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_NativeWindowAbortBuffer(OHNativeWindow *window, OHNativeWindowBuffer *buffer)
+```c
+int32_t OH_NativeWindow_NativeWindowAbortBuffer(OHNativeWindow *window, OHNativeWindowBuffer *buffer)
 ```
 
 **描述**
@@ -548,10 +508,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_NativeWindowHandleOpt()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_NativeWindowHandleOpt(OHNativeWindow *window, int code, ...)
+```c
+int32_t OH_NativeWindow_NativeWindowHandleOpt(OHNativeWindow *window, int code, ...)
 ```
 
 **描述**
@@ -580,10 +538,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_GetBufferHandleFromNative()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. BufferHandle *OH_NativeWindow_GetBufferHandleFromNative(OHNativeWindowBuffer *buffer)
+```c
+BufferHandle *OH_NativeWindow_GetBufferHandleFromNative(OHNativeWindowBuffer *buffer)
 ```
 
 **描述**
@@ -606,21 +562,19 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [BufferHandle](capi-nativewindow-bufferhandle.md) | BufferHandle 返回一个指针，指向[BufferHandle](capi-nativewindow-bufferhandle.md)的结构体实例。 |
+| [BufferHandle](capi-nativewindow-bufferhandle.md)\* | 返回一个指针，指向[BufferHandle](capi-nativewindow-bufferhandle.md)的结构体实例。 |
 
 ### OH\_NativeWindow\_NativeObjectReference()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_NativeObjectReference(void *obj)
+```c
+int32_t OH_NativeWindow_NativeObjectReference(void *obj)
 ```
 
 **描述**
 
 增加一个NativeObject的引用计数。
 
-本接口需要与[OH\_NativeWindow\_NativeObjectUnreference](capi-external-window-h.md#oh_nativewindow_nativeobjectunreference)接口配合使用，否则会存在内存泄露。
+本接口需要与[OH\_NativeWindow\_NativeObjectUnreference](capi-external-window-h.md#oh_nativewindow_nativeobjectunreference)接口配合使用，否则会存在内存泄漏。
 
 本接口为非线程安全类型接口。
 
@@ -642,10 +596,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_NativeObjectUnreference()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_NativeObjectUnreference(void *obj)
+```c
+int32_t OH_NativeWindow_NativeObjectUnreference(void *obj)
 ```
 
 **描述**
@@ -672,10 +624,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_GetNativeObjectMagic()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_GetNativeObjectMagic(void *obj)
+```c
+int32_t OH_NativeWindow_GetNativeObjectMagic(void *obj)
 ```
 
 **描述**
@@ -702,10 +652,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_NativeWindowSetScalingMode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_NativeWindowSetScalingMode(OHNativeWindow *window, uint32_t sequence,OHScalingMode scalingMode)
+```c
+int32_t OH_NativeWindow_NativeWindowSetScalingMode(OHNativeWindow *window, uint32_t sequence,OHScalingMode scalingMode)
 ```
 
 **描述**
@@ -736,10 +684,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_NativeWindowSetMetaData()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_NativeWindowSetMetaData(OHNativeWindow *window, uint32_t sequence, int32_t size,const OHHDRMetaData *metaData)
+```c
+int32_t OH_NativeWindow_NativeWindowSetMetaData(OHNativeWindow *window, uint32_t sequence, int32_t size,const OHHDRMetaData *metaData)
 ```
 
 **描述**
@@ -769,10 +715,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_NativeWindowSetMetaDataSet()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_NativeWindowSetMetaDataSet(OHNativeWindow *window, uint32_t sequence, OHHDRMetadataKey key,int32_t size, const uint8_t *metaData)
+```c
+int32_t OH_NativeWindow_NativeWindowSetMetaDataSet(OHNativeWindow *window, uint32_t sequence, OHHDRMetadataKey key,int32_t size, const uint8_t *metaData)
 ```
 
 **描述**
@@ -803,10 +747,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_NativeWindowSetTunnelHandle()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_NativeWindowSetTunnelHandle(OHNativeWindow *window, const OHExtDataHandle *handle)
+```c
+int32_t OH_NativeWindow_NativeWindowSetTunnelHandle(OHNativeWindow *window, const OHExtDataHandle *handle)
 ```
 
 **描述**
@@ -834,10 +776,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_NativeWindowAttachBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_NativeWindowAttachBuffer(OHNativeWindow *window, OHNativeWindowBuffer *buffer)
+```c
+int32_t OH_NativeWindow_NativeWindowAttachBuffer(OHNativeWindow *window, OHNativeWindowBuffer *buffer)
 ```
 
 **描述**
@@ -867,10 +807,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_NativeWindowDetachBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_NativeWindowDetachBuffer(OHNativeWindow *window, OHNativeWindowBuffer *buffer)
+```c
+int32_t OH_NativeWindow_NativeWindowDetachBuffer(OHNativeWindow *window, OHNativeWindowBuffer *buffer)
 ```
 
 **描述**
@@ -898,10 +836,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_GetSurfaceId()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_GetSurfaceId(OHNativeWindow *window, uint64_t *surfaceId)
+```c
+int32_t OH_NativeWindow_GetSurfaceId(OHNativeWindow *window, uint64_t *surfaceId)
 ```
 
 **描述**
@@ -929,17 +865,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_CreateNativeWindowFromSurfaceId()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_CreateNativeWindowFromSurfaceId(uint64_t surfaceId, OHNativeWindow **window)
+```c
+int32_t OH_NativeWindow_CreateNativeWindowFromSurfaceId(uint64_t surfaceId, OHNativeWindow **window)
 ```
 
 **描述**
 
 通过surfaceId创建对应的OHNativeWindow。
 
-本接口需要与[OH\_NativeWindow\_DestroyNativeWindow](capi-external-window-h.md#oh_nativewindow_destroynativewindow)接口配合使用，否则会存在内存泄露。
+本接口需要与[OH\_NativeWindow\_DestroyNativeWindow](capi-external-window-h.md#oh_nativewindow_destroynativewindow)接口配合使用，否则会存在内存泄漏。
 
 如果存在并发释放OHNativeWindow的情况，需要通过[OH\_NativeWindow\_NativeObjectReference](capi-external-window-h.md#oh_nativewindow_nativeobjectreference)和[OH\_NativeWindow\_NativeObjectUnreference](capi-external-window-h.md#oh_nativewindow_nativeobjectunreference)对OHNativeWindow进行引用计数加一和减一。
 
@@ -966,10 +900,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_NativeWindowSetScalingModeV2()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_NativeWindowSetScalingModeV2(OHNativeWindow* window, OHScalingModeV2 scalingMode)
+```c
+int32_t OH_NativeWindow_NativeWindowSetScalingModeV2(OHNativeWindow* window, OHScalingModeV2 scalingMode)
 ```
 
 **描述**
@@ -997,17 +929,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_GetLastFlushedBufferV2()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_GetLastFlushedBufferV2(OHNativeWindow *window, OHNativeWindowBuffer **buffer,int *fenceFd, float matrix[16])
+```c
+int32_t OH_NativeWindow_GetLastFlushedBufferV2(OHNativeWindow *window, OHNativeWindowBuffer **buffer,int *fenceFd, float matrix[16])
 ```
 
 **描述**
 
-从OHNativeWindow获取上次送回到buffer队列中的OHNativeWindowBuffer,与OH\_NativeWindow\_GetLastFlushedBuffer的差异在于matrix不同。
+从OHNativeWindow获取上次送回到buffer队列中的OHNativeWindowBuffer，与OH\_NativeWindow\_GetLastFlushedBuffer的差异在于matrix不同。
 
-本接口需要与[OH\_NativeWindow\_NativeObjectUnreference](capi-external-window-h.md#oh_nativewindow_nativeobjectunreference)接口配合使用，否则会存在内存泄露。
+本接口需要与[OH\_NativeWindow\_NativeObjectUnreference](capi-external-window-h.md#oh_nativewindow_nativeobjectunreference)接口配合使用，否则会存在内存泄漏。
 
 本接口为非线程安全类型接口。
 
@@ -1032,10 +962,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_SetBufferHold()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_NativeWindow_SetBufferHold(OHNativeWindow *window)
+```c
+void OH_NativeWindow_SetBufferHold(OHNativeWindow *window)
 ```
 
 **描述**
@@ -1062,10 +990,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_WriteToParcel()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_WriteToParcel(OHNativeWindow *window, OHIPCParcel *parcel)
+```c
+int32_t OH_NativeWindow_WriteToParcel(OHNativeWindow *window, OHIPCParcel *parcel)
 ```
 
 **描述**
@@ -1093,10 +1019,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_ReadFromParcel()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_ReadFromParcel(OHIPCParcel *parcel, OHNativeWindow **window)
+```c
+int32_t OH_NativeWindow_ReadFromParcel(OHIPCParcel *parcel, OHNativeWindow **window)
 ```
 
 **描述**
@@ -1126,10 +1050,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_SetColorSpace()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_SetColorSpace(OHNativeWindow *window, OH_NativeBuffer_ColorSpace colorSpace)
+```c
+int32_t OH_NativeWindow_SetColorSpace(OHNativeWindow *window, OH_NativeBuffer_ColorSpace colorSpace)
 ```
 
 **描述**
@@ -1157,10 +1079,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_GetColorSpace()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_GetColorSpace(OHNativeWindow *window, OH_NativeBuffer_ColorSpace *colorSpace)
+```c
+int32_t OH_NativeWindow_GetColorSpace(OHNativeWindow *window, OH_NativeBuffer_ColorSpace *colorSpace)
 ```
 
 **描述**
@@ -1188,10 +1108,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_SetMetadataValue()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_SetMetadataValue(OHNativeWindow *window, OH_NativeBuffer_MetadataKey metadataKey,int32_t size, uint8_t *metadata)
+```c
+int32_t OH_NativeWindow_SetMetadataValue(OHNativeWindow *window, OH_NativeBuffer_MetadataKey metadataKey,int32_t size, uint8_t *metadata)
 ```
 
 **描述**
@@ -1209,7 +1127,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OHNativeWindow](capi-nativewindow-nativewindow.md) \*window | 一个指向[OHNativeWindow](capi-nativewindow-nativewindow.md)的结构体实例的指针。 |
-| [OH\_NativeBuffer\_MetadataKey](capi-buffer-common-h.md#oh_nativebuffer_metadatakey) metadataKey | Window的元数据类型，其值从[OH\_NativeBuffer\_MetadataKey](capi-buffer-common-h.md#oh_nativebuffer_metadatakey)获取。 |
+| [OH\_NativeBuffer\_MetadataKey](capi-buffer-common-h.md#oh_nativebuffer_metadatakey) metadataKey | OHNativeWindow的元数据类型，其值从[OH\_NativeBuffer\_MetadataKey](capi-buffer-common-h.md#oh_nativebuffer_metadatakey)获取。 |
 | int32\_t size | uint8\_t向量的大小，其取值范围见[OH\_NativeBuffer\_MetadataKey](capi-buffer-common-h.md#oh_nativebuffer_metadatakey)。 |
 | metadata | 指向uint8\_t向量的指针。 |
 
@@ -1221,10 +1139,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_GetMetadataValue()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_GetMetadataValue(OHNativeWindow *window, OH_NativeBuffer_MetadataKey metadataKey,int32_t *size, uint8_t **metadata)
+```c
+int32_t OH_NativeWindow_GetMetadataValue(OHNativeWindow *window, OH_NativeBuffer_MetadataKey metadataKey,int32_t *size, uint8_t **metadata)
 ```
 
 **描述**
@@ -1254,10 +1170,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_CleanCache()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_CleanCache(OHNativeWindow *window)
+```c
+int32_t OH_NativeWindow_CleanCache(OHNativeWindow *window)
 ```
 
 **描述**
@@ -1286,10 +1200,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_PreAllocBuffers()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_PreAllocBuffers(OHNativeWindow *window, uint32_t allocBufferCnt)
+```c
+int32_t OH_NativeWindow_PreAllocBuffers(OHNativeWindow *window, uint32_t allocBufferCnt)
 ```
 
 **描述**
@@ -1319,10 +1231,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_LockBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_LockBuffer(OHNativeWindow* window, Region region, OHNativeWindowBuffer** buffer)
+```c
+int32_t OH_NativeWindow_LockBuffer(OHNativeWindow* window, Region region, OHNativeWindowBuffer** buffer)
 ```
 
 **描述**
@@ -1348,7 +1258,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OHNativeWindow](capi-nativewindow-nativewindow.md)\* window | 一个指向OHNativeWindow的结构体实例的指针。 |
-| [Region](capi-nativewindow-region.md) region | 一个Region结构体，表示一块脏区域，该区域有内容更新。 |
+| [Region](capi-nativewindow-region.md) region | 一个Region结构体，表示一块脏区域，该区域有内容更新。  Region.rectNumber限制最大数量为1000，当rectNumber≤0或者rectNumber>1000时，使用整个buffer作为脏区。  Region.rect以buffer左下角为坐标原点。 |
 | [OHNativeWindowBuffer](capi-nativewindow-nativewindowbuffer.md)\*\* buffer | 一个指向OHNativeWindowBuffer的二级指针。 |
 
 **返回：**
@@ -1359,10 +1269,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NativeWindow\_UnlockAndFlushBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_NativeWindow_UnlockAndFlushBuffer(OHNativeWindow* window)
+```c
+int32_t OH_NativeWindow_UnlockAndFlushBuffer(OHNativeWindow* window)
 ```
 
 **描述**
@@ -1390,3 +1298,65 @@ PhonePC/2in1TabletTVWearable
 | 类型 | 说明 |
 | --- | --- |
 | int32\_t | 执行成功时返回NATIVE\_ERROR\_OK。  window是空指针时返回NATIVE\_ERROR\_INVALID\_ARGUMENTS。  window的surface成员是空指针时返回NATIVE\_ERROR\_UNKNOWN。  其他返回值可参考[OHNativeErrorCode](capi-graphic-error-code-h.md#ohnativeerrorcode)。 |
+
+### OH\_NativeWindow\_Set3DMetadataValue()
+
+```c
+int32_t OH_NativeWindow_Set3DMetadataValue(OHNativeWindow *window, OH_NativeBuffer_3D_MetadataKey metadataKey, int32_t size, uint8_t *metadata)
+```
+
+**描述**
+
+为OHNativeWindow设置3D元数据属性值。
+
+本接口为非线程安全类型接口。
+
+**系统能力：** SystemCapability.Graphic.Graphic2D.NativeWindow
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OHNativeWindow](capi-nativewindow-nativewindow.md) \*window | 一个指向[OHNativeWindow](capi-nativewindow-nativewindow.md)的结构体实例的指针。 |
+| [OH\_NativeBuffer\_3D\_MetadataKey](capi-buffer-common-h.md#oh_nativebuffer_3d_metadatakey) metadataKey | OHNativeWindow的3D元数据类型。 |
+| int32\_t size | uint8\_t向量的大小。 |
+| uint8\_t \*metadata | 指向uint8\_t向量的指针。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| int32\_t | 执行成功时返回NATIVE\_ERROR\_OK。  window或metadata为空指针时返回NATIVE\_ERROR\_INVALID\_ARGUMENTS。  设置3D元数据失败时返回NATIVE\_ERROR\_UNKNOWN。  传入不支持的metadataKey时返回NATIVE\_ERROR\_UNSUPPORTED。  其他返回值可参考[OHNativeErrorCode](capi-graphic-error-code-h.md#ohnativeerrorcode)。 |
+
+### OH\_NativeWindow\_Get3DMetadataValue()
+
+```c
+int32_t OH_NativeWindow_Get3DMetadataValue(OHNativeWindow *window, OH_NativeBuffer_3D_MetadataKey metadataKey, int32_t *size, uint8_t **metadata)
+```
+
+**描述**
+
+获取OHNativeWindow的3D元数据属性值。
+
+本接口为非线程安全类型接口。
+
+**系统能力：** SystemCapability.Graphic.Graphic2D.NativeWindow
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OHNativeWindow](capi-nativewindow-nativewindow.md) \*window | 一个指向[OHNativeWindow](capi-nativewindow-nativewindow.md)的结构体实例的指针。 |
+| [OH\_NativeBuffer\_3D\_MetadataKey](capi-buffer-common-h.md#oh_nativebuffer_3d_metadatakey) metadataKey | OHNativeWindow的3D元数据类型。 |
+| int32\_t \*size | uint8\_t向量的大小。 |
+| uint8\_t \*\*metadata | 指向uint8\_t向量的二级指针，作为出参使用。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| int32\_t | 执行成功时返回NATIVE\_ERROR\_OK。  window、metadata或size为空指针时返回NATIVE\_ERROR\_INVALID\_ARGUMENTS。  拷贝或分配内存失败，或者获取3D元数据失败时返回NATIVE\_ERROR\_UNKNOWN。  传入不支持的metadataKey时返回NATIVE\_ERROR\_UNSUPPORTED。  其他返回值可参考[OHNativeErrorCode](capi-graphic-error-code-h.md#ohnativeerrorcode)。 |

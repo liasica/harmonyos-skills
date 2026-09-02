@@ -3,38 +3,36 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.arkui.componentUtils (componentUtils)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.componentUtils (componentUtils)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:50:29+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:47e6480d560fd28fc51a603e74cc5f43867737b0ab3409d2d8a996bc489a3201
+scraped_at: 2026-09-02T15:00:49+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4b36a4ee985ef99a1fd4b78827d4f8eeaa4988fa654a86e3e63ec4307bde1bf5
 ---
 
-提供获取组件绘制区域坐标和大小的能力。
+提供获取组件绘制区域坐标和大小的能力，适用于在组件布局完成后查询组件实际绘制区域信息的场景，帮助开发者获取组件尺寸、位置等布局结果。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+* 本模块接口仅可在Stage模型下使用。
 * 本模块功能依赖UI的执行上下文，不可在[UI上下文不明确](../harmonyos-guides/arkts-global-interface.md#ui上下文不明确)的地方使用，参见[UIContext](arkts-apis-uicontext-uicontext.md)说明。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { componentUtils } from '@kit.ArkUI';
+```ts
+import { componentUtils } from '@kit.ArkUI';
 ```
 
 ## componentUtils.getRectangleById(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getRectangleById(id: string): ComponentInfo
 
 根据组件ID获取组件实例对象，通过组件实例对象将获取的坐标位置和大小同步返回给开发者。
 
-说明
+**说明** 
 
 * 从API version 10开始支持，从API version 18开始废弃，建议使用[getRectangleById](arkts-apis-uicontext-componentutils.md#getrectanglebyid)替代。getRectangleById需先通过[UIContext](arkts-apis-uicontext-uicontext.md)中的[getComponentUtils](arkts-apis-uicontext-uicontext.md#getcomponentutils)方法获取[ComponentUtils](arkts-apis-uicontext-componentutils.md)对象，然后通过该对象进行调用。
-* 从API version 10开始，可以通过使用[UIContext](arkts-apis-uicontext-uicontext.md)中的[getComponentUtils](arkts-apis-uicontext-uicontext.md#getcomponentutils)方法获取当前UI上下文关联的[ComponentUtils](arkts-apis-uicontext-componentutils.md)对象。在目标组件布局完成后，通过该接口能够获取组件坐标和尺寸信息。建议在[布局回调](js-apis-arkui-inspector.md)中使用该接口。如果组件动态创建但未挂载组件树，则无法通过该接口获取正常的组件信息。因为组件在未挂载组件树的情况下，一般未经过UI框架正常的测量与布局，此时请确保组件正常挂载组件树后再尝试获取组件信息。
+* 从API version 10开始，可以通过使用[UIContext](arkts-apis-uicontext-uicontext.md)中的[getComponentUtils](arkts-apis-uicontext-uicontext.md#getcomponentutils)方法获取当前UI上下文关联的[ComponentUtils](arkts-apis-uicontext-componentutils.md)对象。在目标组件布局完成后，通过该接口能够获取组件坐标和尺寸信息。建议在[布局回调](js-apis-arkui-inspector.md)中使用该接口。如果组件动态创建但未挂载组件树，则无法通过该接口获取组件的坐标和尺寸信息。因为组件在未挂载组件树的情况下，一般未经过UI框架的测量与布局，此时请确保组件已挂载到组件树后再尝试获取组件信息。
+* 该接口返回的组件位置为布局位置，某些属性计算不支持，如位置设置类[offset](ts-universal-attributes-location.md#offset)、[markAnchor](ts-universal-attributes-location.md#markanchor)、[Edges](ts-types.md#edges12)和[LocalizedEdges](ts-types.md#localizededges12)类型的[position](ts-universal-attributes-location.md#position)，以及图形变换类[rotate](ts-universal-attributes-transformation.md#rotate)、[translate](ts-universal-attributes-transformation.md#translate)、[scale](ts-universal-attributes-transformation.md#scale)、[transform](ts-universal-attributes-transformation.md#transform)。可使用替代接口[getPositionToWindowWithTransform](js-apis-arkui-framenode.md#getpositiontowindowwithtransform12)，获取组件相对于窗口且带有绘制属性的位置偏移。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -44,7 +42,7 @@ getRectangleById(id: string): ComponentInfo
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| id | string | 是 | 指定组件id。 |
+| id | string | 是 | 指定组件id。目标组件需已挂载到组件树并完成布局。 |
 
 **返回值：**
 
@@ -62,14 +60,12 @@ getRectangleById(id: string): ComponentInfo
 
 **示例：**
 
-```
-1. import { componentUtils } from '@kit.ArkUI';
-2. let modePosition:componentUtils.ComponentInfo = componentUtils.getRectangleById("onClick");
+```ts
+import { componentUtils } from '@kit.ArkUI';
+let modePosition:componentUtils.ComponentInfo = componentUtils.getRectangleById('onClick');
 ```
 
 ## ComponentInfo
-
-PhonePC/2in1TabletTVWearable
 
 组件大小、位置、平移缩放旋转及仿射矩阵属性信息。
 
@@ -80,17 +76,15 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | size | [Size](js-apis-arkui-componentutils.md#size) | 否 | 否 | 组件大小。 |
-| localOffset | [Offset](js-apis-arkui-componentutils.md#offset) | 否 | 否 | 组件相对于父组件信息。 |
-| windowOffset | [Offset](js-apis-arkui-componentutils.md#offset) | 否 | 否 | 组件相对于窗口信息。 |
-| screenOffset | [Offset](js-apis-arkui-componentutils.md#offset) | 否 | 否 | 组件相对于屏幕信息。 |
+| localOffset | [Offset](js-apis-arkui-componentutils.md#offset) | 否 | 否 | 组件相对于父组件的偏移量。 |
+| windowOffset | [Offset](js-apis-arkui-componentutils.md#offset) | 否 | 否 | 组件相对于窗口的偏移量。 |
+| screenOffset | [Offset](js-apis-arkui-componentutils.md#offset) | 否 | 否 | 组件相对于屏幕的偏移量。 |
 | translate | [TranslateResult](js-apis-arkui-componentutils.md#translateresult) | 否 | 否 | 组件平移信息。 |
 | scale | [ScaleResult](js-apis-arkui-componentutils.md#scaleresult) | 否 | 否 | 组件缩放信息。 |
 | rotate | [RotateResult](js-apis-arkui-componentutils.md#rotateresult) | 否 | 否 | 组件旋转信息。 |
 | transform | [Matrix4Result](js-apis-arkui-componentutils.md#matrix4result) | 否 | 否 | 仿射矩阵信息，根据入参创建的四阶矩阵对象。 |
 
-### Size
-
-PhonePC/2in1TabletTVWearable
+## Size
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -98,12 +92,10 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| width | number | 否 | 否 | 组件宽度。  单位: px |
-| height | number | 否 | 否 | 组件高度。  单位: px |
+| width | number | 否 | 否 | 组件宽度。  单位：px |
+| height | number | 否 | 否 | 组件高度。  单位：px |
 
-### Offset
-
-PhonePC/2in1TabletTVWearable
+## Offset
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -111,12 +103,10 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| x | number | 否 | 否 | x点坐标。  单位: px |
-| y | number | 否 | 否 | y点坐标。  单位: px |
+| x | number | 否 | 否 | x点坐标。  单位：px |
+| y | number | 否 | 否 | y点坐标。  单位：px |
 
-### TranslateResult
-
-PhonePC/2in1TabletTVWearable
+## TranslateResult
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -124,13 +114,11 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| x | number | 否 | 否 | x轴平移距离。  单位: vp |
-| y | number | 否 | 否 | y轴平移距离。  单位: vp |
-| z | number | 否 | 否 | z轴平移距离。  单位: vp |
+| x | number | 否 | 否 | x轴平移距离。  单位：vp |
+| y | number | 否 | 否 | y轴平移距离。  单位：vp |
+| z | number | 否 | 否 | z轴平移距离。  单位：vp |
 
-### ScaleResult
-
-PhonePC/2in1TabletTVWearable
+## ScaleResult
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -141,12 +129,10 @@ PhonePC/2in1TabletTVWearable
 | x | number | 否 | 否 | x轴缩放倍数。 |
 | y | number | 否 | 否 | y轴缩放倍数。 |
 | z | number | 否 | 否 | z轴缩放倍数。 |
-| centerX | number | 否 | 否 | 变换中心点x轴坐标。  单位: vp |
-| centerY | number | 否 | 否 | 变换中心点y轴坐标。  单位: vp |
+| centerX | number | 否 | 否 | 变换中心点x轴坐标。  单位：vp |
+| centerY | number | 否 | 否 | 变换中心点y轴坐标。  单位：vp |
 
-### RotateResult
-
-PhonePC/2in1TabletTVWearable
+## RotateResult
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -157,13 +143,11 @@ PhonePC/2in1TabletTVWearable
 | x | number | 否 | 否 | 旋转轴向量x坐标。 |
 | y | number | 否 | 否 | 旋转轴向量y坐标。 |
 | z | number | 否 | 否 | 旋转轴向量z坐标。 |
-| angle | number | 否 | 否 | 旋转角度。  单位: deg |
-| centerX | number | 否 | 否 | 变换中心点x轴坐标。  单位: vp |
-| centerY | number | 否 | 否 | 变换中心点y轴坐标。  单位: vp |
+| angle | number | 否 | 否 | 旋转角度。  单位：deg |
+| centerX | number | 否 | 否 | 变换中心点x轴坐标。  单位：vp |
+| centerY | number | 否 | 否 | 变换中心点y轴坐标。  单位：vp |
 
-### Matrix4Result
-
-PhonePC/2in1TabletTVWearable
+## Matrix4Result
 
 type Matrix4Result = [number,number,number,number,number,number,number,number,number,number,number,number,number,number,number,number]
 
@@ -173,7 +157,7 @@ type Matrix4Result = [number,number,number,number,number,number,number,number,nu
 
 | 类型 | 说明 |
 | --- | --- |
-| [number,number,number,number,  number,number,number,number,  number,number,number,number,  number,number,number,number] | 取值范围为长度为16（4\*4）的number数组， 详情见四阶矩阵说明。 |
+| [number,number,number,number,  number,number,number,number,  number,number,number,number,  number,number,number,number] | 长度为16（4\*4）的number数组，详情见四阶矩阵说明。 |
 
 **四阶矩阵说明：**
 
@@ -198,56 +182,54 @@ type Matrix4Result = [number,number,number,number,number,number,number,number,nu
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 ### 示例1（获取ComponentUtils对象）
 
-推荐通过使用[UIContext](arkts-apis-uicontext-uicontext.md)中的[getComponentUtils](arkts-apis-uicontext-uicontext.md#getcomponentutils)方法获取当前UI上下文关联的ComponentUtils对象。
+推荐使用[UIContext](arkts-apis-uicontext-uicontext.md)中的[getComponentUtils](arkts-apis-uicontext-uicontext.md#getcomponentutils)方法获取当前UI上下文关联的ComponentUtils对象。
 
+```ts
+import { matrix4 } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct Utils {
+  @State x: number = 120;
+  @State y: number = 10;
+  @State z: number = 100;
+  @State value: string = '';
+  private matrix1 = matrix4.identity().translate({ x: this.x, y: this.y, z: this.z });
+
+  build() {
+    Column() {
+      // $r("app.media.img")需要替换为开发者所需的图像资源文件
+      Image($r('app.media.img'))
+        .transform(this.matrix1)
+        .translate({ x: 20, y: 20, z: 20 })
+        .scale({ x: 0.5, y: 0.5, z: 1 })
+        .rotate({
+          x: 1,
+          y: 1,
+          z: 1,
+          centerX: '50%',
+          centerY: '50%',
+          angle: 300
+        })
+        .width(300)
+        .height(100)
+        .key('image_01')
+      Button('getRectangleById')
+        .onClick(() => {
+          this.value = JSON.stringify(this.getUIContext()
+            .getComponentUtils()
+            .getRectangleById('image_01')); // 建议使用this.getUIContext().getComponentUtils()接口
+        }).margin(10).id('onClick')
+      Text(this.value)
+        .margin(20)
+        .width(300)
+        .height(300)
+        .borderWidth(2)
+    }.margin({ left: 50 })
+  }
+}
 ```
-1. import { matrix4, componentUtils } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Utils {
-6. @State x: number = 120;
-7. @State y: number = 10;
-8. @State z: number = 100;
-9. @State value: string = '';
-10. private matrix1 = matrix4.identity().translate({ x: this.x, y: this.y, z: this.z });
-
-12. build() {
-13. Column() {
-14. // $r("app.media.img")需要替换为开发者所需的图像资源文件
-15. Image($r("app.media.img"))
-16. .transform(this.matrix1)
-17. .translate({ x: 20, y: 20, z: 20 })
-18. .scale({ x: 0.5, y: 0.5, z: 1 })
-19. .rotate({
-20. x: 1,
-21. y: 1,
-22. z: 1,
-23. centerX: '50%',
-24. centerY: '50%',
-25. angle: 300
-26. })
-27. .width(300)
-28. .height(100)
-29. .key("image_01")
-30. Button('getRectangleById')
-31. .onClick(() => {
-32. this.value = JSON.stringify(this.getUIContext()
-33. .getComponentUtils()
-34. .getRectangleById("image_01")) // 建议使用this.getUIContext().getComponentUtils()接口
-35. }).margin(10).id('onClick')
-36. Text(this.value)
-37. .margin(20)
-38. .width(300)
-39. .height(300)
-40. .borderWidth(2)
-41. }.margin({ left: 50 })
-42. }
-43. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/lrABA5UoSq2F0M30eMYvfw/zh-cn_image_0000002558606264.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/A69gExPJREurRxyBLcI_4g/zh-cn_image_0000002736434663.gif)

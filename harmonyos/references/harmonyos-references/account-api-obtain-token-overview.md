@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 概述
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 开放接口调用凭证 > 概述
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:09+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:51059820450b57140535f3136d19370e4dee7eee90e150fb0890970171cdfc4b
+scraped_at: 2026-09-02T14:53:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3974123dde090c0de1a369aaad994ebdeaef506cf40026539fec650e68a78d0a
 ---
 
 在华为账号开放接口中，凭证是调用各类接口的核心鉴权凭据，贯穿身份认证、权限校验、数据安全等关键环节。
@@ -27,3 +27,11 @@ content_hash: sha256:51059820450b57140535f3136d19370e4dee7eee90e150fb0890970171c
 * **获取应用级凭证**
 
   通过应用的Client ID和Client Secret获取应用级凭证Access Token，用于调用应用级权限管控接口（如[通过OpenID获取UnionID](account-api-get-unionid.md)）。
+* **扫码授权**
+
+  + **获取二维码信息**
+
+    [扫码授权登录](../harmonyos-guides/account-authorize-by-qrcode.md)场景下，应用调用该接口获取二维码信息，然后生成二维码供用户扫码授权登录。
+  + **获取用户级凭证**
+
+    [扫码授权登录](../harmonyos-guides/account-authorize-by-qrcode.md)场景下，应用服务端通过设备码轮询该接口，获取Access Token、Refresh Token、ID Token。

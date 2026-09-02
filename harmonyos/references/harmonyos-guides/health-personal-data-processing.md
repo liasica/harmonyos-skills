@@ -1,14 +1,12 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-personal-data-processing
 title: 个人数据处理说明
-breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 个人数据处理说明
+breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 个人数据处理说明
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:21+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4b6ed3fa7e53e5735e6ae2ccbf925240e7009ed425eb538128a616da2575fff1
+scraped_at: 2026-09-02T14:50:27+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:2424823f4908d3928772a63eb7930e2be82e2c6cef54168814370bacfe52e31f
 ---
-
-最后修改时间： 2024/5/16
 
 华为是数据处理者，不是数据控制者，数据使用目的和方式由用户自己决定。
 

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___re
 title: Rcp_Request
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > C API > 结构体 > Rcp_Request
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:06+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d0c9d8783e2ac2fe666d77dd852248d4e186d7adaa652dc9766b41e7391bf834
+scraped_at: 2026-09-02T15:01:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7b5788f29b43c291fe102573ece4b0d923ccf4e4bb7f76cfb14c6cfc14c2b22b
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 网络请求。
 
@@ -22,11 +20,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -42,14 +36,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTVWearable
-
 ### configuration
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Rcp_Configuration* Rcp_Request::configuration
+```cpp
+Rcp_Configuration* Rcp_Request::configuration
 ```
 
 **描述**
@@ -58,10 +48,8 @@ PhonePC/2in1TabletTVWearable
 
 ### content
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Rcp_RequestContent* Rcp_Request::content
+```cpp
+Rcp_RequestContent* Rcp_Request::content
 ```
 
 **描述**
@@ -70,10 +58,8 @@ PhonePC/2in1TabletTVWearable
 
 ### cookies
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Rcp_RequestCookies* Rcp_Request::cookies
+```cpp
+Rcp_RequestCookies* Rcp_Request::cookies
 ```
 
 **描述**
@@ -82,10 +68,8 @@ PhonePC/2in1TabletTVWearable
 
 ### headers
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Rcp_Headers* Rcp_Request::headers
+```cpp
+Rcp_Headers* Rcp_Request::headers
 ```
 
 **描述**
@@ -94,10 +78,8 @@ PhonePC/2in1TabletTVWearable
 
 ### id
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. char Rcp_Request::id[RCP_MAX_REQUEST_ID_LEN]
+```cpp
+char Rcp_Request::id[RCP_MAX_REQUEST_ID_LEN]
 ```
 
 **描述**
@@ -106,10 +88,8 @@ PhonePC/2in1TabletTVWearable
 
 ### method
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char* Rcp_Request::method
+```cpp
+const char* Rcp_Request::method
 ```
 
 **描述**
@@ -118,10 +98,8 @@ PhonePC/2in1TabletTVWearable
 
 ### requestPrivate
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void* Rcp_Request::requestPrivate
+```cpp
+void* Rcp_Request::requestPrivate
 ```
 
 **描述**
@@ -130,10 +108,8 @@ PhonePC/2in1TabletTVWearable
 
 ### transferRange
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Rcp_TransferRange* Rcp_Request::transferRange
+```cpp
+Rcp_TransferRange* Rcp_Request::transferRange
 ```
 
 **描述**
@@ -142,10 +118,8 @@ HTTP传输范围。该设置将转换为HTTP Range标头。
 
 ### url
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. char* Rcp_Request::url
+```cpp
+char* Rcp_Request::url
 ```
 
 **描述**

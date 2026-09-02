@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-profiler-1
 title: 录制Snapshot模板时，看不到taskPool线程内存信息
 breadcrumb: FAQ > DevEco Studio > 性能分析 > 录制Snapshot模板时，看不到taskPool线程内存信息
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:15+08:00
-doc_updated_at: 2026-03-12
+scraped_at: 2026-09-02T15:22:17+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:8500af628c47ece85ef41b810cf8abb398eedf6f8da0865f4f8e0a98a3128b09
 ---
 

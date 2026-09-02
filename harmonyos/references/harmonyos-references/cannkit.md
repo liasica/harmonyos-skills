@@ -3,32 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cannkit
 title: CANN
 breadcrumb: API参考 > AI > CANN Kit（CANN异构计算框架服务） > C API > 模块 > CANN
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:49+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:afbcda1d046d4990bacb77fc9c4f4d4c5bca7a9fc0aea200accd280032f306e1
+scraped_at: 2026-09-02T15:03:10+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6151f5a2472d842ffc22c360cb3818065b7a951917d86d4f703a78d27fbfbd7e
 ---
 
 ## 概述
 
-PhonePC/2in1TabletTV
-
 提供CANN Kit模型推理的相关接口。
+
+提供用于LLM模型推理的API。
 
 **系统能力：** SystemCapability.AI.HiAIFoundation
 
 **起始版本：** 4.1.0(11)
 
-说明
+**说明** 
 
 CANN Kit的模型编译、加载、推理等基础功能接口已抽取放在[neural\_network\_core.h](capi-neural-network-core-h.md)中，此处重点描述高阶功能。
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 文件
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -37,10 +33,9 @@ PhonePC/2in1TabletTV
 | [hiai\_options.h](cannkit-hiai-options-8h.md) | 选项参数的接口。 |
 | [hiai\_single\_op.h](cannkit-hiai-single-op-8h.md) | 定义CANN Kit单算子接口，用于单算子的创建、计算以及Tensor和Buffer的管理。 |
 | [hiai\_tensor.h](cannkit-hiai-tensor-8h.md) | 模型推理时使用的输入输出内存相关的辅助接口。 |
+| [llm\_engine.h](cannkit-llm-engine.md) | 定义用于LLM模型推理的API。 |
 
 ### 结构体
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -50,8 +45,6 @@ PhonePC/2in1TabletTV
 
 ### 类型定义
 
-PhonePC/2in1TabletTV
-
 | 名称 | 描述 |
 | --- | --- |
 | typedef struct [HiAI\_AippParam](cannkit.md#hiai_aippparam) [HiAI\_AippParam](cannkit.md#hiai_aippparam) | AIPP参数对象。 |
@@ -60,14 +53,16 @@ PhonePC/2in1TabletTV
 | typedef struct [HiAI\_SingleOpTensor](cannkit.md#hiai_singleoptensor) [HiAI\_SingleOpTensor](cannkit.md#hiai_singleoptensor) | 单算子Tensor句柄。 |
 | typedef struct [HiAI\_SingleOpOptions](cannkit.md#hiai_singleopoptions) [HiAI\_SingleOpOptions](cannkit.md#hiai_singleopoptions) | 单算子选项句柄。 |
 | typedef struct [HiAI\_SingleOpDescriptor](cannkit.md#hiai_singleopdescriptor) [HiAI\_SingleOpDescriptor](cannkit.md#hiai_singleopdescriptor) | 单算子的算子描述句柄。 |
-| typedef struct [HiAISingleOpDescriptor\_ConvolutionParam](cannkit-sopdesc-convparam.md) | [HMS\_HiAISingleOpDescriptor\_CreateConvolution](cannkit.md#hms_hiaisingleopdescriptor_createconvolution)输入参数。 |
-| typedef struct [HiAI\_SingleOpExecutorConvolutionParam](cannkit-sopexec-convparam.md) | [HMS\_HiAISingleOpExecutor\_CreateConvolution](cannkit.md#hms_hiaisingleopexecutor_createconvolution)输入参数。 |
-| typedef struct [HiAI\_SingleOpExecutorFusedConvolutionActivationParam](cannkit-sopexec-fusedconv-actparam.md) | [HMS\_HiAISingleOpExecutor\_CreateFusedConvolutionActivation](cannkit.md#hms_hiaisingleopexecutor_createfusedconvolutionactivation)输入参数。 |
+| typedef struct [HiAISingleOpDescriptor\_ConvolutionParam](cannkit-sopdesc-convparam.md) [HiAISingleOpDescriptor\_ConvolutionParam](cannkit-sopdesc-convparam.md) | [HMS\_HiAISingleOpDescriptor\_CreateConvolution](cannkit.md#hms_hiaisingleopdescriptor_createconvolution)输入参数。 |
+| typedef struct [HiAI\_SingleOpExecutorConvolutionParam](cannkit-sopexec-convparam.md) [HiAI\_SingleOpExecutorConvolutionParam](cannkit-sopexec-convparam.md) | [HMS\_HiAISingleOpExecutor\_CreateConvolution](cannkit.md#hms_hiaisingleopexecutor_createconvolution)输入参数。 |
+| typedef struct [HiAI\_SingleOpExecutorFusedConvolutionActivationParam](cannkit-sopexec-fusedconv-actparam.md) [HiAI\_SingleOpExecutorFusedConvolutionActivationParam](cannkit-sopexec-fusedconv-actparam.md) | [HMS\_HiAISingleOpExecutor\_CreateFusedConvolutionActivation](cannkit.md#hms_hiaisingleopexecutor_createfusedconvolutionactivation)输入参数。 |
 | typedef struct [HiAI\_SingleOpExecutor](cannkit.md#hiai_singleopexecutor) [HiAI\_SingleOpExecutor](cannkit.md#hiai_singleopexecutor) | 单算子执行器句柄。 |
+| typedef struct [HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context) [HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context) | 定义LLM引擎上下文的别名。 |
+| typedef struct [HMS\_LLMEngine\_Executor](cannkit.md#hms_llmengine_executor) [HMS\_LLMEngine\_Executor](cannkit.md#hms_llmengine_executor) | LLM引擎执行器。 |
+| typedef struct [HMS\_LLMEngine\_Prompt](cannkit.md#hms_llmengine_prompt) [HMS\_LLMEngine\_Prompt](cannkit.md#hms_llmengine_prompt) | LLM引擎文本输入。 |
+| typedef void(\* [callbackFunctionType](cannkit.md#callbackfunctiontype)) (const [HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context) \*) | 生成回调函数。 |
 
 ### 枚举
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -90,10 +85,9 @@ PhonePC/2in1TabletTV
 | [HiAI\_SingleOpPadMode](cannkit.md#hiai_singleoppadmode) {  HIAI\_SINGLEOP\_PAD\_MODE\_SPECIFIC = 0,  HIAI\_SINGLEOP\_PAD\_MODE\_SAME = 1,  HIAI\_SINGLEOP\_PAD\_MODE\_SAME\_UPPER = 2,  HIAI\_SINGLEOP\_PAD\_MODE\_SAME\_LOWER = 3,  HIAI\_SINGLEOP\_PAD\_MODE\_VALID = 4  } | 单算子填充模式枚举。 |
 | [HiAI\_SingleOpActivationType](cannkit.md#hiai_singleopactivationtype) {  HIAI\_SINGLEOP\_ACTIVATION\_TYPE\_RELU = 0,  HIAI\_SINGLEOP\_ACTIVATION\_TYPE\_RELU6 = 1  } | 单算子激活模式枚举。 |
 | [HiAI\_SingleOpSupportStatus](cannkit.md#hiai_singleopsupportstatus) {  HIAI\_SINGLEOP\_OPTIMIZED = 0,  HIAI\_SINGLEOP\_COMMON = 1,  HIAI\_SINGLEOP\_UNSUPPORTED = 2  } | 单算子支持状态枚举。 |
+| [HMS\_LLMEngine\_InferPerfMode](cannkit.md#hms_llmengine_inferperfmode) {  HMS\_LLMENGINE\_INFERPERF\_UNSET = 0, HMS\_LLMENGINE\_INFERPERF\_LOW, HMS\_LLMENGINE\_INFERPERF\_MIDDLE, HMS\_LLMENGINE\_INFERPERF\_HIGH,  HMS\_LLMENGINE\_INFERPERF\_EXTREME\_HIGH  } | 推断性能模式。 |
 
 ### 函数
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -202,17 +196,51 @@ PhonePC/2in1TabletTV
 | OH\_NN\_ReturnCode [HMS\_HiAISingleOpExecutor\_Destroy](cannkit.md#hms_hiaisingleopexecutor_destroy) ([HiAI\_SingleOpExecutor](cannkit.md#hiai_singleopexecutor) \*\*executor) | 销毁[HiAI\_SingleOpExecutor](cannkit.md#hiai_singleopexecutor)对象，释放执行器占用的内存。 |
 | size\_t [HMS\_HiAITensor\_GetSizeWithImageFormat](cannkit.md#hms_hiaitensor_getsizewithimageformat) (NN\_TensorDesc \*desc, [HiAI\_ImageFormat](cannkit.md#hiai_imageformat) format) | 根据NN\_TensorDesc和HiAI\_ImageFormat计算申请tensor的大小。 |
 | OH\_NN\_ReturnCode [HMS\_HiAITensor\_SetAippParams](cannkit.md#hms_hiaitensor_setaippparams) (NN\_Tensor \*tensor, [HiAI\_AippParam](cannkit.md#hiai_aippparam) \*aippParams[], size\_t aippNum) | 给NN\_Tensor设置AippParams。 |
+| [HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context) \* [HMS\_LLMEngineContext\_CreateFromContextJson](cannkit.md#hms_llmenginecontext_createfromcontextjson) (const char \*jsonFile) | 通过JSON配置文件创建LLM引擎上下文句柄。 |
+| void [HMS\_LLMEngine\_Context\_Destroy](cannkit.md#hms_llmengine_context_destroy) ([HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context) \*\*ctx) | 销毁LLM引擎上下文。 |
+| [HMS\_LLMEngine\_Executor](cannkit.md#hms_llmengine_executor) \* [HMS\_LLMEngineExecutor\_CreateFromExecutorJson](cannkit.md#hms_llmengineexecutor_createfromexecutorjson) (const char \*jsonFile) | 通过JSON配置文件创建LLM引擎执行器句柄。 |
+| void [HMS\_LLMEngineExecutor\_Destroy](cannkit.md#hms_llmengineexecutor_destroy) ([HMS\_LLMEngine\_Executor](cannkit.md#hms_llmengine_executor) \*\*executor) | 销毁一个LLM引擎执行器，该执行器内存释放。 |
+| [HMS\_LLMEngine\_Prompt](cannkit.md#hms_llmengine_prompt) \* [HMS\_LLMEnginePrompt\_Create](cannkit.md#hms_llmengineprompt_create) (void) | 创建一个LLM引擎提示句柄。 |
+| OH\_NN\_ReturnCode [HMS\_LLMEnginePrompt\_SetText](cannkit.md#hms_llmengineprompt_settext)  ([HMS\_LLMEngine\_Prompt](cannkit.md#hms_llmengine_prompt) \*prompt, const char \*text) | 设置文本输入。 |
+| OH\_NN\_ReturnCode [HMS\_LLMEnginePrompt\_SetTokenId](cannkit.md#hms_llmengineprompt_settokenid) ([HMS\_LLMEngine\_Prompt](cannkit.md#hms_llmengine_prompt) \*prompt, int32\_t \*tokenIds, uint32\_t tokenNum) | 设置输入的tokenid。 |
+| void [HMS\_LLMEnginePrompt\_Destroy](cannkit.md#hms_llmengineprompt_destroy) ([HMS\_LLMEngine\_Prompt](cannkit.md#hms_llmengine_prompt) \*\*prompt) | 销毁LLM引擎提示词句柄。 |
+| OH\_NN\_ReturnCode [HMS\_LLMEngineContext\_SetOnOneTokenGenerateDoneFunc](cannkit.md#hms_llmenginecontext_setononetokengeneratedonefunc) ([HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context) \*ctx, [callbackFunctionType](cannkit.md#callbackfunctiontype) func) | 设置生成token时触发的回调函数。 |
+| OH\_NN\_ReturnCode [HMS\_LLMEngineContext\_SetOnAllTokensGenerateDoneFunc](cannkit.md#hms_llmenginecontext_setonalltokensgeneratedonefunc) ([HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context) \*ctx, [callbackFunctionType](cannkit.md#callbackfunctiontype) func) | 设置所有token生成完毕时触发的回调函数。 |
+| OH\_NN\_ReturnCode [HMS\_LLMEngineContext\_SetOnGenerateAsyncFailed](cannkit.md#hms_llmenginecontext_setongenerateasyncfailed) ([HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context) \*ctx, [callbackFunctionType](cannkit.md#callbackfunctiontype) func) | 设置生成失败时的回调函数。 |
+| OH\_NN\_ReturnCode [HMS\_LLMEngineContext\_GetOneGenerationLen](cannkit.md#hms_llmenginecontext_getonegenerationlen) (const [HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context) \*ctx, uint32\_t \*len) | 获取生成文本片段的长度。 |
+| OH\_NN\_ReturnCode [HMS\_LLMEngineContext\_GetOneGeneration](cannkit.md#hms_llmenginecontext_getonegeneration) (const [HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context) \*ctx, char \*generation, uint32\_t len) | 获取生成的文本片段。 |
+| OH\_NN\_ReturnCode [HMS\_LLMEngineContext\_GetAllGenerationLen](cannkit.md#hms_llmenginecontext_getallgenerationlen) (const [HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context) \*ctx, uint32\_t \*len) | 获取所有生成文本的总长度。 |
+| OH\_NN\_ReturnCode [HMS\_LLMEngineContext\_GetAllGeneration](cannkit.md#hms_llmenginecontext_getallgeneration) (const [HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context) \*ctx, char \*generation, uint32\_t len) | 获取所有生成的文本。 |
+| OH\_NN\_ReturnCode [HMS\_LLMEngineContext\_GetOneTokenGeneration](cannkit.md#hms_llmenginecontext_getonetokengeneration) (const [HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context) \*ctx, int32\_t \*genToken) | 获取生成的tokenid。 |
+| OH\_NN\_ReturnCode [HMS\_LLMEngineContext\_GetAllTokenGenerationLen](cannkit.md#hms_llmenginecontext_getalltokengenerationlen) (const [HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context) \*ctx, uint32\_t \*len) | 获取所有已生成tokenid的长度。 |
+| OH\_NN\_ReturnCode [HMS\_LLMEngineContext\_GetAllTokenGeneration](cannkit.md#hms_llmenginecontext_getalltokengeneration) (const [HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context) \*ctx, int32\_t \*genToken, uint32\_t len) | 获取所有已生成的tokenid。 |
+| OH\_NN\_ReturnCode [HMS\_LLMEngineExecutor\_Generate](cannkit.md#hms_llmengineexecutor_generate) ([HMS\_LLMEngine\_Executor](cannkit.md#hms_llmengine_executor) \*executor, [HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context) \*ctx, const [HMS\_LLMEngine\_Prompt](cannkit.md#hms_llmengine_prompt) \*prompt) | 执行同步LLM推理。 |
+| OH\_NN\_ReturnCode [HMS\_LLMEngineExecutor\_GenerateAsync](cannkit.md#hms_llmengineexecutor_generateasync) ([HMS\_LLMEngine\_Executor](cannkit.md#hms_llmengine_executor) \*executor, [HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context) \*ctx, const [HMS\_LLMEngine\_Prompt](cannkit.md#hms_llmengine_prompt) \*prompt) | 异步执行LLM推理。 |
+| OH\_NN\_ReturnCode [HMS\_LLMEngineExecutor\_SetInferencePerfMode](cannkit.md#hms_llmengineexecutor_setinferenceperfmode) ([HMS\_LLMEngine\_Executor](cannkit.md#hms_llmengine_executor) \*executor, [HMS\_LLMEngine\_InferPerfMode](cannkit.md#hms_llmengine_inferperfmode) inferPerfMode) | 设置推理性能模式。 |
+| OH\_NN\_ReturnCode [HMS\_LLMEngineContext\_GetTotalTimeMs](cannkit.md#hms_llmenginecontext_gettotaltimems) (const [HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context) \*ctx, double \*ms) | 生成总耗时（单位：ms）。 |
+| OH\_NN\_ReturnCode [HMS\_LLMEngineContext\_GetPrefillTimeMs](cannkit.md#hms_llmenginecontext_getprefilltimems) (const [HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context) \*ctx, double \*ms) | 预填充时间（单位：ms）。 |
+| OH\_NN\_ReturnCode [HMS\_LLMEngineContext\_GetDecodeTimeMs](cannkit.md#hms_llmenginecontext_getdecodetimems) (const [HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context) \*ctx, double \*ms) | 解码耗时（单位：ms）。 |
+| OH\_NN\_ReturnCode [HMS\_LLMEngineContext\_GetInputTokenCount](cannkit.md#hms_llmenginecontext_getinputtokencount) (const [HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context) \*ctx, uint64\_t \*count) | 输入token数量。 |
+| OH\_NN\_ReturnCode [HMS\_LLMEngineContext\_GetOutputTokenCount](cannkit.md#hms_llmenginecontext_getoutputtokencount) (const [HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context) \*ctx, uint64\_t \*count) | 输出token数量。 |
 
 ## 类型定义说明
 
-PhonePC/2in1TabletTV
+### callbackFunctionType
+
+```cpp
+typedef void(* callbackFunctionType) (const HMS_LLMEngine_Context *)
+```
+
+**描述**
+
+生成回调函数。
+
+**起始版本：** 6.1.1(24)
 
 ### HiAI\_AippParam
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef struct HiAI_AippParam HiAI_AippParam
+```cpp
+typedef struct HiAI_AippParam HiAI_AippParam
 ```
 
 **描述**
@@ -223,10 +251,8 @@ AIPP参数对象。
 
 ### HiAI\_SingleOpBuffer
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef struct HiAI_SingleOpBuffer HiAI_SingleOpBuffer
+```cpp
+typedef struct HiAI_SingleOpBuffer HiAI_SingleOpBuffer
 ```
 
 **描述**
@@ -237,10 +263,8 @@ PhonePC/2in1TabletTV
 
 ### HiAI\_SingleOpDescriptor
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef struct HiAI_SingleOpDescriptor HiAI_SingleOpDescriptor
+```cpp
+typedef struct HiAI_SingleOpDescriptor HiAI_SingleOpDescriptor
 ```
 
 **描述**
@@ -251,10 +275,8 @@ PhonePC/2in1TabletTV
 
 ### HiAISingleOpDescriptor\_ConvolutionParam
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef struct HiAISingleOpDescriptor_ConvolutionParam
+```cpp
+typedef struct HiAISingleOpDescriptor_ConvolutionParam HiAISingleOpDescriptor_ConvolutionParam
 ```
 
 **描述**
@@ -265,10 +287,8 @@ PhonePC/2in1TabletTV
 
 ### HiAI\_SingleOpExecutor
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef struct HiAI_SingleOpExecutor HiAI_SingleOpExecutor
+```cpp
+typedef struct HiAI_SingleOpExecutor HiAI_SingleOpExecutor
 ```
 
 **描述**
@@ -279,10 +299,8 @@ PhonePC/2in1TabletTV
 
 ### HiAI\_SingleOpExecutorConvolutionParam
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef struct HiAI_SingleOpExecutorConvolutionParam
+```cpp
+typedef struct HiAI_SingleOpExecutorConvolutionParam HiAI_SingleOpExecutorConvolutionParam
 ```
 
 **描述**
@@ -293,10 +311,8 @@ PhonePC/2in1TabletTV
 
 ### HiAI\_SingleOpExecutorFusedConvolutionActivationParam
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef struct HiAI_SingleOpExecutorFusedConvolutionActivationParam
+```cpp
+typedef struct HiAI_SingleOpExecutorFusedConvolutionActivationParam HiAI_SingleOpExecutorFusedConvolutionActivationParam
 ```
 
 **描述**
@@ -307,10 +323,8 @@ PhonePC/2in1TabletTV
 
 ### HiAI\_SingleOpOptions
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef struct HiAI_SingleOpOptions HiAI_SingleOpOptions
+```cpp
+typedef struct HiAI_SingleOpOptions HiAI_SingleOpOptions
 ```
 
 **描述**
@@ -321,10 +335,8 @@ PhonePC/2in1TabletTV
 
 ### HiAI\_SingleOpTensor
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef struct HiAI_SingleOpTensor HiAI_SingleOpTensor
+```cpp
+typedef struct HiAI_SingleOpTensor HiAI_SingleOpTensor
 ```
 
 **描述**
@@ -335,10 +347,8 @@ PhonePC/2in1TabletTV
 
 ### HiAI\_SingleOpTensorDesc
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef struct HiAI_SingleOpTensorDesc HiAI_SingleOpTensorDesc
+```cpp
+typedef struct HiAI_SingleOpTensorDesc HiAI_SingleOpTensorDesc
 ```
 
 **描述**
@@ -347,16 +357,48 @@ PhonePC/2in1TabletTV
 
 **起始版本：** 5.0.0(12)
 
-## 枚举类型说明
+### HMS\_LLMEngine\_Context
 
-PhonePC/2in1TabletTV
+```cpp
+typedef struct HMS_LLMEngine_Context HMS_LLMEngine_Context
+```
+
+**描述**
+
+定义LLM引擎上下文的别名。
+
+**起始版本：** 6.1.1(24)
+
+### HMS\_LLMEngine\_Executor
+
+```cpp
+typedef struct HMS_LLMEngine_Executor HMS_LLMEngine_Executor
+```
+
+**描述**
+
+LLM引擎执行器。
+
+**起始版本：** 6.1.1(24)
+
+### HMS\_LLMEngine\_Prompt
+
+```cpp
+typedef struct HMS_LLMEngine_Prompt HMS_LLMEngine_Prompt
+```
+
+**描述**
+
+LLM引擎文本输入。
+
+**起始版本：** 6.1.1(24)
+
+## 枚举类型说明
 
 ### HiAI\_BandMode
 
-PhonePC/2in1TabletTV
-
-```
-1. enum HiAI_BandMode
+```cpp
+enum HiAI_BandMode
 ```
 
 **描述**
@@ -374,10 +416,8 @@ PhonePC/2in1TabletTV
 
 ### HiAI\_Compatibility
 
-PhonePC/2in1TabletTV
-
-```
-1. enum HiAI_Compatibility
+```cpp
+enum HiAI_Compatibility
 ```
 
 **描述**
@@ -393,10 +433,8 @@ PhonePC/2in1TabletTV
 
 ### HiAI\_DeviceMemoryReusePlan
 
-PhonePC/2in1TabletTV
-
-```
-1. enum HiAI_DeviceMemoryReusePlan
+```cpp
+enum HiAI_DeviceMemoryReusePlan
 ```
 
 **描述**
@@ -413,10 +451,8 @@ PhonePC/2in1TabletTV
 
 ### HiAI\_DynamicShapeCacheMode
 
-PhonePC/2in1TabletTV
-
-```
-1. enum HiAI_DynamicShapeCacheMode
+```cpp
+enum HiAI_DynamicShapeCacheMode
 ```
 
 **描述**
@@ -432,10 +468,8 @@ PhonePC/2in1TabletTV
 
 ### HiAI\_DynamicShapeStatus
 
-PhonePC/2in1TabletTV
-
-```
-1. enum HiAI_DynamicShapeStatus
+```cpp
+enum HiAI_DynamicShapeStatus
 ```
 
 **描述**
@@ -451,10 +485,8 @@ PhonePC/2in1TabletTV
 
 ### HiAI\_ExecuteDevice
 
-PhonePC/2in1TabletTV
-
-```
-1. enum HiAI_ExecuteDevice
+```cpp
+enum HiAI_ExecuteDevice
 ```
 
 **描述**
@@ -471,10 +503,8 @@ PhonePC/2in1TabletTV
 
 ### HiAI\_FallbackMode
 
-PhonePC/2in1TabletTV
-
-```
-1. enum HiAI_FallbackMode
+```cpp
+enum HiAI_FallbackMode
 ```
 
 **描述**
@@ -490,10 +520,8 @@ PhonePC/2in1TabletTV
 
 ### HiAI\_FormatMode
 
-PhonePC/2in1TabletTV
-
-```
-1. enum HiAI_FormatMode
+```cpp
+enum HiAI_FormatMode
 ```
 
 **描述**
@@ -509,10 +537,8 @@ PhonePC/2in1TabletTV
 
 ### HiAI\_ImageColorSpace
 
-PhonePC/2in1TabletTV
-
-```
-1. enum HiAI_ImageColorSpace
+```cpp
+enum HiAI_ImageColorSpace
 ```
 
 **描述**
@@ -531,10 +557,8 @@ PhonePC/2in1TabletTV
 
 ### HiAI\_ImageFormat
 
-PhonePC/2in1TabletTV
-
-```
-1. enum HiAI_ImageFormat
+```cpp
+enum HiAI_ImageFormat
 ```
 
 **描述**
@@ -560,10 +584,8 @@ CANN Kit推理支持的输入和输出Tensor的图片格式的枚举。
 
 ### HiAI\_OmType
 
-PhonePC/2in1TabletTV
-
-```
-1. enum HiAI_OmType
+```cpp
+enum HiAI_OmType
 ```
 
 **描述**
@@ -580,10 +602,8 @@ PhonePC/2in1TabletTV
 
 ### HiAI\_SingleOpActivationType
 
-PhonePC/2in1TabletTV
-
-```
-1. enum HiAI_SingleOpActivationType
+```cpp
+enum HiAI_SingleOpActivationType
 ```
 
 **描述**
@@ -599,10 +619,8 @@ PhonePC/2in1TabletTV
 
 ### HiAI\_SingleOpConvMode
 
-PhonePC/2in1TabletTV
-
-```
-1. enum HiAI_SingleOpConvMode
+```cpp
+enum HiAI_SingleOpConvMode
 ```
 
 **描述**
@@ -619,10 +637,8 @@ PhonePC/2in1TabletTV
 
 ### HiAI\_SingleOpDataType
 
-PhonePC/2in1TabletTV
-
-```
-1. enum HiAI_SingleOpDataType
+```cpp
+enum HiAI_SingleOpDataType
 ```
 
 **描述**
@@ -639,10 +655,8 @@ PhonePC/2in1TabletTV
 
 ### HiAI\_SingleOpFormat
 
-PhonePC/2in1TabletTV
-
-```
-1. enum HiAI_SingleOpFormat
+```cpp
+enum HiAI_SingleOpFormat
 ```
 
 **描述**
@@ -663,10 +677,8 @@ PhonePC/2in1TabletTV
 
 ### HiAI\_SingleOpPadMode
 
-PhonePC/2in1TabletTV
-
-```
-1. enum HiAI_SingleOpPadMode
+```cpp
+enum HiAI_SingleOpPadMode
 ```
 
 **描述**
@@ -685,10 +697,8 @@ PhonePC/2in1TabletTV
 
 ### HiAI\_SingleOpSupportStatus
 
-PhonePC/2in1TabletTV
-
-```
-1. enum HiAI_SingleOpSupportStatus
+```cpp
+enum HiAI_SingleOpSupportStatus
 ```
 
 **描述**
@@ -705,10 +715,8 @@ PhonePC/2in1TabletTV
 
 ### HiAI\_TuningMode
 
-PhonePC/2in1TabletTV
-
-```
-1. enum HiAI_TuningMode
+```cpp
+enum HiAI_TuningMode
 ```
 
 **描述**
@@ -725,10 +733,8 @@ PhonePC/2in1TabletTV
 
 ### HiAI\_TuningStrategy
 
-PhonePC/2in1TabletTV
-
-```
-1. enum HiAI_TuningStrategy
+```cpp
+enum HiAI_TuningStrategy
 ```
 
 **描述**
@@ -744,16 +750,32 @@ PhonePC/2in1TabletTV
 | HIAI\_TUNING\_STRATEGY\_ON\_DEVICE\_PREPROCESS\_TUNING | NPU算子库动态升级场景深度融合优化模型。 |
 | HIAI\_TUNING\_STRATEGY\_ON\_CLOUD\_TUNING | 未来场景的预留，目前不使用。 |
 
-## 函数说明
+### HMS\_LLMEngine\_InferPerfMode
 
-PhonePC/2in1TabletTV
+```cpp
+enum HMS_LLMEngine_InferPerfMode
+```
+
+**描述**
+
+推断性能模式。
+
+**起始版本：** 6.1.1(24)
+
+| 枚举值 | 描述 |
+| --- | --- |
+| HMS\_LLMENGINE\_INFERPERF\_UNSET | 推断perfmode未设置。 |
+| HMS\_LLMENGINE\_INFERPERF\_LOW | 低推理性能模式。 |
+| HMS\_LLMENGINE\_INFERPERF\_MIDDLE | 中度推理性能模式。 |
+| HMS\_LLMENGINE\_INFERPERF\_HIGH | 高推理性能模式。 |
+| HMS\_LLMENGINE\_INFERPERF\_EXTREME\_HIGH | 极高推理性能模式。 |
+
+## 函数说明
 
 ### HMS\_HiAI\_GetVersion()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* HMS_HiAI_GetVersion (void)
+```cpp
+const char* HMS_HiAI_GetVersion (void)
 ```
 
 **描述**
@@ -768,10 +790,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_Create()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_AippParam* HMS_HiAIAippParam_Create (uint32_t batchNum)
+```cpp
+HiAI_AippParam* HMS_HiAIAippParam_Create (uint32_t batchNum)
 ```
 
 **描述**
@@ -794,10 +814,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_Destroy()
 
-PhonePC/2in1TabletTV
-
-```
-1. void HMS_HiAIAippParam_Destroy (HiAI_AippParam ** aippParam)
+```cpp
+void HMS_HiAIAippParam_Destroy (HiAI_AippParam ** aippParam)
 ```
 
 **描述**
@@ -816,10 +834,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_GetBatchCount()
 
-PhonePC/2in1TabletTV
-
-```
-1. uint32_t HMS_HiAIAippParam_GetBatchCount (HiAI_AippParam * aippParam)
+```cpp
+uint32_t HMS_HiAIAippParam_GetBatchCount (HiAI_AippParam * aippParam)
 ```
 
 **描述**
@@ -842,10 +858,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_GetChannelPadding()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIAippParam_GetChannelPadding (HiAI_AippParam * aippParam, uint32_t batchIndex, uint32_t paddingValues[], uint32_t channelCount)
+```cpp
+OH_NN_ReturnCode HMS_HiAIAippParam_GetChannelPadding (HiAI_AippParam * aippParam, uint32_t batchIndex, uint32_t paddingValues[], uint32_t channelCount)
 ```
 
 **描述**
@@ -871,10 +885,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_GetChannelSwapConfig()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIAippParam_GetChannelSwapConfig (HiAI_AippParam * aippParam, bool * rbuvSwapSwitch, bool * axSwapSwitch)
+```cpp
+OH_NN_ReturnCode HMS_HiAIAippParam_GetChannelSwapConfig (HiAI_AippParam * aippParam, bool * rbuvSwapSwitch, bool * axSwapSwitch)
 ```
 
 **描述**
@@ -899,10 +911,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_GetCropConfig()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIAippParam_GetCropConfig (HiAI_AippParam * aippParam, uint32_t batchIndex, uint32_t * startPosW, uint32_t * startPosH, uint32_t * croppedW, uint32_t * croppedH)
+```cpp
+OH_NN_ReturnCode HMS_HiAIAippParam_GetCropConfig (HiAI_AippParam * aippParam, uint32_t batchIndex, uint32_t * startPosW, uint32_t * startPosH, uint32_t * croppedW, uint32_t * croppedH)
 ```
 
 **描述**
@@ -921,8 +931,8 @@ PhonePC/2in1TabletTV
 | batchIndex | 对于多batch单crop场景，对应输入的图像索引；对于单batch多crop场景，对应即将crop出来的图像索引。 |
 | startPosW | 裁剪起始位置水平方向坐标。 |
 | startPosH | 裁剪起始位置垂直方向坐标。 |
-| croppedW | 裁剪出的图像宽度，单位为像素。 |
-| croppedH | 裁剪出的图像高度，单位为像素。 |
+| croppedW | 裁剪出的图像宽度，单位为px。 |
+| croppedH | 裁剪出的图像高度，单位为px。 |
 
 **返回：**
 
@@ -930,10 +940,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_GetCscConfig()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIAippParam_GetCscConfig (HiAI_AippParam * aippParam, HiAI_ImageFormat * inputFormat, HiAI_ImageFormat * outputFormat, HiAI_ImageColorSpace * space)
+```cpp
+OH_NN_ReturnCode HMS_HiAIAippParam_GetCscConfig (HiAI_AippParam * aippParam, HiAI_ImageFormat * inputFormat, HiAI_ImageFormat * outputFormat, HiAI_ImageColorSpace * space)
 ```
 
 **描述**
@@ -959,10 +967,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_GetData()
 
-PhonePC/2in1TabletTV
-
-```
-1. void* HMS_HiAIAippParam_GetData (HiAI_AippParam * aippParam)
+```cpp
+void* HMS_HiAIAippParam_GetData (HiAI_AippParam * aippParam)
 ```
 
 **描述**
@@ -985,10 +991,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_GetDataSize()
 
-PhonePC/2in1TabletTV
-
-```
-1. uint32_t HMS_HiAIAippParam_GetDataSize (HiAI_AippParam * aippParam)
+```cpp
+uint32_t HMS_HiAIAippParam_GetDataSize (HiAI_AippParam * aippParam)
 ```
 
 **描述**
@@ -1011,10 +1015,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_GetDtcMeanPixel()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIAippParam_GetDtcMeanPixel (HiAI_AippParam * aippParam, uint32_t batchIndex, uint32_t meanPixel[], uint32_t channelCount)
+```cpp
+OH_NN_ReturnCode HMS_HiAIAippParam_GetDtcMeanPixel (HiAI_AippParam * aippParam, uint32_t batchIndex, uint32_t meanPixel[], uint32_t channelCount)
 ```
 
 **描述**
@@ -1040,10 +1042,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_GetDtcMinPixel()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIAippParam_GetDtcMinPixel (HiAI_AippParam * aippParam, uint32_t batchIndex, float minPixel[], uint32_t channelCount)
+```cpp
+OH_NN_ReturnCode HMS_HiAIAippParam_GetDtcMinPixel (HiAI_AippParam * aippParam, uint32_t batchIndex, float minPixel[], uint32_t channelCount)
 ```
 
 **描述**
@@ -1069,10 +1069,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_GetDtcVarReciPixel()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIAippParam_GetDtcVarReciPixel (HiAI_AippParam * aippParam, uint32_t batchIndex, float varReciPixel[], uint32_t channelCount)
+```cpp
+OH_NN_ReturnCode HMS_HiAIAippParam_GetDtcVarReciPixel (HiAI_AippParam * aippParam, uint32_t batchIndex, float varReciPixel[], uint32_t channelCount)
 ```
 
 **描述**
@@ -1098,10 +1096,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_GetInputAippIndex()
 
-PhonePC/2in1TabletTV
-
-```
-1. int HMS_HiAIAippParam_GetInputAippIndex (HiAI_AippParam * aippParam)
+```cpp
+int HMS_HiAIAippParam_GetInputAippIndex (HiAI_AippParam * aippParam)
 ```
 
 **描述**
@@ -1124,10 +1120,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_GetInputFormat()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_ImageFormat HMS_HiAIAippParam_GetInputFormat (HiAI_AippParam * aippParam)
+```cpp
+HiAI_ImageFormat HMS_HiAIAippParam_GetInputFormat (HiAI_AippParam * aippParam)
 ```
 
 **描述**
@@ -1142,18 +1136,16 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| aippParam | [HiAI\_AippParam](cannkit.md#hiai_aippparam)指针实例，非空，否则返回HIAI\_IMAGE\_FORMAT\_INVALID。 |
+| aippParam | [HiAI\_AippParam](cannkit.md#hiai_aippparam)指针实例，非空，否则返回[HIAI\_IMAGE\_FORMAT\_INVALID](cannkit.md#hiai_imageformat)。 |
 
 **返回：**
 
-成功返回[HiAI\_ImageFormat](cannkit.md#hiai_imageformat)，失败返回HIAI\_IMAGE\_FORMAT\_INVALID。
+成功返回[HiAI\_ImageFormat](cannkit.md#hiai_imageformat)，失败返回[HIAI\_IMAGE\_FORMAT\_INVALID](cannkit.md#hiai_imageformat)。
 
 ### HMS\_HiAIAippParam\_GetInputIndex()
 
-PhonePC/2in1TabletTV
-
-```
-1. int HMS_HiAIAippParam_GetInputIndex (HiAI_AippParam * aippParam)
+```cpp
+int HMS_HiAIAippParam_GetInputIndex (HiAI_AippParam * aippParam)
 ```
 
 **描述**
@@ -1176,10 +1168,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_GetInputShape()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIAippParam_GetInputShape (HiAI_AippParam * aippParam, uint32_t * srcImageW, uint32_t * srcImageH)
+```cpp
+OH_NN_ReturnCode HMS_HiAIAippParam_GetInputShape (HiAI_AippParam * aippParam, uint32_t * srcImageW, uint32_t * srcImageH)
 ```
 
 **描述**
@@ -1195,8 +1185,8 @@ PhonePC/2in1TabletTV
 | 名称 | 描述 |
 | --- | --- |
 | aippParam | [HiAI\_AippParam](cannkit.md#hiai_aippparam)指针实例，非空，否则返回失败。 |
-| srcImageW | 输入图像的宽度，单位为像素。 |
-| srcImageH | 输入图像的高度，单位为像素。 |
+| srcImageW | 输入图像的宽度，单位为px。 |
+| srcImageH | 输入图像的高度，单位为px。 |
 
 **返回：**
 
@@ -1204,10 +1194,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_GetPadConfig()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIAippParam_GetPadConfig (HiAI_AippParam * aippParam, uint32_t batchIndex, uint32_t * leftPadSize, uint32_t * rightPadSize, uint32_t * topPadSize, uint32_t * bottomPadSize)
+```cpp
+OH_NN_ReturnCode HMS_HiAIAippParam_GetPadConfig (HiAI_AippParam * aippParam, uint32_t batchIndex, uint32_t * leftPadSize, uint32_t * rightPadSize, uint32_t * topPadSize, uint32_t * bottomPadSize)
 ```
 
 **描述**
@@ -1235,10 +1223,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_GetResizeConfig()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIAippParam_GetResizeConfig (HiAI_AippParam * aippParam, uint32_t batchIndex, uint32_t * resizedW, uint32_t * resizedH)
+```cpp
+OH_NN_ReturnCode HMS_HiAIAippParam_GetResizeConfig (HiAI_AippParam * aippParam, uint32_t batchIndex, uint32_t * resizedW, uint32_t * resizedH)
 ```
 
 **描述**
@@ -1255,8 +1241,8 @@ PhonePC/2in1TabletTV
 | --- | --- |
 | aippParam | [HiAI\_AippParam](cannkit.md#hiai_aippparam)指针实例，非空，否则返回失败。 |
 | batchIndex | 对于多batch单crop场景，对应输入的图像索引；对于单batch多crop场景，对应crop出来的图像索引。 |
-| resizedW | 缩放后图像宽度，单位为像素。 |
-| resizedH | 缩放后图像高度，单位为像素。 |
+| resizedW | 缩放后图像宽度，单位为px。 |
+| resizedH | 缩放后图像高度，单位为px。 |
 
 **返回：**
 
@@ -1264,10 +1250,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_GetRotationAngle()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIAippParam_GetRotationAngle (HiAI_AippParam * aippParam, uint32_t batchIndex, float * rotationAngle)
+```cpp
+OH_NN_ReturnCode HMS_HiAIAippParam_GetRotationAngle (HiAI_AippParam * aippParam, uint32_t batchIndex, float * rotationAngle)
 ```
 
 **描述**
@@ -1292,10 +1276,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_GetSingleBatchMultiCrop()
 
-PhonePC/2in1TabletTV
-
-```
-1. bool HMS_HiAIAippParam_GetSingleBatchMultiCrop (HiAI_AippParam * aippParam)
+```cpp
+bool HMS_HiAIAippParam_GetSingleBatchMultiCrop (HiAI_AippParam * aippParam)
 ```
 
 **描述**
@@ -1314,14 +1296,12 @@ PhonePC/2in1TabletTV
 
 **返回：**
 
-返回真为单batch多crop场景，返回假为非单batch多crop场景。
+返回true为单batch多crop场景，返回false为非单batch多crop场景。
 
 ### HMS\_HiAIAippParam\_SetChannelPadding()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIAippParam_SetChannelPadding (HiAI_AippParam * aippParam, uint32_t batchIndex, uint32_t paddingValues[], uint32_t channelCount)
+```cpp
+OH_NN_ReturnCode HMS_HiAIAippParam_SetChannelPadding (HiAI_AippParam * aippParam, uint32_t batchIndex, uint32_t paddingValues[], uint32_t channelCount)
 ```
 
 **描述**
@@ -1347,10 +1327,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_SetChannelSwapConfig()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIAippParam_SetChannelSwapConfig (HiAI_AippParam * aippParam, bool rbuvSwapSwitch, bool axSwapSwitch)
+```cpp
+OH_NN_ReturnCode HMS_HiAIAippParam_SetChannelSwapConfig (HiAI_AippParam * aippParam, bool rbuvSwapSwitch, bool axSwapSwitch)
 ```
 
 **描述**
@@ -1390,10 +1368,8 @@ YUV400\_U8是灰度图，不支持通道交换。
 
 ### HMS\_HiAIAippParam\_SetCropConfig()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIAippParam_SetCropConfig (HiAI_AippParam * aippParam, uint32_t batchIndex, uint32_t startPosW, uint32_t startPosH, uint32_t croppedW, uint32_t croppedH)
+```cpp
+OH_NN_ReturnCode HMS_HiAIAippParam_SetCropConfig (HiAI_AippParam * aippParam, uint32_t batchIndex, uint32_t startPosW, uint32_t startPosH, uint32_t croppedW, uint32_t croppedH)
 ```
 
 **描述**
@@ -1410,10 +1386,10 @@ PhonePC/2in1TabletTV
 | --- | --- |
 | aippParam | [HiAI\_AippParam](cannkit.md#hiai_aippparam)指针实例，非空，否则返回失败。 |
 | batchIndex | 对于多batch单crop场景，对应输入的图像索引；对于单batch多crop场景，对应即将crop出来的图像索引。 |
-| startPosW | 裁剪起始位置水平方向坐标，startPosW小于输入图像的宽度，单位为像素。 |
-| startPosH | 裁剪起始位置垂直方向坐标，startPosH小于输入图像的高度，单位为像素。 |
-| croppedW | 裁剪出的图像宽度，startPosW与cropSizeW之和小于等于输入图像的宽度，单位为像素。 |
-| croppedH | 裁剪出的图像高度，startPosH与cropSizeH之和小于等于输入图像的高度，单位为像素。 |
+| startPosW | 裁剪起始位置水平方向坐标，startPosW小于输入图像的宽度，单位为px。 |
+| startPosH | 裁剪起始位置垂直方向坐标，startPosH小于输入图像的高度，单位为px。 |
+| croppedW | 裁剪出的图像宽度，startPosW与cropSizeW之和小于等于输入图像的宽度，单位为px。 |
+| croppedH | 裁剪出的图像高度，startPosH与cropSizeH之和小于等于输入图像的高度，单位为px。 |
 
 **返回：**
 
@@ -1421,17 +1397,15 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_SetCscConfig()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIAippParam_SetCscConfig (HiAI_AippParam * aippParam, HiAI_ImageFormat inputFormat, HiAI_ImageFormat outputFormat, HiAI_ImageColorSpace space)
+```cpp
+OH_NN_ReturnCode HMS_HiAIAippParam_SetCscConfig (HiAI_AippParam * aippParam, HiAI_ImageFormat inputFormat, HiAI_ImageFormat outputFormat, HiAI_ImageColorSpace space)
 ```
 
 **描述**
 
 设置AippParam对象的CSC色域转换参数。
 
-本方法用于动态AIPP推理时，设置AippParam色域转换参数到[HiAI\_AippParam](cannkit.md#hiai_aippparam)对象。 色域转换（Color Space Conversion，以下简称CSC），特指在YUV444和RGB888两种图像格式之间进行转换。 输入为YUV格式图像(YUV420/YUYV/YUV422SP/AYUV444)，模型训练集可为RGB,BGR，灰度图（YUV400\_U8）。 输入为RGB格式图像(XRGB8888/ARGB8888)，模型训练集可为YUV444SP，YVU444SP，灰度图（YUV400\_U8）。 不支持从YUV400到RGB或BGR的转换。
+本方法用于动态AIPP推理时，设置AippParam色域转换参数到[HiAI\_AippParam](cannkit.md#hiai_aippparam)对象。色域转换（Color Space Conversion，以下简称CSC），特指在YUV和RGB两种图像格式之间进行转换。输入为YUV格式图像(YUV420SP\_U8/YUYV\_U8/YUV422SP\_U8/AYUV444\_U8)，模型训练集可为RGB888\_U8、BGR888\_U8、灰度图（YUV400\_U8）。输入为RGB格式图像(XRGB8888\_U8/ARGB8888\_U8/RGB888\_U8/BGR888\_U8)，模型训练集可为YUV444SP\_U8、YVU444SP\_U8、灰度图（YUV400\_U8）。不支持从YUV400到RGB或BGR的转换。
 
 **起始版本：** 4.1.0(11)
 
@@ -1450,10 +1424,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_SetDtcMeanPixel()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIAippParam_SetDtcMeanPixel (HiAI_AippParam * aippParam, uint32_t batchIndex, uint32_t meanPixel[], uint32_t channelCount)
+```cpp
+OH_NN_ReturnCode HMS_HiAIAippParam_SetDtcMeanPixel (HiAI_AippParam * aippParam, uint32_t batchIndex, uint32_t meanPixel[], uint32_t channelCount)
 ```
 
 **描述**
@@ -1483,10 +1455,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_SetDtcMinPixel()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIAippParam_SetDtcMinPixel (HiAI_AippParam * aippParam, uint32_t batchIndex, float minPixel[], uint32_t channelCount)
+```cpp
+OH_NN_ReturnCode HMS_HiAIAippParam_SetDtcMinPixel (HiAI_AippParam * aippParam, uint32_t batchIndex, float minPixel[], uint32_t channelCount)
 ```
 
 **描述**
@@ -1512,10 +1482,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_SetDtcVarReciPixel()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIAippParam_SetDtcVarReciPixel (HiAI_AippParam * aippParam, uint32_t batchIndex, float varReciPixel[], uint32_t channelCount)
+```cpp
+OH_NN_ReturnCode HMS_HiAIAippParam_SetDtcVarReciPixel (HiAI_AippParam * aippParam, uint32_t batchIndex, float varReciPixel[], uint32_t channelCount)
 ```
 
 **描述**
@@ -1541,10 +1509,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_SetInputAippIndex()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIAippParam_SetInputAippIndex (HiAI_AippParam * aippParam, uint32_t inputAippIndex)
+```cpp
+OH_NN_ReturnCode HMS_HiAIAippParam_SetInputAippIndex (HiAI_AippParam * aippParam, uint32_t inputAippIndex)
 ```
 
 **描述**
@@ -1568,10 +1534,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_SetInputFormat()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIAippParam_SetInputFormat (HiAI_AippParam * aippParam, HiAI_ImageFormat inputFormat)
+```cpp
+OH_NN_ReturnCode HMS_HiAIAippParam_SetInputFormat (HiAI_AippParam * aippParam, HiAI_ImageFormat inputFormat)
 ```
 
 **描述**
@@ -1595,10 +1559,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_SetInputIndex()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIAippParam_SetInputIndex (HiAI_AippParam * aippParam, uint32_t inputIndex)
+```cpp
+OH_NN_ReturnCode HMS_HiAIAippParam_SetInputIndex (HiAI_AippParam * aippParam, uint32_t inputIndex)
 ```
 
 **描述**
@@ -1622,10 +1584,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_SetInputShape()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIAippParam_SetInputShape (HiAI_AippParam * aippParam, uint32_t srcImageW, uint32_t srcImageH)
+```cpp
+OH_NN_ReturnCode HMS_HiAIAippParam_SetInputShape (HiAI_AippParam * aippParam, uint32_t srcImageW, uint32_t srcImageH)
 ```
 
 **描述**
@@ -1641,8 +1601,8 @@ PhonePC/2in1TabletTV
 | 名称 | 描述 |
 | --- | --- |
 | aippParam | [HiAI\_AippParam](cannkit.md#hiai_aippparam)指针实例，非空，否则返回失败。 |
-| srcImageW | 输入图像的宽度，单位为像素，取值范围[16, 4096]。 |
-| srcImageH | 输入图像的高度，单位为像素，取值范围[16, 4096]。 |
+| srcImageW | 输入图像的宽度，单位为px，取值范围[16, 4096]。 |
+| srcImageH | 输入图像的高度，单位为px，取值范围[16, 4096]。 |
 
 **返回：**
 
@@ -1650,10 +1610,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_SetPadConfig()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIAippParam_SetPadConfig (HiAI_AippParam * aippParam, uint32_t batchIndex, uint32_t leftPadSize, uint32_t rightPadSize, uint32_t topPadSize, uint32_t bottomPadSize)
+```cpp
+OH_NN_ReturnCode HMS_HiAIAippParam_SetPadConfig (HiAI_AippParam * aippParam, uint32_t batchIndex, uint32_t leftPadSize, uint32_t rightPadSize, uint32_t topPadSize, uint32_t bottomPadSize)
 ```
 
 **描述**
@@ -1681,10 +1639,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_SetResizeConfig()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIAippParam_SetResizeConfig (HiAI_AippParam * aippParam, uint32_t batchIndex, uint32_t resizedW, uint32_t resizedH)
+```cpp
+OH_NN_ReturnCode HMS_HiAIAippParam_SetResizeConfig (HiAI_AippParam * aippParam, uint32_t batchIndex, uint32_t resizedW, uint32_t resizedH)
 ```
 
 **描述**
@@ -1701,8 +1657,8 @@ PhonePC/2in1TabletTV
 | --- | --- |
 | aippParam | [HiAI\_AippParam](cannkit.md#hiai_aippparam)指针实例，非空，否则返回失败。 |
 | batchIndex | 对于多batch单crop场景，对应输入的图像索引；对于单batch多crop场景，对应crop出来的图像索引。 |
-| resizedW | 缩放后图像宽度，单位为像素，取值范围[16, 448]，图像宽度缩放倍数的范围[1/16, 16]。 |
-| resizedH | 缩放后图像高度，单位为像素，取值范围[16, 4096]，图像高度缩放倍数的范围[1/16, 16]。 |
+| resizedW | 缩放后图像宽度，单位为px，取值范围[16, 448]，图像宽度缩放倍数的范围[1/16, 16]。 |
+| resizedH | 缩放后图像高度，单位为px，取值范围[16, 4096]，图像高度缩放倍数的范围[1/16, 16]。 |
 
 **返回：**
 
@@ -1710,10 +1666,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_SetRotationAngle()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIAippParam_SetRotationAngle (HiAI_AippParam * aippParam, uint32_t batchIndex, float rotationAngle)
+```cpp
+OH_NN_ReturnCode HMS_HiAIAippParam_SetRotationAngle (HiAI_AippParam * aippParam, uint32_t batchIndex, float rotationAngle)
 ```
 
 **描述**
@@ -1738,10 +1692,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIAippParam\_SetSingleBatchMultiCrop()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIAippParam_SetSingleBatchMultiCrop (HiAI_AippParam * aippParam, bool singleBatchMultiCrop)
+```cpp
+OH_NN_ReturnCode HMS_HiAIAippParam_SetSingleBatchMultiCrop (HiAI_AippParam * aippParam, bool singleBatchMultiCrop)
 ```
 
 **描述**
@@ -1765,10 +1717,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAICompatibility\_CheckFromBuffer()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_Compatibility HMS_HiAICompatibility_CheckFromBuffer (const void * data, size_t size)
+```cpp
+HiAI_Compatibility HMS_HiAICompatibility_CheckFromBuffer (const void * data, size_t size)
 ```
 
 **描述**
@@ -1790,10 +1740,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAICompatibility\_CheckFromFile()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_Compatibility HMS_HiAICompatibility_CheckFromFile (const char * file)
+```cpp
+HiAI_Compatibility HMS_HiAICompatibility_CheckFromFile (const char * file)
 ```
 
 **描述**
@@ -1814,10 +1762,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_GetBandMode()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_BandMode HMS_HiAIOptions_GetBandMode (const OH_NNCompilation * compilation)
+```cpp
+HiAI_BandMode HMS_HiAIOptions_GetBandMode (const OH_NNCompilation * compilation)
 ```
 
 **描述**
@@ -1830,7 +1776,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回默认值。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回默认值。 |
 
 **返回：**
 
@@ -1838,10 +1784,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_GetDeviceMemoryReusePlan()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_DeviceMemoryReusePlan HMS_HiAIOptions_GetDeviceMemoryReusePlan (const OH_NNCompilation * compilation)
+```cpp
+HiAI_DeviceMemoryReusePlan HMS_HiAIOptions_GetDeviceMemoryReusePlan (const OH_NNCompilation * compilation)
 ```
 
 **描述**
@@ -1854,7 +1798,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回默认值。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回默认值。 |
 
 **返回：**
 
@@ -1862,10 +1806,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_GetDynamicShapeCacheMode()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_DynamicShapeCacheMode HMS_HiAIOptions_GetDynamicShapeCacheMode (const OH_NNCompilation * compilation)
+```cpp
+HiAI_DynamicShapeCacheMode HMS_HiAIOptions_GetDynamicShapeCacheMode (const OH_NNCompilation * compilation)
 ```
 
 **描述**
@@ -1878,7 +1820,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回默认值。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回默认值。 |
 
 **返回：**
 
@@ -1886,10 +1828,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_GetDynamicShapeMaxCache()
 
-PhonePC/2in1TabletTV
-
-```
-1. size_t HMS_HiAIOptions_GetDynamicShapeMaxCache (const OH_NNCompilation * compilation)
+```cpp
+size_t HMS_HiAIOptions_GetDynamicShapeMaxCache (const OH_NNCompilation * compilation)
 ```
 
 **描述**
@@ -1902,7 +1842,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回0。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回0。 |
 
 **返回：**
 
@@ -1910,10 +1850,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_GetDynamicShapeStatus()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_DynamicShapeStatus HMS_HiAIOptions_GetDynamicShapeStatus (const OH_NNCompilation * compilation)
+```cpp
+HiAI_DynamicShapeStatus HMS_HiAIOptions_GetDynamicShapeStatus (const OH_NNCompilation * compilation)
 ```
 
 **描述**
@@ -1926,7 +1864,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回默认值。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回默认值。 |
 
 **返回：**
 
@@ -1934,10 +1872,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_GetFallbackMode()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_FallbackMode HMS_HiAIOptions_GetFallbackMode (const OH_NNCompilation * compilation)
+```cpp
+HiAI_FallbackMode HMS_HiAIOptions_GetFallbackMode (const OH_NNCompilation * compilation)
 ```
 
 **描述**
@@ -1950,7 +1886,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回默认值。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回默认值。 |
 
 **返回：**
 
@@ -1958,10 +1894,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_GetFormatMode()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_FormatMode HMS_HiAIOptions_GetFormatMode (const OH_NNCompilation * compilation)
+```cpp
+HiAI_FormatMode HMS_HiAIOptions_GetFormatMode (const OH_NNCompilation * compilation)
 ```
 
 **描述**
@@ -1974,7 +1908,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回默认值。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回默认值。 |
 
 **返回：**
 
@@ -1982,10 +1916,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_GetInputTensorShape()
 
-PhonePC/2in1TabletTV
-
-```
-1. NN_TensorDesc* HMS_HiAIOptions_GetInputTensorShape (const OH_NNCompilation * compilation, size_t index)
+```cpp
+NN_TensorDesc* HMS_HiAIOptions_GetInputTensorShape (const OH_NNCompilation * compilation, size_t index)
 ```
 
 **描述**
@@ -1998,7 +1930,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回空指针。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回空指针。 |
 | index | 输入shape的索引，取值为[0, [HMS\_HiAIOptions\_GetInputTensorShapeSize](cannkit.md#hms_hiaioptions_getinputtensorshapesize))。 |
 
 **返回：**
@@ -2007,10 +1939,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_GetInputTensorShapeSize()
 
-PhonePC/2in1TabletTV
-
-```
-1. size_t HMS_HiAIOptions_GetInputTensorShapeSize (const OH_NNCompilation * compilation)
+```cpp
+size_t HMS_HiAIOptions_GetInputTensorShapeSize (const OH_NNCompilation * compilation)
 ```
 
 **描述**
@@ -2023,7 +1953,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回0。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回0。 |
 
 **返回：**
 
@@ -2031,10 +1961,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_GetModelDeviceCount()
 
-PhonePC/2in1TabletTV
-
-```
-1. size_t HMS_HiAIOptions_GetModelDeviceCount (const OH_NNCompilation * compilation)
+```cpp
+size_t HMS_HiAIOptions_GetModelDeviceCount (const OH_NNCompilation * compilation)
 ```
 
 **描述**
@@ -2047,7 +1975,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回0。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回0。 |
 
 **返回：**
 
@@ -2055,10 +1983,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_GetModelDeviceOrder()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_ExecuteDevice* HMS_HiAIOptions_GetModelDeviceOrder (const OH_NNCompilation * compilation)
+```cpp
+HiAI_ExecuteDevice* HMS_HiAIOptions_GetModelDeviceOrder (const OH_NNCompilation * compilation)
 ```
 
 **描述**
@@ -2071,7 +1997,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回空指针。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回空指针。 |
 
 **返回：**
 
@@ -2079,10 +2005,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_GetOperatorDeviceCount()
 
-PhonePC/2in1TabletTV
-
-```
-1. size_t HMS_HiAIOptions_GetOperatorDeviceCount (const OH_NNCompilation * compilation, const char * operatorName)
+```cpp
+size_t HMS_HiAIOptions_GetOperatorDeviceCount (const OH_NNCompilation * compilation, const char * operatorName)
 ```
 
 **描述**
@@ -2095,7 +2019,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回0。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回0。 |
 | operatorName | 算子名称，非空，否则返回0。 |
 
 **返回：**
@@ -2104,10 +2028,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_GetOperatorDeviceOrder()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_ExecuteDevice* HMS_HiAIOptions_GetOperatorDeviceOrder (const OH_NNCompilation * compilation, const char * operatorName)
+```cpp
+HiAI_ExecuteDevice* HMS_HiAIOptions_GetOperatorDeviceOrder (const OH_NNCompilation * compilation, const char * operatorName)
 ```
 
 **描述**
@@ -2120,7 +2042,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回空指针。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回空指针。 |
 | operatorName | 算子名称，非空，否则返回空指针。 |
 
 **返回：**
@@ -2129,10 +2051,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_GetQuantConfigData()
 
-PhonePC/2in1TabletTV
-
-```
-1. void* HMS_HiAIOptions_GetQuantConfigData (const OH_NNCompilation * compilation)
+```cpp
+void* HMS_HiAIOptions_GetQuantConfigData (const OH_NNCompilation * compilation)
 ```
 
 **描述**
@@ -2145,7 +2065,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回空指针。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回空指针。 |
 
 **返回：**
 
@@ -2153,10 +2073,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_GetQuantConfigSize()
 
-PhonePC/2in1TabletTV
-
-```
-1. size_t HMS_HiAIOptions_GetQuantConfigSize (const OH_NNCompilation * compilation)
+```cpp
+size_t HMS_HiAIOptions_GetQuantConfigSize (const OH_NNCompilation * compilation)
 ```
 
 **描述**
@@ -2169,7 +2087,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回0。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回0。 |
 
 **返回：**
 
@@ -2177,10 +2095,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_GetTuningCacheDir()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* HMS_HiAIOptions_GetTuningCacheDir (const OH_NNCompilation * compilation)
+```cpp
+const char* HMS_HiAIOptions_GetTuningCacheDir (const OH_NNCompilation * compilation)
 ```
 
 **描述**
@@ -2193,7 +2109,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回空指针。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回空指针。 |
 
 **返回：**
 
@@ -2201,10 +2117,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_GetTuningMode()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_TuningMode HMS_HiAIOptions_GetTuningMode (const OH_NNCompilation * compilation)
+```cpp
+HiAI_TuningMode HMS_HiAIOptions_GetTuningMode (const OH_NNCompilation * compilation)
 ```
 
 **描述**
@@ -2217,7 +2131,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回默认值。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回默认值。 |
 
 **返回：**
 
@@ -2225,10 +2139,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_GetTuningStrategy()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_TuningStrategy HMS_HiAIOptions_GetTuningStrategy (const OH_NNCompilation * compilation)
+```cpp
+HiAI_TuningStrategy HMS_HiAIOptions_GetTuningStrategy (const OH_NNCompilation * compilation)
 ```
 
 **描述**
@@ -2241,7 +2153,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回默认值。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回默认值。 |
 
 **返回：**
 
@@ -2249,10 +2161,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_SetBandMode()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIOptions_SetBandMode (OH_NNCompilation * compilation, HiAI_BandMode bandMode)
+```cpp
+OH_NN_ReturnCode HMS_HiAIOptions_SetBandMode (OH_NNCompilation * compilation, HiAI_BandMode bandMode)
 ```
 
 **描述**
@@ -2267,7 +2177,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回失败。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回失败。 |
 | bandMode | 带宽模式[HiAI\_BandMode](cannkit.md#hiai_bandmode)。 |
 
 **返回：**
@@ -2276,10 +2186,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_SetDeviceMemoryReusePlan()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIOptions_SetDeviceMemoryReusePlan (OH_NNCompilation * compilation, HiAI_DeviceMemoryReusePlan deviceMemoryReusePlan)
+```cpp
+OH_NN_ReturnCode HMS_HiAIOptions_SetDeviceMemoryReusePlan (OH_NNCompilation * compilation, HiAI_DeviceMemoryReusePlan deviceMemoryReusePlan)
 ```
 
 **描述**
@@ -2294,7 +2202,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回失败。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回失败。 |
 | deviceMemoryReusePlan | 设备内存复用[HiAI\_DeviceMemoryReusePlan](cannkit.md#hiai_devicememoryreuseplan)。 |
 
 **返回：**
@@ -2303,10 +2211,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_SetDynamicShapeCacheMode()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIOptions_SetDynamicShapeCacheMode (OH_NNCompilation * compilation, HiAI_DynamicShapeCacheMode mode)
+```cpp
+OH_NN_ReturnCode HMS_HiAIOptions_SetDynamicShapeCacheMode (OH_NNCompilation * compilation, HiAI_DynamicShapeCacheMode mode)
 ```
 
 **描述**
@@ -2321,7 +2227,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回失败。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回失败。 |
 | mode | 编译前可变shape的缓存模式[HiAI\_DynamicShapeCacheMode](cannkit.md#hiai_dynamicshapecachemode)。 |
 
 **返回：**
@@ -2330,10 +2236,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_SetDynamicShapeMaxCache()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIOptions_SetDynamicShapeMaxCache (OH_NNCompilation * compilation, size_t maxCacheCount)
+```cpp
+OH_NN_ReturnCode HMS_HiAIOptions_SetDynamicShapeMaxCache (OH_NNCompilation * compilation, size_t maxCacheCount)
 ```
 
 **描述**
@@ -2348,7 +2252,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回失败。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回失败。 |
 | maxCacheCount | 最大档位，取值范围[1, 10]。 |
 
 **返回：**
@@ -2357,10 +2261,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_SetDynamicShapeStatus()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIOptions_SetDynamicShapeStatus (OH_NNCompilation * compilation, HiAI_DynamicShapeStatus status)
+```cpp
+OH_NN_ReturnCode HMS_HiAIOptions_SetDynamicShapeStatus (OH_NNCompilation * compilation, HiAI_DynamicShapeStatus status)
 ```
 
 **描述**
@@ -2375,7 +2277,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回失败。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回失败。 |
 | status | 是否使能编译前可变shape[HiAI\_DynamicShapeStatus](cannkit.md#hiai_dynamicshapestatus)。 |
 
 **返回：**
@@ -2384,10 +2286,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_SetFallbackMode()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIOptions_SetFallbackMode (OH_NNCompilation * compilation, HiAI_FallbackMode fallbackMode)
+```cpp
+OH_NN_ReturnCode HMS_HiAIOptions_SetFallbackMode (OH_NNCompilation * compilation, HiAI_FallbackMode fallbackMode)
 ```
 
 **描述**
@@ -2402,7 +2302,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回失败。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回失败。 |
 | fallbackMode | 是否使能回滚模式[HiAI\_FallbackMode](cannkit.md#hiai_fallbackmode)。 |
 
 **返回：**
@@ -2411,10 +2311,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_SetFormatMode()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIOptions_SetFormatMode (OH_NNCompilation * compilation, HiAI_FormatMode formatMode)
+```cpp
+OH_NN_ReturnCode HMS_HiAIOptions_SetFormatMode (OH_NNCompilation * compilation, HiAI_FormatMode formatMode)
 ```
 
 **描述**
@@ -2429,7 +2327,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空。 |
 | formatMode | 数据排列格式[HiAI\_FormatMode](cannkit.md#hiai_formatmode)。 |
 
 **返回：**
@@ -2438,10 +2336,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_SetInputTensorShapes()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIOptions_SetInputTensorShapes (OH_NNCompilation * compilation, NN_TensorDesc * inputTensorDescs[], size_t shapeCount)
+```cpp
+OH_NN_ReturnCode HMS_HiAIOptions_SetInputTensorShapes (OH_NNCompilation * compilation, NN_TensorDesc * inputTensorDescs[], size_t shapeCount)
 ```
 
 **描述**
@@ -2456,8 +2352,8 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空。 |
-| inputTensorDescs[] | 模型输入shape列表数组NN\_TensorDesc，非空。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空。 |
+| inputTensorDescs[] | 模型输入shape列表数组[NN\_TensorDesc](capi-neuralnetworkruntime-nn-tensordesc.md)，非空。 |
 | shapeCount | 模型输入shape的个数，需与模型输入个数对应。 |
 
 **返回：**
@@ -2466,10 +2362,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_SetModelDeviceOrder()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIOptions_SetModelDeviceOrder (OH_NNCompilation * compilation, HiAI_ExecuteDevice * executeDevices, size_t deviceCount)
+```cpp
+OH_NN_ReturnCode HMS_HiAIOptions_SetModelDeviceOrder (OH_NNCompilation * compilation, HiAI_ExecuteDevice * executeDevices, size_t deviceCount)
 ```
 
 **描述**
@@ -2484,7 +2378,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回失败。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回失败。 |
 | executeDevices | 支持的设备类型列表[HiAI\_ExecuteDevice](cannkit.md#hiai_executedevice)，非空，否则返回失败。 |
 | deviceCount | 支持的执行硬件个数。 |
 
@@ -2494,10 +2388,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_SetOmOptions()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIOptions_SetOmOptions (OH_NNCompilation * compilation, HiAI_OmType type, const char * outputDir)
+```cpp
+OH_NN_ReturnCode HMS_HiAIOptions_SetOmOptions (OH_NNCompilation * compilation, HiAI_OmType type, const char * outputDir)
 ```
 
 **描述**
@@ -2512,7 +2404,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回失败。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回失败。 |
 | type | 维测类型[HiAI\_OmType](cannkit.md#hiai_omtype)。 |
 | outputDir | 维测输出目录，用于生产profiling相关文件。 |
 
@@ -2522,10 +2414,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_SetOperatorDeviceOrder()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIOptions_SetOperatorDeviceOrder (OH_NNCompilation * compilation, const char * operatorName, HiAI_ExecuteDevice * executeDevices, size_t deviceCount)
+```cpp
+OH_NN_ReturnCode HMS_HiAIOptions_SetOperatorDeviceOrder (OH_NNCompilation * compilation, const char * operatorName, HiAI_ExecuteDevice * executeDevices, size_t deviceCount)
 ```
 
 **描述**
@@ -2540,7 +2430,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回失败。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回失败。 |
 | operatorName | 算子名称，非空，否则返回失败。 |
 | executeDevices | 支持的设备类型列表[HiAI\_ExecuteDevice](cannkit.md#hiai_executedevice)，非空，否则返回失败。 |
 | deviceCount | 支持的执行硬件个数。 |
@@ -2551,10 +2441,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_SetQuantConfig()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIOptions_SetQuantConfig (OH_NNCompilation * compilation, void * data, size_t size)
+```cpp
+OH_NN_ReturnCode HMS_HiAIOptions_SetQuantConfig (OH_NNCompilation * compilation, void * data, size_t size)
 ```
 
 **描述**
@@ -2569,7 +2457,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回失败。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回失败。 |
 | data | 量化配置的数据地址，非空，否则返回失败。 |
 | size | 量化配置的数据大小，大于0，否则返回失败。 |
 
@@ -2579,10 +2467,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_SetTuningCacheDir()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIOptions_SetTuningCacheDir (OH_NNCompilation * compilation, const char * cacheDir)
+```cpp
+OH_NN_ReturnCode HMS_HiAIOptions_SetTuningCacheDir (OH_NNCompilation * compilation, const char * cacheDir)
 ```
 
 **描述**
@@ -2597,7 +2483,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回失败。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回失败。 |
 | cacheDir | 缓存目录，非空，否则返回失败。 |
 
 **返回：**
@@ -2606,10 +2492,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_SetTuningMode()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIOptions_SetTuningMode (OH_NNCompilation * compilation, HiAI_TuningMode tuningMode)
+```cpp
+OH_NN_ReturnCode HMS_HiAIOptions_SetTuningMode (OH_NNCompilation * compilation, HiAI_TuningMode tuningMode)
 ```
 
 **描述**
@@ -2624,7 +2508,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回失败。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回失败。 |
 | tuningMode | 辅助调优模式[HiAI\_TuningMode](cannkit.md#hiai_tuningmode)。 |
 
 **返回：**
@@ -2633,10 +2517,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAIOptions\_SetTuningStrategy()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAIOptions_SetTuningStrategy (OH_NNCompilation * compilation, HiAI_TuningStrategy tuningStrategy)
+```cpp
+OH_NN_ReturnCode HMS_HiAIOptions_SetTuningStrategy (OH_NNCompilation * compilation, HiAI_TuningStrategy tuningStrategy)
 ```
 
 **描述**
@@ -2651,7 +2533,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| compilation | OH\_NNCompilation指针实例，非空，否则返回失败。 |
+| compilation | [OH\_NNCompilation](capi-neuralnetworkruntime-oh-nncompilation.md)指针实例，非空，否则返回失败。 |
 | tuningStrategy | 模型优化策略配置[HiAI\_TuningStrategy](cannkit.md#hiai_tuningstrategy)。 |
 
 **返回：**
@@ -2660,10 +2542,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpBuffer\_Create()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_SingleOpBuffer* HMS_HiAISingleOpBuffer_Create (size_t dataSize)
+```cpp
+HiAI_SingleOpBuffer* HMS_HiAISingleOpBuffer_Create (size_t dataSize)
 ```
 
 **描述**
@@ -2686,10 +2566,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpBuffer\_Destroy()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAISingleOpBuffer_Destroy (HiAI_SingleOpBuffer ** buffer)
+```cpp
+OH_NN_ReturnCode HMS_HiAISingleOpBuffer_Destroy (HiAI_SingleOpBuffer ** buffer)
 ```
 
 **描述**
@@ -2712,10 +2590,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpBuffer\_GetData()
 
-PhonePC/2in1TabletTV
-
-```
-1. void* HMS_HiAISingleOpBuffer_GetData (const HiAI_SingleOpBuffer * buffer)
+```cpp
+void* HMS_HiAISingleOpBuffer_GetData (const HiAI_SingleOpBuffer * buffer)
 ```
 
 **描述**
@@ -2738,10 +2614,8 @@ Buffer的内存地址。
 
 ### HMS\_HiAISingleOpBuffer\_GetSize()
 
-PhonePC/2in1TabletTV
-
-```
-1. size_t HMS_HiAISingleOpBuffer_GetSize (const HiAI_SingleOpBuffer * buffer)
+```cpp
+size_t HMS_HiAISingleOpBuffer_GetSize (const HiAI_SingleOpBuffer * buffer)
 ```
 
 **描述**
@@ -2764,10 +2638,8 @@ Buffer的字节大小。
 
 ### HMS\_HiAISingleOpDescriptor\_CreateActivation()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_SingleOpDescriptor* HMS_HiAISingleOpDescriptor_CreateActivation (HiAI_SingleOpActivationType activationType, float coef)
+```cpp
+HiAI_SingleOpDescriptor* HMS_HiAISingleOpDescriptor_CreateActivation (HiAI_SingleOpActivationType activationType, float coef)
 ```
 
 **描述**
@@ -2791,10 +2663,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpDescriptor\_CreateConvolution()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_SingleOpDescriptor* HMS_HiAISingleOpDescriptor_CreateConvolution (HiAISingleOpDescriptor_ConvolutionParam param)
+```cpp
+HiAI_SingleOpDescriptor* HMS_HiAISingleOpDescriptor_CreateConvolution (HiAISingleOpDescriptor_ConvolutionParam param)
 ```
 
 **描述**
@@ -2817,10 +2687,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpDescriptor\_Destroy()
 
-PhonePC/2in1TabletTV
-
-```
-1. void HMS_HiAISingleOpDescriptor_Destroy (HiAI_SingleOpDescriptor ** opDesc)
+```cpp
+void HMS_HiAISingleOpDescriptor_Destroy (HiAI_SingleOpDescriptor ** opDesc)
 ```
 
 **描述**
@@ -2839,10 +2707,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpExecutor\_CreateConvolution()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_SingleOpExecutor* HMS_HiAISingleOpExecutor_CreateConvolution (HiAI_SingleOpExecutorConvolutionParam param)
+```cpp
+HiAI_SingleOpExecutor* HMS_HiAISingleOpExecutor_CreateConvolution (HiAI_SingleOpExecutorConvolutionParam param)
 ```
 
 **描述**
@@ -2867,10 +2733,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpExecutor\_CreateFusedConvolutionActivation()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_SingleOpExecutor* HMS_HiAISingleOpExecutor_CreateFusedConvolutionActivation (HiAI_SingleOpExecutorFusedConvolutionActivationParam param)
+```cpp
+HiAI_SingleOpExecutor* HMS_HiAISingleOpExecutor_CreateFusedConvolutionActivation (HiAI_SingleOpExecutorFusedConvolutionActivationParam param)
 ```
 
 **描述**
@@ -2895,10 +2759,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpExecutor\_Destroy()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAISingleOpExecutor_Destroy (HiAI_SingleOpExecutor ** executor)
+```cpp
+OH_NN_ReturnCode HMS_HiAISingleOpExecutor_Destroy (HiAI_SingleOpExecutor ** executor)
 ```
 
 **描述**
@@ -2923,10 +2785,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpExecutor\_Execute()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAISingleOpExecutor_Execute (HiAI_SingleOpExecutor * executor, HiAI_SingleOpTensor * input[], int32_t inputNum, HiAI_SingleOpTensor * output[], int32_t outputNum)
+```cpp
+OH_NN_ReturnCode HMS_HiAISingleOpExecutor_Execute (HiAI_SingleOpExecutor * executor, HiAI_SingleOpTensor * input[], int32_t inputNum, HiAI_SingleOpTensor * output[], int32_t outputNum)
 ```
 
 **描述**
@@ -2953,10 +2813,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpExecutor\_GetWorkspaceSize()
 
-PhonePC/2in1TabletTV
-
-```
-1. size_t HMS_HiAISingleOpExecutor_GetWorkspaceSize (const HiAI_SingleOpExecutor * executor)
+```cpp
+size_t HMS_HiAISingleOpExecutor_GetWorkspaceSize (const HiAI_SingleOpExecutor * executor)
 ```
 
 **描述**
@@ -2981,10 +2839,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpExecutor\_Init()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAISingleOpExecutor_Init (HiAI_SingleOpExecutor * executor, void * workspace, size_t workspaceSize)
+```cpp
+OH_NN_ReturnCode HMS_HiAISingleOpExecutor_Init (HiAI_SingleOpExecutor * executor, void * workspace, size_t workspaceSize)
 ```
 
 **描述**
@@ -3009,10 +2865,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpExecutor\_PreCheckConvolution()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_SingleOpSupportStatus HMS_HiAISingleOpExecutor_PreCheckConvolution (HiAI_SingleOpExecutorConvolutionParam param)
+```cpp
+HiAI_SingleOpSupportStatus HMS_HiAISingleOpExecutor_PreCheckConvolution (HiAI_SingleOpExecutorConvolutionParam param)
 ```
 
 **描述**
@@ -3035,10 +2889,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpExecutor\_PreCheckFusedConvolutionActivation()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_SingleOpSupportStatus HMS_HiAISingleOpExecutor_PreCheckFusedConvolutionActivation (HiAI_SingleOpExecutorFusedConvolutionActivationParam param)
+```cpp
+HiAI_SingleOpSupportStatus HMS_HiAISingleOpExecutor_PreCheckFusedConvolutionActivation (HiAI_SingleOpExecutorFusedConvolutionActivationParam param)
 ```
 
 **描述**
@@ -3061,10 +2913,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpExecutor\_UpdateOutputTensorDesc()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAISingleOpExecutor_UpdateOutputTensorDesc (const HiAI_SingleOpExecutor * executor, uint32_t index, HiAI_SingleOpTensorDesc * output)
+```cpp
+OH_NN_ReturnCode HMS_HiAISingleOpExecutor_UpdateOutputTensorDesc (const HiAI_SingleOpExecutor * executor, uint32_t index, HiAI_SingleOpTensorDesc * output)
 ```
 
 **描述**
@@ -3089,10 +2939,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpOptions\_Create()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_SingleOpOptions* HMS_HiAISingleOpOptions_Create (void)
+```cpp
+HiAI_SingleOpOptions* HMS_HiAISingleOpOptions_Create (void)
 ```
 
 **描述**
@@ -3109,10 +2957,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpOptions\_Destroy()
 
-PhonePC/2in1TabletTV
-
-```
-1. void HMS_HiAISingleOpOptions_Destroy (HiAI_SingleOpOptions ** options)
+```cpp
+void HMS_HiAISingleOpOptions_Destroy (HiAI_SingleOpOptions ** options)
 ```
 
 **描述**
@@ -3131,10 +2977,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpTensor\_CreateFromConst()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_SingleOpTensor* HMS_HiAISingleOpTensor_CreateFromConst (const HiAI_SingleOpTensorDesc * desc, void * data, size_t dataSize)
+```cpp
+HiAI_SingleOpTensor* HMS_HiAISingleOpTensor_CreateFromConst (const HiAI_SingleOpTensorDesc * desc, void * data, size_t dataSize)
 ```
 
 **描述**
@@ -3165,10 +3009,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpTensor\_CreateFromSingleOpBuffer()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_SingleOpTensor* HMS_HiAISingleOpTensor_CreateFromSingleOpBuffer (const HiAI_SingleOpTensorDesc * desc, void * data, size_t dataSize)
+```cpp
+HiAI_SingleOpTensor* HMS_HiAISingleOpTensor_CreateFromSingleOpBuffer (const HiAI_SingleOpTensorDesc * desc, void * data, size_t dataSize)
 ```
 
 **描述**
@@ -3197,10 +3039,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpTensor\_CreateFromTensorDesc()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_SingleOpTensor* HMS_HiAISingleOpTensor_CreateFromTensorDesc (const HiAI_SingleOpTensorDesc * desc)
+```cpp
+HiAI_SingleOpTensor* HMS_HiAISingleOpTensor_CreateFromTensorDesc (const HiAI_SingleOpTensorDesc * desc)
 ```
 
 **描述**
@@ -3227,10 +3067,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpTensor\_Destroy()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAISingleOpTensor_Destroy (HiAI_SingleOpTensor ** tensor)
+```cpp
+OH_NN_ReturnCode HMS_HiAISingleOpTensor_Destroy (HiAI_SingleOpTensor ** tensor)
 ```
 
 **描述**
@@ -3253,10 +3091,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpTensor\_GetBuffer()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_SingleOpBuffer* HMS_HiAISingleOpTensor_GetBuffer (const HiAI_SingleOpTensor * tensor)
+```cpp
+HiAI_SingleOpBuffer* HMS_HiAISingleOpTensor_GetBuffer (const HiAI_SingleOpTensor * tensor)
 ```
 
 **描述**
@@ -3279,10 +3115,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpTensor\_GetTensorDesc()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_SingleOpTensorDesc* HMS_HiAISingleOpTensor_GetTensorDesc (const HiAI_SingleOpTensor * tensor)
+```cpp
+HiAI_SingleOpTensorDesc* HMS_HiAISingleOpTensor_GetTensorDesc (const HiAI_SingleOpTensor * tensor)
 ```
 
 **描述**
@@ -3305,10 +3139,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpTensorDesc\_Create()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_SingleOpTensorDesc* HMS_HiAISingleOpTensorDesc_Create (const int64_t * dims, size_t dimNum, HiAI_SingleOpDataType dataType, HiAI_SingleOpFormat format, bool isVirtual)
+```cpp
+HiAI_SingleOpTensorDesc* HMS_HiAISingleOpTensorDesc_Create (const int64_t * dims, size_t dimNum, HiAI_SingleOpDataType dataType, HiAI_SingleOpFormat format, bool isVirtual)
 ```
 
 **描述**
@@ -3339,10 +3171,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpTensorDesc\_Destroy()
 
-PhonePC/2in1TabletTV
-
-```
-1. void HMS_HiAISingleOpTensorDesc_Destroy (HiAI_SingleOpTensorDesc ** tensorDesc)
+```cpp
+void HMS_HiAISingleOpTensorDesc_Destroy (HiAI_SingleOpTensorDesc ** tensorDesc)
 ```
 
 **描述**
@@ -3361,10 +3191,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpTensorDesc\_GetByteSize()
 
-PhonePC/2in1TabletTV
-
-```
-1. size_t HMS_HiAISingleOpTensorDesc_GetByteSize (const HiAI_SingleOpTensorDesc * tensorDesc)
+```cpp
+size_t HMS_HiAISingleOpTensorDesc_GetByteSize (const HiAI_SingleOpTensorDesc * tensorDesc)
 ```
 
 **描述**
@@ -3387,10 +3215,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpTensorDesc\_GetDataType()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_SingleOpDataType HMS_HiAISingleOpTensorDesc_GetDataType (const HiAI_SingleOpTensorDesc * tensorDesc)
+```cpp
+HiAI_SingleOpDataType HMS_HiAISingleOpTensorDesc_GetDataType (const HiAI_SingleOpTensorDesc * tensorDesc)
 ```
 
 **描述**
@@ -3413,10 +3239,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpTensorDesc\_GetDimension()
 
-PhonePC/2in1TabletTV
-
-```
-1. int64_t HMS_HiAISingleOpTensorDesc_GetDimension (const HiAI_SingleOpTensorDesc * tensorDesc, size_t index)
+```cpp
+int64_t HMS_HiAISingleOpTensorDesc_GetDimension (const HiAI_SingleOpTensorDesc * tensorDesc, size_t index)
 ```
 
 **描述**
@@ -3440,10 +3264,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpTensorDesc\_GetDimensionCount()
 
-PhonePC/2in1TabletTV
-
-```
-1. size_t HMS_HiAISingleOpTensorDesc_GetDimensionCount (const HiAI_SingleOpTensorDesc * tensorDesc)
+```cpp
+size_t HMS_HiAISingleOpTensorDesc_GetDimensionCount (const HiAI_SingleOpTensorDesc * tensorDesc)
 ```
 
 **描述**
@@ -3466,10 +3288,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpTensorDesc\_GetFormat()
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_SingleOpFormat HMS_HiAISingleOpTensorDesc_GetFormat (const HiAI_SingleOpTensorDesc * tensorDesc)
+```cpp
+HiAI_SingleOpFormat HMS_HiAISingleOpTensorDesc_GetFormat (const HiAI_SingleOpTensorDesc * tensorDesc)
 ```
 
 **描述**
@@ -3492,10 +3312,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAISingleOpTensorDesc\_IsVirtual()
 
-PhonePC/2in1TabletTV
-
-```
-1. bool HMS_HiAISingleOpTensorDesc_IsVirtual (const HiAI_SingleOpTensorDesc * tensorDesc)
+```cpp
+bool HMS_HiAISingleOpTensorDesc_IsVirtual (const HiAI_SingleOpTensorDesc * tensorDesc)
 ```
 
 **描述**
@@ -3518,10 +3336,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAITensor\_GetSizeWithImageFormat()
 
-PhonePC/2in1TabletTV
-
-```
-1. size_t HMS_HiAITensor_GetSizeWithImageFormat (NN_TensorDesc * desc, HiAI_ImageFormat format)
+```cpp
+size_t HMS_HiAITensor_GetSizeWithImageFormat (NN_TensorDesc * desc, HiAI_ImageFormat format)
 ```
 
 **描述**
@@ -3534,7 +3350,7 @@ PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| desc | NN\_TensorDesc指针实例，非空，否则返回0。 |
+| desc | [NN\_TensorDesc](capi-neuralnetworkruntime-nn-tensordesc.md)指针实例，非空，否则返回0。 |
 | format | 图像的格式[HiAI\_ImageFormat](cannkit.md#hiai_imageformat)。 |
 
 **返回：**
@@ -3543,10 +3359,8 @@ PhonePC/2in1TabletTV
 
 ### HMS\_HiAITensor\_SetAippParams()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode HMS_HiAITensor_SetAippParams (NN_Tensor * tensor, HiAI_AippParam * aippParams[], size_t aippNum)
+```cpp
+OH_NN_ReturnCode HMS_HiAITensor_SetAippParams (NN_Tensor * tensor, HiAI_AippParam * aippParams[], size_t aippNum)
 ```
 
 **描述**
@@ -3561,10 +3375,681 @@ AIPP参数设置给NN\_Tensor后，其内存在tensor使用完成后，调用[HM
 
 | 名称 | 描述 |
 | --- | --- |
-| tensor | NN\_Tensor指针实例，非空，否则返回空指针。 |
+| tensor | [NN\_Tensor](capi-neuralnetworkruntime-nn-tensor.md)指针实例，非空，否则返回空指针。 |
 | aippParams[] | AIPP参数数组。 |
 | aippNum | AIPP参数数量。 |
 
 **返回：**
 
 函数执行结果状态。执行成功返回OH\_NN\_SUCCESS；失败返回具体错误码，具体失败错误码可参考[OH\_NN\_ReturnCode](capi-neural-network-runtime-type-h.md#oh_nn_returncode)。
+
+### HMS\_LLMEngine\_Context\_Destroy()
+
+```cpp
+void HMS_LLMEngine_Context_Destroy (HMS_LLMEngine_Context ** ctx)
+```
+
+**描述**
+
+销毁LLM引擎上下文。
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 名称 | 描述 |
+| --- | --- |
+| ctx | 待销毁的上下文句柄。 |
+
+### HMS\_LLMEngineContext\_CreateFromContextJson()
+
+```cpp
+HMS_LLMEngine_Context* HMS_LLMEngineContext_CreateFromContextJson (const char * jsonFile)
+```
+
+**描述**
+
+通过JSON配置文件创建LLM引擎上下文句柄。
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 名称 | 描述 |
+| --- | --- |
+| jsonFile | JSON配置文件的路径，不能为空。 |
+
+**返回：**
+
+创建的LLM引擎上下文句柄。
+
+### HMS\_LLMEngineContext\_GetAllGeneration()
+
+```cpp
+OH_NN_ReturnCode HMS_LLMEngineContext_GetAllGeneration (const HMS_LLMEngine_Context * ctx, char * generation, uint32_t len )
+```
+
+**描述**
+
+获取所有生成的文本。
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 名称 | 描述 |
+| --- | --- |
+| ctx | 指向 [HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context) 的指针，不能为null。 |
+| generation | 指向所有生成文本的指针。 |
+| len | 所有生成文本的长度。 |
+
+**返回：**
+
+接口执行状态，参见[OH\_NN\_ReturnCode](capi-neural-network-runtime-type-h.md#oh_nn_returncode)。
+
+| 状态码 | 状态信息 |
+| --- | --- |
+| OH\_NN\_SUCCESS | 成功状态。 |
+| OH\_NN\_FAILED | 失败状态，入参为空或len为0。 |
+
+### HMS\_LLMEngineContext\_GetAllGenerationLen()
+
+```cpp
+OH_NN_ReturnCode HMS_LLMEngineContext_GetAllGenerationLen (const HMS_LLMEngine_Context * ctx, uint32_t * len )
+```
+
+**描述**
+
+获取所有生成文本的总长度。
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 名称 | 描述 |
+| --- | --- |
+| ctx | 指向 [HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context) 的指针，不能为null。 |
+| len | 所有生成文本的总长度。 |
+
+**返回：**
+
+接口执行状态，参见[OH\_NN\_ReturnCode](capi-neural-network-runtime-type-h.md#oh_nn_returncode)。
+
+| 状态码 | 状态信息 |
+| --- | --- |
+| OH\_NN\_SUCCESS | 成功状态。 |
+| OH\_NN\_FAILED | 失败状态，入参为空或len为0。 |
+
+### HMS\_LLMEngineContext\_GetAllTokenGeneration()
+
+```cpp
+OH_NN_ReturnCode HMS_LLMEngineContext_GetAllTokenGeneration (const HMS_LLMEngine_Context * ctx, int32_t * genToken, uint32_t len )
+```
+
+**描述**
+
+获取所有已生成的tokenid。
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 名称 | 描述 |
+| --- | --- |
+| ctx | 指向[HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context)的指针，不能为null。 |
+| genToken | 指向生成的tokenid的指针。 |
+| len | 所有已生成tokenid的长度。 |
+
+**返回：**
+
+接口执行状态，参见[OH\_NN\_ReturnCode](capi-neural-network-runtime-type-h.md#oh_nn_returncode)。
+
+| 状态码 | 状态信息 |
+| --- | --- |
+| OH\_NN\_SUCCESS | 成功状态。 |
+| OH\_NN\_FAILED | 失败状态，入参为空或len为0。 |
+
+### HMS\_LLMEngineContext\_GetAllTokenGenerationLen()
+
+```cpp
+OH_NN_ReturnCode HMS_LLMEngineContext_GetAllTokenGenerationLen (const HMS_LLMEngine_Context * ctx, uint32_t * len )
+```
+
+**描述**
+
+获取所有已生成tokenid的长度。
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 名称 | 描述 |
+| --- | --- |
+| ctx | 指向[HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context)的指针，不能为null。 |
+| len | 所有已生成tokenid的长度。 |
+
+**返回：**
+
+接口执行状态，参见[OH\_NN\_ReturnCode](capi-neural-network-runtime-type-h.md#oh_nn_returncode)。
+
+| 状态码 | 状态信息 |
+| --- | --- |
+| OH\_NN\_SUCCESS | 成功状态。 |
+| OH\_NN\_FAILED | 失败状态，入参为空或len为0。 |
+
+### HMS\_LLMEngineContext\_GetDecodeTimeMs()
+
+```cpp
+OH_NN_ReturnCode HMS_LLMEngineContext_GetDecodeTimeMs (const HMS_LLMEngine_Context * ctx, double * ms )
+```
+
+**描述**
+
+解码耗时。
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 名称 | 描述 |
+| --- | --- |
+| ctx | 指向[HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context)的指针，不能为null。 |
+| ms | 解码耗时（单位：ms）。 |
+
+**返回：**
+
+接口执行状态，参见[OH\_NN\_ReturnCode](capi-neural-network-runtime-type-h.md#oh_nn_returncode)。
+
+| 状态码 | 状态信息 |
+| --- | --- |
+| OH\_NN\_SUCCESS | 成功状态。 |
+| OH\_NN\_FAILED | 失败状态，入参为空。 |
+
+### HMS\_LLMEngineContext\_GetInputTokenCount()
+
+```cpp
+OH_NN_ReturnCode HMS_LLMEngineContext_GetInputTokenCount (const HMS_LLMEngine_Context * ctx, uint64_t * count )
+```
+
+**描述**
+
+输入token数量。
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 名称 | 描述 |
+| --- | --- |
+| ctx | 指向[HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context)的指针，不能为null。 |
+| count | 输入token数量。 |
+
+**返回：**
+
+接口执行状态，参见[OH\_NN\_ReturnCode](capi-neural-network-runtime-type-h.md#oh_nn_returncode)。
+
+| 状态码 | 状态信息 |
+| --- | --- |
+| OH\_NN\_SUCCESS | 成功状态。 |
+| OH\_NN\_FAILED | 失败状态，入参为空。 |
+
+### HMS\_LLMEngineContext\_GetOneGeneration()
+
+```cpp
+OH_NN_ReturnCode HMS_LLMEngineContext_GetOneGeneration (const HMS_LLMEngine_Context * ctx, char * generation, uint32_t len )
+```
+
+**描述**
+
+获取生成的文本片段。
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 名称 | 描述 |
+| --- | --- |
+| ctx | 指向[HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context)的指针，不能为null。 |
+| generation | 指向生成的文本片段的指针。 |
+| len | 生成的文本片段长度。 |
+
+**返回：**
+
+接口执行状态，参见[OH\_NN\_ReturnCode](capi-neural-network-runtime-type-h.md#oh_nn_returncode)。
+
+| 状态码 | 状态信息 |
+| --- | --- |
+| OH\_NN\_SUCCESS | 成功状态。 |
+| OH\_NN\_FAILED | 失败状态，入参为空或len为0。 |
+
+### HMS\_LLMEngineContext\_GetOneGenerationLen()
+
+```cpp
+OH_NN_ReturnCode HMS_LLMEngineContext_GetOneGenerationLen (const HMS_LLMEngine_Context * ctx, uint32_t * len )
+```
+
+**描述**
+
+获取生成文本片段的长度。
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 名称 | 描述 |
+| --- | --- |
+| ctx | 指向[HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context)的指针，不能为null。 |
+| len | 生成的文本片段长度。 |
+
+**返回：**
+
+接口执行状态，参见[OH\_NN\_ReturnCode](capi-neural-network-runtime-type-h.md#oh_nn_returncode)。
+
+| 状态码 | 状态信息 |
+| --- | --- |
+| OH\_NN\_SUCCESS | 成功状态。 |
+| OH\_NN\_FAILED | 失败状态，入参为空或len为0。 |
+
+### HMS\_LLMEngineContext\_GetOneTokenGeneration()
+
+```cpp
+OH_NN_ReturnCode HMS_LLMEngineContext_GetOneTokenGeneration (const HMS_LLMEngine_Context * ctx, int32_t * genToken )
+```
+
+**描述**
+
+获取生成的tokenid。
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 名称 | 描述 |
+| --- | --- |
+| ctx | 指向[HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context)的指针，不能为null。 |
+| genToken | 指向生成的tokenid的指针。 |
+
+**返回：**
+
+接口执行状态，参见[OH\_NN\_ReturnCode](capi-neural-network-runtime-type-h.md#oh_nn_returncode)。
+
+| 状态码 | 状态信息 |
+| --- | --- |
+| OH\_NN\_SUCCESS | 成功状态。 |
+| OH\_NN\_FAILED | 失败状态，入参为空。 |
+
+### HMS\_LLMEngineContext\_GetOutputTokenCount()
+
+```cpp
+OH_NN_ReturnCode HMS_LLMEngineContext_GetOutputTokenCount (const HMS_LLMEngine_Context * ctx, uint64_t * count )
+```
+
+**描述**
+
+输出token数量。
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 名称 | 描述 |
+| --- | --- |
+| ctx | 指向[HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context)的指针，不能为null。 |
+| count | 输出token数量。 |
+
+**返回：**
+
+接口执行状态，参见[OH\_NN\_ReturnCode](capi-neural-network-runtime-type-h.md#oh_nn_returncode)。
+
+| 状态码 | 状态信息 |
+| --- | --- |
+| OH\_NN\_SUCCESS | 成功状态。 |
+| OH\_NN\_FAILED | 失败状态，入参为空。 |
+
+### HMS\_LLMEngineContext\_GetPrefillTimeMs()
+
+```cpp
+OH_NN_ReturnCode HMS_LLMEngineContext_GetPrefillTimeMs (const HMS_LLMEngine_Context * ctx, double * ms )
+```
+
+**描述**
+
+LLM引擎预填充阶段消耗时间。
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 名称 | 描述 |
+| --- | --- |
+| ctx | 指向 [HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context) 的指针，不能为null。 |
+| ms | 预填充时间（单位：ms）。 |
+
+**返回：**
+
+接口执行状态，参见[OH\_NN\_ReturnCode](capi-neural-network-runtime-type-h.md#oh_nn_returncode)。
+
+| 状态码 | 状态信息 |
+| --- | --- |
+| OH\_NN\_SUCCESS | 成功状态。 |
+| OH\_NN\_FAILED | 失败状态，入参为空。 |
+
+### HMS\_LLMEngineContext\_GetTotalTimeMs()
+
+```cpp
+OH_NN_ReturnCode HMS_LLMEngineContext_GetTotalTimeMs (const HMS_LLMEngine_Context * ctx, double * ms )
+```
+
+**描述**
+
+生成阶段总耗时。
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 名称 | 描述 |
+| --- | --- |
+| ctx | 指向 [HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context) 的指针，不能为null。 |
+| ms | 生成总耗时（单位：ms）。 |
+
+**返回：**
+
+接口执行状态，参见[OH\_NN\_ReturnCode](capi-neural-network-runtime-type-h.md#oh_nn_returncode)。
+
+| 状态码 | 状态信息 |
+| --- | --- |
+| OH\_NN\_SUCCESS | 成功状态。 |
+| OH\_NN\_FAILED | 失败状态，入参为空。 |
+
+### HMS\_LLMEngineContext\_SetOnAllTokensGenerateDoneFunc()
+
+```cpp
+OH_NN_ReturnCode HMS_LLMEngineContext_SetOnAllTokensGenerateDoneFunc (HMS_LLMEngine_Context * ctx, callbackFunctionType func )
+```
+
+**描述**
+
+设置所有token生成完毕时触发的回调函数。
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 名称 | 描述 |
+| --- | --- |
+| ctx | 指向[HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context)的指针，不能为null。 |
+| func | 上下文回调函数。 |
+
+**返回：**
+
+接口执行状态，参见[OH\_NN\_ReturnCode](capi-neural-network-runtime-type-h.md#oh_nn_returncode)。
+
+| 状态码 | 状态信息 |
+| --- | --- |
+| OH\_NN\_SUCCESS | 成功状态。 |
+| OH\_NN\_FAILED | 失败状态，入参为空。 |
+
+### HMS\_LLMEngineContext\_SetOnGenerateAsyncFailed()
+
+```cpp
+OH_NN_ReturnCode HMS_LLMEngineContext_SetOnGenerateAsyncFailed (HMS_LLMEngine_Context * ctx, callbackFunctionType func )
+```
+
+**描述**
+
+设置生成失败时的回调函数。
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 名称 | 描述 |
+| --- | --- |
+| ctx | 指向[HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context)的指针，不能为null。 |
+| func | 上下文回调函数。 |
+
+**返回：**
+
+接口执行状态，参见[OH\_NN\_ReturnCode](capi-neural-network-runtime-type-h.md#oh_nn_returncode)。
+
+| 状态码 | 状态信息 |
+| --- | --- |
+| OH\_NN\_SUCCESS | 成功状态。 |
+| OH\_NN\_FAILED | 失败状态，入参为空。 |
+
+### HMS\_LLMEngineContext\_SetOnOneTokenGenerateDoneFunc()
+
+```cpp
+OH_NN_ReturnCode HMS_LLMEngineContext_SetOnOneTokenGenerateDoneFunc (HMS_LLMEngine_Context * ctx, callbackFunctionType func )
+```
+
+**描述**
+
+设置生成token时触发的回调函数。
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 名称 | 描述 |
+| --- | --- |
+| ctx | 指向[HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context)的指针，不能为null。 |
+| func | 上下文回调函数。 |
+
+**返回：**
+
+接口执行状态，参见[OH\_NN\_ReturnCode](capi-neural-network-runtime-type-h.md#oh_nn_returncode)。
+
+| 状态码 | 状态信息 |
+| --- | --- |
+| OH\_NN\_SUCCESS | 成功状态。 |
+| OH\_NN\_FAILED | 失败状态，入参为空。 |
+
+### HMS\_LLMEngineExecutor\_CreateFromExecutorJson()
+
+```cpp
+HMS_LLMEngine_Executor* HMS_LLMEngineExecutor_CreateFromExecutorJson (const char * jsonFile)
+```
+
+**描述**
+
+通过JSON配置文件创建LLM引擎执行器句柄。
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 名称 | 描述 |
+| --- | --- |
+| jsonFile | JSON配置文件的路径，不能为空。 |
+
+**返回：**
+
+创建的LLM引擎执行器句柄。
+
+### HMS\_LLMEngineExecutor\_Destroy()
+
+```cpp
+void HMS_LLMEngineExecutor_Destroy (HMS_LLMEngine_Executor ** executor)
+```
+
+**描述**
+
+销毁一个LLM引擎执行器，该执行器内存释放。
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 名称 | 描述 |
+| --- | --- |
+| executor | 待销毁的执行器。 |
+
+### HMS\_LLMEngineExecutor\_Generate()
+
+```cpp
+OH_NN_ReturnCode HMS_LLMEngineExecutor_Generate (HMS_LLMEngine_Executor * executor, HMS_LLMEngine_Context * ctx, const HMS_LLMEngine_Prompt * prompt )
+```
+
+**描述**
+
+执行同步LLM推理。
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 名称 | 描述 |
+| --- | --- |
+| executor | 指向[HMS\_LLMEngine\_Executor](cannkit.md#hms_llmengine_executor)的指针，不能为null。 |
+| ctx | 指向[HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context)的指针，不能为null。 |
+| prompt | 同步LLM推理的输入。 |
+
+**返回：**
+
+接口执行状态，参见[OH\_NN\_ReturnCode](capi-neural-network-runtime-type-h.md#oh_nn_returncode)。
+
+| 状态码 | 状态信息 |
+| --- | --- |
+| OH\_NN\_SUCCESS | 成功状态。 |
+| OH\_NN\_FAILED | 失败状态，入参为空。 |
+
+### HMS\_LLMEngineExecutor\_GenerateAsync()
+
+```cpp
+OH_NN_ReturnCode HMS_LLMEngineExecutor_GenerateAsync (HMS_LLMEngine_Executor * executor, HMS_LLMEngine_Context * ctx, const HMS_LLMEngine_Prompt * prompt )
+```
+
+**描述**
+
+异步执行LLM推理。
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 名称 | 描述 |
+| --- | --- |
+| executor | 指向[HMS\_LLMEngine\_Executor](cannkit.md#hms_llmengine_executor)的指针，不能为null。 |
+| ctx | 指向[HMS\_LLMEngine\_Context](cannkit.md#hms_llmengine_context)的指针，不能为null。 |
+| prompt | 异步LLM推理的输入。 |
+
+**返回：**
+
+接口执行状态，参见[OH\_NN\_ReturnCode](capi-neural-network-runtime-type-h.md#oh_nn_returncode)。
+
+| 状态码 | 状态信息 |
+| --- | --- |
+| OH\_NN\_SUCCESS | 成功状态。 |
+| OH\_NN\_FAILED | 失败状态，入参为空。 |
+
+### HMS\_LLMEngineExecutor\_SetInferencePerfMode()
+
+```cpp
+OH_NN_ReturnCode HMS_LLMEngineExecutor_SetInferencePerfMode (HMS_LLMEngine_Executor * executor, HMS_LLMEngine_InferPerfMode inferPerfMode )
+```
+
+**描述**
+
+设置推理性能模式。
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 名称 | 描述 |
+| --- | --- |
+| executor | 指向[HMS\_LLMEngine\_Executor](cannkit.md#hms_llmengine_executor)的指针，不能为null。 |
+| inferPerfMode | [HMS\_LLMEngine\_InferPerfMode](cannkit.md#hms_llmengine_inferperfmode)枚举值，不能为null。 |
+
+**返回：**
+
+接口执行状态，参见[OH\_NN\_ReturnCode](capi-neural-network-runtime-type-h.md#oh_nn_returncode)。
+
+| 状态码 | 状态信息 |
+| --- | --- |
+| OH\_NN\_SUCCESS | 成功状态。 |
+| OH\_NN\_FAILED | 失败状态。  可能原因：入参executor为空；入参inferPerfMode大于HMS\_LLMENGINE\_INFERPERF\_EXTREME\_HIGH或小于HMS\_LLMENGINE\_INFERPERF\_UNSET。 |
+
+### HMS\_LLMEnginePrompt\_Create()
+
+```cpp
+HMS_LLMEngine_Prompt* HMS_LLMEnginePrompt_Create (void )
+```
+
+**描述**
+
+创建一个LLM引擎提示句柄。
+
+**起始版本：** 6.1.1(24)
+
+**返回：**
+
+创建的LLM引擎提示句柄。
+
+### HMS\_LLMEnginePrompt\_Destroy()
+
+```cpp
+void HMS_LLMEnginePrompt_Destroy (HMS_LLMEngine_Prompt ** prompt)
+```
+
+**描述**
+
+销毁LLM引擎提示词句柄。
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 名称 | 描述 |
+| --- | --- |
+| prompt | 待销毁的LLM引擎提示词句柄。 |
+
+### HMS\_LLMEnginePrompt\_SetText()
+
+```cpp
+OH_NN_ReturnCode HMS_LLMEnginePrompt_SetText (HMS_LLMEngine_Prompt * prompt, const char * text )
+```
+
+**描述**
+
+设置文本输入。
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 名称 | 描述 |
+| --- | --- |
+| prompt | 指向[HMS\_LLMEngine\_Prompt](cannkit.md#hms_llmengine_prompt)的指针，不能为null。 |
+| text | 文本提示词。 |
+
+### HMS\_LLMEnginePrompt\_SetTokenId()
+
+```cpp
+OH_NN_ReturnCode HMS_LLMEnginePrompt_SetTokenId (HMS_LLMEngine_Prompt * prompt, int32_t * tokenIds, uint32_t tokenNum )
+```
+
+**描述**
+
+设置输入的tokenid。
+
+**起始版本：** 6.1.1(24)
+
+**参数：**
+
+| 名称 | 描述 |
+| --- | --- |
+| prompt | 指向[HMS\_LLMEngine\_Prompt](cannkit.md#hms_llmengine_prompt)的指针，不能为null。 |
+| tokenIds | 要设置到提示词中的tokenid。 |
+| tokenNum | tokenid的数量。 |
+
+**返回：**
+
+接口执行状态，参见[OH\_NN\_ReturnCode](capi-neural-network-runtime-type-h.md#oh_nn_returncode)。
+
+| 状态码 | 状态信息 |
+| --- | --- |
+| OH\_NN\_SUCCESS | 成功状态。 |
+| OH\_NN\_FAILED | 失败状态，入参为空或tokenNum为0。 |

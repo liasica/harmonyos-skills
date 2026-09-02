@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-camera
 title: 更改地图位置
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图交互 > 更改地图位置
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:07+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1fc52b4911a873a9b2b86d2c99b1a7d2f0d7986e40d0d0602e81af5756bb2e5f
+scraped_at: 2026-09-02T14:59:58+08:00
+doc_updated_at: 2026-05-18
+content_hash: sha256:4c165f82d7311eb11db9e9709fba5da0a4fd0ce8fb275adc658a970a0cb8b4b4
 ---
 
 ## 场景介绍
@@ -16,11 +16,11 @@ content_hash: sha256:1fc52b4911a873a9b2b86d2c99b1a7d2f0d7986e40d0d0602e81af5756b
 
 **图1** 相机移动前
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/FpejiyFhQ5-pBdGn_QVowA/zh-cn_image_0000002558605870.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/gX5y6jafRESAJqX_4JwqRg/zh-cn_image_0000002706675106.jpg "点击放大")
 
 **图2** 相机移动后
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/mR3AyB_XRfCKHkFUPS57MA/zh-cn_image_0000002589325397.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/MrKiF4RUR-2Qc7Jdsv4gdw/zh-cn_image_0000002736434195.jpg "点击放大")
 
 ## 接口说明
 
@@ -28,16 +28,16 @@ content_hash: sha256:1fc52b4911a873a9b2b86d2c99b1a7d2f0d7986e40d0d0602e81af5756b
 
 | 接口名 | 描述 |
 | --- | --- |
-| [zoomTo](../harmonyos-references/map-map-zoomto.md)(zoom: number): [CameraUpdate](../harmonyos-references/map-map-cameraupdate.md) | 设置地图缩放级别。 |
-| [zoomOut](../harmonyos-references/map-map-zoomout.md)(): [CameraUpdate](../harmonyos-references/map-map-cameraupdate.md) | 缩小地图缩放级别，在当前地图显示的级别基础上减1。 |
-| [zoomIn](../harmonyos-references/map-map-zoomin.md)(): [CameraUpdate](../harmonyos-references/map-map-cameraupdate.md) | 放大地图缩放级别，在当前地图显示的级别基础上加1。 |
-| [zoomBy](../harmonyos-references/map-map-zoomby.md)(amount: number, focus?: [mapCommon.MapPoint](../harmonyos-references/map-common.md#mappoint)): [CameraUpdate](../harmonyos-references/map-map-cameraupdate.md) | 根据给定增量并以给定的屏幕像素点为中心点缩放地图级别。 |
-| [scrollBy](../harmonyos-references/map-map-scrollby.md)(x: number, y: number): [CameraUpdate](../harmonyos-references/map-map-cameraupdate.md) | 按像素移动地图中心点。 |
-| [newLatLngBounds](../harmonyos-references/map-map-newlatlngbounds.md#newlatlngbounds-1)(bounds: [mapCommon.LatLngBounds](../harmonyos-references/map-common.md#latlngbounds), padding?: number): [CameraUpdate](../harmonyos-references/map-map-cameraupdate.md) | 设置地图经纬度范围、设置地图区域和边界之间的距离。 |
-| [newLatLngBounds](../harmonyos-references/map-map-newlatlngbounds.md#newlatlngbounds-2)(bounds: [mapCommon.LatLngBounds](../harmonyos-references/map-common.md#latlngbounds), width: number, height: number, padding: number): [CameraUpdate](../harmonyos-references/map-map-cameraupdate.md) | 设置地图经纬度范围、设置经纬度矩形范围的高和宽、设置地图区域和边界之间的距离。 |
-| [newLatLngBounds](../harmonyos-references/map-map-newlatlngbounds.md#newlatlngbounds-3)(bounds: [mapCommon.LatLngBounds](../harmonyos-references/map-common.md#latlngbounds), padding: [mapCommon.Padding](../harmonyos-references/map-common.md#padding)): [CameraUpdate](../harmonyos-references/map-map-cameraupdate.md) | 支持设置地图经纬度范围和4个方向与边界之间的距离。 |
-| [newLatLng](../harmonyos-references/map-map-newlatlng.md)(latLng: [mapCommon.LatLng](../harmonyos-references/map-common.md#latlng), zoom?: number): [CameraUpdate](../harmonyos-references/map-map-cameraupdate.md) | 设置地图的中心点和缩放层级。 |
-| [newCameraPosition](../harmonyos-references/map-map-newcameraposition.md)(cameraPosition: [mapCommon.CameraPosition](../harmonyos-references/map-common.md#cameraposition)): [CameraUpdate](../harmonyos-references/map-map-cameraupdate.md) | 更新地图状态。 |
+| [zoomTo](../harmonyos-references/map-map-functions.md#zoomto)(zoom: number): [CameraUpdate](../harmonyos-references/map-map-cameraupdate.md) | 设置地图缩放级别。 |
+| [zoomOut](../harmonyos-references/map-map-functions.md#zoomout)(): [CameraUpdate](../harmonyos-references/map-map-cameraupdate.md) | 缩小地图缩放级别，在当前地图显示的级别基础上减1。 |
+| [zoomIn](../harmonyos-references/map-map-functions.md#zoomin)(): [CameraUpdate](../harmonyos-references/map-map-cameraupdate.md) | 放大地图缩放级别，在当前地图显示的级别基础上加1。 |
+| [zoomBy](../harmonyos-references/map-map-functions.md#zoomby)(amount: number, focus?: [mapCommon.MapPoint](../harmonyos-references/map-common.md#mappoint)): [CameraUpdate](../harmonyos-references/map-map-cameraupdate.md) | 根据给定增量并以给定的屏幕像素点为中心点缩放地图级别。 |
+| [scrollBy](../harmonyos-references/map-map-functions.md#scrollby)(x: number, y: number): [CameraUpdate](../harmonyos-references/map-map-cameraupdate.md) | 按像素移动地图中心点。 |
+| [newLatLngBounds](../harmonyos-references/map-map-functions.md#newlatlngbounds)(bounds: [mapCommon.LatLngBounds](../harmonyos-references/map-common.md#latlngbounds), padding?: number): [CameraUpdate](../harmonyos-references/map-map-cameraupdate.md) | 设置地图经纬度范围、设置地图区域和边界之间的距离。 |
+| [newLatLngBounds](../harmonyos-references/map-map-functions.md#newlatlngbounds-1)(bounds: [mapCommon.LatLngBounds](../harmonyos-references/map-common.md#latlngbounds), width: number, height: number, padding: number): [CameraUpdate](../harmonyos-references/map-map-cameraupdate.md) | 设置地图经纬度范围、设置经纬度矩形范围的高和宽、设置地图区域和边界之间的距离。 |
+| [newLatLngBounds](../harmonyos-references/map-map-functions.md#newlatlngbounds-2)(bounds: [mapCommon.LatLngBounds](../harmonyos-references/map-common.md#latlngbounds), padding: [mapCommon.Padding](../harmonyos-references/map-common.md#padding)): [CameraUpdate](../harmonyos-references/map-map-cameraupdate.md) | 支持设置地图经纬度范围和4个方向与边界之间的距离。 |
+| [newLatLng](../harmonyos-references/map-map-functions.md#newlatlng)(latLng: [mapCommon.LatLng](../harmonyos-references/map-common.md#latlng), zoom?: number): [CameraUpdate](../harmonyos-references/map-map-cameraupdate.md) | 设置地图的中心点和缩放层级。 |
+| [newCameraPosition](../harmonyos-references/map-map-functions.md#newcameraposition)(cameraPosition: [mapCommon.CameraPosition](../harmonyos-references/map-common.md#cameraposition)): [CameraUpdate](../harmonyos-references/map-map-cameraupdate.md) | 更新地图状态。 |
 
 ## 开发步骤
 
@@ -46,8 +46,8 @@ content_hash: sha256:1fc52b4911a873a9b2b86d2c99b1a7d2f0d7986e40d0d0602e81af5756b
 1. 初始化地图并获取[MapComponentController](../harmonyos-references/map-map-mapcomponentcontroller.md)地图操作类对象。[显示地图](map-presenting.md)章节中有详细讲解。
 2. 导入模块。
 
-   ```
-   1. import { MapComponent, mapCommon, map } from '@kit.MapKit';
+   ```typescript
+   import { MapComponent, mapCommon, map } from '@kit.MapKit';
    ```
 3. 通过调用[MapComponentController](../harmonyos-references/map-map-mapcomponentcontroller.md)的[moveCamera](../harmonyos-references/map-map-mapcomponentcontroller.md#movecamera)方法、[animateCamera](../harmonyos-references/map-map-mapcomponentcontroller.md#animatecamera)方法和[animateCameraStatus](../harmonyos-references/map-map-mapcomponentcontroller.md#animatecamerastatus)方法，可实现移动地图相机。
 
@@ -56,124 +56,124 @@ content_hash: sha256:1fc52b4911a873a9b2b86d2c99b1a7d2f0d7986e40d0d0602e81af5756b
    * 动画方式移动相机时，您可以设置动画持续的时间。
    * 非动画方式移动相机是瞬时完成的。
 
-   ```
-   1. // 创建CameraUpdate对象
-   2. let cameraPosition: mapCommon.CameraPosition = {
-   3. target: {
-   4. latitude: 32.0,
-   5. longitude: 118.0
-   6. },
-   7. zoom: 10,
-   8. tilt: 0,
-   9. bearing: 0
-   10. };
-   11. let cameraUpdate = map.newCameraPosition(cameraPosition);
-   12. // 以非动画方式移动地图相机
-   13. this.mapController.moveCamera(cameraUpdate);
+   ```typescript
+   // 创建CameraUpdate对象
+   let cameraPosition: mapCommon.CameraPosition = {
+     target: {
+       latitude: 32.0,
+       longitude: 118.0
+     },
+     zoom: 10,
+     tilt: 0,
+     bearing: 0
+   };
+   let cameraUpdate = map.newCameraPosition(cameraPosition);
+   // 以非动画方式移动地图相机
+   this.mapController.moveCamera(cameraUpdate);
 
-   15. // 以动画方式移动地图相机
-   16. this.mapController.animateCamera(cameraUpdate, 1000);
+   // 以动画方式移动地图相机
+   this.mapController.animateCamera(cameraUpdate, 1000);
 
-   18. // 以动画方式移动地图相机，并返回动画结果
-   19. let animateResult = await this.mapController.animateCameraStatus(cameraUpdate, 1000);
+   // 以动画方式移动地图相机，并返回动画结果
+   let animateResult = await this.mapController.animateCameraStatus(cameraUpdate, 1000);
    ```
 
    **图3** 相机移动前
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/LyikYVkTTq2mUfMHWSF6jw/zh-cn_image_0000002589245335.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/b8wIK1ccSjaVox60xqdjqw/zh-cn_image_0000002706835044.jpg "点击放大")
 
    **图4** 相机移动后
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/6fGQlN6QRZSoE47eAernPA/zh-cn_image_0000002558765528.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/edvG4t6GTv6OO9ElXVqARg/zh-cn_image_0000002736314151.jpg "点击放大")
 4. 您还可以通过以下方式创建[CameraUpdate](../harmonyos-references/map-map-cameraupdate.md)对象。
 
-   ```
-   1. // 方式1：相机放大级数加1，保持其他属性不变
-   2. let cameraUpdate = map.zoomIn();
+   ```typescript
+   // 方式1：相机放大级数加1，保持其他属性不变
+   let cameraUpdate = map.zoomIn();
 
-   4. // 方式2：相机放大级数减1，保持其他属性不变
-   5. let cameraUpdate1 = map.zoomOut();
+   // 方式2：相机放大级数减1，保持其他属性不变
+   let cameraUpdate1 = map.zoomOut();
 
-   7. // 方式3：指定相机缩放级数zoom值，其他属性不变
-   8. let zoom1 = 8.0;
-   9. let cameraUpdate2 = map.zoomTo(zoom1);
+   // 方式3：指定相机缩放级数zoom值，其他属性不变
+   let zoom1 = 8.0;
+   let cameraUpdate2 = map.zoomTo(zoom1);
 
-   11. // 方式4：
-   12. // a、指定相机缩放级别增量amount，您调用此方法可以在原来相机的缩放级别之上，进行适当的缩放
-   13. // b、指定缩放级别增量和一个中心点，您调用此API可以移动相机至中心点位置，并进行缩放
-   14. // 以屏幕左顶点为（0, 0）点，positionX正值代表可视区域向右移动，负值代表可视区域向左移动
-   15. // positionY正值代表可视区域向下移动，负值代表可视区域向上移动
-   16. let point: mapCommon.MapPoint = {
-   17. positionX: 31,
-   18. positionY: 118
-   19. };
-   20. let amount = 2.0;
-   21. let cameraUpdate3 = map.zoomBy(amount, point);
+   // 方式4：
+   // a、指定相机缩放级别增量amount，您调用此方法可以在原来相机的缩放级别之上，进行适当的缩放
+   // b、指定缩放级别增量和一个中心点，您调用此API可以移动相机至中心点位置，并进行缩放
+   // 以屏幕左顶点为（0, 0）点，positionX正值代表可视区域向右移动，负值代表可视区域向左移动
+   // positionY正值代表可视区域向下移动，负值代表可视区域向上移动
+   let point: mapCommon.MapPoint = {
+     positionX: 31,
+     positionY: 118
+   };
+   let amount = 2.0;
+   let cameraUpdate3 = map.zoomBy(amount, point);
 
-   23. // 方式5：设置相机的经纬度和地图层级
-   24. // a、仅指定相机的经纬度，实现中心点的移动
-   25. // b、指定相机的经纬度和地图层级，您调用此API可以移动相机至中心点位置，并进行缩放
-   26. let latLng: mapCommon.LatLng = {
-   27. latitude: 31.5,
-   28. longitude: 118.9
-   29. };
-   30. let zoom2 = 10;
-   31. let cameraUpdate4 = map.newLatLng(latLng, zoom2);
+   // 方式5：设置相机的经纬度和地图层级
+   // a、仅指定相机的经纬度，实现中心点的移动
+   // b、指定相机的经纬度和地图层级，您调用此API可以移动相机至中心点位置，并进行缩放
+   let latLng: mapCommon.LatLng = {
+     latitude: 31.5,
+     longitude: 118.9
+   };
+   let zoom2 = 10;
+   let cameraUpdate4 = map.newLatLng(latLng, zoom2);
 
-   33. // 方式6：设置相机的可见区域
-   34. let latLngBounds: mapCommon.LatLngBounds = {
-   35. northeast: {
-   36. latitude: 32.5,
-   37. longitude: 119.9
-   38. },
-   39. southwest: {
-   40. latitude: 31.5,
-   41. longitude: 118.9
-   42. }
-   43. };
-   44. // 设置地图显示经纬度范围，设置地图区域和边界之间的距离为5像素
-   45. let cameraUpdate5 = map.newLatLngBounds(latLngBounds, 5);
-   46. // 方式7：设置相机的可见区域
-   47. // 设置地图显示经纬度范围，设置经纬度矩形范围的宽为1000像素，设置经纬度矩形范围的高为1000像素，设置地图区域和边界之间的距离为100像素
-   48. let cameraUpdate6 = map.newLatLngBounds(latLngBounds, 1000, 1000, 100);
-   49. // 方式8：设置地图显示经纬度范围，设置地图区域和4个方向的边界之间的距离分别为5、6、7、8像素
-   50. let paddings: mapCommon.Padding = {
-   51. left:5,
-   52. top: 6,
-   53. right: 7,
-   54. bottom: 8
-   55. };
-   56. let cameraUpdate7 = map.newLatLngBounds(latLngBounds, paddings);
+   // 方式6：设置相机的可见区域
+   let latLngBounds: mapCommon.LatLngBounds = {
+     northeast: {
+       latitude: 32.5,
+       longitude: 119.9
+     },
+     southwest: {
+       latitude: 31.5,
+       longitude: 118.9
+     }
+   };
+   // 设置地图显示经纬度范围，设置地图区域和边界之间的距离为5像素
+   let cameraUpdate5 = map.newLatLngBounds(latLngBounds, 5);
+   // 方式7：设置相机的可见区域
+   // 设置地图显示经纬度范围，设置经纬度矩形范围的宽为1000像素，设置经纬度矩形范围的高为1000像素，设置地图区域和边界之间的距离为100像素
+   let cameraUpdate6 = map.newLatLngBounds(latLngBounds, 1000, 1000, 100);
+   // 方式8：设置地图显示经纬度范围，设置地图区域和4个方向的边界之间的距离分别为5、6、7、8像素
+   let paddings: mapCommon.Padding = {
+     left:5,
+     top: 6,
+     right: 7,
+     bottom: 8
+   };
+   let cameraUpdate7 = map.newLatLngBounds(latLngBounds, paddings);
 
-   58. // 方式9：滚动相机，将相机按照指定的像素点移动
-   59. let x = 100.0;
-   60. let y = 100.0;
-   61. let cameraUpdate8 = map.scrollBy(x, y);
+   // 方式9：滚动相机，将相机按照指定的像素点移动
+   let x = 100.0;
+   let y = 100.0;
+   let cameraUpdate8 = map.scrollBy(x, y);
    ```
 
 ### 设置相机最大/最小偏好缩放级别
 
-```
-1. // 设置最小偏好缩放级别，范围为[2, 20]
-2. this.mapController.setMinZoom(6);
-3. // 设置最大偏好缩放级别，范围为[2, 20]
-4. this.mapController.setMaxZoom(14);
+```typescript
+// 设置最小偏好缩放级别，范围为[2, 20]
+this.mapController.setMinZoom(6);
+// 设置最大偏好缩放级别，范围为[2, 20]
+this.mapController.setMaxZoom(14);
 ```
 
 ### 设置地图相机的边界
 
 Map Kit支持设置地图相机的边界。通过[setLatLngBounds](../harmonyos-references/map-map-mapcomponentcontroller.md#setlatlngbounds)接口指定一个[LatLngBounds](../harmonyos-references/map-common.md#latlngbounds)来约束相机目标，使用户移动地图时，相机目标不会移出此边界。当设置参数为空时，地图相机的边界清除。
 
-```
-1. let bounds: mapCommon.LatLngBounds = {
-2. northeast: {
-3. latitude: 31,
-4. longitude: 118
-5. },
-6. southwest: {
-7. latitude: 30,
-8. longitude: 113
-9. }
-10. };
-11. this.mapController.setLatLngBounds(bounds);
+```typescript
+let bounds: mapCommon.LatLngBounds = {
+  northeast: {
+    latitude: 31,
+    longitude: 118
+  },
+  southwest: {
+    latitude: 30,
+    longitude: 113
+  }
+};
+this.mapController.setLatLngBounds(bounds);
 ```

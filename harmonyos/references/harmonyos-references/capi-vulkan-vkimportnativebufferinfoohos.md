@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-vulk
 title: VkImportNativeBufferInfoOHOS
 breadcrumb: API参考 > 标准库 > Vulkan > Vulkan扩展能力 > VkImportNativeBufferInfoOHOS
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:37+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:fe77a6dca24c12c76ce2bf1dba0e280cf39402e3965e5953af23671e8f753fdf
+scraped_at: 2026-09-02T15:03:15+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:85373b775127fd476091b29ce6b009b7fabd7b2bd5700f9397175decb9bd893b
 ---
 
-```
-1. typedef struct VkImportNativeBufferInfoOHOS {...} VkImportNativeBufferInfoOHOS
+```c
+typedef struct VkImportNativeBufferInfoOHOS {...} VkImportNativeBufferInfoOHOS
 ```
 
 ## 概述

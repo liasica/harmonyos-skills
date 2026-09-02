@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-controls-
 title: 手势交互
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图交互 > 手势交互
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:07+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ee6c51a2041e99da20e6bf4caaad28e194a53dfa006134ea46dc49d1674454ad
+scraped_at: 2026-09-02T14:59:58+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:cfd1dbeb4c17c6d97daed07001984b7ac5ca40bee69b43d45860cd7e717fa25b
 ---
 
 ## 场景介绍
 
 本章节将向您介绍如何使用地图的手势。
 
-Map Kit提供了多种手势供用户与地图之间进行交互，如缩放、滚动、旋转和倾斜。这些手势默认开启，如果想要关闭某些手势，可以通过[MapComponentController](../harmonyos-references/map-map-mapcomponentcontroller.md)类提供的接口来控制手势的开关。
+Map Kit提供了多种手势供用户与地图之间进行交互。如缩放：双指捏合操作以放大或缩小地图；滚动：单指拖动以平移地图视图；旋转：双指旋转操作以改变地图方向；倾斜：双指上下滑动以调整地图视角。这些手势默认开启，如果想要关闭某些手势，可以通过[MapComponentController](../harmonyos-references/map-map-mapcomponentcontroller.md)类提供的接口来控制手势的开关。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/EGEhFspvR_OFdM5Hp_59qA/zh-cn_image_0000002558765526.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/FhSI-W3wQoO05oRCQ6wgoA/zh-cn_image_0000002736314149.jpg "点击放大")
 
 ## 接口说明
 
@@ -43,39 +43,39 @@ mapController对象在初始化地图时获取，初始化地图功能在[显示
 
 用户可以通过用双指捏合，实现放大缩小地图。
 
-```
-1. this.mapController.setZoomGesturesEnabled(true);
+```typescript
+this.mapController.setZoomGesturesEnabled(true);
 ```
 
 **滚动平移手势：**
 
 用户可以通过用手指拖动地图来进行移动。
 
-```
-1. this.mapController.setScrollGesturesEnabled(true);
+```typescript
+this.mapController.setScrollGesturesEnabled(true);
 ```
 
 **旋转手势：**
 
 用户可以通过将两个手指放在地图上旋转来旋转地图。
 
-```
-1. this.mapController.setRotateGesturesEnabled(true);
+```typescript
+this.mapController.setRotateGesturesEnabled(true);
 ```
 
 **倾斜手势：**
 
 用户可以通过将两个手指放在地图上下滑动来倾斜地图。
 
-```
-1. this.mapController.setTiltGesturesEnabled(true);
+```typescript
+this.mapController.setTiltGesturesEnabled(true);
 ```
 
 **启用或禁止所有手势：**
 
 通过调用[setAllGesturesEnabled](../harmonyos-references/map-map-mapcomponentcontroller.md#setallgesturesenabled)方法，可启用或禁止所有手势。
 
-```
-1. // 禁止所有手势
-2. this.mapController.setAllGesturesEnabled(false);
+```typescript
+// 禁止所有手势
+this.mapController.setAllGesturesEnabled(false);
 ```

@@ -1,20 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-perftest
-title: perftest错误码
-breadcrumb: API参考 > 系统 > 调测调优 > Test Kit（应用测试服务） > 错误码 > perftest错误码
+title: PerfTest错误码
+breadcrumb: API参考 > 系统 > 调测调优 > Test Kit（应用测试服务） > 错误码 > PerfTest错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:36+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:bba6426e39d039d0842a96207944d57f63b5a6af9cddbe4354c418a0b25defd2
+scraped_at: 2026-09-02T15:02:18+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e0d401f58bfce512b7963341992a6fad49609994d258675e0d7cbb4c62898538
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 32400001 初始化失败
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -30,11 +28,9 @@ Initialization failed.
 
 **处理步骤**
 
-使用ps等shell命令查看，确保测试应用进程存在。
+检查测试应用是否正常安装并可用，确保能够成功获取测试应用包名。
 
 ## 32400002 内部错误
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -52,11 +48,9 @@ Internal error.
 **处理步骤**
 
 1. 尝试通过重试解决IPC传输失败问题。
-2. 判断PerfTest对象是否已被销毁，若已销毁需要重新[创建PerfTest对象](js-apis-perftest.md#create)。
+2. 判断PerfTest对象是否已被销毁，若已销毁需要重新使用[PerfTest.create](js-apis-perftest.md#create)创建PerfTest对象。
 
 ## 32400003 参数校验失败
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -68,15 +62,13 @@ Parameter verification failed.
 
 **可能原因**
 
-参数类型错误/参数取值超出规定范围。
+参数类型错误、参数取值超出规定范围。
 
 **处理步骤**
 
-检查接口入参是否符合要求。
+检查接口入参的类型和取值范围是否符合接口定义要求。
 
 ## 32400004 执行回调函数失败
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -84,7 +76,7 @@ Failed to execute the callback.
 
 **错误描述**
 
-执行回调代码段失败。
+执行回调函数失败。
 
 **可能原因**
 
@@ -93,11 +85,9 @@ Failed to execute the callback.
 
 **处理步骤**
 
-检查回调函数内部逻辑，确保回调函数执行不会抛出异常或超时。
+检查回调函数内部逻辑，包括异常处理和超时控制机制，确保回调函数执行不会抛出异常或超时。
 
 ## 32400005 采集性能数据失败
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -117,8 +107,6 @@ Failed to collect metric data.
 
 ## 32400006 无法获取性能数据
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 Failed to obtain the measurement result.
@@ -136,8 +124,6 @@ Failed to obtain the measurement result.
 首先保证[PerfTest.run](js-apis-perftest.md#run)接口已执行完成且未抛出异常，确保测试数据已采集完成，再获取指定数据。
 
 ## 32400007 接口不支持并行调用
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 

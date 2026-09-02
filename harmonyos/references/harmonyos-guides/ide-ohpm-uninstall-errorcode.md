@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-unin
 title: ohpm uninstall错误码
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm uninstall错误码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:46+08:00
-doc_updated_at: 2026-03-11
-content_hash: sha256:1213034470d73e202524119724eacaa6bd2ee370939047d9cc3397456e74639e
+scraped_at: 2026-09-02T14:50:59+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:a7fd34fd99e4e90a05ec9977e0533ef2ea886931b8b9ef8154b0880983b62eb8
 ---
 
 ## 00605001 未配置包名称
@@ -24,7 +24,7 @@ uninstall时未配置包名称。
 
 **处理步骤**
 
-根据oh-package.json5文件中配置的依赖进行卸载，确认卸载的依赖包在文件中已配置。
+根据oh-package.json5文件中配置的依赖进行卸载，确认依赖包在文件中已配置。
 
 ## 00605002 配置版本号错误
 

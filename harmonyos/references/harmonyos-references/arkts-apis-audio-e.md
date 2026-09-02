@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Enums
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > ArkTS API > @ohos.multimedia.audio (音频管理) > Enums
 category: harmonyos-references
-scraped_at: 2026-04-29T14:02:23+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:8a34b73b01f824a4688be96275e210446af6908a8f3c02c7a218ed4a783e6997
+scraped_at: 2026-09-02T15:02:19+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5023d81f1e87f1d20f8d15fce9fd30588315fe7e6d2b735eb646f270c557f04b
 ---
 
-说明
+**说明** 
 
 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## AudioVolumeType
-
-PhonePC/2in1TabletTVWearable
 
 表示音频音量类型的枚举。
 
@@ -31,8 +29,6 @@ PhonePC/2in1TabletTVWearable
 
 ## InterruptMode9+
 
-PhonePC/2in1TabletTVWearable
-
 表示焦点模型的枚举。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -46,8 +42,6 @@ PhonePC/2in1TabletTVWearable
 
 ## DeviceFlag
 
-PhonePC/2in1TabletTVWearable
-
 表示音频设备类型的枚举。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Device
@@ -59,8 +53,6 @@ PhonePC/2in1TabletTVWearable
 | ALL\_DEVICES\_FLAG | 3 | 所有设备。 |
 
 ## DeviceUsage12+
-
-PhonePC/2in1TabletTVWearable
 
 表示音频设备类型的枚举（根据用途分类）。
 
@@ -77,8 +69,6 @@ PhonePC/2in1TabletTVWearable
 
 ## DeviceRole
 
-PhonePC/2in1TabletTVWearable
-
 表示设备角色的枚举。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -91,8 +81,6 @@ PhonePC/2in1TabletTVWearable
 | OUTPUT\_DEVICE | 2 | 输出设备角色。 |
 
 ## DeviceType
-
-PhonePC/2in1TabletTVWearable
 
 表示设备类型的枚举。
 
@@ -115,14 +103,12 @@ PhonePC/2in1TabletTVWearable
 | HDMI19+ | 27 | HDMI设备（例如HDMI、ARC、eARC等）。 |
 | LINE\_DIGITAL19+ | 28 | 有线数字设备（例如S/PDIF等）。 |
 | REMOTE\_DAUDIO18+ | 29 | 分布式设备。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| HEARING\_AID20+ | 30 | 助听器设备。 |
-| NEARLINK20+ | 31 | 星闪设备。 |
+| HEARING\_AID20+ | 30 | 助听器设备。  应用调用获取设备的相关接口时，该类型默认返回匿名类型。从API版本26.0.0开始，如需获取具体设备类型，可先调用[declareDeviceTypesCompatibility](arkts-apis-audio-audioroutingmanager.md#declaredevicetypescompatibility)进行设备类型兼容声明。 |
+| NEARLINK20+ | 31 | 星闪设备。  应用调用获取设备的相关接口时，该类型默认返回匿名类型。从API版本26.0.0开始，如需获取具体设备类型，可先调用[declareDeviceTypesCompatibility](arkts-apis-audio-audioroutingmanager.md#declaredevicetypescompatibility)进行设备类型兼容声明。 |
 | SYSTEM\_PRIVATE22+ | 200 | 系统私有设备（由于该设备在系统中属于私有设备，因此应用程序可以忽略该设备）。 |
 | DEFAULT9+ | 1000 | 默认设备类型。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 
 ## BluetoothAndNearlinkPreferredRecordCategory21+
-
-PhonePC/2in1TabletTVWearable
 
 表示在使用蓝牙或星闪进行录音时，应用程序的设备偏好分类枚举。
 
@@ -135,9 +121,23 @@ PhonePC/2in1TabletTVWearable
 | PREFERRED\_LOW\_LATENCY | 2 | 更偏好使用蓝牙或星闪低延迟模式进行录音。 |
 | PREFERRED\_HIGH\_QUALITY | 3 | 更偏好使用蓝牙或星闪高质量模式进行录音。 |
 
-## CommunicationDeviceType9+
+## NoiseReductionMode
 
-PhonePC/2in1TabletTVWearable
+表示录音降噪模式的枚举。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Audio.Core
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| FIDELITY | 0 | 保真模式，不进行降噪。 |
+| PURE\_VOCALS | 1 | 纯人声模式，强降噪。 |
+| STANDARD | 2 | 标准模式，弱降噪。 |
+
+## CommunicationDeviceType9+
 
 表示用于通信的可用设备类型的枚举。
 
@@ -148,8 +148,6 @@ PhonePC/2in1TabletTVWearable
 | SPEAKER | 2 | 扬声器。 |
 
 ## AudioRingMode
-
-PhonePC/2in1TabletTVWearable
 
 表示铃声模式的枚举。
 
@@ -164,8 +162,6 @@ PhonePC/2in1TabletTVWearable
 | RINGER\_MODE\_NORMAL | 2 | 响铃模式。 |
 
 ## AudioSampleFormat8+
-
-PhonePC/2in1TabletTVWearable
 
 表示音频采样格式的枚举。
 
@@ -182,8 +178,6 @@ PhonePC/2in1TabletTVWearable
 
 ## AudioErrors9+
 
-PhonePC/2in1TabletTVWearable
-
 表示音频错误码的枚举。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Core
@@ -199,8 +193,6 @@ PhonePC/2in1TabletTVWearable
 | ERROR\_SYSTEM | 6800301 | 系统处理异常。 |
 
 ## AudioChannel8+
-
-PhonePC/2in1TabletTVWearable
 
 表示音频声道的枚举。
 
@@ -224,32 +216,29 @@ PhonePC/2in1TabletTVWearable
 
 ## AudioSamplingRate8+
 
-PhonePC/2in1TabletTVWearable
-
 表示音频采样率的枚举（具体设备支持的采样率规格会存在差异）。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| SAMPLE\_RATE\_8000 | 8000 | 采样率为8000。 |
-| SAMPLE\_RATE\_11025 | 11025 | 采样率为11025。 |
-| SAMPLE\_RATE\_12000 | 12000 | 采样率为12000。 |
-| SAMPLE\_RATE\_16000 | 16000 | 采样率为16000。 |
-| SAMPLE\_RATE\_22050 | 22050 | 采样率为22050。 |
-| SAMPLE\_RATE\_24000 | 24000 | 采样率为24000。 |
-| SAMPLE\_RATE\_32000 | 32000 | 采样率为32000。 |
-| SAMPLE\_RATE\_44100 | 44100 | 采样率为44100。 |
-| SAMPLE\_RATE\_48000 | 48000 | 采样率为48000。 |
-| SAMPLE\_RATE\_64000 | 64000 | 采样率为64000。 |
-| SAMPLE\_RATE\_8820012+ | 88200 | 采样率为88200。 |
-| SAMPLE\_RATE\_96000 | 96000 | 采样率为96000。 |
-| SAMPLE\_RATE\_17640012+ | 176400 | 采样率为176400。 |
-| SAMPLE\_RATE\_19200012+ | 192000 | 采样率为192000。 |
+| SAMPLE\_RATE\_8000 | 8000 | 采样率为8000。单位为赫兹（Hz）。 |
+| SAMPLE\_RATE\_11025 | 11025 | 采样率为11025。单位为赫兹（Hz）。 |
+| SAMPLE\_RATE\_12000 | 12000 | 采样率为12000。单位为赫兹（Hz）。 |
+| SAMPLE\_RATE\_16000 | 16000 | 采样率为16000。单位为赫兹（Hz）。 |
+| SAMPLE\_RATE\_22050 | 22050 | 采样率为22050。单位为赫兹（Hz）。 |
+| SAMPLE\_RATE\_24000 | 24000 | 采样率为24000。单位为赫兹（Hz）。 |
+| SAMPLE\_RATE\_32000 | 32000 | 采样率为32000。单位为赫兹（Hz）。 |
+| SAMPLE\_RATE\_44100 | 44100 | 采样率为44100。单位为赫兹（Hz）。 |
+| SAMPLE\_RATE\_48000 | 48000 | 采样率为48000。单位为赫兹（Hz）。 |
+| SAMPLE\_RATE\_64000 | 64000 | 采样率为64000。单位为赫兹（Hz）。 |
+| SAMPLE\_RATE\_8820012+ | 88200 | 采样率为88200。单位为赫兹（Hz）。 |
+| SAMPLE\_RATE\_96000 | 96000 | 采样率为96000。单位为赫兹（Hz）。 |
+| SAMPLE\_RATE\_17640012+ | 176400 | 采样率为176400。单位为赫兹（Hz）。 |
+| SAMPLE\_RATE\_19200012+ | 192000 | 采样率为192000。单位为赫兹（Hz）。 |
+| SAMPLE\_RATE\_384000 | 384000 | 采样率为384000。单位为赫兹（Hz）  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## AudioEncodingType8+
-
-PhonePC/2in1TabletTVWearable
 
 表示音频编码类型的枚举。
 
@@ -264,8 +253,6 @@ PhonePC/2in1TabletTVWearable
 
 ## AudioLatencyType23+
 
-PhonePC/2in1TabletTVWearable
-
 表示音频时延类型的枚举。
 
 **模型约束**：此接口仅可在Stage模型下使用。
@@ -279,8 +266,6 @@ PhonePC/2in1TabletTVWearable
 | LATENCY\_TYPE\_HARDWARE | 2 | 计算硬件侧时延，包含HAL、驱动和硬件。 |
 
 ## AudioChannelLayout11+
-
-PhonePC/2in1TabletTVWearable
 
 表示音频文件声道布局类型的枚举。
 
@@ -340,8 +325,6 @@ PhonePC/2in1TabletTVWearable
 
 ## StreamUsage
 
-PhonePC/2in1TabletTVWearable
-
 表示播放音频流类型的枚举。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Core
@@ -367,8 +350,6 @@ PhonePC/2in1TabletTVWearable
 
 ## AudioState8+
 
-PhonePC/2in1TabletTVWearable
-
 表示音频状态的枚举。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Core
@@ -385,8 +366,6 @@ PhonePC/2in1TabletTVWearable
 
 ## AudioEffectMode10+
 
-PhonePC/2in1TabletTVWearable
-
 表示音效模式的枚举。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -400,8 +379,6 @@ PhonePC/2in1TabletTVWearable
 
 ## AudioRendererRate8+
 
-PhonePC/2in1TabletTVWearable
-
 表示音频渲染速度的枚举。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
@@ -413,8 +390,6 @@ PhonePC/2in1TabletTVWearable
 | RENDER\_RATE\_HALF | 2 | 0.5倍速。 |
 
 ## InterruptType
-
-PhonePC/2in1TabletTVWearable
 
 表示中断类型的枚举。
 
@@ -428,8 +403,6 @@ PhonePC/2in1TabletTVWearable
 | INTERRUPT\_TYPE\_END | 2 | 音频播放中断事件结束。 |
 
 ## InterruptForceType9+
-
-PhonePC/2in1TabletTVWearable
 
 表示音频打断类型的枚举。
 
@@ -447,8 +420,6 @@ PhonePC/2in1TabletTVWearable
 | INTERRUPT\_SHARE | 1 | 共享打断类型，即系统不执行具体操作，通过[InterruptHint](arkts-apis-audio-e.md#interrupthint)建议并提示应用操作，应用可自行决策下一步处理方式。 |
 
 ## InterruptHint
-
-PhonePC/2in1TabletTVWearable
 
 表示中断提示的枚举。
 
@@ -473,8 +444,6 @@ PhonePC/2in1TabletTVWearable
 
 ## AudioVolumeMode19+
 
-PhonePC/2in1TabletTVWearable
-
 表示音量模式的枚举。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
@@ -485,8 +454,6 @@ PhonePC/2in1TabletTVWearable
 | APP\_INDIVIDUAL | 1 | 应用级音量。 |
 
 ## AudioPrivacyType10+
-
-PhonePC/2in1TabletTV
 
 表示对应播放音频流是否支持被其他应用录制的枚举。
 
@@ -500,8 +467,6 @@ PhonePC/2in1TabletTV
 
 ## ChannelBlendMode11+
 
-PhonePC/2in1TabletTVWearable
-
 表示声道混合模式类型的枚举。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Core
@@ -514,8 +479,6 @@ PhonePC/2in1TabletTVWearable
 | MODE\_ALL\_RIGHT | 3 | 从右声道覆盖到左声道混合。 |
 
 ## AudioStreamDeviceChangeReason11+
-
-PhonePC/2in1TabletTVWearable
 
 表示流设备变更原因的枚举。
 
@@ -532,8 +495,6 @@ PhonePC/2in1TabletTVWearable
 
 ## OutputDeviceChangeRecommendedAction20+
 
-PhonePC/2in1TabletTVWearable
-
 表示输出设备变更后推荐操作的枚举。
 
 常见场景示例：耳机设备和外放设备之间进行切换。当佩戴耳机时，从外放设备切换到耳机设备，系统会推荐继续播放，提示应用无需停止当前播放。当摘下耳机设备切换到外放设备时，系统会推荐停止播放。
@@ -547,8 +508,6 @@ PhonePC/2in1TabletTVWearable
 
 ## DeviceChangeType
 
-PhonePC/2in1TabletTVWearable
-
 表示设备连接状态变化的枚举。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Device
@@ -559,8 +518,6 @@ PhonePC/2in1TabletTVWearable
 | DISCONNECT | 1 | 断开设备连接。 |
 
 ## DeviceBlockStatus13+
-
-PhonePC/2in1TabletTVWearable
 
 表示音频设备是否被堵塞的枚举。
 
@@ -573,8 +530,6 @@ PhonePC/2in1TabletTVWearable
 
 ## SourceType8+
 
-PhonePC/2in1TabletTVWearable
-
 表示录制音频流类型的枚举。
 
 | 名称 | 值 | 说明 |
@@ -583,15 +538,45 @@ PhonePC/2in1TabletTVWearable
 | SOURCE\_TYPE\_MIC | 0 | Mic音频源。  **系统能力：** SystemCapability.Multimedia.Audio.Core |
 | SOURCE\_TYPE\_VOICE\_RECOGNITION9+ | 1 | 语音识别源。  **系统能力：** SystemCapability.Multimedia.Audio.Core |
 | SOURCE\_TYPE\_PLAYBACK\_CAPTURE(deprecated) | 2 | 播放音频流（内录）录制音频源。  **系统能力：** SystemCapability.Multimedia.Audio.PlaybackCapture  从API version 10开始支持，从API version 12开始废弃，建议使用[录屏接口AVScreenCapture](capi-avscreencapture.md)替代。 |
-| SOURCE\_TYPE\_VOICE\_COMMUNICATION | 7 | 语音通话场景的音频源（单独启动录制不会开启3A算法，需同时使用[STREAM\_USAGE\_VOICE\_COMMUNICATION](arkts-apis-audio-e.md#streamusage)或[STREAM\_USAGE\_VIDEO\_COMMUNICATION](arkts-apis-audio-e.md#streamusage)类型的AudioRender起播才会触发开启3A算法）。  **系统能力：** SystemCapability.Multimedia.Audio.Core |
+| SOURCE\_TYPE\_VOICE\_COMMUNICATION | 7 | 语音通话场景的音频源。该流类型启动录音时，会触发开启3A算法。  **系统能力：** SystemCapability.Multimedia.Audio.Core |
 | SOURCE\_TYPE\_VOICE\_MESSAGE12+ | 10 | 短语音消息的音频源。  **系统能力：** SystemCapability.Multimedia.Audio.Core |
 | SOURCE\_TYPE\_CAMCORDER13+ | 13 | 录像的音频源。  **系统能力：** SystemCapability.Multimedia.Audio.Core |
 | SOURCE\_TYPE\_UNPROCESSED14+ | 14 | 麦克风纯净录音的音频源（系统不做任何算法处理）。  **系统能力：** SystemCapability.Multimedia.Audio.Core |
 | SOURCE\_TYPE\_LIVE20+ | 17 | 直播场景的音频源，在支持的设备上会提供系统回声消除能力。  **系统能力：** SystemCapability.Multimedia.Audio.Core |
 
-## AudioScene8+
+## AudioPlaybackCaptureMode
 
-PhonePC/2in1TabletTVWearable
+表示内录（录制设备内部应用的声音）模式的枚举。不同模式决定可录制的目标播放流类型。支持通过按位或组合枚举值，当前仅支持MODE\_DEFAULT（0x0）、MODE\_MEDIA（0x1）、MODE\_EXCLUDING\_SELF（0x8000），以及MODE\_MEDIA和MODE\_EXCLUDING\_SELF的按位或组合（0x8001）。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Audio.PlaybackCapture
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| MODE\_DEFAULT | 0x0 | 默认模式。录制大部分音频流，但不包括提示音流和隐私流。 |
+| MODE\_MEDIA | 0x1 | 媒体模式。录制媒体、语音消息和未知类型的音频流。 |
+| MODE\_EXCLUDING\_SELF | 0x8000 | 排除自身模式。录制除应用自身播放的音频以外的音频流。 |
+
+## PlaybackCaptureStartState
+
+表示调用[requestPlaybackCaptureStart](arkts-apis-audio-audiocapturer.md#requestplaybackcapturestart)后异步返回的内录启动状态的枚举。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Audio.PlaybackCapture
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| STATE\_SUCCESS | 0 | 启动内录成功。 |
+| STATE\_FAILED | 1 | 启动内录失败。原因是音频打断请求被拒绝或发生系统内部错误。 |
+| STATE\_NOT\_AUTHORIZED | 2 | 用户未授权，启动内录失败。 |
+
+## AudioScene8+
 
 表示音频场景的枚举。
 
@@ -606,9 +591,9 @@ PhonePC/2in1TabletTVWearable
 
 ## AudioConcurrencyMode12+
 
-PhonePC/2in1TabletTVWearable
-
 表示音频并发模式的枚举。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Core
 
@@ -621,8 +606,6 @@ PhonePC/2in1TabletTVWearable
 
 ## AudioSessionDeactivatedReason12+
 
-PhonePC/2in1TabletTVWearable
-
 表示音频会话停用原因的枚举。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Core
@@ -633,8 +616,6 @@ PhonePC/2in1TabletTVWearable
 | DEACTIVATED\_TIMEOUT | 1 | 音频会话等待超时。 |
 
 ## AudioSessionScene20+
-
-PhonePC/2in1TabletTVWearable
 
 枚举音频会话场景。
 
@@ -647,8 +628,6 @@ PhonePC/2in1TabletTVWearable
 | AUDIO\_SESSION\_SCENE\_VOICE\_COMMUNICATION | 2 | VoIP语音通话音频会话场景。 |
 
 ## AudioSessionStateChangeHint20+
-
-PhonePC/2in1TabletTVWearable
 
 枚举用于音频会话状态变更提示。
 
@@ -670,10 +649,10 @@ PhonePC/2in1TabletTVWearable
 | AUDIO\_SESSION\_STATE\_CHANGE\_HINT\_UNDUCK | 5 | 提示音频会话躲避结束，恢复音量播放。  如果已启用[enableMuteSuggestionWhenMixWithOthers](arkts-apis-audio-audiosessionmanager.md#enablemutesuggestionwhenmixwithothers23)，此时可取消静音。 |
 | AUDIO\_SESSION\_STATE\_CHANGE\_HINT\_MUTE\_SUGGESTION23+ | 6 | 静音播放建议。  当其他应用程序开始播放不可混音的音频时，应用程序可以自行决定是否静音。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | AUDIO\_SESSION\_STATE\_CHANGE\_HINT\_UNMUTE\_SUGGESTION23+ | 7 | 取消静音播放建议。  当其他应用程序不可混音的音频已结束，该应用程序可自行决定是否取消静音。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| AUDIO\_SESSION\_STATE\_CHANGE\_HINT\_MUTE24+ | 8 | 提示音频会话静音。  该提示仅在以下条件满足后才会收到：通过接口[setAudioSessionBehavior](arkts-apis-audio-audiosessionmanager.md#setaudiosessionbehavior24)设置参数[AudioSessionBehaviorFlags](arkts-apis-audio-e.md#audiosessionbehaviorflags24).MUTE\_WHEN\_INTERRUPTED，并已调用[setAudioSessionScene](arkts-apis-audio-audiosessionmanager.md#setaudiosessionscene20)，且音频会话已激活。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| AUDIO\_SESSION\_STATE\_CHANGE\_HINT\_UNMUTE24+ | 9 | 提示音频会话解除静音，恢复播放。  该提示仅在以下条件满足后才会收到：通过接口[setAudioSessionBehavior](arkts-apis-audio-audiosessionmanager.md#setaudiosessionbehavior24)设置参数[AudioSessionBehaviorFlags](arkts-apis-audio-e.md#audiosessionbehaviorflags24).MUTE\_WHEN\_INTERRUPTED，并已调用[setAudioSessionScene](arkts-apis-audio-audiosessionmanager.md#setaudiosessionscene20)，且音频会话已激活。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## AudioDataCallbackResult12+
-
-PhonePC/2in1TabletTVWearable
 
 表示音频数据回调结果的枚举。
 
@@ -686,11 +665,9 @@ PhonePC/2in1TabletTVWearable
 
 ## ContentType(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 表示音频内容类型的枚举。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 10开始废弃，建议使用[StreamUsage](arkts-apis-audio-e.md#streamusage)替代。
 
@@ -707,11 +684,9 @@ PhonePC/2in1TabletTVWearable
 
 ## ActiveDeviceType(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 表示活跃设备类型的枚举。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[CommunicationDeviceType](arkts-apis-audio-e.md#communicationdevicetype9)替代。
 
@@ -724,11 +699,9 @@ PhonePC/2in1TabletTVWearable
 
 ## InterruptActionType(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 表示中断事件返回类型的枚举。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[InterruptType](arkts-apis-audio-e.md#interrupttype)替代。
 
@@ -741,8 +714,6 @@ PhonePC/2in1TabletTVWearable
 
 ## AudioLoopbackMode20+
 
-PhonePC/2in1TabletTVWearable
-
 表示返听模式的枚举。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
@@ -753,22 +724,18 @@ PhonePC/2in1TabletTVWearable
 
 ## AudioLoopbackStatus20+
 
-PhonePC/2in1TabletTVWearable
-
 表示返听状态的枚举。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| UNAVAILABLE\_DEVICE | -2 | 表示返听由于输入\输出设备而不可用（如出声设备变更）。 |
+| UNAVAILABLE\_DEVICE | -2 | 表示返听由于输入/输出设备而不可用（如出声设备变更）。 |
 | UNAVAILABLE\_SCENE | -1 | 表示返听由于音频场景而不可用（如音频焦点、低时延管控）。 |
 | AVAILABLE\_IDLE | 0 | 表示返听可用。 |
 | AVAILABLE\_RUNNING | 1 | 表示返听运行中。 |
 
 ## AudioLoopbackReverbPreset21+
-
-PhonePC/2in1TabletTVWearable
 
 表示返听混响模式的枚举。
 
@@ -783,8 +750,6 @@ PhonePC/2in1TabletTVWearable
 
 ## AudioLoopbackEqualizerPreset21+
 
-PhonePC/2in1TabletTVWearable
-
 表示返听均衡器类型的枚举。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
@@ -794,3 +759,17 @@ PhonePC/2in1TabletTVWearable
 | FLAT | 1 | 保持原始声音，不进行均衡调节。 |
 | FULL | 2 | 使人声更饱满（默认的均衡器类型）。 |
 | BRIGHT | 3 | 使人声更明亮。 |
+
+## AudioSessionBehaviorFlags24+
+
+表示音频会话行为的枚举。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Audio.Core
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| DEFAULT\_BEHAVIOR | 0x00000000 | 默认行为，用于清空音频会话行为设置。 |
+| MUTE\_WHEN\_INTERRUPTED | 0x00000002 | 当系统需要停止或暂停音频流时，执行强制静音替代。  调用[setAudioSessionBehavior](arkts-apis-audio-audiosessionmanager.md#setaudiosessionbehavior24)接口配置该行为时，必须同步调用[setAudioSessionScene](arkts-apis-audio-audiosessionmanager.md#setaudiosessionscene20)接口，否则配置将无法生效。  在音频会话场景下，当音频流静音或恢复时，应用将分别收到[AudioSessionStateChangeHint](arkts-apis-audio-e.md#audiosessionstatechangehint20).AUDIO\_SESSION\_STATE\_CHANGE\_HINT\_MUTE与[AudioSessionStateChangeHint](arkts-apis-audio-e.md#audiosessionstatechangehint20).AUDIO\_SESSION\_STATE\_CHANGE\_HINT\_UNMUTE的通知。  在AudioRenderer和AudioCapturer场景下，当音频流静音或恢复时，应用将分别收到[InterruptHint](arkts-apis-audio-e.md#interrupthint).INTERRUPT\_HINT\_MUTE与[InterruptHint](arkts-apis-audio-e.md#interrupthint).INTERRUPT\_HINT\_UNMUTE的通知。  **注意：** 该标志不能与PAUSE\_WHEN\_INTERRUPTED共存，若同时设置，仅PAUSE\_WHEN\_INTERRUPTED生效。 |
+| PAUSE\_WHEN\_INTERRUPTED | 0x00000004 | 当系统需要停止音频流时，执行暂停替代。  调用[setAudioSessionBehavior](arkts-apis-audio-audiosessionmanager.md#setaudiosessionbehavior24)接口配置该行为时，必须同步调用[setAudioSessionScene](arkts-apis-audio-audiosessionmanager.md#setaudiosessionscene20)接口，否则配置将无法生效。  在音频会话场景下，当音频流暂停或恢复时，应用将分别收到[AudioSessionStateChangeHint](arkts-apis-audio-e.md#audiosessionstatechangehint20).AUDIO\_SESSION\_STATE\_CHANGE\_HINT\_PAUSE与[AudioSessionStateChangeHint](arkts-apis-audio-e.md#audiosessionstatechangehint20).AUDIO\_SESSION\_STATE\_CHANGE\_HINT\_RESUME的通知。  在AudioRenderer和AudioCapturer场景下，当音频流暂停或恢复时，应用将分别收到[InterruptHint](arkts-apis-audio-e.md#interrupthint).INTERRUPT\_HINT\_PAUSE与[InterruptHint](arkts-apis-audio-e.md#interrupthint).INTERRUPT\_HINT\_RESUME的通知。  **注意：** 该标志不能与MUTE\_WHEN\_INTERRUPTED共存，若同时设置，仅该标志生效。  **起始版本：** 26.0.0 |

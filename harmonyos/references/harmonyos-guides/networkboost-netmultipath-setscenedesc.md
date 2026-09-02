@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-
 title: 业务场景设置
 breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务） > 连接迁移（多网并发） > 业务场景设置
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:56+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e4b3c370b2f3f70ddf414cb032bef55fdda3741d641a0337c49a96f3bd4c7ff2
+scraped_at: 2026-09-02T14:50:06+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:afd6e7e1dfcc552ba584428534f15a02efb34f2760dc4be5b73710d3a3e3a4d3
 ---
 
 ## 场景介绍
@@ -24,20 +24,21 @@ content_hash: sha256:e4b3c370b2f3f70ddf414cb032bef55fdda3741d641a0337c49a96f3bd4
 
 1. 导入Network Boost Kit模块。
 
-   ```
-   1. import { netBoost } from '@kit.NetworkBoostKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { netBoost } from '@kit.NetworkBoostKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 设置业务场景。
 
-   ```
-   1. try {
-   2. let sceneDesc : netBoost.SceneDesc = {
-   3. scene : 'realtimeVoice',
-   4. sceneEvent : netBoost.SceneEvent.SCENE_EVENT_ENTER
-   5. }
-   6. netBoost.setSceneDesc(sceneDesc);
-   7. } catch (err) {
-   8. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-   9. }
+   ```typescript
+   try {
+     let sceneDesc : netBoost.SceneDesc = {
+       // scene: 'realtimeVoice' 表示实时语音业务场景，可通过业务需求配置; sceneEvent: SCENE_EVENT_ENTER 表示进入场景事件
+       scene : 'realtimeVoice',
+       sceneEvent : netBoost.SceneEvent.SCENE_EVENT_ENTER
+     }
+     netBoost.setSceneDesc(sceneDesc);
+   } catch (err) {
+     console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+   }
    ```

@@ -3,16 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-k
 title: xeg_vulkan_rt_visible_mask.h
 breadcrumb: API参考 > 图形 > XEngine Kit（GPU加速引擎服务） > C API > 头文件和结构体 > 头文件 > xeg_vulkan_rt_visible_mask.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1601608c259aa08e6b22263747dc25a8d513aeaf73df78c9cf44404ef6c1eb17
+scraped_at: 2026-09-02T15:02:48+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:576dec4ef7985b4c77fad779828b69d8e7620d379d7a320e182bee2f0777fd90
 ---
 
 ## 概述
 
-PhonePC/2in1TabletTV
-
-XEngine RT VisibleMask特性接口。使用此头文件中的接口前需要通过[HMS\_XEG\_EnumerateDeviceExtensionProperties](xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询[XEG\_RT\_SHADOW\_AO\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_rt_shadow_ao_extension_name)扩展可用。
+XEngine Ray-Traced VisibleMask（光线追踪阴影和环境光遮蔽）特性接口。使用此头文件中的接口前需要通过[HMS\_XEG\_EnumerateDeviceExtensionProperties](xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询[XEG\_RT\_SHADOW\_AO\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_rt_shadow_ao_extension_name)扩展可用。
 
 **引用文件**：<xengine/xeg\_vulkan\_rt\_visible\_mask.h>
 
@@ -26,11 +24,7 @@ XEngine RT VisibleMask特性接口。使用此头文件中的接口前需要通�
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 结构体
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -41,8 +35,6 @@ PhonePC/2in1TabletTV
 | struct [XEG\_RTShadowAODescription](xengine-kit-xeg-rtshadowaodescription.md) | 此结构体描述光线追踪阴影和环境光遮蔽算法渲染命令的输入信息。 |
 
 ### 类型定义
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -55,16 +47,12 @@ PhonePC/2in1TabletTV
 
 ### 枚举
 
-PhonePC/2in1TabletTV
-
 | 名称 | 描述 |
 | --- | --- |
 | [XEG\_DenoiseQualityMode](xengine-kit-xengine.md#xeg_denoisequalitymode) { XEG\_DENOISE\_QUALITY\_MODE\_NONE = 0, XEG\_DENOISE\_QUALITY\_MODE\_QUALITY = 1, XEG\_DENOISE\_QUALITY\_MODE\_BALANCED = 2, XEG\_DENOISE\_QUALITY\_MODE\_PERFORMANCES = 3 } | 去噪质量模式枚举。 |
 | [XEG\_TraversalMode](xengine-kit-xengine.md#xeg_traversalmode) { XEG\_TRAVERSAL\_MODE\_DEFAULT = 0, XEG\_TRAVERSAL\_MODE\_PERFORMANCES = 1 } | 遍历模式枚举。 |
 
 ### 函数
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: arm64，armv7，x86_64 三种架构的适用范围
 breadcrumb: FAQ > DevEco Studio > 编译构建 > arm64，armv7，x86_64 三种架构的适用范围
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:26+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:15+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:cb270d1d96ce794653726eaf75405a02e32f1dbab9176b0cefb606cf22dfab1b
 ---
 

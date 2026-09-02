@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-positionin
 title: 位置定位
 breadcrumb: 最佳实践 > 应用服务 > 位置定位
 category: best-practices
-scraped_at: 2026-04-29T14:11:47+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:94b116bad883e23f799abc06a94bbab3b9502b5087c54ceeffbf35cfb1ee28d6
+scraped_at: 2026-09-02T15:03:18+08:00
+doc_updated_at: 2026-05-30
+content_hash: sha256:a7ff9860d6eb6e37081f8ed6c19f65812dbdea7787f1f6f17054b86324b5327c
 ---
 
 ## 概述
 
-在实际应用开发过程中，经常需要用到移动终端设备的位置信息，比如查看所在城市天气、出行打车、旅行导航以及观察运动轨迹等。关于位置定位，位置服务提供了两种[定位方式](../harmonyos-guides/location-kit-intro.md#section884410581151)，分别为GNSS定位和网络定位，如下表所示：
+在实际应用开发过程中，经常需要用到移动终端设备的位置信息，比如查看所在城市天气、出行打车、旅行导航以及观察运动轨迹等。关于位置定位，位置服务提供了两种定位方式，分别为GNSS定位和网络定位，如下表所示：
 
 **表1** 定位方式介绍
 
@@ -36,48 +36,42 @@ content_hash: sha256:94b116bad883e23f799abc06a94bbab3b9502b5087c54ceeffbf35cfb1e
 
 **开发步骤**
 
-1. 申请定位权限，具体内容可参考[申请位置权限开发指导](../harmonyos-guides/location-permission-guidelines.md)。
+1. 申请定位权限，具体内容可参考[申请位置权限开发指导](../harmonyos-guides/location-permission-guidelines.md)或[应用权限申请](bpta-permission-application.md)。
 2. 实例化位置信息请求对象，确认当前定位策略。以实例化SingleLocationRequest对象为例，将其定位方式优先级设置为快速获取位置优先，定位超时时间设置为10秒，具体代码如下：
 
+   ```typescript
+   let request: geoLocationManager.SingleLocationRequest = {
+     locatingPriority: 0x502,
+     locatingTimeoutMs: 10000
+   };
    ```
-   1. let request: geoLocationManager.SingleLocationRequest = {
-   2. locatingPriority: 0x502,
-   3. locatingTimeoutMs: 10000
-   4. };
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/location-service/blob/master/entry/src/main/ets/pages/Index.ets#L101-L104)
 3. 根据定位策略，调用getCurrentLocation()接口获取当前位置信息。
 
+   ```typescript
+   geoLocationManager.getCurrentLocation(request).then((location: geoLocationManager.Location) => {
+     // ...
+   }).catch((err: BusinessError) => {
+     hilog.error(0x0000, TAG, `getCurrentLocationPosition failed, code: ${err.code}, message: ${err.message}`);
+     // ...
+   });
    ```
-   1. geoLocationManager.getCurrentLocation(request).then((location: geoLocationManager.Location) => {
-   2. // ...
-   3. }).catch((err: BusinessError) => {
-   4. hilog.error(0x0000, TAG, `getCurrentLocationPosition failed, code: ${err.code}, message: ${err.message}`);
-   5. // ...
-   6. });
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/location-service/blob/master/entry/src/main/ets/pages/Index.ets#L107-L119)
 4. 调用[getAddressesFromLocation()](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagergetaddressesfromlocation)接口进行逆地理编码转化，将位置坐标信息转换为对应的地理位置描述。
 
+   ```typescript
+   geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest, async (err, data) => {
+     if (data) {
+       this.address = data[0]?.placeName || '';
+       // ...
+     } else {
+       hilog.error(0x0000, TAG, `getAddressesFromLocation failed, code: ${err.code}, message: ${err.message}`);
+       // ...
+     }
+   });
    ```
-   1. geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest, async (err, data) => {
-   2. if (data) {
-   3. this.address = data[0]?.placeName || '';
-   4. // ...
-   5. } else {
-   6. hilog.error(0x0000, TAG, `getAddressesFromLocation failed, code: ${err.code}, message: ${err.message}`);
-   7. // ...
-   8. }
-   9. });
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/location-service/blob/master/entry/src/main/ets/pages/Index.ets#L216-L235)
 5. 运行效果如下图所示
 
    **图1** 获取当前位置信息效果展示  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/1gPcp46SSGKkAmvLVHgVAA/zh-cn_image_0000002193852028.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/-0mAX9nASrCjwHXHeZJFqA/zh-cn_image_0000002193852028.png "点击放大")
 
 ## 实时位置定位
 
@@ -89,56 +83,48 @@ content_hash: sha256:94b116bad883e23f799abc06a94bbab3b9502b5087c54ceeffbf35cfb1e
 
 **开发步骤**
 
-1. 申请定位权限，具体内容可参考[申请位置权限开发指导](../harmonyos-guides/location-permission-guidelines.md)。
+1. 申请定位权限，具体内容可参考[申请位置权限开发指导](../harmonyos-guides/location-permission-guidelines.md)或[应用权限申请](bpta-permission-application.md)。
 2. 实例化位置信息请求对象，确认持续定位策略。以实例化ContinuousLocationRequest为例，将定位场景类型设置为导航场景，位置信息上报时间间隔设置为1秒，具体代码如下：
 
+   ```typescript
+   let request: geoLocationManager.ContinuousLocationRequest = {
+     interval: 1,
+     locationScenario: 0x401
+   };
    ```
-   1. let request: geoLocationManager.ContinuousLocationRequest = {
-   2. interval: 1,
-   3. locationScenario: 0x401
-   4. };
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/location-service/blob/master/entry/src/main/ets/pages/Index.ets#L129-L132)
 3. 根据定位策略，调用on('locationChange')开启位置变化订阅，并发起定位请求，持续获取当前位置信息。
 
+   ```typescript
+   geoLocationManager.on('locationChange', request, this.locationChange);
    ```
-   1. geoLocationManager.on('locationChange', request, this.locationChange);
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/location-service/blob/master/entry/src/main/ets/pages/Index.ets#L136-L136)
 4. 在on('locationChange')的回调函数中，调用[getAddressesFromLocation()](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagergetaddressesfromlocation)接口进行逆地理编码转化，将坐标信息转换为对应的地理位置描述。
 
+   ```typescript
+   geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest, async (err, data) => {
+     if (data) {
+       this.address = data[0]?.placeName || '';
+       // ...
+     } else {
+       hilog.error(0x0000, TAG, `getAddressesFromLocation failed, code: ${err.code}, message: ${err.message}`);
+       // ...
+     }
+   });
    ```
-   1. geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest, async (err, data) => {
-   2. if (data) {
-   3. this.address = data[0]?.placeName || '';
-   4. // ...
-   5. } else {
-   6. hilog.error(0x0000, TAG, `getAddressesFromLocation failed, code: ${err.code}, message: ${err.message}`);
-   7. // ...
-   8. }
-   9. });
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/location-service/blob/master/entry/src/main/ets/pages/Index.ets#L216-L235)
 5. 在不需要获取位置信息时，及时关闭位置变化订阅，并删除对应的定位请求，减少设备功耗。
 
+   ```typescript
+   try {
+     geoLocationManager.off('locationChange', this.locationChange);
+   } catch (err) {
+     hilog.error(0x0000, TAG, `offLocationChange failed, code: ${err.code}, message: ${err.message}`);
+   }
    ```
-   1. try {
-   2. geoLocationManager.off('locationChange', this.locationChange);
-   3. } catch (err) {
-   4. hilog.error(0x0000, TAG, `offLocationChange failed, code: ${err.code}, message: ${err.message}`);
-   5. }
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/location-service/blob/master/entry/src/main/ets/pages/Index.ets#L163-L167)
 6. 运行效果如下图所示
 
    **图2** 持续获取实时位置信息效果展示  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/PhAhypwrRDSXt55e6E5R_Q/zh-cn_image_0000002194011616.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/Cc4fI1JKQ3CjdnQVslP2BA/zh-cn_image_0000002194011616.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/he6uBgs8QcmNLjBeFTmfqw/zh-cn_image_0000002229451909.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/zzV0xm1iTeatEEZsxhQCnQ/zh-cn_image_0000002229451909.png)
 
 ## 应用后台定位
 
@@ -150,155 +136,141 @@ content_hash: sha256:94b116bad883e23f799abc06a94bbab3b9502b5087c54ceeffbf35cfb1e
 
 **开发步骤**
 
-1. 申请后台定位权限，具体内容可参考[申请位置权限开发指导](../harmonyos-guides/location-permission-guidelines.md)。
+1. 申请后台定位权限，具体内容可参考[申请位置权限开发指导](../harmonyos-guides/location-permission-guidelines.md)或[应用权限申请](bpta-permission-application.md)。
 2. 在模块的module.json5文件中，申请长时任务权限，并将长时任务模式设置为定位导航类型。
 
    申请长时任务权限
 
+   ```json
+   {
+     "name": "ohos.permission.KEEP_BACKGROUND_RUNNING",
+     "reason": "$string:running_background",
+     "usedScene": {
+       "abilities": [
+         "EntryAbility"
+       ],
+       "when": "always"
+     }
+   },
    ```
-   1. {
-   2. "name": "ohos.permission.KEEP_BACKGROUND_RUNNING",
-   3. "reason": "$string:running_background",
-   4. "usedScene": {
-   5. "abilities": [
-   6. "EntryAbility"
-   7. ],
-   8. "when": "always"
-   9. }
-   10. },
-   ```
-
-   [module.json5](https://gitcode.com/HarmonyOS_Samples/location-service/blob/master/entry/src/main/module.json5#L93-L102)
 
    设置长时任务模式为定位导航类型
 
+   ```json
+   "abilities": [
+     {
+       // ...
+       "backgroundModes": [
+         "location"
+       ],
+       // ...
+     }
+   ],
    ```
-   1. "abilities": [
-   2. {
-   3. // ...
-   4. "backgroundModes": [
-   5. "location"
-   6. ],
-   7. // ...
-   8. }
-   9. ],
-   ```
-
-   [module.json5](https://gitcode.com/HarmonyOS_Samples/location-service/blob/master/entry/src/main/module.json5#L31-L59)
 3. 开启任务模式为定位导航类型的长时任务，在其回调接口中开启位置变化订阅，并发起定位请求，在应用后台持续获取当前位置信息。
 
    开启长时任务
 
-   ```
-   1. startContinuousTask(): void {
-   2. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-   3. if (!context) {
-   4. return;
-   5. }
-   6. let wantAgentInfo: wantAgent.WantAgentInfo = {
-   7. wants: [
-   8. {
-   9. bundleName: context.abilityInfo.bundleName,
-   10. abilityName: context.abilityInfo.name
-   11. }
-   12. ],
-   13. operationType: wantAgent.OperationType.START_ABILITY,
-   14. requestCode: 1,
-   15. wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
-   16. };
+   ```typescript
+   startContinuousTask(): void {
+     let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+     if (!context) {
+       return;
+     }
+     let wantAgentInfo: wantAgent.WantAgentInfo = {
+       wants: [
+         {
+           bundleName: context.abilityInfo.bundleName,
+           abilityName: context.abilityInfo.name
+         }
+       ],
+       operationType: wantAgent.OperationType.START_ABILITY,
+       requestCode: 1,
+       wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+     };
 
-   18. wantAgent.getWantAgent(wantAgentInfo).then((wantAgentObj) => {
-   19. backgroundTaskManager.startBackgroundRunning(context,
-   20. backgroundTaskManager.BackgroundMode.LOCATION, wantAgentObj).then(() => {
-   21. this.onLocationChange();
-   22. hilog.info(0x0000, TAG, 'startBackgroundRunning succeeded');
-   23. }).catch((err: BusinessError) => {
-   24. hilog.error(0x0000, TAG, `startBackgroundRunning failed, cause:  ${JSON.stringify(err)}`);
-   25. });
-   26. }).catch((err: BusinessError) => {
-   27. hilog.error(0x0000, TAG, `getWantAgent failed, cause:  ${JSON.stringify(err)}`);
-   28. });
-   29. }
+     wantAgent.getWantAgent(wantAgentInfo).then((wantAgentObj) => {
+       backgroundTaskManager.startBackgroundRunning(context,
+         backgroundTaskManager.BackgroundMode.LOCATION, wantAgentObj).then(() => {
+         this.onLocationChange();
+         hilog.info(0x0000, TAG, 'startBackgroundRunning succeeded');
+       }).catch((err: BusinessError) => {
+         hilog.error(0x0000, TAG, `startBackgroundRunning failed, cause:  ${JSON.stringify(err)}`);
+       });
+     }).catch((err: BusinessError) => {
+       hilog.error(0x0000, TAG, `getWantAgent failed, cause:  ${JSON.stringify(err)}`);
+     });
+   }
    ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/location-service/blob/master/entry/src/main/ets/pages/Index.ets#L246-L274)
 
    订阅位置变化情况
 
+   ```typescript
+   onLocationChange(): void {
+     let request: geoLocationManager.ContinuousLocationRequest = {
+       interval: 1,
+       locationScenario: 0x401
+     };
+     try {
+       geoLocationManager.on('locationChange', request, this.locationChange);
+       // ...
+     } catch (err) {
+       hilog.error(0x0000, TAG, `onLocationChange failed, code: ${err.code}, message: ${err.message}`);
+       // ...
+     }
+   }
    ```
-   1. onLocationChange(): void {
-   2. let request: geoLocationManager.ContinuousLocationRequest = {
-   3. interval: 1,
-   4. locationScenario: 0x401
-   5. };
-   6. try {
-   7. geoLocationManager.on('locationChange', request, this.locationChange);
-   8. // ...
-   9. } catch (err) {
-   10. hilog.error(0x0000, TAG, `onLocationChange failed, code: ${err.code}, message: ${err.message}`);
-   11. // ...
-   12. }
-   13. }
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/location-service/blob/master/entry/src/main/ets/pages/Index.ets#L127-L154)
 4. 在位置变化的回调中，调用[getAddressesFromLocation()](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagergetaddressesfromlocation)接口进行逆地理编码转化，将坐标信息转换为对应的地理位置描述。
 
+   ```typescript
+   geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest, async (err, data) => {
+     if (data) {
+       this.address = data[0]?.placeName || '';
+       // ...
+     } else {
+       hilog.error(0x0000, TAG, `getAddressesFromLocation failed, code: ${err.code}, message: ${err.message}`);
+       // ...
+     }
+   });
    ```
-   1. geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest, async (err, data) => {
-   2. if (data) {
-   3. this.address = data[0]?.placeName || '';
-   4. // ...
-   5. } else {
-   6. hilog.error(0x0000, TAG, `getAddressesFromLocation failed, code: ${err.code}, message: ${err.message}`);
-   7. // ...
-   8. }
-   9. });
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/location-service/blob/master/entry/src/main/ets/pages/Index.ets#L216-L235)
 5. 当不需要在应用后台获取位置信息时，及时关闭长时任务和位置变化订阅，并删除对应的定位请求，减少设备功耗。
 
    关闭长时任务
 
+   ```typescript
+   stopContinuousTask(): void {
+     let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+     if (!context) {
+       return;
+     }
+     backgroundTaskManager.stopBackgroundRunning(context).then(() => {
+       if (!this.isOnLocationChange) {
+         this.offLocationChange();
+       }
+       hilog.info(0x0000, TAG, 'stopBackgroundRunning succeeded');
+     }).catch((err: BusinessError) => {
+       hilog.error(0x0000, TAG, `stopBackgroundRunning failed, cause:  ${JSON.stringify(err)}`);
+     });
+   }
    ```
-   1. stopContinuousTask(): void {
-   2. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-   3. if (!context) {
-   4. return;
-   5. }
-   6. backgroundTaskManager.stopBackgroundRunning(context).then(() => {
-   7. if (!this.isOnLocationChange) {
-   8. this.offLocationChange();
-   9. }
-   10. hilog.info(0x0000, TAG, 'stopBackgroundRunning succeeded');
-   11. }).catch((err: BusinessError) => {
-   12. hilog.error(0x0000, TAG, `stopBackgroundRunning failed, cause:  ${JSON.stringify(err)}`);
-   13. });
-   14. }
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/location-service/blob/master/entry/src/main/ets/pages/Index.ets#L281-L294)
 
    关闭位置变化订阅
 
+   ```typescript
+   offLocationChange(): void {
+     try {
+       geoLocationManager.off('locationChange', this.locationChange);
+     } catch (err) {
+       hilog.error(0x0000, TAG, `offLocationChange failed, code: ${err.code}, message: ${err.message}`);
+     }
+   }
    ```
-   1. offLocationChange(): void {
-   2. try {
-   3. geoLocationManager.off('locationChange', this.locationChange);
-   4. } catch (err) {
-   5. hilog.error(0x0000, TAG, `offLocationChange failed, code: ${err.code}, message: ${err.message}`);
-   6. }
-   7. }
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/location-service/blob/master/entry/src/main/ets/pages/Index.ets#L161-L169)
 6. 运行效果如下图所示
 
 **图3** 在应用后台持续获取位置信息效果展示  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/IUVzzdrqTtyjsVoxw7pizA/zh-cn_image_0000002229337413.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/9BIAZhT9S6iLJc8MzhuLow/zh-cn_image_0000002229337413.gif "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/9Uh88wwuRUeNa1KlZw9A-g/zh-cn_image_0000002229451897.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/MOJDRoy-SDGKMa0_st11dA/zh-cn_image_0000002229451897.png)
 
 ## 历史定位获取
 
@@ -310,33 +282,29 @@ content_hash: sha256:94b116bad883e23f799abc06a94bbab3b9502b5087c54ceeffbf35cfb1e
 
 **开发步骤**
 
-1. 申请定位权限，具体内容可参考[申请位置权限开发指导](../harmonyos-guides/location-permission-guidelines.md)。
+1. 申请定位权限，具体内容可参考[申请位置权限开发指导](../harmonyos-guides/location-permission-guidelines.md)或[应用权限申请](bpta-permission-application.md)。
 2. 调用getLastLocation()接口获取系统缓存的最新位置信息。
 
+   ```typescript
+   let location = geoLocationManager.getLastLocation();
    ```
-   1. let location = geoLocationManager.getLastLocation();
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/location-service/blob/master/entry/src/main/ets/pages/Index.ets#L84-L84)
 3. 调用[getAddressesFromLocation()](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagergetaddressesfromlocation)接口进行逆地理编码转化，将坐标信息转换为对应的地理位置描述。
 
+   ```typescript
+   geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest, async (err, data) => {
+     if (data) {
+       this.address = data[0]?.placeName || '';
+       // ...
+     } else {
+       hilog.error(0x0000, TAG, `getAddressesFromLocation failed, code: ${err.code}, message: ${err.message}`);
+       // ...
+     }
+   });
    ```
-   1. geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest, async (err, data) => {
-   2. if (data) {
-   3. this.address = data[0]?.placeName || '';
-   4. // ...
-   5. } else {
-   6. hilog.error(0x0000, TAG, `getAddressesFromLocation failed, code: ${err.code}, message: ${err.message}`);
-   7. // ...
-   8. }
-   9. });
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/location-service/blob/master/entry/src/main/ets/pages/Index.ets#L216-L235)
 4. 运行效果如下图所示
 
    **图4** 获取缓存位置信息效果展示  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/Ge-eBsyWRuWhN7E8gfOSmQ/zh-cn_image_0000002193852040.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/RRxDgf05ScyZBpRT7q4knA/zh-cn_image_0000002193852040.png "点击放大")
 
 ## 常见问题
 

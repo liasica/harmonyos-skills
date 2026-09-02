@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bytecode-obfu
 title: ArkGuard字节码混淆常见问题
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard字节码混淆工具 > ArkGuard字节码混淆常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:26:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a1f97223becaf1c5fce98ba4791ef0f406509e3ecac01c4d8399e0b3b4484c6d
+scraped_at: 2026-09-02T14:59:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:01926f9beca5c3862b56bd669a0026f549a1594a4927cb9607b5f6e282952584
 ---
 
 ## 字节码混淆与源码混淆差异
@@ -18,14 +18,14 @@ content_hash: sha256:a1f97223becaf1c5fce98ba4791ef0f406509e3ecac01c4d8399e0b3b44
 
 ### 混淆选项差异
 
-1. 字节码混淆开关，默认关闭，在[开启混淆功能](bytecode-obfuscation-guide.md#开启混淆步骤)后，需要额外在模块目录下obfuscation-rules.txt文件中配置-enable-bytecode-obfuscation 、-enable-bytecode-obfuscation-debugging。
-2. 字节码混淆，不支持以下混淆项-remove-comments。
+1. 字节码混淆开关默认关闭。在[开启混淆功能](bytecode-obfuscation-guide.md#开启混淆步骤)后，需要在模块目录下的obfuscation-rules.txt文件中配置-enable-bytecode-obfuscation。如需保留调试信息，还需要配置-enable-bytecode-obfuscation-debugging。
+2. 字节码混淆，不支持以下混淆选项-remove-comments。
 
 ### 混淆后文件结构差异
 
 **目录差异**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/4_YfvMHdQ1-rlJCjVl9fsw/zh-cn_image_0000002589243847.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/IhRZJsOfQfy9nms6Zody8Q/zh-cn_image_0000002558764040.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/PW_ZBiI8R12bSrObCRXBFA/zh-cn_image_0000002706833102.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/l0l8-2imT-unwVo0cnuE8A/zh-cn_image_0000002736312211.png)
 
 字节码混淆后，obfuscation目录中多了obf、origin文件夹和config.json文件，具体详见[混淆效果](bytecode-obfuscation-guide.md#查看混淆效果)。
 
@@ -35,62 +35,62 @@ nameCache.json文件：
 
 源码混淆后：
 
-```
-1. {
-2. "entry/src/main/ets/entryability/EntryAbility.ets": {
-3. "IdentifierCache": {
-4. "#UIAbility": "UIAbility",
-5. "#testObject": "i",
-6. "#EntryAbility": "j"
-7. },
-8. "MemberMethodCache": {
-9. "onCreate:6:8": "onCreate",
-10. "onDestroy:10:12": "onDestroy",
-11. "onWindowStageCreate:14:25": "onWindowStageCreate",
-12. "onWindowStageDestroy:27:30": "onWindowStageDestroy",
-13. "onForeground:32:35": "onForeground",
-14. "onBackground:37:40": "onBackground"
-15. },
-16. "obfName": "entry/src/main/ets/entryability/EntryAbility.ets"
-17. },
-18. "compileSdkVersion": "5.0.0.70",
-19. "entryPackageInfo": "entry|1.0.0",
-20. "PropertyCache": {},
-21. "FileNameCache": {
-22. "Hide": "b"
-23. }
-24. }
+```json
+{
+  "entry/src/main/ets/entryability/EntryAbility.ets": {
+    "IdentifierCache": {
+      "#UIAbility": "UIAbility",
+      "#testObject": "i",
+      "#EntryAbility": "j"
+    },
+    "MemberMethodCache": {
+      "onCreate:6:8": "onCreate",
+      "onDestroy:10:12": "onDestroy",
+      "onWindowStageCreate:14:25": "onWindowStageCreate",
+      "onWindowStageDestroy:27:30": "onWindowStageDestroy",
+      "onForeground:32:35": "onForeground",
+      "onBackground:37:40": "onBackground"
+    },
+    "obfName": "entry/src/main/ets/entryability/EntryAbility.ets"
+  },
+  "compileSdkVersion": "5.0.0.70",
+  "entryPackageInfo": "entry|1.0.0",
+  "PropertyCache": {},
+  "FileNameCache": {
+    "Hide": "b"
+  }
+}
 ```
 
 字节码混淆后：
 
-```
-1. {
-2. "entry/src/main/ets/entryability/EntryAbility.ets": {
-3. "IdentifierCache": {
-4. "#EntryAbility": "a",
-5. "#testObject": "c"
-6. },
-7. "MemberMethodCache": {
-8. "EntryAbility:0:0": "a",
-9. "onBackground:33:35": "onBackground",
-10. "onCreate:7:9": "onCreate",
-11. "onDestroy:10:12": "onDestroy",
-12. "onForeground:29:31": "onForeground",
-13. "onWindowStageCreate:14:23": "onWindowStageCreate",
-14. "onWindowStageDestroy:25:27": "onWindowStageDestroy"
-15. },
-16. "obfName": "entry/src/main/ets/entryability/EntryAbility.ets",
-17. "OriSourceFile": "entry|entry|1.0.0|src/main/ets/entryability/EntryAbility.ts",
-18. "ObfSourceFile": "entry|entry|1.0.0|src/main/ets/entryability/EntryAbility.ts"
-19. },
-20. "entryPackageInfo": "entry|1.0.0",
-21. "compileSdkVersion": "5.0.0.70",
-22. "PropertyCache": {},
-23. "FileNameCache": {
-24. "Hide": "b"
-25. }
-26. }
+```json
+{
+  "entry/src/main/ets/entryability/EntryAbility.ets": {
+    "IdentifierCache": {
+      "#EntryAbility": "a",
+      "#testObject": "c"
+    },
+    "MemberMethodCache": {
+      "EntryAbility:0:0": "a",
+      "onBackground:33:35": "onBackground",
+      "onCreate:7:9": "onCreate",
+      "onDestroy:10:12": "onDestroy",
+      "onForeground:29:31": "onForeground",
+      "onWindowStageCreate:14:23": "onWindowStageCreate",
+      "onWindowStageDestroy:25:27": "onWindowStageDestroy"
+    },
+    "obfName": "entry/src/main/ets/entryability/EntryAbility.ets",
+    "OriSourceFile": "entry|entry|1.0.0|src/main/ets/entryability/EntryAbility.ts",
+    "ObfSourceFile": "entry|entry|1.0.0|src/main/ets/entryability/EntryAbility.ts"
+  },
+  "entryPackageInfo": "entry|1.0.0",
+  "compileSdkVersion": "5.0.0.70",
+  "PropertyCache": {},
+  "FileNameCache": {
+    "Hide": "b"
+  }
+}
 ```
 
 1. IdentifierCache中，字节码混淆时差异：
@@ -110,23 +110,23 @@ nameCache.json文件：
 
 源码：
 
-```
-1. @Component
-2. export struct MainPage {
-3. @State messageStr: string = 'Hello World';
+```typescript
+@Component
+export struct MainPage {
+  @State messageStr: string = 'Hello World';
 
-5. build() {
-6. }
-7. }
+  build() {
+  }
+}
 ```
 
 中间文件：
 
-```
-1. this.__messageStr = new ObservedPropertySimplePU('Hello World', this, "messageStr");
+```abc
+this.__messageStr = new ObservedPropertySimplePU('Hello World', this, "messageStr");
 ```
 
-在中间文件转换过程中，message以字面量形式进行了绑定；此时，存在messageStr这个属性被混淆了，但是这个方法的字符串参数没有混淆，导致UI失效。
+在中间文件转换过程中，messageStr以字面量形式进行了绑定；此时，存在messageStr这个属性被混淆了，但是这个方法的字符串参数没有混淆，导致UI失效的情况。
 
 **解决办法**：收集struct里所有成员，加入白名单，不参与混淆。目前由于字节码混淆不提供UI组件混淆能力，系统会自动识别添加到白名单，不需要开发者配置。
 
@@ -134,49 +134,49 @@ nameCache.json文件：
 
 源码：
 
-```
-1. // Sample.ets
-2. import { Type } from '@kit.ArkUI';
+```typescript
+// Sample.ets
+import { Type } from '@kit.ArkUI';
 
-4. // 数据中心
-5. @ObservedV2
-6. class SampleChild {
-7. @Trace public p123: number = 0;
-8. public p2: number = 10;
-9. }
+// 数据中心
+@ObservedV2
+class SampleChild {
+  @Trace public p123: number = 0;
+  public p2: number = 10;
+}
 
-11. @ObservedV2
-12. export class Sample {
-13. // 对于复杂对象需要@Type修饰，确保序列化成功
-14. @Type(SampleChild)
-15. @Trace public f123: SampleChild = new SampleChild();
-16. }
+@ObservedV2
+export class Sample {
+  // 对于复杂对象需要@Type修饰，确保序列化成功
+  @Type(SampleChild)
+  @Trace public f123: SampleChild = new SampleChild();
+}
 
-18. @ObservedV2
-19. class Info {
-20. @Trace public sample: Sample = new Sample();
-21. }
+@ObservedV2
+class Info {
+  @Trace public sample: Sample = new Sample();
+}
 ```
 
 字节码文件：
 
-```
-1. tryldglobalbyname 0x136, Trace
-2. sta v2
-3. lda v0
-4. ldobjbyname 0x137, prototype
-5. sta v3
-6. lda.str sample
-7. sta v4
-8. lda v2
-9. callargs2 0x2c, v3, v4
-10. lda v0
-11. ldobjbyname 0x139, prototype
-12. sta v2
-13. lda.str sample
-14. sta v3
-15. lda v1
-16. callargs2 0x2e, v2, v3
+```abc
+tryldglobalbyname 0x136, Trace
+sta v2
+lda v0
+ldobjbyname 0x137, prototype
+sta v3
+lda.str sample
+sta v4
+lda v2
+callargs2 0x2c, v3, v4
+lda v0
+ldobjbyname 0x139, prototype
+sta v2
+lda.str sample
+sta v3
+lda v1
+callargs2 0x2e, v2, v3
 ```
 
 字节码层面存在一个global对象Trace，再通过字符串sample绑定属性。
@@ -210,9 +210,9 @@ nameCache.json文件：
 
 ## 常规配置问题处理
 
-### 开启enable-bytecode-obfuscation-debugging，没有生成pa文件如何处理
+### 开启-enable-bytecode-obfuscation-debugging，没有生成pa文件如何处理
 
-首先确保Build Mode设置为release，查看根目录下的build-profile.json5中，设置 "compatibleSdkVersionStage": "beta3"，再检查每个module中obfuscation-rules.txt文件里，开启字节码。
+首先确保Build Mode设置为release，查看根目录下的build-profile.json5，设置 "compatibleSdkVersionStage": "beta3"，再检查每个module中obfuscation-rules.txt文件里，开启字节码混淆选项。
 
 ### 混淆如何查看混淆效果
 
@@ -221,9 +221,9 @@ nameCache.json文件：
 * 混淆后的文件目录：build/default/[...]/release/obfuscation/obf。
 * 混淆名称映射表及系统API白名单目录：build/default/[...]/release/obfuscation。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/Uj1-ZKu8SBG28dCs_MBM6w/zh-cn_image_0000002558604382.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/4oe-gUe7RsmSdr6zakkupQ/zh-cn_image_0000002706673164.png)
 
-* 名称映射表文件：nameCache.json，该文件记录了源码名称混淆的映射关系。
+* 名称映射表文件：nameCache.json，该文件记录了字节码名称混淆的映射关系。
 * 系统API白名单文件：systemApiCache.json，该文件记录了SDK中的接口与属性名称，与其重名的源码不会被混淆。
 
 ## 编译报错处理
@@ -236,26 +236,26 @@ Error message: ArkTSCompilerError: ArkTS:ERROR Failed to execute ByteCode Obfusc
 
 Error message: [Class]get different name for method:&entry/src/main/ets/pages/XXXX&.#~@0>#setController^1.
 
-```
-1. // 代码1
-2. @CustomDialog
-3. export default struct TmsDialog {
-4. controller?: CustomDialogController
-5. dialogController:CustomDialogController
+```typescript
+// 代码1
+@CustomDialog
+export default struct TmsDialog {
+  controller?: CustomDialogController
+  dialogController:CustomDialogController
 
-7. build() {
-8. }
-9. }
+  build() {
+  }
+}
 
-11. // 代码2
-12. @CustomDialog
-13. struct Index{
-14. controller?: CustomDialogController
-15. dialogController?:CustomDialogController
+// 代码2
+@CustomDialog
+struct Index{
+  controller?: CustomDialogController
+  dialogController?:CustomDialogController
 
-17. build() {
-18. }
-19. }
+  build() {
+  }
+}
 ```
 
 **问题原因**：
@@ -264,15 +264,15 @@ Error message: [Class]get different name for method:&entry/src/main/ets/pages/XX
 
 **解决方案**：
 
-```
-1. @CustomDialog
-2. export default struct TmsDialog {
-3. controller?: CustomDialogController
-4. dialogController:CustomDialogController|null = null;  // 修改此处的定义声明方式
+```typescript
+@CustomDialog
+export default struct TmsDialog {
+  controller?: CustomDialogController
+  dialogController:CustomDialogController|null = null;  // 修改此处的定义声明方式
 
-6. build() {
-7. }
-8. }
+  build() {
+  }
+}
 ```
 
 示例代码1中，在运行时，是无法正常弹出dialogController的，只需要在定义时改为解决方案中的代码，就可以正常弹出dialogController，同时字节码混淆功能正常；
@@ -287,27 +287,27 @@ Error message: [Class]get different name for method:&entry/src/main/ets/pages/XX
 
 **案例一：报错内容为 Cannot read property 'xxx' of undefined**
 
+```typescript
+// 示例JSON文件结构（ImportJson.json）：
+/*
+{
+  "jsonObj": {
+    "jsonProperty": "value"
+  }
+}
+ */
+
+// 混淆前
+import jsonData from './ImportJson.json';
+
+let jsonProp = jsonData.jsonObj.jsonProperty;
 ```
-1. // 示例JSON文件结构（ImportJson.json）：
-2. /*
-3. {
-4. "jsonObj": {
-5. "jsonProperty": "value"
-6. }
-7. }
-8. */
 
-10. // 混淆前
-11. import jsonData from './ImportJson.json';
+```typescript
+// 混淆后
+import jsonData from "./ImportJson.json";
 
-13. let jsonProp = jsonData.jsonObj.jsonProperty;
-```
-
-```
-1. // 混淆后
-2. import jsonData from "./test.json";
-
-4. let jsonProp = jsonData.i.j;
+let jsonProp = jsonData.i.j;
 ```
 
 开启属性混淆后，"jsonProperty"被混淆成随机字符"j"，但json文件中为原始名称，从而导致值为undefined。
@@ -328,30 +328,30 @@ Error message: [Class]get different name for method:&entry/src/main/ets/pages/XX
 
 parameters的类型为Record<string, Object>，在开启属性混淆后，parameters对象中的属性linkSource被混淆，进而导致功能异常。示例如下：
 
-```
-1. // 混淆前
-2. import { Want } from '@kit.AbilityKit';
-3. // ...
-4. let petalMapWant: Want = {
-5. bundleName: 'com.example.myapplication',
-6. uri: 'maps://',
-7. parameters: {
-8. linkSource: 'com.other.app'
-9. }
-10. }
+```typescript
+// 混淆前
+import { Want } from '@kit.AbilityKit';
+  // ...
+  let petalMapWant: Want = {
+    bundleName: 'com.example.myapplication',
+    uri: 'maps://',
+    parameters: {
+      linkSource: 'com.other.app'
+    }
+  }
 ```
 
-```
-1. // 混淆后
-2. import type Want from "@ohos:app.ability.Want";
+```typescript
+// 混淆后
+import type Want from "@ohos:app.ability.Want";
 
-4. let petalMapWant: Want = {
-5. bundleName: 'com.example.myapplication',
-6. uri: 'maps://',
-7. parameters: {
-8. i: 'com.other.app'
-9. }
-10. };
+let petalMapWant: Want = {
+    bundleName: 'com.example.myapplication',
+    uri: 'maps://',
+    parameters: {
+        i: 'com.other.app'
+    }
+};
 ```
 
 **问题原因**：
@@ -362,9 +362,9 @@ parameters的类型为Record<string, Object>，在开启属性混淆后，parame
 
 将混淆后会出现问题的属性名配置到属性白名单中，示例如下：
 
-```
-1. -keep-property-name
-2. linkSource
+```txt
+-keep-property-name
+linkSource
 ```
 
 **案例四：使用@Type和@Trace组合修饰的装饰器属性，混淆后，功能不正常**
@@ -373,41 +373,41 @@ parameters的类型为Record<string, Object>，在开启属性混淆后，parame
 
 使用@Type和@Trace组合修饰的装饰器属性，可以正常混淆，但混淆后，功能异常。
 
+```typescript
+// SampleChild.ets
+import { Type } from '@kit.ArkUI';
+
+@ObservedV2
+class SampleChild {
+  @Trace public p123: number = 0;
+  public p2: number = 10;
+}
+
+@ObservedV2
+export class Sample {
+  // 对于复杂对象需要@Type修饰，确保序列化成功
+  @Type(SampleChild)
+  @Trace public f123: SampleChild = new SampleChild();
+}
 ```
-1. // Sample.ets
-2. import { Type } from '@kit.ArkUI';
 
-4. @ObservedV2
-5. class SampleChild {
-6. @Trace public p123: number = 0;
-7. public p2: number = 10;
-8. }
+```typescript
+// Call the API
+// CallDecorator.ets
+import { PersistenceV2 } from '@kit.ArkUI';
+import { Sample } from './SampleChild';
 
-10. @ObservedV2
-11. export class Sample {
-12. // 对于复杂对象需要@Type修饰，确保序列化成功
-13. @Type(SampleChild)
-14. @Trace public f123: SampleChild = new SampleChild();
-15. }
-```
+@Entry
+@ComponentV2
+export struct Page {
+  prop: Sample = PersistenceV2.connect(Sample, () => new Sample())!;
 
-```
-1. // Call the API
-2. // CallDecorator.ets
-3. import { PersistenceV2 } from '@kit.ArkUI';
-4. import { Sample } from './SampleChild';
-
-6. @Entry
-7. @ComponentV2
-8. export struct Page {
-9. prop: Sample = PersistenceV2.connect(Sample, () => new Sample())!;
-
-11. build() {
-12. Column() {
-13. Text(`Page1 add 1 to prop.p1: ${this.prop.f123.p123}`)
-14. }
-15. }
-16. }
+  build() {
+    Column() {
+      Text(`Page1 add 1 to prop.f123.p123: ${this.prop.f123.p123}`)
+    }
+  }
+}
 ```
 
 混淆后，p123，f123都被正常替换了，但处理Trace，Type装饰器属性时，p123，f123都被识别为字符串，不参与混淆，导致调用失败。
@@ -420,10 +420,10 @@ parameters的类型为Record<string, Object>，在开启属性混淆后，parame
 
 使用-keep-property-name选项，将未直接导出的类型内的属性配置到属性白名单中。示例如下：
 
-```
-1. -keep-property-name
-2. f123
-3. p123
+```txt
+-keep-property-name
+f123
+p123
 ```
 
 **案例五：同时开启-enable-property-obfuscation和-keep选项可能会出现的问题**
@@ -432,74 +432,74 @@ parameters的类型为Record<string, Object>，在开启属性混淆后，parame
 
 使用如下混淆配置：
 
-```
-1. -enable-property-obfuscation
-2. -keep
-3. ./file1.ts
-```
-
-并且在file2.ts中导入file1.ts的接口。此时，接口中有属性的类型为对象类型，该对象类型的属性在file1.ts中被保留，在file2.ts中被混淆，从而导致调用时引发功能异常。示例如下：
-
-```
-1. // 混淆前
-2. // ExportInterface.ts
-3. export interface MyInfo {
-4. age: number;
-5. address: {
-6. city1: string;
-7. }
-8. }
+```txt
+-enable-property-obfuscation
+-keep
+./ExportInterface.ts
 ```
 
-```
-1. // ExportCompositeInterface.ts
-2. import { MyInfo } from './ExportCompositeInterface';
-3. // ...
-4. const person: MyInfo = {
-5. age: 20,
-6. address: {
-7. city1: 'shanghai'
-8. }
-9. }
+并且在MainPage.ets中导入ExportInterface.ts的接口。此时，接口中有属性的类型为对象类型，该对象类型的属性在ExportInterface.ts中被保留，在MainPage.ets中被混淆，从而导致调用时引发功能异常。示例如下：
+
+```typescript
+// 混淆前
+// ExportInterface.ts
+export interface MyInfo {
+  age: number;
+  address: {
+    city1: string;
+  }
+}
 ```
 
+```typescript
+// MainPage.ets
+import { MyInfo } from './ExportInterface';
+  // ...
+  const person: MyInfo = {
+    age: 20,
+    address: {
+      city1: 'shanghai'
+    }
+  }
 ```
-1. // 混淆后，file1.ts的代码被保留
-2. // file2.ts
-3. import { MyInfo } from './file1';
 
-5. const person: MyInfo = {
-6. age: 20,
-7. address: {
-8. i: "shanghai"
-9. }
-10. }
+```typescript
+// 混淆后，ExportInterface.ts的代码被保留
+// MainPage.ets
+import { MyInfo } from './ExportInterface';
+
+const person: MyInfo = {
+    age: 20,
+    address: {
+        i: "shanghai"
+    }
+}
 ```
 
 **问题原因**:
 
--keep选项保留file1.ts文件时，file1.ts中代码不会被混淆。对于导出属性（如address）所属类型内的属性，不会被自动收集在属性白名单中。因此，该类型内的属性在其他文件中被使用时，会被混淆。
+-keep选项保留ExportInterface.ts文件时，ExportInterface.ts中代码不会被混淆。对于导出属性（如address）所属类型内的属性，不会被自动收集在属性白名单中。因此，该类型内的属性在其他文件中被使用时，会被混淆。
 
 **解决方案**:
 
 **方案一**：使用interface定义该属性的类型，并使用export进行导出，这样该属性会自动被收集到属性白名单中。示例如下：
 
-```
-1. // ExportCompositeInterface.ts
-2. export interface AddressType {
-3. city1: string
-4. }
-5. export interface MyInfo {
-6. age: number;
-7. address: AddressType;
-8. }
+```typescript
+// ExportCompositeInterface.ts
+export interface AddressType {
+  city1: string
+}
+export interface MyInfo {
+  age: number;
+  address: AddressType;
+}
 ```
 
 **方案二**：使用-keep-property-name选项，将未直接导出的类型内的属性配置到属性白名单中。示例如下：
 
-```
-1. -keep-property-name
-2. city1
+```typescript
+-keep-property-name
+city1
 ```
 
 ### 同时开启-enable-export-obfuscation和-enable-toplevel-obfuscation选项可能出现的问题
@@ -514,50 +514,50 @@ parameters的类型为Record<string, Object>，在开启属性混淆后，parame
 
 HSP需要将给其他模块用的方法配置到白名单中。因为主模块里也需要配置相同的白名单，所以推荐将HSP配置了白名单的混淆文件（假设名称为hsp-white-list.txt）添加到依赖它的模块的混淆配置项里，即下图files字段里。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/meCEJzB_SpSV1pl0W2Dlkg/zh-cn_image_0000002558604384.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/v4jRtq9hSPWsXEgLcK-p5w/zh-cn_image_0000002706673166.png)
 
 **案例一：动态导入某个类，类定义的地方被混淆，导入类名时却没有混淆，导致报错**
 
-```
-1. // 混淆前
-2. // ExportUtils.ts
-3. export function add(a: number, b: number): number {
-4. return a + b;
-5. }
-```
-
-```
-1. // main.ts
-2. async function loadAndUseAdd() {
-3. try {
-4. const mathUtils = await import('./ExportUtils');
-5. const result = mathUtils.add(2, 3);
-6. } catch (error) {
-7. console.error('Failure reason:', error);
-8. }
-9. }
-
-11. loadAndUseAdd();
+```typescript
+// 混淆前
+// ExportUtils.ts
+export function add(a: number, b: number): number {
+  return a + b;
+}
 ```
 
-```
-1. // 混淆后
-2. // utils.ts
-3. export function c1(d1: number, e1: number): number {
-4. return d1 + e1;
-5. }
+```typescript
+// MainPage.ets
+async function loadAndUseAdd() {
+    try {
+        const mathUtils = await import('./ExportUtils');
+        const result = mathUtils.add(2, 3);
+    } catch (error) {
+        console.error('Failure reason:', error);
+    }
+}
 
-7. // main.ts
-8. async function i() {
-9. try {
-10. const a1 = await import("@normalized:N&&&entry/src/main/ets/pages/utils&");
-11. const b1 = a1.add(2, 3);
-12. }
-13. catch (z) {
-14. console.error('Failure reason:', z);
-15. }
-16. }
-17. i();
+loadAndUseAdd();
+```
+
+```typescript
+// 混淆后
+// ExportUtils.ts
+export function c1(d1: number, e1: number): number {
+    return d1 + e1;
+}
+
+// MainPage.ets
+async function i() {
+    try {
+        const a1 = await import("@normalized:N&&&entry/src/main/ets/pages/ExportUtils&");
+        const b1 = a1.add(2, 3);
+    }
+    catch (z) {
+        console.error('Failure reason:', z);
+    }
+}
+i();
 ```
 
 函数add在定义时位于顶层作用域，但通过.add访问时被视为属性。由于未开启-enable-property-obfuscation选项，导致add被使用时未进行混淆。
@@ -570,34 +570,34 @@ HSP需要将给其他模块用的方法配置到白名单中。因为主模块�
 
 **案例二：在使用namespace中的方法时，该方法定义的地方被混淆了，但使用的地方却没有被混淆，导致报错**
 
-```
-1. // 混淆前
-2. // ExportNs.ts
-3. export namespace NS {
-4. export function foo() {
-5. console.info(`export NS function foo is called`);
-6. }
-7. }
-```
-
-```
-1. // import.ts
-2. import { NS } from './ExportNs';
-3. // ...
-4. NS.foo();
+```typescript
+// 混淆前
+// ExportNs.ts
+export namespace NS {
+  export function foo() {
+    console.info(`export NS function foo is called`);
+  }
+}
 ```
 
+```typescript
+// MainPage.ets
+import { NS } from './ExportNs';
+  // ...
+  NS.foo();
 ```
-1. // 混淆后
-2. // export.ts
-3. export namespace i {
-4. export function j() {}
-5. }
 
-7. // import.ts
-8. import { i } from './export';
+```typescript
+// 混淆后
+// ExportNs.ts
+export namespace i {
+    export function j() {}
+}
 
-10. i.foo();
+// MainPage.ets
+import { i } from './ExportNs';
+
+i.foo();
 ```
 
 namespace中的foo属于export元素，当通过NS.foo调用时被视为属性。由于未开启-enable-property-obfuscation选项，导致foo在使用时未被混淆。
@@ -609,19 +609,19 @@ namespace中的foo属于export元素，当通过NS.foo调用时被视为属性�
 
 **案例三：使用了declare global，混淆后报语法错误**
 
-```
-1. // ExportInterface.ts
-2. // 混淆前
-3. declare global {
-4. var myAge : string
-5. }
+```typescript
+// ExportInterface.ts
+// 混淆前
+declare global {
+  var myAge : string
+}
 ```
 
-```
-1. // 混淆后
-2. declare a2 {
-3. var b2 : string
-4. }
+```typescript
+// 混淆后
+declare a2 {
+    var b2 : string
+}
 ```
 
 报错内容为SyntaxError: Unexpected token。
@@ -636,62 +636,62 @@ namespace中的foo属于export元素，当通过NS.foo调用时被视为属性�
 
 **问题现象**：
 
-在开启-enable-toplevel-obfuscation属性混淆后，字节码混淆时，混淆正常，运行时报错，错误日志：
+在开启-enable-toplevel-obfuscation选项（顶层作用域名称混淆）后，字节码混淆时，混淆正常，运行时报错，错误日志：
 
+```txt
+Error message: is not callable
+Stacktrace: Cannot get SourceMap info, dump raw stack: at anonymous (ads_service|@hw-ads/ohos-ads-model|1.0.1|src/main/ets/annotations/FieldType.ts:6:1。
 ```
-1. Error message: is not callable
-2. Stacktrace: Cannot get SourceMap info, dump raw stack: at anonymous (ads_service|@hw-ads/ohos-ads-model|1.0.1|src/main/ets/annotations/FieldType.ts:6:1。
-```
 
-```
-1. // oh-package.json5
-2. "dependencies": {
-3. "reflect-metadata": "0.2.1"
-4. }
+```js
+// oh-package.json5
+"dependencies": {
+  "reflect-metadata": "0.2.1"
+}
+  
+// test.ts
+import 'reflect-metadata';
 
-6. // test.ts
-7. import 'reflect-metadata';
-
-9. // 调用代码
-10. export const FIELD_TYPE_KEY = Symbol('fieldType');
-11. export function FieldType(...types: Function[]): PropertyDecorator {
-12. return (target, key) => {
-13. Reflect.defineMetadata(FIELD_TYPE_KEY, types, target, key);
-14. };
-15. }
+// 调用代码
+export const FIELD_TYPE_KEY = Symbol('fieldType');
+export function FieldType(...types: Function[]): PropertyDecorator {
+    return (target, key) => {
+        Reflect.defineMetadata(FIELD_TYPE_KEY, types, target, key);
+    };
+}
 ```
 
 **问题分析**：
 
-在开启-enable-toplevel-obfuscation属性混淆后，Reflect文件中，函数名参与混淆，exporter函数中的字符串"defineMetadata"不参与混淆，导致外部使用Reflect.defineMetadata时，找不到对应函数。
+在开启-enable-toplevel-obfuscation选项（顶层作用域名称混淆）后，Reflect文件中，函数名参与混淆，exporter函数中的字符串"defineMetadata"不参与混淆，导致外部使用Reflect.defineMetadata时，找不到对应函数。
 
 **解决方案**：
 
 使用-keep-global-name选项将defineMetadata配置到白名单中。由于Reflect文件中多次使用exporter，建议直接使用-keep选项。
 
-```
-1. -keep
-2. ../xxx/xxx/xxx/Reflect.ts  // 使用文件的相对路径
+```txt
+-keep
+../xxx/xxx/xxx/Reflect.ts  // 使用文件的相对路径
 ```
 
 ### 未开启-enable-string-property-obfuscation混淆选项，字符串字面量属性名却被混淆，导致字符串字面量属性名的值为undefined
 
-```
-1. // ExportInterface.ts
-2. // 混淆前
-3. const person = {
-4. myAge: 18
-5. }
-6. person["myAge"] = 20;
+```typescript
+// ExportInterface.ts
+// 混淆前
+const person = {
+  myAge: 18
+}
+person["myAge"] = 20;
 ```
 
-```
-1. // file.ts
-2. // 混淆后
-3. const person = {
-4. myAge: 18
-5. }
-6. person["m"] = 20;
+```typescript
+// file.ts
+// 混淆后
+const person = {
+    myAge: 18
+}
+person["m"] = 20;
 ```
 
 **解决方案**：
@@ -706,7 +706,7 @@ namespace中的foo属于export元素，当通过NS.foo调用时被视为属性�
 
 工程的目录结构如下图所示，模块library1的外层还有目录"directory"，开启文件名混淆后，"directory" 被混淆为f12，导致路径找不到。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/i6jqIoMdTrS_H-c_rx_KRQ/zh-cn_image_0000002589323909.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/5RKY_VH2SEOuWeN6wj9dVQ/zh-cn_image_0000002736432257.png)
 
 **解决方案**：
 
@@ -719,10 +719,10 @@ namespace中的foo属于export元素，当通过NS.foo调用时被视为属性�
 
 **解决方案**：使用-keep-file-name选项，将src/main/module.json5文件中，'srcEntry'字段所对应的路径配置到白名单中。
 
-```
-1. -keep-file-name
-2. appability
-3. AppAbility
+```txt
+-keep-file-name
+appability
+AppAbility
 ```
 
 **HAP与HSP依赖相同的本地源码HAR模块，可能会出现的问题。**

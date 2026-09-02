@@ -3,22 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 应用事件打点错误码
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 错误码 > 应用事件打点错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:29+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:4561a66e0f819f465dbb26e7936c79de66e3219e6c0684fe9ef1af653e585dd6
+scraped_at: 2026-09-02T15:02:17+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5ac446eb487909601c7074f15d5021e2628552e64162716fa61bf96ffbe2c5c6
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 11100001 打点功能被关闭
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
-Function disabled. Possible caused by the param disable in ConfigOption is true.
+Function disabled. Possibly caused by the param disable in ConfigOption is true.
 
 **错误描述**
 
@@ -33,17 +31,15 @@ Function disabled. Possible caused by the param disable in ConfigOption is true.
 
 调用配置接口开启打点功能。
 
-```
-1. import { hiAppEvent } from '@kit.PerformanceAnalysisKit';
+```ts
+import { hiAppEvent } from '@kit.PerformanceAnalysisKit';
 
-3. hiAppEvent.configure({
-4. disable: false
-5. });
+hiAppEvent.configure({
+    disable: false
+});
 ```
 
 ## 11101001 非法的事件领域名称
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -68,8 +64,6 @@ Invalid event domain. Possible causes: 1. Contain invalid characters; 2. Length 
 
 ## 11101002 非法的事件名称
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Invalid event name. Possible causes: 1. Contain invalid characters; 2. Length is invalid.
@@ -93,11 +87,9 @@ Invalid event name. Possible causes: 1. Contain invalid characters; 2. Length is
 
 ## 11101003 非法的事件参数数量
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
-Invalid number of event parameters. Possible caused by the number of parameters is over 32.
+Invalid number of event parameters. Possibly caused by the number of parameters is over 32.
 
 **错误描述**
 
@@ -113,8 +105,6 @@ Invalid number of event parameters. Possible caused by the number of parameters 
 
 ## 11101004 非法的事件参数字符串长度
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Invalid string length of the event parameter.
@@ -126,7 +116,7 @@ Invalid string length of the event parameter.
 
 **可能原因**
 
-* 调用write接口传入的事件参数值中的字符串长度超过8\*1024。
+* 调用write接口传入的事件参数值中的字符串长度超过8\*1024个字符。
 * 调用setEventParam接口传入的事件自定义参数值的长度超过1024个字符。
 
 **处理步骤**
@@ -134,8 +124,6 @@ Invalid string length of the event parameter.
 传入合法字符串长度的事件参数值。
 
 ## 11101005 非法的事件参数名称
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -160,8 +148,6 @@ Invalid event parameter name. Possible causes: 1. Contain invalid characters; 2.
 
 ## 11101006 非法的事件参数数组长度
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Invalid array length of the event parameter.
@@ -180,8 +166,6 @@ Invalid array length of the event parameter.
 
 ## 11101007 非法的事件自定义参数数量
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The number of parameter keys exceeds the limit.
@@ -199,8 +183,6 @@ The number of parameter keys exceeds the limit.
 传入合法数量的事件自定义参数。
 
 ## 11102001 非法的观察者名称
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -224,8 +206,6 @@ Invalid watcher name. Possible causes: 1. Contain invalid characters; 2. Length 
 
 ## 11102002 非法的过滤事件领域
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Invalid filtering event domain. Possible causes: 1. Contain invalid characters; 2. Length is invalid.
@@ -248,11 +228,9 @@ Invalid filtering event domain. Possible causes: 1. Contain invalid characters; 
 
 ## 11102003 非法的条数值
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
-Invalid row value. Possible caused by the row value is less than zero.
+Invalid row value. Possibly caused by the row value is less than zero.
 
 **错误描述**
 
@@ -268,11 +246,9 @@ Invalid row value. Possible caused by the row value is less than zero.
 
 ## 11102004 非法的大小值
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
-Invalid size value. Possible caused by the size value is less than zero.
+Invalid size value. Possibly caused by the size value is less than zero.
 
 **错误描述**
 
@@ -288,11 +264,9 @@ Invalid size value. Possible caused by the size value is less than zero.
 
 ## 11102005 非法的超时值
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
-Invalid timeout value. Possible caused by the timeout value is less than zero.
+Invalid timeout value. Possibly caused by the timeout value is less than zero.
 
 **错误描述**
 
@@ -308,11 +282,9 @@ Invalid timeout value. Possible caused by the timeout value is less than zero.
 
 ## 11103001 非法的最大存储配额值
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
-Invalid max storage quota value. Possible caused by incorrectly formatted.
+Invalid max storage quota value. Possibly caused by incorrectly formatted.
 
 **错误描述**
 
@@ -331,11 +303,9 @@ Invalid max storage quota value. Possible caused by incorrectly formatted.
 
 ## 11104001 非法的事件包大小值
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
-Invalid size value. Possible caused by the size value is less than or equal to zero.
+Invalid size value. Possibly caused by the size value is less than or equal to zero.
 
 **错误描述**
 
@@ -350,8 +320,6 @@ Invalid size value. Possible caused by the size value is less than or equal to z
 传入自然数值的事件包大小。
 
 ## 11105001 非法的参数值
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 

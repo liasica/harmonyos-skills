@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-405
 title: Navigation路由，如何快速实现RouterMap注册转为wrapBuilder注册
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > Navigation路由，如何快速实现RouterMap注册转为wrapBuilder注册
+breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Navigation路由，如何快速实现RouterMap注册转为wrapBuilder注册
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:46+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:50+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:1ec55cfaee64b396ef58d81272221948bc52e99e067e30629c9e9ed9c8e11cc3
 ---
 

@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: ArkUI_NodeAttributeType（图类组件相关属性）
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_node.h > ArkUI_NodeAttributeType（图类组件相关属性）
 category: harmonyos-references
-scraped_at: 2026-04-29T13:54:16+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319f3c21
+scraped_at: 2026-09-02T14:51:46+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:21b44f6f7b284bef7c381832d591390680ccf685853d95d3f70ff719dbca8bda
 ---
 
-```
-1. enum ArkUI_NodeAttributeType
+```c
+enum ArkUI_NodeAttributeType
 ```
 
 ## 概述
@@ -24,8 +24,8 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 ## NODE\_IMAGE\_SRC
 
-```
-1. NODE_IMAGE_SRC = MAX_NODE_SCOPE_NUM * ARKUI_NODE_IMAGE = 4000
+```c
+NODE_IMAGE_SRC = MAX_NODE_SCOPE_NUM * ARKUI_NODE_IMAGE = 4000
 ```
 
 [image](ts-basic-components-image.md)组件设置图片地址属性，支持属性设置，属性重置，属性获取接口。
@@ -50,8 +50,8 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 ## NODE\_IMAGE\_OBJECT\_FIT
 
-```
-1. NODE_IMAGE_OBJECT_FIT = 4001
+```c
+NODE_IMAGE_OBJECT_FIT = 4001
 ```
 
 图片填充效果属性，支持属性设置，属性重置，属性获取接口。
@@ -64,18 +64,18 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].i32 | 表示图片填充效果，取[ArkUI\_ObjectFit](capi-native-type-h.md#arkui_objectfit)枚举值。 |
+| .value[0].i32 | 表示图片填充效果，取[ArkUI\_ObjectFit](capi-image-h.md#arkui_objectfit)枚举值。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].i32 | 表示图片填充效果，取[ArkUI\_ObjectFit](capi-native-type-h.md#arkui_objectfit)枚举值。 |
+| .value[0].i32 | 表示图片填充效果，取[ArkUI\_ObjectFit](capi-image-h.md#arkui_objectfit)枚举值。 |
 
 ## NODE\_IMAGE\_INTERPOLATION
 
-```
-1. NODE_IMAGE_INTERPOLATION = 4002
+```c
+NODE_IMAGE_INTERPOLATION = 4002
 ```
 
 图片插值效果属性，支持属性设置，属性重置，属性获取接口。
@@ -88,18 +88,18 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].i32 | 表示插值效果，取[ArkUI\_ImageInterpolation](capi-native-type-h.md#arkui_imageinterpolation)枚举值。 |
+| .value[0].i32 | 表示插值效果，取[ArkUI\_ImageInterpolation](capi-image-h.md#arkui_imageinterpolation)枚举值。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].i32 | 表示插值效果，取[ArkUI\_ImageInterpolation](capi-native-type-h.md#arkui_imageinterpolation)枚举值。 |
+| .value[0].i32 | 表示插值效果，取[ArkUI\_ImageInterpolation](capi-image-h.md#arkui_imageinterpolation)枚举值。 |
 
 ## NODE\_IMAGE\_OBJECT\_REPEAT
 
-```
-1. NODE_IMAGE_OBJECT_REPEAT = 4003
+```c
+NODE_IMAGE_OBJECT_REPEAT = 4003
 ```
 
 图片重复样式属性，支持属性设置，属性重置，属性获取接口。
@@ -112,18 +112,18 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].i32 | 表示图片重复样式，取[ArkUI\_ImageRepeat](capi-native-type-h.md#arkui_imagerepeat)枚举值。 |
+| .value[0].i32 | 表示图片重复样式，取[ArkUI\_ImageRepeat](capi-image-h.md#arkui_imagerepeat)枚举值。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].i32 | 表示图片重复样式，取[ArkUI\_ImageRepeat](capi-native-type-h.md#arkui_imagerepeat)枚举值。 |
+| .value[0].i32 | 表示图片重复样式，取[ArkUI\_ImageRepeat](capi-image-h.md#arkui_imagerepeat)枚举值。 |
 
 ## NODE\_IMAGE\_COLOR\_FILTER
 
-```
-1. NODE_IMAGE_COLOR_FILTER = 4004
+```c
+NODE_IMAGE_COLOR_FILTER = 4004
 ```
 
 图片滤镜效果属性，支持属性设置，属性重置，属性获取接口。
@@ -138,7 +138,7 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 | --- | --- |
 | .value[0].f32 ~ .value[19].f32 | 表示滤镜矩阵数组。 |
 | .size | 表示滤镜数组大小 5x4。 |
-| .object | 颜色滤波器指针，参数类型为OH\_Drawing\_ColorFilter。  .object和.size参数只能二选一，不可同时设置。 |
+| .object | 颜色滤镜指针，参数类型为OH\_Drawing\_ColorFilter。  .object和.size参数只能二选一，不可同时设置。 |
 
 **返回：**
 
@@ -146,12 +146,12 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 | --- | --- |
 | .value[0].f32 ~ .value[19].f32 | 表示滤镜矩阵数组。 |
 | .size | 表示滤镜数组大小 5x4。 |
-| .object | 颜色滤波器指针，参数类型为OH\_Drawing\_ColorFilter。 |
+| .object | 颜色滤镜指针，参数类型为OH\_Drawing\_ColorFilter。 |
 
 ## NODE\_IMAGE\_AUTO\_RESIZE
 
-```
-1. NODE_IMAGE_AUTO_RESIZE = 4005
+```c
+NODE_IMAGE_AUTO_RESIZE = 4005
 ```
 
 图源自动缩放属性，支持属性设置，属性重置，属性获取接口。
@@ -174,8 +174,8 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 ## NODE\_IMAGE\_ALT
 
-```
-1. NODE_IMAGE_ALT = 4006
+```c
+NODE_IMAGE_ALT = 4006
 ```
 
 占位图地址属性，支持属性设置，属性重置，属性获取接口。
@@ -200,11 +200,11 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 ## NODE\_IMAGE\_DRAGGABLE
 
-```
-1. NODE_IMAGE_DRAGGABLE = 4007
+```c
+NODE_IMAGE_DRAGGABLE = 4007
 ```
 
-图片拖拽效果属性，支持属性设置，属性重置，属性获取接口。
+图片是否可拖拽属性，支持属性设置，属性重置，属性获取接口。
 
 作为属性设置方法参数、属性获取方法返回值[ArkUI\_AttributeItem](capi-arkui-nativemodule-arkui-attributeitem.md)格式如下。
 
@@ -224,8 +224,8 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 ## NODE\_IMAGE\_RENDER\_MODE
 
-```
-1. NODE_IMAGE_RENDER_MODE = 4008
+```c
+NODE_IMAGE_RENDER_MODE = 4008
 ```
 
 图片渲染模式属性，支持属性设置，属性重置，属性获取接口。
@@ -238,18 +238,18 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].i32 | 参数类型[ArkUI\_ImageRenderMode](capi-native-type-h.md#arkui_imagerendermode)。 |
+| .value[0].i32 | 表示图片渲染模式，取[ArkUI\_ImageRenderMode](capi-image-h.md#arkui_imagerendermode)枚举值。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].i32 | 参数类型[ArkUI\_ImageRenderMode](capi-native-type-h.md#arkui_imagerendermode)。 |
+| .value[0].i32 | 表示图片渲染模式，取[ArkUI\_ImageRenderMode](capi-image-h.md#arkui_imagerendermode)枚举值。 |
 
 ## NODE\_IMAGE\_FIT\_ORIGINAL\_SIZE
 
-```
-1. NODE_IMAGE_FIT_ORIGINAL_SIZE = 4009
+```c
+NODE_IMAGE_FIT_ORIGINAL_SIZE = 4009
 ```
 
 设置图片的显示尺寸是否跟随图源尺寸，支持属性设置，属性重置和属性获取接口。
@@ -272,8 +272,8 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 ## NODE\_IMAGE\_FILL\_COLOR
 
-```
-1. NODE_IMAGE_FILL_COLOR = 4010
+```c
+NODE_IMAGE_FILL_COLOR = 4010
 ```
 
 设置填充颜色，设置后填充颜色会覆盖在图片上，支持属性设置，属性重置和属性获取接口。
@@ -296,8 +296,8 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 ## NODE\_IMAGE\_RESIZABLE
 
-```
-1. NODE_IMAGE_RESIZABLE = 4011
+```c
+NODE_IMAGE_RESIZABLE = 4011
 ```
 
 设置图像拉伸时，可调整大小的图像选项。
@@ -328,11 +328,13 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 ## NODE\_IMAGE\_SYNC\_LOAD
 
-```
-1. NODE_IMAGE_SYNC_LOAD = 4012
+```c
+NODE_IMAGE_SYNC_LOAD = 4012
 ```
 
 图源同步加载属性，支持属性设置，属性重置，属性获取接口。
+
+[NODE\_IMAGE\_ALT](capi-native-node-h-nodeattributetype-image.md#node_image_alt)占位图始终为异步加载，syncLoad对其不生效。
 
 作为属性设置方法参数、属性获取方法返回值[ArkUI\_AttributeItem](capi-arkui-nativemodule-arkui-attributeitem.md)格式如下。
 
@@ -352,8 +354,8 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 ## NODE\_IMAGE\_SOURCE\_SIZE
 
-```
-1. NODE_IMAGE_SOURCE_SIZE = 4013
+```c
+NODE_IMAGE_SOURCE_SIZE = 4013
 ```
 
 设置图片解码尺寸，仅在目标尺寸小于图源尺寸时生效。支持属性设置，属性重置和属性获取接口。
@@ -367,7 +369,7 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 表示图片解码的宽，单位px。 |
-| .value[1].i32 | 表示图片解码的高，单位px。当任意参数小于等于0时，属性设置失败并返回[ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode)函数参数异常。 |
+| .value[1].i32 | 表示图片解码的高，单位px。当任意参数小于等于0时，属性设置失败并返回[ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode)函数参数异常。 |
 
 **返回：**
 
@@ -378,11 +380,11 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 ## NODE\_IMAGE\_IMAGE\_MATRIX
 
-```
-1. NODE_IMAGE_IMAGE_MATRIX = 4014
+```c
+NODE_IMAGE_IMAGE_MATRIX = 4014
 ```
 
-设置图片的变换矩阵属性。支持属性设置，属性重置和属性获取接口。支持使用浮点数或矩阵对象实现仿射图像变换。
+设置图片的变换矩阵属性。支持属性设置，属性重置和属性获取接口。支持使用浮点数实现仿射图像变换。
 
 作为属性设置方法参数、属性获取方法返回值[ArkUI\_AttributeItem](capi-arkui-nativemodule-arkui-attributeitem.md)格式如下。
 
@@ -392,20 +394,18 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0...15].f32 | 4x4矩阵通过长度为16的浮点数数组来表示。当参数个数小于16，属性设置失败并返回[ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode)函数参数异常；当参数个数大于16，只取前16个数据。 |
-| .object | 参数类型为ArkUI\_Matrix4。 |
+| .value[0...15].f32 | 4x4矩阵通过长度为16的浮点数数组来表示。当参数个数小于16，属性设置失败并返回[ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode)函数参数异常；当参数个数大于16，只取前16个数据。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
 | .value[0...15].f32 | 4x4矩阵通过长度为16的浮点数数组来表示。 |
-| .object | 参数类型为ArkUI\_Matrix4。 |
 
 ## NODE\_IMAGE\_MATCH\_TEXT\_DIRECTION
 
-```
-1. NODE_IMAGE_MATCH_TEXT_DIRECTION = 4015
+```c
+NODE_IMAGE_MATCH_TEXT_DIRECTION = 4015
 ```
 
 设置图片是否跟随系统语言方向，在RTL语言环境下显示镜像翻转显示效果。支持属性设置，属性重置和属性获取接口。
@@ -428,8 +428,8 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 ## NODE\_IMAGE\_COPY\_OPTION
 
-```
-1. NODE_IMAGE_COPY_OPTION = 4016
+```c
+NODE_IMAGE_COPY_OPTION = 4016
 ```
 
 设置图片的拷贝方式。支持属性设置，属性重置和属性获取接口。
@@ -452,8 +452,8 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 ## NODE\_IMAGE\_ENABLE\_ANALYZER
 
-```
-1. NODE_IMAGE_ENABLE_ANALYZER = 4017
+```c
+NODE_IMAGE_ENABLE_ANALYZER = 4017
 ```
 
 设置组件支持AI分析，当前支持主体识别、文字识别和对象查找等功能。支持属性设置，属性重置和属性获取接口。
@@ -476,8 +476,8 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 ## NODE\_IMAGE\_DYNAMIC\_RANGE\_MODE
 
-```
-1. NODE_IMAGE_DYNAMIC_RANGE_MODE = 4018
+```c
+NODE_IMAGE_DYNAMIC_RANGE_MODE = 4018
 ```
 
 定义图片显示动态范围属性，指定图像渲染的动态范围模式（例如：SDR/HDR）。支持设置、重置和获取接口，用于匹配显示设备能力，确保图像明暗与色彩的准确呈现。
@@ -490,18 +490,18 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].i32 | 动态范围类型[ArkUI\_DynamicRangeMode](capi-native-type-h.md#arkui_dynamicrangemode)，默认值为ARKUI\_DYNAMIC\_RANGE\_MODE\_STANDARD。 |
+| .value[0].i32 | 动态范围类型[ArkUI\_DynamicRangeMode](capi-image-h.md#arkui_dynamicrangemode)，默认值为ARKUI\_DYNAMIC\_RANGE\_MODE\_STANDARD。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].i32 | 动态范围类型[ArkUI\_DynamicRangeMode](capi-native-type-h.md#arkui_dynamicrangemode)。 |
+| .value[0].i32 | 动态范围类型[ArkUI\_DynamicRangeMode](capi-image-h.md#arkui_dynamicrangemode)。 |
 
 ## NODE\_IMAGE\_HDR\_BRIGHTNESS
 
-```
-1. NODE_IMAGE_HDR_BRIGHTNESS = 4019
+```c
+NODE_IMAGE_HDR_BRIGHTNESS = 4019
 ```
 
 定义图片HDR模式下的亮度属性，用于控制高动态范围显示的亮度参数。支持设置、重置和获取接口，确保HDR图像亮部与暗部细节的精准呈现。
@@ -524,8 +524,8 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 ## NODE\_IMAGE\_ORIENTATION
 
-```
-1. NODE_IMAGE_ORIENTATION = 4020
+```c
+NODE_IMAGE_ORIENTATION = 4020
 ```
 
 设置图像内容的显示方向。支持属性设置，属性重置和属性获取接口。
@@ -538,18 +538,18 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].i32 | 期望的图像内容显示方向[ArkUI\_Orientation](capi-native-type-h.md#arkui_imagerotateorientation)，默认值为ARKUI\_ORIENTATION\_UP。 |
+| .value[0].i32 | 期望的图像内容显示方向[ArkUI\_ImageRotateOrientation](capi-image-h.md#arkui_imagerotateorientation)，默认值为ARKUI\_ORIENTATION\_UP。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].i32 | 期望的图像内容显示方向[ArkUI\_Orientation](capi-native-type-h.md#arkui_imagerotateorientation)。 |
+| .value[0].i32 | 期望的图像内容显示方向[ArkUI\_ImageRotateOrientation](capi-image-h.md#arkui_imagerotateorientation)。 |
 
 ## NODE\_IMAGE\_SUPPORT\_SVG2
 
-```
-1. NODE_IMAGE_SUPPORT_SVG2 = 4021
+```c
+NODE_IMAGE_SUPPORT_SVG2 = 4021
 ```
 
 通过启用SVG新解析能力开关设置SVG解析功能支持的范围，支持属性设置，属性重置，属性获取接口。Image组件创建后，不支持动态修改该属性的值。
@@ -572,8 +572,8 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 ## NODE\_IMAGE\_CONTENT\_TRANSITION
 
-```
-1. NODE_IMAGE_CONTENT_TRANSITION = 4022
+```c
+NODE_IMAGE_CONTENT_TRANSITION = 4022
 ```
 
 设置图像变化时的转场动效，支持属性设置，属性重置，属性获取接口。
@@ -586,18 +586,18 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 | 参数项 | 描述 |
 | --- | --- |
-| .object | 自定义转场动效，参数类型[ArkUI\_ContentTransitionEffect](i-arkui-nativemodule-arkui-contenttransitioneffect.md)。 |
+| .object | 自定义转场动效，参数类型[ArkUI\_ContentTransitionEffect](capi-arkui-nativemodule-arkui-contenttransitioneffect.md)。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| .object | 自定义转场动效，参数类型[ArkUI\_ContentTransitionEffect](i-arkui-nativemodule-arkui-contenttransitioneffect.md)。 |
+| .object | 自定义转场动效，参数类型[ArkUI\_ContentTransitionEffect](capi-arkui-nativemodule-arkui-contenttransitioneffect.md)。 |
 
 ## NODE\_IMAGE\_ALT\_PLACEHOLDER
 
-```
-1. NODE_IMAGE_ALT_PLACEHOLDER  = 4023
+```c
+NODE_IMAGE_ALT_PLACEHOLDER = 4023
 ```
 
 支持加载过程中的占位图的配置，支持属性设置，属性重置，属性获取接口。
@@ -622,8 +622,8 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 ## NODE\_IMAGE\_ALT\_ERROR
 
-```
-1. NODE_IMAGE_ALT_ERROR  = 4024
+```c
+NODE_IMAGE_ALT_ERROR = 4024
 ```
 
 支持加载失败时的占位图的配置，支持属性设置，属性重置，属性获取接口。
@@ -648,8 +648,8 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 ## NODE\_IMAGE\_ANTIALIASED
 
-```
-1. NODE_IMAGE_ANTIALIASED = 4025
+```c
+NODE_IMAGE_ANTIALIASED = 4025
 ```
 
 支持设置位图图片边缘抗锯齿的配置，支持属性设置，属性重置，属性获取接口。
@@ -672,8 +672,8 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 ## NODE\_IMAGE\_ANIMATOR\_IMAGES
 
-```
-1. NODE_IMAGE_ANIMATOR_IMAGES = ARKUI_NODE_IMAGE_ANIMATOR * MAX_NODE_SCOPE_NUM = 19000
+```c
+NODE_IMAGE_ANIMATOR_IMAGES = ARKUI_NODE_IMAGE_ANIMATOR * MAX_NODE_SCOPE_NUM = 19000
 ```
 
 设置帧动画组件的图片帧信息集合。不支持动态更新。支持属性设置，属性重置和属性获取接口。
@@ -687,19 +687,19 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 | 参数项 | 描述 |
 | --- | --- |
 | .size | 图片帧的数量。 |
-| .object | 图片帧数组，参数类型为[ArkUI\_ImageAnimatorFrameInfo](pi-arkui-nativemodule-arkui-imageanimatorframeinfo.md)数组。 |
+| .object | 图片帧数组，参数类型为[ArkUI\_ImageAnimatorFrameInfo](capi-arkui-nativemodule-arkui-imageanimatorframeinfo.md)数组。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
 | .size | 图片帧的数量。 |
-| .object | 图片帧数组，参数类型为[ArkUI\_ImageAnimatorFrameInfo](pi-arkui-nativemodule-arkui-imageanimatorframeinfo.md)数组。 |
+| .object | 图片帧数组，参数类型为[ArkUI\_ImageAnimatorFrameInfo](capi-arkui-nativemodule-arkui-imageanimatorframeinfo.md)数组。 |
 
 ## NODE\_IMAGE\_ANIMATOR\_STATE
 
-```
-1. NODE_IMAGE_ANIMATOR_STATE = 19001
+```c
+NODE_IMAGE_ANIMATOR_STATE = 19001
 ```
 
 控制帧动画组件的播放状态。支持属性设置，属性重置和属性获取接口。
@@ -712,18 +712,18 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].i32 | 控制动画的播放状态，参数类型为[ArkUI\_AnimationStatus](capi-native-type-h.md#arkui_animationstatus)，默认值为初始状态。 |
+| .value[0].i32 | 控制动画的播放状态，参数类型为[ArkUI\_AnimationStatus](capi-image-animator-h.md#arkui_animationstatus)，默认值为初始状态。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].i32 | 控制动画的播放状态，参数类型为[ArkUI\_AnimationStatus](capi-native-type-h.md#arkui_animationstatus)。 |
+| .value[0].i32 | 控制动画的播放状态，参数类型为[ArkUI\_AnimationStatus](capi-image-animator-h.md#arkui_animationstatus)。 |
 
 ## NODE\_IMAGE\_ANIMATOR\_DURATION
 
-```
-1. NODE_IMAGE_ANIMATOR_DURATION = 19002
+```c
+NODE_IMAGE_ANIMATOR_DURATION = 19002
 ```
 
 设置帧动画的播放时长，当数组中任意一帧图片单独设置了duration属性后，该属性设置无效。支持属性设置，属性重置和属性获取接口。
@@ -746,8 +746,8 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 ## NODE\_IMAGE\_ANIMATOR\_REVERSE
 
-```
-1. NODE_IMAGE_ANIMATOR_REVERSE = 19003
+```c
+NODE_IMAGE_ANIMATOR_REVERSE = 19003
 ```
 
 设置帧动画的播放方向。支持属性设置，属性重置和属性获取接口。
@@ -770,8 +770,8 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 ## NODE\_IMAGE\_ANIMATOR\_FIXED\_SIZE
 
-```
-1. NODE_IMAGE_ANIMATOR_FIXED_SIZE = 19004
+```c
+NODE_IMAGE_ANIMATOR_FIXED_SIZE = 19004
 ```
 
 设置图片大小是否固定为组件大小。支持属性设置，属性重置和属性获取接口。
@@ -794,8 +794,8 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 ## NODE\_IMAGE\_ANIMATOR\_FILL\_MODE
 
-```
-1. NODE_IMAGE_ANIMATOR_FILL_MODE = 19005
+```c
+NODE_IMAGE_ANIMATOR_FILL_MODE = 19005
 ```
 
 设置帧动画在当前播放方向下，动画开始前和结束后的状态。支持属性设置，属性重置和属性获取接口。
@@ -808,18 +808,18 @@ content_hash: sha256:9da9a5a86043fd667fec865aeaf6b74b5e4d208b23679e42974e78de319
 
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].i32 | 当前播放方向下，动画开始前和结束后的状态，参数类型为[ArkUI\_AnimationFillMode](capi-native-type-h.md#arkui_animationfillmode)，默认值为ARKUI\_ANIMATION\_FILL\_MODE\_FORWARDS。 |
+| .value[0].i32 | 当前播放方向下，动画开始前和结束后的状态，参数类型为[ArkUI\_AnimationFillMode](capi-native-type-visual-h.md#arkui_animationfillmode)，默认值为ARKUI\_ANIMATION\_FILL\_MODE\_FORWARDS。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].i32 | 当前播放方向下，动画开始前和结束后的状态，参数类型为[ArkUI\_AnimationFillMode](capi-native-type-h.md#arkui_animationfillmode)。 |
+| .value[0].i32 | 当前播放方向下，动画开始前和结束后的状态，参数类型为[ArkUI\_AnimationFillMode](capi-native-type-visual-h.md#arkui_animationfillmode)。 |
 
 ## NODE\_IMAGE\_ANIMATOR\_ITERATION
 
-```
-1. NODE_IMAGE_ANIMATOR_ITERATION = 19006
+```c
+NODE_IMAGE_ANIMATOR_ITERATION = 19006
 ```
 
 设置帧动画的播放次数。支持属性设置，属性重置和属性获取接口。

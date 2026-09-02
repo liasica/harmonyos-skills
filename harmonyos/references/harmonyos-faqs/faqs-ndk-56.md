@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-56
 title: 如何跨Hap模块调用C++ API
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何跨Hap模块调用C++ API
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:39+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:10b82146a8e66c35a6c08d3e2f323fc805896c0eeca6872bf94bbd9d81c11df4
+scraped_at: 2026-09-02T14:53:57+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:9825c3784f264b0f2ebd8912b255685ac1a99a66c37620fe9d2b6eced7536a75
 ---
 
 **问题现象**
@@ -55,35 +55,29 @@ ModuleB中配置：
 1. 在src/main/cpp/目录下新建include目录（或其他名称，与配置保持一致），将需要暴露的头文件放入该目录。
 2. 在 build-profile.json5 文件中添加配置。
 
+   ```json
+   "nativeLib": {
+     "debugSymbol": {
+       "strip": true,
+       "exclude": []
+     },
+     "headerPath": "src/main/cpp/include"
+   },
    ```
-   1. "nativeLib": {
-   2. "debugSymbol": {
-   3. "strip": true,
-   4. "exclude": []
-   5. },
-   6. "headerPath": "src/main/cpp/include"
-   7. },
-   ```
-
-   [build-profile.json5](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/Ndk/ndk1/Moduleb/build-profile.json5#L25-L31)
 
 ModuleA 中配置：
 
 1. 在oh-package.json5文件中配置moduleb的依赖。
 
+   ```json
+   "dependencies": {
+     "libmodulea.so": "file:./src/main/cpp/types/libmodulea",
+     "moduleb": "file:../Moduleb"
+   },
    ```
-   1. "dependencies": {
-   2. "libmodulea.so": "file:./src/main/cpp/types/libmodulea",
-   3. "moduleb": "file:../Moduleb"
-   4. },
-   ```
-
-   [oh-package.json5](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/Ndk/ndk1/Modulea/oh-package.json5#L10-L13)
 2. 在CMakeLists.txt中配置链接模块。
 
+   ```text
+   target_link_libraries(modulea PUBLIC libace_napi.z.so moduleb::moduleb)
    ```
-   1. target_link_libraries(modulea PUBLIC libace_napi.z.so moduleb::moduleb)
-   ```
-
-   [CMakeLists.txt](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/Ndk/ndk1/Modulea/src/main/cpp/CMakeLists.txt#L16-L16)
 3. 先在C++代码中引入头文件（#include "xxx.h"），然后调用moduleb中的C++接口。

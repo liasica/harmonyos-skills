@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-1
 title: 将rawfile中json格式的字符串转换成对应的object对象后，调用实例方法后程序崩溃
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 将rawfile中json格式的字符串转换成对应的object对象后，调用实例方法后程序崩溃
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:58+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:14+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:1c68b9cf2b79586382f3b6f7d0fc1b07a33e5bbf92e9320788f4a858800ce2e7
 ---
 

@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: 通用样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 组件通用信息 > 通用样式
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:34+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:a8193314a8578c5e9f576d0e1a8e31c82374663cdc79345420425dcb4805c9ca
+scraped_at: 2026-09-02T15:01:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f8adeba7035b17bebe3b62bb7a39c62525917fa9810d7283ce90ca7696f3a95f
 ---
 
 组件普遍支持的可以在style或css中设置组件外观样式，均不是必填项。
 
-说明
+**说明** 
 
 从API version 8 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -54,13 +54,13 @@ content_hash: sha256:a8193314a8578c5e9f576d0e1a8e31c82374663cdc79345420425dcb480
 | flex-grow | number | 0 | 设置组件的拉伸样式，指定父组件容器主轴方向上剩余空间（容器本身大小减去所有flex子元素占用的大小）的分配权重。0为不伸展。  仅父容器为<div>、<list-item>时生效。 |
 | flex-shrink | number | 1 | 设置组件的收缩样式，元素仅在默认宽度之和大于容器的时候才会发生收缩，0为不收缩。  仅父容器为<div>、<list-item>时生效。 |
 | flex-basis | <length> | - | 设置组件在主轴方向上的初始大小。  仅父容器为<div>、<list-item>时生效。 |
-| align-self | string | - | 设置自身在父元素交叉轴上的对齐方式，该样式会覆盖父元素的align-items样式，仅在父容器为div、list。可选值为：  - stretch 弹性元素被在交叉轴方向被拉伸到与容器相同的高度或宽度。  - flex-start 元素向交叉轴起点对齐。  - flex-end 元素向交叉轴终点对齐。  - center 元素在交叉轴居中。  - baseline 元素在交叉轴基线对齐。 |
+| align-self | string | - | 设置自身在父元素交叉轴上的对齐方式，该样式会覆盖父元素的align-items样式，仅在父容器为div、list时生效。可选值为：  - stretch 弹性元素在交叉轴方向被拉伸到与容器相同的高度或宽度。  - flex-start 元素向交叉轴起点对齐。  - flex-end 元素向交叉轴终点对齐。  - center 元素在交叉轴居中。  - baseline 元素在交叉轴基线对齐。 |
 | position | string | relative | 设置元素的定位类型，不支持动态变更。  - fixed：相对于整个界面进行定位。  - absolute：相对于父元素进行定位。  - relative：相对于其正常位置进行定位。  absolute属性仅在父容器为<div>时生效。 |
-| [left|top|right|bottom | <length> | <percentage> | - | left|top|right|bottom需要配合position样式使用，来确定元素的偏移位置。  - left属性规定元素的左边缘。该属性定义了定位元素左外边距边界与其包含块左边界之间的偏移。  - top属性规定元素的顶部边缘。该属性定义了一个定位元素的上外边距边界与其包含块上边界之间的偏移。  - right属性规定元素的右边缘。该属性定义了定位元素右外边距边界与其包含块右边界之间的偏移。  - bottom属性规定元素的底部边缘。该属性定义了一个定位元素的下外边距边界与其包含块下边界之间的偏移。 |
-| [start | end] | <length> | <percentage> | - | start | end需要配合position样式使用，来确定元素的偏移位置。  - start属性规定元素的起始边缘。该属性定义了定位元素起始外边距边界与其包含块起始边界之间的偏移。  - end属性规定元素的结尾边缘。该属性定义了一个定位元素的结尾边距边界与其包含块结尾边界之间的偏移。 |
+| [left|top|right|bottom] | <length> | <percentage> | - | left|top|right|bottom需要配合position样式使用，来确定元素的偏移位置。  - left属性规定元素的左边缘。该属性定义了定位元素左外边距边界与其包含块左边界之间的偏移。  - top属性规定元素的顶部边缘。该属性定义了一个定位元素的上外边距边界与其包含块上边界之间的偏移。  - right属性规定元素的右边缘。该属性定义了定位元素右外边距边界与其包含块右边界之间的偏移。  - bottom属性规定元素的底部边缘。该属性定义了一个定位元素的下外边距边界与其包含块下边界之间的偏移。 |
+| [start | end] | <length> | <percentage> | - | start | end需要配合position样式使用，来确定元素的偏移位置。  - start属性规定元素的起始边缘。该属性定义了定位元素起始外边距边界与其包含块起始边界之间的偏移。  - end属性规定元素的结尾边缘。该属性定义了一个定位元素的结尾外边距边界与其包含块结尾边界之间的偏移。 |
 | z-index | number | - | 表示对于同一父节点其子节点的渲染顺序。数值越大，渲染数据越靠后。  z-index不支持auto，并且opacity等其他样式不会影响z-index的渲染顺序。 |
 | image-fill | <color> | - | 为svg图片填充颜色，支持组件范围（与设置图片资源的属性）：button（icon属性）、image（src属性）。  svg图片文件内的fill属性颜色值在渲染时将被替换为image-fill所配的颜色值，且仅对svg图片内显式声明的fill属性生效。 |
 | clip-path | [ <geometry-box> |<basic-shape> ] | none | - | 设置组件的裁剪区域。区域内的部分显示，区域外的不显示。  <geometry-box>：表示裁剪区域的作用范围，默认为border-box。可选值为：  - margin-box：margin计算入长宽尺寸内。  - border-box：border计算入长宽尺寸内。  - padding-box：padding计算入长宽尺寸内。  - content-box：margin/border/padding不计算入长宽尺寸内。  <basic-shape>：表示裁剪的形状。包含以下类型：  - inset，格式为：inset( <percentage>{1,4} [ round <'border-radius'> ]? )。  - circle，格式为：circle( [ <percentage> ]? [ at <percentage> <percentage> ]? )。  - ellipse，格式为：ellipse( [ <percentage>{2} ]? [ at <percentage> <percentage> ]? )。  - polygon，格式为：polygon( [ <percentage> <percentage> ]# )。  - path，格式为：path( <string> )。 |
 | mask-image | - <linear-gradient>  - string | - | 设置渐变色遮罩或本地图片设置。  设置渐变色遮罩，示例：linear-gradient(to left, black, white)  设置纯色遮罩，示例：linear-gradient(to right, grey , grey)  设置本地svg图片为遮罩，示例：url(common/mask.svg) |
-| mask-size | - string  - <length><length>  - <percentage> <percentage> | auto | 设置遮罩图片显示大小，仅当mask-image为图片资源时有效。  string可选值：  - contain：把图像扩展至最大尺寸，以使其高度和宽度完全适应内容区域。  - cover：把图像扩展至足够大，以使背景图像完全覆盖背景区域；背景图像的某些部分也许无法显示在背景定位区域中。  - auto：保持原图的比例不变。  length值参数方式：设置图像的高度和宽度。第一个值设置宽度，第二个值设置高度。如果只设置一个值，则第二个值会被设置为 "auto"。  百分比参数方式：以原图宽高的百分比来设置图像的宽度和高度。第一个值设置宽度，第二个值设置高度。如果只设置一个值，则第二个值会被设置为 "auto"。 |
+| mask-size | - string  - <length><length>  - <percentage> <percentage> | auto | 设置遮罩图片显示大小，仅当mask-image为图片资源时有效。  string可选值：  - contain：把图像扩展至最大尺寸，以使其高度和宽度完全适应内容区域。  - cover：把图像扩展至足够大，以使遮罩图像完全覆盖遮罩区域；遮罩图像的某些部分也许无法显示在遮罩定位区域中。  - auto：保持原图的比例不变。  length值参数方式：设置图像的高度和宽度。第一个值设置宽度，第二个值设置高度。如果只设置一个值，则第二个值会被设置为 "auto"。  百分比参数方式：以原图宽高的百分比来设置图像的宽度和高度。第一个值设置宽度，第二个值设置高度。如果只设置一个值，则第二个值会被设置为 "auto"。 |
 | mask-position | - string string  - <length> <length>  - <percentage> <percentage> | 0px 0px | 设置遮罩图片显示位置，仅当mask-image为图片资源时有效。关键词方式：如果仅规定了一个关键词，那么第二个值为"center"。两个值分别定义水平方向位置和竖直方向位置。  string可选值：  - left：水平方向上最左侧。  - right：水平方向上最右侧。  - top：竖直方向上最顶部。  - bottom：竖直方向上最底部。  - center：水平方向或竖直方向上中间位置。  length值参数方式：第一个值是水平位置，第二个值是垂直位置。 左上角是 0 0。单位是像素 (0px 0px) 。如果仅规定了一个值，另外一个值将是50%。  百分比参数方式：第一个值是水平位置，第二个值是垂直位置。左上角是 0% 0%。右下角是 100% 100%。如果仅规定了一个值，另外一个值为50%。  可以混合使用<percentage>和<length>。 |

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-410
 title: Navigation组件，如何监听页面切换后系统动画的结束时机
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > Navigation组件，如何监听页面切换后系统动画的结束时机
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Navigation组件，如何监听页面切换后系统动画的结束时机
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:48+08:00
-doc_updated_at: 2026-04-27
+scraped_at: 2026-09-02T15:21:34+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:4c3668436971a4b377eab0c0f6b4dba51b1761427fa72e77bded058deac64df9
 ---
 

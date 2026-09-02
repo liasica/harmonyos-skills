@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-loca
 title: Location_BasicInfo
 breadcrumb: API参考 > 应用服务 > Location Kit（位置服务） > C API > 结构体 > Location_BasicInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:07+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fe37161562a73759e639034eb04338597c113a47245c2a575506880c8be52337
+scraped_at: 2026-09-02T15:02:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:31b1fd2c33bd855f330b7a6b4595798a02610212236b255153fc03b7ff753e25
 ---
 
-```
-1. typedef struct Location_BasicInfo {...} Location_BasicInfo
+```c
+typedef struct Location_BasicInfo {...} Location_BasicInfo
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义位置基本信息的结构体。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

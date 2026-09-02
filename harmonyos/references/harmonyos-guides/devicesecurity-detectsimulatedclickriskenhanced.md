@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 模拟点击增强检测
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 业务风险检测 > 模拟点击增强检测
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:31:41+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:17c4fd44f80846b2d6808a4d9d65f0acc12241fd25f873ef466008f1226ab3e4
+scraped_at: 2026-09-02T14:59:30+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:bb81625da1c5c1ea4a2daca5149c5035458d86fc600e96e5856d9bb4d9122051
 ---
 
 ## 场景介绍
 
 从6.0.2(22) 版本开始，新增支持模拟点击增强检测。
 
-应用通过调用Device Security Kit的detectSimulatedClickRiskEnhanced接口，获取模拟点击增强检测结果，用于自动化点击、设备墙等作弊行为检测。
+应用通过调用Device Security Kit的detectSimulatedClickRiskEnhanced接口，获取模拟点击增强检测结果，用于检测自动化点击、设备农场等作弊行为。
 
 应用可以根据检测结果评估如何进行业务操作。
 
@@ -22,7 +22,7 @@ content_hash: sha256:17c4fd44f80846b2d6808a4d9d65f0acc12241fd25f873ef466008f1226
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/7nPtoetNRGe1Rmu-drRMng/zh-cn_image_0000002558605244.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/cNRGDdURQmGrk_3VTY_a2A/zh-cn_image_0000002736433459.png)
 
 **流程说明：**
 
@@ -30,7 +30,7 @@ content_hash: sha256:17c4fd44f80846b2d6808a4d9d65f0acc12241fd25f873ef466008f1226
 
    在调用detectSimulatedClickRiskEnhanced接口时，开发者必须传入一个随机生成的nonce值。在检测结果中会包含这个nonce值，您可以通过校验这个nonce值来确定返回结果能够对应您的请求，并且没有被重放攻击。
 
-   说明
+   **说明** 
 
    * nonce值必须为24至80字节之间。
    * 建议每次请求都从服务器随机生成新的nonce值。
@@ -51,36 +51,47 @@ content_hash: sha256:17c4fd44f80846b2d6808a4d9d65f0acc12241fd25f873ef466008f1226
 
 1. 导入Device Security Kit模块及相关公共模块。
 
-   ```
-   1. import { businessRiskIntelligentDetection } from '@kit.DeviceSecurityKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
-   4. import { cryptoFramework } from '@kit.CryptoArchitectureKit'
+   ```typescript
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { businessRiskIntelligentDetection } from '@kit.DeviceSecurityKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { cryptoFramework } from '@kit.CryptoArchitectureKit';
    ```
 2. 调用detectSimulatedClickRiskEnhanced接口获取模拟点击增强检测结果。
 
-   ```
-   1. const TAG = "BusinessRiskIntelligentDetectionJsTest";
+   ```typescript
+   const TAG: string = '[SimulatedClickRiskEnhancedDetectModel]';
 
-   3. let nonceLength = 48;
-   4. let nonceBlob = cryptoFramework.createRandom().generateRandomSync(nonceLength);
-   5. let params = {
-   6. version: 1,
-   7. nonce: nonceBlob.data,
-   8. algorithm: businessRiskIntelligentDetection.SigningAlgorithm.ES256
-   9. } as businessRiskIntelligentDetection.SimulatedClickDetectionEnhancedRequest;
-   10. try {
-   11. hilog.info(0x0000, TAG, 'Detect simulated click risk enhanced begin.');
-   12. businessRiskIntelligentDetection.detectSimulatedClickRiskEnhanced(params).then((result: string) => {
-   13. hilog.info(0x0000, TAG, 'Detect simulated click risk enhanced success: %{public}s', result);
-   14. }).catch((error: Error) => {
-   15. let e: BusinessError = error as BusinessError;
-   16. hilog.error(0x0000, TAG, 'Detect simulated click risk enhanced failed: %{public}d %{public}s', e.code, e.message);
-   17. });
-   18. } catch (error) {
-   19. let e: BusinessError = error as BusinessError;
-   20. hilog.error(0x0000, TAG, 'Detect simulated click risk enhanced failed: %{public}d %{public}s', e.code, e.message);
-   21. }
+   function simulatedClickRiskEnhancedDetectPromise(): Promise<String> {
+     let rand = cryptoFramework.createRandom();
+     let len = 48;
+     let randData = rand.generateRandomSync(len);
+
+     return new Promise(async (resolve: Function, reject: Function) => {
+
+       let params = {
+         nonce: randData.data,
+         version: 1,
+         algorithm: businessRiskIntelligentDetection.SigningAlgorithm.ES256
+       } as businessRiskIntelligentDetection.SimulatedClickDetectionEnhancedRequest;
+
+       try {
+         hilog.info(0x0000, TAG, 'Detect simulated click risk enhanced begin.');
+         businessRiskIntelligentDetection.detectSimulatedClickRiskEnhanced(params).then((result: string) => {
+           hilog.info(0x0000, TAG, 'Detect simulated click risk enhanced success: %{public}s', result);
+           resolve(result);
+         }).catch((error: Error) => {
+           let e: BusinessError = error as BusinessError;
+           hilog.error(0x0000, TAG, 'Detect simulated click risk enhanced failed: %{public}d %{public}s', e.code, e.message);
+           reject(error);
+         });
+       } catch (error) {
+         let e: BusinessError = error as BusinessError;
+         hilog.error(0x0000, TAG, 'Detect simulated click risk enhanced failed: %{public}d %{public}s', e.code, e.message);
+         reject(error);
+       }
+     });
+   }
    ```
 3. 在开发者应用服务器中验证模拟点击增强检测结果。
 
@@ -94,17 +105,17 @@ content_hash: sha256:17c4fd44f80846b2d6808a4d9d65f0acc12241fd25f873ef466008f1226
 
       **Header字段**
 
-      ```
-      1. {
-      2. "alg": "ES256",
-      3. "x5c": ["",""],
-      4. "nonce": "R2Rra24fVm5xa2Mg",
-      5. "appId": "xxxxxxxxx",
-      6. "typ": "JWT"
-      7. }
+      ```json
+      {
+        "alg": "ES256",
+        "x5c": ["",""],
+        "nonce": "R2Rra24fVm5xa2Mg",
+        "appId": "xxxxxxxxx",
+        "typ": "JWT"
+      }
       ```
 
-      说明
+      **说明** 
 
       * "alg"：数字签名算法，ES256表示为SHA256withECDSA。
       * "x5c"：华为签名服务器对JWS签名的证书链，x5c[0]为给JWS签名的证书，x5c[1]为签名证书链二级CA。
@@ -114,16 +125,16 @@ content_hash: sha256:17c4fd44f80846b2d6808a4d9d65f0acc12241fd25f873ef466008f1226
 
       **Payload字段**：
 
-      ```
-      1. {
-      2. "timestampMs": 9860437986543,
-      3. "version": 1,
-      4. "riskDecision": "fake",
-      5. "tags": ["AbnormalTap"]
-      6. }
+      ```json
+      {
+        "timestampMs": 9860437986543,
+        "version": 1,
+        "riskDecision": "fake",
+        "tags": ["AbnormalTap"]
+      }
       ```
 
-      说明
+      **说明** 
 
       * timestampMs：华为签名服务器生成的时间戳。
       * riskDecision：风险检测结果。
@@ -138,6 +149,6 @@ content_hash: sha256:17c4fd44f80846b2d6808a4d9d65f0acc12241fd25f873ef466008f1226
 
       | riskDecision值 | 含义 |
       | --- | --- |
-      | fake | 当前设备存在作弊风险行为。存在自动化操控行为或设备墙作弊行为，详情见tags。 |
+      | fake | 当前设备存在作弊风险行为。详情见上方tags表格。 |
       | likelyReal | 当前操作设备的是真人用户的可能性较高。 |
       | unknown | 未知。未检测到明显特征，无法识别。 |

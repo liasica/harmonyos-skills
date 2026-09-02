@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-command-li
 title: 如何获取可用的三方库
 breadcrumb: FAQ > DevEco Studio > 命令行工具 > 如何获取可用的三方库
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:23+08:00
-doc_updated_at: 2026-03-17
+scraped_at: 2026-09-02T15:22:18+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:9a69f0cde347e114dca08736fafe301d396420dca3f707ca05c359bf6928f7e4
 ---
 

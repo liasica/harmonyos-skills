@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-setou
 title: SetOutputHandleShapesAndTypes
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > InferenceContext > SetOutputHandleShapesAndTypes
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:30+08:00
+scraped_at: 2026-09-02T14:50:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d20afa1097677b5c72c980169089d029e747cfbe48f1452c5357e78d3b2e431e
+content_hash: sha256:5135c06bee6a27ee38cbbb26e594d82389f1575123ec7cddc6640574c22b3316
 ---
 
 ## 函数功能
@@ -14,9 +14,9 @@ content_hash: sha256:d20afa1097677b5c72c980169089d029e747cfbe48f1452c5357e78d3b2
 
 ## 函数原型
 
-```
-1. void SetOutputHandleShapesAndTypes(const std::vector<std::vector<ShapeAndType>> &shapes_and_types)
-2. void SetOutputHandleShapesAndTypes(std::vector<std::vector<ShapeAndType>> &&shapes_and_types)
+```cpp
+void SetOutputHandleShapesAndTypes(const std::vector<std::vector<ShapeAndType>> &shapes_and_types)
+void SetOutputHandleShapesAndTypes(std::vector<std::vector<ShapeAndType>> &&shapes_and_types)
 ```
 
 ## 参数说明

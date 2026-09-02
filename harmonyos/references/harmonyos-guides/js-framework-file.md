@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-framework-
 title: 文件组织
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 框架说明 > 文件组织
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:37+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:87b01c2655ceecf7b68f2a71f7cb90492e5e0fc6758b02bf1741113fe4c4eddf
+scraped_at: 2026-09-02T14:59:20+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:87c85f8cb0966a3fc0efe173de9731723eb5b848cdbf4fa3697e4e453e9940d5
 ---
 
 ## 目录结构
@@ -14,11 +14,11 @@ JS FA应用的JS模块（entry/src/main/js/module）的典型开发目录结构�
 
 **图1** 目录结构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/Dbjil8zOQ0eRYvrIjrJdFw/zh-cn_image_0000002589244373.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/5b4Ek2w9TWCgvHErupgFAQ/zh-cn_image_0000002706673970.png)
 
-**图2** [多实例](pageability-launch-type.md)资源共享目录结构
+**图2** [多实例](../lite-wearable-guides/pageability-launch-type.md)资源共享目录结构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/_2NlRrefTk6k9qVYY58D6A/zh-cn_image_0000002558764566.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/dpU08brnTs6GleJQlRziKg/zh-cn_image_0000002736433061.png)
 
 目录结构中文件分类如下：
 
@@ -34,7 +34,7 @@ JS FA应用的JS模块（entry/src/main/js/module）的典型开发目录结构�
 * resources目录用于存放资源配置文件，比如：多分辨率加载等配置文件，详见[资源限定与访问](js-framework-resource-restriction.md)章节。
 * share目录用于配置多个实例共享的资源内容，比如：share中的图片和JSON文件可被default1和default2实例共享。
 
-说明
+**说明** 
 
 * i18n和resources文件夹不可重命名。
 * 如果share目录中的资源和实例(default)中的资源文件同名且目录一致时，实例中资源的优先级高于share中资源的优先级。
@@ -50,7 +50,7 @@ JS FA应用的JS模块（entry/src/main/js/module）的典型开发目录结构�
 * 公共代码文件和资源文件推荐放在common下，通过以上两条规则进行访问。
 * CSS样式文件中通过url()函数创建<url>数据类型，如：url(/common/xxx.png)。
 
-说明
+**说明** 
 
 当代码文件A需要引用代码文件B时：
 

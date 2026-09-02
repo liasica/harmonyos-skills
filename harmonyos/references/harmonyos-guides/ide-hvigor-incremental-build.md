@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-incremental-build
 title: 增量构建
-breadcrumb: 指南 > 构建应用 > 提升构建效率 > 增量构建
+breadcrumb: 指南 > 构建应用 > 提升构建效率 > 默认特性 > 增量构建
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0aabe8acf5b003d2686a7a284ed53d088a11c0617f6aeee37c7fe98eb561ea72
+scraped_at: 2026-09-02T15:00:27+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a6357bfe8cf5dbd5cfbf1f48743ba04c585b3a4328375623c5636dea9eb94598
 ---
 
 增量构建是Hvigor执行任务的一种优化，如果在两次执行任务过程中，执行任务的输入和输出没有更改，Hvigor会跳过该任务的执行。
@@ -19,19 +19,19 @@ Hvigor默认启用增量构建，您也可以通过以下几种方式来控制�
 * 通过命令行构建：
   + 执行命令，其中<task>替换为具体任务名：
 
-    ```
-    1. // 启用增量构建
-    2. hvigorw <task> --incremental
-    3. // 关闭增量构建
-    4. hvigorw <task> --no-incremental
+    ```bash
+    // 启用增量构建
+    hvigorw <task> --incremental
+    // 关闭增量构建
+    hvigorw <task> --no-incremental
     ```
   + 在[hvigor-config.json5](ide-hvigor-set-options.md)中配置execution.incremental选项。
 
 ## 原理介绍
 
-任何构建工具的一个重要部分是能够避免重复执行已经执行完成的工作。在重复编译时，如果之前的源文件已经被编译过，除非发生了影响输入输出的更改，那么该文件就不需要重新编译。编译过程本身会耗费大量时间，因此跳过此种任务的编译，将会节省大量时间。
+任何构建工具的关键功能之一是避免重复执行已完成的工作。在重复编译时，如果源文件在上一次编译后未发生影响其输入输出的变化，则无需重新编译。由于编译过程本身耗时较长，跳过不必要的编译任务可以显著节省时间。
 
-Hvigor自然支持此种增量构建行为。当您执行任务且控制台输出任务被标记为UP-TO-DATE，这意味着增量构建正在工作。
+Hvigor自然支持增量构建行为。当您执行任务时，如果控制台输出任务被标记为UP-TO-DATE，则说明增量构建正在工作。
 
 在DevEco Studio中，第一次构建后会生成build缓存目录，再次构建时，
 
@@ -46,6 +46,6 @@ Hvigor自然支持此种增量构建行为。当您执行任务且控制台输�
 
 ### 它是如何工作的
 
-在第一次执行之前，Hvigor会获取输入的快照信息，该信息包括输入文件名称、路径、大小、最后修改时间以及对应的哈希值。任务执行成功之后，Hvigor会获取输出的快照信息，该信息包括输出文件名称、路径、大小、最后修改时间以及对应的哈希值。当然，Hvigor对任务本身也进行了快照存储。Hvigor会在下次执行任务时会保留这两个快照信息。
+在第一次执行之前，Hvigor会获取输入的快照信息，该信息包括输入文件名称、路径、大小、最后修改时间以及对应的哈希值。任务执行成功之后，Hvigor会获取输出的快照信息，该信息包括输出文件名称、路径、大小、最后修改时间以及对应的哈希值。此外，Hvigor对任务本身也进行了快照存储。Hvigor会在下次执行任务时会保留这两个快照信息。
 
 此后每次执行任务之前，Hvigor都会获取输入和输出的新快照信息。如果新快照信息与之前的快照信息相同，Hvigor就会认为输出已经是最新的并且跳过该任务的执行。如果它们不相同，Hvigor就会执行该任务，执行成功之后，输入和输出的新快照信息将被存储。

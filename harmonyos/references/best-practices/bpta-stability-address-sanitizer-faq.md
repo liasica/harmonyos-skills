@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 适配常见问题
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 地址越界类问题检测 > 适配常见问题
 category: best-practices
-scraped_at: 2026-04-28T08:22:50+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:becedc99a59273a056e24e733b926a8d038c7b4c51cfd431565f7d547dc724db
+scraped_at: 2026-09-02T14:53:45+08:00
+doc_updated_at: 2026-05-30
+content_hash: sha256:19ce429c19dca3a7e38f9ecda49203a23274d1597cf6a9ae821309808f8bf414
 ---
 
 ## HWASan napi int64转换时存在精度丢失
@@ -24,9 +24,9 @@ HWASan使用了地址的高8位来存储Tag，用于检测踩内存问题。应�
 
 当HWASan上报类型为heap-buffer-overflow，分析overflow的堆栈后认为该堆栈踩内存概率比较小时，通常表现为size过大，基于日志和业务分析free和use对应的线程，查看该线程的ringbuffer打印。如下检查主线程为`use`的线程，日志中rb:(102300/102300)，表示ringbuffer设置为102300，且已满。
 
-```
-1. // T0:线程ID, stack:栈内存范围, sz:栈大小, tls:线程本地存储范围, rb:ringbuffer状态, records:记录数, tid:系统线程ID
-2. Thread: T0 0x005a00002000 stack: [0x007ed30ba000,0x007ed38b9000) sz: 8384512 tls: [0x0059d8b7df20,0x0059d8b7e738) rb:(102300/102300) records(2033100/o:0) tid: 668
+```screen
+// T0:线程ID, stack:栈内存范围, sz:栈大小, tls:线程本地存储范围, rb:ringbuffer状态, records:记录数, tid:系统线程ID
+Thread: T0 0x005a00002000 stack: [0x007ed30ba000,0x007ed38b9000) sz: 8384512 tls: [0x0059d8b7df20,0x0059d8b7e738) rb:(102300/102300) records(2033100/o:0) tid: 668
 ```
 
-这种情况下可考虑对HWASan 参数进行调参，调参方法可参考[HWASan参数配置](bpta-stability-hwasan-detection.md#section1496994494018)，设置heap\_quarantine\_thread\_max\_count大于当前的个数（如上当前为102300）。
+这种情况下可考虑对HWASan 参数进行调参，调参方法可参考[HWASan参数配置](bpta-stability-hwasan-detection.md#section1496994494018)，设置heap\_history\_size\_main\_thread大于当前的个数（如上当前为102300）。

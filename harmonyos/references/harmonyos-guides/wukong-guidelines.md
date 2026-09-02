@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wukong-guidel
 title: wukong稳定性工具使用指导
 breadcrumb: 指南 > 应用测试 > 专项测试 > 命令行工具 > wukong稳定性工具使用指导
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:48:04+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:cfbbb446c207f72f18ac85ed20fe7e0914e16fd713206827ef8db32afd875054
+scraped_at: 2026-09-02T15:00:20+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7689515e983ecd999b51e4544951238be63b8ba1bc5a4475040ea8cc7c8cce53
 ---
 
 ## 功能介绍
@@ -22,7 +22,7 @@ wukong是系统自带的一种命令行工具，支持Ability的随机事件注�
 
 wukong部件架构图以及部件内子模块职责如下所述。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/YfFrR0JdTc2zkAp4D8JDrg/zh-cn_image_0000002558607840.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/wp9uZbctRnWK5yWXbE__QQ/zh-cn_image_0000002701641040.png)
 
 * 命令行解析：支持命令行获取参数并解析。
 * 运行环境管理：根据命令行初始化wukong整体运行环境。
@@ -51,95 +51,95 @@ wukong部件架构图以及部件内子模块职责如下所述。
 
 * 进入shell模式
 
-  ```
-  1. #若连接单个设备，则直接输入如下命令进入shell模式
-  2. C:\Users>hdc shell
-  3. $
-  4. #若同时连接多个设备，则需先获取sn号，先输入hdc list targets获取sn号，然后进入shell模式
-  5. C:\Users>hdc list targets
-  6. 15xxx424axxxx345209d94xxxx8fxx900
-  7. C:\Users>hdc -t 15xxx424axxxx345209d94xxxx8fxx900 shell
-  8. $
+  ```bash
+  #若连接单个设备，则直接输入如下命令进入shell模式
+  C:\Users>hdc shell
+  $
+  #若同时连接多个设备，则需先获取sn号，先输入hdc list targets获取sn号，然后进入shell模式
+  C:\Users>hdc list targets
+  15xxx424axxxx345209d94xxxx8fxx900
+  C:\Users>hdc -t 15xxx424axxxx345209d94xxxx8fxx900 shell
+  $
   ```
 * 获取应用的bundle name和ability name
 
-  ```
-  1. $ wukong appinfo
-  2. BundleName:  com.ohos.adminprovisioning
-  3. AbilityName:  com.ohos.adminprovisioning.MainAbility
-  4. BundleName:  com.ohos.callui
-  5. AbilityName:  com.ohos.callui.MainAbility
+  ```bash
+  $ wukong appinfo
+  BundleName:  com.ohos.adminprovisioning
+  AbilityName:  com.ohos.adminprovisioning.MainAbility
+  BundleName:  com.ohos.callui
+  AbilityName:  com.ohos.callui.MainAbility
   ```
 * 执行查看帮助命令
 
-  ```
-  1. C:\Users>hdc shell
-  2. $ wukong help        #wukong帮助菜单
-  3. usage: wukong <command> [<arguments>]
-  4. These are common wukong command list:
-  5. help                       wukong help information
-  6. -v/--version               wukong version
-  7. exec                       run random test
-  8. special                    run special test
-  9. focus                      run focus test
-  10. appinfo                    show all app information
-  11. $ wukong exec -help   #wukong随机测试帮助菜单
-  12. usage: wukong exec [<arguments>]
-  13. These are wukong exec arguments list:
-  14. -h, --help                 random test help
-  15. -a, --appswitch            appswitch event percent
-  16. -b, --bundle               the bundle name of allowlist
-  17. -p, --prohibit             the bundle name of blocklist
-  18. -d, --page                 block page list
-  19. -t, --touch                touch event percent
-  20. -c, --count                test count
-  21. -i, --interval             interval
-  22. -s, --seed                 random seed
-  23. -m, --mouse                mouse event percent
-  24. -k, --keyboard             keyboard event percent
-  25. -H, --hardkey              hardkey event percent
-  26. -S, --swap                 swap event percent
-  27. -T, --time                 test time
-  28. -C, --component            component event percent
-  29. -r, --rotate               rotate event percent
-  30. -e, --allow ability        the ability name of allowlist
-  31. -E, --block ability        the ability name of blocklist
-  32. -Y, --blockCompId          the id list of block component
-  33. -y, --blockCompType        the type list of block component
-  34. -I, --screenshot           get screenshot(only in random input)
-  35. -B, --checkBWScreen        black and white screen detection
-  36. -U, --Uri                  set Uri pages
-  37. -x, --Uri-type             set Uri-type
-  38. -K, --knuckle              set percent of knuckle event
-  39. -f, --finger               set the number of fingers and proportions for tests such as swipe and knuckle gesture
-  40. -P, --pinch                set percent of pinch-to-zoom event
-  41. -D, --direction            set the swipe directions and proportions
-  42. -o, --pause                pause swiping for 1 second
-  43. -w, --crown                set percent of watch crown rotation event
-  44. -g, --gestures             set percent of watch gesture recognition events
-  45. -l, --idle                 set percent of watch idle event
-  46. -j, --keypress             set percent of watch physical button press event
-  47. -F, --float                set percent of float and split event
-  48. -W, --browser              set percent of browser operation event
-  49. $ wukong special -help    #wukong专项测试帮助菜单
-  50. usage: wukong special [<arguments>]
-  51. These are wukong special arguments list:
-  52. -h, --help                 special test help
-  53. -t, --touch[x,y]           touch event
-  54. -c, --count                total count of test
-  55. -i, --interval             interval
-  56. -S, --swap[option]         swap event
-  57. option is -s| -e| -b
-  58. -s, --start: the start point of swap
-  59. -e, --end: the end point of swap
-  60. -b, --bilateral: swap go and back
-  61. -k, --spec_insomnia        power on/off event
-  62. -T, --time                 total time of test
-  63. -C, --component            component event
-  64. -p, --screenshot           get screenshot(only in component input)
-  65. -r, --record               record user operation
-  66. -R, --replay               replay user operation
-  67. -u, --uitest               uitest dumpLayout
+  ```bash
+  C:\Users>hdc shell
+  $ wukong help        #wukong帮助菜单
+  usage: wukong <command> [<arguments>]
+  These are common wukong command list:
+    help                       wukong help information
+    -v/--version               wukong version
+    exec                       run random test
+    special                    run special test
+    focus                      run focus test
+    appinfo                    show all app information
+  $ wukong exec -help   #wukong随机测试帮助菜单
+  usage: wukong exec [<arguments>]
+  These are wukong exec arguments list:
+    -h, --help                 random test help
+    -a, --appswitch            appswitch event percent
+    -b, --bundle               the bundle name of allowlist
+    -p, --prohibit             the bundle name of blocklist
+    -d, --page                 block page list
+    -t, --touch                touch event percent
+    -c, --count                test count
+    -i, --interval             interval
+    -s, --seed                 random seed
+    -m, --mouse                mouse event percent
+    -k, --keyboard             keyboard event percent
+    -H, --hardkey              hardkey event percent
+    -S, --swap                 swap event percent
+    -T, --time                 test time
+    -C, --component            component event percent
+    -r, --rotate               rotate event percent
+    -e, --allow ability        the ability name of allowlist
+    -E, --block ability        the ability name of blocklist
+    -Y, --blockCompId          the id list of block component
+    -y, --blockCompType        the type list of block component
+    -I, --screenshot           get screenshot(only in random input)
+    -B, --checkBWScreen        black and white screen detection
+    -U, --Uri                  set Uri pages
+    -x, --Uri-type             set Uri-type
+    -K, --knuckle              set percent of knuckle event
+    -f, --finger               set the number of fingers and proportions for tests such as swipe and knuckle gesture
+    -P, --pinch                set percent of pinch-to-zoom event
+    -D, --direction            set the swipe directions and proportions
+    -o, --pause                pause swiping for 1 second
+    -w, --crown                set percent of watch crown rotation event
+    -g, --gestures             set percent of watch gesture recognition events
+    -l, --idle                 set percent of watch idle event
+    -j, --keypress             set percent of watch physical button press event
+    -F, --float                set percent of float and split event
+    -W, --browser              set percent of browser operation event
+  $ wukong special -help    #wukong专项测试帮助菜单
+  usage: wukong special [<arguments>]
+  These are wukong special arguments list:
+    -h, --help                 special test help
+    -t, --touch[x,y]           touch event
+    -c, --count                total count of test
+    -i, --interval             interval
+    -S, --swap[option]         swap event
+                                option is -s| -e| -b
+                                -s, --start: the start point of swap
+                                -e, --end: the end point of swap
+                                -b, --bilateral: swap go and back
+    -k, --spec_insomnia        power on/off event
+    -T, --time                 total time of test
+    -C, --component            component event
+    -p, --screenshot           get screenshot(only in component input)
+    -r, --record               record user operation
+    -R, --replay               replay user operation
+    -u, --uitest               uitest dumpLayout
   ```
 
 ## 随机测试
@@ -184,7 +184,7 @@ wukong部件架构图以及部件内子模块职责如下所述。
 | -F, --float | 设置应用分屏模式和悬浮窗模式的测试比例。 | 否 | 取值范围0到1，默认值为0。 |
 | -W, --browser | 设置浏览器操作测试比例。 | 否 | 取值范围0到1，默认值为0。 |
 
-说明
+**说明** 
 
 * 上述参数的测试比例表示在当前测试中的操作，所有参数的测试比例之和需小于等于1。
 * -K，-f，-P，-D，-o，-w，-g，-l，-j，-F，-W参数从API version 23开始支持。
@@ -193,8 +193,8 @@ wukong部件架构图以及部件内子模块职责如下所述。
 
 * 设置100次事件注入
 
-  ```
-  1. $ wukong exec -s 10 -i 1000 -a 0.28 -t 0.72 -c 100
+  ```bash
+  $ wukong exec -s 10 -i 1000 -a 0.28 -t 0.72 -c 100
   ```
 
   命令中各参数含义：
@@ -209,22 +209,22 @@ wukong部件架构图以及部件内子模块职责如下所述。
   | -c | 100 | 参数设置执行次数为100次。 |
 * 指定页面压测
 
-  ```
-  1. > 显示启动
-  2. > hdc_std shell
-  3. $ wukong exec -b bundlename -e abilityname -U uri
+  ```bash
+  > 显式启动
+  > hdc_std shell
+  $ wukong exec -b bundlename -e abilityname -U uri
 
-  5. > 隐式启动
-  6. > hdc_std shell
-  7. $ wukong exec -b bundlename -U uri -x uriType
+  > 隐式启动
+  > hdc_std shell
+  $ wukong exec -b bundlename -U uri -x uriType
   ```
 * 设置允许测试和禁止测试的ability
 
-  ```
-  1. $ wukong exec -b com.ohos.settings -e com.ohos.settings.MainAbility -E com.ohos.settings.AppInfoAbility
+  ```bash
+  $ wukong exec -b com.ohos.settings -e com.ohos.settings.MainAbility -E com.ohos.settings.AppInfoAbility
   ```
 
-  说明
+  **说明** 
 
   若配置-e、-E则须配置-b来指定应用。
 
@@ -251,8 +251,8 @@ wukong部件架构图以及部件内子模块职责如下所述。
 
 ### 测试命令
 
-```
-1. $ wukong special -C [bundlename] -p
+```bash
+$ wukong special -C [bundlename] -p
 ```
 
 ## 专注测试
@@ -288,8 +288,8 @@ wukong部件架构图以及部件内子模块职责如下所述。
 
 ### 使用示例
 
-```
-1. $ wukong focus -s 10 -i 1000 -a 0.28 -t 0.72 -c 100
+```bash
+$ wukong focus -s 10 -i 1000 -a 0.28 -t 0.72 -c 100
 ```
 
 命令中各参数含义：
@@ -325,19 +325,19 @@ wukong部件架构图以及部件内子模块职责如下所述。
 
 wukong支持通过hdc命令将日志获取到本地，查看操作历程。
 
-```
-1. # wukong.log文件对应路径如下
-2. /data/local/tmp/wukong/report/xxxxxxxx_xxxxxx/wukong.log
+```bash
+# wukong.log文件对应路径如下
+/data/local/tmp/wukong/report/xxxxxxxx_xxxxxx/wukong.log
 
-4. # 查看wukong测试报告文件目录操作如下
-5. $ cd /data/local/tmp/wukong/report/20170805_170053
-6. $ ls
-7. data.js  exception  wukong.log  wukong_report.csv
+# 查看wukong测试报告文件目录操作如下
+$ cd /data/local/tmp/wukong/report/20170805_170053
+$ ls
+data.js  exception  wukong.log  wukong_report.csv
 
-9. # 开启shell窗口，用hdc file recv获取wukong日志
-10. C:\Users\xxx>hdc file recv /data/local/tmp/wukong/report/20170805_170053/wukong.log C:\Users\xxx\Desktop\log
-11. [I][2024-01-03 20:08:02] HdcFile::TransferSummary success
-12. FileTransfer finish, Size:76492, File count = 1, time:16ms rate:4780.75kB/s
+# 开启shell窗口，用hdc file recv获取wukong日志
+C:\Users\xxx>hdc file recv /data/local/tmp/wukong/report/20170805_170053/wukong.log C:\Users\xxx\Desktop\log
+[I][2024-01-03 20:08:02] HdcFile::TransferSummary success
+FileTransfer finish, Size:76492, File count = 1, time:16ms rate:4780.75kB/s
 ```
 
 ### 测试报告解析
@@ -356,7 +356,7 @@ wukong支持通过hdc命令将日志获取到本地，查看操作历程。
 
    | 类型 | 描述 |
    | --- | --- |
-   | type | 事件或控件注入的类型，事件注入类型范围请参考[随机测试命令参数](wukong-guidelines.md#随机测试)，控件注入类型范围请参考[ArkTS组件](../harmonyos-references/arkui-declarative-comp.md)。 |
+   | type | 事件或控件注入的类型，事件注入类型范围请参考[随机测试命令参数](wukong-guidelines.md#随机测试)，控件注入类型范围包括ArkUI（方舟UI框架）下的ArkTS组件和ArkWeb（方舟Web）下的ArkTS组件。 |
    | execTimes | 事件或者控件注入执行次数。 |
    | proportion | 当前事件操作在事件注入执行总次数里的占比。 |
    | inputedTimes | 遍历的控件类型个数。 |
@@ -372,7 +372,7 @@ wukong支持通过hdc命令将日志获取到本地，查看操作历程。
    | coverage | Ability遍历覆盖率。 |
 4. 故障统计（Exception Message Statistics）
 
-   说明
+   **说明** 
 
    故障日志路径：/data/log/faultlog/faultlogger/
 

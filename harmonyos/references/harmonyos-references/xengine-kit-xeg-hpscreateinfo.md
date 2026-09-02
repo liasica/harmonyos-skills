@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-k
 title: XEG_HPSCreateInfo
 breadcrumb: API参考 > 图形 > XEngine Kit（GPU加速引擎服务） > C API > 头文件和结构体 > 结构体 > XEG_HPSCreateInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:00+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:86619c40e2ffc3d43a4554be23f9ae78fffd5f93826a8de3059ad18cd85f9a7f
+scraped_at: 2026-09-02T15:02:49+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b57b4d5d1b34fb6d6e12118d1ab429146ef94eb1ea38d354d27f1da6ddc31aeb
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 此结构体描述创建[XEG\_HPS](xengine-kit-xengine.md#xeg_hps)对象的信息。
 
@@ -22,11 +20,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 成员变量
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -35,14 +29,10 @@ PhonePC/2in1TabletTV
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTV
-
 ### pNext
 
-PhonePC/2in1TabletTV
-
-```
-1. const void* XEG_HPSCreateInfo::pNext
+```cpp
+const void* XEG_HPSCreateInfo::pNext
 ```
 
 **描述**
@@ -51,10 +41,8 @@ PhonePC/2in1TabletTV
 
 ### sType
 
-PhonePC/2in1TabletTV
-
-```
-1. XEG_StructureType XEG_HPSCreateInfo::sType
+```cpp
+XEG_StructureType XEG_HPSCreateInfo::sType
 ```
 
 **描述**

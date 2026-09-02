@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cloudfoun
 title: cloudDatabase (云数据库模块)
 breadcrumb: API参考 > 应用服务 > Cloud Foundation Kit（云开发服务） > ArkTS API > cloudDatabase (云数据库模块)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:32+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:dfbfdce7f90285f985565c2ccc5bf6cd7f7c75cf189b4c029763d7b0a73eff21
+scraped_at: 2026-09-02T15:02:52+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6a76ae77fca456347d2106df5414aa5f6853a1127b1cc873d86547d1911a0e5d
 ---
 
 本模块提供使用云数据库进行数据写入、查询、删除等操作的能力。
@@ -14,15 +14,11 @@ content_hash: sha256:dfbfdce7f90285f985565c2ccc5bf6cd7f7c75cf189b4c029763d7b0a73
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
 ```
 
 ## zone
-
-PhonePC/2in1TabletTVWearable
 
 zone(zone: string): DatabaseZone
 
@@ -50,15 +46,13 @@ zone(zone: string): DatabaseZone
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
 
-3. let databaseZone = cloudDatabase.zone("storageArea");
+let databaseZone = cloudDatabase.zone('storageArea');
 ```
 
 ## DatabaseZone
-
-PhonePC/2in1TabletTVWearable
 
 云数据库处理数据的实例。
 
@@ -71,8 +65,6 @@ PhonePC/2in1TabletTVWearable
 **起始版本：** 5.0.0(12)
 
 ### query
-
-PhonePC/2in1TabletTVWearable
 
 query<T extends DatabaseObject>(condition: DatabaseQuery<T>): Promise<T[]>
 
@@ -92,7 +84,7 @@ query<T extends DatabaseObject>(condition: DatabaseQuery<T>): Promise<T[]>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| condition | [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequery)<T> | 是 | 提供丰富的查询条件。 |
+| condition | [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequeryt-extends-databaseobject)<T> | 是 | 提供丰富的查询条件。 |
 
 **返回值：**
 
@@ -102,7 +94,7 @@ query<T extends DatabaseObject>(condition: DatabaseQuery<T>): Promise<T[]>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-cloudfoundation.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-cloudfoundation.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -116,50 +108,51 @@ query<T extends DatabaseObject>(condition: DatabaseQuery<T>): Promise<T[]>
 
 **示例：**
 
+```typescript
+// 在代码工程中创建BookInfo.ets文件
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+
+// 创建一个BookInfo的类继承cloudDatabase.DatabaseObject
+class BookInfo extends cloudDatabase.DatabaseObject{
+  public naturalbase_ClassName(): string {
+    return 'BookInfo';
+  }
+  public keyString: string | undefined;
+  public keyBoolean: boolean | undefined;
+  public keyByte: number | undefined;
+  public keyShort: number | undefined;
+  public keyInteger: number | undefined;
+  public keyLong: number | undefined;
+  public keyFloat: number | undefined;
+  public keyDouble: number | undefined;
+  public keyText: string | undefined;
+  public keyDate: Date | undefined;
+  public keyByteArray: Uint8Array | undefined;
+}
+
+export { BookInfo };
 ```
-1. // 在代码工程中创建BookInfo.ets文件
-2. import { cloudDatabase } from '@kit.CloudFoundationKit';
 
-4. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject
-5. class BookInfo extends cloudDatabase.DatabaseObject{
-6. public naturalbase_ClassName(): string {
-7. return 'BookInfo';
-8. }
-9. public key_string: string | undefined;
-10. public key_boolean: boolean | undefined;
-11. public key_byte: number | undefined;
-12. public key_short: number | undefined;
-13. public key_integer: number | undefined;
-14. public key_long: number | undefined;
-15. public key_float: number | undefined;
-16. public key_double: number | undefined;
-17. public key_text: string | undefined;
-18. public key_date: Date | undefined;
-19. public key_byte_array: Uint8Array | undefined;
-20. }
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BookInfo } from 'xx/BookInfo'; // 在云数据库代码工程中引入BookInfo.ets文件，xx是文件的路径
 
-22. export { BookInfo };
-```
-
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { BookInfo } from 'xx/BookInfo'; // 在云数据库代码工程中引入BookInfo.ets文件，xx是文件的路径
-
-5. try {
-6. let databaseZone = cloudDatabase.zone('storageArea');
-7. let condition = new cloudDatabase.DatabaseQuery(BookInfo);
-8. condition.equalTo('key_string', 'string_123');
-9. let bookInfoArray = await databaseZone.query(condition);
-10. hilog.info(0x0000, 'testTag', `Succeeded in querying data, result: ${JSON.stringify(bookInfoArray)}`);
-11. } catch (err) {
-12. hilog.error(0x0000, 'testTag', `Failed to query data, code: ${err.code}, message: ${err.message}`);
-13. }
+async () => {
+  // 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+  try {
+    let databaseZone = cloudDatabase.zone('storageArea');
+    let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+    condition.equalTo('keyString', 'string_123');
+    let bookInfoArray = await databaseZone.query(condition);
+    hilog.info(0x0000, 'testTag', `Succeeded in querying data, result: ${JSON.stringify(bookInfoArray)}`);
+  } catch (err) {
+    hilog.error(0x0000, 'testTag', `Failed to query data, code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ### query
-
-PhonePC/2in1TabletTVWearable
 
 query<T extends DatabaseObject>(condition: DatabaseQuery<T>, callback: AsyncCallback<T[]>): void
 
@@ -179,12 +172,12 @@ query<T extends DatabaseObject>(condition: DatabaseQuery<T>, callback: AsyncCall
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| condition | [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequery)<T> | 是 | 提供丰富的查询条件。 |
+| condition | [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequeryt-extends-databaseobject)<T> | 是 | 提供丰富的查询条件。 |
 | callback | AsyncCallback<T[]> | 是 | 回调函数。当查询数据成功，err为undefined，data为查询到的结果数组；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-cloudfoundation.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-cloudfoundation.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -198,28 +191,26 @@ query<T extends DatabaseObject>(condition: DatabaseQuery<T>, callback: AsyncCall
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
 
-6. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-7. let databaseZone = cloudDatabase.zone('storageArea');
-8. let condition = new cloudDatabase.DatabaseQuery(BookInfo);
-9. condition.equalTo('key_string', 'string_123');
-10. databaseZone.query(condition, (err: BusinessError, bookInfoArray) => {
-11. if (err) {
-12. hilog.error(0x0000, 'testTag', `Failed to query data, code: ${err.code}, message: ${err.message}`);
-13. } else {
-14. hilog.info(0x0000, 'testTag', `Succeeded in querying data, result: ${JSON.stringify(bookInfoArray)}`);
-15. }
-16. });
+// 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+let databaseZone = cloudDatabase.zone('storageArea');
+let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+condition.equalTo('keyString', 'string_123');
+databaseZone.query(condition, (err: BusinessError, bookInfoArray) => {
+  if (err) {
+    hilog.error(0x0000, 'testTag', `Failed to query data, code: ${err.code}, message: ${err.message}`);
+  } else {
+    hilog.info(0x0000, 'testTag', `Succeeded in querying data, result: ${JSON.stringify(bookInfoArray)}`);
+  }
+});
 ```
 
 ### calculateQuery
-
-PhonePC/2in1TabletTVWearable
 
 calculateQuery<T extends DatabaseObject>(condition: DatabaseQuery<T>, fieldName: string, calculate: QueryCalculate): Promise<number>
 
@@ -239,7 +230,7 @@ calculateQuery<T extends DatabaseObject>(condition: DatabaseQuery<T>, fieldName:
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| condition | [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequery)<T> | 是 | 提供丰富的查询条件。 |
+| condition | [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequeryt-extends-databaseobject)<T> | 是 | 提供丰富的查询条件。 |
 | fieldName | string | 是 | 指定查询对象中要计算的字段名称。 |
 | calculate | [QueryCalculate](cloudfoundation-clouddatabase.md#querycalculate) | 是 | 云数据库查询算术计算的类型。 |
 
@@ -251,7 +242,7 @@ calculateQuery<T extends DatabaseObject>(condition: DatabaseQuery<T>, fieldName:
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-cloudfoundation.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-cloudfoundation.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -265,26 +256,26 @@ calculateQuery<T extends DatabaseObject>(condition: DatabaseQuery<T>, fieldName:
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
 
-5. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-6. try {
-7. let databaseZone = cloudDatabase.zone('storageArea');
-8. let condition = new cloudDatabase.DatabaseQuery(BookInfo);
-9. condition.lessThan('key_integer', 100);
-10. let count = await databaseZone.calculateQuery(condition, 'key_integer', cloudDatabase.QueryCalculate.AVERAGE);
-11. hilog.info(0x0000, 'testTag', `Succeeded in calculating queried data, result: ${count}`);
-12. } catch (err) {
-13. hilog.error(0x0000, 'testTag', `Failed to calculate queried data, code: ${err.code}, message: ${err.message}`);
-14. }
+async () => {
+  // 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+  try {
+    let databaseZone = cloudDatabase.zone('storageArea');
+    let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+    condition.lessThan('keyInteger', 100);
+    let count = await databaseZone.calculateQuery(condition, 'keyInteger', cloudDatabase.QueryCalculate.AVERAGE);
+    hilog.info(0x0000, 'testTag', `Succeeded in calculating queried data, result: ${count}`);
+  } catch (err) {
+    hilog.error(0x0000, 'testTag', `Failed to calculate queried data, code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ### calculateQuery
-
-PhonePC/2in1TabletTVWearable
 
 calculateQuery<T extends DatabaseObject>(condition: DatabaseQuery<T>, fieldName: string, calculate: QueryCalculate, callback: AsyncCallback<number>): void
 
@@ -304,14 +295,14 @@ calculateQuery<T extends DatabaseObject>(condition: DatabaseQuery<T>, fieldName:
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| condition | [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequery)<T> | 是 | 提供丰富的查询条件。 |
+| condition | [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequeryt-extends-databaseobject)<T> | 是 | 提供丰富的查询条件。 |
 | fieldName | string | 是 | 指定查询对象中要计算的字段名称。 |
 | calculate | [QueryCalculate](cloudfoundation-clouddatabase.md#querycalculate) | 是 | 云数据库查询算术计算的类型。 |
-| callback | AsyncCallback<number> | 是 | 回调函数。返回查询字段名称算术运算结果。 |
+| callback | AsyncCallback<number> | 是 | 回调函数。当算术计算成功，err为undefined，data为算术运算结果；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-cloudfoundation.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-cloudfoundation.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -325,29 +316,27 @@ calculateQuery<T extends DatabaseObject>(condition: DatabaseQuery<T>, fieldName:
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
 
-6. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-7. let databaseZone = cloudDatabase.zone('storageArea');
-8. let condition = new cloudDatabase.DatabaseQuery(BookInfo);
-9. condition.lessThan('key_integer', 100);
-10. databaseZone.calculateQuery(condition, 'key_integer', cloudDatabase.QueryCalculate.AVERAGE,
-11. (err: BusinessError, num) => {
-12. if (err) {
-13. hilog.error(0x0000, 'testTag', `Failed to calculate queried data, code: ${err.code}, message: ${err.message}`);
-14. } else {
-15. hilog.info(0x0000, 'testTag', `Succeeded in calculating queried data, result: ${num}`);
-16. }
-17. });
+// 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+let databaseZone = cloudDatabase.zone('storageArea');
+let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+condition.lessThan('keyInteger', 100);
+databaseZone.calculateQuery(condition, 'keyInteger', cloudDatabase.QueryCalculate.AVERAGE,
+  (err: BusinessError, num) => {
+    if (err) {
+      hilog.error(0x0000, 'testTag', `Failed to calculate queried data, code: ${err.code}, message: ${err.message}`);
+    } else {
+      hilog.info(0x0000, 'testTag', `Succeeded in calculating queried data, result: ${num}`);
+    }
+  });
 ```
 
 ### upsert
-
-PhonePC/2in1TabletTVWearable
 
 upsert<T extends DatabaseObject>(objectList: T[] | T): Promise<number>
 
@@ -377,7 +366,7 @@ upsert<T extends DatabaseObject>(objectList: T[] | T): Promise<number>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-cloudfoundation.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-cloudfoundation.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -391,30 +380,30 @@ upsert<T extends DatabaseObject>(objectList: T[] | T): Promise<number>
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
 
-5. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-6. try {
-7. let databaseZone = cloudDatabase.zone('storageArea');
-8. let book = new BookInfo();
-9. book.key_string = 'string_12';
-10. book.key_integer = 90;
-11. let book1 = new BookInfo();
-12. book1.key_string = 'string_1234';
-13. book1.key_integer = 101;
-14. let num = await databaseZone.upsert([book, book1]);
-15. hilog.info(0x0000, 'testTag', `Succeeded in upserting data, result: ${num}`);
-16. } catch (err) {
-17. hilog.error(0x0000, 'testTag', `Failed to upsert data, code: ${err.code}, message: ${err.message}`);
-18. }
+async () => {
+  // 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+  try {
+    let databaseZone = cloudDatabase.zone('storageArea');
+    let book = new BookInfo();
+    book.keyString = 'string_12';
+    book.keyInteger = 90;
+    let book1 = new BookInfo();
+    book1.keyString = 'string_1234';
+    book1.keyInteger = 101;
+    let num = await databaseZone.upsert([book, book1]);
+    hilog.info(0x0000, 'testTag', `Succeeded in upserting data, result: ${num}`);
+  } catch (err) {
+    hilog.error(0x0000, 'testTag', `Failed to upsert data, code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ### upsert
-
-PhonePC/2in1TabletTVWearable
 
 upsert<T extends DatabaseObject>(objectList: T[] | T, callback: AsyncCallback<number>): void
 
@@ -435,11 +424,11 @@ upsert<T extends DatabaseObject>(objectList: T[] | T, callback: AsyncCallback<nu
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | objectList | T[] | T | 是 | 一个或多个对象。 |
-| callback | AsyncCallback<number> | 是 | 回调函数。返回更新成功的数据数量。 |
+| callback | AsyncCallback<number> | 是 | 回调函数。当更新数据成功，err为undefined，data为更新成功的数据数量；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-cloudfoundation.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-cloudfoundation.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -453,32 +442,30 @@ upsert<T extends DatabaseObject>(objectList: T[] | T, callback: AsyncCallback<nu
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
 
-6. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-7. let databaseZone = cloudDatabase.zone('storageArea');
-8. let book = new BookInfo();
-9. book.key_string = 'string_12';
-10. book.key_integer = 90;
-11. let book1 = new BookInfo();
-12. book1.key_string = 'string_1234';
-13. book1.key_integer = 101;
-14. databaseZone.upsert([book, book1], (err: BusinessError, num) => {
-15. if (err) {
-16. hilog.error(0x0000, 'testTag', `Failed to upsert data, code: ${err.code}, message: ${err.message}`);
-17. } else {
-18. hilog.info(0x0000, 'testTag', `Succeeded in upserting data, result: ${num}`);
-19. }
-20. });
+// 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+let databaseZone = cloudDatabase.zone('storageArea');
+let book = new BookInfo();
+book.keyString = 'string_12';
+book.keyInteger = 90;
+let book1 = new BookInfo();
+book1.keyString = 'string_1234';
+book1.keyInteger = 101;
+databaseZone.upsert([book, book1], (err: BusinessError, num) => {
+  if (err) {
+    hilog.error(0x0000, 'testTag', `Failed to upsert data, code: ${err.code}, message: ${err.message}`);
+  } else {
+    hilog.info(0x0000, 'testTag', `Succeeded in upserting data, result: ${num}`);
+  }
+});
 ```
 
 ### delete
-
-PhonePC/2in1TabletTVWearable
 
 delete<T extends DatabaseObject>(objectList: T[] | T): Promise<number>
 
@@ -508,7 +495,7 @@ delete<T extends DatabaseObject>(objectList: T[] | T): Promise<number>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-cloudfoundation.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-cloudfoundation.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -522,27 +509,27 @@ delete<T extends DatabaseObject>(objectList: T[] | T): Promise<number>
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
 
-5. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-6. try {
-7. let databaseZone = cloudDatabase.zone('storageArea');
-8. let condition = new cloudDatabase.DatabaseQuery(BookInfo);
-9. condition.lessThan('key_integer', 100);
-10. let bookArray = await databaseZone.query(condition);
-11. let deleteNum = await databaseZone.delete(bookArray);
-12. hilog.info(0x0000, 'testTag', `Succeeded in deleting a book, result: ${deleteNum}`);
-13. } catch (err) {
-14. hilog.error(0x0000, 'testTag', `Failed to delete a book, code: ${err.code}, message: ${err.message}`);
-15. }
+async () => {
+  // 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+  try {
+    let databaseZone = cloudDatabase.zone('storageArea');
+    let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+    condition.lessThan('keyInteger', 100);
+    let bookArray = await databaseZone.query(condition);
+    let deleteNum = await databaseZone.delete(bookArray);
+    hilog.info(0x0000, 'testTag', `Succeeded in deleting a book, result: ${deleteNum}`);
+  } catch (err) {
+  hilog.error(0x0000, 'testTag', `Failed to delete a book, code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ### delete
-
-PhonePC/2in1TabletTVWearable
 
 delete<T extends DatabaseObject>(objectList: T[] | T, callback: AsyncCallback<number>): void
 
@@ -563,11 +550,11 @@ delete<T extends DatabaseObject>(objectList: T[] | T, callback: AsyncCallback<nu
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | objectList | T[] | T | 是 | 一个或多个对象。 |
-| callback | AsyncCallback<number> | 是 | 回调函数。返回删除成功的数据数量。 |
+| callback | AsyncCallback<number> | 是 | 回调函数。当删除数据成功，err为undefined，data为删除成功的数据数量；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS错误码](errorcode-cloudfoundation.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-cloudfoundation.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -581,33 +568,33 @@ delete<T extends DatabaseObject>(objectList: T[] | T, callback: AsyncCallback<nu
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
 
-6. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-7. let databaseZone = cloudDatabase.zone('storageArea');
-8. let condition = new cloudDatabase.DatabaseQuery(BookInfo);
-9. condition.lessThan('key_integer', 100);
-10. try {
-11. let bookArray = await databaseZone.query(condition);
-12. databaseZone.delete(bookArray, (err: BusinessError, num) => {
-13. if (err) {
-14. hilog.error(0x0000, 'testTag', `Failed to delete a book, code: ${err.code}, message: ${err.message}`);
-15. } else {
-16. hilog.info(0x0000, 'testTag', `Succeeded in deleting a book, result: ${num}`);
-17. }
-18. });
-19. } catch (err) {
-20. hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
-21. }
+async () => {
+  // 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+  let databaseZone = cloudDatabase.zone('storageArea');
+  let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+  condition.lessThan('keyInteger', 100);
+  try {
+    let bookArray = await databaseZone.query(condition);
+    databaseZone.delete(bookArray, (err: BusinessError, num) => {
+      if (err) {
+        hilog.error(0x0000, 'testTag', `Failed to delete a book, code: ${err.code}, message: ${err.message}`);
+      } else {
+        hilog.info(0x0000, 'testTag', `Succeeded in deleting a book, result: ${num}`);
+      }
+    });
+  } catch (err) {
+    hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ## DatabaseObject
-
-PhonePC/2in1TabletTVWearable
 
 数据库数据类型基类，在云端生成表结构时继承。
 
@@ -620,8 +607,6 @@ PhonePC/2in1TabletTVWearable
 **起始版本：** 5.0.0(12)
 
 ### naturalbase\_ClassName
-
-PhonePC/2in1TabletTVWearable
 
 naturalbase\_ClassName(): string
 
@@ -643,22 +628,20 @@ naturalbase\_ClassName(): string
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
 
-3. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-4. class BookInfo extends cloudDatabase.DatabaseObject{
-5. public naturalbase_ClassName(): string {
-6. return "BookInfo";
-7. }
-8. }
+// 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+class BookInfo extends cloudDatabase.DatabaseObject{
+  public naturalbase_ClassName(): string {
+    return 'BookInfo';
+  }
+}
 
-10. export { BookInfo };
+export { BookInfo };
 ```
 
 ## FieldType
-
-PhonePC/2in1TabletTVWearable
 
 type FieldType = string | number | boolean | Uint8Array | Date
 
@@ -682,8 +665,6 @@ type FieldType = string | number | boolean | Uint8Array | Date
 
 ## QueryCalculate
 
-PhonePC/2in1TabletTVWearable
-
 枚举， 查询算术计算类型。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -702,11 +683,7 @@ PhonePC/2in1TabletTVWearable
 | MINIMUM | 3 | 计算最小值。 |
 | COUNT | 4 | 计算记录总数。 |
 
-## DatabaseQuery
-
-PhonePC/2in1TabletTVWearable
-
-DatabaseQuery<T extends DatabaseObject>
+## DatabaseQuery<T extends DatabaseObject>
 
 提供丰富的谓词查询来构建查询条件。根据谓词查询方法构造自己的DatabaseQuery对象。
 
@@ -719,8 +696,6 @@ DatabaseQuery<T extends DatabaseObject>
 **起始版本：** 5.0.0(12)
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(entityClass: new () => T)
 
@@ -740,9 +715,16 @@ constructor(entityClass: new () => T)
 | --- | --- | --- | --- |
 | entityClass | new () => T | 是 | 数据对象的实体类。 |
 
-### equalTo
+**示例：**
 
-PhonePC/2in1TabletTVWearable
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+
+let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+```
+
+### equalTo
 
 equalTo(fieldName: string, value: FieldType): DatabaseQuery<T>
 
@@ -767,29 +749,30 @@ equalTo(fieldName: string, value: FieldType): DatabaseQuery<T>
 
 | 类型 | 说明 |
 | --- | --- |
-| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequery)<T> | DatabaseQuery对象。 |
+| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequeryt-extends-databaseobject)<T> | DatabaseQuery对象。 |
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-6. let databaseZone = cloudDatabase.zone('storageArea');
-7. let condition = new cloudDatabase.DatabaseQuery(BookInfo);
-8. condition.equalTo('key_string', 'string_123');
-9. try {
-10. let bookInfoArray = await databaseZone.query(condition);
-11. } catch (err) {
-12. hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
-13. }
+async () => {
+  // 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+  let databaseZone = cloudDatabase.zone('storageArea');
+  let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+  condition.equalTo('keyString', 'string_123');
+  try {
+    let bookInfoArray = await databaseZone.query(condition);
+    hilog.info(0x0000, 'testTag', `Succeeded in querying data, result: ${JSON.stringify(bookInfoArray)}`);
+  } catch (err) {
+    hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ### notEqualTo
-
-PhonePC/2in1TabletTVWearable
 
 notEqualTo(fieldName: string, value: FieldType): DatabaseQuery<T>
 
@@ -814,29 +797,30 @@ notEqualTo(fieldName: string, value: FieldType): DatabaseQuery<T>
 
 | 类型 | 说明 |
 | --- | --- |
-| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequery)<T> | DatabaseQuery对象。 |
+| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequeryt-extends-databaseobject)<T> | DatabaseQuery对象。 |
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-6. let databaseZone = cloudDatabase.zone('storageArea');
-7. let condition = new cloudDatabase.DatabaseQuery(BookInfo);
-8. condition.notEqualTo('key_string', 'string_123');
-9. try {
-10. let bookInfoArray = await databaseZone.query(condition);
-11. } catch (err) {
-12. hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
-13. }
+async () => {
+  // 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+  let databaseZone = cloudDatabase.zone('storageArea');
+  let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+  condition.notEqualTo('keyString', 'string_123');
+  try {
+    let bookInfoArray = await databaseZone.query(condition);
+    hilog.info(0x0000, 'testTag', `Succeeded in querying data, result: ${JSON.stringify(bookInfoArray)}`);
+  } catch (err) {
+    hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ### beginsWith
-
-PhonePC/2in1TabletTVWearable
 
 beginsWith(fieldName: string, value: FieldType): DatabaseQuery<T>
 
@@ -861,29 +845,30 @@ beginsWith(fieldName: string, value: FieldType): DatabaseQuery<T>
 
 | 类型 | 说明 |
 | --- | --- |
-| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequery)<T> | DatabaseQuery对象。 |
+| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequeryt-extends-databaseobject)<T> | DatabaseQuery对象。 |
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-6. let databaseZone = cloudDatabase.zone('storageArea');
-7. let condition = new cloudDatabase.DatabaseQuery(BookInfo);
-8. condition.beginsWith('key_string', 'key');
-9. try {
-10. let bookInfoArray = await databaseZone.query(condition);
-11. } catch (err) {
-12. hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
-13. }
+async () => {
+  // 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+  let databaseZone = cloudDatabase.zone('storageArea');
+  let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+  condition.beginsWith('keyString', 'key');
+  try {
+    let bookInfoArray = await databaseZone.query(condition);
+    hilog.info(0x0000, 'testTag', `Succeeded in querying data, result: ${JSON.stringify(bookInfoArray)}`);
+  } catch (err) {
+    hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ### endsWith
-
-PhonePC/2in1TabletTVWearable
 
 endsWith(fieldName: string, value: FieldType): DatabaseQuery<T>
 
@@ -908,29 +893,30 @@ endsWith(fieldName: string, value: FieldType): DatabaseQuery<T>
 
 | 类型 | 说明 |
 | --- | --- |
-| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequery)<T> | DatabaseQuery对象。 |
+| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequeryt-extends-databaseobject)<T> | DatabaseQuery对象。 |
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-6. let databaseZone = cloudDatabase.zone('storageArea');
-7. let condition = new cloudDatabase.DatabaseQuery(BookInfo);
-8. condition.endsWith('key_string', 'string');
-9. try {
-10. let bookInfoArray = await databaseZone.query(condition);
-11. } catch (err) {
-12. hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
-13. }
+async () => {
+  // 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+  let databaseZone = cloudDatabase.zone('storageArea');
+  let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+  condition.endsWith('keyString', 'string');
+  try {
+    let bookInfoArray = await databaseZone.query(condition);
+    hilog.info(0x0000, 'testTag', `Succeeded in querying data, result: ${JSON.stringify(bookInfoArray)}`);
+  } catch (err) {
+    hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ### contains
-
-PhonePC/2in1TabletTVWearable
 
 contains(fieldName: string, value: FieldType): DatabaseQuery<T>
 
@@ -955,29 +941,30 @@ contains(fieldName: string, value: FieldType): DatabaseQuery<T>
 
 | 类型 | 说明 |
 | --- | --- |
-| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequery)<T> | DatabaseQuery对象。 |
+| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequeryt-extends-databaseobject)<T> | DatabaseQuery对象。 |
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-6. let databaseZone = cloudDatabase.zone('storageArea');
-7. let condition = new cloudDatabase.DatabaseQuery(BookInfo);
-8. condition.contains('key_string', 'string');
-9. try {
-10. let bookInfoArray = await databaseZone.query(condition);
-11. } catch (err) {
-12. hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
-13. }
+async () => {
+  // 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+  let databaseZone = cloudDatabase.zone('storageArea');
+  let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+  condition.contains('keyString', 'string');
+  try {
+    let bookInfoArray = await databaseZone.query(condition);
+    hilog.info(0x0000, 'testTag', `Succeeded in querying data, result: ${JSON.stringify(bookInfoArray)}`);
+  } catch (err) {
+    hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ### greaterThan
-
-PhonePC/2in1TabletTVWearable
 
 greaterThan(fieldName: string, value: FieldType): DatabaseQuery<T>
 
@@ -1002,29 +989,30 @@ greaterThan(fieldName: string, value: FieldType): DatabaseQuery<T>
 
 | 类型 | 说明 |
 | --- | --- |
-| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequery)<T> | DatabaseQuery对象。 |
+| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequeryt-extends-databaseobject)<T> | DatabaseQuery对象。 |
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-6. let databaseZone = cloudDatabase.zone('storageArea');
-7. let condition = new cloudDatabase.DatabaseQuery(BookInfo);
-8. condition.greaterThan('key_integer', 100);
-9. try {
-10. let bookInfoArray = await databaseZone.query(condition);
-11. } catch (err) {
-12. hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
-13. }
+async () => {
+  // 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+  let databaseZone = cloudDatabase.zone('storageArea');
+  let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+  condition.greaterThan('keyInteger', 100);
+  try {
+    let bookInfoArray = await databaseZone.query(condition);
+    hilog.info(0x0000, 'testTag', `Succeeded in querying data, result: ${JSON.stringify(bookInfoArray)}`);
+  } catch (err) {
+    hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ### greaterThanOrEqualTo
-
-PhonePC/2in1TabletTVWearable
 
 greaterThanOrEqualTo(fieldName: string, value: FieldType): DatabaseQuery<T>
 
@@ -1049,29 +1037,30 @@ greaterThanOrEqualTo(fieldName: string, value: FieldType): DatabaseQuery<T>
 
 | 类型 | 说明 |
 | --- | --- |
-| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequery)<T> | DatabaseQuery对象。 |
+| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequeryt-extends-databaseobject)<T> | DatabaseQuery对象。 |
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-6. let databaseZone = cloudDatabase.zone('storageArea');
-7. let condition = new cloudDatabase.DatabaseQuery(BookInfo);
-8. condition.greaterThanOrEqualTo('key_integer', 100);
-9. try {
-10. let bookInfoArray = await databaseZone.query(condition);
-11. } catch (err) {
-12. hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
-13. }
+async () => {
+  // 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+  let databaseZone = cloudDatabase.zone('storageArea');
+  let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+  condition.greaterThanOrEqualTo('keyInteger', 100);
+  try {
+    let bookInfoArray = await databaseZone.query(condition);
+    hilog.info(0x0000, 'testTag', `Succeeded in querying data, result: ${JSON.stringify(bookInfoArray)}`);
+  } catch (err) {
+    hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ### lessThan
-
-PhonePC/2in1TabletTVWearable
 
 lessThan(fieldName: string, value: FieldType): DatabaseQuery<T>
 
@@ -1096,29 +1085,30 @@ lessThan(fieldName: string, value: FieldType): DatabaseQuery<T>
 
 | 类型 | 说明 |
 | --- | --- |
-| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequery)<T> | DatabaseQuery对象。 |
+| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequeryt-extends-databaseobject)<T> | DatabaseQuery对象。 |
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-6. let databaseZone = cloudDatabase.zone('storageArea');
-7. let condition = new cloudDatabase.DatabaseQuery(BookInfo);
-8. condition.lessThan('key_integer', 100);
-9. try {
-10. let bookInfoArray = await databaseZone.query(condition);
-11. } catch (err) {
-12. hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
-13. }
+async () => {
+  // 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+  let databaseZone = cloudDatabase.zone('storageArea');
+  let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+  condition.lessThan('keyInteger', 100);
+  try {
+    let bookInfoArray = await databaseZone.query(condition);
+    hilog.info(0x0000, 'testTag', `Succeeded in querying data, result: ${JSON.stringify(bookInfoArray)}`);
+  } catch (err) {
+    hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ### lessThanOrEqualTo
-
-PhonePC/2in1TabletTVWearable
 
 lessThanOrEqualTo(fieldName: string, value: FieldType): DatabaseQuery<T>
 
@@ -1143,29 +1133,30 @@ lessThanOrEqualTo(fieldName: string, value: FieldType): DatabaseQuery<T>
 
 | 类型 | 说明 |
 | --- | --- |
-| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequery)<T> | DatabaseQuery对象。 |
+| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequeryt-extends-databaseobject)<T> | DatabaseQuery对象。 |
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-6. let databaseZone = cloudDatabase.zone('storageArea');
-7. let condition = new cloudDatabase.DatabaseQuery(BookInfo);
-8. condition.lessThanOrEqualTo('key_integer', 100);
-9. try {
-10. let bookInfoArray = await databaseZone.query(condition);
-11. } catch (err) {
-12. hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
-13. }
+async () => {
+  // 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+  let databaseZone = cloudDatabase.zone('storageArea');
+  let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+  condition.lessThanOrEqualTo('keyInteger', 100);
+  try {
+    let bookInfoArray = await databaseZone.query(condition);
+    hilog.info(0x0000, 'testTag', `Succeeded in querying data, result: ${JSON.stringify(bookInfoArray)}`);
+  } catch (err) {
+    hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ### in
-
-PhonePC/2in1TabletTVWearable
 
 in(fieldName: string, values: FieldType[]): DatabaseQuery<T>
 
@@ -1190,29 +1181,30 @@ in(fieldName: string, values: FieldType[]): DatabaseQuery<T>
 
 | 类型 | 说明 |
 | --- | --- |
-| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequery)<T> | DatabaseQuery对象。 |
+| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequeryt-extends-databaseobject)<T> | DatabaseQuery对象。 |
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-6. let databaseZone = cloudDatabase.zone('storageArea');
-7. let condition = new cloudDatabase.DatabaseQuery(BookInfo);
-8. condition.in('key_integer', [100, 200]);
-9. try {
-10. let bookInfoArray = await databaseZone.query(condition);
-11. } catch (err) {
-12. hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
-13. }
+async () => {
+  // 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+  let databaseZone = cloudDatabase.zone('storageArea');
+  let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+  condition.in('keyInteger', [100, 200]);
+  try {
+    let bookInfoArray = await databaseZone.query(condition);
+    hilog.info(0x0000, 'testTag', `Succeeded in querying data, result: ${JSON.stringify(bookInfoArray)}`);
+  } catch (err) {
+    hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ### isNull
-
-PhonePC/2in1TabletTVWearable
 
 isNull(fieldName: string): DatabaseQuery<T>
 
@@ -1236,29 +1228,30 @@ isNull(fieldName: string): DatabaseQuery<T>
 
 | 类型 | 说明 |
 | --- | --- |
-| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequery)<T> | DatabaseQuery对象。 |
+| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequeryt-extends-databaseobject)<T> | DatabaseQuery对象。 |
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-6. let databaseZone = cloudDatabase.zone('storageArea');
-7. let condition = new cloudDatabase.DatabaseQuery(BookInfo);
-8. condition.isNull('key_date');
-9. try {
-10. let bookInfoArray = await databaseZone.query(condition);
-11. } catch (err) {
-12. hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
-13. }
+async () => {
+  // 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+  let databaseZone = cloudDatabase.zone('storageArea');
+  let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+  condition.isNull('keyDate');
+  try {
+    let bookInfoArray = await databaseZone.query(condition);
+    hilog.info(0x0000, 'testTag', `Succeeded in querying data, result: ${JSON.stringify(bookInfoArray)}`);
+  } catch (err) {
+    hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ### isNotNull
-
-PhonePC/2in1TabletTVWearable
 
 isNotNull(fieldName: string): DatabaseQuery<T>
 
@@ -1282,29 +1275,30 @@ isNotNull(fieldName: string): DatabaseQuery<T>
 
 | 类型 | 说明 |
 | --- | --- |
-| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequery)<T> | DatabaseQuery对象。 |
+| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequeryt-extends-databaseobject)<T> | DatabaseQuery对象。 |
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-6. let databaseZone = cloudDatabase.zone('storageArea');
-7. let condition = new cloudDatabase.DatabaseQuery(BookInfo);
-8. condition.isNotNull('key_date');
-9. try {
-10. let bookInfoArray = await databaseZone.query(condition);
-11. } catch (err) {
-12. hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
-13. }
+async () => {
+  // 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+  let databaseZone = cloudDatabase.zone('storageArea');
+  let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+  condition.isNotNull('keyDate');
+  try {
+    let bookInfoArray = await databaseZone.query(condition);
+    hilog.info(0x0000, 'testTag', `Succeeded in querying data, result: ${JSON.stringify(bookInfoArray)}`);
+  } catch (err) {
+    hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ### orderByAsc
-
-PhonePC/2in1TabletTVWearable
 
 orderByAsc(fieldName: string): DatabaseQuery<T>
 
@@ -1328,29 +1322,30 @@ orderByAsc(fieldName: string): DatabaseQuery<T>
 
 | 类型 | 说明 |
 | --- | --- |
-| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequery)<T> | DatabaseQuery对象。 |
+| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequeryt-extends-databaseobject)<T> | DatabaseQuery对象。 |
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-6. let databaseZone = cloudDatabase.zone('storageArea');
-7. let condition = new cloudDatabase.DatabaseQuery(BookInfo);
-8. condition.orderByAsc('key_integer');
-9. try {
-10. let bookInfoArray = await databaseZone.query(condition);
-11. } catch (err) {
-12. hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
-13. }
+async () => {
+  // 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+  let databaseZone = cloudDatabase.zone('storageArea');
+  let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+  condition.orderByAsc('keyInteger');
+  try {
+    let bookInfoArray = await databaseZone.query(condition);
+    hilog.info(0x0000, 'testTag', `Succeeded in querying data, result: ${JSON.stringify(bookInfoArray)}`);
+  } catch (err) {
+    hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ### orderByDesc
-
-PhonePC/2in1TabletTVWearable
 
 orderByDesc(fieldName: string): DatabaseQuery<T>
 
@@ -1374,37 +1369,38 @@ orderByDesc(fieldName: string): DatabaseQuery<T>
 
 | 类型 | 说明 |
 | --- | --- |
-| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequery)<T> | DatabaseQuery对象。 |
+| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequeryt-extends-databaseobject)<T> | DatabaseQuery对象。 |
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-6. let databaseZone = cloudDatabase.zone('storageArea');
-7. let condition = new cloudDatabase.DatabaseQuery(BookInfo);
-8. condition.orderByDesc('key_integer');
-9. try {
-10. let bookInfoArray = await databaseZone.query(condition);
-11. } catch (err) {
-12. hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
-13. }
+async () => {
+  // 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+  let databaseZone = cloudDatabase.zone('storageArea');
+  let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+  condition.orderByDesc('keyInteger');
+  try {
+    let bookInfoArray = await databaseZone.query(condition);
+    hilog.info(0x0000, 'testTag', `Succeeded in querying data, result: ${JSON.stringify(bookInfoArray)}`);
+  } catch (err) {
+    hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ### orderByRandom
-
-PhonePC/2in1TabletTVWearable
 
 orderByRandom(): DatabaseQuery<T>
 
 调用此方法可以将查询结果按随机顺序展示。
 
-说明
+**说明** 
 
-使用orderByRandom()对数据进行排序时，建议与limit()配合使用。否则，当该对象类型的数据记录数量过多时，可能会影响查询效率，导致查询超时或失败。
+使用orderByRandom()对数据进行排序时，建议与[limit()](cloudfoundation-clouddatabase.md#limit)配合使用。否则，当该对象类型的数据记录数量过多时，可能会影响查询效率，导致查询超时或失败。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -1418,29 +1414,30 @@ orderByRandom(): DatabaseQuery<T>
 
 | 类型 | 说明 |
 | --- | --- |
-| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequery)<T> | DatabaseQuery对象。 |
+| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequeryt-extends-databaseobject)<T> | DatabaseQuery对象。 |
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-6. let databaseZone = cloudDatabase.zone('storageArea');
-7. let condition = new cloudDatabase.DatabaseQuery(BookInfo);
-8. condition.orderByRandom().limit(10);
-9. try {
-10. let bookInfoArray = await databaseZone.query(condition);
-11. } catch (err) {
-12. hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
-13. }
+async () => {
+  // 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+  let databaseZone = cloudDatabase.zone('storageArea');
+  let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+  condition.orderByRandom().limit(10);
+  try {
+    let bookInfoArray = await databaseZone.query(condition);
+    hilog.info(0x0000, 'testTag', `Succeeded in querying data, result: ${JSON.stringify(bookInfoArray)}`);
+  } catch (err) {
+    hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ### limit
-
-PhonePC/2in1TabletTVWearable
 
 limit(count: number, offset?: number): DatabaseQuery<T>
 
@@ -1465,36 +1462,37 @@ limit(count: number, offset?: number): DatabaseQuery<T>
 
 | 类型 | 说明 |
 | --- | --- |
-| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequery)<T> | DatabaseQuery对象。 |
+| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequeryt-extends-databaseobject)<T> | DatabaseQuery对象。 |
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-6. let databaseZone = cloudDatabase.zone('storageArea');
-7. let condition = new cloudDatabase.DatabaseQuery(BookInfo);
-8. condition.lessThan('key_integer', 100);
-9. condition.limit(4, 1);
-10. try {
-11. let bookInfoArray = await databaseZone.query(condition);
-12. } catch (err) {
-13. hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
-14. }
+async () => {
+  // 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+  let databaseZone = cloudDatabase.zone('storageArea');
+  let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+  condition.lessThan('keyInteger', 100);
+  condition.limit(4, 1);
+  try {
+    let bookInfoArray = await databaseZone.query(condition);
+    hilog.info(0x0000, 'testTag', `Succeeded in querying data, result: ${JSON.stringify(bookInfoArray)}`);
+  } catch (err) {
+    hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ### beginGroup
-
-PhonePC/2in1TabletTVWearable
 
 beginGroup(): DatabaseQuery<T>
 
 调用此方法是为了放置左括号“(”附加到任何查询条件并将右括号“)”与相同的查询连接起来组合使用。
 
-说明
+**说明** 
 
 * beginGroup()和endGroup()必须成对出现，并且必须与其他查询条件一起使用。
 * 在beginGroup()和endGroup()之间，必须存在以下查询条件中的一个或多个：
@@ -1514,35 +1512,36 @@ beginGroup(): DatabaseQuery<T>
 
 | 类型 | 说明 |
 | --- | --- |
-| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequery)<T> | DatabaseQuery对象。 |
+| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequeryt-extends-databaseobject)<T> | DatabaseQuery对象。 |
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-6. let databaseZone = cloudDatabase.zone('storageArea');
-7. let condition = new cloudDatabase.DatabaseQuery(BookInfo);
-8. condition.beginGroup().equalTo('string_string', 'string_123').endGroup();
-9. try {
-10. let bookInfoArray = await databaseZone.query(condition);
-11. } catch (err) {
-12. hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
-13. }
+async () => {
+  // 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+  let databaseZone = cloudDatabase.zone('storageArea');
+  let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+  condition.beginGroup().equalTo('keyString', 'string_123').endGroup();
+  try {
+    let bookInfoArray = await databaseZone.query(condition);
+    hilog.info(0x0000, 'testTag', `Succeeded in querying data, result: ${JSON.stringify(bookInfoArray)}`);
+  } catch (err) {
+    hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ### endGroup
-
-PhonePC/2in1TabletTVWearable
 
 endGroup(): DatabaseQuery<T>
 
 调用此方法是为了放置右括号“)”附加到任何查询条件并将左括号“(”与相同的查询连接起来组合使用。
 
-说明
+**说明** 
 
 * beginGroup()和endGroup()必须成对出现，并且必须与其他查询条件一起使用。
 * 在beginGroup()和endGroup()之间，必须存在以下查询条件中的一个或多个：
@@ -1562,35 +1561,36 @@ endGroup(): DatabaseQuery<T>
 
 | 类型 | 说明 |
 | --- | --- |
-| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequery)<T> | DatabaseQuery对象。 |
+| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequeryt-extends-databaseobject)<T> | DatabaseQuery对象。 |
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-6. let databaseZone = cloudDatabase.zone('storageArea');
-7. let condition = new cloudDatabase.DatabaseQuery(BookInfo);
-8. condition.beginGroup().equalTo('string_string', 'string_123').endGroup();
-9. try {
-10. let bookInfoArray = await databaseZone.query(condition);
-11. } catch (err) {
-12. hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
-13. }
+async () => {
+  // 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+  let databaseZone = cloudDatabase.zone('storageArea');
+  let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+  condition.beginGroup().equalTo('keyString', 'string_123').endGroup();
+  try {
+    let bookInfoArray = await databaseZone.query(condition);
+    hilog.info(0x0000, 'testTag', `Succeeded in querying data, result: ${JSON.stringify(bookInfoArray)}`);
+  } catch (err) {
+    hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ### or
-
-PhonePC/2in1TabletTVWearable
 
 or(): DatabaseQuery<T>
 
 使用or运算组合两个条件并返回两个查询结果的并集。
 
-说明
+**说明** 
 
 * or()只能与其他查询条件一起使用。
 * 当和equalTo()、notEqualTo()、greaterThan()、greaterThanOrEqualTo()、lessThan()、lessThanOrEqualTo()、in()、beginsWith()、endsWith()、isNull()、isNotNull()和contains()一起使用时，返回两个查询结果的交集。
@@ -1614,35 +1614,36 @@ or(): DatabaseQuery<T>
 
 | 类型 | 说明 |
 | --- | --- |
-| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequery)<T> | DatabaseQuery对象。 |
+| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequeryt-extends-databaseobject)<T> | DatabaseQuery对象。 |
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-6. let databaseZone = cloudDatabase.zone('storageArea');
-7. let condition = new cloudDatabase.DatabaseQuery(BookInfo);
-8. condition.equalTo('string_string', 'string_123').or().lessThan('key_integer', 50);
-9. try {
-10. let bookInfoArray = await databaseZone.query(condition);
-11. } catch (err) {
-12. hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
-13. }
+async () => {
+  // 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+  let databaseZone = cloudDatabase.zone('storageArea');
+  let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+  condition.equalTo('keyString', 'string_123').or().lessThan('keyInteger', 50);
+  try {
+    let bookInfoArray = await databaseZone.query(condition);
+    hilog.info(0x0000, 'testTag', `Succeeded in querying data, result: ${JSON.stringify(bookInfoArray)}`);
+  } catch (err) {
+    hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```
 
 ### and
-
-PhonePC/2in1TabletTVWearable
 
 and(): DatabaseQuery<T>
 
 使用and运算组合两个条件并返回两个查询结果的交集。
 
-说明
+**说明** 
 
 * and()只能与其他查询条件一起使用。
 * 当和equalTo()、notEqualTo()、greaterThan()、greaterThanOrEqualTo()、lessThan()、lessThanOrEqualTo()、in()、beginsWith()、endsWith()、isNull()、isNotNull()和contains()一起使用时，返回两个查询结果的交集。
@@ -1666,22 +1667,25 @@ and(): DatabaseQuery<T>
 
 | 类型 | 说明 |
 | --- | --- |
-| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequery)<T> | DatabaseQuery对象。 |
+| [DatabaseQuery](cloudfoundation-clouddatabase.md#databasequeryt-extends-databaseobject)<T> | DatabaseQuery对象。 |
 
 **示例：**
 
-```
-1. import { cloudDatabase } from '@kit.CloudFoundationKit';
-2. import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { cloudDatabase } from '@kit.CloudFoundationKit';
+import { BookInfo } from 'xx/BookInfo'; // xx是BookInfo文件的路径
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. // 创建一个BookInfo的类继承 cloudDatabase.DatabaseObject ，内容与使用Promise异步回调的query接口示例一致
-6. let databaseZone = cloudDatabase.zone('storageArea');
-7. let condition = new cloudDatabase.DatabaseQuery(BookInfo);
-8. condition.equalTo('string_string', 'string_123').and().lessThan('key_integer', 50);
-9. try {
-10. let bookInfoArray = await databaseZone.query(condition);
-11. } catch (err) {
-12. hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
-13. }
+async () => {
+  // 创建一个BookInfo的类继承cloudDatabase.DatabaseObject，内容与使用Promise异步回调的query接口示例一致
+  let databaseZone = cloudDatabase.zone('storageArea');
+  let condition = new cloudDatabase.DatabaseQuery(BookInfo);
+  condition.equalTo('keyString', 'string_123').and().lessThan('keyInteger', 50);
+  try {
+    let bookInfoArray = await databaseZone.query(condition);
+    hilog.info(0x0000, 'testTag', `Succeeded in querying data, result: ${JSON.stringify(bookInfoArray)}`);
+  } catch (err) {
+    hilog.error(0x0000, 'testTag', `Failed to query books, code: ${err.code}, message: ${err.message}`);
+  }
+}
 ```

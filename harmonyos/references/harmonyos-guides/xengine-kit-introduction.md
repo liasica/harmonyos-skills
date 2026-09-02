@@ -3,21 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-i
 title: XEngine Kit简介
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > XEngine Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a966e57ae4511496b67196e93aff4fde1fbfc6d0cff690b086deefc7b22b378f
+scraped_at: 2026-09-02T14:59:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d922c837748a113491cb315ba8013efd45d87057e54301eb6c33fb265130d28b
 ---
 
-XEngine Kit（GPU加速引擎服务）提供基于马良GPU的性能提升方案，包括GPU/AI超分能力、自适应VRS（Variable Rate Shading，可变速率着色）、Subpass Shading、光线追踪技术（包括反射、阴影、环境光遮蔽和全局光照，Ray-Traced Reflection, Shadow, Ambient Occlusion and Global Illumination）和高性能着色器（High performance shaders，简称HPS）等，通过图形算法以及软硬件优化，让用户拥有更高画质、更高性能、更低功耗的3D游戏/应用、AR/VR体验。
-
-## 基本概念
-
-在进行XEngine Kit开发前，建议开发者提前了解以下基本概念：
-
-* [XComponent](../harmonyos-references/ts-basic-components-xcomponent.md)组件：是一种绘制组件，通常用于满足开发者较为复杂的自定义绘制需求，例如相机预览流的显示和游戏画面的绘制。
-* 可变速率着色（Variable Rate Shading，简称VRS）：是一种图形功能，允许应用程序独立于渲染目标的分辨率来控制像素着色器调用的频率。自适应可变速率着色（Adaptive VRS）在VRS的基础上，添加了可动态调整的着色率，能够大幅提升渲染性能。
-* 基于瓦片的延迟渲染（Tile-Based Deferred Rendering，TBDR）：是一种渲染技术，它结合了即时渲染（Immediate Mode Rendering, IMR）和延迟渲染（Deferred Rendering）的优点，旨在提高渲染效率和减少内存访问。
-* 动态漫反射全局光照（Dynamic Diffuse Global Illumination，简称DDGI）：是一种实时渲染技术，旨在模拟光线在场景中经多次漫反射后的全局光照效果，以提升画面真实感。
+XEngine Kit（GPU加速引擎服务）提供基于Maleoon GPU的性能提升方案，包括GPU/AI超分能力、自适应VRS（Variable Rate Shading，可变速率着色）、Subpass Shading、光线追踪技术（包括反射、阴影、环境光遮蔽和全局光照，Ray-Traced Reflection, Shadow, Ambient Occlusion and Global Illumination）、高性能着色器（High performance shaders，简称HPS）和控显分离（Control-Display Separation）等，通过图形算法以及软硬件优化，让用户拥有更高画质、更高性能、更低功耗的3D游戏/应用、AR/VR体验。
 
 ## 场景介绍
 
@@ -52,11 +43,24 @@ XEngine Kit（GPU加速引擎服务）提供基于马良GPU的性能提升方案
 
 高性能GPU排序可以帮助我们更快地将乱序信息进行整齐排列，降低排序时延，提升性能。
 
+### 控显分离，解锁折叠屏游戏交互新形态
+
+XEngine Kit针对折叠屏游戏场景推出“控显分离”创新方案。在设备展开态下，屏幕被划分为两个对称的独立区域，深度还原复古掌机的交互逻辑：上半屏承载核心渲染画面，下半屏集中交互触控，解决传统手游按键遮挡画面的痛点，解锁折叠屏游戏交互新形态。
+
 ## 约束与限制
 
-* 在调用XEngine Kit能力前，需要先通过[Syscap](../harmonyos-references/syscap.md#判断-api-是否可以使用)查询您的目标设备是否支持SystemCapability.Graphic.XEngine系统能力。
-* 支持的设备类型：Phone、Tablet、PC/2in1、TV。
-* XEngine Kit特性仅在使用马良GPU芯片的设备上受支持。不同设备支持的特性范围有所差异，可以通过以下方式查询设备支持的特性列表：
+### 支持的设备
+
+Phone、Tablet、PC/2in1、TV。
+
+### 支持的国家/地区
+
+本Kit仅支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。
+
+### 硬件限制
+
+* 在调用XEngine Kit能力前，需要先通过[Syscap](../harmonyos-references/syscap.md#什么是systemcapabilitysyscap)查询您的目标设备是否支持SystemCapability.Graphic.XEngine系统能力。
+* XEngine Kit特性仅在使用Maleoon GPU芯片的设备上受支持。不同设备支持的特性范围有所差异，可以通过以下方式查询设备支持的特性列表：
 
   + 对于OpenGL ES，使用[HMS\_XEG\_GetString](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_getstring)扩展特性查询接口进行查询。
   + 对于Vulkan，使用[HMS\_XEG\_EnumerateDeviceExtensionProperties](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)扩展特性查询接口进行查询。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-delin
 title: DelInputWithOriginalType
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OpRegistrationData > DelInputWithOriginalType
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:42:21+08:00
+scraped_at: 2026-09-02T15:00:12+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:757d7c2790807664b556d08db4daf819281e4a931098c782894a5b2c7537c82f
+content_hash: sha256:4fc0eb723010364c8a32f432a9aed483ba60d53d5a6d0d20c89b89b5aca3407f
 ---
 
 ## 函数功能
@@ -14,13 +14,13 @@ content_hash: sha256:757d7c2790807664b556d08db4daf819281e4a931098c782894a5b2c753
 
 ## 函数原型
 
-说明
+**说明** 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 
-```
-1. OpRegistrationData &DelInputWithOriginalType(int32_t input_idx, const std::string &ori_type)
-2. OpRegistrationData &DelInputWithOriginalType(int32_t input_idx, const char_t *ori_type)
+```cpp
+OpRegistrationData &DelInputWithOriginalType(int32_t input_idx, const std::string &ori_type)
+OpRegistrationData &DelInputWithOriginalType(int32_t input_idx, const char_t *ori_type)
 ```
 
 ## 参数说明

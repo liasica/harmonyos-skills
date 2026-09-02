@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-ui-skip-an
 title: 应用UI进程空跑问题分析
 breadcrumb: 最佳实践 > 功耗 > 应用功耗分析 > 应用UI进程空跑问题分析
 category: best-practices
-scraped_at: 2026-04-29T14:13:47+08:00
-doc_updated_at: 2026-04-27
-content_hash: sha256:908620f077ca2695366ae017a8d4feeac2f3b008c2e02fd3fb28664a9d4b5e93
+scraped_at: 2026-09-02T15:03:22+08:00
+doc_updated_at: 2026-08-26
+content_hash: sha256:31da460f67ffefe51ddff8d299035b1f32c0f9c1a57b2d21e444e0bc25041ac6
 ---
 
 ## 应用UI进程空跑介绍
@@ -14,15 +14,15 @@ content_hash: sha256:908620f077ca2695366ae017a8d4feeac2f3b008c2e02fd3fb28664a9d4
 
 如下图所示，为一个UI空跑的trace示例，图中应用主线程powerdemon以90Hz刷新，但在高亮框选区域，render\_service线程对应的帧未刷新，表明期间应用主线程powerdemon未递交有效绘制指令给render\_service进行绘制，产生空帧。这些空帧通常由应用注册帧回调但实际无节点脏区引起。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/LtQcKJOsR-qMfcd44x1pjA/zh-cn_image_0000002555774310.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/fHobJXP8Soa_i0j-NEqlow/zh-cn_image_0000002555774310.png "点击放大")
 
-开发者可进一步在空刷帧中搜索“FlushMessages”，如下图所示，当“FlushMessages”下方存在“UI skip”时，表示该帧未递交任何绘制指令，属于UI空跑。
+开发者可进一步在空跑帧中搜索“FlushMessages”，如下图所示，当“FlushMessages”下方存在“UI skip”时，表示该帧未递交任何绘制指令，属于UI空跑。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/-oL645ggTgmnoUBZKXlMng/zh-cn_image_0000002586294233.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/YB1TK1RUQgqajdQL9T0YFQ/zh-cn_image_0000002586294233.png "点击放大")
 
-对比下图的非UI空跑场景，“FlushMessages”下方发现“H:MarshRSTransactionData cmdCount: 2, transactionFlag:[22766,879]”字样时，可确认该帧有绘制指令递交，将引起下一帧render\_service的RS树准备工作。其中22766表示下发绘制指令的线程ID，879表示帧数据的索引，“cmdCount:2”表示绘制指令数量为2，有两个arkui节点在该帧被标脏。
+对比下图的非UI空跑场景，“FlushMessages”下方发现“H:MarshRSTransactionData cmdCount: 2, transactionFlag:[22766,879]”字样时，可确认该帧有绘制指令递交，将引起下一帧render\_service的RS树准备工作。其中22766表示下发绘制指令的线程ID，879表示帧数据的索引，“cmdCount:2”表示绘制指令数量为2，有两个arkui节点在该帧被触发脏区刷新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/qZefOOAmSeW-5E5PlpWv5A/zh-cn_image_0000002555614690.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/aqV-1C5FTsGFv_jVs4vwew/zh-cn_image_0000002555614690.png "点击放大")
 
 ## 分析思路
 
@@ -36,28 +36,28 @@ Type[0]：Animator
 
 Type[1]：Xcomponent
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/QCQGr3ZgTIO48E_LNTRBMA/zh-cn_image_0000002586174287.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/22DIfirfR-GL0aKHcPg9Pg/zh-cn_image_0000002586174287.png "点击放大")
 
 ### 使用Profiler的Energy工具分析（推荐）
 
-在DevEco Studio 6.1版本（手机版本需配套HarmonyOS 6.1及以上版本），针对UI空刷问题，增加了自动检测与分析能力，可通过以下步骤辅助问题定位:
+在DevEco Studio 6.1版本（手机版本需配套HarmonyOS 6.1及以上版本），针对UI空跑问题，增加了自动检测与分析能力，可通过以下步骤辅助问题定位:
 
 1. 抓取Trace信息
 
    点击Profiler工具，选择要分析的应用进程，创建一个Energy Session，操作应用进行测试。
 2. 查看异常信息
 
-   点击Energy Anomaly泳道，在Detail栏展示异常信息，其中UI Empty Run表示存在UI空刷异常。
+   点击Energy Anomaly泳道，在Detail栏展示异常信息，其中UI Empty Run表示存在UI空跑异常。
 
-   图中① AnomalyType: 异常类型，② Anomaly Reason: 异常原因，③ Anomaly Count: 异常的帧数，④ More: 异常帧。
+   图中① AnomalyType: 异常类型，② Anomaly Reason: 异常原因，③ Anomaly Count: 异常帧的数量，④ More: 异常帧。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/Khtmk8zkRCWajfH0RzB8_A/zh-cn_image_0000002555774312.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/SNsMRXHfS1uPlA5BU-dw1g/zh-cn_image_0000002555774312.png "点击放大")
 
 3. 查看单帧详情信息
 
    在More栏，点击其中一帧，在应用的主线程泳道，查看H:DisplaySyncId关键字的Trace，依据Type确认根因类型。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/vFzBthykRG24zNbP3O8t-A/zh-cn_image_0000002586294237.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/Axe-wEc0TSK8eiHn8YdwNw/zh-cn_image_0000002586294237.png "点击放大")
 
 ## 常见故障根因
 
@@ -65,16 +65,16 @@ Type[1]：Xcomponent
 
 Animator是一种依赖DisplaySync机制产生UI刷新的动画机制。如下图“1”处所示，“jsAnimator onframe, duration: 5000, curve: ease, id:1”表明，该动效持续时间为5000ms，动效曲线为ease，Animator的ID为1。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/g4CA_J66TSy2xcJagD58hg/zh-cn_image_0000002555614692.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/yuxNtLGXQp-8L26hVh4ejA/zh-cn_image_0000002555614692.png "点击放大")
 
 开启hdc shell param set persist.ace.debug.enabled 1开关后，如果该Animator导致实际的组件属性更新，下方会有打印信息如下：
 
 * H:ViewPU.viewPropertyHasChanged MyAnimatorTest wid 1 6 0 false
 * H:ViewPU.viewPropertyHasChanged MyAnimatorTest hei 1 6 1 false
 
-重点关注其中提到的MyAnimatorTest、wid、hei三处信息，这表明该Animator的执行在MyAnimatorTest组件上进行，受影响的状态变量为wid与hei。此外，下图标志“2”“3”“4”处会打印组件脏区刷新、FlushTask以及SendCommand的信息，证实了该Animator的效果在递交绘制指令时，是通过组件变量wid、hei更新来完成的。
+重点关注其中提到的MyAnimatorTest、wid与hei三处信息，这表明该Animator的执行在MyAnimatorTest组件上进行，受影响的状态变量为wid与hei。此外，下图标志“2”“3”“4”处会打印组件脏区刷新、FlushTask以及SendCommand的信息，证实了该Animator的效果在递交绘制指令时，是通过组件变量wid、hei更新来完成的。
 
-注意
+**注意** 
 
 Animator发生空跑的主要根因是，组件被析构或进入不可见状态时，Animator未主动设置停止或取消。由于Animator本身是独立的回调对象，不会与组件一对一关联，系统无法代为回收这些持续产生空跑的对象。
 
@@ -83,101 +83,101 @@ Animator发生空跑的主要根因是，组件被析构或进入不可见状态
 1. 确保组件析构时，Animator执行finish，并置空，可有效规避空跑问题与内存泄漏风险。
 2. 组件添加可见性回调，Animator默认不播放，当且仅当组件位于可见状态时，执行play。
 
-```
-1. let expectedFrameRate: ExpectedFrameRateRange = {
-2. min: 0,
-3. max: 120,
-4. expected: 30
-5. }
+```screen
+let expectedFrameRate: ExpectedFrameRateRange = {
+  min: 0,
+  max: 120,
+  expected: 30
+}
 
-7. @Component
-8. export struct MyAnimatorTest {
-9. private TAG: string = '[AnimatorTest]'
-10. private backAnimator: AnimatorResult | undefined = undefined
-11. private flag: boolean = false
-12. @State wid: number = 100
-13. @State hei: number = 100
+@Component
+export struct MyAnimatorTest {
+  private TAG: string = '[AnimatorTest]'
+  private backAnimator: AnimatorResult | undefined = undefined
+  private flag: boolean = false
+  @State wid: number = 100
+  @State hei: number = 100
 
-15. create() {
-16. this.backAnimator = this.getUIContext()?.createAnimator({
-17. // 建议使用 this.getUIContext().createAnimator()接口
-18. duration: 5000,
-19. easing: "ease",
-20. delay: 0,
-21. fill: "forwards",
-22. direction: "normal",
-23. iterations: 1,
-24. begin: 100, //动画插值起点
-25. end: 200, //动画插值终点
-26. })
-27. this.backAnimator.setExpectedFrameRateRange(expectedFrameRate)
-28. this.backAnimator.onFinish = () => {
-29. this.flag = true
-30. console.info(this.TAG, 'backAnimator onFinish')
-31. }
-32. this.backAnimator.onRepeat = () => {
-33. console.info(this.TAG, 'backAnimator repeat')
-34. }
-35. this.backAnimator.onCancel = () => {
-36. console.info(this.TAG, 'backAnimator cancel')
-37. }
-38. this.backAnimator.onFrame = (value: number) => {
-39. this.wid = value
-40. this.hei = value
-41. }
-42. }
+  create() {
+    this.backAnimator = this.getUIContext()?.createAnimator({
+      // 建议使用 this.getUIContext().createAnimator()接口
+      duration: 5000,
+      easing: "ease",
+      delay: 0,
+      fill: "forwards",
+      direction: "normal",
+      iterations: 1,
+      begin: 100, //动画插值起点
+      end: 200, //动画插值终点
+    })
+    this.backAnimator.setExpectedFrameRateRange(expectedFrameRate)
+    this.backAnimator.onFinish = () => {
+      this.flag = true
+      console.info(this.TAG, 'backAnimator onFinish')
+    }
+    this.backAnimator.onRepeat = () => {
+      console.info(this.TAG, 'backAnimator repeat')
+    }
+    this.backAnimator.onCancel = () => {
+      console.info(this.TAG, 'backAnimator cancel')
+    }
+    this.backAnimator.onFrame = (value: number) => {
+      this.wid = value
+      this.hei = value
+    }
+  }
 
-44. aboutToDisappear() {
-45. // 由于backAnimator在onframe中引用了this, this中保存了backAnimator，
-46. // 在自定义组件消失时应该将保存在组件中的backAnimator置空，避免内存泄漏
-47. this.backAnimator?.finish();
-48. this.backAnimator = undefined;
-49. }
+  aboutToDisappear() {
+    // 由于backAnimator在onframe中引用了this, this中保存了backAnimator，
+    // 在自定义组件消失时应该将保存在组件中的backAnimator置空，避免内存泄漏
+    this.backAnimator?.finish();
+    this.backAnimator = undefined;
+  }
 
-51. build() {
-52. Column() {
-53. Column() {
-54. Column()
-55. .width(this.wid)
-56. .height(this.hei)
-57. .backgroundColor(Color.Red)
-58. .onVisibleAreaChange([0.0, 1.0], (isExpanding: boolean, currentRatio: number) => {
-59. if (!isExpanding && currentRatio <= 0.0) {
-60. console.info('Component is completely invisible.')
-61. this.backAnimator?.pause()
-62. }
-63. })
-64. }
-65. .width('100%')
-66. .height(300)
+  build() {
+    Column() {
+      Column() {
+        Column()
+          .width(this.wid)
+          .height(this.hei)
+          .backgroundColor(Color.Red)
+          .onVisibleAreaChange([0.0, 1.0], (isExpanding: boolean, currentRatio: number) => {
+            if (!isExpanding && currentRatio <= 0.0) {
+              console.info('Component is completely invisible.')
+              this.backAnimator?.pause()
+            }
+          })
+      }
+      .width('100%')
+      .height(300)
 
-68. Column() {
-69. Row() {
-70. Button('create')
-71. .fontSize(30)
-72. .fontColor(Color.Black)
-73. .onClick(() => {
-74. this.create()
-75. })
-76. }
-77. .padding(10)
+      Column() {
+        Row() {
+          Button('create')
+            .fontSize(30)
+            .fontColor(Color.Black)
+            .onClick(() => {
+              this.create()
+            })
+        }
+        .padding(10)
 
-79. Row() {
-80. Button('play')
-81. .fontSize(30)
-82. .fontColor(Color.Black)
-83. .onClick(() => {
-84. this.flag = false
-85. if (this.backAnimator) {
-86. this.backAnimator.play()
-87. }
-88. })
-89. }
-90. .padding(10)
-91. }
-92. }
-93. }
-94. }
+        Row() {
+          Button('play')
+            .fontSize(30)
+            .fontColor(Color.Black)
+            .onClick(() => {
+              this.flag = false
+              if (this.backAnimator) {
+                this.backAnimator.play()
+              }
+            })
+        }
+        .padding(10)
+      }
+    }
+  }
+}
 ```
 
 ### DisplaySync

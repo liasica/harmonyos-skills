@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 页面路由错误码
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > 错误码 > UI界面 > 页面路由错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:51+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:3cfd649fd09873dd08a3cd4f00bcbe1569c13660ae63e7850c20c40631a1a421
+scraped_at: 2026-09-02T15:01:25+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:16759d27e5dd914c5acc47c9bdb7eeca8c0291074bdb34cbd153155e766657c0
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 100002 路由页面跳转时输入的uri错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -34,8 +32,6 @@ Uri error. The URI of the page to redirect is incorrect or does not exist.
 
 ## 100003 路由压入的page过多
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Page stack error. Too many pages are pushed.
@@ -53,8 +49,6 @@ Page stack error. Too many pages are pushed.
 请清除多余或无效的页面。
 
 ## 100004 命名路由页面跳转时输入的name错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -140,13 +134,13 @@ Failed to query route navigation information.
 
 **可能原因**
 
-可能因为当前节点不在Navigation中。
+可能因为当前节点未挂载在页面下。
 
 **处理步骤**
 
-请检查当前节点是否在Navigation中。
+请检查当前节点是否在页面中。
 
-## 106202 传入的buffer size异常
+## 106202 传入的buffer size不足以容纳目标数据
 
 **错误信息**
 
@@ -154,7 +148,7 @@ buffer size is not large enough.
 
 **错误描述**
 
-传入的buffer size异常。
+传入的buffer size不足以容纳目标数据。
 
 **可能原因**
 
@@ -165,8 +159,6 @@ buffer size is not large enough.
 请检查给定的buffer size。
 
 ## 200002 路由页面替换时输入的uri错误
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 **错误信息**
 
@@ -184,7 +176,7 @@ Uri error. The URI of the page to be used for replacement is incorrect or does n
 
 请检查输入的路由uri是否正确。
 
-## 300001 Navigation跳转前下载hsp分包失败
+## 300001 Navigation跳转前静默安装hsp分包失败
 
 **错误信息**
 
@@ -192,7 +184,7 @@ hsp silent install fail.
 
 **错误描述**
 
-Navigation跳转前下载跳转页面所在hsp分包失败，系统会产生此错误码。
+Navigation跳转前静默安装跳转页面所在hsp分包失败，系统会产生此错误码。
 
 **可能原因**
 

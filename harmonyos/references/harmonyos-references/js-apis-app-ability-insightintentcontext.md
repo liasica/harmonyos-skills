@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.InsightIntentContext (意图执行上下文)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.InsightIntentContext (意图执行上下文)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f92349457d150f6afa26f08cdc0739aaebe568bf655741bd78a23ac85bbf6eb9
+scraped_at: 2026-09-02T15:00:32+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e24eab601a363d756a3bf404acaf547c6a5748e481bba9a383e35a6664806a06
 ---
 
-本模块提供意图执行上下文，是[意图执行基类](js-apis-app-ability-insightintentexecutor.md)和[@InsightIntentEntry的意图执行基类](js-apis-app-ability-insightintententryexecutor.md)的属性，为意图执行提供基础能力，例如启动本应用内的[UIAbility组件](js-apis-app-ability-uiability.md)。
+本模块提供意图执行上下文，是[意图执行基类](js-apis-app-ability-insightintentexecutor.md)和[@InsightIntentEntry的意图执行基类](js-apis-app-ability-insightintententryexecutor.md)的属性，为意图执行提供基础能力，例如启动本应用内的[UIAbility](js-apis-app-ability-uiability.md#uiability)组件。
 
-说明
+**说明** 
 
 本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -18,15 +18,11 @@ content_hash: sha256:f92349457d150f6afa26f08cdc0739aaebe568bf655741bd78a23ac85bb
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { InsightIntentContext } from '@kit.AbilityKit';
+```ts
+import { InsightIntentContext } from '@kit.AbilityKit';
 ```
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 **元服务API**：从API version 23开始，该接口支持在元服务中使用。
 
@@ -38,45 +34,43 @@ PhonePC/2in1TabletTVWearable
 
 **示例：**
 
-```
-1. import { InsightIntentExecutor, insightIntent, insightIntentProvider } from '@kit.AbilityKit';
-2. import { window } from '@kit.ArkUI';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { InsightIntentExecutor, insightIntent, insightIntentProvider } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. export default class InsightIntentExecutorUI extends InsightIntentExecutor {
-7. onExecuteInUIAbilityForegroundMode(name: string, param: Record<string, Object>,
-8. pageLoader: window.WindowStage): insightIntent.ExecuteResult {
-9. hilog.info(0x0000, 'testTag', 'onExecuteInUIAbilityForegroundMode %{public}s', name);
-10. let result: insightIntent.ExecuteResult;
-11. result = {
-12. code: 0,
-13. result: {
-14. message: 'Unsupported insight intent.',
-15. },
-16. };
-17. try {
-18. // 通过意图实例唯一ID返回意图执行结果
-19. insightIntentProvider.sendExecuteResult(this.context.instanceId, result)
-20. .then(() => {
-21. console.info('testTag setExecuteResult success');
-22. })
-23. .catch((error: BusinessError) => {
-24. console.error(`testTag setExecuteResult fail1, error code: ${JSON.stringify(error)}`);
-25. });
-26. } catch (e) {
-27. let code = (e as BusinessError).code;
-28. let msg = (e as BusinessError).message;
-29. console.error(`testTag setExecuteResult fail2, error code: ${JSON.stringify(code)}, error msg: ${JSON.stringify(msg)}`);
-30. }
-31. return result;
-32. }
-33. }
+export default class InsightIntentExecutorUI extends InsightIntentExecutor {
+  onExecuteInUIAbilityForegroundMode(name: string, param: Record<string, Object>,
+    pageLoader: window.WindowStage): insightIntent.ExecuteResult {
+    hilog.info(0x0000, 'testTag', 'onExecuteInUIAbilityForegroundMode %{public}s', name);
+    let result: insightIntent.ExecuteResult;
+    result = {
+      code: 0,
+      result: {
+        message: 'Unsupported insight intent.',
+      },
+    };
+    try {
+      // 通过意图实例唯一ID返回意图执行结果
+      insightIntentProvider.sendExecuteResult(this.context.instanceId, result)
+        .then(() => {
+          console.info('testTag setExecuteResult success');
+        })
+        .catch((error: BusinessError) => {
+          console.error(`Failed to setExecuteResult. Code: ${error.code}, message: ${error.message}`);
+        });
+    } catch (e) {
+      let code = (e as BusinessError).code;
+      let msg = (e as BusinessError).message;
+      console.error(`testTag setExecuteResult fail2, error code: ${code}, error msg: ${msg}`);
+    }
+    return result;
+  }
+}
 ```
 
 ## InsightIntentContext.startAbility
-
-PhonePC/2in1TabletTVWearable
 
 startAbility(want: Want, callback: AsyncCallback<void>): void
 
@@ -119,46 +113,45 @@ startAbility(want: Want, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { InsightIntentExecutor, insightIntent, Want } from '@kit.AbilityKit';
-2. import { window } from '@kit.ArkUI';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { InsightIntentExecutor, insightIntent, Want } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. export default class IntentExecutorImpl extends InsightIntentExecutor {
-6. onExecuteInUIAbilityForegroundMode(name: string, param: Record<string, Object>,
-7. pageLoader: window.WindowStage): insightIntent.ExecuteResult {
-8. let want: Want = {
-9. bundleName: 'com.ohos.intentExecuteDemo', // 此处仅为示例，开发者在实际使用中需替换为真实包名
-10. moduleName: 'entry',
-11. abilityName: 'AnotherAbility',
-12. };
+export default class IntentExecutorImpl extends InsightIntentExecutor {
+  onExecuteInUIAbilityForegroundMode(name: string, param: Record<string, Object>,
+    pageLoader: window.WindowStage): insightIntent.ExecuteResult {
+    let want: Want = {
+      bundleName: 'com.ohos.intentExecuteDemo', // 此处仅为示例，开发者在实际使用中需替换为真实包名
+      moduleName: 'entry',
+      abilityName: 'AnotherAbility',
+    };
 
-14. try {
-15. this.context.startAbility(want, (error) => {
-16. if (error) {
-17. hilog.error(0x0000, 'testTag', 'Start ability failed with %{public}s', JSON.stringify(error));
-18. } else {
-19. hilog.info(0x0000, 'testTag', '%{public}s', 'Start ability succeed');
-20. }
-21. })
-22. } catch (error) {
-23. hilog.error(0x0000, 'testTag', 'Start ability error caught %{public}s', JSON.stringify(error));
-24. }
+    try {
+      this.context.startAbility(want, (error) => {
+        if (error) {
+          hilog.error(0x0000, 'testTag', 'Start ability failed with %{public}s', JSON.stringify(error));
+        } else {
+          hilog.info(0x0000, 'testTag', '%{public}s', 'Start ability succeed');
+        }
+      })
+    } catch (error) {
+      const err: BusinessError = error as BusinessError;
+      console.error(`Failed to start ability. Code: ${err.code}, message: ${err.message}`);
+    }
 
-26. let result: insightIntent.ExecuteResult = {
-27. code: 0,
-28. result: {
-29. message: 'Execute insight intent succeed.',
-30. }
-31. };
-32. return result;
-33. }
-34. }
+    let result: insightIntent.ExecuteResult = {
+      code: 0,
+      result: {
+        message: 'Execute insight intent succeed.',
+      }
+    };
+    return result;
+  }
+}
 ```
 
 ## InsightIntentContext.startAbility
-
-PhonePC/2in1TabletTVWearable
 
 startAbility(want: Want): Promise<void>
 
@@ -206,49 +199,48 @@ startAbility(want: Want): Promise<void>
 
 **示例：**
 
-```
-1. import { InsightIntentExecutor, insightIntent, Want } from '@kit.AbilityKit';
-2. import { window } from '@kit.ArkUI';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { InsightIntentExecutor, insightIntent, Want } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. export default class IntentExecutorImpl extends InsightIntentExecutor {
-6. async onExecuteInUIAbilityForegroundMode(name: string, param: Record<string, Object>,
-7. pageLoader: window.WindowStage): Promise<insightIntent.ExecuteResult> {
-8. let want: Want = {
-9. bundleName: 'com.ohos.intentExecuteDemo', // 此处仅为示例，开发者在实际使用中需替换为真实包名
-10. moduleName: 'entry',
-11. abilityName: 'AnotherAbility',
-12. };
+export default class IntentExecutorImpl extends InsightIntentExecutor {
+  async onExecuteInUIAbilityForegroundMode(name: string, param: Record<string, Object>,
+    pageLoader: window.WindowStage): Promise<insightIntent.ExecuteResult> {
+    let want: Want = {
+      bundleName: 'com.ohos.intentExecuteDemo', // 此处仅为示例，开发者在实际使用中需替换为真实包名
+      moduleName: 'entry',
+      abilityName: 'AnotherAbility',
+    };
 
-14. try {
-15. await this.context.startAbility(want);
-16. hilog.info(0x0000, 'testTag', '%{public}s', 'Start ability finished');
-17. } catch (error) {
-18. hilog.error(0x0000, 'testTag', 'Start ability error caught %{public}s', JSON.stringify(error));
-19. }
+    try {
+      await this.context.startAbility(want);
+      hilog.info(0x0000, 'testTag', '%{public}s', 'Start ability finished');
+    } catch (error) {
+      const err: BusinessError = error as BusinessError;
+      console.error(`Failed to start ability. Code: ${err.code}, message: ${err.message}`);
+    }
 
-21. let result: insightIntent.ExecuteResult = {
-22. code: 0,
-23. result: {
-24. message: 'Execute insight intent succeed.',
-25. }
-26. };
-27. return result;
-28. }
-29. }
+    let result: insightIntent.ExecuteResult = {
+      code: 0,
+      result: {
+        message: 'Execute insight intent succeed.',
+      }
+    };
+    return result;
+  }
+}
 ```
 
 ## InsightIntentContext.setReturnModeForUIAbilityForeground23+
-
-PhonePC/2in1TabletTVWearable
 
 setReturnModeForUIAbilityForeground(returnMode: insightIntent.ReturnMode): void
 
 设置意图执行结果的返回形式，适用于执行模式为[UI\_ABILITY\_FOREGROUND](js-apis-app-ability-insightintent.md#executemode)的意图。
 
-**模型约束**：此接口仅可在Stage模型下使用。
-
 **元服务API**：从API version 23开始，该接口支持在元服务中使用。
+
+**模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
@@ -268,50 +260,48 @@ setReturnModeForUIAbilityForeground(returnMode: insightIntent.ReturnMode): void
 
 **示例：**
 
-```
-1. import { InsightIntentExecutor, insightIntent } from '@kit.AbilityKit';
-2. import { window } from '@kit.ArkUI';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { InsightIntentExecutor, insightIntent } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. export default class InsightIntentExecutorUI extends InsightIntentExecutor {
-6. onExecuteInUIAbilityForegroundMode(name: string, param: Record<string, Object>,
-7. pageLoader: window.WindowStage): insightIntent.ExecuteResult {
-8. hilog.info(0x0000, 'testTag', 'onExecuteInUIAbilityForegroundMode %{public}s', name);
-9. let result: insightIntent.ExecuteResult;
-10. result = {
-11. code: 0,
-12. result: {
-13. message: 'Unsupported insight intent.',
-14. },
-15. };
+export default class InsightIntentExecutorUI extends InsightIntentExecutor {
+  onExecuteInUIAbilityForegroundMode(name: string, param: Record<string, Object>,
+    pageLoader: window.WindowStage): insightIntent.ExecuteResult {
+    hilog.info(0x0000, 'testTag', 'onExecuteInUIAbilityForegroundMode %{public}s', name);
+    let result: insightIntent.ExecuteResult;
+    result = {
+      code: 0,
+      result: {
+        message: 'Unsupported insight intent.',
+      },
+    };
 
-17. try {
-18. this.context.setReturnModeForUIAbilityForeground(insightIntent.ReturnMode.FUNCTION);
-19. } catch (error) {
-20. let code = (error as BusinessError).code;
-21. let msg = (error as BusinessError).message;
-22. console.error(`testTag setReturnModeForUIAbilityForeground fail, error code: ${code}, err msg: ${msg}.`);
-23. }
+    try {
+      this.context.setReturnModeForUIAbilityForeground(insightIntent.ReturnMode.FUNCTION);
+    } catch (error) {
+      const err: BusinessError = error as BusinessError;
+      console.error(`Failed to setReturnModeForUIAbilityForeground. Code: ${err.code}, message: ${err.message}`);
+    }
 
-25. let localStorageData: Record<string, number> = {
-26. 'insightId': this.context.instanceId,
-27. };
-28. let storage: LocalStorage = new LocalStorage(localStorageData);
-29. pageLoader.loadContent('pages/UIAbilityIndex', storage, (err, data) => {
-30. if (err.code) {
-31. hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err));
-32. } else {
-33. hilog.info(0x0000, 'testTag', '%{public}s', 'Succeeded in loading the content');
-34. }
-35. });
-36. return result;
-37. }
-38. }
+    let localStorageData: Record<string, number> = {
+      'insightId': this.context.instanceId,
+    };
+    let storage: LocalStorage = new LocalStorage(localStorageData);
+    pageLoader.loadContent('pages/UIAbilityIndex', storage, (err, data) => {
+      if (err.code) {
+        hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err));
+      } else {
+        hilog.info(0x0000, 'testTag', '%{public}s', 'Succeeded in loading the content');
+      }
+    });
+    return result;
+  }
+}
 ```
 
 ## InsightIntentContext.setReturnModeForUIExtensionAbility23+
-
-PhonePC/2in1TabletTVWearable
 
 setReturnModeForUIExtensionAbility(returnMode: insightIntent.ReturnMode): void
 
@@ -339,42 +329,42 @@ setReturnModeForUIExtensionAbility(returnMode: insightIntent.ReturnMode): void
 
 **示例：**
 
-```
-1. import { InsightIntentExecutor, insightIntent, UIExtensionContentSession } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { InsightIntentExecutor, insightIntent, UIExtensionContentSession } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class InsightIntentExecutorUI extends InsightIntentExecutor {
-5. onExecuteInUIExtensionAbility(name: string, param: Record<string, Object>,
-6. pageLoader: UIExtensionContentSession): insightIntent.ExecuteResult {
-7. hilog.info(0x0000, 'testTag', 'onExecuteInUIExtensionAbility %{public}s', name);
-8. let result: insightIntent.ExecuteResult;
-9. result = {
-10. code: 0,
-11. result: {
-12. message: 'Unsupported insight intent.',
-13. },
-14. };
-15. try {
-16. this.context.setReturnModeForUIExtensionAbility(insightIntent.ReturnMode.FUNCTION)
-17. } catch (error) {
-18. let code = (error as BusinessError).code;
-19. let msg = (error as BusinessError).message;
-20. console.error(`testTag setReturnModeForUIExtensionAbility fail, error code: ${code}, error msg: ${msg}.`);
-21. }
+export default class InsightIntentExecutorUI extends InsightIntentExecutor {
+  onExecuteInUIExtensionAbility(name: string, param: Record<string, Object>,
+    pageLoader: UIExtensionContentSession): insightIntent.ExecuteResult {
+    hilog.info(0x0000, 'testTag', 'onExecuteInUIExtensionAbility %{public}s', name);
+    let result: insightIntent.ExecuteResult;
+    result = {
+      code: 0,
+      result: {
+        message: 'Unsupported insight intent.',
+      },
+    };
+    try {
+      this.context.setReturnModeForUIExtensionAbility(insightIntent.ReturnMode.FUNCTION)
+    } catch (error) {
+      let code = (error as BusinessError).code;
+      let msg = (error as BusinessError).message;
+      console.error(`testTag setReturnModeForUIExtensionAbility fail, error code: ${code}, error msg: ${msg}.`);
+    }
 
-23. try {
-24. let localStorageData: Record<string, number> = {
-25. 'insightId': this.context.instanceId,
-26. };
-27. let storage: LocalStorage = new LocalStorage(localStorageData);
-28. storage.setOrCreate('session', pageLoader);
-29. pageLoader.loadContent('pages/UIExtensionPage', storage);
-30. } catch (err) {
-31. let code = (err as BusinessError).code;
-32. let msg = (err as BusinessError).message;
-33. console.info(`testTag loadContent error code: ${code}, error msg: ${msg}.`);
-34. }
-35. return result;
-36. }
-37. }
+    try {
+      let localStorageData: Record<string, number> = {
+        'insightId': this.context.instanceId,
+      };
+      let storage: LocalStorage = new LocalStorage(localStorageData);
+      storage.setOrCreate('session', pageLoader);
+      pageLoader.loadContent('pages/UIExtensionPage', storage);
+    } catch (err) {
+      const error: BusinessError = err as BusinessError;
+      console.error(`Failed to loadContent. Code: ${error.code}, message: ${error.message}`);
+    }
+    return result;
+  }
+}
 ```

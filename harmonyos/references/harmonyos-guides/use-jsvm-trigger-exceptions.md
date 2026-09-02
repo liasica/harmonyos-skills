@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-trigger-exceptions
 title: 使用JSVM-API进行异常的定制化处理
+breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API进行异常的定制化处理
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:22+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:b13932583ca75f70a7c0f430d4742715c1694ddf8d6f1cb94c92b1b18957d389
+scraped_at: 2026-09-02T15:00:17+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:baad8e201e95708de967a70d56a839189fa68c6b7dd569e4c650701c70055191
 ---
 
 ## 简介
@@ -39,73 +40,73 @@ JSVM-API接口开发流程参考[使用JSVM-API实现JS与C/C++语言交互开�
 
 **cpp部分代码：**
 
-```
-1. #include <csetjmp>
-2. #include <vector>
+```cpp
+#include <csetjmp>
+#include <vector>
 
-4. static jmp_buf buf;
-5. static bool oomHandlerFinished = false;
+static jmp_buf buf;
+static bool oomHandlerFinished = false;
 
-7. void OnOOMError(const char *location, const char *detail, bool isHeapOOM)
-8. {
-9. oomHandlerFinished = true;
-10. longjmp(buf, 1);
-11. }
+void OnOOMError(const char *location, const char *detail, bool isHeapOOM)
+{
+    oomHandlerFinished = true;
+    longjmp(buf, 1);
+}
 
-13. static JSVM_Value TriggerOOMError(JSVM_Env env, JSVM_CallbackInfo info)
-14. {
-15. oomHandlerFinished = false;
-16. JSVM_VM vm;
-17. JSVM_CALL(OH_JSVM_GetVM(env, &vm));
-18. // 设置OOM Error处理函数
-19. JSVM_CALL(OH_JSVM_SetHandlerForOOMError(vm, OnOOMError));
-20. bool oomed = false;
-21. setjmp(buf);
-22. if (!oomed) {
-23. oomed = true;
-24. // 触发OOM
-25. std::vector<JSVM_Value> arrayVec;
-26. int loopCount = 1000;
-27. for (int i = 0; i < loopCount; i++) {
-28. JSVM_Value array;
-29. JSVM_CALL(OH_JSVM_CreateArrayWithLength(env, 0xffffff, &array));
-30. arrayVec.push_back(array);
-31. }
-32. }
-33. if (oomHandlerFinished) {
-34. OH_LOG_INFO(LOG_APP, "JSVM Trigger OOM Error: success");
-35. } else {
-36. OH_LOG_ERROR(LOG_APP, "JSVM Trigger OOM Error: failed");
-37. }
-38. // 取消对OOM Error处理函数的设置
-39. JSVM_CALL(OH_JSVM_SetHandlerForOOMError(vm, NULL));
-40. JSVM_Value checked;
-41. OH_JSVM_GetBoolean(env, true, &checked);
-42. return checked;
-43. }
+static JSVM_Value TriggerOOMError(JSVM_Env env, JSVM_CallbackInfo info)
+{
+    oomHandlerFinished = false;
+    JSVM_VM vm;
+    JSVM_CALL(OH_JSVM_GetVM(env, &vm));
+    // 设置OOM Error处理函数
+    JSVM_CALL(OH_JSVM_SetHandlerForOOMError(vm, OnOOMError));
+    bool oomed = false;
+    setjmp(buf);
+    if (!oomed) {
+        oomed = true;
+        // 触发OOM
+        std::vector<JSVM_Value> arrayVec;
+        int loopCount = 1000;
+        for (int i = 0; i < loopCount; i++) {
+            JSVM_Value array;
+            JSVM_CALL(OH_JSVM_CreateArrayWithLength(env, 0xffffff, &array));
+            arrayVec.push_back(array);
+        }
+    }
+    if (oomHandlerFinished) {
+        OH_LOG_INFO(LOG_APP, "JSVM Trigger OOM Error: success");
+    } else {
+        OH_LOG_ERROR(LOG_APP, "JSVM Trigger OOM Error: failed");
+    }
+    // 取消对OOM Error处理函数的设置
+    JSVM_CALL(OH_JSVM_SetHandlerForOOMError(vm, NULL));
+    JSVM_Value checked;
+    OH_JSVM_GetBoolean(env, true, &checked);
+    return checked;
+}
 
-45. static JSVM_CallbackStruct param[] = {
-46. {.data = nullptr, .callback = TriggerOOMError},
-47. };
-48. static JSVM_CallbackStruct *method = param;
+static JSVM_CallbackStruct param[] = {
+    {.data = nullptr, .callback = TriggerOOMError},
+};
+static JSVM_CallbackStruct *method = param;
 
-50. static JSVM_PropertyDescriptor descriptor[] = {
-51. {"triggerOOMError", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
-52. };
+static JSVM_PropertyDescriptor descriptor[] = {
+    {"triggerOOMError", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
+};
 ```
 
 **样例测试JS**
 
-```
-1. const char *srcCallNative = R"JS(triggerOOMError();)JS";
+```cpp
+const char *srcCallNative = R"JS(triggerOOMError();)JS";
 ```
 
-**执行结果**
+**执行结果：**
 
 在LOG中输出：
 
-```
-1. JSVM Trigger OOM Error: success
+```cpp
+JSVM Trigger OOM Error: success
 ```
 
 ### OH\_JSVM\_SetHandlerForFatalError
@@ -114,72 +115,72 @@ JSVM-API接口开发流程参考[使用JSVM-API实现JS与C/C++语言交互开�
 
 **cpp部分代码：**
 
-```
-1. #include <csetjmp>
-2. #include <vector>
+```cpp
+#include <csetjmp>
+#include <vector>
 
-4. static jmp_buf buf;
-5. static bool fatalHandlerFinished = false;
-6. void OnFatalError(const char *location, const char *message)
-7. {
-8. fatalHandlerFinished = true;
-9. OH_LOG_INFO(LOG_APP, "Run in 106");
-10. longjmp(buf, 1);
-11. }
+static jmp_buf buf;
+static bool fatalHandlerFinished = false;
+void OnFatalError(const char *location, const char *message)
+{
+    fatalHandlerFinished = true;
+    OH_LOG_INFO(LOG_APP, "Run in 106");
+    longjmp(buf, 1);
+}
 
-13. static JSVM_Value TriggerFatalError(JSVM_Env env, JSVM_CallbackInfo info)
-14. {
-15. fatalHandlerFinished = false;
-16. JSVM_VM vm;
-17. JSVM_CALL(OH_JSVM_GetVM(env, &vm));
-18. // 设置Fatal Error处理函数
-19. JSVM_CALL(OH_JSVM_SetHandlerForFatalError(vm, OnFatalError));
-20. bool fataled = false;
-21. setjmp(buf);
-22. if (!fataled) {
-23. fataled = true;
-24. std::vector<JSVM_Value> arrayVec;
-25. int loopCount = 1000;
-26. for (int i = 0; i < loopCount; i++) {
-27. JSVM_Value array;
-28. JSVM_CALL(OH_JSVM_CreateArrayWithLength(env, 0xffffff, &array));
-29. arrayVec.push_back(array);
-30. }
-31. }
-32. if (fatalHandlerFinished) {
-33. OH_LOG_INFO(LOG_APP, "JSVM Trigger Fatal Error: success");
-34. } else {
-35. OH_LOG_ERROR(LOG_APP, "JSVM Trigger Fatal Error: failed");
-36. }
-37. // 取消对Fatal Error处理函数的设置
-38. JSVM_CALL(OH_JSVM_SetHandlerForFatalError(vm, NULL));
-39. JSVM_Value checked;
-40. OH_JSVM_GetBoolean(env, true, &checked);
-41. return checked;
-42. }
+static JSVM_Value TriggerFatalError(JSVM_Env env, JSVM_CallbackInfo info)
+{
+    fatalHandlerFinished = false;
+    JSVM_VM vm;
+    JSVM_CALL(OH_JSVM_GetVM(env, &vm));
+    // 设置Fatal Error处理函数
+    JSVM_CALL(OH_JSVM_SetHandlerForFatalError(vm, OnFatalError));
+    bool fataled = false;
+    setjmp(buf);
+    if (!fataled) {
+        fataled = true;
+        std::vector<JSVM_Value> arrayVec;
+        int loopCount = 1000;
+        for (int i = 0; i < loopCount; i++) {
+            JSVM_Value array;
+            JSVM_CALL(OH_JSVM_CreateArrayWithLength(env, 0xffffff, &array));
+            arrayVec.push_back(array);
+        }
+    }
+    if (fatalHandlerFinished) {
+        OH_LOG_INFO(LOG_APP, "JSVM Trigger Fatal Error: success");
+    } else {
+        OH_LOG_ERROR(LOG_APP, "JSVM Trigger Fatal Error: failed");
+    }
+    // 取消对Fatal Error处理函数的设置
+    JSVM_CALL(OH_JSVM_SetHandlerForFatalError(vm, NULL));
+    JSVM_Value checked;
+    OH_JSVM_GetBoolean(env, true, &checked);
+    return checked;
+}
 
-44. static JSVM_CallbackStruct param[] = {
-45. {.data = nullptr, .callback = TriggerFatalError},
-46. };
-47. static JSVM_CallbackStruct *method = param;
+static JSVM_CallbackStruct param[] = {
+    {.data = nullptr, .callback = TriggerFatalError},
+};
+static JSVM_CallbackStruct *method = param;
 
-49. static JSVM_PropertyDescriptor descriptor[] = {
-50. {"triggerFatalError", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
-51. };
+static JSVM_PropertyDescriptor descriptor[] = {
+    {"triggerFatalError", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
+};
 ```
 
 **样例测试JS**
 
-```
-1. const char* srcCallNative = R"JS(triggerFatalError())JS";
+```cpp
+const char* srcCallNative = R"JS(triggerFatalError())JS";
 ```
 
 **执行结果：**
 
 在LOG中输出：
 
-```
-1. JSVM Trigger Fatal Error: success
+```cpp
+JSVM Trigger Fatal Error: success
 ```
 
 ### OH\_JSVM\_SetHandlerForPromiseReject
@@ -188,79 +189,79 @@ JSVM-API接口开发流程参考[使用JSVM-API实现JS与C/C++语言交互开�
 
 **cpp部分代码：**
 
-```
-1. static bool promiseRejectHandlerFinished = false;
+```cpp
+static bool promiseRejectHandlerFinished = false;
 
-3. void OnPromiseReject(JSVM_Env env, JSVM_PromiseRejectEvent rejectEvent, JSVM_Value rejectInfo)
-4. {
-5. bool result = false;
-6. OH_JSVM_IsObject(env, rejectInfo, &result);
-7. JSVM_Value promise;
-8. JSVM_Value key1;
-9. OH_JSVM_CreateStringUtf8(env, "promise", JSVM_AUTO_LENGTH, &key1);
-10. OH_JSVM_GetProperty(env, rejectInfo, key1, &promise);
-11. bool isPromise = false;
-12. OH_JSVM_IsPromise(env, promise, &isPromise);
-13. JSVM_Value value;
-14. JSVM_Value key2;
-15. OH_JSVM_CreateStringUtf8(env, "value", JSVM_AUTO_LENGTH, &key2);
-16. OH_JSVM_GetProperty(env, rejectInfo, key2, &value);
-17. JSVM_Value js_number;
-18. OH_JSVM_CoerceToNumber(env, value, &js_number);
-19. double res = 0;
-20. OH_JSVM_GetValueDouble(env, js_number, &res);
-21. if (res == 42 && isPromise) {
-22. promiseRejectHandlerFinished = true;
-23. }
-24. }
+void OnPromiseReject(JSVM_Env env, JSVM_PromiseRejectEvent rejectEvent, JSVM_Value rejectInfo)
+{
+    bool result = false;
+    OH_JSVM_IsObject(env, rejectInfo, &result);
+    JSVM_Value promise;
+    JSVM_Value key1;
+    OH_JSVM_CreateStringUtf8(env, "promise", JSVM_AUTO_LENGTH, &key1);
+    OH_JSVM_GetProperty(env, rejectInfo, key1, &promise);
+    bool isPromise = false;
+    OH_JSVM_IsPromise(env, promise, &isPromise);
+    JSVM_Value value;
+    JSVM_Value key2;
+    OH_JSVM_CreateStringUtf8(env, "value", JSVM_AUTO_LENGTH, &key2);
+    OH_JSVM_GetProperty(env, rejectInfo, key2, &value);
+    JSVM_Value js_number;
+    OH_JSVM_CoerceToNumber(env, value, &js_number);
+    double res = 0;
+    OH_JSVM_GetValueDouble(env, js_number, &res);
+    if (res == 42 && isPromise) {
+        promiseRejectHandlerFinished = true;
+    }
+}
 
-26. static JSVM_Value TriggerPromiseReject(JSVM_Env env, JSVM_CallbackInfo info)
-27. {
-28. promiseRejectHandlerFinished = false;
-29. JSVM_VM vm;
-30. JSVM_CALL(OH_JSVM_GetVM(env, &vm));
-31. // 设置Promise Reject处理函数
-32. JSVM_CALL(OH_JSVM_SetHandlerForPromiseReject(vm, OnPromiseReject));
-33. JSVM_Value strVal;
-34. char *str = "new Promise((resolve, reject) => { reject(42); })";
-35. OH_JSVM_CreateStringUtf8(env, str, JSVM_AUTO_LENGTH, &strVal);
-36. JSVM_Script script;
-37. OH_JSVM_CompileScript(env, strVal, nullptr, 0, false, nullptr, &script);
-38. JSVM_Value result;
-39. JSVM_Status status = OH_JSVM_RunScript(env, script, &result);
+static JSVM_Value TriggerPromiseReject(JSVM_Env env, JSVM_CallbackInfo info)
+{
+    promiseRejectHandlerFinished = false;
+    JSVM_VM vm;
+    JSVM_CALL(OH_JSVM_GetVM(env, &vm));
+    // 设置Promise Reject处理函数
+    JSVM_CALL(OH_JSVM_SetHandlerForPromiseReject(vm, OnPromiseReject));
+    JSVM_Value strVal;
+    const char *str = "new Promise((resolve, reject) => { reject(42); })";
+    OH_JSVM_CreateStringUtf8(env, str, JSVM_AUTO_LENGTH, &strVal);
+    JSVM_Script script;
+    OH_JSVM_CompileScript(env, strVal, nullptr, 0, false, nullptr, &script);
+    JSVM_Value result;
+    JSVM_Status status = OH_JSVM_RunScript(env, script, &result);
 
-41. if (promiseRejectHandlerFinished) {
-42. OH_LOG_INFO(LOG_APP, "JSVM Trigger Promise Reject: success");
-43. } else {
-44. OH_LOG_ERROR(LOG_APP, "JSVM Trigger Promise Reject: failed");
-45. }
-46. // 取消对Promise Reject处理函数的设置
-47. JSVM_CALL(OH_JSVM_SetHandlerForPromiseReject(vm, NULL));
-48. JSVM_Value checked;
-49. OH_JSVM_GetBoolean(env, true, &checked);
-50. return checked;
-51. }
+    if (promiseRejectHandlerFinished) {
+        OH_LOG_INFO(LOG_APP, "JSVM Trigger Promise Reject: success");
+    } else {
+        OH_LOG_ERROR(LOG_APP, "JSVM Trigger Promise Reject: failed");
+    }
+    // 取消对Promise Reject处理函数的设置
+    JSVM_CALL(OH_JSVM_SetHandlerForPromiseReject(vm, NULL));
+    JSVM_Value checked;
+    OH_JSVM_GetBoolean(env, true, &checked);
+    return checked;
+}
 
-53. static JSVM_CallbackStruct param[] = {
-54. {.data = nullptr, .callback = TriggerPromiseReject},
-55. };
-56. static JSVM_CallbackStruct *method = param;
+static JSVM_CallbackStruct param[] = {
+    {.data = nullptr, .callback = TriggerPromiseReject},
+};
+static JSVM_CallbackStruct *method = param;
 
-58. static JSVM_PropertyDescriptor descriptor[] = {
-59. {"triggerPromiseReject", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
-60. };
+static JSVM_PropertyDescriptor descriptor[] = {
+    {"triggerPromiseReject", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
+};
 ```
 
 **样例测试JS**
 
-```
-1. const char* srcCallNative = R"JS(triggerPromiseReject())JS";
+```cpp
+const char* srcCallNative = R"JS(triggerPromiseReject())JS";
 ```
 
 **执行结果：**
 
 在LOG中输出：
 
-```
-1. JSVM Trigger Promise Reject: success
+```cpp
+JSVM Trigger Promise Reject: success
 ```

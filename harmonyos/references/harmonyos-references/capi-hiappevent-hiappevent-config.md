@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hiap
 title: HiAppEvent_Config
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > C API > 结构体 > HiAppEvent_Config
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:26+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:9c9017c7d56e994a65b39c3246c5e4e65d0ad0e396d76e7851ba24bb3413a2b3
+scraped_at: 2026-09-02T14:52:41+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3799ddf864f4f3ecc97a6691664a6b42dad86f9e7e4681e949683a86ef1617a5
 ---
 
-```
-1. typedef struct HiAppEvent_Config HiAppEvent_Config
+```c
+typedef struct HiAppEvent_Config HiAppEvent_Config
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-用于设置系统事件触发条件的配置对象。
+设置系统事件自定义规格的配置对象。可以用来自定义系统事件规格参数，参数列表设置可参考应用事件的[宏定义](capi-hiappevent-param-h.md#宏定义)。
 
 **起始版本：** 15
 

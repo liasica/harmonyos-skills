@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: ABR功能开发
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏渲染加速服务 > ABR功能开发
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:36:28+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1d07b869b5c0167555636ec0f6a4d0a0f1ae9f62a8d011844258ba128db39f37
+scraped_at: 2026-09-02T14:59:50+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ae4768a34b996d5b09962c000a799b2238b734c114bf19407ae1757610b01d68
 ---
 
 ## 业务流程
 
 基于相机运动感知策略的ABR主要业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/Wpcbvh5mRX-9RQ5qUX8_tg/zh-cn_image_0000002589325083.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/Sk7ePOF7QR2L9mtHn6lvbw/zh-cn_image_0000002736433871.png)
 
 1. 用户进入ABR适用的游戏场景。
 2. 游戏应用调用[HMS\_ABR\_CreateContext](../harmonyos-references/_graphics_accelerate.md#hms_abr_createcontext)接口并指定图形API类型，创建ABR上下文实例。
@@ -35,13 +35,13 @@ content_hash: sha256:1d07b869b5c0167555636ec0f6a4d0a0f1ae9f62a8d011844258ba128db
 
 在“src/main/module.json5”的module层级中添加以下配置。
 
-```
-1. "metadata": [
-2. {
-3. "name": "GraphicsAccelerateKit_ABR",
-4. "value": "true"
-5. }
-6. ]
+```json5
+   "metadata": [
+     {
+       "name": "GraphicsAccelerateKit_ABR",
+       "value": "true"
+     },
+   ],
 ```
 
 ### 头文件引用
@@ -49,36 +49,35 @@ content_hash: sha256:1d07b869b5c0167555636ec0f6a4d0a0f1ae9f62a8d011844258ba128db
 引用Graphics Accelerate Kit ABR头文件：abr\_gles.h。
 
 ```
-1. // 引用ABR头文件 abr_gles.h
-2. #include <graphics_game_sdk/abr_gles.h>
-3. #include <GLES3/gl32.h>
+// 引用ABR头文件 abr_gles.h
+#include <graphics_game_sdk/abr_gles.h>
 ```
 
 ### 编写CMakeLists.txt
 
-```
-1. find_library(
-2. # Sets the name of the path variable.
-3. abr-lib
-4. # Specifies the name of the NDK library that you want CMake to locate.
-5. libabr.so
-6. )
-7. find_library(
-8. # Sets the name of the path variable.
-9. GLES-lib
-10. # Specifies the name of the NDK library that you want CMake to locate.
-11. GLESv3
-12. )
-13. find_library(
-14. # Sets the name of the path variable.
-15. hilog-lib
-16. # Specifies the name of the NDK library that you want CMake to locate.
-17. hilog_ndk.z
-18. )
+```cpp
+find_library(
+    # Sets the name of the path variable.
+    abr-lib
+    # Specifies the name of the NDK library that you want CMake to locate.
+    libabr.so
+)
+find_library(
+    # Sets the name of the path variable.
+    GLES-lib
+    # Specifies the name of the NDK library that you want CMake to locate.
+    GLESv3
+)
+find_library(
+    # Sets the name of the path variable.
+    hilog-lib
+    # Specifies the name of the NDK library that you want CMake to locate.
+    hilog_ndk.z
+)
 
-20. target_link_libraries(entry PUBLIC
-21. ${abr-lib} ${GLES-lib} ${hilog-lib}
-22. )
+target_link_libraries(entry PUBLIC
+    ${abr-lib} ${GLES-lib} ${hilog-lib}
+)
 ```
 
 ### ABR初始化
@@ -87,43 +86,43 @@ content_hash: sha256:1d07b869b5c0167555636ec0f6a4d0a0f1ae9f62a8d011844258ba128db
 
 1. 调用[HMS\_ABR\_CreateContext](../harmonyos-references/_graphics_accelerate.md#hms_abr_createcontext)接口创建ABR上下文实例，指定图形API类型。如果返回nullptr，则说明ABR上下文实例创建失败，或当前硬件设备不支持开启ABR。
 
-   ```
-   1. // 创建ABR上下文实例，指定图形API类型
-   2. ABR_Context *context_ = HMS_ABR_CreateContext(RENDER_API_GLES);
-   3. if (context_ == nullptr) {
-   4. return false;
-   5. }
+   ```cpp
+   // 创建ABR上下文实例，指定图形API类型
+   ABR_Context *context_ = HMS_ABR_CreateContext(RENDER_API_GLES);
+   if (context_ == nullptr) {
+         return false;
+   }
    ```
 2. 调用[HMS\_ABR\_SetTargetFps](../harmonyos-references/_graphics_accelerate.md#hms_abr_settargetfps)接口初始化ABR实例，根据游戏的目标帧率配置ABR的目标帧率属性。
 
    ```
-   1. // 初始化ABR接口调用错误码
-   2. ABR_ErrorCode errorCode = ABR_SUCCESS;
-
-   4. // 初始化ABR实例，配置ABR的目标帧率属性。例如游戏目标帧率为120fps，则配置ABR的目标帧率属性为120fps
-   5. errorCode = HMS_ABR_SetTargetFps(context_, 120);
-   6. if (errorCode != ABR_SUCCESS) {
-   7. return false;
-   8. }
+   // 初始化ABR实例，配置ABR的目标帧率属性。例如游戏目标帧率为120fps，则配置ABR的目标帧率属性为120fps
+   ABR_ErrorCode errorCode = HMS_ABR_SetTargetFps(context_, 120);
+   if (errorCode != ABR_SUCCESS) {
+       GOLOGE("HMS_ABR_SetTargetFps execution failed, error code: %d.", errorCode);
+       return false;
+   }
    ```
 3. 调用[HMS\_ABR\_SetScaleRange](../harmonyos-references/_graphics_accelerate.md#hms_abr_setscalerange)接口初始化ABR实例，配置Buffer分辨率因子范围属性。
 
    ```
-   1. // 初始化ABR实例，配置Buffer分辨率因子范围属性，结合具体游戏分辨率、画质设置合适的范围
-   2. // 例如设置ABR对Buffer分辨率进行0.5~1.0倍的自适应调整
-   3. errorCode = HMS_ABR_SetScaleRange(context_, 0.5f, 1.0f);
-   4. if (errorCode != ABR_SUCCESS) {
-   5. return false;
-   6. }
+   // 初始化ABR实例，配置Buffer分辨率因子范围属性，结合具体游戏分辨率、画质设置合适的范围
+   // 例如设置ABR对Buffer分辨率进行0.5~1.0倍的自适应调整
+   errorCode = HMS_ABR_SetScaleRange(context_, 0.5f, 1.0f);
+   if (errorCode != ABR_SUCCESS) {
+       GOLOGE("HMS_ABR_SetScaleRange execution failed, error code: %d.", errorCode);
+       return false;
+   }
    ```
 4. 调用[HMS\_ABR\_Activate](../harmonyos-references/_graphics_accelerate.md#hms_abr_activate)接口激活ABR上下文实例。
 
    ```
-   1. // 激活ABR上下文实例
-   2. errorCode = HMS_ABR_Activate(context_);
-   3. if (errorCode != ABR_SUCCESS) {
-   4. return false;
-   5. }
+   // 激活ABR上下文实例
+   errorCode = HMS_ABR_Activate(context_);
+   if (errorCode != ABR_SUCCESS) {
+       GOLOGE("HMS_ABR_Activate execution failed, error code: %d.", errorCode);
+       return false;
+   }
    ```
 
 ### 相机运动数据更新
@@ -133,20 +132,18 @@ content_hash: sha256:1d07b869b5c0167555636ec0f6a4d0a0f1ae9f62a8d011844258ba128db
 调用[HMS\_ABR\_UpdateCameraData](../harmonyos-references/_graphics_accelerate.md#hms_abr_updatecameradata)接口并传入相机运动信息，包含相机旋转、位移信息。
 
 ```
-1. // 相机运动数据结构体，设置每帧实时相机运动数据
-2. ABR_CameraData cameraData;
-3. // 每帧位置
-4. ABR_Vector3 position_;
-5. // 每帧的相机旋转角，范围是[0, 360]
-6. ABR_Vector3 rotation_;
-7. cameraData.position = position_;
-8. cameraData.rotation = rotation_;
-
-10. // 每帧相机运动数据更新
-11. errorCode = HMS_ABR_UpdateCameraData(context_, &cameraData);
-12. if (errorCode != ABR_SUCCESS) {
-13. return false;
-14. }
+// 相机运动数据结构体，设置每帧实时相机运动数据
+ABR_CameraData cameraData;
+// 每帧位置
+cameraData.position = static_cast<ABR_Vector3>(camera_.GetPosition());
+// 每帧的相机旋转角，范围是[0, 360]
+cameraData.rotation = static_cast<ABR_Vector3>(camera_.GetRotation());
+// 每帧相机运动数据更新
+errorCode = HMS_ABR_UpdateCameraData(context_, &cameraData);
+if (errorCode != ABR_SUCCESS) {
+    GOLOGE("HMS_ABR_UpdateCameraData execution failed, error code: %d.", errorCode);
+    return;
+}
 ```
 
 ### 自适应渲染
@@ -156,20 +153,25 @@ content_hash: sha256:1d07b869b5c0167555636ec0f6a4d0a0f1ae9f62a8d011844258ba128db
 1. 选择着色器处理耗时较高的Buffer，并在Buffer渲染前绑定帧缓冲。
 
    ```
-   1. // 创建帧缓冲对象
-   2. GLuint fbo;
-   3. glGenFramebuffers(1, &fbo);
-   4. // 绑定帧缓冲
-   5. glBindFramebuffer(GL_FRAMEBUFFER, fbo);
+   FBO fbo{};
+   // ...
+   // 创建帧缓冲对象
+   glGenFramebuffers(1, &fbo.fbo_);
+   CheckOpenGLError();
+
+   // 绑定帧缓冲
+   glBindFramebuffer(GL_FRAMEBUFFER, fbo.fbo_);
+   CheckOpenGLError();
    ```
 2. 调用[HMS\_ABR\_MarkFrameBuffer\_GLES](../harmonyos-references/_graphics_accelerate.md#hms_abr_markframebuffer_gles)接口对Buffer进行标记。
 
    ```
-   1. // 在Buffer渲染前调用，执行失败不影响Buffer正常渲染
-   2. errorCode = HMS_ABR_MarkFrameBuffer_GLES(context_);
-   3. if (errorCode != ABR_SUCCESS) {
-   4. return false;
-   5. }
+   // 在Buffer渲染前调用，执行失败不影响Buffer正常渲染
+   errorCode = HMS_ABR_MarkFrameBuffer_GLES(context_);
+   if (errorCode != ABR_SUCCESS) {
+       GOLOGE("HMS_ABR_MarkFrameBuffer_GLES execution failed, error code: %d.", errorCode);
+       return;
+   }
    ```
 3. 执行Buffer原有渲染流程。
 
@@ -180,9 +182,11 @@ content_hash: sha256:1d07b869b5c0167555636ec0f6a4d0a0f1ae9f62a8d011844258ba128db
 调用[HMS\_ABR\_DestroyContext](../harmonyos-references/_graphics_accelerate.md#hms_abr_destroycontext)接口销毁ABR实例，释放内存资源。
 
 ```
-1. // 销毁ABR上下文实例并释放内存资源
-2. ABR_ErrorCode errorCode = HMS_ABR_DestroyContext(&context_);
-3. if (errorCode != ABR_SUCCESS) {
-4. return false;
-5. }
+// 销毁ABR上下文实例并释放内存资源
+ABR_ErrorCode errorCode = HMS_ABR_DestroyContext(&context_);
+predictionPaused_ = (errorCode == ABR_SUCCESS);
+if (errorCode != ABR_SUCCESS) {
+    GOLOGE("HMS_ABR_DestroyContext execution failed, error code: %d.", errorCode);
+    return false;
+}
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-pl
 title: 开发Hvigor插件
 breadcrumb: 指南 > 构建应用 > 扩展构建能力 > 开发Hvigor插件
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:47:21+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3973de99f0d65950cfb16625ead73c90f5b24867db90535aef24fd6753b2e364
+scraped_at: 2026-09-02T15:00:27+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:50f8473d7e53eab79839d7f824db40c4a2d58dcc46dc960529fca7a549deb610
 ---
 
 Hvigor允许开发者实现自己的插件，开发者可以定义自己的构建逻辑，并与他人共享。
@@ -13,6 +13,10 @@ Hvigor允许开发者实现自己的插件，开发者可以定义自己的构�
 Hvigor主要提供了两种方式来实现插件：基于hvigorfile脚本开发插件、基于typescript项目开发。
 
 关于插件开发的具体实践请参考[定制hvigor插件开发实践](../best-practices/bpta-custom-hvigor-plugin.md)。
+
+**说明** 
+
+建议使用DevEco Studio内置的Node.js，如需另行安装，推荐使用DevEco Studio配套的Node.js版本，具体配套关系请参考[DevEco Studio兼容性配套关系](../harmonyos-releases/ide-overview-releasenote.md)。
 
 ## 基于hvigorfile脚本开发
 
@@ -22,51 +26,51 @@ Hvigor主要提供了两种方式来实现插件：基于hvigorfile脚本开发�
 
 若开发者需要创建新的构建脚本，推荐将这些脚本统一放在工程或模块的scripts目录下，以便与应用代码进行隔离，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/-g-Bzp7cQNWkVYxZRe5Cog/zh-cn_image_0000002561832859.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/VkfMceZ2Ro28uGTkg9-S9Q/zh-cn_image_0000002701822886.png)
 
 以工程级hvigorfile.ts脚本为例，开发步骤如下。
 
 1. 导入模块依赖，更多接口请参考[扩展构建API](ide-hvigor-apis.md)。
 
-   ```
-   1. // 工程级hvigorfile.ts
-   2. import { appTasks } from '@ohos/hvigor-ohos-plugin';
-   3. import { HvigorPlugin, HvigorNode } from '@ohos/hvigor';
+   ```ts
+   // 工程级hvigorfile.ts
+   import { appTasks } from '@ohos/hvigor-ohos-plugin';
+   import { HvigorPlugin, HvigorNode } from '@ohos/hvigor';
    ```
 2. 编写插件代码，实现HvigorPlugin接口。
 
-   ```
-   1. // 工程级hvigorfile.ts
-   2. function customPlugin(): HvigorPlugin {
-   3. return {
-   4. pluginId: 'customPlugin',
-   5. apply(node: HvigorNode) {
-   6. // 插件主体
-   7. console.log('hello customPlugin!');
-   8. }
-   9. }
-   10. }
+   ```ts
+   // 工程级hvigorfile.ts
+   function customPlugin(): HvigorPlugin {
+     return {
+       pluginId: 'customPlugin',
+       apply(node: HvigorNode) {
+         // 插件主体
+         console.log('hello customPlugin!');
+       }
+     }
+   }
    ```
 3. 在导出声明中使用插件。
 
-   ```
-   1. // 工程级hvigorfile.ts
-   2. export default {
-   3. system: appTasks,
-   4. plugins:[
-   5. customPlugin()  // 应用自定义Plugin
-   6. ]
-   7. }
+   ```ts
+   // 工程级hvigorfile.ts
+   export default {
+     system: appTasks,
+     plugins:[
+       customPlugin()  // 应用自定义Plugin
+     ]
+   }
    ```
 4. 执行Hvigor命令。
 
    执行Hvigor命令时，在Hvigor生命周期配置阶段执行插件中的apply方法。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/PzRekmEvQp-IAzNL99jL6A/zh-cn_image_0000002530912940.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/YoANTbn1TB2ZgxkrCPnJNw/zh-cn_image_0000002731382187.png)
 
 ## 基于typescript项目开发
 
-基于typescript项目开发较好地弥补了上一小节中使用hvigorfile脚本方式编写插件代码不易复用和共享分发的问题。因此通常情况下推荐此方式开发。
+基于typescript项目开发的方式，能够较好地弥补上一小节中使用hvigorfile脚本编写插件代码不易复用和共享分发的问题。因此通常情况下推荐此方式开发。
 
 ### 初始化typescript项目
 
@@ -75,28 +79,28 @@ Hvigor主要提供了两种方式来实现插件：基于hvigorfile脚本开发�
    在命令行工具中使用cd命令进入空目录下。
 2. 安装typescript模块。
 
-   ```
-   1. // 全局安装TypeScript
-   2. npm install typescript -g
+   ```bash
+   // 全局安装TypeScript
+   npm install typescript -g
    ```
 3. 初始化npm项目。
 
    执行如下命令，根据命令行指示配置项目。初始化完成后会生成package.json文件。
 
-   ```
-   1. // 初始化一个npm项目
-   2. npm init
+   ```bash
+   // 初始化一个npm项目
+   npm init
    ```
 4. 生成typescript配置文件。
 
    执行如下命令生成tsconfig.json文件。
 
-   ```
-   1. // 初始化typeScript配置文件
-   2. tsc --init
+   ```bash
+   // 初始化typeScript配置文件
+   tsc --init
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/jXQEpDnCQpuuBHVTkMiuMQ/zh-cn_image_0000002561752881.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/2YZ85FjRQ7K5upfR2SF9AA/zh-cn_image_0000002731542157.png)
 5. 删除verbatimModuleSyntax字段。
 
    检查tsconfig.json文件是否存在verbatimModuleSyntax字段，如果存在且配置为true，会导致无法使用ESM语法，编译时会报错，因此需要删除该字段。
@@ -107,48 +111,52 @@ Hvigor主要提供了两种方式来实现插件：基于hvigorfile脚本开发�
 
    在工程目录下创建.npmrc文件，配置如下信息：
 
-   ```
-   1. registry=https://repo.huaweicloud.com/repository/npm/
-   2. @ohos:registry=https://repo.harmonyos.com/npm/
+   ```txt
+   registry=https://repo.huaweicloud.com/repository/npm/
+   @ohos:registry=https://repo.harmonyos.com/npm/
    ```
 2. 添加依赖声明。
 
    打开package.json添加devDependencies配置。
 
+   ```json
+   "devDependencies": {
+       "@ohos/hvigor": "6.26.2"  // 可从扩展构建API中查看对应的版本号
+   }
    ```
-   1. "devDependencies": {
-   2. "@ohos/hvigor": "5.2.2"
-   3. }
-   ```
+
+   **说明** 
+
+   如果依赖配置在dependencies中，会导致使用插件时编译报错。
 3. 安装依赖。
 
    执行如下命令安装依赖。
 
-   ```
-   1. npm install
+   ```bash
+   npm install
    ```
 4. 编写插件代码。
 
    在src/plugin目录下创建custom-plugin.ts文件，编写插件代码，更多接口请参考[扩展构建API](ide-hvigor-apis.md)。
 
-   ```
-   1. import type { HvigorNode, HvigorPlugin } from '@ohos/hvigor';
+   ```screen
+   import type { HvigorNode, HvigorPlugin } from '@ohos/hvigor';
 
-   3. export function customPlugin(): HvigorPlugin {
-   4. return {
-   5. pluginId: 'customPlugin',
-   6. apply(node: HvigorNode) {
-   7. console.log('hello customPlugin!');
-   8. }
-   9. }
-   10. }
+   export function customPlugin(): HvigorPlugin {
+     return {
+       pluginId: 'customPlugin',
+       apply(node: HvigorNode) {
+         console.log('hello customPlugin!');
+       }
+     }
+   }
    ```
 5. 导出插件。
 
    创建index.ts文件，并在该文件中声明插件方法的导出。由于.ts最终会编译成.js文件，因此需要导出.js文件。
 
-   ```
-   1. export { customPlugin } from './src/plugin/custom-plugin.js';
+   ```ts
+   export { customPlugin } from './src/plugin/custom-plugin.js';
    ```
 
 ### 发布插件
@@ -161,31 +169,31 @@ typescript项目本质上是一种npm项目，插件发布流程遵循npm发布�
 
    打开工程目录下的.npmrc文件，配置您需要发布的镜像仓库。
 
-   ```
-   1. registry=[npm镜像仓库地址]
+   ```txt
+   registry=[npm镜像仓库地址]
    ```
 2. 生成AccessToken。
 
    执行如下命令，注册并登录npm仓库，在工程目录下.npmrc文件中自动生成token信息。
 
-   ```
-   1. npm login
+   ```bash
+   npm login
    ```
 3. 编译npm包。
 
-   ```
-   1. tsc
+   ```bash
+   tsc
    ```
 
    如果编译时报以下错误，请检查初始化项目时是否[删除了verbatimModuleSyntax](ide-hvigor-plugin.md#li88369101451)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/uojYOcOWTBmsZFOGVaubvA/zh-cn_image_0000002530752942.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/OhYNtgn9TIeQsEKTQFPoJQ/zh-cn_image_0000002701822884.png)
 4. 发布npm包。
 
    执行如下命令，将npm项目打包并发布至镜像仓库。
 
-   ```
-   1. npm publish
+   ```bash
+   npm publish
    ```
 
 ### 使用插件
@@ -194,34 +202,34 @@ typescript项目本质上是一种npm项目，插件发布流程遵循npm发布�
 
    在工程下hvigor/hvigor-config.json5中添加自定义插件依赖，依赖项支持离线插件配置。
 
-   ```
-   1. "dependencies": {
-   2. "custom-plugin": "1.0.0"   // 添加自定义插件依赖
-   3. }
+   ```json5
+   "dependencies": {
+     "custom-plugin": "1.0.0"   // 添加自定义插件依赖
+   }
    ```
 2. 安装依赖。
    * 方式1：执行编辑区右上角**Sync** **Now**或执行菜单**File -> Sync and Refresh Project**进行工程Sync后，DevEco Studio将会根据hvigor-config.json5中的依赖配置自动安装。
    * 方式2：使用hvigorw命令行工具执行任一命令，命令行工具会自动执行安装构建依赖。
 
-     ```
-     1. hvigorw --sync
+     ```bash
+     hvigorw --sync
      ```
 3. 导入插件。
 
    根据插件编写时基于的node节点，确定导入的节点所在的hvigorfile.ts文件，在hvigorfile.ts中导入插件。
 
-   ```
-   1. import { customPlugin } from 'custom-plugin';
+   ```ts
+   import { customPlugin } from 'custom-plugin';
    ```
 4. 使用插件。
 
    将自定义插件添加到export default的plugins中。
 
-   ```
-   1. export default {
-   2. system: appTasks,  // 以工程级hvigorfile.ts为例
-   3. plugins:[
-   4. customPlugin()  // 应用自定义插件
-   5. ]
-   6. }
+   ```ts
+   export default {
+     system: appTasks,  // 以工程级hvigorfile.ts为例
+     plugins:[
+       customPlugin()  // 应用自定义插件
+     ]
+   }
    ```

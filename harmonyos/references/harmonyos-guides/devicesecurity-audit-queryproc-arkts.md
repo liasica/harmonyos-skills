@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 进程信息查询场景
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全审计 > 进程信息查询场景
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:31:38+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:35c6498687539383c49b9a694ef44fbc60c91b26347227d465fe709f38294449
+scraped_at: 2026-09-02T14:59:30+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:3fd05e7761eb2533a20e0e8872d06d8ba313c2d0637759f204db395cd7bafd52
 ---
 
 ## 场景介绍
@@ -14,17 +14,17 @@ content_hash: sha256:35c6498687539383c49b9a694ef44fbc60c91b26347227d465fe709f382
 
 ## 约束和限制
 
-1. 当前能力仅支持2in1设备。
+1. 当前能力仅支持PC/2in1设备。
 2. 支持单次输入要查询的进程数最大限制为16个。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/med6UyRJRnONvU-y5AY-WQ/zh-cn_image_0000002558605242.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/FLbDAZGmRfqcQMwthENJzw/zh-cn_image_0000002736313409.png)
 
 **流程说明：**
 
-1. 用户在hap应用上调用查询接口获取应用进程信息。
-2. Device Security Kit接口同步返回应用进程信息给hap应用，hap应用根据返回的应用进程信息进行业务处理。
+1. 开发者应用调用查询接口获取应用进程信息。
+2. Device Security Kit接口同步返回应用进程信息给开发者应用，开发者应用根据返回的应用进程信息进行业务处理。
 
 ## 接口说明
 
@@ -37,44 +37,49 @@ content_hash: sha256:35c6498687539383c49b9a694ef44fbc60c91b26347227d465fe709f382
 
 ## 开发步骤
 
-说明
+**说明** 
 
 * 在开发准备过程中，需要申请权限：ohos.permission.QUERY\_AUDIT\_EVENT。
-* 只允许清单内的企业类应用申请该权限，申请方式请参考：[申请使用企业类应用可用权限](permissions-for-enterprise-apps.md)。
+* 只允许清单内的企业类应用申请该权限，申请方式请参考：[企业类应用可用权限](permissions-for-enterprise-apps.md)。
 
 1. 导入Device Security Kit模块及相关公共模块。
 
-   ```
-   1. import { securityAudit } from '@kit.DeviceSecurityKit';
-   2. import { BusinessError} from '@kit.BasicServicesKit';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { securityAudit } from '@kit.DeviceSecurityKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 开发者根据实际场景，获取单个或所有应用进程信息。
 
    * 获取单个应用进程信息。
 
-     ```
-     1. const TAG = "SecurityAuditJsTest";
-     2. let pids: number[] = [3622];
-     3. try {
-     4. hilog.info(0x0000, TAG, 'queryProcesses begin.');
-     5. const result = securityAudit.queryProcesses(pids);
-     6. hilog.info(0x0000, TAG, 'Succeeded in queryProcesses.');
-     7. } catch (err) {
-     8. let e: BusinessError = err as BusinessError;
-     9. hilog.error(0x0000, TAG, 'queryProcesses failed: %{public}d %{public}s', e.code, e.message);
-     10. }
-     ```
+   ```typescript
+   const TAG: string = 'SecurityAuditJsTest';
+   let pids: number[] = [3622];
+   try {
+     hilog.info(0x0000, TAG, 'queryProcesses begin.');
+     const result = securityAudit.queryProcesses(pids);
+     hilog.info(0x0000, TAG, 'Succeeded in queryProcesses.');
+     // ...
+   } catch (err) {
+     let e: BusinessError = err as BusinessError;
+     hilog.error(0x0000, TAG, 'queryProcesses failed: %{public}d %{public}s', e.code, e.message);
+     // ...
+   }
+   ```
+
    * 获取所有的应用进程信息。
 
-     ```
-     1. const TAG = "SecurityAuditJsTest";
-     2. try {
-     3. hilog.info(0x0000, TAG, 'queryAllProcesses begin.');
-     4. const result = securityAudit.queryAllProcesses();
-     5. hilog.info(0x0000, TAG, 'Succeeded in queryAllProcesses.');
-     6. } catch (err) {
-     7. let e: BusinessError = err as BusinessError;
-     8. hilog.error(0x0000, TAG, 'queryAllProcesses failed: %{public}d %{public}s', e.code, e.message);
-     9. }
-     ```
+   ```typescript
+   const TAG: string = 'SecurityAuditJsTest';
+   try {
+     hilog.info(0x0000, TAG, 'queryAllProcesses begin.');
+     const result = securityAudit.queryAllProcesses();
+     hilog.info(0x0000, TAG, 'Succeeded in queryAllProcesses.');
+     // ...
+   } catch (err) {
+     let e: BusinessError = err as BusinessError;
+     hilog.error(0x0000, TAG, 'queryAllProcesses failed: %{public}d %{public}s', e.code, e.message);
+     // ...
+   }
+   ```

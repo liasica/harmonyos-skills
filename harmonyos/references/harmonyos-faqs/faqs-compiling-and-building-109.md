@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 构建报错“Duplicated files found in module xxx. This may cause unexpected errors at runtime”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 构建报错“Duplicated files found in module xxx. This may cause unexpected errors at runtime”
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:20:43+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:a641e20593cdf8d86c3f7e7c66bee1b2524ef91c3e4d2c3cf9b1528b985200e7
+scraped_at: 2026-09-02T14:54:54+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:0c481561b5927ae48bf15aba7b773465004d8ec6f071c3f83e7a365e5d492d7a
 ---
 
 **问题现象**
@@ -14,7 +14,7 @@ content_hash: sha256:a641e20593cdf8d86c3f7e7c66bee1b2524ef91c3e4d2c3cf9b1528b985
 
 构建时存在不同版本的同名SO文件会导致问题。例如，将har模块产物中的SO文件拷贝到entry模块的libs目录下，此时har模块和entry模块中都有一个名为libhar.so的文件。如果再配置entry依赖har，构建entry时就会出现错误。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/5nYoml3dR3iS72KHi5Uhyg/zh-cn_image_0000002194318620.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/k-IGxQ3rR9-JSiodGwNLcg/zh-cn_image_0000002654797905.png)
 
 **解决措施**
 
@@ -24,4 +24,4 @@ content_hash: sha256:a641e20593cdf8d86c3f7e7c66bee1b2524ef91c3e4d2c3cf9b1528b985
 
 在entry/build-profile.json5中，配置select选中har模块中的so文件，package选中包名为har的模块，include选中libhar.so文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/ODAIYKkdRIaxbsraOfyHrQ/zh-cn_image_0000002194159000.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/N8LK6wV4SKaFItjmzlzLPg/zh-cn_image_0000002624638450.png)

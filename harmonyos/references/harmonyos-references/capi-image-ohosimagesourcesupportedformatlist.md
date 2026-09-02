@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: OhosImageSourceSupportedFormatList
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 结构体 > OhosImageSourceSupportedFormatList
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:36+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:2f794d8d4df552ab65a081da23dd4ce1b98353fe0ca7d719e58b7e952aa9e57a
+scraped_at: 2026-09-02T15:02:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a9d1531f05b5dec4727bf4c1ce814a8c70a3e7a3d10ed0f7fae9abd27e760b82
 ---
 
-```
-1. struct OhosImageSourceSupportedFormatList {...}
+```c
+struct OhosImageSourceSupportedFormatList {...}
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义图像源支持的格式字符串列表。由[OH\_ImageSource\_GetSupportedFormats](capi-image-source-mdk-h.md#oh_imagesource_getsupportedformats)获取。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

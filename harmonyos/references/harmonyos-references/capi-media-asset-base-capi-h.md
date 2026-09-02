@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-medi
 title: media_asset_base_capi.h
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > C API > 头文件 > media_asset_base_capi.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:21+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:af726ae21993542d17a22ce39a2812c281f25e90beee4a45a8e9c183e3486988
+scraped_at: 2026-09-02T15:02:38+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:99ee2c76f9b9dab61393a5df68a5e2429e7bf0ee52239cbcffd3815ad453e862
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 定义了媒体资产管理器的结构和枚举。
 
@@ -26,24 +24,18 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 结构体
-
-PhonePC/2in1TabletTV
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [MediaLibrary\_RequestId](capi-mediaassetmanager-medialibrary-requestid.md) | MediaLibrary\_RequestId | 定义请求Id。  当请求媒体库资源时，会返回此类型。  请求Id可用于取消请求。 |
-| [OH\_MediaAssetManager](capi-mediaassetmanager-oh-mediaassetmanager.md) | OH\_MediaAssetManager | 定义媒体资产管理器。  此结构提供了请求媒体库资源的能力。  如果创建失败，则返回空指针。 |
+| [OH\_MediaAssetManager](capi-mediaassetmanager-oh-mediaassetmanager.md) | OH\_MediaAssetManager | 定义媒体资产管理器。  此结构体提供了请求媒体库资源的能力。  如果创建失败，则返回空指针。 |
 | [OH\_MediaAssetChangeRequest](capi-mediaassetmanager-oh-mediaassetchangerequest.md) | OH\_MediaAssetChangeRequest | 定义媒体资产更改请求。  此结构体提供了处理媒体资产更改请求的能力。 |
 | [OH\_MovingPhoto](capi-mediaassetmanager-oh-movingphoto.md) | OH\_MovingPhoto | 定义动态照片。  此结构体提供了获取关于动态照片的信息的能力。 |
 | [OH\_MediaAsset](capi-mediaassetmanager-oh-mediaasset.md) | OH\_MediaAsset | 定义媒体资产。  此结构体提供了封装文件资源属性的能力。 |
-| [MediaLibrary\_RequestOptions](capi-mediaassetmanager-medialibrary-requestoptions.md) | MediaLibrary\_RequestOptions | 请求策略模式配置项。  此结构体为媒体资源请求策略模式配置项。 |
+| [MediaLibrary\_RequestOptions](capi-mediaassetmanager-medialibrary-requestoptions.md) | MediaLibrary\_RequestOptions | 请求策略模式配置项，用于定义媒体资源请求策略。 |
 
 ### 枚举
-
-PhonePC/2in1TabletTV
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -53,22 +45,19 @@ PhonePC/2in1TabletTV
 | [MediaLibrary\_MediaSubType](capi-media-asset-base-capi-h.md#medialibrary_mediasubtype) | MediaLibrary\_MediaSubType | 媒体资源子类型的枚举。 |
 | [MediaLibrary\_ResourceType](capi-media-asset-base-capi-h.md#medialibrary_resourcetype) | MediaLibrary\_ResourceType | 资源类型的枚举。 |
 | [MediaLibrary\_ImageFileType](capi-media-asset-base-capi-h.md#medialibrary_imagefiletype) | MediaLibrary\_ImageFileType | 图像文件类型的枚举。 |
-| [MediaLibrary\_MediaQuality](capi-media-asset-base-capi-h.md#medialibrary_mediaquality) | MediaLibrary\_MediaQuality | 媒体资源质量枚举。此枚举与请求媒体资源时定义的分发模式有关。 |
+| [MediaLibrary\_MediaQuality](capi-media-asset-base-capi-h.md#medialibrary_mediaquality) | MediaLibrary\_MediaQuality | 媒体资源质量枚举。此枚举与请求媒体资源时定义的分发模式有关。分发模式的详细说明请参考[MediaLibrary\_DeliveryMode](capi-media-asset-base-capi-h.md#medialibrary_deliverymode)。 |
 | [MediaLibrary\_MediaContentType](capi-media-asset-base-capi-h.md#medialibrary_mediacontenttype) | MediaLibrary\_MediaContentType | 媒体内容类型的枚举。 |
 
 ### 函数
 
-PhonePC/2in1TabletTV
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| [typedef void (\*OH\_MediaLibrary\_OnDataPrepared)(int32\_t result, MediaLibrary\_RequestId requestId)](capi-media-asset-base-capi-h.md#oh_medialibrary_ondataprepared) | OH\_MediaLibrary\_OnDataPrepared | 当所请求的媒体资源准备完成时会触发回调。 |
-| [typedef void (\*OH\_MediaLibrary\_OnImageDataPrepared)(MediaLibrary\_ErrorCode result, MediaLibrary\_RequestId requestId, MediaLibrary\_MediaQuality mediaQuality, MediaLibrary\_MediaContentType type,OH\_ImageSourceNative\* imageSourceNative)](capi-media-asset-base-capi-h.md#oh_medialibrary_onimagedataprepared) | OH\_MediaLibrary\_OnImageDataPrepared | 当请求的图像源准备就绪时会触发回调。 |
-| [typedef void (\*OH\_MediaLibrary\_OnMovingPhotoDataPrepared)(MediaLibrary\_ErrorCode result, MediaLibrary\_RequestId requestId, MediaLibrary\_MediaQuality mediaQuality, MediaLibrary\_MediaContentType type, OH\_MovingPhoto\* movingPhoto)](capi-media-asset-base-capi-h.md#oh_medialibrary_onmovingphotodataprepared) | OH\_MediaLibrary\_OnMovingPhotoDataPrepared | 当请求的动态照片准备就绪时会触发回调。 |
+| [typedef void (\*OH\_MediaLibrary\_OnDataPrepared)(int32\_t result, MediaLibrary\_RequestId requestId)](capi-media-asset-base-capi-h.md#oh_medialibrary_ondataprepared) | OH\_MediaLibrary\_OnDataPrepared | 媒体资源请求结果的回调。当所请求的媒体资源准备完成时触发，用于通知应用本次请求的处理结果，应用可通过result判断请求是否成功，并通过requestId匹配对应的请求。 |
+| [typedef void (\*OH\_MediaLibrary\_OnImageDataPrepared)(MediaLibrary\_ErrorCode result, MediaLibrary\_RequestId requestId, MediaLibrary\_MediaQuality mediaQuality, MediaLibrary\_MediaContentType type,OH\_ImageSourceNative\* imageSourceNative)](capi-media-asset-base-capi-h.md#oh_medialibrary_onimagedataprepared) | OH\_MediaLibrary\_OnImageDataPrepared | 图像源请求结果的回调。当请求的图像源准备就绪时触发，用于向应用返回图像源对象，应用可通过imageSourceNative进行后续的图像解码等操作。 |
+| [typedef void (\*OH\_MediaLibrary\_OnMovingPhotoDataPrepared)(MediaLibrary\_ErrorCode result, MediaLibrary\_RequestId requestId, MediaLibrary\_MediaQuality mediaQuality, MediaLibrary\_MediaContentType type, OH\_MovingPhoto\* movingPhoto)](capi-media-asset-base-capi-h.md#oh_medialibrary_onmovingphotodataprepared) | OH\_MediaLibrary\_OnMovingPhotoDataPrepared | 动态照片请求结果的回调。当请求的动态照片准备就绪时触发，用于向应用返回动态照片对象，应用可通过movingPhoto获取动态照片中包含的图像及视频数据。 |
+| [typedef void (\*OH\_MediaLibrary\_OnQuickImageDataPrepared)(MediaLibrary\_ErrorCode result, MediaLibrary\_RequestId requestId, MediaLibrary\_MediaQuality mediaQuality, MediaLibrary\_MediaContentType type, OH\_ImageSourceNative\* imageSourceNative, OH\_PictureNative\* pictureNative)](capi-media-asset-base-capi-h.md#oh_medialibrary_onquickimagedataprepared) | OH\_MediaLibrary\_OnQuickImageDataPrepared | 当请求的图像源准备就绪时调用此函数。如果系统中存在图像缓冲区，则会返回一个图片对象，从而减少编码时间。 |
 
 ### 变量
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -76,14 +65,10 @@ PhonePC/2in1TabletTV
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTV
-
 ### MediaLibrary\_ErrorCode
 
-PhonePC/2in1TabletTV
-
-```
-1. enum MediaLibrary_ErrorCode
+```c
+enum MediaLibrary_ErrorCode
 ```
 
 **描述**
@@ -106,10 +91,8 @@ PhonePC/2in1TabletTV
 
 ### MediaLibrary\_DeliveryMode
 
-PhonePC/2in1TabletTV
-
-```
-1. enum MediaLibrary_DeliveryMode
+```c
+enum MediaLibrary_DeliveryMode
 ```
 
 **描述**
@@ -132,10 +115,8 @@ PhonePC/2in1TabletTV
 
 ### MediaLibrary\_MediaType
 
-PhonePC/2in1TabletTV
-
-```
-1. enum MediaLibrary_MediaType
+```c
+enum MediaLibrary_MediaType
 ```
 
 **描述**
@@ -151,10 +132,8 @@ PhonePC/2in1TabletTV
 
 ### MediaLibrary\_MediaSubType
 
-PhonePC/2in1TabletTV
-
-```
-1. enum MediaLibrary_MediaSubType
+```c
+enum MediaLibrary_MediaSubType
 ```
 
 **描述**
@@ -171,10 +150,8 @@ PhonePC/2in1TabletTV
 
 ### MediaLibrary\_ResourceType
 
-PhonePC/2in1TabletTV
-
-```
-1. enum MediaLibrary_ResourceType
+```c
+enum MediaLibrary_ResourceType
 ```
 
 **描述**
@@ -190,10 +167,8 @@ PhonePC/2in1TabletTV
 
 ### MediaLibrary\_ImageFileType
 
-PhonePC/2in1TabletTV
-
-```
-1. enum MediaLibrary_ImageFileType
+```c
+enum MediaLibrary_ImageFileType
 ```
 
 **描述**
@@ -210,23 +185,15 @@ PhonePC/2in1TabletTV
 
 ### MediaLibrary\_MediaQuality
 
-PhonePC/2in1TabletTV
-
-```
-1. enum MediaLibrary_MediaQuality
+```c
+enum MediaLibrary_MediaQuality
 ```
 
 **描述**
 
 媒体资源质量枚举。
 
-此枚举与请求媒体资源时定义的分发模式有关。
-
-快速分发：不考虑资源质量，直接基于现有资源返回。
-
-高质量分发：返回高质量资源，若没有，则触发生成高质量资源，成功后才返回。
-
-均衡分发：若存在高质量资源，则直接返回高质量资源。否则，先返回低质量资源，并触发生成高质量资源，成功后再返回一次高质量资源。
+此枚举与请求媒体资源时定义的分发模式有关。分发模式的详细说明请参考[MediaLibrary\_DeliveryMode](capi-media-asset-base-capi-h.md#medialibrary_deliverymode)。
 
 **起始版本：** 12
 
@@ -237,10 +204,8 @@ PhonePC/2in1TabletTV
 
 ### MediaLibrary\_MediaContentType
 
-PhonePC/2in1TabletTV
-
-```
-1. enum MediaLibrary_MediaContentType
+```c
+enum MediaLibrary_MediaContentType
 ```
 
 **描述**
@@ -256,19 +221,15 @@ PhonePC/2in1TabletTV
 
 ## 函数说明
 
-PhonePC/2in1TabletTV
-
 ### OH\_MediaLibrary\_OnDataPrepared()
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void (*OH_MediaLibrary_OnDataPrepared)(int32_t result, MediaLibrary_RequestId requestId)
+```c
+typedef void (*OH_MediaLibrary_OnDataPrepared)(int32_t result, MediaLibrary_RequestId requestId)
 ```
 
 **描述**
 
-当所请求的媒体资源准备完成时会触发回调。
+媒体资源请求结果的回调。当所请求的媒体资源准备完成时触发，用于通知应用本次请求的处理结果，应用可通过result判断请求是否成功，并通过requestId匹配对应的请求。
 
 **起始版本：** 12
 
@@ -281,15 +242,13 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaLibrary\_OnImageDataPrepared()
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void (*OH_MediaLibrary_OnImageDataPrepared)(MediaLibrary_ErrorCode result,MediaLibrary_RequestId requestId, MediaLibrary_MediaQuality mediaQuality, MediaLibrary_MediaContentType type,OH_ImageSourceNative* imageSourceNative)
+```c
+typedef void (*OH_MediaLibrary_OnImageDataPrepared)(MediaLibrary_ErrorCode result,MediaLibrary_RequestId requestId, MediaLibrary_MediaQuality mediaQuality, MediaLibrary_MediaContentType type,OH_ImageSourceNative* imageSourceNative)
 ```
 
 **描述**
 
-当请求的图像源准备就绪时会触发回调。
+图像源请求结果的回调。当请求的图像源准备就绪时触发，用于向应用返回图像源对象，应用可通过imageSourceNative进行后续的图像解码等操作。
 
 **起始版本：** 12
 
@@ -305,15 +264,13 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaLibrary\_OnMovingPhotoDataPrepared()
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void (*OH_MediaLibrary_OnMovingPhotoDataPrepared)(MediaLibrary_ErrorCode result,MediaLibrary_RequestId requestId, MediaLibrary_MediaQuality mediaQuality, MediaLibrary_MediaContentType type,OH_MovingPhoto* movingPhoto)
+```c
+typedef void (*OH_MediaLibrary_OnMovingPhotoDataPrepared)(MediaLibrary_ErrorCode result,MediaLibrary_RequestId requestId, MediaLibrary_MediaQuality mediaQuality, MediaLibrary_MediaContentType type,OH_MovingPhoto* movingPhoto)
 ```
 
 **描述**
 
-当请求的动态照片准备就绪时会触发回调。
+动态照片请求结果的回调。当请求的动态照片准备就绪时触发，用于向应用返回动态照片对象，应用可通过movingPhoto获取动态照片中包含的图像及视频数据。
 
 **起始版本：** 13
 
@@ -329,15 +286,13 @@ PhonePC/2in1TabletTV
 
 ### OH\_MediaLibrary\_OnQuickImageDataPrepared()
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void (*OH_MediaLibrary_OnQuickImageDataPrepared)(MediaLibrary_ErrorCode result, MediaLibrary_RequestId requestId, MediaLibrary_MediaQuality mediaQuality, MediaLibrary_MediaContentType type, OH_ImageSourceNative* imageSourceNative, OH_PictureNative* pictureNative)
+```c
+typedef void (*OH_MediaLibrary_OnQuickImageDataPrepared)(MediaLibrary_ErrorCode result, MediaLibrary_RequestId requestId, MediaLibrary_MediaQuality mediaQuality, MediaLibrary_MediaContentType type, OH_ImageSourceNative* imageSourceNative, OH_PictureNative* pictureNative)
 ```
 
 **描述**
 
-当请求的图像源准备就绪时调用此函数。如果系统中存在图像缓冲区，则会返回一个图片对象，从而减少编码时间。
+快速请求图像资源的结果回调。当请求的图像数据准备就绪时触发：若系统中存在图像缓冲区，则通过pictureNative返回图片对象，从而减少编码时间；否则通过imageSourceNative返回图像源对象。
 
 **起始版本：** 23
 

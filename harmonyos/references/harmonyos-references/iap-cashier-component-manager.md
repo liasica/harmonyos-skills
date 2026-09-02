@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-cashi
 title: cashierComponentManager (iap嵌入式收银台组件管理)
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > ArkTS组件 > cashierComponentManager (iap嵌入式收银台组件管理)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:55+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:cece09faab5047e2702acfb4dd7d6bdb46346948d5b4bd01d349180dd4c40616
+scraped_at: 2026-09-02T15:02:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d3a0d3bfd0d5b1641948a98418c8dd3a1f49f90edf6da22c13d96d658aa456df
 ---
 
 本模块提供iap嵌入式收银台组件的逻辑管理，辅助应用通过集成iap嵌入式收银台组件完成应用内支付功能。
@@ -14,15 +14,11 @@ content_hash: sha256:cece09faab5047e2702acfb4dd7d6bdb46346948d5b4bd01d349180dd4c
 
 ## 导入模块
 
-TV
-
-```
-1. import { cashierComponentManager } from '@kit.IAPKit';
+```typescript
+import { cashierComponentManager } from '@kit.IAPKit';
 ```
 
 ## CashierListener
-
-TV
 
 [CashierComponent](iap-cashier-component.md#cashiercomponent)组件的监听，用来回调组件调用的成功、失败事件。
 
@@ -35,8 +31,6 @@ TV
 **起始版本：** 6.1.0(23)
 
 ### onPurchaseSuccess
-
-TV
 
 onPurchaseSuccess(productId: string, purchaseResult: iap.CreatePurchaseResult): void
 
@@ -59,8 +53,6 @@ iap嵌入式收银台的支付成功回调。在用户使用iap嵌入式收银�
 
 ### onPurchaseFailure
 
-TV
-
 onPurchaseFailure(productId: string, error: BusinessError<void>): void
 
 iap嵌入式收银台的支付失败回调。在用户使用iap嵌入式收银台支付失败后，应用可接收此回调，可用于后续逻辑处理，记录运营事件等场景。
@@ -80,9 +72,7 @@ iap嵌入式收银台的支付失败回调。在用户使用iap嵌入式收银�
 | productId | string | 是 | 支付失败的商品ID。 |
 | error | [BusinessError<void>](js-apis-base.md#businesserror) | 是 | 支付失败回调获取到的[iap.CreatePurchaseResult](iap-iap.md#createpurchaseresult)对象。 |
 
-### CashierDisplayOptions
-
-TV
+## CashierDisplayOptions
 
 该接口定义了收银台的属性。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-improve-ru
 title: 运行效率提高
 breadcrumb: 最佳实践 > 性能 > 性能优化 > 运行效率提高
 category: best-practices
-scraped_at: 2026-04-29T14:13:28+08:00
+scraped_at: 2026-09-02T15:03:21+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:16b94450ac52c4a4c40b12515fcbc60e8abf96f36cf7678b57f616cc5dfe088d
+content_hash: sha256:dfc024a48eaf6253b4554148ff9536d0190ca6a53654d1497b771c462f0316f1
 ---
 
 在开发过程中，优化影响性能的代码片段，以提高运行效率。以下实践总结了一些高性能的写法和建议：
@@ -35,7 +35,7 @@ content_hash: sha256:16b94450ac52c4a4c40b12515fcbc60e8abf96f36cf7678b57f616cc5df
 
 传统HAR包导入即使只需要HAR包中单个变量，也会触发整个依赖链所有模块的加载和执行，造成性能浪费。ArkTS编译器提供expandImportPath（[工程级配置](../harmonyos-guides/ide-hvigor-build-profile-app.md#section111543473013)、[模块级配置](../harmonyos-guides/ide-hvigor-build-profile.md#section8368152412552)）配置项。通过修改配置项，编译器会将间接包名导入转换为精准的文件路径导入，跳过中间模块。该优化可消除冗余的模块解析和初始化，减少冷启动阶段不必要的资源消耗。
 
-注意
+**注意** 
 
 由于import路径展开会跳过中间模块的执行，若业务依赖模块的执行顺序，修改后可能会导致业务异常。具体场景请参阅[import路径展开副作用](../harmonyos-guides/arkts-module-side-effects.md#副作用)。
 
@@ -45,161 +45,143 @@ content_hash: sha256:16b94450ac52c4a4c40b12515fcbc60e8abf96f36cf7678b57f616cc5df
 
 在以下示例中，即使只需要使用typeNum变量，但当使用import \*全量导入HAR包时，所有关联模块（如Animals.ets等）仍会被加载执行，这会带来不必要的性能开销。
 
-```
-1. // entry\src\main\ets\pages\Index.ets
-2. // Before optimization: Namespace Import
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import * as library from 'library';
+```typescript
+// entry\src\main\ets\pages\Index.ets
+// Before optimization: Namespace Import
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import * as library from 'library';
 
-6. hilog.info(0x0000, 'testTag', 'library.typeNum is %{public}d', library.typeNum);
+hilog.info(0x0000, 'testTag', 'library.typeNum is %{public}d', library.typeNum);
 
-8. @Entry
-9. @Component
-10. struct Index {
-11. @State message: string = 'Hello World';
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
 
-13. build() {
-14. RelativeContainer() {
-15. Text(this.message)
-16. .id('HelloWorld')
-17. .fontSize($r('app.float.page_text_font_size'))
-18. .fontWeight(FontWeight.Bold)
-19. .alignRules({
-20. center: { anchor: '__container__', align: VerticalAlign.Center },
-21. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-22. })
-23. .onClick(() => {
-24. this.message = 'Welcome';
-25. })
-26. }
-27. .height('100%')
-28. .width('100%')
-29. }
-30. }
-```
-
-[Index2.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/ArkTSModuleHighPerformanceSegment/ExpandImportPath/entry/src/main/ets/pages/Index2.ets#L2-L31)
-
-```
-1. // library\src\main\ets\Animals.ets
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-4. export * from './Birds';
-
-6. export * from './Fish';
-
-8. export * from './Mammals';
-
-10. export * from './TypeNum';
-
-12. hilog.info(0x0000, 'testTag', 'library Animals.ets execute.');
+  build() {
+    RelativeContainer() {
+      Text(this.message)
+        .id('HelloWorld')
+        .fontSize($r('app.float.page_text_font_size'))
+        .fontWeight(FontWeight.Bold)
+        .alignRules({
+          center: { anchor: '__container__', align: VerticalAlign.Center },
+          middle: { anchor: '__container__', align: HorizontalAlign.Center }
+        })
+        .onClick(() => {
+          this.message = 'Welcome';
+        })
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
-[Animals.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/ArkTSModuleHighPerformanceSegment/ExpandImportPath/library/src/main/ets/Animals.ets#L2-L13)
+```screen
+// library\src\main\ets\Animals.ets
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-```
-1. // library\src\main\ets\Birds.ets
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+export * from './Birds';
 
-4. export const birds: string = 'Butterflies';
+export * from './Fish';
 
-6. hilog.info(0x0000, 'testTag', 'library Birds.ets execute.');
-```
+export * from './Mammals';
 
-[Birds.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/ArkTSModuleHighPerformanceSegment/ExpandImportPath/library/src/main/ets/Birds.ets#L2-L7)
+export * from './TypeNum';
 
-```
-1. // library\src\main\ets\Fish.ets
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-4. export const fish: string = 'carp';
-
-6. hilog.info(0x0000, 'testTag', 'library Fish.ets execute.');
+hilog.info(0x0000, 'testTag', 'library Animals.ets execute.');
 ```
 
-[Fish.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/ArkTSModuleHighPerformanceSegment/ExpandImportPath/library/src/main/ets/Fish.ets#L2-L7)
+```typescript
+// library\src\main\ets\Birds.ets
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-```
-1. // library\src\main\ets\Mammals.ets
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+export const birds: string = 'Butterflies';
 
-4. export const mammals: string = 'cat';
-
-6. hilog.info(0x0000, 'testTag', 'library Mammals.ets execute.');
+hilog.info(0x0000, 'testTag', 'library Birds.ets execute.');
 ```
 
-[Mammals.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/ArkTSModuleHighPerformanceSegment/ExpandImportPath/library/src/main/ets/Mammals.ets#L2-L7)
+```typescript
+// library\src\main\ets\Fish.ets
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-```
-1. // library\src\main\ets\TypeNum.ets
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+export const fish: string = 'carp';
 
-4. export const typeNum: number = 4;
-
-6. hilog.info(0x0000, 'testTag', 'library TypeNum.ets execute.');
+hilog.info(0x0000, 'testTag', 'library Fish.ets execute.');
 ```
 
-[TypeNum.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/ArkTSModuleHighPerformanceSegment/ExpandImportPath/library/src/main/ets/TypeNum.ets#L2-L7)
+```typescript
+// library\src\main\ets\Mammals.ets
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
+export const mammals: string = 'cat';
+
+hilog.info(0x0000, 'testTag', 'library Mammals.ets execute.');
 ```
-1. // library\Index.ets
-2. export { MainPage } from './src/main/ets/components/MainPage';
 
-4. export * from "./src/main/ets/Animals";
+```typescript
+// library\src\main\ets\TypeNum.ets
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+export const typeNum: number = 4;
+
+hilog.info(0x0000, 'testTag', 'library TypeNum.ets execute.');
 ```
 
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/ArkTSModuleHighPerformanceSegment/ExpandImportPath/library/Index.ets#L2-L6)
+```typescript
+// library\Index.ets
+export { MainPage } from './src/main/ets/components/MainPage';
+
+export * from "./src/main/ets/Animals";
+```
 
 oh-package.json如下增加模块依赖library包：
 
-```
-1. // entry\oh-package.json5
-2. "dependencies": {
-3. "library": "file:../library"
-4. }
+```typescript
+// entry\oh-package.json5
+"dependencies": {
+  "library": "file:../library"
+}
 ```
 
-[oh-package.json5](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/ArkTSModuleHighPerformanceSegment/ExpandImportPath/entry/oh-package.json5#L9-L12)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/EaRiwCp0SRu499VKpI9_UQ/zh-cn_image_0000002515417448.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/qmBMNj0tT5qQVbian3lxJA/zh-cn_image_0000002515417448.png "点击放大")
 
 **使用路径展开**
 
 开发者可通过配置expandImportPath（[工程级配置](../harmonyos-guides/ide-hvigor-build-profile-app.md#section111543473013)、[模块级配置](../harmonyos-guides/ide-hvigor-build-profile.md#section8368152412552)）来启用路径展开功能，并且将导入方式改为import { typeNum } from 'library'。使源码中的import语句在编译时指向被引用符号的实际定义文件。从下图Trace上看此时只执行TypeNum.ets，同时通过修改前后的Trace对比也可以看出冷启动性能得到提升。
 
+```typescript
+// entry\src\main\ets\pages\Index.ets
+// After optimization: Named Space Import
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { typeNum } from 'library';
+
+hilog.info(0x0000, 'testTag', 'library.typeNum is %{public}d', typeNum);
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
+
+  build() {
+    RelativeContainer() {
+      Text(this.message)
+        .id('HelloWorld')
+        .fontSize($r('app.float.page_text_font_size'))
+        .fontWeight(FontWeight.Bold)
+        .alignRules({
+          center: { anchor: '__container__', align: VerticalAlign.Center },
+          middle: { anchor: '__container__', align: HorizontalAlign.Center }
+        })
+        .onClick(() => {
+          this.message = 'Welcome';
+        })
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
-1. // entry\src\main\ets\pages\Index.ets
-2. // After optimization: Named Space Import
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { typeNum } from 'library';
 
-6. hilog.info(0x0000, 'testTag', 'library.typeNum is %{public}d', typeNum);
-
-8. @Entry
-9. @Component
-10. struct Index {
-11. @State message: string = 'Hello World';
-
-13. build() {
-14. RelativeContainer() {
-15. Text(this.message)
-16. .id('HelloWorld')
-17. .fontSize($r('app.float.page_text_font_size'))
-18. .fontWeight(FontWeight.Bold)
-19. .alignRules({
-20. center: { anchor: '__container__', align: VerticalAlign.Center },
-21. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-22. })
-23. .onClick(() => {
-24. this.message = 'Welcome';
-25. })
-26. }
-27. .height('100%')
-28. .width('100%')
-29. }
-30. }
-```
-
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/ArkTSModuleHighPerformanceSegment/ExpandImportPath/entry/src/main/ets/pages/Index.ets#L2-L31)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/p60HjOxKSCWDsklACp4SZw/zh-cn_image_0000002515577362.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/rdFntPqkTIyy9pvh6Oj-xA/zh-cn_image_0000002515577362.png "点击放大")

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-net-
 title: net_connection_type.h
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 头文件 > net_connection_type.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:30+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:80ce950247dd578b1f01019af20202c8bb5892b2de5a4c071495a0839c3e89db
+scraped_at: 2026-09-02T15:01:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:43812de01466f9b392c2f00a8b48e7b5b68c175d93d5a2ece0226591f1adb341
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 为网络管理数据网络连接模块提供C接口。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -49,8 +43,6 @@ PhonePC/2in1TabletTVWearable
 
 ### 枚举
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [NetConn\_NetCap](capi-net-connection-type-h.md#netconn_netcap) | NetConn\_NetCap | 网络能力集。 |
@@ -60,11 +52,8 @@ PhonePC/2in1TabletTVWearable
 
 ### 宏定义
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 描述 |
 | --- | --- |
-| NETCONN\_MAX\_RTT\_NUM 4 | [NetConn\_ProbeResultInfo](capi-netconnection-netconn-proberesultinfo.md)的成员变量rtt数组的长度。  **起始版本：** 11 |
 | NETCONN\_MAX\_NET\_SIZE 32 | [NetConn\_NetHandleList](capi-netconnection-netconn-nethandlelist.md)的成员变量netHandles数组的长度。  **起始版本：** 11 |
 | NETCONN\_MAX\_BEARER\_TYPE\_SIZE 32 | [NetConn\_NetCapabilities](capi-netconnection-netconn-netcapabilities.md)的成员变量bearerTypes数组的长度。  **起始版本：** 11 |
 | NETCONN\_MAX\_CAP\_SIZE 32 | [NetConn\_NetCapabilities](capi-netconnection-netconn-netcapabilities.md)的成员变量netCaps数组的长度。  **起始版本：** 11 |
@@ -72,10 +61,9 @@ PhonePC/2in1TabletTVWearable
 | NETCONN\_MAX\_ROUTE\_SIZE 64 | [NetConn\_ConnectionProperties](capi-netconnection-netconn-connectionproperties.md)的成员变量routeList数组的长度。  **起始版本：** 11 |
 | NETCONN\_MAX\_EXCLUSION\_SIZE 256 | [NetConn\_HttpProxy](capi-netconnection-netconn-httpproxy.md)的成员变量exclusionList数组的长度。  **起始版本：** 11 |
 | NETCONN\_MAX\_STR\_LEN 256 | [NetConn\_HttpProxy](capi-netconnection-netconn-httpproxy.md)的成员变量host数组的长度。  **起始版本：** 11 |
+| NETCONN\_MAX\_RTT\_NUM 4 | [NetConn\_ProbeResultInfo](capi-netconnection-netconn-proberesultinfo.md)的成员变量rtt数组的长度。  **起始版本：** 20 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -84,20 +72,17 @@ PhonePC/2in1TabletTVWearable
 | [typedef void (\*OH\_NetConn\_NetworkAvailable)(NetConn\_NetHandle \*netHandle)](capi-net-connection-type-h.md#oh_netconn_networkavailable) | OH\_NetConn\_NetworkAvailable | 网络可用回调。 |
 | [typedef void (\*OH\_NetConn\_NetCapabilitiesChange)(NetConn\_NetHandle \*netHandle,NetConn\_NetCapabilities \*netCapabilities)](capi-net-connection-type-h.md#oh_netconn_netcapabilitieschange) | OH\_NetConn\_NetCapabilitiesChange | 网络能力集变更回调。 |
 | [typedef void (\*OH\_NetConn\_NetConnectionPropertiesChange)(NetConn\_NetHandle \*netHandle,NetConn\_ConnectionProperties \*connConnetionProperties)](capi-net-connection-type-h.md#oh_netconn_netconnectionpropertieschange) | OH\_NetConn\_NetConnectionPropertiesChange | 网络连接属性变更回调。 |
+| [typedef void (\*OH\_NetConn\_GlobalHttpProxyRefreshCallback)(int32\_t result, const NetConn\_HttpProxy \*proxy, void \*userContext)](capi-net-connection-type-h.md#oh_netconn_globalhttpproxyrefreshcallback) | OH\_NetConn\_GlobalHttpProxyRefreshCallback | 全局HTTP代理重新认证结果的回调。 |
 | [typedef void (\*OH\_NetConn\_NetLost)(NetConn\_NetHandle \*netHandle)](capi-net-connection-type-h.md#oh_netconn_netlost) | OH\_NetConn\_NetLost | 网络断开回调。 |
 | [typedef void (\*OH\_NetConn\_NetUnavailable)(void)](capi-net-connection-type-h.md#oh_netconn_netunavailable) | OH\_NetConn\_NetUnavailable | 网络不可用回调，在指定的超时时间内网络未激活时触发该回调，如果未设置超时时间则不会触发该回调。 |
 | [typedef void (\*OH\_NetConn\_NetBlockStatusChange)(NetConn\_NetHandle \*netHandle, bool blocked)](capi-net-connection-type-h.md#oh_netconn_netblockstatuschange) | OH\_NetConn\_NetBlockStatusChange | 网络阻塞状态变更回调。 |
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### NetConn\_NetCap
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum NetConn_NetCap
+```c
+enum NetConn_NetCap
 ```
 
 **描述**
@@ -118,10 +103,8 @@ PhonePC/2in1TabletTVWearable
 
 ### NetConn\_NetBearerType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum NetConn_NetBearerType
+```c
+enum NetConn_NetBearerType
 ```
 
 **描述**
@@ -140,10 +123,8 @@ PhonePC/2in1TabletTVWearable
 
 ### NetConn\_ErrorCode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum NetConn_ErrorCode
+```c
+enum NetConn_ErrorCode
 ```
 
 **描述**
@@ -158,14 +139,12 @@ PhonePC/2in1TabletTVWearable
 | NETCONN\_PERMISSION\_DENIED = 201 | 缺少权限 |
 | NETCONN\_PARAMETER\_ERROR = 401 | 参数错误 |
 | NETCONN\_OPERATION\_FAILED = 2100002 | 无法连接到服务 |
-| NETCONN\_INTERNAL\_ERROR = 2100003 | 内部错误。1. 内存异常, 比如内存不足或内存拷贝失败。2. 空指针, 比如访问已释放内存的指针。 |
+| NETCONN\_INTERNAL\_ERROR = 2100003 | 内部错误。1. 内存异常，比如内存不足或内存拷贝失败。2. 空指针，比如访问已释放内存的指针。 |
 
 ### NetConn\_PacketsType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum NetConn_PacketsType
+```c
+enum NetConn_PacketsType
 ```
 
 **描述**
@@ -181,14 +160,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_NetConn\_CustomDnsResolver()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef int (*OH_NetConn_CustomDnsResolver)(const char *host, const char *serv,const struct addrinfo *hint, struct addrinfo **res)
+```c
+typedef int (*OH_NetConn_CustomDnsResolver)(const char *host, const char *serv,const struct addrinfo *hint, struct addrinfo **res)
 ```
 
 **描述**
@@ -208,10 +183,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NetConn\_AppHttpProxyChange()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_NetConn_AppHttpProxyChange)(NetConn_HttpProxy *proxy)
+```c
+typedef void (*OH_NetConn_AppHttpProxyChange)(NetConn_HttpProxy *proxy)
 ```
 
 **描述**
@@ -224,14 +197,32 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [NetConn\_HttpProxy](capi-netconnection-netconn-httpproxy.md) \*proxy | 变化的代理配置信息,可能是空指针。 |
+| [NetConn\_HttpProxy](capi-netconnection-netconn-httpproxy.md) \*proxy | 变化的代理配置信息，可能是空指针。 |
+
+### OH\_NetConn\_GlobalHttpProxyRefreshCallback()
+
+```c
+typedef void (*OH_NetConn_GlobalHttpProxyRefreshCallback)(int32_t result, const NetConn_HttpProxy *proxy, void *userContext)
+```
+
+**描述**
+
+全局HTTP代理重新认证结果的回调。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| (int32\_t result | 重新认证的结果。0表示成功，其他值表示失败。 |
+| [const NetConn\_HttpProxy](capi-netconnection-netconn-httpproxy.md) \*proxy | 当重新认证成功（result为0）时，表示刷新后的全局HTTP代理信息。如果重新认证失败（result非0）时，proxy为NULL。该proxy对象由系统持有，仅在该回调函数内部有效。调用者不得释放或修改它。如果调用者需要在回调返回后继续使用该代理信息，必须进行深拷贝。 |
+| void \*userContext | 用户自定义数据。系统不会访问、拷贝或释放该数据。 |
 
 ### OH\_NetConn\_NetworkAvailable()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_NetConn_NetworkAvailable)(NetConn_NetHandle *netHandle)
+```c
+typedef void (*OH_NetConn_NetworkAvailable)(NetConn_NetHandle *netHandle)
 ```
 
 **描述**
@@ -248,10 +239,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NetConn\_NetCapabilitiesChange()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_NetConn_NetCapabilitiesChange)(NetConn_NetHandle *netHandle,NetConn_NetCapabilities *netCapabilities)
+```c
+typedef void (*OH_NetConn_NetCapabilitiesChange)(NetConn_NetHandle *netHandle,NetConn_NetCapabilities *netCapabilities)
 ```
 
 **描述**
@@ -269,10 +258,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NetConn\_NetConnectionPropertiesChange()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_NetConn_NetConnectionPropertiesChange)(NetConn_NetHandle *netHandle,NetConn_ConnectionProperties *connConnetionProperties)
+```c
+typedef void (*OH_NetConn_NetConnectionPropertiesChange)(NetConn_NetHandle *netHandle,NetConn_ConnectionProperties *connConnetionProperties)
 ```
 
 **描述**
@@ -290,10 +277,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NetConn\_NetLost()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_NetConn_NetLost)(NetConn_NetHandle *netHandle)
+```c
+typedef void (*OH_NetConn_NetLost)(NetConn_NetHandle *netHandle)
 ```
 
 **描述**
@@ -310,10 +295,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NetConn\_NetUnavailable()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_NetConn_NetUnavailable)(void)
+```c
+typedef void (*OH_NetConn_NetUnavailable)(void)
 ```
 
 **描述**
@@ -324,10 +307,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_NetConn\_NetBlockStatusChange()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_NetConn_NetBlockStatusChange)(NetConn_NetHandle *netHandle, bool blocked)
+```c
+typedef void (*OH_NetConn_NetBlockStatusChange)(NetConn_NetHandle *netHandle, bool blocked)
 ```
 
 **描述**

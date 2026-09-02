@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API接口进行ArrayBuffer相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口进行ArrayBuffer相关开发
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:01+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:69753e639b8ad6038d247ce2e576f2878dc83c85579fdfff65483bd99f3ae196
+scraped_at: 2026-09-02T15:00:15+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f5a52ed7dc6b236ccfcd6e0e14ab7a3cd1bb880e6e671db0566dd4937cada3bd
 ---
 
 ## 简介
@@ -34,17 +34,17 @@ Node-API接口开发流程参考[使用Node-API实现跨语言交互开发流程
 
 本文cpp部分代码所需引用的头文件如下：
 
-```
-1. #include "napi/native_api.h"
-2. #include <cstring>
-3. #include "hilog/log.h"
+```cpp
+#include "napi/native_api.h"
+#include <cstring>
+#include "hilog/log.h"
 ```
 
 本文ArkTS侧示例代码所需的模块导入如下：
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import testNapi from 'libentry.so';
+```ts
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import testNapi from 'libentry.so';
 ```
 
 ### napi\_is\_arraybuffer
@@ -54,52 +54,52 @@ Node-API接口开发流程参考[使用Node-API实现跨语言交互开发流程
 cpp部分代码
 
 ```
-1. // napi_is_arraybuffer
-2. static napi_value IsArrayBuffer(napi_env env, napi_callback_info info)
-3. {
-4. // 接受一个入参
-5. size_t argc = 1;
-6. napi_value args[1] = {nullptr};
-7. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-8. // 调用napi_is_arraybuffer接口判断给定入参是否为ArrayBuffer数据
-9. bool result = false;
-10. napi_status status = napi_is_arraybuffer(env, args[0], &result);
-11. if (status != napi_ok) {
-12. napi_throw_error(env, nullptr, "Node-API napi_is_arraybuffer fail");
-13. return nullptr;
-14. }
-15. // 将结果转成napi_value类型返回
-16. napi_value returnValue = nullptr;
-17. napi_get_boolean(env, result, &returnValue);
-18. return returnValue;
-19. }
+// napi_is_arraybuffer
+static napi_value IsArrayBuffer(napi_env env, napi_callback_info info)
+{
+    // 接受一个入参
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 调用napi_is_arraybuffer接口判断给定入参是否为ArrayBuffer数据
+    bool result = false;
+    napi_status status = napi_is_arraybuffer(env, args[0], &result);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Node-API napi_is_arraybuffer fail");
+        return nullptr;
+    }
+    // 将结果转成napi_value类型返回
+    napi_value returnValue = nullptr;
+    napi_get_boolean(env, result, &returnValue);
+    return returnValue;
+}
 ```
 
 接口声明
 
 index.d.ts
 
-```
-1. export const isArrayBuffer: <T>(arrayBuffer: T) => boolean | undefined; // napi_is_arraybuffer
+```typescript
+export const isArrayBuffer: <T>(arrayBuffer: T) => boolean | undefined; // napi_is_arraybuffer
 ```
 
 ArkTS侧示例代码
 
-```
-1. // test interface napi_is_arraybuffer
-2. try {
-3. let value = new ArrayBuffer(1);
-4. let data = "123";
-5. hilog.info(0x0000, 'testTag', 'Test Node-API napi_is_arraybuffer: %{public}s',
-6. testNapi.isArrayBuffer(value));
-7. hilog.info(0x0000, 'testTag', 'Test Node-API napi_is_arraybuffer: %{public}s',
-8. testNapi.isArrayBuffer(data));
-9. // ...
-10. } catch (error) {
-11. hilog.error(0x0000, 'testTag', 'Test Node-API napi_is_arraybuffer error: %{public}s',
-12. error.message);
-13. // ...
-14. }
+```typescript
+// test interface napi_is_arraybuffer
+try {
+  let value = new ArrayBuffer(1);
+  let data = "123";
+  hilog.info(0x0000, 'testTag', 'Test Node-API napi_is_arraybuffer: %{public}s',
+    testNapi.isArrayBuffer(value));
+  hilog.info(0x0000, 'testTag', 'Test Node-API napi_is_arraybuffer: %{public}s',
+    testNapi.isArrayBuffer(data));
+  // ...
+} catch (error) {
+  hilog.error(0x0000, 'testTag', 'Test Node-API napi_is_arraybuffer error: %{public}s',
+    error.message);
+  // ...
+}
 ```
 
 输出日志：
@@ -115,69 +115,69 @@ Test Node-API napi\_is\_arraybuffer: false
 cpp部分代码
 
 ```
-1. // napi_get_arraybuffer_info
-2. static napi_value GetArrayBufferInfo(napi_env env, napi_callback_info info)
-3. {
-4. size_t argc = 1;
-5. napi_value args[1] = {nullptr};
-6. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-7. // 检查参数是否为ArrayBuffer
-8. bool isArrayBuffer = false;
-9. napi_is_arraybuffer(env, args[0], &isArrayBuffer);
-10. if (!isArrayBuffer) {
-11. napi_throw_type_error(env, nullptr, "Argument must be an ArrayBuffer");
-12. return nullptr;
-13. }
+// napi_get_arraybuffer_info
+static napi_value GetArrayBufferInfo(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 检查参数是否为ArrayBuffer
+    bool isArrayBuffer = false;
+    napi_is_arraybuffer(env, args[0], &isArrayBuffer);
+    if (!isArrayBuffer) {
+        napi_throw_type_error(env, nullptr, "Argument must be an ArrayBuffer");
+        return nullptr;
+    }
 
-15. void *data = nullptr;
-16. size_t byteLength = 0;
-17. // 获取ArrayBuffer的底层数据缓冲区和长度
-18. napi_status status = napi_get_arraybuffer_info(env, args[0], &data, &byteLength);
-19. if (status != napi_ok) {
-20. napi_throw_error(env, nullptr, "Failed to get ArrayBuffer info");
-21. return nullptr;
-22. }
-23. // 创建结果对象
-24. napi_value result = nullptr;
-25. napi_create_object(env, &result);
-26. // 创建数据缓冲区的字节长度属性
-27. napi_value byteLengthValue = nullptr;
-28. napi_create_uint32(env, byteLength, &byteLengthValue);
-29. napi_set_named_property(env, result, "byteLength", byteLengthValue);
-30. napi_value bufferData = nullptr;
-31. void *newData = nullptr;
-32. napi_create_arraybuffer(env, byteLength, &newData, &bufferData);
-33. memcpy(newData, data, byteLength);
-34. napi_set_named_property(env, result, "buffer", bufferData);
-35. return result;
-36. }
+    void *data = nullptr;
+    size_t byteLength = 0;
+    // 获取ArrayBuffer的底层数据缓冲区和长度
+    napi_status status = napi_get_arraybuffer_info(env, args[0], &data, &byteLength);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Failed to get ArrayBuffer info");
+        return nullptr;
+    }
+    // 创建结果对象
+    napi_value result = nullptr;
+    napi_create_object(env, &result);
+    // 创建数据缓冲区的字节长度属性
+    napi_value byteLengthValue = nullptr;
+    napi_create_uint32(env, byteLength, &byteLengthValue);
+    napi_set_named_property(env, result, "byteLength", byteLengthValue);
+    napi_value bufferData = nullptr;
+    void *newData = nullptr;
+    napi_create_arraybuffer(env, byteLength, &newData, &bufferData);
+    memcpy(newData, data, byteLength);
+    napi_set_named_property(env, result, "buffer", bufferData);
+    return result;
+}
 ```
 
 接口声明
 
 index.d.ts
 
-```
-1. export class ArrayBufferInfo {
-2. byteLength: number;
-3. buffer: ArrayBuffer;
-4. }
-5. export const getArrayBufferInfo: (data: ArrayBuffer) => ArrayBufferInfo | undefined; // napi_get_arraybuffer_info
+```typescript
+export class ArrayBufferInfo {
+  byteLength: number;
+  buffer: ArrayBuffer;
+}
+export const getArrayBufferInfo: (data: ArrayBuffer) => ArrayBufferInfo | undefined; // napi_get_arraybuffer_info
 ```
 
 ArkTS侧示例代码
 
-```
-1. // test interface napi_get_arraybuffer_info
-2. try {
-3. let typedArray = new Uint8Array([1, 2, 3, 4, 5]);
-4. let buffer = typedArray.buffer;
-5. let result = testNapi.getArrayBufferInfo(buffer) as testNapi.ArrayBufferInfo;
-6. let resBuffer = new Uint8Array(result.buffer);
-7. hilog.info(0x0000, 'testTag', 'Test Node-API get_arrayBuffer_info byteLength: %{public}d buffer: %{public}s', result.byteLength, JSON.stringify(resBuffer));
-8. } catch (error) {
-9. hilog.error(0x0000, 'testTag', 'Test Node-API get_arrayBuffer_info error: %{public}s', error.message);
-10. }
+```typescript
+// test interface napi_get_arraybuffer_info
+try {
+  let typedArray = new Uint8Array([1, 2, 3, 4, 5]);
+  let buffer = typedArray.buffer;
+  let result = testNapi.getArrayBufferInfo(buffer) as testNapi.ArrayBufferInfo;
+  let resBuffer = new Uint8Array(result.buffer);
+  hilog.info(0x0000, 'testTag', 'Test Node-API get_arrayBuffer_info byteLength: %{public}d buffer: %{public}s', result.byteLength, JSON.stringify(resBuffer));
+} catch (error) {
+  hilog.error(0x0000, 'testTag', 'Test Node-API get_arrayBuffer_info error: %{public}s', error.message);
+}
 ```
 
 输出日志：
@@ -195,61 +195,61 @@ Test Node-API napi\_get\_arraybuffer\_info byteLength: 5 buffer: {"0":1,"1":2,"2
 cpp部分代码
 
 ```
-1. // napi_detach_arraybuffer
-2. static napi_value DetachedArrayBuffer(napi_env env, napi_callback_info info)
-3. {
-4. // 调用napi_detach_arraybuffer接口分离给定ArrayBuffer的底层数据
-5. size_t argc = 1;
-6. napi_value args[1] = {nullptr};
-7. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-8. napi_value arrayBuffer = args[0];
-9. napi_detach_arraybuffer(env, arrayBuffer);
-10. // 将分离后的arraybuffer传出去
-11. return arrayBuffer;
-12. }
+// napi_detach_arraybuffer
+static napi_value DetachedArrayBuffer(napi_env env, napi_callback_info info)
+{
+    // 调用napi_detach_arraybuffer接口分离给定ArrayBuffer的底层数据
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_value arrayBuffer = args[0];
+    napi_detach_arraybuffer(env, arrayBuffer);
+    // 将分离后的arraybuffer传出去
+    return arrayBuffer;
+}
 
-14. // napi_is_detach_arraybuffer
-15. static napi_value IsDetachedArrayBuffer(napi_env env, napi_callback_info info)
-16. {
-17. // 调用napi_is_detached_arraybuffer判断给定的arraybuffer是否已被分离
-18. size_t argc = 1;
-19. napi_value args[1] = {nullptr};
-20. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-21. napi_value arrayBuffer = args[0];
-22. bool result = false;
-23. napi_is_detached_arraybuffer(env, arrayBuffer, &result);
-24. // 将返回值通过napi_get_boolean接口转成napi_value传出去做打印
-25. napi_value returnValue;
-26. napi_get_boolean(env, result, &returnValue);
-27. return returnValue;
-28. }
+// napi_is_detach_arraybuffer
+static napi_value IsDetachedArrayBuffer(napi_env env, napi_callback_info info)
+{
+    // 调用napi_is_detached_arraybuffer判断给定的arraybuffer是否已被分离
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_value arrayBuffer = args[0];
+    bool result = false;
+    napi_is_detached_arraybuffer(env, arrayBuffer, &result);
+    // 将返回值通过napi_get_boolean接口转成napi_value传出去做打印
+    napi_value returnValue;
+    napi_get_boolean(env, result, &returnValue);
+    return returnValue;
+}
 ```
 
 接口声明
 
 index.d.ts
 
-```
-1. export const detachedArrayBuffer: (buffer:ArrayBuffer) => ArrayBuffer; // napi_detach_arraybuffer
-2. export const isDetachedArrayBuffer: (arrayBuffer: ArrayBuffer) => boolean; //napi_is_detached_arraybuffer
+```typescript
+export const detachedArrayBuffer: (buffer:ArrayBuffer) => ArrayBuffer; // napi_detach_arraybuffer
+export const isDetachedArrayBuffer: (arrayBuffer: ArrayBuffer) => boolean; //napi_is_detached_arraybuffer
 ```
 
 ArkTS侧示例代码
 
-```
-1. // test interface napi_detach_arraybuffer and napi_is_detached_arraybuffer
-2. try {
-3. const bufferArray = new ArrayBuffer(8);
-4. hilog.info(0x0000, 'testTag', 'Test Node-API napi_is_detached_arraybuffer one: %{public}s',
-5. testNapi.isDetachedArrayBuffer(bufferArray));
-6. hilog.info(0x0000, 'testTag', 'Test Node-API napi_is_detached_arraybuffer two: %{public}s ',
-7. testNapi.isDetachedArrayBuffer(testNapi.detachedArrayBuffer(bufferArray)));
-8. // ...
-9. } catch (error) {
-10. hilog.error(0x0000, 'testTag', 'Test Node-API napi_is_detached_arraybuffer error: %{public}s',
-11. error.message);
-12. // ...
-13. }
+```typescript
+// test interface napi_detach_arraybuffer and napi_is_detached_arraybuffer
+try {
+  const bufferArray = new ArrayBuffer(8);
+  hilog.info(0x0000, 'testTag', 'Test Node-API napi_is_detached_arraybuffer one: %{public}s',
+    testNapi.isDetachedArrayBuffer(bufferArray));
+  hilog.info(0x0000, 'testTag', 'Test Node-API napi_is_detached_arraybuffer two: %{public}s ',
+    testNapi.isDetachedArrayBuffer(testNapi.detachedArrayBuffer(bufferArray)));
+  // ...
+} catch (error) {
+  hilog.error(0x0000, 'testTag', 'Test Node-API napi_is_detached_arraybuffer error: %{public}s',
+    error.message);
+  // ...
+}
 ```
 
 输出日志：
@@ -262,64 +262,64 @@ Test Node-API napi\_is\_detached\_arraybuffer two: true
 
 用于在C/C++中创建一个具有指定字节长度的ArkTS ArrayBuffer对象，如果调用者想要直接操作缓冲区，则可以选择将底层缓冲区返回给调用者。要从ArkTS写入此缓冲区，需要创建类型化数组或DataView对象。
 
-注意
+**注意** 
 
 napi\_create\_arraybuffer在byte\_length为0或超大值时，data返回值将为nullptr。因此在对data进行使用前，有必要对其进行判空。
 
 cpp部分代码
 
 ```
-1. // napi_create_arraybuffer
-2. static napi_value CreateArrayBuffer(napi_env env, napi_callback_info info)
-3. {
-4. size_t argc = 1;
-5. napi_value argv[1] = {nullptr};
-6. napi_value result = nullptr;
-7. // 解析传递的参数
-8. napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
-9. int32_t value;
-10. size_t length;
-11. // 将ArkTS侧传递的参数转换为size_t类型，作为napi_create_arraybuffer的参数
-12. napi_get_value_int32(env, argv[0], &value);
-13. length = size_t(value);
-14. void *data = nullptr;
-15. // 创建一个新的ArrayBuffer
-16. napi_create_arraybuffer(env, length, &data, &result);
-17. if (data != nullptr) {
-18. // 确保安全后才能使用data进行操作
-19. } else {
-20. // 处理内存分配失败的情况
-21. OH_LOG_ERROR(LOG_APP, "Failed to allocate memory for ArrayBuffer");
-22. return nullptr;
-23. }
-24. // 返回ArrayBuffer
-25. return result;
-26. }
+// napi_create_arraybuffer
+static napi_value CreateArrayBuffer(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value argv[1] = {nullptr};
+    napi_value result = nullptr;
+    // 解析传递的参数
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+    int32_t value;
+    size_t length;
+    // 将ArkTS侧传递的参数转换为size_t类型，作为napi_create_arraybuffer的参数
+    napi_get_value_int32(env, argv[0], &value);
+    length = size_t(value);
+    void *data = nullptr;
+    // 创建一个新的ArrayBuffer
+    napi_create_arraybuffer(env, length, &data, &result);
+    if (data != nullptr) {
+        // 确保安全后才能使用data进行操作
+    } else {
+        // 处理内存分配失败的情况
+        OH_LOG_ERROR(LOG_APP, "Failed to allocate memory for ArrayBuffer");
+        return nullptr;
+    }
+    // 返回ArrayBuffer
+    return result;
+}
 ```
 
 接口声明
 
 index.d.ts
 
-```
-1. export const createArrayBuffer: (size: number) => ArrayBuffer; // napi_create_arraybuffer
+```typescript
+export const createArrayBuffer: (size: number) => ArrayBuffer; // napi_create_arraybuffer
 ```
 
 ArkTS侧示例代码
 
-```
-1. // test interface napi_create_arraybuffer
-2. hilog.info(0x0000, 'testTag', 'Test Node-API napi_create_arraybuffer:%{public}s',
-3. testNapi.createArrayBuffer(10).toString());
+```typescript
+// test interface napi_create_arraybuffer
+hilog.info(0x0000, 'testTag', 'Test Node-API napi_create_arraybuffer:%{public}s',
+  testNapi.createArrayBuffer(10).toString());
 ```
 
 以上代码如果要在native cpp中打印日志，需在CMakeLists.txt文件中添加以下配置信息（并添加头文件：#include "hilog/log.h"）：
 
-```
-1. // CMakeLists.txt
-2. add_definitions( "-DLOG_DOMAIN=0xd0d0" )
-3. add_definitions( "-DLOG_TAG=\"testTag\"" )
-4. target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
+```text
+// CMakeLists.txt
+add_definitions( "-DLOG_DOMAIN=0xd0d0" )
+add_definitions( "-DLOG_TAG=\"testTag\"" )
+target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
 ```
 
 输出日志：

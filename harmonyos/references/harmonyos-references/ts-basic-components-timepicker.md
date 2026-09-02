@@ -3,32 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: TimePicker
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > TimePicker
 category: harmonyos-references
-scraped_at: 2026-04-29T13:52:01+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:6aa7e68481ac9a3fb658b3c5f964c4dc38d64ee759eaf6ccea9f78cfc7e26e79
+scraped_at: 2026-09-02T15:01:02+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:aaf424533946749074855fa1f534963b185244d00febb2463974dc3a9615e771
 ---
 
-滑动选择时间的组件。
+TimePicker是用于滑动选择时间的组件，支持12/24小时制、多种时间格式（小时/分钟/秒）、循环滚动、样式定制和时间范围限制等功能。适用于日程安排、时间预约、任务管理等需要用户选择时间的场景，能够提升用户体验，减少输入错误，并可快速集成到应用中。
 
-说明
+**说明** 
 
-* 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 该组件从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 该组件不建议开发者在动效过程中修改属性数据。
 * 最大显示行数在横、竖屏模式下存在差异。竖屏时默认为5行，横屏时依赖系统配置，未配置时默认显示为3行。可通过如下参数查看具体配置值$r('sys.float.ohos\_id\_picker\_show\_count\_landscape')。
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
-无
+该组件为基础组件，不建议包含子组件。
 
 ## 接口
 
-PhonePC/2in1TabletTVWearable
-
 TimePicker(options?: TimePickerOptions)
 
-创建滑动选择器，默认使用24小时的时间区间。
+创建滑动选择器，默认使用24小时的时间区间。适用于日程安排、闹钟设置、时间记录等需要选择时间的场景。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -38,11 +34,9 @@ TimePicker(options?: TimePickerOptions)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [TimePickerOptions](ts-basic-components-timepicker.md#timepickeroptions对象说明) | 否 | 配置时间选择组件的参数。 |
+| options | [TimePickerOptions](ts-basic-components-timepicker.md#timepickeroptions对象说明) | 否 | 配置时间选择组件的参数。当需要自定义初始选中时间、时间格式、时间范围等配置时传入此参数，不传入时使用默认配置（初始选中时间为当前系统时间，时间格式默认为小时和分钟，时间范围默认为00:00-23:59（默认结束时间为23:59:59））。 |
 
 ## TimePickerOptions对象说明
-
-PhonePC/2in1TabletTVWearable
 
 时间选择器组件的参数说明。
 
@@ -51,9 +45,9 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | selected | Date | 否 | 是 | 设置选中项的时间。  默认值：当前系统时间  从API version 10开始，该参数支持[$$](../harmonyos-guides/arkts-two-way-sync.md)双向绑定变量。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| format11+ | [TimePickerFormat](ts-basic-components-timepicker.md#timepickerformat11枚举说明) | 否 | 是 | 指定需要显示的TimePicker的格式。  默认值：TimePickerFormat.HOUR\_MINUTE  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| start18+ | Date | 否 | 是 | 指定时间选择组件的起始时间。  默认值：Date(0, 0, 0, 0, 0, 0)  **说明：**  1. 仅设置的小时和分钟生效。  2. 设置了start且为非默认值的场景下，loop不生效。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| end18+ | Date | 否 | 是 | 指定时间选择组件的结束时间。  默认值：Date(0, 0, 0, 23, 59, 59)  **说明：**  1. 仅设置的小时和分钟生效。  2. 设置了end且为非默认值的场景下，loop不生效。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| format11+ | [TimePickerFormat](ts-basic-components-timepicker.md#timepickerformat11枚举说明) | 否 | 是 | 指定需要显示的TimePicker的格式。  默认值：TimePickerFormat.HOUR\_MINUTE  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| start18+ | Date | 否 | 是 | 指定时间选择组件的起始时间。  默认值：起始时间为00:00:00（小时=0，分钟=0）  **说明：**  1. 仅设置的小时和分钟生效。  2. 设置了start或end且为非默认值的场景下，loop不生效。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| end18+ | Date | 否 | 是 | 指定时间选择组件的结束时间。  默认值：结束时间为23:59:59（小时=23，分钟=59）  **说明：**  1. 仅设置的小时和分钟生效。  2. 设置了start或end且为非默认值的场景下，loop不生效。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 在TimePicker组件滑动过程中修改TimePickerOptions中的属性，会导致这些属性无法生效。
 
@@ -67,19 +61,19 @@ Date对象用于处理日期和时间，使用方式如下。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | string | 是 | 设置日期格式。  number：毫秒，自1970年1月1日00:00:00开始的毫秒数。  string：时间格式的字符串，如‘2025-02-20 08:00:00’或‘2025-02-20T08:00:00’。 |
+| value | number | string | 是 | 设置日期格式。  number：毫秒，自1970年1月1日00:00:00开始的毫秒数。取值范围：[0, +∞)。  string：时间格式的字符串，如‘2025-02-20 08:00:00’或‘2025-02-20T08:00:00’。 |
 
 **方式3：** new Date(year: number, monthIndex: number, date?: number, hours?: number, minutes?: number, seconds?: number, ms?: number)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | year | number | 是 | 设置年份，例如2025。 |
-| monthIndex | number | 是 | 设置月份索引，例如2，代表3月份。 |
+| monthIndex | number | 是 | 设置月份索引（取值范围0-11），其中0表示1月，11表示12月。例如：传入0表示1月，传入2表示3月。超出范围时会导致日期计算错误。 |
 | date | number | 否 | 设置日期，例如10（如果设置hours，则date不能省略）。 |
-| hours | number | 否 | 设置小时，例如15（如果设置minutes，则hours不能省略）。 |
-| minutes | number | 否 | 设置分钟，例如20（如果设置seconds，则minutes不能省略）。 |
-| seconds | number | 否 | 设置秒，例如20（如果设置ms，则seconds不能省略）。 |
-| ms | number | 否 | 设置毫秒，例如10。 |
+| hours | number | 否 | 设置小时，取值范围[0, 23]。超出范围时会导致日期计算错误。例如15（如果设置minutes，则hours不能省略）。单位：小时。 |
+| minutes | number | 否 | 设置分钟，取值范围[0, 59]。超出范围时会导致日期计算错误。例如20（如果设置seconds，则minutes不能省略）。单位：分钟。 |
+| seconds | number | 否 | 设置秒，取值范围[0, 59]。超出范围时会导致日期计算错误。例如20（如果设置ms，则seconds不能省略）。单位：秒。 |
+| ms | number | 否 | 设置毫秒，取值范围[0, 999]。超出范围时会导致日期计算错误。例如10。单位：ms（毫秒）。 |
 
 **起始时间和结束时间的异常情形说明：**
 
@@ -94,11 +88,11 @@ Date对象用于处理日期和时间，使用方式如下。
 
 ## TimePickerFormat11+枚举说明
 
-PhonePC/2in1TabletTVWearable
-
 时间选择器的数据格式。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -109,17 +103,13 @@ PhonePC/2in1TabletTVWearable
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用属性](ts-component-general-attributes.md)外，还支持以下属性：
 
 ### useMilitaryTime
 
-PhonePC/2in1TabletTVWearable
-
 useMilitaryTime(value: boolean)
 
-设置时间是否以24小时制展示，未通过该接口设置时，默认跟随系统设置展示。
+设置时间是否以24小时制展示，未通过该接口设置时，默认跟随系统设置展示。24小时制适用于精确的时间记录和调度场景，12小时制适用于日常闹钟设置等更直观的时间显示需求。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -133,13 +123,13 @@ useMilitaryTime(value: boolean)
 
 ### useMilitaryTime18+
 
-PhonePC/2in1TabletTVWearable
-
 useMilitaryTime(isMilitaryTime: Optional<boolean>)
 
 设置展示时间是否为24小时制，未通过该接口设置时，默认跟随系统设置展示。与[useMilitaryTime](ts-basic-components-timepicker.md#usemilitarytime)相比，isMilitaryTime参数新增了对undefined类型的支持。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -151,13 +141,13 @@ useMilitaryTime(isMilitaryTime: Optional<boolean>)
 
 ### disappearTextStyle10+
 
-PhonePC/2in1TabletTVWearable
-
 disappearTextStyle(value: PickerTextStyle)
 
 设置边缘项（以选中项为基准向上或向下的第二项）的文本颜色、字号、字体粗细。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -165,21 +155,21 @@ disappearTextStyle(value: PickerTextStyle)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [PickerTextStyle](ts-picker-common.md#pickertextstyle对象说明) | 是 | 边缘项的文本颜色、字号和字体粗细。  默认值：  {  color: '#ff182431',  font: {  size: '14fp',  weight: FontWeight.Regular  }  } |
+| value | [PickerTextStyle](ts-picker-common.md#pickertextstyle对象说明) | 是 | 边缘项（以选中项为基准向上或向下的第二项）的文本颜色、字号和字体粗细。  默认值：  {  color: '#ff182431',  font: {  size: '14fp',  weight: FontWeight.Regular  }  } |
 
-说明
+**说明** 
 
 若选中项向上或向下的可视项数低于两项则无对应边缘项。
 
 ### disappearTextStyle18+
-
-PhonePC/2in1TabletTVWearable
 
 disappearTextStyle(style: Optional<PickerTextStyle>)
 
 设置边缘项（以选中项为基准向上或向下的第二项）的文本颜色、字号、字体粗细。与[disappearTextStyle10+](ts-basic-components-timepicker.md#disappeartextstyle10)相比，style参数新增了对undefined类型的支持。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -189,19 +179,19 @@ disappearTextStyle(style: Optional<PickerTextStyle>)
 | --- | --- | --- | --- |
 | style | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[PickerTextStyle](ts-picker-common.md#pickertextstyle对象说明)> | 是 | 边缘项的文本颜色、字号、字体粗细。  默认值：  {  color: '#ff182431',  font: {  size: '14fp',  weight: FontWeight.Regular  }  }  当style的值为undefined时，使用默认值。 |
 
-说明
+**说明** 
 
 若选中项向上或向下的可视项数低于两项则无对应边缘项。
 
 ### textStyle10+
-
-PhonePC/2in1TabletTVWearable
 
 textStyle(value: PickerTextStyle)
 
 设置待选项（以选中项为基准向上或向下的第一项）的文本颜色、字号、字体粗细。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -211,19 +201,19 @@ textStyle(value: PickerTextStyle)
 | --- | --- | --- | --- |
 | value | [PickerTextStyle](ts-picker-common.md#pickertextstyle对象说明) | 是 | 待选项的文本颜色、字号、字体粗细。  默认值：  {  color: '#ff182431',  font: {  size: '16fp',  weight: FontWeight.Regular  }  } |
 
-说明
+**说明** 
 
 若选中项向上或向下可视项数低于一项则无对应待选项。
 
 ### textStyle18+
-
-PhonePC/2in1TabletTVWearable
 
 textStyle(style: Optional<PickerTextStyle>)
 
 设置待选项（以选中项为基准向上或向下的第一项）的文本颜色、字号、字体粗细。与[textStyle10+](ts-basic-components-timepicker.md#textstyle10)相比，style参数新增了对undefined类型的支持。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -233,13 +223,11 @@ textStyle(style: Optional<PickerTextStyle>)
 | --- | --- | --- | --- |
 | style | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[PickerTextStyle](ts-picker-common.md#pickertextstyle对象说明)> | 是 | 待选项的文本颜色、字号、字体粗细。  默认值：  {  color: '#ff182431',  font: {  size: '16fp',  weight: FontWeight.Regular  }  }  当style的值为undefined时，使用默认值。 |
 
-说明
+**说明** 
 
 若选中项向上或向下可视项数低于一项则无对应待选项。
 
 ### selectedTextStyle10+
-
-PhonePC/2in1TabletTVWearable
 
 selectedTextStyle(value: PickerTextStyle)
 
@@ -247,9 +235,9 @@ selectedTextStyle(value: PickerTextStyle)
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+**模型约束：** 此接口仅可在Stage模型下使用。
 
-**设备行为差异：** 该属性在Wearable设备上使用无效果，在其他设备中可正常生效。
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
@@ -259,17 +247,15 @@ selectedTextStyle(value: PickerTextStyle)
 
 ### selectedTextStyle18+
 
-PhonePC/2in1TabletTVWearable
-
 selectedTextStyle(style: Optional<PickerTextStyle>)
 
-设置选中项的文本颜色、字号及字体粗细。与[selectedTextStyle10+](ts-basic-components-timepicker.md#selectedtextstyle10)相比，style参数新增了对undefined类型的支持
+设置选中项的文本颜色、字号及字体粗细。与[selectedTextStyle10+](ts-basic-components-timepicker.md#selectedtextstyle10)相比，style参数新增了对undefined类型的支持。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+**模型约束：** 此接口仅可在Stage模型下使用。
 
-**设备行为差异：** 该属性在Wearable设备上使用无效果，在其他设备中可正常生效。
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
@@ -279,13 +265,13 @@ selectedTextStyle(style: Optional<PickerTextStyle>)
 
 ### loop11+
 
-PhonePC/2in1TabletTVWearable
-
 loop(value: boolean)
 
-设置是否启用循环模式。
+设置是否启用循环模式。循环模式适用于需要连续滚动选择时间的场景，非循环模式适用于固定时间范围的限制场景。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -293,17 +279,21 @@ loop(value: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | boolean | 是 | 是否启用循环模式。  - true：启用循环模式。  - false：不启用循环模式。  默认值：true |
+| value | boolean | 是 | 是否启用循环模式。  - true：启用循环模式。  - false：不启用循环模式。  默认值：true  **说明：** 设置了start或end且为非默认值的场景下，loop不生效。 |
 
 ### loop18+
-
-PhonePC/2in1TabletTVWearable
 
 loop(isLoop: Optional<boolean>)
 
 设置是否启用循环模式。与[loop11+](ts-basic-components-timepicker.md#loop11)相比，isLoop参数新增了对undefined类型的支持。
 
+**说明** 
+
+设置了start或end且为非默认值的场景下，loop不生效。
+
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -315,13 +305,13 @@ loop(isLoop: Optional<boolean>)
 
 ### dateTimeOptions12+
 
-PhonePC/2in1TabletTVWearable
-
 dateTimeOptions(value: DateTimeOptions)
 
-设置时分秒是否显示前导0。
+设置时分秒是否显示前导0。'2-digit'适用于需要统一格式显示的场景（如表格、报表），'numeric'适用于更简洁的显示需求。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -333,13 +323,13 @@ dateTimeOptions(value: DateTimeOptions)
 
 ### dateTimeOptions18+
 
-PhonePC/2in1TabletTVWearable
-
 dateTimeOptions(timeFormat: Optional<DateTimeOptions>)
 
 设置时分秒是否显示前导0。与[dateTimeOptions12+](ts-basic-components-timepicker.md#datetimeoptions12)相比，timeFormat参数新增了对undefined类型的支持。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -351,55 +341,55 @@ dateTimeOptions(timeFormat: Optional<DateTimeOptions>)
 
 ### enableHapticFeedback12+
 
-PhonePC/2in1TabletTVWearable
-
 enableHapticFeedback(enable: boolean)
 
-设置是否支持触控反馈。
+设置是否开启触控反馈。
 
 开启触控反馈时，需要在工程的src/main/module.json5文件的"module"内配置requestPermissions字段开启振动权限，配置如下：
 
-```
-1. "requestPermissions": [
-2. {
-3. "name": "ohos.permission.VIBRATE",
-4. }
-5. ]
+```json
+"requestPermissions": [
+   {
+      "name": "ohos.permission.VIBRATE"
+   }
+]
 ```
 
-说明
+**说明** 
 
 从API version 18开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| enable | boolean | 是 | 设置是否开启触控反馈。  - true：开启触控反馈。  - false：不开启触控反馈。  默认值：true  设置为true后，其生效情况取决于系统的硬件是否支持。 |
+| enable | boolean | 是 | 设置是否开启触控反馈。  - true：开启触控反馈。  - false：不开启触控反馈。  默认值：true  设置为true后，若系统硬件不支持振动功能，则不会产生振动反馈。 |
 
 ### enableHapticFeedback18+
 
-PhonePC/2in1TabletTVWearable
-
 enableHapticFeedback(enable: Optional<boolean>)
 
-设置是否支持触控反馈。与[enableHapticFeedback12+](ts-basic-components-timepicker.md#enablehapticfeedback12)相比，enable参数新增了对undefined类型的支持。
+设置是否开启触控反馈。与[enableHapticFeedback12+](ts-basic-components-timepicker.md#enablehapticfeedback12)相比，enable参数新增了对undefined类型的支持。
 
 开启触控反馈时，需要在工程的src/main/module.json5文件的"module"内配置requestPermissions字段开启振动权限，配置如下：
 
-```
-1. "requestPermissions": [
-2. {
-3. "name": "ohos.permission.VIBRATE",
-4. }
-5. ]
+```json
+"requestPermissions": [
+  {
+    "name": "ohos.permission.VIBRATE"
+  }
+]
 ```
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -407,17 +397,17 @@ enableHapticFeedback(enable: Optional<boolean>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| enable | [Optional](ts-universal-attributes-custom-property.md#optionalt)<boolean> | 是 | 设置是否开启触控反馈。  - true：开启触控反馈。  - false：不开启触控反馈。  默认值：true  当enable的值为undefined时，使用默认值。  设置为true后，其生效情况取决于系统的硬件是否支持。 |
+| enable | [Optional](ts-universal-attributes-custom-property.md#optionalt)<boolean> | 是 | 设置是否开启触控反馈。  - true：开启触控反馈。  - false：不开启触控反馈。  默认值：true  当enable的值为undefined时，使用默认值。  设置为true后，若系统硬件不支持振动功能，则不会产生振动反馈。 |
 
 ### enableCascade18+
 
-PhonePC/2in1TabletTVWearable
-
 enableCascade(enabled: boolean)
 
-设置上午和下午的标识是否根据小时数自动切换，仅在[useMilitaryTime](ts-basic-components-timepicker.md#usemilitarytime)设置为false时生效。
+设置上午和下午的标识是否根据小时数自动切换，仅在[useMilitaryTime](ts-basic-components-timepicker.md#usemilitarytime)设置为false时生效。自动切换适用于闹钟、日程等注重操作效率和流畅体验的日常消费场景，手动切换适用于医疗、法律等对时间精确性要求严苛、不容歧义的场景。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -425,17 +415,26 @@ enableCascade(enabled: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| enabled | boolean | 是 | 上午和下午的标识是否根据小时数自动切换，仅在useMilitaryTime设置为false时生效。  - true：自动切换。  - false：不自动切换。  默认值：false  当enabled设置为true时，仅在loop参数同时为true时生效。 |
+| enabled | boolean | 是 | 上午和下午的标识是否根据小时数自动切换，仅在useMilitaryTime设置为false时生效。  - true：自动切换。当enabled设置为true时，仅在loop参数同时为true时生效。  - false：不自动切换。上午/下午标识需手动选择，不会根据小时数自动调整。  默认值：false |
+
+**说明** 
+
+**制约关系：**
+
+* 若loop参数为false或未设置为true，enableCascade(true)将不生效，上午/下午标识不会自动切换。
+* 必须同时设置loop(true)才能启用自动切换功能。
+* 设置了非默认start/end时，enableCascade的自动切换也不生效。
+* 与useMilitaryTime存在依赖：仅当useMilitaryTime为false（12小时制）时，enableCascade才生效。
 
 ### digitalCrownSensitivity18+
 
-PhonePC/2in1TabletTVWearable
-
 digitalCrownSensitivity(sensitivity: Optional<CrownSensitivity>)
 
-设置表冠灵敏度。
+设置表冠灵敏度。高灵敏度适用于需要快速调整时间的场景，低灵敏度适用于需要精确调整时间的场景。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -445,25 +444,21 @@ digitalCrownSensitivity(sensitivity: Optional<CrownSensitivity>)
 | --- | --- | --- | --- |
 | sensitivity | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[CrownSensitivity](ts-appendix-enums.md#crownsensitivity18)> | 是 | 表冠响应灵敏度。  默认值：CrownSensitivity.MEDIUM，表示响应速度适中。 |
 
-说明
+**说明** 
 
 用于圆形屏幕的穿戴设备。组件响应[表冠事件](ts-universal-events-crown.md)，需要先获取焦点。
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用事件](ts-component-general-events.md)外，还支持以下事件：
 
 ### onChange
 
-PhonePC/2in1TabletTVWearable
-
 onChange(callback: (value: TimePickerResult ) => void)
 
-滑动TimePicker后，时间选项归位至选中项位置时，触发该回调。不能通过双向绑定的状态变量触发。
+滑动TimePicker后，时间选项归位至选中项位置时，触发该回调。不能通过双向绑定的状态变量触发。适用于需要在用户确认时间选择后执行保存、更新UI等操作的场景。
 
-回调会在滑动动画结束后触发，如果需要快速获取索引值变化，建议使用[onEnterSelectedArea](ts-basic-components-timepicker.md#onenterselectedarea18)接口。
+回调会在滑动动画结束后触发，如果需要快速获取索引值变化，建议使用[onEnterSelectedArea](ts-basic-components-timepicker.md#onenterselectedarea18)接口。需要注意的是，当[enableCascade](ts-basic-components-timepicker.md#enablecascade18)设置为true时，由于上午/下午列与小时列存在联动关系，该回调的行为可能不符合预期，不建议在此场景下使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -473,19 +468,19 @@ onChange(callback: (value: TimePickerResult ) => void)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [TimePickerResult](ts-basic-components-timepicker.md#timepickerresult对象说明) | 是 | 24小时制时间。 |
+| value | [TimePickerResult](ts-basic-components-timepicker.md#timepickerresult对象说明) | 是 | 选中的时间结果，hour取值0-23，与展示制式无关。 |
 
 ### onChange18+
-
-PhonePC/2in1TabletTVWearable
 
 onChange(callback: Optional<OnTimePickerChangeCallback>)
 
 滑动TimePicker后，时间选项归位至选中项位置时，触发该回调。不能通过双向绑定的状态变量触发。与[onChange](ts-basic-components-timepicker.md#onchange)相比，callback参数新增了对undefined类型的支持。
 
-回调会在滑动动画结束后触发，如果需要快速获取索引值变化，建议使用[onEnterSelectedArea](ts-basic-components-timepicker.md#onenterselectedarea18)接口。
+回调会在滑动动画结束后触发，如果需要快速获取索引值变化，建议使用[onEnterSelectedArea](ts-basic-components-timepicker.md#onenterselectedarea18)接口。需要注意的是，当[enableCascade](ts-basic-components-timepicker.md#enablecascade18)设置为true时，由于上午/下午列与小时列存在联动关系，该回调的行为可能不符合预期，不建议在此场景下使用。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -497,19 +492,19 @@ onChange(callback: Optional<OnTimePickerChangeCallback>)
 
 ### onEnterSelectedArea18+
 
-PhonePC/2in1TabletTVWearable
-
 onEnterSelectedArea(callback: Callback<TimePickerResult>)
 
-滑动TimePicker过程中，选项进入分割线区域内，触发该回调。
+滑动TimePicker过程中，选项进入分割线区域内，触发该回调。适用于需要在滑动过程中实时更新UI、实时验证时间范围等需要快速响应的场景。与onChange相比，该回调触发时机更早，适合需要即时反馈的场景。
 
-与[onChange](ts-basic-components-timepicker.md#onchange)事件的差别在于，该事件的触发时机早于[onChange](ts-basic-components-timepicker.md#onchange)事件，当当前滑动列滑动距离超过选中项高度的一半时，选项此时已经进入分割线区域内，会触发该事件。当[enableCascade](ts-basic-components-timepicker.md#enablecascade18)设置为true时，由于上午/下午列与小时列存在联动关系，不建议使用该回调。该回调标识的是滑动过程中选项进入分割线区域内的节点，而联动变化的选项并不涉及滑动，因此，回调的返回值中，仅当前滑动列的值会正常变化，其余未滑动列的值保持不变。
+与[onChange](ts-basic-components-timepicker.md#onchange)事件的差别在于，该事件的触发时机早于[onChange](ts-basic-components-timepicker.md#onchange)事件，当滑动列的滑动距离超过选中项高度的一半时，选项已经进入分割线区域内，会触发该事件。当[enableCascade](ts-basic-components-timepicker.md#enablecascade18)设置为true时，由于上午/下午列与小时列存在联动关系（即上午/下午标识会根据小时数自动调整），不建议使用该回调。该回调标识的是滑动过程中选项进入分割线区域内的节点，而联动变化的选项并不涉及滑动，因此，回调的返回值中，仅当前滑动列的值会正常变化，其余未滑动列的值保持不变。
 
-说明
+**说明** 
 
 该接口不支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -521,23 +516,21 @@ onEnterSelectedArea(callback: Callback<TimePickerResult>)
 
 ## DateTimeOptions12+类型说明
 
-PhonePC/2in1TabletTVWearable
-
-type DateTimeOptions = DateTimeOptions
+type DateTimeOptions = import('../api/@ohos.intl').default.DateTimeOptions
 
 时间、日期格式化时可设置的配置项。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 类型 | 说明 |
 | --- | --- |
-| [DateTimeOptions](js-apis-intl.md#datetimeoptionsdeprecated) | 创建时间、日期格式化对象时可设置的配置项。 |
+| import('../api/@ohos.intl').default.[DateTimeOptions](js-apis-intl.md#datetimeoptionsdeprecated) | 创建时间、日期格式化对象时可设置的配置项。 |
 
 ## OnTimePickerChangeCallback18+
-
-PhonePC/2in1TabletTVWearable
 
 type OnTimePickerChangeCallback = (result: TimePickerResult) => void
 
@@ -545,19 +538,19 @@ type OnTimePickerChangeCallback = (result: TimePickerResult) => void
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| result | [TimePickerResult](ts-basic-components-timepicker.md#timepickerresult对象说明) | 是 | 24小时制时间。 |
+| result | [TimePickerResult](ts-basic-components-timepicker.md#timepickerresult对象说明) | 是 | 选中的时间结果，hour取值0-23，与展示制式无关。 |
 
 ## TimePickerResult对象说明
 
-PhonePC/2in1TabletTVWearable
-
-返回24小时制时间。
+返回选中的时间结果，hour取值0-23，与展示制式无关。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -565,249 +558,248 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| hour | number | 否 | 否 | 选中时间的时。  取值范围：[0-23] |
+| hour | number | 否 | 否 | 选中时间的时。  取值范围：[0-23]，与展示制式无关。 |
 | minute | number | 否 | 否 | 选中时间的分。  取值范围：[0-59] |
-| second11+ | number | 否 | 否 | 选中时间的秒。  取值范围：[0-59] |
+| second11+ | number | 否 | 否 | 选中时间的秒。  取值范围：[0-59]  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## 示例
-
-PhonePC/2in1TabletTVWearable
 
 ### 示例1（设置文本样式）
 
 该示例通过配置[disappearTextStyle](ts-basic-components-timepicker.md#disappeartextstyle10)、[textStyle](ts-basic-components-timepicker.md#textstyle10)和[selectedTextStyle](ts-basic-components-timepicker.md#selectedtextstyle10)实现文本选择器中的文本样式。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TimePickerExample {
-5. private selectedTime: Date = new Date('2022-07-22T08:00:00');
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TimePickerExample {
+  private selectedTime: Date = new Date('2022-07-22T08:00:00');
 
-7. build() {
-8. TimePicker({
-9. selected: this.selectedTime
-10. })
-11. .disappearTextStyle({ color: '#004aaf', font: { size: 24, weight: FontWeight.Lighter } })
-12. .textStyle({ color: Color.Black, font: { size: 26, weight: FontWeight.Normal } })
-13. .selectedTextStyle({ color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } })
-14. .onChange((value: TimePickerResult) => {
-15. if (value.hour >= 0) {
-16. this.selectedTime.setHours(value.hour, value.minute);
-17. console.info('select current date is: ' + JSON.stringify(value));
-18. }
-19. })
-20. }
-21. }
+  build() {
+    TimePicker({
+      selected: this.selectedTime
+    })
+      .disappearTextStyle({ color: '#004aaf', font: { size: 24, weight: FontWeight.Lighter } })
+      .textStyle({ color: Color.Black, font: { size: 26, weight: FontWeight.Normal } })
+      .selectedTextStyle({ color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } })
+      .onChange((value: TimePickerResult) => {
+        if (value.hour >= 0) {
+          this.selectedTime.setHours(value.hour, value.minute);
+          console.info('select current time is: ' + JSON.stringify(value));
+        }
+      })
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/LqOWjVHWRKuDHc6QvD7TdA/zh-cn_image_0000002589246047.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/IuWg1ULwRNOVob5mdEhaoQ/zh-cn_image_0000002706835876.png)
 
 ### 示例2（切换小时制）
 
 该示例通过配置useMilitaryTime实现12小时制、24小时制的切换。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TimePickerExample {
+  @State isMilitaryTime: boolean = false;
+  private selectedTime: Date = new Date('2022-07-22T08:00:00');
+
+  build() {
+    Column() {
+      Button('切换12小时制/24小时制')
+        .margin(30)
+        .onClick(() => {
+          this.isMilitaryTime = !this.isMilitaryTime;
+        })
+
+      TimePicker({
+        selected: this.selectedTime
+      })
+        .useMilitaryTime(this.isMilitaryTime)
+        .onChange((value: TimePickerResult) => {
+          if (value.hour >= 0) {
+            this.selectedTime.setHours(value.hour, value.minute);
+            console.info('select current time is: ' + JSON.stringify(value));
+          }
+        })
+        .onEnterSelectedArea((value: TimePickerResult) => {
+            console.info('item enter selected area, time is: ' + JSON.stringify(value));
+        })
+    }.width('100%')
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TimePickerExample {
-5. @State isMilitaryTime: boolean = false;
-6. private selectedTime: Date = new Date('2022-07-22T08:00:00');
 
-8. build() {
-9. Column() {
-10. Button('切换12小时制/24小时制')
-11. .margin(30)
-12. .onClick(() => {
-13. this.isMilitaryTime = !this.isMilitaryTime;
-14. })
-
-16. TimePicker({
-17. selected: this.selectedTime
-18. })
-19. .useMilitaryTime(this.isMilitaryTime)
-20. .onChange((value: TimePickerResult) => {
-21. if (value.hour >= 0) {
-22. this.selectedTime.setHours(value.hour, value.minute);
-23. console.info('select current time is: ' + JSON.stringify(value));
-24. }
-25. })
-26. .onEnterSelectedArea((value: TimePickerResult) => {
-27. console.info('item enter selected area, time is: ' + JSON.stringify(value));
-28. })
-29. }.width('100%')
-30. }
-31. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/359tN295QiWKy3xiPLedVg/zh-cn_image_0000002558766238.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/uYAsJSR3Tk6nxPyAYBFGnw/zh-cn_image_0000002736314981.gif)
 
 ### 示例3（设置时间格式）
 
 该示例使用format和dateTimeOptions设置TimePicker时间格式。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TimePickerExample {
-5. private selectedTime: Date = new Date('2022-07-22T08:00:00');
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TimePickerExample {
+  private selectedTime: Date = new Date('2022-07-22T08:00:00');
 
-7. build() {
-8. Column() {
-9. TimePicker({
-10. selected: this.selectedTime,
-11. format: TimePickerFormat.HOUR_MINUTE_SECOND
-12. })
-13. .dateTimeOptions({ hour: "numeric", minute: "2-digit", second: "2-digit" })
-14. .onChange((value: TimePickerResult) => {
-15. if (value.hour >= 0) {
-16. this.selectedTime.setHours(value.hour, value.minute);
-17. console.info('select current date is: ' + JSON.stringify(value));
-18. }
-19. })
-20. }.width('100%')
-21. }
-22. }
+  build() {
+    Column() {
+      TimePicker({
+        selected: this.selectedTime,
+        format: TimePickerFormat.HOUR_MINUTE_SECOND
+      })
+        .dateTimeOptions({ hour: "numeric", minute: "2-digit", second: "2-digit" })
+        .onChange((value: TimePickerResult) => {
+          if (value.hour >= 0) {
+            this.selectedTime.setHours(value.hour, value.minute, value.second);
+            console.info('select current time is: ' + JSON.stringify(value));
+          }
+        })
+    }.width('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/ite82PeaTzWxkN4Jk0DhoQ/zh-cn_image_0000002558606580.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/GZuhFBcjTFqmXJ-QbzuyCw/zh-cn_image_0000002706675938.gif)
 
 ### 示例4（设置循环滚动）
 
 该示例通过配置[loop](ts-basic-components-timepicker.md#loop11)设置TimePicker是否循环滚动。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TimePickerExample {
+  @State isLoop: boolean = true;
+  @State selectedTime: Date = new Date('2022-07-22T12:00:00');
+
+  build() {
+    Column() {
+      TimePicker({
+        selected: this.selectedTime
+      })
+        .loop(this.isLoop)
+        .onChange((value: TimePickerResult) => {
+          if (value.hour >= 0) {
+            this.selectedTime.setHours(value.hour, value.minute);
+            console.info('select current time is: ' + JSON.stringify(value));
+          }
+        })
+
+      Row() {
+        Text('循环滚动').fontSize(20)
+
+        Toggle({ type: ToggleType.Switch, isOn: true })
+          .onChange((isOn: boolean) => {
+            this.isLoop = isOn;
+          })
+      }.position({ x: '60%', y: '40%' })
+
+    }.width('100%')
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TimePickerExample {
-5. @State isLoop: boolean = true;
-6. @State selectedTime: Date = new Date('2022-07-22T12:00:00');
 
-8. build() {
-9. Column() {
-10. TimePicker({
-11. selected: this.selectedTime
-12. })
-13. .loop(this.isLoop)
-14. .onChange((value: TimePickerResult) => {
-15. if (value.hour >= 0) {
-16. this.selectedTime.setHours(value.hour, value.minute);
-17. console.info('select current date is: ' + JSON.stringify(value));
-18. }
-19. })
-
-21. Row() {
-22. Text('循环滚动').fontSize(20)
-
-24. Toggle({ type: ToggleType.Switch, isOn: true })
-25. .onChange((isOn: boolean) => {
-26. this.isLoop = isOn;
-27. })
-28. }.position({ x: '60%', y: '40%' })
-
-30. }.width('100%')
-31. }
-32. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/fr3S5qm3Qs2j-cMdIqY8Jg/zh-cn_image_0000002589326107.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/TXQDeVHOTrqMEoJ-L_mZhA/zh-cn_image_0000002736435025.gif)
 
 ### 示例5（设置时间选择组件的起始时间）
 
 该示例设置TimePicker的起始时间。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TimePickerExample {
-5. private selectedTime: Date = new Date('2022-07-22T08:50:00');
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TimePickerExample {
+  private selectedTime: Date = new Date('2022-07-22T08:50:00');
 
-7. build() {
-8. Column() {
-9. TimePicker({
-10. selected: this.selectedTime,
-11. format: TimePickerFormat.HOUR_MINUTE_SECOND,
-12. start: new Date('2022-07-22T08:30:00')
-13. })
-14. .dateTimeOptions({ hour: "numeric", minute: "2-digit", second: "2-digit" })
-15. .onChange((value: TimePickerResult) => {
-16. if (value.hour >= 0) {
-17. this.selectedTime.setHours(value.hour, value.minute);
-18. console.info('select current date is: ' + JSON.stringify(value));
-19. }
-20. })
-21. }.width('100%')
-22. }
-23. }
+  build() {
+    Column() {
+      TimePicker({
+        selected: this.selectedTime,
+        format: TimePickerFormat.HOUR_MINUTE_SECOND,
+        start: new Date('2022-07-22T08:30:00')
+      })
+        .dateTimeOptions({ hour: "numeric", minute: "2-digit", second: "2-digit" })
+        .onChange((value: TimePickerResult) => {
+          if (value.hour >= 0) {
+            this.selectedTime.setHours(value.hour, value.minute);
+            console.info('select current time is: ' + JSON.stringify(value));
+          }
+        })
+    }.width('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/PZfwJ7aLQEyTWRF1SyjOaw/zh-cn_image_0000002589246049.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/beiM9u2yTMmfZYTMXmeSuA/zh-cn_image_0000002706835878.png)
 
 ### 示例6（设置时间选择组件的结束时间）
 
 该示例设置TimePicker的结束时间。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TimePickerExample {
+  private selectedTime: Date = new Date('2022-07-22T08:50:00');
+
+  build() {
+    Column() {
+      TimePicker({
+        selected: this.selectedTime,
+        format: TimePickerFormat.HOUR_MINUTE_SECOND,
+        end: new Date('2022-07-22T15:20:00'),
+      })
+        .dateTimeOptions({ hour: "numeric", minute: "2-digit", second: "2-digit" })
+        .onChange((value: TimePickerResult) => {
+          if (value.hour >= 0) {
+            this.selectedTime.setHours(value.hour, value.minute, value.second);
+            console.info('select current time is: ' + JSON.stringify(value));
+          }
+        })
+    }.width('100%')
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TimePickerExample {
-5. private selectedTime: Date = new Date('2022-07-22T08:50:00');
 
-7. build() {
-8. Column() {
-9. TimePicker({
-10. selected: this.selectedTime,
-11. format: TimePickerFormat.HOUR_MINUTE_SECOND,
-12. end: new Date('2022-07-22T15:20:00'),
-13. })
-14. .dateTimeOptions({ hour: "numeric", minute: "2-digit", second: "2-digit" })
-15. .onChange((value: TimePickerResult) => {
-16. if (value.hour >= 0) {
-17. this.selectedTime.setHours(value.hour, value.minute);
-18. console.info('select current date is: ' + JSON.stringify(value));
-19. }
-20. })
-21. }.width('100%')
-22. }
-23. }
-```
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/ycv0nepSQwSjnEJ32YTqRA/zh-cn_image_0000002736314983.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/9S-nwByaSYCbnW4wWB2Qww/zh-cn_image_0000002558766240.png)
+### 示例7（设置上午/下午跟随时间联动）
 
-### 示例7（设置上午下午跟随时间联动）
-
-该示例通过配置[enableCascade](ts-basic-components-timepicker.md#enablecascade18)、[loop](ts-basic-components-timepicker.md#loop11)实现12小时制时上午下午跟随时间联动。
+该示例通过配置[enableCascade](ts-basic-components-timepicker.md#enablecascade18)、[loop](ts-basic-components-timepicker.md#loop11)实现12小时制时上午/下午跟随时间联动。
 
 从API version 18开始，新增enableCascade接口。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TimePickerExample {
-5. private selectedTime: Date = new Date('2022-07-22T08:00:00');
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TimePickerExample {
+  private selectedTime: Date = new Date('2022-07-22T08:00:00');
 
-7. build() {
-8. Column() {
-9. TimePicker({
-10. selected: this.selectedTime,
-11. })
-12. .enableCascade(true)
-13. .loop(true)
-14. .onChange((value: TimePickerResult) => {
-15. if (value.hour >= 0) {
-16. this.selectedTime.setHours(value.hour, value.minute);
-17. console.info('select current date is: ' + JSON.stringify(value));
-18. }
-19. })
-20. }.width('100%')
-21. }
-22. }
+  build() {
+    Column() {
+      TimePicker({
+        selected: this.selectedTime,
+      })
+        .useMilitaryTime(false)
+        .enableCascade(true)
+        .loop(true)
+        .onChange((value: TimePickerResult) => {
+          if (value.hour >= 0) {
+            this.selectedTime.setHours(value.hour, value.minute);
+          console.info('select current time is: ' + JSON.stringify(value));
+          }
+        })
+    }.width('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/Av5-40j0SlO9cB4HGCHwvg/zh-cn_image_0000002558606582.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/5feVQ0UTTeCppIlHp6wJ7Q/zh-cn_image_0000002706675940.gif)

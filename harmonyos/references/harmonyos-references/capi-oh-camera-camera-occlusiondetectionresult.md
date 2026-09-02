@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: Camera_OcclusionDetectionResult
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 结构体 > Camera_OcclusionDetectionResult
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:56+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3f712486f3c7b998581b9a6cea896fd8d94f1f711c51bd64316616638ca74836
+scraped_at: 2026-09-02T15:02:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1ba4f5c03b54e864ec9dee5e083afa254c81ebc3ec3810d6bd2fc91f94436d77
 ---
 
-```
-1. typedef struct {...} Camera_OcclusionDetectionResult
+```c
+typedef struct {...} Camera_OcclusionDetectionResult
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 相机镜头遮挡、脏污检测结果。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

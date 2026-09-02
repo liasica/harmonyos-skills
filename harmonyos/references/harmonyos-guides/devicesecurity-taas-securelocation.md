@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 安全地理位置场景
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 可信应用服务 > 安全地理位置场景
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:31:31+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f7e994dc352bca67d64394518da466dae5d303659eb77738792a17bea07a7031
+scraped_at: 2026-09-02T14:50:02+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e9fa61402b307bb653b56e50d0d0cdc8fcd65431874ecac5e93992593877b8f8
 ---
 
 ## 场景介绍
@@ -16,32 +16,29 @@ content_hash: sha256:f7e994dc352bca67d64394518da466dae5d303659eb77738792a17bea07
 
 该特性需要设备支持安全地理位置功能。
 
-开发者在调用[initializeAttestContext](../harmonyos-references/devicesecurity-taas-api.md#initializeattestcontext)接口成功初始化安全地理位置的证明会话后，通过调用[getCurrentSecureLocation](../harmonyos-references/devicesecurity-taas-api.md#getcurrentsecurelocation)接口尝试获取安全地理位置，当接口异常并返回[ATTEST\_ERROR\_LOCATION\_SERVICE\_UNAVAILABLE](../harmonyos-references/devicesecurity-arktsapi-errcode-taas.md#section1011500014-位置服务不可用)时，当前设备不支持安全地理位置。具体判断方法参考如下示例：
+开发者在调用[initializeAttestContext](../harmonyos-references/devicesecurity-taas-api.md#initializeattestcontext)接口成功初始化安全地理位置的证明会话后，通过调用[getCurrentSecureLocation](../harmonyos-references/devicesecurity-taas-api.md#getcurrentsecurelocation)接口尝试获取安全地理位置，当接口异常并返回[ATTEST\_ERROR\_LOCATION\_SERVICE\_UNAVAILABLE](../harmonyos-references/errorcode-devicesecurity-taas.md#section1011500014-位置服务不可用)时，当前设备不支持安全地理位置。具体判断方法参考如下示例：
 
-```
-1. import { trustedAppService } from '@kit.DeviceSecurityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-
-4. // 初始化安全地理位置证明会话后，获取安全地理位置信息，以精度优先为例
-5. const timeout = 5000; // 获取安全地理位置的超时时间，单位为毫秒
-6. const priority = trustedAppService.LocatingPriority.PRIORITY_ACCURACY; // 采用精度优先策略
-7. let secureLocation: trustedAppService.SecureLocation;
-8. // 获取当前安全地理位置信息
-9. try {
-10. secureLocation = await trustedAppService.getCurrentSecureLocation(timeout, priority);
-11. } catch (err) {
-12. const error = err as BusinessError;
-13. if (error.code == trustedAppService.AttestExceptionErrCode.ATTEST_ERROR_LOCATION_SERVICE_UNAVAILABLE) {
-14. console.error(`current device not support secure location`);
-15. } else {
-16. console.error(`Failed to get current secure location, message:${error.message}, code:${error.code}`);
-17. }
-18. }
+```typescript
+// 初始化安全地理位置证明会话后，获取安全地理位置信息，以速度优先为例
+const timeout = 5000; // 获取安全地理位置的超时时间，单位为毫秒
+const priority = trustedAppService.LocatingPriority.PRIORITY_LOCATING_SPEED; // 采用速度优先策略
+try {
+  return await trustedAppService.getCurrentSecureLocation(timeout, priority);
+} catch (err) {
+  const error = err as BusinessError;
+  if (error.code == trustedAppService.AttestExceptionErrCode.ATTEST_ERROR_LOCATION_SERVICE_UNAVAILABLE) {
+    hilog.error(0x0000, 'TrustedAppService', 'current device not support secure location');
+  } else {
+    hilog.error(0x0000, 'TrustedAppService',
+      `Failed to get location by PRIORITY_LOCATING_SPEED. Code: ${error.code}, Message: ${error.message}`);
+  }
+  throw new Error(error.message);
+}
 ```
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/SyKLoQ70TEyyvWF1meig-A/zh-cn_image_0000002558605230.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/SY9PNbs1S---eDyz2-Kaqg/zh-cn_image_0000002736433443.jpg)
 
 应用获取安全地理位置的优先级策略有两种，分别是精度优先和速度优先。如果选择精度优先策略，可信应用服务会优先返回GPS的结果，GPS获取超时后返回网络地理位置；而如果选择速度优先策略，可信应用服务会返回从二者中最先获取到的结果。
 
@@ -60,89 +57,124 @@ content_hash: sha256:f7e994dc352bca67d64394518da466dae5d303659eb77738792a17bea07
 ## 开发步骤
 
 1. 申请位置权限，权限名称为“[ohos.permission.APPROXIMATELY\_LOCATION](permissions-for-all-user.md#ohospermissionapproximately_location)”和“[ohos.permission.LOCATION](permissions-for-all-user.md#ohospermissionlocation)”，具体请参考[向用户申请授权](request-user-authorization.md)。
-2. 导入可信应用服务模块。
+2. 导入trustedAppService模块和相关依赖模块。
 
-   ```
-   1. import { trustedAppService } from '@kit.DeviceSecurityKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { trustedAppService } from '@kit.DeviceSecurityKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { util } from '@kit.ArkTS';
+   import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+   import { cert } from '@kit.DeviceCertificateKit';
+   import hilog from '@ohos.hilog';
    ```
 3. 创建证明密钥并初始化证明会话。
 
-   ```
-   1. // 创建证明密钥的参数
-   2. const createProperties: Array<trustedAppService.AttestParam> = [
-   3. {
-   4. tag: trustedAppService.AttestTag.ATTEST_TAG_ALGORITHM,
-   5. value: trustedAppService.AttestKeyAlg.ATTEST_ALG_ECC
-   6. },
-   7. {
-   8. tag: trustedAppService.AttestTag.ATTEST_TAG_KEY_SIZE,
-   9. value: trustedAppService.AttestKeySize.ATTEST_ECC_KEY_SIZE_256
-   10. }
-   11. ];
-   12. const createOptions: trustedAppService.AttestOptions = {
-   13. properties: createProperties
-   14. };
-   15. // 初始化证明会话的参数
-   16. const userData = "trusted_app_service_demo" // 示例值，实际值请自行生成，长度在16到127 Bytes之间
-   17. const initProperties: Array<trustedAppService.AttestParam> = [
-   18. {
-   19. tag: trustedAppService.AttestTag.ATTEST_TAG_DEVICE_TYPE,
-   20. value: trustedAppService.AttestType.ATTEST_TYPE_LOCATION
-   21. },
-   22. {
-   23. tag: trustedAppService.AttestTag.ATTEST_TAG_DEVICE_ID,
-   24. value: BigInt(0) // 此参数在安全地理位置场景下不生效
-   25. }
-   26. ];
-   27. const initOptions: trustedAppService.AttestOptions = {
-   28. properties: initProperties
-   29. };
-   30. // 创建证明密钥并打开证明会话
-   31. let certChainList: Array<string>;
-   32. try {
-   33. await trustedAppService.createAttestKey(createOptions);
-   34. const result = await trustedAppService.initializeAttestContext(userData, initOptions);
-   35. certChainList = result.certChains;
-   36. } catch (err) {
-   37. const error = err as BusinessError;
-   38. console.error(`Failed to initialize attest context, message:${error.message}, code:${error.code}`);
-   39. }
-   ```
+   * 创建安全地理位置场景的证明密钥：
+
+     ```typescript
+     private async creatSecureLocationAttestKey(): Promise<void> {
+       // 创建证明密钥的参数
+       const createProperties: Array<trustedAppService.AttestParam> = [
+         {
+           tag: trustedAppService.AttestTag.ATTEST_TAG_ALGORITHM,
+           value: trustedAppService.AttestKeyAlg.ATTEST_ALG_ECC
+         },
+         {
+           tag: trustedAppService.AttestTag.ATTEST_TAG_KEY_SIZE,
+           value: trustedAppService.AttestKeySize.ATTEST_ECC_KEY_SIZE_256
+         }
+       ];
+       const createOptions: trustedAppService.AttestOptions = {
+         properties: createProperties
+       };
+       // 创建证明会话
+       try {
+         await trustedAppService.createAttestKey(createOptions);
+         hilog.info(0x0000, 'TrustedAppService', 'createAttestKey successfully');
+       } catch (error) {
+         const err = error as BusinessError;
+         hilog.error(0x0000, 'trustedappservice', `createattestkey failed, errCode: ${err.code}, errMsg: ${err.message}`);
+         throw new Error(err.message);
+       }
+     }
+     ```
+   * 初始化安全地理位置场景的证明会话：
+
+     ```typescript
+     private async initSecureLocationAttestContext(): Promise<number> {
+       try {
+         // 初始化证明会话的参数
+         const deviceId = 0;
+         const initProperties: Array<trustedAppService.AttestParam> = [
+           {
+             tag: trustedAppService.AttestTag.ATTEST_TAG_DEVICE_TYPE,
+             value: trustedAppService.AttestType.ATTEST_TYPE_LOCATION
+           },
+           {
+             tag: trustedAppService.AttestTag.ATTEST_TAG_DEVICE_ID,
+             value: BigInt(deviceId) // 此参数在安全地理位置场景下不生效
+           }
+         ];
+         const initOptions: trustedAppService.AttestOptions = {
+           properties: initProperties
+         };
+         let userData = 'trusted_app_service_default_userdata'; // 示例值，实际值请自行生成，长度在16到127 Bytes之间
+         // 初始化话证明会话
+         const certChainResult = await trustedAppService.initializeAttestContext(userData, initOptions);
+         if (certChainResult.certChains.length < 1) {
+           throw new Error('empty returned cert chain');
+         }
+         // ...
+         return 0;
+       } catch (err) {
+         const businessError = err as BusinessError;
+         hilog.error(0x0000, 'TrustedAppService',
+           `initializeAttestContext failed. errCode: ${businessError.code}, errMsg: ${businessError.message}`);
+         const finalNumericCode = Number(String(businessError.code ?? '').replace('n', '').trim());
+         return Number.isNaN(finalNumericCode) ? -1 : finalNumericCode;
+       }
+     }
+     ```
 4. 获取安全地理位置信息，以精度优先为例。
 
-   ```
-   1. const timeout = 5000; // 获取安全地理位置的超时时间，单位为毫秒
-   2. const priority = trustedAppService.LocatingPriority.PRIORITY_ACCURACY; // 采用精度优先策略
-   3. let secureLocation: trustedAppService.SecureLocation;
-   4. // 获取当前安全地理位置信息
-   5. try {
-   6. secureLocation = await trustedAppService.getCurrentSecureLocation(timeout, priority);
-   7. } catch (err) {
-   8. const error = err as BusinessError;
-   9. console.error(`Failed to get current secure location, message:${error.message}, code:${error.code}`);
-   10. }
+   ```typescript
+   private async getSecureLocationByAccuracy(): Promise<trustedAppService.SecureLocation> {
+     const timeout = 5000; // 获取安全地理位置的超时时间，单位为毫秒
+     const priority = trustedAppService.LocatingPriority.PRIORITY_ACCURACY; // 采用精度优先策略
+     // 获取当前安全地理位置信息
+     try {
+       return await trustedAppService.getCurrentSecureLocation(timeout, priority);
+     } catch (err) {
+       const error = err as BusinessError;
+       hilog.error(0x0000, 'TrustedAppService',
+         `Failed to get location by PRIORITY_ACCURACY. Code: ${error.code}, Message: ${error.message}`);
+       throw new Error(error.message);
+     }
+   }
    ```
 5. 结束证明会话。
 
-   ```
-   1. // 结束证明会话的参数
-   2. const finalProperties: Array<trustedAppService.AttestParam> = [
-   3. {
-   4. tag: trustedAppService.AttestTag.ATTEST_TAG_DEVICE_TYPE,
-   5. value: trustedAppService.AttestType.ATTEST_TYPE_LOCATION
-   6. }
-   7. ];
-   8. const finalOptions: trustedAppService.AttestOptions = {
-   9. properties: finalProperties,
-   10. };
-   11. // 结束证明会话
-   12. try {
-   13. await trustedAppService.finalizeAttestContext(finalOptions);
-   14. } catch (err) {
-   15. const error = err as BusinessError;
-   16. console.error(`Failed to finalize attest context, message:${error.message}, code:${error.code}`);
-   17. }
+   ```typescript
+   private async finalizeSecureLocationAttestContext(): Promise<void> {
+     // 结束证明会话的参数
+     const finalProperties: Array<trustedAppService.AttestParam> = [
+       {
+         tag: trustedAppService.AttestTag.ATTEST_TAG_DEVICE_TYPE,
+         value: trustedAppService.AttestType.ATTEST_TYPE_LOCATION
+       }
+     ];
+     const finalOptions: trustedAppService.AttestOptions = {
+       properties: finalProperties,
+     };
+     // 结束证明会话
+     try {
+       await trustedAppService.finalizeAttestContext(finalOptions);
+     } catch (err) {
+       const error = err as BusinessError;
+       hilog.error(0x0000, 'TrustedAppService',
+         'Failed to finalize attest context, code: ${error.code}, message: ${error.message}');
+     }
+   }
    ```
 
-   如果需要销毁证明密钥，请在结束证明会话后，调用[destroyAttestKey](../harmonyos-references/devicesecurity-taas-api.md#destroyattestkey)接口。
+   如果需要销毁证明密钥，请在结束证明会话后，调用[destroyAttestKey](../harmonyos-references/devicesecurity-taas-api.md#destroyattestkey)接口。由于安全摄像头、安全地理位置和安全图像压缩、裁剪共用同一个证明密钥，销毁前需要保证其余功能未在使用该证明密钥。

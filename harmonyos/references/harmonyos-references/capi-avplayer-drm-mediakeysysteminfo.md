@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avpl
 title: DRM_MediaKeySystemInfo
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 结构体 > DRM_MediaKeySystemInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:58+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:6a47e21c43d4da77b627e9df4a28bf0dc6db0f789adac5bf3ef3c6e15eb5271e
+scraped_at: 2026-09-02T14:53:01+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7d38665c20354f2b93d9625682531d4b9746b49291da8a1777032959ab27d986
 ---
 
-```
-1. typedef struct DRM_MediaKeySystemInfo DRM_MediaKeySystemInfo
+```c
+typedef struct DRM_MediaKeySystemInfo DRM_MediaKeySystemInfo
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-DRM\_MediaKeySystemInfo类型。
+DRM\_MediaKeySystemInfo类型，DRM媒体密钥系统信息结构体，用于存储和管理DRM媒体密钥系统相关信息。
 
 **起始版本：** 12
 

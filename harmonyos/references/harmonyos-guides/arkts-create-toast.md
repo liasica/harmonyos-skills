@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-
 title: 即时反馈（Toast）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 即时反馈（Toast）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:59+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d4ba6389c56ed5a7d4057b0fd123cad3e7d85066c19f92a5844a38fb7b5fb958
+scraped_at: 2026-09-02T14:59:18+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b755bedc746d3aeb3c59d0f6b43bc5dde20bfc67136070c3a8c85dd6bb03f2b9
 ---
 
 即时反馈（Toast）是一种临时性的消息提示框，用于向用户显示简短的操作反馈或状态信息。​它通常在屏幕的底部或顶部短暂弹出，随后在一段时间后自动消失。即时反馈的主要目的是提供简洁、不打扰的信息反馈，避免干扰用户当前的操作流程。
 
 可以通过使用[UIContext](../harmonyos-references/arkts-apis-uicontext-uicontext.md)中的[getPromptAction](../harmonyos-references/arkts-apis-uicontext-uicontext.md#getpromptaction)方法获取当前UI上下文关联的[PromptAction](../harmonyos-references/arkts-apis-uicontext-promptaction.md)对象，再通过该对象调用[showToast](../harmonyos-references/arkts-apis-uicontext-promptaction.md#showtoast)创建并显示文本提示框。
 
-说明
+**说明** 
 
 为了安全考虑，例如Toast恶意遮挡其他页面，Toast只能显示在当前的UI实例中，应用退出后，不会单独显示在桌面上。
 
@@ -47,167 +47,161 @@ content_hash: sha256:d4ba6389c56ed5a7d4057b0fd123cad3e7d85066c19f92a5844a38fb7b5
 | 是否避让软键盘 | 软键盘抬起时，必定上移软键盘的高度 | 软键盘抬起时，只有toast被遮挡时，才会避让，且避让后toast底部距离软键盘高度为80vp |
 | UIExtension内布局 | 以UIExtension为主窗中布局，对齐方式与UIExtension对齐 | 以宿主窗口为主窗中布局，对齐方式与宿主窗口对齐 |
 
+```typescript
+import { promptAction } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const TAG: string = '[Sample_dialogproject]';
+const DOMAIN: number = 0xFF00;
+
+@Entry
+@Component
+export struct DefaultAndTopToastExample {
+  build() {
+    // ...
+      Column({ space: 10 }) {
+        TextInput()
+        Button('Toast of the DEFAULT type')
+        .fontSize(20)
+        .fontWeight(FontWeight.Bold)
+        .onClick(() => {
+          try {
+            this.getUIContext().getPromptAction().showToast({
+              message: 'ok, I am DEFAULT toast',
+              duration: 2000,
+              showMode: promptAction.ToastShowMode.DEFAULT,
+              bottom: 80
+            });
+          } catch (error) {
+            let message = (error as BusinessError).message;
+            let code = (error as BusinessError).code;
+            hilog.error(DOMAIN, TAG, '%{public}s', `showToast args error code is ${code}, message is ${message}`);
+          }
+        })
+
+        Button('Toast of the TOPMOST type')
+        .fontSize(20)
+        .fontWeight(FontWeight.Bold)
+        .onClick(() => {
+          try {
+            this.getUIContext().getPromptAction().showToast({
+              message: 'ok, I am TOP_MOST toast',
+              duration: 2000,
+              showMode: promptAction.ToastShowMode.TOP_MOST,
+              bottom: 85
+            });
+          }  catch (error) {
+            let message = (error as BusinessError).message;
+            let code = (error as BusinessError).code;
+            hilog.error(DOMAIN, TAG, '%{public}s', `showToast args error code is ${code}, message is ${message}`);
+          }
+        })
+      }
+      // ...
+  }
+}
 ```
-1. import { promptAction } from '@kit.ArkUI';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. const TAG: string = '[Sample_dialogproject]';
-6. const DOMAIN: number = 0xFF00;
-
-8. @Entry
-9. @Component
-10. export struct DefaultAndTopToastExample {
-11. build() {
-12. // ...
-13. Column({ space: 10 }) {
-14. TextInput()
-15. Button('Toast of the DEFAULT type')
-16. .fontSize(20)
-17. .fontWeight(FontWeight.Bold)
-18. .onClick(() => {
-19. try {
-20. this.getUIContext().getPromptAction().showToast({
-21. message: 'ok, I am DEFAULT toast',
-22. duration: 2000,
-23. showMode: promptAction.ToastShowMode.DEFAULT,
-24. bottom: 80
-25. });
-26. } catch (error) {
-27. let message = (error as BusinessError).message;
-28. let code = (error as BusinessError).code;
-29. hilog.error(DOMAIN, TAG, '%{public}s', 'showToast args error code is $\{code}, message is $\{message}');
-30. }
-31. })
-
-33. Button('Toast of the TOPMOST type')
-34. .fontSize(20)
-35. .fontWeight(FontWeight.Bold)
-36. .onClick(() => {
-37. try {
-38. this.getUIContext().getPromptAction().showToast({
-39. message: 'ok, I am TOP_MOST toast',
-40. duration: 2000,
-41. showMode: promptAction.ToastShowMode.TOP_MOST,
-42. bottom: 85
-43. });
-44. }  catch (error) {
-45. let message = (error as BusinessError).message;
-46. let code = (error as BusinessError).code;
-47. hilog.error(DOMAIN, TAG, '%{public}s', 'showToast args error code is $\{code}, message is $\{message}');
-48. }
-49. })
-50. }
-51. // ...
-52. }
-53. }
-```
-
-[DefaultAndTopToast.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/Toast/DefaultAndTopToast.ets#L16-L80)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/BUjjvks0SWmtNtKu0ukDVg/zh-cn_image_0000002589244223.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/RR8sddzLTAe8ceXceBO1tg/zh-cn_image_0000002706673764.gif)
 
 ## 创建即时反馈
 
 适用于短时间内提示框自动消失的场景。
 
+```typescript
+import { PromptAction } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const TAG: string = '[Sample_dialogproject]';
+const DOMAIN: number = 0xFF00;
+
+@Entry
+@Component
+export struct CreateToastExample {
+  private uiContext: UIContext = this.getUIContext();
+  private promptAction: PromptAction = this.uiContext.getPromptAction();
+  build() {
+    // ...
+      Column() {
+        Button('Show toast').fontSize(20)
+          .onClick(() => {
+            try {
+              this.promptAction.showToast({
+                message: 'Hello World',
+                duration: 2000
+              });
+            } catch (error) {
+              let message = (error as BusinessError).message;
+              let code = (error as BusinessError).code;
+              hilog.error(DOMAIN, TAG, '%{public}s', `showToast args error code is ${code}, message is ${message}`);
+            }
+          })
+      }.height('100%').width('100%').justifyContent(FlexAlign.Center)
+      // ...
+  }
+}
 ```
-1. import { PromptAction } from '@kit.ArkUI';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. const TAG: string = '[Sample_dialogproject]';
-6. const DOMAIN: number = 0xFF00;
-
-8. @Entry
-9. @Component
-10. export struct CreateToastExample {
-11. private uiContext: UIContext = this.getUIContext();
-12. private promptAction: PromptAction = this.uiContext.getPromptAction();
-13. build() {
-14. // ...
-15. Column() {
-16. Button('Show toast').fontSize(20)
-17. .onClick(() => {
-18. try {
-19. this.promptAction.showToast({
-20. message: 'Hello World',
-21. duration: 2000
-22. });
-23. } catch (error) {
-24. let message = (error as BusinessError).message;
-25. let code = (error as BusinessError).code;
-26. hilog.error(DOMAIN, TAG, '%{public}s', 'showToast args error code is $\{code}, message is $\{message}');
-27. }
-28. })
-29. }.height('100%').width('100%').justifyContent(FlexAlign.Center)
-30. // ...
-31. }
-32. }
-```
-
-[CreateToast.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/Toast/CreateToast.ets#L16-L56)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/psoES4_ZQpKYmadZpQOkBg/zh-cn_image_0000002558764416.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/HFIGbiWJTjmiZExiA0PnfA/zh-cn_image_0000002736432855.gif)
 
 ## 显示和关闭即时反馈
 
 适用于提示框停留时间较长，用户操作可以提前关闭提示框的场景。
 
+```typescript
+import { PromptAction } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const TAG: string = '[Sample_dialogproject]';
+const DOMAIN: number = 0xFF00;
+
+@Entry
+@Component
+export struct OpenCloseToastExample {
+  @State toastId: number = 0;
+  private uiContext: UIContext = this.getUIContext();
+  private promptAction: PromptAction = this.uiContext.getPromptAction();
+
+  build() {
+    // ...
+      Column() {
+        Button('Open Toast')
+          .height(100)
+          .type(ButtonType.Capsule)
+          .onClick(() => {
+            try {
+              this.promptAction.openToast({
+                message: 'Toast Message',
+                duration: 10000,
+              }).then((toastId: number) => {
+                this.toastId = toastId;
+              });
+            } catch (error) {
+              let message = (error as BusinessError).message;
+              let code = (error as BusinessError).code;
+              hilog.error(DOMAIN, TAG, '%{public}s', `OpenToast error code is ${code}, message is ${message}`);
+            }
+          })
+        Blank().height(50);
+        Button('Close Toast')
+          .height(100)
+          .type(ButtonType.Capsule)
+          .onClick(() => {
+            try {
+              this.promptAction.closeToast(this.toastId);
+            } catch (error) {
+              let message = (error as BusinessError).message;
+              let code = (error as BusinessError).code;
+              hilog.error(DOMAIN, TAG, '%{public}s', `CloseToast error code is ${code}, message is ${message}`);
+            }
+          })
+      }.height('100%').width('100%').justifyContent(FlexAlign.Center)
+      // ...
+  }
+}
 ```
-1. import { PromptAction } from '@kit.ArkUI';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. const TAG: string = '[Sample_dialogproject]';
-6. const DOMAIN: number = 0xFF00;
-
-8. @Entry
-9. @Component
-10. export struct OpenCloseToastExample {
-11. @State toastId: number = 0;
-12. private uiContext: UIContext = this.getUIContext();
-13. private promptAction: PromptAction = this.uiContext.getPromptAction();
-
-15. build() {
-16. // ...
-17. Column() {
-18. Button('Open Toast')
-19. .height(100)
-20. .type(ButtonType.Capsule)
-21. .onClick(() => {
-22. try {
-23. this.promptAction.openToast({
-24. message: 'Toast Message',
-25. duration: 10000,
-26. }).then((toastId: number) => {
-27. this.toastId = toastId;
-28. });
-29. } catch (error) {
-30. let message = (error as BusinessError).message;
-31. let code = (error as BusinessError).code;
-32. hilog.error(DOMAIN, TAG, '%{public}s', 'OpenToast error code is $\{code}, message is $\{message}');
-33. }
-34. })
-35. Blank().height(50);
-36. Button('Close Toast')
-37. .height(100)
-38. .type(ButtonType.Capsule)
-39. .onClick(() => {
-40. try {
-41. this.promptAction.closeToast(this.toastId);
-42. } catch (error) {
-43. let message = (error as BusinessError).message;
-44. let code = (error as BusinessError).code;
-45. hilog.error(DOMAIN, TAG, '%{public}s', 'CloseToast error code is $\{code}, message is $\{message}');
-46. }
-47. })
-48. }.height('100%').width('100%').justifyContent(FlexAlign.Center)
-49. // ...
-50. }
-51. }
-```
-
-[OpenCloseToast.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/DialogProject/entry/src/main/ets/pages/Toast/OpenCloseToast.ets#L15-L74)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/hmKK-k-_TYCFo0RQSzcV-w/zh-cn_image_0000002558604760.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/jrpgIfzASvaOdYze_UffsQ/zh-cn_image_0000002706833700.gif)

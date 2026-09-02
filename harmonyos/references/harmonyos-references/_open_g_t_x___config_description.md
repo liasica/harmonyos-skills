@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_open_g_t
 title: OpenGTX_ConfigDescription
 breadcrumb: API参考 > 图形 > Graphics Accelerate Kit（图形加速服务） > C API > 头文件和结构体 > 结构体 > OpenGTX_ConfigDescription
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:47+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:94da40d8cd707b6249405151332250cccb9e40428e54d960882f729d048e1414
+scraped_at: 2026-09-02T15:02:48+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:dcf3290461bbf81e55fb7e4016beffdf4ada536c2c7c6d22aaafc25bb8a5bb3e
 ---
 
 ## 概述
-
-PhoneTabletTV
 
 此结构体描述OpenGTX属性配置。
 
@@ -22,11 +20,7 @@ PhoneTabletTV
 
 ## 汇总
 
-PhoneTabletTV
-
 ### 成员变量
-
-PhoneTabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -46,14 +40,10 @@ PhoneTabletTV
 
 ## 结构体成员变量说明
 
-PhoneTabletTV
-
 ### appVersion
 
-PhoneTabletTV
-
-```
-1. char* OpenGTX_ConfigDescription::appVersion
+```c
+char* OpenGTX_ConfigDescription::appVersion
 ```
 
 **描述**
@@ -62,10 +52,8 @@ PhoneTabletTV
 
 ### engineType
 
-PhoneTabletTV
-
-```
-1. OpenGTX_EngineType OpenGTX_ConfigDescription::engineType
+```c
+OpenGTX_EngineType OpenGTX_ConfigDescription::engineType
 ```
 
 **描述**
@@ -74,10 +62,8 @@ PhoneTabletTV
 
 ### engineVersion
 
-PhoneTabletTV
-
-```
-1. char* OpenGTX_ConfigDescription::engineVersion
+```c
+char* OpenGTX_ConfigDescription::engineVersion
 ```
 
 **描述**
@@ -86,10 +72,8 @@ PhoneTabletTV
 
 ### gameKeyThreadIds[5]
 
-PhoneTabletTV
-
-```
-1. int32_t OpenGTX_ConfigDescription::gameKeyThreadIds[5]
+```c
+int32_t OpenGTX_ConfigDescription::gameKeyThreadIds[5]
 ```
 
 **描述**
@@ -98,10 +82,8 @@ PhoneTabletTV
 
 ### gameMainThreadId
 
-PhoneTabletTV
-
-```
-1. int32_t OpenGTX_ConfigDescription::gameMainThreadId
+```c
+int32_t OpenGTX_ConfigDescription::gameMainThreadId
 ```
 
 **描述**
@@ -110,10 +92,8 @@ PhoneTabletTV
 
 ### gameRenderThreadId
 
-PhoneTabletTV
-
-```
-1. int32_t OpenGTX_ConfigDescription::gameRenderThreadId
+```c
+int32_t OpenGTX_ConfigDescription::gameRenderThreadId
 ```
 
 **描述**
@@ -122,10 +102,8 @@ PhoneTabletTV
 
 ### gameType
 
-PhoneTabletTV
-
-```
-1. OpenGTX_GameType OpenGTX_ConfigDescription::gameType
+```c
+OpenGTX_GameType OpenGTX_ConfigDescription::gameType
 ```
 
 **描述**
@@ -134,10 +112,8 @@ PhoneTabletTV
 
 ### mode
 
-PhoneTabletTV
-
-```
-1. OpenGTX_LTPO_Mode OpenGTX_ConfigDescription::mode
+```c
+OpenGTX_LTPO_Mode OpenGTX_ConfigDescription::mode
 ```
 
 **描述**
@@ -146,10 +122,8 @@ LTPO方案模式，支持场景模式、触控模式、自适应模式。
 
 ### packageName
 
-PhoneTabletTV
-
-```
-1. char* OpenGTX_ConfigDescription::packageName
+```c
+char* OpenGTX_ConfigDescription::packageName
 ```
 
 **描述**
@@ -158,10 +132,8 @@ PhoneTabletTV
 
 ### pictureQualityMaxLevel
 
-PhoneTabletTV
-
-```
-1. OpenGTX_PictureQualityMaxLevel OpenGTX_ConfigDescription::pictureQualityMaxLevel
+```c
+OpenGTX_PictureQualityMaxLevel OpenGTX_ConfigDescription::pictureQualityMaxLevel
 ```
 
 **描述**
@@ -170,10 +142,8 @@ PhoneTabletTV
 
 ### resolutionMaxValue
 
-PhoneTabletTV
-
-```
-1. OpenGTX_ResolutionValue OpenGTX_ConfigDescription::resolutionMaxValue
+```c
+OpenGTX_ResolutionValue OpenGTX_ConfigDescription::resolutionMaxValue
 ```
 
 **描述**
@@ -182,10 +152,8 @@ PhoneTabletTV
 
 ### targetFPS
 
-PhoneTabletTV
-
-```
-1. int32_t OpenGTX_ConfigDescription::targetFPS
+```c
+int32_t OpenGTX_ConfigDescription::targetFPS
 ```
 
 **描述**
@@ -194,10 +162,8 @@ PhoneTabletTV
 
 ### vulkanSupport
 
-PhoneTabletTV
-
-```
-1. bool OpenGTX_ConfigDescription::vulkanSupport
+```c
+bool OpenGTX_ConfigDescription::vulkanSupport
 ```
 
 **描述**

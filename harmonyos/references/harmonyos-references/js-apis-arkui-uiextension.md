@@ -3,46 +3,40 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.arkui.uiExtension (uiExtension)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.uiExtension (uiExtension)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:50:41+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:d280e370c270a618b9a943224475076e175f05fae2a48a5587045b3b449cfcac
+scraped_at: 2026-09-02T15:00:50+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9d3945705e3591334b899689e9138e0296daae0f36ef3f45e37cec68afb6551b
 ---
 
 用于[EmbeddedUIExtensionAbility](../harmonyos-guides/embeddeduiextensionability.md)（或[UIExtensionAbility](js-apis-app-ability-uiextensionability.md#uiextensionability)）中获取宿主应用的窗口信息或对应的[EmbeddedComponent](ts-container-embedded-component.md)组件的信息。
 
-说明
+**说明** 
 
-* 从API version 12开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { uiExtension } from '@kit.ArkUI';
+```ts
+import { uiExtension } from '@kit.ArkUI';
 ```
 
 ## WindowProxy
-
-PhonePC/2in1TabletTVWearable
 
 UIExtension宿主窗代理。
 
 ### 属性
 
-PhonePC/2in1TabletTVWearable
-
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用
+**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | properties14+ | [WindowProxyProperties](js-apis-arkui-uiextension.md#windowproxyproperties14) | 否 | 否 | 组件（EmbeddedComponent或UIExtensionComponent）的信息。  **约束：** 由于架构约束，不建议在[onSessionCreate](js-apis-app-ability-uiextensionability.md#onsessioncreate)阶段同步获取该值，建议在收到[on('windowSizeChange')](js-apis-arkui-uiextension.md#onwindowsizechange)回调之后获取。 |
 
 ### getWindowAvoidArea
-
-PhonePC/2in1TabletTVWearable
 
 getWindowAvoidArea(type: window.AvoidAreaType): window.AvoidArea
 
@@ -51,6 +45,8 @@ getWindowAvoidArea(type: window.AvoidAreaType): window.AvoidArea
 **系统能力**：SystemCapability.ArkUI.ArkUI.Full
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
@@ -74,24 +70,22 @@ getWindowAvoidArea(type: window.AvoidAreaType): window.AvoidArea
 
 **示例：**
 
-```
-1. // ExtensionProvider.ets
-2. import { EmbeddedUIExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
-3. import { window } from '@kit.ArkUI';
+```ts
+// ExtensionProvider.ets
+import { EmbeddedUIExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
 
-5. export default class EntryAbility extends EmbeddedUIExtensionAbility {
-6. onSessionCreate(want: Want, session: UIExtensionContentSession) {
-7. const extensionWindow = session.getUIExtensionWindowProxy();
-8. // 获取宿主应用窗口的避让信息
-9. let avoidArea: window.AvoidArea | undefined = extensionWindow?.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);
-10. console.info(`avoidArea: ${JSON.stringify(avoidArea)}`);
-11. }
-12. }
+export default class EntryAbility extends EmbeddedUIExtensionAbility {
+  onSessionCreate(want: Want, session: UIExtensionContentSession) {
+    const extensionWindow = session.getUIExtensionWindowProxy();
+    // 获取宿主应用窗口的避让信息
+    let avoidArea: window.AvoidArea | undefined = extensionWindow?.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);
+    console.info(`avoidArea: ${JSON.stringify(avoidArea)}`);
+  }
+}
 ```
 
 ### on('avoidAreaChange')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'avoidAreaChange', callback: Callback<AvoidAreaInfo>): void
 
@@ -100,6 +94,8 @@ on(type: 'avoidAreaChange', callback: Callback<AvoidAreaInfo>): void
 **系统能力**：SystemCapability.ArkUI.ArkUI.Full
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
@@ -110,33 +106,32 @@ on(type: 'avoidAreaChange', callback: Callback<AvoidAreaInfo>): void
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)。
+以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[窗口错误码](errorcode-window.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
+| 1300002 | Abnormal state. Possible causes: 1. The listening type is not supported. 2. The listener has been registered. 3. The UIExtension window proxy is abnormal. |
 
 **示例：**
 
-```
-1. // ExtensionProvider.ets
-2. import { EmbeddedUIExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
-3. import { uiExtension } from '@kit.ArkUI';
+```ts
+// ExtensionProvider.ets
+import { EmbeddedUIExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
+import { uiExtension } from '@kit.ArkUI';
 
-5. export default class EntryAbility extends EmbeddedUIExtensionAbility {
-6. onSessionCreate(want: Want, session: UIExtensionContentSession) {
-7. const extensionWindow = session.getUIExtensionWindowProxy();
-8. // 注册避让区变化的监听
-9. extensionWindow.on('avoidAreaChange', (info: uiExtension.AvoidAreaInfo) => {
-10. console.info(`The avoid area of the host window is: ${JSON.stringify(info.area)}.`);
-11. });
-12. }
-13. }
+export default class EntryAbility extends EmbeddedUIExtensionAbility {
+  onSessionCreate(want: Want, session: UIExtensionContentSession) {
+    const extensionWindow = session.getUIExtensionWindowProxy();
+    // 注册避让区变化的监听
+    extensionWindow.on('avoidAreaChange', (info: uiExtension.AvoidAreaInfo) => {
+      console.info(`The avoid area of the host window is: ${JSON.stringify(info.area)}.`);
+    });
+  }
+}
 ```
 
 ### off('avoidAreaChange')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'avoidAreaChange', callback?: Callback<AvoidAreaInfo>): void
 
@@ -145,6 +140,8 @@ off(type: 'avoidAreaChange', callback?: Callback<AvoidAreaInfo>): void
 **系统能力**：SystemCapability.ArkUI.ArkUI.Full
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
@@ -155,30 +152,29 @@ off(type: 'avoidAreaChange', callback?: Callback<AvoidAreaInfo>): void
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)。
+以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[窗口错误码](errorcode-window.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
+| 1300002 | Abnormal state. Possible causes: 1. The listening type is not supported. 2. The listening type is not registered. 3. The listener has not been registered. 4. The UIExtension window proxy is abnormal. |
 
 **示例：**
 
-```
-1. // ExtensionProvider.ets
-2. import { EmbeddedUIExtensionAbility, UIExtensionContentSession } from '@kit.AbilityKit';
+```ts
+// ExtensionProvider.ets
+import { EmbeddedUIExtensionAbility, UIExtensionContentSession } from '@kit.AbilityKit';
 
-4. export default class EntryAbility extends EmbeddedUIExtensionAbility {
-5. onSessionDestroy(session: UIExtensionContentSession) {
-6. const extensionWindow = session.getUIExtensionWindowProxy();
-7. // 注销所有避让区变化的监听
-8. extensionWindow.off('avoidAreaChange');
-9. }
-10. }
+export default class EntryAbility extends EmbeddedUIExtensionAbility {
+  onSessionDestroy(session: UIExtensionContentSession) {
+    const extensionWindow = session.getUIExtensionWindowProxy();
+    // 注销所有避让区变化的监听
+    extensionWindow.off('avoidAreaChange');
+  }
+}
 ```
 
 ### on('windowSizeChange')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'windowSizeChange', callback: Callback<window.Size>): void
 
@@ -187,6 +183,8 @@ on(type: 'windowSizeChange', callback: Callback<window.Size>): void
 **系统能力**：SystemCapability.ArkUI.ArkUI.Full
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
@@ -197,33 +195,32 @@ on(type: 'windowSizeChange', callback: Callback<window.Size>): void
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)。
+以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[窗口错误码](errorcode-window.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
+| 1300002 | Abnormal state. Possible causes: 1. The listening type is not supported. 2. The listener has been registered. 3. The UIExtension window proxy is abnormal. |
 
 **示例：**
 
-```
-1. // ExtensionProvider.ets
-2. import { EmbeddedUIExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
-3. import { window } from '@kit.ArkUI';
+```ts
+// ExtensionProvider.ets
+import { EmbeddedUIExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
 
-5. export default class EntryAbility extends EmbeddedUIExtensionAbility {
-6. onSessionCreate(want: Want, session: UIExtensionContentSession) {
-7. const extensionWindow = session.getUIExtensionWindowProxy();
-8. // 注册组件（EmbeddedComponent或UIExtensionComponent）大小变化的监听
-9. extensionWindow.on('windowSizeChange', (size: window.Size) => {
-10. console.info(`The size of the component is: ${JSON.stringify(size)}.`);
-11. });
-12. }
-13. }
+export default class EntryAbility extends EmbeddedUIExtensionAbility {
+  onSessionCreate(want: Want, session: UIExtensionContentSession) {
+    const extensionWindow = session.getUIExtensionWindowProxy();
+    // 注册组件（EmbeddedComponent或UIExtensionComponent）大小变化的监听
+    extensionWindow.on('windowSizeChange', (size: window.Size) => {
+      console.info(`The size of the component is: ${JSON.stringify(size)}.`);
+    });
+  }
+}
 ```
 
 ### off('windowSizeChange')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'windowSizeChange', callback?: Callback<window.Size>): void
 
@@ -233,39 +230,40 @@ off(type: 'windowSizeChange', callback?: Callback<window.Size>): void
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 注销的事件类型，固定值：'windowSizeChange'，即组件（EmbeddedComponent或UIExtensionComponent）尺寸变化事件。 |
+| type | string | 是 | 注销的事件类型，固定为'windowSizeChange'，即组件（EmbeddedComponent或UIExtensionComponent）尺寸变化事件。 |
 | callback | [Callback](js-apis-base.md#callback)<[window.Size](arkts-apis-window-i.md#size7)> | 否 | 回调函数。返回当前的组件（EmbeddedComponent或UIExtensionComponent）尺寸。如果传入该参数，则关闭该监听。如果未传入参数，则关闭组件（EmbeddedComponent或UIExtensionComponent）尺寸变化的监听。 |
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)。
+以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[窗口错误码](errorcode-window.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
+| 1300002 | Abnormal state. Possible causes: 1. The listening type is not supported. 2. The listening type is not registered. 3. The listener has not been registered. 4. The UIExtension window proxy is abnormal. |
 
 **示例：**
 
-```
-1. // ExtensionProvider.ets
-2. import { EmbeddedUIExtensionAbility, UIExtensionContentSession } from '@kit.AbilityKit';
+```ts
+// ExtensionProvider.ets
+import { EmbeddedUIExtensionAbility, UIExtensionContentSession } from '@kit.AbilityKit';
 
-4. export default class EntryAbility extends EmbeddedUIExtensionAbility {
-5. onSessionDestroy(session: UIExtensionContentSession) {
-6. const extensionWindow = session.getUIExtensionWindowProxy();
-7. // 注销组件（EmbeddedComponent或UIExtensionComponent）大小变化的监听
-8. extensionWindow.off('windowSizeChange');
-9. }
-10. }
+export default class EntryAbility extends EmbeddedUIExtensionAbility {
+  onSessionDestroy(session: UIExtensionContentSession) {
+    const extensionWindow = session.getUIExtensionWindowProxy();
+    // 注销组件（EmbeddedComponent或UIExtensionComponent）大小变化的监听
+    extensionWindow.off('windowSizeChange');
+  }
+}
 ```
 
 ### on('rectChange')14+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'rectChange', reasons: number, callback: Callback<RectChangeOptions>): void
 
@@ -275,46 +273,47 @@ on(type: 'rectChange', reasons: number, callback: Callback<RectChangeOptions>): 
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
-**设备行为差异：** 该接口在2in1设备中可正常调用，在其他设备中返回801错误码。
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**设备行为差异：** 该接口在PC/2in1设备中可正常调用，在其他设备中返回801错误码。
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 监听事件，固定为'rectChange'，即组件（EmbeddedComponent或UIExtensionComponent）矩形变化事件。 |
+| type | string | 是 | 监听的事件类型，固定为'rectChange'，即组件（EmbeddedComponent或UIExtensionComponent）矩形变化事件。 |
 | reasons | number | 是 | 触发组件（EmbeddedComponent或UIExtensionComponent）位置及尺寸变化的原因，具体取值可参考[RectChangeReason](js-apis-arkui-uiextension.md#rectchangereason14)枚举值。 |
-| callback | [Callback](js-apis-base.md#callback)<[RectChangeOptions](js-apis-arkui-uiextension.md#rectchangeoptions14)> | 是 | 回调函数。返回当前组件（EmbeddedComponent或UIExtensionComponent）矩形变化值及变化原因。 |
+| callback | [Callback](js-apis-base.md#callback)<[RectChangeOptions](js-apis-arkui-uiextension.md#rectchangeoptions14)> | 是 | 回调函数：入参用于接收当前组件（EmbeddedComponent或UIExtensionComponent）矩形变化值及变化原因。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
+以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[窗口错误码](errorcode-window.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible cause: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 1300002 | Abnormal state. Possible causes: 1. The listening type is not supported. 2. The listener has been registered. 3. The UIExtension window proxy is abnormal. |
 
 **示例：**
 
-```
-1. // ExtensionProvider.ets
-2. import { EmbeddedUIExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
-3. import { uiExtension } from '@kit.ArkUI';
+```ts
+// ExtensionProvider.ets
+import { EmbeddedUIExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
+import { uiExtension } from '@kit.ArkUI';
 
-5. export default class EntryAbility extends EmbeddedUIExtensionAbility {
-6. onSessionCreate(want: Want, session: UIExtensionContentSession) {
-7. const extensionWindow = session.getUIExtensionWindowProxy();
-8. // 注册组件（EmbeddedComponent或UIExtensionComponent）位置及尺寸变化的监听
-9. extensionWindow.on('rectChange', uiExtension.RectChangeReason.HOST_WINDOW_RECT_CHANGE, (data: uiExtension.RectChangeOptions) => {
-10. console.info('Succeeded window rect changes. Data: ' + JSON.stringify(data));
-11. });
-12. }
-13. }
+export default class EntryAbility extends EmbeddedUIExtensionAbility {
+  onSessionCreate(want: Want, session: UIExtensionContentSession) {
+    const extensionWindow = session.getUIExtensionWindowProxy();
+    // 注册组件（EmbeddedComponent或UIExtensionComponent）位置及尺寸变化的监听
+    extensionWindow.on('rectChange', uiExtension.RectChangeReason.HOST_WINDOW_RECT_CHANGE, (data: uiExtension.RectChangeOptions) => {
+        console.info('Succeeded window rect changes. Data: ' + JSON.stringify(data));
+    });
+  }
+}
 ```
 
 ### off('rectChange')14+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'rectChange', callback?: Callback<RectChangeOptions>): void
 
@@ -324,42 +323,43 @@ off(type: 'rectChange', callback?: Callback<RectChangeOptions>): void
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
-**设备行为差异：** 该接口在2in1设备中可正常调用，在其他设备中返回801错误码。
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**设备行为差异：** 该接口在PC/2in1设备中可正常调用，在其他设备中返回801错误码。
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 监听事件，固定为'rectChange'，即组件（EmbeddedComponent或UIExtensionComponent）矩形变化事件。 |
+| type | string | 是 | 注销的事件类型，固定为'rectChange'，即组件（EmbeddedComponent或UIExtensionComponent）矩形变化事件。 |
 | callback | [Callback](js-apis-base.md#callback)<[RectChangeOptions](js-apis-arkui-uiextension.md#rectchangeoptions14)> | 否 | 回调函数。返回当前组件（EmbeddedComponent或UIExtensionComponent）矩形变化值及变化原因。如果传入参数，则关闭该监听。如果未传入参数，则关闭所有组件（EmbeddedComponent或UIExtensionComponent）矩形变化的监听。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
+以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[窗口错误码](errorcode-window.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible cause: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 1300002 | Abnormal state. Possible causes: 1. The listening type is not supported. 2. The listening type is not registered. 3. The listener has not been registered. 4. The UIExtension window proxy is abnormal. |
 
 **示例：**
 
-```
-1. // ExtensionProvider.ets
-2. import { EmbeddedUIExtensionAbility, UIExtensionContentSession } from '@kit.AbilityKit';
+```ts
+// ExtensionProvider.ets
+import { EmbeddedUIExtensionAbility, UIExtensionContentSession } from '@kit.AbilityKit';
 
-4. export default class EntryAbility extends EmbeddedUIExtensionAbility {
-5. onSessionDestroy(session: UIExtensionContentSession) {
-6. const extensionWindow = session.getUIExtensionWindowProxy();
-7. // 注销组件（EmbeddedComponent或UIExtensionComponent）位置及尺寸变化的监听
-8. extensionWindow.off('rectChange');
-9. }
-10. }
+export default class EntryAbility extends EmbeddedUIExtensionAbility {
+  onSessionDestroy(session: UIExtensionContentSession) {
+    const extensionWindow = session.getUIExtensionWindowProxy();
+    // 注销组件（EmbeddedComponent或UIExtensionComponent）位置及尺寸变化的监听
+    extensionWindow.off('rectChange');
+  }
+}
 ```
 
 ### createSubWindowWithOptions
-
-PhonePC/2in1TabletTVWearable
 
 createSubWindowWithOptions(name: string, subWindowOptions: window.SubWindowOptions): Promise<window.Window>
 
@@ -371,7 +371,7 @@ createSubWindowWithOptions(name: string, subWindowOptions: window.SubWindowOptio
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-**设备行为差异：** 当[subWindowOptions](arkts-apis-window-i.md#subwindowoptions11)中isModal为true且[modalityType](arkts-apis-window-e.md#modalitytype14)为APPLICATION\_MODALITY时，该接口在支持并处于[自由窗口](../harmonyos-guides/window-terminology.md#自由窗口)状态的设备上可正常调用；在支持但不处于[自由窗口](../harmonyos-guides/window-terminology.md#自由窗口)状态的设备及不支持[自由窗口](../harmonyos-guides/window-terminology.md#自由窗口)状态的设备上调用返回801错误码。
+**设备行为差异：** 当[subWindowOptions](arkts-apis-window-i.md#subwindowoptions11)中isModal为true且[modalityType](arkts-apis-window-e.md#modalitytype14)为APPLICATION\_MODALITY时，该接口在支持并处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备上可正常调用；在支持但不处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备及不支持[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备上调用返回801错误码。
 
 **参数：**
 
@@ -394,58 +394,57 @@ createSubWindowWithOptions(name: string, subWindowOptions: window.SubWindowOptio
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
-| 1300002 | This window state is abnormal. Possible causes: 1. The window is not created or destroyed. 2. Internal task error. |
+| 1300002 | This window state is abnormal. Possible causes: 1. The window is not created or destroyed. 2. Internal task error. 3. The subWindow has been created and cannot be created again. 4. It is not allowed to create non-secure window when secure extension exists. |
+| 1300035 | Creating a subwindow is not allowed in the current context. Possible cause: 1. An AgentUIExtensionAbility cannot create a subwindow. |
 
 **示例：**
 
-```
-1. // ExtensionProvider.ets
-2. import { EmbeddedUIExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
-3. import { window } from '@kit.ArkUI';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// ExtensionProvider.ets
+import { EmbeddedUIExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. export default class EntryAbility extends EmbeddedUIExtensionAbility {
-7. onSessionCreate(want: Want, session: UIExtensionContentSession) {
-8. const extensionWindow = session.getUIExtensionWindowProxy();
-9. const subWindowOpts: window.SubWindowOptions = {
-10. title: 'This is a subwindow',
-11. decorEnabled: true
-12. };
-13. // 创建子窗口
-14. extensionWindow.createSubWindowWithOptions('subWindowForHost', subWindowOpts)
-15. .then((subWindow: window.Window) => {
-16. subWindow.setUIContent('pages/Index', (err, data) => {
-17. if (err && err.code != 0) {
-18. return;
-19. }
-20. subWindow?.resize(300, 300, (err, data) => {
-21. if (err && err.code != 0) {
-22. return;
-23. }
-24. subWindow?.moveWindowTo(100, 100, (err, data) => {
-25. if (err && err.code != 0) {
-26. return;
-27. }
-28. subWindow?.showWindow((err, data) => {
-29. if (err && err.code == 0) {
-30. console.info(`The subwindow has been shown!`);
-31. } else {
-32. console.error(`Failed to show the subwindow!`);
-33. }
-34. });
-35. });
-36. });
-37. });
-38. }).catch((error: BusinessError) => {
-39. console.error(`Create subwindow failed. Cause code: ${error.code}, message: ${error.message}`);
-40. })
-41. }
-42. }
+export default class EntryAbility extends EmbeddedUIExtensionAbility {
+  onSessionCreate(want: Want, session: UIExtensionContentSession) {
+    const extensionWindow = session.getUIExtensionWindowProxy();
+    const subWindowOpts: window.SubWindowOptions = {
+      title: 'This is a subwindow',
+      decorEnabled: true
+    };
+    // 创建子窗口
+    extensionWindow.createSubWindowWithOptions('subWindowForHost', subWindowOpts)
+      .then((subWindow: window.Window) => {
+        subWindow.setUIContent('pages/Index', (err, data) => {
+          if (err && err.code) {
+            return;
+          }
+          subWindow?.resize(300, 300, (err, data) => {
+            if (err && err.code) {
+              return;
+            }
+            subWindow?.moveWindowTo(100, 100, (err, data) => {
+              if (err && err.code) {
+                return;
+              }
+              subWindow?.showWindow((err, data) => {
+                if (err && err.code) {
+                  console.error(`Failed to show the subwindow. Code: ${err.code}, message: ${err.message}`);
+                } else {
+                  console.info(`The subwindow has been shown!`);
+                }
+              });
+            });
+          });
+        });
+      }).catch((error: BusinessError) => {
+      console.error(`Create subwindow failed. Cause code: ${error.code}, message: ${error.message}`);
+    })
+  }
+}
 ```
 
 ### createSubWindowWithOptions23+
-
-PhonePC/2in1TabletTVWearable
 
 createSubWindowWithOptions(name: string, subWindowConfig: window.SubWindowOptions, followCreatorLifecycle: boolean): Promise<window.Window>
 
@@ -455,7 +454,7 @@ createSubWindowWithOptions(name: string, subWindowConfig: window.SubWindowOption
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-**设备行为差异：** 当[subWindowOptions](arkts-apis-window-i.md#subwindowoptions11)中isModal为true且[modalityType](arkts-apis-window-e.md#modalitytype14)为APPLICATION\_MODALITY时，该接口在支持并处于[自由窗口](../harmonyos-guides/window-terminology.md#自由窗口)状态的设备上可正常调用；在支持但不处于[自由窗口](../harmonyos-guides/window-terminology.md#自由窗口)状态的设备及不支持[自由窗口](../harmonyos-guides/window-terminology.md#自由窗口)状态的设备上调用返回801错误码。
+**设备行为差异：** 当[subWindowOptions](arkts-apis-window-i.md#subwindowoptions11)中isModal为true且[modalityType](arkts-apis-window-e.md#modalitytype14)为APPLICATION\_MODALITY时，该接口在支持并处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备上可正常调用；在支持但不处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备及不支持[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备上调用返回801错误码。
 
 **参数：**
 
@@ -478,58 +477,57 @@ createSubWindowWithOptions(name: string, subWindowConfig: window.SubWindowOption
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
-| 1300002 | This window state is abnormal. Possible cause: 1. The window is not created or destroyed; 2. Internal task error. |
+| 1300002 | This window state is abnormal. Possible cause: 1. The window is not created or destroyed. 2. Internal task error. 3. The subWindow has been created and cannot be created again. 4. It is not allowed to create non-secure window when secure extension exists. |
+| 1300035 | Creating a subwindow is not allowed in the current context. Possible cause: 1. An AgentUIExtensionAbility cannot create a subwindow. |
 
 **示例：**
 
-```
-1. // ExtensionProvider.ets
-2. import { EmbeddedUIExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
-3. import { window } from '@kit.ArkUI';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// ExtensionProvider.ets
+import { EmbeddedUIExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. export default class EntryAbility extends EmbeddedUIExtensionAbility {
-7. onSessionCreate(want: Want, session: UIExtensionContentSession) {
-8. const extensionWindow = session.getUIExtensionWindowProxy();
-9. const subWindowConfig: window.SubWindowOptions = {
-10. title: 'This is a subwindow',
-11. decorEnabled: true
-12. };
-13. // 创建子窗口
-14. extensionWindow.createSubWindowWithOptions('subWindowForHost', subWindowConfig, true)
-15. .then((subWindow: window.Window) => {
-16. subWindow.setUIContent('pages/Index', (err, data) => {
-17. if (err && err.code != 0) {
-18. return;
-19. }
-20. subWindow?.resize(300, 300, (err, data) => {
-21. if (err && err.code != 0) {
-22. return;
-23. }
-24. subWindow?.moveWindowTo(100, 100, (err, data) => {
-25. if (err && err.code != 0) {
-26. return;
-27. }
-28. subWindow?.showWindow((err, data) => {
-29. if (err && err.code == 0) {
-30. console.info(`The subwindow has been shown!`);
-31. } else {
-32. console.error(`Failed to show the subwindow!`);
-33. }
-34. });
-35. });
-36. });
-37. });
-38. }).catch((error: BusinessError) => {
-39. console.error(`Create subwindow failed. Cause code: ${error.code}, message: ${error.message}`);
-40. })
-41. }
-42. }
+export default class EntryAbility extends EmbeddedUIExtensionAbility {
+  onSessionCreate(want: Want, session: UIExtensionContentSession) {
+    const extensionWindow = session.getUIExtensionWindowProxy();
+    const subWindowConfig: window.SubWindowOptions = {
+      title: 'This is a subwindow',
+      decorEnabled: true
+    };
+    // 创建子窗口
+    extensionWindow.createSubWindowWithOptions('subWindowForHost', subWindowConfig, true)
+      .then((subWindow: window.Window) => {
+        subWindow.setUIContent('pages/Index', (err, data) => {
+          if (err && err.code) {
+            return;
+          }
+          subWindow?.resize(300, 300, (err, data) => {
+            if (err && err.code) {
+              return;
+            }
+            subWindow?.moveWindowTo(100, 100, (err, data) => {
+              if (err && err.code) {
+                return;
+              }
+              subWindow?.showWindow((err, data) => {
+                if (err && err.code) {
+                  console.error(`Failed to show the subwindow. Code: ${err.code}, message: ${err.message}`);
+                } else {
+                  console.info(`The subwindow has been shown!`);
+                }
+              });
+            });
+          });
+        });
+      }).catch((error: BusinessError) => {
+      console.error(`Create subwindow failed. Cause code: ${error.code}, message: ${error.message}`);
+    })
+  }
+}
 ```
 
 ### occupyEvents18+
-
-PhonePC/2in1TabletTVWearable
 
 occupyEvents(eventFlags: number): Promise<void>
 
@@ -538,6 +536,8 @@ occupyEvents(eventFlags: number): Promise<void>
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
@@ -563,42 +563,42 @@ occupyEvents(eventFlags: number): Promise<void>
 
 **示例：**
 
-```
-1. // ExtensionProvider.ets
-2. import { EmbeddedUIExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
-3. import { uiExtension } from '@kit.ArkUI';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// ExtensionProvider.ets
+import { EmbeddedUIExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
+import { uiExtension } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. export default class EntryAbility extends EmbeddedUIExtensionAbility {
-7. onSessionCreate(want: Want, session: UIExtensionContentSession) {
-8. const extensionWindow = session.getUIExtensionWindowProxy();
-9. // 占用事件
-10. setTimeout(() => {
-11. try {
-12. let promise =
-13. extensionWindow.occupyEvents(uiExtension.EventFlag.EVENT_CLICK | uiExtension.EventFlag.EVENT_LONG_PRESS);
-14. promise.then(() => {
-15. console.info(`Succeeded in occupying events`);
-16. }).catch((err: BusinessError) => {
-17. console.error(`Failed to occupy events. Cause code: ${err.code}, message: ${err.message}`);
-18. });
-19. } catch (e) {
-20. console.error(`Occupy events got exception code: ${e.code}, message: ${e.message}`);
-21. }
-22. }, 500);
-23. }
-24. }
+export default class EntryAbility extends EmbeddedUIExtensionAbility {
+  onSessionCreate(want: Want, session: UIExtensionContentSession) {
+    const extensionWindow = session.getUIExtensionWindowProxy();
+    // 占用事件
+    setTimeout(() => {
+      try {
+        let promise =
+          extensionWindow.occupyEvents(uiExtension.EventFlag.EVENT_CLICK | uiExtension.EventFlag.EVENT_LONG_PRESS);
+        promise.then(() => {
+          console.info(`Succeeded in occupying events`);
+        }).catch((err: BusinessError) => {
+          console.error(`Failed to occupy events. Cause code: ${err.code}, message: ${err.message}`);
+        });
+      } catch (err) {
+        console.error(`Occupy events got exception code: ${err.code}, message: ${err.message}`);
+      }
+    }, 500);
+  }
+}
 ```
 
 ## EventFlag18+
-
-PhonePC/2in1TabletTVWearable
 
 事件类型枚举。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -612,13 +612,13 @@ PhonePC/2in1TabletTVWearable
 
 ## AvoidAreaInfo
 
-PhonePC/2in1TabletTVWearable
-
 用于表示窗口避让区的信息。
 
 **系统能力**：SystemCapability.ArkUI.ArkUI.Full
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -627,13 +627,13 @@ PhonePC/2in1TabletTVWearable
 
 ## WindowProxyProperties14+
 
-PhonePC/2in1TabletTVWearable
-
-用于表示组件的相关信息。
+用于表示组件（EmbeddedComponent或UIExtensionComponent）的位置和尺寸信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -641,13 +641,13 @@ PhonePC/2in1TabletTVWearable
 
 ## RectChangeReason14+
 
-PhonePC/2in1TabletTVWearable
-
 组件（EmbeddedComponent或UIExtensionComponent）矩形（位置及尺寸）变化的原因。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -655,13 +655,13 @@ PhonePC/2in1TabletTVWearable
 
 ## RectChangeOptions14+
 
-PhonePC/2in1TabletTVWearable
-
 组件（EmbeddedComponent或UIExtensionComponent）矩形（位置及尺寸）变化返回的值及变化原因。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -670,175 +670,173 @@ PhonePC/2in1TabletTVWearable
 
 ## 完整示例
 
-PhonePC/2in1TabletTVWearable
-
 本示例展示文档中所有API在[EmbeddedUIExtensionAbility](../harmonyos-guides/embeddeduiextensionability.md)中的基础使用方式，示例应用的bundleName为"com.example.embeddeddemo"，被拉起的EmbeddedUIExtensionAbility为"ExampleEmbeddedAbility"。
 
 * 示例应用中的EntryAbility(UIAbility)加载首页文件：pages/Index.ets，其中内容如下：
 
-```
-1. // pages/Index.ets -- UIAbility启动时加载此页面
-2. import { Want } from '@kit.AbilityKit';
+```ts
+// pages/Index.ets -- UIAbility启动时加载此页面
+import { Want } from '@kit.AbilityKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. @State message: string = 'Message: ';
-8. private want: Want = {
-9. bundleName: "com.example.embeddeddemo",
-10. abilityName: "ExampleEmbeddedAbility",
-11. }
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Message: ';
+  private want: Want = {
+    bundleName: 'com.example.embeddeddemo',
+    abilityName: 'ExampleEmbeddedAbility',
+  };
 
-13. build() {
-14. Row() {
-15. Column() {
-16. Text(this.message).fontSize(30)
-17. EmbeddedComponent(this.want, EmbeddedType.EMBEDDED_UI_EXTENSION)
-18. .width('100%')
-19. .height('90%')
-20. .onTerminated((info) => {
-21. this.message = 'Termination: code = ' + info.code + ', want = ' + JSON.stringify(info.want);
-22. })
-23. .onError((error) => {
-24. this.message = 'Error: code = ' + error.code;
-25. })
-26. }
-27. .width('100%')
-28. }
-29. .height('100%')
-30. }
-31. }
+  build() {
+    Row() {
+      Column() {
+        Text(this.message).fontSize(30)
+        EmbeddedComponent(this.want, EmbeddedType.EMBEDDED_UI_EXTENSION)
+          .width('100%')
+          .height('90%')
+          .onTerminated((info) => {
+            this.message = 'Termination: code = ' + info.code + ', want = ' + JSON.stringify(info.want);
+          })
+          .onError((error) => {
+            this.message = 'Error: code = ' + error.code;
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 * EmbeddedComponent拉起的EmbeddedUIExtensionAbility在ets/extensionAbility/ExampleEmbeddedAbility文件中实现，内容如下：
 
-```
-1. import { EmbeddedUIExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
+```ts
+import { EmbeddedUIExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
 
-3. const TAG: string = '[ExampleEmbeddedAbility]';
+const TAG: string = '[ExampleEmbeddedAbility]';
 
-5. export default class ExampleEmbeddedAbility extends EmbeddedUIExtensionAbility {
-6. onCreate() {
-7. console.info(TAG, `onCreate`);
-8. }
+export default class ExampleEmbeddedAbility extends EmbeddedUIExtensionAbility {
+  onCreate() {
+    console.info(TAG, `onCreate`);
+  }
 
-10. onForeground() {
-11. console.info(TAG, `onForeground`);
-12. }
+  onForeground() {
+    console.info(TAG, `onForeground`);
+  }
 
-14. onBackground() {
-15. console.info(TAG, `onBackground`);
-16. }
+  onBackground() {
+    console.info(TAG, `onBackground`);
+  }
 
-18. onDestroy() {
-19. console.info(TAG, `onDestroy`);
-20. }
+  onDestroy() {
+    console.info(TAG, `onDestroy`);
+  }
 
-22. onSessionCreate(want: Want, session: UIExtensionContentSession) {
-23. console.info(TAG, `onSessionCreate, want: ${JSON.stringify(want)}`);
-24. let param: Record<string, UIExtensionContentSession> = {
-25. 'session': session
-26. };
-27. let storage: LocalStorage = new LocalStorage(param);
-28. session.loadContent('pages/extension', storage);
-29. }
-30. }
+  onSessionCreate(want: Want, session: UIExtensionContentSession) {
+    console.info(TAG, `onSessionCreate, want: ${JSON.stringify(want)}`);
+    let param: Record<string, UIExtensionContentSession> = {
+      'session': session
+    };
+    let storage: LocalStorage = new LocalStorage(param);
+    session.loadContent('pages/extension', storage);
+  }
+}
 ```
 
 * EmbeddedUIExtensionAbility的入口页面文件pages/extension.ets内容如下：
 
-```
-1. import { UIExtensionContentSession } from '@kit.AbilityKit';
-2. import { uiExtension, window } from '@kit.ArkUI';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIExtensionContentSession } from '@kit.AbilityKit';
+import { uiExtension, window } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry()
-6. @Component
-7. struct Extension {
-8. @State message: string = 'EmbeddedUIExtensionAbility Index';
-9. private storage: LocalStorage | undefined = this.getUIContext()?.getSharedLocalStorage();
-10. private session: UIExtensionContentSession | undefined = this.storage?.get<UIExtensionContentSession>('session');
-11. private extensionWindow: uiExtension.WindowProxy | undefined = this.session?.getUIExtensionWindowProxy();
-12. private subWindow: window.Window | undefined = undefined;
+@Entry()
+@Component
+struct Extension {
+  @State message: string = 'EmbeddedUIExtensionAbility Index';
+  private storage: LocalStorage | undefined = this.getUIContext()?.getSharedLocalStorage();
+  private session: UIExtensionContentSession | undefined = this.storage?.get<UIExtensionContentSession>('session');
+  private extensionWindow: uiExtension.WindowProxy | undefined = this.session?.getUIExtensionWindowProxy();
+  private subWindow: window.Window | undefined = undefined;
 
-14. aboutToAppear(): void {
-15. this.extensionWindow?.on('windowSizeChange', (size: window.Size) => {
-16. console.info(`size = ${JSON.stringify(size)}`);
-17. });
-18. this.extensionWindow?.on('rectChange', uiExtension.RectChangeReason.HOST_WINDOW_RECT_CHANGE,
-19. (data: uiExtension.RectChangeOptions) => {
-20. console.info('Succeeded window rect changes. Data: ' + JSON.stringify(data));
-21. });
-22. this.extensionWindow?.on('avoidAreaChange', (info: uiExtension.AvoidAreaInfo) => {
-23. console.info(`type = ${JSON.stringify(info.type)}, area = ${JSON.stringify(info.area)}`);
-24. });
-25. }
+  aboutToAppear(): void {
+    this.extensionWindow?.on('windowSizeChange', (size: window.Size) => {
+      console.info(`size = ${JSON.stringify(size)}`);
+    });
+    this.extensionWindow?.on('rectChange', uiExtension.RectChangeReason.HOST_WINDOW_RECT_CHANGE,
+      (data: uiExtension.RectChangeOptions) => {
+        console.info('Succeeded window rect changes. Data: ' + JSON.stringify(data));
+      });
+    this.extensionWindow?.on('avoidAreaChange', (info: uiExtension.AvoidAreaInfo) => {
+      console.info(`type = ${JSON.stringify(info.type)}, area = ${JSON.stringify(info.area)}`);
+    });
+  }
 
-27. aboutToDisappear(): void {
-28. this.extensionWindow?.off('windowSizeChange');
-29. this.extensionWindow?.off('rectChange');
-30. this.extensionWindow?.off('avoidAreaChange');
-31. }
+  aboutToDisappear(): void {
+    this.extensionWindow?.off('windowSizeChange');
+    this.extensionWindow?.off('rectChange');
+    this.extensionWindow?.off('avoidAreaChange');
+  }
 
-33. build() {
-34. Column() {
-35. Text(this.message)
-36. .fontSize(20)
-37. .fontWeight(FontWeight.Bold)
-38. Button("获取组件大小").width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
-39. let rect = this.extensionWindow?.properties.uiExtensionHostWindowProxyRect;
-40. console.info(`EmbeddedComponent的位置和尺寸信息: ${JSON.stringify(rect)}`);
-41. })
-42. Button("获取系统避让区信息").width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
-43. let avoidArea: window.AvoidArea | undefined =
-44. this.extensionWindow?.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);
-45. console.info(`系统避让区: ${JSON.stringify(avoidArea)}`);
-46. })
-47. Button("创建子窗口").width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
-48. let subWindowOpts: window.SubWindowOptions = {
-49. 'title': 'This is a subwindow',
-50. decorEnabled: true
-51. };
-52. this.extensionWindow?.createSubWindowWithOptions('subWindowForHost', subWindowOpts)
-53. .then((subWindow: window.Window) => {
-54. this.subWindow = subWindow;
-55. this.subWindow.loadContent('pages/Index', this.storage, (err, data) => {
-56. if (err && err.code != 0) {
-57. return;
-58. }
-59. this.subWindow?.resize(300, 300, (err, data) => {
-60. if (err && err.code != 0) {
-61. return;
-62. }
-63. this.subWindow?.moveWindowTo(100, 100, (err, data) => {
-64. if (err && err.code != 0) {
-65. return;
-66. }
-67. this.subWindow?.showWindow((err, data) => {
-68. if (err && err.code == 0) {
-69. console.info(`The subwindow has been shown!`);
-70. } else {
-71. console.error(`Failed to show the subwindow!`);
-72. }
-73. });
-74. });
-75. });
-76. });
-77. }).catch((error: BusinessError) => {
-78. console.error(`Create subwindow failed. Cause code: ${error.code}, message: ${error.message}`);
-79. })
-80. })
-81. }.width('100%').height('100%')
-82. }
-83. }
+  build() {
+    Column() {
+      Text(this.message)
+        .fontSize(20)
+        .fontWeight(FontWeight.Bold)
+      Button('获取组件大小').width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+        let rect = this.extensionWindow?.properties.uiExtensionHostWindowProxyRect;
+        console.info(`EmbeddedComponent position and size info: ${JSON.stringify(rect)}`);
+      })
+      Button('获取系统避让区信息').width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+        let avoidArea: window.AvoidArea | undefined =
+          this.extensionWindow?.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);
+        console.info(`System avoid area: ${JSON.stringify(avoidArea)}`);
+      })
+      Button('创建子窗口').width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+        let subWindowOpts: window.SubWindowOptions = {
+          'title': 'This is a subwindow',
+          decorEnabled: true
+        };
+        this.extensionWindow?.createSubWindowWithOptions('subWindowForHost', subWindowOpts)
+          .then((subWindow: window.Window) => {
+            this.subWindow = subWindow;
+            this.subWindow?.loadContent('pages/Index', this.storage, (err, data) => {
+              if (err && err.code) {
+                return;
+              }
+              this.subWindow?.resize(300, 300, (err, data) => {
+                if (err && err.code) {
+                  return;
+                }
+                this.subWindow?.moveWindowTo(100, 100, (err, data) => {
+                  if (err && err.code) {
+                    return;
+                  }
+                  this.subWindow?.showWindow((err, data) => {
+                    if (err && err.code) {
+                      console.error(`Failed to show the subwindow. Code: ${err.code}, message: ${err.message}`);
+                    } else {
+                      console.info(`The subwindow has been shown!`);
+                    }
+                  });
+                });
+              });
+            });
+          }).catch((error: BusinessError) => {
+          console.error(`Create subwindow failed. Cause code: ${error.code}, message: ${error.message}`);
+        })
+      })
+    }.width('100%').height('100%')
+  }
+}
 ```
 
 * 最后，示例应用的module.json5中的"extensionAbilities"中需要增加一项，具体内容如下：
 
-  ```
-  1. {
-  2. "name": "ExampleEmbeddedAbility",
-  3. "srcEntry": "./ets/extensionAbility/ExampleEmbeddedAbility.ets",
-  4. "type": "embeddedUI"
-  5. }
+  ```json
+  {
+    "name": "ExampleEmbeddedAbility",
+    "srcEntry": "./ets/extensionAbility/ExampleEmbeddedAbility.ets",
+    "type": "embeddedUI"
+  }
   ```

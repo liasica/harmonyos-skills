@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/test-screen-r
 title: 测试屏幕朗读功能
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 测试应用的无障碍功能 > 测试屏幕朗读功能
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:10+08:00
+scraped_at: 2026-09-02T14:59:11+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:16f1c382e7d83d44c83051525b637bf5786dd63521a13b485a256ac392de90dd
+content_hash: sha256:7c0bcb0ba542bb883535d75b0430c18ed27a826bad63ddd58e4e514449fb7abc
 ---
 
 屏幕朗读可以使用户无需查看屏幕即可与设备进行互动，视障用户在使用设备时可能需要依赖屏幕朗读来获取更便捷的操作体验。
@@ -43,7 +43,7 @@ content_hash: sha256:16f1c382e7d83d44c83051525b637bf5786dd63521a13b485a256ac392d
 
 ### 屏幕朗读常用手势
 
-说明
+**说明** 
 
 下述列举了屏幕朗读常用的手势及对应的操作，更多操作手势可通过“设置 > 辅助功能 > 屏幕朗读 > 更多设置 > 自定义快捷手势”进行查看和设置。
 
@@ -78,7 +78,7 @@ content_hash: sha256:16f1c382e7d83d44c83051525b637bf5786dd63521a13b485a256ac392d
 | 打开控制中心 | 先向左再向下 |
 | 操作编辑框 | 先向左再向上 |
 
-说明
+**说明** 
 
 为了更便捷地使用屏幕朗读，可通过“设置 -> 辅助功能 -> 屏幕朗读 -> 更多设置”进行更多选项（如语速、语调等）的设置。
 

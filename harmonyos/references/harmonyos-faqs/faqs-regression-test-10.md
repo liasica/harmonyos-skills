@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-regression
 title: 选择测试包后报错提示“应用解析异常，请稍后重试”
 breadcrumb: FAQ > DevEco Testing > 回归测试 > 选择测试包后报错提示“应用解析异常，请稍后重试”
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:42+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:9a78fc9e63d8f26cef311925d111762593c2025d4e2366a8246ddea8fb1d6132
 ---
 

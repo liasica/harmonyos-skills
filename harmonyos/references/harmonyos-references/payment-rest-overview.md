@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-r
 title: 公共说明
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 公共说明
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5498779594c6ce490297f7431a352cb6eeabe1d983b7a9a8e48ef87420ecf76d
+scraped_at: 2026-09-02T15:03:03+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:05671231eff56539b10d826c478c122b76ffb6d7992d21eb82aaef5520940d1e
 ---
 
 ## HTTPS安全要求
@@ -14,12 +14,12 @@ content_hash: sha256:5498779594c6ce490297f7431a352cb6eeabe1d983b7a9a8e48ef87420e
 * 支持的TLS协议版本：1.2 / 1.3。
 * 支持的加密套件列表：
 
-  ```
-  1. TLS_CHACHA20_POLY1305_SHA256
-  2. TLS_AES_128_GCM_SHA256
-  3. TLS_AES_256_GCM_SHA384
-  4. TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
-  5. TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+  ```html
+  TLS_CHACHA20_POLY1305_SHA256
+  TLS_AES_128_GCM_SHA256
+  TLS_AES_256_GCM_SHA384
+  TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
   ```
 
 ## HTTP方法说明
@@ -37,7 +37,7 @@ content_hash: sha256:5498779594c6ce490297f7431a352cb6eeabe1d983b7a9a8e48ef87420e
 
 Payment Kit所有请求默认支持UTF-8编码，如采用其他编码格式的报文可能导致验签失败、字段解析失败等问题。
 
-HTTP METHOD方式为GET的接口请求，请求URL如涉及参数拼接，拼接后完整的请求URL不建议带特殊字符。如有需要，建议对URL中的特殊字符进行编码处理。URL特殊字符参考但不限于：+, 空格, ?, %, #, &, =
+HTTP METHOD方式为GET的接口请求，请求URL如涉及参数拼接，拼接后完整的请求URL不建议带特殊字符。如有需要，建议对URL中的特殊字符进行编码处理。URL特殊字符参考但不限于：“+”、“空格”、“?”，“%”，“#”，“&”、“=”。
 
 ## 认证授权
 
@@ -57,8 +57,8 @@ HTTP METHOD方式为GET的接口请求，请求URL如涉及参数拼接，拼接
 
    具体可参考[示例代码](https://gitcode.com/HarmonyOS_Samples/paymentkit-sample-code-serverdemo-java)引入华为支付提供[Maven依赖（pay-java）](../harmonyos-guides/payment-server-connect.md#集成maven依赖)中SignStringUtil.java类的signString方法，排序拼接结果示例如下：
 
-   ```
-   1. "allocationType=DELAY_ORDER_ALLOCATION&callbackUrl=https://www.xxxxxx.com/hw/pay/callback&currency=CNY&mercNo=xxxxxx&mercOrderNo=xxxxxx&totalAmount=2&tradeSummary=杂志报刊"
+   ```json
+   "allocationType=DELAY_ORDER_ALLOCATION&callbackUrl=https://www.xxxxxx.com/hw/pay/callback&currency=CNY&mercNo=xxxxxx&mercOrderNo=xxxxxx&totalAmount=2&tradeSummary=杂志报刊"
    ```
 3. 签名：调用给定算法对排序后的串完成签名。
 
@@ -68,35 +68,35 @@ HTTP METHOD方式为GET的接口请求，请求URL如涉及参数拼接，拼接
 
    加签内容参考：
 
-   ```
-   1. POST请求：POST https://petalpay-developer.cloud.huawei.com.cn/api/v2/aggr/preorder/create/app
-   2. {
-   3. "appId": "5765880207854262xxx",
-   4. "callbackUrl": "https://www.xxx.com/hw_notify",
-   5. "currency": "CNY",
-   6. "mercNo": "101723200xxx",
-   7. "mercOrderNo": "2405171027547xxx",
-   8. "payload": "shop|h8ahnJA8xxRXVw",
-   9. "totalAmount": 5,
-   10. "tradeSummary": "test",
-   11. "subOrders": [
-   12. {
-   13. "mercNo": "101723200xxx",
-   14. "mercOrderNo": "abcxxx1"
-   15. },
-   16. {
-   17. "mercNo": "101723201xxx",
-   18. "mercOrderNo": "abcxxx2"
-   19. }
-   20. ]
-   21. }
-   22. 加签内容：appId=5765880207854262xxx&callbackUrl=https://www.xxx.com/hw_notify&currency=CNY&mercNo=101723200xxx&mercOrderNo=2405171027547xxx&payload=shop|h8ahnJA8xxRXVw&subOrders=mercNo=101723200xxx&mercOrderNo=abcxxx1,mercNo=101723201xxx&mercOrderNo=abcxxx2&totalAmount=5&tradeSummary=test
+   ```txt
+   POST请求：POST https://petalpay-developer.cloud.huawei.com.cn/api/v2/aggr/preorder/create/app
+   {
+       "appId": "5765880207854262xxx",
+       "callbackUrl": "https://www.xxx.com/hw_notify",
+       "currency": "CNY",
+       "mercNo": "101723200xxx",
+       "mercOrderNo": "2405171027547xxx",
+       "payload": "shop|h8ahnJA8xxRXVw",
+       "totalAmount": 5,
+       "tradeSummary": "test",
+       "subOrders": [
+         {
+           "mercNo": "101723200xxx",
+           "mercOrderNo": "abcxxx1"
+         },
+         {
+           "mercNo": "101723201xxx",
+           "mercOrderNo": "abcxxx2"
+         }
+       ]
+   }
+   加签内容：appId=5765880207854262xxx&callbackUrl=https://www.xxx.com/hw_notify&currency=CNY&mercNo=101723200xxx&mercOrderNo=2405171027547xxx&payload=shop|h8ahnJA8xxRXVw&subOrders=mercNo=101723200xxx&mercOrderNo=abcxxx1,mercNo=101723201xxx&mercOrderNo=abcxxx2&totalAmount=5&tradeSummary=test
 
-   24. GET请求：GET https://petalpay-developer.cloud.huawei.com.cn/api/v2/aggr/transactions/merc-orders/20240507000000041809599950090xxx?mercNo=101540000089&sdkVersion=1.0.0
-   25. 加签内容：/api/v2/aggr/transactions/merc-orders/20240507000000041809599950090xxx?mercNo=101540000089&sdkVersion=1.0.0
+   GET请求：GET https://petalpay-developer.cloud.huawei.com.cn/api/v2/aggr/transactions/merc-orders/20240507000000041809599950090xxx?mercNo=101540000089&sdkVersion=1.0.0
+   加签内容：/api/v2/aggr/transactions/merc-orders/20240507000000041809599950090xxx?mercNo=101540000089&sdkVersion=1.0.0
    ```
 
-注意
+**注意** 
 
 字段值设置为null时，字段可不参与签名，设置为空字符时，则必须参与签名。
 
@@ -106,773 +106,773 @@ HTTP METHOD方式为GET的接口请求，请求URL如涉及参数拼接，拼接
 
 加签实现示例代码：
 
-```
-1. // 排序拼接示例
-2. import (
-3. "encoding/base64"
-4. "encoding/hex"
-5. "encoding/json"
-6. "fmt"
-7. "sort"
-8. "strings"
-9. )
+```go
+// 排序拼接示例
+import (
+    "encoding/base64"
+    "encoding/hex"
+    "encoding/json"
+    "fmt"
+    "sort"
+    "strings"
+)
 
-11. // GenerateSignData 生成待签名字符串
-12. // 步骤一：筛选，排除sign字段
-13. // 步骤二：排序拼接，按key的ascii码顺序排序，使用&连接
-14. func (s *SignatureUtils) GenerateSignData(params map[string]interface{}) string {
-15. return s.buildSignData(params)
-16. }
-17. // buildSignData 递归构建签名字符串
-18. func (s *SignatureUtils) buildSignData(params interface{}) string {
-19. switch v := params.(type) {
-20. case map[string]interface{}:
-21. return s.buildMapSignData(v)
-22. case []interface{}:
-23. return s.buildArraySignData(v)
-24. default:
-25. return fmt.Sprintf("%v", v)
-26. }
-27. }
-28. // buildMapSignData 处理Map类型数据
-29. func (s *SignatureUtils) buildMapSignData(params map[string]interface{}) string {
-30. // 排序key
-31. var keys []string
-32. for k := range params {
-33. // 排除sign字段
-34. if k == "sign" {
-35. continue
-36. }
-37. keys = append(keys, k)
-38. }
-39. sort.Strings(keys)
-40. var parts []string
-41. for _, key := range keys {
-42. value := params[key]
-43. // null值不参与签名
-44. if value == nil {
-45. continue
-46. }
-47. // 空字符串参与签名
-48. strValue := s.buildSignData(value)
-49. parts = append(parts, fmt.Sprintf("%s=%s", key, strValue))
-50. }
-51. return strings.Join(parts, "&")
-52. }
-53. // buildArraySignData 处理数组类型数据
-54. func (s *SignatureUtils) buildArraySignData(arr []interface{}) string {
-55. var parts []string
-56. for _, item := range arr {
-57. if item == nil {
-58. continue
-59. }
-60. parts = append(parts, s.buildSignData(item))
-61. }
-62. return strings.Join(parts, ",")
-63. }
+// GenerateSignData 生成待签名字符串
+// 步骤一：筛选，排除sign字段
+// 步骤二：排序拼接，按key的ascii码顺序排序，使用&连接
+func (s *SignatureUtils) GenerateSignData(params map[string]interface{}) string {
+    return s.buildSignData(params)
+}
+// buildSignData 递归构建签名字符串
+func (s *SignatureUtils) buildSignData(params interface{}) string {
+    switch v := params.(type) {
+    case map[string]interface{}:
+        return s.buildMapSignData(v)
+    case []interface{}:
+        return s.buildArraySignData(v)
+    default:
+        return fmt.Sprintf("%v", v)
+    }
+}
+// buildMapSignData 处理Map类型数据
+func (s *SignatureUtils) buildMapSignData(params map[string]interface{}) string {
+    // 排序key
+    var keys []string
+    for k := range params {
+        // 排除sign字段
+        if k == "sign" {
+            continue
+        }
+        keys = append(keys, k)
+    }
+    sort.Strings(keys)
+    var parts []string
+    for _, key := range keys {
+        value := params[key]
+        // null值不参与签名
+        if value == nil {
+            continue
+        }
+        // 空字符串参与签名
+        strValue := s.buildSignData(value)
+        parts = append(parts, fmt.Sprintf("%s=%s", key, strValue))
+    }
+    return strings.Join(parts, "&")
+}
+// buildArraySignData 处理数组类型数据
+func (s *SignatureUtils) buildArraySignData(arr []interface{}) string {
+    var parts []string
+    for _, item := range arr {
+        if item == nil {
+            continue
+        }
+        parts = append(parts, s.buildSignData(item))
+    }
+    return strings.Join(parts, ",")
+}
 
-65. // 加签示例
-66. package main
-67. import (
-68. "crypto"
-69. "crypto/rand"
-70. "crypto/rsa"
-71. "crypto/sha256"
-72. "crypto/x509"
-73. "encoding/base64"
-74. "fmt"
-75. "testing"
-76. )
-77. func signSha256WithRsaPSS(message, privateKeyStr string) (string, error) {
-78. privateKey, err := getPrivateKey(privateKeyStr)
-79. if err != nil {
-80. return "", err
-81. }
-82. hasher := sha256.New()
-83. hasher.Write([]byte(message))
-84. hashedMessage := hasher.Sum(nil)
-85. opts := rsa.PSSOptions{
-86. SaltLength: rsa.PSSSaltLengthEqualsHash,
-87. Hash:       crypto.SHA256,
-88. }
-89. signature, err := rsa.SignPSS(rand.Reader, privateKey, crypto.SHA256, hashedMessage, &opts)
-90. if err != nil {
-91. return "", err
-92. }
-93. return base64.StdEncoding.EncodeToString(signature), nil
-94. }
+// 加签示例
+package main
+import (
+  "crypto"
+  "crypto/rand"
+  "crypto/rsa"
+  "crypto/sha256"
+  "crypto/x509"
+  "encoding/base64"
+  "fmt"
+  "testing"
+)
+func signSha256WithRsaPSS(message, privateKeyStr string) (string, error) {
+  privateKey, err := getPrivateKey(privateKeyStr)
+  if err != nil {
+    return "", err
+  }
+  hasher := sha256.New()
+  hasher.Write([]byte(message))
+  hashedMessage := hasher.Sum(nil)
+  opts := rsa.PSSOptions{
+    SaltLength: rsa.PSSSaltLengthEqualsHash,
+    Hash:       crypto.SHA256,
+  }
+  signature, err := rsa.SignPSS(rand.Reader, privateKey, crypto.SHA256, hashedMessage, &opts)
+  if err != nil {
+    return "", err
+  }
+  return base64.StdEncoding.EncodeToString(signature), nil
+}
 
-96. func getPrivateKey(privateKeyStr string) (*rsa.PrivateKey, error) {
-97. decoded, err := base64.StdEncoding.DecodeString(privateKeyStr)
-98. if err != nil {
-99. return nil, err
-100. }
-101. privateKey, err := x509.ParsePKCS8PrivateKey(decoded)
-102. if err != nil {
-103. return nil, err
-104. }
-105. rsaPrivateKey, ok := privateKey.(*rsa.PrivateKey)
-106. if !ok {
-107. return nil, err
-108. }
-109. return rsaPrivateKey, nil
-110. }
+func getPrivateKey(privateKeyStr string) (*rsa.PrivateKey, error) {
+  decoded, err := base64.StdEncoding.DecodeString(privateKeyStr)
+  if err != nil {
+    return nil, err
+  }
+  privateKey, err := x509.ParsePKCS8PrivateKey(decoded)
+  if err != nil {
+    return nil, err
+  }
+  rsaPrivateKey, ok := privateKey.(*rsa.PrivateKey)
+  if !ok {
+  return nil, err
+  }
+  return rsaPrivateKey, nil
+}
 
-112. func TestRsaSign(t *testing.T) {
-113. signature, err := signSha256WithRsaPSS("加签排序拼接内容","私钥")
-114. fmt.Println(signature, err)
-115. }
+func TestRsaSign(t *testing.T) {
+  signature, err := signSha256WithRsaPSS("加签排序拼接内容","私钥")
+  fmt.Println(signature, err)
+}
 ```
 
 **JavaScript语言**
 
 javascript可通过jsrsasign模块实现，如已安装node环境，可执行如下命令安装jsrsasign模块。
 
-```
-1. npm install jsrsasign
+```shell
+npm install jsrsasign
 ```
 
 加签实现示例代码：
 
-```
-1. // 排序拼接示例
-2. /**
-3. * 递归构建签名字符串
-4. * @param {*} data 数据
-5. * @returns {string} 签名字符串
-6. */
-7. buildSignData(data) {
-8. if (data === null || data === undefined) {
-9. return '';
-10. }
-11. if (typeof data === 'object' && !Array.isArray(data)) {
-12. return this.buildMapSignData(data);
-13. }
-14. if (Array.isArray(data)) {
-15. return this.buildArraySignData(data);
-16. }
-17. return String(data);
-18. }
-19. /**
-20. * 处理Map类型数据
-21. * @param {Object} params 参数对象
-22. * @returns {string} 签名字符串
-23. */
-24. buildMapSignData(params) {
-25. // 排序key
-26. const keys = Object.keys(params)
-27. .filter(key => key !== 'sign') // 排除sign字段
-28. .sort();
-29. const parts = [];
-30. for (const key of keys) {
-31. const value = params[key];
-32. // null值不参与签名
-33. if (value === null || value === undefined) {
-34. continue;
-35. }
-36. // 空字符串参与签名
-37. const strValue = this.buildSignData(value);
-38. parts.push(`${key}=${strValue}`);
-39. }
-40. return parts.join('&');
-41. }
-42. /**
-43. * 处理数组类型数据
-44. * @param {Array} arr 数组
-45. * @returns {string} 签名字符串
-46. */
-47. buildArraySignData(arr) {
-48. const parts = [];
-49. for (const item of arr) {
-50. if (item === null || item === undefined) {
-51. continue;
-52. }
-53. parts.push(this.buildSignData(item));
-54. }
-55. return parts.join(',');
-56. }
+```javascript
+// 排序拼接示例
+/**
+ * 递归构建签名字符串
+ * @param {*} data 数据
+ * @returns {string} 签名字符串
+ */
+buildSignData(data) {
+    if (data === null || data === undefined) {
+        return '';
+    }
+    if (typeof data === 'object' && !Array.isArray(data)) {
+        return this.buildMapSignData(data);
+    }
+    if (Array.isArray(data)) {
+        return this.buildArraySignData(data);
+    }
+    return String(data);
+}
+/**
+ * 处理Map类型数据
+ * @param {Object} params 参数对象
+ * @returns {string} 签名字符串
+ */
+buildMapSignData(params) {
+    // 排序key
+    const keys = Object.keys(params)
+        .filter(key => key !== 'sign') // 排除sign字段
+        .sort();
+    const parts = [];
+    for (const key of keys) {
+        const value = params[key];
+        // null值不参与签名
+        if (value === null || value === undefined) {
+            continue;
+        }
+        // 空字符串参与签名
+        const strValue = this.buildSignData(value);
+        parts.push(`${key}=${strValue}`);
+    }
+    return parts.join('&');
+}
+/**
+ * 处理数组类型数据
+ * @param {Array} arr 数组
+ * @returns {string} 签名字符串
+ */
+buildArraySignData(arr) {
+    const parts = [];
+    for (const item of arr) {
+        if (item === null || item === undefined) {
+            continue;
+        }
+        parts.push(this.buildSignData(item));
+    }
+    return parts.join(',');
+}
 
-58. // 加签示例
-59. const jsrsasign = require('jsrsasign');
-60. function signSha256WithRsaPSS(plainData, privateStr) {
-61. let rsa = new jsrsasign.RSAKey();
-62. // PEM 格式的私钥
-63. const priKey = `-----BEGIN PRIVATE KEY-----\n${privateStr}\n-----END PRIVATE KEY-----\n`;
-64. rsa = jsrsasign.KEYUTIL.getKey(priKey);
-65. const sig = new jsrsasign.KJUR.crypto.Signature({
-66. alg: 'SHA256withRSAandMGF1',
-67. });
-68. sig.init(rsa);
-69. sig.updateString(plainData);
-70. return jsrsasign.hextob64(sig.sign());
-71. }
-72. let signature = signSha256WithRsaPSS("加签排序拼接内容","私钥");
-73. console.info(signature)
+// 加签示例
+const jsrsasign = require('jsrsasign');
+function signSha256WithRsaPSS(plainData, privateStr) {
+  let rsa = new jsrsasign.RSAKey();
+  // PEM 格式的私钥
+  const priKey = `-----BEGIN PRIVATE KEY-----\n${privateStr}\n-----END PRIVATE KEY-----\n`;
+  rsa = jsrsasign.KEYUTIL.getKey(priKey);
+  const sig = new jsrsasign.KJUR.crypto.Signature({
+    alg: 'SHA256withRSAandMGF1',
+  });
+  sig.init(rsa);
+  sig.updateString(plainData);
+  return jsrsasign.hextob64(sig.sign());
+}
+let signature = signSha256WithRsaPSS("加签排序拼接内容","私钥");
+console.info(signature)
 ```
 
 **python语言**
 
 python可通过cryptography模块实现，可先执行如下命令安装cryptography模块：
 
-```
-1. pip install cryptography
+```python
+pip install cryptography
 ```
 
 加签实现示例代码：
 
-```
-1. // 排序拼接示例
-2. def generate_sign_data(self, params):
-3. """
-4. 生成待签名字符串
-5. 步骤一：筛选，排除sign字段
-6. 步骤二：排序拼接，按key的ascii码顺序排序，使用&连接
-7. Args:
-8. params: 参数字典
-9. Returns:
-10. str: 待签名字符串
-11. """
-12. return self._build_sign_data(params)
-13. def _build_sign_data(self, data):
-14. """
-15. 递归构建签名字符串
-16. Args:
-17. data: 数据
-18. Returns:
-19. str: 签名字符串
-20. """
-21. if data is None:
-22. return ''
-23. if isinstance(data, dict):
-24. return self._build_map_sign_data(data)
-25. if isinstance(data, (list, tuple)):
-26. return self._build_array_sign_data(data)
-27. return str(data)
-28. def _build_map_sign_data(self, params):
-29. """
-30. 处理字典类型数据
-31. Args:
-32. params: 参数字典
-33. Returns:
-34. str: 签名字符串
-35. """
-36. # 排序key，排除sign字段
-37. keys = sorted([k for k in params.keys() if k != 'sign'])
-38. parts = []
-39. for key in keys:
-40. value = params[key]
-41. # None值不参与签名
-42. if value is None:
-43. continue
-44. # 空字符串参与签名
-45. str_value = self._build_sign_data(value)
-46. parts.append(f"{key}={str_value}")
-47. return '&'.join(parts)
-48. def _build_array_sign_data(self, arr):
-49. """
-50. 处理数组类型数据
-51. Args:
-52. arr: 数组
-53. Returns:
-54. str: 签名字符串
-55. """
-56. parts = []
-57. for item in arr:
-58. if item is None:
-59. continue
-60. parts.append(self._build_sign_data(item))
-61. return ','.join(parts)
+```python
+# 排序拼接示例
+def generate_sign_data(self, params):
+    """
+    生成待签名字符串
+    步骤一：筛选，排除sign字段
+    步骤二：排序拼接，按key的ascii码顺序排序，使用&连接
+    Args:
+        params: 参数字典
+    Returns:
+        str: 待签名字符串
+    """
+    return self._build_sign_data(params)
+def _build_sign_data(self, data):
+    """
+    递归构建签名字符串
+    Args:
+        data: 数据
+    Returns:
+        str: 签名字符串
+    """
+    if data is None:
+        return ''
+    if isinstance(data, dict):
+        return self._build_map_sign_data(data)
+    if isinstance(data, (list, tuple)):
+        return self._build_array_sign_data(data)
+    return str(data)
+def _build_map_sign_data(self, params):
+    """
+    处理字典类型数据
+    Args:
+        params: 参数字典
+    Returns:
+        str: 签名字符串
+    """
+    # 排序key，排除sign字段
+    keys = sorted([k for k in params.keys() if k != 'sign'])
+    parts = []
+    for key in keys:
+        value = params[key]
+        # None值不参与签名
+        if value is None:
+            continue
+        # 空字符串参与签名
+        str_value = self._build_sign_data(value)
+        parts.append(f"{key}={str_value}")
+    return '&'.join(parts)
+def _build_array_sign_data(self, arr):
+    """
+    处理数组类型数据
+    Args:
+        arr: 数组
+    Returns:
+        str: 签名字符串
+    """
+    parts = []
+    for item in arr:
+        if item is None:
+            continue
+        parts.append(self._build_sign_data(item))
+    return ','.join(parts)
 
-63. // 加签示例
-64. import base64
+# 加签示例
+import base64
 
-66. from cryptography.hazmat.primitives import hashes
-67. from cryptography.hazmat.primitives.asymmetric import padding
-68. from cryptography.hazmat.backends import default_backend
-69. from cryptography.hazmat.primitives.serialization import load_pem_private_key, load_pem_public_key
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.asymmetric import padding
+from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives.serialization import load_pem_private_key, load_pem_public_key
 
-71. def signSha256WithRsaPSS(private_key_str, message):
-72. # PEM 格式的私钥
-73. prikey_content = "-----BEGIN PRIVATE KEY-----\n" + private_key_str +"\n-----END PRIVATE KEY-----\n";
-74. private_key = load_pem_private_key(data=prikey_content.encode("utf-8"), password=None, backend=default_backend())
+def signSha256WithRsaPSS(private_key_str, message):
+    # PEM 格式的私钥
+    prikey_content = "-----BEGIN PRIVATE KEY-----\n" + private_key_str +"\n-----END PRIVATE KEY-----\n";
+    private_key = load_pem_private_key(data=prikey_content.encode("utf-8"), password=None, backend=default_backend())
 
-76. # 使用 RSA-PSS 算法生成签名
-77. signature = private_key.sign(
-78. message.encode("utf-8"),
-79. padding.PSS(
-80. mgf=padding.MGF1(hashes.SHA256()),
-81. salt_length=padding.PSS.DIGEST_LENGTH
-82. ),
-83. hashes.SHA256()
-84. )
-85. return base64.b64encode(signature).decode('utf-8')
+    # 使用 RSA-PSS 算法生成签名
+    signature = private_key.sign(
+        message.encode("utf-8"),
+        padding.PSS(
+            mgf=padding.MGF1(hashes.SHA256()),
+            salt_length=padding.PSS.DIGEST_LENGTH
+        ),
+        hashes.SHA256()
+    )
+    return base64.b64encode(signature).decode('utf-8')
 
-87. message = "加签排序拼接内容"
-88. private_key_str = "私钥"
-89. signature = signSha256WithRsaPSS(private_key_str, message)
-90. print(signature)
+message = "加签排序拼接内容"
+private_key_str = "私钥"
+signature = signSha256WithRsaPSS(private_key_str, message)
+print(signature)
 ```
 
 **php语言**
 
 php可通过phpseclib加密库实现，如已安装composer环境，可先通过以下命令导入phpseclib：
 
-```
-1. composer require phpseclib/phpseclib
+```php
+composer require phpseclib/phpseclib
 ```
 
 phpseclib2加签实现示例代码：
 
-```
-1. // 排序拼接示例
-2. class SignatureUtils
-3. {
-4. /**
-5. * 生成待签名字符串
-6. * 步骤一：筛选，排除sign字段
-7. * 步骤二：排序拼接，按key的ascii码顺序排序，使用&连接
-8. *
-9. * @param array $params 参数数组
-10. * @return string 待签名字符串
-11. */
-12. public function generateSignData($params)
-13. {
-14. return $this->buildSignData($params);
-15. }
-16. /**
-17. * 递归构建签名字符串
-18. *
-19. * @param mixed $data 数据
-20. * @return string 签名字符串
-21. */
-22. private function buildSignData($data)
-23. {
-24. if ($data === null) {
-25. return '';
-26. }
-27. if (is_array($data)) {
-28. // 判断是否为关联数组（Map）
-29. if ($this->isAssocArray($data)) {
-30. return $this->buildMapSignData($data);
-31. } else {
-32. return $this->buildArraySignData($data);
-33. }
-34. }
-35. return (string)$data;
-36. }
-37. /**
-38. * 判断是否为关联数组
-39. *
-40. * @param array $arr 数组
-41. * @return bool
-42. */
-43. private function isAssocArray($arr)
-44. {
-45. if (empty($arr)) {
-46. return false;
-47. }
-48. return array_keys($arr) !== range(0, count($arr) - 1);
-49. }
-50. /**
-51. * 处理Map类型数据
-52. *
-53. * @param array $params 参数数组
-54. * @return string 签名字符串
-55. */
-56. private function buildMapSignData($params)
-57. {
-58. // 排序key，排除sign字段
-59. $keys = array_keys($params);
-60. $keys = array_filter($keys, function($key) {
-61. return $key !== 'sign';
-62. });
-63. sort($keys);
-64. $parts = [];
-65. foreach ($keys as $key) {
-66. $value = $params[$key];
-67. // null值不参与签名
-68. if ($value === null) {
-69. continue;
-70. }
-71. // 空字符串参与签名
-72. $strValue = $this->buildSignData($value);
-73. $parts[] = $key . '=' . $strValue;
-74. }
-75. return implode('&', $parts);
-76. }
-77. /**
-78. * 处理数组类型数据
-79. *
-80. * @param array $arr 数组
-81. * @return string 签名字符串
-82. */
-83. private function buildArraySignData($arr)
-84. {
-85. $parts = [];
-86. foreach ($arr as $item) {
-87. if ($item === null) {
-88. continue;
-89. }
-90. $parts[] = $this->buildSignData($item);
-91. }
-92. return implode(',', $parts);
-93. }
-94. /**
-95. * Base64转Hex
-96. *
-97. * @param string $base64String Base64字符串
-98. * @return string Hex字符串
-99. */
-100. private function base64ToHex($base64String)
-101. {
-102. $bytes = base64_decode($base64String);
-103. return bin2hex($bytes);
-104. }
-105. /**
-106. * 解析JSON字符串为数组
-107. *
-108. * @param string $jsonStr JSON字符串
-109. * @return array 数组
-110. */
-111. public function parseJSON($jsonStr)
-112. {
-113. return json_decode($jsonStr, true);
-114. }
-115. /**
-116. * 从JSON字符串生成待签名字符串
-117. *
-118. * @param string $jsonStr JSON字符串
-119. * @return string 待签名字符串
-120. */
-121. public function generateSignDataFromJSON($jsonStr)
-122. {
-123. $params = $this->parseJSON($jsonStr);
-124. return $this->generateSignData($params);
-125. }
-126. public function testExcludeSignField()
-127. {
-128. $params = [
-129. 'appId' => '5765880207854262xxx',
-130. 'callbackUrl' => 'https://www.xxx.com/hw_notify',
-131. 'sign' => 'xxxxx', // sign字段应被排除
-132. 'currency' => 'CNY'
-133. ];
-134. $signData = $this-> generateSignData($params);
-135. echo "[testExcludeSignField] Sign data without sign field: " . $signData . "\n";
-136. }
-137. }
+```php
+// 排序拼接示例
+class SignatureUtils
+{
+    /**
+     * 生成待签名字符串
+     * 步骤一：筛选，排除sign字段
+     * 步骤二：排序拼接，按key的ascii码顺序排序，使用&连接
+     *
+     * @param array $params 参数数组
+     * @return string 待签名字符串
+     */
+    public function generateSignData($params)
+    {
+        return $this->buildSignData($params);
+    }
+    /**
+     * 递归构建签名字符串
+     *
+     * @param mixed $data 数据
+     * @return string 签名字符串
+     */
+    private function buildSignData($data)
+    {
+        if ($data === null) {
+            return '';
+        }
+        if (is_array($data)) {
+            // 判断是否为关联数组（Map）
+            if ($this->isAssocArray($data)) {
+                return $this->buildMapSignData($data);
+            } else {
+                return $this->buildArraySignData($data);
+            }
+        }
+        return (string)$data;
+    }
+    /**
+     * 判断是否为关联数组
+     *
+     * @param array $arr 数组
+     * @return bool
+     */
+    private function isAssocArray($arr)
+    {
+        if (empty($arr)) {
+            return false;
+        }
+        return array_keys($arr) !== range(0, count($arr) - 1);
+    }
+    /**
+     * 处理Map类型数据
+     *
+     * @param array $params 参数数组
+     * @return string 签名字符串
+     */
+    private function buildMapSignData($params)
+    {
+        // 排序key，排除sign字段
+        $keys = array_keys($params);
+        $keys = array_filter($keys, function($key) {
+            return $key !== 'sign';
+        });
+        sort($keys);
+        $parts = [];
+        foreach ($keys as $key) {
+            $value = $params[$key];
+            // null值不参与签名
+            if ($value === null) {
+                continue;
+            }
+            // 空字符串参与签名
+            $strValue = $this->buildSignData($value);
+            $parts[] = $key . '=' . $strValue;
+        }
+        return implode('&', $parts);
+    }
+    /**
+     * 处理数组类型数据
+     *
+     * @param array $arr 数组
+     * @return string 签名字符串
+     */
+    private function buildArraySignData($arr)
+    {
+        $parts = [];
+        foreach ($arr as $item) {
+            if ($item === null) {
+                continue;
+            }
+            $parts[] = $this->buildSignData($item);
+        }
+        return implode(',', $parts);
+    }
+    /**
+     * Base64转Hex
+     *
+     * @param string $base64String Base64字符串
+     * @return string Hex字符串
+     */
+    private function base64ToHex($base64String)
+    {
+        $bytes = base64_decode($base64String);
+        return bin2hex($bytes);
+    }
+    /**
+     * 解析JSON字符串为数组
+     *
+     * @param string $jsonStr JSON字符串
+     * @return array 数组
+     */
+    public function parseJSON($jsonStr)
+    {
+        return json_decode($jsonStr, true);
+    }
+    /**
+     * 从JSON字符串生成待签名字符串
+     *
+     * @param string $jsonStr JSON字符串
+     * @return string 待签名字符串
+     */
+    public function generateSignDataFromJSON($jsonStr)
+    {
+        $params = $this->parseJSON($jsonStr);
+        return $this->generateSignData($params);
+    }
+    public function testExcludeSignField()
+    {
+        $params = [
+            'appId' => '5765880207854262xxx',
+            'callbackUrl' => 'https://www.xxx.com/hw_notify',
+            'sign' => 'xxxxx', // sign字段应被排除
+            'currency' => 'CNY'
+        ];
+        $signData = $this-> generateSignData($params);
+        echo "[testExcludeSignField] Sign data without sign field: " . $signData . "\n";
+    }
+}
 
-139. // 加签示例
-140. <?php
-141. require_once 'vendor/autoload.php';
-142. use phpseclib\Crypt\RSA;
+// 加签示例
+<?php
+require_once 'vendor/autoload.php';
+use phpseclib\Crypt\RSA;
 
-144. function signSha256WithRsaPSS($content, $privateKeyStr) {
-145. try {
-146. $privateKey = "-----BEGIN PRIVATE KEY-----\n" . $privateKeyStr ."\n-----END PRIVATE KEY-----";
-147. $signer = new \phpseclib\Crypt\RSA();
-148. $signer->loadKey($privateKey, $password = false);
-149. $signer->setHash('sha256');
-150. $signer->setSignatureMode(RSA::SIGNATURE_PSS);
-151. $signer->setMGFHash('sha256');
-152. $signature = $signer->sign($content);
+function signSha256WithRsaPSS($content, $privateKeyStr) {
+    try {
+        $privateKey = "-----BEGIN PRIVATE KEY-----\n" . $privateKeyStr ."\n-----END PRIVATE KEY-----";
+        $signer = new \phpseclib\Crypt\RSA();
+        $signer->loadKey($privateKey, $password = false);
+        $signer->setHash('sha256');
+        $signer->setSignatureMode(RSA::SIGNATURE_PSS);
+        $signer->setMGFHash('sha256');
+        $signature = $signer->sign($content);
 
-154. $sign = base64_encode($signature);
-155. return $sign;
-156. } catch (Exception $e) {
-157. echo $e->getMessage();
-158. }
-159. return null;
-160. }
-161. $data = "加签排序拼接内容";
-162. $privateKeyStr = "私钥";
-163. echo signSha256WithRsaPSS($data, $privateKeyStr)
-164. ?>
+        $sign = base64_encode($signature);
+        return $sign;
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    return null;
+}
+$data = "加签排序拼接内容";
+$privateKeyStr = "私钥";
+echo signSha256WithRsaPSS($data, $privateKeyStr)
+?>
 ```
 
 phpseclib3加签实现示例代码：
 
-```
-1. <?php
-2. require_once 'vendor/autoload.php';
+```php
+<?php
+require_once 'vendor/autoload.php';
 
-4. use phpseclib3\Crypt\PublicKeyLoader;
-5. use phpseclib3\Crypt\RSA;
+use phpseclib3\Crypt\PublicKeyLoader;
+use phpseclib3\Crypt\RSA;
 
-7. function signSha256WithRsaPSS($data,$rsa_key){
-8. $key = "-----BEGIN PRIVATE KEY-----\n" . $rsa_key . "-----END PRIVATE KEY-----";
-9. $private = PublicKeyLoader::load($key, $password = false);
-10. $private = $private->withPadding(RSA::SIGNATURE_PSS);
-11. return base64_encode($private->sign($data));
-12. }
+function signSha256WithRsaPSS($data,$rsa_key){
+    $key = "-----BEGIN PRIVATE KEY-----\n" . $rsa_key . "-----END PRIVATE KEY-----";
+    $private = PublicKeyLoader::load($key, $password = false);
+    $private = $private->withPadding(RSA::SIGNATURE_PSS);
+    return base64_encode($private->sign($data));
+}
 
-14. $data = "加签排序拼接内容";
-15. $privateKeyStr = "私钥";
-16. echo signSha256WithRsaPSS($data, $privateKeyStr);
-17. ?>
+$data = "加签排序拼接内容";
+$privateKeyStr = "私钥";
+echo signSha256WithRsaPSS($data, $privateKeyStr);
+?>
 ```
 
 **C#语言**
 
 C#可通过BouncyCastle库来实现，如已安装 [.NET SDK](https://dotnet.microsoft.com/download)，可先执行如下命令添加BouncyCastle：
 
-```
-1. dotnet add package BouncyCastle
+```cs
+dotnet add package BouncyCastle
 ```
 
 加签实现示例代码：
 
-```
-1. // 排序拼接示例
-2. using System;
-3. using System.Collections.Generic;
-4. using System.Security.Cryptography;
-5. using System.Text;
-6. using System.Text.Json;
-7. using System.Linq;
-8. namespace PaySignature
-9. {
-10. /// <summary>
-11. /// 签名工具类
-12. /// </summary>
-13. public class SignatureUtils
-14. {
-15. /// <summary>
-16. /// 生成待签名字符串
-17. /// 步骤一：筛选，排除sign字段
-18. /// 步骤二：排序拼接，按key的ascii码顺序排序，使用&连接
-19. /// </summary>
-20. /// <param name="params">参数字典</param>
-21. /// <returns>待签名字符串</returns>
-22. public string GenerateSignData(Dictionary<string, object> parameters)
-23. {
-24. return BuildSignData(parameters);
-25. }
-26. /// <summary>
-27. /// 递归构建签名字符串
-28. /// </summary>
-29. /// <param name="data">数据</param>
-30. /// <returns>签名字符串</returns>
-31. private string BuildSignData(object data)
-32. {
-33. if (data == null)
-34. {
-35. return string.Empty;
-36. }
-37. if (data is Dictionary<string, object> dict)
-38. {
-39. return BuildMapSignData(dict);
-40. }
-41. if (data is List<object> list)
-42. {
-43. return BuildArraySignData(list);
-44. }
-45. return data.ToString();
-46. }
-47. /// <summary>
-48. /// 处理字典类型数据
-49. /// </summary>
-50. /// <param name="parameters">参数字典</param>
-51. /// <returns>签名字符串</returns>
-52. private string BuildMapSignData(Dictionary<string, object> parameters)
-53. {
-54. // 排序key，排除sign字段
-55. var keys = parameters.Keys
-56. .Where(k => k != "sign")
-57. .OrderBy(k => k, StringComparer.Ordinal)
-58. .ToList();
-59. var parts = new List<string>();
-60. foreach (var key in keys)
-61. {
-62. var value = parameters[key];
-63. // null值不参与签名
-64. if (value == null)
-65. {
-66. continue;
-67. }
-68. // 空字符串参与签名
-69. var strValue = BuildSignData(value);
-70. parts.Add($"{key}={strValue}");
-71. }
-72. return string.Join("&", parts);
-73. }
-74. /// <summary>
-75. /// 处理数组类型数据
-76. /// </summary>
-77. /// <param name="arr">数组</param>
-78. /// <returns>签名字符串</returns>
-79. private string BuildArraySignData(List<object> arr)
-80. {
-81. var parts = new List<string>();
-82. foreach (var item in arr)
-83. {
-84. if (item == null)
-85. {
-86. continue;
-87. }
-88. parts.Add(BuildSignData(item));
-89. }
-90. return string.Join(",", parts);
-91. }
-92. /// <summary>
-93. /// Base64转Hex
-94. /// </summary>
-95. /// <param name="base64String">Base64字符串</param>
-96. /// <returns>Hex字符串</returns>
-97. private string Base64ToHex(string base64String)
-98. {
-99. var bytes = Convert.FromBase64String(base64String);
-100. return BitConverter.ToString(bytes).Replace("-", "").ToLower();
-101. }
-102. /// <summary>
-103. /// 解析JSON字符串为字典
-104. /// </summary>
-105. /// <param name="jsonStr">JSON字符串</param>
-106. /// <returns>字典</returns>
-107. public Dictionary<string, object> ParseJSON(string jsonStr)
-108. {
-109. using var document = JsonDocument.Parse(jsonStr);
-110. var result = new Dictionary<string, object>();
-111. foreach (var element in document.RootElement.EnumerateObject())
-112. {
-113. result[element.Name] = ParseJsonElement(element.Value);
-114. }
-115. return result;
-116. }
-117. /// <summary>
-118. /// 解析JSON元素
-119. /// </summary>
-120. /// <param name="element">JSON元素</param>
-121. /// <returns>对象</returns>
-122. private object ParseJsonElement(JsonElement element)
-123. {
-124. switch (element.ValueKind)
-125. {
-126. case JsonValueKind.String:
-127. return element.GetString();
-128. case JsonValueKind.Number:
-129. if (element.TryGetInt32(out int intValue))
-130. return intValue;
-131. if (element.TryGetInt64(out long longValue))
-132. return longValue;
-133. return element.GetDouble();
-134. case JsonValueKind.True:
-135. return true;
-136. case JsonValueKind.False:
-137. return false;
-138. case JsonValueKind.Null:
-139. return null;
-140. case JsonValueKind.Object:
-141. var dict = new Dictionary<string, object>();
-142. foreach (var prop in element.EnumerateObject())
-143. {
-144. dict[prop.Name] = ParseJsonElement(prop.Value);
-145. }
-146. return dict;
-147. case JsonValueKind.Array:
-148. var list = new List<object>();
-149. foreach (var item in element.EnumerateArray())
-150. {
-151. list.Add(ParseJsonElement(item));
-152. }
-153. return list;
-154. default:
-155. return element.ToString();
-156. }
-157. }
-158. /// <summary>
-159. /// 从JSON字符串生成待签名字符串
-160. /// </summary>
-161. /// <param name="jsonStr">JSON字符串</param>
-162. /// <returns>待签名字符串</returns>
-163. public string GenerateSignDataFromJSON(string jsonStr)
-164. {
-165. var parameters = ParseJSON(jsonStr);
-166. return GenerateSignData(parameters);
-167. }
-168. }
-169. }
-170. // 测试
-171. using Xunit;
-172. using PaySignature;
-173. namespace PaySignatureTest
-174. {
-175. public class SignatureUtilsTest2
-176. {
-177. private readonly SignatureUtils _utils;
-178. public SignatureUtilsTest2()
-179. {
-180. _utils = new SignatureUtils();
-181. }
-182. /// <summary>
-183. /// 测试构造签名串
-184. /// </summary>
-185. [Fact]
-186. public void TestComplexNestedStructure()
-187. {
-188. var goods = new List<object>
-189. {
-190. new Dictionary<string, object>
-191. {
-192. { "goodsId", "G001" },
-193. { "goodsName", "商品1" },
-194. { "quantity", 2 }
-195. },
-196. new Dictionary<string, object>
-197. {
-198. { "goodsId", "G002" },
-199. { "goodsName", "商品2" },
-200. { "quantity", 3 }
-201. }
-202. };
-203. var parameters = new Dictionary<string, object>
-204. {
-205. { "appId", "5765880207854262xxx" },
-206. { "goods", goods },
-207. { "totalAmount", 100 }
-208. };
-209. var signData = _utils.GenerateSignData(parameters);
-210. Assert.Contains("appId=5765880207854262xxx", signData);
-211. Assert.Contains("goods=", signData);
-212. Console.WriteLine($"Sign data with complex structure: {signData}");
-213. }
-214. }
-215. }
+```cs
+// 排序拼接示例
+using System;
+using System.Collections.Generic;
+using System.Security.Cryptography;
+using System.Text;
+using System.Text.Json;
+using System.Linq;
+namespace PaySignature
+{
+    /// <summary>
+    /// 签名工具类
+    /// </summary>
+    public class SignatureUtils
+    {
+        /// <summary>
+        /// 生成待签名字符串
+        /// 步骤一：筛选，排除sign字段
+        /// 步骤二：排序拼接，按key的ascii码顺序排序，使用&连接
+        /// </summary>
+        /// <param name="params">参数字典</param>
+        /// <returns>待签名字符串</returns>
+        public string GenerateSignData(Dictionary<string, object> parameters)
+        {
+            return BuildSignData(parameters);
+        }
+        /// <summary>
+        /// 递归构建签名字符串
+        /// </summary>
+        /// <param name="data">数据</param>
+        /// <returns>签名字符串</returns>
+        private string BuildSignData(object data)
+        {
+            if (data == null)
+            {
+                return string.Empty;
+            }
+            if (data is Dictionary<string, object> dict)
+            {
+                return BuildMapSignData(dict);
+            }
+            if (data is List<object> list)
+            {
+                return BuildArraySignData(list);
+            }
+            return data.ToString();
+        }
+        /// <summary>
+        /// 处理字典类型数据
+        /// </summary>
+        /// <param name="parameters">参数字典</param>
+        /// <returns>签名字符串</returns>
+        private string BuildMapSignData(Dictionary<string, object> parameters)
+        {
+            // 排序key，排除sign字段
+            var keys = parameters.Keys
+                .Where(k => k != "sign")
+                .OrderBy(k => k, StringComparer.Ordinal)
+                .ToList();
+            var parts = new List<string>();
+            foreach (var key in keys)
+            {
+                var value = parameters[key];
+                // null值不参与签名
+                if (value == null)
+                {
+                    continue;
+                }
+                // 空字符串参与签名
+                var strValue = BuildSignData(value);
+                parts.Add($"{key}={strValue}");
+            }
+            return string.Join("&", parts);
+        }
+        /// <summary>
+        /// 处理数组类型数据
+        /// </summary>
+        /// <param name="arr">数组</param>
+        /// <returns>签名字符串</returns>
+        private string BuildArraySignData(List<object> arr)
+        {
+            var parts = new List<string>();
+            foreach (var item in arr)
+            {
+                if (item == null)
+                {
+                    continue;
+                }
+                parts.Add(BuildSignData(item));
+            }
+            return string.Join(",", parts);
+        }
+        /// <summary>
+        /// Base64转Hex
+        /// </summary>
+        /// <param name="base64String">Base64字符串</param>
+        /// <returns>Hex字符串</returns>
+        private string Base64ToHex(string base64String)
+        {
+            var bytes = Convert.FromBase64String(base64String);
+            return BitConverter.ToString(bytes).Replace("-", "").ToLower();
+        }
+        /// <summary>
+        /// 解析JSON字符串为字典
+        /// </summary>
+        /// <param name="jsonStr">JSON字符串</param>
+        /// <returns>字典</returns>
+        public Dictionary<string, object> ParseJSON(string jsonStr)
+        {
+            using var document = JsonDocument.Parse(jsonStr);
+            var result = new Dictionary<string, object>();
+            foreach (var element in document.RootElement.EnumerateObject())
+            {
+                result[element.Name] = ParseJsonElement(element.Value);
+            }
+            return result;
+        }
+        /// <summary>
+        /// 解析JSON元素
+        /// </summary>
+        /// <param name="element">JSON元素</param>
+        /// <returns>对象</returns>
+        private object ParseJsonElement(JsonElement element)
+        {
+            switch (element.ValueKind)
+            {
+                case JsonValueKind.String:
+                    return element.GetString();
+                case JsonValueKind.Number:
+                    if (element.TryGetInt32(out int intValue))
+                        return intValue;
+                    if (element.TryGetInt64(out long longValue))
+                        return longValue;
+                    return element.GetDouble();
+                case JsonValueKind.True:
+                    return true;
+                case JsonValueKind.False:
+                    return false;
+                case JsonValueKind.Null:
+                    return null;
+                case JsonValueKind.Object:
+                    var dict = new Dictionary<string, object>();
+                    foreach (var prop in element.EnumerateObject())
+                    {
+                        dict[prop.Name] = ParseJsonElement(prop.Value);
+                    }
+                    return dict;
+                case JsonValueKind.Array:
+                    var list = new List<object>();
+                    foreach (var item in element.EnumerateArray())
+                    {
+                        list.Add(ParseJsonElement(item));
+                    }
+                    return list;
+                default:
+                    return element.ToString();
+            }
+        }
+        /// <summary>
+        /// 从JSON字符串生成待签名字符串
+        /// </summary>
+        /// <param name="jsonStr">JSON字符串</param>
+        /// <returns>待签名字符串</returns>
+        public string GenerateSignDataFromJSON(string jsonStr)
+        {
+            var parameters = ParseJSON(jsonStr);
+            return GenerateSignData(parameters);
+        }
+    }
+}
+// 测试
+using Xunit;
+using PaySignature;
+namespace PaySignatureTest
+{
+    public class SignatureUtilsTest2
+    {
+        private readonly SignatureUtils _utils;
+        public SignatureUtilsTest2()
+        {
+            _utils = new SignatureUtils();
+        }
+        /// <summary>
+        /// 测试构造签名串
+        /// </summary>
+        [Fact]
+        public void TestComplexNestedStructure()
+        {
+            var goods = new List<object>
+            {
+                new Dictionary<string, object>
+                {
+                    { "goodsId", "G001" },
+                    { "goodsName", "商品1" },
+                    { "quantity", 2 }
+                },
+                new Dictionary<string, object>
+                {
+                    { "goodsId", "G002" },
+                    { "goodsName", "商品2" },
+                    { "quantity", 3 }
+                }
+            };
+            var parameters = new Dictionary<string, object>
+            {
+                { "appId", "5765880207854262xxx" },
+                { "goods", goods },
+                { "totalAmount", 100 }
+            };
+            var signData = _utils.GenerateSignData(parameters);
+            Assert.Contains("appId=5765880207854262xxx", signData);
+            Assert.Contains("goods=", signData);
+            Console.WriteLine($"Sign data with complex structure: {signData}");
+        }
+    }
+}
 
-217. // 加签示例
-218. using System.Text;
-219. using Org.BouncyCastle.OpenSsl;
-220. using Org.BouncyCastle.Crypto;
-221. using Org.BouncyCastle.Crypto.Parameters;
-222. using Org.BouncyCastle.Security;
-223. using Org.BouncyCastle.Crypto.Signers;
-224. using Org.BouncyCastle.Crypto.Engines;
-225. using Org.BouncyCastle.Crypto.Digests;
-226. class SignProgram
-227. {
-228. public static void Main(string[] args)
-229. {
-230. string res = RSASign("加签排序拼接内容","私钥");
-231. Console.WriteLine("result: " + res);
-232. }
-233. public static string RSASign(string datastr,string privateStr)
-234. {
-235. var priKey = "-----BEGIN PRIVATE KEY-----\n"+ privateStr +"\n-----END PRIVATE KEY-----\n";
-236. byte[] data = Encoding.UTF8.GetBytes(datastr);
-237. // 创建PSS签名器
-238. var signer = new PssSigner(new RsaEngine(), new Sha256Digest());
-239. AsymmetricKeyParameter rsaPrivateKey = null;
-240. using (var stringReader = new StringReader(priKey))
-241. {
-242. var pemReader = new PemReader(stringReader);
-243. rsaPrivateKey = pemReader.ReadObject() as AsymmetricKeyParameter;
-244. }
-245. signer.Init(true, new ParametersWithRandom(rsaPrivateKey, new SecureRandom()));
-246. signer.BlockUpdate(data, 0, data.Length);
-247. byte[] signature = signer.GenerateSignature();
-248. return Convert.ToBase64String(signature);
-249. }
-250. }
+// 加签示例
+using System.Text;
+using Org.BouncyCastle.OpenSsl;
+using Org.BouncyCastle.Crypto;
+using Org.BouncyCastle.Crypto.Parameters;
+using Org.BouncyCastle.Security;
+using Org.BouncyCastle.Crypto.Signers;
+using Org.BouncyCastle.Crypto.Engines;
+using Org.BouncyCastle.Crypto.Digests;
+class SignProgram
+{
+    public static void Main(string[] args)
+    {
+        string res = RSASign("加签排序拼接内容","私钥");
+        Console.WriteLine("result: " + res);
+    }
+    public static string RSASign(string datastr,string privateStr)
+    {
+        var priKey = "-----BEGIN PRIVATE KEY-----\n"+ privateStr +"\n-----END PRIVATE KEY-----\n";
+        byte[] data = Encoding.UTF8.GetBytes(datastr);
+        // 创建PSS签名器
+        var signer = new PssSigner(new RsaEngine(), new Sha256Digest());
+        AsymmetricKeyParameter rsaPrivateKey = null;
+        using (var stringReader = new StringReader(priKey))
+        {
+            var pemReader = new PemReader(stringReader);
+            rsaPrivateKey = pemReader.ReadObject() as AsymmetricKeyParameter;
+        }
+        signer.Init(true, new ParametersWithRandom(rsaPrivateKey, new SecureRandom()));
+        signer.BlockUpdate(data, 0, data.Length);
+        byte[] signature = signer.GenerateSignature();
+        return Convert.ToBase64String(signature);
+    }
+}
 ```
 
 ## 验签规则
@@ -887,7 +887,7 @@ C#可通过BouncyCastle库来实现，如已安装 [.NET SDK](https://dotnet.mic
 2. 获取参与签名的字段，转换为map并将map的“key-value”排序后以符号“&”拼接。
 3. 使用SM2算法进行验签，具体参考[示例代码](https://gitcode.com/HarmonyOS_Samples/paymentkit-sample-code-serverdemo-java)引入华为支付提供[Maven依赖（pay-java）](../harmonyos-guides/payment-server-connect.md)中VerifyTools.java类的verifySign方法。
 
-注意
+**注意** 
 
 因业务发展需要，接口字段可能发生变动，建议验签功能实现可扩展——即“先对回调通知的请求体进行验签处理，再转换成业务对象处理”，以确保在字段有变化时也可以正常验签。
 
@@ -897,314 +897,314 @@ C#可通过BouncyCastle库来实现，如已安装 [.NET SDK](https://dotnet.mic
 
 javascript可通过sm-crypto模块实现，如已安装node环境，可执行如下命令安装：
 
-```
-1. npm install sm-crypto
+```javascript
+npm install sm-crypto
 ```
 
 验签实现示例代码：
 
-```
-1. const SmCrypto = require('sm-crypto');
-2. function signSM2Verify(plainData, sign, publicStr) {
-3. let signHex1 = base64ToHex(sign)
-4. console.info("plainData: " + plainData)
-5. console.info("sign: " + sign)
-6. console.info("sign hex: " + signHex1)
-7. return SmCrypto.sm2.doVerifySignature(plainData, signHex1, publicStr, {
-8. hash: true,
-9. der: true
-10. })
-11. }
-12. function base64ToHex(base64String) {
-13. const buffer = Buffer.from(base64String, 'base64');
-14. return buffer.toString('hex');
-15. }
-16. let signSM2VerifyRes = signSM2Verify(
-17. "验签排序拼接内容",
-18. "验签sign",
-19. "验签公钥"
-20. );
-21. console.info(signSM2VerifyRes)
+```javascript
+const SmCrypto = require('sm-crypto');
+function signSM2Verify(plainData, sign, publicStr) {
+  let signHex1 = base64ToHex(sign)
+  console.info("plainData: " + plainData)
+  console.info("sign: " + sign)
+  console.info("sign hex: " + signHex1)
+  return SmCrypto.sm2.doVerifySignature(plainData, signHex1, publicStr, {
+    hash: true,
+    der: true
+  })
+}
+function base64ToHex(base64String) {
+  const buffer = Buffer.from(base64String, 'base64');
+  return buffer.toString('hex');
+}
+let signSM2VerifyRes = signSM2Verify(
+    "验签排序拼接内容",
+    "验签sign",
+    "验签公钥"
+);
+console.info(signSM2VerifyRes)
 ```
 
 **go语言**
 
 验签实现示例代码：
 
-```
-1. // TestSM2Verify 测试：SM2验签（需要安装go get -u github.com/tjfoc/gmsm）
-2. func ReadSM2PublicKeyFromHex(publicKeyStr string) (*sm2.PublicKey, error) {
-3. // 解码十六进制字符串
-4. pubKeyBytes, err := hex.DecodeString(publicKeyStr)
-5. if err != nil {
-6. return nil, fmt.Errorf("failed to decode hex: %v", err)
-7. }
-8. // 检查是否为非压缩格式 (0x04 开头)
-9. if len(pubKeyBytes) != 65 || pubKeyBytes[0] != 0x04 {
-10. return nil, fmt.Errorf("invalid SM2 public key format (expected 65 bytes, starting with 0x04)")
-11. }
-12. // 解析 X 和 Y 坐标（SM2 公钥长度为 65 字节：0x04 + 32字节X + 32字节Y）
-13. x := pubKeyBytes[1:33]  // X 坐标（32字节）
-14. y := pubKeyBytes[33:65] // Y 坐标（32字节）
-15. // 构造 SM2 公钥
-16. publicKey := &sm2.PublicKey{
-17. Curve: sm2.P256Sm2(), // SM2 曲线
-18. X:     new(big.Int).SetBytes(x),
-19. Y:     new(big.Int).SetBytes(y),
-20. }
-21. return publicKey, nil
-22. }
-23. func (s *SignatureUtils) VerifySM2(content, publicKeyStr, signData string) (bool, error) {
-24. // 将Base64签名转换为Hex格式
-25. signBytes, err := base64.StdEncoding.DecodeString(signData)
-26. if err != nil {
-27. return false, fmt.Errorf("decode sign data failed: %v", err)
-28. }
-29. signHex := hex.EncodeToString(signBytes)
-30. // 解析公钥
-31. publicKey, err := ReadSM2PublicKeyFromHex(publicKeyStr)
-32. if err != nil {
-33. return false, fmt.Errorf("parse public key failed: %v", err)
-34. }
-35. // 将Hex签名转换为字节数组
-36. signature, err := hex.DecodeString(signHex)
-37. if err != nil {
-38. return false, fmt.Errorf("decode signature hex failed: %v", err)
-39. }
-40. // SM2验签
-41. isVerified := publicKey.Verify([]byte(content), signature)
-42. if !isVerified {
-43. return false, fmt.Errorf("SM2 verification requires external library, please install: go get github.com/tjfoc/gmsm")
-44. }
-45. return true, nil
-46. }
+```go
+// TestSM2Verify 测试：SM2验签（需要安装go get -u github.com/tjfoc/gmsm）
+func ReadSM2PublicKeyFromHex(publicKeyStr string) (*sm2.PublicKey, error) {
+    // 解码十六进制字符串
+    pubKeyBytes, err := hex.DecodeString(publicKeyStr)
+    if err != nil {
+        return nil, fmt.Errorf("failed to decode hex: %v", err)
+    }
+    // 检查是否为非压缩格式 (0x04 开头)
+    if len(pubKeyBytes) != 65 || pubKeyBytes[0] != 0x04 {
+        return nil, fmt.Errorf("invalid SM2 public key format (expected 65 bytes, starting with 0x04)")
+    }
+    // 解析 X 和 Y 坐标（SM2 公钥长度为 65 字节：0x04 + 32字节X + 32字节Y）
+    x := pubKeyBytes[1:33]  // X 坐标（32字节）
+    y := pubKeyBytes[33:65] // Y 坐标（32字节）
+    // 构造 SM2 公钥
+    publicKey := &sm2.PublicKey{
+        Curve: sm2.P256Sm2(), // SM2 曲线
+            X:     new(big.Int).SetBytes(x),
+            Y:     new(big.Int).SetBytes(y),
+    }
+    return publicKey, nil
+}
+func (s *SignatureUtils) VerifySM2(content, publicKeyStr, signData string) (bool, error) {
+    // 将Base64签名转换为Hex格式
+    signBytes, err := base64.StdEncoding.DecodeString(signData)
+    if err != nil {
+        return false, fmt.Errorf("decode sign data failed: %v", err)
+    }
+    signHex := hex.EncodeToString(signBytes)
+    // 解析公钥
+    publicKey, err := ReadSM2PublicKeyFromHex(publicKeyStr)
+    if err != nil {
+        return false, fmt.Errorf("parse public key failed: %v", err)
+    }
+    // 将Hex签名转换为字节数组
+    signature, err := hex.DecodeString(signHex)
+    if err != nil {
+        return false, fmt.Errorf("decode signature hex failed: %v", err)
+    }
+    // SM2验签
+    isVerified := publicKey.Verify([]byte(content), signature)
+    if !isVerified {
+        return false, fmt.Errorf("SM2 verification requires external library, please install: go get github.com/tjfoc/gmsm")
+    }
+    return true, nil
+}
 ```
 
 **python语言**
 
 验签实现示例代码：
 
-```
-1. import binascii
-2. import json
-3. import base64
-4. from cryptography.hazmat.primitives import hashes
-5. from cryptography.hazmat.primitives.asymmetric import padding, rsa
-6. from cryptography.hazmat.primitives.serialization import load_der_private_key, load_der_public_key
-7. from cryptography.hazmat.backends import default_backend
-8. from pyasn1.codec.ber import decoder
-9. class SignatureUtils:
-10. RS_LEN = 32
-11. def verify_sm2(self, content, public_key_str, sign_data):
-12. """
-13. SM2验签
-14. Args:
-15. content: 原文
-16. public_key_str: 公钥（Hex格式）
-17. sign_data: 签名（Base64格式）
-18. Returns:
-19. bool: 验签结果
-20. Raises:
-21. Exception: 需要引入SM2库
-22. """
-23. try:
-24. from gmssl import sm2, func
-
-26. # 将Base64签名转换为Hex格式
-27. sign_hex = self.base64_to_hex(sign_data)
-28. print(f'plainData: {content}')
-29. print(f'sign: {sign_data}')
-30. print(f'sign hex: {sign_hex}')
-31. # 创建SM2实例
-32. sm2_crypt = sm2.CryptSM2(
-33. public_key=self._preprocessing_public_key(public_key_str),
-34. private_key=None,
-35. asn1=True
-36. )
-37. # SM2验签
-38. is_verified = sm2_crypt.verify_with_sm3(sign_hex, content.encode())
-
-40. return is_verified
-41. except ImportError:
-42. raise Exception("SM2 verification requires gmssl library, please install: pip install gmssl")
-43. except Exception as e:
-44. raise Exception(f"SM2 verification failed: {str(e)}")
-45. def is_asn1_format_key(self, key_hex_str: str, is_public_key: bool = False) -> bool:
-46. """
-47. 判断是否为asn1格式的密钥
-48. Args:
-49. key_hex_str: 十六进制密钥字符串
-50. is_public_key: 是否为公钥
-51. Returns:
-52. boolean
-53. """
-54. ken_len = len(binascii.unhexlify(key_hex_str))
-55. if is_public_key:
-56. return ken_len != self.RS_LEN * 2 and ken_len != self.RS_LEN * 2 + 1
-57. return ken_len != self.RS_LEN and ken_len != self.RS_LEN + 1
-58. @classmethod
-59. def covert_asn1_der_public_key(self, public_key: str) -> str:
-60. """
-61. 将sm2的DER编码的ASN.1格式的公钥，转换成未编码的原始密钥
-62. Args:
-63. public_key: DER编码的ASN.1格式的公钥字符串。
-64. Returns:
-65. 未编码的原始公钥，直接表示为一个65字节的十六进制字符串
-66. """
-67. asn1_obj, _ = decoder.decode(binascii.unhexlify(public_key))
-68. public_key_bytes = asn1_obj[1].asOctets()
-69. return public_key_bytes.hex()
-70. @classmethod
-71. def covert_asn1_der_private_key(self, private_key: str) -> str:
-72. """
-73. 将ASN.1格式的私钥，转换成未编码的原始密钥
-74. Args:
-75. private_key: DER编码的ASN.1格式的私钥字符串
-76. Returns:
-77. 返回BCEC格式的私钥
-78. """
-79. asn1_obj, _ = decoder.decode(binascii.unhexlify(private_key))
-80. # 提取私钥的大整数部分，这里是特别适配了华为支付java-sdk的逻辑，如果是其他格式的私钥，可能需要调整这部分
-81. private_key_sequence = decoder.decode(asn1_obj[2].asOctets())[0]
-82. private_value_bytes = private_key_sequence[1].asOctets()
-83. return private_value_bytes[:32].hex()  # 取32字节，为BCEC格式的标准长度
-84. @classmethod
-85. def _preprocessing_public_key(self, public_key):
-86. """公钥预处理"""
-87. if self.is_asn1_format_key(self, public_key, is_public_key=True):
-88. public_key = self.covert_asn1_der_public_key(public_key)
-89. # 手动去除前缀04，避免CryptSM2初始化时检查到04开头会使用lstrip方法，如果原公钥是以0开头，则起始的0会被误去除
-90. if public_key.startswith('04'):
-91. public_key = public_key[2:]
-92. return public_key
-93. # 验证用例
-94. sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
-95. from signature import SignatureUtils
-96. class TestSignatureUtils(unittest.TestCase):
-97. """签名工具类测试"""
-98. def setUp(self):
-99. """测试前准备"""
-100. self.utils = SignatureUtils()
-101. def test_sm2_verify(self):
-102. """测试：SM2验签（需要安装gmssl）"""
-103. # SM2测试数据
-104. plain_data = ''
-105. public_key_str = ''
-106. sign_data = '' # Base64格式的SM2签名，需要替换为真实数据
-107. try:
-108. # SM2验签
-109. verified = self.utils.verify_sm2(plain_data, public_key_str, sign_data)
-110. print(f'SM2 verification result: {verified}')
-111. except Exception as e:
-112. if 'gmssl' in str(e):
-113. self.skipTest('SM2 test skipped - gmssl not installed')
-114. else:
-115. raise
-116. if __name__ == '__main__':
-117. unittest.main()
+```python
+import binascii
+import json
+import base64
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.asymmetric import padding, rsa
+from cryptography.hazmat.primitives.serialization import load_der_private_key, load_der_public_key
+from cryptography.hazmat.backends import default_backend
+from pyasn1.codec.ber import decoder
+class SignatureUtils:
+    RS_LEN = 32
+    def verify_sm2(self, content, public_key_str, sign_data):
+        """
+        SM2验签
+        Args:
+            content: 原文
+            public_key_str: 公钥（Hex格式）
+            sign_data: 签名（Base64格式）
+        Returns:
+            bool: 验签结果
+        Raises:
+            Exception: 需要引入SM2库
+        """
+        try:
+            from gmssl import sm2, func
+            
+            # 将Base64签名转换为Hex格式
+            sign_hex = self.base64_to_hex(sign_data)
+            print(f'plainData: {content}')
+            print(f'sign: {sign_data}')
+            print(f'sign hex: {sign_hex}')
+            # 创建SM2实例
+            sm2_crypt = sm2.CryptSM2(
+                public_key=self._preprocessing_public_key(public_key_str),
+                private_key=None,
+                asn1=True
+            )
+            # SM2验签
+            is_verified = sm2_crypt.verify_with_sm3(sign_hex, content.encode())
+            
+            return is_verified
+        except ImportError:
+            raise Exception("SM2 verification requires gmssl library, please install: pip install gmssl")
+        except Exception as e:
+            raise Exception(f"SM2 verification failed: {str(e)}")
+    def is_asn1_format_key(self, key_hex_str: str, is_public_key: bool = False) -> bool:
+        """
+        判断是否为asn1格式的密钥
+        Args:
+            key_hex_str: 十六进制密钥字符串
+            is_public_key: 是否为公钥
+        Returns:
+            boolean
+        """
+        ken_len = len(binascii.unhexlify(key_hex_str))
+        if is_public_key:
+            return ken_len != self.RS_LEN * 2 and ken_len != self.RS_LEN * 2 + 1
+        return ken_len != self.RS_LEN and ken_len != self.RS_LEN + 1
+    @classmethod
+    def covert_asn1_der_public_key(self, public_key: str) -> str:
+        """
+        将sm2的DER编码的ASN.1格式的公钥，转换成未编码的原始密钥
+        Args:
+            public_key: DER编码的ASN.1格式的公钥字符串。
+        Returns:
+            未编码的原始公钥，直接表示为一个65字节的十六进制字符串
+        """
+        asn1_obj, _ = decoder.decode(binascii.unhexlify(public_key))
+        public_key_bytes = asn1_obj[1].asOctets()
+        return public_key_bytes.hex()
+    @classmethod
+    def covert_asn1_der_private_key(self, private_key: str) -> str:
+        """
+        将ASN.1格式的私钥，转换成未编码的原始密钥
+        Args:
+            private_key: DER编码的ASN.1格式的私钥字符串
+        Returns:
+            返回BCEC格式的私钥
+        """
+        asn1_obj, _ = decoder.decode(binascii.unhexlify(private_key))
+        # 提取私钥的大整数部分，这里是特别适配了华为支付java-sdk的逻辑，如果是其他格式的私钥，可能需要调整这部分
+        private_key_sequence = decoder.decode(asn1_obj[2].asOctets())[0]
+        private_value_bytes = private_key_sequence[1].asOctets()
+        return private_value_bytes[:32].hex()  # 取32字节，为BCEC格式的标准长度
+    @classmethod
+    def _preprocessing_public_key(self, public_key):
+        """公钥预处理"""
+        if self.is_asn1_format_key(self, public_key, is_public_key=True):
+            public_key = self.covert_asn1_der_public_key(public_key)
+        # 手动去除前缀04，避免CryptSM2初始化时检查到04开头会使用lstrip方法，如果原公钥是以0开头，则起始的0会被误去除
+        if public_key.startswith('04'):
+            public_key = public_key[2:]
+        return public_key
+# 验证用例
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
+from signature import SignatureUtils
+class TestSignatureUtils(unittest.TestCase):
+    """签名工具类测试"""
+    def setUp(self):
+        """测试前准备"""
+        self.utils = SignatureUtils()
+    def test_sm2_verify(self):
+        """测试：SM2验签（需要安装gmssl）"""
+        # SM2测试数据
+        plain_data = ''
+        public_key_str = ''
+        sign_data = '' # Base64格式的SM2签名，需要替换为真实数据
+        try:
+            # SM2验签
+            verified = self.utils.verify_sm2(plain_data, public_key_str, sign_data)
+            print(f'SM2 verification result: {verified}')
+        except Exception as e:
+            if 'gmssl' in str(e):
+                self.skipTest('SM2 test skipped - gmssl not installed')
+            else:
+                raise
+if __name__ == '__main__':
+    unittest.main()
 ```
 
 **php语言**
 
 验签实现示例代码：
 
-```
-1. # 使用三方库实现，安装命令：composer require lpilp/guomi
-2. /**
-3. * 测试：SM2验签（使用给定的示例数据）
-4. */
-5. public function testSM2Verify()
-6. {
-7. $plainData = '';
-8. $publicKeyStr = '';
-9. $signData = "";
-10. try {
-11. // SM2验签
-12. $verified = $this->sm2Verify($plainData, $signData, $publicKeyStr);
-13. $this->assertTrue($verified, "SM2 verification should succeed with given sample data");
-14. } catch (Exception $e) {
-15. $this->fail('SM2 verify failed: ' . $e->getMessage());
-16. }
-17. }
-18. public function sm2Verify(string $data, string $signature, string $publicKey): bool
-19. {
-20. try {
-21. if (empty($data)) {
-22. throw new Exception('待验签数据不能为空');
-23. }
-24. if (empty($signature)) {
-25. throw new Exception('签名不能为空');
-26. }
-27. if (empty($publicKey)) {
-28. throw new Exception('公钥不能为空');
-29. }
-30. if (!class_exists('Rtgm\sm\RtSm2')) {
-31. throw new Exception('Rtgm\sm\RtSm2 类不存在，请检查composer依赖');
-32. }
-33. $signatureHex = bin2hex(base64_decode($signature));
-34. $sm2 = new RtSm2();
-35. $result = $sm2->verifySign($data, $signatureHex, $publicKey);
-36. echo'[sm2Verify] SM2验证结果: '.$result;
-37. return $result;
-38. } catch (Exception $e) {
-39. echo '[sm2Verify Error] SM2验证异常: ' . $e->getMessage();
-40. return false;
-41. }
-42. }
+```php
+# 使用三方库实现，安装命令：composer require lpilp/guomi
+/**
+* 测试：SM2验签（使用给定的示例数据）
+*/
+public function testSM2Verify()
+{
+    $plainData = '';
+    $publicKeyStr = '';
+    $signData = "";
+    try {
+        // SM2验签
+        $verified = $this->sm2Verify($plainData, $signData, $publicKeyStr);
+        $this->assertTrue($verified, "SM2 verification should succeed with given sample data");
+    } catch (Exception $e) {
+        $this->fail('SM2 verify failed: ' . $e->getMessage());
+    }
+}
+public function sm2Verify(string $data, string $signature, string $publicKey): bool
+{
+    try {
+        if (empty($data)) {
+            throw new Exception('待验签数据不能为空');
+        }
+        if (empty($signature)) {
+            throw new Exception('签名不能为空');
+        }
+        if (empty($publicKey)) {
+            throw new Exception('公钥不能为空');
+        }
+        if (!class_exists('Rtgm\sm\RtSm2')) {
+            throw new Exception('Rtgm\sm\RtSm2 类不存在，请检查composer依赖');
+        }
+        $signatureHex = bin2hex(base64_decode($signature));
+        $sm2 = new RtSm2();
+        $result = $sm2->verifySign($data, $signatureHex, $publicKey);
+        echo'[sm2Verify] SM2验证结果: '.$result;
+        return $result;
+    } catch (Exception $e) {
+        echo '[sm2Verify Error] SM2验证异常: ' . $e->getMessage();
+        return false;
+    }
+}
 ```
 
 **c#语言**
 
 验签实现示例代码：
 
-```
-1. using Xunit;
-2. using System.Text;
-3. using Org.BouncyCastle.Crypto.Parameters;
-4. using Org.BouncyCastle.Crypto.Signers;
-5. using Org.BouncyCastle.Utilities.Encoders;
-6. using Org.BouncyCastle.Asn1.X9;
-7. namespace PaySignatureTest
-8. {
-9. public class SignatureUtilsTest3
-10. {
-11. /// <summary>
-12. /// 测试：SM2验签（需要引入BouncyCastle）命令：dotnet add package BouncyCastle
-13. /// </summary>
-14. [Fact]
-15. public void TestSM2Verify()
-16. {
-17. // SM2测试数据
-18. var plainData = "";
-19. var publicKeyStr = "";
-20. var signData = ""; // Base64格式的SM2签名，需要替换为真实数据
-21. // SM2验签
-22. var verified = verifySM2(plainData, publicKeyStr, signData);
-23. Console.WriteLine($"SM2 verification result: {verified}");
-24. }
-25. public bool verifySM2(string content, string publicKeyStr, string signData)
-26. {
-27. // 使用BouncyCastle库实现SM2验签
-28. // 将Base64签名转换为Hex格式
-29. var signBytes = Convert.FromBase64String(signData);
-30. var signHex = Hex.ToHexString(signBytes);
-31. Console.WriteLine($"plainData: {content}");
-32. Console.WriteLine($"sign: {signData}");
-33. Console.WriteLine($"sign hex: {signHex}");
-34. // 解析公钥
-35. var curve = ECNamedCurveTable.GetByName("sm2p256v1");
-36. var domain = new ECDomainParameters(curve.Curve, curve.G, curve.N, curve.H);
-37. var q = curve.Curve.DecodePoint(Hex.Decode(publicKeyStr));
-38. var publicKey = new ECPublicKeyParameters("EC", q, domain);
-39. // 解析签名
-40. var signer = new SM2Signer();
-41. signer.Init(false, publicKey);
-42. signer.BlockUpdate(Encoding.UTF8.GetBytes(content), 0, content.Length);
-43. var isVerified = signer.VerifySignature(Hex.Decode(signHex));
-44. return isVerified;
-45. }
-46. }
-47. }
+```cs
+using Xunit;
+using System.Text;
+using Org.BouncyCastle.Crypto.Parameters;
+using Org.BouncyCastle.Crypto.Signers;
+using Org.BouncyCastle.Utilities.Encoders;
+using Org.BouncyCastle.Asn1.X9;
+namespace PaySignatureTest
+{
+    public class SignatureUtilsTest3
+    {
+        /// <summary>
+        /// 测试：SM2验签（需要引入BouncyCastle）命令：dotnet add package BouncyCastle
+        /// </summary>
+        [Fact]
+        public void TestSM2Verify()
+        {
+            // SM2测试数据
+            var plainData = "";
+            var publicKeyStr = "";
+            var signData = ""; // Base64格式的SM2签名，需要替换为真实数据
+            // SM2验签
+            var verified = verifySM2(plainData, publicKeyStr, signData);
+            Console.WriteLine($"SM2 verification result: {verified}");
+        }
+        public bool verifySM2(string content, string publicKeyStr, string signData)
+        {
+            // 使用BouncyCastle库实现SM2验签
+            // 将Base64签名转换为Hex格式
+            var signBytes = Convert.FromBase64String(signData);
+            var signHex = Hex.ToHexString(signBytes);
+            Console.WriteLine($"plainData: {content}");
+            Console.WriteLine($"sign: {signData}");
+            Console.WriteLine($"sign hex: {signHex}");
+            // 解析公钥
+            var curve = ECNamedCurveTable.GetByName("sm2p256v1");
+            var domain = new ECDomainParameters(curve.Curve, curve.G, curve.N, curve.H);
+            var q = curve.Curve.DecodePoint(Hex.Decode(publicKeyStr));
+            var publicKey = new ECPublicKeyParameters("EC", q, domain);
+            // 解析签名
+            var signer = new SM2Signer();
+            signer.Init(false, publicKey);
+            signer.BlockUpdate(Encoding.UTF8.GetBytes(content), 0, content.Length);
+            var isVerified = signer.VerifySignature(Hex.Decode(signHex));
+            return isVerified;
+        }
+    }
+}
 ```
 
 ## 通知回调接口说明
@@ -1234,14 +1234,14 @@ javascript可通过sm-crypto模块实现，如已安装node环境，可执行如
 * 支持的TLS协议版本：1.2 / 1.3。
 * 支持的加密套件列表：
 
-  ```
-  1. TLS_DHE_RSA_WITH_AES_128_GCM_SHA256
-  2. TLS_DHE_RSA_WITH_AES_256_GCM_SHA384
-  3. TLS_DHE_DSS_WITH_AES_128_GCM_SHA256
-  4. TLS_DHE_DSS_WITH_AES_256_GCM_SHA384
-  5. TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
-  6. TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
-  7. TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
-  8. TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-  9. TLS_AES_128_GCM_SHA256
+  ```html
+  TLS_DHE_RSA_WITH_AES_128_GCM_SHA256
+  TLS_DHE_RSA_WITH_AES_256_GCM_SHA384
+  TLS_DHE_DSS_WITH_AES_128_GCM_SHA256
+  TLS_DHE_DSS_WITH_AES_256_GCM_SHA384
+  TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+  TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+  TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+  TLS_AES_128_GCM_SHA256
   ```

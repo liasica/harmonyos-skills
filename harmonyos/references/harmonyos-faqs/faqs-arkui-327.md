@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-327
 title: 如何处理ForEach第三个参数键值生成耗时久导致的卡顿问题
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 如何处理ForEach第三个参数键值生成耗时久导致的卡顿问题
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何处理ForEach第三个参数键值生成耗时久导致的卡顿问题
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:22+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:21+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:d0abec160454bf64c44ddb8d7649f2463e77f75212d9729bbad5ce23de18af47
 ---
 

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___sy
 title: Rcp_SyncInterceptor
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > C API > 结构体 > Rcp_SyncInterceptor
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:09+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:46ab4e84d107efa556be2104d1c81b1edd0b8c41909004d6a159e0dbdfb07f24
+scraped_at: 2026-09-02T15:01:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:35b34141f005b71279f7c25e90b9c150c1a45049b150fad5ed21e49830399339
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 同步拦截器。
 
@@ -22,11 +20,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -34,14 +28,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTVWearable
-
 ### intercept
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Rcp_Response*(* Rcp_SyncInterceptor::intercept) (Rcp_Request *request, const Rcp_SyncRequestHandler *next, uint32_t *errCode)
+```cpp
+Rcp_Response*(* Rcp_SyncInterceptor::intercept) (Rcp_Request *request, const Rcp_SyncRequestHandler *next, uint32_t *errCode)
 ```
 
 **描述**

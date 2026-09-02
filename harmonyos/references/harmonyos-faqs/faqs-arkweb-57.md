@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-57
 title: 如何解决webview loaddata白屏问题
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 如何解决webview loaddata白屏问题
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:43+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:53+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:cfee4192ec6646e984d9b8ca1c5d7d132efbf0347a98cfe3733177d037226baf
 ---
 

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-100
 title: 如何主动拉起软键盘
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 如何主动拉起软键盘
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何主动拉起软键盘
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:25:27+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:20+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:d230d48aac2a1eaeea4f7b183388afc4f74c16113becde6abc45302fc16b4dfc
 ---
 

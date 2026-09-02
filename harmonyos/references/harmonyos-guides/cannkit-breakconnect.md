@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-break
 title: BreakConnect
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator > BreakConnect
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:38+08:00
+scraped_at: 2026-09-02T14:50:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f2c1cd06b288374d396bcbf0d169856f02757dbc11bea53e494f21ba0cf54b9c
+content_hash: sha256:cbb06745f5a0e177508d6b5aad97a8f276019e9af50b518206468f5cc1616717
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:f2c1cd06b288374d396bcbf0d169856f02757dbc11bea53e494f21ba0cf
 
 ## 函数原型
 
-```
-1. void BreakConnect() const;
+```cpp
+void BreakConnect() const;
 ```
 
 ## 参数说明

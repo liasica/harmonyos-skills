@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ads-kit-gloss
 title: Ads Kit术语
 breadcrumb: 指南 > 应用服务 > Ads Kit（广告服务） > Ads Kit术语
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:09+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a84d29ab335633be60c599a4cd75d7bee19499da2a4b496a3cbd333d0e0f05bf
+scraped_at: 2026-09-02T14:50:23+08:00
+doc_updated_at: 2026-07-03
+content_hash: sha256:419e47802a351bc2a8f8f35132d5369cc55369be94ebe9545c89cdbed508d0b1
 ---
 
 ## Banner Ad 横幅广告
 
 横幅广告又名Banner广告，是在应用程序顶部、中部或底部占据一个位置的矩形图片，广告内容每隔一段时间会自动刷新。
 
-## Interstital Ad 插屏广告
+## Interstitial Ad 插屏广告
 
 插屏广告是一种在应用开启、暂停或退出时以全屏或半屏的形式弹出的广告形式，展示时机巧妙避开用户对应用的正常体验，尺寸大，曝光效果好。
 

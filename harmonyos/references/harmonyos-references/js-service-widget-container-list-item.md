@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: list-item
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 容器组件 > list-item
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:38+08:00
-doc_updated_at: 2026-03-26
-content_hash: sha256:389621f6abc9841dcd2b7bcb45389dab622faf9432a284c3f20d4fb1fe65a45f
+scraped_at: 2026-09-02T15:01:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:60a41f2781138f26f29c55db28083ff817666ddc52e3216e0b4b4a993b6d2e31
 ---
 
 <[list](js-service-widget-container-list.md)>的子组件，用来展示列表具体item。
 
-说明
+**说明** 
 
 从API version 8 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -19,13 +19,9 @@ content_hash: sha256:389621f6abc9841dcd2b7bcb45389dab622faf9432a284c3f20d4fb1fe6
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-service-widget-common-attributes.md)外，还支持如下属性：
 
@@ -38,23 +34,17 @@ PhonePC/2in1TabletTVWearable
 
 ## 样式
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用样式](js-service-widget-common-styles.md)外，还支持如下样式：
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | column-span | <number> | 1 | 否 | 当前的list-item需要在list中占据的列的数量，默认占一列，仅在list为多列时生效。 |
-| click-color | <color> | - | 否 | 设置列表项按压点击时的背板颜色。 |
+| click-color | <color> | - | 否 | 设置list-item按压点击时的背板颜色。 |
 
 ## 事件
-
-PhonePC/2in1TabletTVWearable
 
 支持[通用事件](js-service-widget-common-events.md)。
 
 ## 示例
-
-PhonePC/2in1TabletTVWearable
 
 详见[list示例](js-service-widget-container-list.md#示例)。

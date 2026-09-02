@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.appstartup.startupManager (启动框架管理能力)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.appstartup.startupManager (启动框架管理能力)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:23+08:00
-doc_updated_at: 2026-04-17
-content_hash: sha256:d9c95bdd6e8ff07bf32ef16a9475dc6db9643347a98393584fc16bd771303266
+scraped_at: 2026-09-02T15:00:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:fa1e54d8c158a9e211785ec521a3756df499cace025707bbb35bd909bece2f01
 ---
 
 本模块提供[应用启动框架](../harmonyos-guides/app-startup.md)管理启动任务的能力，只能在主线程调用。
 
-说明
+**说明** 
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -20,21 +20,17 @@ content_hash: sha256:d9c95bdd6e8ff07bf32ef16a9475dc6db9643347a98393584fc16bd7713
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { startupManager }  from '@kit.AbilityKit';
+```ts
+import { startupManager }  from '@kit.AbilityKit';
 ```
 
 ## startupManager.run
-
-PhonePC/2in1TabletTVWearable
 
 run(startupTasks: Array<string>, config?: StartupConfig): Promise<void>
 
 执行启动框架启动任务或加载so文件。
 
-说明
+**说明** 
 
 本接口不支持执行feature类型HAP中的启动任务，如需要使用相关能力请调用[startupManager.run](js-apis-app-appstartup-startupmanager.md#startupmanagerrun20)接口。
 
@@ -46,7 +42,7 @@ run(startupTasks: Array<string>, config?: StartupConfig): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| startupTasks | Array<string> | 是 | 表示准备执行的启动任务[StartupTask](js-apis-app-appstartup-startuptask.md)的名称或预加载so名称的数组。 |
+| startupTasks | Array<string> | 是 | 表示准备执行的启动任务[StartupTask](js-apis-app-appstartup-startuptask.md)的名称或预加载so名称的数组。该接口不支持feature类型HAP中的启动任务。名称需与配置文件startup\_config.json中配置的name取值保持一致，详见[定义启动任务配置](../harmonyos-guides/app-startup.md#定义启动任务配置)和[定义预加载so任务配置](../harmonyos-guides/app-startup.md#定义预加载so任务配置)。 |
 | config | [StartupConfig](js-apis-app-appstartup-startupconfig.md) | 否 | 表示启动任务配置信息，包含启动框架超时时间与启动任务监听器配置。 |
 
 **返回值：**
@@ -70,36 +66,34 @@ run(startupTasks: Array<string>, config?: StartupConfig): Promise<void>
 
 **示例：**
 
-```
-1. import { AbilityConstant, UIAbility, Want, startupManager } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { AbilityConstant, UIAbility, Want, startupManager } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. export default class EntryAbility extends UIAbility {
-6. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-7. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-8. let startParams = ['StartupTask_001', 'libentry_001'];
-9. try {
-10. // 手动调用run方法
-11. startupManager.run(startParams).then(() => {
-12. console.info(`StartupTest startupManager run then, startParams = ${startParams}.`);
-13. }).catch((error: BusinessError) => {
-14. console.error(`StartupTest promise catch failed, error code: ${error.code}, error msg: ${error.message}.`);
-15. });
-16. } catch (error) {
-17. let errMsg = (error as BusinessError).message;
-18. let errCode = (error as BusinessError).code;
-19. console.error(`Startup.run failed, err code: ${errCode}, err msg: ${errMsg}.`);
-20. }
-21. }
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+    let startParams = ['StartupTask_001', 'libentry_001'];
+    try {
+      // 手动调用run方法
+      startupManager.run(startParams).then(() => {
+        hilog.info(0x0000, 'testTag', 'StartupTest startupManager run then, startParams = %{public}s.', startParams.join(','));
+      }).catch((error: BusinessError) => {
+        hilog.error(0x0000, 'testTag', 'StartupTest promise catch failed, error code: %{public}d, error msg: %{public}s.', error.code, error.message);
+      });
+    } catch (error) {
+      let errMsg = (error as BusinessError).message;
+      let errCode = (error as BusinessError).code;
+      hilog.error(0x0000, 'testTag', 'startupManager.run failed, err code: %{public}d, err msg: %{public}s.', errCode, errMsg);
+    }
+  }
 
-23. // ...
-24. }
+  // ...
+}
 ```
 
 ## startupManager.run20+
-
-PhonePC/2in1TabletTVWearable
 
 run(startupTasks: Array<string>, context: common.AbilityStageContext, config: StartupConfig): Promise<void>
 
@@ -111,7 +105,7 @@ run(startupTasks: Array<string>, context: common.AbilityStageContext, config: St
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| startupTasks | Array<string> | 是 | 表示准备执行的启动任务[StartupTask](js-apis-app-appstartup-startuptask.md)的名称或预加载so名称的数组。 |
+| startupTasks | Array<string> | 是 | 表示准备执行的启动任务[StartupTask](js-apis-app-appstartup-startuptask.md)的名称或预加载so名称的数组。名称需与配置文件startup\_config.json中配置的name取值保持一致，详见[定义启动任务配置](../harmonyos-guides/app-startup.md#定义启动任务配置)和[定义预加载so任务配置](../harmonyos-guides/app-startup.md#定义预加载so任务配置)。 |
 | context | [common.AbilityStageContext](js-apis-inner-application-abilitystagecontext.md) | 是 | 表示执行启动任务[StartupTask](js-apis-app-appstartup-startuptask.md)的AbilityStage上下文，作为入参传给启动任务的[init](js-apis-app-appstartup-startuptask.md#init)。 |
 | config | [StartupConfig](js-apis-app-appstartup-startupconfig.md) | 是 | 表示启动任务配置信息，包含启动框架超时时间与启动任务监听器配置。 |
 
@@ -135,47 +129,45 @@ run(startupTasks: Array<string>, context: common.AbilityStageContext, config: St
 
 **示例：**
 
-```
-1. import { AbilityStage, startupManager, StartupListener, StartupConfig } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { AbilityStage, startupManager, StartupListener, StartupConfig } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. export default class MyAbilityStage extends AbilityStage {
-6. onCreate(): void {
-7. hilog.info(0x0000, 'testTag', 'AbilityStage onCreate');
-8. let onCompletedCallback = (error: BusinessError<void>) => {
-9. if (error) {
-10. hilog.error(0x0000, 'testTag', `onCompletedCallback error code: ${error.code}, error msg: ${error.message}`);
-11. } else {
-12. hilog.info(0x0000, 'testTag', 'onCompletedCallback: success.');
-13. }
-14. };
-15. let startupListener: StartupListener = {
-16. 'onCompleted': onCompletedCallback
-17. };
-18. let config: StartupConfig = {
-19. 'timeoutMs': 10000,
-20. 'startupListener': startupListener
-21. };
+export default class MyAbilityStage extends AbilityStage {
+  onCreate(): void {
+    hilog.info(0x0000, 'testTag', 'AbilityStage onCreate');
+    let onCompletedCallback = (error: BusinessError) => {
+      if (error) {
+        hilog.error(0x0000, 'testTag', `onCompletedCallback error code: ${error.code}, error msg: ${error.message}`);
+      } else {
+        hilog.info(0x0000, 'testTag', 'onCompletedCallback: success.');
+      }
+    };
+    let startupListener: StartupListener = {
+      'onCompleted': onCompletedCallback
+    };
+    let config: StartupConfig = {
+      'timeoutMs': 10000,
+      'startupListener': startupListener
+    };
 
-23. try {
-24. // 手动调用run方法
-25. startupManager.run(['StartupTask_001', 'libentry_001'], this.context, config).then(() => {
-26. hilog.info(0x0000, 'testTag', '%{public}s', 'startupManager.run success');
-27. }).catch((error: BusinessError<void>) => {
-28. hilog.error(0x0000, 'testTag', `startupManager.run promise catch error code: ${error.code}, error msg: ${error.message}`);
-29. })
-30. } catch (error) {
-31. hilog.error(0x0000, 'testTag', `startupManager.run catch error code: ${error.code}, error msg: ${error.message}`);
-32. }
-33. }
-34. // ...
-35. }
+    try {
+      // 手动调用run方法
+      startupManager.run(['StartupTask_001', 'libentry_001'], this.context, config).then(() => {
+        hilog.info(0x0000, 'testTag', '%{public}s', 'startupManager.run success');
+      }).catch((error: BusinessError) => {
+        hilog.error(0x0000, 'testTag', `startupManager.run promise catch error code: ${error.code}, error msg: ${error.message}`);
+      });
+    } catch (error) {
+      hilog.error(0x0000, 'testTag', `startupManager.run catch error code: ${error.code}, error msg: ${error.message}`);
+    }
+  }
+  // ...
+}
 ```
 
 ## startupManager.removeAllStartupTaskResults
-
-PhonePC/2in1TabletTVWearable
 
 removeAllStartupTaskResults(): void
 
@@ -187,44 +179,42 @@ removeAllStartupTaskResults(): void
 
 **示例：**
 
-```
-1. import { AbilityConstant, UIAbility, Want, startupManager } from '@kit.AbilityKit';
-2. import { window } from '@kit.ArkUI';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { AbilityConstant, UIAbility, Want, startupManager } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. export default class EntryAbility extends UIAbility {
-7. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-8. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-9. try {
-10. startupManager.run(['StartupTask_001', 'libentry_001']).then(() => {
-11. hilog.info(0x0000, 'testTag', 'StartupTask_001 init successful');
-12. }).catch((error: BusinessError) => {
-13. hilog.error(0x0000, 'testTag', `StartupTask_001 promise catch failed, error code: ${error.code}, error msg: ${error.message}`);
-14. });
-15. } catch (error) {
-16. hilog.error(0x0000, 'testTag', `StartupTask_001.run failed, error code: ${error.code}, error msg: ${error.message}`);
-17. }
-18. }
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+    try {
+      startupManager.run(['StartupTask_001', 'libentry_001']).then(() => {
+        hilog.info(0x0000, 'testTag', 'StartupTask_001 init successful');
+      }).catch((error: BusinessError) => {
+        hilog.error(0x0000, 'testTag', `StartupTask_001 promise catch failed, error code: ${error.code}, error msg: ${error.message}`);
+      });
+    } catch (error) {
+      hilog.error(0x0000, 'testTag', `startupManager.run failed, error code: ${error.code}, error msg: ${error.message}`);
+    }
+  }
 
-20. onWindowStageCreate(windowStage: window.WindowStage) {
-21. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
-22. startupManager.removeAllStartupTaskResults(); // 移除所有启动任务结果
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+    startupManager.removeAllStartupTaskResults(); // 移除所有启动任务结果
 
-24. windowStage.loadContent('pages/Index', (err, data) => {
-25. if (err.code) {
-26. hilog.error(0x0000, 'testTag', `Failed to load the content. Cause error code: ${err.code}, error msg: ${err.message}`);
-27. return;
-28. }
-29. hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
-30. });
-31. }
-32. }
+    windowStage.loadContent('pages/Index', (err, data) => {
+      if (err.code) {
+        hilog.error(0x0000, 'testTag', `Failed to load the content. Cause error code: ${err.code}, error msg: ${err.message}`);
+        return;
+      }
+      hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
+    });
+  }
+}
 ```
 
 ## startupManager.getStartupTaskResult
-
-PhonePC/2in1TabletTVWearable
 
 getStartupTaskResult(startupTask: string): Object
 
@@ -236,7 +226,7 @@ getStartupTaskResult(startupTask: string): Object
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| startupTask | string | 是 | 启动任务[StartupTask](js-apis-app-appstartup-startuptask.md)的名称或预加载so名称。 |
+| startupTask | string | 是 | 启动任务[StartupTask](js-apis-app-appstartup-startuptask.md)的名称或预加载so名称。名称需与配置文件startup\_config.json中配置的name取值保持一致，详见[定义启动任务配置](../harmonyos-guides/app-startup.md#定义启动任务配置)和[定义预加载so任务配置](../harmonyos-guides/app-startup.md#定义预加载so任务配置)。 |
 
 **返回值：**
 
@@ -254,44 +244,42 @@ getStartupTaskResult(startupTask: string): Object
 
 **示例：**
 
-```
-1. import { AbilityConstant, UIAbility, Want, startupManager } from '@kit.AbilityKit';
-2. import { window } from '@kit.ArkUI';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { AbilityConstant, UIAbility, Want, startupManager } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. export default class EntryAbility extends UIAbility {
-7. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-8. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-9. try {
-10. startupManager.run(['StartupTask_001']).then(() => {
-11. hilog.info(0x0000, 'testTag', 'StartupTask_001 init successful');
-12. }).catch((error: BusinessError) => {
-13. hilog.error(0x0000, 'testTag', `StartupTask_001 promise catch failed, error code: ${error.code}, error msg: ${error.message}`);
-14. });
-15. } catch (error) {
-16. hilog.error(0x0000, 'testTag', `StartupTask_001.run failed, error code: ${error.code}, error msg: ${error.message}`);
-17. }
-18. }
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+    try {
+      startupManager.run(['StartupTask_001']).then(() => {
+        hilog.info(0x0000, 'testTag', 'StartupTask_001 init successful');
+      }).catch((error: BusinessError) => {
+        hilog.error(0x0000, 'testTag', `StartupTask_001 promise catch failed, error code: ${error.code}, error msg: ${error.message}`);
+      });
+    } catch (error) {
+      hilog.error(0x0000, 'testTag', `startupManager.run failed, error code: ${error.code}, error msg: ${error.message}`);
+    }
+  }
 
-20. onWindowStageCreate(windowStage: window.WindowStage) {
-21. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
-22. let result = startupManager.getStartupTaskResult('StartupTask_001'); // 手动获取启动任务结果
-23. hilog.info(0x0000, 'testTag', 'getStartupTaskResult result = %{public}s', result);
-24. windowStage.loadContent('pages/Index', (err, data) => {
-25. if (err.code) {
-26. hilog.error(0x0000, 'testTag', `Failed to load the content. Cause error code: ${err.code}, error msg: ${err.message}`);
-27. return;
-28. }
-29. hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
-30. });
-31. }
-32. }
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+    let result = startupManager.getStartupTaskResult('StartupTask_001'); // 手动获取启动任务结果
+    hilog.info(0x0000, 'testTag', 'getStartupTaskResult result = %{public}s', JSON.stringify(result));
+    windowStage.loadContent('pages/Index', (err, data) => {
+      if (err.code) {
+        hilog.error(0x0000, 'testTag', `Failed to load the content. Cause error code: ${err.code}, error msg: ${err.message}`);
+        return;
+      }
+      hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
+    });
+  }
+}
 ```
 
 ## startupManager.isStartupTaskInitialized
-
-PhonePC/2in1TabletTVWearable
 
 isStartupTaskInitialized(startupTask: string): boolean
 
@@ -321,61 +309,59 @@ isStartupTaskInitialized(startupTask: string): boolean
 
 **示例：**
 
-```
-1. import { AbilityConstant, UIAbility, Want, startupManager } from '@kit.AbilityKit';
-2. import { window } from '@kit.ArkUI';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { AbilityConstant, UIAbility, Want, startupManager } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. export default class EntryAbility extends UIAbility {
-7. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-8. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-9. try {
-10. startupManager.run(['StartupTask_001', 'libentry_001']).then(() => {
-11. hilog.info(0x0000, 'testTag', 'StartupTask_001 init successful');
-12. }).catch((error: BusinessError) => {
-13. hilog.error(0x0000, 'testTag', `StartupTask_001 promise catch failed, error code: ${error.code}, error msg: ${error.message}`);
-14. });
-15. } catch (error) {
-16. hilog.error(0x0000, 'testTag', `StartupTask_001.run failed, error code: ${error.code}, error msg: ${error.message}`);
-17. }
-18. }
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+    try {
+      startupManager.run(['StartupTask_001', 'libentry_001']).then(() => {
+        hilog.info(0x0000, 'testTag', 'StartupTask_001 init successful');
+      }).catch((error: BusinessError) => {
+        hilog.error(0x0000, 'testTag', `StartupTask_001 promise catch failed, error code: ${error.code}, error msg: ${error.message}`);
+      });
+    } catch (error) {
+      hilog.error(0x0000, 'testTag', `startupManager.run failed, error code: ${error.code}, error msg: ${error.message}`);
+    }
+  }
 
-20. onWindowStageCreate(windowStage: window.WindowStage) {
-21. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
-22. let result1 = startupManager.isStartupTaskInitialized('StartupTask_001');
-23. let result2 = startupManager.isStartupTaskInitialized('libentry_001');
-24. if (result1) {
-25. console.info('StartupTask_001 init successful');
-26. } else {
-27. console.info('StartupTask_001 uninitialized');
-28. }
-29. if (result2) {
-30. console.info('libentry_001 init successful');
-31. } else {
-32. console.info('libentry_001 uninitialized');
-33. }
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+    let result1 = startupManager.isStartupTaskInitialized('StartupTask_001');
+    let result2 = startupManager.isStartupTaskInitialized('libentry_001');
+    if (result1) {
+      hilog.info(0x0000, 'testTag', 'StartupTask_001 init successful');
+    } else {
+      hilog.info(0x0000, 'testTag', 'StartupTask_001 uninitialized');
+    }
+    if (result2) {
+      hilog.info(0x0000, 'testTag', 'libentry_001 init successful');
+    } else {
+      hilog.info(0x0000, 'testTag', 'libentry_001 uninitialized');
+    }
 
-35. windowStage.loadContent('pages/Index', (err, data) => {
-36. if (err.code) {
-37. hilog.error(0x0000, 'testTag', `Failed to load the content. Cause error code: ${err.code}, error msg: ${err.message}`);
-38. return;
-39. }
-40. hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
-41. });
-42. }
-43. }
+    windowStage.loadContent('pages/Index', (err, data) => {
+      if (err.code) {
+        hilog.error(0x0000, 'testTag', `Failed to load the content. Cause error code: ${err.code}, error msg: ${err.message}`);
+        return;
+      }
+      hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
+    });
+  }
+}
 ```
 
 ## startupManager.removeStartupTaskResult
 
-PhonePC/2in1TabletTVWearable
-
 removeStartupTaskResult(startupTask: string): void
 
-删除指定启动任务或so预加载任务的初始化结果。
+删除指定启动任务或so预加载任务的结果。
 
-* 输入为启动任务名时，删除指定启动任务的初始化结果。
+* 输入为启动任务名时，删除指定启动任务的结果。
 * 输入为so文件时，将该so文件置为未加载，缓存中已加载的so文件不会被移除。
 
 **系统能力**：SystemCapability.Ability.AppStartup
@@ -384,7 +370,7 @@ removeStartupTaskResult(startupTask: string): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| startupTask | string | 是 | 启动任务[StartupTask](js-apis-app-appstartup-startuptask.md)的名称或预加载so名称。 |
+| startupTask | string | 是 | 启动任务[StartupTask](js-apis-app-appstartup-startuptask.md)的名称或预加载so名称。名称需与配置文件startup\_config.json中配置的name取值保持一致，详见[定义启动任务配置](../harmonyos-guides/app-startup.md#定义启动任务配置)和[定义预加载so任务配置](../harmonyos-guides/app-startup.md#定义预加载so任务配置)。 |
 
 **错误码：**
 
@@ -396,38 +382,38 @@ removeStartupTaskResult(startupTask: string): void
 
 **示例：**
 
-```
-1. import { AbilityConstant, UIAbility, Want, startupManager } from '@kit.AbilityKit';
-2. import { window } from '@kit.ArkUI';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { AbilityConstant, UIAbility, Want, startupManager } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-6. export default class EntryAbility extends UIAbility {
-7. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-8. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-9. try{
-10. startupManager.run(['StartupTask_001', 'libentry_001']).then(() => {
-11. hilog.info(0x0000, 'testTag', 'StartupTask_001 init successful');
-12. }).catch((error: BusinessError) => {
-13. hilog.error(0x0000, 'testTag', `StartupTask_001 promise catch failed, error code: ${error.code}, error msg: ${error.message}`);
-14. });
-15. } catch (error) {
-16. hilog.error(0x0000, 'testTag', `StartupTask_001.run failed, error code: ${error.code}, error msg: ${error.message}`);
-17. }
-18. }
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+    try {
+      startupManager.run(['StartupTask_001', 'libentry_001']).then(() => {
+        hilog.info(0x0000, 'testTag', 'StartupTask_001 init successful');
+      }).catch((error: BusinessError) => {
+        hilog.error(0x0000, 'testTag', `StartupTask_001 promise catch failed, error code: ${error.code}, error msg: ${error.message}`);
+      });
+    } catch (error) {
+      hilog.error(0x0000, 'testTag', `startupManager.run failed, error code: ${error.code}, error msg: ${error.message}`);
+    }
+  }
 
-20. onWindowStageCreate(windowStage: window.WindowStage) {
-21. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
-22. startupManager.removeStartupTaskResult('StartupTask_001');
-23. startupManager.removeStartupTaskResult('libentry_001');
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+    startupManager.removeStartupTaskResult('StartupTask_001');
+    startupManager.removeStartupTaskResult('libentry_001');
 
-25. windowStage.loadContent('pages/Index', (err, data) => {
-26. if (err.code) {
-27. hilog.error(0x0000, 'testTag', `Failed to load the content. Cause error code: ${err.code}, error msg: ${err.message}`);
-28. return;
-29. }
-30. hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
-31. });
-32. }
-33. }
+    windowStage.loadContent('pages/Index', (err, data) => {
+      if (err.code) {
+        hilog.error(0x0000, 'testTag', `Failed to load the content. Cause error code: ${err.code}, error msg: ${err.message}`);
+        return;
+      }
+      hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
+    });
+  }
+}
 ```

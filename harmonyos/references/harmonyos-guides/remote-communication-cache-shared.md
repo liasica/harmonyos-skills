@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: Session间缓存共享
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 提升HTTP传输性能 > 使用HTTP缓存功能提升资源获取性能 > Session间缓存共享
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:08+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:62547e986701a9fa1895e2c8f4de75e136c57f4216720962d99fff3d0a5de71c
+scraped_at: 2026-09-02T14:50:06+08:00
+doc_updated_at: 2026-08-07
+content_hash: sha256:e92cfea7b81a29fbab3f0d20c1dc7aa7691a35befc1a1000ed677d399066de65
 ---
 
 从6.0.0(20)开始，支持Session间缓存共享。
@@ -25,48 +25,51 @@ Session间缓存共享能力支持Phone、2in1、Tablet、Wearable、TV设备。
 
 1. 导入模块。
 
+   ```typescript
+   import { rcp } from '@kit.RemoteCommunicationKit';
    ```
-   1. import { rcp } from '@kit.RemoteCommunicationKit';
-   ```
-2. 创建[ResponseCache](../harmonyos-references/remote-communication-rcp.md#responsecache)实例。其中，pathToFolder即缓存记录文件路径，”/path/dir”请根据实际情况替换为想要存储HTTP缓存的沙箱路径。
+2. 创建[ResponseCache](../harmonyos-references/remote-communication-rcp.md#responsecache)实例。其中，pathToFolder即缓存记录文件路径，'/path/dir'请根据实际情况替换为想要存储HTTP缓存的沙箱路径。
 
-   ```
-   1. const responseCache = new rcp.ResponseCache({
-   2. persistent: {
-   3. kind: 'file-system',
-   4. pathToFolder: "/path/dir" // 请根据自身业务选择合适的路径
-   5. }
-   6. });
+   ```typescript
+   // 创建ResponseCache实例
+   const responseCache = new rcp.ResponseCache({
+     persistent: {
+       kind: 'file-system',
+       pathToFolder: '/data/storage/el2/base/entry/temp/SomeInstance' // 请根据自身业务选择合适的路径
+     }
+   });
    ```
 3. 创建SessionA和SessionB。配置responseCache实例到SessionA和SessionB中。
 
+   ```typescript
+   const sessionA: rcp.Session = rcp.createSession({
+     requestConfiguration: {
+       cache: responseCache,
+     }
+   });
+   const sessionB: rcp.Session = rcp.createSession({
+     requestConfiguration: {
+       cache: responseCache,
+     }
+   });
    ```
-   1. const sessionA: rcp.Session = rcp.createSession({
-   2. requestConfiguration: {
-   3. cache: responseCache
-   4. }
-   5. });
-   6. const sessionB: rcp.Session = rcp.createSession({
-   7. requestConfiguration: {
-   8. cache: responseCache
-   9. }
-   10. });
-   ```
-4. 由SessionA发起第一次请求。“https://www.example.com”请根据实际情况替换为支持HTTP缓存协议的URL。本次请求将会从网络服务器获取数据，此时可查看缓存状态信息，此时缓存条数应当为1。
+4. 由SessionA发起第一次请求。'https://www.example.com'请根据实际情况替换为支持HTTP缓存协议的URL。本次请求将会从网络服务器获取数据，此时可查看缓存状态信息，此时缓存条数应当为1。
 
+   ```typescript
+   // 请求的网址是示例网址，请根据实际需求更改
+   const responseA = await sessionA.get('https://www.example.com');
+   console.info(`Request succeeded, message is ${JSON.stringify(responseA)}`);
+   let cacheState = await responseCache.getState();
+   console.info(`The current number of cache entries is: ${cacheState.count}`);
    ```
-   1. const responseA = await sessionA.get('https://www.example.com');
-   2. console.info(`Request succeeded, message is ${JSON.stringify(responseA)}`);
-   3. let cacheState = await responseCache.getState();
-   4. console.info(`The current number of cache entries is: ${cacheState.count}`);
-   ```
-5. 由SessionB发起第二次请求。“https://www.example.com”请根据实际情况替换为支持HTTP缓存协议的URL。本次请求将会直接从缓存中获取响应，此时可查看缓存状态信息，此时缓存命中数应当为1。
+5. 由SessionB发起第二次请求。'https://www.example.com'请根据实际情况替换为支持HTTP缓存协议的URL。本次请求将会直接从缓存中获取响应，此时可查看缓存状态信息，此时缓存命中数应当为1。
 
-   ```
-   1. const responseB = await sessionB.get('https://www.example.com');
-   2. console.info(`Request succeeded, message is ${JSON.stringify(responseB)}`);
-   3. cacheState = await responseCache.getState();
-   4. console.info(`The current cache hit count is: ${cacheState.hitCount}`);
+   ```typescript
+   // 请求的网址是示例网址，请根据实际需求更改
+   const responseB = await sessionB.get('https://www.example.com');
+   console.info(`Request succeeded, message is ${JSON.stringify(responseB)}`);
+   cacheState = await responseCache.getState();
+   console.info(`The current cache hit count is: ${cacheState.hitCount}`);
    ```
 
 ## 配置相同缓存存储路径
@@ -75,53 +78,56 @@ Session间缓存共享能力支持Phone、2in1、Tablet、Wearable、TV设备。
 
 1. 导入模块。
 
+   ```typescript
+   import { rcp } from '@kit.RemoteCommunicationKit';
    ```
-   1. import { rcp } from '@kit.RemoteCommunicationKit';
-   ```
-2. 创建ResponseCacheA和ResponseCacheB实例，两者对应缓存存储路径相同。其中，pathToFolder即HTTP缓存响应记录文件路径，”/path/dir”请根据实际情况替换为想要存储HTTP缓存的沙箱路径。
+2. 创建ResponseCacheA和ResponseCacheB实例，两者对应缓存存储路径相同。其中，pathToFolder即HTTP缓存响应记录文件路径，'/path/dir'请根据实际情况替换为想要存储HTTP缓存的沙箱路径。
 
-   ```
-   1. const responseCacheA = new rcp.ResponseCache({
-   2. persistent: {
-   3. kind: 'file-system',
-   4. pathToFolder: "/path/dir" // 请根据自身业务选择合适的路径
-   5. }
-   6. });
-   7. const responseCacheB = new rcp.ResponseCache({
-   8. persistent: {
-   9. kind: 'file-system',
-   10. pathToFolder: "/path/dir" // 请根据自身业务选择合适的路径
-   11. }
-   12. });
+   ```typescript
+   // 创建ResponseCache实例
+   const responseCacheA = new rcp.ResponseCache({
+     persistent: {
+       kind: 'file-system',
+       pathToFolder: '/data/storage/el2/base/entry/temp/SomeCache' // 请根据自身业务选择合适的路径
+     },
+   });
+   const responseCacheB = new rcp.ResponseCache({
+     persistent: {
+       kind: 'file-system',
+       pathToFolder: '/data/storage/el2/base/entry/temp/SomeCache' // 请根据自身业务选择合适的路径
+     },
+   });
    ```
 3. 创建SessionA和SessionB。配置responseCacheA实例到SessionA，配置responseCacheB实例到SessionB中。
 
+   ```typescript
+   const sessionA: rcp.Session = rcp.createSession({
+     requestConfiguration: {
+       cache: responseCacheA,
+     }
+   });
+   const sessionB: rcp.Session = rcp.createSession({
+     requestConfiguration: {
+       cache: responseCacheB,
+     }
+   });
    ```
-   1. const sessionA: rcp.Session = rcp.createSession({
-   2. requestConfiguration: {
-   3. cache: responseCacheA
-   4. }
-   5. });
-   6. const sessionB: rcp.Session = rcp.createSession({
-   7. requestConfiguration: {
-   8. cache: responseCacheB
-   9. }
-   10. });
-   ```
-4. 由SessionA发起第一次请求。“https://www.example.com”请根据实际情况替换为支持HTTP缓存协议的URL。本次请求将会从网络服务器获取数据，此时可查看responseCacheA的缓存状态信息，此时缓存条数应当为1。
+4. 由SessionA发起第一次请求。'https://www.example.com'请根据实际情况替换为支持HTTP缓存协议的URL。本次请求将会从网络服务器获取数据，此时可查看responseCacheA的缓存状态信息，此时缓存条数应当为1。
 
+   ```typescript
+   // 请求的网址是示例网址，请根据实际需求更改
+   const responseA = await sessionA.get('https://www.example.com');
+   console.info(`Request succeeded, message is ${JSON.stringify(responseA)}`);
+   let cacheState = await responseCacheA.getState();
+   console.info(`The current number of cache entries is: ${cacheState.count}`);
    ```
-   1. const responseA = await sessionA.get('https://www.example.com');
-   2. console.info(`Request succeeded, message is ${JSON.stringify(responseA)}`);
-   3. let cacheState = await responseCacheA.getState();
-   4. console.info(`The current number of cache entries is: ${cacheState.count}`);
-   ```
-5. 由SessionB发起第二次请求。“https://www.example.com”请根据实际情况替换为支持HTTP缓存协议的URL。本次请求将会直接从缓存中获取响应，此时可查看responseCacheB的缓存状态信息，此时缓存条数和缓存命中数均应当为1。
+5. 由SessionB发起第二次请求。'https://www.example.com'请根据实际情况替换为支持HTTP缓存协议的URL。本次请求将会直接从缓存中获取响应，此时可查看responseCacheB的缓存状态信息，此时缓存条数和缓存命中数均应当为1。
 
-   ```
-   1. const responseB = await sessionB.get('https://www.example.com');
-   2. console.info(`Request succeeded, message is ${JSON.stringify(responseB)}`);
-   3. cacheState = await responseCacheB.getState();
-   4. console.info(`The current number of cache entries is: ${cacheState.count}`);
-   5. console.info(`The current cache hit count is: ${cacheState.hitCount}`);
+   ```typescript
+   // 请求的网址是示例网址，请根据实际需求更改
+   const responseB = await sessionB.get('https://www.example.com');
+   console.info(`Request succeeded, message is ${JSON.stringify(responseB)}`);
+   cacheState = await responseCacheB.getState();
+   console.info(`The current number of cache entries is: ${cacheState.count}`);
+   console.info(`The current cache hit count is: ${cacheState.hitCount}`);
    ```

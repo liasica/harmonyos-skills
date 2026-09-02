@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 使用DevEco Studio静态检测编码规范
 breadcrumb: 最佳实践 > 稳定性 > 稳定性优化 > 稳定性编码规范 > 使用DevEco Studio静态检测编码规范
 category: best-practices
-scraped_at: 2026-04-29T14:14:15+08:00
+scraped_at: 2026-09-02T15:03:24+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:c111e65c8a3a5eb6b6a079146b908e5a90541eab5af19370b99b9075bcc769bb
+content_hash: sha256:95181f0b45e95147ff576342410d4cfb4a1d5541943903e5990b998cbf3fcad5
 ---
 
 ## 使用Clang-Tidy检测
@@ -16,11 +16,11 @@ DevEco Studio集成了开源的Clang-Tidy。
 
 1. 开发者可以在Setting -> Editor -> Inspections页面，选择CPP -> clang-tidy的配置页进行Clang-Tidy Checks配置，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/mOISXj_RTz28j7VePGilLg/zh-cn_image_0000002194009836.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/7_L2jZ6ZSSeSPMgl4gJbLQ/zh-cn_image_0000002194009836.png)
 
 2. 开发者可以在Setting -> Languages & Frameworks -> C/C++中进行Clang-Tidy Checks配置，勾选“Use clang-tidy via clangd to enable the following checks”，然后配置规则，如下图所示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/SfkBPgBCSsCUBdr4tmj5Aw/zh-cn_image_0000002229335633.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/-LWEeF6ETJ-Ag6eZiZHPdA/zh-cn_image_0000002229335633.png)
 
 配置参考文档：
 
@@ -30,21 +30,21 @@ DevEco Studio集成了开源的Clang-Tidy。
 
 1. 需触发按钮 Code -> Inspect Code -> Analyze
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/NaV7l8d4Sz6k24KJKwOuEA/zh-cn_image_0000002229335613.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/ZX5YWCWfQpGBviztBxPQXw/zh-cn_image_0000002229335613.png)
 
 2. 实时触发的规则如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/2vayN-ibQ6OHuFnc01zt7Q/zh-cn_image_0000002229450133.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/ri7LR4JlQLKtURk28RJO8w/zh-cn_image_0000002229450133.png)
 
 **DevEco Studio默认检查规则检查示例**
 
 1. 手动检查代码，示例中不符合检查规则“clang-analyzer-huawei-InfiniteLoopChecker”
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/J7HmgV5uSiWpnBHRTcNo7w/zh-cn_image_0000002193850236.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/jAqhrRHYSGm0Lws3_oeUag/zh-cn_image_0000002193850236.png)
 
 2. 实时检查，示例中不符合检查规则“misc-unused-local-variable”
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/_U2KlZ-nTtaWO_o5TjSzrg/zh-cn_image_0000002194009820.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/CyKZOp2CTmO0HQA11fWwcw/zh-cn_image_0000002194009820.png)
 
 **默认配置检查内容**
 
@@ -77,13 +77,13 @@ DevEco Studio集成了Code Linter，用于针对ArkTS/TS代码进行最佳实践
 
 在已打开的代码编辑器窗口中，单击右键选择Code Linter，或在工程管理窗口中选中单个或多个文件/目录，右键选择Code Linter > Full Linter执行全量代码检查。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/qjFdpMy0RuqRWsmcni_Ssg/zh-cn_image_0000002194009856.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/VCDzUa4gSUioFF-8xCZkXA/zh-cn_image_0000002194009856.png)
 
 如需对Git工程中的增量文件（新增、修改、重命名）进行检查，可在commit界面右下角点击齿轮图标，选择Incremental Linter执行增量检查。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/AYg6DRDQQIKeqGzAWXnjSw/zh-cn_image_0000002193850228.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/sfOe5p23TRO1fCNZWJRExw/zh-cn_image_0000002193850228.png)
 
-说明
+**说明** 
 
 * 若未配置代码检查规则文件，直接执行Code Linter，将按照默认的编程规范规则对.ets文件进行检查。
 * Code Linter不对如下文件及目录进行检查：
@@ -113,7 +113,7 @@ ruleSet：配置检查使用的规则集，规则集支持一次导入多条规�
 * 性能规则@performance
 * 预览规则@previewer
 
-说明
+**说明** 
 
 * 以上规则集均分为all和recommended两种规则集。all规则集是规则全集，包含所有规则；recommended规则集是推荐使用的规则集合。recommended规则集是all规则集的子集。
 * 不在工程根目录新建code-linter.json5文件的情况下，Code Linter默认会检查@performance/recommended和@typescript-eslint/recommended规则集包含的规则。
@@ -122,80 +122,80 @@ rules：可以基于ruleSet配置的规则集，新增额外规则项，或修�
 
 overrides：针对工程根目录下的部分特定目录或文件，可以配置定制化的检查规则。
 
-```
-1. {
-2. "files":   // 用于表示配置适用的文件范围的glob模式数组。在没有指定的情况下，应用默认配置
-3. [
-4. "**/*.js", // 字符串类型
-5. "**/*.ts"
-6. ],
-7. "ignore":  // 一个表示配置对象不应适用的文件的glob模式数组。如果没有指定，配置对象将适用于所有由files匹配的文件
-8. [
-9. "build/**/*",    // 字符串类型
-10. "node_modules/**/*"
-11. ],
-12. "ruleSet":       // 设置检查待应用的规则集
-13. [
-14. "plugin:@typescript-eslint/recommended"    // 快捷批量引入的规则集, 枚举类型：plugin:@typescript-eslint/all, plugin:@typescript-eslint/recommended, plugin:@cross-device-app-dev/all, plugin:@cross-device-app-dev/recommended等
-15. ],
-16. "rules":         // 可以对ruleSet配置的规则集中特定的某些规则进行修改、去使能, 或者新增规则集以外的规则；ruleSet和rules共同确定了代码检查所应用的规则
-17. {
-18. "@typescript-eslint/no-explicit-any":  // ruleId后面跟数组时, 第一个元素为告警级别, 后面的对象元素为规则特定开关配置
-19. [
-20. "error",              // 告警级别: 枚举类型, 支持配置为suggestion, error, warn, off
-21. {
-22. "ignoreRestArgs": true   // 规则特定的开关配置, 为可选项, 不同规则其下层的配置项不同
-23. }
-24. ],
-25. "@typescript-eslint/explicit-function-return-type": 2,   // ruleId后面跟单独一个数字时, 表示仅设置告警级别, 枚举值为: 3(suggestion), 2(error), 1(warn), 0(off)
-26. "@typescript-eslint/no-unsafe-return": "warn"            // ruleId后面跟单独一个字符串时, 表示仅设置告警级别, 枚举值为: suggestion, error, warn, off
-27. },
-28. "overrides":      // 针对特定的目录或文件采用定制化的规则配置
-29. [
-30. {
-31. "files":   // 指定需要定制化配置规则的文件或目录
-32. [
-33. "entry/**/*.ts"   // 字符串类型
-34. ],
-35. "excluded":
-36. [
-37. "entry/**/*.test.js" // 指定需要排除的目录或文件, 被排除的目录或文件不会按照定制化的规则配置被检查; 字符串类型
-38. ],
-39. "rules":   // 支持对overrides外公共配置的规则进行修改、去使能, 或者新增公共配置以外的规则; 该配置将覆盖公共配置
-40. {
-41. "@typescript-eslint/explicit-function-return-type":  // ruleId: 枚举类型
-42. [
-43. "warn",     // 告警级别: 枚举类型, 支持配置为error, warn, off; 覆盖公共配置, explicit-function-return-type告警级别为warn
-44. {
-45. allowExpressions: true    // 规则特定的开关配置, 为可选项, 不同规则其下层的配置项不同
-46. }
-47. ],
-48. "@typescript-eslint/no-unsafe-return": "off"   // 覆盖公共配置, 不检查no-unsafe-return规则
-49. }
-50. }
-51. ]
-52. }
+```screen
+{
+  "files":   // 用于表示配置适用的文件范围的glob模式数组。在没有指定的情况下，应用默认配置
+  [
+    "**/*.js", // 字符串类型
+    "**/*.ts"
+  ],
+  "ignore":  // 一个表示配置对象不应适用的文件的glob模式数组。如果没有指定，配置对象将适用于所有由files匹配的文件
+  [
+    "build/**/*",    // 字符串类型
+    "node_modules/**/*"
+  ],
+  "ruleSet":       // 设置检查待应用的规则集
+  [
+    "plugin:@typescript-eslint/recommended"    // 快捷批量引入的规则集, 枚举类型：plugin:@typescript-eslint/all, plugin:@typescript-eslint/recommended, plugin:@cross-device-app-dev/all, plugin:@cross-device-app-dev/recommended等
+  ],
+  "rules":         // 可以对ruleSet配置的规则集中特定的某些规则进行修改、去使能, 或者新增规则集以外的规则；ruleSet和rules共同确定了代码检查所应用的规则
+  {
+    "@typescript-eslint/no-explicit-any":  // ruleId后面跟数组时, 第一个元素为告警级别, 后面的对象元素为规则特定开关配置
+    [
+      "error",              // 告警级别: 枚举类型, 支持配置为suggestion, error, warn, off
+      {
+        "ignoreRestArgs": true   // 规则特定的开关配置, 为可选项, 不同规则其下层的配置项不同
+      }
+    ],
+    "@typescript-eslint/explicit-function-return-type": 2,   // ruleId后面跟单独一个数字时, 表示仅设置告警级别, 枚举值为: 3(suggestion), 2(error), 1(warn), 0(off)
+    "@typescript-eslint/no-unsafe-return": "warn"            // ruleId后面跟单独一个字符串时, 表示仅设置告警级别, 枚举值为: suggestion, error, warn, off
+  },
+  "overrides":      // 针对特定的目录或文件采用定制化的规则配置
+  [
+    {
+      "files":   // 指定需要定制化配置规则的文件或目录
+      [
+        "entry/**/*.ts"   // 字符串类型
+      ],
+      "excluded":
+      [
+       "entry/**/*.test.js" // 指定需要排除的目录或文件, 被排除的目录或文件不会按照定制化的规则配置被检查; 字符串类型
+      ],
+      "rules":   // 支持对overrides外公共配置的规则进行修改、去使能, 或者新增公共配置以外的规则; 该配置将覆盖公共配置
+      {
+        "@typescript-eslint/explicit-function-return-type":  // ruleId: 枚举类型
+        [
+          "warn",     // 告警级别: 枚举类型, 支持配置为error, warn, off; 覆盖公共配置, explicit-function-return-type告警级别为warn
+          {
+             allowExpressions: true    // 规则特定的开关配置, 为可选项, 不同规则其下层的配置项不同
+          }
+        ],
+        "@typescript-eslint/no-unsafe-return": "off"   // 覆盖公共配置, 不检查no-unsafe-return规则
+      }
+    }
+  ]
+}
 ```
 
 **查看/处理代码检查结果**
 
 扫描完成后，在底部工具面板查看检查结果。勾选Defects中的告警等级，查看对应告警信息。双击告警结果，跳转到代码缺陷位置。选中告警结果时，右侧Defect Description窗口显示规则详细说明。搜索规则时，可设定全词匹配和大小写敏感。
 
-单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/6W1iFBLdT_Cb9d9-0yRicw/zh-cn_image_0000002194009816.png)图标，查看可修复的代码规则，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/HniurViRQ7CLlTWF02FJNA/zh-cn_image_0000002229335641.png)代码修复图标，可以一键式批量修复告警，并刷新检查结果。
+单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/TQeuDaN1R0qYWIFC_wh2_A/zh-cn_image_0000002194009816.png)图标，查看可修复的代码规则，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/VGzRJF9fTIipwVhnd1AJMw/zh-cn_image_0000002229335641.png)代码修复图标，可以一键式批量修复告警，并刷新检查结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/BLFogY45SLW8zITChE_Xhg/zh-cn_image_0000002194009860.png)屏蔽告警信息：
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/suRyR5wSQji4prsMsddxCg/zh-cn_image_0000002194009860.png)屏蔽告警信息：
 
-* 在某些特殊场景下，若扫描结果中出现误报，点击单条告警结果后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/gYkjve74T9edsRuM0ZfYpg/zh-cn_image_0000002193850240.png)Ignore图标，可以忽略对告警所在行的code linter检查；或勾选文件名称或多条待屏蔽的告警，点击左侧工具面板Ignore图标批量执行操作；
+* 在某些特殊场景下，若扫描结果中出现误报，点击单条告警结果后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/kNmCfKSLQWGmfwa8wy9f_Q/zh-cn_image_0000002193850240.png)Ignore图标，可以忽略对告警所在行的code linter检查；或勾选文件名称或多条待屏蔽的告警，点击左侧工具面板Ignore图标批量执行操作；
 * 在文件顶部添加注释/\* eslint-disable \*/可以屏蔽整个文件执行code linter检查，在eslint-disable 后加入一个或多个以逗号分隔的规则Id，可以屏蔽具体检查规则；
 * 在需要忽略检查的代码块前后分别添加/\* eslint-disable \*/和/\* eslint-enable \*/添加注释信息，再执行Code Linter，将不再显示该代码块扫描结果；在待屏蔽的代码行前一行添加/\* eslint-disable-next-line \*/，也可屏蔽对该代码行的codelinter检查。
 
 如需恢复忽略的报错信息，删除该行上方的注释，然后重新执行Code Linter检查。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/JV00Ll04TI-jnK-JqjNqJg/zh-cn_image_0000002194009844.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/TmnrN-0FSZ-Ayg_c5-jgXg/zh-cn_image_0000002194009844.png)
 
-导出检查结果：点击工具面板左侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/aDSuWO5ERJqEeGXgcEJa4Q/zh-cn_image_0000002229450101.png)导出按钮，即可导出检查结果到excel文件，包含告警所在行，告警明细，告警级别等信息。
+导出检查结果：点击工具面板左侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/NlfLXSpZTzyu0yxOKb29VA/zh-cn_image_0000002229450101.png)导出按钮，即可导出检查结果到excel文件，包含告警所在行，告警明细，告警级别等信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/mP9hTW7NQhS7AkeldnDARQ/zh-cn_image_0000002229450125.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/s15D7IarTq2iYzwvLDhAKQ/zh-cn_image_0000002229450125.png)
 
 **实践说明**
 
@@ -207,39 +207,37 @@ overrides：针对工程根目录下的部分特定目录或文件，可以配�
 
 在ArkTS工程的pages/Index.ets文件中增加以下用例：
 
-```
-1. class Foo {
-2. static bar() {}
-3. }
+```typescript
+class Foo {
+  static bar() {}
+}
 
-5. Foo.bar();
+Foo.bar();
 ```
-
-[Index.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/StabilityCodingSpecification/DevEcoStaticCheck/src/main/ets/pages/Index.ets#L21-L25)
 
 在工程根目录下新建code-linter.json5文件，新增以下配置：
 
-```
-1. {
-2. "rules": {
-3. "@typescript-eslint/no-restricted-syntax": [
-4. // 告警级别: 枚举类型, 支持配置为error, warn, off
-5. "error",
-6. {
-7. // selector属性必选，配置要禁用的语法
-8. // 可通过特定DSL筛选待限制的语句，CallExpression表示方法调用表达式，后面的中括号里面是筛选条件（根据语法树Node节点来确定）
-9. // 其中callee.object.name根据指定的名称筛选调用方法的对象（class，namespace或module），以上示例中为"Foo"
-10. // callee.property.name则根据指定的名称筛选被调用的方法，以上示例中为"bar"
-11. "selector": "CallExpression[callee.object.name='Foo'][callee.property.name='bar']",
-12. // message属性可选，配置要展示的报错信息
-13. "message": "Foo.bar() is not allowed"
-14. }
-15. ]
-16. },
-17. }
+```screen
+{
+  "rules": {
+    "@typescript-eslint/no-restricted-syntax": [
+      // 告警级别: 枚举类型, 支持配置为error, warn, off
+      "error",
+      {
+        // selector属性必选，配置要禁用的语法
+        // 可通过特定DSL筛选待限制的语句，CallExpression表示方法调用表达式，后面的中括号里面是筛选条件（根据语法树Node节点来确定）
+        // 其中callee.object.name根据指定的名称筛选调用方法的对象（class，namespace或module），以上示例中为"Foo"
+        // callee.property.name则根据指定的名称筛选被调用的方法，以上示例中为"bar"
+        "selector": "CallExpression[callee.object.name='Foo'][callee.property.name='bar']",
+        // message属性可选，配置要展示的报错信息
+        "message": "Foo.bar() is not allowed"
+      }
+    ]
+  },
+}
 ```
 
-说明
+**说明** 
 
 如需在code-linter.json5文件中配置其他字段，请参见[配置代码检查规则](../harmonyos-guides/ide-code-linter.md#section19310459444)。
 
@@ -247,7 +245,7 @@ overrides：针对工程根目录下的部分特定目录或文件，可以配�
 
 对pages/Index.ets文件进行代码检查，结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/v-HVRr0oSnqhUT1TgcEuPA/zh-cn_image_0000002194009852.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/yxx81bGaQ3WVIrMHDcWVzA/zh-cn_image_0000002194009852.png)
 
 **示例2：对类名Foo的命名风格校验**
 
@@ -255,37 +253,35 @@ overrides：针对工程根目录下的部分特定目录或文件，可以配�
 
 在ArkTS工程中，pages/Index.ets文件下增加以下用例：
 
+```typescript
+class foo {    //Here is an example of a naming style error, where foo is the incorrect class name used, and the correct class name should be Foo
+  bar() {}
+}
 ```
-1. class foo {    //Here is an example of a naming style error, where foo is the incorrect class name used, and the correct class name should be Foo
-2. bar() {}
-3. }
-```
-
-[Index2.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/StabilityCodingSpecification/DevEcoStaticCheck/src/main/ets/pages/Index2.ets#L21-L23)
 
 在工程根目录下创建code-linter.json5文件，并添加以下配置：
 
-```
-1. {
-2. "rules": {
-3. "@typescript-eslint/naming-convention": [
-4. "error",
-5. {
-6. // selector属性必选，配置要检查的语法，这里配置的class表示检查自定义组件名
-7. "selector": "class",
-8. // format属性必选，配置期望的命名风格，支持枚举值，这里配置的PascalCase表示大驼峰风格
-9. "format": ["PascalCase"],
-10. // custom属性可选，配置用户自定义的命名风格
-11. "custom": {
-12. // regex属性必选，配置具体的正则
-13. "regex": "^[a-zA-Z]+$",
-14. // match属性必选，配置为true表示正则未命中时报错；配置为false表示正则命中时报错
-15. "match": true
-16. }
-17. }
-18. ]
-19. },
-20. }
+```screen
+{
+  "rules": {
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        // selector属性必选，配置要检查的语法，这里配置的class表示检查自定义组件名
+        "selector": "class",
+        // format属性必选，配置期望的命名风格，支持枚举值，这里配置的PascalCase表示大驼峰风格
+        "format": ["PascalCase"],
+        // custom属性可选，配置用户自定义的命名风格
+        "custom": {
+          // regex属性必选，配置具体的正则
+          "regex": "^[a-zA-Z]+$",
+          // match属性必选，配置为true表示正则未命中时报错；配置为false表示正则命中时报错
+          "match": true
+        }
+      }
+    ]
+  },
+}
 ```
 
 **表1** 字段说明
@@ -301,7 +297,7 @@ overrides：针对工程根目录下的部分特定目录或文件，可以配�
 | modifiers | 匹配修饰符，只有包含特定修饰符的命名才会检查 | 否 | 字符串数组 | * abstract：匹配abstract关键字 * override：匹配override关键字 * private：匹配private关键字 * protected：匹配protected关键字 * static：匹配static关键字 * async：匹配async关键字 * const：匹配const关键字 * destructured：匹配解构语法 * exported：匹配export关键字 * global：匹配全局声明 * #private：匹配私有符号# * public：匹配public级别的访问修饰符 * requiresQuotes：匹配字符串类型的命名，并且 字符串中包含特殊字符 * unused：匹配未使用的声明 |
 | types | 匹配类型，只有特定类型的名字才会检查 | 否 | 字符串数组 | * array：数组类型 * boolean：布尔类型 * function：函数类型 * number：数字类型 * string：字符串类型 |
 
-说明
+**说明** 
 
 以上配置的参数校验优先级为：filter > types > modifiers > validate leading underscore > validate trailing underscore > validate prefix > validate suffix > validate custom > validate format。
 
@@ -309,7 +305,7 @@ overrides：针对工程根目录下的部分特定目录或文件，可以配�
 
 对pages/Index.ets文件执行代码检查，显示检查结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/4mfjR74ZSNip3cEYYJrerw/zh-cn_image_0000002229335649.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/aWhsecgKQTCZUU3G59q9TA/zh-cn_image_0000002229335649.png)
 
 **示例3：检查代码文件的命名风格**
 
@@ -319,24 +315,24 @@ overrides：针对工程根目录下的部分特定目录或文件，可以配�
 
 在工程根目录下新建code-linter.json5文件，并新增以下配置：
 
-```
-1. {
-2. "rules": {
-3. "@hw-stylistic/file-naming-convention": [
-4. // 告警级别：枚举类型，支持配置为error，warn，off
-5. "error",
-6. {
-7. // selector属性可选，支持配置为code或者resources
-8. // code表示检查代码文件的命名风格
-9. // resources表示检查资源文件的命名风格
-10. "selector": "code"
-11. }
-12. ]
-13. },
-14. }
+```screen
+{
+  "rules": {
+    "@hw-stylistic/file-naming-convention": [
+      // 告警级别：枚举类型，支持配置为error，warn，off
+      "error",
+      {
+        // selector属性可选，支持配置为code或者resources
+        // code表示检查代码文件的命名风格
+        // resources表示检查资源文件的命名风格
+        "selector": "code"
+      }
+    ]
+  },
+}
 ```
 
-说明
+**说明** 
 
 如果未配置selector属性，默认检查代码文件和资源文件的命名风格。
 
@@ -344,4 +340,4 @@ overrides：针对工程根目录下的部分特定目录或文件，可以配�
 
 对pages/test.ets文件执行代码检查，显示检查结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Oq-FskbJRH2fOANiCjt_nQ/zh-cn_image_0000002229450117.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/pBtjIy41QQuPXvqvFZ2SaA/zh-cn_image_0000002229450117.png)

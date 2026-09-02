@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-ge
 title: 能力说明
 breadcrumb: 指南 > 构建应用 > 定制构建 > 获取自定义编译参数 > 能力说明
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:47:18+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ceff48113424646a08de49d8af7ff82ce1b25f497b55ae26b11a808849849baf
+scraped_at: 2026-09-02T15:00:27+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:85287e90dedd034c10a3f0974d68c7e0f8aebc90cd354fd5b5467e159a138b78
 ---
 
 在编译构建时，Hvigor会生成BuildProfile类，开发者可以通过该类在运行时获取编译构建参数，也可以在build-profile.json5中通过buildProfileFields增加自定义字段，从而在运行时获取自定义的参数。
@@ -24,30 +24,30 @@ buildProfileFields的优先级：模块级target > 模块级buildOptionSet > 模
 * 在菜单栏选择“Build > Build Hap(s)/APP(s) > Build Hap(s)”或“Build > Build Hap(s)/APP(s) > Build APP(s)”。
 * 在Terminal中执行如下命令：
 
-  ```
-  1. hvigorw GenerateBuildProfile
+  ```bash
+  hvigorw GenerateBuildProfile
   ```
 
 执行完上述操作后，将在“${moduleName} / build / ${productName} / generated / profile / ${targetName} ”目录下生成BuildProfile.ets文件。示例如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/tIAF4FeKTJ2G_KwDKplucw/zh-cn_image_0000002561753361.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/vRVhO7XkQequ9NNUPoR9Pg/zh-cn_image_0000002731542917.png)
 
 ### 在代码中获取构建参数
 
 生成BuildProfile类文件后，在代码中可以通过如下方式引入该文件，其中packageName是模块级oh-package.json5文件中name字段对应的值。
 
-```
-1. import BuildProfile from '${packageName}/BuildProfile';
+```ts
+import BuildProfile from '${packageName}/BuildProfile';
 ```
 
-说明
+**说明** 
 
 在HSP中使用import BuildProfile from 'BuildProfile'在跨包集成HSP的时候可能会产生编译错误，推荐使用import BuildProfile from '${packageName}/BuildProfile'。
 
 通过如下方式获取到构建参数：
 
-```
-1. @State message: string = BuildProfile.BUNDLE_NAME;
+```ts
+@State message: string = BuildProfile.BUNDLE_NAME;
 ```
 
 ### 默认参数
@@ -75,68 +75,68 @@ buildProfileFields的优先级：模块级target > 模块级buildOptionSet > 模
 
 配置示例如下所示：
 
-```
-1. {
-2. "apiType": "stageMode",
-3. "buildOption": {
-4. "arkOptions": {
-5. "buildProfileFields": {
-6. "data": "Data",
-7. }
-8. }
-9. },
-10. "buildOptionSet": [
-11. {
-12. "name": "release",
-13. "arkOptions": {
-14. "buildProfileFields": {
-15. "buildOptionSetData": "BuildOptionSetDataRelease",
-16. "data": "DataRelease"
-17. }
-18. }
-19. },
-20. {
-21. "name": "debug",
-22. "arkOptions": {
-23. "buildProfileFields": {
-24. "buildOptionSetData": "BuildOptionSetDataDebug",
-25. "data": "DataDebug"
-26. }
-27. }
-28. }
-29. ],
-30. "targets": [
-31. {
-32. "name": "default",
-33. "config": {
-34. "buildOption": {
-35. "arkOptions": {
-36. "buildProfileFields": {
-37. "targetData": "TargetData",
-38. "data": "DataTargetDefault"
-39. }
-40. }
-41. }
-42. }
-43. },
-44. {
-45. "name": "default1",
-46. "config": {
-47. "buildOption": {
-48. "arkOptions": {
-49. "buildProfileFields": {
-50. "targetData": "TargetData1",
-51. "data": "DataTargetDefault1"
-52. }
-53. }
-54. }
-55. }
-56. },
-57. {
-58. "name": "ohosTest",
-59. }
-60. ]
-61. }
+```json5
+{
+  "apiType": "stageMode",
+  "buildOption": {
+    "arkOptions": {
+      "buildProfileFields": {
+        "data": "Data",
+      }
+    }
+  },
+  "buildOptionSet": [
+    {
+      "name": "release",
+      "arkOptions": {
+        "buildProfileFields": {
+          "buildOptionSetData": "BuildOptionSetDataRelease",
+          "data": "DataRelease"
+        }
+      }
+    },
+    {
+      "name": "debug",
+      "arkOptions": {
+        "buildProfileFields": {
+          "buildOptionSetData": "BuildOptionSetDataDebug",
+          "data": "DataDebug"
+        }
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "default",
+      "config": {
+        "buildOption": {
+          "arkOptions": {
+            "buildProfileFields": {
+              "targetData": "TargetData",
+              "data": "DataTargetDefault"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "default1",
+      "config": {
+        "buildOption": {
+          "arkOptions": {
+            "buildProfileFields": {
+              "targetData": "TargetData1",
+              "data": "DataTargetDefault1"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "ohosTest",
+    }
+  ]
+}
 ```
 
 ## HAR运行时获取编译构建参数
@@ -149,29 +149,29 @@ buildProfileFields的优先级：模块级target > 模块级buildOptionSet > 模
 * 选中需要编译的模块，在菜单栏选择“Build > Make Module ${moduleName}”。
 * 在Terminal中执行如下命令：
 
-  ```
-  1. hvigorw GenerateBuildProfile
+  ```bash
+  hvigorw GenerateBuildProfile
   ```
 
 执行完上述操作后，将在模块根目录下生成BuildProfile.ets文件（该文件可放置在.gitignore文件中进行忽略）。示例如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/1miFq0npTA6dMB4VrnkDFg/zh-cn_image_0000002561833337.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/0eUksj7NT7y2C3Ry05F-rA/zh-cn_image_0000002731382941.png)
 
 ### 在代码中获取构建参数
 
 生成BuildProfile类文件后，在代码中可以通过相对路径引入该文件，如在HAR模块的Index.ets文件中使用该文件：
 
-```
-1. import BuildProfile from './BuildProfile';
+```ts
+import BuildProfile from './BuildProfile';
 ```
 
 通过如下方式获取到构建参数：
 
-```
-1. const HAR_VERSION: string = BuildProfile.HAR_VERSION;
+```ts
+const HAR_VERSION: string = BuildProfile.HAR_VERSION;
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/buVDIXTiSm6CdjOctGWDVg/zh-cn_image_0000002530753418.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/bhtRr4dATEO_ihoKpF_RAA/zh-cn_image_0000002731382943.png)
 
 ### 默认参数
 
@@ -194,42 +194,42 @@ buildProfileFields的优先级：模块级target > 模块级buildOptionSet > 模
 
 配置示例如下所示：
 
-```
-1. {
-2. "apiType": "stageMode",
-3. "buildOption": {
-4. "arkOptions": {
-5. "buildProfileFields": {
-6. "data": "Data",
-7. }
-8. }
-9. },
-10. "buildOptionSet": [
-11. {
-12. "name": "release",
-13. "arkOptions": {
-14. "buildProfileFields": {
-15. "buildOptionSetData": "BuildOptionSetDataRelease",
-16. "data": "DataRelease"
-17. }
-18. }
-19. },
-20. {
-21. "name": "debug",
-22. "arkOptions": {
-23. "buildProfileFields": {
-24. "buildOptionSetData": "BuildOptionSetDataDebug",
-25. "data": "DataDebug"
-26. }
-27. }
-28. }
-29. ],
-30. "targets": [
-31. {
-32. "name": "default",
-33. }
-34. ]
-35. }
+```json5
+{
+  "apiType": "stageMode",
+  "buildOption": {
+    "arkOptions": {
+      "buildProfileFields": {
+        "data": "Data",
+      }
+    }
+  },
+  "buildOptionSet": [
+    {
+      "name": "release",
+      "arkOptions": {
+        "buildProfileFields": {
+          "buildOptionSetData": "BuildOptionSetDataRelease",
+          "data": "DataRelease"
+        }
+      }
+    },
+    {
+      "name": "debug",
+      "arkOptions": {
+        "buildProfileFields": {
+          "buildOptionSetData": "BuildOptionSetDataDebug",
+          "data": "DataDebug"
+        }
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "default",
+    }
+  ]
+}
 ```
 
 ## 工程级配置自定义构建参数
@@ -240,54 +240,54 @@ buildProfileFields的优先级：模块级target > 模块级buildOptionSet > 模
 
 配置示例如下所示：
 
-```
-1. {
-2. "app": {
-3. "signingConfigs": [],
-4. "products": [
-5. {
-6. "name": "default",
-7. "signingConfig": "default",
-8. "compatibleSdkVersion": "6.1.0(23)",
-9. "runtimeOS": "HarmonyOS",
-10. "buildOption": {
-11. "arkOptions": {
-12. "buildProfileFields": {
-13. "productValue": "defaultValue"
-14. }
-15. }
-16. }
-17. }
-18. ],
-19. "buildModeSet": [
-20. {
-21. "name": "debug",
-22. "buildOption": {
-23. "arkOptions": {
-24. "buildProfileFields": {
-25. "productBuildModeValue": "debugValue"
-26. }
-27. }
-28. }
-29. },
-30. {
-31. "name": "release"
-32. }
-33. ]
-34. },
-35. "modules": [
-36. {
-37. "name": "entry",
-38. "srcPath": "./entry",
-39. "targets": [
-40. {
-41. "name": "default",
-42. "applyToProducts": [
-43. "default"
-44. ]
-45. }
-46. ]
-47. }
-48. ]
-49. }
+```json5
+{
+  "app": {
+    "signingConfigs": [],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "compatibleSdkVersion": "26.0.0",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "arkOptions": {
+            "buildProfileFields": {
+              "productValue": "defaultValue"
+            }
+          }
+        }
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug",
+        "buildOption": {
+          "arkOptions": {
+            "buildProfileFields": {
+              "productBuildModeValue": "debugValue"
+            }
+          }
+        }
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}
 ```

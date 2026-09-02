@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: Camera_Profile
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 结构体 > Camera_Profile
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:47+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e7525e721ee4a89677c861b942df31dce0ace55b20c112416dafcca49d7e6ed8
+scraped_at: 2026-09-02T15:02:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e027e87e0fbf36c95e829c009c167da58ad464564d59a479967584db257690af
 ---
 
-```
-1. typedef struct Camera_Profile {...} Camera_Profile
+```c
+typedef struct Camera_Profile {...} Camera_Profile
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 相机流的配置文件。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

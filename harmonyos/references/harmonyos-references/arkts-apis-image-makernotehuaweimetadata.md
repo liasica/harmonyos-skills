@@ -3,30 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (MakerNoteHuaweiMetadata)
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.image (图片处理) > Class (MakerNoteHuaweiMetadata)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:11+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4eae0f53e9e5e719dff461863e4f3245501f0c31ed7f339ade0be2b17d48254c
+scraped_at: 2026-09-02T15:02:29+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c07d5e4f996a4ae41c541febe021a583937c1d7d3c88ba7eca456b280fd5e47c
 ---
 
 MakerNoteHuaweiMetadata implements Metadata
 
 来自Huawei相机的照片元数据。
 
-说明
+**说明** 
 
 本模块首批接口从API version 23开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { image } from '@kit.ImageKit';
+```ts
+import { image } from '@kit.ImageKit';
 ```
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -68,8 +64,6 @@ PhonePC/2in1TabletTVWearable
 
 ## createInstance
 
-PhonePC/2in1TabletTVWearable
-
 static createInstance(): MakerNoteHuaweiMetadata
 
 返回[MakerNoteHuaweiMetadata](arkts-apis-image-makernotehuaweimetadata.md)的空实例。
@@ -86,18 +80,16 @@ static createInstance(): MakerNoteHuaweiMetadata
 
 **示例：**
 
-```
-1. async function makerNoteHuaweiCreateInstance(context: Context) {
-2. let makerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
-3. if (makerNoteHuaweiMetadata != undefined) {
-4. console.info("createInstance success");
-5. }
-6. }
+```ts
+async function makerNoteHuaweiCreateInstance(context: Context) {
+  let makerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
+  if (makerNoteHuaweiMetadata != undefined) {
+    console.info("Succeeded in creating a MakerNoteHuaweiMetadata instance.");
+  }
+}
 ```
 
 ## getProperties
-
-PhonePC/2in1TabletTVWearable
 
 getProperties(key: Array<string>): Promise<Record<string, string | null>>
 
@@ -131,36 +123,34 @@ getProperties(key: Array<string>): Promise<Record<string, string | null>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { fileIo } from '@kit.CoreFileKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileIo } from '@kit.CoreFileKit';
 
-4. function getFileFd(context: Context): number | undefined {
-5. const filePath: string = context.cacheDir + '/exif.jpg';  // 图片包含exif metadata。
-6. const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
-7. const fd: number = file?.fd;
-8. return fd;
-9. }
+function getFileFd(context: Context): number | undefined {
+  const filePath: string = context.cacheDir + '/exif.jpg';  // 图片包含exif metadata。
+  const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
+  const fd: number = file?.fd;
+  return fd;
+}
 
-11. async function makerNoteHuaweiGetProperties(context: Context) {
-12. let fd = getFileFd(context);
-13. let imageSource = image.createImageSource(fd);
-14. let metaData = await imageSource.readImageMetadata(["HwMnoteIsXmageSupported", "HwMnoteXmageMode"]);
-15. if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
-16. await metaData.makerNoteHuaweiMetadata.getProperties(["HwMnoteIsXmageSupported", "HwMnoteXmageMode"]).then((data) => {
-17. console.info('Get properties ',JSON.stringify(data));
-18. }).catch((error: BusinessError) => {
-19. console.error(`Get properties failed error.code is ${error.code}, error.message is ${error.message}`);
-20. });
-21. } else {
-22. console.error('Metadata is null.');
-23. }
-24. }
+async function makerNoteHuaweiGetProperties(context: Context) {
+  let fd = getFileFd(context);
+  let imageSource = image.createImageSource(fd);
+  let metaData = await imageSource.readImageMetadata(["HwMnoteIsXmageSupported", "HwMnoteXmageMode"]);
+  if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
+    await metaData.makerNoteHuaweiMetadata.getProperties(["HwMnoteIsXmageSupported", "HwMnoteXmageMode"]).then((data) => {
+      console.info(`Succeeded in getting properties. Data: ${JSON.stringify(data)}.`);
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to get properties. Code: ${error.code}, message: ${error.message}.`);
+    });
+  } else {
+    console.error('Metadata is null.');
+  }
+}
 ```
 
 ## setProperties
-
-PhonePC/2in1TabletTVWearable
 
 setProperties(records: Record<string, string | null>): Promise<void>
 
@@ -194,40 +184,38 @@ setProperties(records: Record<string, string | null>): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { fileIo } from '@kit.CoreFileKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileIo } from '@kit.CoreFileKit';
 
-4. function getFileFd(context: Context): number | undefined {
-5. const filePath: string = context.cacheDir + '/exif.jpg';  // 图片包含exif metadata。
-6. const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
-7. const fd: number = file?.fd;
-8. return fd;
-9. }
+function getFileFd(context: Context): number | undefined {
+  const filePath: string = context.cacheDir + '/exif.jpg';  // 图片包含exif metadata。
+  const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
+  const fd: number = file?.fd;
+  return fd;
+}
 
-11. async function makerNoteHuaweiSetProperties(context: Context) {
-12. let fd = getFileFd(context);
-13. let imageSource = image.createImageSource(fd);
-14. let metaData = await imageSource.readImageMetadata(["HwMnoteIsXmageSupported", "HwMnoteXmageMode"]);
-15. if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
-16. let setkey: Record<string, string | null> = {
-17. "HwMnoteIsXmageSupported": "1",
-18. "HwMnoteXmageMode": "9"
-19. };
-20. await metaData.makerNoteHuaweiMetadata.setProperties(setkey).then(async () => {
-21. console.info('Set properties success.');
-22. }).catch((error: BusinessError) => {
-23. console.error(`Failed to set metadata Properties. code is ${error.code}, message is ${error.message}`);
-24. })
-25. } else {
-26. console.error('metadata is null. ');
-27. }
-28. }
+async function makerNoteHuaweiSetProperties(context: Context) {
+  let fd = getFileFd(context);
+  let imageSource = image.createImageSource(fd);
+  let metaData = await imageSource.readImageMetadata(["HwMnoteIsXmageSupported", "HwMnoteXmageMode"]);
+  if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
+    let setkey: Record<string, string | null> = {
+      "HwMnoteIsXmageSupported": "1",
+      "HwMnoteXmageMode": "9"
+    };
+    await metaData.makerNoteHuaweiMetadata.setProperties(setkey).then(async () => {
+      console.info('Succeeded in setting properties.');
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to set metadata Properties. code is ${error.code}, message is ${error.message}`);
+    })
+  } else {
+    console.error('metadata is null. ');
+  }
+}
 ```
 
 ## getAllProperties
-
-PhonePC/2in1TabletTVWearable
 
 getAllProperties(): Promise<Record<string, string | null>>
 
@@ -245,37 +233,35 @@ getAllProperties(): Promise<Record<string, string | null>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { fileIo } from '@kit.CoreFileKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileIo } from '@kit.CoreFileKit';
 
-4. function getFileFd(context: Context): number | undefined {
-5. const filePath: string = context.cacheDir + '/exif.jpg';  // 图片包含exif metadata。
-6. const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
-7. const fd: number = file?.fd;
-8. return fd;
-9. }
+function getFileFd(context: Context): number | undefined {
+  const filePath: string = context.cacheDir + '/exif.jpg';  // 图片包含exif metadata。
+  const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
+  const fd: number = file?.fd;
+  return fd;
+}
 
-11. async function makerNoteHuaweiGetAllProperties(context: Context) {
-12. let fd = getFileFd(context);
-13. let imageSource = image.createImageSource(fd);
-14. let metaData = await imageSource.readImageMetadata(["HwMnoteIsXmageSupported", "HwMnoteXmageMode"]);
-15. if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
-16. await metaData.makerNoteHuaweiMetadata.getAllProperties().then((data) => {
-17. const count = Object.keys(data).length;
-18. console.info(`Get metadata all properties: ${data}`);
-19. }).catch((error: BusinessError) => {
-20. console.error(`Get metadata all properties failed error.code is ${error.code}, error.message is ${error.message}`);
-21. });
-22. } else {
-23. console.error('Metadata is null.');
-24. }
-25. }
+async function makerNoteHuaweiGetAllProperties(context: Context) {
+  let fd = getFileFd(context);
+  let imageSource = image.createImageSource(fd);
+  let metaData = await imageSource.readImageMetadata(["HwMnoteIsXmageSupported", "HwMnoteXmageMode"]);
+  if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
+    await metaData.makerNoteHuaweiMetadata.getAllProperties().then((data) => {
+      const count = Object.keys(data).length;
+      console.info(`Succeeded in getting all properties. Count: ${count}, data: ${JSON.stringify(data)}.`);
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to get all properties. Code: ${error.code}, message: ${error.message}.`);
+    });
+  } else {
+    console.error('Metadata is null.');
+  }
+}
 ```
 
 ## clone
-
-PhonePC/2in1TabletTVWearable
 
 clone(): Promise<MakerNoteHuaweiMetadata>
 
@@ -293,37 +279,35 @@ clone(): Promise<MakerNoteHuaweiMetadata>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { fileIo } from '@kit.CoreFileKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileIo } from '@kit.CoreFileKit';
 
-4. function getFileFd(context: Context): number | undefined {
-5. const filePath: string = context.cacheDir + '/exif.jpg';  // 图片包含exif metadata。
-6. const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
-7. const fd: number = file?.fd;
-8. return fd;
-9. }
+function getFileFd(context: Context): number | undefined {
+  const filePath: string = context.cacheDir + '/exif.jpg';  // 图片包含exif metadata。
+  const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
+  const fd: number = file?.fd;
+  return fd;
+}
 
-11. async function makerNoteHuaweiClone(context: Context) {
-12. let fd = getFileFd(context);
-13. let imageSource = image.createImageSource(fd);
-14. let metaData = await imageSource.readImageMetadata(["HwMnoteIsXmageSupported", "HwMnoteXmageMode"]);
-15. if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
-16. let new_metadata = await metaData.makerNoteHuaweiMetadata.clone();
-17. new_metadata.getProperties(["HwMnoteIsXmageSupported"]).then((data1) => {
-18. console.info(`Clone new_metadata and get Properties: ${data1}`);
-19. }).catch((err: BusinessError) => {
-20. console.error(`Clone new_metadata failed, error : ${err}`);
-21. });
-22. } else {
-23. console.error('Metadata is null.');
-24. }
-25. }
+async function makerNoteHuaweiClone(context: Context) {
+  let fd = getFileFd(context);
+  let imageSource = image.createImageSource(fd);
+  let metaData = await imageSource.readImageMetadata(["HwMnoteIsXmageSupported", "HwMnoteXmageMode"]);
+  if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
+    let new_metadata = await metaData.makerNoteHuaweiMetadata.clone();
+    new_metadata.getProperties(["HwMnoteIsXmageSupported"]).then((data1) => {
+      console.info(`Succeeded in cloning metadata and getting properties. Data: ${JSON.stringify(data1)}.`);
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to clone metadata and get properties. Code: ${err.code}, message: ${err.message}.`);
+    });
+  } else {
+    console.error('Metadata is null.');
+  }
+}
 ```
 
 ## getBlob
-
-PhonePC/2in1TabletTVWearable
 
 getBlob(): Promise<ArrayBuffer>
 
@@ -341,32 +325,30 @@ getBlob(): Promise<ArrayBuffer>
 
 **示例：**
 
-```
-1. import { fileIo } from '@kit.CoreFileKit';
+```ts
+import { fileIo } from '@kit.CoreFileKit';
 
-3. function getFileFd(context: Context): number | undefined {
-4. const filePath: string = context.cacheDir + '/exif.jpg';  // 图片包含exif metadata。
-5. const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
-6. const fd: number = file?.fd;
-7. return fd;
-8. }
+function getFileFd(context: Context): number | undefined {
+  const filePath: string = context.cacheDir + '/exif.jpg';  // 图片包含exif metadata。
+  const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
+  const fd: number = file?.fd;
+  return fd;
+}
 
-10. async function makerNoteHuaweiGetBlob(context: Context) {
-11. let fd = getFileFd(context);
-12. let imageSource = image.createImageSource(fd);
-13. let metaData = await imageSource.readImageMetadata(["HwMnoteIsXmageSupported", "HwMnoteXmageMode"]);
-14. if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
-15. let blob = await metaData.makerNoteHuaweiMetadata.getBlob();
-16. if (blob != undefined) {
-17. console.info("get blob success");
-18. }
-19. }
-20. }
+async function makerNoteHuaweiGetBlob(context: Context) {
+  let fd = getFileFd(context);
+  let imageSource = image.createImageSource(fd);
+  let metaData = await imageSource.readImageMetadata(["HwMnoteIsXmageSupported", "HwMnoteXmageMode"]);
+  if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
+    let blob = await metaData.makerNoteHuaweiMetadata.getBlob();
+    if (blob != undefined) {
+      console.info("Succeeded in getting blob.");
+    }
+  }
+}
 ```
 
 ## setBlob
-
-PhonePC/2in1TabletTVWearable
 
 setBlob(blob: ArrayBuffer): Promise<void>
 
@@ -398,30 +380,30 @@ setBlob(blob: ArrayBuffer): Promise<void>
 
 **示例：**
 
-```
-1. import { fileIo } from '@kit.CoreFileKit';
+```ts
+import { fileIo } from '@kit.CoreFileKit';
 
-3. function getFileFd(context: Context): number | undefined {
-4. const filePath: string = context.cacheDir + '/exif.jpg';  // 图片包含exif metadata。
-5. const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
-6. const fd: number = file?.fd;
-7. return fd;
-8. }
+function getFileFd(context: Context): number | undefined {
+  const filePath: string = context.cacheDir + '/exif.jpg';  // 图片包含exif metadata。
+  const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
+  const fd: number = file?.fd;
+  return fd;
+}
 
-10. async function makerNoteHuaweiSetBlob(context: Context) {
-11. let fd = getFileFd(context);
-12. let imageSource = image.createImageSource(fd);
-13. let metaData = await imageSource.readImageMetadata(["HwMnoteIsXmageSupported", "HwMnoteXmageMode"]);
-14. if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
-15. let blob = await metaData.makerNoteHuaweiMetadata.getBlob();
-16. if (blob != undefined) {
-17. console.info("get blob success");
-18. metaData.makerNoteHuaweiMetadata.setBlob(blob);
-19. }
-20. let new_blob = metaData.makerNoteHuaweiMetadata.getBlob();
-21. if (new_blob != undefined) {
-22. console.info("new_blob is not undefined");
-23. }
-24. }
-25. }
+async function makerNoteHuaweiSetBlob(context: Context) {
+  let fd = getFileFd(context);
+  let imageSource = image.createImageSource(fd);
+  let metaData = await imageSource.readImageMetadata(["HwMnoteIsXmageSupported", "HwMnoteXmageMode"]);
+  if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
+    let blob = await metaData.makerNoteHuaweiMetadata.getBlob();
+    if (blob != undefined) {
+      console.info("Succeeded in getting blob.");
+      metaData.makerNoteHuaweiMetadata.setBlob(blob);
+    }
+    let new_blob = metaData.makerNoteHuaweiMetadata.getBlob();
+    if (new_blob != undefined) {
+      console.info("new_blob is not undefined");
+    }
+  }
+}
 ```

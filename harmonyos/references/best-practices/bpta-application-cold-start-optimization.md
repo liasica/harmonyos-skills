@@ -3,20 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-applicatio
 title: 应用冷启动时延优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 应用启动与响应优化 > 应用冷启动时延优化
 category: best-practices
-scraped_at: 2026-04-29T14:13:37+08:00
-doc_updated_at: 2026-03-26
-content_hash: sha256:4650670fe2446009a2ffd83b0bf5980c6cd9c3d0a69aa278cb5ee7a134a425ac
+scraped_at: 2026-09-02T15:03:21+08:00
+doc_updated_at: 2026-07-22
+content_hash: sha256:e86e42e3264f1330026122710615d523b4ef0b68d61806a5c69517abc5e62c22
 ---
 
 ## 概述
 
 应用启动时延是影响用户体验的关键要素，是指从用户点击桌面应用图标、通知或其他入口启动应用，到应用界面内容成功加载并显示在屏幕上的时间间隔。如果这段时间超过3秒，将显著影响用户体验。
 
-应用启动可以分为冷启动和热启动。当应用启动时，后台没有该应用的进程，系统会重新创建应用的进程，这种启动方式就叫做**冷启动**。而**热启动**是当应用程序已经在后台运行，用户再次打开应用程序时，应用程序仍然在内存中，可以直接从内存中加载并继续之前的状态，而不需要重新初始化和加载资源。
+应用启动可分为冷启动、热启动和温启动三种类型:
+
+* 冷启动是指当应用启动时，后台未存在该应用的进程，系统需为其创建新进程。完整的冷启动过程，指从用户点击桌面图标开始，至应用首页首帧渲染完成、数据完全展示。
+* 热启动是指当应用已在后台运行且进程驻留在内存中时，用户再次打开应用，系统可直接从内存恢复应用状态，无需重新初始化加载资源。
+* 温启动是指应用进程存在，但主实例或页面已被销毁。此时启动应用只需重新创建实例或页面，启动速度介于冷启动与热启动之间。
+
+冷启动的启动过程最为复杂、整体耗时也最长，是影响应用启动体验的关键短板，因此本文将主要介绍冷启动时延问题的优化。
 
 当应用冷启动时延大于1100ms时，可以认为是应用启动缓慢，体验标准可以参考[应用流畅体验设计](bpta-smooth-application-design.md)。
-
-本文将介绍以下内容，帮助开发者提升应用的冷启动速度，避免启动过程中的延迟。
 
 * [应用冷启动流程](bpta-application-cold-start-optimization.md#section196451814101216)
 * [应用冷启动时延检测](bpta-application-cold-start-optimization.md#section860412154015)
@@ -30,7 +34,7 @@ content_hash: sha256:4650670fe2446009a2ffd83b0bf5980c6cd9c3d0a69aa278cb5ee7a134a
 
 **图1** 应用冷启动流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/mfBLvD56Roeh0OD6R-Xe1g/zh-cn_image_0000002512014501.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/4u21wC3jRPaIbvdRciHjIw/zh-cn_image_0000002512014501.png "点击放大")
 
 1. 应用进程创建和初始化阶段：此阶段系统完成应用进程的创建和初始化，包括启动页图标（startWindowIcon）的解码。
 2. Application和Ability初始化：该阶段包括资源加载、虚拟机创建、Application&Ability 对象的创建与初始化、依赖模块加载等。
@@ -48,23 +52,23 @@ content_hash: sha256:4650670fe2446009a2ffd83b0bf5980c6cd9c3d0a69aa278cb5ee7a134a
 
 1. 选择entry模块，暂时关闭模块build-profile中的混淆开关。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/_WSSQjCzTlWq1pwwqP1hxA/zh-cn_image_0000002510840649.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/JYdqJ6FYR9GQeTR_wgJV-Q/zh-cn_image_0000002510840649.png "点击放大")
 2. 检查一下build模式，改为release。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/TDTWF9N5RkW2bwnDhl1hgA/zh-cn_image_0000002478640720.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/rC1zzvn9TgqRax7nXe665g/zh-cn_image_0000002478640720.png)
 3. 点击菜单 -> tool -> AppAnalyzer，打开体检工具。
 4. 选择“场景化体检”，点击“手动性能冷启动体检”。
 
    工具开始准备，会自动编译、安装、运行当前工程，此时需要“保持手机解锁状态”，当准备完成后，会提示点击开始按钮，开始体检。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/3TFbiKMlT2iAqOFp5GqpNg/zh-cn_image_0000002478800706.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/w4TIi4O6QaqUJJJWbvq88g/zh-cn_image_0000002478800706.png "点击放大")
 5. 根据提示在设备上进行手动操作：
    1. 首先，在最近任务列表关闭应用。
-   2. 进入手机设置 ，在顶部搜索栏中输入应用名并，点击进入应用设置界面，如果该应用还有进程存活，在应用设置界面可以点击强行停止按钮。
+   2. 进入手机设置 ，在顶部搜索栏中输入应用名，点击进入应用设置界面，如果该应用还有进程存活，在应用设置界面可以点击强行停止按钮。
    3. 在桌面点击应用图标重新启动应用。
    4. 点击“结束”按钮停止体检任务，体检工具会将刚才的操作数据进行解析。
 
-说明
+**说明** 
 
 冷启动体检需要强行停止应用：
 
@@ -83,7 +87,7 @@ AppAnalyzer详情报告中会显示动态检测可能导致冷启动完成时延
 
 在检测结果中，开发者可以通过点击报告表格中的对应方法名，快速跳转至对应代码片段，同时体检工具也会给出相应的优化建议，如将耗时函数放到子线程或进行缓存、使用多线程能力等，详细流程及示例可参考文档：[主线程耗时操作优化--其他主线程优化思路](bpta-time-optimization-of-the-main-thread.md#section4365993361)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/VEmzqTLuQt6Dv7cTdmh-sQ/zh-cn_image_0000002510841011.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/a0NOsqHBQxidmMiy354-JA/zh-cn_image_0000002510841011.png "点击放大")
 
 ### **import加载耗时**
 
@@ -91,72 +95,72 @@ AppAnalyzer详情报告中会显示动态检测可能导致冷启动完成时延
 
 **import加载耗时问题优化思路**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/1QksrQqdSZuegB96O6U6VA/zh-cn_image_0000002510761277.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/bTea44E7QdOoK_aD1KLFvg/zh-cn_image_0000002510761277.png "点击放大")
 
 1. 分析模块使用情况：查看总结信息和未使用文件import列表信息，包括加载文件总耗时，和未使用文件数量和总耗时，了解未使用文件import情况。
 2. 查找依赖关系优化导入：点击第一个“下载”按钮下载全量依赖关系文件，使用调用链搜索框查找未使用文件依赖关系，结合代码逻辑对未使用文件进行延迟加载。
 3. 标记优化状态：点击第二个“下载”按钮下载全量import清单文件，统计已优化和未优化的未使用文件，分析全量文件的依赖关系。
 4. 再次进行冷启动检测：优化耗时最多的几个文件之后，再次进行冷启动检测，验证整改收益。在逐步优化未使用文件导入的过程中，收益会逐步降低，开发者需根据实际情况是否需要继续“lazy import”的整改。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/MIJbVDlZQbC2tkfXkwmhDA/zh-cn_image_0000002478801360.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/83o8iWebQCe9ObMHal8QVA/zh-cn_image_0000002478801360.png "点击放大")
 
 **import加载耗时问题优化流程**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/QOCSeotnSGCy6i2X_Ya4Yw/zh-cn_image_0000002478641376.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/C_s-wEmvQoCSghrms_pY9Q/zh-cn_image_0000002478641376.png "点击放大")
 
 1. 查找耗时最高的未使用import文件。
 
    在本地浏览器中打开下载的依赖关系的文件full\_dependency.html，视图中左侧列表表示已加载未使用的文件，并且按照耗时从高到低排序；右侧表示已使用文件，开发者需要关注未使用文件中耗时较多的几个文件导入，例如DetailView文件的导入。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/q4Nw0Gy3Q5yzz2pxP7rmOg/zh-cn_image_0000002510841309.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/eNV2V7qYTyuBYwWifFoVXQ/zh-cn_image_0000002510841309.png "点击放大")
 2. 根据文件名检索文件调用关系链。
 
    在搜索框中通过文件名DetailView进行检索，该文件的依赖关系则会在下方节点视图中展示，并且默认会展示其子节点的使用情况，未使用的文件会被标红显示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/H_o_Ber7SY6oedjEJtFVTQ/zh-cn_image_0000002510761285.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/WP4N6-vTS_CRGoMDObbfUA/zh-cn_image_0000002510761285.png "点击放大")
 3. 查看检索文件的上层和下层文件节点信息。
 
    查找上层文件节点信息，即目标文件被导入的位置；查找下层文件节点信息，目标文件的耗时是否由其子节点导致，如果下层文件耗时较长，则需要考虑优化子节点的导入。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/KnOlOthsTo2rLryZS4lCpw/zh-cn_image_0000002478801366.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/Vx25Lc0ySxKTWVQD2WU3Pw/zh-cn_image_0000002478801366.png "点击放大")
 4. 判断上层文件是否为为其他module的Index.ets文件导出。
    * 如果上层文件不为其他module的统一对外暴露接口文件（例如Index.ets），则可以在上层文件中使用对该模块使用lazy import进行优化。
 
-     ```
-     1. import lazy { DetailView } from '../view/DetailView';
+     ```typescript
+     import lazy { DetailView } from '../view/DetailView';
 
-     3. @Entry
-     4. @Component
-     5. struct Index {
-     6. build() {
-     7. // ...
-     8. }
-     9. }
+     @Entry
+     @Component
+     struct Index {
+       build() {
+         // ...
+       }
+     }
      ```
    * 如果上层文件为其他module的统一对外暴露接口文件（例如Index.ets），则需要通过import路径展开性能优化。
 
      例如CustomLayout1上层模块为library模块的Index.ets，其中有多个文件导出。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/5RChflRUToCDASZPH06QYg/zh-cn_image_0000002478641380.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/YhWnuY2CQ1i0A5g47CtJcg/zh-cn_image_0000002478641380.png "点击放大")
 
      在Entry的首页通过依赖对应模块引入，会导致冷启动阶段将CustomLayout2和CustomLayout3等冷启动阶段无用的文件导入。
 
-     ```
-     1. // entry/src/main/ets/pages/Index.ets
-     2. import { CustomLayout1 } from 'library';
+     ```typescript
+     // entry/src/main/ets/pages/Index.ets
+     import { CustomLayout1 } from 'library';
      ```
 
      具体优化方案，则是通过在import时，对路径展开进而优化性能。
 
-     ```
-     1. // entry/src/main/ets/pages/Index.ets
-     2. import { CustomLayout1 } from 'library/src/main/ets/pages/CustomLayout1';
+     ```typescript
+     // entry/src/main/ets/pages/Index.ets
+     import { CustomLayout1 } from 'library/src/main/ets/pages/CustomLayout1';
      ```
 5. 在导出文件中标记已修改的文件。
 
    在下载全量import文件清单表格中，标记已优化的未使用文件，便于优化备忘，特别是当需要优化的文件比较多的时候。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/mHJ2KkGvRFu40HlhyWfasQ/zh-cn_image_0000002510841315.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/Zrr9ZYe0Tk-2uWHXxrn8pA/zh-cn_image_0000002510841315.png "点击放大")
 6. 重新进行冷启动场景化检测。
 
    当优化完成后，重新进行冷启动场景化检测，查看优化收益是否达到预期，如未达到预期，则需要重新进行分析优化。
@@ -167,14 +171,14 @@ AppAnalyzer详情报告中会显示动态检测可能导致冷启动完成时延
 
 * 网络请求本身耗时长
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/bp1O3XVrQvOWMijeS_90QA/zh-cn_image_0000002478801796.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/MdFDUBlQRw-NitJyoKm1Zg/zh-cn_image_0000002478801796.png "点击放大")
 
   网络请求本身是否耗时可通过检测结果中的请求耗时时长来进行判断，时间越长，则网络请求本身耗时越久。详细分析请参考：[网络诊断：Network分析](../harmonyos-guides/ide-profiler-network.md)。
 
   网络请求本身耗时长，可对该URL请求进行预连接和预解析来优化网络传输速度，提前完成DNS查询和TCP/TLS握手，即在应用启动或空闲时提前建立并维护一个持久的连接池；还可以使用CDN来优化网络传输速度，即将静态资源部署到CDN上。
 * 网络请求发起太晚
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/L4QXSlMDTeqW7TEdmOTmYg/zh-cn_image_0000002478641822.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/LC7UrDEoQ8G7cUwvbbc9bQ/zh-cn_image_0000002478641822.png "点击放大")
 
   点击离手到请求发起间隔则表示用户进行点击操作后，到真正向服务器发起网络请求的那一刻止，这中间所经过的时间。可通过检测结果中的点击离手到请求发起间隔时长来进行判断，时间越长，则表示网络请求发起的越晚。可通过提前发起网络请求，来进行优化。可参考：[网络请求提前发送](bpta-application-cold-start-optimization.md#section199911250658)。
 
@@ -184,7 +188,7 @@ AppAnalyzer详情报告中会显示动态检测可能导致冷启动完成时延
 
 首页组件复杂度较高会影响首页加载绘制耗时，AppAnalyzer工具能检测出页面中组件自身创建是否耗时过长。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/uzIv_H-bRHSFRtbMCejRbg/zh-cn_image_0000002478641864.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/EB4xCDbUQAydSofRyeCBlw/zh-cn_image_0000002478641864.png "点击放大")
 
 在静态检测可能故障原因表格中，可点击源文件定位到创建耗时的UI组件，根据提供的可能故障原因，去对UI组件进行相应优化修改，即可减少该UI组件自身创建耗时。
 
@@ -207,7 +211,7 @@ AppAnalyzer详情报告中会显示动态检测可能导致冷启动完成时延
 
 已录制一段Launch任务，具体操作步骤请参考[性能问题定位：深度录制](../harmonyos-guides/deep-recording.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/U11v0doYT1SQYlm2j2rdqQ/zh-cn_image_0000002193851180.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/oOcsV_nWSpqyNpvftOcIBg/zh-cn_image_0000002193851180.png "点击放大")
 
 上图显示，Launch将应用的冷启动过程分为以下几个阶段：
 
@@ -219,68 +223,66 @@ AppAnalyzer详情报告中会显示动态检测可能导致冷启动完成时延
 6. First Frame - Render Phase：RS首帧渲染提交阶段，对应的trace打点为H:ReceiveVsync和H:RSMainThread::ProcessCommandUni。
 7. EntryAbility：应用启动之后的阶段，渲染完成，首页显示。
 
-说明
+**说明** 
 
 阶段1对应图1中的第1阶段，阶段2对应图1中的第2阶段，阶段3和4对应图1中的第3阶段，阶段5和6对应图1中的第4阶段，阶段7对应图1中的第5阶段。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/E7CUhE8RQiiVFRm_P4Bfag/zh-cn_image_0000002194010752.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/f4wjA2tdTKC34ZBSk7HdOg/zh-cn_image_0000002194010752.png "点击放大")
 
 **冷启动缓慢示例分析**
 
 运行以下示例代码，开发者可以明显感知到应用启动速度较慢。接下来，开发者可以通过此示例，结合 Launch 分析应用冷启动缓慢的问题。
 
+```typescript
+const LARGE_NUMBER: number = 200000000;
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
+
+  aboutToAppear(): void {
+    console.log('aboutToAppear');
+    this.computeTask();
+  }
+
+  computeTask(): void {
+    let count: number = 0;
+    while (count < LARGE_NUMBER) {
+      count++;
+    }
+  }
+
+  build() {
+    Row() {
+      Column() {
+        Text(this.message)
+          .fontSize(50)
+          .fontWeight(FontWeight.Bold)
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-1. const LARGE_NUMBER: number = 200000000;
-
-3. @Entry
-4. @Component
-5. struct Index {
-6. @State message: string = 'Hello World';
-
-8. aboutToAppear(): void {
-9. console.log('aboutToAppear');
-10. this.computeTask();
-11. }
-
-13. computeTask(): void {
-14. let count: number = 0;
-15. while (count < LARGE_NUMBER) {
-16. count++;
-17. }
-18. }
-
-20. build() {
-21. Row() {
-22. Column() {
-23. Text(this.message)
-24. .fontSize(50)
-25. .fontWeight(FontWeight.Bold)
-26. }
-27. .width('100%')
-28. }
-29. .height('100%')
-30. }
-31. }
-```
-
-[ColdStartSlow.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppColdStart/entry/src/main/ets/pages/ColdStartSlow.ets#L17-L47)
 
 首先创建Launch分析录制，可以观察到整个启动时间较长。UI Ability OnForeground阶段在应用冷启动过程中耗时最多，达到了3.3秒。因此，需要重点分析该阶段的耗时。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/NxKet-oDR86k56KipyeEFA/zh-cn_image_0000002375918437.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/biOd0aKBT8KfxG4tmGrwYg/zh-cn_image_0000002375918437.png "点击放大")
 
 针对应用冷启动问题的性能分析，可以选择分析主线程的Trace数据或采样得到的函数热点。
 
 **分析主线程的Trace数据**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/1DVqUke9SvWpQ2uqNC5C0w/zh-cn_image_0000002341876318.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/xA3BBR0qQ7-ivuQzgyGliQ/zh-cn_image_0000002341876318.png "点击放大")
 
 1. 单击“Launch”泳道上的UI Ability OnForeground阶段，在下方“Details”面板中可查看所选阶段的耗时统计。
 2. 展开UI Ability OnForeground统计信息折叠表，可查看各函数的具体耗时信息。
 3. 根据Duration找到耗时最长的函数aboutToAppear。
 4. 单击图标按钮，可直接跳转至主线程的打点任务，查看相关Trace数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/DlCxgoM9TVOX2CwnBXYpzQ/zh-cn_image_0000002375834697.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/i-PInW7iSBC4FdXRb2Cztg/zh-cn_image_0000002375834697.png "点击放大")
 
 在UI Ability OnForeground阶段的耗时主要由aboutToAppear引起。通过分析aboutToAppear中的代码逻辑，可以确定计算任务computeTask是导致耗时的原因。
 
@@ -288,62 +290,60 @@ AppAnalyzer详情报告中会显示动态检测可能导致冷启动完成时延
 
 开发者也可以分析采样得到的函数热点直观的显示应用冷启动过程中具体函数的耗时，如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/EA6R3HQzTXqzUsFWy_DKAw/zh-cn_image_0000002375915041.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/aF7Rb3i5Q3uuixaGwG0Tlg/zh-cn_image_0000002375915041.png "点击放大")
 
 1. 单击“Launch”泳道的UI Ability OnForeground阶段。
 2. 选择“ArkTS Callstack”泳道，它会基于时间轴展示CPU使用率和状态变化，以及当前调用栈名称和类型。
 3. 在“Details”详情面板中，可以查看这段时间内的函数热点，以Top-Down形式的树状列表展示。computeTask函数在aboutToAppear函数中耗时最多，占整个阶段的97.9%。双击该函数可跳转到源码。
 4. 此外，点击底部Flame Chart按钮打开火焰图可以更直观的看出热点函数的耗时情况，如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/jEOvsgTjQLignfdsg48hEg/zh-cn_image_0000002342038042.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/FzWZMyyMQRqrlCKGvBMNbQ/zh-cn_image_0000002342038042.png "点击放大")
 
 **冷启动速度优化**
 
 通过前面的分析，冷启动缓慢的原因是在aboutToAppear方法中执行了耗时计算任务。可以将computeTask以异步延时的方式处理，优化后的代码如下：
 
+```typescript
+const LARGE_NUMBER: number = 100000000;
+const DELAYED_TIME: number = 1000;
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
+
+  aboutToAppear(): void {
+    console.log('aboutToAppear');
+    this.computeTaskAsync();
+  }
+
+  // ...
+
+  computeTask(): void {
+    let count: number = 0;
+    while (count < LARGE_NUMBER) {
+      count++;
+    }
+  }
+
+  // Asynchronous processing of operation tasks
+  private computeTaskAsync(): void {
+    setTimeout(() => { // SetTimeout is used here to realize asynchronous delayed operation.
+      this.computeTask();
+    }, DELAYED_TIME);
+  }
+}
 ```
-1. const LARGE_NUMBER: number = 100000000;
-2. const DELAYED_TIME: number = 1000;
-
-4. @Entry
-5. @Component
-6. struct Index {
-7. @State message: string = 'Hello World';
-
-9. aboutToAppear(): void {
-10. console.log('aboutToAppear');
-11. this.computeTaskAsync();
-12. }
-
-14. // ...
-
-16. computeTask(): void {
-17. let count: number = 0;
-18. while (count < LARGE_NUMBER) {
-19. count++;
-20. }
-21. }
-
-23. // Asynchronous processing of operation tasks
-24. private computeTaskAsync(): void {
-25. setTimeout(() => { // SetTimeout is used here to realize asynchronous delayed operation.
-26. this.computeTask();
-27. }, DELAYED_TIME);
-28. }
-29. }
-```
-
-[ColdStartSpeedOptimization.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppColdStart/entry/src/main/ets/pages/ColdStartSpeedOptimization.ets#L17-L57)
 
 重新编译并运行程序，录制Launch过程。优化后，UI Ability OnForeground阶段的耗时显著缩短，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/a8dyabzMTWyhFkjhtsQbaA/zh-cn_image_0000002229450977.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/sTlani5OT_ORkeo9o29zCQ/zh-cn_image_0000002229450977.png "点击放大")
 
 **查看首帧卡顿**
 
 为了识别首帧是否卡顿，可以先查看Launch的Frame泳道。应用的首帧渲染提交在First Frame - App Phase阶段，APP侧的这一帧表示应用渲染的首帧。如下图所示，此处首帧为36号帧。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/nPpy6H4uSwWK7ZvPgRZjOQ/zh-cn_image_0000002229336561.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/fvuN01G3RaGlbV0vEgFFHA/zh-cn_image_0000002229336561.png "点击放大")
 
 如上所示36号帧被标记为了红色，表示首帧出现了卡顿。鼠标左键36号帧，可以看到它的期望提交渲染时间为左边白色竖线区域所示，这里出现了比较严重的延时。发现问题后，开发者可以参考前面讲到的示例进行问题定位和优化。
 
@@ -355,7 +355,7 @@ AppAnalyzer详情报告中会显示动态检测可能导致冷启动完成时延
 
 应用在启动前加载过多不必要启动项，同时这些启动项在主线程串行执行，该阶段耗时为450ms。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/lUx2Yo7ESUKdfiljOjJCBw/zh-cn_image_0000002229451033.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/OXy3y9k6RDi78Mn037wWNQ/zh-cn_image_0000002229451033.png "点击放大")
 
 应用冷启动过程中，加载不必要的启动项会增加冷启动时间。建议延后加载或并行处理，具体可以参考[延迟加载Lazy-Import使用指导](bpta-arkts-high-performance.md#section12861143418213)。
 
@@ -373,227 +373,215 @@ AppAnalyzer详情报告中会显示动态检测可能导致冷启动完成时延
 
 **图2** 应用首页框架加载时进行网络数据请求
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/QWw7H_gxTxOMPEZrpBm5BQ/zh-cn_image_0000002420612214.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/5UcjJAlOQCOWPQ4l0WH6kg/zh-cn_image_0000002420612214.png "点击放大")
 
 将网络请求提前至AbilityStage/UIAbility的onCreate()生命周期回调函数中。这可以将首刷或二刷时间提前，减少用户等待时间。为了体现性能收益，将网络请求放到了更早的AbilityStage的onCreate()生命周期回调中。
 
 **图3** 网络请求提前至AbilityStage的onCreate()生命周期回调中
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/ZrG0ATTRSsWwqmhzlwiGow/zh-cn_image_0000002420772730.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/dBnE0abRRHSCUvmqpwOBrw/zh-cn_image_0000002420772730.png "点击放大")
 
 【优化前】：在首页根组件的onAppear()回调中发起网络请求。
 
-```
-1. // entry/src/main/ets/pages/Index.ets
-2. import { httpRequest } from '../utils/NetRequest';
+```typescript
+// entry/src/main/ets/pages/Index.ets
+import { httpRequest } from '../utils/NetRequest';
 
-4. import { number } from '../utils/Calculator';
+import { number } from '../utils/Calculator';
 
-6. AppStorage.link('netData');
-7. PersistentStorage.persistProp('netData', undefined);
+AppStorage.link('netData');
+PersistentStorage.persistProp('netData', undefined);
 
-9. @Entry
-10. @Component
-11. struct Index {
-12. // In order to reflect the performance benefits, refer to the execution result number of the time-consuming function.
-13. @State message: string = 'Hello World' + number;
-14. @StorageLink('netData') netData: PixelMap | undefined = undefined;
+@Entry
+@Component
+struct Index {
+  // In order to reflect the performance benefits, refer to the execution result number of the time-consuming function.
+  @State message: string = 'Hello World' + number;
+  @StorageLink('netData') netData: PixelMap | undefined = undefined;
 
-16. build() {
-17. Column() {
-18. Text(this.message)
-19. .fontSize(32)
-20. Image(this.netData)
-21. .objectFit(ImageFit.Contain)
-22. .width('50%')
-23. .height('50%')
-24. }
-25. .width('100%')
-26. .height('100%')
-27. .justifyContent(FlexAlign.Center)
-28. .onAppear(() => {
-29. // Send a network request
-30. httpRequest();
-31. })
-32. }
-33. }
-```
-
-[Index.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppColdStart/entry/src/main/ets/pages/Index.ets#L17-L49)
-
-```
-1. // NetRequest.ets
-2. import { hiTraceMeter } from '@kit.PerformanceAnalysisKit';
-3. import { http } from '@kit.NetworkKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
-5. import { image } from '@kit.ImageKit';
-6. // Download picture resources from the Internet through the http request method
-7. export function httpRequest(): void {
-8. hiTraceMeter.startTrace('Http Request', 1);
-9. http.createHttp()
-10. // The actual development needs to "https://www.example1.com/POST?e=f&g=h"replaced with the real website address to visit
-11. .request('https://www.example1.com/POST?e=f&g=h',
-12. (error: BusinessError, data: http.HttpResponse) => {
-13. if (error) {
-14. // The follow-up logic is not executed when the download fails.
-15. return;
-16. }
-17. // Processing the data returned by network requests
-18. transcodePixelMap(data);
-19. }
-20. )
-21. }
-
-23. // Use createPixelMap to replace pictures of ArrayBuffer types with PixelMap types.
-24. function transcodePixelMap(data: http.HttpResponse): void {
-25. if (http.ResponseCode.OK === data.responseCode) {
-26. const imageData: ArrayBuffer = data.result as ArrayBuffer;
-27. // Create a picture source instance through ArrayBuffer
-28. const imageSource: image.ImageSource = image.createImageSource(imageData);
-29. const options: image.InitializationOptions = {
-30. 'alphaType': 0, // Transparency
-31. 'editable': false, // Is it editable?
-32. 'pixelFormat': 3, // Pixel format
-33. 'scaleMode': 1, // Abbreviation
-34. 'size': { height: 100, width: 100 }
-35. }; // Create the size of the picture
-36. // Create PixelMap through properties
-37. imageSource.createPixelMap(options).then((pixelMap: PixelMap) => {
-38. AppStorage.set('netData', pixelMap);
-39. hiTraceMeter.finishTrace('Http Request', 1);
-40. });
-41. }
-42. }
+  build() {
+    Column() {
+      Text(this.message)
+        .fontSize(32)
+      Image(this.netData)
+        .objectFit(ImageFit.Contain)
+        .width('50%')
+        .height('50%')
+    }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+    .onAppear(() => {
+      // Send a network request
+      httpRequest();
+    })
+  }
+}
 ```
 
-[NetRequest.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppColdStart/entry/src/main/ets/utils/NetRequest.ets#L2-L45)
+```typescript
+// NetRequest.ets
+import { hiTraceMeter } from '@kit.PerformanceAnalysisKit';
+import { http } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { image } from '@kit.ImageKit';
+// Download picture resources from the Internet through the http request method
+export function httpRequest(): void {
+  hiTraceMeter.startTrace('Http Request', 1);
+  http.createHttp()
+  // The actual development needs to "https://www.example1.com/POST?e=f&g=h"replaced with the real website address to visit
+    .request('https://www.example1.com/POST?e=f&g=h',
+      (error: BusinessError, data: http.HttpResponse) => {
+        if (error) {
+          // The follow-up logic is not executed when the download fails.
+          return;
+        }
+        // Processing the data returned by network requests
+        transcodePixelMap(data);
+      }
+    )
+}
 
+// Use createPixelMap to replace pictures of ArrayBuffer types with PixelMap types.
+function transcodePixelMap(data: http.HttpResponse): void {
+  if (http.ResponseCode.OK === data.responseCode) {
+    const imageData: ArrayBuffer = data.result as ArrayBuffer;
+    // Create a picture source instance through ArrayBuffer
+    const imageSource: image.ImageSource = image.createImageSource(imageData);
+    const options: image.InitializationOptions = {
+      'alphaType': 0, // Transparency
+      'editable': false, // Is it editable?
+      'pixelFormat': 3, // Pixel format
+      'scaleMode': 1, // Abbreviation
+      'size': { height: 100, width: 100 }
+    }; // Create the size of the picture
+    // Create PixelMap through properties
+    imageSource.createPixelMap(options).then((pixelMap: PixelMap) => {
+      AppStorage.set('netData', pixelMap);
+      hiTraceMeter.finishTrace('Http Request', 1);
+    });
+  }
+}
 ```
-1. // Calculator.ets
-2. const LARGE_NUMBER: number = 100000000;
 
-4. function computeTask(): number {
-5. let count: number = 0;
-6. while (count < LARGE_NUMBER) {
-7. count++;
-8. }
-9. return count;
-10. }
+```typescript
+// Calculator.ets
+const LARGE_NUMBER: number = 100000000;
 
-12. export let number = computeTask();
+function computeTask(): number {
+  let count: number = 0;
+  while (count < LARGE_NUMBER) {
+    count++;
+  }
+  return count;
+}
+
+export let number = computeTask();
 ```
-
-[Calculator.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppColdStart/entry/src/main/ets/utils/Calculator.ets#L2-L13)
 
 【优化后】
 
 1. 在NetRequest.ets中进行网络请求以及数据处理。
 
-   ```
-   1. // NetRequest.ets
-   2. import { hiTraceMeter } from '@kit.PerformanceAnalysisKit';
-   3. import { http } from '@kit.NetworkKit';
-   4. import { BusinessError } from '@kit.BasicServicesKit';
-   5. import { image } from '@kit.ImageKit';
-   6. // Download picture resources from the Internet through the http request method
-   7. export function httpRequest(): void {
-   8. hiTraceMeter.startTrace('Http Request', 1);
-   9. http.createHttp()
-   10. // The actual development needs to "https://www.example1.com/POST?e=f&g=h"replaced with the real website address to visit
-   11. .request('https://www.example1.com/POST?e=f&g=h',
-   12. (error: BusinessError, data: http.HttpResponse) => {
-   13. if (error) {
-   14. // The follow-up logic is not executed when the download fails.
-   15. return;
-   16. }
-   17. // Processing the data returned by network requests
-   18. transcodePixelMap(data);
-   19. }
-   20. )
-   21. }
+   ```typescript
+   // NetRequest.ets
+   import { hiTraceMeter } from '@kit.PerformanceAnalysisKit';
+   import { http } from '@kit.NetworkKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { image } from '@kit.ImageKit';
+   // Download picture resources from the Internet through the http request method
+   export function httpRequest(): void {
+     hiTraceMeter.startTrace('Http Request', 1);
+     http.createHttp()
+     // The actual development needs to "https://www.example1.com/POST?e=f&g=h"replaced with the real website address to visit
+       .request('https://www.example1.com/POST?e=f&g=h',
+         (error: BusinessError, data: http.HttpResponse) => {
+           if (error) {
+             // The follow-up logic is not executed when the download fails.
+             return;
+           }
+           // Processing the data returned by network requests
+           transcodePixelMap(data);
+         }
+       )
+   }
 
-   23. // Use createPixelMap to replace pictures of ArrayBuffer types with PixelMap types.
-   24. function transcodePixelMap(data: http.HttpResponse): void {
-   25. if (http.ResponseCode.OK === data.responseCode) {
-   26. const imageData: ArrayBuffer = data.result as ArrayBuffer;
-   27. // Create a picture source instance through ArrayBuffer
-   28. const imageSource: image.ImageSource = image.createImageSource(imageData);
-   29. const options: image.InitializationOptions = {
-   30. 'alphaType': 0, // Transparency
-   31. 'editable': false, // Is it editable?
-   32. 'pixelFormat': 3, // Pixel format
-   33. 'scaleMode': 1, // Abbreviation
-   34. 'size': { height: 100, width: 100 }
-   35. }; // Create the size of the picture
-   36. // Create PixelMap through properties
-   37. imageSource.createPixelMap(options).then((pixelMap: PixelMap) => {
-   38. AppStorage.set('netData', pixelMap);
-   39. hiTraceMeter.finishTrace('Http Request', 1);
-   40. });
-   41. }
-   42. }
+   // Use createPixelMap to replace pictures of ArrayBuffer types with PixelMap types.
+   function transcodePixelMap(data: http.HttpResponse): void {
+     if (http.ResponseCode.OK === data.responseCode) {
+       const imageData: ArrayBuffer = data.result as ArrayBuffer;
+       // Create a picture source instance through ArrayBuffer
+       const imageSource: image.ImageSource = image.createImageSource(imageData);
+       const options: image.InitializationOptions = {
+         'alphaType': 0, // Transparency
+         'editable': false, // Is it editable?
+         'pixelFormat': 3, // Pixel format
+         'scaleMode': 1, // Abbreviation
+         'size': { height: 100, width: 100 }
+       }; // Create the size of the picture
+       // Create PixelMap through properties
+       imageSource.createPixelMap(options).then((pixelMap: PixelMap) => {
+         AppStorage.set('netData', pixelMap);
+         hiTraceMeter.finishTrace('Http Request', 1);
+       });
+     }
+   }
    ```
-
-   [NetRequest.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppColdStart/entry/src/main/ets/utils/NetRequest.ets#L3-L44)
 2. 在AbilityStage的onCreate()生命周期回调中发起网络请求。
 
-   ```
-   1. // MyAbilityStage.ets
-   2. import { AbilityStage, Want } from '@kit.AbilityKit';
-   3. import { httpRequest } from '../utils/NetRequest';
-   4. export default class MyAbilityStage extends AbilityStage {
-   5. onCreate(): void {
-   6. // Send a network request
-   7. httpRequest();
-   8. }
+   ```typescript
+   // MyAbilityStage.ets
+   import { AbilityStage, Want } from '@kit.AbilityKit';
+   import { httpRequest } from '../utils/NetRequest';
+   export default class MyAbilityStage extends AbilityStage {
+     onCreate(): void {
+       // Send a network request
+       httpRequest();
+     }
 
-   10. onAcceptWant(want: Want): string {
-   11. // Triggered in specified mode only.
-   12. return 'MyAbilityStage';
-   13. }
-   14. }
+     onAcceptWant(want: Want): string {
+       // Triggered in specified mode only.
+       return 'MyAbilityStage';
+     }
+   }
    ```
-
-   [MyAbilityStage.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppColdStart/entry/src/main/ets/entryability/MyAbilityStage.ets#L17-L30)
 3. 在首页 Index.ets 中展示请求获取的图片。
 
+   ```typescript
+   // Index.ets
+   import { number } from '../utils/Calculator';
+
+   AppStorage.link('netData');
+   PersistentStorage.persistProp('netData', undefined);
+
+   @Entry
+   @Component
+   struct Index {
+     @State message: string = 'Hello World' + number; // In order to reflect the performance benefits, refer to the execution result number of the time-consuming function.
+     @StorageLink('netData') netData: PixelMap | undefined = undefined;
+     build() {
+       Row() {
+         Image(this.netData)
+           .objectFit(ImageFit.Contain)
+           .width('50%')
+           .height('50%')
+       }
+       .onDisAppear(() => {
+         AppStorage.set('netData', undefined);
+       })
+       .height('100%')
+       .width('100%')
+     }
+   }
    ```
-   1. // Index.ets
-   2. import { number } from '../utils/Calculator';
-
-   4. AppStorage.link('netData');
-   5. PersistentStorage.persistProp('netData', undefined);
-
-   7. @Entry
-   8. @Component
-   9. struct Index {
-   10. @State message: string = 'Hello World' + number; // In order to reflect the performance benefits, refer to the execution result number of the time-consuming function.
-   11. @StorageLink('netData') netData: PixelMap | undefined = undefined;
-   12. build() {
-   13. Row() {
-   14. Image(this.netData)
-   15. .objectFit(ImageFit.Contain)
-   16. .width('50%')
-   17. .height('50%')
-   18. }
-   19. .onDisAppear(() => {
-   20. AppStorage.set('netData', undefined);
-   21. })
-   22. .height('100%')
-   23. .width('100%')
-   24. }
-   25. }
-   ```
-
-   [NewIndex.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppColdStart/entry/src/main/ets/pages/NewIndex.ets#L17-L41)
 
 使用Launch分析工具，对比优化前后启动性能。分析阶段从启动Ability（即H:void OHOS::AppExecFwk::MainThread::HandleLaunchAbility的开始点）到应用接收到网络数据返回后的首帧刷新（即H:ReceiveVsync dataCount:24Bytes now:timestamp expectedEnd:timestamp vsyncId:int的开始点）。
 
 **图4** 优化网络请求时机前   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/AMByA1q8RNm7-jYR7FjaaA/zh-cn_image_0000002194010676.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/vCE8osN3SySQaePMHB27uA/zh-cn_image_0000002194010676.png "点击放大")
 
 **图5** 优化网络请求时机后   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/mb-xvSWFTH2DXToFG9u0Kg/zh-cn_image_0000002229450941.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/dYcD4y_eRJas0n0yUx_Pww/zh-cn_image_0000002229450941.png "点击放大")
 
 对比数据如下：
 
@@ -608,7 +596,7 @@ AppAnalyzer详情报告中会显示动态检测可能导致冷启动完成时延
 
 应用进程创建和初始化阶段包括系统完成应用进程的创建及初始化，以及启动页图标（startWindowIcon）的解码。建议使用不超过256×256分辨率的图标，以减少图片解码时延，提升体验。
 
-说明
+**说明** 
 
 建议开发者优先使用[Code Linter扫描工具](../harmonyos-guides/ide-code-linter.md)进行代码检查，重点关注[@performance/start-window-icon-check](../harmonyos-guides/ide-start-window-icon-check.md)规则。若扫描结果中出现该规则相关问题，可参考本章节提供的优化建议进行调整。
 
@@ -616,34 +604,32 @@ AppAnalyzer详情报告中会显示动态检测可能导致冷启动完成时延
 
 如果启动页图标分辨率过大，解码耗时会影响应用的启动速度。建议启动页图标分辨率不超过256像素×256像素，如下所示。
 
+```json
+{
+  // ...
+    "abilities": [
+      {
+        "name": "EntryAbility",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
+        "description": "$string:EntryAbility_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:EntryAbility_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        // ...
+      }
+    ]
+  }
+}
 ```
-1. {
-2. // ...
-3. "abilities": [
-4. {
-5. "name": "EntryAbility",
-6. "srcEntry": "./ets/entryability/EntryAbility.ets",
-7. "description": "$string:EntryAbility_desc",
-8. "icon": "$media:layered_image",
-9. "label": "$string:EntryAbility_label",
-10. "startWindowIcon": "$media:startIcon",
-11. "startWindowBackground": "$color:start_window_background",
-12. // ...
-13. }
-14. ]
-15. }
-16. }
-```
-
-[module.json5](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppColdStart/entry/src/main/module.json5#L2-L55)
 
 下面使用Launch分析对比优化前的startWindowIcon（4096像素\\*4096像素）及优化后的startWindowIcon（144像素\\*144像素）的启动性能。分析阶段的起点为Process Creating，阶段终点为First Frame - Render Phase，优化前后的启动耗时如下图：
 
 **图6** 优化前使用4096px-4096px启动页图标应用启动耗时   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/vu4JcuuCTbyBxgTBZSrkOA/zh-cn_image_0000002229451013.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/YrH0h6gxQV2gZhxX7MJpsw/zh-cn_image_0000002229451013.png)
 
 **图7** 优化后使用144px-144px启动页图标应用启动耗时   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/PaXeLLlZTTC7odI0DHVedw/zh-cn_image_0000002229450965.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/d9vn1floTkearUNxWnSMYg/zh-cn_image_0000002229450965.png)
 
 优化后，应用启动时长缩短了37.2ms，设置合适的startWindowIcon分辨率能有效减少应用进程创建和初始化阶段的耗时。
 
@@ -663,31 +649,29 @@ Application和Ability初始化包括资源加载、虚拟机创建、相关对�
 
 应用程序在执行代码前，必须找到并加载所有导入的模块。每个加载的第三方框架或模块都会增加启动时间，具体耗时取决于模块的数量和大小。建议开发者优先使用系统提供的模块，并按需加载，以缩短应用程序的启动时间。
 
+```typescript
+// Optimize modules that reduce import
+/*import { ConfigurationConstant, contextConstant, wantConstant } from '@kit.AbilityKit';
+import { GesturePath, GesturePoint } from '@kit.AccessibilityKit';
+import { distributedAccount, osAccount } from '@kit.BasicServicesKit';
+import { Configuration } from '@kit.ArkUI';
+import { atomicService } from '@kit.ScenarioFusionKit';
+import { sim } from '@kit.TelephonyKit';*/
+
+import { UIAbility } from '@kit.AbilityKit';
+
+export default class EntryAbility extends UIAbility {
+  // ...
+}
 ```
-1. // Optimize modules that reduce import
-2. /*import { ConfigurationConstant, contextConstant, wantConstant } from '@kit.AbilityKit';
-3. import { GesturePath, GesturePoint } from '@kit.AccessibilityKit';
-4. import { distributedAccount, osAccount } from '@kit.BasicServicesKit';
-5. import { Configuration } from '@kit.ArkUI';
-6. import { atomicService } from '@kit.ScenarioFusionKit';
-7. import { sim } from '@kit.TelephonyKit';*/
-
-10. import { UIAbility } from '@kit.AbilityKit';
-
-13. export default class EntryAbility extends UIAbility {
-14. // ...
-15. }
-```
-
-[ReduceImport.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppColdStart/entry/src/main/ets/pages/ReduceImport.ets#L17-L31)
 
 下面使用Launch分析，对优化import的模块前（模块数量15个）及优化import的模块后（移除不必要的模块剩余5个）的启动性能进行对比分析。分析的trace点为H:SourceTextModule::Evaluate，优化前后的启动耗时如下图：
 
 **图8** 优化前import 15个模块   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/WYkVJ0hOQoOtMDV5DZgi2w/zh-cn_image_0000002229336481.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/zLgo02lOTnaZFR5WNUHmpA/zh-cn_image_0000002229336481.png "点击放大")
 
 **图9** 优化后import 5个模块   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/XBV6KVwBT-WaZK0VbiA7-g/zh-cn_image_0000002229336453.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/rATn1XPARxKW0bsjI1WpDg/zh-cn_image_0000002229336453.png "点击放大")
 
 对比数据如下：
 
@@ -707,10 +691,10 @@ Application和Ability初始化包括资源加载、虚拟机创建、相关对�
   使用Launch分析，对比优化前（嵌套8层export \*）和优化后（直接从目标文件中import）的启动性能。分析阶段从开始加载abc文件（H:JSPandaFileExecutor::ExecuteFromAbcFile）到abc文件加载完成。
 
   **图10** （优化前）存在8层嵌套export \*   
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/EVRyhrjASD6i6O8Aq3rpBA/zh-cn_image_0000002193851128.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/KXns5pT_QBCkCGSauQZH6Q/zh-cn_image_0000002193851128.png "点击放大")
 
   **图11** （优化后）不存在嵌套export \*，从目标文件中直接import   
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/ajwGWYXWR5-whUBugm6w7w/zh-cn_image_0000002194010744.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/_rllUnOZQhWLSAmZf41a6Q/zh-cn_image_0000002194010744.png "点击放大")
 
   对比数据如下：
 
@@ -727,10 +711,10 @@ Application和Ability初始化包括资源加载、虚拟机创建、相关对�
   对优化前（使用 `import \* as nm` 全量引用2000条数据）和优化后（使用import { One }按需引用）的启动性能进行对比分析。分析阶段从 `H:void OHOS::AppExecFwk::MainThread::HandleLaunchAbility(const std::shared\_ptr<AbilityLocalRecord> &)` 的开始点到结束点。
 
   **图12** 优化前，使用import \* as nm全量引用2000条数据   
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/1K7PvojvQd-1-yvs34g0Ew/zh-cn_image_0000002229450969.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/s58TJ0DaQqOBPsvqKcF8tg/zh-cn_image_0000002229450969.png "点击放大")
 
   **图13** 优化后，使用import { One }按需引用   
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/rHsXniguS7OhZiYdWg1iWg/zh-cn_image_0000002229450953.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/soswRg5KR56jX6i2mCW62Q/zh-cn_image_0000002229450953.png "点击放大")
 
   优化前后的对比数据如下：
 
@@ -741,7 +725,7 @@ Application和Ability初始化包括资源加载、虚拟机创建、相关对�
 
   可见阶段的时长已减少。使用按需引用的方式，可以进一步缩短应用冷启动的完成时间。
 
-  说明
+  **说明** 
 
   此优化方案仅可将冷启动阶段耗时缩短，但是可能导致其他场景耗时增长，即变量初始化过程从冷启动阶段分摊至其它使用阶段，例：当二级页面使用到Numbers.ets中Two变量，此方案会使二级页面跳转过程对比优化前耗时更长。
 
@@ -757,103 +741,93 @@ HAR包中的导出文件Index.ets同时导出了MainPage.ets和SubPage.ets两个
 
 **图14** 优化前，加载模块时执行了非冷启动相关文件 SubPage.ets。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/0y4SJ16iS0ief23_zSm5LQ/zh-cn_image_0000002454292713.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/YKLLzJ-DTMeGCP-ioxsd7Q/zh-cn_image_0000002454292713.png "点击放大")
 
 以下为示例代码：
 
-```
-1. // entry/src/main/ets/pages/Index.ets
-2. import { MainPage } from 'library/Index'; // Unrecommended usage: Direct import of subPage.ets files related to cold start non-strong
-3. @Component
-4. export struct Index{
-5. @Provide pathStack: NavPathStack = new NavPathStack();
-6. build() {
-7. Navigation(this.pathStack) {
-8. Row() {
-9. // Refer to the custom components of HAR
-10. MainPage()
-11. }
-12. }
-13. }
-14. }
-```
-
-[NotRecommendDemo.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppColdStart/entry/src/main/ets/pages/NotRecommendDemo.ets#L17-L30)
-
-```
-1. // library/src/main/ets/components/mainpage/MainPage.ets
-2. @Component
-3. export struct MainPage {
-4. @Consume pathStack: NavPathStack;
-5. @State message: string = 'HAR MainPage';
-
-7. build() {
-8. Row() {
-9. Text(this.message)
-10. .fontSize(32)
-11. .fontWeight(FontWeight.Bold)
-12. }.onClick(() => {
-13. this.pathStack.pushPath({ name: 'SecondPage' });
-14. })
-15. }
-16. }
+```typescript
+// entry/src/main/ets/pages/Index.ets
+import { MainPage } from 'library/Index'; // Unrecommended usage: Direct import of subPage.ets files related to cold start non-strong
+@Component
+export struct Index{
+  @Provide pathStack: NavPathStack = new NavPathStack();
+  build() {
+    Navigation(this.pathStack) {
+      Row() {
+        // Refer to the custom components of HAR
+        MainPage()
+      }
+    }
+  }
+}
 ```
 
-[MainPage.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppColdStart/library/src/main/ets/components/mainpage/MainPage.ets#L17-L32)
+```typescript
+// library/src/main/ets/components/mainpage/MainPage.ets
+@Component
+export struct MainPage {
+  @Consume pathStack: NavPathStack;
+  @State message: string = 'HAR MainPage';
 
-```
-1. // entry/src/main/ets/pages/SecondPage.ets
-2. import { SubPage } from 'library/Index';
-3. @Builder
-4. export function SecondPageBuilder() {
-5. SecondPage()
-6. }
-7. @Entry
-8. @Component
-9. struct SecondPage {
-10. pathStack: NavPathStack = new NavPathStack();
-11. build() {
-12. NavDestination() {
-13. Row() {
-14. // Refer to the custom components of HAR
-15. SubPage()
-16. }
-17. .height('100%')
-18. }
-19. .onReady((context: NavDestinationContext) => {
-20. this.pathStack = context.pathStack;
-21. })
-22. }
-23. }
+  build() {
+    Row() {
+      Text(this.message)
+        .fontSize(32)
+        .fontWeight(FontWeight.Bold)
+    }.onClick(() => {
+      this.pathStack.pushPath({ name: 'SecondPage' });
+    })
+  }
+}
 ```
 
-[SecondPage.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppColdStart/entry/src/main/ets/pages/SecondPage.ets#L17-L39)
-
+```typescript
+// entry/src/main/ets/pages/SecondPage.ets
+import { SubPage } from 'library/Index';
+@Builder
+export function SecondPageBuilder() {
+  SecondPage()
+}
+@Entry
+@Component
+struct SecondPage {
+  pathStack: NavPathStack = new NavPathStack();
+  build() {
+    NavDestination() {
+      Row() {
+        // Refer to the custom components of HAR
+        SubPage()
+      }
+      .height('100%')
+    }
+    .onReady((context: NavDestinationContext) => {
+      this.pathStack = context.pathStack;
+    })
+  }
+}
 ```
-1. // library/src/main/ets/components/mainpage/SubPage.ets
-2. // Global time-consuming functions in SubPage
-3. const LARGE_NUMBER: number = 10000000;
 
-5. function computeTask(): number {
-6. let count: number = 0;
-7. while (count < LARGE_NUMBER) {
-8. count++;
-9. }
-10. return count;
-11. }
+```typescript
+// library/src/main/ets/components/mainpage/SubPage.ets
+// Global time-consuming functions in SubPage
+const LARGE_NUMBER: number = 10000000;
 
-13. computeTask();
-14. // ...
+function computeTask(): number {
+  let count: number = 0;
+  while (count < LARGE_NUMBER) {
+    count++;
+  }
+  return count;
+}
+
+computeTask();
+// ...
 ```
 
-[SubPage.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppColdStart/library/src/main/ets/components/mainpage/SubPage.ets#L2-L15)
-
+```typescript
+export { MainPage } from './src/main/ets/components/mainpage/MainPage'; // Cold start strong related files
+export { SubPage } from './src/main/ets/components/mainpage/SubPage'; // Non-cold start strong related files
 ```
-1. export { MainPage } from './src/main/ets/components/mainpage/MainPage'; // Cold start strong related files
-2. export { SubPage } from './src/main/ets/components/mainpage/SubPage'; // Non-cold start strong related files
-```
-
-[Index.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppColdStart/library/Index.ets#L17-L18)
 
 【优化方案一】
 
@@ -865,82 +839,74 @@ HAR包中的导出文件Index.ets同时导出了MainPage.ets和SubPage.ets两个
 
 **图15** 优化方案一，拆分HAR导出文件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/4oYZixJNTxSyqO4qkSlfrw/zh-cn_image_0000002454173657.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/B4j-jIi_SL-oM6gEs8DKQw/zh-cn_image_0000002454173657.png "点击放大")
 
 示例代码如下：
 
 1. 将HAR包的导出文件Index.ets进行拆分，IndexAppStart.ets文件仅导出首页相关文件，IndexOthers.ets文件导出非首页相关文件。
 
-   ```
-   1. // library/IndexAppStart.ets
-   2. export { MainPage } from './src/main/ets/components/mainpage/MainPage';
-   ```
-
-   [IndexAppStart.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppColdStart/library/IndexAppStart.ets#L2-L3)
-
-   ```
-   1. // library/IndexOthers.ets
-   2. export { SubPage } from './src/main/ets/components/mainpage/SubPage';
+   ```typescript
+   // library/IndexAppStart.ets
+   export { MainPage } from './src/main/ets/components/mainpage/MainPage';
    ```
 
-   [IndexOthers.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppColdStart/library/IndexOthers.ets#L2-L3)
+   ```typescript
+   // library/IndexOthers.ets
+   export { SubPage } from './src/main/ets/components/mainpage/SubPage';
+   ```
 2. 首页Index从IndexAppStart.ets导入MainPage。
 
+   ```typescript
+   // Index.ets
+   import { MainPage } from 'library/IndexAppStart';
+
+   @Entry
+   @Component
+   struct Index {
+     @Provide pathStack: NavPathStack = new NavPathStack();
+
+     build() {
+       Navigation(this.pathStack) {
+         Row() {
+           // Refer to the custom components of HAR
+           MainPage()
+         }
+       }
+       .height('100%')
+       .width('100%')
+     }
+   }
    ```
-   1. // Index.ets
-   2. import { MainPage } from 'library/IndexAppStart';
-
-   4. @Entry
-   5. @Component
-   6. struct Index {
-   7. @Provide pathStack: NavPathStack = new NavPathStack();
-
-   9. build() {
-   10. Navigation(this.pathStack) {
-   11. Row() {
-   12. // Refer to the custom components of HAR
-   13. MainPage()
-   14. }
-   15. }
-   16. .height('100%')
-   17. .width('100%')
-   18. }
-   19. }
-   ```
-
-   [ImportMainPage.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppColdStart/entry/src/main/ets/pages/ImportMainPage.ets#L17-L35)
 3. 跳转后的页面SecondPage从IndexOthers.ets导入SubPage。
 
+   ```typescript
+   // SecondPage.ets
+   import { SubPage } from 'library/IndexOthers';
+
+   @Builder
+   export function SecondPageBuilder() {
+     SecondPage()
+   }
+
+   @Entry
+   @Component
+   struct SecondPage {
+     pathStack: NavPathStack = new NavPathStack();
+     
+     build() {
+       NavDestination() {
+         Row() {
+           // Refer to the custom components of HAR
+           SubPage()
+         }
+         .height('100%')
+       }
+       .onReady((context: NavDestinationContext) => {
+         this.pathStack = context.pathStack;
+       })
+     }
+   }
    ```
-   1. // SecondPage.ets
-   2. import { SubPage } from 'library/IndexOthers';
-
-   4. @Builder
-   5. export function SecondPageBuilder() {
-   6. SecondPage()
-   7. }
-
-   9. @Entry
-   10. @Component
-   11. struct SecondPage {
-   12. pathStack: NavPathStack = new NavPathStack();
-
-   14. build() {
-   15. NavDestination() {
-   16. Row() {
-   17. // Refer to the custom components of HAR
-   18. SubPage()
-   19. }
-   20. .height('100%')
-   21. }
-   22. .onReady((context: NavDestinationContext) => {
-   23. this.pathStack = context.pathStack;
-   24. })
-   25. }
-   26. }
-   ```
-
-   [ImportSubPage.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppColdStart/entry/src/main/ets/pages/ImportSubPage.ets#L17-L42)
 
 【优化方案二】
 
@@ -952,35 +918,33 @@ HAR包中的导出文件Index.ets同时导出了MainPage.ets和SubPage.ets两个
 
 **图16** 优化方案二，首页导入冷启动文件时使用全路径展开
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/sVwZnPY7T_a856eqXnSrOg/zh-cn_image_0000002420614820.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/fL52RVcFQJyvmmEJIH9mtA/zh-cn_image_0000002420614820.png "点击放大")
 
 示例代码如下：
 
+```screen
+// Index.ets
+import { MainPage } from 'library/src/main/ets/components/mainpage/MainPage';
+
+@Entry
+@Component
+struct Index {
+  @Provide pathStack: NavPathStack = new NavPathStack();
+
+  build() {
+    Navigation(this.pathStack) {
+      Row() {
+        // Refer to the custom components of HAR
+        MainPage()
+      }
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
-1. // Index.ets
-2. import { MainPage } from 'library/IndexAppStart';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. @Provide pathStack: NavPathStack = new NavPathStack();
-
-9. build() {
-10. Navigation(this.pathStack) {
-11. Row() {
-12. // Refer to the custom components of HAR
-13. MainPage()
-14. }
-15. }
-16. .height('100%')
-17. .width('100%')
-18. }
-19. }
-```
-
-[ImportMainPage.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppColdStart/entry/src/main/ets/pages/ImportMainPage.ets#L17-L35)
-
-说明
+**说明** 
 
 1. 上述两种优化方案假设MainPage中不存在对SubPage的import。
 
@@ -991,13 +955,13 @@ HAR包中的导出文件Index.ets同时导出了MainPage.ets和SubPage.ets两个
 使用Launch分析优化前后启动性能。阶段起点为UI Ability Launching，终点为应用首帧即First Frame - App Phase。
 
 **图17** 优化前：加载模块时执行了非冷启动相关文件   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/VUjXoYINSy6irXrplmkH9A/zh-cn_image_0000002229336505.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/0g96i-ovTz2HZPO2r2f7Ig/zh-cn_image_0000002229336505.png "点击放大")
 
 **图18** 优化方案一：拆分HAR导出文件   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/TF6Lf_pHQKi2Tw5wUwGNIA/zh-cn_image_0000002193851072.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/FunN36-jQLCGViUoPAuTmA/zh-cn_image_0000002193851072.png "点击放大")
 
 **图19** 优化方案二：导入冷启动文件时全路径展开   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/DqwB02NbQh-AWOqjDxIjEg/zh-cn_image_0000002194010672.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/0jjDTL7iRai48pIF9O6vcA/zh-cn_image_0000002194010672.png "点击放大")
 
 优化前后的对比数据如下：
 
@@ -1019,36 +983,36 @@ HAR包中的导出文件Index.ets同时导出了MainPage.ets和SubPage.ets两个
 
 以下为示例代码：
 
-```
-1. import { add } from 'hsp1';
-2. import { add2 } from 'hsp2';
-3. import { add3 } from 'hsp3';
-4. import { add4 } from 'hsp4';
-5. import { add5 } from 'hsp5';
-6. import { add6 } from 'hsp6';
-7. import { add7 } from 'hsp7';
-8. import { add8 } from 'hsp8';
-9. import { add9 } from 'hsp9';
-10. import { add10 } from 'hsp10';
-11. import { add11 } from 'hsp11';
-12. import { add12 } from 'hsp12';
-13. import { add13 } from 'hsp13';
-14. import { add14 } from 'hsp14';
-15. import { add15 } from 'hsp15';
-16. import { add16 } from 'hsp16';
-17. import { add17 } from 'hsp17';
-18. import { add18 } from 'hsp18';
-19. import { add19 } from 'hsp19';
-20. import { add20 } from 'hsp20';
+```typescript
+import { add } from 'hsp1';
+import { add2 } from 'hsp2';
+import { add3 } from 'hsp3';
+import { add4 } from 'hsp4';
+import { add5 } from 'hsp5';
+import { add6 } from 'hsp6';
+import { add7 } from 'hsp7';
+import { add8 } from 'hsp8';
+import { add9 } from 'hsp9';
+import { add10 } from 'hsp10';
+import { add11 } from 'hsp11';
+import { add12 } from 'hsp12';
+import { add13 } from 'hsp13';
+import { add14 } from 'hsp14';
+import { add15 } from 'hsp15';
+import { add16 } from 'hsp16';
+import { add17 } from 'hsp17';
+import { add18 } from 'hsp18';
+import { add19 } from 'hsp19';
+import { add20 } from 'hsp20';
 ```
 
 下面使用Launch分析，对比HAP与20个HSP混合打包以及将20个HSP包设计成HAR包的启动性能。
 
 **图20** HAP+20个HSP混合打包   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/cXrzW6WnQlCMQe29pi5oJA/zh-cn_image_0000002229451061.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/LbmY-EI7RfCTOg2NskOSbQ/zh-cn_image_0000002229451061.png "点击放大")
 
 **图21** 将20个HSP包设计成HAR包   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/7xxv5V5xT26YOoIZNjBZaw/zh-cn_image_0000002229450981.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/hpW9M4-0TGqdDEGWsOS4tw/zh-cn_image_0000002229450981.png "点击放大")
 
 对比数据如下：
 
@@ -1067,47 +1031,45 @@ AbilityStage生命周期阶段执行相应的生命周期回调。
 
 在应用启动流程中，系统会执行 AbilityStage 的生命周期回调函数。不建议在这些回调函数中执行耗时操作，例如 onCreate。建议将耗时操作通过异步任务延迟处理或放到其他线程执行。关于线程并发方案，可以参考 [TaskPool和Worker的对比实践](bpta-comparative_practice_of_taskpool_and_worker.md)。在这些生命周期回调中，推荐仅执行必要的操作。关于 AbilityStage，可以参考 [AbilityStage组件管理器](../harmonyos-guides/abilitystage.md)，以下为示例代码：
 
+```typescript
+const LARGE_NUMBER: number = 100000000;
+const DELAYED_TIME: number = 1000;
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
+
+  aboutToAppear(): void {
+    console.log('aboutToAppear');
+    this.computeTaskAsync();
+  }
+
+  // ...
+
+  computeTask(): void {
+    let count: number = 0;
+    while (count < LARGE_NUMBER) {
+      count++;
+    }
+  }
+
+  // Asynchronous processing of operation tasks
+  private computeTaskAsync(): void {
+    setTimeout(() => { // SetTimeout is used here to realize asynchronous delayed operation.
+      this.computeTask();
+    }, DELAYED_TIME);
+  }
+}
 ```
-1. const LARGE_NUMBER: number = 100000000;
-2. const DELAYED_TIME: number = 1000;
-
-4. @Entry
-5. @Component
-6. struct Index {
-7. @State message: string = 'Hello World';
-
-9. aboutToAppear(): void {
-10. console.log('aboutToAppear');
-11. this.computeTaskAsync();
-12. }
-
-14. // ...
-
-16. computeTask(): void {
-17. let count: number = 0;
-18. while (count < LARGE_NUMBER) {
-19. count++;
-20. }
-21. }
-
-23. // Asynchronous processing of operation tasks
-24. private computeTaskAsync(): void {
-25. setTimeout(() => { // SetTimeout is used here to realize asynchronous delayed operation.
-26. this.computeTask();
-27. }, DELAYED_TIME);
-28. }
-29. }
-```
-
-[ColdStartSpeedOptimization.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppColdStart/entry/src/main/ets/pages/ColdStartSpeedOptimization.ets#L17-L57)
 
 使用Launch分析，对比优化前同步执行耗时操作和优化后异步执行耗时操作的启动性能。分析范围从Process Creating到First Frame - Render Phase，优化前后的启动耗时如下图所示。
 
 **图22** 优化前同步执行操作（computeTask），应用冷启动耗时   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/nYbLDZs_Q16tX3rUaqe5hg/zh-cn_image_0000002229336541.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/d-X8gkOQTjqYVtViDoH41A/zh-cn_image_0000002229336541.png)
 
 **图23** 优化后异步执行操作（computeTaskAsync），应用冷启动耗时   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/QeqVDTV1SX25n4vQPub6fA/zh-cn_image_0000002229450973.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/9DbRHEhSQoS34NKxYNL9bw/zh-cn_image_0000002229450973.png)
 
 使用异步后，应用冷启动时间从2.2秒减少到220.9毫秒，速度提升显著。
 
@@ -1123,68 +1085,66 @@ Ability生命周期阶段执行相应的生命周期回调。
 
 **图24** UIAbility生命周期状态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/fjZhLOJZTGytCavTy14CYA/zh-cn_image_0000002454294977.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/KBmqmj1VRsSd-Fz2VN1SPg/zh-cn_image_0000002454294977.png "点击放大")
 
 下面示例代码在UIAbility的回调函数onCreate()中分别执行了同步和异步操作：
 
+```typescript
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI'
+
+const LARGE_NUMBER: number = 100000000;
+const DELAYED_TIME: number = 1000;
+
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    // Time-consuming operation
+    // this.computeTask();
+    this.computeTaskAsync(); // Asynchronous tasks
+  }
+
+  onWindowStageCreate(windowStage: window.WindowStage): void {
+    windowStage.loadContent('pages/Index', (err, data) => {
+      if (err.code) {
+        console.error('Failed to load the content. Cause: ' + JSON.stringify(err) ?? '');
+        return;
+      }
+      console.info('Succeeded in loading the content. Data: ' + JSON.stringify(data) ?? '');
+    });
+
+    // Time-consuming operation
+    // this.computeTask();
+    // this.computeTaskAsync(); // Asynchronous mission
+  }
+
+  onForeground(): void {
+    // Time-consuming operation
+    // this.computeTask();
+    // this.computeTaskAsync(); // Asynchronous mission
+  }
+
+  private computeTask(): void {
+    let count: number = 0;
+    while (count < LARGE_NUMBER) {
+      count++;
+    }
+  }
+
+  private computeTaskAsync(): void {
+    setTimeout(() => { // SetTimeout is used here to achieve asynchronous delayed operation.
+      this.computeTask();
+    }, DELAYED_TIME);
+  }
+}
 ```
-1. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-2. import { window } from '@kit.ArkUI'
-
-4. const LARGE_NUMBER: number = 100000000;
-5. const DELAYED_TIME: number = 1000;
-
-8. export default class EntryAbility extends UIAbility {
-9. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-10. // Time-consuming operation
-11. // this.computeTask();
-12. this.computeTaskAsync(); // Asynchronous tasks
-13. }
-
-15. onWindowStageCreate(windowStage: window.WindowStage): void {
-16. windowStage.loadContent('pages/Index', (err, data) => {
-17. if (err.code) {
-18. console.error('Failed to load the content. Cause: ' + JSON.stringify(err) ?? '');
-19. return;
-20. }
-21. console.info('Succeeded in loading the content. Data: ' + JSON.stringify(data) ?? '');
-22. });
-
-24. // Time-consuming operation
-25. // this.computeTask();
-26. // this.computeTaskAsync(); // Asynchronous mission
-27. }
-
-29. onForeground(): void {
-30. // Time-consuming operation
-31. // this.computeTask();
-32. // this.computeTaskAsync(); // Asynchronous mission
-33. }
-
-35. private computeTask(): void {
-36. let count: number = 0;
-37. while (count < LARGE_NUMBER) {
-38. count++;
-39. }
-40. }
-
-42. private computeTaskAsync(): void {
-43. setTimeout(() => { // SetTimeout is used here to achieve asynchronous delayed operation.
-44. this.computeTask();
-45. }, DELAYED_TIME);
-46. }
-47. }
-```
-
-[EntryAbility.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppColdStart/entry/src/main/ets/entryability/EntryAbility.ets#L17-L63)
 
 下面使用Launch分析，对比优化前同步执行耗时操作和优化后异步执行耗时操作的启动性能。分析从Process Creating阶段开始，到First Frame - Render Phase阶段结束。优化前后的启动耗时如下图所示。
 
 **图25** 优化前同步执行操作（computeTask），应用冷启动耗时   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/PrRVXLyXTEqQeEAsApIn5g/zh-cn_image_0000002193851092.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/xPm4kyZAS1iwR4Pfb321Hg/zh-cn_image_0000002193851092.png)
 
 **图26** 优化后异步执行操作（computeTaskAsync），应用冷启动耗时   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/oQDQ16UHRI6yMiNBV8CGVg/zh-cn_image_0000002194010748.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/xp6UHfmETd-SQasWmKvxGA/zh-cn_image_0000002194010748.png)
 
 使用延时异步后，应用冷启动时间显著提升，耗时从2.1秒减少到220毫秒。
 
@@ -1198,64 +1158,62 @@ Ability生命周期阶段执行相应的生命周期回调。
 
 **图27** 被@Entry装饰的组件（页面）生命周期
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/bTq-V9s4RxCdZa1tfZRmhQ/zh-cn_image_0000002420776488.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/gwZc3CcvRR2JeQSFI2NrPQ/zh-cn_image_0000002420776488.png "点击放大")
 
 在Page的回调函数aboutToAppear()中分别执行同步和异步操作的示例代码如下：
 
+```typescript
+const LARGE_NUMBER: number = 100000000;
+const DELAYED_TIME: number = 1000;
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
+
+  aboutToAppear(): void {
+    // Time-consuming operation
+    // this.computeTask();
+    this.computeTaskAsync(); // Asynchronous tasks
+  }
+
+  build() {
+    Row() {
+      Column() {
+        Text(this.message)
+          .fontSize(50)
+          .fontWeight(FontWeight.Bold)
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+
+  private computeTask(): void {
+    let count: number = 0;
+    while (count < LARGE_NUMBER) {
+      count++;
+    }
+  }
+
+  // Asynchronous processing of computing tasks
+  private computeTaskAsync(): void {
+    setTimeout(() => { // SetTimeout is used here to achieve asynchronous delayed operation.
+      this.computeTask();
+    }, DELAYED_TIME);
+  }
+}
 ```
-1. const LARGE_NUMBER: number = 100000000;
-2. const DELAYED_TIME: number = 1000;
-
-4. @Entry
-5. @Component
-6. struct Index {
-7. @State message: string = 'Hello World';
-
-9. aboutToAppear(): void {
-10. // Time-consuming operation
-11. // this.computeTask();
-12. this.computeTaskAsync(); // Asynchronous tasks
-13. }
-
-15. build() {
-16. Row() {
-17. Column() {
-18. Text(this.message)
-19. .fontSize(50)
-20. .fontWeight(FontWeight.Bold)
-21. }
-22. .width('100%')
-23. }
-24. .height('100%')
-25. }
-
-27. private computeTask(): void {
-28. let count: number = 0;
-29. while (count < LARGE_NUMBER) {
-30. count++;
-31. }
-32. }
-
-34. // Asynchronous processing of computing tasks
-35. private computeTaskAsync(): void {
-36. setTimeout(() => { // SetTimeout is used here to achieve asynchronous delayed operation.
-37. this.computeTask();
-38. }, DELAYED_TIME);
-39. }
-40. }
-```
-
-[ComputeTaskAsync.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppColdStart/entry/src/main/ets/pages/ComputeTaskAsync.ets#L17-L56)
 
 下面使用Launch分析，对优化前同步执行耗时操作及优化后异步执行耗时操作的启动性能进行对比分析。分析阶段的起点Process Creating，阶段终点为First Frame - Render Phase。
 
 如下图所示，优化前后的启动耗时对比：
 
 **图28** 优化前同步执行操作（computeTask），应用冷启动耗时   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/uAYKmhqvQWiIoQ4RtPNMFw/zh-cn_image_0000002229336521.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/qqcj6o6eTgSKR4CCBqSc_A/zh-cn_image_0000002229336521.png)
 
 **图29** 优化后异步执行操作（computeTaskAsync），应用冷启动耗时   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/-IEePHtYTNyQbw45bsc6mw/zh-cn_image_0000002229336501.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/5XZcdjSHRcu6QjS2nMRQ4A/zh-cn_image_0000002229336501.png "点击放大")
 
 使用异步处理后，应用冷启动时间显著提升，耗时从2.4秒减少到238.3毫秒。
 
@@ -1265,11 +1223,11 @@ Ability生命周期阶段执行相应的生命周期回调。
 
 **图30** 使用本地存储首页数据流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/XR_Jvs6WRwO2mGleFqMWlw/zh-cn_image_0000002420776904.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/BeSHG5GIQbiXoy7zDxtfuw/zh-cn_image_0000002420776904.png "点击放大")
 
 使用本地**存储**优先展示，可减少首帧展示延迟，缩短用户可见白屏时间，提升冷启动体验。
 
-说明
+**说明** 
 
 应用需根据自身对于数据的时效性要求，来决定是否使用**本地存储**数据。例如时效性要求为一天时，一天前保存的数据就不适合进行展示，需从网络获取新数据进行展示，并更新本地存储数据。
 
@@ -1279,134 +1237,131 @@ Ability生命周期阶段执行相应的生命周期回调。
 
 以下为关键示例代码：
 
+```screen
+import { http } from '@kit.NetworkKit';
+import { image } from '@kit.ImageKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { abilityAccessCtrl, common, Permissions } from '@kit.AbilityKit';
+import { fileIo } from '@kit.CoreFileKit';
+
+const PERMISSIONS: Array<Permissions> = [
+  'ohos.permission.READ_MEDIA',
+  'ohos.permission.WRITE_MEDIA'
+];
+AppStorage.link('net_picture');
+PersistentStorage.persistProp('net_picture', '');
+
+@Entry
+@Component
+struct Index {
+  @State image: PixelMap | undefined = undefined;
+  @State imageBuffer: ArrayBuffer | undefined = undefined; // Picture ArrayBuffer
+
+  /**
+   * Download picture resources from the Internet through the http request method
+   */
+  async getPicture(): Promise<void> {
+    http.createHttp()
+      .request('https://www.example1.com/POST?e=f&g=h',
+        (error: BusinessError, data: http.HttpResponse) => {
+          if (error) {
+            return;
+          }
+          // Determine whether the resources obtained by the network are of the ArrayBuffer type.
+          if (data.result instanceof ArrayBuffer) {
+            this.imageBuffer = data.result as ArrayBuffer;
+          }
+          this.transcodePixelMap(data);
+        }
+      )
+  }
+
+  /**
+   * Use createPixelMap to replace pictures of ArrayBuffer type with PixelMap type
+   * @param data：Resources obtained from the network
+   */
+  transcodePixelMap(data: http.HttpResponse): void {
+    if (http.ResponseCode.OK === data.responseCode) {
+      const imageData: ArrayBuffer = data.result as ArrayBuffer;
+      // Create a picture source instance through ArrayBuffer
+      const imageSource: image.ImageSource = image.createImageSource(imageData);
+      const options: image.InitializationOptions = {
+        'alphaType': 0, // Transparency
+        'editable': false, // Is it editable?
+        'pixelFormat': 3, // Pixel format
+        'scaleMode': 1, // Abbreviation
+        'size': { height: 100, width: 100 }
+      }; // Create the size of the picture
+
+      // Create PixelMap through attributes
+      imageSource.createPixelMap(options).then((pixelMap: PixelMap) => {
+        this.image = pixelMap;
+        setTimeout(() => {
+          if (this.imageBuffer !== undefined) {
+            this.saveImage(this.imageBuffer);
+          }
+        }, 0)
+      });
+    }
+  }
+
+  async saveImage(buffer: ArrayBuffer | string): Promise<void> {
+    try {
+      const context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+      const filePath: string = context.cacheDir + '/test.jpg';
+      AppStorage.set('net_picture', filePath);
+      const file: fileIo.File = await fileIo.open(filePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+      await fileIo.write(file.fd, buffer);
+      await fileIo.close(file.fd);
+    } catch (err) {
+      let error = err as BusinessError;
+      console.error(`onAddForm err, code: ${error.code}, message: ${error.message}`);
+    }
+  }
+
+  async useCachePic(): Promise<void> {
+    if (AppStorage.get('net_picture') !== '') {
+      // Get the ArrayBuffer of the picture
+      const imageSource: image.ImageSource = image.createImageSource(AppStorage.get('net_picture'));
+      const options: image.InitializationOptions = {
+        'alphaType': 0, // transparency
+        'editable': false, // Is it editable?
+        'pixelFormat': 3, // pixel format
+        'scaleMode': 1, // Abbreviated value
+        'size': { height: 100, width: 100 }
+      };
+      imageSource.createPixelMap(options).then((pixelMap: PixelMap) => {
+        this.image = pixelMap;
+      });
+    }
+  }
+
+  async aboutToAppear(): Promise<void> {
+    const context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    const atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+    await atManager.requestPermissionsFromUser(context, PERMISSIONS);
+    this.useCachePic(); // Get data from local storage
+    this.getPicture(); // Obtain data from the network side
+  }
+
+  build() {
+    Column() {
+      Image(this.image)
+        .objectFit(ImageFit.Contain)
+        .width('50%')
+        .height('50%')
+    }
+  }
+}
 ```
-1. // Index.ets
-2. import { http } from '@kit.NetworkKit';
-3. import { image } from '@kit.ImageKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
-5. import { abilityAccessCtrl, common, Permissions } from '@kit.AbilityKit';
-6. import { fileIo, fileIo as fs } from '@kit.CoreFileKit';
-
-8. const PERMISSIONS: Array<Permissions> = [
-9. 'ohos.permission.READ_MEDIA',
-10. 'ohos.permission.WRITE_MEDIA'
-11. ];
-12. AppStorage.link('net_picture');
-13. PersistentStorage.persistProp('net_picture', '');
-
-15. @Entry
-16. @Component
-17. struct Index {
-18. @State image: PixelMap | undefined = undefined;
-19. @State imageBuffer: ArrayBuffer | undefined = undefined; // Picture ArrayBuffer
-
-21. /**
-22. * Download picture resources from the Internet through the http request method
-23. */
-24. async getPicture(): Promise<void> {
-25. http.createHttp()
-26. .request('https://www.example1.com/POST?e=f&g=h',
-27. (error: BusinessError, data: http.HttpResponse) => {
-28. if (error) {
-29. return;
-30. }
-31. // Determine whether the resources obtained by the network are of the ArrayBuffer type.
-32. if (data.result instanceof ArrayBuffer) {
-33. this.imageBuffer = data.result as ArrayBuffer;
-34. }
-35. this.transcodePixelMap(data);
-36. }
-37. )
-38. }
-
-40. /**
-41. * Use createPixelMap to replace pictures of ArrayBuffer type with PixelMap type
-42. * @param data：Resources obtained from the network
-43. */
-44. transcodePixelMap(data: http.HttpResponse): void {
-45. if (http.ResponseCode.OK === data.responseCode) {
-46. const imageData: ArrayBuffer = data.result as ArrayBuffer;
-47. // Create a picture source instance through ArrayBuffer
-48. const imageSource: image.ImageSource = image.createImageSource(imageData);
-49. const options: image.InitializationOptions = {
-50. 'alphaType': 0, // Transparency
-51. 'editable': false, // Is it editable?
-52. 'pixelFormat': 3, // Pixel format
-53. 'scaleMode': 1, // Abbreviation
-54. 'size': { height: 100, width: 100 }
-55. }; // Create the size of the picture
-
-57. // Create PixelMap through attributes
-58. imageSource.createPixelMap(options).then((pixelMap: PixelMap) => {
-59. this.image = pixelMap;
-60. setTimeout(() => {
-61. if (this.imageBuffer !== undefined) {
-62. this.saveImage(this.imageBuffer);
-63. }
-64. }, 0)
-65. });
-66. }
-67. }
-
-69. async saveImage(buffer: ArrayBuffer | string): Promise<void> {
-70. try {
-71. const context:common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-72. const filePath: string = context.cacheDir + '/test.jpg';
-73. AppStorage.set('net_picture', filePath);
-74. const file: fileIo.File = await fs.open(filePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-75. await fs.write(file.fd, buffer);
-76. await fs.close(file.fd);
-77. } catch (err) {
-78. let error = err as BusinessError;
-79. console.error(`onAddForm err, code: ${error.code}, mesage: ${error.message}`);
-80. }
-81. }
-
-84. async useCachePic(): Promise<void> {
-85. if (AppStorage.get('net_picture') !== '') {
-86. // Get the ArrayBuffer of the picture
-87. const imageSource: image.ImageSource = image.createImageSource(AppStorage.get('net_picture'));
-88. const options: image.InitializationOptions = {
-89. 'alphaType': 0, // transparency
-90. 'editable': false, // Is it editable?
-91. 'pixelFormat': 3, // pixel format
-92. 'scaleMode': 1, // Abbreviated value
-93. 'size': { height: 100, width: 100 }
-94. };
-95. imageSource.createPixelMap(options).then((pixelMap: PixelMap) => {
-96. this.image = pixelMap;
-97. });
-98. }
-99. }
-
-101. async aboutToAppear(): Promise<void> {
-102. const context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-103. const atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
-104. await atManager.requestPermissionsFromUser(context, PERMISSIONS);
-105. this.useCachePic(); // Get data from local storage
-106. this.getPicture(); // Obtain data from the network side
-107. }
-
-110. build() {
-111. Column() {
-112. Image(this.image)
-113. .objectFit(ImageFit.Contain)
-114. .width('50%')
-115. .height('50%')
-116. }
-117. }
-118. }
-```
-
-[ScenariosExample.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppColdStart/entry/src/main/ets/pages/ScenariosExample.ets#L17-L134)
 
 下面对比优化前后的启动性能。分析阶段从启动Ability开始，到首次解析Pixelmap后的第一个vsync结束。
 
 **图31** 优化前未使用本地存储数据   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/Fpgf8HQuS9u5P9gT9fdgzQ/zh-cn_image_0000002229336461.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/BQVSR1W7TxqiBq2i76wPKA/zh-cn_image_0000002229336461.png "点击放大")
 
 **图32** 优化后使用本地存储数据   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/ZV4m2lRpSJaj9Vk0Ui835g/zh-cn_image_0000002194010688.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/zXN65NvaTwWFI3Bo0l8mxQ/zh-cn_image_0000002194010688.png "点击放大")
 
 对比数据如下：
 

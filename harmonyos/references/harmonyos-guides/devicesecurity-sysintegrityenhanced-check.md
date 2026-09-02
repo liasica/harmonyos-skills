@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 系统完整性增强检测
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全检测 > 系统完整性增强检测
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:31:30+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:30dcd55f9859965bc58425c57367073564f15e66f0622bc9444d36d0d0da6aaf
+scraped_at: 2026-09-02T14:59:30+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:f435ad575a8896e8a52da9d9bee282078372ad28cc27831a88ec70e7b46bb83b
 ---
 
 ## 场景介绍
 
-应用通过调用Device Security Kit的checkSysIntegrityEnhanced接口获取系统完整性增强检测结果，用于判断设备环境是否安全，比如是否被越狱、非真实设备等。
+应用通过调用Device Security Kit的[checkSysIntegrityEnhanced](../harmonyos-references/devicesecurity-safetydetectenhanced-api.md#safetydetectchecksysintegrityenhanced)接口获取系统完整性增强检测结果，用于判断设备环境是否安全，比如是否被越狱、非真实设备等。
 
 应用可以根据检测结果评估如何进行业务操作。
 
@@ -21,26 +21,26 @@ content_hash: sha256:30dcd55f9859965bc58425c57367073564f15e66f0622bc9444d36d0d0d
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/QL_cG9qGQpW_mzSgoiWo_Q/zh-cn_image_0000002558764884.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/7BbRJALJRAGRnPF1wt2-hw/zh-cn_image_0000002736313393.png)
 
 **流程说明：**
 
 1. 开发者应用获取nonce。
 
-   在调用checkSysIntegrityEnhanced接口时，您必须传入一个随机生成的nonce值。在检测结果中会包含这个nonce值，您可以通过校验这个nonce值来确定返回结果能够对应您的请求，并且没有被重放攻击。
+   在调用[checkSysIntegrityEnhanced](../harmonyos-references/devicesecurity-safetydetectenhanced-api.md#safetydetectchecksysintegrityenhanced)接口时，您必须传入一个随机生成的nonce值。在检测结果中会包含这个nonce值，您可以通过校验这个nonce值来确定返回结果能够对应您的请求，并且没有被重放攻击。
 
-   说明
+   **说明** 
 
    * nonce值必须为16至66字节之间，有效值为base64编码范围。
    * 推荐的做法是，每次请求都从服务器随机生成新的nonce值。
-2. 开发者应用调用checkSysIntegrityEnhanced接口，发起系统完整性增强检测请求。
+2. 开发者应用调用[checkSysIntegrityEnhanced](../harmonyos-references/devicesecurity-safetydetectenhanced-api.md#safetydetectchecksysintegrityenhanced)接口，发起系统完整性增强检测请求。
 
-   Device Security Kit收到请求后，首先采集系统完整性增强检测数据，然后将检测数据与nonce一起发送到Device Security服务器做检测，最后通过checkSysIntegrityEnhanced接口的返回值将检测结果传递给开发者应用。
+   Device Security Kit收到请求后，首先采集系统完整性增强检测数据，然后将检测数据与nonce一起发送到Device Security服务器做检测，最后通过[checkSysIntegrityEnhanced](../harmonyos-references/devicesecurity-safetydetectenhanced-api.md#safetydetectchecksysintegrityenhanced)接口的返回值将检测结果传递给开发者应用。
 3. 当开发者应用发起业务请求时，在您的应用服务器中验证系统完整性增强检测结果。
 
    当系统完整性增强检测结果为false时，请进一步判断detail中的具体风险分类，您可以根据风险分类以及自身功能对安全的要求决定是否提醒用户。
 
-   说明
+   **说明** 
 
    * 当前方案已经通过服务端与客户端相结合等措施进行安全风险消减，但系统完整性增强检测API无法消减所有的安全风险。
    * 系统完整性增强检测结果可以用作系统整体安全的一个环节，需要考虑检测结果误报带来的风险以及给用户带来的影响，不建议将系统完整性增强检测结果作为判断当前设备是否安全的唯一依据，更好的做法是通过额外的步骤降低风险。
@@ -50,50 +50,52 @@ content_hash: sha256:30dcd55f9859965bc58425c57367073564f15e66f0622bc9444d36d0d0d
 
 ## 接口说明
 
-以下是系统完整性增强检测相关接口，包括ArkTS API，更多接口及使用方法请参见[API参考](../harmonyos-references/devicesecurity-safetydetectenhanced-api.md#checksysintegrityenhanced)。
+以下是系统完整性增强检测相关接口，包括ArkTS API，更多接口及使用方法请参见[API参考](../harmonyos-references/devicesecurity-safetydetectenhanced-api.md#safetydetectchecksysintegrityenhanced)。
 
 | 接口名 | 描述 |
 | --- | --- |
-| [checkSysIntegrityEnhanced](../harmonyos-references/devicesecurity-safetydetectenhanced-api.md#checksysintegrityenhanced)(req: [SysIntegrityRequest](../harmonyos-references/devicesecurity-safetydetectenhanced-api.md#sysintegrityrequest)): Promise<[SysIntegrityResponse](../harmonyos-references/devicesecurity-safetydetectenhanced-api.md#sysintegrityresponse)> | 增强检测系统完整性 |
+| [checkSysIntegrityEnhanced](../harmonyos-references/devicesecurity-safetydetectenhanced-api.md#safetydetectchecksysintegrityenhanced)(req: [SysIntegrityRequest](../harmonyos-references/devicesecurity-safetydetectenhanced-api.md#sysintegrityrequest)): Promise<[SysIntegrityResponse](../harmonyos-references/devicesecurity-safetydetectenhanced-api.md#sysintegrityresponse)> | 增强检测系统完整性 |
 
 ## 开发步骤
 
-说明
+**说明** 
 
 请确保已打开“[安全检测服务](devicesecurity-deviceverify-activateservice.md)”开关并[申请Profile](../app/agc-help-profile-0000002270709473.md)。
 
 1. 导入Device Security Kit模块及相关公共模块。
 
+   ```typescript
+   import { safetyDetect } from '@kit.DeviceSecurityKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
-   1. import { safetyDetect } from '@kit.DeviceSecurityKit';
-   2. import { BusinessError } from '@ohos.base';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
-   ```
-2. 调用接口获取系统完整性检测结果。
+2. 调用[checkSysIntegrityEnhanced](../harmonyos-references/devicesecurity-safetydetectenhanced-api.md#safetydetectchecksysintegrityenhanced)接口获取系统完整性增强检测结果。
 
-   注意
+   **注意** 
 
    该接口涉及端云协同，需要联网等耗时操作，因此不要在UI线程中执行，避免阻塞UI线程。
 
-   ```
-   1. const TAG = "SafetyDetectJsTest";
+   ```typescript
+   const TAG = 'SafetyDetectJsTest';
 
-   3. // 请求系统完整性增强检测，并处理结果
-   4. let req : safetyDetect.SysIntegrityRequest = {
-   5. nonce : 'imEe1PCRcjGkBCAhOCh6ImADztOZ8ygxlWRs' // 从服务器生成的随机的nonce值
-   6. };
-   7. try {
-   8. hilog.info(0x0000, TAG, 'CheckSysIntegrity begin.');
-   9. const data: safetyDetect.SysIntegrityResponse = await safetyDetect.checkSysIntegrityEnhanced(req);
-   10. hilog.info(0x0000, TAG, 'Succeeded in checkSysIntegrityEnhanced: %{public}s', data.result);
-   11. } catch (err) {
-   12. let e: BusinessError = err as BusinessError;
-   13. hilog.error(0x0000, TAG, 'CheckSysIntegrityEnhanced failed: %{public}d %{public}s', e.code, e.message);
-   14. }
+   // 请求系统完整性增强检测，并处理结果
+   let req : safetyDetect.SysIntegrityRequest = {
+     nonce : 'imEe1PCRcjGkBCAhOCh6ImADztOZ8ygxlWRs' // 从服务器生成的随机的nonce值
+   };
+   try {
+     hilog.info(0x0000, TAG, 'CheckSysIntegrityEnhanced begin.');
+     const data: safetyDetect.SysIntegrityResponse = await safetyDetect.checkSysIntegrityEnhanced(req);
+     hilog.info(0x0000, TAG, 'Succeeded in checkSysIntegrityEnhanced: %{public}s', data.result);
+     // ...
+   } catch (err) {
+     let e: BusinessError = err as BusinessError;
+     hilog.error(0x0000, TAG, 'CheckSysIntegrityEnhanced failed: %{public}d %{public}s', e.code, e.message);
+     // ...
+   }
    ```
 3. 在您的应用服务器中验证检测结果。
 
-   系统完整性检测结果是一个格式为JSON WEB Signature（JWS）的字符串。包括三个部分：
+   系统完整性增强检测结果是一个格式为JSON WEB Signature（JWS）的字符串。包括三个部分：
 
    * Header（头部）
    * Payload（负载）
@@ -103,24 +105,24 @@ content_hash: sha256:30dcd55f9859965bc58425c57367073564f15e66f0622bc9444d36d0d0d
 
    **示例**
 
-   ```
-   1. eyAgICAiYW**.**.*Jxse
-   2. eyAgICAiYW**.**.*JodHxx
+   ```json
+   eyAgICAiYW**.**.*Jxse
+   eyAgICAiYW**.**.*JodHxx
    ```
 
    更多JWS的相关知识请参见 [JSON Web Signature](https://www.rfc-editor.org/rfc/rfc7515.html)。
 
    **JWS的Header字段如下**：
 
-   ```
-   1. {
-   2. "alg": "ES256",
-   3. "typ":"JWS",
-   4. "x5c": ["","",""]
-   5. }
+   ```json
+   {
+       "alg": "ES256",
+       "typ":"JWS",
+       "x5c": ["","",""]
+   }
    ```
 
-   说明
+   **说明** 
 
    "alg"：签名算法名称，ES256表示使用ECDSA进行签名。
 
@@ -130,27 +132,27 @@ content_hash: sha256:30dcd55f9859965bc58425c57367073564f15e66f0622bc9444d36d0d0d
 
    **JWS的Payload字段如下**：
 
-   ```
-   1. {
-   2. "hapCertificateSha256": "xxx",
-   3. "hapBundleName": "xxx",
-   4. "appId": "xxx",
-   5. "basicIntegrity": false,
-   6. "version": xxx,
-   7. "detail": [
-   8. "attack",
-   9. "jailbreak",
-   10. "emulator",
-   11. "unlock"
-   12. ],
-   13. "nonce": "xxx",
-   14. "timestamp": 1604098577327
-   15. }
+   ```json
+   {
+     "hapCertificateSha256": "xxx",
+     "hapBundleName": "xxx",
+     "appId": "xxx",
+     "basicIntegrity": false,
+     "version": xxx,
+     "detail": [
+       "attack",
+       "jailbreak",
+       "emulator",
+       "unlock"
+     ],
+     "nonce": "xxx",
+     "timestamp": 1604098577327
+   }
    ```
 
-   说明
+   **说明** 
 
-   nonce：调用checkSysIntegrityEnhanced接口时传入的nonce字符串。
+   nonce：调用[checkSysIntegrityEnhanced](../harmonyos-references/devicesecurity-safetydetectenhanced-api.md#safetydetectchecksysintegrityenhanced)接口时传入的nonce字符串。
 
    timestamp：服务器生成的时间戳。
 
@@ -178,8 +180,8 @@ content_hash: sha256:30dcd55f9859965bc58425c57367073564f15e66f0622bc9444d36d0d0d
    3. 校验证书链中是否包含3级证书；校验证书链中x5c[0]证书的Common Name是否为Harmony OS Device Attestation Service。
    4. 从signature中获取签名，校验其签名。
    5. 校验hapBundleName或appId，检查其是否正确。
-   6. 从payload中获取完整性验证结果，当检测结果中basicIntegrity为false，detail字段会列出检测结果为false的原因，您可以根据自身功能对安全的要求决定是否提醒用户。
+   6. 从payload中获取完整性验证结果，当增强检测结果中basicIntegrity为false，detail字段会列出检测结果为false的原因，您可以根据自身功能对安全的要求决定是否提醒用户。
 
-      注意
+      **注意** 
 
       请按照上述步骤校验证书与签名，确保检测结果的完整性，防止检测结果被篡改。

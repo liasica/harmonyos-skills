@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅资源泄漏事件（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 资源泄漏事件 > 订阅资源泄漏事件（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:05+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:50a10f7c5cb5241301613189fbada71ab299c2d47cd640eb88c5fa725936e5e2
+scraped_at: 2026-09-02T14:59:39+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:854174d361132efb4fc11aa32c23776c46490fd66d97713f39adffc1779df52f
 ---
 
 ## 接口说明
@@ -39,52 +39,69 @@ content_hash: sha256:50a10f7c5cb5241301613189fbada71ab299c2d47cd640eb88c5fa72593
 
 1. 在DevEco Studio中新建工程，选择“Empty Ability”，编辑工程中的“entry > src > main > ets > entryability > EntryAbility.ets”文件，导入依赖模块：
 
-   ```
-   1. import { hiAppEvent, hilog } from '@kit.PerformanceAnalysisKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```ts
+   import { hiAppEvent, hilog } from '@kit.PerformanceAnalysisKit';
+   import { deviceInfo, BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 编辑工程中的“entry > src > main > ets > entryability > EntryAbility.ets”文件，在onCreate函数中添加系统事件的订阅，示例代码如下：
 
-   ```
-   1. // 完成参数键值对赋值
-   2. let params: Record<string, hiAppEvent.ParamType> = {
-   3. "test_data": 100,
-   4. };
-   5. // 设置资源泄漏事件的自定义参数
-   6. hiAppEvent.setEventParam(params, hiAppEvent.domain.OS, hiAppEvent.event.RESOURCE_OVERLIMIT).then(() => {
-   7. hilog.info(0x0000, 'testTag', `HiAppEvent success to set event param`);
-   8. }).catch((err: BusinessError) => {
-   9. hilog.error(0x0000, 'testTag', `HiAppEvent code: ${err.code}, message: ${err.message}`);
-   10. });
-   11. // 完成自定义配置键值对赋值
-   12. let configParams: Record<string, hiAppEvent.ParamType> = {
-   13. "js_heap_logtype": "event", // 仅获取事件
-   14. }
-   15. // 设置资源泄漏事件的自定义配置
-   16. hiAppEvent.setEventConfig(hiAppEvent.event.RESOURCE_OVERLIMIT, configParams);
-   17. hiAppEvent.addWatcher({
-   18. // 自定义观察者名称，系统会使用名称来标识不同的观察者
-   19. name: "watcher",
-   20. // 订阅感兴趣的系统事件，此处是订阅了资源泄漏事件
-   21. appEventFilters: [
-   22. {
-   23. domain: hiAppEvent.domain.OS,
-   24. names: [hiAppEvent.event.RESOURCE_OVERLIMIT]
-   25. }
-   26. ],
-   27. // 自行实现订阅实时回调函数，以便对订阅获取到的事件数据进行自定义处理
-   28. onReceive: (domain: string, appEventGroups: Array<hiAppEvent.AppEventGroup>) => {
-   29. hilog.info(0x0000, 'testTag', `HiAppEvent onReceive: domain=${domain}`);
-   30. for (const eventGroup of appEventGroups) {
-   31. // 根据事件集合中的事件名称区分不同的系统事件
-   32. hilog.info(0x0000, 'testTag', `HiAppEvent eventName=${eventGroup.name}`);
-   33. for (const eventInfo of eventGroup.appEventInfos) {
-   34. // 获取到资源泄漏事件发生时内存信息
-   35. hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo=${JSON.stringify(eventInfo)}`);
-   36. }
-   37. }
-   38. }
-   39. });
+   ```ts
+   // 完成参数键值对赋值
+   let params: Record<string, hiAppEvent.ParamType> = {
+     "test_data": 100,
+   };
+   // 设置资源泄漏事件的自定义参数
+   hiAppEvent.setEventParam(params, hiAppEvent.domain.OS, hiAppEvent.event.RESOURCE_OVERLIMIT).then(() => {
+     hilog.info(0x0000, 'testTag', `HiAppEvent success to set event param`);
+   }).catch((err: BusinessError) => {
+     hilog.error(0x0000, 'testTag', `HiAppEvent code: ${err.code}, message: ${err.message}`);
+   });
+   // 完成自定义配置键值对赋值
+   let configParams: Record<string, hiAppEvent.ParamType> = {
+     "js_heap_logtype": "event", // 仅获取事件
+   }
+   // 设置资源泄漏事件的自定义配置
+   hiAppEvent.setEventConfig(hiAppEvent.event.RESOURCE_OVERLIMIT, configParams);
+   if (deviceInfo.sdkApiVersion >= 24) {  // API Version 24及以后版本，支持设置页面切换日志
+     // 配置页面切换日志
+     let switchLogPolicy : hiAppEvent.EventPolicy = {
+       "resourceOverlimitPolicy": {
+         "pageSwitchLogEnable": true
+       }
+     };
+     // 开发者可以设置资源泄漏日志配置参数
+     hiAppEvent.configEventPolicy(switchLogPolicy).then(() => {
+       hilog.info(0x0000, 'testTag', `HiAppEvent success to config event policy.`);
+     }).catch((err: BusinessError) => {
+       hilog.error(0x0000, 'testTag', `HiAppEvent code: ${err.code}, message: ${err.message}`);
+     });
+   }
+
+   hiAppEvent.addWatcher({
+     // 自定义观察者名称，系统会使用名称来标识不同的观察者
+     name: "watcher",
+     // 订阅感兴趣的系统事件，此处是订阅了资源泄漏事件
+     appEventFilters: [
+       {
+         domain: hiAppEvent.domain.OS,
+         names: [hiAppEvent.event.RESOURCE_OVERLIMIT]
+       }
+     ],
+     // 自行实现订阅实时回调函数，以便对订阅获取到的事件数据进行自定义处理
+     onReceive: (domain: string, appEventGroups: Array<hiAppEvent.AppEventGroup>) => {
+       hilog.info(0x0000, 'testTag', `HiAppEvent onReceive: domain=${domain}`);
+       for (const eventGroup of appEventGroups) {
+         // 根据事件集合中的事件名称区分不同的系统事件
+         hilog.info(0x0000, 'testTag', `HiAppEvent eventName=${eventGroup.name}`);
+         for (const eventInfo of eventGroup.appEventInfos) {
+           // 获取到资源泄漏事件发生时内存信息
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo=${JSON.stringify(eventInfo)}`);
+           // 开发者可以获取到资源泄漏事件的页面切换日志
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.page_switch_log=${JSON.stringify(eventInfo.params['page_switch_log'])}`);
+         }
+       }
+     }
+   });
    ```
 
 ### 步骤二：订阅资源泄漏事件
@@ -97,36 +114,34 @@ content_hash: sha256:50a10f7c5cb5241301613189fbada71ab299c2d47cd640eb88c5fa72593
 
    接口示例代码如下：
 
+   ```typescript
+   Button('pss leak')
+     .type(ButtonType.Capsule)
+     .margin({
+       top: 20
+     })
+     .backgroundColor('#0D9FFB')
+     .width('80%')
+     .height('5%')
+     .onClick(() => {
+       // 设置一个简单的资源泄漏场景
+       hilog.info(0x0000, 'testTag', 'click pss leak button');
+       testNapi.leakMB(3072);
+     })
+   Button('js leak')
+     .type(ButtonType.Capsule)
+     .margin({
+       top: 20
+     })
+     .backgroundColor('#0D9FFB')
+     .width('80%')
+     .height('5%')
+     .onClick(() => {
+       for (let i = 0; i < 10000; i++) {
+         this.leakedArray.push(new Array(500000).fill(1));
+       }
+     })
    ```
-   1. Button('pss leak')
-   2. .type(ButtonType.Capsule)
-   3. .margin({
-   4. top: 20
-   5. })
-   6. .backgroundColor('#0D9FFB')
-   7. .width('80%')
-   8. .height('5%')
-   9. .onClick(() => {
-   10. // 设置一个简单的资源泄漏场景
-   11. hilog.info(0x0000, 'testTag', 'click pss leak button');
-   12. testNapi.leakMB(3072);
-   13. })
-   14. Button('js leak')
-   15. .type(ButtonType.Capsule)
-   16. .margin({
-   17. top: 20
-   18. })
-   19. .backgroundColor('#0D9FFB')
-   20. .width('80%')
-   21. .height('5%')
-   22. .onClick(() => {
-   23. for (let i = 0; i < 10000; i++) {
-   24. this.leakedArray.push(new Array(500000).fill(1));
-   25. }
-   26. })
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/PerformanceAnalysisKit/HiAppEvent/EventSub/entry/src/main/ets/pages/Index.ets#L92-L121)
 2. 添加 pss leak 相关内容：
 
    编辑“napi\_init.cpp”文件：
@@ -134,188 +149,182 @@ content_hash: sha256:50a10f7c5cb5241301613189fbada71ab299c2d47cd640eb88c5fa72593
    * 头文件加入：
 
    ```
-   1. #include <iostream>
-   2. #include <fstream>
-   3. #include <sstream>
-   4. #include <thread>
+   #include <iostream>
+   #include <fstream>
+   #include <sstream>
+   #include <thread>
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/PerformanceAnalysisKit/HiAppEvent/EventSub/entry/src/main/cpp/napi_init.cpp#L16-L21)
 
    * 定义 pss leak 相关方法：
 
    ```
-   1. // 读 /proc/self/smaps_rollup 中的 PSS 字段，统计当前进程的 PSS (单位 KB)
-   2. static int GetCurrentProcessPss()
-   3. {
-   4. std::ifstream smapsFile("/proc/self/smaps_rollup");
-   5. if (!smapsFile.is_open()) {
-   6. std::cerr << "Failed to open /proc/self/smaps_rollup" << std::endl;
-   7. return 0;
-   8. }
-   9. std::string line;
-   10. int totalPss = 0;
-   11. while (std::getline(smapsFile, line)) {
-   12. if (line.find("Pss:") == 0) {
-   13. std::istringstream iss(line);
-   14. std::string label;
-   15. int pss;
-   16. iss >> label >>pss;
-   17. totalPss += pss;
-   18. }
-   19. }
-   20. smapsFile.close();
-   21. std::cout << "Current pss: " << totalPss << " KB\r";
-   22. std::cout.flush();
-   23. return totalPss;
-   24. }
+   // 读 /proc/self/smaps_rollup 中的 PSS 字段，统计当前进程的 PSS (单位 KB)
+   static int GetCurrentProcessPss()
+   {
+       std::ifstream smapsFile("/proc/self/smaps_rollup");
+       if (!smapsFile.is_open()) {
+           std::cerr << "Failed to open /proc/self/smaps_rollup" << std::endl;
+           return 0;
+       }
+       std::string line;
+       int totalPss = 0;
+       while (std::getline(smapsFile, line)) {
+           if (line.find("Pss:") == 0) {
+               std::istringstream iss(line);
+               std::string label;
+               int pss;
+               iss >> label >>pss;
+               totalPss += pss;
+           }
+       }
+       smapsFile.close();
+       std::cout << "Current pss: " << totalPss << " KB\r";
+       std::cout.flush();
+       return totalPss;
+   }
 
-   26. // 读取当前进程的 FD 数量
-   27. static int GetCurrentFd()
-   28. {
-   29. std::ifstream fdFile("/proc/self/fd_num");
-   30. if (!fdFile.is_open()) {
-   31. std::cerr << "Failed to open /proc/self/fd_num" << std::endl;
-   32. return 0;
-   33. }
-   34. std::string line;
-   35. int totalPss = 0;
-   36. std::getline(fdFile, line);
-   37. fdFile.close();
-   38. std::cout << "Current fd: " << line << std::endl;
-   39. std::cout.flush();
-   40. return std::stoi(line);
-   41. }
+   // 读取当前进程的 FD 数量
+   static int GetCurrentFd()
+   {
+       std::ifstream fdFile("/proc/self/fd_num");
+       if (!fdFile.is_open()) {
+           std::cerr << "Failed to open /proc/self/fd_num" << std::endl;
+           return 0;
+       }
+       std::string line;
+       int totalPss = 0;
+       std::getline(fdFile, line);
+       fdFile.close();
+       std::cout << "Current fd: " << line << std::endl;
+       std::cout.flush();
+       return std::stoi(line);
+   }
 
-   43. // 申请 size 字节内存并写入数据（用 'a' 填充），制造 native 内存增长
-   44. static bool InjectNativeLeakMallocWithSize(int size, char *p)
-   45. {
-   46. const size_t maxSafe = 1073741824;
-   47. if (size < 0 || size > maxSafe) {
-   48. printf("InjectNativeLeakMallocWithSize invalid size\n");
-   49. return false;
-   50. }
-   51. p = (char *) malloc(size + 1);
-   52. if (!p) {
-   53. printf("InjectNativeLeakMallocWithSize malloc failed\n");
-   54. return false;
-   55. }
-   56. void* err = memset(p, 'a', size);
-   57. if (err == nullptr) {
-   58. printf("InjectNativeLeakMallocWithSize memset failed\n");
-   59. return false;
-   60. }
-   61. return true;
-   62. }
+   // 申请 size 字节内存并写入数据（用 'a' 填充），制造 native 内存增长
+   static bool InjectNativeLeakMallocWithSize(int size, char *p)
+   {
+       const size_t maxSafe = 1073741824;
+       if (size < 0 || size > maxSafe) {
+           printf("InjectNativeLeakMallocWithSize invalid size\n");
+           return false;
+       }
+       p = (char *) malloc(size + 1);
+       if (!p) {
+           printf("InjectNativeLeakMallocWithSize malloc failed\n");
+           return false;
+       }
+       void* err = memset(p, 'a', size);
+       if (err == nullptr) {
+           printf("InjectNativeLeakMallocWithSize memset failed\n");
+           return false;
+       }
+       return true;
+   }
 
-   64. // 循环申请/释放内存，使进程 PSS 持续接近 target
-   65. static void InjectNativeLeakMallocUntil(int target)
-   66. {
-   67. constexpr int leakSizePerTime = 5000000;
-   68. std::vector<char *> mems;
-   69. int curPss = GetCurrentProcessPss();
-   70. while (curPss != 0) {
-   71. char *p = nullptr;
-   72. if (curPss < target) {
-   73. if (!InjectNativeLeakMallocWithSize(leakSizePerTime, p)) {
-   74. printf("InjectNativeLeakMallocUntil target = %d failed\n", target);
-   75. }
-   76. mems.push_back(p);
-   77. std::cout << "Inject size: " << leakSizePerTime << ", currentSize: " << mems.size() << std::endl;
-   78. } else {
-   79. if (mems.size() > 0) {
-   80. char *dst = mems[0];
-   81. mems.erase(mems.begin());
-   82. free(dst);
-   83. }
-   84. std::cout << "Free size: " << leakSizePerTime << ", currentSize: " << mems.size() << std::endl;
-   85. }
-   86. curPss = GetCurrentProcessPss();
-   87. }
-   88. std::cout << std::endl;
-   89. printf("InjectNativeLeakMallocUntil target = %d success\n", target);
-   90. }
+   // 循环申请/释放内存，使进程 PSS 持续接近 target
+   static void InjectNativeLeakMallocUntil(int target)
+   {
+       constexpr int leakSizePerTime = 5000000;
+       std::vector<char *> mems;
+       int curPss = GetCurrentProcessPss();
+       while (curPss != 0) {
+           char *p = nullptr;
+           if (curPss < target) {
+               if (!InjectNativeLeakMallocWithSize(leakSizePerTime, p)) {
+                   printf("InjectNativeLeakMallocUntil target = %d failed\n", target);
+               }
+               mems.push_back(p);
+               std::cout << "Inject size: " << leakSizePerTime << ", currentSize: " << mems.size() << std::endl;
+           } else {
+               if (mems.size() > 0) {
+                   char *dst = mems[0];
+                   mems.erase(mems.begin());
+                   free(dst);
+               }
+               std::cout << "Free size: " << leakSizePerTime << ", currentSize: " << mems.size() << std::endl;
+           }
+           curPss = GetCurrentProcessPss();
+       }
+       std::cout << std::endl;
+       printf("InjectNativeLeakMallocUntil target = %d success\n", target);
+   }
 
-   92. // 启动后台执行的 InjectNativeLeakMallocUntil 线程，使 native 内存占用接近 leakSize
-   93. static void StartNativeLeak(int leakSize)
-   94. {
-   95. std::cout << "Start inject malloc until" << leakSize << "KB" << std::endl;
-   96. std::thread t1(InjectNativeLeakMallocUntil, leakSize);
-   97. t1.detach();
-   98. std::cout << "Inject finished." << std::endl;
-   99. }
+   // 启动后台执行的 InjectNativeLeakMallocUntil 线程，使 native 内存占用接近 leakSize
+   static void StartNativeLeak(int leakSize)
+   {
+       std::cout << "Start inject malloc until" << leakSize << "KB" << std::endl;
+       std::thread t1(InjectNativeLeakMallocUntil, leakSize);
+       t1.detach();
+       std::cout << "Inject finished." << std::endl;
+   }
 
-   101. // N-API 导出方法
-   102. static napi_value LeakMB(napi_env env, napi_callback_info info)
-   103. {
-   104. size_t argc = 1;
-   105. napi_value args[1];
-   106. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-   107. if (argc < 1) {
-   108. napi_throw_type_error(env, nullptr, "Expected 1 argument");
-   109. return nullptr;
-   110. }
-   111. double x = 0;
-   112. if (napi_get_value_double(env, args[0], &x) != napi_ok) {
-   113. napi_throw_type_error(env, nullptr, "Argument must be a number");
-   114. return nullptr;
-   115. }
-   116. const size_t kilobyte = 1024;
-   117. StartNativeLeak(static_cast<size_t>(x * kilobyte));
-   118. napi_value rtn;
-   119. napi_get_undefined(env, &rtn);
-   120. return rtn;
-   121. }
+   // N-API 导出方法
+   static napi_value LeakMB(napi_env env, napi_callback_info info)
+   {
+       size_t argc = 1;
+       napi_value args[1];
+       napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+       if (argc < 1) {
+           napi_throw_type_error(env, nullptr, "Expected 1 argument");
+           return nullptr;
+       }
+       double x = 0;
+       if (napi_get_value_double(env, args[0], &x) != napi_ok) {
+           napi_throw_type_error(env, nullptr, "Argument must be a number");
+           return nullptr;
+       }
+       const size_t kilobyte = 1024;
+       StartNativeLeak(static_cast<size_t>(x * kilobyte));
+       napi_value rtn;
+       napi_get_undefined(env, &rtn);
+       return rtn;
+   }
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/PerformanceAnalysisKit/HiAppEvent/EventSub/entry/src/main/cpp/napi_init.cpp#L1119-L1235)
 
    * 初始化：
 
    ```
-   1. static napi_value Init(napi_env env, napi_value exports)
-   2. {
-   3. napi_property_descriptor desc[] = {
-   4. // ...
-   5. { "leakMB", nullptr, LeakMB, nullptr, nullptr, nullptr, napi_default, nullptr}
-   6. };
-   7. napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
-   8. return exports;
-   9. }
+   static napi_value Init(napi_env env, napi_value exports)
+   {
+       napi_property_descriptor desc[] = {
+           // ...
+           { "leakMB", nullptr, LeakMB, nullptr, nullptr, nullptr, napi_default, nullptr}
+       };
+       napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+       return exports;
+   }
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/PerformanceAnalysisKit/HiAppEvent/EventSub/entry/src/main/cpp/napi_init.cpp#L1241-L1299)
 
    编辑“Index.d.ts”文件：
 
    * 添加类型声明：
 
+   ```typescript
+   export const leakMB: (size: number) => void;
    ```
-   1. export const leakMB: (size: number) => void;
-   ```
-
-   [Index.d.ts](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/PerformanceAnalysisKit/HiAppEvent/EventSub/entry/src/main/cpp/types/libentry/Index.d.ts#L37-L39)
 3. 点击DevEco Studio界面中的运行按钮，运行应用工程，点击“pss leak”按钮，等待15~30分钟，系统会上报pss内存泄漏事件。
 
    同一个应用，24小时内至多上报一次资源泄漏事件，如果短时间内要二次上报，需要重启设备。
 4. pss内存泄漏事件上报后，系统会回调应用的onReceive函数，可以在Log窗口看到对系统事件数据的处理日志：
 
-   ```
-   1. HiAppEvent onReceive: domain=OS
-   2. HiAppEvent eventName=RESOURCE_OVERLIMIT
-   3. HiAppEvent eventInfo={"domain":"OS","name":"RESOURCE_OVERLIMIT","eventType":1,"params":{"bundle_name":"com.example.myapplication","bundle_version":"1.0.0","memory":{"pss":2100257,"rss":1352644,"sys_avail_mem":250272,"sys_free_mem":60004,"sys_total_mem":1992340,"vss":2462936},"pid":20731,"resource_type":"pss_memory","time":1502348798106,"uid":20010044,"external_log": ["/data/storage/el2/log/resourcelimit/RESOURCE_OVERLIMIT_1725614572401_6808.log", "/data/storage/el2/log/resourcelimit/RESOURCE_OVERLIMIT_1725614572412_6808.log"], "log_over_limit": false}}
+   ```text
+   HiAppEvent onReceive: domain=OS
+   HiAppEvent eventName=RESOURCE_OVERLIMIT
+   HiAppEvent eventInfo={"domain":"OS","name":"RESOURCE_OVERLIMIT","eventType":1,"params":{"bundle_name":"com.example.myapplication", "app_running_unique_id":"26457812872126536953", "bundle_version":"1.0.0","memory":{"pss":2100257,"rss":1352644,"sys_avail_mem":250272,"sys_free_mem":60004,"sys_total_mem":1992340,"vss":2462936},"pid":20731,"resource_type":"pss_memory","time":1502348798106,"uid":20010044,"external_log": ["/data/storage/el2/log/resourcelimit/RESOURCE_OVERLIMIT_1725614572401_6808.log", "/data/storage/el2/log/resourcelimit/RESOURCE_OVERLIMIT_1725614572412_6808.log"], "log_over_limit": false}}
+   HiAppEvent eventInfo.params.page_switch_log="[\"/data/storage/el2/log/page_switch/snapshot/page_switch-com.example.myapplication-1-1-20260427162423841.log\"]"
    ```
 
    如上，eventInfo中包含资源泄漏事件的[params字段](hiappevent-watcher-resourceleak-events.md#params字段说明)，可以根据eventInfo中的resource\_type字段来判断当前的泄漏类型。
-5. 提前在“开发者选项”中开启“系统资源泄漏日志”开关（开启或关闭开关均需重启设备）。点击 DevEco Studio 窗口中的运行按钮，运行应用工程。点击“js leak”按钮，等待 3 到 5 秒，应用会闪退。重新打开应用后，系统将上报js内存泄漏事件。
+5. 提前在“开发者选项”中开启“系统资源泄漏日志”开关（开启或关闭开关均需重启设备）。点击 DevEco Studio 窗口中的运行按钮，运行应用工程。点击“js leak”按钮，等待 3 到 5 秒，应用会闪退。重新打开应用后，系统将上报JS内存泄漏事件。
 
-   同一个应用，24小时内至多上报一次js内存泄漏，如果短时间内要二次上报，需要重启设备。
-6. js内存泄漏事件上报后，系统会回调应用的onReceive函数，在该函数中可在Log窗口查看系统事件数据的处理日志。
+   同一个应用，24小时内至多上报一次JS内存泄漏，如果短时间内要二次上报，需要重启设备。
+6. JS内存泄漏事件上报后，系统会回调应用的onReceive函数，在该函数中可在Log窗口查看系统事件数据的处理日志。
 
-   ```
-   1. HiAppEvent onReceive: domain=OS
-   2. HiAppEvent eventName=RESOURCE_OVERLIMIT
-   3. HiAppEvent eventInfo={"domain":"OS","name":"RESOURCE_OVERLIMIT","eventType":1,"params":{"bundle_name":"com.example.myapplication","bundle_version":"1.0.0","external_log":[],"log_over_limit":true,"memory":{"limit_size":0,"live_object_size":0},"pid":14941,"resource_type":"js_heap","test_data":100,"time":1752564700511,"uid":20020181}}
+   ```text
+   HiAppEvent onReceive: domain=OS
+   HiAppEvent eventName=RESOURCE_OVERLIMIT
+   HiAppEvent eventInfo={"domain":"OS","name":"RESOURCE_OVERLIMIT","eventType":1,"params":{"bundle_name":"com.example.myapplication", "app_running_unique_id":"45354125624752145258", "bundle_version":"1.0.0","external_log":[],"log_over_limit":true,"memory":{"limit_size":0,"live_object_size":0},"pid":14941,"resource_type":"js_heap","test_data":100,"time":1752564700511,"uid":20020181}}
+   HiAppEvent eventInfo.params.page_switch_log="[\"/data/storage/el2/log/page_switch/snapshot/page_switch-com.example.myapplication-1-1-20260427162423841.log\"]"
    ```
 
    如上，eventInfo中的“test\_data”字段即步骤一中设置的键值对的内容。
@@ -332,13 +341,13 @@ API version 14后，开发者可以将日志文件后缀名修改为.rawheap后�
 
 ### 在AppScope/app.json5文件中配置如下环境变量
 
-```
-1. "appEnvironments": [
-2. {
-3. "name": "DFX_RESOURCE_OVERLIMIT_OPTIONS",
-4. "value": "oomdump:enable"
-5. }
-6. ]
+```text
+"appEnvironments": [
+  {
+    "name": "DFX_RESOURCE_OVERLIMIT_OPTIONS",
+    "value": "oomdump:enable"
+  }
+]
 ```
 
 **nolog版本虚拟机堆快照生成规格限制**
@@ -351,18 +360,18 @@ API version 14后，开发者可以将日志文件后缀名修改为.rawheap后�
 
   开发者在调试期间，可通过将系统时间调整至7天后并重启设备的方式重置应用触发oomdump的次数，以便快速完成功能适配与验证。
 
-注意
+**注意** 
 
 json5配置文件中的value字段内容格式支持键值对集合“key1:value1;key2:value2;...”。目前系统仅支持配置如上键值对的应用，在nolog版本使能oomdump功能。
 
 ### 调用setEventConfig并传入以下参数
 
-```
-1. let configParams: Record<string, hiAppEvent.ParamType> = {
-2. "js_heap_logtype": "event_rawheap",
-3. };
+```ts
+let configParams: Record<string, hiAppEvent.ParamType> = {
+  "js_heap_logtype": "event_rawheap",
+};
 
-5. hiAppEvent.setEventConfig(hiAppEvent.event.RESOURCE_OVERLIMIT, configParams);
+hiAppEvent.setEventConfig(hiAppEvent.event.RESOURCE_OVERLIMIT, configParams);
 ```
 
 setEventConfig方法生成堆快照的数量**不**受到**nolog版本虚拟机堆快照生成规格限制**的约束。

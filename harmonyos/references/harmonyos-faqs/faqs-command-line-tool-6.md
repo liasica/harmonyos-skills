@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-command-li
 title: 组件被错误下线后，重新推送包时提示需等待24小时，如何解除该限制
 breadcrumb: FAQ > DevEco Studio > 命令行工具 > 组件被错误下线后，重新推送包时提示需等待24小时，如何解除该限制
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:22+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:18+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:7e6ca8bf64f44c74d8e26f15ea517b82edee323601d1fbf9522ee7c634466059
 ---
 

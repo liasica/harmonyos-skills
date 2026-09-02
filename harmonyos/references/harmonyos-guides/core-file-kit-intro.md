@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/core-file-kit
 title: Core File Kit简介
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > Core File Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:34+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:96a8be35f861b32c6ba5d7e71c4d116f76edee3d80a3c9ac081a50510308a429
+scraped_at: 2026-09-02T14:59:24+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:e04504157293ddc33d0214ba01977405d8f5c7b5622531dc4181f22c148239a1
 ---
 
 Core File Kit（文件基础服务）为开发者提供一套访问和管理应用文件和用户文件的能力。帮助用户更高效地管理、查找和备份各类文件，使用户能够轻松应对各种文件管理的需求。
@@ -26,7 +26,13 @@ Core File Kit（文件基础服务）为开发者提供一套访问和管理应�
 
 **图1** 文件分类模型示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/WUGWHH_YQCultjNd9YWmKw/zh-cn_image_0000002589324621.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/5QED2InGRPijeuzsknxRuw/zh-cn_image_0000002706674176.png)
+
+在Core File Kit套件中提供高性能的[压缩解压缩能力](archive-overview.md)，按照使用场景的不同分为以下类型：
+
+* 文件归档类压缩：支持文件和目录级别的归档压缩和解压。
+* 流式压缩：支持流式数据压缩和解压。
+* 缓冲区压缩：支持缓冲区数据压缩和解压。
 
 ## Kit使用场景
 
@@ -35,6 +41,7 @@ Core File Kit常见的使用场景：
 * 应用文件访问和文件分享。
 * 应用数据备份恢复。
 * 选择与保存用户文件。
+* 文件压缩解压缩。
 * 跨设备的文件访问和分享能力。
 
 ## 能力范围
@@ -46,6 +53,7 @@ Core File Kit常见的使用场景：
 * 支持应用接入数据备份恢复，在接入后，应用可通过修改配置文件定制备份恢复框架的行为，包括是否允许备份恢复、备份哪些数据。
 * 提供[用户文件访问框架](core-file-kit-intro.md#用户文件访问框架)，用于开发者访问和管理用户文件。例如选择与保存用户文件。
 * 支持跨设备的文件访问和拷贝能力。
+* 支持文件和目录的归档压缩和解压，支持流式和缓冲区数据的压缩和解压。
 * 支持全维度同步上云，实时回调同步状态，节省本地存储空间，支持全生命周期版本管理。
 
 ## 亮点/特征
@@ -84,7 +92,7 @@ Core File Kit常见的使用场景：
 
 **图2** 用户文件访问框架示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/J92Ucs8DQL6iZKMTpIyOwA/zh-cn_image_0000002589244559.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/CsahiLm0QIW6OabJpB5Edw/zh-cn_image_0000002736433267.png)
 
 * 系统应用或三方应用（即图中的文件访问客户端）若需访问用户文件，如选择一张照片或保存多个文档等，可以通过拉起“文件选择器应用”来实现。
 * FilePicker：系统预置应用，提供文件访问客户端选择和保存文件的能力，无需配置权限。FilePicker的使用指导请参见[选择用户文件](select-user-file.md)。
@@ -102,10 +110,10 @@ Ability Kit：Core File Kit中用户文件访问框架依赖Ability Kit提供的
 
 ## 模拟器支持情况
 
-本Kit支持模拟器，但与真机存在部分能力差异，具体差异如下。
+本Kit部分能力不支持模拟器，具体如下。
 
-* 通用差异：请参见[模拟器与真机的差异](ide-emulator-specification.md#section1227613205203)。
-* [应用共享目录配置](share-app-file-configuration.md)不支持模拟器开发。
 * [应用数据备份恢复](app-file-backup-restore.md)不支持模拟器开发。
 * [分布式文件系统](distributed-fs.md)不支持模拟器开发。
 * [端云文件协同](cloud-sync-file.md)不支持模拟器开发。
+
+通用差异：请参见[模拟器与真机的差异](ide-emulator-specification.md#section1227613205203)。

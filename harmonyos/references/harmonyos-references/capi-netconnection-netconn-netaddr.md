@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-netc
 title: NetConn_NetAddr
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 结构体 > NetConn_NetAddr
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:35+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:38c564d961e946919409c239a68c0d88cfa2a7d9024efc77e9701f64a193fa9d
+scraped_at: 2026-09-02T15:01:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d8f21bac180e93efd928619ea165637522c1dd66e21cc76c48376b91faef0955
 ---
 
-```
-1. typedef struct NetConn_NetAddr {...} NetConn_NetAddr
+```c
+typedef struct NetConn_NetAddr {...} NetConn_NetAddr
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 网络地址。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

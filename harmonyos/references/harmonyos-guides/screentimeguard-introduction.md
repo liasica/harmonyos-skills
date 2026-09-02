@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: Screen Time Guard Kit简介
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > Screen Time Guard Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:2e6f894af2d6d142b1ee4dabb6124d938418ca352d545fc12cec593f19814932
+scraped_at: 2026-09-02T14:50:32+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:bbf51301c07238a4a8b311bca42d52ad426e2d72834c79b3c654bd85edc7d932
 ---
 
 在应用安全隐私保护前提下，为开发者提供屏幕使用时间管控、应用使用限制等开放能力，满足不同用户对时间管理多样化诉求，更好的服务终端用户。
@@ -36,7 +36,7 @@ guard strategy：守护策略，分为起止时间策略、总时长策略和共
 
 ## 约束与限制
 
-1. 支持的设备：Screen Time Guard Kit目前仅支持Phone、Tablet，支持模拟器设备。
+1. 支持的设备：Screen Time Guard Kit（屏幕时间守护服务）目前仅支持Phone、Tablet。
 2. 支持的国家/地区：目前仅支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。
 3. 仅支持主空间调用，不支持在隐私空间及其它子空间中调用。
 4. 不支持调用方的分身应用接入。

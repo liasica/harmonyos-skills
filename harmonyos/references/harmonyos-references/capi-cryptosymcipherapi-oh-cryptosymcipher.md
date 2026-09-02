@@ -1,19 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryptosymcipherapi-oh-cryptosymcipher
 title: OH_CryptoSymCipher
+breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > C API > 结构体 > OH_CryptoSymCipher
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:05+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:dc0bf2f500febf9482c9687a6b80e849c33a4ce246ebd9d460f3521d524f62e7
+scraped_at: 2026-09-02T14:52:08+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3f95c8b123cb72e564295796a40aa1148b16a9798c275d48c2b6e5de98e73e28
 ---
 
-```
-1. typedef struct OH_CryptoSymCipher OH_CryptoSymCipher
+```c
+typedef struct OH_CryptoSymCipher OH_CryptoSymCipher
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义对称加解密结构体。
 

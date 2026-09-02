@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-505-release
 title: 版本概览
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.5(17) > 版本概览
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.5(17) > 版本概览
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:17+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:ee6f1930168d4ff3b7d3a8219e8f0d32f90f38ac7012717f38f2551663874ef0
+scraped_at: 2026-09-02T14:58:49+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:94698ba6e09e348479b69f69a8bd5ae69d661b3c68b9a644ce56c5428f1a23da
 ---
 
 HarmonyOS 5.0.5(17)在此前发布的HarmonyOS 5.0.4(16)的基础上，进一步丰富了ArkUI的组件能力，完善了应用在窗口化场景下的管理能力。
@@ -30,7 +30,7 @@ HarmonyOS 5.0.5(17)在此前发布的HarmonyOS 5.0.4(16)的基础上，进一步
 | 5.0.13.200 | 2025/05/14 |
 | SDK | Release | HarmonyOS 5.0.5 Release SDK | 基于OpenHarmony SDK Ohos\_sdk\_public 5.0.5.165(API 17 Release) | 2025/05/14 |
 
-说明
+**说明** 
 
 * **API版本**请在设备的“设置”中点击设备名称，进入“**关于本机**”进行查询。
 
